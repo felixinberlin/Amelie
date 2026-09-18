@@ -1,0 +1,6 @@
+{
+  "name": "Amélie — Ideen, die jemand anderem gehören",
+  "description": "Ein interaktives Archiv und Zustellwerkzeug für App-Ideen, die jemand anderem gehören — nach dem Verfahren von Amélie Poulain und dem Kula-Ring.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

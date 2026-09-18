@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="es" datatype="plaintext" original="amelie-core">
+    <body>
+      <!-- App Header & Navigation -->
+      <trans-unit id="app.title" resname="app.title">
+        <source>Amélie</source>
+        <target state="translated">Amélie</target>
+      </trans-unit>
+      <trans-unit id="app.tagline" resname="app.tagline">
+        <source>Ideas that belong to someone else — after Amélie Poulain &amp; the Kula Ring</source>
+        <target state="translated">Ideas que pertenecen a alguien más — según Amélie Poulain y el Anillo Kula</target>
+      </trans-unit>
+      <trans-unit id="app.subtitle" resname="app.subtitle">
+        <source>Félix, Berlin · As of: September 2026</source>
+        <target state="translated">Félix, Berlín · A fecha de: septiembre de 2026</target>
+      </trans-unit>
+      <trans-unit id="nav.tins" resname="nav.tins">
+        <source>The Tins</source>
+        <target state="translated">Las Latas</target>
+      </trans-unit>
+      <trans-unit id="nav.unpacked" resname="nav.unpacked">
+        <source>Not Yet Packed</source>
+        <target state="translated">Ideas sin empacar</target>
+      </trans-unit>
+      <trans-unit id="nav.matrix" resname="nav.matrix">
+        <source>Matrix &amp; Deliveries</source>
+        <target state="translated">Matriz y Entregas</target>
+      </trans-unit>
+      <trans-unit id="nav.manifest" resname="nav.manifest">
+        <source>Manifesto &amp; Loop</source>
+        <target state="translated">Manifiesto y Bucle</target>
+      </trans-unit>
+      <trans-unit id="nav.packer" resname="nav.packer">
+        <source>Pack a Tin</source>
+        <target state="translated">Empacar una Lata</target>
+      </trans-unit>
+      <trans-unit id="nav.discarded" resname="nav.discarded">
+        <source>Discarded</source>
+        <target state="translated">Descartadas</target>
+      </trans-unit>
+
+      <!-- The Pledge -->
+      <trans-unit id="pledge.title" resname="pledge.title">
+        <source>The Amélie Pledge (printed on every tin)</source>
+        <target state="translated">El Compromiso Amélie (impreso en cada lata)</target>
+      </trans-unit>
+      <trans-unit id="pledge.text" resname="pledge.text">
+        <source>This idea belongs to no one. Take it, build it, sell it — you owe me nothing, not even a reply. If you ever have an idea you won't build, give it to someone who will.</source>
+        <target state="translated">Esta idea no pertenece a nadie. Tómala, constrúyela, comercialízala — no me debes nada, ni siquiera una respuesta. Si algún día tienes una idea que no vas a construir, entrégasela a alguien que sí lo haga.</target>
+      </trans-unit>
+      <trans-unit id="pledge.copy" resname="pledge.copy">
+        <source>Copy pledge</source>
+        <target state="translated">Copiar compromiso</target>
+      </trans-unit>
+      <trans-unit id="pledge.copied" resname="pledge.copied">
+        <source>Copied</source>
+        <target state="translated">Copiado</target>
+      </trans-unit>
+
+      <!-- Manifest Rules -->
+      <trans-unit id="manifest.rule1.title" resname="manifest.rule1.title">
+        <source>The delivery is the gift, not the find</source>
+        <target state="translated">La entrega es el regalo, no el hallazgo</target>
+      </trans-unit>
+      <trans-unit id="manifest.rule1.desc" resname="manifest.rule1.desc">
+        <source>Ideas are cheap. Everyone has thirty. The gift only starts when you research a specific team capable of building it, and deliver a turn-key package.</source>
+        <target state="translated">Las ideas son baratas. Cualquiera tiene treinta. El regalo solo comienza en el momento en que investigas a un equipo específico capaz de construirla y le entregas un paquete listo para usar.</target>
+      </trans-unit>
+      <trans-unit id="manifest.rule1.thumb" resname="manifest.rule1.thumb">
+        <source>1h discovery, 1h validation, 2h recipient research (the 1:2 budget ratio).</source>
+        <target state="translated">1h de búsqueda, 1h de validación, 2h investigando al destinatario (la regla de proporción presupuestaria 1:2).</target>
+      </trans-unit>
+
+      <trans-unit id="manifest.rule2.title" resname="manifest.rule2.title">
+        <source>Sign your name, demand nothing</source>
+        <target state="translated">Firma con tu nombre, pero no exijas nada</target>
+      </trans-unit>
+      <trans-unit id="manifest.rule2.desc" resname="manifest.rule2.desc">
+        <source>Your name underneath, CC0 above it. No equity demands, no mandatory attribution, zero expectation of a response. The Kula ring thrives because the gift travels onward, not backward.</source>
+        <target state="translated">Tu nombre debajo, CC0 arriba. Sin reclamos de participación, sin atribución forzosa, sin esperar respuesta. El Anillo Kula funciona porque el regalo avanza en círculo, nunca hacia atrás.</target>
+      </trans-unit>
+      <trans-unit id="manifest.rule2.thumb" resname="manifest.rule2.thumb">
+        <source>"This idea belongs to no one. Take it, build it, sell it — you owe me nothing."</source>
+        <target state="translated">"Esta idea no es de nadie. Tómala, constrúyela, véncela — no me debes nada."</target>
+      </trans-unit>
+
+      <trans-unit id="manifest.rule3.title" resname="manifest.rule3.title">
+        <source>Deliver once, then walk away</source>
+        <target state="translated">Entrega una sola vez y retírate</target>
+      </trans-unit>
+      <trans-unit id="manifest.rule3.desc" resname="manifest.rule3.desc">
+        <source>Never follow up ("Did you get a chance to read my email?"). Following up turns an unconditional gift into an uninvited task on the recipient's todo list.</source>
+        <target state="translated">Jamás insistas ("¿Tuviste tiempo de leer mi correo?"). Quien insiste convierte un regalo generoso en una tarea forzada para el destinatario. Un regalo no genera deuda.</target>
+      </trans-unit>
+      <trans-unit id="manifest.rule3.thumb" resname="manifest.rule3.thumb">
+        <source>Send once. Let go. Never follow up.</source>
+        <target state="translated">Envía una vez. Suelta. No insistas jamás.</target>
+      </trans-unit>
+
+      <trans-unit id="manifest.rule4.title" resname="manifest.rule4.title">
+        <source>If nobody asked, give tools, not a project</source>
+        <target state="translated">Si no preguntaron, entrega herramientas, no una carga</target>
+      </trans-unit>
+      <trans-unit id="manifest.rule4.desc" resname="manifest.rule4.desc">
+        <source>Bare ideas with no code belong exclusively with salaried organizations (companies, research grants, foundations). Unpaid open-source maintainers only receive working skeleton code.</source>
+        <target state="translated">Las ideas puras sin código pertenecen exclusivamente a entidades con presupuesto y mandato de construcción (empresas, cátedras de investigación, fondos públicos). A los mantenedores voluntarios de código abierto solo se les entrega código funcional.</target>
+      </trans-unit>
+      <trans-unit id="manifest.rule4.thumb" resname="manifest.rule4.thumb">
+        <source>Never burden unpaid volunteer maintainers with unsolicited project homework.</source>
+        <target state="translated">Jamás cargues a mantenedores voluntarios con deberes no solicitados.</target>
+      </trans-unit>
+
+      <trans-unit id="manifest.rule5.title" resname="manifest.rule5.title">
+        <source>Don't let it become an excuse</source>
+        <target state="translated">No lo conviertas en una excusa</target>
+      </trans-unit>
+      <trans-unit id="manifest.rule5.desc" resname="manifest.rule5.desc">
+        <source>Giving ideas away feels productive, yet it is still not building. Keep at most two ideas per cycle and actually finish building them.</source>
+        <target state="translated">Regalar ideas se siente productivo, pero sigue sin ser construir. Quédate con un máximo de dos ideas al año y termínalas de verdad.</target>
+      </trans-unit>
+      <trans-unit id="manifest.rule5.thumb" resname="manifest.rule5.thumb">
+        <source>Retain at most 2 projects for yourself. Everything else gets gifted.</source>
+        <target state="translated">Quédate con máximo 2 proyectos propios. Todo lo demás se regala.</target>
+      </trans-unit>
+
+      <!-- Common UI labels -->
+      <trans-unit id="ui.close" resname="ui.close">
+        <source>Close</source>
+        <target state="translated">Cerrar</target>
+      </trans-unit>
+      <trans-unit id="ui.copy_email" resname="ui.copy_email">
+        <source>Copy email template</source>
+        <target state="translated">Copiar plantilla de correo</target>
+      </trans-unit>
+      <trans-unit id="ui.email_copied" resname="ui.email_copied">
+        <source>Email copied!</source>
+        <target state="translated">¡Correo copiado!</target>
+      </trans-unit>
+      <trans-unit id="ui.open_tin" resname="ui.open_tin">
+        <source>Open tin →</source>
+        <target state="translated">Abrir lata →</target>
+      </trans-unit>
+      <trans-unit id="ui.recipient" resname="ui.recipient">
+        <source>Recipient:</source>
+        <target state="translated">Destinatario:</target>
+      </trans-unit>
+      <trans-unit id="ui.verdict_gift" resname="ui.verdict_gift">
+        <source>Gift</source>
+        <target state="translated">Regalar</target>
+      </trans-unit>
+      <trans-unit id="ui.verdict_build_first" resname="ui.verdict_build_first">
+        <source>Build first</source>
+        <target state="translated">Construir primero</target>
+      </trans-unit>
+      <trans-unit id="ui.verdict_keep" resname="ui.verdict_keep">
+        <source>Kept</source>
+        <target state="translated">Conservar</target>
+      </trans-unit>
+      <trans-unit id="ui.footer_text" resname="ui.footer_text">
+        <source>All tins dedicated to CC0 (Public Domain).</source>
+        <target state="translated">Todas las latas están dedicadas al dominio público CC0.</target>
+      </trans-unit>
+      <trans-unit id="ui.footer_quote" resname="ui.footer_quote">
+        <source>"The delivery is the gift, not the discovery."</source>
+        <target state="translated">"La entrega es el regalo, no el hallazgo."</target>
+      </trans-unit>
+      <trans-unit id="ui.unpacked_heading" resname="ui.unpacked_heading">
+        <source>The Candidate Pipeline: Not Yet Packed Tins</source>
+        <target state="translated">Canal de Candidatas: Latas aún no empacadas</target>
+      </trans-unit>
+      <trans-unit id="ui.unpacked_subheading" resname="ui.unpacked_subheading">
+        <source>Every idea undergoes Step 0.5 (existence verification &amp; evidence check before building). Surviving candidates with open gaps are ready to be packed into turn-key tins.</source>
+        <target state="translated">Cada idea pasa por el Paso 0.5 (verificación previa de existencia). Las brechas libres del protocolo de prueba están listas para empacarse.</target>
+      </trans-unit>
+      <trans-unit id="ui.unpacked_badge" resname="ui.unpacked_badge">
+        <source>Search Protocol &amp; Candidate Pipeline</source>
+        <target state="translated">Protocolo de Búsqueda y Candidatas</target>
+      </trans-unit>
+      <trans-unit id="ui.unpacked_pack_btn" resname="ui.unpacked_pack_btn">
+        <source>Pack into Tin →</source>
+        <target state="translated">Empacar en Lata →</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

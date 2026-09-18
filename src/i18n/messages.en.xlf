@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="amelie-core">
+    <body>
+      <!-- App Header & Navigation -->
+      <trans-unit id="app.title" resname="app.title">
+        <source>Amélie</source>
+        <note priority="1">Main app title</note>
+      </trans-unit>
+      <trans-unit id="app.tagline" resname="app.tagline">
+        <source>Ideas that belong to someone else — after Amélie Poulain &amp; the Kula Ring</source>
+        <note priority="1">Main tagline under title</note>
+      </trans-unit>
+      <trans-unit id="app.subtitle" resname="app.subtitle">
+        <source>Félix, Berlin · As of: September 2026</source>
+      </trans-unit>
+      <trans-unit id="nav.tins" resname="nav.tins">
+        <source>The Tins</source>
+      </trans-unit>
+      <trans-unit id="nav.unpacked" resname="nav.unpacked">
+        <source>Not Yet Packed</source>
+      </trans-unit>
+      <trans-unit id="nav.matrix" resname="nav.matrix">
+        <source>Matrix &amp; Deliveries</source>
+      </trans-unit>
+      <trans-unit id="nav.manifest" resname="nav.manifest">
+        <source>Manifesto &amp; Loop</source>
+      </trans-unit>
+      <trans-unit id="nav.packer" resname="nav.packer">
+        <source>Pack a Tin</source>
+      </trans-unit>
+      <trans-unit id="nav.discarded" resname="nav.discarded">
+        <source>Discarded</source>
+      </trans-unit>
+
+      <!-- The Pledge -->
+      <trans-unit id="pledge.title" resname="pledge.title">
+        <source>The Amélie Pledge (printed on every tin)</source>
+      </trans-unit>
+      <trans-unit id="pledge.text" resname="pledge.text">
+        <source>This idea belongs to no one. Take it, build it, sell it — you owe me nothing, not even a reply. If you ever have an idea you won't build, give it to someone who will.</source>
+      </trans-unit>
+      <trans-unit id="pledge.copy" resname="pledge.copy">
+        <source>Copy pledge</source>
+      </trans-unit>
+      <trans-unit id="pledge.copied" resname="pledge.copied">
+        <source>Copied</source>
+      </trans-unit>
+
+      <!-- Manifest Rules -->
+      <trans-unit id="manifest.rule1.title" resname="manifest.rule1.title">
+        <source>The delivery is the gift, not the find</source>
+      </trans-unit>
+      <trans-unit id="manifest.rule1.desc" resname="manifest.rule1.desc">
+        <source>Ideas are cheap. Everyone has thirty. The gift only starts when you research a specific team capable of building it, and deliver a turn-key package.</source>
+      </trans-unit>
+      <trans-unit id="manifest.rule1.thumb" resname="manifest.rule1.thumb">
+        <source>1h discovery, 1h validation, 2h recipient research (the 1:2 budget ratio).</source>
+      </trans-unit>
+
+      <trans-unit id="manifest.rule2.title" resname="manifest.rule2.title">
+        <source>Sign your name, demand nothing</source>
+      </trans-unit>
+      <trans-unit id="manifest.rule2.desc" resname="manifest.rule2.desc">
+        <source>Your name underneath, CC0 above it. No equity demands, no mandatory attribution, zero expectation of a response. The Kula ring thrives because the gift travels onward, not backward.</source>
+      </trans-unit>
+      <trans-unit id="manifest.rule2.thumb" resname="manifest.rule2.thumb">
+        <source>"This idea belongs to no one. Take it, build it, sell it — you owe me nothing."</source>
+      </trans-unit>
+
+      <trans-unit id="manifest.rule3.title" resname="manifest.rule3.title">
+        <source>Deliver once, then walk away</source>
+      </trans-unit>
+      <trans-unit id="manifest.rule3.desc" resname="manifest.rule3.desc">
+        <source>Never follow up ("Did you get a chance to read my email?"). Following up turns an unconditional gift into an uninvited task on the recipient's todo list.</source>
+      </trans-unit>
+      <trans-unit id="manifest.rule3.thumb" resname="manifest.rule3.thumb">
+        <source>Send once. Let go. Never follow up.</source>
+      </trans-unit>
+
+      <trans-unit id="manifest.rule4.title" resname="manifest.rule4.title">
+        <source>If nobody asked, give tools, not a project</source>
+      </trans-unit>
+      <trans-unit id="manifest.rule4.desc" resname="manifest.rule4.desc">
+        <source>Bare ideas with no code belong exclusively with salaried organizations (companies, research grants, foundations). Unpaid open-source maintainers only receive working skeleton code.</source>
+      </trans-unit>
+      <trans-unit id="manifest.rule4.thumb" resname="manifest.rule4.thumb">
+        <source>Never burden unpaid volunteer maintainers with unsolicited project homework.</source>
+      </trans-unit>
+
+      <trans-unit id="manifest.rule5.title" resname="manifest.rule5.title">
+        <source>Don't let it become an excuse</source>
+      </trans-unit>
+      <trans-unit id="manifest.rule5.desc" resname="manifest.rule5.desc">
+        <source>Giving ideas away feels productive, yet it is still not building. Keep at most two ideas per cycle and actually finish building them.</source>
+      </trans-unit>
+      <trans-unit id="manifest.rule5.thumb" resname="manifest.rule5.thumb">
+        <source>Retain at most 2 projects for yourself. Everything else gets gifted.</source>
+      </trans-unit>
+
+      <!-- Common UI labels -->
+      <trans-unit id="ui.close" resname="ui.close">
+        <source>Close</source>
+      </trans-unit>
+      <trans-unit id="ui.copy_email" resname="ui.copy_email">
+        <source>Copy email template</source>
+      </trans-unit>
+      <trans-unit id="ui.email_copied" resname="ui.email_copied">
+        <source>Email copied!</source>
+      </trans-unit>
+      <trans-unit id="ui.open_tin" resname="ui.open_tin">
+        <source>Open tin →</source>
+      </trans-unit>
+      <trans-unit id="ui.recipient" resname="ui.recipient">
+        <source>Recipient:</source>
+      </trans-unit>
+      <trans-unit id="ui.verdict_gift" resname="ui.verdict_gift">
+        <source>Gift</source>
+      </trans-unit>
+      <trans-unit id="ui.verdict_build_first" resname="ui.verdict_build_first">
+        <source>Build first</source>
+      </trans-unit>
+      <trans-unit id="ui.verdict_keep" resname="ui.verdict_keep">
+        <source>Kept</source>
+      </trans-unit>
+      <trans-unit id="ui.footer_text" resname="ui.footer_text">
+        <source>All tins dedicated to CC0 (Public Domain).</source>
+      </trans-unit>
+      <trans-unit id="ui.footer_quote" resname="ui.footer_quote">
+        <source>"The delivery is the gift, not the discovery."</source>
+      </trans-unit>
+      <trans-unit id="ui.unpacked_heading" resname="ui.unpacked_heading">
+        <source>The Candidate Pipeline: Not Yet Packed Tins</source>
+      </trans-unit>
+      <trans-unit id="ui.unpacked_subheading" resname="ui.unpacked_subheading">
+        <source>Every idea undergoes Step 0.5 (existence verification &amp; evidence check before building). Surviving candidates with open gaps are ready to be packed into turn-key tins.</source>
+      </trans-unit>
+      <trans-unit id="ui.unpacked_badge" resname="ui.unpacked_badge">
+        <source>Search Protocol &amp; Candidate Pipeline</source>
+      </trans-unit>
+      <trans-unit id="ui.unpacked_pack_btn" resname="ui.unpacked_pack_btn">
+        <source>Pack into Tin →</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
