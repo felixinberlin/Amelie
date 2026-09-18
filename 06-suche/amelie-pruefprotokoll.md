@@ -16,7 +16,7 @@ Ergänzt `dosen/_entsorgt.md`: dort steht die Begründung für gepackte, dann ve
 | **Brettchen-Vorsortierer** — KI-Vorannotation der Brutzellen auf MonViA-Nisthilfe-Fotos | `frei` (Thünen direkt fragen lassen) | Thünen wertet manuell aus, bis zu 90 Min. pro Nisthilfe; keine KI-Auswertung erwähnt | 09/2027 |
 | **Streiflicht** — Smartphone-RTI am Grabstein + Transkription, die unleserliche Stellen als Lücke markiert | `verengt` | CompGen nutzt LLMs, benennt Halluzination bei Verwitterung als Schwäche; Smartphone-RTI nur als Paper (Ca' Foscari, ECCVW 2022) | 09/2027 |
 | Bebauungsplan-Leser für Bürger | `unklar` | Nur Content-Farm-Treffer. Neu suchen mit Organisationsnamen (z. B. Berliner Beteiligungsplattform) | 12/2026 |
-| Tafel-Warenannahme per Foto | `unklar` | Kein Werkzeug gefunden, aber Suche schwach. Empfänger zuerst prüfen: Tafel Deutschland digital | 12/2026 |
+| Tafel-Warenannahme per Foto | `besetzt` | Recheck 18.9.2026, zwei Researcher unabhängig: „Tafel macht Zukunft – gemeinsam digital" (BMEL-Förderung 1,5 Mio. €, 3 Jahre, eco-Platform von Inspired Consulting) liefert eine Fahrer-App mit Foto-Qualitätserfassung der Ware, alle großen Handelsketten (ALDI, EDEKA, LIDL, REWE) beteiligt — deckt die Foto-Prüfung ab, die ein Researcher zunächst übersehen hatte (dessen `verengt`-Verdikt zur selben Idee ist damit hinfällig). [method: ideenrunde] | – |
 | Balkonkraftwerk-Verschattung per Handykamera | `besetzt` | Horisol (Akkudoktor-Forum, Juli 2026), SunOnTrack AR | – |
 | Wheelmap: Eingangsfoto → Barrierefreiheit | `besetzt` | HIIG + Wheelmap: offener Datensatz Stufen/Rampen (2023) | – |
 | Repair-Café-Diagnoseassistent | `besetzt` | Repair Café International Artikel Juli 2026; robotfreak/repair-cafe | – |
