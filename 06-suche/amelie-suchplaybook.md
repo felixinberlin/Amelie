@@ -79,7 +79,7 @@ Runde 2 zielte bewusst auf „Zivilgesellschaft" — und lag trotzdem bei ~23 %.
 - **Fehler:** Zu viele naheliegende Konsumideen ins Rennen geschickt; der Atlas oben hätte 5 davon ohne Suche aussortiert.
 - **Nächstes Mal ausprobieren:** Veröffentlichungslisten der LANA / Vogelschutzwarten / Thünen / BfN nach weiteren „Schema ohne Tool"-Fällen durchgehen.
 
-### Runde 3 — <Datum>
-- Gelernt:
-- Fehler:
-- Nächstes Mal:
+### Runde 3 — 18.09.2026 (Researcher #2, Methode ideenrunde — Runde durch Team-Neustart früh beendet, nur Recheck-Teil abgeschlossen)
+- **Gelernt:** Die beiden `unklar`-Rechecks aus Runde 2 kosteten je nur eine gezielte Suche. Tafel-Warenannahme kippte sofort zu `besetzt` (Tafel Deutschland hat ein BMEL-gefördertes 1,5-Mio.-€-Projekt dafür laufen) — bestätigt die Regel „Empfänger zuerst" auch für Rechecks, nicht nur für neue Ideen.
+- **Fehler:** Bebauungsplan-Leser blieb nach nur einer allgemeinen Suche wieder `unklar` — der Recheck-Hinweis aus Runde 2 („mit Organisationsnamen suchen") wurde nicht befolgt, weil die Runde vorzeitig endete. Zählt nicht als echter zweiter Versuch.
+- **Nächstes Mal:** (1) Bebauungsplan-Leser mit konkreten Tool-/Produktnamen statt allgemeiner Begriffe erneut prüfen (z. B. „Ratsinformationssystem KI Zusammenfassung", „Bebauungsplan Chatbot Bürger"). (2) BfN-Schriften 721 (Kartieranleitung Biotoptypen nach BKompV, 668 Typen, feste Schwellenwerte) zu einer konkreten Idee ausformulieren und gegen bestehende Ökokonto-/Kompensationsflächen-Software prüfen — Verdacht, dass das Feld über die gesetzliche Eingriffsregelung schon kommerziell besetzt ist, also vor dem Packen einer Dose erst den Atlas-Verdacht bestätigen oder entkräften. (3) LANA/Vogelschutzwarten/Thünen-Strang aus Runde 2 ist damit erst zur Hälfte abgearbeitet (LANA+BfN angekratzt, Thünen/Vogelschutzwarten waren schon dran) — Vogelschutzwarten war Researcher #1s/#2s Nachbarquelle, Kollision beim nächsten Mal prüfen.

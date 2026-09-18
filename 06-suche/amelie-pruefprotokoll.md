@@ -46,7 +46,9 @@ Details in `ideas-neue-projekte.md`, `amelie-matrix.md`, `dosen/_entsorgt.md`.
 
 ---
 
-## Runde 3 — <Datum>
+## Runde 3 — 18.09.2026 (Researcher #2, Methode ideenrunde — Runde durch Team-Neustart früh beendet)
 
-| Idee | Urteil | Beleg | Prüfen ab |
+| Idee | Urteil | Beleg (kurz) | Prüfen ab |
 |---|---|---|---|
+| Tafel-Warenannahme per Foto (Recheck, war `unklar` in Runde 2) | `besetzt` | „Tafel macht Zukunft – gemeinsam digital": BMEL-gefördertes Digitalisierungsprojekt (1,5 Mio. €, 3 Jahre), eco-Platform von Inspired Consulting, Fahrer-App mit Foto-Qualitätserfassung der Waren, alle großen Handelsketten (ALDI, EDEKA, LIDL, REWE) beteiligt. [method: ideenrunde] | – |
+| Bebauungsplan-Leser für Bürger (Recheck, war `unklar` in Runde 2) | `unklar` (weiterhin) | Berlin hat DiPlanBeteiligung (digitalisiertes Beteiligungs*verfahren*), aber keine KI-Erklärung/Zusammenfassung für Laien gefunden. Nur eine allgemeine Suche gemacht — Suche bleibt schwach. [method: ideenrunde] | 12/2026 |
