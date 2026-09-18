@@ -353,12 +353,16 @@ Zu jeder Idee aus `ideas-neue-projekte.md`: wer davon profitiert, warum ausgerec
 | Ghost Replay | 🎁 | HCI-Forschung | **gepackt**, verengt |
 | Spec-Drift Detector | 🔒 + streuen | spec-kit / Tessl | **gepackt**, behalten |
 | Wet Ink | 🔒 | Plan an Escape Motions u. a. | **gepackt**, behalten |
+| Crack Flora Watcher | 🎁 | #Krautschau / Senckenberg | **gepackt**, stark verengt (Seek deckt die Grundidee bereits) |
+| KlarLokal | 🎁 | Prototype Fund | **gepackt**, verengt (Zetteln existiert bereits, Zero-Cloud ist die Lücke) |
 | ~~git-archaeologist~~ | ❌ | — | **entsorgt** — mehrfach gebaut |
 | ~~Home-Network MCP~~ | ❌ | — | **entsorgt** — ≥4 Fritzbox-MCPs |
 | ~~Repo-Museum~~ | ❌ | — | **entsorgt** — bereits gebaut |
 | ~~Commute Oracle~~ | ❌ | — | **entsorgt** — kommerziell besetzt |
 
-**Bilanz:** 15 Dosen gepackt (davon 6 mit verengter Prämisse), 2 davon behalten, **4 entsorgt**.
+**Bilanz:** 17 Dosen gepackt (davon 8 mit verengter Prämisse), 2 davon behalten, **4 entsorgt**.
+
+*Crack Flora Watcher und KlarLokal kamen am 18.9.2026 unfertig aus der `gemini changes`-Runde: keine Empfängerprüfung, erfundene E-Mail-Adressen, keine „Wer es schon versucht hat"-Sektion. Am selben Tag auf Vorlagen-Standard gebracht und nachrecherchiert (Seek bzw. Zetteln als bislang übersehene Konkurrenz gefunden, Prämisse entsprechend verengt). Empfängeradressen weiterhin bewusst nicht in Dose/Matrix — beim Zustellen von der Organisationsseite kopieren.*
 
 Begründungen für die Entsorgungen und das Muster dahinter: `dosen/_entsorgt.md`.
 
