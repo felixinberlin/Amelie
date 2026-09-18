@@ -53,7 +53,8 @@ Wo Ideen schnell sterben — vor dem Suchen als Vorfilter nutzen.
 | Repair Cafés + KI | **wird gerade besetzt** | Repair Café International, robotfreak/repair-cafe |
 | Barrierefreiheit per Foto | **beim Empfänger selbst** | HIIG/Wheelmap-Datensatz 2023 |
 | Grabstein-Transkription | **beim Empfänger selbst** | CompGen-Werkstattbericht Mai 2026 |
-| **Naturschutz-Vollzug** (Schemata, Monitoring-Auswertung) | **frei** | Vogelschlag, Wildbienen |
+| **Naturschutz-Vollzug: Bewertungsschemata/Checklisten ohne Tool** (Punktesysteme, Monitoring-Auswertung von Hand) | **frei** | Vogelschlag, Wildbienen, Lichtplan-Check |
+| **Naturschutz: KI-Bilderkennung** (Arten-/Biotoptyp aus Foto oder Fernerkundung) | **dicht, aktive Forschung + Produkte** | ObsIdentify (~95 % Trefferquote), Flora Incognita, KIBI-Projekt (BfN, FFH-Typen aus Luftbild), Namis-Biotop-App (DBU) |
 | **Kulturerbe-Physik** (Licht, Oberfläche) | **frei als Werkzeug** | Smartphone-RTI nur als Paper |
 
 **Faustregel, jetzt mit zwei Runden Evidenz:** Wenn Endnutzer dafür zahlen würden oder eine Stadt es als Pressemitteilung verkaufen kann, existiert es. Frei ist, was ein Fachgremium als PDF veröffentlicht und niemand je in Software gegossen hat.
@@ -66,8 +67,11 @@ Wo Ideen schnell sterben — vor dem Suchen als Vorfilter nutzen.
 |---|---|---|---|---|---|---|
 | 1 | Sep 2026 | 19 | 10 | 5 | – | 4 |
 | 2 | 16.09.2026 | 13 | 2 | 1 | 2 | 8 |
+| 3 (Researcher #1, ideenrunde) | 18.09.2026 | 4 | 1 | 2 | 1 | 0 |
 
 Runde 2 zielte bewusst auf „Zivilgesellschaft" — und lag trotzdem bei ~23 %. **Die Zivilgesellschafts-Regel aus `_entsorgt.md` stimmt nur für Nischen ohne Endnutzer.** Alltagsthemen mit Bürgerbezug (Hitze, Miete, Schulweg) sind 2026 voll.
+
+Runde 3 (Researcher #1) lag bei 75 % „frei + verengt" (3 von 4) — höher als Runde 2, aber auf kleiner Stichprobe (2 Rechecks + 2 neue Ideen aus Typ-A-Quellen) und mit einer besetzt-nahen Erkenntnis erst *innerhalb* der Prüfung einer Idee (Biotoptyp-Assistent → verengt statt frei, weil „Naturschutz-Vollzug" nachträglich in zwei Unterfelder gesplittet werden musste, siehe Atlas).
 
 ---
 
@@ -79,7 +83,8 @@ Runde 2 zielte bewusst auf „Zivilgesellschaft" — und lag trotzdem bei ~23 %.
 - **Fehler:** Zu viele naheliegende Konsumideen ins Rennen geschickt; der Atlas oben hätte 5 davon ohne Suche aussortiert.
 - **Nächstes Mal ausprobieren:** Veröffentlichungslisten der LANA / Vogelschutzwarten / Thünen / BfN nach weiteren „Schema ohne Tool"-Fällen durchgehen.
 
-### Runde 3 — <Datum>
-- Gelernt:
-- Fehler:
-- Nächstes Mal:
+### Runde 3 — 18.09.2026 (Researcher #1, method: ideenrunde)
+- **Gelernt:** „Naturschutz-Vollzug" als Atlas-Feld war zu grob gefasst. Punktesysteme/Checklisten (Typ A, von Hand angewendet) sind weiter frei — aber KI-Bilderkennung für Arten- oder Habitat-Typen aus Fotos/Fernerkundung ist bereits ein aktiv besetztes Forschungs- und Produktfeld (KIBI-Projekt beim BfN selbst, ObsIdentify, Flora Incognita, Namis-Biotop-App). Der Atlas wurde entsprechend in zwei Zeilen gesplittet — sonst wäre „Naturschutz + Foto" fälschlich pauschal als frei durchgewunken worden.
+- **Gelernt:** Licht-Themen bei LAG Vogelschutzwarten sind Teil des Glas-Dokuments (LAG VSW 21/01), kein eigenes Schema. Die ergiebige Quelle für die Licht-Idee war stattdessen eine **Landesumweltbehörde** (Hamburg BUKEA) plus NABU/BUND-Ratgeber — eine Quellenkategorie, die bisher nicht systematisch in `amelie-quellen.md` stand.
+- **Fehler:** Erste Suche zum Biotopwertverfahren fand nur den Rechenteil (BWKalk, Rheinland-Pfalz) und wäre beinahe als „besetzt, weiter" abgehakt worden — der eigentliche Engpass (Biotoptyp *identifizieren*, nicht Punkte *berechnen*) wurde erst durch eine zweite, gezielte Suche nach KI-Bilderkennung sichtbar. Lehre: bei Bewertungsverfahren immer beide Teilschritte einzeln prüfen — Zuordnung/Klassifikation und Berechnung/Aggregation sind oft unterschiedlich weit digitalisiert.
+- **Nächstes Mal:** Landesumweltbehörden (Berlin Senatsverwaltung, Bayern LfU, NRW LANUV, weitere) systematisch nach „Leitfaden ohne Tool"-Fällen absuchen — dieselbe Machart wie LAG VSW/Hamburg, aber länderweise bisher nicht durchgegangen. `amelie-quellen.md` um diese Kategorie als eigenen Quellentyp ergänzen, wenn sie sich in Runde 4 erneut als ergiebig erweist. mitforschen.org bleibt offen und laut Quellenliste „ergiebigste Quelle" — dort ansetzen, falls Researcher #2 es noch nicht abgedeckt hat.
