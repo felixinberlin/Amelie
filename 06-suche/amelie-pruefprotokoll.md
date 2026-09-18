@@ -46,7 +46,9 @@ Details in `ideas-neue-projekte.md`, `amelie-matrix.md`, `dosen/_entsorgt.md`.
 
 ---
 
-## Runde 3 — <Datum>
+## Runde 3 — 18.09.2026 (laufend, Researcher #1, method: ideenrunde)
 
 | Idee | Urteil | Beleg | Prüfen ab |
 |---|---|---|---|
+| Bebauungsplan-Leser für Bürger (erneut geprüft) | `unklar` (weiter) | [method: ideenrunde] Empfänger-Suche `mein.berlin.de Bebauungsplan verständlich KI`: kein KI-Reader gefunden, aber zwei neue Spuren statt Content-Farmen — **DiPlanBeteiligung** (neues Berliner Digitalsystem fürs Verfahren, nicht für Textvereinfachung) und **wohnvision-digital.de** (privater Bebauungsplan-Bestellservice, kein KI-Erklärer). Keine der beiden deckt "Plan in Laiensprache" ab. Nächste Runde: beide Funde gezielt auf KI-Zusammenfassungsfunktion prüfen, dann Urteil fällen. | 12/2026 |
+| Tafel-Warenannahme per Foto (erneut geprüft) | `verengt` | [method: ideenrunde] Empfänger-Suche `Tafel Deutschland Warenannahme digital`: Projekt „Tafel macht Zukunft – gemeinsam digital" (BMEL-Förderung 1,5 Mio €, dreijährig) deckt Routenplanung + digitale Lieferscheine zwischen Handel und Tafel ab. Keine KI-Foto-Prüfung der Ware selbst (Qualität/Frische/Sortierung an der Ausgabestelle) gefunden. Restlücke: Foto-gestützte Qualitäts-/Sortierhilfe für Ehrenamtliche bei der Warenannahme bleibt offen. | 12/2026 |
