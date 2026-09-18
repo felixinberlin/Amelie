@@ -55,6 +55,8 @@ Wo Ideen schnell sterben — vor dem Suchen als Vorfilter nutzen.
 | Grabstein-Transkription | **beim Empfänger selbst** | CompGen-Werkstattbericht Mai 2026 |
 | **Naturschutz-Vollzug** (Schemata, Monitoring-Auswertung) | **frei** | Vogelschlag, Wildbienen |
 | **Kulturerbe-Physik** (Licht, Oberfläche) | **frei als Werkzeug** | Smartphone-RTI nur als Paper |
+| Feuerkugel/Meteor-Bürgerwissenschaft: Radio×Video-Korrelation, Infraschall-Erkennung | **dicht** | FRIPON (Radio+Video-Echtzeit-Stationen), RedVox (Handy-Infraschall) |
+| Feuerkugel/Meteor-Bürgerwissenschaft: Echtzeit-Zeugen-Rekrutierung, Consumer-Ambient-Kameras (Dashcam/Türklingel) vor Überschreiben retten | **frei/verengt** (18.09.2026, Methode: Bisoziation) | AMS/IMO-Meldung ausdrücklich nicht echtzeitfähig; dedizierte Netze (AllSky7/GMN/CAMS) nutzen keine Consumer-Kameras — Dose: `05-dosen/feuerkugel-sofortnetz.md` |
 
 **Faustregel, jetzt mit zwei Runden Evidenz:** Wenn Endnutzer dafür zahlen würden oder eine Stadt es als Pressemitteilung verkaufen kann, existiert es. Frei ist, was ein Fachgremium als PDF veröffentlicht und niemand je in Software gegossen hat.
 

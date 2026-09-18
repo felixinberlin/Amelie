@@ -46,7 +46,11 @@ Details in `ideas-neue-projekte.md`, `amelie-matrix.md`, `dosen/_entsorgt.md`.
 
 ---
 
-## Runde 3 — <Datum>
+## Runde 3 — 18.09.2026
 
-| Idee | Urteil | Beleg | Prüfen ab |
+| Idee | Urteil | Beleg (kurz) | Prüfen ab |
 |---|---|---|---|
+| **Sofort-Rekrutierung** — Geofenced Push an Zeugen in ~20-Min-Fenster nach Feuerkugel-Erstmeldung, strukturierte Corroboration statt Wartens auf zufällige Zweitmeldung | `verengt` (Teil der Dose Feuerkugel-Sofortnetz) [method: bisociation] | AMS/IMO-Meldesystem gruppiert Zeugen nachträglich, AMS nennt Daten ausdrücklich „nicht in Echtzeit"; kein Push-Rekrutierungsmechanismus gefunden | 09/2027 |
+| **Ambient-Rettung** — On-Device-Erkennung auf Dashcam/Türklingelkamera markiert kurzen hellen Streifen lokal zum Nicht-Überschreiben, Opt-in-Teilen | `verengt` (Teil der Dose Feuerkugel-Sofortnetz) [method: bisociation] | Dashcam-/Türklingel-Footage von Feuerkugeln kursiert viral, aber kein automatisiertes Pre-Overwrite-Erkennungstool gefunden; dedizierte Netze (AllSky7, GMN, CAMS) nutzen eigene Astro-Kameras, keine Consumer-Ambient-Geräte | 09/2027 |
+| Radio-Meteorscatter × visuelle Zeugenmeldung in Echtzeit korrelieren | `besetzt` [method: bisociation] | FRIPON kombiniert Radio- und Videostationen bereits für Echtzeit-Trajektorien (arXiv 2111.09742) | – |
+| Handy-Barometer/Infraschall zur Feuerkugel-Erkennung/Korrelation | `besetzt` [method: bisociation] | RedVox-App misst Infraschall bereits u.a. für Meteore/Boliden | – |
