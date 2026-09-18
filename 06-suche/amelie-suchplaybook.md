@@ -38,7 +38,7 @@ Claude lernt nicht zwischen Chats. Dieses Dokument und `amelie-pruefprotokoll.md
 
 ---
 
-## 3. Besetzungsatlas (Stand 16.09.2026)
+## 3. Besetzungsatlas (Stand 18.09.2026)
 
 Wo Ideen schnell sterben — vor dem Suchen als Vorfilter nutzen.
 
@@ -55,6 +55,8 @@ Wo Ideen schnell sterben — vor dem Suchen als Vorfilter nutzen.
 | Grabstein-Transkription | **beim Empfänger selbst** | CompGen-Werkstattbericht Mai 2026 |
 | **Naturschutz-Vollzug** (Schemata, Monitoring-Auswertung) | **frei** | Vogelschlag, Wildbienen |
 | **Kulturerbe-Physik** (Licht, Oberfläche) | **frei als Werkzeug** | Smartphone-RTI nur als Paper |
+| Pflanzenbestimmung/-entdeckung, gamifiziert | **dicht** | Seek (iNaturalist) — Badges/Challenges, auch für Ritzenpflanzen; Longitudinalspur derselben Pflanze bleibt Lücke |
+| Behördenbrief → Leichte Sprache | **dicht, ein Nachbar sehr nah** | Zetteln (zetteln.app) — live, DSGVO-konform, hybrid Cloud-Fallback; Zero-Cloud-Garantie bleibt Lücke |
 
 **Faustregel, jetzt mit zwei Runden Evidenz:** Wenn Endnutzer dafür zahlen würden oder eine Stadt es als Pressemitteilung verkaufen kann, existiert es. Frei ist, was ein Fachgremium als PDF veröffentlicht und niemand je in Software gegossen hat.
 
@@ -64,8 +66,11 @@ Wo Ideen schnell sterben — vor dem Suchen als Vorfilter nutzen.
 
 | Runde | Datum | Geprüft | Frei | Verengt | Unklar | Besetzt |
 |---|---|---|---|---|---|---|
-| 1 | Sep 2026 | 19 | 10 | 5 | – | 4 |
+| 1 | Sep 2026 | 19 | 8 | 7 | – | 4 |
 | 2 | 16.09.2026 | 13 | 2 | 1 | 2 | 8 |
+| Nachtrag | 18.09.2026 | 2 | – | 2 | – | – |
+
+Runde-1-Zahlen am 18.09.2026 korrigiert: Die elf Ideen, die ursprünglich als eine Sammelzeile „siehe jeweilige Dose" im Protokoll standen, waren nie einzeln ausgezählt (vorher grob 10/5 geschätzt, tatsächlich 8 frei/7 verengt — siehe `amelie-pruefprotokoll.md`, Runde 1). Der Nachtrag sind Crack Flora Watcher und KlarLokal, beide `verengt` (Seek bzw. Zetteln als Konkurrenz).
 
 Runde 2 zielte bewusst auf „Zivilgesellschaft" — und lag trotzdem bei ~23 %. **Die Zivilgesellschafts-Regel aus `_entsorgt.md` stimmt nur für Nischen ohne Endnutzer.** Alltagsthemen mit Bürgerbezug (Hitze, Miete, Schulweg) sind 2026 voll.
 
@@ -78,6 +83,12 @@ Runde 2 zielte bewusst auf „Zivilgesellschaft" — und lag trotzdem bei ~23 %.
 - **Gelernt:** Die drei Überlebenden kamen nicht aus Brainstorming, sondern aus Primärquellen (Leitfaden, Projektseite, Werkstattbericht). Nächste Runde: **von Quellen aus suchen, nicht von Einfällen aus.**
 - **Fehler:** Zu viele naheliegende Konsumideen ins Rennen geschickt; der Atlas oben hätte 5 davon ohne Suche aussortiert.
 - **Nächstes Mal ausprobieren:** Veröffentlichungslisten der LANA / Vogelschutzwarten / Thünen / BfN nach weiteren „Schema ohne Tool"-Fällen durchgehen.
+
+### Librarian-Audit — 18.09.2026 (kein Ideenrunde, Konsistenzprüfung)
+- **Gefunden:** Elf Runde-1-Ideen standen als eine Sammelzeile „siehe jeweilige Dose" im Protokoll statt einzeln — nicht Strg+F-fähig, Trefferquote war grob geschätzt statt ausgezählt (10/5 statt tatsächlich 8/7). Einzeln aus den Dosen nachgetragen.
+- **Gefunden:** Crack Flora Watcher und KlarLokal hatten trotz fertiger Dose und Matrix-Eintrag keine Protokollzeile (kamen als Nachzügler aus einer Runde außerhalb des Protokoll-Rhythmus). Nachgetragen, beide `verengt` — und ihre Konkurrenz (Seek, Zetteln) fehlte im Atlas.
+- **Nächstes Mal:** Wenn eine Runde außerhalb des normalen Rundenstart-Ablaufs Dosen erzeugt (z. B. aus einem anderen Tool/Modell), sofort eine Protokollzeile mitschreiben — nicht erst bei der nächsten Konsistenzprüfung.
+- **Offen für Runde 3:** die beiden `unklar`-Zeilen aus Runde 2 (Bebauungsplan-Leser, Tafel-Warenannahme) zuerst erneut prüfen, siehe Hinweis über der Runde-3-Tabelle im Protokoll.
 
 ### Runde 3 — <Datum>
 - Gelernt:
