@@ -355,14 +355,19 @@ Zu jeder Idee aus `ideas-neue-projekte.md`: wer davon profitiert, warum ausgerec
 | Wet Ink | 🔒 | Plan an Escape Motions u. a. | **gepackt**, behalten |
 | Crack Flora Watcher | 🎁 | #Krautschau / Senckenberg | **gepackt**, stark verengt (Seek deckt die Grundidee bereits) |
 | KlarLokal | 🎁 | Prototype Fund | **gepackt**, verengt (Zetteln existiert bereits, Zero-Cloud ist die Lücke) |
+| Lichtplan-Check | 🎁 | Landesumweltbehörden (z. B. Hamburg BUKEA) | **gepackt** |
+| Biotoptyp-Assistent | 🎁 | Ökologische Planungsbüros / BfN | **gepackt**, verengt, kurzes Prüfen-ab-Fenster (03/2027) |
+| Feuerkugel-Sofortnetz | 🎁 | *(Empfänger noch offen — Dose hat kein Empfänger-Feld)* | **gepackt**, verengt, zwei Teilideen in einer Dose |
 | ~~git-archaeologist~~ | ❌ | — | **entsorgt** — mehrfach gebaut |
 | ~~Home-Network MCP~~ | ❌ | — | **entsorgt** — ≥4 Fritzbox-MCPs |
 | ~~Repo-Museum~~ | ❌ | — | **entsorgt** — bereits gebaut |
 | ~~Commute Oracle~~ | ❌ | — | **entsorgt** — kommerziell besetzt |
 
-**Bilanz:** 17 Dosen gepackt (davon 8 mit verengter Prämisse), 2 davon behalten, **4 entsorgt**.
+**Bilanz:** 20 Dosen gepackt (davon 10 mit verengter Prämisse), 2 davon behalten, **4 entsorgt**.
 
 *Crack Flora Watcher und KlarLokal kamen am 18.9.2026 unfertig aus der `gemini changes`-Runde: keine Empfängerprüfung, erfundene E-Mail-Adressen, keine „Wer es schon versucht hat"-Sektion. Am selben Tag auf Vorlagen-Standard gebracht und nachrecherchiert (Seek bzw. Zetteln als bislang übersehene Konkurrenz gefunden, Prämisse entsprechend verengt). Empfängeradressen weiterhin bewusst nicht in Dose/Matrix — beim Zustellen von der Organisationsseite kopieren.*
+
+*Lichtplan-Check und Biotoptyp-Assistent kamen am 18.9.2026 aus Ideenrunde R3 (Researcher #1, `[method: ideenrunde]`) — sauber am Vorlagen-Standard, mit belegter „Wer es schon versucht hat"-Recherche, keine Korrektur nötig. Feuerkugel-Sofortnetz kam am selben Tag aus der Bisoziations-Runde (Researcher #3) — Verdikt und Struktur passen, aber der Dose fehlt das Empfänger-Feld; das noch nachtragen, bevor sie einen Zustellplan bekommt.*
 
 Begründungen für die Entsorgungen und das Muster dahinter: `dosen/_entsorgt.md`.
 
