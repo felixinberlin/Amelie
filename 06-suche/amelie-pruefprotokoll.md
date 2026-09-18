@@ -46,7 +46,12 @@ Details in `ideas-neue-projekte.md`, `amelie-matrix.md`, `dosen/_entsorgt.md`.
 
 ---
 
-## Runde 3 — <Datum>
+## Runde 3 — 18.09.2026
 
-| Idee | Urteil | Beleg | Prüfen ab |
+*A/B-Test: Zeilen aus der lacunar-bisociation-Methode sind mit `[method: bisociation]` markiert, zur Abgrenzung von den amelie-ideenrunde-Zeilen derselben Runde.*
+
+| Idee | Urteil | Beleg (kurz) | Prüfen ab |
 |---|---|---|---|
+| **Eichflächen-Trainer** — Kalibrierdeck mit Referenzflächen (Foto/Artenliste → Code raten → Abgleich mit Experten-Konsens) für Biotopkartierer-Nachwuchs | `frei` | [method: bisociation] Ausbildung läuft nur als mehrtägiger Präsenzkurs (ANL Bayern, Akademie für angewandte Vegetationskunde, Botanik Plus-Zertifizierung); explizit genannter Fachkräftemangel; kein digitales Kalibrier-/Spaced-Repetition-Tool gefunden (4 Suchen) | 09/2027 |
+| **Kartierlotse** — Live-Assistent im Feld, der während der Kartierung anzeigt, welche Zeigerart/Struktur noch fehlt, um zwischen zwei Biotopcodes zu entscheiden (für den deutschen Kartierschlüssel) | `verengt` | [method: bisociation] UK-Pendant existiert: e-Surveyor App sagt Habitattyp aus Artenliste voraus (Ridding et al., *Ecology and Evolution* 2026) — aber für UK-Klassifikation (Broad Habitat/UKHab/NVC), nachträgliche Vorhersage statt Live-Lückenhinweis, nicht für deutschen Kartierschlüssel. Vegapp (Schmidtlein 2026) digitalisiert nur die Dateneingabe. Lücke verengt auf: deutscher Schlüssel + Live-Hinweis *während* der Begehung | 09/2027 |
+| Strukturmonitoring per Smartphone-LiDAR (Verbuschung/Sukzession im Offenland, ehrenamtlich zwischen den Kartierzyklen) | `verengt`, nahe `besetzt` | [method: bisociation] Forschung deckt Kernidee bereits ab: Smartphone-LiDAR für Vegetationsstruktur ist 2025/26 aktives Forschungsfeld (bioRxiv Stammdurchmesser-Paper, iPhone-LiDAR-Genauigkeitsstudie, Garten+Landschaft-Fachartikel zu LiDAR-Grünpflege); Fachartikel nennt Sukzession/Verbuschung explizit als Anwendungsfall. Nicht gepackt — Atlas-Eintrag stattdessen | – |
