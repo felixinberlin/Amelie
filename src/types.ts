@@ -206,3 +206,22 @@ export interface CandidateIdea {
     bodyEn: string;
   };
 }
+
+export type StorageProvider = 'github_pages' | 'firebase';
+
+export interface IdeasDatabaseExport {
+  $schema?: string;
+  version: string;
+  generatedAt: string;
+  license: string;
+  storageProvider: string;
+  repository?: string;
+  stats: {
+    totalDosen: number;
+    totalUnpacked: number;
+    totalDiscarded: number;
+  };
+  dosen: DoseItem[];
+  unpackedCandidates: CandidateIdea[];
+  discarded?: any[];
+}

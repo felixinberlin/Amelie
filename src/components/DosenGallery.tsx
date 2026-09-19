@@ -73,16 +73,27 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({ dosen, lang, onSelec
   return (
     <div className="space-y-8 animate-fadeIn">
       {/* Intro Banner */}
-      <div className="rounded-2xl bg-amber-900/5 border border-amber-800/20 p-6 md:p-8">
-        <div className="max-w-3xl space-y-3">
-          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-amber-100/80 text-amber-900 text-xs font-semibold">
-            <Sparkles className="w-3.5 h-3.5 text-amber-700" />
-            <span>{t.ui.tins_badge}</span>
+      <div className="relative rounded-2xl bg-gradient-to-br from-[#faf4e8] via-[#f5ece0] to-[#eee2cf] border border-[#d8cbba] p-6 md:p-8 shadow-xs overflow-hidden">
+        {/* Subtle decorative background watermark */}
+        <div className="absolute right-4 top-2 select-none pointer-events-none opacity-10 hidden sm:block">
+          <div className="font-amelie text-8xl font-bold text-[#8c1d40]">1974</div>
+        </div>
+
+        <div className="relative max-w-3xl space-y-3">
+          <div className="flex flex-wrap items-center gap-2">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#8c1d40]/10 border border-[#8c1d40]/25 text-[#8c1d40] text-xs font-typewriter font-bold">
+              <Gift className="w-3.5 h-3.5 text-[#8c1d40]" />
+              <span>{lang === 'de' ? 'BOÎTES EN FER-BLANC · DOSEN-ARCHIV' : 'BOÎTES EN FER-BLANC · TIN ARCHIVE'}</span>
+            </div>
+            <span className="text-[11px] font-typewriter text-[#8b6f57] hidden sm:inline">
+              ✦ Montmartre 1997 · Berlin 2026 ✦
+            </span>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-bold font-serif-title text-stone-900 tracking-tight">
+
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-amelie text-[#2b1e16] tracking-tight">
             {t.ui.tins_heading}
           </h2>
-          <p className="text-sm sm:text-base text-stone-700 leading-relaxed">
+          <p className="text-sm sm:text-base text-[#5c4a3d] leading-relaxed font-sans">
             {t.ui.tins_subheading}
           </p>
         </div>
@@ -92,31 +103,31 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({ dosen, lang, onSelec
       <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
         {/* Search Input */}
         <div className="relative flex-1">
-          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400" />
+          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#8b6f57]" />
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder={t.ui.search_placeholder}
-            className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 text-sm focus:outline-hidden focus:ring-2 focus:ring-amber-800/20 focus:border-amber-800 shadow-xs"
+            className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[#d8cbba] bg-[#fdfbf7] text-[#2b1e16] text-sm focus:outline-hidden focus:ring-2 focus:ring-[#8c1d40]/20 focus:border-[#8c1d40] shadow-2xs font-medium"
           />
           {searchQuery && (
             <button
               onClick={() => setSearchQuery('')}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-stone-400 hover:text-stone-700"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-typewriter text-[#8b6f57] hover:text-[#2b1e16]"
             >
-              Clear
+              Effacer
             </button>
           )}
         </div>
 
         {/* Filters */}
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2.5">
           {/* Domain Dropdown */}
           <select
             value={selectedDomain}
             onChange={(e) => setSelectedDomain(e.target.value)}
-            className="px-3 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-800 text-xs font-medium focus:outline-hidden focus:ring-2 focus:ring-amber-800/20 shadow-xs"
+            className="px-3.5 py-2.5 rounded-xl border border-[#d8cbba] bg-[#fdfbf7] text-[#3d2f23] text-xs font-semibold focus:outline-hidden focus:ring-2 focus:ring-[#8c1d40]/20 shadow-2xs cursor-pointer"
           >
             {domainOptions.map((opt) => (
               <option key={opt.id} value={opt.id}>
@@ -129,7 +140,7 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({ dosen, lang, onSelec
           <select
             value={selectedVerdict}
             onChange={(e) => setSelectedVerdict(e.target.value)}
-            className="px-3 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-800 text-xs font-medium focus:outline-hidden focus:ring-2 focus:ring-amber-800/20 shadow-xs"
+            className="px-3.5 py-2.5 rounded-xl border border-[#d8cbba] bg-[#fdfbf7] text-[#3d2f23] text-xs font-semibold focus:outline-hidden focus:ring-2 focus:ring-[#8c1d40]/20 shadow-2xs cursor-pointer"
           >
             {verdictOptions.map((opt) => (
               <option key={opt.id} value={opt.id}>
@@ -161,142 +172,143 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({ dosen, lang, onSelec
               <div
                 key={dose.id}
                 onClick={() => onSelectDose(dose)}
-                className="group relative rounded-2xl bg-[#fdfbf7] border border-stone-200 hover:border-amber-800/40 p-6 flex flex-col justify-between transition-all duration-200 hover:shadow-lg cursor-pointer"
+                className="group relative rounded-2xl amelie-tin-box p-6 flex flex-col justify-between transition-all duration-200 hover:-translate-y-1 hover:shadow-xl cursor-pointer border border-[#d8cbba] hover:border-[#c5832b]"
               >
                 <div>
                   {/* Card Header Tag */}
                   <div className="flex items-center justify-between gap-2 mb-3">
                     <span
-                      className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium ${
+                      className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold shadow-2xs ${
                         isGift
-                          ? 'bg-emerald-50 text-emerald-800 border border-emerald-200'
+                          ? 'bg-[#1b4332] text-[#f4fbf7] border border-[#143527]'
                           : isBuildFirst
-                          ? 'bg-amber-50 text-amber-900 border border-amber-200'
-                          : 'bg-stone-100 text-stone-800 border border-stone-300'
+                          ? 'bg-[#c5832b] text-[#fffdfa] border border-[#a86c1f]'
+                          : 'bg-[#8c1d40] text-[#fff9f5] border border-[#721432]'
                       }`}
                     >
-                      {isGift && <Gift className="w-3 h-3 text-emerald-600" />}
-                      {isBuildFirst && <Hammer className="w-3 h-3 text-amber-700" />}
-                      {isKept && <Lock className="w-3 h-3 text-stone-600" />}
-                      <span>{getVerdictLabel(dose.verdict)}</span>
+                      {isGift && <Gift className="w-3 h-3 text-[#f6bd60]" />}
+                      {isBuildFirst && <Hammer className="w-3 h-3 text-[#fef08a]" />}
+                      {isKept && <Lock className="w-3 h-3 text-[#fbcfe8]" />}
+                      <span className="tracking-wide">{getVerdictLabel(dose.verdict)}</span>
                     </span>
 
                     {dose.aiFrontier && (
-                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-mono-code font-bold bg-indigo-50 text-indigo-900 border border-indigo-200 shadow-2xs">
-                        <Brain className="w-3 h-3 text-indigo-700" />
+                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-typewriter font-bold bg-[#264653]/15 text-[#1a3843] border border-[#264653]/30">
+                        <Brain className="w-3 h-3 text-[#264653]" />
                         <span>AI-Native</span>
                       </span>
                     )}
 
-                    <span className="text-xs font-mono-code text-stone-600">
+                    <span className="text-xs font-typewriter text-[#8b6f57]">
                       {dose.date}
                     </span>
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-lg font-bold font-serif-title text-stone-900 group-hover:text-amber-900 transition-colors tracking-tight flex items-center justify-between">
+                  <h3 className="text-xl font-bold font-amelie text-[#2b1e16] group-hover:text-[#8c1d40] transition-colors tracking-tight flex items-center justify-between mt-1">
                     <span>{dose.title}</span>
-                    <ArrowUpRight className="w-4 h-4 text-stone-400 group-hover:text-amber-800 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <ArrowUpRight className="w-4 h-4 text-[#8b6f57] group-hover:text-[#8c1d40] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </h3>
 
                   {/* Simulator badge if available */}
                   {dose.id === 'altbau-thermal' && onOpenSimulator && (
-                    <div className="mt-2">
+                    <div className="mt-2.5">
                       <button
                         type="button"
                         onClick={(e) => {
                           e.stopPropagation();
                           onOpenSimulator('altbau');
                         }}
-                        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-amber-100/90 hover:bg-amber-200 text-amber-900 text-xs font-mono-code font-bold transition-all shadow-2xs border border-amber-300/80"
+                        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#c5832b]/15 hover:bg-[#c5832b]/25 text-[#78350f] text-xs font-typewriter font-bold transition-all border border-[#c5832b]/30 shadow-2xs"
                       >
-                        <Sparkles className="w-3 h-3 text-amber-700" />
+                        <Sparkles className="w-3 h-3 text-[#c5832b]" />
                         <span>{lang === 'de' ? '🏢 Live-Wärmebilanz Simulator' : '🏢 Live Heat Loss Simulator'}</span>
                       </button>
                     </div>
                   )}
                   {dose.id === 'wet-ink-capillary' && onOpenSimulator && (
-                    <div className="mt-2">
+                    <div className="mt-2.5">
                       <button
                         type="button"
                         onClick={(e) => {
                           e.stopPropagation();
                           onOpenSimulator('wetink');
                         }}
-                        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-amber-100/90 hover:bg-amber-200 text-amber-900 text-xs font-mono-code font-bold transition-all shadow-2xs border border-amber-300/80"
+                        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#c5832b]/15 hover:bg-[#c5832b]/25 text-[#78350f] text-xs font-typewriter font-bold transition-all border border-[#c5832b]/30 shadow-2xs"
                       >
-                        <Sparkles className="w-3 h-3 text-amber-700" />
+                        <Sparkles className="w-3 h-3 text-[#c5832b]" />
                         <span>{lang === 'de' ? '🖋️ Live-Tinte Simulator' : '🖋️ Live Wet Ink Simulator'}</span>
                       </button>
                     </div>
                   )}
                   {dose.id === 'klarlokal' && onOpenSimulator && (
-                    <div className="mt-2">
+                    <div className="mt-2.5">
                       <button
                         type="button"
                         onClick={(e) => {
                           e.stopPropagation();
                           onOpenSimulator('klarlokal');
                         }}
-                        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-100/90 hover:bg-emerald-200 text-emerald-950 text-xs font-mono-code font-bold transition-all shadow-2xs border border-emerald-300/80"
+                        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#1b4332]/15 hover:bg-[#1b4332]/25 text-[#1b4332] text-xs font-typewriter font-bold transition-all border border-[#1b4332]/30 shadow-2xs"
                       >
-                        <Sparkles className="w-3 h-3 text-emerald-700" />
+                        <Sparkles className="w-3 h-3 text-[#1b4332]" />
                         <span>{lang === 'de' ? '🛡️ Live-Brecheisen Simulator' : '🛡️ Live Battering Ram'}</span>
                       </button>
                     </div>
                   )}
                   {dose.id === 'crack-flora-watcher' && onOpenSimulator && (
-                    <div className="mt-2">
+                    <div className="mt-2.5">
                       <button
                         type="button"
                         onClick={(e) => {
                           e.stopPropagation();
                           onOpenSimulator('crackflora');
                         }}
-                        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-lime-100/90 hover:bg-lime-200 text-lime-950 text-xs font-mono-code font-bold transition-all shadow-2xs border border-lime-400/80"
+                        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#2d5a27]/15 hover:bg-[#2d5a27]/25 text-[#1b4332] text-xs font-typewriter font-bold transition-all border border-[#2d5a27]/30 shadow-2xs"
                       >
-                        <Sparkles className="w-3 h-3 text-lime-800" />
+                        <Sparkles className="w-3 h-3 text-[#2d5a27]" />
                         <span>{lang === 'de' ? '🌱 Live-Ritzengrün Simulator' : '🌱 Live Pavement Lab'}</span>
                       </button>
                     </div>
                   )}
 
                   {/* One Liner */}
-                  <p className="mt-2 text-xs sm:text-sm text-stone-700 italic font-serif-title line-clamp-3 leading-relaxed">
-                    "{lang === 'de' ? dose.oneLinerDe : dose.oneLinerEn}"
+                  <p className="mt-2.5 text-xs sm:text-sm text-[#4a3b2c] italic font-amelie line-clamp-3 leading-relaxed">
+                    « {lang === 'de' ? dose.oneLinerDe : dose.oneLinerEn} »
                   </p>
 
                   {/* Recipient */}
-                  <div className="mt-4 pt-3 border-t border-stone-100">
-                    <span className="text-xs text-stone-600 block">
+                  <div className="mt-4 pt-3 border-t border-[#dfd1be]">
+                    <span className="text-[11px] font-typewriter text-[#8b6f57] uppercase tracking-wider block font-semibold">
                       {t.ui.recipient}
                     </span>
-                    <p className="text-xs font-semibold text-stone-800 line-clamp-1">
+                    <p className="text-xs font-bold text-[#2b1e16] line-clamp-1 mt-0.5">
                       {lang === 'de' ? dose.recipientsDe : dose.recipientsEn}
                     </p>
                   </div>
                 </div>
 
                 {/* Tags & Action */}
-                <div className="mt-5 pt-3 border-t border-stone-100 flex items-center justify-between">
+                <div className="mt-5 pt-3 border-t border-[#dfd1be] flex items-center justify-between">
                   <div className="flex flex-wrap gap-1">
                     {dose.tags.slice(0, 2).map((tag, idx) => (
                       <span
                         key={idx}
-                        className="text-xs px-2 py-0.5 rounded bg-stone-100 text-stone-600 font-medium"
+                        className="text-[11px] font-typewriter px-2 py-0.5 rounded bg-[#f5ede0] text-[#5c4a3d] border border-[#e2d5c3] font-medium"
                       >
                         {tag}
                       </span>
                     ))}
                     {dose.tags.length > 2 && (
-                      <span className="text-xs text-stone-600 px-1 py-0.5">
+                      <span className="text-[11px] font-typewriter text-[#8b6f57] px-1 py-0.5">
                         +{dose.tags.length - 2}
                       </span>
                     )}
                   </div>
 
-                  <span className="text-xs font-semibold text-amber-900 group-hover:underline">
-                    {t.ui.open_tin}
+                  <span className="text-xs font-bold font-amelie text-[#8c1d40] group-hover:underline flex items-center gap-1">
+                    <span>{t.ui.open_tin}</span>
+                    <span>→</span>
                   </span>
                 </div>
               </div>

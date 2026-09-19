@@ -13,12 +13,11 @@ Diese Liste sagt, **wo** gegraben wird, und hält fest, **was schon durchgegrabe
 
 | Quelle | Wonach suchen | Status | Zuletzt |
 |---|---|---|---|
-| LAG Vogelschutzwarten (vogelschutzwarten.de) | weitere Bewertungsverfahren außer Glas | `durchsucht` | 18.09.2026 |
-| LANA (Bund-Länder-AG Naturschutz) | Beschlüsse mit Bewertungsschemata | angekratzt — Eingriffsregelung/Biotopwertverfahren ist bereits gesetzlich kodifiziert (BKompV) und dürfte über kommerzielle Ökokonto-/Kompensationsflächen-Software abgedeckt sein; vor Ausformulieren einer Idee gegenchecken | 18.09.2026 |
-| Bundesamt für Naturschutz (BfN) | Skripten, Leitfäden, Kartieranleitungen | angekratzt — BfN-Schriften 721 „Kartieranleitung für die Biotoptypen nach Anlage 2 der BKompV" gefunden (668 Biotoptypen, feste Schwellenwerte, Kartiermethodik von Hand). Daraus entstanden: Biotoptyp-Assistent (`05-dosen/biotoptyp-assistent.md`) | 18.09.2026 |
+| LAG Vogelschutzwarten (vogelschutzwarten.de) | weitere Bewertungsverfahren außer Glas (Freileitungen, Windkraft sind besetzt; Licht?) | angekratzt | 16.09.2026 |
+| LANA (Bund-Länder-AG Naturschutz) | Beschlüsse mit Bewertungsschemata | offen | – |
+| Bundesamt für Naturschutz (BfN) | Skripten, Leitfäden, Kartieranleitungen | offen | – |
 | Senatsverwaltung Berlin, Umwelt | Leitfäden (z. B. „Bauen mit Glas und Licht", 2021) | offen | – |
 | Denkmalbehörden, Landesämter | Schadenskartierungs-Anleitungen | offen | – |
-| Landesumweltbehörden „Licht & Naturschutz" (Hamburg BUKEA u. a.) | weitere Länder-Leitfäden ohne Tool (analog zu Hamburg) | angekratzt — **ergiebig, Lichtplan-Check entstand hieraus** | 18.09.2026 |
 
 **Suchstring:** `<Gremium> Bewertungsverfahren Punktesystem` · `<Gremium> Kartieranleitung` · `<Gremium> Checkliste Vollzug`
 

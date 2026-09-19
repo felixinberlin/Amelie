@@ -18,6 +18,7 @@ export interface I18nCatalog {
     whimsy: string;
     packer: string;
     discarded: string;
+    githubPages: string;
   };
   pledge: {
     title: string;
@@ -87,6 +88,7 @@ export const TRANSLATIONS: Record<Language, I18nCatalog> = {
       whimsy: 'Funny & Better',
       packer: 'Pack a Tin',
       discarded: 'Discarded',
+      githubPages: 'GitHub Pages & Data',
     },
     pledge: {
       title: 'The Amélie Pledge (printed on every tin)',
@@ -174,6 +176,7 @@ export const TRANSLATIONS: Record<Language, I18nCatalog> = {
       whimsy: 'Heiter & Besser',
       packer: 'Dose packen',
       discarded: 'Entsorgt',
+      githubPages: 'GitHub Pages & Daten',
     },
     pledge: {
       title: 'Der Amélie-Pledge (auf jeder Dose)',
@@ -261,6 +264,7 @@ export const TRANSLATIONS: Record<Language, I18nCatalog> = {
       whimsy: 'Alegre y Mejor',
       packer: 'Empacar una Lata',
       discarded: 'Descartadas',
+      githubPages: 'GitHub Pages y Datos',
     },
     pledge: {
       title: 'El Compromiso Amélie (impreso en cada lata)',

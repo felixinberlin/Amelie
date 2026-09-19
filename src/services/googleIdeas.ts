@@ -165,3 +165,20 @@ export async function searchGmailIdeas(queryStr: string = 'idea OR idee OR "app 
 
   return items;
 }
+
+/**
+ * Fetches the static ideas database from public/data/amelie-ideas.json
+ * (Works natively on GitHub Pages without credentials or Firebase database).
+ */
+export async function fetchStaticIdeasData(): Promise<any> {
+  try {
+    const url = new URL('data/amelie-ideas.json', window.location.href);
+    const res = await fetch(url.toString());
+    if (res.ok) {
+      return await res.json();
+    }
+  } catch (e) {
+    console.warn('Failed to fetch static ideas dataset:', e);
+  }
+  return null;
+}

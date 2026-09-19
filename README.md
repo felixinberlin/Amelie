@@ -33,6 +33,11 @@ For details on contributing translations or updating strings via CAT tools (Omeg
 | know what this is about | `01-konzept/amelie-manifest.md` |
 | actually do it | `03-zuordnung/amelie-zustellplan-q4-2026.md` — three ready-to-send outreach emails |
 | know whether this works | `02-recherche/amelie-landschaft.md` and `…-bewegungen.md` |
+| contribute ideas or code | [`CONTRIBUTING.md`](./CONTRIBUTING.md) |
+| understand our growth vision | [`ROADMAP.md`](./ROADMAP.md) |
+| learn how decisions are made | [`GOVERNANCE.md`](./GOVERNANCE.md) |
+| read developer & software docs | [`ARCHITECTURE.md`](./ARCHITECTURE.md) |
+| check community guidelines | [`CODE_OF_CONDUCT.md`](./CODE_OF_CONDUCT.md) |
 | package an idea of your own | `04-werkzeug/amelie-vorlagen.md` |
 | start a new round of ideas | `06-suche/amelie-rundenstart.md` |
 | contribute or edit translations (XLIFF) | `04-werkzeug/amelie-i18n-xliff.md` |

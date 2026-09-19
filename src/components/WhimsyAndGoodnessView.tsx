@@ -194,29 +194,29 @@ export const WhimsyAndGoodnessView: React.FC<WhimsyAndGoodnessViewProps> = ({ la
   return (
     <div className="max-w-6xl mx-auto space-y-10 pb-20">
       {/* Header Banner */}
-      <div className="bg-[#fcfaf6] border border-amber-900/15 rounded-3xl p-6 md:p-10 space-y-5 shadow-sm relative overflow-hidden">
-        <div className="absolute top-0 right-0 transform translate-x-12 -translate-y-12 w-80 h-80 bg-amber-300/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="bg-gradient-to-br from-[#faf4e8] via-[#f5ece0] to-[#eee2cf] border border-[#d8cbba] rounded-3xl p-6 md:p-10 space-y-5 shadow-sm relative overflow-hidden">
+        <div className="absolute top-0 right-0 transform translate-x-12 -translate-y-12 w-80 h-80 bg-[#c5832b]/15 rounded-full blur-3xl pointer-events-none" />
         
-        <div className="flex flex-wrap items-center gap-2 text-xs font-mono tracking-wider uppercase text-amber-950 font-semibold">
-          <span className="px-3 py-1 rounded-md bg-amber-100/90 border border-amber-300/80 flex items-center gap-1.5 shadow-2xs">
-            <Sparkles className="w-3.5 h-3.5 text-amber-700 fill-amber-700" />
-            {lang === 'de' ? 'Das Amélie-Prinzip' : 'The Amélie Principle'}
+        <div className="flex flex-wrap items-center gap-2 text-xs font-typewriter tracking-wider uppercase text-[#701531] font-bold">
+          <span className="px-3 py-1 rounded-full bg-[#8c1d40]/10 border border-[#8c1d40]/25 flex items-center gap-1.5 shadow-2xs">
+            <Sparkles className="w-3.5 h-3.5 text-[#8c1d40]" />
+            {lang === 'de' ? '✦ Le Fabuleux Destin d\'Amélie ✦' : '✦ The Amélie Principle ✦'}
           </span>
-          <span className="px-2.5 py-1 rounded-md bg-emerald-100 text-emerald-900 border border-emerald-300 font-bold">
-            {lang === 'de' ? 'Heiter & Besser' : 'Funny & Better'}
+          <span className="px-3 py-1 rounded-full bg-[#1b4332]/10 text-[#1b4332] border border-[#1b4332]/25 font-bold">
+            {lang === 'de' ? 'Montmartre · Café des 2 Moulins' : 'Montmartre · Café des 2 Moulins'}
           </span>
-          <span className="px-2.5 py-1 rounded-md bg-stone-100 text-stone-700 border border-stone-200">
+          <span className="px-3 py-1 rounded-full bg-[#c5832b]/10 text-[#78350f] border border-[#c5832b]/25">
             {lang === 'de' ? 'Freude ohne Rechnung' : 'Joy with Zero Invoice'}
           </span>
         </div>
 
         <div className="space-y-3 max-w-4xl">
-          <h1 className="text-2xl md:text-4xl font-serif text-stone-900 tracking-tight leading-tight">
+          <h1 className="text-2xl md:text-4xl font-amelie font-bold text-[#2b1e16] tracking-tight leading-tight">
             {lang === 'de'
-              ? '„Wir wollen die Welt zu einem heiteren und besseren Ort machen."'
-              : '"We want to make the world a funny and better place."'}
+              ? '« Nous voulons rendre le monde plus joyeux et meilleur. »'
+              : '« We want to make the world a funny and better place. »'}
           </h1>
-          <p className="text-stone-700 text-sm md:text-base leading-relaxed font-serif">
+          <p className="text-[#4a3b2c] text-sm md:text-base leading-relaxed font-sans">
             {lang === 'de'
               ? 'Die Welt ertrinkt in zynischen Apps, Mahnungen, kalten Tabellen und endlosen Abos. Amélie Poulain erinnerte uns daran: Echte Veränderung beginnt oft mit einem Augenzwinkern — einem reisenden Gartenzwerg, dem Knacken des Zuckers auf der Crème Brûlée, einer heimlich bezahlten Tasse Kaffee oder einem Werkzeug, das einer Krankenschwester nachts 300 Euro zustehendes Gehalt rettet.'
               : 'The world is drowning in cynical SaaS apps, debt collection letters, and endless subscription fees. Amélie Poulain reminded us that genuine change begins with a conspiratorial wink—a traveling garden gnome, the crack of caramelized sugar on crème brûlée, an anonymously gifted coffee, or a tool that saves an exhausted nurse €300 in missing night pay.'}
@@ -225,36 +225,36 @@ export const WhimsyAndGoodnessView: React.FC<WhimsyAndGoodnessViewProps> = ({ la
 
         {/* Amélie's Secret Joys Bar */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs">
-          <div className="p-3.5 rounded-2xl bg-white/80 border border-amber-200/80 space-y-1 shadow-2xs">
-            <span className="font-bold text-stone-900 block flex items-center gap-1.5">
-              <Utensils className="w-3.5 h-3.5 text-amber-700" />
+          <div className="p-4 rounded-2xl bg-[#faf3e6] border border-[#d8cbba] space-y-1 shadow-2xs">
+            <span className="font-amelie font-bold text-sm text-[#2b1e16] block flex items-center gap-1.5">
+              <Utensils className="w-4 h-4 text-[#c5832b]" />
               {lang === 'de' ? 'Crème Brûlée knacken' : 'Crack Crème Brûlée'}
             </span>
-            <span className="text-stone-600 leading-snug block">
+            <span className="text-[#5c4a3d] leading-snug block">
               {lang === 'de'
                 ? 'Den Teelöffel umdrehen und mit der Spitze die karamellisierte Kruste knacken lassen.'
                 : 'Turn the teaspoon upside down and snap the brittle sugar crust with the tip.'}
             </span>
           </div>
 
-          <div className="p-3.5 rounded-2xl bg-white/80 border border-amber-200/80 space-y-1 shadow-2xs">
-            <span className="font-bold text-stone-900 block flex items-center gap-1.5">
-              <Waves className="w-3.5 h-3.5 text-sky-600" />
+          <div className="p-4 rounded-2xl bg-[#faf3e6] border border-[#d8cbba] space-y-1 shadow-2xs">
+            <span className="font-amelie font-bold text-sm text-[#2b1e16] block flex items-center gap-1.5">
+              <Waves className="w-4 h-4 text-[#1b4332]" />
               {lang === 'de' ? 'Steinehüpfen am Kanal' : 'Stone Skipping on Canal'}
             </span>
-            <span className="text-stone-600 leading-snug block">
+            <span className="text-[#5c4a3d] leading-snug block">
               {lang === 'de'
                 ? 'Flache Kieselsteine auf dem Canal Saint-Martin springen lassen: eins, zwei, drei, vier!'
                 : 'Flick flat river stones across calm canal waters: one, two, three, four skips!'}
             </span>
           </div>
 
-          <div className="p-3.5 rounded-2xl bg-white/80 border border-amber-200/80 space-y-1 shadow-2xs">
-            <span className="font-bold text-stone-900 block flex items-center gap-1.5">
-              <Gift className="w-3.5 h-3.5 text-rose-600" />
+          <div className="p-4 rounded-2xl bg-[#faf3e6] border border-[#d8cbba] space-y-1 shadow-2xs">
+            <span className="font-amelie font-bold text-sm text-[#2b1e16] block flex items-center gap-1.5">
+              <Gift className="w-4 h-4 text-[#8c1d40]" />
               {lang === 'de' ? 'Die Kula-Gabe' : 'The Kula Gift'}
             </span>
-            <span className="text-stone-600 leading-snug block">
+            <span className="text-[#5c4a3d] leading-snug block">
               {lang === 'de'
                 ? 'Einem Fremden etwas schenken, das sein Leben leichter macht — und dann spurlos verschwinden.'
                 : 'Gift a stranger something that lightens their burden—and quietly vanish.'}

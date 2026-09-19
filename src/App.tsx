@@ -12,13 +12,15 @@ import { SearchPlaybookStudio } from './components/SearchPlaybookStudio';
 import { GoogleAccountImporter } from './components/GoogleAccountImporter';
 import { NormalJobsExplorer } from './components/NormalJobsExplorer';
 import { WhimsyAndGoodnessView } from './components/WhimsyAndGoodnessView';
+import { GitHubPagesDataHub } from './components/GitHubPagesDataHub';
 import { DOSEN_DATA, DISCARDED_DATA } from './data/dosen';
 import { MATRIX_DATA } from './data/matrix';
 import { DELIVERIES_DATA } from './data/deliveries';
 import { CANDIDATE_IDEAS_DATA } from './data/unpacked';
 import { DoseItem, Language, CandidateIdea } from './types';
 import { getTranslation } from './i18n';
-import { Gift } from 'lucide-react';
+import { getActiveDosen, getActiveCandidates, saveCandidateLocal } from './services/storageService';
+import { Gift, FolderGit2 } from 'lucide-react';
 
 export function App() {
   const [currentTab, setCurrentTab] = useState<string>('dosen');
@@ -27,16 +29,25 @@ export function App() {
   const [selectedDose, setSelectedDose] = useState<DoseItem | null>(null);
   const [packerDraft, setPackerDraft] = useState<any>(null);
   const [importedCandidates, setImportedCandidates] = useState<CandidateIdea[]>([]);
+  const [dosenList, setDosenList] = useState<DoseItem[]>(getActiveDosen);
+  const [candidatesList, setCandidatesList] = useState<CandidateIdea[]>(getActiveCandidates);
   const t = getTranslation(lang);
 
+  const refreshData = () => {
+    setDosenList(getActiveDosen());
+    setCandidatesList(getActiveCandidates());
+  };
+
   const handleSelectDoseById = (doseId: string) => {
-    const found = DOSEN_DATA.find((d: DoseItem) => d.id === doseId);
+    const found = dosenList.find((d: DoseItem) => d.id === doseId);
     if (found) {
       setSelectedDose(found);
     }
   };
 
   const handleAddToCandidates = (newCand: CandidateIdea) => {
+    saveCandidateLocal(newCand);
+    setCandidatesList(getActiveCandidates());
     setImportedCandidates((prev) => [newCand, ...prev]);
     setCurrentTab('unpacked');
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -101,15 +112,15 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#fdfbf7] text-stone-900 flex flex-col font-sans selection:bg-amber-200 selection:text-amber-900">
+    <div className="min-h-screen bg-[#fbf7f0] text-[#2b1e16] flex flex-col font-sans selection:bg-[#f6bd60]/40 selection:text-[#701531]">
       {/* Top Navigation */}
       <Header
         currentTab={currentTab}
         setCurrentTab={setCurrentTab}
         lang={lang}
         setLang={setLang}
-        dosenCount={DOSEN_DATA.length}
-        unpackedCount={CANDIDATE_IDEAS_DATA.length + importedCandidates.length}
+        dosenCount={dosenList.length}
+        unpackedCount={candidatesList.length + importedCandidates.length}
         discardedCount={DISCARDED_DATA.length}
         mailsCount={DELIVERIES_DATA.length}
       />
@@ -118,7 +129,7 @@ export function App() {
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-10">
         {currentTab === 'dosen' && (
           <DosenGallery
-            dosen={DOSEN_DATA}
+            dosen={dosenList}
             lang={lang}
             onSelectDose={setSelectedDose}
             onOpenSimulator={handleOpenSimulator}
@@ -142,6 +153,15 @@ export function App() {
             lang={lang}
             onPackIdea={handlePackCandidate}
             externalCandidates={importedCandidates}
+          />
+        )}
+
+        {currentTab === 'data-hub' && (
+          <GitHubPagesDataHub
+            lang={lang}
+            dosen={dosenList}
+            candidates={candidatesList}
+            onDataChanged={refreshData}
           />
         )}
 
@@ -175,7 +195,7 @@ export function App() {
           <MatrixView
             matrix={MATRIX_DATA}
             deliveries={DELIVERIES_DATA}
-            dosen={DOSEN_DATA}
+            dosen={dosenList}
             lang={lang}
             onSelectDoseById={handleSelectDoseById}
             onSwitchToUnpacked={() => setCurrentTab('unpacked')}
@@ -208,22 +228,35 @@ export function App() {
       )}
 
       {/* Footer */}
-      <footer className="border-t border-stone-200/80 bg-[#fbf9f4] mt-auto">
+      <footer className="border-t border-[#dfd1be] bg-gradient-to-b from-[#f8f1e5] to-[#f0e3ce] mt-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-stone-600">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#5c4a3d]">
             <div className="flex items-center gap-2">
-              <Gift className="w-4 h-4 text-amber-800" />
-              <span className="font-serif-title font-semibold text-stone-800">
-                Amélie · Berlin
+              <span className="p-1 rounded-full bg-[#8c1d40]/10 text-[#8c1d40]">
+                <Gift className="w-4 h-4" />
               </span>
-              <span>—</span>
+              <span className="font-amelie font-bold text-sm text-[#2b1e16]">
+                Amélie Poulain · Kula-Ring
+              </span>
+              <span className="text-[#8b6f57]">✦</span>
               <span>{t.ui.footer_text}</span>
             </div>
 
-            <div className="flex items-center gap-4 text-stone-600">
-              <span>{t.ui.footer_quote}</span>
-              <span className="hidden sm:inline">·</span>
-              <span className="font-mono-code">Félix (Berlin), 2026</span>
+            <div className="flex flex-wrap items-center justify-center gap-3 text-[#5c4a3d] font-typewriter">
+              <button
+                onClick={() => {
+                  setCurrentTab('data-hub');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white border border-[#dfd1be] hover:border-[#8c1d40] text-[#2b1e16] text-[11px] font-semibold transition-colors cursor-pointer"
+              >
+                <FolderGit2 className="w-3.5 h-3.5 text-[#2e7d32]" />
+                <span>GitHub Pages (JSON & Markdown)</span>
+              </button>
+              <span className="hidden sm:inline text-[#8b6f57]">·</span>
+              <span className="italic font-amelie text-xs text-[#4a3b2c]">« {t.ui.footer_quote} »</span>
+              <span className="hidden sm:inline text-[#8b6f57]">·</span>
+              <span className="text-[#8c1d40] font-bold">Félix (Berlin), 2026</span>
             </div>
           </div>
         </div>

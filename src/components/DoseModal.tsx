@@ -189,26 +189,26 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-stone-900/60 backdrop-blur-xs flex items-center justify-center p-3 sm:p-4 md:p-6 animate-fadeIn print:p-0 print:bg-white print:fixed print:inset-0">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-stone-950/70 backdrop-blur-xs flex items-center justify-center p-3 sm:p-4 md:p-6 animate-fadeIn print:p-0 print:bg-white print:fixed print:inset-0">
       <div 
-        className="bg-[#fdfbf7] w-full max-w-4xl rounded-2xl border border-amber-900/20 shadow-2xl overflow-hidden flex flex-col max-h-[92vh] print:max-h-none print:h-auto print:border-none print:shadow-none print:rounded-none"
+        className="bg-[#fcf9f2] w-full max-w-4xl rounded-2xl border-2 border-[#c5832b]/60 shadow-2xl overflow-hidden flex flex-col max-h-[92vh] print:max-h-none print:h-auto print:border-none print:shadow-none print:rounded-none relative"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Modal Top Bar */}
-        <div className="bg-stone-900 text-stone-100 px-6 py-4 flex items-center justify-between border-b border-stone-800 print:bg-white print:text-black print:border-b-2 print:border-stone-900 print:px-0">
-          <div className="flex items-center gap-3">
-            <span className="text-xl print:hidden">
+        {/* Modal Top Bar - Deep Amélie Wine & Brass */}
+        <div className="bg-[#701531] text-[#fff9f5] px-6 py-4 flex items-center justify-between border-b-2 border-[#c5832b]/40 print:bg-white print:text-black print:border-b-2 print:border-stone-900 print:px-0">
+          <div className="flex items-center gap-3.5">
+            <span className="text-2xl print:hidden transform -rotate-3">
               {dose.verdict === 'gift' ? '🎁' : dose.verdict === 'build_first' ? '🔨' : '🔒'}
             </span>
             <div>
               <div className="flex items-center gap-2">
-                <span className="text-xs uppercase font-mono-code tracking-widest text-amber-400 print:text-stone-900 font-bold">
-                  {lang === 'de' ? 'Amélie Blechdose' : lang === 'es' ? 'Lata Amélie' : 'Amélie Tin Canister'}
+                <span className="text-[11px] uppercase font-typewriter tracking-widest text-[#f6bd60] print:text-stone-900 font-bold">
+                  {lang === 'de' ? 'Boîte en fer-blanc · Dosen-Inhalt' : lang === 'es' ? 'Boîte en fer-blanc · Contenido' : 'Boîte en fer-blanc · Tin Canister'}
                 </span>
-                <span className="text-stone-500">·</span>
-                <span className="text-xs text-stone-300 font-mono-code print:text-stone-600">{dose.id}.md</span>
+                <span className="text-[#c5832b]">·</span>
+                <span className="text-xs text-[#fde047]/90 font-typewriter print:text-stone-600">{dose.id}.md</span>
               </div>
-              <h2 className="text-lg font-serif-title font-bold text-white print:text-black tracking-tight">
+              <h2 className="text-xl font-amelie font-bold text-white print:text-black tracking-tight">
                 {dose.title}
               </h2>
             </div>
@@ -217,21 +217,21 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
           <div className="flex items-center gap-2 print:hidden">
             <button
               onClick={printDossier}
-              className="p-1.5 rounded-lg text-stone-300 hover:text-white hover:bg-stone-800 transition-colors"
+              className="p-2 rounded-lg text-[#f4ede0] hover:text-white hover:bg-[#8c1d40] transition-colors"
               title={lang === 'de' ? 'Dossier als A4 drucken' : 'Print A4 Dossier'}
             >
-              <Printer className="w-4 h-4" />
+              <Printer className="w-4 h-4 text-[#f6bd60]" />
             </button>
             <button
               onClick={downloadMarkdown}
-              className="p-1.5 rounded-lg text-stone-300 hover:text-white hover:bg-stone-800 transition-colors"
+              className="p-2 rounded-lg text-[#f4ede0] hover:text-white hover:bg-[#8c1d40] transition-colors"
               title={lang === 'de' ? 'Markdown herunterladen' : lang === 'es' ? 'Descargar markdown' : 'Download markdown file'}
             >
-              <Download className="w-4 h-4" />
+              <Download className="w-4 h-4 text-[#f6bd60]" />
             </button>
             <button
               onClick={onClose}
-              className="p-1.5 rounded-lg text-stone-400 hover:text-white hover:bg-stone-800 transition-colors"
+              className="p-2 rounded-lg text-[#f4ede0] hover:text-white hover:bg-[#8c1d40] transition-colors"
               title={t.ui.close}
             >
               <X className="w-5 h-5" />
@@ -240,27 +240,27 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
         </div>
 
         {/* Modal Scrollable Body */}
-        <div className="p-6 md:p-8 overflow-y-auto space-y-6 text-stone-800">
+        <div className="p-6 md:p-8 overflow-y-auto space-y-6 text-[#2b1e16]">
           {/* One Liner Box */}
-          <div className="p-4 rounded-xl bg-amber-50/80 border border-amber-200/80 text-amber-950 font-serif-title text-base sm:text-lg italic leading-relaxed">
-            "{lang === 'de' ? dose.oneLinerDe : dose.oneLinerEn}"
+          <div className="p-5 rounded-2xl bg-gradient-to-br from-[#faf3e6] to-[#f4e9d5] border border-[#d8cbba] text-[#3b2a1c] font-amelie text-lg sm:text-xl italic leading-relaxed shadow-xs">
+            « {lang === 'de' ? dose.oneLinerDe : dose.oneLinerEn} »
           </div>
 
           {/* Metadata Row */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs bg-stone-100 p-4 rounded-xl border border-stone-200">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs bg-[#f4ede0] p-4 rounded-xl border border-[#dfd1be]">
             <div>
-              <span className="text-stone-500 block font-medium">
+              <span className="text-[#8b6f57] block font-typewriter uppercase tracking-wider font-semibold">
                 {t.ui.recipient}
               </span>
-              <span className="font-semibold text-stone-900">
+              <span className="font-bold text-[#2b1e16] text-sm">
                 {lang === 'de' ? dose.recipientsDe : dose.recipientsEn}
               </span>
             </div>
             <div>
-              <span className="text-stone-500 block font-medium">
+              <span className="text-[#8b6f57] block font-typewriter uppercase tracking-wider font-semibold">
                 {lang === 'de' ? 'Verdikt:' : lang === 'es' ? 'Veredicto:' : 'Verdict:'}
               </span>
-              <span className="font-semibold text-stone-900">
+              <span className="font-bold text-[#8c1d40] text-sm">
                 {dose.verdict === 'gift'
                   ? t.ui.verdict_gift
                   : dose.verdict === 'build_first'
@@ -269,65 +269,65 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
               </span>
             </div>
             <div>
-              <span className="text-stone-500 block font-medium">
+              <span className="text-[#8b6f57] block font-typewriter uppercase tracking-wider font-semibold">
                 {lang === 'de' ? 'Stand:' : lang === 'es' ? 'Fecha:' : 'Date:'}
               </span>
-              <span className="font-semibold text-stone-800 font-mono-code">
+              <span className="font-bold text-[#2b1e16] font-typewriter">
                 {dose.date}
               </span>
             </div>
           </div>
 
-          {/* The Pledge Banner */}
-          <div className="p-4 rounded-xl bg-stone-900 text-stone-100 border border-amber-900/40 relative">
+          {/* The Pledge Banner - Styled like vintage velvet jewelry box */}
+          <div className="p-5 rounded-2xl bg-[#1b4332] text-[#f4fbf7] border-2 border-[#2d5a27] relative shadow-sm">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-xs font-mono-code uppercase text-amber-400 font-bold tracking-wider flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5" />
-                {t.pledge.title}
+              <span className="text-xs font-typewriter uppercase text-[#f6bd60] font-bold tracking-wider flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5 text-[#f6bd60]" />
+                {t.pledge.title} · PLEDGE CC0
               </span>
               <button
                 onClick={copyPledge}
-                className="flex items-center gap-1 text-xs text-stone-300 hover:text-white px-2 py-1 rounded bg-stone-800 hover:bg-stone-700 transition-colors"
+                className="flex items-center gap-1 text-xs text-[#f4fbf7] hover:text-white px-3 py-1 rounded-lg bg-[#143527] hover:bg-[#0e271c] transition-colors border border-[#2d5a27]"
               >
                 {copiedPledge ? (
                   <>
-                    <Check className="w-3.5 h-3.5 text-emerald-400" />
-                    <span className="text-emerald-400">{t.pledge.copied}</span>
+                    <Check className="w-3.5 h-3.5 text-[#86efac]" />
+                    <span className="text-[#86efac] font-typewriter">{t.pledge.copied}</span>
                   </>
                 ) : (
                   <>
-                    <Copy className="w-3.5 h-3.5" />
-                    <span>{t.pledge.copy}</span>
+                    <Copy className="w-3.5 h-3.5 text-[#f6bd60]" />
+                    <span className="font-typewriter">{t.pledge.copy}</span>
                   </>
                 )}
               </button>
             </div>
-            <p className="font-serif-title italic text-sm text-stone-200 leading-relaxed">
-              "{AMELIE_PLEDGE[lang]}"
+            <p className="font-amelie italic text-sm text-[#ecfdf5] leading-relaxed">
+              « {AMELIE_PLEDGE[lang]} »
             </p>
           </div>
 
           {/* Section 1: Problem */}
           <div className="space-y-2">
-            <h3 className="text-sm font-bold font-mono-code uppercase tracking-wider text-stone-600 flex items-center gap-2">
-              <AlertTriangle className="w-4 h-4 text-amber-700" />
+            <h3 className="text-sm font-bold font-typewriter uppercase tracking-wider text-[#8c1d40] flex items-center gap-2">
+              <AlertTriangle className="w-4 h-4 text-[#8c1d40]" />
               {lang === 'de' ? 'Das Problem' : lang === 'es' ? 'El Problema' : 'The Friction & Problem'}
             </h3>
-            <p className="text-sm text-stone-800 leading-relaxed">
+            <p className="text-sm text-[#3b2a1c] leading-relaxed bg-[#fbf7f0] p-4 rounded-xl border border-[#e8ded0]">
               {lang === 'de' ? dose.problemDe : dose.problemEn}
             </p>
           </div>
 
           {/* Section 2: Why now */}
           <div className="space-y-2">
-            <h3 className="text-sm font-bold font-mono-code uppercase tracking-wider text-stone-600 flex items-center gap-2">
-              <Lightbulb className="w-4 h-4 text-amber-600" />
+            <h3 className="text-sm font-bold font-typewriter uppercase tracking-wider text-[#8c1d40] flex items-center gap-2">
+              <Lightbulb className="w-4 h-4 text-[#c5832b]" />
               {lang === 'de' ? 'Warum das jetzt geht (Technologie-Knick)' : lang === 'es' ? 'Por qué ahora (Avance técnico)' : 'Why Now (Technical Breakthrough)'}
             </h3>
-            <ul className="space-y-2 text-sm text-stone-800">
+            <ul className="space-y-2 text-sm text-[#3b2a1c]">
               {(lang === 'de' ? dose.whyNowDe : dose.whyNowEn).map((point, index) => (
-                <li key={index} className="flex items-start gap-2.5">
-                  <span className="w-5 h-5 rounded-full bg-amber-100 text-amber-900 flex items-center justify-center text-xs font-mono-code font-bold shrink-0 mt-0.5">
+                <li key={index} className="flex items-start gap-3 p-3 rounded-xl bg-[#fbf7f0] border border-[#e8ded0]">
+                  <span className="w-5 h-5 rounded-full bg-[#c5832b]/20 text-[#78350f] flex items-center justify-center text-xs font-typewriter font-bold shrink-0 mt-0.5">
                     {index + 1}
                   </span>
                   <span>{point}</span>
@@ -338,30 +338,30 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
 
           {/* Section 3: Sketch */}
           <div className="space-y-2">
-            <h3 className="text-sm font-bold font-mono-code uppercase tracking-wider text-stone-600 flex items-center gap-2">
-              <Wrench className="w-4 h-4 text-stone-700" />
+            <h3 className="text-sm font-bold font-typewriter uppercase tracking-wider text-[#8c1d40] flex items-center gap-2">
+              <Wrench className="w-4 h-4 text-[#5c4a3d]" />
               {lang === 'de' ? 'Skizze & Architektur' : lang === 'es' ? 'Esquema y Arquitectura' : 'Sketch & Architecture'}
             </h3>
-            <div className="p-4 rounded-xl bg-stone-100/80 border border-stone-200 text-sm text-stone-800 leading-relaxed font-sans">
+            <div className="p-4 rounded-xl bg-[#f4ede0] border border-[#dfd1be] text-sm text-[#2b1e16] leading-relaxed font-sans">
               {lang === 'de' ? dose.sketchDe : dose.sketchEn}
             </div>
           </div>
 
           {/* Section 4: Ticket #1 */}
           <div className="space-y-2">
-            <h3 className="text-sm font-bold font-mono-code uppercase tracking-wider text-stone-600 flex items-center gap-2">
-              <Target className="w-4 h-4 text-emerald-700" />
+            <h3 className="text-sm font-bold font-typewriter uppercase tracking-wider text-[#1b4332] flex items-center gap-2">
+              <Target className="w-4 h-4 text-[#1b4332]" />
               {lang === 'de' ? 'Erster Schritt (Ticket #1)' : lang === 'es' ? 'Primer paso (Ticket #1)' : 'First Milestone (Ticket #1)'}
             </h3>
-            <div className="p-4 rounded-xl bg-emerald-50/50 border border-emerald-200/80 space-y-2">
-              <div className="font-semibold text-emerald-950 text-sm flex items-center gap-2">
-                <span className="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 text-xs font-mono-code">
+            <div className="p-4 rounded-xl bg-[#1b4332]/10 border border-[#1b4332]/30 space-y-2">
+              <div className="font-bold text-[#1b4332] text-sm flex items-center gap-2">
+                <span className="px-2 py-0.5 rounded bg-[#1b4332] text-[#f4fbf7] text-xs font-typewriter">
                   Ticket 1
                 </span>
                 <span>{lang === 'de' ? dose.firstStepDe.ticket : dose.firstStepEn.ticket}</span>
               </div>
-              <div className="text-xs text-emerald-900/90 pl-1">
-                <span className="font-semibold text-emerald-950">
+              <div className="text-xs text-[#143527] pl-1 font-medium">
+                <span className="font-bold">
                   {lang === 'de' ? 'Fertig, wenn: ' : lang === 'es' ? 'Completado cuando: ' : 'Done when: '}
                 </span>
                 {lang === 'de' ? dose.firstStepDe.criteria : dose.firstStepEn.criteria}
@@ -371,21 +371,21 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
 
           {/* Section 5: Failure mode */}
           <div className="space-y-2">
-            <h3 className="text-sm font-bold font-mono-code uppercase tracking-wider text-stone-600 flex items-center gap-2">
-              <ShieldAlert className="w-4 h-4 text-rose-700" />
+            <h3 className="text-sm font-bold font-typewriter uppercase tracking-wider text-[#8c1d40] flex items-center gap-2">
+              <ShieldAlert className="w-4 h-4 text-[#8c1d40]" />
               {lang === 'de' ? 'Wo es kippt (Bruchstelle)' : lang === 'es' ? 'Punto crítico de falla' : 'Where it Breaks (Crucial Failure Mode)'}
             </h3>
-            <div className="p-4 rounded-xl bg-rose-50/60 border border-rose-200/80 text-sm text-rose-950 leading-relaxed">
+            <div className="p-4 rounded-xl bg-[#8c1d40]/10 border border-[#8c1d40]/30 text-sm text-[#741533] leading-relaxed font-medium">
               {lang === 'de' ? dose.failureModeDe : dose.failureModeEn}
             </div>
           </div>
 
           {/* Section 6: Prior Art */}
           <div className="space-y-2">
-            <h3 className="text-sm font-bold font-mono-code uppercase tracking-wider text-stone-600">
+            <h3 className="text-sm font-bold font-typewriter uppercase tracking-wider text-[#8c1d40]">
               {lang === 'de' ? 'Wer es schon versucht hat' : lang === 'es' ? 'Intentos previos y brecha' : 'Prior Art & Unoccupied Gap'}
             </h3>
-            <p className="text-sm text-stone-700 leading-relaxed">
+            <p className="text-sm text-[#4a3b2c] leading-relaxed bg-[#fbf7f0] p-4 rounded-xl border border-[#e8ded0]">
               {lang === 'de' ? dose.priorArtDe : dose.priorArtEn}
             </p>
           </div>
@@ -484,24 +484,24 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
           )}
 
           {/* Section 7: Outreach Draft */}
-          <div className="pt-4 border-t border-stone-200 space-y-3">
+          <div className="pt-4 border-t border-[#dfd1be] space-y-3">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-              <h3 className="text-sm font-bold font-mono-code uppercase tracking-wider text-stone-800 flex items-center gap-2">
-                <Send className="w-4 h-4 text-amber-800" />
-                {lang === 'de' ? 'Sendefertiger Kaltmail-Entwurf' : lang === 'es' ? 'Borrador de correo listo para enviar' : 'Ready-to-Send Outreach Draft'}
+              <h3 className="text-sm font-bold font-typewriter uppercase tracking-wider text-[#8c1d40] flex items-center gap-2">
+                <Send className="w-4 h-4 text-[#8c1d40]" />
+                {lang === 'de' ? 'Sendefertiger Kaltmail-Entwurf (Dosen-Post)' : lang === 'es' ? 'Borrador de carta listo para enviar' : 'Ready-to-Send Outreach Letter'}
               </h3>
               <button
                 onClick={copyEmail}
-                className="inline-flex items-center gap-1 text-xs px-3 py-1.5 rounded-lg border border-stone-300 bg-white hover:bg-stone-50 font-medium text-stone-800 transition-colors shadow-2xs self-start sm:self-auto"
+                className="inline-flex items-center gap-1.5 text-xs px-3.5 py-1.5 rounded-lg border border-[#c5832b]/40 bg-[#faf3e6] hover:bg-[#f5ead5] font-typewriter font-bold text-[#78350f] transition-colors shadow-2xs self-start sm:self-auto cursor-pointer"
               >
                 {copiedEmail ? (
                   <>
-                    <Check className="w-3.5 h-3.5 text-emerald-600" />
-                    <span className="text-emerald-700">{t.ui.email_copied}</span>
+                    <Check className="w-3.5 h-3.5 text-[#1b4332]" />
+                    <span className="text-[#1b4332]">{t.ui.email_copied}</span>
                   </>
                 ) : (
                   <>
-                    <Copy className="w-3.5 h-3.5 text-stone-600" />
+                    <Copy className="w-3.5 h-3.5 text-[#8b6f57]" />
                     <span>{t.ui.copy_email}</span>
                   </>
                 )}
@@ -511,7 +511,7 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
             {/* Recipient switcher if multiple templates exist */}
             {dose.emailTemplates && dose.emailTemplates.length > 1 && (
               <div className="flex flex-wrap items-center gap-1.5 pt-1">
-                <span className="text-xs font-mono-code text-stone-500 font-semibold mr-1">
+                <span className="text-xs font-typewriter text-[#8b6f57] font-semibold mr-1">
                   {lang === 'de' ? 'Empfänger:' : 'Recipient:'}
                 </span>
                 {dose.emailTemplates.map((tmpl, idx) => {
@@ -521,10 +521,10 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
                       key={idx}
                       type="button"
                       onClick={() => setSelectedEmailIndex(idx)}
-                      className={`text-xs font-mono-code px-3 py-1.5 rounded-lg transition-all border ${
+                      className={`text-xs font-typewriter px-3 py-1.5 rounded-lg transition-all border ${
                         isSelected
-                          ? 'bg-amber-900 text-white font-bold border-amber-950 shadow-xs'
-                          : 'bg-stone-100 text-stone-700 hover:bg-stone-200 border-stone-300'
+                          ? 'bg-[#8c1d40] text-white font-bold border-[#701531] shadow-xs'
+                          : 'bg-[#f4ede0] text-[#5c4a3d] hover:bg-[#eee1d0] border-[#d8cbba]'
                       }`}
                     >
                       {tmpl.recipientName}
@@ -534,18 +534,26 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
               </div>
             )}
 
-            <pre className="p-4 rounded-xl bg-stone-900 text-stone-200 text-xs font-mono-code overflow-x-auto whitespace-pre-wrap leading-relaxed max-h-64">
-              {emailDraft}
-            </pre>
+            <div className="relative rounded-2xl bg-[#2b1e16] text-[#fbf7f0] border-2 border-[#d8cbba] p-5 shadow-inner overflow-hidden">
+              <div className="absolute top-2 right-3 text-[10px] font-typewriter uppercase tracking-wider text-[#c5832b] select-none pointer-events-none opacity-40">
+                MACHINE À ÉCRIRE · PARIS 18e
+              </div>
+              <pre className="text-xs font-typewriter overflow-x-auto whitespace-pre-wrap leading-relaxed max-h-64 text-[#f5ece0]">
+                {emailDraft}
+              </pre>
+            </div>
           </div>
         </div>
 
         {/* Modal Footer */}
-        <div className="px-6 py-4 bg-stone-100 border-t border-stone-200 flex items-center justify-between text-xs text-stone-500">
-          <span>{lang === 'de' ? 'Amélie Dosen-Format · Alle Inhalte CC0' : lang === 'es' ? 'Formato Lata Amélie · Todo CC0' : 'Amélie Tin Canister · All content CC0'}</span>
+        <div className="px-6 py-4 bg-[#f4ede0] border-t border-[#dfd1be] flex items-center justify-between text-xs text-[#8b6f57] font-typewriter">
+          <div className="flex items-center gap-2">
+            <span className="font-bold text-[#8c1d40]">✦</span>
+            <span>{lang === 'de' ? 'Amélie Dosen-Format · Alle Inhalte CC0 Public Domain' : lang === 'es' ? 'Formato Lata Amélie · Todo CC0 Dominio Público' : 'Amélie Tin Canister · All content CC0 Public Domain'}</span>
+          </div>
           <button
             onClick={onClose}
-            className="px-4 py-2 bg-stone-900 hover:bg-stone-800 text-white rounded-lg font-medium transition-colors"
+            className="btn-amelie-rouge px-5 py-2 text-xs font-bold rounded-lg cursor-pointer transition-all"
           >
             {t.ui.close}
           </button>

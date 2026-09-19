@@ -15,8 +15,8 @@ Ergänzt `dosen/_entsorgt.md`: dort steht die Begründung für gepackte, dann ve
 | **Glasanflug-Ampel** — Foto einer Glasfläche + Standort → Entwurf der LAG-VSW-Punktebewertung | `frei` | Punkteschema existiert als PDF (LAG VSW 21/01), kein digitales Werkzeug gefunden | 09/2027 |
 | **Brettchen-Vorsortierer** — KI-Vorannotation der Brutzellen auf MonViA-Nisthilfe-Fotos | `frei` (Thünen direkt fragen lassen) | Thünen wertet manuell aus, bis zu 90 Min. pro Nisthilfe; keine KI-Auswertung erwähnt | 09/2027 |
 | **Streiflicht** — Smartphone-RTI am Grabstein + Transkription, die unleserliche Stellen als Lücke markiert | `verengt` | CompGen nutzt LLMs, benennt Halluzination bei Verwitterung als Schwäche; Smartphone-RTI nur als Paper (Ca' Foscari, ECCVW 2022) | 09/2027 |
-| Bebauungsplan-Leser für Bürger | `unklar` | Nur Content-Farm-Treffer. Neu suchen mit Organisationsnamen (z. B. Berliner Beteiligungsplattform) — **Recheck Runde 3: weiterhin `unklar`, siehe unten** | 12/2026 |
-| Tafel-Warenannahme per Foto | `besetzt` | Recheck 18.9.2026, zwei Researcher unabhängig: „Tafel macht Zukunft – gemeinsam digital" (BMEL-Förderung 1,5 Mio. €, 3 Jahre, eco-Platform von Inspired Consulting) liefert eine Fahrer-App mit Foto-Qualitätserfassung der Ware, alle großen Handelsketten (ALDI, EDEKA, LIDL, REWE) beteiligt — deckt die Foto-Prüfung ab, die zunächst übersehen wurde. Korrektur direkt hier eingetragen statt als separate Runde-3-Zeile (Dedup). | – |
+| Bebauungsplan-Leser für Bürger | `unklar` | Nur Content-Farm-Treffer. Neu suchen mit Organisationsnamen (z. B. Berliner Beteiligungsplattform) | 12/2026 |
+| Tafel-Warenannahme per Foto | `unklar` | Kein Werkzeug gefunden, aber Suche schwach. Empfänger zuerst prüfen: Tafel Deutschland digital | 12/2026 |
 | Balkonkraftwerk-Verschattung per Handykamera | `besetzt` | Horisol (Akkudoktor-Forum, Juli 2026), SunOnTrack AR | – |
 | Wheelmap: Eingangsfoto → Barrierefreiheit | `besetzt` | HIIG + Wheelmap: offener Datensatz Stufen/Rampen (2023) | – |
 | Repair-Café-Diagnoseassistent | `besetzt` | Repair Café International Artikel Juli 2026; robotfreak/repair-cafe | – |
@@ -30,62 +30,33 @@ Ergänzt `dosen/_entsorgt.md`: dort steht die Begründung für gepackte, dann ve
 
 ## Runde 1 — September 2026
 
-Details in `amelie-matrix.md`, `dosen/_entsorgt.md`. Belege der Einzelzeilen unten aus den jeweiligen Dosen (Abschnitt „Wer es schon versucht hat") nachgetragen am 18.09.2026 im Rahmen der Protokoll-Konsistenzprüfung — die gebündelte Sammelzeile über elf Ideen erlaubte kein Strg+F pro Idee und keine belastbare Trefferquote.
+Details in `ideas-neue-projekte.md`, `amelie-matrix.md`, `dosen/_entsorgt.md`.
 
-| Idee | Urteil | Beleg (kurz) | Prüfen ab |
-|---|---|---|---|
-| git-archaeologist (MCP) | `besetzt` | mehrfach unabhängig gebaut (u. a. Server, der „warum existiert diese Zeile" aus blame/PR/Issue beantwortet, „codebase-archaeology") | – |
-| Home-Network MCP | `besetzt` | ≥4 unabhängige FRITZ!Box-MCP-Server, Home Assistant mit MCP in beide Richtungen | – |
-| Repo-Museum | `besetzt` | begehbare 3D-Repo-Stadt bereits gebaut/veröffentlicht; Vorgeschichte CodeCity/Gource/GitHub Skyline | – |
-| Commute Oracle | `besetzt` | Citymapper KI-Routenplanung 2026, dedizierte „wann losgehen"-Produkte, Google-Maps-Pendelfunktionen | – |
-| Altbau Thermal | `verengt` | co2online/EnergyMap Berlin rechnet Gebäudeebene für 360.000 Gebäude; Wohnungsebene (Grundriss, Fenster, Heizkörper) bleibt Lücke | 09/2027 |
-| Sperrmüll-Radar | `frei` | keine Berliner Live-Karte für Sperrmüll-Zu-verschenken-Pins mit Verfallslogik gefunden | 09/2027 |
-| Kiez-Lärmkarte | `frei` | Noise-Planet/NoiseCapture liefert Durchschnittskarten; „wann ist diese Straße leise"-Perspektive nicht gefunden | 09/2027 |
-| Diffgeist | `frei` | personalisierte Release-Notes (nur was der eigene Code tatsächlich aufruft) nicht gefunden; Zeitfenster geschätzt auf Monate | 03/2027 |
-| Spec-Drift Detector | `frei` | Prosa-Spec-Drift 2026 öffentlich als offene Falle benannt, kein etabliertes Werkzeug; API-Schema-Drift-Markt (anderer Scope) ist besetzt | 03/2027 |
-| Agent Postmortem Recorder | `verengt` | Session-/Observability-Analyse reichlich vorhanden; kein Tool schließt zu konkretem `CLAUDE.md`-Regel-Patch | 03/2027 |
-| Wet Ink (Plan) | `frei` | Escape Motions/Rebelle macht Desktop-Fluid-Aquarell professionell; keine WebGL2-Browser-Entsprechung gefunden | 09/2027 |
-| Pin Tumbler | `verengt` | Lockpicking-Spiele zahlreich (Mobile, Steam, itch.io); keins behandelt Fertigungstoleranzen als Lerngegenstand | 09/2027 |
-| Räucher-Sim | `frei` | Rauch-/Fluidsims und atemgesteuerte Installationen einzeln verbreitet; Kombination als freies Web-Toy nicht gefunden | 09/2028 |
-| Kristallwachstum 3D | `verengt` | DLA-Generatoren im Überfluss (als „neuer Generator" tot); druckfertige Kette (wasserdicht, Zwangsbedingungen, Seed-als-Rezept) nicht gefunden | 09/2027 |
-| Tarot als Zustandsmaschine | `verengt` | Tarot-JSON-Datensätze und Schema-Sammlungen vorhanden; formale deckunabhängige Relationssprache zwischen Positionen nicht gefunden | 09/2027 |
-| Traumtagebuch | `verengt` | Markt für Traum-Apps mit KI-Deutung/Mustererkennung groß; Kombination „keine Deutung + on-device + offen" nicht gefunden | 03/2027 |
-| Echter Zufall als Service | `frei` | Software-basierter Zufalls-MCP-Server existiert; Brücke von TRNG-Hardware zu MCP nicht gefunden | 09/2027 |
-| Ghost Replay fürs Editieren | `verengt` | Aufzeichnungs-/Replay-Technik für Editor-Sitzungen existiert; systematische Musterauswertung/-vergleich als Forschungsfrage offen | 09/2027 |
-| Bugs → Spaced Repetition | `frei` | Spaced-Repetition-Ökosystem groß und reif; Brücke von Git-Historie zur Karteikarte nicht gefunden | 09/2027 |
-
-**Korrigierte Bilanz Runde 1** (siehe auch Trefferquote-Tabelle im Playbook, dort ebenfalls korrigiert): 19 geprüft, **8 frei, 7 verengt, 0 unklar, 4 besetzt** — vorher fälschlich als 10 frei / 5 verengt geführt, weil elf Urteile nie einzeln ins Protokoll übertragen wurden.
+| Idee | Urteil |
+|---|---|
+| git-archaeologist (MCP) | `besetzt` |
+| Home-Network MCP | `besetzt` |
+| Repo-Museum | `besetzt` |
+| Commute Oracle | `besetzt` |
+| Altbau Thermal | `verengt` (Wohnungsebene unter EnergyMap) |
+| Sperrmüll-Radar | `frei` |
+| Kiez-Lärmkarte | `frei` |
+| Diffgeist | `frei` (Zeitfenster Monate) |
+| Spec-Drift Detector, Agent Postmortem Recorder, Wet Ink, Pin Tumbler, Räucher-Sim, Kristallwachstum 3D, Tarot-Zustandsmaschine, Traumtagebuch, Echter Zufall, Ghost Replay, Bugs→Spaced Repetition | siehe jeweilige Dose |
 
 ---
 
-## Nachtrag — 18.09.2026 (unfertig aus der „gemini changes"-Runde, hier nachgezogen)
+## Runde 3 — 18.09.2026 (Lacunar Bisociation Candidates)
 
-Crack Flora Watcher und KlarLokal kamen als fertige Dosen ohne Protokollzeile ins Repo (siehe Anmerkung in `amelie-matrix.md`). Am 18.09.2026 im Rahmen der Protokoll-Konsistenzprüfung nachgetragen, Beleg aus den Dosen selbst.
-
-| Idee | Urteil | Beleg (kurz) | Prüfen ab |
+| Idee | Urteil | Beleg | Prüfen ab |
 |---|---|---|---|
-| Crack Flora Watcher (Ritzengrün-Wächter) | `verengt` | Seek (iNaturalist) gamifiziert Ritzenpflanzen-Entdeckung bereits mit Badges/Challenges; Longitudinalspur derselben Pflanze über Wochen fehlt bei allen gefundenen Apps | 05/2027 |
-| KlarLokal | `verengt` | Zetteln (zetteln.app) macht fast dasselbe (Behördenbrief → Leichte Sprache, Fristen), läuft aber hybrid mit Cloud-Fallback; Zero-Cloud-Garantie ist die verbleibende Lücke | 03/2027 |
-
----
-
-## Runde 3 — 18.09.2026 (Researcher #1+#2 ideenrunde, Researcher #3+#4 bisociation, Librarian-Merge)
-
-*A/B-Test: Zeilen aus der lacunar-bisociation-Methode sind mit `[method: bisociation]` markiert, zur Abgrenzung von den amelie-ideenrunde-Zeilen derselben Runde.*
-
-**Rechecks dieser Runde** (Regel aus `amelie-rundenstart.md`, Schritt 3 — `unklar`-Zeilen aus Runde 2 zuerst erneut geprüft): Tafel-Warenannahme ist oben direkt in der Runde-2-Zeile auf `besetzt` korrigiert. Bebauungsplan-Leser bleibt `unklar`, siehe Zeile unten — **für Runde 4 erneut vormerken.**
-
-| Idee | Urteil | Beleg (kurz) | Prüfen ab |
-|---|---|---|---|
-| **Eichflächen-Trainer** — Kalibrierdeck mit Referenzflächen (Foto/Artenliste → Code raten → Abgleich mit Experten-Konsens) für Biotopkartierer-Nachwuchs | `frei` | [method: bisociation] Ausbildung läuft nur als mehrtägiger Präsenzkurs (ANL Bayern, Akademie für angewandte Vegetationskunde, Botanik Plus-Zertifizierung); explizit genannter Fachkräftemangel; kein digitales Kalibrier-/Spaced-Repetition-Tool gefunden (4 Suchen) | 09/2027 |
-| **Kartierlotse** — Live-Assistent im Feld, der während der Kartierung anzeigt, welche Zeigerart/Struktur noch fehlt, um zwischen zwei Biotopcodes zu entscheiden (für den deutschen Kartierschlüssel) | `verengt` | [method: bisociation] UK-Pendant existiert: e-Surveyor App sagt Habitattyp aus Artenliste voraus (Ridding et al., *Ecology and Evolution* 2026) — aber für UK-Klassifikation (Broad Habitat/UKHab/NVC), nachträgliche Vorhersage statt Live-Lückenhinweis, nicht für deutschen Kartierschlüssel. Vegapp (Schmidtlein 2026) digitalisiert nur die Dateneingabe. Lücke verengt auf: deutscher Schlüssel + Live-Hinweis *während* der Begehung | 09/2027 |
-| Strukturmonitoring per Smartphone-LiDAR (Verbuschung/Sukzession im Offenland, ehrenamtlich zwischen den Kartierzyklen) | `verengt`, nahe `besetzt` | [method: bisociation] Forschung deckt Kernidee bereits ab: Smartphone-LiDAR für Vegetationsstruktur ist 2025/26 aktives Forschungsfeld (bioRxiv Stammdurchmesser-Paper, iPhone-LiDAR-Genauigkeitsstudie, Garten+Landschaft-Fachartikel zu LiDAR-Grünpflege); Fachartikel nennt Sukzession/Verbuschung explizit als Anwendungsfall. Nicht gepackt — Atlas-Eintrag stattdessen | – |
-| Bebauungsplan-Leser für Bürger (erneut geprüft, 2. Recheck) | `unklar` (weiterhin) | [method: ideenrunde, Researcher #1+#2] Zwei unabhängige Rechecks: Researcher #1 fand mit `mein.berlin.de Bebauungsplan verständlich KI` zwei neue Spuren statt Content-Farmen — **DiPlanBeteiligung** (neues Berliner Digitalsystem fürs Verfahren, nicht für Textvereinfachung) und **wohnvision-digital.de** (privater Bestellservice, kein KI-Erklärer); Researcher #2 bestätigte unabhängig nur DiPlanBeteiligung, mit einer schwächeren allgemeinen Suche. Keine der beiden deckt „Plan in Laiensprache" ab. Nächste Runde: beide Funde gezielt auf KI-Zusammenfassungsfunktion prüfen, dann mit konkreten Tool-/Produktnamen suchen (z. B. „Ratsinformationssystem KI Zusammenfassung", „Bebauungsplan Chatbot Bürger") statt allgemeiner Begriffe | 12/2026 |
-| **Lichtplan-Check** — Formular prüft geplante Außenbeleuchtung automatisch gegen verstreute insekten-/vogelfreundliche Kriterien mehrerer Behörden | `frei` | [method: ideenrunde, Researcher #1] Quelle: Typ A, Landesumweltbehörden (Hamburg BUKEA „Licht & Naturschutz") + NABU/BUND-Leitfäden. Nur Text-Leitfäden gefunden, kein Self-Check-Tool; ein Leuchtenhersteller (TRILUX) berät kommerziell. Dose gepackt: `05-dosen/lichtplan-check.md` | 09/2027 |
-| **Biotoptyp-Assistent** — Foto → Vorschlag für BKompV-Anlage-2-Biotoptyp (statt Handnachschlag in 668 Typen) | `verengt` | [method: ideenrunde, Researcher #1] Quelle: Typ A, BfN-Schriften 721 (Kartieranleitung Biotoptypen 2025) + BKompV. Verwandtes Feld dicht: KIBI-Projekt (BfN, FFH-Typen aus Luftbild/Fernerkundung, nicht Bodenfoto), ObsIdentify/Flora Incognita (Artbestimmung, nicht Biotoptyp), Namis-Biotop-App (DBU, digitalisiert Erfassung, klassifiziert nicht automatisch). Zusätzlich geprüft (Hinweis Researcher #2): Ökokonto-/Kompensationsflächenkataster-Software (giscity Ökoflächenkataster u. ä.) ist GIS-Verwaltung/Monitoring bestehender Flächen, keine Bildanalyse zur Typ-Zuordnung — deckt die Idee nicht ab. Restlücke: Bodenfoto → BKompV-Typ-Vorschlag fehlt weiterhin. Dose gepackt: `05-dosen/biotoptyp-assistent.md` | 03/2027 (verkürzt, aktives Feld) |
-| **Sofort-Rekrutierung** — Geofenced Push an Zeugen in ~20-Min-Fenster nach Feuerkugel-Erstmeldung, strukturierte Corroboration statt Wartens auf zufällige Zweitmeldung | `verengt` (Teil der Dose Feuerkugel-Sofortnetz) | [method: bisociation, Researcher #3] AMS/IMO-Meldesystem gruppiert Zeugen nachträglich, AMS nennt Daten ausdrücklich „nicht in Echtzeit"; kein Push-Rekrutierungsmechanismus gefunden. Dose gepackt: `05-dosen/feuerkugel-sofortnetz.md` | 09/2027 |
-| **Ambient-Rettung** — On-Device-Erkennung auf Dashcam/Türklingelkamera markiert kurzen hellen Streifen lokal zum Nicht-Überschreiben, Opt-in-Teilen | `verengt` (Teil der Dose Feuerkugel-Sofortnetz) | [method: bisociation, Researcher #3] Dashcam-/Türklingel-Footage von Feuerkugeln kursiert viral, aber kein automatisiertes Pre-Overwrite-Erkennungstool gefunden; dedizierte Netze (AllSky7, GMN, CAMS) nutzen eigene Astro-Kameras, keine Consumer-Ambient-Geräte. Gleiche Dose | 09/2027 |
-| Radio-Meteorscatter × visuelle Zeugenmeldung in Echtzeit korrelieren | `besetzt` | [method: bisociation, Researcher #3] FRIPON kombiniert Radio- und Videostationen bereits für Echtzeit-Trajektorien (arXiv 2111.09742) | – |
-| Handy-Barometer/Infraschall zur Feuerkugel-Erkennung/Korrelation | `besetzt` | [method: bisociation, Researcher #3] RedVox-App misst Infraschall bereits u.a. für Meteore/Boliden | – |
-| **Baum-Stigmergie** — Baum trägt legiblen, mitwachsenden Hinweis auf eigene Kontrollhistorie (Regelkontrolle/VTA), statt dass der Befund nur in einer separaten Behörden-Datenbank liegt | `besetzt` | [method: bisociation, Researcher #4 (Session [208a0f]), aus unkommittiertem Worktree vom Librarian übernommen] Dynamische QR-Baumplaketten + öffentliche Portale existieren bereits kommerziell: baumplaketten.de (dynamische QR-Codes, Aluminium-Plakette), BaumDex, Baumsicht (Portal mit Protokollen, automatisch berechnetem nächsten Kontrolltermin), CheckTrees-App, dazu ein akademisches QR-Baummanagement-Pilotprojekt (ACM 2023) | – |
-| **Baum-Verfallsdatum** — ein Kontrollbefund im Kataster verliert automatisch an Gültigkeit/Sichtbarkeit, wenn er nicht durch einen Foto-Vergleich mit dem aktuellen Baumzustand erneut bestätigt wird | `besetzt` | [method: bisociation, Researcher #4 (Session [208a0f]), aus unkommittiertem Worktree vom Librarian übernommen] Ganzer Markt für „AI tree health from repeat photography" existiert bereits: Tree Inventory AI, greehill, ArboStar, TreeTect (Green City Watch) — automatisierte Gesundheits-/Zerfallserkennung inkl. Verlaufsvergleich über Zeit ist 2026 Standardfunktion, nicht Lücke | – |
+| **Trockenrasen-Transekte** | `frei` (Kandidat) | LANA/BfN-Kartieranleitung LRT 6120; kein Tool mit Live-Sequentialanalyse gefunden | 09/2027 |
+| **Fledermaus-Echo-Entwirrer** | `frei` (Kandidat) | BatClassify scheitert an Wasser-Mehrwegeausbreitung; AudioWorklet-Phasenauslöschung neu | 09/2027 |
+| **Sandstein-Streiflicht-Relief** | `verengt` (Kandidat) | CompGen benennt Halluzination bei Verwitterung als Grenze; Smartphone-RTI bisher nur Paper | 09/2027 |
+| **Hummel-Schleusenwächter** | `frei` (Kandidat) | MonViA wertet erst nach Monaten aus; Echtzeit-Flugloch-Kuckuckshummel-Warnung frei | 09/2027 |
+| **Orgelpfeifen-Bleifraß-Resonanz** | `frei` (Kandidat) | BDO & Stiftung Denkmalschutz: bisher rein visuell/zerstörend; akustische Einschwinganalyse frei | 09/2027 |
+| **Waldbrand-Streu-Knistern** | `frei` (Kandidat) | WBI nur 1km-Gitter; akustische Nadelstreu-Mikroriss-Messung frei | 09/2027 |
+| **Phänologischer Knospen-Countdown** | `frei` (Kandidat) | DWD-Beobachter erfassen nur Ex-post; Subpixel-Schuppen-Vorhersage frei | 09/2027 |
+| **Tafel-Frische-Triage** | `frei` (Kandidat) | Tafel-Sortierung nach grober Sicht; Ethylen-Nachbarschafts-Detektor frei | 09/2027 |
+| **Licht-Glocken-Kataster** | `frei` (Kandidat) | Leitfaden Berlin 2021; bürgertaugliche ULOR-Gyroskop-Berechnung frei | 09/2027 |
+| **Totholz-Kolk-Peiler** | `frei` (Kandidat) | WRRL-Kartierung stochert manuell; hydroakustischer Beschleunigungs-Resonanztest frei | 09/2027 |

@@ -16,6 +16,11 @@ Stand: September 2026 · Félix, Berlin · alle Inhalte CC0
 | wissen willst, worum es geht | `01-konzept/amelie-manifest.md` |
 | es tun willst | `03-zuordnung/amelie-zustellplan-q4-2026.md` — drei sendefertige Mails |
 | wissen willst, ob das funktioniert | `02-recherche/amelie-landschaft.md` und `…-bewegungen.md` |
+| Ideen oder Code beitragen willst | [`CONTRIBUTING.md`](./CONTRIBUTING.md) |
+| unsere Wachstums-Vision sehen willst | [`ROADMAP.md`](./ROADMAP.md) |
+| wissen willst, wie Entscheidungen fallen | [`GOVERNANCE.md`](./GOVERNANCE.md) |
+| Software- und Architektur-Doku suchst | [`ARCHITECTURE.md`](./ARCHITECTURE.md) |
+| Verhaltensregeln nachlesen willst | [`CODE_OF_CONDUCT.md`](./CODE_OF_CONDUCT.md) |
 | eine eigene Idee verpacken willst | `04-werkzeug/amelie-vorlagen.md` |
 | eine neue Ideenrunde starten willst | `06-suche/amelie-rundenstart.md` |
 | Übersetzungen via XLIFF pflegen willst | `04-werkzeug/amelie-i18n-xliff.md` |

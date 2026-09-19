@@ -1,7 +1,8 @@
 import React from 'react';
-import { Gift, Mail, Compass, PlusCircle, Trash2, Globe, Sparkles, Sliders, Search, FolderSync, Heart, Smile } from 'lucide-react';
+import { Gift, Mail, Compass, PlusCircle, Trash2, Globe, Sparkles, Sliders, Search, FolderSync, Heart, Smile, FolderGit2 } from 'lucide-react';
 import { Language } from '../types';
 import { getTranslation } from '../i18n';
+import { getStorageProvider } from '../services/storageService';
 
 interface HeaderProps {
   currentTab: string;
@@ -51,6 +52,11 @@ export const Header: React.FC<HeaderProps> = ({
       badge: unpackedCount,
     },
     {
+      id: 'data-hub',
+      label: t.nav.githubPages,
+      icon: FolderGit2,
+    },
+    {
       id: 'google-import',
       label: t.nav.googleImport,
       icon: FolderSync,
@@ -90,47 +96,57 @@ export const Header: React.FC<HeaderProps> = ({
   ];
 
   return (
-    <header className="border-b border-stone-200/80 bg-[#fdfbf7]/90 backdrop-blur-md sticky top-0 z-40">
+    <header className="border-b border-[#dfd1be] bg-[#fbf6ee]/95 backdrop-blur-md sticky top-0 z-40 shadow-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div className="py-3.5 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-amber-800/10 border border-amber-800/20 flex items-center justify-center text-amber-900 shadow-xs">
-                <Gift className="w-5 h-5 text-amber-800" />
+            <div className="flex items-center gap-3.5">
+              <div className="w-11 h-11 rounded-xl bg-[#8c1d40] border border-[#741533] flex items-center justify-center text-[#fff9f5] shadow-sm transform -rotate-1 hover:rotate-0 transition-transform">
+                <Gift className="w-5 h-5 text-[#f6bd60]" />
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <h1 className="text-xl font-bold font-serif-title tracking-tight text-stone-900">
+                  <h1 className="text-2xl font-bold font-amelie tracking-tight text-[#2b1e16]">
                     {t.app.title}
                   </h1>
-                  <span className="text-xs px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 border border-amber-200 font-medium">
-                    CC0
+                  <span className="text-[11px] font-typewriter px-2 py-0.5 rounded border border-[#8c1d40]/40 bg-[#8c1d40]/10 text-[#8c1d40] font-bold">
+                    CC0 · 1974–2026
                   </span>
-                  <span className="text-[10px] uppercase font-mono tracking-wider px-1.5 py-0.5 rounded bg-stone-200/80 text-stone-600 font-semibold">
-                    XLIFF i18n
+                  <span className="hidden sm:inline-block text-[10px] uppercase font-typewriter tracking-widest px-2 py-0.5 rounded bg-[#1b4332]/10 text-[#1b4332] border border-[#1b4332]/25 font-bold">
+                    PAR AVION · XLIFF
                   </span>
+                  <button
+                    onClick={() => setCurrentTab('data-hub')}
+                    className="hidden md:inline-flex items-center gap-1 text-[10px] font-typewriter px-2 py-0.5 rounded bg-[#2e7d32]/10 text-[#2e7d32] border border-[#2e7d32]/25 font-bold hover:bg-[#2e7d32]/20 transition-colors cursor-pointer"
+                    title="GitHub Pages & Static Data Hub"
+                  >
+                    <FolderGit2 className="w-3 h-3" />
+                    <span>GITHUB PAGES</span>
+                  </button>
                 </div>
-                <p className="text-xs text-stone-600">
-                  {t.app.tagline}
+                <p className="text-xs text-[#6b5849] font-medium flex items-center gap-1.5">
+                  <span className="italic font-amelie text-xs text-[#8c1d40] font-semibold">« Le Kula-Ring des Idées »</span>
+                  <span>—</span>
+                  <span>{t.app.tagline}</span>
                 </p>
               </div>
             </div>
 
             {/* Mobile Language Switcher */}
-            <div className="flex items-center gap-1 md:hidden bg-stone-200/60 p-0.5 rounded-lg border border-stone-300/80">
+            <div className="flex items-center gap-1 md:hidden bg-[#ede3d1]/80 p-0.5 rounded-lg border border-[#d8cbba]">
               <button
                 onClick={() => setLang('en')}
-                className={`px-2 py-1 rounded text-xs font-medium transition-all ${
-                  lang === 'en' ? 'bg-white text-stone-900 shadow-xs' : 'text-stone-600'
+                className={`px-2 py-1 rounded text-xs font-typewriter transition-all ${
+                  lang === 'en' ? 'bg-[#fbf7f0] text-[#8c1d40] font-bold shadow-xs' : 'text-[#6b5849]'
                 }`}
-                title="English (Main)"
+                title="English (Canonical)"
               >
                 EN
               </button>
               <button
                 onClick={() => setLang('de')}
-                className={`px-2 py-1 rounded text-xs font-medium transition-all ${
-                  lang === 'de' ? 'bg-white text-stone-900 shadow-xs' : 'text-stone-600'
+                className={`px-2 py-1 rounded text-xs font-typewriter transition-all ${
+                  lang === 'de' ? 'bg-[#fbf7f0] text-[#8c1d40] font-bold shadow-xs' : 'text-[#6b5849]'
                 }`}
                 title="Deutsch"
               >
@@ -138,8 +154,8 @@ export const Header: React.FC<HeaderProps> = ({
               </button>
               <button
                 onClick={() => setLang('es')}
-                className={`px-2 py-1 rounded text-xs font-medium transition-all ${
-                  lang === 'es' ? 'bg-white text-stone-900 shadow-xs' : 'text-stone-600'
+                className={`px-2 py-1 rounded text-xs font-typewriter transition-all ${
+                  lang === 'es' ? 'bg-[#fbf7f0] text-[#8c1d40] font-bold shadow-xs' : 'text-[#6b5849]'
                 }`}
                 title="Español"
               >
@@ -149,50 +165,50 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           <div className="flex items-center justify-between md:justify-end gap-3">
-            <div className="hidden lg:flex items-center gap-2 text-xs text-stone-500 bg-stone-100/80 px-3 py-1.5 rounded-lg border border-stone-200">
-              <Sparkles className="w-3.5 h-3.5 text-amber-700" />
-              <span>{t.app.subtitle}</span>
+            <div className="hidden lg:flex items-center gap-2 text-xs text-[#5c4a3d] bg-[#f4ede0] px-3.5 py-1.5 rounded-lg border border-[#d8cbba]/80 font-medium">
+              <Sparkles className="w-3.5 h-3.5 text-[#c5832b]" />
+              <span className="font-amelie italic">{t.app.subtitle}</span>
             </div>
 
             {/* Desktop Language Selector */}
-            <div className="hidden md:flex items-center gap-1 bg-stone-200/60 p-0.5 rounded-lg border border-stone-300/80">
+            <div className="hidden md:flex items-center gap-1 bg-[#ede3d1]/90 p-1 rounded-lg border border-[#d8cbba]">
               <button
                 onClick={() => setLang('en')}
-                className={`flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-medium transition-all ${
+                className={`flex items-center gap-1.5 px-3 py-1 rounded text-xs font-typewriter transition-all ${
                   lang === 'en'
-                    ? 'bg-white text-stone-900 shadow-xs font-semibold'
-                    : 'text-stone-600 hover:text-stone-900'
+                    ? 'bg-[#fbf7f0] text-[#8c1d40] shadow-xs font-bold border border-[#d4c3b0]'
+                    : 'text-[#6b5849] hover:text-[#2b1e16]'
                 }`}
               >
-                <Globe className="w-3 h-3 text-stone-400" />
-                <span>English <span className="text-[10px] text-amber-700 font-bold">(Main)</span></span>
+                <Globe className="w-3 h-3 text-[#c5832b]" />
+                <span>EN <span className="text-[10px] text-[#8c1d40] font-bold">(Source)</span></span>
               </button>
               <button
                 onClick={() => setLang('de')}
-                className={`px-2.5 py-1 rounded text-xs font-medium transition-all ${
+                className={`px-2.5 py-1 rounded text-xs font-typewriter transition-all ${
                   lang === 'de'
-                    ? 'bg-white text-stone-900 shadow-xs font-semibold'
-                    : 'text-stone-600 hover:text-stone-900'
+                    ? 'bg-[#fbf7f0] text-[#8c1d40] shadow-xs font-bold border border-[#d4c3b0]'
+                    : 'text-[#6b5849] hover:text-[#2b1e16]'
                 }`}
               >
-                Deutsch
+                DE
               </button>
               <button
                 onClick={() => setLang('es')}
-                className={`px-2.5 py-1 rounded text-xs font-medium transition-all ${
+                className={`px-2.5 py-1 rounded text-xs font-typewriter transition-all ${
                   lang === 'es'
-                    ? 'bg-white text-stone-900 shadow-xs font-semibold'
-                    : 'text-stone-600 hover:text-stone-900'
+                    ? 'bg-[#fbf7f0] text-[#8c1d40] shadow-xs font-bold border border-[#d4c3b0]'
+                    : 'text-[#6b5849] hover:text-[#2b1e16]'
                 }`}
               >
-                Español
+                ES
               </button>
             </div>
           </div>
         </div>
 
         {/* Tab Navigation */}
-        <nav className="flex space-x-1 overflow-x-auto pb-2 scrollbar-none">
+        <nav className="flex space-x-1.5 overflow-x-auto pb-2.5 scrollbar-none pt-1">
           {tabs.map((tab) => {
             const Icon = tab.icon;
             const isActive = currentTab === tab.id;
@@ -200,20 +216,20 @@ export const Header: React.FC<HeaderProps> = ({
               <button
                 key={tab.id}
                 onClick={() => setCurrentTab(tab.id)}
-                className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-all ${
+                className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-medium whitespace-nowrap transition-all ${
                   isActive
-                    ? 'bg-stone-900 text-stone-50 shadow-xs'
-                    : 'text-stone-600 hover:text-stone-900 hover:bg-stone-200/50'
+                    ? 'bg-[#8c1d40] text-[#fff9f5] shadow-xs border border-[#741533]'
+                    : 'text-[#6b5849] hover:text-[#2b1e16] hover:bg-[#ede3d1]/60 border border-transparent'
                 }`}
               >
-                <Icon className={`w-4 h-4 ${isActive ? 'text-amber-400' : 'text-stone-500'}`} />
-                <span>{tab.label}</span>
+                <Icon className={`w-4 h-4 ${isActive ? 'text-[#f6bd60]' : 'text-[#8b6f57]'}`} />
+                <span className={isActive ? 'font-semibold tracking-tight' : ''}>{tab.label}</span>
                 {tab.badge !== undefined && (
                   <span
-                    className={`text-xs px-1.5 py-0.2 rounded-full font-mono-code ${
+                    className={`text-xs px-2 py-0.5 rounded-full font-typewriter font-bold ${
                       isActive
-                        ? 'bg-stone-800 text-amber-300'
-                        : 'bg-stone-200 text-stone-700'
+                        ? 'bg-[#741533] text-[#fde047]'
+                        : 'bg-[#ede3d1] text-[#5c4a3d] border border-[#d8cbba]'
                     }`}
                   >
                     {tab.badge}
