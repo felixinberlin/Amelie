@@ -23,6 +23,7 @@ import {
   googleSignOut,
   getAccessToken,
   isFirebaseConfigured,
+  GoogleUser,
 } from '../services/googleAuth';
 import {
   searchDriveIdeas,
@@ -30,7 +31,6 @@ import {
   fetchFileContent,
   GoogleIdeaItem,
 } from '../services/googleIdeas';
-import { User } from 'firebase/auth';
 
 interface GoogleAccountImporterProps {
   lang: Language;
@@ -43,7 +43,7 @@ export const GoogleAccountImporter: React.FC<GoogleAccountImporterProps> = ({
   onPackIdea,
   onAddToCandidates,
 }) => {
-  const [user, setUser] = useState<User | null>(null);
+  const [user, setUser] = useState<GoogleUser | null>(null);
   const [token, setToken] = useState<string | null>(null);
   const [isSigningIn, setIsSigningIn] = useState(false);
   const [authError, setAuthError] = useState<string | null>(null);

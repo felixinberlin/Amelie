@@ -1,0 +1,136 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AmelieIdeasDatabase",
+  "description": "Static data format for the Amélie Ideas & Tins repository for GitHub Pages and Git persistence",
+  "type": "object",
+  "required": ["version", "license", "storageProvider", "dosen", "unpackedCandidates"],
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "Schema version, e.g. 1.0.0"
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "license": {
+      "type": "string",
+      "default": "CC0-1.0"
+    },
+    "storageProvider": {
+      "type": "string",
+      "enum": ["github-pages-static", "local-storage", "firebase-firestore"]
+    },
+    "repository": {
+      "type": "string"
+    },
+    "stats": {
+      "type": "object",
+      "properties": {
+        "totalDosen": { "type": "integer" },
+        "totalUnpacked": { "type": "integer" },
+        "totalDiscarded": { "type": "integer" }
+      }
+    },
+    "dosen": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/DoseItem"
+      }
+    },
+    "unpackedCandidates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/CandidateIdea"
+      }
+    }
+  },
+  "definitions": {
+    "DoseItem": {
+      "type": "object",
+      "required": ["id", "title", "domain", "verdict", "status", "recipientsDe", "recipientsEn", "problemDe", "problemEn"],
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "oneLinerDe": { "type": "string" },
+        "oneLinerEn": { "type": "string" },
+        "date": { "type": "string" },
+        "reviewAfter": { "type": "string" },
+        "recipientsDe": { "type": "string" },
+        "recipientsEn": { "type": "string" },
+        "domain": {
+          "type": "string",
+          "enum": ["civic", "tools", "physics", "audio", "creative", "knowledge"]
+        },
+        "verdict": {
+          "type": "string",
+          "enum": ["gift", "build_first", "keep", "discarded"]
+        },
+        "status": {
+          "type": "string",
+          "enum": ["gefunden", "gepackt", "zugestellt", "antwort", "gebaut", "entsorgt"]
+        },
+        "problemDe": { "type": "string" },
+        "problemEn": { "type": "string" },
+        "whyNowDe": { "type": "array", "items": { "type": "string" } },
+        "whyNowEn": { "type": "array", "items": { "type": "string" } },
+        "sketchDe": { "type": "string" },
+        "sketchEn": { "type": "string" },
+        "firstStepDe": {
+          "type": "object",
+          "properties": {
+            "ticket": { "type": "string" },
+            "criteria": { "type": "string" }
+          }
+        },
+        "firstStepEn": {
+          "type": "object",
+          "properties": {
+            "ticket": { "type": "string" },
+            "criteria": { "type": "string" }
+          }
+        },
+        "failureModeDe": { "type": "string" },
+        "failureModeEn": { "type": "string" },
+        "priorArtDe": { "type": "string" },
+        "priorArtEn": { "type": "string" },
+        "tags": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "CandidateIdea": {
+      "type": "object",
+      "required": ["id", "title", "round", "status", "conceptDe", "conceptEn"],
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "round": { "type": "string" },
+        "date": { "type": "string" },
+        "conceptDe": { "type": "string" },
+        "conceptEn": { "type": "string" },
+        "status": {
+          "type": "string",
+          "enum": ["frei", "verengt", "besetzt"]
+        },
+        "suggestedVerdict": {
+          "type": "string",
+          "enum": ["gift", "build_first", "keep", "discarded"]
+        },
+        "recipientDe": { "type": "string" },
+        "recipientEn": { "type": "string" },
+        "workerPersona": {
+          "type": "object",
+          "properties": {
+            "name": { "type": "string" },
+            "role": { "type": "string" },
+            "location": { "type": "string" },
+            "storyDe": { "type": "string" },
+            "storyEn": { "type": "string" },
+            "quoteDe": { "type": "string" },
+            "quoteEn": { "type": "string" }
+          }
+        },
+        "tags": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}
