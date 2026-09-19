@@ -17,11 +17,11 @@ export const DELIVERIES_DATA: DeliveryEmail[] = [
 
 ich recherchiere Software, die erst seit Kurzem technisch möglich ist, und baue nur einen kleinen Teil davon selbst. Diese Idee passt zu Ihrem Verbund und nicht zu mir, deshalb schenke ich sie Ihnen.
 
-EnergyMap Berlin beantwortet seit Mai 2025 die Frage, was ein Gebäude braucht — und mit energymap4py sogar programmatisch. Unbeantwortet bleibt die Frage danach: was die einzelne Wohnung tut. Grundriss zeichnen, Baualtersklasse wählen, sehen, was das gekippte Fenster im Berliner Zimmer kostet und wo die Oberflächentemperatur unter den Taupunkt fällt. Kein Konkurrenzprodukt — es verbraucht Ihre Daten, statt sie zu ersetzen, und die Sommerrichtung derselben Gleichung wäre an CoolingMap anschlussfähig.
+EnergyMap Berlin beantwortet seit Mai 2025 die Frage, was ein Gebäude braucht — und mit energymap4py sogar programmatisch. Unbeantwortet bleibt die Frage danach: was die einzelne Wohnung tut. Grundriss zeichnen, Baualtersklasse wählen, sehen, was das gekippte Fenster im Berliner Zimmer kostet und ab welcher Raumfeuchte eine Ecke über 80 % Oberflächenfeuchte rutscht. Kein Konkurrenzprodukt — es verbraucht Ihre Daten, statt sie zu ersetzen, und die Sommerrichtung derselben Gleichung wäre an CoolingMap anschlussfähig.
 
 Eine Seite mit Skizze, erstem Ticket und der Stelle, an der es schiefgeht — nämlich Scheingenauigkeit bei fünfstelligen Sanierungsentscheidungen: [Link zur Dose: Altbau Thermal]
 
-Falls das eine studentische Arbeit wert ist: der Prototype Fund öffnet am 1. Oktober, Open-Source-Pflicht, der Zuschnitt passt.
+Falls das eine studentische Arbeit wert ist: der erste Schritt (ein Raum, gegen ISO 10211 validiert) ist klein genug dafür.
 
 Keine Bedingungen, CC0, keine Gegenleistung erwartet. Wenn Sie so etwas längst planen, ignorieren Sie diese Mail bitte einfach — ich melde mich nicht erneut.
 
@@ -31,11 +31,11 @@ Félix (Berlin)`,
 
 I research software opportunities that only recently became technically viable, and only build a small fraction myself. This idea belongs with your research consortium, not with me, which is why I am gifting it to you.
 
-EnergyMap Berlin answers what an entire building requires — and with energymap4py even programmatically. Left open is the question right behind it: what does the individual apartment do? Draw a floor plan, pick the construction epoch, and see what a tilted window in a Berlin room costs and where corner surface temperatures drop below the dew point. Not a competitor — it consumes your open data instead of replacing it, and the summer orientation of the same physics links into CoolingMap.
+EnergyMap Berlin answers what an entire building requires — and with energymap4py even programmatically. Left open is the question right behind it: what does the individual apartment do? Draw a floor plan, pick the construction epoch, and see what a tilted window in a Berlin room costs and at what room humidity a corner passes 80 % surface humidity. Not a competitor — it consumes your open data instead of replacing it, and the summer orientation of the same physics links into CoolingMap.
 
 One page with the sketch, first ticket, and the crucial failure point — false precision in five-figure retrofitting decisions: [Link to tin: Altbau Thermal]
 
-If this is worth student thesis research: Prototype Fund round opens on October 1st, open-source requirement, matching scope.
+If this is worth a student thesis: the first step (one room, validated against ISO 10211) is small enough for that.
 
 No strings attached, CC0, zero compensation expected. If you already have this in flight, please just ignore this email — I will not follow up.
 

@@ -35,11 +35,11 @@ Cross-check for the other two Berlin ideas: **Sperrmüll-Radar** — no comparab
 >
 > I research software that's only recently become technically possible, and I build only a small part of it myself. This idea fits your consortium, not me, so I'm giving it to you.
 >
-> Since May 2025, EnergyMap Berlin has answered the question of what a building needs — and, with `energymap4py`, even programmatically. The question after that remains unanswered: what the individual apartment is doing. Draw a floor plan, pick a construction-era class, see what a tilted window in a Berlin room costs and where the surface temperature drops below the dew point. Not a competing product — it consumes your data instead of replacing it, and the summer-direction version of the same equation could connect to CoolingMap.
+> Since May 2025, EnergyMap Berlin has answered the question of what a building needs — and, with `energymap4py`, even programmatically. The question after that remains unanswered: what the individual apartment is doing. Draw a floor plan, pick a construction-era class, see what a tilted window in a Berlin room costs and at what room humidity a corner passes 80 % surface humidity. Not a competing product — it consumes your data instead of replacing it, and the summer-direction version of the same equation could connect to CoolingMap.
 >
 > A one-pager with a sketch, a first ticket, and the point where it goes wrong — namely false precision in five-figure renovation decisions: <link>
 >
-> If this is worth a student thesis: the Prototype Fund opens October 1, open-source requirement, the scope fits.
+> If this is worth a student thesis: the first step (one room, validated against ISO 10211) is small enough for that.
 >
 > No conditions, CC0, no reciprocity expected. If you're already planning something like this, please just ignore this email — I won't follow up.
 >
