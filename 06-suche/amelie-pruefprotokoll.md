@@ -7,7 +7,7 @@ Ergänzt `dosen/_entsorgt.md`: dort steht die Begründung für gepackte, dann ve
 **Vorläufiger Zustand:** `ungeprüft` — Kandidat aus einer Ideenmethode, Existenzprüfung nicht gelaufen. Kein Urteil, zählt in keiner Trefferquote, darf nicht zugestellt werden.
 **Prüfen ab:** Tooling/Konsum + 6 Monate · Zivilgesellschaft + 12 Monate
 
-**Abdeckung Dosen ↔ Protokoll (Stand 19.09.2026):** Alle 22 Dosen in `05-dosen/` haben mindestens eine Zeile hier — Runde 1 (15), Nachtrag 18.09. (2), Runde 3 (5, Feuerkugel-Sofortnetz als zwei Zeilen). Neue Dose ohne Zeile hier = Fehler, sofort nachtragen.
+**Abdeckung Dosen ↔ Protokoll (Stand 19.09.2026):** Alle 23 Dosen in `05-dosen/` haben mindestens eine Zeile hier — Runde 1 (15), Nachtrag 18.09. (2), Runde 3 (5, Feuerkugel-Sofortnetz als zwei Zeilen), Runde 4 (1, Denkmal-Verlaufsblick). Neue Dose ohne Zeile hier = Fehler, sofort nachtragen.
 
 ---
 
@@ -104,6 +104,27 @@ Einzige noch offene `unklar`-Zeile war Bebauungsplan-Leser (Tafel-Warenannahme i
 | Bebauungsplan-Leser für Bürger (3. Prüfung) | `verengt` (vorher `unklar`) | Kein Werkzeug gefunden, das einen einzelnen Bebauungsplan (Festsetzungen, Baufenster, Nutzungen) in Laiensprache erklärt. Nachbarn, keiner deckt es ab: **DiPlanBeteiligung** (Berlin, live seit 12.05.2025) ist Verfahrens-/Beteiligungsplattform, in den Treffern keine KI-Zusammenfassung erwähnt; **Poliscope** macht KI-Zusammenfassungen von Ratsinformationssystemen (Sitzungen), nicht der Pläne; **InNoWest-RAG-Chatbot** (TH Brandenburg/HNEE) ist generischer Kommunal-Chatbot über von der Kommune befüllte PDFs — Seite nennt Bebauungspläne nicht, Prototyp seit Anfang 2026 in Pause, Entscheidung „RAG 2.0" Herbst/Winter 2026. Restlücke: der Plan selbst als Erklärobjekt. **Einschränkung:** Suchmaschine liefert weiter Content-Farmen (bau.de-Klone); DiPlanBeteiligung-Absenz beruht auf Trefferschnipseln, nicht auf Durchsicht des Portals. Kein Beweis der Abwesenheit. | 03/2027 (verkürzt: Kommunal-KI bewegt sich, RAG-2.0-Entscheidung im Winter) |
 
 Keine `unklar`-Zeile mehr offen. Nächster Recheck nur, wenn die Idee je in eine Dose soll — dann zuerst das DiPlanBeteiligung-Portal selbst durchsehen und die InNoWest-Entscheidung abwarten.
+
+---
+
+## Runde 4 — 19.09.2026 (Researcher #2, method: ideenrunde)
+
+*Quelle: Typ A, Denkmalbehörden/Landesämter (Schadenskartierungs-Leitfäden). Rundenumfang reduziert: parallel Empfängerprüfung Altbau Thermal (siehe `02-recherche/altbau-thermal-empfaenger-2026-09-19.md`). Fällige Rechecks: keine — kein `unklar` offen, kein „Prüfen ab" erreicht (frühestes 12/2026, Bebauungsplan-Leser 03/2027).*
+
+| Idee | Urteil | Beleg (kurz) | Prüfen ab |
+|---|---|---|---|
+| **Denkmal-Verlaufsblick** — Ehrenamtliche fotografieren gefährdetes Baudenkmal vom selben Standpunkt, Tool richtet aus und markiert Veränderung, Verlaufsblatt für Meldung | `verengt` | [method: ideenrunde] Vier Suchen, Empfänger zuerst, alles aus Suchtreffern (Portale selbst nicht gelesen). Deutsche Stiftung Denkmalschutz: Meldeportal + Schwarzbuch (324 S., >1.000 verlorene Denkmale 2024/25), rückblickend, keine Verlaufsbeobachtung in den Treffern; BLfD-Bürgerportal: Beratung/Förderung, keine Foto-Verlaufsdaten. Forschung deckt KI-Verfallserkennung für Fachleute (Fliesen-App 2026, Steinkonsolen-Monitoring, Review 2024); Profi-Schadenskartierung (Metigo MAP, KALIV) ist anderes Ziel/anderer Nutzer. Restlücke: Laien-Verlauf für gefährdete Objekte mit Weg zur Meldung. Dose gepackt: `05-dosen/denkmal-verlaufsblick.md` | 03/2027 |
+| **Foto → automatische Schadenskartierung** für Fassaden/Denkmale (Restaurator:innen-Assistent) | `verengt`, nahe `besetzt` | [method: ideenrunde] Vier Suchen (LDA Berlin, englisch Forschung, deutsch Software, Ehrenamt). Kartierungssoftware existiert kommerziell (Metigo MAP: maßstäbliche Kartierung/Mengenermittlung auf entzerrten Bildplänen; KALIV: Flächenerkennung/Größenklassen); KI-Schadenserkennung an Mauerwerk ist breit erforscht (Datensätze, SAM-Modelle, Handy-Deep-Learning). Suche nannte die etablierten Lösungen „überwiegend manuell/halbautomatisch" — die Restlücke ist eine KI-Vorannotation *innerhalb* bestehender Kartierungssoftware, Empfänger wären Firmen. Nicht gepackt; nur Atlas-Eintrag | – |
+
+---
+
+## Recheck 19.09.2026 (Researcher #2, method: ideenrunde) — Altbau Thermal
+
+Anlass: erste Dose vor Zustellung; Prämisse in Runde 1 nur gegen co2online/EnergyMap geprüft. Vier Suchen, nur Suchschnipsel (reduco.ai und heatpunk.co.uk nicht lesbar). Details: `02-recherche/altbau-thermal-empfaenger-2026-09-19.md`, Teil F–H.
+
+| Idee | Urteil | Beleg (kurz) | Prüfen ab |
+|---|---|---|---|
+| Altbau Thermal (2. Prüfung) | `verengt` (unverändert, Restlücke enger) | [method: ideenrunde] Nachbarn, die die Dose nicht nennt: **Heatpunk** (UK, Web-Grundrisseditor, raumweise Heizlast, kostenlos auch für Hausbesitzer, Installateur-Fokus, stationär, britische Normen), **reduco.ai** (D, Adresse → LoD2/BIM → DIN 18599, Sanierungsvarianten, Eigentümer/Wohnungswirtschaft, Gebäudeebene), Taupunkt-/Schimmelrechner (nur gemessene Wandtemperatur). Kein integriertes deutsches Laien-Tool Grundriss + Ecken-Oberflächentemperatur + A/B gefunden. Restlücke: deutsche Altbauwohnung, Taupunkt an der kalten Ecke, Vorher/Nachher ohne Normanspruch. Atlas-Feld „Mieter-Tools Schimmel" ist `dicht` (SchimmelScan). Dose fehlt der Pflichtabschnitt „Wer es schon versucht hat" | 03/2027 (verkürzt, vor Zustellung ohnehin gegenprüfen) |
 
 ---
 
