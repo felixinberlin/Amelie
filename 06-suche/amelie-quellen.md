@@ -18,6 +18,7 @@ Diese Liste sagt, **wo** gegraben wird, und hält fest, **was schon durchgegrabe
 | Bundesamt für Naturschutz (BfN) | Skripten, Leitfäden, Kartieranleitungen | angekratzt — BfN-Schriften 721 „Kartieranleitung für die Biotoptypen nach Anlage 2 der BKompV" gefunden (668 Biotoptypen, feste Schwellenwerte, Kartiermethodik von Hand). Daraus entstanden: Biotoptyp-Assistent (`05-dosen/biotoptyp-assistent.md`) | 18.09.2026 |
 | Senatsverwaltung Berlin, Umwelt | Leitfäden (z. B. „Bauen mit Glas und Licht", 2021) | offen | – |
 | Denkmalbehörden, Landesämter | Schadenskartierungs-Anleitungen | angekratzt — Anleitungen gefunden (Berlin LDA „Leitfaden zur Erstellung von restauratorischen Dokumentationen", BW, Niedersachsen, Sachsen-Anhalt „Handreichung zur Bestandsuntersuchung"), aber **nicht gelesen**; Schadenskartierung ist als Software-Feld besetzt (Metigo MAP, KALIV) — Typ A ist hier **kein Schema ohne Software**. Ertrag kam aus der Ehrenamts-/Bürgerseite (DSD Schwarzbuch, BLfD Bürgerportal), also eher Typ B. Idee: Denkmal-Verlaufsblick | 19.09.2026 |
+| Denkmalbehörden, Landesämter | Schadenskartierungs-Anleitungen | `durchsucht` (Suchen, keine Publikationsliste gelesen) — 19.09.2026, Researcher #1: Leitfäden existieren (LAD Baden-Württemberg „Dokumentation im konstruktiven Holzbau", Berlin LDA restauratorische Dokumentation, LVR-Handreichungen, Baubegehungs-Checklisten, z. B. EKBO). **Ergebnis: 3 Ideen abgeleitet, 0 überlebt** (Kirchen-Baubegehung `besetzt`, Schadenskartierung per Foto `besetzt`, Orgel-Resonanz `unklar`). Der Strang ist dicht: Denkmal/Kirche ist „physisches Objekt + wiederkehrende Prüfung" und hat Software-Anbieter (ARCHIKART) und KI-Pilotprojekte (Wiro Rostock). Nicht weiter hier graben; Restwert nur Orgel (Orgelbauer-Kontakt) | 19.09.2026 |
 | Landesumweltbehörden „Licht & Naturschutz" (Hamburg BUKEA u. a.) | weitere Länder-Leitfäden ohne Tool (analog zu Hamburg) | angekratzt — **ergiebig, Lichtplan-Check entstand hieraus** | 18.09.2026 |
 
 **Suchstring:** `<Gremium> Bewertungsverfahren Punktesystem` · `<Gremium> Kartieranleitung` · `<Gremium> Checkliste Vollzug`
@@ -71,7 +72,7 @@ Der Lauf nennt diese Anker in `amelie-bisoziation-log.md`. Sie sind hier vermerk
 | LANA/BfN Kartieranleitung LRT 6120 (Trockenrasen) | A | Trockenrasen-Transekte; Überschneidung mit Kartierlotse klären | offen (BfN-Zeile oben ist wegen Schrift 721 `angekratzt`, LRT-6120-Anleitung selbst ungelesen) |
 | NABU-Batcorder-Monitoring Gewässer | B | Fledermaus-Echo-Entwirrer | offen |
 | Thünen MonViA, Hummel-Nistkasten | B | Hummel-Schleusenwächter | angekratzt (Nisthilfe-Foto-Auswertung Runde 2; Hummel-Strang wie in Zeile oben vermerkt) |
-| Stiftung Denkmalschutz / BDO, Orgelpfeifen-Bleifraß | A/Denkmal | Orgelpfeifen-Resonanz | offen (deckt sich mit „Denkmalbehörden, Landesämter" oben) |
+| Stiftung Denkmalschutz / BDO, Orgelpfeifen-Bleifraß | A/Denkmal | Orgelpfeifen-Resonanz | angekratzt 19.09.2026 — HfK-Bremen/DBU-Projekt, IDW-Meldung, CORDIS COLLAPSE gelesen; Handbuch Orgelkorrosion 2019 (PDF) nicht lesbar; Idee `unklar` |
 | DWD Waldbrandgefahrenindex / Landesforst | A | Waldbrand-Streu-Knistern | offen |
 | DWD Phänologischer Kalender | B | Knospen-Countdown | offen |
 | Tafel Deutschland e. V. | B/Empfänger | Tafel-Frische-Triage | **Achtung:** laufendes BMEL-Projekt „Tafel macht Zukunft" — zuerst dessen Umfang lesen |
