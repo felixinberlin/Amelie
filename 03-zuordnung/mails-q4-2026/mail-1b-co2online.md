@@ -17,7 +17,7 @@ Guten Tag,
 
 ich recherchiere Software, die erst seit Kurzem technisch möglich ist, und baue nur einen kleinen Teil davon selbst. Diese Idee passt zu Ihrer Arbeit und nicht zu mir, deshalb schenke ich sie Ihnen.
 
-Sie sind Partner im Forschungsverbund EnergyMap Berlin, der den Wärmebedarf einzelner Gebäude prognostiziert. Die Frage danach ist offen: was die einzelne Wohnung tut. Grundriss zeichnen, Baualtersklasse wählen, sehen, was ein gekipptes Fenster im Berliner Zimmer kostet und wo es an der Außenwand schimmelkritisch kalt wird. Kein Konkurrenzprodukt, sondern die Innenperspektive zu Ihren Gebäudedaten. Ihr Draht zu Bürger:innen, etwa über den HeizCheck, ist genau die Stelle, an der so etwas landen würde.
+Sie sind Partner im Forschungsverbund EnergyMap Berlin, der den Wärmebedarf einzelner Gebäude prognostiziert. Nicht abgedeckt ist dort die Frage danach: was die einzelne Wohnung tut. Grundriss zeichnen, Baualtersklasse wählen, sehen, was ein gekipptes Fenster im Berliner Zimmer kostet und wo es an der Außenwand schimmelkritisch kalt wird. Kein Konkurrenzprodukt, sondern die Innenperspektive zu Ihren Gebäudedaten. Ihr Draht zu Bürger:innen, etwa über den HeizCheck, ist genau die Stelle, an der so etwas landen würde.
 
 Eine Seite mit Skizze, erstem Ticket und der Stelle, an der es schiefgeht, nämlich Scheingenauigkeit bei fünfstelligen Sanierungsentscheidungen:
 https://github.com/felixinberlin/Amelie/blob/main/05-dosen/altbau-thermal.md
