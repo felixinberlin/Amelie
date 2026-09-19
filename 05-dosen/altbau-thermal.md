@@ -1,80 +1,77 @@
 # Altbau Thermal
 
-**Ein Satz:** Grundriss zeichnen, Baualtersklasse wählen, zusehen, was die eigene Wohnung thermisch tut — die Innenperspektive zu dem, was EnergyMap Berlin von außen für jedes Gebäude ausrechnet.
+**Ein Satz:** Grundriss zeichnen, Baualtersklasse wählen, sehen, was die eigene Wohnung thermisch tut — an der Ecke hinter dem Schrank, nicht im Mittel. Die Innenperspektive zu dem, was EnergyMap Berlin von außen für jedes Gebäude ausrechnet.
 
-**Stand:** September 2026 · **Prüfen ab:** September 2027
-**Empfänger:** Forschungsverbund EnergyMap Berlin (Projektleitung UdK Berlin) · nachrangig: co2online gGmbH, Verbraucherzentrale Berlin
+**Stand:** 19. September 2026 · **Prüfen ab:** September 2027
+**Empfänger:** Forschungsverbund EnergyMap Berlin (Leitung UdK Berlin, Fachgebiet VPT) · nachrangig: Verbraucherzentrale Berlin (Energieberatung)
+**Verdikt:** 🎁 verschenken — Prüfprotokoll: *verengt* (siehe „Wer es schon versucht hat")
 
 ---
 
 ## Das Problem
 
-Seit Mai 2025 gibt es **EnergyMap Berlin**: eine öffentliche Web-App, die mit KI den Wärmebedarf einzelner Berliner Gebäude prognostiziert, Sanierungsoptionen durchspielbar macht und an den Energieatlas anschließt. Dazu eine Python-Schnittstelle für Entwickler:innen. Damit ist eine Frage beantwortet, die vorher offen war: *Was braucht dieses Gebäude?*
+Seit Mai 2025 prognostiziert **EnergyMap Berlin** per KI den Wärmebedarf des Berliner Gebäudebestands (rund 360.000 Gebäude). Damit ist beantwortet: *Was braucht dieses Gebäude?* Offen bleibt: **Was tut meine Wohnung?** Das hängt vom Grundriss ab, von der Ecke hinter dem Schrank und vom Heizkörper unter der Nische. Kein Kataster kann das schließen.
 
-Die Frage, die danach kommt, ist unbeantwortet: **Was tut meine Wohnung?**
+- **Der Schimmelstreit.** Mieter:innen wird gesagt, sie lüfteten falsch; die Eigentümerseite sagt, die Wand sei in Ordnung. Was fehlt, ist eine Aussage, die beide prüfen können: **„Diese Ecke bleibt unter 80 % Oberflächenfeuchte, solange die Raumluft unter X % relativer Feuchte bleibt."** Liegt X bei 42 %, hilft Lüften allein kaum, denn schon normale Raumfeuchte überschreitet die Grenze. Liegt X bei 60 %, hat die Ecke Reserve.
+- **Die 20.000-Euro-Entscheidung.** Fenster tauschen, dämmen oder Heizkörper vergrößern: Für *seinen* Grundriss kann niemand die Varianten vergleichen.
+- **Die Beratungslücke.** Die Verbraucherzentrale erklärt im Gespräch, was ein Bild in zehn Sekunden zeigen würde (Basis-Check als Hausbesuch in der Mietwohnung kostenlos, Gebäude-Check 30 € Eigenanteil). Ratsuchende können nichts mitnehmen.
 
-Zwischen Gebäudehülle und Bewohnerin liegt eine Lücke, die kein Kataster schließen kann, weil sie vom Grundriss abhängt — von der Ecke hinter dem Schrank, vom Fenster im Berliner Zimmer, vom Heizkörper unter der Nische. Drei Situationen, in denen das konkret weh tut:
-
-- **Der Schimmelstreit.** Mieter:innen wird gesagt, sie lüfteten falsch; die Eigentümerseite sagt, die Wand sei in Ordnung. Ein Gebäudewert in kWh/m²a hilft in diesem Streit niemandem. Was fehlt, ist die Oberflächentemperatur **an dieser Ecke** — ein geteiltes Modell, an dem beide Seiten dasselbe sehen.
-- **Die 20.000-Euro-Entscheidung.** Fenster tauschen, dämmen oder Heizkörper vergrößern: Wer die drei Varianten für *seinen* Grundriss vergleichen will, hat dafür kein Werkzeug.
-- **Die Beratungslücke.** Die kostenfreie Energieberatung erklärt in einem Gespräch, was ein Bild in zehn Sekunden zeigen würde. Beratenden fehlt eine Visualisierung, die die Ratsuchende mit nach Hause nimmt.
-
-**Ausdrücklich kein Konkurrenzprodukt.** Dieses Werkzeug fängt da an, wo EnergyMap aufhört: an der Gebäudehülle. Es verbraucht deren Daten, es ersetzt sie nicht.
+**Kein Konkurrenzprodukt:** Das Werkzeug beginnt an der Gebäudehülle und verbraucht EnergyMap-Daten, statt sie zu ersetzen.
 
 ## Warum das jetzt geht
 
-Fünf Dinge waren einzeln teuer und sind es nicht mehr — das fünfte ist seit letztem Jahr neu:
-
-1. **Grundriss aus Foto oder PDF.** Wände, Fenster und Türen aus einem Exposé-Grundriss zu extrahieren ist heute ein gelöstes Bildproblem. Vorher war es Handarbeit oder CAD-Import — daran sind Laienwerkzeuge bisher gescheitert.
-2. **Parameter ohne Fachwissen.** Niemand kennt den U-Wert seiner Außenwand. Aber fast alle wissen „Altbau, etwa 1905, Berliner Zimmer, Kastendoppelfenster" — daraus lassen sich Bauteilparameter nach Baualtersklasse ableiten, in Sprache statt in Formularen.
-3. **Interaktive Simulation im Browser.** Instationäre 2D-Wärmeleitung plus Luftwechsel läuft per WebGL2 in Echtzeit auf einem Mittelklasse-Laptop. Das war bis vor wenigen Jahren Desktop-FEM mit Lizenzkosten.
-4. **Frei nutzbare Wetterdaten.** Die ortsgenauen Testreferenzjahre von DWD und BBSR liefern ein realistisches Berliner Stundenjahr.
-5. **Die Gebäudedaten sind jetzt öffentlich abrufbar.** Genau das war der fehlende Baustein — und mit der EnergyMap-Web-App und `energymap4py` gibt es ihn seit 2025. Die Wohnungssimulation muss den Gebäudekontext nicht mehr raten, sie kann ihn abfragen.
+1. **Grundriss aus Foto oder PDF** gibt es als Produkt (RoomSketcher, FloorScan). Öffnungen werden schlechter erkannt als Wände, deshalb bestätigt der Mensch jeden Treffer.
+2. **Parameter ohne Fachwissen.** Niemand kennt den U-Wert seiner Wand, aber fast alle wissen „Altbau, etwa 1905, Kastenfenster". Die Gebäudetypologie des IWU (TABULA) ordnet Baualtersklassen Bauteilaufbauten zu; 35 cm Vollziegel der Gründerzeit liegt bei U ≈ 1,4–1,6. Die **Streuung innerhalb der Klasse** ist das Band, das die Oberfläche zeigen muss.
+3. **2D-Wärmeleitung im Browser.** Stationär genügen JavaScript oder WASM; WebGL2 lohnt erst für die instationäre Echtzeit-Animation.
+4. **Freie Wetterdaten:** DWD/BBSR-Testreferenzjahre.
+5. **Abrufbare Gebäudedaten:** EnergyMap bietet CSV-Download und Energieatlas-Dienste, `energymap4py` ist auf GitHub veröffentlicht. Welche Attribute genau (Baualtersklasse, Geometrie, Sanierungsstand) abfragbar sind, habe ich nicht geprüft — die erste Frage an den Verbund.
 
 ## Skizze
 
 Zeichnen → parametrisieren → simulieren → vergleichen.
 
-- **Eingabe:** Grundriss auf einem Raster zeichnen oder aus einem Bild übernehmen. Wände, Fenster, Türen, Heizkörper setzen. Adresse eingeben → Gebäudekontext aus EnergyMap vorbelegen, danach von Hand korrigierbar.
-- **Modell:** instationäre Wärmeleitung im 2D-Schnitt pro Bauteil, Luftwechsel pro Raum (Fenster zu / gekippt / Stoßlüften), Heizkörper als Quelle mit Thermostatverhalten, Zeitschritt über ein DWD-Testreferenzjahr.
-- **Ausgabe:** animiertes Temperaturfeld, Oberflächentemperatur an den kritischen Ecken (Schimmelrisiko als Taupunktunterschreitung, nicht als Bauchgefühl), Verbrauch und Kosten **als Band, nie als eine Zahl**.
-- **Der eigentliche Nutzen:** A/B. Zwei Varianten desselben Grundrisses nebeneinander, gleiche Wetterdaten, gleiche Nutzung.
-- **Die Sommerrichtung fällt ab.** Dieselbe Gleichung, anderes Vorzeichen: Überhitzung, Verschattung, Nachtlüftung. Für ein Vorhaben, das Kühlbedarf auf Gebäudeebene katastriert, ist das die passende Wohnungsebene.
+- **Eingabe:** Grundriss auf Raster oder aus Bild; Wände, Fenster, Heizkörper. Adresse → Gebäudekontext aus EnergyMap, von Hand korrigierbar.
+- **Modell:** Wärmeleitung in **zwei Schnitten**: horizontal (Außenecken, Laibungen, der Schimmelfall) und vertikal (Decke, Brüstung, Heizkörpernische). Raumluft als durchmischter Knoten, keine Strömung. Den Möbeleffekt trägt der Wärmeübergangswiderstand hinter dem Schrank (0,25 statt 0,13 m²K/W).
+- **Schimmel ist kein Taupunkt.** Er wächst ab etwa 80 % relativer Oberflächenfeuchte, ohne Kondensat (fRsi ≥ 0,70; bei 20 °C/50 %/−5 °C sind das 12,6 °C, der Taupunkt liegt bei 9,3 °C). Diese stationäre Grenze ist konservativ; das Wetterjahr liefert die **Stunden über 80 %** als Risikoindikator, nie als Befund.
+- **Ausgabe:** Temperaturfeld, Ecken-Oberflächentemperatur, Feuchtegrenze der Ecke, Verbrauch und Kosten **als Band**.
+- **Der eigentliche Nutzen: A/B.** Zwei Varianten desselben Grundrisses, gleiche Wetterdaten, gleiche Nutzung.
 
-**Nicht dabei:** kein Energieausweis, keine normkonforme Berechnung, kein 3D, kein Anlagen-Contracting. Ein Werkzeug zum Verstehen, kein Nachweisinstrument.
+**Nicht dabei:** kein Energieausweis, keine Norm-Heizlast, kein Gutachten, kein Beweismittel im Mietstreit, kein 3D.
 
 ## Erster Schritt
 
-**Ticket: Ein Raum, ein Fenster, ein Heizkörper, stationär.**
+**Ticket: Eine Außenecke, ein Fenster, ein Heizkörper, stationär.**
 
-Rastereditor für einen einzelnen Raum mit einer Außenwand. Drei Regler: U-Wert Wand, U-Wert Fenster, Luftwechselrate. Ausgabe: erforderliche Heizleistung und Oberflächentemperatur in der kalten Ecke, bei Berliner Januar-Mitteltemperatur.
+Rastereditor für einen Raum mit zwei Außenwänden; Regler für Wand-U, Fenster-U, Luftwechsel, Raumfeuchte; Ausgabe: Heizleistung, Ecken-Oberflächentemperatur, Feuchtegrenze als Band.
 
-**Fertig, wenn:** eine Änderung des Fenster-U-Werts die erforderliche Heizleistung sichtbar verändert und die Zahl gegen eine Handrechnung nach Norm auf 10 % stimmt.
-
-Alles Weitere — Instationarität, Wetterjahr, Grundrisserkennung, EnergyMap-Anbindung, A/B — hängt an diesem einen validierten Raum.
+**Fertig, wenn:** (1) der 2D-Löser die zweidimensionalen Testfälle aus Anhang A der DIN EN ISO 10211 reproduziert (laut WUFI auf 0,1 K) und (2) die Heizleistung eine Handrechnung nach DIN EN 12831 auf 10 % trifft und auf eine Änderung des Fenster-U-Werts sichtbar reagiert. Alles Weitere hängt an diesem validierten Raum; für die Instationarität sind die Testfälle der VDI 6007 Blatt 1 der Prüfmaßstab.
 
 ## Wo es kippt
 
-**Das Hauptrisiko ist nicht technisch, sondern ethisch: eine Simulation, die präzise aussieht und falsch ist, ist schlimmer als keine.** Menschen treffen damit fünfstellige Entscheidungen und führen damit Streit mit ihrer Hausverwaltung. Scheingenauigkeit richtet hier echten Schaden an.
+**Eine Simulation, die präzise aussieht und falsch ist, ist schlimmer als keine.** Menschen treffen damit fünfstellige Entscheidungen und führen Streit mit der Hausverwaltung.
 
-Die einzige Gegenmaßnahme, die ich kenne, ist Disziplin in der Darstellung:
+- **Nie eine Einzelzahl, nie „unbedenklich".** Das Modell darf „kritisch" oder „unklar" sagen. Ein 2D-Schnitt unterschätzt die Kälte echter Raumecken, in denen drei Flächen zusammenlaufen; das Band ist deshalb einseitig optimistisch, und die Oberfläche muss das sagen.
+- **Gegen etablierte Verfahren validieren**, bevor es jemand außerhalb sieht (siehe Ticket). Die Methodik steht im Verbund, nicht in meinem Kopf.
+- **Das Modell sagt nicht, wer schuld ist.** Es zeigt die Bedingung, unter der eine Ecke trocken bleibt; die tatsächliche Raumfeuchte misst kein Grundriss.
 
-- **Nie eine einzelne Zahl ausgeben.** Immer ein Band, und das Band muss ehrlich breit sein.
-- **Gegen etablierte Verfahren validieren**, bevor das Ding irgendjemand außerhalb sieht — die Validierungsmethodik dafür ist in diesem Verbund vorhanden, in meinem Kopf nicht.
-- **Unsicherheit sichtbar machen, nicht wegdesignen.** Wer den Bauzustand nicht kennt, sieht ein breiteres Band, keine Fußnote.
+**Zweites Risiko:** Lesart als Energieausweis-Ersatz. Der Nicht-Anspruch gehört in die Oberfläche, nicht ins Impressum. **Drittes:** Der Grundrissimport ist der Punkt, an dem Laien abspringen; dauert das Zeichnen länger als drei Minuten, ist das Werkzeug tot.
 
-**Zweites Risiko:** Das Werkzeug wird als Energieausweis-Ersatz gelesen und erbt regulatorische Erwartungen, die es nicht erfüllen kann. Antwort: Der Nicht-Anspruch gehört in die Oberfläche, nicht ins Impressum.
+## Wer es schon versucht hat
 
-**Drittes Risiko, ehrlich:** Der Grundriss-Upload ist der Punkt, an dem Laien abspringen. Wenn Zeichnen länger als drei Minuten dauert, ist das Werkzeug tot. Deshalb steht die Eingabe und nicht die Physik im Risiko.
+Verdikt **verengt**, nicht frei (19.9.2026, fünf Suchen).
 
-## Vorarbeit, die es schon gibt
+- **Ubakus „Thermische Simulation"** (seit November 2023): Wärmebedarf und Sommer-Übertemperaturgradstunden im Testreferenzjahr, aber tabellarische Eingabe, **eine Lufttemperatur pro Zone**, Bauteile auf 1D reduziert. Kein Grundriss, kein Temperaturfeld, keine Ecken. **Die Sommerrichtung ist auf Zonenebene damit besetzt**; neu wäre nur die räumliche Verteilung.
+- **Wärmebrücken-Werkzeuge:** Schöck-Rechner (Herstellertool), Ubakus-U-Wert (2D-FEM je Bauteil), Better Building Heat Transfer Simulator (2025, Fachleute), ThermCAD: Bauteile, keine Wohnung.
+- **fRsi-/Taupunkt-Rechner:** Einzelzahl aus gemessener Oberflächentemperatur. **airtec WohnCheck:** nur die Beschreibung gesehen, Umfang ungeprüft.
+- **Grundrisserkennung** (RoomSketcher, FloorScan, HottCAD): Geometrie; Thermik von HottCAD ungeprüft.
 
-- **EnergyMap Berlin** — Forschungsverbund unter Leitung der UdK Berlin mit co2online, SEnerCon, LUP und dem Bezirksamt Charlottenburg-Wilmersdorf, gefördert vom Bund. Öffentliche Web-App seit Mai 2025, dazu die Python-Schnittstelle `energymap4py`. Validierung des KI-Modells zuletzt auf der BauSIM 2026 in Zürich vorgestellt.
-- **CoolingMap** (2026–2029) und **CO2OL ISLANDS** (2026–2030) — die Nachfolgevorhaben zu Kühlbedarf und klimaresilienter Stadtentwicklung. Dort ist die Sommerrichtung dieses Werkzeugs anschlussfähig.
-- **DWD-Testreferenzjahre (TRY)** — ortsgenaue Stundenwetterdaten, mit dem BBSR erstellt.
-- **Verbraucherzentrale Berlin, Gebäudecheck** — die kostenfreie Beratungsschiene, in die so ein Werkzeug als Vermittlungsmittel passt.
-- **TEASER** (RWTH-EBC) und **SimStadt** — Gebäudebestandsmodellierung auf Quartiersebene. Beide rechnen Bestände. Keiner adressiert die einzelne Wohnung und ihre Bewohnerin. Genau da ist die Lücke.
-- **Prototype Fund** — Bewerbungsfenster ab 1. Oktober 2026, Open-Source-Pflicht. Falls ihr eine studentische Arbeit oder ein kleines Vorhaben daraus machen wollt: dort liegt Geld dafür.
+Nicht gefunden: ein Laienwerkzeug, das Grundriss, räumliche Oberflächentemperatur, Feuchtegrenze und A/B verbindet.
+
+## Vorarbeit
+
+- **EnergyMap Berlin:** UdK Berlin mit co2online, SEnerCon, LUP und Bezirksamt Charlottenburg-Wilmersdorf, Bundesförderung; Web-App seit 28.5.2025; KI-Modell-Validierung auf der BauSIM 2026 (Zürich, 9.–11. September) vorgestellt.
+- **CoolingMap** (seit April 2026) und **CO2OL ISLANDS** (seit März 2026), beide UdK-koordiniert: Kühlbedarf und Stadthitze, Anschluss für die Sommerrichtung.
+- **Prototype Fund:** Bewerbung 1.10.–30.11.2026, aber seit 2025 nur die Schwerpunkte Datensicherheit und Software-Infrastruktur. Eine Wohnungs-App passt nicht; ein offener, validierter 2D-Wärmeleitungskern als Bibliothek könnte als Infrastruktur gelten, das wäre vorab zu klären. Näher liegt eine studentische Arbeit im Verbund.
 
 ---
 
