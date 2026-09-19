@@ -41,7 +41,7 @@ Details in `amelie-matrix.md`, `dosen/_entsorgt.md`. Belege der Einzelzeilen unt
 | Home-Network MCP | `besetzt` | ≥4 unabhängige FRITZ!Box-MCP-Server, Home Assistant mit MCP in beide Richtungen | – |
 | Repo-Museum | `besetzt` | begehbare 3D-Repo-Stadt bereits gebaut/veröffentlicht; Vorgeschichte CodeCity/Gource/GitHub Skyline | – |
 | Commute Oracle | `besetzt` | Citymapper KI-Routenplanung 2026, dedizierte „wann losgehen"-Produkte, Google-Maps-Pendelfunktionen | – |
-| Altbau Thermal | `verengt` | co2online/EnergyMap Berlin rechnet Gebäudeebene für 360.000 Gebäude; Wohnungsebene (Grundriss, Fenster, Heizkörper) bleibt Lücke | 09/2027 |
+| Altbau Thermal | `verengt` | EnergyMap Berlin rechnet Gebäudeebene (360.000 Gebäude); Ubakus „Thermische Simulation" (seit 11/2023) rechnet Wohnung/Zone mit einer Lufttemperatur, ohne Grundriss und Ecken, inkl. Sommerüberhitzung — Sommerrichtung damit auf Zonenebene besetzt; Restlücke: Grundriss + räumliche Oberflächentemperatur + Feuchtegrenze + A/B für Laien. Prototype Fund passt nicht (Schwerpunkte seit 2025: Datensicherheit, Software-Infrastruktur). Nachprüfung 19.9.2026 [method: ideenrunde] | 09/2027 |
 | Sperrmüll-Radar | `frei` | keine Berliner Live-Karte für Sperrmüll-Zu-verschenken-Pins mit Verfallslogik gefunden | 09/2027 |
 | Kiez-Lärmkarte | `frei` | Noise-Planet/NoiseCapture liefert Durchschnittskarten; „wann ist diese Straße leise"-Perspektive nicht gefunden | 09/2027 |
 | Diffgeist | `frei` | personalisierte Release-Notes (nur was der eigene Code tatsächlich aufruft) nicht gefunden; Zeitfenster geschätzt auf Monate | 03/2027 |
