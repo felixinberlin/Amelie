@@ -239,7 +239,7 @@ export const GitHubPagesDataHub: React.FC<GitHubPagesDataHubProps> = ({
             </div>
             <div className="flex items-center gap-2 text-[#2b1e16]">
               <Database className="w-3.5 h-3.5 text-[#e65100]" />
-              <span>{isDe ? 'Konfiguration in firebase-applet-config.json hinterlegt' : 'Configured via firebase-applet-config.json'}</span>
+              <span>{isDe ? 'Konfiguration via VITE_FIREBASE_* oder lokales firebase-applet-config.json' : 'Configured via VITE_FIREBASE_* or optional firebase-applet-config.json'}</span>
             </div>
           </div>
         </div>

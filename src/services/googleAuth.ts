@@ -7,7 +7,9 @@ import {
   signOut,
   User,
 } from 'firebase/auth';
-import firebaseConfig from '../../firebase-applet-config.json';
+import { firebaseConfig, isFirebaseConfigured } from './firebaseConfig';
+
+export { isFirebaseConfigured };
 
 // Initialize Firebase app safely (prevent duplicate initialize calls)
 const app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
@@ -46,6 +48,12 @@ export const initAuth = (
 };
 
 export const googleSignIn = async (): Promise<{ user: User; accessToken: string } | null> => {
+  if (!isFirebaseConfigured()) {
+    throw new Error(
+      'Firebase is not configured for this deployment. The main ideas archive, tins, matrix, and local editor work 100% offline. To enable Google account import, set up VITE_FIREBASE_* environment variables or supply firebase-applet-config.json.'
+    );
+  }
+
   try {
     isSigningIn = true;
     const result = await signInWithPopup(auth, provider);
