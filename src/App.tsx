@@ -13,6 +13,7 @@ import { GoogleAccountImporter } from './components/GoogleAccountImporter';
 import { NormalJobsExplorer } from './components/NormalJobsExplorer';
 import { WhimsyAndGoodnessView } from './components/WhimsyAndGoodnessView';
 import { GitHubPagesDataHub } from './components/GitHubPagesDataHub';
+import { MusterEmailsSection } from './components/MusterEmailsSection';
 import { DOSEN_DATA, DISCARDED_DATA } from './data/dosen';
 import { MATRIX_DATA } from './data/matrix';
 import { DELIVERIES_DATA } from './data/deliveries';
@@ -133,6 +134,14 @@ export function App() {
             lang={lang}
             onSelectDose={setSelectedDose}
             onOpenSimulator={handleOpenSimulator}
+            onOpenManifest={() => {
+              setCurrentTab('manifest');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            onOpenEmails={() => {
+              setCurrentTab('muster-emails');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
           />
         )}
 
@@ -202,8 +211,18 @@ export function App() {
           />
         )}
 
+        {currentTab === 'muster-emails' && (
+          <MusterEmailsSection lang={lang} />
+        )}
+
         {currentTab === 'manifest' && (
-          <ManifestView lang={lang} />
+          <ManifestView
+            lang={lang}
+            onOpenEmails={() => {
+              setCurrentTab('muster-emails');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+          />
         )}
 
         {currentTab === 'packer' && (

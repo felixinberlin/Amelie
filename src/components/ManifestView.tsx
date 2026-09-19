@@ -6,9 +6,10 @@ import { getTranslation } from '../i18n';
 
 interface ManifestViewProps {
   lang: Language;
+  onOpenEmails?: () => void;
 }
 
-export const ManifestView: React.FC<ManifestViewProps> = ({ lang }) => {
+export const ManifestView: React.FC<ManifestViewProps> = ({ lang, onOpenEmails }) => {
   const [copiedPledge, setCopiedPledge] = useState(false);
   const [pillarRecipient, setPillarRecipient] = useState(true);
   const [pillarTax, setPillarTax] = useState(true);
@@ -114,43 +115,99 @@ export const ManifestView: React.FC<ManifestViewProps> = ({ lang }) => {
 
       {/* The 5 Rules */}
       <section className="space-y-6">
-        <div>
-          <span className="text-xs font-mono-code uppercase tracking-wider text-amber-800 font-bold">
-            {lang === 'de' ? 'Grundprinzipien' : lang === 'es' ? 'Principios Fundamentales' : 'Core Principles'}
-          </span>
-          <h3 className="text-2xl font-bold font-serif-title text-stone-900">
-            {lang === 'de' ? 'Die fünf Regeln' : lang === 'es' ? 'Las Cinco Reglas' : 'The Five Rules'}
-          </h3>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-typewriter uppercase tracking-wider text-[#8c1d40] font-bold px-2 py-0.5 rounded bg-[#8c1d40]/10 border border-[#8c1d40]/25">
+                {lang === 'de' ? 'LES 5 RÈGLES D\'OR' : lang === 'es' ? 'LAS 5 REGLAS DE ORO' : 'THE 5 GOLDEN RULES'}
+              </span>
+              <span className="text-xs font-typewriter text-[#8b6f57]">
+                ✦ CC0 · Kula-Ring ✦
+              </span>
+            </div>
+            <h3 className="text-2xl sm:text-3xl font-bold font-amelie text-[#2b1e16] mt-1">
+              {lang === 'de' ? 'Die fünf Amélie-Regeln' : lang === 'es' ? 'Las Cinco Reglas de Amélie' : 'The Five Amélie Rules'}
+            </h3>
+            <p className="text-xs sm:text-sm text-[#6b5849] mt-0.5">
+              {lang === 'de'
+                ? 'Jede Regel schützt davor, aus einer selbstlosen Gabe ein getarntes B2B-Startup oder eine Belästigung zu machen.'
+                : lang === 'es'
+                ? 'Cada regla evita transformar un don generoso en una carga no deseada o en un negocio disfrazado.'
+                : 'Every rule prevents turning a selfless gift into an unwelcome burden or disguised commercial hustle.'}
+            </p>
+          </div>
+
+          {onOpenEmails && (
+            <button
+              onClick={onOpenEmails}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#8c1d40] hover:bg-[#741533] text-white text-xs font-typewriter font-bold shadow-2xs transition-colors shrink-0 cursor-pointer"
+            >
+              <Sparkles className="w-3.5 h-3.5 text-[#f6bd60]" />
+              <span>
+                {lang === 'de'
+                  ? 'Muster-E-Mails ansehen →'
+                  : lang === 'es'
+                  ? 'Ver correos de ejemplo →'
+                  : 'View Sample Emails →'}
+              </span>
+            </button>
+          )}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {MANIFEST_RULES.map((rule) => {
             const localizedRule = getRuleData(rule.number);
+            const isRuleOne = rule.number === 1;
+            const isRuleThree = rule.number === 3;
             return (
               <div
                 key={rule.number}
-                className={`p-6 rounded-2xl border bg-[#fdfbf7] flex flex-col justify-between transition-shadow hover:shadow-md ${
-                  rule.number === 1 ? 'md:col-span-2 border-amber-800/40 bg-amber-50/20' : 'border-stone-200'
+                className={`p-6 rounded-2xl border flex flex-col justify-between transition-all hover:shadow-md relative overflow-hidden ${
+                  isRuleOne
+                    ? 'md:col-span-2 bg-[#faf4e8] border-[#8c1d40]/40 shadow-xs'
+                    : isRuleThree
+                    ? 'bg-[#fffdf9] border-[#8c1d40]/30 shadow-2xs'
+                    : 'bg-[#fffdf9] border-[#dfd1be]'
                 }`}
               >
-                <div className="space-y-2">
+                {/* Subtle Amélie background badge for Rule 1 & 3 */}
+                {isRuleOne && (
+                  <div className="absolute right-4 top-2 select-none pointer-events-none opacity-5 font-typewriter text-8xl font-black text-[#8c1d40]">
+                    #1
+                  </div>
+                )}
+
+                <div className="space-y-2 relative">
                   <div className="flex items-center gap-3">
-                    <span className="w-7 h-7 rounded-full bg-stone-900 text-amber-300 font-mono-code text-xs font-bold flex items-center justify-center shrink-0">
+                    <span className="w-8 h-8 rounded-xl bg-[#8c1d40] text-[#f6bd60] font-mono-code text-sm font-bold flex items-center justify-center shrink-0 shadow-2xs border border-[#701531]">
                       {rule.number}
                     </span>
-                    <h4 className="text-base font-bold font-serif-title text-stone-900">
-                      {localizedRule.title}
-                    </h4>
+                    <div>
+                      <span className="text-[10px] font-typewriter uppercase tracking-widest text-[#8c1d40] font-bold block">
+                        {rule.number === 1
+                          ? (lang === 'de' ? 'KARDINALREGEL' : lang === 'es' ? 'REGLA CARDINAL' : 'CARDINAL RULE')
+                          : rule.number === 2
+                          ? (lang === 'de' ? 'DER KULA-RING' : lang === 'es' ? 'EL ANILLO KULA' : 'THE KULA RING')
+                          : rule.number === 3
+                          ? (lang === 'de' ? 'DAS KLINGELVERBOT' : lang === 'es' ? 'LA CABINA TELEFÓNICA' : 'THE PHONE BOOTH')
+                          : rule.number === 4
+                          ? (lang === 'de' ? 'RESPEKT VOR WERKZEUG' : lang === 'es' ? 'RESPETO POR LA HERRAMIENTA' : 'RESPECT FOR TOOLS')
+                          : (lang === 'de' ? 'BAU-DISZIPLIN' : lang === 'es' ? 'DISCIPLINA DE CONSTRUCCIÓN' : 'BUILDING DISCIPLINE')}
+                      </span>
+                      <h4 className="text-base sm:text-lg font-bold font-amelie text-[#2b1e16]">
+                        {localizedRule.title}
+                      </h4>
+                    </div>
                   </div>
-                  <p className="text-sm text-stone-700 leading-relaxed pl-10">
+                  <p className="text-xs sm:text-sm text-[#4a3728] leading-relaxed pl-11 font-sans">
                     {localizedRule.desc}
                   </p>
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-stone-200/60 pl-10">
-                  <span className="text-xs font-mono-code text-amber-900 font-semibold block">
-                    {lang === 'de' ? 'Faustformel: ' : lang === 'es' ? 'Regla práctica: ' : 'Rule of Thumb: '}
-                    <span className="font-normal italic">
+                <div className="mt-4 pt-3 border-t border-[#dfd1be] pl-11 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                  <span className="text-xs font-typewriter text-[#8c1d40] font-semibold block">
+                    ✦ {lang === 'de' ? 'Faustformel: ' : lang === 'es' ? 'Regla práctica: ' : 'Rule of Thumb: '}
+                    <span className="font-normal italic text-[#2b1e16]">
                       {localizedRule.thumb}
                     </span>
                   </span>
@@ -170,11 +227,17 @@ export const ManifestView: React.FC<ManifestViewProps> = ({ lang }) => {
               <span>{lang === 'de' ? 'Gütekompass für Ideengeber' : lang === 'es' ? 'Brújula del Don Desinteresado' : 'Gift Purity Compass'}</span>
             </div>
             <h3 className="text-2xl font-bold font-serif-title text-stone-900">
-              {lang === 'de' ? 'Die 4 Säulen der reinen Gabe' : 'The 4 Pillars of Unconditional Software Gifting'}
+              {lang === 'de'
+                ? 'Die 4 Säulen der reinen Gabe'
+                : lang === 'es'
+                ? 'Los 4 Pilares de la Donación Pura de Software'
+                : 'The 4 Pillars of Unconditional Software Gifting'}
             </h3>
             <p className="text-xs sm:text-sm text-stone-600 mt-0.5">
               {lang === 'de'
                 ? 'Ist deine Idee ein selbstloses Werkzeug oder ein verkleidetes SaaS-Startup?'
+                : lang === 'es'
+                ? '¿Es tu idea una herramienta desinteresada o una startup SaaS encubierta?'
                 : 'Is your idea a genuine gift of empowerment, or a disguised SaaS startup?'}
             </p>
           </div>
@@ -182,9 +245,15 @@ export const ManifestView: React.FC<ManifestViewProps> = ({ lang }) => {
           <div className="flex items-center gap-3 bg-white px-4 py-2.5 rounded-xl border border-stone-200 shadow-2xs self-start md:self-auto">
             <Award className={`w-6 h-6 ${score === 4 ? 'text-amber-600 animate-pulse' : score >= 2 ? 'text-amber-500' : 'text-stone-400'}`} />
             <div>
-              <div className="text-2xs font-mono-code uppercase text-stone-500">{lang === 'de' ? 'Amélie-Gütegrad' : 'Gift Purity Score'}</div>
+              <div className="text-2xs font-mono-code uppercase text-stone-500">
+                {lang === 'de' ? 'Amélie-Gütegrad' : lang === 'es' ? 'Pureza de la Donación' : 'Gift Purity Score'}
+              </div>
               <div className="text-lg font-bold font-serif-title text-stone-900">
-                {score} / 4 {score === 4 ? (lang === 'de' ? '· Reines Geschenk' : '· Pure Gift') : score >= 3 ? (lang === 'de' ? '· Stark' : '· Solid') : (lang === 'de' ? '· Kommerziell' : '· Commercial')}
+                {score} / 4 {score === 4
+                  ? (lang === 'de' ? '· Reines Geschenk' : lang === 'es' ? '· Regalo Puro' : '· Pure Gift')
+                  : score >= 3
+                  ? (lang === 'de' ? '· Stark' : lang === 'es' ? '· Sólido' : '· Solid')
+                  : (lang === 'de' ? '· Kommerziell' : lang === 'es' ? '· Comercial' : '· Commercial')}
               </div>
             </div>
           </div>
@@ -203,11 +272,17 @@ export const ManifestView: React.FC<ManifestViewProps> = ({ lang }) => {
             />
             <div className="space-y-1">
               <span className="font-bold text-sm text-stone-900 block font-serif-title">
-                {lang === 'de' ? '1. Ein konkreter Mensch aus Fleisch & Blut' : '1. A Specific, Living Human Being'}
+                {lang === 'de'
+                  ? '1. Ein konkreter Mensch aus Fleisch & Blut'
+                  : lang === 'es'
+                  ? '1. Una persona real de carne y hueso'
+                  : '1. A Specific, Living Human Being'}
               </span>
               <p className="text-xs text-stone-600 leading-relaxed">
                 {lang === 'de'
                   ? 'Kein abstraktes "B2B-Unternehmen", sondern eine reale Berufsgruppe: Die Krankenschwester, der Hobby-Imker, die Mieterin im Altbau.'
+                  : lang === 'es'
+                  ? 'No una "empresa B2B" abstracta, sino un profesional real: la enfermera nocturna, el apicultor aficionado, el inquilino.'
                   : 'Not an abstract "B2B user", but an actual craftsperson: night-shift nurses, hobby beekeepers, tenants in drafty flats.'}
               </p>
             </div>
@@ -224,11 +299,17 @@ export const ManifestView: React.FC<ManifestViewProps> = ({ lang }) => {
             />
             <div className="space-y-1">
               <span className="font-bold text-sm text-stone-900 block font-serif-title">
-                {lang === 'de' ? '2. Tilgt eine unsichtbare kognitive Steuer' : '2. Erases an Invisible Cognitive Tax'}
+                {lang === 'de'
+                  ? '2. Tilgt eine unsichtbare kognitive Steuer'
+                  : lang === 'es'
+                  ? '2. Elimina un impuesto cognitivo invisible'
+                  : '2. Erases an Invisible Cognitive Tax'}
               </span>
               <p className="text-xs text-stone-600 leading-relaxed">
                 {lang === 'de'
                   ? 'Befreit den Nutzer von einer nagenden Angst, bürokratischem Kleingedrucktem oder manueller Zeitverschwendung.'
+                  : lang === 'es'
+                  ? 'Libera al usuario de una ansiedad constante, de la letra pequeña burocrática o de horas de trabajo manual repetitivo.'
                   : 'Liberates the user from nagging anxiety, confusing regulatory fine print, or tedious manual drudgery.'}
               </p>
             </div>
@@ -245,11 +326,17 @@ export const ManifestView: React.FC<ManifestViewProps> = ({ lang }) => {
             />
             <div className="space-y-1">
               <span className="font-bold text-sm text-stone-900 block font-serif-title">
-                {lang === 'de' ? '3. Radikale Autonomie & Null Datensammlung' : '3. Radical Local Autonomy & Zero Surveillance'}
+                {lang === 'de'
+                  ? '3. Radikale Autonomie & Null Datensammlung'
+                  : lang === 'es'
+                  ? '3. Autonomía local radical y cero recopilación de datos'
+                  : '3. Radical Local Autonomy & Zero Surveillance'}
               </span>
               <p className="text-xs text-stone-600 leading-relaxed">
                 {lang === 'de'
                   ? 'Läuft im Browser ohne Login, ohne Cookies, ohne Cloud-Abo. Nach dem Laden funktioniert es auch im Funkloch.'
+                  : lang === 'es'
+                  ? 'Funciona en el navegador sin inicio de sesión, sin cookies ni suscripciones en la nube. Sigue funcionando sin conexión.'
                   : 'Runs on-device without logins, cookies, or subscriptions. Continues working offline inside a cellular dead zone.'}
               </p>
             </div>
@@ -266,11 +353,17 @@ export const ManifestView: React.FC<ManifestViewProps> = ({ lang }) => {
             />
             <div className="space-y-1">
               <span className="font-bold text-sm text-stone-900 block font-serif-title">
-                {lang === 'de' ? '4. Das Telefonzellen-Prinzip (Loslassen)' : '4. The Phone Booth Principle (Letting Go)'}
+                {lang === 'de'
+                  ? '4. Das Telefonzellen-Prinzip (Loslassen)'
+                  : lang === 'es'
+                  ? '4. El principio de la cabina telefónica (desprenderse)'
+                  : '4. The Phone Booth Principle (Letting Go)'}
               </span>
               <p className="text-xs text-stone-600 leading-relaxed">
                 {lang === 'de'
                   ? 'Du legst die Dose in die Telefonzelle, verschwindest und verlangst weder Anteile, noch Applaus, noch Gegenleistung.'
+                  : lang === 'es'
+                  ? 'Dejas la lata en la cabina telefónica, desapareces y no exiges acciones, aplausos ni reciprocidad alguna.'
                   : 'You place the tin in the telephone booth, walk away, and demand zero equity, zero applause, and zero payback.'}
               </p>
             </div>
@@ -284,6 +377,8 @@ export const ManifestView: React.FC<ManifestViewProps> = ({ lang }) => {
             <span className="text-xs text-stone-700 font-medium">
               {lang === 'de'
                 ? 'Möchtest du eine standardisierte Schenkungsurkunde (CC0) in deine Dose oder dein GitHub-Repo legen?'
+                : lang === 'es'
+                ? '¿Deseas adjuntar una Carta de Donación Incondicional (CC0) a tu prototipo o repositorio?'
                 : 'Attach an unconditional CC0 Gift Charter to your prototype or packaging letter?'}
             </span>
           </div>
@@ -295,12 +390,24 @@ export const ManifestView: React.FC<ManifestViewProps> = ({ lang }) => {
             {copiedCharter ? (
               <>
                 <Check className="w-4 h-4 text-emerald-300" />
-                <span>{lang === 'de' ? 'Urkunde kopiert!' : 'Charter Copied!'}</span>
+                <span>
+                  {lang === 'de'
+                    ? 'Urkunde kopiert!'
+                    : lang === 'es'
+                    ? '¡Carta copiada!'
+                    : 'Charter Copied!'}
+                </span>
               </>
             ) : (
               <>
                 <Copy className="w-4 h-4 text-amber-200" />
-                <span>{lang === 'de' ? 'Schenkungsurkunde kopieren' : 'Copy Gift Charter'}</span>
+                <span>
+                  {lang === 'de'
+                    ? 'Schenkungsurkunde kopieren'
+                    : lang === 'es'
+                    ? 'Copiar carta de donación'
+                    : 'Copy Gift Charter'}
+                </span>
               </>
             )}
           </button>

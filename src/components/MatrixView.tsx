@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Mail, Check, Copy, ExternalLink, Calendar, CheckSquare, Sparkles, Filter } from 'lucide-react';
 import { MatrixRow, DeliveryEmail, Language, DoseItem } from '../types';
 import { getTranslation } from '../i18n';
+import { MusterEmailsSection } from './MusterEmailsSection';
 
 interface MatrixViewProps {
   matrix: MatrixRow[];
@@ -20,6 +21,7 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
   onSelectDoseById,
   onSwitchToUnpacked,
 }) => {
+  const [activeSection, setActiveSection] = useState<'deliveries' | 'musters' | 'matrix'>('deliveries');
   const [selectedMailTab, setSelectedMailTab] = useState(0);
   const [copiedMailId, setCopiedMailId] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -30,7 +32,10 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
 
   const handleCopyEmail = (mail: DeliveryEmail) => {
     const isDe = lang === 'de';
-    const textToCopy = `To: ${mail.contactPathDe}\nSubject: ${isDe ? mail.subjectDe : mail.subjectEn}\n\n${isDe ? mail.bodyDe : mail.bodyEn}`;
+    const isEs = lang === 'es';
+    const toLabel = isDe ? 'An:' : isEs ? 'Para:' : 'To:';
+    const subjectLabel = isDe ? 'Betreff:' : isEs ? 'Asunto:' : 'Subject:';
+    const textToCopy = `${toLabel} ${mail.contactPathDe}\n${subjectLabel} ${isDe ? mail.subjectDe : mail.subjectEn}\n\n${isDe ? mail.bodyDe : mail.bodyEn}`;
     navigator.clipboard.writeText(textToCopy);
     setCopiedMailId(mail.id);
     setTimeout(() => setCopiedMailId(null), 2000);
@@ -62,8 +67,53 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
   };
 
   return (
-    <div className="space-y-12 animate-fadeIn">
+    <div className="space-y-10 animate-fadeIn">
+      {/* Sub-Navigation Switcher */}
+      <div className="flex flex-wrap items-center gap-2 p-1.5 rounded-2xl bg-[#ede3d1]/80 border border-[#d8cbba] max-w-2xl shadow-2xs">
+        <button
+          onClick={() => setActiveSection('deliveries')}
+          className={`flex-1 min-w-[150px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-typewriter font-semibold transition-all flex items-center justify-center gap-2 cursor-pointer ${
+            activeSection === 'deliveries'
+              ? 'bg-[#8c1d40] text-white shadow-xs'
+              : 'text-[#5c4a3d] hover:text-[#2b1e16] hover:bg-[#faf4e8]'
+          }`}
+        >
+          <Calendar className="w-4 h-4" />
+          <span>{lang === 'de' ? 'Q4 Zustellungen (3)' : lang === 'es' ? 'Entregas Q4 (3)' : 'Q4 Deliveries (3)'}</span>
+        </button>
+
+        <button
+          onClick={() => setActiveSection('musters')}
+          className={`flex-1 min-w-[150px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-typewriter font-semibold transition-all flex items-center justify-center gap-2 cursor-pointer ${
+            activeSection === 'musters'
+              ? 'bg-[#8c1d40] text-white shadow-xs ring-2 ring-[#f6bd60]/40'
+              : 'text-[#5c4a3d] hover:text-[#2b1e16] hover:bg-[#faf4e8]'
+          }`}
+        >
+          <Mail className="w-4 h-4" />
+          <span>{lang === 'de' ? 'Muster-E-Mails (4)' : lang === 'es' ? 'Modelos de correo (4)' : 'Sample Emails (4)'}</span>
+        </button>
+
+        <button
+          onClick={() => setActiveSection('matrix')}
+          className={`flex-1 min-w-[150px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-typewriter font-semibold transition-all flex items-center justify-center gap-2 cursor-pointer ${
+            activeSection === 'matrix'
+              ? 'bg-[#8c1d40] text-white shadow-xs'
+              : 'text-[#5c4a3d] hover:text-[#2b1e16] hover:bg-[#faf4e8]'
+          }`}
+        >
+          <CheckSquare className="w-4 h-4" />
+          <span>{lang === 'de' ? 'Ideen-Matrix (19)' : lang === 'es' ? 'Matriz de ideas (19)' : 'Idea Matrix (19)'}</span>
+        </button>
+      </div>
+
+      {/* SECTION: MUSTER-EMAILS */}
+      {activeSection === 'musters' && (
+        <MusterEmailsSection lang={lang} />
+      )}
+
       {/* SECTION 1: Q4 2026 DELIVERY PLAN */}
+      {activeSection === 'deliveries' && (
       <section className="space-y-6">
         <div className="rounded-2xl bg-amber-900/5 border border-amber-800/20 p-6 md:p-8">
           <div className="max-w-3xl space-y-2">
@@ -241,8 +291,10 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
           </div>
         </div>
       </section>
+      )}
 
       {/* SECTION 2: THE 19-IDEA MATRIX */}
+      {activeSection === 'matrix' && (
       <section className="space-y-6 pt-6 border-t border-stone-200">
         {onSwitchToUnpacked && (
           <div className="bg-gradient-to-r from-amber-50 to-orange-50/50 border border-amber-200/80 rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
@@ -257,6 +309,8 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
                 <p className="text-xs text-amber-900/80 mt-0.5">
                   {lang === 'de'
                     ? 'Recherchierte Lücken (Glasanflug-Ampel, Brettchen-Vorsortierer, Streiflicht...) im Ideenspeicher prüfen & packen.'
+                    : lang === 'es'
+                    ? 'Brechas investigadas (semáforo de colisión con cristal, pre-clasificador de nidos, luz rasante...) listas para inspeccionar y empacar.'
                     : 'Surveyed gaps (Glass hazard score, Bee nesting annotator, Grazing light...) ready to inspect & pack.'}
                 </p>
               </div>
@@ -413,6 +467,7 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
           </div>
         </div>
       </section>
+      )}
     </div>
   );
 };

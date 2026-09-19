@@ -423,11 +423,11 @@ export const GoogleAccountImporter: React.FC<GoogleAccountImporterProps> = ({
                 {lang === 'de' ? 'Schnellfilter:' : 'Quick search:'}
               </span>
               {[
-                { label: 'Ideen & Entwürfe', q: 'Idee' },
-                { label: 'App Concepts', q: 'App' },
-                { label: 'Projekte', q: 'Projekt' },
-                { label: 'Drafts', q: 'Draft' },
-                { label: 'Meeting Notes', q: 'Meeting' },
+                { label: lang === 'de' ? 'Ideen & Entwürfe' : lang === 'es' ? 'Ideas y borradores' : 'Ideas & Concepts', q: 'Idee' },
+                { label: lang === 'de' ? 'App-Konzepte' : lang === 'es' ? 'Conceptos de app' : 'App Concepts', q: 'App' },
+                { label: lang === 'de' ? 'Projekte' : lang === 'es' ? 'Proyectos' : 'Projects', q: 'Projekt' },
+                { label: lang === 'de' ? 'Notizen & Entwürfe' : lang === 'es' ? 'Borradores' : 'Drafts', q: 'Draft' },
+                { label: lang === 'de' ? 'Besprechungsnotizen' : lang === 'es' ? 'Notas de reuniones' : 'Meeting Notes', q: 'Meeting' },
               ].map((pill, idx) => (
                 <button
                   key={idx}
@@ -617,21 +617,39 @@ export const GoogleAccountImporter: React.FC<GoogleAccountImporterProps> = ({
                 <FileText className="w-4 h-4 text-blue-600" />
                 Google Docs
               </span>
-              <p>Scannt Notizen, Tabellen und Dokumente nach App-Entwürfen.</p>
+              <p>
+                {lang === 'de'
+                  ? 'Scannt Notizen, Tabellen und Dokumente nach App-Entwürfen.'
+                  : lang === 'es'
+                  ? 'Analiza notas, hojas y documentos en busca de borradores de software.'
+                  : 'Scans notes, spreadsheets, and documents for buried app concepts.'}
+              </p>
             </div>
             <div className="p-3.5 rounded-lg bg-stone-50 border border-stone-200/70 space-y-1">
               <span className="font-semibold text-stone-900 block flex items-center gap-1.5">
                 <Mail className="w-4 h-4 text-red-600" />
                 Gmail Drafts
               </span>
-              <p>Findet gesendete Entwürfe und E-Mails an dich selbst mit Ideen.</p>
+              <p>
+                {lang === 'de'
+                  ? 'Findet gesendete Entwürfe und E-Mails an dich selbst mit Ideen.'
+                  : lang === 'es'
+                  ? 'Encuentra borradores y correos que te enviaste a ti mismo con ideas.'
+                  : 'Locates draft ideas and personal reminder emails with concepts.'}
+              </p>
             </div>
             <div className="p-3.5 rounded-lg bg-stone-50 border border-stone-200/70 space-y-1">
               <span className="font-semibold text-stone-900 block flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                Reines Lesen (Read-Only)
+                {lang === 'de' ? 'Reines Lesen (Read-Only)' : lang === 'es' ? 'Solo lectura' : 'Read-Only Access'}
               </span>
-              <p>Keine Schreib- oder Löschrechte. Deine Originale bleiben unberührt.</p>
+              <p>
+                {lang === 'de'
+                  ? 'Keine Schreib- oder Löschrechte. Deine Originale bleiben unberührt.'
+                  : lang === 'es'
+                  ? 'Sin permisos de escritura o borrado. Tus documentos originales permanecen intactos.'
+                  : 'No write or delete permissions. Your original documents remain untouched.'}
+              </p>
             </div>
           </div>
 

@@ -29,7 +29,7 @@ import {
 } from 'lucide-react';
 import { Language, CandidateIdea, CandidateStatus, Verdict } from '../types';
 import { CANDIDATE_IDEAS_DATA } from '../data/unpacked';
-import { getTranslation } from '../i18n';
+import { getTranslation, getLocalizedTitle } from '../i18n';
 
 interface UnpackedIdeasViewProps {
   lang: Language;
@@ -132,15 +132,21 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
 
   // Download CSV
   const handleDownloadCsv = () => {
-    const headers = ['ID', 'Title', 'Category', 'Status', 'Concept', 'Target Recipient', 'Evidence', 'Tags'];
+    const isDe = lang === 'de';
+    const isEs = lang === 'es';
+    const headers = isDe
+      ? ['ID', 'Titel', 'Kategorie', 'Status', 'Konzept', 'Empfaenger', 'Pruefbefund', 'Tags']
+      : isEs
+      ? ['ID', 'Titulo', 'Categoria', 'Estado', 'Concepto', 'Destinatario', 'Evidencia', 'Etiquetas']
+      : ['ID', 'Title', 'Category', 'Status', 'Concept', 'Target Recipient', 'Evidence', 'Tags'];
     const rows = candidates.map(c => [
       `"${c.id}"`,
       `"${(c.title || '').replace(/"/g, '""')}"`,
       `"${(c.sourceType || '').replace(/"/g, '""')}"`,
       `"${c.status}"`,
-      `"${(lang === 'de' ? c.conceptDe : c.conceptEn || '').replace(/"/g, '""')}"`,
-      `"${(lang === 'de' ? c.recipientDe : c.recipientEn || '').replace(/"/g, '""')}"`,
-      `"${(lang === 'de' ? c.evidenceDe : c.evidenceEn || '').replace(/"/g, '""')}"`,
+      `"${(isDe ? c.conceptDe : c.conceptEn || '').replace(/"/g, '""')}"`,
+      `"${(isDe ? c.recipientDe : c.recipientEn || '').replace(/"/g, '""')}"`,
+      `"${(isDe ? c.evidenceDe : c.evidenceEn || '').replace(/"/g, '""')}"`,
       `"${(c.tags || []).join('; ')}"`
     ]);
     const csvContent = "data:text/csv;charset=utf-8,\uFEFF" + [headers.join(','), ...rows.map(e => e.join(','))].join('\n');
@@ -247,7 +253,12 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
   };
 
   const resetToDefaults = () => {
-    if (window.confirm(lang === 'de' ? 'Kandidatenliste auf Standardwerte zurücksetzen?' : 'Reset candidate list to defaults?')) {
+    const confirmMsg = lang === 'de' 
+      ? 'Kandidatenliste auf Standardwerte zurücksetzen?' 
+      : lang === 'es'
+      ? '¿Restablecer la lista de candidatas a los valores predeterminados?'
+      : 'Reset candidate list to defaults?';
+    if (window.confirm(confirmMsg)) {
       setCandidates(CANDIDATE_IDEAS_DATA);
       localStorage.removeItem(STORAGE_KEY);
     }
@@ -256,10 +267,22 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
   // Copy Markdown Table
   const handleCopyMarkdown = () => {
     const isDe = lang === 'de';
-    let md = `# Amélie — Prüfprotokoll & Ideenspeicher\n\n`;
-    md += `Stand: September 2026 · Format: Name · Konzept · Status · Prüfbefund · Prüfen ab\n\n`;
-    md += `| Idee | Konzept | Status | Empfänger | Prüfbefund | Prüfen ab |\n`;
-    md += `|---|---|---|---|---|---|\n`;
+    const isEs = lang === 'es';
+    let md = isDe 
+      ? `# Amélie — Prüfprotokoll & Ideenspeicher\n\n`
+      : isEs
+      ? `# Amélie — Registro de verificación y banco de ideas\n\n`
+      : `# Amélie — Verification Log & Idea Vault\n\n`;
+    md += isDe
+      ? `Stand: September 2026 · Format: Name · Konzept · Status · Prüfbefund · Prüfen ab\n\n`
+      : isEs
+      ? `Fecha: Septiembre 2026 · Formato: Nombre · Concepto · Estado · Evidencia · Revisión\n\n`
+      : `Status: September 2026 · Format: Name · Concept · Status · Research Evidence · Review Date\n\n`;
+    md += isDe
+      ? `| Idee | Konzept | Status | Empfänger | Prüfbefund | Prüfen ab |\n|---|---|---|---|---|---|\n`
+      : isEs
+      ? `| Idea | Concepto | Estado | Destinatario | Evidencia | Revisión |\n|---|---|---|---|---|---|\n`
+      : `| Idea | Concept | Status | Recipient | Evidence | Review Date |\n|---|---|---|---|---|---|\n`;
 
     candidates.forEach((c) => {
       const title = c.title;
@@ -317,7 +340,8 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
     // Search query
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase();
-      const matchTitle = c.title.toLowerCase().includes(q);
+      const localizedTitle = getLocalizedTitle(c, lang).toLowerCase();
+      const matchTitle = c.title.toLowerCase().includes(q) || localizedTitle.includes(q);
       const matchConcept =
         c.conceptDe.toLowerCase().includes(q) || c.conceptEn.toLowerCase().includes(q);
       const matchRecipient =
@@ -393,7 +417,7 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
               id="surprise-idea-btn"
               onClick={handleSurpriseMe}
               className="inline-flex items-center gap-2 px-3.5 py-2.5 rounded-xl border border-amber-300/90 bg-amber-50/90 text-amber-900 hover:bg-amber-100 text-xs sm:text-sm font-semibold transition-all shadow-2xs"
-              title={lang === 'de' ? 'Zufällige Geschenk-Idee aufdecken (Zündfunke)' : 'Reveal random gift idea (Spark)'}
+              title={lang === 'de' ? 'Zufällige Geschenk-Idee aufdecken (Zündfunke)' : lang === 'es' ? 'Descubrir idea al azar (Chispa)' : 'Reveal random gift idea (Spark)'}
             >
               <Dices className="w-4 h-4 text-amber-700" />
               <span>{lang === 'de' ? '🎲 Zündfunke' : lang === 'es' ? '🎲 Chispa' : '🎲 Spark Idea'}</span>
@@ -410,10 +434,10 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
               id="copy-markdown-protocol-btn"
               onClick={handleCopyMarkdown}
               className="inline-flex items-center gap-2 px-3 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-700 text-xs sm:text-sm font-medium hover:bg-stone-50 transition-colors shadow-2xs"
-              title={lang === 'de' ? 'Prüfprotokoll als Markdown kopieren' : 'Copy search protocol as Markdown'}
+              title={lang === 'de' ? 'Prüfprotokoll als Markdown kopieren' : lang === 'es' ? 'Copiar protocolo de búsqueda en Markdown' : 'Copy search protocol as Markdown'}
             >
               {copiedMd ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4 text-stone-500" />}
-              <span>{copiedMd ? (lang === 'de' ? 'Kopiert!' : 'Copied!') : 'Markdown'}</span>
+              <span>{copiedMd ? (lang === 'de' ? 'Kopiert!' : lang === 'es' ? '¡Copiado!' : 'Copied!') : 'Markdown'}</span>
             </button>
             <button
               id="download-csv-btn"
@@ -446,7 +470,9 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
                 : 'bg-white/60 border-stone-200 hover:bg-white'
             }`}
           >
-            <div className="text-xs text-emerald-800 font-medium">{lang === 'de' ? 'Packfertig (Frei / Nische)' : 'Ready to Pack'}</div>
+            <div className="text-xs text-emerald-800 font-medium">
+              {lang === 'de' ? 'Packfertig (Frei / Nische)' : lang === 'es' ? 'Listas para empaquetar' : 'Ready to Pack'}
+            </div>
             <div className="text-xl font-bold text-emerald-950 mt-0.5">{readyCount}</div>
           </button>
           <button
@@ -457,7 +483,9 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
                 : 'bg-white/60 border-stone-200 hover:bg-white'
             }`}
           >
-            <div className="text-xs text-sky-800 font-medium">{lang === 'de' ? 'In Vorprüfung (Unklar)' : 'In Investigation'}</div>
+            <div className="text-xs text-sky-800 font-medium">
+              {lang === 'de' ? 'In Vorprüfung (Unklar)' : lang === 'es' ? 'En investigación' : 'In Investigation'}
+            </div>
             <div className="text-xl font-bold text-sky-950 mt-0.5">{investigatingCount}</div>
           </button>
           <button
@@ -468,7 +496,9 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
                 : 'bg-white/60 border-stone-200 hover:bg-white'
             }`}
           >
-            <div className="text-xs text-stone-600 font-medium">{lang === 'de' ? 'Besetzt (Atlas-Referenz)' : 'Saturated Reference'}</div>
+            <div className="text-xs text-stone-600 font-medium">
+              {lang === 'de' ? 'Besetzt (Atlas-Referenz)' : lang === 'es' ? 'Referencia saturada' : 'Saturated Reference'}
+            </div>
             <div className="text-xl font-bold text-stone-800 mt-0.5">{saturatedCount}</div>
           </button>
           <button
@@ -479,7 +509,9 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
                 : 'bg-white/60 border-stone-200 hover:bg-white'
             }`}
           >
-            <div className="text-xs text-stone-600 font-medium">{lang === 'de' ? 'Gesamter Katalog' : 'Total Ideas'}</div>
+            <div className="text-xs text-stone-600 font-medium">
+              {lang === 'de' ? 'Gesamter Katalog' : lang === 'es' ? 'Catálogo total' : 'Total Ideas'}
+            </div>
             <div className="text-xl font-bold text-stone-900 mt-0.5">{candidates.length}</div>
           </button>
         </div>
@@ -498,6 +530,8 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
               placeholder={
                 lang === 'de'
                   ? 'Katalog durchsuchen (Titel, Problem, Empfänger, Tag)...'
+                  : lang === 'es'
+                  ? 'Buscar catálogo (título, problema, destinatario, etiquetas)...'
                   : 'Search catalog (title, problem, recipient, tags)...'
               }
               className="w-full pl-9 pr-4 py-2 text-sm bg-white border border-stone-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-600 shadow-2xs"
@@ -522,12 +556,12 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
                 onChange={(e) => setStatusFilter(e.target.value as any)}
                 className="bg-transparent focus:outline-none cursor-pointer text-xs"
               >
-                <option value="all">{lang === 'de' ? 'Alle Status' : 'All Statuses'}</option>
-                <option value="ready">{lang === 'de' ? '✨ Packfertig (frei / verengt)' : '✨ Ready to pack (free / narrowed)'}</option>
-                <option value="frei">{lang === 'de' ? '🟢 Frei (offene Lücke)' : '🟢 Free (open gap)'}</option>
-                <option value="verengt">{lang === 'de' ? '🟡 Verengt (Nische)' : '🟡 Narrowed (niche)'}</option>
-                <option value="unklar">{lang === 'de' ? '🔵 Unklar (Prüfung nötig)' : '🔵 In review'}</option>
-                <option value="besetzt">{lang === 'de' ? '⚪ Besetzt (Atlas)' : '⚪ Saturated'}</option>
+                <option value="all">{lang === 'de' ? 'Alle Status' : lang === 'es' ? 'Todos los estados' : 'All Statuses'}</option>
+                <option value="ready">{lang === 'de' ? '✨ Packfertig (frei / verengt)' : lang === 'es' ? '✨ Listas para empaque' : '✨ Ready to pack (free / narrowed)'}</option>
+                <option value="frei">{lang === 'de' ? '🟢 Frei (offene Lücke)' : lang === 'es' ? '🟢 Libre (oportunidad abierta)' : '🟢 Free (open gap)'}</option>
+                <option value="verengt">{lang === 'de' ? '🟡 Verengt (Nische)' : lang === 'es' ? '🟡 Acotada (nicho)' : '🟡 Narrowed (niche)'}</option>
+                <option value="unklar">{lang === 'de' ? '🔵 Unklar (Prüfung nötig)' : lang === 'es' ? '🔵 En revisión' : '🔵 In review'}</option>
+                <option value="besetzt">{lang === 'de' ? '⚪ Besetzt (Atlas)' : lang === 'es' ? '⚪ Saturada' : '⚪ Saturated'}</option>
               </select>
             </div>
 
@@ -538,7 +572,7 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
               onChange={(e) => setSourceFilter(e.target.value)}
               className="bg-white border border-stone-300 rounded-xl px-3 py-1.5 shadow-2xs text-xs font-medium text-stone-700 focus:outline-none cursor-pointer max-w-[180px] truncate"
             >
-              <option value="all">{lang === 'de' ? `Alle Kategorien (${candidates.length})` : `All Categories (${candidates.length})`}</option>
+              <option value="all">{lang === 'de' ? `Alle Kategorien (${candidates.length})` : lang === 'es' ? `Todas las categorías (${candidates.length})` : `All Categories (${candidates.length})`}</option>
               {uniqueSourceTypes.map((st) => (
                 <option key={st} value={st}>
                   {st} ({candidates.filter((c) => c.sourceType === st).length})
@@ -555,7 +589,7 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
                 className={`p-1.5 rounded-lg text-xs font-medium transition-all ${
                   viewMode === 'cards' ? 'bg-white text-stone-900 shadow-2xs' : 'text-stone-500 hover:text-stone-800'
                 }`}
-                title={lang === 'de' ? 'Kartenansicht' : 'Card View'}
+                title={lang === 'de' ? 'Kartenansicht' : lang === 'es' ? 'Vista de tarjetas' : 'Card View'}
               >
                 <LayoutGrid className="w-4 h-4" />
               </button>
@@ -566,7 +600,7 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
                 className={`p-1.5 rounded-lg text-xs font-medium transition-all ${
                   viewMode === 'table' ? 'bg-white text-stone-900 shadow-2xs' : 'text-stone-500 hover:text-stone-800'
                 }`}
-                title={lang === 'de' ? 'Tabellenansicht' : 'Table View'}
+                title={lang === 'de' ? 'Tabellenansicht' : lang === 'es' ? 'Vista de tabla' : 'Table View'}
               >
                 <Table className="w-4 h-4" />
               </button>
@@ -577,7 +611,7 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
                 onClick={resetToDefaults}
                 className="text-xs text-stone-500 hover:text-stone-800 underline px-2 py-1"
               >
-                {lang === 'de' ? 'Standard' : 'Reset'}
+                {lang === 'de' ? 'Standard' : lang === 'es' ? 'Restablecer' : 'Reset'}
               </button>
             )}
           </div>
@@ -588,7 +622,7 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
           <div className="flex items-center gap-1.5 overflow-x-auto pb-1 pt-0.5 scrollbar-none text-xs">
             <span className="text-stone-400 flex items-center gap-1 shrink-0 font-medium pl-0.5">
               <Tag className="w-3 h-3 text-stone-400" />
-              <span>{lang === 'de' ? 'Themen:' : 'Themes:'}</span>
+              <span>{lang === 'de' ? 'Themen:' : lang === 'es' ? 'Temas:' : 'Themes:'}</span>
             </span>
             <button
               onClick={() => setSelectedTag(null)}
@@ -598,7 +632,7 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
                   : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
               }`}
             >
-              {lang === 'de' ? 'Alle' : 'All'}
+              {lang === 'de' ? 'Alle' : lang === 'es' ? 'Todos' : 'All'}
             </button>
             {popularTags.map((tag) => (
               <button
@@ -627,6 +661,13 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
               {sourceFilter !== 'all' && <> · Kategorie: <span className="font-semibold text-amber-700">{sourceFilter}</span></>}
               {statusFilter !== 'all' && <> · Status: <span className="font-semibold text-stone-800">{statusFilter}</span></>}
             </span>
+          ) : lang === 'es' ? (
+            <span>
+              Mostrando <strong>{filteredCandidates.length}</strong> de {candidates.length} ideas
+              {selectedTag && <> · Tema: <span className="font-semibold text-amber-700">#{selectedTag}</span></>}
+              {sourceFilter !== 'all' && <> · Categoría: <span className="font-semibold text-amber-700">{sourceFilter}</span></>}
+              {statusFilter !== 'all' && <> · Estado: <span className="font-semibold text-stone-800">{statusFilter}</span></>}
+            </span>
           ) : (
             <span>
               Showing <strong>{filteredCandidates.length}</strong> of {candidates.length} ideas
@@ -644,9 +685,9 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
               setSourceFilter('all');
               setSelectedTag(null);
             }}
-            className="text-amber-700 hover:text-amber-900 font-medium hover:underline self-start sm:self-auto"
+            className="text-amber-700 hover:text-amber-900 font-medium hover:underline self-start sm:self-auto cursor-pointer"
           >
-            {lang === 'de' ? 'Alle Filter zurücksetzen' : 'Reset all filters'}
+            {lang === 'de' ? 'Alle Filter zurücksetzen' : lang === 'es' ? 'Restablecer todos los filtros' : 'Reset all filters'}
           </button>
         )}
       </div>
@@ -658,11 +699,11 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
             <table className="w-full text-left text-xs border-collapse">
               <thead>
                 <tr className="bg-[#faf8f5] border-b border-stone-200 text-stone-600 font-semibold uppercase tracking-wider text-3xs">
-                  <th className="py-3 px-4 w-[28%]">{lang === 'de' ? 'Idee & Domäne' : 'Idea & Domain'}</th>
-                  <th className="py-3 px-3 w-[14%]">Status</th>
-                  <th className="py-3 px-4 w-[36%]">{lang === 'de' ? 'Konzept & Empfänger' : 'Concept & Recipient'}</th>
-                  <th className="py-3 px-3 w-[12%]">{lang === 'de' ? 'Prüfdatum' : 'Review'}</th>
-                  <th className="py-3 px-3 text-right w-[10%]">{lang === 'de' ? 'Aktion' : 'Action'}</th>
+                  <th className="py-3 px-4 w-[28%]">{lang === 'de' ? 'Idee & Domäne' : lang === 'es' ? 'Idea y Dominio' : 'Idea & Domain'}</th>
+                  <th className="py-3 px-3 w-[14%]">{lang === 'de' ? 'Status' : lang === 'es' ? 'Estado' : 'Status'}</th>
+                  <th className="py-3 px-4 w-[36%]">{lang === 'de' ? 'Konzept & Empfänger' : lang === 'es' ? 'Concepto y Destinatario' : 'Concept & Recipient'}</th>
+                  <th className="py-3 px-3 w-[12%]">{lang === 'de' ? 'Prüfdatum' : lang === 'es' ? 'Revisión' : 'Review'}</th>
+                  <th className="py-3 px-3 text-right w-[10%]">{lang === 'de' ? 'Aktion' : lang === 'es' ? 'Acción' : 'Action'}</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-stone-100">
@@ -682,9 +723,9 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
                         <td className="py-3 px-4 align-top">
                           <button
                             onClick={() => setExpandedId(isExpanded ? null : candidate.id)}
-                            className="text-left font-semibold text-stone-900 hover:text-amber-800 text-sm leading-snug flex items-center gap-1.5"
+                            className="text-left font-semibold text-stone-900 hover:text-amber-800 text-sm leading-snug flex items-center gap-1.5 cursor-pointer"
                           >
-                            <span>{candidate.title}</span>
+                            <span>{getLocalizedTitle(candidate, lang)}</span>
                             {isExpanded ? <ChevronUp className="w-3.5 h-3.5 text-stone-400 shrink-0" /> : <ChevronDown className="w-3.5 h-3.5 text-stone-400 shrink-0" />}
                           </button>
                           <div className="flex flex-wrap items-center gap-1.5 mt-1">
@@ -706,7 +747,7 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
                         <td className="py-3 px-4 align-top text-stone-700 leading-relaxed">
                           <p className="line-clamp-2">{concept}</p>
                           <p className="text-stone-500 text-3xs mt-1">
-                            <strong>{lang === 'de' ? 'Empfänger: ' : 'Target: '}</strong>
+                            <strong>{lang === 'de' ? 'Empfänger: ' : lang === 'es' ? 'Destinatario: ' : 'Target: '}</strong>
                             {recipient}
                           </p>
                         </td>
@@ -717,11 +758,11 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
                           {isReadyToPack && (
                             <button
                               onClick={() => onPackIdea(candidate)}
-                              className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-700 text-white font-semibold text-xs shadow-2xs"
+                              className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-700 text-white font-semibold text-xs shadow-2xs cursor-pointer"
                               title={t.ui.unpacked_pack_btn}
                             >
                               <Send className="w-3 h-3" />
-                              <span>{lang === 'de' ? 'Packen' : 'Pack'}</span>
+                              <span>{lang === 'de' ? 'Packen' : lang === 'es' ? 'Empacar' : 'Pack'}</span>
                             </button>
                           )}
                         </td>
@@ -732,13 +773,13 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 bg-white p-3.5 rounded-xl border border-stone-200/80">
                               <div>
                                 <span className="font-semibold text-stone-900 block mb-1">
-                                  {lang === 'de' ? 'Prüfbefund & Vorarbeiten:' : 'Evidence & Prior Art:'}
+                                  {lang === 'de' ? 'Prüfbefund & Vorarbeiten:' : lang === 'es' ? 'Evidencia y antecedentes:' : 'Evidence & Prior Art:'}
                                 </span>
                                 <p className="text-stone-600 leading-relaxed">{evidence}</p>
                                 {problem && (
                                   <div className="mt-2.5">
                                     <span className="font-semibold text-stone-900 block mb-0.5">
-                                      {lang === 'de' ? 'Kernproblem:' : 'Core Problem:'}
+                                      {lang === 'de' ? 'Kernproblem:' : lang === 'es' ? 'Problema central:' : 'Core Problem:'}
                                     </span>
                                     <p className="text-stone-600 leading-relaxed">{problem}</p>
                                   </div>
@@ -748,7 +789,7 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
                                 {ticket && (
                                   <div className="mb-2">
                                     <span className="font-semibold text-stone-900 block mb-0.5">
-                                      {lang === 'de' ? 'Ticket #1 (Erster Schritt):' : 'Ticket #1 (First step):'}
+                                      {lang === 'de' ? 'Ticket #1 (Erster Schritt):' : lang === 'es' ? 'Paso #1 (Primer paso):' : 'Ticket #1 (First step):'}
                                     </span>
                                     <p className="font-mono text-stone-800 bg-stone-50 p-2 rounded border border-stone-200">{ticket}</p>
                                   </div>
@@ -756,7 +797,7 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
                                 {whyNow && whyNow.length > 0 && (
                                   <div>
                                     <span className="font-semibold text-stone-900 block mb-0.5">
-                                      {lang === 'de' ? 'Warum jetzt:' : 'Why Now:'}
+                                      {lang === 'de' ? 'Warum jetzt:' : lang === 'es' ? 'Por qué ahora:' : 'Why Now:'}
                                     </span>
                                     <ul className="list-disc pl-4 text-stone-600 space-y-0.5">
                                       {whyNow.map((w, i) => <li key={i}>{w}</li>)}
@@ -783,6 +824,8 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
             <p className="text-stone-500 text-sm">
               {lang === 'de'
                 ? 'Keine Ideen für diese Filterkriterien gefunden.'
+                : lang === 'es'
+                ? 'No se encontraron ideas con los criterios de filtro actuales.'
                 : 'No ideas found matching the current filter criteria.'}
             </p>
             <button
@@ -793,7 +836,7 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
               }}
               className="mt-3 text-xs font-semibold text-amber-700 hover:underline"
             >
-              {lang === 'de' ? 'Filter zurücksetzen' : 'Reset filters'}
+              {lang === 'de' ? 'Filter zurücksetzen' : lang === 'es' ? 'Restablecer filtros' : 'Reset filters'}
             </button>
           </div>
         ) : (
@@ -840,7 +883,7 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
                         {candidate.reviewDate !== '–' && (
                           <span className="inline-flex items-center gap-1 text-xs text-stone-500">
                             <Calendar className="w-3 h-3" />
-                            <span>{lang === 'de' ? 'Prüfen ab:' : 'Review after:'} {candidate.reviewDate}</span>
+                            <span>{lang === 'de' ? 'Prüfen ab:' : lang === 'es' ? 'Revisar desde:' : 'Review after:'} {candidate.reviewDate}</span>
                           </span>
                         )}
                       </div>
@@ -858,7 +901,7 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
                         <div className="bg-[#fcfaf6] border border-stone-200/70 rounded-xl p-3">
                           <div className="font-semibold text-stone-800 flex items-center gap-1.5 mb-1">
                             <Building2 className="w-3.5 h-3.5 text-amber-700" />
-                            <span>{lang === 'de' ? 'Empfänger / Mandat:' : 'Target Recipient:'}</span>
+                            <span>{lang === 'de' ? 'Empfänger / Mandat:' : lang === 'es' ? 'Destinatario / Mandato:' : 'Target Recipient:'}</span>
                           </div>
                           <p className="text-stone-600 leading-normal">{recipient}</p>
                         </div>
@@ -866,7 +909,7 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
                         <div className="bg-[#fcfaf6] border border-stone-200/70 rounded-xl p-3">
                           <div className="font-semibold text-stone-800 flex items-center gap-1.5 mb-1">
                             <BookOpen className="w-3.5 h-3.5 text-stone-600" />
-                            <span>{lang === 'de' ? 'Prüfbefund / Vorarbeiten:' : 'Evidence / Prior Art:'}</span>
+                            <span>{lang === 'de' ? 'Prüfbefund / Vorarbeiten:' : lang === 'es' ? 'Evidencia / Antecedentes:' : 'Evidence / Prior Art:'}</span>
                           </div>
                           <p className="text-stone-600 leading-normal">{evidence}</p>
                         </div>
@@ -879,7 +922,7 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
                         <button
                           id={`pack-btn-${candidate.id}`}
                           onClick={() => onPackIdea(candidate)}
-                          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-xs sm:text-sm font-semibold transition-all shadow-xs hover:shadow"
+                          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-xs sm:text-sm font-semibold transition-all shadow-xs hover:shadow cursor-pointer"
                         >
                           <Send className="w-3.5 h-3.5 text-amber-200" />
                           <span>{t.ui.unpacked_pack_btn}</span>
@@ -888,24 +931,24 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
 
                       {/* Interactive Status Changer */}
                       <div className="flex items-center gap-1.5 text-xs text-stone-500">
-                        <span>{lang === 'de' ? 'Status:' : 'Status:'}</span>
+                        <span>{lang === 'de' ? 'Status:' : lang === 'es' ? 'Estado:' : 'Status:'}</span>
                         <select
                           value={candidate.status}
                           onChange={(e) => handleStatusChange(candidate.id, e.target.value as CandidateStatus)}
                           className="bg-stone-50 border border-stone-300 rounded-lg px-2 py-1 text-xs text-stone-800 focus:outline-none focus:ring-1 focus:ring-amber-500 cursor-pointer"
                         >
-                          <option value="frei">{lang === 'de' ? 'frei' : 'free'}</option>
-                          <option value="verengt">{lang === 'de' ? 'verengt' : 'narrowed'}</option>
-                          <option value="unklar">{lang === 'de' ? 'unklar' : 'in review'}</option>
-                          <option value="besetzt">{lang === 'de' ? 'besetzt' : 'saturated'}</option>
+                          <option value="frei">{lang === 'de' ? 'frei' : lang === 'es' ? 'libre' : 'free'}</option>
+                          <option value="verengt">{lang === 'de' ? 'verengt' : lang === 'es' ? 'acotada' : 'narrowed'}</option>
+                          <option value="unklar">{lang === 'de' ? 'unklar' : lang === 'es' ? 'en revisión' : 'in review'}</option>
+                          <option value="besetzt">{lang === 'de' ? 'besetzt' : lang === 'es' ? 'ocupada' : 'saturated'}</option>
                         </select>
                       </div>
 
                       <button
                         onClick={() => setExpandedId(isExpanded ? null : candidate.id)}
-                        className="inline-flex items-center gap-1 text-xs text-stone-600 hover:text-stone-900 font-medium px-2 py-1 rounded-md hover:bg-stone-100"
+                        className="inline-flex items-center gap-1 text-xs text-stone-600 hover:text-stone-900 font-medium px-2 py-1 rounded-md hover:bg-stone-100 cursor-pointer"
                       >
-                        <span>{isExpanded ? (lang === 'de' ? 'Weniger Details' : 'Less') : (lang === 'de' ? 'Mehr Details' : 'Details')}</span>
+                        <span>{isExpanded ? (lang === 'de' ? 'Weniger Details' : lang === 'es' ? 'Menos detalles' : 'Less') : (lang === 'de' ? 'Mehr Details' : lang === 'es' ? 'Más detalles' : 'Details')}</span>
                         {isExpanded ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
                       </button>
                     </div>
@@ -935,7 +978,7 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
                         <div className="bg-white border border-stone-200/80 rounded-xl p-4 space-y-1.5 shadow-2xs">
                           <h4 className="font-semibold text-stone-900 flex items-center gap-1.5">
                             <span className="text-amber-700">●</span>
-                            <span>{lang === 'de' ? 'Das Problem im Detail' : 'The Detailed Problem'}</span>
+                            <span>{lang === 'de' ? 'Das Problem im Detail' : lang === 'es' ? 'El problema en detalle' : 'The Detailed Problem'}</span>
                           </h4>
                           <p className="text-stone-700 leading-relaxed">{problem}</p>
                         </div>
@@ -946,7 +989,7 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
                         <div className="bg-white border border-stone-200/80 rounded-xl p-4 space-y-1.5 shadow-2xs">
                           <h4 className="font-semibold text-stone-900 flex items-center gap-1.5">
                             <span className="text-emerald-700">●</span>
-                            <span>{lang === 'de' ? 'Warum jetzt? (Technologie-Wende)' : 'Why Now? (Technological Shift)'}</span>
+                            <span>{lang === 'de' ? 'Warum jetzt? (Technologie-Wende)' : lang === 'es' ? '¿Por qué ahora? (Cambio tecnológico)' : 'Why Now? (Technological Shift)'}</span>
                           </h4>
                           <ul className="list-disc pl-4 space-y-1 text-stone-700">
                             {whyNow.map((w, idx) => (
@@ -963,10 +1006,10 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
                         <div className="flex items-center justify-between">
                           <h4 className="font-semibold text-stone-900 flex items-center gap-1.5">
                             <span className="text-blue-700">●</span>
-                            <span>{lang === 'de' ? 'Vorgeschlagenes Ticket #1 (Erster Schritt)' : 'Proposed Ticket #1 (First Step)'}</span>
+                            <span>{lang === 'de' ? 'Vorgeschlagenes Ticket #1 (Erster Schritt)' : lang === 'es' ? 'Paso sugerido #1 (Primer paso)' : 'Proposed Ticket #1 (First Step)'}</span>
                           </h4>
                           <span className="text-2xs font-mono text-stone-500 uppercase">
-                            {lang === 'de' ? '2-Tage-Aufwand' : '2-Day Scope'}
+                            {lang === 'de' ? '2-Tage-Aufwand' : lang === 'es' ? 'Alcance 2 días' : '2-Day Scope'}
                           </span>
                         </div>
                         <p className="font-mono text-xs bg-stone-50 border border-stone-200 rounded-lg p-2.5 text-stone-800">
@@ -974,7 +1017,7 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
                         </p>
                         {criteria && (
                           <p className="text-stone-600 text-xs">
-                            <span className="font-semibold text-stone-700">{lang === 'de' ? 'Fertig-Kriterium: ' : 'Done Criteria: '}</span>
+                            <span className="font-semibold text-stone-700">{lang === 'de' ? 'Fertig-Kriterium: ' : lang === 'es' ? 'Criterio de éxito: ' : 'Done Criteria: '}</span>
                             {criteria}
                           </p>
                         )}
@@ -984,15 +1027,15 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
                     {/* Source & Protocol Reference */}
                     <div className="flex flex-wrap items-center justify-between gap-3 text-xs text-stone-500 pt-2 border-t border-stone-200/60">
                       <div>
-                        <span className="font-medium text-stone-600">{lang === 'de' ? 'Quelle / Suchstring: ' : 'Source / Query: '}</span>
+                        <span className="font-medium text-stone-600">{lang === 'de' ? 'Quelle / Suchstring: ' : lang === 'es' ? 'Fuente / Búsqueda: ' : 'Source / Query: '}</span>
                         <span>{source}</span>
                       </div>
                       {isReadyToPack && (
                         <button
                           onClick={() => onPackIdea(candidate)}
-                          className="inline-flex items-center gap-1.5 font-semibold text-amber-700 hover:text-amber-900 hover:underline"
+                          className="inline-flex items-center gap-1.5 font-semibold text-amber-700 hover:text-amber-900 hover:underline cursor-pointer"
                         >
-                          <span>{lang === 'de' ? 'Jetzt in die Werkstatt übernehmen →' : 'Transfer to Packer Workshop →'}</span>
+                          <span>{lang === 'de' ? 'Jetzt in die Werkstatt übernehmen →' : lang === 'es' ? 'Llevar al taller de empaque →' : 'Transfer to Packer Workshop →'}</span>
                         </button>
                       )}
                     </div>
@@ -1011,18 +1054,20 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
           <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 shadow-xl border border-stone-200 relative">
             <button
               onClick={() => setShowAddModal(false)}
-              className="absolute top-4 right-4 text-stone-400 hover:text-stone-700 p-1"
+              className="absolute top-4 right-4 text-stone-400 hover:text-stone-700 p-1 cursor-pointer"
             >
               <X className="w-5 h-5" />
             </button>
 
             <div className="space-y-1 mb-6">
               <h2 className="text-xl sm:text-2xl font-serif font-bold text-stone-900">
-                {lang === 'de' ? 'Neue Idee im Ideenspeicher erfassen' : 'Record New Idea in Candidate Pipeline'}
+                {lang === 'de' ? 'Neue Idee im Ideenspeicher erfassen' : lang === 'es' ? 'Registrar nueva idea en el catálogo' : 'Record New Idea in Candidate Pipeline'}
               </h2>
               <p className="text-xs sm:text-sm text-stone-600">
                 {lang === 'de'
                   ? 'Erfasse eine Vorab-Idee vor dem Packen. Halte den Prüfbefund und potenzielle Empfänger fest.'
+                  : lang === 'es'
+                  ? 'Registra una idea previa al empaquetado. Anota la verificación de existencia y los destinatarios potenciales.'
                   : 'Capture an idea before packing. Log your preliminary existence check and prospective recipients.'}
               </p>
             </div>
@@ -1030,28 +1075,28 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
             <form onSubmit={handleAddIdea} className="space-y-4 text-xs sm:text-sm">
               <div>
                 <label className="block font-medium text-stone-800 mb-1">
-                  {lang === 'de' ? 'Titel / Name der Idee *' : 'Idea Title / Name *'}
+                  {lang === 'de' ? 'Titel / Name der Idee *' : lang === 'es' ? 'Título / Nombre de la idea *' : 'Idea Title / Name *'}
                 </label>
                 <input
                   type="text"
                   required
                   value={newTitle}
                   onChange={(e) => setNewTitle(e.target.value)}
-                  placeholder={lang === 'de' ? 'z. B. Waldbrand-Meldungsfilter' : 'e.g. Forest Fire Early Sensor Filter'}
+                  placeholder={lang === 'de' ? 'z. B. Waldbrand-Meldungsfilter' : lang === 'es' ? 'p. ej. Filtro de alerta de incendios' : 'e.g. Forest Fire Early Sensor Filter'}
                   className="w-full px-3 py-2 border border-stone-300 rounded-xl focus:ring-2 focus:ring-amber-500/20 focus:border-amber-600"
                 />
               </div>
 
               <div>
                 <label className="block font-medium text-stone-800 mb-1">
-                  {lang === 'de' ? 'Konzept in einem Satz *' : 'One-sentence Concept *'}
+                  {lang === 'de' ? 'Konzept in einem Satz *' : lang === 'es' ? 'Concepto en una frase *' : 'One-sentence Concept *'}
                 </label>
                 <input
                   type="text"
                   required
                   value={newConcept}
                   onChange={(e) => setNewConcept(e.target.value)}
-                  placeholder={lang === 'de' ? 'Was tut das Werkzeug und für wen?' : 'What does the tool do and for whom?'}
+                  placeholder={lang === 'de' ? 'Was tut das Werkzeug und für wen?' : lang === 'es' ? '¿Qué hace la herramienta y para quién?' : 'What does the tool do and for whom?'}
                   className="w-full px-3 py-2 border border-stone-300 rounded-xl focus:ring-2 focus:ring-amber-500/20 focus:border-amber-600"
                 />
               </div>
@@ -1059,35 +1104,35 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block font-medium text-stone-800 mb-1">
-                    {lang === 'de' ? 'Status der Prüfung' : 'Verification Status'}
+                    {lang === 'de' ? 'Status der Prüfung' : lang === 'es' ? 'Estado de verificación' : 'Verification Status'}
                   </label>
                   <select
                     value={newStatus}
                     onChange={(e) => setNewStatus(e.target.value as CandidateStatus)}
-                    className="w-full px-3 py-2 border border-stone-300 rounded-xl bg-white focus:ring-2 focus:ring-amber-500/20 focus:border-amber-600"
+                    className="w-full px-3 py-2 border border-stone-300 rounded-xl bg-white focus:ring-2 focus:ring-amber-500/20 focus:border-amber-600 cursor-pointer"
                   >
-                    <option value="frei">{lang === 'de' ? 'frei (offene Lücke / kein Tool)' : 'free (open gap)'}</option>
-                    <option value="verengt">{lang === 'de' ? 'verengt (spezifische Nische)' : 'narrowed (specific niche)'}</option>
-                    <option value="unklar">{lang === 'de' ? 'unklar (Recherche läuft)' : 'in review (researching)'}</option>
-                    <option value="besetzt">{lang === 'de' ? 'besetzt (bereits gebaut)' : 'saturated (prior art exists)'}</option>
+                    <option value="frei">{lang === 'de' ? 'frei (offene Lücke / kein Tool)' : lang === 'es' ? 'libre (oportunidad abierta)' : 'free (open gap)'}</option>
+                    <option value="verengt">{lang === 'de' ? 'verengt (spezifische Nische)' : lang === 'es' ? 'acotada (nicho específico)' : 'narrowed (specific niche)'}</option>
+                    <option value="unklar">{lang === 'de' ? 'unklar (Recherche läuft)' : lang === 'es' ? 'en revisión (investigando)' : 'in review (researching)'}</option>
+                    <option value="besetzt">{lang === 'de' ? 'besetzt (bereits gebaut)' : lang === 'es' ? 'ocupada (existente)' : 'saturated (prior art exists)'}</option>
                   </select>
                 </div>
 
                 <div>
                   <label className="block font-medium text-stone-800 mb-1">
-                    {lang === 'de' ? 'Quellentyp (nach Amélie-Playbook)' : 'Source Type'}
+                    {lang === 'de' ? 'Quellentyp (nach Amélie-Playbook)' : lang === 'es' ? 'Tipo de fuente (según Playbook)' : 'Source Type'}
                   </label>
                   <select
                     value={newSourceType}
                     onChange={(e) => setNewSourceType(e.target.value as any)}
-                    className="w-full px-3 py-2 border border-stone-300 rounded-xl bg-white focus:ring-2 focus:ring-amber-500/20 focus:border-amber-600"
+                    className="w-full px-3 py-2 border border-stone-300 rounded-xl bg-white focus:ring-2 focus:ring-amber-500/20 focus:border-amber-600 cursor-pointer"
                   >
-                    <option value="Typ A">Typ A — Fachgremium mit PDF-Schema ohne Software</option>
-                    <option value="Typ B">Typ B — Citizen Science mit manuellem Engpass</option>
-                    <option value="Typ C">Typ C — Organisation mit KI-Werkstattbericht</option>
-                    <option value="Typ D">Typ D — Bauauftrag / Stiftung</option>
-                    <option value="Besetzungsatlas">Besetzungsatlas (Vorarbeiten)</option>
-                    <option value="Community">Community / Eigener Fund</option>
+                    <option value="Typ A">{lang === 'de' ? 'Typ A — Fachgremium mit PDF-Schema' : lang === 'es' ? 'Tipo A — Comité técnico con esquema PDF' : 'Type A — Technical committee with PDF schema'}</option>
+                    <option value="Typ B">{lang === 'de' ? 'Typ B — Citizen Science mit Engpass' : lang === 'es' ? 'Tipo B — Ciencia ciudadana con cuello de botella' : 'Type B — Citizen science bottleneck'}</option>
+                    <option value="Typ C">{lang === 'de' ? 'Typ C — Organisation mit KI-Werkstattbericht' : lang === 'es' ? 'Tipo C — Organización con reporte IA' : 'Type C — Org with AI workshop report'}</option>
+                    <option value="Typ D">{lang === 'de' ? 'Typ D — Bauauftrag / Stiftung' : lang === 'es' ? 'Tipo D — Encargo / Fundación' : 'Type D — Foundation / Civic RFP'}</option>
+                    <option value="Besetzungsatlas">{lang === 'de' ? 'Besetzungsatlas (Vorarbeiten)' : lang === 'es' ? 'Atlas de saturación' : 'Saturation Atlas'}</option>
+                    <option value="Community">{lang === 'de' ? 'Community / Eigener Fund' : lang === 'es' ? 'Comunidad / Hallazgo propio' : 'Community / Custom Finding'}</option>
                   </select>
                 </div>
               </div>
@@ -1095,20 +1140,20 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block font-medium text-stone-800 mb-1">
-                    {lang === 'de' ? 'Empfänger / Ziel-Organisation' : 'Target Recipient / Mandate'}
+                    {lang === 'de' ? 'Empfänger / Ziel-Organisation' : lang === 'es' ? 'Destinatario / Organización' : 'Target Recipient / Mandate'}
                   </label>
                   <input
                     type="text"
                     value={newRecipient}
                     onChange={(e) => setNewRecipient(e.target.value)}
-                    placeholder={lang === 'de' ? 'z. B. BUND / Senatsverwaltung' : 'e.g. Open NGO / Civic Lab'}
+                    placeholder={lang === 'de' ? 'z. B. BUND / Senatsverwaltung' : lang === 'es' ? 'p. ej. ONG abierta / Laboratorio cívico' : 'e.g. Open NGO / Civic Lab'}
                     className="w-full px-3 py-2 border border-stone-300 rounded-xl focus:ring-2 focus:ring-amber-500/20 focus:border-amber-600"
                   />
                 </div>
 
                 <div>
                   <label className="block font-medium text-stone-800 mb-1">
-                    {lang === 'de' ? 'Wiedervorlage / Prüfen ab' : 'Review Date'}
+                    {lang === 'de' ? 'Wiedervorlage / Prüfen ab' : lang === 'es' ? 'Fecha de revisión' : 'Review Date'}
                   </label>
                   <input
                     type="text"
@@ -1122,13 +1167,13 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
 
               <div>
                 <label className="block font-medium text-stone-800 mb-1">
-                  {lang === 'de' ? 'Prüfbefund / Vorarbeiten (Was existiert bereits?)' : 'Evidence / Prior Art Findings'}
+                  {lang === 'de' ? 'Prüfbefund / Vorarbeiten (Was existiert bereits?)' : lang === 'es' ? 'Evidencia / Antecedentes (¿Qué existe ya?)' : 'Evidence / Prior Art Findings'}
                 </label>
                 <textarea
                   rows={2}
                   value={newEvidence}
                   onChange={(e) => setNewEvidence(e.target.value)}
-                  placeholder={lang === 'de' ? 'PDF-Schema existiert, aber keine Web-App oder Rechner...' : 'Guideline exists in PDF, but zero web tools...'}
+                  placeholder={lang === 'de' ? 'PDF-Schema existiert, aber keine Web-App oder Rechner...' : lang === 'es' ? 'Existe esquema en PDF, pero ninguna herramienta web...' : 'Guideline exists in PDF, but zero web tools...'}
                   className="w-full px-3 py-2 border border-stone-300 rounded-xl focus:ring-2 focus:ring-amber-500/20 focus:border-amber-600"
                 />
               </div>
@@ -1136,26 +1181,26 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block font-medium text-stone-800 mb-1">
-                    {lang === 'de' ? 'Ticket #1 (Minimaler erster Schritt)' : 'Ticket #1 (Minimum first step)'}
+                    {lang === 'de' ? 'Ticket #1 (Minimaler erster Schritt)' : lang === 'es' ? 'Paso #1 (Primer paso mínimo)' : 'Ticket #1 (Minimum first step)'}
                   </label>
                   <input
                     type="text"
                     value={newTicket}
                     onChange={(e) => setNewTicket(e.target.value)}
-                    placeholder={lang === 'de' ? 'Foto-Upload + Berechnung des Scores' : 'Upload photo and calculate score'}
+                    placeholder={lang === 'de' ? 'Foto-Upload + Berechnung des Scores' : lang === 'es' ? 'Subida de foto + cálculo de puntuación' : 'Upload photo and calculate score'}
                     className="w-full px-3 py-2 border border-stone-300 rounded-xl focus:ring-2 focus:ring-amber-500/20 focus:border-amber-600"
                   />
                 </div>
 
                 <div>
                   <label className="block font-medium text-stone-800 mb-1">
-                    {lang === 'de' ? 'Stichworte / Tags (kommagetrennt)' : 'Tags (comma separated)'}
+                    {lang === 'de' ? 'Stichworte / Tags (kommagetrennt)' : lang === 'es' ? 'Etiquetas (separadas por coma)' : 'Tags (comma separated)'}
                   </label>
                   <input
                     type="text"
                     value={newTags}
                     onChange={(e) => setNewTags(e.target.value)}
-                    placeholder="Klima, Artenschutz, OCR"
+                    placeholder={lang === 'de' ? 'Klima, Artenschutz, OCR' : lang === 'es' ? 'Clima, Biodiversidad, OCR' : 'Climate, Conservation, OCR'}
                     className="w-full px-3 py-2 border border-stone-300 rounded-xl focus:ring-2 focus:ring-amber-500/20 focus:border-amber-600"
                   />
                 </div>
@@ -1165,15 +1210,15 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
                 <button
                   type="button"
                   onClick={() => setShowAddModal(false)}
-                  className="px-4 py-2 border border-stone-300 rounded-xl text-stone-700 hover:bg-stone-50 font-medium"
+                  className="px-4 py-2 border border-stone-300 rounded-xl text-stone-700 hover:bg-stone-50 font-medium cursor-pointer"
                 >
                   {t.ui.close}
                 </button>
                 <button
                   type="submit"
-                  className="px-5 py-2 bg-stone-900 text-stone-50 rounded-xl hover:bg-stone-800 font-medium transition-colors shadow-xs"
+                  className="px-5 py-2 bg-stone-900 text-stone-50 rounded-xl hover:bg-stone-800 font-medium transition-colors shadow-xs cursor-pointer"
                 >
-                  {lang === 'de' ? 'Idee speichern' : 'Save Idea'}
+                  {lang === 'de' ? 'Idee speichern' : lang === 'es' ? 'Guardar idea' : 'Save Idea'}
                 </button>
               </div>
             </form>

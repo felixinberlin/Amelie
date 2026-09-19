@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { X, Copy, Check, Download, AlertTriangle, Lightbulb, Target, Wrench, ShieldAlert, Sparkles, Send, Printer, Brain, GraduationCap, ShieldCheck, Heart } from 'lucide-react';
 import { DoseItem, Language } from '../types';
 import { AMELIE_PLEDGE } from '../data/manifest';
-import { getTranslation } from '../i18n';
+import { getTranslation, getLocalizedTitle } from '../i18n';
 
 interface DoseModalProps {
   dose: DoseItem;
@@ -35,6 +35,8 @@ export const DoseModal: React.FC<DoseModalProps> = ({ dose, lang, onClose }) => 
         }
       : null;
 
+  const localizedTitle = getLocalizedTitle(dose, lang);
+
   const getLocalizedEmailDraft = () => {
     if (activeEmailTemplate) {
       const subject = lang === 'de' ? activeEmailTemplate.subjectDe : activeEmailTemplate.subjectEn;
@@ -44,7 +46,7 @@ export const DoseModal: React.FC<DoseModalProps> = ({ dose, lang, onClose }) => 
     }
 
     if (lang === 'de') {
-      return `Betreff: Idee zu verschenken: ${dose.title}
+      return `Betreff: Idee zu verschenken: ${localizedTitle}
 
 Hallo,
 
@@ -67,7 +69,7 @@ ${AMELIE_PLEDGE.de}
 
 Félix (Berlin)`;
     } else if (lang === 'es') {
-      return `Asunto: Idea de regalo: ${dose.title}
+      return `Asunto: Idea de regalo: ${localizedTitle}
 
 Hola,
 
@@ -90,7 +92,7 @@ ${AMELIE_PLEDGE.es}
 
 Félix (Berlín)`;
     } else {
-      return `Subject: Idea as a gift: ${dose.title}
+      return `Subject: Idea as a gift: ${localizedTitle}
 
 Hello,
 
@@ -125,43 +127,44 @@ Félix (Berlin)`;
 
   const downloadMarkdown = () => {
     const isDe = lang === 'de';
-    const mdContent = `# ${dose.title}
+    const isEs = lang === 'es';
+    const mdContent = `# ${localizedTitle}
 
-**${isDe ? 'Ein Satz' : 'One sentence'}:** ${isDe ? dose.oneLinerDe : dose.oneLinerEn}
+**${isDe ? 'Ein Satz' : isEs ? 'Una frase' : 'One sentence'}:** ${isDe ? dose.oneLinerDe : dose.oneLinerEn}
 
-**${isDe ? 'Stand' : 'Date'}:** ${dose.date} · **${isDe ? 'Prüfen ab' : 'Review after'}:** ${dose.reviewAfter}
-**${isDe ? 'Empfänger' : 'Recipient'}:** ${isDe ? dose.recipientsDe : dose.recipientsEn}
-**${isDe ? 'Verdikt' : 'Verdict'}:** ${dose.verdict === 'gift' ? '🎁 gift' : dose.verdict === 'build_first' ? '🔨 build first' : '🔒 kept'}
+**${isDe ? 'Stand' : isEs ? 'Fecha' : 'Date'}:** ${dose.date} · **${isDe ? 'Prüfen ab' : isEs ? 'Revisar tras' : 'Review after'}:** ${dose.reviewAfter}
+**${isDe ? 'Empfänger' : isEs ? 'Destinatario' : 'Recipient'}:** ${isDe ? dose.recipientsDe : dose.recipientsEn}
+**${isDe ? 'Verdikt' : isEs ? 'Veredicto' : 'Verdict'}:** ${dose.verdict === 'gift' ? '🎁 gift' : dose.verdict === 'build_first' ? '🔨 build first' : '🔒 kept'}
 
 ---
 
-## ${isDe ? 'Das Problem' : 'The Problem'}
+## ${isDe ? 'Das Problem' : isEs ? 'El Problema' : 'The Problem'}
 ${isDe ? dose.problemDe : dose.problemEn}
 
-## ${isDe ? 'Warum das jetzt geht' : 'Why Now'}
+## ${isDe ? 'Warum das jetzt geht' : isEs ? 'Por qué ahora' : 'Why Now'}
 ${(isDe ? dose.whyNowDe : dose.whyNowEn).map((w, i) => `${i + 1}. ${w}`).join('\n')}
 
-## ${isDe ? 'Skizze' : 'Sketch'}
+## ${isDe ? 'Skizze' : isEs ? 'Esquema' : 'Sketch'}
 ${isDe ? dose.sketchDe : dose.sketchEn}
 
-## ${isDe ? 'Erster Schritt' : 'First Step'}
+## ${isDe ? 'Erster Schritt' : isEs ? 'Primer paso' : 'First Step'}
 **Ticket: ${isDe ? dose.firstStepDe.ticket : dose.firstStepEn.ticket}**
 ${isDe ? dose.firstStepDe.criteria : dose.firstStepEn.criteria}
 
-## ${isDe ? 'Wo es kippt' : 'Where it Breaks'}
+## ${isDe ? 'Wo es kippt' : isEs ? 'Punto crítico de falla' : 'Where it Breaks'}
 ${isDe ? dose.failureModeDe : dose.failureModeEn}
 
-## ${isDe ? 'Wer es schon versucht hat' : 'Prior Art'}
+## ${isDe ? 'Wer es schon versucht hat' : isEs ? 'Intentos previos' : 'Prior Art'}
 ${isDe ? dose.priorArtDe : dose.priorArtEn}
 
 ${dose.emailTemplates && dose.emailTemplates.length > 0 ? `
 ---
 
-## ${isDe ? 'Schenkungs-Mails (In der Dose verpackt)' : 'Handover Letters (Packaged in Tin)'}
+## ${isDe ? 'Schenkungs-Mails (In der Dose verpackt)' : isEs ? 'Cartas de entrega (En la lata)' : 'Handover Letters (Packaged in Tin)'}
 ${dose.emailTemplates.map((tmpl, idx) => `
 ### Mail ${idx + 1}: ${tmpl.recipientName}
-**${isDe ? 'An' : 'To'}:** ${tmpl.to}
-**${isDe ? 'Betreff' : 'Subject'}:** ${isDe ? tmpl.subjectDe : tmpl.subjectEn}
+**${isDe ? 'An' : isEs ? 'Para' : 'To'}:** ${tmpl.to}
+**${isDe ? 'Betreff' : isEs ? 'Asunto' : 'Subject'}:** ${isDe ? tmpl.subjectDe : tmpl.subjectEn}
 
 \`\`\`text
 ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
@@ -170,7 +173,7 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
 ` : ''}
 ---
 
-## ${isDe ? 'Der Pledge' : 'The Pledge'}
+## ${isDe ? 'Der Pledge' : isEs ? 'El Compromiso' : 'The Pledge'}
 > ${AMELIE_PLEDGE[lang]}
 `;
 
@@ -209,7 +212,7 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
                 <span className="text-xs text-[#fde047]/90 font-typewriter print:text-stone-600">{dose.id}.md</span>
               </div>
               <h2 className="text-xl font-amelie font-bold text-white print:text-black tracking-tight">
-                {dose.title}
+                {localizedTitle}
               </h2>
             </div>
           </div>
@@ -217,21 +220,21 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
           <div className="flex items-center gap-2 print:hidden">
             <button
               onClick={printDossier}
-              className="p-2 rounded-lg text-[#f4ede0] hover:text-white hover:bg-[#8c1d40] transition-colors"
-              title={lang === 'de' ? 'Dossier als A4 drucken' : 'Print A4 Dossier'}
+              className="p-2 rounded-lg text-[#f4ede0] hover:text-white hover:bg-[#8c1d40] transition-colors cursor-pointer"
+              title={lang === 'de' ? 'Dossier als A4 drucken' : lang === 'es' ? 'Imprimir dossier A4' : 'Print A4 Dossier'}
             >
               <Printer className="w-4 h-4 text-[#f6bd60]" />
             </button>
             <button
               onClick={downloadMarkdown}
-              className="p-2 rounded-lg text-[#f4ede0] hover:text-white hover:bg-[#8c1d40] transition-colors"
+              className="p-2 rounded-lg text-[#f4ede0] hover:text-white hover:bg-[#8c1d40] transition-colors cursor-pointer"
               title={lang === 'de' ? 'Markdown herunterladen' : lang === 'es' ? 'Descargar markdown' : 'Download markdown file'}
             >
               <Download className="w-4 h-4 text-[#f6bd60]" />
             </button>
             <button
               onClick={onClose}
-              className="p-2 rounded-lg text-[#f4ede0] hover:text-white hover:bg-[#8c1d40] transition-colors"
+              className="p-2 rounded-lg text-[#f4ede0] hover:text-white hover:bg-[#8c1d40] transition-colors cursor-pointer"
               title={t.ui.close}
             >
               <X className="w-5 h-5" />
@@ -396,18 +399,18 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
               <div className="flex items-center justify-between">
                 <span className="text-xs font-mono-code uppercase font-bold tracking-wider px-2.5 py-1 rounded-full bg-indigo-100 text-indigo-900 border border-indigo-200 flex items-center gap-1.5">
                   <Brain className="w-3.5 h-3.5 text-indigo-700" />
-                  {lang === 'de' ? 'KI-Frontier & Warum vor KI unmöglich' : 'AI-Native Frontier & Breakthrough'}
+                  {lang === 'de' ? 'KI-Frontier & Warum vor KI unmöglich' : lang === 'es' ? 'Frontera IA y por qué antes era imposible' : 'AI-Native Frontier & Breakthrough'}
                 </span>
                 <span className="text-xs text-indigo-800 font-semibold flex items-center gap-1">
                   <Heart className="w-3.5 h-3.5 text-rose-600" />
-                  {lang === 'de' ? 'Fokus: Für normale Bürger' : 'Focus: Empowering Ordinary People'}
+                  {lang === 'de' ? 'Fokus: Für normale Bürger' : lang === 'es' ? 'Enfoque: Para ciudadanos comunes' : 'Focus: Empowering Ordinary People'}
                 </span>
               </div>
 
               {/* What was impossible before AI */}
               <div className="space-y-1.5">
                 <h4 className="text-xs font-bold uppercase font-mono-code tracking-wider text-indigo-950">
-                  {lang === 'de' ? '⚡ Was vor moderner KI unmöglich war' : '⚡ What was Impossible Before AI'}
+                  {lang === 'de' ? '⚡ Was vor moderner KI unmöglich war' : lang === 'es' ? '⚡ Lo que era imposible antes de la IA' : '⚡ What was Impossible Before AI'}
                 </h4>
                 <p className="text-sm text-indigo-950/90 leading-relaxed">
                   {lang === 'de' ? dose.aiFrontier.impossibleBeforeAiDe : dose.aiFrontier.impossibleBeforeAiEn}
@@ -419,7 +422,7 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
                 <div className="p-3 rounded-xl bg-white/80 border border-indigo-100 space-y-1">
                   <span className="text-xs font-bold text-stone-700 flex items-center gap-1.5">
                     <Heart className="w-3.5 h-3.5 text-rose-600" />
-                    {lang === 'de' ? 'Konkreter Nutzen im Alltag' : 'Everyday Human Benefit'}
+                    {lang === 'de' ? 'Konkreter Nutzen im Alltag' : lang === 'es' ? 'Beneficio cotidiano real' : 'Everyday Human Benefit'}
                   </span>
                   <p className="text-xs text-stone-800 leading-relaxed">
                     {lang === 'de' ? dose.aiFrontier.ordinaryPeopleBenefitDe : dose.aiFrontier.ordinaryPeopleBenefitEn}
@@ -428,7 +431,7 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
                 <div className="p-3 rounded-xl bg-white/80 border border-indigo-100 space-y-1">
                   <span className="text-xs font-bold text-stone-700 flex items-center gap-1.5">
                     <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-                    {lang === 'de' ? 'Datenschutz & Souveränität' : 'Privacy & Local Sovereignty'}
+                    {lang === 'de' ? 'Datenschutz & Souveränität' : lang === 'es' ? 'Privacidad y soberanía local' : 'Privacy & Local Sovereignty'}
                   </span>
                   <p className="text-xs text-stone-800 leading-relaxed">
                     {lang === 'de' ? dose.aiFrontier.privacyModelDe : dose.aiFrontier.privacyModelEn}
@@ -439,7 +442,7 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
               {/* Tech stack pills */}
               <div className="flex flex-wrap items-center gap-1.5 pt-1">
                 <span className="text-[11px] font-mono-code text-stone-600 font-semibold mr-1">
-                  {lang === 'de' ? 'Tech-Stack:' : 'Tech Stack:'}
+                  {lang === 'de' ? 'Tech-Stack:' : lang === 'es' ? 'Stack técnico:' : 'Tech Stack:'}
                 </span>
                 {dose.aiFrontier.aiTechStack.map((tech, i) => (
                   <span key={i} className="text-[11px] font-mono-code px-2 py-0.5 rounded-md bg-white border border-indigo-200 text-indigo-900 font-medium">
@@ -453,10 +456,10 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
                 <div className="flex items-center justify-between">
                   <h4 className="text-xs font-bold uppercase font-mono-code tracking-wider text-indigo-950 flex items-center gap-1.5">
                     <GraduationCap className="w-4 h-4 text-indigo-700" />
-                    {lang === 'de' ? 'Lernplan: In 4 Wochen vom Konzept zum Prototyp' : 'Learning Plan: 4-Week Curriculum to Functional Prototype'}
+                    {lang === 'de' ? 'Lernplan: In 4 Wochen vom Konzept zum Prototyp' : lang === 'es' ? 'Plan de aprendizaje: 4 semanas al prototipo' : 'Learning Plan: 4-Week Curriculum to Functional Prototype'}
                   </h4>
                   <span className="text-[11px] text-indigo-800 font-medium font-mono-code">
-                    4 Milestones
+                    {lang === 'de' ? '4 Meilensteine' : lang === 'es' ? '4 Hitos' : '4 Milestones'}
                   </span>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -469,7 +472,7 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
                         </span>
                       </div>
                       <p className="text-stone-600 text-[11px] leading-relaxed">
-                        <span className="font-semibold text-stone-700">{lang === 'de' ? 'Schwerpunkt: ' : 'Focus: '}</span>
+                        <span className="font-semibold text-stone-700">{lang === 'de' ? 'Schwerpunkt: ' : lang === 'es' ? 'Enfoque: ' : 'Focus: '}</span>
                         {c.focus}
                       </p>
                       <div className="text-emerald-800 font-medium text-[11px] pt-0.5 flex items-center gap-1">
@@ -512,7 +515,7 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
             {dose.emailTemplates && dose.emailTemplates.length > 1 && (
               <div className="flex flex-wrap items-center gap-1.5 pt-1">
                 <span className="text-xs font-typewriter text-[#8b6f57] font-semibold mr-1">
-                  {lang === 'de' ? 'Empfänger:' : 'Recipient:'}
+                  {t.ui.recipient}
                 </span>
                 {dose.emailTemplates.map((tmpl, idx) => {
                   const isSelected = selectedEmailIndex === idx;

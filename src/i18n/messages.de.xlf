@@ -15,29 +15,139 @@
         <source>Félix, Berlin · As of: September 2026</source>
         <target state="translated">Félix, Berlin · Stand: September 2026</target>
       </trans-unit>
+      <trans-unit id="app.kula_french" resname="app.kula_french">
+        <source>« Le Kula-Ring des Idées »</source>
+        <target state="translated">« Le Kula-Ring des Idées »</target>
+      </trans-unit>
+      <trans-unit id="app.kula_ring" resname="app.kula_ring">
+        <source>✦ Kula Ring ✦</source>
+        <target state="translated">✦ Kula-Ring ✦</target>
+      </trans-unit>
+      <trans-unit id="app.cc0_stamp" resname="app.cc0_stamp">
+        <source>CC0 · 1974–2026</source>
+        <target state="translated">CC0 · 1974–2026</target>
+      </trans-unit>
+      <trans-unit id="app.par_avion" resname="app.par_avion">
+        <source>PAR AVION · XLIFF</source>
+        <target state="translated">PAR AVION · XLIFF</target>
+      </trans-unit>
+
+      <!-- Main Navigation -->
       <trans-unit id="nav.tins" resname="nav.tins">
         <source>The Tins</source>
         <target state="translated">Die Dosen</target>
       </trans-unit>
-      <trans-unit id="nav.unpacked" resname="nav.unpacked">
-        <source>Not Yet Packed</source>
-        <target state="translated">Ungepackte Ideen</target>
-      </trans-unit>
       <trans-unit id="nav.matrix" resname="nav.matrix">
-        <source>Matrix &amp; Deliveries</source>
-        <target state="translated">Matrix &amp; Zustellplan</target>
+        <source>Deliveries &amp; Matrix</source>
+        <target state="translated">Zustellungen &amp; Matrix</target>
       </trans-unit>
       <trans-unit id="nav.manifest" resname="nav.manifest">
-        <source>Manifesto &amp; Loop</source>
-        <target state="translated">Manifest &amp; Loop</target>
+        <source>Manifesto &amp; Rules</source>
+        <target state="translated">Manifest &amp; Regeln</target>
+      </trans-unit>
+      <trans-unit id="nav.unpacked" resname="nav.unpacked">
+        <source>Ideas Pipeline</source>
+        <target state="translated">Ideenspeicher</target>
+      </trans-unit>
+      <trans-unit id="nav.sandboxes" resname="nav.sandboxes">
+        <source>Simulators</source>
+        <target state="translated">Simulatoren</target>
+      </trans-unit>
+      <trans-unit id="nav.more" resname="nav.more">
+        <source>More &amp; Tools</source>
+        <target state="translated">Mehr &amp; Werkzeuge</target>
+      </trans-unit>
+      <trans-unit id="nav.musterEmails" resname="nav.musterEmails">
+        <source>Sample Emails</source>
+        <target state="translated">Muster-Mails</target>
+      </trans-unit>
+      <trans-unit id="nav.normalJobs" resname="nav.normalJobs">
+        <source>Everyday Work</source>
+        <target state="translated">Echte Arbeit</target>
+      </trans-unit>
+      <trans-unit id="nav.whimsy" resname="nav.whimsy">
+        <source>Funny &amp; Better</source>
+        <target state="translated">Heiter &amp; Besser</target>
       </trans-unit>
       <trans-unit id="nav.packer" resname="nav.packer">
         <source>Pack a Tin</source>
         <target state="translated">Dose packen</target>
       </trans-unit>
+      <trans-unit id="nav.googleImport" resname="nav.googleImport">
+        <source>Google Import</source>
+        <target state="translated">Google Import</target>
+      </trans-unit>
+      <trans-unit id="nav.playbook" resname="nav.playbook">
+        <source>Prior Art Playbook</source>
+        <target state="translated">Prüf-Playbook</target>
+      </trans-unit>
+      <trans-unit id="nav.githubPages" resname="nav.githubPages">
+        <source>GitHub Pages &amp; Data</source>
+        <target state="translated">GitHub Pages &amp; Daten</target>
+      </trans-unit>
       <trans-unit id="nav.discarded" resname="nav.discarded">
-        <source>Discarded</source>
-        <target state="translated">Entsorgt</target>
+        <source>Discarded Ideas</source>
+        <target state="translated">Entsorgte Ideen</target>
+      </trans-unit>
+      <trans-unit id="nav.tools_archive" resname="nav.tools_archive">
+        <source>TOOLS &amp; ARCHIVE</source>
+        <target state="translated">WERKZEUGE &amp; ARCHIV</target>
+      </trans-unit>
+      <trans-unit id="nav.tools_archive_desc" resname="nav.tools_archive_desc">
+        <source>Sample emails, search playbook, normal jobs &amp; discarded ideas</source>
+        <target state="translated">Muster-Mails, Recherche-Playbook, Normalberufe &amp; Entsorgte Ideen</target>
+      </trans-unit>
+      <trans-unit id="nav.group.concepts" resname="nav.group.concepts">
+        <source>Concepts &amp; Explorations</source>
+        <target state="translated">Konzepte &amp; Ideen</target>
+      </trans-unit>
+      <trans-unit id="nav.group.tools" resname="nav.group.tools">
+        <source>Tools &amp; Workflows</source>
+        <target state="translated">Werkzeuge &amp; Workflows</target>
+      </trans-unit>
+      <trans-unit id="nav.group.archive" resname="nav.group.archive">
+        <source>Templates &amp; Archive</source>
+        <target state="translated">Muster &amp; Archiv</target>
+      </trans-unit>
+      <trans-unit id="nav.desc.unpacked" resname="nav.desc.unpacked">
+        <source>Candidates &amp; ideas before packaging</source>
+        <target state="translated">Ideen-Kandidaten vor der Recherche</target>
+      </trans-unit>
+      <trans-unit id="nav.desc.sandboxes" resname="nav.desc.sandboxes">
+        <source>8 interactive physical simulators</source>
+        <target state="translated">8 interaktive Dosen-Simulatoren</target>
+      </trans-unit>
+      <trans-unit id="nav.desc.musterEmails" resname="nav.desc.musterEmails">
+        <source>4 emails following Amélie philosophy</source>
+        <target state="translated">4 Mails nach Amélie-Philosophie</target>
+      </trans-unit>
+      <trans-unit id="nav.desc.normalJobs" resname="nav.desc.normalJobs">
+        <source>10 concepts for everyday professions</source>
+        <target state="translated">10 Ideen für echte Berufe</target>
+      </trans-unit>
+      <trans-unit id="nav.desc.whimsy" resname="nav.desc.whimsy">
+        <source>Whimsy &amp; human warmth</source>
+        <target state="translated">Heiterkeit &amp; Berliner Gutmütigkeit</target>
+      </trans-unit>
+      <trans-unit id="nav.desc.packer" resname="nav.desc.packer">
+        <source>Pack a new turn-key gift tin</source>
+        <target state="translated">Neue Dose nach Standard schnüren</target>
+      </trans-unit>
+      <trans-unit id="nav.desc.googleImport" resname="nav.desc.googleImport">
+        <source>Import ideas from Docs &amp; Keep</source>
+        <target state="translated">Ideen aus Docs &amp; Keep importieren</target>
+      </trans-unit>
+      <trans-unit id="nav.desc.playbook" resname="nav.desc.playbook">
+        <source>Step 0.5: Prior art validation</source>
+        <target state="translated">Schritt 0,5: Existenzprüfung</target>
+      </trans-unit>
+      <trans-unit id="nav.desc.githubPages" resname="nav.desc.githubPages">
+        <source>GitHub Pages static data hub</source>
+        <target state="translated">Statische Daten &amp; GitHub Pages</target>
+      </trans-unit>
+      <trans-unit id="nav.desc.discarded" resname="nav.desc.discarded">
+        <source>Screened out &amp; occupied ideas</source>
+        <target state="translated">Verworfene &amp; besetzte Ideen</target>
       </trans-unit>
 
       <!-- The Pledge -->
@@ -58,7 +168,7 @@
         <target state="translated">Kopiert</target>
       </trans-unit>
 
-      <!-- Manifest Rules -->
+      <!-- The 5 Rules -->
       <trans-unit id="manifest.rule1.title" resname="manifest.rule1.title">
         <source>The delivery is the gift, not the find</source>
         <target state="translated">Die Zustellung ist das Geschenk, nicht der Fund</target>
@@ -71,6 +181,10 @@
         <source>1h discovery, 1h validation, 2h recipient research (the 1:2 budget ratio).</source>
         <target state="translated">Pro Idee 1 Stunde Suche, 1 Stunde Prüfung, 2 Stunden Empfänger-Recherche (1:2-Budgetregel).</target>
       </trans-unit>
+      <trans-unit id="manifest.rule1.pill" resname="manifest.rule1.pill">
+        <source>Delivery</source>
+        <target state="translated">Zustellung</target>
+      </trans-unit>
 
       <trans-unit id="manifest.rule2.title" resname="manifest.rule2.title">
         <source>Sign your name, demand nothing</source>
@@ -78,64 +192,152 @@
       </trans-unit>
       <trans-unit id="manifest.rule2.desc" resname="manifest.rule2.desc">
         <source>Your name underneath, CC0 above it. No equity demands, no mandatory attribution, zero expectation of a response. The Kula ring thrives because the gift travels onward, not backward.</source>
-        <target state="translated">Dein Name steht drunter, CC0 steht darüber. Keine Beteiligungsansprüche, keine Namensnennungspflicht, keine Erwartung einer Antwort. Der Kula-Ring funktioniert, weil die Gabe weiterwandert, nicht zurück.</target>
+        <target state="translated">Dein Name darunter, CC0 darüber. Keine Anteile, keine Verpflichtung zur Namensnennung, null Erwartung einer Antwort. Der Kula-Ring lebt davon, dass die Gabe weiterwandert, nicht zurück.</target>
       </trans-unit>
       <trans-unit id="manifest.rule2.thumb" resname="manifest.rule2.thumb">
-        <source>"This idea belongs to no one. Take it, build it, sell it — you owe me nothing."</source>
-        <target state="translated">„Diese Idee gehört niemandem. Nimm sie, bau sie, verkauf sie — du schuldest mir nichts."</target>
+        <source>Explicitly grant permission not to reply.</source>
+        <target state="translated">Ausdrücklich die Erlaubnis geben, nicht zu antworten.</target>
+      </trans-unit>
+      <trans-unit id="manifest.rule2.pill" resname="manifest.rule2.pill">
+        <source>Sign &amp; CC0</source>
+        <target state="translated">Signieren</target>
       </trans-unit>
 
       <trans-unit id="manifest.rule3.title" resname="manifest.rule3.title">
-        <source>Deliver once, then walk away</source>
-        <target state="translated">Einmal zustellen, dann weg</target>
+        <source>The Phone Booth Rule (Strictly no follow-up)</source>
+        <target state="translated">Die Telefonzellen-Regel (Kein Nachfassen)</target>
       </trans-unit>
       <trans-unit id="manifest.rule3.desc" resname="manifest.rule3.desc">
-        <source>Never follow up ("Did you get a chance to read my email?"). Following up turns an unconditional gift into an uninvited task on the recipient's todo list.</source>
-        <target state="translated">Kein Nachfassen („Hatten Sie Gelegenheit, meine Mail zu lesen?"). Wer nachfasst, macht aus einem Geschenk eine Aufgabenliste für den Empfänger. Ein Geschenk erzeugt keine Bringschuld.</target>
+        <source>Place the tin box in the phone booth and disappear. No follow-up emails, no "checking in", no LinkedIn requests. If you ask for feedback, it wasn't a gift — it was an unpaid pitch.</source>
+        <target state="translated">Leg die Blechdose in die Telefonzelle und verschwinde. Keine Nachfass-Mails, kein "Haben Sie schon reingeschaut?", keine Vernetzungsanfrage auf LinkedIn. Wer nachfasst, hat kein Geschenk gemacht, sondern einen unbezahlten Pitch.</target>
       </trans-unit>
       <trans-unit id="manifest.rule3.thumb" resname="manifest.rule3.thumb">
-        <source>Send once. Let go. Never follow up.</source>
-        <target state="translated">Einmal senden. Loslassen. Nie wieder nachhaken.</target>
+        <source>Send once. Then erase from your mental to-do list.</source>
+        <target state="translated">Einmal senden. Dann sofort aus dem Kopf streichen.</target>
+      </trans-unit>
+      <trans-unit id="manifest.rule3.pill" resname="manifest.rule3.pill">
+        <source>No Follow-up</source>
+        <target state="translated">Klingelverbot</target>
       </trans-unit>
 
       <trans-unit id="manifest.rule4.title" resname="manifest.rule4.title">
-        <source>If nobody asked, give tools, not a project</source>
-        <target state="translated">Wer nicht gefragt hat, kriegt Werkzeug, kein Projekt</target>
+        <source>If they didn't ask, deliver tools, not homework</source>
+        <target state="translated">Ungefragt nur Werkzeuge schenken, keine Arbeit</target>
       </trans-unit>
       <trans-unit id="manifest.rule4.desc" resname="manifest.rule4.desc">
-        <source>Bare ideas with no code belong exclusively with salaried organizations (companies, research grants, foundations). Unpaid open-source maintainers only receive working skeleton code.</source>
-        <target state="translated">Reine Ideen ohne Code gehen nur an Organisationen mit bezahltem Bauauftrag (Firmen, Forschung, Fördertöpfe, Stiftungen). An unbezahlte Open-Source-Maintainer nur mit lauffähigem Code-Skelett.</target>
+        <source>Unsolicited ideas without code belong only to entities with budgets and a mandate to build (companies, academic chairs, public funds). Never burden volunteer open source maintainers with feature requests; maintainers only receive ready-to-merge pull requests.</source>
+        <target state="translated">Reine Ideen ohne Code gehören ausschließlich zu Empfängern mit Bau-Mandat und Budget (Unternehmen, Lehrstühle, Stiftungen). Ehrenamtliche Open-Source-Maintainer werden niemals mit Ideen belästigt — ihnen schenkt man nur fertige Pull Requests.</target>
       </trans-unit>
       <trans-unit id="manifest.rule4.thumb" resname="manifest.rule4.thumb">
-        <source>Never burden unpaid volunteer maintainers with unsolicited project homework.</source>
-        <target state="translated">Unbezahlte Maintainer niemals mit unerbetener Arbeit belasten.</target>
+        <source>Never give volunteer maintainers unpaid homework.</source>
+        <target state="translated">Niemals ehrenamtlichen Maintainern Hausaufgaben aufhalsen.</target>
+      </trans-unit>
+      <trans-unit id="manifest.rule4.pill" resname="manifest.rule4.pill">
+        <source>Tools Only</source>
+        <target state="translated">Werkzeug</target>
       </trans-unit>
 
       <trans-unit id="manifest.rule5.title" resname="manifest.rule5.title">
-        <source>Don't let it become an excuse</source>
-        <target state="translated">Nicht zur Ausrede machen</target>
+        <source>Don't make gifting an excuse not to build</source>
+        <target state="translated">Nicht das Schenken zur Ausrede machen</target>
       </trans-unit>
       <trans-unit id="manifest.rule5.desc" resname="manifest.rule5.desc">
-        <source>Giving ideas away feels productive, yet it is still not building. Keep at most two ideas per cycle and actually finish building them.</source>
-        <target state="translated">Verschenken fühlt sich produktiv an und ist trotzdem kein Bauen. Maximal zwei Ideen pro Jahr behalten und wirklich bis zum Ende durchziehen.</target>
+        <source>Gifting ideas feels like building, but it isn't. Keep a maximum of two personal projects a year and finish them thoroughly. Gift everything else away so it doesn't rot.</source>
+        <target state="translated">Ideen zu verschenken fühlt sich an wie Bauen, ist es aber nicht. Behalte maximal zwei eigene Ideen pro Jahr und bring sie zu Ende. Alles andere wird verschenkt, damit es nicht verrottet.</target>
       </trans-unit>
       <trans-unit id="manifest.rule5.thumb" resname="manifest.rule5.thumb">
-        <source>Retain at most 2 projects for yourself. Everything else gets gifted.</source>
-        <target state="translated">Behalte maximal 2 Ideen. Der Rest geht raus.</target>
+        <source>Build max 2 personal projects. Gift the remaining 19.</source>
+        <target state="translated">Maximal 2 eigene Projekte behalten. Alles andere verschenken.</target>
+      </trans-unit>
+      <trans-unit id="manifest.rule5.pill" resname="manifest.rule5.pill">
+        <source>Build Max 2</source>
+        <target state="translated">Max. 2</target>
       </trans-unit>
 
-      <!-- Common UI labels -->
+      <!-- 6 Pillars of Amélie Emails -->
+      <trans-unit id="pillar.title" resname="pillar.title">
+        <source>The 6 Pillars of an Amélie Gift Email</source>
+        <target state="translated">Die 6 Bausteine einer Amélie-E-Mail</target>
+      </trans-unit>
+      <trans-unit id="pillar.1.title" resname="pillar.1.title">
+        <source>1. Clear Gift Subject Line</source>
+        <target state="translated">1. Klarer Geschenk-Betreff</target>
+      </trans-unit>
+      <trans-unit id="pillar.1.desc" resname="pillar.1.desc">
+        <source>Explicitly marked as a free gift; zero sales hype, zero clickbait.</source>
+        <target state="translated">Sofort als Geschenk deklariert, niemals reißerisch oder werblich.</target>
+      </trans-unit>
+      <trans-unit id="pillar.2.title" resname="pillar.2.title">
+        <source>2. The 1:20 Ratio Relief</source>
+        <target state="translated">2. Die 1:20-Entlastung</target>
+      </trans-unit>
+      <trans-unit id="pillar.2.desc" resname="pillar.2.desc">
+        <source>Immediately clarifies who writes and why 19 out of 20 ideas are given away.</source>
+        <target state="translated">Erklärt sofort, wer schreibt und warum man 19 von 20 Ideen verschenkt.</target>
+      </trans-unit>
+      <trans-unit id="pillar.3.title" resname="pillar.3.title">
+        <source>3. Proof of Sincere Research</source>
+        <target state="translated">3. Beweis der Recherche</target>
+      </trans-unit>
+      <trans-unit id="pillar.3.desc" resname="pillar.3.desc">
+        <source>Cites the recipient's recent paper or software tool (no blast spam).</source>
+        <target state="translated">Zitiert das jüngste Tool oder Paper des Empfängers (kein Gießkannen-Spam).</target>
+      </trans-unit>
+      <trans-unit id="pillar.4.title" resname="pillar.4.title">
+        <source>4. The Tin Link &amp; One-Pager</source>
+        <target state="translated">4. Die Dose verlinkt</target>
+      </trans-unit>
+      <trans-unit id="pillar.4.desc" resname="pillar.4.desc">
+        <source>1 page with architecture, first milestone (Ticket #1), and critical failure point.</source>
+        <target state="translated">1 Seite mit Architektur, erstem Ticket #1 und vor allem der Bruchstelle.</target>
+      </trans-unit>
+      <trans-unit id="pillar.5.title" resname="pillar.5.title">
+        <source>5. Unconditional CC0 Release</source>
+        <target state="translated">5. CC0-Freigabe</target>
+      </trans-unit>
+      <trans-unit id="pillar.5.desc" resname="pillar.5.desc">
+        <source>Unconditionally public domain: take it, build it, sell it, zero royalties.</source>
+        <target state="translated">Bedingungslos gemeinfrei: Nimm es, bau es, verkauf es, kein Anteil.</target>
+      </trans-unit>
+      <trans-unit id="pillar.6.title" resname="pillar.6.title">
+        <source>6. Strict Phone Booth Rule</source>
+        <target state="translated">6. Das Klingelverbot</target>
+      </trans-unit>
+      <trans-unit id="pillar.6.desc" resname="pillar.6.desc">
+        <source>Explicit permission not to reply; promise never to follow up or nag.</source>
+        <target state="translated">Ausdrückliche Erlaubnis, nicht zu antworten; Versprechen, nie nachzufassen.</target>
+      </trans-unit>
+
+      <!-- Anti Patterns -->
+      <trans-unit id="anti.heading" resname="anti.heading">
+        <source>The 3 Anti-Patterns (Forbidden by Amélie Philosophy)</source>
+        <target state="translated">Die 3 Anti-Muster (Was nach Amélie verboten ist)</target>
+      </trans-unit>
+      <trans-unit id="anti.subheading" resname="anti.subheading">
+        <source>Committing these errors turns a selfless gift into an unwelcome burden or disguised sales pitch.</source>
+        <target state="translated">Wer diese Fehler begeht, verschenkt keine Idee, sondern belästigt Menschen oder betreibt getarnte Akquise.</target>
+      </trans-unit>
+      <trans-unit id="anti.mistake" resname="anti.mistake">
+        <source>Mistake</source>
+        <target state="translated">Fehler</target>
+      </trans-unit>
+      <trans-unit id="anti.violation" resname="anti.violation">
+        <source>Violates Rule</source>
+        <target state="translated">Verstößt gegen Regel</target>
+      </trans-unit>
+
+      <!-- UI Strings -->
       <trans-unit id="ui.close" resname="ui.close">
         <source>Close</source>
         <target state="translated">Schließen</target>
       </trans-unit>
       <trans-unit id="ui.copy_email" resname="ui.copy_email">
         <source>Copy email template</source>
-        <target state="translated">Mail-Vorlage kopieren</target>
+        <target state="translated">Muster-E-Mail kopieren</target>
       </trans-unit>
       <trans-unit id="ui.email_copied" resname="ui.email_copied">
         <source>Email copied!</source>
-        <target state="translated">Mail kopiert!</target>
+        <target state="translated">E-Mail kopiert!</target>
       </trans-unit>
       <trans-unit id="ui.open_tin" resname="ui.open_tin">
         <source>Open tin →</source>
@@ -157,29 +359,501 @@
         <source>Kept</source>
         <target state="translated">Behalten</target>
       </trans-unit>
+      <trans-unit id="ui.verdict_discarded" resname="ui.verdict_discarded">
+        <source>Discarded</source>
+        <target state="translated">Entsorgt</target>
+      </trans-unit>
       <trans-unit id="ui.footer_text" resname="ui.footer_text">
-        <source>All tins dedicated to CC0 (Public Domain).</source>
-        <target state="translated">Alle Dosen stehen unter CC0 (Public Domain).</target>
+        <source>All tins are dedicated to the public domain under CC0.</source>
+        <target state="translated">Alle Dosen sind bedingungslos CC0 gemeinfrei gewidmet.</target>
       </trans-unit>
       <trans-unit id="ui.footer_quote" resname="ui.footer_quote">
-        <source>"The delivery is the gift, not the discovery."</source>
+        <source>"The delivery is the gift, not the find."</source>
         <target state="translated">„Die Zustellung ist das Geschenk, nicht der Fund."</target>
       </trans-unit>
+      <trans-unit id="ui.all_domains" resname="ui.all_domains">
+        <source>All Domains</source>
+        <target state="translated">Alle Bereiche</target>
+      </trans-unit>
+      <trans-unit id="ui.all_verdicts" resname="ui.all_verdicts">
+        <source>All Verdicts</source>
+        <target state="translated">Alle Verdikte</target>
+      </trans-unit>
+      <trans-unit id="ui.search_placeholder" resname="ui.search_placeholder">
+        <source>Search tins (title, problem, recipient, tags)...</source>
+        <target state="translated">Dosen durchsuchen (Titel, Problem, Empfänger, Tags)...</target>
+      </trans-unit>
+      <trans-unit id="ui.tins_heading" resname="ui.tins_heading">
+        <source>The Gifts: 15 Packaged Tins</source>
+        <target state="translated">Die Geschenke: 15 gepackte Dosen</target>
+      </trans-unit>
+      <trans-unit id="ui.tins_subheading" resname="ui.tins_subheading">
+        <source>Each tin is a one-page turnkey dossier with problem, tech catalyst ("Why Now"), architectural sketch, Ticket #1, and point of failure.</source>
+        <target state="translated">Jede Dose ist ein sendefertiges Einseiter-Dossier: Problem, technologischer Durchbruch („Warum jetzt"), Architektur-Skizze, Ticket #1 und Sollbruchstelle.</target>
+      </trans-unit>
+      <trans-unit id="ui.tins_badge" resname="ui.tins_badge">
+        <source>15 turn-key dossiers ready to deliver · All CC0</source>
+        <target state="translated">15 sendefertige Dossiers · Alle CC0 Gemeinfrei</target>
+      </trans-unit>
+      <trans-unit id="ui.deliveries_heading" resname="ui.deliveries_heading">
+        <source>Three Ready-to-Send Outbound Emails</source>
+        <target state="translated">Drei sendefertige Schenkungs-Mails</target>
+      </trans-unit>
+      <trans-unit id="ui.deliveries_subheading" resname="ui.deliveries_subheading">
+        <source>First round: three researched teams, three completed emails. The delivery is the gift, not the brainstorming. Send once and walk away.</source>
+        <target state="translated">Erste Staffel: drei recherchierte Empfänger, drei fertige Mails. Die Zustellung ist das Geschenk, nicht der Einfall. Einmal senden, nie nachfassen.</target>
+      </trans-unit>
+      <trans-unit id="ui.deliveries_badge" resname="ui.deliveries_badge">
+        <source>Q4 2026 Delivery Plan</source>
+        <target state="translated">Zustellplan Q4 2026</target>
+      </trans-unit>
+      <trans-unit id="ui.matrix_heading" resname="ui.matrix_heading">
+        <source>The Matrix: Idea → Recipient</source>
+        <target state="translated">Die Matrix: Idee → Empfänger</target>
+      </trans-unit>
+      <trans-unit id="ui.matrix_subheading" resname="ui.matrix_subheading">
+        <source>All 19 ideas mapped by recipient, channel, persuasive hook, and delivery status.</source>
+        <target state="translated">Alle 19 Ideen mit Empfänger, Kanal, Überzeugungshaken und Zustellstatus.</target>
+      </trans-unit>
+      <trans-unit id="ui.discarded_heading" resname="ui.discarded_heading">
+        <source>Four Ideas Screened Out &amp; Discarded</source>
+        <target state="translated">Vier verworfene Ideen</target>
+      </trans-unit>
+      <trans-unit id="ui.discarded_subheading" resname="ui.discarded_subheading">
+        <source>A gift only has value when the space is genuinely open. These four ideas were dropped during preliminary screening because they already exist or are commercially saturated.</source>
+        <target state="translated">Ein Geschenk hat nur Wert, wenn der Raum wirklich frei ist. Diese vier Ideen wurden in der Vorprüfung verworfen, weil sie bereits existieren oder besetzt sind.</target>
+      </trans-unit>
+      <trans-unit id="ui.packer_heading" resname="ui.packer_heading">
+        <source>Pack a New Tin</source>
+        <target state="translated">Neue Dose packen</target>
+      </trans-unit>
+      <trans-unit id="ui.packer_subheading" resname="ui.packer_subheading">
+        <source>Following the Amélie standard: frame the problem, locate the recipient, and draft Ticket #1 with a crisp definition of done.</source>
+        <target state="translated">Nach dem Amélie-Standard: Problem einkreisen, Empfänger recherchieren, Ticket #1 mit klarem Fertigstellungskriterium formulieren.</target>
+      </trans-unit>
       <trans-unit id="ui.unpacked_heading" resname="ui.unpacked_heading">
-        <source>The Candidate Pipeline: Not Yet Packed Tins</source>
-        <target state="translated">Der Ideenspeicher: Noch nicht gepackte Dosen</target>
+        <source>Candidate Pipeline: Ideas Not Yet Packed</source>
+        <target state="translated">Ideenspeicher: Noch nicht gepackte Dosen</target>
       </trans-unit>
       <trans-unit id="ui.unpacked_subheading" resname="ui.unpacked_subheading">
-        <source>Every idea undergoes Step 0.5 (existence verification &amp; evidence check before building). Surviving candidates with open gaps are ready to be packed into turn-key tins.</source>
-        <target state="translated">Jede Idee durchläuft Schritt 0,5 (Existenzprüfung vor dem Bauen). Überlebende Lücken aus dem Prüfprotokoll können mit einem Klick in die Dosen-Werkstatt übernommen werden.</target>
+        <source>Every idea passes Step 0.5 (prior art verification). Unoccupied gaps from the protocol are queued for packaging.</source>
+        <target state="translated">Jede Idee durchläuft Schritt 0,5 (Existenzprüfung). Freie Lücken aus dem Prüfprotokoll warten darauf, gepackt zu werden.</target>
       </trans-unit>
       <trans-unit id="ui.unpacked_badge" resname="ui.unpacked_badge">
-        <source>Search Protocol &amp; Candidate Pipeline</source>
-        <target state="translated">Prüfprotokoll &amp; Kandidaten-Pipeline</target>
+        <source>Search Protocol &amp; Candidates</source>
+        <target state="translated">Prüfprotokoll &amp; Ideenspeicher</target>
       </trans-unit>
       <trans-unit id="ui.unpacked_pack_btn" resname="ui.unpacked_pack_btn">
         <source>Pack into Tin →</source>
         <target state="translated">In Dose packen →</target>
+      </trans-unit>
+      <trans-unit id="ui.lang_en" resname="ui.lang_en">
+        <source>English</source>
+        <target state="translated">English</target>
+      </trans-unit>
+      <trans-unit id="ui.lang_de" resname="ui.lang_de">
+        <source>Deutsch</source>
+        <target state="translated">Deutsch</target>
+      </trans-unit>
+      <trans-unit id="ui.lang_es" resname="ui.lang_es">
+        <source>Español</source>
+        <target state="translated">Español</target>
+      </trans-unit>
+      <trans-unit id="ui.surprise_btn" resname="ui.surprise_btn">
+        <source>🎲 Spark Idea</source>
+        <target state="translated">🎲 Zündfunke</target>
+      </trans-unit>
+      <trans-unit id="ui.add_idea_btn" resname="ui.add_idea_btn">
+        <source>+ Add Idea</source>
+        <target state="translated">+ Neue Idee</target>
+      </trans-unit>
+      <trans-unit id="ui.reset_defaults" resname="ui.reset_defaults">
+        <source>Reset to defaults</source>
+        <target state="translated">Auf Standardwerte zurücksetzen</target>
+      </trans-unit>
+      <trans-unit id="ui.why_tone" resname="ui.why_tone">
+        <source>Why this tone?</source>
+        <target state="translated">Warum diese Tonalität?</target>
+      </trans-unit>
+      <trans-unit id="ui.strengths" resname="ui.strengths">
+        <source>Why this email works (Key Strengths)</source>
+        <target state="translated">Warum diese Mail wirkt (Stärken)</target>
+      </trans-unit>
+      <trans-unit id="ui.subject_line" resname="ui.subject_line">
+        <source>Subject line</source>
+        <target state="translated">Betreffzeile</target>
+      </trans-unit>
+      <trans-unit id="ui.message_text" resname="ui.message_text">
+        <source>Message text</source>
+        <target state="translated">Nachrichtentext</target>
+      </trans-unit>
+      <trans-unit id="ui.rules_applied" resname="ui.rules_applied">
+        <source>Rules applied:</source>
+        <target state="translated">Angewandte Regeln:</target>
+      </trans-unit>
+      <trans-unit id="ui.target_audience" resname="ui.target_audience">
+        <source>Target:</source>
+        <target state="translated">Zielgruppe:</target>
+      </trans-unit>
+      <trans-unit id="ui.copy_template" resname="ui.copy_template">
+        <source>Copy Template</source>
+        <target state="translated">Muster-Mail kopieren</target>
+      </trans-unit>
+      <trans-unit id="discarded.badge" resname="discarded.badge">
+        <source>Negative Archive (_entsorgt.md)</source>
+        <target state="translated">Das Negativ-Archiv (_entsorgt.md)</target>
+      </trans-unit>
+      <trans-unit id="discarded.verdict" resname="discarded.verdict">
+        <source>Discarded</source>
+        <target state="translated">Entsorgt</target>
+      </trans-unit>
+      <trans-unit id="discarded.original_idea" resname="discarded.original_idea">
+        <source>The Original Idea:</source>
+        <target state="translated">Die ursprüngliche Idee:</target>
+      </trans-unit>
+      <trans-unit id="discarded.why_discarded" resname="discarded.why_discarded">
+        <source>Why Discarded?</source>
+        <target state="translated">Warum entsorgt?</target>
+      </trans-unit>
+      <trans-unit id="discarded.evidence" resname="discarded.evidence">
+        <source>Prior Art Evidence:</source>
+        <target state="translated">Bestehende Nachweise:</target>
+      </trans-unit>
+      <trans-unit id="discarded.key_lesson" resname="discarded.key_lesson">
+        <source>The Key Lesson:</source>
+        <target state="translated">Die Lehre daraus:</target>
+      </trans-unit>
+      <trans-unit id="discarded.philosophy_title" resname="discarded.philosophy_title">
+        <source>The Discipline of Discarding</source>
+        <target state="translated">Die Philosophie des Streichens</target>
+      </trans-unit>
+      <trans-unit id="discarded.philosophy_desc" resname="discarded.philosophy_desc">
+        <source>Rule 1 states: ideas are cheap. Failing to verify the landscape and gifting concepts already trending on GitHub merely creates noise for recipients. The negative archive is living proof that the filter works.</source>
+        <target state="translated">Regel 1 besagt: Ideen sind billig. Wer den Markt nicht prüft und Ideen verschenkt, die längst in GitHub-Trending standen, erzeugt nur Rauschen für den Empfänger. Das Negativ-Archiv ist der Beweis, dass der Filter arbeitet.</target>
+      </trans-unit>
+
+      <!-- ========================================== -->
+      <!-- Project / Tin Titles (XLIFF Localized)      -->
+      <!-- ========================================== -->
+      <trans-unit id="tin.altbau-thermal.title" resname="tin.altbau-thermal.title">
+        <source>Altbau Thermal (Historic Flat Heat Loss)</source>
+        <target state="translated">Altbau Thermal</target>
+      </trans-unit>
+      <trans-unit id="tin.sperrmuell-radar.title" resname="tin.sperrmuell-radar.title">
+        <source>Bulky Waste &amp; Curb Giveaway Radar</source>
+        <target state="translated">Sperrmüll-Radar</target>
+      </trans-unit>
+      <trans-unit id="tin.kiez-laermkarte.title" resname="tin.kiez-laermkarte.title">
+        <source>Neighborhood Quiet-Windows Map</source>
+        <target state="translated">Kiez-Lärmkarte</target>
+      </trans-unit>
+      <trans-unit id="tin.klarlokal.title" resname="tin.klarlokal.title">
+        <source>KlarLokal (The Battering Ram)</source>
+        <target state="translated">KlarLokal (Das Brecheisen)</target>
+      </trans-unit>
+      <trans-unit id="tin.crack-flora-watcher.title" resname="tin.crack-flora-watcher.title">
+        <source>Crack Flora Watcher (Pavement Greenery)</source>
+        <target state="translated">Crack Flora Watcher (Ritzengrün)</target>
+      </trans-unit>
+      <trans-unit id="tin.agent-postmortem-recorder.title" resname="tin.agent-postmortem-recorder.title">
+        <source>Agent Postmortem Recorder</source>
+        <target state="translated">Agent Postmortem Recorder</target>
+      </trans-unit>
+      <trans-unit id="tin.bugs-spaced-repetition.title" resname="tin.bugs-spaced-repetition.title">
+        <source>Bugs as Spaced Repetition</source>
+        <target state="translated">Bugs als Spaced-Repetition</target>
+      </trans-unit>
+      <trans-unit id="tin.diffgeist.title" resname="tin.diffgeist.title">
+        <source>Diffgeist</source>
+        <target state="translated">Diffgeist</target>
+      </trans-unit>
+      <trans-unit id="tin.echter-zufall.title" resname="tin.echter-zufall.title">
+        <source>True Hardware Randomness as a Service</source>
+        <target state="translated">Echter Zufall als Service</target>
+      </trans-unit>
+      <trans-unit id="tin.ghost-replay.title" resname="tin.ghost-replay.title">
+        <source>Ghost Replay</source>
+        <target state="translated">Ghost Replay</target>
+      </trans-unit>
+      <trans-unit id="tin.kristallwachstum-3d.title" resname="tin.kristallwachstum-3d.title">
+        <source>3D Crystal Growth Simulation</source>
+        <target state="translated">Kristallwachstum 3D</target>
+      </trans-unit>
+      <trans-unit id="tin.pin-tumbler.title" resname="tin.pin-tumbler.title">
+        <source>Pin Tumbler Lockpick Didactics</source>
+        <target state="translated">Pin Tumbler Didaktik</target>
+      </trans-unit>
+      <trans-unit id="tin.raeucher-sim.title" resname="tin.raeucher-sim.title">
+        <source>Smokehouse &amp; Curing Simulator</source>
+        <target state="translated">Räucher-Sim</target>
+      </trans-unit>
+      <trans-unit id="tin.spec-drift-detector.title" resname="tin.spec-drift-detector.title">
+        <source>Spec-Drift Detector</source>
+        <target state="translated">Spec-Drift Detector</target>
+      </trans-unit>
+      <trans-unit id="tin.tarot-zustandsmaschine.title" resname="tin.tarot-zustandsmaschine.title">
+        <source>Tarot State Machine</source>
+        <target state="translated">Tarot-Zustandsmaschine</target>
+      </trans-unit>
+      <trans-unit id="tin.traumtagebuch.title" resname="tin.traumtagebuch.title">
+        <source>Local Offline Dream Journal</source>
+        <target state="translated">Lokales Traumtagebuch</target>
+      </trans-unit>
+      <trans-unit id="tin.wet-ink.title" resname="tin.wet-ink.title">
+        <source>Wet Ink (Capillary Flow Simulator)</source>
+        <target state="translated">Wet Ink (Kapillarsimulation)</target>
+      </trans-unit>
+      <trans-unit id="tin.pillsafe-vision.title" resname="tin.pillsafe-vision.title">
+        <source>PillSafe Vision</source>
+        <target state="translated">PillSafe Vision</target>
+      </trans-unit>
+      <trans-unit id="tin.paragraphen-dolmetscher.title" resname="tin.paragraphen-dolmetscher.title">
+        <source>Paragraph Interpreter (Officialese Decoder)</source>
+        <target state="translated">ParagraphenDolmetscher</target>
+      </trans-unit>
+      <trans-unit id="tin.klang-stethoskop.title" resname="tin.klang-stethoskop.title">
+        <source>Acoustic Machine Stethoscope</source>
+        <target state="translated">KlangStethoskop</target>
+      </trans-unit>
+      <trans-unit id="tin.dose-nurse-shift-guardian.title" resname="tin.dose-nurse-shift-guardian.title">
+        <source>Shift Roster Auditor &amp; Statutory Bonus Shield</source>
+        <target state="translated">DienstplanWächter (Schichtfolge- &amp; Zuschlags-Schutz)</target>
+      </trans-unit>
+      <trans-unit id="tin.dose-tradesman-liability-shield.title" resname="tin.dose-tradesman-liability-shield.title">
+        <source>QuickObjection (Construction Liability Shield)</source>
+        <target state="translated">BedenkenBlitz (VOB/B Baustellen-Schutzschirm)</target>
+      </trans-unit>
+      <trans-unit id="tin.dose-cleaner-chemical-safety.title" resname="tin.dose-cleaner-chemical-safety.title">
+        <source>ChemHazard Stop (Chemical Safety Shield for Cleaners)</source>
+        <target state="translated">ChemGefahr-Stopp (Chemieschutz für Reinigungskräfte)</target>
+      </trans-unit>
+      <trans-unit id="tin.git-archaeologist.title" resname="tin.git-archaeologist.title">
+        <source>git-archaeologist (MCP)</source>
+        <target state="translated">git-archaeologist (MCP)</target>
+      </trans-unit>
+      <trans-unit id="tin.home-network-mcp.title" resname="tin.home-network-mcp.title">
+        <source>Home-Network MCP</source>
+        <target state="translated">Home-Network MCP</target>
+      </trans-unit>
+      <trans-unit id="tin.repo-museum.title" resname="tin.repo-museum.title">
+        <source>Git Repo Museum (3D Exhibition)</source>
+        <target state="translated">Repo-Museum (3D-Galerie)</target>
+      </trans-unit>
+      <trans-unit id="tin.commute-oracle.title" resname="tin.commute-oracle.title">
+        <source>Personal Commute Oracle</source>
+        <target state="translated">Commute Oracle (Persönliche Fahrzeit)</target>
+      </trans-unit>
+
+      <!-- ========================================== -->
+      <!-- Candidate Idea Titles (XLIFF Localized)     -->
+      <!-- ========================================== -->
+      <trans-unit id="candidate.glasanflug-ampel.title" resname="candidate.glasanflug-ampel.title">
+        <source>Bird Glass Collision Hazard Rating</source>
+        <target state="translated">Glasanflug-Ampel</target>
+      </trans-unit>
+      <trans-unit id="candidate.brettchen-vorsortierer.title" resname="candidate.brettchen-vorsortierer.title">
+        <source>Bee Nesting Board Pre-Sorter</source>
+        <target state="translated">Brettchen-Vorsortierer</target>
+      </trans-unit>
+      <trans-unit id="candidate.streiflicht.title" resname="candidate.streiflicht.title">
+        <source>Raking Light (Smartphone RTI Relief)</source>
+        <target state="translated">Streiflicht (Smartphone-RTI)</target>
+      </trans-unit>
+      <trans-unit id="candidate.bebauungsplan-leser.title" resname="candidate.bebauungsplan-leser.title">
+        <source>Zoning Plan Reader for Citizens</source>
+        <target state="translated">Bebauungsplan-Leser für Bürger</target>
+      </trans-unit>
+      <trans-unit id="candidate.tafel-warenannahme.title" resname="candidate.tafel-warenannahme.title">
+        <source>Food Bank Delivery Intake by Photo</source>
+        <target state="translated">Tafel-Warenannahme per Foto</target>
+      </trans-unit>
+      <trans-unit id="candidate.balkonsolar-verschattung.title" resname="candidate.balkonsolar-verschattung.title">
+        <source>Balcony Solar Shading Analyzer</source>
+        <target state="translated">Balkonkraftwerk-Verschattung per Handykamera</target>
+      </trans-unit>
+      <trans-unit id="candidate.wheelmap-eingangsfoto.title" resname="candidate.wheelmap-eingangsfoto.title">
+        <source>Wheelmap: Entrance Photo → Accessibility Rating</source>
+        <target state="translated">Wheelmap: Eingangsfoto → Barrierefreiheit</target>
+      </trans-unit>
+      <trans-unit id="candidate.repair-cafe-diagnose.title" resname="candidate.repair-cafe-diagnose.title">
+        <source>Repair Café Diagnostic Assistant</source>
+        <target state="translated">Repair-Café-Diagnoseassistent</target>
+      </trans-unit>
+      <trans-unit id="candidate.chor-satb-trennung.title" resname="candidate.chor-satb-trennung.title">
+        <source>Choir Rehearsal Audio (SATB Stem Separation)</source>
+        <target state="translated">Chor-Übedateien aus Aufnahme (SATB-Trennung)</target>
+      </trans-unit>
+      <trans-unit id="candidate.schulweg-gefahrenkarte.title" resname="candidate.schulweg-gefahrenkarte.title">
+        <source>Illegal Parking Hazard Map for School Routes</source>
+        <target state="translated">Kreuzungs-Falschparker &amp; Schulweg-Gefahrenkarte</target>
+      </trans-unit>
+      <trans-unit id="candidate.trockenrasen-transekte.title" resname="candidate.trockenrasen-transekte.title">
+        <source>Dry Grassland Transect (Live Biotope Calibrator)</source>
+        <target state="translated">Trockenrasen-Transekte (Biotopwert-Livekalibrierer)</target>
+      </trans-unit>
+      <trans-unit id="candidate.fledermaus-echo-entwirrer.title" resname="candidate.fledermaus-echo-entwirrer.title">
+        <source>Bat Echolocation Untangler (Doppler Water Filter)</source>
+        <target state="translated">Fledermaus-Echo-Entwirrer (Doppler-Wasserfilter)</target>
+      </trans-unit>
+      <trans-unit id="candidate.sandstein-streiflicht-relief.title" resname="candidate.sandstein-streiflicht-relief.title">
+        <source>Sandstone Raking Light Relief (Photometric Stereo)</source>
+        <target state="translated">Sandstein-Streiflicht-Relief (Photometric Stereo)</target>
+      </trans-unit>
+      <trans-unit id="candidate.hummel-schleusenwaechter.title" resname="candidate.hummel-schleusenwaechter.title">
+        <source>Bumblebee Gatekeeper (Cuckoo Bee Detector)</source>
+        <target state="translated">Hummel-Schleusenwächter (Kuckuckshummel-Detektor)</target>
+      </trans-unit>
+      <trans-unit id="candidate.orgelpfeifen-bleifrass-resonanz.title" resname="candidate.orgelpfeifen-bleifrass-resonanz.title">
+        <source>Organ Pipe Lead Corrosion Resonance Analyzer</source>
+        <target state="translated">Orgelpfeifen-Bleifraß-Resonanz</target>
+      </trans-unit>
+      <trans-unit id="candidate.waldbrand-streu-knistern.title" resname="candidate.waldbrand-streu-knistern.title">
+        <source>Wildfire Litter Acoustic Tensiometer</source>
+        <target state="translated">Waldbrand-Streuschicht-Tensiometer (Nadelstreu-Knistern)</target>
+      </trans-unit>
+      <trans-unit id="candidate.phaenologischer-knospen-countdown.title" resname="candidate.phaenologischer-knospen-countdown.title">
+        <source>Phenological Bud Burst Countdown (DWD Ground-Truth)</source>
+        <target state="translated">Phänologischer Knospen-Countdown (DWD-Beobachter)</target>
+      </trans-unit>
+      <trans-unit id="candidate.tafel-frische-triage.title" resname="candidate.tafel-frische-triage.title">
+        <source>Food Bank Freshness Triage (Bruise &amp; Ethylene Kinetics)</source>
+        <target state="translated">Tafel-Frische-Triage (Druckstellen- &amp; Ethylen-Kinetik)</target>
+      </trans-unit>
+      <trans-unit id="candidate.licht-glocken-kataster.title" resname="candidate.licht-glocken-kataster.title">
+        <source>Light Dome Cadastre (Facade Skyglow Inspector)</source>
+        <target state="translated">Licht-Glocken-Kataster (Fassaden-Skyglow-Inspector)</target>
+      </trans-unit>
+      <trans-unit id="candidate.totholz-kolk-peiler.title" resname="candidate.totholz-kolk-peiler.title">
+        <source>Deadwood Scour Hole Sonar for Rewilded Streams</source>
+        <target state="translated">Totholz-Kolk-Peiler für Renaturierungsbäche</target>
+      </trans-unit>
+
+      <!-- ========================================== -->
+      <!-- Worker / Everyday People Titles            -->
+      <!-- ========================================== -->
+      <trans-unit id="worker.ai-nurse-shift-guardian.title" resname="worker.ai-nurse-shift-guardian.title">
+        <source>Shift Roster Auditor, Bonus Calculator &amp; Rest-Time Shield for Nurses</source>
+        <target state="translated">DienstplanWächter: Schichtfolge-, Ruhezeit- &amp; Zuschlags-Schutz für Pflegekräfte</target>
+      </trans-unit>
+      <trans-unit id="worker.ai-tradesman-liability-shield.title" resname="worker.ai-tradesman-liability-shield.title">
+        <source>QuickObjection: Instant Construction Liability Shield for Tradespeople</source>
+        <target state="translated">BedenkenBlitz: Sofortiger VOB/B-Bedenkenschirm für Handwerker</target>
+      </trans-unit>
+      <trans-unit id="worker.ai-cleaner-chemical-safety-voice.title" resname="worker.ai-cleaner-chemical-safety-voice.title">
+        <source>ChemHazard Stop: Multilingual Chemical Safety &amp; Poison Shield for Cleaners</source>
+        <target state="translated">ChemGefahr-Stopp: Mehrsprachiger Chemieschutz &amp; Giftalarm für Reinigungskräfte</target>
+      </trans-unit>
+      <trans-unit id="worker.ai-delivery-driver-ticket-dispute.title" resname="worker.ai-delivery-driver-ticket-dispute.title">
+        <source>Loading Zone Notary: Delivery Zone Legal Defense &amp; Parking Ticket Rebuttal</source>
+        <target state="translated">LadezonenNotar: Be- und Entlade-Rechtsnachweis &amp; Knöllchen-Widerspruch für Kuriere</target>
+      </trans-unit>
+      <trans-unit id="worker.ai-kindergarten-educator-time-liberator.title" resname="worker.ai-kindergarten-educator-time-liberator.title">
+        <source>Preschool Relief: Voice-Driven Child Development Observation &amp; Portfolio Assistant</source>
+        <target state="translated">KitaEntlastung: Sprachgesteuerte Entwicklungsbeobachtung &amp; Portfolio-Assistent</target>
+      </trans-unit>
+      <trans-unit id="worker.ai-line-cook-allergen-radar.title" resname="worker.ai-line-cook-allergen-radar.title">
+        <source>Allergen Radar: Instant Recipe Allergen Auditor &amp; Menu Labeler for Kitchen Staff</source>
+        <target state="translated">AllergenRadar: Sofortige Allergen-Prüfung &amp; Menükartenauszeichnung für die Küche</target>
+      </trans-unit>
+      <trans-unit id="worker.ai-sourdough-baker-thermal-balance.title" resname="worker.ai-sourdough-baker-thermal-balance.title">
+        <source>Dough Physics: Sourdough Thermal Balance &amp; Water Chill Calculator</source>
+        <target state="translated">TeigPhysik: Sauerteig-Wärmebilanz &amp; Schüttwasser-Kühler für Handwerksbäcker</target>
+      </trans-unit>
+      <trans-unit id="worker.ai-caregiver-wound-documenter.title" resname="worker.ai-caregiver-wound-documenter.title">
+        <source>WoundDoku: Rapid Clinical Wound Measurement &amp; Insurance Text Synthesizer</source>
+        <target state="translated">WundDoku: Schnelle klinische Wundvermessung &amp; Kassen-Dokumentation für die Pflege</target>
+      </trans-unit>
+      <trans-unit id="worker.ai-forester-timber-pile-scaler.title" resname="worker.ai-forester-timber-pile-scaler.title">
+        <source>TimberStack Scale: Optical Timber Volume &amp; Bark Beetle Scanner</source>
+        <target state="translated">PolterMaß: Optische Holzvolumen- &amp; Borkenkäfer-Erkennung für Kleinwaldbesitzer</target>
+      </trans-unit>
+      <trans-unit id="worker.ai-plumber-valve-archaeologist.title" resname="worker.ai-plumber-valve-archaeologist.title">
+        <source>ValveFinder: Vintage Plumbing Cartridge &amp; Flush Valve Identifier</source>
+        <target state="translated">VentilFinder: Identifikation historischer Kartuschen &amp; Ventile für Reparatur-Klempner</target>
+      </trans-unit>
+      <trans-unit id="worker.ai-elderly-care-sis-guardian.title" resname="worker.ai-elderly-care-sis-guardian.title">
+        <source>Elderly Care Voice Guardian: Compliant SIS Documentation &amp; Dehydration Radar</source>
+        <target state="translated">PflegeSprachWächter: MDK-konforme SIS-Sprachdoku &amp; Dehydrations-Radar für die Altenpflege</target>
+      </trans-unit>
+      <trans-unit id="worker.ai-roofer-wind-uplift-shield.title" resname="worker.ai-roofer-wind-uplift-shield.title">
+        <source>StormClip Shield: Wind Uplift &amp; Fixing Calculator for Roofers</source>
+        <target state="translated">SturmklammerWächter: Windsog- &amp; Befestigungs-Rechner für Dachdecker nach DIN EN 1991-1-4</target>
+      </trans-unit>
+      <trans-unit id="worker.ai-chimney-sweep-flue-gas-guard.title" resname="worker.ai-chimney-sweep-flue-gas-guard.title">
+        <source>FlueGas Guard: Emissions Decoder, CO Life Saver &amp; Heater Diagnostics</source>
+        <target state="translated">BImSchVWächter: Abgas-Übersetzer, CO-Lebensretter &amp; Heizungsversteher für Schornsteinfeger</target>
+      </trans-unit>
+      <trans-unit id="worker.ai-mechanic-obd-swarm-diagnostician.title" resname="worker.ai-mechanic-obd-swarm-diagnostician.title">
+        <source>Workshop Swarm: Independent Fault Code &amp; Acoustic Diagnosis for Auto Mechanics</source>
+        <target state="translated">WerkstattSchwarm: Freie Fehlercode- &amp; Symptom-Diagnose für unabhängige Kfz-Mechatroniker</target>
+      </trans-unit>
+      <trans-unit id="worker.ai-trucker-rest-emergency-shield.title" resname="worker.ai-trucker-rest-emergency-shield.title">
+        <source>Driving Time Guardian: Rest Stop Emergency Proof for Truckers</source>
+        <target state="translated">LenkzeitWächter: Parkplatz-Notstand &amp; Rechtsnachweis für LKW-Fahrer nach VO (EG) 561/2006 Art. 12</target>
+      </trans-unit>
+      <trans-unit id="worker.ai-carpenter-wood-moisture-calculator.title" resname="worker.ai-carpenter-wood-moisture-calculator.title">
+        <source>Wood Moisture Guardian: Shrinkage Calculator &amp; Grain Layout for Carpenters</source>
+        <target state="translated">HolzfeuchteWächter: Schwundmaß-Rechner &amp; Hirnholz-Layout für Tischler &amp; Schreiner nach DIN 68364</target>
+      </trans-unit>
+      <trans-unit id="worker.ai-butcher-curing-salt-haccp-guard.title" resname="worker.ai-butcher-curing-salt-haccp-guard.title">
+        <source>Curing Safety: Nitrite Salt Calculator &amp; HACCP Ham Ripening Planner</source>
+        <target state="translated">PökelSicher: Nitritpökelsalz-Rechner &amp; HACCP-Schinken-Reifeplaner für das Fleischerhandwerk</target>
+      </trans-unit>
+      <trans-unit id="worker.ai-landscaper-soil-climate-planting-plan.title" resname="worker.ai-landscaper-soil-climate-planting-plan.title">
+        <source>Climate Garden Guardian: Drought-Resilient Soil &amp; Planting Planner</source>
+        <target state="translated">KlimaGartenWächter: Boden- &amp; Trockenheits-Pflanzplaner für Gärtner &amp; Landschaftsbauer</target>
+      </trans-unit>
+      <trans-unit id="worker.ai-farmer-fertilizer-ordinance-shield.title" resname="worker.ai-farmer-fertilizer-ordinance-shield.title">
+        <source>Fertilizer Shield: Red Zone Compliance &amp; Nutrient Balancer for Farmers</source>
+        <target state="translated">DüngeWächter: Rote-Gebiete-Schutzschild &amp; Nährstoff-Bilanzierer für Landwirte nach DüV § 13a</target>
+      </trans-unit>
+      <trans-unit id="worker.ai-hairdresser-color-bleach-formulator.title" resname="worker.ai-hairdresser-color-bleach-formulator.title">
+        <source>Color Formula Guardian: Hair Lightening &amp; Toner Calculator for Hairdressers</source>
+        <target state="translated">RezepturWächter: Haar-Aufhellungs- &amp; Abmattierungs-Rechner für das Friseurhandwerk</target>
+      </trans-unit>
+      <trans-unit id="worker.ai-bus-driver-shift-fatigue-shield.title" resname="worker.ai-bus-driver-shift-fatigue-shield.title">
+        <source>Transit Roster Guardian: Split Shift &amp; Turnaround Rest Protection for Bus Drivers</source>
+        <target state="translated">DienstplanWächter: Teilschichten-, Ruhezeit- &amp; Wendezeit-Schutz für Bus- &amp; Bahnfahrer nach FPersG</target>
+      </trans-unit>
+      <trans-unit id="worker.ai-waiter-tip-split-shift-guard.title" resname="worker.ai-waiter-tip-split-shift-guard.title">
+        <source>Hospitality Guardian: Fair Tip Pool, Split Shift &amp; Overtime Shield for Waitstaff</source>
+        <target state="translated">GastroWächter: Trinkgeld-Rechner, Teilschicht- &amp; Mehrarbeits-Schutz für Gastronomie &amp; Service</target>
+      </trans-unit>
+
+      <!-- ========================================== -->
+      <!-- Simulator Tab Titles                       -->
+      <!-- ========================================== -->
+      <trans-unit id="sim.altbau.title" resname="sim.altbau.title">
+        <source>Altbau Thermal (Heat Loss)</source>
+        <target state="translated">Altbau Thermal</target>
+      </trans-unit>
+      <trans-unit id="sim.glasanflug.title" resname="sim.glasanflug.title">
+        <source>Bird Glass Collision Hazard</source>
+        <target state="translated">Glasanflug-Ampel</target>
+      </trans-unit>
+      <trans-unit id="sim.streiflicht.title" resname="sim.streiflicht.title">
+        <source>Raking Light (Smartphone RTI)</source>
+        <target state="translated">Streiflicht (Smartphone RTI)</target>
+      </trans-unit>
+      <trans-unit id="sim.wetink.title" resname="sim.wetink.title">
+        <source>Wet Ink (Capillary Simulator)</source>
+        <target state="translated">Tinte (Wet Ink)</target>
+      </trans-unit>
+      <trans-unit id="sim.balkon.title" resname="sim.balkon.title">
+        <source>Balcony Solar Shading</source>
+        <target state="translated">Balkonkraftwerk</target>
+      </trans-unit>
+      <trans-unit id="sim.regenwasser.title" resname="sim.regenwasser.title">
+        <source>Rainwater Runoff</source>
+        <target state="translated">Regenwasser-Versickerung</target>
+      </trans-unit>
+      <trans-unit id="sim.klarlokal.title" resname="sim.klarlokal.title">
+        <source>KlarLokal (The Battering Ram)</source>
+        <target state="translated">KlarLokal (Das Brecheisen)</target>
+      </trans-unit>
+      <trans-unit id="sim.crackflora.title" resname="sim.crackflora.title">
+        <source>Crack Flora Watcher (Pavement Greenery)</source>
+        <target state="translated">Crack Flora (Ritzengrün)</target>
       </trans-unit>
     </body>
   </file>

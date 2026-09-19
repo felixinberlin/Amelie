@@ -1,16 +1,26 @@
 import React, { useState, useMemo } from 'react';
 import { Search, Filter, Gift, Hammer, Lock, ArrowUpRight, Sparkles, Brain } from 'lucide-react';
 import { DoseItem, Language, Verdict, DomainCategory } from '../types';
-import { getTranslation } from '../i18n';
+import { getTranslation, getLocalizedTitle } from '../i18n';
+import { AmelieRulesBanner } from './AmelieRulesBanner';
 
 interface DosenGalleryProps {
   dosen: DoseItem[];
   lang: Language;
   onSelectDose: (dose: DoseItem) => void;
   onOpenSimulator?: (simId: 'altbau' | 'glasanflug' | 'streiflicht' | 'wetink' | 'balkon' | 'regenwasser' | 'klarlokal' | 'crackflora') => void;
+  onOpenManifest?: () => void;
+  onOpenEmails?: () => void;
 }
 
-export const DosenGallery: React.FC<DosenGalleryProps> = ({ dosen, lang, onSelectDose, onOpenSimulator }) => {
+export const DosenGallery: React.FC<DosenGalleryProps> = ({
+  dosen,
+  lang,
+  onSelectDose,
+  onOpenSimulator,
+  onOpenManifest,
+  onOpenEmails,
+}) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedVerdict, setSelectedVerdict] = useState<string>('all');
   const [selectedDomain, setSelectedDomain] = useState<string>('all');
@@ -19,8 +29,10 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({ dosen, lang, onSelec
   const filteredDosen = useMemo(() => {
     return dosen.filter((d) => {
       const q = searchQuery.toLowerCase();
+      const localizedTitle = getLocalizedTitle(d, lang).toLowerCase();
       const matchesSearch =
         d.title.toLowerCase().includes(q) ||
+        localizedTitle.includes(q) ||
         d.oneLinerDe.toLowerCase().includes(q) ||
         d.oneLinerEn.toLowerCase().includes(q) ||
         d.tags.some((tag) => tag.toLowerCase().includes(q)) ||
@@ -34,7 +46,7 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({ dosen, lang, onSelec
 
       return matchesSearch && matchesVerdict && matchesDomain;
     });
-  }, [dosen, searchQuery, selectedVerdict, selectedDomain]);
+  }, [dosen, searchQuery, selectedVerdict, selectedDomain, lang]);
 
   const domainOptions = [
     { id: 'all', labelDe: 'Alle Bereiche', labelEn: 'All Domains', labelEs: 'Todas las áreas' },
@@ -83,7 +95,13 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({ dosen, lang, onSelec
           <div className="flex flex-wrap items-center gap-2">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#8c1d40]/10 border border-[#8c1d40]/25 text-[#8c1d40] text-xs font-typewriter font-bold">
               <Gift className="w-3.5 h-3.5 text-[#8c1d40]" />
-              <span>{lang === 'de' ? 'BOÎTES EN FER-BLANC · DOSEN-ARCHIV' : 'BOÎTES EN FER-BLANC · TIN ARCHIVE'}</span>
+              <span>
+                {lang === 'de'
+                  ? 'BOÎTES EN FER-BLANC · DOSEN-ARCHIV'
+                  : lang === 'es'
+                  ? 'BOÎTES EN FER-BLANC · ARCHIVO DE LATAS'
+                  : 'BOÎTES EN FER-BLANC · TIN ARCHIVE'}
+              </span>
             </div>
             <span className="text-[11px] font-typewriter text-[#8b6f57] hidden sm:inline">
               ✦ Montmartre 1997 · Berlin 2026 ✦
@@ -98,6 +116,13 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({ dosen, lang, onSelec
           </p>
         </div>
       </div>
+
+      {/* Amélie 5 Rules Interactive Strip */}
+      <AmelieRulesBanner
+        lang={lang}
+        onOpenManifest={onOpenManifest}
+        onOpenEmails={onOpenEmails}
+      />
 
       {/* Filter and Search Bar */}
       <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
@@ -116,7 +141,7 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({ dosen, lang, onSelec
               onClick={() => setSearchQuery('')}
               className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-typewriter text-[#8b6f57] hover:text-[#2b1e16]"
             >
-              Effacer
+              {lang === 'de' ? 'Löschen' : lang === 'es' ? 'Borrar' : 'Clear'}
             </button>
           )}
         </div>
@@ -206,7 +231,7 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({ dosen, lang, onSelec
 
                   {/* Title */}
                   <h3 className="text-xl font-bold font-amelie text-[#2b1e16] group-hover:text-[#8c1d40] transition-colors tracking-tight flex items-center justify-between mt-1">
-                    <span>{dose.title}</span>
+                    <span>{getLocalizedTitle(dose, lang)}</span>
                     <ArrowUpRight className="w-4 h-4 text-[#8b6f57] group-hover:text-[#8c1d40] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </h3>
 
@@ -222,7 +247,13 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({ dosen, lang, onSelec
                         className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#c5832b]/15 hover:bg-[#c5832b]/25 text-[#78350f] text-xs font-typewriter font-bold transition-all border border-[#c5832b]/30 shadow-2xs"
                       >
                         <Sparkles className="w-3 h-3 text-[#c5832b]" />
-                        <span>{lang === 'de' ? '🏢 Live-Wärmebilanz Simulator' : '🏢 Live Heat Loss Simulator'}</span>
+                        <span>
+                          {lang === 'de'
+                            ? '🏢 Live-Wärmebilanz Simulator'
+                            : lang === 'es'
+                            ? '🏢 Simulador de Pérdida Térmica'
+                            : '🏢 Live Heat Loss Simulator'}
+                        </span>
                       </button>
                     </div>
                   )}
@@ -237,7 +268,13 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({ dosen, lang, onSelec
                         className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#c5832b]/15 hover:bg-[#c5832b]/25 text-[#78350f] text-xs font-typewriter font-bold transition-all border border-[#c5832b]/30 shadow-2xs"
                       >
                         <Sparkles className="w-3 h-3 text-[#c5832b]" />
-                        <span>{lang === 'de' ? '🖋️ Live-Tinte Simulator' : '🖋️ Live Wet Ink Simulator'}</span>
+                        <span>
+                          {lang === 'de'
+                            ? '🖋️ Live-Tinte Simulator'
+                            : lang === 'es'
+                            ? '🖋️ Simulador de Tinta Líquida'
+                            : '🖋️ Live Wet Ink Simulator'}
+                        </span>
                       </button>
                     </div>
                   )}
@@ -252,7 +289,13 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({ dosen, lang, onSelec
                         className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#1b4332]/15 hover:bg-[#1b4332]/25 text-[#1b4332] text-xs font-typewriter font-bold transition-all border border-[#1b4332]/30 shadow-2xs"
                       >
                         <Sparkles className="w-3 h-3 text-[#1b4332]" />
-                        <span>{lang === 'de' ? '🛡️ Live-Brecheisen Simulator' : '🛡️ Live Battering Ram'}</span>
+                        <span>
+                          {lang === 'de'
+                            ? '🛡️ Live-Brecheisen Simulator'
+                            : lang === 'es'
+                            ? '🛡️ Simulador KlarLokal'
+                            : '🛡️ Live Battering Ram'}
+                        </span>
                       </button>
                     </div>
                   )}
@@ -267,7 +310,13 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({ dosen, lang, onSelec
                         className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#2d5a27]/15 hover:bg-[#2d5a27]/25 text-[#1b4332] text-xs font-typewriter font-bold transition-all border border-[#2d5a27]/30 shadow-2xs"
                       >
                         <Sparkles className="w-3 h-3 text-[#2d5a27]" />
-                        <span>{lang === 'de' ? '🌱 Live-Ritzengrün Simulator' : '🌱 Live Pavement Lab'}</span>
+                        <span>
+                          {lang === 'de'
+                            ? '🌱 Live-Ritzengrün Simulator'
+                            : lang === 'es'
+                            ? '🌱 Laboratorio de Grietas'
+                            : '🌱 Live Pavement Lab'}
+                        </span>
                       </button>
                     </div>
                   )}

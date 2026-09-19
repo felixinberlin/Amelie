@@ -664,12 +664,18 @@ Sincerely,
               <span>{lang === 'de' ? 'Interaktive Dosen-Simulatoren' : lang === 'es' ? 'Simuladores Interactivos de Latas' : 'Interactive Tin Sandboxes'}</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold font-serif-title text-stone-900 tracking-tight">
-              {lang === 'de' ? 'Das physikalische Herz der Dosen ausprobieren' : 'Experience the Core Physical Logic of the Tins'}
+              {lang === 'de'
+                ? 'Das physikalische Herz der Dosen ausprobieren'
+                : lang === 'es'
+                ? 'Experimenta la lógica física central de las latas'
+                : 'Experience the Core Physical Logic of the Tins'}
             </h2>
             <p className="text-sm text-stone-600 mt-1.5 max-w-3xl leading-relaxed">
               {lang === 'de'
                 ? 'Jede Amélie-Dose stützt sich auf eine konkrete Formel, physikalische Norm oder API-Lücke. Testen Sie hier die Prototyp-Mechanik direkt im Browser, bevor Sie das Briefing versenden.'
-                : 'Every Amélie tin is grounded in a specific physical formula, regulatory standard, or API gap. Test the prototype mechanics right here in your browser.'}
+                : lang === 'es'
+                ? 'Cada lata Amélie se basa en una fórmula concreta, norma física o brecha de API. Prueba la mecánica de prototipo en el navegador antes de enviar el briefing.'
+                : 'Every Amélie tin is grounded in a specific physical formula, regulatory standard, or API gap. Test the prototype mechanics right here in your browser before sending the briefing.'}
             </p>
           </div>
 
@@ -683,7 +689,7 @@ Sincerely,
                   : 'text-stone-600 hover:text-stone-900'
               }`}
             >
-              🏢 Altbau
+              🏢 {lang === 'de' ? 'Altbau' : lang === 'es' ? 'Edificio Antiguo' : 'Old Building'}
             </button>
             <button
               onClick={() => setActiveTab('glasanflug')}
@@ -693,7 +699,7 @@ Sincerely,
                   : 'text-stone-600 hover:text-stone-900'
               }`}
             >
-              🐦 Glasanflug
+              🐦 {lang === 'de' ? 'Glasanflug' : lang === 'es' ? 'Colisión de Aves' : 'Bird Glass'}
             </button>
             <button
               onClick={() => setActiveTab('streiflicht')}
@@ -703,7 +709,7 @@ Sincerely,
                   : 'text-stone-600 hover:text-stone-900'
               }`}
             >
-              🔦 Streiflicht
+              🔦 {lang === 'de' ? 'Streiflicht' : lang === 'es' ? 'Luz Rasante' : 'Raking Light'}
             </button>
             <button
               onClick={() => setActiveTab('wetink')}
@@ -713,7 +719,7 @@ Sincerely,
                   : 'text-stone-600 hover:text-stone-900'
               }`}
             >
-              🖋️ Wet Ink
+              🖋️ {lang === 'de' ? 'Tinte' : lang === 'es' ? 'Tinta Líquida' : 'Wet Ink'}
             </button>
             <button
               onClick={() => setActiveTab('balkon')}
@@ -723,7 +729,7 @@ Sincerely,
                   : 'text-stone-600 hover:text-stone-900'
               }`}
             >
-              ☀️ Balkonkraftwerk
+              ☀️ {lang === 'de' ? 'Balkonkraftwerk' : lang === 'es' ? 'Placas de Balcón' : 'Balcony Solar'}
             </button>
             <button
               onClick={() => setActiveTab('regenwasser')}
@@ -733,7 +739,7 @@ Sincerely,
                   : 'text-stone-600 hover:text-stone-900'
               }`}
             >
-              🌧️ Regenwasser
+              🌧️ {lang === 'de' ? 'Regenwasser' : lang === 'es' ? 'Agua de Lluvia' : 'Rainwater'}
             </button>
             <button
               onClick={() => setActiveTab('klarlokal')}
@@ -743,7 +749,7 @@ Sincerely,
                   : 'text-stone-600 hover:text-stone-900'
               }`}
             >
-              🛡️ KlarLokal (Brecheisen)
+              🛡️ {lang === 'de' ? 'KlarLokal (Brecheisen)' : lang === 'es' ? 'KlarLokal (Palanca)' : 'KlarLokal (Battering Ram)'}
             </button>
             <button
               onClick={() => setActiveTab('crackflora')}
@@ -753,7 +759,7 @@ Sincerely,
                   : 'text-stone-600 hover:text-stone-900'
               }`}
             >
-              🌱 Crack Flora (Ritzengrün)
+              🌱 {lang === 'de' ? 'Crack Flora (Ritzengrün)' : lang === 'es' ? 'Crack Flora (Grietas)' : 'Crack Flora (Pavement)'}
             </button>
           </div>
         </div>

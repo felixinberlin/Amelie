@@ -9,6 +9,8 @@ export type DomainCategory = 'civic' | 'tools' | 'physics' | 'audio' | 'creative
 export interface DoseItem {
   id: string;
   title: string;
+  titleKey?: string;
+  titleEn?: string;
   oneLinerDe: string;
   oneLinerEn: string;
   date: string;
@@ -79,6 +81,7 @@ export interface DoseItem {
 export interface DiscardedItem {
   id: string;
   title: string;
+  titleKey?: string;
   originalIdeaDe: string;
   originalIdeaEn: string;
   whyDiscardedDe: string;
@@ -94,6 +97,7 @@ export interface MatrixRow {
   categoryDe: string;
   categoryEn: string;
   name: string;
+  titleKey?: string;
   effort: 'S' | 'M' | 'L';
   verdict: Verdict;
   beneficiaryDe: string;
@@ -132,6 +136,8 @@ export type CandidateStatus = 'frei' | 'verengt' | 'unklar' | 'besetzt';
 export interface CandidateIdea {
   id: string;
   title: string;
+  titleKey?: string;
+  titleEn?: string;
   round: string;
   date: string;
   conceptDe: string;

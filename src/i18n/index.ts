@@ -1,10 +1,117 @@
 import { Language } from '../types';
+import { parseXliff, XliffDocument } from './xliffParser';
+import enXlf from './messages.en.xlf?raw';
+import deXlf from './messages.de.xlf?raw';
+import esXlf from './messages.es.xlf?raw';
+
+// Parse the OASIS XLIFF 1.2 XML strings directly into structured documents
+const xliffDocs: Record<Language, XliffDocument> = {
+  en: parseXliff(enXlf),
+  de: parseXliff(deXlf),
+  es: parseXliff(esXlf),
+};
+
+/**
+ * Access raw XLIFF XML strings for export, inspection, or download.
+ */
+export function getXliffRaw(lang: Language): string {
+  switch (lang) {
+    case 'de':
+      return deXlf;
+    case 'es':
+      return esXlf;
+    case 'en':
+    default:
+      return enXlf;
+  }
+}
+
+/**
+ * Access the parsed XliffDocument for a given language.
+ */
+export function getXliffDocument(lang: Language): XliffDocument {
+  return xliffDocs[lang] || xliffDocs.en;
+}
+
+/**
+ * Translate a key using the XLIFF 1.2 message units.
+ * Falls back to English if the translation is missing, and then to fallback text.
+ */
+export function t(id: string, lang: Language = 'en', fallback?: string): string {
+  const currentDoc = xliffDocs[lang];
+  if (currentDoc && currentDoc.units[id] !== undefined && currentDoc.units[id] !== '') {
+    return currentDoc.units[id];
+  }
+
+  // Fallback to English source XLIFF unit
+  const enDoc = xliffDocs.en;
+  if (enDoc && enDoc.units[id] !== undefined && enDoc.units[id] !== '') {
+    return enDoc.units[id];
+  }
+
+  return fallback || id;
+}
+
+/**
+ * Resolves a localized title for any item (tin, candidate idea, worker project, simulator)
+ * through the OASIS XLIFF translation catalog.
+ */
+export function getLocalizedTitle(
+  item: { id?: string; title?: string; titleKey?: string; titleEn?: string } | undefined | null,
+  lang: Language = 'en'
+): string {
+  if (!item) return '';
+
+  if (item.titleKey) {
+    const translated = t(item.titleKey, lang, '');
+    if (translated && translated !== item.titleKey) return translated;
+  }
+
+  if (item.id) {
+    const candidateKeys = [
+      `tin.${item.id}.title`,
+      `candidate.${item.id}.title`,
+      `worker.${item.id}.title`,
+      `sim.${item.id}.title`
+    ];
+    for (const key of candidateKeys) {
+      const translated = t(key, lang, '');
+      if (translated && translated !== key) return translated;
+    }
+  }
+
+  if (lang !== 'de' && item.titleEn) {
+    return item.titleEn;
+  }
+
+  return item.title || '';
+}
+
+/**
+ * Calculate XLIFF translation coverage and metrics.
+ */
+export function getXliffMetrics() {
+  const enTotal = Object.keys(xliffDocs.en.units).length;
+  const deUnits = Object.keys(xliffDocs.de.units).length;
+  const esUnits = Object.keys(xliffDocs.es.units).length;
+  return {
+    totalKeys: enTotal,
+    deUnits,
+    esUnits,
+    coverageDe: `${Math.round((deUnits / enTotal) * 100)}%`,
+    coverageEs: `${Math.round((esUnits / enTotal) * 100)}%`,
+  };
+}
 
 export interface I18nCatalog {
   app: {
     title: string;
     tagline: string;
     subtitle: string;
+    kula_french: string;
+    kula_ring: string;
+    cc0_stamp: string;
+    par_avion: string;
   };
   nav: {
     tins: string;
@@ -19,6 +126,37 @@ export interface I18nCatalog {
     packer: string;
     discarded: string;
     githubPages: string;
+    musterEmails: string;
+    more: string;
+    tools_archive: string;
+    tools_archive_desc: string;
+    group: {
+      concepts: string;
+      tools: string;
+      archive: string;
+    };
+    desc: {
+      unpacked: string;
+      sandboxes: string;
+      musterEmails: string;
+      normalJobs: string;
+      whimsy: string;
+      packer: string;
+      googleImport: string;
+      playbook: string;
+      githubPages: string;
+      discarded: string;
+    };
+  };
+  discarded: {
+    badge: string;
+    verdict: string;
+    original_idea: string;
+    why_discarded: string;
+    evidence: string;
+    key_lesson: string;
+    philosophy_title: string;
+    philosophy_desc: string;
   };
   pledge: {
     title: string;
@@ -27,11 +165,32 @@ export interface I18nCatalog {
     copied: string;
   };
   manifest: {
-    rule1: { title: string; desc: string; thumb: string };
-    rule2: { title: string; desc: string; thumb: string };
-    rule3: { title: string; desc: string; thumb: string };
-    rule4: { title: string; desc: string; thumb: string };
-    rule5: { title: string; desc: string; thumb: string };
+    rule1: { title: string; desc: string; thumb: string; pill: string };
+    rule2: { title: string; desc: string; thumb: string; pill: string };
+    rule3: { title: string; desc: string; thumb: string; pill: string };
+    rule4: { title: string; desc: string; thumb: string; pill: string };
+    rule5: { title: string; desc: string; thumb: string; pill: string };
+  };
+  pillars: {
+    title: string;
+    p1_title: string;
+    p1_desc: string;
+    p2_title: string;
+    p2_desc: string;
+    p3_title: string;
+    p3_desc: string;
+    p4_title: string;
+    p4_desc: string;
+    p5_title: string;
+    p5_desc: string;
+    p6_title: string;
+    p6_desc: string;
+  };
+  anti: {
+    heading: string;
+    subheading: string;
+    mistake: string;
+    violation: string;
   };
   ui: {
     close: string;
@@ -42,6 +201,7 @@ export interface I18nCatalog {
     verdict_gift: string;
     verdict_build_first: string;
     verdict_keep: string;
+    verdict_discarded: string;
     footer_text: string;
     footer_quote: string;
     all_domains: string;
@@ -66,276 +226,187 @@ export interface I18nCatalog {
     lang_en: string;
     lang_de: string;
     lang_es: string;
+    surprise_btn: string;
+    add_idea_btn: string;
+    reset_defaults: string;
+    why_tone: string;
+    strengths: string;
+    subject_line: string;
+    message_text: string;
+    rules_applied: string;
+    target_audience: string;
+    copy_template: string;
   };
 }
 
-export const TRANSLATIONS: Record<Language, I18nCatalog> = {
-  en: {
-    app: {
-      title: 'Amélie',
-      tagline: 'Ideas that belong to someone else — after Amélie Poulain & the Kula Ring',
-      subtitle: 'Félix, Berlin · As of: September 2026',
-    },
-    nav: {
-      tins: 'The Tins',
-      normalJobs: 'Everyday Workers',
-      unpacked: 'Not Yet Packed',
-      googleImport: 'Google Import',
-      sandboxes: 'Simulators',
-      playbook: 'Search Playbook',
-      matrix: 'Matrix & Deliveries',
-      manifest: 'Manifesto & Loop',
-      whimsy: 'Funny & Better',
-      packer: 'Pack a Tin',
-      discarded: 'Discarded',
-      githubPages: 'GitHub Pages & Data',
-    },
-    pledge: {
-      title: 'The Amélie Pledge (printed on every tin)',
-      text: "This idea belongs to no one. Take it, build it, sell it — you owe me nothing, not even a reply. If you ever have an idea you won't build, give it to someone who will.",
-      copy: 'Copy pledge',
-      copied: 'Copied',
-    },
-    manifest: {
-      rule1: {
-        title: 'The delivery is the gift, not the find',
-        desc: 'Ideas are cheap. Everyone has thirty. The gift only starts when you research a specific team capable of building it, and deliver a turn-key package.',
-        thumb: '1h discovery, 1h validation, 2h recipient research (the 1:2 budget ratio).',
-      },
-      rule2: {
-        title: 'Sign your name, demand nothing',
-        desc: 'Your name underneath, CC0 above it. No equity demands, no mandatory attribution, zero expectation of a response. The Kula ring thrives because the gift travels onward, not backward.',
-        thumb: '"This idea belongs to no one. Take it, build it, sell it — you owe me nothing."',
-      },
-      rule3: {
-        title: 'Deliver once, then walk away',
-        desc: 'Never follow up ("Did you get a chance to read my email?"). Following up turns an unconditional gift into an uninvited task on the recipient\'s todo list.',
-        thumb: 'Send once. Let go. Never follow up.',
-      },
-      rule4: {
-        title: 'If nobody asked, give tools, not a project',
-        desc: 'Bare ideas with no code belong exclusively with salaried organizations (companies, research grants, foundations). Unpaid open-source maintainers only receive working skeleton code.',
-        thumb: 'Never burden unpaid volunteer maintainers with unsolicited project homework.',
-      },
-      rule5: {
-        title: "Don't let it become an excuse",
-        desc: 'Giving ideas away feels productive, yet it is still not building. Keep at most two ideas per cycle and actually finish building them.',
-        thumb: 'Retain at most 2 projects for yourself. Everything else gets gifted.',
-      },
-    },
-    ui: {
-      close: 'Close',
-      copy_email: 'Copy email template',
-      email_copied: 'Email copied!',
-      open_tin: 'Open tin →',
-      recipient: 'Recipient:',
-      verdict_gift: 'Gift',
-      verdict_build_first: 'Build first',
-      verdict_keep: 'Kept',
-      footer_text: 'All tins dedicated to CC0 (Public Domain).',
-      footer_quote: '"The delivery is the gift, not the discovery."',
-      all_domains: 'All Domains',
-      all_verdicts: 'All Verdicts',
-      search_placeholder: 'Search tins (title, problem, recipient, tags)...',
-      tins_heading: 'The Gifts: 15 Packaged Tins',
-      tins_subheading: 'Every tin is a turn-key one-page brief with the problem, technology breakthrough ("Why now"), architecture sketch, Ticket #1, and where it might fail.',
-      tins_badge: '15 ready-to-deliver one-pagers · All CC0',
-      deliveries_heading: 'Three Ready-to-Send Outreach Emails',
-      deliveries_subheading: 'Round one: three vetted recipient organizations, three complete emails. The delivery is the gift, not the idea. Send once, walk away.',
-      deliveries_badge: 'Delivery Plan Q4 2026',
-      matrix_heading: 'The Matrix: Idea → Recipient',
-      matrix_subheading: 'All 19 ideas with recipient, channel, pitch hook, and status.',
-      discarded_heading: 'Four Ideas That Were Dropped',
-      discarded_subheading: 'A gift only carries value when the gap is genuinely unoccupied. These four ideas were discarded during preliminary screening because they have already been built multiple times or are commercially blocked.',
-      packer_heading: 'Pack a New Tin',
-      packer_subheading: 'According to the canonical Amélie rubric: define the problem, locate the recipient, and specify Ticket #1 with an unambiguous Done-criterion.',
-      unpacked_heading: 'The Candidate Pipeline: Not Yet Packed Tins',
-      unpacked_subheading: 'Every idea undergoes Step 0.5 (existence verification & evidence check before building). Surviving candidates with open gaps are ready to be packed into turn-key tins.',
-      unpacked_badge: 'Search Protocol & Candidate Pipeline',
-      unpacked_pack_btn: 'Pack into Tin →',
-      lang_en: 'English',
-      lang_de: 'Deutsch',
-      lang_es: 'Español',
-    },
-  },
-  de: {
-    app: {
-      title: 'Amélie',
-      tagline: 'Ideen, die jemand anderem gehören — nach Amélie Poulain & dem Kula-Ring',
-      subtitle: 'Félix, Berlin · Stand: September 2026',
-    },
-    nav: {
-      tins: 'Die Dosen',
-      normalJobs: 'Echte Arbeit',
-      unpacked: 'Ungepackte Ideen',
-      googleImport: 'Google Ideen',
-      sandboxes: 'Simulatoren',
-      playbook: 'Prüf-Playbook',
-      matrix: 'Matrix & Zustellplan',
-      manifest: 'Manifest & Loop',
-      whimsy: 'Heiter & Besser',
-      packer: 'Dose packen',
-      discarded: 'Entsorgt',
-      githubPages: 'GitHub Pages & Daten',
-    },
-    pledge: {
-      title: 'Der Amélie-Pledge (auf jeder Dose)',
-      text: 'Diese Idee gehört niemandem. Nimm sie, bau sie, verkauf sie — du schuldest mir nichts, nicht einmal eine Antwort. Wenn du eines Tages eine Idee hast, die du nicht bauen wirst, gib sie jemandem, der es tut.',
-      copy: 'Pledge kopieren',
-      copied: 'Kopiert',
-    },
-    manifest: {
-      rule1: {
-        title: 'Die Zustellung ist das Geschenk, nicht der Fund',
-        desc: 'Ideen sind billig. Jeder hat dreißig. Das Geschenk beginnt erst in dem Moment, in dem du eine Person oder Gruppe recherchierst, die genau diese Idee bauen kann, und ihr ein sendefertiges Paket schnürst.',
-        thumb: 'Pro Idee 1 Stunde Suche, 1 Stunde Prüfung, 2 Stunden Empfänger-Recherche (1:2-Budgetregel).',
-      },
-      rule2: {
-        title: 'Signieren, aber nichts verlangen',
-        desc: 'Dein Name steht drunter, CC0 steht darüber. Keine Beteiligungsansprüche, keine Namensnennungspflicht, keine Erwartung einer Antwort. Der Kula-Ring funktioniert, weil die Gabe weiterwandert, nicht zurück.',
-        thumb: '„Diese Idee gehört niemandem. Nimm sie, bau sie, verkauf sie — du schuldest mir nichts."',
-      },
-      rule3: {
-        title: 'Einmal zustellen, dann weg',
-        desc: 'Kein Nachfassen („Hatten Sie Gelegenheit, meine Mail zu lesen?"). Wer nachfasst, macht aus einem Geschenk eine Aufgabenliste für den Empfänger. Ein Geschenk erzeugt keine Bringschuld.',
-        thumb: 'Einmal senden. Loslassen. Nie wieder nachhaken.',
-      },
-      rule4: {
-        title: 'Wer nicht gefragt hat, kriegt Werkzeug, kein Projekt',
-        desc: 'Reine Ideen ohne Code gehen nur an Organisationen mit bezahltem Bauauftrag (Firmen, Forschung, Fördertöpfe, Stiftungen). An unbezahlte Open-Source-Maintainer nur mit lauffähigem Code-Skelett.',
-        thumb: 'Unbezahlte Maintainer niemals mit unerbetener Arbeit belasten.',
-      },
-      rule5: {
-        title: 'Nicht zur Ausrede machen',
-        desc: 'Verschenken fühlt sich produktiv an und ist trotzdem kein Bauen. Maximal zwei Ideen pro Jahr behalten und wirklich bis zum Ende durchziehen.',
-        thumb: 'Behalte maximal 2 Ideen. Der Rest geht raus.',
-      },
-    },
-    ui: {
-      close: 'Schließen',
-      copy_email: 'Mail-Vorlage kopieren',
-      email_copied: 'Mail kopiert!',
-      open_tin: 'Dose öffnen →',
-      recipient: 'Empfänger:',
-      verdict_gift: 'Verschenken',
-      verdict_build_first: 'Erst bauen',
-      verdict_keep: 'Behalten',
-      footer_text: 'Alle Dosen stehen unter CC0 (Public Domain).',
-      footer_quote: '„Die Zustellung ist das Geschenk, nicht der Fund."',
-      all_domains: 'Alle Bereiche',
-      all_verdicts: 'Alle Verdikte',
-      search_placeholder: 'Dosen durchsuchen (Name, Problem, Empfänger, Tag)...',
-      tins_heading: 'Die Geschenke: 15 verpackte Dosen',
-      tins_subheading: 'Jede Dose ist ein sendefertiger Einseiter mit Problem, technologischer Wende („Warum jetzt"), Architektur-Skizze, Ticket #1 und der genauen Bruchstelle („Wo es kippt").',
-      tins_badge: '15 fertige Einseiter · Alle Inhalte CC0',
-      deliveries_heading: 'Drei sendefertige Kaltmails',
-      deliveries_subheading: 'Die erste Runde: drei recherchierte Empfänger, drei fertige Mails. Die Zustellung ist das Geschenk, nicht der Fund. Einmal senden, nie nachfassen.',
-      deliveries_badge: 'Zustellplan Q4 2026',
-      matrix_heading: 'Die Matrix: Idee → Empfänger',
-      matrix_subheading: 'Alle 19 Ideen mit Empfänger, Begründung, Kanal, Hook und Status.',
-      discarded_heading: 'Vier Ideen, die gestrichen wurden',
-      discarded_subheading: 'Ein Geschenk hat nur dann Wert, wenn die Lücke tatsächlich unbesetzt ist. Diese vier Ideen schieden in der Vorab-Prüfung aus, weil sie bereits mehrfach gebaut wurden oder kommerziell blockiert sind.',
-      packer_heading: 'Eine neue Dose schnüren',
-      packer_subheading: 'Nach dem standardisierten Amélie-Format: Schärfe das Problem, finde den Empfänger und formuliere Ticket #1 so konkret, dass es in zwei Tagen gebaut werden kann.',
-      unpacked_heading: 'Der Ideenspeicher: Noch nicht gepackte Dosen',
-      unpacked_subheading: 'Jede Idee durchläuft Schritt 0,5 (Existenzprüfung vor dem Bauen). Überlebende Lücken aus dem Prüfprotokoll können mit einem Klick in die Dosen-Werkstatt übernommen werden.',
-      unpacked_badge: 'Prüfprotokoll & Kandidaten-Pipeline',
-      unpacked_pack_btn: 'In Dose packen →',
-      lang_en: 'English',
-      lang_de: 'Deutsch',
-      lang_es: 'Español',
-    },
-  },
-  es: {
-    app: {
-      title: 'Amélie',
-      tagline: 'Ideas que pertenecen a alguien más — según Amélie Poulain y el Anillo Kula',
-      subtitle: 'Félix, Berlín · A fecha de: septiembre de 2026',
-    },
-    nav: {
-      tins: 'Las Latas',
-      normalJobs: 'Trabajos Reales',
-      unpacked: 'Ideas sin empacar',
-      googleImport: 'Importar de Google',
-      sandboxes: 'Simuladores',
-      playbook: 'Manual de Búsqueda',
-      matrix: 'Matriz y Entregas',
-      manifest: 'Manifiesto y Bucle',
-      whimsy: 'Alegre y Mejor',
-      packer: 'Empacar una Lata',
-      discarded: 'Descartadas',
-      githubPages: 'GitHub Pages y Datos',
-    },
-    pledge: {
-      title: 'El Compromiso Amélie (impreso en cada lata)',
-      text: 'Esta idea no pertenece a nadie. Tómala, constrúyela, comercialízala — no me debes nada, ni siquiera una respuesta. Si algún día tienes una idea que no vas a construir, entrégasela a alguien que sí lo haga.',
-      copy: 'Copiar compromiso',
-      copied: 'Copiado',
-    },
-    manifest: {
-      rule1: {
-        title: 'La entrega es el regalo, no el hallazgo',
-        desc: 'Las ideas son baratas. Cualquiera tiene treinta. El regalo solo comienza en el momento en que investigas a un equipo específico capaz de construirla y le entregas un paquete listo para usar.',
-        thumb: '1h de búsqueda, 1h de validación, 2h investigando al destinatario (la regla 1:2).',
-      },
-      rule2: {
-        title: 'Firma con tu nombre, pero no exijas nada',
-        desc: 'Tu nombre debajo, CC0 arriba. Sin reclamos de participación, sin atribución forzosa, sin esperar respuesta. El Anillo Kula funciona porque el regalo avanza en círculo, nunca hacia atrás.',
-        thumb: '"Esta idea no es de nadie. Tómala, constrúyela, véncela — no me debes nada."',
-      },
-      rule3: {
-        title: 'Entrega una sola vez y retírate',
-        desc: 'Jamás insistas ("¿Tuviste tiempo de leer mi correo?"). Quien insiste convierte un regalo generoso en una tarea forzada para el destinatario. Un regalo no genera deuda.',
-        thumb: 'Envía una vez. Suelta. No insistas jamás.',
-      },
-      rule4: {
-        title: 'Si no preguntaron, entrega herramientas, no una carga',
-        desc: 'Las ideas puras sin código pertenecen exclusivamente a entidades con presupuesto y mandato de construcción (empresas, cátedras de investigación, fondos públicos). A los mantenedores voluntarios solo se les entrega código funcional.',
-        thumb: 'Jamás cargues a mantenedores voluntarios con deberes no solicitados.',
-      },
-      rule5: {
-        title: 'No lo conviertas en una excusa',
-        desc: 'Regalar ideas se siente productivo, pero sigue sin ser construir. Quédate con un máximo de dos ideas al año y termínalas de verdad.',
-        thumb: 'Quédate con máximo 2 proyectos propios. Todo lo demás se regala.',
-      },
-    },
-    ui: {
-      close: 'Cerrar',
-      copy_email: 'Copiar plantilla de correo',
-      email_copied: '¡Correo copiado!',
-      open_tin: 'Abrir lata →',
-      recipient: 'Destinatario:',
-      verdict_gift: 'Regalar',
-      verdict_build_first: 'Construir primero',
-      verdict_keep: 'Conservar',
-      footer_text: 'Todas las latas están dedicadas al dominio público CC0.',
-      footer_quote: '"La entrega es el regalo, no el hallazgo."',
-      all_domains: 'Todas las áreas',
-      all_verdicts: 'Todos los veredictos',
-      search_placeholder: 'Buscar latas (título, problema, destinatario, etiquetas)...',
-      tins_heading: 'Los Regalos: 15 Latas Empacadas',
-      tins_subheading: 'Cada lata es un resumen de una página con el problema, el hito tecnológico ("Por qué ahora"), esquema de arquitectura, Tarea #1 y su punto crítico de falla.',
-      tins_badge: '15 resúmenes listos para entregar · Todos CC0',
-      deliveries_heading: 'Tres Correos Listos para Enviar',
-      deliveries_subheading: 'Primera ronda: tres organizaciones investigadas, tres correos completos. La entrega es el regalo, no la ocurrencia. Envía una vez y retírate.',
-      deliveries_badge: 'Plan de Entrega Q4 2026',
-      matrix_heading: 'La Matriz: Idea → Destinatario',
-      matrix_subheading: 'Las 19 ideas con destinatario, canal, gancho persuasivo y estado.',
-      discarded_heading: 'Cuatro Ideas que Fueron Descartadas',
-      discarded_subheading: 'Un regalo solo tiene valor cuando el espacio está genuinamente libre. Estas cuatro ideas se descartaron en el filtro previo porque ya existen o están bloqueadas comercialmente.',
-      packer_heading: 'Empacar una Nueva Lata',
-      packer_subheading: 'Siguiendo el estándar de Amélie: delimita el problema, localiza al destinatario y formula el Ticket #1 con un criterio inequívoco de finalización.',
-      unpacked_heading: 'Canal de Candidatas: Latas aún no empacadas',
-      unpacked_subheading: 'Cada idea pasa por el Paso 0.5 (verificación previa de existencia). Las brechas libres del protocolo de prueba están listas para empacarse.',
-      unpacked_badge: 'Protocolo de Búsqueda y Candidatas',
-      unpacked_pack_btn: 'Empacar en Lata →',
-      lang_en: 'English',
-      lang_de: 'Deutsch',
-      lang_es: 'Español',
-    },
-  },
-};
-
+/**
+ * Creates the structured I18nCatalog dynamically from the parsed XLIFF units.
+ * Guarantees that XLIFF is the single source of truth for the entire application.
+ */
 export function getTranslation(lang: Language): I18nCatalog {
-  return TRANSLATIONS[lang] || TRANSLATIONS.en;
+  const tr = (key: string, fallback?: string) => t(key, lang, fallback);
+
+  return {
+    app: {
+      title: tr('app.title', 'Amélie'),
+      tagline: tr('app.tagline', 'Ideas that belong to someone else — after Amélie Poulain & the Kula Ring'),
+      subtitle: tr('app.subtitle', 'Félix, Berlin · As of: September 2026'),
+      kula_french: tr('app.kula_french', '« Le Kula-Ring des Idées »'),
+      kula_ring: tr('app.kula_ring', '✦ Kula Ring ✦'),
+      cc0_stamp: tr('app.cc0_stamp', 'CC0 · 1974–2026'),
+      par_avion: tr('app.par_avion', 'PAR AVION · XLIFF'),
+    },
+    nav: {
+      tins: tr('nav.tins', 'The Tins'),
+      normalJobs: tr('nav.normalJobs', 'Everyday Work'),
+      unpacked: tr('nav.unpacked', 'Ideas Pipeline'),
+      googleImport: tr('nav.googleImport', 'Google Import'),
+      sandboxes: tr('nav.sandboxes', 'Simulators'),
+      playbook: tr('nav.playbook', 'Prior Art Playbook'),
+      matrix: tr('nav.matrix', 'Deliveries & Matrix'),
+      manifest: tr('nav.manifest', 'Manifesto & Rules'),
+      whimsy: tr('nav.whimsy', 'Funny & Better'),
+      packer: tr('nav.packer', 'Pack a Tin'),
+      discarded: tr('nav.discarded', 'Discarded Ideas'),
+      githubPages: tr('nav.githubPages', 'GitHub Pages & Data'),
+      musterEmails: tr('nav.musterEmails', 'Sample Emails'),
+      more: tr('nav.more', 'More & Tools'),
+      tools_archive: tr('nav.tools_archive', 'TOOLS & ARCHIVE'),
+      tools_archive_desc: tr('nav.tools_archive_desc', 'Sample emails, search playbook, normal jobs & discarded ideas'),
+      group: {
+        concepts: tr('nav.group.concepts', 'Concepts & Explorations'),
+        tools: tr('nav.group.tools', 'Tools & Workflows'),
+        archive: tr('nav.group.archive', 'Templates & Archive'),
+      },
+      desc: {
+        unpacked: tr('nav.desc.unpacked', 'Candidates & ideas before packaging'),
+        sandboxes: tr('nav.desc.sandboxes', '8 interactive physical simulators'),
+        musterEmails: tr('nav.desc.musterEmails', '4 emails following Amélie philosophy'),
+        normalJobs: tr('nav.desc.normalJobs', '10 concepts for everyday professions'),
+        whimsy: tr('nav.desc.whimsy', 'Whimsy & human warmth'),
+        packer: tr('nav.desc.packer', 'Pack a new turn-key gift tin'),
+        googleImport: tr('nav.desc.googleImport', 'Import ideas from Docs & Keep'),
+        playbook: tr('nav.desc.playbook', 'Step 0.5: Prior art validation'),
+        githubPages: tr('nav.desc.githubPages', 'GitHub Pages static data hub'),
+        discarded: tr('nav.desc.discarded', 'Screened out & occupied ideas'),
+      },
+    },
+    pledge: {
+      title: tr('pledge.title', 'The Amélie Pledge (printed on every tin)'),
+      text: tr('pledge.text', "This idea belongs to no one. Take it, build it, sell it — you owe me nothing, not even a reply."),
+      copy: tr('pledge.copy', 'Copy pledge'),
+      copied: tr('pledge.copied', 'Copied'),
+    },
+    manifest: {
+      rule1: {
+        title: tr('manifest.rule1.title', 'The delivery is the gift, not the find'),
+        desc: tr('manifest.rule1.desc', 'Ideas are cheap. The gift only starts when you research a specific team.'),
+        thumb: tr('manifest.rule1.thumb', '1h discovery, 1h validation, 2h recipient research.'),
+        pill: tr('manifest.rule1.pill', 'Delivery'),
+      },
+      rule2: {
+        title: tr('manifest.rule2.title', 'Sign your name, demand nothing'),
+        desc: tr('manifest.rule2.desc', 'Your name underneath, CC0 above it. No equity demands, no mandatory attribution.'),
+        thumb: tr('manifest.rule2.thumb', 'Explicitly grant permission not to reply.'),
+        pill: tr('manifest.rule2.pill', 'Sign & CC0'),
+      },
+      rule3: {
+        title: tr('manifest.rule3.title', 'The Phone Booth Rule (Strictly no follow-up)'),
+        desc: tr('manifest.rule3.desc', 'Place the tin box in the phone booth and disappear. No follow-up emails.'),
+        thumb: tr('manifest.rule3.thumb', 'Send once. Then erase from your mental to-do list.'),
+        pill: tr('manifest.rule3.pill', 'No Follow-up'),
+      },
+      rule4: {
+        title: tr('manifest.rule4.title', "If they didn't ask, deliver tools, not homework"),
+        desc: tr('manifest.rule4.desc', 'Unsolicited ideas without code belong only to entities with budgets.'),
+        thumb: tr('manifest.rule4.thumb', 'Never give volunteer maintainers unpaid homework.'),
+        pill: tr('manifest.rule4.pill', 'Tools Only'),
+      },
+      rule5: {
+        title: tr('manifest.rule5.title', "Don't make gifting an excuse not to build"),
+        desc: tr('manifest.rule5.desc', 'Gifting ideas feels like building, but it isn\'t. Keep a maximum of two personal projects a year.'),
+        thumb: tr('manifest.rule5.thumb', 'Build max 2 personal projects. Gift the remaining 19.'),
+        pill: tr('manifest.rule5.pill', 'Build Max 2'),
+      },
+    },
+    pillars: {
+      title: tr('pillar.title', 'The 6 Pillars of an Amélie Gift Email'),
+      p1_title: tr('pillar.1.title', '1. Clear Gift Subject Line'),
+      p1_desc: tr('pillar.1.desc', 'Explicitly marked as a free gift; zero sales hype, zero clickbait.'),
+      p2_title: tr('pillar.2.title', '2. The 1:20 Ratio Relief'),
+      p2_desc: tr('pillar.2.desc', 'Immediately clarifies who writes and why 19 out of 20 ideas are given away.'),
+      p3_title: tr('pillar.3.title', '3. Proof of Sincere Research'),
+      p3_desc: tr('pillar.3.desc', "Cites the recipient's recent paper or software tool (no blast spam)."),
+      p4_title: tr('pillar.4.title', '4. The Tin Link & One-Pager'),
+      p4_desc: tr('pillar.4.desc', '1 page with architecture, first milestone (Ticket #1), and critical failure point.'),
+      p5_title: tr('pillar.5.title', '5. Unconditional CC0 Release'),
+      p5_desc: tr('pillar.5.desc', 'Unconditionally public domain: take it, build it, sell it, zero royalties.'),
+      p6_title: tr('pillar.6.title', '6. Strict Phone Booth Rule'),
+      p6_desc: tr('pillar.6.desc', 'Explicit permission not to reply; promise never to follow up or nag.'),
+    },
+    anti: {
+      heading: tr('anti.heading', 'The 3 Anti-Patterns (Forbidden by Amélie Philosophy)'),
+      subheading: tr('anti.subheading', 'Committing these errors turns a selfless gift into an unwelcome burden or disguised sales pitch.'),
+      mistake: tr('anti.mistake', 'Mistake'),
+      violation: tr('anti.violation', 'Violates Rule'),
+    },
+    ui: {
+      close: tr('ui.close', 'Close'),
+      copy_email: tr('ui.copy_email', 'Copy email template'),
+      email_copied: tr('ui.email_copied', 'Email copied!'),
+      open_tin: tr('ui.open_tin', 'Open tin →'),
+      recipient: tr('ui.recipient', 'Recipient:'),
+      verdict_gift: tr('ui.verdict_gift', 'Gift'),
+      verdict_build_first: tr('ui.verdict_build_first', 'Build first'),
+      verdict_keep: tr('ui.verdict_keep', 'Kept'),
+      verdict_discarded: tr('ui.verdict_discarded', 'Discarded'),
+      footer_text: tr('ui.footer_text', 'All tins are dedicated to the public domain under CC0.'),
+      footer_quote: tr('ui.footer_quote', '"The delivery is the gift, not the find."'),
+      all_domains: tr('ui.all_domains', 'All Domains'),
+      all_verdicts: tr('ui.all_verdicts', 'All Verdicts'),
+      search_placeholder: tr('ui.search_placeholder', 'Search tins (title, problem, recipient, tags)...'),
+      tins_heading: tr('ui.tins_heading', 'The Gifts: 15 Packaged Tins'),
+      tins_subheading: tr('ui.tins_subheading', 'Each tin is a one-page turnkey dossier with problem, tech catalyst ("Why Now"), architectural sketch, Ticket #1, and point of failure.'),
+      tins_badge: tr('ui.tins_badge', '15 turn-key dossiers ready to deliver · All CC0'),
+      deliveries_heading: tr('ui.deliveries_heading', 'Three Ready-to-Send Outbound Emails'),
+      deliveries_subheading: tr('ui.deliveries_subheading', 'First round: three researched teams, three completed emails. The delivery is the gift, not the brainstorming. Send once and walk away.'),
+      deliveries_badge: tr('ui.deliveries_badge', 'Q4 2026 Delivery Plan'),
+      matrix_heading: tr('ui.matrix_heading', 'The Matrix: Idea → Recipient'),
+      matrix_subheading: tr('ui.matrix_subheading', 'All 19 ideas mapped by recipient, channel, persuasive hook, and delivery status.'),
+      discarded_heading: tr('ui.discarded_heading', 'Four Ideas Screened Out & Discarded'),
+      discarded_subheading: tr('ui.discarded_subheading', 'A gift only has value when the space is genuinely open. These four ideas were dropped during preliminary screening because they already exist or are commercially saturated.'),
+      packer_heading: tr('ui.packer_heading', 'Pack a New Tin'),
+      packer_subheading: tr('ui.packer_subheading', 'Following the Amélie standard: frame the problem, locate the recipient, and draft Ticket #1 with a crisp definition of done.'),
+      unpacked_heading: tr('ui.unpacked_heading', 'Candidate Pipeline: Ideas Not Yet Packed'),
+      unpacked_subheading: tr('ui.unpacked_subheading', 'Every idea passes Step 0.5 (prior art verification). Unoccupied gaps from the protocol are queued for packaging.'),
+      unpacked_badge: tr('ui.unpacked_badge', 'Search Protocol & Candidates'),
+      unpacked_pack_btn: tr('ui.unpacked_pack_btn', 'Pack into Tin →'),
+      lang_en: tr('ui.lang_en', 'English'),
+      lang_de: tr('ui.lang_de', 'Deutsch'),
+      lang_es: tr('ui.lang_es', 'Español'),
+      surprise_btn: tr('ui.surprise_btn', '🎲 Spark Idea'),
+      add_idea_btn: tr('ui.add_idea_btn', '+ Add Idea'),
+      reset_defaults: tr('ui.reset_defaults', 'Reset to defaults'),
+      why_tone: tr('ui.why_tone', 'Why this tone?'),
+      strengths: tr('ui.strengths', 'Why this email works (Key Strengths)'),
+      subject_line: tr('ui.subject_line', 'Subject line'),
+      message_text: tr('ui.message_text', 'Message text'),
+      rules_applied: tr('ui.rules_applied', 'Rules applied:'),
+      target_audience: tr('ui.target_audience', 'Target:'),
+      copy_template: tr('ui.copy_template', 'Copy Template'),
+    },
+    discarded: {
+      badge: tr('discarded.badge', 'Negative Archive (_entsorgt.md)'),
+      verdict: tr('discarded.verdict', 'Discarded'),
+      original_idea: tr('discarded.original_idea', 'The Original Idea:'),
+      why_discarded: tr('discarded.why_discarded', 'Why Discarded?'),
+      evidence: tr('discarded.evidence', 'Prior Art Evidence:'),
+      key_lesson: tr('discarded.key_lesson', 'The Key Lesson:'),
+      philosophy_title: tr('discarded.philosophy_title', 'The Discipline of Discarding'),
+      philosophy_desc: tr(
+        'discarded.philosophy_desc',
+        'Rule 1 states: ideas are cheap. Failing to verify the landscape and gifting concepts already trending on GitHub merely creates noise for recipients. The negative archive is living proof that the filter works.'
+      ),
+    },
+  };
 }

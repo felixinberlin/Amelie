@@ -32,6 +32,7 @@ import {
 import { Language } from '../types';
 import { NORMAL_JOBS_AND_EVERYDAY_PEOPLE_IDEAS } from '../data/ideas/normalJobsAndEverydayPeople';
 import { AMELIE_PLEDGE } from '../data/manifest';
+import { getLocalizedTitle } from '../i18n';
 
 interface NormalJobsExplorerProps {
   lang: Language;
@@ -90,13 +91,16 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
   // Sector filtering
   const filteredIdeas = useMemo(() => {
     return NORMAL_JOBS_AND_EVERYDAY_PEOPLE_IDEAS.filter((idea) => {
+      const localizedTitle = getLocalizedTitle(idea, lang).toLowerCase();
+      const q = searchQuery.toLowerCase();
       const matchesSearch = 
-        idea.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        idea.conceptDe.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        idea.conceptEn.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        (idea.workerPersona?.name || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
-        (idea.workerPersona?.role || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
-        (idea.problemDe || '').toLowerCase().includes(searchQuery.toLowerCase());
+        idea.title.toLowerCase().includes(q) ||
+        localizedTitle.includes(q) ||
+        idea.conceptDe.toLowerCase().includes(q) ||
+        idea.conceptEn.toLowerCase().includes(q) ||
+        (idea.workerPersona?.name || '').toLowerCase().includes(q) ||
+        (idea.workerPersona?.role || '').toLowerCase().includes(q) ||
+        (idea.problemDe || '').toLowerCase().includes(q);
 
       if (!matchesSearch) return false;
 
@@ -111,7 +115,7 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
       if (activeSector === 'forestry') return tags.some(t => ['Forstwirtschaft', 'Wald', 'Landwirtschaft', 'Bauern', 'Gartenbau', 'GaLaBau'].includes(t));
       return true;
     });
-  }, [activeSector, searchQuery]);
+  }, [activeSector, searchQuery, lang]);
 
   const handleCopyDossier = (id: string, text: string) => {
     navigator.clipboard.writeText(text);
@@ -153,13 +157,22 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
         <div className="flex flex-wrap items-center gap-2 text-xs font-mono tracking-wider uppercase text-amber-950 font-semibold">
           <span className="px-3 py-1 rounded-md bg-amber-100/90 border border-amber-300/80 flex items-center gap-1.5 shadow-2xs">
             <Heart className="w-3.5 h-3.5 text-rose-600 fill-rose-600" />
-            {lang === 'de' ? 'Arbeit der Vielen' : 'Everyday People & Real Work'}
+            {lang === 'de' ? 'Arbeit der Vielen' : lang === 'es' ? 'Trabajo de la Mayoría' : 'Everyday People & Real Work'}
           </span>
           <span className="px-2.5 py-1 rounded-md bg-stone-100 text-stone-700 border border-stone-200">
-            {NORMAL_JOBS_AND_EVERYDAY_PEOPLE_IDEAS.length} {lang === 'de' ? 'Praktische Werkzeuge als Schenkung' : 'Open Public-Good Tools as Gifts'}
+            {NORMAL_JOBS_AND_EVERYDAY_PEOPLE_IDEAS.length}{' '}
+            {lang === 'de'
+              ? 'Praktische Werkzeuge als Schenkung'
+              : lang === 'es'
+              ? 'Herramientas abiertas como regalo'
+              : 'Open Public-Good Tools as Gifts'}
           </span>
           <span className="px-2.5 py-1 rounded-md bg-emerald-100 text-emerald-900 border border-emerald-300 font-bold">
-            {lang === 'de' ? 'Vor KI unmöglich → Jetzt kinderleicht' : 'Before AI impossible → Now easy'}
+            {lang === 'de'
+              ? 'Vor KI unmöglich → Jetzt kinderleicht'
+              : lang === 'es'
+              ? 'Antes imposible → Ahora sencillo'
+              : 'Before AI impossible → Now easy'}
           </span>
         </div>
 
@@ -167,11 +180,15 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
           <h1 className="text-2xl md:text-3xl font-serif text-stone-900 tracking-tight">
             {lang === 'de' 
               ? 'Für die normalen Berufe: Echte Menschen, echte Not und konkrete E-Mail-Adressen' 
+              : lang === 'es'
+              ? 'Para oficios cotidianos: personas reales, necesidades concretas y correos directos'
               : 'For Everyday Workers: Real People, Real Stories, and Direct Outreach Contacts'}
           </h1>
           <p className="text-stone-700 text-sm md:text-base leading-relaxed max-w-4xl">
             {lang === 'de'
               ? 'KI soll nicht die zehnte Marketing-App bauen, sondern denen helfen, die morgens um 4 Uhr aufstehen, Kranke pflegen, Staub schlucken und schwere Pakete schleppen. Jede Idee hier enthält die wahre Geschichte einer arbeitenden Person, die juristische oder physikalische Schutzwirkung, den genauen technischen Durchbruch und verifizierte Adressen von Gewerkschaften und Innungen, denen wir diese Werkzeuge bedingungslos schenken.'
+              : lang === 'es'
+              ? 'La IA no debería crear la décima aplicación de marketing, sino proteger a quienes madrugan a las 4 AM, cuidan a los enfermos y cargan paquetes pesados. Cada propuesta incluye una historia real, garantías de protección y contactos directos de sindicatos para regalarla con licencia CC0.'
               : 'AI should not build speculative SaaS toys, but protect those who wake up at 4 AM, care for the sick, swallow construction dust, and haul heavy parcels. Each proposal links an authentic human story, real legal or physical safeguards, the breakthrough that makes it easy today, and verified contact addresses to gift it freely under CC0.'}
           </p>
         </div>
@@ -181,11 +198,13 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
           <Quote className="w-4 h-4 text-amber-700 shrink-0 mt-0.5" />
           <div>
             <span className="font-bold">
-              {lang === 'de' ? 'Das Amélie-Prinzip: ' : 'The Amélie Principle: '}
+              {lang === 'de' ? 'Das Amélie-Prinzip: ' : lang === 'es' ? 'El Principio Amélie: ' : 'The Amélie Principle: '}
             </span>
             <span>
               {lang === 'de'
                 ? '„Zuerst dem einfachen Arbeiter helfen. Den normalen Menschen. Früher war das unbezahlbar oder technisch unmöglich – heute ist es mit einem Standard-Smartphone und Open-Source-Modellen kinderleicht. Wir verschenken jede Lösung schlüsselfertig an die zuständige Gewerkschaft oder Innung."'
+                : lang === 'es'
+                ? '«Ayudar primero al trabajador común. A la gente cotidiana. Antes esto era inaccesible o imposible; hoy es sencillo con un teléfono inteligente y modelos abiertos. Regalamos cada solución directamente a los sindicatos y gremios.»'
                 : '"Help the simple worker first. The everyday people. Before AI, this was unaffordable or technically impossible—today it is effortless with standard phones and open models. We gift every blueprint directly to the workers’ unions."'}
             </span>
           </div>
@@ -196,11 +215,17 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
       <div className="space-y-3">
         <div className="flex items-center justify-between gap-4 flex-wrap">
           <span className="text-xs font-mono font-semibold uppercase text-stone-500 tracking-wider">
-            {lang === 'de' ? 'Berufsfeld wählen:' : 'Select Worker Category:'}
+            {lang === 'de' ? 'Berufsfeld wählen:' : lang === 'es' ? 'Categoría de trabajo:' : 'Select Worker Category:'}
           </span>
           <input 
             type="text" 
-            placeholder={lang === 'de' ? 'Suchen nach Beruf, Name, Problem oder Werkzeug...' : 'Search worker, name, trade or tool...'}
+            placeholder={
+              lang === 'de'
+                ? 'Suchen nach Beruf, Name, Problem oder Werkzeug...'
+                : lang === 'es'
+                ? 'Buscar por oficio, nombre, problema o herramienta...'
+                : 'Search worker, name, trade or tool...'
+            }
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="px-3.5 py-1.5 text-xs bg-white border border-stone-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500/20 w-full sm:w-72 shadow-2xs font-mono"
@@ -209,14 +234,14 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
 
         <div className="flex flex-wrap gap-2 text-xs">
           {[
-            { id: 'all', labelDe: `Alle Berufe (${sectorCounts.all})`, labelEn: `All Trades (${sectorCounts.all})`, icon: Users },
-            { id: 'care', labelDe: `Pflege & Gesundheit (${sectorCounts.care})`, labelEn: `Care & Health (${sectorCounts.care})`, icon: Heart },
-            { id: 'craft', labelDe: `Bau & Handwerk (${sectorCounts.craft})`, labelEn: `Trades & Crafts (${sectorCounts.craft})`, icon: Wrench },
-            { id: 'cleaning', labelDe: `Gebäudereinigung (${sectorCounts.cleaning})`, labelEn: `Cleaners (${sectorCounts.cleaning})`, icon: ShieldCheck },
-            { id: 'transport', labelDe: `Logistik & Fahrer (${sectorCounts.transport})`, labelEn: `Transport & Drivers (${sectorCounts.transport})`, icon: Truck },
-            { id: 'food', labelDe: `Gastro & Ernährung (${sectorCounts.food})`, labelEn: `Food & Kitchens (${sectorCounts.food})`, icon: Utensils },
-            { id: 'education', labelDe: `Kita & Erzieher (${sectorCounts.education})`, labelEn: `Educators (${sectorCounts.education})`, icon: Baby },
-            { id: 'forestry', labelDe: `Agrar, Natur & Forst (${sectorCounts.forestry})`, labelEn: `Agriculture & Forestry (${sectorCounts.forestry})`, icon: Trees },
+            { id: 'all', labelDe: `Alle Berufe (${sectorCounts.all})`, labelEs: `Todos los oficios (${sectorCounts.all})`, labelEn: `All Trades (${sectorCounts.all})`, icon: Users },
+            { id: 'care', labelDe: `Pflege & Gesundheit (${sectorCounts.care})`, labelEs: `Salud y Cuidados (${sectorCounts.care})`, labelEn: `Care & Health (${sectorCounts.care})`, icon: Heart },
+            { id: 'craft', labelDe: `Bau & Handwerk (${sectorCounts.craft})`, labelEs: `Construcción y Oficios (${sectorCounts.craft})`, labelEn: `Trades & Crafts (${sectorCounts.craft})`, icon: Wrench },
+            { id: 'cleaning', labelDe: `Gebäudereinigung (${sectorCounts.cleaning})`, labelEs: `Limpieza de Edificios (${sectorCounts.cleaning})`, labelEn: `Cleaners (${sectorCounts.cleaning})`, icon: ShieldCheck },
+            { id: 'transport', labelDe: `Logistik & Fahrer (${sectorCounts.transport})`, labelEs: `Transporte y Reparto (${sectorCounts.transport})`, labelEn: `Transport & Drivers (${sectorCounts.transport})`, icon: Truck },
+            { id: 'food', labelDe: `Gastro & Ernährung (${sectorCounts.food})`, labelEs: `Hostelería y Cocina (${sectorCounts.food})`, labelEn: `Food & Kitchens (${sectorCounts.food})`, icon: Utensils },
+            { id: 'education', labelDe: `Kita & Erzieher (${sectorCounts.education})`, labelEs: `Educación Infantil (${sectorCounts.education})`, labelEn: `Educators (${sectorCounts.education})`, icon: Baby },
+            { id: 'forestry', labelDe: `Agrar, Natur & Forst (${sectorCounts.forestry})`, labelEs: `Agricultura y Bosques (${sectorCounts.forestry})`, labelEn: `Agriculture & Forestry (${sectorCounts.forestry})`, icon: Trees },
           ].map((item) => {
             const Icon = item.icon;
             const isActive = activeSector === item.id;
@@ -231,7 +256,7 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
                 }`}
               >
                 <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-amber-200' : 'text-stone-500'}`} />
-                <span>{lang === 'de' ? item.labelDe : item.labelEn}</span>
+                <span>{lang === 'de' ? item.labelDe : lang === 'es' ? item.labelEs : item.labelEn}</span>
               </button>
             );
           })}
@@ -246,6 +271,7 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
           const shift = idea.techShift;
           const recipients = idea.realRecipientsList || [];
           const email = idea.readyEmail;
+          const localizedTitle = getLocalizedTitle(idea, lang);
 
           return (
             <div 
@@ -268,7 +294,7 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
                     </span>
                     <span className="px-2 py-0.5 rounded bg-emerald-100/90 text-emerald-900 font-semibold border border-emerald-300 flex items-center gap-1">
                       <Sparkles className="w-3 h-3 text-emerald-700" />
-                      {lang === 'de' ? 'Schenkung (CC0)' : 'Gift (CC0)'}
+                      {lang === 'de' ? 'Schenkung (CC0)' : lang === 'es' ? 'Donación (CC0)' : 'Gift (CC0)'}
                     </span>
                     {persona && (
                       <span className="px-2 py-0.5 rounded bg-stone-100 text-stone-700 border border-stone-200 font-medium flex items-center gap-1">
@@ -280,7 +306,7 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
 
                   <div>
                     <h3 className="text-lg md:text-xl font-serif text-stone-900 tracking-tight flex items-center gap-2">
-                      <span>{idea.title}</span>
+                      <span>{localizedTitle}</span>
                     </h3>
                     <p className="text-stone-700 text-sm mt-1 leading-relaxed">
                       {lang === 'de' ? idea.conceptDe : idea.conceptEn}
@@ -315,13 +341,13 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
                     <div className="p-5 rounded-2xl bg-amber-50/40 border border-amber-200/70 space-y-3">
                       <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-amber-950">
                         <User className="w-4 h-4 text-amber-700" />
-                        <span>{lang === 'de' ? 'Der echte Mensch hinter dieser Idee' : 'The Real Worker & Authentic Story'}</span>
+                        <span>{lang === 'de' ? 'Der echte Mensch hinter dieser Idee' : lang === 'es' ? 'La persona real detrás de esta idea' : 'The Real Worker & Authentic Story'}</span>
                       </div>
 
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
                         <div className="p-3 rounded-xl bg-white border border-amber-200/80 space-y-1">
                           <span className="text-stone-500 font-mono block text-[11px] uppercase">
-                            {lang === 'de' ? 'Person & Einsatzort' : 'Worker & Workplace'}
+                            {lang === 'de' ? 'Person & Einsatzort' : lang === 'es' ? 'Persona y lugar de trabajo' : 'Worker & Workplace'}
                           </span>
                           <span className="font-bold text-stone-900 text-sm block">{persona.name}</span>
                           <span className="text-stone-700 font-medium block">{persona.role}</span>
@@ -330,7 +356,7 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
 
                         <div className="md:col-span-2 p-3.5 rounded-xl bg-white border border-amber-200/80 space-y-1.5">
                           <span className="text-stone-500 font-mono block text-[11px] uppercase">
-                            {lang === 'de' ? 'Die konkrete Härte im Arbeitsalltag' : 'Daily Job Reality & Struggle'}
+                            {lang === 'de' ? 'Die konkrete Härte im Arbeitsalltag' : lang === 'es' ? 'La dificultad real en el trabajo cotidiano' : 'Daily Job Reality & Struggle'}
                           </span>
                           <p className="text-stone-800 leading-relaxed">
                             {lang === 'de' ? persona.storyDe : persona.storyEn}
@@ -347,7 +373,7 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
                       <div className="p-4 rounded-2xl bg-rose-50/60 border border-rose-200 space-y-2">
                         <div className="flex items-center gap-1.5 text-rose-950 font-mono font-bold uppercase text-[11px]">
                           <XCircle className="w-4 h-4 text-rose-600" />
-                          <span>{lang === 'de' ? 'Vor KI technisch unmöglich' : 'Impossible Before AI'}</span>
+                          <span>{lang === 'de' ? 'Vor KI technisch unmöglich' : lang === 'es' ? 'Antes de la IA técnicamente imposible' : 'Impossible Before AI'}</span>
                         </div>
                         <p className="text-rose-900 leading-relaxed">
                           {lang === 'de' ? shift.beforeAiDe : shift.beforeAiEn}
@@ -358,7 +384,7 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
                       <div className="p-4 rounded-2xl bg-emerald-50/60 border border-emerald-200 space-y-2">
                         <div className="flex items-center gap-1.5 text-emerald-950 font-mono font-bold uppercase text-[11px]">
                           <Sparkles className="w-4 h-4 text-emerald-600" />
-                          <span>{lang === 'de' ? 'Heute kinderleicht gelöst' : 'Effortless & Accessible Today'}</span>
+                          <span>{lang === 'de' ? 'Heute kinderleicht gelöst' : lang === 'es' ? 'Hoy resuelto de forma sencilla' : 'Effortless & Accessible Today'}</span>
                         </div>
                         <p className="text-emerald-900 leading-relaxed">
                           {lang === 'de' ? shift.nowEasyDe : shift.nowEasyEn}
@@ -371,7 +397,7 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
                     <div className="p-4 rounded-2xl bg-stone-50 border border-stone-200 space-y-1.5">
                       <span className="font-mono text-stone-500 uppercase font-semibold block text-[11px]">
-                        {lang === 'de' ? 'Systemischer Schaden & Belastung' : 'Systemic Burden & Cost'}
+                        {lang === 'de' ? 'Systemischer Schaden & Belastung' : lang === 'es' ? 'Carga y daño sistémico' : 'Systemic Burden & Cost'}
                       </span>
                       <p className="text-stone-800 leading-relaxed">
                         {lang === 'de' ? idea.evidenceDe : idea.evidenceEn}
@@ -380,7 +406,7 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
 
                     <div className="p-4 rounded-2xl bg-stone-50 border border-stone-200 space-y-1.5">
                       <span className="font-mono text-stone-500 uppercase font-semibold block text-[11px]">
-                        {lang === 'de' ? 'Erster technischer Prüfschritt (MVP)' : 'First Technical Verification Ticket'}
+                        {lang === 'de' ? 'Erster technischer Prüfschritt (MVP)' : lang === 'es' ? 'Primer paso de verificación técnica (MVP)' : 'First Technical Verification Ticket'}
                       </span>
                       <p className="text-stone-800 font-medium">
                         {lang === 'de' ? idea.firstStepTicketDe : idea.firstStepTicketEn}
@@ -397,7 +423,7 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
                       <div className="flex items-center justify-between">
                         <span className="text-xs font-mono font-bold uppercase text-amber-950 flex items-center gap-1.5">
                           <Clock className="w-4 h-4 text-amber-800" />
-                          {lang === 'de' ? 'Interaktiver Test: Schichtfolge & Zuschlagsrechner' : 'Interactive Demo: Shift Sequence & Bonus Auditor'}
+                          {lang === 'de' ? 'Interaktiver Test: Schichtfolge & Zuschlagsrechner' : lang === 'es' ? 'Prueba interactiva: Secuencia de turnos y cálculo de suplementos' : 'Interactive Demo: Shift Sequence & Bonus Auditor'}
                         </span>
                         <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-white text-amber-900 border border-amber-300 font-semibold">
                           § 5 ArbZG Check
@@ -407,7 +433,7 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
                       <div className="grid grid-cols-1 sm:grid-cols-4 gap-3 text-xs">
                         <div>
                           <label className="block text-stone-600 font-semibold mb-1">
-                            {lang === 'de' ? 'Spätdienst Ende:' : 'Late Shift End:'}
+                            {lang === 'de' ? 'Spätdienst Ende:' : lang === 'es' ? 'Fin del turno de tarde:' : 'Late Shift End:'}
                           </label>
                           <input 
                             type="time" 
@@ -418,7 +444,7 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
                         </div>
                         <div>
                           <label className="block text-stone-600 font-semibold mb-1">
-                            {lang === 'de' ? 'Frühdienst Beginn:' : 'Early Shift Start:'}
+                            {lang === 'de' ? 'Frühdienst Beginn:' : lang === 'es' ? 'Inicio del turno de mañana:' : 'Early Shift Start:'}
                           </label>
                           <input 
                             type="time" 
@@ -429,7 +455,7 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
                         </div>
                         <div>
                           <label className="block text-stone-600 font-semibold mb-1">
-                            {lang === 'de' ? 'Nachtstunden (21-6h):' : 'Night Hours:'}
+                            {lang === 'de' ? 'Nachtstunden (21-6h):' : lang === 'es' ? 'Horas nocturnas (21-6h):' : 'Night Hours:'}
                           </label>
                           <input 
                             type="number" 
@@ -442,7 +468,7 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
                         </div>
                         <div>
                           <label className="block text-stone-600 font-semibold mb-1">
-                            {lang === 'de' ? 'Stundenlohn (€):' : 'Hourly Wage ($/€):'}
+                            {lang === 'de' ? 'Stundenlohn (€):' : lang === 'es' ? 'Salario por hora (€):' : 'Hourly Wage ($/€):'}
                           </label>
                           <input 
                             type="number" 
@@ -458,22 +484,24 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
                       <div className="p-3.5 rounded-xl bg-white border border-amber-200 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                         <div className={`p-2.5 rounded-lg border ${isRestIllegal ? 'bg-rose-50 border-rose-300 text-rose-900' : 'bg-emerald-50 border-emerald-300 text-emerald-900'}`}>
                           <span className="font-bold block mb-0.5">
-                            {isRestIllegal ? '⚠️ Gesetzwidrige Ruhezeit!' : '✅ Gesetzliche Ruhezeit eingehalten'}
+                            {isRestIllegal ? (lang === 'de' ? '⚠️ Gesetzwidrige Ruhezeit!' : lang === 'es' ? '⚠️ ¡Descanso ilegal!' : '⚠️ Illegal Rest Period!') : (lang === 'de' ? '✅ Gesetzliche Ruhezeit eingehalten' : lang === 'es' ? '✅ Descanso legal cumplido' : '✅ Statutory Rest Compliant')}
                           </span>
                           <span>
                             {lang === 'de'
                               ? `Zwischen Schichten liegen nur ${restHours} Stunden (Gesetz fordert mind. 11h ununterbrochen nach § 5 ArbZG).`
+                              : lang === 'es'
+                              ? `Entre turnos solo hay ${restHours} horas (la ley exige un mínimo de 11 h ininterrumpidas).`
                               : `Only ${restHours} hours between shifts (Statutory law requires minimum 11 consecutive hours).`}
                           </span>
                         </div>
 
                         <div className="p-2.5 rounded-lg bg-indigo-50 border border-indigo-200 text-indigo-950">
                           <span className="font-bold block mb-0.5">
-                            {lang === 'de' ? '💰 Zustehende steuerfreie Zuschläge:' : '💰 Earned Tax-Free Supplements:'}
+                            {lang === 'de' ? '💰 Zustehende steuerfreie Zuschläge:' : lang === 'es' ? '💰 Suplementos libres de impuestos correspondientes:' : '💰 Earned Tax-Free Supplements:'}
                           </span>
                           <div className="flex items-center justify-between pt-1 font-mono">
-                            <span>Nacht (+25%): <strong>+{nightBonusTotal} €</strong></span>
-                            <span>Sonntag (+50%): <strong>+{sundayBonusTotal} €</strong></span>
+                            <span>{lang === 'de' ? 'Nacht' : lang === 'es' ? 'Noche' : 'Night'} (+25%): <strong>+{nightBonusTotal} €</strong></span>
+                            <span>{lang === 'de' ? 'Sonntag' : lang === 'es' ? 'Domingo' : 'Sunday'} (+50%): <strong>+{sundayBonusTotal} €</strong></span>
                           </div>
                         </div>
                       </div>
@@ -485,7 +513,7 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
                       <div className="flex items-center justify-between">
                         <span className="text-xs font-mono font-bold uppercase text-amber-950 flex items-center gap-1.5">
                           <Wrench className="w-4 h-4 text-amber-800" />
-                          {lang === 'de' ? 'Interaktiver Test: VOB/B Bedenkenanmeldung in 10 Sekunden' : 'Interactive Demo: 10-Second VOB/B Liability Notice'}
+                          {lang === 'de' ? 'Interaktiver Test: VOB/B Bedenkenanmeldung in 10 Sekunden' : lang === 'es' ? 'Prueba interactiva: Notificación de objeción técnica en 10 s' : 'Interactive Demo: 10-Second VOB/B Liability Notice'}
                         </span>
                         <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-white text-amber-900 border border-amber-300 font-semibold">
                           DIN 18560 Generator
@@ -495,7 +523,7 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                         <div>
                           <label className="block text-stone-600 font-semibold mb-1">
-                            {lang === 'de' ? 'Gewerk:' : 'Trade / Subcontractor:'}
+                            {lang === 'de' ? 'Gewerk:' : lang === 'es' ? 'Oficio / Especialidad:' : 'Trade / Subcontractor:'}
                           </label>
                           <select 
                             value={craftTrade}
@@ -511,7 +539,7 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
 
                         <div>
                           <label className="block text-stone-600 font-semibold mb-1">
-                            {lang === 'de' ? 'Festgestellter Mangel des Vorunternehmers:' : 'Discovered Substrate Defect:'}
+                            {lang === 'de' ? 'Festgestellter Mangel des Vorunternehmers:' : lang === 'es' ? 'Defecto detectado en el soporte o fase previa:' : 'Discovered Substrate Defect:'}
                           </label>
                           <input 
                             type="text" 
@@ -528,7 +556,7 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
                           className="px-3.5 py-1.5 bg-amber-900 hover:bg-amber-800 text-amber-50 rounded-xl text-xs font-medium transition-all shadow-2xs flex items-center gap-1.5"
                         >
                           <ShieldCheck className="w-3.5 h-3.5" />
-                          <span>{lang === 'de' ? 'Rechtssicheres PDF erzeugen' : 'Generate Legal VOB Notice'}</span>
+                          <span>{lang === 'de' ? 'Rechtssicheres PDF erzeugen' : lang === 'es' ? 'Generar aviso legal seguro' : 'Generate Legal VOB Notice'}</span>
                         </button>
                       </div>
 
@@ -541,10 +569,12 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
                           <p className="text-[11px] leading-relaxed">
                             {lang === 'de'
                               ? `Hiermit melde ich namens des Gewerk ${craftTrade} formell schriftliche Bedenken gegen die vorgesehene Ausführung an. Feststellung vor Ort: "${craftDefect}". Gemäß DIN 18560 ist eine Verlegung unzulässig, da irreversible Rissbildungen und Hohllagen drohen. Die Gewährleistung für Folgeschäden wird ausdrücklich abgelehnt. Bitte um Baufreigabe erst nach vollständiger Trocknung.`
+                              : lang === 'es'
+                              ? `Por la presente se notifica objeción formal según VOB/B para el oficio ${craftTrade}. Constatación in situ: "${craftDefect}". Según norma DIN 18560 la instalación resulta improcedente por riesgo de fisuras irreversibles.`
                               : `Hereby filing formal written notice of objection per § 4 Abs. 3 VOB/B for trade ${craftTrade}. Site observation: "${craftDefect}". Under building code DIN 18560, substrate cannot accept installation without severe structural warranty failure.`}
                           </p>
                           <div className="text-[10px] text-emerald-700 font-semibold pt-1">
-                            ✓ {lang === 'de' ? 'Bereit zum Versand per WhatsApp / E-Mail an Bauleitung' : 'Ready to transmit via WhatsApp / email to general contractor'}
+                            ✓ {lang === 'de' ? 'Bereit zum Versand per WhatsApp / E-Mail an Bauleitung' : lang === 'es' ? 'Listo para enviar por WhatsApp / email a la dirección de obra' : 'Ready to transmit via WhatsApp / email to general contractor'}
                           </div>
                         </div>
                       )}
@@ -556,7 +586,7 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
                       <div className="flex items-center justify-between">
                         <span className="text-xs font-mono font-bold uppercase text-amber-950 flex items-center gap-1.5">
                           <ShieldCheck className="w-4 h-4 text-amber-800" />
-                          {lang === 'de' ? 'Interaktiver Test: Chemische Unverträglichkeitsprüfung' : 'Interactive Demo: Chemical Toxicity Alarm'}
+                          {lang === 'de' ? 'Interaktiver Test: Chemische Unverträglichkeitsprüfung' : lang === 'es' ? 'Prueba interactiva: Alarma de toxicidad química' : 'Interactive Demo: Chemical Toxicity Alarm'}
                         </span>
                         <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-white text-amber-900 border border-amber-300 font-semibold">
                           GHS Polyglot Shield
@@ -566,7 +596,7 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                         <div>
                           <label className="block text-stone-600 font-semibold mb-1">
-                            {lang === 'de' ? 'Flasche A (z.B. Sanitär-Entkalker):' : 'Bottle A (e.g. Acid Descaler):'}
+                            {lang === 'de' ? 'Flasche A (z.B. Sanitär-Entkalker):' : lang === 'es' ? 'Botella A (p. ej. descalcificador ácido):' : 'Bottle A (e.g. Acid Descaler):'}
                           </label>
                           <select 
                             value={chemBottleA}
@@ -581,7 +611,7 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
 
                         <div>
                           <label className="block text-stone-600 font-semibold mb-1">
-                            {lang === 'de' ? 'Flasche B (z.B. Schimmelentferner):' : 'Bottle B (e.g. Mold Cleaner):'}
+                            {lang === 'de' ? 'Flasche B (z.B. Schimmelentferner):' : lang === 'es' ? 'Botella B (p. ej. lejía antimoho):' : 'Bottle B (e.g. Mold Cleaner):'}
                           </label>
                           <select 
                             value={chemBottleB}
@@ -605,18 +635,20 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
                           <div className="space-y-1">
                             <div className="font-bold flex items-center gap-1.5 text-sm">
                               <AlertTriangle className="w-4 h-4 text-rose-600" />
-                              <span>🚨 ALARM: TÖDLICHE CHLorgas-Reaktion! / LETHAL GAS HAZARD!</span>
+                              <span>🚨 ALARM: TÖDLICHE Chlorgas-Reaktion! / LETHAL GAS HAZARD!</span>
                             </div>
                             <p className="text-xs">
                               {lang === 'de'
                                 ? 'Säure und Natriumhypochlorit setzen sofort giftiges Chlorgas (Cl₂) frei! Verätzungsgefahr der Lunge. Sprachwarnung auf Arabisch, Ukrainisch, Polnisch, Türkisch wird laut abgespielt.'
+                                : lang === 'es'
+                                ? '¡El ácido y el hipoclorito de sodio liberan gas de cloro tóxico (Cl₂)! Peligro grave para los pulmones. Se activa alarma de voz inmediata.'
                                 : 'Acid + Sodium hypochlorite immediately releases lethal chlorine gas (Cl₂)! Loud native-language audio warning triggers on device.'}
                             </p>
                           </div>
                         ) : (
                           <div className="flex items-center gap-1.5">
                             <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                            <span>✅ {lang === 'de' ? 'Kombination unkritisch. Normale Schutzhandschuhe tragen.' : 'Safe combination. Standard protective gloves recommended.'}</span>
+                            <span>✅ {lang === 'de' ? 'Kombination unkritisch. Normale Schutzhandschuhe tragen.' : lang === 'es' ? 'Combinación no reactiva. Usar guantes de protección estándar.' : 'Safe combination. Standard protective gloves recommended.'}</span>
                           </div>
                         )}
                       </div>
@@ -628,7 +660,7 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
                       <div className="flex items-center justify-between">
                         <span className="text-xs font-mono font-bold uppercase text-amber-950 flex items-center gap-1.5">
                           <Utensils className="w-4 h-4 text-amber-800" />
-                          {lang === 'de' ? 'Interaktiver Test: 14 EU-Allergene Dekodierer' : 'Interactive Demo: 14 EU Statutory Allergen Decoder'}
+                          {lang === 'de' ? 'Interaktiver Test: 14 EU-Allergene Dekodierer' : lang === 'es' ? 'Prueba interactiva: Decodificador de 14 alérgenos UE' : 'Interactive Demo: 14 EU Statutory Allergen Decoder'}
                         </span>
                         <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-white text-amber-900 border border-amber-300 font-semibold">
                           EU 1169/2011
@@ -637,7 +669,7 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
 
                       <div className="space-y-2 text-xs">
                         <label className="block text-stone-600 font-semibold">
-                          {lang === 'de' ? 'Zutatenliste aus Foto / Verpackungsrückseite:' : 'Packaging Ingredient Text Sample:'}
+                          {lang === 'de' ? 'Zutatenliste aus Foto / Verpackungsrückseite:' : lang === 'es' ? 'Lista de ingredientes de foto o etiqueta:' : 'Packaging Ingredient Text Sample:'}
                         </label>
                         <input 
                           type="text" 
@@ -649,7 +681,7 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
 
                       <div className="p-3 rounded-xl bg-white border border-amber-200 space-y-1.5 text-xs">
                         <span className="font-bold text-stone-800 block">
-                          {lang === 'de' ? 'Erkannte kennzeichnungspflichtige Allergene:' : 'Detected Mandatory Statutory Allergens:'}
+                          {lang === 'de' ? 'Erkannte kennzeichnungspflichtige Allergene:' : lang === 'es' ? 'Alérgenos obligatorios detectados:' : 'Detected Mandatory Statutory Allergens:'}
                         </span>
                         <div className="flex flex-wrap gap-1.5 pt-1">
                           {allergenInput.toLowerCase().includes('senf') && (
@@ -682,7 +714,7 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
                     <div className="flex items-center justify-between flex-wrap gap-2">
                       <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-amber-950">
                         <Building2 className="w-4 h-4 text-amber-800" />
-                        <span>{lang === 'de' ? 'Echte Ansprechpartner & verifizierte E-Mails zum Schenken' : 'Real Organizations & Direct Verified Outreach Contacts'}</span>
+                        <span>{lang === 'de' ? 'Echte Ansprechpartner & verifizierte E-Mails zum Schenken' : lang === 'es' ? 'Contactos reales y correos verificados para regalar' : 'Real Organizations & Direct Verified Outreach Contacts'}</span>
                       </div>
                       <span className="text-[11px] font-mono text-emerald-800 bg-emerald-100/90 border border-emerald-300 px-2 py-0.5 rounded font-semibold">
                         CC0 / Public Domain Schenkung
@@ -715,7 +747,7 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
 
                           <div className="pt-1.5 flex items-center justify-between border-t border-stone-100">
                             <a 
-                              href={`mailto:${rec.email}?subject=${encodeURIComponent(email?.subjectDe || idea.title)}&body=${encodeURIComponent(email?.bodyDe || '')}`}
+                              href={`mailto:${rec.email}?subject=${encodeURIComponent(email?.subjectDe || localizedTitle)}&body=${encodeURIComponent(email?.bodyDe || '')}`}
                               className="text-amber-900 font-mono font-semibold hover:underline flex items-center gap-1 text-[11px]"
                             >
                               <Mail className="w-3.5 h-3.5 text-amber-700" />
@@ -744,7 +776,11 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
                           <div className="flex items-center gap-2">
                             <Send className="w-4 h-4 text-amber-800" />
                             <span className="text-xs font-bold text-stone-900 font-mono uppercase">
-                              {lang === 'de' ? 'Fertiges Anschreiben für Gewerkschaft / Verband:' : 'Ready-to-Send Gift Letter:'}
+                              {lang === 'de'
+                                ? 'Fertiges Anschreiben für Gewerkschaft / Verband:'
+                                : lang === 'es'
+                                ? 'Carta lista para enviar al sindicato o gremio:'
+                                : 'Ready-to-Send Gift Letter:'}
                             </span>
                           </div>
 
@@ -754,7 +790,11 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
                               className="px-3 py-1 bg-stone-100 hover:bg-stone-200 border border-stone-300 rounded-lg text-xs text-stone-800 font-medium transition-all flex items-center gap-1"
                             >
                               {copiedEmailId === idea.id ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5 text-stone-600" />}
-                              <span>{copiedEmailId === idea.id ? (lang === 'de' ? 'Kopiert!' : 'Copied!') : (lang === 'de' ? 'Text kopieren' : 'Copy Text')}</span>
+                              <span>
+                                {copiedEmailId === idea.id
+                                  ? (lang === 'de' ? 'Kopiert!' : lang === 'es' ? '¡Copiado!' : 'Copied!')
+                                  : (lang === 'de' ? 'Text kopieren' : lang === 'es' ? 'Copiar texto' : 'Copy Text')}
+                              </span>
                             </button>
 
                             <a
@@ -762,13 +802,19 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
                               className="px-3 py-1 bg-amber-900 hover:bg-amber-800 text-amber-50 rounded-lg text-xs font-medium transition-all flex items-center gap-1 shadow-2xs"
                             >
                               <Mail className="w-3.5 h-3.5" />
-                              <span>{lang === 'de' ? 'In Mail-Programm öffnen' : 'Open in Mail Client'}</span>
+                              <span>
+                                {lang === 'de'
+                                  ? 'In Mail-Programm öffnen'
+                                  : lang === 'es'
+                                  ? 'Abrir en cliente de correo'
+                                  : 'Open in Mail Client'}
+                              </span>
                             </a>
                           </div>
                         </div>
 
                         <div className="p-3 rounded-lg bg-stone-50 border border-stone-200 font-mono text-[11px] text-stone-800 whitespace-pre-wrap leading-relaxed max-h-48 overflow-y-auto">
-                          <strong>{lang === 'de' ? 'Betreff:' : 'Subject:'}</strong> {lang === 'de' ? email.subjectDe : email.subjectEn}
+                          <strong>{lang === 'de' ? 'Betreff:' : lang === 'es' ? 'Asunto:' : 'Subject:'}</strong> {lang === 'de' ? email.subjectDe : email.subjectEn}
                           {'\n\n'}
                           {lang === 'de' ? email.bodyDe : email.bodyEn}
                         </div>
@@ -788,11 +834,31 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
 
                     <div className="flex items-center gap-2 shrink-0">
                       <button
-                        onClick={() => handleCopyDossier(idea.id, `${idea.title}\n\nMensch:\n${persona?.name} (${persona?.role}, ${persona?.location})\n\nVor KI unmöglich:\n${shift?.beforeAiDe}\n\nJetzt kinderleicht:\n${shift?.nowEasyDe}\n\nEmpfänger:\n${recipients.map(r => `${r.org} (${r.email})`).join(', ')}\n\nAmélie Pledge:\n${AMELIE_PLEDGE}`)}
+                        onClick={() => {
+                          const isDe = lang === 'de';
+                          const isEs = lang === 'es';
+                          const humanLabel = isDe ? 'Mensch:' : isEs ? 'Persona:' : 'Worker:';
+                          const beforeLabel = isDe ? 'Vor KI unmöglich:' : isEs ? 'Imposible antes de la IA:' : 'Impossible Before AI:';
+                          const nowLabel = isDe ? 'Jetzt kinderleicht:' : isEs ? 'Ahora sencillo:' : 'Effortless Today:';
+                          const recLabel = isDe ? 'Empfänger:' : isEs ? 'Destinatarios:' : 'Recipients:';
+                          const pledgeLabel = isDe ? 'Amélie-Pledge:' : isEs ? 'Compromiso Amélie:' : 'Amélie Pledge:';
+
+                          const beforeText = isDe ? shift?.beforeAiDe : shift?.beforeAiEn;
+                          const nowText = isDe ? shift?.nowEasyDe : shift?.nowEasyEn;
+
+                          handleCopyDossier(
+                            idea.id,
+                            `${localizedTitle}\n\n${humanLabel}\n${persona?.name} (${persona?.role}, ${persona?.location})\n\n${beforeLabel}\n${beforeText}\n\n${nowLabel}\n${nowText}\n\n${recLabel}\n${recipients.map(r => `${r.org} (${r.email})`).join(', ')}\n\n${pledgeLabel}\n${AMELIE_PLEDGE[lang]}`
+                          );
+                        }}
                         className="px-3 py-1.5 bg-white hover:bg-stone-100 border border-stone-300 rounded-lg text-stone-700 font-medium transition-all flex items-center gap-1.5 shadow-2xs"
                       >
                         {copiedId === idea.id ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5 text-stone-500" />}
-                        <span>{copiedId === idea.id ? (lang === 'de' ? 'Dossier kopiert!' : 'Brief Copied!') : (lang === 'de' ? 'Komplettes Dossier kopieren' : 'Copy Full Brief')}</span>
+                        <span>
+                          {copiedId === idea.id
+                            ? (lang === 'de' ? 'Dossier kopiert!' : lang === 'es' ? '¡Dossier copiado!' : 'Brief Copied!')
+                            : (lang === 'de' ? 'Komplettes Dossier kopieren' : lang === 'es' ? 'Copiar dossier completo' : 'Copy Full Brief')}
+                        </span>
                       </button>
                     </div>
                   </div>
