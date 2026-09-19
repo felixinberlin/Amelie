@@ -53,7 +53,11 @@ An extension that logs positions, plus a viewer that animates the trace over the
 
 Research, September 2026, and it narrows this tin considerably: **the recording technology exists.** There are tools that record and replay typing sessions, and session replay for editor tasks in exam and assessment contexts. As a "new tool," the idea is largely occupied.
 
-**What's open is the question, not the technology:** systematically analyzing and comparing movement patterns, rather than just replaying sessions. That's not a product, that's a paper. Which is why this tin goes to research groups, not editor vendors — and why it needs no accompanying code, just a well-posed question.
+**What's open is the question, not the technology:** systematically analyzing and comparing movement patterns, rather than just replaying sessions. That's not a product, that's a paper.
+
+**Caveat (re-check 19 Sept 2026):** even the question is narrower than it sounds here. How programmers navigate code is established research — for example Singh, Henley, Fleming and Luong, *An Empirical Evaluation of Models of Programmer Navigation* (ICSME 2016), and Lawrance et al. on information foraging in debugging (TSE). Whether *automatic phase coding* of editor traces with language models has been studied was not checked; that would be the part that could be new. Further work named by a tester (Ko et al., Mylyn interaction-trace studies) is unchecked.
+
+Which is why this tin goes to research groups, not editor vendors — and why it needs no accompanying code, just a well-posed question.
 
 ## Prior work
 

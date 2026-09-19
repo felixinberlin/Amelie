@@ -52,7 +52,9 @@ Für JS/TS: Release Notes eines Pakets holen, Symbole extrahieren, Repo nach Imp
 
 ## Wer es schon versucht hat
 
-Recherche September 2026: Changelog-Tooling ist ein großer Markt — aber alles darin dreht sich um das **Erzeugen** von Changelogs für das eigene Produkt. Den umgekehrten Weg, einen fremden Changelog gegen die eigene Nutzung zu filtern, diskutieren einzelne Blogbeiträge, es gibt aber kein etabliertes Werkzeug. **Die Idee liegt erkennbar in der Luft und ist unbesetzt.** Das ist der beste Zeitpunkt zu verschenken und der schlechteste, um zu warten.
+Recherche September 2026, nachgeprüft 19.09.2026: Changelog-Tooling ist ein großer Markt, und fast alles darin dreht sich um das **Erzeugen** von Changelogs fürs eigene Produkt. Den umgekehrten Weg — einen fremden Changelog gegen die eigene Nutzung filtern — gehen inzwischen aber **Security-/SCA-Anbieter**: **Aikido** („Upgrade impact analysis“) bewertet Breaking Changes aus den Library-Changelogs und scannt die Codebasis nach Nutzung; der Pull Request nennt betroffene Dateien und Zeilen (JavaScript, Python, Java, Go, .NET, PHP, Clojure). **Endor Labs** hat eine Upgrade Impact Analysis für JS/TS (schwächerer Treffer: Risikobewertung per Programmanalyse). Die Erstrecherche hatte diese Anbieterklasse nicht abgesucht. Beleg sind Suchzusammenfassungen; die Herstellerseiten wurden nicht gelesen, zwei von einem Tester genannte arXiv-Preprints (BreakGuard, DepRepair) sind nicht geprüft.
+
+**Was offen bleibt:** Aikido und Verwandte decken **Breaking Changes** ab, innerhalb ihrer Plattform. Die *nicht* brechenden Release-Note-Inhalte (neue Features, Deprecations, Verhaltensänderungen), personalisiert auf den eigenen Code und ohne Security-Plattform, wurden nicht gefunden. Das Urteil im Prüfprotokoll steht deshalb bei `verengt` (vorher `frei`).
 
 ## Vorarbeit
 
