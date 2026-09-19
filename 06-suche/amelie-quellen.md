@@ -17,7 +17,7 @@ Diese Liste sagt, **wo** gegraben wird, und hält fest, **was schon durchgegrabe
 | LANA (Bund-Länder-AG Naturschutz) | Beschlüsse mit Bewertungsschemata | angekratzt — Eingriffsregelung/Biotopwertverfahren ist bereits gesetzlich kodifiziert (BKompV) und dürfte über kommerzielle Ökokonto-/Kompensationsflächen-Software abgedeckt sein; vor Ausformulieren einer Idee gegenchecken | 18.09.2026 |
 | Bundesamt für Naturschutz (BfN) | Skripten, Leitfäden, Kartieranleitungen | angekratzt — BfN-Schriften 721 „Kartieranleitung für die Biotoptypen nach Anlage 2 der BKompV" gefunden (668 Biotoptypen, feste Schwellenwerte, Kartiermethodik von Hand). Daraus entstanden: Biotoptyp-Assistent (`05-dosen/biotoptyp-assistent.md`) | 18.09.2026 |
 | Senatsverwaltung Berlin, Umwelt | Leitfäden (z. B. „Bauen mit Glas und Licht", 2021) | offen | – |
-| Denkmalbehörden, Landesämter | Schadenskartierungs-Anleitungen | offen | – |
+| Denkmalbehörden, Landesämter | Schadenskartierungs-Anleitungen | angekratzt — Anleitungen gefunden (Berlin LDA „Leitfaden zur Erstellung von restauratorischen Dokumentationen", BW, Niedersachsen, Sachsen-Anhalt „Handreichung zur Bestandsuntersuchung"), aber **nicht gelesen**; Schadenskartierung ist als Software-Feld besetzt (Metigo MAP, KALIV) — Typ A ist hier **kein Schema ohne Software**. Ertrag kam aus der Ehrenamts-/Bürgerseite (DSD Schwarzbuch, BLfD Bürgerportal), also eher Typ B. Idee: Denkmal-Verlaufsblick | 19.09.2026 |
 | Landesumweltbehörden „Licht & Naturschutz" (Hamburg BUKEA u. a.) | weitere Länder-Leitfäden ohne Tool (analog zu Hamburg) | angekratzt — **ergiebig, Lichtplan-Check entstand hieraus** | 18.09.2026 |
 
 **Suchstring:** `<Gremium> Bewertungsverfahren Punktesystem` · `<Gremium> Kartieranleitung` · `<Gremium> Checkliste Vollzug`
@@ -30,7 +30,8 @@ Diese Liste sagt, **wo** gegraben wird, und hält fest, **was schon durchgegrabe
 
 | Quelle | Wonach suchen | Status | Zuletzt |
 |---|---|---|---|
-| mitforschen.org (Plattform aller deutschen CS-Projekte) | Projekte mit Foto-Upload und Rückmeldung „nach Auswertung" | offen — **ergiebigste Quelle, als Nächstes** (seit Runde 2 so vermerkt, in Runde 3 wieder nicht angefasst) | – |
+| mitforschen.org (Plattform aller deutschen CS-Projekte) | Projekte mit Foto-Upload und Rückmeldung „nach Auswertung" | offen — **ergiebigste Quelle, als Nächstes** (seit Runde 2 so vermerkt, in Runde 3 und in Runde 4 von Researcher #2 wieder nicht angefasst — bewusst ausgewichen, um Kollision mit Researcher #1 zu vermeiden) | – |
+| Deutsche Stiftung Denkmalschutz (Schwarzbuch, Meldeportal, ehrenamtliche Beiräte) | Ehrenamts-Beobachtung mit rückblickender Auswertung | angekratzt (Suchtreffer, Portal nicht gelesen) — Idee: Denkmal-Verlaufsblick | 19.09.2026 |
 | Thünen Wildbienen-Monitoring | Hummel-Monitoring zusätzlich zur Nisthilfe | angekratzt | 16.09.2026 |
 | CompGen (genealogy.net) | andere Erfassungsprojekte außer Grabsteine (Adressbücher, Verlustlisten) | angekratzt | 16.09.2026 |
 | Naturkundemuseum Berlin, Citizen-Science-Bereich | Projekte mit Engpass | offen | – |
