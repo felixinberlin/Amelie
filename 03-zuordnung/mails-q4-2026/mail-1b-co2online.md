@@ -7,6 +7,7 @@
 - Adresse eintragen (s. o.).
 - **HeizCheck:** tester-1 bestätigt, dass er zu den co2online-EnergiesparChecks gehört (Fragebogen-Tool, keine Grundriss-Simulation). Dass er freiwillig Verbrauchsdaten sammelt, stammt weiter nur aus dem zfk.de-Artikel und steht bewusst **nicht** im Text.
 - Prototype-Fund-Satz: Frist laut Sekundärquelle bis 30.11.2026, prototypefund.de war nicht lesbar. Vor dem Senden auf der Fondsseite gegenlesen. Nach dem 1.10. „beginnt" in „läuft" ändern.
+- Wie Mail 1: der Dose-Abschnitt „Wer es schon versucht hat" liegt nur im Worktree der Bibliothekarin, die Mail verlinkt auf `main`. Erst senden, wenn die Dose gemergt und gepusht ist. Ohne ubakus-Satz gehalten, weil co2online damit weniger anfangen kann als eine Simulationsgruppe.
 - Der Text nennt weder die Anrede einer Person noch den Namen von jemandem: bewusst neutral, weil ich keine Kontaktperson belegt habe.
 - Erst nach Mail 1 senden. Der Absatz „Parallel…" bleibt dann wahr; wird Mail 1 nicht gesendet, den Absatz streichen.
 - Repo-Link zuletzt geprüft für Mail 1 (öffentlich, HTTP 200), für diese Mail nicht erneut.
@@ -19,7 +20,7 @@ ich recherchiere Software, die erst seit Kurzem technisch möglich ist, und baue
 
 Sie sind Partner im Forschungsverbund EnergyMap Berlin, der den Wärmebedarf einzelner Gebäude prognostiziert. Nicht abgedeckt ist dort die Frage danach: was die einzelne Wohnung tut. Grundriss zeichnen, Baualtersklasse wählen, sehen, was ein gekipptes Fenster im Berliner Zimmer kostet und wo es an der Außenwand schimmelkritisch kalt wird. Kein Konkurrenzprodukt, sondern die Innenperspektive zu Ihren Gebäudedaten. Ihr Draht zu Bürger:innen, etwa über den HeizCheck, ist genau die Stelle, an der so etwas landen würde.
 
-Eine Seite mit Skizze, erstem Ticket und der Stelle, an der es schiefgeht, nämlich Scheingenauigkeit bei fünfstelligen Sanierungsentscheidungen:
+Ein kurzes Dokument mit Skizze, erstem Ticket, den Werkzeugen, die es in der Nähe schon gibt, und der Stelle, an der es schiefgeht, nämlich Scheingenauigkeit bei fünfstelligen Sanierungsentscheidungen:
 https://github.com/felixinberlin/Amelie/blob/main/05-dosen/altbau-thermal.md
 
 Parallel geht dieselbe Idee an die Projektkoordination des Verbunds an der UdK Berlin. Ich sage das offen, damit Sie nicht zweimal davon überrascht werden.
