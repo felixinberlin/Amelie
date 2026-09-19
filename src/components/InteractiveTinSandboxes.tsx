@@ -811,7 +811,7 @@ Sincerely,
             <div className="flex items-center justify-between pb-3 border-b border-stone-100">
               <h3 className="font-serif-title font-bold text-stone-900 text-lg flex items-center gap-2">
                 <Thermometer className="w-5 h-5 text-amber-700" />
-                <span>{lang === 'de' ? 'Wohnungsebene: Berliner Zimmer (DIN 4108)' : 'Apartment Room Heat Loss & Dew Point'}</span>
+                <span>{tr3('Wohnungsebene: Berliner Zimmer (DIN 4108)', 'Apartment Room Heat Loss & Dew Point', 'Habitación de vivienda: pérdida de calor y punto de rocío')}</span>
               </h3>
               <span className="text-xs font-mono-code bg-amber-50 text-amber-800 px-2 py-0.5 rounded border border-amber-200">
                 Tin #1
@@ -821,7 +821,7 @@ Sincerely,
             {/* Wall Construction */}
             <div>
               <label className="block text-xs font-bold uppercase tracking-wider font-mono-code text-stone-600 mb-1.5">
-                {lang === 'de' ? 'Außenwand-Aufbau:' : 'Exterior Wall Construction:'}
+                {tr3('Außenwand-Aufbau:', 'Exterior Wall Construction:', 'Construcción del muro exterior:')}
               </label>
               <div className="grid grid-cols-3 gap-2 text-xs">
                 <button
@@ -832,8 +832,8 @@ Sincerely,
                       : 'border-stone-200 hover:bg-stone-50 text-stone-700'
                   }`}
                 >
-                  <span className="block font-semibold">Altbau Ziegel</span>
-                  <span className="text-[11px] text-stone-500">38cm ungedämmt (U=1.7)</span>
+                  <span className="block font-semibold">{tr3('Altbau Ziegel', 'Old-building brick', 'Ladrillo de edificio antiguo')}</span>
+                  <span className="text-[11px] text-stone-500">{tr3('38cm ungedämmt (U=1.7)', '38cm uninsulated (U=1.7)', '38cm sin aislar (U=1,7)')}</span>
                 </button>
                 <button
                   onClick={() => setWallType('brick_renovated')}
@@ -843,8 +843,8 @@ Sincerely,
                       : 'border-stone-200 hover:bg-stone-50 text-stone-700'
                   }`}
                 >
-                  <span className="block font-semibold">Saniert + WDVS</span>
-                  <span className="text-[11px] text-stone-500">14cm Dämmung (U=0.24)</span>
+                  <span className="block font-semibold">{tr3('Saniert + WDVS', 'Renovated + ETICS', 'Rehabilitado + SATE')}</span>
+                  <span className="text-[11px] text-stone-500">{tr3('14cm Dämmung (U=0.24)', '14cm insulation (U=0.24)', '14cm de aislamiento (U=0,24)')}</span>
                 </button>
                 <button
                   onClick={() => setWallType('solid_concrete')}
@@ -854,8 +854,8 @@ Sincerely,
                       : 'border-stone-200 hover:bg-stone-50 text-stone-700'
                   }`}
                 >
-                  <span className="block font-semibold">Beton unsaniert</span>
-                  <span className="text-[11px] text-stone-500">Kältebrücke (U=2.1)</span>
+                  <span className="block font-semibold">{tr3('Beton unsaniert', 'Concrete, unrenovated', 'Hormigón sin rehabilitar')}</span>
+                  <span className="text-[11px] text-stone-500">{tr3('Kältebrücke (U=2.1)', 'thermal bridge (U=2.1)', 'puente térmico (U=2,1)')}</span>
                 </button>
               </div>
             </div>
@@ -863,7 +863,7 @@ Sincerely,
             {/* Window Type */}
             <div>
               <label className="block text-xs font-bold uppercase tracking-wider font-mono-code text-stone-600 mb-1.5">
-                {lang === 'de' ? 'Fenster-Verglasung:' : 'Window Glazing:'}
+                {tr3('Fenster-Verglasung:', 'Window Glazing:', 'Acristalamiento de la ventana:')}
               </label>
               <div className="grid grid-cols-3 gap-2 text-xs">
                 <button
@@ -874,7 +874,7 @@ Sincerely,
                       : 'border-stone-200 hover:bg-stone-50 text-stone-700'
                   }`}
                 >
-                  Einfachglas (U=5.0)
+                  {tr3('Einfachglas (U=5.0)', 'Single glazing (U=5.0)', 'Vidrio simple (U=5,0)')}
                 </button>
                 <button
                   onClick={() => setWindowGlazing('double_old')}
@@ -884,7 +884,7 @@ Sincerely,
                       : 'border-stone-200 hover:bg-stone-50 text-stone-700'
                   }`}
                 >
-                  Doppelglas alt (U=2.8)
+                  {tr3('Doppelglas alt (U=2.8)', 'Old double glazing (U=2.8)', 'Doble acristalamiento antiguo (U=2,8)')}
                 </button>
                 <button
                   onClick={() => setWindowGlazing('triple_modern')}
@@ -894,7 +894,7 @@ Sincerely,
                       : 'border-stone-200 hover:bg-stone-50 text-stone-700'
                   }`}
                 >
-                  Dreifachglas (U=0.8)
+                  {tr3('Dreifachglas (U=0.8)', 'Triple glazing (U=0.8)', 'Triple acristalamiento (U=0,8)')}
                 </button>
               </div>
             </div>
@@ -919,10 +919,10 @@ Sincerely,
             <div className="p-3.5 rounded-xl bg-stone-50 border border-stone-200 flex items-center justify-between">
               <div>
                 <span className="text-xs font-bold text-stone-900 block">
-                  {lang === 'de' ? 'Dauergekipptes Fenster im Berliner Zimmer?' : 'Window Tilted Continuously?'}
+                  {tr3('Dauergekipptes Fenster im Berliner Zimmer?', 'Window Tilted Continuously?', '¿Ventana abatible abierta de forma permanente?')}
                 </span>
                 <span className="text-[11px] text-stone-500">
-                  {lang === 'de' ? 'Erhöht Luftwechselrate von 0.5/h auf 3.0/h' : 'Increases air change rate to 3.0/h'}
+                  {tr3('Erhöht Luftwechselrate von 0.5/h auf 3.0/h', 'Increases air change rate from 0.5/h to 3.0/h', 'Aumenta la renovación de aire de 0,5/h a 3,0/h')}
                 </span>
               </div>
               <button
@@ -933,7 +933,7 @@ Sincerely,
                     : 'bg-stone-200 text-stone-700 hover:bg-stone-300'
                 }`}
               >
-                {windowTilted ? (lang === 'de' ? 'Aktiv (Gekippt)' : 'Tilted') : (lang === 'de' ? 'Geschlossen' : 'Closed')}
+                {windowTilted ? tr3('Aktiv (Gekippt)', 'Tilted', 'Abatible abierta') : tr3('Geschlossen', 'Closed', 'Cerrada')}
               </button>
             </div>
 
@@ -1153,7 +1153,7 @@ Sincerely,
 
               {/* Link into Tin Brief */}
               <div className="mt-5 pt-4 border-t border-stone-800 flex items-center justify-between text-xs text-stone-400">
-                <span>{lang === 'de' ? 'Dose: Altbau Thermal' : 'Tin: Altbau Thermal'}</span>
+                <span>{tr3('Dose: Altbau Thermal', 'Tin: Altbau Thermal', 'Lata: Altbau Thermal')}</span>
                 <span className="text-amber-400 font-mono-code">Status: gepackt → UdK Berlin</span>
               </div>
             </div>
@@ -1161,12 +1161,14 @@ Sincerely,
             <div className="p-4 rounded-xl bg-amber-50/70 border border-amber-200/80 text-xs text-amber-950 space-y-1.5">
               <div className="font-bold flex items-center gap-1.5 text-amber-900">
                 <Info className="w-4 h-4" />
-                <span>{lang === 'de' ? 'Die Amélie-Erkenntnis aus der Recherche:' : 'The Amélie Insight:'}</span>
+                <span>{tr3('Was dieses Modell zeigt, und was nicht:', 'What this model shows, and what it does not:', 'Qué muestra este modelo y qué no:')}</span>
               </div>
               <p className="text-amber-900/90 leading-relaxed text-[11px]">
-                {lang === 'de'
-                  ? 'EnergyMap Berlin rechnet seit Mai 2025 das gesamte Gebäude von außen. Die Lücke ist genau diese Wohnungsebene: Der Grundriss des Berliner Zimmers entscheidet, ob gekipptes Lüften die Ecke einfriert.'
-                  : 'EnergyMap Berlin models whole buildings from exterior data. The true open gap is the apartment room level: how the internal layout dictates corner condensation.'}
+                {tr3(
+                  'EnergyMap Berlin prognostiziert seit Mai 2025 den Wärmebedarf einzelner Gebäude. Offen bleibt die Wohnungsebene. Dieses Modell zeigt nur einen Raum im stationären Zustand: wie Wand, Fenster und Luftwechsel Heizleistung und Ecktemperatur als Band verschieben. Ob gekipptes Lüften die Ecke auskühlt und wie stark der Grundriss (Möblierung, Heizkörperplatz, Nachbarräume) sie zusätzlich beeinflusst, zeigt es nicht. Das ist eine Hypothese für das vollständige Werkzeug mit instationärer 2D-Simulation.',
+                  'Since May 2025, EnergyMap Berlin has forecast the heat demand of individual buildings. The apartment level remains open. This model shows only one room in steady state: how wall, window and air change shift heating power and corner temperature as a band. It does not show whether a tilted window cools the corner, or how much the floor plan (furniture, radiator position, neighbouring rooms) additionally affects it. That is a hypothesis for the full tool with transient 2D simulation.',
+                  'Desde mayo de 2025, EnergyMap Berlin pronostica la demanda de calor de edificios individuales. El nivel de la vivienda sigue abierto. Este modelo muestra solo una habitación en régimen estacionario: cómo el muro, la ventana y la renovación de aire desplazan la potencia de calefacción y la temperatura de la esquina como un rango. No muestra si una ventana abatible abierta enfría la esquina, ni cuánto influye además la planta (mobiliario, posición del radiador, habitaciones vecinas). Es una hipótesis para la herramienta completa con simulación 2D transitoria.',
+                )}
               </p>
             </div>
           </div>
