@@ -1,0 +1,19 @@
+# Mail 1c — Altbau Thermal → Verbraucherzentrale Berlin (Energieberatung)
+
+**Status: NICHT SENDEBEREIT. Empfängerfit ungeklärt, Text bewusst nicht ausformuliert.**
+Kein Gmail-Draft (Gmail-MCP blockiert), nicht gesendet.
+
+## Warum zurückgestellt (19.9.2026)
+
+- Die Matrix und die Dose nennen den „kostenfreien Gebäudecheck" der Verbraucherzentrale Berlin als Anschlussstelle. Laut tester-1 (Seite `verbraucherzentrale-berlin.de/gebaeudecheck`, Stand 15.7.2026, Titel „Kostenfreie Energieberatung zu Wärmedämmung") ist er nur für Berliner Eigentümer:innen von Ein- und Zweifamilienhäusern kostenfrei und findet als Vor-Ort-Termin statt. Researcher-2 kommt über Suchschnipsel zum selben Ergebnis („ZuHaus", Ein-/Zweifamilienhaus-Eigentümer). Die Zielgruppe der Dose, Mieter:innen und Wohnungseigentümer:innen im Altbau, wird von diesem Angebot nicht erfasst.
+- Ohne konkreten, belegten Bezug scheitert die Mail an der Checkliste (Vorlagen §7: „Ist der Bezug zum Empfänger konkret?"). Ein erfundener Bezug wäre schlimmer als keine Mail.
+- Ich habe die Seiten selbst nicht lesen können (WebFetch gesperrt); beide Aussagen sind Zweitquellen.
+
+## Was zu klären ist, bevor daraus eine Mail wird
+
+1. Gibt es bei der Verbraucherzentrale Berlin ein Beratungsangebot, das Mieter:innen oder Wohnungseigentümer:innen im Altbau erreicht (Energieberatung allgemein, Mietrecht/Schimmel)? Wenn ja: Angebot mit Quelle nennen und darauf Bezug nehmen.
+2. Wenn nein: Empfänger streichen. Die stärkeren Kandidaten aus der Recherche von researcher-2 liegen in `02-recherche/altbau-thermal-empfaenger-2026-09-19.md` (Worktree `ideenrunde-r4-res2`, nicht committet): TU Berlin Fachgebiet Bauphysik (Feuchte-/Glaser-Simulation, passt zum Schimmelkern), Berliner Mieterverein (Beratung, aber ohne Skelett keine Umsetzungskapazität).
+
+## Gerüst, falls Punkt 1 mit Ja beantwortet wird
+
+Kaltmail-Vorlage (`04-werkzeug/amelie-vorlagen.md`, Abschnitt 2), Einseiter-Link auf die Dose, Prototype-Fund-Hinweis nur mit dem korrigierten Wortlaut aus Mail 1 („Einzelpersonen und kleine Teams", Frist gegenlesen), Anrede neutral („Guten Tag"), keine Personennamen ohne Quelle.
