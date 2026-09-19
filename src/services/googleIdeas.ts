@@ -96,6 +96,15 @@ export async function fetchFileContent(fileId: string, mimeType?: string): Promi
     }
   }
 
+  // Google Sheets can't be downloaded with alt=media; export as CSV
+  if (mimeType === 'application/vnd.google-apps.spreadsheet') {
+    const exportUrl = `https://www.googleapis.com/drive/v3/files/${fileId}/export?mimeType=text/csv`;
+    const res = await fetch(exportUrl, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    return res.ok ? await res.text() : '';
+  }
+
   // Try downloading directly (text or markdown file)
   const downloadUrl = `https://www.googleapis.com/drive/v3/files/${fileId}?alt=media`;
   const res = await fetch(downloadUrl, {
