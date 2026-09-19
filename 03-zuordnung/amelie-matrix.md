@@ -355,6 +355,8 @@ Zu jeder Idee aus `ideas-neue-projekte.md`: wer davon profitiert, warum ausgerec
 | Wet Ink | 🔒 | Plan an Escape Motions u. a. | **gepackt**, behalten |
 | Crack Flora Watcher | 🎁 | #Krautschau / Senckenberg | **gepackt**, stark verengt (Seek deckt die Grundidee bereits) |
 | KlarLokal | 🎁 | Prototype Fund | **gepackt**, verengt (Zetteln existiert bereits, Zero-Cloud ist die Lücke) |
+| Wärmesignatur | 🎁 | co2online (HeizCheck), nachrangig EnergyMap-Verbund | **gefunden** — Dose `waermesignatur.md` liegt vor (verengt, aus der Bisoziations-Runde zu Altbau Thermal); Empfängerprüfung und Zustellplan fehlen, kein Mail-Entwurf. Kommt hinzu, ob co2online nach Mail 1b nicht doppelt angeschrieben wird |
+| Denkmal-Verlaufsblick | 🎁 | Deutsche Stiftung Denkmalschutz | **gefunden** — Dose `denkmal-verlaufsblick.md` liegt vor (verengt, Ideenrunde 4); Empfängerprüfung und Zustellplan fehlen, kein Mail-Entwurf |
 | ~~git-archaeologist~~ | ❌ | — | **entsorgt** — mehrfach gebaut |
 | ~~Home-Network MCP~~ | ❌ | — | **entsorgt** — ≥4 Fritzbox-MCPs |
 | ~~Repo-Museum~~ | ❌ | — | **entsorgt** — bereits gebaut |
