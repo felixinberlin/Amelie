@@ -338,9 +338,9 @@ Zu jeder Idee aus `ideas-neue-projekte.md`: wer davon profitiert, warum ausgerec
 
 | Idee | Verdikt | Empfänger #1 | Status |
 |---|---|---|---|
-| Altbau Thermal | 🎁 | EnergyMap-Verbund / UdK Berlin | **gepackt**, neu gezielt |
-| Sperrmüll-Radar | 🎁 | CityLAB Berlin | **gepackt** |
-| Kiez-Lärmkarte | 🎁 | Noise-Planet / NoiseCapture | **gepackt** |
+| Altbau Thermal | 🎁 | EnergyMap-Verbund / UdK Berlin | **gepackt**, neu gezielt — Mail-Entwurf als Datei (`mails-q4-2026/mail-1-…`), kein Gmail-Draft |
+| Sperrmüll-Radar | 🎁 | CityLAB Berlin | **gepackt** — Mail-Entwurf als Datei (`mail-2-citylab.md`), kein Gmail-Draft |
+| Kiez-Lärmkarte | 🎁 | Noise-Planet / NoiseCapture | **gepackt** — Mail-Entwurf als Datei (`mail-3-noisecapture.md`, EN; zusätzlich in Mail 2), kein Gmail-Draft |
 | Pin Tumbler | 🎁 | SSDeV Berlin | **gepackt**, verengt |
 | Diffgeist | 🎁 | Andrew Nesbitt (Ecosyste.ms) | **gepackt** |
 | Echter Zufall als Service | 🔨 | infnoise / leetronics | **gepackt** |
