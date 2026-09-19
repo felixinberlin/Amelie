@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Sparkles, Sliders, Sun, Thermometer, ShieldAlert, CheckCircle2, AlertTriangle, Info, Play, RefreshCw, Layers, Droplets, CloudRain, Zap, BatteryCharging, Gauge, ArrowRight, Copy, Check, FileText, Lock, Clock, Calendar, CheckSquare, ShieldCheck } from 'lucide-react';
 import { Language } from '../types';
+import { computeAltbau, effectiveWindowWidth } from '../services/altbauThermal';
 
 interface InteractiveTinSandboxesProps {
   lang: Language;
@@ -22,15 +23,16 @@ export const InteractiveTinSandboxes: React.FC<InteractiveTinSandboxesProps> = (
   const [roomTemp, setRoomTemp] = useState<number>(20);
   const [windowTilted, setWindowTilted] = useState<boolean>(false);
   const [roomArea, setRoomArea] = useState<number>(22); // m² (Berliner Zimmer)
+  const [roomWidth, setRoomWidth] = useState<number>(5.0); // m, Länge der Außenwand
+  const [windowWidth, setWindowWidth] = useState<number>(2.4); // m, Höhe fest 1.9 m
+  const [relHumidity, setRelHumidity] = useState<number>(50); // % rel. Raumluftfeuchte
 
-  // Wall U-values (W/m²K)
+  // Rough rule-of-thumb U-values (W/m²K), unchecked. Verify against TABULA / DIN 4108-4 before real use.
   const wallUValues = {
     brick_uninsulated: 1.7, // 38cm Vollziegel ungedämmt
     brick_renovated: 0.24,  // 38cm Ziegel + 14cm WDVS
     solid_concrete: 2.1,    // Betonwand unsaniert
   };
-
-  // Window U-values (W/m²K)
   const windowUValues = {
     single: 5.0,
     double_old: 2.8,
@@ -39,25 +41,47 @@ export const InteractiveTinSandboxes: React.FC<InteractiveTinSandboxesProps> = (
 
   const wallU = wallUValues[wallType];
   const windowU = windowUValues[windowGlazing];
-  const deltaT = roomTemp - outsideTemp;
-  const wallArea = 18; // approx exterior wall area in m²
-  const windowArea = 4.5; // window area in m²
-
-  // Infiltration ventilation rate: normal 0.5/h, tilted window adds 2.5/h
+  // Infiltration ventilation rate: normal 0.5/h, tilted window 3.0/h
   const airChangeRate = windowTilted ? 3.0 : 0.5;
-  const roomVolume = roomArea * 3.4; // 3.4m ceiling height in Berlin Altbau
-  const ventilationLossW = 0.34 * roomVolume * airChangeRate * deltaT;
 
-  const transmissionLossW = (wallU * wallArea + windowU * windowArea) * deltaT;
-  const totalHeatLossW = transmissionLossW + ventilationLossW;
-  const specificHeatLossWPerM2 = totalHeatLossW / roomArea;
-
-  // Interior surface temperature at cold thermal bridge corner (DIN 4108-2)
-  // Rsi = 0.13, R_wall = 1 / wallU
-  const rWall = 1 / wallU;
-  const cornerSurfaceTemp = Number((roomTemp - (0.25 / (rWall + 0.13)) * deltaT).toFixed(1));
-  const dewPoint = 12.6; // approx at 20°C and 50% rel humidity
-  const moldRisk = cornerSurfaceTemp <= 12.6;
+  // Steady-state balance, everything as a band (see src/services/altbauThermal.ts)
+  const altbau = computeAltbau({
+    roomWidth, roomArea, windowWidth, wallU, windowU,
+    airChange: airChangeRate, roomTemp, outsideTemp, relHumidity,
+  });
+  const tr3 = (de: string, en: string, es: string) => (lang === 'de' ? de : lang === 'es' ? es : en);
+  const numLocale = lang === 'de' ? 'de-DE' : lang === 'es' ? 'es-ES' : 'en-GB';
+  const nf = (x: number, d = 1) => x.toLocaleString(numLocale, { minimumFractionDigits: d, maximumFractionDigits: d });
+  const round10 = (x: number) => Math.round(x / 10) * 10;
+  const heatAxisMax = Math.max(1000, Math.ceil((altbau.heatHigh * 1.15) / 500) * 500);
+  const tempAxisMin = Math.floor(Math.min(outsideTemp, altbau.cornerLow, altbau.dewPoint) - 1);
+  const tempAxisMax = Math.ceil(roomTemp + 0.5);
+  const tempPos = (t: number) => `${(100 * (t - tempAxisMin)) / (tempAxisMax - tempAxisMin)}%`;
+  const partTotal = altbau.hWall + altbau.hWindow + altbau.hVent;
+  const effWindowWidth = effectiveWindowWidth(roomWidth, windowWidth);
+  const altbauSlider = (
+    id: string, label: string, valueText: string,
+    min: number, max: number, step: number, value: number,
+    onChange: (v: number) => void, hint?: string,
+  ) => (
+    <div>
+      <div className="flex justify-between items-center text-xs font-medium text-stone-700 mb-1">
+        <label htmlFor={id}>{label}</label>
+        <span className="font-mono-code font-bold text-amber-900">{valueText}</span>
+      </div>
+      <input
+        id={id}
+        type="range"
+        min={min}
+        max={max}
+        step={step}
+        value={value}
+        onChange={(e) => onChange(Number(e.target.value))}
+        className="w-full accent-amber-800 cursor-pointer"
+      />
+      {hint && <div className="text-[10px] text-stone-400 font-mono-code mt-0.5">{hint}</div>}
+    </div>
+  );
 
   // -------------------------------------------------------------
   // SIMULATOR 2: Glasanflug-Ampel (LAG-VSW Standard)
@@ -770,6 +794,18 @@ Sincerely,
       {/* ------------------------------------------------------------------ */}
       {activeTab === 'altbau' && (
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          {/* Honest framing: sketch, not a certification tool */}
+          <div className="lg:col-span-12 p-3.5 rounded-xl border-2 border-amber-700 bg-amber-50/70 text-xs text-amber-950 flex items-start gap-2.5" role="note">
+            <Info className="w-4 h-4 text-amber-800 shrink-0 mt-0.5" />
+            <p className="leading-relaxed">
+              <strong>{tr3('Skizze, kein Nachweisinstrument.', 'Sketch, not a certification tool.', 'Boceto, no es un instrumento de certificación.')}</strong>{' '}
+              {tr3(
+                'Kein Energieausweis, keine normkonforme Berechnung: ein stationäres Rechenmodell mit offenen Annahmen. Es zeigt Größenordnungen und Unsicherheit, keine Gewissheit über Ihre Wohnung. Bei Schimmel oder einer Investitionsentscheidung: messen und beraten lassen.',
+                'No energy certificate, no standards-compliant calculation: a steady-state model with open assumptions. It shows orders of magnitude and uncertainty, not certainty about your flat. For mould or an investment decision: measure and get advice.',
+                'Sin certificado energético ni cálculo conforme a norma: un modelo estacionario con supuestos abiertos. Muestra órdenes de magnitud e incertidumbre, no certeza sobre su vivienda. Ante moho o una decisión de inversión: mida y pida asesoramiento.',
+              )}
+            </p>
+          </div>
           {/* Controls Panel */}
           <div className="lg:col-span-6 bg-white rounded-2xl border border-stone-200 p-6 shadow-xs space-y-5">
             <div className="flex items-center justify-between pb-3 border-b border-stone-100">
@@ -863,28 +899,22 @@ Sincerely,
               </div>
             </div>
 
-            {/* Outside Temperature Slider */}
-            <div>
-              <div className="flex justify-between items-center text-xs font-medium text-stone-700 mb-1">
-                <span>{lang === 'de' ? 'Außentemperatur Berlin:' : 'Outside Winter Temperature:'}</span>
-                <span className="font-mono-code font-bold text-amber-900">{outsideTemp} °C</span>
-              </div>
-              <input
-                type="range"
-                min="-12"
-                max="15"
-                step="1"
-                value={outsideTemp}
-                onChange={(e) => setOutsideTemp(Number(e.target.value))}
-                className="w-full accent-amber-800 cursor-pointer"
-              />
-              <div className="flex justify-between text-[10px] text-stone-400 font-mono-code mt-0.5">
-                <span>-12°C (Kältewelle)</span>
-                <span>0°C (Wintermittel)</span>
-                <span>+15°C (Frühling)</span>
-              </div>
-            </div>
-
+            {/* Outside / room temperature */}
+            {altbauSlider(
+              'altbau-outside',
+              tr3('Außentemperatur Berlin:', 'Outside Winter Temperature:', 'Temperatura exterior en invierno:'),
+              `${nf(outsideTemp, 0)} °C`, -14, 15, 1, outsideTemp, setOutsideTemp,
+              tr3(
+                '-14°C ≈ Auslegungsfall (ungeprüft) · 0°C ≈ Wintermittel · +15°C Frühling',
+                '-14°C ≈ design case (unchecked) · 0°C ≈ winter mean · +15°C spring',
+                '-14°C ≈ caso de diseño (sin verificar) · 0°C ≈ media invernal · +15°C primavera',
+              ),
+            )}
+            {altbauSlider(
+              'altbau-room',
+              tr3('Raumtemperatur:', 'Room Temperature:', 'Temperatura interior:'),
+              `${nf(roomTemp, 1)} °C`, 15, 24, 0.5, roomTemp, setRoomTemp,
+            )}
             {/* Window Tilt Toggle */}
             <div className="p-3.5 rounded-xl bg-stone-50 border border-stone-200 flex items-center justify-between">
               <div>
@@ -906,69 +936,220 @@ Sincerely,
                 {windowTilted ? (lang === 'de' ? 'Aktiv (Gekippt)' : 'Tilted') : (lang === 'de' ? 'Geschlossen' : 'Closed')}
               </button>
             </div>
+
+            {/* Room geometry & humidity: the areas are no longer fixed */}
+            <details className="rounded-xl border border-stone-200 p-3.5 text-xs">
+              <summary className="cursor-pointer font-bold text-stone-900">
+                {tr3('Raum & Luftfeuchte anpassen', 'Adjust room & humidity', 'Ajustar habitación y humedad')}
+              </summary>
+              <div className="mt-3 space-y-4">
+                {altbauSlider(
+                  'altbau-area',
+                  tr3('Raumfläche:', 'Room floor area:', 'Superficie de la habitación:'),
+                  `${nf(roomArea, 0)} m²`, 10, 50, 1, roomArea, setRoomArea,
+                )}
+                {altbauSlider(
+                  'altbau-width',
+                  tr3('Länge der Außenwand:', 'Length of exterior wall:', 'Longitud del muro exterior:'),
+                  `${nf(roomWidth, 1)} m`, 2.5, 8, 0.1, roomWidth, setRoomWidth,
+                )}
+                {altbauSlider(
+                  'altbau-window',
+                  tr3('Fensterbreite (Höhe fest 1,9 m):', 'Window width (height fixed 1.9 m):', 'Ancho de ventana (altura fija 1,9 m):'),
+                  `${nf(effWindowWidth, 1)} m`, 0.6, 4, 0.1, windowWidth, setWindowWidth,
+                )}
+                {altbauSlider(
+                  'altbau-rh',
+                  tr3('Relative Raumluftfeuchte:', 'Room relative humidity:', 'Humedad relativa interior:'),
+                  `${relHumidity} %`, 30, 70, 1, relHumidity, setRelHumidity,
+                )}
+                <p className="text-[11px] text-stone-500">
+                  {tr3(
+                    'U-Werte der Voreinstellungen sind grobe Richtwerte, ungeprüft. Vor jeder Nutzung gegen TABULA / DIN 4108-4 prüfen.',
+                    'Preset U-values are rough rules of thumb, unchecked. Verify against TABULA / DIN 4108-4 before any use.',
+                    'Los valores U de los ajustes son cifras orientativas sin verificar. Compruébelos con TABULA / DIN 4108-4 antes de usarlos.',
+                  )}
+                </p>
+              </div>
+            </details>
           </div>
 
           {/* Results & Visualizer */}
           <div className="lg:col-span-6 space-y-4">
             <div className="bg-stone-900 text-white rounded-2xl p-6 shadow-md border border-stone-800">
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center justify-between mb-4 gap-2">
                 <span className="text-xs font-mono-code uppercase tracking-wider text-stone-400">
-                  {lang === 'de' ? 'Echtzeit-Wärmebilanz (Wohnungsebene)' : 'Real-time Heat Balance (Room Level)'}
+                  {tr3('Wärmebilanz als Band (stationär, Raumebene)', 'Heat balance as a band (steady state, room level)', 'Balance térmico como rango (estacionario, nivel habitación)')}
                 </span>
-                <span className="text-xs font-mono-code bg-stone-800 px-2.5 py-0.5 rounded text-amber-300 border border-stone-700">
-                  DIN 4108 & energymap4py
+                <span className="text-xs font-mono-code bg-stone-800 px-2.5 py-0.5 rounded text-amber-300 border border-stone-700 shrink-0">
+                  {tr3('Skizze · Annahmen offen', 'Sketch · assumptions open', 'Boceto · supuestos abiertos')}
                 </span>
               </div>
 
-              <div className="grid grid-cols-2 gap-4 mb-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+                {/* Heating power band */}
                 <div className="p-4 rounded-xl bg-stone-800/80 border border-stone-700/60">
                   <span className="text-xs text-stone-400 block mb-1">
-                    {lang === 'de' ? 'Heizlast Raum' : 'Room Heat Loss'}
+                    {tr3('Erforderliche Heizleistung', 'Required heating power', 'Potencia de calefacción necesaria')}
                   </span>
                   <div className="text-2xl font-bold font-mono-code text-amber-400">
-                    {Math.round(totalHeatLossW)} <span className="text-sm text-stone-300 font-sans">Watt</span>
+                    ≈ {nf(round10(altbau.heatLow), 0)}–{nf(round10(altbau.heatHigh), 0)} <span className="text-sm text-stone-300 font-sans">W</span>
                   </div>
                   <span className="text-[11px] text-stone-400 mt-1 block">
-                    {specificHeatLossWPerM2.toFixed(0)} W/m² Wohnfläche
+                    ≈ {nf(altbau.heatLow / roomArea, 0)}–{nf(altbau.heatHigh / roomArea, 0)} W/m²
                   </span>
+                  <div className="relative h-4 mt-3 rounded bg-stone-700/60" aria-hidden="true">
+                    <div
+                      className="absolute top-0.5 bottom-0.5 rounded bg-amber-500/80"
+                      style={{
+                        left: `${(100 * altbau.heatLow) / heatAxisMax}%`,
+                        width: `${(100 * (altbau.heatHigh - altbau.heatLow)) / heatAxisMax}%`,
+                      }}
+                    />
+                  </div>
+                  <div className="flex justify-between text-[10px] text-stone-500 font-mono-code mt-0.5" aria-hidden="true">
+                    <span>0</span>
+                    <span>{nf(heatAxisMax, 0)} W</span>
+                  </div>
+                  <div className="flex h-2.5 mt-3 rounded overflow-hidden" aria-hidden="true">
+                    <div className="bg-stone-400" style={{ width: `${(100 * altbau.hWall) / partTotal}%` }} />
+                    <div className="bg-sky-400" style={{ width: `${(100 * altbau.hWindow) / partTotal}%` }} />
+                    <div className="bg-amber-400" style={{ width: `${(100 * altbau.hVent) / partTotal}%` }} />
+                  </div>
+                  <div className="text-[10px] text-stone-400 mt-1 flex flex-wrap gap-x-3">
+                    <span>{tr3('Wand', 'Wall', 'Muro')} {nf((100 * altbau.hWall) / partTotal, 0)} %</span>
+                    <span>{tr3('Fenster', 'Window', 'Ventana')} {nf((100 * altbau.hWindow) / partTotal, 0)} %</span>
+                    <span>{tr3('Lüftung', 'Ventilation', 'Ventilación')} {nf((100 * altbau.hVent) / partTotal, 0)} %</span>
+                  </div>
                 </div>
 
+                {/* Corner surface temperature band */}
                 <div className="p-4 rounded-xl bg-stone-800/80 border border-stone-700/60">
                   <span className="text-xs text-stone-400 block mb-1">
-                    {lang === 'de' ? 'Ecken-Oberflächentemp.' : 'Corner Surface Temp.'}
+                    {tr3('Oberflächentemperatur, kalte Ecke', 'Surface temperature, cold corner', 'Temperatura superficial, esquina fría')}
                   </span>
-                  <div className={`text-2xl font-bold font-mono-code ${moldRisk ? 'text-rose-400' : 'text-emerald-400'}`}>
-                    {cornerSurfaceTemp} <span className="text-sm text-stone-300 font-sans">°C</span>
+                  <div className={`text-2xl font-bold font-mono-code ${altbau.verdict === 'below' ? 'text-rose-400' : altbau.verdict === 'above' ? 'text-emerald-400' : 'text-amber-400'}`}>
+                    ≈ {nf(altbau.cornerLow, 1)}–{nf(altbau.cornerHigh, 1)} <span className="text-sm text-stone-300 font-sans">°C</span>
                   </div>
                   <span className="text-[11px] text-stone-400 mt-1 block">
-                    {lang === 'de' ? 'Taupunkt: 12.6 °C' : 'Dew point: 12.6 °C'}
+                    {tr3('Taupunkt', 'Dew point', 'Punto de rocío')}: {nf(altbau.dewPoint, 1)} °C · {tr3('Schimmel-Schwelle (80 % Oberflächenfeuchte)', 'mould threshold (80 % surface humidity)', 'umbral de moho (80 % humedad superficial)')}: {nf(altbau.moldThreshold, 1)} °C
                   </span>
+                  <div className="relative h-4 mt-3 rounded bg-stone-700/60" aria-hidden="true">
+                    <div
+                      className="absolute top-0.5 bottom-0.5 rounded bg-amber-500/80"
+                      style={{
+                        left: tempPos(altbau.cornerLow),
+                        width: `${(100 * (altbau.cornerHigh - altbau.cornerLow)) / (tempAxisMax - tempAxisMin)}%`,
+                      }}
+                    />
+                    <div className="absolute -top-1 -bottom-1 border-l-2 border-dashed border-amber-200" style={{ left: tempPos(altbau.dewPoint) }} />
+                    <div className="absolute -top-1 -bottom-1 border-l-2 border-dashed border-rose-400" style={{ left: tempPos(altbau.moldThreshold) }} />
+                  </div>
+                  <div className="flex justify-between text-[10px] text-stone-500 font-mono-code mt-0.5" aria-hidden="true">
+                    <span>{tempAxisMin} °C</span>
+                    <span>{tempAxisMax} °C</span>
+                  </div>
+                  <div className="text-[10px] text-stone-400 mt-1">
+                    <span className="text-amber-200">┆</span> {tr3('Taupunkt', 'dew point', 'rocío')} <span className="text-rose-400 ml-2">┆</span> {tr3('Schimmel-Schwelle', 'mould threshold', 'umbral de moho')}
+                  </div>
                 </div>
               </div>
 
-              {/* Mold Alert Banner */}
-              {moldRisk ? (
-                <div className="p-3 rounded-xl bg-rose-950/70 border border-rose-800/80 text-rose-200 text-xs flex items-start gap-2.5">
-                  <AlertTriangle className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
-                  <div>
-                    <span className="font-bold block">
-                      {lang === 'de' ? 'Schimmel-Gefahr: Taupunkt unterschritten!' : 'Critical Mold Hazard: Below Dew Point!'}
-                    </span>
-                    <span className="text-[11px] text-rose-300/90 leading-relaxed block mt-0.5">
-                      {lang === 'de'
-                        ? 'An der ungedämmten Außenecke kondensiert Raumfeuchte. Hier hilft kein Lüften allein, sondern Dämmung der Kältebrücke.'
-                        : 'Interior air humidity condenses at the thermal bridge. Tilted window worsens wall cooling.'}
+              {/* Verdict: three honest states, never a single number */}
+              <div role="status" aria-live="polite">
+                {altbau.verdict === 'above' && (
+                  <div className="p-3 rounded-xl bg-emerald-950/70 border border-emerald-800/80 text-emerald-200 text-xs flex items-start gap-2.5">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                    <span>
+                      {tr3(
+                        'Das Band liegt vollständig über der Schimmel-Schwelle. Unter diesen Annahmen ist Schimmel an der Ecke unwahrscheinlich, das ist keine Garantie.',
+                        'The band lies entirely above the mould threshold. Under these assumptions mould in the corner is unlikely, which is not a guarantee.',
+                        'El rango queda por completo por encima del umbral de moho. Con estos supuestos el moho en la esquina es improbable, lo que no es una garantía.',
+                      )}
                     </span>
                   </div>
-                </div>
-              ) : (
-                <div className="p-3 rounded-xl bg-emerald-950/70 border border-emerald-800/80 text-emerald-200 text-xs flex items-center gap-2.5">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>
-                    {lang === 'de' ? 'Unkritisch: Oberflächentemperatur sicher über dem Schimmelgrenzwert.' : 'Safe: Surface temperature safely above dew point.'}
-                  </span>
-                </div>
-              )}
+                )}
+                {altbau.verdict === 'overlap' && (
+                  <div className="p-3 rounded-xl bg-amber-950/70 border border-amber-700/80 text-amber-100 text-xs flex items-start gap-2.5">
+                    <Info className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                    <div>
+                      <span className="font-bold block">
+                        {tr3('Nicht entscheidbar aus diesen Eingaben.', 'Not decidable from these inputs.', 'No se puede decidir con estos datos.')}
+                      </span>
+                      <span className="text-[11px] text-amber-200/90 leading-relaxed block mt-0.5">
+                        {tr3(
+                          'Das Band überschneidet die Schimmel-Schwelle. Hier hilft nur Messen (Oberflächenthermometer, Feuchtelogger), nicht ein genauer aussehendes Modell.',
+                          'The band overlaps the mould threshold. Only measuring helps here (surface thermometer, humidity logger), not a more precise-looking model.',
+                          'El rango se solapa con el umbral de moho. Aquí solo ayuda medir (termómetro de superficie, registrador de humedad), no un modelo de aspecto más preciso.',
+                        )}
+                      </span>
+                    </div>
+                  </div>
+                )}
+                {altbau.verdict === 'below' && (
+                  <div className="p-3 rounded-xl bg-rose-950/70 border border-rose-800/80 text-rose-200 text-xs flex items-start gap-2.5">
+                    <AlertTriangle className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
+                    <div>
+                      <span className="font-bold block">
+                        {tr3('Das Band liegt vollständig unter der Schimmel-Schwelle.', 'The band lies entirely below the mould threshold.', 'El rango queda por completo por debajo del umbral de moho.')}
+                      </span>
+                      <span className="text-[11px] text-rose-300/90 leading-relaxed block mt-0.5">
+                        {tr3(
+                          'Unter diesen Annahmen ist die Ecke kritisch. Das ist ein Hinweis, kein Beweis: Bauzustand und Möblierung sind unbekannt.',
+                          'Under these assumptions the corner is critical. This is a hint, not proof: construction and furniture are unknown.',
+                          'Con estos supuestos la esquina es crítica. Es un indicio, no una prueba: se desconocen la construcción y el mobiliario.',
+                        )}
+                      </span>
+                    </div>
+                  </div>
+                )}
+                {altbau.dewInBand && (
+                  <p className="text-[11px] text-amber-200 mt-2">
+                    {tr3('Achtung: Der Taupunkt liegt im Band, Kondensat ist möglich.', 'Note: the dew point lies inside the band, condensation is possible.', 'Atención: el punto de rocío está dentro del rango, es posible la condensación.')}
+                  </p>
+                )}
+                <p className="text-[10px] text-stone-500 mt-2">
+                  {tr3(
+                    'Keine Aussage über Schuld oder Lüftungsverhalten. Das Modell zeigt nur, was bei diesen Annahmen physikalisch plausibel ist.',
+                    'No statement about blame or ventilation behaviour. The model only shows what is physically plausible under these assumptions.',
+                    'Sin afirmaciones sobre culpa ni hábitos de ventilación. El modelo solo muestra lo físicamente plausible con estos supuestos.',
+                  )}
+                </p>
+              </div>
+
+              {/* Hand calculation: the core fits on a sheet of paper */}
+              <details className="mt-4 text-xs text-stone-300">
+                <summary className="cursor-pointer font-bold text-stone-200">
+                  {tr3('Nachrechnen (Rechenkern der Mittelannahme)', 'Check by hand (calculation core, mid assumption)', 'Comprobar a mano (núcleo de cálculo, supuesto medio)')}
+                </summary>
+                <table className="w-full mt-2 font-mono-code text-[11px]">
+                  <tbody>
+                    {[
+                      [tr3('Fensterfläche = b · 1,9 m', 'Window area = w · 1.9 m', 'Área de ventana = a · 1,9 m'), `${nf(effWindowWidth, 1)} · 1.9 = ${nf(altbau.windowArea, 2)} m²`],
+                      [tr3('Wandfläche = B · 3,4 m − Fenster', 'Wall area = W · 3.4 m − window', 'Área de muro = A · 3,4 m − ventana'), `${nf(roomWidth, 1)} · 3.4 − ${nf(altbau.windowArea, 2)} = ${nf(altbau.wallArea, 2)} m²`],
+                      [tr3('Volumen = Fläche · 3,4 m', 'Volume = area · 3.4 m', 'Volumen = área · 3,4 m'), `${nf(roomArea, 0)} · 3.4 = ${nf(altbau.volume, 1)} m³`],
+                      ['H_T,' + tr3('Wand', 'wall', 'muro') + ' = U · A', `${nf(wallU, 2)} · ${nf(altbau.wallArea, 2)} = ${nf(altbau.hWall, 1)} W/K`],
+                      ['H_T,' + tr3('Fenster', 'window', 'ventana') + ' = U · A', `${nf(windowU, 1)} · ${nf(altbau.windowArea, 2)} = ${nf(altbau.hWindow, 1)} W/K`],
+                      ['H_V = 0,34 · n · V', `0.34 · ${nf(airChangeRate, 1)} · ${nf(altbau.volume, 1)} = ${nf(altbau.hVent, 1)} W/K`],
+                      ['ΔT = θi − θe', `${nf(roomTemp, 0)} − ${nf(outsideTemp, 0)} = ${nf(altbau.deltaT, 0)} K`],
+                      ['Φ = (H_T,W + H_T,F + H_V) · ΔT', `${nf(altbau.heatMid, 0)} W`],
+                      ['θsi = θi − U_W · Rsi · ΔT  (Rsi = 0,25)', `${nf(altbau.cornerMid, 1)} °C`],
+                    ].map(([k, v]) => (
+                      <tr key={k} className="border-b border-stone-800 align-top">
+                        <td className="py-1 pr-2">{k}</td>
+                        <td className="py-1 text-right whitespace-nowrap">{v}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+                <p className="text-[10px] text-stone-500 mt-2 leading-relaxed">
+                  {tr3(
+                    'Band = unsichere Eingaben: U-Werte ×0,8…×1,25 (Bauzustand unbekannt), Luftwechsel ×0,6…×1,6 (Nutzung), Rsi in der Ecke 0,25…0,35 m²K/W (0,25 = Wert für Ecken/hinter Möbeln nach DIN 4108-2, 0,35 = Annahme für zugestellt). Diese Bandbreiten sind Annahmen dieser Skizze, keine Normwerte. Innenwände, Boden, Decke grenzen an beheizte Räume; keine solaren oder inneren Gewinne; keine Wärmebrücken über die Ecke hinaus.',
+                    'Band = uncertain inputs: U-values ×0.8…×1.25 (unknown construction), air change ×0.6…×1.6 (usage), corner Rsi 0.25…0.35 m²K/W (0.25 = DIN 4108-2 value for corners / behind furniture, 0.35 = assumption for blocked). These ranges are assumptions of this sketch, not standard values. Interior walls, floor, ceiling border heated rooms; no solar or internal gains; no thermal bridges beyond the corner.',
+                    'Rango = entradas inciertas: valores U ×0,8…×1,25 (construcción desconocida), renovación de aire ×0,6…×1,6 (uso), Rsi en la esquina 0,25…0,35 m²K/W (0,25 = valor DIN 4108-2 para esquinas / detrás de muebles, 0,35 = supuesto de esquina tapada). Estos rangos son supuestos de este boceto, no valores normativos. Paredes interiores, suelo y techo lindan con estancias calefactadas; sin ganancias solares ni internas; sin puentes térmicos más allá de la esquina.',
+                  )}
+                </p>
+              </details>
 
               {/* Link into Tin Brief */}
               <div className="mt-5 pt-4 border-t border-stone-800 flex items-center justify-between text-xs text-stone-400">
