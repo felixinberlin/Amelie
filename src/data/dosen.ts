@@ -4,46 +4,46 @@ export const DOSEN_DATA: DoseItem[] = [
   {
     id: 'altbau-thermal',
     title: 'Altbau Thermal',
-    oneLinerDe: 'Grundriss zeichnen, Baualtersklasse wählen, zusehen, was die eigene Wohnung thermisch tut — die Innenperspektive zu dem, was EnergyMap Berlin von außen für jedes Gebäude ausrechnet.',
-    oneLinerEn: 'Draw your floor plan, pick construction era, and watch what your apartment does thermally — the inside perspective to what EnergyMap Berlin calculates from outside.',
-    date: 'September 2026',
+    oneLinerDe: 'Grundriss zeichnen, Baualtersklasse wählen, sehen, was die eigene Wohnung thermisch tut — an der Ecke hinter dem Schrank, nicht im Mittel. Die Innenperspektive zu dem, was EnergyMap Berlin von außen für jedes Gebäude ausrechnet.',
+    oneLinerEn: 'Draw your floor plan, pick a construction-era class, and see what your apartment does thermally — at the corner behind the wardrobe, not on average. The inside view to what EnergyMap Berlin calculates from the outside.',
+    date: '19. September 2026',
     reviewAfter: 'September 2027',
-    recipientsDe: 'Forschungsverbund EnergyMap Berlin (Leitung UdK Berlin) · nachrangig: co2online gGmbH, Verbraucherzentrale Berlin',
-    recipientsEn: 'EnergyMap Berlin Research Consortium (Lead: UdK Berlin) · secondary: co2online, Berlin Consumer Center',
+    recipientsDe: 'Forschungsverbund EnergyMap Berlin (Leitung UdK Berlin, Fachgebiet VPT) · nachrangig: Verbraucherzentrale Berlin (Energieberatung)',
+    recipientsEn: 'EnergyMap Berlin research consortium (lead: UdK Berlin, VPT department) · secondary: Verbraucherzentrale Berlin (energy consulting)',
     domain: 'civic',
     verdict: 'gift',
     status: 'gepackt',
     tags: ['Berlin', 'Energie', 'Zivilgesellschaft', 'WebGL', 'Simulation'],
-    problemDe: 'Seit Mai 2025 berechnet EnergyMap Berlin den Wärmebedarf von außen für jedes Gebäude. Unbeantwortet bleibt: Was tut meine Wohnung? Schimmelstreit zwischen Mieter und Vermieter, 20.000€-Sanierungsentscheidungen ohne Vorher-Nachher für den eigenen Grundriss, und Beratungsstellen ohne mitnehmbare Visualisierung.',
-    problemEn: 'Since May 2025, EnergyMap Berlin predicts building heat demand from outside. Left unanswered: What does my specific flat do? Mold disputes between tenants and landlords, €20k retrofitting choices with no tailored preview, and energy advisors lacking an intuitive visual model.',
+    problemDe: 'Seit Mai 2025 prognostiziert EnergyMap Berlin den Wärmebedarf des Berliner Gebäudebestands. Offen bleibt: Was tut meine Wohnung? Der Schimmelstreit braucht eine Aussage, die beide Seiten prüfen können („diese Ecke bleibt unter 80 % Oberflächenfeuchte, solange die Raumluft unter X % relativer Feuchte bleibt"). Die 20.000-Euro-Entscheidung braucht einen Variantenvergleich für den eigenen Grundriss, und die Energieberatung braucht etwas, das Ratsuchende mitnehmen können.',
+    problemEn: 'Since May 2025, EnergyMap Berlin forecasts the heat demand of Berlin\'s building stock. What remains open: what does my apartment do? The mold dispute needs a statement both sides can check ("this corner stays below 80 % surface humidity as long as room air stays below X % relative humidity"). The €20,000 decision needs a variant comparison for one\'s own floor plan, and energy consulting needs something advice-seekers can take home.',
     whyNowDe: [
-      'Grundriss-Extraktion aus Foto oder PDF ist heute ein gelöstes Bildproblem.',
-      'Baualtersklassen-Parameter in Alltagssprache („Altbau, 1905, Berliner Zimmer") statt Fach-Formularen.',
-      'Instationäre 2D-Wärmeleitung im Browser läuft per WebGL2 in Echtzeit.',
-      'DWD-BBSR Testreferenzjahre liefern ortsgenaue Stundenwetterdaten.',
-      'EnergyMap-Web-App und energymap4py liefern seit 2025 offene Gebäudedaten zum Abfragen.'
+      'Grundriss aus Foto oder PDF gibt es als Produkt (RoomSketcher, FloorScan); Öffnungen werden schlechter erkannt als Wände, deshalb bestätigt der Mensch jeden Treffer.',
+      'Baualtersklassen-Parameter aus der IWU-Gebäudetypologie (TABULA); die Streuung innerhalb der Klasse ist das Band, das die Oberfläche zeigen muss.',
+      'Stationäre 2D-Wärmeleitung läuft mit JavaScript oder WASM im Browser; WebGL2 lohnt erst für die instationäre Echtzeit-Animation.',
+      'DWD/BBSR-Testreferenzjahre liefern ortsgenaue Stundenwetterdaten.',
+      'EnergyMap bietet CSV-Download und Energieatlas-Dienste, energymap4py ist auf GitHub veröffentlicht; abfragbare Attribute sind vorab zu prüfen.'
     ],
     whyNowEn: [
-      'Floor plan extraction from photo or PDF is now a solved computer vision problem.',
-      'Era-based parameters in natural language ("Altbau, 1905, Berlin room") instead of confusing U-value forms.',
-      'Transient 2D heat conduction runs in real time in browser via WebGL2.',
-      'Open DWD weather reference years provide hourly Berlin climate data.',
-      'Open EnergyMap API (energymap4py) enables querying building context programmatically.'
+      'Floor plan from photo or PDF exists as a product (RoomSketcher, FloorScan); openings are recognized worse than walls, so a human confirms every detection.',
+      'Construction-era parameters from the IWU building typology (TABULA); the spread within a class is the band the interface has to show.',
+      'Steady-state 2D heat conduction runs in the browser with JavaScript or WASM; WebGL2 pays off only for the transient real-time animation.',
+      'DWD/BBSR test reference years provide location-specific hourly weather data.',
+      'EnergyMap offers CSV download and Energy Atlas services, and energymap4py is published on GitHub; queryable attributes have to be checked first.'
     ],
-    sketchDe: 'Rastereditor für Wände, Fenster, Heizkörper. Adresseingabe lädt Gebäudekontext. 2D-Wärmeleitung + Luftwechsel (gekippt / Stoßlüften). Ausgabe als animiertes Temperaturfeld, Taupunkt-Ecken-Prüfung, und Verbrauch als Bandbreite (nie eine Scheinzahl). Direkter A/B-Vergleich zweier Dämm- oder Lüftungsvarianten.',
-    sketchEn: 'Grid editor for walls, windows, radiators. Address query auto-fills building specs. 2D transient thermal conduction + air ventilation. Output: animated heat map, dew-point mold corner hazard, consumption range (never a single fake number). Side-by-side A/B comparison.',
+    sketchDe: 'Rastereditor für Wände, Fenster, Heizkörper; Adresse lädt Gebäudekontext. Wärmeleitung in zwei Schnitten (horizontal für Ecken und Laibungen, vertikal für Decke, Brüstung, Heizkörpernische), Raumluft als durchmischter Knoten. Schimmelrisiko als 80-%-Oberflächenfeuchte (fRsi ≥ 0,70), nicht als Taupunkt; Ausgabe als Temperaturfeld, Feuchtegrenze der Ecke und Verbrauch als Band, nie als Einzelzahl. Direkter A/B-Vergleich zweier Varianten.',
+    sketchEn: 'Grid editor for walls, windows, radiators; address loads building context. Heat conduction in two sections (horizontal for corners and reveals, vertical for ceiling, parapet, radiator niche), room air as one well-mixed node. Mold risk as 80 % surface humidity (fRsi ≥ 0.70), not dew point; output as temperature field, the corner\'s humidity limit and consumption as a band, never a single number. Direct A/B comparison of two variants.',
     firstStepDe: {
-      ticket: 'Ein Raum, ein Fenster, ein Heizkörper, stationär.',
-      criteria: 'Rastereditor für einen Raum, 3 Regler (Wand-U, Fenster-U, Luftwechsel). Fertig, wenn U-Wert-Änderung die Heizlast sichtbar verändert und gegen Norm-Handrechnung auf 10% stimmt.'
+      ticket: 'Eine Außenecke, ein Fenster, ein Heizkörper, stationär.',
+      criteria: 'Rastereditor für einen Raum mit zwei Außenwänden, Regler für Wand-U, Fenster-U, Luftwechsel, Raumfeuchte. Fertig, wenn der 2D-Löser die Testfälle aus Anhang A der DIN EN ISO 10211 reproduziert und die Heizleistung eine Handrechnung nach DIN EN 12831 auf 10 % trifft.'
     },
     firstStepEn: {
-      ticket: 'One room, one window, one radiator, steady-state.',
-      criteria: 'Grid editor for one room, 3 sliders (wall U-value, window U-value, air change rate). Done when slider updates heat load and matches manual DIN norm calculation within 10%.'
+      ticket: 'One outer corner, one window, one radiator, steady-state.',
+      criteria: 'Grid editor for a room with two exterior walls, sliders for wall U, window U, air exchange, room humidity. Done when the 2D solver reproduces the test cases from Annex A of DIN EN ISO 10211 and the heating power matches a hand calculation per DIN EN 12831 within 10 %.'
     },
-    failureModeDe: 'Scheingenauigkeit: Eine Simulation, die hochpräzise aussieht, aber auf falschen Laien-Annahmen fußt, richtet bei 20.000€-Sanierungen echten Schaden an. Gegenmaßnahme: Immer Ergebnis-Bänder statt Punktschätzungen anzeigen, und Modellannahmen explizit machen.',
-    failureModeEn: 'False precision: A tool looking ultra-precise but based on unverified assumptions causes catastrophic damage in five-figure renovation disputes. Remedy: Always render confidence bands, never single figures, and highlight model assumptions.',
-    priorArtDe: 'EnergyMap Berlin (UdK/co2online) liefert Gebäudeebene von außen; BINE Informationsdienst / Ubakus bieten U-Wert-Rechner für Einzelbauteile, aber keine Wohnungs- und Schimmelschnitt-Didaktik.',
-    priorArtEn: 'EnergyMap Berlin operates at building level from outside; Ubakus provides single-wall U-value calculators but lacks room-level intuitive moisture and mold didactics.'
+    failureModeDe: 'Scheingenauigkeit: Eine Simulation, die präzise aussieht und falsch ist, richtet bei fünfstelligen Sanierungsentscheidungen und im Mietstreit echten Schaden an. Gegenmaßnahme: nie eine Einzelzahl und nie „unbedenklich" (ein 2D-Schnitt unterschätzt echte Raumecken, das Band ist einseitig optimistisch), Validierung gegen etablierte Verfahren, Nicht-Anspruch in der Oberfläche.',
+    failureModeEn: 'False precision: a simulation that looks precise and is wrong does real damage in five-figure renovation decisions and rent disputes. Remedy: never a single number and never "harmless" (a 2D section underestimates real room corners, so the band is one-sidedly optimistic), validation against established methods, disclaimer in the interface.',
+    priorArtDe: 'Verengt (19.9.2026): Ubakus „Thermische Simulation" (seit 11/2023) rechnet Heizwärme und Sommerüberhitzung als Zonenmodell mit einer Lufttemperatur, ohne Grundriss und Ecken — die Sommerrichtung ist auf Zonenebene besetzt. Wärmebrücken-Werkzeuge (Schöck, Ubakus-U-Wert, ThermCAD, Better Building) rechnen Bauteile für Fachleute; fRsi-Rechner liefern Einzelzahlen. Nicht gefunden: ein Laienwerkzeug aus Grundriss, räumlicher Oberflächentemperatur, Feuchtegrenze und A/B.',
+    priorArtEn: 'Narrowed (19 Sep 2026): Ubakus "Thermische Simulation" (since 11/2023) computes heating demand and summer overheating as a zone model with one air temperature, without floor plan or corners — the summer direction is taken at zone level. Thermal-bridge tools (Schöck, Ubakus U-value, ThermCAD, Better Building) compute components for professionals; fRsi calculators give single numbers. Not found: a layperson\'s tool combining floor plan, spatial surface temperature, humidity limit and A/B.'
   },
   {
     id: 'sperrmuell-radar',

@@ -46,18 +46,35 @@ export const InteractiveTinSandboxes: React.FC<InteractiveTinSandboxesProps> = (
   // Infiltration ventilation rate: normal 0.5/h, tilted window adds 2.5/h
   const airChangeRate = windowTilted ? 3.0 : 0.5;
   const roomVolume = roomArea * 3.4; // 3.4m ceiling height in Berlin Altbau
-  const ventilationLossW = 0.34 * roomVolume * airChangeRate * deltaT;
 
-  const transmissionLossW = (wallU * wallArea + windowU * windowArea) * deltaT;
-  const totalHeatLossW = transmissionLossW + ventilationLossW;
-  const specificHeatLossWPerM2 = totalHeatLossW / roomArea;
+  // Declared assumption bands (teaching model, not measured): the tin's rule is "never a single number".
+  const U_SPREAD = 0.15; // spread of component U-values within one construction-era class
+  const N_SPREAD = 0.4; // spread of the air change rate around its nominal value
+  const heatLossW = (uScale: number, nScale: number) =>
+    (wallU * wallArea + windowU * windowArea) * uScale * deltaT +
+    0.34 * roomVolume * airChangeRate * nScale * deltaT;
+  const heatLossLowW = heatLossW(1 - U_SPREAD, 1 - N_SPREAD);
+  const heatLossHighW = heatLossW(1 + U_SPREAD, 1 + N_SPREAD);
 
-  // Interior surface temperature at cold thermal bridge corner (DIN 4108-2)
-  // Rsi = 0.13, R_wall = 1 / wallU
-  const rWall = 1 / wallU;
-  const cornerSurfaceTemp = Number((roomTemp - (0.25 / (rWall + 0.13)) * deltaT).toFixed(1));
-  const dewPoint = 12.6; // approx at 20°C and 50% rel humidity
-  const moldRisk = cornerSurfaceTemp <= 12.6;
+  // Corner / behind-the-wardrobe surface temperature, 1D wall: θsi = θi − U · Rsi · ΔT.
+  // Rsi = 0.25 m²K/W is the standard value for mold assessment of corners and furnished walls (DIN 4108-2 / ISO 13788).
+  // A 1D wall ignores the geometric corner effect (ISO 10211 needs 2D/3D), so the whole band is optimistic.
+  const R_SI_CORNER = 0.25;
+  const cornerTempAt = (uScale: number) => roomTemp - wallU * uScale * R_SI_CORNER * deltaT;
+  const cornerTempBestC = cornerTempAt(1 - U_SPREAD);
+  const cornerTempWorstC = cornerTempAt(1 + U_SPREAD);
+
+  // Mold grows from ~80 % relative humidity at the surface, without condensation. The dew point (100 %) is a different, lower temperature.
+  // Magnus formula, saturation vapour pressure in hPa.
+  const satPressure = (t: number) => 6.112 * Math.exp((17.62 * t) / (243.12 + t));
+  const humidityLimitPct = (surfaceTempC: number) =>
+    Math.max(0, Math.min(100, (100 * 0.8 * satPressure(surfaceTempC)) / satPressure(roomTemp)));
+  const humidityLimitBestPct = humidityLimitPct(cornerTempBestC);
+  const humidityLimitWorstPct = humidityLimitPct(cornerTempWorstC);
+  const REFERENCE_ROOM_RH = 50; // DIN 4108-2 reference room humidity
+  // The model may say "critical" or "unclear", never "safe".
+  const moldStatus: 'critical' | 'unclear' | 'noFinding' =
+    humidityLimitBestPct < REFERENCE_ROOM_RH ? 'critical' : humidityLimitWorstPct >= REFERENCE_ROOM_RH ? 'noFinding' : 'unclear';
 
   // -------------------------------------------------------------
   // SIMULATOR 2: Glasanflug-Ampel (LAG-VSW Standard)
@@ -775,7 +792,7 @@ Sincerely,
             <div className="flex items-center justify-between pb-3 border-b border-stone-100">
               <h3 className="font-serif-title font-bold text-stone-900 text-lg flex items-center gap-2">
                 <Thermometer className="w-5 h-5 text-amber-700" />
-                <span>{lang === 'de' ? 'Wohnungsebene: Berliner Zimmer (DIN 4108)' : 'Apartment Room Heat Loss & Dew Point'}</span>
+                <span>{lang === 'de' ? 'Wohnungsebene: Berliner Zimmer (Lehrmodell)' : 'Apartment Room Heat Loss & Dew Point'}</span>
               </h3>
               <span className="text-xs font-mono-code bg-amber-50 text-amber-800 px-2 py-0.5 rounded border border-amber-200">
                 Tin #1
@@ -916,59 +933,83 @@ Sincerely,
                   {lang === 'de' ? 'Echtzeit-Wärmebilanz (Wohnungsebene)' : 'Real-time Heat Balance (Room Level)'}
                 </span>
                 <span className="text-xs font-mono-code bg-stone-800 px-2.5 py-0.5 rounded text-amber-300 border border-stone-700">
-                  DIN 4108 & energymap4py
+                  {lang === 'de' ? 'Lehrmodell · Annahmebänder' : 'Teaching model · assumption bands'}
                 </span>
               </div>
 
               <div className="grid grid-cols-2 gap-4 mb-6">
                 <div className="p-4 rounded-xl bg-stone-800/80 border border-stone-700/60">
                   <span className="text-xs text-stone-400 block mb-1">
-                    {lang === 'de' ? 'Heizlast Raum' : 'Room Heat Loss'}
+                    {lang === 'de' ? 'Wärmeverlust Raum (Richtwert)' : 'Room heat loss (indicative)'}
                   </span>
                   <div className="text-2xl font-bold font-mono-code text-amber-400">
-                    {Math.round(totalHeatLossW)} <span className="text-sm text-stone-300 font-sans">Watt</span>
+                    {Math.round(heatLossLowW / 10) * 10}–{Math.round(heatLossHighW / 10) * 10} <span className="text-sm text-stone-300 font-sans">Watt</span>
                   </div>
                   <span className="text-[11px] text-stone-400 mt-1 block">
-                    {specificHeatLossWPerM2.toFixed(0)} W/m² Wohnfläche
+                    {lang === 'de' ? 'keine Norm-Heizlast; U ±15 %, Luftwechsel ±40 % angenommen' : 'not a standard heating load; U ±15 %, air change ±40 % assumed'}
                   </span>
                 </div>
 
                 <div className="p-4 rounded-xl bg-stone-800/80 border border-stone-700/60">
                   <span className="text-xs text-stone-400 block mb-1">
-                    {lang === 'de' ? 'Ecken-Oberflächentemp.' : 'Corner Surface Temp.'}
+                    {lang === 'de' ? 'Ecke hinter dem Schrank' : 'Corner behind the wardrobe'}
                   </span>
-                  <div className={`text-2xl font-bold font-mono-code ${moldRisk ? 'text-rose-400' : 'text-emerald-400'}`}>
-                    {cornerSurfaceTemp} <span className="text-sm text-stone-300 font-sans">°C</span>
+                  <div className={`text-2xl font-bold font-mono-code ${moldStatus === 'critical' ? 'text-rose-400' : moldStatus === 'unclear' ? 'text-amber-400' : 'text-stone-200'}`}>
+                    {cornerTempWorstC.toFixed(1)}–{cornerTempBestC.toFixed(1)} <span className="text-sm text-stone-300 font-sans">°C</span>
                   </div>
                   <span className="text-[11px] text-stone-400 mt-1 block">
-                    {lang === 'de' ? 'Taupunkt: 12.6 °C' : 'Dew point: 12.6 °C'}
+                    {lang === 'de'
+                      ? `bleibt unter 80 % Oberflächenfeuchte nur bei Raumluft ≤ ${Math.round(humidityLimitWorstPct)}–${Math.round(humidityLimitBestPct)} % r.F.`
+                      : `stays below 80 % surface humidity only at room air ≤ ${Math.round(humidityLimitWorstPct)}–${Math.round(humidityLimitBestPct)} % RH`}
                   </span>
                 </div>
               </div>
 
-              {/* Mold Alert Banner */}
-              {moldRisk ? (
+              {/* Mold status: the model may say "critical" or "unclear", never "safe" */}
+              {moldStatus === 'critical' ? (
                 <div className="p-3 rounded-xl bg-rose-950/70 border border-rose-800/80 text-rose-200 text-xs flex items-start gap-2.5">
                   <AlertTriangle className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
                   <div>
                     <span className="font-bold block">
-                      {lang === 'de' ? 'Schimmel-Gefahr: Taupunkt unterschritten!' : 'Critical Mold Hazard: Below Dew Point!'}
+                      {lang === 'de' ? 'Kritisch: schon bei üblicher Raumfeuchte über der 80-%-Grenze' : 'Critical: above the 80 % limit even at ordinary room humidity'}
                     </span>
                     <span className="text-[11px] text-rose-300/90 leading-relaxed block mt-0.5">
                       {lang === 'de'
-                        ? 'An der ungedämmten Außenecke kondensiert Raumfeuchte. Hier hilft kein Lüften allein, sondern Dämmung der Kältebrücke.'
-                        : 'Interior air humidity condenses at the thermal bridge. Tilted window worsens wall cooling.'}
+                        ? `Selbst die günstige Seite des Bandes liegt unter ${REFERENCE_ROOM_RH} % r.F. Schimmel wächst hier ohne Kondensat; Lüften allein wird die Ecke kaum trocken halten.`
+                        : `Even the favourable end of the band is below ${REFERENCE_ROOM_RH} % RH. Mold grows here without condensation; ventilating alone will hardly keep the corner dry.`}
+                    </span>
+                  </div>
+                </div>
+              ) : moldStatus === 'unclear' ? (
+                <div className="p-3 rounded-xl bg-amber-950/60 border border-amber-800/80 text-amber-200 text-xs flex items-start gap-2.5">
+                  <AlertTriangle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                  <div>
+                    <span className="font-bold block">
+                      {lang === 'de' ? 'Unklar: hängt von Bauzustand und Raumfeuchte ab' : 'Unclear: depends on building condition and room humidity'}
+                    </span>
+                    <span className="text-[11px] text-amber-300/90 leading-relaxed block mt-0.5">
+                      {lang === 'de'
+                        ? `Das Band überdeckt die Bezugsfeuchte von ${REFERENCE_ROOM_RH} % r.F. Ohne Messung von Raumfeuchte und Bauteil lässt sich nichts entscheiden.`
+                        : `The band straddles the reference humidity of ${REFERENCE_ROOM_RH} % RH. Without measuring room humidity and the component, nothing can be decided.`}
                     </span>
                   </div>
                 </div>
               ) : (
-                <div className="p-3 rounded-xl bg-emerald-950/70 border border-emerald-800/80 text-emerald-200 text-xs flex items-center gap-2.5">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                <div className="p-3 rounded-xl bg-stone-800/70 border border-stone-700/80 text-stone-300 text-xs flex items-start gap-2.5">
+                  <Info className="w-4 h-4 text-stone-400 shrink-0 mt-0.5" />
                   <span>
-                    {lang === 'de' ? 'Unkritisch: Oberflächentemperatur sicher über dem Schimmelgrenzwert.' : 'Safe: Surface temperature safely above dew point.'}
+                    {lang === 'de'
+                      ? 'Kein Befund in diesem Modell. Das ist kein Nachweis: echte Raumecken (2D/3D) sind kälter als die hier gerechnete Wand.'
+                      : 'No finding in this model. That is not proof: real room corners (2D/3D) are colder than the wall computed here.'}
                   </span>
                 </div>
               )}
+
+              <p className="mt-3 text-[11px] text-stone-500 leading-relaxed">
+                {lang === 'de'
+                  ? 'Lehrmodell: 1D-Wand, Rsi 0,25 m²K/W wie bei Möbeln vor der Wand. Kein Energieausweis, keine Norm-Heizlast, kein Gutachten. Lüften wirkt hier nur auf den Wärmeverlust; Raumfeuchte wird nicht modelliert.'
+                  : 'Teaching model: 1D wall, Rsi 0.25 m²K/W as with furniture against the wall. Not an energy certificate, not a standard heating load, not an expert opinion. Ventilation only affects heat loss here; room humidity is not modelled.'}
+              </p>
 
               {/* Link into Tin Brief */}
               <div className="mt-5 pt-4 border-t border-stone-800 flex items-center justify-between text-xs text-stone-400">
@@ -984,8 +1025,8 @@ Sincerely,
               </div>
               <p className="text-amber-900/90 leading-relaxed text-[11px]">
                 {lang === 'de'
-                  ? 'EnergyMap Berlin rechnet seit Mai 2025 das gesamte Gebäude von außen. Die Lücke ist genau diese Wohnungsebene: Der Grundriss des Berliner Zimmers entscheidet, ob gekipptes Lüften die Ecke einfriert.'
-                  : 'EnergyMap Berlin models whole buildings from exterior data. The true open gap is the apartment room level: how the internal layout dictates corner condensation.'}
+                  ? 'EnergyMap Berlin rechnet seit Mai 2025 das gesamte Gebäude von außen. Die Lücke ist genau diese Wohnungsebene: Der Grundriss des Berliner Zimmers entscheidet, ob eine Ecke trocken bleibt.'
+                  : 'EnergyMap Berlin models whole buildings from exterior data. The true open gap is the apartment room level: whether a corner stays dry depends on the layout.'}
               </p>
             </div>
           </div>
