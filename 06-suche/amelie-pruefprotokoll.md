@@ -8,6 +8,7 @@ Ergänzt `dosen/_entsorgt.md`: dort steht die Begründung für gepackte, dann ve
 **Prüfen ab:** Tooling/Konsum + 6 Monate · Zivilgesellschaft + 12 Monate
 
 **Abdeckung Dosen ↔ Protokoll (Stand 19.09.2026):** Alle 23 Dosen in `05-dosen/` haben mindestens eine Zeile hier — Runde 1 (15), Nachtrag 18.09. (2), Runde 3 (5, Feuerkugel-Sofortnetz als zwei Zeilen), Runde 4 (1, Denkmal-Verlaufsblick). Neue Dose ohne Zeile hier = Fehler, sofort nachtragen.
+**Abdeckung Dosen ↔ Protokoll (Stand 19.09.2026):** Alle 23 Dosen in `05-dosen/` haben mindestens eine Zeile hier — Runde 1 (15), Nachtrag 18.09. (2), Runde 3 (5, Feuerkugel-Sofortnetz als zwei Zeilen), Runde 4 (1, Wärmesignatur). Neue Dose ohne Zeile hier = Fehler, sofort nachtragen.
 
 ---
 
@@ -92,6 +93,22 @@ Crack Flora Watcher und KlarLokal kamen als fertige Dosen ohne Protokollzeile in
 | Handy-Barometer/Infraschall zur Feuerkugel-Erkennung/Korrelation | `besetzt` | [method: bisociation, Researcher #3] RedVox-App misst Infraschall bereits u.a. für Meteore/Boliden | – |
 | **Baum-Stigmergie** — Baum trägt legiblen, mitwachsenden Hinweis auf eigene Kontrollhistorie (Regelkontrolle/VTA), statt dass der Befund nur in einer separaten Behörden-Datenbank liegt | `besetzt` | [method: bisociation, Researcher #4 (Session [208a0f]), aus unkommittiertem Worktree vom Librarian übernommen] Dynamische QR-Baumplaketten + öffentliche Portale existieren bereits kommerziell: baumplaketten.de (dynamische QR-Codes, Aluminium-Plakette), BaumDex, Baumsicht (Portal mit Protokollen, automatisch berechnetem nächsten Kontrolltermin), CheckTrees-App, dazu ein akademisches QR-Baummanagement-Pilotprojekt (ACM 2023) | – |
 | **Baum-Verfallsdatum** — ein Kontrollbefund im Kataster verliert automatisch an Gültigkeit/Sichtbarkeit, wenn er nicht durch einen Foto-Vergleich mit dem aktuellen Baumzustand erneut bestätigt wird | `besetzt` | [method: bisociation, Researcher #4 (Session [208a0f]), aus unkommittiertem Worktree vom Librarian übernommen] Ganzer Markt für „AI tree health from repeat photography" existiert bereits: Tree Inventory AI, greehill, ArboStar, TreeTect (Green City Watch) — automatisierte Gesundheits-/Zerfallserkennung inkl. Verlaufsvergleich über Zeit ist 2026 Standardfunktion, nicht Lücke | – |
+
+---
+
+## Runde 4 — 19.09.2026 (Researcher #3, method: bisociation — Ziel: Drittes Risiko Altbau Thermal)
+
+*Auf Anweisung des Secretary (Team-Fokus: Altbau Thermal). Alle Zeilen `[method: bisociation]`. Evidenz z. T. nur aus Suchschnipseln, weil WebFetch für energymap-berlin.de, heizungskompass.com und community.openenergymonitor.org gesperrt war — kenntlich gemacht.*
+
+| Idee | Urteil | Beleg (kurz) | Prüfen ab |
+|---|---|---|---|
+| **Wärmesignatur** — Monatsreihe (Gaszähler / Verbrauchsinformation) + DWD-Wetter → Wärmeverlust-Band der einzelnen Mietwohnung, ohne Grundriss | `verengt` | [method: bisociation] Nachbarn: co2online HeizCheck (Jahreswert + Fläche + PLZ, Vergleich; Datenspende an EnergyMap, kein Monatsverlauf in den Treffern); nexoen (Kosten-/Nachzahlungsprognose); Heizungskompass „Heizlast aus Gasverbrauch" und Akkudoktor-Forum (Heizlast für Wärmepumpen-Auslegung, **nur Schnipsel, Seiten nicht geöffnet**); OpenEnergyMonitor „Simple heat loss tool" (Nische, Seite nicht geöffnet); Forschung zur Energiesignatur inkl. Bayes’scher Variante (arXiv 2503.22321), Daten dort vom Eigentümer. Kein Verbraucherwerkzeug für Monatsreihe → Wohnungs-Wärmeverlust-Band gefunden. Warum-jetzt-Anker: Fernablesepflicht 31.12.2026, monatliche Verbrauchsinformation (§ 6a HeizkostenV). Schwäche benannt: Heizkostenverteiler liefern dimensionslose Einheiten, keine kWh (MessEG-Frage). Dose gepackt: `05-dosen/waermesignatur.md` | 03/2027 |
+| Kältetagebuch — Ein-Tipp-Meldungen „kalt / Fenster beschlägt" + Außenwetter → Wohnungsparameter schätzen | `verengt`, nicht gepackt | [method: bisociation] Forschung deckt den Kern: „Humans-as-a-Sensor for Buildings — Intensive Longitudinal Indoor Comfort Models" (Buildings 2020), THERCOM-App (Bewohner-Komfortmeldungen, UK-Postleitzahlen), Cozie (Büro-/Komfortumfragen dreimal täglich). Kein deutsches Laienwerkzeug gefunden; dazu Wochen bis zum ersten Ergebnis, verfehlt das „sofort sehen" der Ausgangsdose | 03/2027 |
+| Schimmel-Symptomdiagnose — Symptome antippen → Ursachen-Band (Wärmebrücke vs. Lüften), Screening ohne Grundriss | `besetzt` | [method: bisociation] Taupunkt- und fRsi-Online-Rechner in Menge (SchimmelScan Taupunkt-Rechner, Silberkraft fRSI-Rechner, Bautenschutz Katz, Deutschlandrechner u. a.), dazu Atlas-Feld Mieter-Schimmel `dicht`. Eine Suche | – |
+| Hausweite Symptomkarte — Nachbarn melden Schimmel/Kälte pro Wohnung, Muster über Etagen als Beweis für Bauschaden statt Lüftungsverhalten | kein Check (Reality-Check-Kill) | [method: bisociation] Suchtreffer zum BGH: Wärmebrücke, die dem Standard der Bauzeit entspricht, ist kein Mangel (Volltext nicht gelesen); ein Beweiswerkzeug für einen Streit, in dem der Befund rechtlich nicht trägt, hat keinen Empfänger. Keine Mietervereins-Vorlage für Sammeldokumentation über mehrere Wohnungen gefunden (eine Suche, kein Beweis der Abwesenheit) | – |
+| Abrechnungsfoto → Raumliste und Raumverbrauch als Kalibrierung | verworfen ohne Check | [method: bisociation] Verbrauchseinheiten von ista und Techem sind nicht genormt und nicht vergleichbar (Suchtreffer 123recht/HeizkostenChecker); Einheiten pro Heizkörper sind keine physikalische Größe ohne Bewertungsfaktoren | – |
+| Hausakte / Bauteil-Parameter einmal pro Haus, gespiegelte Grundrisse für Nachbarwohnungen | verworfen ohne Check | [method: bisociation] Ist in Altbau Thermal bereits als „Adresse → Gebäudekontext aus EnergyMap vorbelegen" enthalten; Mode-Liste | – |
+| Raumscan/LiDAR/Foto → Heizlast (Variante der Eingabe-Beschleunigung) | `besetzt (Atlas, neu)` | [method: bisociation] ScanDom Heizlast, Heizreport Scanner App, Heizlast App 3D, magicplan — für Profis nach DIN/TS 12831, Raum in Minuten. Nicht für Laien-A/B und Schimmel, aber die Eingabe-Beschleunigung selbst ist besetzt | – |
 
 ---
 
