@@ -13,11 +13,12 @@ Diese Liste sagt, **wo** gegraben wird, und hält fest, **was schon durchgegrabe
 
 | Quelle | Wonach suchen | Status | Zuletzt |
 |---|---|---|---|
-| LAG Vogelschutzwarten (vogelschutzwarten.de) | weitere Bewertungsverfahren außer Glas (Freileitungen, Windkraft sind besetzt; Licht?) | angekratzt | 16.09.2026 |
-| LANA (Bund-Länder-AG Naturschutz) | Beschlüsse mit Bewertungsschemata | offen | – |
-| Bundesamt für Naturschutz (BfN) | Skripten, Leitfäden, Kartieranleitungen | offen | – |
+| LAG Vogelschutzwarten (vogelschutzwarten.de) | weitere Bewertungsverfahren außer Glas | `durchsucht` | 18.09.2026 |
+| LANA (Bund-Länder-AG Naturschutz) | Beschlüsse mit Bewertungsschemata | angekratzt — Eingriffsregelung/Biotopwertverfahren ist bereits gesetzlich kodifiziert (BKompV) und dürfte über kommerzielle Ökokonto-/Kompensationsflächen-Software abgedeckt sein; vor Ausformulieren einer Idee gegenchecken | 18.09.2026 |
+| Bundesamt für Naturschutz (BfN) | Skripten, Leitfäden, Kartieranleitungen | angekratzt — BfN-Schriften 721 „Kartieranleitung für die Biotoptypen nach Anlage 2 der BKompV" gefunden (668 Biotoptypen, feste Schwellenwerte, Kartiermethodik von Hand). Daraus entstanden: Biotoptyp-Assistent (`05-dosen/biotoptyp-assistent.md`) | 18.09.2026 |
 | Senatsverwaltung Berlin, Umwelt | Leitfäden (z. B. „Bauen mit Glas und Licht", 2021) | offen | – |
 | Denkmalbehörden, Landesämter | Schadenskartierungs-Anleitungen | offen | – |
+| Landesumweltbehörden „Licht & Naturschutz" (Hamburg BUKEA u. a.) | weitere Länder-Leitfäden ohne Tool (analog zu Hamburg) | angekratzt — **ergiebig, Lichtplan-Check entstand hieraus** | 18.09.2026 |
 
 **Suchstring:** `<Gremium> Bewertungsverfahren Punktesystem` · `<Gremium> Kartieranleitung` · `<Gremium> Checkliste Vollzug`
 
@@ -29,7 +30,7 @@ Diese Liste sagt, **wo** gegraben wird, und hält fest, **was schon durchgegrabe
 
 | Quelle | Wonach suchen | Status | Zuletzt |
 |---|---|---|---|
-| mitforschen.org (Plattform aller deutschen CS-Projekte) | Projekte mit Foto-Upload und Rückmeldung „nach Auswertung" | offen — **ergiebigste Quelle, als Nächstes** | – |
+| mitforschen.org (Plattform aller deutschen CS-Projekte) | Projekte mit Foto-Upload und Rückmeldung „nach Auswertung" | offen — **ergiebigste Quelle, als Nächstes** (seit Runde 2 so vermerkt, in Runde 3 wieder nicht angefasst) | – |
 | Thünen Wildbienen-Monitoring | Hummel-Monitoring zusätzlich zur Nisthilfe | angekratzt | 16.09.2026 |
 | CompGen (genealogy.net) | andere Erfassungsprojekte außer Grabsteine (Adressbücher, Verlustlisten) | angekratzt | 16.09.2026 |
 | Naturkundemuseum Berlin, Citizen-Science-Bereich | Projekte mit Engpass | offen | – |
@@ -57,6 +58,24 @@ Diese Liste sagt, **wo** gegraben wird, und hält fest, **was schon durchgegrabe
 | Prototype Fund | Fristen, Zuschnitt | bekannt (Runde 1) |
 | CityLAB Berlin | Empfänger Rang 1 | bekannt (Runde 1) |
 | Open Repair Alliance | Datenquelle | angekratzt |
+
+---
+
+## Nachtrag 19.09.2026 — Anker aus dem Gemini-Lauf (Quelle genannt, **nicht gelesen**)
+
+Der Lauf nennt diese Anker in `amelie-bisoziation-log.md`. Sie sind hier vermerkt, damit niemand sie für durchgegraben hält: Status `offen`, bis jemand die Quelle selbst geöffnet hat. Ein Kandidat daraus ist noch keine Prüfung der Quelle.
+
+| Quelle | Typ | Wofür genannt | Status |
+|---|---|---|---|
+| LANA/BfN Kartieranleitung LRT 6120 (Trockenrasen) | A | Trockenrasen-Transekte; Überschneidung mit Kartierlotse klären | offen (BfN-Zeile oben ist wegen Schrift 721 `angekratzt`, LRT-6120-Anleitung selbst ungelesen) |
+| NABU-Batcorder-Monitoring Gewässer | B | Fledermaus-Echo-Entwirrer | offen |
+| Thünen MonViA, Hummel-Nistkasten | B | Hummel-Schleusenwächter | angekratzt (Nisthilfe-Foto-Auswertung Runde 2; Hummel-Strang wie in Zeile oben vermerkt) |
+| Stiftung Denkmalschutz / BDO, Orgelpfeifen-Bleifraß | A/Denkmal | Orgelpfeifen-Resonanz | offen (deckt sich mit „Denkmalbehörden, Landesämter" oben) |
+| DWD Waldbrandgefahrenindex / Landesforst | A | Waldbrand-Streu-Knistern | offen |
+| DWD Phänologischer Kalender | B | Knospen-Countdown | offen |
+| Tafel Deutschland e. V. | B/Empfänger | Tafel-Frische-Triage | **Achtung:** laufendes BMEL-Projekt „Tafel macht Zukunft" — zuerst dessen Umfang lesen |
+| WSA/WRRL Gewässerökologie | A | Totholz-Kolk-Peiler | offen |
+| Berliner Leitfaden „Bauen mit Glas und Licht" (2021) | A | Licht-Glocken-Kataster | offen (Senatsverwaltung-Zeile oben; als Anker genannt, Leitfaden nicht gelesen) |
 
 ---
 
