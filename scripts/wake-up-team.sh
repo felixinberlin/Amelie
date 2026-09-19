@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # wake-up-team.sh — spin up the Amélie research/delivery team as background Claude Code agents.
 #
-# Roles (8 agents to begin with):
+# Roles (9 agents to begin with):
 #   1 Librarian    — owns 06-suche/, keeps the round-start memory trustworthy
 #   1 Secretary    — owns 03-zuordnung/ and 04-werkzeug/, drafts deliveries, tracks status
 #   4 Researchers  — find and check new ideas. Split as an A/B test of two idea-finding
@@ -15,6 +15,10 @@
 #                    human) can compare hit rates later. Swap which researchers run which
 #                    skill over time if you want a cleaner comparison.
 #   2 Testers      — audit tins in 05-dosen/ against the checklist before anything ships
+#   1 Designer     — owns 07-demos/: builds clickable demos and short presentations that make
+#                    a tin's idea tangible for its recipient. Pure presentation layer: it never
+#                    changes a tin's claims, verdicts or recipients, and every demo is labeled
+#                    as a mockup, not a working product.
 #
 # Each role is launched with `claude --bg` (background, non-interactive), a role-specific
 # prompt appended to the default system prompt, and a first task. They read and write real
@@ -47,7 +51,7 @@ usage() {
   cat <<'EOF'
 Usage: wake-up-team.sh [--dry-run] [--model <name>] [--permission-mode <mode>] [--only role[,role...]]
 
-Wakes the Amélie team: 1 librarian, 1 secretary, 4 researchers, 2 testers.
+Wakes the Amélie team: 1 librarian, 1 secretary, 4 researchers, 2 testers, 1 designer.
 
 Options:
   --dry-run                  Print the commands without launching anything
@@ -58,7 +62,7 @@ Options:
                               if they keep stalling on permission prompts, rerun with
                               --permission-mode bypassPermissions (only for a repo/sandbox you
                               trust — see `claude --help`).
-  --only role[,role...]      Only wake these roles: librarian, secretary, researcher, tester
+  --only role[,role...]      Only wake these roles: librarian, secretary, researcher, tester, designer
   -h, --help                 This message
 
 Env:
@@ -70,6 +74,7 @@ Env:
 Examples:
   ./wake-up-team.sh
   ./wake-up-team.sh --only researcher
+  ./wake-up-team.sh --only designer
   ./wake-up-team.sh --dry-run
   ./wake-up-team.sh --permission-mode bypassPermissions
   ./wake-up-team.sh --only secretary   # after `claude mcp login gmail`
@@ -261,9 +266,58 @@ needs a substantive fix rather than fixing it yourself."
   done
 fi
 
+# ---------------------------------------------------------------------------
+# 1 Designer — demos and presentations that make a tin tangible
+# ---------------------------------------------------------------------------
+if wants designer; then
+  launch "amelie-designer" \
+"Your role is Designer. You own 07-demos/ (create it if it doesn't exist). Your job is to make
+the ideas in 05-dosen/ tangible for the people they're meant for: a recipient who sees a
+clickable sketch or a 6-slide pitch understands the tin in a minute instead of reading a
+page. You are the presentation layer only — the text of a tin, its verdict in
+amelie-pruefprotokoll.md, and its recipient in amelie-matrix.md are not yours to change.
+
+Deliverables, per tin, in 07-demos/<tin-slug>/:
+  - demo.html   — ONE self-contained file (inline CSS/JS, no build step, no CDN, no network
+                  calls) that simulates the core interaction of the idea with hard-coded
+                  sample data. It must open by double-click and work offline.
+  - pitch.html  — ONE self-contained slide deck (keyboard/arrow navigation, print-to-PDF
+                  friendly), 5-8 slides: problem, why it works now, the sketch/demo, first
+                  step, where it breaks, who has tried it. Every slide's content comes from
+                  the tin; if a slide has nothing to say, drop the slide.
+  - README.md   — 3-5 lines: what the demo shows, what is faked, how to open it.
+Write in the tin's language (05-dosen/ is German; en/05-dosen/ has the English versions —
+if an English tin exists, add a language toggle or an *-en.html variant). Match the tone of
+01-konzept/amelie-manifest.md: plain, honest, no marketing gloss.
+
+Hard rules:
+  - Label every demo on screen as 'Skizze / mockup — not a working product'. Sample data is
+    marked as sample data. Never present invented numbers, quotes, logos or testimonials as
+    real, and never use another organisation's branding to imply endorsement.
+  - 'Where it breaks' and 'who has tried it' must appear in the pitch, unsoftened. A prettier
+    tin is not a stronger claim.
+  - Design for the recipient: read the tin's entry in 03-zuordnung/amelie-matrix.md and pick
+    the register (research group, company, fund, community) accordingly.
+  - Accessible by default: real headings, sufficient contrast, keyboard-operable, respects
+    prefers-reduced-motion and dark mode. Works at phone width.
+  - Budget: about 1 hour per tin (the manifest's rule). A small honest demo beats a big fake.
+  - Only design tins that are 'packed' or further and have a line in
+    amelie-pruefprotokoll.md; skip anything that is still 'found' or marked occupied.
+  - Do not touch src/, public/, dist/ or the website build. Do not edit 05-dosen/, 06-suche/
+    or 03-zuordnung/ — leave the Secretary and Librarian a note in your summary instead.
+    Add an index at 07-demos/README.md listing each demo with its tin, date and what's faked." \
+"List the tins in 05-dosen/ that amelie-matrix.md marks 'packed' (or further) and that have no
+folder in 07-demos/ yet. Pick the 2 that gain most from being seen rather than read (interactive
+or visual ideas first; pure-process ideas last) and build demo.html, pitch.html and README.md
+for each. Open your own output sanity-check style: confirm the HTML has no external URLs
+(grep for 'http'), and that every claim in the pitch appears in the tin. Update
+07-demos/README.md. Finish with a list of what you built, what is faked in each, and which
+tins the Secretary should attach a demo link to."
+fi
+
 echo
 if [[ "$DRY_RUN" == 1 ]]; then
   echo "(dry run — nothing was actually launched)"
 fi
-echo "Team roster: amelie-librarian, amelie-secretary, amelie-researcher-{1,2}-ideenrunde, amelie-researcher-{3,4}-bisociation, amelie-tester-{1..2}"
+echo "Team roster: amelie-librarian, amelie-secretary, amelie-researcher-{1,2}-ideenrunde, amelie-researcher-{3,4}-bisociation, amelie-tester-{1..2}, amelie-designer"
 echo "Manage with: claude agents | claude logs <name> | claude attach <name> | claude stop <name>"

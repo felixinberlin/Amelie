@@ -6,8 +6,10 @@
 **Vor dem Senden:**
 - Adresse eintragen (s. o.).
 - **HeizCheck:** tester-1 bestätigt, dass er zu den co2online-EnergiesparChecks gehört (Fragebogen-Tool, keine Grundriss-Simulation). Dass er freiwillig Verbrauchsdaten sammelt, stammt weiter nur aus dem zfk.de-Artikel und steht bewusst **nicht** im Text.
-- Prototype-Fund-Satz: Frist laut Sekundärquelle bis 30.11.2026, prototypefund.de war nicht lesbar. Vor dem Senden auf der Fondsseite gegenlesen. Nach dem 1.10. „beginnt" in „läuft" ändern.
-- Wie Mail 1: der Dose-Abschnitt „Wer es schon versucht hat" liegt nur im Worktree der Bibliothekarin, die Mail verlinkt auf `main`. Erst senden, wenn die Dose gemergt und gepusht ist. Ohne ubakus-Satz gehalten, weil co2online damit weniger anfangen kann als eine Simulationsgruppe.
+- **Kein Prototype-Fund-Satz mehr** (19.9.2026): Der gemergte Refine der Dose hält fest, dass der Fonds seit 2025 nur Datensicherheit und Software-Infrastruktur fördert und eine Wohnungs-App nicht passt. prototypefund.de selbst habe ich nicht lesen können.
+- **Die Dose auf `main` ist neu** (Refine, PR #8) und enthält „Wer es schon versucht hat". Die Mail verlinkt darauf; Link vor dem Senden einmal öffnen. Ohne ubakus-Satz gehalten, weil co2online damit weniger anfangen kann als eine Simulationsgruppe.
+- **Empfänger-Frage:** Die neue Dose nennt co2online nicht mehr als nachrangigen Empfänger (nur noch Verbraucherzentrale), co2online ist Verbundpartner der UdK. Ob diese Mail noch gebraucht wird oder mit Mail 1 überflüssig doppelt geht, ist Félix' Entscheidung. Der „Parallel…"-Absatz macht die Doppelung zumindest offen.
+- **Schimmel-Wortlaut:** hier bewusst „schimmelkritisch kalt", nicht die 80-%-Formulierung aus Mail 1, weil der Normtext im Team nicht gelesen wurde und co2online keine Grenzwerte braucht.
 - Der Text nennt weder die Anrede einer Person noch den Namen von jemandem: bewusst neutral, weil ich keine Kontaktperson belegt habe.
 - Erst nach Mail 1 senden. Der Absatz „Parallel…" bleibt dann wahr; wird Mail 1 nicht gesendet, den Absatz streichen.
 - Repo-Link zuletzt geprüft für Mail 1 (öffentlich, HTTP 200), für diese Mail nicht erneut.
@@ -24,8 +26,6 @@ Ein kurzes Dokument mit Skizze, erstem Ticket, den Werkzeugen, die es in der Nä
 https://github.com/felixinberlin/Amelie/blob/main/05-dosen/altbau-thermal.md
 
 Parallel geht dieselbe Idee an die Projektkoordination des Verbunds an der UdK Berlin. Ich sage das offen, damit Sie nicht zweimal davon überrascht werden.
-
-Falls jemand das bauen möchte: Der Prototype Fund fördert Open-Source-Vorhaben von Einzelpersonen und kleinen Teams, die nächste Bewerbungsphase beginnt am 1. Oktober.
 
 Keine Bedingungen, CC0, keine Gegenleistung erwartet. Wenn Sie so etwas längst planen, ignorieren Sie diese Mail bitte einfach, ich melde mich nicht erneut.
 

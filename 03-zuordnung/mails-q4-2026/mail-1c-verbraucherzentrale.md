@@ -9,6 +9,10 @@ Kein Gmail-Draft (Gmail-MCP blockiert), nicht gesendet.
 - Ohne konkreten, belegten Bezug scheitert die Mail an der Checkliste (Vorlagen §7: „Ist der Bezug zum Empfänger konkret?"). Ein erfundener Bezug wäre schlimmer als keine Mail.
 - Ich habe die Seiten selbst nicht lesen können (WebFetch gesperrt); beide Aussagen sind Zweitquellen.
 
+## Widerspruch nach dem Refine der Dose (19.9.2026)
+
+Die gemergte Dose (PR #8) schreibt: „Basis-Check als Hausbesuch in der Mietwohnung kostenlos, Gebäude-Check 30 € Eigenanteil". Das widerspricht der Lesart von tester-1 und researcher-2 (kostenfrei nur für Ein-/Zweifamilienhaus-Eigentümer:innen). Keine der beiden Seiten habe ich selbst gelesen. Wer recht hat, entscheidet, ob die Verbraucherzentrale doch zur Zielgruppe der Dose (Mieter:innen) passt. **Bis das an der Quelle geklärt ist, bleibt die Mail zurückgestellt.** Die Dose führt die Verbraucherzentrale weiterhin als nachrangigen Empfänger.
+
 ## Was zu klären ist, bevor daraus eine Mail wird
 
 1. Gibt es bei der Verbraucherzentrale Berlin ein Beratungsangebot, das Mieter:innen oder Wohnungseigentümer:innen im Altbau erreicht (Energieberatung allgemein, Mietrecht/Schimmel)? Wenn ja: Angebot mit Quelle nennen und darauf Bezug nehmen.
