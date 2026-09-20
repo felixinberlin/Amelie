@@ -1058,13 +1058,13 @@ Sincerely,
               {/* Verdict: three honest states, never a single number */}
               <div role="status" aria-live="polite">
                 {altbau.verdict === 'above' && (
-                  <div className="p-3 rounded-xl bg-emerald-950/70 border border-emerald-800/80 text-emerald-200 text-xs flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <div className="p-3 rounded-xl bg-stone-800/70 border border-stone-700/80 text-stone-300 text-xs flex items-start gap-2.5">
+                    <Info className="w-4 h-4 text-stone-400 shrink-0 mt-0.5" />
                     <span>
                       {tr3(
-                        'Das Band liegt vollständig über der Schimmel-Schwelle. Unter diesen Annahmen ist Schimmel an der Ecke unwahrscheinlich, das ist keine Garantie.',
-                        'The band lies entirely above the mould threshold. Under these assumptions mould in the corner is unlikely, which is not a guarantee.',
-                        'El rango queda por completo por encima del umbral de moho. Con estos supuestos el moho en la esquina es improbable, lo que no es una garantía.',
+                        'Kein Befund in diesem Modell: Das Band liegt vollständig über der Schimmel-Schwelle. Das ist kein Nachweis, denn echte Raumecken (2D/3D) sind kälter als die hier gerechnete Wand.',
+                        'No finding in this model: the band lies entirely above the mould threshold. That is not proof, because real room corners (2D/3D) are colder than the wall computed here.',
+                        'Sin hallazgo en este modelo: el rango queda por completo por encima del umbral de moho. No es una prueba, porque las esquinas reales (2D/3D) son más frías que el muro calculado aquí.',
                       )}
                     </span>
                   </div>
@@ -1144,9 +1144,9 @@ Sincerely,
                 </table>
                 <p className="text-[10px] text-stone-500 mt-2 leading-relaxed">
                   {tr3(
-                    'Band = unsichere Eingaben: U-Werte ×0,8…×1,25 (Bauzustand unbekannt), Luftwechsel ×0,6…×1,6 (Nutzung), Rsi in der Ecke 0,25…0,35 m²K/W (0,25 = Wert für Ecken/hinter Möbeln nach DIN 4108-2, 0,35 = Annahme für zugestellt). Diese Bandbreiten sind Annahmen dieser Skizze, keine Normwerte. Innenwände, Boden, Decke grenzen an beheizte Räume; keine solaren oder inneren Gewinne; keine Wärmebrücken über die Ecke hinaus.',
-                    'Band = uncertain inputs: U-values ×0.8…×1.25 (unknown construction), air change ×0.6…×1.6 (usage), corner Rsi 0.25…0.35 m²K/W (0.25 = DIN 4108-2 value for corners / behind furniture, 0.35 = assumption for blocked). These ranges are assumptions of this sketch, not standard values. Interior walls, floor, ceiling border heated rooms; no solar or internal gains; no thermal bridges beyond the corner.',
-                    'Rango = entradas inciertas: valores U ×0,8…×1,25 (construcción desconocida), renovación de aire ×0,6…×1,6 (uso), Rsi en la esquina 0,25…0,35 m²K/W (0,25 = valor DIN 4108-2 para esquinas / detrás de muebles, 0,35 = supuesto de esquina tapada). Estos rangos son supuestos de este boceto, no valores normativos. Paredes interiores, suelo y techo lindan con estancias calefactadas; sin ganancias solares ni internas; sin puentes térmicos más allá de la esquina.',
+                    'Band = unsichere Eingaben: U-Werte ×0,8…×1,25 (Bauzustand unbekannt), Luftwechsel ×0,6…×1,6 (Nutzung), Rsi in der Ecke 0,25…0,35 m²K/W (0,25 = Wert für Ecken/hinter Möbeln nach DIN 4108-2, 0,35 = Annahme für zugestellt). Diese Bandbreiten sind Annahmen dieser Skizze, keine Normwerte. Innenwände, Boden, Decke grenzen an beheizte Räume; keine solaren oder inneren Gewinne; die Ecke wird als 1D-Wand gerechnet, echte Raumecken (2D/3D, ISO 10211) sind kälter, das ganze Band ist daher eher optimistisch.',
+                    'Band = uncertain inputs: U-values ×0.8…×1.25 (unknown construction), air change ×0.6…×1.6 (usage), corner Rsi 0.25…0.35 m²K/W (0.25 = DIN 4108-2 value for corners / behind furniture, 0.35 = assumption for blocked). These ranges are assumptions of this sketch, not standard values. Interior walls, floor, ceiling border heated rooms; no solar or internal gains; the corner is computed as a 1D wall, real room corners (2D/3D, ISO 10211) are colder, so the whole band is rather optimistic.',
+                    'Rango = entradas inciertas: valores U ×0,8…×1,25 (construcción desconocida), renovación de aire ×0,6…×1,6 (uso), Rsi en la esquina 0,25…0,35 m²K/W (0,25 = valor DIN 4108-2 para esquinas / detrás de muebles, 0,35 = supuesto de esquina tapada). Estos rangos son supuestos de este boceto, no valores normativos. Paredes interiores, suelo y techo lindan con estancias calefactadas; sin ganancias solares ni internas; la esquina se calcula como un muro 1D, las esquinas reales (2D/3D, ISO 10211) son más frías, así que todo el rango es más bien optimista.',
                   )}
                 </p>
               </details>
