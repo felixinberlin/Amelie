@@ -3,6 +3,7 @@ import { Search, Filter, Gift, Hammer, Lock, ArrowUpRight, Sparkles, Brain, Link
 import { DoseItem, Language, Verdict, DomainCategory } from '../types';
 import { getTranslation, getLocalizedTitle } from '../i18n';
 import { getDoseUrl } from '../utils/doseUrl';
+import { SimulatorKey } from '../data/doseSimulators';
 import { AmelieRulesBanner } from './AmelieRulesBanner';
 
 interface DosenGalleryProps {
@@ -10,7 +11,7 @@ interface DosenGalleryProps {
   lang: Language;
   onSelectDose: (dose: DoseItem) => void;
   onOpenSinglePage?: (dose: DoseItem) => void;
-  onOpenSimulator?: (simId: 'altbau' | 'glasanflug' | 'streiflicht' | 'wetink' | 'balkon' | 'regenwasser' | 'klarlokal' | 'crackflora') => void;
+  onOpenSimulator?: (simId: SimulatorKey) => void;
   onOpenManifest?: () => void;
   onOpenEmails?: () => void;
 }
@@ -339,6 +340,27 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
                             : lang === 'es'
                             ? '🌱 Laboratorio de Grietas'
                             : '🌱 Live Pavement Lab'}
+                        </span>
+                      </button>
+                    </div>
+                  )}
+                  {dose.id === 'kiez-laermkarte' && onOpenSimulator && (
+                    <div className="mt-2.5">
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          onOpenSimulator('laerm');
+                        }}
+                        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#8c1d40]/15 hover:bg-[#8c1d40]/25 text-[#8c1d40] text-xs font-typewriter font-bold transition-all border border-[#8c1d40]/30 shadow-2xs"
+                      >
+                        <Sparkles className="w-3 h-3 text-[#8c1d40]" />
+                        <span>
+                          {lang === 'de'
+                            ? '🎧 24h Zeitstruktur & Ruhe-Fenster'
+                            : lang === 'es'
+                            ? '🎧 Simulador de Ruido 24h'
+                            : '🎧 24h Noise & Quiet Windows'}
                         </span>
                       </button>
                     </div>

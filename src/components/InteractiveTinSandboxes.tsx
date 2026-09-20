@@ -10,6 +10,7 @@ import {
   RegenwasserSimulator,
   KlarLokalSimulator,
   CrackFloraSimulator,
+  KiezLaermSimulator,
 } from './simulators';
 
 export type SandboxKey =
@@ -20,7 +21,8 @@ export type SandboxKey =
   | 'balkon'
   | 'regenwasser'
   | 'klarlokal'
-  | 'crackflora';
+  | 'crackflora'
+  | 'laerm';
 
 interface InteractiveTinSandboxesProps {
   lang: Language;
@@ -155,6 +157,16 @@ export const InteractiveTinSandboxes: React.FC<InteractiveTinSandboxesProps> = (
             >
               🌱 {lang === 'de' ? 'Crack Flora (Ritzengrün)' : lang === 'es' ? 'Crack Flora (Grietas)' : 'Crack Flora (Pavement)'}
             </button>
+            <button
+              onClick={() => setActiveTab('laerm')}
+              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                activeTab === 'laerm'
+                  ? 'bg-white text-[#8c1d40] shadow-xs font-bold border border-[#8c1d40]/40'
+                  : 'text-stone-600 hover:text-stone-900'
+              }`}
+            >
+              🎧 {lang === 'de' ? 'Kiez-Lärmkarte' : lang === 'es' ? 'Mapa de Ruido' : 'Kiez Noise Map'}
+            </button>
           </div>
         </div>
       </div>
@@ -183,6 +195,9 @@ export const InteractiveTinSandboxes: React.FC<InteractiveTinSandboxesProps> = (
       )}
       {activeTab === 'crackflora' && (
         <CrackFloraSimulator lang={lang} onOpenDose={onOpenDose} />
+      )}
+      {activeTab === 'laerm' && (
+        <KiezLaermSimulator lang={lang} onOpenDose={onOpenDose} />
       )}
     </div>
   );

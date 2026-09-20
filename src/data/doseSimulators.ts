@@ -6,7 +6,8 @@ export type SimulatorKey =
   | 'balkon'
   | 'regenwasser'
   | 'klarlokal'
-  | 'crackflora';
+  | 'crackflora'
+  | 'laerm';
 
 export interface DoseSimulatorInfo {
   key: SimulatorKey;
@@ -109,5 +110,15 @@ export const DOSE_SIMULATOR_MAP: Record<string, DoseSimulatorInfo> = {
     descriptionEn: 'Toughness index scoring and time-lapse growth monitoring for pavement sidewalk botany (#Krautschau).',
     descriptionEs: 'Puntaje de resistencia botánica urbana y seguimiento de plantas en grietas para la ciencia ciudadana.',
     icon: '🌿',
+  },
+  'kiez-laermkarte': {
+    key: 'laerm',
+    titleDe: 'Kiez-Lärmkarte: 24h Zeitstruktur & Ruhe-Fenster',
+    titleEn: 'Kiez Noise Map: 24h Rhythm & Tranquility Windows',
+    titleEs: 'Mapa de Ruido Kiez: Ritmo 24h y Ventanas de Calma',
+    descriptionDe: '24h Zeitstruktur-Simulator Berliner Straßen-Typologien mit WHO-Schlaftest und Zero-Audio Live-Pegelmessung.',
+    descriptionEn: '24h diurnal soundscape simulator for Berlin street typologies with WHO sleep audit and zero-audio live dB meter.',
+    descriptionEs: 'Simulador acústico 24h para tipologías de calles berlinesas con test de sueño de la OMS y sonómetro en vivo sin audio.',
+    icon: '🎧',
   },
 };

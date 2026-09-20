@@ -88,42 +88,149 @@ export const DOSEN_DATA: DoseItem[] = [
   {
     id: 'kiez-laermkarte',
     title: 'Kiez-Lärmkarte',
+    titleEn: 'Kiez Noise Map (Tranquility Windows)',
+    titleEs: 'Mapa de Ruido Kiez (Ventanas de Tranquilidad)',
     oneLinerDe: 'Nicht wie laut eine Straße im Jahresmittel ist, sondern wann sie leise ist — gemessen von Handys, die nur dB-Pegel erfassen und nie Audio.',
     oneLinerEn: 'Not how loud a street is in yearly averages, but when it is quiet — measured by phones capturing only dB levels and never raw audio.',
+    oneLinerEs: 'No cuán ruidosa es una calle en promedio anual, sino cuándo está tranquila — medido por teléfonos que solo capturan niveles dB y jamás audio.',
     date: 'September 2026',
     reviewAfter: 'September 2027',
-    recipientsDe: 'Noise-Planet / NoiseCapture (Université Gustave Eiffel + CNRS) · parallel: CityLAB Berlin · nachrangig: Prototype Fund',
-    recipientsEn: 'Noise-Planet / NoiseCapture (Université Gustave Eiffel + CNRS) · parallel: CityLAB Berlin · secondary: Prototype Fund',
+    recipientsDe: 'Noise-Planet / NoiseCapture (Université Gustave Eiffel + CNRS) · parallel: CityLAB Berlin · nachrangig: Senatsverwaltung für Mobilität, Verkehr, Klimaschutz und Umwelt (SenUMVK Berlin / Lärmaktionsplanung)',
+    recipientsEn: 'Noise-Planet / NoiseCapture (Université Gustave Eiffel + CNRS) · parallel: CityLAB Berlin · secondary: Berlin Senate Department for Mobility, Transport, Climate Protection and the Environment (SenUMVK)',
     domain: 'civic',
     verdict: 'gift',
     status: 'gepackt',
-    tags: ['Berlin', 'Lärmschutz', 'Akustik', 'Datenschutz', 'Open Data'],
-    problemDe: 'Der Berliner Lärmaktionsplan liefert theoretische Modellwerte und Jahresmittelwerte. Menschen wollen aber wissen: „Kann ich hier schlafen?", „Wann kann ich mit offenem Fenster arbeiten?". Jahresmittelwerte mitteln die Zeitstruktur weg, die eigentlich die Information ist.',
-    problemEn: 'Strategic noise action plans publish annual modeled decibel averages. But residents need to know: "Can I sleep here with windows open?", "Which hours are tranquil for focused work?". Averages erase temporal rhythm.',
+    tags: ['Berlin', 'Lärmschutz', 'Akustik', 'Datenschutz', 'Open Data', 'CityLAB', 'NoiseCapture', 'WHO'],
+    problemDe: 'Der Berliner Lärmaktionsplan liefert theoretische Modellwerte und Jahresmittelwerte (L_den / L_night). Menschen wollen aber wissen: „Kann ich hier bei gekipptem Fenster schlafen?", „Wann kann ich ungestört arbeiten?". Jahresmittelwerte mitteln die Zeitstruktur weg, die eigentlich die lebensentscheidende Information ist. Gleichzeitig scheitern Crowdsourcing-Ansätze an Datenschutzängsten vor Abhörmikrofonen.',
+    problemEn: 'Strategic noise action plans publish annual modeled decibel averages (L_den / L_night). But residents need to know: "Can I sleep here with windows tilted?", "Which hours are tranquil for focused work?". Averages erase temporal rhythm, which is the biologically decisive signal. Concurrently, crowdsourcing projects stall on surveillance anxieties regarding smartphone microphones.',
+    problemEs: 'Los planes estratégicos de ruido publican promedios anuales modelados (L_den / L_night). Pero los ciudadanos necesitan saber: "¿Puedo dormir aquí con la ventana abierta?", "¿A qué horas hay calma para concentrarse?". Los promedios borran el ritmo temporal, que es la señal biológica clave.',
     whyNowDe: [
-      'On-device-Pegelmessung verwirft Audiosignal sofort — Null Abhör-Risiko.',
-      'Relative Kalibrierung über viele Messungen löst Streuung von Handymikrofonen.',
-      'Amtliche Lärmkarten existieren bereits als Kalibrierungs- und Plausibilitätsanker.'
+      'Web Audio API AnalyserNode berechnet RMS-Pegel direkt im Browser-RAM — das Audiosignal wird nach wenigen Millisekunden hardwarenah überschrieben (Zero-Audio-Architektur).',
+      'Relative Kreuzkalibrierung über Co-Lokalisierung mehrerer Geräte gleicht die hardwarebedingte Streuung von Smartphone-Mikrofonen (±3–5 dB) ohne Laboraufwand aus.',
+      'Amtliche SenUMVK-Lärmkarten (Umgebungslärm 2022/2024 WFS/WMS) liegen als Open Data vor und dienen als makroskopischer Kalibrierungs- und Validierungsanker.',
+      'WHO Europe Night Noise Guidelines definieren klare biologische Schwellenwerte (L_night < 40 dB(A)), die direkt in Schlaf-Tauglichkeits-Ampeln übersetzt werden können.',
+      'Lokale Vektordatenbanken und PWA-Service-Worker erlauben Kiez-Aggregationsmodelle direkt auf dem Endgerät, bevor überhaupt Daten das Gerät verlassen.'
     ],
     whyNowEn: [
-      'On-device measurement discards audio immediately — zero wiretapping/privacy risk.',
-      'Relative cross-calibration solves smartphone microphone hardware variances.',
-      'Official modeled maps serve as realistic baseline sanity checks.'
+      'Web Audio API AnalyserNode calculates RMS decibels directly in volatile browser memory — raw audio is overwritten in milliseconds with zero disk persistence (zero-audio architecture).',
+      'Relative cross-calibration via opportunistic multi-device co-location solves consumer microphone hardware variance (±3-5 dB) without lab calibration.',
+      'Official SenUMVK Berlin noise maps (Environmental Noise 2022/2024 WFS/WMS) are published as Open Data, providing a macroscopic baseline sanity check.',
+      'WHO Europe Night Noise Guidelines define unambiguous physiological thresholds (L_night < 40 dB(A)), easily converted into real-world sleep quality ratings.',
+      'Edge vector indexing and local PWA caching allow street-segment diurnal aggregation directly on-device before any telemetry is transmitted.'
     ],
-    sketchDe: 'Interaktive Karte mit Zeitschieberegler (Uhrzeit / Wochentag) statt starrem dB-Farbbild. Zeigt „Ruhe-Fenster" je Straßenabschnitt. Vollständige lokale Aggregation auf dem Endgerät.',
-    sketchEn: 'Interactive map with time-of-day and day-of-week slider instead of a static average color wash. Highlights quiet windows per street block. Pure on-device aggregation before sync.',
+    sketchDe: 'Interaktive 24h-Diurnal-Karte mit Zeitschieberegler (Stunde / Wochentag) statt statischer Pegel-Farbfläche. Identifiziert automatisiert zusammenhängende „Ruhe-Fenster" (z. B. 11:00–14:00 Uhr und 23:00–06:00 Uhr). Integrierter Schlafrechner für Fensterzustände (offen, gekippt -15 dB, geschlossen -30 dB) nach WHO-Kriterien. Standardisierter GeoJSON-Export für Kiezlabore und NoiseCapture.',
+    sketchEn: 'Interactive 24-hour diurnal map with time-of-day and weekday slider instead of a static average color wash. Automatically detects continuous "Tranquility Windows" (e.g. 11:00-14:00 and 23:00-06:00). Integrated sleep auditor computing indoor attenuation across window positions (open 0 dB, tilted -15 dB, closed -30 dB) per WHO criteria. Standardized GeoJSON export for civic labs.',
+    sketchEs: 'Mapa interactivo de 24 horas con deslizador temporal. Detecta automáticamente ventanas de tranquilidad continuas y evalúa la calidad del sueño según la atenuación de la ventana (abierta 0 dB, oscilobatiente -15 dB, cerrada -30 dB) conforme a los estándares de la OMS.',
     firstStepDe: {
-      ticket: 'Ein Straßenabschnitt, eine Woche, ein Tagesprofil.',
-      criteria: 'Zwei Geräte nebeneinander messen innerhalb von 3 dB; das Wochenend-Nachtprofil und der Berufsverkehr zeichnen sich klar ab.'
+      ticket: 'Ein Straßenabschnitt, eine Woche, ein 24h-Tagesprofil.',
+      criteria: 'Zwei Testgeräte an einer Berliner Wohnstraße messen innerhalb von 3 dB; der Berufsverkehr (07:30–09:00), das Mittags-Ruhe-Fenster (12:00–14:00) und der Nachtabfall heben sich im aggregierten 24h-Profil reproduzierbar ab, ohne dass ein einziges Byte Audio gespeichert wurde.'
     },
     firstStepEn: {
-      ticket: 'One street segment, one week, one daily profile.',
-      criteria: 'Two phones placed together agree within 3 dB; weekend night spikes and commuter rushes clearly emerge in the temporal profile.'
+      ticket: 'One street segment, one week, one 24h diurnal profile.',
+      criteria: 'Two test devices on a Berlin residential street agree within 3 dB; commuter peaks (07:30-09:00), the midday tranquility lull (12:00-14:00), and nocturnal drop are clearly distinguishable without a single byte of audio ever saved or sent.'
     },
-    failureModeDe: 'Audio-Datenschutz: Wenn auch nur eine Millisekunde Roh-Audio auf Festplatte oder Netz landet, scheitert das Projekt. Das muss hardwarenah architektonisch verunmöglicht werden.',
-    failureModeEn: 'Audio privacy breach: If even one millisecond of raw audio touches disk or network, the project is fatally compromised. Architecture must make audio capture physically impossible.',
-    priorArtDe: 'NoiseCapture sammelt weltweite Lärmmessungen, konzentriert sich aber auf Pegelkarten statt auf das Finden von Ruhe-Fenstern.',
-    priorArtEn: 'NoiseCapture collects global noise metrics but focuses on sound intensity rather than temporal tranquility windows.'
+    firstStepEs: {
+      ticket: 'Un tramo de calle, una semana, un perfil diario de 24h.',
+      criteria: 'Dos dispositivos en una calle residencial coinciden con un margen de 3 dB; los picos de tráfico y las ventanas de calma emergen con total nitidez sin almacenar ningún archivo de audio.'
+    },
+    failureModeDe: 'Audio-Datenschutz & Überwachungsverdacht: Wenn Bürger auch nur vermuten, dass ein Mikrofon Gespräche belauscht oder Roh-Audio auf Festplatte/Server landet, ist das Projekt politisch und sozial tot. Gegenmaßnahme: Die Audioverarbeitung läuft ausschließlich über Web Audio API AnalyserNode im RAM, Roh-Audio wird hardwarenah unmittelbar verworfen, open-source überprüfbar; keine Speicherung, keine Aufnahmeknöpfe.',
+    failureModeEn: 'Audio privacy & surveillance suspicion: If citizens suspect that the phone microphone wiretaps conversations or caches raw audio on disk/cloud, the project is dead on arrival. Countermeasure: Processing occurs strictly in ephemeral RAM via Web Audio API AnalyserNode; raw samples are purged in milliseconds, zero recording capability in code.',
+    failureModeEs: 'Riesgo de privacidad y sospecha de vigilancia: Si la ciudadanía percibe riesgo de escucha, el proyecto fracasa. Contramedida: procesamiento en RAM volátil mediante Web Audio API, descarte inmediato de muestras sin almacenar audio.',
+    priorArtDe: 'NoiseCapture (Université Gustave Eiffel / CNRS) sammelt globale Lärmpunkte, fokussiert jedoch auf pegelbasierte Jahresmittelkarten statt auf zeitliche Ruhe-Fenster. Der Berliner Lärmaktionsplan 2024–2029 rechnet theoretische Großmodelle ohne Vor-Ort-Dynamik. Die Nische für eine lebensweltliche Ruhe-Fenster-Karte mit Fensterdämmungs-Rechner ist völlig offen.',
+    priorArtEn: 'NoiseCapture (Université Gustave Eiffel / CNRS) crowdsources sound pressure points globally but focuses on static decibel heatmaps rather than temporal quiet windows. Berlin\'s Strategic Noise Action Plan uses top-down annual dispersion models. The niche for an actionable tranquility-window index with window attenuation calculation remains vacant.',
+    priorArtEs: 'NoiseCapture recoge puntos de ruido globales pero se centra en mapas de calor promedio. El plan oficial de Berlín utiliza modelos teóricos anuales. La oportunidad para un índice de ventanas de tranquilidad permanece libre.',
+    emailTemplate: {
+      subjectDe: 'Ideen-Schenkung: Kiez-Lärmkarte – Ruhe-Fenster statt Jahresmittel (Zero-Audio PWA & NoiseCapture-Brücke)',
+      bodyDe: 'Liebes NoiseCapture- und CityLAB-Team,\n\nich übergebe hiermit ein vollständig ausgearbeitetes Konzept zur bedingungslosen Weiternutzung: „Kiez-Lärmkarte: Ruhe-Fenster-Radar".\n\nDas Kernproblem der bestehenden Lärmaktionspläne:\nAmtliche Lärmkarten (und auch viele Citizen-Science-Karten) mitteln Tag und Nacht zu abstrakten Dezibelwerten zusammen (L_den). Menschen bei der Wohnungssuche oder im Kiezalltag brauchen jedoch die zeitliche Struktur: Wann ist diese Straße leise? Gibt es ein 2-stündiges Ruhe-Fenster zum Arbeiten? Kann man mit gekipptem Fenster durchschlafen?\n\nDie Lösung:\n1. Zero-Audio Edge-Pipeline: Berechnung des RMS-Pegels rein im flüchtigen Browser-RAM (Web Audio API AnalyserNode). Es existiert keine Codezeile zur Audio-Speicherung — 0 Byte verlassen das Gerät unverschlüsselt als Ton.\n2. Ruhe-Fenster-Algorithmus: Automatische Erkennung zusammenhängender Zeitblöcke unter anpassbaren Schwellenwerten (z. B. < 45 dB(A)).\n3. WHO-Schlafindex mit Fensterdämpfung: Berechnung des Innenraumpegels bei gekipptem (-15 dB) vs. geschlossenem (-30 dB) Fenster im Vergleich zum WHO-Richtwert (< 40 dB).\n4. Standardisierter GeoJSON-Export für NoiseCapture und kommunale Geoportale.\n\nDas Konzept, die mathematischen Formeln und der funktionierende interaktive Prototyp-Simulator stehen bereit. Nehmen Sie die Idee, bauen Sie sie in NoiseCapture oder Kiezlabor-Projekte ein — als freies Geschenk (CC0).\n\nMit besten Grüßen aus Berlin,\nFélix',
+      subjectEn: 'Idea Gift: Kiez Noise Map – Tranquility Windows over Averages (Zero-Audio PWA & NoiseCapture Bridge)',
+      bodyEn: 'Dear NoiseCapture and CityLAB teams,\n\nI am gifting a fully conceptualized project dossier for unconditional civic implementation: "Kiez Noise Map: Tranquility Windows".\n\nThe core issue with existing noise action plans:\nOfficial strategic maps average days and nights into static decibel numbers (L_den). But citizens need the diurnal time structure: When is this street quiet? Is there a 2-hour lull for deep work? Can one sleep through the night with a tilted window?\n\nThe solution:\n1. Zero-Audio Edge Pipeline: RMS sound levels computed purely in ephemeral browser RAM via Web Audio API. Zero audio recording capability in code.\n2. Tranquility Window Algorithm: Automated detection of continuous calm intervals under configurable thresholds.\n3. WHO Sleep Index with Window Attenuation: Tilted (-15 dB) vs closed (-30 dB) window indoor levels benchmarked against WHO Europe Night Noise Guidelines (< 40 dB).\n4. Turnkey GeoJSON export for NoiseCapture and municipal GIS platforms.\n\nThe primitives and an interactive prototype simulator are complete. Take it and build upon it freely under CC0.\n\nWarm regards from Berlin,\nFélix',
+      to: 'contact@noise-planet.org'
+    },
+    emailTemplates: [
+      {
+        recipientName: 'Université Gustave Eiffel / CNRS (NoiseCapture)',
+        to: 'contact@noise-planet.org',
+        subjectDe: 'Free idea: quiet windows instead of average sound levels (NoiseCapture extension)',
+        bodyDe: 'Dear NoiseCapture research group,\n\nI research civic software opportunities and gift the ones I won\'t build myself. This architecture belongs with your team.\n\nNoiseCapture maps sound levels across the world. However, citizens and tenants ask a fundamentally different question: WHEN is this street quiet?\n\nBy computing diurnal quiet windows (continuous hours below 45 dB) and evaluating indoor attenuation per WHO Europe Night Noise Guidelines, NoiseCapture data becomes immediately actionable for urban planning and public health.\n\nAll details, formulas, and an interactive prototype are open source (CC0). Take it and integrate it into NoiseCapture if it serves your research.\n\nBest regards,\nFélix (Berlin)',
+        subjectEn: 'Free idea: quiet windows instead of average sound levels (NoiseCapture extension)',
+        bodyEn: 'Dear NoiseCapture research group,\n\nI research civic software opportunities and gift the ones I won\'t build myself. This architecture belongs with your team.\n\nNoiseCapture maps sound levels across the world. However, citizens and tenants ask a fundamentally different question: WHEN is this street quiet?\n\nBy computing diurnal quiet windows (continuous hours below 45 dB) and evaluating indoor attenuation per WHO Europe Night Noise Guidelines, NoiseCapture data becomes immediately actionable for urban planning and public health.\n\nAll details, formulas, and an interactive prototype are open source (CC0). Take it and integrate it into NoiseCapture if it serves your research.\n\nBest regards,\nFélix (Berlin)'
+      },
+      {
+        recipientName: 'CityLAB Berlin (Technologiestiftung Berlin)',
+        to: 'info@citylab-berlin.org',
+        subjectDe: 'Ideen-Schenkung für Kiezlabor: Kiez-Lärmkarte mit Ruhe-Fenstern (Zero-Audio PWA)',
+        bodyDe: 'Hallo CityLAB-Team,\n\nich übergebe Ihnen ein fertiges Konzept für eine lokale Kiezlabor-Interaktion: Die Kiez-Lärmkarte.\n\nStatt der starren amtlichen Modellkarten der Senatsverwaltung erfasst das Tool die Zeitstruktur von Straßenabschnitten und berechnet konkrete Ruhe-Fenster für Anwohnende. Die Zero-Audio-Architektur garantiert vollständigen Datenschutz ohne jede Tonaufnahme.\n\nVollständig CC0, inklusive GeoJSON-Export und interaktivem Simulator.\n\nViele Grüße,\nFélix (Berlin)',
+        subjectEn: 'Civic Gift for Kiezlabor: Kiez Noise Map with Tranquility Windows (Zero-Audio PWA)',
+        bodyEn: 'Hello CityLAB Team,\n\nI am gifting you a turnkey concept for hyper-local civic participation: The Kiez Noise Map.\n\nInstead of static top-down municipal averages, it reveals temporal tranquility windows and sleep quality indices with a strict zero-audio privacy architecture.\n\nCompletely CC0, ready for Kiezlabor field experiments.\n\nWarm regards,\nFélix (Berlin)'
+      }
+    ],
+    aiFrontier: {
+      impossibleBeforeAiDe: 'Frühere Ansätze erforderten teure geeichte Schallpegelmesser der Klasse 1 oder speicherten Audioschnipsel zur manuellen Auswertung — ein datenschutzrechtliches Desaster. Erst mit Web Audio API, lokaler Signalverarbeitung im Browser und Kreuzkalibrierungs-Algorithmen über viele Geräte hinweg wird eine privacy-konforme Zeitstruktur-Kartierung ohne dedizierte Messstationen möglich.',
+      impossibleBeforeAiEn: 'Previous methods required expensive Class 1 sound level meters or stored audio snippets for post-processing, triggering massive surveillance pushback. Only modern Web Audio API RAM signal processing and opportunistic multi-device cross-calibration enable privacy-first acoustic temporal mapping without dedicated municipal hardware.',
+      aiTechStack: [
+        'Web Audio API (AnalyserNode / Ephemeral RAM RMS)',
+        'NoiseCapture GeoJSON Community Schema',
+        'SenUMVK Berlin Open Data WFS/WMS (Umgebungslärm 2022)',
+        'WHO Europe Night Noise Guidelines Assessment Engine',
+        'IndexedDB Local Aggregator (Zero Cloud Telemetry)'
+      ],
+      privacyModelDe: '100% Zero-Audio / Local-First: Der Browser erfasst ausschließlich mathematische RMS-Schallenergiewerte im flüchtigen RAM. Es existieren keinerlei Audio-Puffer, Dateischreiber oder Cloud-Uploads für Sprachdaten. Abhören oder Rekonstruktion von Gesprächen ist architektonisch unmöglich.',
+      privacyModelEn: '100% Zero-Audio / Local-First: The browser computes solely root-mean-square sound power in volatile RAM. No audio files, recording buffers, or cloud audio streams exist in the entire codebase. Eavesdropping is architecturally impossible.',
+      ordinaryPeopleBenefitDe: 'Schützt Mieter und Familien vor Fehlentscheidungen beim Wohnungskauf oder -umzug und gibt Bürgerinitiativen fundierte Daten über das tatsächliche Verschwinden nächtlicher Ruhephasen an die Hand.',
+      ordinaryPeopleBenefitEn: 'Protects prospective tenants and families from renting sleep-disrupting apartments and equips neighborhood initiatives with empirical data on lost nocturnal tranquility.',
+      learningCurriculumDe: [
+        {
+          step: 1,
+          title: 'Woche 1: Zero-Audio RMS-Pipeline in der Web Audio API',
+          focus: 'Implementierung eines hardware-isolierten AnalyserNodes mit garantierter Verwerfung der Audio-Samples im RAM',
+          milestone: 'Präzise Pegelberechnung (30–90 dB) ohne Speicherallokation auf der Festplatte'
+        },
+        {
+          step: 2,
+          title: 'Woche 2: Zeitstruktur- und Ruhe-Fenster-Algorithmus',
+          focus: 'Erkennung zusammenhängender Lull-Intervalle unter Schwellenwerten (DIN 45680 / TA Lärm)',
+          milestone: 'Automatische Identifikation von 2h-Ruhe-Fenstern im 24-Stunden-Gang'
+        },
+        {
+          step: 3,
+          title: 'Woche 3: WHO-Schlafindex & Fensterdämpfung',
+          focus: 'Berechnung des Innenraumpegels über Bauteil-Dämpfungswerte (offen, gekippt, geschlossen)',
+          milestone: 'Biologische Schlafqualitäts-Ampel nach WHO Europe Night Noise Guidelines'
+        },
+        {
+          step: 4,
+          title: 'Woche 4: SenUMVK Open Data Abgleich & GeoJSON-Export',
+          focus: 'Validierung gegen den Berliner Lärmaktionsplan und Export nach NoiseCapture-Standard',
+          milestone: 'Vollständiger QGIS- und Noise-Planet-kompatibler GeoJSON-Export'
+        }
+      ],
+      learningCurriculumEn: [
+        {
+          step: 1,
+          title: 'Week 1: Zero-Audio RMS Pipeline via Web Audio API',
+          focus: 'Implementing an isolated AnalyserNode with hardware-level buffer disposal in RAM',
+          milestone: 'Accurate real-time sound level tracking (30-90 dB) with zero disk footprint'
+        },
+        {
+          step: 2,
+          title: 'Week 2: Diurnal Rhythm & Tranquility Window Algorithm',
+          focus: 'Detecting continuous acoustic lulls under DIN 45680 / TA Lärm thresholds',
+          milestone: 'Automated identification of 2-hour quiet windows in a 24-hour cycle'
+        },
+        {
+          step: 3,
+          title: 'Week 3: WHO Sleep Index & Window Attenuation',
+          focus: 'Computing indoor decibel levels through building attenuation (open, tilted, closed)',
+          milestone: 'Biological sleep quality traffic light aligned with WHO Europe guidelines'
+        },
+        {
+          step: 4,
+          title: 'Week 4: Berlin Open Data Ingestion & GeoJSON Export',
+          focus: 'Validation against municipal strategic noise maps and NoiseCapture export',
+          milestone: 'Fully valid GeoJSON export compatible with QGIS and Noise-Planet'
+        }
+      ]
+    }
   },
   {
     id: 'klarlokal',

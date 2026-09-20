@@ -6,3 +6,4 @@ export { BalkonkraftwerkSimulator } from './BalkonkraftwerkSimulator';
 export { RegenwasserSimulator } from './RegenwasserSimulator';
 export { KlarLokalSimulator } from './KlarLokalSimulator';
 export { CrackFloraSimulator } from './CrackFloraSimulator';
+export { KiezLaermSimulator } from './KiezLaermSimulator';

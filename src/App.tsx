@@ -23,11 +23,12 @@ import { DoseItem, Language, CandidateIdea } from './types';
 import { getTranslation } from './i18n';
 import { getActiveDosen, getActiveCandidates, saveCandidateLocal } from './services/storageService';
 import { parseDoseIdFromUrl, setDoseUrl, clearDoseUrl } from './utils/doseUrl';
+import { SimulatorKey } from './data/doseSimulators';
 import { Gift, FolderGit2 } from 'lucide-react';
 
 export function App() {
   const [currentTab, setCurrentTab] = useState<string>('dosen');
-  const [activeSandbox, setActiveSandbox] = useState<'altbau' | 'glasanflug' | 'streiflicht' | 'wetink' | 'balkon' | 'regenwasser' | 'klarlokal' | 'crackflora'>('altbau');
+  const [activeSandbox, setActiveSandbox] = useState<SimulatorKey>('altbau');
   const [lang, setLang] = useState<Language>('en');
   const [selectedDose, setSelectedDose] = useState<DoseItem | null>(null);
   const [packerDraft, setPackerDraft] = useState<any>(null);
@@ -109,7 +110,7 @@ export function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleOpenSimulator = (simId: 'altbau' | 'glasanflug' | 'streiflicht' | 'wetink' | 'balkon' | 'regenwasser' | 'klarlokal' | 'crackflora') => {
+  const handleOpenSimulator = (simId: SimulatorKey) => {
     setActiveSandbox(simId);
     setCurrentTab('sandboxes');
     window.scrollTo({ top: 0, behavior: 'smooth' });

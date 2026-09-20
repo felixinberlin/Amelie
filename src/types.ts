@@ -11,21 +11,27 @@ export interface DoseItem {
   title: string;
   titleKey?: string;
   titleEn?: string;
+  titleEs?: string;
   oneLinerDe: string;
   oneLinerEn: string;
+  oneLinerEs?: string;
   date: string;
   reviewAfter: string;
   recipientsDe: string;
   recipientsEn: string;
+  recipientsEs?: string;
   domain: DomainCategory;
   verdict: Verdict;
   status: DoseStatus;
   problemDe: string;
   problemEn: string;
+  problemEs?: string;
   whyNowDe: string[];
   whyNowEn: string[];
+  whyNowEs?: string[];
   sketchDe: string;
   sketchEn: string;
+  sketchEs?: string;
   firstStepDe: {
     ticket: string;
     criteria: string;
@@ -34,10 +40,16 @@ export interface DoseItem {
     ticket: string;
     criteria: string;
   };
+  firstStepEs?: {
+    ticket: string;
+    criteria: string;
+  };
   failureModeDe: string;
   failureModeEn: string;
+  failureModeEs?: string;
   priorArtDe: string;
   priorArtEn: string;
+  priorArtEs?: string;
   tags: string[];
   emailTemplate?: {
     subjectDe: string;
