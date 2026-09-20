@@ -203,17 +203,17 @@ Zu jeder Idee aus `ideas-neue-projekte.md`: wer davon profitiert, warum ausgerec
 
 ---
 
-### Kiez-Lärmkarte — L · 🎁
+### Kiez-Lärmkarte — L · 🎁 (verengt, Recheck 20.09.2026)
 
-**Wer profitiert:** Alle, die in Berlin eine Wohnung suchen oder eine Lärmbeschwerde begründen wollen — und die Forschung, die genau diese Methodik seit Jahren verfeinert. Privacy-first (nur dB-Pegel, nie Audio, lokale Aggregation) ist nicht Beiwerk, sondern die Existenzbedingung.
+**Wer profitiert:** Alle, die in Berlin eine Wohnung suchen oder eine Lärmbeschwerde begründen wollen — und die Forschung, die genau diese Methodik seit Jahren verfeinert. Privacy-first (nur dB-Pegel, nie Audio, lokale Aggregation) ist nicht Beiwerk, sondern die Existenzbedingung. In Berlin entstand an der TU Berlin bereits Hush City (von Berlin 2018 für Quiet-Areas-Planung übernommen; bewertet aber Orte per 44,1-kHz-Audioaufnahme). Die Restlücke: Tagesprofil/Ruhe-Fenster pro Straßenabschnitt („wann" statt „wo"), reine dB-Pegel ohne Audio, getragen von Institutionen statt Einzelpersonen.
 
 **Empfänger:**
 - **Noise-Planet / NoiseCapture** (Université Gustave Eiffel + CNRS, Open Source auf GitHub) — betreiben weltweite Crowdsourcing-Lärmkarten mit exakt dieser Architektur. Dein Beitrag wäre die Ruhe-Fenster-Perspektive („wann ist diese Straße leise") statt der Durchschnittskarte. Forschung = idealer Empfänger für eine reine Idee.
-- **Senatsverwaltung für Umwelt / Lärmaktionsplan Berlin** — rechnen mit Modellen und Durchschnitten; gemessene Ruhe-Fenster sind komplementär, nicht konkurrierend.
-- **Prototype Fund** — ab Oktober.
-- **Anwohner- und Mieter:inneninitiativen** — die tatsächlichen Nutzer:innen.
+- **CityLAB Berlin** — kommunaler Bauträger für die Berliner Bürgeranwendung (Kiezlabor).
+- **Senatsverwaltung für Mobilität, Verkehr, Klimaschutz und Umwelt (SenUMVK)** — Lärmaktionsplan 2024–2029 rechnet mit Modellen und Durchschnitten; gemessene Ruhe-Fenster sind komplementär, nicht konkurrierend.
+- *(Vorarbeit: Hush City von Dr. A. Radicchi in Dose und Mail als Pionier würdigen; Radicchi finanziert seit 2020 privat → kein Empfänger laut Rangliste).*
 
-**Kanal:** Mail an die NoiseCapture-Gruppe (Forschung, Englisch, ein Absatz Methodik reicht) + CityLAB für die Berliner Variante.
+**Kanal:** Mail an die NoiseCapture-Gruppe (Forschung, Englisch, ein Absatz Methodik reicht) + CityLAB für die Berliner Variante (gemeinsam mit Sperrmüll-Radar).
 
 **Hook:** „Lärmaktionspläne liefern Jahresmittelwerte. Menschen suchen etwas anderes: das Zeitfenster, in dem diese Straße leise ist. Dieselben Sensoren, andere Frage — und ohne eine einzige Audioaufnahme zu speichern."
 

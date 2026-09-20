@@ -88,9 +88,11 @@ Wo Ideen schnell sterben — vor dem Suchen als Vorfilter nutzen.
 | Orgel/Bleifraß: Zustandsdiagnose per Akustik | **unklar, nicht besetzt** | Nur Klimamessung/Schutzverfahren (HfK Bremen/DBU) und Labor-Analyse (COLLAPSE) gefunden; Problemprämisse (unbemerkter innerer Verfall) nicht belegt |
 | Melden, damit weggeräumt wird (Müll, Schäden, Ordnungswidrigkeiten) | **dicht, behördlich** | Ordnungsamt-Online Berlin (>200.000 Meldungen 2025), BSR-Formular, MÜLLweg! DE |
 | Verschenken/Tauschen als Marktplatz | **dicht, kommerziell (US) + Anzeigenbörsen (DE)** | `curbalertapp.com`, `curbalert.org`, `givore.com`, Olio; BSR Tausch- und Verschenkmarkt (ohne Karte, ohne Verfall) |
+| **Ruhe- und Lärm-Bürgerapps** | **verengt, aber besetzt in der Fläche** | Hush City (Orte, Berlin 2018 übernommen), SoundPrint (Innenräume), NoiseCapture (Pegel). Frei bleibt nur die **zeitliche** Auswertung |
 | Ephemere Stadtdaten ohne Konto (Objekt existiert Stunden, nicht Jahre) | **frei** | OSM nimmt nur Dauerhaftes (`amenity=give_box`); Marktplätze brauchen Konten und Bestand; Restlücke: Kiez-Ebene, Verfall als Datenschutz, quelloffen |
 
-**Faustregel, jetzt mit drei Runden Evidenz:** Wenn Endnutzer dafür zahlen würden oder eine Stadt es als Pressemitteilung verkaufen kann, existiert es. Frei ist, was ein Fachgremium als PDF veröffentlicht und niemand je in Software gegossen hat.
+**Faustregel, jetzt mit vier Runden Evidenz:** Wenn Endnutzer dafür zahlen würden oder eine Stadt es als Pressemitteilung verkaufen kann, existiert es. Frei ist, was ein Fachgremium als PDF veröffentlicht und niemand je in Software gegossen hat.
+**Neu:** Frei ist außerdem, was sich **nicht finanzieren lässt** — ohne Konto, ohne Bestand, ohne Wiederkehr. Solche Ideen existieren im Ausland regelmäßig als Marktplatz-Variante und nirgends als öffentliche. Die Restlücke ist dann die Trägerschaft, nicht die Funktion.
 
 ---
 
@@ -100,6 +102,8 @@ Wo Ideen schnell sterben — vor dem Suchen als Vorfilter nutzen.
 |---|---|---|---|---|---|---|
 | 1 | Sep 2026 | 19 | 8 | 7 | – | 4 |
 | 2 | 16.09.2026 | 13 | 2 | 1 | 2 | 8 |
+| 3 | 18.09.2026 | 11 (davon 2 Nachprüfungen) | 0 | 3 | 6 | 2 |
+| 4 | 20.09.2026 | 1 Tiefenprüfung + 3 Empfänger-/Geldgeberprüfungen | 0 | 1 (Herabstufung von `frei`) | 0 | 1 (Gegenrichtung) |
 | Nachtrag | 18.09.2026 | 2 | – | 2 | – | – |
 | 3 (nur neue Ideen) | 18.09.2026 | 11 | 2 | 5 | – | 4 |
 | Recheck (Runde 2 → 3) | 18.09.2026 | 2 | – | – | 1 | 1 |
@@ -107,7 +111,7 @@ Wo Ideen schnell sterben — vor dem Suchen als Vorfilter nutzen.
 | Recheck (2) | 19.09.2026 | 4 (Diffgeist `frei`→`verengt`; Ghost Replay, Pin Tumbler, Altbau Thermal `verengt` bestätigt, Begründung enger) | – | 4 | – | – |
 | 4 (Res. #2, ideenrunde, Teilrunde) | 19.09.2026 | 2 | – | 2 | – | – |
 | 4 (Researcher #1, ideenrunde, Denkmal-Strang) | 19.09.2026 | 3 | – | – | 1 | 2 |
-| 4 (Tiefenprüfung Sperrmüll-Radar) | 20.09.2026 | 1 (+ 3 Empfänger/Geldgeber) | – | 1 (Herabstufung von `frei`) | – | 1 (Gegenrichtung) |
+| 4 (Tiefenprüfung Sperrmüll-Radar & Kiez-Lärmkarte) | 20.09.2026 | 2 (+ 4 Empfänger/Geldgeber) | – | 2 (Herabstufungen von `frei`) | – | 1 (Gegenrichtung) |
 
 Runde 4 (nur Researcher #1, 3 Ideen): **0 % frei + verengt.** Kein Abgleich mit dem anderen ideenrunde-Researcher; nicht mit Runde 3 vergleichbar, weil dort zwei Methoden und vier Sessions liefen. Der Altbau-Thermal-Recheck (`verengt` bestätigt) steht nicht in dieser Zeile.
 

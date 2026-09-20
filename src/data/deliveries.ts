@@ -65,7 +65,7 @@ ich recherchiere Software-Lücken, die erst seit Kurzem technisch möglich sind,
 
 Sperrmüll-Radar: 2025 gab es fast 200.000 Meldungen illegaler Müllablagerungen in Berlin (>13 Mio. € Beseitigungskosten). Das Berliner „Zu verschenken"-Bordsteinprotokoll funktioniert ohne Server — ist analog aber zu langsam, sodass Brauchbares im Regen landet. In den USA gibt es dafür CurbAlert-Apps (werbefinanziert, mit Kontozwang). Die Berliner Lücke: gemeinnützig, kontolos, OSM-Straßensegment statt Hausnummer, und Verfall als Datenschutzkonzept. Als Kaltstart-Bühne bieten sich die ~80 BSR-Kieztage pro Jahr an; inhaltlicher Domänenpartner wäre Re-Use Berlin (deren Re-Use-Karte aktuell als 2,8-MB-PDF existiert).
 
-Kiez-Lärmkarte: Der Lärmaktionsplan 2024–2029 liefert Modellkarten und Jahresmittel. Menschen suchen aber etwas anderes: das Zeitfenster, in dem diese Straße leise ist („Ruhe-Fenster"). Handy-Mikrofon misst ausschließlich dB-Pegel, nie Audio, Aggregation lokal vor dem Upload.
+Kiez-Lärmkarte: Der Lärmaktionsplan 2024–2029 liefert Modellkarten und Jahresmittel. Menschen suchen etwas anderes: das Zeitfenster, in dem diese Straße leise ist. Handy-Mikrofon misst ausschließlich dB-Pegel, nie Audio, Aggregation lokal. Auch hier die Vorarbeit offen auf den Tisch: Hush City ist an der TU Berlin entstanden und wurde 2018 von Berlin für die Quiet-Areas-Planung übernommen — die App bewertet allerdings Orte als ruhig und berechnet ihre Pegel aus einer Audioaufnahme. Die offene Frage bleibt die zeitliche: nicht wo es ruhig ist, sondern wann.
 
 Je eine Seite mit Skizze, erstem Ticket und der Stelle, an der es kippt:
 - Sperrmüll-Radar: [Link zur Dose: Sperrmüll-Radar]

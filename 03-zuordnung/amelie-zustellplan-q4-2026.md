@@ -1,7 +1,7 @@
 # Amélie — Zustellplan Q4 2026
 
 Die erste Runde. Drei Mails, drei Empfängertypen, alle recherchiert und sendebereit.
-**Stand 20.09.2026:** Mail 1 ist raus. Mail 2 wurde nach einer Tiefenprüfung (Runde 4) **überarbeitet** — die alte Fassung enthielt eine Behauptung, die nicht haltbar war, und einen falschen Förderhinweis.
+**Stand 20.09.2026, abends:** Mail 1 ist raus. Mail 2 wurde nach einer Tiefenprüfung (Runde 4) **überarbeitet** und beide darin verlinkten Dosen sind nachgeprüft. Mail 2 ist damit versandfertig, sobald die Repo-Links stehen. Die alte Fassung enthielt — die alte Fassung enthielt eine Behauptung, die nicht haltbar war, und einen falschen Förderhinweis.
 
 ---
 
@@ -33,7 +33,11 @@ Das Urteil sinkt damit von `frei` auf **`verengt`** — und die Mail wird dadurc
 
 > **Neue Pflichtstufe im Loop: „Dose altert".** Jede gepackte, noch nicht zugestellte Dose wird unmittelbar vor dem Versand einmal nachgeprüft — mindestens eine englische Produktsuche. Zwei von zwei Vorab-Prüfungen haben bisher den Text gerettet.
 
-**Kiez-Lärmkarte:** unverändert. Der Berliner Lärmaktionsplan 2024–2029 liefert Modellkarten und Jahresmittel; gemessene Ruhe-Fenster sind komplementär. Diese Dose wurde noch nicht englisch nachgeprüft — **vor dem Versand nachholen.**
+**Kiez-Lärmkarte — am selben Abend nachgeprüft, und es hat sich gelohnt.** Die Dose nannte als Vorarbeit nur NoiseCapture. Es fehlte **Hush City**: an der TU Berlin entstanden, misst Pegel, kartiert „everyday quiet areas" — und wurde **2018 von Berlin und ab 2019 von Limerick für die Quiet-Areas-Planung übernommen**. Eine Mail an Noise-Planet, in der diese Arbeit fehlt, wäre in genau der Community gelandet, die sie kennt. Dazu **SoundPrint** (USA), das dieselbe Frage für Innenräume beantwortet.
+
+Die Idee überlebt, enger geschnitten: Hush City bewertet **Orte** („dieser Platz ist ruhig") und rechnet Pegel aus einer 44,1-kHz-**Audioaufnahme**. Offen bleibt das **Tagesprofil pro Straßenabschnitt** — „wann", nicht „wo" — ohne jede Aufnahme. Urteil `frei` → **`verengt`**, Dose überarbeitet.
+
+Nebenbefund für die Empfängerwahl: Radicchi finanziert Hush City seit 2020 privat. Damit ist sie laut eigener Rangliste **kein** Empfänger (unbezahlte Einzelmaintainerin), sondern Vorarbeit, die in Dose und Mail gewürdigt gehört.
 
 ---
 
@@ -69,7 +73,7 @@ Das Urteil sinkt damit von `frei` auf **`verengt`** — und die Mail wird dadurc
 >
 > Zwei Anschlussstellen, die es leichter machen: Die BSR fährt 2026 rund achtzig Kieztage mit Tausch- und Verschenkmarkt — das sind fertige Termine mit garantierter Dichte, an denen eine leere Karte sich in zwei Stunden füllt. Und inhaltlich wäre Re-Use Berlin bzw. die Zero-Waste-Agentur der passende Partner; deren Übersichtskarte der Re-Use-Orte ist derzeit ein PDF.
 >
-> **Kiez-Lärmkarte.** Der Lärmaktionsplan 2024–2029 liefert Modellkarten und Jahresmittel. Menschen suchen etwas anderes: das Zeitfenster, in dem diese Straße leise ist. Handy-Mikrofon misst ausschließlich dB-Pegel, nie Audio, Aggregation lokal.
+> **Kiez-Lärmkarte.** Der Lärmaktionsplan 2024–2029 liefert Modellkarten und Jahresmittel. Menschen suchen etwas anderes: das Zeitfenster, in dem diese Straße leise ist. Handy-Mikrofon misst ausschließlich dB-Pegel, nie Audio, Aggregation lokal. Auch hier die Vorarbeit offen auf den Tisch: Hush City ist an der TU Berlin entstanden und wurde 2018 von Berlin für die Quiet-Areas-Planung übernommen — die App bewertet allerdings Orte als ruhig und berechnet ihre Pegel aus einer Audioaufnahme. Die offene Frage bleibt die zeitliche: nicht wo es ruhig ist, sondern wann.
 >
 > Je eine Seite mit Skizze, erstem Ticket und der Stelle, an der es kippt — beim Radar ist das die Nähe zum Denunziationswerkzeug und die ungeklärte Rechtsfrage, ob eine öffentliche Karte Gegenstände zeigen darf, die amtlich als illegale Ablagerung gelten: <Links>
 >
@@ -112,8 +116,9 @@ Das Urteil sinkt damit von `frei` auf **`verengt`** — und die Mail wird dadurc
 |---|---|---|
 | ~~heute~~ | ~~Mail 1 (UdK / EnergyMap)~~ — **erledigt 20.09.2026** | — |
 | **als Nächstes** | Repo `amelie` befüllen: Dose Sperrmüll-Radar v2 rein, Dose Lärmkarte rein — damit die Links in Mail 2 existieren | 1 h |
-| **danach** | **Mail 2 (CityLAB) in der überarbeiteten Fassung** | 20 min |
-| **vor Mail 3** | Lärm-Dose englisch nachprüfen („Dose altert"), dann Mail 3 | 45 min |
+| **dann** | **Mail 2 (CityLAB) in der überarbeiteten Fassung** | 20 min |
+| ~~vor Mail 3~~ | ~~Lärm-Dose englisch nachprüfen~~ — **erledigt 20.09.2026**, Dose v2 liegt vor | — |
+| **danach** | Mail 3 (NoiseCapture) — Hush City darin erwähnen, sonst wirkt sie übersehen | 20 min |
 | **Ende Dezember** | Quartalsreview: Status fortschreiben, Dosen mit abgelaufenem „Prüfen ab" löschen; Sperrmüll-Radar steht auf 03/2027 | 30 min |
 
 ---
@@ -127,7 +132,7 @@ Das Urteil sinkt damit von `frei` auf **`verengt`** — und die Mail wird dadurc
 - [x] Lizenz **und Name** drunter? — ja
 - [x] Datum in der Dose? — Radar: Stand 9/2026, prüfen ab **3/2027** (verkürzt, das Feld bewegt sich)
 - [x] Steht drin, dass sie nicht antworten müssen? — ja
-- [x] **Vor dem Versand englisch nachgeprüft?** — Radar: ja (20.09.2026). Lärmkarte: **nein, offen.**
+- [x] **Vor dem Versand englisch nachgeprüft?** — Radar: ja (20.09.2026). Lärmkarte: ja (20.09.2026, Hush City + SoundPrint nachgetragen).
 - [x] **Fördertopf auf Antragsberechtigung des Empfängers geprüft?** — ja, deshalb steht der Prototype Fund nicht mehr in Mail 2
 - [ ] Defensive Publikation — bei der Lärmkarte relevanter, weil Messverfahren patentierbar sind
 - [x] Kein Nachfassen geplant — wirklich nicht
@@ -140,4 +145,4 @@ Das Urteil sinkt damit von `frei` auf **`verengt`** — und die Mail wird dadurc
 |---|---|---|
 | Altbau Thermal | EnergyMap-Verbund / UdK Berlin | **gesendet 20.09.2026**, Antwort offen |
 | Sperrmüll-Radar | CityLAB Berlin (+ Re-Use Berlin, BSR als Partner) | **Dose v2 fertig, Mail überarbeitet → sendebereit, sobald der Link steht** |
-| Kiez-Lärmkarte | CityLAB + Noise-Planet | Dose fehlt noch; vor Versand englisch nachprüfen |
+| Kiez-Lärmkarte | CityLAB + Noise-Planet | **Dose v2 fertig** (Hush City, SoundPrint nachgetragen, Urteil `verengt`) → sendebereit |

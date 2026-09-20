@@ -19,7 +19,7 @@ Damit Sie meine Hausaufgaben sehen: In Nordamerika gibt es das viermal (CurbAler
 
 Zwei Anschlussstellen, die es leichter machen: Die BSR fährt 2026 rund achtzig Kieztage mit Tausch- und Verschenkmarkt — das sind fertige Termine mit garantierter Dichte, an denen eine leere Karte sich in zwei Stunden füllt. Und inhaltlich wäre Re-Use Berlin bzw. die Zero-Waste-Agentur der passende Partner; deren Übersichtskarte der Re-Use-Orte ist derzeit ein PDF.
 
-**Kiez-Lärmkarte.** Der Lärmaktionsplan 2024–2029 liefert Modellkarten und Jahresmittel. Menschen suchen etwas anderes: das Zeitfenster, in dem diese Straße leise ist. Handy-Mikrofon misst ausschließlich dB-Pegel, nie Audio, Aggregation lokal.
+**Kiez-Lärmkarte.** Der Lärmaktionsplan 2024–2029 liefert Modellkarten und Jahresmittel. Menschen suchen etwas anderes: das Zeitfenster, in dem diese Straße leise ist. Handy-Mikrofon misst ausschließlich dB-Pegel, nie Audio, Aggregation lokal. Auch hier die Vorarbeit offen auf den Tisch: Hush City ist an der TU Berlin entstanden und wurde 2018 von Berlin für die Quiet-Areas-Planung übernommen — die App bewertet allerdings Orte als ruhig und berechnet ihre Pegel aus einer Audioaufnahme. Die offene Frage bleibt die zeitliche: nicht wo es ruhig ist, sondern wann.
 
 Je eine Seite mit Skizze, erstem Ticket und der Stelle, an der es kippt — beim Radar ist das die Nähe zum Denunziationswerkzeug und die ungeklärte Rechtsfrage, ob eine öffentliche Karte Gegenstände zeigen darf, die amtlich als illegale Ablagerung gelten:
 Sperrmüll-Radar: https://github.com/felixinberlin/Amelie/blob/main/05-dosen/sperrmuell-radar.md
