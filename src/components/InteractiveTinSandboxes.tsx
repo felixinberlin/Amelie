@@ -811,7 +811,7 @@ Sincerely,
             <div className="flex items-center justify-between pb-3 border-b border-stone-100">
               <h3 className="font-serif-title font-bold text-stone-900 text-lg flex items-center gap-2">
                 <Thermometer className="w-5 h-5 text-amber-700" />
-                <span>{tr3('Wohnungsebene: Berliner Zimmer (Lehrmodell)','Apartment Room Heat Loss & Dew Point', 'Habitación de vivienda: pérdida de calor y punto de rocío')}</span>
+                <span>{tr3('Wohnungsebene: Berliner Zimmer (DIN 4108)', 'Apartment Room Heat Loss & Dew Point', 'Habitación de vivienda: pérdida de calor y punto de rocío')}</span>
               </h3>
               <span className="text-xs font-mono-code bg-amber-50 text-amber-800 px-2 py-0.5 rounded border border-amber-200">
                 Tin #1

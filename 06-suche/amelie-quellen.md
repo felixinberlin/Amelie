@@ -17,7 +17,8 @@ Diese Liste sagt, **wo** gegraben wird, und hält fest, **was schon durchgegrabe
 | LANA (Bund-Länder-AG Naturschutz) | Beschlüsse mit Bewertungsschemata | angekratzt — Eingriffsregelung/Biotopwertverfahren ist bereits gesetzlich kodifiziert (BKompV) und dürfte über kommerzielle Ökokonto-/Kompensationsflächen-Software abgedeckt sein; vor Ausformulieren einer Idee gegenchecken | 18.09.2026 |
 | Bundesamt für Naturschutz (BfN) | Skripten, Leitfäden, Kartieranleitungen | angekratzt — BfN-Schriften 721 „Kartieranleitung für die Biotoptypen nach Anlage 2 der BKompV" gefunden (668 Biotoptypen, feste Schwellenwerte, Kartiermethodik von Hand). Daraus entstanden: Biotoptyp-Assistent (`05-dosen/biotoptyp-assistent.md`) | 18.09.2026 |
 | Senatsverwaltung Berlin, Umwelt | Leitfäden (z. B. „Bauen mit Glas und Licht", 2021) | offen | – |
-| Denkmalbehörden, Landesämter | Schadenskartierungs-Anleitungen | offen | – |
+| Denkmalbehörden, Landesämter | Schadenskartierungs-Anleitungen | angekratzt — Anleitungen gefunden (Berlin LDA „Leitfaden zur Erstellung von restauratorischen Dokumentationen", BW, Niedersachsen, Sachsen-Anhalt „Handreichung zur Bestandsuntersuchung"), aber **nicht gelesen**; Schadenskartierung ist als Software-Feld besetzt (Metigo MAP, KALIV) — Typ A ist hier **kein Schema ohne Software**. Ertrag kam aus der Ehrenamts-/Bürgerseite (DSD Schwarzbuch, BLfD Bürgerportal), also eher Typ B. Idee: Denkmal-Verlaufsblick | 19.09.2026 |
+| Denkmalbehörden, Landesämter | Schadenskartierungs-Anleitungen | `durchsucht` (Suchen, keine Publikationsliste gelesen) — 19.09.2026, Researcher #1: Leitfäden existieren (LAD Baden-Württemberg „Dokumentation im konstruktiven Holzbau", Berlin LDA restauratorische Dokumentation, LVR-Handreichungen, Baubegehungs-Checklisten, z. B. EKBO). **Ergebnis: 3 Ideen abgeleitet, 0 überlebt** (Kirchen-Baubegehung `besetzt`, Schadenskartierung per Foto `besetzt`, Orgel-Resonanz `unklar`). Der Strang ist dicht: Denkmal/Kirche ist „physisches Objekt + wiederkehrende Prüfung" und hat Software-Anbieter (ARCHIKART) und KI-Pilotprojekte (Wiro Rostock). Nicht weiter hier graben; Restwert nur Orgel (Orgelbauer-Kontakt) | 19.09.2026 |
 | Landesumweltbehörden „Licht & Naturschutz" (Hamburg BUKEA u. a.) | weitere Länder-Leitfäden ohne Tool (analog zu Hamburg) | angekratzt — **ergiebig, Lichtplan-Check entstand hieraus** | 18.09.2026 |
 
 **Suchstring:** `<Gremium> Bewertungsverfahren Punktesystem` · `<Gremium> Kartieranleitung` · `<Gremium> Checkliste Vollzug`
@@ -30,7 +31,8 @@ Diese Liste sagt, **wo** gegraben wird, und hält fest, **was schon durchgegrabe
 
 | Quelle | Wonach suchen | Status | Zuletzt |
 |---|---|---|---|
-| mitforschen.org (Plattform aller deutschen CS-Projekte) | Projekte mit Foto-Upload und Rückmeldung „nach Auswertung" | offen — **ergiebigste Quelle, als Nächstes** (seit Runde 2 so vermerkt, in Runde 3 wieder nicht angefasst) | – |
+| mitforschen.org (Plattform aller deutschen CS-Projekte) | Projekte mit Foto-Upload und Rückmeldung „nach Auswertung" | offen — **ergiebigste Quelle, als Nächstes** (seit Runde 2 so vermerkt, in Runde 3 und in Runde 4 von Researcher #2 wieder nicht angefasst — bewusst ausgewichen, um Kollision mit Researcher #1 zu vermeiden) | – |
+| Deutsche Stiftung Denkmalschutz (Schwarzbuch, Meldeportal, ehrenamtliche Beiräte) | Ehrenamts-Beobachtung mit rückblickender Auswertung | angekratzt (Suchtreffer, Portal nicht gelesen) — Idee: Denkmal-Verlaufsblick | 19.09.2026 |
 | Thünen Wildbienen-Monitoring | Hummel-Monitoring zusätzlich zur Nisthilfe | angekratzt | 16.09.2026 |
 | CompGen (genealogy.net) | andere Erfassungsprojekte außer Grabsteine (Adressbücher, Verlustlisten) | angekratzt | 16.09.2026 |
 | Naturkundemuseum Berlin, Citizen-Science-Bereich | Projekte mit Engpass | offen | – |
@@ -70,7 +72,7 @@ Der Lauf nennt diese Anker in `amelie-bisoziation-log.md`. Sie sind hier vermerk
 | LANA/BfN Kartieranleitung LRT 6120 (Trockenrasen) | A | Trockenrasen-Transekte; Überschneidung mit Kartierlotse klären | offen (BfN-Zeile oben ist wegen Schrift 721 `angekratzt`, LRT-6120-Anleitung selbst ungelesen) |
 | NABU-Batcorder-Monitoring Gewässer | B | Fledermaus-Echo-Entwirrer | offen |
 | Thünen MonViA, Hummel-Nistkasten | B | Hummel-Schleusenwächter | angekratzt (Nisthilfe-Foto-Auswertung Runde 2; Hummel-Strang wie in Zeile oben vermerkt) |
-| Stiftung Denkmalschutz / BDO, Orgelpfeifen-Bleifraß | A/Denkmal | Orgelpfeifen-Resonanz | offen (deckt sich mit „Denkmalbehörden, Landesämter" oben) |
+| Stiftung Denkmalschutz / BDO, Orgelpfeifen-Bleifraß | A/Denkmal | Orgelpfeifen-Resonanz | angekratzt 19.09.2026 — HfK-Bremen/DBU-Projekt, IDW-Meldung, CORDIS COLLAPSE gelesen; Handbuch Orgelkorrosion 2019 (PDF) nicht lesbar; Idee `unklar` |
 | DWD Waldbrandgefahrenindex / Landesforst | A | Waldbrand-Streu-Knistern | offen |
 | DWD Phänologischer Kalender | B | Knospen-Countdown | offen |
 | Tafel Deutschland e. V. | B/Empfänger | Tafel-Frische-Triage | **Achtung:** laufendes BMEL-Projekt „Tafel macht Zukunft" — zuerst dessen Umfang lesen |
