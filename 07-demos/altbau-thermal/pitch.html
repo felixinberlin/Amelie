@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="de" data-lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Altbau Thermal Pitch</title>
+<meta name="description" content="Kurzvorstellung der Idee Altbau Thermal: die Innenperspektive zu EnergyMap Berlin. Acht Folien, Pfeiltasten, druckbar.">
+<style>
+:root {
+  --paper: #faf7f2; --card: #ffffff; --ink: #1d1b18; --muted: #5f5a52; --line: #d9d2c5;
+  --accent: #a4431c; --cold: #2b6cb0; --warn: #a15c07; --focus: #1a56db;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #17150f; --card: #211e17; --ink: #efe9dd; --muted: #b0a999; --line: #3b362b;
+    --accent: #e08a5f; --cold: #7ab0e6; --warn: #e0a24a; --focus: #8ab4ff;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #17150f; --card: #211e17; --ink: #efe9dd; --muted: #b0a999; --line: #3b362b;
+  --accent: #e08a5f; --cold: #7ab0e6; --warn: #e0a24a; --focus: #8ab4ff;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body { background: var(--paper); color: var(--ink); font: 18px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; overflow-x: hidden; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+html[data-lang="de"] [lang="en"], html[data-lang="en"] [lang="de"] { display: none !important; }
+
+.deck { min-height: 100%; display: flex; flex-direction: column; }
+.slides { flex: 1; position: relative; }
+section.slide { display: none; max-width: 900px; margin: 0 auto; padding: 32px 16px 24px; }
+section.slide.on { display: block; }
+.kicker { color: var(--accent); font-weight: 700; font-size: .85rem; letter-spacing: .06em; text-transform: uppercase; margin: 0 0 8px; }
+h1 { font-size: clamp(2rem, 6vw, 3.2rem); line-height: 1.1; margin: 0 0 16px; letter-spacing: -0.02em; }
+h2 { font-size: clamp(1.5rem, 4.5vw, 2.2rem); line-height: 1.2; margin: 0 0 16px; letter-spacing: -0.01em; }
+p, li { max-width: 62ch; }
+ul, ol { padding-left: 1.2em; } li { margin: 0 0 .5em; }
+.lead { font-size: 1.25rem; color: var(--muted); }
+.box { background: var(--card); border: 1px solid var(--line); border-left: 5px solid var(--accent); border-radius: 0 10px 10px 0; padding: 12px 16px; margin: 16px 0; }
+.box.warn { border-left-color: var(--warn); }
+.cols { display: grid; gap: 12px; grid-template-columns: 1fr; margin: 16px 0; }
+@media (min-width: 720px) { .cols { grid-template-columns: repeat(3, 1fr); } }
+.cols > div { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+.cols b { display: block; margin-bottom: 4px; }
+.small { font-size: .9rem; color: var(--muted); }
+a { color: var(--accent); }
+code { background: var(--card); border: 1px solid var(--line); border-radius: 4px; padding: 0 4px; font-size: .9em; }
+.btn { display: inline-block; padding: 10px 16px; border: 2px solid var(--accent); border-radius: 8px; text-decoration: none; font-weight: 700; color: var(--accent); }
+
+nav.bar { position: sticky; bottom: 0; display: flex; align-items: center; gap: 8px; padding: 10px 16px; background: var(--paper); border-top: 1px solid var(--line); }
+nav.bar button { font: inherit; padding: 8px 14px; border: 1px solid var(--line); background: var(--card); color: var(--ink); border-radius: 8px; cursor: pointer; min-height: 44px; }
+nav.bar .sp { flex: 1; text-align: center; color: var(--muted); font-variant-numeric: tabular-nums; }
+nav.bar .lang[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+
+@media print {
+  nav.bar { display: none; }
+  section.slide { display: block !important; page-break-after: always; break-after: page; padding: 24px; }
+  body { font-size: 14pt; }
+}
+</style>
+</head>
+<body>
+<div class="deck">
+<main class="slides" id="slides" aria-live="polite">
+
+<section class="slide on" aria-label="1">
+  <p class="kicker" lang="de">Idee zu verschenken · Skizze</p><p class="kicker" lang="en">Idea to give away · Sketch</p>
+  <h1>Altbau Thermal</h1>
+  <p class="lead" lang="de">Grundriss zeichnen, Baualtersklasse wählen, zusehen, was die eigene Wohnung thermisch tut – die <strong>Innenperspektive</strong> zu dem, was EnergyMap Berlin von außen für jedes Gebäude ausrechnet.</p>
+  <p class="lead" lang="en">Draw a floor plan, pick a construction-era class, watch what your own apartment does thermally — the <strong>inside view</strong> of what EnergyMap Berlin calculates from the outside for every building.</p>
+  <p class="small" lang="de">Für den Forschungsverbund EnergyMap Berlin. Stand September 2026. Kein Konkurrenzprodukt: fängt an, wo EnergyMap an der Gebäudehülle aufhört.</p>
+  <p class="small" lang="en">For the EnergyMap Berlin research consortium. As of September 2026. Not a competing product: it starts where EnergyMap stops, at the building envelope.</p>
+</section>
+
+<section class="slide" aria-label="2">
+  <p class="kicker" lang="de">Das Problem</p><p class="kicker" lang="en">The problem</p>
+  <h2 lang="de">Beantwortet ist: <em>Was braucht dieses Gebäude?</em> Offen ist: <em>Was tut meine Wohnung?</em></h2>
+  <h2 lang="en">Answered: <em>what does this building need?</em> Open: <em>what does my flat do?</em></h2>
+  <div class="cols" lang="de">
+    <div><b>Der Schimmelstreit</b>Ein Gebäudewert in kWh/m²a hilft nicht. Gebraucht wird die Oberflächentemperatur <em>an dieser Ecke</em> – ein geteiltes Modell für beide Seiten.</div>
+    <div><b>Die 20.000-Euro-Entscheidung</b>Fenster, Dämmung oder größere Heizkörper: für den <em>eigenen</em> Grundriss gibt es kein Vergleichswerkzeug.</div>
+    <div><b>Die Beratungslücke</b>Die Energieberatung erklärt im Gespräch, was ein Bild in zehn Sekunden zeigen würde.</div>
+  </div>
+  <div class="cols" lang="en">
+    <div><b>The mould dispute</b>A building-level kWh/m²a value doesn't help. What's needed is the surface temperature <em>at this corner</em> — a shared model both sides can look at.</div>
+    <div><b>The €20,000 decision</b>Windows, insulation or bigger radiators: there is no tool to compare them for <em>your own</em> floor plan.</div>
+    <div><b>The advice gap</b>Free energy advice explains in a conversation what an image would show in ten seconds.</div>
+  </div>
+</section>
+
+<section class="slide" aria-label="3">
+  <p class="kicker" lang="de">Warum das jetzt geht</p><p class="kicker" lang="en">Why it works now</p>
+  <h2 lang="de">Fünf Dinge waren einzeln teuer – das fünfte ist neu.</h2>
+  <h2 lang="en">Five things were each expensive — the fifth is new.</h2>
+  <ol lang="de">
+    <li><strong>Grundriss aus Foto oder PDF</strong> – ein gelöstes Bildproblem, kein CAD-Import mehr.</li>
+    <li><strong>Parameter ohne Fachwissen</strong> – „Altbau, etwa 1905, Kastendoppelfenster“ genügt, um Bauteilwerte nach Baualtersklasse abzuleiten.</li>
+    <li><strong>Simulation im Browser</strong> – instationäre 2D-Wärmeleitung plus Luftwechsel per WebGL2 in Echtzeit.</li>
+    <li><strong>Freie Wetterdaten</strong> – DWD/BBSR-Testreferenzjahre.</li>
+    <li><strong>Öffentliche Gebäudedaten</strong> – EnergyMap-Web-App und <code>energymap4py</code> seit 2025: der Gebäudekontext muss nicht geraten, er kann abgefragt werden.</li>
+  </ol>
+  <ol lang="en">
+    <li><strong>Floor plan from a photo or PDF</strong> — a solved image problem, no more CAD import.</li>
+    <li><strong>Parameters without expertise</strong> — “old building, around 1905, box-type double windows” is enough to derive component values by construction-era class.</li>
+    <li><strong>Simulation in the browser</strong> — transient 2D heat conduction plus air change via WebGL2 in real time.</li>
+    <li><strong>Free weather data</strong> — DWD/BBSR test reference years.</li>
+    <li><strong>Public building data</strong> — EnergyMap web app and <code>energymap4py</code> since 2025: the building context no longer has to be guessed, it can be queried.</li>
+  </ol>
+</section>
+
+<section class="slide" aria-label="4">
+  <p class="kicker" lang="de">Die Skizze</p><p class="kicker" lang="en">The sketch</p>
+  <h2 lang="de">Zeichnen → parametrisieren → simulieren → vergleichen</h2>
+  <h2 lang="en">Draw → parametrise → simulate → compare</h2>
+  <ul lang="de">
+    <li><strong>Ausgabe als Band, nie als eine Zahl.</strong> Oberflächentemperatur an kritischen Ecken; Schimmelrisiko als Taupunkt-Unterschreitung.</li>
+    <li><strong>Der eigentliche Nutzen: A/B.</strong> Zwei Varianten desselben Grundrisses, gleiches Wetter, gleiche Nutzung.</li>
+    <li><strong>Die Sommerrichtung fällt ab:</strong> gleiche Gleichung, anderes Vorzeichen – Überhitzung, Verschattung, Nachtlüftung.</li>
+  </ul>
+  <ul lang="en">
+    <li><strong>Output as a band, never a single number.</strong> Surface temperature at critical corners; mould risk as dew-point undershoot.</li>
+    <li><strong>The real value: A/B.</strong> Two variants of the same floor plan, same weather, same usage.</li>
+    <li><strong>The summer direction falls out:</strong> same equation, opposite sign — overheating, shading, night ventilation.</li>
+  </ul>
+  <p class="box"><span lang="de">Nicht dabei: Energieausweis, normkonforme Berechnung, 3D, Contracting. Ein Werkzeug zum Verstehen, kein Nachweisinstrument.</span><span lang="en">Not included: energy certificate, standards-compliant calculation, 3D, contracting. A tool for understanding, not for proof.</span></p>
+  <p class="box"><span lang="de"><strong>Live ansehen:</strong> Der erste Schritt ist als Skizze in der Amélie-App gebaut: Menü <em>Simulators → Old Building</em> (auf der Dose „Altbau Thermal“: „Live Heat Loss Simulator“).</span><span lang="en"><strong>See it live:</strong> the first step is built as a sketch in the Amélie app: menu <em>Simulators → Old Building</em> (on the “Altbau Thermal” tin: “Live Heat Loss Simulator”).</span></p>
+</section>
+
+<section class="slide" aria-label="5">
+  <p class="kicker" lang="de">Erster Schritt</p><p class="kicker" lang="en">First step</p>
+  <h2 lang="de">Ein Raum, ein Fenster, ein Heizkörper, stationär.</h2>
+  <h2 lang="en">One room, one window, one radiator, steady state.</h2>
+  <p lang="de">Rastereditor für einen einzelnen Raum mit einer Außenwand. Drei Regler: U-Wert Wand, U-Wert Fenster, Luftwechselrate. Ausgabe: erforderliche Heizleistung und Oberflächentemperatur in der kalten Ecke, bei Berliner Januar-Mitteltemperatur.</p>
+  <p lang="en">Grid editor for a single room with one exterior wall. Three sliders: wall U-value, window U-value, air change rate. Output: required heating power and surface temperature in the cold corner, at Berlin's January mean temperature.</p>
+  <p class="box"><strong lang="de">Fertig, wenn:</strong><strong lang="en">Done when:</strong> <span lang="de">eine Änderung des Fenster-U-Werts die erforderliche Heizleistung sichtbar verändert und die Zahl gegen eine Handrechnung nach Norm auf 10 % stimmt.</span><span lang="en">changing the window U-value visibly changes the required heating power, and the number agrees with a by-hand calculation per the standard to within 10 %.</span></p>
+  <p class="small" lang="de">Status des Mockups: Rechenkern gegen eine unabhängige Handrechnung derselben Formeln geprüft (Abweichung 0 %). Das ist ein Konsistenztest, <strong>keine Validierung gegen die Norm</strong> – diese steht noch aus.</p>
+  <p class="small" lang="en">Mockup status: calculation core checked against an independent hand calculation of the same formulas (0 % deviation). That is a consistency test, <strong>not validation against the standard</strong> — that is still open.</p>
+</section>
+
+<section class="slide" aria-label="6">
+  <p class="kicker" lang="de">Wo es kippt</p><p class="kicker" lang="en">Where it breaks</p>
+  <h2 lang="de">Eine Simulation, die präzise aussieht und falsch ist, ist schlimmer als keine.</h2>
+  <h2 lang="en">A simulation that looks precise and is wrong is worse than none.</h2>
+  <p lang="de">Menschen treffen damit fünfstellige Entscheidungen und führen Streit mit der Hausverwaltung. Scheingenauigkeit richtet hier echten Schaden an. Gegenmaßnahmen sind Disziplin in der Darstellung:</p>
+  <p lang="en">People make five-figure decisions with it and argue with their landlords. False precision does real harm here. The only countermeasure is discipline in presentation:</p>
+  <ul lang="de">
+    <li>Nie eine einzelne Zahl. Immer ein Band, und das Band muss ehrlich breit sein.</li>
+    <li>Gegen etablierte Verfahren validieren, bevor irgendjemand außerhalb es sieht – die Methodik dafür ist im Verbund vorhanden.</li>
+    <li>Unsicherheit sichtbar machen, nicht wegdesignen.</li>
+  </ul>
+  <ul lang="en">
+    <li>Never a single number. Always a band, and the band must be honestly wide.</li>
+    <li>Validate against established methods before anyone outside sees it — the methodology exists in the consortium.</li>
+    <li>Make uncertainty visible, don't design it away.</li>
+  </ul>
+  <p class="box warn"><span lang="de"><strong>Zweites Risiko:</strong> Lesart als Energieausweis-Ersatz – der Nicht-Anspruch gehört in die Oberfläche. <strong>Drittes:</strong> Wenn Zeichnen länger als drei Minuten dauert, springen Laien ab; deshalb steht die Eingabe im Risiko, nicht die Physik.</span><span lang="en"><strong>Second risk:</strong> being read as an energy-certificate substitute — the non-claim belongs in the interface. <strong>Third:</strong> if drawing takes longer than three minutes, laypeople drop off; that's why the input, not the physics, is the risk.</span></p>
+</section>
+
+<section class="slide" aria-label="7">
+  <p class="kicker" lang="de">Wer es schon versucht hat</p><p class="kicker" lang="en">Who has tried it</p>
+  <h2 lang="de">Bestände sind gerechnet. Die einzelne Wohnung nicht.</h2>
+  <h2 lang="en">Building stocks are computed. The single flat is not.</h2>
+  <ul lang="de">
+    <li><strong>EnergyMap Berlin</strong> (UdK Berlin mit co2online, SEnerCon, LUP, Bezirksamt Charlottenburg-Wilmersdorf): öffentliche Web-App seit Mai 2025, <code>energymap4py</code>, Validierung zuletzt BauSIM 2026.</li>
+    <li><strong>CoolingMap</strong> (2026–2029), <strong>CO2OL ISLANDS</strong> (2026–2030): dort ist die Sommerrichtung anschlussfähig.</li>
+    <li><strong>TEASER</strong> (RWTH-EBC), <strong>SimStadt</strong>: rechnen Bestände auf Quartiersebene, keiner adressiert die einzelne Wohnung.</li>
+    <li><strong>Verbraucherzentrale Berlin, Gebäudecheck</strong>: die Beratungsschiene, in die das Werkzeug passt.</li>
+  </ul>
+  <ul lang="en">
+    <li><strong>EnergyMap Berlin</strong> (UdK Berlin with co2online, SEnerCon, LUP, Bezirksamt Charlottenburg-Wilmersdorf): public web app since May 2025, <code>energymap4py</code>, validation most recently at BauSIM 2026.</li>
+    <li><strong>CoolingMap</strong> (2026–2029), <strong>CO2OL ISLANDS</strong> (2026–2030): the summer direction connects there.</li>
+    <li><strong>TEASER</strong> (RWTH-EBC), <strong>SimStadt</strong>: compute stocks at neighbourhood level, none addresses the single flat.</li>
+    <li><strong>Verbraucherzentrale Berlin, Gebäudecheck</strong>: the advice channel this tool fits into.</li>
+  </ul>
+  <p class="small" lang="de">Quelle: Dose <code>05-dosen/altbau-thermal.md</code>, Abschnitt „Vorarbeit“. Stand September 2026, Prüfen ab September 2027.</p>
+  <p class="small" lang="en">Source: tin <code>05-dosen/altbau-thermal.md</code>, section “Prior work”. As of September 2026, recheck by September 2027.</p>
+</section>
+
+<section class="slide" aria-label="8">
+  <p class="kicker" lang="de">Zum Schluss</p><p class="kicker" lang="en">Finally</p>
+  <h2 lang="de">Diese Idee gehört niemandem.</h2>
+  <h2 lang="en">This idea belongs to no one.</h2>
+  <p lang="de">Nehmt sie, baut sie, verkauft sie – ihr schuldet nichts, nicht einmal eine Antwort. Falls daraus eine studentische Arbeit oder ein kleines Vorhaben werden soll: Der Prototype Fund hat ab 1. Oktober 2026 ein Bewerbungsfenster (Open-Source-Pflicht).</p>
+  <p lang="en">Take it, build it, sell it — you owe nothing, not even a reply. If it should become a student thesis or a small project: the Prototype Fund has an application window from 1 October 2026 (open-source required).</p>
+  <p class="small">CC0 / Public Domain. — Félix, Berlin · github.com/felixinberlin</p>
+</section>
+
+</main>
+<nav class="bar" aria-label="Navigation">
+  <button type="button" id="prev" aria-label="Zurück / Previous">←</button>
+  <span class="sp" id="pos" aria-live="off"></span>
+  <button type="button" id="next" aria-label="Weiter / Next">→</button>
+  <button type="button" class="lang" data-set="de" aria-pressed="true">DE</button>
+  <button type="button" class="lang" data-set="en" aria-pressed="false">EN</button>
+</nav>
+</div>
+<script>
+"use strict";
+const slides = Array.from(document.querySelectorAll("section.slide"));
+let i = 0;
+try { const h = parseInt(location.hash.slice(1), 10); if (h >= 1 && h <= slides.length) i = h - 1; } catch (e) {}
+function show(n) {
+  i = Math.max(0, Math.min(slides.length - 1, n));
+  slides.forEach((s, k) => s.classList.toggle("on", k === i));
+  document.getElementById("pos").textContent = (i + 1) + " / " + slides.length;
+  document.getElementById("prev").disabled = i === 0;
+  document.getElementById("next").disabled = i === slides.length - 1;
+  try { history.replaceState(null, "", "#" + (i + 1)); } catch (e) {}
+  window.scrollTo(0, 0);
+}
+document.getElementById("prev").onclick = () => show(i - 1);
+document.getElementById("next").onclick = () => show(i + 1);
+document.addEventListener("keydown", e => {
+  if (e.altKey || e.ctrlKey || e.metaKey) return;
+  if (["ArrowRight", "PageDown", " "].includes(e.key)) { e.preventDefault(); show(i + 1); }
+  else if (["ArrowLeft", "PageUp"].includes(e.key)) { e.preventDefault(); show(i - 1); }
+  else if (e.key === "Home") show(0); else if (e.key === "End") show(slides.length - 1);
+});
+function setLang(l) {
+  document.documentElement.setAttribute("data-lang", l); document.documentElement.lang = l;
+  document.querySelectorAll("nav .lang").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.set === l)));
+}
+document.querySelectorAll("nav .lang").forEach(b => b.onclick = () => setLang(b.dataset.set));
+try { if (!/^de/i.test(navigator.language || "de")) setLang("en"); } catch (e) {}
+show(i);
+</script>
+</body>
+</html>

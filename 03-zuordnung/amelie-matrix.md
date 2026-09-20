@@ -114,10 +114,10 @@ Zu jeder Idee aus `ideas-neue-projekte.md`: wer davon profitiert, warum ausgerec
 **Empfänger:**
 - **co2online (gemeinnützig) — Projekt „EnergyMap Berlin"**: erfassen mit KI den energetischen Zustand von 360.000 Berliner Gebäuden für die kommunale Wärmeplanung und sammeln über „HeizCheck" freiwillig Verbrauchsdaten von Bürger:innen. Deine Idee ist exakt ihr fehlendes Frontend: Grundriss zeichnen → sehen, was Fenster, Heizkörper und Außenwand tun. Sie haben Daten und Budget, aber kein anfassbares Bürger-Tool. **Das ist die eine Mail, die du diese Woche schreiben solltest.**
 - **Verbraucherzentrale Berlin / Verbraucherzentrale Energieberatung** — bieten kostenfreie Energieberatung inkl. Gebäudecheck. Beratung erklärt in Zahlen, was eine Simulation in zehn Sekunden zeigt. Sie suchen Vermittlungswerkzeuge, nicht noch eine Broschüre.
-- **Prototype Fund** — Bewerbung ab 1. Oktober 2026, Open Source, Public Interest. Passt wörtlich in den Zuschnitt.
+- **Prototype Fund** — Bewerbung 1.10.–30.11.2026, aber seit 2025 nur die Schwerpunkte Datensicherheit und Software-Infrastruktur. Eine Wohnungs-App passt nicht; nur ein offener, validierter 2D-Wärmeleitungskern als Bibliothek könnte als Infrastruktur gelten (vorab klären).
 - **Mieter:innen-Initiativen & Berliner Mieterverein** — für die Argumentationsseite („die Wand ist das Problem, nicht mein Lüftungsverhalten").
 
-**Kanal:** Direkte Mail an co2online (Projektteam EnergyMap) mit der Einseiter-Vorlage; parallel Verbraucherzentrale Berlin. Prototype Fund als Hinweis an beide („falls ihr jemanden sucht, der das baut — hier ist der Topf").
+**Kanal:** Direkte Mail an co2online (Projektteam EnergyMap) mit der Einseiter-Vorlage; parallel Verbraucherzentrale Berlin. kein Prototype-Fund-Hinweis mehr in der Mail (Schwerpunkte passen nicht, siehe oben).
 
 **Hook:** „Ihr rechnet den Zustand von 360.000 Gebäuden aus. Die Leute, die drin wohnen, sehen davon eine Zahl. Ein Grundriss, den man zeichnet, und eine Kurve, die ehrlich zeigt, was ein gekipptes Fenster im Altbau kostet — das ist dieselbe Physik, nur ansehbar."
 
