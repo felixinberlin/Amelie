@@ -14,12 +14,14 @@ Diese Liste sagt, **wo** gegraben wird, und hält fest, **was schon durchgegrabe
 | Quelle | Wonach suchen | Status | Zuletzt |
 |---|---|---|---|
 | LAG Vogelschutzwarten (vogelschutzwarten.de) | weitere Bewertungsverfahren außer Glas | `durchsucht` | 18.09.2026 |
-| LANA (Bund-Länder-AG Naturschutz) | Beschlüsse mit Bewertungsschemata | angekratzt — Eingriffsregelung/Biotopwertverfahren ist bereits gesetzlich kodifiziert (BKompV) und dürfte über kommerzielle Ökokonto-/Kompensationsflächen-Software abgedeckt sein; vor Ausformulieren einer Idee gegenchecken | 18.09.2026 |
+| LANA (Bund-Länder-AG Naturschutz) | Beschlüsse mit Bewertungsschemata | angekratzt — Eingriffsregelung/Biotopwertverfahren ist bereits gesetzlich kodifiziert (BKompV); **gegengecheckt in Runde 3:** Ökokonto-/Kompensationsflächen-Software (z. B. giscity) und BWKalk decken Berechnung und Flächenverwaltung, nicht die Zuordnung eines Biotoptyps aus Bild — siehe Biotoptyp-Assistent | 18.09.2026 |
 | Bundesamt für Naturschutz (BfN) | Skripten, Leitfäden, Kartieranleitungen | angekratzt — BfN-Schriften 721 „Kartieranleitung für die Biotoptypen nach Anlage 2 der BKompV" gefunden (668 Biotoptypen, feste Schwellenwerte, Kartiermethodik von Hand). Daraus entstanden: Biotoptyp-Assistent (`05-dosen/biotoptyp-assistent.md`) | 18.09.2026 |
 | Senatsverwaltung Berlin, Umwelt | Leitfäden (z. B. „Bauen mit Glas und Licht", 2021) | offen | – |
 | Denkmalbehörden, Landesämter | Schadenskartierungs-Anleitungen | angekratzt — Anleitungen gefunden (Berlin LDA „Leitfaden zur Erstellung von restauratorischen Dokumentationen", BW, Niedersachsen, Sachsen-Anhalt „Handreichung zur Bestandsuntersuchung"), aber **nicht gelesen**; Schadenskartierung ist als Software-Feld besetzt (Metigo MAP, KALIV) — Typ A ist hier **kein Schema ohne Software**. Ertrag kam aus der Ehrenamts-/Bürgerseite (DSD Schwarzbuch, BLfD Bürgerportal), also eher Typ B. Idee: Denkmal-Verlaufsblick | 19.09.2026 |
 | Denkmalbehörden, Landesämter | Schadenskartierungs-Anleitungen | `durchsucht` (Suchen, keine Publikationsliste gelesen) — 19.09.2026, Researcher #1: Leitfäden existieren (LAD Baden-Württemberg „Dokumentation im konstruktiven Holzbau", Berlin LDA restauratorische Dokumentation, LVR-Handreichungen, Baubegehungs-Checklisten, z. B. EKBO). **Ergebnis: 3 Ideen abgeleitet, 0 überlebt** (Kirchen-Baubegehung `besetzt`, Schadenskartierung per Foto `besetzt`, Orgel-Resonanz `unklar`). Der Strang ist dicht: Denkmal/Kirche ist „physisches Objekt + wiederkehrende Prüfung" und hat Software-Anbieter (ARCHIKART) und KI-Pilotprojekte (Wiro Rostock). Nicht weiter hier graben; Restwert nur Orgel (Orgelbauer-Kontakt) | 19.09.2026 |
 | Landesumweltbehörden „Licht & Naturschutz" (Hamburg BUKEA u. a.) | weitere Länder-Leitfäden ohne Tool (analog zu Hamburg) | angekratzt — **ergiebig, Lichtplan-Check entstand hieraus** | 18.09.2026 |
+| Berliner Biotopkartierung — Kartieranleitung & Geländekartierungsbogen (Senatsverwaltung für Umwelt, Verkehr und Klimaschutz; § 30 BNatSchG) | weitere Kriterienbündel, die sich in „hart messbar" und „Urteil des Kartierers" trennen lassen | angekratzt — **ergiebig, Anker von drei Kandidaten** (Eichflächen-Trainer `frei`, Kartierlotse `verengt`, Strukturmonitoring `verengt`, nicht gepackt). als Anker der Bisoziation-Session (Runde 3) genannt, Quelle nicht separat durchgesehen; Nachbarquellen (andere Länder, LRT-Anleitungen) offen | 18.09.2026 |
+| FLL-Baumkontrollrichtlinie / kommunale Baumkontrolle (Regelkontrolle, VTA) | — | **erschöpft, Anker dicht** — beide Kandidaten (Baum-Stigmergie, Baum-Verfallsdatum) `besetzt`; kein dritter Kandidat aus dieser Quelle. Muster „physisches Objekt + gesetzliche Sichtprüfung" nur nach Atlas-Check nutzen (Playbook, Atlas) | 18.09.2026 |
 
 **Suchstring:** `<Gremium> Bewertungsverfahren Punktesystem` · `<Gremium> Kartieranleitung` · `<Gremium> Checkliste Vollzug`
 
@@ -31,7 +33,8 @@ Diese Liste sagt, **wo** gegraben wird, und hält fest, **was schon durchgegrabe
 
 | Quelle | Wonach suchen | Status | Zuletzt |
 |---|---|---|---|
-| mitforschen.org (Plattform aller deutschen CS-Projekte) | Projekte mit Foto-Upload und Rückmeldung „nach Auswertung" | offen — **ergiebigste Quelle, als Nächstes** (seit Runde 2 so vermerkt, in Runde 3 und in Runde 4 von Researcher #2 wieder nicht angefasst — bewusst ausgewichen, um Kollision mit Researcher #1 zu vermeiden) | – |
+| mitforschen.org (Plattform aller deutschen CS-Projekte) | Projekte mit Foto-Upload und Rückmeldung „nach Auswertung“ | offen — **ergiebigste Quelle, als Nächstes** (seit Runde 2 so vermerkt; weder in Runde 3 noch im Gemini-Lauf angefasst, in Runde 4 von Researcher #2 bewusst ausgewichen, um Kollision mit Researcher #1 zu vermeiden — nächste Runde zuerst nehmen oder Vermerk streichen) | – |
+| AMS/IMO-Feuerkugelmeldung + deutsche Feuerkugelnetz-Nachfolger (Zeugenmeldeformulare) | Zeugen melden Stunden bis Tage später aus dem Gedächtnis, Profis triangulieren asynchron — „nicht in Echtzeit" (AMS) | angekratzt — **ergiebig, Feuerkugel-Sofortnetz entstand hieraus**; zwei weitere Kandidaten dort `besetzt` (FRIPON, RedVox). Weitere Feuerkugel-/Meteor-Meldenetze ungelesen | 18.09.2026 |
 | Deutsche Stiftung Denkmalschutz (Schwarzbuch, Meldeportal, ehrenamtliche Beiräte) | Ehrenamts-Beobachtung mit rückblickender Auswertung | angekratzt (Suchtreffer, Portal nicht gelesen) — Idee: Denkmal-Verlaufsblick | 19.09.2026 |
 | Thünen Wildbienen-Monitoring | Hummel-Monitoring zusätzlich zur Nisthilfe | angekratzt | 16.09.2026 |
 | CompGen (genealogy.net) | andere Erfassungsprojekte außer Grabsteine (Adressbücher, Verlustlisten) | angekratzt | 16.09.2026 |
@@ -84,4 +87,5 @@ Der Lauf nennt diese Anker in `amelie-bisoziation-log.md`. Sie sind hier vermerk
 ## Nicht mehr als Quelle nutzen
 
 - Allgemeine Suchen „KI App <Alltagsthema>" → Content-Farmen, besetzte Märkte (siehe Besetzungsatlas im Playbook).
-- Eigenes Brainstorming ohne Quelle → Trefferquote Runde 2: 0 von 10.
+- Eigenes Brainstorming ohne Quelle → Trefferquote Runde 2: 0 von 10 `frei`; die eine Ausnahme (Bebauungsplan-Leser, nach Recheck 19.09.2026 `verengt`) hat dünne Evidenz und wäre ohne Organisationsnamen-Suche nicht über `unklar` hinausgekommen.
+- Typ-A-Anker „physisches Objekt + wiederkehrende gesetzliche Sichtprüfung" (Bäume, Spielplätze, Aufzüge, Feuerlöscher, Brücken) → erst gegen den Atlas halten, nicht zwei Kandidaten aus derselben Quelle prüfen (Runde 3, Baumkontrolle).

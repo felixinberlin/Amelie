@@ -357,12 +357,17 @@ Zu jeder Idee aus `ideas-neue-projekte.md`: wer davon profitiert, warum ausgerec
 | KlarLokal | 🎁 | Prototype Fund | **gepackt**, verengt (Zetteln existiert bereits, Zero-Cloud ist die Lücke) |
 | Wärmesignatur | 🎁 | co2online (HeizCheck), nachrangig EnergyMap-Verbund | **gefunden** — Dose `waermesignatur.md` liegt vor (verengt, aus der Bisoziations-Runde zu Altbau Thermal); Empfängerprüfung und Zustellplan fehlen, kein Mail-Entwurf. Kommt hinzu, ob co2online nach Mail 1b nicht doppelt angeschrieben wird |
 | Denkmal-Verlaufsblick | 🎁 | Deutsche Stiftung Denkmalschutz | **gefunden** — Dose `denkmal-verlaufsblick.md` liegt vor (verengt, Ideenrunde 4); Empfängerprüfung und Zustellplan fehlen, kein Mail-Entwurf |
+| Lichtplan-Check | 🎁 | Landesumweltbehörden mit eigenem Leitfaden (z. B. Hamburg BUKEA) | **gefunden** — Dose vorhanden (Protokoll: `frei`, Runde 3); Empfängerprüfung und Zustellplan fehlen |
+| Biotoptyp-Assistent | 🎁 | Ökologische Planungsbüros; nachrangig BfN/KIBI | **gefunden** — Dose vorhanden (Protokoll: `verengt`, Prüfen ab 03/2027); Empfängerprüfung und Zustellplan fehlen |
+| Kartierlotse | – | Dose nennt keinen Empfänger | **gefunden** — Dose vorhanden (Protokoll: `verengt`); Empfänger und Verdikt noch festzulegen |
+| Eichflächen-Trainer | – | Dose nennt keinen Empfänger | **gefunden** — Dose vorhanden (Protokoll: `frei`); Empfänger und Verdikt noch festzulegen |
+| Feuerkugel-Sofortnetz | – | Dose nennt keinen Empfänger | **gefunden** — Dose vorhanden (Protokoll: zwei `verengt`-Teile: Sofort-Rekrutierung, Ambient-Rettung); Empfänger und Verdikt noch festzulegen |
 | ~~git-archaeologist~~ | ❌ | — | **entsorgt** — mehrfach gebaut |
 | ~~Home-Network MCP~~ | ❌ | — | **entsorgt** — ≥4 Fritzbox-MCPs |
 | ~~Repo-Museum~~ | ❌ | — | **entsorgt** — bereits gebaut |
 | ~~Commute Oracle~~ | ❌ | — | **entsorgt** — kommerziell besetzt |
 
-**Bilanz:** 17 Dosen gepackt (davon 8 mit verengter Prämisse), 2 davon behalten, **4 entsorgt**.
+**Bilanz:** 17 Dosen gepackt (davon 8 mit verengter Prämisse), 2 davon behalten, **4 entsorgt**. Dazu sieben Dosen aus Runde 3/4 mit Status `gefunden` (Wärmesignatur, Denkmal-Verlaufsblick, Lichtplan-Check, Biotoptyp-Assistent, Kartierlotse, Eichflächen-Trainer, Feuerkugel-Sofortnetz): Dose liegt vor, aber keine Empfängerprüfung durch das Sekretariat und kein Zustellplan. Diffgeist gilt laut Bibliothek inzwischen als `verengt`, nicht mehr `frei` (Aikido/Endor Labs), bleibt hier vorerst `gepackt`, bis entschieden ist, ob die Dose bleibt.
 
 *Crack Flora Watcher und KlarLokal kamen am 18.9.2026 unfertig aus der `gemini changes`-Runde: keine Empfängerprüfung, erfundene E-Mail-Adressen, keine „Wer es schon versucht hat"-Sektion. Am selben Tag auf Vorlagen-Standard gebracht und nachrecherchiert (Seek bzw. Zetteln als bislang übersehene Konkurrenz gefunden, Prämisse entsprechend verengt). Empfängeradressen weiterhin bewusst nicht in Dose/Matrix — beim Zustellen von der Organisationsseite kopieren.*
 
