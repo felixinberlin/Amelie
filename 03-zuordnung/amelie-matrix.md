@@ -171,18 +171,18 @@ Zu jeder Idee aus `ideas-neue-projekte.md`: wer davon profitiert, warum ausgerec
 
 ## 3. Berlin / Alltag
 
-### Sperrmüll-Radar — M · 🎁 ← die reinste Amélie-Idee der Liste
+### Sperrmüll-Radar — M · 🎁 ← die reinste Amélie-Idee der Liste (verengt, Recheck 20.09.2026)
 
-**Wer profitiert:** „Zu verschenken" ist ein Berliner Protokoll ohne Protokoll. 12 Stunden Halbwertszeit, kein Account, kein Besitz — die technische Umsetzung existiert nicht, weil niemand daran verdient. Genau deshalb gehört sie in die öffentliche Hand oder in eine Community.
+**Wer profitiert:** „Zu verschenken" ist ein Berliner Protokoll ohne Protokoll. 12 Stunden Halbwertszeit, kein Account, kein Besitz — die technische Umsetzung existiert nicht, weil niemand daran verdient. Fast 200.000 illegale Müllmeldungen 2025 in Berlin (>13 Mio. € Beseitigungskosten); Sperrmüll-Radar macht aus illegalen Müllhaufen vorab gerettete Gebrauchtwaren. In den USA gibt es CurbAlert/Givore (VC/Ad-finanziert, mit Login). Die Lücke in Berlin: kommunal/gemeinnützig, kontolos, OSM-Straßensegment statt Hausnummer, Verfall als Datenschutz.
 
 **Empfänger:**
-- **CityLAB Berlin (Technologiestiftung Berlin)** — baut Prototypen für die Stadt, veranstaltet eine Sommerkonferenz als Kontaktfläche, betreibt mit dem GovTech TestLAB einen Weg in die Verwaltung. Idealer Empfänger: öffentlich finanziert, sucht Themen.
-- **BSR** — fahren ohnehin Sperrmüllaktionen in den Bezirken; eine Karte, die zeigt, was gerade am Bordstein steht, senkt ihre Kosten und verlängert Produktlebensdauern.
-- **OpenStreetMap Berlin** (Hack Weekend) — Community mit genau dem richtigen Datenverständnis für verfallende Geo-Pins.
-- **Prototype Fund** — ab Oktober, Open Source, Public Interest.
-- **Zero-Waste-/Repair-Café-Szene, nebenan.de** — Verteilung und Nutzerbasis.
+- **CityLAB Berlin (Technologiestiftung Berlin)** — baut Prototypen für die Stadt (Gieß den Kiez, BärGPT, Beyond Forms), veranstaltet Kiezlabore, betreibt mit dem GovTech TestLAB einen Weg in die Verwaltung. Idealer Bauträger: öffentlich finanziert, sucht Open-Source-Gemeinwohlthemen.
+- **Re-Use Berlin / Zero-Waste-Agentur (Senatsverwaltung für Mobilität, Verkehr, Klimaschutz und Umwelt)** — inhaltlicher Domänenpartner (Zero Waste, NochMall, Re-Use-Superstores; deren aktuelle Re-Use-Karte existiert nur als 2,8-MB-PDF).
+- **BSR (Berliner Stadtreinigung)** — Beseitigungskosten senken; ca. 80 BSR-Kieztage pro Jahr als Kaltstart-Bühne für Kiez-Adoption.
+- **OpenStreetMap Berlin** — Community für offene Geodaten; OSM-Straßensegmente als Datenschutzabstraktion.
+- *(Hinweis Fördertopf: Prototype Fund fördert nur Freiberufler/GbR ≤4 Personen, keine Stiftungen/Behörden — CityLAB baut aus Stiftungsmitteln).*
 
-**Kanal:** CityLAB zuerst (die kennen alle anderen). Einseiter + expliziter Hinweis auf die 12-Stunden-Verfallslogik als Datenschutz-Feature.
+**Kanal:** CityLAB zuerst (die kennen alle anderen). Einseiter + expliziter Hinweis auf 12-Stunden-Verfallslogik und OSM-Straßensegment als Datenschutz.
 
 **Hook:** „Berlin hat ein funktionierendes Verschenk-Protokoll ohne einen einzigen Server: Karton, Bordstein, Schild. Der einzige fehlende Teil ist, zu wissen, wo gerade einer steht — und das braucht keine Accounts, nur Pins mit Halbwertszeit."
 

@@ -7,7 +7,7 @@ Claude lernt nicht zwischen Chats. Dieses Dokument und `amelie-pruefprotokoll.md
 
 ---
 
-## 1. Reihenfolge pro Idee (max. 4 Suchen, dann Urteil)
+### 1. Reihenfolge pro Idee (max. 4 Suchen, dann Urteil)
 
 | # | Suche | Warum zuerst |
 |---|---|---|
@@ -16,9 +16,14 @@ Claude lernt nicht zwischen Chats. Dieses Dokument und `amelie-pruefprotokoll.md
 | 3 | **Englisch, Produktwörter** (`app`, `AI`, `tool`, Jahr) | Findet kommerzielle Produkte, die deutsch nicht auftauchen (SATB-Trennung) |
 | 4 | **Forum / Nische** (Akkudoktor, Restarters, Discourse, GitHub) | Indie-Apps unter dem SEO-Radar (Horisol, Juli 2026) |
 
+**Neu ab Runde 4 — Vorzieh-Regel:** Betrifft die Idee Endnutzer im Alltag (Wohnung, Straße, Nachbarschaft, Konsum), wird **Suche 3 (Englisch, US-Markt, Produktwörter)** zur ersten Suche.
+*Warum:* Die USA bauen Konsumideen 12–24 Monate vor Europa. Ein Konzept, das auf Deutsch wie eine Lücke aussieht (weil kein deutsches Startup es baut), läuft dort oft schon als VC-Produkt oder etablierte Community-App (CurbAlert-Familie: `curbalertapp.com`, `curbalert.org`, `givore.com`). Erst wenn dort nichts existiert oder das US-Produkt an seinem Geschäftsmodell krankt, lohnt die deutsche Suche.
+
 **Stoppregel:** Ein Treffer, der die Idee vollständig abdeckt und ≤ 12 Monate alt ist → Urteil `besetzt`, keine weitere Suche. Nicht nach einem Grund suchen, die Idee doch zu retten.
 
 **Verengen statt verwerfen**, wenn der Treffer eine *benannte Schwäche* hat (z. B. CompGen: KI halluziniert bei verwitterten Stellen). Die Schwäche ist dann die neue Idee.
+
+**Neu ab Runde 4:** Eine Schwäche kann auch *strukturell* sein statt technisch — z. B. ein US-Produkt, das die Funktion hat, sie aber hinter Konten, Tracking oder bezahlte Abholungen sperrt. Die gemeinnützige/kontolose Variante ist dann die Lücke (`verengt`, nicht `besetzt`).
 
 ---
 
@@ -30,15 +35,18 @@ Claude lernt nicht zwischen Chats. Dieses Dokument und `amelie-pruefprotokoll.md
 - **Von der Organisation selbst genannter Engpass** → `<Projekt> Auswertung dauert` / `bis zu … Minuten` / `ehrenamtlich ausgewertet`. Fund: Thünen, bis zu 90 Minuten pro Nisthilfe.
 - **Werkstattberichte über KI-Versuche** → `<Verein> Werkstattbericht KI` / `Erfahrungen KI`. Die Grenzen, die dort stehen, sind fertig formulierte Ideen.
 - **Forschung ohne Produkt** → `<Technik> smartphone` auf arXiv/ECCV-Workshops; dann prüfen, ob es ein Werkzeug für Laien gibt.
+- **Karte oder Verzeichnis als PDF** → `<Initiative> Übersichtskarte PDF` / `<Organisation> Standorte PDF`. Findet Initiativen, deren digitales Verständnis beim Download-Dokument aufhört. Fund: Re-Use Berlin, Übersichtskarte der Re-Use-Orte als 2,8-MB-PDF.
+- **Behördliche Meldezahlen für Schmerzquantifizierung** → `<Thema> Meldungen pro Jahr Kosten Statistik Berlin`. Findet die Zahlen, die in die Dose gehören (200.000 Meldungen, 13 Mio. €).
 
 **Was nicht funktioniert hat:**
 
 - `<Thema> KI verständlich App` auf Deutsch → Content-Farmen (bau.de-Klone). Urteil daraus: **unklar**, nicht „frei". Mit Organisationsnamen neu suchen.
 - Abwesenheit von Treffern nach nur einer Suche ist kein Befund.
+- **Nur im Heimatmarkt suchen:** Bei Ideen mit Alltagsbezug reicht eine deutsche Suche nicht aus (`frei` beim Sperrmüll-Radar war ein Fehlurteil, das erst die englische Suche korrigierte).
 
 ---
 
-## 3. Besetzungsatlas (Stand 19.09.2026)
+## 3. Besetzungsatlas (Stand 20.09.2026)
 
 Wo Ideen schnell sterben — vor dem Suchen als Vorfilter nutzen.
 
@@ -74,11 +82,13 @@ Wo Ideen schnell sterben — vor dem Suchen als Vorfilter nutzen.
 | Pendeln / „wann muss ich los" (ÖPNV-Prognose aus eigenen Fahrten) | **dicht, kommerziell** | Citymapper KI-Routenplanung 2026, dedizierte „wann losgehen"-Produkte, Google-Maps-Pendelfunktionen — Commute Oracle `besetzt` *(Runde 1, hier 19.09.2026 nachgetragen)* |
 | Traum-Apps (KI-Deutung, Motiv-Erkennung) | **dicht, großer Markt** | Restlücke nur „keine Deutung + on-device + offen" — Traumtagebuch `verengt` *(Runde 1, nachgetragen 19.09.2026)* |
 | Software-Visualisierung / generative Demos (3D-Repo, DLA-Kristalle) | **dicht** | begehbare 3D-Repo-Stadt (Repo-Museum `besetzt`), CodeCity/Gource/GitHub Skyline; DLA-Generatoren im Überfluss, nur die druckfertige Kette bleibt Lücke (Kristallwachstum 3D `verengt`) *(Runde 1, nachgetragen 19.09.2026)* |
-
 | Denkmal-Schadenskartierung (Restaurator:innen, Bestandsdokumentation) | **besetzt als Software, KI-Erkennung als Forschung** | Metigo MAP, KALIV (Kartierung/Mengenermittlung); KI-Rissdetektion an Mauerwerk mit Datensätzen/SAM/Handy-DL in Papers 2024–26 *(Runde 4, ideenrunde)* |
 | Denkmale, Laien-Verlauf/Frühwarnung (Ehrenamtliche fotografieren wiederholt, Weg zur Meldung) | **verengt/frei, nur aus Suchtreffern** | DSD-Schwarzbuch + Meldeportal sind rückblickend; BLfD-Bürgerportal ohne Verlaufsdaten; Forschungs-Apps für Fachleute. Portale nicht gelesen — Dose: `05-dosen/denkmal-verlaufsblick.md` *(Runde 4, ideenrunde)* |
 | Denkmalpflege/Kirche: digitale Baubegehung, KI-Schadenskartierung von Fassaden | **dicht, bestätigt Muster „Objekt + Prüfpflicht"** (Runde 4, 19.09.2026) | ARCHIKART (Kirchenverwaltungen, Zustandserfassung per Kontrollkatalog/Ampel), Capmo/BauMaster/firstaudit (allgemeine Mängel-Apps), Wiro Rostock (Drohne + KI, Pilot 2026), Archimede, BIMKIT (Brücken); Schadensbildkatalog ZHD Fulda selbst nur als Papier/Legende gefunden |
 | Orgel/Bleifraß: Zustandsdiagnose per Akustik | **unklar, nicht besetzt** | Nur Klimamessung/Schutzverfahren (HfK Bremen/DBU) und Labor-Analyse (COLLAPSE) gefunden; Problemprämisse (unbemerkter innerer Verfall) nicht belegt |
+| Melden, damit weggeräumt wird (Müll, Schäden, Ordnungswidrigkeiten) | **dicht, behördlich** | Ordnungsamt-Online Berlin (>200.000 Meldungen 2025), BSR-Formular, MÜLLweg! DE |
+| Verschenken/Tauschen als Marktplatz | **dicht, kommerziell (US) + Anzeigenbörsen (DE)** | `curbalertapp.com`, `curbalert.org`, `givore.com`, Olio; BSR Tausch- und Verschenkmarkt (ohne Karte, ohne Verfall) |
+| Ephemere Stadtdaten ohne Konto (Objekt existiert Stunden, nicht Jahre) | **frei** | OSM nimmt nur Dauerhaftes (`amenity=give_box`); Marktplätze brauchen Konten und Bestand; Restlücke: Kiez-Ebene, Verfall als Datenschutz, quelloffen |
 
 **Faustregel, jetzt mit drei Runden Evidenz:** Wenn Endnutzer dafür zahlen würden oder eine Stadt es als Pressemitteilung verkaufen kann, existiert es. Frei ist, was ein Fachgremium als PDF veröffentlicht und niemand je in Software gegossen hat.
 
@@ -97,6 +107,7 @@ Wo Ideen schnell sterben — vor dem Suchen als Vorfilter nutzen.
 | Recheck (2) | 19.09.2026 | 4 (Diffgeist `frei`→`verengt`; Ghost Replay, Pin Tumbler, Altbau Thermal `verengt` bestätigt, Begründung enger) | – | 4 | – | – |
 | 4 (Res. #2, ideenrunde, Teilrunde) | 19.09.2026 | 2 | – | 2 | – | – |
 | 4 (Researcher #1, ideenrunde, Denkmal-Strang) | 19.09.2026 | 3 | – | – | 1 | 2 |
+| 4 (Tiefenprüfung Sperrmüll-Radar) | 20.09.2026 | 1 (+ 3 Empfänger/Geldgeber) | – | 1 (Herabstufung von `frei`) | – | 1 (Gegenrichtung) |
 
 Runde 4 (nur Researcher #1, 3 Ideen): **0 % frei + verengt.** Kein Abgleich mit dem anderen ideenrunde-Researcher; nicht mit Runde 3 vergleichbar, weil dort zwei Methoden und vier Sessions liefen. Der Altbau-Thermal-Recheck (`verengt` bestätigt) steht nicht in dieser Zeile.
 
@@ -183,3 +194,15 @@ Runde 2 zielte bewusst auf „Zivilgesellschaft" — und lag trotzdem bei ~23 %.
 - **Fehler:** Rundenumfang durch parallelen Zusatzauftrag (Empfängerprüfung) auf 2 Ideen gekürzt; Ziel 8–12 nicht annähernd erreicht, Trefferquote (2/2 `verengt`) daher wenig aussagekräftig.
 - **Nächstes Mal:** (1) Vor Zustellung der Denkmal-Dose die DSD-Seiten (Meldeportal, Schwarzbuch, Ehrenamt) von Hand lesen — offen ist, ob die Beiräte wiederholt beobachten. (2) `mitforschen.org` weiter offen: dieses Mal wegen Kollisionsvermeidung übersprungen, in der nächsten Runde ohne Kollisionsgrund zuerst nehmen oder Vermerk streichen. (3) Rechtsfrage „Fotografieren gefährdeter Denkmale/Eigentümerrechte" ungeprüft, bei Zustellung erwähnen oder klären.
 - **Nachtrag Runde 4 (Researcher #2, Rückfrage „wirklich das Beste?"):** Erste Dose nach Rückfrage nochmal auf Prämisse und „Vorarbeit" geprüft. **Fehler der Erstprüfung:** Prämisse in Runde 1 nur gegen den Empfänger (co2online/EnergyMap) geprüft, nicht gegen Produkte der Wohnungsebene — Heatpunk (UK) und reduco.ai (D) fehlten, die Dose hatte keinen Abschnitt „Wer es schon versucht hat". **Gelernt:** Bei einer Dose, die *nur* aus Empfänger-Recherche entstand, die Idee vor Zustellung mit den Rezepten aus §1 (Deutsch Funktion, Englisch Produkt) frisch prüfen — die Empfängerprüfung ersetzt sie nicht. Zwei „Warum jetzt"-Behauptungen (Grundriss-Extraktion „gelöst", Echtzeit-Instationarität im Browser) sind unbelegt. **Nächstes Mal:** Jede Dose vor Zustellung mit einem Checkbogen „jede Behauptung → Beleg oder abschwächen"; Pflichtabschnitte gegen `amelie-vorlagen.md` abhaken.
+
+### Runde 4 — 20.09.2026 (Tiefenprüfung statt Ideenrunde — „Dose altert")
+
+Erstmals keine neuen Ideen gesucht, sondern eine bereits gepackte Dose vor dem Versand tiefengeprüft („Dose altert"). Ergebnis: Das Urteil `frei` hielt einer englischen Suche nicht stand.
+
+- **Gelernt: Die Sprache entscheidet über das Urteil.** Sperrmüll-Radar stand als `frei` im Protokoll, weil deutsche Suchen nichts fanden. Die erste englische Suche (`curb alert app map expiring`) fand sofort eine ganze Familie: `curbalertapp.com`, `curbalert.org`, `curbalert.online`, `givore.com`. Die Kernfunktion — verfallende Straßenfunde auf einer Karte — ist in Nordamerika ein etabliertes Muster.
+- **Gelernt: Eine Lücke kann in der Trägerschaft liegen, nicht in der Funktion.** Alle US-Pendants finanzieren sich über Werbung, bezahlte Abholungen oder Konten. Genau daran kranken sie. Die Lücke für Berlin ist nicht „die Funktion erfinden", sondern: **sie gemeinnützig, kontolos und mit Verfall als Datenschutzkonzept bauen.** Das ist ein stärkeres Argument für eine Stiftung als „gibt es nirgends".
+- **Gelernt: Behördenzahlen sind Munition für die Dose.** Fast 200.000 Meldungen illegaler Ablagerungen 2025 in Berlin, >13 Mio. € Beseitigungskosten. Diese Zahlen verwandeln eine nette Nachbarschaftsidee in eine Antwort auf ein reales 13-Millionen-Problem der Stadt.
+- **Fehler korrigiert: Prototype Fund falsch adressiert.** In zwei Dosen/Mails stand der Prototype Fund als Option für den Empfänger. Prüfung der Richtlinien: Nur Freiberufler:innen/Selbstständige und GbR (≤ 4 Personen) sind antragsberechtigt. Weder CityLAB (Stiftung) noch der UdK-Verbund können dort beantragen. Der Hinweis wurde in Mail 2 gestrichen und in den Dosen präzisiert.
+- **Gelernt: OSM-Straßensegment statt Koordinate.** „Grobe Koordinate (~50 m)" war technisch unpräzise. Die richtige Abstraktion für den Datenschutz ist das OSM-Straßensegment („Weserstraße zwischen Fuldastraße und Pannierstraße"). Das entspricht der natürlichen Sprache und verhindert jede Hausnummer-Zuordnung.
+- **Neue Pflichtstufe im Loop: „Dose altert".** Vor jedem Versand einer Dose: mindestens eine englische Produktsuche und eine Prüfung der Förderfähigkeit des konkreten Empfängers.
+

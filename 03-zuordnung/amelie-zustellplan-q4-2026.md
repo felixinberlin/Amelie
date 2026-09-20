@@ -1,6 +1,7 @@
 # Amélie — Zustellplan Q4 2026
 
 Die erste Runde. Drei Mails, drei Empfängertypen, alle recherchiert und sendebereit.
+**Stand 20.09.2026:** Mail 1 ist raus. Mail 2 wurde nach einer Tiefenprüfung (Runde 4) **überarbeitet** — die alte Fassung enthielt eine Behauptung, die nicht haltbar war, und einen falschen Förderhinweis.
 
 ---
 
@@ -12,62 +13,69 @@ Die erste Runde. Drei Mails, drei Empfängertypen, alle recherchiert und sendebe
 
 Eine Mail mit „euch fehlt ein Bürger-Tool" an dieses Team wäre der schlechteste denkbare erste Kontakt gewesen: Sie hätte gezeigt, dass ich ihre Arbeit nicht kenne.
 
-**Die neu gezielte Version ist stärker als die alte.** EnergyMap beantwortet *„was braucht dieses Gebäude"* — von außen, aus Daten. Unbeantwortet bleibt *„was tut meine Wohnung"* — von innen, aus dem Grundriss. Das ist komplementär statt konkurrierend, und die Existenz von `energymap4py` macht aus der Idee erst ein realistisches Vorhaben: Die Wohnungssimulation muss den Gebäudekontext nicht mehr raten, sie kann ihn abfragen.
+**Die neu gezielte Version ist stärker als die alte.** EnergyMap beantwortet *„was braucht dieses Gebäude"* — von außen, aus Daten. Unbeantwortet bleibt *„was tut meine Wohnung"* — von innen, aus dem Grundriss. Das ist komplementär statt konkurrierend, und die Existenz von `energymap4py` macht aus der Idee erst ein realistisches Vorhaben.
 
-Dazu zwei Anschlussstellen, die es vorher nicht gab: **CoolingMap** (2026–2029, Kühlbedarfs-Kataster) und **CO2OL ISLANDS** (2026–2030). Die Sommerrichtung derselben Physik — Überhitzung, Verschattung, Nachtlüftung — passt dort hinein.
+Dazu zwei Anschlussstellen, die es vorher nicht gab: **CoolingMap** (2026–2029) und **CO2OL ISLANDS** (2026–2030).
 
-> **Lehre für den Loop:** Schritt 2 (Zuordnen) ist nicht „wen könnte das interessieren", sondern **„was hat diese Gruppe zuletzt tatsächlich gebaut"**. Eine Stunde Lesen hat hier eine verbrannte Erstansprache verhindert. Genau dafür ist die 1:2-Budgetregel da.
+> **Lehre für den Loop:** Schritt 2 (Zuordnen) ist nicht „wen könnte das interessieren", sondern **„was hat diese Gruppe zuletzt tatsächlich gebaut"**. Eine Stunde Lesen hat hier eine verbrannte Erstansprache verhindert.
 
-Gegenprüfung für die anderen beiden Berlin-Ideen: **Sperrmüll-Radar** — kein vergleichbares Angebot gefunden, das Phänomen ist medial präsent, die Lücke besteht. **Kiez-Lärmkarte** — der Berliner Lärmaktionsplan 2024–2029 läuft in der Umsetzung; gemessene Ruhe-Fenster sind komplementär zu dessen Modellkarten, nicht konkurrierend. Beide Dosen bleiben, wie sie sind.
+### Nachtrag 20.09.2026 — dasselbe noch einmal, diesmal beim Sperrmüll-Radar
+
+Die Gegenprüfung vom 15.09. stand in dieser Datei mit dem Satz: *„kein vergleichbares Angebot gefunden, die Lücke besteht."* Eine einzige **englische** Suche hat das umgeworfen:
+
+In den USA, Kanada und Mexiko läuft eine ganze Familie: `curbalertapp.com` (Echtzeit-Feed im 0,5-Meilen-Radius, **automatisch verfallende Posts**, exakter Standort erst nach Abholzusage), `curbalert.org` (Community-Karte mit Zeitfenster pro Eintrag), dazu `curbalert.online` und `givore.com`. Das Merkmal, das die Dose als ihren Kern ausgab — der Pin, der von selbst verschwindet — ist dort Produktfeature.
+
+**In Deutschland ist keines dieser Angebote aktiv**, und alle tragen die Krankheit, die die Dose vorhergesagt hat: `curbalertapp` verkauft bereits bezahlte Sofort-Abholungen. Sobald so etwas sich finanzieren muss, wird aus dem Verschenkprotokoll ein Marktplatz.
+
+Das Urteil sinkt damit von `frei` auf **`verengt`** — und die Mail wird dadurch **besser**, nicht schlechter. „Gibt es nirgends" ist eine Behauptung, die ein informierter Leser in dreißig Sekunden kippt. „Gibt es viermal in Nordamerika, jedes Mal als Marktplatz, und genau deshalb gehört die kontolose Variante in die öffentliche Hand" ist ein Argument.
+
+**Zweite Korrektur, sie betrifft alle Mails:** Der Prototype Fund fördert ausschließlich Freiberufler:innen/Selbstständige und GbR mit höchstens vier Personen. **Stiftungen, Behörden und Institute sind nicht antragsberechtigt.** Der Hinweis stand in Mail 1 und 2 so, als könnte die Organisation selbst dort beantragen. Ab sofort: Fördertöpfe auf die Antragsberechtigung des konkreten Empfängers prüfen.
+
+> **Neue Pflichtstufe im Loop: „Dose altert".** Jede gepackte, noch nicht zugestellte Dose wird unmittelbar vor dem Versand einmal nachgeprüft — mindestens eine englische Produktsuche. Zwei von zwei Vorab-Prüfungen haben bisher den Text gerettet.
+
+**Kiez-Lärmkarte:** unverändert. Der Berliner Lärmaktionsplan 2024–2029 liefert Modellkarten und Jahresmittel; gemessene Ruhe-Fenster sind komplementär. Diese Dose wurde noch nicht englisch nachgeprüft — **vor dem Versand nachholen.**
 
 ---
 
 ## Mail 1 — Altbau Thermal → Forschungsverbund EnergyMap Berlin
 
-**Empfängertyp:** Forschung (Rang 2). Kein Code nötig, sie haben Studierende und Methodik.
-**Kontaktweg:** Projektkoordination Prof. Dr.-Ing. Christoph Nytsch-Geusen, UdK Berlin — die Adresse steht als offizieller Projektkontakt auf `energymap-berlin.de/projektpartner`.
+**Status: gesendet am 20.09.2026.** Antwort offen.
+**Empfängertyp:** Forschung (Rang 2).
+**Kontaktweg:** Projektkoordination Prof. Dr.-Ing. Christoph Nytsch-Geusen, UdK Berlin.
 **Anhang/Link:** `dosen/altbau-thermal.md`
-**Konkreter Bezug:** die Web-App seit Mai 2025, `energymap4py`, das Validierungspapier auf der BauSIM 2026, CoolingMap.
 
-> **Betreff:** Idee zu verschenken: die Wohnungsebene unter EnergyMap Berlin
->
-> Guten Tag Prof. Nytsch-Geusen,
->
-> ich recherchiere Software, die erst seit Kurzem technisch möglich ist, und baue nur einen kleinen Teil davon selbst. Diese Idee passt zu Ihrem Verbund und nicht zu mir, deshalb schenke ich sie Ihnen.
->
-> EnergyMap Berlin beantwortet seit Mai 2025 die Frage, was ein Gebäude braucht — und mit `energymap4py` sogar programmatisch. Nicht abgedeckt ist dort die Frage danach: was die einzelne Wohnung tut. Grundriss zeichnen, Baualtersklasse wählen, sehen, was das gekippte Fenster im Berliner Zimmer kostet und ab welcher Raumfeuchte eine Ecke über 80 % Oberflächenfeuchte rutscht. Kein Konkurrenzprodukt — es verbraucht Ihre Daten, statt sie zu ersetzen, und die Sommerrichtung derselben Gleichung wäre an CoolingMap anschlussfähig.
->
-> Eine Seite mit Skizze, erstem Ticket und der Stelle, an der es schiefgeht — nämlich Scheingenauigkeit bei fünfstelligen Sanierungsentscheidungen: <Link>
->
-> Falls das eine studentische Arbeit wert ist: der erste Schritt (ein Raum, gegen ISO 10211 validiert) ist klein genug dafür.
->
-> Keine Bedingungen, CC0, keine Gegenleistung erwartet. Wenn Sie so etwas längst planen, ignorieren Sie diese Mail bitte einfach — ich melde mich nicht erneut.
->
-> Mit freundlichen Grüßen
-> Félix …
+*(Text wie gesendet; der Prototype-Fund-Satz darin war für eine studentische Einzelperson gedacht — er stimmt nur, wenn diese Person freiberuflich beantragt. Bei einer Antwort ggf. klarstellen.)*
 
 ---
 
 ## Mail 2 — Sperrmüll-Radar + Kiez-Lärmkarte → CityLAB Berlin
 
 **Empfängertyp:** Organisation mit Bauauftrag und Budget (Rang 1).
-**Kontaktweg:** allgemeine Kontaktadresse auf `citylab-berlin.org/kontakt` — sie leiten intern an die passende Person weiter. **Adresse von der Seite kopieren, nicht raten.**
+**Kontaktweg:** allgemeine Kontaktadresse auf `citylab-berlin.org/kontakt` — sie bieten ausdrücklich an, Projektideen intern weiterzuleiten. **Adresse von der Seite kopieren, nicht raten.**
 **Anhang/Links:** zwei Dosen.
-**Konkreter Bezug:** Prototypen für die Stadt, GovTech TestLAB, Kiezlabor.
+**Konkreter Bezug:** Gieß den Kiez (quelloffen, Forks in Leipzig und Magdeburg), Kiezlabor, GovTech TestLAB — **nicht** Kreislaufwirtschaft, das ist bei ihnen kein Thema; deshalb wird der Domänenpartner in der Mail gleich mitgeliefert.
 
 > **Betreff:** Zwei Ideen zu verschenken: Sperrmüll-Radar und Ruhe-Fenster-Karte
 >
 > Hallo CityLAB-Team,
 >
-> ich recherchiere Apps, die es ohne die letzten Jahre KI-Fortschritt nicht geben könnte, und baue nur wenige davon selbst. Zwei davon sind so berlinerisch, dass sie zu Ihnen gehören und nicht zu mir.
+> ich recherchiere Software, die es ohne die letzten Jahre KI-Fortschritt nicht geben könnte, und baue nur wenige davon selbst. Zwei davon sind so berlinerisch, dass sie zu Ihnen gehören und nicht zu mir. Beide CC0, ohne Bedingungen.
 >
-> **Sperrmüll-Radar.** „Zu verschenken" ist ein funktionierendes Berliner Protokoll ohne einen einzigen Server: Karton, Bordstein, Schild. Es fehlt nur das Wissen, wo gerade einer steht. Foto → Klassifikation → Geo-Pin mit zwölf Stunden Halbwertszeit. Keine Accounts, kein Besitz, keine Datenhaltung über den Tag hinaus — die Verfallslogik ist das Datenschutzkonzept.
+> **Sperrmüll-Radar.** „Zu verschenken" ist ein funktionierendes Berliner Protokoll ohne einen einzigen Server: Karton, Bordstein, Schild. Es fehlt nur das Wissen, wo gerade einer steht — in den Stunden, in denen der Sessel noch trocken ist. Die Stadt hat für diese Stunden längst eine Infrastruktur, aber sie zeigt nur in eine Richtung: 2025 liefen über Ordnungsamt-Online fast 200.000 Meldungen illegaler Ablagerungen, die Beseitigung kostete über 13 Millionen Euro. Es gibt keinen Kanal, über den derselbe Schrank vorher noch jemanden erreicht, der ihn will.
 >
-> **Kiez-Lärmkarte.** Der Lärmaktionsplan 2024–2029 liefert Modellkarten und Jahresmittel. Menschen suchen aber etwas anderes: das Zeitfenster, in dem diese Straße leise ist. Handy-Mikrofon misst ausschließlich dB-Pegel, nie Audio, Aggregation lokal.
+> Die Idee: Foto → Klassifikation **auf dem Gerät** → Pin auf einem Straßenabschnitt, nie hausgenau, der nach zwölf Stunden von selbst verschwindet. Kein Konto, kein Chat, keine Reservierung, keine Historie. Der Verfall ist nicht Aufräumfunktion, sondern das Datenschutzkonzept: Was es nicht gibt, kann auch nicht zur Hotspot-Liste werden.
 >
-> Je eine Seite mit Skizze, erstem Ticket und der Stelle, an der es kippt: <Links>
+> Damit Sie meine Hausaufgaben sehen: In Nordamerika gibt es das viermal (CurbAlert und Verwandte), teils mit verfallenden Posts. In Deutschland keinmal — und alle vier verkaufen inzwischen bezahlte Abholungen oder Konten, weil sie sich finanzieren müssen. Genau die Variante, die sich *nicht* finanzieren lässt, ist die, die funktioniert. Deshalb gehört sie in die öffentliche Hand und nicht in eine Firma.
 >
-> Beide sind CC0, ohne jede Bedingung. Falls eine davon in Richtung GovTech TestLAB oder Kiezlabor passt, umso besser; falls nicht, ist auch nichts verloren. Eine Antwort ist nicht nötig, ich fasse nicht nach.
+> Zwei Anschlussstellen, die es leichter machen: Die BSR fährt 2026 rund achtzig Kieztage mit Tausch- und Verschenkmarkt — das sind fertige Termine mit garantierter Dichte, an denen eine leere Karte sich in zwei Stunden füllt. Und inhaltlich wäre Re-Use Berlin bzw. die Zero-Waste-Agentur der passende Partner; deren Übersichtskarte der Re-Use-Orte ist derzeit ein PDF.
+>
+> **Kiez-Lärmkarte.** Der Lärmaktionsplan 2024–2029 liefert Modellkarten und Jahresmittel. Menschen suchen etwas anderes: das Zeitfenster, in dem diese Straße leise ist. Handy-Mikrofon misst ausschließlich dB-Pegel, nie Audio, Aggregation lokal.
+>
+> Je eine Seite mit Skizze, erstem Ticket und der Stelle, an der es kippt — beim Radar ist das die Nähe zum Denunziationswerkzeug und die ungeklärte Rechtsfrage, ob eine öffentliche Karte Gegenstände zeigen darf, die amtlich als illegale Ablagerung gelten: <Links>
+>
+> Warum an Sie: Gieß den Kiez ist formal dasselbe Ding — Kiez-Karte, offene Daten, quelloffen, inzwischen in Leipzig und Magdeburg geforkt. Das Radar ist dieser Bauplan mit Verfallsdatum statt Baumkataster.
+>
+> Eine Antwort ist nicht nötig, ich fasse nicht nach. Falls Sie so etwas längst planen, ignorieren Sie die Mail bitte einfach.
 >
 > Viele Grüße
 > Félix …
@@ -77,8 +85,8 @@ Gegenprüfung für die anderen beiden Berlin-Ideen: **Sperrmüll-Radar** — kei
 ## Mail 3 — Kiez-Lärmkarte (Methode) → Noise-Planet / NoiseCapture
 
 **Empfängertyp:** Forschung, international (Rang 2). Englisch.
-**Kontaktweg:** über das NoiseCapture-Repository der Université Gustave Eiffel bzw. die Projektseite `noise-planet.org`.
-**Konkreter Bezug:** ihre weltweite Crowdsourcing-Lärmkarte und deren Methodik.
+**Kontaktweg:** über das NoiseCapture-Repository der Université Gustave Eiffel bzw. `noise-planet.org`.
+**Vor dem Versand:** englische Nachprüfung der Lärm-Dose (siehe „Dose altert").
 
 > **Subject:** Free idea: quiet windows instead of average levels
 >
@@ -102,26 +110,26 @@ Gegenprüfung für die anderen beiden Berlin-Ideen: **Sperrmüll-Radar** — kei
 
 | Wann | Was | Aufwand |
 |---|---|---|
-| **heute** | Mail 1 (UdK / EnergyMap) — die mit der höchsten Trefferwahrscheinlichkeit | 20 min |
-| **diese Woche** | Repo `amelie` anlegen, drei Dosen rein, damit die Links in Mail 2 und 3 existieren | 2 h |
-| **nach dem Repo** | Mail 2 (CityLAB) und Mail 3 (NoiseCapture) | 30 min |
-| **vor dem 1. Okt** | nichts weiter — der Prototype-Fund-Hinweis steht schon in den Dosen | — |
-| **Ende Dezember** | Quartalsreview: Status fortschreiben, Dosen mit abgelaufenem „Prüfen ab" löschen | 30 min |
-
-**Reihenfolge-Logik:** Mail 1 braucht keinen Link auf ein Repo — die Dose kann als Anhang mit. Deshalb geht sie heute raus, bevor die Infrastruktur steht. Das Repo ist sonst genau die Vorbereitung, die sich unendlich dehnen lässt.
+| ~~heute~~ | ~~Mail 1 (UdK / EnergyMap)~~ — **erledigt 20.09.2026** | — |
+| **als Nächstes** | Repo `amelie` befüllen: Dose Sperrmüll-Radar v2 rein, Dose Lärmkarte rein — damit die Links in Mail 2 existieren | 1 h |
+| **danach** | **Mail 2 (CityLAB) in der überarbeiteten Fassung** | 20 min |
+| **vor Mail 3** | Lärm-Dose englisch nachprüfen („Dose altert"), dann Mail 3 | 45 min |
+| **Ende Dezember** | Quartalsreview: Status fortschreiben, Dosen mit abgelaufenem „Prüfen ab" löschen; Sperrmüll-Radar steht auf 03/2027 | 30 min |
 
 ---
 
 ## Checkliste, für alle drei abgehakt
 
 - [x] Steht drin, warum ich das verschenke? — ja, erster Satz jeder Mail
-- [x] Konkreter Bezug zum Empfänger? — Web-App und `energymap4py` / GovTech TestLAB und Lärmaktionsplan / NoiseCapture-Methodik
+- [x] Konkreter Bezug zum Empfänger? — EnergyMap/`energymap4py` · **Gieß den Kiez + Forks** · NoiseCapture-Methodik
 - [x] „Wo es kippt" in der Dose? — ja, in allen drei
-- [x] Empfänger ist Firma, Forschung, Topf oder Community, **kein** unbezahlter Einzelmaintainer? — ja: Forschungsverbund, Stiftung, Forschungsinstitut
+- [x] Empfänger ist Firma, Forschung, Topf oder Community, **kein** unbezahlter Einzelmaintainer? — ja
 - [x] Lizenz **und Name** drunter? — ja
-- [x] Datum in der Dose? — Stand 9/2026, prüfen ab 9/2027
+- [x] Datum in der Dose? — Radar: Stand 9/2026, prüfen ab **3/2027** (verkürzt, das Feld bewegt sich)
 - [x] Steht drin, dass sie nicht antworten müssen? — ja
-- [ ] Defensive Publikation — für Altbau Thermal erwägen, aber **nicht blockierend**: Das Verfahren ist Stand der Technik, das Risiko der Einzäunung gering. Bei der Lärmkarte relevanter, weil Messverfahren patentierbar sind.
+- [x] **Vor dem Versand englisch nachgeprüft?** — Radar: ja (20.09.2026). Lärmkarte: **nein, offen.**
+- [x] **Fördertopf auf Antragsberechtigung des Empfängers geprüft?** — ja, deshalb steht der Prototype Fund nicht mehr in Mail 2
+- [ ] Defensive Publikation — bei der Lärmkarte relevanter, weil Messverfahren patentierbar sind
 - [x] Kein Nachfassen geplant — wirklich nicht
 
 ---
@@ -130,8 +138,6 @@ Gegenprüfung für die anderen beiden Berlin-Ideen: **Sperrmüll-Radar** — kei
 
 | Idee | Empfänger | Status |
 |---|---|---|
-| Altbau Thermal | EnergyMap-Verbund / UdK Berlin | **gepackt** → zustellen |
-| Sperrmüll-Radar | CityLAB Berlin | gepackt, Dose fehlt noch |
-| Kiez-Lärmkarte | CityLAB + Noise-Planet | gepackt, Dose fehlt noch |
-
-Nächste konkrete Arbeit nach Mail 1: die zwei fehlenden Dosen schreiben. Je eine Stunde, das Muster steht.
+| Altbau Thermal | EnergyMap-Verbund / UdK Berlin | **gesendet 20.09.2026**, Antwort offen |
+| Sperrmüll-Radar | CityLAB Berlin (+ Re-Use Berlin, BSR als Partner) | **Dose v2 fertig, Mail überarbeitet → sendebereit, sobald der Link steht** |
+| Kiez-Lärmkarte | CityLAB + Noise-Planet | Dose fehlt noch; vor Versand englisch nachprüfen |

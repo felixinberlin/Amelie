@@ -48,42 +48,44 @@ export const DOSEN_DATA: DoseItem[] = [
   {
     id: 'sperrmuell-radar',
     title: 'Sperrmüll-Radar',
-    oneLinerDe: 'Foto vom Straßenfund → Klassifikation → Geo-Pin, der nach zwölf Stunden verfällt. Kein Account, kein Besitz, keine Datenhaltung über den Tag hinaus.',
-    oneLinerEn: 'Snap street find → on-device classification → geo-pin expiring after 12 hours. No account, no ownership, zero data retention past the day.',
-    date: 'September 2026',
-    reviewAfter: 'September 2027',
-    recipientsDe: 'CityLAB Berlin (Technologiestiftung) · nachrangig: BSR, OpenStreetMap Berlin, Prototype Fund',
-    recipientsEn: 'CityLAB Berlin (Technology Foundation) · secondary: BSR, OpenStreetMap Berlin, Prototype Fund',
+    oneLinerDe: 'Foto vom Straßenfund → On-device-Klassifikation → Geo-Pin mit OSM-Straßensegment, der nach 12 Stunden verfällt. Kein Account, kein Marktplatz, Verfall als Datenschutz. Macht aus 13 Mio. € Müllkosten gerettete Dinge.',
+    oneLinerEn: 'Snap street find → on-device classification → geo-pin with OSM street segment expiring after 12 hours. No account, no marketplace, TTL as privacy by design. Turns €13M municipal waste into saved goods.',
+    date: 'September 2026 (vertieft 20.09.2026)',
+    reviewAfter: 'März 2027',
+    recipientsDe: 'CityLAB Berlin (Technologiestiftung Berlin) · Domänenpartner: Re-Use Berlin / Zero-Waste-Agentur · Kaltstart: BSR-Kieztage · Geodaten: OpenStreetMap Berlin',
+    recipientsEn: 'CityLAB Berlin (Technology Foundation) · domain partner: Re-Use Berlin / Zero Waste Agency · cold start: BSR Kieztage · geodata: OpenStreetMap Berlin',
     domain: 'civic',
     verdict: 'gift',
     status: 'gepackt',
-    tags: ['Berlin', 'Kreislaufwirtschaft', 'Bordstein', 'Datenschutz', 'Ephemeral'],
-    problemDe: 'Berlin hat ein etabliertes Verschenk-Protokoll ohne Server: Karton, Bordstein, Pappschild. Aber der Kreislauf ist zu langsam: Brauchbare Dinge stehen im Regen, bis sie Müll sind. Eine App existiert nicht, weil sich ohne Accounts und Tracking kein Geld verdienen lässt.',
-    problemEn: 'Berlin has a functioning gift protocol with zero servers: cardboard box, curb, handwritten sign. But discovery is too slow: useful furniture sits in rain until ruined. No commercial app exists because a zero-account ephemeral utility has no ad business model.',
+    tags: ['Berlin', 'Kreislaufwirtschaft', 'Bordstein', 'Datenschutz', 'Ephemeral', 'Open Source'],
+    problemDe: 'Berlin verzeichnete 2025 fast 200.000 Meldungen illegaler Müllablagerungen (>500/Tag, Beseitigungskosten >13 Mio. €). Ein Großteil davon sind intakte Möbel und Hausrat. Das Berliner Straßenverschenk-Protokoll („Zu verschenken"-Karton am Bordstein) ist analog zu langsam: Brauchbare Dinge stehen im Regen, bis die BSR sie teuer entsorgen muss. Bestehende Angebote sind entweder Anzeigenbörsen ohne Karte/Verfall (BSR Tauschmarkt) oder Müllmelder zum Wegräumen (Ordnungsamt-Online).',
+    problemEn: 'Berlin recorded nearly 200,000 reports of illegal fly-tipping in 2025 (>500/day, clean-up costs >€13M). Much of this consists of usable furniture and household goods. The analog curb gift protocol is too slow: useful items sit in rain until ruined. Existing platforms are either static listings without map/decay (BSR Tauschmarkt) or reporting tools for clearance (Ordnungsamt-Online).',
     whyNowDe: [
-      'Klassifikation on-device ist heute gratis und schnell („Holzstuhl, intakt").',
-      'Keine Fotos auf dem Server nötig: nur Kategorie und gerundete Koordinate verlassen das Gerät.',
-      '12-Stunden-Halbwertszeit macht Moderation, Löschkonzepte und DSGVO-Speicherfristen obsolet.'
+      'Klassifikation on-device ist lokal und datensparsam: Nur Kategorie und OSM-Straßensegment („Weserstraße zw. Fulda- und Pannierstr.") verlassen das Gerät.',
+      '12-Stunden-Halbwertszeit (TTL) löst das Kernproblem: Verfall als Datenschutzkonzept, keine Account-Datenbanken, kein Tracking, kein Archiv.',
+      'Rund 80 BSR-Kieztage jährlich bieten eine fertige Bühne für Kiez-Adoption und Kaltstart ohne Marketingbudget.',
+      'CityLAB hat mit Gieß den Kiez bewiesen, dass kommunale Open-Source-Karten bürgerschaftliches Engagement mobilisieren.'
     ],
     whyNowEn: [
-      'On-device image classification is free, fast, and local ("wooden chair, usable").',
-      'Zero server-side image storage: only anonymous category and jittered coordinates leave device.',
-      '12-hour TTL eliminates user moderation, account databases, and GDPR retention hurdles.'
+      'On-device image classification is fast and private: only coarse category and OSM street segment leave the phone.',
+      '12-hour TTL turns ephemeral existence into privacy by design: no user accounts, no tracking database, no archive.',
+      '~80 municipal BSR Kieztage every year provide an existing stage for local community adoption without ad spend.',
+      'CityLAB proved with Gieß den Kiez that municipal open-source civic maps mobilize neighborhood action.'
     ],
-    sketchDe: 'Progressive Web App. Foto machen → On-device-Klassifikation → Pin mit 50m Unschärfe auf Karte. Nach 12 Stunden automatisch gelöscht. Einziger Interaktionsknopf: „Weg / Schon mitgenommen" löscht Pin sofort.',
-    sketchEn: 'Progressive Web App. Snap photo → local classification → pin with 50m jitter on map. Disappears after 12 hours. Only button: "Gone / Taken" immediately clears the pin.',
+    sketchDe: 'Progressive Web App. Foto machen → On-device-Klassifikation → OSM-Straßensegment statt Hausnummer auf Kiez-Karte. Pin verfällt nach 12 Stunden automatisch. Einziger Interaktionsknopf für Vorbeigehende: „Schon weg / mitgenommen" löscht den Pin sofort. Kein Login, kein Chat, kein Marktplatz.',
+    sketchEn: 'Progressive Web App. Photo → on-device classification → OSM street segment instead of street number on neighborhood map. Pin expires after 12 hours. Single button for passersby: "Already gone" clears pin instantly. No login, no messaging, no marketplace.',
     firstStepDe: {
-      ticket: 'Ein Bezirk, eine Karte, ein Verfall.',
-      criteria: 'Zwei Personen setzen in einem Kiez Pins, sehen sie sofort, und am nächsten Morgen ist die Karte automatisch leer.'
+      ticket: 'Ein Kiez, eine Karte, ein Verfall (am Beispiel Neukölln/Kreuzberg).',
+      criteria: 'Zwei Personen setzen auf einem OSM-Straßensegment Pins, sehen sie ohne Login, und nach Ablauf des Zeitfensters ist die Karte automatisch leer.'
     },
     firstStepEn: {
-      ticket: 'One neighborhood, one map, one TTL expiration.',
-      criteria: 'Two people place pins in one Kiez, see each other\'s finds, and next morning the map is completely clear.'
+      ticket: 'One neighborhood, one map, one decay cycle (e.g. Neukölln/Kreuzberg).',
+      criteria: 'Two people place pins on an OSM street segment, view them with zero login, and when the TTL expires the map is cleanly cleared.'
     },
-    failureModeDe: 'Denunziationsgefahr: Stadtverwaltung könnte es als illegale Müllmelder-App missbrauchen. Gegenmaßnahme: Keine Fotos serverseitig, ungenaue Koordinaten (~50m), kurze TTL, kein Archiv.',
-    failureModeEn: 'Denunciation risk: Authorities might misuse it as an illegal fly-tipping reporting map. Countermeasure: Grobe coords (~50m), no photos stored, strictly 12h TTL, zero historic archive.',
-    priorArtDe: 'Kommunale Müll-Apps (BSR) verwalten offizielle Sperrmüll-Termine; Kleinanzeigen erfordert Accounts und Verhandlung. Die Lücke am Straßenrand bleibt unbesetzt.',
-    priorArtEn: 'Municipal waste apps manage scheduled pickups; classifieds (Kleinanzeigen) require accounts and chat negotiations. Real-time curb discovery remains vacant.'
+    failureModeDe: 'Verwechslung mit Müllmelder: Ordnungsamt-Online meldet Müll zum Wegräumen; Sperrmüll-Radar rettet Brauchbares davor. Gegenmaßnahme: OSM-Straßensegment statt Hausnummer (verhindert Denunziation von Anwohnern), keine Fotos auf dem Server, automatischer 12h-Verfall ohne Archiv.',
+    failureModeEn: 'Confusion with fly-tipping reports: Ordnungsamt-Online reports waste for disposal; Sperrmüll-Radar rescues usable goods beforehand. Countermeasure: OSM street segment instead of house number (prevents resident denunciation), no server photo storage, strict 12h decay without archive.',
+    priorArtDe: 'Verengt (Recheck 20.09.2026): US-Markt hat CurbAlert-Familie (curbalertapp.com mit 0,5-Meilen-Feed und Auto-Expire; curbalert.org, givore.com), dort kommerziell mit Konten/Werbung. In DE besetzen Ordnungsamt-Online und MÜLLweg! das Melden zum Wegräumen. BSR Tauschmarkt ist listenbasiert ohne Karte/Verfall. Re-Use Berlin bietet Übersicht nur als 2,8-MB-PDF. Lücke: kontolos, kommunal getragen, OSM-Straßensegment, Open Source.',
+    priorArtEn: 'Narrowed (Recheck 20 Sep 2026): US market has CurbAlert family (curbalertapp.com with 0.5mi feed and auto-expiring posts, curbalert.org, givore.com), all commercial with accounts/ads. In Germany, Ordnungsamt-Online handles fly-tipping disposal. BSR Tauschmarkt is a static bulletin board. Re-Use Berlin map exists only as a 2.8MB PDF. Gap: zero-login, municipal/civic-backed, OSM street segment, open source.'
   },
   {
     id: 'kiez-laermkarte',

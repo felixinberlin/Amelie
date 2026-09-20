@@ -61,15 +61,15 @@ Félix (Berlin)`,
     subjectEn: 'Two ideas as a gift: Curb Giveaway Radar & Quiet-Windows Noise Map',
     bodyDe: `Hallo CityLAB-Team,
 
-ich recherchiere Apps, die es ohne die letzten Jahre KI-Fortschritt nicht geben könnte, und baue nur wenige davon selbst. Zwei davon sind so berlinerisch, dass sie zu Ihnen gehören und nicht zu mir.
+ich recherchiere Software-Lücken, die erst seit Kurzem technisch möglich sind, und baue nur einen kleinen Teil davon selbst. Zwei davon sind so berlinerisch, dass sie zu Ihnen gehören und nicht zu mir.
 
-Sperrmüll-Radar: „Zu verschenken" ist ein funktionierendes Berliner Protokoll ohne einen einzigen Server: Karton, Bordstein, Schild. Es fehlt nur das Wissen, wo gerade einer steht. Foto → Klassifikation → Geo-Pin mit zwölf Stunden Halbwertszeit. Keine Accounts, kein Besitz, keine Datenhaltung über den Tag hinaus — die Verfallslogik ist das Datenschutzkonzept.
+Sperrmüll-Radar: 2025 gab es fast 200.000 Meldungen illegaler Müllablagerungen in Berlin (>13 Mio. € Beseitigungskosten). Das Berliner „Zu verschenken"-Bordsteinprotokoll funktioniert ohne Server — ist analog aber zu langsam, sodass Brauchbares im Regen landet. In den USA gibt es dafür CurbAlert-Apps (werbefinanziert, mit Kontozwang). Die Berliner Lücke: gemeinnützig, kontolos, OSM-Straßensegment statt Hausnummer, und Verfall als Datenschutzkonzept. Als Kaltstart-Bühne bieten sich die ~80 BSR-Kieztage pro Jahr an; inhaltlicher Domänenpartner wäre Re-Use Berlin (deren Re-Use-Karte aktuell als 2,8-MB-PDF existiert).
 
-Kiez-Lärmkarte: Der Lärmaktionsplan 2024–2029 liefert Modellkarten und Jahresmittel. Menschen suchen aber etwas anderes: das Zeitfenster, in dem diese Straße leise ist. Handy-Mikrofon misst ausschließlich dB-Pegel, nie Audio, Aggregation lokal vor dem Upload.
+Kiez-Lärmkarte: Der Lärmaktionsplan 2024–2029 liefert Modellkarten und Jahresmittel. Menschen suchen aber etwas anderes: das Zeitfenster, in dem diese Straße leise ist („Ruhe-Fenster"). Handy-Mikrofon misst ausschließlich dB-Pegel, nie Audio, Aggregation lokal vor dem Upload.
 
 Je eine Seite mit Skizze, erstem Ticket und der Stelle, an der es kippt:
-- Sperrmüll-Radar: [Link zur Dose]
-- Kiez-Lärmkarte: [Link zur Dose]
+- Sperrmüll-Radar: [Link zur Dose: Sperrmüll-Radar]
+- Kiez-Lärmkarte: [Link zur Dose: Kiez-Lärmkarte]
 
 Beide sind CC0, ohne jede Bedingung. Falls eine davon in Richtung GovTech TestLAB oder Kiezlabor passt, umso besser; falls nicht, ist auch nichts verloren. Eine Antwort ist nicht nötig, ich fasse nicht nach.
 
@@ -77,15 +77,15 @@ Viele Grüße
 Félix (Berlin)`,
     bodyEn: `Hello CityLAB Team,
 
-I research software opportunities enabled by recent machine learning advances, and only build a few myself. Two of them are so quintessentially Berlin that they belong with your team rather than me.
+I research software opportunities enabled by recent technology advances, and only build a fraction myself. Two of them are so quintessentially Berlin that they belong with your team rather than me.
 
-Sperrmüll-Radar: Free-on-the-curb is an established Berlin recycling protocol without a single server: cardboard box, sidewalk curb, handwritten note. The only missing link is knowing where one sits right now. Photo → on-device classification → geo-pin expiring after 12 hours. Zero accounts, zero property, zero data retained beyond the day — ephemeral decay is the privacy architecture.
+Sperrmüll-Radar: In 2025, Berlin recorded nearly 200,000 reports of illegal fly-tipping (>€13M clean-up costs). The analog curb giveaway protocol is too slow: usable goods sit in rain until ruined. Commercial curb-alert apps exist in the US with ads and account requirements. The Berlin civic gap: non-profit, zero accounts, OSM street segments instead of house numbers, and automatic expiration as privacy by design. Ideal cold start: ~80 annual BSR neighborhood clean-up days; natural domain partner: Re-Use Berlin (whose current directory exists only as a 2.8MB PDF).
 
-Kiez-Lärmkarte: The 2024–2029 Strategic Noise Action Plan provides annual model averages. But residents seek something else: the window of time when a given street block is quiet. Phone mics capture sound level only, never raw audio, locally aggregated.
+Kiez-Lärmkarte: The 2024–2029 Noise Action Plan provides annual model averages. But residents seek something else: tranquility windows — the time of day when a given street block is quiet. Phone mics capture sound level only, never raw audio, locally aggregated before transmission.
 
-One page each with architecture sketch, first ticket, and where each might fail:
-- Sperrmüll-Radar: [Link to tin]
-- Kiez-Lärmkarte: [Link to tin]
+One page each with architecture sketch, first ticket, and key failure mode:
+- Sperrmüll-Radar: [Link to tin: Sperrmüll-Radar]
+- Kiez-Lärmkarte: [Link to tin: Kiez-Lärmkarte]
 
 Both are CC0, without conditions. If either fits GovTech TestLAB or Kiezlabor explorations, all the better; if not, nothing is lost. No reply necessary, I will not follow up.
 

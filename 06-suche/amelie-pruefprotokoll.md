@@ -17,6 +17,22 @@ Ergänzt `05-dosen/_entsorgt.md`: dort steht die Begründung für gepackte, dann
 
 ---
 
+## Runde 4 — 20.09.2026
+
+Auftrag: „Sperrmüll-Radar vertiefen, mehr recherchieren." Keine neuen Ideen — eine **Tiefenprüfung einer bereits gepackten Dose vor dem Versand**. Erstmals in diesem Format; hat sich gelohnt.
+
+| Idee | Urteil | Beleg (kurz) | Prüfen ab |
+|---|---|---|---|
+| **Sperrmüll-Radar** (Neubewertung, war `frei` in Runde 1) | **`verengt`** | US-Familie deckt die Kernfunktion ab: `curbalertapp.com` (Echtzeit-Feed 0,5 mi, **auto-expiring posts**, Standort erst nach Zusage), `curbalert.org` (Community-Karte, Zeitfenster pro Eintrag), dazu `curbalert.online`, `givore.com`. **Kein Angebot davon in DE.** Olio: Konto + kommerziell + Food-Schwerpunkt. BSR Tausch- und Verschenkmarkt: Anzeigenbörse **ohne Karte, ohne Verfall**. OSM `amenity=give_box`: nur dauerhafte Schränke. Karte von morgen: Initiativen, Stand 2020. **Restlücke: DE/Berlin, kommunal getragen, ohne Konto und ohne Marktplatz, Verfall als Datenschutzkonzept, forkbar wie Gieß den Kiez.** | 03/2027 |
+| *Gegenrichtung:* Straßenmüll melden zum Wegräumen | `besetzt` | Ordnungsamt-Online (`ordnungsamt.berlin.de`, BSR versendet Aufträge), BSR-Meldeformular, MÜLLweg! DE | – |
+| *Empfängerprüfung:* CityLAB Berlin | **aktiv, passt — mit Vorbehalt** | Laufend 2026: BärGPT, Beyond Forms, Kiezlabor, GovTech TestLAB, Gieß den Kiez (quelloffen, Forks Leipzig/Magdeburg, 885.825 Bäume, Pflege bis mind. 05/2026). Sommerkonferenz 03.06.2026 — Themen: KI, Verwaltungsmodernisierung, Beteiligung, Open Source, Service Design. **Kreislaufwirtschaft fehlt** → Domänenpartner in der Mail mitnennen. Kontaktweg: allgemeine Adresse, sie leiten intern weiter („Bei Projektideen … kontaktieren Sie uns"). | 09/2027 |
+| *Empfängerprüfung:* Re-Use Berlin / Zero-Waste-Agentur | **Domänenpartner, kein Bauträger** | Senatsinitiative mit BSR; Superstore-of-the-month, Ideenwettbewerbe; **Übersichtskarte der Re-Use-Orte existiert als PDF (2,8 MB)**. Inhaltlicher Eigentümer des Ziels, ohne Softwarearm. | 09/2027 |
+| *Geldgeberprüfung:* Prototype Fund | **Korrektur eines Fehlers in zwei Dosen/Mails** | Fenster regulär 1.10.–30.11.; bis 47.500 € (Einzelperson) / bis 158.000 € (Team ≤ 4). **Nur Freiberufler:innen/Selbstständige oder GbR — keine Stiftung, keine Behörde.** `bewerben.prototypefund.de` meldete am 20.09.2026 „no open applications". Der Hinweis in Mail 1 und 2 war in dieser Form falsch adressiert. | 12/2026 |
+
+**Zahlen, die in die Dose gehören** (Berliner Zeitung, 22.03.2026; EUWID 08/2025): 2025 fast **200.000 Meldungen** illegaler Ablagerungen (>500/Tag), Beseitigungskosten **>13 Mio. €** (2024: 10,3 Mio. €), **54.000 m³** (2024, +8 %). Typische Fundstücke: Möbel, Kühlschränke, Matratzen.
+
+---
+
 ## Runde 2 — 16.09.2026
 
 | Idee | Urteil | Beleg (kurz) | Prüfen ab |
@@ -48,7 +64,7 @@ Details in `amelie-matrix.md`, `05-dosen/_entsorgt.md`. Belege der Einzelzeilen 
 | Repo-Museum | `besetzt` | begehbare 3D-Repo-Stadt bereits gebaut/veröffentlicht; Vorgeschichte CodeCity/Gource/GitHub Skyline | – |
 | Commute Oracle | `besetzt` | Citymapper KI-Routenplanung 2026, dedizierte „wann losgehen"-Produkte, Google-Maps-Pendelfunktionen | – |
 | Altbau Thermal | `verengt` | EnergyMap Berlin rechnet Gebäudeebene (360.000 Gebäude); Ubakus „Thermische Simulation" (seit 11/2023) rechnet Wohnung/Zone mit einer Lufttemperatur, ohne Grundriss und Ecken, inkl. Sommerüberhitzung — Sommerrichtung damit auf Zonenebene besetzt; Restlücke: Grundriss + räumliche Oberflächentemperatur + Feuchtegrenze + A/B für Laien. Prototype Fund passt nicht (Schwerpunkte seit 2025: Datensicherheit, Software-Infrastruktur). Nachprüfung 19.9.2026 [method: ideenrunde] | 09/2027 |
-| Sperrmüll-Radar | `frei` | keine Berliner Live-Karte für Sperrmüll-Zu-verschenken-Pins mit Verfallslogik gefunden | 09/2027 |
+| Sperrmüll-Radar | `verengt` (in Runde 4 herabgestuft, war frei) | US-Familie deckt Kernfunktion ab (CurbAlert etc.), DE frei; Lücke verengt auf kommunal/gemeinnützig ohne Konto/Marktplatz, Verfall als Datenschutz | 03/2027 |
 | Kiez-Lärmkarte | `frei` | Noise-Planet/NoiseCapture liefert Durchschnittskarten; „wann ist diese Straße leise"-Perspektive nicht gefunden | 09/2027 |
 | Diffgeist | `frei` | personalisierte Release-Notes (nur was der eigene Code tatsächlich aufruft) nicht gefunden; Zeitfenster geschätzt auf Monate | 03/2027 |
 | Spec-Drift Detector | `frei` | Prosa-Spec-Drift 2026 öffentlich als offene Falle benannt, kein etabliertes Werkzeug; API-Schema-Drift-Markt (anderer Scope) ist besetzt | 03/2027 |

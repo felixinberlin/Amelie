@@ -16,7 +16,7 @@ Diese Liste sagt, **wo** gegraben wird, und hält fest, **was schon durchgegrabe
 | LAG Vogelschutzwarten (vogelschutzwarten.de) | weitere Bewertungsverfahren außer Glas | `durchsucht` | 18.09.2026 |
 | LANA (Bund-Länder-AG Naturschutz) | Beschlüsse mit Bewertungsschemata | angekratzt — Eingriffsregelung/Biotopwertverfahren ist bereits gesetzlich kodifiziert (BKompV); **gegengecheckt in Runde 3:** Ökokonto-/Kompensationsflächen-Software (z. B. giscity) und BWKalk decken Berechnung und Flächenverwaltung, nicht die Zuordnung eines Biotoptyps aus Bild — siehe Biotoptyp-Assistent | 18.09.2026 |
 | Bundesamt für Naturschutz (BfN) | Skripten, Leitfäden, Kartieranleitungen | angekratzt — BfN-Schriften 721 „Kartieranleitung für die Biotoptypen nach Anlage 2 der BKompV" gefunden (668 Biotoptypen, feste Schwellenwerte, Kartiermethodik von Hand). Daraus entstanden: Biotoptyp-Assistent (`05-dosen/biotoptyp-assistent.md`) | 18.09.2026 |
-| Senatsverwaltung Berlin, Umwelt | Leitfäden (z. B. „Bauen mit Glas und Licht", 2021) | offen | – |
+| Senatsverwaltung Berlin, Umwelt | Leitfäden (z. B. „Bauen mit Glas und Licht", 2021) · Abfallwirtschaftskonzept 2020–2030 · Re-Use Berlin Übersichtskarte (existiert nur als 2,8-MB-PDF!) | angekratzt — Re-Use Berlin als PDF gefunden; Zahlen zur Stadtreinigung 2025/2026 gesichert (200.000 Meldungen, 13 Mio. €) | 20.09.2026 |
 | Denkmalbehörden, Landesämter | Schadenskartierungs-Anleitungen | `angekratzt` (Suchen von zwei Researchern am 19.09.2026, keine Leitfaden-Publikation gelesen) — Leitfäden existieren (Berlin LDA „Leitfaden zur Erstellung von restauratorischen Dokumentationen“, LAD Baden-Württemberg „Dokumentation im konstruktiven Holzbau“, Niedersachsen, Sachsen-Anhalt „Handreichung zur Bestandsuntersuchung“, LVR-Handreichungen, Baubegehungs-Checklisten, z. B. EKBO). **Typ A ist hier kein Schema ohne Software:** Schadenskartierung ist Software-Branche (Metigo MAP, KALIV); Denkmal/Kirche ist „physisches Objekt + wiederkehrende Prüfung“ mit Anbietern (ARCHIKART) und KI-Pilotprojekten (Wiro Rostock). Erträge: Researcher #2 — Denkmal-Verlaufsblick (`verengt`, kam von der Ehrenamts-/Bürgerseite, also eher Typ B); Researcher #1 — 3 Ideen abgeleitet, 0 überlebt (Kirchen-Baubegehung `besetzt`, Schadenskartierung per Foto `besetzt`, Orgel-Resonanz `unklar`). Nicht weiter hier graben; Restwert nur Orgel (Orgelbauer-Kontakt) | 19.09.2026 |
 | Landesumweltbehörden „Licht & Naturschutz" (Hamburg BUKEA u. a.) | weitere Länder-Leitfäden ohne Tool (analog zu Hamburg) | angekratzt — **ergiebig, Lichtplan-Check entstand hieraus** | 18.09.2026 |
 | Berliner Biotopkartierung — Kartieranleitung & Geländekartierungsbogen (Senatsverwaltung für Umwelt, Verkehr und Klimaschutz; § 30 BNatSchG) | weitere Kriterienbündel, die sich in „hart messbar" und „Urteil des Kartierers" trennen lassen | angekratzt — **ergiebig, Anker von drei Kandidaten** (Eichflächen-Trainer `frei`, Kartierlotse `verengt`, Strukturmonitoring `verengt`, nicht gepackt). als Anker der Bisoziation-Session (Runde 3) genannt, Quelle nicht separat durchgesehen; Nachbarquellen (andere Länder, LRT-Anleitungen) offen | 18.09.2026 |
@@ -52,6 +52,7 @@ Diese Liste sagt, **wo** gegraben wird, und hält fest, **was schon durchgegrabe
 | CompGen Grabstein-Projekt | Halluzination bei Verwitterung → Streiflicht | durchsucht | 16.09.2026 |
 | Repair Café International | noch nicht gelesen, ob Schwächen genannt | angekratzt | 16.09.2026 |
 | Sozialhelden / HIIG | Datensatz 2023; Grenzen im Datensatz-Paper? | angekratzt | 16.09.2026 |
+| CityLAB Berlin Blog & Sommerkonferenz | Themen: BärGPT, Beyond Forms, Kiezlabor, Beteiligung, Open Source; Kreislaufwirtschaft fehlt | durchsucht | 20.09.2026 |
 
 ---
 
@@ -59,9 +60,21 @@ Diese Liste sagt, **wo** gegraben wird, und hält fest, **was schon durchgegrabe
 
 | Quelle | Zweck | Status |
 |---|---|---|
-| Prototype Fund | Fristen, Zuschnitt | bekannt (Runde 1) |
-| CityLAB Berlin | Empfänger Rang 1 | bekannt (Runde 1) |
+| Prototype Fund | Fristen, Zuschnitt · **Korrektur 20.09.2026:** Nur Freiberufler:innen/Selbstständige oder GbR (≤ 4 Personen) förderfähig. Keine Stiftungen, Behörden oder Vereine. Vor jedem Hinweis Status auf `bewerben.prototypefund.de` prüfen! | aktiv geprüft (20.09.2026) |
+| CityLAB Berlin | Empfänger Rang 1 (Bauträger, GovTech TestLAB, Kiezlabor) | bekannt & geprüft (20.09.2026) |
+| Re-Use Berlin / Zero-Waste-Agentur (SenUVK) | Domänenpartner Kreislaufwirtschaft | angekratzt (20.09.2026) |
+| BSR (Berliner Stadtreinigung) | Kieztage 2026 (~80 Termine, alle Bezirke) als Kaltstart-Bühne; NochMall | angekratzt (20.09.2026) |
 | Open Repair Alliance | Datenquelle | angekratzt |
+
+---
+
+## Typ E — Behördliche Mengen- und Kostenstatistiken (neu, Runde 4)
+
+*Muster: Eine Zahl, die den Schmerz quantifiziert, gehört in jede Dose, die an eine Verwaltung oder Stiftung geht.*
+
+| Quelle | Zahlen & Belege | Zweck / Dose | Zuletzt |
+|---|---|---|---|
+| Berliner Stadtreinigung (BSR) / Berliner Zeitung (22.03.2026) / EUWID (08/2025) | 2025 fast 200.000 Meldungen illegaler Ablagerungen (>500/Tag); Beseitigungskosten >13 Mio. € (2024: 10,3 Mio. €); 54.000 m³ (2024, +8 %). Typisch: Möbel, Kühlschränke, Matratzen. | Sperrmüll-Radar v2 (`05-dosen/sperrmuell-radar.md`), Mail 2 an CityLAB | 20.09.2026 |
 
 ---
 
@@ -88,3 +101,4 @@ Der Lauf nennt diese Anker in `amelie-bisoziation-log.md`. Sie sind hier vermerk
 - Allgemeine Suchen „KI App <Alltagsthema>" → Content-Farmen, besetzte Märkte (siehe Besetzungsatlas im Playbook).
 - Eigenes Brainstorming ohne Quelle → Trefferquote Runde 2: 0 von 10 `frei`; die eine Ausnahme (Bebauungsplan-Leser, nach Recheck 19.09.2026 `verengt`) hat dünne Evidenz und wäre ohne Organisationsnamen-Suche nicht über `unklar` hinausgekommen.
 - Typ-A-Anker „physisches Objekt + wiederkehrende gesetzliche Sichtprüfung" (Bäume, Spielplätze, Aufzüge, Feuerlöscher, Brücken) → erst gegen den Atlas halten, nicht zwei Kandidaten aus derselben Quelle prüfen (Runde 3, Baumkontrolle).
+- **Nur deutschsprachige Suchen bei Alltagsideen** → Runde 4: Sperrmüll-Radar war nur auf Deutsch frei; auf Englisch existierte CurbAlert bereits viermal. Vor jeder Zusage englische Suche Pflicht.
