@@ -31,11 +31,11 @@ Gegenprüfung für die anderen beiden Berlin-Ideen: **Sperrmüll-Radar** — kei
 
 > **Betreff:** Idee zu verschenken: die Wohnungsebene unter EnergyMap Berlin
 >
-> Sehr geehrter Herr Professor Nytsch-Geusen,
+> Guten Tag Prof. Nytsch-Geusen,
 >
 > ich recherchiere Software, die erst seit Kurzem technisch möglich ist, und baue nur einen kleinen Teil davon selbst. Diese Idee passt zu Ihrem Verbund und nicht zu mir, deshalb schenke ich sie Ihnen.
 >
-> EnergyMap Berlin beantwortet seit Mai 2025 die Frage, was ein Gebäude braucht — und mit `energymap4py` sogar programmatisch. Unbeantwortet bleibt die Frage danach: was die einzelne Wohnung tut. Grundriss zeichnen, Baualtersklasse wählen, sehen, was das gekippte Fenster im Berliner Zimmer kostet und ab welcher Raumfeuchte eine Ecke über 80 % Oberflächenfeuchte rutscht. Kein Konkurrenzprodukt — es verbraucht Ihre Daten, statt sie zu ersetzen, und die Sommerrichtung derselben Gleichung wäre an CoolingMap anschlussfähig.
+> EnergyMap Berlin beantwortet seit Mai 2025 die Frage, was ein Gebäude braucht — und mit `energymap4py` sogar programmatisch. Nicht abgedeckt ist dort die Frage danach: was die einzelne Wohnung tut. Grundriss zeichnen, Baualtersklasse wählen, sehen, was das gekippte Fenster im Berliner Zimmer kostet und ab welcher Raumfeuchte eine Ecke über 80 % Oberflächenfeuchte rutscht. Kein Konkurrenzprodukt — es verbraucht Ihre Daten, statt sie zu ersetzen, und die Sommerrichtung derselben Gleichung wäre an CoolingMap anschlussfähig.
 >
 > Eine Seite mit Skizze, erstem Ticket und der Stelle, an der es schiefgeht — nämlich Scheingenauigkeit bei fünfstelligen Sanierungsentscheidungen: <Link>
 >

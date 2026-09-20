@@ -338,7 +338,7 @@ Zu jeder Idee aus `ideas-neue-projekte.md`: wer davon profitiert, warum ausgerec
 
 | Idee | Verdikt | Empfänger #1 | Status |
 |---|---|---|---|
-| Altbau Thermal | 🎁 | EnergyMap-Verbund / UdK Berlin | **gepackt**, neu gezielt — Mail-Entwurf als Datei (`mails-q4-2026/mail-1-…`), kein Gmail-Draft |
+| Altbau Thermal | 🎁 | EnergyMap-Verbund / UdK Berlin | **gepackt**, neu gezielt — Mail-Entwürfe als Dateien, kein Gmail-Draft (Gmail-MCP blockiert, Developer-Preview-Freischaltung fehlt): `mails-q4-2026/mail-1-…` (UdK, #1), `mail-1b-co2online.md` und `mail-1c-verbraucherzentrale.md` (nachrangig; **Adressen offen**, von den Organisationsseiten zu kopieren). Team-Fokus 19.9.2026: alle Rollen arbeiten an dieser Dose |
 | Sperrmüll-Radar | 🎁 | CityLAB Berlin | **gepackt** — Mail-Entwurf als Datei (`mail-2-citylab.md`), kein Gmail-Draft |
 | Kiez-Lärmkarte | 🎁 | Noise-Planet / NoiseCapture | **gepackt** — Mail-Entwurf als Datei (`mail-3-noisecapture.md`, EN; zusätzlich in Mail 2), kein Gmail-Draft |
 | Pin Tumbler | 🎁 | SSDeV Berlin | **gepackt**, verengt |
@@ -355,6 +355,8 @@ Zu jeder Idee aus `ideas-neue-projekte.md`: wer davon profitiert, warum ausgerec
 | Wet Ink | 🔒 | Plan an Escape Motions u. a. | **gepackt**, behalten |
 | Crack Flora Watcher | 🎁 | #Krautschau / Senckenberg | **gepackt**, stark verengt (Seek deckt die Grundidee bereits) |
 | KlarLokal | 🎁 | Prototype Fund | **gepackt**, verengt (Zetteln existiert bereits, Zero-Cloud ist die Lücke) |
+| Wärmesignatur | 🎁 | co2online (HeizCheck), nachrangig EnergyMap-Verbund | **gefunden** — Dose `waermesignatur.md` liegt vor (verengt, aus der Bisoziations-Runde zu Altbau Thermal); Empfängerprüfung und Zustellplan fehlen, kein Mail-Entwurf. Kommt hinzu, ob co2online nach Mail 1b nicht doppelt angeschrieben wird |
+| Denkmal-Verlaufsblick | 🎁 | Deutsche Stiftung Denkmalschutz | **gefunden** — Dose `denkmal-verlaufsblick.md` liegt vor (verengt, Ideenrunde 4); Empfängerprüfung und Zustellplan fehlen, kein Mail-Entwurf |
 | ~~git-archaeologist~~ | ❌ | — | **entsorgt** — mehrfach gebaut |
 | ~~Home-Network MCP~~ | ❌ | — | **entsorgt** — ≥4 Fritzbox-MCPs |
 | ~~Repo-Museum~~ | ❌ | — | **entsorgt** — bereits gebaut |
