@@ -131,6 +131,8 @@ export type DeliveryEmail = {
   doseLinks: string[];
   scheduleDe: string;
   scheduleEn: string;
+  sent?: boolean;
+  sentAt?: string;
 };
 
 export type CandidateStatus = 'frei' | 'verengt' | 'unklar' | 'besetzt';

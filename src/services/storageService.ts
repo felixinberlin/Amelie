@@ -264,4 +264,66 @@ export function importDatabaseFromJson(jsonStr: string): { importedDosen: number
 export function resetLocalDatabase(): void {
   localStorage.removeItem(STORAGE_KEY_DOSEN);
   localStorage.removeItem(STORAGE_KEY_CANDIDATES);
+  localStorage.removeItem(STORAGE_KEY_SENT_EMAILS);
+}
+
+const STORAGE_KEY_SENT_EMAILS = 'amelie_sent_emails';
+
+export interface SentEmailRecord {
+  sent: boolean;
+  sentAt: string;
+  notes?: string;
+}
+
+/**
+ * Retrieves the sent emails map from localStorage.
+ * Initializes mail-1 as sent if no records exist yet (fulfilling user request).
+ */
+export function getSentEmailsMap(): Record<string, SentEmailRecord> {
+  try {
+    const data = localStorage.getItem(STORAGE_KEY_SENT_EMAILS);
+    if (data) {
+      return JSON.parse(data);
+    }
+  } catch (e) {
+    console.warn('Failed to load sent emails from storage', e);
+  }
+  // Initial default state with Mail 1 marked as sent
+  const initialMap: Record<string, SentEmailRecord> = {
+    'mail-1': {
+      sent: true,
+      sentAt: '2026-09-20T07:03:55Z',
+      notes: 'Altbau Thermal → Forschungsverbund EnergyMap Berlin (UdK Berlin)',
+    },
+  };
+  try {
+    localStorage.setItem(STORAGE_KEY_SENT_EMAILS, JSON.stringify(initialMap));
+  } catch (e) {
+    // ignore
+  }
+  return initialMap;
+}
+
+export function saveSentEmailsMap(map: Record<string, SentEmailRecord>): void {
+  try {
+    localStorage.setItem(STORAGE_KEY_SENT_EMAILS, JSON.stringify(map));
+  } catch (e) {
+    console.error('Failed to save sent emails to localStorage:', e);
+  }
+}
+
+export function markEmailAsSent(mailId: string, sent: boolean = true, customDate?: string): SentEmailRecord {
+  const current = getSentEmailsMap();
+  const record: SentEmailRecord = {
+    sent,
+    sentAt: sent ? customDate || new Date().toISOString() : '',
+  };
+  current[mailId] = record;
+  saveSentEmailsMap(current);
+  return record;
+}
+
+export function isEmailMarkedSent(mailId: string): boolean {
+  const current = getSentEmailsMap();
+  return !!current[mailId]?.sent;
 }

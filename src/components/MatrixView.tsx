@@ -1,9 +1,25 @@
-import React, { useState } from 'react';
-import { Mail, Check, Copy, ExternalLink, Calendar, CheckSquare, Sparkles, Filter, Link2, Maximize2 } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import {
+  Mail,
+  Check,
+  Copy,
+  ExternalLink,
+  Calendar,
+  CheckSquare,
+  Sparkles,
+  Filter,
+  Link2,
+  Maximize2,
+  Send,
+  CheckCircle2,
+  Clock,
+  RotateCcw,
+} from 'lucide-react';
 import { MatrixRow, DeliveryEmail, Language, DoseItem } from '../types';
 import { getTranslation, getLocalizedTitle } from '../i18n';
 import { resolveEmailBodyDoseUrls, getDoseUrl } from '../utils/doseUrl';
 import { MusterEmailsSection } from './MusterEmailsSection';
+import { getSentEmailsMap, markEmailAsSent, SentEmailRecord } from '../services/storageService';
 
 interface MatrixViewProps {
   matrix: MatrixRow[];
@@ -30,13 +46,60 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
   const [copiedDoseUrlId, setCopiedDoseUrlId] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedStatus, setSelectedStatus] = useState<string>('all');
+  const [mailFilter, setMailFilter] = useState<'all' | 'sent' | 'pending'>('all');
+  const [sentEmails, setSentEmails] = useState<Record<string, SentEmailRecord>>(() => getSentEmailsMap());
   const t = getTranslation(lang);
 
-  const currentMail = deliveries[selectedMailTab] || deliveries[0];
+  const isDe = lang === 'de';
+  const isEs = lang === 'es';
+
+  // Synchronize initial state or changes
+  useEffect(() => {
+    setSentEmails(getSentEmailsMap());
+  }, []);
+
+  const handleToggleSent = (mailId: string) => {
+    const isCurrentlySent = !!sentEmails[mailId]?.sent;
+    const newRecord = markEmailAsSent(mailId, !isCurrentlySent);
+    setSentEmails((prev) => ({
+      ...prev,
+      [mailId]: newRecord,
+    }));
+  };
+
+  const isEmailSent = (mailId: string): boolean => {
+    if (sentEmails[mailId] !== undefined) {
+      return !!sentEmails[mailId]?.sent;
+    }
+    const seedMail = deliveries.find((m) => m.id === mailId);
+    return !!seedMail?.sent;
+  };
+
+  const getEmailSentDate = (mailId: string): string | null => {
+    if (sentEmails[mailId]?.sentAt) {
+      return sentEmails[mailId].sentAt;
+    }
+    const seedMail = deliveries.find((m) => m.id === mailId);
+    return seedMail?.sentAt || null;
+  };
+
+  // Filtered deliveries list based on mailFilter
+  const filteredDeliveries = deliveries.filter((m) => {
+    const sent = isEmailSent(m.id);
+    if (mailFilter === 'sent') return sent;
+    if (mailFilter === 'pending') return !sent;
+    return true;
+  });
+
+  const totalSentCount = deliveries.filter((m) => isEmailSent(m.id)).length;
+
+  // Safe selected mail tab
+  const activeMailIndex = deliveries.findIndex((d) => d.id === (filteredDeliveries[selectedMailTab]?.id || deliveries[selectedMailTab]?.id));
+  const currentMail = deliveries[activeMailIndex >= 0 ? activeMailIndex : 0] || deliveries[0];
+  const isCurrentMailSent = isEmailSent(currentMail.id);
+  const currentMailSentDate = getEmailSentDate(currentMail.id);
 
   const handleCopyEmail = (mail: DeliveryEmail) => {
-    const isDe = lang === 'de';
-    const isEs = lang === 'es';
     const toLabel = isDe ? 'An:' : isEs ? 'Para:' : 'To:';
     const subjectLabel = isDe ? 'Betreff:' : isEs ? 'Asunto:' : 'Subject:';
     const rawBody = isDe ? mail.bodyDe : mail.bodyEn;
@@ -45,6 +108,21 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
     navigator.clipboard.writeText(textToCopy);
     setCopiedMailId(mail.id);
     setTimeout(() => setCopiedMailId(null), 2000);
+  };
+
+  const handleOpenInEmailClient = (mail: DeliveryEmail) => {
+    const rawBody = isDe ? mail.bodyDe : mail.bodyEn;
+    const resolvedBody = resolveEmailBodyDoseUrls(rawBody, mail.doseLinks);
+    const subject = isDe ? mail.subjectDe : mail.subjectEn;
+    const emailMatch = mail.contactPathDe.match(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/);
+    const to = emailMatch ? emailMatch[0] : '';
+    const mailtoUrl = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(resolvedBody)}`;
+    window.open(mailtoUrl, '_blank');
+
+    // Automatically mark as sent
+    if (!isEmailSent(mail.id)) {
+      handleToggleSent(mail.id);
+    }
   };
 
   const handleCopyDoseUrl = (e: React.MouseEvent, doseId: string) => {
@@ -135,99 +213,274 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
       {activeSection === 'deliveries' && (
       <section className="space-y-6">
         <div className="rounded-2xl bg-amber-900/5 border border-amber-800/20 p-6 md:p-8">
-          <div className="max-w-3xl space-y-2">
-            <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-semibold">
-              <Calendar className="w-3.5 h-3.5 text-amber-800" />
-              <span>{t.ui.deliveries_badge}</span>
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div className="max-w-2xl space-y-2">
+              <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-semibold">
+                <Calendar className="w-3.5 h-3.5 text-amber-800" />
+                <span>{t.ui.deliveries_badge}</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-bold font-serif-title text-stone-900 tracking-tight">
+                {t.ui.deliveries_heading}
+              </h2>
+              <p className="text-sm sm:text-base text-stone-700 leading-relaxed">
+                {t.ui.deliveries_subheading}
+              </p>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-bold font-serif-title text-stone-900 tracking-tight">
-              {t.ui.deliveries_heading}
-            </h2>
-            <p className="text-sm sm:text-base text-stone-700 leading-relaxed">
-              {t.ui.deliveries_subheading}
-            </p>
+
+            {/* Delivery Progress & Quick Stats */}
+            <div className="p-4 rounded-xl bg-white border border-amber-200/80 shadow-2xs space-y-2.5 shrink-0 min-w-[240px]">
+              <div className="flex items-center justify-between text-xs font-mono-code font-bold">
+                <span className="text-stone-700">{isDe ? 'Status Q4 2026:' : 'Q4 2026 Status:'}</span>
+                <span className="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300">
+                  {totalSentCount} / {deliveries.length} {isDe ? 'versendet' : 'sent'}
+                </span>
+              </div>
+
+              {/* Progress Bar */}
+              <div className="w-full bg-stone-100 rounded-full h-2 overflow-hidden border border-stone-200">
+                <div
+                  className="bg-emerald-600 h-full rounded-full transition-all duration-500"
+                  style={{ width: `${(totalSentCount / deliveries.length) * 100}%` }}
+                />
+              </div>
+
+              {/* Filter Buttons */}
+              <div className="flex items-center gap-1 pt-1 text-[11px] font-mono-code">
+                <button
+                  type="button"
+                  onClick={() => setMailFilter('all')}
+                  className={`px-2 py-1 rounded cursor-pointer transition-colors ${
+                    mailFilter === 'all' ? 'bg-stone-900 text-white' : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
+                  }`}
+                >
+                  {isDe ? 'Alle' : 'All'} ({deliveries.length})
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setMailFilter('sent')}
+                  className={`px-2 py-1 rounded cursor-pointer transition-colors ${
+                    mailFilter === 'sent' ? 'bg-emerald-700 text-white' : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
+                  }`}
+                >
+                  {isDe ? 'Versendet' : 'Sent'} ({totalSentCount})
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setMailFilter('pending')}
+                  className={`px-2 py-1 rounded cursor-pointer transition-colors ${
+                    mailFilter === 'pending' ? 'bg-amber-700 text-white' : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
+                  }`}
+                >
+                  {isDe ? 'Ausstehend' : 'Pending'} ({deliveries.length - totalSentCount})
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Email Selector Tabs */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-          {deliveries.map((mail, idx) => {
-            const isSelected = selectedMailTab === idx;
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+          {filteredDeliveries.map((mail, idx) => {
+            const isSelected = currentMail.id === mail.id;
+            const sent = isEmailSent(mail.id);
+            const sentDate = getEmailSentDate(mail.id);
+
             return (
               <button
                 key={mail.id}
-                onClick={() => setSelectedMailTab(idx)}
-                className={`p-4 rounded-xl text-left border transition-all ${
+                onClick={() => {
+                  const originalIndex = deliveries.findIndex((d) => d.id === mail.id);
+                  if (originalIndex >= 0) setSelectedMailTab(originalIndex);
+                }}
+                className={`p-4 rounded-xl text-left border transition-all cursor-pointer relative flex flex-col justify-between ${
                   isSelected
                     ? 'bg-stone-900 text-white border-stone-800 shadow-md ring-2 ring-amber-500/30'
                     : 'bg-[#fdfbf7] text-stone-800 border-stone-200 hover:border-amber-800/30 hover:bg-stone-50'
                 }`}
               >
-                <div className="flex items-center justify-between text-xs mb-1.5">
-                  <span
-                    className={`font-mono-code font-bold uppercase tracking-wider ${
-                      isSelected ? 'text-amber-400' : 'text-amber-800'
-                    }`}
-                  >
-                    Mail {mail.mailIndex}
-                  </span>
-                  <span
-                    className={`text-xs px-2 py-0.5 rounded ${
-                      isSelected ? 'bg-stone-800 text-stone-300' : 'bg-stone-100 text-stone-600'
-                    }`}
-                  >
-                    {lang === 'de' ? mail.scheduleDe.split('·')[0] : mail.scheduleEn.split('·')[0]}
-                  </span>
+                <div>
+                  <div className="flex items-center justify-between text-xs mb-1.5 gap-2">
+                    <span
+                      className={`font-mono-code font-bold uppercase tracking-wider ${
+                        isSelected ? 'text-amber-400' : 'text-amber-800'
+                      }`}
+                    >
+                      Mail {mail.mailIndex}
+                    </span>
+
+                    {sent ? (
+                      <span
+                        className={`text-[11px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1 ${
+                          isSelected
+                            ? 'bg-emerald-900/90 text-emerald-200 border border-emerald-700'
+                            : 'bg-emerald-100 text-emerald-800 border border-emerald-300'
+                        }`}
+                      >
+                        <Check className="w-3 h-3 text-emerald-500" />
+                        <span>{isDe ? 'Versendet' : isEs ? 'Enviado' : 'Sent'}</span>
+                      </span>
+                    ) : (
+                      <span
+                        className={`text-[10px] font-mono-code px-1.5 py-0.5 rounded ${
+                          isSelected ? 'bg-stone-800 text-stone-300' : 'bg-stone-100 text-stone-600'
+                        }`}
+                      >
+                        {isDe ? 'Ausstehend' : 'Ready'}
+                      </span>
+                    )}
+                  </div>
+
+                  <h4 className="text-sm font-bold font-serif-title line-clamp-2">
+                    {isDe ? mail.titleDe : mail.titleEn}
+                  </h4>
                 </div>
-                <h4 className="text-sm font-bold font-serif-title line-clamp-1">
-                  {lang === 'de' ? mail.titleDe : mail.titleEn}
-                </h4>
-                <p
-                  className={`text-xs mt-1 line-clamp-1 ${
-                    isSelected ? 'text-stone-300' : 'text-stone-500'
-                  }`}
-                >
-                  {mail.recipientOrg}
-                </p>
+
+                <div className="mt-3 pt-2 border-t border-stone-200/40 flex items-center justify-between text-xs">
+                  <p
+                    className={`line-clamp-1 text-[11px] ${
+                      isSelected ? 'text-stone-300' : 'text-stone-500'
+                    }`}
+                  >
+                    {mail.recipientOrg}
+                  </p>
+                </div>
               </button>
             );
           })}
         </div>
 
         {/* Active Email View */}
-        <div className="bg-[#fdfbf7] rounded-2xl border border-stone-200 overflow-hidden shadow-xs">
-          {/* Email Header Info */}
-          <div className="p-6 bg-stone-100/70 border-b border-stone-200 space-y-4">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-              <div>
-                <span className="text-xs font-mono-code uppercase tracking-wider text-amber-800 font-bold">
-                  {lang === 'de' ? currentMail.recipientTypeDe : currentMail.recipientTypeEn}
-                </span>
-                <h3 className="text-lg font-bold font-serif-title text-stone-900">
-                  {currentMail.recipientOrg}
-                </h3>
-                <p className="text-xs text-stone-600 mt-0.5">
-                  <span className="font-semibold">{lang === 'de' ? 'Kontaktweg: ' : lang === 'es' ? 'Canal de contacto: ' : 'Contact route: '}</span>
-                  {lang === 'de' ? currentMail.contactPathDe : currentMail.contactPathEn}
-                </p>
+        <div className="bg-[#fdfbf7] rounded-2xl border border-stone-200 overflow-hidden shadow-xs space-y-0">
+          {/* Status Alert Banner */}
+          {isCurrentMailSent ? (
+            <div className="p-4 bg-emerald-50 border-b border-emerald-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-emerald-950">
+              <div className="flex items-start sm:items-center gap-2.5">
+                <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5 sm:mt-0" />
+                <div>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="font-bold text-sm">
+                      {isDe ? '✓ Diese E-Mail ist als versendet markiert' : isEs ? '✓ Este correo está marcado como enviado' : '✓ This email is marked as sent'}
+                    </span>
+                    {currentMailSentDate && (
+                      <span className="px-2 py-0.5 rounded bg-emerald-100 font-mono-code text-[11px] text-emerald-800 border border-emerald-300">
+                        {isDe ? 'Datum:' : 'Date:'} {currentMailSentDate.split('T')[0]}
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-emerald-800 text-xs mt-0.5">
+                    {isDe
+                      ? 'Geschenk übergeben (CC0). Gemäß Amélie-Pledge wird niemals nachgefasst oder um Feedback gebeten.'
+                      : 'Gift handed over (CC0). Per the Amélie Pledge, no follow-up will ever be sent.'}
+                  </p>
+                </div>
               </div>
 
               <button
-                onClick={() => handleCopyEmail(currentMail)}
-                className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-stone-900 hover:bg-stone-800 text-white text-xs font-medium transition-colors shadow-xs"
+                type="button"
+                onClick={() => handleToggleSent(currentMail.id)}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white hover:bg-stone-50 border border-emerald-300 text-emerald-800 text-xs font-mono-code font-semibold cursor-pointer transition-colors shadow-2xs shrink-0 self-start sm:self-auto"
+                title={isDe ? 'Als ungesendet zurücksetzen' : 'Reset as unsend'}
               >
-                {copiedMailId === currentMail.id ? (
-                  <>
-                    <Check className="w-4 h-4 text-emerald-400" />
-                    <span>{t.ui.email_copied}</span>
-                  </>
-                ) : (
-                  <>
-                    <Copy className="w-4 h-4" />
-                    <span>{t.ui.copy_email}</span>
-                  </>
-                )}
+                <RotateCcw className="w-3.5 h-3.5" />
+                <span>{isDe ? 'Als ungesendet markieren' : 'Mark as unsend'}</span>
               </button>
+            </div>
+          ) : (
+            <div className="p-3.5 bg-amber-50/80 border-b border-amber-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 text-xs text-amber-950">
+              <div className="flex items-center gap-2">
+                <Clock className="w-4 h-4 text-amber-700 shrink-0" />
+                <span>
+                  {isDe
+                    ? 'Status: Versandbereit für Q4 2026 · Noch nicht versendet'
+                    : 'Status: Ready for dispatch Q4 2026 · Not yet sent'}
+                </span>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => handleToggleSent(currentMail.id)}
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white font-bold cursor-pointer transition-colors shadow-2xs shrink-0 self-start sm:self-auto"
+              >
+                <Check className="w-3.5 h-3.5" />
+                <span>{isDe ? 'Als versendet markieren' : isEs ? 'Marcar como enviado' : 'Mark as sent'}</span>
+              </button>
+            </div>
+          )}
+
+          {/* Email Header Info */}
+          <div className="p-6 bg-stone-100/70 border-b border-stone-200 space-y-4">
+            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+              <div>
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-xs font-mono-code uppercase tracking-wider text-amber-800 font-bold">
+                    {isDe ? currentMail.recipientTypeDe : currentMail.recipientTypeEn}
+                  </span>
+                  {isCurrentMailSent && (
+                    <span className="text-[11px] font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 border border-emerald-300">
+                      ✓ {isDe ? 'Versendet' : 'Sent'}
+                    </span>
+                  )}
+                </div>
+
+                <h3 className="text-lg sm:text-xl font-bold font-serif-title text-stone-900">
+                  {currentMail.recipientOrg}
+                </h3>
+                <p className="text-xs text-stone-600 mt-0.5">
+                  <span className="font-semibold">{isDe ? 'Kontaktweg: ' : isEs ? 'Canal de contacto: ' : 'Contact route: '}</span>
+                  {isDe ? currentMail.contactPathDe : currentMail.contactPathEn}
+                </p>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-2">
+                {/* Mark as Sent Toggle Button */}
+                <button
+                  type="button"
+                  onClick={() => handleToggleSent(currentMail.id)}
+                  className={`inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl text-xs font-mono-code font-bold transition-all shadow-xs cursor-pointer ${
+                    isCurrentMailSent
+                      ? 'bg-emerald-100 hover:bg-emerald-200 text-emerald-900 border border-emerald-400'
+                      : 'bg-emerald-700 hover:bg-emerald-800 text-white'
+                  }`}
+                  title={isCurrentMailSent ? (isDe ? 'Klicken, um Status zu ändern' : 'Click to toggle') : ''}
+                >
+                  <Check className="w-4 h-4" />
+                  <span>
+                    {isCurrentMailSent
+                      ? (isDe ? '✓ Versendet (Ändern)' : isEs ? '✓ Enviado' : '✓ Sent (Toggle)')
+                      : (isDe ? 'Als versendet markieren' : isEs ? 'Marcar como enviado' : 'Mark as sent')}
+                  </span>
+                </button>
+
+                {/* Open in Email Client (mailto:) */}
+                <button
+                  type="button"
+                  onClick={() => handleOpenInEmailClient(currentMail)}
+                  className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-stone-200 hover:bg-stone-300 text-stone-800 text-xs font-mono-code font-semibold transition-colors shadow-xs cursor-pointer"
+                  title={isDe ? 'Im lokalen E-Mail-Programm öffnen (mailto:)' : 'Open in local mail client (mailto:)'}
+                >
+                  <Send className="w-3.5 h-3.5 text-stone-700" />
+                  <span>{isDe ? 'In Mailer öffnen' : 'Open in Mailer'}</span>
+                </button>
+
+                {/* Copy Email Text */}
+                <button
+                  type="button"
+                  onClick={() => handleCopyEmail(currentMail)}
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-stone-900 hover:bg-stone-800 text-white text-xs font-medium transition-colors shadow-xs cursor-pointer"
+                >
+                  {copiedMailId === currentMail.id ? (
+                    <>
+                      <Check className="w-4 h-4 text-emerald-400" />
+                      <span>{t.ui.email_copied}</span>
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="w-4 h-4" />
+                      <span>{t.ui.copy_email}</span>
+                    </>
+                  )}
+                </button>
+              </div>
             </div>
 
             {/* Verification Checklist */}

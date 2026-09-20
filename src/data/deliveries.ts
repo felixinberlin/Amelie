@@ -43,7 +43,9 @@ Warm regards,
 Félix (Berlin)`,
     doseLinks: ['altbau-thermal'],
     scheduleDe: 'Sofort versendbar · Höchste Trefferwahrscheinlichkeit',
-    scheduleEn: 'Immediate dispatch · Highest success probability'
+    scheduleEn: 'Immediate dispatch · Highest success probability',
+    sent: true,
+    sentAt: '2026-09-20'
   },
   {
     id: 'mail-2',

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Mail,
   Copy,
@@ -15,11 +15,13 @@ import {
   Link2,
   Eye,
   Package,
+  RotateCcw,
 } from 'lucide-react';
 import { AMELIE_MUSTERS, AMELIE_ANTI_PATTERNS, MusterEmail } from '../data/musterEmails';
 import { DoseItem, Language } from '../types';
 import { getTranslation, getLocalizedTitle } from '../i18n';
 import { getDoseUrl } from '../utils/doseUrl';
+import { getSentEmailsMap, markEmailAsSent, SentEmailRecord } from '../services/storageService';
 
 interface MusterEmailsSectionProps {
   lang: Language;
@@ -38,10 +40,15 @@ export const MusterEmailsSection: React.FC<MusterEmailsSectionProps> = ({
   const [selectedDoseId, setSelectedDoseId] = useState<string>('altbau-thermal');
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [copiedDoseUrl, setCopiedDoseUrl] = useState(false);
+  const [sentMap, setSentMap] = useState<Record<string, SentEmailRecord>>(() => getSentEmailsMap());
   const t = getTranslation(lang);
 
   const isDe = lang === 'de';
   const isEs = lang === 'es';
+
+  useEffect(() => {
+    setSentMap(getSentEmailsMap());
+  }, []);
 
   const currentMuster = AMELIE_MUSTERS.find((m) => m.id === selectedMusterId) || AMELIE_MUSTERS[0];
   const linkedDose = dosen.find((d) => d.id === selectedDoseId) || dosen[0] || null;
@@ -75,6 +82,26 @@ export const MusterEmailsSection: React.FC<MusterEmailsSectionProps> = ({
   };
 
   const currentCustomEmail = getCustomizedEmail(currentMuster);
+  const currentKey = `muster-${selectedMusterId}-${selectedDoseId}`;
+  const isMusterSent = !!sentMap[currentKey]?.sent;
+
+  const handleToggleMusterSent = () => {
+    const newRecord = markEmailAsSent(currentKey, !isMusterSent);
+    setSentMap((prev) => ({
+      ...prev,
+      [currentKey]: newRecord,
+    }));
+  };
+
+  const handleOpenMailer = () => {
+    const subject = currentCustomEmail.subject;
+    const body = currentCustomEmail.body;
+    const mailtoUrl = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.open(mailtoUrl, '_blank');
+    if (!isMusterSent) {
+      handleToggleMusterSent();
+    }
+  };
 
   const handleCopy = () => {
     navigator.clipboard.writeText(currentCustomEmail.fullText);
@@ -262,6 +289,8 @@ export const MusterEmailsSection: React.FC<MusterEmailsSectionProps> = ({
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
         {AMELIE_MUSTERS.map((m) => {
           const isSelected = selectedMusterId === m.id;
+          const isSent = !!sentMap[`muster-${m.id}-${selectedDoseId}`]?.sent;
+
           return (
             <button
               key={m.id}
@@ -273,13 +302,27 @@ export const MusterEmailsSection: React.FC<MusterEmailsSectionProps> = ({
               }`}
             >
               <div>
-                <span
-                  className={`text-[10px] font-typewriter uppercase tracking-widest font-bold block mb-1 ${
-                    isSelected ? 'text-[#f6bd60]' : 'text-[#8c1d40]'
-                  }`}
-                >
-                  {m.typeId.toUpperCase()}
-                </span>
+                <div className="flex items-center justify-between mb-1">
+                  <span
+                    className={`text-[10px] font-typewriter uppercase tracking-widest font-bold block ${
+                      isSelected ? 'text-[#f6bd60]' : 'text-[#8c1d40]'
+                    }`}
+                  >
+                    {m.typeId.toUpperCase()}
+                  </span>
+                  {isSent && (
+                    <span
+                      className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full inline-flex items-center gap-1 ${
+                        isSelected
+                          ? 'bg-emerald-900 text-emerald-200 border border-emerald-600'
+                          : 'bg-emerald-100 text-emerald-800 border border-emerald-300'
+                      }`}
+                    >
+                      <Check className="w-2.5 h-2.5 text-emerald-500" />
+                      <span>{isDe ? 'Versendet' : 'Sent'}</span>
+                    </span>
+                  )}
+                </div>
                 <h4 className="text-sm font-bold font-amelie line-clamp-2">
                   {isDe ? m.titleDe : m.titleEn}
                 </h4>
@@ -298,6 +341,33 @@ export const MusterEmailsSection: React.FC<MusterEmailsSectionProps> = ({
 
       {/* Active Template Card */}
       <div className="rounded-2xl border border-[#dfd1be] bg-[#fffdf9] overflow-hidden shadow-xs">
+        {/* Sent Banner */}
+        {isMusterSent && (
+          <div className="p-3.5 bg-emerald-50 border-b border-emerald-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 text-xs text-emerald-950">
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+              <div>
+                <span className="font-bold">
+                  {isDe
+                    ? `✓ Als versendet markiert für « ${linkedDoseTitle} »`
+                    : `✓ Marked as sent for "${linkedDoseTitle}"`}
+                </span>
+                <span className="text-emerald-700 block sm:inline sm:ml-2 text-[11px]">
+                  {isDe ? 'Amélie-Pledge: Niemals nachfassen.' : 'Amélie Pledge: No follow-ups.'}
+                </span>
+              </div>
+            </div>
+            <button
+              type="button"
+              onClick={handleToggleMusterSent}
+              className="inline-flex items-center gap-1 text-[11px] font-typewriter text-emerald-800 hover:text-emerald-950 underline cursor-pointer"
+            >
+              <RotateCcw className="w-3 h-3" />
+              <span>{isDe ? 'Rückgängig' : 'Undo'}</span>
+            </button>
+          </div>
+        )}
+
         {/* Card Header */}
         <div className="p-6 bg-[#faf5eb] border-b border-[#dfd1be] space-y-3">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
@@ -310,6 +380,11 @@ export const MusterEmailsSection: React.FC<MusterEmailsSectionProps> = ({
                   {t.ui.rules_applied}{' '}
                   {currentMuster.rulesApplied.map((r) => `#${r}`).join(' ')}
                 </span>
+                {isMusterSent && (
+                  <span className="text-[11px] font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 border border-emerald-300">
+                    ✓ {isDe ? 'Versendet' : 'Sent'}
+                  </span>
+                )}
               </div>
               <h3 className="text-xl font-bold font-amelie text-[#2b1e16] mt-1">
                 {isDe ? currentMuster.titleDe : currentMuster.titleEn}
@@ -320,22 +395,56 @@ export const MusterEmailsSection: React.FC<MusterEmailsSectionProps> = ({
               </p>
             </div>
 
-            <button
-              onClick={handleCopy}
-              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#8c1d40] hover:bg-[#741533] text-white text-xs font-typewriter font-bold transition-colors shadow-2xs cursor-pointer shrink-0"
-            >
-              {copiedId === currentMuster.id ? (
-                <>
-                  <Check className="w-4 h-4 text-[#f6bd60]" />
-                  <span>{t.ui.email_copied}</span>
-                </>
-              ) : (
-                <>
-                  <Copy className="w-4 h-4" />
-                  <span>{t.ui.copy_template}</span>
-                </>
-              )}
-            </button>
+            <div className="flex flex-wrap items-center gap-2 shrink-0">
+              {/* Mark as Sent Toggle */}
+              <button
+                type="button"
+                onClick={handleToggleMusterSent}
+                className={`inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl text-xs font-typewriter font-bold transition-all shadow-2xs cursor-pointer ${
+                  isMusterSent
+                    ? 'bg-emerald-100 hover:bg-emerald-200 text-emerald-900 border border-emerald-400'
+                    : 'bg-emerald-700 hover:bg-emerald-800 text-white'
+                }`}
+                title={isMusterSent ? (isDe ? 'Status ändern' : 'Toggle status') : ''}
+              >
+                <Check className="w-3.5 h-3.5" />
+                <span>
+                  {isMusterSent
+                    ? (isDe ? '✓ Versendet (Ändern)' : '✓ Sent (Toggle)')
+                    : (isDe ? 'Als versendet markieren' : 'Mark as sent')}
+                </span>
+              </button>
+
+              {/* Open in Mailer */}
+              <button
+                type="button"
+                onClick={handleOpenMailer}
+                className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-white hover:bg-stone-50 border border-[#dfd1be] text-[#2b1e16] text-xs font-typewriter font-semibold transition-colors shadow-2xs cursor-pointer"
+                title={isDe ? 'Im lokalen Mail-Programm öffnen' : 'Open in local mail client'}
+              >
+                <Send className="w-3.5 h-3.5 text-[#8c1d40]" />
+                <span>{isDe ? 'In Mailer öffnen' : 'Open in Mailer'}</span>
+              </button>
+
+              {/* Copy Template */}
+              <button
+                type="button"
+                onClick={handleCopy}
+                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#8c1d40] hover:bg-[#741533] text-white text-xs font-typewriter font-bold transition-colors shadow-2xs cursor-pointer shrink-0"
+              >
+                {copiedId === currentMuster.id ? (
+                  <>
+                    <Check className="w-4 h-4 text-[#f6bd60]" />
+                    <span>{t.ui.email_copied}</span>
+                  </>
+                ) : (
+                  <>
+                    <Copy className="w-4 h-4" />
+                    <span>{t.ui.copy_template}</span>
+                  </>
+                )}
+              </button>
+            </div>
           </div>
 
           {/* Context Explainer */}
