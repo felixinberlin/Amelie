@@ -44,15 +44,24 @@ export const Header: React.FC<HeaderProps> = ({
   const [isMoreOpen, setIsMoreOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Close dropdown on outside click
+  // Close dropdown on outside click or Escape key
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsMoreOpen(false);
       }
     };
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsMoreOpen(false);
+      }
+    };
     document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
   }, []);
 
   // Primary navigation tabs: Curated, clean, 3 essential pillars
@@ -244,43 +253,50 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
 
         {/* Clean, Streamlined Tab Navigation with "Mehr & Werkzeuge" Dropdown */}
-        <nav className="flex items-center gap-1.5 py-2 overflow-x-auto no-scrollbar">
-          {mainTabs.map((tab) => {
-            const Icon = tab.icon;
-            const isActive = currentTab === tab.id;
-            return (
-              <button
-                key={tab.id}
-                onClick={() => {
-                  setCurrentTab(tab.id);
-                  setIsMoreOpen(false);
-                }}
-                className={`flex items-center gap-2 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-xs sm:text-sm font-medium whitespace-nowrap transition-all cursor-pointer ${
-                  isActive
-                    ? 'bg-[#8c1d40] text-[#fff9f5] shadow-xs border border-[#741533]'
-                    : 'text-[#6b5849] hover:text-[#2b1e16] hover:bg-[#ede3d1]/60 border border-transparent'
-                }`}
-              >
-                <Icon className={`w-4 h-4 ${isActive ? 'text-[#f6bd60]' : 'text-[#8b6f57]'}`} />
-                <span className={isActive ? 'font-semibold tracking-tight' : ''}>{tab.label}</span>
-                {tab.badge !== undefined && (
-                  <span
-                    className={`text-xs px-2 py-0.5 rounded-full font-typewriter font-bold ${
-                      isActive
-                        ? 'bg-[#741533] text-[#fde047]'
-                        : 'bg-[#ede3d1] text-[#5c4a3d] border border-[#d8cbba]'
-                    }`}
-                  >
-                    {tab.badge}
-                  </span>
-                )}
-              </button>
-            );
-          })}
+        <div className="flex items-center justify-between gap-2 py-2">
+          {/* Main tabs container - can scroll horizontally on narrow viewports without clipping the dropdown */}
+          <nav className="flex items-center gap-1.5 overflow-x-auto no-scrollbar min-w-0" aria-label="Main Navigation">
+            {mainTabs.map((tab) => {
+              const Icon = tab.icon;
+              const isActive = currentTab === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => {
+                    setCurrentTab(tab.id);
+                    setIsMoreOpen(false);
+                  }}
+                  className={`flex items-center gap-2 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-xs sm:text-sm font-medium whitespace-nowrap transition-all cursor-pointer ${
+                    isActive
+                      ? 'bg-[#8c1d40] text-[#fff9f5] shadow-xs border border-[#741533]'
+                      : 'text-[#6b5849] hover:text-[#2b1e16] hover:bg-[#ede3d1]/60 border border-transparent'
+                  }`}
+                >
+                  <Icon className={`w-4 h-4 ${isActive ? 'text-[#f6bd60]' : 'text-[#8b6f57]'}`} />
+                  <span className={isActive ? 'font-semibold tracking-tight' : ''}>{tab.label}</span>
+                  {tab.badge !== undefined && (
+                    <span
+                      className={`text-xs px-2 py-0.5 rounded-full font-typewriter font-bold ${
+                        isActive
+                          ? 'bg-[#741533] text-[#fde047]'
+                          : 'bg-[#ede3d1] text-[#5c4a3d] border border-[#d8cbba]'
+                      }`}
+                    >
+                      {tab.badge}
+                    </span>
+                  )}
+                </button>
+              );
+            })}
+          </nav>
 
-          {/* "Mehr & Werkzeuge" Dropdown - Opens strictly inwards (right-0) so it never overflows */}
-          <div className="relative ml-auto sm:ml-0" ref={dropdownRef}>
+          {/* "Mehr & Werkzeuge" Dropdown - Sits OUTSIDE the scrolling nav so it is NEVER clipped */}
+          <div className="relative shrink-0 ml-auto sm:ml-0" ref={dropdownRef}>
             <button
+              type="button"
+              id="header-more-menu-button"
+              aria-haspopup="true"
+              aria-expanded={isMoreOpen}
               onClick={() => setIsMoreOpen((prev) => !prev)}
               className={`flex items-center gap-2 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-xs sm:text-sm font-medium whitespace-nowrap transition-all cursor-pointer ${
                 isMoreActive
@@ -315,7 +331,12 @@ export const Header: React.FC<HeaderProps> = ({
 
             {/* Dropdown Menu - Explicitly anchored to right edge (right-0) with max-width and internal scroll */}
             {isMoreOpen && (
-              <div className="absolute right-0 top-full mt-2 w-80 sm:w-96 max-w-[calc(100vw-1.5rem)] rounded-2xl bg-[#fffdf9] border border-[#dfd1be] shadow-2xl p-2.5 z-50 animate-fadeIn max-h-[80vh] overflow-y-auto divide-y divide-[#f0e4d4]">
+              <div
+                id="header-more-dropdown-menu"
+                role="menu"
+                aria-orientation="vertical"
+                className="absolute right-0 top-full mt-2 w-80 sm:w-96 max-w-[calc(100vw-1.5rem)] rounded-2xl bg-[#fffdf9] border border-[#dfd1be] shadow-2xl p-2.5 z-50 animate-fadeIn max-h-[calc(100vh-6rem)] overflow-y-auto divide-y divide-[#f0e4d4]"
+              >
                 <div className="px-2.5 py-2">
                   <span className="text-[10px] font-typewriter uppercase tracking-widest text-[#8c1d40] font-bold block">
                     ✦ {t.nav.tools_archive} ✦
@@ -392,7 +413,7 @@ export const Header: React.FC<HeaderProps> = ({
               </div>
             )}
           </div>
-        </nav>
+        </div>
       </div>
     </header>
   );

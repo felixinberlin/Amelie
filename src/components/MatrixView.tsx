@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Check, Copy, ExternalLink, Calendar, CheckSquare, Sparkles, Filter } from 'lucide-react';
 import { MatrixRow, DeliveryEmail, Language, DoseItem } from '../types';
-import { getTranslation } from '../i18n';
+import { getTranslation, getLocalizedTitle } from '../i18n';
 import { MusterEmailsSection } from './MusterEmailsSection';
 
 interface MatrixViewProps {
@@ -390,7 +390,9 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
                       {/* Name & Effort */}
                       <td className="py-3 px-4 font-medium text-stone-900">
                         <div className="flex items-center gap-2">
-                          <span className="font-bold">{row.name}</span>
+                          <span className="font-bold">
+                            {getLocalizedTitle({ id: row.doseId || row.id, title: row.name, titleEn: row.nameEn }, lang)}
+                          </span>
                           <span className="px-1.5 py-0.2 rounded bg-stone-200 text-stone-700 font-mono-code text-xs">
                             {row.effort}
                           </span>

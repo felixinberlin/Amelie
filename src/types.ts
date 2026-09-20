@@ -97,7 +97,9 @@ export interface MatrixRow {
   categoryDe: string;
   categoryEn: string;
   name: string;
+  nameEn?: string;
   titleKey?: string;
+  titleEn?: string;
   effort: 'S' | 'M' | 'L';
   verdict: Verdict;
   beneficiaryDe: string;

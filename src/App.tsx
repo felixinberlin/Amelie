@@ -190,6 +190,7 @@ export function App() {
           <InteractiveTinSandboxes
             lang={lang}
             initialSandbox={activeSandbox}
+            onOpenDose={(doseId) => handleSelectDoseById(doseId)}
           />
         )}
 
@@ -243,6 +244,10 @@ export function App() {
           dose={selectedDose}
           lang={lang}
           onClose={() => setSelectedDose(null)}
+          onOpenSimulator={(simId) => {
+            setSelectedDose(null);
+            handleOpenSimulator(simId);
+          }}
         />
       )}
 

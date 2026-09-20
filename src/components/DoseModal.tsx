@@ -1,20 +1,158 @@
 import React, { useState } from 'react';
-import { X, Copy, Check, Download, AlertTriangle, Lightbulb, Target, Wrench, ShieldAlert, Sparkles, Send, Printer, Brain, GraduationCap, ShieldCheck, Heart } from 'lucide-react';
+import {
+  X,
+  Copy,
+  Check,
+  Download,
+  AlertTriangle,
+  Lightbulb,
+  Target,
+  Wrench,
+  ShieldAlert,
+  Sparkles,
+  Send,
+  Printer,
+  Brain,
+  GraduationCap,
+  ShieldCheck,
+  Heart,
+  ExternalLink,
+  ChevronDown,
+  ChevronUp,
+} from 'lucide-react';
 import { DoseItem, Language } from '../types';
 import { AMELIE_PLEDGE } from '../data/manifest';
 import { getTranslation, getLocalizedTitle } from '../i18n';
+import {
+  AltbauThermalSimulator,
+  GlasanflugSimulator,
+  StreiflichtSimulator,
+  WetInkSimulator,
+  BalkonkraftwerkSimulator,
+  RegenwasserSimulator,
+  KlarLokalSimulator,
+  CrackFloraSimulator,
+} from './simulators';
+
+export type SimulatorKey =
+  | 'altbau'
+  | 'glasanflug'
+  | 'streiflicht'
+  | 'wetink'
+  | 'balkon'
+  | 'regenwasser'
+  | 'klarlokal'
+  | 'crackflora';
+
+const DOSE_SIMULATOR_MAP: Record<
+  string,
+  {
+    key: SimulatorKey;
+    titleDe: string;
+    titleEn: string;
+    titleEs: string;
+    descriptionDe: string;
+    descriptionEn: string;
+    descriptionEs: string;
+    icon: string;
+  }
+> = {
+  'altbau-thermal': {
+    key: 'altbau',
+    titleDe: 'Altbau Thermal Simulator',
+    titleEn: 'Altbau Thermal Simulator',
+    titleEs: 'Simulador Térmico de Edificio Antiguo',
+    descriptionDe: 'Interaktiver 2D-Raumeck-Wärmeleitsimulator nach DIN EN ISO 10211 mit Schimmelrisiko-Berechnung.',
+    descriptionEn: 'Interactive 2D room corner thermal conductor simulation per DIN EN ISO 10211 with mold risk calculation.',
+    descriptionEs: 'Simulador interactivo 2D de conducción térmica en esquinas según DIN EN ISO 10211 con cálculo de riesgo de moho.',
+    icon: '🏢',
+  },
+  'glasanflug': {
+    key: 'glasanflug',
+    titleDe: 'Glasanflug-Risikoampel',
+    titleEn: 'Bird Glass Strike Hazard Calculator',
+    titleEs: 'Calculadora de Riesgo de Colisión de Aves con Vidrio',
+    descriptionDe: 'Berechnung des Vogelschlag-Risikos nach den Kriterien der Länderarbeitsgemeinschaft der Vogelschutzwarten (LAG-VSW).',
+    descriptionEn: 'Bird glass collision hazard rating based on the German State Bird Protection Stations (LAG-VSW) standard.',
+    descriptionEs: 'Evaluación de riesgo de colisión de aves en vidrio basada en el estándar oficial LAG-VSW.',
+    icon: '🐦',
+  },
+  'streiflicht': {
+    key: 'streiflicht',
+    titleDe: 'Streiflicht RTI & Raking Light Labor',
+    titleEn: 'RTI Grazing Light Surface Lab',
+    titleEs: 'Laboratorio RTI de Luz Rasante',
+    descriptionDe: 'Reflectance Transformation Imaging (RTI) zur optischen Lesbarmachung abgetragener Steininschriften.',
+    descriptionEn: 'Reflectance Transformation Imaging (RTI) to optically reveal worn stone inscriptions via directional grazing light.',
+    descriptionEs: 'Imágenes de transformación de reflectancia (RTI) para revelar inscripciones erosionadas mediante luz rasante.',
+    icon: '🔦',
+  },
+  'wet-ink': {
+    key: 'wetink',
+    titleDe: 'Wet Ink Kapillar-Simulator',
+    titleEn: 'Wet Ink Capillary Flow Simulator',
+    titleEs: 'Simulador de Tinta Líquida y Flujo Capilar',
+    descriptionDe: 'Echtzeit-Simulation von Tintenausblutung, Fasersaugspannung und Papier-Kapillareffekten im Browser.',
+    descriptionEn: 'Real-time simulation of ink bleed, paper fiber capillary absorption, and feathering directly in canvas.',
+    descriptionEs: 'Simulación en tiempo real de absorción capilar, sangrado de tinta y textura de papel en lienzo.',
+    icon: '🖋️',
+  },
+  'balkonkraftwerk': {
+    key: 'balkon',
+    titleDe: 'Balkonkraftwerk Ertrags- & Amortisationsrechner',
+    titleEn: 'Balcony Solar Yield & Payback Calculator',
+    titleEs: 'Calculadora de Rendimiento y Amortización Solar de Balcón',
+    descriptionDe: 'Berechnet PVGIS-Jahresertrag, Eigenverbrauchsquote und Amortisationsdauer für Mini-Solaranlagen.',
+    descriptionEn: 'Calculates PVGIS annual yield, self-consumption share, and payback duration for plug-in solar kits.',
+    descriptionEs: 'Calcula rendimiento anual PVGIS, cuota de autoconsumo y amortización para kits solares de balcón.',
+    icon: '☀️',
+  },
+  'regenwasser': {
+    key: 'regenwasser',
+    titleDe: 'Regenwasser & Zisternen-Dimensionierer',
+    titleEn: 'Rainwater Harvesting & Cistern Sizing Calculator',
+    titleEs: 'Calculadora de Recolección de Lluvia y Dimensionamiento de Cisterna',
+    descriptionDe: 'Dachablauf-Simulation nach DIN 1989-1 mit Trinkwasser-Einsparung und Starkregen-Rückhaltepuffer.',
+    descriptionEn: 'Roof runoff harvest simulation per DIN 1989-1 with potable water savings and storm surge buffer.',
+    descriptionEs: 'Simulación de escorrentía de techos según DIN 1989-1 con ahorro de agua potable y amortiguación pluvial.',
+    icon: '🌧️',
+  },
+  'klarlokal': {
+    key: 'klarlokal',
+    titleDe: 'KlarLokal: Beamtendeutsch-Brecheisen',
+    titleEn: 'KlarLokal: Bureaucracy Battering Ram',
+    titleEs: 'KlarLokal: Palanca contra la Burocracia',
+    descriptionDe: '100% lokale WebGPU/WebLLM-Inferenz nach DIN SPEC 33429 (Leichte Sprache) zur Extraktion von Frist, Urteil und Checkliste.',
+    descriptionEn: '100% on-device WebGPU/WebLLM inference per DIN SPEC 33429 to extract deadline, plain verdict, and action checklist.',
+    descriptionEs: 'Inferencia local por WebGPU/WebLLM según DIN SPEC 33429 para extraer plazos, veredicto y lista de acciones.',
+    icon: '🛡️',
+  },
+  'crack-flora-watcher': {
+    key: 'crackflora',
+    titleDe: 'Crack Flora Watcher: Ritzengrün-Labor',
+    titleEn: 'Crack Flora Watcher: Pavement Botany Lab',
+    titleEs: 'Crack Flora Watcher: Laboratorio de Botánica Urbana',
+    descriptionDe: 'Toughness-Index-Berechnung und Zeitraffer-Tracking von Straßenritzen-Pflanzen für die #Krautschau Bürgerwissenschaft.',
+    descriptionEn: 'Toughness Index calculation and multi-week growth time-lapses in hostile asphalt cracks for citizen science.',
+    descriptionEs: 'Cálculo del índice de tenacidad y seguimiento de crecimiento temporal en grietas de asfalto para ciencia ciudadana.',
+    icon: '🌱',
+  },
+};
 
 interface DoseModalProps {
   dose: DoseItem;
   lang: Language;
   onClose: () => void;
+  onOpenSimulator?: (simId: SimulatorKey) => void;
 }
 
-export const DoseModal: React.FC<DoseModalProps> = ({ dose, lang, onClose }) => {
+export const DoseModal: React.FC<DoseModalProps> = ({ dose, lang, onClose, onOpenSimulator }) => {
   const [copiedPledge, setCopiedPledge] = useState(false);
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [selectedEmailIndex, setSelectedEmailIndex] = useState(0);
+  const [isSimulatorExpanded, setIsSimulatorExpanded] = useState(false);
   const t = getTranslation(lang);
+  const matchedSimulator = DOSE_SIMULATOR_MAP[dose.id];
 
   const copyPledge = () => {
     navigator.clipboard.writeText(AMELIE_PLEDGE[lang]);
@@ -371,6 +509,76 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
               </div>
             </div>
           </div>
+
+          {/* Interactive Prototype Section (In the Can / Linked from there) */}
+          {matchedSimulator && (
+            <div className="rounded-2xl border-2 border-[#c5832b]/80 bg-gradient-to-br from-[#faf4e6] to-[#f4e9d5] p-5 shadow-sm space-y-4 print:hidden">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div className="flex items-center gap-3">
+                  <span className="text-2xl p-2 rounded-xl bg-white shadow-2xs border border-[#dfd1be]">
+                    {matchedSimulator.icon}
+                  </span>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-2xs font-typewriter uppercase tracking-widest font-bold px-2 py-0.5 rounded bg-[#c5832b] text-white">
+                        {lang === 'de' ? '🧪 Interaktiver Prototyp' : lang === 'es' ? '🧪 Prototipo Interactivo' : '🧪 Interactive Prototype'}
+                      </span>
+                      <span className="text-2xs font-typewriter text-[#8c1d40] font-bold">
+                        {lang === 'de' ? 'In der Dose verpackt' : lang === 'es' ? 'Dentro de la lata' : 'Packaged in Tin'}
+                      </span>
+                    </div>
+                    <h3 className="text-base font-bold font-amelie text-[#2b1e16] mt-0.5">
+                      {lang === 'de' ? matchedSimulator.titleDe : lang === 'es' ? matchedSimulator.titleEs : matchedSimulator.titleEn}
+                    </h3>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setIsSimulatorExpanded((prev) => !prev)}
+                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-white border border-[#c5832b] text-[#2b1e16] hover:bg-[#fffcf7] text-xs font-semibold shadow-2xs transition-all cursor-pointer"
+                  >
+                    <span>
+                      {isSimulatorExpanded
+                        ? (lang === 'de' ? 'Simulator einklappen' : lang === 'es' ? 'Plegar simulador' : 'Collapse Simulator')
+                        : (lang === 'de' ? 'In der Dose ausführen' : lang === 'es' ? 'Ejecutar en la lata' : 'Run inside the Can')}
+                    </span>
+                    {isSimulatorExpanded ? <ChevronUp className="w-3.5 h-3.5 text-[#c5832b]" /> : <ChevronDown className="w-3.5 h-3.5 text-[#c5832b]" />}
+                  </button>
+
+                  {onOpenSimulator && (
+                    <button
+                      type="button"
+                      onClick={() => onOpenSimulator(matchedSimulator.key)}
+                      className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#701531] hover:bg-[#8c1d40] text-white text-xs font-semibold shadow-2xs transition-all cursor-pointer"
+                    >
+                      <span>{lang === 'de' ? 'Vollbild-Labor' : lang === 'es' ? 'Laboratorio Completo' : 'Full Sandbox'}</span>
+                      <ExternalLink className="w-3.5 h-3.5 text-[#f6bd60]" />
+                    </button>
+                  )}
+                </div>
+              </div>
+
+              <p className="text-xs text-[#5c4a3d] leading-relaxed">
+                {lang === 'de' ? matchedSimulator.descriptionDe : lang === 'es' ? matchedSimulator.descriptionEs : matchedSimulator.descriptionEn}
+              </p>
+
+              {/* Expanded in-can interactive simulator */}
+              {isSimulatorExpanded && (
+                <div className="pt-4 border-t border-[#dfd1be] animate-fadeIn">
+                  {matchedSimulator.key === 'altbau' && <AltbauThermalSimulator lang={lang} isEmbedded={true} />}
+                  {matchedSimulator.key === 'glasanflug' && <GlasanflugSimulator lang={lang} isEmbedded={true} />}
+                  {matchedSimulator.key === 'streiflicht' && <StreiflichtSimulator lang={lang} isEmbedded={true} />}
+                  {matchedSimulator.key === 'wetink' && <WetInkSimulator lang={lang} isEmbedded={true} />}
+                  {matchedSimulator.key === 'balkon' && <BalkonkraftwerkSimulator lang={lang} isEmbedded={true} />}
+                  {matchedSimulator.key === 'regenwasser' && <RegenwasserSimulator lang={lang} isEmbedded={true} />}
+                  {matchedSimulator.key === 'klarlokal' && <KlarLokalSimulator lang={lang} isEmbedded={true} />}
+                  {matchedSimulator.key === 'crackflora' && <CrackFloraSimulator lang={lang} isEmbedded={true} />}
+                </div>
+              )}
+            </div>
+          )}
 
           {/* Section 5: Failure mode */}
           <div className="space-y-2">

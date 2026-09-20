@@ -1,7 +1,7 @@
 import React from 'react';
 import { Trash2, Sparkles, ShieldX, BookOpen } from 'lucide-react';
 import { DiscardedItem, Language } from '../types';
-import { getTranslation } from '../i18n';
+import { getTranslation, getLocalizedTitle } from '../i18n';
 
 interface DiscardedGalleryProps {
   discarded: DiscardedItem[];
@@ -44,7 +44,7 @@ export const DiscardedGallery: React.FC<DiscardedGalleryProps> = ({ discarded, l
               </div>
 
               <h3 className="text-xl font-bold font-serif-title text-stone-900">
-                {item.title}
+                {getLocalizedTitle(item, lang)}
               </h3>
 
               <div className="space-y-1">
