@@ -1,29 +1,92 @@
 import React, { useState } from 'react';
-import { Mail, Copy, Check, Sparkles, ShieldAlert, CheckCircle2, Send, AlertTriangle, FileText, Compass, ExternalLink } from 'lucide-react';
+import {
+  Mail,
+  Copy,
+  Check,
+  Sparkles,
+  ShieldAlert,
+  CheckCircle2,
+  Send,
+  AlertTriangle,
+  FileText,
+  Compass,
+  ExternalLink,
+  Maximize2,
+  Link2,
+  Eye,
+  Package,
+} from 'lucide-react';
 import { AMELIE_MUSTERS, AMELIE_ANTI_PATTERNS, MusterEmail } from '../data/musterEmails';
-import { Language } from '../types';
-import { getTranslation } from '../i18n';
+import { DoseItem, Language } from '../types';
+import { getTranslation, getLocalizedTitle } from '../i18n';
+import { getDoseUrl } from '../utils/doseUrl';
 
 interface MusterEmailsSectionProps {
   lang: Language;
+  dosen?: DoseItem[];
+  onOpenSinglePage?: (dose: DoseItem) => void;
+  onOpenModal?: (dose: DoseItem) => void;
 }
 
-export const MusterEmailsSection: React.FC<MusterEmailsSectionProps> = ({ lang }) => {
+export const MusterEmailsSection: React.FC<MusterEmailsSectionProps> = ({
+  lang,
+  dosen = [],
+  onOpenSinglePage,
+  onOpenModal,
+}) => {
   const [selectedMusterId, setSelectedMusterId] = useState<string>('muster-forschung');
+  const [selectedDoseId, setSelectedDoseId] = useState<string>('altbau-thermal');
   const [copiedId, setCopiedId] = useState<string | null>(null);
+  const [copiedDoseUrl, setCopiedDoseUrl] = useState(false);
   const t = getTranslation(lang);
 
   const isDe = lang === 'de';
   const isEs = lang === 'es';
 
   const currentMuster = AMELIE_MUSTERS.find((m) => m.id === selectedMusterId) || AMELIE_MUSTERS[0];
+  const linkedDose = dosen.find((d) => d.id === selectedDoseId) || dosen[0] || null;
 
-  const handleCopy = (muster: MusterEmail) => {
-    const text = isDe ? muster.bodyDe : muster.bodyEn;
-    const fullEmail = `Subject: ${isDe ? muster.subjectDe : muster.subjectEn}\n\n${text}`;
-    navigator.clipboard.writeText(fullEmail);
-    setCopiedId(muster.id);
+  const linkedDoseUrl = linkedDose ? getDoseUrl(linkedDose.id) : '';
+  const linkedDoseTitle = linkedDose ? getLocalizedTitle(linkedDose, lang) : '';
+
+  // Generate customized email text with real deep link
+  const getCustomizedEmail = (muster: MusterEmail) => {
+    let subject = isDe ? muster.subjectDe : muster.subjectEn;
+    let body = isDe ? muster.bodyDe : muster.bodyEn;
+
+    if (linkedDose) {
+      // Substitute placeholders
+      subject = subject.replace(/\[Name der Idee\]/g, linkedDoseTitle);
+      
+      const oneLiner = isDe ? linkedDose.oneLinerDe : linkedDose.oneLinerEn;
+      const problem = isDe ? linkedDose.problemDe : linkedDose.problemEn;
+
+      body = body
+        .replace(/\[Name der Idee\]/g, linkedDoseTitle)
+        .replace(/\[Das konkrete Problem\]/g, problem)
+        .replace(
+          /https:\/\/felixinberlin\.github\.io\/Amelie\/\s*\(bzw\.\s*https:\/\/github\.com\/felixinberlin\/Amelie\/blob\/main\/05-dosen\/\[slug\]\.md\)/g,
+          `${linkedDoseUrl}\n(Direkt-Link zur Einzelseite der Dose — frei im Browser aufrufbar)`
+        )
+        .replace(/\[slug\]/g, linkedDose.id);
+    }
+
+    return { subject, body, fullText: `Subject: ${subject}\n\n${body}` };
+  };
+
+  const currentCustomEmail = getCustomizedEmail(currentMuster);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(currentCustomEmail.fullText);
+    setCopiedId(currentMuster.id);
     setTimeout(() => setCopiedId(null), 2200);
+  };
+
+  const handleCopyDoseUrl = () => {
+    if (!linkedDoseUrl) return;
+    navigator.clipboard.writeText(linkedDoseUrl);
+    setCopiedDoseUrl(true);
+    setTimeout(() => setCopiedDoseUrl(false), 2000);
   };
 
   return (
@@ -64,13 +127,102 @@ export const MusterEmailsSection: React.FC<MusterEmailsSectionProps> = ({ lang }
           </h2>
           <p className="text-sm sm:text-base text-[#5c4a3d] leading-relaxed font-sans">
             {isDe
-              ? 'Jede Mail ist ein bedingungsloses Geschenk (CC0). Sie enthält keine Terminanfrage, keine Bitte um Feedback und kein Nachfassen. Der Empfänger erhält die ausdrückliche Erlaubnis, nicht zu antworten.'
+              ? 'Jede Mail ist ein bedingungsloses Geschenk (CC0). Sie enthält keine Terminanfrage, keine Bitte um Feedback und kein Nachfassen. Der Empfänger erhält einen direkten Einzelseiten-Link zur Dose und die ausdrückliche Erlaubnis, nicht zu antworten.'
               : isEs
-              ? 'Cada correo es un regalo incondicional (CC0). No contiene peticiones de reunión, no solicita retroalimentación y promete no insistir jamás. Se otorga permiso explícito para no responder.'
-              : 'Every message is an unconditional gift under CC0. It contains zero meeting requests, zero demands for feedback, and absolute immunity from follow-ups. The recipient is granted explicit permission not to reply.'}
+              ? 'Cada correo es un regalo incondicional (CC0). Contiene el enlace directo a la página única de la lata y permiso explícito para no responder.'
+              : 'Every message is an unconditional gift under CC0. It contains a direct single-page link to the tin and explicit permission not to reply.'}
           </p>
         </div>
       </div>
+
+      {/* Linked Dose Selector & Permanent URL Bar */}
+      {dosen.length > 0 && (
+        <div className="p-5 rounded-2xl bg-[#fffdf9] border border-[#dfd1be] shadow-xs space-y-3">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
+            <div className="space-y-1">
+              <span className="text-xs font-typewriter uppercase tracking-wider font-bold text-[#8c1d40] flex items-center gap-1.5">
+                <Package className="w-4 h-4 text-[#c5832b]" />
+                {isDe
+                  ? 'Konkrete Dose für E-Mail & Link verknüpfen:'
+                  : isEs
+                  ? 'Vincular lata concreta al correo:'
+                  : 'Link a specific Tin to this Email:'}
+              </span>
+              <p className="text-xs text-[#6b5849]">
+                {isDe
+                  ? 'Wähle eine Dose aus dem Archiv. Der E-Mail-Text wird automatisch mit Titel und dem permanenten Einzelseiten-URL aktualisiert.'
+                  : 'Select a tin from the archive. The template will automatically update with its title and permanent direct URL.'}
+              </p>
+            </div>
+
+            <div className="shrink-0 flex items-center gap-2">
+              <select
+                value={selectedDoseId}
+                onChange={(e) => setSelectedDoseId(e.target.value)}
+                className="px-3.5 py-2 rounded-xl bg-[#faf5ec] border border-[#d8cbba] text-xs font-typewriter font-semibold text-[#2b1e16] focus:outline-none focus:ring-2 focus:ring-[#8c1d40]/30 cursor-pointer shadow-2xs"
+              >
+                {dosen.map((d) => (
+                  <option key={d.id} value={d.id}>
+                    {getLocalizedTitle(d, lang)} ({d.id})
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+
+          {/* Connected Dose Action Bar */}
+          {linkedDose && (
+            <div className="p-3.5 rounded-xl bg-[#faf5eb] border border-[#e4d7c5] flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+              <div className="flex items-center gap-2 min-w-0">
+                <span className="w-2 h-2 rounded-full bg-emerald-600 shrink-0" />
+                <span className="font-typewriter font-bold text-[#2b1e16] truncate">
+                  {linkedDoseTitle}
+                </span>
+                <span className="font-mono-code text-[11px] text-[#8b6f57] bg-white px-2 py-0.5 rounded border border-[#dfd1be] hidden md:inline truncate max-w-xs">
+                  {linkedDoseUrl}
+                </span>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-2 shrink-0">
+                {/* Copy URL */}
+                <button
+                  type="button"
+                  onClick={handleCopyDoseUrl}
+                  className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-white hover:bg-stone-50 border border-[#d8cbba] font-typewriter text-xs font-semibold text-[#5c4a3d] cursor-pointer transition-colors"
+                  title="Dose-Link in Zwischenablage kopieren"
+                >
+                  {copiedDoseUrl ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Link2 className="w-3.5 h-3.5 text-[#c5832b]" />}
+                  <span>{copiedDoseUrl ? (isDe ? 'Kopiert!' : 'Copied!') : (isDe ? 'Link zur Dose' : 'Copy Tin URL')}</span>
+                </button>
+
+                {/* Open in Single Page */}
+                {onOpenSinglePage && (
+                  <button
+                    type="button"
+                    onClick={() => onOpenSinglePage(linkedDose)}
+                    className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-[#8c1d40] hover:bg-[#741533] text-white font-typewriter text-xs font-bold cursor-pointer transition-colors shadow-2xs"
+                  >
+                    <Maximize2 className="w-3.5 h-3.5" />
+                    <span>{isDe ? 'Einzelseite öffnen' : 'Open Single Page'}</span>
+                  </button>
+                )}
+
+                {/* Open in Modal / Pop-up */}
+                {onOpenModal && (
+                  <button
+                    type="button"
+                    onClick={() => onOpenModal(linkedDose)}
+                    className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-white hover:bg-stone-50 border border-[#d8cbba] font-typewriter text-xs font-semibold text-[#5c4a3d] cursor-pointer transition-colors"
+                  >
+                    <Eye className="w-3.5 h-3.5 text-[#8c1d40]" />
+                    <span>{isDe ? 'Pop-up' : 'Pop-up'}</span>
+                  </button>
+                )}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
 
       {/* The 6 Golden Amélie Email Pillars */}
       <div className="p-5 rounded-2xl bg-[#fffdf9] border border-[#dfd1be] space-y-3">
@@ -169,7 +321,7 @@ export const MusterEmailsSection: React.FC<MusterEmailsSectionProps> = ({ lang }
             </div>
 
             <button
-              onClick={() => handleCopy(currentMuster)}
+              onClick={handleCopy}
               className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#8c1d40] hover:bg-[#741533] text-white text-xs font-typewriter font-bold transition-colors shadow-2xs cursor-pointer shrink-0"
             >
               {copiedId === currentMuster.id ? (
@@ -202,7 +354,7 @@ export const MusterEmailsSection: React.FC<MusterEmailsSectionProps> = ({ lang }
               {t.ui.subject_line}
             </span>
             <div className="p-3 rounded-xl bg-[#fcf8f0] border border-[#dfd1be] font-typewriter text-xs sm:text-sm font-bold text-[#2b1e16]">
-              {isDe ? currentMuster.subjectDe : currentMuster.subjectEn}
+              {currentCustomEmail.subject}
             </div>
           </div>
 
@@ -211,7 +363,7 @@ export const MusterEmailsSection: React.FC<MusterEmailsSectionProps> = ({ lang }
               {t.ui.message_text}
             </span>
             <div className="p-5 sm:p-6 rounded-xl bg-[#fcf8f0] border border-[#dfd1be] font-typewriter text-xs sm:text-sm text-[#2b1e16] whitespace-pre-wrap leading-relaxed shadow-inner">
-              {isDe ? currentMuster.bodyDe : currentMuster.bodyEn}
+              {currentCustomEmail.body}
             </div>
           </div>
 
@@ -273,3 +425,4 @@ export const MusterEmailsSection: React.FC<MusterEmailsSectionProps> = ({ lang }
     </div>
   );
 };
+

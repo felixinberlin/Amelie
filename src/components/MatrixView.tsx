@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Mail, Check, Copy, ExternalLink, Calendar, CheckSquare, Sparkles, Filter } from 'lucide-react';
+import { Mail, Check, Copy, ExternalLink, Calendar, CheckSquare, Sparkles, Filter, Link2, Maximize2 } from 'lucide-react';
 import { MatrixRow, DeliveryEmail, Language, DoseItem } from '../types';
 import { getTranslation, getLocalizedTitle } from '../i18n';
+import { resolveEmailBodyDoseUrls, getDoseUrl } from '../utils/doseUrl';
 import { MusterEmailsSection } from './MusterEmailsSection';
 
 interface MatrixViewProps {
@@ -10,6 +11,7 @@ interface MatrixViewProps {
   dosen: DoseItem[];
   lang: Language;
   onSelectDoseById: (doseId: string) => void;
+  onOpenSinglePageById?: (doseId: string) => void;
   onSwitchToUnpacked?: () => void;
 }
 
@@ -19,11 +21,13 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
   dosen,
   lang,
   onSelectDoseById,
+  onOpenSinglePageById,
   onSwitchToUnpacked,
 }) => {
   const [activeSection, setActiveSection] = useState<'deliveries' | 'musters' | 'matrix'>('deliveries');
   const [selectedMailTab, setSelectedMailTab] = useState(0);
   const [copiedMailId, setCopiedMailId] = useState<string | null>(null);
+  const [copiedDoseUrlId, setCopiedDoseUrlId] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedStatus, setSelectedStatus] = useState<string>('all');
   const t = getTranslation(lang);
@@ -35,10 +39,20 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
     const isEs = lang === 'es';
     const toLabel = isDe ? 'An:' : isEs ? 'Para:' : 'To:';
     const subjectLabel = isDe ? 'Betreff:' : isEs ? 'Asunto:' : 'Subject:';
-    const textToCopy = `${toLabel} ${mail.contactPathDe}\n${subjectLabel} ${isDe ? mail.subjectDe : mail.subjectEn}\n\n${isDe ? mail.bodyDe : mail.bodyEn}`;
+    const rawBody = isDe ? mail.bodyDe : mail.bodyEn;
+    const resolvedBody = resolveEmailBodyDoseUrls(rawBody, mail.doseLinks);
+    const textToCopy = `${toLabel} ${mail.contactPathDe}\n${subjectLabel} ${isDe ? mail.subjectDe : mail.subjectEn}\n\n${resolvedBody}`;
     navigator.clipboard.writeText(textToCopy);
     setCopiedMailId(mail.id);
     setTimeout(() => setCopiedMailId(null), 2000);
+  };
+
+  const handleCopyDoseUrl = (e: React.MouseEvent, doseId: string) => {
+    e.stopPropagation();
+    const url = getDoseUrl(doseId);
+    navigator.clipboard.writeText(url);
+    setCopiedDoseUrlId(doseId);
+    setTimeout(() => setCopiedDoseUrlId(null), 2000);
   };
 
   const categories = Array.from(new Set(matrix.map((m) => (lang === 'de' ? m.categoryDe : m.categoryEn))));
@@ -109,7 +123,12 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
 
       {/* SECTION: MUSTER-EMAILS */}
       {activeSection === 'musters' && (
-        <MusterEmailsSection lang={lang} />
+        <MusterEmailsSection
+          lang={lang}
+          dosen={dosen}
+          onOpenSinglePage={(d) => onOpenSinglePageById && onOpenSinglePageById(d.id)}
+          onOpenModal={(d) => onSelectDoseById(d.id)}
+        />
       )}
 
       {/* SECTION 1: Q4 2026 DELIVERY PLAN */}
@@ -248,23 +267,58 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
 
             {/* Linked Tins */}
             {currentMail.doseLinks && currentMail.doseLinks.length > 0 && (
-              <div className="pt-3 border-t border-stone-200/80 flex items-center gap-2 flex-wrap">
-                <span className="text-xs font-mono-code text-stone-600">
-                  {lang === 'de' ? 'Verlinkte Dosen:' : lang === 'es' ? 'Latas vinculadas:' : 'Linked Tins:'}
+              <div className="pt-3 border-t border-stone-200/80 space-y-2">
+                <span className="text-xs font-mono-code text-stone-600 block">
+                  {lang === 'de' ? 'Verlinkte Dosen (Einzelseite & URL):' : lang === 'es' ? 'Latas vinculadas (página y URL):' : 'Linked Tins (Single Page & URL):'}
                 </span>
-                {currentMail.doseLinks.map((doseId) => {
-                  const linkedDose = dosen.find((d) => d.id === doseId);
-                  return (
-                    <button
-                      key={doseId}
-                      onClick={() => onSelectDoseById(doseId)}
-                      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-amber-100 hover:bg-amber-200 text-amber-900 text-xs font-medium transition-colors"
-                    >
-                      <span>🎁 {linkedDose ? linkedDose.title : doseId}</span>
-                      <ExternalLink className="w-3 h-3 text-amber-700" />
-                    </button>
-                  );
-                })}
+                <div className="flex items-center gap-2 flex-wrap">
+                  {currentMail.doseLinks.map((doseId) => {
+                    const linkedDose = dosen.find((d) => d.id === doseId);
+                    const isCopied = copiedDoseUrlId === doseId;
+                    return (
+                      <div
+                        key={doseId}
+                        className="inline-flex items-center gap-1.5 p-1 px-2.5 rounded-lg bg-amber-100/90 border border-amber-300/80 text-amber-950 text-xs font-medium shadow-2xs"
+                      >
+                        <button
+                          type="button"
+                          onClick={() => {
+                            if (onOpenSinglePageById) {
+                              onOpenSinglePageById(doseId);
+                            } else {
+                              onSelectDoseById(doseId);
+                            }
+                          }}
+                          className="hover:underline font-bold flex items-center gap-1 text-[#8c1d40]"
+                          title={lang === 'de' ? 'Als Einzelseite öffnen' : 'Open as Single Page'}
+                        >
+                          <span>🎁 {linkedDose ? linkedDose.title : doseId}</span>
+                          <ExternalLink className="w-3 h-3" />
+                        </button>
+
+                        <span className="text-amber-300">|</span>
+
+                        <button
+                          type="button"
+                          onClick={() => onSelectDoseById(doseId)}
+                          className="text-[11px] font-mono-code text-stone-600 hover:text-stone-900 px-1 py-0.5 rounded hover:bg-amber-200/70"
+                          title={lang === 'de' ? 'Im Popup öffnen' : 'Open in popup'}
+                        >
+                          Popup
+                        </button>
+
+                        <button
+                          type="button"
+                          onClick={(e) => handleCopyDoseUrl(e, doseId)}
+                          className="p-1 rounded text-stone-600 hover:text-amber-900 hover:bg-amber-200/80 transition-colors"
+                          title={isCopied ? 'URL kopiert!' : 'Dosen-URL kopieren'}
+                        >
+                          {isCopied ? <Check className="w-3 h-3 text-emerald-700" /> : <Link2 className="w-3 h-3" />}
+                        </button>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             )}
           </div>
@@ -281,11 +335,16 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
             </div>
 
             <div>
-              <span className="text-xs text-stone-400 font-mono-code block mb-1">
-                {lang === 'de' ? 'Nachricht:' : lang === 'es' ? 'Mensaje:' : 'Body:'}
-              </span>
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs text-stone-400 font-mono-code block">
+                  {lang === 'de' ? 'Nachricht (mit generierten Dosen-URLs):' : lang === 'es' ? 'Mensaje (con URLs generadas):' : 'Body (with generated tin URLs):'}
+                </span>
+                <span className="text-[11px] font-mono-code text-amber-800 bg-amber-100 px-2 py-0.5 rounded">
+                  {lang === 'de' ? '« Link zur Dose » aufgelöst' : '« Link zur Dose » resolved'}
+                </span>
+              </div>
               <pre className="p-5 rounded-xl bg-[#2a2723] text-stone-200 text-xs font-mono-code whitespace-pre-wrap leading-relaxed overflow-x-auto border border-stone-800 max-h-96">
-                {lang === 'de' ? currentMail.bodyDe : currentMail.bodyEn}
+                {resolveEmailBodyDoseUrls(lang === 'de' ? currentMail.bodyDe : currentMail.bodyEn, currentMail.doseLinks)}
               </pre>
             </div>
           </div>
@@ -398,13 +457,44 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
                           </span>
                         </div>
                         {row.doseId && (
-                          <button
-                            onClick={() => onSelectDoseById(row.doseId!)}
-                            className="text-amber-800 hover:underline text-xs flex items-center gap-1 mt-0.5 font-medium"
-                          >
-                            <span>{t.ui.open_tin}</span>
-                            <ExternalLink className="w-2.5 h-2.5" />
-                          </button>
+                          <div className="flex items-center gap-2 mt-1">
+                            <button
+                              type="button"
+                              onClick={() => {
+                                if (onOpenSinglePageById) {
+                                  onOpenSinglePageById(row.doseId!);
+                                } else {
+                                  onSelectDoseById(row.doseId!);
+                                }
+                              }}
+                              className="text-[#8c1d40] hover:underline text-xs flex items-center gap-1 font-semibold"
+                              title={lang === 'de' ? 'Einzelseite & URL' : 'Single Page & URL'}
+                            >
+                              <span>{t.ui.open_tin}</span>
+                              <ExternalLink className="w-2.5 h-2.5" />
+                            </button>
+                            <span className="text-stone-300">·</span>
+                            <button
+                              type="button"
+                              onClick={() => onSelectDoseById(row.doseId!)}
+                              className="text-stone-500 hover:text-stone-800 text-[11px] font-mono-code"
+                              title={lang === 'de' ? 'Im Popup öffnen' : 'Open in popup'}
+                            >
+                              Popup
+                            </button>
+                            <button
+                              type="button"
+                              onClick={(e) => handleCopyDoseUrl(e, row.doseId!)}
+                              className="p-0.5 text-stone-400 hover:text-stone-700"
+                              title={copiedDoseUrlId === row.doseId ? (lang === 'de' ? 'URL kopiert!' : 'URL copied!') : (lang === 'de' ? 'URL kopieren' : 'Copy URL')}
+                            >
+                              {copiedDoseUrlId === row.doseId ? (
+                                <Check className="w-3 h-3 text-emerald-700" />
+                              ) : (
+                                <Link2 className="w-3 h-3" />
+                              )}
+                            </button>
+                          </div>
                         )}
                       </td>
 

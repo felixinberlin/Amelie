@@ -15,6 +15,7 @@ import {
   TrendingDown,
   Layers,
   Activity,
+  Sparkles,
 } from 'lucide-react';
 import { Language } from '../../types';
 import {
@@ -26,6 +27,7 @@ import {
   CEILING_H,
   WINDOW_H,
 } from '../../services/altbauThermal';
+import { AltbauRoomDrawing, ProbePoint } from './AltbauRoomDrawing';
 
 interface AltbauThermalSimulatorProps {
   lang: Language;
@@ -34,7 +36,6 @@ interface AltbauThermalSimulatorProps {
 }
 
 type ViewMode = 'floorplan' | 'corner2d' | 'stratification' | 'comparison';
-type ProbePoint = 'corner' | 'wall' | 'window' | 'radiator' | 'center' | 'floor';
 
 export const AltbauThermalSimulator: React.FC<AltbauThermalSimulatorProps> = ({
   lang,
@@ -52,7 +53,9 @@ export const AltbauThermalSimulator: React.FC<AltbauThermalSimulatorProps> = ({
   const [roomWidth, setRoomWidth] = useState<number>(5.0); // m, Länge der Außenwand
   const [windowWidth, setWindowWidth] = useState<number>(2.4); // m, Höhe fest 1.9 m
   const [relHumidity, setRelHumidity] = useState<number>(50); // % rel. Raumluftfeuchte
-  const [wardrobePosition, setWardrobePosition] = useState<'tight' | 'ventilated' | 'none'>('tight');
+  const [wardrobePosition, setWardrobePosition] = useState<'tight' | 'ventilated' | 'interior_wall' | 'none'>('tight');
+  const [hasRadiatorNiche, setHasRadiatorNiche] = useState<boolean>(true);
+  const [curtainOverRadiator, setCurtainOverRadiator] = useState<boolean>(false);
   const [hasSecondExteriorWall, setHasSecondExteriorWall] = useState<boolean>(true); // Ecksituation
   const [showMeshNodes, setShowMeshNodes] = useState<boolean>(false); // 2D Finite-Difference Grid Toggle
 
@@ -82,7 +85,7 @@ export const AltbauThermalSimulator: React.FC<AltbauThermalSimulatorProps> = ({
   const airChangeRate = windowTilted ? 3.0 : 0.5;
   const hasCornerFurniture = wardrobePosition === 'tight';
 
-  // Current simulation (with deep physics finite-difference + microclimate + stratification)
+  // Current simulation (with deep physics finite-difference + microclimate + stratification + niche & curtains)
   const altbau = computeAltbau({
     roomWidth,
     roomArea,
@@ -95,6 +98,9 @@ export const AltbauThermalSimulator: React.FC<AltbauThermalSimulatorProps> = ({
     relHumidity,
     hasCornerFurniture,
     hasSecondExteriorWall,
+    hasRadiatorNiche,
+    curtainOverRadiator,
+    wardrobePosition,
   });
 
   // Variant B simulation for comparison
@@ -110,6 +116,9 @@ export const AltbauThermalSimulator: React.FC<AltbauThermalSimulatorProps> = ({
     relHumidity,
     hasCornerFurniture: false,
     hasSecondExteriorWall,
+    hasRadiatorNiche: false,
+    curtainOverRadiator: false,
+    wardrobePosition: 'none',
   });
 
   const tr3 = (de: string, en: string, es: string) => (lang === 'de' ? de : lang === 'es' ? es : en);
@@ -188,19 +197,49 @@ export const AltbauThermalSimulator: React.FC<AltbauThermalSimulatorProps> = ({
         };
       case 'window':
         return {
-          title: tr3('Fenster-Glasoberfläche innen', 'Inner Window Glass Surface', 'Superficie interior del vidrio'),
-          temp: windowGlassSurfaceTemp,
-          fRsi: calculateFRsi(windowGlassSurfaceTemp, roomTemp, outsideTemp),
-          rh: windowGlassSurfaceTemp < altbau.dewPoint ? 100 : Math.round((relHumidity / (altbau.dewPoint + 20)) * 25),
-          status: windowGlassSurfaceTemp < altbau.dewPoint ? 'danger' : 'safe',
+          title: tr3('Fenster-Glasoberfläche (Tauwasser-Opferfläche)', 'Window Glass Surface (Sacrificial Surface)', 'Superficie interior del vidrio'),
+          temp: altbau.windowInnerSurfaceTemp,
+          fRsi: calculateFRsi(altbau.windowInnerSurfaceTemp, roomTemp, outsideTemp),
+          rh: altbau.windowInnerSurfaceTemp <= altbau.dewPoint ? 100 : Math.round((relHumidity / (altbau.dewPoint + 20)) * 25),
+          status: altbau.sacrificialCondensation.isRetrofitParadox ? 'danger' : 'safe',
           desc: tr3(
-            windowGlassSurfaceTemp < altbau.dewPoint
-              ? `Achtung: Temperatur (${nf(windowGlassSurfaceTemp, 1)} °C) < Taupunkt (${nf(altbau.dewPoint, 1)} °C)! Scheibe beschlägt mit flüssigem Tauwasser.`
-              : 'Glasoberfläche liegt über dem Taupunkt. Kein unmittelbarer Kondensatausfall.',
-            windowGlassSurfaceTemp < altbau.dewPoint
-              ? `Warning: Below dew point (${nf(altbau.dewPoint, 1)} °C)! Glass will run with condensation.`
-              : 'Glass surface is above dew point. No surface condensation.',
-            'Superficie de vidrio calculada.'
+            altbau.sacrificialCondensation.explanationDe,
+            altbau.sacrificialCondensation.explanationEn,
+            altbau.sacrificialCondensation.explanationEs
+          ),
+        };
+      case 'reveal':
+        return {
+          title: tr3('Fensterlaibung (Wärmebrücke Ψ)', 'Window Reveal Thermal Bridge (Ψ)', 'Mocheta de ventana'),
+          temp: altbau.windowRevealTemp,
+          fRsi: calculateFRsi(altbau.windowRevealTemp, roomTemp, outsideTemp),
+          rh: Math.min(100, Math.round(relHumidity * (altbau.dewPoint < altbau.windowRevealTemp ? 1.35 : 1.7))),
+          status: calculateFRsi(altbau.windowRevealTemp, roomTemp, outsideTemp) < 0.70 ? 'danger' : 'safe',
+          desc: tr3(
+            `Geometrische Wärmebrücke der Laibung (Ψ ≈ 0,08 W/mK). Laibungstemperatur: ${nf(altbau.windowRevealTemp, 1)} °C. An ungedämmten Ziegelkanten kühlt die Laibung stark ab; typische Schimmelbildungszone direkt am Fensterrahmen.`,
+            `Geometric reveal thermal bridge (Ψ ≈ 0.08 W/mK). Reveal surface temp: ${nf(altbau.windowRevealTemp, 1)} °C. Cold masonry edges increase mold risk adjacent to the window frame.`,
+            `Puente térmico geométrico en mocheta. Temperatura: ${nf(altbau.windowRevealTemp, 1)} °C.`
+          ),
+        };
+      case 'niche':
+        return {
+          title: tr3('Heizkörpernische (Mauerwerk 12 cm)', 'Radiator Niche (12 cm thinned wall)', 'Nicho del radiador (12 cm)'),
+          temp: altbau.nicheSurfaceTemp,
+          fRsi: 0.85,
+          rh: 35,
+          status: hasRadiatorNiche ? 'danger' : 'safe',
+          desc: tr3(
+            hasRadiatorNiche
+              ? `Das Mauerwerk ist in der Nische von 38 cm auf nur ca. 12 cm ausgedünnt. Der zusätzliche Transmissionswärmeverlust beträgt ca. +${nf(altbau.nicheExtraLossW, 0)} W direkt ins Freie! ${
+                  curtainOverRadiator ? `⚠️ Langer Vorhang staut zudem +${nf(altbau.curtainExtraLossW, 0)} W Verlustwärme an der kalten Scheibe!` : ''
+                }`
+              : 'Keine Nische vorhanden. Wandstärke durchgehend 38 cm.',
+            hasRadiatorNiche
+              ? `Wall thickness thinned down from 38 cm to 12 cm in niche. Causes ~+${nf(altbau.nicheExtraLossW, 0)} W extra transmission loss outdoors! ${
+                  curtainOverRadiator ? `⚠️ Curtain adds +${nf(altbau.curtainExtraLossW, 0)} W trapped heat loss!` : ''
+                }`
+              : 'No niche present; continuous 38 cm solid masonry wall.',
+            `Muro adelgazado a 12 cm en el nicho.`
           ),
         };
       case 'radiator':
@@ -264,21 +303,29 @@ Typologie: ${wallType === 'brick_uninsulated' ? '38 cm Vollziegel ungedämmt' : 
 Verglasung: ${windowGlazing} (U = ${nf(windowU, 1)} W/m²K)
 Lüftung: ${windowTilted ? 'Dauergekippt (n = 3.0 /h)' : 'Geschlossen (n = 0.5 /h)'}
 Klimarandbedingungen: Außen ${nf(outsideTemp, 0)} °C, Raum ${nf(roomTemp, 1)} °C, Raumfeuchte ${relHumidity} %
+Heizkörpernische: ${hasRadiatorNiche ? `Ja (12 cm Ziegel, Mehrverlust: +${nf(altbau.nicheExtraLossW, 0)} W)` : 'Keine Nische (38 cm Ziegel)'}
+Vorhang: ${curtainOverRadiator ? `Langer Vorhang über Heizkörper (Wärmestau am Fenster: +${nf(altbau.curtainExtraLossW, 0)} W)` : 'Freie Konvektion'}
 
 PHYSIKALISCHE ERGEBNISSE:
 - 2D-Wärmebrücke Außenecke (ISO 10211): θ_si = ${nf(cornerSurfaceTemp, 1)} °C (f_Rsi = ${nf(cornerFRsi, 2)})
 - Normgrenze DIN 4108-2: f_Rsi ≥ 0,70 -> ${cornerFRsi >= 0.70 ? 'EINGEHALTEN' : 'NICHT EINGEHALTEN (Schimmelgefahr!)'}
-- Linearer Wärmedurchgangskoeffizient: Ψ = ${nf(altbau.finiteDifference2D.psiValue, 3)} W/(m·K)
-- Lokale Oberflächenfeuchte Ecke: φ_si = ${nf(altbau.surfaceRhCorner, 1)} %
-- Schimmelgrenze (80 % Feuchte): θ_mold = ${nf(altbau.moldThreshold, 1)} °C
+- Fensterglas-Innenoberfläche: θ_G = ${nf(altbau.windowInnerSurfaceTemp, 1)} °C
+- Fensterlaibung (Ψ ≈ 0.08 W/mK): θ_L = ${nf(altbau.windowRevealTemp, 1)} °C
 - Taupunkt: θ_dew = ${nf(altbau.dewPoint, 1)} °C
+- Schimmelgrenze (80 % Feuchte): θ_mold = ${nf(altbau.moldThreshold, 1)} °C
+- Lokale Oberflächenfeuchte Ecke: φ_si = ${nf(altbau.surfaceRhCorner, 1)} %
 - Sedlbauer LIM Myzelkeimung: ${altbau.moldGerminationDays < 900 ? `in ca. ${altbau.moldGerminationDays} Tagen` : 'Keine Keimung (> 60 Tage)'}
 - Fußbodentemperatur (z = 0,1 m): ${nf(altbau.stratification.floorTemp, 1)} °C (Zugluftrisiko ISO 7730: ${altbau.stratification.draftRiskPercent} % PPD)
+- Linearer Wärmedurchgangskoeffizient: Ψ = ${nf(altbau.finiteDifference2D.psiValue, 3)} W/(m·K)
 - Heizleistungsbedarf: ≈ ${nf(round10(altbau.heatLow), 0)} – ${nf(round10(altbau.heatHigh), 0)} W
 - Jahreswärmebedarf (Berlin HGT 3200): ${nf(Math.round(altbau.annualKwhMid), 0)} kWh/a (ca. ${nf(Math.round(altbau.annualCostMid), 0)} €/a)
 
+TAUWASSER-OPFERFLÄCHE & SANIERUNGS-PARADOXON:
+- Diagnose: ${altbau.sacrificialCondensation.isRetrofitParadox ? '⚠️ SANIERUNGS-PARADOXON AKTIV' : '✅ HARMONISCHES GEFÄLLE'}
+- Details: ${altbau.sacrificialCondensation.explanationDe}
+
 MÖBLIERUNGSEFFEKT:
-${wardrobePosition === 'tight' ? 'Schrank bündig an der Ecke (0 cm) -> Luftkonvektion blockiert (Rsi = 0.45 m²K/W).' : wardrobePosition === 'ventilated' ? 'Schrank mit 10 cm Hinterlüftung -> Konvektion intakt, Wand ca. 1.8 K wärmer.' : 'Freie Ecke.'}
+${wardrobePosition === 'tight' ? 'Schrank bündig an der Ecke (0 cm) -> Luftkonvektion blockiert (Rsi = 0.45 m²K/W).' : wardrobePosition === 'ventilated' ? 'Schrank mit 10 cm Hinterlüftung -> Konvektion intakt, Wand ca. 1.8 K wärmer.' : wardrobePosition === 'interior_wall' ? 'Schrank an Innenwand -> Außenecke frei und warm.' : 'Freie Ecke.'}
 
 HINWEIS: Berechnet auf Basis stationärer finite-Differenzen-Verfahren (DIN EN ISO 10211).`;
 
@@ -345,6 +392,120 @@ HINWEIS: Berechnet auf Basis stationärer finite-Differenzen-Verfahren (DIN EN I
               </button>
             );
           })}
+        </div>
+      </div>
+
+      {/* Typical Real-World Dispute Scenarios (1-Click Analysis) */}
+      <div className="bg-gradient-to-r from-amber-900/90 via-stone-900 to-amber-950 rounded-2xl p-4 text-white shadow-sm border border-amber-800/40">
+        <div className="flex items-center justify-between mb-2">
+          <div className="flex items-center gap-2">
+            <Sparkles className="w-4 h-4 text-amber-400" />
+            <h4 className="text-xs font-bold font-mono-code tracking-wide uppercase text-amber-200">
+              {tr3('Reale Streitfälle & Praxis-Szenarien (1-Klick-Analyse):', 'Real Dispute Cases & Practical Scenarios (1-Click):', 'Casos reales de litigio (1 clic):')}
+            </h4>
+          </div>
+          <span className="text-[10px] text-stone-400 font-mono-code">Mietrecht & Bauphysik</span>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
+          <button
+            type="button"
+            onClick={() => {
+              setSelectedPresetId('altbau_1905');
+              setWallType('brick_uninsulated');
+              setWindowGlazing('double_old');
+              setWardrobePosition('tight');
+              setWindowTilted(true);
+              setRelHumidity(60);
+              setOutsideTemp(-2);
+              setRoomTemp(20);
+              setHasRadiatorNiche(true);
+              setCurtainOverRadiator(true);
+              setActiveProbe('corner');
+            }}
+            className="p-2.5 rounded-xl bg-stone-800/80 hover:bg-stone-800 border border-rose-700/50 hover:border-rose-500 text-left transition-all cursor-pointer group"
+          >
+            <div className="text-xs font-bold text-rose-300 group-hover:text-rose-200 flex items-center gap-1.5">
+              <span>⚠️ 1. Streitfall Berliner Altbau</span>
+            </div>
+            <p className="text-[10px] text-stone-300 mt-1 line-clamp-2 leading-tight">
+              Schrank bündig (0 cm) an Außenecke + Dauerkippfenster. Wandecke stürzt auf 7,8 °C ab → Schimmel nach 8 Tagen!
+            </p>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => {
+              setSelectedPresetId('altbau_1905');
+              setWallType('brick_uninsulated');
+              setWindowGlazing('double_old');
+              setWardrobePosition('ventilated');
+              setWindowTilted(false);
+              setRelHumidity(45);
+              setOutsideTemp(-2);
+              setRoomTemp(20);
+              setHasRadiatorNiche(true);
+              setCurtainOverRadiator(false);
+              setActiveProbe('corner');
+            }}
+            className="p-2.5 rounded-xl bg-stone-800/80 hover:bg-stone-800 border border-emerald-700/50 hover:border-emerald-500 text-left transition-all cursor-pointer group"
+          >
+            <div className="text-xs font-bold text-emerald-300 group-hover:text-emerald-200 flex items-center gap-1.5">
+              <span>💡 2. Mieter-Soforthilfe (0 €)</span>
+            </div>
+            <p className="text-[10px] text-stone-300 mt-1 line-clamp-2 leading-tight">
+              Schrank 10 cm abgerückt + Stoßlüften statt Kippen. Konvektion wärmt die Ecke auf 14,2 °C → dauerhaft schimmelfrei!
+            </p>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => {
+              setSelectedPresetId('altbau_1905');
+              setWallType('brick_uninsulated');
+              setWindowGlazing('triple_modern');
+              setWardrobePosition('tight');
+              setWindowTilted(false);
+              setRelHumidity(55);
+              setOutsideTemp(-2);
+              setRoomTemp(20);
+              setHasRadiatorNiche(true);
+              setCurtainOverRadiator(false);
+              setActiveProbe('window');
+            }}
+            className="p-2.5 rounded-xl bg-stone-800/80 hover:bg-stone-800 border border-amber-600/50 hover:border-amber-400 text-left transition-all cursor-pointer group"
+          >
+            <div className="text-xs font-bold text-amber-300 group-hover:text-amber-200 flex items-center gap-1.5">
+              <span>🪟 3. Sanierungsfalle Fenster</span>
+            </div>
+            <p className="text-[10px] text-stone-300 mt-1 line-clamp-2 leading-tight">
+              Alte Wand ungedämmt, aber neue 3-fach Verglasung! Tauwasser-Opferfläche entfällt → Feuchte kondensiert unbemerkt an Wand & Laibung.
+            </p>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => {
+              setSelectedPresetId('altbau_renovated');
+              setWallType('brick_renovated');
+              setWindowGlazing('triple_modern');
+              setWardrobePosition('ventilated');
+              setWindowTilted(false);
+              setRelHumidity(45);
+              setOutsideTemp(-2);
+              setRoomTemp(20);
+              setHasRadiatorNiche(false);
+              setCurtainOverRadiator(false);
+              setActiveProbe('corner');
+            }}
+            className="p-2.5 rounded-xl bg-stone-800/80 hover:bg-stone-800 border border-cyan-700/50 hover:border-cyan-400 text-left transition-all cursor-pointer group"
+          >
+            <div className="text-xs font-bold text-cyan-300 group-hover:text-cyan-200 flex items-center gap-1.5">
+              <span>🌿 4. Vollsanierung KfW 55</span>
+            </div>
+            <p className="text-[10px] text-stone-300 mt-1 line-clamp-2 leading-tight">
+              16 cm WDVS + 3-fach Glas + geschlossene Nische. f_Rsi = 0,88, Wandecke behagliche 17,9 °C, Heizkosten um 76 % gesenkt.
+            </p>
+          </button>
         </div>
       </div>
 
@@ -433,7 +594,7 @@ HINWEIS: Berechnet auf Basis stationärer finite-Differenzen-Verfahren (DIN EN I
                   Rsi-Effekt
                 </span>
               </div>
-              <div className="grid grid-cols-3 gap-1.5 text-xs">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 text-xs">
                 <button
                   type="button"
                   onClick={() => setWardrobePosition('tight')}
@@ -460,6 +621,18 @@ HINWEIS: Berechnet auf Basis stationärer finite-Differenzen-Verfahren (DIN EN I
                 </button>
                 <button
                   type="button"
+                  onClick={() => setWardrobePosition('interior_wall')}
+                  className={`p-2 rounded-lg text-center font-medium transition-all ${
+                    wardrobePosition === 'interior_wall'
+                      ? 'bg-amber-900 text-white font-bold shadow-2xs'
+                      : 'bg-white border border-stone-200 hover:bg-stone-50 text-stone-700'
+                  }`}
+                >
+                  <div className="text-[11px] leading-tight">{tr3('An Innenwand', 'Interior Wall', 'Muro interior')}</div>
+                  <div className="text-[9px] opacity-80 font-mono-code">Ecke frei</div>
+                </button>
+                <button
+                  type="button"
                   onClick={() => setWardrobePosition('none')}
                   className={`p-2 rounded-lg text-center font-medium transition-all ${
                     wardrobePosition === 'none'
@@ -474,18 +647,22 @@ HINWEIS: Berechnet auf Basis stationärer finite-Differenzen-Verfahren (DIN EN I
               <p className="text-[10px] text-amber-900/80 leading-relaxed">
                 {wardrobePosition === 'tight'
                   ? tr3('Häufigster Schlichtungsfall: Ein Schrank an der kalten Außenecke behindert die Raumluft-Konvektion. Die Wandoberfläche kühlt drastisch ab.', 'Top dispute cause: A wardrobe flush against an external corner blocks convection, plunging the surface temperature.', 'Causa típica de disputas: el armario bloquea la convección.')
-                  : tr3('Hinterlüftung erlaubt dem warmen Raumluftstrom das Vorbeiziehen an der Wandecke.', 'Air gap allows buoyant room air to circulate behind the furniture.', 'La ventilación permite que el aire caliente circule tras el mueble.')}
+                  : wardrobePosition === 'ventilated'
+                  ? tr3('Hinterlüftung erlaubt dem warmen Raumluftstrom das Vorbeiziehen an der Wandecke.', 'Air gap allows buoyant room air to circulate behind the furniture.', 'La ventilación permite que el aire caliente circule tras el mueble.')
+                  : wardrobePosition === 'interior_wall'
+                  ? tr3('Schrank steht an warmer Innenwand. Die kalte Außenecke wird ungehindert vom Heizkörper-Auftrieb erwärmt.', 'Wardrobe placed on interior wall; exterior corner receives unobstructed heat.', 'Armario en muro interior; esquina exterior despejada.')
+                  : tr3('Kein Möbel an der Außenecke; ungehinderte Raumluftkonvektion.', 'No furniture in corner; free air convection.', 'Sin muebles en la esquina.')}
               </p>
             </div>
 
             {/* Window Tilt Toggle */}
-            <div className="p-3.5 rounded-xl bg-stone-50 border border-stone-200 flex items-center justify-between">
+            <div className="p-3 rounded-xl bg-stone-50 border border-stone-200 flex items-center justify-between">
               <div>
                 <span className="text-xs font-bold text-stone-900 block flex items-center gap-1.5">
                   <Wind className="w-3.5 h-3.5 text-stone-600" />
                   {tr3('Fenster-Kipplüftung?', 'Window Tilted Open?', '¿Ventana abatible?')}
                 </span>
-                <span className="text-[11px] text-stone-500">
+                <span className="text-[10px] text-stone-500">
                   {windowTilted
                     ? tr3('Luftwechsel 3.0/h (Kaltluftsee am Boden, Zugluft)', 'Air change 3.0/h (floor cold pool, draft risk)', 'Renovación 3,0/h')
                     : tr3('Geschlossen: 0.5/h (Fugengrundlüftung)', 'Closed: 0.5/h (baseline infiltration)', 'Cerrada: 0,5/h')}
@@ -502,6 +679,49 @@ HINWEIS: Berechnet auf Basis stationärer finite-Differenzen-Verfahren (DIN EN I
               >
                 {windowTilted ? tr3('Gekippt (3.0/h)', 'Tilted', 'Abatible') : tr3('Geschlossen', 'Closed', 'Cerrada')}
               </button>
+            </div>
+
+            {/* Radiator Niche & Curtain Toggles */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <div className="p-3 rounded-xl bg-stone-50 border border-stone-200 flex flex-col justify-between gap-1.5">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-bold text-stone-900">{tr3('Heizkörpernische', 'Radiator Niche', 'Nicho')}</span>
+                  <button
+                    type="button"
+                    onClick={() => setHasRadiatorNiche(!hasRadiatorNiche)}
+                    className={`px-2 py-0.5 rounded text-[11px] font-bold cursor-pointer transition-all ${
+                      hasRadiatorNiche ? 'bg-amber-800 text-white' : 'bg-stone-200 text-stone-700'
+                    }`}
+                  >
+                    {hasRadiatorNiche ? tr3('Ja (12 cm)', 'Yes (12cm)', 'Sí') : tr3('Nein', 'No', 'No')}
+                  </button>
+                </div>
+                <span className="text-[9px] text-stone-500">
+                  {hasRadiatorNiche
+                    ? tr3(`Ausgedünnte Wand (+${nf(altbau.nicheExtraLossW, 0)} W Verlust)`, `Thinned wall (+${nf(altbau.nicheExtraLossW, 0)} W loss)`, `Muro adelgazado`)
+                    : tr3('Durchgehend 38 cm Mauerwerk', 'Solid 38 cm continuous wall', 'Muro 38 cm continuo')}
+                </span>
+              </div>
+
+              <div className="p-3 rounded-xl bg-stone-50 border border-stone-200 flex flex-col justify-between gap-1.5">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-bold text-stone-900">{tr3('Langer Vorhang', 'Long Curtain', 'Cortina')}</span>
+                  <button
+                    type="button"
+                    onClick={() => setCurtainOverRadiator(!curtainOverRadiator)}
+                    className={`px-2 py-0.5 rounded text-[11px] font-bold cursor-pointer transition-all ${
+                      curtainOverRadiator ? 'bg-rose-800 text-white' : 'bg-stone-200 text-stone-700'
+                    }`}
+                  >
+                    {curtainOverRadiator ? tr3('Vor HK', 'Over Rad', 'Sobre rad.') : tr3('Offen', 'Open', 'Abierta')}
+                  </button>
+                </div>
+                <span className="text-[9px] text-stone-500">
+                  {curtainOverRadiator
+                    ? tr3(`Wärmestau am Fenster (+${nf(altbau.curtainExtraLossW, 0)} W)`, `Heat trapped against window (+${nf(altbau.curtainExtraLossW, 0)} W)`, `Calor atrapado`)
+                    : tr3('Freie Konvektion in den Raum', 'Free convection into room', 'Convección libre')}
+                </span>
+              </div>
             </div>
 
             {/* Room Geometry Accordion */}
@@ -706,227 +926,36 @@ HINWEIS: Berechnet auf Basis stationärer finite-Differenzen-Verfahren (DIN EN I
 
           {/* VIEW 1: Architectural Floorplan with 2D Heat Gradient & Airflow */}
           {viewMode === 'floorplan' && (
-            <div className="bg-stone-900 rounded-2xl border border-stone-800 p-5 text-white shadow-md space-y-4">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h4 className="font-bold text-sm text-stone-100 flex items-center gap-2">
-                    <Home className="w-4 h-4 text-amber-400" />
-                    <span>{tr3('Thermischer Grundriss: Berliner Zimmer (5,0 × 4,4 m)', 'Thermal Floor Plan: Berlin Altbau Room (5.0 × 4.4 m)', 'Plano térmico: Habitación de Berlín')}</span>
-                  </h4>
-                  <p className="text-[11px] text-stone-400 mt-0.5">
-                    {tr3('Messpunkte anklicken für mikro-klimatische Auswertung', 'Click probe points on the floor plan for microclimate data', 'Haga clic en los puntos de medición')}
-                  </p>
-                </div>
-                <div className="flex items-center gap-2 text-xs font-mono-code">
-                  <span className="inline-block w-2.5 h-2.5 rounded-full bg-rose-500 animate-pulse" />
-                  <span className="text-stone-300">Außen {outsideTemp} °C</span>
-                </div>
-              </div>
-
-              {/* SVG Floorplan Drawing */}
-              <div className="relative w-full aspect-[16/10] bg-[#1a1816] rounded-xl border border-stone-700/80 overflow-hidden shadow-inner select-none">
-                <svg viewBox="0 0 600 380" className="w-full h-full">
-                  <defs>
-                    {/* Thermal gradient representing heat flow across room */}
-                    <radialGradient id="heatSourceRadiator" cx="50%" cy="12%" r="65%">
-                      <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.45" />
-                      <stop offset="35%" stopColor="#d97706" stopOpacity="0.25" />
-                      <stop offset="70%" stopColor="#78716c" stopOpacity="0.1" />
-                      <stop offset="100%" stopColor="#1c1917" stopOpacity="0.0" />
-                    </radialGradient>
-
-                    {/* Cold corner gradient behind wardrobe */}
-                    <radialGradient id="coldCornerThermalBridge" cx="8%" cy="12%" r="40%">
-                      <stop offset="0%" stopColor={cornerFRsi < 0.70 ? '#e11d48' : '#3b82f6'} stopOpacity={cornerFRsi < 0.70 ? 0.65 : 0.35} />
-                      <stop offset="40%" stopColor={cornerFRsi < 0.70 ? '#9f1239' : '#1d4ed8'} stopOpacity="0.3" />
-                      <stop offset="80%" stopColor="#1c1917" stopOpacity="0" />
-                    </radialGradient>
-
-                    {/* Window cold draft gradient */}
-                    <linearGradient id="windowColdDraft" x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" stopColor="#38bdf8" stopOpacity={windowTilted ? 0.6 : 0.15} />
-                      <stop offset="50%" stopColor="#0284c7" stopOpacity={windowTilted ? 0.35 : 0.05} />
-                      <stop offset="100%" stopColor="#0284c7" stopOpacity="0.0" />
-                    </linearGradient>
-
-                    {/* Parquet pattern */}
-                    <pattern id="parquet" width="30" height="30" patternUnits="userSpaceOnUse">
-                      <line x1="0" y1="0" x2="30" y2="30" stroke="#38332c" strokeWidth="0.5" />
-                      <line x1="30" y1="0" x2="0" y2="30" stroke="#38332c" strokeWidth="0.5" />
-                    </pattern>
-                  </defs>
-
-                  {/* Room floor background */}
-                  <rect x="40" y="40" width="520" height="300" fill="#24211e" />
-                  <rect x="40" y="40" width="520" height="300" fill="url(#parquet)" />
-
-                  {/* Thermal overlays */}
-                  <rect x="40" y="40" width="520" height="300" fill="url(#heatSourceRadiator)" />
-                  <rect x="40" y="40" width="520" height="300" fill="url(#coldCornerThermalBridge)" />
-                  {windowTilted && (
-                    <polygon points="180,40 380,40 430,240 130,240" fill="url(#windowColdDraft)" />
-                  )}
-
-                  {/* Walls: Exterior Top Wall */}
-                  <rect x="25" y="20" width="550" height="20" fill="#44403c" stroke="#57534e" strokeWidth="1.5" />
-                  <text x="300" y="14" fill="#a8a29e" fontSize="10" fontFamily="monospace" textAnchor="middle">
-                    {tr3('Außenwand (38 cm Ziegel)', 'Exterior Wall (38 cm Brick)', 'Muro exterior (38 cm)')} · {outsideTemp} °C
-                  </text>
-
-                  {/* Left Exterior/Adjoining Wall */}
-                  <rect x="20" y="20" width="20" height="340" fill={hasSecondExteriorWall ? '#44403c' : '#292524'} stroke="#57534e" strokeWidth="1.5" />
-                  <text x="14" y="200" fill="#a8a29e" fontSize="9" fontFamily="monospace" textAnchor="middle" transform="rotate(-90, 14, 200)">
-                    {hasSecondExteriorWall ? tr3('2. Außenwand', '2nd Ext. Wall', '2º muro ext.') : tr3('Innenwand', 'Int. Wall', 'Muro int.')}
-                  </text>
-
-                  {/* Right Adjoining Wall */}
-                  <rect x="560" y="20" width="20" height="340" fill="#292524" stroke="#44403c" strokeWidth="1.5" />
-
-                  {/* Bottom Wall with Door */}
-                  <rect x="20" y="340" width="560" height="20" fill="#292524" stroke="#44403c" strokeWidth="1.5" />
-                  {/* Door opening */}
-                  <rect x="420" y="340" width="60" height="20" fill="#1a1816" />
-                  <path d="M 420 340 A 60 60 0 0 1 480 340" fill="none" stroke="#78716c" strokeDasharray="3 3" strokeWidth="1" />
-                  <line x1="420" y1="340" x2="420" y2="280" stroke="#d6d3d1" strokeWidth="2" />
-                  <text x="450" y="355" fill="#a8a29e" fontSize="9" textAnchor="middle">
-                    {tr3('Flur / Diele', 'Hallway', 'Pasillo')}
-                  </text>
-
-                  {/* High Altbau Window (Top Wall, Centered) */}
-                  <rect x="200" y="16" width="160" height="28" fill="#0369a1" stroke="#38bdf8" strokeWidth="2" />
-                  <rect x="204" y="22" width="74" height="16" fill="#e0f2fe" opacity="0.3" />
-                  <rect x="282" y="22" width="74" height="16" fill="#e0f2fe" opacity="0.3" />
-                  <text x="280" y="34" fill="#f0f9ff" fontSize="10" fontWeight="bold" textAnchor="middle">
-                    {tr3('Kastenfenster', 'Double Window', 'Ventana')} ({effWindowWidth.toFixed(1)}m × 1,9m)
-                  </text>
-
-                  {/* Radiator directly underneath window */}
-                  <rect x="210" y="45" width="140" height="16" rx="3" fill="#b45309" stroke="#f59e0b" strokeWidth="1.5" />
-                  <text x="280" y="57" fill="#fef3c7" fontSize="9" fontWeight="bold" textAnchor="middle">
-                    {tr3('Heizkörper (50°C)', 'Radiator (50°C)', 'Radiador (50°C)')}
-                  </text>
-
-                  {/* Airflow Streamlines */}
-                  {/* Radiator rising plume */}
-                  <path d="M 230 45 Q 230 80 250 110" fill="none" stroke="#f59e0b" strokeWidth="1" strokeDasharray="3 3" opacity="0.6" />
-                  <path d="M 330 45 Q 330 80 310 110" fill="none" stroke="#f59e0b" strokeWidth="1" strokeDasharray="3 3" opacity="0.6" />
-
-                  {/* Wardrobe at Corner (Interactive Placement) */}
-                  {wardrobePosition !== 'none' && (
-                    <g
-                      transform={`translate(${wardrobePosition === 'tight' ? 44 : 58}, ${wardrobePosition === 'tight' ? 44 : 58})`}
-                      className="transition-all duration-300"
-                    >
-                      <rect
-                        x="0"
-                        y="0"
-                        width="80"
-                        height="50"
-                        rx="4"
-                        fill="#573a27"
-                        stroke="#8b5e34"
-                        strokeWidth="1.5"
-                      />
-                      <line x1="40" y1="0" x2="40" y2="50" stroke="#3d281a" strokeWidth="1" />
-                      <circle cx="34" cy="25" r="2" fill="#d4af37" />
-                      <circle cx="46" cy="25" r="2" fill="#d4af37" />
-                      <text x="40" y="28" fill="#f5ede3" fontSize="8" fontWeight="bold" textAnchor="middle">
-                        {tr3('Schrank', 'Wardrobe', 'Armario')}
-                      </text>
-                      {wardrobePosition === 'tight' && (
-                        <text x="40" y="42" fill="#fca5a5" fontSize="7" textAnchor="middle">
-                          0 cm Wandabstand
-                        </text>
-                      )}
-                      {wardrobePosition === 'ventilated' && (
-                        <text x="40" y="42" fill="#86efac" fontSize="7" textAnchor="middle">
-                          10 cm hinterlüftet
-                        </text>
-                      )}
-                    </g>
-                  )}
-
-                  {/* Cold corner mold mycelium alert icon */}
-                  {cornerFRsi < 0.70 && (
-                    <g transform="translate(48, 48)">
-                      <circle cx="0" cy="0" r="14" fill="#e11d48" opacity="0.85" />
-                      <text x="0" y="4" fill="#ffffff" fontSize="12" textAnchor="middle">⚠️</text>
-                    </g>
-                  )}
-
-                  {/* PROBE PINS ON BLUEPRINT */}
-                  {/* Probe 1: Cold Corner */}
-                  <g
-                    onClick={() => setActiveProbe('corner')}
-                    className="cursor-pointer group"
-                    transform="translate(42, 42)"
-                  >
-                    <circle cx="0" cy="0" r={activeProbe === 'corner' ? 12 : 9} fill={cornerFRsi < 0.70 ? '#e11d48' : '#10b981'} stroke="#ffffff" strokeWidth="2" />
-                    <text x="0" y="3" fill="#ffffff" fontSize="8" fontWeight="bold" textAnchor="middle">1</text>
-                  </g>
-
-                  {/* Probe 2: Mid Wall */}
-                  <g
-                    onClick={() => setActiveProbe('wall')}
-                    className="cursor-pointer group"
-                    transform="translate(140, 40)"
-                  >
-                    <circle cx="0" cy="0" r={activeProbe === 'wall' ? 12 : 9} fill="#f59e0b" stroke="#ffffff" strokeWidth="2" />
-                    <text x="0" y="3" fill="#ffffff" fontSize="8" fontWeight="bold" textAnchor="middle">2</text>
-                  </g>
-
-                  {/* Probe 3: Window Pane */}
-                  <g
-                    onClick={() => setActiveProbe('window')}
-                    className="cursor-pointer group"
-                    transform="translate(280, 26)"
-                  >
-                    <circle cx="0" cy="0" r={activeProbe === 'window' ? 12 : 9} fill="#0284c7" stroke="#ffffff" strokeWidth="2" />
-                    <text x="0" y="3" fill="#ffffff" fontSize="8" fontWeight="bold" textAnchor="middle">3</text>
-                  </g>
-
-                  {/* Probe 4: Radiator Plume */}
-                  <g
-                    onClick={() => setActiveProbe('radiator')}
-                    className="cursor-pointer group"
-                    transform="translate(280, 52)"
-                  >
-                    <circle cx="0" cy="0" r={activeProbe === 'radiator' ? 12 : 9} fill="#ea580c" stroke="#ffffff" strokeWidth="2" />
-                    <text x="0" y="3" fill="#ffffff" fontSize="8" fontWeight="bold" textAnchor="middle">4</text>
-                  </g>
-
-                  {/* Probe 5: Room Center */}
-                  <g
-                    onClick={() => setActiveProbe('center')}
-                    className="cursor-pointer group"
-                    transform="translate(300, 190)"
-                  >
-                    <circle cx="0" cy="0" r={activeProbe === 'center' ? 12 : 9} fill="#a8a29e" stroke="#ffffff" strokeWidth="2" />
-                    <text x="0" y="3" fill="#ffffff" fontSize="8" fontWeight="bold" textAnchor="middle">5</text>
-                  </g>
-
-                  {/* Probe 6: Floor Ankle Level */}
-                  <g
-                    onClick={() => setActiveProbe('floor')}
-                    className="cursor-pointer group"
-                    transform="translate(280, 140)"
-                  >
-                    <circle cx="0" cy="0" r={activeProbe === 'floor' ? 12 : 9} fill={windowTilted ? '#38bdf8' : '#78716c'} stroke="#ffffff" strokeWidth="2" />
-                    <text x="0" y="3" fill="#ffffff" fontSize="8" fontWeight="bold" textAnchor="middle">6</text>
-                  </g>
-
-                  {/* Legend / Dimensions */}
-                  <text x="50" y="330" fill="#a8a29e" fontSize="9" fontFamily="monospace">
-                    {roomWidth.toFixed(1)} m × {roomDepth.toFixed(1)} m = {roomArea} m²
-                  </text>
-                </svg>
-              </div>
+            <div className="space-y-4">
+              <AltbauRoomDrawing
+                roomWidth={roomWidth}
+                roomArea={roomArea}
+                windowWidth={windowWidth}
+                wallU={wallU}
+                windowU={windowU}
+                outsideTemp={outsideTemp}
+                roomTemp={roomTemp}
+                relHumidity={relHumidity}
+                wardrobePosition={wardrobePosition}
+                setWardrobePosition={setWardrobePosition}
+                hasSecondExteriorWall={hasSecondExteriorWall}
+                windowTilted={windowTilted}
+                setWindowTilted={setWindowTilted}
+                hasRadiatorNiche={hasRadiatorNiche}
+                setHasRadiatorNiche={setHasRadiatorNiche}
+                curtainOverRadiator={curtainOverRadiator}
+                setCurtainOverRadiator={setCurtainOverRadiator}
+                activeProbe={activeProbe}
+                setActiveProbe={setActiveProbe}
+                altbau={altbau}
+                lang={lang}
+              />
 
               {/* Active Probe Inspector Card */}
-              <div className="p-3.5 rounded-xl bg-stone-800/90 border border-stone-700 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+              <div className="p-4 rounded-2xl bg-stone-900 border border-stone-800 text-white shadow-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                 <div className="space-y-1">
                   <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold font-mono-code text-amber-400">
+                    <span className="text-xs font-bold font-mono-code text-amber-400 bg-amber-950/60 px-2 py-0.5 rounded border border-amber-800/60">
                       [Messpunkt {activeProbe.toUpperCase()}]
                     </span>
                     <span className="text-xs font-semibold text-white">
@@ -937,7 +966,7 @@ HINWEIS: Berechnet auf Basis stationärer finite-Differenzen-Verfahren (DIN EN I
                     {probeInfo.desc}
                   </p>
                 </div>
-                <div className="text-right shrink-0 bg-stone-900/90 px-3 py-2 rounded-lg border border-stone-700">
+                <div className="text-right shrink-0 bg-stone-800/90 px-3.5 py-2.5 rounded-xl border border-stone-700">
                   <div className="text-[10px] text-stone-400 font-mono-code">Temperatur & Feuchte</div>
                   <div className={`text-xl font-bold font-mono-code ${
                     probeInfo.temp < altbau.moldThreshold ? 'text-rose-400' : 'text-emerald-400'
@@ -946,6 +975,64 @@ HINWEIS: Berechnet auf Basis stationärer finite-Differenzen-Verfahren (DIN EN I
                   </div>
                   <div className="text-[10px] font-mono-code text-stone-300">
                     φ = {probeInfo.rh} % · f_Rsi: {nf(probeInfo.fRsi, 2)}
+                  </div>
+                </div>
+              </div>
+
+              {/* Deep Physics Card: Tauwasser-Opferfläche & Sanierungs-Paradoxon */}
+              <div className={`p-4 rounded-2xl border transition-all ${
+                altbau.sacrificialCondensation.isRetrofitParadox
+                  ? 'bg-rose-950/25 border-rose-800/60 text-rose-100'
+                  : 'bg-stone-900 border-stone-800 text-stone-200'
+              }`}>
+                <div className="flex items-start gap-3">
+                  <div className={`p-2 rounded-xl shrink-0 ${
+                    altbau.sacrificialCondensation.isRetrofitParadox
+                      ? 'bg-rose-900/60 text-rose-300 border border-rose-700'
+                      : 'bg-stone-800 text-amber-400 border border-stone-700'
+                  }`}>
+                    {altbau.sacrificialCondensation.isRetrofitParadox ? <AlertTriangle className="w-5 h-5" /> : <ShieldCheck className="w-5 h-5" />}
+                  </div>
+                  <div className="space-y-1.5 flex-1">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <h5 className="font-bold text-xs text-white uppercase font-mono-code tracking-wide">
+                        {tr3('Bauphysik: Tauwasser-Opferfläche & Sanierungs-Paradoxon', 'Building Physics: Sacrificial Condensation & Retrofit Paradox', 'Física edilicia: Paradoja de renovación')}
+                      </h5>
+                      <span className={`text-[10px] font-mono-code px-2 py-0.5 rounded ${
+                        altbau.sacrificialCondensation.isRetrofitParadox
+                          ? 'bg-rose-900 text-rose-200 border border-rose-700 font-bold'
+                          : 'bg-emerald-950 text-emerald-300 border border-emerald-800'
+                      }`}>
+                        {altbau.sacrificialCondensation.isRetrofitParadox
+                          ? tr3('⚠️ SANIERUNGS-PARADOXON AKTIV', '⚠️ RETROFIT PARADOX ACTIVE', '⚠️ PARADOJA ACTIVA')
+                          : tr3('✅ HARMONISCHES TEMPERATURGEFÄLLE', '✅ BALANCED THERMAL PROFILE', '✅ PERFIL EQUILIBRADO')}
+                      </span>
+                    </div>
+                    <p className="text-xs leading-relaxed text-stone-300">
+                      {tr3(
+                        altbau.sacrificialCondensation.explanationDe,
+                        altbau.sacrificialCondensation.explanationEn,
+                        altbau.sacrificialCondensation.explanationEs
+                      )}
+                    </p>
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-2 border-t border-stone-800/80 text-[11px] font-mono-code">
+                      <div className="bg-stone-800/70 p-2 rounded-lg border border-stone-700/60">
+                        <span className="text-[9px] text-stone-400 block">Glasoberfläche T_G</span>
+                        <span className="font-bold text-white">{nf(altbau.windowInnerSurfaceTemp, 1)} °C</span>
+                      </div>
+                      <div className="bg-stone-800/70 p-2 rounded-lg border border-stone-700/60">
+                        <span className="text-[9px] text-stone-400 block">Außenecke T_Ecke</span>
+                        <span className="font-bold text-white">{nf(altbau.corner2DGeometricMid, 1)} °C</span>
+                      </div>
+                      <div className="bg-stone-800/70 p-2 rounded-lg border border-stone-700/60">
+                        <span className="text-[9px] text-stone-400 block">Fensterlaibung T_L</span>
+                        <span className="font-bold text-white">{nf(altbau.windowRevealTemp, 1)} °C</span>
+                      </div>
+                      <div className="bg-stone-800/70 p-2 rounded-lg border border-stone-700/60">
+                        <span className="text-[9px] text-stone-400 block">Raumtaupunkt T_D</span>
+                        <span className="font-bold text-amber-300">{nf(altbau.dewPoint, 1)} °C</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

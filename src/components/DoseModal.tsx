@@ -19,10 +19,14 @@ import {
   ExternalLink,
   ChevronDown,
   ChevronUp,
+  Maximize2,
+  Link2,
 } from 'lucide-react';
 import { DoseItem, Language } from '../types';
 import { AMELIE_PLEDGE } from '../data/manifest';
 import { getTranslation, getLocalizedTitle } from '../i18n';
+import { getDoseUrl } from '../utils/doseUrl';
+import { DOSE_SIMULATOR_MAP, SimulatorKey } from '../data/doseSimulators';
 import {
   AltbauThermalSimulator,
   GlasanflugSimulator,
@@ -34,125 +38,30 @@ import {
   CrackFloraSimulator,
 } from './simulators';
 
-export type SimulatorKey =
-  | 'altbau'
-  | 'glasanflug'
-  | 'streiflicht'
-  | 'wetink'
-  | 'balkon'
-  | 'regenwasser'
-  | 'klarlokal'
-  | 'crackflora';
-
-const DOSE_SIMULATOR_MAP: Record<
-  string,
-  {
-    key: SimulatorKey;
-    titleDe: string;
-    titleEn: string;
-    titleEs: string;
-    descriptionDe: string;
-    descriptionEn: string;
-    descriptionEs: string;
-    icon: string;
-  }
-> = {
-  'altbau-thermal': {
-    key: 'altbau',
-    titleDe: 'Altbau Thermal Simulator',
-    titleEn: 'Altbau Thermal Simulator',
-    titleEs: 'Simulador Térmico de Edificio Antiguo',
-    descriptionDe: 'Interaktiver 2D-Raumeck-Wärmeleitsimulator nach DIN EN ISO 10211 mit Schimmelrisiko-Berechnung.',
-    descriptionEn: 'Interactive 2D room corner thermal conductor simulation per DIN EN ISO 10211 with mold risk calculation.',
-    descriptionEs: 'Simulador interactivo 2D de conducción térmica en esquinas según DIN EN ISO 10211 con cálculo de riesgo de moho.',
-    icon: '🏢',
-  },
-  'glasanflug': {
-    key: 'glasanflug',
-    titleDe: 'Glasanflug-Risikoampel',
-    titleEn: 'Bird Glass Strike Hazard Calculator',
-    titleEs: 'Calculadora de Riesgo de Colisión de Aves con Vidrio',
-    descriptionDe: 'Berechnung des Vogelschlag-Risikos nach den Kriterien der Länderarbeitsgemeinschaft der Vogelschutzwarten (LAG-VSW).',
-    descriptionEn: 'Bird glass collision hazard rating based on the German State Bird Protection Stations (LAG-VSW) standard.',
-    descriptionEs: 'Evaluación de riesgo de colisión de aves en vidrio basada en el estándar oficial LAG-VSW.',
-    icon: '🐦',
-  },
-  'streiflicht': {
-    key: 'streiflicht',
-    titleDe: 'Streiflicht RTI & Raking Light Labor',
-    titleEn: 'RTI Grazing Light Surface Lab',
-    titleEs: 'Laboratorio RTI de Luz Rasante',
-    descriptionDe: 'Reflectance Transformation Imaging (RTI) zur optischen Lesbarmachung abgetragener Steininschriften.',
-    descriptionEn: 'Reflectance Transformation Imaging (RTI) to optically reveal worn stone inscriptions via directional grazing light.',
-    descriptionEs: 'Imágenes de transformación de reflectancia (RTI) para revelar inscripciones erosionadas mediante luz rasante.',
-    icon: '🔦',
-  },
-  'wet-ink': {
-    key: 'wetink',
-    titleDe: 'Wet Ink Kapillar-Simulator',
-    titleEn: 'Wet Ink Capillary Flow Simulator',
-    titleEs: 'Simulador de Tinta Líquida y Flujo Capilar',
-    descriptionDe: 'Echtzeit-Simulation von Tintenausblutung, Fasersaugspannung und Papier-Kapillareffekten im Browser.',
-    descriptionEn: 'Real-time simulation of ink bleed, paper fiber capillary absorption, and feathering directly in canvas.',
-    descriptionEs: 'Simulación en tiempo real de absorción capilar, sangrado de tinta y textura de papel en lienzo.',
-    icon: '🖋️',
-  },
-  'balkonkraftwerk': {
-    key: 'balkon',
-    titleDe: 'Balkonkraftwerk Ertrags- & Amortisationsrechner',
-    titleEn: 'Balcony Solar Yield & Payback Calculator',
-    titleEs: 'Calculadora de Rendimiento y Amortización Solar de Balcón',
-    descriptionDe: 'Berechnet PVGIS-Jahresertrag, Eigenverbrauchsquote und Amortisationsdauer für Mini-Solaranlagen.',
-    descriptionEn: 'Calculates PVGIS annual yield, self-consumption share, and payback duration for plug-in solar kits.',
-    descriptionEs: 'Calcula rendimiento anual PVGIS, cuota de autoconsumo y amortización para kits solares de balcón.',
-    icon: '☀️',
-  },
-  'regenwasser': {
-    key: 'regenwasser',
-    titleDe: 'Regenwasser & Zisternen-Dimensionierer',
-    titleEn: 'Rainwater Harvesting & Cistern Sizing Calculator',
-    titleEs: 'Calculadora de Recolección de Lluvia y Dimensionamiento de Cisterna',
-    descriptionDe: 'Dachablauf-Simulation nach DIN 1989-1 mit Trinkwasser-Einsparung und Starkregen-Rückhaltepuffer.',
-    descriptionEn: 'Roof runoff harvest simulation per DIN 1989-1 with potable water savings and storm surge buffer.',
-    descriptionEs: 'Simulación de escorrentía de techos según DIN 1989-1 con ahorro de agua potable y amortiguación pluvial.',
-    icon: '🌧️',
-  },
-  'klarlokal': {
-    key: 'klarlokal',
-    titleDe: 'KlarLokal: Beamtendeutsch-Brecheisen',
-    titleEn: 'KlarLokal: Bureaucracy Battering Ram',
-    titleEs: 'KlarLokal: Palanca contra la Burocracia',
-    descriptionDe: '100% lokale WebGPU/WebLLM-Inferenz nach DIN SPEC 33429 (Leichte Sprache) zur Extraktion von Frist, Urteil und Checkliste.',
-    descriptionEn: '100% on-device WebGPU/WebLLM inference per DIN SPEC 33429 to extract deadline, plain verdict, and action checklist.',
-    descriptionEs: 'Inferencia local por WebGPU/WebLLM según DIN SPEC 33429 para extraer plazos, veredicto y lista de acciones.',
-    icon: '🛡️',
-  },
-  'crack-flora-watcher': {
-    key: 'crackflora',
-    titleDe: 'Crack Flora Watcher: Ritzengrün-Labor',
-    titleEn: 'Crack Flora Watcher: Pavement Botany Lab',
-    titleEs: 'Crack Flora Watcher: Laboratorio de Botánica Urbana',
-    descriptionDe: 'Toughness-Index-Berechnung und Zeitraffer-Tracking von Straßenritzen-Pflanzen für die #Krautschau Bürgerwissenschaft.',
-    descriptionEn: 'Toughness Index calculation and multi-week growth time-lapses in hostile asphalt cracks for citizen science.',
-    descriptionEs: 'Cálculo del índice de tenacidad y seguimiento de crecimiento temporal en grietas de asfalto para ciencia ciudadana.',
-    icon: '🌱',
-  },
-};
-
 interface DoseModalProps {
   dose: DoseItem;
   lang: Language;
   onClose: () => void;
+  onOpenSinglePage?: (dose: DoseItem) => void;
   onOpenSimulator?: (simId: SimulatorKey) => void;
 }
 
-export const DoseModal: React.FC<DoseModalProps> = ({ dose, lang, onClose, onOpenSimulator }) => {
+export const DoseModal: React.FC<DoseModalProps> = ({ dose, lang, onClose, onOpenSinglePage, onOpenSimulator }) => {
   const [copiedPledge, setCopiedPledge] = useState(false);
   const [copiedEmail, setCopiedEmail] = useState(false);
+  const [copiedUrl, setCopiedUrl] = useState(false);
   const [selectedEmailIndex, setSelectedEmailIndex] = useState(0);
   const [isSimulatorExpanded, setIsSimulatorExpanded] = useState(false);
   const t = getTranslation(lang);
   const matchedSimulator = DOSE_SIMULATOR_MAP[dose.id];
+
+  const doseUrl = getDoseUrl(dose.id);
+
+  const copyUrl = () => {
+    navigator.clipboard.writeText(doseUrl);
+    setCopiedUrl(true);
+    setTimeout(() => setCopiedUrl(false), 2000);
+  };
 
   const copyPledge = () => {
     navigator.clipboard.writeText(AMELIE_PLEDGE[lang]);
@@ -356,6 +265,29 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
           </div>
 
           <div className="flex items-center gap-2 print:hidden">
+            {/* Copy URL */}
+            <button
+              onClick={copyUrl}
+              className="p-2 rounded-lg text-[#f4ede0] hover:text-white hover:bg-[#8c1d40] transition-colors cursor-pointer"
+              title={copiedUrl ? (lang === 'de' ? 'URL kopiert!' : 'URL copied!') : (lang === 'de' ? 'Permanente URL kopieren' : lang === 'es' ? 'Copiar URL permanente' : 'Copy Permanent URL')}
+            >
+              {copiedUrl ? <Check className="w-4 h-4 text-[#86efac]" /> : <Link2 className="w-4 h-4 text-[#f6bd60]" />}
+            </button>
+
+            {/* Open Full Single Page */}
+            {onOpenSinglePage && (
+              <button
+                onClick={() => {
+                  onClose();
+                  onOpenSinglePage(dose);
+                }}
+                className="p-2 rounded-lg text-[#f4ede0] hover:text-white hover:bg-[#8c1d40] transition-colors cursor-pointer"
+                title={lang === 'de' ? 'Als Einzelseite öffnen (mit eigener URL)' : lang === 'es' ? 'Abrir como página completa' : 'Open as Single Page (with URL)'}
+              >
+                <Maximize2 className="w-4 h-4 text-[#f6bd60]" />
+              </button>
+            )}
+
             <button
               onClick={printDossier}
               className="p-2 rounded-lg text-[#f4ede0] hover:text-white hover:bg-[#8c1d40] transition-colors cursor-pointer"
@@ -757,17 +689,31 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
         </div>
 
         {/* Modal Footer */}
-        <div className="px-6 py-4 bg-[#f4ede0] border-t border-[#dfd1be] flex items-center justify-between text-xs text-[#8b6f57] font-typewriter">
+        <div className="px-6 py-4 bg-[#f4ede0] border-t border-[#dfd1be] flex flex-wrap items-center justify-between gap-3 text-xs text-[#8b6f57] font-typewriter">
           <div className="flex items-center gap-2">
             <span className="font-bold text-[#8c1d40]">✦</span>
             <span>{lang === 'de' ? 'Amélie Dosen-Format · Alle Inhalte CC0 Public Domain' : lang === 'es' ? 'Formato Lata Amélie · Todo CC0 Dominio Público' : 'Amélie Tin Canister · All content CC0 Public Domain'}</span>
           </div>
-          <button
-            onClick={onClose}
-            className="btn-amelie-rouge px-5 py-2 text-xs font-bold rounded-lg cursor-pointer transition-all"
-          >
-            {t.ui.close}
-          </button>
+          <div className="flex items-center gap-2">
+            {onOpenSinglePage && (
+              <button
+                onClick={() => {
+                  onClose();
+                  onOpenSinglePage(dose);
+                }}
+                className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold rounded-lg bg-[#faf5eb] hover:bg-[#ede3d1] text-[#8c1d40] border border-[#d8cbba] cursor-pointer transition-all font-typewriter"
+              >
+                <Maximize2 className="w-3.5 h-3.5" />
+                <span>{lang === 'de' ? 'Als Einzelseite öffnen' : lang === 'es' ? 'Página completa' : 'Open Single Page'} →</span>
+              </button>
+            )}
+            <button
+              onClick={onClose}
+              className="btn-amelie-rouge px-5 py-2 text-xs font-bold rounded-lg cursor-pointer transition-all"
+            >
+              {t.ui.close}
+            </button>
+          </div>
         </div>
       </div>
     </div>

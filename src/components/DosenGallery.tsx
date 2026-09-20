@@ -1,13 +1,15 @@
 import React, { useState, useMemo } from 'react';
-import { Search, Filter, Gift, Hammer, Lock, ArrowUpRight, Sparkles, Brain } from 'lucide-react';
+import { Search, Filter, Gift, Hammer, Lock, ArrowUpRight, Sparkles, Brain, Link2, Check, ExternalLink, Maximize2 } from 'lucide-react';
 import { DoseItem, Language, Verdict, DomainCategory } from '../types';
 import { getTranslation, getLocalizedTitle } from '../i18n';
+import { getDoseUrl } from '../utils/doseUrl';
 import { AmelieRulesBanner } from './AmelieRulesBanner';
 
 interface DosenGalleryProps {
   dosen: DoseItem[];
   lang: Language;
   onSelectDose: (dose: DoseItem) => void;
+  onOpenSinglePage?: (dose: DoseItem) => void;
   onOpenSimulator?: (simId: 'altbau' | 'glasanflug' | 'streiflicht' | 'wetink' | 'balkon' | 'regenwasser' | 'klarlokal' | 'crackflora') => void;
   onOpenManifest?: () => void;
   onOpenEmails?: () => void;
@@ -17,6 +19,7 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
   dosen,
   lang,
   onSelectDose,
+  onOpenSinglePage,
   onOpenSimulator,
   onOpenManifest,
   onOpenEmails,
@@ -24,7 +27,16 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedVerdict, setSelectedVerdict] = useState<string>('all');
   const [selectedDomain, setSelectedDomain] = useState<string>('all');
+  const [copiedDoseId, setCopiedDoseId] = useState<string | null>(null);
   const t = getTranslation(lang);
+
+  const handleCopyUrl = (e: React.MouseEvent, doseId: string) => {
+    e.stopPropagation();
+    const url = getDoseUrl(doseId);
+    navigator.clipboard.writeText(url);
+    setCopiedDoseId(doseId);
+    setTimeout(() => setCopiedDoseId(null), 2000);
+  };
 
   const filteredDosen = useMemo(() => {
     return dosen.filter((d) => {
@@ -196,7 +208,7 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
             return (
               <div
                 key={dose.id}
-                onClick={() => onSelectDose(dose)}
+                onClick={() => (onOpenSinglePage ? onOpenSinglePage(dose) : onSelectDose(dose))}
                 className="group relative rounded-2xl amelie-tin-box p-6 flex flex-col justify-between transition-all duration-200 hover:-translate-y-1 hover:shadow-xl cursor-pointer border border-[#d8cbba] hover:border-[#c5832b]"
               >
                 <div>
@@ -217,16 +229,27 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
                       <span className="tracking-wide">{getVerdictLabel(dose.verdict)}</span>
                     </span>
 
-                    {dose.aiFrontier && (
-                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-typewriter font-bold bg-[#264653]/15 text-[#1a3843] border border-[#264653]/30">
-                        <Brain className="w-3 h-3 text-[#264653]" />
-                        <span>AI-Native</span>
-                      </span>
-                    )}
+                    <div className="flex items-center gap-1.5 ml-auto">
+                      {dose.aiFrontier && (
+                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-typewriter font-bold bg-[#264653]/15 text-[#1a3843] border border-[#264653]/30">
+                          <Brain className="w-3 h-3 text-[#264653]" />
+                          <span>AI-Native</span>
+                        </span>
+                      )}
 
-                    <span className="text-xs font-typewriter text-[#8b6f57]">
-                      {dose.date}
-                    </span>
+                      <button
+                        type="button"
+                        onClick={(e) => handleCopyUrl(e, dose.id)}
+                        className="p-1 rounded-md text-[#8b6f57] hover:text-[#8c1d40] hover:bg-[#8c1d40]/10 transition-colors"
+                        title={copiedDoseId === dose.id ? (lang === 'de' ? 'URL kopiert!' : 'URL copied!') : (lang === 'de' ? 'Direkt-URL kopieren' : 'Copy direct URL')}
+                      >
+                        {copiedDoseId === dose.id ? <Check className="w-3.5 h-3.5 text-[#1b4332]" /> : <Link2 className="w-3.5 h-3.5" />}
+                      </button>
+
+                      <span className="text-xs font-typewriter text-[#8b6f57]">
+                        {dose.date}
+                      </span>
+                    </div>
                   </div>
 
                   {/* Title */}
@@ -338,7 +361,7 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
                 </div>
 
                 {/* Tags & Action */}
-                <div className="mt-5 pt-3 border-t border-[#dfd1be] flex items-center justify-between">
+                <div className="mt-5 pt-3 border-t border-[#dfd1be] flex items-center justify-between gap-2">
                   <div className="flex flex-wrap gap-1">
                     {dose.tags.slice(0, 2).map((tag, idx) => (
                       <span
@@ -355,10 +378,50 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
                     )}
                   </div>
 
-                  <span className="text-xs font-bold font-amelie text-[#8c1d40] group-hover:underline flex items-center gap-1">
-                    <span>{t.ui.open_tin}</span>
-                    <span>→</span>
-                  </span>
+                  <div className="flex items-center gap-1.5 shrink-0">
+                    <button
+                      type="button"
+                      onClick={(e) => handleCopyUrl(e, dose.id)}
+                      className="p-1.5 rounded-md text-[11px] font-typewriter text-[#7c6655] hover:text-[#8c1d40] hover:bg-[#faf5eb] border border-transparent hover:border-[#dfd1be] transition-colors flex items-center gap-1"
+                      title={copiedDoseId === dose.id ? (lang === 'de' ? 'URL kopiert!' : 'URL copied!') : (lang === 'de' ? 'Dosen-URL kopieren' : 'Copy Tin URL')}
+                    >
+                      {copiedDoseId === dose.id ? (
+                        <Check className="w-3.5 h-3.5 text-emerald-600" />
+                      ) : (
+                        <Link2 className="w-3.5 h-3.5 text-[#c5832b]" />
+                      )}
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onSelectDose(dose);
+                      }}
+                      className="px-2 py-1 rounded-md text-[11px] font-typewriter text-[#7c6655] hover:text-[#8c1d40] hover:bg-[#faf5eb] border border-transparent hover:border-[#dfd1be] transition-colors flex items-center gap-1"
+                      title={lang === 'de' ? 'Schnellansicht im Popup' : 'Quick popup view'}
+                    >
+                      <Maximize2 className="w-3 h-3" />
+                      <span className="hidden sm:inline">Popup</span>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        if (onOpenSinglePage) {
+                          onOpenSinglePage(dose);
+                        } else {
+                          onSelectDose(dose);
+                        }
+                      }}
+                      className="text-xs font-bold font-amelie text-[#8c1d40] hover:underline flex items-center gap-0.5 px-2 py-1 rounded-md hover:bg-[#8c1d40]/5"
+                      title={lang === 'de' ? 'Als Einzelseite öffnen' : 'Open as Single Page'}
+                    >
+                      <span>{lang === 'de' ? 'Einzelseite' : t.ui.open_tin}</span>
+                      <span>→</span>
+                    </button>
+                  </div>
                 </div>
               </div>
             );

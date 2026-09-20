@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { DosenGallery } from './components/DosenGallery';
 import { DoseModal } from './components/DoseModal';
+import { DoseSinglePage } from './components/DoseSinglePage';
 import { MatrixView } from './components/MatrixView';
 import { ManifestView } from './components/ManifestView';
 import { DosePacker } from './components/DosePacker';
@@ -21,6 +22,7 @@ import { CANDIDATE_IDEAS_DATA } from './data/unpacked';
 import { DoseItem, Language, CandidateIdea } from './types';
 import { getTranslation } from './i18n';
 import { getActiveDosen, getActiveCandidates, saveCandidateLocal } from './services/storageService';
+import { parseDoseIdFromUrl, setDoseUrl, clearDoseUrl } from './utils/doseUrl';
 import { Gift, FolderGit2 } from 'lucide-react';
 
 export function App() {
@@ -32,11 +34,64 @@ export function App() {
   const [importedCandidates, setImportedCandidates] = useState<CandidateIdea[]>([]);
   const [dosenList, setDosenList] = useState<DoseItem[]>(getActiveDosen);
   const [candidatesList, setCandidatesList] = useState<CandidateIdea[]>(getActiveCandidates);
+
+  // Direct URL-based Dose Single Page
+  const [activeDosePage, setActiveDosePage] = useState<DoseItem | null>(() => {
+    const initialId = parseDoseIdFromUrl();
+    if (initialId) {
+      const list = getActiveDosen();
+      return list.find((d: DoseItem) => d.id === initialId) || null;
+    }
+    return null;
+  });
+
   const t = getTranslation(lang);
+
+  // Listen to hash and popstate for direct link handling
+  useEffect(() => {
+    const handleUrlChange = () => {
+      const doseId = parseDoseIdFromUrl();
+      if (doseId) {
+        const found = dosenList.find((d: DoseItem) => d.id === doseId);
+        if (found) {
+          setActiveDosePage(found);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      } else {
+        setActiveDosePage(null);
+      }
+    };
+
+    window.addEventListener('hashchange', handleUrlChange);
+    window.addEventListener('popstate', handleUrlChange);
+    return () => {
+      window.removeEventListener('hashchange', handleUrlChange);
+      window.removeEventListener('popstate', handleUrlChange);
+    };
+  }, [dosenList]);
 
   const refreshData = () => {
     setDosenList(getActiveDosen());
     setCandidatesList(getActiveCandidates());
+  };
+
+  const handleOpenSinglePage = (dose: DoseItem) => {
+    setDoseUrl(dose.id);
+    setActiveDosePage(dose);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleOpenSinglePageById = (doseId: string) => {
+    const found = dosenList.find((d: DoseItem) => d.id === doseId);
+    if (found) {
+      handleOpenSinglePage(found);
+    }
+  };
+
+  const handleCloseSinglePage = () => {
+    clearDoseUrl();
+    setActiveDosePage(null);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleSelectDoseById = (doseId: string) => {
@@ -117,7 +172,13 @@ export function App() {
       {/* Top Navigation */}
       <Header
         currentTab={currentTab}
-        setCurrentTab={setCurrentTab}
+        setCurrentTab={(tab) => {
+          if (activeDosePage) {
+            clearDoseUrl();
+            setActiveDosePage(null);
+          }
+          setCurrentTab(tab);
+        }}
         lang={lang}
         setLang={setLang}
         dosenCount={dosenList.length}
@@ -128,113 +189,142 @@ export function App() {
 
       {/* Main Content Area */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-10">
-        {currentTab === 'dosen' && (
-          <DosenGallery
-            dosen={dosenList}
+        {activeDosePage ? (
+          <DoseSinglePage
+            dose={activeDosePage}
+            allDosen={dosenList}
             lang={lang}
-            onSelectDose={setSelectedDose}
-            onOpenSimulator={handleOpenSimulator}
-            onOpenManifest={() => {
-              setCurrentTab('manifest');
-              window.scrollTo({ top: 0, behavior: 'smooth' });
+            onBack={handleCloseSinglePage}
+            onOpenPopup={(d) => setSelectedDose(d)}
+            onSelectDoseById={handleOpenSinglePageById}
+            onOpenSimulatorTab={(simId) => {
+              handleCloseSinglePage();
+              handleOpenSimulator(simId);
             }}
-            onOpenEmails={() => {
+            onOpenEmailsTab={() => {
+              handleCloseSinglePage();
               setCurrentTab('muster-emails');
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
           />
-        )}
+        ) : (
+          <>
+            {currentTab === 'dosen' && (
+              <DosenGallery
+                dosen={dosenList}
+                lang={lang}
+                onSelectDose={setSelectedDose}
+                onOpenSinglePage={handleOpenSinglePage}
+                onOpenSimulator={handleOpenSimulator}
+                onOpenManifest={() => {
+                  setCurrentTab('manifest');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                onOpenEmails={() => {
+                  setCurrentTab('muster-emails');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+              />
+            )}
 
-        {currentTab === 'normal-jobs' && (
-          <NormalJobsExplorer
-            lang={lang}
-          />
-        )}
+            {currentTab === 'normal-jobs' && (
+              <NormalJobsExplorer
+                lang={lang}
+              />
+            )}
 
-        {currentTab === 'whimsy' && (
-          <WhimsyAndGoodnessView
-            lang={lang}
-          />
-        )}
+            {currentTab === 'whimsy' && (
+              <WhimsyAndGoodnessView
+                lang={lang}
+              />
+            )}
 
-        {currentTab === 'unpacked' && (
-          <UnpackedIdeasView
-            lang={lang}
-            onPackIdea={handlePackCandidate}
-            externalCandidates={importedCandidates}
-          />
-        )}
+            {currentTab === 'unpacked' && (
+              <UnpackedIdeasView
+                lang={lang}
+                onPackIdea={handlePackCandidate}
+                externalCandidates={importedCandidates}
+              />
+            )}
 
-        {currentTab === 'data-hub' && (
-          <GitHubPagesDataHub
-            lang={lang}
-            dosen={dosenList}
-            candidates={candidatesList}
-            onDataChanged={refreshData}
-          />
-        )}
+            {currentTab === 'data-hub' && (
+              <GitHubPagesDataHub
+                lang={lang}
+                dosen={dosenList}
+                candidates={candidatesList}
+                onDataChanged={refreshData}
+              />
+            )}
 
-        {currentTab === 'google-import' && (
-          <GoogleAccountImporter
-            lang={lang}
-            onPackIdea={(draft) => {
-              setPackerDraft(draft);
-              setCurrentTab('packer');
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
-            onAddToCandidates={handleAddToCandidates}
-          />
-        )}
+            {currentTab === 'google-import' && (
+              <GoogleAccountImporter
+                lang={lang}
+                onPackIdea={(draft) => {
+                  setPackerDraft(draft);
+                  setCurrentTab('packer');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                onAddToCandidates={handleAddToCandidates}
+              />
+            )}
 
-        {currentTab === 'sandboxes' && (
-          <InteractiveTinSandboxes
-            lang={lang}
-            initialSandbox={activeSandbox}
-            onOpenDose={(doseId) => handleSelectDoseById(doseId)}
-          />
-        )}
+            {currentTab === 'sandboxes' && (
+              <InteractiveTinSandboxes
+                lang={lang}
+                initialSandbox={activeSandbox}
+                onOpenDose={(doseId) => handleSelectDoseById(doseId)}
+              />
+            )}
 
-        {currentTab === 'playbook' && (
-          <SearchPlaybookStudio
-            lang={lang}
-            onSendToPipeline={handleBisociationToPacker}
-          />
-        )}
+            {currentTab === 'playbook' && (
+              <SearchPlaybookStudio
+                lang={lang}
+                onSendToPipeline={handleBisociationToPacker}
+              />
+            )}
 
-        {currentTab === 'matrix' && (
-          <MatrixView
-            matrix={MATRIX_DATA}
-            deliveries={DELIVERIES_DATA}
-            dosen={dosenList}
-            lang={lang}
-            onSelectDoseById={handleSelectDoseById}
-            onSwitchToUnpacked={() => setCurrentTab('unpacked')}
-          />
-        )}
+            {currentTab === 'matrix' && (
+              <MatrixView
+                matrix={MATRIX_DATA}
+                deliveries={DELIVERIES_DATA}
+                dosen={dosenList}
+                lang={lang}
+                onSelectDoseById={handleSelectDoseById}
+                onOpenSinglePageById={handleOpenSinglePageById}
+                onSwitchToUnpacked={() => setCurrentTab('unpacked')}
+              />
+            )}
 
-        {currentTab === 'muster-emails' && (
-          <MusterEmailsSection lang={lang} />
-        )}
+            {currentTab === 'muster-emails' && (
+              <MusterEmailsSection
+                lang={lang}
+                dosen={dosenList}
+                onOpenSinglePage={handleOpenSinglePage}
+                onOpenModal={(dose) => setSelectedDose(dose)}
+              />
+            )}
 
-        {currentTab === 'manifest' && (
-          <ManifestView
-            lang={lang}
-            onOpenEmails={() => {
-              setCurrentTab('muster-emails');
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
-          />
-        )}
+            {currentTab === 'manifest' && (
+              <ManifestView
+                lang={lang}
+                onOpenEmails={() => {
+                  setCurrentTab('muster-emails');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+              />
+            )}
 
-        {currentTab === 'packer' && (
-          <DosePacker lang={lang} initialData={packerDraft} />
-        )}
+            {currentTab === 'packer' && (
+              <DosePacker lang={lang} initialData={packerDraft} />
+            )}
 
-        {currentTab === 'discarded' && (
-          <DiscardedGallery
-            discarded={DISCARDED_DATA}
-            lang={lang}
-          />
+            {currentTab === 'discarded' && (
+              <DiscardedGallery
+                discarded={DISCARDED_DATA}
+                lang={lang}
+              />
+            )}
+          </>
         )}
       </main>
 
@@ -244,6 +334,7 @@ export function App() {
           dose={selectedDose}
           lang={lang}
           onClose={() => setSelectedDose(null)}
+          onOpenSinglePage={handleOpenSinglePage}
           onOpenSimulator={(simId) => {
             setSelectedDose(null);
             handleOpenSimulator(simId);

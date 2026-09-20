@@ -32,6 +32,9 @@ export interface AltbauInput {
   relHumidity: number; // %, room air
   hasCornerFurniture?: boolean; // tight wardrobe in corner (0 cm distance)
   hasSecondExteriorWall?: boolean; // corner room (2 exterior walls)
+  hasRadiatorNiche?: boolean; // recessed 12 cm thin wall behind radiator
+  curtainOverRadiator?: boolean; // long curtain trapping heat against window
+  wardrobePosition?: 'tight' | 'ventilated' | 'interior_wall' | 'none';
 }
 
 export type MoldVerdict = 'above' | 'overlap' | 'below';
@@ -75,6 +78,19 @@ export interface AltbauResult {
     draftRiskPercent: number; // % predicted dissatisfied (PPD) per ISO 7730
   };
   finiteDifference2D: FiniteDifferenceCornerResult;
+  // Realistic Altbau physics additions:
+  windowInnerSurfaceTemp: number; // C, glass surface temperature
+  windowRevealTemp: number;       // C, reveal (Fensterlaibung) temperature
+  nicheSurfaceTemp: number;       // C, surface behind radiator in niche
+  nicheExtraLossW: number;        // W, extra transmission loss through thinned niche
+  curtainExtraLossW: number;      // W, heat trapped by curtain against window
+  sacrificialCondensation: {
+    windowCondensatesFirst: boolean;
+    isRetrofitParadox: boolean;
+    explanationDe: string;
+    explanationEn: string;
+    explanationEs: string;
+  };
 }
 
 export interface FiniteDifferenceCornerResult {
@@ -368,11 +384,64 @@ export function computeAltbau(i: AltbauInput): AltbauResult {
   const effectiveCornerLow = cornerLow - geometricCorrection;
   const verdict: MoldVerdict = effectiveCornerLow > mold ? 'above' : cornerHigh < mold ? 'below' : 'overlap';
 
+  // Window surface temperature and reveal thermal bridge
+  const windowInnerSurfaceTemp = i.roomTemp - i.windowU * 0.13 * (i.roomTemp - i.outsideTemp);
+  const revealUFactor = i.wallU * 1.32; // 2D corner effect at window reveal
+  const windowRevealTemp = i.roomTemp - revealUFactor * 0.13 * (i.roomTemp - i.outsideTemp);
+
+  // Radiator niche (Heizkörpernische) physics:
+  // In Berlin Altbau, masonry under the window is often thinned from 38 cm to 12 cm (half brick).
+  const effWinWidth = effectiveWindowWidth(i.roomWidth, i.windowWidth);
+  const nicheArea = i.hasRadiatorNiche ? effWinWidth * 0.85 : 0;
+  // If wall is uninsulated brick (U~1.7), 12 cm niche has U~2.75 W/m2K; if insulated (U<0.3), niche has ~0.5 W/m2K
+  const nicheU = i.wallU > 1.0 ? 2.75 : i.wallU * 1.8;
+  const nicheExtraLossW = i.hasRadiatorNiche
+    ? Math.max(0, nicheArea * (nicheU - i.wallU) * (i.roomTemp - i.outsideTemp))
+    : 0;
+  const nicheSurfaceTemp = i.roomTemp - nicheU * 0.13 * (i.roomTemp - i.outsideTemp);
+
+  // Curtain effect: heavy drapery covering radiator traps warm air against cold glass
+  const curtainExtraLossW = i.curtainOverRadiator
+    ? Math.round(mid.hWindow * (i.roomTemp - i.outsideTemp) * 0.22)
+    : 0;
+
+  // Add niche and curtain penalties to total heat power
+  const totalHeatMid = mid.q + nicheExtraLossW + curtainExtraLossW;
+  const totalHeatLow = low.q + nicheExtraLossW * 0.8 + curtainExtraLossW * 0.8;
+  const totalHeatHigh = high.q + nicheExtraLossW * 1.25 + curtainExtraLossW * 1.25;
+
   // Annual space heating demand estimate (Berlin heating degree days)
   const annualHours = 24 * BERLIN_HGT;
-  const annualKwhMid = (mid.hWall + mid.hWindow + mid.hVent) * annualHours / 1000;
-  const annualKwhLow = (low.hWall + low.hWindow + low.hVent) * annualHours / 1000;
-  const annualKwhHigh = (high.hWall + high.hWindow + high.hVent) * annualHours / 1000;
+  const baseAnnualKwhMid = (mid.hWall + mid.hWindow + mid.hVent) * annualHours / 1000;
+  const annualKwhMid = baseAnnualKwhMid + ((nicheExtraLossW + curtainExtraLossW) * annualHours) / (1000 * 2.2); // weighted seasonal factor
+  const annualKwhLow = (low.hWall + low.hWindow + low.hVent) * annualHours / 1000 + (nicheExtraLossW * 0.8 * annualHours) / (1000 * 2.2);
+  const annualKwhHigh = (high.hWall + high.hWindow + high.hVent) * annualHours / 1000 + ((nicheExtraLossW + curtainExtraLossW) * 1.25 * annualHours) / (1000 * 2.2);
+
+  // Sacrificial condensation paradox (Tauwasser-Opferfläche):
+  // Classic Kastenfenster: T_window < T_corner -> Glass condenses first (harmless visible warning).
+  // Modern Glazing in uninsulated Altbau: T_window > T_corner -> Glass is dry, corner condenses (mold hazard)!
+  const windowCondensatesFirst = windowInnerSurfaceTemp < corner2DGeometricMid;
+  const isRetrofitParadox = !windowCondensatesFirst && i.wallU > 1.0 && i.windowU <= 1.3;
+
+  const sacrificialCondensation = {
+    windowCondensatesFirst,
+    isRetrofitParadox,
+    explanationDe: isRetrofitParadox
+      ? 'Gefährliche Taupunktverschiebung: Die neuen Isolierfenster bleiben trocken und klar. Die Raumluftfeuchte kondensiert unsichtbar an der kälteren Wandecke hinter dem Schrank!'
+      : windowCondensatesFirst
+      ? 'Klassische Altbau-Opferfläche: Das Doppelkastenfenster beschlägt zuerst. Das Kondenswasser läuft sichtbar in die Schwitzwasserrille ab und warnt rechtzeitig vor zu hoher Feuchte.'
+      : 'Thermisch ausgeglichene Hülle: Wandoberfläche und Verglasung weisen ähnliche Temperaturen auf.',
+    explanationEn: isRetrofitParadox
+      ? 'Dangerous dew point shift: New warm windows remain clear, tricking occupants while moisture invisibly condenses on the colder masonry corner behind furniture!'
+      : windowCondensatesFirst
+      ? 'Traditional sacrificial surface: Box sash window fogs up first, visibly alerting occupants to ventilate before mold forms on walls.'
+      : 'Balanced thermal envelope: Wall and glazing temperatures are well harmonized.',
+    explanationEs: isRetrofitParadox
+      ? 'Peligroso desplazamiento del punto de rocío: la ventana permanece seca y el moho ataca la pared oculta.'
+      : windowCondensatesFirst
+      ? 'Superficie de condensación de sacrificio tradicional: la ventana se empaña primero avisando a tiempo.'
+      : 'Envolvente equilibrada.',
+  };
 
   // Run 2D numerical finite difference solver (DIN EN ISO 10211)
   const finiteDiff = solve2DCornerThermalField(i.wallU, i.roomTemp, i.outsideTemp, rsiMid);
@@ -400,8 +469,10 @@ export function computeAltbau(i: AltbauInput): AltbauResult {
 
   return {
     wallArea, windowArea, volume, deltaT: i.roomTemp - i.outsideTemp,
-    hWall: mid.hWall, hWindow: mid.hWindow, hVent: mid.hVent, heatMid: mid.q,
-    heatLow: low.q, heatHigh: high.q,
+    hWall: mid.hWall, hWindow: mid.hWindow, hVent: mid.hVent,
+    heatMid: totalHeatMid,
+    heatLow: totalHeatLow,
+    heatHigh: totalHeatHigh,
     cornerMid, cornerLow: effectiveCornerLow, cornerHigh,
     corner2DGeometricMid,
     fRsiMid, fRsiLow, fRsiHigh,
@@ -415,6 +486,12 @@ export function computeAltbau(i: AltbauInput): AltbauResult {
     condensateRateCorner,
     stratification,
     finiteDifference2D: finiteDiff,
+    windowInnerSurfaceTemp,
+    windowRevealTemp,
+    nicheSurfaceTemp,
+    nicheExtraLossW,
+    curtainExtraLossW,
+    sacrificialCondensation,
   };
 }
 
