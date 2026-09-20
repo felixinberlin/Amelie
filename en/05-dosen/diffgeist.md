@@ -52,7 +52,9 @@ For JS/TS: fetch a package's release notes, extract symbols, search the repo for
 
 ## Who's already tried it
 
-Research, September 2026: changelog tooling is a large market — but all of it revolves around **generating** changelogs for your own product. The reverse direction, filtering someone else's changelog against your own usage, is discussed in a handful of blog posts, but no established tool exists. **The idea is visibly in the air and unoccupied.** This is the best time to give it away and the worst time to wait.
+Research, September 2026, re-checked 19 Sept 2026: changelog tooling is a large market, and almost all of it revolves around **generating** changelogs for your own product. The reverse direction — filtering someone else's changelog against your own usage — is now taken by **security/SCA vendors**, though: **Aikido** (“Upgrade impact analysis”) assesses breaking changes from library changelogs and scans the codebase for usage; the pull request names the affected files and lines (JavaScript, Python, Java, Go, .NET, PHP, Clojure). **Endor Labs** has an Upgrade Impact Analysis for JS/TS (a weaker match: risk rating via program analysis). The first search did not cover this class of vendor. The evidence is search summaries; the vendor pages were not read, and two arXiv preprints named by a tester (BreakGuard, DepRepair) are unchecked.
+
+**What remains open:** Aikido and similar tools cover **breaking changes**, inside their platform. The *non-breaking* release-note content (new features, deprecations, behaviour changes), personalised to your own code and without a security platform, was not found. The verdict in the check log is therefore `verengt` (narrowed; previously `frei`).
 
 ## Prior work
 

@@ -49,6 +49,8 @@ Zylinder mit fünf Stiften, zufällig gestreuten Bohrungsversätzen, Spannungsre
 
 Recherche September 2026: **Lockpicking-Spiele gibt es reichlich** — mehrere Mobile-Titel, ein browserbasierter 3D-Simulator, ein ganzes Steam-Projekt über Lockpicking-Mechaniken in Videospielen, diverse itch.io-Arbeiten. Alle sind Spiele: Ziel, Erfolg, Timing.
 
+Nachgetragen 19.09.2026: **DerGut/lockpicking** (Spiel, das das Picken eines Stiftzylinders simuliert) und **chestnutzero/pin-planner** bzw. lockbuilder.io (Frontend-Werkzeug: Stiftbelegungen visualisieren und teilen, „Simulate picking“ per matter.js-2D-Physik, eigene Stiftformen) — Letzteres ist näher an einem Lernwerkzeug als ein Spiel. **Nicht geprüft:** ob eines der beiden Bohrungsversätze oder Fertigungstoleranzen modelliert; die Aussage unten gilt daher unter Vorbehalt.
+
 **Kein gefundenes Werkzeug behandelt Toleranzen als Lerngegenstand** oder zeigt die Binding Order als Erklärung statt als Rätsel. Die Lücke ist schmal, aber echt — und sie liegt genau dort, wo die Community ihren didaktischen Engpass hat.
 
 **Achtung, Patentlage:** Es existiert mindestens eine Patentanmeldung auf ein Lockpicking-Spiel. Das betrifft die Spielmechanik, nicht die Lehrsimulation — aber es ist ein Grund, diese Dose **vor der breiten Verteilung defensiv zu publizieren** (TDCommons).

@@ -53,7 +53,11 @@ Erweiterung, die Positionen protokolliert, plus ein Viewer, der die Spur über d
 
 Recherche September 2026, und sie verengt diese Dose erheblich: **Die Aufzeichnungstechnik existiert.** Es gibt Werkzeuge, die Tipp-Sitzungen aufnehmen und abspielen, und Session-Replay für Editor-Aufgaben im Prüfungs- und Assessment-Kontext. Als „neues Werkzeug" ist die Idee weitgehend besetzt.
 
-**Was offen ist, ist die Frage, nicht die Technik:** Bewegungsmuster systematisch auszuwerten und zu vergleichen, statt Sitzungen nur abzuspielen. Das ist kein Produkt, das ist ein Paper. Deshalb geht diese Dose an Forschungsgruppen und nicht an Editor-Hersteller — und deshalb braucht sie keinen mitgelieferten Code, sondern eine gut gestellte Frage.
+**Was offen ist, ist die Frage, nicht die Technik:** Bewegungsmuster systematisch auszuwerten und zu vergleichen, statt Sitzungen nur abzuspielen. Das ist kein Produkt, das ist ein Paper.
+
+**Einschränkung (Nachprüfung 19.09.2026):** Auch die Frage ist schmaler, als sie hier klingt. Wie Programmierende durch Code navigieren, ist etablierte Forschung — etwa Singh, Henley, Fleming und Luong, *An Empirical Evaluation of Models of Programmer Navigation* (ICSME 2016), und Lawrance et al. zu Information Foraging beim Debuggen (TSE). Ob die *automatische Phasenkodierung* von Editor-Traces mit Sprachmodellen schon untersucht ist, wurde nicht geprüft; das wäre der Teil, der neu sein könnte. Weitere von einem Tester genannte Arbeiten (Ko et al., Mylyn-Interaction-Trace-Studien) sind nicht geprüft.
+
+Deshalb geht diese Dose an Forschungsgruppen und nicht an Editor-Hersteller — und deshalb braucht sie keinen mitgelieferten Code, sondern eine gut gestellte Frage.
 
 ## Vorarbeit
 

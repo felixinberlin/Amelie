@@ -49,6 +49,8 @@ A cylinder with five pins, randomly scattered bore offsets, a tension slider. Di
 
 Research, September 2026: **lockpicking games exist in abundance** — several mobile titles, a browser-based 3D simulator, a whole Steam project about lockpicking mechanics in video games, various itch.io works. All of them are games: goal, success, timing.
 
+Added 19 Sept 2026: **DerGut/lockpicking** (a game simulating the picking of a pin-tumbler cylinder) and **chestnutzero/pin-planner** / lockbuilder.io (frontend tool: visualise and share pinning configurations, “Simulate picking” via the matter.js 2D physics engine, custom pin shapes) — the latter is closer to a learning tool than a game. **Not checked:** whether either models bore offsets or manufacturing tolerances; the statement below therefore holds with a reservation.
+
 **No tool found treats tolerances as a learning subject** or shows the binding order as an explanation rather than a puzzle. The gap is narrow, but real — and it sits exactly where the community's didactic bottleneck is.
 
 **Patent caution:** at least one patent application exists for a lockpicking game. That concerns the game mechanic, not the teaching simulation — but it's a reason to **defensively publish this tin before wide distribution** (TDCommons).
