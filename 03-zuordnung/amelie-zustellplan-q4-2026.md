@@ -130,7 +130,7 @@ Gegenprüfung für die anderen beiden Berlin-Ideen: **Sperrmüll-Radar** — kei
 
 | Idee | Empfänger | Status |
 |---|---|---|
-| Altbau Thermal | EnergyMap-Verbund / UdK Berlin | **gepackt** → zustellen |
+| Altbau Thermal | EnergyMap-Verbund / UdK Berlin | **zugestellt** 20.9.2026 (Mail 1) → Antwort abwarten |
 | Sperrmüll-Radar | CityLAB Berlin | gepackt, Dose fehlt noch |
 | Kiez-Lärmkarte | CityLAB + Noise-Planet | gepackt, Dose fehlt noch |
 

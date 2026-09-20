@@ -1,6 +1,6 @@
 # Mail 1 — Altbau Thermal → EnergyMap Berlin (UdK)
 
-**Status:** Entwurf als Datei, **kein Gmail-Draft** (Gmail-MCP blockiert: Google-Cloud-Projekt nicht im Workspace Developer Preview). Nicht gesendet.
+**Status:** ✅ **Gesendet am 20.9.2026 (~15:50) von Félix, per Hand aus Gmail.** Kein Nachfassen geplant (Zustellplan-Checkliste). Antwort abwarten; ob eine Antwort kommt oder nicht, wird hier nachgetragen.
 **An:** nytsch@udk-berlin.de — Prof. Dr.-Ing. Christoph Nytsch-Geusen, Projektkoordination EnergyMap Berlin. Adresse am 19.9.2026 von `energymap-berlin.de/projektpartner` abgelesen und von tester-1 dort wörtlich bestätigt.
 **Betreff:** Idee zu verschenken: die Wohnungsebene unter EnergyMap Berlin
 
