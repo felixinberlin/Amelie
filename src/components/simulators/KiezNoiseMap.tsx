@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState, useMemo } from 'react';
-import L from 'leaflet';
+import * as LeafletModule from 'leaflet';
 import {
   Layers,
   MapPin,
@@ -16,6 +16,12 @@ import {
   AlertTriangle,
 } from 'lucide-react';
 import { Language } from '../../types';
+
+// Resilient Leaflet resolver (supports bundled npm module and CDN window.L)
+const L: any =
+  typeof window !== 'undefined' && (window as any).L
+    ? (window as any).L
+    : ((LeafletModule as any)?.default || LeafletModule);
 
 export interface NoiseAreaFeature {
   id: string;
@@ -359,10 +365,10 @@ export const KiezNoiseMap: React.FC<KiezNoiseMapProps> = ({
   onHourChange,
 }) => {
   const mapContainerRef = useRef<HTMLDivElement>(null);
-  const mapInstanceRef = useRef<L.Map | null>(null);
-  const polygonLayersRef = useRef<{ [key: string]: L.Polygon }>({});
-  const markerLayersRef = useRef<{ [key: string]: L.Marker }>({});
-  const tileLayerRef = useRef<L.TileLayer | null>(null);
+  const mapInstanceRef = useRef<any>(null);
+  const polygonLayersRef = useRef<{ [key: string]: any }>({});
+  const markerLayersRef = useRef<{ [key: string]: any }>({});
+  const tileLayerRef = useRef<any>(null);
 
   const [mapStyle, setMapStyle] = useState<'google' | 'satellite' | 'dark'>('google');
   const [filterMode, setFilterMode] = useState<'all' | 'quiet' | 'night-alarm'>('all');
