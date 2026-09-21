@@ -11,7 +11,7 @@ Ergänzt `05-dosen/_entsorgt.md`: dort steht die Begründung für gepackte, dann
 
 **Matrix (Stand 20.09.2026):** Alle Dosen stehen jetzt auch in `03-zuordnung/amelie-matrix.md` (Eichflächen-Trainer, Kartierlotse, Lichtplan-Check, Biotoptyp-Assistent, Feuerkugel-Sofortnetz vom Sekretariat in `9d9a096` nachgetragen; Wärmesignatur und Denkmal-Verlaufsblick ebenfalls). Vorher fehlten diese Dosen dort, weil der Gemini-Commit `9607f8a` die Matrix überschrieben hatte und nur `06-suche/` wiederhergestellt wurde (`40e25ee`). Die Matrix gehört nicht der Bibliothek; Abgleich gegrept, nicht nach Augenmaß.
 
-**Fälligkeit (Stand 21.09.2026): nichts überfällig. Eine `unklar`-Zeile offen** — „Wettbewerbliche Übernahme einer Individuum-Patenschaft" aus Runde 6, siehe unten. Vorherige Fassung dieses Absatzes (19.09.): keine `unklar`-Zeile offen.
+**Fälligkeit (Stand 21.09.2026, nach dem Nachtrag): nichts überfällig, keine `unklar`-Zeile offen.** Die im Laufe der Runde 6 entstandene `unklar`-Zeile (wettbewerbliche Übernahme) ist im Nachtrag desselben Tages auf `verengt` aufgelöst worden. Nächste Fenster: **03/2027** — die bisherigen plus Chronist-Modell, Tamagotchi-Zustand, Übergabe/Nachbesetzung, Gieß-den-Kiez-Recheck · **09/2027** umkämpfter Ortsbesitz und die übrigen datierten Zeilen · **09/2028** Räucher-Sim.
 
 **Fälligkeit (Stand 19.09.2026): nichts überfällig, keine `unklar`-Zeile offen.** Nächste Fenster: **03/2027** — Diffgeist, Spec-Drift Detector, Agent Postmortem Recorder, Traumtagebuch, KlarLokal, Biotoptyp-Assistent, Bebauungsplan-Leser · **05/2027** Crack Flora Watcher · **09/2027** alle übrigen datierten Zeilen · **09/2028** Räucher-Sim. Strukturmonitoring per LiDAR hat kein Datum (nie gepackt).
 
@@ -48,6 +48,27 @@ oder es ist das lauffähige Skelett, das die Dose nach Regel 4 an einen unbezahl
 zustellbar macht. Entscheidung bei Félix, hier nur vermerkt.
 
 ---
+
+## Nachtrag Runde 6 — 21.09.2026 („Dose altert" auf die *neue* Dose angewandt)
+
+Die Dose `fugenduell-patenschaft.md` war gepackt, aber nicht geprüft — ihre eigene Restlücke
+(„eine Reihe überlebt die Person") hatte noch keine eigene Suche. Genau der Fehler, den die Retro
+dieser Runde der Vorgängerdose vorwirft. Hier nachgeholt, bevor irgendetwas zugestellt wird.
+
+| Idee | Urteil | Beleg (kurz) | Prüfen ab |
+|---|---|---|---|
+| **Übergabe/Nachbesetzung einer laufenden Beobachtungsreihe** (Restlücke der neuen Dose) | **`verengt` bestätigt, Lücke enger und schärfer** | Der ernsthafteste Nachbar ist **Nature's Notebook**: Der *Local Phenology Program Guide* (USA-NPN, PDF gelesen) nennt ausdrücklich eine Übergabe — „you can transfer ownership of your managed Group to another person very easily via the **Manage Users** functionality **before you depart**" — plus organisatorische Nachfolgeplanung („document your process to ensure your program is sustainable long after you leave your post", zweite Person als Admin benennen). Damit ist die Übergabe **auf Gruppen-/Programmebene und als Verwaltungsakt besetzt**. Nicht abgedeckt bleibt genau der Fall der Dose: die Person handelt *nicht*, sie hört einfach auf. Kein Zustand, der ohne ihr Zutun eintritt, keine Nachbesetzung eines einzelnen Postens durch eine fremde Person mit Bestätigung. Die Projektseite `usanpn.org/community/LocalPhenologyPrograms` sagt dazu nichts — der Befund steht nur im Leitfaden. | 03/2027 |
+| **Gieß den Kiez: Verfall/Übertragung der Adoption** (Kipprisiko Nr. 1 der Dose) | **ausgeräumt — Lücke am Quellcode belegt** | Nicht mehr nur die Projektseite: Repo am 21.09.2026 geklont und durchsucht (`github.com/technologiestiftung/giessdenkiez-de`). `src/components/tree-detail/stores/adopt-tree-store.tsx` kennt **`adoptTree`, `unadoptTree`, `isAdopted`, `refreshIsTreeAdoptedByOthers` — sonst nichts**. Volltextsuche über `*.ts/*.tsx/*.sql/*.md`: **null Treffer** für `adoption_limit`, `MAX_ADOPT`, `expiry`, `inactiv`, `abandon`, `stale`, `verwais`, `verfall`; die Treffer für `expire`/`transfer` betreffen einen Splash-Screen bzw. ein SVG-Filterelement (`feComponentTransfer`) und eine FAQ-Zeile. **Neuer, stärkerer Befund:** Adoption ist **nicht exklusiv** (`alsoAdoptedByOtherUsers`, „Auch von anderen User:innen adoptiert") und laut eigener Oberfläche eine Zusage an die Nachbarschaft — „lässt Du Deine Nachbarschaft wissen, dass für diese Bäume gesorgt wird". Diese Zusage wird nie zurückgenommen. **Nicht lesbar in dieser Session:** Issues und Discussions (GitHub-API für diese Session gesperrt, Issue-Seiten per robots.txt untersagt) — vor Zustellung einmal von Hand durchsehen. | 03/2027 |
+| **Wettbewerbliche Übernahme** (die `unklar`-Zeile aus derselben Runde, Punkt 1 der Retro-Warteschlange) | **`verengt`** (vorher `unklar`) | Wie vorgemerkt mit **Spielbegriffen statt Funktionswörtern** erneut gesucht: `territory control`, `mayorship`, `gym`, Munzee, Turf, Ingress, jeweils gekreuzt mit Citizen Science / Conservation / Biodiversity. Diesmal kein Rauschen: Inbesitznahme und Verteidigung eines Ortes sind in Standortspielen ausgereift (**Munzee „Places Munzees"** und Virtual Gardens, Pokémon-GO-Arenen, Ingress-Portale). **Kein Treffer, der die Mechanik an einen realen, beobachteten Organismus bindet** oder an eine Pflegepflicht. Restlücke: ein umkämpftes Objekt, das außerhalb des Spiels weiterlebt und versorgt werden muss. **Bewusst nicht in die Dose übernommen** — die Mechanik richtet sich gegen Ehrenamtliche, Begründung in der Dose. Die Zeile ist damit beurteilt, aber nicht verwertet. | 09/2027 |
+
+**Damit ist keine `unklar`-Zeile mehr offen.**
+
+**Konsequenz für die Dose (eingearbeitet, nicht nur vermerkt):** „Das Problem" steht jetzt auf dem
+belegbaren Defekt statt auf einer allgemeinen Klage — eine Adoption, die niemand mehr ausübt, sagt
+der Nachbarschaft weiterhin, dass gesorgt ist. Nature's Notebook ist als Nachbar aufgenommen, mit
+der Abgrenzung „übergeben kann nur, wer übergibt". Das Kipprisiko „vielleicht hat Gieß den Kiez das
+schon" ist durch den Quellcode-Befund ersetzt worden durch ein echtes: **Adoption ist nicht
+exklusiv, also muss die Versorgung des Baums altern, nicht das Lesezeichen des Menschen.**
 
 ## Runde 4 — 20.09.2026
 
