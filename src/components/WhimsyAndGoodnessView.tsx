@@ -14,15 +14,20 @@ import {
   Lightbulb, 
   FileText, 
   MessageSquare, 
-  ExternalLink,
-  ShieldCheck,
-  Award,
-  BookOpen,
-  Feather,
-  Wand2,
-  Gift
+  ExternalLink, 
+  ShieldCheck, 
+  Award, 
+  BookOpen, 
+  Feather, 
+  Wand2, 
+  Gift,
+  Camera,
+  Hand
 } from 'lucide-react';
 import { Language } from '../types';
+import { GrainSackZenGame } from './GrainSackZenGame';
+import { TravelingGnomeGame } from './TravelingGnomeGame';
+import { PhotoboothAlbumGame } from './PhotoboothAlbumGame';
 
 interface WhimsyAndGoodnessViewProps {
   lang: Language;
@@ -246,7 +251,7 @@ export const WhimsyAndGoodnessView: React.FC<WhimsyAndGoodnessViewProps> = ({ la
         </div>
 
         {/* Amélie's Secret Joys Bar */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 pt-2 text-xs">
           <div className="p-4 rounded-2xl bg-[#faf3e6] border border-[#d8cbba] space-y-1 shadow-2xs">
             <span className="font-amelie font-bold text-sm text-[#2b1e16] block flex items-center gap-1.5">
               <Utensils className="w-4 h-4 text-[#c5832b]" />
@@ -264,7 +269,7 @@ export const WhimsyAndGoodnessView: React.FC<WhimsyAndGoodnessViewProps> = ({ la
           <div className="p-4 rounded-2xl bg-[#faf3e6] border border-[#d8cbba] space-y-1 shadow-2xs">
             <span className="font-amelie font-bold text-sm text-[#2b1e16] block flex items-center gap-1.5">
               <Waves className="w-4 h-4 text-[#1b4332]" />
-              {lang === 'de' ? 'Steinehüpfen am Kanal' : lang === 'es' ? 'Hacer rebotar piedras en el canal' : 'Stone Skipping on Canal'}
+              {lang === 'de' ? 'Steinehüpfen am Kanal' : lang === 'es' ? 'Hacer rebotar piedras' : 'Stone Skipping on Canal'}
             </span>
             <span className="text-[#5c4a3d] leading-snug block">
               {lang === 'de'
@@ -277,15 +282,29 @@ export const WhimsyAndGoodnessView: React.FC<WhimsyAndGoodnessViewProps> = ({ la
 
           <div className="p-4 rounded-2xl bg-[#faf3e6] border border-[#d8cbba] space-y-1 shadow-2xs">
             <span className="font-amelie font-bold text-sm text-[#2b1e16] block flex items-center gap-1.5">
-              <Gift className="w-4 h-4 text-[#8c1d40]" />
-              {lang === 'de' ? 'Die Kula-Gabe' : lang === 'es' ? 'El Regalo Kula' : 'The Kula Gift'}
+              <Hand className="w-4 h-4 text-[#b45309]" />
+              {lang === 'de' ? 'Hand im Kornsack' : lang === 'es' ? 'Mano en el saco' : 'Hand in Grain Sack'}
             </span>
             <span className="text-[#5c4a3d] leading-snug block">
               {lang === 'de'
-                ? 'Einem Fremden etwas schenken, das sein Leben leichter macht — und dann spurlos verschwinden.'
+                ? 'Tief in einen Jutesack voller Linsen tauchen und das kühle Korn an den Fingern spüren.'
                 : lang === 'es'
-                ? 'Regalar a un desconocido algo que alivie su carga y desvanecerse en silencio.'
-                : 'Gift a stranger something that lightens their burden—and quietly vanish.'}
+                ? 'Hundir la mano en un saco de legumbres y sentir los granos frescos deslizarse.'
+                : 'Plunge your hand deep into a cool burlap sack of lentils and sift for treasures.'}
+            </span>
+          </div>
+
+          <div className="p-4 rounded-2xl bg-[#faf3e6] border border-[#d8cbba] space-y-1 shadow-2xs">
+            <span className="font-amelie font-bold text-sm text-[#2b1e16] block flex items-center gap-1.5">
+              <Camera className="w-4 h-4 text-[#8c1d40]" />
+              {lang === 'de' ? 'Reisender Gartenzwerg' : lang === 'es' ? 'Gnomo trotamundos' : 'Traveling Gnome'}
+            </span>
+            <span className="text-[#5c4a3d] leading-snug block">
+              {lang === 'de'
+                ? 'Den verstaubten Gartenzwerg entführen und Postkarten von Weltwundern senden.'
+                : lang === 'es'
+                ? 'Raptar al gnomo de jardín y enviar postales desde las maravillas del mundo.'
+                : 'Kidnap Papa’s garden gnome and mail deadpan postcards from the Pyramids.'}
             </span>
           </div>
         </div>
@@ -444,6 +463,15 @@ export const WhimsyAndGoodnessView: React.FC<WhimsyAndGoodnessViewProps> = ({ la
           </div>
         </div>
       </div>
+
+      {/* SILLY GAME 1: PLONGER LA MAIN AU PLUS PROFOND D'UN SAC DE GRAINS */}
+      <GrainSackZenGame lang={lang} />
+
+      {/* SILLY GAME 2: LE NAIN DE JARDIN VOYAGEUR (THE TRAVELING GNOME) */}
+      <TravelingGnomeGame lang={lang} />
+
+      {/* SILLY GAME 3: L'ALBUM DE PHOTOMATON DE NINO (THE METRO PHOTOBOOTH & MYSTERY MAN) */}
+      <PhotoboothAlbumGame lang={lang} />
 
       {/* SECTION 2: AMÉLIE'S RANDOM ACT OF KIND MISCHIEF (Zettel aus der Blechdose) */}
       <div className="p-6 md:p-8 rounded-3xl bg-[#f7f4ec] border border-amber-900/20 space-y-5">
