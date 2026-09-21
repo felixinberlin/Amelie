@@ -143,18 +143,19 @@ CI: Node + headless Chromium, läuft in unter 2 Minuten.
 
 ---
 
-## 6. Erstes Ticket
+## 6. Erstes Ticket (Überarbeitet für Open Source & RTE-Plugin)
 
-**`P0-1: WebGL2-Harness + Papiergenerator`**
+**`Ticket #1: @wet-ink/core — Headless Fluid-Kernel & TipTap/RTE Signatur-Block`**
 
-- Vite + TS strict + Vitest Setup, `engine/` ohne React-Import
-- `gl/FboPool`: Ping-Pong-Paar, RGBA16F, Resize-Handling, Extension-Check mit klarer Fehlermeldung
-- `paper/generate.ts`: seeded fBm (Höhe), Richtungsfeld (Fasern), Capacity-Map → drei Kanäle in eine Textur
-- `render/paper.frag`: Höhenfeld mit schrägem Licht, damit die Körnung sichtbar ist
-- Debug-Overlay: FPS, Sim-Auflösung, aktiver Puffer
-- Test: `paper.determinism.test.ts` — Seed 42, Hash stabil
-
-**Done wenn:** leeres Papier auf dem Schirm, drei Presets sehen unterschiedlich aus, `npm test` grün.
+- **Framework-freie Kern-Engine** in `src/engine/wet-ink/` ohne React- oder Three.js-Abhängigkeiten (< 15 kB)
+- **Substrat-Generator**: Seeded fBm (Höhe/Körnung), anisotropes Faser-Vektorfeld, Kapazitätskarte
+- **7-Pass-Simulation mit Kapillarschwelle $\varepsilon_{\min}$**: Verhindert den „Rauch-Bug" und erzeugt physikalisches Feathering entlang der Papierfasern
+- **3-Phasen-Lebenszyklus für Editoren**:
+  - *Phase 1 (Nass, 60 FPS)*: Aktive Zeichendynamik, Druck/Geschwindigkeit, Fluidströmung
+  - *Phase 2 (Trocknung, ~3-4s)*: Kontaktlinien-Verdampfung und physikalisches Edge Darkening (Kaffeering-Effekt)
+  - *Phase 3 (Ruhezustand, 0 FPS)*: Einfrieren in `ImageBitmap`, vollständiges Beenden der Animationsschleife (0% CPU/GPU im Ruhezustand)
+- **Dual-Speicherformat**: Delta-komprimierter Vektor-Eventstream (1-4 KB) + gebackenes PNG-Fallback
+- **Done wenn:** Ein Strich auf Washi-Papier sichtbar ausfranst, am Rand nachdunkelt, nach 3 Sekunden einfriert und in einem TipTap/ProseMirror-Dokument als serialisierbarer Block mit 0% CPU-Last ruht.
 
 ---
 

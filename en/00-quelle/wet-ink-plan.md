@@ -144,18 +144,19 @@ CI: Node + headless Chromium, runs in under 2 minutes.
 
 ---
 
-## 6. First ticket
+## 6. First ticket (Rewritten for Open Source & RTE Plugin)
 
-**`P0-1: WebGL2 harness + paper generator`**
+**`Ticket #1: @wet-ink/core — Headless Fluid Kernel & TipTap/RTE Signature Node`**
 
-- Vite + TS strict + Vitest setup, `engine/` with no React import
-- `gl/FboPool`: ping-pong pair, RGBA16F, resize handling, extension check with a clear error message
-- `paper/generate.ts`: seeded fBm (height), direction field (fibers), capacity map → three channels into one texture
-- `render/paper.frag`: height field under raking light so the grain is visible
-- Debug overlay: FPS, sim resolution, active buffer
-- Test: `paper.determinism.test.ts` — seed 42, stable hash
-
-**Done when:** blank paper on screen, three presets visibly different, `npm test` green.
+- **Zero-dependency Core Engine** in `src/engine/wet-ink/` with no React or Three.js dependencies (< 15 kB)
+- **Substrate Generator**: Seeded fBm (height/grain relief), anisotropic fiber vector field, moisture capacity map
+- **7-Pass Simulation with Capillary Threshold $\varepsilon_{\min}$**: Eliminates the "smoke bug" and drives authentic physical feathering along paper fibers
+- **3-Phase Lifecycle for Rich-Text Editors**:
+  - *Phase 1 (Wet, 60 FPS)*: Active drawing dynamics, pressure/speed, fluid surface transport
+  - *Phase 2 (Drying, ~3-4s)*: Perimeter contact line evaporation and physical edge darkening (coffee-ring effect)
+  - *Phase 3 (Rest / Dormant, 0 FPS)*: Freeze state into `ImageBitmap`, killing animation loop (0% CPU/GPU at rest)
+- **Dual Serialization Format**: Delta-compressed vector stroke event stream (1-4 KB) + baked PNG raster fallback
+- **Done when:** A stroke on washi paper visibly feathers, darkens at the outer perimeter, freezes after 3 seconds, and rests inside a TipTap/ProseMirror document as a serialized block with 0% CPU consumption.
 
 ---
 

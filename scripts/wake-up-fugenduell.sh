@@ -14,6 +14,9 @@
 #     see BRAINSTORM_DIR below.
 #
 # Phases, because packing before the verdicts exist is how a tin gets a claim it can't keep:
+#   Phase 0           — archivist: pulls the brainstorm out of Google Drive into the repo.
+#                       Run once. Needs a Drive connector in the session; if there is none,
+#                       export the files by hand and skip this phase.
 #   Phase 1 (default) — 3 checkers, one load-bearing claim each, max 4 searches per idea,
 #                       at least one ENGLISH product search each (the "Dose altert" rule).
 #                       They write verdicts only. They do NOT pack anything.
@@ -41,25 +44,26 @@ SKIP_BRAINSTORM_CHECK=0
 
 usage() {
   cat <<'EOF'
-Usage: wake-up-fugenduell.sh [--phase 1|2] [--dry-run] [--model <name>]
+Usage: wake-up-fugenduell.sh [--phase 0|1|2] [--dry-run] [--model <name>]
                              [--permission-mode <mode>] [--only role[,role...]]
                              [--skip-brainstorm-check]
 
 Task team for the second crack-flora tin ("Fugenduell", the game layer).
 
+  Phase 0:           archivar                                       — Drive -> repo, run once
   Phase 1 (default): pruefer-custody, pruefer-stats, pruefer-feld   — verdicts only
   Phase 2:           packer, tester, secretary, designer(optional)  — tin, audit, delivery
 
 Options:
-  --phase 1|2                Which phase to wake (default: 1)
+  --phase 0|1|2              Which phase to wake (default: 1)
   --dry-run                  Print the commands without launching anything
   --model <name>             Model alias or full name (default: sonnet, or $AMELIE_TEAM_MODEL)
   --permission-mode <mode>   acceptEdits | auto | bypassPermissions | manual | dontAsk | plan
                               (default: acceptEdits, or $AMELIE_TEAM_PERMISSION_MODE)
                               The checkers need web search; if they stall on prompts, rerun
                               with --permission-mode bypassPermissions (trusted sandbox only).
-  --only role[,role...]      Subset of: pruefer-custody, pruefer-stats, pruefer-feld,
-                              packer, tester, secretary, designer
+  --only role[,role...]      Subset of: archivar, pruefer-custody, pruefer-stats,
+                              pruefer-feld, packer, tester, secretary, designer
   --skip-brainstorm-check    Start even if the brainstorm folder is missing/empty
   -h, --help                 This message
 
@@ -72,6 +76,7 @@ Env:
 
 Examples:
   ./wake-up-fugenduell.sh --dry-run
+  ./wake-up-fugenduell.sh --phase 0             # once: pull the brainstorm out of Drive
   ./wake-up-fugenduell.sh                       # phase 1: the three checkers
   ./wake-up-fugenduell.sh --phase 2             # after the verdicts are in the protocol
   ./wake-up-fugenduell.sh --phase 2 --only secretary
@@ -92,8 +97,8 @@ while [[ $# -gt 0 ]]; do
 done
 
 case "$PHASE" in
-  1|2) ;;
-  *) echo "--phase must be 1 or 2" >&2; exit 1 ;;
+  0|1|2) ;;
+  *) echo "--phase must be 0, 1 or 2" >&2; exit 1 ;;
 esac
 
 wants() {
@@ -105,23 +110,22 @@ wants() {
 # Guard: the brainstorm has to be in the repo, or every agent will invent it.
 # ---------------------------------------------------------------------------
 ABS_BRAINSTORM="${REPO_DIR}/${BRAINSTORM_DIR}"
-if [[ "$SKIP_BRAINSTORM_CHECK" == 0 && "$DRY_RUN" == 0 ]]; then
+if [[ "$SKIP_BRAINSTORM_CHECK" == 0 && "$DRY_RUN" == 0 && "$PHASE" != 0 ]]; then
   if [[ ! -d "$ABS_BRAINSTORM" ]] || [[ -z "$(ls -A "$ABS_BRAINSTORM" 2>/dev/null)" ]]; then
     cat >&2 <<EOF
 ERROR: no brainstorm material found at ${BRAINSTORM_DIR}/
 
 This team must read the actual design docs, not reconstruct them from a prompt.
-Export these from the Drive folder into ${BRAINSTORM_DIR}/ first:
+Fetch them first:
 
-  Mechanics.md                        core loop, claim model, Fugenduell rules, prior art (sec. 8)
-  skill-tree.md                       base stats, the 6 stats and their trait sources
-  economy.txt                         seed market, cross-city trading
-  fungenduell-caring.md               custody/Chronist reframe, retention engine
-  fungenduel-retencion.md             Pacht model, 2-3 week re-engagement window
-  crack-flora-starter-roster.docx     14 species, CSR classes, 36-point stat budget
-  dandelion.md, muraria.md            two worked example cards
+  ./scripts/wake-up-fugenduell.sh --phase 0
 
-Then rerun. To start anyway (not recommended): --skip-brainstorm-check
+Phase 0 wakes the archivist, which pulls the nine files out of the Drive folder
+(see 02-recherche/fugenduell-briefing-2026-09-21.md for the folder link and the
+file IDs). If this session has no Drive connector, export them by hand into
+${BRAINSTORM_DIR}/ instead.
+
+To start without the material anyway (not recommended): --skip-brainstorm-check
 EOF
     exit 1
   fi
@@ -194,6 +198,54 @@ to search differently next time) / besetzt (with a source no older than 12 month
 Append your line(s) to 06-suche/amelie-pruefprotokoll.md in the current round's section,
 tagged '[method: ideenrunde] [dose: ${DOSE_SLUG}]', and update the status of any source you
 used in 06-suche/amelie-quellen.md. Keep out of the other two checkers' claims."
+
+# ===========================================================================
+# PHASE 0 — get the brainstorm out of Drive and into the repo. Run once.
+# ===========================================================================
+if [[ "$PHASE" == 0 ]]; then
+
+if wants archivar; then
+  launch "fugen-archivar" \
+"Your role is Archivist, and you run before anyone else. Your only job is to bring the
+brainstorm out of Google Drive into ${BRAINSTORM_DIR}/ so the rest of the team reads the real
+documents instead of a summary of them. You do not judge the material, you do not search the
+web, you do not write a tin.
+
+Source folder (owner: felixinberlin@googlemail.com):
+  https://drive.google.com/drive/folders/1SpOXV-qyePWMok_YLkjBP85GO2nISWCX
+
+Nine files plus an images/ subfolder. Fetch each by ID — do not search by name, and never
+guess an ID:
+  1Y9vY0MeCzeOMakf85oUPqftdVh2w46O3  Mechanics.md          core loop, claim model, battles, prior art sec. 8
+  1eJ0KKs-rhfgg4OJfGDvjdI_FL4PBGgNO  skill-tree.md         the 6 stats and their trait sources
+  1Aqa94k3i49N102ZBBPDu6_kBmEwrmDqN  data-flora-quellen.md every data source per RPG element
+  1-cL3WhDPlcgo0TEUC59UoIh4LA1q3n87  economy.txt           seed market, cross-city trading
+  1QhPh1geZXSI6vff-35GsHXNQobG3ZRrc  fungenduell-caring.md custody/Chronist reframe
+  1_S1zTp8KE-Cp78JfgnIjlmt__t79x3c-  fungenduel-retencion.md  Pacht model, re-engagement window
+  1aFBJoFwBDhz_exF2YzeOR7-v6m5zDw-M  crack-flora-starter-roster.docx  14 species, CSR, 36-point budget
+  1Y7q9xrcSxoKtERXgzSy5kbJpK_ufjmyu  dandelion.md          worked example card
+  1rFEvM84Q5-eyaRsOUTjsmOdidAObdCD8  muraria.md            worked example card
+  1KWvyo-eZmZkuVbMp1q36EtRpJ9OyFtJh  images/               subfolder — list it and fetch what is in it
+
+Rules for this job:
+  - Keep the original filenames and the original content. Do not summarize, reformat,
+    translate, fix or 'improve' anything — later roles check these documents against each
+    other, and an edited copy makes that impossible. The .docx stays a .docx.
+  - Write a short ${BRAINSTORM_DIR}/README.md: source folder URL, fetch date, one line per
+    file saying what it contains, and the Drive modifiedTime of each so a later round can
+    tell whether the material has moved on.
+  - If a file will not fetch, say which one and why. Do not substitute anything for it, and do
+    not reconstruct it from the briefing — a missing document is a fact the team needs, not a
+    gap to fill.
+  - If this session has no Drive connector at all, stop immediately and say so plainly. Do not
+    improvise a workaround." \
+"Fetch the nine files and the images/ subfolder listed in your role prompt into
+${BRAINSTORM_DIR}/, unchanged, keeping their names. Then write ${BRAINSTORM_DIR}/README.md as
+described. Finish with a table of what landed (filename, size, Drive modifiedTime) and a plain
+list of anything that did not, so phase 1 knows what it is working without."
+fi
+
+fi
 
 # ===========================================================================
 # PHASE 1 — three load-bearing claims, one checker each
@@ -447,7 +499,11 @@ echo
 if [[ "$DRY_RUN" == 1 ]]; then
   echo "(dry run — nothing was actually launched)"
 fi
-if [[ "$PHASE" == 1 ]]; then
+if [[ "$PHASE" == 0 ]]; then
+  echo "Phase 0 roster: fugen-archivar"
+  echo "When ${BRAINSTORM_DIR}/ holds the documents, run:"
+  echo "  ./scripts/wake-up-fugenduell.sh"
+elif [[ "$PHASE" == 1 ]]; then
   echo "Phase 1 roster: fugen-pruefer-custody, fugen-pruefer-stats, fugen-pruefer-feld"
   echo "When their verdict lines are in 06-suche/amelie-pruefprotokoll.md, run:"
   echo "  ./scripts/wake-up-fugenduell.sh --phase 2"

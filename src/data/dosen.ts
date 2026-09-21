@@ -850,17 +850,17 @@ export const DOSEN_DATA: DoseItem[] = [
     sketchDe: 'Drei gekoppelte Texturschichten: Papierfasern (Höhe, Richtung, Kapazität), Oberflächenwasser (Geschwindigkeit, Pigment), Faserschicht (Deponiertes Pigment). Sieben Shader-Pässe mit Kapillarschwelle.',
     sketchEn: 'Three linked simulation textures: paper substrate (roughness, grain vector, moisture capacity), water layer (velocity, suspended pigment), and stained fiber layer. 7 sequential shader passes.',
     firstStepDe: {
-      ticket: 'P0: WebGL2-Harness und prozeduraler Papiergenerator.',
-      criteria: 'Ping-Pong FBOs und fBm-Rauschen erzeugen sichtbare Papierkörnung und Faserorientierung.'
+      ticket: 'Ticket #1: @wet-ink/core — Headless Fluid-Kernel & TipTap/RTE Signatur-Block.',
+      criteria: 'Framework-freie TS-Engine (<15 kB) mit 7-Pass-Simulation, Kapillarschwelle ε_min und 3-Phasen-Lifecycle (Nass 60 FPS → Trocknen 3s → 0 FPS Ruhezustand). Lauffähig als Drop-in in TipTap und tldraw.'
     },
     firstStepEn: {
-      ticket: 'P0: WebGL2 harness and procedural paper grain generator.',
-      criteria: 'Ping-pong FBOs with seeded fBm noise generate authentic paper substrate texture maps.'
+      ticket: 'Ticket #1: @wet-ink/core — Headless Fluid Kernel & TipTap/RTE Signature Node.',
+      criteria: 'Zero-dependency TS engine (<15 kB) with 7-pass simulation, capillary threshold ε_min, and 3-phase lifecycle (Wet 60 FPS → Drying 3s → 0 FPS Rest). Runs as a drop-in node in TipTap and tldraw.'
     },
     failureModeDe: 'Rauch statt Tinte: Ohne strikte Kapillarschwelle diffundiert das Pigment wolkig wie Rauch. Reihenfolge im Plan: Feathering vor Fluidströmung.',
     failureModeEn: 'The smoke bug: Without a strict capillary threshold, ink bleeds like soft smoke. The 12-day plan enforces capillary threshold before fluid advection.',
-    priorArtDe: 'Rebelle bietet herausragende Desktop-Physik; im Webbrowser fehlt eine leichtgewichtige, quelloffene physikalische Tintensimulation.',
-    priorArtEn: 'Rebelle by Escape Motions is the gold standard on desktop; open lightweight browser implementations are non-existent.'
+    priorArtDe: 'Kommerzielle Monolithe verlangen 90–150 $ (Rebelle) oder 10–65 $/Monat (Adobe Fresco) für proprietäre Desktop-Silos. Unsere freie Web-Infrastruktur verschenkt diese Physik als offenes Plugin.',
+    priorArtEn: 'Commercial monoliths charge $90–$150 (Rebelle) or $10–$65/mo (Adobe Fresco) for closed desktop silos. Our open web infrastructure releases this physics as a free, embeddable plugin.'
   },
   {
     id: 'pillsafe-vision',

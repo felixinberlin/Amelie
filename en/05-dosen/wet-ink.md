@@ -38,7 +38,10 @@ The full plan with phases, tests, risks, and reading list: `wet-ink-plan.md`.
 
 ## First step
 
-**P0: WebGL2 harness and paper generator.** Ping-pong FBOs, seeded fBm for the grain, a direction field for the fibers, a capacity map. Done when blank paper with grain is on screen and three presets look visibly different.
+**Ticket #1: `@wet-ink/core` — Headless Fluid Kernel & TipTap/RTE Signature Node.**
+A zero-dependency TypeScript engine (< 15 kB gzipped) with 7-pass simulation, capillary threshold $\varepsilon_{\min}$, and 3-phase lifecycle (*Wet 60 FPS* $\rightarrow$ *Drying 3s* $\rightarrow$ *0 FPS Rest / 0% CPU*). Embeddable as an open-source drop-in plugin for TipTap/ProseMirror, tldraw, and web signature blocks — eliminating $150 proprietary licenses, server costs, and native desktop binary requirements.
+
+**Done when:** A stroke on washi paper visibly feathers along fibers, darkens at the evaporative perimeter, freezes after 3 seconds, and rests inside a rich-text document as a serialized block with 0% CPU consumption.
 
 ## Where it breaks
 
