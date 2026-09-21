@@ -152,3 +152,4 @@ Nebenbefund für die Empfängerwahl: Radicchi finanziert Hush City seit 2020 pri
 | Altbau Thermal | EnergyMap-Verbund / UdK Berlin | **gesendet 20.09.2026**, Antwort offen |
 | Sperrmüll-Radar | CityLAB Berlin (+ Re-Use Berlin, BSR als Partner) | **gesendet 21.09.2026** (in Mail 2), Antwort offen |
 | Kiez-Lärmkarte | CityLAB + Noise-Planet | **gesendet 21.09.2026** (in Mail 2 & Mail 3), Antwort offen |
+| Beobachtungsposten mit Übergabe | CityLAB Berlin (Gieß den Kiez) | **Entwurf** `mails-q4-2026/mail-4-citylab-patenschaft.md`, bewusst **nicht** gesendet — dieselbe Adresse wie Mail 2 (21.09.), Abstand halten, sonst ist es Nachfassen. Vorher Issues von `giessdenkiez-de` von Hand durchsehen |

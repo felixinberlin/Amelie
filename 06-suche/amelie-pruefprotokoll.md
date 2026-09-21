@@ -11,11 +11,87 @@ Ergänzt `05-dosen/_entsorgt.md`: dort steht die Begründung für gepackte, dann
 
 **Matrix (Stand 20.09.2026):** Alle Dosen stehen jetzt auch in `03-zuordnung/amelie-matrix.md` (Eichflächen-Trainer, Kartierlotse, Lichtplan-Check, Biotoptyp-Assistent, Feuerkugel-Sofortnetz vom Sekretariat in `9d9a096` nachgetragen; Wärmesignatur und Denkmal-Verlaufsblick ebenfalls). Vorher fehlten diese Dosen dort, weil der Gemini-Commit `9607f8a` die Matrix überschrieben hatte und nur `06-suche/` wiederhergestellt wurde (`40e25ee`). Die Matrix gehört nicht der Bibliothek; Abgleich gegrept, nicht nach Augenmaß.
 
+**Fälligkeit (Stand 21.09.2026, nach dem Nachtrag): nichts überfällig, keine `unklar`-Zeile offen.** Die im Laufe der Runde 6 entstandene `unklar`-Zeile (wettbewerbliche Übernahme) ist im Nachtrag desselben Tages auf `verengt` aufgelöst worden. Nächste Fenster: **03/2027** — die bisherigen plus Chronist-Modell, Tamagotchi-Zustand, Übergabe/Nachbesetzung, Gieß-den-Kiez-Recheck · **09/2027** umkämpfter Ortsbesitz und die übrigen datierten Zeilen · **09/2028** Räucher-Sim.
+
 **Fälligkeit (Stand 19.09.2026): nichts überfällig, keine `unklar`-Zeile offen.** Nächste Fenster: **03/2027** — Diffgeist, Spec-Drift Detector, Agent Postmortem Recorder, Traumtagebuch, KlarLokal, Biotoptyp-Assistent, Bebauungsplan-Leser · **05/2027** Crack Flora Watcher · **09/2027** alle übrigen datierten Zeilen · **09/2028** Räucher-Sim. Strukturmonitoring per LiDAR hat kein Datum (nie gepackt).
 
 **Runde-2-Überlebende ohne Dose:** Glasanflug-Ampel (`frei`), Brettchen-Vorsortierer (`frei`), Streiflicht (`verengt`) wurden nie gepackt und laufen ab 09/2027 aus dem Prüffenster. Bewusst so oder liegengeblieben? — Entscheidung bei Félix, siehe Playbook-Retro 19.09. (2).
 
 ---
+
+## Runde 6 — 21.09.2026 (Fugenduell / Crack Flora Watcher, method: ideenrunde)
+
+Auftrag: Dose Crack Flora Watcher gegen das Fugenduell-Brainstorm prüfen (Material:
+`02-recherche/fugenduell-brainstorm/`, Herkunft in `QUELLEN.md`). Kein freies Suchen nach neuen
+Ideen — der Nutzer bringt die Idee mit, also Schritt 3 der Skill übersprungen.
+Vorzieh-Regel angewandt: Alltagsbezug → **englische Produktsuche zuerst**. Das war entscheidend,
+siehe erste Zeile.
+
+**Ergebnis in einem Satz: Die Restlücke, auf der die Dose seit dem 18.09. steht, gibt es nicht mehr.**
+
+| Idee | Urteil | Beleg (kurz) | Prüfen ab |
+|---|---|---|---|
+| **Crack Flora Watcher — Longitudinalspur derselben Pflanze** (Neubewertung, war `verengt` im Nachtrag 18.09.) | **`besetzt`** | Zwei Treffer decken die Kernfunktion vollständig ab, beide auf der Primärseite gelesen. **GrowApp** (GLOBE Niederlande, GLOBE European Phenology Campaign, Update Frühjahr 2024, iOS/Android/`growapp.today`): dieselbe Einzelpflanze über Zeit, **Kamera zeigt das vorherige Foto transparent zum Ausrichten**, erzeugt automatisch den Zeitraffer ab dem zweiten Bild. Das ist Punkt für Punkt die Skizzenzeile der Dose („Kamera-Overlay richtet neue Fotos am alten Rissverlauf aus; aus wiederholten Aufnahmen wird ein Video"). **Nature's Notebook** (USA-NPN): Nutzer registrieren **einzelne Pflanzen mit Spitznamen**, markieren sie im Feld und besuchen sie wiederholt; neue App Frühjahr 2026 mit „a leveled approach to monitoring". Die deutschen Suchen vom 18.09. hatten beides nicht gefunden. **Einschränkung:** Nature's Notebook ist US-Fokus mit kuratierter Artenliste (Ritzenunkraut nicht ausdrücklich); GrowApp-Seite nennt weder Länderliste noch Exportformate. Die Abdeckung der *Funktion* ist damit belegt, die der *Nische* nicht vollständig. | – |
+| **Gamifizierte Ritzenpflanzen-Entdeckung** (Neubewertung, war `verengt` mit Beleg „Seek") | **`besetzt (beim Empfänger selbst)`** | Schärfer als 18.09. gedacht: nicht nur Seek, sondern **Flora Incognita selbst** (in der Dose bislang als *nachrangiger Empfänger* geführt). `floraincognita.de/krautschau/` (Seite gelesen): eigenes Citizen-Science-Projekt „Krautschau" in der App, **Abzeichen über bis zu 40 Arten in fünf Stufen** im Mai, dazu „Flora-Routine" (Geozone, automatische Projektzuordnung ohne manuelles Taggen), Projekt läuft ganzjährig. Senckenberg verlinkt das offiziell (`senckenberg.de/de/krautschau/`, Seite gelesen) und nennt ObsIdentify als Alternative; Aktionszeitraum 2026 war 09.05.–10.06. (85 Spaziergänge, 66 Städte), 2027 vom 14.–23.05. Koordination Julia Krohmer (Senckenberg) + Alexandra-Maria Klein (Uni Freiburg). **Wer #Krautschau etwas über Gamifizierung anbietet, konkurriert mit dem Werkzeug, das Senckenberg selbst empfiehlt.** | – |
+| **Chronist-Modell — Patenschaft über ein einzelnes wildes Individuum im öffentlichen Raum** (neu, aus `fungenduell-caring.md` / `fungenduel-retencion.md`) | **`verengt`** | **Gieß den Kiez** (CityLAB Berlin / Technologiestiftung, Projektseite gelesen) hat das Kernstück bereits: „Users can indicate when and with how much water they last watered a tree and **can adopt it** if they want to water it regularly"; adoptierte Bäume stehen im Nutzerprofil, Nachbarn sehen, welcher Baum betreut wird. 885.825 Bäume, quelloffen (`github.com/technologiestiftung/giessdenkiez-de`, Wiki für Forks in anderen Städten), Laufzeit 2020 – laufend, tägliche Wetterdaten. Patenschaft über ein benanntes Individuum + protokollierte Pflegehandlung im öffentlichen Raum ist damit besetzt — und zwar beim Empfänger Rang 1. **Restlücke: Verfall der Patenschaft und geregelte Weitergabe.** Die Projektseite sagt zu Exklusivität, Inaktivität und Übertragung **nichts** — das ist keine Abwesenheit, nur eine Lücke in der gelesenen Quelle. | 03/2027 |
+| **Wettbewerbliche Übernahme** — Patenschaft verfällt nach *n* Tagen ohne Beobachtung, Dritte können sie fordern, Verteidigung per Foto / Wissensfrage / Duell (neu, Kernmechanik des Brainstorms) | **`unklar`** | Vier Suchen, davon zwei reines Rauschen (englische Produktsuche nach „claim/defend/stewardship expires" liefert Microsoft-Entra-Dokumentation und ein unverwandtes Match-3-Spiel; die generische Citizen-Science-Suche liefert Listicles). Kein Beweis der Abwesenheit. Bekannter Nachbar ist das Gym-Muster von Pokémon GO — das beansprucht aber **Orte**, keine Organismen; das ist eine Analogie, kein geprüfter Treffer. **Pl@nt Game** (Pl@ntNet/INRIA, `docs.plantnet.org`, Seite gelesen) hat einen Duell-Modus gegen Freunde oder Zufallsgegner — **die Doku sagt aber nicht, worum geduelliert wird**, nennt keine Regeln, keine Spielerzahlen und kein Datum; die Zahlen „22.000 Spieler, 94 % Genauigkeit" stammen aus dem Brainstorm, nicht aus der gelesenen Seite. Nächster Versuch mit Produkt-/Projektnamen statt Funktionswörtern (siehe Playbook-Retro). | 03/2027 |
+| **Tamagotchi-Zustand für eine wilde Pflanze ohne Sensor** — Trockenstress/Salz/Tritt aus Wetter-API + Arenatyp + Zeit seit letzter Beobachtung schätzen, mit Konfidenz (neu, aus `fungenduell-caring.md`) | **`verengt`** | Das Feld „Pflanze als Tamagotchi" ist kommerziell dicht, aber **durchgängig an Topfpflanze + Hardware gebunden**: Plantagotchi (Smart Planter), PlantBot Tamagotchi, dazu ein Tamagotchi-artiges Pflanzengerät auf der CES 2026 (Engadget/Newsbytes). Alle messen mit Bodenfeuchte-, Licht- und Temperatursensor am Topf. Kein Treffer für die sensorlose Variante: Zustand einer **wilden Pflanze im öffentlichen Raum** aus öffentlichen Wetterdaten plus Standortmetadaten geschätzt und als Unsicherheitsband ausgegeben. **Restlücke: sensorlos, öffentlicher Raum, Schätzung mit Konfidenz statt Messwert.** Nur Suchtreffer, keine Produktseite geöffnet. | 03/2027 |
+| Samenkarten-Markt, Cross-City-Handel, Auktionshaus (aus `economy.txt`) | **verworfen ohne Check (Mode-Liste)** | Das Dokument nennt seine Vorbilder selbst vollständig: Pokémon GTS/Wonder Trade, Neopets, Animal Crossing, Flight Rising, Warframe, Axie Infinity, Gods Unchained. Ein Handelsökosystem für Sammelkarten ist Standard-Spieldesign und keine Fähigkeit, die es vor zwei Jahren nicht gab — es fällt damit nicht unter die These des Manifests. Keine Suche verbraucht, zählt in keiner Trefferquote. | – |
+
+**Konsequenz für die Dose.** Die Dose `05-dosen/crack-flora-watcher.md` steht auf einem Satz, der nicht mehr trägt: „ein Werkzeug, das dieselbe Einzelpflanze über die Saison verfolgt (keine der genannten Apps tut das)". GrowApp tut genau das, Nature's Notebook auch. Die Dose in dieser Form ist nicht zustellbar. Was überlebt, ist schmaler und steht in `05-dosen/fugenduell-patenschaft.md` (Runde 6 gepackt).
+
+**Regel-5-Hinweis (Manifest).** Fugenduell liegt im Repo bereits als Code vor
+(`src/components/simulators/FugenduellArena.tsx`, 698 Z.; `src/data/fugenduellData.ts`, 437 Z.;
+HEAD-Commit `8407495 fungenduell`). Das Manifest erlaubt **zwei** behaltene Ideen, aktuell belegt
+durch Spec-Drift Detector und Wet Ink. Entweder ist Fugenduell die dritte — dann kippt Regel 5 —
+oder es ist das lauffähige Skelett, das die Dose nach Regel 4 an einen unbezahlten Empfänger
+zustellbar macht. Entscheidung bei Félix, hier nur vermerkt.
+
+---
+
+## Runde 6, Spiel-Strang — 21.09.2026 (auf Félix' Einwand: „geht die Idee nicht an einen Indie-Entwickler?")
+
+Anlass: Ich hatte die Wettbewerbsmechanik aus der Patenschafts-Dose gestrichen mit der Begründung
+„richtet sich gegen Ehrenamtliche". Félix' Einwand trifft: **In einem Spiel gibt es keine
+Ehrenamtlichen.** Der Einwand war kontextgebunden, nicht grundsätzlich. Fugenduell war nie *als
+Spiel* geprüft worden, nur als Bürgerwissenschaft. Vier Suchen plus zwei Empfängerprüfungen.
+
+| Idee | Urteil | Beleg (kurz) | Prüfen ab |
+|---|---|---|---|
+| **Das lebende Spielobjekt** — Standortspiel, dessen umkämpftes Objekt ein realer Organismus an einem realen Ort ist, der außerhalb des Spiels weiterlebt und aus echten Gründen stirbt | **`frei`** | Die Nachbarn kuratieren ihre Welt entweder vollständig oder verzichten auf Besitz — die Kreuzung ist leer. **Ortsbesitz an kuratierten, virtuellen Objekten:** Pokémon GO, Ingress, Munzee Places, ausgereift, ohne Lebensdauer. **Gebaute Welt mit echten Arten:** *Out and About* (Yaldi Games, Steam 2026), Cozy-Foraging über echte Pflanzen, beworben damit, dass man danach draußen bestimmen kann — Einzelspieler, keine Standortbindung, kein Kampf. **Echte Wissenschaft als Spielsystem:** *Niche* (Stray Fawn), echte Mendel-Genetik, kommerziell erfolgreich. **Wissenschaft in ein Spiel eingebettet:** MMOS/Project Discovery in EVE Online, hunderttausende Spieler, *Nature Biotechnology* 2024 — der umgekehrte Weg. **Bestimmungsduelle:** The Plant Game (Pl@ntNet) duelliert um Können, nicht um ein Objekt. Kein Treffer für ein Spielobjekt mit eigener Lebensdauer. Dose gepackt: `05-dosen/lebendes-spielobjekt.md` | 03/2027 |
+| *Nebenbefund:* „Spiel über echte Pflanzenarten" | `besetzt` | *Out and About* ist fertig, veröffentlicht und gut besprochen. Als eigenständiger Pitch tot — nur noch als Nachbar zu nennen | – |
+| *Empfängerprüfung:* Stray Fawn Publishing | **kein Empfänger — Verkaufskanal** | Publishing-Zweig seit März 2023 (nach *The Wandering Village*, 200.000+ verkauft), Fokus laut Ankündigung **Strategie, Simulation, City-Building**; Kontaktseite verlangt „a pitch deck and trailer" an `pitch@strayfawnstudio.com`. Eine Idee ohne Produkt dort einzuwerfen ist Kaltakquise, nicht Geschenk — Anti-Pattern im Manifest. Gehört in „Vorarbeit", nicht in die Adresszeile | – |
+| *Empfängerprüfung:* Pl@ntNet / The Plant Game | **Empfänger Rang 2, passt** | Bestimmungsmaschine, Spielerbasis, **bestehender Duell-Modus** und Datenmotiv liegen dort zusammen; die Idee wäre für sie eine Erweiterung, kein neues Unternehmen. Einschränkung wie in Runde 6: die Doku nennt keine Regeln, keine Spielerzahlen, kein Datum — Aktivitätsstand vor Zustellung prüfen (`theplantgame.com` erreichbar) | 03/2027 |
+| *Empfängerquelle:* ECSA 2026, Workshop W16 „Games for good" | **Feld hat Adressen** | Oulu, 03.03.2026 — **vorbei**, also kein Zustellziel. Aber die Convenors sind der Adressbestand des Felds: Liz Dowthwaite und Nimisha Parashar (University of Nottingham), **Jesse Himmelstein (Play Curious)**, **Attila Szantner (MMOS)**. Nächstes Fenster wäre ECSA 2027 | – |
+
+**Bilanz Spiel-Strang: 1 Idee, 1 `frei`.** Die erste freie Zeile seit Runde 3.
+
+**Lehre für die Empfängerwahl:** „ein Indie-Entwickler" ist keine Adresse, sondern die BCC-Mail an
+fünf Firmen. Die Adressen eines Felds stehen im Programm seiner Konferenz — der ECSA-Workshop hat
+in zwanzig Minuten vier Namen geliefert, von denen zwei Studios sind, deren Geschäft genau das ist.
+
+---
+
+## Nachtrag Runde 6 — 21.09.2026 („Dose altert" auf die *neue* Dose angewandt)
+
+Die Dose `fugenduell-patenschaft.md` war gepackt, aber nicht geprüft — ihre eigene Restlücke
+(„eine Reihe überlebt die Person") hatte noch keine eigene Suche. Genau der Fehler, den die Retro
+dieser Runde der Vorgängerdose vorwirft. Hier nachgeholt, bevor irgendetwas zugestellt wird.
+
+| Idee | Urteil | Beleg (kurz) | Prüfen ab |
+|---|---|---|---|
+| **Übergabe/Nachbesetzung einer laufenden Beobachtungsreihe** (Restlücke der neuen Dose) | **`verengt` bestätigt, Lücke enger und schärfer** | Der ernsthafteste Nachbar ist **Nature's Notebook**: Der *Local Phenology Program Guide* (USA-NPN, PDF gelesen) nennt ausdrücklich eine Übergabe — „you can transfer ownership of your managed Group to another person very easily via the **Manage Users** functionality **before you depart**" — plus organisatorische Nachfolgeplanung („document your process to ensure your program is sustainable long after you leave your post", zweite Person als Admin benennen). Damit ist die Übergabe **auf Gruppen-/Programmebene und als Verwaltungsakt besetzt**. Nicht abgedeckt bleibt genau der Fall der Dose: die Person handelt *nicht*, sie hört einfach auf. Kein Zustand, der ohne ihr Zutun eintritt, keine Nachbesetzung eines einzelnen Postens durch eine fremde Person mit Bestätigung. Die Projektseite `usanpn.org/community/LocalPhenologyPrograms` sagt dazu nichts — der Befund steht nur im Leitfaden. | 03/2027 |
+| **Gieß den Kiez: Verfall/Übertragung der Adoption** (Kipprisiko Nr. 1 der Dose) | **ausgeräumt — Lücke am Quellcode belegt** | Nicht mehr nur die Projektseite: Repo am 21.09.2026 geklont und durchsucht (`github.com/technologiestiftung/giessdenkiez-de`). `src/components/tree-detail/stores/adopt-tree-store.tsx` kennt **`adoptTree`, `unadoptTree`, `isAdopted`, `refreshIsTreeAdoptedByOthers` — sonst nichts**. Volltextsuche über `*.ts/*.tsx/*.sql/*.md`: **null Treffer** für `adoption_limit`, `MAX_ADOPT`, `expiry`, `inactiv`, `abandon`, `stale`, `verwais`, `verfall`; die Treffer für `expire`/`transfer` betreffen einen Splash-Screen bzw. ein SVG-Filterelement (`feComponentTransfer`) und eine FAQ-Zeile. **Neuer, stärkerer Befund:** Adoption ist **nicht exklusiv** (`alsoAdoptedByOtherUsers`, „Auch von anderen User:innen adoptiert") und laut eigener Oberfläche eine Zusage an die Nachbarschaft — „lässt Du Deine Nachbarschaft wissen, dass für diese Bäume gesorgt wird". Diese Zusage wird nie zurückgenommen. **Nicht lesbar in dieser Session:** Issues und Discussions (GitHub-API für diese Session gesperrt, Issue-Seiten per robots.txt untersagt) — vor Zustellung einmal von Hand durchsehen. | 03/2027 |
+| **Wettbewerbliche Übernahme** (die `unklar`-Zeile aus derselben Runde, Punkt 1 der Retro-Warteschlange) | **`verengt`** (vorher `unklar`) | Wie vorgemerkt mit **Spielbegriffen statt Funktionswörtern** erneut gesucht: `territory control`, `mayorship`, `gym`, Munzee, Turf, Ingress, jeweils gekreuzt mit Citizen Science / Conservation / Biodiversity. Diesmal kein Rauschen: Inbesitznahme und Verteidigung eines Ortes sind in Standortspielen ausgereift (**Munzee „Places Munzees"** und Virtual Gardens, Pokémon-GO-Arenen, Ingress-Portale). **Kein Treffer, der die Mechanik an einen realen, beobachteten Organismus bindet** oder an eine Pflegepflicht. Restlücke: ein umkämpftes Objekt, das außerhalb des Spiels weiterlebt und versorgt werden muss. **Bewusst nicht in die Dose übernommen** — die Mechanik richtet sich gegen Ehrenamtliche, Begründung in der Dose. Die Zeile ist damit beurteilt, aber nicht verwertet. | 09/2027 |
+
+**Damit ist keine `unklar`-Zeile mehr offen.**
+
+**Konsequenz für die Dose (eingearbeitet, nicht nur vermerkt):** „Das Problem" steht jetzt auf dem
+belegbaren Defekt statt auf einer allgemeinen Klage — eine Adoption, die niemand mehr ausübt, sagt
+der Nachbarschaft weiterhin, dass gesorgt ist. Nature's Notebook ist als Nachbar aufgenommen, mit
+der Abgrenzung „übergeben kann nur, wer übergibt". Das Kipprisiko „vielleicht hat Gieß den Kiez das
+schon" ist durch den Quellcode-Befund ersetzt worden durch ein echtes: **Adoption ist nicht
+exklusiv, also muss die Versorgung des Baums altern, nicht das Lesezeichen des Menschen.**
 
 ## Runde 4 — 20.09.2026
 
