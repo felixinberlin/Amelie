@@ -1,6 +1,6 @@
 # Mail 2 — Sperrmüll-Radar + Kiez-Lärmkarte → CityLAB Berlin
 
-**Status:** Überarbeiteter Entwurf nach Tiefenprüfung (Runde 4, 20.09.2026). Sendebereit, sobald Dose-Links stehen. Nicht gesendet.
+**Status:** Gesendet am 21.09.2026. Antwort offen (kein Nachfassen).
 **An:** info@citylab-berlin.org — allgemeine Kontaktadresse, auf `citylab-berlin.org/kontakt` (dort per Cloudflare verschleiert, aus dem Seitenquelltext dekodiert, 19.9.2026). Die Seite nennt genau diese Adresse für Projektideen und leitet intern weiter.
 **Betreff:** Zwei Ideen zu verschenken: Sperrmüll-Radar und Ruhe-Fenster-Karte
 **Vor dem Senden:** Body unten ab „Hallo CityLAB-Team" bis „Félix" kopieren. Beide Dose-Links prüfen.

@@ -143,7 +143,7 @@ Berlin · https://felixinberlin.github.io/Amelie/`
     titleEn: 'Template 3: Software Companies with Matching Products',
     targetDe: 'DevTools, SaaS mit bestehender Nutzerbasis (z.B. GitKraken, Tessl, Escape Motions, Socket)',
     targetEn: 'Developer tools, specialized software suites (e.g. GitKraken, Tessl, Socket)',
-    subjectDe: 'Free idea: [Feature-Name] for [Produktname]',
+    subjectDe: 'Idee zu verschenken: [Feature-Name] für [Produktname]',
     subjectEn: 'Free idea: [Feature Name] for [Product Name]',
     contextDe: 'Firmen haben bezahlte Ingenieure. Sie hassen vage Ideen von außen, schätzen aber messerscharf zugeschnittene Feature-Erweiterungen mit klarer Bruchstellen-Analyse.',
     contextEn: 'Companies employ salaried engineering teams. They dismiss vague pitches, but appreciate razor-sharp feature extensions grounded in technical reality.',
@@ -160,19 +160,19 @@ Berlin · https://felixinberlin.github.io/Amelie/`
       'No marketing pitch: Just 3 sentences of technical lever',
       'Zero calendar friction'
     ],
-    bodyDe: `Hi [Name / Team],
+    bodyDe: `Hallo [Name / Team],
 
-I research developer tooling that only recently became feasible, and I only build about one in twenty myself. This idea directly complements what you've shipped with [spezifisches Feature/Produkt], so it's yours to take.
+ich recherchiere Entwickler-Werkzeuge, die erst seit Kurzem technisch machbar sind, und baue selbst nur etwa jede zwanzigste Idee. Diese hier ergänzt direkt das, was Sie mit [spezifisches Feature/Produkt] gebaut haben — nehmen Sie sie gerne mit.
 
-[Problem in einem Satz: z. B. „Agents currently guess why code changed because git history, issues, and PR context are scattered"].
-[Lösung in einem Satz: z. B. „A unified blame-to-issue traversal exposed via MCP solves this without altering the developer's workflow"].
+[Problem in einem Satz: z. B. „Coding-Agenten raten aktuell, warum Legacy-Code geändert wurde, weil Git-Historie, Issues und PR-Diskussionen voneinander getrennt sind"].
+[Lösung in einem Satz: z. B. „Eine einheitliche Blame-to-Issue-Traversierung über das Model Context Protocol (MCP) löst dies ohne Bruch im Workflow des Entwicklers"].
 
-Here is a one-page breakdown with the architecture, the first implementation ticket, and the exact risk that could break it:
-https://felixinberlin.github.io/Amelie/ (or https://github.com/felixinberlin/Amelie/blob/main/05-dosen/[slug].md)
+Hier ist ein kompakter Einseiter mit der Architektur, dem ersten Implementierungs-Ticket und dem exakten Risiko, an dem es scheitern könnte:
+https://felixinberlin.github.io/Amelie/ (bzw. https://github.com/felixinberlin/Amelie/blob/main/05-dosen/[slug].md)
 
-Released under CC0 (Public Domain) — take it, adapt it, or discard it. You owe me nothing, not even an answer. If this is already on your roadmap or doesn't fit your current focus, please just ignore this email. I won't follow up.
+Veröffentlicht unter CC0 (Public Domain) — übernehmen, anpassen oder verwerfen. Sie schulden mir nichts, nicht einmal eine Antwort. Falls das bereits auf Ihrer internen Roadmap steht oder aktuell nicht passt, ignorieren Sie diese E-Mail bitte einfach. Ich fasse nicht nach.
 
-Best regards,
+Viele Grüße
 Félix
 Berlin · https://github.com/felixinberlin/Amelie`,
     bodyEn: `Hi [Name / Team],
@@ -198,36 +198,35 @@ Berlin · https://github.com/felixinberlin/Amelie`
     titleEn: 'Template 4: International Open Source & Sensor Networks',
     targetDe: 'NoiseCapture/Noise-Planet, OpenStreetMap Tasking Manager, Thünen-Institut',
     targetEn: 'NoiseCapture/Noise-Planet, OpenStreetMap workgroups, international sensor consortia',
-    subjectDe: 'Free idea: [Short Concept Title] — [Key shift / methodology]',
+    subjectDe: 'Idee zu verschenken: [Kurztitel] – [Methodenwechsel / Ruhe-Fenster]',
     subjectEn: 'Free idea: [Short Concept Title] — [Key shift, e.g. quiet windows over averages]',
     contextDe: 'Internationale Forschungs- und Sensornetzwerke verfügen oft über riesige Datenmengen, haben aber Lücken bei alltagsnahen Visualisierungen für Laien.',
     contextEn: 'International sensor consortia possess vast telemetry archives, but frequently miss user-centric micro-tools for neighborhood questions.',
     rulesApplied: [1, 2, 3, 4],
     keyStrengthsDe: [
-      'Englischer Text, präzise und respektvoll formuliert',
+      'Respektvoller, präziser Ton auf Augenhöhe mit internationalen Maintainern',
       'Würdigt bestehende Dateninfrastruktur',
-      'Kein Aufwand für die Maintainer, da reines Geschenk'
+      'Kein Aufwand für die Maintainer, da reines Geschenk',
+      'Ausdrückliche Zusage: Kein Nachfassen'
     ],
     keyStrengthsEn: [
       'Polished, precise English with respectful brevity',
       'Acknowledges and honors their existing data architecture',
       'Demands zero maintenance burden'
     ],
-    bodyDe: `Subject: Free idea: [Short Concept Title] — [Key shift, e.g. quiet windows instead of averages]
+    bodyDe: `Hallo [Projekt-Team],
 
-Hello [Project Team],
+ich recherchiere Open-Source-Softwarekonzepte, die durch neuere Tools technisch machbar geworden sind, und gebe diejenigen ab, die ich nicht selbst baue. Diese Idee gehört in Ihren Themenbereich.
 
-I research open-source software concepts enabled by recent commodity tooling, and I give away the ones I won't be building myself. This one belongs in your domain.
+[Bezug zum Projekt]: [Projektname] leistet hervorragende Arbeit bei [bisherige Leistung, z. B. weltweite Schallpegel-Messungen]. Anwohnende und Bürger stehen jedoch oft vor einer anderen praktischen Frage: [die Lücke, z. B. „Wann ist diese Straße tatsächlich leise?"].
+[Der Hebel / Methodenwechsel]: [Wie die Idee bestehende Sensordaten mit Privacy-by-Design alltagsnah nutzbar macht].
 
-[Bezug zu deren Tool]: [Project Name] provides excellent [what they do, e.g. crowdsourced sound measurements]. However, users often face a different practical question: [the gap, e.g. „When is this street actually quiet?"].
-[The shift]: [How the idea re-frames existing data/sensors with privacy-by-design].
+Ein kompakter Einseiter mit der Methode, dem ersten Entwicklungsschritt und der Sollbruchstelle:
+https://felixinberlin.github.io/Amelie/ (bzw. https://github.com/felixinberlin/Amelie/blob/main/05-dosen/[slug].md)
 
-One page outlining the method, the initial development step, and where the assumption might break:
-https://felixinberlin.github.io/Amelie/ (or https://github.com/felixinberlin/Amelie/blob/main/en/05-dosen/[slug].md)
+Alles steht unter CC0 / Gemeinfreiheit, vollkommen ohne Bedingungen. Falls Sie bereits an etwas Ähnlichem arbeiten oder es nicht zu Ihren aktuellen Meilensteinen passt, ignorieren Sie diesen Hinweis einfach. Ich fasse nicht nach.
 
-Everything is CC0 / Public Domain with zero obligations. If you are already working on this or it doesn't align with your milestones, simply ignore this note.
-
-Félix, Berlin
+Félix (Berlin)
 https://felixinberlin.github.io/Amelie/`,
     bodyEn: `Subject: Free idea: [Short Concept Title] — [Key shift, e.g. quiet windows instead of averages]
 

@@ -92,8 +92,10 @@ Both are CC0, without conditions. If either fits GovTech TestLAB or Kiezlabor ex
 Best regards,
 Félix (Berlin)`,
     doseLinks: ['sperrmuell-radar', 'kiez-laermkarte'],
-    scheduleDe: 'Versand nach Repo-Bereitstellung',
-    scheduleEn: 'Dispatch following repository publication'
+    scheduleDe: 'Gesendet am 21.09.2026',
+    scheduleEn: 'Sent on 2026-09-21',
+    sent: true,
+    sentAt: '2026-09-21'
   },
   {
     id: 'mail-3',
@@ -105,25 +107,23 @@ Félix (Berlin)`,
     recipientTypeEn: 'International Academic Research (Rank 2) · English',
     contactPathDe: 'Über das NoiseCapture-Repository bzw. noise-planet.org',
     contactPathEn: 'Via NoiseCapture repository / noise-planet.org team',
-    subjectDe: 'Subject: Free idea: quiet windows instead of average levels',
+    subjectDe: 'Idee zu verschenken: Ruhe-Fenster statt Jahresmittel',
     subjectEn: 'Subject: Free idea: quiet windows instead of average levels',
-    bodyDe: `Subject: Free idea: quiet windows instead of average levels
+    bodyDe: `Hallo NoiseCapture-Team,
 
-Hello,
+ich recherchiere Software-Ideen und verschenke diejenigen, die ich nicht selbst bauen werde. Diese Idee gehört zu Ihrer Forschungsgruppe.
 
-I research software ideas and give away the ones I won't build myself. This one belongs with your group.
+NoiseCapture kartiert gemessene Schallpegel weltweit. Offizielle Aktionspläne, wie auch der Berliner Lärmaktionsplan 2024–2029, arbeiten mit modellierten Jahresmittelwerten. Keines davon beantwortet die Frage, die Menschen bei der Wohnungssuche oder im Dialog mit Vermietern tatsächlich stellen: Wann ist diese Straße leise?
 
-NoiseCapture maps measured sound levels across the world. Official action plans, including Berlin's for 2024–2029, work with modelled yearly averages. Neither answers the question people actually ask when choosing a flat or arguing with a landlord: when is this street quiet?
+Um die Vorarbeit offen auf den Tisch zu legen: Hush City (an der TU Berlin entwickelt und 2018 von Berlin für die Quiet-Areas-Planung übernommen) hat die bürgerschaftliche Erfassung von alltäglichen Ruhe-Orten („everyday quiet areas") pionierhaft vorangebracht. Hush City bewertet jedoch statische Orte statt zeitlicher Zeitfenster und berechnet Pegel aus 44,1-kHz-Roh-Audioaufnahmen.
 
-To put prior art on the table: Hush City (developed at TU Berlin and adopted by Berlin in 2018 for quiet-area planning) pioneered civic mapping of "everyday quiet areas." However, Hush City rates static places rather than temporal windows, and computes levels from 44.1 kHz raw audio recordings.
+Dieselben Sensoren, andere Fragestellung: Eine Ruhe-Fenster-Karte pro Straßenabschnitt, lokal auf dem Gerät aggregiert, reine dB-Pegel, niemals Audio. Das Privacy-First-Design ist kein nachträgliches Feature; es ist die einzige Variante, die den Kontakt mit Bürgerinnen und Bürgern übersteht.
 
-Same sensors, different question — a quiet-window map per street segment, aggregated on-device, dB levels only, never audio. The privacy-first design is not a feature to add later; it is the only version that survives contact with users.
+Eine Seite mit der Skizze, dem ersten Ticket und der Sollbruchstelle: [Link zur Dose: Kiez-Lärmkarte]
 
-One page with the sketch, the first ticket, and the part most likely to kill it: [Link to Dose: Kiez-Lärmkarte]
+Vollständig CC0, ohne jede Bedingung, kein Nachfassen. Falls das ohnehin auf Ihrer Roadmap steht, ignorieren Sie diese Nachricht bitte einfach.
 
-CC0, no strings, no follow-up. If this is already in your roadmap, please just ignore this.
-
-Félix, Berlin`,
+Félix (Berlin)`,
     bodyEn: `Subject: Free idea: quiet windows instead of average levels
 
 Hello,
@@ -142,8 +142,10 @@ CC0, no strings, no follow-up. If this is already in your roadmap, please just i
 
 Félix, Berlin`,
     doseLinks: ['kiez-laermkarte'],
-    scheduleDe: 'Versand parallel zu Mail 2',
-    scheduleEn: 'Dispatch alongside Mail 2'
+    scheduleDe: 'Gesendet am 21.09.2026',
+    scheduleEn: 'Sent on 2026-09-21',
+    sent: true,
+    sentAt: '2026-09-21'
   },
   {
     id: 'mail-4',
@@ -243,24 +245,22 @@ Félix (Berlin)`,
     recipientTypeEn: 'Developer Tooling Founders (Rank 5) · English',
     contactPathDe: 'Guy Podjarny (@guypod) / Tessl Engineering Community',
     contactPathEn: 'Guy Podjarny (@guypod) / Tessl Engineering Community',
-    subjectDe: 'Subject: Free concept gift: Spec-Drift Detector for autonomous coding agents',
+    subjectDe: 'Ideen-Schenkung: Spec-Drift Detector für autonome Coding-Agenten',
     subjectEn: 'Subject: Free concept gift: Spec-Drift Detector for autonomous coding agents',
-    bodyDe: `Subject: Free concept gift: Spec-Drift Detector for autonomous coding agents
+    bodyDe: `Hallo Guy, hallo Tessl-Team,
 
-Hi Guy, hello Tessl team,
+ich recherchiere neu entstehende Software-Mechaniken und verschenke die Architektur-Entwürfe an diejenigen, die sie am besten bauen können. Diese Idee gehört zu Tessl.
 
-I research emerging software mechanics and gift the architecture briefs to the people uniquely positioned to build them. This one belongs with Tessl.
+Wenn autonome Coding-Agenten große Repositories über Dutzende Iterationen hinweg modifizieren, laufen die Tests zwar durch, aber der Code driftet schleichend von der ursprünglichen Architekturspezifikation ab. Nach dem 15. Prompt morphen Typen, Randfall-Verträge fallen weg und sekundäre Abstraktionen wuchern.
 
-When autonomous coding agents modify large repositories over dozens of iterations, tests pass, but the code silently drifts away from the initial architectural specification. By the 15th prompt, types have morphed, edge-case contracts are dropped, and secondary abstractions have proliferated.
+Die Idee: Ein Git-Hook und eine CI-Action, die OpenAPI- und TypeScript-Schnittstellendefinitionen in semantische AST-Invarianten parst. Bei jedem Agent-Commit wird nicht der Code-Diff geprüft, sondern die Abweichung vom Spezifikationsvertrag. Wenn ein Agent einen internen Helper in eine unautorisierte externe Abhängigkeit refaktoriert, wird der Commit mit einem Auto-Correct-Prompt blockiert.
 
-The idea: A git hook and CI action that parses OpenAPI / TypeScript interface definitions into semantic AST invariants. On every agent commit, it diffs not code lines, but contract divergence. If an agent refactors an internal helper into an unspec'd external dependency, the commit is blocked with an auto-correct prompt.
+Ein Einseiter mit Architekturskizze, Ticket #1 und der Sollbruchstelle: [Link zur Dose: Spec-Drift Detector]
 
-One page with the architecture sketch, Ticket #1, and the failure point: [Link to tin: Spec-Drift Detector]
+Vollständig unter CC0, ohne jede Bedingung, kein Nachfassen. Falls das bereits auf Ihrer Roadmap steht, archivieren Sie diese Notiz einfach.
 
-Dedicated under CC0, no strings attached, zero follow-up. If this is already on your roadmap, just archive this note.
-
-Best regards,
-Félix, Berlin`,
+Viele Grüße
+Félix (Berlin)`,
     bodyEn: `Subject: Free concept gift: Spec-Drift Detector for autonomous coding agents
 
 Hi Guy, hello Tessl team,

@@ -157,7 +157,7 @@ export const MATRIX_DATA: MatrixRow[] = [
     channelEn: 'Direct personal email to project coordinator at UdK Berlin',
     hookDe: '„EnergyMap beantwortet, was das Gebäude braucht. Die Frage danach ist: Was tut meine Wohnung?"',
     hookEn: '"EnergyMap tells what a building needs. The next question is: What does my specific apartment do?"',
-    status: 'gepackt',
+    status: 'zugestellt',
     doseId: 'altbau-thermal'
   },
   {
@@ -175,7 +175,7 @@ export const MATRIX_DATA: MatrixRow[] = [
     channelEn: 'Email to CityLAB Berlin (Kiezlabor / GovTech testbed)',
     hookDe: '„Zu verschenken ist ein funktionierendes Protokoll ohne Server. Es fehlt nur das Wissen, wo gerade einer steht."',
     hookEn: '"Free on the curb is a functioning protocol without servers. It just lacks knowing where a box sits right now."',
-    status: 'gepackt',
+    status: 'zugestellt',
     doseId: 'sperrmuell-radar'
   },
   {
@@ -193,7 +193,7 @@ export const MATRIX_DATA: MatrixRow[] = [
     channelEn: 'Email in English to NoiseCapture researchers + email to CityLAB',
     hookDe: '„Nicht wie laut eine Straße im Jahresmittel ist, sondern wann sie leise ist — Ruhe-Fenster statt dB-Durchschnitt."',
     hookEn: '"Not how loud a street is in yearly averages, but when it is quiet: quiet windows instead of dB averages."',
-    status: 'gepackt',
+    status: 'zugestellt',
     doseId: 'kiez-laermkarte'
   },
   {

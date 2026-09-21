@@ -1,7 +1,7 @@
 # Amélie — Zustellplan Q4 2026
 
-Die erste Runde. Drei Mails, drei Empfängertypen, alle recherchiert und sendebereit.
-**Stand 20.09.2026, abends:** Mail 1 ist raus. Mail 2 wurde nach einer Tiefenprüfung (Runde 4) **überarbeitet** und beide darin verlinkten Dosen sind nachgeprüft. Mail 2 ist damit versandfertig, sobald die Repo-Links stehen. Die alte Fassung enthielt — die alte Fassung enthielt eine Behauptung, die nicht haltbar war, und einen falschen Förderhinweis.
+Die erste Runde. Drei Mails, drei Empfängertypen, alle recherchiert und versendet.
+**Stand 21.09.2026:** Mail 1 ist am 20.09.2026 rausgegangen. Mail 2 (CityLAB Berlin) und Mail 3 (NoiseCapture) wurden am 21.09.2026 versendet. Alle drei Mails der ersten Runde sind damit zugestellt, Antworten offen (kein Nachfassen).
 
 ---
 
@@ -54,6 +54,7 @@ Nebenbefund für die Empfängerwahl: Radicchi finanziert Hush City seit 2020 pri
 
 ## Mail 2 — Sperrmüll-Radar + Kiez-Lärmkarte → CityLAB Berlin
 
+**Status: gesendet am 21.09.2026.** Antwort offen (kein Nachfassen).
 **Empfängertyp:** Organisation mit Bauauftrag und Budget (Rang 1).
 **Kontaktweg:** allgemeine Kontaktadresse auf `citylab-berlin.org/kontakt` — sie bieten ausdrücklich an, Projektideen intern weiterzuleiten. **Adresse von der Seite kopieren, nicht raten.**
 **Anhang/Links:** zwei Dosen.
@@ -88,6 +89,7 @@ Nebenbefund für die Empfängerwahl: Radicchi finanziert Hush City seit 2020 pri
 
 ## Mail 3 — Kiez-Lärmkarte (Methode) → Noise-Planet / NoiseCapture
 
+**Status: gesendet am 21.09.2026.** Antwort offen (kein Nachfassen).
 **Empfängertyp:** Forschung, international (Rang 2). Englisch.
 **Kontaktweg:** über das NoiseCapture-Repository der Université Gustave Eiffel bzw. `noise-planet.org`.
 **Vor dem Versand:** englische Nachprüfung der Lärm-Dose (siehe „Dose altert").
@@ -109,6 +111,10 @@ Nebenbefund für die Empfängerwahl: Radicchi finanziert Hush City seit 2020 pri
 > CC0, no strings, no follow-up. If this is already in your roadmap, please just ignore this.
 >
 > Félix, Berlin
+>
+> *(Deutsche Fassung zur Dokumentation:*
+> *„Betreff: Idee zu verschenken: Ruhe-Fenster statt Jahresmittel"*
+> *Hallo, ich recherchiere Software-Ideen und verschenke diejenigen, die ich nicht selbst bauen werde. Diese Idee gehört zu Ihrer Forschungsgruppe. NoiseCapture kartiert gemessene Schallpegel weltweit... Offene Vorarbeit: Hush City... dieselben Sensoren, andere Fragestellung: Eine Ruhe-Fenster-Karte pro Straßenabschnitt... CC0, keine Bedingungen, kein Nachfassen. Félix, Berlin")*
 
 ---
 
@@ -117,10 +123,8 @@ Nebenbefund für die Empfängerwahl: Radicchi finanziert Hush City seit 2020 pri
 | Wann | Was | Aufwand |
 |---|---|---|
 | ~~heute~~ | ~~Mail 1 (UdK / EnergyMap)~~ — **erledigt 20.09.2026** | — |
-| **als Nächstes** | Repo `amelie` befüllen: Dose Sperrmüll-Radar v2 rein, Dose Lärmkarte rein — damit die Links in Mail 2 existieren | 1 h |
-| **dann** | **Mail 2 (CityLAB) in der überarbeiteten Fassung** | 20 min |
-| ~~vor Mail 3~~ | ~~Lärm-Dose englisch nachprüfen~~ — **erledigt 20.09.2026**, Dose v2 liegt vor | — |
-| **danach** | Mail 3 (NoiseCapture) — Hush City darin erwähnen, sonst wirkt sie übersehen | 20 min |
+| ~~heute~~ | ~~Mail 2 (CityLAB Berlin)~~ — **erledigt 21.09.2026** | — |
+| ~~heute~~ | ~~Mail 3 (NoiseCapture)~~ — **erledigt 21.09.2026** | — |
 | **Ende Dezember** | Quartalsreview: Status fortschreiben, Dosen mit abgelaufenem „Prüfen ab" löschen; Sperrmüll-Radar steht auf 03/2027 | 30 min |
 
 ---
@@ -146,5 +150,5 @@ Nebenbefund für die Empfängerwahl: Radicchi finanziert Hush City seit 2020 pri
 | Idee | Empfänger | Status |
 |---|---|---|
 | Altbau Thermal | EnergyMap-Verbund / UdK Berlin | **gesendet 20.09.2026**, Antwort offen |
-| Sperrmüll-Radar | CityLAB Berlin (+ Re-Use Berlin, BSR als Partner) | **Dose v2 fertig, Mail überarbeitet → sendebereit, sobald der Link steht** |
-| Kiez-Lärmkarte | CityLAB + Noise-Planet | **Dose v2 fertig** (Hush City, SoundPrint nachgetragen, Urteil `verengt`) → sendebereit |
+| Sperrmüll-Radar | CityLAB Berlin (+ Re-Use Berlin, BSR als Partner) | **gesendet 21.09.2026** (in Mail 2), Antwort offen |
+| Kiez-Lärmkarte | CityLAB + Noise-Planet | **gesendet 21.09.2026** (in Mail 2 & Mail 3), Antwort offen |

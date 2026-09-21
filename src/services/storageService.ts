@@ -277,31 +277,54 @@ export interface SentEmailRecord {
 
 /**
  * Retrieves the sent emails map from localStorage.
- * Initializes mail-1 as sent if no records exist yet (fulfilling user request).
+ * Initializes mail-1, mail-2, and mail-3 as sent (fulfilling user request).
  */
 export function getSentEmailsMap(): Record<string, SentEmailRecord> {
-  try {
-    const data = localStorage.getItem(STORAGE_KEY_SENT_EMAILS);
-    if (data) {
-      return JSON.parse(data);
-    }
-  } catch (e) {
-    console.warn('Failed to load sent emails from storage', e);
-  }
-  // Initial default state with Mail 1 marked as sent
-  const initialMap: Record<string, SentEmailRecord> = {
+  const seedDefaults: Record<string, SentEmailRecord> = {
     'mail-1': {
       sent: true,
       sentAt: '2026-09-20T07:03:55Z',
       notes: 'Altbau Thermal → Forschungsverbund EnergyMap Berlin (UdK Berlin)',
     },
+    'mail-2': {
+      sent: true,
+      sentAt: '2026-09-21T08:00:00Z',
+      notes: 'Sperrmüll-Radar & Kiez-Lärmkarte → CityLAB Berlin',
+    },
+    'mail-3': {
+      sent: true,
+      sentAt: '2026-09-21T08:15:00Z',
+      notes: 'Kiez-Lärmkarte (Methode) → Noise-Planet / NoiseCapture',
+    },
   };
+
   try {
-    localStorage.setItem(STORAGE_KEY_SENT_EMAILS, JSON.stringify(initialMap));
+    const data = localStorage.getItem(STORAGE_KEY_SENT_EMAILS);
+    if (data) {
+      const parsed = JSON.parse(data);
+      let changed = false;
+      for (const [key, val] of Object.entries(seedDefaults)) {
+        if (parsed[key] === undefined) {
+          parsed[key] = val;
+          changed = true;
+        }
+      }
+      if (changed) {
+        localStorage.setItem(STORAGE_KEY_SENT_EMAILS, JSON.stringify(parsed));
+      }
+      return parsed;
+    }
+  } catch (e) {
+    console.warn('Failed to load sent emails from storage', e);
+  }
+
+  // Initial default state with Mails 1, 2, 3 marked as sent
+  try {
+    localStorage.setItem(STORAGE_KEY_SENT_EMAILS, JSON.stringify(seedDefaults));
   } catch (e) {
     // ignore
   }
-  return initialMap;
+  return seedDefaults;
 }
 
 export function saveSentEmailsMap(map: Record<string, SentEmailRecord>): void {

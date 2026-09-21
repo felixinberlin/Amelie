@@ -338,9 +338,9 @@ Zu jeder Idee aus `ideas-neue-projekte.md`: wer davon profitiert, warum ausgerec
 
 | Idee | Verdikt | Empfänger #1 | Status |
 |---|---|---|---|
-| Altbau Thermal | 🎁 | EnergyMap-Verbund / UdK Berlin | **gepackt**, neu gezielt — Mail-Entwürfe als Dateien, kein Gmail-Draft (Gmail-MCP blockiert, Developer-Preview-Freischaltung fehlt): `mails-q4-2026/mail-1-…` (UdK, #1), `mail-1b-co2online.md` und `mail-1c-verbraucherzentrale.md` (nachrangig; **Adressen offen**, von den Organisationsseiten zu kopieren). Team-Fokus 19.9.2026: alle Rollen arbeiten an dieser Dose |
-| Sperrmüll-Radar | 🎁 | CityLAB Berlin | **gepackt** — Mail-Entwurf als Datei (`mail-2-citylab.md`), kein Gmail-Draft |
-| Kiez-Lärmkarte | 🎁 | Noise-Planet / NoiseCapture | **gepackt** — Mail-Entwurf als Datei (`mail-3-noisecapture.md`, EN; zusätzlich in Mail 2), kein Gmail-Draft |
+| Altbau Thermal | 🎁 | EnergyMap-Verbund / UdK Berlin | **gesendet 20.09.2026** — Mail 1 (UdK Berlin, Prof. Nytsch-Geusen); nachrangig: co2online, Verbraucherzentrale; Antwort offen (kein Nachfassen) |
+| Sperrmüll-Radar | 🎁 | CityLAB Berlin | **gesendet 21.09.2026** — Mail 2 (CityLAB Berlin, allgemeiner Kontakt); Antwort offen (kein Nachfassen) |
+| Kiez-Lärmkarte | 🎁 | Noise-Planet / NoiseCapture | **gesendet 21.09.2026** — Mail 3 (NoiseCapture/CNRS, EN) sowie Mail 2 (CityLAB Berlin); Antwort offen (kein Nachfassen) |
 | Pin Tumbler | 🎁 | SSDeV Berlin | **gepackt**, verengt |
 | Diffgeist | 🎁 | Andrew Nesbitt (Ecosyste.ms) | **gepackt** |
 | Echter Zufall als Service | 🔨 | infnoise / leetronics | **gepackt** |
