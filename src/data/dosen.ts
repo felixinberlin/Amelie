@@ -318,30 +318,32 @@ export const DOSEN_DATA: DoseItem[] = [
     domain: 'civic',
     verdict: 'gift',
     status: 'gepackt',
-    tags: ['Citizen Science', 'Urbane Ökologie', 'Botanik', 'Gamification', '#Krautschau', 'Biodiversität', 'Berlin'],
-    problemDe: 'Täglich laufen Millionen Menschen an faszinierenden Wildpflanzen im Gehwegasphalt vorbei, ohne sie wahrzunehmen („Plant Blindness"). Generische Bestimmungs-Apps bieten keine emotionale Bindung, während Initiativen wie #Krautschau eine dauerhafte mobile Plattform für ganzjähriges Zeitraffer-Monitoring vermissen.',
-    problemEn: 'People walk past fascinating plants surviving in concrete cracks every day without noticing them. General plant apps lack thematic focus or community identity, while grassroots campaigns like #Krautschau lack an interactive mobile app for year-round time-lapse observations and crowdsourced urban ecology data.',
+    tags: ['Citizen Science', 'Urbane Ökologie', 'Botanik', 'CSR-Theorie', '#Krautschau', 'Grime-Dreieck', 'Berlin'],
+    problemDe: 'Täglich laufen Millionen Menschen an faszinierenden Wildpflanzen im Gehwegasphalt vorbei, ohne sie wahrzunehmen („Plant Blindness"). Generische Bestimmungs-Apps bieten keine emotionale Bindung und vernachlässigen die funktionelle Ökologie nach Grimes CSR-Theorie (Competitor, Stress-Tolerator, Ruderal), während Initiativen wie #Krautschau eine dauerhafte mobile Plattform für ganzjähriges Zeitraffer-Monitoring und empirische Härtegradmessung vermissen.',
+    problemEn: 'People walk past fascinating plants surviving in concrete cracks every day without noticing them. General plant apps lack functional ecological depth based on Grimes CSR strategy framework (Competitor, Stress-Tolerator, Ruderal), while grassroots campaigns like #Krautschau lack an interactive mobile app for year-round time-lapse observations, trait logging, and crowdsourced urban ecology data.',
     whyNowDe: [
       'Die jährliche #Krautschau der Senckenberg Gesellschaft mobilisiert jeden Mai Zehntausende Bürger zur Kreide-Aktion, sucht aber nach digitaler Verstetigung.',
       'Flora Incognita hat mit Projekten wie GartenDiv und PhänoNetz (DWD) bewiesen, dass spezifische Forschungstags in Citizen-Science-Apps enorm skaliert werden können.',
-      'On-Device Edge-Vision (TensorFlow Lite / WebGPU) identifiziert die 50 häufigsten Pflasterritzen-Pioniere sofort offline.',
+      'Empirische Merkmalsdatenbanken (UNDERPLOT, SID Kew, Cole & Bayfield Trittprotokolle) erlauben erstmals ein wissenschaftlich untermauertes 6-Achsen-Scoring (Wurzel, Tritt, Dürre, Saat, Tempo, Chemie).',
+      'On-Device Edge-Vision (TensorFlow Lite / WebGPU) identifiziert die häufigsten Pflasterritzen-Pioniere sofort offline.',
       'Klimaerwärmung und urbane Hitzeinseln machen die Besiedlung von Pflasterritzen zu einem hochaktuellen Indikator für urbane Resilienz.'
     ],
     whyNowEn: [
       'The annual #Krautschau campaign by Senckenberg mobilizes tens of thousands of citizens with sidewalk chalk each May, but lacks a dedicated persistent app.',
       'Flora Incognita proved with GartenDiv and DWD PhänoNetz that specialized project tags in citizen science apps yield peer-reviewed ecological data.',
-      'On-device edge vision instantly classifies the top 50 urban pavement pioneer species without cloud dependencies.',
+      'Empirical trait repositories (UNDERPLOT, SID Kew, Cole & Bayfield trampling protocols) enable rigorous 6-axis functional trait scoring (Root, Trample, Drought, Seed, Speed, Chemistry).',
+      'On-device edge vision instantly classifies urban pavement pioneer species without cloud dependencies.',
       'Urban heat island effects and extreme street microclimates make crack flora crucial bio-indicators for city climate resilience.'
     ],
-    sketchDe: 'Rebel Botanist Dashboard: Kamera-Schnappschuss einer Pflanze im Riss berechnet sofort Art, Substrat-Schwierigkeit und den „Toughness Index" (1–10). Foto-Ausrichtungstool ermöglicht Zeitraffer-Serien des Wachstums über Monate. Exportfähige Kiez-Heatmap der „grünen Adern" und 1-Klick-Spende an #Krautschau.',
-    sketchEn: 'Rebel Botanist Dashboard: Camera snapshot of a plant surviving in a crack calculates species, substrate adversity, and a Toughness Index (1-10). Contour-matching camera guide enables multi-month growth time-lapses. Interactive city heatmap and 1-click export to Senckenberg and Flora Incognita.',
+    sketchDe: 'Rebel Botanist Dashboard: Kamera-Schnappschuss einer Pflanze im Riss berechnet sofort Art, Substrat-Schwierigkeit, Grimes CSR-Strategie und den „Toughness Index" (1–10). Foto-Ausrichtungstool ermöglicht Zeitraffer-Serien des Wachstums über Monate. Exportfähige Kiez-Heatmap der „grünen Adern", Pacht-Chronisten-System (Stewardship statt Eigentum) und 1-Klick-Spende an #Krautschau.',
+    sketchEn: 'Rebel Botanist Dashboard: Camera snapshot of a plant surviving in a crack calculates species, substrate adversity, Grimes CSR functional strategy, and a Toughness Index (1-10). Contour-matching camera guide enables multi-month growth time-lapses. Interactive city heatmap, civic stewardship custody, and 1-click export to Senckenberg and Flora Incognita.',
     firstStepDe: {
-      ticket: 'Ein Pflasterriss, zwei Fotos, ein Toughness-Score.',
-      criteria: 'Foto eines Löwenzahns im Asphalt liefert Artbestimmung, berechnet Toughness-Index (z. B. 8.5/10) und generiert einen validen GeoJSON-Export für Forschungspartner.'
+      ticket: 'Ein Pflasterriss, zwei Fotos, ein CSR-Toughness-Score.',
+      criteria: 'Foto eines Löwenzahns im Asphalt liefert Artbestimmung, berechnet CSR-Härtegrad (WURZEL, TRITT, DÜRRE) und generiert einen validen GeoJSON-Export für Forschungspartner.'
     },
     firstStepEn: {
-      ticket: 'One pavement crack, two snapshots, one Toughness score.',
-      criteria: 'A sidewalk dandelion photo yields instant species ID, calculates a calibrated Toughness Index (e.g. 8.5/10), and produces valid GeoJSON for academic partners.'
+      ticket: 'One pavement crack, two snapshots, one CSR Toughness score.',
+      criteria: 'A sidewalk dandelion photo yields instant species ID, calculates calibrated CSR trait metrics, and produces valid GeoJSON for academic partners.'
     },
     failureModeDe: 'Verwechslung mit Seek: Seek (iNaturalist) gamifiziert Ritzenpflanzen bereits mit Badges und Challenges. Wer diese Dose als „Seek für Ritzen" liest, sollte sie nicht bauen. Der einzige tragfähige Unterschied ist die Longitudinalspur (dieselbe Pflanze über Wochen/Monate) und der direkte #Krautschau-/GBIF-Export.',
     failureModeEn: 'Confusion with Seek: Seek (iNaturalist) already gamifies sidewalk crack plants with badges. The only defensible niche is the longitudinal per-plant time-lapse across months and the direct #Krautschau/GBIF format pipeline.',
@@ -1244,6 +1246,86 @@ export const DOSEN_DATA: DoseItem[] = [
         { step: 2, title: 'Week 2: Chemical Incompatibility Matrix', focus: 'Encoding hazardous reactions (acids + bleach, ammonia + hypochlorite, caustic lyes)', milestone: 'Sub-500ms lethal interaction detection' },
         { step: 3, title: 'Week 3: Multilingual Voice Warnings', focus: 'Spoken alerts across 20 languages with high-contrast accessibility displays', milestone: 'Instantly comprehensible audio alerts regardless of host language fluency' },
         { step: 4, title: 'Week 4: Zero-Connectivity Basement PWA', focus: 'PWA service worker packaging enabling 100% offline edge inference', milestone: 'Guaranteed reliability in shielded basement bathrooms without cell reception' }
+      ]
+    }
+  },
+  {
+    id: 'fugenduell-asphalt-arena',
+    title: 'Fugenduell: Asphaltritzen-Arena',
+    oneLinerDe: 'Asynchrones rundenbasiertes Ökologie-Taktikspiel für urbane Gehwegritzen — 14 reale Pionierarten, Grimes CSR-Dreieck, Pacht-Chronisten-Modell und transparenter 6-Runden-Saisonkampf.',
+    oneLinerEn: 'An asynchronous turn-based botanical tactical battle game set in sidewalk cracks — 14 real-world pioneer species, Grimes CSR triangle, civic stewardship custody, and transparent 6-round seasonal combat.',
+    date: 'September 2026',
+    reviewAfter: 'August 2027',
+    recipientsDe: 'Indie Game Developers · Botanischer Garten Berlin · Humboldt-Universität zu Berlin (Institut für Biologie) · Stiftung Naturschutz Berlin',
+    recipientsEn: 'Indie Game Developers · Botanical Garden Berlin · Humboldt University Biology Dept · Nature Conservation Foundation Berlin',
+    domain: 'creative',
+    verdict: 'build_first',
+    status: 'gepackt',
+    tags: ['Gaming', 'Urbane Ökologie', 'CSR-Theorie', 'Gamification', 'Turn-Based', 'Botanik', 'Berlin'],
+    problemDe: 'Klimawandel- und Ökologiespiele sind meist belehrend, langweilig oder basieren auf weltfremden Fantasiewerten. Echtes botanisches Wissen (z. B. 10 bar Wurzeldruck von Löwenzahn, Salzdrüsen des Löffelkrauts, poikilohydrische Moos-Kryptobiose) bietet fantastisches kompetitives Spielpotenzial, das bisher ungenutzt bleibt.',
+    problemEn: 'Ecological games are frequently didactic, patronizing, or detached from real biology. Real botanical adaptations (such as 10-bar dandelion taproot turgor pressure, scurvygrass salt glands, or silver moss poikilohydric cryptobiosis) offer deep competitive tactical gameplay that remains entirely untapped.',
+    whyNowDe: [
+      'Empirische botanische Merkmalsdatenbanken (UNDERPLOT, SID Kew, Cole & Bayfield) ermöglichen ein exakt ausbalanciertes 36-Punkte-Stat-Budget.',
+      'Rundenbasierte Taktik- und Kartenspiele (Balatro, Slay the Spire, Pokémon TCG) boomen bei jungen Spielern, die nach Tiefgang und Systemmechaniken suchen.',
+      'Das „Pacht- und Chronisten-Modell" (Stewardship statt Besitz) löst das ethische Problem von Natur-Mining-Spielen: Die reale Pflanze bleibt unverkäuflich an ihrer Stelle, nur ihr Samen-Profil duelliert sich.',
+      'Web-basierte Canvas- und State-Machine-Engines laufen verzögerungsfrei auf jedem Smartphone-Browser ohne App-Store-Reibung.'
+    ],
+    whyNowEn: [
+      'Empirical botanical databases (UNDERPLOT, SID Kew, Cole & Bayfield) allow for a calibrated 36-point stat budget.',
+      'Turn-based tactical games (Balatro, Slay the Spire, Pokémon TCG) have surging popularity among players seeking systemic depth.',
+      'The "Stewardship Custody" model solves nature-mining ethical dilemmas: real plants are never owned or traded, only their abstracted seed profiles duel.',
+      'Modern web runtime state machines deliver instant, zero-install async duel resolution across mobile browsers.'
+    ],
+    sketchDe: 'Asphaltritzen-Duellarena: Zwei Spieler oder ein Spieler gegen Kiez-Bot ringen auf einem 100%-Deckungsbalken um die Vorherrschaft in einer Straßenfuge. 6 Jahreszeiten-Events (Schneeschmelze, Kehrmaschine, Gluthitze, Herbststurm, Spurt, Streusalz) testen die 6 Kern-Stats (WURZEL, TRITT, DÜRRE, SAAT, TEMPO, CHEMIE). Signaturfähigkeiten (wie C4-Turbo oder Schleudersitz) wenden das Blatt.',
+    sketchEn: 'Pavement crack duel arena: Two plants contest a 100% tug-of-war coverage bar inside an urban sidewalk fissure. 6 seasonal events (Snowmelt, Street Sweeper, Heatwave, Autumn Gale, Final Sprint, Road Salt) test the 6 fundamental ecological stats (ROOT, TRAMPLE, DROUGHT, SEED, SPEED, CHEMISTRY) alongside botanical signature abilities.',
+    firstStepDe: {
+      ticket: 'Interaktiver 6-Runden-Duellsimulator mit Deckungsbalken.',
+      criteria: 'Spieler wählt aus dem 14-Arten-Kader (z. B. Löwenzahn vs. Breitwegerich), durchläuft 6 Jahreszeiten-Events mit sichtbarer Würfel-/Stat-Mathematik und sieht den animierten Deckungsbalken bis zum Sieg/Pacht-Gewinn.'
+    },
+    firstStepEn: {
+      ticket: 'Interactive 6-round duel simulator with coverage tug-of-war.',
+      criteria: 'Player selects from the 14-species roster (e.g. Dandelion vs. Plantain), resolves 6 seasonal crisis events with visible mathematical resolution, and tracks coverage shifts to victory.'
+    },
+    failureModeDe: 'Verwechslung mit Pay-to-Win Gacha: Wenn seltene invasive Arten (wie der Götterbaum) käuflich wären, kollabiert die biologische Integrität. Ailanthus altissima ist im Ranked-Modus permanent gebannt. Das Spiel belohnt ökologisches Verständnis, keine Mikrotransaktionen.',
+    failureModeEn: 'Degradation into Pay-to-Win Gacha: Selling dominant alien invasives breaks ecological credibility. Ailanthus altissima is permanently banned from competitive play. The game must reward tactical ecological insight rather than microtransactions.',
+    priorArtDe: 'Recherche 2026: Bestehende Taktik-Kartenspiele ignorieren echte urbane Ruderalbotanik; Citizen-Science-Apps ignorieren Spielmechaniken. Fugenduell schließt die Lücke durch formale CSR-Spieltheorie und echte Standorte.',
+    priorArtEn: '2026 landscape: Mainstream CCGs ignore urban ruderal botany; citizen science tools avoid battle loops. Fugenduell bridges the gap using Grimes CSR functional ecology and real micro-habitats.',
+    emailTemplate: {
+      subjectDe: 'Ideen-Schenkung & Spieldesign: Fugenduell – Das urbane Asphaltritzen-Taktikspiel',
+      bodyDe: 'Liebe Spiele-Entwickler, liebe Botanik-Begeisterte,\n\naus unserer Arbeit am Citizen-Science-Projekt „Crack Flora Watcher" ist eine spielmechanische Schwester-Idee entstanden, die wir hiermit bedingungslos als CC0-Gemeingut schenken: „Fugenduell" (Asphaltritzen-Arena).\n\nDas Konzept:\n- 14 real existierende Gehwegpioniere aus dem Berliner Asphalt mit empirischen Werten aus UNDERPLOT und LEDA.\n- Ein ausbalanciertes 36-Punkte-System auf den 6 Dimensionen WURZEL, TRITT, DÜRRE, SAAT, TEMPO und CHEMIE.\n- Das Pacht- und Chronisten-Prinzip: Spieler besitzen keine echten Pflanzen, sondern übernehmen die Pflegepatenschaft („Pacht") einer realen Ritze.\n- Ein transparenter 6-Runden-Jahreszeitenkampf mit sichtbarer Deckungsverlagerung.\n\nDas komplette Roster, die mathematische Kampfauflösung und der interaktive Prototyp stehen bereit zur freien Weiternutzung.\n\nHerzliche Grüße,\nFélix',
+      subjectEn: 'Free Game Design Gift: Fugenduell – Sidewalk Crack Botanical Tactics',
+      bodyEn: 'Dear Game Developers and Botany Enthusiasts,\n\nFrom our urban ecology research on crack flora, a sister tactical gaming concept was born, gifted under CC0 (Public Domain): "Fugenduell" (Sidewalk Crack Arena).\n\nCore Pillars:\n- 14 real pavement pioneer species calibrated via empirical databases (UNDERPLOT, LEDA, SID Kew).\n- Balanced 36-point budget across 6 ecological dimensions: ROOT, TRAMPLE, DROUGHT, SEED, SPEED, CHEMISTRY.\n- Stewardship custody instead of ownership: Players do not own wild nature; they become chroniclers and guardians.\n- Transparent 6-round seasonal tug-of-war combat.\n\nUse and adapt freely.\n\nWarm regards,\nFélix',
+      to: 'kontakt@stiftung-naturschutz.de'
+    },
+    emailTemplates: [
+      {
+        recipientName: 'Stiftung Naturschutz Berlin / Bildungsprogramme',
+        to: 'kontakt@stiftung-naturschutz.de',
+        subjectDe: 'Ideen-Schenkung: Fugenduell – Spielerische Umweltbildung im Asphalt',
+        bodyDe: 'Liebes Team der Stiftung Naturschutz Berlin,\n\num Jugendliche und Stadtmenschen für die verblüffende Überlebenskunst heimischer Wildpflanzen zu begeistern, schenken wir Ihnen das fertige Spieldesign-Konzept „Fugenduell". Es verwandelt jeden unscheinbaren Gehwegriss in ein strategisches Taktikfeld basierend auf echter CSR-Pflanzenökologie.\n\nFrei zur Nutzung im Rahmen von Schulprojekten, Apps oder Umwelt-Workshops (CC0 Public Domain).',
+        subjectEn: 'Game Concept Gift: Fugenduell – Engaging Urban Botany Tactics',
+        bodyEn: 'Dear Stiftung Naturschutz Berlin team,\n\nTo engage urban youth with wild urban flora, we gift you the complete tactical game design "Fugenduell". Transforms sidewalk cracks into ecological chessboards using real botanical adaptations. Completely CC0 Public Domain.'
+      }
+    ],
+    aiFrontier: {
+      impossibleBeforeAiDe: 'Dynamische Generierung von mikroklimatischen Duell-Ereignissen und kontextueller Kampf-Dramaturgie basierend auf echten historischen Wetterdaten und Straßen-Parametern.',
+      impossibleBeforeAiEn: 'Dynamic generation of micro-climate battle events and responsive narrative drama grounded in localized historical weather feeds and pavement telemetry.',
+      aiTechStack: ['Deterministic Combat Engine (TypeScript)', 'Local Botanical Trait Matrix', 'Canvas Tug-of-War Visualizer', 'Offline PWA State Machine'],
+      privacyModelDe: '100% lokal im Browser spielbar; im Online-Modus anonyme Kiez-Kürzel ohne Speicherung privater GPS-Routen.',
+      privacyModelEn: '100% client-side playable in browser; multiplayer mode uses anonymized district hashes without GPS tracking.',
+      ordinaryPeopleBenefitDe: 'Verwandelt alltägliche Straßen und Gehwege in spannende ökologische Arenen und vermittelt spielerisch fundierte Pflanzenbiologie.',
+      ordinaryPeopleBenefitEn: 'Transforms ordinary city streets into exciting ecological arenas, teaching genuine plant biology through deep tactical play.',
+      learningCurriculumDe: [
+        { step: 1, title: 'Woche 1: Die 14 Asphalthelden & CSR-Balancing', focus: 'Implementierung des 36-Punkte-Budgets und Validierung mit ökologischer Literatur', milestone: 'Mathematisch stabiler Kader ohne unbesiegbare Dominanz-Strategien' },
+        { step: 2, title: 'Woche 2: Der 6-Runden-Jahreszeiten-Kampfmotor', focus: 'Bau der deterministischen Ereignis-Pipeline (Test → Taktik → Deckungsbalken)', milestone: 'Vollständig sichtbarer Kampflog mit nachvollziehbarer Rundenauflösung' },
+        { step: 3, title: 'Woche 3: Signatur-Fähigkeiten & Pacht-System', focus: 'Interaktive Auslöser für Ballistochorie, C4-Turbo, Kryptobiose und Chronisten-Pacht', milestone: 'Samen-Markt-Protokoll und Stewardship-Zuweisung' },
+        { step: 4, title: 'Woche 4: Mobile-Ready PWA & Community-Dossier', focus: 'Feinschliff der taktischen Oberfläche und Bereitstellung als freies Amélie-Geschenk', milestone: 'Spielbare Web-Arena in der Amélie-Galerie' }
+      ],
+      learningCurriculumEn: [
+        { step: 1, title: 'Week 1: 14 Pioneer Species & CSR Balancing', focus: 'Implementation of the 36-point budget calibrated against ecological literature', milestone: 'Mathematically balanced roster with no dominant degenerate metas' },
+        { step: 2, title: 'Week 2: 6-Round Seasonal Battle Engine', focus: 'Deterministic event resolution pipeline (Event → Test → Tactic → Tug-of-War)', milestone: 'Fully transparent combat log with intuitive round outcome' },
+        { step: 3, title: 'Week 3: Signature Skills & Stewardship Protocol', focus: 'Interactive triggers for ballistic seeds, C4 shifts, cryptobiosis, and seed cards', milestone: 'Seed marketplace logic and non-extractive stewardship mechanics' },
+        { step: 4, title: 'Week 4: Mobile-Ready PWA & Open Gift Dossier', focus: 'Polishing tactical canvas and releasing complete dossier as open CC0 gift', milestone: 'Playable arena sandbox embedded in the Amélie catalog' }
       ]
     }
   }

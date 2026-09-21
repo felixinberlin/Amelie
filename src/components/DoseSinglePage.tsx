@@ -41,6 +41,8 @@ import {
   RegenwasserSimulator,
   KlarLokalSimulator,
   CrackFloraSimulator,
+  KiezLaermSimulator,
+  FugenduellArena,
 } from './simulators';
 
 interface DoseSinglePageProps {
@@ -417,6 +419,8 @@ ${dose.priorArtDe}
               {simInfo.key === 'regenwasser' && <RegenwasserSimulator lang={lang} />}
               {simInfo.key === 'klarlokal' && <KlarLokalSimulator lang={lang} />}
               {simInfo.key === 'crackflora' && <CrackFloraSimulator lang={lang} />}
+              {simInfo.key === 'laerm' && <KiezLaermSimulator lang={lang} />}
+              {simInfo.key === 'fugenduell' && <FugenduellArena lang={lang} />}
             </div>
           )}
         </section>

@@ -7,7 +7,8 @@ export type SimulatorKey =
   | 'regenwasser'
   | 'klarlokal'
   | 'crackflora'
-  | 'laerm';
+  | 'laerm'
+  | 'fugenduell';
 
 export interface DoseSimulatorInfo {
   key: SimulatorKey;
@@ -120,5 +121,15 @@ export const DOSE_SIMULATOR_MAP: Record<string, DoseSimulatorInfo> = {
     descriptionEn: '24h diurnal soundscape simulator for Berlin street typologies with WHO sleep audit and zero-audio live dB meter.',
     descriptionEs: 'Simulador acústico 24h para tipologías de calles berlinesas con test de sueño de la OMS y sonómetro en vivo sin audio.',
     icon: '🎧',
+  },
+  'fugenduell-asphalt-arena': {
+    key: 'fugenduell',
+    titleDe: 'Fugenduell: Asphaltritzen-Arena',
+    titleEn: 'Fugenduell: Sidewalk Crack Arena',
+    titleEs: 'Fugenduell: Duelo de Grietas Urbanas',
+    descriptionDe: 'Taktisches Ökologie-Duell: 14 Asphalthelden, 36-Punkte-CSR-Budget, 6 Saison-Events und Deckungs-Tauziehen.',
+    descriptionEn: 'Tactical ecology duel: 14 asphalt pioneers, 36-point CSR budget, 6 seasonal rounds, and coverage tug-of-war.',
+    descriptionEs: 'Duelo táctico de ecología urbana: 14 especies pioneras, presupuesto CSR de 36 puntos y 6 rondas estacionales.',
+    icon: '⚔️',
   },
 };

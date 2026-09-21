@@ -11,6 +11,7 @@ import {
   KlarLokalSimulator,
   CrackFloraSimulator,
   KiezLaermSimulator,
+  FugenduellArena,
 } from './simulators';
 
 export type SandboxKey =
@@ -22,7 +23,8 @@ export type SandboxKey =
   | 'regenwasser'
   | 'klarlokal'
   | 'crackflora'
-  | 'laerm';
+  | 'laerm'
+  | 'fugenduell';
 
 interface InteractiveTinSandboxesProps {
   lang: Language;
@@ -167,6 +169,16 @@ export const InteractiveTinSandboxes: React.FC<InteractiveTinSandboxesProps> = (
             >
               🎧 {lang === 'de' ? 'Kiez-Lärmkarte' : lang === 'es' ? 'Mapa de Ruido' : 'Kiez Noise Map'}
             </button>
+            <button
+              onClick={() => setActiveTab('fugenduell')}
+              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                activeTab === 'fugenduell'
+                  ? 'bg-white text-amber-950 shadow-xs font-bold border border-amber-500 ring-2 ring-amber-400/30'
+                  : 'text-stone-600 hover:text-stone-900'
+              }`}
+            >
+              ⚔️ {lang === 'de' ? 'Fugenduell (Game)' : lang === 'es' ? 'Fugenduell (Juego)' : 'Fugenduell (Arena)'}
+            </button>
           </div>
         </div>
       </div>
@@ -198,6 +210,9 @@ export const InteractiveTinSandboxes: React.FC<InteractiveTinSandboxesProps> = (
       )}
       {activeTab === 'laerm' && (
         <KiezLaermSimulator lang={lang} onOpenDose={onOpenDose} />
+      )}
+      {activeTab === 'fugenduell' && (
+        <FugenduellArena lang={lang} onOpenDose={onOpenDose} />
       )}
     </div>
   );

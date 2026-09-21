@@ -36,6 +36,8 @@ import {
   RegenwasserSimulator,
   KlarLokalSimulator,
   CrackFloraSimulator,
+  KiezLaermSimulator,
+  FugenduellArena,
 } from './simulators';
 
 interface DoseModalProps {
@@ -507,6 +509,8 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
                   {matchedSimulator.key === 'regenwasser' && <RegenwasserSimulator lang={lang} isEmbedded={true} />}
                   {matchedSimulator.key === 'klarlokal' && <KlarLokalSimulator lang={lang} isEmbedded={true} />}
                   {matchedSimulator.key === 'crackflora' && <CrackFloraSimulator lang={lang} isEmbedded={true} />}
+                  {matchedSimulator.key === 'laerm' && <KiezLaermSimulator lang={lang} isEmbedded={true} />}
+                  {matchedSimulator.key === 'fugenduell' && <FugenduellArena lang={lang} isEmbedded={true} />}
                 </div>
               )}
             </div>

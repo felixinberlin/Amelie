@@ -24,12 +24,14 @@ export const CrackFloraSimulator: React.FC<CrackFloraSimulatorProps> = ({
     dandelion: {
       nameDe: 'Gewöhnlicher Löwenzahn (Taraxacum sect. Ruderalia)',
       nameEn: 'Common Dandelion (Taraxacum sect. Ruderalia)',
+      csrStrategy: 'RC (Ruderal-Konkurrent)',
+      csrTraits: { root: 5, trample: 5, drought: 5, seed: 6, speed: 7, chem: 4 },
       baseHardiness: 7.2,
       superpowerDe: 'Pfahlwurzel erzeugt bis zu 10 bar osmotischen Turgordruck und sprengt Asphaltschichten.',
       superpowerEn: 'Taproot generates up to 10 bars of osmotic turgor pressure, fracturing solid bitumen layers.',
       urbanNicheDe: 'Dehnungsfugen, Bordsteinkanten, heiße Bushaltestellen',
       urbanNicheEn: 'Expansion seams, curbstones, sweltering bus station asphalt',
-      chalkTag: '#Krautschau #Taraxacum #AsphaltPioneer',
+      chalkTag: '#Krautschau #Taraxacum #AsphaltPioneer #CSR_RC',
       growthStages: [
         { week: 1, labelDe: 'Keimling in Bitumenspalte (2 mm)', labelEn: 'Seedling in bitumen seam (2 mm)' },
         { week: 2, labelDe: 'Blattrosette presst sich an den Asphalt', labelEn: 'Leaf rosette flattens against asphalt' },
@@ -40,12 +42,14 @@ export const CrackFloraSimulator: React.FC<CrackFloraSimulatorProps> = ({
     plantain: {
       nameDe: 'Breitwegerich (Plantago major)',
       nameEn: 'Greater Plantain / Waybread (Plantago major)',
+      csrStrategy: 'RCS (Universal-Stresstolerator)',
+      csrTraits: { root: 5, trample: 9, drought: 6, seed: 4, speed: 4, chem: 4 },
       baseHardiness: 8.5,
       superpowerDe: 'Extreme Trittfestigkeit durch elastische Blattadern; verträgt bis zu 250 Trittbelastungen pro Tag.',
       superpowerEn: 'Extreme compaction tolerance via elastic leaf veins; withstanding 250+ foot strikes daily.',
       urbanNicheDe: 'Kopfsteinpflaster, Schulhof-Risse, U-Bahn-Eingänge',
       urbanNicheEn: 'Cobblestone gaps, schoolyard cracks, subway station thresholds',
-      chalkTag: '#Krautschau #PlantagoMajor #PavementTank',
+      chalkTag: '#Krautschau #PlantagoMajor #PavementTank #CSR_RCS',
       growthStages: [
         { week: 1, labelDe: 'Zweikeimblättrig in Mörtelfuge', labelEn: 'Cotyledons emerging from mortar' },
         { week: 2, labelDe: 'Flache, lederartige Schutzblätter etablieren sich', labelEn: 'Flat, leathery armor leaves ground themselves' },
@@ -56,12 +60,14 @@ export const CrackFloraSimulator: React.FC<CrackFloraSimulatorProps> = ({
     shepherd: {
       nameDe: 'Hirtentäschelkraut (Capsella bursa-pastoris)',
       nameEn: 'Shepherd’s Purse (Capsella bursa-pastoris)',
+      csrStrategy: 'R (Pionier-Ruderal)',
+      csrTraits: { root: 3, trample: 5, drought: 4, seed: 8, speed: 8, chem: 4 },
       baseHardiness: 7.8,
       superpowerDe: 'Samen sondern bei Nässe klebrigen Schleim ab, der sie im Asphaltstaub wie Zement verankert.',
       superpowerEn: 'Seeds secrete adhesive mucilage upon rainfall, cementing themselves into micron-level asphalt dust.',
       urbanNicheDe: 'Trockene Parkplatzritzen, Gehweg-Ecken',
       urbanNicheEn: 'Baking parking lot cracks, sunny sidewalk corners',
-      chalkTag: '#Krautschau #Capsella #ConcretePioneer',
+      chalkTag: '#Krautschau #Capsella #ConcretePioneer #CSR_R',
       growthStages: [
         { week: 1, labelDe: 'Mikroskopischer Trieb im Rissgrund', labelEn: 'Microscopic sprout in crack base' },
         { week: 2, labelDe: 'Filigrane Stängelbildung trotz Staubtrockenheit', labelEn: 'Slender stems shooting up despite bone-dry dust' },
@@ -72,12 +78,14 @@ export const CrackFloraSimulator: React.FC<CrackFloraSimulatorProps> = ({
     fleabane: {
       nameDe: 'Kanadisches Berufkraut (Erigeron canadensis)',
       nameEn: 'Canadian Horseweed (Erigeron canadensis)',
+      csrStrategy: 'R (Hitzeinsel-Ruderal)',
+      csrTraits: { root: 4, trample: 3, drought: 5, seed: 9, speed: 7, chem: 5 },
       baseHardiness: 8.0,
       superpowerDe: 'Wärmeliebender Neophyt; profitiert von städtischen Wärmeinseln und gedeiht bei über 45 °C Asphalttemperatur.',
       superpowerEn: 'Heat-thriving urban pioneer; capitalizing on microclimates with surface temperatures exceeding 45 °C.',
       urbanNicheDe: 'Hauswand-Abschlüsse, Schotterbetten, Fassadenfugen',
       urbanNicheEn: 'Building perimeter joints, gravel edges, facade crevices',
-      chalkTag: '#Krautschau #Erigeron #HeatIslandHero',
+      chalkTag: '#Krautschau #Erigeron #HeatIslandHero #CSR_R',
       growthStages: [
         { week: 1, labelDe: 'Dichte Rosette im Mauerwinkel', labelEn: 'Dense hairy rosette hugging brick foundation' },
         { week: 2, labelDe: 'Rasanter vertikaler Austrieb entlang der Hauswand', labelEn: 'Rapid vertical shoot tracing building wall' },
@@ -88,12 +96,14 @@ export const CrackFloraSimulator: React.FC<CrackFloraSimulatorProps> = ({
     yarrow: {
       nameDe: 'Gemeine Schafgarbe (Achillea millefolium)',
       nameEn: 'Common Yarrow (Achillea millefolium)',
+      csrStrategy: 'CSR (Tiefwurzler-Stresstolerant)',
+      csrTraits: { root: 7, trample: 6, drought: 7, seed: 5, speed: 4, chem: 4 },
       baseHardiness: 7.0,
       superpowerDe: 'Tiefwurzelndes Rhizomnetzwerk speichert Feuchtigkeit und widersteht Winter-Streusalz.',
       superpowerEn: 'Deep-rooting rhizome network hoarding moisture while resisting winter street deicing salt.',
       urbanNicheDe: 'Baumscheiben-Ränder, Schotterfugen, Tramgleis-Schotter',
       urbanNicheEn: 'Tree pit edges, gravel curb gutters, tramway gravel beds',
-      chalkTag: '#Krautschau #Achillea #SaltResilient',
+      chalkTag: '#Krautschau #Achillea #SaltResilient #CSR_CSR',
       growthStages: [
         { week: 1, labelDe: 'Fiederblättchen lugen zwischen Granitsteinen hervor', labelEn: 'Feathery pinnate foliage peeking between cobblestones' },
         { week: 2, labelDe: 'Wurzelgeflecht verankert sich im Unterbausand', labelEn: 'Rhizome network locking into deep sub-pavement sand' },
@@ -296,15 +306,49 @@ export const CrackFloraSimulator: React.FC<CrackFloraSimulatorProps> = ({
             </div>
           </div>
 
-          {/* Bot Superpower Card */}
-          <div className="p-3.5 bg-lime-50/70 border border-lime-200 rounded-xl space-y-1.5 text-xs text-lime-950">
-            <div className="font-bold flex items-center gap-1.5 text-stone-900 font-mono-code text-2xs uppercase">
-              <span>⚡ Urban Survival Superpower:</span>
+          {/* Bot Superpower Card & CSR Strategy Profile */}
+          <div className="p-3.5 bg-lime-50/70 border border-lime-200 rounded-xl space-y-2 text-xs text-lime-950">
+            <div className="flex items-center justify-between">
+              <div className="font-bold flex items-center gap-1.5 text-stone-900 font-mono-code text-2xs uppercase">
+                <span>⚡ Grime CSR Profil & Strategie:</span>
+              </div>
+              <span className="px-2 py-0.5 rounded-full bg-lime-200/70 text-lime-900 text-3xs font-mono-code font-bold">
+                {currentPlantData.csrStrategy}
+              </span>
             </div>
+
+            {/* 6-Axis CSR Mini Traits */}
+            <div className="grid grid-cols-3 sm:grid-cols-6 gap-1 text-center py-1">
+              <div className="bg-white/80 p-1 rounded border border-lime-200">
+                <div className="text-3xs text-stone-500 font-mono-code">Wurzel</div>
+                <div className="font-bold text-stone-800 font-mono-code">{currentPlantData.csrTraits.root}/10</div>
+              </div>
+              <div className="bg-white/80 p-1 rounded border border-lime-200">
+                <div className="text-3xs text-stone-500 font-mono-code">Tritt</div>
+                <div className="font-bold text-stone-800 font-mono-code">{currentPlantData.csrTraits.trample}/10</div>
+              </div>
+              <div className="bg-white/80 p-1 rounded border border-lime-200">
+                <div className="text-3xs text-stone-500 font-mono-code">Dürre</div>
+                <div className="font-bold text-stone-800 font-mono-code">{currentPlantData.csrTraits.drought}/10</div>
+              </div>
+              <div className="bg-white/80 p-1 rounded border border-lime-200">
+                <div className="text-3xs text-stone-500 font-mono-code">Samen</div>
+                <div className="font-bold text-stone-800 font-mono-code">{currentPlantData.csrTraits.seed}/10</div>
+              </div>
+              <div className="bg-white/80 p-1 rounded border border-lime-200">
+                <div className="text-3xs text-stone-500 font-mono-code">Tempo</div>
+                <div className="font-bold text-stone-800 font-mono-code">{currentPlantData.csrTraits.speed}/10</div>
+              </div>
+              <div className="bg-white/80 p-1 rounded border border-lime-200">
+                <div className="text-3xs text-stone-500 font-mono-code">Salz/Öl</div>
+                <div className="font-bold text-stone-800 font-mono-code">{currentPlantData.csrTraits.chem}/10</div>
+              </div>
+            </div>
+
             <p className="font-serif-title text-xs leading-relaxed text-stone-800">
               {lang === 'de' ? currentPlantData.superpowerDe : currentPlantData.superpowerEn}
             </p>
-            <div className="text-3xs font-mono-code text-lime-800 pt-1">
+            <div className="text-3xs font-mono-code text-lime-800 pt-0.5">
               Typischer Kiez-Spot: {lang === 'de' ? currentPlantData.urbanNicheDe : currentPlantData.urbanNicheEn}
             </div>
           </div>

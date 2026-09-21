@@ -30,6 +30,7 @@ import { KiezNoiseMap, BERLIN_NOISE_AREAS, getNoiseColor } from './KiezNoiseMap'
 interface KiezLaermSimulatorProps {
   lang: Language;
   onOpenDose?: (doseId: string) => void;
+  isEmbedded?: boolean;
 }
 
 export interface StreetProfile {

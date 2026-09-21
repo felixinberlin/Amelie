@@ -374,5 +374,23 @@ export const MATRIX_DATA: MatrixRow[] = [
     hookEn: '"Fully local zero-knowledge encryption with on-device vector search: discover motifs with zero cloud."',
     status: 'gepackt',
     doseId: 'traumtagebuch'
+  },
+  {
+    id: 'fugenduell',
+    categoryDe: '5. Kreativ & Spieltheorie',
+    categoryEn: '5. Creative & Game Theory',
+    name: 'Fugenduell: Asphaltritzen-Arena',
+    effort: 'M',
+    verdict: 'build_first',
+    beneficiaryDe: 'Spieler, Schüler und Naturforscher, die urbane Ruderalökologie über rundenbasierte Taktik erleben wollen.',
+    beneficiaryEn: 'Gamers, students, and urban naturalists seeking rigorous botanical tactical depth through turn-based play.',
+    recipientsDe: 'Indie Game Developers · Botanischer Garten Berlin · Stiftung Naturschutz Berlin',
+    recipientsEn: 'Indie game devs · Botanical Garden Berlin · Berlin Nature Conservation Foundation',
+    channelDe: 'Web-basierte Taktik-PWA und Open-Source GitHub Repository',
+    channelEn: 'Web-based tactical PWA and open-source GitHub repository',
+    hookDe: '„14 reale Gehwegpflanzen, 36-Punkte-CSR-Budget und 6 saisonale Prüfungen im Asphaltriss: Balatro trifft Botanik."',
+    hookEn: '"14 real sidewalk plants, 36-point CSR budget, and 6 seasonal crack challenges: Balatro meets botany."',
+    status: 'gepackt',
+    doseId: 'fugenduell-asphalt-arena'
   }
 ];
