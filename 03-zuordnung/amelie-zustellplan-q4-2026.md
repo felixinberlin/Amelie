@@ -145,6 +145,20 @@ Nebenbefund für die Empfängerwahl: Radicchi finanziert Hush City seit 2020 pri
 
 ---
 
+## Mail 5 — Glasanflug-Ampel → LBV *(neu, 21.09.2026, Entwurf)*
+
+**Empfängertyp:** Verein mit gefördertem Mehrjahresprojekt und angestelltem Fachpersonal — **in der Praxis Rang 1**, nicht Rang 4.
+**Kontaktweg:** `vogelschlag@lbv.de`, Dr. Peter Stimmler (Projekt „Vogelschlag an Glas verhindern", 2023–2027, Bayerischer Naturschutzfonds).
+**Anhang/Link:** `05-dosen/glasanflug-ampel.md`
+**Konkreter Bezug:** die Plakette „Vogelfreundliche Glasfläche" — Online-Formular mit Foto, danach Besichtigung durch geschultes Personal — und die Beratung für Kommunen und Behörden.
+**Neue Adresse, kein Abstandsproblem:** Anders als Mail 4 (CityLAB, gleiche Adresse wie Mail 2) geht diese an einen Empfänger, der noch nie angeschrieben wurde.
+**Vor dem Versand zwingend:** LAG VSW 21/01 von Hand öffnen und die Punktwerte nachtragen; die PDF war maschinell gesperrt, und die Merkblätter widersprechen sich bei der Signifikanzschwelle.
+**Mitzunennen:** die LAG VSW als fachliche Eigentümerin des Schemas — ein Werkzeug, das es ohne sie „auslegt", spaltet die Praxis.
+
+Volltext: `mails-q4-2026/mail-5-lbv.md`.
+
+---
+
 ## Status nach dieser Runde
 
 | Idee | Empfänger | Status |
@@ -153,3 +167,4 @@ Nebenbefund für die Empfängerwahl: Radicchi finanziert Hush City seit 2020 pri
 | Sperrmüll-Radar | CityLAB Berlin (+ Re-Use Berlin, BSR als Partner) | **gesendet 21.09.2026** (in Mail 2), Antwort offen |
 | Kiez-Lärmkarte | CityLAB + Noise-Planet | **gesendet 21.09.2026** (in Mail 2 & Mail 3), Antwort offen |
 | Beobachtungsposten mit Übergabe | CityLAB Berlin (Gieß den Kiez) | **Entwurf** `mails-q4-2026/mail-4-citylab-patenschaft.md`, bewusst **nicht** gesendet — dieselbe Adresse wie Mail 2 (21.09.), Abstand halten, sonst ist es Nachfassen. Vorher Issues von `giessdenkiez-de` von Hand durchsehen |
+| **Glasanflug-Ampel** | **LBV** (+ LAG VSW als Schema-Eigentümerin, Vogelwarte Sempach nachrangig) | **Dose gepackt 21.09.2026** (Runde 7, `frei` → `verengt`), **Entwurf** `mails-q4-2026/mail-5-lbv.md` — wartet auf die Punktwerte aus LAG VSW 21/01 |

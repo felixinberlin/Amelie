@@ -219,6 +219,24 @@ Zu jeder Idee aus `ideas-neue-projekte.md`: wer davon profitiert, warum ausgerec
 
 ---
 
+### Glasanflug-Ampel (Bird Glass Hazard Score) — M · 🎁 (verengt, Tiefenprüfung 21.09.2026)
+
+**Wer profitiert:** Schätzungsweise **100 Mio. Vögel pro Jahr** sterben in Deutschland an Glas, **15–35 % der Opfer werden gefunden**. Rechtlich hängt alles an § 44 Abs. 1 Nr. 1 BNatSchG und an der Signifikanzschwelle von vier bis fünf Schlagopfern je 100 m Fassade und Jahr. Für die Einschätzung *vor* dem Bau gibt es seit 2021 das Punkteschema der Vogelschutzwarten (LAG VSW 21/01) — als PDF, sonst nichts. Leidtragende: untere Naturschutzbehörden, die eingereichte Planungen beurteilen sollen; Architekturbüros, von denen Berlin seit **August 2026** die Selbsteinschätzung „bereits bei der Planung" erwartet; Eigentümer, die nach einer Meldung nicht wissen, welche Fassade zuerst dran ist; und der LBV selbst, dessen Plakette an einem Ortstermin durch geschultes Personal hängt.
+
+**Empfänger:**
+- **LBV — Landesbund für Vogel- und Naturschutz in Bayern** — Projekt „Vogelschlag an Glas verhindern" (2023–2027, Bayerischer Naturschutzfonds): Beratung für Private, Kommunen und Behörden, Meldestelle, Plakette „Vogelfreundliche Glasfläche". Verein, aber mit gefördertem Mehrjahresprojekt und angestelltem Fachpersonal — **in der Praxis Rang 1**. Kontakt: Dr. Peter Stimmler, `vogelschlag@lbv.de`.
+- **LAG VSW** — fachliche Eigentümerin des Schemas, Behördengremium ohne Softwarearm. Kein Bauträger, aber **immer mitzunennen**: Ein Werkzeug, das das Schema ohne sie auslegt, spaltet die Praxis in zwei Verfahren.
+- **Schweizerische Vogelwarte Sempach**, Fachstelle Vogelglas — nachrangig, vor allem Vorarbeit (Broschüren, Produkttests, Beraterlisten) und Würdigung.
+- **International, falls die englische Fassung je rausgeht:** FLAP Canada und American Bird Conservancy — beide haben die Nachbarwerkzeuge gebaut, keiner die Messung.
+
+**Kanal:** Mail an `vogelschlag@lbv.de` (Entwurf: `mails-q4-2026/mail-5-lbv.md`). Neue Adresse, kein Abstandsproblem gegenüber Mail 2/4.
+
+**Hook:** „Ihr Projekt reicht so weit, wie Personal fahren kann. Das Schema, auf das Sie verweisen, ist ein PDF. Was neu ist: Glas, Spiegelung und Fassadengeometrie lassen sich inzwischen aus einem Foto schätzen — der Rechner kann die Frage stellen, die bisher den Ortstermin gebraucht hat."
+
+**Warum 🎁 und nicht 🔨:** Der Nutzen hängt nicht am Code, sondern an der Autorität des Schemas. Ein Skelett von außen wäre ein zweites Verfahren; genau das soll es nicht werden. Was ein Außenstehender beitragen kann, ist die Dose — und das erste Ticket, das ohne eine Zeile Bilderkennung auskommt.
+
+---
+
 ## 4. Esoterik-Ecke, aber als Software
 
 ### Tarot als Zustandsmaschine — M · 🎁 als Spezifikation
@@ -341,6 +359,7 @@ Zu jeder Idee aus `ideas-neue-projekte.md`: wer davon profitiert, warum ausgerec
 | Altbau Thermal | 🎁 | EnergyMap-Verbund / UdK Berlin | **gesendet 20.09.2026** — Mail 1 (UdK Berlin, Prof. Nytsch-Geusen); nachrangig: co2online, Verbraucherzentrale; Antwort offen (kein Nachfassen) |
 | Sperrmüll-Radar | 🎁 | CityLAB Berlin | **gesendet 21.09.2026** — Mail 2 (CityLAB Berlin, allgemeiner Kontakt); Antwort offen (kein Nachfassen) |
 | Kiez-Lärmkarte | 🎁 | Noise-Planet / NoiseCapture | **gesendet 21.09.2026** — Mail 3 (NoiseCapture/CNRS, EN) sowie Mail 2 (CityLAB Berlin); Antwort offen (kein Nachfassen) |
+| **Glasanflug-Ampel** | 🎁 | **LBV** (Projekt Vogelschlag an Glas) | **gepackt 21.09.2026**, verengt — Mail 5 im Entwurf, wartet auf die Punktwerte aus LAG VSW 21/01 |
 | Pin Tumbler | 🎁 | SSDeV Berlin | **gepackt**, verengt |
 | Diffgeist | 🎁 | Andrew Nesbitt (Ecosyste.ms) | **gepackt** |
 | Echter Zufall als Service | 🔨 | infnoise / leetronics | **gepackt** |

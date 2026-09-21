@@ -126,6 +126,23 @@ Der Lauf nennt diese Anker in `amelie-bisoziation-log.md`. Sie sind hier vermerk
 
 ---
 
+## Typ H — Regulierung im Ausland (neu, Runde 7)
+
+*Muster: Ein deutsches Gremium veröffentlicht ein PDF. Ein anderes Land macht dieselbe Sache zur Auflage — und dort existiert dann ein Rechenblatt, eine Norm oder eine App.*
+**Kein Ideenlieferant, sondern die Stelle, an der ein `frei` stirbt. Vor jedem `frei` aus Typ A abzufragen.**
+
+| Quelle | Befund | Status | Zuletzt |
+|---|---|---|---|
+| **LEED Pilot Credits (USGBC)** | SSpc55 „Bird Collision Deterrence": `(Zone 1 + Zone 2 gewichtete Fläche) / bereinigte Fassadenfläche = Bird Collision Threat Rating`, Ziel ≤ 15, Zone 1 = erste 36 Fuß über Grund (+ 12 Fuß über Gründach), verglaste Ecken und Durchflüge ≤ 25, Nachweis über **offizielle Tabellenvorlage**. Gewichte = **Material Threat Factors** aus Flugtunneltests. **Die gesamte Pilot-Credit-Bibliothek ist ein Katalog solcher Verfahren** — für andere Themen ungehoben. | durchsucht (Vogelschlag), **sehr ergiebig für andere Themen** | 21.09.2026 |
+| **American Bird Conservancy** | Material Threat Factors, „Bird-friendly Building Design", LEED-Innovation-Credit — die Datenbasis hinter dem Rechner | angekratzt | 21.09.2026 |
+| **Kommunale Ordnungen USA (NYC Local Law 15/2020 u. a.)** | Bird-friendly-Materials-Pflicht seit 10.01.2021; bedient von Beratungsbüros und Materiallisten, **keine Compliance-Software gefunden** | angekratzt | 21.09.2026 |
+| **FLAP Canada** | **BirdSafe DIY Building Risk Assessment App** (`flapapp.ca`): kostenlos, Browser, Tag- und Nachtrisiko pro Fassade, **Fragebogen ohne Bildauswertung**; dazu kostenpflichtige BirdSafe-Begutachtung mit Ortsterminen und „An Analysis of Collision Mitigation Effectiveness" | durchsucht | 21.09.2026 |
+| **Schweiz: Zürcher PBG-Ergänzung zu Glasfassaden** | Planungs- und Baugesetz um Vogelschutz an transparenten Fassaden ergänzt — eigene Rechtslage, eigener Markt | offen | 21.09.2026 |
+
+**Suchstring:** `<Thema> LEED credit` · `<Thema> city ordinance compliance` · `<Thema> standard rating calculator` · `<Thema> threat factor` · `<Thema> DIY assessment app`
+
+---
+
 ## Nicht mehr als Quelle nutzen
 
 - Allgemeine Suchen „KI App <Alltagsthema>" → Content-Farmen, besetzte Märkte (siehe Besetzungsatlas im Playbook).
@@ -134,3 +151,5 @@ Der Lauf nennt diese Anker in `amelie-bisoziation-log.md`. Sie sind hier vermerk
 - **Nur deutschsprachige Suchen bei Alltagsideen** → Runde 4: Sperrmüll-Radar war nur auf Deutsch frei; auf Englisch existierte CurbAlert bereits viermal. Vor jeder Zusage englische Suche Pflicht. **Runde 6 bestätigt zum dritten Mal:** Crack Flora Watcher war deutsch `verengt`, englisch `besetzt` (GrowApp, Nature's Notebook).
 - **Die Projektseite für den Funktionsumfang halten**, wenn der Empfänger quelloffen ist → Runde 6: Die Seite von Gieß den Kiez sagt zu Verfall und Übertragung nichts, der Klon sagt es eindeutig. Bei öffentlichem Repo ist `git clone` + `grep` die stärkere Evidenz und kostet zwei Minuten (GitHub-API und Issue-Seiten können gesperrt sein, `git clone` über HTTPS geht trotzdem).
 - **Nur nach dem Gegenstand suchen** („Ritzenpflanzen-App") → findet nie die Werkzeuge, die über ihre **Funktion** definiert sind (Typ F oben). Die Mechanik immer separat suchen, siehe Playbook §2.
+- **Typ A allein als Beleg für `frei`** (neu ab Runde 7): „Ein Fachgremium hat ein PDF und niemand hat es programmiert" ist ein Anfangsverdacht, kein Urteil. Ohne Typ-H-Gegenprobe wird daraus kein `frei`.
+- **Merkblätter als Quelle für exakte Schwellenwerte** (neu ab Runde 7): vier Behördenmerkblätter zum selben Schema, zwei verschiedene Signifikanzschwellen. Schemawerte kommen aus dem Schema.
