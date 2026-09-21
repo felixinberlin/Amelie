@@ -33,6 +33,41 @@ Ein geteiltes Objekt braucht einen Beweis, dass zwei Menschen dasselbe meinen. G
 - **Die Saison ist der Gegner, nicht der Mitspieler.** Ereignisse kommen aus dem echten Wetter und dem echten Stadtbetrieb: Frost, Hitze, Kehrmaschine, Streusalz. Das Kartenmaterial ist im Januar dünn und im Mai voll, und das ist kein Bug.
 - **Tod ist echt.** Verschwindet die Pflanze, verschwindet das Objekt. Was bleibt, ist die Historie: wer es wann gefunden, gehalten, verloren hat.
 
+### Die Invariante, ohne die es nicht gebaut werden darf
+
+> **Kein Punkt wechselt je den Besitzer, weil eine Pflanze fehlt.**
+
+Ein Spiel über Stadtnatur, in dem Ausreißen ein Gewinnzug ist, ist schlechter als kein Spiel.
+Der Anreiz entsteht nicht aus Bosheit, sondern aus der Struktur: Zerstörung erzeugt einen Zustand
+(Pflanze weg), der von natürlichem Tod nicht unterscheidbar ist, nichts kostet und dem Täter nützt.
+Die üblichen Pflaster greifen daneben — „Historie verfällt" bestraft das Opfer, „Punkte fürs Halten"
+übersieht, dass der Angreifer keine Punkte *nimmt*, sondern den fremden Ertrag *abstellt*. Vier
+Festlegungen setzen die Invariante um:
+
+1. **Die Pflanze ist nie der Preis — die Karte ist es.** Gekämpft wird mit der Samenkarte, einer
+   Momentaufnahme, die beim Dokumentieren gezogen wird. Das Individuum bleibt ortsgebunden und
+   unhandelbar. Wer eine fremde Pflanze ausreißt, nimmt **keine einzige Karte** — nur künftige.
+   Der Duell-Bestand ist physisch unangreifbar.
+2. **Abwesenheit löst gar nichts aus.** Verschwindet eine Pflanze, wechselt keine Rolle, entscheidet
+   sich kein Streit, bewegt sich kein Punkt; die Akte wird geschlossen, nicht übertragen. Verschwindet
+   ein **umstrittenes** Objekt während eines laufenden Streits, ist der Streit **ungültig** — niemand
+   gewinnt. Genau dort saß der Anreiz.
+3. **Die Nachbarpflanze macht dich reicher.** Die Stelle hat einen Wert, der mit der Zahl
+   verschiedener Arten und verschiedener Chronisten dort steigt und den eigenen Ertrag multipliziert.
+   Eine fremde Pflanze auszureißen senkt damit den **eigenen** Multiplikator — Zerstörung ist
+   selbstschädigend statt neutral. Ökologisch ist das die richtige Richtung: Vielfalt in einer Fuge
+   nützt allen, die dort sind.
+4. **Zwei Ebenen, die sich nicht berühren.** Duell und Rangliste laufen über Karten, nach Spielstärke
+   gepaart, ohne Ortsbezug — rivalisierend, aber physisch unangreifbar. Chronistenschaft und Stelle
+   laufen über Beobachtungszeit — ortsgebunden und angreifbar, aber **nicht rivalisierend** und ohne
+   Rangliste. Weil die Rangliste die Chronistenschaft nie berührt, bringt das Austrocknen eines
+   fremden Beobachtungsstroms auch keinen Rangplatz. Es bleibt kein Pfad, auf dem Zerstörung zu
+   Erfolg führt.
+
+**Was der Tod dann noch kostet:** den Strom, nicht den Bestand — künftige Karten, den wachsenden
+Multiplikator einer langen Akte, die Chance auf „Volles Jahr". Die Dramatik echter Sterblichkeit
+bleibt; sie ist nur nicht mehr übertragbar.
+
 **Nicht dabei:** keine gezüchteten oder gehandelten Kreaturen, kein Bezahlvorteil, keine kuratierte POI-Liste als Fallback, wenn die Karte leer ist. Der Reiz stirbt in dem Moment, in dem das Spiel anfängt, sich die Welt selbst zu schreiben.
 
 **Das Skelett liegt bei:** `src/components/simulators/FugenduellArena.tsx` (698 Z.) und `src/data/fugenduellData.ts` (437 Z.) im selben Repo, dazu die ausformulierten Mechaniken unter `02-recherche/fugenduell-brainstorm/` — sechs Runden Jahreszyklus, CSR-Schere, Arena-Multiplikatoren, deterministische Auflösung ohne Zufallszahlen, vierzehn Startarten mit belegten Werten.
@@ -47,7 +82,9 @@ Person A fotografiert eine Pflanze in einer Fuge. Person B, die nichts von A wei
 
 ## Wo es kippt
 
-**Der Wettbewerb schafft einen Anreiz, echte Pflanzen zu zerstören.** Wenn eine Fuge etwas wert ist, ist Ausreißen ein Gewinnzug. Das ist die ernsteste Stelle, und sie ist keine Randnotiz: Ein Spiel über Stadtnatur, das Vandalismus belohnt, ist schlechter als kein Spiel. Mögliche Antworten — Verlust der Historie bei Verschwinden, Punkte fürs Halten statt fürs Erobern, kein Ertrag aus dem Tod eines fremden Objekts — sind Entwurfsarbeit, nicht gelöst. **Wer das nicht zuerst löst, soll es nicht bauen.**
+**Der Vandalismus-Anreiz — gelöst, aber um einen Preis.** Die Invariante oben nimmt der Zerstörung jeden Ertrag. Sie kostet dafür die **Eroberungsfantasie**: Niemand kann einem anderen eine Fuge abnehmen. Die Custody-Challenge aus dem Brainstorm — Foto-Duell, Wissensquiz, Kampf um die Rolle — fällt damit vollständig weg; was bleibt, ist Nachbesetzung *aufgegebener* Posten, und die ist eine eigene Dose (`fugenduell-patenschaft.md`). Wer die Eroberung zurückholt, holt den Anreiz mit zurück. **Und: Es verhindert nur die *rationale* Zerstörung.** Böswilligkeit, die Selbstschaden in Kauf nimmt, bleibt möglich — das ist bei jedem Spiel im öffentlichen Raum so.
+
+**Anomalie-Erkennung ist kein Regelwerkzeug.** „Abrupt, außerhalb der Saison, umstritten" ließe sich als Muster flaggen. Als Forschungssignal brauchbar, als Anschuldigung gegen Nutzer nicht — beweisbar ist es nie. Deshalb darf daran keine Spielfolge hängen.
 
 **Der Kaltstart liegt auf Straßenebene.** Ein Streitobjekt braucht einen zweiten Menschen in Gehweite. Das ist der Friedhof dieser Gattung, und ein kleines Team schultert ihn gegen Niantics Schatten. Ein Saisonfenster mit garantierter Dichte hilft: #Krautschau, 14.–23.05.2027, zuletzt 85 Spaziergänge in 66 Städten.
 
