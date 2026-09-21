@@ -48,6 +48,25 @@ Diese Datei ist die Ausnahme von der Regel und zugleich ihre Begründung: Sie h�
 
 ---
 
+## Crack Flora Watcher (Ritzengrün-Wächter) — 21.09.2026
+
+**Ursprüngliche Idee:** Foto derselben Ritzenpflanze über Wochen → Zeitraffer mit Härtegrad-Score → #Krautschau-/GBIF-tauglicher Datensatz.
+
+**Warum weg:** Die Dose stand seit dem 18.09.2026 auf **einem** Satz — „ein Werkzeug, das dieselbe Einzelpflanze über die Saison verfolgt (keine der genannten Apps tut das)". Die erste englische Suche nach dieser *Funktion* (statt nach dem Gegenstand „Ritzenpflanze") hat ihn widerlegt:
+
+- **GrowApp** (GLOBE Niederlande, European Phenology Campaign): dieselbe Einzelpflanze, voriges Foto transparent zum Ausrichten, automatischer Zeitraffer ab Bild 2. Das ist die Skizzenzeile der Dose, Wort für Wort.
+- **Nature's Notebook** (USA-NPN): Einzelpflanzen mit Spitznamen registrieren, markieren, wiederholt besuchen; neue App Frühjahr 2026 mit gestuftem Monitoring.
+
+Dazu die zweite Hälfte: Die gamifizierte Entdeckung liegt nicht nur bei Seek, sondern bei **Flora Incognita selbst** — Krautschau-Projekt in der App, Abzeichen über 40 Arten in fünf Stufen, Geozonen-Auto-Tagging, von Senckenberg offiziell empfohlen. Flora Incognita stand in der Dose als *nachrangiger Empfänger*.
+
+**Was das über die Methode sagt:** Zwei Fehler, beide vermeidbar. Erstens wurde nur der **Gegenstand** gesucht („Ritzenpflanzen-App", „Seek") und daraus auf die **Mechanik** geschlossen; Werkzeuge, die sich über ihre Funktion definieren, sind so unsichtbar. Zweitens war der Satz „Was fehlt, nach dieser Recherche, wirklich" selbst eine ungeprüfte Behauptung — er wurde abgeleitet, nie gesucht. Beides steht jetzt als Regel im Playbook (§2 und Retro Runde 6).
+
+**Was überlebt:** Nicht die Longitudinalspur, sondern die Übergabe — dass eine Messreihe weiterläuft, wenn die Person aufhört. Neue Dose: `05-dosen/fugenduell-patenschaft.md`. Die Wettbewerbsmechanik aus dem Brainstorm (Übernahme gegen den Willen der Patin) ist dort bewusst nicht enthalten: ungeprüft (`unklar`) und gegen Ehrenamtliche gerichtet.
+
+**Noch nicht erledigt, Entscheidung Félix:** Die Datei `05-dosen/crack-flora-watcher.md` ist als zurückgezogen markiert, aber nicht gelöscht — sie hängt an `en/05-dosen/`, an der Matrix, an `src/data/dosen.ts` und an den JSON-Dateien unter `public/data/`. Das Manifest sagt „löschen, nicht archivieren"; der Vollzug fasst die veröffentlichte Seite an und gehört deshalb nicht in eine Rechercherunde.
+
+---
+
 ## Das Muster hinter allen vieren
 
 Vier von neunzehn Ideen sind tot, und sie sind nicht zufällig verteilt:

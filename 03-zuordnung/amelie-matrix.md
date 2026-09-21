@@ -353,7 +353,8 @@ Zu jeder Idee aus `ideas-neue-projekte.md`: wer davon profitiert, warum ausgerec
 | Ghost Replay | 🎁 | HCI-Forschung | **gepackt**, verengt |
 | Spec-Drift Detector | 🔒 + streuen | spec-kit / Tessl | **gepackt**, behalten |
 | Wet Ink | 🔒 | Plan an Escape Motions u. a. | **gepackt**, behalten |
-| Crack Flora Watcher | 🎁 | #Krautschau / Senckenberg | **gepackt**, stark verengt (Seek deckt die Grundidee bereits) |
+| ~~Crack Flora Watcher~~ | ⛔ | — | **zurückgezogen 21.09.2026**, `besetzt` (GrowApp, Nature's Notebook; Gamifizierung bei Flora Incognita selbst). Begründung in `05-dosen/_entsorgt.md` |
+| Beobachtungsposten mit Übergabe (Fugenduell-Patenschaft) | 🎁 | CityLAB Berlin (Gieß den Kiez) · nachrangig GLOBE NL, USA-NPN | **gepackt** Runde 6, `verengt` — Patenschaft existiert bei Gieß den Kiez, frei bleibt Verfall + Übergabe |
 | KlarLokal | 🎁 | Prototype Fund | **gepackt**, verengt (Zetteln existiert bereits, Zero-Cloud ist die Lücke) |
 | Wärmesignatur | 🎁 | co2online (HeizCheck), nachrangig EnergyMap-Verbund | **gefunden** — Dose `waermesignatur.md` liegt vor (verengt, aus der Bisoziations-Runde zu Altbau Thermal); Empfängerprüfung und Zustellplan fehlen, kein Mail-Entwurf. Kommt hinzu, ob co2online nach Mail 1b nicht doppelt angeschrieben wird |
 | Denkmal-Verlaufsblick | 🎁 | Deutsche Stiftung Denkmalschutz | **gefunden** — Dose `denkmal-verlaufsblick.md` liegt vor (verengt, Ideenrunde 4); Empfängerprüfung und Zustellplan fehlen, kein Mail-Entwurf |

@@ -1,5 +1,15 @@
 # Crack Flora Watcher (Ritzengrün-Wächter)
 
+> ⛔ **ZURÜCKGEZOGEN am 21.09.2026 — nicht zustellen.**
+> Die Restlücke dieser Dose ist widerlegt: **GrowApp** (GLOBE Niederlande) verfolgt dieselbe
+> Einzelpflanze mit Ausricht-Overlay und automatischem Zeitraffer, **Nature's Notebook** (USA-NPN)
+> registriert Einzelpflanzen für wiederholte Besuche. Die gamifizierte Entdeckung betreibt
+> **Flora Incognita** selbst (Krautschau-Projekt, 40 Arten, fünf Stufen) — in dieser Dose als
+> nachrangiger Empfänger geführt.
+> Begründung: `05-dosen/_entsorgt.md` · Belege: `06-suche/amelie-pruefprotokoll.md`, Runde 6.
+> **Nachfolgerin: `05-dosen/fugenduell-patenschaft.md`.**
+> Text unten unverändert als Beleg dafür, worauf die Dose stand.
+
 **Ein Satz:** Ein Foto derselben Ritzenpflanze über Wochen hinweg wird zum Zeitraffer mit Härtegrad-Score — und mit einem Klick zu einem #Krautschau-tauglichen Datensatz.
 
 **Stand:** September 2026 · **Prüfen ab:** Mai 2027 (#Krautschau-Aktionswoche)

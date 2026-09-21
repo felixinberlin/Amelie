@@ -96,9 +96,24 @@ Der Lauf nennt diese Anker in `amelie-bisoziation-log.md`. Sie sind hier vermerk
 
 ---
 
+## Typ F — Internationale Phänologie-/Beobachtungsplattformen (neu, Runde 6)
+
+*Muster: Werkzeuge, die über ihre **Funktion** definiert sind („dieselbe Pflanze über Zeit"), nicht über ihren Gegenstand. Sie tauchen bei deutschen Themensuchen nie auf und killen trotzdem Ideen.*
+
+| Quelle | Was dort steht | Status | Zuletzt |
+|---|---|---|---|
+| GrowApp / GLOBE European Phenology Campaign (`growapp.today`, `globe.gov`) | Wiederholungsfoto derselben Einzelpflanze, voriges Bild transparent zum Ausrichten, automatischer Zeitraffer ab Bild 2; GLOBE Niederlande, Update Frühjahr 2024 | angekratzt — **ergiebig, hat Crack Flora Watcher gekippt**; Länderliste, Datenexport und Nutzerzahlen ungelesen | 21.09.2026 |
+| USA National Phenology Network / Nature's Notebook (`usanpn.org`) | Einzelpflanzen mit Spitznamen registrieren, im Feld markieren, wiederholt besuchen; kuratierte Artenliste; neue App Frühjahr 2026 mit „leveled approach to monitoring" | angekratzt (FAQ gelesen) — Artenliste nicht durchgesehen, Ritzenunkraut unklar | 21.09.2026 |
+| Flora Incognita, Projektseite Krautschau (`floraincognita.de/krautschau/`) | Eigenes Krautschau-Projekt in der App, Abzeichen 40 Arten / fünf Stufen, „Flora-Routine" mit Geozone und Auto-Tagging | `durchsucht` (Seite gelesen) — **Achtung: war in der Dose als nachrangiger Empfänger geführt und ist zugleich Konkurrenz** | 21.09.2026 |
+| Senckenberg #Krautschau (`senckenberg.de/de/krautschau/`) | Aktionszeitraum 2026 09.05.–10.06. (85 Spaziergänge, 66 Städte), 2027 14.–23.05.; Koordination Julia Krohmer + Alexandra-Maria Klein (Uni Freiburg); empfiehlt Flora Incognita und ObsIdentify | `durchsucht` (Seite gelesen) | 21.09.2026 |
+| CityLAB Gieß den Kiez (`citylab-berlin.org/en/projects/giess-den-kiez/`) | Baum adoptieren, Gießmenge protokollieren, Patenbäume im Profil; 885.825 Bäume, quelloffen mit Fork-Wiki, seit 2020 laufend | angekratzt (Projektseite gelesen) — zu Exklusivität/Inaktivität/Übertragung sagt die Seite nichts; ggf. Repo/Issues lesen | 21.09.2026 |
+
+---
+
 ## Nicht mehr als Quelle nutzen
 
 - Allgemeine Suchen „KI App <Alltagsthema>" → Content-Farmen, besetzte Märkte (siehe Besetzungsatlas im Playbook).
 - Eigenes Brainstorming ohne Quelle → Trefferquote Runde 2: 0 von 10 `frei`; die eine Ausnahme (Bebauungsplan-Leser, nach Recheck 19.09.2026 `verengt`) hat dünne Evidenz und wäre ohne Organisationsnamen-Suche nicht über `unklar` hinausgekommen.
 - Typ-A-Anker „physisches Objekt + wiederkehrende gesetzliche Sichtprüfung" (Bäume, Spielplätze, Aufzüge, Feuerlöscher, Brücken) → erst gegen den Atlas halten, nicht zwei Kandidaten aus derselben Quelle prüfen (Runde 3, Baumkontrolle).
-- **Nur deutschsprachige Suchen bei Alltagsideen** → Runde 4: Sperrmüll-Radar war nur auf Deutsch frei; auf Englisch existierte CurbAlert bereits viermal. Vor jeder Zusage englische Suche Pflicht.
+- **Nur deutschsprachige Suchen bei Alltagsideen** → Runde 4: Sperrmüll-Radar war nur auf Deutsch frei; auf Englisch existierte CurbAlert bereits viermal. Vor jeder Zusage englische Suche Pflicht. **Runde 6 bestätigt zum dritten Mal:** Crack Flora Watcher war deutsch `verengt`, englisch `besetzt` (GrowApp, Nature's Notebook).
+- **Nur nach dem Gegenstand suchen** („Ritzenpflanzen-App") → findet nie die Werkzeuge, die über ihre **Funktion** definiert sind (Typ F oben). Die Mechanik immer separat suchen, siehe Playbook §2.
