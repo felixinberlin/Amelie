@@ -112,6 +112,20 @@ Der Lauf nennt diese Anker in `amelie-bisoziation-log.md`. Sie sind hier vermerk
 
 ---
 
+## Typ G — Spiele mit Wissenschaftsanspruch (neu, Runde 6, Spiel-Strang)
+
+*Muster: Das Feld hat Konferenzen, und deren Programme sind Adressbücher. „Ein Indie-Entwickler" ist keine Adresse.*
+
+| Quelle | Was dort steht | Status | Zuletzt |
+|---|---|---|---|
+| ECSA 2026, Workshop W16 „Games for good: Games and gamification for Citizen Science" (Oulu, 03.03.2026) | Convenors: Liz Dowthwaite + Nimisha Parashar (Univ. Nottingham), **Jesse Himmelstein (Play Curious)**, **Attila Szantner (MMOS)**; Beiträge: Forschung, Spiel-Demos, Projektvorstellungen | `durchsucht` — **Termin vorbei**, also kein Zustellziel, aber der Adressbestand des Felds. Nächstes Fenster ECSA 2027 | 21.09.2026 |
+| MMOS / Project Discovery (`mmos.ch`) | Echte Forschungsaufgaben in bestehende Spiele eingebettet (EVE Online), hunderttausende Spieler, *Nature Biotechnology* 2024, GDC-Talk | angekratzt (Suchtreffer) — **umgekehrtes Modell**, Wissenschaft ins Spiel statt Spiel um Weltstück | 21.09.2026 |
+| The Plant Game / Pl@ntNet (`theplantgame.com`, `docs.plantnet.org`) | Drei Modi inkl. **Duell** gegen Freunde oder Zufallsgegner, adaptive Schwierigkeit | angekratzt — Doku nennt **keine Duellregeln, keine Spielerzahlen, kein Datum**; Aktivitätsstand vor Zustellung prüfen | 21.09.2026 |
+| Stray Fawn Studio / Publishing (`strayfawnstudio.com`) | Publishing seit 03/2023, Fokus Strategie/Simulation/City-Building, „pitch deck and trailer" an `pitch@strayfawnstudio.com` | `durchsucht` — **kein Empfänger, Verkaufskanal**; als Vorarbeit führen (*Niche*) | 21.09.2026 |
+| Scientific Game Jam (itch.io), Green Game Jam (Playing for the Planet) | Jams, die Forschung und Spielentwicklung paaren | offen — als Community-Weg für Ideen **mit** Skelett | – |
+
+---
+
 ## Nicht mehr als Quelle nutzen
 
 - Allgemeine Suchen „KI App <Alltagsthema>" → Content-Farmen, besetzte Märkte (siehe Besetzungsatlas im Playbook).

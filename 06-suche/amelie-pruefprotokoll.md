@@ -49,6 +49,29 @@ zustellbar macht. Entscheidung bei Félix, hier nur vermerkt.
 
 ---
 
+## Runde 6, Spiel-Strang — 21.09.2026 (auf Félix' Einwand: „geht die Idee nicht an einen Indie-Entwickler?")
+
+Anlass: Ich hatte die Wettbewerbsmechanik aus der Patenschafts-Dose gestrichen mit der Begründung
+„richtet sich gegen Ehrenamtliche". Félix' Einwand trifft: **In einem Spiel gibt es keine
+Ehrenamtlichen.** Der Einwand war kontextgebunden, nicht grundsätzlich. Fugenduell war nie *als
+Spiel* geprüft worden, nur als Bürgerwissenschaft. Vier Suchen plus zwei Empfängerprüfungen.
+
+| Idee | Urteil | Beleg (kurz) | Prüfen ab |
+|---|---|---|---|
+| **Das lebende Spielobjekt** — Standortspiel, dessen umkämpftes Objekt ein realer Organismus an einem realen Ort ist, der außerhalb des Spiels weiterlebt und aus echten Gründen stirbt | **`frei`** | Die Nachbarn kuratieren ihre Welt entweder vollständig oder verzichten auf Besitz — die Kreuzung ist leer. **Ortsbesitz an kuratierten, virtuellen Objekten:** Pokémon GO, Ingress, Munzee Places, ausgereift, ohne Lebensdauer. **Gebaute Welt mit echten Arten:** *Out and About* (Yaldi Games, Steam 2026), Cozy-Foraging über echte Pflanzen, beworben damit, dass man danach draußen bestimmen kann — Einzelspieler, keine Standortbindung, kein Kampf. **Echte Wissenschaft als Spielsystem:** *Niche* (Stray Fawn), echte Mendel-Genetik, kommerziell erfolgreich. **Wissenschaft in ein Spiel eingebettet:** MMOS/Project Discovery in EVE Online, hunderttausende Spieler, *Nature Biotechnology* 2024 — der umgekehrte Weg. **Bestimmungsduelle:** The Plant Game (Pl@ntNet) duelliert um Können, nicht um ein Objekt. Kein Treffer für ein Spielobjekt mit eigener Lebensdauer. Dose gepackt: `05-dosen/lebendes-spielobjekt.md` | 03/2027 |
+| *Nebenbefund:* „Spiel über echte Pflanzenarten" | `besetzt` | *Out and About* ist fertig, veröffentlicht und gut besprochen. Als eigenständiger Pitch tot — nur noch als Nachbar zu nennen | – |
+| *Empfängerprüfung:* Stray Fawn Publishing | **kein Empfänger — Verkaufskanal** | Publishing-Zweig seit März 2023 (nach *The Wandering Village*, 200.000+ verkauft), Fokus laut Ankündigung **Strategie, Simulation, City-Building**; Kontaktseite verlangt „a pitch deck and trailer" an `pitch@strayfawnstudio.com`. Eine Idee ohne Produkt dort einzuwerfen ist Kaltakquise, nicht Geschenk — Anti-Pattern im Manifest. Gehört in „Vorarbeit", nicht in die Adresszeile | – |
+| *Empfängerprüfung:* Pl@ntNet / The Plant Game | **Empfänger Rang 2, passt** | Bestimmungsmaschine, Spielerbasis, **bestehender Duell-Modus** und Datenmotiv liegen dort zusammen; die Idee wäre für sie eine Erweiterung, kein neues Unternehmen. Einschränkung wie in Runde 6: die Doku nennt keine Regeln, keine Spielerzahlen, kein Datum — Aktivitätsstand vor Zustellung prüfen (`theplantgame.com` erreichbar) | 03/2027 |
+| *Empfängerquelle:* ECSA 2026, Workshop W16 „Games for good" | **Feld hat Adressen** | Oulu, 03.03.2026 — **vorbei**, also kein Zustellziel. Aber die Convenors sind der Adressbestand des Felds: Liz Dowthwaite und Nimisha Parashar (University of Nottingham), **Jesse Himmelstein (Play Curious)**, **Attila Szantner (MMOS)**. Nächstes Fenster wäre ECSA 2027 | – |
+
+**Bilanz Spiel-Strang: 1 Idee, 1 `frei`.** Die erste freie Zeile seit Runde 3.
+
+**Lehre für die Empfängerwahl:** „ein Indie-Entwickler" ist keine Adresse, sondern die BCC-Mail an
+fünf Firmen. Die Adressen eines Felds stehen im Programm seiner Konferenz — der ECSA-Workshop hat
+in zwanzig Minuten vier Namen geliefert, von denen zwei Studios sind, deren Geschäft genau das ist.
+
+---
+
 ## Nachtrag Runde 6 — 21.09.2026 („Dose altert" auf die *neue* Dose angewandt)
 
 Die Dose `fugenduell-patenschaft.md` war gepackt, aber nicht geprüft — ihre eigene Restlücke
