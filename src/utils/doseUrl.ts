@@ -23,6 +23,15 @@ export function getDoseUrl(doseId: string): string {
 }
 
 /**
+ * Returns a permanent canonical URL for a simulator in the sandboxes tab
+ * e.g. https://domain.app/#sim=glasanflug
+ */
+export function getSimulatorUrl(simKey: string): string {
+  const base = getBaseUrl();
+  return `${base}#sim=${encodeURIComponent(simKey)}`;
+}
+
+/**
  * Parses the current URL to find if a dose is requested
  * Supports:
  * - Hash: #dose=altbau-thermal or #/dose/altbau-thermal
@@ -53,6 +62,40 @@ export function parseDoseIdFromUrl(): string | null {
     }
   } catch (err) {
     console.error('Error parsing dose from URL:', err);
+  }
+
+  return null;
+}
+
+/**
+ * Parses the current URL to find if a simulator/sandbox tab is requested
+ * Supports:
+ * - Hash: #sim=glasanflug or #simulator=glasanflug or #sandbox=glasanflug
+ * - Search params: ?sim=glasanflug or ?simulator=glasanflug
+ */
+export function parseSimulatorFromUrl(): string | null {
+  if (typeof window === 'undefined') return null;
+
+  try {
+    const hash = window.location.hash;
+    if (hash) {
+      const matchSim = hash.match(/#(?:\/)?(?:sim|simulator|sandbox)=([^&]+)/i);
+      if (matchSim && matchSim[1]) {
+        return decodeURIComponent(matchSim[1]);
+      }
+      const matchSlashSim = hash.match(/#(?:\/)?(?:sim|simulator|sandbox)\/([^/?&]+)/i);
+      if (matchSlashSim && matchSlashSim[1]) {
+        return decodeURIComponent(matchSlashSim[1]);
+      }
+    }
+
+    const searchParams = new URLSearchParams(window.location.search);
+    const simQuery = searchParams.get('sim') || searchParams.get('simulator') || searchParams.get('sandbox');
+    if (simQuery) {
+      return simQuery;
+    }
+  } catch (err) {
+    console.error('Error parsing simulator from URL:', err);
   }
 
   return null;

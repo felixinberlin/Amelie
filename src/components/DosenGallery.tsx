@@ -16,6 +16,114 @@ interface DosenGalleryProps {
   onOpenEmails?: () => void;
 }
 
+interface SimulatorBadgeConfig {
+  simKey: SimulatorKey;
+  labelDe: string;
+  labelEn: string;
+  labelEs: string;
+  colorClasses: string;
+  iconColor: string;
+}
+
+const SIMULATOR_BADGES: Record<string, SimulatorBadgeConfig> = {
+  'altbau-thermal': {
+    simKey: 'altbau',
+    labelDe: '🏢 Live-Wärmebilanz Simulator',
+    labelEn: '🏢 Live Heat Loss Simulator',
+    labelEs: '🏢 Simulador de Pérdida Térmica',
+    colorClasses: 'bg-[#c5832b]/15 hover:bg-[#c5832b]/25 text-[#78350f] border-[#c5832b]/30',
+    iconColor: 'text-[#c5832b]',
+  },
+  'glasanflug-ampel': {
+    simKey: 'glasanflug',
+    labelDe: '🐦 Live-Vogelschlag & LAG-VSW Rechner',
+    labelEn: '🐦 Live Bird Glass Strike Calculator',
+    labelEs: '🐦 Calculadora de Riesgo de Colisión de Aves',
+    colorClasses: 'bg-[#0284c7]/15 hover:bg-[#0284c7]/25 text-[#0369a1] border-[#0284c7]/30',
+    iconColor: 'text-[#0284c7]',
+  },
+  'wet-ink': {
+    simKey: 'wetink',
+    labelDe: '🖋️ Live-Tinte Simulator',
+    labelEn: '🖋️ Live Wet Ink Simulator',
+    labelEs: '🖋️ Simulador de Tinta Líquida',
+    colorClasses: 'bg-[#c5832b]/15 hover:bg-[#c5832b]/25 text-[#78350f] border-[#c5832b]/30',
+    iconColor: 'text-[#c5832b]',
+  },
+  'wet-ink-capillary': {
+    simKey: 'wetink',
+    labelDe: '🖋️ Live-Tinte Simulator',
+    labelEn: '🖋️ Live Wet Ink Simulator',
+    labelEs: '🖋️ Simulador de Tinta Líquida',
+    colorClasses: 'bg-[#c5832b]/15 hover:bg-[#c5832b]/25 text-[#78350f] border-[#c5832b]/30',
+    iconColor: 'text-[#c5832b]',
+  },
+  'klarlokal': {
+    simKey: 'klarlokal',
+    labelDe: '🛡️ Live-Brecheisen Simulator',
+    labelEn: '🛡️ Live Battering Ram',
+    labelEs: '🛡️ Simulador KlarLokal',
+    colorClasses: 'bg-[#1b4332]/15 hover:bg-[#1b4332]/25 text-[#1b4332] border-[#1b4332]/30',
+    iconColor: 'text-[#1b4332]',
+  },
+  'crack-flora-watcher': {
+    simKey: 'crackflora',
+    labelDe: '🌱 Live-Ritzengrün Simulator',
+    labelEn: '🌱 Live Pavement Lab',
+    labelEs: '🌱 Laboratorio de Grietas',
+    colorClasses: 'bg-[#2d5a27]/15 hover:bg-[#2d5a27]/25 text-[#1b4332] border-[#2d5a27]/30',
+    iconColor: 'text-[#2d5a27]',
+  },
+  'kiez-laermkarte': {
+    simKey: 'laerm',
+    labelDe: '🎧 24h Zeitstruktur & Ruhe-Fenster',
+    labelEn: '🎧 24h Noise & Quiet Windows',
+    labelEs: '🎧 Simulador de Ruido 24h',
+    colorClasses: 'bg-[#8c1d40]/15 hover:bg-[#8c1d40]/25 text-[#8c1d40] border-[#8c1d40]/30',
+    iconColor: 'text-[#8c1d40]',
+  },
+  'streiflicht': {
+    simKey: 'streiflicht',
+    labelDe: '🔦 Live-Streiflicht RTI Labor',
+    labelEn: '🔦 Live Grazing Light RTI Lab',
+    labelEs: '🔦 Laboratorio RTI de Luz Rasante',
+    colorClasses: 'bg-[#6366f1]/15 hover:bg-[#6366f1]/25 text-[#4338ca] border-[#6366f1]/30',
+    iconColor: 'text-[#6366f1]',
+  },
+  'balkonkraftwerk': {
+    simKey: 'balkon',
+    labelDe: '☀️ Live-Balkon-PV Rechner',
+    labelEn: '☀️ Live Balcony Solar Calculator',
+    labelEs: '☀️ Calculadora Solar de Balcón',
+    colorClasses: 'bg-[#d97706]/15 hover:bg-[#d97706]/25 text-[#92400e] border-[#d97706]/30',
+    iconColor: 'text-[#d97706]',
+  },
+  'regenwasser': {
+    simKey: 'regenwasser',
+    labelDe: '🌧️ Live-Zisternen Simulator',
+    labelEn: '🌧️ Live Rainwater Cistern Sizing',
+    labelEs: '🌧️ Simulador de Agua de Lluvia',
+    colorClasses: 'bg-[#0284c7]/15 hover:bg-[#0284c7]/25 text-[#0369a1] border-[#0284c7]/30',
+    iconColor: 'text-[#0284c7]',
+  },
+  'fugenduell-patenschaft': {
+    simKey: 'fugenduell',
+    labelDe: '⚔️ Live-Fugenduell Arena',
+    labelEn: '⚔️ Live Sidewalk Crack Arena',
+    labelEs: '⚔️ Duelo de Grietas Urbanas',
+    colorClasses: 'bg-[#78350f]/15 hover:bg-[#78350f]/25 text-[#78350f] border-[#78350f]/30',
+    iconColor: 'text-[#78350f]',
+  },
+  'fugenduell-asphalt-arena': {
+    simKey: 'fugenduell',
+    labelDe: '⚔️ Live-Fugenduell Arena',
+    labelEn: '⚔️ Live Sidewalk Crack Arena',
+    labelEs: '⚔️ Duelo de Grietas Urbanas',
+    colorClasses: 'bg-[#78350f]/15 hover:bg-[#78350f]/25 text-[#78350f] border-[#78350f]/30',
+    iconColor: 'text-[#78350f]',
+  },
+};
+
 export const DosenGallery: React.FC<DosenGalleryProps> = ({
   dosen,
   lang,
@@ -260,107 +368,23 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
                   </h3>
 
                   {/* Simulator badge if available */}
-                  {dose.id === 'altbau-thermal' && onOpenSimulator && (
+                  {onOpenSimulator && SIMULATOR_BADGES[dose.id] && (
                     <div className="mt-2.5">
                       <button
                         type="button"
                         onClick={(e) => {
                           e.stopPropagation();
-                          onOpenSimulator('altbau');
+                          onOpenSimulator(SIMULATOR_BADGES[dose.id].simKey);
                         }}
-                        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#c5832b]/15 hover:bg-[#c5832b]/25 text-[#78350f] text-xs font-typewriter font-bold transition-all border border-[#c5832b]/30 shadow-2xs"
+                        className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-typewriter font-bold transition-all border shadow-2xs cursor-pointer ${SIMULATOR_BADGES[dose.id].colorClasses}`}
                       >
-                        <Sparkles className="w-3 h-3 text-[#c5832b]" />
+                        <Sparkles className={`w-3 h-3 ${SIMULATOR_BADGES[dose.id].iconColor}`} />
                         <span>
                           {lang === 'de'
-                            ? '🏢 Live-Wärmebilanz Simulator'
+                            ? SIMULATOR_BADGES[dose.id].labelDe
                             : lang === 'es'
-                            ? '🏢 Simulador de Pérdida Térmica'
-                            : '🏢 Live Heat Loss Simulator'}
-                        </span>
-                      </button>
-                    </div>
-                  )}
-                  {dose.id === 'wet-ink-capillary' && onOpenSimulator && (
-                    <div className="mt-2.5">
-                      <button
-                        type="button"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          onOpenSimulator('wetink');
-                        }}
-                        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#c5832b]/15 hover:bg-[#c5832b]/25 text-[#78350f] text-xs font-typewriter font-bold transition-all border border-[#c5832b]/30 shadow-2xs"
-                      >
-                        <Sparkles className="w-3 h-3 text-[#c5832b]" />
-                        <span>
-                          {lang === 'de'
-                            ? '🖋️ Live-Tinte Simulator'
-                            : lang === 'es'
-                            ? '🖋️ Simulador de Tinta Líquida'
-                            : '🖋️ Live Wet Ink Simulator'}
-                        </span>
-                      </button>
-                    </div>
-                  )}
-                  {dose.id === 'klarlokal' && onOpenSimulator && (
-                    <div className="mt-2.5">
-                      <button
-                        type="button"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          onOpenSimulator('klarlokal');
-                        }}
-                        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#1b4332]/15 hover:bg-[#1b4332]/25 text-[#1b4332] text-xs font-typewriter font-bold transition-all border border-[#1b4332]/30 shadow-2xs"
-                      >
-                        <Sparkles className="w-3 h-3 text-[#1b4332]" />
-                        <span>
-                          {lang === 'de'
-                            ? '🛡️ Live-Brecheisen Simulator'
-                            : lang === 'es'
-                            ? '🛡️ Simulador KlarLokal'
-                            : '🛡️ Live Battering Ram'}
-                        </span>
-                      </button>
-                    </div>
-                  )}
-                  {dose.id === 'crack-flora-watcher' && onOpenSimulator && (
-                    <div className="mt-2.5">
-                      <button
-                        type="button"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          onOpenSimulator('crackflora');
-                        }}
-                        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#2d5a27]/15 hover:bg-[#2d5a27]/25 text-[#1b4332] text-xs font-typewriter font-bold transition-all border border-[#2d5a27]/30 shadow-2xs"
-                      >
-                        <Sparkles className="w-3 h-3 text-[#2d5a27]" />
-                        <span>
-                          {lang === 'de'
-                            ? '🌱 Live-Ritzengrün Simulator'
-                            : lang === 'es'
-                            ? '🌱 Laboratorio de Grietas'
-                            : '🌱 Live Pavement Lab'}
-                        </span>
-                      </button>
-                    </div>
-                  )}
-                  {dose.id === 'kiez-laermkarte' && onOpenSimulator && (
-                    <div className="mt-2.5">
-                      <button
-                        type="button"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          onOpenSimulator('laerm');
-                        }}
-                        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#8c1d40]/15 hover:bg-[#8c1d40]/25 text-[#8c1d40] text-xs font-typewriter font-bold transition-all border border-[#8c1d40]/30 shadow-2xs"
-                      >
-                        <Sparkles className="w-3 h-3 text-[#8c1d40]" />
-                        <span>
-                          {lang === 'de'
-                            ? '🎧 24h Zeitstruktur & Ruhe-Fenster'
-                            : lang === 'es'
-                            ? '🎧 Simulador de Ruido 24h'
-                            : '🎧 24h Noise & Quiet Windows'}
+                            ? SIMULATOR_BADGES[dose.id].labelEs
+                            : SIMULATOR_BADGES[dose.id].labelEn}
                         </span>
                       </button>
                     </div>

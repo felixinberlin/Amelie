@@ -8,6 +8,14 @@
 
 ---
 
+> 🦅 **Interactive Simulator in Browser:**
+> - **Run in dose view:** [Open Bird Glass Strike Hazard Calculator](#dose=glasanflug-ampel)
+> - **Fullscreen lab:** [Open Bird Glass Sandbox](#sim=glasanflug)
+>
+> The deterministic engine implements Tables 3 and 4 of LAG VSW Decision 21/01 (2023 revision) with live color-coded risk assessment, priority rules, provenance tracking per input, and detailed rationale in the browser.
+
+---
+
 ## The problem
 
 An estimated **100 million birds a year die on glass in Germany**; **only 15–35 % of victims are ever found**. Legally one question decides everything: is the killing risk at this building *significantly elevated* under § 44 BNatSchG? The LAG VSW draws the line at **two collision victims per 100 m of façade per year as "normal", and five or more as "significantly elevated".**
@@ -55,11 +63,10 @@ And demand for it just jumped:
 
 **Ticket: make the scheme executable — without a single line of computer vision.**
 
-Transcribe LAG VSW 21/01 into a rule file (YAML or JSON): every factor, point value and threshold, with the original wording beside it. Add a pure function that takes values by hand and returns a class plus its justification, and test cases from Berlin's assessment aid and the Munich study — those nine complexes are already classified by hand.
-
-**Done when:** three hand-assessed buildings come out in the same class from manual input — **and every deviation traces to a named input value, not to the rules.**
-
-Two advantages, both worth more than the code: the result is **useful on its own** (a citable, versioned form of the scheme any authority can reuse), and it is the skeleton that makes the idea deliverable at all — as a GPL-compatible module beside the Vogelschlagmelder, rather than a shout at an unpaid maintainer.
+- **Code:** Done on 22 Sep 2026. Lives in `04-werkzeug/glasanflug-ampel/` (Python) and `src/engine/glasanflug/` (TypeScript).
+- **Interactive Simulator in Browser:** [Open Simulator](#dose=glasanflug-ampel) or [Fullscreen Sandbox](#sim=glasanflug).
+- **Scope:** Transcribe LAG VSW 21/01 (2023 revision) into a rule file: every factor, point value and threshold, with the original wording beside it. A pure scoring function (`bewerte(...)`) taking values with provenance tags and returning a risk class plus its justification, `signifikanzschwelle(...)` for monitoring data, and 26 automated tests green — including all eleven worked examples from the decision's annex, the Munich field data, both priority rules, and the uncodified rule conflict. CC0 public domain, directly embeddable into GPLv3 codebases.
+- **Next Ticket:** Estimate criterion 1 (share of freely visible unmarked glass) from a reported façade photo. Done when the estimated band is right for four out of five of thirty hand-measured façades and every deviation is explainable from the image.
 
 ## Where it breaks
 

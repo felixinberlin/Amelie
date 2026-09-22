@@ -22,13 +22,25 @@ import { CANDIDATE_IDEAS_DATA } from './data/unpacked';
 import { DoseItem, Language, CandidateIdea } from './types';
 import { getTranslation } from './i18n';
 import { getActiveDosen, getActiveCandidates, saveCandidateLocal } from './services/storageService';
-import { parseDoseIdFromUrl, setDoseUrl, clearDoseUrl } from './utils/doseUrl';
-import { SimulatorKey } from './data/doseSimulators';
+import { parseDoseIdFromUrl, parseSimulatorFromUrl, setDoseUrl, clearDoseUrl } from './utils/doseUrl';
+import { SimulatorKey, DOSE_SIMULATOR_MAP } from './data/doseSimulators';
 import { Gift, FolderGit2 } from 'lucide-react';
 
 export function App() {
-  const [currentTab, setCurrentTab] = useState<string>('dosen');
-  const [activeSandbox, setActiveSandbox] = useState<SimulatorKey>('altbau');
+  const [currentTab, setCurrentTab] = useState<string>(() => {
+    if (parseSimulatorFromUrl()) return 'sandboxes';
+    return 'dosen';
+  });
+  const [activeSandbox, setActiveSandbox] = useState<SimulatorKey>(() => {
+    const rawSim = parseSimulatorFromUrl();
+    if (rawSim) {
+      if (rawSim in DOSE_SIMULATOR_MAP) {
+        return DOSE_SIMULATOR_MAP[rawSim].key;
+      }
+      return (rawSim as SimulatorKey) || 'altbau';
+    }
+    return 'altbau';
+  });
   const [lang, setLang] = useState<Language>('en');
   const [selectedDose, setSelectedDose] = useState<DoseItem | null>(null);
   const [packerDraft, setPackerDraft] = useState<any>(null);
@@ -57,10 +69,26 @@ export function App() {
         if (found) {
           setActiveDosePage(found);
           window.scrollTo({ top: 0, behavior: 'smooth' });
+          return;
         }
-      } else {
-        setActiveDosePage(null);
       }
+      
+      const rawSim = parseSimulatorFromUrl();
+      if (rawSim) {
+        let simKey: SimulatorKey = 'glasanflug';
+        if (rawSim in DOSE_SIMULATOR_MAP) {
+          simKey = DOSE_SIMULATOR_MAP[rawSim].key;
+        } else {
+          simKey = rawSim as SimulatorKey;
+        }
+        setActiveSandbox(simKey);
+        setCurrentTab('sandboxes');
+        setActiveDosePage(null);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+
+      setActiveDosePage(null);
     };
 
     window.addEventListener('hashchange', handleUrlChange);
