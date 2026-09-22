@@ -8,7 +8,8 @@
     "build": "tsc && vite build",
     "lint": "tsc --noEmit && npm run check:dosen",
     "preview": "vite preview --port 3000",
-    "check:dosen": "node scripts/check-dosen-drift.mjs"
+    "check:dosen": "node scripts/check-dosen-drift.mjs",
+    "test": "vitest run"
   },
   "dependencies": {
     "@types/canvas-confetti": "^1.9.0",
@@ -31,6 +32,7 @@
     "@vitejs/plugin-react": "^4.3.4",
     "tailwindcss": "^4.0.0",
     "typescript": "^5.7.3",
-    "vite": "^6.1.0"
+    "vite": "^6.1.0",
+    "vitest": "^5.0.1"
   }
 }
