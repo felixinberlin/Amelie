@@ -128,7 +128,7 @@ export const DOSEN_DATA: DoseItem[] = [
     id: 'eurobirdcast',
     title: 'EuroBirdCast',
     titleEn: 'EuroBirdCast: Auditable Migration Curtailment',
-    image: 'public/eurobird.png',
+    image: 'eurobird.png',
     oneLinerDe: 'Aus bereits offen vorliegenden, wetterradarbasierten Vogelzugprofilen eine turbinenspezifische Abschaltempfehlung erzeugen, die eine Behörde ohne den Dienst selbst nachrechnen kann. Arbeitstitel — der Name kollidiert mit BirdCast (Cornell/CSU).',
     oneLinerEn: 'Turn already public, weather-radar-derived bird migration profiles into a turbine-specific curtailment recommendation a regulator can recompute without the service itself. Working title — the name collides with BirdCast (Cornell/CSU).',
     date: '22. September 2026 (nach Prüfung neu geschrieben)',
