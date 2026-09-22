@@ -1373,7 +1373,370 @@ export const DOSEN_DATA: DoseItem[] = [
         { step: 4, title: 'Week 4: Mobile-Ready PWA & Open Gift Dossier', focus: 'Polishing tactical canvas and releasing complete dossier as open CC0 gift', milestone: 'Playable arena sandbox embedded in the Amélie catalog' }
       ]
     }
-  }
+  },
+  {
+    id: 'biotoptyp-assistent',
+    title: 'Biotoptyp-Assistent',
+    titleEn: 'Habitat Type Assistant',
+    oneLinerDe: 'Foto-Upload für ein begangenes Gelände, das einen Vorschlag für den zutreffenden BKompV-Anlage-2-Biotoptyp macht — mit Wertpunkt-Spanne, damit Gutachter:innen bestätigen statt aus 668 Typen von Hand nachzuschlagen.',
+    oneLinerEn: 'Upload field photos of a surveyed site and get a proposal for the applicable habitat type under the German compensation ordinance — with its value-point range, so surveyors confirm instead of looking up one of 668 types by hand.',
+    date: '18. September 2026',
+    reviewAfter: 'März 2027',
+    recipientsDe: 'Ökologische Planungsbüros und Gutachter:innen, die Eingriffsausgleich nach der Bundeskompensationsverordnung berechnen · nachrangig: BfN (Ergänzung zu BfN-Schriften 721) oder das KIBI-Projektteam',
+    recipientsEn: 'Ecological planning offices and surveyors calculating impact compensation under the German compensation ordinance · secondary: the federal nature conservation agency (BfN) or the KIBI project team',
+    domain: 'civic',
+    verdict: 'gift',
+    status: 'gepackt',
+    tags: ['Naturschutz', 'Vollzug', 'Bildklassifikation', 'BKompV', 'Gutachten'],
+    problemDe: 'Wer für Eingriffsvorhaben — Bau, Straßen, Windkraft — die Kompensation nach der Bundeskompensationsverordnung berechnet, muss jeden kartierten Geländeabschnitt einem von 668 Biotoptypen aus der 315-seitigen BfN-Kartieranleitung (Schrift 721, 2025) zuordnen, bevor Wertpunkte von 0 bis 24 und damit der Kompensationsbedarf feststehen. Handarbeit mit einem sehr dicken Nachschlagewerk, für jede Teilfläche einzeln.',
+    problemEn: 'Anyone calculating compensation for construction, roads or wind farms under the German compensation ordinance must assign every surveyed patch to one of 668 habitat types from a 315-page mapping manual before value points from 0 to 24 — and thus the required compensation — are fixed. Manual work with a very thick reference book, patch by patch.',
+    whyNowDe: [
+      'Bildklassifikation auf Feldfotos ist günstig und schnell geworden; ObsIdentify erreicht bei der Artbestimmung aus einem einzelnen Foto rund 95 % Trefferquote.',
+      'Solche Modelle sind bisher auf Artebene trainiert, nicht auf die rechtlich vorgeschriebene 668-Typen-Klassifikation der 2025er Kartieranleitung — die ist so neu, dass dafür noch kein öffentlicher Trainingsdatensatz existiert.',
+      'Landesbehörden halten aus ihren Biotopkartierungen bereits gelabelte Flächen; die Frage ist Zugang, nicht Machbarkeit.'
+    ],
+    whyNowEn: [
+      'Image classification on field photos has become cheap and fast; ObsIdentify reaches roughly 95 % accuracy on species from a single photo.',
+      'Those models are trained at species level, not on the legally prescribed 668-type classification of the 2025 manual — which is new enough that no public training set exists for it.',
+      'State agencies already hold labelled patches from their habitat surveys; the question is access, not feasibility.'
+    ],
+    sketchDe: 'Fotos plus grobe Standortangabe (Bundesland, Nutzungskontext) ergeben drei Vorschläge für den Biotoptyp mit Konfidenzwert und Seitenverweis in Schrift 721, die der Gutachter bestätigt oder korrigiert. Optional Anbindung an einen bestehenden Wertpunkte-Rechner wie das rheinland-pfälzische BWKalk. Nicht dazu gehört der Ersatz der Vor-Ort-Begehung — nur eine Vorsortierung, die den Katalog-Nachschlag abkürzt.',
+    sketchEn: 'Photos plus a rough location (federal state, land-use context) yield three habitat-type proposals with confidence scores and page references into the manual, which the surveyor confirms or corrects. Optionally wired to an existing value-point calculator. It does not replace the site visit — it is a pre-sort that shortens the lookup.',
+    firstStepDe: {
+      ticket: 'Die Trainingsdaten-Frage klären, bevor irgendetwas gebaut wird.',
+      criteria: 'Fertig, wenn eine Liste möglicher Datenquellen steht — Länder-Biotopkartierungen, GBIF, Namis-Biotop-App-Exporte — mit Ansprechpersonen. Das ist Voraussetzung für jedes Modelltraining.'
+    },
+    firstStepEn: {
+      ticket: 'Settle the training-data question before building anything.',
+      criteria: 'Done when a list of possible data sources exists — state habitat surveys, GBIF, app exports — with named contacts. That is the precondition for any model training.'
+    },
+    failureModeDe: 'Das BfN-Projekt KIBI geht dieselbe Grundaufgabe von der anderen Seite an, per Fernerkundung statt Bodenfoto. Das bringt eine Vorsortierung in Konkurrenz um Trainingsdaten und Zuständigkeit bei den Landesämtern. Ohne Kooperation mit einer Landesbehörde oder dem BfN bekommt ein unabhängiges Werkzeug vermutlich keinen Zugang zu belastbaren Trainingsdaten — deshalb das kurze Prüffenster.',
+    failureModeEn: 'The federal KIBI project tackles the same task from the other side, via remote sensing rather than ground photos, which puts a pre-sorting tool in competition for training data and jurisdiction. Without cooperation from a state agency, an independent tool probably gets no access to reliable training data — hence the short review window.',
+    priorArtDe: 'KIBI kartiert FFH-Lebensraumtypen automatisiert aus Luft- und Satellitenbildern — andere Datenquelle, schmalerer Typenkatalog. Die Namis-Biotop-App digitalisiert die Felderfassung, klassifiziert aber nicht. ObsIdentify und Flora Incognita bestimmen Arten, keine Biotoptypen. Ökokonto- und Kompensationsflächenkataster-Software ist GIS-Verwaltung, keine Bildanalyse. Ein Boden-Foto-zu-Typ-Klassifizierer wurde nicht gefunden; das Feld ist aktiv in Bewegung.',
+    priorArtEn: 'KIBI maps habitat types automatically from aerial and satellite imagery — different data source, narrower catalogue. Field-recording apps digitise data entry without classifying. ObsIdentify and Flora Incognita identify species, not habitat types. Compensation-area registries are GIS administration, not image analysis. No ground-photo-to-type classifier was found, but the field is visibly moving.'
+  },
+  {
+    id: 'lichtplan-check',
+    title: 'Lichtplan-Check',
+    titleEn: 'Lighting Plan Check',
+    oneLinerDe: 'Ein Web-Formular, das eine geplante Außenbeleuchtung gegen die verstreuten insekten- und vogelfreundlichen Kriterien mehrerer Behörden prüft und mit Quellenangabe zeigt, wo es kippt.',
+    oneLinerEn: 'A web form that checks planned outdoor lighting against the scattered insect- and bird-friendly criteria of several agencies, and shows with citations where it fails.',
+    date: '18. September 2026',
+    reviewAfter: 'September 2027',
+    recipientsDe: 'Landesumweltbehörden mit eigenem Leitfaden (z. B. Hamburg BUKEA, „Licht & Naturschutz") · nachrangig: NABU und BUND, kommunale Umweltämter bei der Umrüstung der Straßenbeleuchtung',
+    recipientsEn: 'State environment agencies with their own guidance (e.g. Hamburg\'s "Light & Nature Conservation") · secondary: conservation NGOs, municipal environment offices retrofitting street lighting',
+    domain: 'civic',
+    verdict: 'gift',
+    status: 'gepackt',
+    tags: ['Lichtverschmutzung', 'Insektenschutz', 'Leitfäden', 'Selbstcheck', 'Kommunen'],
+    problemDe: 'Bauherren, Kommunen und Lichtplaner:innen sollen Außenbeleuchtung gegen Vogel- und Insektenschutzkriterien prüfen — aber die Kriterien liegen verstreut über PDF-Leitfäden mehrerer Behörden und Verbände statt an einer Stelle: Abstrahlwinkel möglichst steil, Farbtemperatur ≤ 2700 K und optimal um 2200 K, Abschirmung, Betriebszeiten. Wer keinen Lichtplaner beauftragt — die meisten privaten Bauherren, viele kleine Kommunen — hat keine Möglichkeit, eine Planung selbst gegenzuprüfen.',
+    problemEn: 'Builders, municipalities and lighting designers are expected to check outdoor lighting against bird and insect protection criteria — but those criteria are scattered across PDF guidance from several agencies and NGOs instead of sitting in one place: steep beam angles, colour temperature at or below 2700 K and ideally around 2200 K, shielding, operating hours. Anyone not hiring a lighting designer has no way to check a plan themselves.',
+    whyNowDe: [
+      'Sprachmodelle können PDF-Leitfäden mehrerer Behörden strukturiert zu einem einheitlichen, quellenbelegten Kriterienkatalog zusammenführen — vorher hieß das manuelle Leitfaden-Lektüre pro Bundesland.',
+      'Der Check selbst braucht kein Modell, nur Schwellenwerte. Der Aufwand liegt vollständig in der Recherche, nicht im Bauen.'
+    ],
+    whyNowEn: [
+      'Language models can consolidate PDF guidance from several agencies into one sourced criteria catalogue — previously that meant reading every state\'s guidance by hand.',
+      'The check itself needs no model, only thresholds. The effort is entirely in the research, not the building.'
+    ],
+    sketchDe: 'Formular für Standort (naturnah ja/nein, grob geokodiert), Leuchtentyp, Farbtemperatur, Abstrahlwinkel, Abschirmung und Betriebszeiten; Ausgabe als Ampel pro Kriterium, mit wörtlichem Zitat der Leitfadenstelle und Handlungsempfehlung. Nicht dazu gehört die Kamera-Analyse einer bestehenden Anlage — ein eigenes, viel aufwendigeres Projekt — und jeder Anspruch, ein Fachgutachten im Genehmigungsverfahren zu ersetzen.',
+    sketchEn: 'A form for location (near-natural yes/no, roughly geocoded), luminaire type, colour temperature, beam angle, shielding and operating hours; output as a traffic light per criterion, with the guidance quoted verbatim and a recommendation. Not included: camera analysis of existing installations, and any claim to replace an expert report in a permit procedure.',
+    firstStepDe: {
+      ticket: 'Die vier bis fünf Leitfäden in eine gemeinsame Kriterientabelle übertragen.',
+      criteria: 'Fertig, wenn eine Tabelle mit Kriterium, Schwellenwert, Quelle und Quelldatum existiert, die Widersprüche zwischen den Leitfäden — etwa 2200 K gegen 2700 K — ausdrücklich markiert, statt sie zu verstecken.'
+    },
+    firstStepEn: {
+      ticket: 'Transfer the four or five guidance documents into one shared criteria table.',
+      criteria: 'Done when a table of criterion, threshold, source and source date exists that explicitly marks contradictions between the documents — 2200 K versus 2700 K, for instance — instead of hiding them.'
+    },
+    failureModeDe: 'Die Leitfäden widersprechen sich in Details, und ein Werkzeug, das eine falsche Schwelle als „sicher" ausgibt, ist schlimmer als gar keins. Gegenmaßnahme: jedes Kriterium mit Quelle zitieren statt als eigene Wahrheit ausgeben, und an jeder Stelle klar sagen, dass es ein Selbstcheck ist und kein Gutachten-Ersatz.',
+    failureModeEn: 'The guidance documents contradict each other in detail, and a tool that declares a wrong threshold "safe" is worse than none. Remedy: quote every criterion with its source rather than asserting it, and say plainly throughout that this is a self-check, not a substitute for an expert report.',
+    priorArtDe: 'Keine automatisierte Prüf-App gefunden (drei Suchen am 18.09.2026). Es gibt Text-Leitfäden von Hamburg BUKEA, NABU und BUND sowie ein kommerzielles Beratungsangebot eines Leuchtenherstellers für Kommunen — kein neutrales Self-Check-Werkzeug.',
+    priorArtEn: 'No automated checking app was found (three searches on 18 Sep 2026). There is text guidance from the Hamburg environment authority and from conservation NGOs, plus a commercial advisory offer from a luminaire manufacturer — but no neutral self-check tool.'
+  },
+  {
+    id: 'eichflaechen-trainer',
+    title: 'Eichflächen-Trainer',
+    titleEn: 'Calibration Deck for Habitat Surveyors',
+    oneLinerDe: 'Ein Kalibrierdeck aus echten, bereits kartierten Biotopflächen: Feldfotos und Artenliste rein, eigenen Code raten, sofort mit dem archivierten Experten-Konsens abgleichen — damit Nachwuchs die seltenen Zweifelsfälle üben kann, ohne eine echte Saison zu verbrauchen.',
+    oneLinerEn: 'A calibration deck built from real, already-mapped habitat patches: field photos and species list in, guess the code, compare instantly against the archived expert consensus — so trainees can practise the rare borderline cases without burning a real field season.',
+    date: '18. September 2026',
+    reviewAfter: 'September 2027',
+    recipientsDe: 'Ausbildungsstellen für Biotopkartierung (Akademie für angewandte Vegetationskunde, ANL Bayern) · nachrangig: Landesämter mit digitalem Kartierschlüssel wie der NLWKN in Niedersachsen',
+    recipientsEn: 'Training institutions for habitat mapping · secondary: state agencies with a digital mapping key',
+    domain: 'knowledge',
+    verdict: 'gift',
+    status: 'gepackt',
+    tags: ['Ausbildung', 'Biotopkartierung', 'Spaced Repetition', 'Referenzflächen', 'Fachkräftemangel'],
+    problemDe: 'Wer Biotoptypen nach dem amtlichen Kartierschlüssel kartiert, lernt das fast ausschließlich, indem er einen erfahrenen Kartierer eine Saison lang begleitet. Die Kursbeschreibungen nennen das Problem selbst: pflanzensoziologisches Grundwissen ist die eigentliche Hürde, und es herrscht bereits ein spürbarer Mangel an gut ausgebildeten Kartierern. Die sechswöchige Vegetationsperiode, in der die diagnostischen Arten sicher erkennbar sind, macht jede Übungsrunde teuer — ein missklassifizierter Grenzfall fällt oft erst am Schreibtisch auf, wenn die Fläche für dieses Jahr nicht mehr zugänglich ist.',
+    problemEn: 'Habitat mapping under the official key is learned almost exclusively by shadowing an experienced surveyor for a season. The course descriptions name the problem themselves: plant sociology is the real hurdle, and there is already a marked shortage of well-trained surveyors. The six-week window in which diagnostic species are reliably identifiable makes every practice round expensive — a misclassified borderline case is often noticed at the desk, when the site is no longer in the right state.',
+    whyNowDe: [
+      'Mehrere Bundesländer veröffentlichen ihre Kartierschlüssel inzwischen als strukturierte PDFs mit Querverweisen, und die Kartierungsergebnisse liegen bei vielen Landesämtern als Geodaten mit Attributen vor.',
+      'Was fehlte, ist kein neues Verfahren, sondern die Kombination: archivierte Flächen, bekannter Konsens-Code, ein Interface, das den Vergleich sofort zeigt. Vor fünf Jahren hätte allein das Einscannen der Kartierbögen den Aufwand gesprengt.'
+    ],
+    whyNowEn: [
+      'Several federal states now publish their mapping keys as structured PDFs with cross-references, and many agencies hold survey results as geodata with attributes.',
+      'What was missing is not a new method but the combination: archived patches, the known consensus code, and an interface that shows the comparison instantly. Five years ago, digitising the survey sheets alone would have broken the budget.'
+    ],
+    sketchDe: 'Datenbasis sind 100 bis 300 georeferenzierte Referenzflächen aus einem Bundesland — Fotos, notierte Artenliste, zugewiesener Code —, kuratiert mit dem Landesamt statt gescrapt. Im Übungsmodus sieht die Nutzerin Fotos und Artenliste, wählt einen Code aus dem offiziellen Schlüssel und bekommt sofort den Konsens-Code plus die Begründung, welche Zeiger- oder Strukturmerkmale den Ausschlag gaben. Schwerpunkt auf Grenzfällen, weil genau die im Feld die teuersten Fehler sind. Kein automatischer Klassifikator, kein Ersatz für die Begehung, kein Live-Einsatz im Feld — das ist der Kartierlotse.',
+    sketchEn: 'The data base is 100 to 300 georeferenced reference patches from one state — photos, recorded species list, assigned code — curated with the agency rather than scraped. In practice mode the user sees photos and species list, picks a code from the official key, and immediately gets the consensus code plus the reasoning about which indicator species or structural features decided it. The focus is on borderline cases, because those are the expensive mistakes. No automatic classifier, no replacement for the site visit, no live field use.',
+    firstStepDe: {
+      ticket: 'Eine Ausbildungsstelle oder ein Landesamt um fünfzig abgeschlossene, nicht mehr strittige Kartierbögen für ein Pilot-Deck bitten.',
+      criteria: 'Fertig, wenn ein Klick-Prototyp mit diesen fünfzig Flächen läuft und drei Kursteilnehmer ihn eine Stunde lang durchgespielt haben.'
+    },
+    firstStepEn: {
+      ticket: 'Ask one training institution or state agency to release fifty completed, uncontested survey sheets for a pilot deck.',
+      criteria: 'Done when a click-through prototype runs on those fifty patches and three course participants have played through it for an hour.'
+    },
+    failureModeDe: 'Die veröffentlichten Geodaten enthalten meist nur Polygon und finalen Code, nicht die Begründung des Kartierers vor Ort. Ohne sie ist das Feedback nur „richtig/falsch" statt „warum" — pädagogisch deutlich schwächer. Gegenmaßnahme: nicht breit scrapen, sondern mit einer einzelnen Ausbildungsstelle starten, die ihre Kartierbögen inklusive Originalnotizen noch besitzt, und das Deck von dort wachsen lassen.',
+    failureModeEn: 'Published geodata usually carry only the polygon and the final code, not the surveyor\'s on-site reasoning. Without it the feedback is merely right/wrong instead of why — pedagogically much weaker. Remedy: do not scrape broadly; start with one institution that still holds its survey sheets including the original notes, and grow the deck from there.',
+    priorArtDe: 'Die bestehende Ausbildung ist ausschließlich Präsenz-Begleitung im Feld; der ausdrücklich benannte Fachkräftemangel bestätigt den Engpass. In vier Suchen wurde kein digitales Kalibrier- oder Spaced-Repetition-Werkzeug für diesen Zweck gefunden — nur allgemeine Felddatenerfassungs-Apps wie Vegapp oder e-Surveyor, die Neuerfassung adressieren, nicht Training.',
+    priorArtEn: 'Existing training is exclusively in-person field shadowing, and the explicitly named shortage of surveyors confirms the bottleneck. Four searches found no digital calibration or spaced-repetition tool for this purpose — only general field data-entry apps, which address new recording rather than training.'
+  },
+  {
+    id: 'kartierlotse',
+    title: 'Kartierlotse',
+    titleEn: 'Mapping Pilot',
+    oneLinerDe: 'Ein Feld-Assistent für die Biotopkartierung, der während der Begehung anzeigt, welche Zeigerart oder Strukturangabe noch fehlt, um zwischen zwei möglichen Codes sicher zu entscheiden — Live-Hinweis statt nachträglicher Vorhersage am Schreibtisch.',
+    oneLinerEn: 'A field assistant for habitat mapping that shows, while you are still on site, which indicator species or structural note is missing to decide between two candidate codes — a live prompt instead of a prediction made later at the desk.',
+    date: '18. September 2026',
+    reviewAfter: 'September 2027',
+    recipientsDe: 'Landesämter mit digitalisiertem Kartierschlüssel (NLWKN Niedersachsen als Startpunkt) · nachrangig: Ausbildungsstellen und Planungsbüros mit eigenen Kartierteams',
+    recipientsEn: 'State agencies with a digitised mapping key · secondary: training institutions and planning offices with their own survey teams',
+    domain: 'civic',
+    verdict: 'gift',
+    status: 'gepackt',
+    tags: ['Biotopkartierung', 'Feldarbeit', 'Offline', 'Entscheidungslogik', 'Vollständigkeits-Check'],
+    problemDe: 'Kartierer arbeiten meist allein und entscheiden die Codezuweisung im Feld anhand eines über hundertseitigen amtlichen Schlüssels. Bei Übergangs- und Mosaik-Typen hängt die Entscheidung oft an einer einzigen zusätzlichen Beobachtung — einer Zeigerart, die man nicht extra gesucht hat, oder einem Strukturmerkmal, das man nicht notiert hat. Bemerkt wird die Lücke meist erst am Schreibtisch; dann ist die Fläche oft nicht mehr im richtigen Vegetationsstadium zugänglich, und die engen sechs Wochen der Saison machen einen zweiten Besuch teuer.',
+    problemEn: 'Surveyors usually work alone and assign codes in the field from an official key of more than a hundred pages. For transitional and mosaic types the decision often hinges on a single extra observation — an indicator species nobody went looking for, or a structural feature nobody recorded. The gap is typically noticed at the desk, by which time the site is often no longer in the right state, and the narrow six-week season makes a second visit expensive.',
+    whyNowDe: [
+      'Mehrere Landeskartierschlüssel liegen mit strukturierten Querverweisen vor und sind damit erstmals maschinenlesbar in eine Entscheidungslogik überführbar.',
+      'Kleine Sprachmodelle laufen offline auf einem Feldtelefon — wichtig, weil viele Offenlandflächen ohne Netzabdeckung liegen.',
+      'Die e-Surveyor-Studie (Ridding u. a. 2026) belegt erstmals, dass automatisierte Habitattyp-Vorhersage aus einer Artenliste grundsätzlich funktioniert — nur für ein anderes Klassifikationssystem und als nachträgliche Vorhersage.'
+    ],
+    whyNowEn: [
+      'Several state mapping keys now exist with structured cross-references, making them machine-readable as decision logic for the first time.',
+      'Small language models run offline on a field phone — which matters because many open-land sites have no network coverage.',
+      'The e-Surveyor study (Ridding et al. 2026) is the first published evidence that automated habitat-type prediction from a species list works at all — but for a different classification system and as an after-the-fact prediction.'
+    ],
+    sketchDe: 'Der Kartierer trägt Arten und Strukturbeobachtungen wie gewohnt während der Begehung ein, per Sprache oder Kürzel. Die App hält die digitalisierte Entscheidungslogik eines Kartierschlüssels im Hintergrund und erkennt, wenn zwei Codes nach aktuellem Stand gleich wahrscheinlich sind. In diesem Moment zeigt sie, was für die Unterscheidung noch fehlt und wo es typischerweise zu finden ist. Kein automatischer Codevorschlag, keine Ersetzung der fachlichen Entscheidung — nur ein Vollständigkeits-Check, solange man noch auf der Fläche steht.',
+    sketchEn: 'The surveyor records species and structural observations as usual during the walk, by voice or shorthand. The app holds the digitised decision logic of one mapping key in the background and detects when two codes remain equally likely. At that moment it shows what is still missing to tell them apart and where it is typically found. No automatic code suggestion, no replacement of professional judgement — only a completeness check while you are still standing on the site.',
+    firstStepDe: {
+      ticket: 'Einen einzigen Biotop-Obertyp aus dem NLWKN-Kartierschlüssel von Hand in eine Entscheidungstabelle „Code ↔ notwendige Zeigerarten und Strukturmerkmale" übertragen.',
+      criteria: 'Fertig, wenn ein erfahrener Kartierer diese Tabelle gegen drei reale, abgeschlossene Kartierfälle prüft und bestätigt, dass die Logik seine damalige Entscheidung korrekt nachvollzieht.'
+    },
+    firstStepEn: {
+      ticket: 'Transfer a single top-level habitat group from one state key by hand into a decision table of code versus required indicator species and structural features.',
+      criteria: 'Done when an experienced surveyor checks that table against three real, completed cases and confirms that the logic reproduces the decision they made at the time.'
+    },
+    failureModeDe: 'Die reale Entscheidungspraxis vieler Kartierer ist holistischer, als der gedruckte Schlüssel suggeriert — der Gesamteindruck der Fläche zählt oft mehr als einzelne Kriterien. Ein Werkzeug, das nur die schriftlichen Kriterien abbildet, kann bei genau den Grenzfällen, auf die es zielt, falsche Sicherheit erzeugen. Gegenmaßnahme: nie als Klassifikator verkaufen, sondern strikt als Erinnerung daran, was noch nicht geprüft wurde, und vor jedem Rollout gegen echte Altfälle validieren, nicht nur gegen den Text.',
+    failureModeEn: 'Real practice is more holistic than the printed key suggests — the overall impression of a site often counts for more than individual criteria. A tool that reflects only the written criteria can create false confidence in exactly the borderline cases it targets. Remedy: never sell it as a classifier, only as a reminder of what has not been checked, and validate against real past cases before any rollout, not just against the text.',
+    priorArtDe: 'Die e-Surveyor-App sagt aus einer im Feld erhobenen Artenliste den Habitattyp nach drei britischen Klassifikationssystemen voraus — das Grundprinzip funktioniert also, aber für ein anderes System und als nachträgliche Vorhersage. Vegapp digitalisiert die Felddateneingabe ohne Klassifikationslogik. Für den deutschen Kartierschlüssel wurde in vier Suchen kein vergleichbares Werkzeug gefunden; keines der Landesämter bietet mehr als PDF-Schlüssel mit Querverweisen.',
+    priorArtEn: 'The e-Surveyor app predicts habitat type from a field species list under three UK classification systems — so the principle works, but for a different system and as an after-the-fact prediction. Vegapp digitises field data entry without classification logic. For the German key, four searches found no comparable tool; no state agency offers more than PDF keys with cross-references.'
+  },
+  {
+    id: 'denkmal-verlaufsblick',
+    title: 'Denkmal-Verlaufsblick',
+    titleEn: 'Heritage Decay Timeline',
+    oneLinerDe: 'Ehrenamtliche fotografieren ein gefährdetes Baudenkmal immer vom selben Standpunkt; ein Werkzeug legt die Bilder übereinander und markiert, was sich seit dem letzten Mal verändert hat — Putz ab, Dachfläche eingebrochen, Öffnung neu vernagelt.',
+    oneLinerEn: 'Volunteers photograph an endangered listed building from the same vantage point each time; a tool aligns the images and marks what has changed since the last visit — render fallen, roof collapsed, an opening newly boarded up.',
+    date: '19. September 2026',
+    reviewAfter: 'März 2027',
+    recipientsDe: 'Deutsche Stiftung Denkmalschutz (Schwarzbuch-Team, ehrenamtliche Beiräte) · nachrangig: Landesdenkmalämter mit Bürgerportal, etwa das BLfD in Bayern',
+    recipientsEn: 'German Foundation for Monument Protection (its "black book" team and volunteer boards) · secondary: state heritage agencies with a citizen portal',
+    domain: 'civic',
+    verdict: 'gift',
+    status: 'gepackt',
+    tags: ['Denkmalschutz', 'Ehrenamt', 'Bildregistrierung', 'Zeitreihe', 'Meldung'],
+    problemDe: 'Gefährdete Baudenkmale verfallen meist nicht durch ein Ereignis, sondern durch Leerstand über Jahre. Wer das beobachtet, sind Anwohner:innen und Ehrenamtliche — sie haben aber keinen Weg, „es wird schlechter" so festzuhalten, dass ein Amt oder eine Stiftung es als Verlauf lesen kann. Was existiert, ist rückblickend: Die Deutsche Stiftung Denkmalschutz führt ein Meldeportal und veröffentlicht daraus das Schwarzbuch, zuletzt 324 Seiten zu 2024/25 mit über 1.000 verlorenen Denkmalen. Das ist ein Verlustverzeichnis. Es fehlt die Zeit davor.',
+    problemEn: 'Endangered listed buildings rarely decay through one event; they decay through years of vacancy. The people who see it are neighbours and volunteers — and they have no way to record "it is getting worse" so that an agency or foundation can read it as a trajectory. What exists is retrospective: a reporting portal and, out of it, a "black book" of losses, most recently 324 pages covering 2024/25 and more than 1,000 lost monuments. That is an inventory of losses. What is missing is the time before.',
+    whyNowDe: [
+      'Wiederholte Fotos deckungsgleich zu bekommen ist Bibliothekscode geworden; früher war genau dieser Aufwand der Grund, warum niemand Zeitreihen von Laienfotos erwartet hat.',
+      'Ein Vision-Language-Modell kann aus zwei ausgerichteten Fotos einen Satz wie „an der Nordost-Ecke ist der Putz auf etwa einem Quadratmeter neu abgefallen" formulieren — als erster Hinweis für Menschen, nicht als Befund.',
+      'KI-gestützte Zustandserfassung an Baudenkmalen ist 2025/26 in Papers vorhanden; was diese Arbeiten übergehen, ist der Laie mit dem Handy.'
+    ],
+    whyNowEn: [
+      'Aligning repeat photographs has become library code; that effort used to be the reason nobody expected time series from amateur photos.',
+      'A vision-language model can turn two aligned photos into a sentence like "render has newly come off about a square metre at the north-east corner" — as a first hint for humans, not a finding.',
+      'AI-assisted condition assessment of heritage buildings exists in the 2025/26 literature; what that work skips is the layperson with a phone.'
+    ],
+    sketchDe: 'Standpunkt anlegen mit Erstfoto, Ortsmarke, Kompassrichtung und einem halbtransparenten Overlay für spätere Aufnahmen. Alle paar Wochen ein Foto, das Overlay hilft beim Ausrichten. Danach ausrichten, Änderungen markieren, ein Satz Beschreibung — als Vorschlag mit Konfidenz, nie als Befund. Eine Zeitleiste pro Objekt erzeugt auf Klick ein Verlaufsblatt zum Anhängen an eine Meldung. Nicht dabei: Statik- oder Schadensbewertung, Ersatz der Schadenskartierung durch Restaurator:innen, eine öffentliche Karte gefährdeter Gebäude (Vandalismus- und Diebstahlrisiko), Betreten von Grundstücken.',
+    sketchEn: 'Create a vantage point with a first photo, a location marker, a compass bearing and a semi-transparent overlay for later shots. Every few weeks another photo, with the overlay helping to line it up. Then align, mark changes, and add one sentence of description — as a proposal with confidence, never as a finding. A timeline per object produces, on one click, a sheet to attach to a report. Not included: structural or damage assessment, replacing professional damage mapping, a public map of endangered buildings, or entering private property.',
+    firstStepDe: {
+      ticket: 'Zwei Fotos, ein Overlay, ein Vergleichsblatt — keine KI im ersten Schritt.',
+      criteria: 'Fertig, wenn eine Ehrenamtliche denselben Standpunkt nach vier Wochen ohne Anleitung so trifft, dass Ausrichtung und Vergleich ohne Handarbeit klappen. Erst danach lohnt die Änderungserkennung.'
+    },
+    firstStepEn: {
+      ticket: 'Two photos, one overlay, one comparison sheet — no AI in the first step.',
+      criteria: 'Done when a volunteer hits the same vantage point four weeks later, without instruction, closely enough that alignment and comparison work without manual fixing. Only then is change detection worth building.'
+    },
+    failureModeDe: 'Licht, Jahreszeit, Bewuchs und Schatten verändern Fotos stärker als Putz — ein Werkzeug, das ständig Schaden meldet, ist nach zwei Wochen aus. Deshalb zuerst Ausrichtung und Schiebe-Vergleich liefern, Änderungserkennung nur als schwacher Hinweis. Offen ist außerdem, ob die Stiftung Beobachter:innen hat, die wiederholt hinsehen statt einmal zu melden, und die Rechtslage beim Fotografieren von Privatgrundstücken ist nicht geprüft.',
+    failureModeEn: 'Light, season, vegetation and shadow change photographs more than render does — a tool that constantly reports damage is uninstalled within two weeks. So deliver alignment and a slider comparison first, with change detection only as a weak hint. It is also unverified whether the foundation has volunteers who look repeatedly rather than report once, and the legal position on photographing private property has not been checked.',
+    priorArtDe: 'Das Meldeportal der Stiftung und das Schwarzbuch sind rückblickend; in den Treffern keine Verlaufsbeobachtung. Das bayerische Bürgerportal Denkmalpflege bietet Beratung und Förderung, keine Foto-Verlaufsdaten. Profi-Software wie Metigo MAP und KALIV digitalisiert die Schadenskartierung durch Restaurator:innen — anderer Nutzer, anderes Ziel. Vision-basierte Verfallserkennung an Denkmalen ist aktive Forschung, richtet sich aber an Fachpersonal. Frei ist die schmale Rolle: Laien-Verlauf für gefährdete Objekte, mit Weg zur Meldung.',
+    priorArtEn: 'The foundation\'s reporting portal and its "black book" are retrospective; no trajectory tracking appeared in the results. A state citizen portal offers advice and funding, not photo trajectories. Professional software digitises damage mapping by conservators — a different user with a different goal. Vision-based decay detection on heritage buildings is active research aimed at professionals. What is free is the narrow role: a layperson\'s trajectory for endangered objects, with a path to a report.'
+  },
+  {
+    id: 'waermesignatur',
+    title: 'Wärmesignatur',
+    titleEn: 'Heat Signature',
+    oneLinerDe: 'Zwölf Monatswerte vom Gaszähler plus das Wetter ergeben, wie viel Wärme diese Wohnung pro Grad Temperaturunterschied verliert und ab welcher Außentemperatur sie heizt — als ehrliches Band, ohne dass jemand einen Grundriss zeichnet.',
+    oneLinerEn: 'Twelve monthly meter readings plus the weather yield how much heat this flat loses per degree of temperature difference, and at which outdoor temperature it starts heating — as an honest band, without anyone drawing a floor plan.',
+    date: '19. September 2026',
+    reviewAfter: 'März 2027',
+    recipientsDe: 'co2online gGmbH (HeizCheck, Partner im EnergyMap-Verbund) · nachrangig: Forschungsverbund EnergyMap Berlin als Kalibrierziel für Altbau Thermal, Verbraucherzentrale Berlin',
+    recipientsEn: 'co2online (operator of a heating-cost check and partner in the EnergyMap consortium) · secondary: the EnergyMap Berlin research consortium as a calibration target, consumer advice centres',
+    domain: 'civic',
+    verdict: 'gift',
+    status: 'gepackt',
+    tags: ['Berlin', 'Energie', 'Mieter', 'Bayes', 'Unsicherheit', 'HeizkostenV'],
+    problemDe: 'Wer zur Miete wohnt, bekommt bei fernablesbaren Geräten monatlich seinen Wärmeverbrauch mitgeteilt — und dazu nur den Vergleich mit einer Durchschnittsnutzerin. „Sie liegen 30 % über dem Durchschnitt" beantwortet nicht, was die Bewohnerin wissen will: Liegt es an meiner Wohnung oder an mir? Die Größe, die die Frage beantwortet — der Wärmeverlust in Watt pro Kelvin — ist genau das, was Laien nicht angeben können, weil niemand den U-Wert seiner Außenwand kennt. Ein Teil der Antwort liegt aber längst in der Schublade: in den Zählerständen.',
+    problemEn: 'Tenants with remotely readable meters now receive their heat consumption monthly — together with nothing but a comparison to an average user. "You are 30 % above average" does not answer what the resident wants to know: is it my flat or is it me? The quantity that answers it — heat loss in watts per kelvin — is precisely what laypeople cannot supply, because nobody knows the U-value of their exterior wall. Yet part of the answer is already in the drawer: in the meter readings.',
+    whyNowDe: [
+      'Die Monatsreihe kommt ungefragt: Nicht fernablesbare Zähler mussten bis 31.12.2026 nachgerüstet sein, danach ist mindestens monatlich eine Verbrauchsinformation Pflicht. Bis vor Kurzem gab es einen Wert pro Jahr.',
+      'Die Energiesignatur — Verbrauch gegen Außentemperatur regressieren — ist Lehrbuch. Neu ist die Bayes\'sche Fassung, die ein Band statt einer Zahl liefert (arXiv 2503.22321, 2025), und sie läuft in jedem Browser.',
+      'Wetterdaten sind frei (DWD), und mit energymap4py gibt es den typischen Wert des eigenen Gebäudes zum Vergleich.'
+    ],
+    whyNowEn: [
+      'The monthly series arrives unasked: meters had to be retrofitted for remote reading by the end of 2026, after which at least monthly consumption information is mandatory. Until recently there was one value a year.',
+      'The energy signature — regressing consumption against outdoor temperature — is textbook. What is new is the Bayesian version that yields a band instead of a number (arXiv 2503.22321, 2025), and it runs in any browser.',
+      'Weather data is free, and a building-level comparison value is available through an open Python interface.'
+    ],
+    sketchDe: 'Eingabe in unter einer Minute: sechs bis vierundzwanzig Monatswerte als Foto der Verbrauchsinformation, Zählerstände oder CSV, dazu Postleitzahl und Wohnfläche. Modell: Verbrauch gleich Wärmeverlust mal Gradtage plus Grundlast für Warmwasser, Bayes\'sche lineare Regression gegen DWD-Monatsmittel. Ausgabe nie als eine Zahl, sondern als Band für den Wärmeverlust, dazu Heizgrenztemperatur, Warmwasseranteil und die Lage gegenüber dem Gebäudevergleich — ohne Wertung. Nicht dabei: Energieausweis, Sanierungsprognose, Verhaltenskritik, Server (die Daten bleiben im Browser).',
+    sketchEn: 'Input in under a minute: six to twenty-four monthly values as a photo of the consumption statement, meter readings or CSV, plus postcode and floor area. Model: consumption equals heat loss times degree days plus a base load for hot water, Bayesian linear regression against monthly weather means. Output never as a single number but as a band for heat loss, plus the heating threshold temperature, the hot-water share, and where the band sits against the building comparison — without judgement. Not included: energy certificates, renovation forecasts, criticism of behaviour, or a server.',
+    firstStepDe: {
+      ticket: 'Notebook: zwölf Monatswerte rein, Wärmeverlust-Band raus.',
+      criteria: 'Fertig, wenn das Band den wahren Wert einer synthetischen Wohnung in mindestens 90 % von tausend Läufen enthält — und die Breite des Bandes mit ausgegeben wird, damit man sieht, ob es überhaupt informativ ist.'
+    },
+    firstStepEn: {
+      ticket: 'A notebook: twelve monthly values in, a heat-loss band out.',
+      criteria: 'Done when the band contains the true value of a synthetic flat in at least 90 % of a thousand runs — and the width of the band is reported alongside, so one can see whether it is informative at all.'
+    },
+    failureModeDe: 'Heizkostenverteiler messen keine Kilowattstunden, sondern dimensionslose Einheiten, die die Abrechnung erst auf das Haus verteilt; ob eine daraus abgeleitete Monats-Angabe physikalisch belastbar ist, ist strittig. Sauber funktioniert das nur mit echten kWh — Gasetagenheizung, Wärmemengenzähler, Wohnungsstation. Dazu stecken Raumtemperatur, Lüftungsverhalten und Wärme aus Nachbarwohnungen mit im Wert. Das Band muss das ehrlich breit zeigen; wird es so breit, dass es nichts sagt, ist die Idee tot — der Test im ersten Ticket entscheidet das, nicht eine Meinung.',
+    failureModeEn: 'Heat cost allocators do not measure kilowatt-hours but dimensionless units that the annual bill distributes across the building; whether a monthly figure derived from them is physically sound is contested. It works cleanly only with real kWh — a flat\'s own gas boiler, a heat meter, a heat interface unit. Room temperature, ventilation behaviour and heat from neighbouring flats are also baked into the value. The band has to show that honestly; if it becomes so wide that it says nothing, the idea is dead — the test in the first ticket decides that, not an opinion.',
+    priorArtDe: 'Der HeizCheck von co2online nimmt einen Jahreswert, Fläche und Postleitzahl und vergleicht; in den Treffern kein Monatsverlauf und kein Wärmeverlustkoeffizient. nexoen verfolgt Heiz- und Nebenkosten mit Nachzahlungsprognose, ohne Gebäudeparameter. Ratgeber und das Akkudoktor-Forum rechnen Heizlast aus Gasverbrauch für die Wärmepumpen-Auslegung — der nächste Nachbar, aber ohne Unsicherheitsband. Die Forschung kennt Energiesignatur-Verfahren für Mehrfamilienhäuser, dort kommen die Daten vom Eigentümer. Nicht gefunden: ein Verbraucherwerkzeug, das aus der Monatsreihe einer Mietwohnung ein Band mit Unsicherheit macht.',
+    priorArtEn: 'The existing heating check takes one annual value, floor area and postcode and compares them; no monthly trajectory and no heat-loss coefficient appeared. A cost-tracking app forecasts back payments without building parameters. Advice sites and a DIY heat-pump forum derive heating load from gas consumption for sizing — the nearest neighbour, but without an uncertainty band. Research knows energy-signature methods for apartment buildings, where the data comes from the owner. Not found: a consumer tool that turns one flat\'s monthly series into a band with uncertainty.'
+  },
+  {
+    id: 'feuerkugel-sofortnetz',
+    title: 'Feuerkugel-Sofortnetz',
+    titleEn: 'Fireball Rapid Network',
+    oneLinerDe: 'Eine Echtzeit-Schicht über bestehenden Feuerkugel-Meldenetzen, die Zeugen in den ersten Minuten aktiv zusammenbringt und beiläufig laufende Dashcam- und Türklingelkameras vor dem automatischen Überschreiben rettet.',
+    oneLinerEn: 'A real-time layer over existing fireball reporting networks that actively brings witnesses together in the first minutes and rescues incidental dashcam and doorbell footage before it is automatically overwritten.',
+    date: '18. September 2026',
+    reviewAfter: 'September 2027',
+    recipientsDe: 'American Meteor Society und IMO (bestehende Meldenetze) · nachrangig: Global Meteor Network, Betreiber bestehender Warn-Apps mit Nutzerbasis',
+    recipientsEn: 'The American Meteor Society and the IMO (existing reporting networks) · secondary: the Global Meteor Network, operators of existing alerting apps with a user base',
+    domain: 'physics',
+    verdict: 'gift',
+    status: 'gepackt',
+    tags: ['Citizen Science', 'Meteore', 'Geofencing', 'On-Device', 'Dashcam'],
+    problemDe: 'Wer eine Feuerkugel sieht, meldet sie — wenn überhaupt — Stunden oder Tage später über ein Webformular, aus dem Gedächtnis, ohne zu wissen, ob jemand sonst in der Nähe dasselbe gesehen hat. Die American Meteor Society sagt selbst, dass Auswertung und Gruppierung nachträglich passieren. Ergebnis: Die meisten Ereignisse erreichen nie die kritische Masse unabhängiger Zeugen für eine Bahnbestimmung — nicht weil zu wenige es gesehen haben, sondern weil niemand sie in den ersten Minuten zusammenbringt. Parallel filmen mehr private Dashcams den Himmel als je eine Astro-Kamera, und ihre Aufnahmen werden binnen ein bis zwei Tagen überschrieben.',
+    problemEn: 'People who see a fireball report it — if at all — hours or days later through a web form, from memory, without knowing whether anyone nearby saw the same thing. The American Meteor Society itself says analysis and grouping happen after the fact. As a result most events never reach the critical mass of independent witnesses needed for a trajectory — not because too few people saw it, but because nobody brings them together in the first minutes. Meanwhile more private dashcams film the sky than any astronomical camera ever did, and their footage is overwritten within a day or two.',
+    whyNowDe: [
+      'Geofenced Push an alle Nutzer:innen in einem Umkreis von wenigen Kilometern ist Standardinfrastruktur geworden — Wetterwarn-Apps und Waldbrand-Apps wie Watch Duty machen es vor.',
+      'Bewegungs- und Helligkeitserkennung für „kurzer, sehr heller Streifen am Nachthimmel" läuft lokal auf Dashcam-Chips oder als Begleit-App, ohne Cloud-Kosten; die Modelle, die das billig genug machen, gibt es erst seit ein bis zwei Jahren.'
+    ],
+    whyNowEn: [
+      'Geofenced push to everyone within a few kilometres has become standard infrastructure — weather and wildfire alerting apps do it already.',
+      'Motion and brightness detection for "a short, very bright streak in the night sky" runs locally on dashcam chips or as a companion app, without cloud costs; the models that make it cheap enough are only one or two years old.'
+    ],
+    sketchDe: 'Erster Baustein, Sofort-Rekrutierung: Die erste Meldung löst einen Geofenced Push an Nutzer:innen im Umkreis von etwa fünfzig Kilometern aus, mit einem Zeitfenster von zwanzig Minuten und einem strukturierten Mini-Formular statt Fließtext, damit die Angaben vergleichbar sind. Zweiter Baustein, Ambient-Rettung: eine kleine On-Device-Erkennung, die einen kurzen, sehr hellen, schnellen Streifen erkennt und den Clip lokal vor dem Überschreiben markiert, Teilen nur per Opt-in. Beide speisen in das bestehende Meldeformat ein und ersetzen die institutionelle Auswertung nicht. Nicht dazu gehört neue Kamera-Hardware oder eine eigene Bahnberechnung.',
+    sketchEn: 'First building block, immediate recruitment: the first report triggers a geofenced push to users within about fifty kilometres, with a twenty-minute window and a structured mini form instead of free text, so the statements are comparable. Second block, ambient rescue: a small on-device detector that spots a short, very bright, fast streak and marks the clip locally against overwriting, with sharing strictly opt-in. Both feed the existing report format and do not replace institutional analysis. Not included: new camera hardware or a trajectory solver of its own.',
+    firstStepDe: {
+      ticket: 'Baustein 1 als eigenständiges Feature: ein Push-Bot, der an einen bestehenden Melde-Feed andockt und bei neuer Meldung Nutzer:innen in der Nähe benachrichtigt.',
+      criteria: 'Fertig, wenn ein echtes Ereignis innerhalb von zwanzig Minuten mindestens eine zusätzliche, strukturierte Zeugenmeldung erzeugt hat, die es ohne den Push nicht gegeben hätte.'
+    },
+    firstStepEn: {
+      ticket: 'Build block one on its own: a push bot that hooks into an existing report feed and alerts nearby users when a new report arrives.',
+      criteria: 'Done when one real event produces, within twenty minutes, at least one additional structured witness report that would not have existed without the push.'
+    },
+    failureModeDe: 'Baustein 1 funktioniert nur, wenn genug Menschen die App vorher installiert haben — mit null Nutzer:innen gibt es niemanden zum Rekrutieren. Gegenmaßnahme: an eine bestehende Nutzerbasis andocken statt eine neue App zu starten. Baustein 2 kippt an Fehlalarmen durch Blitzlicht, Autoscheinwerfer und Kameraflackern; ohne guten Filter ist die Quote falscher Treffer höher als die Rettungsquote echter.',
+    failureModeEn: 'Block one only works if enough people installed the app beforehand — with zero users there is nobody to recruit. Remedy: dock onto an existing user base instead of launching a new app. Block two fails on false alarms from camera flashes, headlights and flicker; without a good filter, the false-positive rate exceeds the rescue rate of real events.',
+    priorArtDe: 'Die bestehende Infrastruktur deckt beide Bausteine ausdrücklich nicht ab. AMS und IMO sammeln Meldungen webbasiert und gruppieren sie nachträglich; die AMS nennt die Daten selbst nicht echtzeitfähig. FRIPON kombiniert Radio- und Videostationen für Echtzeit-Trajektorien, aber mit eigens installierten Profi-Stationen und ohne aktives Zeugen-Recruiting. AllSky7, Global Meteor Network und CAMS betreiben dedizierte, nach oben gerichtete Astro-Kameras. RedVox deckt die Infraschall-Route ab, einen verwandten, aber anderen Sensorkanal. Die Bahnberechnung ist besetzt, die Echtzeit-Zuführung von Zeugen und beiläufigem Kamerafootage nicht.',
+    priorArtEn: 'Existing infrastructure explicitly covers neither block. The reporting networks collect reports through the web and group them afterwards, and state themselves that the data is not real time. FRIPON combines radio and video stations for real-time trajectories, but with purpose-installed professional stations and no active witness recruitment. All-sky camera networks run dedicated upward-facing astronomical cameras. An infrasound app covers a related but different sensor channel. Trajectory computation is taken; real-time routing of witnesses and incidental footage into those systems is not.'
+  },
+  {
+    id: 'fugenduell-patenschaft',
+    title: 'Beobachtungsposten mit Übergabe',
+    titleEn: 'Observation Post with Handover',
+    oneLinerDe: 'Eine Patenschaft, die niemand mehr ausübt, sagt der Nachbarschaft weiterhin „für diesen Baum ist gesorgt". Dieser Posten soll stattdessen sichtbar altern, frei werden und nachbesetzt werden können, ohne dass die Messreihe abreißt.',
+    oneLinerEn: 'An adoption nobody acts on still tells the neighbourhood "this tree is being cared for". Instead, the post should visibly age, fall vacant and be taken over — without breaking the observation series.',
+    date: '21. September 2026',
+    reviewAfter: 'März 2027',
+    recipientsDe: 'CityLAB Berlin / Technologiestiftung (Gieß den Kiez) · nachrangig: GLOBE Niederlande (GrowApp), USA-NPN (Nature\'s Notebook)',
+    recipientsEn: 'CityLAB Berlin / Technologiestiftung (the tree-watering platform) · secondary: GLOBE Netherlands (GrowApp), USA-NPN (Nature\'s Notebook)',
+    domain: 'civic',
+    verdict: 'gift',
+    status: 'gepackt',
+    tags: ['Berlin', 'Ehrenamt', 'Phänologie', 'Open Source', 'Zeitreihe', 'Übergabe'],
+    problemDe: 'Gieß den Kiez lässt Menschen einen einzelnen Straßenbaum adoptieren, damit die Nachbarschaft weiß, dass für ihn gesorgt wird. Diese Zusage wird nie zurückgenommen: Im Quellcode gibt es genau zwei Operationen, adoptTree und unadoptTree, und die zweite muss die Patin selbst auslösen. Kein Ablauf, keine Inaktivitätsprüfung, keine Übergabe. Wer wegzieht, krank wird oder das Interesse verliert, hinterlässt einen Baum, der als versorgt markiert ist und es nicht mehr ist — je länger das Projekt läuft, desto mehr solcher Marken sammeln sich an. Dasselbe Muster kostet die Wissenschaft eine Ebene höher ihre wertvollsten Daten: Bei GrowApp und Nature\'s Notebook hängt die Beobachtungsreihe am Konto, und wer denselben Baum später fotografiert, beginnt bei Bild 1.',
+    problemEn: 'The Berlin tree platform lets people adopt a single street tree so the neighbourhood knows it is being cared for. That promise is never withdrawn: the source code has exactly two operations, adopt and unadopt, and the second must be triggered by the adopter. No expiry, no inactivity check, no handover. Anyone who moves away, falls ill or loses interest leaves behind a tree marked as cared for that no longer is — and the longer the project runs, the more such markers accumulate. One level up, the same pattern costs science its most valuable data: in phenology apps the observation series is tied to the account, so whoever photographs the same tree later starts at image one.',
+    whyNowDe: [
+      'Bildregistrierung ist Bibliothekscode: das vorige Foto halbtransparent einblenden und den Standpunkt wiederfinden, macht GrowApp heute schon. Was fehlt, ist nur, dass das Overlay einer anderen Person gehören darf.',
+      'Individuum-Segmentierung läuft on-device — nicht „welche Art", sondern „dieselbe Pflanze wie auf Bild 1". 2022 war das noch ein Forschungsprojekt.',
+      'Der Alterungs-Teil braucht gar keine KI: Bei Gieß den Kiez sind die Gießvorgänge bereits mit Zeitstempel erfasst; das Signal liegt in der Datenbank und wird nur nicht ausgewertet.'
+    ],
+    whyNowEn: [
+      'Image registration is library code: showing the previous photo semi-transparently to find the vantage point is already done by existing phenology apps. What is missing is only that the overlay may belong to someone else.',
+      'Individual-level segmentation runs on device — not "which species" but "the same plant as in image one". In 2022 that was still a research project.',
+      'The ageing part needs no AI at all: watering events already carry timestamps; the signal is in the database and simply is not evaluated.'
+    ],
+    sketchDe: 'Der Posten ist das Objekt, nicht der Mensch: ein Baum, ein Standpunkt, ein Aufnahmerezept aus Höhe, Blickrichtung und Referenzobjekt im Bild. Der Zustand am Posten ist öffentlich sichtbar und wandert von betreut über überfällig zu sucht Nachfolge; die Schwelle kommt aus der Sache — Gießintervall in der Hitzeperiode, phänologisches Fenster der Art —, nicht aus einer runden Zahl. Wer einen Posten übernimmt, bekommt die letzte Aufnahme als Overlay und liefert einen Treffer, der Standpunkt und Individuum bestätigt; dann läuft die Reihe ohne Bruch weiter. Die Historie gehört dem Posten: Wer aufhört, verliert die Rolle, nicht die Beobachtungen. Nicht dabei: kein Wettbewerb um Posten, kein Duell, kein Entreißen aktiver Patenschaften, kein Ranking zwischen Menschen, keine neue App.',
+    sketchEn: 'The post is the object, not the person: one tree, one vantage point, one recipe of height, bearing and a reference object in frame. The state of the post is publicly visible and moves from tended through overdue to seeking successor; the threshold comes from the matter itself — watering intervals in a heatwave, the species\' phenological window — not from a round number. Whoever takes over a post receives the last image as an overlay and supplies a match confirming both vantage point and individual; the series then continues unbroken. The history belongs to the post: quitting costs the role, not the observations. Not included: competition for posts, duels, seizing active adoptions, rankings between people, or a new app.',
+    firstStepDe: {
+      ticket: 'Ein Posten wechselt die Person, die Reihe bricht nicht.',
+      criteria: 'Fertig, wenn der Export vier Aufnahmen als eine Zeitreihe ausgibt, mit korrekter Zuordnung wer wann — und ohne Bruch an der Übergabestelle. Für Gieß den Kiez gibt es einen kleineren Vorlauf ohne jede KI: dem Adoptionsmarker ein Alter geben und ihn auf der Karte altern lassen; die Gießdaten dafür liegen vor.'
+    },
+    firstStepEn: {
+      ticket: 'One post changes hands, and the series does not break.',
+      criteria: 'Done when the export yields four images as one time series, correctly attributed to who took what when, with no break at the handover. For the tree platform there is a smaller precursor with no AI at all: give the adoption marker an age and let it visibly age on the map; the watering data is already there.'
+    },
+    failureModeDe: 'Wenn der Marker das falsche Objekt ist: Die Adoption ist nicht exklusiv, mehrere Menschen können denselben Baum adoptieren. Ein Verfall pro Person ist dann sinnlos — altern muss die Versorgung des Baums, nicht das Lesezeichen des Menschen. Wenn Verfall wie eine Drohung wirkt, vertreibt er genau die Leute, die man halten will; der Zustand gehört an den Posten und neutral formuliert, nie an den Menschen. Und Nachbesetzung lohnt nur, wo die Reihe ein Ziel hat — ohne abnehmende Stelle ist das Buchhaltung.',
+    failureModeEn: 'If the marker is the wrong object: adoption is not exclusive, several people can adopt the same tree. Expiry per person is then meaningless — what must age is the tree\'s care, not a person\'s bookmark. If expiry reads as a threat, it drives away exactly the people worth keeping; the state belongs on the post and must be phrased neutrally, never on the person. And handover only pays where the series has a destination — without one it is bookkeeping.',
+    priorArtDe: 'Gieß den Kiez ist quelloffen und wurde im Quellcode geprüft: Der Adoptions-Store kennt adoptTree, unadoptTree und refreshIsTreeAdoptedByOthers, sonst nichts; kein Treffer für Ablauf, Inaktivität, Übertragung oder Verwaisung. Nature\'s Notebook kennt eine Übergabe, aber auf Gruppen- und Programmebene, als Verwaltungsakt, und sie setzt voraus, dass die scheidende Person vorher handelt — genau der Fall, um den es hier geht, ist nicht abgedeckt. GrowApp deckt den Zeitraffer vollständig ab, die Reihe hängt am Konto. Die Wettbewerbsmechanik aus dem ursprünglichen Brainstorm ist in Standortspielen ausgereift, gehört dort aber zu virtuellen Objekten, die niemandem etwas schulden.',
+    priorArtEn: 'The Berlin platform is open source and was checked in code: the adoption store knows adopt, unadopt and a check for adoption by others, and nothing else; no match for expiry, inactivity, transfer or orphaning. Nature\'s Notebook does know a handover, but at group and programme level, as an administrative act, and it assumes the departing person acts beforehand — precisely the case at issue here is not covered. GrowApp fully covers the time-lapse, with the series tied to the account. The competitive mechanic from the original brainstorm is mature in location-based games, but there it attaches to virtual objects that owe nobody anything.'
+  },
+  {
+    id: 'lebendes-spielobjekt',
+    title: 'Das lebende Spielobjekt',
+    titleEn: 'The Living Game Object',
+    oneLinerDe: 'Ein Standortspiel, in dem das umkämpfte Objekt kein Portal und keine Arena ist, sondern eine echte Pflanze an einer echten Fuge — die zwischen zwei Runden erfrieren, weggekehrt oder ausgerissen werden kann, und dann weg ist.',
+    oneLinerEn: 'A location-based game in which the contested object is neither a portal nor a gym but a real plant in a real pavement crack — one that can freeze, be swept away or pulled out between two rounds, and then is gone.',
+    date: '21. September 2026',
+    reviewAfter: 'März 2027',
+    recipientsDe: 'Pl@ntNet und The Plant Game (INRIA, Cirad, IRD — sie haben den Duell-Modus bereits) · nachrangig: Play Curious, MMOS, Scientific Game Jam',
+    recipientsEn: 'Pl@ntNet and The Plant Game (INRIA, Cirad, IRD — they already have a duel mode) · secondary: Play Curious, MMOS, Scientific Game Jam',
+    domain: 'creative',
+    verdict: 'build_first',
+    status: 'gepackt',
+    tags: ['Spiel', 'Standortspiel', 'Stadtnatur', 'Instanzsegmentierung', 'Merkmalsdaten'],
+    problemDe: 'Standortbasierte Spiele haben ein Objektproblem, über das niemand spricht: Ihre Welt ist kuratiert. Arenen, Portale und Places sind Einträge in einer Datenbank, die an Briefkästen und Wandbildern hängen. Sie bewegen sich nicht, wachsen nicht, sterben nicht. Gleichzeitig gibt es Spiele über echte Pflanzen, die in einer gebauten Welt spielen. Dazwischen liegt eine leere Kategorie: ein Spielobjekt, das existiert, ob gespielt wird oder nicht. Eine Mauerraute in einer Fuge ist seit achtzig Jahren da; ein Löwenzahn überlebt den Winter oder nicht. Das kehrt die Grundannahme des Genres um — der Spielstand ist nicht mehr autoritativ.',
+    problemEn: 'Location-based games have an object problem nobody talks about: their world is curated. Gyms, portals and places are database rows pinned to postboxes and murals. They do not move, grow or die. Meanwhile there are games about real plants that play out in a built world. Between the two lies an empty category: a game object that exists whether or not anyone plays. A wall fern in a joint has been there for eighty years; a dandelion survives the winter or does not. That inverts the genre\'s basic assumption — the save file is no longer authoritative.',
+    whyNowDe: [
+      'Individuum-Wiedererkennung statt Artbestimmung: nicht „das ist Taraxacum officinale", sondern „das ist dieselbe Pflanze wie auf dem Foto von vorgestern, aufgenommen von jemand anderem". Instanzsegmentierung plus Merkmalsabgleich auf dem Gerät — der eine Teil, den es vor zwei Jahren nicht gab.',
+      'Artbestimmung ist gratis geworden und muss nicht gebaut werden; Pl@ntNet und Flora Incognita liefern sie per Schnittstelle.',
+      'Die Werte müssen nicht erfunden werden: Merkmalsdatenbanken wie TRY, LEDA und StrateFy liefern die Stats. Das ist keine KI, sondern Fleißarbeit — aber es heißt, dass die Balance aus der Ökologie kommt statt aus dem Bauchgefühl.'
+    ],
+    whyNowEn: [
+      'Individual re-identification rather than species identification: not "this is Taraxacum officinale" but "this is the same plant as in the photo from the day before yesterday, taken by someone else". Instance segmentation plus feature matching on device — the one part that did not exist two years ago.',
+      'Species identification has become free and need not be built; existing platforms provide it through an API.',
+      'The stats need not be invented: plant trait databases supply them. That is not AI but legwork — and it means the balance comes from ecology rather than from a hunch.'
+    ],
+    sketchDe: 'Das Objekt ist die Pflanze, nicht der Ort: ein Individuum an einer Fuge, wiedererkennbar am Foto, mit Stats aus den Merkmalsdaten seiner Art und Modifikatoren aus seinem Standort — Trittlast, Substrat, Salz im Winter. Beansprucht und verteidigt wird wie im Genre üblich, aber gegen andere Menschen um ein Ding, das keinem gehört. Die Saison ist der Gegner, nicht der Mitspieler: Ereignisse kommen aus echtem Wetter und echtem Stadtbetrieb. Tod ist echt — verschwindet die Pflanze, verschwindet das Objekt, und was bleibt, ist die Historie. Die Invariante, ohne die es nicht gebaut werden darf: Kein Punkt wechselt je den Besitzer, weil eine Pflanze fehlt.',
+    sketchEn: 'The object is the plant, not the place: an individual in a joint, recognisable from the photo, with stats from its species\' trait data and modifiers from its location — trampling, substrate, road salt in winter. Claiming and defending work as the genre does, but between people over a thing nobody owns. The season is the opponent, not the other player: events come from real weather and real municipal operations. Death is real — if the plant disappears, the object disappears, and what remains is the history. The invariant without which it must not be built: no point ever changes hands because a plant is missing.',
+    firstStepDe: {
+      ticket: 'Das lauffähige Skelett, ohne das die Idee nach Regel 4 keine Gabe wäre.',
+      criteria: 'Die Zerstörungs-Invariante ist der Kern: Gekämpft wird mit einer Samenkarte, die beim Dokumentieren gezogen wird; das Individuum bleibt ortsgebunden und unhandelbar. Abwesenheit löst nichts aus — verschwindet ein umstrittenes Objekt während eines Streits, ist der Streit ungültig. Die Stelle hat einen Wert, der mit der Artenvielfalt dort steigt, sodass Ausreißen den eigenen Multiplikator senkt. Fertig, wenn diese vier Festlegungen im Prototyp nachweislich greifen.'
+    },
+    firstStepEn: {
+      ticket: 'The runnable skeleton, without which the idea would not be a gift under rule four.',
+      criteria: 'The destruction invariant is the core: duels are fought with a seed card drawn when documenting; the individual stays place-bound and untradeable. Absence triggers nothing — if a contested object disappears mid-dispute, the dispute is void. The location carries a value that rises with the diversity of species there, so pulling a plant lowers your own multiplier. Done when those four rules demonstrably hold in the prototype.'
+    },
+    failureModeDe: 'Ein Spiel über Stadtnatur, in dem Ausreißen ein Gewinnzug ist, ist schlechter als kein Spiel. Der Anreiz entsteht nicht aus Bosheit, sondern aus der Struktur: Zerstörung erzeugt einen Zustand, der von natürlichem Tod nicht unterscheidbar ist, nichts kostet und dem Täter nützt. Die üblichen Pflaster greifen daneben — „Historie verfällt" bestraft das Opfer, „Punkte fürs Halten" übersieht, dass der Angreifer keine Punkte nimmt, sondern den fremden Ertrag abstellt.',
+    failureModeEn: 'A game about urban nature in which uprooting is a winning move is worse than no game. The incentive comes not from malice but from structure: destruction produces a state indistinguishable from natural death, costs nothing and benefits the perpetrator. The usual patches miss — expiring history punishes the victim, and points for holding overlook that the attacker takes no points but switches off someone else\'s yield.',
+    priorArtDe: 'Out and About (2026) ist Cozy-Foraging über echte Pflanzenarten, Einzelspieler in gebauter Welt — „Spiel über echte Pflanzen" ist damit besetzt und allein kein Pitch mehr. Niche baut echte Mendel-Genetik als Kernmechanik und beweist das Muster „echte Wissenschaft als Spielsystem", nimmt ihm aber die Neuheit. Pokémon GO, Ingress und Munzee Places haben Inbesitznahme und Verteidigung seit Jahren ausgereift — an kuratierten, virtuellen Objekten ohne Lebensdauer. Frei bleibt das Objekt, das ohne das Spiel existiert und ohne das Spiel stirbt.',
+    priorArtEn: 'Out and About (2026) is cozy foraging over real plant species, single player in a built world — "a game about real plants" is therefore taken and no longer a pitch by itself. Niche builds real Mendelian genetics into its core loop and proves the pattern of real science as a game system while removing its novelty. Pokémon GO, Ingress and Munzee have had claiming and defending mature for years — on curated virtual objects with no lifespan. What remains free is the object that exists without the game and dies without it.'
+  },
 ];
 
 export const DISCARDED_DATA: DiscardedItem[] = [
