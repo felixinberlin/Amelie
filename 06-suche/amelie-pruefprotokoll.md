@@ -57,6 +57,40 @@ Vier Suchstränge, und zwei davon bauen die Dose um. **Das Urteil `verengt` blei
 
 ---
 
+### Nachtrag 22.09.2026 (2) — der Beschluss selbst, und das Skelett dazu
+
+Félix hat die PDF ins Repo gelegt (`02-recherche/`, Commit `000bd58`). Damit ist die Leerstelle geschlossen, die seit Runde 2 in jeder Fassung dieser Idee stand.
+
+**Erste Korrektur: Es ist nicht der Stand 2021.** Der gültige Text ist **Beschluss 21/01, aktualisiert 2023** (Stand 13.11.2023), er ersetzt den Beschluss 19/01. Erarbeitet im Auftrag der **LANA**, die ihn den Bundesländern **zur Anwendung empfohlen** hat — das ist eine stärkere Aussage als „ein Fachgremium hat ein PDF". Die rechtliche Anwendbarkeit stützt sich auf ein Gutachten der Universität Münster im Auftrag des BfN (Huggins 2019, Huggins & Schlacke 2019). Der Beschluss beziffert den Verlust auf **über 5 % der jährlich vorkommenden Vögel**.
+
+**Das Schema, vollständig:** vier Kriterien, je 1–4 Punkte, Summe 4–16.
+
+| Kriterium | 1 | 2 | 3 | 4 |
+|---|---|---|---|---|
+| Anteil frei sichtbarer Glasfläche ohne Markierung | < 25 % (oder Scheibenbreite ≤ 50 cm) | 25–50 % | 51–75 % | > 75 %, freistehende Glaswand, transparente Durchsicht, Reflexionsgrad > 30 % |
+| Fassadengestaltung | Lochfassade ≤ 1,5 m², Bandfassade < 1 m, wirksam markiertes/strukturiertes Glas | Lochfassade 1,5–3 m², Bandfassade 1–1,5 m | zusammenhängend > 3–6 m² | > 6 m² |
+| Umgebung | dichte Bebauung, > 75 % versiegelt | durchgrünt | Ortsrand, Grünanlagennähe | < 50 m zu naturnahen Flächen |
+| Abstand unmarkierter Scheiben zu Gehölzen | > 50 m | 31–50 m | 15–30 m | < 15 m |
+
+**4–6 gering · 7–10 mittel · 11–16 hoch**, dazu zwei Vorrangregeln: Glasanteil = 4 → immer „hoch" (Ausnahme nach Fußnote 2 begründbar), Fassadengestaltung = 1 → immer „gering".
+
+| Befund | Bedeutung für die Dose |
+|---|---|
+| **Drei der vier Kriterien sind Geometrie und Umfeld** | Genau das, was aus Bild und Geodaten kommt. Die Idee trifft das Schema, sie muss es nicht biegen. |
+| **Der Reflexionsgrad bleibt bewusst draußen** — „da hierfür noch keine geeigneten Einstufungskriterien vorliegen" | Ein Modell, das Spiegelung fein misst, **erweitert** das Schema. Muss getrennt ausgewiesen werden, sonst ist es kein LAG-VSW-Ergebnis mehr. Steht jetzt als Punkt 6 in „Wo es kippt". |
+| **Der Beschluss setzt selbst 100 m Mindestradius für die Umgebungsbetrachtung** und zitiert dafür San Francisco Planning 2011, **FLAP Canada 2018** und Riding et al. 2020 | Die deutsche Regel borgt bereits bei den Kanadiern, deren App in Runde 7 das `frei` gekippt hat. Die beiden Welten sind näher, als die Sprachgrenze aussehen ließ. |
+| **„Eine Prognose des individuellen Kollisionsrisikos im Vorhinein ist nur qualitativ möglich"** | Der Beschluss zieht die Grenze selbst. Ein Werkzeug, das Punkte vergibt, ordnet — es prognostiziert nicht. Genau so steht es in der Dose. |
+| **Der Anhang rechnet elf reale Gebäude durch** | Fertige Abnahmefälle. Neun davon sind jetzt Tests. |
+| **Beim elften stimmt die Rechnung nicht**: Berlin, Forschungszentrum, Gebäudefaktoren 3 und 3, darunter „Summe 7", Gesamtwert 13 statt 12 | Folgenlos für die Risikostufe (beides „hoch"), aber es ist das Argument für die ganze Idee in einer Zeile: **Ein Punkteschema von Hand angewendet erzeugt still Rechenfehler.** |
+
+**Das erste Ticket ist damit erledigt statt beschrieben.** In `04-werkzeug/glasanflug-ampel/` liegen: die Regeldatei (Wortlaute, Punktwerte, Schwellen, Version), eine reine Funktion `bewerte(...)` mit Herkunftsangabe je Eingabewert und der Stufe `unbestimmt` statt einer geratenen Zahl, `signifikanzschwelle(...)` für Monitoringergebnisse, und 26 Tests (neun Anhangsbeispiele, die Münchner Felddaten, beide Vorrangregeln, der ungeregelte Regelkonflikt). Alles grün. CC0, damit im GPLv3-Melder verwendbar.
+
+Zwei Fehler hat die Testsuite im eigenen Code gefunden, bevor sie grün war: `int(3.5)` hätte eine Gleitkommazahl still zu Stufe 3 gemacht — also eine erfundene Einstufung —, und der Regelkonflikt war im Test falsch erwartet. Beides gefixt; die Lehre steht im README.
+
+**Verdikt bleibt 🔨, ist aber erfüllt:** Die Dose geht jetzt mit Code an ein Repo mit unbezahltem Einzelmaintainer, wie Regel 4 es verlangt.
+
+---
+
 ## Runde 6 — 21.09.2026 (Fugenduell / Crack Flora Watcher, method: ideenrunde)
 
 Auftrag: Dose Crack Flora Watcher gegen das Fugenduell-Brainstorm prüfen (Material:

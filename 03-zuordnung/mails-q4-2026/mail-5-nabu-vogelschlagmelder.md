@@ -7,7 +7,7 @@
 **Dose:** `05-dosen/glasanflug-ampel.md`
 
 **Vor dem Senden — vier Dinge, ohne die die Mail nicht raus darf:**
-1. **LAG VSW 21/01 lesen und die Punktwerte in die Dose nachtragen.** Acht Abrufversuche über fünf Hosts, alle gesperrt; die Merkblätter widersprechen sich (Nürnberg 2023: „mehr als vier", LAG VSW und Münchner Studie: „ab fünf" Schlagopfer je 100 m und Jahr). Ohne die echten Werte hat die Dose eine Leerstelle an der wichtigsten Stelle.
+1. ~~Punktwerte nachtragen~~ — **erledigt 22.09.2026.** Der Beschluss (21/01, **aktualisiert 2023**) ist eingearbeitet, das Schema liegt als Regeldatei mit Tests unter `04-werkzeug/glasanflug-ampel/`. Die Mail kann das Skelett also mitschicken statt es anzukündigen.
 2. **Den Melder selbst einmal benutzen.** Eine Meldung durchspielen und die tatsächlichen Formularfelder mit dem abgleichen, was in der Dose steht. Nichts blamiert schneller als eine Mail, die das Produkt des Empfängers falsch beschreibt.
 3. **Dose altert:** eine englische Produktsuche unmittelbar vor dem Versand (FLAP, LEED, ABC).
 4. **Dose-Link prüfen** (Datei muss auf `main` liegen).
@@ -36,7 +36,9 @@ Eine Seite mit Skizze, erstem Ticket und der Stelle, an der es kippt: <Link>
 
 Drei Dinge stehen ehrlich darin, weil sie mir wichtig sind. Erstens: Eine Zahl, die sicherer klingt als die Datenlage, wird in beide Richtungen missbraucht — deshalb Blatt statt Urteil. Zweitens: Eine Karte, die Meldungen zeigt, ist etwas anderes als eine Karte, die Gebäude **bewertet**; das Zweite gehört ins Anschreiben an den Eigentümer und nicht ins Netz. Drittens: Das Schema gehört der LAG VSW. Wenn so etwas gebaut wird, sollte es deren Fassung wortgetreu abbilden und von dort korrigierbar sein.
 
-Und weil Ihr Melder unter GPLv3 auf Codeberg liegt und von einem einzelnen Menschen gepflegt wird: Ich werfe das nicht über den Zaun. Der erste Schritt ist ein Stück Code ohne jede Bilderkennung — das Schema als Regeldatei plus eine Funktion, die daraus eine Klasse mit Begründung rechnet. Das kann ich beisteuern, wenn es Ihnen etwas nützt. Falls nicht, bleibt die Seite trotzdem Ihre.
+Und weil Ihr Melder unter GPLv3 auf Codeberg liegt und von einem einzelnen Menschen gepflegt wird, werfe ich das nicht über den Zaun, sondern lege den ersten Schritt bei: das Bewertungsschema aus Beschluss 21/01 (Stand 2023) als Regeldatei, eine Funktion, die daraus Punktsumme, Risikostufe und Begründung rechnet, und eine Testsuite — darunter neun der elf Beispiele aus dem Anhang des Beschlusses. Keine Bilderkennung, keine Abhängigkeiten außer YAML, CC0 und damit in einem GPL-Projekt verwendbar.
+
+Zwei Sachen sind mir beim Nachrechnen aufgefallen, die Sie interessieren dürften. Der Anhang des Beschlusses rechnet elf Gebäude durch; bei einem (Berlin, Forschungszentrum) stehen 3 und 3 und darunter „Summe 7". Folgenlos für die Risikostufe, aber ein hübsches Argument dafür, das Addieren der Software zu überlassen. Und: Wenn Glasanteil 4 und Fassadengestaltung 1 zusammentreffen, fordern beide Vorrangregeln das Gegenteil voneinander — der Beschluss regelt das nicht. Mein Rechner entscheidet das deshalb nicht selbst, sondern meldet es.
 
 Eine Antwort ist nicht nötig, ich fasse nicht nach. Falls Sie so etwas längst planen, ignorieren Sie die Mail bitte einfach.
 

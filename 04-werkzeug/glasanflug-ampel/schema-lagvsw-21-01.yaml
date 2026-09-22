@@ -1,0 +1,145 @@
+# Bewertungsschema Vogelschlag an Glas — maschinenlesbare Fassung
+#
+# Quelle: Länderarbeitsgemeinschaft der Vogelschutzwarten (LAG VSW),
+#         Beschluss 21/01, aktualisiert 2023 (ersetzt Beschluss 19/01),
+#         "Vermeidung von Vogelverlusten an Glasscheiben —
+#          Bewertung des Vogelschlagrisikos an Glas", Datum 13.11.2023.
+#         Tab. 3 (Kriterien) und Tab. 4 (Risikostufen), S. 26–27.
+#         Im Auftrag der LANA erarbeitet, von der LANA den Bundesländern
+#         zur Anwendung empfohlen.
+#
+# Diese Datei bildet das Schema ab. Sie legt es nicht aus und ergänzt es nicht.
+# Die Wortlaute stehen in `wortlaut` und sind aus dem Beschluss übernommen.
+# Bei Abweichung gilt der Beschluss.
+
+schema:
+  quelle: "LAG VSW Beschluss 21/01, aktualisiert 2023"
+  stand: "2023-11-13"
+  fundstelle: "Tab. 3 (S. 27), Tab. 4 (S. 27)"
+  punktebereich: [1, 4]
+  summenbereich: [4, 16]
+
+grundsaetze:
+  - "Klassische Lochfassaden mit Fensteröffnungen bis 1,5 m² werden grundsätzlich mit geringem Kollisionsrisiko bewertet."
+  - "Bauwerke mit Baujahr vor 1950 wurden in der Regel mit Lochfassaden und kleinen Fensteröffnungen gebaut, so dass das Vogelschlagrisiko an ihnen höchstens in Ausnahmefällen erhöht ist."
+  - "Bewertet werden einheitliche Fassaden oder Fassadenabschnitte."
+  - "Bewertungen sind überwiegend für Gebäude mit größeren Glasflächen, verglasten Fassadenteilen oder Anbauten und reinen Glaskonstruktionen notwendig."
+  - "Bei Scheiben mit freier Durchsicht an transparenten Gebäudeteilen oder an Funktionsbauten wie (Lärm-)Schutzwänden, Fahrgastunterständen u. Ä. ist nahezu immer von einem erhöhten Kollisionsrisiko auszugehen."
+  - "Das Erfordernis für Schutzmaßnahmen gilt auch für Glasfassaden mit einem Glasanteil > 75 % sowie für stark spiegelndes Glas."
+  - "Um unter die Signifikanzschwelle zu kommen, kann es ausreichen, die besonders gefährlichen Teile einer Fassade mit Vermeidungsmaßnahmen zu versehen."
+  - "Bewertet werden alle Scheiben, die nicht wirksam (sichtbar) markiert oder durch undurchsichtige Bauteile verdeckt sind."
+
+hinweise:
+  umgebungsradius_m: 100
+  umgebungsradius_wortlaut: >-
+    Es kann davon ausgegangen werden, dass bei einer Entfernung von bis zu 100 m um
+    Habitatstrukturen eine erhöhte Vogelaktivität vorliegt. Dies ist daher die
+    Mindestentfernung, die als Umgebung eines Bauwerkes zu betrachten ist.
+  reflexionsgrad_wortlaut: >-
+    Der Reflexionsgrad der Scheiben wird mit Ausnahme stark spiegelnden Glases vorläufig
+    nicht berücksichtigt, da hierfür noch keine geeigneten Einstufungskriterien vorliegen.
+
+kriterien:
+  glasanteil:
+    name: "Anteil der frei sichtbaren Glasfläche ohne Markierung"
+    stufen:
+      1:
+        wortlaut: "< 25 % — oder Scheibenbreite bis 50 cm"
+      2:
+        wortlaut: "25–50 %"
+      3:
+        wortlaut: "51–75 %"
+      4:
+        wortlaut: >-
+          > 75 %, auch freistehende Glaswände, transparente Durchsichten
+          (z. B. Lärm- oder Windschutzwand, Wartehäuschen, Glasbrüstung/-absturzsicherung,
+          Gebäudeteile mit Durchsichten wie Verbindungsgang, verglaste Ecken, Wintergärten)
+          oder Reflexionsgrad sehr hoch (> 30 % Reflexionsgrad; Spiegeleffekt)
+        regel: "gesamtbewertung_immer_hoch"
+        ausnahme_fussnote_2: >-
+          In Einzelfällen können transparente Scheiben (z. B. vor einem Gebäude) oder
+          spiegelnde Glasfronten (Reflexion der gegenüberliegenden Gebäudewand) weniger
+          problematisch oder unproblematisch sein, z. B. Straßenfluchten ohne Baumbestand.
+          Dies kann auch auf innerstädtische Schaufenster zutreffen.
+
+  fassadengestaltung:
+    name: "Fassadengestaltung"
+    stufen:
+      1:
+        wortlaut: >-
+          Lochfassade, Fensteröffnungen bis 1,5 m² — oder Bandfassade mit Fensterhöhe
+          unter 1 m — oder Glas mit hoch wirksamer Markierung, Strukturglas, Drahtglas
+          oder mattiertes Glas
+        regel: "gesamtbewertung_immer_gering"
+      2:
+        wortlaut: "Lochfassade mit Fensteröffnungen von 1,5–3 m² — oder Bandfassade mit Fensterhöhe von mindestens 1–1,5 m"
+      3:
+        wortlaut: "Fassade / Fassadenabschnitt mit zusammenhängenden Glasflächen > 3–6 m² (ggf. einschließlich Unterteilungen)"
+      4:
+        wortlaut: "Fassade / Fassadenabschnitt mit zusammenhängenden Glasflächen > 6 m² (ggf. einschließlich Unterteilungen)"
+
+  umgebung:
+    name: "Umgebung"
+    stufen:
+      1:
+        wortlaut: "innerhalb dichter Bebauung (z. B. Innenstadt, Industriegebiet); typischerweise zu > 75 % versiegelt"
+      2:
+        wortlaut: "durchgrünter Siedlungsbereich; typischerweise zu 51–75 % versiegelt"
+      3:
+        wortlaut: "am Ortsrand oder im Außenbereich in Grünanlagennähe; typischerweise zu 25–50 % versiegelt"
+      4:
+        wortlaut: >-
+          weniger als 50 m entfernt von naturnahen Flächen (z. B. Wald, Park, Gewässer
+          einschl. Küste, Feuchtgebiet, Naturschutzgebiet); typischerweise zu < 25 % versiegelt
+
+  gehoelzabstand:
+    name: "Abstand unmarkierter Glasscheiben zu Gehölzen"
+    stufen:
+      1:
+        wortlaut: "> 50 m entfernt"
+      2:
+        wortlaut: "31–50 m"
+      3:
+        wortlaut: "15–30 m"
+      4:
+        wortlaut: "< 15 m"
+
+risikostufen:
+  - punkte: [4, 6]
+    stufe: "gering"
+    bewertung: "Gering – kein erhöhtes Risiko zu erwarten. Im Regelfall werden artenschutzrechtliche Konflikte vermieden."
+    handlungsbedarf: "Im Regelfall kein Handlungsbedarf"
+  - punkte: [7, 10]
+    stufe: "mittel"
+    bewertung: "Mittel – einige Eigenschaften bewirken im Einzelfall ein erhöhtes Risiko. Die Verwirklichung von artenschutzrechtlichen Konflikten kann nicht ausgeschlossen werden."
+    handlungsbedarf: "Das ggf. vorhandene Konfliktpotenzial ist im Sinne eines vorsorglichen Handelns zu minimieren. Die Erforderlichkeit von Vermeidungsmaßnahmen ist im Einzelfall zu entscheiden. Hierfür sind Fachleute zu Rate zu ziehen."
+  - punkte: [11, 16]
+    stufe: "hoch"
+    bewertung: "Hoch – erhöhtes Risiko im Regelfall zu erwarten. Es ist davon auszugehen, dass artenschutzrechtliche Konflikte auftreten."
+    handlungsbedarf: "Es sind Vermeidungsmaßnahmen zu ergreifen."
+
+# Schwellenwerte nach Kap. 3.1 — gelten für die Beurteilung von BESTANDSBAUTEN
+# mit Vogelschlagmonitoring, nicht für das Punkteschema.
+schwellenwerte:
+  kategorie_1:
+    name: "Einfamilien-, Doppel-, Reihenhäuser"
+    aussage: "In aller Regel nicht mit einer signifikanten Erhöhung des Tötungsrisikos zu rechnen."
+    referenzwert: "Mittelwert 2,1 tote Vögel je Haus und Jahr (Loss et al. 2014a, Nordamerika)"
+  kategorie_2:
+    name: "Größere Bauwerke"
+    bezug: "je 100 m Fassaden- oder Außenwandlänge und Jahr"
+    normal: 2
+    signifikant_erhoeht_ab: 5
+    herleitung: >-
+      Für ein normales Risiko wird 1 Vogelschlag/Jahr angenommen; ein freistehendes Wohnhaus
+      hat vereinfacht 50 m Fassadenlänge. Ein Vogel je 50 m entspricht dem normalen
+      Tötungsrisiko, übertragen auf 100 m also zwei Vögel. Ein signifikant erhöhtes
+      Tötungsrisiko wird bei mehr als doppelt so vielen, also mindestens fünf Vögeln pro
+      100 m Fassaden- oder Außenwandlänge pro Jahr angenommen.
+  kategorie_3:
+    name: "Freistehende Glas- oder Spiegelwände"
+    beispiele: "Wartehäuschen/Fahrgastunterstände, Schallschutzwände, verglaste Übergänge, Windschutzeinfriedungen, Eckverglasungen, Spiegelfassaden"
+    aussage: >-
+      Bei vollverglasten Bauwerken und Gebäudeteilen der Kategorie 3 muss regelhaft von einer
+      signifikanten Erhöhung des Tötungsrisikos ausgegangen werden. Bei nicht oder teilverglaster
+      Ausführung ist in der Regel nicht damit zu rechnen.

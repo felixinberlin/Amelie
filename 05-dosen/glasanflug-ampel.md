@@ -5,8 +5,9 @@
 **Ein Satz:** Die Fassadenfotos, die beim Melden eines toten Vogels ohnehin hochgeladen werden, einmal durchrechnen — Glasanteil, gespiegeltes Grün, Durchsichten, Ecken — und daraus den Entwurf einer LAG-VSW-Bewertung erzeugen, mit jedem Eingangswert und seiner Unsicherheit auf dem Blatt.
 
 **Stand:** 22.09.2026 · **Prüfen ab:** 03/2027 *(verkürzt: das Feld hat sich zwischen Februar und September 2026 dreimal bewegt)*
+**Skelett liegt bei:** `04-werkzeug/glasanflug-ampel/` — das Schema als Regeldatei, eine reine Bewertungsfunktion, 26 Tests, davon neun aus dem Anhang des Beschlusses. CC0, damit GPL-kompatibel.
 **Empfänger:** **NABU Berlin, „Artenschutz am Gebäude"** (Julia Lorenz, Helen Friedlein) zusammen mit **NABU Jena** (Maximilian Schätz, Upstream des Vogelschlagmelders) · **zweiter Empfänger, eigener Kontext:** LBV Bayern, Projekt „Vogelschlag an Glas verhindern" (Dr. Peter Stimmler) · **fachlicher Eigentümer des Schemas, immer mitzunennen:** LAG VSW
-**Verdikt:** 🔨 **erst Skelett, dann verschenken** — die natürliche Heimat ist ein quelloffenes Repo mit einem einzelnen, unbezahlten Maintainer. Regel 4 des Manifests: dorthin nur mit Code.
+**Verdikt:** 🔨 **Skelett gebaut, jetzt verschenkbar** — die natürliche Heimat ist ein quelloffenes Repo mit einem einzelnen, unbezahlten Maintainer. Regel 4 des Manifests: dorthin nur mit Code. Der Code liegt bei.
 
 ---
 
@@ -29,10 +30,25 @@ Das ist die Arbeit, um die es geht: **hinfahren, ablaufen, einschätzen, prioris
 Und die Nachfrage dafür ist gerade sprunghaft gestiegen:
 
 - **Berlin hat am 10.06.2026 die „Beurteilungshilfe zur Einschätzung des Kollisionsrisikos an Glasflächen" als einheitlichen Standard eingeführt** — für Bau- und Planungsverfahren, mit dem erklärten Ziel, „den Artenschutz verbindlich in Bauprozesse einzubinden". Am 10.08.2026 hat die Senatsverwaltung nachgelegt: Der Schutz beginne „nicht erst am fertigen Gebäude, sondern bereits bei der Planung".
-- Die Beurteilungshilfe selbst ist **qualitativ** und verweist für die eigentliche Einstufung auf **LAG VSW 21/01** — ein Punktesystem mit vier Klassen, das als PDF existiert. Sonst nichts.
+- Die Beurteilungshilfe selbst ist **qualitativ** und verweist für die eigentliche Einstufung auf den **Beschluss 21/01 der LAG VSW, aktualisiert 2023** — im Auftrag der LANA erarbeitet und von dieser **den Bundesländern zur Anwendung empfohlen**. Das ist kein Vorschlag eines Fachgremiums, sondern das Verfahren, auf das sich die Länder verständigt haben. Es existiert als PDF. Sonst nichts.
 - Seit Februar/März 2026 gibt es in Jena, Leipzig und Berlin **digitale Vogelschlagmelder**. Jena zählt über 200 Meldungen, davon der Großteil aus diesem Jahr.
 
 **Wer leidet:** untere Naturschutzbehörden, die jetzt Planungen nach einem Schema beurteilen sollen, das niemand vorgerechnet hat; Architekturbüros, von denen die Selbsteinschätzung verlangt wird; Eigentümer, die nach einer Meldung nicht wissen, welche Fläche zuerst dran ist; und die Ehrenamtlichen, die Meldungen entgegennehmen und daraus ein Anschreiben an den Eigentümer machen müssen.
+
+## Was das Schema verlangt
+
+Vier Kriterien, je 1 bis 4 Punkte, Summe 4 bis 16:
+
+| Kriterium | 1 | 2 | 3 | 4 |
+|---|---|---|---|---|
+| Anteil frei sichtbarer Glasfläche ohne Markierung | < 25 % (oder Scheibenbreite ≤ 50 cm) | 25–50 % | 51–75 % | > 75 %, freistehende Glaswand, transparente Durchsicht, Reflexionsgrad > 30 % |
+| Fassadengestaltung | Lochfassade ≤ 1,5 m², Bandfassade < 1 m, wirksam markiertes/strukturiertes Glas | Lochfassade 1,5–3 m², Bandfassade 1–1,5 m | zusammenhängende Glasflächen > 3–6 m² | > 6 m² |
+| Umgebung | dichte Bebauung, > 75 % versiegelt | durchgrünter Siedlungsbereich | Ortsrand, Grünanlagennähe | < 50 m zu naturnahen Flächen, < 25 % versiegelt |
+| Abstand unmarkierter Scheiben zu Gehölzen | > 50 m | 31–50 m | 15–30 m | < 15 m |
+
+**4–6 gering · 7–10 mittel · 11–16 hoch.** Dazu zwei Regeln, die die Summe überstimmen: Glasanteil = 4 heißt **immer „hoch"** (mit begründbarer Ausnahme nach Fußnote 2, etwa einer Spiegelfassade ohne Vegetation im Spiegelbild), Fassadengestaltung = 1 heißt **immer „gering"**.
+
+Zwei Dinge daran sind für ein Werkzeug entscheidend. Erstens: **Drei der vier Kriterien sind Geometrie und Umfeld** — genau das, was aus Bild und Geodaten kommt. Zweitens: Der Beschluss lässt den **Reflexionsgrad bewusst außen vor**, weil „hierfür noch keine geeigneten Einstufungskriterien vorliegen" — er erfasst Spiegelung nur über die Schwelle „stark spiegelnd". Wer sie feiner misst, erweitert das Schema und muss das sagen.
 
 ## Warum das jetzt geht
 
@@ -57,13 +73,13 @@ Und die Nachfrage dafür ist gerade sprunghaft gestiegen:
 
 ## Erster Schritt
 
-**Ticket: Das Schema ausführbar machen — ohne eine Zeile Bilderkennung.**
+**Erledigt am 22.09.2026, liegt in `04-werkzeug/glasanflug-ampel/`:** das Schema als Regeldatei (Kriterien, Punktwerte, Schwellen, jeweils im Wortlaut des Beschlusses mit Versionsangabe), eine reine Funktion `bewerte(...)`, und 26 Tests — darunter **neun der elf durchgerechneten Beispiele aus dem Anhang des Beschlusses** sowie die Münchner Felddaten für die Schwellenwerte. Jeder Eingabewert trägt seine Herkunft mit (`eingabe`, `bild`, `geodaten`, `unbestimmt`); ein unbestimmtes Kriterium führt zu **keiner** Einstufung statt zu einer geschätzten Zahl. Trifft beides zu — Glasanteil 4 und Fassadengestaltung 1 —, meldet der Rechner einen Regelkonflikt, statt ihn stillschweigend aufzulösen; der Beschluss regelt den Fall nicht.
 
-LAG VSW 21/01 in eine Regeldatei übertragen (YAML oder JSON): jeder Faktor, jeder Punktwert, jede Schwelle, jeweils mit dem Originalwortlaut daneben. Dazu eine reine Funktion, die Werte von Hand entgegennimmt und Klasse plus Begründung zurückgibt, und Testfälle aus den Beispielen der Berliner Beurteilungshilfe und der Münchner Studie — die neun Komplexe dort sind bereits von Hand eingestuft.
+Beim Nachrechnen fiel nebenbei auf: Im Anhang stehen beim Berliner Forschungszentrum die Gebäudefaktoren 3 und 3 und darunter „Summe 7". Die Risikostufe ändert sich dadurch nicht — aber es zeigt, was Handarbeit an einem Punkteschema erzeugt.
 
-**Fertig, wenn:** drei von Hand beurteilte Gebäude bei manueller Eingabe dieselbe Klasse bekommen — **und jede Abweichung sich auf einen benannten Eingabewert zurückführen lässt, nicht auf die Regeln.**
+**Nächstes Ticket, und erst hier wird es KI:** Kriterium 1 — **Anteil der frei sichtbaren Glasfläche ohne Markierung** — aus einem gemeldeten Fassadenfoto schätzen. Das ist dieselbe Größe, die die Gebäudeenergie-Forschung als Fenster-Wand-Verhältnis aus Straßenbildern zieht; der Unterschied ist, dass wirksam markierte Scheiben nicht mitzählen.
 
-Zwei Vorzüge, und beide zählen mehr als der Code: Das Ergebnis ist **für sich allein nützlich** (eine zitierbare, versionierte Fassung des Schemas, die jede Behörde nachnutzen kann), und es ist das Skelett, das die Idee nach Regel 4 überhaupt erst zustellbar macht — als GPLv3-kompatibles Modul neben dem Vogelschlagmelder, nicht als Zuruf an einen unbezahlten Maintainer.
+**Fertig, wenn:** für dreißig Fassaden mit von Hand bestimmtem Glasanteil die geschätzte **Stufe** (< 25 / 25–50 / 51–75 / > 75 %) in mindestens vier von fünf Fällen stimmt — und jede Abweichung mit dem Bild daneben erklärbar ist (Verschattung, Aufnahmewinkel, Spiegelung). Wird die Quote nicht erreicht, bleibt das Kriterium „unbestimmt" und wird gefragt statt geraten. Das ist kein Rückschlag, sondern das vorgesehene Verhalten.
 
 ## Wo es kippt
 
@@ -77,7 +93,9 @@ Zwei Vorzüge, und beide zählen mehr als der Code: Das Ergebnis ist **für sich
 
 **5. Der Weg vom Planungshilfsmittel zum Pranger ist kurz** — und hier besonders kurz, weil die Meldedaten Adressen enthalten. Eine Karte, die Meldungen zeigt, ist etwas anderes als eine Karte, die Gebäude **bewertet**. Nur eigene Gebäude oder solche mit Auftrag; Bewertungen gehören in das Anschreiben an den Eigentümer, nicht in die öffentliche Ebene.
 
-**6. Die Fotorechte und die Personen dahinter.** Der Melder sichert sich die Nutzungsrechte an den Fotos für den Naturschutzzweck — für ein Auswertungsmodul reicht das vermutlich, für ein Trainingsdatenset nicht selbstverständlich. Das ist vor der ersten Zeile Code zu klären, nicht danach.
+**6. Der Reflexionsgrad ist eine Erweiterung, kein Kriterium.** Der Beschluss lässt ihn ausdrücklich offen: „Der Reflexionsgrad der Scheiben wird mit Ausnahme stark spiegelnden Glases vorläufig nicht berücksichtigt, da hierfür noch keine geeigneten Einstufungskriterien vorliegen." Ein Modell, das Spiegelung fein misst, beantwortet damit eine Frage, die das Schema bewusst nicht stellt. Das darf man tun — aber getrennt ausweisen, nicht als Punktwert einschmuggeln.
+
+**7. Die Fotorechte und die Personen dahinter.** Der Melder sichert sich die Nutzungsrechte an den Fotos für den Naturschutzzweck — für ein Auswertungsmodul reicht das vermutlich, für ein Trainingsdatenset nicht selbstverständlich. Das ist vor der ersten Zeile Code zu klären, nicht danach.
 
 ## Wer es schon versucht hat
 
@@ -95,7 +113,7 @@ Zwei Vorzüge, und beide zählen mehr als der Code: Das Ergebnis ist **für sich
 
 ## Vorarbeit
 
-- **LAG VSW 21/01**, „Vermeidung von Vogelverlusten an Glasscheiben — Bewertungsverfahren": `vogelschutzwarten.de/glasanflug.htm`. *Hinweis: maschinell nicht abrufbar (robots.txt bzw. 403 auf allen gefundenen Spiegeln). Die Punktwerte gehören aus dem Original abgeschrieben, nicht aus Merkblättern — die widersprechen sich (Nürnberg 2023 nennt „mehr als vier" statt fünf Schlagopfer je 100 m).*
+- **LAG VSW Beschluss 21/01, aktualisiert 2023** (ersetzt 19/01, Stand 13.11.2023), „Vermeidung von Vogelverlusten an Glasscheiben — Bewertung des Vogelschlagrisikos an Glas", `vogelschutzwarten.de/glasanflug.htm`. Im Auftrag der LANA, von dieser den Ländern zur Anwendung empfohlen. Tab. 3 und Tab. 4 sind in der beiliegenden Regeldatei abgebildet. Rechtliche Grundlage der Anwendbarkeit: Rechtsgutachten der Universität Münster im Auftrag des BfN (Huggins 2019; Huggins & Schlacke 2019). Der Beschluss beziffert den Verlust auf **über 5 % der jährlich bei uns vorkommenden Vögel** (LAG VSW 2017). *Merkblätter widersprechen ihm im Detail: Nürnberg 2023 nennt „mehr als vier" statt fünf Schlagopfer je 100 m.*
 - **Berlin:** Beurteilungshilfe (SenMVKU), als einheitlicher Standard eingeführt 10.06.2026; Pressemitteilung 10.08.2026 zur Verankerung in der Planungsphase.
 - **München-Studie:** Wölfl & Bornemann (LBV) mit LfU Bayern, 2021 — „Untersuchung zum Vogelschlag an Glas in München", neun Komplexe, 1.957 m, 13 Wochen.
 - **Vogelschlagmelder:** `vogelschlagmelder.de`, `berlin.vogelschlagmelder.de`, Quellcode `codeberg.org/nabu-jena/Vogelschlagmelder` (GPLv3, Maintainer Maximilian Schätz), Kontakt Berlin `artenschutz_am_gebaeude@nabu-berlin.de`.

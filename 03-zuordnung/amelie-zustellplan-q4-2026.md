@@ -153,7 +153,8 @@ Nebenbefund für die Empfängerwahl: Radicchi finanziert Hush City seit 2020 pri
 **Upstream:** NABU Jena, Maximilian Schätz, `codeberg.org/nabu-jena/Vogelschlagmelder` (GPLv3) — **nur mit Code ansprechen**, Regel 4. Deshalb steht die Dose auf 🔨.
 **Zweiter Empfänger, eigener Aufhänger, nicht am selben Tag:** LBV Bayern, `vogelschlag@lbv.de` — Plakette, Beratung, Münchner Studie.
 **Anhang/Link:** `05-dosen/glasanflug-ampel.md` · Volltext: `mails-q4-2026/mail-5-nabu-vogelschlagmelder.md`
-**Vor dem Versand zwingend:** Punktwerte aus LAG VSW 21/01 nachtragen; den Melder einmal selbst benutzen; Dose altern lassen.
+**Erledigt am 22.09.:** Der Beschluss liegt vor (21/01, **aktualisiert 2023**), das Schema ist abgebildet, das Skelett gebaut und getestet (`04-werkzeug/glasanflug-ampel/`, 26 Tests grün, CC0). Damit ist Regel 4 erfüllt — die Mail geht mit Code.
+**Vor dem Versand bleibt:** den Melder einmal selbst benutzen (Formularfelder gegen die Dose prüfen); Dose altern lassen (eine englische Suche).
 
 ---
 
@@ -165,4 +166,4 @@ Nebenbefund für die Empfängerwahl: Radicchi finanziert Hush City seit 2020 pri
 | Sperrmüll-Radar | CityLAB Berlin (+ Re-Use Berlin, BSR als Partner) | **gesendet 21.09.2026** (in Mail 2), Antwort offen |
 | Kiez-Lärmkarte | CityLAB + Noise-Planet | **gesendet 21.09.2026** (in Mail 2 & Mail 3), Antwort offen |
 | Beobachtungsposten mit Übergabe | CityLAB Berlin (Gieß den Kiez) | **Entwurf** `mails-q4-2026/mail-4-citylab-patenschaft.md`, bewusst **nicht** gesendet — dieselbe Adresse wie Mail 2 (21.09.), Abstand halten, sonst ist es Nachfassen. Vorher Issues von `giessdenkiez-de` von Hand durchsehen |
-| **Glasanflug-Ampel** | **NABU Berlin + NABU Jena** (LBV als zweiter Empfänger, LAG VSW als Schema-Eigentümerin) | **Dose gepackt 21.09., überarbeitet 22.09.** — Verdikt jetzt 🔨 erst Skelett (Regel 4: quelloffenes Repo mit Einzelmaintainer). **Entwurf** `mails-q4-2026/mail-5-nabu-vogelschlagmelder.md`, wartet auf die Punktwerte aus LAG VSW 21/01 |
+| **Glasanflug-Ampel** | **NABU Berlin + NABU Jena** (LBV als zweiter Empfänger, LAG VSW als Schema-Eigentümerin) | **Dose gepackt 21.09., überarbeitet 22.09.** — Verdikt jetzt 🔨 erst Skelett (Regel 4: quelloffenes Repo mit Einzelmaintainer). **Entwurf** `mails-q4-2026/mail-5-nabu-vogelschlagmelder.md`. Schema eingearbeitet, **Skelett gebaut und grün** — versandfertig nach einem Selbsttest des Melders |
