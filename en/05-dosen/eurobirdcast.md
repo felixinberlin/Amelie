@@ -1,154 +1,100 @@
----
-id: 022
-title: "EuroBirdCast: Dynamic Avian Radar & BP/MWh Index"
-category: "Hardware & Physics"
-date_added: 2026-09-22
+# EuroBirdCast: Auditable Migration Curtailment
 
-# The Core Pitch
-the_problem: "Wind farms rely on rigid, calendar-based shutdowns to prevent bird collisions, which wastes clean energy production and misses unexpected dynamic migration pulses."
-the_solution: "A localized decision-support system that processes real-time weather radar data to generate a 'Bird Protection per MWh Lost' (BP/MWh) index, allowing turbines to curtail only during extreme-risk migration windows."
-target_audience: "Wind farm operators, grid regulators, and environmental consultants."
+*(German: EuroBirdCast: Vogelzug-Abschaltung, nachrechenbar)*
+*Working title — "EuroBirdCast" collides with the US trademark BirdCast (Cornell/CSU) and must be replaced before any handover.*
 
-# The Technical Angle
-the_mix: "Meteorological Open Data + Renewable Energy Curtailment"
-enabling_technology: "Automated ingestion of DWD polar volume radar data combined with the Dockerized `vol2bird` extraction algorithm, capable of filtering biological signals from weather phenomena in real-time."
-technical_complexity: "High/Deep Tech"
+**In one sentence:** Turn already public, weather-radar-derived bird migration profiles into a turbine-specific curtailment recommendation that a regulator can recompute without the service itself.
 
-# Uniqueness & Validation Flag
-is_verified_novel: true
-uniqueness_evidence: "While RADBIRD exists, no open-source, automated pipeline translates raw ENRAM/DWD radar files directly into a localized economic-ecological index (BP/MWh) for API-driven turbine shutdowns available to smaller wind co-ops."
-
-# The Amélie Handover ("For Whom")
-target_maker: "The ENRAM Coordination Team & Open Science Lab for Biodiversity (with a high-tech climate SME)"
-why_them: "They have successfully aggregated cross-border weather radar data and maintain the open-source vol2bird extraction algorithms. However, to translate this foundational science into a commercial energy standard, they require a clear exploitation and software engineering pathway. Pairing their existing research with the proposed BP/MWh Index positions them perfectly to lead an EIC Pathfinder Open 2026 consortium alongside a high-tech climate SME."
-delivery_method: "Turn-key architecture & strategic handover email aligned with Horizon Europe EIC Pathfinder Open 2026."
-date_delivered: 
-status: "Available"
-maker_url: ""
----
-
-# EuroBirdCast: Dynamic Avian Radar & BP/MWh Index
-
-**One sentence:** Transform raw weather radar biological clutter into an actionable Bird Protection per MWh Lost (BP/MWh) index to dynamically pause wind turbines only when migration risk is highest.
-
-**As of:** 22 September 2026 · **Recheck by:** September 2027  
-**Recipient:** The ENRAM Coordination Team & Open Science Lab for Biodiversity (EIC Pathfinder Open 2026), wind farm operators & co-operatives, grid regulators, and climate-tech data engineering co-ops  
-**Verdict:** 🎁 **gift** — Search protocol: *verified novel* (no open-source, automated pipeline translates raw DWD/Aloft radar files directly into a localized economic-ecological index for automated turbine curtailment).
+**Status:** 22 September 2026 (first draft in the morning, rewritten from scratch after review) · **Review after:** March 2027
+**Recipients:** open — to be decided only after M0. Candidates: BfN / BioConsult SH, LfU Brandenburg (central carcass registry), operator associations
+**Verdict:** 🔨 **build first, if at all** — review protocol: *narrowed, remaining gap unclear*. The first draft of this tin carried 🎁 "verified novel". That was wrong; the correction is below.
 
 ---
 
-## The Problem
+## What this tin lost on 22 September 2026
 
-Wind turbines face a continuous regulatory and ethical tension between decarbonization targets and wildlife protection under nature conservation laws (e.g. § 44 BNatSchG in Germany, EU Birds Directive). Today's permits rely heavily on **rigid, calendar-based seasonal shutdowns** (e.g., fixed nocturnal shutdowns across late summer and autumn months).
+Three independent reviews (`02-recherche/eurobirdcast-{empfaenger,besetzung,technik}-2026-09-22.md`) refuted the first draft in three places. That belongs up front, not in a footnote:
 
-This blunt approach causes two symmetrical failures:
-1. **Unnecessary losses in Annual Energy Production (AEP):** On warm, stagnant nights when almost no migration takes place, clean electricity generation is discarded.
-2. **Unmitigated risk pulses:** Dynamic autumn weather fronts and climate shifts trigger unexpected, massive migration waves outside statutory shutdown calendar dates, exposing hundreds of thousands of birds to spinning blades.
+1. **The recipient does not exist.** ENRAM was a COST Action from 2013 to 2017; enram.eu is an archive. The address named in the first draft could not be substantiated.
+2. **The index is not new.** "Collisions per kilowatt-hour generated" is scenario 3 in Bauer et al., *Nature Sustainability*, 2 June 2026 (doi 10.1038/s41893-026-01853-4) — the very study the first draft cited as its leverage. Code and data are open (CC BY 4.0, Zenodo). The metric has an earlier ancestor: Bureau Waardenburg 2022 computes "Percentage of Collisions Avoided" against MWh (30 % = 11 MWh = 0.05 %; 70 % = 545 MWh = 1.65 %; 90 % = 2,294 MWh = 6.14 %).
+3. **The problem does not exist in that form.** Onshore Germany has no migration-based curtailment obligation. The "blanket night shutdowns from August to October" are **bat** conditions, tied to temperature (≥ 10 °C) and wind speed (< 6 m/s) and therefore already demand-driven; the phenological shutdowns protect **breeding birds** (§ 45b (6) BNatSchG with Annex 1, § 6 WindBG, 4–6 weeks between 1 March and 31 August, sunrise to sunset). The applicable norm is § 45b, not § 44.
 
-The challenge is not a lack of wind or birds—it is a lack of **temporal, spatial, and vertical precision**.
+What remains is below — smaller, but real.
 
-## Why Now
+## The problem
 
-1. **DWD Radar Open Data is Accessible:** Deutscher Wetterdienst (DWD) publicly serves unfiltered polar volume radar scans (PVOL in standardized ODIM HDF5 format) for all 17 German radar stations. Access to unfiltered dual-polarization variables ($\rho_{HV}$, $Z_{DR}$) is essential to isolate biological scatterers from meteorological precipitation and ground clutter.
-2. **European Radar Infrastructure Exists in Aloft:** The Aloft project (Scientific Data 2025) provides harmonized biological radar time-series across 151 stations in 18 European countries from 2012 to the present, updated daily.
-3. **Open-Source Scientific Stack:** The standard extraction algorithm `vol2bird` (written in C) and its tooling `bioRad` / `vol2birdR` (v1.3 with MistNet) extract vertical profiles of birds (VPB: bird density in birds/km³, flight direction, ground speed, altitude stratification) directly from raw HDF5 volume scans.
-4. **Proven Operational Feasibility (FlySafe & RADBIRD):** The FlySafe service (University of Amsterdam / KNMI) monitors bird migration operationally for Royal Netherlands Air Force mission planning across the Netherlands, Germany, and Belgium; the German BfN project RADBIRD (Vogelwarte Helgoland, 2019–2021) demonstrated the methodology for wind turbine curtailment.
-5. **Quantified Economic-Ecological Leverage (Nature Sustainability 2026):** Bauer et al. (June 2026) modeled targeted curtailment across Western European radar stations: an intelligent bird-risk/energy-production threshold achieved a **50% collision risk reduction with only 1.2% energy production loss** (or 90% risk reduction with 7.6% energy loss), compared to static curtailments that cost 2–20% of total energy yield.
+Not "rigid shutdowns cost yield". Rather: **for bird migration the rule is missing, and for the rule the tool that would make it verifiable is missing.**
 
-## Architecture Sketch
+- Germany has no onshore migration condition. Where an obligation does exist — bats — the tool has long existed (ProBat 7, BfN). For migration, neither exists.
+- In the Netherlands, Start/Stop has been mandatory since May 2023 for every wind farm with a `kavelbesluit`: routine operation, capped at 60 h/year, rotor < 2 rpm, 48-hour forecast, government software EVAS, published seasonal reports (autumn 2025: six shutdowns, 36 hours). The forecast comes from a UvA random-forest model on ERA5 plus a dedicated bird radar at Luchterduinen — **no weather radar, no `vol2bird`**. A 2025 Technolution assessment for Rijkswaterstaat calls its reliability "een lage betrouwbaarheid": the model catches the quiet periods and fails at the migration peaks. Moving to weather radar is not in the 2026 outlook.
+- Commercial systems (Robin Radar, Swiss Birdradar) already curtail automatically — proprietary, hardware per site, undisclosed pricing, decision logic not inspectable.
 
-EuroBirdCast does not build radar hardware; it creates a neutral, open **intelligence and decision layer**:
+The shared blank is neither the measurement nor the economics. It is **recomputability**: nobody outside the system can check whether a shutdown was justified, or whether a missing one was not.
+
+## Why this works now
+
+1. **The profiles for Germany are already computed and open.** RMI/KMI Belgium has been computing **daily** `vol2bird` profiles for two German radars — `deess` (Essen) and `denhb` (Neuheilenbach) — since October 2019, freely available at `opendata.meteo.be/ftp/observations/radar/vbird/`. No ingestion, no HDF5, no Docker required.
+2. **FlySafe** (UvA / KNMI / Royal Netherlands Air Force) has provided free 5-minute real-time profiles across NL, BE and **DE** since August 2026 via the KNMI Data Platform.
+3. **The toolchain is maintained:** `vol2birdR` 1.3.2 (16 Sep 2026), `bioRad` 0.12.0.9000 (21 Jul 2026), `getRad` (CRAN) for the raw DWD data.
+4. **The thresholds are published:** 250 and 500 MTR (Welcker 2022, BfN-Schriften 635); NL offshore 500 birds/km/h, wind-dependent 400 (3–6 m/s) / 900 (6–11) / 500 (> 11) (van Bemmelen et al. 2022).
+5. **The opposite direction is occupied and therefore a calibration source:** the bird conservation station at LfU Brandenburg has run the national central carcass registry for wind turbine casualties since 2002.
+
+What does **not** work, contrary to the first draft: MistNet on DWD data (it needs `sweep_vol_w`, which DWD does not publish, and is trained on S-band — DWD is C-band); a 14-day retrospective from DWD raw volumes (measured retention ≈ 48 h, no PVOL archive); `ρHV < 0.85` as a threshold (the `vol2bird` default is `RHOHVMIN = 0.95`); "Aloft, more than 150 stations" (141 stations in 18 countries, daily only for the `baltrad` branch, `uva` ends in 2023, research-only licence).
+
+## Sketch
 
 ```
-WEATHER RADAR (DWD / KNMI HDF5)
-               │
-               ▼
-`vol2bird` EXTRACTION CONTAINER
-  - Bird density (birds/km³)
-  - Altitude layers (80–250 m rotor band)
-  - Heading and ground speed
-               │
-               ▼
-0–6h MIGRATION NOWCAST & WEATHER MODEL
-               │
-               ▼
-RISK ENGINE: Rotor Overlap × Bird Traffic × Wind Speed
-               │
-               ▼
-INDEX: BP/MWh (Bird Protection per MWh Lost)
-               │
-    ┌──────────┴────────────────────────┐
-    ▼                                   ▼
-SCADA / Turbines API             Operator Audit Dashboard
-(Dynamic Curtailment Trigger)    (Compliance & § 44 Evidence)
+RMI/KMI VPTS (deess, denhb)   ·   FlySafe (real time, NL/BE/DE)
+         │
+         ▼
+MTR at rotor height  ← hub height + rotor diameter
+  (birds per km of front per hour, integrated over the rotor-swept zone)
+         │
+         ▼
+Threshold from a file (250/500 MTR · NL 400/500/900)  +  uncertainty band
+         │
+         ▼
+Recommendation  ──▶  audit record:
+                     radar source · time · altitude profile · MTR · uncertainty ·
+                     threshold WITH citation · energy loss · decision
 ```
 
-- **Data Ingestion:** Automated scraping and polling of 5-minute raw HDF5 radar volumes from DWD Open Data.
-- **Extraction:** A Dockerized `vol2bird` pipeline processes volumes into structured JSON vertical profiles (VPB).
-- **Movement & Forecast:** 0–6 hour predictive migration nowcast combining radar vectors with wind and precipitation forecasts (DWD ICON-D2).
-- **Risk Index (BP/MWh):** Computes *Bird Protection per MWh Lost* by intersecting bird density in the rotor swept zone (80–220 m) with turbine power curves:
-  $$\text{BP/MWh} = \frac{\text{Bird Density in Rotor Band } (\text{birds/km}^3) \times \text{Rotor Volume Swept}}{\text{Potential Generation Lost } (\text{MWh})}$$
-- **Output:** REST API/Webhooks for wind farm SCADA systems (`CURTAIL_RECOMMENDED`, `NORMAL`), plus an audit log documenting radar profiles, wind speeds, and legal compliance rationale.
+**The metric is MTR at rotor height, not birds/km³.** MTR is the unit in which the thresholds are formulated in Germany, the Netherlands and Belgium — and therefore the only one in which a result can be checked against published limits.
 
-**Strict Scientific Boundary:** Weather radar measures *biological biomass movement*, not individual species. EuroBirdCast does NOT claim automated species identification from radar. Taxonomic probabilities are merged downstream from citizen science (eBird, ornitho.de) and acoustic monitors.
+**The contribution is the audit record, not the shutdown.** From that record alone, the decision must be reproducible without the service. The goal is that a regulator can recompute a curtailment without taking the operator's word for it — precisely what none of the commercial systems expose.
 
-## First Step
+## First step
 
-**Ticket: Ingestion & Extraction Bridge (Python + Dockerized `vol2bird`)**
+**Ticket M0: establish demand. Two questions, no product.**
 
-- Implement a Python pipeline to scrape DWD polar volume HDF5 data for a single pilot station (e.g. Prötzel or Boostedt).
-- Configure a lightweight Docker environment wrapping `vol2bird` with system dependencies (HDF5, PROJ, GEOS, GSL) to output structured JSON vertical profiles.
-- **Done when:** 14 days of historical autumn migration radar scans are processed in under 45 seconds per 5-minute volume, and the extracted bird density profiles match Aloft ground truth with a Pearson correlation $> 0.95$.
+- To BfN / BioConsult SH: project FKZ 3523 15 1601 ("system for recording and forecasting bird migration for demand-driven turbine curtailment in the EEZ", 12/2023–11/2025) has ended. What does the result still lack to be operational — and is it the open, recomputable operating service?
+- To the bird conservation station at LfU Brandenburg: would carcass data from the central registry be available in a form that can carry a threshold calibration?
 
-## Where it Breaks
+**Done when:** an answer from both directions either names a demand or denies it.
 
-- **Weather Clutter & False Positives:** Heavy rain, insect blooms, or anomalous refraction can mimic bird migration, triggering unneeded shutdowns and degrading operator confidence. *Mitigation:* Strict dual-polarization correlation thresholds ($\rho_{HV} < 0.85$ for biological targets) and radial velocity texture filtering.
-- **Radar Filtering Artifacts:** DWD ground-clutter filters can occasionally discard dense low-altitude bird flocks as noise. *Mitigation:* Bayesian sensor fusion cross-validating overlapping radar beams from neighboring stations.
-- **Black-Box Skepticism:** Wind farm operators will not curtail revenue based on an unexplained model. Every recommendation must cite raw density figures, altitude bands, and clear confidence intervals.
+**Kill switch:** if both deny it, the idea moves to `_entsorgt.md`, and that is a full result. Only then is M1 (profile readability, MTR at rotor height) worth starting — the full sequence is in `02-recherche/eurobirdcast-roadmap-2026-09-22.md`.
 
-## Prior Art
+## Where it breaks
 
-- **RADBIRD (BfN / Vogelwarte Helgoland, 2019–2021):** Validated the research pathway for radar-based turbine curtailment in Germany, but concluded as a scientific study without an open-source, operational software product for wind co-ops.
-- **FlySafe (UvA / KNMI / RNLAF):** Highly operational in NL/BE/DE, focused on military and civil aviation safety rather than open renewable energy curtailment optimization.
-- **Aloft / bioRad:** World-class open-source research tooling (R, C), but lacking the real-time operational API and SCADA integration required by energy operators.
-- **Camera-Based Systems (e.g., IdentiFlight):** Highly effective for local soaring raptors (like the Red Kite) within direct line-of-sight of a single turbine, but blind to broad-front nocturnal passerine migrations at 100–300 m altitude.
+- **The Gotthard null result.** Tettamanti, *J. Environ. Manage.* 401, 1 March 2026: five turbines, BirdScan MV1 radar, turbine-specific MTR thresholds since 2021. Downtime fell from 318 h (spring 2021/22, all turbines) to 28–96 h per turbine in 2023/24 — **the collision count stayed at roughly 190 animals per year.** More temporal precision did not save more birds there. Whether that is a site artefact (alpine pass, five turbines) or a finding is open. While it stays open, the impact claim of the entire field rests on soft ground — and so does this tin's.
+- **No buyer.** A tool for an obligation that does not exist gets neither bought nor operated. That is why M0 comes before any code.
+- **False precision.** The measurement deviation between radar systems is around 100 MTR at 250 MTR. A traffic light without an uncertainty band claims a precision the measurement cannot deliver.
+- **Licensing.** OPERA/Meteogate distributes under a research-only agreement. Whether an operating service would be permissible is unverified; the RMI/KMI files are the detour, and their licence is unverified too.
+- **The name.** "EuroBirdCast" collides with BirdCast (Cornell/CSU).
 
-EuroBirdCast connects continental biological radar open data with the turbine control room.
+## Who has already tried
 
----
+- **Bauer et al. 2026** (*Nature Sustainability*, 2 June 2026): 37 radars across DE/FR/BE/NL/LU, around 42,000 turbines; 50 % risk reduction at 1.2 % yield loss, 90 % at 7.6 %; scenario 3 is this tin's index. Code open. **This is the precursor, not the leverage.**
+- **Start/Stop + EVAS (NL, since May 2023):** mandatory routine operation with government software and a published audit — exactly the evidence path this tin claimed as its gap. Weakness: the underlying forecast model is rated of low reliability at migration peaks (Technolution 2025).
+- **FlySafe (UvA/KNMI, operational, free for DE since 8/2026):** delivers the profiles, makes no operational decision.
+- **Robin Radar Systems:** SCADA-coupled curtailment including a "mass migration (radar density grids)" algorithm; Eneco Maasvlakte 2 runs it fully automatically across 22 turbines. Proprietary.
+- **Swiss Birdradar Solution:** BirdScan MV1 ("adaptive management of wind parks", automatic communication with wind park controls) — now listed as "(legacy)", superseded by FaunaScan MV2. Proprietary, hardware per site.
+- **Bureau Waardenburg 2022 / van Bemmelen et al. 2022:** the economics layer as a commissioned report, including the figures this tin set out to reinvent.
+- **RADBIRD (BfN / Helgoland bird observatory, 1 Nov 2019 – 31 Dec 2021):** established the methodology for onshore curtailment. Continued as FKZ 3523 15 1601 (BioConsult SH, 12/2023–11/2025) for the EEZ — the first draft of this tin said RADBIRD "ended as a research report". That was incomplete.
+- **HiRAD (Biodiversa+):** WSL (Bauer), UvA, INBO, FMI, Agroscope, **with Swiss BirdRadar Solution AG as a partner**, work package 5 explicitly "data products and tools for stakeholders". The consortium the first draft's email proposed forming has existed since 2024.
 
-## The Handover Email
+## Why there is no draft email here
 
-**Recipient:** The ENRAM (European Network for the Radar surveillance of Animal Movement) Coordination Team & Open Science Lab for Biodiversity  
-**Rationale:** They have successfully aggregated cross-border weather radar data and maintain the open-source `vol2bird` extraction algorithms. However, to translate this foundational science into a commercial energy standard, they require a clear exploitation and software engineering pathway. Pairing their existing research with the proposed BP/MWh Index positions them perfectly to lead an EIC Pathfinder Open 2026 consortium alongside a high-tech climate SME.
+Because the first draft had two — one to an organisation that has not existed since 2017, at an address that could not be substantiated, aimed at a call whose deadline passed on 12 May 2026 and which requires ≥ 3 partners and TRL 1–4 anyway; and one to the Prototype Fund, which only funds freelancers and partnerships of ≤ 4 people based in Germany, and therefore fitted none of the named recipients.
 
-```email
-Subject: EuroBirdCast & The BP/MWh Index — Turn-key architecture for EIC Pathfinder 2026
-
-Dear ENRAM Coordination & Open Science Lab for Biodiversity Teams,
-
-I am writing to you as part of a quiet initiative to unblock stranded public-interest technology. I keep a master document named "Ideas" where I log validated technical concepts and architectures. When an idea is fully scoped but I am not the right person to build it, I package it into a "tin" and hand it over to the people who are.
-
-This is your tin.
-
-Your work on AloftData and the vol2bird algorithm has successfully made biological radar data publicly accessible. However, to drastically reduce avian mortality at wind farms without crippling renewable energy output, we need to bridge the gap between biological observation and energy economics.
-
-The Concept: EuroBirdCast & The BP/MWh Index
-Currently, wind farms rely on static, calendar-based shutdowns. EuroBirdCast proposes processing your vertical profiles of birds (VPB) to generate a localized BP/MWh (Bird Protection per MWh Lost) Index. This decision-support tool allows grid operators to justify API-driven "Smart Curtailment" during brief, extreme-risk migration windows, minimizing both bird strikes and Annual Energy Production (AEP) losses.
-
-EIC Pathfinder Open 2026 Alignment
-I have mapped this architecture directly against the upcoming Horizon Europe grant, which provides support for the earliest stages of scientific, technological or deep-tech research and development. EuroBirdCast is uniquely positioned for this funding:
-- Proof of Principle: The primary goal of the EIC Pathfinder is to develop the scientific basis to underpin breakthrough technologies, thus focusing on early-stage research needed to achieve the proof of principle that the envisaged technologies are feasible. Advancing from retrospective migration data to a real-time, localized economic risk forecast (BP/MWh) fulfills this mandate perfectly.
-- Pathway to Impact: The application requires demonstrating logical steps towards the achievement of the expected impacts of the project over time, in particular beyond the duration of a project. Deploying API-driven curtailment alerts to regional wind farm operators serves as a highly credible commercial exploitation strategy.
-- Open Science Integration: Your existing open-source ethos matches the requirement where open science practices include early and open sharing of research, research output management, and providing open access to research outputs. Furthermore, a data management plan (DMP) and a 'plan for dissemination and exploitation including communication activities' must be provided as distinct deliverables within the first 6 months of the project.
-- Critical Risk Mitigation: The grant demands a rigorous risk table identifying both the level of likelihood to occur (Low/medium/high) and the level of severity (Low/medium/high). A critical risk is a plausible event or issue that could have a high adverse impact on the ability of the project to achieve its objectives. For EuroBirdCast, this is the risk of false-positive "ghost curtailments" caused by technical anomalies in German DWD radar data (dual-polarization artifacts). We have already scoped a Bayesian Interpolation Layer as the mitigation strategy in the attached specs.
-
-The Handover
-Attached you will find the complete EuroBirdCast strategy document, the 72-hour MVP development roadmap, and the architecture requirements to build the API pipeline (FastAPI / SQLite / Dockerized vol2bird).
-
-I am not looking for equity, attribution, or a role in your consortium. This concept is released into the Public Domain (CC0). Take the architecture, recruit a promising high-tech SME to build the software infrastructure, and secure the EIC funding to make Smart Curtailment the European standard.
-
-Good luck,
-Félix
-github.com/felixinberlin
-```
+Both are deleted. A new draft will be written once M0 has named a recipient — with an address that was opened first. Rule 1 of the manifesto: the delivery is the gift, not the find. An email to a dead distribution list is not a delivery.

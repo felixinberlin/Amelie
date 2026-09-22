@@ -1,127 +1,100 @@
-# EuroBirdCast: Dynamisches Vogelzugradar & BP/MWh-Index
+# EuroBirdCast: Vogelzug-Abschaltung, nachrechenbar
 
-*(englisch: EuroBirdCast: Dynamic Avian Radar & BP/MWh Index)*
+*(englisch: EuroBirdCast: Auditable Migration Curtailment)*
+*Arbeitstitel — „EuroBirdCast" kollidiert mit der US-Marke BirdCast (Cornell/CSU) und muss vor jeder Zustellung ersetzt werden.*
 
-**Ein Satz:** Rohdaten der Wetterradare des DWD per `vol2bird` in vertikale Vogelzugprofile übersetzen und einen „Bird Protection per MWh Lost" (BP/MWh)-Index berechnen, damit Windkraftanlagen dynamisch in extremen Zugfenstern abregeln statt pauschal nach Kalendermonaten abzuschalten.
+**Ein Satz:** Aus bereits öffentlich vorliegenden, wetterradarbasierten Vogelzugprofilen eine turbinenspezifische Abschaltempfehlung erzeugen, die eine Behörde ohne den Dienst selbst nachrechnen kann.
 
-**Stand:** 22. September 2026 · **Prüfen ab:** September 2027
-**Empfänger:** The ENRAM Coordination Team & Open Science Lab for Biodiversity (EIC Pathfinder Open 2026) · Windpark-Betreiber, Bürgerwind-Genossenschaften, Prototype Fund Alumni / Open-Source Climate-Tech Kollektive, BWE, BfN
-**Verdikt:** 🎁 **verschenken** — Prüfprotokoll: *verifiziert neuartig* (keine offene, automatisierte Pipeline übersetzt ENRAM/DWD-Radarvolumina direkt in einen lokalen ökonomisch-ökologischen Abschalt-Index für dezentrale Betreiber).
+**Stand:** 22. September 2026 (Erstfassung vormittags, nach Prüfung vollständig neu geschrieben) · **Prüfen ab:** März 2027
+**Empfänger:** offen — erst nach M0 zu entscheiden. Kandidaten: BfN / BioConsult SH, LfU Brandenburg (Zentrale Fundkartei), Betreiberverbände
+**Verdikt:** 🔨 **selbst bauen, wenn überhaupt** — Prüfprotokoll: *verengt, Restlücke unklar*. Die Erstfassung dieser Dose stand auf 🎁 „verifiziert neuartig". Das war falsch; die Korrektur steht unten.
 
 ---
+
+## Was diese Dose am 22.09.2026 verloren hat
+
+Drei unabhängige Prüfungen (`02-recherche/eurobirdcast-{empfaenger,besetzung,technik}-2026-09-22.md`) haben die Erstfassung an drei Stellen widerlegt. Das gehört nach vorn, nicht in eine Fußnote:
+
+1. **Der Empfänger existiert nicht.** ENRAM war eine COST-Action 2013–2017; enram.eu ist ein Archiv. Die in der Erstfassung genannte Adresse war nicht belegbar.
+2. **Der Index ist nicht neu.** „Kollisionen pro erzeugter Kilowattstunde" ist Szenario 3 in Bauer u. a., *Nature Sustainability*, 2.6.2026 (doi 10.1038/s41893-026-01853-4) — derselben Studie, die die Erstfassung als ihren Hebel zitierte. Code und Daten liegen offen (CC BY 4.0, Zenodo). Vorläufer der Metrik: Bureau Waardenburg 2022 rechnet „Percentage of Collisions Avoided" gegen MWh (30 % = 11 MWh = 0,05 %; 70 % = 545 MWh = 1,65 %; 90 % = 2.294 MWh = 6,14 %).
+3. **Das Problem gibt es so nicht.** Onshore in Deutschland existiert keine Vogelzug-Abschaltauflage. Die „pauschalen Nachtabschaltungen August bis Oktober" sind **Fledermaus**-Auflagen und an Temperatur (≥ 10 °C) und Windgeschwindigkeit (< 6 m/s) gekoppelt, also selbst schon bedarfsgesteuert; die phänologischen Abschaltungen gelten **Brutvögeln** (§ 45b Abs. 6 BNatSchG i. V. m. Anlage 1, § 6 WindBG, 4–6 Wochen zwischen 1.3. und 31.8., Sonnenauf- bis Sonnenuntergang). Einschlägig ist § 45b, nicht § 44.
+
+Was übrig bleibt, steht unten — und es ist kleiner, aber echt.
 
 ## Das Problem
 
-Windkraftanlagen stehen im dauernden Konflikt zwischen Ausbauzielen für erneuerbare Energien und individuellem Artenschutz nach § 44 BNatSchG. Die heutige Genehmigungspraxis reagiert mit **starren, kalendarischen Abschaltzeiten** (z. B. feste Nachtabschaltungen von August bis Oktober).
+Nicht „starre Abschaltungen kosten Ertrag". Sondern: **Für den Vogelzug fehlt die Regel, und für die Regel fehlt das Werkzeug, das sie prüfbar machen würde.**
 
-Das erzeugt zwei gegenläufige Schäden:
-1. **Unnötiger Verlust sauberer Energie:** An warmen, windstillen oder ungünstigen Zugabenden, an denen kaum ein Vogel fliegt, stehen Turbinen still und verlieren wertvolle Gigawattstunden Jahresenergieertrag (AEP).
-2. **Ungeschützte Spitzen:** Klimawandelbedingte Wetterfronten verschieben Zugpulse oft spontan in Nächte oder Tageszeiten außerhalb der starren Auflagenfenster. Massive Zuggipfel treffen dann auf voll rotierende Turbinen.
+- In Deutschland gibt es onshore keine Zug-Auflage. Wo eine Pflicht besteht — Fledermäuse —, existiert das Werkzeug längst (ProBat 7, BfN). Für den Zug fehlt beides.
+- In den Niederlanden ist Start/Stop seit Mai 2023 für alle Windparks mit `kavelbesluit` verpflichtend, Regelbetrieb, Deckel 60 h/Jahr, Rotor < 2 U/min, 48-Stunden-Prognose, behördliche Software EVAS, veröffentlichte Saisonberichte (Herbst 2025: sechs Abschaltungen, 36 Stunden). Die Prognose stammt aus einem Random-Forest-Modell der UvA auf ERA5 plus einem dedizierten Vogelradar bei Luchterduinen — **kein Wetterradar, kein `vol2bird`**. Ein Gutachten von Technolution für Rijkswaterstaat (2025) nennt die Zuverlässigkeit „een lage betrouwbaarheid": Das Modell trifft die Ruhephasen und versagt bei den Zugspitzen. Ein Wechsel auf Wetterradar steht im Ausblick 2026 nicht.
+- Kommerzielle Systeme (Robin Radar, Swiss Birdradar) schalten bereits automatisch — proprietär, Hardware je Standort, Preis unveröffentlicht, Entscheidungslogik nicht einsehbar.
 
-Das Kernproblem ist kein Mangel an Vögeln, sondern ein Mangel an **zeitlicher und räumlicher Präzision**.
+Die gemeinsame Leerstelle ist nicht die Messung und nicht die Ökonomie. Es ist die **Nachrechenbarkeit**: Niemand außerhalb des Systems kann prüfen, ob eine Abschaltung richtig war oder eine unterlassene falsch.
 
 ## Warum das jetzt geht
 
-1. **DWD-Radardaten sind als Open Data zugänglich:** Der Deutsche Wetterdienst (DWD) stellt auf seinem Open-Data-Server ungefilterte polare Volumendaten (PVOL im standardisierten ODIM-HDF5-Format) für die 17 deutschen Radarstationen bereit. Ungefilterte Dual-Polarisations-Daten ($\rho_{HV}$, $Z_{DR}$) sind entscheidend, um biologische Streuer von Niederschlag und Insekten zu trennen.
-2. **Die europäische Dateninfrastruktur steht mit Aloft:** Das Aloft-Projekt (Scientific Data 2025) stellt radarbasierte biologische Zeitreihen von über 150 Wetterstationen aus 18 europäischen Ländern bereit. Die Daten existieren kontinental.
-3. **Der wissenschaftliche Extraktions-Stack ist quelloffen:** Der Algorithmus `vol2bird` (in C) und die Begleitwerkzeuge `bioRad` / `vol2birdR` (v1.3 mit MistNet-Neuronalem-Netz) berechnen vertikale Profile biologischer Streuer (VPB: Vogel-Dichte in Vögeln/km³, Flugrichtung, Geschwindigkeit, Höhenschichtung in 200-m-Intervallen) direkt aus HDF5-Volumenscans.
-4. **Machbarkeit ist durch FlySafe und RADBIRD bewiesen:** Das niederländisch-belgisch-deutsche System FlySafe (UvA / KNMI) ist für die Flugsicherheit der Luftwaffe operativ im Einsatz; das BfN-Forschungsprojekt RADBIRD (Institut für Vogelforschung „Vogelwarte Helgoland", 2019–2021) hat die Grundlagen für Windkraft-Abschaltungen in Deutschland methodisch gelegt.
-5. **Der Hebel ist durch die Nature-Sustainability-Studie 2026 quantifiziert:** Bauer u. a. (Juni 2026) wiesen anhand west-europäischer Wetterradare nach, dass intelligente, radarbasierte Abschaltungen 50 % des Kollisionsrisikos mit nur 1,2 % Energieverlust verhindern können (bzw. 90 % Risikoreduktion bei 7,6 % Ertragsverlust). Starre Abschaltungen kosten dagegen 2–20 % des Ertrags.
+1. **Die Profile für Deutschland sind bereits gerechnet und offen.** RMI/KMI Belgien rechnet seit Oktober 2019 **täglich** `vol2bird`-Profile für zwei deutsche Radare — `deess` (Essen) und `denhb` (Neuheilenbach) — frei abrufbar unter `opendata.meteo.be/ftp/observations/radar/vbird/`. Kein eigenes Ingest, kein HDF5, kein Docker nötig.
+2. **FlySafe** (UvA / KNMI / niederländische Luftwaffe) liefert seit August 2026 5-Minuten-Echtzeitprofile über NL, BE und **DE**, frei nutzbar über das KNMI Data Platform.
+3. **Der Werkzeugkasten ist gepflegt:** `vol2birdR` 1.3.2 (16.09.2026), `bioRad` 0.12.0.9000 (21.07.2026), `getRad` (CRAN) für die DWD-Rohdaten.
+4. **Die Schwellenwerte sind veröffentlicht:** 250 und 500 MTR (Welcker 2022, BfN-Schriften 635); NL offshore 500 Vögel/km/h, windabhängig 400 (3–6 m/s) / 900 (6–11) / 500 (> 11) (van Bemmelen u. a. 2022).
+5. **Die Gegenrichtung ist besetzt und damit Kalibrierquelle:** Die Vogelschutzwarte im LfU Brandenburg führt seit 2002 die bundesweite Zentrale Fundkartei für Windkraftopfer.
+
+Was **nicht** geht und in der Erstfassung stand: MistNet auf DWD-Daten (braucht `sweep_vol_w`, das der DWD nicht liefert, und ist auf S-Band trainiert — DWD ist C-Band); ein 14-Tage-Rückblick aus DWD-Rohvolumen (Vorhaltezeit gemessen ≈ 48 h, kein PVOL-Archiv); `ρHV < 0,85` als Schwelle (`vol2bird`-Default ist `RHOHVMIN = 0.95`); „Aloft, über 150 Stationen" (141 Stationen in 18 Ländern, täglich nur der `baltrad`-Zweig, `uva` endet 2023, Lizenz research-only).
 
 ## Skizze
 
-EuroBirdCast ist kein Hardware-Projekt und keine neue Radartechnologie, sondern eine **offene, neutrale Entscheidungs- und Risiko-Schicht**:
-
 ```
-DWD / Wetterradar (HDF5)
+RMI/KMI VPTS (deess, denhb)   ·   FlySafe (Echtzeit, NL/BE/DE)
          │
          ▼
-`vol2bird` Extraktion (VPB)
-  - Vogeldichte (Vögel/km³)
-  - Höhenprofil (80–250 m Rotorebene)
-  - Zugrichtung & Fluggeschwindigkeit
+MTR auf Rotorhöhe  ← Nabenhöhe + Rotordurchmesser
+  (Vögel je km Frontbreite und Stunde, über die Rotorebene integriert)
          │
          ▼
-Nowcast & Kurzfrist-Wettermodell (0–6 h)
+Schwelle aus Datei (250/500 MTR · NL 400/500/900)  +  Unsicherheitsband
          │
          ▼
-Risiko-Engine: Rotorüberdeckung × Vogeldichte × Wind
-         │
-         ▼
-Index: BP/MWh (Bird Protection per MWh Lost)
-         │
-    ┌────┴──────────────────────────┐
-    ▼                               ▼
-SCADA / Turbinen-API         Monitoring-Dashboard
-(Dynamische Drosselung)      (Audit-Trail & Behördennachweis)
+Empfehlung  ──▶  Audit-Zeile:
+                 Radarquelle · Zeit · Höhenprofil · MTR · Unsicherheit ·
+                 Schwelle MIT Quellenangabe · Ertragsverlust · Entscheidung
 ```
 
-- **Eingabe:** Automatisierter Abruf der 5-Minuten-HDF5-Radardaten des DWD für den jeweiligen Radarstandort (z. B. Boostedt, Prötzel, Umkirch) + lokale Wind- und Prognosedaten (DWD ICON-D2).
-- **Berechnung:** `vol2bird` extrahiert die biologische Schicht. Aus der Vogeldichte in der Rotorebene (typisch 80–220 m) und dem aktuellen/prognostizierten Stromertrag der Anlage wird der Index **BP/MWh** berechnet: *Wie viele Vogel-Durchflüge im Rotorbereich werden pro abgeregelter Megawattstunde verhindert?*
-- **Ausgabe:**
-  - REST-API & Webhook für Windpark-SCADA-Systeme (`CURTAIL_RECOMMENDED`, `NORMAL_OPERATION`) mit Schwellenwert-Parametrisierung.
-  - Revisionssicherer Audit-Trail: Für jede Abschaltung werden Radarprofil, Windgeschwindigkeit, errechnete Vogeldichte und Regelbegründung protokolliert (Beweissicherheit für Naturschutzbehörden nach § 44 BNatSchG).
-  - Web-Dashboard: Höhenschichten-Visualisierung und 6-Stunden-Gefahrenprognose.
+**Die Kennzahl ist MTR auf Rotorhöhe, nicht Vögel/km³.** MTR ist die Einheit, in der die Schwellenwerte in Deutschland, den Niederlanden und Belgien formuliert sind — und damit die einzige, in der sich ein Ergebnis gegen veröffentlichte Grenzwerte prüfen lässt.
 
-**Klare Systemgrenze:** Wetterradar misst *Biomasse und Bewegungsvektoren*, keine Vogelarten. EuroBirdCast verspricht keine automatische Arterkennung aus Radar. Artwahrscheinlichkeiten werden nachgelagert über phänologische Beobachtungsdaten (eBird, ornitho.de) und akustische Erfassung als Unsicherheitsgewichtung eingespielt.
+**Der Beitrag ist die Audit-Zeile, nicht die Abschaltung.** Aus ihr allein muss die Entscheidung ohne den Dienst reproduzierbar sein. Ziel ist, dass eine Behörde eine Abschaltung nachrechnen kann, ohne dem Betreiber zu glauben — genau das hat keines der kommerziellen Systeme offen.
 
 ## Erster Schritt
 
-**Ticket: Ingestion- & Extraktions-Brücke (Python + Dockerized `vol2bird`)**
+**Ticket M0: Bedarfsklärung. Zwei Fragen, kein Produkt.**
 
-- Einen Python-Service aufsetzen, der ungefilterte ODIM-HDF5-Volumenscans einer Pilotstation (z. B. DWD Prötzel oder Boostedt) automatisiert herunterlädt.
-- Einen Docker-Container mit `vol2bird` (inkl. HDF5, PROJ, GSL) schnüren, der die Volumenscans in JSON-strukturierte vertikale Profile (VPB) umwandelt.
-- **Fertig, wenn:** Für 14 Tage historische Herbstzugdaten (bekannte Starkzugnächte aus Aloft) die extrahierten Dichteprofile in weniger als 45 Sekunden je 5-Minuten-Scan berechnet werden und die Korrelation zu den Aloft-Referenzprofilen über 95 % liegt.
+- An BfN / BioConsult SH: Das Vorhaben FKZ 3523 15 1601 („System für Erfassung und Vorhersage des Vogelzugs für bedarfsgerechte Turbinenabschaltungen in der AWZ", 12/2023–11/2025) ist ausgelaufen. Was fehlt dem Ergebnis zur Betriebsreife — und ist es der offene, nachrechenbare Betriebsdienst?
+- An die Vogelschutzwarte im LfU Brandenburg: Wären Totfunddaten aus der Zentralen Fundkartei in einer Form verfügbar, die eine Schwellen-Kalibrierung trägt?
+
+**Fertig, wenn:** aus beiden Richtungen eine Antwort vorliegt, die einen Bedarf entweder benennt oder verneint.
+
+**Kippschalter:** Verneinen beide, wandert die Idee nach `_entsorgt.md`, und das ist ein vollwertiges Ergebnis. Erst danach lohnt M1 (Profil-Lesbarkeit, MTR auf Rotorhöhe) — die vollständige Staffel steht in `02-recherche/eurobirdcast-roadmap-2026-09-22.md`.
 
 ## Wo es kippt
 
-- **Falsch-Positive durch Clutter:** Starkregen, Insektenschwärme oder Bodenclutter bei fehlerhafter Refraktion können als „Geister-Vogelzüge" fehlinterpretiert werden und zu unberechtigten Abschaltungen führen. Gegenmaßnahme: Strikte Nutzung der polarimetrischen Korrelation ($\rho_{HV} < 0.85$ für biologische Streuer) und Geschwindigkeitsfilterung.
-- **DWD-Filteranomalien:** DWD-interne Clutterfilterung entfernt zuweilen dichte Schwärme als Rauschen. Gegenmaßnahme: Bayessche Fusion mit überlappenden Radarkeulen benachbarter Stationen oder Grenzradaren (KNMI, DWD-Nachbarstationen).
-- **Blackbox-Vorwurf:** Windpark-Betreiber akzeptieren keine intransparente KI-Empfehlung, die Erlöse kostet. Das System muss jeden Abschaltimpuls auf gemessene Vögel/km³ und Höhenbänder zurückführen.
+- **Der Nullbefund vom Gotthard.** Tettamanti, *J. Environ. Manage.* 401, 1.3.2026: fünf Anlagen, BirdScan-MV1-Radar, turbinenindividuelle MTR-Schwellen seit 2021. Die Abschaltzeit sank von 318 h (Frühjahr 2021/22, alle Anlagen) auf 28–96 h je Anlage 2023/24 — **die Kollisionszahl blieb bei rund 190 Tieren pro Jahr unverändert.** Mehr zeitliche Präzision hat dort nicht mehr Vögel gerettet. Ob das ein Standortartefakt ist (Alpenpass, fünf Anlagen) oder ein Ergebnis, ist offen. Solange es offen ist, steht der Wirkungsanspruch des ganzen Felds auf wackligem Grund — und damit auch der dieser Dose.
+- **Kein Käufer.** Ein Werkzeug für eine Pflicht, die es nicht gibt, wird nicht gekauft und nicht betrieben. Deshalb ist M0 der erste Schritt und nicht der Code.
+- **Scheingenauigkeit.** Die Messabweichung zwischen Radarsystemen liegt bei 250 MTR bei rund 100 MTR. Eine Ampel ohne Unsicherheitsband behauptet eine Präzision, die die Messung nicht hergibt.
+- **Lizenz.** OPERA/Meteogate liefert unter einer research-only-Vereinbarung. Ob ein Betriebsdienst daraus zulässig wäre, ist ungeprüft; die RMI/KMI-Dateien sind der Umweg, ihre Lizenz ebenfalls ungeprüft.
+- **Der Name.** „EuroBirdCast" kollidiert mit BirdCast (Cornell/CSU).
 
 ## Wer es schon versucht hat
 
-- **RADBIRD (BfN, Vogelwarte Helgoland, 2019–2021):** Hat das wissenschaftliche Fundament für radarbasierte Abschaltungen in Deutschland gelegt, endete jedoch als Forschungsbericht ohne offene, schlüsselfertige Betriebssoftware für Genossenschaften und Betreiber.
-- **FlySafe (UvA / KNMI):** Voll operativ in NL/BE/DE, primär auf militärische und zivile Flugsicherheit optimiert, kein offenes B2B/Bürgerwind-Abschaltmodul mit BP/MWh-Ökonomie.
-- **Aloft / bioRad:** Hervorragende offene Forschungsinfrastruktur (R, C), aber kein einsatzbereites API-System für SCADA-Leitsysteme.
-- **Kommerzielle Kamerasysteme (z. B. IdentiFlight):** Setzen optisch an der Einzelanlage an (Rotmilan-Erkennung im Nahbereich), erfassen aber keinen großräumigen nächtlichen Breitfrontenzug von Kleinvögeln in 100–300 m Höhe.
+- **Bauer u. a. 2026** (*Nature Sustainability*, 2.6.2026): 37 Radare über DE/FR/BE/NL/LU, ca. 42.000 Turbinen; 50 % Risikoreduktion bei 1,2 % Ertragsverlust, 90 % bei 7,6 %; Szenario 3 ist der Index dieser Dose. Code offen. **Das ist der Vorläufer, nicht der Hebel.**
+- **Start/Stop + EVAS (NL, seit Mai 2023):** verpflichtender Regelbetrieb mit behördlicher Software und veröffentlichtem Audit — also genau der Nachweisweg, den diese Dose als Lücke reklamierte. Schwäche: das zugrunde liegende Prognosemodell gilt laut Technolution 2025 als wenig zuverlässig bei Zugspitzen.
+- **FlySafe (UvA/KNMI, operativ, seit 8/2026 auch frei für DE):** liefert die Profile, trifft keine betriebliche Entscheidung.
+- **Robin Radar Systems:** SCADA-gekoppelte Abschaltung inkl. Algorithmus „mass migration (radar density grids)"; Eneco Maasvlakte 2 fährt sie vollautomatisch über 22 Turbinen. Proprietär.
+- **Swiss Birdradar Solution:** BirdScan MV1 („adaptive management of wind parks", automatische Kommunikation mit der Windparksteuerung) — inzwischen als „(legacy)" geführt, abgelöst durch FaunaScan MV2. Proprietär, Hardware je Standort.
+- **Bureau Waardenburg 2022 / van Bemmelen u. a. 2022:** die Ökonomie-Schicht als Gutachten, inkl. der Zahlen, die diese Dose neu erfinden wollte.
+- **RADBIRD (BfN / Vogelwarte Helgoland, 1.11.2019–31.12.2021):** legte die Methodik für onshore-Abschaltverfahren. Fortgesetzt als FKZ 3523 15 1601 (BioConsult SH, 12/2023–11/2025) für die AWZ — die Erstfassung dieser Dose schrieb, RADBIRD sei „als Forschungsbericht geendet". Das war unvollständig.
+- **HiRAD (Biodiversa+):** WSL (Bauer), UvA, INBO, FMI, Agroscope, **mit Swiss BirdRadar Solution AG als Partner**, Arbeitspaket 5 ausdrücklich „data products and tools for stakeholders". Das Konsortium, das die Erstfassungs-Mail vorschlug zu gründen, existiert seit 2024.
 
-EuroBirdCast schließt genau die Lücke zwischen dem kontinentalen Forschungsradar und der Leitwarte des Windparks.
+## Warum hier kein Mail-Entwurf steht
 
----
+Weil die Erstfassung zwei hatte — einen an eine Organisation, die es seit 2017 nicht mehr gibt, an eine Adresse, die nicht belegbar war, ausgerichtet auf einen Call, dessen Frist am 12.05.2026 verstrichen war und der ohnehin ≥ 3 Partner und TRL 1–4 verlangt; und einen an den Prototype Fund, der nur Freiberufler und GbR mit ≤ 4 Personen und Sitz in Deutschland fördert, also für keinen der genannten Empfänger in Frage kam.
 
-## Übergabe-Mail (The Handover Email)
-
-**Empfänger:** The ENRAM (European Network for the Radar surveillance of Animal Movement) Coordination Team & Open Science Lab for Biodiversity  
-**Begründung:** Das Team hat grenzüberschreitende Wetterradardaten erfolgreich aggregiert und pflegt die Open-Source-Extraktionsalgorithmen rund um `vol2bird`. Um diese Grundlagenforschung jedoch in einen praxisnahen Energiestandard zu übersetzen, bedarf es einer klaren Verwertungs- und Software-Engineering-Perspektive. Die Verknüpfung der bestehenden Forschungsarbeit mit dem BP/MWh-Index positioniert das Team ideal zur Führung eines EIC-Pathfinder-Open-2026-Konsortiums gemeinsam mit einem Hightech-Klima-KMU.
-
-```email
-Betreff: EuroBirdCast & der BP/MWh-Index — Schlüsselfertige Architektur für EIC Pathfinder 2026
-
-Liebes ENRAM-Koordinationsteam, liebes Team des Open Science Lab for Biodiversity,
-
-ich schreibe Ihnen im Rahmen einer Initiative zur Freisetzung gemeinwohlorientierter Technologien. In einem Master-Dokument namens „Ideen" erfasse ich validierte technische Konzepte und Architekturen. Wenn eine Idee ausgereift ist, ich aber nicht die richtige Person für die Umsetzung bin, packe ich sie in eine „Dose" und übergebe sie an die Personen, die es sind.
-
-Dies ist Ihre Dose.
-
-Ihre Arbeit an AloftData und dem vol2bird-Algorithmus hat biologische Radardaten öffentlich zugänglich gemacht. Um jedoch die Vogelsterblichkeit an Windkraftanlagen drastisch zu senken, ohne den Ertrag erneuerbarer Energien abzuwürgen, müssen wir die Lücke zwischen biologischer Beobachtung und Energieökonomie schließen.
-
-Das Konzept: EuroBirdCast & der BP/MWh-Index
-Bislang verlassen sich Windparks auf statische, kalendarische Abschaltungen. EuroBirdCast schlägt vor, Ihre vertikalen Vogelprofile (VPB) zu verarbeiten, um einen lokalisierten BP/MWh-Index (Bird Protection per MWh Lost) zu berechnen. Dieses Entscheidungshilfe-System ermöglicht es Netz- und Parkbetreibern, API-gestütztes „Smart Curtailment" während kurzer, extrem risikobehafteter Zugfenster zu begründen – und so Vogelschlag und Ertragsverluste (AEP) gleichermaßen zu minimieren.
-
-Ausrichtung auf EIC Pathfinder Open 2026
-Ich habe diese Architektur direkt auf den kommenden Horizon Europe Grant abgestimmt, der frühe Phasen wissenschaftlicher, technologischer und Deep-Tech-Forschung fördert:
-- Proof of Principle: Der EIC Pathfinder zielt darauf ab, die wissenschaftliche Grundlage für Durchbruchstechnologien zu schaffen. Der Schritt von retrospektiven Zugdaten zu einer echtzeitfähigen, lokalisierten wirtschaftlichen Risikoprognose (BP/MWh) erfüllt dieses Mandat passgenau.
-- Pathway to Impact: Der Antrag verlangt logische Schritte zur Erzielung nachhaltiger Wirkung über die Projektlaufzeit hinaus. Die Bereitstellung von API-gestützten Drosselungswarnungen für regionale Windparkbetreiber dient als hochgradig glaubwürdige Verwertungsstrategie.
-- Open Science Integration: Ihr Open-Source-Ethos entspricht exakt den Anforderungen an offenes Teilen von Forschungsergebnissen, Datenmanagementplänen (DMP) und Verbreitungskonzepten innerhalb der ersten sechs Monate.
-- Kritisches Risikomanagement: Das Programm verlangt eine rigorose Risikomatrix. Das wesentliche Risiko bei EuroBirdCast sind falsch-positive „Geister-Abschaltungen" durch Artefakte in deutschen DWD-Radardaten (Dual-Polarisations-Anomalien). Dafür haben wir in der beigefügten Spezifikation bereits eine bayessche Interpolationsschicht als Gegenmaßnahme konzipiert.
-
-Die Übergabe
-Anbei finden Sie das vollständige EuroBirdCast-Strategiedokument, die 72-Stunden-MVP-Roadmap und die Architekturanforderungen für die API-Pipeline (FastAPI / SQLite / Dockerized vol2bird).
-
-Ich suche weder nach Unternehmensanteilen noch nach Nennung oder einer Rolle im Konsortium. Dieses Konzept ist gemeinfrei (CC0). Nehmen Sie die Architektur, binden Sie ein vielversprechendes Hightech-Klima-KMU für die Softwareinfrastruktur ein und sichern Sie sich die EIC-Förderung, um Smart Curtailment zum europäischen Standard zu machen.
-
-Viel Erfolg
-Félix
-github.com/felixinberlin
-```
+Beide sind gelöscht. Ein neuer Entwurf entsteht erst, wenn M0 einen Empfänger benannt hat — und mit einer Adresse, die vorher geöffnet wurde. Regel 1 des Manifests: Die Zustellung ist das Geschenk, nicht der Fund. Eine Mail an einen toten Verteiler ist keine Zustellung.
