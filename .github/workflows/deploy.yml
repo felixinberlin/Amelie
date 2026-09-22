@@ -10,9 +10,20 @@ permissions:
   pages: write
   id-token: write
 
+# Deploys laufen nacheinander statt sich gegenseitig abzuschießen.
+# cancel-in-progress: true hat bei zwei Pushes kurz hintereinander den
+# ersten Lauf mitten im Deploy abgebrochen (22.09.2026).
+#
+# Bleibt die Seite nach einem Push kurz weiß: Das ist der HTML-Cache,
+# nicht dieser Workflow. GitHub Pages lässt index.html bis zu zehn
+# Minuten cachen, die Asset-Dateinamen ändern sich aber mit jedem Build
+# (assets/index-<hash>.js). In dem Fenster zeigt eine gecachte
+# index.html auf einen Hash, den es nicht mehr gibt → 404 → leeres
+# #root. Cache-Control lässt sich bei GitHub Pages nicht setzen;
+# hartes Neuladen hilft sofort, von allein heilt es nach Ablauf.
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
