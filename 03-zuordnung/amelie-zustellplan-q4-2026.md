@@ -145,17 +145,15 @@ Nebenbefund für die Empfängerwahl: Radicchi finanziert Hush City seit 2020 pri
 
 ---
 
-## Mail 5 — Glasanflug-Ampel → LBV *(neu, 21.09.2026, Entwurf)*
+## Mail 5 — Glasanflug-Ampel → NABU Berlin / NABU Jena *(neu 21.09.2026, am 22.09. umgeschrieben)*
 
-**Empfängertyp:** Verein mit gefördertem Mehrjahresprojekt und angestelltem Fachpersonal — **in der Praxis Rang 1**, nicht Rang 4.
-**Kontaktweg:** `vogelschlag@lbv.de`, Dr. Peter Stimmler (Projekt „Vogelschlag an Glas verhindern", 2023–2027, Bayerischer Naturschutzfonds).
-**Anhang/Link:** `05-dosen/glasanflug-ampel.md`
-**Konkreter Bezug:** die Plakette „Vogelfreundliche Glasfläche" — Online-Formular mit Foto, danach Besichtigung durch geschultes Personal — und die Beratung für Kommunen und Behörden.
-**Neue Adresse, kein Abstandsproblem:** Anders als Mail 4 (CityLAB, gleiche Adresse wie Mail 2) geht diese an einen Empfänger, der noch nie angeschrieben wurde.
-**Vor dem Versand zwingend:** LAG VSW 21/01 von Hand öffnen und die Punktwerte nachtragen; die PDF war maschinell gesperrt, und die Merkblätter widersprechen sich bei der Signifikanzschwelle.
-**Mitzunennen:** die LAG VSW als fachliche Eigentümerin des Schemas — ein Werkzeug, das es ohne sie „auslegt", spaltet die Praxis.
-
-Volltext: `mails-q4-2026/mail-5-lbv.md`.
+**Empfängerwechsel nach der Vertiefung vom 22.09.:** Ursprünglich an den LBV adressiert. Die Nachrecherche hat gezeigt, dass seit Februar/März 2026 ein **quelloffener Vogelschlagmelder** von NABU Jena und NABU Leipzig läuft, mit einer eigenen Berliner Instanz — und dass dieser pro Meldung bereits **bis zu fünf Fotos, die Fassadenausrichtung und eine Adresse** erfasst. Damit ist die Bewertungsschicht kein neues Produkt mehr, sondern ein Aufsatz auf eine laufende Plattform, in der Stadt, in der die Beurteilungshilfe seit dem 10.06.2026 verbindlicher Standard ist.
+**Empfängertyp:** Verein mit angestelltem Projektpersonal — auf dem Papier Rang 4, in der Praxis der richtige Adressat, weil er die Fotos, die Adressen und die Ansprache der Eigentümer hat.
+**Kontaktweg:** `artenschutz_am_gebaeude@nabu-berlin.de` (Julia Lorenz, Helen Friedlein).
+**Upstream:** NABU Jena, Maximilian Schätz, `codeberg.org/nabu-jena/Vogelschlagmelder` (GPLv3) — **nur mit Code ansprechen**, Regel 4. Deshalb steht die Dose auf 🔨.
+**Zweiter Empfänger, eigener Aufhänger, nicht am selben Tag:** LBV Bayern, `vogelschlag@lbv.de` — Plakette, Beratung, Münchner Studie.
+**Anhang/Link:** `05-dosen/glasanflug-ampel.md` · Volltext: `mails-q4-2026/mail-5-nabu-vogelschlagmelder.md`
+**Vor dem Versand zwingend:** Punktwerte aus LAG VSW 21/01 nachtragen; den Melder einmal selbst benutzen; Dose altern lassen.
 
 ---
 
@@ -167,4 +165,4 @@ Volltext: `mails-q4-2026/mail-5-lbv.md`.
 | Sperrmüll-Radar | CityLAB Berlin (+ Re-Use Berlin, BSR als Partner) | **gesendet 21.09.2026** (in Mail 2), Antwort offen |
 | Kiez-Lärmkarte | CityLAB + Noise-Planet | **gesendet 21.09.2026** (in Mail 2 & Mail 3), Antwort offen |
 | Beobachtungsposten mit Übergabe | CityLAB Berlin (Gieß den Kiez) | **Entwurf** `mails-q4-2026/mail-4-citylab-patenschaft.md`, bewusst **nicht** gesendet — dieselbe Adresse wie Mail 2 (21.09.), Abstand halten, sonst ist es Nachfassen. Vorher Issues von `giessdenkiez-de` von Hand durchsehen |
-| **Glasanflug-Ampel** | **LBV** (+ LAG VSW als Schema-Eigentümerin, Vogelwarte Sempach nachrangig) | **Dose gepackt 21.09.2026** (Runde 7, `frei` → `verengt`), **Entwurf** `mails-q4-2026/mail-5-lbv.md` — wartet auf die Punktwerte aus LAG VSW 21/01 |
+| **Glasanflug-Ampel** | **NABU Berlin + NABU Jena** (LBV als zweiter Empfänger, LAG VSW als Schema-Eigentümerin) | **Dose gepackt 21.09., überarbeitet 22.09.** — Verdikt jetzt 🔨 erst Skelett (Regel 4: quelloffenes Repo mit Einzelmaintainer). **Entwurf** `mails-q4-2026/mail-5-nabu-vogelschlagmelder.md`, wartet auf die Punktwerte aus LAG VSW 21/01 |
