@@ -152,7 +152,12 @@ Nebenbefund für die Empfängerwahl: Radicchi finanziert Hush City seit 2020 pri
 **Kontaktweg:** `artenschutz_am_gebaeude@nabu-berlin.de` (Julia Lorenz, Helen Friedlein).
 **Upstream:** NABU Jena, Maximilian Schätz, `codeberg.org/nabu-jena/Vogelschlagmelder` (GPLv3) — **nur mit Code ansprechen**, Regel 4. Deshalb steht die Dose auf 🔨.
 **Zweiter Empfänger, eigener Aufhänger, nicht am selben Tag:** LBV Bayern, `vogelschlag@lbv.de` — Plakette, Beratung, Münchner Studie.
-**Anhang/Link:** `05-dosen/glasanflug-ampel.md` · Volltext: `mails-q4-2026/mail-5-nabu-vogelschlagmelder.md`
+**Vier Empfänger, vier Texte** (die Dose nennt vier Beteiligte, also gibt es auch vier Mails statt einer für alle):
+- `mails-q4-2026/mail-5-nabu-berlin.md` — NABU Berlin, `artenschutz_am_gebaeude@nabu-berlin.de`. Aufhänger: die eigene Melder-Instanz und Berlins verbindlicher Standard seit 10.06.2026.
+- `mails-q4-2026/mail-6-nabu-jena.md` — NABU Jena, Upstream. **Nur mit Code**, Regel 4; das Skelett liegt bei. Adresse von nabu-jena.de kopieren oder Codeberg-Issue, nicht raten.
+- `mails-q4-2026/mail-7-lbv.md` — LBV Bayern, `vogelschlag@lbv.de`. Aufhänger: die Münchner Untersuchung als **ihre** Arbeit und der Personal-Deckel der Plakette. Nicht am selben Tag wie Mail 5.
+- `mails-q4-2026/mail-8-lagvsw.md` — LAG VSW. **Kein Empfänger im Sinne des Manifests**, sondern die Stelle, die das Schema verantwortet: Rückmeldung zum Rechenfehler im Anhang und Rückfrage zum ungeregelten Regelkonflikt, plus das Angebot der maschinenlesbaren Fassung.
+**Anhang/Link:** `05-dosen/glasanflug-ampel.md` · Code: `04-werkzeug/glasanflug-ampel/`
 **Erledigt am 22.09.:** Der Beschluss liegt vor (21/01, **aktualisiert 2023**), das Schema ist abgebildet, das Skelett gebaut und getestet (`04-werkzeug/glasanflug-ampel/`, 26 Tests grün, CC0). Damit ist Regel 4 erfüllt — die Mail geht mit Code.
 **Vor dem Versand bleibt:** den Melder einmal selbst benutzen (Formularfelder gegen die Dose prüfen); Dose altern lassen (eine englische Suche).
 
