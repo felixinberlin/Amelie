@@ -92,6 +92,11 @@ export interface PaperMaps {
   capacityMap: Float32Array;     // 0..1 maximum local liquid absorption
   rakingNormalsX: Float32Array;  // horizontal relief slope for raking light
   rakingNormalsY: Float32Array;  // vertical relief slope for raking light
+  // Precomputed anisotropic directional conductance tensors (eliminates 1.5 million Math.cos calls per frame)
+  fiberWeightH: Float32Array;
+  fiberWeightV: Float32Array;
+  fiberWeightD1: Float32Array;
+  fiberWeightD2: Float32Array;
 }
 
 export function generatePaperMaps(
@@ -107,6 +112,10 @@ export function generatePaperMaps(
   const capacityMap = new Float32Array(size);
   const rakingNormalsX = new Float32Array(size);
   const rakingNormalsY = new Float32Array(size);
+  const fiberWeightH = new Float32Array(size);
+  const fiberWeightV = new Float32Array(size);
+  const fiberWeightD1 = new Float32Array(size);
+  const fiberWeightD2 = new Float32Array(size);
 
   const noise1 = new ValueNoise2D(seed);
   const noise2 = new ValueNoise2D(seed + 101);
@@ -128,11 +137,24 @@ export function generatePaperMaps(
       // 2. Fiber Angle & Anisotropy
       // Local swirl around base angle
       const fiberCurl = (noiseFibers.get(x * 0.03, y * 0.03) - 0.5) * Math.PI * 0.6;
-      fiberAngleMap[idx] = config.fiberBaseAngle + fiberCurl;
+      const angle = config.fiberBaseAngle + fiberCurl;
+      fiberAngleMap[idx] = angle;
 
       // Fiber strength varies slightly per cluster (bundles of cellulose)
       const clusterNoise = noiseFibers.get(x * 0.08, y * 0.08);
-      fiberStrengthMap[idx] = Math.max(0, Math.min(1, config.fiberStrength * (0.7 + clusterNoise * 0.6)));
+      const strength = Math.max(0, Math.min(1, config.fiberStrength * (0.7 + clusterNoise * 0.6)));
+      fiberStrengthMap[idx] = strength;
+
+      // Directional anisotropic conductance: alignment^2 along primary axes
+      const oneMinusStr = 1.0 - strength;
+      const cosA = Math.cos(angle);
+      const sinA = Math.sin(angle);
+      fiberWeightH[idx] = oneMinusStr + strength * (cosA * cosA);
+      fiberWeightV[idx] = oneMinusStr + strength * (sinA * sinA);
+      const cosD1 = Math.cos(Math.PI * 0.25 - angle);
+      fiberWeightD1[idx] = oneMinusStr + strength * (cosD1 * cosD1);
+      const cosD2 = Math.cos(Math.PI * 0.75 - angle);
+      fiberWeightD2[idx] = oneMinusStr + strength * (cosD2 * cosD2);
 
       // 3. Absorption Capacity (Sizing)
       // Thicker paper zones can hold slightly more moisture
@@ -164,5 +186,9 @@ export function generatePaperMaps(
     capacityMap,
     rakingNormalsX,
     rakingNormalsY,
+    fiberWeightH,
+    fiberWeightV,
+    fiberWeightD1,
+    fiberWeightD2,
   };
 }

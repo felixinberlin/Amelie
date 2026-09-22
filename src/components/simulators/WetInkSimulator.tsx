@@ -10,8 +10,10 @@ import {
   Wind,
   Layers,
   Sparkles,
+  Cpu,
 } from 'lucide-react';
 import { Language } from '../../types';
+import { WetInkPhysicsLab } from './WetInkPhysicsLab';
 import {
   SimulationLayer,
   WetInkPaperConfig,
@@ -49,6 +51,7 @@ const ESSENTIAL_PAPERS: WetInkPaperConfig[] = [
 export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
   lang,
 }) => {
+  const [activeEngineMode, setActiveEngineMode] = useState<'webgl-lab' | 'atelier'>('webgl-lab');
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const simRef = useRef<WetInkSimulation | null>(null);
   const brushManagerRef = useRef<WetInkBrushManager>(new WetInkBrushManager());
@@ -239,19 +242,26 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
 
     const imgData = ctx.createImageData(SIM_WIDTH, SIM_HEIGHT);
 
+    let needsRender = true;
+
     const loop = () => {
       const sim = simRef.current;
       if (sim) {
         if (sim.totalWater > 0.005 || isDrawing) {
           sim.step(0.016);
-          sim.step(0.016);
           setIsWet(true);
+          needsRender = true;
         } else {
           setIsWet(false);
         }
 
-        sim.renderToImageData(imgData, viewMode, 2.4, 0.65);
-        ctx.putImageData(imgData, 0, 0);
+        if (needsRender) {
+          sim.renderToImageData(imgData, viewMode, 2.4, 0.65);
+          ctx.putImageData(imgData, 0, 0);
+          if (sim.totalWater <= 0.005 && !isDrawing) {
+            needsRender = false;
+          }
+        }
       }
       animFrameIdRef.current = requestAnimationFrame(loop);
     };
@@ -334,8 +344,53 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
 
   return (
     <div className="max-w-4xl mx-auto space-y-4">
-      {/* Clean Top Bar */}
-      <div className="bg-stone-900 text-stone-100 rounded-2xl p-4 sm:p-5 border border-stone-800 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+      {/* Engine Switcher */}
+      <div className="flex flex-wrap items-center justify-between p-2 rounded-2xl bg-stone-900 border border-stone-800 shadow-sm gap-2">
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => setActiveEngineMode('webgl-lab')}
+            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all inline-flex items-center gap-2 cursor-pointer ${
+              activeEngineMode === 'webgl-lab'
+                ? 'bg-amber-500 text-stone-950 shadow-sm'
+                : 'text-stone-400 hover:text-stone-200'
+            }`}
+          >
+            <Cpu className="w-4 h-4" />
+            <span>{lang === 'de' ? 'WebGL2 Physik-Labor' : 'WebGL2 Physics Lab'}</span>
+            <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-stone-900/30 text-current font-mono font-bold">
+              GPU & KM
+            </span>
+          </button>
+          <button
+            onClick={() => setActiveEngineMode('atelier')}
+            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all inline-flex items-center gap-2 cursor-pointer ${
+              activeEngineMode === 'atelier'
+                ? 'bg-amber-500 text-stone-950 shadow-sm'
+                : 'text-stone-400 hover:text-stone-200'
+            }`}
+          >
+            <Brush className="w-4 h-4" />
+            <span>{lang === 'de' ? 'Sumi-e Zeichenbrett' : 'Sumi-e Drawing Canvas'}</span>
+          </button>
+        </div>
+
+        <span className="text-[11px] font-mono text-stone-400 px-2 hidden sm:inline">
+          {activeEngineMode === 'webgl-lab'
+            ? lang === 'de'
+              ? 'Kubelka-Munk Spektren & Navier-Stokes Advektion'
+              : 'Kubelka-Munk spectra & Navier-Stokes advection'
+            : lang === 'de'
+            ? 'Freies Zeichnen mit Washi & Rußtusche'
+            : 'Free drawing with washi & soot ink'}
+        </span>
+      </div>
+
+      {activeEngineMode === 'webgl-lab' ? (
+        <WetInkPhysicsLab lang={lang} />
+      ) : (
+        <div className="space-y-4">
+          {/* Clean Top Bar */}
+          <div className="bg-stone-900 text-stone-100 rounded-2xl p-4 sm:p-5 border border-stone-800 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div className="flex items-center gap-3">
           <div className="w-9 h-9 rounded-xl bg-amber-500/20 border border-amber-500/30 flex items-center justify-center text-amber-400">
             <Sparkles className="w-5 h-5" />
@@ -687,6 +742,8 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
           </div>
         </div>
       </div>
+      </div>
+      )}
     </div>
   );
 };

@@ -11,6 +11,7 @@ import {
   SCHEMA_QUELLE,
 } from '../../engine/glasanflug/schema';
 import { Eingabe, bewerte, signifikanzschwelle } from '../../engine/glasanflug/score';
+import { GlasanflugVisualizer } from './GlasanflugVisualizer';
 
 interface GlasanflugSimulatorProps {
   lang: Language;
@@ -197,6 +198,14 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
 
       {/* ---------------- Das Blatt ---------------- */}
       <div className="lg:col-span-6 space-y-4">
+        {/* Optischer Fassaden- & Flugbahn-Simulator */}
+        <GlasanflugVisualizer
+          lang={lang}
+          eingabe={eingabe}
+          stufe={ergebnis.stufe}
+          summe={ergebnis.summe}
+        />
+
         <div className="bg-stone-900 text-white rounded-2xl p-6 shadow-md border border-stone-800">
           <div className="flex items-center justify-between mb-4">
             <span className="text-xs font-mono-code uppercase tracking-wider text-stone-400">

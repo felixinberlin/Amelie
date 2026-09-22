@@ -43,9 +43,6 @@ Diese Liste sagt, **wo** gegraben wird, und hält fest, **was schon durchgegrabe
 
 ---
 
-| **NABU Vogelschlagmelder (Jena, Leipzig, Berlin)** *(neu, 22.09.2026)* | Seit **Februar/März 2026** live, `vogelschlagmelder.de` und `berlin.vogelschlagmelder.de`. Meldung mit **bis zu fünf Fotos**, Anprallspur und Größe, **Fassadenausrichtung**, Geokodierung, Artangabe. **Gefahrenkarte = Heatmap der Meldungen, keine Bewertung.** Quellcode **GPLv3, `codeberg.org/nabu-jena/Vogelschlagmelder`** (Python, Docker, OpenAPI, 159 Commits, aktiv 09/2026, selbst hostbar), Maintainer Maximilian Schätz. Berliner Kontakt: Julia Lorenz, Helen Friedlein, `artenschutz_am_gebaeude@nabu-berlin.de` — sie nutzen die Daten für die Ansprache von Eigentümern und Behörden. **Muster: die Ehrenamtsplattform, die genau die Rohdaten sammelt, die eine Bewertungsschicht braucht.** | **neu, durchsucht — Empfänger** | 22.09.2026 |
-| **Untersuchung zum Vogelschlag an Glas in München** *(neu, 22.09.2026)* | Wölfl & Bornemann (LBV) mit LfU Bayern, 2021. Neun Komplexe, **1.957 m Fassade**, 13 Wochen. Markierte Lärmschutzwände **0** auf 93 m, unmarkierte Glaswände **0,41/m**, Fassaden **0,02/m**; drei Glaswände ~46 Kollisionen je 100 m in drei Monaten. Nennt die LAG-VSW-Schwellen im Klartext (**2 normal, ab 5 signifikant erhöht je 100 m und Jahr**) und stuft die Objekte von Hand in Priorität 1/2 ein. **Doppelt wertvoll: Munition und fertige Testfälle.** | **neu, durchsucht** | 22.09.2026 |
-
 ## Typ C — Organisationen mit öffentlichen KI-Versuchen
 
 *Muster: ein Blogpost „Kann KI uns helfen?" mit benannten Schwächen. Die Schwäche ist die Idee.*
@@ -70,7 +67,6 @@ Diese Liste sagt, **wo** gegraben wird, und hält fest, **was schon durchgegrabe
 | Open Repair Alliance | Datenquelle | angekratzt |
 
 ---
-
 
 ## Typ E — Behördliche Mengen- und Kostenstatistiken (neu, Runde 4)
 
@@ -130,39 +126,6 @@ Der Lauf nennt diese Anker in `amelie-bisoziation-log.md`. Sie sind hier vermerk
 
 ---
 
-## Typ H — Regulierung im Ausland (neu, Runde 7)
-
-*Muster: Ein deutsches Gremium veröffentlicht ein PDF. Ein anderes Land macht dieselbe Sache zur Auflage — und dort existiert dann ein Rechenblatt, eine Norm oder eine App.*
-**Kein Ideenlieferant, sondern die Stelle, an der ein `frei` stirbt. Vor jedem `frei` aus Typ A abzufragen.**
-
-| Quelle | Befund | Status | Zuletzt |
-|---|---|---|---|
-| **LEED Pilot Credits (USGBC)** | SSpc55 „Bird Collision Deterrence": `(Zone 1 + Zone 2 gewichtete Fläche) / bereinigte Fassadenfläche = Bird Collision Threat Rating`, Ziel ≤ 15, Zone 1 = erste 36 Fuß über Grund (+ 12 Fuß über Gründach), verglaste Ecken und Durchflüge ≤ 25, Nachweis über **offizielle Tabellenvorlage**. Gewichte = **Material Threat Factors** aus Flugtunneltests. **Die gesamte Pilot-Credit-Bibliothek ist ein Katalog solcher Verfahren** — für andere Themen ungehoben. | durchsucht (Vogelschlag), **sehr ergiebig für andere Themen** | 21.09.2026 |
-| **American Bird Conservancy** | Material Threat Factors, „Bird-friendly Building Design", LEED-Innovation-Credit — die Datenbasis hinter dem Rechner | angekratzt | 21.09.2026 |
-| **Kommunale Ordnungen USA (NYC Local Law 15/2020 u. a.)** | Bird-friendly-Materials-Pflicht seit 10.01.2021; bedient von Beratungsbüros und Materiallisten, **keine Compliance-Software gefunden** | angekratzt | 21.09.2026 |
-| **FLAP Canada** | **BirdSafe DIY Building Risk Assessment App** (`flapapp.ca`): kostenlos, Browser, Tag- und Nachtrisiko pro Fassade, **Fragebogen ohne Bildauswertung**; dazu kostenpflichtige BirdSafe-Begutachtung mit Ortsterminen und „An Analysis of Collision Mitigation Effectiveness" | durchsucht | 21.09.2026 |
-| **Schweiz: Zürcher PBG-Ergänzung zu Glasfassaden** | Planungs- und Baugesetz um Vogelschutz an transparenten Fassaden ergänzt — eigene Rechtslage, eigener Markt | offen | 21.09.2026 |
-
-| **LEED v5 (USGBC/CAGBC), Stand 24.04.2026** *(neu, 22.09.2026)* | Vogelschlag jetzt in zwei Credits (BD+C SS 1 Option 2, O+M SS 2 Option 2), verlangt **Threat Factor ≤ 30** nach ABC-Skala; **CSA A460:19 (R2024)** als kanadischer Alternativweg anerkannt (RACP15, Abschnitte 3.2 und 3.3). Toronto seit 2010, NYC Local Law 15 seit 10.01.2021. **Die Zertifizierungsseite verdichtet sich jährlich — deutsche Seite bleibt PDF.** | **neu, durchsucht** | 03/2027 |
-| **ONR 191040 / Flugtunnel Hohenau-Ringelsdorf** *(neu, 22.09.2026)* | Österreichische Prüfnorm: Eine Markierung gilt als Vogelschutzglas, wenn **mindestens 90 % der Vögel die markierte Scheibe meiden**. Tunnel seit 2010, geleitet von Martin Rössler; die Wiener Umweltanwaltschaft veröffentlicht die Rangliste geprüfter Muster. **Die Produktwirksamkeit ist damit normiert und öffentlich — als Ideenfeld geschlossen.** | **neu, durchsucht** | 03/2027 |
-
-**Suchstring:** `<Thema> LEED credit` · `<Thema> city ordinance compliance` · `<Thema> standard rating calculator` · `<Thema> threat factor` · `<Thema> DIY assessment app`
-
----
-
-## Typ I — Messverfahren aus Nachbarbranchen und harte Evidenz (neu, 22.09.2026)
-
-*Muster: Die Messung, an der eine Naturschutzidee hängt, ist in einer ganz anderen Branche längst gelöst und publiziert — und daneben liegt die Studie, die sagt, wie viel Präzision die Sache überhaupt trägt. Beides vor dem Bauen lesen, nicht danach.*
-
-| Quelle | Befund | Status | Zuletzt |
-|---|---|---|---|
-| **Fenster-Wand-Verhältnis aus Straßenbildern** *(neu, 22.09.2026)* | Suppa, Aliberti, Bottero & Corrado, *Building Simulation* 18(8), 2025: YOLOv9 auf Google Street View, **94 % der Fassaden innerhalb ±5 Prozentpunkten** der Handmessung, 100 % innerhalb ±10, Workflow offen (Turin). Dazu Applied Energy 2026 zur urbanen WWR-Schätzung, DLR zur direkten WWR-Vorhersage, Concordia über Google-3D-Kacheln, Fassadenparsing mit SOLOv2. **Die Gebäudeenergie-Branche hat die Messung gelöst, auf die der Naturschutz wartet.** | **neu, durchsucht** | 22.09.2026 |
-| **Li u. a., *Biological Conservation* 310 (2025)** *(neu, 22.09.2026)* | Nationale Citizen-Science-Erhebung China 2021–2023: **3.078 Gebäude, 65.633 Erfassungstage, 676 Arten.** Vegetation wirkt am stärksten auf **1.000 m (Frühjahr) und 10 km (Herbst)**; **Bäume innerhalb 5 m senkten das Herbstrisiko**; niedrigere Gebäude mit hohem Glasanteil gefährlicher. **Steht quer zur Nahbereichs-Spiegelungslogik der deutschen Merkblätter** — gehört in jedes „Wo es kippt" zu diesem Thema. | **neu, durchsucht** | 03/2027 |
-
-**Suchstring:** `<Messgröße> from street view imagery deep learning` · `<Messgröße> urban scale estimation` · `<Phänomen> national citizen science dataset collisions`
-
----
-
 ## Nicht mehr als Quelle nutzen
 
 - Allgemeine Suchen „KI App <Alltagsthema>" → Content-Farmen, besetzte Märkte (siehe Besetzungsatlas im Playbook).
@@ -171,5 +134,3 @@ Der Lauf nennt diese Anker in `amelie-bisoziation-log.md`. Sie sind hier vermerk
 - **Nur deutschsprachige Suchen bei Alltagsideen** → Runde 4: Sperrmüll-Radar war nur auf Deutsch frei; auf Englisch existierte CurbAlert bereits viermal. Vor jeder Zusage englische Suche Pflicht. **Runde 6 bestätigt zum dritten Mal:** Crack Flora Watcher war deutsch `verengt`, englisch `besetzt` (GrowApp, Nature's Notebook).
 - **Die Projektseite für den Funktionsumfang halten**, wenn der Empfänger quelloffen ist → Runde 6: Die Seite von Gieß den Kiez sagt zu Verfall und Übertragung nichts, der Klon sagt es eindeutig. Bei öffentlichem Repo ist `git clone` + `grep` die stärkere Evidenz und kostet zwei Minuten (GitHub-API und Issue-Seiten können gesperrt sein, `git clone` über HTTPS geht trotzdem).
 - **Nur nach dem Gegenstand suchen** („Ritzenpflanzen-App") → findet nie die Werkzeuge, die über ihre **Funktion** definiert sind (Typ F oben). Die Mechanik immer separat suchen, siehe Playbook §2.
-- **Typ A allein als Beleg für `frei`** (neu ab Runde 7): „Ein Fachgremium hat ein PDF und niemand hat es programmiert" ist ein Anfangsverdacht, kein Urteil. Ohne Typ-H-Gegenprobe wird daraus kein `frei`.
-- **Merkblätter als Quelle für exakte Schwellenwerte** (neu ab Runde 7): vier Behördenmerkblätter zum selben Schema, zwei verschiedene Signifikanzschwellen. Schemawerte kommen aus dem Schema.

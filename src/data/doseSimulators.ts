@@ -32,13 +32,13 @@ export const DOSE_SIMULATOR_MAP: Record<string, DoseSimulatorInfo> = {
     descriptionEs: 'Simulador interactivo 2D de conducción térmica en esquinas según DIN EN ISO 10211 con cálculo de riesgo de moho.',
     icon: '🏢',
   },
-  'glasanflug-ampel': {
+  'glasanflug': {
     key: 'glasanflug',
     titleDe: 'Glasanflug-Risikoampel',
     titleEn: 'Bird Glass Strike Hazard Calculator',
     titleEs: 'Calculadora de Riesgo de Colisión de Aves con Vidrio',
-    descriptionDe: 'Rechnet das Bewertungsschema der Vogelschutzwarten (LAG VSW 21/01, Stand 2023) aus: vier Kriterien, zwei Vorrangregeln, Beispiele aus dem Anhang des Beschlusses — und „unbestimmt" statt geratener Zahlen.',
-    descriptionEn: 'Computes the official German bird-collision assessment scheme (LAG VSW 21/01, 2023 revision): four criteria, two priority rules, worked examples from the decision\u2019s annex \u2014 and \u201cundetermined\u201d instead of guessed numbers.',
+    descriptionDe: 'Berechnung des Vogelschlag-Risikos nach den Kriterien der Länderarbeitsgemeinschaft der Vogelschutzwarten (LAG-VSW).',
+    descriptionEn: 'Bird glass collision hazard rating based on the German State Bird Protection Stations (LAG-VSW) standard.',
     descriptionEs: 'Evaluación de riesgo de colisión de aves en vidrio basada en el estándar oficial LAG-VSW.',
     icon: '🐦',
   },

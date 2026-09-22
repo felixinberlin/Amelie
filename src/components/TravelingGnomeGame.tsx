@@ -16,6 +16,10 @@ import {
   Compass
 } from 'lucide-react';
 import { Language } from '../types';
+import {
+  generatePostcardSalutation,
+  validateCostumeConfig,
+} from '../engine/zen-games/travelingGnomeEngine';
 
 interface TravelingGnomeGameProps {
   lang: Language;
@@ -294,12 +298,11 @@ export const TravelingGnomeGame: React.FC<TravelingGnomeGameProps> = ({ lang }) 
         month: 'short',
         year: 'numeric',
       }),
-      letter:
-        lang === 'de'
-          ? currentDest.postcardLetterDe
-          : lang === 'es'
-          ? currentDest.postcardLetterEs
-          : currentDest.postcardLetterEn,
+      letter: generatePostcardSalutation(
+        currentDest,
+        costume,
+        lang === 'de' ? 'de' : lang === 'es' ? 'es' : 'en'
+      ),
     };
 
     setSnappedPolaroid(newSnapshot);

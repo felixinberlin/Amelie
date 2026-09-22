@@ -90,9 +90,9 @@ export const DOSEN_DATA: DoseItem[] = [
     recipientsDe: 'NABU Berlin, Projekt „Artenschutz am Gebäude" (Julia Lorenz, Helen Friedlein) mit NABU Jena (Upstream des quelloffenen Vogelschlagmelders) · zweiter Empfänger: LBV Bayern, Projekt „Vogelschlag an Glas verhindern" · fachlicher Eigentümer des Schemas: LAG VSW',
     recipientsEn: 'NABU Berlin, "Artenschutz am Gebäude" project, together with NABU Jena (upstream of the open-source collision reporting tool) · second recipient: LBV Bavaria · owner of the scheme: LAG VSW (German state bird conservation authorities)',
     domain: 'civic',
-    verdict: 'build_first',
+    verdict: 'gift',
     status: 'gepackt',
-    tags: ['Berlin', 'Artenschutz', 'Vollzug', 'Computer Vision', 'Geodaten', 'Open Source', 'Skelett gebaut'],
+    tags: ['Berlin', 'Artenschutz', 'Vogelschlag', 'Vogel', 'Bird Protection', 'Glasanflug', 'Vollzug', 'Computer Vision', 'Geodaten', 'Open Source', 'Skelett gebaut'],
     problemDe: 'Über 5 % der jährlich in Deutschland vorkommenden Vögel sterben an Glas, nur 15–35 % der Opfer werden gefunden. Rechtlich entscheidet eine Frage: Ist das Tötungsrisiko nach § 44 Abs. 1 Nr. 1 BNatSchG signifikant erhöht? Die LAG VSW zieht die Grenze bei zwei Schlagopfern je 100 m Fassade und Jahr als normal, ab fünf als signifikant erhöht. Die Münchner Untersuchung (LBV mit LfU Bayern, 2021) zeigt, was das in der Praxis heißt: neun Komplexe, 1.957 m Fassade, dreizehn Wochen zu Fuß — unmarkierte Glaswände 0,41 Kollisionen pro Meter, Fassaden 0,02, markierte Lärmschutzwände null. Diese Arbeit skaliert mit Personal und mit nichts sonst. Seit dem 10.06.2026 ist Berlins Beurteilungshilfe einheitlicher Standard für Bau- und Planungsverfahren und verweist für die Einstufung auf ein Punkteschema, das als PDF existiert.',
     problemEn: 'More than 5 % of the birds occurring in Germany each year die on glass, and only 15–35 % of victims are ever found. One legal question decides everything: is the killing risk significantly elevated under § 44 BNatSchG? The threshold is two collision victims per 100 m of façade per year as normal, five or more as significantly elevated. A Munich field study (LBV with the Bavarian environment agency, 2021) shows what that means in practice: nine complexes, 1,957 m of façade, thirteen weeks on foot — unmarked glass walls 0.41 collisions per metre, façades 0.02, marked noise barriers zero. That work scales with staff and nothing else. Since 10 June 2026 Berlin\'s assessment aid has been the uniform standard for building and planning procedures, and it refers for classification to a point scheme that exists as a PDF.',
     whyNowDe: [
@@ -1462,7 +1462,7 @@ export const DOSEN_DATA: DoseItem[] = [
     domain: 'civic',
     verdict: 'gift',
     status: 'gepackt',
-    tags: ['Lichtverschmutzung', 'Insektenschutz', 'Leitfäden', 'Selbstcheck', 'Kommunen'],
+    tags: ['Lichtverschmutzung', 'Insektenschutz', 'Vogelschutz', 'Artenschutz', 'Leitfäden', 'Selbstcheck', 'Kommunen'],
     problemDe: 'Bauherren, Kommunen und Lichtplaner:innen sollen Außenbeleuchtung gegen Vogel- und Insektenschutzkriterien prüfen — aber die Kriterien liegen verstreut über PDF-Leitfäden mehrerer Behörden und Verbände statt an einer Stelle: Abstrahlwinkel möglichst steil, Farbtemperatur ≤ 2700 K und optimal um 2200 K, Abschirmung, Betriebszeiten. Wer keinen Lichtplaner beauftragt — die meisten privaten Bauherren, viele kleine Kommunen — hat keine Möglichkeit, eine Planung selbst gegenzuprüfen.',
     problemEn: 'Builders, municipalities and lighting designers are expected to check outdoor lighting against bird and insect protection criteria — but those criteria are scattered across PDF guidance from several agencies and NGOs instead of sitting in one place: steep beam angles, colour temperature at or below 2700 K and ideally around 2200 K, shielding, operating hours. Anyone not hiring a lighting designer has no way to check a plan themselves.',
     whyNowDe: [

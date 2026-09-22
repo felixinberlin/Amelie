@@ -32,6 +32,7 @@ export const FRAGMENT_SHADER_ADVECT = `#version 300 es
 precision highp float;
 
 uniform sampler2D u_fluidState; // RGBA: (velX, velY, waterFilm_h, fiberMoisture_s)
+uniform sampler2D u_pigmentState; // RGBA: (susp1, dep1, susp2, dep2)
 uniform sampler2D u_paperTexture; // RGBA: (height, fiberAngle, fiberStrength, capacity)
 uniform vec2 u_texelSize;
 uniform float u_dt;
@@ -39,16 +40,19 @@ uniform vec2 u_tiltGravity;
 uniform float u_roughnessDrag;
 
 in vec2 v_uv;
-out vec4 fragColor;
+layout(location = 0) out vec4 outFluid;
+layout(location = 1) out vec4 outPigment;
 
 void main() {
   vec4 state = texture(u_fluidState, v_uv);
+  vec4 pigment = texture(u_pigmentState, v_uv);
   vec2 vel = state.xy;
   float water = state.z;
   float moisture = state.w;
   
   if (water < 0.0005) {
-    fragColor = vec4(0.0, 0.0, 0.0, moisture);
+    outFluid = vec4(0.0, 0.0, 0.0, moisture);
+    outPigment = pigment;
     return;
   }
   
@@ -57,6 +61,7 @@ void main() {
   backtraceUV = clamp(backtraceUV, u_texelSize, 1.0 - u_texelSize);
   
   vec4 advectedState = texture(u_fluidState, backtraceUV);
+  vec4 advectedPigment = texture(u_pigmentState, backtraceUV);
   
   // Pressure gradient from water height differences (Shallow Water Equation)
   float hL = texture(u_fluidState, v_uv - vec2(u_texelSize.x, 0.0)).z;
@@ -80,7 +85,8 @@ void main() {
     newVel = (newVel / speed) * 1.8;
   }
   
-  fragColor = vec4(newVel, advectedState.z, moisture);
+  outFluid = vec4(newVel, advectedState.z, moisture);
+  outPigment = vec4(advectedPigment.r, pigment.g, advectedPigment.b, pigment.a);
 }
 `;
 
@@ -350,3 +356,49 @@ void main() {
   fragColor = vec4(clamp(color, 0.0, 1.0), 1.0);
 }
 `;
+
+/**
+ * Splat Fragment Shader for hardware-accelerated brush stamping without CPU readback stalls.
+ * Renders brush droplets with radial falloff directly into the double-buffered FBOs.
+ */
+export const FRAGMENT_SHADER_SPLAT = `#version 300 es
+precision highp float;
+
+uniform vec2 u_point;
+uniform float u_radius;
+uniform vec2 u_aspect;
+uniform vec4 u_fluidSplat;   // (velX, velY, water, moisture)
+uniform vec4 u_pigmentSplat; // (susp1, dep1, susp2, dep2)
+
+in vec2 v_uv;
+layout(location = 0) out vec4 outFluid;
+layout(location = 1) out vec4 outPigment;
+
+void main() {
+  vec2 p = (v_uv - u_point) * u_aspect;
+  float d = length(p);
+  if (d > u_radius) discard;
+  float falloff = 1.0 - (d / u_radius);
+  outFluid = u_fluidSplat * falloff;
+  outPigment = u_pigmentSplat * falloff;
+}
+`;
+
+/**
+ * Dry Fragment Shader for instant zero-readback evaporation and fixation.
+ */
+export const FRAGMENT_SHADER_DRY = `#version 300 es
+precision highp float;
+uniform sampler2D u_pigmentState;
+in vec2 v_uv;
+layout(location = 0) out vec4 outFluid;
+layout(location = 1) out vec4 outPigment;
+
+void main() {
+  vec4 p = texture(u_pigmentState, v_uv);
+  outFluid = vec4(0.0);
+  outPigment = vec4(0.0, p.r + p.g, 0.0, p.b + p.a);
+}
+`;
+
+

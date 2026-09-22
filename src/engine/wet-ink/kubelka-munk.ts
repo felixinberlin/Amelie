@@ -78,6 +78,56 @@ export function calculateKMReflectance(
 }
 
 /**
+ * Fast 1D Lookup Table (LUT) for real-time Kubelka-Munk reflectance.
+ * Precomputes spectral response across 512 discrete concentration steps [0, maxConcentration],
+ * turning millions of exponential, square root, and hyperbolic cotangent calls
+ * into a single O(1) typed array lookup.
+ */
+export class KubelkaMunkLUT {
+  readonly tableR: Float32Array;
+  readonly tableG: Float32Array;
+  readonly tableB: Float32Array;
+  readonly resolution: number;
+  readonly maxConcentration: number;
+  readonly scale: number;
+
+  constructor(
+    km: KubelkaMunkCoefficients,
+    paperReflectance: [number, number, number] = PAPER_REFLECTANCE,
+    resolution: number = 512,
+    maxConcentration: number = 3.5
+  ) {
+    this.resolution = resolution;
+    this.maxConcentration = maxConcentration;
+    this.scale = (resolution - 1) / maxConcentration;
+    this.tableR = new Float32Array(resolution);
+    this.tableG = new Float32Array(resolution);
+    this.tableB = new Float32Array(resolution);
+
+    for (let i = 0; i < resolution; i++) {
+      const x = (i / (resolution - 1)) * maxConcentration;
+      this.tableR[i] = calculateKMReflectance(km.K[0], km.S[0], x, paperReflectance[0]);
+      this.tableG[i] = calculateKMReflectance(km.K[1], km.S[1], x, paperReflectance[1]);
+      this.tableB[i] = calculateKMReflectance(km.K[2], km.S[2], x, paperReflectance[2]);
+    }
+  }
+
+  lookupRGB(concentration: number, out: [number, number, number]): void {
+    if (concentration <= 1e-5) {
+      out[0] = this.tableR[0];
+      out[1] = this.tableG[0];
+      out[2] = this.tableB[0];
+      return;
+    }
+    const idx = Math.min(this.resolution - 1, (concentration * this.scale) | 0);
+    out[0] = this.tableR[idx];
+    out[1] = this.tableG[idx];
+    out[2] = this.tableB[idx];
+  }
+}
+
+
+/**
  * Evaluates full RGB reflectance for a mixture of multiple pigments over paper.
  */
 export function evaluatePigmentMixture(

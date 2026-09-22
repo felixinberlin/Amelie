@@ -13,28 +13,19 @@ import {
   Info
 } from 'lucide-react';
 import { Language } from '../types';
+import {
+  BuriedTreasureItem,
+  GrainType,
+  calculateHandDepth,
+  getGrainAcousticProfile,
+  evaluateTreasureDiscovery,
+} from '../engine/zen-games/grainSackEngine';
 
 interface GrainSackZenGameProps {
   lang: Language;
 }
 
-interface BuriedTreasure {
-  id: string;
-  nameDe: string;
-  nameEn: string;
-  nameEs: string;
-  descDe: string;
-  descEn: string;
-  descEs: string;
-  icon: string;
-  xRatio: number; // 0..1 in canvas
-  yRatio: number; // 0..1 in canvas
-  depthThreshold: number; // how much digging is needed nearby
-  found: boolean;
-  discoveredAt?: number;
-}
-
-type GrainType = 'lentils' | 'chickpeas' | 'coffee';
+type BuriedTreasure = BuriedTreasureItem;
 
 export const GrainSackZenGame: React.FC<GrainSackZenGameProps> = ({ lang }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -406,29 +397,32 @@ export const GrainSackZenGame: React.FC<GrainSackZenGameProps> = ({ lang }) => {
         ctx.restore();
       }
 
-      // Check treasure discovery
+      // Check treasure discovery using modular engine
       if (isInteracting && mouse.isDown) {
-        setTreasures((prev) =>
-          prev.map((t) => {
-            if (t.found) return t;
-            const tx = t.xRatio * width;
-            const ty = t.yRatio * height;
-            const dist = Math.hypot(mouse.x - tx, mouse.y - ty);
-            if (dist < 40) {
-              // Discovered!
-              playChimeSound();
-              confetti({
-                particleCount: 35,
-                spread: 55,
-                origin: { x: (rect.left + tx) / window.innerWidth, y: (rect.top + ty) / window.innerHeight },
-                colors: ['#ffd700', '#f59e0b', '#10b981'],
-              });
-              setJustFoundTreasure({ ...t, found: true });
-              return { ...t, found: true, discoveredAt: Date.now() };
-            }
-            return t;
-          })
-        );
+        setTreasures((prev) => {
+          const { updatedTreasures, newlyDiscovered } = evaluateTreasureDiscovery(
+            prev,
+            mouse.x,
+            mouse.y,
+            width,
+            height,
+            isInteracting,
+            mouse.isDown
+          );
+          if (newlyDiscovered) {
+            playChimeSound();
+            const tx = newlyDiscovered.xRatio * width;
+            const ty = newlyDiscovered.yRatio * height;
+            confetti({
+              particleCount: 35,
+              spread: 55,
+              origin: { x: (rect.left + tx) / window.innerWidth, y: (rect.top + ty) / window.innerHeight },
+              colors: ['#ffd700', '#f59e0b', '#10b981'],
+            });
+            setJustFoundTreasure(newlyDiscovered);
+          }
+          return updatedTreasures;
+        });
       }
 
       animId = requestAnimationFrame(render);

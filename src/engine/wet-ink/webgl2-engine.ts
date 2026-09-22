@@ -4,6 +4,8 @@ import {
   FRAGMENT_SHADER_CAPILLARY,
   FRAGMENT_SHADER_COFFEE_RING,
   FRAGMENT_SHADER_KUBELKA_MUNK,
+  FRAGMENT_SHADER_SPLAT,
+  FRAGMENT_SHADER_DRY,
 } from './shaders';
 import { PaperMaps } from './paper';
 import {
@@ -13,9 +15,68 @@ import {
   SimulationLayer,
 } from './types';
 
-interface FBO {
+interface DoubleFBO {
   framebuffer: WebGLFramebuffer;
-  texture: WebGLTexture;
+  fluidTex: WebGLTexture;
+  pigmentTex: WebGLTexture;
+}
+
+interface AdvectLocs {
+  fluidState: WebGLUniformLocation | null;
+  pigmentState: WebGLUniformLocation | null;
+  paperTexture: WebGLUniformLocation | null;
+  texelSize: WebGLUniformLocation | null;
+  dt: WebGLUniformLocation | null;
+  tiltGravity: WebGLUniformLocation | null;
+  roughnessDrag: WebGLUniformLocation | null;
+}
+
+interface CapillaryLocs {
+  fluidState: WebGLUniformLocation | null;
+  pigmentState: WebGLUniformLocation | null;
+  paperTexture: WebGLUniformLocation | null;
+  texelSize: WebGLUniformLocation | null;
+  capillarySpeed: WebGLUniformLocation | null;
+  capillaryThreshold: WebGLUniformLocation | null;
+  enableThreshold: WebGLUniformLocation | null;
+  dt: WebGLUniformLocation | null;
+}
+
+interface CoffeeLocs {
+  fluidState: WebGLUniformLocation | null;
+  pigmentState: WebGLUniformLocation | null;
+  paperTexture: WebGLUniformLocation | null;
+  texelSize: WebGLUniformLocation | null;
+  evaporationRate: WebGLUniformLocation | null;
+  edgeDarkening: WebGLUniformLocation | null;
+  granulationStrength: WebGLUniformLocation | null;
+  dt: WebGLUniformLocation | null;
+}
+
+interface SplatLocs {
+  point: WebGLUniformLocation | null;
+  radius: WebGLUniformLocation | null;
+  aspect: WebGLUniformLocation | null;
+  fluidSplat: WebGLUniformLocation | null;
+  pigmentSplat: WebGLUniformLocation | null;
+}
+
+interface DryLocs {
+  pigmentState: WebGLUniformLocation | null;
+}
+
+interface RenderLocs {
+  fluidState: WebGLUniformLocation | null;
+  pigmentState: WebGLUniformLocation | null;
+  paperTexture: WebGLUniformLocation | null;
+  texelSize: WebGLUniformLocation | null;
+  pigment1_K: WebGLUniformLocation | null;
+  pigment1_S: WebGLUniformLocation | null;
+  pigment2_K: WebGLUniformLocation | null;
+  pigment2_S: WebGLUniformLocation | null;
+  rakingAngle: WebGLUniformLocation | null;
+  rakingIntensity: WebGLUniformLocation | null;
+  viewLayer: WebGLUniformLocation | null;
 }
 
 export class WebGL2WetInkEngine {
@@ -32,13 +93,21 @@ export class WebGL2WetInkEngine {
   private advectProgram: WebGLProgram | null = null;
   private capillaryProgram: WebGLProgram | null = null;
   private coffeeRingProgram: WebGLProgram | null = null;
+  private splatProgram: WebGLProgram | null = null;
+  private dryProgram: WebGLProgram | null = null;
   private renderProgram: WebGLProgram | null = null;
 
-  // Ping-Pong FBOs
-  private fluidFboA: FBO | null = null;
-  private fluidFboB: FBO | null = null;
-  private pigmentFboA: FBO | null = null;
-  private pigmentFboB: FBO | null = null;
+  // Cached uniform locations for zero-overhead per-frame dispatch
+  private advectLocs!: AdvectLocs;
+  private capillaryLocs!: CapillaryLocs;
+  private coffeeLocs!: CoffeeLocs;
+  private splatLocs!: SplatLocs;
+  private dryLocs!: DryLocs;
+  private renderLocs!: RenderLocs;
+
+  // Ping-Pong Double FBOs with Multiple Render Targets (MRT)
+  private fboA: DoubleFBO | null = null;
+  private fboB: DoubleFBO | null = null;
 
   // Paper Texture
   private paperTexture: WebGLTexture | null = null;
@@ -88,7 +157,7 @@ export class WebGL2WetInkEngine {
     this.gl = gl;
     this.isSupported = true;
 
-    // Enable float texture extensions if available
+    // Enable color float rendering
     gl.getExtension('EXT_color_buffer_float');
 
     this.initQuad();
@@ -155,57 +224,122 @@ export class WebGL2WetInkEngine {
   }
 
   private initShaders() {
+    const gl = this.gl;
+
     this.advectProgram = this.createProgram(VERTEX_SHADER_QUAD, FRAGMENT_SHADER_ADVECT);
+    if (this.advectProgram) {
+      this.advectLocs = {
+        fluidState: gl.getUniformLocation(this.advectProgram, 'u_fluidState'),
+        pigmentState: gl.getUniformLocation(this.advectProgram, 'u_pigmentState'),
+        paperTexture: gl.getUniformLocation(this.advectProgram, 'u_paperTexture'),
+        texelSize: gl.getUniformLocation(this.advectProgram, 'u_texelSize'),
+        dt: gl.getUniformLocation(this.advectProgram, 'u_dt'),
+        tiltGravity: gl.getUniformLocation(this.advectProgram, 'u_tiltGravity'),
+        roughnessDrag: gl.getUniformLocation(this.advectProgram, 'u_roughnessDrag'),
+      };
+    }
+
     this.capillaryProgram = this.createProgram(VERTEX_SHADER_QUAD, FRAGMENT_SHADER_CAPILLARY);
+    if (this.capillaryProgram) {
+      this.capillaryLocs = {
+        fluidState: gl.getUniformLocation(this.capillaryProgram, 'u_fluidState'),
+        pigmentState: gl.getUniformLocation(this.capillaryProgram, 'u_pigmentState'),
+        paperTexture: gl.getUniformLocation(this.capillaryProgram, 'u_paperTexture'),
+        texelSize: gl.getUniformLocation(this.capillaryProgram, 'u_texelSize'),
+        capillarySpeed: gl.getUniformLocation(this.capillaryProgram, 'u_capillarySpeed'),
+        capillaryThreshold: gl.getUniformLocation(this.capillaryProgram, 'u_capillaryThreshold'),
+        enableThreshold: gl.getUniformLocation(this.capillaryProgram, 'u_enableThreshold'),
+        dt: gl.getUniformLocation(this.capillaryProgram, 'u_dt'),
+      };
+    }
+
     this.coffeeRingProgram = this.createProgram(VERTEX_SHADER_QUAD, FRAGMENT_SHADER_COFFEE_RING);
+    if (this.coffeeRingProgram) {
+      this.coffeeLocs = {
+        fluidState: gl.getUniformLocation(this.coffeeRingProgram, 'u_fluidState'),
+        pigmentState: gl.getUniformLocation(this.coffeeRingProgram, 'u_pigmentState'),
+        paperTexture: gl.getUniformLocation(this.coffeeRingProgram, 'u_paperTexture'),
+        texelSize: gl.getUniformLocation(this.coffeeRingProgram, 'u_texelSize'),
+        evaporationRate: gl.getUniformLocation(this.coffeeRingProgram, 'u_evaporationRate'),
+        edgeDarkening: gl.getUniformLocation(this.coffeeRingProgram, 'u_edgeDarkening'),
+        granulationStrength: gl.getUniformLocation(this.coffeeRingProgram, 'u_granulationStrength'),
+        dt: gl.getUniformLocation(this.coffeeRingProgram, 'u_dt'),
+      };
+    }
+
+    this.splatProgram = this.createProgram(VERTEX_SHADER_QUAD, FRAGMENT_SHADER_SPLAT);
+    if (this.splatProgram) {
+      this.splatLocs = {
+        point: gl.getUniformLocation(this.splatProgram, 'u_point'),
+        radius: gl.getUniformLocation(this.splatProgram, 'u_radius'),
+        aspect: gl.getUniformLocation(this.splatProgram, 'u_aspect'),
+        fluidSplat: gl.getUniformLocation(this.splatProgram, 'u_fluidSplat'),
+        pigmentSplat: gl.getUniformLocation(this.splatProgram, 'u_pigmentSplat'),
+      };
+    }
+
+    this.dryProgram = this.createProgram(VERTEX_SHADER_QUAD, FRAGMENT_SHADER_DRY);
+    if (this.dryProgram) {
+      this.dryLocs = {
+        pigmentState: gl.getUniformLocation(this.dryProgram, 'u_pigmentState'),
+      };
+    }
+
     this.renderProgram = this.createProgram(VERTEX_SHADER_QUAD, FRAGMENT_SHADER_KUBELKA_MUNK);
+    if (this.renderProgram) {
+      this.renderLocs = {
+        fluidState: gl.getUniformLocation(this.renderProgram, 'u_fluidState'),
+        pigmentState: gl.getUniformLocation(this.renderProgram, 'u_pigmentState'),
+        paperTexture: gl.getUniformLocation(this.renderProgram, 'u_paperTexture'),
+        texelSize: gl.getUniformLocation(this.renderProgram, 'u_texelSize'),
+        pigment1_K: gl.getUniformLocation(this.renderProgram, 'u_pigment1_K'),
+        pigment1_S: gl.getUniformLocation(this.renderProgram, 'u_pigment1_S'),
+        pigment2_K: gl.getUniformLocation(this.renderProgram, 'u_pigment2_K'),
+        pigment2_S: gl.getUniformLocation(this.renderProgram, 'u_pigment2_S'),
+        rakingAngle: gl.getUniformLocation(this.renderProgram, 'u_rakingAngle'),
+        rakingIntensity: gl.getUniformLocation(this.renderProgram, 'u_rakingIntensity'),
+        viewLayer: gl.getUniformLocation(this.renderProgram, 'u_viewLayer'),
+      };
+    }
   }
 
-  private createFbo(width: number, height: number): FBO {
+  private createDoubleFbo(width: number, height: number): DoubleFBO {
     const gl = this.gl;
     const fb = gl.createFramebuffer()!;
     gl.bindFramebuffer(gl.FRAMEBUFFER, fb);
 
-    const tex = gl.createTexture()!;
-    gl.bindTexture(gl.TEXTURE_2D, tex);
-    // Use RGBA16F or RGBA32F for precision, fallback to RGBA
-    gl.texImage2D(
-      gl.TEXTURE_2D,
-      0,
-      gl.RGBA16F,
-      width,
-      height,
-      0,
-      gl.RGBA,
-      gl.FLOAT,
-      null
-    );
+    // Color Attachment 0: Fluid (velX, velY, water, moisture)
+    const fluidTex = gl.createTexture()!;
+    gl.bindTexture(gl.TEXTURE_2D, fluidTex);
+    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA16F, width, height, 0, gl.RGBA, gl.FLOAT, null);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+    gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.TEXTURE_2D, fluidTex, 0);
 
-    gl.framebufferTexture2D(
-      gl.FRAMEBUFFER,
-      gl.COLOR_ATTACHMENT0,
-      gl.TEXTURE_2D,
-      tex,
-      0
-    );
+    // Color Attachment 1: Pigment (susp1, dep1, susp2, dep2)
+    const pigmentTex = gl.createTexture()!;
+    gl.bindTexture(gl.TEXTURE_2D, pigmentTex);
+    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA16F, width, height, 0, gl.RGBA, gl.FLOAT, null);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+    gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT1, gl.TEXTURE_2D, pigmentTex, 0);
 
-    // Clear to zero
+    gl.drawBuffers([gl.COLOR_ATTACHMENT0, gl.COLOR_ATTACHMENT1]);
+
     gl.clearColor(0, 0, 0, 0);
     gl.clear(gl.COLOR_BUFFER_BIT);
 
     gl.bindFramebuffer(gl.FRAMEBUFFER, null);
-    return { framebuffer: fb, texture: tex };
+    return { framebuffer: fb, fluidTex, pigmentTex };
   }
 
   private initFbos() {
-    this.fluidFboA = this.createFbo(this.width, this.height);
-    this.fluidFboB = this.createFbo(this.width, this.height);
-    this.pigmentFboA = this.createFbo(this.width, this.height);
-    this.pigmentFboB = this.createFbo(this.width, this.height);
+    this.fboA = this.createDoubleFbo(this.width, this.height);
+    this.fboB = this.createDoubleFbo(this.width, this.height);
   }
 
   uploadPaperTexture(paper: PaperMaps) {
@@ -261,10 +395,10 @@ export class WebGL2WetInkEngine {
 
   clear() {
     const gl = this.gl;
-    if (!gl) return;
-    [this.fluidFboA, this.fluidFboB, this.pigmentFboA, this.pigmentFboB].forEach((fbo) => {
-      if (!fbo) return;
+    if (!gl || !this.fboA || !this.fboB) return;
+    [this.fboA, this.fboB].forEach((fbo) => {
       gl.bindFramebuffer(gl.FRAMEBUFFER, fbo.framebuffer);
+      gl.drawBuffers([gl.COLOR_ATTACHMENT0, gl.COLOR_ATTACHMENT1]);
       gl.clearColor(0, 0, 0, 0);
       gl.clear(gl.COLOR_BUFFER_BIT);
     });
@@ -273,6 +407,10 @@ export class WebGL2WetInkEngine {
     this.activeCells = 0;
   }
 
+  /**
+   * Hardware-accelerated brush stamping without CPU readPixels or pipeline bubbles.
+   * Uses additive blending directly in the double-buffered FBOs.
+   */
   injectInk(
     x: number,
     y: number,
@@ -282,153 +420,78 @@ export class WebGL2WetInkEngine {
     pigmentSlot: 1 | 2 = 1
   ) {
     const gl = this.gl;
-    if (!gl || !this.fluidFboA || !this.pigmentFboA) return;
+    if (!gl || !this.splatProgram || !this.quadVao || !this.fboA) return;
 
-    // CPU-side stamp to texture buffer or read-modify-write on subregion
-    const minX = Math.max(0, Math.floor(x - radius));
-    const maxX = Math.min(this.width - 1, Math.ceil(x + radius));
-    const minY = Math.max(0, Math.floor(y - radius));
-    const maxY = Math.min(this.height - 1, Math.ceil(y + radius));
-    const subW = maxX - minX + 1;
-    const subH = maxY - minY + 1;
+    gl.viewport(0, 0, this.width, this.height);
+    gl.bindFramebuffer(gl.FRAMEBUFFER, this.fboA.framebuffer);
+    gl.drawBuffers([gl.COLOR_ATTACHMENT0, gl.COLOR_ATTACHMENT1]);
 
-    if (subW <= 0 || subH <= 0) return;
+    gl.useProgram(this.splatProgram);
+    gl.bindVertexArray(this.quadVao);
 
-    const fluidData = new Float32Array(subW * subH * 4);
-    const pigmentData = new Float32Array(subW * subH * 4);
+    gl.enable(gl.BLEND);
+    gl.blendFunc(gl.ONE, gl.ONE);
 
-    // Read current subregion from fluidFboA
-    gl.bindFramebuffer(gl.FRAMEBUFFER, this.fluidFboA.framebuffer);
-    gl.readPixels(minX, minY, subW, subH, gl.RGBA, gl.FLOAT, fluidData);
+    const uvX = x / this.width;
+    const uvY = 1.0 - y / this.height; // invert Y for standard WebGL coordinate space
+    const normRadius = radius / Math.min(this.width, this.height);
 
-    gl.bindFramebuffer(gl.FRAMEBUFFER, this.pigmentFboA.framebuffer);
-    gl.readPixels(minX, minY, subW, subH, gl.RGBA, gl.FLOAT, pigmentData);
+    gl.uniform2f(this.splatLocs.point, uvX, uvY);
+    gl.uniform1f(this.splatLocs.radius, normRadius);
+    gl.uniform2f(this.splatLocs.aspect, this.width / this.height, 1.0);
 
-    const rSq = radius * radius;
-    for (let sy = 0; sy < subH; sy++) {
-      const curY = minY + sy;
-      const dy = curY - y;
-      for (let sx = 0; sx < subW; sx++) {
-        const curX = minX + sx;
-        const dx = curX - x;
-        const distSq = dx * dx + dy * dy;
-        if (distSq <= rSq) {
-          const falloff = Math.max(0, 1 - Math.sqrt(distSq) / radius);
-          const pIdx = (sy * subW + sx) * 4;
+    // Fluid state: (velX, velY, water, moisture)
+    gl.uniform4f(this.splatLocs.fluidSplat, 0.0, 0.0, waterAmount, 0.0);
 
-          // Add surface water
-          fluidData[pIdx + 2] = Math.min(2.5, fluidData[pIdx + 2] + waterAmount * falloff);
-
-          // Add pigment to slot 1 (RGBA: r=susp1, g=dep1) or slot 2 (b=susp2, a=dep2)
-          if (pigmentSlot === 1) {
-            pigmentData[pIdx + 0] = Math.min(3.0, pigmentData[pIdx + 0] + pigmentAmount * falloff);
-          } else {
-            pigmentData[pIdx + 2] = Math.min(3.0, pigmentData[pIdx + 2] + pigmentAmount * falloff);
-          }
-        }
-      }
+    // Pigment state: slot 1 (susp1, dep1, 0, 0), slot 2 (0, 0, susp2, dep2)
+    if (pigmentSlot === 1) {
+      gl.uniform4f(this.splatLocs.pigmentSplat, pigmentAmount, 0.0, 0.0, 0.0);
+    } else {
+      gl.uniform4f(this.splatLocs.pigmentSplat, 0.0, 0.0, pigmentAmount, 0.0);
     }
 
-    // Write back to fluidFboA & pigmentFboA
-    gl.bindTexture(gl.TEXTURE_2D, this.fluidFboA.texture);
-    gl.texSubImage2D(gl.TEXTURE_2D, 0, minX, minY, subW, subH, gl.RGBA, gl.FLOAT, fluidData);
+    gl.drawArrays(gl.TRIANGLES, 0, 6);
 
-    gl.bindTexture(gl.TEXTURE_2D, this.pigmentFboA.texture);
-    gl.texSubImage2D(gl.TEXTURE_2D, 0, minX, minY, subW, subH, gl.RGBA, gl.FLOAT, pigmentData);
-
+    gl.disable(gl.BLEND);
     gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+    gl.bindVertexArray(null);
+
     this.totalWater += waterAmount * 1.5;
-    this.activeCells = Math.min(this.width * this.height, this.activeCells + subW * subH);
+    this.activeCells = Math.min(this.width * this.height, this.activeCells + ((radius * radius * 3.14) | 0));
   }
 
   injectSeal(centerX: number, centerY: number, size: number = 32) {
-    const half = Math.floor(size / 2);
-    const minX = Math.max(0, Math.floor(centerX - half));
-    const maxX = Math.min(this.width - 1, Math.ceil(centerX + half));
-    const minY = Math.max(0, Math.floor(centerY - half));
-    const maxY = Math.min(this.height - 1, Math.ceil(centerY + half));
-    const subW = maxX - minX + 1;
-    const subH = maxY - minY + 1;
-
-    if (subW <= 0 || subH <= 0) return;
-
-    const gl = this.gl;
-    const fluidData = new Float32Array(subW * subH * 4);
-    const pigmentData = new Float32Array(subW * subH * 4);
-
-    gl.bindFramebuffer(gl.FRAMEBUFFER, this.fluidFboA!.framebuffer);
-    gl.readPixels(minX, minY, subW, subH, gl.RGBA, gl.FLOAT, fluidData);
-
-    gl.bindFramebuffer(gl.FRAMEBUFFER, this.pigmentFboA!.framebuffer);
-    gl.readPixels(minX, minY, subW, subH, gl.RGBA, gl.FLOAT, pigmentData);
-
-    for (let sy = 0; sy < subH; sy++) {
-      const cy = minY + sy;
-      const dy = Math.abs(cy - centerY);
-      for (let sx = 0; sx < subW; sx++) {
-        const cx = minX + sx;
-        const dx = Math.abs(cx - centerX);
-
-        const isBorder = (dx >= half - 3 && dx <= half && dy <= half) || (dy >= half - 3 && dy <= half && dx <= half);
-        const isInnerCross = (dx <= 2 && dy <= half - 6) || (dy <= 2 && dx <= half - 6);
-        const isInnerDot = (dx >= 5 && dx <= 8 && dy >= 5 && dy <= 8);
-
-        if (isBorder || isInnerCross || isInnerDot) {
-          const idx = (sy * subW + sx) * 4;
-          fluidData[idx + 2] = Math.min(2.2, fluidData[idx + 2] + 0.9);
-          pigmentData[idx + 0] = Math.min(3.0, pigmentData[idx + 0] + 1.8);
-        }
-      }
-    }
-
-    gl.bindTexture(gl.TEXTURE_2D, this.fluidFboA!.texture);
-    gl.texSubImage2D(gl.TEXTURE_2D, 0, minX, minY, subW, subH, gl.RGBA, gl.FLOAT, fluidData);
-
-    gl.bindTexture(gl.TEXTURE_2D, this.pigmentFboA!.texture);
-    gl.texSubImage2D(gl.TEXTURE_2D, 0, minX, minY, subW, subH, gl.RGBA, gl.FLOAT, pigmentData);
-
-    gl.bindFramebuffer(gl.FRAMEBUFFER, null);
-    this.totalWater += 15.0;
+    this.injectInk(centerX, centerY, size * 0.55, 1.2, 2.0, 1);
   }
 
+  /**
+   * Instantly binds suspended wet ink into paper fibers with zero CPU readback stalls.
+   */
   forceDry() {
     const gl = this.gl;
-    if (!gl || !this.fluidFboA || !this.pigmentFboA) return;
+    if (!gl || !this.dryProgram || !this.quadVao || !this.fboA || !this.fboB) return;
 
-    // Read pigment and fluid, zero out water and convert suspended to deposited
-    const size = this.width * this.height;
-    const fluidData = new Float32Array(size * 4);
-    const pigmentData = new Float32Array(size * 4);
+    gl.viewport(0, 0, this.width, this.height);
+    gl.bindFramebuffer(gl.FRAMEBUFFER, this.fboB.framebuffer);
+    gl.drawBuffers([gl.COLOR_ATTACHMENT0, gl.COLOR_ATTACHMENT1]);
 
-    gl.bindFramebuffer(gl.FRAMEBUFFER, this.fluidFboA.framebuffer);
-    gl.readPixels(0, 0, this.width, this.height, gl.RGBA, gl.FLOAT, fluidData);
+    gl.useProgram(this.dryProgram);
+    gl.bindVertexArray(this.quadVao);
 
-    gl.bindFramebuffer(gl.FRAMEBUFFER, this.pigmentFboA.framebuffer);
-    gl.readPixels(0, 0, this.width, this.height, gl.RGBA, gl.FLOAT, pigmentData);
+    gl.activeTexture(gl.TEXTURE0);
+    gl.bindTexture(gl.TEXTURE_2D, this.fboA.pigmentTex);
+    gl.uniform1i(this.dryLocs.pigmentState, 0);
 
-    for (let i = 0; i < size; i++) {
-      const idx = i * 4;
-      fluidData[idx + 0] = 0; // velX
-      fluidData[idx + 1] = 0; // velY
-      fluidData[idx + 2] = 0; // water
-      fluidData[idx + 3] = 0; // moisture
+    gl.drawArrays(gl.TRIANGLES, 0, 6);
 
-      // Deposit pigment 1
-      pigmentData[idx + 1] += pigmentData[idx + 0];
-      pigmentData[idx + 0] = 0;
-
-      // Deposit pigment 2
-      pigmentData[idx + 3] += pigmentData[idx + 2];
-      pigmentData[idx + 2] = 0;
-    }
-
-    gl.bindTexture(gl.TEXTURE_2D, this.fluidFboA.texture);
-    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA16F, this.width, this.height, 0, gl.RGBA, gl.FLOAT, fluidData);
-
-    gl.bindTexture(gl.TEXTURE_2D, this.pigmentFboA.texture);
-    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA16F, this.width, this.height, 0, gl.RGBA, gl.FLOAT, pigmentData);
+    // Swap FBOs so fboA has the dried state
+    const tmp = this.fboA;
+    this.fboA = this.fboB;
+    this.fboB = tmp;
 
     gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+    gl.bindVertexArray(null);
+
     this.totalWater = 0;
     this.activeCells = 0;
   }
@@ -441,103 +504,110 @@ export class WebGL2WetInkEngine {
    */
   step(dt: number = 0.016) {
     const gl = this.gl;
-    if (!gl || !this.quadVao) return;
+    if (!gl || !this.quadVao || !this.fboA || !this.fboB || !this.paperTexture) return;
 
     const t0 = performance.now();
-    gl.viewport(0, 0, this.width, this.height);
-    gl.bindVertexArray(this.quadVao);
-
     const texelSizeX = 1.0 / this.width;
     const texelSizeY = 1.0 / this.height;
 
-    // --- PASS 1: Advection (Fluid FBO A -> Fluid FBO B) ---
-    if (this.advectProgram && this.fluidFboA && this.fluidFboB) {
+    gl.viewport(0, 0, this.width, this.height);
+    gl.bindVertexArray(this.quadVao);
+
+    // --- PASS 1: Semi-Lagrangian Navier-Stokes Advection ---
+    if (this.advectProgram) {
       gl.useProgram(this.advectProgram);
-      gl.bindFramebuffer(gl.FRAMEBUFFER, this.fluidFboB.framebuffer);
+      gl.bindFramebuffer(gl.FRAMEBUFFER, this.fboB.framebuffer);
+      gl.drawBuffers([gl.COLOR_ATTACHMENT0, gl.COLOR_ATTACHMENT1]);
 
       gl.activeTexture(gl.TEXTURE0);
-      gl.bindTexture(gl.TEXTURE_2D, this.fluidFboA.texture);
-      gl.uniform1i(gl.getUniformLocation(this.advectProgram, 'u_fluidState'), 0);
+      gl.bindTexture(gl.TEXTURE_2D, this.fboA.fluidTex);
+      gl.uniform1i(this.advectLocs.fluidState, 0);
 
       gl.activeTexture(gl.TEXTURE1);
-      gl.bindTexture(gl.TEXTURE_2D, this.paperTexture);
-      gl.uniform1i(gl.getUniformLocation(this.advectProgram, 'u_paperTexture'), 1);
+      gl.bindTexture(gl.TEXTURE_2D, this.fboA.pigmentTex);
+      gl.uniform1i(this.advectLocs.pigmentState, 1);
 
-      gl.uniform2f(gl.getUniformLocation(this.advectProgram, 'u_texelSize'), texelSizeX, texelSizeY);
-      gl.uniform1f(gl.getUniformLocation(this.advectProgram, 'u_dt'), dt);
+      gl.activeTexture(gl.TEXTURE2);
+      gl.bindTexture(gl.TEXTURE_2D, this.paperTexture);
+      gl.uniform1i(this.advectLocs.paperTexture, 2);
+
+      gl.uniform2f(this.advectLocs.texelSize, texelSizeX, texelSizeY);
+      gl.uniform1f(this.advectLocs.dt, dt);
       gl.uniform2f(
-        gl.getUniformLocation(this.advectProgram, 'u_tiltGravity'),
+        this.advectLocs.tiltGravity,
         (this.params.tiltX || 0) * 1.5,
         (this.params.tiltY || 0) * 1.5
       );
-      gl.uniform1f(gl.getUniformLocation(this.advectProgram, 'u_roughnessDrag'), this.paperConfig.roughness);
+      gl.uniform1f(this.advectLocs.roughnessDrag, this.paperConfig.roughness);
 
       gl.drawArrays(gl.TRIANGLES, 0, 6);
 
-      // Swap fluid FBOs
-      const tmp = this.fluidFboA;
-      this.fluidFboA = this.fluidFboB;
-      this.fluidFboB = tmp;
+      // Swap FBOs
+      const tmp = this.fboA;
+      this.fboA = this.fboB;
+      this.fboB = tmp;
     }
 
-    // --- PASS 2: Capillary Flow (Darcy & Washburn) ---
-    if (this.capillaryProgram && this.fluidFboA && this.fluidFboB && this.pigmentFboA && this.pigmentFboB) {
+    // --- PASS 2: Capillary Flow (Darcy's Law & Washburn Percolation) ---
+    if (this.capillaryProgram) {
       gl.useProgram(this.capillaryProgram);
-      gl.bindFramebuffer(gl.FRAMEBUFFER, this.fluidFboB.framebuffer);
+      gl.bindFramebuffer(gl.FRAMEBUFFER, this.fboB.framebuffer);
+      gl.drawBuffers([gl.COLOR_ATTACHMENT0, gl.COLOR_ATTACHMENT1]);
 
       gl.activeTexture(gl.TEXTURE0);
-      gl.bindTexture(gl.TEXTURE_2D, this.fluidFboA.texture);
-      gl.uniform1i(gl.getUniformLocation(this.capillaryProgram, 'u_fluidState'), 0);
+      gl.bindTexture(gl.TEXTURE_2D, this.fboA.fluidTex);
+      gl.uniform1i(this.capillaryLocs.fluidState, 0);
 
       gl.activeTexture(gl.TEXTURE1);
-      gl.bindTexture(gl.TEXTURE_2D, this.pigmentFboA.texture);
-      gl.uniform1i(gl.getUniformLocation(this.capillaryProgram, 'u_pigmentState'), 1);
+      gl.bindTexture(gl.TEXTURE_2D, this.fboA.pigmentTex);
+      gl.uniform1i(this.capillaryLocs.pigmentState, 1);
 
       gl.activeTexture(gl.TEXTURE2);
       gl.bindTexture(gl.TEXTURE_2D, this.paperTexture);
-      gl.uniform1i(gl.getUniformLocation(this.capillaryProgram, 'u_paperTexture'), 2);
+      gl.uniform1i(this.capillaryLocs.paperTexture, 2);
 
-      gl.uniform2f(gl.getUniformLocation(this.capillaryProgram, 'u_texelSize'), texelSizeX, texelSizeY);
-      gl.uniform1f(gl.getUniformLocation(this.capillaryProgram, 'u_capillarySpeed'), this.params.capillarySpeed * this.pigment1.bleedSpeed);
-      gl.uniform1f(gl.getUniformLocation(this.capillaryProgram, 'u_capillaryThreshold'), this.params.capillaryThreshold);
-      gl.uniform1i(gl.getUniformLocation(this.capillaryProgram, 'u_enableThreshold'), this.params.enableCapillaryThreshold ? 1 : 0);
-      gl.uniform1f(gl.getUniformLocation(this.capillaryProgram, 'u_dt'), dt);
+      gl.uniform2f(this.capillaryLocs.texelSize, texelSizeX, texelSizeY);
+      gl.uniform1f(this.capillaryLocs.capillarySpeed, this.params.capillarySpeed * this.pigment1.bleedSpeed);
+      gl.uniform1f(this.capillaryLocs.capillaryThreshold, this.params.capillaryThreshold);
+      gl.uniform1i(this.capillaryLocs.enableThreshold, this.params.enableCapillaryThreshold ? 1 : 0);
+      gl.uniform1f(this.capillaryLocs.dt, dt);
 
       gl.drawArrays(gl.TRIANGLES, 0, 6);
 
-      const tmp = this.fluidFboA;
-      this.fluidFboA = this.fluidFboB;
-      this.fluidFboB = tmp;
+      const tmp = this.fboA;
+      this.fboA = this.fboB;
+      this.fboB = tmp;
     }
 
     // --- PASS 3: Deegan (1997) Coffee-Ring Evaporation & Granulation ---
-    if (this.coffeeRingProgram && this.fluidFboA && this.fluidFboB && this.pigmentFboA && this.pigmentFboB) {
+    if (this.coffeeRingProgram) {
       gl.useProgram(this.coffeeRingProgram);
-      gl.bindFramebuffer(gl.FRAMEBUFFER, this.fluidFboB.framebuffer);
+      gl.bindFramebuffer(gl.FRAMEBUFFER, this.fboB.framebuffer);
+      gl.drawBuffers([gl.COLOR_ATTACHMENT0, gl.COLOR_ATTACHMENT1]);
 
       gl.activeTexture(gl.TEXTURE0);
-      gl.bindTexture(gl.TEXTURE_2D, this.fluidFboA.texture);
-      gl.uniform1i(gl.getUniformLocation(this.coffeeRingProgram, 'u_fluidState'), 0);
+      gl.bindTexture(gl.TEXTURE_2D, this.fboA.fluidTex);
+      gl.uniform1i(this.coffeeLocs.fluidState, 0);
 
       gl.activeTexture(gl.TEXTURE1);
-      gl.bindTexture(gl.TEXTURE_2D, this.pigmentFboA.texture);
-      gl.uniform1i(gl.getUniformLocation(this.coffeeRingProgram, 'u_pigmentState'), 1);
+      gl.bindTexture(gl.TEXTURE_2D, this.fboA.pigmentTex);
+      gl.uniform1i(this.coffeeLocs.pigmentState, 1);
 
       gl.activeTexture(gl.TEXTURE2);
       gl.bindTexture(gl.TEXTURE_2D, this.paperTexture);
-      gl.uniform1i(gl.getUniformLocation(this.coffeeRingProgram, 'u_paperTexture'), 2);
+      gl.uniform1i(this.coffeeLocs.paperTexture, 2);
 
-      gl.uniform2f(gl.getUniformLocation(this.coffeeRingProgram, 'u_texelSize'), texelSizeX, texelSizeY);
-      gl.uniform1f(gl.getUniformLocation(this.coffeeRingProgram, 'u_evaporationRate'), this.params.evaporationRate * this.paperConfig.evaporationMult);
-      gl.uniform1f(gl.getUniformLocation(this.coffeeRingProgram, 'u_edgeDarkening'), this.params.edgeDarkeningStrength * this.pigment1.edgeDarkening);
-      gl.uniform1f(gl.getUniformLocation(this.coffeeRingProgram, 'u_granulationStrength'), this.params.granulationStrength * this.pigment1.granulationFactor);
-      gl.uniform1f(gl.getUniformLocation(this.coffeeRingProgram, 'u_dt'), dt);
+      gl.uniform2f(this.coffeeLocs.texelSize, texelSizeX, texelSizeY);
+      gl.uniform1f(this.coffeeLocs.evaporationRate, this.params.evaporationRate * this.paperConfig.evaporationMult);
+      gl.uniform1f(this.coffeeLocs.edgeDarkening, this.params.edgeDarkeningStrength * this.pigment1.edgeDarkening);
+      gl.uniform1f(this.coffeeLocs.granulationStrength, this.params.granulationStrength * this.pigment1.granulationFactor);
+      gl.uniform1f(this.coffeeLocs.dt, dt);
 
       gl.drawArrays(gl.TRIANGLES, 0, 6);
 
-      const tmpF = this.fluidFboA;
-      this.fluidFboA = this.fluidFboB;
-      this.fluidFboB = tmpF;
+      const tmp = this.fboA;
+      this.fboA = this.fboB;
+      this.fboB = tmp;
     }
 
     gl.bindFramebuffer(gl.FRAMEBUFFER, null);
@@ -551,7 +621,7 @@ export class WebGL2WetInkEngine {
    */
   render(layer: SimulationLayer, rakingAngle: number = 2.4, rakingIntensity: number = 0.65) {
     const gl = this.gl;
-    if (!gl || !this.renderProgram || !this.quadVao || !this.fluidFboA || !this.pigmentFboA) return;
+    if (!gl || !this.renderProgram || !this.quadVao || !this.fboA) return;
 
     gl.viewport(0, 0, this.canvas.width, this.canvas.height);
     gl.bindFramebuffer(gl.FRAMEBUFFER, null);
@@ -560,31 +630,31 @@ export class WebGL2WetInkEngine {
     gl.bindVertexArray(this.quadVao);
 
     gl.activeTexture(gl.TEXTURE0);
-    gl.bindTexture(gl.TEXTURE_2D, this.fluidFboA.texture);
-    gl.uniform1i(gl.getUniformLocation(this.renderProgram, 'u_fluidState'), 0);
+    gl.bindTexture(gl.TEXTURE_2D, this.fboA.fluidTex);
+    gl.uniform1i(this.renderLocs.fluidState, 0);
 
     gl.activeTexture(gl.TEXTURE1);
-    gl.bindTexture(gl.TEXTURE_2D, this.pigmentFboA.texture);
-    gl.uniform1i(gl.getUniformLocation(this.renderProgram, 'u_pigmentState'), 1);
+    gl.bindTexture(gl.TEXTURE_2D, this.fboA.pigmentTex);
+    gl.uniform1i(this.renderLocs.pigmentState, 1);
 
     gl.activeTexture(gl.TEXTURE2);
     gl.bindTexture(gl.TEXTURE_2D, this.paperTexture);
-    gl.uniform1i(gl.getUniformLocation(this.renderProgram, 'u_paperTexture'), 2);
+    gl.uniform1i(this.renderLocs.paperTexture, 2);
 
-    gl.uniform2f(gl.getUniformLocation(this.renderProgram, 'u_texelSize'), 1.0 / this.width, 1.0 / this.height);
+    gl.uniform2f(this.renderLocs.texelSize, 1.0 / this.width, 1.0 / this.height);
 
     // Kubelka-Munk Pigment 1 coefficients
     const km1 = this.pigment1.km || { K: [2.5, 2.5, 2.5], S: [0.2, 0.2, 0.2] };
-    gl.uniform3f(gl.getUniformLocation(this.renderProgram, 'u_pigment1_K'), km1.K[0], km1.K[1], km1.K[2]);
-    gl.uniform3f(gl.getUniformLocation(this.renderProgram, 'u_pigment1_S'), km1.S[0], km1.S[1], km1.S[2]);
+    gl.uniform3f(this.renderLocs.pigment1_K, km1.K[0], km1.K[1], km1.K[2]);
+    gl.uniform3f(this.renderLocs.pigment1_S, km1.S[0], km1.S[1], km1.S[2]);
 
     // Kubelka-Munk Pigment 2 coefficients (default to yellow if null for layering)
     const km2 = this.pigment2?.km || { K: [0.12, 0.35, 4.2], S: [0.85, 0.78, 0.20] };
-    gl.uniform3f(gl.getUniformLocation(this.renderProgram, 'u_pigment2_K'), km2.K[0], km2.K[1], km2.K[2]);
-    gl.uniform3f(gl.getUniformLocation(this.renderProgram, 'u_pigment2_S'), km2.S[0], km2.S[1], km2.S[2]);
+    gl.uniform3f(this.renderLocs.pigment2_K, km2.K[0], km2.K[1], km2.K[2]);
+    gl.uniform3f(this.renderLocs.pigment2_S, km2.S[0], km2.S[1], km2.S[2]);
 
-    gl.uniform1f(gl.getUniformLocation(this.renderProgram, 'u_rakingAngle'), rakingAngle);
-    gl.uniform1f(gl.getUniformLocation(this.renderProgram, 'u_rakingIntensity'), rakingIntensity);
+    gl.uniform1f(this.renderLocs.rakingAngle, rakingAngle);
+    gl.uniform1f(this.renderLocs.rakingIntensity, rakingIntensity);
 
     // Map layer name to integer
     let layerCode = 0;
@@ -593,7 +663,7 @@ export class WebGL2WetInkEngine {
     else if (layer === 'pigment') layerCode = 3;
     else if (layer === 'vectorField') layerCode = 4;
 
-    gl.uniform1i(gl.getUniformLocation(this.renderProgram, 'u_viewLayer'), layerCode);
+    gl.uniform1i(this.renderLocs.viewLayer, layerCode);
 
     gl.drawArrays(gl.TRIANGLES, 0, 6);
     gl.bindVertexArray(null);
@@ -604,13 +674,21 @@ export class WebGL2WetInkEngine {
     if (!gl) return;
     if (this.quadVao) gl.deleteVertexArray(this.quadVao);
     if (this.quadVbo) gl.deleteBuffer(this.quadVbo);
-    [this.advectProgram, this.capillaryProgram, this.coffeeRingProgram, this.renderProgram].forEach((p) => {
+    [
+      this.advectProgram,
+      this.capillaryProgram,
+      this.coffeeRingProgram,
+      this.splatProgram,
+      this.dryProgram,
+      this.renderProgram,
+    ].forEach((p) => {
       if (p) gl.deleteProgram(p);
     });
-    [this.fluidFboA, this.fluidFboB, this.pigmentFboA, this.pigmentFboB].forEach((fbo) => {
+    [this.fboA, this.fboB].forEach((fbo) => {
       if (!fbo) return;
       gl.deleteFramebuffer(fbo.framebuffer);
-      gl.deleteTexture(fbo.texture);
+      gl.deleteTexture(fbo.fluidTex);
+      gl.deleteTexture(fbo.pigmentTex);
     });
     if (this.paperTexture) gl.deleteTexture(this.paperTexture);
   }

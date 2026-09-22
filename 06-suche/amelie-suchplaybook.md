@@ -31,10 +31,7 @@ Claude lernt nicht zwischen Chats. Dieses Dokument und `amelie-pruefprotokoll.md
 
 **Um freie Lücken zu finden (nicht nur Ideen zu prüfen):**
 
-- **Offizielles Bewertungsschema ohne digitales Werkzeug** → `<Thema> Bewertungsverfahren Punktesystem Leitfaden`. Fund: LAG-VSW-Schema zum Vogelschlag. **Warnung ab Runde 7: Dieses Rezept findet die Lücke, prüft sie aber nicht** — ohne die Auslandsgegenprobe darunter darf daraus kein `frei` werden.
-- **Dieselbe Pflicht im Ausland suchen** (neu ab Runde 7) → `<Thema> LEED credit` · `<Thema> city ordinance compliance` · `<Thema> standard rating calculator` · `<Thema> threat factor` · `<Thema> DIY assessment app`. Wo ein deutsches Gremium ein PDF veröffentlicht, hat ein anderes Land oft ein **Gesetz und dazu ein Rechenblatt**. Fund: LEED Pilot Credit SSpc55 (Bird Collision Threat Rating mit USGBC-Vorlage), NYC Local Law 15, FLAP Canadas BirdSafe-App. **Regulierung erzeugt Werkzeuge — such die Regulierung, nicht das Werkzeug.**
-- **Wenn der Rechner besetzt ist, eine Ebene tiefer nach der *Messung* fragen** (neu ab Runde 7) → FLAP fragt den Menschen, LEED liest die Planung; **gemessen** wird bei beiden nichts. Muster: *Rechner besetzt → Eingabewerte frei.* Genau dort ändern neue Bildmodelle etwas.
-- **Primärquelle wirklich öffnen, nicht nur finden** (neu ab Runde 7) → Ist die entscheidende PDF maschinell gesperrt (robots.txt, 403), ist das **ein Befund und kein Hindernis**: Es gehört in die Dose, und das Abschreiben wird das erste Ticket. Vier Behördenmerkblätter zum selben Schema nannten zwei verschiedene Signifikanzschwellen (vier vs. fünf Schlagopfer je 100 m).
+- **Offizielles Bewertungsschema ohne digitales Werkzeug** → `<Thema> Bewertungsverfahren Punktesystem Leitfaden`. Fund: LAG-VSW-Schema zum Vogelschlag.
 - **Von der Organisation selbst genannter Engpass** → `<Projekt> Auswertung dauert` / `bis zu … Minuten` / `ehrenamtlich ausgewertet`. Fund: Thünen, bis zu 90 Minuten pro Nisthilfe.
 - **Werkstattberichte über KI-Versuche** → `<Verein> Werkstattbericht KI` / `Erfahrungen KI`. Die Grenzen, die dort stehen, sind fertig formulierte Ideen.
 - **Forschung ohne Produkt** → `<Technik> smartphone` auf arXiv/ECCV-Workshops; dann prüfen, ob es ein Werkzeug für Laien gibt.
@@ -49,12 +46,10 @@ Claude lernt nicht zwischen Chats. Dieses Dokument und `amelie-pruefprotokoll.md
 - `<Thema> KI verständlich App` auf Deutsch → Content-Farmen (bau.de-Klone). Urteil daraus: **unklar**, nicht „frei". Mit Organisationsnamen neu suchen.
 - Abwesenheit von Treffern nach nur einer Suche ist kein Befund.
 - **Nur im Heimatmarkt suchen:** Bei Ideen mit Alltagsbezug reicht eine deutsche Suche nicht aus (`frei` beim Sperrmüll-Radar war ein Fehlurteil, das erst die englische Suche korrigierte).
-- **Ein Fachgremium ohne Software als Beleg für `frei` nehmen** (neu ab Runde 7): Das beweist nur, dass es in dieser Sprache niemand gebaut hat. Zweimal in Folge (Sperrmüll-Radar, Glasanflug-Ampel) hat genau diese Abkürzung eine Fehlbehauptung fast in eine Mail geschrieben.
-- **Exakte Schwellenwerte aus Merkblättern zusammenklauben** (neu ab Runde 7): Schemawerte kommen aus dem Schema, nicht aus vier Behördenfaltblättern, die sich widersprechen.
 
 ---
 
-## 3. Besetzungsatlas (Stand 21.09.2026)
+## 3. Besetzungsatlas (Stand 20.09.2026)
 
 Wo Ideen schnell sterben — vor dem Suchen als Vorfilter nutzen.
 
@@ -111,19 +106,6 @@ Wo Ideen schnell sterben — vor dem Suchen als Vorfilter nutzen.
 
 ---
 
-### Nachtrag Runde 7 — Vogelschlag an Glas, und was daraus für den Atlas folgt
-
-| Feld | Zustand | Belege |
-|---|---|---|
-| **Naturschutz-Vollzug (Schemata, Monitoring)** — *korrigiert* | **in DE frei, im englischsprachigen Raum als Zertifizierungslogik besetzt** | Vogelschlag: DE nur PDFs (LAG VSW 21/01, Berliner Beurteilungshilfe, LfU Bayern, Nürnberg 2023), **aber** FLAP BirdSafe-App (CA) und LEED SSpc55 mit USGBC-Rechenvorlage (US). **Vor jedem `frei` in diesem Feld die ausländische Regulierung prüfen.** |
-| **Vogelschlag an Glas, Risikobewertung** | **verengt** | Rechner existiert zweimal, beide fragebogen- bzw. planungsbasiert; deutsches Schema unprogrammiert; Bildauswertung von niemandem versucht |
-| **Vogelschlag-Opfermeldungen** | **besetzt, und das ist gut so** | `birdmapper.org` (Global Bird Collision Mapper), LBV-Meldestelle — Gegenrichtung zur Risikobewertung, als **Kalibrierquelle** wertvoll |
-| **Glas- und Transparenzsegmentierung im Bild** | **Forschung dicht, Anwendung leer** | Mirror-and-Glass-Reihe (City University Hong Kong), TransCues (WACV 2026), arXiv 2402.08571, NFGlassNet (arXiv 2511.16887), Fenster-Mask-R-CNN (arXiv 2107.10006) — kein Produkt im Naturschutz |
-
-**Faustregel-Einschränkung ab Runde 7:** „Fachgremium veröffentlicht ein PDF" heißt **nicht automatisch frei**. Es heißt nur: in dieser Sprache hat es niemand gebaut. Die Gegenprobe ist die ausländische Regulierung — und wenn dort ein Rechner existiert, verschiebt sich die Lücke von der *Rechnung* auf die *Eingabewerte*.
-
----
-
 ## 4. Trefferquote (Kalibrierung)
 
 | Runde | Datum | Geprüft | Frei | Verengt | Unklar | Besetzt |
@@ -143,8 +125,6 @@ Wo Ideen schnell sterben — vor dem Suchen als Vorfilter nutzen.
 | **6 (Fugenduell, nur neue Ideen)** | 21.09.2026 | 3 | 0 | 2 | 1 | 0 |
 | 6, Spiel-Strang (auf Nutzereinwand) | 21.09.2026 | 1 (+ 2 Empfängerprüfungen, 1 Nebenbefund) | **1** | – | – | – |
 | Nachtrag Runde 6 („Dose altert" auf die neue Dose) | 21.09.2026 | 3 (1 Restlücken-Prüfung, 1 Kipprisiko, 1 Auflösung einer `unklar`-Zeile) | – | 3 | – | – |
-| **7, Nachtrag (Vertiefung auf Nutzerwunsch)** | **22.09.2026** | **6 Prüfgegenstände: 1 Gegenrichtung, 1 Rechtslage, 1 Feldstudie, 1 Messverfahren, 1 Evidenz, 1 Normlage** | – | – | – | **1 (Meldeweg)** |
-| **7 (Tiefenprüfung Glasanflug-Ampel)** | **21.09.2026** | **1 Tiefenprüfung + 3 Empfänger- + 2 Technik-/Evidenzprüfungen** | – | **1 (Herabstufung von `frei`)** | – | – |
 | Recheck (Nachtrag 18.09. → Runde 6) | 21.09.2026 | 2 (Crack Flora Watcher `verengt`→`besetzt`; gamifizierte Entdeckung `verengt`→`besetzt (beim Empfänger)`) | – | – | – | 2 |
 
 Runde 4 (nur Researcher #1, 3 Ideen): **0 % frei + verengt.** Kein Abgleich mit dem anderen ideenrunde-Researcher; nicht mit Runde 3 vergleichbar, weil dort zwei Methoden und vier Sessions liefen. Der Altbau-Thermal-Recheck (`verengt` bestätigt) steht nicht in dieser Zeile.
@@ -274,24 +254,3 @@ demselben Fehler rausgegangen wäre, an dem ihre Vorgängerin gestorben ist.
 - **Gelernt: Ein Empfängertyp ist keine Adresse.** „Ein Indie-Entwickler" ist die BCC-Mail an fünf Firmen, die das Manifest verbietet. Die Adressen eines Felds stehen im **Programm seiner Konferenz**: Der ECSA-2026-Workshop „Games for good" lieferte vier Namen, davon zwei Studios, deren Geschäft genau das ist. Neuer Suchschritt für unbekannte Felder: `<Feld> conference workshop <Jahr>` und die Convenors lesen.
 - **Fehler: Fast an einen Publisher zugestellt.** Stray Fawn schien perfekt — Niche, echte Wissenschaft, Publishing-Zweig. Die Kontaktseite verlangt „pitch deck and trailer", der Fokus ist Strategie/Simulation/City-Building. Das ist ein Verkaufskanal, kein Geschenkkanal. **Bei Firmen prüfen, wofür der Kanal gebaut ist, nicht nur ob das Thema passt.**
 - **Nächstes Mal:** (1) `mitforschen.org` — jetzt seit **fünf** Runden vermerkt und nie angefasst; nächste Runde damit anfangen oder den Vermerk streichen, keine dritte Option mehr. (2) Vor Zustellung die Issues/Discussions von `giessdenkiez-de` von Hand durchsehen — in dieser Session nicht lesbar. (3) Félix entscheidet weiterhin über Glasanflug-Ampel, Brettchen-Vorsortierer, Streiflicht (laufen 09/2027 aus).
-
-### Runde 7 — 21.09.2026 (Tiefenprüfung Glasanflug-Ampel + Dose)
-
-Auftrag von Félix: „work on the Bird Glass Hazard Score Calculator … make a tin." Also die Runde-2-Idee, die im Protokollkopf seit Tagen als *„nie gepackt, Entscheidung bei Félix"* stand. Keine neuen Ideen, eine alte richtig geprüft.
-
-- **Gelernt, und es ist die wichtigste Regel seit der Vorzieh-Regel:** **Ein Fachgremium ohne Software beweist nur, dass es in dieser Sprache niemand gebaut hat.** Die Glasanflug-Ampel stand seit dem 16.09. auf `frei`, gestützt auf eine deutsche Suche und den Befund „das LAG-VSW-Punkteschema existiert nur als PDF". Auf Englisch existiert der Rechner **zweimal**: FLAP Canadas kostenlose **BirdSafe DIY Building Risk Assessment App** (`flapapp.ca`, Tag- und Nachtrisiko pro Fassade) und **LEED Pilot Credit SSpc55** mit Formel, Schwellwert (≤ 15), Zonenlogik und offizieller USGBC-Rechenvorlage. Neues Rezept im Playbook: **dieselbe Pflicht im Ausland suchen.** Regulierung erzeugt Werkzeuge.
-- **Gelernt, und es ist übertragbar:** Wenn der Rechner schon existiert, verschiebt sich die Lücke **eine Ebene nach unten — auf die Eingabewerte.** FLAP fragt den Menschen, LEED liest die Planung; **gemessen** wird bei beiden nichts. Glasanteil, gespiegeltes Grün, Durchsichten, Ecken: genau dort sind Bildmodelle seit zwei Jahren gut genug (CityU-Reihe, TransCues WACV 2026, NFGlassNet über den Blitz/Nicht-Blitz-Reflexionskontrast). Muster für künftige Runden: *Rechner besetzt → Messung frei.*
-- **Gelernt, zum zweiten Mal dasselbe Paar:** Die **Gegenrichtung ist besetzt und gerade deshalb wertvoll.** Beim Sperrmüll-Radar war „Melden zum Wegräumen" gelöst und „Melden zum Mitnehmen" nicht; hier ist „Opferfunde sammeln" gelöst (`birdmapper.org`, LBV-Meldestelle) und „Risiko vorher abschätzen" nicht. Der besetzte Zwilling ist kein Konkurrent, sondern die **Kalibrierquelle**. Prüffrage ab sofort in jeder Runde: *Wer sammelt die Folgen dessen, was ich vorhersagen will?*
-- **Fehler, aber ein produktiver:** Die PDF mit den eigentlichen Punktwerten war viermal nicht abrufbar (robots.txt auf `vogelschutzwarten.de` und `hamburg.de`, 403 auf dem BUND-Spiegel). Vier Sekundärquellen gaben die Werte nicht wieder und **widersprachen sich bei der Signifikanzschwelle** (vier vs. fünf Schlagopfer je 100 m Fassade und Jahr). Statt sie zu rekonstruieren, steht in der Dose, dass sie abzuschreiben sind — und genau das ist das erste Ticket. Verallgemeinerung der 19.09.-Lehre „Scheingenauigkeit": **Eine Zahl, die man sich plausibel herleiten könnte, ist keine Zahl.**
-- **Fehler:** Fünf Suchen für die Empfängerprüfung statt einer, weil zuerst nach dem *Schema* (LAG VSW) gesucht wurde und erst spät nach dem, der damit *arbeitet* (LBV, Projekt 2023–2027, Beratung + Meldestelle + Plakette, Personal an Ortstermine gebunden). **Bei behördlichen Verfahren ist das Gremium selten der Empfänger.** Erst den Anwender suchen, dann den Autor.
-- **Loop-Check (korrigiert nach Blick ins Repo):** Die erste Zustellrunde ist **vollständig** — Mail 1 am 20.09., Mail 2 und Mail 3 am 21.09. Offen ist nur **Mail 4 (CityLAB, Patenschaft)**, und die liegt **absichtlich**: gleiche Adresse wie Mail 2, Abstand halten, sonst ist es Nachfassen. **Mail 5 (LBV) geht an eine neue Adresse und ist davon nicht betroffen.** *Hinweis für künftige Runden: Die Projektdateien in der Claude-Projektablage waren an diesem Abend mehrere Runden hinter dem Repo — Zustand immer gegen `06-suche/` im Repo prüfen, nicht gegen die Projektkopie.*
-- **Nächstes Mal:** (1) Vor dem Versand von Mail 5 die Dose einmal „altern" lassen (eine englische Suche). (2) Vor dem Versand von Mail 5 die **LAG-VSW-PDF von Hand öffnen** und die Punktwerte in die Dose nachtragen. (3) Die beiden übrigen Runde-2-Waisen (Brettchen-Vorsortierer, Streiflicht) bekommen jetzt einen Termin oder werden gestrichen — ein viertes Weiterschleppen wäre Selbstbetrug.
-
-### Runde 7 — Nachtrag 22.09.2026 („recherchier noch ein bisschen mehr")
-
-- **Gelernt, und es korrigiert die Empfängerwahl von gestern:** Ich hatte den Empfänger über das **Schema** gesucht (LAG VSW → wer wendet es an → LBV). Richtig gewesen wäre, über die **Daten** zu suchen: Wer sammelt in diesem Feld gerade Rohdaten ein? Antwort: seit Februar/März 2026 die **NABU-Vogelschlagmelder** in Jena, Leipzig und Berlin — quelloffen (GPLv3, Codeberg), aktiv, und pro Meldung mit **bis zu fünf Fotos, Fassadenausrichtung und Adresse**. Das ist die Eingabe der Idee, fertig eingesammelt. **Prüffrage ab sofort: Wer sammelt bereits die Rohdaten, die meine Idee als Eingabe bräuchte?** Das ist die produktive Zwillingsfrage zu der von gestern („Wer sammelt die Folgen dessen, was ich vorhersagen will?").
-- **Gelernt:** Die Messung, an der eine Idee hängt, ist manchmal **in einer anderen Branche gelöst und veröffentlicht**. Der Glasanteil einer Fassade — der Kernfaktor des Schemas — wird in der Gebäudeenergie-Forschung seit Jahren aus Straßenbildern extrahiert (Suppa u. a. 2025: 94 % der Fassaden auf ±5 Prozentpunkte, Workflow offen). Neuer Quellentyp I in `amelie-quellen.md`. Suchmuster: `<Messgröße> from street view imagery deep learning` — **nicht** `<Thema> KI`.
-- **Gelernt, unbequem:** Die größte Studie zum Thema stellt einen Teil des deutschen Schemas infrage. Li u. a. (2025, 3.078 Gebäude, 65.633 Erfassungstage) finden die Vegetationswirkung auf **1.000 m bis 10 km**, nicht am Grundstück — und **Bäume innerhalb von 5 m senkten das Herbstrisiko**. Ein Werkzeug, das ein Schema ausführbar macht, erbt dessen Annahmen. Das gehört in „Wo es kippt", nicht in eine Fußnote.
-- **Fehler von gestern, heute korrigiert:** Verdikt stand auf 🎁, obwohl die natürliche Heimat ein quelloffenes Repo mit **einem unbezahlten Einzelmaintainer** ist. Regel 4 des Manifests verbietet genau das ohne Code. Jetzt 🔨, und das erste Ticket ist zugleich das Skelett. **Regel für künftige Dosen: Wenn der beste Andockpunkt ein fremdes Repo ist, entscheidet dessen Maintainer-Situation das Verdikt — nicht die Größe der Idee.**
-- **Gewonnen ohne Suche:** Der Widerspruch „vier oder fünf Schlagopfer je 100 m" ist aufgelöst. Die Münchner Studie zitiert die LAG-VSW-Schwellen im Klartext: **2 normal, ab 5 signifikant erhöht.** Das Nürnberger Merkblatt ist die Abweichung. **Sekundärquellen widerlegt man mit der Quelle, die das Schema anwendet, nicht mit einer weiteren Sekundärquelle.**
-- **Weiterhin offen:** die Punktwerte selbst. Acht Abrufversuche über fünf Hosts, alle gesperrt. Félix hat die PDF ins Repo gelegt; auf `origin/main` (6cd606a) war sie zum Zeitpunkt dieses Nachtrags noch nicht sichtbar. Bleibt erstes Ticket.

@@ -20,6 +20,8 @@ import {
   SEASONAL_BATTLE_EVENTS,
   PlantRosterItem
 } from '../../data/fugenduellData';
+import { TacticalStance, RoundResolutionResult } from '../../engine/fugenduell/types';
+import { resolveDuelRound, calculateSeedReward } from '../../engine/fugenduell/battleEngine';
 
 interface FugenduellArenaProps {
   lang: Language;
@@ -27,21 +29,7 @@ interface FugenduellArenaProps {
   isEmbedded?: boolean;
 }
 
-interface RoundLog {
-  round: number;
-  month: string;
-  eventName: string;
-  testedStat: string;
-  playerStatValue: number;
-  aiStatValue: number;
-  playerTacticBonus: number;
-  aiTacticBonus: number;
-  skillBonusPlayer: number;
-  skillBonusAi: number;
-  netScore: number;
-  coverageShift: number; // in %
-  summary: string;
-}
+type RoundLog = RoundResolutionResult;
 
 export const FugenduellArena: React.FC<FugenduellArenaProps> = ({
   lang,
@@ -85,90 +73,28 @@ export const FugenduellArena: React.FC<FugenduellArenaProps> = ({
     setIsBattleOver(false);
   };
 
-  // Resolve one seasonal battle round
+  // Resolve one seasonal battle round using modular battle engine
   const resolveRound = () => {
     if (isBattleOver || currentRound > 6) return;
 
-    const event = currentEvent;
-    const statKey = event.testedStat;
-
-    // Base stat values
-    let pVal = playerPlant.stats[statKey];
-    let aVal = aiPlant.stats[statKey];
-
-    // Tactical stance modifiers
-    let pTactic = 0;
-    let aTactic = Math.floor(Math.random() * 3) - 1; // AI picks slight variance
-
-    if (selectedTactic === 'root_reserve') {
-      if (statKey === 'wurzel' || statKey === 'duerre') pTactic = 3;
-      else if (statKey === 'tempo') pTactic = -2;
-    } else if (selectedTactic === 'rapid_spurt') {
-      if (statKey === 'tempo' || statKey === 'saat') pTactic = 3;
-      else if (statKey === 'tritt') pTactic = -2;
-    } else if (selectedTactic === 'toxin_defense') {
-      if (statKey === 'chemie' || statKey === 'tritt') pTactic = 3;
-      else if (statKey === 'wurzel') pTactic = -1;
-    } else {
-      pTactic = 1; // Balanced baseline
-    }
-
-    // Signature skill triggers
-    let pSkillBonus = 0;
-    let aSkillBonus = 0;
-
-    // Player skill check
-    if (playerPlant.id === 'taraxacum-officinale' && statKey === 'wurzel') pSkillBonus = 2;
-    if (playerPlant.id === 'plantago-major' && statKey === 'tritt') pSkillBonus = 3;
-    if (playerPlant.id === 'poa-annua' && statKey === 'tempo') pSkillBonus = 3;
-    if (playerPlant.id === 'portulaca-oleracea' && statKey === 'duerre') pSkillBonus = 3;
-    if (playerPlant.id === 'cochlearia-danica' && statKey === 'chemie') pSkillBonus = 3;
-    if (playerPlant.id === 'chelidonium-majus') aVal = Math.max(1, aVal - 2);
-
-    // AI skill check
-    if (aiPlant.id === 'taraxacum-officinale' && statKey === 'wurzel') aSkillBonus = 2;
-    if (aiPlant.id === 'plantago-major' && statKey === 'tritt') aSkillBonus = 3;
-    if (aiPlant.id === 'poa-annua' && statKey === 'tempo') aSkillBonus = 3;
-    if (aiPlant.id === 'portulaca-oleracea' && statKey === 'duerre') aSkillBonus = 3;
-    if (aiPlant.id === 'cochlearia-danica' && statKey === 'chemie') aSkillBonus = 3;
-    if (aiPlant.id === 'chelidonium-majus') pVal = Math.max(1, pVal - 2);
-
-    // Environmental event factor
-    const pTotal = pVal + pTactic + pSkillBonus;
-    const aTotal = aVal + aTactic + aSkillBonus;
-    const diff = pTotal - aTotal;
-
-    // Coverage tug-of-war calculation (diff * 4% coverage shift)
-    const shift = Math.round(diff * 4);
-    const newCoverage = Math.max(0, Math.min(100, playerCoverage + shift));
-
-    const roundLog: RoundLog = {
-      round: currentRound,
-      month: isDe ? event.monthDe : event.monthEn,
-      eventName: isDe ? event.titleDe : event.titleEn,
-      testedStat: isDe ? event.statLabelDe : event.statLabelEn,
-      playerStatValue: pVal,
-      aiStatValue: aVal,
-      playerTacticBonus: pTactic,
-      aiTacticBonus: aTactic,
-      skillBonusPlayer: pSkillBonus,
-      skillBonusAi: aSkillBonus,
-      netScore: diff,
-      coverageShift: shift,
-      summary: diff > 0
-        ? (isDe ? `Vorteil +${shift}% Deckung für ${playerPlant.nameCommonDe}` : `Gain +${shift}% coverage for ${playerPlant.nameCommonEn}`)
-        : diff < 0
-        ? (isDe ? `Verlust ${shift}% Deckung an ${aiPlant.nameCommonDe}` : `Loss ${shift}% coverage to ${aiPlant.nameCommonEn}`)
-        : (isDe ? 'Gleichstand in der Fuge' : 'Dead heat in the seam')
-    };
+    const roundLog = resolveDuelRound({
+      playerPlant,
+      aiPlant,
+      event: currentEvent,
+      currentRound,
+      currentCoverage: playerCoverage,
+      selectedTactic,
+      lang: isDe ? 'de' : isEs ? 'es' : 'en',
+    });
 
     setBattleLogs(prev => [roundLog, ...prev]);
-    setPlayerCoverage(newCoverage);
+    setPlayerCoverage(roundLog.newCoverage);
 
-    if (currentRound >= 6 || newCoverage >= 100 || newCoverage <= 0) {
+    if (roundLog.isBattleOver) {
       setIsBattleOver(true);
-      if (newCoverage > 50) {
-        setCollectedSeeds(prev => prev + 2);
+      const seedBonus = calculateSeedReward(roundLog.winner, roundLog.newCoverage);
+      if (seedBonus > 0) {
+        setCollectedSeeds(prev => prev + seedBonus);
       }
     } else {
       setCurrentRound(prev => prev + 1);

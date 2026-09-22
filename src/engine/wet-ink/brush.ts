@@ -76,14 +76,15 @@ export class WetInkBrushManager {
     if (isFirstPoint || this.lastX === null || this.lastY === null) {
       sim.injectInk(x, y, radius, waterAmt, pigmentAmt, enableDryFilter);
     } else {
-      const stepDist = Math.max(1.5, radius * 0.4);
-      const steps = Math.ceil(dist / stepDist);
+      const stepDist = Math.max(2.5, radius * 0.5);
+      const steps = Math.min(40, Math.max(1, Math.ceil(dist / stepDist)));
+      const stepScale = 1.0 / (steps * 0.6);
 
       for (let i = 1; i <= steps; i++) {
         const t = i / steps;
         const curX = this.lastX + (x - this.lastX) * t;
         const curY = this.lastY + (y - this.lastY) * t;
-        sim.injectInk(curX, curY, radius, waterAmt / (steps * 0.6), pigmentAmt / (steps * 0.6), enableDryFilter);
+        sim.injectInk(curX, curY, radius, waterAmt * stepScale, pigmentAmt * stepScale, enableDryFilter);
       }
     }
 

@@ -44,8 +44,20 @@ export function getActiveDosen(): DoseItem[] {
         // Create map of seed doses
         const map = new Map<string, DoseItem>();
         DOSEN_DATA.forEach((d) => map.set(d.id, d));
-        // Overwrite or append custom ones
-        parsed.forEach((d) => map.set(d.id, d));
+        // Overwrite or append custom ones, preserving repository integrity
+        parsed.forEach((d) => {
+          const seed = map.get(d.id);
+          if (seed) {
+            map.set(d.id, {
+              ...d,
+              ...seed,
+              tags: Array.from(new Set([...(seed.tags || []), ...(d.tags || [])])),
+              emailTemplates: (seed.emailTemplates && seed.emailTemplates.length > 0) ? seed.emailTemplates : d.emailTemplates,
+            });
+          } else {
+            map.set(d.id, d);
+          }
+        });
         return Array.from(map.values());
       }
     }
@@ -53,6 +65,18 @@ export function getActiveDosen(): DoseItem[] {
     console.warn('Error reading custom dosen from localStorage:', e);
   }
   return DOSEN_DATA;
+}
+
+/**
+ * Resets local storage cache to match the codebase/repository defaults.
+ */
+export function resetDosenStorage(): void {
+  try {
+    localStorage.removeItem(STORAGE_KEY_DOSEN);
+    localStorage.removeItem(STORAGE_KEY_CANDIDATES);
+  } catch (e) {
+    console.error('Failed to reset localStorage:', e);
+  }
 }
 
 /**

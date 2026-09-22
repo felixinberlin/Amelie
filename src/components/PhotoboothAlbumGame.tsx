@@ -14,6 +14,12 @@ import {
   Zap
 } from 'lucide-react';
 import { Language } from '../types';
+import {
+  createInitialPuzzlePieces,
+  swapPuzzlePieces,
+  isPuzzleSolved,
+  calculatePuzzleProgress,
+} from '../engine/zen-games/puzzleEngine';
 
 interface PhotoboothAlbumGameProps {
   lang: Language;
@@ -56,12 +62,7 @@ export const PhotoboothAlbumGame: React.FC<PhotoboothAlbumGameProps> = ({ lang }
   ]);
 
   // PUZZLE STATE (Nino's torn photo reassembly)
-  const [puzzlePieces, setPuzzlePieces] = useState([
-    { id: 0, currentSlot: 2, correctSlot: 0, label: 'Oben Links' },
-    { id: 1, currentSlot: 0, correctSlot: 1, label: 'Oben Rechts' },
-    { id: 2, currentSlot: 3, correctSlot: 2, label: 'Unten Links' },
-    { id: 3, currentSlot: 1, correctSlot: 3, label: 'Unten Rechts' },
-  ]);
+  const [puzzlePieces, setPuzzlePieces] = useState(createInitialPuzzlePieces);
   const [selectedPieceId, setSelectedPieceId] = useState<number | null>(null);
   const [puzzleSolved, setPuzzleSolved] = useState(false);
 
@@ -211,24 +212,10 @@ export const PhotoboothAlbumGame: React.FC<PhotoboothAlbumGameProps> = ({ lang }
     if (selectedPieceId === null) {
       setSelectedPieceId(pieceId);
     } else {
-      // Swap positions
+      // Swap positions using modular puzzle engine
       setPuzzlePieces((prev) => {
-        const pieceA = prev.find((p) => p.id === selectedPieceId);
-        const pieceB = prev.find((p) => p.id === pieceId);
-        if (!pieceA || !pieceB) return prev;
-
-        const slotA = pieceA.currentSlot;
-        const slotB = pieceB.currentSlot;
-
-        const next = prev.map((p) => {
-          if (p.id === pieceA.id) return { ...p, currentSlot: slotB };
-          if (p.id === pieceB.id) return { ...p, currentSlot: slotA };
-          return p;
-        });
-
-        // Check if solved
-        const isSolved = next.every((p) => p.currentSlot === p.correctSlot);
-        if (isSolved) {
+        const next = swapPuzzlePieces(prev, selectedPieceId, pieceId);
+        if (isPuzzleSolved(next)) {
           setPuzzleSolved(true);
         }
         return next;
@@ -238,12 +225,7 @@ export const PhotoboothAlbumGame: React.FC<PhotoboothAlbumGameProps> = ({ lang }
   };
 
   const handleResetPuzzle = () => {
-    setPuzzlePieces([
-      { id: 0, currentSlot: 2, correctSlot: 0, label: 'Oben Links' },
-      { id: 1, currentSlot: 0, correctSlot: 1, label: 'Oben Rechts' },
-      { id: 2, currentSlot: 3, correctSlot: 2, label: 'Unten Links' },
-      { id: 3, currentSlot: 1, correctSlot: 3, label: 'Unten Rechts' },
-    ]);
+    setPuzzlePieces(createInitialPuzzlePieces());
     setSelectedPieceId(null);
     setPuzzleSolved(false);
   };
