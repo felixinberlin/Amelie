@@ -12,6 +12,7 @@ export interface DoseItem {
   titleKey?: string;
   titleEn?: string;
   titleEs?: string;
+  image?: string;
   oneLinerDe: string;
   oneLinerEn: string;
   oneLinerEs?: string;

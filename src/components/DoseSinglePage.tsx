@@ -409,6 +409,8 @@ ${bookChapters
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-amelie text-[#2b1e16] tracking-tight leading-tight">
             {localizedTitle}
           </h1>
+          {/* Image */}
+          <img src={dose.image} alt={localizedTitle} className="rounded-2xl border border-[#d8cbba] shadow-xs" /> 
 
           {/* Poetic One-Liner Box */}
           <div className="p-5 sm:p-6 rounded-2xl bg-[#fffdf9]/90 border border-[#d8cbba] text-[#3b2a1c] font-amelie text-lg sm:text-xl md:text-2xl italic leading-relaxed shadow-xs">

@@ -128,6 +128,7 @@ export const DOSEN_DATA: DoseItem[] = [
     id: 'eurobirdcast',
     title: 'EuroBirdCast',
     titleEn: 'EuroBirdCast: Auditable Migration Curtailment',
+    image: 'public/eurobird.png',
     oneLinerDe: 'Aus bereits offen vorliegenden, wetterradarbasierten Vogelzugprofilen eine turbinenspezifische Abschaltempfehlung erzeugen, die eine Behörde ohne den Dienst selbst nachrechnen kann. Arbeitstitel — der Name kollidiert mit BirdCast (Cornell/CSU).',
     oneLinerEn: 'Turn already public, weather-radar-derived bird migration profiles into a turbine-specific curtailment recommendation a regulator can recompute without the service itself. Working title — the name collides with BirdCast (Cornell/CSU).',
     date: '22. September 2026 (nach Prüfung neu geschrieben)',
@@ -1376,6 +1377,7 @@ export const DOSEN_DATA: DoseItem[] = [
   {
     id: 'fugenduell-asphalt-arena',
     title: 'Fugenduell: Asphaltritzen-Arena',
+    image: 'fugenduel.jpg',
     oneLinerDe: 'Asynchrones rundenbasiertes Ökologie-Taktikspiel für urbane Gehwegritzen — 14 reale Pionierarten, Grimes CSR-Dreieck, Pacht-Chronisten-Modell und transparenter 6-Runden-Saisonkampf.',
     oneLinerEn: 'An asynchronous turn-based botanical tactical battle game set in sidewalk cracks — 14 real-world pioneer species, Grimes CSR triangle, civic stewardship custody, and transparent 6-round seasonal combat.',
     date: 'September 2026',
