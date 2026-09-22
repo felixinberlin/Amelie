@@ -25,6 +25,7 @@ import {
   FileText,
   Compass,
   CheckCircle2,
+  BookOpen,
 } from 'lucide-react';
 import { DoseItem, Language, Verdict } from '../types';
 import { AMELIE_PLEDGE } from '../data/manifest';
@@ -32,6 +33,10 @@ import { getTranslation, getLocalizedTitle } from '../i18n';
 import { getDoseUrl } from '../utils/doseUrl';
 import { DELIVERIES_DATA } from '../data/deliveries';
 import { DOSE_SIMULATOR_MAP, SimulatorKey } from '../data/doseSimulators';
+import { getBook } from '../data/doseBooks';
+import { DoseBook } from './DoseBook';
+import { getBookChapterUrl, parseBookSlugFromUrl } from '../utils/doseUrl';
+import { getRepoFileUrl } from '../utils/bookSources';
 import {
   AltbauThermalSimulator,
   GlasanflugSimulator,
@@ -85,6 +90,25 @@ export const DoseSinglePage: React.FC<DoseSinglePageProps> = ({
 
   // Simulator info if available
   const simInfo = DOSE_SIMULATOR_MAP[dose.id];
+
+  // Das Buch zur Dose: die Rohrecherche hinter den Behauptungen
+  const bookChapters = getBook(dose.id);
+  const [showBook, setShowBook] = useState<boolean>(() => Boolean(parseBookSlugFromUrl()));
+  const initialChapterSlug = parseBookSlugFromUrl() || undefined;
+
+  // Ein Kapitel-Link, der im selben Tab geöffnet wird, muss das Buch auch
+  // aufschlagen — sonst landet der Empfänger auf der Dose und sucht selbst.
+  useEffect(() => {
+    const oeffneBeiKapitelLink = () => {
+      if (parseBookSlugFromUrl()) setShowBook(true);
+    };
+    window.addEventListener('hashchange', oeffneBeiKapitelLink);
+    window.addEventListener('popstate', oeffneBeiKapitelLink);
+    return () => {
+      window.removeEventListener('hashchange', oeffneBeiKapitelLink);
+      window.removeEventListener('popstate', oeffneBeiKapitelLink);
+    };
+  }, []);
 
   // Associated delivery emails
   const linkedEmailsFromData = DELIVERIES_DATA.filter(
@@ -196,7 +220,19 @@ ${dose.failureModeDe}
 
 ## 6. Stand der Technik (Prior Art)
 ${dose.priorArtDe}
+${bookChapters.length > 0 ? `
+---
 
+## 7. Das Buch zur Dose (Rohrecherche)
+Die Dose behauptet, das Buch belegt — einschließlich dessen, was gegen die Idee spricht.
+
+${bookChapters
+  .map(
+    (c) =>
+      `- **${c.titleDe}** (${c.date}) — ${c.noteDe}\n  - Lesen: ${getBookChapterUrl(dose.id, c.slug)}\n  - Quelle im Repo: ${getRepoFileUrl(c.path)}`
+  )
+  .join('\n')}
+` : ''}
 ---
 *Lizenz: CC0 1.0 Universal (Public Domain Dedication)*
 `;
@@ -575,6 +611,78 @@ ${dose.priorArtDe}
             {isDe ? dose.priorArtDe : dose.priorArtEn}
           </p>
         </section>
+
+        {/* Pillar 7: Das Buch zur Dose — Rohrecherche hinter den Behauptungen */}
+        {bookChapters.length > 0 && (
+          <section aria-labelledby="book-heading" className="rounded-2xl border border-[#dfd1be] bg-[#fffdf9] p-6 sm:p-8 space-y-4 shadow-2xs">
+            <div className="flex items-center gap-2.5 text-[#8b6f57] pb-2 border-b border-[#f0e4d4]">
+              <BookOpen className="w-5 h-5 text-[#8b6f57]" />
+              <h2 id="book-heading" className="text-lg sm:text-xl font-bold font-amelie text-[#2b1e16]">
+                {isDe ? 'Das Buch zur Dose' : isEs ? 'El libro de la lata' : 'The Book Behind the Tin'}
+              </h2>
+              <span className="ml-auto font-mono-code text-[11px] text-[#9a8570]">
+                {bookChapters.length} {isDe ? 'Kapitel' : isEs ? 'capítulos' : 'chapters'}
+              </span>
+            </div>
+
+            <p className="text-xs sm:text-sm text-[#5c4a3d] font-typewriter leading-relaxed">
+              {isDe
+                ? 'Die Dose behauptet, das Buch belegt. Hier liegt die Rohrecherche, aus der sie entstanden ist — einschließlich dessen, was gegen die Idee spricht. Für wen auch immer sie weiterbaut: Das ist der Teil, der Arbeit spart.'
+                : isEs
+                ? 'La lata afirma, el libro prueba. Aquí está la investigación en bruto de la que surgió, incluido lo que habla en contra de la idea.'
+                : 'The tin claims, the book proves. This is the raw research it grew out of — including what argues against the idea. For whoever builds on it, this is the part that saves work.'}
+            </p>
+
+            {!showBook && (
+              <ul className="space-y-2">
+                {bookChapters.map((c) => (
+                  <li key={c.slug}>
+                    <button
+                      onClick={() => setShowBook(true)}
+                      className="w-full text-left px-4 py-3 rounded-xl border border-[#e5dac8] bg-[#faf5eb] hover:bg-[#f0e7d6] transition-colors cursor-pointer"
+                    >
+                      <div className="font-typewriter text-xs font-bold text-[#2b1e16]">
+                        {isDe ? c.titleDe : c.titleEn}
+                      </div>
+                      <div className="font-typewriter text-[11px] text-[#6b5647] mt-1 leading-snug">
+                        {isDe ? c.noteDe : c.noteEn}
+                      </div>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            <button
+              onClick={() => setShowBook((v) => !v)}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#2b1e16] text-[#faf5eb] font-typewriter text-xs font-bold hover:bg-[#3d2c20] transition-colors cursor-pointer"
+            >
+              <BookOpen className="w-3.5 h-3.5" />
+              {showBook
+                ? (isDe ? 'Buch zuklappen' : isEs ? 'Cerrar el libro' : 'Close the book')
+                : (isDe ? 'Buch aufschlagen' : isEs ? 'Abrir el libro' : 'Open the book')}
+            </button>
+
+            {showBook && (
+              <DoseBook
+                chapters={bookChapters}
+                lang={lang}
+                initialSlug={initialChapterSlug}
+                onChapterChange={(slug) => {
+                  try {
+                    window.history.replaceState(
+                      {},
+                      '',
+                      getBookChapterUrl(dose.id, slug)
+                    );
+                  } catch {
+                    /* URL-Anker ist Komfort, kein Muss */
+                  }
+                }}
+              />
+            )}
+          </section>
+        )}
       </div>
 
       {/* 6. LINKED OUTBOUND DELIVERY EMAILS */}

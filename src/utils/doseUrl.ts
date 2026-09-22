@@ -68,6 +68,40 @@ export function parseDoseIdFromUrl(): string | null {
 }
 
 /**
+ * Permanente URL auf ein Kapitel im Buch zur Dose
+ * z. B. https://domain.app/#dose=eurobirdcast&buch=besetzung
+ */
+export function getBookChapterUrl(doseId: string, slug: string): string {
+  return `${getDoseUrl(doseId)}&buch=${encodeURIComponent(slug)}`;
+}
+
+/**
+ * Liest das gewünschte Buchkapitel aus der URL.
+ * Unterstützt #dose=<id>&buch=<slug> sowie ?buch=<slug> / ?chapter=<slug>
+ */
+export function parseBookSlugFromUrl(): string | null {
+  if (typeof window === 'undefined') return null;
+
+  try {
+    const hash = window.location.hash;
+    if (hash) {
+      const match = hash.match(/[#&](?:buch|chapter|book)=([^&]+)/i);
+      if (match && match[1]) {
+        return decodeURIComponent(match[1]);
+      }
+    }
+
+    const searchParams = new URLSearchParams(window.location.search);
+    const query = searchParams.get('buch') || searchParams.get('chapter') || searchParams.get('book');
+    if (query) return query;
+  } catch (err) {
+    console.error('Error parsing book chapter from URL:', err);
+  }
+
+  return null;
+}
+
+/**
  * Parses the current URL to find if a simulator/sandbox tab is requested
  * Supports:
  * - Hash: #sim=glasanflug or #simulator=glasanflug or #sandbox=glasanflug

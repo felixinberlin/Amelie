@@ -108,6 +108,25 @@ export interface DoseItem {
 }
 ```
 
+### The Book Behind the Tin
+
+Every tin may carry a *book*: the raw research it grew out of. Chapters are registered in `src/data/doseBooks.ts` by repo-relative path:
+
+```ts
+DOSE_BOOKS['eurobirdcast'] = [
+  { slug: 'besetzung', path: '02-recherche/eurobirdcast-besetzung-2026-09-22.md', kind: 'md', ... }
+];
+```
+
+Two design choices are deliberate:
+
+1. **No copy into `public/`.** Chapters are read from the repository through `import.meta.glob` (`src/utils/bookSources.ts`), lazily, one chunk per file. A copy would be a second version of the truth that silently drifts; this way the file in the repo is the only one, and a wrong path fails the build instead of 404-ing on the reader.
+2. **`npm run check:books` fails the lint on a dead path.** Rename a research file without updating the registry and CI stops. For a project whose entire value is verifiability, a chapter link pointing at nothing is the most expensive small bug available.
+
+Chapters link to the file on GitHub *and* to its commit history — for the recipient, the history is part of the evidence: it shows when a claim was checked and whether a verdict was later corrected. Non-Markdown chapters (`kind: 'pdf'`) are listed and linked, not rendered.
+
+Deep link to a chapter: `#dose=<id>&buch=<slug>`.
+
 ### JSON Schema Validation
 All static exports conform to `public/data/amelie-schema.json`. You can validate any exported JSON against this schema using standard validators (e.g., `ajv-cli`):
 ```bash
