@@ -14,7 +14,7 @@ Anwendung empfohlen. Tab. 3 (Kriterien) und Tab. 4 (Risikostufen).
 |---|---|
 | `schema-lagvsw-21-01.yaml` | Die vier Kriterien mit Punktwerten 1–4, im Wortlaut des Beschlusses, dazu die Risikostufen, die acht Anwendungsgrundsätze und die Schwellenwerte der drei Gebäudekategorien. |
 | `ampel.py` | Eine reine Funktion `bewerte(...)`: Punkte rein, Risikostufe mit Begründung raus. Dazu `signifikanzschwelle(...)` für Monitoringergebnisse und `als_blatt(...)` für die lesbare Ausgabe. |
-| `test_ampel.py` | Die elf durchgerechneten Beispiele aus dem Anhang des Beschlusses, plus die Münchner Felddaten für die Schwellenwerte. |
+| `test_ampel.py` | Alle elf durchgerechneten Beispiele aus dem Anhang des Beschlusses, plus die Münchner Felddaten für die Schwellenwerte, beide Vorrangregeln und der vom Beschluss ungeregelte Regelkonflikt. |
 
 Keine Bilderkennung, keine Geodaten, keine Datenbank, kein Webserver. Das ist der Punkt:
 Bevor irgendetwas geschätzt wird, muss das Schema korrekt rechnen.
@@ -85,7 +85,7 @@ wofür ein Rechner gut ist: Handarbeit an einem Punkteschema erzeugt still Reche
 python3 -m pytest test_ampel.py -q
 ```
 
-26 Tests, davon 9 Anhangsbeispiele.
+26 Tests. Alle elf durchgerechneten Beispiele aus dem Anhang sind abgedeckt — neun als Parametersatz, zwei (Fußnote-2-Fall ohne Vegetation im Spiegelbild, Rechenfehler beim Forschungszentrum) als eigene Tests, weil sie je eine Besonderheit festhalten.
 
 ## Lizenz
 

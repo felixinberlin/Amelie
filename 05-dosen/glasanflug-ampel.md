@@ -5,7 +5,7 @@
 **Ein Satz:** Die Fassadenfotos, die beim Melden eines toten Vogels ohnehin hochgeladen werden, einmal durchrechnen — Glasanteil, gespiegeltes Grün, Durchsichten, Ecken — und daraus den Entwurf einer LAG-VSW-Bewertung erzeugen, mit jedem Eingangswert und seiner Unsicherheit auf dem Blatt.
 
 **Stand:** 22.09.2026 · **Prüfen ab:** 03/2027 *(verkürzt: das Feld hat sich zwischen Februar und September 2026 dreimal bewegt)*
-**Skelett liegt bei:** `04-werkzeug/glasanflug-ampel/` — das Schema als Regeldatei, eine reine Bewertungsfunktion, 26 Tests, davon neun aus dem Anhang des Beschlusses. CC0, damit GPL-kompatibel.
+**Skelett liegt bei:** `04-werkzeug/glasanflug-ampel/` — das Schema als Regeldatei, eine reine Bewertungsfunktion, 26 Tests, darunter **alle elf durchgerechneten Beispiele aus dem Anhang des Beschlusses**. CC0, damit GPL-kompatibel.
 **Empfänger:** **NABU Berlin, „Artenschutz am Gebäude"** (Julia Lorenz, Helen Friedlein) zusammen mit **NABU Jena** (Maximilian Schätz, Upstream des Vogelschlagmelders) · **zweiter Empfänger, eigener Kontext:** LBV Bayern, Projekt „Vogelschlag an Glas verhindern" (Dr. Peter Stimmler) · **fachlicher Eigentümer des Schemas, immer mitzunennen:** LAG VSW
 **Verdikt:** 🔨 **Skelett gebaut, jetzt verschenkbar** — die natürliche Heimat ist ein quelloffenes Repo mit einem einzelnen, unbezahlten Maintainer. Regel 4 des Manifests: dorthin nur mit Code. Der Code liegt bei.
 
@@ -73,7 +73,7 @@ Zwei Dinge daran sind für ein Werkzeug entscheidend. Erstens: **Drei der vier K
 
 ## Erster Schritt
 
-**Erledigt am 22.09.2026, liegt in `04-werkzeug/glasanflug-ampel/`:** das Schema als Regeldatei (Kriterien, Punktwerte, Schwellen, jeweils im Wortlaut des Beschlusses mit Versionsangabe), eine reine Funktion `bewerte(...)`, und 26 Tests — darunter **neun der elf durchgerechneten Beispiele aus dem Anhang des Beschlusses** sowie die Münchner Felddaten für die Schwellenwerte. Jeder Eingabewert trägt seine Herkunft mit (`eingabe`, `bild`, `geodaten`, `unbestimmt`); ein unbestimmtes Kriterium führt zu **keiner** Einstufung statt zu einer geschätzten Zahl. Trifft beides zu — Glasanteil 4 und Fassadengestaltung 1 —, meldet der Rechner einen Regelkonflikt, statt ihn stillschweigend aufzulösen; der Beschluss regelt den Fall nicht.
+**Erledigt am 22.09.2026, liegt in `04-werkzeug/glasanflug-ampel/`:** das Schema als Regeldatei (Kriterien, Punktwerte, Schwellen, jeweils im Wortlaut des Beschlusses mit Versionsangabe), eine reine Funktion `bewerte(...)`, und 26 Tests — darunter **alle elf durchgerechneten Beispiele aus dem Anhang des Beschlusses** sowie die Münchner Felddaten für die Schwellenwerte. Jeder Eingabewert trägt seine Herkunft mit (`eingabe`, `bild`, `geodaten`, `unbestimmt`); ein unbestimmtes Kriterium führt zu **keiner** Einstufung statt zu einer geschätzten Zahl. Trifft beides zu — Glasanteil 4 und Fassadengestaltung 1 —, meldet der Rechner einen Regelkonflikt, statt ihn stillschweigend aufzulösen; der Beschluss regelt den Fall nicht.
 
 Beim Nachrechnen fiel nebenbei auf: Im Anhang stehen beim Berliner Forschungszentrum die Gebäudefaktoren 3 und 3 und darunter „Summe 7". Die Risikostufe ändert sich dadurch nicht — aber es zeigt, was Handarbeit an einem Punkteschema erzeugt.
 
