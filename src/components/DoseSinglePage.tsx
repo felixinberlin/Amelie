@@ -87,9 +87,54 @@ export const DoseSinglePage: React.FC<DoseSinglePageProps> = ({
   const simInfo = DOSE_SIMULATOR_MAP[dose.id];
 
   // Associated delivery emails
-  const linkedEmails = DELIVERIES_DATA.filter(
+  const linkedEmailsFromData = DELIVERIES_DATA.filter(
     (mail) => mail.doseLinks && mail.doseLinks.includes(dose.id)
   );
+
+  // Direct templates on the dose itself
+  const directTemplates: typeof DELIVERIES_DATA = (
+    dose.emailTemplates && dose.emailTemplates.length > 0
+      ? dose.emailTemplates
+      : dose.emailTemplate
+      ? [
+          {
+            recipientName: dose.recipientsDe || 'Empfänger / Recipient',
+            to: dose.emailTemplate.to,
+            subjectDe: dose.emailTemplate.subjectDe,
+            subjectEn: dose.emailTemplate.subjectEn,
+            bodyDe: dose.emailTemplate.bodyDe,
+            bodyEn: dose.emailTemplate.bodyEn,
+          },
+        ]
+      : []
+  )
+    .filter(
+      (tmpl) =>
+        !linkedEmailsFromData.some(
+          (m) =>
+            m.subjectDe === tmpl.subjectDe || m.subjectEn === tmpl.subjectEn
+        )
+    )
+    .map((tmpl, idx) => ({
+      id: `tmpl-${dose.id}-${idx}`,
+      mailIndex: linkedEmailsFromData.length + idx + 1,
+      titleDe: `${tmpl.recipientName}: ${tmpl.subjectDe}`,
+      titleEn: `${tmpl.recipientName}: ${tmpl.subjectEn}`,
+      recipientOrg: tmpl.recipientName,
+      recipientTypeDe: 'Direkt-Vorlage (CC0)',
+      recipientTypeEn: 'Direct Handover Template (CC0)',
+      contactPathDe: tmpl.to,
+      contactPathEn: tmpl.to,
+      subjectDe: tmpl.subjectDe,
+      subjectEn: tmpl.subjectEn,
+      bodyDe: tmpl.bodyDe,
+      bodyEn: tmpl.bodyEn,
+      doseLinks: [dose.id],
+      scheduleDe: 'Sofort versendbar · CC0 Übergabe',
+      scheduleEn: 'Immediate dispatch · CC0 Handover',
+    }));
+
+  const linkedEmails = [...linkedEmailsFromData, ...directTemplates];
 
   const handleCopyUrl = () => {
     navigator.clipboard.writeText(doseUrl);
@@ -553,7 +598,7 @@ ${dose.priorArtDe}
                 onClick={onOpenEmailsTab}
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#faf5eb] hover:bg-[#ede3d1] text-[#5c4a3d] border border-[#d8cbba] text-xs font-typewriter font-bold transition-colors cursor-pointer"
               >
-                <span>{isDe ? 'Alle 4 Muster-Mails ansehen' : 'View all Sample Emails'} →</span>
+                <span>{isDe ? `Alle ${DELIVERIES_DATA.length} Muster-Mails ansehen` : `View all ${DELIVERIES_DATA.length} Sample Emails`} →</span>
               </button>
             )}
           </div>
@@ -603,11 +648,17 @@ ${dose.priorArtDe}
                     </button>
                   </div>
 
-                  <div className="font-typewriter text-xs text-[#2b1e16] bg-white p-3 rounded-xl border border-[#dfd1be]">
-                    <span className="text-[#8b6f57] font-bold block mb-1">
-                      {isDe ? 'Betreff: ' : 'Subject: '}
-                      <span className="text-[#2b1e16]">{emailSubject}</span>
-                    </span>
+                  <div className="font-typewriter text-xs text-[#2b1e16] bg-white p-3 rounded-xl border border-[#dfd1be] space-y-1">
+                    <div className="flex flex-wrap items-center gap-1.5 text-[#8b6f57]">
+                      <span className="font-bold">{isDe ? 'An: ' : 'To: '}</span>
+                      <span className="text-[#2b1e16] font-mono-code">{isDe ? mail.contactPathDe : mail.contactPathEn}</span>
+                    </div>
+                    <div>
+                      <span className="text-[#8b6f57] font-bold">
+                        {isDe ? 'Betreff: ' : 'Subject: '}
+                      </span>
+                      <span className="text-[#2b1e16] font-medium">{emailSubject}</span>
+                    </div>
                   </div>
 
                   <div className="p-4 rounded-xl bg-[#2a2723] text-stone-200 font-mono-code text-xs whitespace-pre-wrap leading-relaxed max-h-48 overflow-y-auto border border-stone-800">

@@ -125,6 +125,119 @@ export const DOSEN_DATA: DoseItem[] = [
     priorArtEn: 'Narrowed (21/22 Sep 2026, corrected from "free"): the calculator exists twice, elsewhere. FLAP Canada runs flapapp.ca, a free BirdSafe app estimating day and night risk per façade — a guided questionnaire without image analysis. Since April 2026 LEED v5 carries bird collisions in two credits requiring an ABC threat factor ≤ 30, with CSA A460:19 as the Canadian compliance path; Pilot Credit SSpc55 computes via an official spreadsheet but scores materials from a design. New York (Local Law 15, in force since 2021) and Toronto (since 2010) created documentation markets served by consultancies; compliance software was not found. Austria tests markings under ONR 191040 in the Hohenau flight tunnel (at least 90 % avoidance) — the product side is thoroughly covered. In Germany: LAG VSW decision 21/01 (updated 2023, commissioned by the LANA and recommended to the federal states), Berlin\'s assessment aid, various leaflets — no digital tool that computes the scheme. The opposite direction has been occupied since February 2026: vogelschlagmelder.de collects victim reports, and its hazard map is a heatmap of those reports, not an assessment. Reporting is solved. Rating is not.'
   },
   {
+    id: 'eurobirdcast',
+    title: 'EuroBirdCast',
+    titleEn: 'EuroBirdCast: Dynamic Avian Radar & BP/MWh Index',
+    oneLinerDe: 'Wetterradar-Rohdaten des DWD per vol2bird in vertikale Vogelzugprofile übersetzen und einen „Bird Protection per MWh Lost" (BP/MWh)-Index berechnen, damit Windkraftanlagen dynamisch in extremen Zugfenstern abregeln statt pauschal nach Kalendermonaten abzuschalten.',
+    oneLinerEn: 'Transform raw weather radar biological clutter into an actionable Bird Protection per MWh Lost (BP/MWh) index to dynamically pause wind turbines only when migration risk is highest.',
+    date: '22. September 2026',
+    reviewAfter: 'September 2027',
+    recipientsDe: 'The ENRAM Coordination Team & Open Science Lab for Biodiversity (EIC Pathfinder Open 2026) · Windpark-Betreiber, Bürgerwind-Genossenschaften, Prototype Fund Alumni / Open-Source Climate-Tech Kollektive',
+    recipientsEn: 'The ENRAM Coordination Team & Open Science Lab for Biodiversity (EIC Pathfinder Open 2026) · Wind farm operators & co-operatives, grid regulators, and climate-tech data engineering co-ops',
+    domain: 'physics',
+    verdict: 'gift',
+    status: 'gepackt',
+    tags: ['Vogelschutz', 'Windkraft', 'Radar', 'DWD', 'Open Data', 'vol2bird', 'Energiewende', 'Deep Tech', 'Bird Migration'],
+    problemDe: 'Windparks stehen unter permanentem Artenschutz-Konflikt (§ 44 BNatSchG) und werden bislang mit starren, kalendarischen Abschaltzeiten belegt (z. B. pauschale Nachtabschaltungen im Spätsommer/Herbst). Das vernichtet wertvolle saubere Jahresenergieproduktion an zugruhigen Abenden, während witterungsbedingt verschobene massive Zuggipfel voll rotierende Turbinen treffen. Es fehlt eine zeitlich und räumlich präzise Echtzeit-Entscheidungshilfe.',
+    problemEn: 'Wind farms rely on rigid, calendar-based shutdowns to prevent bird collisions, which wastes clean energy production during calm migration nights and misses unexpected dynamic migration pulses triggered by shifting autumn weather fronts. Operators face blunt curtailments without fine-grained temporal, spatial, and vertical precision.',
+    whyNowDe: [
+      'DWD-Radardaten sind als Open Data öffentlich: Der DWD stellt auf seinem Open-Data-Server ungefilterte polare Volumendaten (ODIM HDF5) für alle 17 deutschen Radarstationen bereit, inklusive Dual-Polarisations-Variablen zur Trennung von Niederschlag und biologischen Zielen.',
+      'Europäische Dateninfrastruktur mit Aloft: Aloft (Scientific Data 2025) aggregiert biologische Zeitreihen von über 150 Radarstationen aus 18 europäischen Ländern, täglich aktualisiert.',
+      'Open-Source-Extraktion mit vol2bird und bioRad: vol2bird und bioRad v0.12/vol2birdR 1.3 (mit MistNet) berechnen vertikale Profile (VPB: Vögel/km³, Höhe, Flugrichtung, Geschwindigkeit) direkt aus HDF5-Volumenscans.',
+      'Operative Machbarkeit ist bewiesen: FlySafe (UvA/KNMI) läuft operativ in NL/BE/DE für die Luftwaffe; das BfN-Projekt RADBIRD (Vogelwarte Helgoland, 2019–2021) legte den methodischen Pfad für Windenergie-Abschaltungen.',
+      'Quantifizierter Hebel (Nature Sustainability 2026): Bauer u. a. zeigten, dass intelligentes Abregeln 50 % des Kollisionsrisikos mit nur 1,2 % Ertragsverlust verhindert (oder 90 % Risiko bei 7,6 % Ertrag), während starre Abschaltungen 2–20 % der Produktion kosten.'
+    ],
+    whyNowEn: [
+      'DWD radar open data is accessible: DWD publicly exposes unfiltered polar volume radar scans (ODIM HDF5) for German stations, preserving polarimetric quantities essential for biological extraction.',
+      'European biological radar infrastructure exists in Aloft: Aloft provides biological time series across 151 stations in 18 countries, updated daily.',
+      'Open-source extraction stack: vol2bird (C) and bioRad/vol2birdR 1.3 with MistNet extract vertical bird profiles (density in birds/km³, speed, direction, altitude layers) directly from radar volumes.',
+      'Feasibility proven by FlySafe & RADBIRD: FlySafe operates in NL/BE/DE for air defense; BfN project RADBIRD (2019–2021) demonstrated the methodology for wind turbine curtailment.',
+      'Quantified leverage in Nature Sustainability (2026): Bauer et al. proved that smart curtailment cuts 50 % of collision risk at only 1.2 % energy loss (or 90 % risk at 7.6 % loss), versus blunt shutdowns costing 2–20 % of energy yield.'
+    ],
+    sketchDe: 'Ingestion-Pipeline holt 5-Minuten-ODIM-HDF5-Radardaten des DWD. Dockerisierter vol2bird-Container extrahiert vertikale Vogelzugprofile (VPB) mit Dichte in der Rotorebene (80–220 m). Kurzfristmodell (0–6 h) koppelt Vektoren mit DWD-Windprognosen (ICON-D2). Die Risiko-Engine berechnet den Index BP/MWh (Bird Protection per MWh Lost) = abgewendete Rotor-Durchflüge geteilt durch Ertragsverlust. Ausgabe via REST-API/Webhook für Windpark-SCADA zur automatisierten dynamischen Drosselung sowie ein behördensicherer Audit-Trail zur lückenlosen Dokumentation nach § 44 BNatSchG. Klare Grenze: Keine Arterkennung aus Wetterradar; Artwahrscheinlichkeiten stammen nachgelagert aus bürgerwissenschaftlichen und akustischen Beobachtungsdaten.',
+    sketchEn: 'Ingestion pipeline polls 5-minute raw DWD HDF5 radar volumes. Dockerized vol2bird container extracts vertical bird profiles (VPB) with density in the rotor-swept zone (80–220 m). A 0–6h nowcast couples movement vectors with DWD wind forecasts (ICON-D2). The risk engine computes the BP/MWh (Bird Protection per MWh Lost) index. Output via REST API/Webhooks for wind farm SCADA systems for automated dynamic curtailment, alongside an auditable compliance log for environmental authorities under § 44 BNatSchG. Clear boundary: no species classification from weather radar alone; species likelihoods merge from citizen science and acoustic monitoring.',
+    firstStepDe: {
+      ticket: 'Ingestion- & Extraktions-Brücke (Python + Dockerized vol2bird)',
+      criteria: 'Python-Skript lädt DWD-Polarvolumen einer Pilotstation (z. B. Boostedt oder Prötzel) herunter, Docker-Container mit vol2bird verarbeitet HDF5-Daten zu strukturiertem JSON (VPB). Fertig, wenn 14 Tage historische Herbstzugdaten in unter 45 Sekunden je 5-Minuten-Scan berechnet werden und die Korrelation zu Aloft-Referenzprofilen über 95 % liegt.'
+    },
+    firstStepEn: {
+      ticket: 'Ingestion & Extraction Bridge (Python + Dockerized vol2bird)',
+      criteria: 'Python script scrapes DWD polar volume data for a pilot radar station (e.g. Boostedt or Prötzel), lightweight Docker container with vol2bird outputs structured JSON bird profiles. Done when 14 days of historical autumn migration scans process in under 45 seconds per 5-minute volume and match Aloft reference profiles with Pearson correlation > 0.95.'
+    },
+    failureModeDe: 'Falsch-Positive durch Clutter (Starkregen, Insekten, Bodenechos) lösen ungerechtfertigte „Geister-Abschaltungen" aus und zerstören das Vertrauen der Windmüller. Gegenmaßnahme: Strikte Dual-Polarisations-Filterung (rhoHV < 0.85) und Geschwindigkeitsvalidierung. Zweites Risiko: DWD-interne Clutterfilter filtern dichte Vogelschwärme versehentlich aus; Lösung: Bayessche Fusionsschicht mit Nachbarradaren. Drittes Risiko: Blackbox-Vorwurf — jeder Drosselungsvorschlag muss mit exakter gemessener Dichte, Höhenband und Unsicherheitsintervall begründet sein.',
+    failureModeEn: 'False positives from weather clutter (heavy rain, insect blooms, anomalous ground clutter) trigger unneeded "ghost" curtailments, eroding operator trust. Remedy: strict dual-polarization correlation thresholds (rhoHV < 0.85) and velocity texture filters. Second risk: DWD clutter filters discarding dense bird flocks as noise; remedy: Bayesian sensor fusion with overlapping neighboring radars. Third risk: black-box skepticism; every curtailment trigger must cite raw measured density, altitude band, and confidence intervals.',
+    priorArtDe: 'Verifiziert neuartig (September 2026): RADBIRD (BfN/Vogelwarte Helgoland, 2019–2021) legte die Grundlagen, endete jedoch als Forschungsbericht ohne offenes Betriebssystem für Windparks. FlySafe (UvA/KNMI) ist operativ, aber fokussiert auf militärische Flugsicherheit. Aloft und bioRad stellen fantastische Forschungswerkzeuge (R/C), aber keine SCADA-Integrationsschicht mit BP/MWh-Index bereit. Kamerasysteme (z. B. IdentiFlight) sichern Einzelvögel (Rotmilan) im Nahbereich ab, sind jedoch blind für den nächtlichen Breitfrontenzug von Kleinvögeln in 100–300 m Höhe.',
+    priorArtEn: 'Verified novel (September 2026): RADBIRD (BfN / Vogelwarte Helgoland, 2019–2021) proved the research foundation but concluded without an open-source, operational software stack for wind co-operatives. FlySafe (UvA / KNMI) is operational but focused on military aviation safety. Aloft and bioRad provide excellent scientific toolsets (R/C) but lack a real-time SCADA integration API with a BP/MWh index. Camera systems (e.g., IdentiFlight) protect diurnal raptors near individual turbines but are blind to broad-front nocturnal passerine migration across 100–300 m altitudes.',
+    emailTemplates: [
+      {
+        recipientName: 'The ENRAM Coordination Team & Open Science Lab for Biodiversity',
+        to: 'enram@biodiversitylab.eu',
+        subjectDe: 'EuroBirdCast & der BP/MWh-Index — Schlüsselfertige Architektur für EIC Pathfinder 2026',
+        bodyDe: `Liebes ENRAM-Koordinationsteam, liebes Team des Open Science Lab for Biodiversity,
+
+ich schreibe Ihnen im Rahmen einer Initiative zur Freisetzung gemeinwohlorientierter Technologien. In einem Master-Dokument namens „Ideen" erfasse ich validierte technische Konzepte und Architekturen. Wenn eine Idee ausgereift ist, ich aber nicht die richtige Person für die Umsetzung bin, packe ich sie in eine „Dose" und übergebe sie an die Personen, die es sind.
+
+Dies ist Ihre Dose.
+
+Ihre Arbeit an AloftData und dem vol2bird-Algorithmus hat biologische Radardaten öffentlich zugänglich gemacht. Um jedoch die Vogelsterblichkeit an Windkraftanlagen drastisch zu senken, ohne den Ertrag erneuerbarer Energien abzuwürgen, müssen wir die Lücke zwischen biologischer Beobachtung und Energieökonomie schließen.
+
+Das Konzept: EuroBirdCast & der BP/MWh-Index
+Bislang verlassen sich Windparks auf statische, kalendarische Abschaltungen. EuroBirdCast schlägt vor, Ihre vertikalen Vogelprofile (VPB) zu verarbeiten, um einen lokalisierten BP/MWh-Index (Bird Protection per MWh Lost) zu berechnen. Dieses Entscheidungshilfe-System ermöglicht es Netz- und Parkbetreibern, API-gestütztes „Smart Curtailment" während kurzer, extrem risikobehafteter Zugfenster zu begründen – und so Vogelschlag und Ertragsverluste (AEP) gleichermaßen zu minimieren.
+
+Ausrichtung auf EIC Pathfinder Open 2026
+Ich habe diese Architektur direkt auf den kommenden Horizon Europe Grant abgestimmt, der frühe Phasen wissenschaftlicher, technologischer und Deep-Tech-Forschung fördert:
+- Proof of Principle: Der EIC Pathfinder zielt darauf ab, die wissenschaftliche Grundlage für Durchbruchstechnologien zu schaffen. Der Schritt von retrospektiven Zugdaten zu einer echtzeitfähigen, lokalisierten wirtschaftlichen Risikoprognose (BP/MWh) erfüllt dieses Mandat passgenau.
+- Pathway to Impact: Der Antrag verlangt logische Schritte zur Erzielung nachhaltiger Wirkung über die Projektlaufzeit hinaus. Die Bereitstellung von API-gestützten Drosselungswarnungen für regionale Windparkbetreiber dient als hochgradig glaubwürdige Verwertungsstrategie.
+- Open Science Integration: Ihr Open-Source-Ethos entspricht exakt den Anforderungen an offenes Teilen von Forschungsergebnissen, Datenmanagementplänen (DMP) und Verbreitungskonzepten innerhalb der ersten sechs Monate.
+- Kritisches Risikomanagement: Das Programm verlangt eine rigorose Risikomatrix. Das wesentliche Risiko bei EuroBirdCast sind falsch-positive „Geister-Abschaltungen" durch Artefakte in deutschen DWD-Radardaten (Dual-Polarisations-Anomalien). Dafür haben wir in der beigefügten Spezifikation bereits eine bayessche Interpolationsschicht als Gegenmaßnahme konzipiert.
+
+Die Übergabe
+Anbei finden Sie das vollständige EuroBirdCast-Strategiedokument, die 72-Stunden-MVP-Roadmap und die Architekturanforderungen für die API-Pipeline (FastAPI / SQLite / Dockerized vol2bird).
+
+Ich suche weder nach Unternehmensanteilen noch nach Nennung oder einer Rolle im Konsortium. Dieses Konzept ist gemeinfrei (CC0). Nehmen Sie die Architektur, binden Sie ein vielversprechendes Hightech-Klima-KMU für die Softwareinfrastruktur ein und sichern Sie sich die EIC-Förderung, um Smart Curtailment zum europäischen Standard zu machen.
+
+Viel Erfolg
+Félix
+github.com/felixinberlin`,
+        subjectEn: 'EuroBirdCast & The BP/MWh Index — Turn-key architecture for EIC Pathfinder 2026',
+        bodyEn: `Dear ENRAM Coordination & Open Science Lab for Biodiversity Teams,
+
+I am writing to you as part of a quiet initiative to unblock stranded public-interest technology. I keep a master document named "Ideas" where I log validated technical concepts and architectures. When an idea is fully scoped but I am not the right person to build it, I package it into a "tin" and hand it over to the people who are.
+
+This is your tin.
+
+Your work on AloftData and the vol2bird algorithm has successfully made biological radar data publicly accessible. However, to drastically reduce avian mortality at wind farms without crippling renewable energy output, we need to bridge the gap between biological observation and energy economics.
+
+The Concept: EuroBirdCast & The BP/MWh Index
+Currently, wind farms rely on static, calendar-based shutdowns. EuroBirdCast proposes processing your vertical profiles of birds (VPB) to generate a localized BP/MWh (Bird Protection per MWh Lost) Index. This decision-support tool allows grid operators to justify API-driven "Smart Curtailment" during brief, extreme-risk migration windows, minimizing both bird strikes and Annual Energy Production (AEP) losses.
+
+EIC Pathfinder Open 2026 Alignment
+I have mapped this architecture directly against the upcoming Horizon Europe grant, which provides support for the earliest stages of scientific, technological or deep-tech research and development. EuroBirdCast is uniquely positioned for this funding:
+- Proof of Principle: The primary goal of the EIC Pathfinder is to develop the scientific basis to underpin breakthrough technologies, thus focusing on early-stage research needed to achieve the proof of principle that the envisaged technologies are feasible. Advancing from retrospective migration data to a real-time, localized economic risk forecast (BP/MWh) fulfills this mandate perfectly.
+- Pathway to Impact: The application requires demonstrating logical steps towards the achievement of the expected impacts of the project over time, in particular beyond the duration of a project. Deploying API-driven curtailment alerts to regional wind farm operators serves as a highly credible commercial exploitation strategy.
+- Open Science Integration: Your existing open-source ethos matches the requirement where open science practices include early and open sharing of research, research output management, and providing open access to research outputs. Furthermore, a data management plan (DMP) and a 'plan for dissemination and exploitation including communication activities' must be provided as distinct deliverables within the first 6 months of the project.
+- Critical Risk Mitigation: The grant demands a rigorous risk table identifying both the level of likelihood to occur (Low/medium/high) and the level of severity (Low/medium/high). A critical risk is a plausible event or issue that could have a high adverse impact on the ability of the project to achieve its objectives. For EuroBirdCast, this is the risk of false-positive "ghost curtailments" caused by technical anomalies in German DWD radar data (dual-polarization artifacts). We have already scoped a Bayesian Interpolation Layer as the mitigation strategy in the attached specs.
+
+The Handover
+Attached you will find the complete EuroBirdCast strategy document, the 72-hour MVP development roadmap, and the architecture requirements to build the API pipeline (FastAPI / SQLite / Dockerized vol2bird).
+
+I am not looking for equity, attribution, or a role in your consortium. This concept is released into the Public Domain (CC0). Take the architecture, recruit a promising high-tech SME to build the software infrastructure, and secure the EIC funding to make Smart Curtailment the European standard.
+
+Good luck,
+Félix
+github.com/felixinberlin`
+      },
+      {
+        recipientName: 'Open-Source Climate-Tech Kollektive & Prototype Fund Alumni',
+        to: 'kontakt@prototypefund.de',
+        subjectDe: 'Idee zu verschenken: EuroBirdCast — Dynamisches Vogelzugradar & BP/MWh-Index für Windparks',
+        bodyDe: 'Hallo zusammen,\n\nich recherchiere Software-Ideen an der Schnittstelle von Open Data, Umweltschutz und Infrastruktur, und verschenke die tragfähigen Konzepte (CC0, ohne Vorbedingungen).\n\nWindkraftanlagen werden in Deutschland nach § 44 BNatSchG oft mit pauschalen, kalendarischen Abschaltzeiten belegt — etwa feste Nachtabschaltungen von August bis Oktober. Das vernichtet saubere Gigawattstunden an windstillen oder zugruhigen Abenden, während witterungsbedingt verschobene massive Zuggipfel voll rotierende Rotoren treffen.\n\nWarum das jetzt lösbar ist: Der DWD stellt auf seinem Open-Data-Server ungefilterte ODIM-HDF5-Radardaten bereit, die europäische Aloft-Infrastruktur umfasst über 150 Stationen, und der Extraktionsalgorithmus vol2bird sowie bioRad sind quelloffen verfügbar. Eine Nature-Sustainability-Studie von Bauer u. a. (Juni 2026) zeigt den enormen Hebel: Mit intelligentem Abregeln lassen sich 50 % des Kollisionsrisikos mit nur 1,2 % Ertragsverlust vermeiden (oder 90 % Risiko bei 7,6 % Ertrag).\n\nDie Idee ist ein offenes Modul (Python + Dockerized vol2bird + FastAPI), das aus den DWD-Volumenscans vertikale Profile extrahiert und für Windparks einen „Bird Protection per MWh Lost" (BP/MWh)-Index berechnet. Damit regeln Turbinen nur in den wenigen, extremen Zugfenstern ab — mit lückenlosem Audit-Trail für die Genehmigungsbehörde.\n\nEin vollständiges Dossier mit Architektur, erstem Ticket und Risikoanalyse liegt bereit: <Link>\n\nFalls ihr das Thema spannend findet, nehmt die Idee gern mit in eure nächste Runde!\n\nBeste Grüße\nFélix',
+        subjectEn: 'Free idea: EuroBirdCast — Dynamic Avian Radar & BP/MWh Index for Wind Turbines',
+        bodyEn: 'Hi everyone,\n\nI research software concepts at the intersection of open data, conservation, and infrastructure, giving away viable ideas with zero strings attached (CC0).\n\nWind farms currently face rigid, calendar-based shutdowns under nature conservation laws (such as § 44 BNatSchG). This wastes clean energy on quiet nights and fails to protect birds when weather shifts trigger massive migration pulses outside statutory windows.\n\nWhy this is solvable now: DWD exposes unfiltered polar volume radar scans (ODIM HDF5) via open data, the Aloft initiative spans 150+ European radars, and open-source tooling (vol2bird, bioRad) extracts vertical bird density profiles. A June 2026 Nature Sustainability study by Bauer et al. showed that dynamic curtailment can prevent 50 % of collision risk with only 1.2 % energy production loss.\n\nThe project is an open decision intelligence bridge (Python + Dockerized vol2bird + FastAPI) calculating a localized "Bird Protection per MWh Lost" (BP/MWh) index for wind farm SCADA systems with an auditable compliance trail.\n\nFull dossier with architecture and first ticket: <link>\n\nBest regards,\nFélix'
+      }
+    ]
+  },
+  {
     id: 'sperrmuell-radar',
     title: 'Sperrmüll-Radar',
     oneLinerDe: 'Foto vom Straßenfund → On-device-Klassifikation → Geo-Pin mit OSM-Straßensegment, der nach 12 Stunden verfällt. Kein Account, kein Marktplatz, Verfall als Datenschutz. Macht aus 13 Mio. € Müllkosten gerettete Dinge.',

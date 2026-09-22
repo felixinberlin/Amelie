@@ -424,6 +424,74 @@ Félix`,
     doseLinks: ['crack-flora-watcher'],
     scheduleDe: 'Bereit zur Kontaktaufnahme · Zuarbeit für Projekt-Tag',
     scheduleEn: 'Ready for outreach · Research tag proposal'
+  },
+  {
+    id: 'mail-10',
+    mailIndex: 10,
+    titleDe: 'Mail 10: EuroBirdCast & BP/MWh-Index → ENRAM & Open Science Lab for Biodiversity',
+    titleEn: 'Mail 10: EuroBirdCast & BP/MWh Index → ENRAM & Open Science Lab for Biodiversity',
+    recipientOrg: 'The ENRAM Coordination Team & Open Science Lab for Biodiversity',
+    recipientTypeDe: 'Europäisches Forschungsnetzwerk & Open-Science-Labor (EIC Pathfinder Open 2026)',
+    recipientTypeEn: 'European Research Network & Open Science Lab (EIC Pathfinder Open 2026)',
+    contactPathDe: 'ENRAM Koordination & Open Science Lab for Biodiversity (enram@biodiversitylab.eu)',
+    contactPathEn: 'ENRAM Coordination Team & Open Science Lab for Biodiversity (enram@biodiversitylab.eu)',
+    subjectDe: 'EuroBirdCast & der BP/MWh-Index — Schlüsselfertige Architektur für EIC Pathfinder 2026',
+    subjectEn: 'EuroBirdCast & The BP/MWh Index — Turn-key architecture for EIC Pathfinder 2026',
+    bodyDe: `Liebes ENRAM-Koordinationsteam, liebes Team des Open Science Lab for Biodiversity,
+
+ich schreibe Ihnen im Rahmen einer Initiative zur Freisetzung gemeinwohlorientierter Technologien. In einem Master-Dokument namens „Ideen" erfasse ich validierte technische Konzepte und Architekturen. Wenn eine Idee ausgereift ist, ich aber nicht die richtige Person für die Umsetzung bin, packe ich sie in eine „Dose" und übergebe sie an die Personen, die es sind.
+
+Dies ist Ihre Dose.
+
+Ihre Arbeit an AloftData und dem vol2bird-Algorithmus hat biologische Radardaten öffentlich zugänglich gemacht. Um jedoch die Vogelsterblichkeit an Windkraftanlagen drastisch zu senken, ohne den Ertrag erneuerbarer Energien abzuwürgen, müssen wir die Lücke zwischen biologischer Beobachtung und Energieökonomie schließen.
+
+Das Konzept: EuroBirdCast & der BP/MWh-Index
+Bislang verlassen sich Windparks auf statische, kalendarische Abschaltungen. EuroBirdCast schlägt vor, Ihre vertikalen Vogelprofile (VPB) zu verarbeiten, um einen lokalisierten BP/MWh-Index (Bird Protection per MWh Lost) zu berechnen. Dieses Entscheidungshilfe-System ermöglicht es Netz- und Parkbetreibern, API-gestütztes „Smart Curtailment" während kurzer, extrem risikobehafteter Zugfenster zu begründen – und so Vogelschlag und Ertragsverluste (AEP) gleichermaßen zu minimieren.
+
+Ausrichtung auf EIC Pathfinder Open 2026
+Ich habe diese Architektur direkt auf den kommenden Horizon Europe Grant abgestimmt, der frühe Phasen wissenschaftlicher, technologischer und Deep-Tech-Forschung fördert:
+- Proof of Principle: Der EIC Pathfinder zielt darauf ab, die wissenschaftliche Grundlage für Durchbruchstechnologien zu schaffen. Der Schritt von retrospektiven Zugdaten zu einer echtzeitfähigen, lokalisierten wirtschaftlichen Risikoprognose (BP/MWh) erfüllt dieses Mandat passgenau.
+- Pathway to Impact: Der Antrag verlangt logische Schritte zur Erzielung nachhaltiger Wirkung über die Projektlaufzeit hinaus. Die Bereitstellung von API-gestützten Drosselungswarnungen für regionale Windparkbetreiber dient als hochgradig glaubwürdige Verwertungsstrategie.
+- Open Science Integration: Ihr Open-Source-Ethos entspricht exakt den Anforderungen an offenes Teilen von Forschungsergebnissen, Datenmanagementplänen (DMP) und Verbreitungskonzepten innerhalb der ersten sechs Monate.
+- Kritisches Risikomanagement: Das Programm verlangt eine rigorose Risikomatrix. Das wesentliche Risiko bei EuroBirdCast sind falsch-positive „Geister-Abschaltungen" durch Artefakte in deutschen DWD-Radardaten (Dual-Polarisations-Anomalien). Dafür haben wir in der beigefügten Spezifikation bereits eine bayessche Interpolationsschicht als Gegenmaßnahme konzipiert.
+
+Die Übergabe
+Anbei finden Sie das vollständige EuroBirdCast-Strategiedokument, die 72-Stunden-MVP-Roadmap und die Architekturanforderungen für die API-Pipeline (FastAPI / SQLite / Dockerized vol2bird).
+
+Ich suche weder nach Unternehmensanteilen noch nach Nennung oder einer Rolle im Konsortium. Dieses Konzept ist gemeinfrei (CC0). Nehmen Sie die Architektur, binden Sie ein vielversprechendes Hightech-Klima-KMU für die Softwareinfrastruktur ein und sichern Sie sich die EIC-Förderung, um Smart Curtailment zum europäischen Standard zu machen.
+
+Viel Erfolg
+Félix
+github.com/felixinberlin`,
+    bodyEn: `Dear ENRAM Coordination & Open Science Lab for Biodiversity Teams,
+
+I am writing to you as part of a quiet initiative to unblock stranded public-interest technology. I keep a master document named "Ideas" where I log validated technical concepts and architectures. When an idea is fully scoped but I am not the right person to build it, I package it into a "tin" and hand it over to the people who are.
+
+This is your tin.
+
+Your work on AloftData and the vol2bird algorithm has successfully made biological radar data publicly accessible. However, to drastically reduce avian mortality at wind farms without crippling renewable energy output, we need to bridge the gap between biological observation and energy economics.
+
+The Concept: EuroBirdCast & The BP/MWh Index
+Currently, wind farms rely on static, calendar-based shutdowns. EuroBirdCast proposes processing your vertical profiles of birds (VPB) to generate a localized BP/MWh (Bird Protection per MWh Lost) Index. This decision-support tool allows grid operators to justify API-driven "Smart Curtailment" during brief, extreme-risk migration windows, minimizing both bird strikes and Annual Energy Production (AEP) losses.
+
+EIC Pathfinder Open 2026 Alignment
+I have mapped this architecture directly against the upcoming Horizon Europe grant, which provides support for the earliest stages of scientific, technological or deep-tech research and development. EuroBirdCast is uniquely positioned for this funding:
+- Proof of Principle: The primary goal of the EIC Pathfinder is to develop the scientific basis to underpin breakthrough technologies, thus focusing on early-stage research needed to achieve the proof of principle that the envisaged technologies are feasible. Advancing from retrospective migration data to a real-time, localized economic risk forecast (BP/MWh) fulfills this mandate perfectly.
+- Pathway to Impact: The application requires demonstrating logical steps towards the achievement of the expected impacts of the project over time, in particular beyond the duration of a project. Deploying API-driven curtailment alerts to regional wind farm operators serves as a highly credible commercial exploitation strategy.
+- Open Science Integration: Your existing open-source ethos matches the requirement where open science practices include early and open sharing of research, research output management, and providing open access to research outputs. Furthermore, a data management plan (DMP) and a 'plan for dissemination and exploitation including communication activities' must be provided as distinct deliverables within the first 6 months of the project.
+- Critical Risk Mitigation: The grant demands a rigorous risk table identifying both the level of likelihood to occur (Low/medium/high) and the level of severity (Low/medium/high). A critical risk is a plausible event or issue that could have a high adverse impact on the ability of the project to achieve its objectives. For EuroBirdCast, this is the risk of false-positive "ghost curtailments" caused by technical anomalies in German DWD radar data (dual-polarization artifacts). We have already scoped a Bayesian Interpolation Layer as the mitigation strategy in the attached specs.
+
+The Handover
+Attached you will find the complete EuroBirdCast strategy document, the 72-hour MVP development roadmap, and the architecture requirements to build the API pipeline (FastAPI / SQLite / Dockerized vol2bird).
+
+I am not looking for equity, attribution, or a role in your consortium. This concept is released into the Public Domain (CC0). Take the architecture, recruit a promising high-tech SME to build the software infrastructure, and secure the EIC funding to make Smart Curtailment the European standard.
+
+Good luck,
+Félix
+github.com/felixinberlin`,
+    doseLinks: ['eurobirdcast'],
+    scheduleDe: 'Sofort versendbar · Vorbereitung EIC Pathfinder Open 2026',
+    scheduleEn: 'Immediate dispatch · Consortium preparation EIC Pathfinder 2026'
   }
 ];
 
