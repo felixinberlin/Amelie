@@ -1,0 +1,5 @@
+# Laufzeit
+PyYAML>=6.0
+
+# Tests
+pytest>=8.0

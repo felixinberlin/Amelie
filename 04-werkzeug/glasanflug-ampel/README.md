@@ -79,11 +79,18 @@ wofür ein Rechner gut ist: Handarbeit an einem Punkteschema erzeugt still Reche
 - Das Schema gehört der LAG VSW. Diese Datei bildet es ab; sie legt es nicht aus.
   Weicht sie ab, gilt der Beschluss.
 
-## Tests
+## Installieren und testen
+
+Eine Laufzeitabhängigkeit (PyYAML), eine Testabhängigkeit (pytest):
 
 ```
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
 python3 -m pytest test_ampel.py -q
 ```
+
+Ohne venv geht auch `pip install --user -r requirements.txt`; auf Debian/Ubuntu
+verlangt ein systemweites `pip` zusätzlich `--break-system-packages`.
 
 26 Tests. Alle elf durchgerechneten Beispiele aus dem Anhang sind abgedeckt — neun als Parametersatz, zwei (Fußnote-2-Fall ohne Vegetation im Spiegelbild, Rechenfehler beim Forschungszentrum) als eigene Tests, weil sie je eine Besonderheit festhalten.
 
