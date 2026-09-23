@@ -1,5 +1,6 @@
 ---
-status: Available
+status: Delivered
+date_delivered: '2026-09-22T00:00:00Z'
 delivery_method: E-Mail
 target_maker: 'NABU Berlin, Projekt „Artenschutz am Gebäude"'
 ---
