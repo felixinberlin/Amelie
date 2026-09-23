@@ -100,7 +100,7 @@ export const StreiflichtSimulator: React.FC<StreiflichtSimulatorProps> = ({
         <div className="flex items-center justify-between pb-3 border-b border-stone-100">
           <h3 className="font-serif-title font-bold text-stone-900 text-lg flex items-center gap-2">
             <Sun className="w-5 h-5 text-amber-700" />
-            <span>{lang === 'de' ? 'Streiflicht: Virtuelle RTI-Reliefabtastung' : 'Grazing Light RTI Relief Simulation'}</span>
+            <span>{lang === 'de' ? 'Streiflicht: Virtuelle RTI-Reliefabtastung' : lang === 'es' ? 'Simulación de relieve RTI con luz rasante' : 'Grazing Light RTI Relief Simulation'}</span>
           </h3>
           <span className="text-xs font-mono-code bg-amber-50 text-amber-800 px-2 py-0.5 rounded border border-amber-200">
             Candidate Pipeline
@@ -110,13 +110,13 @@ export const StreiflichtSimulator: React.FC<StreiflichtSimulatorProps> = ({
         <p className="text-xs text-stone-600 leading-relaxed">
           {lang === 'de'
             ? 'CompGen zeigte im Mai 2026: Vision-LLMs halluzinieren Buchstaben bei verwitterten Inschriften. Bewegen Sie den Lichtwinkel auf Streiflicht (flach): Die Schattenkante macht die Gravur lesbar, ohne dass KI raten muss.'
-            : 'CompGen reported in May 2026: Vision LLMs hallucinate text on eroded historical inscriptions. Drag the light to a grazing angle: cast shadows reveal carved topography deterministically.'}
+            : lang === 'es' ? 'CompGen informó en mayo de 2026: los LLM con visión alucinan texto en inscripciones históricas erosionadas. Lleva la luz a un ángulo rasante: las sombras revelan la topografía tallada de forma determinista.' : 'CompGen reported in May 2026: Vision LLMs hallucinate text on eroded historical inscriptions. Drag the light to a grazing angle: cast shadows reveal carved topography deterministically.'}
         </p>
 
         {/* Light Elevation Angle Slider */}
         <div>
           <div className="flex justify-between items-center text-xs font-medium text-stone-700 mb-1">
-            <span>{lang === 'de' ? 'Licht-Einfallswinkel (Höhe):' : 'Light Elevation Angle:'}</span>
+            <span>{lang === 'de' ? 'Licht-Einfallswinkel (Höhe):' : lang === 'es' ? 'Elevación de la luz:' : 'Light Elevation Angle:'}</span>
             <span className="font-mono-code font-bold text-amber-900">{lightAngle}° {lightAngle <= 25 ? '(Streiflicht / Grazing)' : lightAngle >= 70 ? '(Frontal / Flat)' : ''}</span>
           </div>
           <input
@@ -138,7 +138,7 @@ export const StreiflichtSimulator: React.FC<StreiflichtSimulatorProps> = ({
         {/* Azimuth Angle (Around 360) */}
         <div>
           <div className="flex justify-between items-center text-xs font-medium text-stone-700 mb-1">
-            <span>{lang === 'de' ? 'Lichtposition (360° um Inschrift):' : 'Light Azimuth Rotation:'}</span>
+            <span>{lang === 'de' ? 'Lichtposition (360° um Inschrift):' : lang === 'es' ? 'Rotación azimutal de la luz:' : 'Light Azimuth Rotation:'}</span>
             <span className="font-mono-code font-bold text-amber-900">{lightAzimuth}°</span>
           </div>
           <input
@@ -158,13 +158,13 @@ export const StreiflichtSimulator: React.FC<StreiflichtSimulatorProps> = ({
             onClick={() => { setLightAngle(12); setLightAzimuth(45); }}
             className="px-3 py-1.5 rounded-lg bg-amber-100 hover:bg-amber-200 text-amber-900 font-medium"
           >
-            🔦 {lang === 'de' ? 'Optimales Streiflicht (12°)' : 'Optimal Grazing (12°)'}
+            🔦 {lang === 'de' ? 'Optimales Streiflicht (12°)' : lang === 'es' ? 'Rasante óptima (12°)' : 'Optimal Grazing (12°)'}
           </button>
           <button
             onClick={() => { setLightAngle(85); setLightAzimuth(90); }}
             className="px-3 py-1.5 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-700 font-medium"
           >
-            ☁️ {lang === 'de' ? 'Normales Tageslicht (85°)' : 'Flat Ambient (85°)'}
+            ☁️ {lang === 'de' ? 'Normales Tageslicht (85°)' : lang === 'es' ? 'Ambiental plana (85°)' : 'Flat Ambient (85°)'}
           </button>
         </div>
       </div>
@@ -187,14 +187,14 @@ export const StreiflichtSimulator: React.FC<StreiflichtSimulatorProps> = ({
         <div className="p-4 rounded-xl bg-amber-50/70 border border-amber-200/80 text-xs text-amber-950 space-y-1">
           <div className="flex items-center justify-between">
             <span className="font-bold block text-amber-900">
-              {lang === 'de' ? 'Die Lücke für CompGen e.V.:' : 'The Gap for CompGen e.V.:'}
+              {lang === 'de' ? 'Die Lücke für CompGen e.V.:' : lang === 'es' ? 'El hueco para CompGen e.V.:' : 'The Gap for CompGen e.V.:'}
             </span>
             {onOpenDose && (
               <button
                 onClick={() => onOpenDose('denkmal-verlaufsblick')}
                 className="text-amber-800 hover:underline text-xs flex items-center gap-1 font-semibold"
               >
-                <span>{lang === 'de' ? 'Verwandte Dose öffnen' : 'Open related tin'}</span>
+                <span>{lang === 'de' ? 'Verwandte Dose öffnen' : lang === 'es' ? 'Abrir la lata relacionada' : 'Open related tin'}</span>
                 <ExternalLink className="w-3 h-3" />
               </button>
             )}
@@ -202,7 +202,7 @@ export const StreiflichtSimulator: React.FC<StreiflichtSimulatorProps> = ({
           <p className="text-amber-900/90 text-[11px] leading-relaxed">
             {lang === 'de'
               ? 'CompGen nutzt KI-Transkription für Grabsteine, kämpft aber mit Halluzinationen. Statt einem noch größeren Sprachmodell genügt die Handytaschenlampe flach an den Stein gehalten — 3 Fotos, Differenzbild, und die Gravur ist deterministisch lesbar.'
-              : 'CompGen struggles with LLMs inventing names on weathered gravestones. A grazing flashlight turns micro-surface grooves into sharp contrast, eliminating transcription errors.'}
+              : lang === 'es' ? 'CompGen lucha con LLM que inventan nombres en lápidas erosionadas. Una linterna rasante convierte las microranuras de la superficie en contraste nítido y elimina errores de transcripción.' : 'CompGen struggles with LLMs inventing names on weathered gravestones. A grazing flashlight turns micro-surface grooves into sharp contrast, eliminating transcription errors.'}
           </p>
         </div>
       </div>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Sparkles, Heart, Compass, Check, Copy, ChevronDown, ChevronUp, ShieldCheck, Mail, Gift } from 'lucide-react';
 import { MANIFEST_RULES, AMELIE_PLEDGE } from '../data/manifest';
 import { Language } from '../types';
+import { t as translate } from '../i18n';
 
 interface AmelieRulesBannerProps {
   lang: Language;
@@ -42,14 +43,14 @@ export const AmelieRulesBanner: React.FC<AmelieRulesBannerProps> = ({
           <div>
             <div className="flex flex-wrap items-center gap-2">
               <span className="font-typewriter text-[11px] font-bold uppercase tracking-widest text-[#8c1d40] px-2 py-0.5 rounded bg-[#8c1d40]/10 border border-[#8c1d40]/20">
-                {isDe ? 'Die Amélie-Philosophie' : isEs ? 'La Filosofía Amélie' : 'The Amélie Philosophy'}
+                {isDe ? 'Die Amélie-Philosophie' : isEs ? 'La filosofía Amélie' : 'The Amélie Philosophy'}
               </span>
               <span className="text-[11px] font-typewriter text-[#8b6f57]">
                 Montmartre · 5 Règles d'Or · CC0
               </span>
             </div>
             <h3 className="text-xl sm:text-2xl font-bold font-amelie text-[#2b1e16] tracking-tight mt-0.5">
-              {isDe ? 'Die fünf Regeln: Ideen, die jemand anderem gehören' : isEs ? 'Las cinco reglas: Ideas que pertenecen a alguien más' : 'The Five Rules: Ideas that belong to someone else'}
+              {isDe ? 'Die fünf Regeln: Ideen, die jemand anderem gehören' : isEs ? 'Las cinco reglas: ideas que pertenecen a otra persona' : 'The Five Rules: Ideas that belong to someone else'}
             </h3>
           </div>
         </div>
@@ -61,7 +62,7 @@ export const AmelieRulesBanner: React.FC<AmelieRulesBannerProps> = ({
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-typewriter font-semibold bg-[#ede3d1] hover:bg-[#e2d5c3] text-[#4a3728] border border-[#d4c4b0] transition-colors cursor-pointer"
             >
               <Mail className="w-3.5 h-3.5 text-[#8c1d40]" />
-              <span>{isDe ? 'Muster-Mails' : isEs ? 'Muestras de Email' : 'Sample Emails'}</span>
+              <span>{isDe ? 'Muster-Mails' : isEs ? 'Correos de ejemplo' : 'Sample Emails'}</span>
             </button>
           )}
 
@@ -71,7 +72,7 @@ export const AmelieRulesBanner: React.FC<AmelieRulesBannerProps> = ({
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-typewriter font-semibold bg-[#8c1d40] hover:bg-[#741533] text-[#fff9f5] transition-colors shadow-2xs cursor-pointer"
             >
               <Sparkles className="w-3.5 h-3.5 text-[#f6bd60]" />
-              <span>{isDe ? 'Zum Manifest' : isEs ? 'Al Manifiesto' : 'Manifesto'}</span>
+              <span>{isDe ? 'Zum Manifest' : isEs ? 'Manifiesto' : 'Manifesto'}</span>
             </button>
           )}
 
@@ -125,14 +126,14 @@ export const AmelieRulesBanner: React.FC<AmelieRulesBannerProps> = ({
                     : rule.number === 2
                     ? (isDe ? 'Signieren' : isEs ? 'Firmar' : 'Sign & CC0')
                     : rule.number === 3
-                    ? (isDe ? 'Klingelverbot' : isEs ? 'Sin acoso' : 'No Follow-up')
+                    ? (isDe ? 'Klingelverbot' : isEs ? 'Sin seguimiento' : 'No Follow-up')
                     : rule.number === 4
                     ? (isDe ? 'Werkzeug' : isEs ? 'Herramientas' : 'Tools Only')
                     : (isDe ? 'Max. 2' : isEs ? 'Máx. 2' : 'Build Max 2')}
                 </span>
               </div>
               <h4 className="text-xs font-bold font-amelie leading-snug line-clamp-2">
-                {isDe ? rule.titleDe : rule.titleEn}
+                {isDe ? rule.titleDe : isEs ? translate(`manifest.rule${rule.number}.title`, 'es', rule.titleEn) : rule.titleEn}
               </h4>
             </button>
           );
@@ -153,16 +154,16 @@ export const AmelieRulesBanner: React.FC<AmelieRulesBannerProps> = ({
                       {isDe ? `Regel #${rule.number}` : isEs ? `Regla #${rule.number}` : `Rule #${rule.number}`}
                     </span>
                     <h4 className="text-sm sm:text-base font-bold font-amelie text-[#2b1e16]">
-                      {isDe ? rule.titleDe : rule.titleEn}
+                      {isDe ? rule.titleDe : isEs ? translate(`manifest.rule${rule.number}.title`, 'es', rule.titleEn) : rule.titleEn}
                     </h4>
                   </div>
                   <p className="text-xs sm:text-sm text-[#4a3b2c] leading-relaxed">
-                    {isDe ? rule.descriptionDe : rule.descriptionEn}
+                    {isDe ? rule.descriptionDe : isEs ? translate(`manifest.rule${rule.number}.desc`, 'es', rule.descriptionEn) : rule.descriptionEn}
                   </p>
                   <div className="pt-2 text-xs font-typewriter text-[#8c1d40] font-semibold">
                     ✦ {isDe ? 'Faustformel: ' : isEs ? 'Regla general: ' : 'Rule of Thumb: '}
                     <span className="font-normal italic text-[#2b1e16]">
-                      {isDe ? rule.ruleOfThumbDe : rule.ruleOfThumbEn}
+                      {isDe ? rule.ruleOfThumbDe : isEs ? translate(`manifest.rule${rule.number}.thumb`, 'es', rule.ruleOfThumbEn) : rule.ruleOfThumbEn}
                     </span>
                   </div>
                 </div>
@@ -184,7 +185,7 @@ export const AmelieRulesBanner: React.FC<AmelieRulesBannerProps> = ({
               </div>
               <div className="p-3.5 rounded-xl bg-white border border-[#dfd1be] space-y-1">
                 <span className="font-typewriter font-bold text-[#1b4332] uppercase text-[11px] block">
-                  ✦ {isDe ? 'Der Kula-Ring (Die Gabe)' : isEs ? 'El Anillo de Kula (El Regalo)' : 'The Kula Ring (The Gift)'}
+                  ✦ {isDe ? 'Der Kula-Ring (Die Gabe)' : isEs ? 'El anillo de Kula (el regalo)' : 'The Kula Ring (The Gift)'}
                 </span>
                 <p>
                   {isDe

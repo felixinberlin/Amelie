@@ -179,32 +179,32 @@ Félix (Berlin)`;
     const isEs = lang === 'es';
     const mdContent = `# ${localizedTitle}
 
-**${isDe ? 'Ein Satz' : isEs ? 'Una frase' : 'One sentence'}:** ${isDe ? dose.oneLinerDe : dose.oneLinerEn}
+**${isDe ? 'Ein Satz' : isEs ? 'Una frase' : 'One sentence'}:** ${isDe ? dose.oneLinerDe : (isEs && dose.oneLinerEs) || dose.oneLinerEn}
 
 **${isDe ? 'Stand' : isEs ? 'Fecha' : 'Date'}:** ${dose.date} · **${isDe ? 'Prüfen ab' : isEs ? 'Revisar tras' : 'Review after'}:** ${dose.reviewAfter}
-**${isDe ? 'Empfänger' : isEs ? 'Destinatario' : 'Recipient'}:** ${isDe ? dose.recipientsDe : dose.recipientsEn}
+**${isDe ? 'Empfänger' : isEs ? 'Destinatario' : 'Recipient'}:** ${isDe ? dose.recipientsDe : (isEs && dose.recipientsEs) || dose.recipientsEn}
 **${isDe ? 'Verdikt' : isEs ? 'Veredicto' : 'Verdict'}:** ${dose.verdict === 'gift' ? '🎁 gift' : dose.verdict === 'build_first' ? '🔨 build first' : '🔒 kept'}
 
 ---
 
 ## ${isDe ? 'Das Problem' : isEs ? 'El Problema' : 'The Problem'}
-${isDe ? dose.problemDe : dose.problemEn}
+${isDe ? dose.problemDe : (isEs && dose.problemEs) || dose.problemEn}
 
 ## ${isDe ? 'Warum das jetzt geht' : isEs ? 'Por qué ahora' : 'Why Now'}
-${(isDe ? dose.whyNowDe : dose.whyNowEn).map((w, i) => `${i + 1}. ${w}`).join('\n')}
+${(isDe ? dose.whyNowDe : (isEs && dose.whyNowEs) || dose.whyNowEn).map((w, i) => `${i + 1}. ${w}`).join('\n')}
 
 ## ${isDe ? 'Skizze' : isEs ? 'Esquema' : 'Sketch'}
-${isDe ? dose.sketchDe : dose.sketchEn}
+${isDe ? dose.sketchDe : (isEs && dose.sketchEs) || dose.sketchEn}
 
 ## ${isDe ? 'Erster Schritt' : isEs ? 'Primer paso' : 'First Step'}
 **Ticket: ${isDe ? dose.firstStepDe.ticket : dose.firstStepEn.ticket}**
 ${isDe ? dose.firstStepDe.criteria : dose.firstStepEn.criteria}
 
 ## ${isDe ? 'Wo es kippt' : isEs ? 'Punto crítico de falla' : 'Where it Breaks'}
-${isDe ? dose.failureModeDe : dose.failureModeEn}
+${isDe ? dose.failureModeDe : (isEs && dose.failureModeEs) || dose.failureModeEn}
 
 ## ${isDe ? 'Wer es schon versucht hat' : isEs ? 'Intentos previos' : 'Prior Art'}
-${isDe ? dose.priorArtDe : dose.priorArtEn}
+${isDe ? dose.priorArtDe : (isEs && dose.priorArtEs) || dose.priorArtEn}
 
 ${dose.emailTemplates && dose.emailTemplates.length > 0 ? `
 ---
@@ -271,7 +271,7 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
             <button
               onClick={copyUrl}
               className="p-2 rounded-lg text-[#f4ede0] hover:text-white hover:bg-[#8c1d40] transition-colors cursor-pointer"
-              title={copiedUrl ? (lang === 'de' ? 'URL kopiert!' : 'URL copied!') : (lang === 'de' ? 'Permanente URL kopieren' : lang === 'es' ? 'Copiar URL permanente' : 'Copy Permanent URL')}
+              title={copiedUrl ? (lang === 'de' ? 'URL kopiert!' : lang === 'es' ? '¡URL copiada!' : 'URL copied!') : (lang === 'de' ? 'Permanente URL kopieren' : lang === 'es' ? 'Copiar URL permanente' : 'Copy Permanent URL')}
             >
               {copiedUrl ? <Check className="w-4 h-4 text-[#86efac]" /> : <Link2 className="w-4 h-4 text-[#f6bd60]" />}
             </button>

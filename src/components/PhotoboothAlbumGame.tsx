@@ -516,7 +516,7 @@ export const PhotoboothAlbumGame: React.FC<PhotoboothAlbumGameProps> = ({ lang }
                 <button
                   onClick={handleInstantStrip}
                   className="px-4 py-3 rounded-2xl bg-amber-100 hover:bg-amber-200 border border-amber-300 text-amber-900 font-mono text-xs font-bold transition-all cursor-pointer shrink-0 shadow-xs flex items-center gap-1"
-                  title={lang === 'de' ? 'Sofort fertigstellen' : 'Finish instantly'}
+                  title={lang === 'de' ? 'Sofort fertigstellen' : lang === 'es' ? 'Terminar al instante' : 'Finish instantly'}
                 >
                   <Zap className="w-3.5 h-3.5 text-amber-800" />
                   <span>{lang === 'de' ? 'Sofort' : lang === 'es' ? 'Listo' : 'Skip'}</span>

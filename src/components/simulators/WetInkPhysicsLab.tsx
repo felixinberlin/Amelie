@@ -203,12 +203,12 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
             <h2 className="text-2xl font-serif font-bold tracking-tight text-stone-100">
               {lang === 'de'
                 ? 'Physik-Labor: Kontinuumsmechanik & WebGL2-Shader'
-                : 'Physics Laboratory: Continuum Mechanics & WebGL2 Shaders'}
+                : lang === 'es' ? 'Laboratorio de física: mecánica de medios continuos y shaders WebGL2' : 'Physics Laboratory: Continuum Mechanics & WebGL2 Shaders'}
             </h2>
             <p className="text-sm text-stone-400 max-w-3xl leading-relaxed">
               {lang === 'de'
                 ? 'Wissenschaftliche Umsetzung von Navier-Stokes-Advektion, Washburn-Kapillardurchdringung in poröser Zellulose, Deegan-Kaffeering-Randschwärzung und Kubelka-Munk-Spektralglasuren auf der GPU.'
-                : 'Scientific engineering of Navier-Stokes advection, Washburn capillary penetration in porous cellulose, Deegan coffee-ring edge darkening, and Kubelka-Munk spectral glazes on GPU.'}
+                : lang === 'es' ? 'Ingeniería científica de advección Navier-Stokes, penetración capilar de Washburn en celulosa porosa, oscurecimiento de borde tipo anillo de café de Deegan y veladuras espectrales Kubelka-Munk en la GPU.' : 'Scientific engineering of Navier-Stokes advection, Washburn capillary penetration in porous cellulose, Deegan coffee-ring edge darkening, and Kubelka-Munk spectral glazes on GPU.'}
             </p>
           </div>
 
@@ -228,11 +228,11 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
         {/* Navigation Tabs */}
         <div className="flex flex-wrap gap-2 mt-6 pt-4 border-t border-stone-800">
           {[
-            { id: 'simulation', label: lang === 'de' ? '1. GPU-Simulation' : '1. GPU Simulation', icon: Zap },
-            { id: 'kubelka-munk', label: lang === 'de' ? '2. Kubelka-Munk Farbmischung' : '2. Kubelka-Munk Color Lab', icon: Sparkles },
-            { id: 'coffee-ring', label: lang === 'de' ? '3. Deegan-Kaffeering-Effekt' : '3. Deegan Coffee-Ring', icon: Droplets },
-            { id: 'fiber-anisotropy', label: lang === 'de' ? '4. Faser-Anisotropie & fBm' : '4. Fiber Anisotropy & fBm', icon: Wind },
-            { id: 'shaders', label: lang === 'de' ? '5. GLSL-Shader-Code' : '5. GLSL Shader Source', icon: Code2 },
+            { id: 'simulation', label: lang === 'de' ? '1. GPU-Simulation' : lang === 'es' ? '1. Simulación en GPU' : '1. GPU Simulation', icon: Zap },
+            { id: 'kubelka-munk', label: lang === 'de' ? '2. Kubelka-Munk Farbmischung' : lang === 'es' ? '2. Laboratorio de color Kubelka-Munk' : '2. Kubelka-Munk Color Lab', icon: Sparkles },
+            { id: 'coffee-ring', label: lang === 'de' ? '3. Deegan-Kaffeering-Effekt' : lang === 'es' ? '3. Anillo de café de Deegan' : '3. Deegan Coffee-Ring', icon: Droplets },
+            { id: 'fiber-anisotropy', label: lang === 'de' ? '4. Faser-Anisotropie & fBm' : lang === 'es' ? '4. Anisotropía de fibra y fBm' : '4. Fiber Anisotropy & fBm', icon: Wind },
+            { id: 'shaders', label: lang === 'de' ? '5. GLSL-Shader-Code' : lang === 'es' ? '5. Código de los shaders GLSL' : '5. GLSL Shader Source', icon: Code2 },
           ].map((tab) => {
             const Icon = tab.icon;
             const isSel = activeTab === tab.id;
@@ -263,7 +263,7 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
                 <h3 className="font-serif font-bold text-stone-900 text-lg">
-                  {lang === 'de' ? 'Echtzeit-WebGL2-Reaktionsbecken' : 'Real-time WebGL2 Reaction Basin'}
+                  {lang === 'de' ? 'Echtzeit-WebGL2-Reaktionsbecken' : lang === 'es' ? 'Cubeta de reacción WebGL2 en tiempo real' : 'Real-time WebGL2 Reaction Basin'}
                 </h3>
               </div>
               <div className="flex items-center gap-2">
@@ -314,14 +314,14 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
 
             {/* Layer Filter Toolbar */}
             <div className="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-stone-100">
-              <span className="text-xs font-medium text-stone-500">{lang === 'de' ? 'Shader-Layer:' : 'Shader Layer:'}</span>
+              <span className="text-xs font-medium text-stone-500">{lang === 'de' ? 'Shader-Layer:' : lang === 'es' ? 'Capa del shader:' : 'Shader Layer:'}</span>
               <div className="flex gap-1.5">
                 {[
-                  { id: 'composite', label: lang === 'de' ? 'Kubelka-Munk Optik' : 'KM Composite' },
-                  { id: 'moisture', label: lang === 'de' ? 'Kapillarfront' : 'Capillary Front' },
-                  { id: 'pigment', label: lang === 'de' ? 'Pigment-Dichte' : 'Pigment Density' },
-                  { id: 'paper', label: lang === 'de' ? 'Papier-Relief' : 'Paper Relief' },
-                  { id: 'vectorField', label: lang === 'de' ? 'Geschwindigkeitsfeld' : 'Velocity Field' },
+                  { id: 'composite', label: lang === 'de' ? 'Kubelka-Munk Optik' : lang === 'es' ? 'Composición KM' : 'KM Composite' },
+                  { id: 'moisture', label: lang === 'de' ? 'Kapillarfront' : lang === 'es' ? 'Frente capilar' : 'Capillary Front' },
+                  { id: 'pigment', label: lang === 'de' ? 'Pigment-Dichte' : lang === 'es' ? 'Densidad de pigmento' : 'Pigment Density' },
+                  { id: 'paper', label: lang === 'de' ? 'Papier-Relief' : lang === 'es' ? 'Relieve del papel' : 'Paper Relief' },
+                  { id: 'vectorField', label: lang === 'de' ? 'Geschwindigkeitsfeld' : lang === 'es' ? 'Campo de velocidades' : 'Velocity Field' },
                 ].map((l) => (
                   <button
                     key={l.id}
@@ -344,13 +344,13 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
             <div className="bg-white p-5 rounded-2xl border border-stone-200 shadow-sm space-y-4">
               <h4 className="font-serif font-bold text-stone-900 text-sm flex items-center gap-2">
                 <Sliders className="w-4 h-4 text-stone-600" />
-                {lang === 'de' ? 'Fluid-Parameter (GPU Uniforms)' : 'Fluid Uniforms'}
+                {lang === 'de' ? 'Fluid-Parameter (GPU Uniforms)' : lang === 'es' ? 'Uniforms del fluido' : 'Fluid Uniforms'}
               </h4>
 
               {/* Capillary Speed */}
               <div className="space-y-1.5">
                 <div className="flex justify-between text-xs">
-                  <span className="text-stone-600">{lang === 'de' ? 'Washburn-Kapillargeschwindigkeit:' : 'Washburn Capillary Rate:'}</span>
+                  <span className="text-stone-600">{lang === 'de' ? 'Washburn-Kapillargeschwindigkeit:' : lang === 'es' ? 'Tasa capilar de Washburn:' : 'Washburn Capillary Rate:'}</span>
                   <span className="font-mono font-bold text-stone-800">{params.capillarySpeed.toFixed(2)}x</span>
                 </div>
                 <input
@@ -367,7 +367,7 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
               {/* Edge Darkening (Deegan) */}
               <div className="space-y-1.5">
                 <div className="flex justify-between text-xs">
-                  <span className="text-stone-600">{lang === 'de' ? 'Deegan-Kaffeering-Stärke:' : 'Deegan Coffee-Ring Factor:'}</span>
+                  <span className="text-stone-600">{lang === 'de' ? 'Deegan-Kaffeering-Stärke:' : lang === 'es' ? 'Factor anillo de café de Deegan:' : 'Deegan Coffee-Ring Factor:'}</span>
                   <span className="font-mono font-bold text-stone-800">{params.edgeDarkeningStrength.toFixed(2)}x</span>
                 </div>
                 <input
@@ -384,8 +384,8 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
               {/* Capillary Threshold (Smoke bug fix) */}
               <div className="pt-2 border-t border-stone-100 flex items-center justify-between">
                 <div>
-                  <div className="text-xs font-semibold text-stone-900">{lang === 'de' ? 'Kapillarschwellwert (ε_min)' : 'Capillary Threshold (ε_min)'}</div>
-                  <div className="text-[11px] text-stone-500">{lang === 'de' ? 'Verhindert unphysikalische Rauchauflösung' : 'Prevents unphysical smoke-blur bug'}</div>
+                  <div className="text-xs font-semibold text-stone-900">{lang === 'de' ? 'Kapillarschwellwert (ε_min)' : lang === 'es' ? 'Umbral capilar (ε_min)' : 'Capillary Threshold (ε_min)'}</div>
+                  <div className="text-[11px] text-stone-500">{lang === 'de' ? 'Verhindert unphysikalische Rauchauflösung' : lang === 'es' ? 'Evita el fallo de desenfoque tipo humo, que no es físico' : 'Prevents unphysical smoke-blur bug'}</div>
                 </div>
                 <input
                   type="checkbox"
@@ -400,12 +400,12 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
             <div className="bg-stone-50 p-4 rounded-xl border border-stone-200 text-xs space-y-2">
               <div className="font-bold text-stone-800 flex items-center gap-1.5">
                 <Info className="w-3.5 h-3.5 text-stone-600" />
-                {lang === 'de' ? 'Open-Source-Referenzarchitektur' : 'Open-Source Architecture'}
+                {lang === 'de' ? 'Open-Source-Referenzarchitektur' : lang === 'es' ? 'Arquitectura de código abierto' : 'Open-Source Architecture'}
               </div>
               <p className="text-stone-600 leading-relaxed text-[11px]">
                 {lang === 'de'
                   ? 'Inspiriert von PavelDoGreat/WebGL-Fluid-Simulation für eulerische Navier-Stokes-Vektorfelder und amandaghassaei/FluidSimulation für semi-lagrangesche Advektion mit poröser Darcy-Matrix.'
-                  : 'Synthesized from PavelDoGreat/WebGL-Fluid-Simulation for Eulerian Navier-Stokes grids and amandaghassaei/FluidSimulation for semi-Lagrangian advection with porous Darcy flow.'}
+                  : lang === 'es' ? 'Sintetizado a partir de PavelDoGreat/WebGL-Fluid-Simulation para mallas eulerianas Navier-Stokes y de amandaghassaei/FluidSimulation para advección semilagrangiana con flujo poroso de Darcy.' : 'Synthesized from PavelDoGreat/WebGL-Fluid-Simulation for Eulerian Navier-Stokes grids and amandaghassaei/FluidSimulation for semi-Lagrangian advection with porous Darcy flow.'}
               </p>
               <div className="pt-2 flex flex-col gap-1 font-mono text-[10px] text-stone-500">
                 <a
@@ -439,12 +439,12 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
                 Scientific Optical Standard
               </span>
               <h3 className="text-xl font-serif font-bold text-stone-900">
-                {lang === 'de' ? 'Kubelka-Munk vs. Naive RGB-Alpha-Mischung' : 'Kubelka-Munk vs. Naive RGB Alpha Blend'}
+                {lang === 'de' ? 'Kubelka-Munk vs. Naive RGB-Alpha-Mischung' : lang === 'es' ? 'Kubelka-Munk frente a mezcla alfa RGB ingenua' : 'Kubelka-Munk vs. Naive RGB Alpha Blend'}
               </h3>
               <p className="text-xs text-stone-600 leading-relaxed">
                 {lang === 'de'
                   ? 'Standard-RGB-Alpha-Blending mittelt Farbwerte linear im RGB-Farbraum. Beim Überlagern von Gelb und Blau entsteht ein schmutziges, aschiges Olivgrau. Das Kubelka-Munk-Modell löst reale Absorptions- (K) und Streukoeffizienten (S): Gelb absorbiert Blau, Blau absorbiert Rot/Gelb – das übrigbleibende Streulicht erzeugt ein leuchtendes, brillantes Smaragdgrün!'
-                  : 'Standard RGB alpha-blending averages color channels linearly in digital space. Mixing yellow and blue yields dull, muddy olive-brown. The Kubelka-Munk differential model solves physical absorption (K) and scattering (S) spectra: yellow absorbs blue, blue absorbs red, and the remaining scattered light produces a vivid, radiant emerald green!'}
+                  : lang === 'es' ? 'La mezcla alfa RGB estándar promedia los canales de color linealmente en el espacio digital. Mezclar amarillo y azul da un marrón oliva apagado y turbio. El modelo diferencial de Kubelka-Munk resuelve los espectros físicos de absorción (K) y dispersión (S): el amarillo absorbe el azul, el azul absorbe el rojo, y la luz dispersada restante produce un verde esmeralda vivo y radiante.' : 'Standard RGB alpha-blending averages color channels linearly in digital space. Mixing yellow and blue yields dull, muddy olive-brown. The Kubelka-Munk differential model solves physical absorption (K) and scattering (S) spectra: yellow absorbs blue, blue absorbs red, and the remaining scattered light produces a vivid, radiant emerald green!'}
               </p>
             </div>
 
@@ -465,7 +465,7 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
                   RGB({Math.round(kmResult[0] * 255)}, {Math.round(kmResult[1] * 255)}, {Math.round(kmResult[2] * 255)})
                 </div>
                 <span className="text-[11px] text-emerald-700 font-medium">
-                  {lang === 'de' ? 'Brillantes physikalisches Smaragdgrün' : 'Luminous vibrant emerald green'}
+                  {lang === 'de' ? 'Brillantes physikalisches Smaragdgrün' : lang === 'es' ? 'Verde esmeralda luminoso y vivo' : 'Luminous vibrant emerald green'}
                 </span>
               </div>
 
@@ -484,7 +484,7 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
                   RGB({rgbBlendResult[0]}, {rgbBlendResult[1]}, {rgbBlendResult[2]})
                 </div>
                 <span className="text-[11px] text-rose-700 font-medium">
-                  {lang === 'de' ? 'Schmutziges, mattes Schlammoliv' : 'Muddy, dull desaturated brown'}
+                  {lang === 'de' ? 'Schmutziges, mattes Schlammoliv' : lang === 'es' ? 'Marrón turbio y desaturado' : 'Muddy, dull desaturated brown'}
                 </span>
               </div>
             </div>
@@ -494,7 +494,7 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
               <div className="space-y-1.5">
                 <div className="flex justify-between text-xs">
                   <span className="font-medium text-stone-700">
-                    {lang === 'de' ? 'Mischverhältnis: ' : 'Ratio: '}
+                    {lang === 'de' ? 'Mischverhältnis: ' : lang === 'es' ? 'Proporción: ' : 'Ratio: '}
                     <strong className="text-amber-800">{selectedPigment1.nameDe.split(' ')[0]}</strong> ({Math.round(ratioP1 * 100)}%) vs.{' '}
                     <strong className="text-blue-800">{selectedPigment2.nameDe.split(' ')[0]}</strong> ({Math.round((1 - ratioP1) * 100)}%)
                   </span>
@@ -512,7 +512,7 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
 
               <div className="space-y-1.5">
                 <div className="flex justify-between text-xs">
-                  <span className="font-medium text-stone-700">{lang === 'de' ? 'Farbschicht-Dicke (x):' : 'Glaze Thickness (x):'}</span>
+                  <span className="font-medium text-stone-700">{lang === 'de' ? 'Farbschicht-Dicke (x):' : lang === 'es' ? 'Grosor de la veladura (x):' : 'Glaze Thickness (x):'}</span>
                   <span className="font-mono text-stone-900">{kmThickness.toFixed(2)}</span>
                 </div>
                 <input
@@ -551,10 +551,10 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
 
               <div className="text-[11px] text-stone-400 space-y-1.5">
                 <p>
-                  <strong className="text-stone-200">K (Absorption):</strong> {lang === 'de' ? 'Wahrscheinlichkeit, dass ein Photon absorbiert wird.' : 'Probability that a photon is absorbed per unit depth.'}
+                  <strong className="text-stone-200">K (Absorption):</strong> {lang === 'de' ? 'Wahrscheinlichkeit, dass ein Photon absorbiert wird.' : lang === 'es' ? 'Probabilidad de que un fotón se absorba por unidad de profundidad.' : 'Probability that a photon is absorbed per unit depth.'}
                 </p>
                 <p>
-                  <strong className="text-stone-200">S (Scattering):</strong> {lang === 'de' ? 'Wahrscheinlichkeit, dass ein Photon an Pigmentpartikeln zurückgestreut wird.' : 'Probability of backward photon scatter.'}
+                  <strong className="text-stone-200">S (Scattering):</strong> {lang === 'de' ? 'Wahrscheinlichkeit, dass ein Photon an Pigmentpartikeln zurückgestreut wird.' : lang === 'es' ? 'Probabilidad de retrodispersión del fotón.' : 'Probability of backward photon scatter.'}
                 </p>
               </div>
             </div>
@@ -576,19 +576,19 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
                 Robert Deegan et al. (Nature 1997)
               </span>
               <h3 className="text-xl font-serif font-bold text-stone-900">
-                {lang === 'de' ? 'Der physikalische Kaffeering-Effekt (Edge Darkening)' : 'The Physical Coffee-Ring Effect (Edge Darkening)'}
+                {lang === 'de' ? 'Der physikalische Kaffeering-Effekt (Edge Darkening)' : lang === 'es' ? 'El efecto anillo de café (oscurecimiento del borde)' : 'The Physical Coffee-Ring Effect (Edge Darkening)'}
               </h3>
               <p className="text-xs text-stone-600 leading-relaxed">
                 {lang === 'de'
                   ? 'Wenn ein Tinten- oder Kaffeetropfen auf Papier trocknet, ist seine Kontaktlinie am Papier befestigt (Contact Line Pinning). Da der Rand viel dünner ist, verdunstet Wasser dort exponentiell schneller als im Zentrum. Um diese Wasserlücke zu füllen, strömt Flüssigkeit kontinuierlich von innen nach außen und transportiert schwebende Pigmentpartikel an den Rand.'
-                  : 'When an ink droplet dries on paper, its perimeter is pinned by surface roughness. Because the meniscus is thinnest at the boundary, water evaporates exponentially faster at the rim than at the center. Fluid continuity forces an outward capillary rush of liquid from center to edge, carrying suspended pigment particles and depositing a dense dark perimeter.'}
+                  : lang === 'es' ? 'Cuando una gota de tinta se seca sobre el papel, su perímetro queda anclado por la rugosidad de la superficie. Como el menisco es más delgado en el borde, el agua se evapora exponencialmente más rápido en el perímetro que en el centro. La continuidad del fluido fuerza un flujo capilar del centro hacia el borde que arrastra las partículas de pigmento y deposita un perímetro denso y oscuro.' : 'When an ink droplet dries on paper, its perimeter is pinned by surface roughness. Because the meniscus is thinnest at the boundary, water evaporates exponentially faster at the rim than at the center. Fluid continuity forces an outward capillary rush of liquid from center to edge, carrying suspended pigment particles and depositing a dense dark perimeter.'}
               </p>
             </div>
 
             {/* Evaporation Cross-Section Diagram */}
             <div className="p-4 bg-stone-50 rounded-xl border border-stone-200 space-y-3">
               <span className="text-xs font-mono font-bold text-stone-700 uppercase">
-                {lang === 'de' ? 'Querschnitt: Verdunstungsfluss J(r) & Randablagerung' : 'Cross-Section: Evaporative Flux J(r) & Rim Deposition'}
+                {lang === 'de' ? 'Querschnitt: Verdunstungsfluss J(r) & Randablagerung' : lang === 'es' ? 'Sección transversal: flujo de evaporación J(r) y depósito en el borde' : 'Cross-Section: Evaporative Flux J(r) & Rim Deposition'}
               </span>
               <div className="h-32 w-full bg-white rounded-lg border border-stone-300 relative overflow-hidden flex items-end px-4 py-2">
                 {/* Droplet curve */}
@@ -629,7 +629,7 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
             <p className="text-xs text-stone-300 leading-relaxed">
               {lang === 'de'
                 ? 'Die exakte thermische Strömungsgleichung ist in Echtzeit-WebGL2 zu rechenintensiv. Unser Fragment-Shader berechnet den lokalen Dichtegradienten |∇ρ| der Feuchtigkeitsgrenze. Die Pigmentabsorptionsrate wird mit (1 + c · |∇ρ|) multipliziert:'
-                : 'Evaluating full conjugate heat transfer in WebGL2 is computationally prohibitive. Our fragment shader evaluates the spatial gradient |∇ρ| of the contact line. Pigment deposition is multiplied by (1 + c · |∇ρ|), enforcing rim darkening wherever expanding fluid boundaries halt.'}
+                : lang === 'es' ? 'Calcular la transferencia de calor conjugada completa en WebGL2 es prohibitivo. Nuestro fragment shader evalúa el gradiente espacial |∇ρ| de la línea de contacto. El depósito de pigmento se multiplica por (1 + c · |∇ρ|), lo que impone el oscurecimiento del borde allí donde se detiene el frente del fluido.' : 'Evaluating full conjugate heat transfer in WebGL2 is computationally prohibitive. Our fragment shader evaluates the spatial gradient |∇ρ| of the contact line. Pigment deposition is multiplied by (1 + c · |∇ρ|), enforcing rim darkening wherever expanding fluid boundaries halt.'}
             </p>
             <div className="bg-stone-950 p-3 rounded-lg font-mono text-[11px] text-stone-300 border border-stone-800 space-y-1">
               <p className="text-stone-500">// Coffee-Ring Contact Line Rim Darkening</p>
@@ -652,12 +652,12 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
                 Porous Medium & Cellulose Fibers
               </span>
               <h3 className="text-xl font-serif font-bold text-stone-900">
-                {lang === 'de' ? 'Papier-Architektur: Faser-Anisotropie & fBm-Zahn' : 'Paper Architecture: Fiber Anisotropy & fBm Tooth'}
+                {lang === 'de' ? 'Papier-Architektur: Faser-Anisotropie & fBm-Zahn' : lang === 'es' ? 'Arquitectura del papel: anisotropía de fibra y grano fBm' : 'Paper Architecture: Fiber Anisotropy & fBm Tooth'}
               </h3>
               <p className="text-xs text-stone-600 leading-relaxed">
                 {lang === 'de'
                   ? 'Papier ist keine flache Ebene, sondern ein verfilztes Netz aus Zellulosefasern. Das Papiermikrorelief ("Tooth") wird durch 4 Oktaven fraktioneller Brownscher Bewegung (fBm) generiert. Die Kapillardurchdringung (Darcy’s Law) breitet sich bevorzugt entlang der Faserlaufrichtung aus – dies erzeugt die charakteristischen, gezackten Ausfransungen japanischer Sumi-e-Kalligraphie auf Washi-Papier.'
-                  : 'Paper is not a uniform 2D plane; it is a chaotic matrix of pressed cellulose fibers. Paper surface roughness ("tooth") is generated via 4 octaves of Fractional Brownian Motion (fBm). Capillary percolation (Darcy’s Law) routes fluid preferentially along the fiber grain vector rather than in a circle, producing authentic jagged sumi-e feathering on washi paper.'}
+                  : lang === 'es' ? 'El papel no es un plano 2D uniforme; es una matriz caótica de fibras de celulosa prensadas. La rugosidad de la superficie («grano») se genera con 4 octavas de movimiento browniano fraccionario (fBm). La percolación capilar (ley de Darcy) guía el fluido preferentemente a lo largo de la dirección de la fibra en lugar de en círculo, lo que produce el auténtico deshilachado sumi-e sobre papel washi.' : 'Paper is not a uniform 2D plane; it is a chaotic matrix of pressed cellulose fibers. Paper surface roughness ("tooth") is generated via 4 octaves of Fractional Brownian Motion (fBm). Capillary percolation (Darcy’s Law) routes fluid preferentially along the fiber grain vector rather than in a circle, producing authentic jagged sumi-e feathering on washi paper.'}
               </p>
             </div>
 
@@ -665,7 +665,7 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
             <div className="p-4 bg-stone-50 rounded-xl border border-stone-200 space-y-3">
               <div className="flex justify-between items-center text-xs font-mono">
                 <span className="font-bold text-stone-800">
-                  {lang === 'de' ? 'Anisotrope Leitfähigkeits-Ellipse T_ij' : 'Anisotropic Permeability Tensor T_ij'}
+                  {lang === 'de' ? 'Anisotrope Leitfähigkeits-Ellipse T_ij' : lang === 'es' ? 'Tensor de permeabilidad anisótropa T_ij' : 'Anisotropic Permeability Tensor T_ij'}
                 </span>
                 <span className="text-amber-700 font-semibold">{selectedPaper.nameDe.split(' ')[0]}</span>
               </div>
@@ -682,7 +682,7 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
           </div>
 
           <div className="lg:col-span-5 space-y-3">
-            <h4 className="font-serif font-bold text-stone-900 text-sm">{lang === 'de' ? 'Papiersorten im Vergleich' : 'Paper Presets Comparison'}</h4>
+            <h4 className="font-serif font-bold text-stone-900 text-sm">{lang === 'de' ? 'Papiersorten im Vergleich' : lang === 'es' ? 'Comparación de tipos de papel' : 'Paper Presets Comparison'}</h4>
             <div className="space-y-2">
               {PAPER_PRESETS.map((p) => {
                 const isSelected = selectedPaper.id === p.id;
@@ -716,7 +716,7 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
             <div className="flex items-center gap-2">
               <Code2 className="w-5 h-5 text-amber-400" />
               <h3 className="font-serif font-bold text-lg text-stone-100">
-                {lang === 'de' ? 'Kompilierte WebGL2 Fragment-Shader' : 'Compiled WebGL2 Fragment Shaders'}
+                {lang === 'de' ? 'Kompilierte WebGL2 Fragment-Shader' : lang === 'es' ? 'Fragment shaders WebGL2 compilados' : 'Compiled WebGL2 Fragment Shaders'}
               </h3>
             </div>
             <div className="flex gap-2">

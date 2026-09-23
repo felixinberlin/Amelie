@@ -356,7 +356,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
             }`}
           >
             <Cpu className="w-4 h-4" />
-            <span>{lang === 'de' ? 'WebGL2 Physik-Labor' : 'WebGL2 Physics Lab'}</span>
+            <span>{lang === 'de' ? 'WebGL2 Physik-Labor' : lang === 'es' ? 'Laboratorio de física WebGL2' : 'WebGL2 Physics Lab'}</span>
             <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-stone-900/30 text-current font-mono font-bold">
               GPU & KM
             </span>
@@ -370,7 +370,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
             }`}
           >
             <Brush className="w-4 h-4" />
-            <span>{lang === 'de' ? 'Sumi-e Zeichenbrett' : 'Sumi-e Drawing Canvas'}</span>
+            <span>{lang === 'de' ? 'Sumi-e Zeichenbrett' : lang === 'es' ? 'Lienzo de dibujo sumi-e' : 'Sumi-e Drawing Canvas'}</span>
           </button>
         </div>
 
@@ -378,10 +378,10 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
           {activeEngineMode === 'webgl-lab'
             ? lang === 'de'
               ? 'Kubelka-Munk Spektren & Navier-Stokes Advektion'
-              : 'Kubelka-Munk spectra & Navier-Stokes advection'
+              : lang === 'es' ? 'Espectros Kubelka-Munk y advección Navier-Stokes' : 'Kubelka-Munk spectra & Navier-Stokes advection'
             : lang === 'de'
             ? 'Freies Zeichnen mit Washi & Rußtusche'
-            : 'Free drawing with washi & soot ink'}
+            : lang === 'es' ? 'Dibujo libre con washi y tinta de hollín' : 'Free drawing with washi & soot ink'}
         </span>
       </div>
 
@@ -398,7 +398,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
           <div>
             <div className="flex items-center gap-2">
               <h2 className="font-serif text-lg font-bold text-white tracking-tight">
-                {lang === 'de' ? 'Tintenphysik-Simulation' : 'Wet Ink Physics'}
+                {lang === 'de' ? 'Tintenphysik-Simulation' : lang === 'es' ? 'Física de la tinta húmeda' : 'Wet Ink Physics'}
               </h2>
               <span
                 className={`text-[11px] font-mono px-2 py-0.5 rounded-full inline-flex items-center gap-1 ${
@@ -415,16 +415,16 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
                 {isWet
                   ? lang === 'de'
                     ? 'Flüssig (diffundiert)'
-                    : 'Wet (diffusing)'
+                    : lang === 'es' ? 'Húmeda (difundiendo)' : 'Wet (diffusing)'
                   : lang === 'de'
                   ? 'Trocken'
-                  : 'Settled'}
+                  : lang === 'es' ? 'Asentada' : 'Settled'}
               </span>
             </div>
             <p className="text-stone-400 text-xs">
               {lang === 'de'
                 ? 'Echte Kapillardiffusion & Kaffeering-Kanten auf Papierfasern.'
-                : 'Real capillary diffusion & coffee-ring edges through cellulose fibers.'}
+                : lang === 'es' ? 'Difusión capilar real y bordes de anillo de café a través de las fibras de celulosa.' : 'Real capillary diffusion & coffee-ring edges through cellulose fibers.'}
             </p>
           </div>
         </div>
@@ -439,7 +439,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
                 ? 'bg-stone-800 hover:bg-stone-700 text-stone-200 border-stone-700 cursor-pointer'
                 : 'bg-stone-900/50 text-stone-600 border-stone-800 cursor-not-allowed'
             }`}
-            title={lang === 'de' ? 'Rückgängig' : 'Undo'}
+            title={lang === 'de' ? 'Rückgängig' : lang === 'es' ? 'Deshacer' : 'Undo'}
           >
             <RotateCcw className="w-4 h-4 text-amber-400" />
           </button>
@@ -450,26 +450,26 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
             title={
               lang === 'de'
                 ? 'Trocknet nasse Tinte sofort (Schicht fixieren)'
-                : 'Instantly dries wet ink (Fix layer)'
+                : lang === 'es' ? 'Seca al instante la tinta húmeda (capa de fijación)' : 'Instantly dries wet ink (Fix layer)'
             }
           >
             <Wind className="w-3.5 h-3.5 text-blue-400" />
-            <span>{lang === 'de' ? 'Trocknen' : 'Dry Now'}</span>
+            <span>{lang === 'de' ? 'Trocknen' : lang === 'es' ? 'Secar ahora' : 'Dry Now'}</span>
           </button>
 
           <button
             onClick={handleAutoDemo}
             className="px-3 py-1.5 rounded-xl bg-amber-600 hover:bg-amber-500 text-white text-xs font-medium transition-colors cursor-pointer inline-flex items-center gap-1.5 shadow-xs"
-            title={lang === 'de' ? 'Ensō-Teststrich zeichnen' : 'Draw test stroke'}
+            title={lang === 'de' ? 'Ensō-Teststrich zeichnen' : lang === 'es' ? 'Dibujar trazo de prueba' : 'Draw test stroke'}
           >
             <Play className="w-3.5 h-3.5 fill-current" />
-            <span>{lang === 'de' ? 'Demo-Strich' : 'Test Stroke'}</span>
+            <span>{lang === 'de' ? 'Demo-Strich' : lang === 'es' ? 'Trazo de prueba' : 'Test Stroke'}</span>
           </button>
 
           <button
             onClick={handleClear}
             className="p-2 rounded-xl bg-stone-800 hover:bg-stone-700 text-stone-300 border border-stone-700 text-xs transition-colors cursor-pointer"
-            title={lang === 'de' ? 'Leeren' : 'Clear canvas'}
+            title={lang === 'de' ? 'Leeren' : lang === 'es' ? 'Borrar lienzo' : 'Clear canvas'}
           >
             <Trash2 className="w-4 h-4 text-red-400" />
           </button>
@@ -477,7 +477,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
           <button
             onClick={handleExportPng}
             className="p-2 rounded-xl bg-stone-800 hover:bg-stone-700 text-stone-200 border border-stone-700 text-xs transition-colors cursor-pointer"
-            title={lang === 'de' ? 'Als PNG speichern' : 'Save PNG'}
+            title={lang === 'de' ? 'Als PNG speichern' : lang === 'es' ? 'Guardar PNG' : 'Save PNG'}
           >
             <Download className="w-4 h-4 text-emerald-400" />
           </button>
@@ -508,7 +508,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
                   : 'text-stone-300 hover:text-white'
               }`}
             >
-              {lang === 'de' ? 'Tinte & Papier' : 'Ink & Paper'}
+              {lang === 'de' ? 'Tinte & Papier' : lang === 'es' ? 'Tinta y papel' : 'Ink & Paper'}
             </button>
             <button
               onClick={() => setViewMode('moisture')}
@@ -519,7 +519,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
               }`}
             >
               <Droplets className="w-3 h-3 text-blue-300" />
-              <span>{lang === 'de' ? 'Wasserfront' : 'Water Front'}</span>
+              <span>{lang === 'de' ? 'Wasserfront' : lang === 'es' ? 'Frente de agua' : 'Water Front'}</span>
             </button>
           </div>
         </div>
@@ -530,7 +530,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
         {/* 1. Drawing Tool & Size */}
         <div className="space-y-3">
           <label className="block font-bold text-stone-700 uppercase tracking-wider text-[11px] font-mono">
-            1. {lang === 'de' ? 'Werkzeug' : 'Tool'}
+            1. {lang === 'de' ? 'Werkzeug' : lang === 'es' ? 'Herramienta' : 'Tool'}
           </label>
           <div className="grid grid-cols-3 gap-1.5">
             <button
@@ -542,7 +542,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
               }`}
             >
               <Brush className="w-4 h-4 mx-auto mb-1" />
-              <span>{lang === 'de' ? 'Pinsel' : 'Brush'}</span>
+              <span>{lang === 'de' ? 'Pinsel' : lang === 'es' ? 'Pincel' : 'Brush'}</span>
             </button>
 
             <button
@@ -554,7 +554,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
               }`}
             >
               <PenTool className="w-4 h-4 mx-auto mb-1" />
-              <span>{lang === 'de' ? 'Feder' : 'Fine Pen'}</span>
+              <span>{lang === 'de' ? 'Feder' : lang === 'es' ? 'Plumilla' : 'Fine Pen'}</span>
             </button>
 
             <button
@@ -566,13 +566,13 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
               }`}
             >
               <Droplets className="w-4 h-4 mx-auto mb-1 text-blue-500" />
-              <span>{lang === 'de' ? 'Wasser' : 'Water'}</span>
+              <span>{lang === 'de' ? 'Wasser' : lang === 'es' ? 'Agua' : 'Water'}</span>
             </button>
           </div>
 
           <div>
             <div className="flex justify-between text-stone-600 mb-1">
-              <span>{lang === 'de' ? 'Größe' : 'Brush Size'}:</span>
+              <span>{lang === 'de' ? 'Größe' : lang === 'es' ? 'Tamaño del pincel' : 'Brush Size'}:</span>
               <span className="font-mono font-bold">{brushRadius} px</span>
             </div>
             <input
@@ -590,7 +590,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
         {/* 2. Ink & Paper Substrate */}
         <div className="space-y-3">
           <label className="block font-bold text-stone-700 uppercase tracking-wider text-[11px] font-mono">
-            2. {lang === 'de' ? 'Farbe & Papier' : 'Ink & Paper'}
+            2. {lang === 'de' ? 'Farbe & Papier' : lang === 'es' ? 'Tinta y papel' : 'Ink & Paper'}
           </label>
 
           {/* 4 Essential Pigments */}
@@ -644,19 +644,19 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
                     {paper.id === 'washi'
                       ? lang === 'de'
                         ? 'Washi (Saugfähig)'
-                        : 'Washi (High Bleed)'
+                        : lang === 'es' ? 'Washi (mucho sangrado)' : 'Washi (High Bleed)'
                       : lang === 'de'
                       ? 'Geleimt (Glatt)'
-                      : 'Sized (Low Bleed)'}
+                      : lang === 'es' ? 'Encolado (poco sangrado)' : 'Sized (Low Bleed)'}
                   </div>
                   <div className="text-[10px] text-stone-500 mt-0.5">
                     {paper.id === 'washi'
                       ? lang === 'de'
                         ? 'Starker Kapillar-Wick'
-                        : 'Strong fiber wicking'
+                        : lang === 'es' ? 'Fuerte absorción por la fibra' : 'Strong fiber wicking'
                       : lang === 'de'
                       ? 'Scharfe Ränder'
-                      : 'Sharp crisp edges'}
+                      : lang === 'es' ? 'Bordes nítidos' : 'Sharp crisp edges'}
                   </div>
                 </button>
               );
@@ -667,13 +667,13 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
         {/* 3. Real Physics Simulation Controls */}
         <div className="space-y-3">
           <label className="block font-bold text-stone-700 uppercase tracking-wider text-[11px] font-mono">
-            3. {lang === 'de' ? 'Physik-Parameter' : 'Physics Simulation'}
+            3. {lang === 'de' ? 'Physik-Parameter' : lang === 'es' ? 'Simulación física' : 'Physics Simulation'}
           </label>
 
           {/* Capillary Bleed Rate */}
           <div>
             <div className="flex justify-between text-stone-600 mb-1">
-              <span>{lang === 'de' ? 'Kapillares Ausbluten' : 'Capillary Bleed'}:</span>
+              <span>{lang === 'de' ? 'Kapillares Ausbluten' : lang === 'es' ? 'Sangrado capilar' : 'Capillary Bleed'}:</span>
               <span className="font-mono font-bold">{bleedSpeed.toFixed(1)}x</span>
             </div>
             <input
@@ -690,7 +690,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
           {/* Board Gravity Tilt */}
           <div>
             <div className="text-stone-600 mb-1.5 flex justify-between">
-              <span>{lang === 'de' ? 'Schwerkraft-Neigung' : 'Board Gravity Tilt'}:</span>
+              <span>{lang === 'de' ? 'Schwerkraft-Neigung' : lang === 'es' ? 'Inclinación del tablero' : 'Board Gravity Tilt'}:</span>
               <span className="font-mono text-stone-500 font-bold capitalize">{gravityTilt}</span>
             </div>
             <div className="grid grid-cols-4 gap-1">
@@ -701,7 +701,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
                     ? 'bg-stone-900 text-white border-stone-900 font-bold'
                     : 'border-stone-200 hover:bg-stone-50 text-stone-600'
                 }`}
-                title={lang === 'de' ? 'Flach (keine Schwerkraft)' : 'Flat (no gravity)'}
+                title={lang === 'de' ? 'Flach (keine Schwerkraft)' : lang === 'es' ? 'Plano (sin gravedad)' : 'Flat (no gravity)'}
               >
                 0°
               </button>
@@ -712,7 +712,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
                     ? 'bg-stone-900 text-white border-stone-900 font-bold'
                     : 'border-stone-200 hover:bg-stone-50 text-stone-600'
                 }`}
-                title={lang === 'de' ? 'Nach unten fließen' : 'Tilt downward'}
+                title={lang === 'de' ? 'Nach unten fließen' : lang === 'es' ? 'Inclinar hacia abajo' : 'Tilt downward'}
               >
                 ↓
               </button>
@@ -723,7 +723,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
                     ? 'bg-stone-900 text-white border-stone-900 font-bold'
                     : 'border-stone-200 hover:bg-stone-50 text-stone-600'
                 }`}
-                title={lang === 'de' ? 'Nach links fließen' : 'Tilt left'}
+                title={lang === 'de' ? 'Nach links fließen' : lang === 'es' ? 'Inclinar a la izquierda' : 'Tilt left'}
               >
                 ←
               </button>
@@ -734,7 +734,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
                     ? 'bg-stone-900 text-white border-stone-900 font-bold'
                     : 'border-stone-200 hover:bg-stone-50 text-stone-600'
                 }`}
-                title={lang === 'de' ? 'Nach rechts fließen' : 'Tilt right'}
+                title={lang === 'de' ? 'Nach rechts fließen' : lang === 'es' ? 'Inclinar a la derecha' : 'Tilt right'}
               >
                 →
               </button>

@@ -146,6 +146,7 @@ export function App() {
 
   const handleBisociationToPacker = (candidateData: Partial<CandidateIdea>) => {
     const isDe = lang === 'de';
+    const isEs = lang === 'es';
     setPackerDraft({
       title: candidateData.title || '',
       oneLiner: (isDe ? candidateData.conceptDe : candidateData.conceptEn) || '',
@@ -154,15 +155,15 @@ export function App() {
       problem: (isDe ? candidateData.problemDe : candidateData.problemEn) || (isDe ? candidateData.conceptDe : candidateData.conceptEn) || '',
       whyNow: isDe
         ? '- Norm als PDF vorhanden, aber kein digitales Webtool\n- 0 Euro Serverkosten bei lokaler Berechnung\n- Unbesetzte Lücke vor kommerziellen Kopien'
-        : '- Official standard exists as PDF, no digital web tool\n- Zero server cost with local computation\n- Unoccupied gap ahead of commercial copycats',
+        : isEs ? '- Existe la norma oficial en PDF, pero ninguna herramienta web\n- Cero coste de servidor gracias al cálculo local\n- Hueco libre antes de que lleguen las copias comerciales' : '- Official standard exists as PDF, no digital web tool\n- Zero server cost with local computation\n- Unoccupied gap ahead of commercial copycats',
       sketch: isDe
         ? `1. Erfassung der Parameter im Browser\n2. Deterministische Formelberechnung nach Norm\n3. Exportierbarer Prüfnachweis für ${candidateData.recipientDe || 'den Empfänger'}`
         : `1. Browser parameter input\n2. Deterministic formula calculation\n3. Exportable compliance sheet for ${candidateData.recipientEn || 'recipient'}`,
-      ticketName: isDe ? 'Ticket #1: 3-Klick-Rechner' : 'Ticket #1: 3-click calculator',
-      ticketCriteria: isDe ? 'Liefert verifizierte Kennzahl im Browser.' : 'Outputs verified rating in client.',
+      ticketName: isDe ? 'Ticket #1: 3-Klick-Rechner' : isEs ? 'Ticket #1: calculadora de 3 clics' : 'Ticket #1: 3-click calculator',
+      ticketCriteria: isDe ? 'Liefert verifizierte Kennzahl im Browser.' : isEs ? 'Devuelve una cifra verificada en el navegador.' : 'Outputs verified rating in client.',
       failureMode: isDe
         ? 'Bruchstelle: Fehlende personelle Kapazität beim Empfänger zur Integration.'
-        : 'Failure point: Lack of staff capacity at recipient to adopt tool.',
+        : isEs ? 'Punto de ruptura: falta de personal en el destinatario para adoptar la herramienta.' : 'Failure point: Lack of staff capacity at recipient to adopt tool.',
       priorArt: (isDe ? candidateData.evidenceDe : candidateData.evidenceEn) || '',
     });
     setCurrentTab('packer');
@@ -171,6 +172,7 @@ export function App() {
 
   const handlePackCandidate = (candidate: CandidateIdea) => {
     const isDe = lang === 'de';
+    const isEs = lang === 'es';
     const whyList = isDe ? candidate.whyNowDe : candidate.whyNowEn;
     const whyFormatted = whyList && whyList.length > 0 ? whyList.map((w) => `- ${w}`).join('\n') : '';
 
@@ -184,11 +186,11 @@ export function App() {
       sketch: isDe
         ? `Architektur-Entwurf für ${candidate.title}:\n1. Daten-/Fotoeingabe über Web-Oberfläche\n2. Deterministische Berechnung oder lokales KI-Modell (datensparsam)\n3. Strukturierter Prüfbericht für den Empfänger (${candidate.recipientDe})`
         : `Architecture sketch for ${candidate.title}:\n1. Input capture via mobile/web UI\n2. Deterministic scoring or lightweight local inference\n3. Structured verification report for recipient (${candidate.recipientEn})`,
-      ticketName: (isDe ? candidate.firstStepTicketDe : candidate.firstStepTicketEn) || (isDe ? 'Ticket #1: Minimaler Prototyp' : 'Ticket #1: Minimal Prototype'),
-      ticketCriteria: (isDe ? candidate.firstStepCriteriaDe : candidate.firstStepCriteriaEn) || (isDe ? 'Lauffähig im Browser ohne Serverkosten.' : 'Functional in browser without servers.'),
+      ticketName: (isDe ? candidate.firstStepTicketDe : candidate.firstStepTicketEn) || (isDe ? 'Ticket #1: Minimaler Prototyp' : isEs ? 'Ticket #1: prototipo mínimo' : 'Ticket #1: Minimal Prototype'),
+      ticketCriteria: (isDe ? candidate.firstStepCriteriaDe : candidate.firstStepCriteriaEn) || (isDe ? 'Lauffähig im Browser ohne Serverkosten.' : isEs ? 'Funciona en el navegador sin servidores.' : 'Functional in browser without servers.'),
       failureMode: isDe
         ? 'Bruchstelle: Wenn der Empfänger keine organisatorische Kapazität hat, den Prototyp in die eigene IT einzubinden.'
-        : 'Failure point: If the recipient organization lacks technical bandwidth to adopt the prototype.',
+        : isEs ? 'Punto de ruptura: que la organización destinataria no tenga capacidad técnica para adoptar el prototipo.' : 'Failure point: If the recipient organization lacks technical bandwidth to adopt the prototype.',
       priorArt: (isDe ? candidate.evidenceDe : candidate.evidenceEn) || '',
     });
 

@@ -16,7 +16,7 @@ import {
   RotateCcw,
 } from 'lucide-react';
 import { MatrixRow, DeliveryEmail, Language, DoseItem } from '../types';
-import { getTranslation, getLocalizedTitle } from '../i18n';
+import { getTranslation, getLocalizedTitle, withCount } from '../i18n';
 import { resolveEmailBodyDoseUrls, getDoseUrl } from '../utils/doseUrl';
 import { MusterEmailsSection } from './MusterEmailsSection';
 import { getSentEmailsMap, markEmailAsSent, SentEmailRecord } from '../services/storageService';
@@ -151,7 +151,7 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
   };
 
   const getStatusLabel = (status: string) => {
-    if (status === 'gepackt') return lang === 'de' ? 'gepackt' : lang === 'es' ? 'empacada' : 'packed';
+    if (status === 'gepackt') return lang === 'de' ? 'gepackt' : lang === 'es' ? 'empaquetada' : 'packed';
     if (status === 'entsorgt') return lang === 'de' ? 'entsorgt' : lang === 'es' ? 'descartada' : 'discarded';
     if (status === 'gebaut') return lang === 'de' ? 'gebaut' : lang === 'es' ? 'construida' : 'built';
     if (status === 'zugestellt') return lang === 'de' ? 'zugestellt' : lang === 'es' ? 'entregada' : 'delivered';
@@ -220,7 +220,7 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
                 <span>{t.ui.deliveries_badge}</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-bold font-serif-title text-stone-900 tracking-tight">
-                {t.ui.deliveries_heading}
+                {withCount(t.ui.deliveries_heading, deliveries.length)}
               </h2>
               <p className="text-sm sm:text-base text-stone-700 leading-relaxed">
                 {t.ui.deliveries_subheading}
@@ -230,9 +230,9 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
             {/* Delivery Progress & Quick Stats */}
             <div className="p-4 rounded-xl bg-white border border-amber-200/80 shadow-2xs space-y-2.5 shrink-0 min-w-[240px]">
               <div className="flex items-center justify-between text-xs font-mono-code font-bold">
-                <span className="text-stone-700">{isDe ? 'Status Q4 2026:' : 'Q4 2026 Status:'}</span>
+                <span className="text-stone-700">{isDe ? 'Status Q4 2026:' : isEs ? 'Estado Q4 2026:' : 'Q4 2026 Status:'}</span>
                 <span className="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300">
-                  {totalSentCount} / {deliveries.length} {isDe ? 'versendet' : 'sent'}
+                  {totalSentCount} / {deliveries.length} {isDe ? 'versendet' : isEs ? 'enviados' : 'sent'}
                 </span>
               </div>
 
@@ -253,7 +253,7 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
                     mailFilter === 'all' ? 'bg-stone-900 text-white' : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
                   }`}
                 >
-                  {isDe ? 'Alle' : 'All'} ({deliveries.length})
+                  {isDe ? 'Alle' : isEs ? 'Todos' : 'All'} ({deliveries.length})
                 </button>
                 <button
                   type="button"
@@ -262,7 +262,7 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
                     mailFilter === 'sent' ? 'bg-emerald-700 text-white' : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
                   }`}
                 >
-                  {isDe ? 'Versendet' : 'Sent'} ({totalSentCount})
+                  {isDe ? 'Versendet' : isEs ? 'Enviados' : 'Sent'} ({totalSentCount})
                 </button>
                 <button
                   type="button"
@@ -271,7 +271,7 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
                     mailFilter === 'pending' ? 'bg-amber-700 text-white' : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
                   }`}
                 >
-                  {isDe ? 'Ausstehend' : 'Pending'} ({deliveries.length - totalSentCount})
+                  {isDe ? 'Ausstehend' : isEs ? 'Pendientes' : 'Pending'} ({deliveries.length - totalSentCount})
                 </button>
               </div>
             </div>
@@ -325,7 +325,7 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
                           isSelected ? 'bg-stone-800 text-stone-300' : 'bg-stone-100 text-stone-600'
                         }`}
                       >
-                        {isDe ? 'Ausstehend' : 'Ready'}
+                        {isDe ? 'Ausstehend' : isEs ? 'Listos' : 'Ready'}
                       </span>
                     )}
                   </div>
@@ -363,14 +363,14 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
                     </span>
                     {currentMailSentDate && (
                       <span className="px-2 py-0.5 rounded bg-emerald-100 font-mono-code text-[11px] text-emerald-800 border border-emerald-300">
-                        {isDe ? 'Datum:' : 'Date:'} {currentMailSentDate.split('T')[0]}
+                        {isDe ? 'Datum:' : isEs ? 'Fecha:' : 'Date:'} {currentMailSentDate.split('T')[0]}
                       </span>
                     )}
                   </div>
                   <p className="text-emerald-800 text-xs mt-0.5">
                     {isDe
                       ? 'Geschenk übergeben (CC0). Gemäß Amélie-Pledge wird niemals nachgefasst oder um Feedback gebeten.'
-                      : 'Gift handed over (CC0). Per the Amélie Pledge, no follow-up will ever be sent.'}
+                      : isEs ? 'Regalo entregado (CC0). Según el compromiso Amélie, nunca se enviará seguimiento.' : 'Gift handed over (CC0). Per the Amélie Pledge, no follow-up will ever be sent.'}
                   </p>
                 </div>
               </div>
@@ -379,10 +379,10 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
                 type="button"
                 onClick={() => handleToggleSent(currentMail.id)}
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white hover:bg-stone-50 border border-emerald-300 text-emerald-800 text-xs font-mono-code font-semibold cursor-pointer transition-colors shadow-2xs shrink-0 self-start sm:self-auto"
-                title={isDe ? 'Als ungesendet zurücksetzen' : 'Reset as unsend'}
+                title={isDe ? 'Als ungesendet zurücksetzen' : isEs ? 'Marcar de nuevo como no enviado' : 'Reset as unsend'}
               >
                 <RotateCcw className="w-3.5 h-3.5" />
-                <span>{isDe ? 'Als ungesendet markieren' : 'Mark as unsend'}</span>
+                <span>{isDe ? 'Als ungesendet markieren' : isEs ? 'Marcar como no enviado' : 'Mark as unsend'}</span>
               </button>
             </div>
           ) : (
@@ -392,7 +392,7 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
                 <span>
                   {isDe
                     ? 'Status: Versandbereit für Q4 2026 · Noch nicht versendet'
-                    : 'Status: Ready for dispatch Q4 2026 · Not yet sent'}
+                    : isEs ? 'Estado: listo para enviar en Q4 2026 · aún no enviado' : 'Status: Ready for dispatch Q4 2026 · Not yet sent'}
                 </span>
               </div>
 
@@ -417,7 +417,7 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
                   </span>
                   {isCurrentMailSent && (
                     <span className="text-[11px] font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 border border-emerald-300">
-                      ✓ {isDe ? 'Versendet' : 'Sent'}
+                      ✓ {isDe ? 'Versendet' : isEs ? 'Enviados' : 'Sent'}
                     </span>
                   )}
                 </div>
@@ -441,7 +441,7 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
                       ? 'bg-emerald-100 hover:bg-emerald-200 text-emerald-900 border border-emerald-400'
                       : 'bg-emerald-700 hover:bg-emerald-800 text-white'
                   }`}
-                  title={isCurrentMailSent ? (isDe ? 'Klicken, um Status zu ändern' : 'Click to toggle') : ''}
+                  title={isCurrentMailSent ? (isDe ? 'Klicken, um Status zu ändern' : isEs ? 'Clic para cambiar' : 'Click to toggle') : ''}
                 >
                   <Check className="w-4 h-4" />
                   <span>
@@ -456,10 +456,10 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
                   type="button"
                   onClick={() => handleOpenInEmailClient(currentMail)}
                   className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-stone-200 hover:bg-stone-300 text-stone-800 text-xs font-mono-code font-semibold transition-colors shadow-xs cursor-pointer"
-                  title={isDe ? 'Im lokalen E-Mail-Programm öffnen (mailto:)' : 'Open in local mail client (mailto:)'}
+                  title={isDe ? 'Im lokalen E-Mail-Programm öffnen (mailto:)' : isEs ? 'Abrir en el cliente de correo local (mailto:)' : 'Open in local mail client (mailto:)'}
                 >
                   <Send className="w-3.5 h-3.5 text-stone-700" />
-                  <span>{isDe ? 'In Mailer öffnen' : 'Open in Mailer'}</span>
+                  <span>{isDe ? 'In Mailer öffnen' : isEs ? 'Abrir en el correo' : 'Open in Mailer'}</span>
                 </button>
 
                 {/* Copy Email Text */}
@@ -543,7 +543,7 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
                             }
                           }}
                           className="hover:underline font-bold flex items-center gap-1 text-[#8c1d40]"
-                          title={lang === 'de' ? 'Als Einzelseite öffnen' : 'Open as Single Page'}
+                          title={lang === 'de' ? 'Als Einzelseite öffnen' : lang === 'es' ? 'Abrir como página' : 'Open as Single Page'}
                         >
                           <span>🎁 {linkedDose ? linkedDose.title : doseId}</span>
                           <ExternalLink className="w-3 h-3" />
@@ -555,7 +555,7 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
                           type="button"
                           onClick={() => onSelectDoseById(doseId)}
                           className="text-[11px] font-mono-code text-stone-600 hover:text-stone-900 px-1 py-0.5 rounded hover:bg-amber-200/70"
-                          title={lang === 'de' ? 'Im Popup öffnen' : 'Open in popup'}
+                          title={lang === 'de' ? 'Im Popup öffnen' : lang === 'es' ? 'Abrir en ventana emergente' : 'Open in popup'}
                         >
                           Popup
                         </button>
@@ -593,7 +593,7 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
                   {lang === 'de' ? 'Nachricht (mit generierten Dosen-URLs):' : lang === 'es' ? 'Mensaje (con URLs generadas):' : 'Body (with generated tin URLs):'}
                 </span>
                 <span className="text-[11px] font-mono-code text-amber-800 bg-amber-100 px-2 py-0.5 rounded">
-                  {lang === 'de' ? '« Link zur Dose » aufgelöst' : '« Link zur Dose » resolved'}
+                  {lang === 'de' ? '« Link zur Dose » aufgelöst' : lang === 'es' ? '« Enlace a la lata » resuelto' : '« Link zur Dose » resolved'}
                 </span>
               </div>
               <pre className="p-5 rounded-xl bg-[#2a2723] text-stone-200 text-xs font-mono-code whitespace-pre-wrap leading-relaxed overflow-x-auto border border-stone-800 max-h-96">
@@ -616,13 +616,13 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
               </div>
               <div>
                 <h3 className="text-sm font-bold text-amber-950 font-serif-title">
-                  {lang === 'de' ? 'Neue ungepackte Dosen-Ideen (Schritt 0,5)' : lang === 'es' ? 'Nuevas ideas aún no empacadas (Paso 0.5)' : 'New Not Yet Packed Tin Candidates (Step 0.5)'}
+                  {lang === 'de' ? 'Neue ungepackte Dosen-Ideen (Schritt 0,5)' : lang === 'es' ? 'Nuevas ideas aún no empaquetadas (Paso 0.5)' : 'New Not Yet Packed Tin Candidates (Step 0.5)'}
                 </h3>
                 <p className="text-xs text-amber-900/80 mt-0.5">
                   {lang === 'de'
                     ? 'Recherchierte Lücken (Glasanflug-Ampel, Brettchen-Vorsortierer, Streiflicht...) im Ideenspeicher prüfen & packen.'
                     : lang === 'es'
-                    ? 'Brechas investigadas (semáforo de colisión con cristal, pre-clasificador de nidos, luz rasante...) listas para inspeccionar y empacar.'
+                    ? 'Brechas investigadas (semáforo de colisión con cristal, pre-clasificador de nidos, luz rasante...) listas para inspeccionar y empaquetar.'
                     : 'Surveyed gaps (Glass hazard score, Bee nesting annotator, Grazing light...) ready to inspect & pack.'}
                 </p>
               </div>
@@ -642,7 +642,7 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
               {t.ui.matrix_heading}
             </h2>
             <p className="text-xs sm:text-sm text-stone-600">
-              {t.ui.matrix_subheading}
+              {withCount(t.ui.matrix_subheading, matrix.length)}
             </p>
           </div>
 
@@ -667,7 +667,7 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
               className="px-3 py-1.5 rounded-lg border border-stone-300 bg-white text-xs font-medium text-stone-700 shadow-xs"
             >
               <option value="all">{lang === 'de' ? 'Alle Status' : lang === 'es' ? 'Todos los estados' : 'All Statuses'}</option>
-              <option value="gepackt">{lang === 'de' ? 'gepackt (bereit)' : lang === 'es' ? 'empacada (lista)' : 'packed (ready)'}</option>
+              <option value="gepackt">{lang === 'de' ? 'gepackt (bereit)' : lang === 'es' ? 'empaquetada (lista)' : 'packed (ready)'}</option>
               <option value="entsorgt">{lang === 'de' ? 'entsorgt' : lang === 'es' ? 'descartada' : 'discarded'}</option>
               <option value="zugestellt">{lang === 'de' ? 'zugestellt' : lang === 'es' ? 'entregada' : 'delivered'}</option>
               <option value="gebaut">{lang === 'de' ? 'gebaut' : lang === 'es' ? 'construida' : 'built'}</option>
@@ -721,7 +721,7 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
                                 }
                               }}
                               className="text-[#8c1d40] hover:underline text-xs flex items-center gap-1 font-semibold"
-                              title={lang === 'de' ? 'Einzelseite & URL' : 'Single Page & URL'}
+                              title={lang === 'de' ? 'Einzelseite & URL' : lang === 'es' ? 'Página única y URL' : 'Single Page & URL'}
                             >
                               <span>{t.ui.open_tin}</span>
                               <ExternalLink className="w-2.5 h-2.5" />
@@ -731,7 +731,7 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
                               type="button"
                               onClick={() => onSelectDoseById(row.doseId!)}
                               className="text-stone-500 hover:text-stone-800 text-[11px] font-mono-code"
-                              title={lang === 'de' ? 'Im Popup öffnen' : 'Open in popup'}
+                              title={lang === 'de' ? 'Im Popup öffnen' : lang === 'es' ? 'Abrir en ventana emergente' : 'Open in popup'}
                             >
                               Popup
                             </button>
@@ -739,7 +739,7 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
                               type="button"
                               onClick={(e) => handleCopyDoseUrl(e, row.doseId!)}
                               className="p-0.5 text-stone-400 hover:text-stone-700"
-                              title={copiedDoseUrlId === row.doseId ? (lang === 'de' ? 'URL kopiert!' : 'URL copied!') : (lang === 'de' ? 'URL kopieren' : 'Copy URL')}
+                              title={copiedDoseUrlId === row.doseId ? (lang === 'de' ? 'URL kopiert!' : lang === 'es' ? '¡URL copiada!' : 'URL copied!') : (lang === 'de' ? 'URL kopieren' : lang === 'es' ? 'Copiar URL' : 'Copy URL')}
                             >
                               {copiedDoseUrlId === row.doseId ? (
                                 <Check className="w-3 h-3 text-emerald-700" />

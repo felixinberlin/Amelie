@@ -438,7 +438,7 @@ ${bookChapters
 
           {/* Poetic One-Liner Box */}
           <div className="p-5 sm:p-6 rounded-2xl bg-[#fffdf9]/90 border border-[#d8cbba] text-[#3b2a1c] font-amelie text-lg sm:text-xl md:text-2xl italic leading-relaxed shadow-xs">
-            « {isDe ? dose.oneLinerDe : dose.oneLinerEn} »
+            « {isDe ? dose.oneLinerDe : (isEs && dose.oneLinerEs) || dose.oneLinerEn} »
           </div>
 
           {/* Recipient & Tags Grid */}
@@ -448,7 +448,7 @@ ${bookChapters
                 {t.ui.recipient}
               </span>
               <p className="text-sm font-bold text-[#2b1e16]">
-                {isDe ? dose.recipientsDe : dose.recipientsEn}
+                {isDe ? dose.recipientsDe : (isEs && dose.recipientsEs) || dose.recipientsEn}
               </p>
             </div>
 
@@ -497,7 +497,7 @@ ${bookChapters
                 onClick={() => setShowEmbeddedSimulator((prev) => !prev)}
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#faf5eb] hover:bg-[#ede3d1] text-[#5c4a3d] border border-[#d8cbba] text-xs font-typewriter font-bold transition-colors cursor-pointer"
               >
-                <span>{showEmbeddedSimulator ? (isDe ? 'Ausblenden' : 'Hide') : (isDe ? 'Einblenden' : 'Show')}</span>
+                <span>{showEmbeddedSimulator ? (isDe ? 'Ausblenden' : isEs ? 'Ocultar' : 'Hide') : (isDe ? 'Einblenden' : isEs ? 'Mostrar' : 'Show')}</span>
               </button>
 
               {onOpenSimulatorTab && (
@@ -544,7 +544,7 @@ ${bookChapters
             </h2>
           </div>
           <div className="text-sm sm:text-base text-[#4a3b2c] leading-relaxed font-sans whitespace-pre-line">
-            {isDe ? dose.problemDe : dose.problemEn}
+            {isDe ? dose.problemDe : (isEs && dose.problemEs) || dose.problemEn}
           </div>
         </section>
 
@@ -557,7 +557,7 @@ ${bookChapters
             </h2>
           </div>
           <ul className="space-y-2.5 pt-1">
-            {(isDe ? dose.whyNowDe : dose.whyNowEn).map((point, idx) => (
+            {(isDe ? dose.whyNowDe : (isEs && dose.whyNowEs) || dose.whyNowEn).map((point, idx) => (
               <li key={idx} className="flex items-start gap-3 text-sm text-[#4a3b2c] leading-relaxed">
                 <span className="w-5 h-5 rounded-full bg-[#faf5eb] border border-[#d8cbba] text-[#8c1d40] text-xs font-typewriter font-bold flex items-center justify-center shrink-0 mt-0.5">
                   {idx + 1}
@@ -577,7 +577,7 @@ ${bookChapters
             </h2>
           </div>
           <div className="p-5 rounded-xl bg-[#faf5eb] border border-[#dfd1be] text-sm text-[#3b2a1c] font-mono-code whitespace-pre-wrap leading-relaxed">
-            {isDe ? dose.sketchDe : dose.sketchEn}
+            {isDe ? dose.sketchDe : (isEs && dose.sketchEs) || dose.sketchEn}
           </div>
         </section>
 
@@ -595,7 +595,7 @@ ${bookChapters
 
           <div className="space-y-2">
             <span className="text-xs font-typewriter uppercase tracking-wider text-[#1b4332] font-bold block">
-              {isDe ? 'Ticket-Titel:' : 'Ticket Scope:'}
+              {isDe ? 'Ticket-Titel:' : isEs ? 'Alcance del ticket:' : 'Ticket Scope:'}
             </span>
             <div className="p-3.5 rounded-xl bg-white border border-[#c8e6c9] font-bold text-sm text-[#143527]">
               {isDe ? dose.firstStepDe.ticket : dose.firstStepEn.ticket}
@@ -604,7 +604,7 @@ ${bookChapters
 
           <div className="space-y-2">
             <span className="text-xs font-typewriter uppercase tracking-wider text-[#1b4332] font-bold block">
-              {isDe ? 'Definition of Done (Abnahmekriterien):' : 'Definition of Done (Criteria):'}
+              {isDe ? 'Definition of Done (Abnahmekriterien):' : isEs ? 'Criterio de terminado:' : 'Definition of Done (Criteria):'}
             </span>
             <div className="p-4 rounded-xl bg-white border border-[#c8e6c9] text-xs sm:text-sm text-[#2b1e16] font-typewriter leading-relaxed">
               {isDe ? dose.firstStepDe.criteria : dose.firstStepEn.criteria}
@@ -621,7 +621,7 @@ ${bookChapters
             </h2>
           </div>
           <p className="text-xs sm:text-sm text-[#7f1d1d] font-typewriter leading-relaxed">
-            {isDe ? dose.failureModeDe : dose.failureModeEn}
+            {isDe ? dose.failureModeDe : (isEs && dose.failureModeEs) || dose.failureModeEn}
           </p>
         </section>
 
@@ -634,7 +634,7 @@ ${bookChapters
             </h2>
           </div>
           <p className="text-xs sm:text-sm text-[#5c4a3d] font-mono-code leading-relaxed whitespace-pre-wrap">
-            {isDe ? dose.priorArtDe : dose.priorArtEn}
+            {isDe ? dose.priorArtDe : (isEs && dose.priorArtEs) || dose.priorArtEn}
           </p>
         </section>
 
@@ -740,7 +740,7 @@ ${bookChapters
           <p className="text-xs text-[#5c4a3d]">
             {isDe
               ? 'Nach der Amélie-Philosophie wird diese Dose bedingungslos verschenkt (CC0), ohne Terminanfrage und ohne Nachfassen:'
-              : 'Per Amélie philosophy, this tin is delivered unconditionally (CC0) without follow-ups or meeting requests:'}
+              : isEs ? 'Según la filosofía Amélie, esta lata se entrega sin condiciones (CC0), sin seguimiento ni peticiones de reunión:' : 'Per Amélie philosophy, this tin is delivered unconditionally (CC0) without follow-ups or meeting requests:'}
           </p>
 
           <div className="space-y-4">
@@ -776,7 +776,7 @@ ${bookChapters
                       ) : (
                         <>
                           <Copy className="w-3.5 h-3.5" />
-                          <span>{isDe ? 'E-Mail kopieren' : 'Copy Email'}</span>
+                          <span>{isDe ? 'E-Mail kopieren' : isEs ? 'Copiar correo' : 'Copy Email'}</span>
                         </>
                       )}
                     </button>
@@ -784,12 +784,12 @@ ${bookChapters
 
                   <div className="font-typewriter text-xs text-[#2b1e16] bg-white p-3 rounded-xl border border-[#dfd1be] space-y-1">
                     <div className="flex flex-wrap items-center gap-1.5 text-[#8b6f57]">
-                      <span className="font-bold">{isDe ? 'An: ' : 'To: '}</span>
+                      <span className="font-bold">{isDe ? 'An: ' : isEs ? 'Para: ' : 'To: '}</span>
                       <span className="text-[#2b1e16] font-mono-code">{isDe ? mail.contactPathDe : mail.contactPathEn}</span>
                     </div>
                     <div>
                       <span className="text-[#8b6f57] font-bold">
-                        {isDe ? 'Betreff: ' : 'Subject: '}
+                        {isDe ? 'Betreff: ' : isEs ? 'Asunto: ' : 'Subject: '}
                       </span>
                       <span className="text-[#2b1e16] font-medium">{emailSubject}</span>
                     </div>
@@ -825,7 +825,7 @@ ${bookChapters
           >
             <ChevronLeft className="w-4 h-4 text-[#8c1d40]" />
             <div className="text-left">
-              <span className="text-[10px] text-[#8b6f57] block uppercase">{isDe ? 'Vorherige Dose' : 'Previous Tin'}</span>
+              <span className="text-[10px] text-[#8b6f57] block uppercase">{isDe ? 'Vorherige Dose' : isEs ? 'Lata anterior' : 'Previous Tin'}</span>
               <span className="font-bold">{getLocalizedTitle(prevDose, lang)}</span>
             </div>
           </button>
@@ -838,7 +838,7 @@ ${bookChapters
           className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#8c1d40] hover:bg-[#741533] text-white text-xs font-typewriter font-bold shadow-xs transition-colors cursor-pointer"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span>{isDe ? 'Zurück zu allen Dosen' : 'Back to All Tins'}</span>
+          <span>{isDe ? 'Zurück zu allen Dosen' : isEs ? 'Volver a todas las latas' : 'Back to All Tins'}</span>
         </button>
 
         {nextDose ? (
@@ -847,7 +847,7 @@ ${bookChapters
             className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#fffdf9] hover:bg-[#faf5eb] border border-[#dfd1be] hover:border-[#8c1d40] text-xs text-[#2b1e16] font-typewriter font-semibold transition-all cursor-pointer w-full sm:w-auto justify-end"
           >
             <div className="text-right">
-              <span className="text-[10px] text-[#8b6f57] block uppercase">{isDe ? 'Nächste Dose' : 'Next Tin'}</span>
+              <span className="text-[10px] text-[#8b6f57] block uppercase">{isDe ? 'Nächste Dose' : isEs ? 'Lata siguiente' : 'Next Tin'}</span>
               <span className="font-bold">{getLocalizedTitle(nextDose, lang)}</span>
             </div>
             <ChevronRight className="w-4 h-4 text-[#8c1d40]" />

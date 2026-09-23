@@ -261,12 +261,12 @@ Sincerely,
               <span>100% Offline Edge-Compute · WebGPU · Zero Cloud Telemetry</span>
             </div>
             <h3 className="text-xl sm:text-2xl font-bold font-serif-title text-white tracking-tight">
-              {lang === 'de' ? 'KlarLokal: Das Beamtendeutsch-Brecheisen' : 'KlarLokal: The Bureaucracy Battering Ram'}
+              {lang === 'de' ? 'KlarLokal: Das Beamtendeutsch-Brecheisen' : lang === 'es' ? 'KlarLokal: el ariete contra la burocracia' : 'KlarLokal: The Bureaucracy Battering Ram'}
             </h3>
             <p className="text-sm text-stone-400 mt-1 max-w-2xl font-serif-title">
               {lang === 'de'
                 ? 'Wandelt amtliche Drohbescheide und Paragraphenketten lokal im Browser (DIN SPEC 33429 / Leichte Sprache) in drei beruhigende, exakte Fakten um: Das Urteil, die Frist und die Checkliste.'
-                : 'Locally decodes German administrative mail in-browser into three clear facts: The Verdict, The Deadline, and The Action Checklist, with zero data leaving the device.'}
+                : lang === 'es' ? 'Descifra en el navegador, de forma local, cartas administrativas alemanas en tres datos claros: el veredicto, el plazo y la lista de acciones, sin que ningún dato salga del dispositivo.' : 'Locally decodes German administrative mail in-browser into three clear facts: The Verdict, The Deadline, and The Action Checklist, with zero data leaving the device.'}
             </p>
           </div>
 
@@ -295,7 +295,7 @@ Sincerely,
             <div className="flex items-center gap-2">
               <FileText className="w-5 h-5 text-stone-700" />
               <h4 className="font-bold text-stone-900 font-serif-title text-base">
-                {lang === 'de' ? '1. Behördenschreiben wählen oder einfügen' : '1. Select or Paste Administrative Notice'}
+                {lang === 'de' ? '1. Behördenschreiben wählen oder einfügen' : lang === 'es' ? '1. Elige o pega una notificación oficial' : '1. Select or Paste Administrative Notice'}
               </h4>
             </div>
             <span className="text-2xs font-mono-code bg-emerald-50 text-emerald-800 px-2 py-0.5 rounded border border-emerald-200">
@@ -414,7 +414,7 @@ Sincerely,
           <div className="bg-white rounded-2xl border border-stone-200 p-5 shadow-xs space-y-2 relative overflow-hidden">
             <div className="flex items-center justify-between pb-2 border-b border-stone-100">
               <span className="text-2xs font-mono-code uppercase tracking-wider text-stone-500 font-bold">
-                {lang === 'de' ? '1. Das Urteil (Kernaussage)' : '1. The Verdict (Plain Language)'}
+                {lang === 'de' ? '1. Das Urteil (Kernaussage)' : lang === 'es' ? '1. El veredicto (en lenguaje claro)' : '1. The Verdict (Plain Language)'}
               </span>
               <span className="px-2 py-0.5 rounded text-3xs font-mono-code bg-emerald-100 text-emerald-900 font-bold border border-emerald-300">
                 DIN SPEC 33429
@@ -426,7 +426,7 @@ Sincerely,
             <div className="text-2xs text-stone-500 font-sans">
               {lang === 'de'
                 ? 'Ohne juristische Drohkulisse auf den Punkt gebracht.'
-                : 'Stripped of intimidation, condensed into a single human sentence.'}
+                : lang === 'es' ? 'Sin intimidación, resumido en una sola frase humana.' : 'Stripped of intimidation, condensed into a single human sentence.'}
             </div>
           </div>
 
@@ -439,14 +439,14 @@ Sincerely,
             <div className="flex items-center justify-between pb-2 border-b border-stone-200/60">
               <span className="text-2xs font-mono-code uppercase tracking-wider text-stone-700 font-bold flex items-center gap-1.5">
                 <Calendar className="w-3.5 h-3.5 text-stone-800" />
-                <span>{lang === 'de' ? '2. Die Frist' : '2. The Deadline'}</span>
+                <span>{lang === 'de' ? '2. Die Frist' : lang === 'es' ? '2. El plazo' : '2. The Deadline'}</span>
               </span>
               <span className={`px-2 py-0.5 rounded text-3xs font-mono-code font-bold ${
                 activeLetter.urgency === 'critical'
                   ? 'bg-red-200 text-red-900 border border-red-300'
                   : 'bg-amber-200 text-amber-900 border border-amber-300'
               }`}>
-                {activeLetter.daysLeft} {lang === 'de' ? 'Tage verbleibend' : 'days left'}
+                {activeLetter.daysLeft} {lang === 'de' ? 'Tage verbleibend' : lang === 'es' ? 'días restantes' : 'days left'}
               </span>
             </div>
             <div className="flex items-baseline justify-between">
@@ -455,8 +455,8 @@ Sincerely,
               </div>
               <div className="text-xs font-sans text-stone-600">
                 {activeLetter.urgency === 'critical'
-                  ? (lang === 'de' ? '⚠️ Dringend: Leistungsausfall droht' : '⚠️ Critical: Benefits freeze')
-                  : (lang === 'de' ? '⏰ Feste Ausschlussfrist' : '⏰ Regulatory limit')}
+                  ? (lang === 'de' ? '⚠️ Dringend: Leistungsausfall droht' : lang === 'es' ? '⚠️ Crítico: se congelan las prestaciones' : '⚠️ Critical: Benefits freeze')
+                  : (lang === 'de' ? '⏰ Feste Ausschlussfrist' : lang === 'es' ? '⏰ Plazo legal' : '⏰ Regulatory limit')}
               </div>
             </div>
           </div>
@@ -466,7 +466,7 @@ Sincerely,
             <div className="flex items-center justify-between pb-2 border-b border-stone-100">
               <span className="text-2xs font-mono-code uppercase tracking-wider text-stone-500 font-bold flex items-center gap-1.5">
                 <CheckSquare className="w-3.5 h-3.5 text-emerald-600" />
-                <span>{lang === 'de' ? '3. Die Checkliste (Genau 3 Schritte)' : '3. The 3-Step Action Plan'}</span>
+                <span>{lang === 'de' ? '3. Die Checkliste (Genau 3 Schritte)' : lang === 'es' ? '3. El plan de acción en 3 pasos' : '3. The 3-Step Action Plan'}</span>
               </span>
               <span className="text-3xs font-mono-code text-stone-400">Schritt für Schritt</span>
             </div>
@@ -488,7 +488,7 @@ Sincerely,
               <div className="flex items-center gap-2">
                 <FileText className="w-4 h-4 text-amber-400" />
                 <span className="text-xs font-bold font-mono-code text-amber-300">
-                  {lang === 'de' ? 'Panik-Bremse: Muster-Fristverlängerung' : 'Anti-Panic: Extension Template'}
+                  {lang === 'de' ? 'Panik-Bremse: Muster-Fristverlängerung' : lang === 'es' ? 'Antipánico: plantilla de prórroga' : 'Anti-Panic: Extension Template'}
                 </span>
               </div>
               <button
@@ -501,13 +501,13 @@ Sincerely,
                 className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-stone-800 hover:bg-stone-700 text-stone-200 text-2xs font-mono-code transition-all border border-stone-700"
               >
                 {copiedExtension ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3 text-stone-300" />}
-                <span>{copiedExtension ? (lang === 'de' ? 'Kopiert!' : 'Copied!') : (lang === 'de' ? 'Vorlage kopieren' : 'Copy Draft')}</span>
+                <span>{copiedExtension ? (lang === 'de' ? 'Kopiert!' : lang === 'es' ? '¡Copiado!' : 'Copied!') : (lang === 'de' ? 'Vorlage kopieren' : lang === 'es' ? 'Copiar borrador' : 'Copy Draft')}</span>
               </button>
             </div>
             <p className="text-2xs text-stone-400 font-sans leading-relaxed">
               {lang === 'de'
                 ? 'Kopieren und sofort per Elster, Jobcenter.digital oder Post einreichen, um die Frist sanktionsfrei um bis zu 4 Wochen nach hinten zu schieben:'
-                : 'Copy and submit immediately via official portal or certified mail to legally suspend enforcement by up to 4 weeks:'}
+                : lang === 'es' ? 'Cópialo y envíalo de inmediato por el portal oficial o por correo certificado para suspender legalmente la ejecución hasta 4 semanas:' : 'Copy and submit immediately via official portal or certified mail to legally suspend enforcement by up to 4 weeks:'}
             </p>
             <div className="p-3 bg-stone-950 rounded-xl border border-stone-800 text-2xs font-mono-code text-stone-300 whitespace-pre-wrap leading-relaxed max-h-36 overflow-y-auto">
               {lang === 'de' ? activeLetter.extensionDraftDe : activeLetter.extensionDraftEn}
@@ -519,7 +519,7 @@ Sincerely,
                   onClick={() => onOpenDose('klarlokal')}
                   className="text-emerald-400 hover:text-emerald-300 hover:underline text-xs flex items-center gap-1 font-semibold"
                 >
-                  <span>{lang === 'de' ? 'Dose: KlarLokal öffnen' : 'Open Tin: KlarLokal'}</span>
+                  <span>{lang === 'de' ? 'Dose: KlarLokal öffnen' : lang === 'es' ? 'Abrir lata: KlarLokal' : 'Open Tin: KlarLokal'}</span>
                   <ExternalLink className="w-3 h-3" />
                 </button>
               </div>

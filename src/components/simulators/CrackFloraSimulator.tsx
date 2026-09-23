@@ -145,10 +145,10 @@ export const CrackFloraSimulator: React.FC<CrackFloraSimulatorProps> = ({
   );
 
   const toughnessRank = rawToughnessScore >= 9.0
-    ? (lang === 'de' ? '👑 König der Ritzen (Legendär)' : '👑 King of the Cracks (Legendary)')
+    ? (lang === 'de' ? '👑 König der Ritzen (Legendär)' : lang === 'es' ? '👑 Rey de las grietas (legendaria)' : '👑 King of the Cracks (Legendary)')
     : rawToughnessScore >= 8.0
-    ? (lang === 'de' ? '⚔️ Asphaltheld (Elite)' : '⚔️ Asphalt Warrior (Elite)')
-    : (lang === 'de' ? '🌿 Kiez-Pionier (Stark)' : '🌿 Sidewalk Pioneer (Sturdy)');
+    ? (lang === 'de' ? '⚔️ Asphaltheld (Elite)' : lang === 'es' ? '⚔️ Guerrera del asfalto (élite)' : '⚔️ Asphalt Warrior (Elite)')
+    : (lang === 'de' ? '🌿 Kiez-Pionier (Stark)' : lang === 'es' ? '🌿 Pionera de la acera (robusta)' : '🌿 Sidewalk Pioneer (Sturdy)');
 
   return (
     <div className="space-y-6">
@@ -160,12 +160,12 @@ export const CrackFloraSimulator: React.FC<CrackFloraSimulatorProps> = ({
               <span>🌱 #Krautschau Citizen Science · Senckenberg & Flora Incognita Bridge</span>
             </div>
             <h3 className="text-xl sm:text-2xl font-bold font-serif-title text-white tracking-tight">
-              {lang === 'de' ? 'Crack Flora Watcher: Das Ritzengrün-Labor' : 'Crack Flora Watcher: Pavement Botany Lab'}
+              {lang === 'de' ? 'Crack Flora Watcher: Das Ritzengrün-Labor' : lang === 'es' ? 'Crack Flora Watcher: laboratorio de botánica del pavimento' : 'Crack Flora Watcher: Pavement Botany Lab'}
             </h3>
             <p className="text-sm text-stone-400 mt-1 max-w-2xl font-serif-title">
               {lang === 'de'
                 ? '„Sie sagten, hier kann nichts wachsen. Die Pflanzen sahen das anders." – Berechnen Sie den Härtegrad-Index (Toughness Index) und simulieren Sie das Zeitraffer-Wachstum in extremen Asphalt-Mikrolebensräumen.'
-                : '"They said nothing could grow here. The plants disagreed." – Calculate the Toughness Index and explore multi-week growth time-lapses in hostile asphalt micro-habitats.'}
+                : lang === 'es' ? '«Decían que aquí no podía crecer nada. Las plantas no estaban de acuerdo.» – Calcula el índice de dureza y explora secuencias de crecimiento de varias semanas en microhábitats hostiles de asfalto.' : '"They said nothing could grow here. The plants disagreed." – Calculate the Toughness Index and explore multi-week growth time-lapses in hostile asphalt micro-habitats.'}
             </p>
           </div>
 
@@ -189,7 +189,7 @@ export const CrackFloraSimulator: React.FC<CrackFloraSimulatorProps> = ({
             <div className="flex items-center gap-2">
               <span className="text-xl">🌿</span>
               <h4 className="font-bold text-stone-900 font-serif-title text-base">
-                {lang === 'de' ? '1. Asphaltheld & Standort wählen' : '1. Select Pavement Survivor & Micro-Habitat'}
+                {lang === 'de' ? '1. Asphaltheld & Standort wählen' : lang === 'es' ? '1. Elige superviviente del pavimento y microhábitat' : '1. Select Pavement Survivor & Micro-Habitat'}
               </h4>
             </div>
             <span className="text-2xs font-mono-code bg-lime-50 text-lime-800 px-2 py-0.5 rounded border border-lime-300">
@@ -200,7 +200,7 @@ export const CrackFloraSimulator: React.FC<CrackFloraSimulatorProps> = ({
           {/* Plant Buttons */}
           <div>
             <label className="block text-2xs font-bold uppercase tracking-wider font-mono-code text-stone-600 mb-2">
-              {lang === 'de' ? 'Pflaster-Pionierart:' : 'Pioneer Species:'}
+              {lang === 'de' ? 'Pflaster-Pionierart:' : lang === 'es' ? 'Especie pionera:' : 'Pioneer Species:'}
             </label>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {(Object.keys(plantCatalog) as Array<keyof typeof plantCatalog>).map((pKey) => {
@@ -228,7 +228,7 @@ export const CrackFloraSimulator: React.FC<CrackFloraSimulatorProps> = ({
           {/* Substrate Selector */}
           <div>
             <label className="block text-2xs font-bold uppercase tracking-wider font-mono-code text-stone-600 mb-2">
-              {lang === 'de' ? 'Untergrund / Substrat-Härte:' : 'Substrate Adversity:'}
+              {lang === 'de' ? 'Untergrund / Substrat-Härte:' : lang === 'es' ? 'Adversidad del sustrato:' : 'Substrate Adversity:'}
             </label>
             <div className="grid grid-cols-2 gap-2 text-xs">
               {(Object.keys(substrateModifiers) as Array<keyof typeof substrateModifiers>).map((subKey) => {
@@ -255,7 +255,7 @@ export const CrackFloraSimulator: React.FC<CrackFloraSimulatorProps> = ({
           {/* Traffic / Compaction Selector */}
           <div>
             <label className="block text-2xs font-bold uppercase tracking-wider font-mono-code text-stone-600 mb-2">
-              {lang === 'de' ? 'Tritt- & Belastungseinfluss:' : 'Foot & Vehicle Compaction:'}
+              {lang === 'de' ? 'Tritt- & Belastungseinfluss:' : lang === 'es' ? 'Compactación por pisadas y vehículos:' : 'Foot & Vehicle Compaction:'}
             </label>
             <div className="grid grid-cols-2 gap-2 text-xs">
               {(Object.keys(trafficModifiers) as Array<keyof typeof trafficModifiers>).map((trafKey) => {
@@ -282,7 +282,7 @@ export const CrackFloraSimulator: React.FC<CrackFloraSimulatorProps> = ({
           {/* Sun & Microclimate */}
           <div>
             <label className="block text-2xs font-bold uppercase tracking-wider font-mono-code text-stone-600 mb-2">
-              {lang === 'de' ? 'Mikroklima & Hitzeinsel-Faktor:' : 'Microclimate & Heat Stress:'}
+              {lang === 'de' ? 'Mikroklima & Hitzeinsel-Faktor:' : lang === 'es' ? 'Microclima y estrés térmico:' : 'Microclimate & Heat Stress:'}
             </label>
             <div className="grid grid-cols-3 gap-2 text-xs">
               {(Object.keys(sunModifiers) as Array<keyof typeof sunModifiers>).map((sKey) => {
@@ -445,7 +445,7 @@ export const CrackFloraSimulator: React.FC<CrackFloraSimulatorProps> = ({
               <div className="flex items-center gap-2">
                 <span className="text-base">🏛️</span>
                 <span className="text-xs font-bold font-mono-code text-lime-300">
-                  {lang === 'de' ? 'Forschungs-Export (#Krautschau & Flora Incognita)' : 'Citizen Science Export (GBIF & #Krautschau)'}
+                  {lang === 'de' ? 'Forschungs-Export (#Krautschau & Flora Incognita)' : lang === 'es' ? 'Exportación de ciencia ciudadana (GBIF y #Krautschau)' : 'Citizen Science Export (GBIF & #Krautschau)'}
                 </span>
               </div>
               <button
@@ -457,14 +457,14 @@ export const CrackFloraSimulator: React.FC<CrackFloraSimulatorProps> = ({
                 className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-stone-800 hover:bg-stone-700 text-stone-200 text-2xs font-mono-code transition-all border border-stone-700"
               >
                 {exportedKrautschauData ? <Check className="w-3 h-3 text-lime-400" /> : <Copy className="w-3 h-3 text-stone-300" />}
-                <span>{exportedKrautschauData ? (lang === 'de' ? 'Exportiert!' : 'Exported!') : (lang === 'de' ? 'GeoJSON kopieren' : 'Copy GeoJSON')}</span>
+                <span>{exportedKrautschauData ? (lang === 'de' ? 'Exportiert!' : lang === 'es' ? '¡Exportado!' : 'Exported!') : (lang === 'de' ? 'GeoJSON kopieren' : lang === 'es' ? 'Copiar GeoJSON' : 'Copy GeoJSON')}</span>
               </button>
             </div>
 
             <p className="text-2xs text-stone-400 font-sans leading-relaxed">
               {lang === 'de'
                 ? 'Standardisiertes Format für urbane Biodiversitäts-Datenbanken nach dem GartenDiv-Tag-Modell von Flora Incognita:'
-                : 'Standardized observation record following the Flora Incognita GartenDiv model for urban biodiversity studies:'}
+                : lang === 'es' ? 'Registro de observación estandarizado según el modelo GartenDiv de Flora Incognita para estudios de biodiversidad urbana:' : 'Standardized observation record following the Flora Incognita GartenDiv model for urban biodiversity studies:'}
             </p>
 
             <div className="p-3 bg-stone-950 rounded-xl border border-stone-800 text-2xs font-mono-code text-stone-300 whitespace-pre-wrap leading-relaxed max-h-36 overflow-y-auto">
@@ -494,7 +494,7 @@ export const CrackFloraSimulator: React.FC<CrackFloraSimulatorProps> = ({
                   onClick={() => onOpenDose('crack-flora-watcher')}
                   className="text-lime-400 hover:text-lime-300 hover:underline text-xs flex items-center gap-1 font-semibold"
                 >
-                  <span>{lang === 'de' ? 'Dose: Crack Flora Watcher öffnen' : 'Open Tin: Crack Flora Watcher'}</span>
+                  <span>{lang === 'de' ? 'Dose: Crack Flora Watcher öffnen' : lang === 'es' ? 'Abrir lata: Crack Flora Watcher' : 'Open Tin: Crack Flora Watcher'}</span>
                   <ExternalLink className="w-3 h-3" />
                 </button>
               </div>

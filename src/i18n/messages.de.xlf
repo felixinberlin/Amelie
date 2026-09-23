@@ -12,7 +12,7 @@
         <target state="translated">Ideen, die jemand anderem gehören — nach Amélie Poulain &amp; dem Kula-Ring</target>
       </trans-unit>
       <trans-unit id="app.subtitle" resname="app.subtitle">
-        <source>Félix, Berlin · As of: September 2026</source>
+        <source>Félix, Berlin · As of September 2026</source>
         <target state="translated">Félix, Berlin · Stand: September 2026</target>
       </trans-unit>
       <trans-unit id="app.kula_french" resname="app.kula_french">
@@ -114,16 +114,16 @@
         <target state="translated">Ideen-Kandidaten vor der Recherche</target>
       </trans-unit>
       <trans-unit id="nav.desc.sandboxes" resname="nav.desc.sandboxes">
-        <source>8 interactive physical simulators</source>
-        <target state="translated">8 interaktive Dosen-Simulatoren</target>
+        <source>{count} interactive simulators</source>
+        <target state="translated">{count} interaktive Simulatoren</target>
       </trans-unit>
       <trans-unit id="nav.desc.musterEmails" resname="nav.desc.musterEmails">
-        <source>4 emails following Amélie philosophy</source>
-        <target state="translated">4 Mails nach Amélie-Philosophie</target>
+        <source>{count} emails following the Amélie philosophy</source>
+        <target state="translated">{count} Mails nach Amélie-Philosophie</target>
       </trans-unit>
       <trans-unit id="nav.desc.normalJobs" resname="nav.desc.normalJobs">
-        <source>10 concepts for everyday professions</source>
-        <target state="translated">10 Ideen für echte Berufe</target>
+        <source>{count} concepts for everyday professions</source>
+        <target state="translated">{count} Ideen für echte Berufe</target>
       </trans-unit>
       <trans-unit id="nav.desc.whimsy" resname="nav.desc.whimsy">
         <source>Whimsy &amp; human warmth</source>
@@ -153,7 +153,7 @@
       <!-- The Pledge -->
       <trans-unit id="pledge.title" resname="pledge.title">
         <source>The Amélie Pledge (printed on every tin)</source>
-        <target state="translated">Der Amélie-Pledge (auf jeder Dose)</target>
+        <target state="translated">Das Amélie-Versprechen (auf jeder Dose)</target>
       </trans-unit>
       <trans-unit id="pledge.text" resname="pledge.text">
         <source>This idea belongs to no one. Take it, build it, sell it — you owe me nothing, not even a reply. If you ever have an idea you won't build, give it to someone who will.</source>
@@ -161,7 +161,7 @@
       </trans-unit>
       <trans-unit id="pledge.copy" resname="pledge.copy">
         <source>Copy pledge</source>
-        <target state="translated">Pledge kopieren</target>
+        <target state="translated">Versprechen kopieren</target>
       </trans-unit>
       <trans-unit id="pledge.copied" resname="pledge.copied">
         <source>Copied</source>
@@ -356,7 +356,7 @@
         <target state="translated">Erst bauen</target>
       </trans-unit>
       <trans-unit id="ui.verdict_keep" resname="ui.verdict_keep">
-        <source>Kept</source>
+        <source>Keep</source>
         <target state="translated">Behalten</target>
       </trans-unit>
       <trans-unit id="ui.verdict_discarded" resname="ui.verdict_discarded">
@@ -384,24 +384,24 @@
         <target state="translated">Dosen durchsuchen (Titel, Problem, Empfänger, Tags)...</target>
       </trans-unit>
       <trans-unit id="ui.tins_heading" resname="ui.tins_heading">
-        <source>The Gifts: 15 Packaged Tins</source>
-        <target state="translated">Die Geschenke: 15 gepackte Dosen</target>
+        <source>The Gifts: {count} Packed Tins</source>
+        <target state="translated">Die Geschenke: {count} gepackte Dosen</target>
       </trans-unit>
       <trans-unit id="ui.tins_subheading" resname="ui.tins_subheading">
-        <source>Each tin is a one-page turnkey dossier with problem, tech catalyst ("Why Now"), architectural sketch, Ticket #1, and point of failure.</source>
-        <target state="translated">Jede Dose ist ein sendefertiges Einseiter-Dossier: Problem, technologischer Durchbruch („Warum jetzt"), Architektur-Skizze, Ticket #1 und Sollbruchstelle.</target>
+        <source>Each tin is a one-page, ready-to-send dossier: the problem, why it is possible now, a sketch, Ticket #1, and the point where it breaks.</source>
+        <target state="translated">Jede Dose ist ein sendefertiger Einseiter: das Problem, warum es jetzt geht, eine Skizze, Ticket #1 und die Stelle, an der es kippt.</target>
       </trans-unit>
       <trans-unit id="ui.tins_badge" resname="ui.tins_badge">
-        <source>15 turn-key dossiers ready to deliver · All CC0</source>
-        <target state="translated">15 sendefertige Dossiers · Alle CC0 Gemeinfrei</target>
+        <source>{count} turn-key dossiers ready to deliver · all CC0</source>
+        <target state="translated">{count} sendefertige Dossiers · alle CC0-gemeinfrei</target>
       </trans-unit>
       <trans-unit id="ui.deliveries_heading" resname="ui.deliveries_heading">
-        <source>Three Ready-to-Send Outbound Emails</source>
-        <target state="translated">Drei sendefertige Schenkungs-Mails</target>
+        <source>{count} Ready-to-Send Gift Emails</source>
+        <target state="translated">{count} sendefertige Schenkungs-Mails</target>
       </trans-unit>
       <trans-unit id="ui.deliveries_subheading" resname="ui.deliveries_subheading">
-        <source>First round: three researched teams, three completed emails. The delivery is the gift, not the brainstorming. Send once and walk away.</source>
-        <target state="translated">Erste Staffel: drei recherchierte Empfänger, drei fertige Mails. Die Zustellung ist das Geschenk, nicht der Einfall. Einmal senden, nie nachfassen.</target>
+        <source>Each email goes to one researched recipient. The delivery is the gift, not the brainstorming. Send once and walk away.</source>
+        <target state="translated">Jede Mail geht an einen recherchierten Empfänger. Die Zustellung ist das Geschenk, nicht der Einfall. Einmal senden, nie nachfassen.</target>
       </trans-unit>
       <trans-unit id="ui.deliveries_badge" resname="ui.deliveries_badge">
         <source>Q4 2026 Delivery Plan</source>
@@ -412,16 +412,16 @@
         <target state="translated">Die Matrix: Idee → Empfänger</target>
       </trans-unit>
       <trans-unit id="ui.matrix_subheading" resname="ui.matrix_subheading">
-        <source>All 19 ideas mapped by recipient, channel, persuasive hook, and delivery status.</source>
-        <target state="translated">Alle 19 Ideen mit Empfänger, Kanal, Überzeugungshaken und Zustellstatus.</target>
+        <source>All {count} ideas mapped by recipient, channel, hook, and delivery status.</source>
+        <target state="translated">Alle {count} Ideen mit Empfänger, Kanal, Aufhänger und Zustellstatus.</target>
       </trans-unit>
       <trans-unit id="ui.discarded_heading" resname="ui.discarded_heading">
-        <source>Four Ideas Screened Out &amp; Discarded</source>
-        <target state="translated">Vier verworfene Ideen</target>
+        <source>{count} Ideas Screened Out &amp; Discarded</source>
+        <target state="translated">{count} verworfene Ideen</target>
       </trans-unit>
       <trans-unit id="ui.discarded_subheading" resname="ui.discarded_subheading">
-        <source>A gift only has value when the space is genuinely open. These four ideas were dropped during preliminary screening because they already exist or are commercially saturated.</source>
-        <target state="translated">Ein Geschenk hat nur Wert, wenn der Raum wirklich frei ist. Diese vier Ideen wurden in der Vorprüfung verworfen, weil sie bereits existieren oder besetzt sind.</target>
+        <source>A gift only has value when the space is genuinely open. These ideas were dropped during screening because they already exist or the market is saturated.</source>
+        <target state="translated">Ein Geschenk hat nur Wert, wenn der Raum wirklich frei ist. Diese Ideen wurden in der Vorprüfung verworfen, weil es sie schon gibt oder der Markt besetzt ist.</target>
       </trans-unit>
       <trans-unit id="ui.packer_heading" resname="ui.packer_heading">
         <source>Pack a New Tin</source>
@@ -642,6 +642,62 @@
       <trans-unit id="tin.commute-oracle.title" resname="tin.commute-oracle.title">
         <source>Personal Commute Oracle</source>
         <target state="translated">Commute Oracle (Persönliche Fahrzeit)</target>
+      </trans-unit>
+      <trans-unit id="tin.glasanflug-ampel.title" resname="tin.glasanflug-ampel.title">
+        <source>Bird Glass Hazard Score</source>
+        <target state="translated">Glasanflug-Ampel</target>
+      </trans-unit>
+      <trans-unit id="tin.eurobirdcast.title" resname="tin.eurobirdcast.title">
+        <source>EuroBirdCast: Auditable Migration Curtailment</source>
+        <target state="translated">EuroBirdCast</target>
+      </trans-unit>
+      <trans-unit id="tin.fugenduell-asphalt-arena.title" resname="tin.fugenduell-asphalt-arena.title">
+        <source>Crack Duel: Asphalt Crack Arena</source>
+        <target state="translated">Fugenduell: Asphaltritzen-Arena</target>
+      </trans-unit>
+      <trans-unit id="tin.biotoptyp-assistent.title" resname="tin.biotoptyp-assistent.title">
+        <source>Habitat Type Assistant</source>
+        <target state="translated">Biotoptyp-Assistent</target>
+      </trans-unit>
+      <trans-unit id="tin.lichtplan-check.title" resname="tin.lichtplan-check.title">
+        <source>Lighting Plan Check</source>
+        <target state="translated">Lichtplan-Check</target>
+      </trans-unit>
+      <trans-unit id="tin.eichflaechen-trainer.title" resname="tin.eichflaechen-trainer.title">
+        <source>Calibration Deck for Habitat Surveyors</source>
+        <target state="translated">Eichflächen-Trainer</target>
+      </trans-unit>
+      <trans-unit id="tin.kartierlotse.title" resname="tin.kartierlotse.title">
+        <source>Mapping Pilot</source>
+        <target state="translated">Kartierlotse</target>
+      </trans-unit>
+      <trans-unit id="tin.denkmal-verlaufsblick.title" resname="tin.denkmal-verlaufsblick.title">
+        <source>Heritage Decay Timeline</source>
+        <target state="translated">Denkmal-Verlaufsblick</target>
+      </trans-unit>
+      <trans-unit id="tin.waermesignatur.title" resname="tin.waermesignatur.title">
+        <source>Heat Signature</source>
+        <target state="translated">Wärmesignatur</target>
+      </trans-unit>
+      <trans-unit id="tin.feuerkugel-sofortnetz.title" resname="tin.feuerkugel-sofortnetz.title">
+        <source>Fireball Rapid Network</source>
+        <target state="translated">Feuerkugel-Sofortnetz</target>
+      </trans-unit>
+      <trans-unit id="tin.fugenduell-patenschaft.title" resname="tin.fugenduell-patenschaft.title">
+        <source>Observation Post with Handover</source>
+        <target state="translated">Beobachtungsposten mit Übergabe</target>
+      </trans-unit>
+      <trans-unit id="tin.lebendes-spielobjekt.title" resname="tin.lebendes-spielobjekt.title">
+        <source>The Living Game Object</source>
+        <target state="translated">Das lebende Spielobjekt</target>
+      </trans-unit>
+      <trans-unit id="tin.sperrmuell-weiche.title" resname="tin.sperrmuell-weiche.title">
+        <source>Bulky Waste Switch</source>
+        <target state="translated">Sperrmüll-Weiche</target>
+      </trans-unit>
+      <trans-unit id="tin.bruchlesen.title" resname="tin.bruchlesen.title">
+        <source>Reading Fractures</source>
+        <target state="translated">Bruchlesen</target>
       </trans-unit>
 
       <!-- ========================================== -->

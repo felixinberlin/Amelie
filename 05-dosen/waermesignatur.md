@@ -3,6 +3,7 @@
 **Ein Satz:** Zwölf Monatswerte vom Gaszähler oder aus der monatlichen Verbrauchsinformation plus das Wetter ergeben, wie viel Wärme *diese* Wohnung pro Grad Temperaturunterschied verliert und ab welcher Außentemperatur sie heizt — als ehrliches Band, ohne dass jemand einen Grundriss zeichnet.
 
 **Stand:** 19.09.2026 · **Prüfen ab:** 03/2027 (verkürzt: der Fernablese-Stichtag 31.12.2026 bewegt den Markt)
+**Verdikt:** 🎁 verschenken
 **Empfänger:** co2online gGmbH (HeizCheck; Partner im EnergyMap-Verbund) · nachrangig: Forschungsverbund EnergyMap Berlin (UdK) als Kalibrierziel für Altbau Thermal, Verbraucherzentrale Berlin
 
 ---

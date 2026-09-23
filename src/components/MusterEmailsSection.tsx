@@ -178,7 +178,7 @@ export const MusterEmailsSection: React.FC<MusterEmailsSectionProps> = ({
               <p className="text-xs text-[#6b5849]">
                 {isDe
                   ? 'Wähle eine Dose aus dem Archiv. Der E-Mail-Text wird automatisch mit Titel und dem permanenten Einzelseiten-URL aktualisiert.'
-                  : 'Select a tin from the archive. The template will automatically update with its title and permanent direct URL.'}
+                  : isEs ? 'Elige una lata del archivo. La plantilla se actualiza sola con su título y su URL directa permanente.' : 'Select a tin from the archive. The template will automatically update with its title and permanent direct URL.'}
               </p>
             </div>
 
@@ -219,7 +219,7 @@ export const MusterEmailsSection: React.FC<MusterEmailsSectionProps> = ({
                   title="Dose-Link in Zwischenablage kopieren"
                 >
                   {copiedDoseUrl ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Link2 className="w-3.5 h-3.5 text-[#c5832b]" />}
-                  <span>{copiedDoseUrl ? (isDe ? 'Kopiert!' : 'Copied!') : (isDe ? 'Link zur Dose' : 'Copy Tin URL')}</span>
+                  <span>{copiedDoseUrl ? (isDe ? 'Kopiert!' : isEs ? '¡Copiado!' : 'Copied!') : (isDe ? 'Link zur Dose' : isEs ? 'Copiar URL de la lata' : 'Copy Tin URL')}</span>
                 </button>
 
                 {/* Open in Single Page */}
@@ -230,7 +230,7 @@ export const MusterEmailsSection: React.FC<MusterEmailsSectionProps> = ({
                     className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-[#8c1d40] hover:bg-[#741533] text-white font-typewriter text-xs font-bold cursor-pointer transition-colors shadow-2xs"
                   >
                     <Maximize2 className="w-3.5 h-3.5" />
-                    <span>{isDe ? 'Einzelseite öffnen' : 'Open Single Page'}</span>
+                    <span>{isDe ? 'Einzelseite öffnen' : isEs ? 'Abrir página' : 'Open Single Page'}</span>
                   </button>
                 )}
 
@@ -242,7 +242,7 @@ export const MusterEmailsSection: React.FC<MusterEmailsSectionProps> = ({
                     className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-white hover:bg-stone-50 border border-[#d8cbba] font-typewriter text-xs font-semibold text-[#5c4a3d] cursor-pointer transition-colors"
                   >
                     <Eye className="w-3.5 h-3.5 text-[#8c1d40]" />
-                    <span>{isDe ? 'Pop-up' : 'Pop-up'}</span>
+                    <span>{isDe ? 'Pop-up' : isEs ? 'Ventana emergente' : 'Pop-up'}</span>
                   </button>
                 )}
               </div>
@@ -319,7 +319,7 @@ export const MusterEmailsSection: React.FC<MusterEmailsSectionProps> = ({
                       }`}
                     >
                       <Check className="w-2.5 h-2.5 text-emerald-500" />
-                      <span>{isDe ? 'Versendet' : 'Sent'}</span>
+                      <span>{isDe ? 'Versendet' : isEs ? 'Enviados' : 'Sent'}</span>
                     </span>
                   )}
                 </div>
@@ -353,7 +353,7 @@ export const MusterEmailsSection: React.FC<MusterEmailsSectionProps> = ({
                     : `✓ Marked as sent for "${linkedDoseTitle}"`}
                 </span>
                 <span className="text-emerald-700 block sm:inline sm:ml-2 text-[11px]">
-                  {isDe ? 'Amélie-Pledge: Niemals nachfassen.' : 'Amélie Pledge: No follow-ups.'}
+                  {isDe ? 'Amélie-Pledge: Niemals nachfassen.' : isEs ? 'Compromiso Amélie: sin seguimiento.' : 'Amélie Pledge: No follow-ups.'}
                 </span>
               </div>
             </div>
@@ -363,7 +363,7 @@ export const MusterEmailsSection: React.FC<MusterEmailsSectionProps> = ({
               className="inline-flex items-center gap-1 text-[11px] font-typewriter text-emerald-800 hover:text-emerald-950 underline cursor-pointer"
             >
               <RotateCcw className="w-3 h-3" />
-              <span>{isDe ? 'Rückgängig' : 'Undo'}</span>
+              <span>{isDe ? 'Rückgängig' : isEs ? 'Deshacer' : 'Undo'}</span>
             </button>
           </div>
         )}
@@ -382,7 +382,7 @@ export const MusterEmailsSection: React.FC<MusterEmailsSectionProps> = ({
                 </span>
                 {isMusterSent && (
                   <span className="text-[11px] font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 border border-emerald-300">
-                    ✓ {isDe ? 'Versendet' : 'Sent'}
+                    ✓ {isDe ? 'Versendet' : isEs ? 'Enviados' : 'Sent'}
                   </span>
                 )}
               </div>
@@ -405,13 +405,13 @@ export const MusterEmailsSection: React.FC<MusterEmailsSectionProps> = ({
                     ? 'bg-emerald-100 hover:bg-emerald-200 text-emerald-900 border border-emerald-400'
                     : 'bg-emerald-700 hover:bg-emerald-800 text-white'
                 }`}
-                title={isMusterSent ? (isDe ? 'Status ändern' : 'Toggle status') : ''}
+                title={isMusterSent ? (isDe ? 'Status ändern' : isEs ? 'Cambiar estado' : 'Toggle status') : ''}
               >
                 <Check className="w-3.5 h-3.5" />
                 <span>
                   {isMusterSent
-                    ? (isDe ? '✓ Versendet (Ändern)' : '✓ Sent (Toggle)')
-                    : (isDe ? 'Als versendet markieren' : 'Mark as sent')}
+                    ? (isDe ? '✓ Versendet (Ändern)' : isEs ? '✓ Enviado (cambiar)' : '✓ Sent (Toggle)')
+                    : (isDe ? 'Als versendet markieren' : isEs ? 'Marcar como enviado' : 'Mark as sent')}
                 </span>
               </button>
 
@@ -420,10 +420,10 @@ export const MusterEmailsSection: React.FC<MusterEmailsSectionProps> = ({
                 type="button"
                 onClick={handleOpenMailer}
                 className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-white hover:bg-stone-50 border border-[#dfd1be] text-[#2b1e16] text-xs font-typewriter font-semibold transition-colors shadow-2xs cursor-pointer"
-                title={isDe ? 'Im lokalen Mail-Programm öffnen' : 'Open in local mail client'}
+                title={isDe ? 'Im lokalen Mail-Programm öffnen' : isEs ? 'Abrir en el cliente de correo local' : 'Open in local mail client'}
               >
                 <Send className="w-3.5 h-3.5 text-[#8c1d40]" />
-                <span>{isDe ? 'In Mailer öffnen' : 'Open in Mailer'}</span>
+                <span>{isDe ? 'In Mailer öffnen' : isEs ? 'Abrir en el correo' : 'Open in Mailer'}</span>
               </button>
 
               {/* Copy Template */}

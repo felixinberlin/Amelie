@@ -1,7 +1,7 @@
 import React from 'react';
 import { Trash2, Sparkles, ShieldX, BookOpen } from 'lucide-react';
 import { DiscardedItem, Language } from '../types';
-import { getTranslation, getLocalizedTitle } from '../i18n';
+import { getTranslation, getLocalizedTitle, withCount } from '../i18n';
 
 interface DiscardedGalleryProps {
   discarded: DiscardedItem[];
@@ -20,7 +20,7 @@ export const DiscardedGallery: React.FC<DiscardedGalleryProps> = ({ discarded, l
           <span>{t.discarded.badge}</span>
         </div>
         <h2 className="text-2xl sm:text-3xl font-bold font-serif-title text-stone-900 tracking-tight">
-          {t.ui.discarded_heading}
+          {withCount(t.ui.discarded_heading, discarded.length)}
         </h2>
         <p className="text-xs sm:text-sm text-stone-700 leading-relaxed">
           {t.ui.discarded_subheading}

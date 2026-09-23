@@ -38,6 +38,7 @@ export const DoseBook: React.FC<DoseBookProps> = ({
   onChapterChange,
 }) => {
   const isDe = lang === 'de';
+  const isEs = lang === 'es';
   const startIndex = Math.max(
     0,
     chapters.findIndex((c) => c.slug === initialSlug)
@@ -114,7 +115,7 @@ export const DoseBook: React.FC<DoseBookProps> = ({
       <div className="amelie-tin-header flex items-center gap-2 px-5 py-3">
         <BookOpen className="w-4 h-4" />
         <span className="font-typewriter text-xs font-bold tracking-wide uppercase">
-          {isDe ? 'Das Buch zur Dose' : 'The book behind the tin'}
+          {isDe ? 'Das Buch zur Dose' : isEs ? 'El libro de la lata' : 'The book behind the tin'}
         </span>
         <span className="ml-auto font-mono-code text-[11px] opacity-70">
           {index + 1} / {chapters.length}
@@ -177,11 +178,11 @@ export const DoseBook: React.FC<DoseBookProps> = ({
               title={
                 isDe
                   ? 'Commit-Historie: wann was geprüft und was korrigiert wurde'
-                  : 'Commit history: when each claim was checked and what was corrected'
+                  : isEs ? 'Historial de commits: cuándo se comprobó cada afirmación y qué se corrigió' : 'Commit history: when each claim was checked and what was corrected'
               }
             >
               <History className="w-3 h-3" />
-              {isDe ? 'Verlauf' : 'History'}
+              {isDe ? 'Verlauf' : isEs ? 'Historial' : 'History'}
             </a>
           </div>
 
@@ -189,7 +190,7 @@ export const DoseBook: React.FC<DoseBookProps> = ({
             {state === 'loading' && (
               <div className="flex items-center gap-2 font-typewriter text-xs text-[#6b5647] py-8">
                 <Loader2 className="w-4 h-4 animate-spin" />
-                {isDe ? 'Kapitel wird geladen …' : 'Loading chapter …'}
+                {isDe ? 'Kapitel wird geladen …' : isEs ? 'Cargando capítulo …' : 'Loading chapter …'}
               </div>
             )}
 
@@ -199,7 +200,7 @@ export const DoseBook: React.FC<DoseBookProps> = ({
                 <span>
                   {isDe
                     ? 'Dieses Kapitel ließ sich nicht laden. Über den Pfad oben liegt es im Repo.'
-                    : 'This chapter could not be loaded. The path above leads to it in the repository.'}
+                    : isEs ? 'No se pudo cargar este capítulo. La ruta de arriba lleva a él en el repositorio.' : 'This chapter could not be loaded. The path above leads to it in the repository.'}
                 </span>
               </div>
             )}
@@ -209,7 +210,7 @@ export const DoseBook: React.FC<DoseBookProps> = ({
                 <p>
                   {isDe
                     ? 'Dieses Kapitel ist keine Textdatei und wird deshalb nicht hier angezeigt.'
-                    : 'This chapter is not a text file and is therefore not rendered here.'}
+                    : isEs ? 'Este capítulo no es un archivo de texto y por eso no se muestra aquí.' : 'This chapter is not a text file and is therefore not rendered here.'}
                 </p>
                 <a
                   href={getRepoFileUrl(chapter.path)}
@@ -218,7 +219,7 @@ export const DoseBook: React.FC<DoseBookProps> = ({
                   className="btn-amelie-or inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold"
                 >
                   <ExternalLink className="w-3.5 h-3.5" />
-                  {isDe ? 'Im Repo öffnen' : 'Open in the repository'}
+                  {isDe ? 'Im Repo öffnen' : isEs ? 'Abrir en el repositorio' : 'Open in the repository'}
                 </a>
               </div>
             )}
@@ -239,14 +240,14 @@ export const DoseBook: React.FC<DoseBookProps> = ({
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-[#d8cbba] bg-white font-typewriter text-xs font-bold text-[#5c4a3d] disabled:opacity-40 disabled:cursor-not-allowed hover:bg-[#f0e7d6] transition-colors cursor-pointer"
             >
               <ChevronLeft className="w-3.5 h-3.5" />
-              {isDe ? 'Voriges' : 'Previous'}
+              {isDe ? 'Voriges' : isEs ? 'Anterior' : 'Previous'}
             </button>
             <button
               onClick={() => setIndex((i) => Math.min(chapters.length - 1, i + 1))}
               disabled={index === chapters.length - 1}
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-[#d8cbba] bg-white font-typewriter text-xs font-bold text-[#5c4a3d] disabled:opacity-40 disabled:cursor-not-allowed hover:bg-[#f0e7d6] transition-colors cursor-pointer"
             >
-              {isDe ? 'Nächstes' : 'Next'}
+              {isDe ? 'Nächstes' : isEs ? 'Siguiente' : 'Next'}
               <ChevronRight className="w-3.5 h-3.5" />
             </button>
           </div>

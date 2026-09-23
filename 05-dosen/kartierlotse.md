@@ -3,6 +3,8 @@
 **Ein Satz:** Ein Feld-Assistent für die Biotopkartierung nach deutschem Kartierschlüssel, der während der Begehung anzeigt, welche Zeigerart oder Strukturangabe noch fehlt, um zwischen zwei möglichen Codes sicher zu entscheiden — Live-Hinweis statt nachträglicher Vorhersage am Schreibtisch.
 
 **Stand:** 18.09.2026 · **Prüfen ab:** 09/2027
+**Empfänger:** Landesämter mit digitalisiertem Kartierschlüssel (NLWKN Niedersachsen als Startpunkt) · nachrangig: Ausbildungsstellen und Planungsbüros mit eigenen Kartierteams
+**Verdikt:** 🎁 verschenken
 
 **Verengte Prämisse (siehe „Wer es schon versucht hat"):** Automatisierte Habitattyp-Vorhersage aus Artenlisten existiert bereits als Forschungsprototyp (UK, e-Surveyor). Was nicht existiert: dieselbe Idee für den deutschen Kartierschlüssel, und vor allem als Live-Hinweis *während* der Begehung statt als Vorhersage danach.
 

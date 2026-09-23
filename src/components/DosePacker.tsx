@@ -254,7 +254,7 @@ ${priorArt || '...'}
               required
               value={oneLiner}
               onChange={(e) => setOneLiner(e.target.value)}
-              placeholder={lang === 'de' ? 'In einem einzigen, poetisch-präzisen Satz zusammengefasst...' : 'Summarized in a single, poetically precise sentence...'}
+              placeholder={lang === 'de' ? 'In einem einzigen, poetisch-präzisen Satz zusammengefasst...' : lang === 'es' ? 'Resumido en una sola frase, poéticamente precisa...' : 'Summarized in a single, poetically precise sentence...'}
               className="w-full px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-stone-900 text-sm focus:ring-2 focus:ring-amber-800/20 shadow-xs"
             />
           </div>
@@ -284,7 +284,7 @@ ${priorArt || '...'}
               required
               value={problem}
               onChange={(e) => setProblem(e.target.value)}
-              placeholder={lang === 'de' ? 'Wo tut es weh? Warum leidet jemand darunter? Woran scheitern bestehende Alternativen?' : 'Where does friction occur? Why do people suffer? Why do current tools fall short?'}
+              placeholder={lang === 'de' ? 'Wo tut es weh? Warum leidet jemand darunter? Woran scheitern bestehende Alternativen?' : lang === 'es' ? '¿Dónde duele? ¿Por qué sufre alguien? ¿Por qué fallan las herramientas actuales?' : 'Where does friction occur? Why do people suffer? Why do current tools fall short?'}
               className="w-full px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-stone-900 text-sm focus:ring-2 focus:ring-amber-800/20 shadow-xs"
             />
           </div>
@@ -298,7 +298,7 @@ ${priorArt || '...'}
               rows={2}
               value={whyNow}
               onChange={(e) => setWhyNow(e.target.value)}
-              placeholder={lang === 'de' ? 'Neue APIs, LLM-Kostensturz, Sensorpreise, offene Geodaten...' : 'New open APIs, model cost reductions, sensor prices, open geodata...'}
+              placeholder={lang === 'de' ? 'Neue APIs, LLM-Kostensturz, Sensorpreise, offene Geodaten...' : lang === 'es' ? 'Nuevas APIs abiertas, caída del coste de los modelos, precio de sensores, geodatos abiertos...' : 'New open APIs, model cost reductions, sensor prices, open geodata...'}
               className="w-full px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-stone-900 text-sm focus:ring-2 focus:ring-amber-800/20 shadow-xs"
             />
           </div>
@@ -312,7 +312,7 @@ ${priorArt || '...'}
               rows={2}
               value={sketch}
               onChange={(e) => setSketch(e.target.value)}
-              placeholder={lang === 'de' ? 'Wie sieht der Bildschirm aus? Welche drei Komponenten kommunizieren?' : 'What does the interface look like? Which components communicate?'}
+              placeholder={lang === 'de' ? 'Wie sieht der Bildschirm aus? Welche drei Komponenten kommunizieren?' : lang === 'es' ? '¿Cómo se ve la interfaz? ¿Qué componentes se comunican?' : 'What does the interface look like? Which components communicate?'}
               className="w-full px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-stone-900 text-sm focus:ring-2 focus:ring-amber-800/20 shadow-xs"
             />
           </div>
@@ -327,14 +327,14 @@ ${priorArt || '...'}
                 type="text"
                 value={ticketName}
                 onChange={(e) => setTicketName(e.target.value)}
-                placeholder={lang === 'de' ? 'Ticket-Titel (z.B. Lokalen Parser auf Test-HTML ansetzen)' : 'Ticket title (e.g., build minimal raster parser)'}
+                placeholder={lang === 'de' ? 'Ticket-Titel (z.B. Lokalen Parser auf Test-HTML ansetzen)' : lang === 'es' ? 'Título del ticket (p. ej., construir un parser de ráster mínimo)' : 'Ticket title (e.g., build minimal raster parser)'}
                 className="w-full px-3 py-1.5 rounded-lg border border-emerald-300 bg-white text-stone-900 text-xs focus:ring-2 focus:ring-emerald-600/20"
               />
               <input
                 type="text"
                 value={ticketCriteria}
                 onChange={(e) => setTicketCriteria(e.target.value)}
-                placeholder={lang === 'de' ? 'Fertig, wenn: (Konkretes, überprüfbares Kriterium in 2 Tagen)' : 'Done when: (Concrete, testable milestone in 2 days)'}
+                placeholder={lang === 'de' ? 'Fertig, wenn: (Konkretes, überprüfbares Kriterium in 2 Tagen)' : lang === 'es' ? 'Terminado cuando: (hito concreto y comprobable en 2 días)' : 'Done when: (Concrete, testable milestone in 2 days)'}
                 className="w-full px-3 py-1.5 rounded-lg border border-emerald-300 bg-white text-stone-900 text-xs focus:ring-2 focus:ring-emerald-600/20"
               />
             </div>
@@ -350,7 +350,7 @@ ${priorArt || '...'}
                 rows={2}
                 value={failureMode}
                 onChange={(e) => setFailureMode(e.target.value)}
-                placeholder={lang === 'de' ? 'Die Bruchstelle: Woran sterben solche Projekte meistens?' : 'The breaking point: what makes such projects fail?'}
+                placeholder={lang === 'de' ? 'Die Bruchstelle: Woran sterben solche Projekte meistens?' : lang === 'es' ? 'El punto de ruptura: ¿qué hace fracasar proyectos así?' : 'The breaking point: what makes such projects fail?'}
                 className="w-full px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-stone-900 text-xs focus:ring-2 focus:ring-amber-800/20 shadow-xs"
               />
             </div>
@@ -362,7 +362,7 @@ ${priorArt || '...'}
                 rows={2}
                 value={priorArt}
                 onChange={(e) => setPriorArt(e.target.value)}
-                placeholder={lang === 'de' ? 'Bestehende Versuche, Repos, und warum deine Lücke noch frei ist.' : 'Existing repos, prior attempts, and why your niche remains unoccupied.'}
+                placeholder={lang === 'de' ? 'Bestehende Versuche, Repos, und warum deine Lücke noch frei ist.' : lang === 'es' ? 'Repositorios existentes, intentos previos y por qué tu nicho sigue libre.' : 'Existing repos, prior attempts, and why your niche remains unoccupied.'}
                 className="w-full px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-stone-900 text-xs focus:ring-2 focus:ring-amber-800/20 shadow-xs"
               />
             </div>

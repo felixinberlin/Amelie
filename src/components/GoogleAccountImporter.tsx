@@ -172,12 +172,14 @@ export const GoogleAccountImporter: React.FC<GoogleAccountImporterProps> = ({
     }
 
     const isDe = lang === 'de';
+
+    const isEs = lang === 'es';
     const draft = {
       title: item.title,
       oneLiner: item.snippet || item.title,
       recipient: isDe
         ? 'Recherchierter Partner für diesen Entwurf'
-        : 'Researched institutional recipient',
+        : isEs ? 'Destinatario institucional investigado' : 'Researched institutional recipient',
       verdict: 'gift',
       problem: content || item.title,
       whyNow: isDe
@@ -186,11 +188,11 @@ export const GoogleAccountImporter: React.FC<GoogleAccountImporterProps> = ({
       sketch: isDe
         ? `1. Kernmechanismus aus Entwurf "${item.title}" extrahieren\n2. Deterministische Minimallösung formulieren\n3. An passendes Team übergeben`
         : `1. Extract core mechanism from "${item.title}"\n2. Formulate turnkey zero-cost prototype\n3. Deliver to domain custodian`,
-      ticketName: isDe ? 'Ticket #1: 3-Klick Prototyp' : 'Ticket #1: 3-Click Prototype',
-      ticketCriteria: isDe ? 'Kernfunktion ohne Serverkosten im Browser erlebbar.' : 'Core logic interactive in browser.',
+      ticketName: isDe ? 'Ticket #1: 3-Klick Prototyp' : isEs ? 'Ticket #1: prototipo de 3 clics' : 'Ticket #1: 3-Click Prototype',
+      ticketCriteria: isDe ? 'Kernfunktion ohne Serverkosten im Browser erlebbar.' : isEs ? 'Lógica central interactiva en el navegador.' : 'Core logic interactive in browser.',
       failureMode: isDe
         ? 'Bruchstelle: Idee bleibt im Google Drive liegen, statt an Bauende verschenkt zu werden.'
-        : 'Failure point: Idea stays buried in Google Drive rather than gifted to builders.',
+        : isEs ? 'Punto de ruptura: la idea se queda enterrada en Google Drive en vez de regalarse a quien la construya.' : 'Failure point: Idea stays buried in Google Drive rather than gifted to builders.',
       priorArt: `Google Workspace Import (${item.source}): ${item.url}`,
     };
 
@@ -201,6 +203,7 @@ export const GoogleAccountImporter: React.FC<GoogleAccountImporterProps> = ({
   const handleTransferToCandidates = (item: GoogleIdeaItem) => {
     if (!onAddToCandidates) return;
     const isDe = lang === 'de';
+    const isEs = lang === 'es';
 
     const candidate: CandidateIdea = {
       id: `google-${item.id}`,
@@ -249,13 +252,13 @@ export const GoogleAccountImporter: React.FC<GoogleAccountImporterProps> = ({
           <h2 className="text-2xl sm:text-3xl font-serif-title font-bold text-stone-900 tracking-tight">
             {lang === 'de'
               ? 'Ideen aus deinem Google-Konto importieren'
-              : 'Import Ideas from Your Google Account'}
+              : lang === 'es' ? 'Importar ideas de tu cuenta de Google' : 'Import Ideas from Your Google Account'}
           </h2>
 
           <p className="mt-2 text-sm sm:text-base text-stone-700 font-sans leading-relaxed">
             {lang === 'de'
               ? 'Lies unvollendete Entwürfe, Projektnotizen und Gedanken aus deinen Google Docs, Drive-Dateien und Gmail-Mails aus — und überführe sie direkt in die Amélie-Zustellpipeline.'
-              : 'Scan your Google Docs, Drive files, and Gmail threads for buried concepts, raw drafts, and project outlines — then pack them into turnkey gift tins.'}
+              : lang === 'es' ? 'Busca en tus Google Docs, archivos de Drive y conversaciones de Gmail conceptos enterrados, borradores y esbozos de proyecto, y empaquétalos como latas de regalo listas para entregar.' : 'Scan your Google Docs, Drive files, and Gmail threads for buried concepts, raw drafts, and project outlines — then pack them into turnkey gift tins.'}
           </p>
 
           {/* Connected User Pill or Connect Button */}
@@ -270,7 +273,7 @@ export const GoogleAccountImporter: React.FC<GoogleAccountImporterProps> = ({
                     <span className="text-xs font-semibold text-stone-900">{user.email || 'Google User'}</span>
                     <span className="inline-flex items-center gap-1 text-[10px] text-emerald-800 font-medium bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">
                       <CheckCircle2 className="w-3 h-3 text-emerald-600" />
-                      {lang === 'de' ? 'Verbunden' : 'Connected'}
+                      {lang === 'de' ? 'Verbunden' : lang === 'es' ? 'Conectado' : 'Connected'}
                     </span>
                   </div>
                   <span className="text-[11px] text-stone-600 block">
@@ -286,13 +289,13 @@ export const GoogleAccountImporter: React.FC<GoogleAccountImporterProps> = ({
                   className="inline-flex items-center gap-1.5 text-xs font-medium text-amber-900 hover:text-amber-950 px-2.5 py-1 rounded bg-amber-50 hover:bg-amber-100 border border-amber-200 transition-colors"
                 >
                   <RefreshCw className={`w-3.5 h-3.5 text-amber-800 ${isLoading ? 'animate-spin' : ''}`} />
-                  <span>{isLoading ? (lang === 'de' ? 'Lade...' : 'Scanning...') : (lang === 'de' ? 'Neu synchronisieren' : 'Re-scan')}</span>
+                  <span>{isLoading ? (lang === 'de' ? 'Lade...' : lang === 'es' ? 'Buscando...' : 'Scanning...') : (lang === 'de' ? 'Neu synchronisieren' : lang === 'es' ? 'Volver a buscar' : 'Re-scan')}</span>
                 </button>
 
                 <button
                   onClick={handleSignOut}
                   className="text-stone-500 hover:text-stone-700 p-1.5 rounded hover:bg-stone-100 transition-colors"
-                  title={lang === 'de' ? 'Abmelden' : 'Sign out'}
+                  title={lang === 'de' ? 'Abmelden' : lang === 'es' ? 'Cerrar sesión' : 'Sign out'}
                 >
                   <LogOut className="w-4 h-4" />
                 </button>
@@ -314,8 +317,8 @@ export const GoogleAccountImporter: React.FC<GoogleAccountImporterProps> = ({
                   </svg>
                   <span>
                     {isSigningIn
-                      ? (lang === 'de' ? 'Verbinde mit Google...' : 'Connecting to Google...')
-                      : (lang === 'de' ? 'Mit Google anmelden' : 'Sign in with Google')}
+                      ? (lang === 'de' ? 'Verbinde mit Google...' : lang === 'es' ? 'Conectando con Google...' : 'Connecting to Google...')
+                      : (lang === 'de' ? 'Mit Google anmelden' : lang === 'es' ? 'Iniciar sesión con Google' : 'Sign in with Google')}
                   </span>
                 </button>
               </div>
@@ -329,7 +332,7 @@ export const GoogleAccountImporter: React.FC<GoogleAccountImporterProps> = ({
                 <span>
                   {lang === 'de'
                     ? 'GitHub Pages Statik-Modus: Das Archiv, die Dosen, der Markdown/JSON-Export und der lokale Editor laufen 100% offline ohne Firebase. Live-Import aus Google Docs/Gmail erfordert optionale VITE_FIREBASE_*-Secrets.'
-                    : 'GitHub Pages Static Mode: The idea archive, tins, Markdown/JSON exports, and local editor work 100% offline without Firebase. Live Google Workspace import requires optional VITE_FIREBASE_* repository secrets.'}
+                    : lang === 'es' ? 'Modo estático de GitHub Pages: el archivo de ideas, las latas, las exportaciones Markdown/JSON y el editor local funcionan 100 % sin conexión y sin Firebase. La importación en vivo de Google Workspace requiere los secretos opcionales VITE_FIREBASE_* del repositorio.' : 'GitHub Pages Static Mode: The idea archive, tins, Markdown/JSON exports, and local editor work 100% offline without Firebase. Live Google Workspace import requires optional VITE_FIREBASE_* repository secrets.'}
                 </span>
               </div>
             </div>
@@ -361,7 +364,7 @@ export const GoogleAccountImporter: React.FC<GoogleAccountImporterProps> = ({
                   placeholder={
                     lang === 'de'
                       ? 'Drive durchsuchen (z.B. Idee, App, Projekt, Notiz)...'
-                      : 'Search Drive files (e.g., idea, app, concept, note)...'
+                      : lang === 'es' ? 'Buscar en Drive (p. ej., idea, app, concepto, nota)...' : 'Search Drive files (e.g., idea, app, concept, note)...'
                   }
                   className="w-full pl-9 pr-4 py-2 text-sm bg-stone-50 border border-stone-300 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-amber-800/20 focus:border-amber-800 text-stone-900 placeholder:text-stone-600"
                 />
@@ -378,7 +381,7 @@ export const GoogleAccountImporter: React.FC<GoogleAccountImporterProps> = ({
                       : 'text-stone-600 hover:text-stone-900'
                   }`}
                 >
-                  {lang === 'de' ? 'Alle Quellen' : 'All Sources'} ({items.length})
+                  {lang === 'de' ? 'Alle Quellen' : lang === 'es' ? 'Todas las fuentes' : 'All Sources'} ({items.length})
                 </button>
                 <button
                   type="button"
@@ -413,14 +416,14 @@ export const GoogleAccountImporter: React.FC<GoogleAccountImporterProps> = ({
                 className="px-4 py-2 rounded-lg bg-stone-900 hover:bg-stone-800 text-white text-xs font-medium flex items-center justify-center gap-2 transition-colors disabled:opacity-50"
               >
                 <RefreshCw className={`w-3.5 h-3.5 ${isLoading ? 'animate-spin' : ''}`} />
-                <span>{lang === 'de' ? 'Suchen' : 'Scan'}</span>
+                <span>{lang === 'de' ? 'Suchen' : lang === 'es' ? 'Buscar' : 'Scan'}</span>
               </button>
             </div>
 
             {/* Quick Keyword Pills */}
             <div className="flex flex-wrap items-center gap-2 text-xs text-stone-600 pt-1 border-t border-stone-100">
               <span className="text-[11px] uppercase tracking-wider font-mono-code text-stone-600">
-                {lang === 'de' ? 'Schnellfilter:' : 'Quick search:'}
+                {lang === 'de' ? 'Schnellfilter:' : lang === 'es' ? 'Búsqueda rápida:' : 'Quick search:'}
               </span>
               {[
                 { label: lang === 'de' ? 'Ideen & Entwürfe' : lang === 'es' ? 'Ideas y borradores' : 'Ideas & Concepts', q: 'Idee' },
@@ -449,24 +452,24 @@ export const GoogleAccountImporter: React.FC<GoogleAccountImporterProps> = ({
             <div className="py-16 text-center bg-white rounded-xl border border-stone-200/80 p-8 space-y-3">
               <RefreshCw className="w-8 h-8 text-amber-800 animate-spin mx-auto" />
               <h3 className="font-serif-title font-semibold text-stone-800">
-                {lang === 'de' ? 'Durchsuche dein Google-Konto...' : 'Scanning your Google Workspace...'}
+                {lang === 'de' ? 'Durchsuche dein Google-Konto...' : lang === 'es' ? 'Buscando en tu Google Workspace...' : 'Scanning your Google Workspace...'}
               </h3>
               <p className="text-xs text-stone-600 max-w-md mx-auto">
                 {lang === 'de'
                   ? 'Abfrage von Google Drive (Docs, Tabellen, Notizen) und Gmail-Nachrichten nach unvollendeten Ideen.'
-                  : 'Retrieving Docs, notes, and Gmail threads matching your idea queries.'}
+                  : lang === 'es' ? 'Recuperando documentos, notas y conversaciones de Gmail que coinciden con tu búsqueda.' : 'Retrieving Docs, notes, and Gmail threads matching your idea queries.'}
               </p>
             </div>
           ) : filteredItems.length === 0 ? (
             <div className="py-16 text-center bg-white rounded-xl border border-dashed border-stone-300 p-8 space-y-3">
               <FileText className="w-8 h-8 text-stone-400 mx-auto" />
               <h3 className="font-serif-title font-semibold text-stone-800">
-                {lang === 'de' ? 'Keine Dokumente für diese Suche gefunden' : 'No matching documents found'}
+                {lang === 'de' ? 'Keine Dokumente für diese Suche gefunden' : lang === 'es' ? 'No se encontraron documentos' : 'No matching documents found'}
               </h3>
               <p className="text-xs text-stone-600 max-w-md mx-auto">
                 {lang === 'de'
                   ? 'Versuche eine allgemeinere Suchanfrage (z.B. leer lassen, um alle kürzlich geänderten Dokumente anzuzeigen).'
-                  : 'Try a broader search or clear the search input to list all recently modified documents.'}
+                  : lang === 'es' ? 'Prueba una búsqueda más amplia o vacía el campo para ver todos los documentos modificados recientemente.' : 'Try a broader search or clear the search input to list all recently modified documents.'}
               </p>
               <button
                 type="button"
@@ -477,7 +480,7 @@ export const GoogleAccountImporter: React.FC<GoogleAccountImporterProps> = ({
                 }}
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-800 text-xs font-medium transition-colors"
               >
-                <span>{lang === 'de' ? 'Alle aktuellen Dokumente laden' : 'Load all recent documents'}</span>
+                <span>{lang === 'de' ? 'Alle aktuellen Dokumente laden' : lang === 'es' ? 'Cargar todos los documentos recientes' : 'Load all recent documents'}</span>
               </button>
             </div>
           ) : (
@@ -518,7 +521,7 @@ export const GoogleAccountImporter: React.FC<GoogleAccountImporterProps> = ({
                           {isImported && (
                             <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 text-[11px] font-medium">
                               <CheckCircle2 className="w-3 h-3" />
-                              <span>{lang === 'de' ? 'Übernommen' : 'Imported'}</span>
+                              <span>{lang === 'de' ? 'Übernommen' : lang === 'es' ? 'Importado' : 'Imported'}</span>
                             </span>
                           )}
                         </div>
@@ -535,7 +538,7 @@ export const GoogleAccountImporter: React.FC<GoogleAccountImporterProps> = ({
 
                       {/* Snippet */}
                       <p className="mt-2 text-xs text-stone-700 line-clamp-3 leading-relaxed font-sans">
-                        {item.snippet || (lang === 'de' ? 'Keine Vorschau verfügbar' : 'No preview available')}
+                        {item.snippet || (lang === 'de' ? 'Keine Vorschau verfügbar' : lang === 'es' ? 'Sin vista previa' : 'No preview available')}
                       </p>
                     </div>
 
@@ -548,7 +551,7 @@ export const GoogleAccountImporter: React.FC<GoogleAccountImporterProps> = ({
                           className="inline-flex items-center gap-1 text-xs text-stone-600 hover:text-stone-900 px-2 py-1 rounded hover:bg-stone-100 transition-colors"
                         >
                           <Eye className="w-3.5 h-3.5" />
-                          <span>{lang === 'de' ? 'Lesen' : 'Inspect'}</span>
+                          <span>{lang === 'de' ? 'Lesen' : lang === 'es' ? 'Examinar' : 'Inspect'}</span>
                         </button>
 
                         <a
@@ -558,7 +561,7 @@ export const GoogleAccountImporter: React.FC<GoogleAccountImporterProps> = ({
                           className="inline-flex items-center gap-1 text-xs text-stone-600 hover:text-stone-900 px-2 py-1 rounded hover:bg-stone-100 transition-colors"
                         >
                           <ExternalLink className="w-3.5 h-3.5" />
-                          <span>{lang === 'de' ? 'Öffnen' : 'Open'}</span>
+                          <span>{lang === 'de' ? 'Öffnen' : lang === 'es' ? 'Abrir' : 'Open'}</span>
                         </a>
                       </div>
 
@@ -568,10 +571,10 @@ export const GoogleAccountImporter: React.FC<GoogleAccountImporterProps> = ({
                             type="button"
                             onClick={() => handleTransferToCandidates(item)}
                             className="inline-flex items-center gap-1 text-xs px-2.5 py-1 rounded bg-stone-100 hover:bg-stone-200 text-stone-800 font-medium transition-colors"
-                            title={lang === 'de' ? 'Als ungepackte Idee vormerken' : 'Save as candidate idea'}
+                            title={lang === 'de' ? 'Als ungepackte Idee vormerken' : lang === 'es' ? 'Guardar como idea candidata' : 'Save as candidate idea'}
                           >
                             <BookmarkPlus className="w-3.5 h-3.5 text-stone-600" />
-                            <span>{lang === 'de' ? 'Vormerken' : 'Save'}</span>
+                            <span>{lang === 'de' ? 'Vormerken' : lang === 'es' ? 'Guardar' : 'Save'}</span>
                           </button>
                         )}
 
@@ -581,7 +584,7 @@ export const GoogleAccountImporter: React.FC<GoogleAccountImporterProps> = ({
                           className="inline-flex items-center gap-1 text-xs px-3 py-1 rounded-lg bg-amber-900 hover:bg-amber-950 text-white font-medium shadow-2xs transition-colors"
                         >
                           <PackagePlus className="w-3.5 h-3.5" />
-                          <span>{lang === 'de' ? 'Dose packen' : 'Pack Tin'}</span>
+                          <span>{lang === 'de' ? 'Dose packen' : lang === 'es' ? 'Empaquetar lata' : 'Pack Tin'}</span>
                         </button>
                       </div>
                     </div>
@@ -602,12 +605,12 @@ export const GoogleAccountImporter: React.FC<GoogleAccountImporterProps> = ({
             <h3 className="text-xl font-serif-title font-bold text-stone-900">
               {lang === 'de'
                 ? 'Verbinde dein Google-Konto mit der Amélie-Pipeline'
-                : 'Connect Your Google Account with the Amélie Pipeline'}
+                : lang === 'es' ? 'Conecta tu cuenta de Google con Amélie' : 'Connect Your Google Account with the Amélie Pipeline'}
             </h3>
             <p className="text-sm text-stone-700 leading-relaxed">
               {lang === 'de'
                 ? 'Jeder Erfinder hat hunderte Google Docs mit Ideen, die nie gebaut wurden. Mit dieser Verbindung durchsucht Amélie deine Dokumente schreibgeschützt, bereitet sie nach dem Kula-Verfahren auf und findet die passenden Empfänger.'
-                : 'Most builders have dozens of abandoned Google Docs with ideas they will never build. By connecting read-only access, Amélie scans your notes and packages them as turnkey gifts for teams that will build them.'}
+                : lang === 'es' ? 'La mayoría de quienes construyen cosas tienen docenas de Google Docs abandonados con ideas que nunca harán. Con acceso de solo lectura, Amélie revisa tus notas y las empaqueta como regalos listos para equipos que sí las construirán.' : 'Most builders have dozens of abandoned Google Docs with ideas they will never build. By connecting read-only access, Amélie scans your notes and packages them as turnkey gifts for teams that will build them.'}
             </p>
           </div>
 
@@ -668,8 +671,8 @@ export const GoogleAccountImporter: React.FC<GoogleAccountImporterProps> = ({
               </svg>
               <span>
                 {isSigningIn
-                  ? (lang === 'de' ? 'Verbinde mit Google...' : 'Connecting to Google...')
-                  : (lang === 'de' ? 'Jetzt mit Google verbinden' : 'Connect with Google Now')}
+                  ? (lang === 'de' ? 'Verbinde mit Google...' : lang === 'es' ? 'Conectando con Google...' : 'Connecting to Google...')
+                  : (lang === 'de' ? 'Jetzt mit Google verbinden' : lang === 'es' ? 'Conectar con Google ahora' : 'Connect with Google Now')}
               </span>
             </button>
           </div>
@@ -704,7 +707,7 @@ export const GoogleAccountImporter: React.FC<GoogleAccountImporterProps> = ({
               {isLoadingContent ? (
                 <div className="py-12 text-center text-stone-600 space-y-2">
                   <RefreshCw className="w-5 h-5 animate-spin mx-auto text-amber-800" />
-                  <p>{lang === 'de' ? 'Lade Dokumenttext aus Google Drive...' : 'Fetching document body from Google Drive...'}</p>
+                  <p>{lang === 'de' ? 'Lade Dokumenttext aus Google Drive...' : lang === 'es' ? 'Cargando el documento desde Google Drive...' : 'Fetching document body from Google Drive...'}</p>
                 </div>
               ) : (
                 inspectContent || inspectingItem.snippet || 'No text content found.'
@@ -720,7 +723,7 @@ export const GoogleAccountImporter: React.FC<GoogleAccountImporterProps> = ({
                 className="inline-flex items-center gap-1 text-xs text-stone-600 hover:text-stone-900 font-medium"
               >
                 <ExternalLink className="w-3.5 h-3.5" />
-                <span>{lang === 'de' ? 'Im Browser öffnen' : 'Open in browser'}</span>
+                <span>{lang === 'de' ? 'Im Browser öffnen' : lang === 'es' ? 'Abrir en el navegador' : 'Open in browser'}</span>
               </a>
 
               <div className="flex items-center gap-2">
@@ -729,7 +732,7 @@ export const GoogleAccountImporter: React.FC<GoogleAccountImporterProps> = ({
                   onClick={() => setInspectingItem(null)}
                   className="px-3 py-1.5 rounded-lg text-xs font-medium text-stone-700 hover:bg-stone-200 transition-colors"
                 >
-                  {lang === 'de' ? 'Schließen' : 'Close'}
+                  {lang === 'de' ? 'Schließen' : lang === 'es' ? 'Cerrar' : 'Close'}
                 </button>
                 <button
                   type="button"
@@ -740,7 +743,7 @@ export const GoogleAccountImporter: React.FC<GoogleAccountImporterProps> = ({
                   className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-amber-900 hover:bg-amber-950 text-white text-xs font-medium transition-colors shadow-2xs"
                 >
                   <PackagePlus className="w-3.5 h-3.5" />
-                  <span>{lang === 'de' ? 'In Amélie-Dose packen' : 'Pack into Tin'}</span>
+                  <span>{lang === 'de' ? 'In Amélie-Dose packen' : lang === 'es' ? 'Empaquetar en lata' : 'Pack into Tin'}</span>
                 </button>
               </div>
             </div>

@@ -2,6 +2,8 @@
 
 **Ein Satz:** Eine Echtzeit-Schicht über bestehenden Feuerkugel-Meldenetzen, die Zeugen in den ersten Minuten aktiv zusammenbringt und beiläufig laufende Dashcam-/Türklingelkameras vor dem automatischen Überschreiben rettet — statt beides tagelang dem Zufall zu überlassen.
 **Stand:** 18.09.2026 · **Prüfen ab:** 09/2027
+**Empfänger:** American Meteor Society und IMO (bestehende Meldenetze) · nachrangig: Global Meteor Network, Betreiber bestehender Warn-Apps mit Nutzerbasis
+**Verdikt:** 🎁 verschenken
 
 ## Das Problem
 

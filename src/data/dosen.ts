@@ -4,6 +4,7 @@ export const DOSEN_DATA: DoseItem[] = [
   {
     id: 'altbau-thermal',
     title: 'Altbau Thermal',
+    titleEn: 'Altbau Thermal (Historic Flat Heat Loss)',
     oneLinerDe: 'Grundriss zeichnen, Baualtersklasse wählen, sehen, was die eigene Wohnung thermisch tut — an der Ecke hinter dem Schrank, nicht im Mittel. Die Innenperspektive zu dem, was EnergyMap Berlin von außen für jedes Gebäude ausrechnet.',
     oneLinerEn: 'Draw your floor plan, pick a construction-era class, and see what your apartment does thermally — at the corner behind the wardrobe, not on average. The inside view to what EnergyMap Berlin calculates from the outside.',
     date: '19. September 2026',
@@ -175,6 +176,7 @@ export const DOSEN_DATA: DoseItem[] = [
   {
     id: 'sperrmuell-radar',
     title: 'Sperrmüll-Radar',
+    titleEn: 'Bulky Waste & Curb Giveaway Radar',
     oneLinerDe: 'Foto vom Straßenfund → On-device-Klassifikation → Geo-Pin mit OSM-Straßensegment, der nach 12 Stunden verfällt. Kein Account, kein Marktplatz, Verfall als Datenschutz. Macht aus 13 Mio. € Müllkosten gerettete Dinge.',
     oneLinerEn: 'Snap street find → on-device classification → geo-pin with OSM street segment expiring after 12 hours. No account, no marketplace, TTL as privacy by design. Turns €13M municipal waste into saved goods.',
     date: 'September 2026 (vertieft 20.09.2026)',
@@ -364,6 +366,7 @@ export const DOSEN_DATA: DoseItem[] = [
   {
     id: 'klarlokal',
     title: 'KlarLokal (The Battering Ram)',
+    titleEn: 'KlarLokal (The Battering Ram)',
     oneLinerDe: '100% offline, WebGPU-gestützte Übersetzung von bedrohlichem Beamtendeutsch in Leichte Sprache (DIN SPEC 33429) — ohne dass ein einziges Byte das Gerät verlässt.',
     oneLinerEn: '100% offline, WebGPU-powered on-device translation of intimidating bureaucratic letters into plain language (DIN SPEC 33429) — zero bytes ever leave the browser.',
     date: 'September 2026',
@@ -439,6 +442,7 @@ export const DOSEN_DATA: DoseItem[] = [
     imageAlt: 'Kartenansicht der App: Straßenkreuzung mit farbigen Pflanzen-Pins, ein geöffnetes Fenster zeigt Taraxacum officinale, Stufe 3 Phänologie, zuletzt bestätigt vor vier Stunden, dazu Reiter für Beobachten, Aktiv, Journal und Stadtliga.',
     imageAspect: 0.558,
     title: 'Crack Flora Watcher (Ritzengrün)',
+    titleEn: 'Crack Flora Watcher (Pavement Greenery)',
     oneLinerDe: 'Citizen-Science-App für Pflanzen, die Asphalt und Mauerrisse bezwingen — mit Toughness-Index, Zeitraffer-Tracking und direkter Forschungsbrücke zur Senckenberg #Krautschau.',
     oneLinerEn: 'A citizen science app turning sidewalks and asphalt cracks into a living scavenger hunt with a Toughness Index, time-lapse tracking, and direct research integration with #Krautschau & Flora Incognita.',
     date: 'September 2026',
@@ -529,6 +533,7 @@ export const DOSEN_DATA: DoseItem[] = [
   {
     id: 'agent-postmortem-recorder',
     title: 'Agent Postmortem Recorder',
+    titleEn: 'Agent Postmortem Recorder',
     oneLinerDe: 'Nicht ein weiteres Dashboard über Agent-Sessions, sondern die Konsequenz daraus — der konkrete CLAUDE.md-Patch gegen die Missverständnis-Klasse, die dich statistisch am meisten kostet.',
     oneLinerEn: 'Not another agent analytics dashboard, but the actionable consequence: a concrete CLAUDE.md patch targeting the mistake class costing you the most time and tokens.',
     date: 'September 2026',
@@ -569,6 +574,7 @@ export const DOSEN_DATA: DoseItem[] = [
   {
     id: 'bugs-spaced-repetition',
     title: 'Bugs als Spaced-Repetition',
+    titleEn: 'Bugs as Spaced Repetition',
     oneLinerDe: 'Lerne aus deinen eigenen behobenen Fehlern — Git-Commits werden zu gezielten Anki-Karten für Denkfehler, die du persönlich machst.',
     oneLinerEn: 'Learn from your own past bugs: git commits automatically turn into personal spaced-repetition flashcards for your recurring mental traps.',
     date: 'September 2026',
@@ -607,6 +613,7 @@ export const DOSEN_DATA: DoseItem[] = [
   {
     id: 'diffgeist',
     title: 'Diffgeist',
+    titleEn: 'Diffgeist',
     oneLinerDe: 'Kein Changelog für alle, sondern der Teil, den dein Code tatsächlich aufruft — „React 20 ändert X, du nutzt X an vier Stellen, hier sind sie".',
     oneLinerEn: 'Not a generic changelog for everyone, but the specific slice your codebase actually calls: "React 20 changes X, your project calls X in 4 files: here they are."',
     date: 'September 2026',
@@ -647,6 +654,7 @@ export const DOSEN_DATA: DoseItem[] = [
   {
     id: 'echter-zufall',
     title: 'Echter Zufall als Service',
+    titleEn: 'True Hardware Randomness as a Service',
     oneLinerDe: 'Ein MCP-Server zwischen Rauschdiode und Agent — dreißig Zeilen, und jeder Würfelwurf, jedes Sigil, jede Kartenziehung zieht aus physikalischem Rauschen statt aus Math.random().',
     oneLinerEn: 'An MCP server between physical hardware avalanche noise diode and AI agent — 30 lines, routing true quantum entropy to every dice roll, sigil, or card draw.',
     date: 'September 2026',
@@ -687,6 +695,7 @@ export const DOSEN_DATA: DoseItem[] = [
   {
     id: 'ghost-replay',
     title: 'Ghost Replay',
+    titleEn: 'Ghost Replay',
     oneLinerDe: 'Visueller Differenzabgleich von UI-Interaktionen — zeichnet Benutzeraktionen als Vektorgeister über die Oberfläche, um Usability-Knicke sofort zu sehen.',
     oneLinerEn: 'Visual interaction diff: overlays user sessions as vector ghost trails over UI elements to spot hesitation and usability friction instantly.',
     date: 'September 2026',
@@ -725,6 +734,7 @@ export const DOSEN_DATA: DoseItem[] = [
   {
     id: 'kristallwachstum-3d',
     title: 'Kristallwachstum 3D',
+    titleEn: '3D Crystal Growth Simulation',
     oneLinerDe: 'Diffusionsbegrenzte Aggregation (DLA) in 3D im Browser — echte Mineralisationsphysik als didaktisches Werkzeug statt als starres Standbild.',
     oneLinerEn: 'Diffusion-Limited Aggregation (DLA) in real-time 3D in the browser: physical mineralization didactics instead of static diagrams.',
     date: 'September 2026',
@@ -763,6 +773,7 @@ export const DOSEN_DATA: DoseItem[] = [
   {
     id: 'pin-tumbler',
     title: 'Pin Tumbler Didaktik',
+    titleEn: 'Pin Tumbler Lockpick Didactics',
     oneLinerDe: 'Kein Lockpicking-Spiel, sondern ein Lerngerät — Stifte, Federn, Fertigungstoleranzen und Binding Order als sichtbares Modell, mit Handy-Vibration als Ersatz für das Gefühl, das man noch nicht hat.',
     oneLinerEn: 'Not a lockpicking mini-game, but an educational instrument: visual springs, tolerances, and binding order, paired with haptic feedback to build physical intuition.',
     date: 'September 2026',
@@ -803,6 +814,7 @@ export const DOSEN_DATA: DoseItem[] = [
   {
     id: 'raeucher-sim',
     title: 'Räucher-Sim',
+    titleEn: 'Smokehouse & Curing Simulator',
     oneLinerDe: 'Strömungsdynamik von aufsteigendem Rauch — laminarer Auftrieb, Wirbelablösung und Duftdiffusions-Visualisierung als beruhigende, physikalisch fundierte Simulation.',
     oneLinerEn: 'Fluid simulation of rising incense smoke: laminar plume, vortex shedding, and aesthetic fragrance diffusion as a meditative, physically grounded tool.',
     date: 'September 2026',
@@ -841,6 +853,7 @@ export const DOSEN_DATA: DoseItem[] = [
   {
     id: 'spec-drift-detector',
     title: 'Spec-Drift Detector',
+    titleEn: 'Spec-Drift Detector',
     oneLinerDe: 'CI-Wächter für Spec-Driven Development: Schlägt Alarm, wenn Code und Implementierung unbemerkt von der Markdown-Spezifikation weglaufen.',
     oneLinerEn: 'CI gate for spec-driven development: fails the build when code changes drift away from documented specification requirements.',
     date: 'September 2026',
@@ -879,6 +892,7 @@ export const DOSEN_DATA: DoseItem[] = [
   {
     id: 'tarot-zustandsmaschine',
     title: 'Tarot-Zustandsmaschine',
+    titleEn: 'Tarot State Machine',
     oneLinerDe: 'Narratives Debugging und archetypische Zustandsübergänge — Tarot-Karten als formale Zustandsmaschine für kreative Plot- und Systementwürfe.',
     oneLinerEn: 'Narrative debugging and archetypal state machines: Tarot archetypes modeled as a formal finite state automaton for creative writers and system architects.',
     date: 'September 2026',
@@ -917,6 +931,7 @@ export const DOSEN_DATA: DoseItem[] = [
   {
     id: 'traumtagebuch',
     title: 'Lokales Traumtagebuch',
+    titleEn: 'Local Offline Dream Journal',
     oneLinerDe: 'Träume erfassen und semantisch clustern — vollständig offline, verschlüsselt und ohne dass deine intimsten Gedanken auf fremden Cloud-Servern landen.',
     oneLinerEn: 'Record and semantically cluster dreams: 100% offline, client-side encrypted, keeping your intimate subconscious thoughts off cloud servers.',
     date: 'September 2026',
@@ -955,6 +970,7 @@ export const DOSEN_DATA: DoseItem[] = [
   {
     id: 'wet-ink',
     title: 'Wet Ink',
+    titleEn: 'Wet Ink (Capillary Flow Simulator)',
     oneLinerDe: 'Tinte auf Papier als echte Simulation — Kapillarfluss, Bleeding, Faser-Anisotropie, Edge Darkening. Eine Physik, tief statt breit.',
     oneLinerEn: 'Real ink on paper physics: capillary flow, fiber anisotropy, bleed spread, and pigment edge darkening in WebGL2.',
     date: 'September 2026',
@@ -995,6 +1011,7 @@ export const DOSEN_DATA: DoseItem[] = [
   {
     id: 'pillsafe-vision',
     title: 'PillSafe Vision',
+    titleEn: 'PillSafe Vision',
     oneLinerDe: 'Ein Foto der 7-Tage-Dosette schützt pflegende Angehörige vor lebensgefährlichen Verwechslungen — multimodale Erkennung von Pillenprägung und Farbe gleicht alles mit dem Medikationsplan ab.',
     oneLinerEn: 'A single overhead photo of a 7-day pillbox shields exhausted family caregivers from fatal medication errors using multimodal imprint and color verification against doctor schedules.',
     date: 'September 2026',
@@ -1056,6 +1073,7 @@ export const DOSEN_DATA: DoseItem[] = [
   {
     id: 'paragraphen-dolmetscher',
     title: 'ParagraphenDolmetscher',
+    titleEn: 'Paragraph Interpreter (Officialese Decoder)',
     oneLinerDe: 'Ein Foto des gefürchteten Amtsbescheids übersetzt bedrohliches Beamtendeutsch in 3 klare Sätze, deckt 4-Wochen-Fristen auf und formuliert den Widerspruch.',
     oneLinerEn: 'Photograph an intimidating government rejection notice → Instant 3-sentence plain language translation, deadline audit, and enforceable appeal letter draft.',
     date: 'September 2026',
@@ -1117,6 +1135,7 @@ export const DOSEN_DATA: DoseItem[] = [
   {
     id: 'klang-stethoskop',
     title: 'KlangStethoskop',
+    titleEn: 'Acoustic Machine Stethoscope',
     oneLinerDe: 'Smartphone an die laute Heizungspumpe oder Waschmaschine halten — akustische Neuronale Netze diagnostizieren Lagerschaden oder Kavitation und zeigen die 10€-Reparatur.',
     oneLinerEn: 'Hold phone to a grinding heating pump or washing machine — acoustic neural networks diagnose bearing failure or cavitation, guiding a $10 DIY repair instead of replacement.',
     date: 'September 2026',
@@ -1178,6 +1197,7 @@ export const DOSEN_DATA: DoseItem[] = [
   {
     id: 'dose-nurse-shift-guardian',
     title: 'DienstplanWächter (Shift Roster Auditor & Bonus Shield)',
+    titleEn: 'Shift Roster Auditor & Statutory Bonus Shield',
     oneLinerDe: 'Fotografiert den Stations-Dienstplan, warnt vor illegalen Ruhezeitverkürzungen und berechnet steuerfreie Nacht- und Sonntagszuschläge.',
     oneLinerEn: 'Photographs hospital breakroom shift rosters, warns against illegal sub-11h turnaround shifts, and audits tax-free overtime wage bonuses.',
     date: '17.09.2026',
@@ -1246,6 +1266,7 @@ export const DOSEN_DATA: DoseItem[] = [
   {
     id: 'dose-tradesman-liability-shield',
     title: 'BedenkenBlitz (VOB/B Baustellen-Schutzschirm)',
+    titleEn: 'QuickObjection (Construction Liability Shield)',
     oneLinerDe: '15 Sekunden Sprachmemo + Foto vom feuchten Estrich: Erstellt sofort eine wasserdichte VOB/B-Bedenkenanmeldung gegen Schadensersatzklagen.',
     oneLinerEn: '15-second voice memo + photo of damp substrate: Instantly creates an enforceable statutory construction liability objection.',
     date: '17.09.2026',
@@ -1314,6 +1335,7 @@ export const DOSEN_DATA: DoseItem[] = [
   {
     id: 'dose-cleaner-chemical-safety',
     title: 'ChemGefahr-Stopp (Chemical Safety & Poison Shield for Cleaners)',
+    titleEn: 'ChemHazard Stop (Chemical Safety Shield for Cleaners)',
     oneLinerDe: 'Kamera auf 2 Putzmittelflaschen richten: Warnt laut in 20 Sprachen vor Chlorgas und Verätzungen bei falschem Mischen.',
     oneLinerEn: 'Point phone camera at 2 cleaning chemical bottles: Warns audibly in 20 languages against toxic chlorine gas and acid burns.',
     date: '17.09.2026',
@@ -1382,6 +1404,7 @@ export const DOSEN_DATA: DoseItem[] = [
   {
     id: 'fugenduell-asphalt-arena',
     title: 'Fugenduell: Asphaltritzen-Arena',
+    titleEn: 'Crack Duel: Asphalt Crack Arena',
     image: 'fugenduel.jpg',
     imageAlt: 'Querformat-Sammelkarte „Asplenium ruta-muraria — Frankfurt Hauptbahnhof": zwei Fotos einer Mauerraute in einer Bahnsteig-Mauerfuge, daneben Werteleisten, Fähigkeiten, Stammbaum und der Signature Move Austrocknungsstarre.',
     imageAspect: 1.833,

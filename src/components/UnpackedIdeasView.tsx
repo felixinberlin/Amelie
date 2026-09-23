@@ -207,13 +207,13 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
     const newCandidate: CandidateIdea = {
       id: `custom-${Date.now()}`,
       title: newTitle.trim(),
-      round: `Runde 2+ (${new Date().toLocaleDateString(lang === 'de' ? 'de-DE' : 'en-US')})`,
-      date: new Date().toLocaleDateString(lang === 'de' ? 'de-DE' : 'en-US'),
+      round: `Runde 2+ (${new Date().toLocaleDateString(lang === 'de' ? 'de-DE' : lang === 'es' ? 'es-ES' : 'en-US')})`,
+      date: new Date().toLocaleDateString(lang === 'de' ? 'de-DE' : lang === 'es' ? 'es-ES' : 'en-US'),
       conceptDe: newConcept.trim() || newTitle.trim(),
       conceptEn: newConcept.trim() || newTitle.trim(),
       status: newStatus,
       suggestedVerdict: newStatus === 'besetzt' ? 'discarded' : 'gift',
-      recipientDe: newRecipient.trim() || (lang === 'de' ? 'Offen / Recherche nötig' : 'Open / Research needed'),
+      recipientDe: newRecipient.trim() || (lang === 'de' ? 'Offen / Recherche nötig' : lang === 'es' ? 'Abierto / falta investigar' : 'Open / Research needed'),
       recipientEn: newRecipient.trim() || 'Open / Research needed',
       sourceType: newSourceType,
       sourceDe: newSource.trim() || 'Eigene Recherche',
@@ -762,7 +762,7 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
                               title={t.ui.unpacked_pack_btn}
                             >
                               <Send className="w-3 h-3" />
-                              <span>{lang === 'de' ? 'Packen' : lang === 'es' ? 'Empacar' : 'Pack'}</span>
+                              <span>{lang === 'de' ? 'Packen' : lang === 'es' ? 'Empaquetar' : 'Pack'}</span>
                             </button>
                           )}
                         </td>

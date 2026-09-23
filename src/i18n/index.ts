@@ -53,6 +53,14 @@ export function t(id: string, lang: Language = 'en', fallback?: string): string 
 }
 
 /**
+ * Fills a {count} placeholder in a translated string, so numbers in the UI
+ * come from the data instead of being frozen into the catalog.
+ */
+export function withCount(text: string, count: number): string {
+  return text.replace(/\{count\}/g, String(count));
+}
+
+/**
  * Resolves a localized title for any item (tin, candidate idea, worker project, simulator)
  * through the OASIS XLIFF translation catalog.
  */
@@ -250,7 +258,7 @@ export function getTranslation(lang: Language): I18nCatalog {
     app: {
       title: tr('app.title', 'Amélie'),
       tagline: tr('app.tagline', 'Ideas that belong to someone else — after Amélie Poulain & the Kula Ring'),
-      subtitle: tr('app.subtitle', 'Félix, Berlin · As of: September 2026'),
+      subtitle: tr('app.subtitle', 'Félix, Berlin · As of September 2026'),
       kula_french: tr('app.kula_french', '« Le Kula-Ring des Idées »'),
       kula_ring: tr('app.kula_ring', '✦ Kula Ring ✦'),
       cc0_stamp: tr('app.cc0_stamp', 'CC0 · 1974–2026'),
@@ -280,9 +288,9 @@ export function getTranslation(lang: Language): I18nCatalog {
       },
       desc: {
         unpacked: tr('nav.desc.unpacked', 'Candidates & ideas before packaging'),
-        sandboxes: tr('nav.desc.sandboxes', '8 interactive physical simulators'),
-        musterEmails: tr('nav.desc.musterEmails', '4 emails following Amélie philosophy'),
-        normalJobs: tr('nav.desc.normalJobs', '10 concepts for everyday professions'),
+        sandboxes: tr('nav.desc.sandboxes', '{count} interactive simulators'),
+        musterEmails: tr('nav.desc.musterEmails', '{count} emails following the Amélie philosophy'),
+        normalJobs: tr('nav.desc.normalJobs', '{count} concepts for everyday professions'),
         whimsy: tr('nav.desc.whimsy', 'Whimsy & human warmth'),
         packer: tr('nav.desc.packer', 'Pack a new turn-key gift tin'),
         googleImport: tr('nav.desc.googleImport', 'Import ideas from Docs & Keep'),
@@ -300,31 +308,31 @@ export function getTranslation(lang: Language): I18nCatalog {
     manifest: {
       rule1: {
         title: tr('manifest.rule1.title', 'The delivery is the gift, not the find'),
-        desc: tr('manifest.rule1.desc', 'Ideas are cheap. The gift only starts when you research a specific team.'),
-        thumb: tr('manifest.rule1.thumb', '1h discovery, 1h validation, 2h recipient research.'),
+        desc: tr('manifest.rule1.desc', 'Ideas are cheap. Everyone has thirty. The gift only starts when you research a specific team capable of building it, and deliver a turn-key package.'),
+        thumb: tr('manifest.rule1.thumb', '1h discovery, 1h validation, 2h recipient research (the 1:2 budget ratio).'),
         pill: tr('manifest.rule1.pill', 'Delivery'),
       },
       rule2: {
         title: tr('manifest.rule2.title', 'Sign your name, demand nothing'),
-        desc: tr('manifest.rule2.desc', 'Your name underneath, CC0 above it. No equity demands, no mandatory attribution.'),
+        desc: tr('manifest.rule2.desc', 'Your name underneath, CC0 above it. No equity demands, no mandatory attribution, zero expectation of a response. The Kula ring thrives because the gift travels onward, not backward.'),
         thumb: tr('manifest.rule2.thumb', 'Explicitly grant permission not to reply.'),
         pill: tr('manifest.rule2.pill', 'Sign & CC0'),
       },
       rule3: {
         title: tr('manifest.rule3.title', 'The Phone Booth Rule (Strictly no follow-up)'),
-        desc: tr('manifest.rule3.desc', 'Place the tin box in the phone booth and disappear. No follow-up emails.'),
+        desc: tr('manifest.rule3.desc', 'Place the tin box in the phone booth and disappear. No follow-up emails, no "checking in", no LinkedIn requests. If you ask for feedback, it wasn\'t a gift — it was an unpaid pitch.'),
         thumb: tr('manifest.rule3.thumb', 'Send once. Then erase from your mental to-do list.'),
         pill: tr('manifest.rule3.pill', 'No Follow-up'),
       },
       rule4: {
         title: tr('manifest.rule4.title', "If they didn't ask, deliver tools, not homework"),
-        desc: tr('manifest.rule4.desc', 'Unsolicited ideas without code belong only to entities with budgets.'),
+        desc: tr('manifest.rule4.desc', 'Unsolicited ideas without code belong only to entities with budgets and a mandate to build (companies, academic chairs, public funds). Never burden volunteer open source maintainers with feature requests; maintainers only receive ready-to-merge pull requests.'),
         thumb: tr('manifest.rule4.thumb', 'Never give volunteer maintainers unpaid homework.'),
         pill: tr('manifest.rule4.pill', 'Tools Only'),
       },
       rule5: {
         title: tr('manifest.rule5.title', "Don't make gifting an excuse not to build"),
-        desc: tr('manifest.rule5.desc', 'Gifting ideas feels like building, but it isn\'t. Keep a maximum of two personal projects a year.'),
+        desc: tr('manifest.rule5.desc', 'Gifting ideas feels like building, but it isn\'t. Keep a maximum of two personal projects a year and finish them thoroughly. Gift everything else away so it doesn\'t rot.'),
         thumb: tr('manifest.rule5.thumb', 'Build max 2 personal projects. Gift the remaining 19.'),
         pill: tr('manifest.rule5.pill', 'Build Max 2'),
       },
@@ -358,23 +366,23 @@ export function getTranslation(lang: Language): I18nCatalog {
       recipient: tr('ui.recipient', 'Recipient:'),
       verdict_gift: tr('ui.verdict_gift', 'Gift'),
       verdict_build_first: tr('ui.verdict_build_first', 'Build first'),
-      verdict_keep: tr('ui.verdict_keep', 'Kept'),
+      verdict_keep: tr('ui.verdict_keep', 'Keep'),
       verdict_discarded: tr('ui.verdict_discarded', 'Discarded'),
       footer_text: tr('ui.footer_text', 'All tins are dedicated to the public domain under CC0.'),
       footer_quote: tr('ui.footer_quote', '"The delivery is the gift, not the find."'),
       all_domains: tr('ui.all_domains', 'All Domains'),
       all_verdicts: tr('ui.all_verdicts', 'All Verdicts'),
       search_placeholder: tr('ui.search_placeholder', 'Search tins (title, problem, recipient, tags)...'),
-      tins_heading: tr('ui.tins_heading', 'The Gifts: 15 Packaged Tins'),
-      tins_subheading: tr('ui.tins_subheading', 'Each tin is a one-page turnkey dossier with problem, tech catalyst ("Why Now"), architectural sketch, Ticket #1, and point of failure.'),
-      tins_badge: tr('ui.tins_badge', '15 turn-key dossiers ready to deliver · All CC0'),
-      deliveries_heading: tr('ui.deliveries_heading', 'Three Ready-to-Send Outbound Emails'),
-      deliveries_subheading: tr('ui.deliveries_subheading', 'First round: three researched teams, three completed emails. The delivery is the gift, not the brainstorming. Send once and walk away.'),
+      tins_heading: tr('ui.tins_heading', 'The Gifts: {count} Packed Tins'),
+      tins_subheading: tr('ui.tins_subheading', 'Each tin is a one-page, ready-to-send dossier: the problem, why it is possible now, a sketch, Ticket #1, and the point where it breaks.'),
+      tins_badge: tr('ui.tins_badge', '{count} turn-key dossiers ready to deliver · all CC0'),
+      deliveries_heading: tr('ui.deliveries_heading', '{count} Ready-to-Send Gift Emails'),
+      deliveries_subheading: tr('ui.deliveries_subheading', 'Each email goes to one researched recipient. The delivery is the gift, not the brainstorming. Send once and walk away.'),
       deliveries_badge: tr('ui.deliveries_badge', 'Q4 2026 Delivery Plan'),
       matrix_heading: tr('ui.matrix_heading', 'The Matrix: Idea → Recipient'),
-      matrix_subheading: tr('ui.matrix_subheading', 'All 19 ideas mapped by recipient, channel, persuasive hook, and delivery status.'),
-      discarded_heading: tr('ui.discarded_heading', 'Four Ideas Screened Out & Discarded'),
-      discarded_subheading: tr('ui.discarded_subheading', 'A gift only has value when the space is genuinely open. These four ideas were dropped during preliminary screening because they already exist or are commercially saturated.'),
+      matrix_subheading: tr('ui.matrix_subheading', 'All {count} ideas mapped by recipient, channel, hook, and delivery status.'),
+      discarded_heading: tr('ui.discarded_heading', '{count} Ideas Screened Out & Discarded'),
+      discarded_subheading: tr('ui.discarded_subheading', 'A gift only has value when the space is genuinely open. These ideas were dropped during screening because they already exist or the market is saturated.'),
       packer_heading: tr('ui.packer_heading', 'Pack a New Tin'),
       packer_subheading: tr('ui.packer_subheading', 'Following the Amélie standard: frame the problem, locate the recipient, and draft Ticket #1 with a crisp definition of done.'),
       unpacked_heading: tr('ui.unpacked_heading', 'Candidate Pipeline: Ideas Not Yet Packed'),

@@ -17,7 +17,10 @@ import {
   Check,
 } from 'lucide-react';
 import { Language } from '../types';
-import { getTranslation } from '../i18n';
+import { getTranslation, withCount } from '../i18n';
+import { SIMULATOR_COUNT } from '../data/doseSimulators';
+import { NORMAL_JOBS_AND_EVERYDAY_PEOPLE_IDEAS } from '../data/ideas/normalJobsAndEverydayPeople';
+import { AMELIE_MUSTERS } from '../data/musterEmails';
 
 interface HeaderProps {
   currentTab: string;
@@ -101,15 +104,15 @@ export const Header: React.FC<HeaderProps> = ({
           id: 'sandboxes',
           label: t.nav.sandboxes,
           icon: Sliders,
-          badge: 8,
-          desc: t.nav.desc.sandboxes,
+          badge: SIMULATOR_COUNT,
+          desc: withCount(t.nav.desc.sandboxes, SIMULATOR_COUNT),
         },
         {
           id: 'normal-jobs',
           label: t.nav.normalJobs,
           icon: Heart,
-          badge: 10,
-          desc: t.nav.desc.normalJobs,
+          badge: NORMAL_JOBS_AND_EVERYDAY_PEOPLE_IDEAS.length,
+          desc: withCount(t.nav.desc.normalJobs, NORMAL_JOBS_AND_EVERYDAY_PEOPLE_IDEAS.length),
         },
         {
           id: 'whimsy',
@@ -155,8 +158,8 @@ export const Header: React.FC<HeaderProps> = ({
           id: 'muster-emails',
           label: t.nav.musterEmails,
           icon: Mail,
-          badge: 4,
-          desc: t.nav.desc.musterEmails,
+          badge: AMELIE_MUSTERS.length,
+          desc: withCount(t.nav.desc.musterEmails, AMELIE_MUSTERS.length),
         },
         {
           id: 'discarded',

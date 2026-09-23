@@ -95,7 +95,7 @@ export const GitHubPagesDataHub: React.FC<GitHubPagesDataHubProps> = ({
           isDe
             ? `✓ Erfolgreich importiert: ${result.importedDosen} Dosen, ${result.importedCandidates} unverpackte Ideen.`
             : isEs
-            ? `✓ Importado con éxito: ${result.importedDosen} latas, ${result.importedCandidates} ideas sin empacar.`
+            ? `✓ Importado con éxito: ${result.importedDosen} latas, ${result.importedCandidates} ideas sin empaquetar.`
             : `✓ Successfully imported: ${result.importedDosen} tins, ${result.importedCandidates} unpacked ideas.`
         );
         if (onDataChanged) onDataChanged();
@@ -535,7 +535,7 @@ export const GitHubPagesDataHub: React.FC<GitHubPagesDataHubProps> = ({
                     {isDe
                       ? 'Wie man eine Dose nach dem 7-teiligen Standard packt, Kandidaten prüft, Empfänger recherchiert und XLIFF-Übersetzungen pflegt.'
                       : isEs
-                      ? 'Cómo empacar una lata con las 7 secciones obligatorias, investigar antecedentes, contactar destinatarios y mantener traducciones XLIFF.'
+                      ? 'Cómo empaquetar una lata con las 7 secciones obligatorias, investigar antecedentes, contactar destinatarios y mantener traducciones XLIFF.'
                       : 'How to pack a tin with the mandatory 7 sections, research prior art, match recipients, and maintain XLIFF translations.'}
                   </p>
                 </div>

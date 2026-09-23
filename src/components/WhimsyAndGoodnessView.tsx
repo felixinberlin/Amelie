@@ -25,6 +25,9 @@ import {
   Hand
 } from 'lucide-react';
 import { Language } from '../types';
+import { DOSEN_DATA } from '../data/dosen';
+import { SIMULATOR_COUNT } from '../data/doseSimulators';
+import { NORMAL_JOBS_AND_EVERYDAY_PEOPLE_IDEAS } from '../data/ideas/normalJobsAndEverydayPeople';
 import { GrainSackZenGame } from './GrainSackZenGame';
 import { TravelingGnomeGame } from './TravelingGnomeGame';
 import { PhotoboothAlbumGame } from './PhotoboothAlbumGame';
@@ -623,20 +626,20 @@ export const WhimsyAndGoodnessView: React.FC<WhimsyAndGoodnessViewProps> = ({ la
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-mono">
           <div className="p-3.5 rounded-2xl bg-white border border-stone-200 space-y-1">
-            <span className="text-stone-500 text-[11px] block">{lang === 'de' ? 'Dosen im Umlauf' : lang === 'es' ? 'Latas en circulación' : 'Packaged Tins'}</span>
-            <span className="text-xl font-bold text-stone-900">15 {lang === 'de' ? 'Dosen' : lang === 'es' ? 'Latas' : 'Tins'}</span>
+            <span className="text-stone-500 text-[11px] block">{lang === 'de' ? 'Dosen im Umlauf' : lang === 'es' ? 'Latas en circulación' : 'Tins in circulation'}</span>
+            <span className="text-xl font-bold text-stone-900">{DOSEN_DATA.length} {lang === 'de' ? 'Dosen' : lang === 'es' ? 'latas' : 'tins'}</span>
             <span className="text-[10px] text-emerald-700 block">{lang === 'de' ? '100% CC0 Frei' : lang === 'es' ? '100% CC0 Libre' : '100% CC0 Free'}</span>
           </div>
 
           <div className="p-3.5 rounded-2xl bg-white border border-stone-200 space-y-1">
             <span className="text-stone-500 text-[11px] block">{lang === 'de' ? 'Echte Berufe' : lang === 'es' ? 'Oficios reales' : 'Everyday Trades'}</span>
-            <span className="text-xl font-bold text-stone-900">10 {lang === 'de' ? 'Werke' : lang === 'es' ? 'Herramientas' : 'Tools'}</span>
+            <span className="text-xl font-bold text-stone-900">{NORMAL_JOBS_AND_EVERYDAY_PEOPLE_IDEAS.length} {lang === 'de' ? 'Ideen' : lang === 'es' ? 'ideas' : 'ideas'}</span>
             <span className="text-[10px] text-emerald-700 block">{lang === 'de' ? 'Echte E-Mails' : lang === 'es' ? 'Correos reales' : 'Real Emails'}</span>
           </div>
 
           <div className="p-3.5 rounded-2xl bg-white border border-stone-200 space-y-1">
             <span className="text-stone-500 text-[11px] block">{lang === 'de' ? 'Prüf-Simulatoren' : lang === 'es' ? 'Simuladores' : 'Simulators'}</span>
-            <span className="text-xl font-bold text-stone-900">10 {lang === 'de' ? 'Rechner' : lang === 'es' ? 'Demos' : 'Demos'}</span>
+            <span className="text-xl font-bold text-stone-900">{SIMULATOR_COUNT} {lang === 'de' ? 'Rechner' : lang === 'es' ? 'demos' : 'demos'}</span>
             <span className="text-[10px] text-emerald-700 block">{lang === 'de' ? 'Browser-nativ' : lang === 'es' ? 'En navegador' : 'In-browser'}</span>
           </div>
 

@@ -1,7 +1,8 @@
 import React, { useState, useMemo } from 'react';
 import { Search, Filter, Gift, Hammer, Lock, ArrowUpRight, Sparkles, Brain, Link2, Check, ExternalLink, Maximize2 } from 'lucide-react';
 import { DoseItem, Language, Verdict, DomainCategory } from '../types';
-import { getTranslation, getLocalizedTitle } from '../i18n';
+import { getTranslation, getLocalizedTitle, withCount } from '../i18n';
+import { DOSE_SIMULATOR_MAP } from '../data/doseSimulators';
 import { getDoseUrl } from '../utils/doseUrl';
 import { SimulatorKey } from '../data/doseSimulators';
 import { AmelieRulesBanner } from './AmelieRulesBanner';
@@ -230,7 +231,7 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
           </div>
 
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-amelie text-[#2b1e16] tracking-tight">
-            {t.ui.tins_heading}
+            {withCount(t.ui.tins_heading, dosen.length)}
           </h2>
           <p className="text-sm sm:text-base text-[#5c4a3d] leading-relaxed font-sans">
             {t.ui.tins_subheading}
@@ -339,6 +340,15 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
                     </span>
 
                     <div className="flex items-center gap-1.5 ml-auto">
+                      {DOSE_SIMULATOR_MAP[dose.id] && (
+                        <span
+                          title={lang === 'de' ? 'Mit interaktivem Simulator' : lang === 'es' ? 'Con simulador interactivo' : 'Comes with an interactive simulator'}
+                          className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-typewriter font-bold bg-[#c5832b]/15 text-[#78350f] border border-[#c5832b]/30"
+                        >
+                          <span aria-hidden="true">{DOSE_SIMULATOR_MAP[dose.id].icon}</span>
+                          <span>{lang === 'de' ? 'Simulator' : lang === 'es' ? 'Simulador' : 'Simulator'}</span>
+                        </span>
+                      )}
                       {dose.aiFrontier && (
                         <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-typewriter font-bold bg-[#264653]/15 text-[#1a3843] border border-[#264653]/30">
                           <Brain className="w-3 h-3 text-[#264653]" />
@@ -350,7 +360,7 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
                         type="button"
                         onClick={(e) => handleCopyUrl(e, dose.id)}
                         className="p-1 rounded-md text-[#8b6f57] hover:text-[#8c1d40] hover:bg-[#8c1d40]/10 transition-colors"
-                        title={copiedDoseId === dose.id ? (lang === 'de' ? 'URL kopiert!' : 'URL copied!') : (lang === 'de' ? 'Direkt-URL kopieren' : 'Copy direct URL')}
+                        title={copiedDoseId === dose.id ? (lang === 'de' ? 'URL kopiert!' : lang === 'es' ? '¡URL copiada!' : 'URL copied!') : (lang === 'de' ? 'Direkt-URL kopieren' : lang === 'es' ? 'Copiar URL directa' : 'Copy direct URL')}
                       >
                         {copiedDoseId === dose.id ? <Check className="w-3.5 h-3.5 text-[#1b4332]" /> : <Link2 className="w-3.5 h-3.5" />}
                       </button>
@@ -429,7 +439,7 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
                       type="button"
                       onClick={(e) => handleCopyUrl(e, dose.id)}
                       className="p-1.5 rounded-md text-[11px] font-typewriter text-[#7c6655] hover:text-[#8c1d40] hover:bg-[#faf5eb] border border-transparent hover:border-[#dfd1be] transition-colors flex items-center gap-1"
-                      title={copiedDoseId === dose.id ? (lang === 'de' ? 'URL kopiert!' : 'URL copied!') : (lang === 'de' ? 'Dosen-URL kopieren' : 'Copy Tin URL')}
+                      title={copiedDoseId === dose.id ? (lang === 'de' ? 'URL kopiert!' : lang === 'es' ? '¡URL copiada!' : 'URL copied!') : (lang === 'de' ? 'Dosen-URL kopieren' : lang === 'es' ? 'Copiar URL de la lata' : 'Copy Tin URL')}
                     >
                       {copiedDoseId === dose.id ? (
                         <Check className="w-3.5 h-3.5 text-emerald-600" />
@@ -445,7 +455,7 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
                         onSelectDose(dose);
                       }}
                       className="px-2 py-1 rounded-md text-[11px] font-typewriter text-[#7c6655] hover:text-[#8c1d40] hover:bg-[#faf5eb] border border-transparent hover:border-[#dfd1be] transition-colors flex items-center gap-1"
-                      title={lang === 'de' ? 'Schnellansicht im Popup' : 'Quick popup view'}
+                      title={lang === 'de' ? 'Schnellansicht im Popup' : lang === 'es' ? 'Vista rápida' : 'Quick popup view'}
                     >
                       <Maximize2 className="w-3 h-3" />
                       <span className="hidden sm:inline">Popup</span>
@@ -462,7 +472,7 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
                         }
                       }}
                       className="text-xs font-bold font-amelie text-[#8c1d40] hover:underline flex items-center gap-0.5 px-2 py-1 rounded-md hover:bg-[#8c1d40]/5"
-                      title={lang === 'de' ? 'Als Einzelseite öffnen' : 'Open as Single Page'}
+                      title={lang === 'de' ? 'Als Einzelseite öffnen' : lang === 'es' ? 'Abrir como página' : 'Open as Single Page'}
                     >
                       <span>{lang === 'de' ? 'Einzelseite' : t.ui.open_tin}</span>
                       <span>→</span>
