@@ -12,7 +12,12 @@ export interface DoseItem {
   titleKey?: string;
   titleEn?: string;
   titleEs?: string;
+  /** Dateiname in public/, z. B. 'eurobird.png'. Varianten daneben: scripts/prepare-dose-image.mjs */
   image?: string;
+  /** Was auf dem Bild zu sehen ist — für Screenreader und wenn das Bild nicht lädt */
+  imageAlt?: string;
+  /** Breite geteilt durch Höhe. Reserviert den Platz, damit beim Nachladen nichts springt. */
+  imageAspect?: number;
   oneLinerDe: string;
   oneLinerEn: string;
   oneLinerEs?: string;

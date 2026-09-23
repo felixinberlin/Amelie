@@ -37,6 +37,7 @@ import { getBook } from '../data/doseBooks';
 import { DoseBook } from './DoseBook';
 import { getBookChapterUrl, parseBookSlugFromUrl } from '../utils/doseUrl';
 import { getRepoFileUrl } from '../utils/bookSources';
+import { doseImageSrc, doseImageSrcSet, doseImageSizes } from '../utils/doseImage';
 import {
   AltbauThermalSimulator,
   GlasanflugSimulator,
@@ -409,8 +410,31 @@ ${bookChapters
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-amelie text-[#2b1e16] tracking-tight leading-tight">
             {localizedTitle}
           </h1>
-          {/* Image */}
-          <img src={dose.image} alt={localizedTitle} className="rounded-2xl border border-[#d8cbba] shadow-xs" /> 
+          {/* Bild zur Dose — nur wenn es eins gibt, sonst stand hier auf 33 von
+              35 Seiten ein leeres <img> mit Rahmen und Schatten. */}
+          {dose.image && (
+            <figure className="space-y-2">
+              <picture>
+                <source
+                  type="image/webp"
+                  srcSet={doseImageSrcSet(dose.image)}
+                  sizes={doseImageSizes(dose.imageAspect)}
+                />
+                <img
+                  src={doseImageSrc(dose.image)}
+                  alt={dose.imageAlt || localizedTitle}
+                  loading="lazy"
+                  decoding="async"
+                  style={
+                    dose.imageAspect
+                      ? { aspectRatio: String(dose.imageAspect), maxHeight: 'min(70vh, 34rem)' }
+                      : { maxHeight: 'min(70vh, 34rem)' }
+                  }
+                  className="mx-auto h-auto w-auto max-w-full rounded-2xl border border-[#d8cbba] shadow-xs bg-[#faf5eb]"
+                />
+              </picture>
+            </figure>
+          )}
 
           {/* Poetic One-Liner Box */}
           <div className="p-5 sm:p-6 rounded-2xl bg-[#fffdf9]/90 border border-[#d8cbba] text-[#3b2a1c] font-amelie text-lg sm:text-xl md:text-2xl italic leading-relaxed shadow-xs">
