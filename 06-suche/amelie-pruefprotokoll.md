@@ -19,6 +19,23 @@ Ergänzt `05-dosen/_entsorgt.md`: dort steht die Begründung für gepackte, dann
 
 ---
 
+## Runde 8 — 23.09.2026 (Sperrmüll/Trash Map vertieft, method: bisociation + ideenrunde)
+
+Auftrag von Félix: „get to work in the trash-map idea a little more. Use both skills."
+**Randbedingung:** Die Dose Sperrmüll-Radar ist am 20.09. an CityLAB verschenkt. Eine verschenkte Dose wird nicht nachgebessert — die Kandidaten mussten **eigene Dosen mit eigenen Empfängern** tragen, sonst wäre es Nachfassen.
+Anker (neu im Log): **Gebührenwerk statt Leseschema** — die Berliner Entsorgungs-Preisleiter. Collider: Korkernte (Distanz 4) und Mykorrhiza-Handel (Distanz 5). Details in `06-suche/amelie-bisoziation-log.md`, Run 7.
+
+| Idee | Urteil | Beleg (kurz) | Prüfen ab |
+|---|---|---|---|
+| **Sperrmüll-Weiche** — bei der Sperrmüll-Buchung aus den Fotos eine dreistufige Weiche stellen (Wiederverkauf / Verschenken / Entsorgung) und **den Tarif der Weiche folgen lassen**, statt ihr zu widersprechen | **`verengt`** | **UK: Verfahren ohne Technik.** Somerset Council × British Heart Foundation (Mai 2026): Bürger kreuzen bei der Buchung „darf wiederverwendet werden" an, **bewertet wird erst im SUEZ-Depot nach der Abholung** (Zustand + Brandschutzetiketten); ebenso Worcestershire, Bridgwater. **Berlin: beide Hälften da, unverbunden.** NochMall-Abholservice (BSR-eigen) hat Formular, Fotoupload, Etagenangabe, verbindliches Angebot in 48 h — **kostenpflichtig und getrennt** von der Sperrmüllbuchung. **Fähigkeit dicht, Einsatzort leer:** Vondi, ReSell AI, Cluzy, itemvaluechecker schätzen Foto → Wiederverkaufswert, alle für Verkäufer. **KI+Abfall ist stromabwärts dicht** (Sortieranlagen, Materialerkennung), Objekt-Wiederverwendung kommt darin kaum vor — genau der UBA-Befund. **Restlücke: die Weiche vor dem Transport, in der Buchungsstrecke, mit der Preisleiter als Hebel, bei einem Betrieb, dem beide Ausgänge gehören.** Dose: `05-dosen/sperrmuell-weiche.md` | 03/2027 |
+| **Wunschseite / Nachfrage-Karte** — nicht kartieren, was dasteht, sondern was gebraucht wird (Angebot ist flüchtig, Bedarf ist haltbar) | **`besetzt`** | Olio führt ausdrücklich **„Wanted"-Einträge** (eigener Hilfe-Artikel), Trash Nothing/Freecycle kennen **WANTED**-Posts, Buy Nothing **„ISO"**. Die Nachfrageseite ist in jeder Verschenk-Community Standard. Stoppregel nach einer Suche gezogen | – |
+| **Erstausstattungs-Brücke** — die gesetzlich zustehende Wohnungserstausstattung (§ 24 Abs. 3 SGB II) an den Strom brauchbarer Straßen-/Sperrmüllmöbel koppeln | **`verengt` (dünn), nicht gepackt** | Die **Institution existiert**: Furniture Banks (US/CA/UK) arbeiten seit Jahren mit Caseworker-Überweisung; Berlin hat NochMall und mehrere Sozialkaufhäuser. Berlin erbringt die Erstausstattung laut Jobcenter-Seite „in Geld- oder Sachleistungen" (Richtlinie „einmalige Bedarfe", Beträge dort nicht beziffert; Sekundärquellen nennen bis 2.084 €). **Die Restlücke ist Logistik — Lager, Transport, Termin — nicht Software.** Ohne Softwarekern keine Dose; als Baustein der Weiche vermerkt (Ausgang „Verschenken") | 03/2027 |
+| **Räumungsvorhersage aus Kündigungsfristen** — Sperrmüllaufkommen je Straße aus dem gesetzlich dreimonatigen Vorlauf von Wohnungskündigungen prognostizieren | **Reality-Check-Kill, keine Suche** | Scheitert an der Datenfrage, bevor die Existenzfrage überhaupt zählt: Kündigungen sind nicht öffentlich, liegen bei Vermietern und Hausverwaltungen, und ein Entsorger, der sie abfragt, sammelt Umzugsprofile. Kein Empfänger kann das rechtmäßig beschaffen. Protokolliert, damit die Idee nicht in einer späteren Runde erneut Suchbudget kostet | – |
+
+**Zahlen, die aus dieser Runde in Dosen gehören** (Primärquellen, 23.09.2026): BSR-Tarife **100 € bis 5 m³ (6–15 Werktage) · 96 € Express (≤ 2 m³, 5 Tage) · 50 € ab Tag 16**; Recyclinghof **3 m³ frei, aber nur mit Auto**; UBA-Studie 2022 zu Abfallströmen: **2.355.300 t Sperrmüll (2017), ~30 % Polstermöbel/Matratzen/Teppiche, 34 % thermisch verwertet**, und der Befund, dass der Gewinn in **Wiederverwendung** liegt, nicht in besserer Sortiertechnik.
+
+---
+
 ## Runde 6 — 21.09.2026 (Fugenduell / Crack Flora Watcher, method: ideenrunde)
 
 Auftrag: Dose Crack Flora Watcher gegen das Fugenduell-Brainstorm prüfen (Material:

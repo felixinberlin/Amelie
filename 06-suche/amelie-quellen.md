@@ -126,6 +126,42 @@ Der Lauf nennt diese Anker in `amelie-bisoziation-log.md`. Sie sind hier vermerk
 
 ---
 
+## Typ H — Gebührenwerke und Tarife (neu, Runde 8)
+
+*Muster: eine Preisliste, die von Hand angewandt wird und dabei Anreize setzt. Ein Typ-A-Dokument, nur dass es nicht bewertet, sondern belohnt und bestraft. Nebeneinandergelegt zeigt die Leiter oft, dass der erwünschte Weg der teuerste und der schädliche der kostenlose ist.*
+
+| Quelle | Befund | Status | Zuletzt |
+|---|---|---|---|
+| **BSR-Gebühren / Sperrmüllbuchung** | 100 € bis 5 m³ (6–15 Werktage) · 96 € Express (≤ 2 m³, 5 Tage) · 50 € ab Tag 16 · Recyclinghof 3 m³ frei, **aber nur mit Auto** · NochMall-Abholservice kostenpflichtig · Straße 0 € und sofort. Ergab die Dose Sperrmüll-Weiche | durchsucht | 23.09.2026 |
+| Parkraumbewirtschaftung, Pfandsysteme, Anschluss- und Benutzungsgebühren | noch nicht angesehen — dieselbe Bewegung („Preisleiter steht falsch herum") vermutlich übertragbar | **offen, als Nächstes** | – |
+
+**Suchstring:** `<Betrieb> Gebühren Entgelte Preisliste <Jahr>` · `<Leistung> kostenpflichtig kostenlos Voraussetzung`
+
+---
+
+## Typ I — Amtliche Potenzialstudien (neu, Runde 8)
+
+*Muster: eine Behörde lässt untersuchen, wo in einem Stoffstrom noch etwas zu holen wäre, und der Bericht sagt selbst, welcher Weg sich nicht lohnt. Der verworfene Weg ist meist der, den die Branche gerade optimiert.*
+
+| Quelle | Befund | Status | Zuletzt |
+|---|---|---|---|
+| **UBA 2022, Nutzung von Abfallströmen** | Sperrmüll 2017: 2.355.300 t, ~30 % Polstermöbel/Matratzen/Teppiche, 40 % Sortieranlage, 34 % thermisch. Befund: Entlastung kommt aus **Abfallberatung, getrennter Sammlung und Wiederverwendung** — nicht aus besserer Sortiertechnik | durchsucht (Zusammenfassung gelesen, Originalbericht nicht) | 23.09.2026 |
+| Weitere UBA-/BMUV-Potenzialstudien zu anderen Stoffströmen | offen | offen | – |
+
+**Suchstring:** `<Stoffstrom> Potenzial Studie Umweltbundesamt ausgeschöpft` · `<Stoffstrom> Wiederverwendung Quote Anteil verwertbar`
+
+---
+
+## Empfänger, in Runde 8 geprüft
+
+| Empfänger | Befund | Status |
+|---|---|---|
+| **BSR** | Besitzt **beide Enden** der Sperrmüll-Weiche: kostenpflichtige Sperrmüllabholung und NochMall mit eigenem Abholservice (Formular, Fotoupload, Etage, verbindliches Angebot in 48 h). Keine Verbindung zwischen beiden. Rang 1 für alles Entsorgungsnahe | neu, 23.09.2026 |
+| **CityLAB Berlin** | **Gesperrt bis auf Weiteres.** Mail 2 ging am 20.09.2026 dorthin, Mail 4 (Patenschaft) liegt bewusst zurück. Eine dritte Sendung an dieselbe Adresse wäre Nachfassen — Manifestregel | – |
+| Somerset Council × British Heart Foundation (UK) | Kein Empfänger, sondern **Vorbild mit benannter Schwäche** (Triage erst im Depot nach der Abholung) | 23.09.2026 |
+
+---
+
 ## Nicht mehr als Quelle nutzen
 
 - Allgemeine Suchen „KI App <Alltagsthema>" → Content-Farmen, besetzte Märkte (siehe Besetzungsatlas im Playbook).
@@ -134,3 +170,4 @@ Der Lauf nennt diese Anker in `amelie-bisoziation-log.md`. Sie sind hier vermerk
 - **Nur deutschsprachige Suchen bei Alltagsideen** → Runde 4: Sperrmüll-Radar war nur auf Deutsch frei; auf Englisch existierte CurbAlert bereits viermal. Vor jeder Zusage englische Suche Pflicht. **Runde 6 bestätigt zum dritten Mal:** Crack Flora Watcher war deutsch `verengt`, englisch `besetzt` (GrowApp, Nature's Notebook).
 - **Die Projektseite für den Funktionsumfang halten**, wenn der Empfänger quelloffen ist → Runde 6: Die Seite von Gieß den Kiez sagt zu Verfall und Übertragung nichts, der Klon sagt es eindeutig. Bei öffentlichem Repo ist `git clone` + `grep` die stärkere Evidenz und kostet zwei Minuten (GitHub-API und Issue-Seiten können gesperrt sein, `git clone` über HTTPS geht trotzdem).
 - **Nur nach dem Gegenstand suchen** („Ritzenpflanzen-App") → findet nie die Werkzeuge, die über ihre **Funktion** definiert sind (Typ F oben). Die Mechanik immer separat suchen, siehe Playbook §2.
+- **Eine Idee nur auf der Angebotsseite denken** (neu ab Runde 8): Die Nachfrageseite in Verschenk-Communities („Wanted", WANTED, ISO) ist Standardfunktion bei Olio, Freecycle/Trash Nothing und Buy Nothing. Wer „aber die Wunschliste fehlt doch" denkt, hat die Hilfeseiten nicht gelesen.
