@@ -1825,6 +1825,47 @@ export const DOSEN_DATA: DoseItem[] = [
     priorArtDe: 'Out and About (2026) ist Cozy-Foraging über echte Pflanzenarten, Einzelspieler in gebauter Welt — „Spiel über echte Pflanzen" ist damit besetzt und allein kein Pitch mehr. Niche baut echte Mendel-Genetik als Kernmechanik und beweist das Muster „echte Wissenschaft als Spielsystem", nimmt ihm aber die Neuheit. Pokémon GO, Ingress und Munzee Places haben Inbesitznahme und Verteidigung seit Jahren ausgereift — an kuratierten, virtuellen Objekten ohne Lebensdauer. Frei bleibt das Objekt, das ohne das Spiel existiert und ohne das Spiel stirbt.',
     priorArtEn: 'Out and About (2026) is cozy foraging over real plant species, single player in a built world — "a game about real plants" is therefore taken and no longer a pitch by itself. Niche builds real Mendelian genetics into its core loop and proves the pattern of real science as a game system while removing its novelty. Pokémon GO, Ingress and Munzee have had claiming and defending mature for years — on curated virtual objects with no lifespan. What remains free is the object that exists without the game and dies without it.'
   },
+  {
+    id: 'sperrmuell-weiche',
+    title: 'Sperrmüll-Weiche',
+    titleEn: 'Bulky Waste Switch',
+    oneLinerDe: 'Bei der Sperrmüll-Buchung entscheidet ein Foto, ob der Sessel in den Ofen oder in die NochMall fährt — und der Preis der Abholung folgt dieser Entscheidung, statt ihr zu widersprechen.',
+    oneLinerEn: 'When booking a bulky-waste pickup, a photo decides whether the armchair goes to the incinerator or to the reuse store — and the pickup price follows that decision instead of contradicting it.',
+    date: '23. September 2026',
+    reviewAfter: 'März 2027',
+    recipientsDe: 'BSR — besitzt beide Enden der Weiche (Sperrmüllabholung und NochMall) · Domänenpartner: Re-Use Berlin / Zero-Waste-Agentur (SenUVK) · nicht CityLAB (dort liegt seit 20.09. eine Mail)',
+    recipientsEn: 'BSR (Berlin city cleaning) — owns both ends of the switch (bulky-waste pickup and the NochMall reuse store) · domain partner: Re-Use Berlin / Zero Waste Agency · not CityLAB (a mail has been there since 20 Sept)',
+    domain: 'civic',
+    verdict: 'gift',
+    status: 'gepackt',
+    tags: ['Berlin', 'Kreislaufwirtschaft', 'Gebührenwerk', 'Wiederverwendung', 'Foto-Triage'],
+    problemDe: 'In Berlin kostet es Geld, einen Schrank loszuwerden — und auch Geld, ihn zu verschenken. Sperrmüllabholung 100 € (96 € Express, 50 € ab Tag 16), Recyclinghof kostenlos, aber nur mit Auto, NochMall-Abholservice kostenpflichtig, die Straße kostet nichts. Die Preisleiter ist falsch herum gebaut: Der einzige kostenlose, sofort verfügbare Weg ohne Auto ist der, der die Stadt über 13 Millionen Euro im Jahr kostet. Das UBA sagt dazu: Der Gewinn liegt nicht in besserer Sortiertechnik, sondern in Wiederverwendung.',
+    problemEn: 'In Berlin it costs money to get rid of a wardrobe — and it also costs money to give it away. Bulky-waste pickup €100 (€96 express, €50 from day 16), recycling yard free but only by car, the reuse store\'s pickup service charges, the street costs nothing. The price ladder is upside down: the only free, immediate option without a car is the one that costs the city more than €13 million a year. The Federal Environment Agency adds: the gain lies not in better sorting technology but in reuse.',
+    whyNowDe: [
+      'Foto → Zustand und Wiederverkaufswert ist 2026 Massenware (Vondi, ReSell AI, Cluzy) — ausnahmslos für Verkäufer. Am Anfang einer Entsorgungsbuchung beantwortet dieselbe Schätzung die Frage, ob das Ding überhaupt in den Lkw muss.',
+      'Damit wandert die Triage vor den Transport. Somerset × British Heart Foundation (Mai 2026) sortiert erst im Depot, nach der Abholung.',
+      'Die BSR betreibt Sperrmüllabholung und NochMall samt Abholservice mit Fotoupload. Es fehlt kein Partner, kein Lkw, kein Lager — nur die Verbindung zwischen zwei Formularen desselben Betriebs.'
+    ],
+    whyNowEn: [
+      'Photo → condition and resale value is a commodity in 2026 (Vondi, ReSell AI, Cluzy) — all of it for sellers. Placed at the start of a disposal booking, the same estimate answers whether the item needs to go in the truck at all.',
+      'That moves triage before transport. Somerset × British Heart Foundation (May 2026) sorts only at the depot, after collection.',
+      'BSR runs both the bulky-waste pickup and the NochMall with its own photo-upload pickup service. No partner, truck or warehouse is missing — only the link between two forms of the same operator.'
+    ],
+    sketchDe: 'Bei der Buchung Fotos plus zwei Fragen (funktioniert es, darf es weitergegeben werden). Das Modell schätzt keinen Preis, sondern stellt eine dreistufige Weiche: Wiederverkauf · Verschenken · Entsorgung. Der Tarif folgt der Weiche — geht der Gegenstand in die Wiederverwendung, wird die Abholung billiger oder kostenlos. Rückmeldung: „Ihr Sessel steht seit Dienstag in der NochMall." Kein Marktplatz, keine Preisschätzung für Private, keine Historie über Haushalte.',
+    sketchEn: 'At booking time: photos plus two questions (does it work, may it be passed on). The model estimates no price; it sets a three-way switch: resale · give away · disposal. The tariff follows the switch — if the item goes to reuse, the pickup gets cheaper or free. Feedback: "Your armchair has been in the NochMall since Tuesday." No marketplace, no price estimates for private people, no history per household.',
+    firstStepDe: {
+      ticket: 'Ein Monat Buchungen, zwei Fotos, ein Mensch — bevor eine Zeile Modellcode entsteht.',
+      criteria: '200 zurückliegende Sperrmüll-Buchungen mit Fotos von einem NochMall-Ankäufer nachträglich bewerten lassen: Wie viel Prozent wäre verkaufsfähig gewesen? Fertig, wenn eine belastbare Quote dasteht. Über zehn Prozent rechtfertigt alles Weitere; darunter ist die Idee tot und hat zwei Wochen gekostet statt zwei Jahren.'
+    },
+    firstStepEn: {
+      ticket: 'One month of bookings, two photos, one person — before a single line of model code.',
+      criteria: 'Have a NochMall buyer rate 200 past bulky-waste bookings with photos after the fact: what share would have been sellable? Done when a solid rate exists. Above ten percent justifies everything else; below it the idea is dead and cost two weeks instead of two years.'
+    },
+    failureModeDe: 'Die Quote könnte klein sein — rund 30 % des Sperrmülls sind Polster, Matratzen und Teppiche, meist nicht wiederverwendbar. Der Fehlanreiz ist eingebaut: Wer Rabatt will, nennt jeden Schrank „wie neu"; die Weiche darf nur Vorschlag sein. Die Fotos dürfen die Buchung nicht überleben. Und die ehrliche Grenze: Die Weiche senkt die 13 Millionen nicht — wer illegal ablagert, bucht gar nicht.',
+    failureModeEn: 'The rate may be small — about 30 % of bulky waste is upholstery, mattresses and carpets, mostly not reusable. The perverse incentive is built in: anyone wanting a discount calls every wardrobe "as new"; the switch may only suggest. Photos must not outlive the booking. And the honest limit: the switch does not reduce the €13 million — people who dump illegally never book.',
+    priorArtDe: 'Großbritannien hat das Verfahren ohne die Technik: Somerset Council × British Heart Foundation (Mai 2026), Worcestershire, Bridgwater — Bewertung erst im Depot nach der Abholung. Berlin hat beide Hälften, unverbunden: NochMall-Abholservice mit Formular, Fotoupload und Angebot binnen 48 h, getrennt von der Sperrmüllbuchung. „Foto → Wert" ist dicht, aber verkäuferseitig; KI + Abfall ist dicht, aber stromabwärts (Sortieranlagen). Die Nachfrageseite (Wanted/ISO bei Olio, Freecycle, Buy Nothing) ist besetzt.',
+    priorArtEn: 'The UK has the procedure without the technology: Somerset Council × British Heart Foundation (May 2026), Worcestershire, Bridgwater — assessment only at the depot after collection. Berlin has both halves, unconnected: the NochMall pickup service with form, photo upload and an offer within 48 h, separate from the bulky-waste booking. "Photo → value" is crowded but seller-side; AI + waste is crowded but downstream (sorting plants). The demand side (Wanted/ISO on Olio, Freecycle, Buy Nothing) is taken.'
+  },
 ];
 
 export const DISCARDED_DATA: DiscardedItem[] = [
