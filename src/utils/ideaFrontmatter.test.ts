@@ -61,6 +61,32 @@ describe('mapIdeaFrontmatterToDeliveryState', () => {
   });
 });
 
+describe('Browser-Umgebung ohne globales Buffer', () => {
+  // gray-matter ruft intern Buffer.from(...) auf (node_modules/gray-matter/lib/utils.js).
+  // Node/vitest haben immer ein globales Buffer, ein Vite-Browserbundle nicht — das hat
+  // genau hier dazu geführt, dass jede Dose beim echten Deploy als "nicht versendet" galt,
+  // während dieselbe Testdatei in Node grün blieb. Simuliert die Browser-Lücke, indem
+  // globalThis.Buffer entfernt und das Modul frisch importiert wird.
+  it('parst trotzdem korrekt, weil ideaFrontmatter.ts Buffer selbst polyfillt', async () => {
+    const originalBuffer = globalThis.Buffer;
+    // @ts-expect-error - Absicht: die Lücke simulieren, die im Browser echt ist.
+    delete globalThis.Buffer;
+    vi.resetModules();
+    try {
+      const fresh = await import('./ideaFrontmatter');
+      expect(typeof globalThis.Buffer).not.toBe('undefined');
+      const result = fresh.parseIdeaFrontmatter(
+        `---\nstatus: Delivered\ndate_delivered: '2026-09-19T00:00:00Z'\n---\n`,
+        'ohne-buffer.md'
+      );
+      expect(result?.status).toBe(IdeaStatus.Delivered);
+    } finally {
+      globalThis.Buffer = originalBuffer;
+      vi.resetModules();
+    }
+  });
+});
+
 describe('DOSE_STATUS_TO_IDEA_STATUS', () => {
   it('deckt jeden DoseStatus ab', () => {
     const alle: DoseStatus[] = ['gefunden', 'gepackt', 'zugestellt', 'antwort', 'gebaut', 'entsorgt'];

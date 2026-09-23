@@ -10,8 +10,22 @@
  * flows outward into the frontmatter — nothing here maps IdeaStatus back
  * onto DoseStatus, so there is exactly one status system, not two.
  */
+import { Buffer as BufferPolyfill } from 'buffer';
 import matter from 'gray-matter';
 import { DoseStatus, IdeaFrontmatter, IdeaStatus, SentEmailRecord } from '../types';
+
+// gray-matter unconditionally calls Buffer.from(...) internally
+// (node_modules/gray-matter/lib/utils.js). Node (this script, vitest) already
+// has a global Buffer; a browser bundle does not, and Vite — unlike webpack —
+// does not polyfill Node core globals by default, so every parse threw
+// "Buffer is not defined" once this ran client-side and every Dose silently
+// fell back to "not sent". Installing the standard browser-safe `buffer`
+// package as the global fixes gray-matter everywhere without reimplementing
+// YAML (the generated frontmatter already uses real YAML features, e.g. a
+// folded `>-` block scalar for a long target_maker value).
+if (typeof globalThis.Buffer === 'undefined') {
+  (globalThis as unknown as { Buffer: typeof BufferPolyfill }).Buffer = BufferPolyfill;
+}
 
 /** DoseStatus → IdeaStatus. Exhaustive so a new DoseStatus fails to compile here, not silently. */
 export const DOSE_STATUS_TO_IDEA_STATUS: Record<DoseStatus, IdeaStatus> = {
