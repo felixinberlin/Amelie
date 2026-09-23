@@ -32,7 +32,7 @@ Diese Liste sagt, **wo** gegraben wird, und hält fest, **was schon durchgegrabe
 
 | Quelle | Wonach suchen | Status | Zuletzt |
 |---|---|---|---|
-| mitforschen.org (Plattform aller deutschen CS-Projekte) | Projekte mit Foto-Upload und Rückmeldung „nach Auswertung“ | offen — **ergiebigste Quelle, als Nächstes** (seit Runde 2 so vermerkt; weder in Runde 3 noch im Gemini-Lauf angefasst, in Runde 4 von Researcher #2 bewusst ausgewichen, um Kollision mit Researcher #1 zu vermeiden — nächste Runde zuerst nehmen oder Vermerk streichen) | – |
+| mitforschen.org (Plattform aller deutschen CS-Projekte; Wissenschaft im Dialog, Museum für Naturkunde, BMFTR) | Projekte mit Foto-Upload und Rückmeldung „nach Auswertung" | **offen, bleibt als Quelle** (Entscheidung Félix 23.09.2026). Kein Empfänger, sondern Verzeichnis zum Durchsuchen. Der Vermerk „als Nächstes" ist gestrichen — sie wird genommen, wenn eine Runde eine Typ-B-Quelle braucht, nicht als Schuld. Seite läuft über HTTPS (kanonische URL `https://www.mitforschen.org/`); aus der Sandbox nur per WebFetch erreichbar, `curl` blockt die Allowlist | 23.09.2026 |
 | AMS/IMO-Feuerkugelmeldung + deutsche Feuerkugelnetz-Nachfolger (Zeugenmeldeformulare) | Zeugen melden Stunden bis Tage später aus dem Gedächtnis, Profis triangulieren asynchron — „nicht in Echtzeit" (AMS) | angekratzt — **ergiebig, Feuerkugel-Sofortnetz entstand hieraus**; zwei weitere Kandidaten dort `besetzt` (FRIPON, RedVox). Weitere Feuerkugel-/Meteor-Meldenetze ungelesen | 18.09.2026 |
 | Deutsche Stiftung Denkmalschutz (Schwarzbuch, Meldeportal, ehrenamtliche Beiräte) | Ehrenamts-Beobachtung mit rückblickender Auswertung | angekratzt (Suchtreffer, Portal nicht gelesen) — Idee: Denkmal-Verlaufsblick | 19.09.2026 |
 | Thünen Wildbienen-Monitoring | Hummel-Monitoring zusätzlich zur Nisthilfe | angekratzt | 16.09.2026 |
@@ -184,6 +184,18 @@ Der Lauf nennt diese Anker in `amelie-bisoziation-log.md`. Sie sind hier vermerk
 | Weitere UBA-/BMUV-Potenzialstudien zu anderen Stoffströmen | offen | offen | – |
 
 **Suchstring:** `<Stoffstrom> Potenzial Studie Umweltbundesamt ausgeschöpft` · `<Stoffstrom> Wiederverwendung Quote Anteil verwertbar`
+
+---
+
+## Typ L — Fachliche Referenzsammlungen (neu, 23.09.2026)
+
+*Muster: Eine Fachgesellschaft sammelt über Jahre echte Fälle mit dokumentierter Ursache — als Nachschlagewerk. Dieselbe Sammlung ist das Material, das jedem Übungsgerät fehlt.*
+
+| Quelle | Befund | Status | Zuletzt |
+|---|---|---|---|
+| **FractoDB + FractoGraphics** (AG Fraktographie von DGM/DVM an der BAM, seit 2013) | Tausende reale Bruchflächenbilder aus Schadensfällen und Vergleichsuntersuchungen, kostenlos auf Anfrage (`fraktographie@bam.de`), Symbolsprache für Befunde; Kurs „Fraktographie metallischer Werkstoffe" 03/2027 Berlin, Arbeitskreis 20.11.2026 Berlin. **Referenzsammlung, die niemand als Übungsmaterial nutzt** — Empfänger der Dose Bruchlesen | durchsucht (Seiten gelesen) | 23.09.2026 |
+
+**Suchstring:** `<Fach> Datenbank Referenz Schadensfälle` · `<Fach> Arbeitskreis Schulung` — **auf Deutsch zuerst**, wenn eine deutsche Institution das Feld trägt
 
 ---
 

@@ -4,7 +4,7 @@
 
 | # | Kandidat | Urteil |
 |---|---|---|
-| 1 | Bruchlesen / Ground Truth | **`frei` (dünn)** — nur Präsenzkurse am echten Stück, Software nur zur Automatisierung; Machbarkeit ungeprüft |
+| 1 | Bruchlesen / Ground Truth | **`verengt` — als Dose gepackt** (`05-dosen/bruchlesen.md`): FractoDB der AG Fraktographie ist Referenz, nicht Übung |
 | 2 | Einer bricht, einer liest | Baustein von 1, nicht separat geprüft |
 | 3 | Geofakt-Duell | `verengt` — virtuelles Knapping ist Forschungsfront, Geofakt-Seite fehlt |
 | 4 | Stammgast | `verengt` — Agentengesellschaften als Spiel existieren, Eingabe nur über Anwesenheit nicht |

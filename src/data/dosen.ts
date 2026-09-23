@@ -1866,6 +1866,47 @@ export const DOSEN_DATA: DoseItem[] = [
     priorArtDe: 'Großbritannien hat das Verfahren ohne die Technik: Somerset Council × British Heart Foundation (Mai 2026), Worcestershire, Bridgwater — Bewertung erst im Depot nach der Abholung. Berlin hat beide Hälften, unverbunden: NochMall-Abholservice mit Formular, Fotoupload und Angebot binnen 48 h, getrennt von der Sperrmüllbuchung. „Foto → Wert" ist dicht, aber verkäuferseitig; KI + Abfall ist dicht, aber stromabwärts (Sortieranlagen). Die Nachfrageseite (Wanted/ISO bei Olio, Freecycle, Buy Nothing) ist besetzt.',
     priorArtEn: 'The UK has the procedure without the technology: Somerset Council × British Heart Foundation (May 2026), Worcestershire, Bridgwater — assessment only at the depot after collection. Berlin has both halves, unconnected: the NochMall pickup service with form, photo upload and an offer within 48 h, separate from the bulky-waste booking. "Photo → value" is crowded but seller-side; AI + waste is crowded but downstream (sorting plants). The demand side (Wanted/ISO on Olio, Freecycle, Buy Nothing) is taken.'
   },
+  {
+    id: 'bruchlesen',
+    title: 'Bruchlesen',
+    titleEn: 'Reading Fractures',
+    oneLinerDe: 'Ein Übungsgerät für Fraktografie, das Bruchflächen mit exakt bekannter Ursache in beliebiger Zahl erzeugt — Streiflicht drehen, Ursprung zeigen, Spiegelradius und Last schätzen, und danach läuft der Riss rückwärts ab.',
+    oneLinerEn: 'A practice tool for fractography that generates fracture surfaces with exactly known causes in any number — turn the raking light, point at the origin, estimate mirror radius and load, then watch the crack run backwards.',
+    date: '23. September 2026',
+    reviewAfter: 'September 2027',
+    recipientsDe: 'AG Fraktographie von DGM und DVM an der BAM (Dr.-Ing. Dirk Bettge; FractoDB, Kurs Fraktographie) · nachrangig: HVG-DGG, Glas- und Keramikrestaurierung, forensische Glasanalyse',
+    recipientsEn: 'Fractography working group of DGM and DVM at BAM (Dr.-Ing. Dirk Bettge; FractoDB, fractography course) · secondary: HVG-DGG (glass industry), glass and ceramics conservation, forensic glass analysis',
+    domain: 'physics',
+    verdict: 'gift',
+    status: 'gepackt',
+    tags: ['Fraktografie', 'Peridynamik', 'Ausbildung', 'Glas', 'Simulation', 'Bisoziation'],
+    problemDe: 'Bruchflächen lesen lernt man am echten Stück, und davon gibt es zu wenige mit sicher bekannter Ursache. Die Norm nennt das Verfahren selbst „qualitative, judgment-based", Anfänger verlieren viel Zeit mit der Ursprungssuche. Die Musterlösung ist bei Schadensfällen eine Deutung, nicht die Wahrheit, und jede Sammlung ist endlich: Eine systematische Variation — derselbe Bruch mit tieferem Fehler oder höherer Last — gibt es physisch nicht. FractoDB, die Referenzdatenbank der AG Fraktographie, ist zum Nachschlagen da, nicht zum Üben.',
+    problemEn: 'Fracture surfaces are learned on real specimens, and too few of them have a securely known cause. The standard itself calls the method "qualitative, judgment-based"; novices lose much time searching for the origin. For failure cases the model answer is an interpretation, not the truth, and every collection is finite: a systematic variation — the same fracture with a deeper flaw or higher load — does not exist physically. FractoDB, the working group\'s reference database, is for looking things up, not for practice.',
+    whyNowDe: [
+      'Peridynamik reproduziert Verzweigung, den Übergang Spiegel–Nebel–Rauhigkeit, Rissablenkung und Möwenflügel-Muster; der Übergangsradius sinkt mit der Spannung wie im Experiment (Silling, Bobaru, Wang 2015). Heute auf einer Grafikkarte machbar.',
+      'Ursprung, Last, Fehlergröße und Rissgeschwindigkeit liegen im Solver ohnehin vor. Die Musterlösung muss nicht erschlossen werden, sie wird mitprotokolliert.',
+      'Das Bewertungsschema ist genormt (ASTM C1322 für Merkmale, C1678 für Spiegelradius → Bruchspannung).'
+    ],
+    whyNowEn: [
+      'Peridynamics reproduces branching, the mirror–mist–hackle transition, crack deflection and gull-wing patterns; the transition radius falls with stress as in experiments (Silling, Bobaru, Wang 2015). Feasible on a GPU today.',
+      'Origin, load, flaw size and crack speed are already in the solver. The model answer need not be inferred — it is logged.',
+      'The scoring scheme is standardised (ASTM C1322 for features, C1678 for mirror radius → fracture stress).'
+    ],
+    sketchDe: 'Eine simulierte Bruchfläche (zuerst Glasstab und -platte unter Biegung) mit frei drehbarem Streiflicht. Drei Antworten: Ursprung, Spiegelradius, Lastart. Auflösung: Der Riss läuft vom wahren Ursprung ab, dein Klick bleibt stehen, C1678 rechnet die Spannung. Schwierigkeit über die Fälle, die die Norm als schwer nennt. Jede Stufe mischt blind echte Belegstücke unter. Spielmodus „Einer bricht, einer liest": Rezept als Seed verschicken. Keine Zertifizierung, kein Gutachten-Export, keine automatische Bewertung echter Stücke.',
+    sketchEn: 'A simulated fracture surface (first glass rod and plate in bending) with freely rotatable raking light. Three answers: origin, mirror radius, load type. Reveal: the crack runs from the true origin, your click stays put, C1678 computes the stress. Difficulty follows the cases the standard calls hard. Every level blindly mixes in real specimens. Game mode "one breaks, one reads": send the recipe as a seed. No certification, no report export, no automatic assessment of real specimens.',
+    firstStepDe: {
+      ticket: 'Ein Glasstab, eine Biegung, ein Ursprung, ein Streiflichtregler.',
+      criteria: 'Peridynamik-Lauf für einen Glasstab im Vierpunktbiegeversuch mit Oberflächenfehler an bekannter Stelle, Oberfläche im Browser mit drehbarem Streiflicht rendern. Fertig, wenn drei Fraktografie-Kundige den Ursprung jeweils innerhalb eines Spiegelradius finden und drei Laien deutlich daneben liegen.'
+    },
+    firstStepEn: {
+      ticket: 'One glass rod, one bend, one origin, one raking-light slider.',
+      criteria: 'Peridynamics run of a glass rod in four-point bending with a surface flaw at a known location, surface rendered in the browser with rotatable raking light. Done when three people who know fractography each find the origin within one mirror radius and three laypeople clearly miss.'
+    },
+    failureModeDe: 'Der wahrscheinlichste Ausgang: Das Gerät trainiert die Handschrift des Lösers statt des Materials — Peridynamik überschätzt die Grenzgeschwindigkeit des Risses. Gegenmittel sind die blind untergemischten echten Stücke. Zweitens: Die AG Fraktographie kommt aus der Metallfraktografie, gut simulierbar sind heute die Merkmale spröder Werkstoffe; sieht die AG Glas nicht als ihr Thema, geht die Dose an HVG-DGG oder die Restaurierung. Drittens: ASTM-Normen sind kostenpflichtig, das Gerät wendet das Schema an, liefert den Text nicht mit.',
+    failureModeEn: 'The most likely outcome: the tool trains the solver\'s handwriting instead of the material — peridynamics overestimates the limiting crack speed. The antidote is the blindly mixed real specimens. Second: the working group comes from metal fractography, while today the brittle-material features are what simulates well; if the group does not see glass as its topic, the tin goes to the glass industry association or to conservation. Third: ASTM standards are paid; the tool applies the scheme but does not ship the text.',
+    priorArtDe: 'FractoDB (AG Fraktographie, BAM/DGM, seit 2013): tausende reale Bruchflächenbilder, kostenlos auf Anfrage — Referenz, nicht Übung. Ausbildung nur in Präsenz am Belegstück: Gerresheimer, American Glass Research, ASM, OSAC 2023-N-0005, DGM-Kurs Berlin 2027. Simulation der Merkmale als Forschung ohne Lernbezug (Sandia/Nebraska 2015). Software, die selbst liest (DINOv2-REM-Fraktografie 2026, unüberwachtes Lernen 2021) — das Gegenteil: Dort verschwindet der Mensch aus dem Urteil.',
+    priorArtEn: 'FractoDB (fractography working group, BAM/DGM, since 2013): thousands of real fracture images, free on request — reference, not practice. Training only in person on specimens: Gerresheimer, American Glass Research, ASM, OSAC 2023-N-0005, DGM course Berlin 2027. Simulation of the features as research without a learning angle (Sandia/Nebraska 2015). Software that reads by itself (DINOv2 SEM fractography 2026, unsupervised learning 2021) — the opposite: there the human leaves the judgement.'
+  },
 ];
 
 export const DISCARDED_DATA: DiscardedItem[] = [
