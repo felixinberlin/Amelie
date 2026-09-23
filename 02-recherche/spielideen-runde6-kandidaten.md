@@ -1,6 +1,17 @@
 # Spielideen — Bisoziations-Lauf 6 (20.09.2026)
 
-**Status: Kandidaten, nicht Dosen.** Keine dieser sechs Ideen hat die Amélie-Existenzprüfung durchlaufen. Nichts hier ist `frei`.
+**Status: Kandidaten, nicht Dosen. Existenzprüfung am 23.09.2026 gelaufen** (`06-suche/amelie-pruefprotokoll.md`, Abschnitt „Nachprüfung 23.09.2026"):
+
+| # | Kandidat | Urteil |
+|---|---|---|
+| 1 | Bruchlesen / Ground Truth | **`frei` (dünn)** — nur Präsenzkurse am echten Stück, Software nur zur Automatisierung; Machbarkeit ungeprüft |
+| 2 | Einer bricht, einer liest | Baustein von 1, nicht separat geprüft |
+| 3 | Geofakt-Duell | `verengt` — virtuelles Knapping ist Forschungsfront, Geofakt-Seite fehlt |
+| 4 | Stammgast | `verengt` — Agentengesellschaften als Spiel existieren, Eingabe nur über Anwesenheit nicht |
+| 5 | Winterprotokoll | `verengt` — White Risk / LAB SNOW beim Empfänger, Rekonstruktionsaufgabe fehlt |
+| 6 | Skip | `verengt` — wie vorhergesagt |
+
+Der Rest dieser Datei ist der Stand vom 20.09.2026, unverändert.
 Methode, Frame Pairs, Mode-Liste und Retro: `06-suche/amelie-bisoziation-log.md`, Run 6.
 
 ---
