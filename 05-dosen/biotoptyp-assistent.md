@@ -1,3 +1,10 @@
+---
+status: Available
+delivery_method: E-Mail
+target_maker: >-
+  Ökologische Planungsbüros und Gutachter:innen, die Eingriffsausgleich nach der
+  Bundeskompensationsverordnung berechnen
+---
 # Biotoptyp-Assistent
 
 **Ein Satz:** Ein Foto-Upload-Tool, das für ein begangenes Gelände einen Vorschlag für den zutreffenden BKompV-Anlage-2-Biotoptyp macht (mit Wertpunkt-Spanne), damit Gutachter:innen nur noch bestätigen statt aus 668 Typen von Hand nachzuschlagen.

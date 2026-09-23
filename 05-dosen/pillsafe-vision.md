@@ -1,3 +1,8 @@
+---
+status: Available
+delivery_method: E-Mail
+target_maker: Pflegestützpunkte Deutschland
+---
 # PillSafe Vision
 
 **Ein Satz:** Ein Foto der 7-Tage-Dosette schützt pflegende Angehörige vor lebensgefährlichen Verwechslungen — multimodale Erkennung von Pillenprägung und Farbe gleicht alles mit dem Medikationsplan ab.

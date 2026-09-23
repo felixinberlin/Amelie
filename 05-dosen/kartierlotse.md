@@ -1,3 +1,8 @@
+---
+status: Available
+delivery_method: E-Mail
+target_maker: Landesämter mit digitalisiertem Kartierschlüssel
+---
 # Kartierlotse
 
 **Ein Satz:** Ein Feld-Assistent für die Biotopkartierung nach deutschem Kartierschlüssel, der während der Begehung anzeigt, welche Zeigerart oder Strukturangabe noch fehlt, um zwischen zwei möglichen Codes sicher zu entscheiden — Live-Hinweis statt nachträglicher Vorhersage am Schreibtisch.

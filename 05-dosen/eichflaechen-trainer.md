@@ -1,3 +1,8 @@
+---
+status: Available
+delivery_method: E-Mail
+target_maker: Ausbildungsstellen für Biotopkartierung
+---
 # Eichflächen-Trainer
 
 **Ein Satz:** Ein Kalibrierdeck aus echten, bereits kartierten Biotopflächen — Feldfotos und Artenliste rein, eigenen Code raten, sofort mit dem archivierten Experten-Konsens abgleichen — damit Nachwuchs-Kartierer die seltenen Zweifelsfälle üben können, ohne dafür eine echte Saison im Feld zu verbrauchen.

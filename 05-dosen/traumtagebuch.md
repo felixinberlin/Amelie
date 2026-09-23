@@ -1,3 +1,8 @@
+---
+status: Available
+delivery_method: E-Mail
+target_maker: Schlaflabore / Oneirogene Forschung
+---
 # Traumtagebuch mit Motiv-Karte
 
 **Ein Satz:** Einträge werden lokal eingebettet, wiederkehrende Motive erscheinen als Cluster über die Zeit — und nichts verlässt das Gerät. Das Letzte ist das Produkt.

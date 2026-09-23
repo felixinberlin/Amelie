@@ -4,6 +4,47 @@ export type Verdict = 'gift' | 'build_first' | 'keep' | 'discarded';
 
 export type DoseStatus = 'gefunden' | 'gepackt' | 'zugestellt' | 'antwort' | 'gebaut' | 'entsorgt';
 
+/**
+ * Ticket-facing status vocabulary for a Dose's YAML frontmatter (05-dosen/*.md).
+ *
+ * This is deliberately NOT a second, independent status system: it is a thin,
+ * English-language translation of `DoseStatus`, which stays the app's real
+ * source of truth. `scripts/sync-idea-frontmatter.mjs` writes it into the
+ * frontmatter block of every 05-dosen/*.md file, derived 1:1 from the
+ * matching `DoseItem.status` in `src/data/dosen.ts` via
+ * `DOSE_STATUS_TO_IDEA_STATUS` (see `src/utils/ideaFrontmatter.ts`). Nothing
+ * reads this enum backwards into DoseStatus — it only flows outward, into the
+ * frontmatter and from there into `mapIdeaFrontmatterToDeliveryState`.
+ */
+export enum IdeaStatus {
+  Available = 'Available',
+  Delivered = 'Delivered',
+  InProgress = 'In Progress',
+  Launched = 'Launched',
+}
+
+/** Strictly-typed shape of a Dose's YAML frontmatter block. */
+export interface IdeaFrontmatter {
+  status: IdeaStatus;
+  /** ISO 8601 timestamp — present once status is no longer Available. */
+  date_delivered?: string;
+  delivery_method?: string;
+  target_maker?: string;
+}
+
+/**
+ * Derived delivery-state record for an outreach email (see
+ * `src/data/deliveries.ts`). Previously persisted by hand in
+ * `localStorage` (`amelie_sent_emails`) — now computed from
+ * `IdeaFrontmatter` by `mapIdeaFrontmatterToDeliveryState` /
+ * `loadSentEmailsMap` in `src/services/ideaDeliveryService.ts`.
+ */
+export interface SentEmailRecord {
+  sent: boolean;
+  sentAt: string;
+  notes?: string;
+}
+
 export type DomainCategory = 'civic' | 'tools' | 'physics' | 'audio' | 'creative' | 'knowledge';
 
 export interface DoseItem {

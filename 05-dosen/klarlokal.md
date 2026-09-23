@@ -1,3 +1,8 @@
+---
+status: Available
+delivery_method: E-Mail
+target_maker: Prototype Fund
+---
 # KlarLokal
 
 **Ein Satz:** Behördenbrief fotografieren, in Leichte Sprache übersetzt bekommen — vollständig on-device, ohne dass je ein Byte das Gerät verlässt, auch nicht verschlüsselt an eine Cloud.

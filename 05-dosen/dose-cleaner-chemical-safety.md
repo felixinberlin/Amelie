@@ -1,3 +1,8 @@
+---
+status: Available
+delivery_method: E-Mail
+target_maker: IG BAU Bundesfachgruppe Gebäudereinigung
+---
 # ChemGefahr-Stopp (Chemical Safety & Poison Shield for Cleaners)
 
 **Ein Satz:** Kamera auf 2 Putzmittelflaschen richten: Warnt laut in 20 Sprachen vor Chlorgas und Verätzungen bei falschem Mischen.

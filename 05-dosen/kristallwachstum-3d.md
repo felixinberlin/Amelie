@@ -1,3 +1,8 @@
+---
+status: Available
+delivery_method: E-Mail
+target_maker: Geowissenschaften FU Berlin / Lehrmittel-Verlage
+---
 # Kristallwachstum 3D
 
 **Ein Satz:** Nicht noch ein DLA-Renderer, sondern die druckfertige Kette dahinter — Parameter, Seed, wasserdichtes Mesh, Stützstruktur-taugliche Geometrie, teilbares Rezept.

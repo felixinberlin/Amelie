@@ -1,3 +1,8 @@
+---
+status: Available
+delivery_method: E-Mail
+target_maker: ver.di Fachbereich Gesundheit
+---
 # DienstplanWächter (Shift Roster Auditor & Bonus Shield)
 
 **Ein Satz:** Fotografiert den Stations-Dienstplan, warnt vor illegalen Ruhezeitverkürzungen und berechnet steuerfreie Nacht- und Sonntagszuschläge.

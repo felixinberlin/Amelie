@@ -1,3 +1,8 @@
+---
+status: Available
+delivery_method: E-Mail
+target_maker: Claude-Code-Plugin-Community
+---
 # Agent Postmortem Recorder
 
 **Ein Satz:** Nicht ein weiteres Dashboard über Agent-Sessions, sondern die Konsequenz daraus — der konkrete `CLAUDE.md`-Patch gegen die Missverständnis-Klasse, die dich statistisch am meisten kostet.

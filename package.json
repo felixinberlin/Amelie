@@ -6,17 +6,20 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0 --port 3000",
     "build": "tsc && vite build",
-    "lint": "tsc --noEmit && npm run check:dosen && npm run check:books",
+    "lint": "tsc --noEmit && npm run check:dosen && npm run check:books && npm run check:idea-frontmatter",
     "preview": "vite preview --port 3000",
     "check:dosen": "node scripts/check-dosen-drift.mjs",
     "test": "vitest run",
-    "check:books": "node scripts/check-dose-books.mjs"
+    "check:books": "node scripts/check-dose-books.mjs",
+    "check:idea-frontmatter": "node scripts/sync-idea-frontmatter.mjs --check",
+    "sync:idea-frontmatter": "node scripts/sync-idea-frontmatter.mjs"
   },
   "dependencies": {
     "@types/canvas-confetti": "^1.9.0",
     "canvas-confetti": "^1.9.4",
     "clsx": "^2.1.1",
     "firebase": "^12.19.0",
+    "gray-matter": "^4.0.3",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.475.0",
     "marked": "^18.0.14",

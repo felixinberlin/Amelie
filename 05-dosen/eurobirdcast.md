@@ -1,3 +1,8 @@
+---
+status: Available
+delivery_method: E-Mail
+target_maker: 'Offen — erst nach M0 zu entscheiden. Kandidaten: BfN / BioConsult SH'
+---
 # EuroBirdCast: Vogelzug-Abschaltung, nachrechenbar
 
 *(englisch: EuroBirdCast: Auditable Migration Curtailment)*

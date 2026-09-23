@@ -1,3 +1,8 @@
+---
+status: Available
+delivery_method: E-Mail
+target_maker: AG Fraktographie von DGM und DVM an der BAM
+---
 # Bruchlesen
 
 *(Arbeitstitel im Bisoziation-Log: Ground Truth)*

@@ -1,3 +1,8 @@
+---
+status: Available
+delivery_method: E-Mail
+target_maker: Fachverband Fliesen und Naturstein
+---
 # BedenkenBlitz (VOB/B Baustellen-Schutzschirm)
 
 **Ein Satz:** 15 Sekunden Sprachmemo + Foto vom feuchten Estrich: Erstellt sofort eine wasserdichte VOB/B-Bedenkenanmeldung gegen Schadensersatzklagen.

@@ -13,13 +13,12 @@ import {
   Send,
   CheckCircle2,
   Clock,
-  RotateCcw,
 } from 'lucide-react';
-import { MatrixRow, DeliveryEmail, Language, DoseItem } from '../types';
+import { MatrixRow, DeliveryEmail, Language, DoseItem, SentEmailRecord } from '../types';
 import { getTranslation, getLocalizedTitle, withCount } from '../i18n';
 import { resolveEmailBodyDoseUrls, getDoseUrl } from '../utils/doseUrl';
 import { MusterEmailsSection } from './MusterEmailsSection';
-import { getSentEmailsMap, markEmailAsSent, SentEmailRecord } from '../services/storageService';
+import { loadSentEmailsMap } from '../services/ideaDeliveryService';
 
 interface MatrixViewProps {
   matrix: MatrixRow[];
@@ -47,25 +46,32 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedStatus, setSelectedStatus] = useState<string>('all');
   const [mailFilter, setMailFilter] = useState<'all' | 'sent' | 'pending'>('all');
-  const [sentEmails, setSentEmails] = useState<Record<string, SentEmailRecord>>(() => getSentEmailsMap());
+  const [sentEmails, setSentEmails] = useState<Record<string, SentEmailRecord>>({});
+  const [sentEmailsLoading, setSentEmailsLoading] = useState(true);
   const t = getTranslation(lang);
 
   const isDe = lang === 'de';
   const isEs = lang === 'es';
 
-  // Synchronize initial state or changes
+  // Delivery state now lives in 05-dosen/*.md frontmatter (status: Delivered),
+  // not localStorage — fetched asynchronously instead of read synchronously.
   useEffect(() => {
-    setSentEmails(getSentEmailsMap());
+    let active = true;
+    setSentEmailsLoading(true);
+    loadSentEmailsMap()
+      .then((map) => {
+        if (active) setSentEmails(map);
+      })
+      .catch((err) => {
+        console.warn('Failed to load delivery state from 05-dosen/ frontmatter:', err);
+      })
+      .finally(() => {
+        if (active) setSentEmailsLoading(false);
+      });
+    return () => {
+      active = false;
+    };
   }, []);
-
-  const handleToggleSent = (mailId: string) => {
-    const isCurrentlySent = !!sentEmails[mailId]?.sent;
-    const newRecord = markEmailAsSent(mailId, !isCurrentlySent);
-    setSentEmails((prev) => ({
-      ...prev,
-      [mailId]: newRecord,
-    }));
-  };
 
   const isEmailSent = (mailId: string): boolean => {
     if (sentEmails[mailId] !== undefined) {
@@ -119,10 +125,10 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
     const mailtoUrl = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(resolvedBody)}`;
     window.open(mailtoUrl, '_blank');
 
-    // Automatically mark as sent
-    if (!isEmailSent(mail.id)) {
-      handleToggleSent(mail.id);
-    }
+    // Marking as sent is no longer a client-side toggle: it happens by
+    // updating the linked Dose's status in src/data/dosen.ts and re-running
+    // scripts/sync-idea-frontmatter.mjs, which is the one place delivery
+    // state is written.
   };
 
   const handleCopyDoseUrl = (e: React.MouseEvent, doseId: string) => {
@@ -231,9 +237,15 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
             <div className="p-4 rounded-xl bg-white border border-amber-200/80 shadow-2xs space-y-2.5 shrink-0 min-w-[240px]">
               <div className="flex items-center justify-between text-xs font-mono-code font-bold">
                 <span className="text-stone-700">{isDe ? 'Status Q4 2026:' : isEs ? 'Estado Q4 2026:' : 'Q4 2026 Status:'}</span>
-                <span className="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300">
-                  {totalSentCount} / {deliveries.length} {isDe ? 'versendet' : isEs ? 'enviados' : 'sent'}
-                </span>
+                {sentEmailsLoading ? (
+                  <span className="px-2 py-0.5 rounded-full bg-stone-100 text-stone-500 border border-stone-200 animate-pulse">
+                    {isDe ? 'Lädt …' : isEs ? 'Cargando …' : 'Loading …'}
+                  </span>
+                ) : (
+                  <span className="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300">
+                    {totalSentCount} / {deliveries.length} {isDe ? 'versendet' : isEs ? 'enviados' : 'sent'}
+                  </span>
+                )}
               </div>
 
               {/* Progress Bar */}
@@ -374,16 +386,6 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
                   </p>
                 </div>
               </div>
-
-              <button
-                type="button"
-                onClick={() => handleToggleSent(currentMail.id)}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white hover:bg-stone-50 border border-emerald-300 text-emerald-800 text-xs font-mono-code font-semibold cursor-pointer transition-colors shadow-2xs shrink-0 self-start sm:self-auto"
-                title={isDe ? 'Als ungesendet zurücksetzen' : isEs ? 'Marcar de nuevo como no enviado' : 'Reset as unsend'}
-              >
-                <RotateCcw className="w-3.5 h-3.5" />
-                <span>{isDe ? 'Als ungesendet markieren' : isEs ? 'Marcar como no enviado' : 'Mark as unsend'}</span>
-              </button>
             </div>
           ) : (
             <div className="p-3.5 bg-amber-50/80 border-b border-amber-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 text-xs text-amber-950">
@@ -395,15 +397,11 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
                     : isEs ? 'Estado: listo para enviar en Q4 2026 · aún no enviado' : 'Status: Ready for dispatch Q4 2026 · Not yet sent'}
                 </span>
               </div>
-
-              <button
-                type="button"
-                onClick={() => handleToggleSent(currentMail.id)}
-                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white font-bold cursor-pointer transition-colors shadow-2xs shrink-0 self-start sm:self-auto"
-              >
-                <Check className="w-3.5 h-3.5" />
-                <span>{isDe ? 'Als versendet markieren' : isEs ? 'Marcar como enviado' : 'Mark as sent'}</span>
-              </button>
+              <span className="text-[11px] font-mono-code text-amber-800/80 self-start sm:self-auto">
+                {isDe
+                  ? 'Status kommt aus der verlinkten Dose (05-dosen/)'
+                  : isEs ? 'El estado viene de la lata vinculada (05-dosen/)' : 'Status comes from the linked tin (05-dosen/)'}
+              </span>
             </div>
           )}
 
@@ -432,25 +430,6 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
               </div>
 
               <div className="flex flex-wrap items-center gap-2">
-                {/* Mark as Sent Toggle Button */}
-                <button
-                  type="button"
-                  onClick={() => handleToggleSent(currentMail.id)}
-                  className={`inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl text-xs font-mono-code font-bold transition-all shadow-xs cursor-pointer ${
-                    isCurrentMailSent
-                      ? 'bg-emerald-100 hover:bg-emerald-200 text-emerald-900 border border-emerald-400'
-                      : 'bg-emerald-700 hover:bg-emerald-800 text-white'
-                  }`}
-                  title={isCurrentMailSent ? (isDe ? 'Klicken, um Status zu ändern' : isEs ? 'Clic para cambiar' : 'Click to toggle') : ''}
-                >
-                  <Check className="w-4 h-4" />
-                  <span>
-                    {isCurrentMailSent
-                      ? (isDe ? '✓ Versendet (Ändern)' : isEs ? '✓ Enviado' : '✓ Sent (Toggle)')
-                      : (isDe ? 'Als versendet markieren' : isEs ? 'Marcar como enviado' : 'Mark as sent')}
-                  </span>
-                </button>
-
                 {/* Open in Email Client (mailto:) */}
                 <button
                   type="button"

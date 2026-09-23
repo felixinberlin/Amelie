@@ -1,3 +1,8 @@
+---
+status: Available
+delivery_method: E-Mail
+target_maker: BSR — besitzt beide Enden der Weiche
+---
 # Sperrmüll-Weiche
 
 **Ein Satz:** Bei der Sperrmüll-Buchung entscheidet ein Foto, ob der Sessel in den Ofen oder in die NochMall fährt — und der Preis der Abholung folgt dieser Entscheidung, statt ihr zu widersprechen.

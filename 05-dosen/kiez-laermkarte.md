@@ -1,3 +1,8 @@
+---
+status: Delivered
+delivery_method: E-Mail
+target_maker: Noise-Planet / NoiseCapture
+---
 # Kiez-Lärmkarte
 
 **Ein Satz:** Nicht wie laut eine Straße im Jahresmittel ist, sondern **wann sie leise ist** — gemessen von Handys, die nur dB-Pegel erfassen und nie Audio.

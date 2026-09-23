@@ -1,3 +1,8 @@
+---
+status: Available
+delivery_method: E-Mail
+target_maker: Teezeremonie- & Achtsamkeits-Communities
+---
 # Räucher-Sim
 
 **Ein Satz:** Eine Rauchsimulation, die auf den Atem reagiert — Mikrofon als Windkanal, kein Ziel, kein Score, kein Account.

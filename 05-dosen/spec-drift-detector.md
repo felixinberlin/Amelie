@@ -1,3 +1,8 @@
+---
+status: Available
+delivery_method: E-Mail
+target_maker: Tessl
+---
 # Spec-Drift Detector
 
 **Ein Satz:** Ein CI-Check, der Prosa-Spezifikationen gegen die tatsächliche Implementierung prüft und den Build bei Divergenz rot färbt.

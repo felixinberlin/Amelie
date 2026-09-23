@@ -1,3 +1,8 @@
+---
+status: Available
+delivery_method: E-Mail
+target_maker: 'NABU Berlin, Projekt „Artenschutz am Gebäude"'
+---
 # Glasanflug-Ampel
 
 *(englisch: Bird Glass Hazard Score)*

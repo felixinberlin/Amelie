@@ -1,3 +1,8 @@
+---
+status: Available
+delivery_method: E-Mail
+target_maker: Anki-Community / AnkiConnect-Entwickler
+---
 # Bugs → Spaced Repetition
 
 **Ein Satz:** Jeder gefixte Bug wird automatisch zur Lernkarte — Symptom vorne, Ursache hinten. Nach drei Monaten weißt du, welche Fehlerklasse dich wirklich kostet.

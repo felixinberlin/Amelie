@@ -1,3 +1,9 @@
+---
+status: Delivered
+date_delivered: '2026-09-19T00:00:00Z'
+delivery_method: E-Mail
+target_maker: Forschungsverbund EnergyMap Berlin
+---
 # Altbau Thermal
 
 **Ein Satz:** Grundriss zeichnen, Baualtersklasse wählen, sehen, was die eigene Wohnung thermisch tut — an der Ecke hinter dem Schrank, nicht im Mittel. Die Innenperspektive zu dem, was EnergyMap Berlin von außen für jedes Gebäude ausrechnet.

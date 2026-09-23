@@ -1,3 +1,8 @@
+---
+status: Available
+delivery_method: E-Mail
+target_maker: '#Krautschau / Senckenberg Gesellschaft für Naturforschung'
+---
 # Crack Flora Watcher (Ritzengrün-Wächter)
 
 > ⛔ **ZURÜCKGEZOGEN am 21.09.2026 — nicht zustellen.**

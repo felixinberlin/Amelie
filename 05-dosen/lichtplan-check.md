@@ -1,3 +1,8 @@
+---
+status: Available
+delivery_method: E-Mail
+target_maker: Landesumweltbehörden mit eigenem Leitfaden
+---
 # Lichtplan-Check
 
 **Ein Satz:** Ein Web-Formular, das eine geplante Außenbeleuchtung (Lichttyp, Farbtemperatur, Abstrahlwinkel, Standort, Betriebszeiten) automatisch gegen die verstreuten insekten-/vogelfreundlichen Beleuchtungskriterien mehrerer Behörden und Naturschutzverbände prüft und mit Quellenangabe zeigt, wo es kippt.

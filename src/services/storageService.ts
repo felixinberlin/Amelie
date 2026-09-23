@@ -288,89 +288,11 @@ export function importDatabaseFromJson(jsonStr: string): { importedDosen: number
 export function resetLocalDatabase(): void {
   localStorage.removeItem(STORAGE_KEY_DOSEN);
   localStorage.removeItem(STORAGE_KEY_CANDIDATES);
-  localStorage.removeItem(STORAGE_KEY_SENT_EMAILS);
 }
 
-const STORAGE_KEY_SENT_EMAILS = 'amelie_sent_emails';
-
-export interface SentEmailRecord {
-  sent: boolean;
-  sentAt: string;
-  notes?: string;
-}
-
-/**
- * Retrieves the sent emails map from localStorage.
- * Initializes mail-1, mail-2, and mail-3 as sent (fulfilling user request).
- */
-export function getSentEmailsMap(): Record<string, SentEmailRecord> {
-  const seedDefaults: Record<string, SentEmailRecord> = {
-    'mail-1': {
-      sent: true,
-      sentAt: '2026-09-20T07:03:55Z',
-      notes: 'Altbau Thermal → Forschungsverbund EnergyMap Berlin (UdK Berlin)',
-    },
-    'mail-2': {
-      sent: true,
-      sentAt: '2026-09-21T08:00:00Z',
-      notes: 'Sperrmüll-Radar & Kiez-Lärmkarte → CityLAB Berlin',
-    },
-    'mail-3': {
-      sent: true,
-      sentAt: '2026-09-21T08:15:00Z',
-      notes: 'Kiez-Lärmkarte (Methode) → Noise-Planet / NoiseCapture',
-    },
-  };
-
-  try {
-    const data = localStorage.getItem(STORAGE_KEY_SENT_EMAILS);
-    if (data) {
-      const parsed = JSON.parse(data);
-      let changed = false;
-      for (const [key, val] of Object.entries(seedDefaults)) {
-        if (parsed[key] === undefined) {
-          parsed[key] = val;
-          changed = true;
-        }
-      }
-      if (changed) {
-        localStorage.setItem(STORAGE_KEY_SENT_EMAILS, JSON.stringify(parsed));
-      }
-      return parsed;
-    }
-  } catch (e) {
-    console.warn('Failed to load sent emails from storage', e);
-  }
-
-  // Initial default state with Mails 1, 2, 3 marked as sent
-  try {
-    localStorage.setItem(STORAGE_KEY_SENT_EMAILS, JSON.stringify(seedDefaults));
-  } catch (e) {
-    // ignore
-  }
-  return seedDefaults;
-}
-
-export function saveSentEmailsMap(map: Record<string, SentEmailRecord>): void {
-  try {
-    localStorage.setItem(STORAGE_KEY_SENT_EMAILS, JSON.stringify(map));
-  } catch (e) {
-    console.error('Failed to save sent emails to localStorage:', e);
-  }
-}
-
-export function markEmailAsSent(mailId: string, sent: boolean = true, customDate?: string): SentEmailRecord {
-  const current = getSentEmailsMap();
-  const record: SentEmailRecord = {
-    sent,
-    sentAt: sent ? customDate || new Date().toISOString() : '',
-  };
-  current[mailId] = record;
-  saveSentEmailsMap(current);
-  return record;
-}
-
-export function isEmailMarkedSent(mailId: string): boolean {
-  const current = getSentEmailsMap();
-  return !!current[mailId]?.sent;
-}
+// Delivery ("sent email") state used to live here as a hand-seeded
+// localStorage map (getSentEmailsMap / markEmailAsSent / isEmailMarkedSent,
+// STORAGE_KEY_SENT_EMAILS = 'amelie_sent_emails', hardcoded mail-1..3 as
+// sent). It is now derived from each Dose's YAML frontmatter status instead
+// — see src/services/ideaDeliveryService.ts (loadSentEmailsMap /
+// loadDeliveryStateForDose) and src/types.ts (SentEmailRecord).

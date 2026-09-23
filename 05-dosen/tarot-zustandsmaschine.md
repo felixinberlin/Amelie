@@ -1,3 +1,8 @@
+---
+status: Available
+delivery_method: E-Mail
+target_maker: Kreativschreib-Communities
+---
 # Tarot als Zustandsmaschine
 
 **Ein Satz:** Ein Legesystem ist bereits ein Programm — Positionen sind Slots, Karten sind typisierte Übergänge, Bedeutung ist eine Funktion der Nachbarschaft. Es wurde nur nie so aufgeschrieben.

@@ -1,3 +1,8 @@
+---
+status: Available
+delivery_method: E-Mail
+target_maker: American Meteor Society und IMO
+---
 # Feuerkugel-Sofortnetz
 
 **Ein Satz:** Eine Echtzeit-Schicht über bestehenden Feuerkugel-Meldenetzen, die Zeugen in den ersten Minuten aktiv zusammenbringt und beiläufig laufende Dashcam-/Türklingelkameras vor dem automatischen Überschreiben rettet — statt beides tagelang dem Zufall zu überlassen.

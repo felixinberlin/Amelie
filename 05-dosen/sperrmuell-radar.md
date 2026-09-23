@@ -1,3 +1,8 @@
+---
+status: Delivered
+delivery_method: E-Mail
+target_maker: CityLAB Berlin
+---
 # Sperrmüll-Radar
 
 **Ein Satz:** Foto vom Straßenfund → Klassifikation auf dem Gerät → Geo-Pin auf Straßenabschnitt, der nach zwölf Stunden verfällt. Kein Konto, kein Marktplatz, keine Datenhaltung über den Tag hinaus.

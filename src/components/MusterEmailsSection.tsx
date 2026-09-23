@@ -15,13 +15,12 @@ import {
   Link2,
   Eye,
   Package,
-  RotateCcw,
 } from 'lucide-react';
 import { AMELIE_MUSTERS, AMELIE_ANTI_PATTERNS, MusterEmail } from '../data/musterEmails';
 import { DoseItem, Language } from '../types';
 import { getTranslation, getLocalizedTitle } from '../i18n';
 import { getDoseUrl } from '../utils/doseUrl';
-import { getSentEmailsMap, markEmailAsSent, SentEmailRecord } from '../services/storageService';
+import { loadDeliveryStateForDose } from '../services/ideaDeliveryService';
 
 interface MusterEmailsSectionProps {
   lang: Language;
@@ -40,15 +39,33 @@ export const MusterEmailsSection: React.FC<MusterEmailsSectionProps> = ({
   const [selectedDoseId, setSelectedDoseId] = useState<string>('altbau-thermal');
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [copiedDoseUrl, setCopiedDoseUrl] = useState(false);
-  const [sentMap, setSentMap] = useState<Record<string, SentEmailRecord>>(() => getSentEmailsMap());
+  const [isMusterSent, setIsMusterSent] = useState(false);
+  const [musterSentLoading, setMusterSentLoading] = useState(true);
   const t = getTranslation(lang);
 
   const isDe = lang === 'de';
   const isEs = lang === 'es';
 
+  // Whether the linked Dose has been delivered comes from its 05-dosen/*.md
+  // frontmatter now, not a per-template localStorage toggle — fetched
+  // asynchronously whenever the selected Dose changes.
   useEffect(() => {
-    setSentMap(getSentEmailsMap());
-  }, []);
+    let active = true;
+    setMusterSentLoading(true);
+    loadDeliveryStateForDose(selectedDoseId)
+      .then((state) => {
+        if (active) setIsMusterSent(state.sent);
+      })
+      .catch((err) => {
+        console.warn('Failed to load delivery state from 05-dosen/ frontmatter:', err);
+      })
+      .finally(() => {
+        if (active) setMusterSentLoading(false);
+      });
+    return () => {
+      active = false;
+    };
+  }, [selectedDoseId]);
 
   const currentMuster = AMELIE_MUSTERS.find((m) => m.id === selectedMusterId) || AMELIE_MUSTERS[0];
   const linkedDose = dosen.find((d) => d.id === selectedDoseId) || dosen[0] || null;
@@ -82,25 +99,14 @@ export const MusterEmailsSection: React.FC<MusterEmailsSectionProps> = ({
   };
 
   const currentCustomEmail = getCustomizedEmail(currentMuster);
-  const currentKey = `muster-${selectedMusterId}-${selectedDoseId}`;
-  const isMusterSent = !!sentMap[currentKey]?.sent;
-
-  const handleToggleMusterSent = () => {
-    const newRecord = markEmailAsSent(currentKey, !isMusterSent);
-    setSentMap((prev) => ({
-      ...prev,
-      [currentKey]: newRecord,
-    }));
-  };
 
   const handleOpenMailer = () => {
     const subject = currentCustomEmail.subject;
     const body = currentCustomEmail.body;
     const mailtoUrl = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.open(mailtoUrl, '_blank');
-    if (!isMusterSent) {
-      handleToggleMusterSent();
-    }
+    // Marking as sent happens by updating the Dose's status in
+    // src/data/dosen.ts and re-running scripts/sync-idea-frontmatter.mjs.
   };
 
   const handleCopy = () => {
@@ -289,7 +295,9 @@ export const MusterEmailsSection: React.FC<MusterEmailsSectionProps> = ({
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
         {AMELIE_MUSTERS.map((m) => {
           const isSelected = selectedMusterId === m.id;
-          const isSent = !!sentMap[`muster-${m.id}-${selectedDoseId}`]?.sent;
+          // Sent-ness is a property of the linked Dose, not of which sample
+          // template is being viewed — same value for every card here.
+          const isSent = isMusterSent;
 
           return (
             <button
@@ -357,14 +365,11 @@ export const MusterEmailsSection: React.FC<MusterEmailsSectionProps> = ({
                 </span>
               </div>
             </div>
-            <button
-              type="button"
-              onClick={handleToggleMusterSent}
-              className="inline-flex items-center gap-1 text-[11px] font-typewriter text-emerald-800 hover:text-emerald-950 underline cursor-pointer"
-            >
-              <RotateCcw className="w-3 h-3" />
-              <span>{isDe ? 'Rückgängig' : isEs ? 'Deshacer' : 'Undo'}</span>
-            </button>
+            <span className="text-[11px] font-typewriter text-emerald-700">
+              {isDe
+                ? 'Status kommt aus der Dose (05-dosen/)'
+                : isEs ? 'El estado viene de la lata (05-dosen/)' : 'Status comes from the tin (05-dosen/)'}
+            </span>
           </div>
         )}
 
@@ -396,24 +401,18 @@ export const MusterEmailsSection: React.FC<MusterEmailsSectionProps> = ({
             </div>
 
             <div className="flex flex-wrap items-center gap-2 shrink-0">
-              {/* Mark as Sent Toggle */}
-              <button
-                type="button"
-                onClick={handleToggleMusterSent}
-                className={`inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl text-xs font-typewriter font-bold transition-all shadow-2xs cursor-pointer ${
-                  isMusterSent
-                    ? 'bg-emerald-100 hover:bg-emerald-200 text-emerald-900 border border-emerald-400'
-                    : 'bg-emerald-700 hover:bg-emerald-800 text-white'
-                }`}
-                title={isMusterSent ? (isDe ? 'Status ändern' : isEs ? 'Cambiar estado' : 'Toggle status') : ''}
-              >
-                <Check className="w-3.5 h-3.5" />
-                <span>
-                  {isMusterSent
-                    ? (isDe ? '✓ Versendet (Ändern)' : isEs ? '✓ Enviado (cambiar)' : '✓ Sent (Toggle)')
-                    : (isDe ? 'Als versendet markieren' : isEs ? 'Marcar como enviado' : 'Mark as sent')}
+              {musterSentLoading ? (
+                <span className="text-xs font-typewriter text-stone-400 animate-pulse px-1">
+                  {isDe ? 'Lädt Status …' : isEs ? 'Cargando estado …' : 'Loading status …'}
                 </span>
-              </button>
+              ) : (
+                isMusterSent && (
+                  <span className="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl text-xs font-typewriter font-bold bg-emerald-100 text-emerald-900 border border-emerald-400">
+                    <Check className="w-3.5 h-3.5" />
+                    <span>{isDe ? '✓ Versendet' : isEs ? '✓ Enviado' : '✓ Sent'}</span>
+                  </span>
+                )
+              )}
 
               {/* Open in Mailer */}
               <button

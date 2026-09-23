@@ -1,3 +1,8 @@
+---
+status: Available
+delivery_method: E-Mail
+target_maker: Tacheles e.V.
+---
 # ParagraphenDolmetscher
 
 **Ein Satz:** Ein Foto des gefürchteten Amtsbescheids übersetzt bedrohliches Beamtendeutsch in 3 klare Sätze, deckt 4-Wochen-Fristen auf und formuliert den Widerspruch.

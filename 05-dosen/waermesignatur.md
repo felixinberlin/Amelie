@@ -1,3 +1,8 @@
+---
+status: Available
+delivery_method: E-Mail
+target_maker: co2online gGmbH
+---
 # Wärmesignatur
 
 **Ein Satz:** Zwölf Monatswerte vom Gaszähler oder aus der monatlichen Verbrauchsinformation plus das Wetter ergeben, wie viel Wärme *diese* Wohnung pro Grad Temperaturunterschied verliert und ab welcher Außentemperatur sie heizt — als ehrliches Band, ohne dass jemand einen Grundriss zeichnet.

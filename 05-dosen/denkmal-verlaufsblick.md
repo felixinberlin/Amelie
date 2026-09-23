@@ -1,3 +1,8 @@
+---
+status: Available
+delivery_method: E-Mail
+target_maker: Deutsche Stiftung Denkmalschutz
+---
 # Denkmal-Verlaufsblick
 
 **Ein Satz:** Ehrenamtliche fotografieren ein gefährdetes Baudenkmal immer vom selben Standpunkt; ein Werkzeug legt die Bilder übereinander und markiert, was sich seit dem letzten Mal verändert hat (Putz ab, Dachfläche eingebrochen, Öffnung neu vernagelt).

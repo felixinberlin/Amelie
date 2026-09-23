@@ -1,3 +1,8 @@
+---
+status: Available
+delivery_method: E-Mail
+target_maker: PostHog Plugin Community
+---
 # Ghost Replay fürs Editieren
 
 **Ein Satz:** Der eigene Editier-Rhythmus als „Geist" abgespielt, Trackmania-Stil — nicht was du geschrieben hast, sondern wie du dich durch den Code bewegt hast, inklusive der vierzig Sekunden Scrollen vor jeder Entscheidung.
