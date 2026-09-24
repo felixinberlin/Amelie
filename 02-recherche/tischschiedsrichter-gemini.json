@@ -1,0 +1,82 @@
+{
+  "id": "ai-dinner-table-politics-buzzer",
+  "title": "TischSchiedsrichter: Zero-Cloud Dinner Party Referee & Keyword Buzzer",
+  "round": "AI Frontier 2026",
+  "date": "24.09.2026",
+  "conceptDe": "Ein Smartphone in der Tischmitte lauscht komplett offline nach einer familiär vereinbarten Blacklist von Wörtern (z.B. \"Partei\", \"Präsident\", \"Sozialist\"). Bei Nennung pfeift die App in Echtzeit wie ein Schiedsrichter und zeigt eine gelbe Karte, ohne dass Audio-Aufnahmen den flüchtigen Speicher des Geräts verlassen oder in die Cloud gesendet werden.",
+  "conceptEn": "A smartphone placed on the dinner table listens completely offline for a custom blacklist of words (e.g., \"politics\", \"president\", \"socialist\"). If mentioned, it blows a loud referee whistle in real-time and flashes a yellow card, functioning as an impartial buzzer without recording or transmitting any audio to the cloud.",
+  "status": "frei",
+  "suggestedVerdict": "gift",
+  "recipientDe": "Konfliktlösungs-Initiativen · Open Source Entwickler-Community · Familienberatungsstellen",
+  "recipientEn": "Conflict Resolution NGOs · Open Source Privacy Collectives · Family Therapy Networks",
+  "sourceType": "Home & Family",
+  "sourceDe": "Lokales Keyword Spotting (KWS) & Edge Audio DSP mit Puffer-Löschung",
+  "sourceEn": "Local Keyword Spotting (KWS) & Edge Audio DSP with Volatile Buffer Wiping",
+  "evidenceDe": "Weihnachtsessen und Familienfeiern eskalieren häufig in toxische politische Diskussionen. Kommerzielle Sprach-Tracker (wie Swearing Jar) verknüpfen Audiodaten mit der Nutzeridentität, was sie für den Schutz der Privatsphäre am Esstisch disqualifiziert.",
+  "evidenceEn": "Holiday dinners frequently escalate into toxic political arguments. Commercial speech-tracking apps link audio data and user content directly to personal identities, disqualifying them for private family settings.",
+  "reviewDate": "10/2026",
+  "problemDe": "Angehörige scheuen sich davor, einander den Mund zu verbieten, was zu anhaltendem Streit führt. Herkömmliche Spracherkennung erfordert Cloud-Uploads, was am privaten Esstisch massive Überwachungsängste auslöst.",
+  "problemEn": "Relatives hesitate to awkwardly police each other's speech, leading to ruined family gatherings. Traditional speech recognition streams intimate dinner conversations to corporate clouds, creating severe privacy nightmares.",
+  "workerPersona": {
+    "name": "Markus Thiel (45)",
+    "role": "Familienvater und unfreiwilliger Feiertags-Gastgeber",
+    "location": "Recklinghausen, NRW",
+    "quoteDe": "Jedes Jahr an Weihnachten brüllen sich mein Schwiegervater und mein Bruder über Politik an, bis die Kinder den Raum verlassen. Wenn ich dazwischengehe, bin ich der Böse. Ich brauche einen neutralen Schiedsrichter, der den Stecker zieht.",
+    "quoteEn": "Every Thanksgiving, my father-in-law and my brother scream at each other over politics until the kids leave the room. If I intervene, I become the bad guy. I need a neutral referee to pull the plug.",
+    "storyDe": "Markus liebt es, für die Großfamilie zu kochen. Doch die gesellschaftliche Polarisierung hat den Esstisch erreicht. Sobald das Stichwort „Wahlen“ oder „Steuern“ fällt, kippt die Stimmung. Markus hat versucht, manuelle Buzzer-Apps zu nutzen, aber niemand drückt freiwillig auf den Knopf, um den Schwiegervater zu zensieren. Er weigert sich jedoch kategorisch, einen Amazon Echo auf den Tisch zu stellen, der die Gespräche seiner Kinder aufzeichnet.",
+    "storyEn": "Markus loves hosting the extended family. However, societal polarization has poisoned the dinner table. The moment \"elections\" or \"taxes\" are mentioned, the mood sours. Markus tried using manual censor-bleep apps, but no one wants to be the person to physically press the button on their father-in-law. He categorically refuses to place a cloud-tethered smart speaker on the table to monitor the conversation, fearing corporate surveillance."
+  },
+  "realRecipientsList": [
+    {
+      "org": "Chaos Computer Club e.V. (CCC)",
+      "person": "Privacy & Edge-AI Arbeitsgruppen",
+      "email": "mail@ccc.de",
+      "location": "Berlin",
+      "roleDe": "Europas größte Hackervereinigung; Verfechter von datenschutzfreundlicher lokaler KI.",
+      "roleEn": "Europe's largest hacker association; staunch advocates for privacy-preserving, local-first AI.",
+      "url": "https://www.ccc.de"
+    },
+    {
+      "org": "Mozilla Foundation",
+      "person": "Common Voice & Local AI Initiatives",
+      "email": "info@mozilla.org",
+      "location": "San Francisco, USA / Berlin",
+      "roleDe": "Fördert offene, datenschutzrespektierende Sprachtechnologien, die ohne Big-Tech-Clouds auskommen.",
+      "roleEn": "Promotes open, privacy-respecting voice technologies that operate without Big Tech cloud dependencies.",
+      "url": "https://foundation.mozilla.org"
+    }
+  ],
+  "techShift": {
+    "beforeAiDe": "Vor 2024 unmöglich: Sprachsteuerung erforderte die ständige Übertragung von Audio-Streams an Google oder Amazon. Manuelle Bleep-Apps erforderten menschliches Eingreifen und zerstörten die neutrale Spielmechanik.",
+    "beforeAiEn": "Impossible before AI: Voice detection required streaming ambient audio to Google or Amazon servers. Manual bleep apps required human intervention, destroying the impartial game mechanic.",
+    "nowEasyDe": "Heute kinderleicht: Leichtgewichtige Keyword-Spotting-Modelle (KWS) laufen nativ auf dem Smartphone im Flugmodus. Das Audio wird im Arbeitsspeicher in Echtzeit überschrieben, was das Speichern von Gesprächen physikalisch unmöglich macht.",
+    "nowEasyEn": "Effortless today: Lightweight Keyword Spotting (KWS) models run natively on smartphone processors in airplane mode. The audio buffer is overwritten in real-time, making it physically impossible to save or transmit conversations."
+  },
+  "readyEmail": {
+    "subjectDe": "Geschenk für den Familienfrieden: Der 100% private TischSchiedsrichter (CC0)",
+    "subjectEn": "Gift for family peace: The 100% private Table Referee (CC0)",
+    "bodyDe": "Liebe Open-Source-Gemeinde und Befürworter der Privatsphäre,\n\nwir übergeben Ihnen ein Werkzeug unter CC0 Public Domain, das den Familienfrieden an Feiertagen rettet: den „TischSchiedsrichter“.\n\nDas Problem:\nPolitische Diskussionen ruinieren unzählige Familienfeiern. Gastgeber stehen unter dem Stress, moderieren zu müssen. Kommerzielle Sprach-Tracker greifen tief in die Privatsphäre ein und verknüpfen sensible Audiodaten mit Nutzerprofilen.\n\nDie Lösung:\nEin Smartphone in der Mitte des Tisches lauscht auf eine vorab definierte Blacklist an politischen Reizwörtern. Fällt ein Wort, ertönt ein lauter Schiedsrichterpfiff. Der Clou: Die App läuft komplett offline. Das Audio wird im flüchtigen Speicher sofort vernichtet. Es ist ein Spiel, ein neutraler Schlichter und ein Beweis, dass Sprach-KI ohne Cloud-Überwachung möglich ist.\n\nBauen Sie es ein, nutzen Sie es, teilen Sie es frei.\n\nHerzliche Grüße,\nAmélie Projekt",
+    "bodyEn": "Dear open-source community and privacy advocates,\n\nWe present the \"Table Referee\" (CC0), a 100% offline keyword spotter designed to save holiday dinners. It acts as an impartial buzzer when banned political keywords are spoken, using zero-cloud edge processing to ensure audio is instantly destroyed in volatile memory, protecting family privacy completely."
+  },
+  "whyNowDe": [
+    "100% Privatsphäre: Beweist, dass nützliche Spracherkennung keine Cloud-Überwachung durch Tech-Giganten erfordert.",
+    "Entlastung: Nimmt dem Gastgeber die emotionale Last, Verwandte maßregeln zu müssen, indem ein neutraler Algorithmus die Rolle des „Bösen“ übernimmt.",
+    "Spielmechanik: Verwandelt toxische Streits in ein humorvolles, gemeinschaftliches Spiel mit klaren Regeln (Gelbe/Rote Karten)."
+  ],
+  "whyNowEn": [
+    "100% Privacy: Proves that useful voice recognition does not require cloud surveillance by tech giants.",
+    "Emotional Relief: Removes the burden from the host of having to police relatives by delegating the 'bad cop' role to a neutral algorithm.",
+    "Game Mechanic: Transforms toxic arguments into a humorous, collaborative game with clear rules (Yellow/Red cards)."
+  ],
+  "firstStepTicketDe": "Offline-PWA mit anpassbarer Wort-Blacklist, die bei Erkennung sofort einen Schiedsrichter-Pfiff abspielt und den Audio-Puffer flusht.",
+  "firstStepTicketEn": "Offline PWA with customizable word blacklist that plays a loud whistle sound upon detection and instantly flushes the audio buffer.",
+  "firstStepCriteriaDe": "Erkennt die 5 hinterlegten Blacklist-Wörter auch bei Stimmengewirr (Cocktail-Party-Effekt) in unter 500 Millisekunden lokal auf dem Gerät.",
+  "firstStepCriteriaEn": "Successfully detects the 5 input blacklist words even during overlapping speech (cocktail party effect) in under 500 milliseconds locally on the device.",
+  "tags": [
+    "AI-Native",
+    "Family",
+    "Audio AI",
+    "Local-First",
+    "Conflict Resolution"
+  ]
+}

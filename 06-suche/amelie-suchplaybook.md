@@ -45,6 +45,9 @@ Claude lernt nicht zwischen Chats. Dieses Dokument und `amelie-pruefprotokoll.md
 - **Die Mechanik getrennt vom Gegenstand suchen** (neu ab Runde 6) → wenn die Idee „*X* macht *Y*" lautet, ist *Y* oft ein eigenes, besetztes Feld. Nach *Y* allein suchen, in Produktwörtern, auf Englisch: `repeat photography same plant app`, `time-lapse same tree`, `register individual plant monitoring`. Fund: GrowApp und Nature's Notebook — beide unsichtbar, solange man nach „Ritzenpflanzen-App" sucht, weil sie nicht über den Gegenstand definiert sind.
 - **Das Brainstorm nach seinen eigenen Vorbildern absuchen** (neu ab Runde 6) → ein Ideendokument listet seine Vorbilder oft selbst (hier: elf in `Mechanics.md` §8, acht in `economy.txt` §9). Das ist eine fertige Nachbarliste und spart die halbe Suche. **Aber:** die Zahlen darin sind unbelegt (Pl@nt Game „22.000 Spieler, 94 %" stand im Dokument, nicht auf der gelesenen Doku-Seite) — als Spur nutzen, nie als Beleg zitieren.
 
+- **Der Werbe-Gag-Test für Anlass-Ideen** (neu ab Runde 9) → Ideen, die an einem Anlass hängen (Weihnachtsessen, Wahlabend, Hochzeit, WM), hat oft schon eine **Werbeagentur als Kampagnen-App** gebaut — kurzlebig, aber öffentlich dokumentiert. Suche in der Sprache des Landes, in dem das Szenario ein Klischee ist, mit Jahreszahl vor 2020: `<Anlass> app detecta <Thema>` / `<occasion> app agency campaign`. Fund Runde 9: *Noche de Paz* (Shackleton, Spanien 2015) — dasselbe Szenario wie der TischSchiedsrichter, neun Jahre vor dem „vor 2024 unmöglich" des Gemini-Datensatzes.
+- **„Vor KI unmöglich" ist ein prüfbarer Satz** (neu ab Runde 9) → Jede Idee, deren Begründung „vorher unmöglich" lautet, zuerst mit `<Funktion> 2015` / `<Funktion> Kickstarter` suchen. Wenn es sie vor 2020 als Produkt gab, fällt sie aus der These des Manifests, egal wie gut sie ist.
+
 **Was nicht funktioniert hat:**
 
 - `<Thema> KI verständlich App` auf Deutsch → Content-Farmen (bau.de-Klone). Urteil daraus: **unklar**, nicht „frei". Mit Organisationsnamen neu suchen.
@@ -55,7 +58,7 @@ Claude lernt nicht zwischen Chats. Dieses Dokument und `amelie-pruefprotokoll.md
 
 ---
 
-## 3. Besetzungsatlas (Stand 21.09.2026)
+## 3. Besetzungsatlas (Stand 24.09.2026)
 
 Wo Ideen schnell sterben — vor dem Suchen als Vorfilter nutzen.
 
@@ -117,6 +120,8 @@ Wo Ideen schnell sterben — vor dem Suchen als Vorfilter nutzen.
 | **Haltbarkeitsprognose Frischware per KI** | **dicht im Handel, leer bei Tafeln** | OneThird (Scanner, Hitachi-Partnerschaft); eco-Plattform der Tafeln ohne Frischefunktion. Muster „Fähigkeit besetzt → Einsatzort frei" |
 | **Lichtverschmutzung per Smartphone** | **dicht für Himmelshelligkeit** | *Loss of the Night*, *Dark Sky Meter*, DarkSky International. Leuchtenbezogene Messung (ULOR) ist Goniophotometer-Sache, per Handy vermutlich nicht machbar |
 | Ephemere Stadtdaten ohne Konto (Objekt existiert Stunden, nicht Jahre) | **frei** | OSM nimmt nur Dauerhaftes (`amenity=give_box`); Marktplätze brauchen Konten und Bestand; Restlücke: Kiez-Ebene, Verfall als Datenschutz, quelloffen |
+| **Wortalarm per Mikrofon** (Schimpfwortkasse, Füllwörter, Reizwörter am Tisch) | **dicht seit 2015, Konsum + Bastelprojekte** | Noche de Paz / SilentNight (2015, Tischmitte, Politik), JarGone (2018, Familie, freie Liste), Swearing Jar (App Store 2025, Audio mit Identität verknüpft), Swear Jar 2.0 (itch.io), GitHub-Bastelprojekte. Frei bleibt nur „garantiert offline + Deutsch" — eine Eigenschaft *(Runde 9)* |
+| Offline-Schlüsselworterkennung mit freiem Vokabular (Technik) | **Baukasten liegt herum** | sherpa-onnx open-vocabulary KWS (ohne Training, Modelle nur en/zh), Vosk (Deutsch, Grammatikmodus mit Fehlalarm-Risiko, Issue #1017), Chrome On-Device-Spracherkennung (`processLocally`, ab Chrome 139). Fähigkeit ist Bibliothek, keine Lücke *(Runde 9)* |
 
 **Faustregel, jetzt mit vier Runden Evidenz:** Wenn Endnutzer dafür zahlen würden oder eine Stadt es als Pressemitteilung verkaufen kann, existiert es. Frei ist, was ein Fachgremium als PDF veröffentlicht und niemand je in Software gegossen hat.
 **Neu:** Frei ist außerdem, was sich **nicht finanzieren lässt** — ohne Konto, ohne Bestand, ohne Wiederkehr. Solche Ideen existieren im Ausland regelmäßig als Marktplatz-Variante und nirgends als öffentliche. Die Restlücke ist dann die Trägerschaft, nicht die Funktion.
@@ -161,6 +166,7 @@ Wo Ideen schnell sterben — vor dem Suchen als Vorfilter nutzen.
 | **8 (Trash Map vertieft, bisociation + ideenrunde)** | 23.09.2026 | 4 (davon 1 Reality-Check-Kill ohne Suche) | 0 | 2 (1 gepackt, 1 zu dünn) | 0 | 1 |
 | Nachprüfung Bisoziations-Kandidaten (Gemini-Lauf + Run 6) | 23.09.2026 | 13 (+ 1 Baustein; davon 1 als Variante von Kartierlotse ohne Urteil) | 1 | 9 | 2 | 0 |
 | Recheck Bruchlesen (vor dem Packen) | 23.09.2026 | 1 (`frei` → `verengt`, FractoDB) | – | 1 | – | – |
+| **9 (TischSchiedsrichter, mitgebrachte Gemini-Idee)** | 24.09.2026 | 1 (+ 1 Prämisse widerlegt, 1 Konkurrent nicht auffindbar, 1 Empfängerprüfung) | 0 | 1 (dünn, nicht gepackt) | 0 | 0 |
 
 Runde 4 (nur Researcher #1, 3 Ideen): **0 % frei + verengt.** Kein Abgleich mit dem anderen ideenrunde-Researcher; nicht mit Runde 3 vergleichbar, weil dort zwei Methoden und vier Sessions liefen. Der Altbau-Thermal-Recheck (`verengt` bestätigt) steht nicht in dieser Zeile.
 
@@ -335,3 +341,13 @@ Erste Runde, die mit einer **verschenkten** Dose als Ausgangspunkt arbeitet. Das
 - **Gelernt: Die Vorzieh-Regel gilt in beide Richtungen.** Alltagsideen: Englisch zuerst, weil die USA früher bauen. **Fachnischen mit deutscher Institution: Deutsch zuerst**, mit dem Fachwort („Fraktographie", nicht „fractography training software"). Zwei englische Suchen hatten Bruchlesen `frei` gelassen; die erste deutsche fand FractoDB beim Empfänger. Urteil `frei` → `verengt`, am selben Tag. Die Dose ist dadurch besser, nicht schlechter: Sie ist jetzt ein Übungsmodus zu einer Sammlung, die es schon gibt.
 - **Entschieden: `mitforschen.org` bleibt Quelle, der Vermerk „als Nächstes" ist gestrichen** (Félix, 23.09.2026). Ein Vermerk, der sieben Runden überlebt, ohne befolgt zu werden, wird nicht durch Befolgen gelöst, sondern durch eine Entscheidung. Das ist die Entscheidung.
 - **Nächstes Mal:** (1) Mail an die AG Fraktographie vor der Sitzung am 20.11.2026 — nicht danach, weil der Kurs im März 2027 der Ort wäre, an dem das Gerät getestet würde. (2) Zweiter Gebührenwerk-Anker (Parkraum, Pfand, Anschlussgebühren).
+
+### Runde 9 — 24.09.2026 (TischSchiedsrichter, mitgebrachte Gemini-Idee)
+
+- **Gelernt: Der Gemini-Katalog trägt `frei` wie eine Voreinstellung.** Der mitgebrachte Datensatz kam mit `status: "frei"`, ohne eine einzige Suche — dasselbe Muster wie `frei (Kandidat)` im Gemini-Lauf vom 19.09. Nachgezählt: **alle 131 Einträge in `src/data/ideas/*.ts` stehen auf `frei`.** Das Feld bedeutet dort „nicht geprüft", sieht aber aus wie ein Urteil. Neue Regel: Ein Katalogeintrag bekommt `frei`/`verengt` erst mit Protokollzeile; ohne Zeile ist er `ungeprüft` im Sinne des Protokolls, auch wenn der Typ `CandidateStatus` diesen Wert nicht kennt.
+- **Gelernt: Anlass-Ideen haben Werbeagenturen schon gebaut.** Die erste Suche auf Spanisch nach dem Szenario fand *Noche de Paz* (2015) — Handy in der Tischmitte, politische Wörter, Alarm. Als Rezept in §2 („Werbe-Gag-Test"). Und: „vor KI unmöglich" ist prüfbar, mit einer Suche nach Jahreszahl vor 2020.
+- **Gelernt: Konkurrenzlisten aus Modell-Plänen sind Spuren, keine Belege** — die Regel aus Runde 6 („Vorbilder eines Brainstorms als Nachbarliste nutzen, Zahlen nie zitieren") gilt auch für Namen: Der wichtigste Konkurrent des Plans („Buzzedword") ist nicht auffindbar, die echten nächsten Nachbarn (JarGone, Swearing Jar) fehlten dort.
+- **Gelernt (Technik):** „eigene Wörter offline" braucht 2026 kein Training mehr (sherpa-onnx open vocabulary), aber **Deutsch ist die Lücke der Baukästen** — die vortrainierten KWS-Modelle sind Englisch/Chinesisch, und der deutsche Vosk-Grammatikmodus erzwingt Treffer. Für jede deutsche Audio-Idee vorher prüfen, ob die Bibliothek die Sprache wirklich hat.
+- **Fehler dieser Runde:** Die erste englische Suche war generisch („dinner table politics word whistle") und lieferte nur Rauschen; der Treffer kam erst über den Namen, den der Plan selbst nannte. Bei mitgebrachten Plänen zuerst die im Plan genannten Namen prüfen — billigster Kill und zugleich Plausibilitätstest des Plans.
+- **Nebenbefund:** Sieben Dosen ohne Protokollzeile (PillSafe Vision, ParagraphenDolmetscher, KlangStethoskop, ChemGefahr-Stopp, DienstplanWächter, BedenkenBlitz, EuroBirdCast). Die Abdeckungsregel aus dem Protokollkopf ist verletzt, der Abgleich `ls 05-dosen` ↔ Protokoll (Librarian-Audit 19.09., Punkt 2) wurde offenbar nicht mehr gefahren.
+- **Nächstes Mal:** (1) **Abdeckungs-Nachprüfung:** die sieben Dosen ohne Zeile existenzprüfen und eintragen, danach die acht übrigen AI-Frontier-Einträge — oder Félix entscheidet, dass der Katalog in `src/data/ideas` bewusst ungeprüft bleibt; dann gehört in die App ein sichtbares „ungeprüft". (2) Zweiter Gebührenwerk-Anker (Parkraum, Pfand, Anschlussgebühren) — seit Runde 8 offen. (3) Mail an die AG Fraktographie vor dem 20.11.2026.

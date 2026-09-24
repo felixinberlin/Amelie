@@ -280,5 +280,56 @@ export const AI_NATIVE_FRONTIER_IDEAS: CandidateIdea[] = [
     firstStepCriteriaDe: 'Besteht den formalen Muster-Check der AO-Mustersatzung ohne Beanstandung.',
     firstStepCriteriaEn: 'Matches 100% of mandatory statutory non-profit dissolution and purpose clauses under official registry requirements.',
     tags: ['AI-Native', 'Zivilgesellschaft', 'Verein', 'Gemeinnützigkeit', 'Demokratie', 'Recht']
+  },
+  {
+    id: 'ai-dinner-table-politics-buzzer',
+    title: 'TischSchiedsrichter: Offline Dinner Table Referee & Keyword Whistle',
+    round: 'AI Frontier 2026',
+    date: '24.09.2026',
+    conceptDe: 'Ein Smartphone in der Tischmitte hört offline auf eine vorher gemeinsam beschlossene Liste von Reizwörtern (z. B. „Wahl", „Partei"). Fällt eines, pfeift es wie ein Schiedsrichter und zeigt Gelb, beim zweiten Mal Rot. Audio verlässt das Gerät nicht.',
+    conceptEn: 'A phone in the middle of the dinner table listens offline for a word list everyone agreed on beforehand (e.g. "election", "party"). When one is spoken it blows a referee whistle and shows a yellow card, red on repeat. No audio leaves the device.',
+    status: 'verengt',
+    suggestedVerdict: 'build_first',
+    recipientDe: 'Kein Empfänger gefunden — Sammeladressen (CCC, Mozilla) aus dem Gemini-Entwurf gestrichen',
+    recipientEn: 'No recipient found — generic addresses (CCC, Mozilla) from the Gemini draft removed',
+    sourceType: 'Home & Family',
+    sourceDe: 'Mitgebrachte Idee (Gemini-Plan, 24.09.2026); geprüft in 02-recherche/tischschiedsrichter-review-2026-09-24.md',
+    sourceEn: 'User-supplied idea (Gemini plan, 24.09.2026); checked in 02-recherche/tischschiedsrichter-review-2026-09-24.md',
+    evidenceDe: 'Besetzt im Szenario: Noche de Paz / SilentNight (Shackleton, 2015) — Handy in der Tischmitte, politische Wörter, Alarm. Besetzt in der Funktion: JarGone (2018, frei wählbare Wörter, Familie), Swearing Jar (App Store 03/2025, eigene Wörter, Audio mit Identität verknüpft). Restlücke: garantiert offline + Deutsch + freie Wortliste ohne Training + Tischregeln (Gelb/Rot).',
+    evidenceEn: 'Scenario taken: Noche de Paz / SilentNight (Shackleton, 2015) — phone in the middle of the table, political words, alarm. Function taken: JarGone (2018, custom words, family), Swearing Jar (App Store 03/2025, custom words, audio linked to identity). Remaining gap: guaranteed offline + German + open word list without training + table rules (yellow/red).',
+    reviewDate: '03/2027',
+    problemDe: 'Niemand will derjenige sein, der den Schwiegervater unterbricht. Eine vorher gemeinsam beschlossene Regel mit neutralem Pfiff nimmt dem Gastgeber diese Rolle ab.',
+    problemEn: 'Nobody wants to be the one who interrupts the father-in-law. A rule agreed on beforehand, enforced by a neutral whistle, takes that role off the host.',
+    workerPersona: {
+      name: 'Markus Thiel (45) — fiktive Persona',
+      role: 'Familienvater und unfreiwilliger Feiertags-Gastgeber',
+      location: 'Recklinghausen, NRW',
+      quoteDe: 'Jedes Jahr an Weihnachten brüllen sich mein Schwiegervater und mein Bruder über Politik an, bis die Kinder den Raum verlassen. Wenn ich dazwischengehe, bin ich der Böse.',
+      quoteEn: 'Every Christmas my father-in-law and my brother shout at each other about politics until the kids leave the room. If I step in, I am the bad guy.',
+      storyDe: 'Markus kocht gern für die Großfamilie. Sobald „Wahlen" oder „Steuern" fällt, kippt die Stimmung. Einen Buzzer von Hand drückt niemand gegen den Schwiegervater, und einen Cloud-Lautsprecher stellt er nicht auf den Tisch.',
+      storyEn: 'Markus loves cooking for the extended family. As soon as "elections" or "taxes" come up, the mood turns. Nobody will press a manual buzzer on the father-in-law, and he will not put a cloud speaker on the table.'
+    },
+    techShift: {
+      beforeAiDe: 'Nicht unmöglich: Noche de Paz (2015) und JarGone (2018) gab es schon. Offline ging aber nur mit fest trainierten Wörtern, eigene Wörter brauchten die Cloud.',
+      beforeAiEn: 'Not impossible: Noche de Paz (2015) and JarGone (2018) existed. Offline only worked with fixed pre-trained words; custom words needed the cloud.',
+      nowEasyDe: 'Heute gehen frei wählbare Wörter offline ohne Training (sherpa-onnx, nur Englisch/Chinesisch; Deutsch über Vosk-Grammatik, mit Fehlalarm-Risiko) oder im Browser per Chrome-On-Device-Spracherkennung (processLocally).',
+      nowEasyEn: 'Today custom words work offline without training (sherpa-onnx, English/Chinese only; German via Vosk grammar mode, with false-alarm risk) or in the browser via Chrome on-device speech recognition (processLocally).'
+    },
+    whyNowDe: [
+      'Datenschutz belegbar: Die aktuelle Konkurrenz (Swearing Jar) verknüpft laut App-Store-Label Audiodaten mit der Identität.',
+      'Entlastung: Der Pfiff übernimmt die Rolle des „Bösen", die sonst beim Gastgeber liegt.',
+      'Einwilligung als Spielregel: Alle beschließen die Wortliste vorher gemeinsam.'
+    ],
+    whyNowEn: [
+      'Privacy is provable: the current competitor (Swearing Jar) links audio data to identity according to its App Store label.',
+      'Relief: the whistle takes the "bad cop" role that otherwise falls to the host.',
+      'Consent as a game rule: everyone agrees on the word list together beforehand.'
+    ],
+    firstStepTicketDe: 'PWA: Wortliste eintragen, Chrome-On-Device-Spracherkennung (processLocally) starten, bei Treffer Pfiff + gelbe Karte, zweiter Treffer rot, 15 s Abkühlzeit.',
+    firstStepTicketEn: 'PWA: enter word list, start Chrome on-device speech recognition (processLocally), on match whistle + yellow card, second match red, 15 s cooldown.',
+    firstStepCriteriaDe: 'In einer aufgenommenen Tischszene (4 Personen, 10 Minuten) mindestens 80 % der gesagten Listenwörter erkannt und höchstens 2 Fehlpfiffe; im Flugmodus lauffähig.',
+    firstStepCriteriaEn: 'In a recorded table scene (4 people, 10 minutes) at least 80 % of spoken list words detected and at most 2 false whistles; runs in airplane mode.',
+    userNotes: 'Gemini-Entwurf hatte status frei ohne Prüfung, „vor 2024 unmöglich" (falsch), erfundenen Konkurrenten „Buzzedword" und Sammeladressen als Empfänger. Details: 02-recherche/tischschiedsrichter-review-2026-09-24.md',
+    tags: ['Family', 'Audio AI', 'Local-First', 'Party Game', 'Vibecode']
   }
 ];

@@ -21,6 +21,23 @@ Ergänzt `05-dosen/_entsorgt.md`: dort steht die Begründung für gepackte, dann
 
 ---
 
+## Runde 9 — 24.09.2026 (TischSchiedsrichter, mitgebrachte Idee aus einem Gemini-Lauf, method: ideenrunde)
+
+Félix bringt die Idee mit (Gemini-Entwicklungsplan + Datensatz im App-Format mit `status: "frei"`), also Schritt 3 übersprungen. Vorzieh-Regel: Alltagsbezug → englische Produktsuche zuerst; dazu **Spanisch**, weil der Plan selbst „Noche de Paz" nannte. Volltext der Prüfung: `02-recherche/tischschiedsrichter-review-2026-09-24.md`. Originale: `02-recherche/tischschiedsrichter-plan-gemini.md`, `02-recherche/tischschiedsrichter-gemini.json`.
+
+| Idee | Urteil | Beleg (kurz) | Prüfen ab |
+|---|---|---|---|
+| **TischSchiedsrichter** — Handy in der Tischmitte hört offline auf eine vereinbarte Reizwortliste, pfeift und zeigt Gelb/Rot | **`verengt` (dünn), nicht gepackt** | **Szenario besetzt seit 2015:** *Noche de Paz / SilentNight* (Agentur Shackleton, Dez. 2015, iOS + Android): Handy in die Tischmitte, 20–25+ politische Wörter, Alarm bzw. Themenvorschlag, englische Version mit „Taxes", „Donald Trump" (Adlatina, ipmark, OKDiario — Presseschnipsel, Store-Seiten nicht gelesen). **Funktion besetzt seit 2018:** *JarGone* (Kickstarter, Digital Trends 25.04.2018): Gerät, frei eintragbare Wörter per App, mehrere Familienmitglieder, Alarm + rotes Leuchten. **Aktuell:** *Swearing Jar* (App Store, v1.0 26.03.2025, Seite gelesen): eigene Wörter in Echtzeit, Gruppen mit Familie; Datenschutzlabel **Audiodaten mit Identität verknüpft**, Verarbeitungsort nicht angegeben. Dazu *Swear Jar 2.0* (itch.io, Browser) und mehrere GitHub-Bastelprojekte. **Restlücke: garantiert offline + Deutsch + freie Wortliste ohne Training + Tischregeln (Gelb/Rot).** Eigenschaften, keine neue Fähigkeit; kein Empfänger (siehe unten) | 03/2027 |
+| *Prämisse:* „vor 2024 unmöglich" (`techShift` des Gemini-Datensatzes) | **widerlegt** | Noche de Paz 2015, JarGone 2018, Spokestack-Tutorial (on-device Keyword-Modell) — die Idee fällt **nicht** unter die These des Manifests. Neu ist nur: freie Wortlisten offline **ohne Training** (sherpa-onnx open-vocabulary KWS, Doku gelesen per Suche). Deren vortrainierte Modelle: nur Englisch/Chinesisch. Deutsch über Vosk-Grammatikmodus — Issue #1017: deutsches Modell liefert dort fast nie `[unk]`, also Fehlalarme. Chrome On-Device-Spracherkennung (`processLocally`, ab Chrome 139) macht ein PWA-Skelett plausibel; Deutsch/Android ungeprüft | – |
+| *Konkurrenz aus dem Plan:* „Buzzedword" | **nicht auffindbar** | Zwei Suchen (Name + App/Wortalarm), kein Treffer. Wahrscheinlich vom Modell erfunden. „Peace on Argue", „Buzzer Said It", „OtosakuKWS-iOS", „onnx-wakeword/voicute" **nicht geprüft** — nicht weiterverwenden | – |
+| *Empfängerprüfung:* CCC (`mail@ccc.de`), Mozilla Foundation (`info@mozilla.org`) | **kein Empfänger — Sammeladressen** | Allgemeine Postfächer großer Organisationen = BCC-Muster, das das Manifest verbietet. Mozilla Common Voice ist ein Datensatz, kein App-Träger. „Konfliktlösungs-NGOs", „Familienberatungsstellen" sind Typen, keine Adressen; eine App, die Angehörige abhört, als Beratungswerkzeug anzubieten, ist heikel | – |
+
+**Konsequenz:** Keine Dose. Katalogeintrag `ai-dinner-table-politics-buzzer` in `src/data/ideas/aiNativeFrontier.ts` mit `status: 'verengt'`, `suggestedVerdict: 'build_first'`, ohne Empfängeradressen und ohne Mail-Entwurf; Persona als fiktiv markiert (EN-Zitat sagte „Thanksgiving", DE „Weihnachten"). Als Vibecode-Spielzeug tragfähig (ein Nachmittag), als Geschenk nicht.
+
+**Nebenbefund (nicht repariert, Entscheidung Félix):** Alle 131 Einträge in `src/data/ideas/*.ts` stehen auf `status: 'frei'`; keiner der acht übrigen „AI Frontier 2026"-Einträge hat hier eine Zeile. **Sieben Dosen ohne Protokollzeile:** PillSafe Vision, ParagraphenDolmetscher, KlangStethoskop, ChemGefahr-Stopp, DienstplanWächter, BedenkenBlitz, EuroBirdCast (gegrept nach Dateiname *und* Titel, 24.09.2026). Die Abdeckungsaussage oben („24 von 24") ist damit veraltet.
+
+---
+
 ## Runde 7 — 21.09.2026 (Glasanflug-Ampel, Tiefenprüfung + Dose, method: ideenrunde)
 
 Auftrag: „Bird Glass Hazard Score Calculator" — also die **Glasanflug-Ampel aus Runde 2**, vertiefen und eine Dose packen. Tiefenprüfung im Format vom 20.09.: keine neuen Ideen, eine alte Idee richtig geprüft. **Damit ist außerdem der seit Runde 2 offene Retro-Punkt „LAG-VSW-Publikationsliste lesen" erledigt** — beim dritten Anlauf, und er hat sich gelohnt.
