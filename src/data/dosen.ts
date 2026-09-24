@@ -1908,6 +1908,40 @@ Berlin · github.com/felixinberlin`
 
 export const DISCARDED_DATA: DiscardedItem[] = [
   {
+    id: 'die-daten-schicht',
+    title: 'Die Daten-Schicht (Synchronous Transcription Events)',
+    originalIdeaDe: 'Eine Transkriptions-Plattform, die nur für intensive, geplante 30-Minuten-"Schichten" öffnet, bei denen Hunderte von Volunteers gleichzeitig tippen.',
+    originalIdeaEn: 'A transcription platform that is intentionally closed most of the time and only opens for intense, scheduled 30-minute "shifts" where hundreds of volunteers type simultaneously.',
+    whyDiscardedDe: 'Das Konzept von synchronen Transkriptions-Events ist unter dem Begriff "Transcribathons" (z.B. von Europeana) bereits etabliert.',
+    whyDiscardedEn: 'The concept of synchronous transcription events is already established under the term "Transcribathons" (e.g. by Europeana).',
+    lessonDe: 'Synchrone Crowdsourcing-Events sind kein neues Format; der Community-Aspekt wird in der Nische bereits gepflegt.',
+    lessonEn: 'Synchronous crowdsourcing events are not a new format; the community aspect is already well cultivated in the niche.',
+    domain: 'Zivilgesellschaft / Citizen Science',
+    evidence: [
+      'Europeana Transcribathons'
+    ],
+    grave: {
+      diedOn: 'Lacunar Runde 5 · 2026-09-24',
+      cause: 'gebaut',
+      whoHadIt: 'Gemeinnützige',
+      killer: 'Europeana Transcribathons',
+      foundBy: 'Englische Suche',
+      source: 'Bisoziation',
+      stage: 'kandidat',
+      resurrectIfDe: 'Wenn eine technologische Neuerung (z.B. Realtime-Consensus-Protokolle) den synchronen Event über das rein Soziale hinaus funktional unabdingbar macht.',
+      resurrectIfEn: 'If a technological advancement (e.g. real-time consensus protocols) makes the synchronous event functionally indispensable beyond just the social aspect.'
+    },
+    cause: 'gebaut',
+    killer: 'gemeinnuetzig',
+    foundBy: 'englisch',
+    origin: 'bisoziation',
+    stage: 'kandidat',
+    bornIn: 'Lacunar Runde 5',
+    diedOn: '2026-09-24',
+    resurrectIfDe: 'Wenn eine technologische Neuerung den synchronen Event funktional unabdingbar macht.',
+    resurrectIfEn: 'If a technological advancement makes the synchronous event functionally indispensable.'
+  },
+  {
     id: 'git-archaeologist',
     title: 'git-archaeologist (MCP)',
     originalIdeaDe: 'Repo-History als Frage-Interface: Warum existiert diese Zeile? Kette aus blame → PR → Issue → Diskussion.',
