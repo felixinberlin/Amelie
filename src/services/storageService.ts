@@ -108,9 +108,14 @@ export function getActiveCandidates(): CandidateIdea[] {
     if (localStr) {
       const parsed: CandidateIdea[] = JSON.parse(localStr);
       if (Array.isArray(parsed) && parsed.length > 0) {
+        // Repo-Daten gewinnen für bekannte ids — wie bei getActiveDosen. Vorher
+        // gewann die lokale Kopie, und Korrekturen aus dem Prüfprotokoll kamen
+        // bei wiederkehrenden Besuchern nie an.
         const map = new Map<string, CandidateIdea>();
         CANDIDATE_IDEAS_DATA.forEach((c) => map.set(c.id, c));
-        parsed.forEach((c) => map.set(c.id, c));
+        parsed.forEach((c) => {
+          if (c && c.id && !map.has(c.id)) map.set(c.id, c);
+        });
         return Array.from(map.values());
       }
     }

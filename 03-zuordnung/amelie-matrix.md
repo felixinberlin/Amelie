@@ -361,7 +361,7 @@ Zu jeder Idee aus `ideas-neue-projekte.md`: wer davon profitiert, warum ausgerec
 | Altbau Thermal | 🎁 | EnergyMap-Verbund / UdK Berlin | **gesendet 20.09.2026** — Mail 1 (UdK Berlin, Prof. Nytsch-Geusen); nachrangig: co2online, Verbraucherzentrale; Antwort offen (kein Nachfassen) |
 | Sperrmüll-Radar | 🎁 | CityLAB Berlin | **gesendet 21.09.2026** — Mail 2 (CityLAB Berlin, allgemeiner Kontakt); Antwort offen (kein Nachfassen) |
 | Kiez-Lärmkarte | 🎁 | Noise-Planet / NoiseCapture | **gesendet 21.09.2026** — Mail 3 (NoiseCapture/CNRS, EN) sowie Mail 2 (CityLAB Berlin); Antwort offen (kein Nachfassen) |
-| **Glasanflug-Ampel** | 🔨 | **NABU Berlin / NABU Jena** (LBV zweitrangig) | **gepackt 21.09., überarbeitet 22.09.**, verengt — Mail 5 im Entwurf, wartet auf die Punktwerte aus LAG VSW 21/01 |
+| **Glasanflug-Ampel** | 🔨 | **NABU Berlin / NABU Jena** (LBV zweitrangig) | **zugestellt 22.09.2026** — Mail 5 (LAG VSW & NABU), `verengt`; in `src/data/dosen.ts` am 23.09. nachgezogen (`18a020c`). Antwort offen (kein Nachfassen) |
 | Pin Tumbler | 🎁 | SSDeV Berlin | **gepackt**, verengt |
 | Diffgeist | 🎁 | Andrew Nesbitt (Ecosyste.ms) | **gepackt** |
 | Echter Zufall als Service | 🔨 | infnoise / leetronics | **gepackt** |
@@ -374,7 +374,7 @@ Zu jeder Idee aus `ideas-neue-projekte.md`: wer davon profitiert, warum ausgerec
 | Ghost Replay | 🎁 | HCI-Forschung | **gepackt**, verengt |
 | Spec-Drift Detector | 🔒 + streuen | spec-kit / Tessl | **gepackt**, behalten |
 | Wet Ink | 🔒 | Plan an Escape Motions u. a. | **gepackt**, behalten |
-| ~~Crack Flora Watcher~~ | ⛔ | — | **zurückgezogen 21.09.2026**, `besetzt` (GrowApp, Nature's Notebook; Gamifizierung bei Flora Incognita selbst). Begründung in `05-dosen/_entsorgt.md` |
+| ~~Crack Flora Watcher~~ | ⛔ | — | **zurückgezogen 21.09.2026**, `besetzt` (GrowApp, Nature's Notebook; Gamifizierung bei Flora Incognita selbst). Begründung in `05-dosen/_entsorgt.md`. Seit 24.09.2026 auch in `src/data/dosen.ts` als `entsorgt` geführt (vorher dort weiter 🎁 gepackt) |
 | Das lebende Spielobjekt | 🎁 | Pl@ntNet / The Plant Game · nachrangig Play Curious, MMOS, Scientific Game Jam | **gepackt** Runde 6 (Spiel-Strang), `frei` — mit Skelett aus `src/`, sonst Regel-4-Verstoß |
 | Beobachtungsposten mit Übergabe (Fugenduell-Patenschaft) | 🎁 | CityLAB Berlin (Gieß den Kiez) · nachrangig GLOBE NL, USA-NPN | **gepackt** Runde 6, `verengt` — Patenschaft existiert bei Gieß den Kiez, frei bleibt Verfall + Übergabe |
 | KlarLokal | 🎁 | Prototype Fund | **gepackt**, verengt (Zetteln existiert bereits, Zero-Cloud ist die Lücke) |
@@ -385,12 +385,24 @@ Zu jeder Idee aus `ideas-neue-projekte.md`: wer davon profitiert, warum ausgerec
 | Kartierlotse | – | Dose nennt keinen Empfänger | **gefunden** — Dose vorhanden (Protokoll: `verengt`); Empfänger und Verdikt noch festzulegen |
 | Eichflächen-Trainer | – | Dose nennt keinen Empfänger | **gefunden** — Dose vorhanden (Protokoll: `frei`); Empfänger und Verdikt noch festzulegen |
 | Feuerkugel-Sofortnetz | – | Dose nennt keinen Empfänger | **gefunden** — Dose vorhanden (Protokoll: zwei `verengt`-Teile: Sofort-Rekrutierung, Ambient-Rettung); Empfänger und Verdikt noch festzulegen |
+| Bruchlesen | 🎁 | AG Fraktographie (DGM/DVM an der BAM) | **gepackt** 23.09.2026, `verengt` (FractoDB existiert, Übungsmodus ist die Lücke) — Mail vor der AG-Sitzung am 20.11.2026 |
+| Sperrmüll-Weiche | 🎁 | BSR (besitzt Sperrmüllabholung und NochMall) | **gepackt** Runde 8, `verengt` — eigener Empfänger, nicht CityLAB |
+| EuroBirdCast (Arbeitstitel) | 🔨 | offen bis M0 (BfN / BioConsult SH, LfU Brandenburg) | **gepackt** 22.09.2026, `verengt`, Restlücke unklar — erst Bedarfsfrage, kein Mail-Entwurf |
+| PillSafe Vision | 🎁 | Pflegestützpunkte · BAGSO | **gepackt** (aus dem Katalog), `verengt` seit Prüfung 24.09.2026 — Kipprisiko Medizinprodukt vor Zustellung klären |
+| KlangStethoskop | 🎁 | Netzwerk Reparatur-Initiativen | **gepackt** (aus dem Katalog), `verengt` seit 24.09.2026 — Lücke ist der fehlende Datensatz, nicht die App |
+| ChemGefahr-Stopp | 🎁 | BG BAU · IG BAU | **gepackt** (aus dem Katalog), `verengt` seit 24.09.2026 — BG BAU hat WINGIS/GISCODE; Kipprisiko falsches „passt" |
+| DienstplanWächter (Pflege) | 🎁 | ver.di Gesundheit · DBfK | **gepackt** (aus dem Katalog), `verengt` (dünn) seit 24.09.2026 — Foto → Dienstplan und Zuschlagsrechner existieren |
+| BedenkenBlitz | 🎁 | Fachverband Fliesen und Naturstein · ZDB | **gepackt** (aus dem Katalog), `verengt` (dünn) seit 24.09.2026 — Muster und KI aus dem LV existieren |
+| Fugenduell: Asphaltritzen-Arena | 🔨 | Dose nennt „Indie Game Developers" — keine Adresse | **gepackt**, `verengt` seit 24.09.2026 (Spiel über echte Arten besetzt, Gebiet neu); Empfänger fehlt |
+| ~~ParagraphenDolmetscher~~ | ❌ | — | **entsorgt 24.09.2026** — `besetzt` (jobcenter.guru u. a.), Duplikat von KlarLokal. Begründung in `05-dosen/_entsorgt.md` |
 | ~~git-archaeologist~~ | ❌ | — | **entsorgt** — mehrfach gebaut |
 | ~~Home-Network MCP~~ | ❌ | — | **entsorgt** — ≥4 Fritzbox-MCPs |
 | ~~Repo-Museum~~ | ❌ | — | **entsorgt** — bereits gebaut |
 | ~~Commute Oracle~~ | ❌ | — | **entsorgt** — kommerziell besetzt |
 
 **Bilanz:** 17 Dosen gepackt (davon 8 mit verengter Prämisse), 2 davon behalten, **4 entsorgt**. Dazu sieben Dosen aus Runde 3/4 mit Status `gefunden` (Wärmesignatur, Denkmal-Verlaufsblick, Lichtplan-Check, Biotoptyp-Assistent, Kartierlotse, Eichflächen-Trainer, Feuerkugel-Sofortnetz): Dose liegt vor, aber keine Empfängerprüfung durch das Sekretariat und kein Zustellplan. Diffgeist gilt laut Bibliothek inzwischen als `verengt`, nicht mehr `frei` (Aikido/Endor Labs), bleibt hier vorerst `gepackt`, bis entschieden ist, ob die Dose bleibt.
+
+**Stand 24.09.2026 (Abdeckungs-Nachprüfung):** 36 Dosen in `05-dosen/`, davon 4 zugestellt (Altbau Thermal, Sperrmüll-Radar, Kiez-Lärmkarte, Glasanflug-Ampel), Crack Flora Watcher zurückgezogen, ParagraphenDolmetscher entsorgt. Die neun Zeilen oben waren bis heute nicht in dieser Liste; die ältere Bilanzzeile darüber bleibt als Stand vom 20.09. stehen.
 
 *Crack Flora Watcher und KlarLokal kamen am 18.9.2026 unfertig aus der `gemini changes`-Runde: keine Empfängerprüfung, erfundene E-Mail-Adressen, keine „Wer es schon versucht hat"-Sektion. Am selben Tag auf Vorlagen-Standard gebracht und nachrecherchiert (Seek bzw. Zetteln als bislang übersehene Konkurrenz gefunden, Prämisse entsprechend verengt). Empfängeradressen weiterhin bewusst nicht in Dose/Matrix — beim Zustellen von der Organisationsseite kopieren.*
 

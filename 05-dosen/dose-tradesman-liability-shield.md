@@ -5,9 +5,11 @@ target_maker: Fachverband Fliesen und Naturstein
 ---
 # BedenkenBlitz (VOB/B Baustellen-Schutzschirm)
 
-**Ein Satz:** 15 Sekunden Sprachmemo + Foto vom feuchten Estrich: Erstellt sofort eine wasserdichte VOB/B-Bedenkenanmeldung gegen Schadensersatzklagen.
+*(englisch: QuickObjection (Construction Liability Shield))*
 
-**Stand:** 17.09.2026 · **Prüfen ab:** 10/2026
+**Ein Satz:** 15 Sekunden Sprachmemo + Foto vom feuchten Estrich: Erstellt sofort einen vollständigen Entwurf der VOB/B-Bedenkenanmeldung, bevor weitergearbeitet wird.
+
+**Stand:** 17.09.2026 · **Prüfen ab:** März 2027
 **Empfänger:** Fachverband Fliesen und Naturstein · Zentralverband des Deutschen Baugewerbes · IG BAU
 **Verdikt:** 🎁 verschenken
 
@@ -39,7 +41,7 @@ Mangelhafte Baustellen-Adresse: App muss GPS nutzen, um das Bauvorhaben automati
 
 ## Wer es schon versucht hat
 
-Kommerzielle Bausoftware kostet 80 €/Nutzer/Monat und setzt ein Büro-Team voraus — für den 1-Mann-Fliesenleger unbrauchbar.
+Muster für die Bedenkenanmeldung nach § 4 Abs. 3 VOB/B gibt es überall (ZVSHK-Formularmuster, PlanRadar, BauMaster, WEKA-Checkliste, cendas). BauAnalyst (Blogbeitrag vom 29.03.2026) erzeugt Bedenkenanmeldungen automatisch — aus dem Leistungsverzeichnis, nicht von der Baustelle. KI-Bautagebücher mit Spracheingabe gibt es ebenfalls (HVNH AI, baustellen-kiassistent.de, Hero). Nicht gefunden: Sprachmemo plus Foto am Ort zur fertigen Bedenkenanmeldung für den Ein-Mann-Betrieb. Nicht versprechen: „rechtssicher" — ob ein Schreiben trägt, entscheidet der Einzelfall.
 
 ---
 

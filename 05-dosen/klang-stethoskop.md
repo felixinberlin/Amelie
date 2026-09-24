@@ -5,9 +5,11 @@ target_maker: Netzwerk Reparatur-Initiativen
 ---
 # KlangStethoskop
 
+*(englisch: Acoustic Machine Stethoscope)*
+
 **Ein Satz:** Smartphone an die laute Heizungspumpe oder Waschmaschine halten — akustische Neuronale Netze diagnostizieren Lagerschaden oder Kavitation und zeigen die 10€-Reparatur.
 
-**Stand:** September 2026 · **Prüfen ab:** September 2027
+**Stand:** September 2026 · **Prüfen ab:** März 2027
 **Empfänger:** Netzwerk Reparatur-Initiativen (Repair Cafés) · Bund der Energieverbraucher · Verbraucherzentrale
 **Verdikt:** 🎁 verschenken
 
@@ -21,7 +23,7 @@ Wenn die Umwälzpumpe der Heizung oder das Lager der Waschmaschine schleift, tau
 
 - Audio-Transformer und Spektrogramm-KI klassifizieren mechanische Frequenzspitzen und Resonanzen in Echtzeit im Browser.
 - Web Audio API liefert hochpräzise FFT-Rohdaten direkt über das Smartphone-Mikrofon.
-- Offene Reparaturdatenbanken von iFixit und Repair Cafés liefern verifizierte Fehler-Acoustic-Profile.
+- Offene Anomalie-Datensätze für Pumpen und Ventilatoren (MIMII) zeigen, dass die Methode trägt — für Haushaltsgeräte fehlt der Datensatz noch, und ihn anzulegen wäre der erste echte Schritt.
 
 ## Skizze
 
@@ -39,7 +41,7 @@ Mikrofonverzerrung durch Übersteuerung bei lauten Motoren: App muss Nutzer warn
 
 ## Wer es schon versucht hat
 
-Industrielle Maschinendiagnose-Systeme von SKF oder Fluke kosten 5.000 €; für normale Bürger gab es nur Ratelosigkeit.
+Das Spektrum auf dem Handy ist gelöst: Vibrations- und FFT-Apps gibt es viele (Vibration, WiSER VIBE, Resonance, myFrequency), Motorgeräusch-Diagnose per KI fürs Auto ebenfalls (Carithm). Maschinengeräusch-Anomalieerkennung ist ein etabliertes Forschungsfeld (DCASE-Challenge, MIMII-Datensatz für Pumpen, Ventilatoren und Ventile). Der Repair-Café-Diagnoseassistent steht im Prüfprotokoll als besetzt. Nicht gefunden: eine offene Sammlung von Fehlergeräuschen für Haushaltsgeräte — ohne sie hat das Modell nichts zu lernen, und genau diese Sammlung wäre der eigentliche Beitrag.
 
 ---
 

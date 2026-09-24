@@ -5,9 +5,11 @@ target_maker: ver.di Fachbereich Gesundheit
 ---
 # DienstplanWächter (Shift Roster Auditor & Bonus Shield)
 
+*(englisch: Shift Roster Auditor & Statutory Bonus Shield)*
+
 **Ein Satz:** Fotografiert den Stations-Dienstplan, warnt vor illegalen Ruhezeitverkürzungen und berechnet steuerfreie Nacht- und Sonntagszuschläge.
 
-**Stand:** 17.09.2026 · **Prüfen ab:** 10/2026
+**Stand:** 17.09.2026 · **Prüfen ab:** März 2027
 **Empfänger:** ver.di Fachbereich Gesundheit · DBfK Deutscher Berufsverband für Pflegeberufe · Junge Pflege
 **Verdikt:** 🎁 verschenken
 
@@ -39,7 +41,7 @@ Schlechtes Licht im Stations-Pausenraum: Bildverbesserungs-Filter (Grauwert-Spre
 
 ## Wer es schon versucht hat
 
-Bestehende Krankenhaus-Dienstplan-Software (z.B. SP-Expert) ist für das Management gebaut, nicht für den rechtlichen Selbstschutz der Arbeitnehmer.
+Dienstplan abfotografieren und in den Kalender übernehmen können Shift2Cal AI (ausdrücklich für Pflegekräfte) und allgemeine Foto-zu-Kalender-Apps (Smart Calendars AI, ALMO). Zuschlagsrechner für Nacht, Sonntag und Feiertag gibt es viele und kostenlos (Ordio, Kenjo, rechner-portal.de, schichtlohnrechner.de; TVöD-Sätze in der Schichtplan-Fibel). Dienstplan-Software für Häuser prüft Ruhezeiten für die Leitung. Nicht gefunden: dieselbe Prüfung auf der Seite der Beschäftigten — Ruhezeit nach § 5 ArbZG und Tarifzuschläge aus dem eigenen Plan, als Beleg für Betriebsrat oder Gewerkschaft. Die Lücke ist die Kombination, keine neue Fähigkeit.
 
 ---
 

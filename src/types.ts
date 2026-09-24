@@ -194,7 +194,13 @@ export type DeliveryEmail = {
   sentAt?: string;
 };
 
-export type CandidateStatus = 'frei' | 'verengt' | 'unklar' | 'besetzt';
+/**
+ * `ungeprüft`: steht im Katalog, hat aber noch keine Zeile im Prüfprotokoll
+ * (06-suche/amelie-pruefprotokoll.md). Kein Urteil, darf nicht gepackt werden.
+ * Die anderen vier Werte sind Urteile und brauchen eine Protokollzeile —
+ * scripts/check-protokoll-coverage.mjs prüft das.
+ */
+export type CandidateStatus = 'ungeprüft' | 'frei' | 'verengt' | 'unklar' | 'besetzt';
 
 export interface CandidateIdea {
   id: string;

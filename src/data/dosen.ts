@@ -450,8 +450,8 @@ export const DOSEN_DATA: DoseItem[] = [
     recipientsDe: '#Krautschau / Senckenberg Gesellschaft für Naturforschung (Dr. Julia Krohmer) · Flora Incognita Forschungsgruppe (MPI Jena / TU Ilmenau) · NABU StadtNatur Berlin',
     recipientsEn: '#Krautschau / Senckenberg Society for Nature Research · Flora Incognita Research Group (MPI Biogeochemistry / TU Ilmenau) · NABU Urban Biodiversity',
     domain: 'civic',
-    verdict: 'gift',
-    status: 'gepackt',
+    verdict: 'discarded',
+    status: 'entsorgt',
     tags: ['Citizen Science', 'Urbane Ökologie', 'Botanik', 'CSR-Theorie', '#Krautschau', 'Grime-Dreieck', 'Berlin'],
     problemDe: 'Täglich laufen Millionen Menschen an faszinierenden Wildpflanzen im Gehwegasphalt vorbei, ohne sie wahrzunehmen („Plant Blindness"). Generische Bestimmungs-Apps bieten keine emotionale Bindung und vernachlässigen die funktionelle Ökologie nach Grimes CSR-Theorie (Competitor, Stress-Tolerator, Ruderal), während Initiativen wie #Krautschau eine dauerhafte mobile Plattform für ganzjähriges Zeitraffer-Monitoring und empirische Härtegradmessung vermissen.',
     problemEn: 'People walk past fascinating plants surviving in concrete cracks every day without noticing them. General plant apps lack functional ecological depth based on Grimes CSR strategy framework (Competitor, Stress-Tolerator, Ruderal), while grassroots campaigns like #Krautschau lack an interactive mobile app for year-round time-lapse observations, trait logging, and crowdsourced urban ecology data.',
@@ -1015,7 +1015,7 @@ export const DOSEN_DATA: DoseItem[] = [
     oneLinerDe: 'Ein Foto der 7-Tage-Dosette schützt pflegende Angehörige vor lebensgefährlichen Verwechslungen — multimodale Erkennung von Pillenprägung und Farbe gleicht alles mit dem Medikationsplan ab.',
     oneLinerEn: 'A single overhead photo of a 7-day pillbox shields exhausted family caregivers from fatal medication errors using multimodal imprint and color verification against doctor schedules.',
     date: 'September 2026',
-    reviewAfter: 'September 2027',
+    reviewAfter: 'März 2027',
     recipientsDe: 'Pflegestützpunkte Deutschland · BAGSO (Seniorenorganisationen) · Pflegende Angehörige e.V.',
     recipientsEn: 'Family Caregiver Alliance · AARP Caregiving · National Institute on Aging',
     domain: 'civic',
@@ -1046,8 +1046,8 @@ export const DOSEN_DATA: DoseItem[] = [
     },
     failureModeDe: 'Falsche Sicherheit bei identisch aussehenden weißen Tabletten ohne Prägung: Das System muss bei Unklarheit explizit warnen („Tablette 3 nicht eindeutig unterscheidbar, bitte Beipackzettel prüfen") statt zu raten.',
     failureModeEn: 'False confidence on generic identical unmarked white tablets: Model must output explicit ambiguity warnings rather than ungrounded guesses.',
-    priorArtDe: 'Kommerzielle Apotheken-Blisterautomaten kosten 50.000 €; für private Familien gab es bisher nur manuelle Zettel.',
-    priorArtEn: 'Commercial pharmacy packaging machines cost $50k; ordinary family caregivers had zero visual verification tools.',
+    priorArtDe: 'Pillen per Foto bestimmen ist ein dichter Markt (Smart Pill ID, checkmypill, Pill Pal, AI Pill Identifier), Tabletten per Kamera zählen ebenso (PillScan). Den bundeseinheitlichen Medikationsplan per QR-Code einlesen können MyTherapy und gesund.de kostenlos. Nicht gefunden (Prüfung 24.09.2026): eine App, die die gefüllte Dosette Fach für Fach gegen den Plan abgleicht. Vor jeder Zustellung offen: ob eine solche Warnfunktion ein Medizinprodukt wäre, und ob es für deutsche Generika eine offene Prägungsdatenbank gibt.',
+    priorArtEn: 'Identifying pills by photo is a crowded market (Smart Pill ID, checkmypill, Pill Pal, AI Pill Identifier), and so is counting tablets by camera (PillScan). MyTherapy and gesund.de already scan the German federal medication plan QR code for free. Not found (check of 24.09.2026): an app that verifies a filled pill organizer compartment by compartment against the plan. Open before any delivery: whether such a warning feature would be a regulated medical device, and whether an open imprint database exists for German generics.',
     aiFrontier: {
       impossibleBeforeAiDe: 'Klassische Computer Vision scheiterte kläglich an Plastikspiegelungen, Schattenwurf in tiefen Fächern und minimalen Unterschieden weißer runder Pillen. Erst multimodale Vision-Netze erfassen semantische Prägungen und Kontext.',
       impossibleBeforeAiEn: 'Traditional OpenCV failed completely on plastic lid reflections, compartment shadow occlusions, and subtle 1mm bevel variations. Multimodal vision models solve this via zero-shot semantic visual reasoning.',
@@ -1071,75 +1071,13 @@ export const DOSEN_DATA: DoseItem[] = [
     }
   },
   {
-    id: 'paragraphen-dolmetscher',
-    title: 'ParagraphenDolmetscher',
-    titleEn: 'Paragraph Interpreter (Officialese Decoder)',
-    oneLinerDe: 'Ein Foto des gefürchteten Amtsbescheids übersetzt bedrohliches Beamtendeutsch in 3 klare Sätze, deckt 4-Wochen-Fristen auf und formuliert den Widerspruch.',
-    oneLinerEn: 'Photograph an intimidating government rejection notice → Instant 3-sentence plain language translation, deadline audit, and enforceable appeal letter draft.',
-    date: 'September 2026',
-    reviewAfter: 'September 2027',
-    recipientsDe: 'Tacheles e.V. (Erwerbslosenhilfe) · Caritas Schuldner- & Sozialberatung · Mietervereine',
-    recipientsEn: 'National Legal Aid Coalition · Citizens Advice (UK) · Tenants Advocacy Guilds',
-    domain: 'civic',
-    verdict: 'gift',
-    status: 'gepackt',
-    tags: ['AI-Native', 'Bürgerrechte', 'Soziales', 'Juristische KI', 'Amtshilfe', 'Widerspruch'],
-    problemDe: 'Millionen Bürger verstehen amtliche Ablehnungsbescheide (Bürgergeld, Pflegegrad, Wohngeld, Mieterhöhung) nicht. Aus Scham oder Überforderung verstreichen Fristen ungenutzt, obwohl bis zu 40% der Bescheide fehlerhaft sind.',
-    problemEn: 'Millions of working-class families receive opaque administrative rejection notices. Paralyzed by hostile jargon, they miss 30-day statutory appeal windows despite up to 40% of determinations containing reversible errors.',
-    whyNowDe: [
-      'Große multimodale Modelle erfassen mehrseitige amtliche Tabellen, Berechnungsbögen und kleingedruckte Rechtsbehelfsbelehrungen im semantischen Zusammenhang.',
-      'Juristische Mustersätze lassen sich mit den individuellen Fakten des Bürgers verknüpfen, ohne anwaltliche Stundensätze.',
-      'Lokale Zwischenspeicherung schützt Bürger vor Tracking durch private Kanzleien oder Werbenetzwerke.'
-    ],
-    whyNowEn: [
-      'Multimodal reasoning models seamlessly parse complex government calculation grids and fine-print appeal clauses.',
-      'Statutory case law templates can be synthesized with the citizen\'s specific factual situation in seconds.',
-      'Zero-retention client memory protects marginalized people from surveillance or predatory credit profiling.'
-    ],
-    sketchDe: 'Foto des Bescheids hochladen. Modell extrahiert: 1. Was das Amt will, 2. Wann die Frist abläuft (mit Kalendereintrag), 3. Wo der Rechenfehler liegt. Ein Klick generiert ein formelles, rechtswahrendes Widerspruchs-PDF zur Fristwahrung.',
-    sketchEn: 'Upload notice photo. Model extracts: 1. Plain-text bottom line, 2. Strict statutory filing deadline, 3. Identified deduction errors. One click produces a formal, legally grounded appeal PDF to safeguard rights.',
-    firstStepDe: {
-      ticket: 'P0: Bescheid-Parser mit Fristerkennung und Zusammenfassung.',
-      criteria: 'Extrahiert aus 5 echten Mustern (Jobcenter, Pflegekasse) das genaue Fristdatum und den Kernablehnungsgrund.'
-    },
-    firstStepEn: {
-      ticket: 'P0: Notice parser with deadline extraction and plain summary.',
-      criteria: 'Correctly extracts appeal deadline and core reason from 5 distinct municipal test notices.'
-    },
-    failureModeDe: 'Unerlaubte Rechtsberatung: Das Werkzeug muss sich strikt als „Verständnishilfe und Formulierungshilfe zur Fristwahrung" deklarieren und auf offene Beratungsstellen verweisen.',
-    failureModeEn: 'Unauthorized practice of law: Tool must strictly frame itself as a linguistic comprehension and deadline-preservation aid, routing users to certified free legal aid clinics.',
-    priorArtDe: 'Kommerzielle LegalTech-Plattformen verlangen 30-50% Provision der Nachzahlung; freie, bedingungslose Werkzeuge für Bürger existieren nicht.',
-    priorArtEn: 'Commercial legal-tech startups extract 35% contingency fees; zero unconditional, open-source citizen tools exist.',
-    aiFrontier: {
-      impossibleBeforeAiDe: 'Regelbasierte Systeme konnten amtliche Briefe mit individuellen Sachbearbeiter-Formulierungen, Tabellenanhängen und handschriftlichen Vermerken nicht interpretieren. Nur moderne LLMs beherrschen juristische Dekodierung.',
-      impossibleBeforeAiEn: 'Static regex or traditional OCR broke on irregular government letter layouts, multi-column benefit breakdown grids, and casework notes. Only modern reasoning models grasp the causal legal chain.',
-      aiTechStack: ['Vision Document Transformer', 'German Social Code SGB Knowledge Graph', 'Client-side PDF-Kit Generator', 'Session Memory Decoupling'],
-      privacyModelDe: 'Ephemere Verarbeitung: Nach dem Erstellen des Widerspruchs-PDFs werden alle Bilddaten sofort im RAM vernichtet.',
-      privacyModelEn: 'Ephemeral execution: All document buffers are purged from RAM immediately upon PDF download.',
-      ordinaryPeopleBenefitDe: 'Gibt Menschen ohne Geld für Anwälte ihre verfassungsmäßigen Rechte und ihr Selbstwertgefühl vor Behörden zurück.',
-      ordinaryPeopleBenefitEn: 'Restores constitutional agency and dignity to ordinary people facing bureaucratic intimidation without hiring attorneys.',
-      learningCurriculumDe: [
-        { step: 1, title: 'Woche 1: Dokumenten-Layout-Analyse & Tabellen', focus: 'Optische Zerlegung mehrspaltiger Ämterbriefe in Absender, Festsetzung, Begründung und Fristklausel', milestone: 'Zuverlässiges Extrahieren von Frist- und Datumsangaben' },
-        { step: 2, title: 'Woche 2: Juristischer Begründungs-Parser (SGB II/XI)', focus: 'Semantische Prüfung: Welche Begründung führt das Amt an? (z.B. fehlende Mitwirkung, unzulässige Kürzung)', milestone: 'Automatischer Abgleich gegen Standardfehler von Sozialbehörden' },
-        { step: 3, title: 'Woche 3: Alltagssprachliche Didaktik & Barrierefreiheit', focus: 'Übersetzung von Schachtelsätzen in einfache Sprache (Sprachniveau B1/A2) ohne Informationsverlust', milestone: 'Testleser verstehen den Bescheidinhalt in unter 60 Sekunden' },
-        { step: 4, title: 'Woche 4: Musterschreiben-Generator zur Fristwahrung', focus: 'Erstellung von formvollendeten Widerspruchsschreiben mit Aktenzeichen, Rechtsgrundlage und Fristrüge', milestone: 'Rechtswahrendes PDF kann direkt ausgedruckt oder gefaxt werden' }
-      ],
-      learningCurriculumEn: [
-        { step: 1, title: 'Week 1: Document Layout & Spatial Parsing', focus: 'Decomposing complex bureaucratic notices into header, penalty, rationale, and deadline clauses', milestone: 'Reliable extraction of statutory dates and reference numbers' },
-        { step: 2, title: 'Week 2: Administrative Rationale Parsing', focus: 'Semantic classification: identify whether rejection stems from alleged non-compliance, missing receipts, or arbitrary cuts', milestone: 'Automated matching against common administrative review errors' },
-        { step: 3, title: 'Week 3: Plain-Language Simplification', focus: 'Distilling multi-clause legal prose into accessible 8th-grade reading level summaries without distortion', milestone: 'User comprehension achieved in under 60 seconds' },
-        { step: 4, title: 'Week 4: Enforceable Dispute Letter Engine', focus: 'Generating formal rebuttal notices with correct citations, case numbers, and deadline-preservation language', milestone: 'Print-ready appeal letter safeguarding citizen rights' }
-      ]
-    }
-  },
-  {
     id: 'klang-stethoskop',
     title: 'KlangStethoskop',
     titleEn: 'Acoustic Machine Stethoscope',
     oneLinerDe: 'Smartphone an die laute Heizungspumpe oder Waschmaschine halten — akustische Neuronale Netze diagnostizieren Lagerschaden oder Kavitation und zeigen die 10€-Reparatur.',
     oneLinerEn: 'Hold phone to a grinding heating pump or washing machine — acoustic neural networks diagnose bearing failure or cavitation, guiding a $10 DIY repair instead of replacement.',
     date: 'September 2026',
-    reviewAfter: 'September 2027',
+    reviewAfter: 'März 2027',
     recipientsDe: 'Netzwerk Reparatur-Initiativen (Repair Cafés) · Bund der Energieverbraucher · Verbraucherzentrale',
     recipientsEn: 'iFixit Global Community · Repair Café International · Community Tool Libraries',
     domain: 'physics',
@@ -1151,12 +1089,12 @@ export const DOSEN_DATA: DoseItem[] = [
     whyNowDe: [
       'Audio-Transformer und Spektrogramm-KI klassifizieren mechanische Frequenzspitzen und Resonanzen in Echtzeit im Browser.',
       'Web Audio API liefert hochpräzise FFT-Rohdaten direkt über das Smartphone-Mikrofon.',
-      'Offene Reparaturdatenbanken von iFixit und Repair Cafés liefern verifizierte Fehler-Acoustic-Profile.'
+      'Offene Anomalie-Datensätze für Pumpen und Ventilatoren (MIMII) zeigen, dass die Methode trägt — für Haushaltsgeräte fehlt der Datensatz noch, und ihn anzulegen wäre der erste echte Schritt.'
     ],
     whyNowEn: [
       'Audio transformers and edge spectrogram models classify mechanical harmonics in real time on phones.',
       'Web Audio API captures high-resolution FFT telemetry directly from consumer microphones.',
-      'Open repair knowledge from iFixit and Repair Cafés supplies verified harmonic failure signatures.'
+      'Open anomaly datasets for pumps and fans (MIMII) show the method works — for household appliances the dataset is still missing, and building it would be the first real step.'
     ],
     sketchDe: '5 Sekunden Audioaufnahme bei laufendem Motor. Echtzeit-Wasserfall-Spektrogramm. Neuronales Modell vergleicht Frequenzen mit Fehlerdatenbank (Kavitation, Schaufelradbruch, Fremdkörper, Lagerspiel). Schritt-für-Schritt-Anleitung zur Reparatur.',
     sketchEn: '5-second audio sample while motor runs. Real-time waterfall spectrogram. Neural classifier matches harmonics against mechanical failure benchmarks (cavitation, worn bearing, debris). Outputs visual repair guide.',
@@ -1170,8 +1108,8 @@ export const DOSEN_DATA: DoseItem[] = [
     },
     failureModeDe: 'Mikrofonverzerrung durch Übersteuerung bei lauten Motoren: App muss Nutzer warnen, das Telefon 20 cm entfernt zu halten und Verstärkung automatisch regeln.',
     failureModeEn: 'Microphone clipping: Loud motors saturate consumer mics; app must enforce a 20cm distance rule and autogain normalization.',
-    priorArtDe: 'Industrielle Maschinendiagnose-Systeme von SKF oder Fluke kosten 5.000 €; für normale Bürger gab es nur Ratelosigkeit.',
-    priorArtEn: 'Industrial vibration analyzers cost $5,000+; ordinary homeowners had zero acoustic diagnostic tools.',
+    priorArtDe: 'Das Spektrum auf dem Handy ist gelöst: Vibrations- und FFT-Apps gibt es viele (Vibration, WiSER VIBE, Resonance, myFrequency), Motorgeräusch-Diagnose per KI fürs Auto ebenfalls (Carithm). Maschinengeräusch-Anomalieerkennung ist ein etabliertes Forschungsfeld (DCASE-Challenge, MIMII-Datensatz für Pumpen, Ventilatoren und Ventile). Der Repair-Café-Diagnoseassistent steht im Prüfprotokoll als besetzt. Nicht gefunden: eine offene Sammlung von Fehlergeräuschen für Haushaltsgeräte — ohne sie hat das Modell nichts zu lernen, und genau diese Sammlung wäre der eigentliche Beitrag.',
+    priorArtEn: 'The spectrum on a phone is solved: vibration and FFT apps abound (Vibration, WiSER VIBE, Resonance, myFrequency), and AI engine-noise diagnosis exists for cars (Carithm). Machine anomalous-sound detection is an established research field (DCASE challenge, MIMII dataset for pumps, fans and valves). A Repair Café diagnosis assistant is already recorded as taken. Not found: an open collection of household-appliance fault sounds — without it the model has nothing to learn from, and that collection would be the actual contribution.',
     aiFrontier: {
       impossibleBeforeAiDe: 'Klassische Frequenzanalyse (einfache FFT) scheiterte an Umgebungsgeräuschen (Kindergeschrei, Verkehrslärm, Hall im Heizungskeller). Erst neuronale Audio-Filter trennen Hintergrundkrach von mechanischen Kausalmustern.',
       impossibleBeforeAiEn: 'Basic Fourier transforms failed due to ambient kitchen echoes, voices, and traffic rumble. Modern neural audio models isolate machine harmonic patterns from chaotic room acoustics.',
@@ -1201,7 +1139,7 @@ export const DOSEN_DATA: DoseItem[] = [
     oneLinerDe: 'Fotografiert den Stations-Dienstplan, warnt vor illegalen Ruhezeitverkürzungen und berechnet steuerfreie Nacht- und Sonntagszuschläge.',
     oneLinerEn: 'Photographs hospital breakroom shift rosters, warns against illegal sub-11h turnaround shifts, and audits tax-free overtime wage bonuses.',
     date: '17.09.2026',
-    reviewAfter: '10/2026',
+    reviewAfter: 'März 2027',
     recipientsDe: 'ver.di Fachbereich Gesundheit · DBfK Deutscher Berufsverband für Pflegeberufe · Junge Pflege',
     recipientsEn: 'National Nurses United · Royal College of Nursing · European Federation of Nurses Associations',
     domain: 'civic',
@@ -1231,8 +1169,8 @@ export const DOSEN_DATA: DoseItem[] = [
     },
     failureModeDe: 'Schlechtes Licht im Stations-Pausenraum: Bildverbesserungs-Filter (Grauwert-Spreizung und Schärfung) vor der Erkennung zwingend erforderlich.',
     failureModeEn: 'Dim breakroom lighting: Requires automated contrast stretching and adaptive thresholding prior to multimodal inference.',
-    priorArtDe: 'Bestehende Krankenhaus-Dienstplan-Software (z.B. SP-Expert) ist für das Management gebaut, nicht für den rechtlichen Selbstschutz der Arbeitnehmer.',
-    priorArtEn: 'Enterprise hospital scheduling platforms serve hospital management, never the worker\'s defensive legal self-audit.',
+    priorArtDe: 'Dienstplan abfotografieren und in den Kalender übernehmen können Shift2Cal AI (ausdrücklich für Pflegekräfte) und allgemeine Foto-zu-Kalender-Apps (Smart Calendars AI, ALMO). Zuschlagsrechner für Nacht, Sonntag und Feiertag gibt es viele und kostenlos (Ordio, Kenjo, rechner-portal.de, schichtlohnrechner.de; TVöD-Sätze in der Schichtplan-Fibel). Dienstplan-Software für Häuser prüft Ruhezeiten für die Leitung. Nicht gefunden: dieselbe Prüfung auf der Seite der Beschäftigten — Ruhezeit nach § 5 ArbZG und Tarifzuschläge aus dem eigenen Plan, als Beleg für Betriebsrat oder Gewerkschaft. Die Lücke ist die Kombination, keine neue Fähigkeit.',
+    priorArtEn: 'Photographing a roster into a calendar is done by Shift2Cal AI (explicitly for nurses) and generic photo-to-calendar apps (Smart Calendars AI, ALMO). Free premium-pay calculators for nights, Sundays and holidays are plentiful (Ordio, Kenjo, rechner-portal.de, schichtlohnrechner.de). Hospital rostering software checks rest periods for management. Not found: the same check on the employee side — statutory rest periods and collective-agreement premiums from one\'s own roster, as evidence for a works council or union. The gap is the combination, not a new capability.',
     tags: ['Echte Arbeit', 'Pflege', 'Schichtdienst', 'Arbeitsrecht', 'Lohnschutz', 'AI-Native'],
     emailTemplate: {
       subjectDe: 'Ein Geschenk für Pflegende: DienstplanWächter (CC0 Open Source)',
@@ -1267,10 +1205,10 @@ export const DOSEN_DATA: DoseItem[] = [
     id: 'dose-tradesman-liability-shield',
     title: 'BedenkenBlitz (VOB/B Baustellen-Schutzschirm)',
     titleEn: 'QuickObjection (Construction Liability Shield)',
-    oneLinerDe: '15 Sekunden Sprachmemo + Foto vom feuchten Estrich: Erstellt sofort eine wasserdichte VOB/B-Bedenkenanmeldung gegen Schadensersatzklagen.',
-    oneLinerEn: '15-second voice memo + photo of damp substrate: Instantly creates an enforceable statutory construction liability objection.',
+    oneLinerDe: '15 Sekunden Sprachmemo + Foto vom feuchten Estrich: Erstellt sofort einen vollständigen Entwurf der VOB/B-Bedenkenanmeldung, bevor weitergearbeitet wird.',
+    oneLinerEn: '15-second voice memo + photo of damp screed: instantly drafts a complete statutory notice of concerns before work continues.',
     date: '17.09.2026',
-    reviewAfter: '10/2026',
+    reviewAfter: 'März 2027',
     recipientsDe: 'Fachverband Fliesen und Naturstein · Zentralverband des Deutschen Baugewerbes · IG BAU',
     recipientsEn: 'Associated General Contractors · National Tile Contractors Association · Trades Unions',
     domain: 'tools',
@@ -1300,8 +1238,8 @@ export const DOSEN_DATA: DoseItem[] = [
     },
     failureModeDe: 'Mangelhafte Baustellen-Adresse: App muss GPS nutzen, um das Bauvorhaben automatisch mit Straße und Hausnummer zu versehen.',
     failureModeEn: 'Missing jobsite street address: App must utilize reverse geocoding to attach accurate building parcel metadata.',
-    priorArtDe: 'Kommerzielle Bausoftware kostet 80 €/Nutzer/Monat und setzt ein Büro-Team voraus — für den 1-Mann-Fliesenleger unbrauchbar.',
-    priorArtEn: 'Enterprise construction management suites cost $100/seat/month and require desk staff—useless for solo craftspeople.',
+    priorArtDe: 'Muster für die Bedenkenanmeldung nach § 4 Abs. 3 VOB/B gibt es überall (ZVSHK-Formularmuster, PlanRadar, BauMaster, WEKA-Checkliste, cendas). BauAnalyst (Blogbeitrag vom 29.03.2026) erzeugt Bedenkenanmeldungen automatisch — aus dem Leistungsverzeichnis, nicht von der Baustelle. KI-Bautagebücher mit Spracheingabe gibt es ebenfalls (HVNH AI, baustellen-kiassistent.de, Hero). Nicht gefunden: Sprachmemo plus Foto am Ort zur fertigen Bedenkenanmeldung für den Ein-Mann-Betrieb. Nicht versprechen: „rechtssicher" — ob ein Schreiben trägt, entscheidet der Einzelfall.',
+    priorArtEn: 'Templates for the statutory notice of concerns under German construction contract rules are everywhere (ZVSHK, PlanRadar, BauMaster, WEKA, cendas). BauAnalyst (blog post of 29.03.2026) generates such notices automatically — from the bill of quantities, not from the site. AI site diaries with voice input exist too (HVNH AI, baustellen-kiassistent.de, Hero). Not found: voice memo plus photo on site turned into a finished notice for a one-person business. Do not promise legal certainty — whether a letter holds depends on the case.',
     tags: ['Echte Arbeit', 'Handwerk', 'Baustelle', 'Rechtsschutz', 'Fliesenleger', 'AI-Native'],
     emailTemplate: {
       subjectDe: 'BedenkenBlitz: Kostenloses Schutzschild für Handwerker auf der Baustelle (CC0)',
@@ -1339,7 +1277,7 @@ export const DOSEN_DATA: DoseItem[] = [
     oneLinerDe: 'Kamera auf 2 Putzmittelflaschen richten: Warnt laut in 20 Sprachen vor Chlorgas und Verätzungen bei falschem Mischen.',
     oneLinerEn: 'Point phone camera at 2 cleaning chemical bottles: Warns audibly in 20 languages against toxic chlorine gas and acid burns.',
     date: '17.09.2026',
-    reviewAfter: '10/2026',
+    reviewAfter: 'März 2027',
     recipientsDe: 'IG BAU Bundesfachgruppe Gebäudereinigung · Berufsgenossenschaft der Bauwirtschaft (BG BAU)',
     recipientsEn: 'Service Employees International Union (SEIU) · European Cleaning and Facility Services Industry',
     domain: 'civic',
@@ -1369,8 +1307,8 @@ export const DOSEN_DATA: DoseItem[] = [
     },
     failureModeDe: 'Stummgeschaltetes Telefon: App muss bei akuter Lebensgefahr die Lautstärke automatisch anheben oder haptischen Alarm (Vibrationsmuster) erzwingen.',
     failureModeEn: 'Muted audio settings: App must trigger distinctive high-frequency haptic vibration pulses alongside screen flashes.',
-    priorArtDe: '15-seitige Sicherheitsdatenblätter im Personalbüro, die während des Putzens niemand liest oder versteht.',
-    priorArtEn: '18-page technical safety data sheets locked in custodial binders that are unreadable during night shifts.',
+    priorArtDe: 'Beim Empfänger liegt das Informationssystem schon: Die BG BAU betreibt WINGIS (Gefahrstoff-Informationssystem, auch mobil) mit dem GISCODE für Reinigungsmittel, dazu die DGUV Regel 101-019 mit Sammelbetriebsanweisungen. Mischverbote sind Lehrbuchwissen und stehen in jeder Warnung von Gesundheitsbehörden. Nicht gefunden (Prüfung 24.09.2026): eine Kamera-App, die zwei Flaschen erkennt und vor dem Mischen laut warnt. Kipprisiko: Ein falsches „passt" ist schlimmer als keine App — bei Profiprodukten ist der GISCODE aus Produkt- oder Sicherheitsdatenblatt eine sicherere Eingabe als die Bilderkennung.',
+    priorArtEn: 'The recipient already runs the information system: BG BAU operates WINGIS (hazardous substance information, also mobile) with the GISCODE for cleaning agents, plus DGUV rule 101-019 with collective operating instructions. Mixing bans are textbook knowledge and appear in every public-health warning. Not found (check of 24.09.2026): a camera app that recognises two bottles and warns loudly before mixing. Tipping risk: a false "all clear" is worse than no app — for professional products the GISCODE from the product or safety data sheet is a safer input than image recognition.',
     tags: ['Echte Arbeit', 'Reinigung', 'Arbeitsschutz', 'Sicherheit', 'Mehrsprachig', 'AI-Native'],
     emailTemplate: {
       subjectDe: 'Lebensschutz für Reinigungskräfte: ChemGefahr-Stopp (Quelloffenes Geschenk)',
@@ -1411,7 +1349,7 @@ export const DOSEN_DATA: DoseItem[] = [
     oneLinerDe: 'Asynchrones rundenbasiertes Ökologie-Taktikspiel für urbane Gehwegritzen — 14 reale Pionierarten, Grimes CSR-Dreieck, Pacht-Chronisten-Modell und transparenter 6-Runden-Saisonkampf.',
     oneLinerEn: 'An asynchronous turn-based botanical tactical battle game set in sidewalk cracks — 14 real-world pioneer species, Grimes CSR triangle, civic stewardship custody, and transparent 6-round seasonal combat.',
     date: 'September 2026',
-    reviewAfter: 'August 2027',
+    reviewAfter: 'März 2027',
     recipientsDe: 'Indie Game Developers · Botanischer Garten Berlin · Humboldt-Universität zu Berlin (Institut für Biologie) · Stiftung Naturschutz Berlin',
     recipientsEn: 'Indie Game Developers · Botanical Garden Berlin · Humboldt University Biology Dept · Nature Conservation Foundation Berlin',
     domain: 'creative',
@@ -1444,8 +1382,8 @@ export const DOSEN_DATA: DoseItem[] = [
     },
     failureModeDe: 'Verwechslung mit Pay-to-Win Gacha: Wenn seltene invasive Arten (wie der Götterbaum) käuflich wären, kollabiert die biologische Integrität. Ailanthus altissima ist im Ranked-Modus permanent gebannt. Das Spiel belohnt ökologisches Verständnis, keine Mikrotransaktionen.',
     failureModeEn: 'Degradation into Pay-to-Win Gacha: Selling dominant alien invasives breaks ecological credibility. Ailanthus altissima is permanently banned from competitive play. The game must reward tactical ecological insight rather than microtransactions.',
-    priorArtDe: 'Recherche 2026: Bestehende Taktik-Kartenspiele ignorieren echte urbane Ruderalbotanik; Citizen-Science-Apps ignorieren Spielmechaniken. Fugenduell schließt die Lücke durch formale CSR-Spieltheorie und echte Standorte.',
-    priorArtEn: '2026 landscape: Mainstream CCGs ignore urban ruderal botany; citizen science tools avoid battle loops. Fugenduell bridges the gap using Grimes CSR functional ecology and real micro-habitats.',
+    priorArtDe: 'Spiele über echte Pflanzenarten gibt es: Out and About (Yaldi Games, Steam 2026), Niche (Stray Fawn, echte Genetik als Kernmechanik), dazu Ökologie-Kartenspiele (Ecologies, Forest Shuffle, Earth, Reforest). Neu ist das Gebiet — urbane Ruderalflora in Gehwegfugen mit echten Merkmalen —, nicht das Genre. Die Kreuzung mit realen Standorten ist als eigene Dose geprüft (Das lebende Spielobjekt, frei). „Indie-Entwickler" ist kein Empfänger (Prüfprotokoll Runde 6): Die Adressen des Felds stehen im Programm seiner Konferenzen, etwa dem ECSA-Workshop „Games for good".',
+    priorArtEn: 'Games about real plant species exist: Out and About (Yaldi Games, Steam 2026), Niche (Stray Fawn, real genetics as core mechanic), and ecology card games (Ecologies, Forest Shuffle, Earth, Reforest). What is new is the territory — urban ruderal flora in pavement cracks with real traits — not the genre. The crossing with real locations is its own checked Dose (The Living Game Piece, free). "Indie developers" is not a recipient (check log round 6): the field\'s addresses are in its conference programmes, e.g. the ECSA workshop "Games for good".',
     emailTemplate: {
       subjectDe: 'Ideen-Schenkung & Spieldesign: Fugenduell – Das urbane Asphaltritzen-Taktikspiel',
       bodyDe: 'Liebe Spiele-Entwickler, liebe Botanik-Begeisterte,\n\naus unserer Arbeit am Citizen-Science-Projekt „Crack Flora Watcher" ist eine spielmechanische Schwester-Idee entstanden, die wir hiermit bedingungslos als CC0-Gemeingut schenken: „Fugenduell" (Asphaltritzen-Arena).\n\nDas Konzept:\n- 14 real existierende Gehwegpioniere aus dem Berliner Asphalt mit empirischen Werten aus UNDERPLOT und LEDA.\n- Ein ausbalanciertes 36-Punkte-System auf den 6 Dimensionen WURZEL, TRITT, DÜRRE, SAAT, TEMPO und CHEMIE.\n- Das Pacht- und Chronisten-Prinzip: Spieler besitzen keine echten Pflanzen, sondern übernehmen die Pflegepatenschaft („Pacht") einer realen Ritze.\n- Ein transparenter 6-Runden-Jahreszeitenkampf mit sichtbarer Deckungsverlagerung.\n\nDas komplette Roster, die mathematische Kampfauflösung und der interaktive Prototyp stehen bereit zur freien Weiternutzung.\n\nHerzliche Grüße,\nFélix',
@@ -1933,6 +1871,22 @@ export const DOSEN_DATA: DoseItem[] = [
 ];
 
 export const DISCARDED_DATA: DiscardedItem[] = [
+  {
+    id: 'paragraphen-dolmetscher',
+    title: 'ParagraphenDolmetscher',
+    originalIdeaDe: 'Foto des Amtsbescheids → Beamtendeutsch in drei klaren Sätzen, Frist erkennen, Widerspruch formulieren.',
+    originalIdeaEn: 'Photo of an official decision letter → plain language in three sentences, detect the deadline, draft the objection.',
+    whyDiscardedDe: 'Gibt es, kostenlos und in zehn Sprachen: jobcenter.guru (GuruSense AI) fotografiert den Bescheid, erklärt ihn per KI, erkennt die Frist und entwirft den Widerspruch (Stand der Seite 10.07.2026). Dazu amtly.app, briefgeist.de, papierfrei.app, docugov.ai. Und im eigenen Protokoll stand seit dem 18.09.2026 KlarLokal mit dem Nachbarn Zetteln — dieselbe Idee zum zweiten Mal gepackt. Der Satz der Dose „freie, bedingungslose Werkzeuge existieren nicht" war nie gesucht worden.',
+    whyDiscardedEn: 'It exists, free and in ten languages: jobcenter.guru (GuruSense AI) photographs the letter, explains it with AI, detects the deadline and drafts the objection (page as of 10.07.2026). Also amtly.app, briefgeist.de, papierfrei.app, docugov.ai. And the own check log had listed KlarLokal with its neighbour Zetteln since 18.09.2026 — the same idea packed a second time. The Dose sentence "no free tools exist" had never been searched.',
+    lessonDe: 'Ein Katalogeintrag, der ohne Protokollzeile zur Dose wird, überspringt den Vorfilter — hier hätte ein Blick in den eigenen Atlas genügt. Seit 24.09.2026 verhindert scripts/check-protokoll-coverage.mjs das.',
+    lessonEn: 'A catalogue entry that becomes a Dose without a check-log line skips the pre-filter — a look at the own atlas would have sufficed here. Since 24.09.2026 scripts/check-protokoll-coverage.mjs prevents this.',
+    domain: 'Behörden & Alltag',
+    evidence: [
+      'jobcenter.guru (GuruSense AI) — Foto, Erklärung, Frist, Widerspruchsentwurf, kostenlos',
+      'amtly.app, briefgeist.de, papierfrei.app, docugov.ai',
+      'KlarLokal / Zetteln (Prüfprotokoll, Nachtrag 18.09.2026)'
+    ]
+  },
   {
     id: 'git-archaeologist',
     title: 'git-archaeologist (MCP)',

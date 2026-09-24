@@ -7,7 +7,7 @@ target_maker: Pflegestützpunkte Deutschland
 
 **Ein Satz:** Ein Foto der 7-Tage-Dosette schützt pflegende Angehörige vor lebensgefährlichen Verwechslungen — multimodale Erkennung von Pillenprägung und Farbe gleicht alles mit dem Medikationsplan ab.
 
-**Stand:** September 2026 · **Prüfen ab:** September 2027
+**Stand:** September 2026 · **Prüfen ab:** März 2027
 **Empfänger:** Pflegestützpunkte Deutschland · BAGSO (Seniorenorganisationen) · Pflegende Angehörige e.V.
 **Verdikt:** 🎁 verschenken
 
@@ -39,7 +39,7 @@ Falsche Sicherheit bei identisch aussehenden weißen Tabletten ohne Prägung: Da
 
 ## Wer es schon versucht hat
 
-Kommerzielle Apotheken-Blisterautomaten kosten 50.000 €; für private Familien gab es bisher nur manuelle Zettel.
+Pillen per Foto bestimmen ist ein dichter Markt (Smart Pill ID, checkmypill, Pill Pal, AI Pill Identifier), Tabletten per Kamera zählen ebenso (PillScan). Den bundeseinheitlichen Medikationsplan per QR-Code einlesen können MyTherapy und gesund.de kostenlos. Nicht gefunden (Prüfung 24.09.2026): eine App, die die gefüllte Dosette Fach für Fach gegen den Plan abgleicht. Vor jeder Zustellung offen: ob eine solche Warnfunktion ein Medizinprodukt wäre, und ob es für deutsche Generika eine offene Prägungsdatenbank gibt.
 
 ---
 

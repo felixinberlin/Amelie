@@ -5,9 +5,11 @@ target_maker: Indie Game Developers
 ---
 # Fugenduell: Asphaltritzen-Arena
 
+*(englisch: Crack Duel: Asphalt Crack Arena)*
+
 **Ein Satz:** Asynchrones rundenbasiertes Ökologie-Taktikspiel für urbane Gehwegritzen — 14 reale Pionierarten, Grimes CSR-Dreieck, Pacht-Chronisten-Modell und transparenter 6-Runden-Saisonkampf.
 
-**Stand:** September 2026 · **Prüfen ab:** August 2027
+**Stand:** September 2026 · **Prüfen ab:** März 2027
 **Empfänger:** Indie Game Developers · Botanischer Garten Berlin · Humboldt-Universität zu Berlin (Institut für Biologie) · Stiftung Naturschutz Berlin
 **Verdikt:** 🔨 erst Skelett, dann verschenken
 
@@ -40,7 +42,7 @@ Verwechslung mit Pay-to-Win Gacha: Wenn seltene invasive Arten (wie der Götterb
 
 ## Wer es schon versucht hat
 
-Recherche 2026: Bestehende Taktik-Kartenspiele ignorieren echte urbane Ruderalbotanik; Citizen-Science-Apps ignorieren Spielmechaniken. Fugenduell schließt die Lücke durch formale CSR-Spieltheorie und echte Standorte.
+Spiele über echte Pflanzenarten gibt es: Out and About (Yaldi Games, Steam 2026), Niche (Stray Fawn, echte Genetik als Kernmechanik), dazu Ökologie-Kartenspiele (Ecologies, Forest Shuffle, Earth, Reforest). Neu ist das Gebiet — urbane Ruderalflora in Gehwegfugen mit echten Merkmalen —, nicht das Genre. Die Kreuzung mit realen Standorten ist als eigene Dose geprüft (Das lebende Spielobjekt, frei). „Indie-Entwickler" ist kein Empfänger (Prüfprotokoll Runde 6): Die Adressen des Felds stehen im Programm seiner Konferenzen, etwa dem ECSA-Workshop „Games for good".
 
 ---
 

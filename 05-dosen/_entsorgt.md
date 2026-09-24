@@ -63,7 +63,21 @@ Dazu die zweite Hälfte: Die gamifizierte Entdeckung liegt nicht nur bei Seek, s
 
 **Was überlebt:** Nicht die Longitudinalspur, sondern die Übergabe — dass eine Messreihe weiterläuft, wenn die Person aufhört. Neue Dose: `05-dosen/fugenduell-patenschaft.md`. Die Wettbewerbsmechanik aus dem Brainstorm (Übernahme gegen den Willen der Patin) ist dort bewusst nicht enthalten: ungeprüft (`unklar`) und gegen Ehrenamtliche gerichtet.
 
+**Nachtrag 24.09.2026:** In `src/data/dosen.ts` steht die Dose jetzt als `entsorgt` / `discarded` — vorher zeigte die App sie weiter als 🎁 gepackt. Die Verweise aus `deliveries.ts`, `doseSimulators.ts` und `matrix.ts` bleiben dadurch gültig.
+
 **Noch nicht erledigt, Entscheidung Félix:** Die Datei `05-dosen/crack-flora-watcher.md` ist als zurückgezogen markiert, aber nicht gelöscht — sie hängt an `en/05-dosen/`, an der Matrix, an `src/data/dosen.ts` und an den JSON-Dateien unter `public/data/`. Das Manifest sagt „löschen, nicht archivieren"; der Vollzug fasst die veröffentlichte Seite an und gehört deshalb nicht in eine Rechercherunde.
+
+---
+
+## ParagraphenDolmetscher — 24.09.2026
+
+**Ursprüngliche Idee:** Foto des Amtsbescheids → Beamtendeutsch in drei klaren Sätzen, Frist erkennen, Widerspruch formulieren (Tacheles, Caritas, Mietervereine).
+
+**Warum weg:** Gibt es, kostenlos und in zehn Sprachen. **jobcenter.guru** (GuruSense AI, Seite gelesen, Stand 10.07.2026): Bescheid fotografieren, KI erklärt ihn, erkennt die Frist, entwirft den Widerspruch, iOS, Android und Web, ausdrücklich kostenlos. Daneben amtly.app, briefgeist.de, papierfrei.app, docugov.ai (Suchtreffer). Und im eigenen Protokoll stand seit dem 18.09.2026 **KlarLokal** mit dem Nachbarn **Zetteln** — dieselbe Idee war damit zum zweiten Mal gepackt.
+
+**Was das über die Methode sagt:** Die Dose kam aus dem Katalog in `src/data/ideas/`, nicht aus einer Runde. Dort stand jeder Eintrag auf `frei`, ohne dass je gesucht worden war, und der Satz „freie, bedingungslose Werkzeuge existieren nicht" in „Wer es schon versucht hat" war eine Behauptung des Modells, das den Katalog geschrieben hat. Ein Blick in den eigenen Atlas („Behördenbrief → Leichte Sprache: dicht") hätte genügt. Seit heute steht der Katalog auf `ungeprüft`, und `scripts/check-protokoll-coverage.mjs` lässt keine Dose ohne Protokollzeile mehr durch.
+
+**Vollzug:** Aus `DOSEN_DATA` nach `DISCARDED_DATA` verschoben, `05-dosen/paragraphen-dolmetscher.md` gelöscht (Regel 7; die Dose war nie zugestellt und nirgends verlinkt).
 
 ---
 

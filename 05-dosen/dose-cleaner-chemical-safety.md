@@ -5,9 +5,11 @@ target_maker: IG BAU Bundesfachgruppe Gebäudereinigung
 ---
 # ChemGefahr-Stopp (Chemical Safety & Poison Shield for Cleaners)
 
+*(englisch: ChemHazard Stop (Chemical Safety Shield for Cleaners))*
+
 **Ein Satz:** Kamera auf 2 Putzmittelflaschen richten: Warnt laut in 20 Sprachen vor Chlorgas und Verätzungen bei falschem Mischen.
 
-**Stand:** 17.09.2026 · **Prüfen ab:** 10/2026
+**Stand:** 17.09.2026 · **Prüfen ab:** März 2027
 **Empfänger:** IG BAU Bundesfachgruppe Gebäudereinigung · Berufsgenossenschaft der Bauwirtschaft (BG BAU)
 **Verdikt:** 🎁 verschenken
 
@@ -39,7 +41,7 @@ Stummgeschaltetes Telefon: App muss bei akuter Lebensgefahr die Lautstärke auto
 
 ## Wer es schon versucht hat
 
-15-seitige Sicherheitsdatenblätter im Personalbüro, die während des Putzens niemand liest oder versteht.
+Beim Empfänger liegt das Informationssystem schon: Die BG BAU betreibt WINGIS (Gefahrstoff-Informationssystem, auch mobil) mit dem GISCODE für Reinigungsmittel, dazu die DGUV Regel 101-019 mit Sammelbetriebsanweisungen. Mischverbote sind Lehrbuchwissen und stehen in jeder Warnung von Gesundheitsbehörden. Nicht gefunden (Prüfung 24.09.2026): eine Kamera-App, die zwei Flaschen erkennt und vor dem Mischen laut warnt. Kipprisiko: Ein falsches „passt" ist schlimmer als keine App — bei Profiprodukten ist der GISCODE aus Produkt- oder Sicherheitsdatenblatt eine sicherere Eingabe als die Bilderkennung.
 
 ---
 
