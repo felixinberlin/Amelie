@@ -19,9 +19,9 @@ Claude hat zwischen Chats kein Gedächtnis. Lernen passiert nur, wenn jede Runde
 | `amelie-pruefprotokoll.md` | jede je geprüfte Idee mit Urteil, Beleg, Prüfdatum |
 | `amelie-suchplaybook.md` | Besetzungsatlas, Trefferquote, Retro pro Runde |
 | `amelie-quellen.md` | Primärquellen mit Status (offen → erschöpft) |
-| `dosen/_entsorgt.md` | Begründungen für verworfene *gepackte* Dosen |
+| `08-friedhof/README.md` + `DISCARDED_DATA` | jede tote Idee mit Totenschein (Ursache, Killer, Fundweg, Herkunft, Stadium) und die Muster darüber |
 
-Die Dateien liegen im Repo unter `06-suche/` (`amelie-pruefprotokoll.md`, `amelie-suchplaybook.md`, `amelie-quellen.md`) bzw. `05-dosen/_entsorgt.md`. Fehlt eine, die Fassung aus `assets/` nehmen und das dem Nutzer in einem Satz sagen.
+Die Dateien liegen im Repo unter `06-suche/` (`amelie-pruefprotokoll.md`, `amelie-suchplaybook.md`, `amelie-quellen.md`) bzw. `08-friedhof/`. Fehlt eine, die Fassung aus `assets/` nehmen und das dem Nutzer in einem Satz sagen.
 
 *[Claude-Code-Anpassung: Diese Skill wurde ursprünglich für ein Claude.ai-Projekt gebaut (`/mnt/project/`, `present_files`). Für den Einsatz in Claude Code wurden die Pfade in diesem installierten Exemplar auf die echten Repo-Pfade umgestellt; das Original-`.skill`-Paket bleibt unverändert. Details: `references/skill-update.md`.]*
 
@@ -64,7 +64,7 @@ Alle geänderten Zustandsdateien **vollständig** aktualisieren. Konkret:
 - Quellen: Status der benutzten Quellen.
 - Playbook: Trefferquote-Zeile, neue dichte/freie Felder im Atlas, **Retro** mit *gelernt / Fehler / nächstes Mal*. Mindestens ein konkreter „Nächstes Mal"-Punkt — ohne ihn lernt die nächste Runde nichts.
 
-Dateien direkt im Repo unter `06-suche/` bzw. `05-dosen/_entsorgt.md` bearbeiten (dies ist ein Git-Repo; Änderungen in place, kein Commit ohne Aufforderung).
+Dateien direkt im Repo unter `06-suche/` bzw. `08-friedhof/` bearbeiten (dies ist ein Git-Repo; Änderungen in place, kein Commit ohne Aufforderung).
 
 ### 7 · Methode verbessern (nur wenn verdient)
 

@@ -106,7 +106,7 @@ In `00-quelle/` and `src/data/unpacked.ts`, we maintain a queue of **unpacked id
 You can help by:
 - Picking an unpacked candidate idea and applying the search protocol from `06-suche/amelie-suchplaybook.md`.
 - Verifying whether an existing open-source tool already solved it.
-- Moving checked candidates to either `05-dosen/` (if viable) or `05-dosen/_entsorgt.md` (if already solved or structurally flawed).
+- Moving checked candidates to either `05-dosen/` (if viable) or the graveyard `08-friedhof/` (if already solved or structurally flawed) — with a full death certificate, see `08-friedhof/README.md`.
 
 ---
 
@@ -115,7 +115,7 @@ You can help by:
 The most valuable contribution is often **finding that an idea already exists**.
 
 - If you find an existing company, open-source library, or academic project that does what a proposed tin outlines, please open an Issue with the label `prior-art`.
-- We celebrate moving ideas to the `_entsorgt.md` (Discarded) archive: **killing a redundant idea saves hundreds of developer hours.**
+- We celebrate burying ideas in the graveyard (`08-friedhof/`): **killing a redundant idea saves hundreds of developer hours** — and its cause of death teaches the next round where to search.
 
 ---
 

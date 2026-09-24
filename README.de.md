@@ -52,7 +52,7 @@ Stand: September 2026 · Félix, Berlin · alle Inhalte CC0
 - **amelie-i18n-xliff.md** — Standardisierte Lokalisierungsarchitektur mit XLIFF 1.2 / 2.0 für Englisch (Hauptsprache), Deutsch und Spanisch
 
 ### `05-dosen/` — die Geschenke selbst
-15 fertige Einseiter, je mit Problem, „warum jetzt", Skizze, erstem Ticket, „wo es kippt", „wer es schon versucht hat" und Empfänger. Plus `_entsorgt.md`: die vier Ideen, die es bereits gibt, mit Belegen.
+15 fertige Einseiter, je mit Problem, „warum jetzt", Skizze, erstem Ticket, „wo es kippt", „wer es schon versucht hat" und Empfänger. Plus `08-friedhof/`: der Friedhof — jede gestorbene Idee mit Todesursache, Killer, Fundweg und den Mustern über alle Gräber.
 
 ### `06-suche/` — wie neue Ideen gefunden und geprüft werden
 - **amelie-rundenstart.md** — Anleitung für jede Ideenrunde: was am Anfang gelesen, am Ende geschrieben wird

@@ -20,7 +20,7 @@ assignees: ""
 ---
 
 ### How Close Is the Match?
-- [ ] **Exact Match**: The existing project solves the exact problem for the exact target audience. *(Recommendation: Discard tin to `_entsorgt.md`)*
+- [ ] **Exact Match**: The existing project solves the exact problem for the exact target audience. *(Recommendation: bury the tin in `08-friedhof/`)*
 - [ ] **Partial Match**: Solves parts of the problem, but leaves a critical gap. *(Recommendation: Narrow premise)*
 - [ ] **Abandoned / Dead Project**: An attempt was made, but failed or was abandoned. *(Recommendation: Add failure mode documentation)*
 

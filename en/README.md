@@ -46,7 +46,7 @@ As of: September 16, 2026 · Félix, Berlin · all content CC0
 - **amelie-vorlagen.md** — tin template, cold email in German and English, GitHub discussion, repo README, grant-application shorthand, checklist
 
 ### `05-dosen/` — the gifts themselves
-15 finished one-pagers, each with problem, "why now," sketch, first ticket, "where it breaks," "who's already tried it," and recipient. Plus `_entsorgt.md`: the four ideas that already exist, with evidence.
+15 finished one-pagers, each with problem, "why now," sketch, first ticket, "where it breaks," "who's already tried it," and recipient. Plus `08-friedhof/`: the graveyard — every idea that died, with cause of death, who killed it, which search found out, and the patterns across all graves.
 
 ### `06-suche/` — how new ideas get found and checked
 - **amelie-rundenstart.md** — instructions for every round of ideas: what to read at the start, what to write at the end

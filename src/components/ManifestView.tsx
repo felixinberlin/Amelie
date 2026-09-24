@@ -126,7 +126,7 @@ export const ManifestView: React.FC<ManifestViewProps> = ({ lang, onOpenEmails }
               </span>
             </div>
             <h3 className="text-2xl sm:text-3xl font-bold font-amelie text-[#2b1e16] mt-1">
-              {lang === 'de' ? 'Die fünf Amélie-Regeln' : lang === 'es' ? 'Las Cinco Reglas de Amélie' : 'The Five Amélie Rules'}
+              {lang === 'de' ? 'Die sechs Amélie-Regeln' : lang === 'es' ? 'Las seis reglas de Amélie' : 'The Six Amélie Rules'}
             </h3>
             <p className="text-xs sm:text-sm text-[#6b5849] mt-0.5">
               {lang === 'de'
@@ -192,7 +192,9 @@ export const ManifestView: React.FC<ManifestViewProps> = ({ lang, onOpenEmails }
                           ? (lang === 'de' ? 'DAS KLINGELVERBOT' : lang === 'es' ? 'LA CABINA TELEFÓNICA' : 'THE PHONE BOOTH')
                           : rule.number === 4
                           ? (lang === 'de' ? 'RESPEKT VOR WERKZEUG' : lang === 'es' ? 'RESPETO POR LA HERRAMIENTA' : 'RESPECT FOR TOOLS')
-                          : (lang === 'de' ? 'BAU-DISZIPLIN' : lang === 'es' ? 'DISCIPLINA DE CONSTRUCCIÓN' : 'BUILDING DISCIPLINE')}
+                          : rule.number === 5
+                          ? (lang === 'de' ? 'BAU-DISZIPLIN' : lang === 'es' ? 'DISCIPLINA DE CONSTRUCCIÓN' : 'BUILDING DISCIPLINE')
+                          : (lang === 'de' ? 'DER TOTENSCHEIN' : lang === 'es' ? 'EL CERTIFICADO' : 'THE DEATH CERTIFICATE')}
                       </span>
                       <h4 className="text-base sm:text-lg font-bold font-amelie text-[#2b1e16]">
                         {localizedRule.title}

@@ -67,8 +67,8 @@ Template in `amelie-vorlagen.md`. Your name under it, CC0 over it, explicitly "y
 **4 · Let go** — zero minutes, and the hardest step.
 No following up. Status to `delivered`, date entered, done. Whatever happens, happens without you.
 
-**5 · Discard** — once a quarter, 30 minutes.
-Go through every tin whose "recheck by" date has arrived: does "why now" still hold? No → delete. Don't archive. The dead idea banks of the last forty years are graveyards because nobody ever threw anything away.
+**5 · Bury** — once a quarter, 30 minutes.
+Go through every tin whose "recheck by" date has arrived: does "why now" still hold? No → out of the tins and into the graveyard (`08-friedhof/`), with a death certificate. Not deleted, not archived: the cause of death is what the next round learns from (manifesto, rule 6).
 
 ---
 

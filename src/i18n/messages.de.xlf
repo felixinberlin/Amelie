@@ -86,8 +86,8 @@
         <target state="translated">GitHub Pages &amp; Daten</target>
       </trans-unit>
       <trans-unit id="nav.discarded" resname="nav.discarded">
-        <source>Discarded Ideas</source>
-        <target state="translated">Entsorgte Ideen</target>
+        <source>Graveyard</source>
+        <target state="translated">Friedhof</target>
       </trans-unit>
       <trans-unit id="nav.tools_archive" resname="nav.tools_archive">
         <source>TOOLS &amp; ARCHIVE</source>
@@ -95,7 +95,7 @@
       </trans-unit>
       <trans-unit id="nav.tools_archive_desc" resname="nav.tools_archive_desc">
         <source>Sample emails, search playbook, normal jobs &amp; discarded ideas</source>
-        <target state="translated">Muster-Mails, Recherche-Playbook, Normalberufe &amp; Entsorgte Ideen</target>
+        <target state="translated">Muster-Mails, Recherche-Playbook, Normalberufe &amp; Friedhof</target>
       </trans-unit>
       <trans-unit id="nav.group.concepts" resname="nav.group.concepts">
         <source>Concepts &amp; Explorations</source>
@@ -146,8 +146,8 @@
         <target state="translated">Statische Daten &amp; GitHub Pages</target>
       </trans-unit>
       <trans-unit id="nav.desc.discarded" resname="nav.desc.discarded">
-        <source>Screened out &amp; occupied ideas</source>
-        <target state="translated">Verworfene &amp; besetzte Ideen</target>
+        <source>Dead ideas with cause of death</source>
+        <target state="translated">Tote Ideen mit Todesursache</target>
       </trans-unit>
 
       <!-- The Pledge -->
@@ -500,8 +500,8 @@
         <target state="translated">Muster-Mail kopieren</target>
       </trans-unit>
       <trans-unit id="discarded.badge" resname="discarded.badge">
-        <source>Negative Archive (_entsorgt.md)</source>
-        <target state="translated">Das Negativ-Archiv (_entsorgt.md)</target>
+        <source>The Graveyard (08-friedhof)</source>
+        <target state="translated">Der Friedhof (08-friedhof)</target>
       </trans-unit>
       <trans-unit id="discarded.verdict" resname="discarded.verdict">
         <source>Discarded</source>

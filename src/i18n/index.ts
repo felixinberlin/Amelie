@@ -275,12 +275,12 @@ export function getTranslation(lang: Language): I18nCatalog {
       manifest: tr('nav.manifest', 'Manifesto & Rules'),
       whimsy: tr('nav.whimsy', 'Funny & Better'),
       packer: tr('nav.packer', 'Pack a Tin'),
-      discarded: tr('nav.discarded', 'Discarded Ideas'),
+      discarded: tr('nav.discarded', 'Graveyard'),
       githubPages: tr('nav.githubPages', 'GitHub Pages & Data'),
       musterEmails: tr('nav.musterEmails', 'Sample Emails'),
       more: tr('nav.more', 'More & Tools'),
       tools_archive: tr('nav.tools_archive', 'TOOLS & ARCHIVE'),
-      tools_archive_desc: tr('nav.tools_archive_desc', 'Sample emails, search playbook, normal jobs & discarded ideas'),
+      tools_archive_desc: tr('nav.tools_archive_desc', 'Sample emails, search playbook, normal jobs & graveyard'),
       group: {
         concepts: tr('nav.group.concepts', 'Concepts & Explorations'),
         tools: tr('nav.group.tools', 'Tools & Workflows'),
@@ -296,7 +296,7 @@ export function getTranslation(lang: Language): I18nCatalog {
         googleImport: tr('nav.desc.googleImport', 'Import ideas from Docs & Keep'),
         playbook: tr('nav.desc.playbook', 'Step 0.5: Prior art validation'),
         githubPages: tr('nav.desc.githubPages', 'GitHub Pages static data hub'),
-        discarded: tr('nav.desc.discarded', 'Screened out & occupied ideas'),
+        discarded: tr('nav.desc.discarded', 'Dead ideas with cause of death'),
       },
     },
     pledge: {
@@ -404,7 +404,7 @@ export function getTranslation(lang: Language): I18nCatalog {
       copy_template: tr('ui.copy_template', 'Copy Template'),
     },
     discarded: {
-      badge: tr('discarded.badge', 'Negative Archive (_entsorgt.md)'),
+      badge: tr('discarded.badge', 'The Graveyard (08-friedhof)'),
       verdict: tr('discarded.verdict', 'Discarded'),
       original_idea: tr('discarded.original_idea', 'The Original Idea:'),
       why_discarded: tr('discarded.why_discarded', 'Why Discarded?'),

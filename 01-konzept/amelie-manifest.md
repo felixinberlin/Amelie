@@ -17,7 +17,7 @@ Neunzehn verrottende Ideen sind kein Portfolio. Zugestellte Ideen sind eins.
 
 ---
 
-## Die fünf Amélie-Regeln
+## Die sechs Amélie-Regeln
 
 **1. Die Zustellung ist das Geschenk, nicht der Fund.**
 Die Dose war vierzig Jahre wertlos, weil niemand wusste, wem sie gehört. Bei Ideen ist es identisch: der Einfall ist billig, das Matching ist die Arbeit. Wenn du eine Stunde in die Idee und zwei Minuten in den Empfänger steckst, hast du nichts verschenkt — du hast getwittert.
@@ -44,6 +44,11 @@ Der Film ist ehrlich darüber, dass Amélie manchmal übergriffig wird — sie o
 **5. Nicht zur Ausrede machen.**
 Amélies eigentliches Problem ist nicht, dass sie zu wenig hilft — es ist, dass sie fremde Leben in Ordnung bringt, während ihr eigenes stillsteht. Sie steht hinter der Tür und traut sich nicht, Nino aufzumachen. Ideen zu verschenken fühlt sich produktiv an und ist trotzdem kein Bauen. **Maximal zwei Ideen behältst du und baust sie wirklich.** Alles darüber ist auch verschenkt, nur ohne Empfänger.
 
+**6. Tote Ideen kommen auf den Friedhof, nicht in den Müll.**
+*Diese Regel hieß bis zum 24.09.2026 „gelöscht, nicht archiviert" — die Praxis hat sie widerlegt, wie die Recherche Regel 2.* Die toten Ideenbanken der letzten vierzig Jahre sind nicht daran gestorben, dass sie nichts weggeworfen haben, sondern daran, dass Lebende und Tote im selben Regal standen, ohne Totenschein. Wer löscht, verliert das Einzige, was eine tote Idee noch wert ist: den Grund. Gelöschte Ideen kamen zurück (Sandstein-Streiflicht war Streiflicht, ParagraphenDolmetscher war KlarLokal), eine zurückgezogene Dose lebte in der App weiter, mit zwei fertigen Mails, und niemand konnte sagen, welche Suche die meisten Ideen tötet.
+
+Also: Was stirbt, verlässt die Dosen am selben Tag und bekommt ein Grab in `08-friedhof/` — mit **Todesursache, Killer, Fundweg, Herkunft, Stadium, Datum, Lehre und Auferstehungsbedingung**. Ein Grab ohne Ursache ist ein Archiveintrag, und Archive bleiben verboten. **Vor jeder neuen Idee: erst über den Friedhof gehen.** Einzeln sind Gräber Anekdoten; zusammen sind sie die einzige Stelle, an der die Methode aus ihren Fehlern lernt.
+
 ---
 
 ## Was in die Dose gehört
@@ -61,7 +66,7 @@ Fehlt Teil 5, klingt es nach Vertrieb. Fehlt Teil 4, klingt es nach Kaffeetrinke
 Dazu zwei Pflichtangaben, die aus der Landschaftsrecherche kommen:
 
 - **Stand: <Datum>** — „Warum das jetzt geht" ist eine datierte Behauptung. Die toten Ideenbanken sind voll von Einträgen, deren „jetzt" vor fünfzehn Jahren galt.
-- **Prüfen ab: <Datum>** — was dann nicht mehr stimmt, wird gelöscht. Nicht archiviert, gelöscht. Ein Friedhof ist kein Portfolio.
+- **Prüfen ab: <Datum>** — was dann nicht mehr stimmt, verlässt die Dosen und kommt auf den Friedhof (Regel 6). Nicht ins Archiv: Ein Friedhof ist kein Portfolio, er ist ein Obduktionssaal.
 
 Format: **eine Seite.** Im Projekt heißt sie *die Dose*. Vorlage in `amelie-vorlagen.md`.
 
@@ -125,6 +130,8 @@ Ohne Log stellst du dieselbe Idee zweimal zu und merkst nie, welcher Empfängert
 
 `gefunden → gepackt → zugestellt → Antwort → gebaut`
 
+Von jedem dieser Schritte führt ein Weg auf den Friedhof. Je später eine Idee stirbt, desto teurer ist ihr Tod — das Stadium steht deshalb auf dem Totenschein.
+
 Wenn jemand eine Idee baut: Issue schließen, Link auf das entstandene Repo. Die geschlossenen Issues sind später der einzige Beweis, dass das Ganze funktioniert.
 
 ---
@@ -161,3 +168,4 @@ Alles andere in der Matrix: zustellen.
 | `amelie-landschaft.md` | vergleichbare Projekte weltweit — Herkunft der Regeln 1 und 2 und der defensiven Publikation |
 | `amelie-bewegungen.md` | die Bewegungen dahinter, von Potlatch bis Repair Café — Herkunft des Pledge |
 | `dosen/` | die fertigen Einseiter |
+| `08-friedhof/` | die toten Ideen mit Totenschein, ihre Muster und Nachrufe (Regel 6) |

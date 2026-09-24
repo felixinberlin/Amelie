@@ -41,7 +41,7 @@ Every submitted idea passes through a strict 4-stage evaluation funnel:
 [ Unpacked Idea / Proposal ]
             │
             ▼
-    1. Prior Art Check  ──(Already exists?)──► [ Discarded Archive ]
+    1. Prior Art Check  ──(Already exists?)──► [ Graveyard 08-friedhof ]
             │ (No exact match)                 (Document evidence)
             ▼
    2. Technical Feasibility & "Why Now"
@@ -63,7 +63,7 @@ Every submitted idea passes through a strict 4-stage evaluation funnel:
 
 ## 4. Discarding Is a Success State
 
-In traditional projects, rejecting a submission is considered negative. In Amélie, **moving an idea to `_entsorgt.md` (Discarded) is celebrated as a major victory**.
+In traditional projects, rejecting a submission is considered negative. In Amélie, **burying an idea in the graveyard (`08-friedhof/`, with cause of death) is celebrated as a major victory**.
 
 If research reveals that an idea:
 - Already exists as a healthy, active product or library,

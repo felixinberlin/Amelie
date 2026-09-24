@@ -31,7 +31,8 @@ Amélie is engineered according to four foundational technical principles:
 ├── 02-recherche/                  # Landscape research & movement studies
 ├── 03-zuordnung/                  # Recipient matrix & delivery schedules
 ├── 04-werkzeug/                   # Boilerplate, templates & i18n manuals
-├── 05-dosen/                      # The 15 packed tins (.md) + _entsorgt.md
+├── 05-dosen/                      # The packed tins (.md); _entsorgt.md is a redirect
+├── 08-friedhof/                   # Graveyard: README (rules + generated patterns), nachrufe.md, grabbeigaben/
 ├── 06-suche/                      # Search playbooks & audit logs
 ├── public/
 │   ├── data/

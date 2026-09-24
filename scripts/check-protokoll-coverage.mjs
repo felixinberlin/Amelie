@@ -8,7 +8,7 @@
 // macht die Regel mechanisch.
 //
 // Geprüft wird:
-//   1. jede Dose in 05-dosen/*.md (ohne _entsorgt.md)
+//   1. jede Dose in 05-dosen/*.md (ohne den Wegweiser _entsorgt.md)
 //   2. jeder Kandidat in src/data/unpacked.ts und src/data/ideas/*.ts,
 //      dessen Status ein Urteil ist (frei · verengt · unklar · besetzt).
 //      `ungeprüft` ist ausdrücklich kein Urteil und braucht keine Zeile.

@@ -220,7 +220,7 @@ export const MATRIX_DATA: MatrixRow[] = [
     categoryEn: '3. Civic Society & Berlin',
     name: 'Crack Flora Watcher (Ritzengrün)',
     effort: 'M',
-    verdict: 'gift',
+    verdict: 'discarded',
     beneficiaryDe: 'Stadtbewohner, Familien, Urban-Explorer und Biodiversitätsforscherinnen.',
     beneficiaryEn: 'Urban walkers, families, rebel botanists, and urban ecology researchers.',
     recipientsDe: 'Senckenberg Gesellschaft (#Krautschau / Dr. Julia Krohmer) · Flora Incognita (MPI Jena / TU Ilmenau) · NABU Berlin',
@@ -229,8 +229,7 @@ export const MATRIX_DATA: MatrixRow[] = [
     channelEn: 'Direct handover for May #Krautschau campaign week & Flora Incognita project tag collaboration',
     hookDe: '„Sie sagten, hier kann nichts wachsen. Die Pflanzen sahen das anders: Toughness-Index & Zeitraffer für Gehwegritzen."',
     hookEn: '"They said nothing could grow here. The plants disagreed: Toughness Index & crack time-lapses for sidewalk flora."',
-    status: 'gepackt',
-    doseId: 'crack-flora-watcher'
+    status: 'entsorgt'
   },
   {
     id: 'commute-oracle',

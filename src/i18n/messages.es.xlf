@@ -86,8 +86,8 @@
         <target state="translated">GitHub Pages y datos</target>
       </trans-unit>
       <trans-unit id="nav.discarded" resname="nav.discarded">
-        <source>Discarded Ideas</source>
-        <target state="translated">Ideas descartadas</target>
+        <source>Graveyard</source>
+        <target state="translated">Cementerio</target>
       </trans-unit>
       <trans-unit id="nav.tools_archive" resname="nav.tools_archive">
         <source>TOOLS &amp; ARCHIVE</source>
@@ -146,8 +146,8 @@
         <target state="translated">Hub estático y GitHub Pages</target>
       </trans-unit>
       <trans-unit id="nav.desc.discarded" resname="nav.desc.discarded">
-        <source>Screened out &amp; occupied ideas</source>
-        <target state="translated">Ideas descartadas u ocupadas</target>
+        <source>Dead ideas with cause of death</source>
+        <target state="translated">Ideas muertas con su causa</target>
       </trans-unit>
 
       <!-- The Pledge -->
@@ -500,8 +500,8 @@
         <target state="translated">Copiar plantilla</target>
       </trans-unit>
       <trans-unit id="discarded.badge" resname="discarded.badge">
-        <source>Negative Archive (_entsorgt.md)</source>
-        <target state="translated">Archivo negativo (_entsorgt.md)</target>
+        <source>The Graveyard (08-friedhof)</source>
+        <target state="translated">El cementerio (08-friedhof)</target>
       </trans-unit>
       <trans-unit id="discarded.verdict" resname="discarded.verdict">
         <source>Discarded</source>

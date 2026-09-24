@@ -68,13 +68,13 @@
         <source>GitHub Pages &amp; Data</source>
       </trans-unit>
       <trans-unit id="nav.discarded" resname="nav.discarded">
-        <source>Discarded Ideas</source>
+        <source>Graveyard</source>
       </trans-unit>
       <trans-unit id="nav.tools_archive" resname="nav.tools_archive">
         <source>TOOLS &amp; ARCHIVE</source>
       </trans-unit>
       <trans-unit id="nav.tools_archive_desc" resname="nav.tools_archive_desc">
-        <source>Sample emails, search playbook, normal jobs &amp; discarded ideas</source>
+        <source>Sample emails, search playbook, normal jobs &amp; graveyard</source>
       </trans-unit>
       <trans-unit id="nav.group.concepts" resname="nav.group.concepts">
         <source>Concepts &amp; Explorations</source>
@@ -113,7 +113,7 @@
         <source>GitHub Pages static data hub</source>
       </trans-unit>
       <trans-unit id="nav.desc.discarded" resname="nav.desc.discarded">
-        <source>Screened out &amp; occupied ideas</source>
+        <source>Dead ideas with cause of death</source>
       </trans-unit>
 
       <!-- The Pledge -->
@@ -382,7 +382,7 @@
         <source>Copy Template</source>
       </trans-unit>
       <trans-unit id="discarded.badge" resname="discarded.badge">
-        <source>Negative Archive (_entsorgt.md)</source>
+        <source>The Graveyard (08-friedhof)</source>
       </trans-unit>
       <trans-unit id="discarded.verdict" resname="discarded.verdict">
         <source>Discarded</source>

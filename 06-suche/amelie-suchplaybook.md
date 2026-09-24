@@ -11,6 +11,7 @@ Claude lernt nicht zwischen Chats. Dieses Dokument und `amelie-pruefprotokoll.md
 
 | # | Suche | Warum zuerst |
 |---|---|---|
+| 0 | **Friedhof** — App-Tab „Friedhof" oder `08-friedhof/README.md` (neu ab 24.09.2026) | Kostet keine Suche. Liegt die Idee dort, ist sie tot, bis ihre Auferstehungsbedingung eintritt. Liegt ein *Muster* dort (dieselbe Ursache im selben Feld), ist die Suche danach auszurichten |
 | 1 | **`<wahrscheinlicher Empfänger> KI`** (Blog, Projektseite) | Billigster Kill. In Runde 2 hatten 3 von 12 Empfängern die Idee schon selbst (Wheelmap, CompGen, Repair Café). Erspart außerdem die schlechteste Erstansprache. |
 | 2 | **Deutsch, Funktionswörter** — was das Ding *tut*, nicht wie es heißt | Findet Vereine, Behörden, Foren |
 | 3 | **Englisch, Produktwörter** (`app`, `AI`, `tool`, Jahr) | Findet kommerzielle Produkte, die deutsch nicht auftauchen (SATB-Trennung) |
@@ -369,3 +370,10 @@ Erste Runde, die mit einer **verschenkten** Dose als Ausgangspunkt arbeitet. Das
 - **Gelernt: Die Satzschablone verrät den Modelltext.** „Profiwerkzeug kostet 5.000 €, für Bürger gab es nichts" stand sechsmal da, sechsmal falsch. Als Rezept in §2.
 - **Fehler dieser Nachprüfung:** Die DCASE/MIMII-Angabe bei KlangStethoskop stammt aus Vorwissen, nicht aus einer Suche dieser Runde — so im Protokoll markiert. Und der Guard prüft Erwähnung, nicht Urteil: Er hätte heute sechs der acht Lücken übersehen, weil die Namen bereits im Nebenbefund von Runde 9 standen. Wer Lücken in Fließtext benennt, sollte die Dose-ids dort nicht ausschreiben, bis die Zeile existiert — oder der Guard muss Tabellenzeilen parsen.
 - **Nächstes Mal:** (1) **Katalog nicht einzeln prüfen, sondern zuerst per Atlas vorfiltern** — 125 Einträge × 4 Suchen wären 500 Suchen; ein Lauf ohne Suche gegen die `dicht`-Felder des Atlas trennt vermutlich ein Drittel ab (Pflege-/Handwerker-Rechner, Mieter-Tools, Behördenbriefe). (2) Die Frontend-Matrix (`src/data/matrix.ts`) kennt nur 22 Ideen aus Runde 1; 18 Dosen haben dort keine Zeile — Félix entscheidet, ob die Matrixansicht alle Dosen zeigen soll. (3) Mail an die AG Fraktographie vor dem 20.11.2026. (4) Zweiter Gebührenwerk-Anker.
+
+### Friedhof — 24.09.2026 (Manifest Regel 6, auf Félix' Wunsch)
+
+- **Geändert:** „gelöscht, nicht archiviert" ersetzt durch Regel 6 — tote Ideen kommen mit Totenschein auf den Friedhof (`08-friedhof/`, App-Tab „Friedhof"). 32 Gräber aus allen Runden angelegt, jedes mit Ursache, Killer, Fundweg, Herkunft, Stadium, Datum, Lehre, Auferstehungsbedingung. Muster werden aus den Daten erzeugt (`npm run friedhof`, in `lint` geprüft).
+- **Beim Umzug gefunden:** Zwei fertige Mails (Mail 8, Mail 9) an Senckenberg und Flora Incognita für die seit dem 21.09. tote Dose Crack Flora Watcher standen weiter in der Zustellliste, eine als „sofort versendbar". Gelöscht. Genau diesen Fall verhindert Regel 6, Punkt „Trennen".
+- **Erste Muster:** alle drei teuren Tode aus Modell-Text; Englisch 7 und Deutsch 6 Kills, keine Sprache reicht allein; Reality-Checks töten nur Bisoziationsideen; ein Viertel der Fundwege aus Runde 1/2 undokumentiert. Details in `08-friedhof/README.md`.
+- **Nächstes Mal:** Sterblichkeit je Herkunft rechnen (Gräber ÷ Protokollzeilen je Methode) — erst dann sagen die Herkunftszahlen etwas. Und bei jedem neuen Urteil `besetzt` sofort ein Grab anlegen, nicht erst beim nächsten Audit.

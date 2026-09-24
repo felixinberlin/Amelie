@@ -29,7 +29,7 @@ export function readDataIds(file = DATA_FILE) {
   };
 }
 
-/** Dateinamen (ohne .md) in 05-dosen/, ohne die Sammeldatei _entsorgt. */
+/** Dateinamen (ohne .md) in 05-dosen/, ohne _-Dateien (_entsorgt.md ist nur noch ein Wegweiser auf 08-friedhof/). */
 export function readDoseFiles(dir = DOSEN_DIR) {
   return readdirSync(dir)
     .filter((f) => f.endsWith('.md') && !f.startsWith('_'))

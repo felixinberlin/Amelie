@@ -19,7 +19,7 @@ const DOSE_FILES = import.meta.glob('/05-dosen/*.md', { query: '?raw', import: '
   () => Promise<string>
 >;
 
-/** `/05-dosen/altbau-thermal.md` → `altbau-thermal`. Skips the `_entsorgt.md` graveyard file. */
+/** `/05-dosen/altbau-thermal.md` → `altbau-thermal`. Skips `_entsorgt.md` (now a redirect to 08-friedhof/). */
 function doseIdFromPath(path: string): string | null {
   const match = path.match(/\/05-dosen\/([^/]+)\.md$/);
   if (!match) return null;

@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0 --port 3000",
     "build": "tsc && vite build",
-    "lint": "tsc --noEmit && npm run check:dosen && npm run check:books && npm run check:idea-frontmatter && npm run check:protokoll",
+    "lint": "tsc --noEmit && npm run check:dosen && npm run check:books && npm run check:idea-frontmatter && npm run check:protokoll && npm run check:friedhof",
     "preview": "vite preview --port 3000",
     "check:dosen": "node scripts/check-dosen-drift.mjs",
     "test": "vitest run",
@@ -14,6 +14,8 @@
     "check:idea-frontmatter": "node scripts/sync-idea-frontmatter.mjs --check",
     "check:protokoll": "node scripts/check-protokoll-coverage.mjs",
     "export:data": "node scripts/export-public-data.mjs",
+    "friedhof": "node scripts/friedhof-muster.mjs",
+    "check:friedhof": "node scripts/friedhof-muster.mjs --check",
     "sync:idea-frontmatter": "node scripts/sync-idea-frontmatter.mjs"
   },
   "dependencies": {

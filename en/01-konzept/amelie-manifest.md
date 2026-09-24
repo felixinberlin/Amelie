@@ -17,7 +17,7 @@ Nineteen rotting ideas are not a portfolio. Delivered ideas are.
 
 ---
 
-## The five Amélie rules
+## The six Amélie rules
 
 **1. The delivery is the gift, not the find.**
 The tin box was worthless for forty years because nobody knew who it belonged to. It's identical with ideas: the notion itself is cheap, the matching is the work. If you spend an hour on the idea and two minutes on the recipient, you haven't given anything away — you've tweeted.
@@ -44,6 +44,11 @@ The film is honest about the fact that Amélie sometimes oversteps — she rearr
 **5. Don't turn it into an excuse.**
 Amélie's real problem isn't that she helps too little — it's that she sorts out other people's lives while her own stands still. She stands behind the door and doesn't dare open it for Nino. Giving ideas away feels productive and still isn't building. **You keep at most two ideas and actually build them.** Everything beyond that is also given away — just without a recipient.
 
+**6. Dead ideas go to the graveyard, not the bin.**
+*Until 24.09.2026 this rule read "deleted, not archived" — practice refuted it, as research refuted rule 2.* The dead idea banks of the last forty years did not die because they never threw anything away, but because the living and the dead stood on the same shelf without a death certificate. Deleting loses the only thing a dead idea is still worth: the reason. Deleted ideas came back (Sandstein-Streiflicht was Streiflicht, ParagraphenDolmetscher was KlarLokal), a withdrawn tin lived on in the app with two finished mails, and nobody could say which search kills most ideas.
+
+So: whatever dies leaves the tins the same day and gets a grave in `08-friedhof/` — with **cause of death, killer, discovery path, origin, stage, date, lesson and resurrection condition**. A grave without a cause is an archive entry, and archives remain forbidden. **Before any new idea: walk through the graveyard first.** One by one, graves are anecdotes; together they are the only place where the method learns from its mistakes.
+
 ---
 
 ## What goes in the tin
@@ -61,7 +66,7 @@ Missing part 5, it sounds like a sales pitch. Missing part 4, it sounds like cof
 Plus two mandatory fields that come out of the landscape research:
 
 - **As of: <date>** — "why this works now" is a dated claim. The dead idea banks are full of entries whose "now" was true fifteen years ago.
-- **Recheck by: <date>** — whatever no longer holds gets deleted. Not archived, deleted. A graveyard is not a portfolio.
+- **Recheck by: <date>** — whatever no longer holds leaves the tins and goes to the graveyard (rule 6). Not into an archive: a graveyard is not a portfolio, it is an autopsy room.
 
 Format: **one page.** In the project it's called *the tin*. Template in `amelie-vorlagen.md`.
 

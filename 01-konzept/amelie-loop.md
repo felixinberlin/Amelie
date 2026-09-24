@@ -67,8 +67,8 @@ Vorlage in `amelie-vorlagen.md`. Name drunter, CC0 darüber, explizit „ihr mü
 **4 · Loslassen** — null Minuten, und das ist der schwerste Schritt.
 Kein Nachfassen. Status auf `zugestellt`, Datum rein, fertig. Was passiert, passiert ohne dich.
 
-**5 · Entsorgen** — einmal im Quartal, 30 Minuten.
-Jede Dose mit erreichtem „Prüfen ab"-Datum durchgehen: Stimmt das „warum jetzt" noch? Nein → löschen. Nicht archivieren. Die toten Ideenbanken der letzten vierzig Jahre sind Friedhöfe, weil niemand je etwas weggeworfen hat.
+**5 · Beerdigen** — einmal im Quartal, 30 Minuten.
+Jede Dose mit erreichtem „Prüfen ab"-Datum durchgehen: Stimmt das „warum jetzt" noch? Nein → raus aus den Dosen und auf den Friedhof (`08-friedhof/`), mit Totenschein. Nicht löschen, nicht archivieren: Die Todesursache ist das, woraus die nächste Runde lernt (Manifest, Regel 6).
 
 ---
 

@@ -46,11 +46,11 @@ export const AmelieRulesBanner: React.FC<AmelieRulesBannerProps> = ({
                 {isDe ? 'Die Amélie-Philosophie' : isEs ? 'La filosofía Amélie' : 'The Amélie Philosophy'}
               </span>
               <span className="text-[11px] font-typewriter text-[#8b6f57]">
-                Montmartre · 5 Règles d'Or · CC0
+                Montmartre · 6 Règles d'Or · CC0
               </span>
             </div>
             <h3 className="text-xl sm:text-2xl font-bold font-amelie text-[#2b1e16] tracking-tight mt-0.5">
-              {isDe ? 'Die fünf Regeln: Ideen, die jemand anderem gehören' : isEs ? 'Las cinco reglas: ideas que pertenecen a otra persona' : 'The Five Rules: Ideas that belong to someone else'}
+              {isDe ? 'Die sechs Regeln: Ideen, die jemand anderem gehören' : isEs ? 'Las seis reglas: ideas que pertenecen a otra persona' : 'The Six Rules: Ideas that belong to someone else'}
             </h3>
           </div>
         </div>
@@ -96,7 +96,7 @@ export const AmelieRulesBanner: React.FC<AmelieRulesBannerProps> = ({
       </div>
 
       {/* 5 Quick Interactive Rule Pills */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2.5 mt-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 mt-4">
         {MANIFEST_RULES.map((rule) => {
           const isSelected = selectedRuleNum === rule.number;
           return (
@@ -129,7 +129,9 @@ export const AmelieRulesBanner: React.FC<AmelieRulesBannerProps> = ({
                     ? (isDe ? 'Klingelverbot' : isEs ? 'Sin seguimiento' : 'No Follow-up')
                     : rule.number === 4
                     ? (isDe ? 'Werkzeug' : isEs ? 'Herramientas' : 'Tools Only')
-                    : (isDe ? 'Max. 2' : isEs ? 'Máx. 2' : 'Build Max 2')}
+                    : rule.number === 5
+                    ? (isDe ? 'Max. 2' : isEs ? 'Máx. 2' : 'Build Max 2')
+                    : (isDe ? 'Friedhof' : isEs ? 'Cementerio' : 'Graveyard')}
                 </span>
               </div>
               <h4 className="text-xs font-bold font-amelie leading-snug line-clamp-2">

@@ -137,6 +137,52 @@ export interface DoseItem {
   };
 }
 
+/**
+ * Friedhof (08-friedhof/): Jede tote Idee bekommt einen Totenschein. Die
+ * Felder unten sind Pflicht, weil sie das Einzige sind, woran sich später
+ * Muster ablesen lassen — ein Grab ohne Ursache ist ein Archiveintrag.
+ * Taxonomie und Regeln: 08-friedhof/README.md.
+ */
+export type Todesursache =
+  /** gibt es schon als Produkt, Projekt oder Community-Werkzeug */
+  | 'gebaut'
+  /** der gedachte Empfänger macht es selbst */
+  | 'beim-empfaenger'
+  /** stand schon im eigenen Bestand (Dose, Protokoll, Atlas) */
+  | 'duplikat'
+  /** keine neue Fähigkeit — Standardmuster, Mode-Liste */
+  | 'mode'
+  /** scheitert an Daten, Recht oder Physik, bevor die Existenzfrage zählt */
+  | 'reality-check'
+  /** das Problem gibt es so nicht */
+  | 'praemisse';
+
+/** Wer die Idee schon hat. */
+export type Killerart =
+  | 'kommerziell'
+  | 'gemeinnuetzig'
+  | 'behoerde'
+  | 'forschung'
+  | 'community'
+  | 'eigener-bestand'
+  | 'keiner';
+
+/** Welche Suche die Idee getötet hat — das Muster, das die Suchreihenfolge verbessert. */
+export type Fundweg =
+  | 'englisch'
+  | 'deutsch'
+  | 'forum'
+  | 'empfaenger'
+  | 'eigener-bestand'
+  | 'ohne-suche'
+  | 'unbekannt';
+
+/** Woher die Idee kam. */
+export type Herkunft = 'ideenliste' | 'brainstorm' | 'quelle' | 'bisoziation' | 'modell-katalog';
+
+/** Wie weit sie kam, bevor sie starb. Je weiter, desto teurer der Tod. */
+export type Stadium = 'kandidat' | 'dose' | 'mail-entwurf' | 'zugestellt';
+
 export interface DiscardedItem {
   id: string;
   title: string;
@@ -149,6 +195,20 @@ export interface DiscardedItem {
   lessonEn: string;
   domain: string;
   evidence: string[];
+  cause: Todesursache;
+  killer: Killerart;
+  foundBy: Fundweg;
+  origin: Herkunft;
+  stage: Stadium;
+  /** Geboren: Runde und Methode, z. B. „Runde 2 · Ideenrunde" */
+  bornIn: string;
+  /** Gestorben: ISO-Datum oder ISO-Monat (2026-09) */
+  diedOn: string;
+  /** Unter welcher Bedingung das Grab geöffnet werden darf. „nie" ist eine erlaubte Antwort. */
+  resurrectIfDe: string;
+  resurrectIfEn: string;
+  /** Langer Nachruf oder Grabbeigabe (Originaltext der Dose), Pfad im Repo */
+  nachruf?: string;
 }
 
 export interface MatrixRow {

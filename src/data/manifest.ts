@@ -65,6 +65,15 @@ export const MANIFEST_RULES: RuleItem[] = [
     descriptionEn: 'Giving ideas away feels productive, yet it is still not building. Keep at most two ideas per cycle and actually finish building them.',
     ruleOfThumbDe: 'Behalte maximal 2 Ideen (z. B. Wet Ink & Spec-Drift Detector). Der Rest geht raus.',
     ruleOfThumbEn: 'Retain at most 2 projects for yourself. Everything else gets gifted.'
+  },
+  {
+    number: 6,
+    titleDe: 'Tote Ideen kommen auf den Friedhof, nicht in den Müll',
+    titleEn: 'Dead ideas go to the graveyard, not the bin',
+    descriptionDe: 'Bis 24.09.2026 hieß die Regel „gelöscht, nicht archiviert". Gelöschte Ideen kamen zurück, eine zurückgezogene Dose lebte mit zwei fertigen Mails weiter, und niemand wusste, welche Suche die meisten Ideen tötet. Jetzt bekommt jede tote Idee ein Grab mit Totenschein: Ursache, Killer, Fundweg, Herkunft, Stadium, Datum, Lehre, Auferstehungsbedingung. Zusammen zeigen die Gräber, wo die Methode blind ist.',
+    descriptionEn: 'Until 24.09.2026 the rule read "deleted, not archived". Deleted ideas came back, a withdrawn tin lived on with two finished mails, and nobody knew which search kills most ideas. Now every dead idea gets a grave with a death certificate: cause, killer, discovery path, origin, stage, date, lesson, resurrection condition. Together the graves show where the method is blind.',
+    ruleOfThumbDe: 'Vor jeder neuen Idee: erst über den Friedhof gehen. Ein Grab ohne Ursache ist ein Archiveintrag — verboten.',
+    ruleOfThumbEn: 'Before any new idea: walk through the graveyard first. A grave without a cause is an archive entry — forbidden.'
   }
 ];
 
@@ -84,8 +93,8 @@ export const AMELIE_LOOP_STEPS: LoopStep[] = [
     step: 2,
     nameDe: '2. Radikale Vorab-Prüfung',
     nameEn: '2. Radical Prior-Art Check',
-    actionDe: 'Suche aktiv nach Beweisen, dass es das schon gibt. Wenn Firmen es besetzen oder 3 Repos existieren: sofort nach _entsorgt.md!',
-    actionEn: 'Actively search for evidence that it already exists. If companies occupy it or 3 repos exist: discard immediately to _entsorgt.md!',
+    actionDe: 'Suche aktiv nach Beweisen, dass es das schon gibt. Vorher über den Friedhof gehen. Wenn Firmen es besetzen oder 3 Repos existieren: Grab anlegen, mit Todesursache und Fundweg.',
+    actionEn: 'Actively search for evidence that it already exists. Walk through the graveyard first. If companies occupy it or 3 repos exist: dig a grave, with cause of death and discovery path.',
     budgetDe: '1 Stunde',
     budgetEn: '1 Hour',
     exitCriterionDe: 'Lücke eindeutig nachgewiesen oder verworfen.',
