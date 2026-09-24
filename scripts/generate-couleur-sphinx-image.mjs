@@ -1,0 +1,305 @@
+import { writeFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import sharp from 'sharp';
+
+const svg = `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1c1917" />
+      <stop offset="50%" stop-color="#292524" />
+      <stop offset="100%" stop-color="#141210" />
+    </linearGradient>
+    <linearGradient id="metalCase" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#44403c" />
+      <stop offset="50%" stop-color="#292524" />
+      <stop offset="100%" stop-color="#1c1917" />
+    </linearGradient>
+    <linearGradient id="brassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="40%" stop-color="#ca8a04" />
+      <stop offset="100%" stop-color="#854d0e" />
+    </linearGradient>
+    <linearGradient id="screenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="accentCrimson" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8c1d40" />
+      <stop offset="100%" stop-color="#c94b32" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000" flood-opacity="0.6" />
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="1280" height="720" fill="url(#bgGrad)" />
+
+  <!-- Blueprint Grid lines -->
+  <g stroke="#38332e" stroke-width="1" stroke-dasharray="3,6" opacity="0.45">
+    <line x1="0" y1="90" x2="1280" y2="90" />
+    <line x1="0" y1="180" x2="1280" y2="180" />
+    <line x1="0" y1="270" x2="1280" y2="270" />
+    <line x1="0" y1="360" x2="1280" y2="360" />
+    <line x1="0" y1="450" x2="1280" y2="450" />
+    <line x1="0" y1="540" x2="1280" y2="540" />
+    <line x1="0" y1="630" x2="1280" y2="630" />
+    <line x1="160" y1="0" x2="160" y2="720" />
+    <line x1="320" y1="0" x2="320" y2="720" />
+    <line x1="480" y1="0" x2="480" y2="720" />
+    <line x1="640" y1="0" x2="640" y2="720" />
+    <line x1="800" y1="0" x2="800" y2="720" />
+    <line x1="960" y1="0" x2="960" y2="720" />
+    <line x1="1120" y1="0" x2="1120" y2="720" />
+  </g>
+
+  <!-- Header Banner -->
+  <g transform="translate(60, 48)">
+    <rect x="0" y="0" width="220" height="24" rx="4" fill="#8c1d40" opacity="0.3" />
+    <text x="12" y="16" fill="#facc15" font-family="'Courier New', monospace" font-size="12" font-weight="bold" letter-spacing="2">DOSE #041 · HARDWARE &amp; TRADITION</text>
+    <text x="0" y="52" fill="#faf5eb" font-family="Georgia, serif" font-size="34" font-weight="bold">Couleur-Sphinx 2.0</text>
+    <text x="0" y="78" fill="#d6c5b0" font-family="'Courier New', monospace" font-size="14">Air-Gapped S2S Klingel-Gatekeeper mit schlafendem Auge &amp; Avatar</text>
+  </g>
+
+  <!-- LEFT: THE DOOR APPLIANCE (Edge Station) -->
+  <g transform="translate(80, 150)" filter="url(#shadow)">
+    <!-- Weatherproof Wall Plate / Backing Stone Effect -->
+    <rect x="-10" y="-10" width="340" height="520" rx="20" fill="#1f1c19" stroke="#57534e" stroke-width="2" />
+    
+    <!-- Heavy Duty Metal Enclosure (IP65) -->
+    <rect x="10" y="10" width="300" height="480" rx="16" fill="url(#metalCase)" stroke="#78716c" stroke-width="2" />
+    <!-- Brass Mounting Screws in corners -->
+    <circle cx="28" cy="28" r="6" fill="url(#brassGrad)" stroke="#451a03" stroke-width="1.5" />
+    <circle cx="292" cy="28" r="6" fill="url(#brassGrad)" stroke="#451a03" stroke-width="1.5" />
+    <circle cx="28" cy="472" r="6" fill="url(#brassGrad)" stroke="#451a03" stroke-width="1.5" />
+    <circle cx="292" cy="472" r="6" fill="url(#brassGrad)" stroke="#451a03" stroke-width="1.5" />
+
+    <!-- TOP SECTION: MECHANICAL SHUTTER EYE (Camera) -->
+    <g transform="translate(160, 80)">
+      <circle cx="0" cy="0" r="42" fill="#0c0a09" stroke="#a8a29e" stroke-width="3" />
+      <!-- Camera Lens (inside) -->
+      <circle cx="0" cy="0" r="24" fill="#020617" stroke="#38bdf8" stroke-width="1.5" />
+      <circle cx="-6" cy="-6" r="6" fill="#38bdf8" opacity="0.6" />
+      <!-- Motorized Brass Shutter Lid (partially open to show concept) -->
+      <path d="M -40 -10 Q 0 15 40 -10 A 42 42 0 0 0 -40 -10 Z" fill="url(#brassGrad)" stroke="#713f12" stroke-width="2" />
+      <circle cx="0" cy="-28" r="4" fill="#451a03" />
+      <text x="0" y="58" fill="#e7e5e4" font-family="'Courier New', monospace" font-size="11" font-weight="bold" text-anchor="middle">SCHLAFENDES KAMERA-AUGE</text>
+      <text x="0" y="72" fill="#a8a29e" font-family="'Courier New', monospace" font-size="9" text-anchor="middle">Servo-Lid · Stromlos im Ruhezustand</text>
+    </g>
+
+    <!-- MIDDLE SECTION: CIRCULAR AVATAR DISPLAY (1.28" GC9A01 LCD) -->
+    <g transform="translate(160, 240)">
+      <!-- Bezel with Brass Ring -->
+      <circle cx="0" cy="0" r="64" fill="#1c1917" stroke="url(#brassGrad)" stroke-width="4" />
+      <!-- Screen Area -->
+      <circle cx="0" cy="0" r="58" fill="url(#screenGrad)" />
+      <!-- Animated Digital Eyes -->
+      <ellipse cx="-20" cy="-2" rx="14" ry="18" fill="#38bdf8" filter="url(#glow)" />
+      <ellipse cx="20" cy="-2" rx="14" ry="18" fill="#38bdf8" filter="url(#glow)" />
+      <ellipse cx="-18" cy="-5" rx="5" ry="7" fill="#ffffff" />
+      <ellipse cx="22" cy="-5" rx="5" ry="7" fill="#ffffff" />
+      <!-- Display Label -->
+      <text x="0" y="78" fill="#e7e5e4" font-family="'Courier New', monospace" font-size="11" font-weight="bold" text-anchor="middle">1,28″ RUND-AVATAR (GC9A01)</text>
+      <text x="0" y="92" fill="#a8a29e" font-family="'Courier New', monospace" font-size="9" text-anchor="middle">Mimik, Blinzeln, Couleur-Zustand</text>
+    </g>
+
+    <!-- AUDIO GRILLE -->
+    <g transform="translate(160, 360)">
+      <circle cx="-30" cy="0" r="3" fill="#a8a29e" />
+      <circle cx="-15" cy="0" r="3" fill="#a8a29e" />
+      <circle cx="0" cy="0" r="3" fill="#a8a29e" />
+      <circle cx="15" cy="0" r="3" fill="#a8a29e" />
+      <circle cx="30" cy="0" r="3" fill="#a8a29e" />
+      <circle cx="-22" cy="8" r="3" fill="#a8a29e" />
+      <circle cx="-7" cy="8" r="3" fill="#a8a29e" />
+      <circle cx="7" cy="8" r="3" fill="#a8a29e" />
+      <circle cx="22" cy="8" r="3" fill="#a8a29e" />
+      <text x="0" y="24" fill="#a8a29e" font-family="'Courier New', monospace" font-size="9" text-anchor="middle">I2S MIC &amp; LAUTSPRECHER (MAX98357A)</text>
+    </g>
+
+    <!-- BOTTOM BUTTONS: CONSENT TASTER -->
+    <g transform="translate(160, 420)">
+      <!-- Button 1: Kamera JA -->
+      <g transform="translate(-50, 0)">
+        <circle cx="0" cy="0" r="18" fill="#15803d" stroke="#86efac" stroke-width="2" />
+        <circle cx="0" cy="0" r="10" fill="#22c55e" />
+        <text x="0" y="28" fill="#86efac" font-family="'Courier New', monospace" font-size="9" font-weight="bold" text-anchor="middle">KAMERA AN</text>
+      </g>
+      <!-- Button 2: Nur Audio -->
+      <g transform="translate(50, 0)">
+        <circle cx="0" cy="0" r="18" fill="#b45309" stroke="#fde047" stroke-width="2" />
+        <circle cx="0" cy="0" r="10" fill="#eab308" />
+        <text x="0" y="28" fill="#fde047" font-family="'Courier New', monospace" font-size="9" font-weight="bold" text-anchor="middle">NUR AUDIO</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- CENTER: AIR-GAP RELAY & ELECTRICAL ISOLATION -->
+  <g transform="translate(480, 160)">
+    <!-- Circuit Card Box -->
+    <rect x="0" y="0" width="340" height="240" rx="14" fill="#1c1917" stroke="#eab308" stroke-width="2" filter="url(#shadow)" />
+    
+    <rect x="0" y="0" width="340" height="34" rx="14" fill="#854d0e" opacity="0.3" />
+    <text x="16" y="22" fill="#fef08a" font-family="'Courier New', monospace" font-size="12" font-weight="bold">⚡ PHYSISCHER AIR-GAP KERN</text>
+
+    <!-- 5V Relay Block -->
+    <g transform="translate(30, 60)">
+      <rect x="0" y="0" width="110" height="60" rx="8" fill="#1d4ed8" stroke="#93c5fd" stroke-width="2" />
+      <text x="55" y="26" fill="#ffffff" font-family="'Courier New', monospace" font-size="11" font-weight="bold" text-anchor="middle">5V RELAIS</text>
+      <text x="55" y="44" fill="#bfdbfe" font-family="'Courier New', monospace" font-size="9" text-anchor="middle">GPIO-Trigger</text>
+    </g>
+
+    <!-- Wiring to Bell (Allowed) -->
+    <g transform="translate(180, 50)">
+      <path d="M -40 40 L 40 40" stroke="#22c55e" stroke-width="4" stroke-dasharray="6,4" />
+      <circle cx="60" cy="40" r="22" fill="#15803d" stroke="#86efac" stroke-width="2" />
+      <text x="60" y="44" fill="#ffffff" font-size="18" text-anchor="middle">🔔</text>
+      <text x="60" y="74" fill="#86efac" font-family="'Courier New', monospace" font-size="10" font-weight="bold" text-anchor="middle">INTERNE KLINGEL</text>
+      <text x="60" y="88" fill="#bbf7d0" font-family="'Courier New', monospace" font-size="8" text-anchor="middle">Ausschließlich Gong</text>
+    </g>
+
+    <!-- Severed Wire to Lock (FORBIDDEN / AIR-GAPPED) -->
+    <g transform="translate(30, 150)">
+      <path d="M 110 -10 L 150 15" stroke="#ef4444" stroke-width="3" stroke-dasharray="4,4" />
+      <!-- Big Red Scissors / Cut Symbol -->
+      <circle cx="160" cy="20" r="16" fill="#991b1b" stroke="#fca5a5" stroke-width="2" />
+      <text x="160" y="26" fill="#ffffff" font-family="sans-serif" font-size="14" font-weight="bold" text-anchor="middle">✕</text>
+      <!-- Door Buzzer (Severed) -->
+      <rect x="190" y="0" width="100" height="40" rx="6" fill="#450a0a" stroke="#ef4444" stroke-width="1.5" />
+      <text x="240" y="18" fill="#fca5a5" font-family="'Courier New', monospace" font-size="9" font-weight="bold" text-anchor="middle">TÜRÖFFNER</text>
+      <text x="240" y="32" fill="#ef4444" font-family="'Courier New', monospace" font-size="8" font-weight="bold" text-anchor="middle">AIR-GAPPED (KEIN ZUGRIFF)</text>
+    </g>
+
+    <text x="16" y="222" fill="#fef08a" font-family="'Courier New', monospace" font-size="10">Regel: Ein Jailbreak kann niemals die Tür öffnen.</text>
+  </g>
+
+  <!-- CENTER-BOTTOM: SPEECH-TO-SPEECH SERVER PIPELINE -->
+  <g transform="translate(480, 430)">
+    <rect x="0" y="0" width="340" height="240" rx="14" fill="#1c1917" stroke="#0284c7" stroke-width="2" filter="url(#shadow)" />
+    <rect x="0" y="0" width="340" height="34" rx="14" fill="#0369a1" opacity="0.3" />
+    <text x="16" y="22" fill="#7dd3fc" font-family="'Courier New', monospace" font-size="12" font-weight="bold">🧠 LOKALER S2S SERVER (MINI-PC)</text>
+
+    <!-- Pipeline Steps -->
+    <g transform="translate(20, 55)">
+      <!-- STT -->
+      <rect x="0" y="0" width="85" height="50" rx="6" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5" />
+      <text x="42" y="22" fill="#bae6fd" font-family="'Courier New', monospace" font-size="10" font-weight="bold" text-anchor="middle">1. STT</text>
+      <text x="42" y="38" fill="#7dd3fc" font-family="'Courier New', monospace" font-size="8" text-anchor="middle">Whisper.cpp</text>
+
+      <path d="M 90 25 L 105 25" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)" />
+
+      <!-- LLM -->
+      <rect x="110" y="0" width="85" height="50" rx="6" fill="#0f172a" stroke="#a855f7" stroke-width="1.5" />
+      <text x="152" y="22" fill="#e9d5ff" font-family="'Courier New', monospace" font-size="10" font-weight="bold" text-anchor="middle">2. LLM</text>
+      <text x="152" y="38" fill="#c084fc" font-family="'Courier New', monospace" font-size="8" text-anchor="middle">Couleur-Trivia</text>
+
+      <path d="M 200 25 L 215 25" stroke="#a855f7" stroke-width="2" />
+
+      <!-- TTS -->
+      <rect x="220" y="0" width="85" height="50" rx="6" fill="#0f172a" stroke="#ec4899" stroke-width="1.5" />
+      <text x="262" y="22" fill="#fbcfe8" font-family="'Courier New', monospace" font-size="10" font-weight="bold" text-anchor="middle">3. TTS</text>
+      <text x="262" y="38" fill="#f472b6" font-family="'Courier New', monospace" font-size="8" text-anchor="middle">Piper / Voice</text>
+    </g>
+
+    <!-- Function Call Trigger -->
+    <g transform="translate(20, 125)">
+      <rect x="0" y="0" width="300" height="42" rx="6" fill="#032e44" stroke="#0ea5e9" stroke-width="1" />
+      <text x="12" y="18" fill="#38bdf8" font-family="'Courier New', monospace" font-size="9" font-weight="bold">Function-Call: ring_internal_bell()</text>
+      <text x="12" y="32" fill="#94a3b8" font-family="'Courier New', monospace" font-size="8">Deterministischer Trigger nur bei bestandenem Test</text>
+    </g>
+
+    <text x="20" y="195" fill="#94a3b8" font-family="'Courier New', monospace" font-size="9">Latenz: &lt; 850 ms · Keine Cloud-Pflicht · RAM-only</text>
+    <text x="20" y="215" fill="#4ade80" font-family="'Courier New', monospace" font-size="9">DSGVO-by-Design: Keine Speicherung im Dateisystem</text>
+  </g>
+
+  <!-- RIGHT: MEMBER DASHBOARD & TAKEOVER (Tailscale) -->
+  <g transform="translate(860, 160)" filter="url(#shadow)">
+    <!-- Smartphone Frame -->
+    <rect x="0" y="0" width="340" height="510" rx="24" fill="#0c0a09" stroke="#78716c" stroke-width="3" />
+    <rect x="110" y="10" width="120" height="18" rx="9" fill="#292524" />
+    
+    <!-- Phone Screen -->
+    <rect x="14" y="38" width="312" height="456" rx="14" fill="#18181b" />
+
+    <!-- App Header -->
+    <rect x="14" y="38" width="312" height="48" rx="14" fill="#27272a" />
+    <text x="32" y="68" fill="#facc15" font-family="'Courier New', monospace" font-size="11" font-weight="bold">SPHINX CONTROL · 2FA</text>
+    <circle cx="300" cy="62" r="5" fill="#22c55e" />
+
+    <!-- Live Status Banner -->
+    <rect x="28" y="100" width="284" height="44" rx="8" fill="#3f3f46" />
+    <text x="40" y="118" fill="#e4e4e7" font-family="'Courier New', monospace" font-size="10" font-weight="bold">BESUCHER AN DER HAUSTÜR</text>
+    <text x="40" y="134" fill="#a1a1aa" font-family="'Courier New', monospace" font-size="9">Status: Audio-Test aktiv · Consent: Nein</text>
+
+    <!-- Takeover Modes -->
+    <text x="28" y="166" fill="#a1a1aa" font-family="'Courier New', monospace" font-size="10" font-weight="bold">HUMAN-IN-THE-LOOP MODI</text>
+
+    <!-- Mode 1: Autonomous -->
+    <g transform="translate(28, 178)">
+      <rect x="0" y="0" width="284" height="44" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" />
+      <text x="14" y="18" fill="#38bdf8" font-family="'Courier New', monospace" font-size="10" font-weight="bold">1. AUTONOM (KI ALLEIN)</text>
+      <text x="14" y="32" fill="#94a3b8" font-family="'Courier New', monospace" font-size="8">KI prüft Couleur-Wissen selbstständig</text>
+    </g>
+
+    <!-- Mode 2: Supervised -->
+    <g transform="translate(28, 230)">
+      <rect x="0" y="0" width="284" height="44" rx="8" fill="#27272a" stroke="#52525b" stroke-width="1" />
+      <text x="14" y="18" fill="#e4e4e7" font-family="'Courier New', monospace" font-size="10" font-weight="bold">2. SUPERVISED (FREIGABE)</text>
+      <text x="14" y="32" fill="#a1a1aa" font-family="'Courier New', monospace" font-size="8">KI schlägt Antwort vor · Klick zum Senden</text>
+    </g>
+
+    <!-- Mode 3: Puppet -->
+    <g transform="translate(28, 282)">
+      <rect x="0" y="0" width="284" height="44" rx="8" fill="#27272a" stroke="#52525b" stroke-width="1" />
+      <text x="14" y="18" fill="#e4e4e7" font-family="'Courier New', monospace" font-size="10" font-weight="bold">3. PUPPET (TEXT-TO-TTS)</text>
+      <text x="14" y="32" fill="#a1a1aa" font-family="'Courier New', monospace" font-size="8">Mitglied tippt Text · Sphinx spricht mit Roboterstimme</text>
+    </g>
+
+    <!-- Mode 4: Voice Takeover -->
+    <g transform="translate(28, 334)">
+      <rect x="0" y="0" width="284" height="44" rx="8" fill="#27272a" stroke="#52525b" stroke-width="1" />
+      <text x="14" y="18" fill="#e4e4e7" font-family="'Courier New', monospace" font-size="10" font-weight="bold">4. VOICE TAKEOVER (VOCODER)</text>
+      <text x="14" y="32" fill="#a1a1aa" font-family="'Courier New', monospace" font-size="8">Mitglied spricht ins Handy · Stimme morpht zur Sphinx</text>
+    </g>
+
+    <!-- Action Button: Silent Bell -->
+    <g transform="translate(28, 410)">
+      <rect x="0" y="0" width="284" height="48" rx="10" fill="#15803d" stroke="#22c55e" stroke-width="1.5" />
+      <text x="142" y="24" fill="#ffffff" font-family="'Courier New', monospace" font-size="11" font-weight="bold" text-anchor="middle">🔔 SILENT BELL AUSLÖSEN</text>
+      <text x="142" y="38" fill="#bbf7d0" font-family="'Courier New', monospace" font-size="8" text-anchor="middle">Sofort internes Klingeln ohne Türöffner</text>
+    </g>
+  </g>
+
+  <!-- BOTTOM FOOTER -->
+  <g transform="translate(60, 696)">
+    <text x="0" y="0" fill="#78716c" font-family="'Courier New', monospace" font-size="11">Amélie Poulain Kula-Ring Tin · CC0 1.0 Public Domain · Drei Ausbaustufen: 70–90 € / 200 € / 400 €</text>
+  </g>
+</svg>
+`;
+
+writeFileSync(resolve('public/couleur-sphinx.svg'), svg, 'utf8');
+console.log('SVG geschrieben: public/couleur-sphinx.svg');
+
+// Render PNG and WebP variants using sharp
+const imgBuffer = Buffer.from(svg);
+await sharp(imgBuffer)
+  .resize(1280, 720)
+  .png({ compressionLevel: 9 })
+  .toFile(resolve('public/couleur-sphinx.png'));
+
+await sharp(imgBuffer)
+  .resize(1280, 720)
+  .webp({ quality: 85 })
+  .toFile(resolve('public/couleur-sphinx-1280.webp'));
+
+await sharp(imgBuffer)
+  .resize(640, 360)
+  .webp({ quality: 85 })
+  .toFile(resolve('public/couleur-sphinx-640.webp'));
+
+console.log('Grafiken erfolgreich gerendert (PNG, 1280.webp, 640.webp)!');

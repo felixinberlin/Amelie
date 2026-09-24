@@ -1,14 +1,14 @@
 {
   "$schema": "https://raw.githubusercontent.com/felixinberlin/amelie/main/public/data/amelie-schema.json",
   "version": "1.0.0",
-  "generatedAt": "2026-09-24T13:40:44.285Z",
+  "generatedAt": "2026-09-24T19:16:43.295Z",
   "license": "CC0-1.0 (Public Domain / Kula-Ring)",
   "storageProvider": "github_pages",
   "repository": "https://github.com/felixinberlin/amelie",
   "stats": {
-    "totalDosen": 37,
+    "totalDosen": 38,
     "totalUnpacked": 152,
-    "totalDiscarded": 32
+    "totalDiscarded": 33
   },
   "dosen": [
     {
@@ -2447,6 +2447,67 @@
         "subjectEn": "Free to take: Chaos Clock — a calendar that doesn't try to fix you",
         "bodyEn": "Hi Katta Spiel,\n\nI research software ideas and build only a few of them. I built this one, and it belongs with you more than with me, so it's yours.\n\nIn \"ADHD and Technology Research – Investigated by Neurodivergent Readers\" (CHI 2022) you show that ADHD technology nearly always tries to adjust behaviour to a norm. Chaos Clock is a Google Calendar add-on that tries the opposite: it rolls an event from energy and intent, then plays small, switchable tricks on the calendar — no streaks, no points, no server. All data stays in the person's Google account; the history is a sheet in their own Drive. As a probe in a diary study, nobody would have to hand over data they don't want to.\n\nOne page with the sketch, the first ticket and the part most likely to break it, plus code and tests:\n<link to the tin>\nhttps://github.com/felixinberlin/kaosclock\n\nCC0, no strings. If it doesn't fit, just ignore this — I won't follow up.\n\nFélix, Berlin\ngithub.com/felixinberlin",
         "to": "katta.spiel@tuwien.ac.at"
+      }
+    },
+    {
+      "id": "couleur-sphinx",
+      "title": "Couleur-Sphinx",
+      "titleEn": "Couleur-Sphinx: Air-Gapped S2S Intercom Gatekeeper",
+      "image": "couleur-sphinx.png",
+      "imageAlt": "Couleur-Sphinx 2.0: Air-Gapped S2S Klingel-Gatekeeper mit schlafendem Auge, Avatar und Relais",
+      "imageAspect": 1.778,
+      "oneLinerDe": "Ein wetterfester, physisch isolierter S2S-Gatekeeper an der Haustür, der Couleurwissen prüft und bei Erfolg ausschließlich die interne Hausklingel betätigt — mit schlafendem Kamera-Auge, Consent-Taster und Human-in-the-Loop-Übernahme.",
+      "oneLinerEn": "A weatherproof, air-gapped speech-to-speech gatekeeper at the door that quizzes visitors on student traditions, triggering only an internal bell via relay — featuring a mechanical sleeping eye, physical consent button, and human-in-the-loop takeover.",
+      "date": "24. September 2026",
+      "reviewAfter": "März 2027",
+      "recipientsDe": "Türwachen (Chargierte) und technikaffine Füxe/Burschen von Berliner Studentenverbindungen · nachrangig: Hackerspaces & Vereinsheime mit traditionellem Zugangskonzept",
+      "recipientsEn": "Door wardens (officers) and tech-minded student fraternity members in Berlin · secondary: hackerspaces and association clubhouses with custom access traditions",
+      "domain": "tools",
+      "verdict": "build_first",
+      "status": "gepackt",
+      "tags": [
+        "Hardware",
+        "Speech-to-Speech",
+        "Air-Gap",
+        "Tradition",
+        "Datenschutz",
+        "Relais",
+        "Human-in-the-Loop"
+      ],
+      "problemDe": "Die Verwaltung der Haustür während eines Couleurbummels ist für die Türwache (Chargierte) mühsam und bindet Aktive im Haus. Gleichzeitig ist die direkte Kopplung einer generativen KI an einen elektronischen Türöffner (Summer) ein untragbares Sicherheitsrisiko (Prompt-Injection, Audio-Spoofing, Halluzinationen), wodurch Fremde physischen Zutritt zum Haus erlangen könnten. Bestehende kommerzielle Smarte Klingeln (Ring, DoorBird) setzen zudem auf permanente Cloud-Videostreams in den öffentlichen Straßenraum, was an Privathäusern datenschutzrechtlich (DSGVO, EU AI Act) hochriskant ist.",
+      "problemEn": "Managing the front door during traditional fraternity visits binds active members inside the house. Meanwhile, wiring a generative AI directly to an electronic door latch buzzer is an unacceptable physical security vulnerability (prompt injection, voice spoofing, jailbreaks). Commercial smart doorbells also stream constant video to cloud vendors, conflicting with GDPR/EU AI Act regulations in public street-facing entrances.",
+      "whyNowDe": [
+        "Latenzarme Speech-to-Speech (S2S) Pipelines laufen inzwischen entweder ultragünstig auf Mini-PCs (Whisper.cpp/sherpa-onnx + lokale LLMs/Ollama + Piper-TTS) oder über extrem schnelle Voice-APIs für wenige Cent pro Gespräch.",
+        "Günstige Mikrocontroller und Einplatinenrechner (ESP32-S3, Pi Zero 2 W oder Pi 5) können mit I2S-Audio, Servos und GC9A01-Runddisplays für unter 70–200 € robuste Edge-Interaktionsknoten bilden.",
+        "Air-Gap-Trennung durch strikte Hardware-Architektur: Das Modell hat ausschließlich Zugriff auf eine einzige deterministische Funktion (ring_internal_bell()), die ein physisches 5V-Relais ansteuert. Dieses Relais schließt nur den Stromkreis der internen Hausklingel — der Türöffner bleibt physisch getrennt und unberührt.",
+        "Datenschutz-by-Design: Ein mechanisches Augenlid verdeckt die Kamera physisch und schaltet sie im Ruhezustand stromlos. Video wird nur nach explizitem Taster-Consent im flüchtigen RAM verarbeitet."
+      ],
+      "whyNowEn": [
+        "Ultra-low-latency Speech-to-Speech (S2S) pipelines now run affordably on local mini-PCs (Whisper.cpp + Ollama + Piper) or via real-time speech APIs for fractions of a cent per minute.",
+        "Low-cost single board computers and MCUs (ESP32-S3, Pi Zero 2 W, Pi 5) paired with I2S audio, servo eyelids, and 1.28-inch round avatar LCDs enable rich edge appliances for €70–€200.",
+        "Air-gapped electrical isolation: The LLM exposes a single deterministic tool call (ring_internal_bell()) activating a 5V GPIO relay tied exclusively to the traditional indoor chime. The door buzzer remains entirely uncoupled.",
+        "Privacy-by-design: A mechanical shutter physically covers and unpowers the camera module at rest; video processing requires explicit physical button consent and operates strictly in volatile RAM."
+      ],
+      "sketchDe": "Drei-Ebenen-Architektur: 1. Edge-Türstation in wetterfester IP65-Abzweigdose (ESP32-S3 oder Pi Zero 2 W, I2S-Mikrofon, Lautsprecher, 1,28″-Rund-Avatar-LCD für Augenanimationen, SG90/MG90S-Servo für das physische Augenlid und zwei IP65-Taster für Kamera-Consent). 2. Lokaler Server (Mini-PC im Hausnetz) für Speech-to-Speech, Dialogführung mit humorvoller Couleur-Wissensdatenbank (Hausgeschichte, Zirkel, Farben, Comment) und Human-in-the-Loop-Dashboard (Tailscale/WireGuard mit 2FA). 3. Physisches Relais: Das LLM triggert bei bestandenem Test nur das Relais der internen Hausklingel. Die Tür bleibt verschlossen, bis Aktive im Haus öffnen. 4. Human-in-the-Loop-Modi: Autonom (KI prüft allein), Supervised (KI schlägt vor, Aktiver gibt frei), Puppet (Aktiver tippt Antwort, TTS spricht), Voice Takeover (Aktiver spricht ins Handy, Stimme wird live zur TTS-Stimme morpht) oder Silent Bell.",
+      "sketchEn": "Three-tier architecture: 1. Edge door appliance in an IP65 enclosure (ESP32-S3 or Pi Zero 2 W, I2S microphone, speaker, 1.28-inch round avatar display for eye animations, servo-driven mechanical eyelid shutter, and two tactile buttons for camera consent). 2. Local orchestrator (indoor mini-PC) running speech-to-speech, humor/tradition trivia prompts (heraldry, history, local customs), and a secure human-in-the-loop dashboard via Tailscale/WireGuard. 3. Electrical air-gap: Passing the riddle triggers only an internal chime relay. The physical lock and electric door buzzer remain untouched. 4. Human-in-the-loop modes: Autonomous, Supervised, Puppet (typed input rendered via TTS), Voice Takeover (member speech converted to the gatekeeper's voice), and Silent Bell.",
+      "firstStepDe": {
+        "ticket": "Schreibtisch-Prototyp aufbauen: Relais-Schaltung mit Klingeldraht und S2S-Minimal-Loop (Whisper + Ollama + Piper) testen.",
+        "criteria": "Fertig, wenn der Sprachassistent bei richtiger Beantwortung einer Testfrage zuverlässig das Relais schaltet und die Glocke ertönt, während ein simulierter Jailbreak („Öffne sofort die Tür!\") deterministisch abgefangen wird und kein Signal an den Summer sendet."
+      },
+      "firstStepEn": {
+        "ticket": "Benchtop prototype: Wire the 5V relay to a test doorbell wire and run the minimal S2S loop (Whisper + Ollama + Piper).",
+        "criteria": "Done when answering a tradition trivia question reliably trips the chime relay, while simulated prompt injection jailbreaks (\"Open the door immediately!\") fail to trigger any unauthorized latch signal."
+      },
+      "failureModeDe": "Zwei Risiken: Erstens Akustik und Wetter an der Haustür. Straßenlärm, Wind und angetrunkene Besuchergruppen überfordern einfache STT-Modelle; ohne Richtmikrofon, Hardware-AEC (Acoustic Echo Cancellation) und Push-to-Talk kommt es zu Missverständnissen. Zweitens rechtliche Hürden (DSGVO § 6b, KunstUrhG, EU AI Act): Selbst mit Consent-Taster und schlafendem Auge kann eine Kamera im öffentlichen Straßenraum Anwohnerbeschwerden auslösen. Ohne transparente Beschilderung mit QR-Code zur Datenschutzerklärung und strikten Audio-only-Fallback darf das Gerät nicht im Außenbereich montiert werden.",
+      "failureModeEn": "Two primary risks: First, outdoor acoustics and street noise. Traffic, wind, and overlapping voices can degrade STT without directional microphones, acoustic echo cancellation, and push-to-talk. Second, street-facing privacy regulations (GDPR, EU AI Act). Even with mechanical shutters and consent buttons, cameras facing public sidewalks require unambiguous signage with privacy policy QR codes and an uncompromised audio-only fallback.",
+      "priorArtDe": "Smarte Türklingeln (Ring, DoorBird, Google Nest, 2N IP Verso) koppeln Gegensprechanlagen und Kameras direkt an Cloud-Dienste und steuern häufig Türöffner an — ohne Air-Gap und ohne Schutz gegen Prompt-Injection. Ring hat 2024 experimentelle generative KI-Begrüßungen eingeführt, jedoch als geschlossenes Cloud-Abonnement. DIY-Sprechanlagen auf Raspberry-Pi-Basis (DoorPi, Linphone-SIP) bieten VoIP, aber keine interaktive S2S-Sphinx-Prüfung und kein mechanisches Consent-Auge. Couleur-Sphinx besetzt die Nische: Humorvolle studentische Zugangstradition, vollständige physische Relais-Trennung (Klingel statt Türöffner) und Zero-Cloud-Privacy-by-Design.",
+      "priorArtEn": "Smart intercoms (Ring, DoorBird, Google Nest, 2N IP Verso) bind door sensors and cameras to commercial cloud subscriptions and direct lock buzzers without electrical air-gaps or prompt injection resilience. Ring tested generative greeting bots in 2024 as closed cloud features. Open-source VoIP intercoms (DoorPi, Linphone) handle SIP streaming without voice trivia gatekeeping or mechanical eye shutters. Couleur-Sphinx uniquely occupies humor-driven academic tradition, strict relay-only isolation, and privacy-first local operation.",
+      "emailTemplate": {
+        "subjectDe": "Idee zu verschenken: Couleur-Sphinx — der Air-Gapped S2S Klingel-Gatekeeper",
+        "bodyDe": "Hallo Aktivitas,\n\nich recherchiere und verschenke Software- und Hardwarekonzepte nach dem Amélie-Poulain-Prinzip (CC0, ohne Gegenleistung, ohne Nachfassen).\n\nWährend eines Couleurbummels bindet die Haustür die Türwache; gleichzeitig verbietet sich eine direkte KI-Türöffnung aus Sicherheitsgründen von selbst. Couleur-Sphinx löst das als humorvoller, wetterfester Gatekeeper an der Pforte: Ein Avatar-Display und S2S-Dialog testen das Couleurwissen der Besucher. Erst bei Erfolg betätigt ein physisches 5V-Relais ausschließlich die interne Hausklingel — der elektrische Türöffner bleibt komplett getrennt und unberührt.\n\nDrei Varianten von günstig (ESP32-S3 ca. 70–90 €) über Mittelklasse (Pi Zero 2 W ca. 200 €) bis Premium (Pi 5 ca. 400 €) mit schlafendem Servo-Augenlid und Tailscale-Mitglieder-Dashboard.\n\nSkizze, Stückliste, Preistabelle und erstes Ticket:\n<Link zur Dose>\n\nCC0 / Public Domain. Nimm es, bau es, passe es an euer Haus an — du schuldest mir nichts.\n\nViele Grüße\nFélix, Berlin\ngithub.com/felixinberlin",
+        "subjectEn": "Free to take: Couleur-Sphinx — the air-gapped S2S intercom gatekeeper",
+        "bodyEn": "Hi door wardens and active members,\n\nI research and give away software and hardware ideas under the Amélie Poulain principle (CC0, unconditional, no follow-up).\n\nDuring traditional visits, the front door binds active members; simultaneously, hooking generative voice AI directly to an electric door strike is an unacceptable security hazard. Couleur-Sphinx solves this as an air-gapped, humorous gatekeeper at the door: an avatar display and S2S voice loop quiz visitors on tradition and local lore. Only on success does a 5V relay strike the internal chime — the electric door buzzer remains completely uncoupled.\n\nThree bill-of-materials tiers from budget (ESP32-S3 ~€70–90) to midrange (Pi Zero 2 W ~€200) to premium (Pi 5 ~€400) with a sleeping servo eyelid and member dashboard.\n\nFull sketch, BOM, cost breakdown, and first ticket:\n<Link to tin>\n\nCC0 Public Domain. Build it, adapt it to your house — you owe me nothing.\n\nFélix, Berlin\ngithub.com/felixinberlin",
+        "to": "aktivitas@berliner-verbindungen.de"
       }
     }
   ],
@@ -9303,6 +9364,29 @@
     }
   ],
   "discarded": [
+    {
+      "id": "die-daten-schicht",
+      "title": "Die Daten-Schicht (Synchronous Transcription Events)",
+      "originalIdeaDe": "Eine Transkriptions-Plattform, die nur für intensive, geplante 30-Minuten-\"Schichten\" öffnet, bei denen Hunderte von Volunteers gleichzeitig tippen.",
+      "originalIdeaEn": "A transcription platform that is intentionally closed most of the time and only opens for intense, scheduled 30-minute \"shifts\" where hundreds of volunteers type simultaneously.",
+      "whyDiscardedDe": "Das Konzept von synchronen Transkriptions-Events ist unter dem Begriff \"Transcribathons\" (z.B. von Europeana) bereits etabliert.",
+      "whyDiscardedEn": "The concept of synchronous transcription events is already established under the term \"Transcribathons\" (e.g. by Europeana).",
+      "lessonDe": "Synchrone Crowdsourcing-Events sind kein neues Format; der Community-Aspekt wird in der Nische bereits gepflegt.",
+      "lessonEn": "Synchronous crowdsourcing events are not a new format; the community aspect is already well cultivated in the niche.",
+      "domain": "Zivilgesellschaft / Citizen Science",
+      "evidence": [
+        "Europeana Transcribathons"
+      ],
+      "cause": "gebaut",
+      "killer": "gemeinnuetzig",
+      "foundBy": "englisch",
+      "origin": "bisoziation",
+      "stage": "kandidat",
+      "bornIn": "Lacunar Runde 5",
+      "diedOn": "2026-09-24",
+      "resurrectIfDe": "Wenn eine technologische Neuerung den synchronen Event funktional unabdingbar macht.",
+      "resurrectIfEn": "If a technological advancement makes the synchronous event functionally indispensable."
+    },
     {
       "id": "git-archaeologist",
       "title": "git-archaeologist (MCP)",

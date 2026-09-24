@@ -21,12 +21,16 @@ import {
   ChevronUp,
   Maximize2,
   Link2,
+  BookOpen,
 } from 'lucide-react';
 import { DoseItem, Language } from '../types';
 import { AMELIE_PLEDGE } from '../data/manifest';
 import { getTranslation, getLocalizedTitle } from '../i18n';
 import { getDoseUrl } from '../utils/doseUrl';
 import { DOSE_SIMULATOR_MAP, SimulatorKey } from '../data/doseSimulators';
+import { getBook } from '../data/doseBooks';
+import { DoseBook } from './DoseBook';
+import { doseImageSrc, doseImageSrcSet, doseImageSizes } from '../utils/doseImage';
 import {
   AltbauThermalSimulator,
   GlasanflugSimulator,
@@ -55,8 +59,10 @@ export const DoseModal: React.FC<DoseModalProps> = ({ dose, lang, onClose, onOpe
   const [copiedUrl, setCopiedUrl] = useState(false);
   const [selectedEmailIndex, setSelectedEmailIndex] = useState(0);
   const [isSimulatorExpanded, setIsSimulatorExpanded] = useState(false);
+  const [showBook, setShowBook] = useState(false);
   const t = getTranslation(lang);
   const matchedSimulator = DOSE_SIMULATOR_MAP[dose.id];
+  const bookChapters = getBook(dose.id);
 
   const doseUrl = getDoseUrl(dose.id);
 
@@ -321,6 +327,32 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
           <div className="p-5 rounded-2xl bg-gradient-to-br from-[#faf3e6] to-[#f4e9d5] border border-[#d8cbba] text-[#3b2a1c] font-amelie text-lg sm:text-xl italic leading-relaxed shadow-xs">
             « {lang === 'de' ? dose.oneLinerDe : dose.oneLinerEn} »
           </div>
+
+          {/* Dose Image (if available) */}
+          {dose.image && (
+            <figure className="space-y-2">
+              <picture>
+                <source
+                  type="image/webp"
+                  srcSet={doseImageSrcSet(dose.image)}
+                  sizes={doseImageSizes(dose.imageAspect)}
+                />
+                <img
+                  src={doseImageSrc(dose.image)}
+                  alt={dose.imageAlt || localizedTitle}
+                  referrerPolicy="no-referrer"
+                  loading="lazy"
+                  decoding="async"
+                  style={
+                    dose.imageAspect
+                      ? { aspectRatio: String(dose.imageAspect), maxHeight: 'min(50vh, 26rem)' }
+                      : { maxHeight: 'min(50vh, 26rem)' }
+                  }
+                  className="mx-auto h-auto w-auto max-w-full rounded-2xl border border-[#d8cbba] shadow-xs bg-[#faf5eb]"
+                />
+              </picture>
+            </figure>
+          )}
 
           {/* Metadata Row */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs bg-[#f4ede0] p-4 rounded-xl border border-[#dfd1be]">
@@ -629,6 +661,55 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
                   ))}
                 </div>
               </div>
+            </div>
+          )}
+
+          {/* Das Buch zur Dose (Recherche, Preistabellen, Originaldokumente) */}
+          {bookChapters.length > 0 && (
+            <div className="pt-4 border-t border-[#dfd1be] space-y-3">
+              <div className="flex items-center justify-between">
+                <h3 className="text-sm font-bold font-typewriter uppercase tracking-wider text-[#8c1d40] flex items-center gap-2">
+                  <BookOpen className="w-4 h-4 text-[#8c1d40]" />
+                  <span>{lang === 'de' ? 'Das Buch zur Dose (Rohrecherche & Preise)' : lang === 'es' ? 'El libro de la lata (Investigación y precios)' : 'The Book Behind the Tin (Research & Pricing)'}</span>
+                </h3>
+                <button
+                  type="button"
+                  onClick={() => setShowBook((v) => !v)}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-[#c5832b] bg-[#faf4e6] hover:bg-[#f4e9d5] text-[#2b1e16] text-xs font-bold font-typewriter transition-all cursor-pointer"
+                >
+                  <BookOpen className="w-3.5 h-3.5 text-[#c5832b]" />
+                  <span>
+                    {showBook
+                      ? (lang === 'de' ? 'Buch zuklappen' : lang === 'es' ? 'Cerrar libro' : 'Close book')
+                      : (lang === 'de' ? `Buch aufschlagen (${bookChapters.length} Kapitel)` : lang === 'es' ? `Abrir libro (${bookChapters.length} cap.)` : `Open book (${bookChapters.length} chapters)`)}
+                  </span>
+                </button>
+              </div>
+
+              {!showBook ? (
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  {bookChapters.map((c) => (
+                    <li key={c.slug}>
+                      <button
+                        type="button"
+                        onClick={() => setShowBook(true)}
+                        className="w-full text-left p-3 rounded-xl border border-[#dfd1be] bg-[#faf5eb] hover:bg-[#f0e7d6] transition-colors cursor-pointer"
+                      >
+                        <div className="font-typewriter text-xs font-bold text-[#2b1e16]">
+                          {lang === 'de' ? c.titleDe : c.titleEn}
+                        </div>
+                        <div className="font-typewriter text-[11px] text-[#6b5647] mt-1 leading-snug">
+                          {lang === 'de' ? c.noteDe : c.noteEn}
+                        </div>
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <div className="pt-2">
+                  <DoseBook chapters={bookChapters} lang={lang} />
+                </div>
+              )}
             </div>
           )}
 

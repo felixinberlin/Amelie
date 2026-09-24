@@ -460,6 +460,9 @@
       <trans-unit id="tin.wet-ink.title" resname="tin.wet-ink.title">
         <source>Wet Ink (Capillary Flow Simulator)</source>
       </trans-unit>
+      <trans-unit id="tin.couleur-sphinx.title" resname="tin.couleur-sphinx.title">
+        <source>Couleur-Sphinx: Air-Gapped S2S Intercom Gatekeeper</source>
+      </trans-unit>
       <trans-unit id="tin.pillsafe-vision.title" resname="tin.pillsafe-vision.title">
         <source>PillSafe Vision</source>
       </trans-unit>

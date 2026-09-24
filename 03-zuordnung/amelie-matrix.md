@@ -395,6 +395,7 @@ Zu jeder Idee aus `ideas-neue-projekte.md`: wer davon profitiert, warum ausgerec
 | Fugenduell: Asphaltritzen-Arena | 🔨 | Dose nennt „Indie Game Developers" — keine Adresse | **gepackt**, `verengt` seit 24.09.2026 (Spiel über echte Arten besetzt, Gebiet neu); Empfänger fehlt |
 | TischSchiedsrichter | 🔨 | Die Öffentlichkeit (mit Skelett) — Blogbeitrag/Show HN | **gepackt 24.09.2026**, `verengt` (dünn) — Spielzeug-Dose, Skelett läuft im Tab Sandboxes; zustellen vor dem 1. Advent 2026 |
 | Chaos Clock | 🎁 | Katta Spiel, TU Wien (ERC ACCESSTECH) — Forschungssonde, mit Code · danach Show HN | **gepackt 24.09.2026**, `verengt` — Code fertig und repariert (`felixinberlin/kaosclock` v0.5.2, CC0); **sendebereit**, Mail-Entwurf in `dosen.ts` |
+| Couleur-Sphinx | 🔨 | Türwachen (Chargierte) Berliner Studentenverbindungen · nachrangig: Hackerspaces & Vereine | **gepackt 24.09.2026**, `verengt` — Air-Gapped S2S Klingel-Gatekeeper mit schlafendem Auge, Consent-Taster und physischer Relais-Klingel |
 | ~~ParagraphenDolmetscher~~ | ❌ | — | **entsorgt 24.09.2026** — `besetzt` (jobcenter.guru u. a.), Duplikat von KlarLokal. Begründung in `05-dosen/_entsorgt.md` |
 | ~~git-archaeologist~~ | ❌ | — | **entsorgt** — mehrfach gebaut |
 | ~~Home-Network MCP~~ | ❌ | — | **entsorgt** — ≥4 Fritzbox-MCPs |

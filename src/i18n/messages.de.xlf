@@ -603,6 +603,10 @@
         <source>Wet Ink (Capillary Flow Simulator)</source>
         <target state="translated">Wet Ink (Kapillarsimulation)</target>
       </trans-unit>
+      <trans-unit id="tin.couleur-sphinx.title" resname="tin.couleur-sphinx.title">
+        <source>Couleur-Sphinx: Air-Gapped S2S Intercom Gatekeeper</source>
+        <target state="translated">Couleur-Sphinx</target>
+      </trans-unit>
       <trans-unit id="tin.pillsafe-vision.title" resname="tin.pillsafe-vision.title">
         <source>PillSafe Vision</source>
         <target state="translated">PillSafe Vision</target>

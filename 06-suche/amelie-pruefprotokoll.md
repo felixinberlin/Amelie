@@ -29,6 +29,14 @@ Ergänzt `05-dosen/_entsorgt.md`: dort steht die Begründung für gepackte, dann
 |---|---|---|---|
 | **Agent Postmortem Recorder** — Korrekturschleifen aus Session-Logs → `CLAUDE.md`-Patch (`agent-postmortem-recorder`) | **`besetzt`** (Präskriptions-Hälfte), Dose bleibt als **PR-Geschenk** | **claude-reflect** (Bayram Annakov, ~1,6k ★, v3.2.0, Repo geklont und gelesen @ 2c892ca): Hook erfasst Korrekturen, `/reflect` schreibt nach Freigabe in CLAUDE.md, Rules, Skills, AGENTS.md; Dedupe, Widersprüche, `--scan-history`. **claude-doctor** (~600 ★, README gelesen): `--rules` aus Transkripten. **claude-learn** (README gelesen): Score + Verfall. **RuleReceipt** (Artikel gelesen): Befolgungsprüfung. Der Dosensatz „Präskriptions-Hälfte unbesetzt" war falsch. **Restlücke = Backlog von claude-reflect selbst**: #1 Wiederkehr zuerst (Zensus 102 Einträge, ~16 echte Regeln), #3 Hook-E2E-Test. Plus Befund: Step 4 behandelt „Regel existiert, Korrektur kehrt wieder" als Duplikat. Patch gebaut (4 Dateien, 567 Zeilen, 340 Tests grün), Details `02-recherche/agent-postmortem-recorder-nachpruefung-2026-09-24.md`. Replay-Test und Routing als eigene „Lücken" verworfen (unbelegt bzw. vorhanden) | 03/2027 |
 
+## Runde 12 — 24.09.2026 (Couleur-Sphinx, mitgebrachte Hardware-Idee)
+
+Félix bringt die Idee als Konzept für Berliner Studentenverbindungen mit (Air-Gapped S2S Klingel-Gatekeeper, schlafendes Kamera-Auge, 1,28″-Avatar-LCD, Human-in-the-Loop-Dashboard).
+
+| Idee | Urteil | Beleg (kurz) | Prüfen ab |
+|---|---|---|---|
+| **Couleur-Sphinx** — Air-Gapped S2S Klingel-Gatekeeper für Berliner Studentenverbindungen (`couleur-sphinx`) | **`verengt`** | Smarte Gegensprechanlagen (Ring, DoorBird, Google Nest, 2N IP Verso) koppeln Gegensprechanlagen und Kameras direkt an Cloud-Dienste und steuern häufig Türöffner an — ohne Air-Gap und ohne Schutz gegen Prompt-Injection. Ring hat 2024 experimentelle generative KI-Begrüßungen eingeführt, jedoch als geschlossenes Cloud-Abonnement. DIY-Sprechanlagen auf Raspberry-Pi-Basis (DoorPi, Linphone-SIP) bieten VoIP, aber keine interaktive S2S-Sphinx-Prüfung und kein mechanisches Consent-Auge. Couleur-Sphinx besetzt die Nische: Humorvolle studentische Zugangstradition, vollständige physische Relais-Trennung (Klingel statt Türöffner) und Zero-Cloud-Privacy-by-Design. Dose: `05-dosen/couleur-sphinx.md` | 03/2027 |
+
 ## Runde 10 — 24.09.2026 (Chaos Clock, mitgebrachte Idee mit fertigem Code, method: ideenrunde)
 
 Félix bringt die Idee **gebaut** mit (`github.com/felixinberlin/kaosclock`, v0.5.0, zwei Commits vom 24.09.2026) plus einen Gemini-Datensatz (`status: "Launched"`, `is_verified_novel: true`, `date_delivered: 2026-09-24`, Empfänger „ADHMe"/„Apathetic Genius"-Webring). Schritt 3 übersprungen. Vorzieh-Regel: Alltagsbezug → englische Produktsuche zuerst. 10 Suchen, 7 Seitenabrufe, Repo geklont und Tests gelaufen.

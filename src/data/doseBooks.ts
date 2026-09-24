@@ -171,6 +171,28 @@ export const DOSE_BOOKS: Record<string, BookChapter[]> = {
       kind: 'pdf',
     },
   ],
+  'couleur-sphinx': [
+    {
+      slug: 'gatekeeper',
+      path: '02-recherche/couleur-sphinx-gatekeeper.md',
+      titleDe: 'Couleur-Sphinx: Ursprungskonzept & CapEx/OpEx',
+      titleEn: 'Couleur-Sphinx: Initial concept & CapEx/OpEx',
+      noteDe: '5V-Relais schlägt ausschließlich die interne Hausklingel, kein Zugriff auf den elektrischen Türöffner.',
+      noteEn: '5V relay strikes exclusively the internal doorbell chime, zero physical access to the door strike.',
+      date: '24.09.2026',
+      kind: 'md',
+    },
+    {
+      slug: 'architektur-preise',
+      path: '02-recherche/couleur-sphinx-2.0-architektur-preise.md',
+      titleDe: 'Couleur-Sphinx 2.0: Schlafendes Auge & Preistabellen',
+      titleEn: 'Couleur-Sphinx 2.0: Sleeping eye & price tables',
+      noteDe: 'Mechanisches Shutter-Auge, 1,28″-Avatar-LCD und 3 Hardware-Ausbaustufen (~70–90 €, ~200 €, ~400 €).',
+      noteEn: 'Mechanical shutter eyelid, 1.28-inch avatar display, and 3 hardware tiers (~€70–90, ~€200, ~€400).',
+      date: '24.09.2026',
+      kind: 'md',
+    },
+  ],
 };
 
 export function getBook(doseId: string): BookChapter[] {

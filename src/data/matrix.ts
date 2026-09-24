@@ -391,5 +391,23 @@ export const MATRIX_DATA: MatrixRow[] = [
     hookEn: '"14 real sidewalk plants, 36-point CSR budget, and 6 seasonal crack challenges: Balatro meets botany."',
     status: 'gepackt',
     doseId: 'fugenduell-asphalt-arena'
+  },
+  {
+    id: 'couleur-sphinx',
+    categoryDe: '4. Hardware & Physik',
+    categoryEn: '4. Hardware & Physics',
+    name: 'Couleur-Sphinx',
+    effort: 'M',
+    verdict: 'build_first',
+    beneficiaryDe: 'Türwachen (Chargierte) von Verbindungen und Hackerspaces mit traditionellem, sicherem Einlass.',
+    beneficiaryEn: 'Door wardens and student association houses with traditional, secure access verification.',
+    recipientsDe: 'Berliner Studentenverbindungen · Hackerspaces · Vereinsheime',
+    recipientsEn: 'Berlin student fraternities · Hackerspaces · Association houses',
+    channelDe: 'Open-Source Hardware/Software-Bauplan und GitHub Repository',
+    channelEn: 'Open-source hardware/software blueprint and GitHub repository',
+    hookDe: '„Air-Gapped S2S-Klingel-Gatekeeper: KI prüft Couleurwissen, Relais schlägt nur die Glocke — niemals den Türsummer."',
+    hookEn: '"Air-gapped S2S intercom gatekeeper: AI quizzes tradition, relay rings the chime — never the door buzzer."',
+    status: 'gepackt',
+    doseId: 'couleur-sphinx'
   }
 ];
