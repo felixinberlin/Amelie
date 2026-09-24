@@ -54,14 +54,14 @@ Die Ursachen genauer:
 
 *Automatisch erzeugt aus `src/data/dosen.ts` (`DISCARDED_DATA`) mit `npm run friedhof`. Nicht von Hand bearbeiten — `npm run lint` meldet Abweichungen.*
 
-**32 Gräber.** 3 davon starben erst als Dose oder Mail-Entwurf (teure Tode). Von 24 dokumentierten Fundwegen kamen 5 ohne neue Suche aus (eigener Atlas, eigenes Protokoll oder Reality-Check) — 21 %.
+**33 Gräber.** 3 davon starben erst als Dose oder Mail-Entwurf (teure Tode). Von 25 dokumentierten Fundwegen kamen 5 ohne neue Suche aus (eigener Atlas, eigenes Protokoll oder Reality-Check) — 20 %.
 
 **Woran sie starben**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Schon gebaut | 22 | 69 % |
-| Beim Empfänger selbst | 4 | 13 % |
+| Schon gebaut | 23 | 70 % |
+| Beim Empfänger selbst | 4 | 12 % |
 | Reality-Check | 3 | 9 % |
 | Duplikat | 2 | 6 % |
 | Keine neue Fähigkeit | 1 | 3 % |
@@ -70,10 +70,10 @@ Die Ursachen genauer:
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Nicht dokumentiert | 8 | 25 % |
-| Englische Suche | 7 | 22 % |
-| Deutsche Suche | 6 | 19 % |
-| Empfänger-Suche | 5 | 16 % |
+| Englische Suche | 8 | 24 % |
+| Nicht dokumentiert | 8 | 24 % |
+| Deutsche Suche | 6 | 18 % |
+| Empfänger-Suche | 5 | 15 % |
 | Eigener Atlas / Protokoll | 3 | 9 % |
 | Ohne Suche | 2 | 6 % |
 | Forum / Nische | 1 | 3 % |
@@ -82,21 +82,21 @@ Die Ursachen genauer:
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Bisoziation | 11 | 34 % |
-| Brainstorm | 11 | 34 % |
-| Ideenliste | 4 | 13 % |
-| Modell-Katalog | 4 | 13 % |
+| Bisoziation | 12 | 36 % |
+| Brainstorm | 11 | 33 % |
+| Ideenliste | 4 | 12 % |
+| Modell-Katalog | 4 | 12 % |
 | Primärquelle | 2 | 6 % |
 
 **Wer sie schon hatte**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Firma | 13 | 41 % |
-| Community / Indie | 4 | 13 % |
-| Forschung | 4 | 13 % |
-| Gemeinnützige | 4 | 13 % |
-| Niemand | 4 | 13 % |
+| Firma | 13 | 39 % |
+| Gemeinnützige | 5 | 15 % |
+| Community / Indie | 4 | 12 % |
+| Forschung | 4 | 12 % |
+| Niemand | 4 | 12 % |
 | Eigener Bestand | 2 | 6 % |
 | Behörde | 1 | 3 % |
 
@@ -104,7 +104,7 @@ Die Ursachen genauer:
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Kandidat | 29 | 91 % |
+| Kandidat | 30 | 91 % |
 | Dose gepackt | 2 | 6 % |
 | Mail entworfen | 1 | 3 % |
 
@@ -112,6 +112,7 @@ Die Ursachen genauer:
 
 | Idee | † | Ursache | Wer sie hatte | Gefunden durch | Herkunft | Kam bis |
 |---|---|---|---|---|---|---|
+| Die Daten-Schicht (Synchronous Transcription Events) | 24.09.2026 | Schon gebaut | Gemeinnützige | Englische Suche | Bisoziation | Kandidat |
 | ParagraphenDolmetscher | 24.09.2026 | Schon gebaut | Firma | Deutsche Suche | Modell-Katalog | Dose gepackt |
 | Räumungsvorhersage aus Kündigungsfristen | 23.09.2026 | Reality-Check | Niemand | Ohne Suche | Bisoziation | Kandidat |
 | Wunschseite / Nachfrage-Karte | 23.09.2026 | Schon gebaut | Firma | Englische Suche | Bisoziation | Kandidat |

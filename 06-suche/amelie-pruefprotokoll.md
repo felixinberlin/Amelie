@@ -502,3 +502,17 @@ Konsequenz für die Gemini-Lauf-Tabelle unten: „Orgelpfeifen-Bleifraß-Resonan
 **Nicht als Kandidaten geführt (vor der Suche verworfen):** Kollisionsabstand-Ampel („sicher/Grenzfall/Kurs gefährlich" statt Band) — im Modus, und in „Peilung" enthalten; Nachbarschafts-Ritualwissen crowdsourcen — keine Quelle, braucht Nachbarn; gemeinsam signiertes Messprotokoll für Streitfälle — rechtliche Nachweiswirkung, von der Dose ausgeschlossen.
 
 **Bilanz Runde 4 (bisociation, 3 gezählt):** 0 frei, 3 verengt, 0 besetzt.
+
+## Runde 5 (Lacunar) — 24.09.2026
+
+| Idee | Urteil | Beleg (kurz) | Prüfen ab |
+|---|---|---|---|
+| **Gestalt-Prüfung** — Echtzeit-Sonifikation/Visualisierung bei Transkription historischer Tabellen zur Vermeidung von Doppel-Eingaben | `frei` | Problem ist bei DO IT (TU BS) benannt, keine Lösung gefunden | 09/2027 |
+| **Die Daten-Schicht** — Synchrone Transkriptions-Events für Citizen Science statt asynchron | `besetzt` | Transcribathons (Europeana) etablieren bereits dieses Format | – |
+
+## Runde 6 (Lacunar) — 24.09.2026
+
+| Idee | Urteil | Beleg (kurz) | Prüfen ab |
+|---|---|---|---|
+| **Volumen-Lotse** — Smartphone LiDAR-Scan für 3D-Biomasse-Score statt 2D-Flächenregeln | `frei` | LiDAR in Forstwirtschaft prof. im Einsatz; kein Laienwerkzeug für städtisches Grünvolumen | 09/2027 |
+| **Die Klang-Plakette** — Crowdsourced Resonanzanalyse von Infrastruktur durch Münz-Klopfen | `frei` | Tap-Testing ist Bauingenieur-Sache; keine Crowdsourcing-App für Bürger gefunden | 09/2027 |

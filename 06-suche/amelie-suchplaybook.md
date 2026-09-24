@@ -377,3 +377,13 @@ Erste Runde, die mit einer **verschenkten** Dose als Ausgangspunkt arbeitet. Das
 - **Beim Umzug gefunden:** Zwei fertige Mails (Mail 8, Mail 9) an Senckenberg und Flora Incognita für die seit dem 21.09. tote Dose Crack Flora Watcher standen weiter in der Zustellliste, eine als „sofort versendbar". Gelöscht. Genau diesen Fall verhindert Regel 6, Punkt „Trennen".
 - **Erste Muster:** alle drei teuren Tode aus Modell-Text; Englisch 7 und Deutsch 6 Kills, keine Sprache reicht allein; Reality-Checks töten nur Bisoziationsideen; ein Viertel der Fundwege aus Runde 1/2 undokumentiert. Details in `08-friedhof/README.md`.
 - **Nächstes Mal:** Sterblichkeit je Herkunft rechnen (Gräber ÷ Protokollzeilen je Methode) — erst dann sagen die Herkunftszahlen etwas. Und bei jedem neuen Urteil `besetzt` sofort ein Grab anlegen, nicht erst beim nächsten Audit.
+
+### Runde 11 (Lacunar) — 24.09.2026
+- **Gelernt:** Transkriptions-Schnittstellen (Bisoziation "Gestalt-Prüfung") sind ein guter Hebel, weil viele Citizen Science Projekte (Typ B) massiv analoge Tabellen erfassen und an der Mehrfacheingabe zur Qualitätssicherung ersticken.
+- **Fehler:** Synchrone Events (Die Daten-Schicht) als neue Idee zu werten; Transcribathons sind in der Nische bereits gut etabliert.
+- **Nächstes Mal:** Typ-D-Quellen durchsuchen, um Forschung, die nur als Paper existiert, in ein Citizen Science Werkzeug zu verwandeln.
+
+### Runde 12 (Lacunar) — 24.09.2026
+- **Gelernt:** Typ-D-Quellen (Forschung, die nur als Paper/Profi-Werkzeug existiert) sind extrem ergiebig. Beide Ideen ("Volumen-Lotse" und "Klang-Plakette") übertragen ein etabliertes physikalisches Messprinzip in ein Laien-Setting.
+- **Fehler:** Das `frei` der Klang-Plakette baut auf einer technischen Prämisse auf (dass Handy-Mikros über viele Nutzer hinweg kalibrierbar sind). Dies müsste als Reality-Check technisch vorab intensiver geprüft werden.
+- **Nächstes Mal:** Eine Prämissenprüfung ("Reality Check") bei Hardware/Sensor-Ideen konsequent durchführen, bevor sie ins Protokoll gehen.

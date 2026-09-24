@@ -1,90 +1,52 @@
-# Vibecode-Ideen — komplett neue Projekte
+# Gestalt-Prüfung (Sensory Validation of Data Entry)
 
-Nichts hiervon überschneidet sich mit tortilla-world / tortillaC / openCulinaryRuntime / tortilladepatatas.org / recipes-API / phone-motion-3d / OpenCIB / Kleinanzeigen-Agent / WBS Solvente / wesnoth-mcp.
+**Empfänger:** Citizen Science Projekte mit manueller Datenerfassung (z.B. DO IT - TU Braunschweig, Wettermeldedienste)
+**Kategorie:** Zivilgesellschaft / Ehrenamt
+**Urteil:** `frei` (Amélie-Prüfung am 24.09.2026)
 
-Tags: **S** = Wochenende · **M** = paar Wochen · **L** = echtes Projekt
+## Das Problem
+Viele Citizen Science Projekte (wie *DO IT* der TU Braunschweig) digitalisieren historische Wetter- und Abflussdaten aus analogen Tabellen. Die Qualitätssicherung ist ein Flaschenhals: Weil Menschen einzelne falsche Ziffern in langen Tabellen kaum erkennen, muss jeder Zeitraum *zweifach* von unterschiedlichen Personen transkribiert werden. Das halbiert die ohnehin knappe Arbeitskraft der Ehrenamtlichen.
 
----
+## Der Gap
+Bisherige Interfaces vergleichen blind zwei Textstrings, anstatt die menschliche Mustererkennung (Gestaltwahrnehmung) zu nutzen, um den Fehler schon bei der Eingabe offensichtlich zu machen.
 
-## 1. Agent- & MCP-Tooling
+## Die Idee: Gestalt-Prüfung
+Während der Volunteer die historischen Zahlen abtippt, werden die Werte in Echtzeit in eine kontinuierliche Kurve (visuell) oder einen Ton (Sonifikation) übersetzt. Vertippt sich jemand (z.B. "200" statt "20" für Niederschlag), entsteht ein sofortiger, extremer visueller Ausschlag oder ein misstönender Peak.
+Der Volunteer korrigiert den Tippfehler intuitiv im selben Moment. Die Notwendigkeit der fehleranfälligen Doppel-Eingabe durch eine zweite Person entfällt, da Ausreißer sofort sensorisch spürbar sind.
 
-**git-archaeologist (MCP)** — **M**
-Exponiert Repo-History als Frage-Interface: „warum existiert diese Zeile?" → blame + PR + Issue + Diskussion als eine Kette. Claude hört auf zu raten, warum dein Code so aussieht.
+## Warum jetzt?
+Browserbasierte prozedurale Generierung (Canvas API, WebAudio API) erlaubt es, Zahlen ohne Latenz und Server-Roundtrips in sensorisches Feedback zu übersetzen.
 
-**Spec-Drift Detector** — **M**
-CI-Check: LLM vergleicht Spec-Dokumente gegen die tatsächliche Implementierung und failt den Build bei Divergenz. Du hast mehrere spec-driven Repos — das ist genau die Lücke, die sonst manuell zufällt.
+## Bisoziations-Ursprung
+- **Anker:** DO IT Projekt (TU Braunschweig) - Zwang zur Mehrfachtranskription.
+- **Collider:** Strickmuster - Übersetzung von abstraktem Code in eine physische Form, wo ein falscher Code sofort als "Loch" in der Struktur sichtbar wird.
+# Die Daten-Schicht (Synchronous Transcription Events)
 
-**Agent Postmortem Recorder** — **S**
-Hook-basierter Logger für Claude-Code-Sessions → Statistik darüber, *was* der Agent regelmäßig falsch versteht. Output ist ein konkreter CLAUDE.md-Patch, kein Gefühl.
+**Empfänger:** Citizen Science Projekte
+**Kategorie:** Zivilgesellschaft / Ehrenamt
+**Urteil:** `besetzt` (Amélie-Prüfung am 24.09.2026)
 
-**Diffgeist** — **S**
-Watcher auf Release-Notes deiner Dependencies, der gegen deine echte Nutzung grept: „React 20 ändert X, du nutzt X an 4 Stellen". Personalisiertes Changelog statt Newsletter.
+## Das Problem
+Citizen Science Transkriptions-Plattformen isolieren Volunteers in asynchroner Einzelarbeit.
 
-**Home-Network MCP** — **S**
-Fritzbox/Router als Tool-Server: wer ist im Netz, Bandbreite, DNS-Blocklisten togglen — per Chat statt Web-UI.
+## Die Idee
+Eine Transkriptions-Plattform, die absichtlich die meiste Zeit geschlossen ist und nur für intensive, geplante 30-Minuten-"Schichten" öffnet, bei denen Hunderte von Volunteers gleichzeitig tippen.
 
----
-
-## 2. Physik-Spielzeug (dein Heimspiel, ohne Essen)
-
-**Wet Ink** — **M**
-Tinte auf Papier: Kapillarfluss, Bleeding, Papierfaser-Noise. WebGL-Brush, Export als SVG/PNG. Eine Physik, tief statt breit.
-
-**Altbau Thermal** — **L**
-Grundriss zeichnen → Wärmesimulation: Fenster auf/zu, Heizkörper, Außenwand, Luftwechsel. Berliner Altbau als Sim-Sandbox, mit ehrlicher Heizkosten-Kurve.
-
-**Pin Tumbler** — **M**
-Schließzylinder-Physik als Lerngerät: Stifte, Federn, Toleranzen, Feedback über Vibration am Handy. Erklärt ein mechanisches System, das fast niemand je gesehen hat.
-
-**Räucher-Sim** — **S**
-Rauch-Fluidsim, die auf Mikrofon-Input reagiert (Atem bewegt den Rauch). Meditativ, kein Ziel, kein Score.
-
-**Kristallwachstum 3D** — **M**
-Diffusion-limited Aggregation im Raum, Parameter live regelbar, Export als GLB. Jeder Lauf ist ein Objekt, das man rendern oder drucken kann.
+## Befund: Besetzt
+Das Konzept von synchronen Transkriptions-Events ist unter dem Begriff "Transcribathons" (z.B. von Europeana) bereits etabliert.
 
 ---
 
-## 3. Berlin / Alltag
+## 6. Neue Ideen (Lacunar Bisociation - 24.09.2026)
 
-**Sperrmüll-Radar** — **M**
-Foto vom Straßenfund → Klassifikation (Stuhl, Regal, Monitor) → Geo-Pin, der nach 12h verfällt. Extrem Berlin, extrem nützlich, keine Accounts nötig.
+**Gestalt-Prüfung (Sensory Validation of Data Entry)** — **M**
+Während ein Volunteer historische Zahlen abtippt, werden die Werte in Echtzeit in eine kontinuierliche Kurve oder einen Ton übersetzt. Ein Tippfehler erzeugt einen sofortigen sensorischen Ausschlag. Der Volunteer korrigiert den Fehler intuitiv selbst, wodurch die fehleranfällige und teure Doppel-Eingabe (Mehrfachtranskription zur QS) durch eine zweite Person entfällt. (Zustand: `frei`)
 
-**Commute Oracle** — **M**
-Kein offizielles ETA: du loggst deine eigenen Fahrten, das Modell lernt *deine* Strecke und sagt, wann du wirklich losmusst. Kleine Datenmenge, ehrliches Ergebnis.
+**Die Daten-Schicht (Synchronous Transcription Events)** — **S**
+Eine Transkriptions-Plattform, die nur für intensive, geplante 30-Minuten-"Schichten" öffnet, bei denen Hunderte von Volunteers gleichzeitig tippen. (Zustand: `besetzt` durch Europeana Transcribathons)
 
-**Kiez-Lärmkarte** — **L**
-Handy-Mikro misst nur dB-Pegel (nie Audio), Aggregation lokal, Karte zeigt Ruhe-Fenster pro Straße. Privacy-first by design, sonst ist es tot.
+**Volumen-Lotse (LiDAR Biomass Score)** — **M**
+Grünflächenverordnungen messen meist nur die 2D-Fläche (z.B. "nicht versiegelt"). Der Volumen-Lotse ist eine App, die den LiDAR-Scanner moderner Smartphones nutzt, um das tatsächliche 3D-Volumen (die Biomasse/Struktur) eines Vorgartens oder einer Hecke zu scannen. Das erzeugt einen "Structural Volume Score", der ökologischen Wert messbar macht, ohne dass ein Vermesser anrücken muss. (Zustand: `frei`)
 
----
-
-## 4. Esoterik-Ecke, aber als Software
-
-**Tarot als Zustandsmaschine** — **M**
-Karten sind typisierte State-Transitions, ein Legesystem ist ein kleines Programm. Du baust ein Reading wie einen Graph, die Animation fällt aus der Struktur raus.
-
-**Traumtagebuch mit Motiv-Karte** — **M**
-Einträge lokal embedden, wiederkehrende Motive als 3D-Cluster über die Zeit. Nichts verlässt das Gerät — das ist das Feature.
-
-**Echter Zufall als Service** — **S/Hardware**
-Raspberry Pi + Rauschdiode als TRNG, serviert Entropie über MCP. Jeder Würfelwurf, jedes Sigil, jede Kartenziehung in deinen Apps zieht aus echtem physikalischem Rauschen.
-
----
-
-## 5. Meta / Dev-Kultur
-
-**Repo-Museum** — **M**
-Begehbare 3D-Galerie deiner GitHub-Repos: Repo = Raum, Commits = Exponate, tote Branches = Keller. react-three-fiber, generiert aus der API.
-
-**Ghost Replay fürs Editieren** — **M**
-Zeichnet deinen Edit-Rhythmus auf und spielt ihn als „Geist" ab, Trackmania-Style. Zeigt dir, wie du dich tatsächlich durch Code bewegst — inkl. der 40 Sekunden Scrollen vor jeder Entscheidung.
-
-**Bugs → Spaced Repetition** — **S**
-Jeder gefixte Bug wird automatisch zur Lernkarte: Symptom vorne, Root Cause hinten. Nach drei Monaten weißt du, welche Fehlerklasse dich wirklich kostet.
-
----
-
-## Wenn du eine auswählen müsstest
-
-Schnellster Payoff: **Spec-Drift Detector** (löst ein Problem, das du real hast, über mehrere Repos).
-Schönstes Ding: **Wet Ink** (eine Physik, sofort sichtbar, keine Infrastruktur).
-Größtes Ding: **Altbau Thermal** (Sim-Engine + UI + echte Nützlichkeit, skaliert zu einem Produkt).
+**Die Klang-Plakette (Crowdsourced Resonance)** — **M**
+Brücken und Statuen verwittern innerlich, aber Städte prüfen sie oft nur alle drei Jahre visuell, da fest installierte Sensoren teuer sind. Eine Plakette fordert Passanten auf, mit einer Münze gegen das Bauwerk zu klopfen und den Ton mit dem Handy aufzunehmen. Die App aggregiert hunderte dieser verrauschten Aufnahmen; eine Verschiebung der Resonanzfrequenz über Monate verrät strukturelle Risse, bevor sie sichtbar werden. (Zustand: `frei`)
