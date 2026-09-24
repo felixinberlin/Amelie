@@ -1,0 +1,591 @@
+diff --git a/scripts/lib/recurrence.py b/scripts/lib/recurrence.py
+new file mode 100644
+index 0000000..643a8a8
+--- /dev/null
++++ b/scripts/lib/recurrence.py
+@@ -0,0 +1,261 @@
++#!/usr/bin/env python3
++"""Rank queued learnings by recurrence (BACKLOG #1).
++
++A one-off redirect ("no, lets discuss first") almost never comes back.
++A real rule ("use unipile mcp") comes back, in new wording, until it is
++written down. So recurrence is the cheapest signal we have for "this is a
++rule, not a moment" -- and it is already in the queue.
++
++This module is deliberately small:
++  * stdlib only, Python 3.6+ syntax, no network, no `claude -p` calls
++  * read-only: it never writes the queue or any memory file
++  * lexical, IDF-weighted similarity; `similarity_fn` lets /reflect plug
++    in the semantic layer later without changing the clustering code
++
++It also reports a second thing the current flow loses: a cluster that
++recurs even though a matching memory entry already exists. Step 4 of
++/reflect treats that as a duplicate to skip. It is the opposite: evidence
++that the existing entry is not working (wording, placement, or it wants
++to be a hook).
++"""
++import math
++import re
++from datetime import datetime
++from typing import Any, Callable, Dict, List, Optional, Sequence
++
++# Correction openers and filler that carry no topic. Kept short on purpose:
++# IDF weighting already discounts words that are common *in this queue*.
++_STOPWORDS = set("""
++a an the and or but if then so to of in on at for from by with without into
++is are was were be been being am do does did done doing have has had
++i you he she it we they me my your our their this that these those there here
++no not dont don't never always please just actually instead again also
++use using used make made let lets let's go going get got want need should
++can could would will shall may might must
++what why how when where which who
++ok okay yes yeah hmm wait stop now first
++don didn doesn isn wasn won can't won't didn't doesn't isn't
++through via instead other another same one thing things way bit
++file files code look show see try tell explain here there it's
++wrong right correct meant said told asked
++""".split())
++
++_TOKEN_RE = re.compile(r"[\w][\w.\-/]*", re.UNICODE)
++
++SimilarityFn = Callable[[str, str], float]
++
++
++def tokenize(text: str) -> List[str]:
++    """Lower-case content tokens, openers and stopwords removed.
++
++    Tokens keep internal dots, dashes and slashes so `gpt-5.1`, `src/api`
++    and `package.json` survive as one token -- those are usually the
++    distinctive part of a rule.
++    """
++    out = []
++    for raw in _TOKEN_RE.findall((text or "").lower()):
++        tok = raw.strip(".-/")
++        if len(tok) < 2 or tok in _STOPWORDS:
++            continue
++        out.append(tok)
++    return out
++
++
++def _idf_table(docs: Sequence[Sequence[str]]) -> Dict[str, float]:
++    n = max(len(docs), 1)
++    df: Dict[str, int] = {}
++    for toks in docs:
++        for t in set(toks):
++            df[t] = df.get(t, 0) + 1
++    # Smoothed IDF; a token present in every item still weighs > 0.
++    return {t: math.log((n + 1) / (c + 0.5)) for t, c in df.items()}
++
++
++def weighted_overlap(a: Sequence[str], b: Sequence[str], idf: Dict[str, float]) -> float:
++    """IDF-weighted overlap coefficient in [0, 1].
++
++    Overlap (not Jaccard) because a rule is often restated short once and
++    long once: "use unipile" vs "for linkedin always go through the unipile
++    mcp". The shared rare token should dominate.
++    """
++    sa, sb = set(a), set(b)
++    if not sa or not sb:
++        return 0.0
++    default = max(idf.values()) if idf else 1.0
++    w = lambda toks: sum(idf.get(t, default) for t in toks)
++    denom = min(w(sa), w(sb))
++    return w(sa & sb) / denom if denom > 0 else 0.0
++
++
++def _parse_ts(value: Any) -> Optional[datetime]:
++    if not isinstance(value, str):
++        return None
++    try:
++        return datetime.strptime(value[:19], "%Y-%m-%dT%H:%M:%S")
++    except ValueError:
++        return None
++
++
++def cluster_learnings(
++    items: List[Dict[str, Any]],
++    threshold: float = 0.6,
++    similarity_fn: Optional[SimilarityFn] = None,
++) -> List[Dict[str, Any]]:
++    """Group queue items that say the same thing, then rank the groups.
++
++    Returns a list of clusters, most-recurring first:
++      {
++        "size": 4,                       # how many queue items
++        "distinct_days": 3,              # recurrence across days, not one rant
++        "first_seen": "2026-06-02T...",  # ISO strings from the queue
++        "last_seen":  "2026-09-11T...",
++        "indices": [3, 17, 40, 88],      # positions in the input list
++        "messages": ["no, use unipile mcp", ...],
++        "key_terms": ["unipile", "mcp"], # shared distinctive tokens
++      }
++
++    Complete-link agglomerative clustering over an n x n similarity
++    matrix: ~5k pairs for a 100-item queue -- instant, no index needed.
++    """
++    messages = [str((it or {}).get("message", "")) for it in items]
++    toks = [tokenize(m) for m in messages]
++    idf = _idf_table(toks)
++    # A token seen in only one item cannot be evidence of recurrence, but it
++    # does dilute the overlap ("actually go *through* unipile"). Compare on
++    # tokens that occur at least twice in this batch.
++    df: Dict[str, int] = {}
++    for t_list in toks:
++        for t in set(t_list):
++            df[t] = df.get(t, 0) + 1
++    link_toks = [[t for t in t_list if df[t] >= 2] for t_list in toks]
++
++    def sim(i: int, j: int) -> float:
++        if similarity_fn is not None:
++            return similarity_fn(messages[i], messages[j])
++        return weighted_overlap(link_toks[i], link_toks[j], idf)
++
++    # Complete-link: two groups merge only if EVERY cross pair is similar.
++    # Single-link chains ("tests" -> "run tests before commit" -> "commit")
++    # into blobs that rank high for the wrong reason.
++    n = len(items)
++    S = [[0.0] * n for _ in range(n)]
++    pairs = []
++    for i in range(n):
++        for j in range(i + 1, n):
++            S[i][j] = S[j][i] = sim(i, j)
++            if S[i][j] >= threshold:
++                pairs.append((S[i][j], i, j))
++    pairs.sort(key=lambda p: -p[0])
++
++    member_of = list(range(n))            # item -> group id
++    group_members: Dict[int, List[int]] = {i: [i] for i in range(n)}
++    for _, i, j in pairs:
++        gi, gj = member_of[i], member_of[j]
++        if gi == gj:
++            continue
++        a, b = group_members[gi], group_members[gj]
++        if all(S[x][y] >= threshold for x in a for y in b):
++            for y in b:
++                member_of[y] = gi
++            a.extend(b)
++            del group_members[gj]
++
++    groups = {g: sorted(m) for g, m in group_members.items()}
++
++    clusters = []
++    for idxs in groups.values():
++        stamps = [(items[i] or {}).get("timestamp") for i in idxs]
++        parsed = sorted(p for p in (_parse_ts(s) for s in stamps) if p)
++        days = {p.date() for p in parsed}
++        iso = sorted(s for s in stamps if isinstance(s, str))
++        shared = set(toks[idxs[0]])
++        for i in idxs[1:]:
++            shared &= set(toks[i])
++        key_terms = sorted(shared, key=lambda t: -idf.get(t, 0.0))[:5]
++        clusters.append({
++            "size": len(idxs),
++            "distinct_days": len(days) if days else len(idxs),
++            "first_seen": iso[0] if iso else None,
++            "last_seen": iso[-1] if iso else None,
++            "indices": idxs,
++            "messages": [messages[i] for i in idxs],
++            "key_terms": key_terms,
++        })
++
++    # Two stable sorts: newest first, then by recurrence (size, spread).
++    clusters.sort(key=lambda c: c["last_seen"] or "", reverse=True)
++    clusters.sort(key=lambda c: (-c["size"], -c["distinct_days"]))
++    return clusters
++
++
++def find_ineffective_entries(
++    clusters: List[Dict[str, Any]],
++    memory_entries: List[Dict[str, Any]],
++    threshold: float = 0.6,
++    min_size: int = 2,
++) -> List[Dict[str, Any]]:
++    """Recurring clusters that an existing memory entry already covers.
++
++    `memory_entries` is the output of reflect_utils.read_all_memory_entries():
++    [{text, source_file, source_type, line_number}, ...].
++
++    A hit means: the rule is written down, yet the user kept correcting the
++    same thing. Worth showing as "rewrite / move / make it a hook", never as
++    "duplicate, skip". It is a hypothesis, not a verdict -- the corrections
++    may predate the entry; first_seen/last_seen are included so the human
++    can tell.
++    """
++    corpus = [tokenize(e.get("text", "")) for e in memory_entries]
++    hits = []
++    for c in clusters:
++        if c["size"] < min_size:
++            continue
++        ctoks = [tokenize(m) for m in c["messages"]]
++        idf = _idf_table(corpus + ctoks)
++        best, best_score = None, 0.0
++        for entry, etoks in zip(memory_entries, corpus):
++            score = max(weighted_overlap(ct, etoks, idf) for ct in ctoks)
++            if score > best_score:
++                best, best_score = entry, score
++        if best is not None and best_score >= threshold:
++            hits.append({"cluster": c, "entry": best, "score": round(best_score, 2)})
++    return hits
++
++
++def format_report(
++    clusters: List[Dict[str, Any]],
++    ineffective: Optional[List[Dict[str, Any]]] = None,
++    min_size: int = 2,
++) -> str:
++    """Plain-text report in the box style /reflect already uses."""
++    bar = "═" * 60
++    rec = [c for c in clusters if c["size"] >= min_size]
++    singles = sum(1 for c in clusters if c["size"] < min_size)
++    total = sum(c["size"] for c in clusters)
++    lines = [bar, "RECURRING CORRECTIONS — %d of %d items recur" % (
++        sum(c["size"] for c in rec), total), bar, ""]
++    if not rec:
++        lines.append("No correction appears twice. Nothing ranks above the rest.")
++    for n, c in enumerate(rec, 1):
++        span = ""
++        if c["first_seen"] and c["last_seen"]:
++            span = "  %s → %s" % (c["first_seen"][:10], c["last_seen"][:10])
++        lines.append("#%d  ×%d over %d day(s)%s   [%s]" % (
++            n, c["size"], c["distinct_days"], span, ", ".join(c["key_terms"])))
++        for m in c["messages"][:4]:
++            lines.append('      "%s"' % (m if len(m) <= 90 else m[:87] + "..."))
++        lines.append("")
++    if ineffective:
++        lines += ["─" * 60,
++                  "ALREADY WRITTEN DOWN, STILL CORRECTED — %d" % len(ineffective),
++                  "─" * 60]
++        for h in ineffective:
++            e = h["entry"]
++            lines.append("  %s:%s  \"%s\"" % (e.get("source_file"), e.get("line_number"), e.get("text")))
++            lines.append("      ↑ corrected ×%d anyway (%s → %s). Rewrite, move, or make it a hook?" % (
++                h["cluster"]["size"],
++                (h["cluster"]["first_seen"] or "?")[:10],
++                (h["cluster"]["last_seen"] or "?")[:10]))
++        lines.append("")
++    lines.append("%d one-off item(s) below — review last." % singles)
++    return "\n".join(lines)
+diff --git a/scripts/rank_queue.py b/scripts/rank_queue.py
+new file mode 100644
+index 0000000..c683bb1
+--- /dev/null
++++ b/scripts/rank_queue.py
+@@ -0,0 +1,68 @@
++#!/usr/bin/env python3
++"""Rank this project's learnings queue by recurrence. Read-only.
++
++Usage:
++    python3 rank_queue.py                    # current project's queue
++    python3 rank_queue.py --queue FILE       # any queue file
++    python3 rank_queue.py --json             # machine-readable, for /reflect
++    python3 rank_queue.py --no-memory        # skip the "still corrected" check
++
++Options:
++    --threshold X   similarity needed to join a cluster (default 0.6)
++    --min-size N    cluster size that counts as recurring (default 2)
++"""
++import argparse
++import json
++import os
++import sys
++from pathlib import Path
++
++sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
++
++from lib.reflect_utils import (  # noqa: E402
++    ensure_utf8_io,
++    get_queue_path,
++    load_queue_at,
++    read_all_memory_entries,
++)
++from lib.recurrence import (  # noqa: E402
++    cluster_learnings,
++    find_ineffective_entries,
++    format_report,
++)
++
++
++def main(argv=None) -> int:
++    ensure_utf8_io()
++    p = argparse.ArgumentParser(description=__doc__.splitlines()[0])
++    p.add_argument("--queue", help="queue file (default: this project's)")
++    p.add_argument("--json", action="store_true")
++    p.add_argument("--no-memory", action="store_true")
++    p.add_argument("--threshold", type=float, default=0.6)
++    p.add_argument("--min-size", type=int, default=2)
++    args = p.parse_args(argv)
++
++    # load_queue_at, not load_queue: no migrations, no side effects.
++    path = Path(args.queue) if args.queue else get_queue_path()
++    items = load_queue_at(path)
++    clusters = cluster_learnings(items, threshold=args.threshold)
++
++    ineffective = []
++    if not args.no_memory:
++        try:
++            ineffective = find_ineffective_entries(
++                clusters, read_all_memory_entries(),
++                threshold=args.threshold, min_size=args.min_size)
++        except Exception:  # memory discovery must never break ranking
++            ineffective = []
++
++    if args.json:
++        print(json.dumps({"queue": str(path), "clusters": clusters,
++                          "ineffective": ineffective}, indent=2))
++    else:
++        print(format_report(clusters, ineffective, min_size=args.min_size))
++    return 0
++
++
++if __name__ == "__main__":
++    sys.exit(main())
+diff --git a/tests/test_hook_e2e.py b/tests/test_hook_e2e.py
+new file mode 100644
+index 0000000..31edc22
+--- /dev/null
++++ b/tests/test_hook_e2e.py
+@@ -0,0 +1,74 @@
++#!/usr/bin/env python3
++"""Run capture_learning.py the way Claude Code runs it (BACKLOG #3).
++
++The CI smoke step pipes {"prompt":"test"}, which is not a correction, so the
++capture-and-write path never executes there. These tests pipe real
++corrections through the hook as a subprocess, against a throwaway HOME, and
++check the queue file lands where Claude Code's transcript says it should.
++Runs on all three CI platforms as part of the normal pytest step.
++"""
++import json
++import os
++import subprocess
++import sys
++import tempfile
++import unittest
++from pathlib import Path
++
++HOOK = Path(__file__).parent.parent / "scripts" / "capture_learning.py"
++
++
++class TestCaptureHookEndToEnd(unittest.TestCase):
++    def setUp(self):
++        self._tmp = tempfile.TemporaryDirectory()
++        self.home = Path(self._tmp.name)
++        self.folder = self.home / ".claude" / "projects" / "-work-demo-app"
++        self.transcript = self.folder / "0000-session.jsonl"
++        self.env = dict(os.environ)
++        # Path.home(): HOME on POSIX, USERPROFILE on Windows.
++        self.env["HOME"] = str(self.home)
++        self.env["USERPROFILE"] = str(self.home)
++        # Do NOT force UTF-8: the Windows bugs lived in the default codepage.
++        self.env.pop("PYTHONIOENCODING", None)
++        self.env.pop("PYTHONUTF8", None)
++
++    def tearDown(self):
++        self._tmp.cleanup()
++
++    def run_hook(self, prompt):
++        payload = json.dumps({"prompt": prompt, "transcript_path": str(self.transcript)})
++        return subprocess.run(
++            [sys.executable, str(HOOK)], input=payload.encode("utf-8"),
++            capture_output=True, env=self.env, cwd=str(self.home), timeout=30)
++
++    def queue(self):
++        return json.loads((self.folder / "learnings-queue.json").read_text(encoding="utf-8"))
++
++    def test_correction_is_written_to_transcript_folder(self):
++        r = self.run_hook("no, use python not python3")
++        self.assertEqual(r.returncode, 0)
++        self.assertEqual(r.stderr, b"")
++        self.assertIn(b"Learning captured", r.stdout)
++        q = self.queue()
++        self.assertEqual(len(q), 1)
++        self.assertEqual(q[0]["message"], "no, use python not python3")
++
++    def test_non_ascii_correction_survives_default_codepage(self):
++        r = self.run_hook("no, use the café-api not the old one")
++        self.assertEqual(r.returncode, 0)
++        self.assertEqual(r.stderr, b"")
++        self.assertEqual(self.queue()[0]["message"], "no, use the café-api not the old one")
++
++    def test_two_captures_append(self):
++        self.run_hook("no, use python not python3")
++        self.run_hook("don't use npm, use pnpm")
++        self.assertEqual(len(self.queue()), 2)
++
++    def test_non_correction_leaves_empty_queue(self):
++        r = self.run_hook("test")
++        self.assertEqual(r.returncode, 0)
++        self.assertEqual(self.queue(), [])
++
++
++if __name__ == "__main__":
++    unittest.main()
+diff --git a/tests/test_recurrence.py b/tests/test_recurrence.py
+new file mode 100644
+index 0000000..1ec13d3
+--- /dev/null
++++ b/tests/test_recurrence.py
+@@ -0,0 +1,164 @@
++#!/usr/bin/env python3
++"""Tests for recurrence ranking (BACKLOG #1)."""
++import json
++import subprocess
++import sys
++import tempfile
++import unittest
++from pathlib import Path
++
++SCRIPTS = Path(__file__).parent.parent / "scripts"
++sys.path.insert(0, str(SCRIPTS))
++
++from lib.recurrence import (  # noqa: E402
++    tokenize,
++    cluster_learnings,
++    find_ineffective_entries,
++    format_report,
++)
++
++
++def item(msg, ts="2026-09-01T10:00:00Z"):
++    return {"type": "auto", "message": msg, "timestamp": ts,
++            "project": "/p", "confidence": 0.7, "sentiment": "correction"}
++
++
++# Shaped after the 2026-09-19 census in BACKLOG.md: one rule restated four
++# ways over months, drowned in one-off redirects.
++QUEUE = [
++    item("no, use unipile mcp", "2026-06-02T09:00:00Z"),
++    item("no, lets discuss first, show me", "2026-06-03T09:00:00Z"),
++    item("actually, rename it to handler", "2026-06-10T09:00:00Z"),
++    item("use the unipile mcp for linkedin, not the browser", "2026-07-14T09:00:00Z"),
++    item("no, the other file", "2026-07-15T09:00:00Z"),
++    item("wrong file, look in config.py", "2026-07-20T09:00:00Z"),
++    item("actually go through unipile", "2026-08-01T09:00:00Z"),
++    item("no, smaller font on the header", "2026-08-05T09:00:00Z"),
++    item("why didn't you use unipile mcp?", "2026-09-11T09:00:00Z"),
++    item("stop, revert that", "2026-09-12T09:00:00Z"),
++    item("use pnpm not npm", "2026-09-13T09:00:00Z"),
++    item("no need to explain, just do it", "2026-09-14T09:00:00Z"),
++]
++
++
++# A noisier queue: mostly one-offs, a few true repeats, and shared generic
++# words ("tests", "commit", "file") that single-link used to chain into blobs.
++NOISY = [item(m, "2026-09-%02dT10:00:00Z" % (i % 28 + 1)) for i, m in enumerate("""\
++no, the other file
++wrong file, look in config.py
++stop, revert that
++don't touch the tests
++use pnpm not npm
++no, run the tests first
++don't commit yet
++use pnpm please, not npm
++no, write it in typescript
++don't commit to main, open a PR
++no, i said typescript
++actually, run tests before you commit
++nein, bitte auf deutsch antworten
++antworte auf deutsch""".splitlines())]
++
++
++class TestTokenize(unittest.TestCase):
++    def test_keeps_distinctive_tokens_whole(self):
++        self.assertEqual(tokenize("No, use gpt-5.1 in src/api"), ["gpt-5.1", "src/api"])
++
++    def test_drops_openers(self):
++        self.assertEqual(tokenize("actually, no, don't"), [])
++
++    def test_handles_none_and_non_ascii(self):
++        self.assertEqual(tokenize(None), [])
++        self.assertIn("größe", tokenize("nein, die Größe"))
++
++
++class TestClustering(unittest.TestCase):
++    def test_recurring_rule_ranks_first(self):
++        top = cluster_learnings(QUEUE)[0]
++        self.assertEqual(top["size"], 4)
++        self.assertIn("unipile", top["key_terms"])
++        self.assertEqual(top["distinct_days"], 4)
++        self.assertEqual(top["first_seen"][:10], "2026-06-02")
++        self.assertEqual(top["last_seen"][:10], "2026-09-11")
++
++    def test_one_off_redirects_stay_single(self):
++        clusters = cluster_learnings(QUEUE)
++        recurring = [c for c in clusters if c["size"] >= 2]
++        self.assertEqual(len(recurring), 1, [c["messages"] for c in recurring])
++
++    def test_every_item_lands_in_exactly_one_cluster(self):
++        idx = sorted(i for c in cluster_learnings(QUEUE) for i in c["indices"])
++        self.assertEqual(idx, list(range(len(QUEUE))))
++
++    def test_empty_and_malformed(self):
++        self.assertEqual(cluster_learnings([]), [])
++        out = cluster_learnings([{}, None, {"message": 3}, item("")])
++        self.assertEqual(sum(c["size"] for c in out), 4)
++
++    def test_same_day_repeats_count_one_day(self):
++        q = [item("use pnpm", "2026-09-01T10:00:00Z"),
++             item("pnpm please", "2026-09-01T11:00:00Z")]
++        c = cluster_learnings(q)[0]
++        self.assertEqual((c["size"], c["distinct_days"]), (2, 1))
++
++    def test_similarity_fn_is_pluggable(self):
++        # A semantic layer can replace the lexical one without touching
++        # the clustering: here, a stub that calls everything the same.
++        out = cluster_learnings(QUEUE, similarity_fn=lambda a, b: 1.0)
++        self.assertEqual(len(out), 1)
++
++
++    def test_no_chaining_through_generic_words(self):
++        clusters = cluster_learnings(NOISY)
++        for c in clusters:
++            if c["size"] >= 2:
++                # every recurring cluster shares at least one real term
++                self.assertTrue(c["key_terms"], c["messages"])
++        sets = [set(c["messages"]) for c in clusters]
++        self.assertIn({"use pnpm not npm", "use pnpm please, not npm"}, sets)
++        self.assertIn({"no, write it in typescript", "no, i said typescript"}, sets)
++        self.assertIn({"nein, bitte auf deutsch antworten", "antworte auf deutsch"}, sets)
++        self.assertIn({"stop, revert that"}, sets)
++        self.assertIn({"no, the other file"}, sets)
++
++
++class TestIneffectiveEntries(unittest.TestCase):
++    def test_recurring_correction_with_existing_rule_is_flagged(self):
++        memory = [
++            {"text": "Use the unipile MCP for LinkedIn", "source_file": "CLAUDE.md",
++             "source_type": "root", "line_number": 12},
++            {"text": "Prefer small commits", "source_file": "CLAUDE.md",
++             "source_type": "root", "line_number": 13},
++        ]
++        hits = find_ineffective_entries(cluster_learnings(QUEUE), memory)
++        self.assertEqual(len(hits), 1)
++        self.assertEqual(hits[0]["entry"]["line_number"], 12)
++
++    def test_singletons_are_never_flagged(self):
++        memory = [{"text": "use pnpm not npm", "source_file": "CLAUDE.md",
++                   "source_type": "root", "line_number": 3}]
++        self.assertEqual(find_ineffective_entries(cluster_learnings(QUEUE), memory), [])
++
++
++class TestReportAndCli(unittest.TestCase):
++    def test_report_mentions_count_and_span(self):
++        text = format_report(cluster_learnings(QUEUE))
++        self.assertIn("×4 over 4 day(s)", text)
++        self.assertIn("2026-06-02 → 2026-09-11", text)
++
++    def test_cli_is_read_only_and_emits_json(self):
++        with tempfile.TemporaryDirectory() as d:
++            q = Path(d) / "learnings-queue.json"
++            q.write_text(json.dumps(QUEUE), encoding="utf-8")
++            before = q.read_bytes()
++            out = subprocess.run(
++                [sys.executable, str(SCRIPTS / "rank_queue.py"),
++                 "--queue", str(q), "--json", "--no-memory"],
++                capture_output=True, text=True, encoding="utf-8", check=True)
++            data = json.loads(out.stdout)
++            self.assertEqual(data["clusters"][0]["size"], 4)
++            self.assertEqual(q.read_bytes(), before)
++
++
++if __name__ == "__main__":
++    unittest.main()

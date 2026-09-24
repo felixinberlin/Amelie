@@ -29,13 +29,13 @@ describe('Buch zur Dose — Registry', () => {
     for (const c of alleKapitel) {
       expect(c.path.startsWith('/'), c.path).toBe(false);
       expect(c.path.includes('://'), c.path).toBe(false);
-      expect(c.path).toMatch(/\.(md|pdf)$/);
+      expect(c.path).toMatch(/\.(md|pdf|patch)$/);
     }
   });
 
   it('deklariert die Art passend zur Dateiendung', () => {
     for (const c of alleKapitel) {
-      const erwartet = c.path.endsWith('.pdf') ? 'pdf' : 'md';
+      const erwartet = c.path.endsWith('.pdf') ? 'pdf' : c.path.endsWith('.patch') ? 'patch' : 'md';
       expect(c.kind, c.path).toBe(erwartet);
     }
   });
@@ -64,6 +64,10 @@ describe('Buch zur Dose — Zugriff', () => {
   it('findet ein Kapitel über seinen Slug', () => {
     const kapitel = findChapter('eurobirdcast', 'besetzung');
     expect(kapitel?.path).toBe('02-recherche/eurobirdcast-besetzung-2026-09-22.md');
+  });
+
+  it('führt den Patch als eigene Kapitelart', () => {
+    expect(findChapter('agent-postmortem-recorder', 'patch')?.kind).toBe('patch');
   });
 
   it('gibt undefined für einen unbekannten Slug', () => {

@@ -13,6 +13,8 @@ const SOURCES = import.meta.glob(
     '/01-konzept/**/*.md',
     '/02-recherche/**/*.md',
     '/06-suche/**/*.md',
+    '/07-demos/**/*.md',
+    '/07-demos/**/*.patch',
   ],
   { query: '?raw', import: 'default' }
 ) as Record<string, () => Promise<string>>;

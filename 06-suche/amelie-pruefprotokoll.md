@@ -23,6 +23,12 @@ Ergänzt `05-dosen/_entsorgt.md`: dort steht die Begründung für gepackte, dann
 
 ---
 
+## Nachprüfung Agent Postmortem Recorder — 24.09.2026 (auf Félix' „study it", method: ideenrunde)
+
+| Idee | Urteil | Beleg (kurz) | Prüfen ab |
+|---|---|---|---|
+| **Agent Postmortem Recorder** — Korrekturschleifen aus Session-Logs → `CLAUDE.md`-Patch (`agent-postmortem-recorder`) | **`besetzt`** (Präskriptions-Hälfte), Dose bleibt als **PR-Geschenk** | **claude-reflect** (Bayram Annakov, ~1,6k ★, v3.2.0, Repo geklont und gelesen @ 2c892ca): Hook erfasst Korrekturen, `/reflect` schreibt nach Freigabe in CLAUDE.md, Rules, Skills, AGENTS.md; Dedupe, Widersprüche, `--scan-history`. **claude-doctor** (~600 ★, README gelesen): `--rules` aus Transkripten. **claude-learn** (README gelesen): Score + Verfall. **RuleReceipt** (Artikel gelesen): Befolgungsprüfung. Der Dosensatz „Präskriptions-Hälfte unbesetzt" war falsch. **Restlücke = Backlog von claude-reflect selbst**: #1 Wiederkehr zuerst (Zensus 102 Einträge, ~16 echte Regeln), #3 Hook-E2E-Test. Plus Befund: Step 4 behandelt „Regel existiert, Korrektur kehrt wieder" als Duplikat. Patch gebaut (4 Dateien, 567 Zeilen, 340 Tests grün), Details `02-recherche/agent-postmortem-recorder-nachpruefung-2026-09-24.md`. Replay-Test und Routing als eigene „Lücken" verworfen (unbelegt bzw. vorhanden) | 03/2027 |
+
 ## Abdeckungs-Nachprüfung — 24.09.2026 (acht Dosen ohne Zeile, Katalog auf `ungeprüft`, method: ideenrunde)
 
 Anlass: Nebenbefund aus Runde 9 und Félix' Auftrag „make your own deep review … repariert". Mechanisch gegrept (Dateiname **und** H1-Titel gegen dieses Protokoll): **acht Dosen ohne Zeile** — sieben aus Runde 9 plus *Fugenduell: Asphaltritzen-Arena*, die nur scheinbar abgedeckt war, weil „Fugenduell" hier oft vorkommt. Sechs davon stammen aus dem Katalog in `src/data/ideas/` (Commit `b6e0fdb`, „neun fehlende Dosen"), wurden dort mit `status: 'frei'` geführt und nie gesucht. EuroBirdCast war am 22.09. gründlich geprüft (`02-recherche/eurobirdcast-*`), nur die Zeile fehlte.
@@ -323,7 +329,7 @@ Details in `amelie-matrix.md`, `05-dosen/_entsorgt.md`. Belege der Einzelzeilen 
 | Kiez-Lärmkarte | `verengt` (in Runde 4 herabgestuft, war frei) | Hush City (TU Berlin, von Berlin 2018 übernommen) bewertet Orte per Audioaufnahme; SoundPrint für Innenräume. Lücke: Tagesprofil/Ruhe-Fenster pro Straßenabschnitt, reine Pegel ohne Audio | 03/2027 |
 | Diffgeist | `frei` | personalisierte Release-Notes (nur was der eigene Code tatsächlich aufruft) nicht gefunden; Zeitfenster geschätzt auf Monate | 03/2027 |
 | Spec-Drift Detector | `frei` | Prosa-Spec-Drift 2026 öffentlich als offene Falle benannt, kein etabliertes Werkzeug; API-Schema-Drift-Markt (anderer Scope) ist besetzt | 03/2027 |
-| Agent Postmortem Recorder | `verengt` | Session-/Observability-Analyse reichlich vorhanden; kein Tool schließt zu konkretem `CLAUDE.md`-Regel-Patch | 03/2027 |
+| Agent Postmortem Recorder | `verengt` | Session-/Observability-Analyse reichlich vorhanden; kein Tool schließt zu konkretem `CLAUDE.md`-Regel-Patch | ~~03/2027~~ → siehe Nachprüfung 24.09.2026 |
 | Wet Ink (Plan) | `frei` | Escape Motions/Rebelle macht Desktop-Fluid-Aquarell professionell; keine WebGL2-Browser-Entsprechung gefunden | 09/2027 |
 | Pin Tumbler | `verengt` | Lockpicking-Spiele zahlreich (Mobile, Steam, itch.io); keins behandelt Fertigungstoleranzen als Lerngegenstand | 09/2027 |
 | Räucher-Sim | `frei` | Rauch-/Fluidsims und atemgesteuerte Installationen einzeln verbreitet; Kombination als freies Web-Toy nicht gefunden | 09/2028 |

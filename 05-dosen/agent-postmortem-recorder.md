@@ -1,69 +1,79 @@
 ---
 status: Available
 delivery_method: E-Mail
-target_maker: Claude-Code-Plugin-Community
+target_maker: claude-reflect
 ---
 # Agent Postmortem Recorder
 
-**Ein Satz:** Nicht ein weiteres Dashboard über Agent-Sessions, sondern die Konsequenz daraus — der konkrete `CLAUDE.md`-Patch gegen die Missverständnis-Klasse, die dich statistisch am meisten kostet.
+**Ein Satz:** Nicht ein weiteres Dashboard über Agent-Sessions, sondern die Konsequenz daraus: die `CLAUDE.md`-Zeile, die fehlt, und die Zeile, die dasteht und nachweislich nicht wirkt.
 
-**Stand:** September 2026 · **Prüfen ab:** März 2027 (schnelllebiges Feld)
-**Empfänger:** Claude-Code-Plugin-Community · nachrangig: bestehende Hook-Observability-Projekte (als PR), Anthropic DevRel
-**Verdikt:** 🔨 erst Skelett bauen, dann verschenken — ein Wochenende
+**Stand:** 24. September 2026 (Nachprüfung) · **Prüfen ab:** März 2027 (schnelllebiges Feld)
+**Empfänger:** **claude-reflect** (Bayram Annakov), als Pull Request · nachrangig: claude-doctor, RuleReceipt
+**Verdikt:** 🎁 **verschenken, nicht neu bauen**. Der Patch liegt in der Dose: `07-demos/agent-postmortem-recorder/claude-reflect-recurrence.patch`. Auf einem frischen Klon laufen 340 Tests grün.
 
 ---
 
 ## Das Problem
 
-Wer Agents ernsthaft nutzt, sammelt Frust in Form von Wiederholungen: derselbe falsch verstandene Auftrag, dieselbe Datei am falschen Ort, dieselbe Konvention, die nicht sitzt. Die Information darüber liegt vollständig in den Session-Logs. Sie wird nur nie zu einer Änderung.
-
-Die vorhandenen Werkzeuge halten an der falschen Stelle an. Sie messen: Tokens, Tool-Aufrufe, Read-Edit-Verhältnis, Kosten, Fehlerraten. Das beantwortet *was passiert ist*. Es beantwortet nicht die einzige Frage, die zu einer Verbesserung führt: **welche drei Zeilen hätten in der Instruktionsdatei stehen müssen, damit das nicht passiert?**
-
-Wer leidet: alle mit Multi-Agent-Setups, also genau die Leute, bei denen sich die Wiederholung multipliziert.
+Wer Agents ernsthaft nutzt, sammelt Frust in Form von Wiederholungen: derselbe falsch verstandene Auftrag, dieselbe Konvention, die nicht sitzt. Die Information darüber liegt vollständig in den Session-Logs, sie wird nur nie zu einer Änderung. Und wenn doch, bläht jede neue Regel die Instruktionsdatei auf. Niemand sagt, welche Regel schon dasteht und trotzdem nicht wirkt.
 
 ## Warum das jetzt geht
 
-1. **Die Logs sind strukturiert und lokal.** Hook-Events und Session-Transkripte liegen maschinenlesbar vor — man muss nichts instrumentieren, nur lesen.
-2. **Klassifikation von Fehlermustern über viele Sessions ist billig geworden.** „Diese 14 Korrekturen sind dieselbe Ursache" ist genau die Art Aufgabe, die vorher Handarbeit war.
-3. **Die Ausgabe ist ein Diff, kein Bericht.** Und ein Diff kann man anwenden. Das ist der Unterschied zwischen Einsicht und Verbesserung.
+1. **Die Logs sind strukturiert und lokal.** Hook-Events, Transkripte und die Korrektur-Queue von claude-reflect liegen maschinenlesbar vor.
+2. **„Diese vier Korrekturen sind dieselbe" ist billig geworden.** Früher war das Handarbeit, heute reicht Clustering über eine Queue von 100 Einträgen.
+3. **Ein Diff ist anwendbar, ein Bericht nicht.**
 
-## Skizze
+## Skizze (so im Patch umgesetzt)
 
-- Läuft lokal über die vorhandenen Session-Logs, keine Telemetrie, nichts verlässt die Maschine.
-- Sucht **Korrekturschleifen**: Stellen, an denen der Mensch den Agent zurückgepfiffen hat — Abbruch, Zurücknahme, „nein, mach es anders", erneuter Anlauf an derselben Datei.
-- Clustert diese über Sessions hinweg zu Ursachenklassen und sortiert nach Kosten (Zeit, Tokens, Anläufe).
-- Ausgabe: ein **Patch-Vorschlag** für `CLAUDE.md` bzw. die Skill- oder Regeldatei, pro Cluster eine Regel, mit Beleg — „diese Regel adressiert 14 Korrekturen aus 9 Sessions, hier drei Beispiele".
+- **Nach Wiederkehr ordnen.** Queue-Einträge, die dasselbe sagen, werden gruppiert, die wiederkehrenden kommen zuerst: „×4 über 4 Tage [unipile]". Einmal-Umlenkungen landen unten. Das setzt das **eigene Backlog #1** von claude-reflect um.
+- **„Aufgeschrieben, trotzdem korrigiert."** Eine wiederkehrende Gruppe, die einer bestehenden `CLAUDE.md`-Zeile entspricht, gilt heute als Duplikat, und das Tool bietet an, sie zu überspringen. Tatsächlich ist sie der Beleg, dass die Regel nicht wirkt: umschreiben, verschieben oder zum Hook machen. Das ist die Löschseite dieser Dose, belegt statt geraten.
+- **Den Hook so testen, wie Claude Code ihn aufruft.** Das ist Backlog #3: Die CI hat den Schreibpfad nie ausgeführt.
 
-**Nicht dabei:** kein Live-Dashboard, keine Cloud, keine Scores. Wer Observability will, hat sie schon.
+**Nicht dabei:** keine neuen Regex-Muster, keine automatischen Löschungen, kein Replay-Test, keine Telemetrie. Nur lesen, nur die Standardbibliothek.
 
 ## Erster Schritt
 
-**Ticket: Korrekturschleifen finden und zählen.**
-
-Ein Skript, das lokale Session-Logs liest und die zehn häufigsten Korrekturmuster ausgibt — noch ohne Patch-Generierung, nur die Liste mit Häufigkeit und Beispiel.
-
-**Fertig, wenn:** die Liste beim Durchlesen wehtut, also etwas zeigt, das man selbst nicht gewusst hätte.
+**Ticket:** Repo forken, Patch anwenden, Pull Request mit dem Text unten öffnen.
+**Fertig, wenn:** die CI auf allen drei Plattformen grün ist, auch auf `windows-latest`, das hier nicht getestet werden konnte.
 
 ## Wo es kippt
 
-**Das Ding kann eine Instruktionsdatei aufblähen, die dadurch schlechter wird.** Jede zusätzliche Regel konkurriert mit allen anderen um Aufmerksamkeit — eine `CLAUDE.md` mit 200 Zeilen wird schlechter befolgt als eine mit 30. Ein Werkzeug, das automatisch Regeln vorschlägt, hat eine eingebaute Tendenz zum Wuchern. **Gegenmaßnahme: Es muss auch Regeln zum Löschen vorschlagen** — welche bestehende Regel wurde nie gebraucht, welche wird ohnehin ignoriert. Ohne die Löschseite ist es netto schädlich.
+**Wortbasiert, nicht bedeutungsbasiert.** Zweiergruppen sind manchmal Zufall („smaller", „api"). Der Patch ordnet nur, er verwirft nichts. Der Parameter `similarity_fn` erlaubt es, später die semantische Schicht einzuhängen, die das Repo schon hat.
 
-**Zweites Risiko:** Korrelation statt Ursache. Dass der Mensch korrigiert hat, heißt nicht, dass eine Regel gefehlt hat — manchmal war die Aufgabe einfach unklar. Der Patch-Vorschlag muss als Hypothese auftreten, nicht als Befund.
+**Korrelation statt Ursache.** Die Korrekturen können älter sein als die Regel. Der Bericht zeigt deshalb das erste und das letzte Datum, und der Mensch entscheidet.
 
 ## Wer es schon versucht hat
 
-Recherche September 2026: Die **Analyse-Hälfte ist besetzt.** Es gibt Session-Analyzer für Claude-Code-Logs (Denktiefe, Read/Edit-Verhältnis, Kosten, Verhaltenssignale), OpenTelemetry-Setups, Hook-basierte Live-Dashboards und Transkript-Analyse-Skills.
-
-**Die Präskriptions-Hälfte ist unbesetzt.** Kein gefundenes Werkzeug schließt den Kreis von „hier ist das Muster" zu „hier ist die Regeländerung, wende sie an". Die Dose ist dadurch enger als ursprünglich gedacht — und schärfer: Sie ist ausdrücklich **kein** Observability-Projekt, sondern ein Patch-Generator, der auf vorhandener Observability aufsetzen kann.
-
-## Vorarbeit
-
-- Bestehende Hook-Event- und Session-Analyse-Projekte — als Datenquelle und als Ort für einen PR statt für einen Wunsch.
-- OpenTelemetry-Integrationen für Agent-Sessions — die Messseite, auf der man aufsetzen kann.
-- Das Claude-Code-Plugin-Ökosystem — hier *ist* Bauen das Verschenken: veröffentlichen, fertig.
+Die Präskriptions-Hälfte ist **besetzt**, anders als die erste Fassung behauptete. [claude-reflect](https://github.com/BayramAnnakov/claude-reflect) (~1,6k ★) erfasst Korrekturen und schreibt sie nach Freigabe in CLAUDE.md, Regeldateien, Skills und AGENTS.md. [claude-doctor](https://github.com/millionco/claude-doctor) erzeugt Regeln aus Transkripten, [claude-learn](https://github.com/OutcomefocusAi/claude-learn) bewertet Regeln und lässt sie verfallen, [RuleReceipt](https://dev.to/rulereceipt/i-measured-whether-claude-code-actually-follows-my-claudemd-25ao) prüft, ob Regeln befolgt werden. Offen war nur, was das Backlog von claude-reflect selbst misst. Die Details stehen im Buch zur Dose (`02-recherche/agent-postmortem-recorder-nachpruefung-2026-09-24.md`).
 
 ---
 
-Diese Idee gehört niemandem. Nimm sie, bau sie, verkauf sie — du schuldest mir nichts, nicht einmal eine Antwort. Wenn du eines Tages eine Idee hast, die du nicht bauen wirst, gib sie jemandem, der es tut.
+## Beispiel-PR, als Mail geschrieben
+
+> **An:** Bayram Annakov, als Pull Request auf github.com/BayramAnnakov/claude-reflect
+> **Betreff:** Rank /reflect queue by recurrence (BACKLOG #1) + end-to-end hook test (BACKLOG #3)
+>
+> Hi Bayram,
+>
+> your BACKLOG.md is the best issue tracker I've read this year: everything in it is measured, and each item says what it costs to leave it. So this PR does two things from it and adds nothing of mine.
+>
+> **#1: recurrence ranking.** `scripts/rank_queue.py` groups queue items that say the same thing and shows the recurring ones first. Your unipile case, four wordings across three months among eight one-offs, comes out as `×4 over 4 day(s) [unipile]`, with the rest collapsed under "8 one-off items, review last". It is stdlib only and read-only (it uses `load_queue_at`, so no migrations run), and it adds no new regex, in line with #2.
+>
+> One more signal came out of it at no extra cost: a recurring cluster that already matches a CLAUDE.md entry. Step 4 currently offers "skip" there. I think that is backwards. If the rule is written down and the user keeps correcting the same thing, the entry isn't working. The report flags it as "already written down, still corrected ×4: rewrite, move, or make it a hook?", with first and last dates, because the corrections may be older than the entry.
+>
+> **#3: end-to-end hook test.** `tests/test_hook_e2e.py` sends real corrections through `capture_learning.py` as a subprocess, with a throwaway HOME and the platform's default codepage. It runs inside the existing pytest step, so the workflow doesn't change. I could only run it on Linux. The Windows runner is where it matters.
+>
+> In numbers: 4 new files, 567 lines, no edits to existing files, and 322 → 340 tests passing. `/reflect` behaves the same until you add the roughly 10-line "Step 4.5" from the README, or not at all if you'd rather not.
+>
+> Known limit: it matches words, not meaning, so some pairs are coincidences. It only reorders the queue and never drops anything. Things I deliberately left out: replay-testing rules, automatic deletion, "never used" detection (RuleReceipt already covers that), and new regexes.
+>
+> Happy to change anything or split this into two PRs. You're also welcome to take only the parts you like. No reply owed.
+>
+> Félix
+> Berlin · github.com/felixinberlin
+
+---
+
+Diese Idee gehört niemandem. Nimm sie, bau sie, verkauf sie. Du schuldest mir nichts, nicht einmal eine Antwort. Wenn du eines Tages eine Idee hast, die du nicht bauen wirst, gib sie jemandem, der es tut.
 
 CC0 / Public Domain. — Félix, Berlin · github.com/felixinberlin

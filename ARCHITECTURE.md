@@ -124,7 +124,7 @@ Two design choices are deliberate:
 1. **No copy into `public/`.** Chapters are read from the repository through `import.meta.glob` (`src/utils/bookSources.ts`), lazily, one chunk per file. A copy would be a second version of the truth that silently drifts; this way the file in the repo is the only one, and a wrong path fails the build instead of 404-ing on the reader.
 2. **`npm run check:books` fails the lint on a dead path.** Rename a research file without updating the registry and CI stops. For a project whose entire value is verifiability, a chapter link pointing at nothing is the most expensive small bug available.
 
-Chapters link to the file on GitHub *and* to its commit history — for the recipient, the history is part of the evidence: it shows when a claim was checked and whether a verdict was later corrected. Non-Markdown chapters (`kind: 'pdf'`) are listed and linked, not rendered.
+Chapters link to the file on GitHub *and* to its commit history — for the recipient, the history is part of the evidence: it shows when a claim was checked and whether a verdict was later corrected. Non-Markdown chapters (`kind: 'pdf'`) are listed and linked, not rendered. Patch chapters (`kind: 'patch'`, a unified diff under `07-demos/`) are rendered as a coloured, fully escaped diff with a download link (`src/utils/patchHtml.ts`) — so a tin can carry the code it gives away, not just a description of it.
 
 Deep link to a chapter: `#dose=<id>&buch=<slug>`.
 

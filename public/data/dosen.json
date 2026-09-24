@@ -536,48 +536,55 @@
     "id": "agent-postmortem-recorder",
     "title": "Agent Postmortem Recorder",
     "titleEn": "Agent Postmortem Recorder",
-    "oneLinerDe": "Nicht ein weiteres Dashboard über Agent-Sessions, sondern die Konsequenz daraus — der konkrete CLAUDE.md-Patch gegen die Missverständnis-Klasse, die dich statistisch am meisten kostet.",
-    "oneLinerEn": "Not another agent analytics dashboard, but the actionable consequence: a concrete CLAUDE.md patch targeting the mistake class costing you the most time and tokens.",
+    "oneLinerDe": "Nicht ein weiteres Dashboard über Agent-Sessions, sondern die Konsequenz: die CLAUDE.md-Zeile, die fehlt, und die Zeile, die dasteht und nachweislich nicht wirkt — als fertiger Patch für claude-reflect.",
+    "oneLinerEn": "Not another agent analytics dashboard, but the consequence: the CLAUDE.md line that is missing, and the line that is there and demonstrably not working — as a ready patch for claude-reflect.",
     "date": "September 2026",
     "reviewAfter": "März 2027",
-    "recipientsDe": "Claude-Code-Plugin-Community · bestehende Hook-Observability-Projekte · Anthropic DevRel",
-    "recipientsEn": "Claude Code Plugin Community · existing Hook Observability projects · Anthropic DevRel",
+    "recipientsDe": "claude-reflect (Bayram Annakov), als Pull Request · nachrangig: claude-doctor, RuleReceipt",
+    "recipientsEn": "claude-reflect (Bayram Annakov), as a pull request · secondary: claude-doctor, RuleReceipt",
     "domain": "tools",
-    "verdict": "build_first",
+    "verdict": "gift",
     "status": "gepackt",
     "tags": [
       "DevTools",
       "AI Agents",
       "Claude Code",
-      "Observability",
-      "Refactoring"
+      "CLAUDE.md",
+      "Patch"
     ],
-    "problemDe": "In Multi-Agent-Setups wiederholen sich Fehler: dieselben falschen Annahmen, dieselben Konventionen, die ignoriert werden. Dashboards zeigen nur Token-Verbrauch, aber niemand generiert den 3-Zeilen-Patch für die Instruktionsdatei.",
-    "problemEn": "Multi-agent developer setups suffer from repetitive regression loops. Observability tools graph token spend, but never generate the exact 3-line rule patch needed in CLAUDE.md to permanently inoculate against the recurring error.",
+    "problemDe": "Wer Agents ernsthaft nutzt, korrigiert dieselben Dinge immer wieder. Die Korrekturen liegen in den Logs, werden aber nie zur Regel — und wenn doch, bläht jede neue Regel die Instruktionsdatei auf, ohne dass jemand sagt, welche bestehende Regel nicht wirkt.",
+    "problemEn": "Anyone using agents seriously corrects the same things again and again. The corrections sit in the logs but never become rules — and when they do, every new rule bloats the instruction file while nobody says which existing rule is not working.",
     "whyNowDe": [
-      "Session-Logs und Hook-Events liegen lokal und strukturiert vor.",
-      "Clustering von Korrekturschleifen („Mensch greift ein\") ist mit LLMs trivial.",
-      "Diffs sind direkt anwendbar, Berichte verstauben."
+      "Hook-Events, Transkripte und die Korrektur-Queue von claude-reflect liegen lokal und maschinenlesbar vor.",
+      "„Diese vier Korrekturen sind dieselbe\" ist über eine Queue von 100 Einträgen billig geworden.",
+      "Ein Diff ist anwendbar, ein Bericht nicht."
     ],
     "whyNowEn": [
-      "Session transcripts and hook logs are structured and stored locally.",
-      "Clustering human correction loops across sessions is fast with local models.",
-      "A rule diff can be merged immediately, whereas markdown reports get ignored."
+      "Hook events, transcripts and the claude-reflect correction queue are local and machine-readable.",
+      "\"These four corrections are the same one\" is now cheap over a 100-item queue.",
+      "A diff can be applied; a report cannot."
     ],
-    "sketchDe": "Lokales Skript scannt Session-Logs nach Abbruch- und Korrekturmustern („nein, mach es anders\"). Gruppiert nach Ursachen und generiert CLAUDE.md-Patch-Vorschläge sowie Vorschläge zum Entfernen toter Regeln.",
-    "sketchEn": "Local CLI inspects session logs for human override commands. Clusters failure modes and proposes CLAUDE.md rule patches while also flagging dead rules for deletion.",
+    "sketchDe": "Im Patch umgesetzt: (1) Queue nach Wiederkehr ordnen — „×4 über 4 Tage [unipile]\" zuerst, Einmal-Umlenkungen unten (Backlog #1 von claude-reflect). (2) „Aufgeschrieben, trotzdem korrigiert\": wiederkehrende Korrektur, die einer bestehenden CLAUDE.md-Zeile entspricht, ist kein Duplikat, sondern Beleg, dass die Regel nicht wirkt. (3) End-to-End-Test des Capture-Hooks (Backlog #3). Nur Standardbibliothek, nur lesend, keine neuen Regex.",
+    "sketchEn": "Implemented in the patch: (1) rank the queue by recurrence — \"×4 over 4 days [unipile]\" first, one-off redirects last (claude-reflect backlog #1). (2) \"Already written down, still corrected\": a recurring correction matching an existing CLAUDE.md line is not a duplicate but evidence the rule does not work. (3) End-to-end test of the capture hook (backlog #3). Stdlib only, read-only, no new regexes.",
     "firstStepDe": {
-      "ticket": "Korrekturschleifen finden und zählen.",
-      "criteria": "Gibt die 10 häufigsten menschlichen Korrekturen aus den letzten 20 Sessions mit Häufigkeit und Zitat aus."
+      "ticket": "claude-reflect forken, Patch aus dem Buch der Dose anwenden, PR mit der Mail unten öffnen.",
+      "criteria": "CI grün auf allen drei Plattformen, auch windows-latest (hier nicht getestet)."
     },
     "firstStepEn": {
-      "ticket": "Find and count correction loops.",
-      "criteria": "Parses last 20 sessions and outputs top 10 human override patterns with token cost and context citation."
+      "ticket": "Fork claude-reflect, apply the patch from the tin's book, open a PR with the email below.",
+      "criteria": "CI green on all three platforms, including windows-latest (not tested here)."
     },
-    "failureModeDe": "Instruktions-Wucher: Eine 200-Zeilen-Regeldatei wird schlechter befolgt als eine kurze. Gegenmaßnahme: Das Tool muss zwingend auch ungenutzte Regeln zum Löschen vorschlagen.",
-    "failureModeEn": "Rule bloat: A 200-line instruction file degrades model adherence. Remedy: The tool must symmetrically propose dead rule deletions.",
-    "priorArtDe": "Verschiedene Hook-Observability-Tools listen Traces und Events, bieten aber keine automatische Regelableitung.",
-    "priorArtEn": "Various hook observability tools visualize traces and telemetry, but none synthesize concise instruction file patches."
+    "failureModeDe": "Wortbasiert, nicht bedeutungsbasiert: Zweiergruppen sind manchmal Zufall („smaller\", „api\"). Der Patch ordnet nur und verwirft nichts; similarity_fn nimmt später die semantische Schicht auf. Korrekturen können älter sein als die Regel — deshalb erstes und letztes Datum, der Mensch entscheidet.",
+    "failureModeEn": "Word-based, not meaning-based: pairs are sometimes coincidences (\"smaller\", \"api\"). The patch only reorders and drops nothing; similarity_fn takes the semantic layer later. Corrections may predate the rule — hence first and last dates, and a human decides.",
+    "priorArtDe": "Besetzt (Nachprüfung 24.09.2026): claude-reflect (~1,6k ★) schreibt erfasste Korrekturen nach Freigabe in CLAUDE.md, Regeldateien, Skills, AGENTS.md; claude-doctor erzeugt Regeln aus Transkripten; claude-learn bewertet und lässt Regeln verfallen; RuleReceipt prüft Befolgung. Offen war nur, was das Backlog von claude-reflect selbst misst.",
+    "priorArtEn": "Taken (re-check 24.09.2026): claude-reflect (~1.6k ★) writes captured corrections into CLAUDE.md, rule files, skills and AGENTS.md after review; claude-doctor generates rules from transcripts; claude-learn scores and decays rules; RuleReceipt checks compliance. Only what claude-reflect's own backlog measures was open.",
+    "emailTemplate": {
+      "to": "Pull Request auf github.com/BayramAnnakov/claude-reflect — keine Mailadresse raten",
+      "subjectDe": "Rank /reflect queue by recurrence (BACKLOG #1) + end-to-end hook test (BACKLOG #3)",
+      "subjectEn": "Rank /reflect queue by recurrence (BACKLOG #1) + end-to-end hook test (BACKLOG #3)",
+      "bodyDe": "Hi Bayram,\n\nyour BACKLOG.md is the best issue tracker I've read this year: measured, with the cost of leaving each thing spelled out. So this PR does only two things from it, and nothing of mine.\n\n#1 — recurrence ranking. scripts/rank_queue.py groups queue items that say the same thing and shows the recurring ones first. Your unipile case — four wordings across three months among eight one-offs — comes out as \"×4 over 4 day(s) [unipile]\", with the rest collapsed as \"8 one-off items — review last\". Stdlib only, read-only (load_queue_at, no migrations), no new regex (per #2).\n\nOne thing fell out of it for free: a recurring cluster that already matches a CLAUDE.md entry. Step 4 currently offers \"skip\" there. I think it's the opposite — the rule exists and the user keeps correcting anyway, so the entry isn't working. The report flags it as \"already written down, still corrected ×4 — rewrite, move, or make it a hook?\", with first/last dates since the corrections may predate the entry.\n\n#3 — end-to-end hook test. tests/test_hook_e2e.py pipes real corrections through capture_learning.py as a subprocess, throwaway HOME, default codepage. Runs inside the existing pytest step; no workflow change. I could only run Linux — the Windows runner is where it earns its keep.\n\nNumbers: 4 new files, 567 lines, zero edits to existing files, 322 → 340 tests passing. /reflect is unchanged until you add the ~10-line \"Step 4.5\" from the README — or don't.\n\nKnown limit: word-based, so some pairs are coincidences. It only reorders; nothing is dropped. Deliberately not done: replay-testing rules, automatic deletion, \"never used\" detection (RuleReceipt's lane), new regexes.\n\nHappy to change anything, split it in two, or have you take only the parts you like. No reply owed.\n\nFélix\nBerlin · github.com/felixinberlin",
+      "bodyEn": "Hi Bayram,\n\nyour BACKLOG.md is the best issue tracker I've read this year: measured, with the cost of leaving each thing spelled out. So this PR does only two things from it, and nothing of mine.\n\n#1 — recurrence ranking. scripts/rank_queue.py groups queue items that say the same thing and shows the recurring ones first. Your unipile case — four wordings across three months among eight one-offs — comes out as \"×4 over 4 day(s) [unipile]\", with the rest collapsed as \"8 one-off items — review last\". Stdlib only, read-only (load_queue_at, no migrations), no new regex (per #2).\n\nOne thing fell out of it for free: a recurring cluster that already matches a CLAUDE.md entry. Step 4 currently offers \"skip\" there. I think it's the opposite — the rule exists and the user keeps correcting anyway, so the entry isn't working. The report flags it as \"already written down, still corrected ×4 — rewrite, move, or make it a hook?\", with first/last dates since the corrections may predate the entry.\n\n#3 — end-to-end hook test. tests/test_hook_e2e.py pipes real corrections through capture_learning.py as a subprocess, throwaway HOME, default codepage. Runs inside the existing pytest step; no workflow change. I could only run Linux — the Windows runner is where it earns its keep.\n\nNumbers: 4 new files, 567 lines, zero edits to existing files, 322 → 340 tests passing. /reflect is unchanged until you add the ~10-line \"Step 4.5\" from the README — or don't.\n\nKnown limit: word-based, so some pairs are coincidences. It only reorders; nothing is dropped. Deliberately not done: replay-testing rules, automatic deletion, \"never used\" detection (RuleReceipt's lane), new regexes.\n\nHappy to change anything, split it in two, or have you take only the parts you like. No reply owed.\n\nFélix\nBerlin · github.com/felixinberlin"
+    }
   },
   {
     "id": "bugs-spaced-repetition",

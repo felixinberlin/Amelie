@@ -8,6 +8,7 @@ import {
   FileText,
   History,
   Loader2,
+  Download,
   AlertTriangle,
 } from 'lucide-react';
 import { Language } from '../types';
@@ -15,9 +16,11 @@ import { BookChapter } from '../data/doseBooks';
 import {
   getRepoFileUrl,
   getRepoHistoryUrl,
+  getRepoRawUrl,
   hasSource,
   loadSource,
 } from '../utils/bookSources';
+import { patchToHtml } from '../utils/patchHtml';
 import { parseBookSlugFromUrl } from '../utils/doseUrl';
 
 interface DoseBookProps {
@@ -48,7 +51,9 @@ export const DoseBook: React.FC<DoseBookProps> = ({
   const [state, setState] = useState<'idle' | 'loading' | 'error'>('idle');
 
   const chapter = chapters[index];
-  const readable = chapter && chapter.kind === 'md' && hasSource(chapter.path);
+  const readable =
+    chapter && (chapter.kind === 'md' || chapter.kind === 'patch') && hasSource(chapter.path);
+  const isPatch = chapter?.kind === 'patch';
 
   // Ein Kapitel-Link, der im selben Tab geöffnet wird, ändert nur den Hash —
   // die Komponente wird dabei nicht neu gebaut. Ohne diesen Zuhörer bliebe der
@@ -82,7 +87,7 @@ export const DoseBook: React.FC<DoseBookProps> = ({
     loadSource(chapter.path)
       .then((raw) => {
         if (cancelled) return;
-        setHtml(marked.parse(raw) as string);
+        setHtml(isPatch ? patchToHtml(raw) : (marked.parse(raw) as string));
         setState('idle');
       })
       .catch(() => {
@@ -94,7 +99,7 @@ export const DoseBook: React.FC<DoseBookProps> = ({
     // onChapterChange bewusst nicht in den Abhängigkeiten: eine neue
     // Funktionsidentität pro Render würde das Kapitel endlos neu laden.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [chapter?.path, readable]);
+  }, [chapter?.path, readable, isPatch]);
 
   const toc = useMemo(
     () =>
@@ -150,6 +155,7 @@ export const DoseBook: React.FC<DoseBookProps> = ({
                     <div className="font-mono-code text-[10px] text-[#9a8570] mt-1">
                       {c.date}
                       {c.kind === 'pdf' && ' · PDF'}
+                      {c.kind === 'patch' && ' · Patch'}
                     </div>
                   </div>
                 </div>
@@ -170,11 +176,26 @@ export const DoseBook: React.FC<DoseBookProps> = ({
               <ExternalLink className="w-3 h-3 shrink-0" />
               {chapter.path}
             </a>
+            {isPatch && (
+              <a
+                href={getRepoRawUrl(chapter.path)}
+                download
+                className="inline-flex items-center gap-1.5 font-typewriter text-[11px] font-bold text-[#8b1e2f] hover:text-[#c94b32] ml-auto"
+                title={
+                  isDe
+                    ? 'Rohdatei herunterladen, dann: git apply <datei>'
+                    : isEs ? 'Descargar el archivo y luego: git apply <archivo>' : 'Download the raw file, then: git apply <file>'
+                }
+              >
+                <Download className="w-3 h-3" />
+                {isDe ? 'Patch laden' : isEs ? 'Descargar parche' : 'Download patch'}
+              </a>
+            )}
             <a
               href={getRepoHistoryUrl(chapter.path)}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 font-typewriter text-[11px] text-[#5c4a3d] hover:text-[#8b1e2f] ml-auto"
+              className={`inline-flex items-center gap-1.5 font-typewriter text-[11px] text-[#5c4a3d] hover:text-[#8b1e2f] ${isPatch ? '' : 'ml-auto'}`}
               title={
                 isDe
                   ? 'Commit-Historie: wann was geprüft und was korrigiert wurde'

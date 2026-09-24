@@ -45,19 +45,18 @@ Zu jeder Idee aus `ideas-neue-projekte.md`: wer davon profitiert, warum ausgerec
 
 ---
 
-### Agent Postmortem Recorder — S · 🔨
+### Agent Postmortem Recorder — S · 🎁 (Nachprüfung 24.09.2026)
 
-**Wer profitiert:** Jeder, der Claude Code ernsthaft nutzt, besonders in Multi-Agent-Setups wie deinem. Die existierende Observability-Szene zeigt dir *dass* etwas schiefging (OTel-Traces, Hook-Event-Dashboards) — aber niemand liefert die Konsequenz: den konkreten `CLAUDE.md`-Patch gegen die Missverständnis-Klasse, die statistisch am teuersten ist.
+**Wer profitiert:** Jeder, der Claude Code ernsthaft nutzt. Nicht mehr „den Patch-Generator bauen": den gibt es. **claude-reflect** (~1,6k ★) erfasst Korrekturen per Hook und schreibt sie nach Freigabe in CLAUDE.md. Offen war, was dessen eigenes `BACKLOG.md` misst: Wiederkehr zuerst zeigen (#1) und den Capture-Hook so testen, wie Claude Code ihn aufruft (#3). Dazu fällt ein Befund ab: Eine Korrektur, die wiederkehrt, obwohl die Regel schon dasteht, ist kein Duplikat, sondern der Beleg, dass die Regel nicht wirkt.
 
 **Empfänger:**
-- **Die Claude-Code-Plugin-/Skill-Community** — der billigste Verbreitungsweg, den es gibt: als Plugin veröffentlichen, fertig.
-- **Bestehende Hook-Observability-Projekte** (z. B. `claude-code-multi-agent-observability`) — als PR, nicht als Wunsch.
-- **Anthropic DevRel** — Feature-Feedback ist erwünscht, und „Agent-Postmortem" ist eine Kategorie, die sie selbst noch nicht besetzt haben.
+- **claude-reflect (Bayram Annakov)** — als Pull Request mit fertigem Patch (`07-demos/agent-postmortem-recorder/`). Das ist der Empfänger mit Reichweite, der die schwierige Hälfte (Erfassung) schon gebaut hat.
+- nachrangig: **claude-doctor** (Regeln aus Transkripten), **RuleReceipt** (Befolgungsprüfung — die Spur für „nie gebrauchte Regel").
+- ~~Anthropic DevRel~~, ~~Hook-Observability-Repos~~: gestrichen, das Feld ist nicht unbesetzt.
 
-**Kanal:** Bauen (ein Wochenende), veröffentlichen, in den einschlägigen Directories listen. Bei diesem hier *ist* Bauen das Verschenken.
+**Kanal:** Pull Request. Keine Mailadresse raten.
 
-**Hook:** „Observability für Agents sagt dir, dass die Session schiefging. Sie sagt dir nicht, welche drei Zeilen in CLAUDE.md gefehlt haben — obwohl genau das in den Logs steht."
-
+**Hook:** „Wenn der Nutzer korrigiert, obwohl die Regel schon dasteht, ist sie kein Duplikat — sie wirkt nicht."
 ---
 
 ### Diffgeist — S · 🎁
@@ -366,7 +365,7 @@ Zu jeder Idee aus `ideas-neue-projekte.md`: wer davon profitiert, warum ausgerec
 | Diffgeist | 🎁 | Andrew Nesbitt (Ecosyste.ms) | **gepackt** |
 | Echter Zufall als Service | 🔨 | infnoise / leetronics | **gepackt** |
 | Bugs → Spaced Repetition | 🔨 | Anki-Ökosystem | **gepackt** |
-| Agent Postmortem Recorder | 🔨 | Claude-Code-Plugin-Community | **gepackt**, verengt |
+| Agent Postmortem Recorder | 🎁 | claude-reflect (PR) | **gepackt**, `besetzt` → als PR verschenken; Patch liegt bei (24.09.2026) |
 | Räucher-Sim | 🎁 bauen | Web-Toy-Öffentlichkeit | **gepackt** |
 | Kristallwachstum 3D | 🎁 | Nervous System | **gepackt**, stark verengt |
 | Tarot als Zustandsmaschine | 🎁 Spec | Indie-Devs / Schema-Sammlungen | **gepackt**, verengt |

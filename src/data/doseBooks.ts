@@ -11,7 +11,8 @@
  * still, sobald jemand eine Datei umbenennt.
  */
 
-export type ChapterKind = 'md' | 'pdf';
+/** md = gerendert · patch = als Diff gerendert, mit Download · pdf = nur verlinkt */
+export type ChapterKind = 'md' | 'pdf' | 'patch';
 
 export interface BookChapter {
   /** Stabiler Anker für die URL: #dose=<id>&buch=<slug> */
@@ -28,6 +29,38 @@ export interface BookChapter {
 }
 
 export const DOSE_BOOKS: Record<string, BookChapter[]> = {
+  'agent-postmortem-recorder': [
+    {
+      slug: 'nachpruefung',
+      path: '02-recherche/agent-postmortem-recorder-nachpruefung-2026-09-24.md',
+      titleDe: 'Nachprüfung: die Präskriptions-Hälfte ist besetzt',
+      titleEn: 'Re-check: the prescription half is taken',
+      noteDe: 'claude-reflect (~1,6k ★) schreibt Korrekturen schon in CLAUDE.md — offen ist nur, was dessen eigenes Backlog misst.',
+      noteEn: 'claude-reflect (~1.6k ★) already writes corrections into CLAUDE.md — what is open is what its own backlog measures.',
+      date: '24.09.2026',
+      kind: 'md',
+    },
+    {
+      slug: 'fuer-die-maintainer',
+      path: '07-demos/agent-postmortem-recorder/README.md',
+      titleDe: 'Für die Maintainer (englisch)',
+      titleEn: 'For the maintainers',
+      noteDe: 'Was der Patch tut, was er bewusst nicht verlangt, und der eine Schritt, um ihn in /reflect einzuhängen.',
+      noteEn: 'What the patch does, what it deliberately does not ask for, and the one step to wire it into /reflect.',
+      date: '24.09.2026',
+      kind: 'md',
+    },
+    {
+      slug: 'patch',
+      path: '07-demos/agent-postmortem-recorder/claude-reflect-recurrence.patch',
+      titleDe: 'Der Patch für claude-reflect',
+      titleEn: 'The patch for claude-reflect',
+      noteDe: 'Vier neue Dateien, 567 Zeilen, nur Standardbibliothek; mit git apply auf main 2c892ca, 340 Tests grün.',
+      noteEn: 'Four new files, 567 lines, stdlib only; git apply onto main 2c892ca, 340 tests green.',
+      date: '24.09.2026',
+      kind: 'patch',
+    },
+  ],
   eurobirdcast: [
     {
       slug: 'empfaenger',

@@ -261,6 +261,16 @@
   font-size: 0.78rem;
   line-height: 1.55;
 }
+/* Patch-Kapitel: Unified Diff, zeilenweise eingefärbt (src/utils/patchHtml.ts) */
+.amelie-book-prose pre.amelie-diff code > span { display: block; white-space: pre; }
+.amelie-book-prose .diff-file { color: #f6bd60; font-weight: 700; margin-top: 0.9rem; }
+.amelie-book-prose .diff-meta { color: #a8a29e; }
+.amelie-book-prose .diff-hunk { color: #93c5fd; }
+.amelie-book-prose .diff-add { color: #bbf7d0; background: rgba(34, 197, 94, 0.10); }
+.amelie-book-prose .diff-del { color: #fecaca; background: rgba(239, 68, 68, 0.12); }
+.amelie-book-prose .diff-count-add { color: #15803d; font-weight: 700; }
+.amelie-book-prose .diff-count-del { color: #b91c1c; font-weight: 700; }
+
 .amelie-book-prose hr {
   margin: 1.75rem 0;
   border: 0;
