@@ -293,8 +293,8 @@ export const AI_NATIVE_FRONTIER_IDEAS: CandidateIdea[] = [
     conceptEn: 'A phone in the middle of the dinner table listens offline for a word list everyone agreed on beforehand (e.g. "election", "party"). When one is spoken it blows a referee whistle and shows a yellow card, red on repeat. No audio leaves the device.',
     status: 'verengt',
     suggestedVerdict: 'build_first',
-    recipientDe: 'Kein Empfänger gefunden — Sammeladressen (CCC, Mozilla) aus dem Gemini-Entwurf gestrichen',
-    recipientEn: 'No recipient found — generic addresses (CCC, Mozilla) from the Gemini draft removed',
+    recipientDe: 'Die Öffentlichkeit, mit lauffähigem Skelett (Blogbeitrag/Show HN vor dem 1. Advent)',
+    recipientEn: 'The public, with a working skeleton (blog post / Show HN before Advent)',
     sourceType: 'Home & Family',
     sourceDe: 'Mitgebrachte Idee (Gemini-Plan, 24.09.2026); geprüft in 02-recherche/tischschiedsrichter-review-2026-09-24.md',
     sourceEn: 'User-supplied idea (Gemini plan, 24.09.2026); checked in 02-recherche/tischschiedsrichter-review-2026-09-24.md',
@@ -332,7 +332,7 @@ export const AI_NATIVE_FRONTIER_IDEAS: CandidateIdea[] = [
     firstStepTicketEn: 'PWA: enter word list, start Chrome on-device speech recognition (processLocally), on match whistle + yellow card, second match red, 15 s cooldown.',
     firstStepCriteriaDe: 'In einer aufgenommenen Tischszene (4 Personen, 10 Minuten) mindestens 80 % der gesagten Listenwörter erkannt und höchstens 2 Fehlpfiffe; im Flugmodus lauffähig.',
     firstStepCriteriaEn: 'In a recorded table scene (4 people, 10 minutes) at least 80 % of spoken list words detected and at most 2 false whistles; runs in airplane mode.',
-    userNotes: 'Gemini-Entwurf hatte status frei ohne Prüfung, „vor 2024 unmöglich" (falsch), erfundenen Konkurrenten „Buzzedword" und Sammeladressen als Empfänger. Details: 02-recherche/tischschiedsrichter-review-2026-09-24.md',
+    userNotes: 'Am 24.09.2026 als Spielzeug-Dose gepackt (05-dosen/tischschiedsrichter.md), mit lauffähigem Skelett im Tab Sandboxes. Empfänger: die Öffentlichkeit. Prüfung: 02-recherche/tischschiedsrichter-review-2026-09-24.md',
     tags: ['Family', 'Audio AI', 'Local-First', 'Party Game', 'Vibecode']
   }
 ];

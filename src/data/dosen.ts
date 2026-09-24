@@ -1774,6 +1774,47 @@ export const DOSEN_DATA: DoseItem[] = [
     priorArtDe: 'FractoDB (AG Fraktographie, BAM/DGM, seit 2013): tausende reale Bruchflächenbilder, kostenlos auf Anfrage — Referenz, nicht Übung. Ausbildung nur in Präsenz am Belegstück: Gerresheimer, American Glass Research, ASM, OSAC 2023-N-0005, DGM-Kurs Berlin 2027. Simulation der Merkmale als Forschung ohne Lernbezug (Sandia/Nebraska 2015). Software, die selbst liest (DINOv2-REM-Fraktografie 2026, unüberwachtes Lernen 2021) — das Gegenteil: Dort verschwindet der Mensch aus dem Urteil.',
     priorArtEn: 'FractoDB (fractography working group, BAM/DGM, since 2013): thousands of real fracture images, free on request — reference, not practice. Training only in person on specimens: Gerresheimer, American Glass Research, ASM, OSAC 2023-N-0005, DGM course Berlin 2027. Simulation of the features as research without a learning angle (Sandia/Nebraska 2015). Software that reads by itself (DINOv2 SEM fractography 2026, unsupervised learning 2021) — the opposite: there the human leaves the judgement.'
   },
+  {
+    id: 'tischschiedsrichter',
+    title: 'TischSchiedsrichter',
+    titleEn: 'Dinner Table Referee',
+    oneLinerDe: 'Handy in die Tischmitte, Wortliste gemeinsam beschließen — fällt ein Reizwort, pfeift es und zeigt Gelb, beim zweiten Mal Rot und ein neues Thema. Erkannt wird nur auf dem Gerät, nie in der Cloud.',
+    oneLinerEn: 'Phone in the middle of the table, agree on a word list together — when a trigger word falls it whistles and shows yellow, the second time red and a new topic. Recognition only on the device, never in the cloud.',
+    date: '24. September 2026',
+    reviewAfter: 'März 2027',
+    recipientsDe: 'Die Öffentlichkeit — mit lauffähigem Skelett (Manifest, Regel 4 und Empfängertabelle, letzte Zeile) · Kanal: Blogbeitrag oder Show HN vor dem 1. Advent 2026 · Sammeltalk „Ideen, die ich nicht baue" (FOSDEM)',
+    recipientsEn: 'The public — with a working skeleton (manifesto, rule 4 and recipient table, last row) · channel: blog post or Show HN before the first Sunday of Advent 2026 · collected talk "Ideas I won\'t build" (FOSDEM)',
+    domain: 'audio',
+    verdict: 'build_first',
+    status: 'gepackt',
+    tags: ['Spielzeug', 'Familie', 'Offline', 'Spracherkennung', 'Datenschutz', 'Weihnachten'],
+    problemDe: 'Niemand will derjenige sein, der den Schwiegervater unterbricht. Wer beim Familienessen „bitte keine Politik" durchsetzt, ist der Böse; wer nichts sagt, erlebt denselben Streit wie letztes Jahr. Die Apps, die zuhören, verknüpfen Ton mit der Identität (Swearing Jar laut App-Store-Angabe) — am privaten Esstisch ein Ausschlussgrund.',
+    problemEn: 'Nobody wants to be the one who interrupts the father-in-law. Whoever enforces "no politics, please" at a family dinner is the bad guy; whoever stays quiet sits through last year\'s argument again. The apps that listen link audio to identity (Swearing Jar per its App Store label) — a deal-breaker at a private table.',
+    whyNowDe: [
+      'Chrome erkennt Sprache seit Version 139 auf dem Gerät (Web Speech API, `processLocally`). Damit ist das Ganze eine Webseite: kein Server, keine App, kein Konto.',
+      'Freie Wortlisten brauchen kein Training mehr: Open-Vocabulary-Keyword-Spotting (sherpa-onnx) oder eine eingeschränkte Offline-Erkennung genügen.',
+      'Ehrlich: Neu ist das nicht erst durch KI. Noche de Paz lief 2015 als Werbe-App, JarGone 2018 als Gerät. Neu ist, dass es ohne Cloud und ohne Installation geht.'
+    ],
+    whyNowEn: [
+      'Since version 139 Chrome recognises speech on the device (Web Speech API, `processLocally`). That makes the whole thing a web page: no server, no app, no account.',
+      'Free word lists no longer need training: open-vocabulary keyword spotting (sherpa-onnx) or constrained offline recognition is enough.',
+      'Honestly: this was not made possible by AI. Noche de Paz ran in 2015 as an ad-agency app, JarGone in 2018 as a device. What is new is doing it without a cloud and without installing anything.'
+    ],
+    sketchDe: 'Webseite, drei Schritte: Liste gemeinsam festlegen, Häkchen „alle wissen Bescheid", Anpfiff. Der Browser prüft vorher, ob er offline erkennen kann; wenn nicht, startet der Schiedsrichter nicht (kein Rückfall auf die Cloud). Treffer ab vier Buchstaben per Wortanfang („Partei" trifft „Parteitag"), acht Sekunden Abkühlzeit pro Wort, zweite Gelbe binnen zehn Minuten wird Rot mit Themenvorschlag. Gespeichert wird nichts; das Spielprotokoll hält nur Wort und Uhrzeit, bis die Seite zu ist. Läuft als Skelett in der Amélie-App (Tab „Sandboxes").',
+    sketchEn: 'Web page, three steps: agree the list, tick "everyone knows", kick-off. The browser first checks whether it can recognise offline; if not, the referee does not start (no fallback to the cloud). Matches from four letters on by word prefix ("election" also hits "elections"), eight-second cooldown per word, a second yellow within ten minutes turns red with a topic suggestion. Nothing is stored; the match log holds only word and time until the page closes. Runs as a skeleton in the Amélie app (Sandboxes tab).',
+    firstStepDe: {
+      ticket: 'Skelett in echter Tischrunde testen: vier Personen, zehn Minuten Gespräch mit Liste, Erkennung offline in Chrome.',
+      criteria: 'Mindestens 80 % der gesagten Listenwörter erkannt, höchstens zwei Fehlpfiffe; Netzwerk-Tab zeigt während des Spiels keinen Datenverkehr.'
+    },
+    firstStepEn: {
+      ticket: 'Test the skeleton at a real table: four people, ten minutes of conversation with a list, offline recognition in Chrome.',
+      criteria: 'At least 80 % of spoken list words detected, at most two false whistles; the network tab shows no traffic during play.'
+    },
+    failureModeDe: 'Fehlpfiffe. Im Stimmengewirr am Tisch trifft die Erkennung schlechter als am Schreibtisch, und im Deutschen erzwingen eingeschränkte Offline-Modelle gern Treffer (Vosk-Issue #1017). Wenn es beim ersten Essen dreimal falsch pfeift, liegt das Handy danach in der Schublade. Zweites Risiko: heimlich eingesetzt ist es Überwachung — deshalb ist die Einwilligung ein Schritt im Spiel, nicht eine Zeile im Kleingedruckten. Drittes: Offline-Erkennung gibt es derzeit nur in Chrome, und je nach Gerät erst nach einem Sprachpaket-Download.',
+    failureModeEn: 'False whistles. In table chatter recognition is worse than at a desk, and constrained offline models tend to force matches in German (Vosk issue #1017). If it whistles wrongly three times at the first dinner, the phone ends up in a drawer. Second risk: used secretly it is surveillance — so consent is a step in the game, not a line in the small print. Third: offline recognition currently exists only in Chrome, sometimes after a language-pack download.',
+    priorArtDe: 'Noche de Paz / SilentNight (Agentur Shackleton, 2015): Handy in die Tischmitte, feste Liste politischer Wörter, Alarm und Themenvorschlag — dasselbe Szenario, als Werbe-App. JarGone (Kickstarter 2018): Gerät mit frei eintragbaren Wörtern für die ganze Familie. Swearing Jar (App Store, 2025): eigene Wörter in Echtzeit, Gruppen — Audiodaten laut Store-Angabe mit der Identität verknüpft. Swear Jar 2.0 (itch.io) und mehrere GitHub-Bastelprojekte. Was dieser Dose bleibt: garantiert offline, Deutsch, freie Liste ohne Training, Gelb/Rot als Tischregel, Einwilligung als Spielzug. Prüfprotokoll Runde 9: `verengt` (dünn).',
+    priorArtEn: 'Noche de Paz / SilentNight (Shackleton agency, 2015): phone in the middle of the table, fixed list of political words, alarm and topic suggestion — the same scenario, as an ad app. JarGone (Kickstarter 2018): a device with freely entered words for the whole family. Swearing Jar (App Store, 2025): custom words in real time, groups — audio linked to identity per its store label. Swear Jar 2.0 (itch.io) and several GitHub hobby projects. What remains for this tin: guaranteed offline, German, free list without training, yellow/red as a table rule, consent as a move in the game. Check log round 9: narrowed (thin).'
+  }
 ];
 
 export const DISCARDED_DATA: DiscardedItem[] = [

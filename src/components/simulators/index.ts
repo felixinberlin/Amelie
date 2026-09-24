@@ -8,3 +8,4 @@ export { KlarLokalSimulator } from './KlarLokalSimulator';
 export { CrackFloraSimulator } from './CrackFloraSimulator';
 export { KiezLaermSimulator } from './KiezLaermSimulator';
 export { FugenduellArena } from './FugenduellArena';
+export { TischSchiedsrichterSimulator } from './TischSchiedsrichterSimulator';

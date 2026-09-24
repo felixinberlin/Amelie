@@ -49,6 +49,7 @@ import {
   CrackFloraSimulator,
   KiezLaermSimulator,
   FugenduellArena,
+  TischSchiedsrichterSimulator,
 } from './simulators';
 
 interface DoseSinglePageProps {
@@ -528,6 +529,7 @@ ${bookChapters
               {simInfo.key === 'crackflora' && <CrackFloraSimulator lang={lang} />}
               {simInfo.key === 'laerm' && <KiezLaermSimulator lang={lang} />}
               {simInfo.key === 'fugenduell' && <FugenduellArena lang={lang} />}
+              {simInfo.key === 'schiedsrichter' && <TischSchiedsrichterSimulator lang={lang} isEmbedded />}
             </div>
           )}
         </section>

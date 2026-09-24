@@ -394,6 +394,7 @@ Zu jeder Idee aus `ideas-neue-projekte.md`: wer davon profitiert, warum ausgerec
 | DienstplanWächter (Pflege) | 🎁 | ver.di Gesundheit · DBfK | **gepackt** (aus dem Katalog), `verengt` (dünn) seit 24.09.2026 — Foto → Dienstplan und Zuschlagsrechner existieren |
 | BedenkenBlitz | 🎁 | Fachverband Fliesen und Naturstein · ZDB | **gepackt** (aus dem Katalog), `verengt` (dünn) seit 24.09.2026 — Muster und KI aus dem LV existieren |
 | Fugenduell: Asphaltritzen-Arena | 🔨 | Dose nennt „Indie Game Developers" — keine Adresse | **gepackt**, `verengt` seit 24.09.2026 (Spiel über echte Arten besetzt, Gebiet neu); Empfänger fehlt |
+| TischSchiedsrichter | 🔨 | Die Öffentlichkeit (mit Skelett) — Blogbeitrag/Show HN | **gepackt 24.09.2026**, `verengt` (dünn) — Spielzeug-Dose, Skelett läuft im Tab Sandboxes; zustellen vor dem 1. Advent 2026 |
 | ~~ParagraphenDolmetscher~~ | ❌ | — | **entsorgt 24.09.2026** — `besetzt` (jobcenter.guru u. a.), Duplikat von KlarLokal. Begründung in `05-dosen/_entsorgt.md` |
 | ~~git-archaeologist~~ | ❌ | — | **entsorgt** — mehrfach gebaut |
 | ~~Home-Network MCP~~ | ❌ | — | **entsorgt** — ≥4 Fritzbox-MCPs |

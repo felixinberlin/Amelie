@@ -12,6 +12,7 @@ import {
   CrackFloraSimulator,
   KiezLaermSimulator,
   FugenduellArena,
+  TischSchiedsrichterSimulator,
 } from './simulators';
 
 export type SandboxKey =
@@ -24,7 +25,8 @@ export type SandboxKey =
   | 'klarlokal'
   | 'crackflora'
   | 'laerm'
-  | 'fugenduell';
+  | 'fugenduell'
+  | 'schiedsrichter';
 
 interface InteractiveTinSandboxesProps {
   lang: Language;
@@ -179,6 +181,16 @@ export const InteractiveTinSandboxes: React.FC<InteractiveTinSandboxesProps> = (
             >
               ⚔️ {lang === 'de' ? 'Fugenduell (Game)' : lang === 'es' ? 'Fugenduell (Juego)' : 'Fugenduell (Arena)'}
             </button>
+            <button
+              onClick={() => setActiveTab('schiedsrichter')}
+              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                activeTab === 'schiedsrichter'
+                  ? 'bg-white text-emerald-900 shadow-xs font-bold border border-emerald-700/50'
+                  : 'text-stone-600 hover:text-stone-900'
+              }`}
+            >
+              🟨 {lang === 'de' ? 'TischSchiedsrichter' : lang === 'es' ? 'Árbitro de sobremesa' : 'Table Referee'}
+            </button>
           </div>
         </div>
       </div>
@@ -213,6 +225,9 @@ export const InteractiveTinSandboxes: React.FC<InteractiveTinSandboxesProps> = (
       )}
       {activeTab === 'fugenduell' && (
         <FugenduellArena lang={lang} onOpenDose={onOpenDose} />
+      )}
+      {activeTab === 'schiedsrichter' && (
+        <TischSchiedsrichterSimulator lang={lang} onOpenDose={onOpenDose} />
       )}
     </div>
   );

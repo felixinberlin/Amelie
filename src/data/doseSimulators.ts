@@ -8,7 +8,8 @@ export type SimulatorKey =
   | 'klarlokal'
   | 'crackflora'
   | 'laerm'
-  | 'fugenduell';
+  | 'fugenduell'
+  | 'schiedsrichter';
 
 export interface DoseSimulatorInfo {
   key: SimulatorKey;
@@ -142,6 +143,16 @@ export const DOSE_SIMULATOR_MAP: Record<string, DoseSimulatorInfo> = {
     descriptionEn: 'Tactical ecology duel: 14 asphalt pioneers, 36-point CSR budget, 6 seasonal rounds, and coverage tug-of-war.',
     descriptionEs: 'Duelo táctico de ecología urbana: 14 especies pioneras, presupuesto CSR de 36 puntos y 6 rondas estacionales.',
     icon: '⚔️',
+  },
+  tischschiedsrichter: {
+    key: 'schiedsrichter',
+    titleDe: 'TischSchiedsrichter',
+    titleEn: 'Dinner Table Referee',
+    titleEs: 'Árbitro de sobremesa',
+    descriptionDe: 'Das lauffähige Skelett: Wortliste, Einwilligung, Pfiff, Gelb und Rot. Hört nur zu, wenn der Browser offline erkennen kann — sonst Testmodus zum Tippen.',
+    descriptionEn: 'The working skeleton: word list, consent, whistle, yellow and red. Listens only if the browser can recognise speech offline — otherwise a typing test mode.',
+    descriptionEs: 'El esqueleto funcional: lista de palabras, consentimiento, silbato, amarilla y roja. Solo escucha si el navegador reconoce voz sin conexión.',
+    icon: '🟨',
   },
 };
 

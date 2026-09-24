@@ -115,6 +115,14 @@ const SIMULATOR_BADGES: Record<string, SimulatorBadgeConfig> = {
     colorClasses: 'bg-[#78350f]/15 hover:bg-[#78350f]/25 text-[#78350f] border-[#78350f]/30',
     iconColor: 'text-[#78350f]',
   },
+  tischschiedsrichter: {
+    simKey: 'schiedsrichter',
+    labelDe: '🟨 Live-Schiedsrichter (offline)',
+    labelEn: '🟨 Live Table Referee (offline)',
+    labelEs: '🟨 Árbitro en vivo (sin conexión)',
+    colorClasses: 'bg-[#166534]/15 hover:bg-[#166534]/25 text-[#14532d] border-[#166534]/30',
+    iconColor: 'text-[#166534]',
+  },
   'fugenduell-asphalt-arena': {
     simKey: 'fugenduell',
     labelDe: '⚔️ Live-Fugenduell Arena',
