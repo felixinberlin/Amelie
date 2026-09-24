@@ -8,8 +8,8 @@ target_maker: 'Katta Spiel, HCI-Gruppe der TU Wien'
 **Ein Satz:** Ein Google-Kalender-Add-on, das aus Zustand und Absicht einen Fokusmodus, eine Dauer und einen freien Platz würfelt, das Ergebnis als echten Termin einträgt — und je nach Chaos-Regler kleine, abschaltbare Streiche im Kalender spielt. Kein Server, keine KI, alle Daten im eigenen Google-Konto.
 
 **Stand:** 24. September 2026 · **Prüfen ab:** März 2027
-**Empfänger:** Katta Spiel, HCI-Gruppe der TU Wien (ERC ACCESSTECH, 2024–2029) — als Forschungssonde, mit Code · nachrangig: Eva Hornecker (Bauhaus-Universität Weimar, Mitautorin derselben CHI-Studie) · danach die Öffentlichkeit (Show HN), sobald das README hält, was der Code tut
-**Verdikt:** 🔨 erst Skelett, dann verschenken
+**Empfänger:** Katta Spiel, HCI-Gruppe der TU Wien (ERC ACCESSTECH, 2024–2029) — als Forschungssonde, mit Code · nachrangig: Eva Hornecker (Bauhaus-Universität Weimar, Mitautorin derselben CHI-Studie) · danach die Öffentlichkeit (Show HN)
+**Verdikt:** 🎁 verschenken
 
 ---
 
@@ -20,8 +20,8 @@ Wer mit ADHS oder schlicht leerem Akku vor dem eigenen Kalender sitzt, liest ihn
 ## Warum das jetzt geht
 
 - Ehrlich zuerst: Das fällt nicht unter die These des Manifests. Chaos Clock enthält keine KI, und Würfeln gegen Entscheidungslähmung ist alt (Würfelmethoden in ADHS-Blogs 2021, RandomTask). Die Uhr, die unberechenbar vorgeht, hat David Seah 2007 beschrieben.
-- Neu ist der Ort: Ein Workspace-Add-on in Apps Script läuft ganz im Google-Konto der Nutzerin — Termine im eigenen Kalender, Verlauf in einer Tabelle im eigenen Drive, Einstellungen im Nutzerspeicher. Für eine Studie heißt das: Teilnehmende behalten ihre Daten und teilen die Tabelle nur, wenn sie wollen.
-- Neu ist, dass es fertig ist: v0.5.0, 38 Tests grün (unter UTC, siehe erster Schritt), an einem Tag gebaut. Verschenkt wird nicht die Idee, sondern der Code.
+- Neu ist der Ort: Ein Workspace-Add-on in Apps Script läuft ganz im Google-Konto der Nutzerin — Termine im eigenen Kalender, Verlauf in einer Tabelle im eigenen Drive, Einstellungen im Nutzerspeicher, keine Netzwerkaufrufe und keine Berechtigung dafür. Für eine Studie heißt das: Teilnehmende behalten ihre Daten und teilen die Tabelle nur, wenn sie wollen.
+- Neu ist, dass es fertig ist: v0.5.2, 47 Tests grün in jeder Zeitzone, CC0. Verschenkt wird nicht die Idee, sondern der Code.
 
 ## Skizze
 
@@ -29,9 +29,9 @@ Seitenleiste in Google Calendar mit fünf Feldern: Absicht (ein Satz), Energie 1
 
 ## Erster Schritt
 
-**Ticket:** Die Stellen reparieren, an denen der Code weniger hält als die Beschreibung verspricht — bevor irgendjemand es an Menschen testet.
+**Ticket:** Pilot mit fünf Personen, zwei Wochen: installieren (Testbereitstellung), täglich mindestens einmal würfeln, Chaos frei wählen; am Ende die eigene Tabelle „Chaos Clock Log" teilen oder nicht, und ein Gespräch über die Streiche.
 
-Arbeitszeiten gelten in der Zeitzone der Nutzerin (heute läuft das Skript auf `Etc/UTC`: „9–20 Uhr" ist in Berlin 11–22 Uhr, und `npm test` ist nur mit `TZ=UTC` grün — unter Europe/Berlin fallen 5 von 38 Tests). Die Berechtigung `script.external_request` ist entfernt, weil nichts nach außen ruft. Das README behauptet nicht mehr „gleiche Eingaben, gleiches Ergebnis" (der Wurf nutzt `Math.random`, deterministisch ist er nur bei Chaos 0) und nicht mehr, die Prophezeiung sei bis zu ihrem Tag gesperrt (sie ist ein normaler Termin). Eine LICENSE-Datei liegt im Repo, und zwar CC0 — das README sagt MIT, und MIT verlangt den Copyright-Vermerk, also eine Bedingung, die der Pledge ausschließt.
+Für jeden der elf Streiche liegt mindestens eine Aussage vor, ob er als Humor oder als Spott ankam — die Tonregel ist damit zum ersten Mal an Menschen geprüft, nicht am eigenen Schreibtisch.
 
 ## Wo es kippt
 

@@ -45,6 +45,8 @@ Félix bringt die Idee **gebaut** mit (`github.com/felixinberlin/kaosclock`, v0.
 
 **Konsequenz:** Dose gepackt, `05-dosen/chaos-clock.md`, Verdikt 🔨 — nicht weil Code fehlt, sondern weil er weniger hält, als er verspricht; das erste Ticket ist die Liste oben. Empfänger Katta Spiel als Forschungssonde (Empfängertabelle Zeile „Forschung", mit Code), danach Show HN. **Nicht zustellen, bevor das Ticket erledigt ist** — eine Forschungsgruppe, die das README gegen den Code liest, findet die vier Stellen in einer Stunde.
 
+**Nachtrag 24.09.2026, 15:40 — Ticket erledigt, Verdikt 🔨 → 🎁.** Félix hat v0.5.1 (Patch aus dieser Session, `6e6f553`) und v0.5.2 (`d9f0d76`) auf `kaosclock` gepusht: Wanduhr-Logik in der Kalenderzeitzone der Nutzerin (`src/utils/tz.gs`, Trigger `inTimezone`), Chaos 0 vollständig deterministisch, Scope `script.external_request` entfernt, Prophezeiung nicht mehr „locked" genannt, LICENSE CC0-1.0, README-Abschnitt „What it promises, exactly", `CONTEXT.md` im Wurzelverzeichnis. 47 Tests grün unter UTC, Europe/Berlin, America/Los_Angeles, Pacific/Auckland. **Nicht geprüft:** Lauf in einem echten Apps-Script-Projekt (Intl-Zeitzonen im V8-Runtime angenommen). Neues erstes Ticket der Dose ist das, was offen bleibt: die Tonregel an Menschen prüfen. **Vor dem Absenden:** Félix' Produkttexte außerhalb des Repos (kaosclock.md, kaosclock2.md) tragen noch „same inputs, same output" und „can't edit until the day arrives".
+
 ---
 
 ## Abdeckungs-Nachprüfung — 24.09.2026 (acht Dosen ohne Zeile, Katalog auf `ungeprüft`, method: ideenrunde)

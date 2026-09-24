@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/felixinberlin/amelie/main/public/data/amelie-schema.json",
   "version": "1.0.0",
-  "generatedAt": "2026-09-24T13:10:38.312Z",
+  "generatedAt": "2026-09-24T13:40:44.285Z",
   "license": "CC0-1.0 (Public Domain / Kula-Ring)",
   "storageProvider": "github_pages",
   "repository": "https://github.com/felixinberlin/amelie",
@@ -2401,10 +2401,10 @@
       "oneLinerEn": "A Google Calendar add-on that rolls a focus mode, a duration and a free slot from your state and intent, puts the result in as a real event — and, depending on a chaos dial, plays small tricks on your calendar that you can switch off one by one. No server, no AI, all data in your own Google account.",
       "date": "24. September 2026",
       "reviewAfter": "März 2027",
-      "recipientsDe": "Katta Spiel, HCI-Gruppe der TU Wien (ERC ACCESSTECH, 2024–2029) — als Forschungssonde, mit Code · nachrangig: Eva Hornecker (Bauhaus-Universität Weimar, Mitautorin derselben CHI-Studie) · danach die Öffentlichkeit (Show HN), sobald das README hält, was der Code tut",
-      "recipientsEn": "Katta Spiel, HCI group at TU Wien (ERC ACCESSTECH, 2024–2029) — as a research probe, with code · secondary: Eva Hornecker (Bauhaus-Universität Weimar, co-author of the same CHI study) · then the public (Show HN), once the README promises only what the code does",
+      "recipientsDe": "Katta Spiel, HCI-Gruppe der TU Wien (ERC ACCESSTECH, 2024–2029) — als Forschungssonde, mit Code · nachrangig: Eva Hornecker (Bauhaus-Universität Weimar, Mitautorin derselben CHI-Studie) · danach die Öffentlichkeit (Show HN)",
+      "recipientsEn": "Katta Spiel, HCI group at TU Wien (ERC ACCESSTECH, 2024–2029) — as a research probe, with code · secondary: Eva Hornecker (Bauhaus-Universität Weimar, co-author of the same CHI study) · then the public (Show HN)",
       "domain": "tools",
-      "verdict": "build_first",
+      "verdict": "gift",
       "status": "gepackt",
       "tags": [
         "Kalender",
@@ -2419,23 +2419,23 @@
       "problemEn": "Anyone with ADHD, or simply an empty battery, who looks at their own calendar reads it as an accusation: every block is a promise about to be broken. The tools on offer nearly all want the same thing — to adjust the person to the norm, with streaks, points and usage data. The literature review \"ADHD and Technology Research – Investigated by Neurodivergent Readers\" (CHI 2022) found exactly that: ADHD technology mostly aims to mitigate traits that disturb neurotypical norms, and the people concerned almost never co-design it.",
       "whyNowDe": [
         "Ehrlich zuerst: Das fällt nicht unter die These des Manifests. Chaos Clock enthält keine KI, und Würfeln gegen Entscheidungslähmung ist alt (Würfelmethoden in ADHS-Blogs 2021, RandomTask). Die Uhr, die unberechenbar vorgeht, hat David Seah 2007 beschrieben.",
-        "Neu ist der Ort: Ein Workspace-Add-on in Apps Script läuft ganz im Google-Konto der Nutzerin — Termine im eigenen Kalender, Verlauf in einer Tabelle im eigenen Drive, Einstellungen im Nutzerspeicher. Für eine Studie heißt das: Teilnehmende behalten ihre Daten und teilen die Tabelle nur, wenn sie wollen.",
-        "Neu ist, dass es fertig ist: v0.5.0, 38 Tests grün (unter UTC, siehe erster Schritt), an einem Tag gebaut. Verschenkt wird nicht die Idee, sondern der Code."
+        "Neu ist der Ort: Ein Workspace-Add-on in Apps Script läuft ganz im Google-Konto der Nutzerin — Termine im eigenen Kalender, Verlauf in einer Tabelle im eigenen Drive, Einstellungen im Nutzerspeicher, keine Netzwerkaufrufe und keine Berechtigung dafür. Für eine Studie heißt das: Teilnehmende behalten ihre Daten und teilen die Tabelle nur, wenn sie wollen.",
+        "Neu ist, dass es fertig ist: v0.5.2, 47 Tests grün in jeder Zeitzone, CC0. Verschenkt wird nicht die Idee, sondern der Code."
       ],
       "whyNowEn": [
         "Honesty first: this does not fall under the manifesto's thesis. Chaos Clock contains no AI, and rolling dice against decision paralysis is old (dice methods on ADHD blogs in 2021, RandomTask). The clock that runs unpredictably fast was described by David Seah in 2007.",
-        "What is new is the place: a Workspace add-on in Apps Script runs entirely inside the user's Google account — events in their own calendar, history in a sheet in their own Drive, settings in per-user storage. For a study that means participants keep their data and share the sheet only if they want to.",
-        "What is new is that it exists: v0.5.0, 38 tests green (under UTC, see first step), built in a day. What is given away is not the idea but the code."
+        "What is new is the place: a Workspace add-on in Apps Script runs entirely inside the user's Google account — events in their own calendar, history in a sheet in their own Drive, settings in per-user storage, no network calls and no permission for them. For a study that means participants keep their data and share the sheet only if they want to.",
+        "What is new is that it exists: v0.5.2, 47 tests green in any time zone, CC0. What is given away is not the idea but the code."
       ],
       "sketchDe": "Seitenleiste in Google Calendar mit fünf Feldern: Absicht (ein Satz), Energie 1–5, Fokus 1–5, verfügbare Minuten, Chaos 0–100. „Roll\" wählt unter sechs Modi (Banish 2–5 min bis Gnosis 30–60 min) einen, den der Zustand zulässt — niedrige Energie würfelt nie Gnosis —, sucht den nächsten freien Platz und legt einen echten Termin an; der Termin ist der Timer. Danach Flow 1–5 eintragen. Der Chaos-Regler schaltet elf einzeln abschaltbare Streiche frei: Zeitdrift, Phantomtermine, Wiederauftauchen, wandernde Termine, der beleidigte Diener („Fine. I'll wait.\"), Termine in der Vergangenheit, Echos, Prophezeiung, Trickster-Wurf, Anti-Kalender-Tag, Sonntagsbeichte. Nicht dabei, mit Absicht: Streaks, Punkte, Countdown, Benachrichtigungen — alles, was die App öfter öffnen lässt. Code: github.com/felixinberlin/kaosclock (Apps Script, Jest).",
       "sketchEn": "A sidebar in Google Calendar with five fields: intent (one sentence), energy 1–5, focus 1–5, minutes available, chaos 0–100. \"Roll\" picks one of six modes (Banish 2–5 min up to Gnosis 30–60 min) that the state allows — low energy never rolls Gnosis —, finds the next free slot and creates a real event; the event is the timer. Afterwards, rate flow 1–5. The chaos dial unlocks eleven tricks, each switchable: time drift, phantom slots, resurfacing, wandering events, the reluctant servitor (\"Fine. I'll wait.\"), events in the past, echoes, prophecy, trickster roll, anti-calendar day, Sunday confession. Deliberately absent: streaks, points, countdowns, notifications — anything that makes you open the app more. Code: github.com/felixinberlin/kaosclock (Apps Script, Jest).",
       "firstStepDe": {
-        "ticket": "Die Stellen reparieren, an denen der Code weniger hält als die Beschreibung verspricht — bevor irgendjemand es an Menschen testet.",
-        "criteria": "Arbeitszeiten gelten in der Zeitzone der Nutzerin (heute läuft das Skript auf `Etc/UTC`: „9–20 Uhr\" ist in Berlin 11–22 Uhr, und `npm test` ist nur mit `TZ=UTC` grün — unter Europe/Berlin fallen 5 von 38 Tests). Die Berechtigung `script.external_request` ist entfernt, weil nichts nach außen ruft. Das README behauptet nicht mehr „gleiche Eingaben, gleiches Ergebnis\" (der Wurf nutzt `Math.random`, deterministisch ist er nur bei Chaos 0) und nicht mehr, die Prophezeiung sei bis zu ihrem Tag gesperrt (sie ist ein normaler Termin). Eine LICENSE-Datei liegt im Repo, und zwar CC0 — das README sagt MIT, und MIT verlangt den Copyright-Vermerk, also eine Bedingung, die der Pledge ausschließt."
+        "ticket": "Pilot mit fünf Personen, zwei Wochen: installieren (Testbereitstellung), täglich mindestens einmal würfeln, Chaos frei wählen; am Ende die eigene Tabelle „Chaos Clock Log\" teilen oder nicht, und ein Gespräch über die Streiche.",
+        "criteria": "Für jeden der elf Streiche liegt mindestens eine Aussage vor, ob er als Humor oder als Spott ankam — die Tonregel ist damit zum ersten Mal an Menschen geprüft, nicht am eigenen Schreibtisch."
       },
       "firstStepEn": {
-        "ticket": "Fix the places where the code delivers less than the description promises — before anyone tests it on people.",
-        "criteria": "Working hours apply in the user's time zone (the script currently runs on `Etc/UTC`: \"9 am–8 pm\" is 11 am–10 pm in Berlin, and `npm test` is only green with `TZ=UTC` — under Europe/Berlin 5 of 38 tests fail). The `script.external_request` scope is removed, since nothing calls out. The README no longer claims \"same inputs, same output\" (the roll uses `Math.random`; it is deterministic only at chaos 0) nor that the prophecy is locked until its day (it is an ordinary event). A LICENSE file is in the repo, and it is CC0 — the README says MIT, and MIT requires keeping the copyright notice, a condition the pledge rules out."
+        "ticket": "Pilot with five people for two weeks: install (test deployment), roll at least once a day, chaos level of their choice; at the end share their own \"Chaos Clock Log\" sheet or not, plus one conversation about the tricks.",
+        "criteria": "For each of the eleven tricks there is at least one statement on whether it landed as humour or as mockery — the tone rule tested on people for the first time, not at one's own desk."
       },
       "failureModeDe": "Ein Streich zu viel. Ein Termin in der Vergangenheit, ein Echo, eine Prophezeiung — für die eine ist das Humor, für den anderen das Gefühl, dass der eigene Kalender einen verspottet, und gerade die Leute mit dem meisten Kalenderstress haben dafür am wenigsten Puffer. Die Tonregel („wer es Freunden erzählt, lacht und will es sofort\") ist bisher an niemandem geprüft. Zweitens: Ein Add-on, das selbstständig Termine in einen Arbeitskalender schreibt, kommt in vielen Firmen-Workspaces nicht an der Admin-Freigabe vorbei, und ohne Marketplace-Eintrag ist die Installation per clasp eine Hürde, die die Zielgruppe nicht nimmt. Drittens: Die Sprache der Chaosmagie zieht an und stößt ab — der Satz „es ist ein Kostüm\" muss in der Oberfläche stehen, nicht nur im README.",
       "failureModeEn": "One trick too many. An event in the past, an echo, a prophecy — for one person that is humour, for another it is the feeling of being mocked by their own calendar, and the people with the most calendar stress have the least slack for it. The tone rule (\"tell a friend, they laugh and want it\") has not been tested on anyone yet. Second: an add-on that writes events into a work calendar on its own will not get past admin approval in many company Workspaces, and without a Marketplace listing, installing via clasp is a hurdle the target group will not clear. Third: chaos-magick vocabulary attracts and repels — \"it is a costume\" has to be said in the interface, not only in the README.",
