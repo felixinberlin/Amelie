@@ -50,3 +50,9 @@ Grünflächenverordnungen messen meist nur die 2D-Fläche (z.B. "nicht versiegel
 
 **Die Klang-Plakette (Crowdsourced Resonance)** — **M**
 Brücken und Statuen verwittern innerlich, aber Städte prüfen sie oft nur alle drei Jahre visuell, da fest installierte Sensoren teuer sind. Eine Plakette fordert Passanten auf, mit einer Münze gegen das Bauwerk zu klopfen und den Ton mit dem Handy aufzunehmen. Die App aggregiert hunderte dieser verrauschten Aufnahmen; eine Verschiebung der Resonanzfrequenz über Monate verrät strukturelle Risse, bevor sie sichtbar werden. (Zustand: `frei`)
+
+**Volumen-Lotse (LiDAR Biomass Score)** — **M**
+Grünflächenverordnungen messen meist nur die 2D-Fläche (z.B. "nicht versiegelt"). Der Volumen-Lotse ist eine App, die den LiDAR-Scanner moderner Smartphones nutzt, um das tatsächliche 3D-Volumen (die Biomasse/Struktur) eines Vorgartens oder einer Hecke zu scannen. Das erzeugt einen "Structural Volume Score", der ökologischen Wert messbar macht, ohne dass ein Vermesser anrücken muss. (Zustand: `frei`)
+
+**Die Klang-Plakette (Crowdsourced Resonance)** — **M**
+Brücken und Statuen verwittern innerlich, aber Städte prüfen sie oft nur alle drei Jahre visuell, da fest installierte Sensoren teuer sind. Eine Plakette fordert Passanten auf, mit einer Münze gegen das Bauwerk zu klopfen und den Ton mit dem Handy aufzunehmen. Die App aggregiert hunderte dieser verrauschten Aufnahmen; eine Verschiebung der Resonanzfrequenz über Monate verrät strukturelle Risse, bevor sie sichtbar werden. (Zustand: `frei`)

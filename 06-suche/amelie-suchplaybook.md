@@ -387,3 +387,8 @@ Erste Runde, die mit einer **verschenkten** Dose als Ausgangspunkt arbeitet. Das
 - **Gelernt:** Typ-D-Quellen (Forschung, die nur als Paper/Profi-Werkzeug existiert) sind extrem ergiebig. Beide Ideen ("Volumen-Lotse" und "Klang-Plakette") übertragen ein etabliertes physikalisches Messprinzip in ein Laien-Setting.
 - **Fehler:** Das `frei` der Klang-Plakette baut auf einer technischen Prämisse auf (dass Handy-Mikros über viele Nutzer hinweg kalibrierbar sind). Dies müsste als Reality-Check technisch vorab intensiver geprüft werden.
 - **Nächstes Mal:** Eine Prämissenprüfung ("Reality Check") bei Hardware/Sensor-Ideen konsequent durchführen, bevor sie ins Protokoll gehen.
+
+### Runde 12 (Lacunar) — 24.09.2026
+- **Gelernt:** Typ-D-Quellen (Forschung, die nur als Paper/Profi-Werkzeug existiert) sind extrem ergiebig. Beide Ideen ("Volumen-Lotse" und "Klang-Plakette") übertragen ein etabliertes physikalisches Messprinzip in ein Laien-Setting.
+- **Fehler:** Das `frei` der Klang-Plakette baut auf einer technischen Prämisse auf (dass Handy-Mikros über viele Nutzer hinweg kalibrierbar sind). Dies müsste als Reality-Check technisch vorab intensiver geprüft werden.
+- **Nächstes Mal:** Eine Prämissenprüfung ("Reality Check") bei Hardware/Sensor-Ideen konsequent durchführen, bevor sie ins Protokoll gehen.

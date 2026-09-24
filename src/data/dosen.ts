@@ -1872,17 +1872,6 @@ export const DISCARDED_DATA: DiscardedItem[] = [
     evidence: [
       'Europeana Transcribathons'
     ],
-    grave: {
-      diedOn: 'Lacunar Runde 5 · 2026-09-24',
-      cause: 'gebaut',
-      whoHadIt: 'Gemeinnützige',
-      killer: 'Europeana Transcribathons',
-      foundBy: 'Englische Suche',
-      source: 'Bisoziation',
-      stage: 'kandidat',
-      resurrectIfDe: 'Wenn eine technologische Neuerung (z.B. Realtime-Consensus-Protokolle) den synchronen Event über das rein Soziale hinaus funktional unabdingbar macht.',
-      resurrectIfEn: 'If a technological advancement (e.g. real-time consensus protocols) makes the synchronous event functionally indispensable beyond just the social aspect.'
-    },
     cause: 'gebaut',
     killer: 'gemeinnuetzig',
     foundBy: 'englisch',

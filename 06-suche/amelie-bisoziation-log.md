@@ -170,3 +170,11 @@ Kein Bisoziationslauf, sondern der Punkt (1) aus Run 7, als eigener Durchgang er
 - **Gelernt:** Typ-D-Quellen (Forschung, die nur als Paper/Profi-Werkzeug existiert) sind extrem ergiebig. Beide Ideen ("Volumen-Lotse" und "Klang-Plakette") übertragen ein etabliertes physikalisches Messprinzip in ein Laien-Setting.
 - **Fehler:** Keiner im Ablauf, aber das `frei` der Klang-Plakette baut auf einer Prämisse auf (dass Handy-Mikros über viele Nutzer hinweg kalibrierbar sind). Dies müsste als Reality-Check technisch vorab geprüft werden.
 - **Nächstes Mal:** Eine Prämissenprüfung ("Reality Check") *vor* der Existenzprüfung bei Sensor-Ideen konsequent durchführen.
+
+| 24.09.2026 | Typ D: **Forschung ohne Werkzeug - Smartphone LiDAR für Strukturmessung** (bisher auf Forst-Profis beschränkt) | **Kleingarten-Begehung** (1D-Regeln durchsetzen, z.B. Heckenhöhe) | 4 | 3 | 1 | Städtisches Grün wird über 2D-Flächen statt über ökologisches 3D-Volumen reguliert, weil Volumen bisher nicht von Laien überprüfbar war | Volumen-Lotse: **`frei`** (LiDAR erzeugt validen Score für Biomasse) |
+| 24.09.2026 | Typ D: **Akustisches Strukturmonitoring** (Verfallsmessung durch Resonanz, bisher mit teurer Sensorik) | **Espresso-Extraktion** (tägliche, präzise Kalibrierung) | 4 | 1 | 1 | Kommunen können teure Sensoren an Infrastruktur nicht skalieren und verlassen sich auf seltene visuelle Sichtkontrollen | Die Klang-Plakette: **`frei`** (Crowdsourcing mittelt das Rauschen ungelernter Messungen weg) |
+
+### Run 12
+- **Gelernt:** Typ-D-Quellen (Forschung, die nur als Paper/Profi-Werkzeug existiert) sind extrem ergiebig. Beide Ideen ("Volumen-Lotse" und "Klang-Plakette") übertragen ein etabliertes physikalisches Messprinzip in ein Laien-Setting.
+- **Fehler:** Keiner im Ablauf, aber das `frei` der Klang-Plakette baut auf einer Prämisse auf (dass Handy-Mikros über viele Nutzer hinweg kalibrierbar sind). Dies müsste als Reality-Check technisch vorab geprüft werden.
+- **Nächstes Mal:** Eine Prämissenprüfung ("Reality Check") *vor* der Existenzprüfung bei Sensor-Ideen konsequent durchführen.
