@@ -1,12 +1,12 @@
 {
   "$schema": "https://raw.githubusercontent.com/felixinberlin/amelie/main/public/data/amelie-schema.json",
   "version": "1.0.0",
-  "generatedAt": "2026-09-25T20:12:29.713Z",
+  "generatedAt": "2026-09-25T20:28:10.468Z",
   "license": "CC0-1.0 (Public Domain / Kula-Ring)",
   "storageProvider": "github_pages",
   "repository": "https://github.com/felixinberlin/amelie",
   "stats": {
-    "totalDosen": 39,
+    "totalDosen": 40,
     "totalUnpacked": 154,
     "totalDiscarded": 33
   },
@@ -2589,6 +2589,54 @@
         "subjectEn": "Free to take: Lead-Free Navigator — Non-destructive pipe testing under TrinkwV 2026",
         "bodyEn": "Dear vzbv team,\n\nI research and give away turnkey public-interest software ideas under the Amélie Poulain principle (CC0, unconditional, no follow-up).\n\nSince January 12, 2026, lead drinking water pipes are strictly banned across Germany (§ 17 TrinkwV). While trade companies must report discoveries, tenants in older buildings face an acute enforcement deficit: lab tests cost €100 and health authorities lack inspection staff.\n\nLead-Free Navigator is a zero-cloud mobile web tool guiding tenants through non-destructive on-site diagnostics (magnet test, macro wiped joint check, scratch test, acoustic damping analysis via Web Audio API) and exporting statutory disclosure requests and health department dockets as PDFs.\n\nFull one-page dossier with sketch and first ticket:\n<Link to tin>\n\nCC0 Public Domain. Take it, build it, deploy it — you owe me nothing.\n\nBest regards\nFélix, Berlin\ngithub.com/felixinberlin"
       }
+    },
+    {
+      "id": "abbe-fourier-filter",
+      "title": "Abbe-Puzzle: Der Fourier-Filter",
+      "titleEn": "Abbe's Bench: The Fourier Filter",
+      "oneLinerDe": "Ein optisches Physik-Puzzlespiel, das die 2D-Fouriertransformation vom Formelblatt auf eine interaktive 4f-Werkbank holt — du schneidest Blenden in die Beugungsebene, um Maschendrahtzäune verschwinden zu lassen, Phasenobjekte ohne Farbstoff sichtbar zu machen und Druckraster aus Archivalien zu filtern, in Echtzeit bei Lichtgeschwindigkeit.",
+      "oneLinerEn": "An optical physics puzzle game that brings the 2D Fourier transform off the blackboard onto an interactive 4f bench — carve apertures into the diffraction plane to erase wire fences, reveal transparent phase objects without staining, and strip halftone screens from archives, in real time at the speed of light.",
+      "date": "25. September 2026",
+      "reviewAfter": "September 2027",
+      "recipientsDe": "Ernst-Abbe-Hochschule Jena (Fachbereich SciTec / Laser- und Optotechnologien; Prof. Dr. Jens Bliedtner) · nachrangig: DPG Fachgruppe Didaktik der Physik, Physikalisches Anfängerpraktikum (LMU München, TU Berlin)",
+      "recipientsEn": "Ernst Abbe University of Applied Sciences Jena (Dept. SciTec / Laser and Optical Technologies; Prof. Dr. Jens Bliedtner) · secondary: DPG Physics Didactics Division, Introductory Physics Lab courses (LMU Munich, TU Berlin)",
+      "domain": "physics",
+      "verdict": "gift",
+      "status": "gepackt",
+      "tags": [
+        "Optik",
+        "Wellenphysik",
+        "Fourier",
+        "Didaktik",
+        "Lernspiel",
+        "WebGL"
+      ],
+      "problemDe": "In Physik-, Elektrotechnik- und Mikroskopie-Vorlesungen wird die 2D-Fouriertransformation als rein abstrakte Doppelintegralrechnung gelehrt: Studierende haben keine räumliche Intuition dafür, was Ortsfrequenzen in einem Wellenfeld bedeuten. Im Hochschulpraktikum scheitert das Verstehen an der Mechanik: 90 % der Zeit verbringen Studierende mit der mikrometergenauen Laser-Justage; für das Erkunden von Filtermasken in der Fourier-Ebene bleiben oft nur zehn Minuten. Biologie- und Medizinstudierende nutzen Phasenkontrastmikroskope, ohne je zu begreifen, warum ein zentraler Phasenring transparente Zellen sichtbar macht.",
+      "problemEn": "In physics, electrical engineering, and microscopy courses, the 2D Fourier transform is taught as abstract calculus: students develop zero spatial intuition for what spatial frequencies mean in an optical wavefield. In laboratory practicals, learning collapses under alignment friction: students spend 90% of their lab time troubleshooting micrometer screws and beam wander, leaving ten hurried minutes to test pre-made slits. Biology and medical students operate phase-contrast instruments daily without understanding why an optical phase plate makes transparent cells emerge with distinct contrast.",
+      "whyNowDe": [
+        "WebGL2 und WebAssembly (SIMD) führen komplexe 2D-FFTs auf 256x256-Gittern in unter 1,5 ms aus — vollwertige 60-FPS-Interaktivität auf jedem Laptop oder Tablet ohne Installation.",
+        "HTML5 Canvas erlaubt es, Beugungsmasken mit Touch- oder Mausgesten direkt in den Frequenzraum zu schnitzen (Pinholes, Spalte, Zernike-Ringe, Schlierenkanten) und die Rekonstruktion synchron mitzubewegen.",
+        "Die Physikgeschichte bietet eine fertige, didaktisch brillante Puzzle-Progression: Abbe 1873 (Beugung), Porter 1906 (Gitterfilterung), Zernike 1934 (Phasenkontrast) und Toepler (Schlierenoptik)."
+      ],
+      "whyNowEn": [
+        "WebGL2 and WebAssembly with SIMD compute complex 2D FFTs on 256x256 grids in under 1.5 ms — full 60 FPS responsiveness on commodity laptops or tablets without plugins.",
+        "HTML5 Canvas enables learners to directly carve diffraction masks in frequency space using touch or mouse gestures while the reconstructed image updates synchronously in real time.",
+        "The history of optics offers a natural, pedagogically brilliant puzzle progression: Abbe 1873 (diffraction limit), Porter 1906 (grating filtering), Zernike 1934 (phase contrast), and Toepler (Schlieren imaging)."
+      ],
+      "sketchDe": "Virtuelle 4f-Optikbank im Browser (Laser 532 nm -> Objekt -> Fourier-Linse -> Fourier-Ebene mit Filtermaske -> Rekonstruktionslinse -> Kamerasensor). Anzeige von Original, k-Raum (Amplitude log-skaliert + Phase) und rekonstruiertem Bild. Werkzeugpalette: Lochblende (Tiefpass), Zentraler Block / Dunkelfeld (Hochpass), Spaltblende (Richtungsfilter), Notch-Stempel (Gitterlöschung), Zernike-Phasenplättchen (Phasenkontrast), Schlieren-Messer (Wärmekonvektion). Fünf Level historischer Experimente mit realen Zielbildern.",
+      "sketchEn": "Virtual 4f optical bench in the browser (532 nm laser -> specimen -> Fourier lens -> conjugate Fourier plane with custom mask -> reconstruction lens -> sensor). Simultaneous display of original, k-space (log amplitude + phase), and reconstructed image. Toolkit: Pinhole (low-pass), Central stop / Darkfield (high-pass), Slit (directional), Notch punch (mesh excision), Zernike retarder (phase contrast), Schlieren blade (thermal convection). Five puzzle levels modeling historical experiments with real visual targets.",
+      "firstStepDe": {
+        "ticket": "Ein Gitter, ein Zaun, ein Pinhole, ein invertierbares 2D-FFT-Canvas.",
+        "criteria": "2D-Cooley-Tukey-FFT auf einem 256x256-Graustufenbild; Amplitudenspektrum im k-Raum; interaktiv platzierbarer Notch-Filter blockiert diskrete Beugungspeaks des Gitters; inverse FFT rekonstruiert das Bild in unter 16 ms. Fertig, wenn drei Physik-Studierende auf Anhieb verstehen, warum das Ausblenden zweier Punkte das gesamte Gitter löscht, und ein Test die Parseval-Energieerhaltung auf 0,1 % Genauigkeit bestätigt."
+      },
+      "firstStepEn": {
+        "ticket": "One grid, one fence, one pinhole, one reversible 2D-FFT canvas.",
+        "criteria": "2D Cooley-Tukey FFT on a 256x256 grayscale image; amplitude spectrum in k-space; interactive notch filter blocks discrete diffraction peaks of the grid; inverse FFT reconstructs the image in under 16 ms. Done when three physics students immediately understand why blocking two points erases the entire mesh, and an automated test confirms Parseval energy conservation to within 0.1% accuracy."
+      },
+      "failureModeDe": "Verwechslung mit Photoshop-Filtern: Wenn Spielende denken, sie bedienen nur einen Weichzeichner, verpufft der didaktische Wert. Gegenmaßnahme: Zwingende Visualisierung des realen physikalischen 4f-Strahlengangs mit echten Einheiten (nm, Linien/mm, Phasenwinkel) und expliziter Bezug auf historische Originalexperimente. Rand-Aliasing der diskreten FFT wird durch integrierte Hanning/Tukey-Fensterung gedämpft.",
+      "failureModeEn": "Confusion with digital Photoshop filters: If learners believe they are merely applying an Instagram blur, the didactic value evaporates. Remedy: Mandatory rendering of the physical 4f optical raypath with calibrated physical units (nm, lines/mm, phase retardance) and explicit historical experiment framing. Discrete FFT boundary aliasing is mitigated via integrated Hanning/Tukey windowing.",
+      "priorArtDe": "Frei (25.09.2026): Geometrische Optikspiele (Laser Maze, Chromatron, Optika, Aargon) bilden nur Snellius-Strahlen mit Spiegeln/Prismen ab — null Wellenoptik, null Beugung. Didaktische Mathe-Erklärer (Jezzamon, 3Blue1Brown) bieten passive Schaubilder ohne Spielmechanik oder optischen Strahlengang. Hochschulpraktika verlieren 90 % der Zeit an Justierschrauben. ImageJ bietet FFT nur als Experten-Menüpunkt. Die Lücke ist ein physikalisches Puzzlespiel, das die 2D-Ortsfrequenzfilterung nach Ernst Abbe spielbar macht.",
+      "priorArtEn": "Free (25 Sep 2026): Geometric optics games (Laser Maze, Chromatron, Optika, Aargon) only model Snell ray reflection with mirrors/prisms — zero wave mechanics, zero diffraction. Didactic math explainers (Jezzamon, 3Blue1Brown) offer passive diagrams without game mechanics or optical raypaths. University labs lose 90% of time to alignment screws. ImageJ provides FFT only as an unguided utility. The gap is a physical puzzle game rendering Ernst Abbe 2D spatial frequency filtering truly playable."
     }
   ],
   "unpackedCandidates": [

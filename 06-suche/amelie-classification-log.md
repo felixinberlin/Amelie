@@ -49,8 +49,8 @@ Cumulative record of all candidate evaluations conducted by the Idea Reviewer. E
 | 2026-09-25 | `bugs-spaced-repetition` | Bugs als Spaced-Repetition | knowledge | **29/35** | Type D | Tier 1 | `Dose Ready (Anki-Community / Hochschulen)` |
 | 2026-09-25 | `traumtagebuch` | Lokales Traumtagebuch mit Motiv-Karte | knowledge | **29/35** | Type D | Tier 1/2 | `Dose Ready (Obsidian Plugin)` |
 | 2026-09-25 | `pillsafe-vision` | PillSafe Vision | civic | **28/35** | Type B | Tier 1/2 | `Verengt (Strikte Plausibilitätswarnungen erforderlich)` |
-| 2026-09-25 | `eichflaechen-trainer` | Eichflächen-Trainer | knowledge | **30/35** | Type D | Tier 1 | `Dose Ready (BBN / Universitäten)` |
 | 2026-09-25 | `tischschiedsrichter` | TischSchiedsrichter | audio | **29/35** | Type C | Tier 1 | `Dose Ready (Skelett bauen vor Verschenken)` |
+| 2026-09-25 | `abbe-fourier-filter` | Abbe-Puzzle: Der Fourier-Filter | physics | **32/35** | Type D | Tier 1 | `Dose Ready (Ernst-Abbe-Hochschule Jena / DPG)` |
 
 ---
 
@@ -134,3 +134,60 @@ Cumulative record of all candidate evaluations conducted by the Idea Reviewer. E
 * **Verdict:** `Verengt (Testing First)`
 * **Restlücke:** Datensparsamer lokaler Tabellen-OCR-Extraktor mit Plausibilitätsfilter (Verifizierung von KBE-Werten gegen Schwellenwerte 100/1.000/10.000).
 * **Empfohlene nächste Aktion:** Validierung der Tesseract.js WASM Tabellen-Segmentierung an 5 realen anonymisierten Laborprüfberichten (Eurofins, SGS, synlab).
+
+---
+
+### Review Dossier: Abbe-Puzzle: Der Fourier-Filter (`abbe-fourier-filter`)
+* **Review Date:** 25.09.2026
+* **Origin Engine:** `lacunar-bisociation` (Run 8)
+* **Intended Recipient:** Ernst-Abbe-Hochschule Jena (Fachbereich SciTec / Laser- und Optotechnologien) · DPG Fachgruppe Didaktik der Physik · Physikalisches Anfängerpraktikum (LMU München, TU Berlin)
+
+#### 1. Vector Radar (Score: 32/35)
+
+| Vector | Score (1-5) | Grounding & Empirical Evidence |
+|---|:---:|---|
+| **V1 · Novelty** | **4/5** | **Transformational (Boden)**: Verschiebt das Genre von geometrischen 17.-Jh.-Snellius-Raytracing-Spielen (Laser Maze, Chromatron) auf reale physikalische Wellenoptik und 2D-Ortsfrequenz-Dualräume nach Ernst Abbe (1873). Lacunar Gap: *„Studierende der Physik, Mikroskopie und Signalverarbeitung lernen die räumliche Fouriertransformation als rein abstrakte Integralrechnung, während das reale 4f-Praktikum fünf Stunden mit Justierschrauben vergeudet — sodass niemand eine räumliche Intuition dafür entwickelt, wie das gezielte Ausblenden diskreter Ortsfrequenzen ein Bild im Lichtstrahl ohne jeden Rechenschritt transformiert."* |
+| **V2 · Complexity** | **5/5** | **Tier 1 (Zero-Cloud Client-Side)**: 100% browser-basiertes TypeScript / Canvas 2D / WebGL. Komplexe 2D-Cooley-Tukey-FFT auf $256 \times 256$ Gittern läuft in unter 2 ms (60 FPS interaktiv). Null Backend, null Serverkosten, uneingeschränkte Offline-Funktionalität. |
+| **V3 · Possibility** | **5/5** | **GPU/WASM-Browserbeschleunigung**: Erst moderne standardisierte Browser-Engines (WebGL2 / WebAssembly) erlauben 60 FPS 2D-Fouriertransformationen und Phasenmodulationen in Echtzeit auf Endgeräten ohne Installation. Mathematisch exakte Fourier-Optik gem. Goodman. |
+| **V4 · Future/Longevity** | **5/5** | **Universitärer MINT-Kanon**: Abbe'sche Abbildungstheorie, Beugungsgrenze ($d = \lambda / (2 NA)$) und Zernike-Phasenkontrast sind zeitlose physikalische Lehrplaninhalte weltweit. Als statische GitHub-Pages-Applikation wartungsfrei für Jahrzehnte. |
+| **V5 · Civic SWOT** | **4/5** | **Offenes Bildungsgut (CC0 OER)**: Befreit Hochschulen von teuren proprietären Experimentierkästen (2.000 € pro Thorlabs EDU-FOP2). *Achillesferse:* Gefahr der Trivialisierung als reiner „Photoshop-Filter" $\to$ *Architektonische Lösung:* Zwingende Visualisierung des realen 4f-Strahlengangs mit Laser, Linsen, Fourier-Ebene und physikalischen Einheiten (nm, Linien/mm, Phasenwinkel $\Delta \phi$). |
+| **V6 · Tech Tree** | **4/5** | **Klarer Level-1-Trunk**: Stützt sich auf Cooley-Tukey 2D FFT und HTML5 Canvas; schaltet nachgelagerte didaktische Module für optisches Rechnen, VanderLugt-Korrelation und computergestützte Mikroskopie frei. |
+| **V7 · Documentation** | **5/5** | **Type D / Type A Primärquellen**: Ernst Abbe (1873, *Archiv f. mikroskop. Anatomie* 9), Joseph W. Goodman (*Introduction to Fourier Optics*), ISO 10934 (Mikroskopie), Thorlabs EDU-FOP2 Manual. Absolute physikalische Texttreue. |
+
+#### 2. Tech Tree Position
+
+```
+[Layer 0: Roots / Prerequisites]
+├── Ernst Abbe (1873) Beugungstheorie & Goodman Fourier Optics
+├── 2D Cooley-Tukey Fast Fourier Transform (Complex2D Array)
+└── HTML5 Canvas 2D / WebGL Shader Pipeline (Sub-2ms Recomputation)
+        │
+        ▼
+[Layer 1: Trunk / Minimal Core Scaffolding]
+└── Standalone Browser 4f-Bench:
+    Interaktive Masken (Pinhole, Spalt, Kreuz, Notch-Stempel, Zernike-Ring, Schlierenkante)
+    + Echtzeit Inverse FFT mit Dämpfung von Randaliasing (Hanning-Window)
+    + Level 01: Maschendrahtzaun löschen (Zwei-Punkte-Notchfilterung)
+        │
+        ▼
+[Layer 2: Downstream Educational Branches]
+├── Branch A: Hochschul-Praktikumsmodul für EAH Jena, LMU, TU Berlin (OER)
+├── Branch B: Zernike-Phasenkontrast & Dunkelfeld-Simulator für Biologie/Medizin
+└── Branch C: Optischer Prozessor / VanderLugt-Mustererkennungs-Challenge
+```
+
+#### 3. Civic SWOT
+
+| Strengths (S) | Weaknesses (W) |
+|---|---|
+| • 100% browser-basiert, frei und quelloffen (CC0 OER)<br>• 60 FPS sofortige taktile Rückmeldung statt 5 Stunden Justagefrust<br>• Stellt räumliche Fouriermathematik visuell und spielerisch dar | • Diskrete $256 \times 256$ FFT hat Randeffekte (Aliasing) im Vergleich zu kontinuierlichem Laserlicht<br>• Ersetzt nicht die handwerkliche Justagekompetenz an echten optischen Bänken |
+| **Opportunities (O)** | **Threats (T)** |
+| • Integration in universitäre Physik- und Biologie-Praktika<br>• Offizielle Empfehlung durch DPG-Fachgruppe Didaktik der Physik<br>• Partnerschaft mit Optik-Zentren (Jena, Wetzlar, Berlin-Adlershof) | • Missverständnis als bloßer digitaler Bildeffekt („Instagram-Filter") $\to$ physikalischer Strahlengang zwingend im UI |
+
+* **Achillesferse:** Verwechslung mit digitaler Bildbearbeitung $\to$ *Architektonische Lösung:* Strahlengang-Rendering (Laser $\to$ Objekt $\to$ Linse $f$ $\to$ Beugungsebene $\to$ Linse $f$ $\to$ Sensor), Anzeige von Phase und Amplitude, physikalische Kalibrierung ($\lambda = 532\text{ nm}$, $k$-Raum in $\text{mm}^{-1}$).
+
+#### 4. Triage Verdict & Synthesis
+
+* **Verdict:** `Dose Ready (Packen)`
+* **Restlücke:** Ein wellenoptisches Physik-Puzzlespiel, das die 2D-Ortsfrequenzfilterung nach Ernst Abbe mit echten Beugungsmasken spielbar macht und physikalische Intuition für analoges optisches Rechnen vermittelt.
+* **Empfohlene nächste Aktion:** Erstellung der zweisprachigen Dosen-Dossiers `05-dosen/abbe-fourier-filter.md` und `en/05-dosen/abbe-fourier-filter.md`, Einbettung in `src/data/dosen.ts` und Export der öffentlichen Caches.

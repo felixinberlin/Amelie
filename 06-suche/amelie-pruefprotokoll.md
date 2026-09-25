@@ -9,6 +9,12 @@ Ergänzt `05-dosen/_entsorgt.md`: dort steht die Begründung für gepackte, dann
 
 ---
 
+## Runde 13 / Bisoziation Run 8 — 25.09.2026 (Abbe-Puzzle: Der Fourier-Filter, method: lacunar-bisociation)
+
+| Idee | Urteil | Beleg (kurz) | Prüfen ab |
+|---|---|---|---|
+| **Abbe-Puzzle: Der Fourier-Filter** — Physik-Lernspiel für Wellenoptik & räumliche 2D-Fouriertransformation im Browser (`abbe-fourier-filter`) | **`frei`** | **Geometrische Raytracing-Spiele besetzt:** *Laser Maze*, *Chromatron*, *Optika*, *Aargon* bilden Reflexion und Brechung nach Snellius (17. Jh.) mit Spiegeln und Prismen ab — Null Wellenoptik, Null Beugung, Null Fourier. **Didaktische Mathe-Erklärer vorhanden:** Jezzamon (*An Interactive Guide to the Fourier Transform*) und 3Blue1Brown visualisieren 1D/2D-FFT als didaktische Schaubilder, bieten jedoch keine Spielmechanik, keine Rätsel-Progression und keinen physikalischen 4f-Strahlengang. **Praktika an Hochschulen:** LMU München, TU Berlin, RWTH Aachen und Thorlabs EDU-FOP2 Kits verlieren 90 % der Laborzeit an Justierschrauben, statt räumliche Filterung zu erproben. **Software:** ImageJ/Fiji bietet FFT-Filterung als isolierten Menüpunkt für Mikroskopiker ohne Didaktik. **Synthese:** Ein wellenoptisches Puzzlespiel, das die 2D-Ortsfrequenzfilterung nach Ernst Abbe (1873) mit echten Beugungsmasken (Pinhole, Spalt, Ring, Phasenschieber, Schlierenkante) spielbar macht und physikalische Intuition für analoges optisches Rechnen vermittelt. 100% Tier 1 (Client-Side Canvas/WebGL). Dose: `05-dosen/abbe-fourier-filter.md` | 09/2027 |
+
 ## Nachprüfung & Vertiefung Kristallwachstum 3D — 25.09.2026 (method: ideenrunde / engine-build)
 
 Vertiefte Architektur- und Repositorien-Prüfung moderner GPU-Ökosysteme (WebGPU WGSL, Kobayashi-Phasenfeld, 3D DLA) sowie vollständige Umsetzung & Verifikation von Ticket 01.

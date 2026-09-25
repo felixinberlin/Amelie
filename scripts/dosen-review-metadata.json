@@ -193,5 +193,10 @@
     "review_score": "29/35",
     "architecture_tier": "Tier 1",
     "source_type": "Type C"
+  },
+  "abbe-fourier-filter": {
+    "review_score": "32/35",
+    "architecture_tier": "Tier 1",
+    "source_type": "Type D"
   }
 }

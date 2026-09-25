@@ -157,8 +157,30 @@ Kein Bisoziationslauf, sondern der Punkt (1) aus Run 7, als eigener Durchgang er
 
 | 24.09.2026 | Typ B: **DO IT - Digitalisierung hydrologischer Daten** (TU Braunschweig, historische Tabellen, erfordert Mehrfachtranskription zur QS) | **Strickmuster** (abstraktes in physisches, Fehler bricht sofort die Gestalt) | 4 | 2 | 1 | Qualitätssicherung für handerfasste Daten erfordert doppelte Blindeingabe, weil Menschen einen Tippfehler in einer Zahlentabelle nicht sehen können | Gestalt-Prüfung: **`frei`** (Echtzeit-Sonifikation/Graphen bei der Eingabe bypassen die Doppel-Eingabe) |
 | 24.09.2026 | Gleicher Anker | **Chorgesang** (strikte Synchronität) | 4 | 2 | 1 | Crowdsourcing-Plattformen isolieren Volunteers in asynchroner Arbeit, obwohl tausende gleichzeitig helfen wollen | Die Daten-Schicht: **`besetzt`** (Transcribathons decken das ab) |
+| 25.09.2026 | Typ D/A: **Abbe-Theorie der Bildentstehung & 4f-Ortsfrequenzfilterung** (Ernst Abbe 1873 / Goodman *Introduction to Fourier Optics*; 5-h-Justage-Flaschenhals im Physikpraktikum) | **Linolschnitt & Holzschnitt-Negativdruck** (Handwerk, Distanz 4: Materialabtrag in der inversen Dualebene) | 4 | 6 (nach Tail-Sampling) | 2 (Abbe-Filter [Dose]; Moiré-Entwirrer [Baustein]) | Studierende der Physik, Mikroskopie und Signalverarbeitung lernen die räumliche Fouriertransformation als rein abstrakte Integralrechnung, während das reale 4f-Praktikum fünf Stunden mit Justierschrauben vergeudet — sodass niemand eine räumliche Intuition dafür entwickelt, wie das gezielte Ausblenden diskreter Ortsfrequenzen ein Bild im Lichtstrahl ohne jeden Rechenschritt transformiert. | Abbe-Puzzle / Fourier-Filter: **`frei`** (Dose `05-dosen/abbe-fourier-filter.md`) · Moiré-Entwirrer: Baustein |
 
 ### Run 7
 - **Gelernt:** Die Methode produziert stabile Lücken, wenn der Anker eine klar benannte technische Limitation (hier: Mehrfachtranskription) hat und der Collider das Medium wechselt (Text zu Gestalt).
 - **Fehler:** Die Daten-Schicht (Transcribathons) hätte man fast aus dem Mode-Wissen heraus als `besetzt` markieren können.
 - **Nächstes Mal:** Als Nächstes Typ-D-Quellen durchsuchen (Forschung ohne Werkzeug), die sich mit Sensordaten im städtischen Raum befassen.
+
+### Run 8 — 25.09.2026 (Zielgebiet: **Physik-Lernspiel / Wellenoptik**, Abbe-Fourier-Filter)
+
+Auftrag: „Use the lacunar skill <-> reviewer -> packer loop and build a new idea about an educational game".
+
+**Mode-Liste (10 Einträge, alle gesperrt):**
+1. Raytracing-Spiegelpuzzle (Laser Maze, Chromatron, Optika, Aargon)
+2. Linsenbank-Schieberegler mit dünner Linsenformel ($1/f = 1/g + 1/b$)
+3. RGB-Farbmisch-Spiel (Rot, Grün, Blau überlagern)
+4. Teleskop-Baukasten (Objektiv + Okular stapeln)
+5. Multiple-Choice-Optik-Quiz („Was entdeckte Ernst Abbe?")
+6. 2D-FFT-Mathe-Sandbox à la Jezzamon / 3Blue1Brown
+7. Laser-Alarmanlagen-Ausweichspiel im Museum
+8. Mikroskop-Fokussier-Simulator (Zwiebelhaut scharfstellen)
+9. Welleninterferenz-Wasserwellenbecken (zwei Kieselsteine werfen)
+10. Photoshop-Filter-Klon mit Weichzeichner- und Schärfe-Schiebereglern
+
+- **Gelernt:** Der Collider „Linolschnitt" (Handwerk, Distanz 4) gegen den Anker „Abbe 4f-System" erzeugte die entscheidende Reibung im **Raumbezug**: In der Schnitzkunst schneidet man lokal im Bildraum (Auge weggeschnitten $\to$ Auge fehlt). Im Fourier-Filter schneidet man lokal im Frequenzraum, was global im Bildraum wirkt (Zwei Punkte in der Mitte gelöscht $\to$ periodisches Maschendrahtgitter im gesamten Bild verschwindet, während das Objekt dahinter unberührt bleibt). Dieser Dualraum-Kontrast macht aus einem trockenen mathematischen Integral ($F(u,v) = \iint f(x,y) e^{-i 2\pi(ux+vy)} dx dy$) ein haptisches Puzzlespiel.
+- **Gelernt:** Warum das jetzt geht: WebGL2 und moderne WebAssembly erlauben komplexe 2D-FFTs ($256 \times 256$ bis $512 \times 512$) in unter 2 ms direkt im Browser — 60 FPS interaktives Schlitzen und Maskieren von Lichtwellenfeldern auf dem Handy, ohne Installation oder 2.000-Euro-Thorlabs-Justierbank.
+- **Fehler:** Aufpassen, dass das Spiel nicht wie eine reine Photoshop-Trickkiste wirkt. Die physikalische 4f-Geometrie (Laser $\to$ Objektträger $\to$ Fourier-Linse $\to$ Fourier-Ebene $\to$ Rekonstruktionslinse $\to$ Sensor) muss als echter Strahlengang mit Phase, Wellenlänge und Ortsfrequenzen in Linien/mm sichtbar bleiben.
+- **Nächstes Mal:** Einen Typ-A-Anker aus dem industriellen Arbeitsschutz oder der Akustik-Normung (z. B. DIN 18041 Hörsamkeit in Räumen) gegen einen Collider aus der Ornithologie oder Tierkommunikation testen.
