@@ -704,15 +704,15 @@ Berlin · github.com/felixinberlin`
       'The Kobayashi (1993) phase-field model for undercooled solidification can now be solved in WGSL at up to 192³ voxels — coupled with DLA nucleation, it delivers authentic crystal morphology.',
       'GPU marching cubes extract watertight manifold meshes directly; concise seed strings turn every object into a shareable, reproducible recipe.'
     ],
-    sketchDe: 'Vierstufen-Pipeline im Browser: 1. WebGPU DLA-Keimbildung mit Quartic-Solver-Driftkorrektur und Orientierungs-SSBO. 2. Kobayashi-Phasenfeld-Relaxation mit anisotroper Oberflächenenergie für Facetten und Trachten. 3. Didaktisches Gefüge-Dashboard mit 9 wissenschaftlichen Analyse-Linsen (MELT, ORIENT/IPF, THERM, CURV, SEM). 4. Echtzeit-Berechnung der fraktalen Dimension (Df) sowie Export als wasserdichtes 3MF/STL mit Seed-Rezept.',
-    sketchEn: 'Four-stage browser pipeline: 1. WebGPU DLA nucleation with quartic-solver drift correction and an orientation SSBO. 2. Kobayashi phase-field relaxation with anisotropic surface energy for crystalline facets. 3. Educational dashboard with 9 scientific microstructure lenses (MELT, ORIENT/IPF, THERM, CURV, SEM). 4. Real-time fractal dimension (Df) box-counting and watertight 3MF/STL export with shareable seed recipes.',
+    sketchDe: 'Vierstufen-Pipeline im Browser: 1. WebGPU DLA-Keimbildung mit Quartic-Solver-Driftkorrektur und Orientierungs-SSBO. 2. Kobayashi-Phasenfeld-Relaxation mit anisotroper Oberflächenenergie für Facetten und Trachten. 3. Didaktisches Gefüge-Dashboard mit 6 wissenschaftlichen Analyse-Linsen (ORIENT, MELT, THERM, CURV, SEM, ZONING) und interaktivem 3D-Z-Schnitt. 4. Echtzeit-Berechnung der fraktalen Dimension (Df) sowie Export als wasserdichtes 3MF/STL mit Seed-Rezept.',
+    sketchEn: 'Four-stage browser pipeline: 1. WebGPU DLA nucleation with quartic-solver drift correction and an orientation SSBO. 2. Kobayashi phase-field relaxation with anisotropic surface energy for crystalline facets. 3. Educational dashboard with 6 scientific microstructure lenses (ORIENT, MELT, THERM, CURV, SEM, ZONING) and interactive 3D Z-slice plane. 4. Real-time fractal dimension (Df) box-counting and watertight 3MF/STL export with shareable seed recipes.',
     firstStepDe: {
-      ticket: 'Hybride WebGPU-Dendriten-Keimung mit Kobayashi-Relaxation und Df-Messung (Ticket #01).',
-      criteria: 'DLA-Partikel docken an, 50 Phasenfeld-Zeitschritte glätten die Ränder thermodynamisch konsistent, die fraktale Dimension (Df) wird live via 3D-Box-Counting ausgegeben und das Mesh exportiert wasserdicht als STL.'
+      ticket: 'Ticket 02: GPU-Marching-Cubes Isosurface-Extraktion & Mehrfarbiger 3MF-Farbexport (Ticket 01 verifiziert).',
+      criteria: 'Glatte Rekonstruktion planarer Kristallfacetten bei phi = 0,5 ohne Voxel-Treppen, Multi-Material 3MF-Export mit eingebetteten EBSD-IPF- und Wachstumszonierungs-Farben (ZONING), fehlerfreies Laden in PrusaSlicer/Bambu Studio.'
     },
     firstStepEn: {
-      ticket: 'Hybrid WebGPU dendrite nucleation with Kobayashi relaxation and Df measurement (Ticket #01).',
-      criteria: 'DLA particles aggregate, 50 phase-field timesteps smooth the boundary thermodynamically, real-time fractal dimension (Df) is reported via 3D box-counting, and a watertight STL exports cleanly.'
+      ticket: 'Ticket 02: GPU Marching Cubes Isosurface Extraction & Multi-Color 3MF Export (Ticket 01 verified).',
+      criteria: 'Smooth reconstruction of planar crystal facets at phi = 0.5 without voxel staircasing, multi-material 3MF export with embedded EBSD-IPF and growth zoning (ZONING) colors, verified clean loading in PrusaSlicer/Bambu Studio.'
     },
     failureModeDe: 'Numerische Instabilität bei zu aggressivem Zeitschritt im Phasenfeld-Solver oder Ausfall auf Geräten ohne WebGPU-Treiber (erfordert robusten Fallback auf vereinfachte Gitter). Ohne Gitteranisotropie ermüdet die DLA-Formensprache nach wenigen Seeds.',
     failureModeEn: 'Numerical instability from overly aggressive timesteps in the phase-field solver or absence of WebGPU drivers (requires a graceful fallback). Without crystal lattice anisotropy, pure DLA forms quickly become visually repetitive.',
@@ -730,7 +730,7 @@ In der universitären Didaktik werden Nichtgleichgewichts-Kristallisation, Dendr
 
 Kristallwachstum 3D schließt diese Lücke direkt im Browser über WebGPU:
 1. Hybride Physik: Brownsche DLA-Partikelkeimung mit analytischer Driftkorrektur, gekoppelt mit dem Kobayashi-Phasenfeld-Modell (1993) für unterkühlte Schmelzen auf volumetrischen 3D-Gittern.
-2. Didaktische Gefügelinsen: Echtzeit-Umschaltung zwischen 5 Analyse-Ebenen (Phasenordnungsparameter φ, EBSD-IPF Orientierungsfeld, thermische Unterkühlung ΔT mit latenter Wärme, Gibbs-Thomson-Krümmung und virtuelles Rasterelektronenmikroskop).
+2. Didaktische Gefügelinsen & 3D-Schnitt: 3D-Orbit mit interaktiver Schnitt-Ebene (Z-Slice zur Begutachtung von Hohlräumen und Trichterwachstum) sowie 6 wissenschaftliche Analyse-Ebenen (EBSD-IPF Orientierungsfeld, Phasenordnungsparameter φ, thermische Unterkühlung ΔT mit latenter Wärme, Gibbs-Thomson-Krümmung, virtuelles Rasterelektronenmikroskop und petrologische Wachstumszonierung).
 3. Quantitative Didaktik & 3D-Druck: Live-Messung der fraktalen Dimension (D_f) über 3D-Box-Counting, deterministische Rezept-Hashes (K3D-...) und direkter Export wasserdichter, stützfreier Manifold-Meshes (3MF/STL) für den 3D-Druck im Hörsaal.
 
 Ein kompaktes Dokument mit Architektur, physikalischer Herleitung und den Bruchstellen:
