@@ -891,42 +891,93 @@ Berlin · github.com/felixinberlin/Amelie`
   },
   {
     id: 'tarot-zustandsmaschine',
-    title: 'Tarot-Zustandsmaschine',
-    titleEn: 'Tarot State Machine',
-    oneLinerDe: 'Narratives Debugging und archetypische Zustandsübergänge — Tarot-Karten als formale Zustandsmaschine für kreative Plot- und Systementwürfe.',
-    oneLinerEn: 'Narrative debugging and archetypal state machines: Tarot archetypes modeled as a formal finite state automaton for creative writers and system architects.',
+    title: 'Tarot als Zustandsmaschine',
+    titleEn: 'Tarot Spread Graph DSL',
+    oneLinerDe: 'Ein Legesystem ist bereits ein Programm — Positionen sind Slots mit Koordinaten, Karten sind typisierte Zustände und Bedeutung entsteht aus gerichteten Relationen. Eine offene JSON-Spezifikation für herstellerunabhängige Spreads.',
+    oneLinerEn: 'A spread is already a program: slots have layout coordinates, cards act as typed states, and meaning emerges from directed relations. An open JSON specification for vendor-independent tarot spreads.',
     date: 'September 2026',
     reviewAfter: 'September 2027',
-    recipientsDe: 'Kreativschreib-Communities · Game-Design-Forschung · Interactive Fiction (Twine/Ink)',
-    recipientsEn: 'Creative writing guilds · Game narrative designers · Interactive fiction tooling (Twine/Ink)',
+    recipientsDe: 'Labyrinthos (Tina Gong) · Interactive Fiction / Game-Narrative (Twine / Inkle) · Crowdfunding Deck-Künstler:innen',
+    recipientsEn: 'Labyrinthos (Tina Gong) · Interactive fiction & narrative engines (Twine / Inkle) · Crowdfunding deck artists',
     domain: 'creative',
     verdict: 'gift',
     status: 'gepackt',
-    tags: ['Narrativ', 'Zustandsmaschine', 'Tarot', 'Creative Coding', 'Storytelling'],
-    problemDe: 'Plot-Entwürfe in Büchern und Spielen geraten in narrative Sackgassen. Tarot wird oft für Brainstorming genutzt, bleibt aber esoterisch-beliebig statt strukturelle dramaturgische Spannungen aufzudecken.',
-    problemEn: 'Narrative plots in novels and games deadlock in narrative cul-de-sacs. Writers draw cards for inspiration, but lack formal structural transition mechanics linking archetypes into coherent story engines.',
+    tags: ['Spezifikation', 'JSON Schema', 'Tarot', 'Graph DSL', 'State Machine', 'Game Design', 'Interactive Fiction'],
+    problemDe: 'Legesysteme werden seit zweihundert Jahren in Prosa weitergegeben („Karte 2 kreuzt Karte 1"). Diese strukturellen Beziehungen (orthogonale Drehung, kausale Übergänge, Nachbarschafts-Modifikatoren) sind nirgends formalisiert. Jede Tarot-App implementiert Spreads als starre, festverdrahtete Arrays. Ein neues Legesystem erfordert neuen Code; alternative Decks (22 Majors, 36 Lenormand) bringen Apps zum Absturz.',
+    problemEn: 'Tarot spreads have been passed down for centuries in prose ("Card 2 crosses Card 1"). These structural relationships (orthogonal rotations, causal transitions, neighbor modifiers) are nowhere formalized. Every tarot app hardcodes spreads as flat arrays. Adding a spread requires new code; alternative deck sizes (22-card Majors, 36-card Lenormand) crash apps without contracts.',
     whyNowDe: [
-      'Formale State-Machine-Engines (wie XState) lassen sich nahtlos im Web visualisieren.',
-      'Graph-Layouts (D3 / Dagre) machen komplexe narrative Pfade und Spannungsbögen intuitiv begreifbar.'
+      'LLM-Agenten (wie MCP-Server) benötigen strukturierte semantische Graphen statt unstrukturierter Prompts, um relationale Spannungsfelder in Lesungen fundiert zu analysieren.',
+      'Moderne SVG- und CSS-Grid-Renderer im Browser können komplexe Karten-Layouts vollständig autonom aus (x, y, θ)-Slot-Koordinaten berechnen.',
+      'JSON Schema (Draft 2020-12) ermöglicht formale Deck-Verträge (deckContract), die Decks und Spreads typisiert entkoppeln.'
     ],
     whyNowEn: [
-      'Visual state machine tools (like XState) run directly in modern browsers.',
-      'Interactive graph visualizations reveal dramatic tension flow, traps, and resolution pathways.'
+      'LLM agents (e.g. MCP servers) require structured semantic graphs rather than raw text prompts to accurately evaluate relational tension between card slots.',
+      'Modern web layout engines can render spread boards autonomously from (x, y, θ) slot coordinates without custom CSS per spread.',
+      'JSON Schema (Draft 2020-12) provides strict deckContract boundaries, cleanly decoupling physical card sets from spread topology.'
     ],
-    sketchDe: 'Visualisierer für archetypische Heldenreisen als gerichteter Graph: Karten als Zustände, Übergänge als Konflikte oder Prüfungen. Hebt narrative Zyklen und Sackgassen hervor.',
-    sketchEn: 'Visual hero\'s journey state machine: cards represent character states, transitions represent crises. Highlights dead ends and narrative pacing flaws.',
+    sketchDe: 'Formale Spezifikation (spread.schema.json): deckContract (Mindestkarten, Arcana-Pflicht), typisierte Slots mit geometrischen Koordinaten (x, y, rotation, layer) und gerichtete Relationen (crosses, grounds, crowns, leads_to, mirrors). Referenz-Definition des Keltischen Kreuzes und 3-Karten-Sequenz.',
+    sketchEn: 'Formal specification (spread.schema.json): deckContract (minimum cards, required arcana), typed slots with geometric coordinates (x, y, rotation, layer), and directed relations (crosses, grounds, crowns, leads_to, mirrors). Reference implementations for Celtic Cross and 3-card linear spreads.',
     firstStepDe: {
-      ticket: 'Große Arkana als XState-Graph visualisieren.',
-      criteria: '22 Archetypen mit validen dramaturgischen Übergängen auf einem interaktiven Canvas durchklickbar.'
+      ticket: 'Kanonisches Keltisches Kreuz als typisierte JSON-Spezifikation (Ticket #01).',
+      criteria: 'spread.schema.json definiert, celtic-cross.json mit 10 Slots und 8 typisierten Kanten validiert fehlerfrei, und ein generischer Renderer zeichnet das Layout ohne hardcodierte Regeln.'
     },
     firstStepEn: {
-      ticket: 'Model the 22 Major Arcana in an interactive state graph.',
-      criteria: 'Users navigate archetypal character transitions with valid dramatic tension rules.'
+      ticket: 'Canonical Celtic Cross as typed JSON specification (Ticket #01).',
+      criteria: 'spread.schema.json established, celtic-cross.json with 10 slots and 8 typed relations validates cleanly, and a generic renderer draws the layout with zero hardcoded CSS rules.'
     },
-    failureModeDe: 'Verlust der Poesie durch Über-Formalisierung: Darf kein steriles Diagramm werden, sondern muss narrativen Freiraum lassen.',
-    failureModeEn: 'Over-formalization: Stripping the mythological resonance turns it into dry business flowcharting.',
-    priorArtDe: 'Esoterische Tarot-Apps simulieren Kartenstapel; formale dramaturgische Zustandsmaschinen fehlen.',
-    priorArtEn: 'Countless tarot card drawing apps exist; zero formal dramatic state-transition engines.'
+    failureModeDe: 'Überformalisierung vs. intuitive Mehrdeutigkeit: Ein Schema, das versucht, alle spirituellen Nuancen in Enums zu zwingen, scheitert. Die DSL muss strikt Struktur und geometrische Relationen beschreiben, niemals Textbedeutungen (diese bleiben Sache des Decks).',
+    failureModeEn: 'Over-formalization vs. intuitive ambiguity: A schema trying to compress esoteric nuance into rigid enums kills the practice. The DSL must strictly describe topological structure and geometry, never semantic card definitions.',
+    priorArtDe: 'metabismuth/tarot-json liefert Karten-Daten, aber keine Legesysteme; fzlzjerry/tarot-mcp nutzt Spreads nur als Prompt-Vorlagen; Labyrinthos besitzt 30+ kuratierte Spreads, hält sie aber in einer geschlossenen App gefangen. Eine herstellerneutrale Graph-DSL fehlt.',
+    priorArtEn: 'metabismuth/tarot-json solves card catalogs but ignores spreads; fzlzjerry/tarot-mcp uses spreads only as prompt templates; Labyrinthos curates 30+ spreads inside a walled-garden app. A vendor-independent graph DSL does not exist.',
+    emailTemplate: {
+      to: 'faculty@labyrinthos.co',
+      subjectDe: 'Idee zu verschenken: Eine herstellerunabhängige Graph-DSL für Tarot-Legesysteme',
+      subjectEn: 'Free idea gift: A vendor-independent graph DSL for tarot spreads',
+      bodyDe: `Guten Tag Tina Gong,
+
+ich recherchiere Software-Werkzeuge, die erst seit Kurzem technisch möglich oder fällig sind, und baue nur einen Bruchteil davon selbst. Diese Idee gehört thematisch zu Labyrinthos und der breiteren Indie-Tarot-Community und nicht zu mir — deshalb schenke ich sie Ihnen.
+
+Labyrinthos hat bewiesen, wie viel didaktische Klarheit in einer kuratierten Bibliothek von über dreißig Legesystemen steckt. Gleichzeitig leidet das gesamte digitale Ökosystem (von Indie-Künstlerinnen auf Kickstarter bis zu Entwicklern interaktiver Fiktion) an einem blinden Fleck: Legesysteme werden nach wie vor in unpräziser Prosa oder als starre, festverdrahtete Arrays implementiert. Was es bedeutet, dass Karte 2 Karte 1 „kreuzt", wie umgekehrte Karten benachbarte Übergänge blockieren oder wie ein System mit Nicht-Standard-Decks (22 Große Arkana) umgeht, ist nirgends maschinenlesbar formalisiert.
+
+Die Idee: Eine offene, herstellerunabhängige Graph-Notation für Legesysteme (Tarot Spread DSL):
+1. Deklarativer Deck-Vertrag: Definiert Mindestkartenzahlen und Arcana-Anforderungen, damit inkompatible Decks deterministisch abgefangen werden.
+2. Geometrische & semantische Slots: Positionen mit relativen Koordinaten (x, y, Rotation in Grad, Z-Ebene) und funktionaler Rolle.
+3. Typisierte Relationen: Gerichtete Kanten (crosses, grounds, crowns, leads_to, mirrors), aus denen Render-Engines das Layout autonom berechnen und LLM-Pipelines relationale Spannungen fundiert analysieren können.
+
+Ein kompaktes Dokument mit Architektur, Schemadefinition und den Grenzen (warum Struktur formalisiert werden muss, Bedeutung aber freibleiben muss):
+https://github.com/felixinberlin/Amelie/blob/main/05-dosen/tarot-zustandsmaschine.md
+
+Das lauffähige JSON-Schema sowie Referenz-Dateien (Keltisches Kreuz, 3-Karten-Pfad) stehen frei bereit:
+https://github.com/felixinberlin/Amelie/tree/main/07-demos/tarot-zustandsmaschine
+
+Keine Bedingungen, CC0 / gemeinfrei, keinerlei Gegenleistung erwartet. Wenn Sie dafür keine Verwendung haben oder bereits an einem eigenen Standard arbeiten, ignorieren Sie diese Nachricht bitte einfach — ich melde mich nicht erneut.
+
+Mit freundlichen Grüßen
+Félix
+Berlin · github.com/felixinberlin/Amelie`,
+      bodyEn: `Dear Tina Gong,
+
+I research software opportunities that only recently became technically viable or necessary, and only build a small fraction myself. This idea belongs with Labyrinthos and the wider indie tarot community rather than with me — which is why I am gifting it to you.
+
+Labyrinthos has demonstrated how much educational clarity exists in a thoughtfully curated library of over 30 spreads. At the same time, the broader digital ecosystem (from deck artists crowdfunding on Kickstarter to narrative game designers) suffers from a systemic blind spot: spreads are still passed down in loose prose or hardcoded as rigid arrays. What it physically and semantically means for Card 2 to "cross" Card 1, how reversals block neighboring transitions, or how a spread handles non-standard card counts (22-card Majors-only decks) is nowhere machine-readable.
+
+The idea: An open, vendor-independent graph DSL for tarot spreads:
+1. Declarative Deck Contracts: Validates card counts and arcana constraints so incompatible decks fail gracefully before drawing.
+2. Geometric & Semantic Slots: Positions defined with relative coordinates (x, y, rotation degrees, layer) and functional roles.
+3. Typed Directed Relations: Edges (crosses, grounds, crowns, leads_to, mirrors) enabling renderers to layout boards autonomously and helping LLM agents evaluate relational dynamics rather than isolated cards.
+
+A concise dossier with architecture, schema definitions, and guardrails:
+https://github.com/felixinberlin/Amelie/blob/main/05-dosen/tarot-zustandsmaschine.md
+
+The JSON schema and reference instances (Celtic Cross, 3-Card Linear):
+https://github.com/felixinberlin/Amelie/tree/main/07-demos/tarot-zustandsmaschine
+
+No strings attached, CC0 public domain, zero compensation expected. If you have no use for this or already have an internal format in flight, please feel free to ignore this email — I will not follow up.
+
+Warm regards,
+Félix
+Berlin · github.com/felixinberlin/Amelie`
+    }
   },
   {
     id: 'traumtagebuch',

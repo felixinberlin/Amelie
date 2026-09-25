@@ -215,6 +215,48 @@ export const DOSE_BOOKS: Record<string, BookChapter[]> = {
       kind: 'md',
     },
   ],
+  'tarot-zustandsmaschine': [
+    {
+      slug: 'community-needs',
+      path: '02-recherche/tarot-occult-community-needs.md',
+      titleDe: 'Foren-Recherche & Community-Bedarfe',
+      titleEn: 'Occult forum research & practitioner needs',
+      noteDe: 'Auswertung von r/tarot, r/occult und Discord: Kartenkatalog-Reduktionismus, Blockaden durch Reversals, elementare Würden und proprietäre Deck-Fallen.',
+      noteEn: 'Survey of r/tarot, r/occult, and Discord: card isolation traps, reversal edge blocks, elemental dignities, and proprietary deck silos.',
+      date: '25.09.2026',
+      kind: 'md',
+    },
+    {
+      slug: 'recherche-dsl',
+      path: '02-recherche/tarot-zustandsmaschine-dsl.md',
+      titleDe: 'Architektur & Beziehungs-Graph-Modell',
+      titleEn: 'Architecture & relational graph model',
+      noteDe: 'Systematischer Abgleich von Tarot-JSON-Katalogen, MCP-Servern, Labyrinthos und Twine/Ink.',
+      noteEn: 'Systematic survey of tarot JSON catalogs, MCP servers, Labyrinthos, and Twine/Ink.',
+      date: '25.09.2026',
+      kind: 'md',
+    },
+    {
+      slug: 'open-source-scaffolding',
+      path: '07-demos/tarot-zustandsmaschine/README.md',
+      titleDe: 'Open-Source-Scaffolding & JSON-Schema',
+      titleEn: 'Open-source scaffolding & JSON schema',
+      noteDe: 'Formales JSON-Schema für herstellerunabhängige Spreads mit Slots, Layout und typisierten Relationen.',
+      noteEn: 'Formal JSON schema for vendor-independent spreads with slots, layout coordinates, and typed relations.',
+      date: '25.09.2026',
+      kind: 'md',
+    },
+    {
+      slug: 'open-source-stack',
+      path: '07-demos/tarot-zustandsmaschine/open-source-stack.md',
+      titleDe: 'Open-Source-Software-Architektur',
+      titleEn: 'Open-source software architecture',
+      noteDe: 'Baukasten aus tarot-json, XState v5, React Flow, Ajv und Inkjs für vollwertige Graph-Engines.',
+      noteEn: 'Component stack from tarot-json, XState v5, React Flow, Ajv, and Inkjs for full graph engines.',
+      date: '25.09.2026',
+      kind: 'md',
+    },
+  ],
 };
 
 export function getBook(doseId: string): BookChapter[] {

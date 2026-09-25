@@ -1,0 +1,64 @@
+{
+  "$schema": "./spread.schema.json",
+  "id": "three-card-linear",
+  "name": "Past, Present, Future Timeline",
+  "nameDe": "Drei-Karten-Zeitstrahl (Vergangenheit, Gegenwart, Zukunft)",
+  "author": "Traditional",
+  "tradition": "open",
+  "description": "Das klassische 3-Karten-Legesystem für lineare temporale Progression oder dialektische Dreisätze (These, Antithese, Synthese).",
+  "deckContract": {
+    "minCards": 3,
+    "requiredArcana": "any",
+    "allowReversals": true,
+    "significatorRequired": false
+  },
+  "slots": [
+    {
+      "id": "time_past",
+      "order": 1,
+      "label": "The Past / Origin",
+      "labelDe": "Die Vergangenheit (Ursprung)",
+      "role": "past",
+      "layout": { "x": 20, "y": 50, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "time_present",
+      "order": 2,
+      "label": "The Present / Active State",
+      "labelDe": "Die Gegenwart (Aktiver Zustand)",
+      "role": "situation",
+      "layout": { "x": 50, "y": 50, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "time_future",
+      "order": 3,
+      "label": "The Future / Trajectory",
+      "labelDe": "Die Zukunft (Richtung)",
+      "role": "outcome",
+      "layout": { "x": 80, "y": 50, "rotation": 0, "layer": 0 }
+    }
+  ],
+  "relations": [
+    {
+      "source": "time_past",
+      "target": "time_present",
+      "type": "leads_to",
+      "tension": 0.1,
+      "evaluateElementalDignity": true
+    },
+    {
+      "source": "time_present",
+      "target": "time_future",
+      "type": "leads_to",
+      "tension": 0.1,
+      "evaluateElementalDignity": true
+    },
+    {
+      "source": "time_past",
+      "target": "time_future",
+      "type": "mirrors",
+      "tension": 0.0,
+      "evaluateElementalDignity": false
+    }
+  ]
+}

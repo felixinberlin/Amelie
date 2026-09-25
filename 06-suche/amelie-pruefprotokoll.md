@@ -7,6 +7,16 @@ Ergänzt `05-dosen/_entsorgt.md`: dort steht die Begründung für gepackte, dann
 **Vorläufiger Zustand:** `ungeprüft` — Kandidat aus einer Ideenmethode, Existenzprüfung nicht gelaufen. Kein Urteil, zählt in keiner Trefferquote, darf nicht zugestellt werden.
 **Prüfen ab:** Tooling/Konsum + 6 Monate · Zivilgesellschaft + 12 Monate
 
+---
+
+## Nachprüfung & Vertiefung Kristallwachstum 3D — 25.09.2026 (method: ideenrunde)
+
+Vertiefte Architektur- und Repositorien-Prüfung moderner GPU-Ökosysteme (WebGPU WGSL, Kobayashi-Phasenfeld, 3D DLA).
+
+| Idee | Urteil | Beleg (kurz) | Prüfen ab |
+|---|---|---|---|
+| **Kristallwachstum 3D** — Hybride WebGPU DLA-Phasenfeld-Pipeline (Brownsche Keimung + Kobayashi-Thermodynamik, 9 Gefügelinsen, druckfertiges 3D-Rezept) (`kristallwachstum-3d`) | **`verengt`** | **WebGPU DLA vorhanden:** `scttfrdmn/webgpu-compute-exploration` bietet DLA in WGSL, jedoch ohne Phasenfeld-Relaxation oder Gefüge-Didaktik. **Phasenfeld-Solidification in WGSL vorhanden:** `fronkt/solidify` löst das Kobayashi (1993) Modell auf 192³ Gittern mit 9 Linsen (MELT, ORIENT, SLICE, THERM etc.) und EBSD-Karten — ist aber rein kontinuumsmechanisch ohne DLA-Keimbildung. **Off-Lattice DLA mathematisch gelöst:** `markstock/dla-nd` bietet Quartic-Solver-Driftkorrektur in C. **Restlücke: Die Synthese im Browser.** Verbindung von DLA-Partikelkeimung mit physischer Phasenfeld-Relaxation, Gefügeanalyse in Echtzeit ($D_f$) und deterministischem Seed-Rezept für den 3D-Druck. Recherche: `02-recherche/kristallwachstum-3d-didaktik-physik.md`, Dose: `05-dosen/kristallwachstum-3d.md` | 09/2027 |
+
 **Abdeckung Dosen ↔ Protokoll (Stand 24.09.2026): mechanisch.** `scripts/check-protokoll-coverage.mjs` läuft in `npm run lint` und bricht ab, wenn eine Dose in `05-dosen/` oder ein Kandidat mit Urteil in `src/data/` hier keine Fundstelle hat. 36 Dosen, 27 Kandidaten mit Urteil, 125 Katalogeinträge `ungeprüft`. Die Aussage darunter vom 19.09. war bis heute achtfach falsch.
 
 **Abdeckung Dosen ↔ Protokoll (Stand 19.09.2026):** Alle 24 Dosen in `05-dosen/` haben mindestens eine Zeile hier — Runde 1 (15), Nachtrag 18.09. (2), Runde 3 (5, Feuerkugel-Sofortnetz als zwei Zeilen), Runde 4 (2, Denkmal-Verlaufsblick und Wärmesignatur). Neue Dose ohne Zeile hier = Fehler, sofort nachtragen. Am 19.09.2026 mechanisch nachgezählt (Dosen-Titel gegen Protokoll gegrept, Traumtagebuch unter dem Kurznamen): 24 von 24 gefunden; ebenso alle Ideen der Matrix (19 aus Runde 1, Crack Flora Watcher, KlarLokal, Wärmesignatur, Denkmal-Verlaufsblick).
@@ -537,6 +547,3 @@ Konsequenz für die Gemini-Lauf-Tabelle unten: „Orgelpfeifen-Bleifraß-Resonan
 |---|---|---|---|
 | **Gestalt-Prüfung** — Echtzeit-Sonifikation/Visualisierung bei Transkription historischer Tabellen zur Vermeidung von Doppel-Eingaben | `frei` | Problem ist bei DO IT (TU BS) benannt, keine Lösung gefunden | 09/2027 |
 | **Die Daten-Schicht** — Synchrone Transkriptions-Events für Citizen Science statt asynchron | `besetzt` | Transcribathons (Europeana) etablieren bereits dieses Format | – |
-
-| **Dashcam Discard Claim** — Anwohner stoppen den Auto-Overwrite lokaler Dashcams nach Extremwetter per Community-Pin | **`frei`** | Franchi et al. (2026, Nat Commun) belegt Machbarkeit von Dashcam-Flut-AI, aber keine Spur von einem Bürgerwerkzeug zum Sichern flüchtiger Dashcam-Loops; Dashcams löschen i.d.R. nach 24-48h. | 03/2027 |
-| **Dry Baseline Rhythm** — Bürger fotografieren wöchentlich denselben intakten Gully, um die Null-Linie für Flut-KIs zu trainieren | **`frei`** | Mängelmelder fokussieren auf *verstopfte* Gullys. Keine Citizen-Science-Rhythmen für intakte Baselines (Null-Messung) gefunden, obwohl KIs diese dringend brauchen. | 03/2027 |

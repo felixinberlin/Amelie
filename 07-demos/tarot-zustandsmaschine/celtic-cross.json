@@ -1,0 +1,155 @@
+{
+  "$schema": "./spread.schema.json",
+  "id": "celtic-cross",
+  "name": "The Celtic Cross",
+  "nameDe": "Das Keltische Kreuz",
+  "author": "Arthur Edward Waite (1910) / Traditional",
+  "tradition": "rws",
+  "description": "Das historische 10-Karten-Legesystem nach A.E. Waite. Das Herzstück besteht aus einem zentralen Kreuz mit orthogonaler Überlagerung (Slot 2 kreuzt Slot 1 bei 90° auf Z-Ebene 1), flankiert von 4 Kardinalkarten und einem 4-Karten-Stab (Staff).",
+  "deckContract": {
+    "minCards": 10,
+    "requiredArcana": "any",
+    "allowReversals": true,
+    "significatorRequired": false
+  },
+  "slots": [
+    {
+      "id": "heart_situation",
+      "order": 1,
+      "label": "The Heart of the Matter (Present)",
+      "labelDe": "Die Gegenwart (Das Thema)",
+      "role": "situation",
+      "layout": { "x": 30, "y": 50, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "cross_obstacle",
+      "order": 2,
+      "label": "The Crossing Card (The Immediate Challenge)",
+      "labelDe": "Das Hindernis (Die Querkarte)",
+      "role": "obstacle",
+      "layout": { "x": 30, "y": 50, "rotation": 90, "layer": 1 }
+    },
+    {
+      "id": "foundation_root",
+      "order": 3,
+      "label": "The Foundation (Subconscious Root)",
+      "labelDe": "Die Wurzel (Das Unbewusste)",
+      "role": "foundation",
+      "layout": { "x": 30, "y": 80, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "past_receding",
+      "order": 4,
+      "label": "The Recent Past (Passing Away)",
+      "labelDe": "Die jüngste Vergangenheit (Vorübergehend)",
+      "role": "past",
+      "layout": { "x": 10, "y": 50, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "crown_aspiration",
+      "order": 5,
+      "label": "The Crown (Conscious Goal / Best Outcome)",
+      "labelDe": "Die Krone (Bewusstes Ziel / Höchste Möglichkeit)",
+      "role": "crown_aspiration",
+      "layout": { "x": 30, "y": 20, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "near_future",
+      "order": 6,
+      "label": "The Near Future (Unfolding Next)",
+      "labelDe": "Die nahe Zukunft (Was als Nächstes kommt)",
+      "role": "near_future",
+      "layout": { "x": 50, "y": 50, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "staff_self",
+      "order": 7,
+      "label": "The Self (Internal Attitude & Stance)",
+      "labelDe": "Das Selbst (Innere Haltung)",
+      "role": "self_attitude",
+      "layout": { "x": 80, "y": 80, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "staff_environment",
+      "order": 8,
+      "label": "The Environment (External Influences & People)",
+      "labelDe": "Das Umfeld (Äußere Einflüsse)",
+      "role": "environment",
+      "layout": { "x": 80, "y": 60, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "staff_hopes_fears",
+      "order": 9,
+      "label": "Hopes and Fears (Psychological Tension)",
+      "labelDe": "Hoffnungen und Ängste",
+      "role": "hopes_fears",
+      "layout": { "x": 80, "y": 40, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "staff_outcome",
+      "order": 10,
+      "label": "The Cumulative Outcome",
+      "labelDe": "Das Gesamtergebnis (Kulmination)",
+      "role": "outcome",
+      "layout": { "x": 80, "y": 20, "rotation": 0, "layer": 0 }
+    }
+  ],
+  "relations": [
+    {
+      "source": "cross_obstacle",
+      "target": "heart_situation",
+      "type": "crosses",
+      "tension": -0.8,
+      "evaluateElementalDignity": true
+    },
+    {
+      "source": "foundation_root",
+      "target": "heart_situation",
+      "type": "grounds",
+      "tension": 0.5,
+      "evaluateElementalDignity": true
+    },
+    {
+      "source": "crown_aspiration",
+      "target": "heart_situation",
+      "type": "crowns",
+      "tension": 0.4,
+      "evaluateElementalDignity": true
+    },
+    {
+      "source": "past_receding",
+      "target": "heart_situation",
+      "type": "leads_to",
+      "tension": 0.2,
+      "evaluateElementalDignity": false
+    },
+    {
+      "source": "heart_situation",
+      "target": "near_future",
+      "type": "leads_to",
+      "tension": 0.2,
+      "evaluateElementalDignity": false
+    },
+    {
+      "source": "staff_self",
+      "target": "staff_environment",
+      "type": "mirrors",
+      "tension": 0.0,
+      "evaluateElementalDignity": true
+    },
+    {
+      "source": "staff_hopes_fears",
+      "target": "staff_outcome",
+      "type": "leads_to",
+      "tension": -0.3,
+      "evaluateElementalDignity": true
+    },
+    {
+      "source": "near_future",
+      "target": "staff_outcome",
+      "type": "synthesizes",
+      "tension": 0.6,
+      "evaluateElementalDignity": true
+    }
+  ]
+}

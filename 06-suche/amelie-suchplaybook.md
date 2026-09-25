@@ -76,7 +76,6 @@ Wo Ideen schnell sterben — vor dem Suchen als Vorfilter nutzen.
 | Repair Cafés + KI | **wird gerade besetzt** | Repair Café International, robotfreak/repair-cafe |
 | Barrierefreiheit per Foto | **beim Empfänger selbst** | HIIG/Wheelmap-Datensatz 2023 |
 | Grabstein-Transkription | **beim Empfänger selbst** | CompGen-Werkstattbericht Mai 2026 |
-| **Urbane Sensor-Netze (Dashcams, Bilder)** | **frei (Gemeinschaftliche Datensicherung)** | Franchi et al. (2026) |
 | **Naturschutz-Vollzug: Bewertungsschemata/Checklisten ohne Tool** (Punktesysteme, Monitoring-Auswertung von Hand) | **frei** | Vogelschlag, Wildbienen, Lichtplan-Check |
 | **Naturschutz: KI-Bilderkennung** (Arten-/Biotoptyp aus Foto oder Fernerkundung) | **dicht, aktive Forschung + Produkte** | ObsIdentify (~95 % Trefferquote), Flora Incognita, KIBI-Projekt (BfN, FFH-Typen aus Luftbild), Namis-Biotop-App (DBU) |
 | **Kulturerbe-Physik** (Licht, Oberfläche) | **frei als Werkzeug** | Smartphone-RTI nur als Paper |
@@ -383,8 +382,3 @@ Erste Runde, die mit einer **verschenkten** Dose als Ausgangspunkt arbeitet. Das
 - **Gelernt:** Transkriptions-Schnittstellen (Bisoziation "Gestalt-Prüfung") sind ein guter Hebel, weil viele Citizen Science Projekte (Typ B) massiv analoge Tabellen erfassen und an der Mehrfacheingabe zur Qualitätssicherung ersticken.
 - **Fehler:** Synchrone Events (Die Daten-Schicht) als neue Idee zu werten; Transcribathons sind in der Nische bereits gut etabliert.
 - **Nächstes Mal:** Typ-D-Quellen durchsuchen, um Forschung, die nur als Paper existiert, in ein Citizen Science Werkzeug zu verwandeln.
-
-### Runde 12 (Lacunar) — 25.09.2026
-- **Gelernt:** Passive Erfassung durch KI (z.B. Dashcams) krankt an den "Null-Messungen" (Baselines) und der schnellen Datenlöschung. Citizen Science Rituale (wöchentliche Fotos desselben Ortes) sind eine Lücke, wenn sie nicht auf Mängel zielen, sondern auf den gesunden Normalzustand.
-- **Trefferquote:** 2 geprüft, 2 `frei`.
-- **Nächstes Mal:** Typ-D-Quellen zur Kulturerbe-Physik sichten.

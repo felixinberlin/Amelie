@@ -1,80 +1,85 @@
 ---
 status: Available
 delivery_method: E-Mail
-target_maker: Kreativschreib-Communities
+target_maker: Labyrinthos
 ---
-# Tarot als Zustandsmaschine
+# Tarot als Zustandsmaschine (Spread-DSL)
 
-**Ein Satz:** Ein Legesystem ist bereits ein Programm — Positionen sind Slots, Karten sind typisierte Übergänge, Bedeutung ist eine Funktion der Nachbarschaft. Es wurde nur nie so aufgeschrieben.
+**Ein Satz:** Ein Legesystem ist bereits ein Programm — Positionen sind Slots mit Koordinaten, Karten sind typisierte Zustände, und Bedeutung entsteht aus gerichteten Relationen. Eine offene JSON-Spezifikation für herstellerunabhängige Spreads.
 
 **Stand:** September 2026 · **Prüfen ab:** September 2027
-**Empfänger:** Indie-Game-Devs (Kartenspiel-Engines) · nachrangig: Deck-Künstler:innen auf Crowdfunding-Plattformen, Labyrinthos, Lehre („Zustandsmaschinen für Nicht-Informatiker:innen")
-**Verdikt:** 🎁 verschenken **als Spezifikation**, nicht als App — verengt, siehe unten
+**Empfänger:** Labyrinthos (Tina Gong) · Interactive Fiction / Game-Narrative (Twine / Inkle) · nachrangig: Crowdfunding Deck-Künstler:innen
+**Verdikt:** 🎁 verschenken als Spezifikation & Schema (nicht als geschlossene App) — verengt auf Beziehungs-Graphen
 
 ---
 
 ## Das Problem
 
-Legesysteme werden seit zweihundert Jahren in Prosa weitergegeben: „Karte 1 ist die Situation, Karte 2 kreuzt sie, Karte 3 ist die Grundlage." Das ist eine Spezifikation, aber eine unpräzise — die interessanten Regeln stehen nie drin:
+Legesysteme werden seit über zweihundert Jahren in Prosa weitergegeben: *„Karte 1 ist die Situation, Karte 2 kreuzt sie, Karte 3 ist die Grundlage, Karte 4 die Vergangenheit..."* Das ist eine Spezifikation, aber eine unpräzise. Die entscheidenden strukturellen Regeln stehen nie maschinenlesbar drin:
 
-- Was heißt „kreuzt"? Eine Beziehung zwischen zwei Slots, mit Richtung und Typ — nirgends formalisiert.
-- Wie ändert eine umgekehrte Karte die Bedeutung ihrer **Nachbarn**? Jede Leserin weiß, dass sie das tut. Kein System schreibt es auf.
-- Wie unterscheidet sich dasselbe Legesystem zwischen zwei Decks mit verschiedener Kartenanzahl?
+- **Was bedeutet „kreuzt"?** Eine orthogonale geometrische Drehung um 90° auf Z-Ebene 1 sowie eine semantische Konflikt-Relation zwischen zwei Knoten — nirgends formalisiert.
+- **Wie ändert eine umgekehrte Karte (Reversal) die Bedeutung ihrer Nachbarn?** Jede Kartenleserin weiß, dass eine Umkehrung nicht nur den Einzelwert kippt, sondern Übergangs-Dynamiken zu Nachbarkarten blockiert.
+- **Deck-Inkompatibilitäten:** Wie verhält sich dasselbe System, wenn ein 22-Karten-Deck (nur Große Arkana) oder ein 36-Karten-Lenormand-Deck angelegt wird?
 
-Die Folge: Jede Tarot-App implementiert Legesysteme fest verdrahtet. Ein neues Legesystem heißt neuer Code. Ein Deck mit eigenen Karten heißt neue App.
-
-Wer leidet: Deck-Künstler:innen, die nicht programmieren können und für ihr Deck einen digitalen Begleiter wollen — ein ganzes Milieu, das per Crowdfunding Decks produziert und dann an der Software hängenbleibt. Und Indie-Devs, die Kartenmechaniken bauen und jedes Mal bei null anfangen.
+**Die Folge:** Jede Tarot-App und jeder Discord-Bot implementiert Legesysteme als starre, fest verdrahtete Arrays (`cards[0]..cards[9]`). Ein neues Legesystem erfordert neuen Code; ein alternatives Deck erfordert eine neue App. Indie-Künstlerinnen, die physische Decks via Kickstarter finanzieren, scheitern an der Software-Entwicklung digitaler Begleiter.
 
 ## Warum das jetzt geht
 
-Der ehrliche Teil: **Das ging schon immer.** Eine DSL für Legesysteme hätte man 2010 schreiben können. Was neu ist, sind zwei Dinge:
+Der ehrliche Teil: **Eine DSL für Legesysteme hätte man schon 2010 schreiben können.** Was heute den Hebel ansetzt:
 
-1. **Übersetzung aus Prosa.** Die tausenden in Fließtext beschriebenen Legesysteme lassen sich heute automatisiert in eine formale Struktur überführen — der Bestand wird erschließbar, statt einzeln abgetippt zu werden.
-2. **Interpretation als Funktion, nicht als Nachschlagetabelle.** Die Bedeutung einer Karte *in dieser Position, neben dieser Karte, in diesem Deck* war früher nur als vorgeschriebener Text möglich. Jetzt kann sie berechnet werden — was die formale Struktur erst nützlich macht.
+1. **LLM- und Agenten-Architekturen (MCP-Server):** Tarot-Engines (`tarot-mcp`, `roxyapi`) binden LLMs an, füttern diese jedoch mit unstrukturierten Prompts. Eine typisierte Graph-DSL ermöglicht es Modellen, relationale Spannungsfelder und kausale Pfade exakt zu analysieren, statt nur isolierte Einzelkarten aufzuzählen.
+2. **Generatives Graph-Layout im Browser:** Mit modernen deklarativen CSS-Grid-/SVG-Engines rendert ein Frontend das Layout autonom aus den $(x, y, \theta)$-Slot-Koordinaten, ohne dass Entwickler für jedes neue Legesystem hardcodierte Ansichten bauen müssen.
+3. **Automatisierte Extraktion aus Prosa:** Historische Textbeschreibungen hunderter Fachbücher lassen sich heute per Multimodal-Parsing verlässlich in das formale JSON-Schema überführen.
 
 ## Skizze
 
-Eine kleine Sprache, kein Produkt:
+Eine formale Spezifikation (`tarot-spread-v1.json`) auf Basis von JSON Schema (Draft 2020-12):
 
-- **Slot:** Position mit Rolle, Koordinate, optionalen Bedingungen.
-- **Relation:** gerichtete Kante zwischen Slots — `kreuzt`, `stützt`, `führt zu`, `steht gegen`. Typisiert, damit ein Renderer weiß, wie er zeichnet, und ein Interpreter weiß, wie er liest.
-- **Deck-Vertrag:** welche Kartenmenge ein Legesystem voraussetzt, damit ein 78-Karten-System sauber scheitert, wenn ein 40-Karten-Deck kommt.
-- **Modifikatoren:** wie Umkehrung und Nachbarschaft die Auswertung ändern — als Regel, nicht als Prosa.
-- Zwei Referenzimplementierungen: ein Renderer (Layout fällt aus der Struktur) und ein Interpreter.
+- **Deck-Contract:** Definiert Voraussetzungen (`minCards`, `requiredArcana`, `allowReversals`). Scheitert sauber, wenn ein 10-Karten-Keltisches-Kreuz mit einem unvollständigen Deck aufgerufen wird.
+- **Slots (Knoten):** Position mit eindeutiger ID, Name, Reihenfolge, geometrischem Layout $(x, y, \theta, z)$ und funktionaler Rolle (`querent`, `obstacle`, `foundation`, `outcome`).
+- **Relations (gerichtete Kanten):** Typisierte semantische Verbindungen:
+  - `crosses`: Orthogonaler Konflikt / unmittelbare Hürde.
+  - `grounds`: Fundamentierende unbewusste Wurzel.
+  - `crowns`: Bewusste Intention / Überbau.
+  - `leads_to`: Zeitlicher oder kausaler Übergang.
+  - `mirrors`: Symmetrische Gegenüberstellung.
+- **Beispiel-Dateien:** Vollständige deklarative Definition des Keltischen Kreuzes (`celtic-cross.json`) und des 3-Karten-Pfades (`three-card-linear.json`).
 
-**Das Geschenk ist das JSON-Schema plus zwei Beispiele.** Nicht die App. Eine Seite Spezifikation, die jemand in seiner eigenen Sprache umsetzen kann.
+**Das Geschenk ist die Spezifikation plus Schemata und Parser-Beispiele.** Keine App, sondern der freie Standard.
+
+## Das Buch zur Dose (Rohrecherche & Spezifikation)
+
+- [Kapitel 1: Foren-Recherche & Community-Bedarfe](../02-recherche/tarot-occult-community-needs.md) — Auswertung von r/tarot, r/occult und Discord: Der Kartenkatalog-Reduktionismus, Blockaden durch Reversals, elementare Würden und proprietäre Deck-Fallen.
+- [Kapitel 2: Architektur & Beziehungs-Graph-Modell](../02-recherche/tarot-zustandsmaschine-dsl.md) — Analyse bestehender Tarot-JSON-Kataloge, Labyrinthos, MCP-Server und formale Schemata.
+- [Kapitel 3: Open-Source-Scaffolding & Beispiele](../07-demos/tarot-zustandsmaschine/README.md) — Vollständiges JSON Schema (`spread.schema.json`), Keltisches Kreuz und Drei-Karten-Referenz.
+- [Kapitel 4: Open-Source-Software-Architektur](../07-demos/tarot-zustandsmaschine/open-source-stack.md) — Empfohlene Open-Source-Bibliotheken (`tarot-json`, `XState v5`, `React Flow`, `Ajv`, `Inkjs`) für lauffähige Graph-Engines.
 
 ## Erster Schritt
 
-**Ticket: Keltisches Kreuz als Datei.**
+**Ticket: Kanonisches Keltisches Kreuz als typisierte JSON-Spezifikation (Ticket #01).**
 
-Das bekannteste Legesystem vollständig formal beschreiben, inklusive der „kreuzt"-Relation, und aus der Datei allein das Layout zeichnen.
+1. Formale JSON-Schema-Definition (`spread.schema.json`) für Deck-Vertrag, Slots und gerichtete Relationen aufsetzen.
+2. Das 10-Karten-Keltische-Kreuz als `celtic-cross.json` abbilden (inklusive 90°-Drehung von Slot 2 über Slot 1).
+3. Validieren, dass ein generischer Renderer das Keltische Kreuz ohne hardcodierte Stile visualisieren kann.
 
-**Fertig, wenn:** jemand ein zweites Legesystem hinzufügt, ohne eine Zeile Code zu ändern.
+**Fertig, wenn:** Ein zweites Legesystem (z. B. 3-Karten-Linear oder Hufeisen) rein durch Hinzufügen einer JSON-Datei fehlerfrei gerendert wird und unpassende Decks am `deckContract` abgewiesen werden.
 
 ## Wo es kippt
 
-**Überformalisierung.** Tarot lebt von Mehrdeutigkeit; eine Sprache, die jede Nuance erfassen will, wird größer als das Problem und wird von niemandem benutzt. Die Grenze muss hart gezogen werden: **Die DSL beschreibt Struktur, nicht Bedeutung.** Was eine Karte heißt, bleibt Text und Deck-Sache.
+**Überformalisierung vs. intuitive Mehrdeutigkeit.** Tarot lebt von assoziativer Projektion und Symbolik; ein System, das versucht, jede Schattierung esoterischer Bedeutungen in starre Enums zu pressen, erstickt die Praxis. Die Grenze muss eisern eingehalten werden: **Die DSL beschreibt Struktur und Relationen, niemals fixe Textbedeutungen.** Was eine Karte bedeutet, bleibt Sache des Decks und der Leserin.
 
-**Zweites Risiko, das Milieu:** Ein technisch gedachtes Werkzeug kann in dieser Szene als respektlos gelesen werden — als Reduktion einer Praxis auf Datenstruktur. Die Formulierung entscheidet: Es ist eine **Notation** wie Noten für Musik, kein Ersatz für die Praxis. Wer das falsch rahmt, verliert genau die Leute, für die es gedacht ist.
+**Zweites Risiko (Akzeptanz in der Community):** Ein technisches Datenformat kann als kalte Reduktion einer spirituellen Praxis missverstanden werden. Die Positionierung ist entscheidend: Es handelt sich um eine **Notation** (wie Notenlinien in der Musik), nicht um einen Ersatz für menschliche Intuition.
 
 ## Wer es schon versucht hat
 
-Recherche September 2026, und sie verengt diese Dose: Es gibt **Tarot-Datensätze als JSON**, Bibliotheken zum Erzeugen digitaler Decks, offene Reflexions-Engines mit Legesystemen und Journaling, und sogar Websites, die Legesysteme als **Schema** sammeln und vergleichen.
+- **metabismuth/tarot-json & yunruse/tarot:** Haben die 78 Rider-Waite-Karten sauber als JSON katalogisiert — die Kartenebene ist gelöst.
+- **fzlzjerry/tarot-mcp & RoxyAPI:** Bieten Keltisches Kreuz als REST- oder MCP-Schnittstelle an, aber nur als flache Text-Templates ohne relationale Topologie.
+- **Labyrinthos:** Bietet eine exzellente Sammlung von über 30 Spreads, hält diese jedoch in einer proprietären App verschlossen.
 
-**Was ich nicht gefunden habe:** eine formale, deckunabhängige Sprache für Legesysteme mit typisierten Relationen zwischen Positionen. Die Datenseite (welche Karten gibt es) ist gelöst; die Strukturseite (wie hängen Positionen zusammen) ist es nicht.
-
-Die Lücke ist schmal. Wer das nimmt, sollte prüfen, ob die vorhandenen Schema-Sammlungen nicht schon 80 % davon sind — dann ist die richtige Handlung ein Beitrag dorthin und keine neue Spezifikation.
-
-## Vorarbeit
-
-- Vorhandene **Tarot-JSON-Datensätze** — die Kartenseite muss niemand neu machen.
-- **Sammlungen von Legesystem-Schemata** — der beste Startpunkt und möglicherweise der richtige Empfänger.
-- **Labyrinthos** — Lern-App mit eigenem Deck und didaktischem Anspruch; eine Notation für Legesysteme ist deren Lehrproblem.
-- **Indie-Game-Szene** — Deckbuilder-Engines suchen Karten-als-Regel-Repräsentationen.
+**Lücke:** Eine offene, herstellerneutrale Graph-Notation für Legesysteme, die Deck-Künstlerinnen, Tool-Entwicklern und LLM-Pipelines gleichermaßen als Standard dient.
 
 ---
 
 Diese Idee gehört niemandem. Nimm sie, bau sie, verkauf sie — du schuldest mir nichts, nicht einmal eine Antwort. Wenn du eines Tages eine Idee hast, die du nicht bauen wirst, gib sie jemandem, der es tut.
 
-CC0 / Public Domain. — Félix, Berlin · github.com/felixinberlin
+CC0 1.0 Universal / Public Domain. — Félix, Berlin · github.com/felixinberlin

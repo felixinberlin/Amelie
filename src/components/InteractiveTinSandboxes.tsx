@@ -14,6 +14,7 @@ import {
   FugenduellArena,
   TischSchiedsrichterSimulator,
   KristallwachstumSimulator,
+  TarotGraphSimulator,
 } from './simulators';
 
 export type SandboxKey =
@@ -28,7 +29,8 @@ export type SandboxKey =
   | 'laerm'
   | 'fugenduell'
   | 'schiedsrichter'
-  | 'kristall';
+  | 'kristall'
+  | 'tarot';
 
 interface InteractiveTinSandboxesProps {
   lang: Language;
@@ -203,6 +205,16 @@ export const InteractiveTinSandboxes: React.FC<InteractiveTinSandboxesProps> = (
             >
               💎 {lang === 'de' ? 'Kristallwachstum 3D' : lang === 'es' ? 'Crecimiento de Cristales' : 'Crystal Growth 3D'}
             </button>
+            <button
+              onClick={() => setActiveTab('tarot')}
+              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                activeTab === 'tarot'
+                  ? 'bg-[#2b1e16] text-[#f6bd60] shadow-xs font-bold border border-[#c5832b] ring-2 ring-[#c5832b]/30'
+                  : 'text-stone-600 hover:text-stone-900'
+              }`}
+            >
+              🔮 {lang === 'de' ? 'Tarot-Graph-DSL' : lang === 'es' ? 'Tarot Graph DSL' : 'Tarot Graph DSL'}
+            </button>
           </div>
         </div>
       </div>
@@ -243,6 +255,9 @@ export const InteractiveTinSandboxes: React.FC<InteractiveTinSandboxesProps> = (
       )}
       {activeTab === 'kristall' && (
         <KristallwachstumSimulator lang={lang} />
+      )}
+      {activeTab === 'tarot' && (
+        <TarotGraphSimulator lang={lang} onOpenDose={onOpenDose} />
       )}
     </div>
   );

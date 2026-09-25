@@ -45,6 +45,7 @@ import {
   FugenduellArena,
   TischSchiedsrichterSimulator,
   KristallwachstumSimulator,
+  TarotGraphSimulator,
 } from './simulators';
 
 interface DoseModalProps {
@@ -614,6 +615,7 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
                   {matchedSimulator.key === 'fugenduell' && <FugenduellArena lang={lang} isEmbedded={true} />}
                   {matchedSimulator.key === 'schiedsrichter' && <TischSchiedsrichterSimulator lang={lang} isEmbedded={true} />}
                   {matchedSimulator.key === 'kristall' && <KristallwachstumSimulator lang={lang} />}
+                  {matchedSimulator.key === 'tarot' && <TarotGraphSimulator lang={lang} />}
                 </div>
               )}
             </div>

@@ -10,3 +10,4 @@ export { KiezLaermSimulator } from './KiezLaermSimulator';
 export { FugenduellArena } from './FugenduellArena';
 export { TischSchiedsrichterSimulator } from './TischSchiedsrichterSimulator';
 export { KristallwachstumSimulator } from './KristallwachstumSimulator';
+export { TarotGraphSimulator } from './TarotGraphSimulator';
