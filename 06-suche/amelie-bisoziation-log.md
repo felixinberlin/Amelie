@@ -162,3 +162,10 @@ Kein Bisoziationslauf, sondern der Punkt (1) aus Run 7, als eigener Durchgang er
 - **Gelernt:** Die Methode produziert stabile Lücken, wenn der Anker eine klar benannte technische Limitation (hier: Mehrfachtranskription) hat und der Collider das Medium wechselt (Text zu Gestalt).
 - **Fehler:** Die Daten-Schicht (Transcribathons) hätte man fast aus dem Mode-Wissen heraus als `besetzt` markieren können.
 - **Nächstes Mal:** Als Nächstes Typ-D-Quellen durchsuchen (Forschung ohne Werkzeug), die sich mit Sensordaten im städtischen Raum befassen.
+
+| 25.09.2026 | Typ D: **Improving flood detection with large-scale dashboard camera data** (Franchi et al. 2026, Nat Commun) — dashcams used centrally for flood tracking, proving feasibility but lacking localized community tools. | **Sourdough Starter Feeding** (active, rhythmic maintenance of a culture over years, discarding waste) | 5 | 8 | 2 | Dashcam loops overwrite automatically before anyone notices a flood event was captured; preventing overwrite requires active community "feeding" | Dashcam Discard Claim: **`frei`** (The Dashcam Discard Window) · Dry Baseline Rhythm: **`frei`** (Rhythmic Baselines for AI) |
+
+### Run 12 — 25.09.2026
+- **Gelernt:** Taking a "passive, centralized" AI tool and forcing it into an "active, localized, rhythmic" interaction (like sourdough feeding) reveals gaps in *data retention* and *baseline quality* that AI papers skip over.
+- **Fehler:** Using distance 5 led to some completely unbuildable ideas (e.g. trying to match tire sound to water depth using internal cabin dashcams).
+- **Nächstes Mal:** Typ-D-Quellen durchsuchen, die sich mit *Kulturerbe-Physik* befassen.

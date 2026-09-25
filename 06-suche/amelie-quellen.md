@@ -156,6 +156,7 @@ Der Lauf nennt diese Anker in `amelie-bisoziation-log.md`. Sie sind hier vermerk
 
 | Quelle | Befund | Status | Zuletzt |
 |---|---|---|---|
+| **Improving flood detection with large-scale dashboard camera data** *(neu, 25.09.2026)* | Franchi et al., *Nat Commun* 2026: Dashcams for flood detection. **Die Forschung nutzt passive Kamera-Daten, aber die Sicherung durch Anwohner fehlt.** | **neu, durchsucht** | 25.09.2026 |
 | **Fenster-Wand-Verhältnis aus Straßenbildern** *(neu, 22.09.2026)* | Suppa, Aliberti, Bottero & Corrado, *Building Simulation* 18(8), 2025: YOLOv9 auf Google Street View, **94 % der Fassaden innerhalb ±5 Prozentpunkten** der Handmessung, 100 % innerhalb ±10, Workflow offen (Turin). Dazu Applied Energy 2026 zur urbanen WWR-Schätzung, DLR zur direkten WWR-Vorhersage, Concordia über Google-3D-Kacheln, Fassadenparsing mit SOLOv2. **Die Gebäudeenergie-Branche hat die Messung gelöst, auf die der Naturschutz wartet.** | **neu, durchsucht** | 22.09.2026 |
 | **Li u. a., *Biological Conservation* 310 (2025)** *(neu, 22.09.2026)* | Nationale Citizen-Science-Erhebung China 2021–2023: **3.078 Gebäude, 65.633 Erfassungstage, 676 Arten.** Vegetation wirkt am stärksten auf **1.000 m (Frühjahr) und 10 km (Herbst)**; **Bäume innerhalb 5 m senkten das Herbstrisiko**; niedrigere Gebäude mit hohem Glasanteil gefährlicher. **Steht quer zur Nahbereichs-Spiegelungslogik der deutschen Merkblätter** — gehört in jedes „Wo es kippt" zu diesem Thema. | **neu, durchsucht** | 03/2027 |
 
