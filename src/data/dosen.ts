@@ -2060,6 +2060,56 @@ Berlin · github.com/felixinberlin/Amelie`
       bodyEn: 'Hi door wardens and active members,\n\nI research and give away software and hardware ideas under the Amélie Poulain principle (CC0, unconditional, no follow-up).\n\nDuring traditional visits, the front door binds active members; simultaneously, hooking generative voice AI directly to an electric door strike is an unacceptable security hazard. Couleur-Sphinx solves this as an air-gapped, humorous gatekeeper at the door: an avatar display and S2S voice loop quiz visitors on tradition and local lore. Only on success does a 5V relay strike the internal chime — the electric door buzzer remains completely uncoupled.\n\nThree bill-of-materials tiers from budget (ESP32-S3 ~€70–90) to midrange (Pi Zero 2 W ~€200) to premium (Pi 5 ~€400) with a sleeping servo eyelid and member dashboard.\n\nFull sketch, BOM, cost breakdown, and first ticket:\n<Link to tin>\n\nCC0 Public Domain. Build it, adapt it to your house — you owe me nothing.\n\nFélix, Berlin\ngithub.com/felixinberlin',
       to: 'aktivitas@berliner-verbindungen.de'
     }
+  },
+  {
+    id: 'bleifrei-lotse',
+    title: 'Bleifrei-Lotse',
+    titleEn: 'Lead-Free Navigator',
+    oneLinerDe: 'Zerstörungsfreie Vor-Ort-Rohrprüfung (Magnet-Check, Wulstlötungs-Makrofoto, Ritzprobe, akustische Klopfton-Resonanz) für Altbauten und automatische Erzeugung des rechtssicheren Mieter-Auskunftsersuchens sowie der Vollzugsanzeige an das Gesundheitsamt nach § 17 TrinkwV.',
+    oneLinerEn: 'Non-destructive on-site pipe material identification (magnet check, wiped solder joint macro photo, scratch test, acoustic resonance) for pre-1973 apartment buildings, generating statutory tenant disclosure requests and public health enforcement notices under TrinkwV § 17.',
+    date: '25. September 2026',
+    reviewAfter: 'September 2027',
+    recipientsDe: 'Verbraucherzentrale Bundesverband (vzbv) · Deutscher Mieterbund (DMB) · Gesundheitsamt Berlin-Mitte (Fachdienst Hygiene)',
+    recipientsEn: 'Federation of German Consumer Organisations (vzbv) · German Tenants Association (DMB) · Public Health Authorities (Gesundheitsamt Berlin-Mitte)',
+    domain: 'civic',
+    verdict: 'gift',
+    status: 'gepackt',
+    tags: ['Trinkwasser', 'Gesundheit', 'TrinkwV', 'Bleileitungen', 'Mieterschutz', 'Citizen Science', 'Web Audio'],
+    problemDe: 'Seit dem 12. Januar 2026 sind Bleileitungen in Deutschland ausnahmslos verboten (§ 17 TrinkwV). Dennoch leben Millionen Mieter in Altbauten (vor 1973) im Ungewissen über Keller- und Steigleitungen, während Laborwassertests 80–150 € kosten und Gesundheitsämter die Vollzugslücke mangels Kontrollpersonal nicht schließen können.',
+    problemEn: 'Since January 12, 2026, lead drinking water pipes are strictly banned across Germany (§ 17 TrinkwV). Yet millions of tenants in pre-1973 buildings face complete information asymmetry, while €100 lab tests are prohibitive and municipal health authorities suffer from an acute inspection deficit.',
+    whyNowDe: [
+      'Ausnahmsloses Stilllegungsverbot seit 12.01.2026 macht das Vorhandensein von Bleirohren zur bußgeldbewehrten Ordnungswidrigkeit.',
+      'Web Audio API FFT analysiert die extrem hohe Eigendämpfung von Blei (Klopfton-Abklingzeit < 50 ms vs. helles Klingeln von Kupfer/Stahl) in Echtzeit lokal im Browser.',
+      'Smartphone-Makrokameras erfassen charakteristische Wulstlötnähte und den silbrigen Glanz frischer Ritzspuren.',
+      '100% clientseitige Ausführung ohne Server garantiert absoluten Datenschutz (kein Hochladen von Adressdaten).'
+    ],
+    whyNowEn: [
+      'Mandatory lead pipe ban in effect since Jan 12, 2026 renders historic lead piping an actionable regulatory offense.',
+      'Web Audio API FFT measures the high acoustic damping of lead (impulse decay < 50 ms vs. overtone ring of copper/iron) client-side in real time.',
+      'Smartphone macro vision inspects bulbous wiped solder joints and the silvery metallic scratch sheen under patina.',
+      '100% zero-cloud architecture protects tenant privacy without sending location or tenancy records to external servers.'
+    ],
+    sketchDe: 'Geführter 4-Schritt-Entscheidungsbaum im Browser: 1. Baujahrfilter (vor 1973). 2. Magnet-Vorfilter (haftet -> verzinkter Stahl, Blei ausgeschlossen). 3. Makro-Kratzprobe (weich, silbriger Glanz). 4. Akustischer Klopftest (Web Audio FFT-Dämpfungsmessung). Ausgabe: Wahrscheinlichkeitsscore + fertiger PDF-Musterbrief für Auskunftsersuchen an Vermieter gem. § 17 Abs. 6 TrinkwV und Verdachtsanzeige an das Gesundheitsamt gem. § 64 TrinkwV.',
+    sketchEn: 'Guided 4-step browser decision tree: 1. Construction era filter (pre-1973). 2. Magnet pre-filter (sticks -> steel, lead ruled out). 3. Macro scratch inspection (soft, shiny metallic line). 4. Acoustic tap test (Web Audio FFT damping analyzer). Output: Probability score + pre-filled statutory disclosure request to landlord under TrinkwV § 17 and formal inspection docket for municipal health authorities.',
+    firstStepDe: {
+      ticket: 'Standalone-Entscheidungsbaum mit Web Audio FFT-Resonanzmesser und PDF-Generator.',
+      criteria: 'Fertig, wenn an Test-Audiodateien von Blei-, Kupfer- und Zinkrohren in 9 von 10 Fällen das Dämpfungsverhalten korrekt differenziert wird und das generierte PDF die Pflichtangaben nach § 17 Abs. 6 TrinkwV fehlerfrei enthält.'
+    },
+    firstStepEn: {
+      ticket: 'Standalone decision tree with Web Audio FFT resonance analyzer and PDF generator.',
+      criteria: 'Done when on sample audio recordings of lead, copper, and galvanized pipes, acoustic damping is correctly classified in 9 of 10 cases, and the exported PDF matches legal requirements under TrinkwV § 17.'
+    },
+    failureModeDe: 'Falsch-positive Klassifikation: Ein Mieter verwechselt verzinkten Stahl oder verzinntes Kupfer mit Blei und gerät in einen unnötigen Rechtsstreit. Gegenmaßnahme: Zwingender Magnet-Vorfilter (schließt 90 % der Stahlrohre vor dem Kratzen aus) und sachliche Tonalität als „Auskunftsersuchen" statt Schuldvorwurf.',
+    failureModeEn: 'False positive identification: A tenant mistakes tinned copper or painted steel for lead, creating unnecessary conflict with management. Remedy: Mandatory magnet pre-filter (eliminates 90% of steel pipes prior to scratching) and neutral phrasing as a "statutory request for information" rather than an accusation.',
+    priorArtDe: 'Verengt (25.09.2026): Verbraucherzentralen und Mieterbund bieten Ratgebertexte, verweisen jedoch mangels Software pauschal auf 100-€-Labortests. Gesundheitsämter (Kassel, Hannover) halten Meldeformulare für Betriebe nach § 17 Abs. 6 TrinkwV vor, kontrollieren Wohnungen aber nicht. US-Versorger nutzen ArcGIS Survey123 zur manuellen Selbstauskunft. Die Lücke ist eine geführte mobile Bürger-Diagnosekette mit automatischer Generierung des rechtssicheren Auskunftsersuchens.',
+    priorArtEn: 'Narrowed (25 Sep 2026): Consumer advocates publish text articles but advise expensive €100 lab tests. Municipal health authorities provide reporting forms for certified plumbers but lack inspection staff for apartments. US utilities deploy ArcGIS Survey123 for citizen reporting. The remaining gap is a guided, zero-cloud mobile citizen diagnostic suite translating acoustic and optical indicators into enforceable statutory requests.',
+    emailTemplate: {
+      to: 'wohnen@vzbv.de',
+      subjectDe: 'Idee zu verschenken: Bleifrei-Lotse — Zerstörungsfreie Vor-Ort-Prüfung nach TrinkwV 2026',
+      bodyDe: 'Hallo vzbv-Team,\n\nich recherchiere und verschenke schlüsselfertige Software- und Datenwerkzeuge nach dem Amélie-Poulain-Prinzip (CC0, ohne Gegenleistung, ohne Nachfassen).\n\nSeit dem 12. Januar 2026 gilt in Deutschland ein ausnahmsloses Verbot von Bleileitungen (§ 17 TrinkwV). Während Installateure anzeigepflichtig sind, stehen Mieter in unrenovierten Altbauten vor einer massiven Vollzugslücke: 100-€-Labortests sind teuer und Gesundheitsämter haben kein Kontrollpersonal.\n\nBleifrei-Lotse ist ein browserbasiertes Zero-Cloud-Werkzeug, das Mieter durch eine zerstörungsfreie Vor-Ort-Diagnostik führt (Magnet-Ausschluss, Makro-Wulstlötung, Ritzprobe, akustischer Klopfton-Dämpfungsabgleich via Web Audio API) und bei Verdacht direkt das rechtssichere Auskunftsersuchen an den Vermieter sowie die Vollzugsanzeige ans Gesundheitsamt als PDF generiert.\n\nEinseiter mit Skizze, physikalischer Resonanzlogik und erstem Ticket:\n<Link zur Dose>\n\nCC0 Public Domain. Nimm es, bau es, bettet es bei euch ein — ihr schuldet mir nichts.\n\nViele Grüße\nFélix, Berlin\ngithub.com/felixinberlin',
+      subjectEn: 'Free to take: Lead-Free Navigator — Non-destructive pipe testing under TrinkwV 2026',
+      bodyEn: 'Dear vzbv team,\n\nI research and give away turnkey public-interest software ideas under the Amélie Poulain principle (CC0, unconditional, no follow-up).\n\nSince January 12, 2026, lead drinking water pipes are strictly banned across Germany (§ 17 TrinkwV). While trade companies must report discoveries, tenants in older buildings face an acute enforcement deficit: lab tests cost €100 and health authorities lack inspection staff.\n\nLead-Free Navigator is a zero-cloud mobile web tool guiding tenants through non-destructive on-site diagnostics (magnet test, macro wiped joint check, scratch test, acoustic damping analysis via Web Audio API) and exporting statutory disclosure requests and health department dockets as PDFs.\n\nFull one-page dossier with sketch and first ticket:\n<Link to tin>\n\nCC0 Public Domain. Take it, build it, deploy it — you owe me nothing.\n\nBest regards\nFélix, Berlin\ngithub.com/felixinberlin'
+    }
   }
 ];
 

@@ -558,3 +558,14 @@ Systemanker: Kommunale Niederschlagswassergebührensatzung (z.B. BWB § 10) & DW
 |---|---|---|---|
 | **Hof-Entkoppler** (communal-rainwater-tank-balancer) — Vor-Ort-Sickerversuch, Muldenbemessung nach DWA-A 138-1 und automatische Gebührenbefreiung (Niederschlagswassergebühr) | `verengt` | [method: inversion] Empfänger zuerst: Berliner Regenwasseragentur betreibt den RegenRechner (Stand 2025, Desktop-only), verlangt jedoch explizit eine externe Fachbemessung im Vorfeld. Fachsoftware (DWA Versickerungs-Expert 6.0, itwh RW-Tools, RAINPLANER) und Bauteil-Rechner (ACO, Wavin) decken die DWA-A 138-1 (10/2024) rechnerisch ab, setzen aber manuelle kf-Wert-Eingaben und CAD voraus. US-Tools (EPA Stormwater Calculator, Ecopia) modellieren makroregional oder unterstützen Versorger bei Gebührenerhöhung per Luftbild. Die Lücke ist der Vor-Ort-Loch-Infiltrationstest am Smartphone + automatische Ausfüllung der behördlichen Änderungsanzeige (z.B. BWB Entwässerungssatzung § 10) zur Gebührenbefreiung. | 09/2027 |
 
+---
+
+## Inversion Run 2 — 25.09.2026 (method: inversion, Trinkwasserverordnung 2026 / Bleileitungen & Legionellen)
+
+Systemanker: Trinkwasserverordnung 2023 (BGBl. 2023 I Nr. 159), Stichtag 12.01.2026 (§ 17 Verbot von Bleileitungen, § 31/§ 52 Legionellenuntersuchung & Informationspflichten). Inversionsoperatoren: OP-2 (Citizen Shield), OP-3 (Layer Inversion), OP-4 (Vollzugslücke).
+
+| Idee | Urteil | Beleg (kurz) | Prüfen ab |
+|---|---|---|---|
+| **Bleifrei-Lotse** (bleifrei-lotse) — Zerstörungsfreie Vor-Ort-Rohrprüfung (Magnet, Wulstlötung, Ritzprobe, Klopfton) & behördliche Vollzugsmeldung nach § 17 TrinkwV | `verengt` | [method: inversion] Empfänger zuerst: vzbv und Deutscher Mieterbund bieten statische Ratgebertexte oder verweisen auf 100€-Laboranalysen; kommunale Gesundheitsämter (Kassel, Hannover, Bautzen) halten Anzeigeformulare für Installationsbetriebe nach § 17 Abs. 6 TrinkwV vor, besitzen jedoch keine Kontrollkapazitäten für den privaten Wohnungsbestand. US-Wasserversorger nutzen ArcGIS Survey123 zur manuellen Selbstauskunft für das EPA-Lead-Service-Line-Inventar. Die Lücke ist eine geführte mobile Prüfkette (Makro-Foto von Wulstnähten, FFT-Klopfton-Resonanz) mit automatischer Erzeugung des formellen Auskunftsersuchens an den Vermieter und der gesetzeskonformen Vollzugsanzeige an das Gesundheitsamt. | 09/2027 |
+| **LegioKlar** (legio-klar) — Treppenhausaushang-Decoder für Legionellen-Laborbefunde mit UBA-Maßnahmenabgleich & Mängelanzeigen-Generator | `verengt` | [method: inversion] Fachsoftware (Trinkwasser-App, Hydrosense) und WEKA-Vorlagen richten sich an Anlagenbetreiber und Hausverwaltungen; Bürgerportale (legionellen-was-tun.de) verlangen manuelle Zahleneingabe. Ein datensparsamer On-Device-OCR-Decoder für Treppenhaus-Aushänge mit automatischer Extraktion von KBE/100ml, DIN-Entnahmestellen und Speichertemperaturen ($<60^\circ$C/$<55^\circ$C) sowie Ableitung der BGB-Mängelanzeige existiert nicht. | 09/2027 |
+

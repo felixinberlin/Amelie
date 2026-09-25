@@ -3961,6 +3961,80 @@
     ]
   },
   {
+    "id": "bleifrei-lotse",
+    "title": "Bleifrei-Lotse: TrinkwV § 17 Bleirohr-Detektor & Behörden-Melder",
+    "round": "Inversion Run 2",
+    "date": "25.09.2026",
+    "conceptDe": "Leitet Mieter und Eigentümergemeinschaften durch die zerstörungsfreie Leitungsidentifikation (Magnet, Makrofoto von Wulstlötungen, Ritzprobe, akustischer Klopftest) und generiert bei Verdacht auf verbotene Bleirohre die Auskunftsanforderung an den Vermieter sowie die offizielle Vollzugsmeldung an das Gesundheitsamt gem. § 17 Abs. 6 TrinkwV.",
+    "conceptEn": "Guides tenants through non-destructive pipe material identification (magnet, macro photography of wiped bulb joints, scratch test, acoustic tap test) and generates statutory disclosure requests to landlords and official enforcement notices to public health authorities under TrinkwV § 17 (mandatory lead pipe phase-out as of Jan 12, 2026).",
+    "status": "verengt",
+    "suggestedVerdict": "gift",
+    "recipientDe": "Verbraucherzentrale Bundesverband (vzbv) · Deutscher Mieterbund (DMB) · Gesundheitsamt Berlin-Mitte",
+    "recipientEn": "Federation of German Consumer Organisations (vzbv) · German Tenants Association (DMB) · Public Health Authorities",
+    "sourceType": "Civic & Health",
+    "sourceDe": "Trinkwasserverordnung 2023 § 17 (Stilllegungspflicht zum 12.01.2026), § 64 (Anordnungsbefugnis)",
+    "sourceEn": "German Drinking Water Ordinance 2023 § 17 (lead pipe phase-out deadline Jan 12, 2026)",
+    "evidenceDe": "Verbraucherzentralen und Mieterbund bieten nur statische Ratgeberseiten oder raten zu 100€ teuren Labortests. Gesundheitsämter (Kassel, Hannover, Bautzen) stellen Meldeformulare für Installationsbetriebe bereit, haben aber keine Prüfkapazitäten für Altbauten. US-Wasserversorger nutzen manuelle Survey123-Formulare; ein geführtes mobiles Prüf- und Meldetool für deutsche Mieter fehlt.",
+    "evidenceEn": "Consumer advocates offer only static PDF advice or advise expensive €100 lab analyses. Municipal health departments lack inspection capacity. US utilities deploy manual Survey123 forms; a guided diagnostic and statutory notice generator for European lead pipe phase-out does not exist.",
+    "reviewDate": "09/2027",
+    "problemDe": "Seit dem 12.01.2026 sind Bleileitungen in Deutschland ausnahmslos verboten (§ 17 TrinkwV). Dennoch leben hunderttausende Mieter in unrenovierten Altbauten (vor 1973) im Ungewissen über Keller- und Steigleitungen, während Gesundheitsämter die Vollzugslücke mangels Kontrollpersonal nicht schließen können.",
+    "problemEn": "Since January 12, 2026, lead drinking water pipes are strictly banned across Germany (§ 17 TrinkwV). Yet hundreds of thousands of tenants in pre-1973 residential buildings lack transparency regarding riser and basement pipes, while municipal health authorities suffer from a severe inspection deficit.",
+    "whyNowDe": [
+      "Die Novelle der TrinkwV setzt mit dem 12. Januar 2026 eine harte gesetzliche Stilllegungsfrist; Makro-Kameras und Web Audio FFT (Resonanzfrequenz metallischer Rohre) machen zerstörungsfreie Materialklassifikation am Smartphone ohne Vorwissen möglich."
+    ],
+    "whyNowEn": [
+      "The Jan 12, 2026 statutory ban is in effect; smartphone macro vision and Web Audio FFT resonance pitch analysis enable guided, non-destructive pipe material classification without specialist equipment."
+    ],
+    "firstStepTicketDe": "Entscheidungsbaum für zerstörungsfreie Rohruntersuchung (Magnet, Farbabgleich der Kratzspur, Wulstnaht-Foto, Klopfton) mit PDF-Export für Mieter-Auskunftsersuchen und Gesundheitsamts-Anzeige nach § 17 TrinkwV",
+    "firstStepTicketEn": "Non-destructive diagnostic decision tree (magnet test, scratch color matching, wiped solder joint photo, acoustic resonance) exporting statutory tenant disclosure requests and health department alerts under TrinkwV § 17",
+    "tags": [
+      "Trinkwasser",
+      "Gesundheit",
+      "TrinkwV",
+      "Bleileitungen",
+      "Mieterschutz",
+      "Citizen Science",
+      "Vollzugslücke"
+    ]
+  },
+  {
+    "id": "legio-klar",
+    "title": "LegioKlar: TrinkwV § 31/52 Legionellen-Aushang-Decoder",
+    "round": "Inversion Run 2",
+    "date": "25.09.2026",
+    "conceptDe": "Liest per lokaler OCR abfotografierte Laborprüfberichte aus dem Treppenhausaushang ein, extrahiert KBE/100ml, Entnahmestellen und Warmwassertemperaturen, gleicht sie mit der UBA-Maßnahmenmatrix ab und erzeugt die Aufforderung zur Gefährdungsanalyse sowie eine rechtssichere Mängelanzeige.",
+    "conceptEn": "Parses photos of complex laboratory drinking water test reports posted on apartment notice boards via local OCR, extracts CFU/100ml, sampling points, and circulation temperatures, maps them against official Umweltbundesamt risk matrices, and generates tenant hazard alerts and formal defect notices.",
+    "status": "verengt",
+    "suggestedVerdict": "gift",
+    "recipientDe": "Berliner Mieterverein e.V. · Verbraucherzentrale NRW (Bereich Wohnen)",
+    "recipientEn": "Berlin Tenants Association · Consumer Advice Centers (Housing)",
+    "sourceType": "Civic & Health",
+    "sourceDe": "TrinkwV § 31 & § 52 (Informationspflichten), DVGW W 551 & UBA-Empfehlung Gefährdungsanalyse",
+    "sourceEn": "Drinking Water Ordinance § 31 & § 52, DVGW W 551 standard & UBA risk guidelines",
+    "evidenceDe": "Kommerzielle Legionellen-Apps (Trinkwasser-App, Hydrosense) richten sich an Hausverwaltungen. Portale wie legionellen-was-tun.de erfordern manuelle Zahleneingabe ohne Kontext. Ein datenschutzfreundlicher lokaler OCR-Decoder für Treppenhaus-Aushänge mit automatischer Mängelanzeige (BGB § 536) existiert nicht.",
+    "evidenceEn": "Commercial Legionella apps cater strictly to facility managers. Educational portals require manual numerical entry. A zero-cloud local OCR interpreter for stairwell notice boards generating verified defect notifications does not exist.",
+    "reviewDate": "09/2027",
+    "problemDe": "Vermieter hängen vorgeschriebene mikrobiologische Trinkwasserbefunde oft nur wenige Tage im Treppenhaus aus. Mieter verstehen die fachchinesischen KBE-Werte, DIN-Entnahmestellen und Temperaturgrenzen nicht und verpassen rechtzeitige Schutzmaßnahmen (z. B. Sterilfilter, Mietminderung).",
+    "problemEn": "Landlords routinely post complex microbiological test results on stairwell boards for only a few days. Tenants cannot decode CFU metrics, sampling points, or temperature thresholds, missing critical health precautions or rent reduction rights.",
+    "whyNowDe": [
+      "On-Device OCR (WASM-Tesseract / WebGPU Vision) liest tabellarische Laborbefunde offline im Browser ohne Hochladen privater Adressdaten auf externe Server."
+    ],
+    "whyNowEn": [
+      "Zero-cloud client-side OCR parses tabular microbiological reports offline in the browser without leaking private tenant address details."
+    ],
+    "firstStepTicketDe": "Treppenhaus-Foto-Import mit automatischer Extraktion von KBE/100ml, UBA-Ampel-Einstufung und Generator für Auskunftsersuchen zur Gefährdungsanalyse",
+    "firstStepTicketEn": "Stairwell report photo parser extracting CFU/100ml, classifying against UBA risk thresholds, and generating formal risk assessment disclosure requests",
+    "tags": [
+      "Trinkwasser",
+      "Legionellen",
+      "TrinkwV",
+      "Mieterrechte",
+      "Computer Vision",
+      "OCR",
+      "Gesundheitsschutz"
+    ]
+  },
+  {
     "id": "wood-moisture-shrinkage-calc",
     "title": "Woodworking Moisture Movement & Table Top Breadboard Calculator",
     "round": "Katalog 2026",

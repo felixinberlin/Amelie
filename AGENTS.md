@@ -67,9 +67,16 @@ Wenn du ein Ticket, ein Kriterium oder eine Dosen-Beschreibung änderst, musst d
   * **Ticket 01 ist ABGESCHLOSSEN:** WebGPU-Pipeline (`webgpuPipeline.ts`) mit CPU-Voxel-Laufzeitkern, 50-Schritte-Phasenfeld-Glättung, Live-$D_f$-Literaturvergleich, 6 Gefügelinsen, 3D-Kamera und STL-Export sind verifiziert (8 Tests in `engine.test.ts`).
   * **Ticket 02 ist BEREIT:** GPU-Marching-Cubes Isosurface-Extraktion & Mehrfarbiger 3MF-Farbexport (`07-demos/kristallwachstum-3d/ticket-02-gpu-marching-cubes-3mf.md`).
   * **Mail 9:** An Prof. Dr. Timm John (FU Berlin Geowissenschaften) ist auditiert und versandfertig.
-* **Ideenfindung / Skills:**
-  * Neuer Skill `skills/asymmetric-inversion/` (Invertierte Reibungsmethode).
-  * Erster Kandidat: `hof-entkoppler` in `src/data/unpacked.ts` eingetragen.
+* **Agenten- und Skill-Architektur:**
+  * **3 Entdeckungs-Engines:**
+    * `skills/amelie-ideenrunde/` (Empirische Primärquellen-Suche).
+    * `skills/lacunar-bisociation/` (Analoge Kollision & lakunäre Lückenfindung).
+    * `skills/asymmetric-inversion/` (Invertierte Reibungsmethode / Vollzugslücken).
+  * **1 Reviewer & Vektor-Klassifikator:**
+    * `skills/idea-reviewer/` (`idea-reviewer.skill`): 7-Vektoren-Audit (Novelty, Complexity, Possibility, Longevity, Civic SWOT, Tech Tree, Ground Truth) mit Logbuch in `06-suche/amelie-classification-log.md`.
+  * **1 Packaging-Agent:**
+    * `skills/dose-packer/` (`dose-packer.skill` & Subagent `dose-packer`): Schreibt zweisprachige Dossiers (`05-dosen/`, `en/05-dosen/`), verknüpft Dosen im React-Frontend (`src/data/dosen.ts`), synchronisiert Frontmatter und Caches (`export:data`).
+  * **Aktueller Dosenstand:** 39 Dosen im Bestand. Neu verpackt: `bleifrei-lotse` (Bleifrei-Lotse / TrinkwV § 17) mit Kaltmail an vzbv und Mieterbund. Weitere Kandidaten: `hof-entkoppler` und `legio-klar` in `src/data/ideas/civicAndEcology.ts`.
 
 ---
 
