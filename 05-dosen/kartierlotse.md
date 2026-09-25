@@ -2,6 +2,9 @@
 status: Available
 delivery_method: E-Mail
 target_maker: Landesämter mit digitalisiertem Kartierschlüssel
+review_score: 30/35
+architecture_tier: Tier 2
+source_type: Type B
 ---
 # Kartierlotse
 
@@ -9,7 +12,8 @@ target_maker: Landesämter mit digitalisiertem Kartierschlüssel
 
 **Stand:** 18.09.2026 · **Prüfen ab:** 09/2027
 **Empfänger:** Landesämter mit digitalisiertem Kartierschlüssel (NLWKN Niedersachsen als Startpunkt) · nachrangig: Ausbildungsstellen und Planungsbüros mit eigenen Kartierteams
-**Verdikt:** 🎁 verschenken
+**Verdikt:** 🎁 verschenken  
+**Review:** 30/35 · Tier 2 · Type B (Details: [Audit-Bericht](../06-suche/amelie-39-dosen-audit-report.md))
 
 **Verengte Prämisse (siehe „Wer es schon versucht hat"):** Automatisierte Habitattyp-Vorhersage aus Artenlisten existiert bereits als Forschungsprototyp (UK, e-Surveyor). Was nicht existiert: dieselbe Idee für den deutschen Kartierschlüssel, und vor allem als Live-Hinweis *während* der Begehung statt als Vorhersage danach.
 

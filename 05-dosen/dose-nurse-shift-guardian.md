@@ -2,6 +2,9 @@
 status: Available
 delivery_method: E-Mail
 target_maker: ver.di Fachbereich Gesundheit
+review_score: 32/35
+architecture_tier: Tier 1/2
+source_type: Type A
 ---
 # DienstplanWächter (Shift Roster Auditor & Bonus Shield)
 
@@ -11,7 +14,8 @@ target_maker: ver.di Fachbereich Gesundheit
 
 **Stand:** 17.09.2026 · **Prüfen ab:** März 2027
 **Empfänger:** ver.di Fachbereich Gesundheit · DBfK Deutscher Berufsverband für Pflegeberufe · Junge Pflege
-**Verdikt:** 🎁 verschenken
+**Verdikt:** 🎁 verschenken  
+**Review:** 32/35 · Tier 1/2 · Type A (Details: [Audit-Bericht](../06-suche/amelie-39-dosen-audit-report.md))
 
 ---
 

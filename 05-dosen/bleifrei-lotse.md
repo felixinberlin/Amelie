@@ -2,6 +2,9 @@
 status: Available
 delivery_method: E-Mail
 target_maker: Verbraucherzentrale Bundesverband
+review_score: 31/35
+architecture_tier: Tier 1/2
+source_type: Type A
 ---
 # Bleifrei-Lotse
 
@@ -11,7 +14,8 @@ target_maker: Verbraucherzentrale Bundesverband
 
 **Stand:** 25. September 2026 · **Prüfen ab:** September 2027  
 **Empfänger:** **Verbraucherzentrale Bundesverband (vzbv)** · **Deutscher Mieterbund (DMB)** · **Gesundheitsamt Berlin-Mitte / Neukölln (Fachdienst Hygiene)**  
-**Verdikt:** 🎁 **verschenken** — schließt eine akute bundesweite Vollzugslücke im Mieterschutz nach Ablauf der gesetzlichen Stilllegungsfrist.
+**Verdikt:** 🎁 **verschenken** — schließt eine akute bundesweite Vollzugslücke im Mieterschutz nach Ablauf der gesetzlichen Stilllegungsfrist.  
+**Review:** 31/35 · Tier 1/2 · Type A (Details: [Audit-Bericht](../06-suche/amelie-39-dosen-audit-report.md))
 
 ---
 

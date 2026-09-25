@@ -2,6 +2,9 @@
 status: Available
 delivery_method: E-Mail
 target_maker: Türwachen
+review_score: 30/35
+architecture_tier: Tier 1
+source_type: Type B
 ---
 # Couleur-Sphinx
 
@@ -11,7 +14,8 @@ target_maker: Türwachen
 
 **Stand:** 24. September 2026 · **Prüfen ab:** März 2027
 **Empfänger:** Türwachen (Chargierte) und technikaffine Füxe/Burschen von Berliner Studentenverbindungen · nachrangig: Hackerspaces & Vereinsheime mit traditionellem Zugangskonzept
-**Verdikt:** 🔨 erst Skelett, dann verschenken
+**Verdikt:** 🔨 erst Skelett, dann verschenken  
+**Review:** 30/35 · Tier 1 · Type B (Details: [Audit-Bericht](../06-suche/amelie-39-dosen-audit-report.md))
 
 ---
 

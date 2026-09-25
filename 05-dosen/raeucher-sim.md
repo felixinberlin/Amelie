@@ -2,6 +2,9 @@
 status: Available
 delivery_method: E-Mail
 target_maker: Teezeremonie- & Achtsamkeits-Communities
+review_score: 30/35
+architecture_tier: Tier 1
+source_type: Type D
 ---
 # Räucher-Sim
 
@@ -9,7 +12,8 @@ target_maker: Teezeremonie- & Achtsamkeits-Communities
 
 **Stand:** September 2026 · **Prüfen ab:** September 2028 (zeitlos, veraltet kaum)
 **Empfänger:** die Web-Toy-Öffentlichkeit · nachrangig: Ausstellungshäuser (Futurium, Technikmuseum/Spectrum), Meditations-Apps als Lizenznehmer
-**Verdikt:** 🎁 verschenken **durch Bauen** — ein Wochenende, dann veröffentlichen
+**Verdikt:** 🎁 verschenken **durch Bauen** — ein Wochenende, dann veröffentlichen  
+**Review:** 30/35 · Tier 1 · Type D (Details: [Audit-Bericht](../06-suche/amelie-39-dosen-audit-report.md))
 
 ---
 

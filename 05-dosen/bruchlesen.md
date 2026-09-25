@@ -2,6 +2,9 @@
 status: Available
 delivery_method: E-Mail
 target_maker: AG Fraktographie von DGM und DVM an der BAM
+review_score: 32/35
+architecture_tier: Tier 1
+source_type: Type D
 ---
 # Bruchlesen
 
@@ -11,7 +14,8 @@ target_maker: AG Fraktographie von DGM und DVM an der BAM
 
 **Stand:** 23.09.2026 · **Prüfen ab:** 09/2027
 **Empfänger:** **AG Fraktographie von DGM und DVM an der BAM** (Leitung Dr.-Ing. Dirk Bettge, rund 126 Mitglieder aus Forschung und Industrie; betreibt die Referenzdatenbank FractoDB und den Kurs „Fraktographie metallischer Werkstoffe") · nachrangig: HVG-DGG (Glas), Glas- und Keramikrestaurierung (ICOM-CC Working Group Glass & Ceramics), forensische Glasanalyse (OSAC-Umfeld)
-**Verdikt:** 🎁 verschenken — Organisation mit Weiterbildungsauftrag, eigener Referenzsammlung und Termin in Berlin; die Idee wäre für sie ein Übungsmodus zu dem, was sie schon hat, kein neues Projekt
+**Verdikt:** 🎁 verschenken — Organisation mit Weiterbildungsauftrag, eigener Referenzsammlung und Termin in Berlin; die Idee wäre für sie ein Übungsmodus zu dem, was sie schon hat, kein neues Projekt  
+**Review:** 32/35 · Tier 1 · Type D (Details: [Audit-Bericht](../06-suche/amelie-39-dosen-audit-report.md))
 
 ---
 

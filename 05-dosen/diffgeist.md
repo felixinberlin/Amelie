@@ -2,6 +2,9 @@
 status: Available
 delivery_method: E-Mail
 target_maker: Andrew Nesbitt / Ecosyste.ms
+review_score: 30/35
+architecture_tier: Tier 1
+source_type: Type D
 ---
 # Diffgeist
 
@@ -9,7 +12,8 @@ target_maker: Andrew Nesbitt / Ecosyste.ms
 
 **Stand:** September 2026 · **Prüfen ab:** März 2027 (schnelllebiges Feld)
 **Empfänger:** Andrew Nesbitt / Ecosyste.ms · nachrangig: Renovate (Mend), Socket.dev
-**Verdikt:** 🎁 verschenken — Rang 2/5, kein Code nötig
+**Verdikt:** 🎁 verschenken — Rang 2/5, kein Code nötig  
+**Review:** 30/35 · Tier 1 · Type D (Details: [Audit-Bericht](../06-suche/amelie-39-dosen-audit-report.md))
 
 ---
 

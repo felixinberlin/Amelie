@@ -2,6 +2,9 @@
 status: Available
 delivery_method: E-Mail
 target_maker: Labyrinthos
+review_score: 31/35
+architecture_tier: Tier 1
+source_type: Type B/D
 ---
 # Tarot als Zustandsmaschine (Spread-DSL)
 
@@ -9,7 +12,8 @@ target_maker: Labyrinthos
 
 **Stand:** September 2026 · **Prüfen ab:** September 2027
 **Empfänger:** Labyrinthos (Tina Gong) · Interactive Fiction / Game-Narrative (Twine / Inkle) · nachrangig: Crowdfunding Deck-Künstler:innen
-**Verdikt:** 🎁 verschenken als Spezifikation & Schema (nicht als geschlossene App) — verengt auf Beziehungs-Graphen
+**Verdikt:** 🎁 verschenken als Spezifikation & Schema (nicht als geschlossene App) — verengt auf Beziehungs-Graphen  
+**Review:** 31/35 · Tier 1 · Type B/D (Details: [Audit-Bericht](../06-suche/amelie-39-dosen-audit-report.md))
 
 ---
 

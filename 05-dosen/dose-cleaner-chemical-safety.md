@@ -2,6 +2,9 @@
 status: Available
 delivery_method: E-Mail
 target_maker: IG BAU Bundesfachgruppe Gebäudereinigung
+review_score: 34/35
+architecture_tier: Tier 1
+source_type: Type A
 ---
 # ChemGefahr-Stopp (Chemical Safety & Poison Shield for Cleaners)
 
@@ -11,7 +14,8 @@ target_maker: IG BAU Bundesfachgruppe Gebäudereinigung
 
 **Stand:** 17.09.2026 · **Prüfen ab:** März 2027
 **Empfänger:** IG BAU Bundesfachgruppe Gebäudereinigung · Berufsgenossenschaft der Bauwirtschaft (BG BAU)
-**Verdikt:** 🎁 verschenken
+**Verdikt:** 🎁 verschenken  
+**Review:** 34/35 · Tier 1 · Type A (Details: [Audit-Bericht](../06-suche/amelie-39-dosen-audit-report.md))
 
 ---
 

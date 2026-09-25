@@ -2,13 +2,17 @@
 status: Available
 delivery_method: E-Mail
 target_maker: American Meteor Society und IMO
+review_score: 29/35
+architecture_tier: Tier 2/3
+source_type: Type D
 ---
 # Feuerkugel-Sofortnetz
 
 **Ein Satz:** Eine Echtzeit-Schicht über bestehenden Feuerkugel-Meldenetzen, die Zeugen in den ersten Minuten aktiv zusammenbringt und beiläufig laufende Dashcam-/Türklingelkameras vor dem automatischen Überschreiben rettet — statt beides tagelang dem Zufall zu überlassen.
 **Stand:** 18.09.2026 · **Prüfen ab:** 09/2027
 **Empfänger:** American Meteor Society und IMO (bestehende Meldenetze) · nachrangig: Global Meteor Network, Betreiber bestehender Warn-Apps mit Nutzerbasis
-**Verdikt:** 🎁 verschenken
+**Verdikt:** 🎁 verschenken  
+**Review:** 29/35 · Tier 2/3 · Type D (Details: [Audit-Bericht](../06-suche/amelie-39-dosen-audit-report.md))
 
 ## Das Problem
 

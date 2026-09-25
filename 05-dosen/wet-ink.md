@@ -2,13 +2,17 @@
 status: Available
 delivery_method: E-Mail
 target_maker: Escape Motions
+review_score: 32/35
+architecture_tier: Tier 1
+source_type: Type D
 ---
 # Wet Ink
 
 **Ein Satz:** Tinte auf Papier als echte Simulation — Kapillarfluss, Bleeding, Faser-Anisotropie, Edge Darkening. Eine Physik, tief statt breit.
 
 **Stand:** September 2026 · **Prüfen ab:** September 2027
-**Verdikt:** 🔒 **behalten** — aber der **Plan** wird verschenkt
+**Verdikt:** 🔒 **behalten** — aber der **Plan** wird verschenkt  
+**Review:** 32/35 · Tier 1 · Type D (Details: [Audit-Bericht](../06-suche/amelie-39-dosen-audit-report.md))
 **Empfänger des Plans:** Escape Motions (Rebelle), Kalligrafie- und Sumi-Szene, WebGL-Demoszene, Lehre (Grafik-Seminare)
 
 ---

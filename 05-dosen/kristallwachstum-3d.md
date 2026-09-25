@@ -2,6 +2,9 @@
 status: Available
 delivery_method: E-Mail
 target_maker: Geowissenschaften FU Berlin / Lehrmittel-Verlage
+review_score: 33/35
+architecture_tier: Tier 1
+source_type: Type D
 ---
 # Kristallwachstum 3D
 
@@ -9,7 +12,8 @@ target_maker: Geowissenschaften FU Berlin / Lehrmittel-Verlage
 
 **Stand:** September 2026 · **Prüfen ab:** September 2027
 **Empfänger:** Geowissenschaften FU Berlin / Lehrmittel-Verlage · nachrangig: Three.js/WebGPU-Demoszene, Nervous System (Jessica Rosenkrantz & Jesse Louis-Rosenberg), Printables/Prusa-Community
-**Verdikt:** 🎁 verschenken — verengt auf Hybrid-Pipeline & didaktische Gefügeanalyse
+**Verdikt:** 🎁 verschenken — verengt auf Hybrid-Pipeline & didaktische Gefügeanalyse  
+**Review:** 33/35 · Tier 1 · Type D (Details: [Audit-Bericht](../06-suche/amelie-39-dosen-audit-report.md))
 
 ---
 

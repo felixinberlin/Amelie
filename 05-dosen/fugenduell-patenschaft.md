@@ -2,6 +2,9 @@
 status: Available
 delivery_method: E-Mail
 target_maker: CityLAB Berlin / Technologiestiftung
+review_score: 29/35
+architecture_tier: Tier 2
+source_type: Type B
 ---
 # Beobachtungsposten mit Übergabe
 
@@ -9,7 +12,8 @@ target_maker: CityLAB Berlin / Technologiestiftung
 
 **Stand:** 21.09.2026 · **Prüfen ab:** 03/2027 (verkürzt: Nature's Notebook bringt Frühjahr 2026 eine neue App, das Feld bewegt sich)
 **Empfänger:** CityLAB Berlin / Technologiestiftung (Gieß den Kiez) · nachrangig: GLOBE Niederlande (GrowApp), USA-NPN (Nature's Notebook)
-**Verdikt:** 🎁 verschenken — schmal, aber am Quellcode des Empfängers belegt
+**Verdikt:** 🎁 verschenken — schmal, aber am Quellcode des Empfängers belegt  
+**Review:** 29/35 · Tier 2 · Type B (Details: [Audit-Bericht](../06-suche/amelie-39-dosen-audit-report.md))
 
 ---
 

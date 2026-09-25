@@ -2,6 +2,9 @@
 status: Available
 delivery_method: E-Mail
 target_maker: Infinite Noise TRNG
+review_score: 30/35
+architecture_tier: Tier 1/2
+source_type: Type A
 ---
 # Echter Zufall als Service
 
@@ -9,7 +12,8 @@ target_maker: Infinite Noise TRNG
 
 **Stand:** September 2026 · **Prüfen ab:** September 2027
 **Empfänger:** Infinite Noise TRNG (`waywardgeek/infnoise`, Vertrieb über leetronics in Deutschland) · nachrangig: Crowd-Supply-/Hackaday-Öffentlichkeit, Kryptographie-Lehre
-**Verdikt:** 🔨 erst Skelett bauen, dann verschenken — Einzelmaintainer, also mit Code kommen
+**Verdikt:** 🔨 erst Skelett bauen, dann verschenken — Einzelmaintainer, also mit Code kommen  
+**Review:** 30/35 · Tier 1/2 · Type A (Details: [Audit-Bericht](../06-suche/amelie-39-dosen-audit-report.md))
 
 ---
 

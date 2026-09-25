@@ -2,6 +2,9 @@
 status: Available
 delivery_method: E-Mail
 target_maker: PostHog Plugin Community
+review_score: 30/35
+architecture_tier: Tier 1
+source_type: Type D
 ---
 # Ghost Replay fürs Editieren
 
@@ -9,7 +12,8 @@ target_maker: PostHog Plugin Community
 
 **Stand:** September 2026 · **Prüfen ab:** September 2027
 **Empfänger:** HCI- und Software-Engineering-Forschung · nachrangig: Editor-DevEx-Teams, Bootcamps und Mentor:innen
-**Verdikt:** 🎁 verschenken **an Forschung** — als Frage, nicht als Produkt. Verengt, siehe unten.
+**Verdikt:** 🎁 verschenken **an Forschung** — als Frage, nicht als Produkt. Verengt, siehe unten.  
+**Review:** 30/35 · Tier 1 · Type D (Details: [Audit-Bericht](../06-suche/amelie-39-dosen-audit-report.md))
 
 ---
 

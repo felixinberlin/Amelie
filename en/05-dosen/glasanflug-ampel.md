@@ -1,21 +1,11 @@
-# Glasanflug-Ampel (Bird Glass Hazard Score)
-
-**One sentence:** Take the façade photos that German bird-collision reports already carry, compute them once — glass share, reflected greenery, see-throughs, glazed corners — and return a draft assessment under the German LAG VSW scheme, with every input and its uncertainty on the page.
-
-**As of:** 22 Sep 2026 · **Recheck by:** March 2027
-**Recipient:** **NABU Berlin, "Artenschutz am Gebäude"** (Julia Lorenz, Helen Friedlein) together with **NABU Jena** (Maximilian Schätz, upstream of the open-source Vogelschlagmelder) · **second recipient, separate context:** LBV Bavaria · **owner of the scheme, always named:** LAG VSW
-**Verdict:** 🔨 **skeleton first, then give it away** — the natural home is an open-source repo maintained by one unpaid person, and the Amélie rule says: go there only with code.
-
 ---
-
-> 🦅 **Interactive Simulator in Browser:**
-> - **Run in dose view:** [Open Bird Glass Strike Hazard Calculator](#dose=glasanflug-ampel)
-> - **Fullscreen lab:** [Open Bird Glass Sandbox](#sim=glasanflug)
->
-> The deterministic engine implements Tables 3 and 4 of LAG VSW Decision 21/01 (2023 revision) with live color-coded risk assessment, priority rules, provenance tracking per input, and detailed rationale in the browser.
-
+status: Delivered
+delivery_method: E-Mail
+target_maker: NABU Berlin, "Artenschutz am Gebäude" project, together with NABU Jena
+review_score: 32/35
+architecture_tier: Tier 1
+source_type: Type A
 ---
-
 ## The problem
 
 An estimated **100 million birds a year die on glass in Germany**; **only 15–35 % of victims are ever found**. Legally one question decides everything: is the killing risk at this building *significantly elevated* under § 44 BNatSchG? The LAG VSW draws the line at **two collision victims per 100 m of façade per year as "normal", and five or more as "significantly elevated".**

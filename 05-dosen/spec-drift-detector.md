@@ -2,13 +2,17 @@
 status: Available
 delivery_method: E-Mail
 target_maker: Tessl
+review_score: 30/35
+architecture_tier: Tier 1
+source_type: Type C
 ---
 # Spec-Drift Detector
 
 **Ein Satz:** Ein CI-Check, der Prosa-Spezifikationen gegen die tatsächliche Implementierung prüft und den Build bei Divergenz rot färbt.
 
 **Stand:** September 2026 · **Prüfen ab:** März 2027 (schnelllebiges Feld)
-**Empfänger:** GitHub Spec Kit (Discussion), Tessl · **Verdikt:** 🔒 **behalten und bauen** — Idee trotzdem öffentlich streuen
+**Empfänger:** GitHub Spec Kit (Discussion), Tessl · **Verdikt:** 🔒 **behalten und bauen** — Idee trotzdem öffentlich streuen  
+**Review:** 30/35 · Tier 1 · Type C (Details: [Audit-Bericht](../06-suche/amelie-39-dosen-audit-report.md))
 
 ---
 

@@ -2,6 +2,9 @@
 status: Delivered
 delivery_method: E-Mail
 target_maker: CityLAB Berlin
+review_score: 29/35
+architecture_tier: Tier 1/2
+source_type: Type B
 ---
 # Sperrmüll-Radar
 
@@ -9,7 +12,8 @@ target_maker: CityLAB Berlin
 
 **Stand:** 20.09.2026 · **Prüfen ab:** 03/2027 (verkürzt — das Feld bewegt sich kommerziell)
 **Empfänger:** CityLAB Berlin (Technologiestiftung) · Domänenpartner in der Verwaltung: Re-Use Berlin / Zero-Waste-Agentur, BSR · nachrangig: OpenStreetMap Berlin
-**Verdikt:** 🎁 verschenken — Rang 1, Organisation mit Bauauftrag, Budget und dem passenden Vorläufer
+**Verdikt:** 🎁 verschenken — Rang 1, Organisation mit Bauauftrag, Budget und dem passenden Vorläufer  
+**Review:** 29/35 · Tier 1/2 · Type B (Details: [Audit-Bericht](../06-suche/amelie-39-dosen-audit-report.md))
 
 ---
 

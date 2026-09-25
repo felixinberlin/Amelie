@@ -4,6 +4,9 @@ delivery_method: E-Mail
 target_maker: >-
   Ökologische Planungsbüros und Gutachter:innen, die Eingriffsausgleich nach der
   Bundeskompensationsverordnung berechnen
+review_score: 31/35
+architecture_tier: Tier 1/2
+source_type: Type A
 ---
 # Biotoptyp-Assistent
 
@@ -11,7 +14,8 @@ target_maker: >-
 
 **Stand:** 18.09.2026 · **Prüfen ab:** 03/2027 (kurzes Fenster — aktives KI-Forschungsfeld, siehe „Wo es kippt")
 **Empfänger:** Ökologische Planungsbüros/Gutachter:innen, die Eingriffsausgleich nach der Bundeskompensationsverordnung berechnen · nachrangig: BfN selbst (Ergänzung zu BfN-Schriften 721) oder das KIBI-Projektteam (Anschluss auf Bodenebene statt Fernerkundung)
-**Verdikt:** 🎁 verschenken
+**Verdikt:** 🎁 verschenken  
+**Review:** 31/35 · Tier 1/2 · Type A (Details: [Audit-Bericht](../06-suche/amelie-39-dosen-audit-report.md))
 
 ## Das Problem
 Gutachter:innen, die für Eingriffsvorhaben (Bau, Straßen, Windkraft) die Kompensation nach der Bundeskompensationsverordnung (BKompV) berechnen, müssen jeden kartierten Geländeabschnitt einem von 668 Biotoptypen aus der 315-seitigen BfN-Kartieranleitung (Schrift 721, 2025) zuordnen, bevor die Wertpunkte (0–24) und damit der Kompensationsbedarf feststehen. Das ist Handarbeit mit einem sehr dicken Nachschlagewerk, für jede einzelne Teilfläche einzeln.

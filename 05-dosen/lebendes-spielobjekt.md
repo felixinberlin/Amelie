@@ -2,6 +2,9 @@
 status: Available
 delivery_method: E-Mail
 target_maker: Pl@ntNet und The Plant Game
+review_score: 28/35
+architecture_tier: Tier 1/2
+source_type: Type C/D
 ---
 # Das lebende Spielobjekt
 
@@ -9,7 +12,8 @@ target_maker: Pl@ntNet und The Plant Game
 
 **Stand:** 21.09.2026 · **Prüfen ab:** 03/2027 (Konsum/Spiele, kurzes Fenster)
 **Empfänger:** Pl@ntNet / The Plant Game (INRIA, Cirad, IRD, Inria — sie haben den Duell-Modus bereits) · nachrangig: Play Curious (Jesse Himmelstein), MMOS (Attila Szantner), Scientific Game Jam
-**Verdikt:** 🎁 verschenken — mit lauffähigem Skelett, sonst wäre es nach Regel 4 keine Gabe
+**Verdikt:** 🎁 verschenken — mit lauffähigem Skelett, sonst wäre es nach Regel 4 keine Gabe  
+**Review:** 28/35 · Tier 1/2 · Type C/D (Details: [Audit-Bericht](../06-suche/amelie-39-dosen-audit-report.md))
 
 ---
 

@@ -2,6 +2,9 @@
 status: Available
 delivery_method: E-Mail
 target_maker: Anki-Community / AnkiConnect-Entwickler
+review_score: 29/35
+architecture_tier: Tier 1
+source_type: Type D
 ---
 # Bugs → Spaced Repetition
 
@@ -9,7 +12,8 @@ target_maker: Anki-Community / AnkiConnect-Entwickler
 
 **Stand:** September 2026 · **Prüfen ab:** September 2027
 **Empfänger:** Anki-Ökosystem (als Add-on) · nachrangig: Incident- und Postmortem-Tooling, Bootcamps und Team-Leads
-**Verdikt:** 🔨 erst Skelett bauen, dann verschenken — ein Wochenende
+**Verdikt:** 🔨 erst Skelett bauen, dann verschenken — ein Wochenende  
+**Review:** 29/35 · Tier 1 · Type D (Details: [Audit-Bericht](../06-suche/amelie-39-dosen-audit-report.md))
 
 ---
 

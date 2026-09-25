@@ -1,3 +1,11 @@
+---
+status: Available
+delivery_method: E-Mail
+target_maker: Open — to be decided only after M0. Candidates: BfN / BioConsult SH
+review_score: 30/35
+architecture_tier: Tier 2/3
+source_type: Type A/D
+---
 # EuroBirdCast: Auditable Migration Curtailment
 
 *(German: EuroBirdCast: Vogelzug-Abschaltung, nachrechenbar)*
@@ -7,7 +15,8 @@
 
 **Status:** 22 September 2026 (first draft in the morning, rewritten from scratch after review) · **Review after:** March 2027
 **Recipients:** open — to be decided only after M0. Candidates: BfN / BioConsult SH, LfU Brandenburg (central carcass registry), operator associations
-**Verdict:** 🔨 **build first, if at all** — review protocol: *narrowed, remaining gap unclear*. The first draft of this tin carried 🎁 "verified novel". That was wrong; the correction is below.
+**Verdict:** 🔨 **build first, if at all** — review protocol: *narrowed, remaining gap unclear*. The first draft of this tin carried 🎁 "verified novel". That was wrong; the correction is below.  
+**Review:** 30/35 · Tier 2/3 · Type A/D (Details: [Audit Report](../../06-suche/amelie-39-dosen-audit-report.md))
 
 ---
 

@@ -2,6 +2,9 @@
 status: Available
 delivery_method: E-Mail
 target_maker: Deutsche Stiftung Denkmalschutz
+review_score: 30/35
+architecture_tier: Tier 2
+source_type: Type A/B
 ---
 # Denkmal-Verlaufsblick
 
@@ -9,7 +12,8 @@ target_maker: Deutsche Stiftung Denkmalschutz
 
 **Stand:** 19.09.2026 · **Prüfen ab:** März 2027 (aktives Forschungsfeld, 6 Monate)
 **Empfänger:** Deutsche Stiftung Denkmalschutz (Schwarzbuch-Team / ehrenamtliche Beiräte) · nachrangig: Landesdenkmalämter mit Bürgerportal (z. B. BLfD Bayern)
-**Verdikt:** 🎁 verschenken — Prämisse verengt, siehe „Wer es schon versucht hat"
+**Verdikt:** 🎁 verschenken — Prämisse verengt, siehe „Wer es schon versucht hat"  
+**Review:** 30/35 · Tier 2 · Type A/B (Details: [Audit-Bericht](../06-suche/amelie-39-dosen-audit-report.md))
 
 ---
 

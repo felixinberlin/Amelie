@@ -2,6 +2,9 @@
 status: Available
 delivery_method: E-Mail
 target_maker: Die Öffentlichkeit — mit lauffähigem Skelett
+review_score: 29/35
+architecture_tier: Tier 1
+source_type: Type C
 ---
 # TischSchiedsrichter
 
@@ -11,7 +14,8 @@ target_maker: Die Öffentlichkeit — mit lauffähigem Skelett
 
 **Stand:** 24. September 2026 · **Prüfen ab:** März 2027
 **Empfänger:** Die Öffentlichkeit — mit lauffähigem Skelett (Manifest, Regel 4 und Empfängertabelle, letzte Zeile) · Kanal: Blogbeitrag oder Show HN vor dem 1. Advent 2026 · Sammeltalk „Ideen, die ich nicht baue" (FOSDEM)
-**Verdikt:** 🔨 erst Skelett, dann verschenken
+**Verdikt:** 🔨 erst Skelett, dann verschenken  
+**Review:** 29/35 · Tier 1 · Type C (Details: [Audit-Bericht](../06-suche/amelie-39-dosen-audit-report.md))
 
 ---
 

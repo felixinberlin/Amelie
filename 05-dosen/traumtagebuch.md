@@ -2,6 +2,9 @@
 status: Available
 delivery_method: E-Mail
 target_maker: Schlaflabore / Oneirogene Forschung
+review_score: 29/35
+architecture_tier: Tier 1/2
+source_type: Type D
 ---
 # Traumtagebuch mit Motiv-Karte
 
@@ -9,7 +12,8 @@ target_maker: Schlaflabore / Oneirogene Forschung
 
 **Stand:** September 2026 · **Prüfen ab:** März 2027 (bewegter Markt)
 **Empfänger:** Obsidian-Plugin-Ökosystem · nachrangig: Local-First-Szene, Schlaf- und Traumforschung
-**Verdikt:** 🔨 erst bauen, dann verschenken — als Plugin, nicht als App. Verengt, siehe unten.
+**Verdikt:** 🔨 erst bauen, dann verschenken — als Plugin, nicht als App. Verengt, siehe unten.  
+**Review:** 29/35 · Tier 1/2 · Type D (Details: [Audit-Bericht](../06-suche/amelie-39-dosen-audit-report.md))
 
 ---
 

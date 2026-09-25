@@ -2,6 +2,9 @@
 status: Available
 delivery_method: E-Mail
 target_maker: Ausbildungsstellen für Biotopkartierung
+review_score: 30/35
+architecture_tier: Tier 1
+source_type: Type D
 ---
 # Eichflächen-Trainer
 
@@ -9,7 +12,8 @@ target_maker: Ausbildungsstellen für Biotopkartierung
 
 **Stand:** 18.09.2026 · **Prüfen ab:** 09/2027
 **Empfänger:** Ausbildungsstellen für Biotopkartierung (Akademie für angewandte Vegetationskunde, ANL Bayern) · nachrangig: Landesämter mit digitalem Kartierschlüssel wie der NLWKN in Niedersachsen
-**Verdikt:** 🎁 verschenken
+**Verdikt:** 🎁 verschenken  
+**Review:** 30/35 · Tier 1 · Type D (Details: [Audit-Bericht](../06-suche/amelie-39-dosen-audit-report.md))
 
 ## Das Problem
 

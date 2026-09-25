@@ -2,6 +2,9 @@
 status: Available
 delivery_method: E-Mail
 target_maker: Landesumweltbehörden mit eigenem Leitfaden
+review_score: 32/35
+architecture_tier: Tier 1/2
+source_type: Type A
 ---
 # Lichtplan-Check
 
@@ -9,7 +12,8 @@ target_maker: Landesumweltbehörden mit eigenem Leitfaden
 
 **Stand:** 18.09.2026 · **Prüfen ab:** 09/2027
 **Empfänger:** Landesumweltbehörden, die einen eigenen Leitfaden herausgegeben haben (z. B. Hamburg BUKEA, „Licht & Naturschutz") · nachrangig: NABU/BUND (eigene Ratgeberseiten zu insektenfreundlicher Beleuchtung), kommunale Klimaschutz-/Umweltämter bei Straßenbeleuchtungs-Umrüstung
-**Verdikt:** 🎁 verschenken
+**Verdikt:** 🎁 verschenken  
+**Review:** 32/35 · Tier 1/2 · Type A (Details: [Audit-Bericht](../06-suche/amelie-39-dosen-audit-report.md))
 
 ## Das Problem
 Bauherren, Kommunen und Lichtplaner:innen sollen Außenbeleuchtung gegen Vogel- und Insektenschutz-Kriterien prüfen, aber die Kriterien (Abstrahlwinkel möglichst steil, > 70° vermeiden; Farbtemperatur ≤ 2700 K, optimal ~2200 K; Abschirmung; Betriebszeiten/Bewegungsmelder) liegen verstreut über PDF-Leitfäden mehrerer Behörden und Verbände (Hamburg BUKEA, NABU, BUND, licht.de) statt an einer Stelle. Wer keinen Lichtplaner beauftragt — die meisten privaten Bauherren, viele kleine Kommunen — hat keine Möglichkeit, eine Planung selbst schnell gegenzuprüfen.

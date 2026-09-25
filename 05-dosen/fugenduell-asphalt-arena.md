@@ -2,6 +2,9 @@
 status: Available
 delivery_method: E-Mail
 target_maker: Indie Game Developers
+review_score: 29/35
+architecture_tier: Tier 1/2
+source_type: Type B/D
 ---
 # Fugenduell: Asphaltritzen-Arena
 
@@ -11,7 +14,8 @@ target_maker: Indie Game Developers
 
 **Stand:** September 2026 · **Prüfen ab:** März 2027
 **Empfänger:** Indie Game Developers · Botanischer Garten Berlin · Humboldt-Universität zu Berlin (Institut für Biologie) · Stiftung Naturschutz Berlin
-**Verdikt:** 🔨 erst Skelett, dann verschenken
+**Verdikt:** 🔨 erst Skelett, dann verschenken  
+**Review:** 29/35 · Tier 1/2 · Type B/D (Details: [Audit-Bericht](../06-suche/amelie-39-dosen-audit-report.md))
 
 ---
 

@@ -2,6 +2,9 @@
 status: Available
 delivery_method: E-Mail
 target_maker: Prototype Fund
+review_score: 30/35
+architecture_tier: Tier 2
+source_type: Type A/C
 ---
 # KlarLokal
 
@@ -9,7 +12,8 @@ target_maker: Prototype Fund
 
 **Stand:** September 2026 · **Prüfen ab:** März 2027 (direkte Konkurrenz existiert bereits, Feld bewegt sich)
 **Empfänger:** Prototype Fund (Runde ab 1. Oktober 2026) · nachrangig: Berliner Flüchtlingsrat, Erwerbslosen-Initiativen, Sozialberatungsstellen
-**Verdikt:** 🎁 verschenken — Prämisse verengt, siehe „Wer es schon versucht hat"
+**Verdikt:** 🎁 verschenken — Prämisse verengt, siehe „Wer es schon versucht hat"  
+**Review:** 30/35 · Tier 2 · Type A/C (Details: [Audit-Bericht](../06-suche/amelie-39-dosen-audit-report.md))
 
 ---
 

@@ -2,6 +2,9 @@
 status: Delivered
 delivery_method: E-Mail
 target_maker: Noise-Planet / NoiseCapture
+review_score: 29/35
+architecture_tier: Tier 1/2
+source_type: Type A/B
 ---
 # Kiez-Lärmkarte
 
@@ -9,7 +12,8 @@ target_maker: Noise-Planet / NoiseCapture
 
 **Stand:** 20.09.2026 · **Prüfen ab:** 03/2027
 **Empfänger:** Noise-Planet / NoiseCapture (Université Gustave Eiffel + CNRS) · parallel: CityLAB Berlin · **nicht** als Empfänger, aber als Vorarbeit zu würdigen: Hush City
-**Verdikt:** 🎁 verschenken — Rang 2 (Forschung) und Rang 1 (CityLAB)
+**Verdikt:** 🎁 verschenken — Rang 2 (Forschung) und Rang 1 (CityLAB)  
+**Review:** 29/35 · Tier 1/2 · Type A/B (Details: [Audit-Bericht](../06-suche/amelie-39-dosen-audit-report.md))
 
 ---
 

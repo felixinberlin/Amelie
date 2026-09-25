@@ -2,6 +2,9 @@
 status: Available
 delivery_method: E-Mail
 target_maker: Netzwerk Reparatur-Initiativen
+review_score: 29/35
+architecture_tier: Tier 1
+source_type: Type A/D
 ---
 # KlangStethoskop
 
@@ -11,7 +14,8 @@ target_maker: Netzwerk Reparatur-Initiativen
 
 **Stand:** September 2026 · **Prüfen ab:** März 2027
 **Empfänger:** Netzwerk Reparatur-Initiativen (Repair Cafés) · Bund der Energieverbraucher · Verbraucherzentrale
-**Verdikt:** 🎁 verschenken
+**Verdikt:** 🎁 verschenken  
+**Review:** 29/35 · Tier 1 · Type A/D (Details: [Audit-Bericht](../06-suche/amelie-39-dosen-audit-report.md))
 
 ---
 

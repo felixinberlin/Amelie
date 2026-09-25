@@ -3,6 +3,9 @@ status: Delivered
 date_delivered: '2026-09-22T00:00:00Z'
 delivery_method: E-Mail
 target_maker: 'NABU Berlin, Projekt „Artenschutz am Gebäude"'
+review_score: 32/35
+architecture_tier: Tier 1
+source_type: Type A
 ---
 # Glasanflug-Ampel
 
@@ -12,7 +15,8 @@ target_maker: 'NABU Berlin, Projekt „Artenschutz am Gebäude"'
 
 **Stand:** 22. September 2026 · **Prüfen ab:** März 2027
 **Empfänger:** **NABU Berlin, „Artenschutz am Gebäude"** (Julia Lorenz, Helen Friedlein) zusammen mit **NABU Jena** (Maximilian Schätz, Upstream des quelloffenen Vogelschlagmelders) · **zweiter Empfänger, eigener Kontext:** LBV Bayern · **fachlicher Eigentümer des Schemas:** LAG VSW
-**Verdikt:** 🔨 **erst Skelett, dann verschenken** — die natürliche Heimat ist ein quelloffenes Repo mit einem einzelnen, unbezahlten Maintainer, und nach der Amélie-Regel geht dorthin nur, wer Code mitbringt.
+**Verdikt:** 🔨 **erst Skelett, dann verschenken** — die natürliche Heimat ist ein quelloffenes Repo mit einem einzelnen, unbezahlten Maintainer, und nach der Amélie-Regel geht dorthin nur, wer Code mitbringt.  
+**Review:** 32/35 · Tier 1 · Type A (Details: [Audit-Bericht](../06-suche/amelie-39-dosen-audit-report.md))
 
 ---
 

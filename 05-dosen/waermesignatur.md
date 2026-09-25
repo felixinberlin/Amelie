@@ -2,13 +2,17 @@
 status: Available
 delivery_method: E-Mail
 target_maker: co2online gGmbH
+review_score: 32/35
+architecture_tier: Tier 1
+source_type: Type A
 ---
 # Wärmesignatur
 
 **Ein Satz:** Zwölf Monatswerte vom Gaszähler oder aus der monatlichen Verbrauchsinformation plus das Wetter ergeben, wie viel Wärme *diese* Wohnung pro Grad Temperaturunterschied verliert und ab welcher Außentemperatur sie heizt — als ehrliches Band, ohne dass jemand einen Grundriss zeichnet.
 
 **Stand:** 19.09.2026 · **Prüfen ab:** 03/2027 (verkürzt: der Fernablese-Stichtag 31.12.2026 bewegt den Markt)
-**Verdikt:** 🎁 verschenken
+**Verdikt:** 🎁 verschenken  
+**Review:** 32/35 · Tier 1 · Type A (Details: [Audit-Bericht](../06-suche/amelie-39-dosen-audit-report.md))
 **Empfänger:** co2online gGmbH (HeizCheck; Partner im EnergyMap-Verbund) · nachrangig: Forschungsverbund EnergyMap Berlin (UdK) als Kalibrierziel für Altbau Thermal, Verbraucherzentrale Berlin
 
 ---

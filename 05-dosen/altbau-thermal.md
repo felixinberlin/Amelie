@@ -3,6 +3,9 @@ status: Delivered
 date_delivered: '2026-09-19T00:00:00Z'
 delivery_method: E-Mail
 target_maker: Forschungsverbund EnergyMap Berlin
+review_score: 29/35
+architecture_tier: Tier 1/2
+source_type: Type A
 ---
 # Altbau Thermal
 
@@ -10,7 +13,8 @@ target_maker: Forschungsverbund EnergyMap Berlin
 
 **Stand:** 19. September 2026 · **Prüfen ab:** September 2027
 **Empfänger:** Forschungsverbund EnergyMap Berlin (Leitung UdK Berlin, Fachgebiet VPT) · nachrangig: Verbraucherzentrale Berlin (Energieberatung)
-**Verdikt:** 🎁 verschenken — Prüfprotokoll: *verengt* (siehe „Wer es schon versucht hat")
+**Verdikt:** 🎁 verschenken — Prüfprotokoll: *verengt* (siehe „Wer es schon versucht hat")  
+**Review:** 29/35 · Tier 1/2 · Type A (Details: [Audit-Bericht](../06-suche/amelie-39-dosen-audit-report.md))
 
 ---
 

@@ -2,6 +2,9 @@
 status: Available
 delivery_method: E-Mail
 target_maker: 'Katta Spiel, HCI-Gruppe der TU Wien'
+review_score: 30/35
+architecture_tier: Tier 1
+source_type: Type D
 ---
 # Chaos Clock
 
@@ -9,7 +12,8 @@ target_maker: 'Katta Spiel, HCI-Gruppe der TU Wien'
 
 **Stand:** 24. September 2026 · **Prüfen ab:** März 2027
 **Empfänger:** Katta Spiel, HCI-Gruppe der TU Wien (ERC ACCESSTECH, 2024–2029) — als Forschungssonde, mit Code · nachrangig: Eva Hornecker (Bauhaus-Universität Weimar, Mitautorin derselben CHI-Studie) · danach die Öffentlichkeit (Show HN)
-**Verdikt:** 🎁 verschenken
+**Verdikt:** 🎁 verschenken  
+**Review:** 30/35 · Tier 1 · Type D (Details: [Audit-Bericht](../06-suche/amelie-39-dosen-audit-report.md))
 
 ---
 

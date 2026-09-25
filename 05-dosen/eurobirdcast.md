@@ -2,6 +2,9 @@
 status: Available
 delivery_method: E-Mail
 target_maker: 'Offen — erst nach M0 zu entscheiden. Kandidaten: BfN / BioConsult SH'
+review_score: 30/35
+architecture_tier: Tier 2/3
+source_type: Type A/D
 ---
 # EuroBirdCast: Vogelzug-Abschaltung, nachrechenbar
 
@@ -12,7 +15,8 @@ target_maker: 'Offen — erst nach M0 zu entscheiden. Kandidaten: BfN / BioConsu
 
 **Stand:** 22. September 2026 (Erstfassung vormittags, nach Prüfung vollständig neu geschrieben) · **Prüfen ab:** März 2027
 **Empfänger:** offen — erst nach M0 zu entscheiden. Kandidaten: BfN / BioConsult SH, LfU Brandenburg (Zentrale Fundkartei), Betreiberverbände
-**Verdikt:** 🔨 **selbst bauen, wenn überhaupt** — Prüfprotokoll: *verengt, Restlücke unklar*. Die Erstfassung dieser Dose stand auf 🎁 „verifiziert neuartig". Das war falsch; die Korrektur steht unten.
+**Verdikt:** 🔨 **selbst bauen, wenn überhaupt** — Prüfprotokoll: *verengt, Restlücke unklar*. Die Erstfassung dieser Dose stand auf 🎁 „verifiziert neuartig". Das war falsch; die Korrektur steht unten.  
+**Review:** 30/35 · Tier 2/3 · Type A/D (Details: [Audit-Bericht](../06-suche/amelie-39-dosen-audit-report.md))
 
 ---
 

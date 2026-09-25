@@ -2,6 +2,9 @@
 status: Available
 delivery_method: E-Mail
 target_maker: Fachverband Fliesen und Naturstein
+review_score: 33/35
+architecture_tier: Tier 1
+source_type: Type A
 ---
 # BedenkenBlitz (VOB/B Baustellen-Schutzschirm)
 
@@ -11,7 +14,8 @@ target_maker: Fachverband Fliesen und Naturstein
 
 **Stand:** 17.09.2026 · **Prüfen ab:** März 2027
 **Empfänger:** Fachverband Fliesen und Naturstein · Zentralverband des Deutschen Baugewerbes · IG BAU
-**Verdikt:** 🎁 verschenken
+**Verdikt:** 🎁 verschenken  
+**Review:** 33/35 · Tier 1 · Type A (Details: [Audit-Bericht](../06-suche/amelie-39-dosen-audit-report.md))
 
 ---
 

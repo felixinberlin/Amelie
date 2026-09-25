@@ -2,6 +2,9 @@
 status: Available
 delivery_method: E-Mail
 target_maker: BSR — besitzt beide Enden der Weiche
+review_score: 32/35
+architecture_tier: Tier 2
+source_type: Type A/B
 ---
 # Sperrmüll-Weiche
 
@@ -9,7 +12,8 @@ target_maker: BSR — besitzt beide Enden der Weiche
 
 **Stand:** 23.09.2026 · **Prüfen ab:** 03/2027
 **Empfänger:** **BSR** — der Betrieb besitzt beide Enden der Weiche (Sperrmüllabholung und NochMall) · Domänenpartner: Re-Use Berlin / Zero-Waste-Agentur (SenUVK) · **nicht** CityLAB: dort liegt seit dem 20.09. eine Mail, ein Nachschieben wäre Nachfassen
-**Verdikt:** 🎁 verschenken — Rang 1, Organisation mit Bauauftrag, Budget und beiden Hälften des Problems im eigenen Haus
+**Verdikt:** 🎁 verschenken — Rang 1, Organisation mit Bauauftrag, Budget und beiden Hälften des Problems im eigenen Haus  
+**Review:** 32/35 · Tier 2 · Type A/B (Details: [Audit-Bericht](../06-suche/amelie-39-dosen-audit-report.md))
 
 ---
 

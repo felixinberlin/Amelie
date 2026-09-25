@@ -2,6 +2,9 @@
 status: Available
 delivery_method: E-Mail
 target_maker: Pflegestützpunkte Deutschland
+review_score: 28/35
+architecture_tier: Tier 1/2
+source_type: Type B
 ---
 # PillSafe Vision
 
@@ -9,7 +12,8 @@ target_maker: Pflegestützpunkte Deutschland
 
 **Stand:** September 2026 · **Prüfen ab:** März 2027
 **Empfänger:** Pflegestützpunkte Deutschland · BAGSO (Seniorenorganisationen) · Pflegende Angehörige e.V.
-**Verdikt:** 🎁 verschenken
+**Verdikt:** 🎁 verschenken  
+**Review:** 28/35 · Tier 1/2 · Type B (Details: [Audit-Bericht](../06-suche/amelie-39-dosen-audit-report.md))
 
 ---
 

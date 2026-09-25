@@ -2,6 +2,9 @@
 status: Available
 delivery_method: E-Mail
 target_maker: SSDeV
+review_score: 29/35
+architecture_tier: Tier 1
+source_type: Type A/B
 ---
 # Pin Tumbler
 
@@ -9,7 +12,8 @@ target_maker: SSDeV
 
 **Stand:** September 2026 · **Prüfen ab:** September 2027
 **Empfänger:** SSDeV — Sportsfreunde der Sperrtechnik Deutschland e. V., Ortsgruppe Berlin · nachrangig: TOOOL, CCC-Workshops, Ausbildung Schließtechnik
-**Verdikt:** 🎁 verschenken — Rang 4 (Community), Skelett hilft sehr
+**Verdikt:** 🎁 verschenken — Rang 4 (Community), Skelett hilft sehr  
+**Review:** 29/35 · Tier 1 · Type A/B (Details: [Audit-Bericht](../06-suche/amelie-39-dosen-audit-report.md))
 
 ---
 
