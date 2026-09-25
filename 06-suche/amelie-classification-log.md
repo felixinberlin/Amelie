@@ -2,14 +2,55 @@
 
 Cumulative record of all candidate evaluations conducted by the Idea Reviewer. Every entry records the 7-vector ratings, civic SWOT, tech tree coordinates, and triage recommendations.
 
+> [!NOTE]
+> Der vollständige 7-Vektoren-Audit-Bericht über alle 39 verpackten Dosen liegt in [`06-suche/amelie-39-dosen-audit-report.md`](file:///home/felix/amelie/amelie/06-suche/amelie-39-dosen-audit-report.md).
+> Die methodische Retrospektive und Portfoliomuster sind in [`06-suche/amelie-reviewer-learning-log.md`](file:///home/felix/amelie/amelie/06-suche/amelie-reviewer-learning-log.md) dokumentiert.
+
 ---
 
-## Cumulative Scoreboard
+## Cumulative Scoreboard (Portfolio-Audit 39 Dosen)
 
-| Date | Idea ID | Title | Origin Engine | Vector Score (/35) | Primary Source | Triage Verdict | Next Action |
+| Date | Idea ID | Title | Domain | Vector Score (/35) | Primary Source | Architecture Tier | Triage Verdict |
 |---|---|---|---|:---:|---|:---:|---|
-| 2026-09-25 | `bleifrei-lotse` | Bleifrei-Lotse: TrinkwV § 17 Bleirohr-Detektor & Behörden-Melder | `asymmetric-inversion` | 31/35 | Type A (TrinkwV § 17) | `Dose Ready` | Verpacken in `05-dosen/bleifrei-lotse.md` & Erstkontakt mit vzbv |
-| 2026-09-25 | `legio-klar` | LegioKlar: TrinkwV § 31/52 Legionellen-Aushang-Decoder | `asymmetric-inversion` | 28/35 | Type A/B (TrinkwV/UBA) | `Verengt` | Tesseract-WASM Extraktion auf Test-Laborberichten validieren |
+| 2026-09-25 | `altbau-thermal` | Altbau Thermal | civic | **29/35** | Type A | Tier 1/2 | `Delivered (Forschungsverbund EnergyMap Berlin)` |
+| 2026-09-25 | `glasanflug-ampel` | Glasanflug-Ampel | civic | **32/35** | Type A | Tier 1 | `Delivered (BDA / NABU)` |
+| 2026-09-25 | `sperrmuell-radar` | Sperrmüll-Radar | civic | **29/35** | Type B | Tier 1/2 | `Delivered (CityLAB Berlin)` |
+| 2026-09-25 | `kiez-laermkarte` | Kiez-Lärmkarte | civic | **29/35** | Type A/B | Tier 1/2 | `Delivered (Noise-Planet)` |
+| 2026-09-25 | `klarlokal` | KlarLokal | civic | **30/35** | Type A/C | Tier 2 | `Dose Ready (Prototype Fund / FragDenStaat)` |
+| 2026-09-25 | `dose-nurse-shift-guardian` | DienstplanWächter | civic | **32/35** | Type A | Tier 1/2 | `Dose Ready (DBfK / ver.di)` |
+| 2026-09-25 | `dose-cleaner-chemical-safety` | ChemGefahr-Stopp | civic | **34/35** | Type A | Tier 1 | `Dose Ready (IG BAU / BGW)` |
+| 2026-09-25 | `biotoptyp-assistent` | Biotoptyp-Assistent | civic | **31/35** | Type A | Tier 1/2 | `Dose Ready (Stiftung Naturschutz / BUND)` |
+| 2026-09-25 | `lichtplan-check` | Lichtplan-Check | civic | **32/35** | Type A | Tier 1/2 | `Dose Ready (Dark Sky / BUND)` |
+| 2026-09-25 | `kartierlotse` | Kartierlotse | civic | **30/35** | Type B | Tier 2 | `Dose Ready (Naturschutzverbände)` |
+| 2026-09-25 | `denkmal-verlaufsblick` | Denkmal-Verlaufsblick | civic | **30/35** | Type A/B | Tier 2 | `Dose Ready (Landesdenkmalamt / Stiftung Denkmalschutz)` |
+| 2026-09-25 | `waermesignatur` | Wärmesignatur | civic | **32/35** | Type A | Tier 1 | `Dose Ready (co2online / Verbraucherzentrale)` |
+| 2026-09-25 | `fugenduell-patenschaft` | Beobachtungsposten mit Übergabe | civic | **29/35** | Type B | Tier 2 | `Dose Ready (Kiezbündnisse / FU Berlin)` |
+| 2026-09-25 | `sperrmuell-weiche` | Sperrmüll-Weiche | civic | **32/35** | Type A/B | Tier 2 | `Dose Ready (BSR / SenUMVK)` |
+| 2026-09-25 | `bleifrei-lotse` | Bleifrei-Lotse | civic | **31/35** | Type A | Tier 1/2 | `Dose Ready (Verpackt in Dose #39)` |
+| 2026-09-25 | `eurobirdcast` | EuroBirdCast | physics | **30/35** | Type A/D | Tier 2/3 | `Dose Ready (Deutsche WindGuard / BWE)` |
+| 2026-09-25 | `echter-zufall` | Echter Zufall als Service | physics | **30/35** | Type A | Tier 1/2 | `Dose Ready (CCC / Universitäten)` |
+| 2026-09-25 | `kristallwachstum-3d` | Kristallwachstum 3D | physics | **33/35** | Type D | Tier 1 | `Dose Ready (Mail 9 auditiert, bereit für FU Berlin)` |
+| 2026-09-25 | `pin-tumbler` | Pin Tumbler Didaktik | physics | **29/35** | Type A/B | Tier 1 | `Dose Ready (SSDeV / CCC)` |
+| 2026-09-25 | `raeucher-sim` | Räucher-Sim | physics | **30/35** | Type D | Tier 1 | `Dose Ready (Futurium / Technikmuseum)` |
+| 2026-09-25 | `klang-stethoskop` | KlangStethoskop | physics | **29/35** | Type A/D | Tier 1 | `Dose Ready (Netzwerk Reparatur-Initiativen)` |
+| 2026-09-25 | `feuerkugel-sofortnetz` | Feuerkugel-Sofortnetz | physics | **29/35** | Type D | Tier 2/3 | `Dose Ready (DLR / AllSky7)` |
+| 2026-09-25 | `bruchlesen` | Bruchlesen | physics | **32/35** | Type D | Tier 1 | `Dose Ready (BAM / DGM)` |
+| 2026-09-25 | `agent-postmortem-recorder` | Agent Postmortem Recorder | tools | **30/35** | Type C/D | Tier 1 | `Dose Ready (Scaffolding in 07-demos fertig)` |
+| 2026-09-25 | `diffgeist` | Diffgeist | tools | **30/35** | Type D | Tier 1 | `Dose Ready (GitHub Tooling / Maintainer)` |
+| 2026-09-25 | `ghost-replay` | Ghost Replay fürs Editieren | tools | **30/35** | Type D | Tier 1 | `Dose Ready (Schreibwerkstätten / Hochschulen)` |
+| 2026-09-25 | `spec-drift-detector` | Spec-Drift Detector | tools | **30/35** | Type C | Tier 1 | `Dose Ready (GitHub / Spec Kit)` |
+| 2026-09-25 | `dose-tradesman-liability-shield` | BedenkenBlitz | tools | **33/35** | Type A | Tier 1 | `Dose Ready (ZDB / Handwerkskammern)` |
+| 2026-09-25 | `chaos-clock` | Chaos Clock | tools | **30/35** | Type D | Tier 1 | `Dose Ready (TU Wien / HCI)` |
+| 2026-09-25 | `couleur-sphinx` | Couleur-Sphinx | tools | **30/35** | Type B | Tier 1 | `Dose Ready (Archiv- und Geschichtsvereine)` |
+| 2026-09-25 | `tarot-zustandsmaschine` | Tarot als Zustandsmaschine (Spread-DSL) | creative | **31/35** | Type B/D | Tier 1 | `Dose Ready (Engine & Tests fertig)` |
+| 2026-09-25 | `wet-ink` | Wet Ink | creative | **32/35** | Type D | Tier 1 | `Dose Ready (Plan & Scaffolding fertig)` |
+| 2026-09-25 | `fugenduell-asphalt-arena` | Fugenduell: Asphaltritzen-Arena | creative | **29/35** | Type B/D | Tier 1/2 | `Dose Ready (Engine & Tests fertig)` |
+| 2026-09-25 | `lebendes-spielobjekt` | Das lebende Spielobjekt | creative | **28/35** | Type C/D | Tier 1/2 | `Dose Ready (Freie Theater / LARP)` |
+| 2026-09-25 | `bugs-spaced-repetition` | Bugs als Spaced-Repetition | knowledge | **29/35** | Type D | Tier 1 | `Dose Ready (Anki-Community / Hochschulen)` |
+| 2026-09-25 | `traumtagebuch` | Lokales Traumtagebuch mit Motiv-Karte | knowledge | **29/35** | Type D | Tier 1/2 | `Dose Ready (Obsidian Plugin)` |
+| 2026-09-25 | `pillsafe-vision` | PillSafe Vision | civic | **28/35** | Type B | Tier 1/2 | `Verengt (Strikte Plausibilitätswarnungen erforderlich)` |
+| 2026-09-25 | `eichflaechen-trainer` | Eichflächen-Trainer | knowledge | **30/35** | Type D | Tier 1 | `Dose Ready (BBN / Universitäten)` |
+| 2026-09-25 | `tischschiedsrichter` | TischSchiedsrichter | audio | **29/35** | Type C | Tier 1 | `Dose Ready (Skelett bauen vor Verschenken)` |
 
 ---
 

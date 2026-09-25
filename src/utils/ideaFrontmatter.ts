@@ -87,6 +87,9 @@ export function parseIdeaFrontmatter(raw: string, sourceLabel: string): IdeaFron
   if (typeof data.date_delivered === 'string') frontmatter.date_delivered = data.date_delivered;
   if (typeof data.delivery_method === 'string') frontmatter.delivery_method = data.delivery_method;
   if (typeof data.target_maker === 'string') frontmatter.target_maker = data.target_maker;
+  if (typeof data.review_score === 'string') frontmatter.review_score = data.review_score;
+  if (typeof data.architecture_tier === 'string') frontmatter.architecture_tier = data.architecture_tier;
+  if (typeof data.source_type === 'string') frontmatter.source_type = data.source_type;
   return frontmatter;
 }
 

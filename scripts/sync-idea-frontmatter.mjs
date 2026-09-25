@@ -16,12 +16,17 @@
 // Aufruf: node scripts/sync-idea-frontmatter.mjs [--check]
 //   --check   nur prüfen, nichts schreiben; Exit 1 bei Abweichung (für CI/lint)
 
-import { mkdtempSync, readFileSync, writeFileSync, rmSync } from 'node:fs';
+import { mkdtempSync, readFileSync, writeFileSync, rmSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { pathToFileURL } from 'node:url';
 import matter from 'gray-matter';
-import { DATA_FILE, DOSEN_DIR, readDoseFiles } from './dosen-lib.mjs';
+import { DATA_FILE, DOSEN_DIR, readDoseFiles, repoRoot } from './dosen-lib.mjs';
+
+const REVIEW_FILE = join(repoRoot, 'scripts/dosen-review-metadata.json');
+const REVIEW_METADATA = existsSync(REVIEW_FILE)
+  ? JSON.parse(readFileSync(REVIEW_FILE, 'utf8'))
+  : {};
 
 const DOSE_STATUS_TO_IDEA_STATUS = {
   gefunden: 'Available',
@@ -85,6 +90,12 @@ function buildFrontmatter(dose) {
   data.delivery_method = DELIVERY_METHOD;
   const targetMaker = shortTargetMaker(dose.recipientsDe);
   if (targetMaker) data.target_maker = targetMaker;
+  const review = REVIEW_METADATA[dose.id];
+  if (review) {
+    data.review_score = review.review_score;
+    data.architecture_tier = review.architecture_tier;
+    data.source_type = review.source_type;
+  }
   return data;
 }
 

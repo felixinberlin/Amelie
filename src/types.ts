@@ -30,6 +30,9 @@ export interface IdeaFrontmatter {
   date_delivered?: string;
   delivery_method?: string;
   target_maker?: string;
+  review_score?: string;
+  architecture_tier?: string;
+  source_type?: string;
 }
 
 /**

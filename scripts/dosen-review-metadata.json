@@ -1,0 +1,197 @@
+{
+  "altbau-thermal": {
+    "review_score": "29/35",
+    "architecture_tier": "Tier 1/2",
+    "source_type": "Type A"
+  },
+  "glasanflug-ampel": {
+    "review_score": "32/35",
+    "architecture_tier": "Tier 1",
+    "source_type": "Type A"
+  },
+  "sperrmuell-radar": {
+    "review_score": "29/35",
+    "architecture_tier": "Tier 1/2",
+    "source_type": "Type B"
+  },
+  "kiez-laermkarte": {
+    "review_score": "29/35",
+    "architecture_tier": "Tier 1/2",
+    "source_type": "Type A/B"
+  },
+  "klarlokal": {
+    "review_score": "30/35",
+    "architecture_tier": "Tier 2",
+    "source_type": "Type A/C"
+  },
+  "dose-nurse-shift-guardian": {
+    "review_score": "32/35",
+    "architecture_tier": "Tier 1/2",
+    "source_type": "Type A"
+  },
+  "dose-cleaner-chemical-safety": {
+    "review_score": "34/35",
+    "architecture_tier": "Tier 1",
+    "source_type": "Type A"
+  },
+  "biotoptyp-assistent": {
+    "review_score": "31/35",
+    "architecture_tier": "Tier 1/2",
+    "source_type": "Type A"
+  },
+  "lichtplan-check": {
+    "review_score": "32/35",
+    "architecture_tier": "Tier 1/2",
+    "source_type": "Type A"
+  },
+  "kartierlotse": {
+    "review_score": "30/35",
+    "architecture_tier": "Tier 2",
+    "source_type": "Type B"
+  },
+  "denkmal-verlaufsblick": {
+    "review_score": "30/35",
+    "architecture_tier": "Tier 2",
+    "source_type": "Type A/B"
+  },
+  "waermesignatur": {
+    "review_score": "32/35",
+    "architecture_tier": "Tier 1",
+    "source_type": "Type A"
+  },
+  "fugenduell-patenschaft": {
+    "review_score": "29/35",
+    "architecture_tier": "Tier 2",
+    "source_type": "Type B"
+  },
+  "sperrmuell-weiche": {
+    "review_score": "32/35",
+    "architecture_tier": "Tier 2",
+    "source_type": "Type A/B"
+  },
+  "bleifrei-lotse": {
+    "review_score": "31/35",
+    "architecture_tier": "Tier 1/2",
+    "source_type": "Type A"
+  },
+  "eurobirdcast": {
+    "review_score": "30/35",
+    "architecture_tier": "Tier 2/3",
+    "source_type": "Type A/D"
+  },
+  "echter-zufall": {
+    "review_score": "30/35",
+    "architecture_tier": "Tier 1/2",
+    "source_type": "Type A"
+  },
+  "kristallwachstum-3d": {
+    "review_score": "33/35",
+    "architecture_tier": "Tier 1",
+    "source_type": "Type D"
+  },
+  "pin-tumbler": {
+    "review_score": "29/35",
+    "architecture_tier": "Tier 1",
+    "source_type": "Type A/B"
+  },
+  "raeucher-sim": {
+    "review_score": "30/35",
+    "architecture_tier": "Tier 1",
+    "source_type": "Type D"
+  },
+  "klang-stethoskop": {
+    "review_score": "29/35",
+    "architecture_tier": "Tier 1",
+    "source_type": "Type A/D"
+  },
+  "feuerkugel-sofortnetz": {
+    "review_score": "29/35",
+    "architecture_tier": "Tier 2/3",
+    "source_type": "Type D"
+  },
+  "bruchlesen": {
+    "review_score": "32/35",
+    "architecture_tier": "Tier 1",
+    "source_type": "Type D"
+  },
+  "agent-postmortem-recorder": {
+    "review_score": "30/35",
+    "architecture_tier": "Tier 1",
+    "source_type": "Type C/D"
+  },
+  "diffgeist": {
+    "review_score": "30/35",
+    "architecture_tier": "Tier 1",
+    "source_type": "Type D"
+  },
+  "ghost-replay": {
+    "review_score": "30/35",
+    "architecture_tier": "Tier 1",
+    "source_type": "Type D"
+  },
+  "spec-drift-detector": {
+    "review_score": "30/35",
+    "architecture_tier": "Tier 1",
+    "source_type": "Type C"
+  },
+  "dose-tradesman-liability-shield": {
+    "review_score": "33/35",
+    "architecture_tier": "Tier 1",
+    "source_type": "Type A"
+  },
+  "chaos-clock": {
+    "review_score": "30/35",
+    "architecture_tier": "Tier 1",
+    "source_type": "Type D"
+  },
+  "couleur-sphinx": {
+    "review_score": "30/35",
+    "architecture_tier": "Tier 1",
+    "source_type": "Type B"
+  },
+  "tarot-zustandsmaschine": {
+    "review_score": "31/35",
+    "architecture_tier": "Tier 1",
+    "source_type": "Type B/D"
+  },
+  "wet-ink": {
+    "review_score": "32/35",
+    "architecture_tier": "Tier 1",
+    "source_type": "Type D"
+  },
+  "fugenduell-asphalt-arena": {
+    "review_score": "29/35",
+    "architecture_tier": "Tier 1/2",
+    "source_type": "Type B/D"
+  },
+  "lebendes-spielobjekt": {
+    "review_score": "28/35",
+    "architecture_tier": "Tier 1/2",
+    "source_type": "Type C/D"
+  },
+  "bugs-spaced-repetition": {
+    "review_score": "29/35",
+    "architecture_tier": "Tier 1",
+    "source_type": "Type D"
+  },
+  "traumtagebuch": {
+    "review_score": "29/35",
+    "architecture_tier": "Tier 1/2",
+    "source_type": "Type D"
+  },
+  "pillsafe-vision": {
+    "review_score": "28/35",
+    "architecture_tier": "Tier 1/2",
+    "source_type": "Type B"
+  },
+  "eichflaechen-trainer": {
+    "review_score": "30/35",
+    "architecture_tier": "Tier 1",
+    "source_type": "Type D"
+  },
+  "tischschiedsrichter": {
+    "review_score": "29/35",
+    "architecture_tier": "Tier 1",
+    "source_type": "Type C"
+  }
+}
