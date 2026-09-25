@@ -537,3 +537,6 @@ Konsequenz für die Gemini-Lauf-Tabelle unten: „Orgelpfeifen-Bleifraß-Resonan
 |---|---|---|---|
 | **Gestalt-Prüfung** — Echtzeit-Sonifikation/Visualisierung bei Transkription historischer Tabellen zur Vermeidung von Doppel-Eingaben | `frei` | Problem ist bei DO IT (TU BS) benannt, keine Lösung gefunden | 09/2027 |
 | **Die Daten-Schicht** — Synchrone Transkriptions-Events für Citizen Science statt asynchron | `besetzt` | Transcribathons (Europeana) etablieren bereits dieses Format | – |
+
+| **Dashcam Discard Claim** — Anwohner stoppen den Auto-Overwrite lokaler Dashcams nach Extremwetter per Community-Pin | **`frei`** | Franchi et al. (2026, Nat Commun) belegt Machbarkeit von Dashcam-Flut-AI, aber keine Spur von einem Bürgerwerkzeug zum Sichern flüchtiger Dashcam-Loops; Dashcams löschen i.d.R. nach 24-48h. | 03/2027 |
+| **Dry Baseline Rhythm** — Bürger fotografieren wöchentlich denselben intakten Gully, um die Null-Linie für Flut-KIs zu trainieren | **`frei`** | Mängelmelder fokussieren auf *verstopfte* Gullys. Keine Citizen-Science-Rhythmen für intakte Baselines (Null-Messung) gefunden, obwohl KIs diese dringend brauchen. | 03/2027 |
