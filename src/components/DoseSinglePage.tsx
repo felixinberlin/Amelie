@@ -26,6 +26,7 @@ import {
   Compass,
   CheckCircle2,
   BookOpen,
+  HelpCircle,
 } from 'lucide-react';
 import { DoseItem, Language, Verdict } from '../types';
 import { AMELIE_PLEDGE } from '../data/manifest';
@@ -50,6 +51,7 @@ import {
   KiezLaermSimulator,
   FugenduellArena,
   TischSchiedsrichterSimulator,
+  KristallwachstumSimulator,
 } from './simulators';
 
 interface DoseSinglePageProps {
@@ -77,6 +79,7 @@ export const DoseSinglePage: React.FC<DoseSinglePageProps> = ({
   const [copiedMarkdown, setCopiedMarkdown] = useState(false);
   const [copiedEmailId, setCopiedEmailId] = useState<string | null>(null);
   const [showEmbeddedSimulator, setShowEmbeddedSimulator] = useState(true);
+  const [showSchema, setShowSchema] = useState(false);
 
   const t = getTranslation(lang);
   const isDe = lang === 'de';
@@ -291,6 +294,20 @@ ${bookChapters
 
         {/* Action Controls */}
         <div className="flex items-center gap-2 flex-wrap self-end sm:self-auto">
+          {/* Schema info button */}
+          <button
+            onClick={() => setShowSchema((prev) => !prev)}
+            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-typewriter font-semibold transition-colors cursor-pointer ${
+              showSchema
+                ? 'bg-[#8c1d40] text-white border-[#701531]'
+                : 'bg-[#faf5eb] hover:bg-[#f0e4d2] text-[#5c4a3d] border-[#d8cbba]'
+            }`}
+            title={isDe ? 'Kanonisches Dosen-Schema nach Amélie-Manifest' : 'Canonical tin schema from Amélie Manifest'}
+          >
+            <HelpCircle className="w-3.5 h-3.5 text-[#f6bd60]" />
+            <span className="hidden sm:inline">{isDe ? 'Dosen-Schema' : 'Tin Schema'}</span>
+          </button>
+
           {/* Switch to popup */}
           <button
             onClick={() => onOpenPopup(dose)}
@@ -360,6 +377,59 @@ ${bookChapters
           )}
         </button>
       </div>
+
+      {/* CANONICAL DOSE SCHEMA DRAWER */}
+      {showSchema && (
+        <div className="p-6 rounded-3xl bg-[#2b1e16] text-[#fbf7f0] border-2 border-[#c5832b] space-y-4 shadow-md animate-fadeIn">
+          <div className="flex items-center justify-between pb-3 border-b border-[#5c4a3d]">
+            <div className="flex items-center gap-2.5">
+              <span className="text-[#f6bd60] text-xl">✦</span>
+              <h3 className="font-typewriter text-sm sm:text-base uppercase tracking-wider font-bold text-[#f6bd60]">
+                {isDe ? 'Das kanonische Schema einer Dose (Amélie-Manifest)' : 'The Canonical Schema of a Tin (Amélie Manifest)'}
+              </h3>
+            </div>
+            <button
+              onClick={() => setShowSchema(false)}
+              className="text-xs text-[#d8cbba] hover:text-white font-typewriter underline"
+            >
+              {isDe ? 'Schließen' : 'Close'}
+            </button>
+          </div>
+
+          <p className="text-xs sm:text-sm text-[#d8cbba] font-sans leading-relaxed">
+            {isDe
+              ? 'Eine Dose ist kein unverbindlicher Einfall, sondern ein vollständiges Geschenkpaket auf 1 Seite mit 5 Pflichtteilen und 2 Datumsankern:'
+              : 'A tin is not a loose suggestion, but a self-contained 1-page gift package consisting of 5 core pillars and 2 mandatory date anchors:'}
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 pt-1 text-xs">
+            <div className="p-3.5 rounded-xl bg-[#3b2a1c] border border-[#5c4a3d] space-y-1">
+              <span className="font-bold text-[#f6bd60] block font-typewriter">1. Das Problem</span>
+              <span className="text-stone-300 text-[11px] leading-snug block">Wer leidet konkret? Reale Reibung ohne „man könnte".</span>
+            </div>
+            <div className="p-3.5 rounded-xl bg-[#3b2a1c] border border-[#5c4a3d] space-y-1">
+              <span className="font-bold text-[#f6bd60] block font-typewriter">2. Warum jetzt?</span>
+              <span className="text-stone-300 text-[11px] leading-snug block">Welcher technologische Knick macht es erst seit Kurzem bezahlbar?</span>
+            </div>
+            <div className="p-3.5 rounded-xl bg-[#3b2a1c] border border-[#5c4a3d] space-y-1">
+              <span className="font-bold text-[#f6bd60] block font-typewriter">3. Die Skizze</span>
+              <span className="text-stone-300 text-[11px] leading-snug block">Genug System-Architektur, dass ein Fachmensch nickt. Nicht mehr.</span>
+            </div>
+            <div className="p-3.5 rounded-xl bg-[#3b2a1c] border border-[#5c4a3d] space-y-1">
+              <span className="font-bold text-[#86efac] block font-typewriter">4. Der erste Schritt (Ticket #1)</span>
+              <span className="text-stone-300 text-[11px] leading-snug block">Das 2-Tage-Ticket, mit dem man Montag früh beginnt. Mit Kriterien.</span>
+            </div>
+            <div className="p-3.5 rounded-xl bg-[#3b2a1c] border border-[#5c4a3d] space-y-1">
+              <span className="font-bold text-[#fca5a5] block font-typewriter">5. Wo es kippt</span>
+              <span className="text-stone-300 text-[11px] leading-snug block">Die reale Sollbruchstelle, die das Vorhaben killen kann. Schafft Glaubwürdigkeit.</span>
+            </div>
+            <div className="p-3.5 rounded-xl bg-[#3b2a1c] border border-[#5c4a3d] space-y-1">
+              <span className="font-bold text-[#93c5fd] block font-typewriter">Pflicht-Datumsanker</span>
+              <span className="text-stone-300 text-[11px] leading-snug block">«Stand» (wann recherchiert) & «Prüfen ab» (Verfallsdatum zum Friedhof).</span>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* 3. EDITORIAL HERO HEADER */}
       <header className="rounded-3xl bg-gradient-to-br from-[#faf4e8] via-[#f5ede1] to-[#eedfcb] border-2 border-[#c5832b]/50 p-6 sm:p-8 md:p-10 shadow-sm relative overflow-hidden">
@@ -530,6 +600,7 @@ ${bookChapters
               {simInfo.key === 'laerm' && <KiezLaermSimulator lang={lang} />}
               {simInfo.key === 'fugenduell' && <FugenduellArena lang={lang} />}
               {simInfo.key === 'schiedsrichter' && <TischSchiedsrichterSimulator lang={lang} isEmbedded />}
+              {simInfo.key === 'kristall' && <KristallwachstumSimulator lang={lang} />}
             </div>
           )}
         </section>

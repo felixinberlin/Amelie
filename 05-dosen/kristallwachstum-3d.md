@@ -5,65 +5,73 @@ target_maker: Geowissenschaften FU Berlin / Lehrmittel-Verlage
 ---
 # Kristallwachstum 3D
 
-**Ein Satz:** Nicht noch ein DLA-Renderer, sondern die druckfertige Kette dahinter — Parameter, Seed, wasserdichtes Mesh, Stützstruktur-taugliche Geometrie, teilbares Rezept.
+**Ein Satz:** Die erste hybride DLA-Phasenfeld-Pipeline im Browser: Brownsche Keimbildung trifft anisotrope Kobayashi-Thermodynamik — von der fraktalen Wachstumsdidaktik mit 9 Gefügelinsen bis zum wasserdichten, druckbaren 3D-Rezept.
 
 **Stand:** September 2026 · **Prüfen ab:** September 2027
-**Empfänger:** Nervous System (Jessica Rosenkrantz & Jesse Louis-Rosenberg) · nachrangig: Printables/Prusa-Community, Mineralogie-Lehre
-**Verdikt:** 🎁 verschenken — verengt, siehe unten
+**Empfänger:** Geowissenschaften FU Berlin / Lehrmittel-Verlage · nachrangig: Three.js/WebGPU-Demoszene, Nervous System (Jessica Rosenkrantz & Jesse Louis-Rosenberg), Printables/Prusa-Community
+**Verdikt:** 🎁 verschenken — verengt auf Hybrid-Pipeline & didaktische Gefügeanalyse
 
 ---
 
 ## Das Problem
 
-Diffusion-limited aggregation ist der meistimplementierte schöne Algorithmus der Generative-Art-Szene. Fast alle Implementierungen enden am selben Punkt: **ein Bild oder ein Punktwolken-Render.**
+Kristallisation, dendritische Erstarrung und Gefügebildung (von Schneeflocken über metallische Gusslegierungen bis zu Pegmatit-Mineralien) werden an Schulen und Universitäten fast ausschließlich über statische 2D-Lehrbuchdiagramme vermittelt. Physikalisch fundierte 3D-Simulationen galten bisher als rechenintensive Supercomputer-Aufgaben.
 
-Von dort bis zu einem Objekt, das ein Drucker tatsächlich ausgibt, liegt die eigentliche Arbeit, und die macht kaum jemand: aus dem Aggregat ein wasserdichtes Mesh machen, Astdurchmesser so steuern, dass dünne Zweige nicht abbrechen, Überhänge begrenzen, Stützstrukturen vermeidbar machen, Skalierung physisch sinnvoll halten. Das ist unspektakuläre Geometrie-Arbeit, und sie ist der Grund, warum es Tausende DLA-Bilder und sehr wenige DLA-Objekte gibt.
-
-Wer leidet: die Maker-Szene, die den Algorithmus kennt und an der Druckbarkeit scheitert — und die Lehre, die Dendritenwachstum erklären will und nur Abbildungen hat.
+Gleichzeitig leidet die Creative-Coding- und Maker-Szene an einem doppelten Bruch:
+1. **Das Bildschirmschoner-Dilemma:** Tausende DLA-Demos (Diffusion-Limited Aggregation) erzeugen hübsche Punktwolken-Render, ignorieren aber thermodynamische Randbedingungen (anisotrope Grenzflächenenergie, Unterkühlung, Orientierungsfelder) und haben null didaktischen Nährwert.
+2. **Der Bruch vor dem 3D-Druck:** Vom fraktalen Partikelhaufen bis zu einem physisch druckbaren Objekt liegt ungelöste Fleißarbeit — Wandstärkenkontrolle, Verhinderung brüchiger Äste, Einhalten von Überhangwinkeln und Erzeugen eines garantierten wasserdichten Manifold-Netzes.
 
 ## Warum das jetzt geht
 
-1. **3D-DLA in Echtzeit mit Live-Parametern** läuft heute auf der GPU. Der Rechenteil, der das früher zu einem Batch-Job machte, ist weg.
-2. **Mesh-Reparatur und Wandstärkenprüfung sind als Bibliotheken verfügbar** — der Teil, der früher eigene Forschung war.
-3. **Die Verteilkette existiert:** Druckplattformen mit Parameter-Remix, in denen ein Generator samt Seed geteilt werden kann. Ein Objekt ist dort nicht mehr nur eine Datei, sondern ein **Rezept**.
+1. **WebGPU Compute Shader (WGSL) im Browser:** Moderne WebGPU-Pipelines berechnen Brownsche Zufallsbewegungen und zehntausende Gitterzellen parallel mit über 60 FPS direkt auf Standard-Grafikkarten.
+2. **Hybride DLA-Phasenfeld-Synthese:** Das Kobayashi-Phasenfeld-Modell (1993) für unterkühlte Schmelzen lässt sich auf 3D-Gittern (bis 192³ Voxel) in WGSL lösen. Gekoppelt mit DLA-Keimbildung entsteht thermodynamisch exakte Dendritenmorphologie ohne Supercomputer.
+3. **GPU-Marching-Cubes & parametrisches Rezept:** Wasserdichte Isoflächen-Netze können direkt auf der GPU extrahiert werden. Ein kurzer Seed-String kodiert das physikalische Wachstumsrezept und garantiert identische Reproduzierbarkeit.
 
 ## Skizze
 
-- 3D-DLA mit Live-Parametern: Stickiness, Partikeldichte, Richtungs-Bias (isotrop → dendritisch), Verzweigungswinkel.
-- **Physische Zwangsbedingungen als Regler, nicht als Nachbearbeitung:** minimale Astdicke, maximaler Überhangwinkel, Zielgröße in Millimetern. Wer an ihnen dreht, sieht das Wachstum sich ändern, nicht das Ergebnis repariert.
-- Export: GLB zum Anschauen, STL/3MF wasserdicht zum Drucken.
-- **Seed + Parameter = das Rezept.** Ein String, den man teilen kann und der exakt dasselbe Objekt reproduziert. Das ist der eigentliche Gegenstand des Projekts.
+- **Stufe 1 (WebGPU DLA-Keimbildung):** Sphärische Partikelinjektion mit analytischer Quartic-Solver-Driftkorrektur (nach Mark Stock) gegen Artefakte. Orientierungs-SSBO speichert lokale Kristallgitterachsen pro Kristallit.
+- **Stufe 2 (Kobayashi Phasenfeld-Relaxation):** Das DLA-Skelett initialisiert das Phasenfeld $\phi$. Diskrete Allen-Cahn-Schritte mit anisotroper Grenzflächenenergie glätten Kanten, simulieren thermische Unterkühlung und bilden kristallographische Trachten (kubisch, hexagonal) heraus.
+- **Stufe 3 (9 Didaktische Gefügelinsen):** Umschaltbare wissenschaftliche Analyseebenen:
+  - `MELT`: Phasengrenze Schmelze/Festkörper.
+  - `ORIENT`: Kristallorientierung als Inverse-Pole-Figure (IPF) Falschfarbenkarte.
+  - `THERM`: Lokales Temperatur- und Übersättigungsfeld samt latenter Schmelzwärme.
+  - `CURV`: Mittlere Oberflächenkrümmung und Gibbs-Thomson-Effekt.
+  - `SEM`: Virtuelle Rasterelektronenmikroskopie-Beleuchtung.
+- **Stufe 4 (Echtzeit-Metriken & Print-Rezept):**
+  - Live-Berechnung der fraktalen Dimension $D_f$ via 3D-Box-Counting.
+  - Physische Druckschranken (Mindest-Astdurchmesser, Überhangwinkel) als aktive Wachstumsbegrenzer im Solver.
+  - Export: Wasserdichtes 3MF/STL für den 3D-Druck sowie teilbarer Seed-Code (`K3D-[Seed]-[Params]`).
 
-**Nicht dabei:** kein Slicer, kein Shop, keine Galerie-Plattform. Der Generator geht dorthin, wo die Leute schon sind.
+**Nicht dabei:** Kein proprietärer Slicer, kein geschlossener Web-Shop, keine Batch-Cloud-Berechnung (alles läuft 100 % lokal im Browser).
+
+## Das Buch zur Dose (Rohrecherche & Architektur)
+
+- [Kapitel 1: Didaktische & Physikalische Recherche](../02-recherche/kristallwachstum-3d-didaktik-physik.md) — Analyse von WebGPU-DLA (`scttfrdmn`, `markstock/dla-nd`), Phasenfeld-Solidification (`fronkt/solidify`, Kobayashi 1993) und der 4-Stufen-Architektur.
+- [Kapitel 2: Open-Source-Scaffolding](../07-demos/kristallwachstum-3d/README.md) — Konkrete WGSL-Shaderkerne (`shaders.wgsl.ts`), DLA-Driftkorrektur, Box-Counting und STL-Export.
 
 ## Erster Schritt
 
-**Ticket: Ein Seed, ein druckbares Objekt.**
+**Ticket: Hybride 2D/3D-Dendriten-Keimung in WebGPU mit $D_f$-Messung.**
 
-3D-DLA mit fester Parametrierung, Mesh erzeugen, Wasserdichtheit prüfen, STL exportieren, **tatsächlich drucken**.
+1. WebGPU Compute Pipeline mit Partikel-Array und Orientierungsfeld aufsetzen.
+2. 50 Iterationen Kobayashi-Phasenfeld-Glättung über das DLA-Aggregat rechnen.
+3. Berechnete fraktale Dimension $D_f$ live im HUD einblenden und mit theoretischen Werten (2D: ~1,71; 3D: ~2,3–2,5) vergleichen.
 
-**Fertig, wenn:** das Ding aus dem Drucker kommt, ohne dass ein Ast abgebrochen ist — und derselbe Seed dasselbe Objekt nochmal erzeugt.
+**Fertig, wenn:** Ein Seed reproduzierbar vom fraktalen Keim zur hexagonalen/kubischen Dendrite wächst, die fraktale Dimension numerisch stabil ausgegeben wird und das Mesh wasserdicht als STL exportiert werden kann.
 
 ## Wo es kippt
 
-**Die ehrliche Schwäche dieser Dose: der schöne Teil ist längst gemacht, der nützliche ist Fleißarbeit.** Wer das baut, verbringt 20 % der Zeit mit Wachstum und 80 % mit Geometrie-Sanierung. Wer das nicht weiß, hört nach dem ersten hübschen Render auf — und genau deshalb gibt es so viele erste hübsche Renders.
-
-**Zweites Risiko:** DLA-Objekte sehen einander ähnlich. Nach zwanzig Seeds ist die Formensprache erschöpft. Das spricht dafür, den Richtungs-Bias und die Randbedingungen als Hauptregler zu behandeln — dort liegt die Varianz, nicht im Zufall.
+1. **Hardware-Hürde WebGPU:** Ältere Mobilgeräte oder Browser ohne aktivierte WebGPU-Unterstützung scheitern. Gegenmaßnahme: Ein sauberer WebGL2/Canvas-Fallback für 2D-Didaktik oder vereinfachtes Voxel-Gitter.
+2. **Numerische Instabilität bei zu großem Zeitschritten:** Phasenfeld-Gleichungen neigen bei zu großem $\Delta t$ zum Oszillieren. Feste adaptive Zeitschrittgrenzen im Compute-Pass sind Pflicht.
+3. **Formen-Ermüdung:** Reine DLA-Bäume wirken ohne Gitteranisotropie nach wenigen Seeds beliebig. Nur das Zusammenspiel mit Kristalltrachten und Vorzugsrichtungen erzeugt echte mineralogische Vielfalt.
 
 ## Wer es schon versucht hat
 
-Recherche September 2026, und das Ergebnis verengt diese Dose deutlich: **DLA-Implementierungen sind im Überfluss vorhanden** — 2D-Morphogenese-Experimente, webbasierte 3D-DLA-Labore, Grasshopper-Definitionen, Blender-Workflows, Skript-Sammlungen. Als „neuer Generator" ist die Idee tot.
-
-**Was ich nicht gefunden habe, ist die Druckkette als Produkt:** physische Zwangsbedingungen als Wachstumsparameter, garantierte Wasserdichtheit, Seed-als-Rezept zum Teilen. Die Dose ist deshalb umgeschrieben — sie handelt jetzt vom langweiligen Teil, weil der der freie ist.
-
-Wer sie nimmt, sollte wissen: Der Neuigkeitswert liegt nicht in der Simulation. Er liegt darin, dass am Ende etwas auf dem Tisch steht.
-
-## Vorarbeit
-
-- **Nervous System** — macht seit 2007 nichts anderes als generatives Design → 3D-Druck, von Schmuck bis Lunge. Sie haben genau die Geometrie-Erfahrung, an der andere scheitern.
-- Vorhandene **DLA-Implementierungen** (2D und 3D, offen verfügbar) — der Wachstumsteil muss nicht neu geschrieben werden.
-- **Printables / Prusa-Community** — Generator-Projekte mit Seed-Sharing, regelmäßige Wettbewerbe.
-- **Mineralogie-Lehre** — DLA erklärt Dendritenwachstum besser als jede Abbildung. In Berlin: TU, Museum für Naturkunde.
+- **scttfrdmn/webgpu-compute-exploration:** Starke WebGPU-Scaffolding-Demos für DLA und Fluide, jedoch ohne Phasenfeld-Thermodynamik oder Druck-Pipeline.
+- **fronkt/solidify:** Exzellente WGSL-Implementierung des Kobayashi-Phasenfeldes bei 192³ Voxeln mit 9 Linsen und EBSD-Karten — aber rein kontinuumsmechanisch ohne DLA-Keimbildung.
+- **markstock/dla-nd:** Mathematisch präzise 1D–5D DLA-Referenz mit Quartic-Solver-Bias-Korrektur (C-basiert, nicht browsernativ).
+- **Nervous System:** Pioniere des generativen 3D-Drucks (Hyphae, Floraform), kommerziell orientiert, keine offene didaktische Physik-Plattform.
+- **Mineralogie-Lehre:** Nutzt weiterhin vorwiegend statische Kristallgittermodelle und Lehrbuchtafeln.
 
 ---
 

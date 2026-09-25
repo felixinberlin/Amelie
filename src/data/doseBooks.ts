@@ -193,6 +193,28 @@ export const DOSE_BOOKS: Record<string, BookChapter[]> = {
       kind: 'md',
     },
   ],
+  'kristallwachstum-3d': [
+    {
+      slug: 'didaktik-physik',
+      path: '02-recherche/kristallwachstum-3d-didaktik-physik.md',
+      titleDe: 'Didaktische & Physikalische Recherche',
+      titleEn: 'Didactic & physical research',
+      noteDe: 'Analyse von WebGPU-DLA, Kobayashi-Phasenfeld-Solidification (1993) und der 4-Stufen-Architektur.',
+      noteEn: 'Analysis of WebGPU DLA, Kobayashi phase-field solidification (1993), and the 4-stage architecture.',
+      date: '25.09.2026',
+      kind: 'md',
+    },
+    {
+      slug: 'open-source-scaffolding',
+      path: '07-demos/kristallwachstum-3d/README.md',
+      titleDe: 'Open-Source-Scaffolding (WebGPU & Phase-Field)',
+      titleEn: 'Open-source scaffolding (WebGPU & phase-field)',
+      noteDe: 'Kombiniert scttfrdmn WebGPU-DLA, fronkt/solidify Phasenfeld-Shader und markstock/dla-nd Driftkorrektur.',
+      noteEn: 'Combines scttfrdmn WebGPU DLA, fronkt/solidify phase-field shaders, and markstock/dla-nd drift bias.',
+      date: '25.09.2026',
+      kind: 'md',
+    },
+  ],
 };
 
 export function getBook(doseId: string): BookChapter[] {

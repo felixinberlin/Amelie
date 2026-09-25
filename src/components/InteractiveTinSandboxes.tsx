@@ -13,6 +13,7 @@ import {
   KiezLaermSimulator,
   FugenduellArena,
   TischSchiedsrichterSimulator,
+  KristallwachstumSimulator,
 } from './simulators';
 
 export type SandboxKey =
@@ -26,7 +27,8 @@ export type SandboxKey =
   | 'crackflora'
   | 'laerm'
   | 'fugenduell'
-  | 'schiedsrichter';
+  | 'schiedsrichter'
+  | 'kristall';
 
 interface InteractiveTinSandboxesProps {
   lang: Language;
@@ -191,6 +193,16 @@ export const InteractiveTinSandboxes: React.FC<InteractiveTinSandboxesProps> = (
             >
               🟨 {lang === 'de' ? 'TischSchiedsrichter' : lang === 'es' ? 'Árbitro de sobremesa' : 'Table Referee'}
             </button>
+            <button
+              onClick={() => setActiveTab('kristall')}
+              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                activeTab === 'kristall'
+                  ? 'bg-stone-900 text-cyan-300 shadow-xs font-bold border border-cyan-500 ring-2 ring-cyan-500/30'
+                  : 'text-stone-600 hover:text-stone-900'
+              }`}
+            >
+              💎 {lang === 'de' ? 'Kristallwachstum 3D' : lang === 'es' ? 'Crecimiento de Cristales' : 'Crystal Growth 3D'}
+            </button>
           </div>
         </div>
       </div>
@@ -228,6 +240,9 @@ export const InteractiveTinSandboxes: React.FC<InteractiveTinSandboxesProps> = (
       )}
       {activeTab === 'schiedsrichter' && (
         <TischSchiedsrichterSimulator lang={lang} onOpenDose={onOpenDose} />
+      )}
+      {activeTab === 'kristall' && (
+        <KristallwachstumSimulator lang={lang} />
       )}
     </div>
   );

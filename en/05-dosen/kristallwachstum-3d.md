@@ -1,64 +1,72 @@
 # Kristallwachstum 3D (Crystal Growth 3D)
 
-**One sentence:** Not another DLA renderer, but the printable pipeline behind it — parameters, seed, a watertight mesh, geometry that tolerates support structures, a shareable recipe.
+**One sentence:** The first hybrid DLA phase-field pipeline in the browser: Brownian nucleation meets anisotropic Kobayashi thermodynamics — from fractal solidification didactics with 9 microstructure lenses to a watertight, 3D-printable recipe.
 
 **As of:** September 2026 · **Recheck by:** September 2027
-**Recipient:** Nervous System (Jessica Rosenkrantz & Jesse Louis-Rosenberg) · secondary: the Printables/Prusa community, mineralogy education
-**Verdict:** 🎁 give away — narrowed, see below
+**Recipient:** FU Berlin Geosciences / Educational Publishers · secondary: Three.js/WebGPU demo scene, Nervous System (Jessica Rosenkrantz & Jesse Louis-Rosenberg), Printables/Prusa Community
+**Verdict:** 🎁 give away — narrowed to hybrid pipeline & educational microstructure analysis
 
 ---
 
 ## The problem
 
-Diffusion-limited aggregation is the most-implemented beautiful algorithm in the generative-art scene. Almost every implementation ends at the same point: **an image or a point-cloud render.**
+Crystallization, dendritic solidification, and microstructure formation (from snowflakes and metallic alloys to geological pegmatites) are taught in schools and universities almost exclusively using static 2D textbook diagrams. Physically rigorous 3D simulations previously required supercomputer clusters.
 
-From there to an object a printer actually outputs lies the real work, and almost nobody does it: turning the aggregate into a watertight mesh, controlling branch diameter so thin twigs don't snap off, limiting overhangs, avoiding the need for support structures, keeping scale physically sensible. That's unglamorous geometry work, and it's the reason there are thousands of DLA images and very few DLA objects.
-
-Who suffers: the maker scene, which knows the algorithm and fails at printability — and educators who want to explain dendritic growth and only have illustrations.
+Simultaneously, the creative coding and maker communities suffer from a twofold gap:
+1. **The screensaver trap:** Thousands of Diffusion-Limited Aggregation (DLA) implementations produce pretty point-cloud renders, but ignore thermodynamic constraints (anisotropic surface energy, undercooling, orientation fields) and carry zero didactic value.
+2. **The gap before 3D printing:** Between a fractal particle cloud and a physically printable object lies tedious, unglamorous geometry work: wall-thickness control, preventing fragile branches from snapping, enforcing overhang angles, and producing a guaranteed watertight manifold mesh.
 
 ## Why now
 
-1. **Real-time 3D DLA with live parameters** now runs on the GPU. The compute part that used to make this a batch job is gone.
-2. **Mesh repair and wall-thickness checking are available as libraries** — the part that used to be its own research problem.
-3. **The distribution chain exists:** printing platforms with parameter remixing, where a generator can be shared along with its seed. An object there is no longer just a file, it's a **recipe**.
+1. **WebGPU Compute Shaders (WGSL) in the browser:** Modern WebGPU pipelines simulate Brownian random walks and tens of thousands of grid cells in parallel at 60+ FPS directly on consumer GPUs.
+2. **Hybrid DLA + Phase-Field synthesis:** The Kobayashi (1993) phase-field model for undercooled melts can now be solved on 3D volumetric grids (up to 192³ voxels) in WGSL. Coupling it with DLA particle nucleation produces physically realistic dendrite morphology without requiring high-performance computing clusters.
+3. **GPU Marching Cubes & parametric recipes:** Watertight isosurface meshes can be extracted directly on the GPU. A concise seed string encodes the physical growth recipe and guarantees identical reproduction.
 
 ## Sketch
 
-- 3D DLA with live parameters: stickiness, particle density, directional bias (isotropic → dendritic), branching angle.
-- **Physical constraints as sliders, not post-processing:** minimum branch thickness, maximum overhang angle, target size in millimeters. Turning them changes the growth itself, not a repaired-afterward result.
-- Export: GLB for viewing, STL/3MF watertight for printing.
-- **Seed + parameters = the recipe.** A string you can share that reproduces exactly the same object. That's the actual subject of the project.
+- **Stage 1 (WebGPU DLA Nucleation):** Spherical particle injection with an analytical quartic solver drift correction (after Mark Stock) to eliminate directional bias. An orientation SSBO stores crystal lattice axes per crystallite.
+- **Stage 2 (Kobayashi Phase-Field Relaxation):** The DLA skeleton initializes the phase order parameter $\phi$. Discrete Allen-Cahn steps with anisotropic surface energy smooth interfaces, simulate thermal undercooling, and produce crystallographic facets (cubic, hexagonal).
+- **Stage 3 (9 Educational Microstructure Lenses):** Toggleable scientific analysis layers inspired by material science:
+  - `MELT`: Liquid/solid phase boundary.
+  - `ORIENT`: Crystal grain orientation as an Inverse Pole Figure (IPF) false-color map.
+  - `THERM`: Local thermal and supersaturation field with latent heat release.
+  - `CURV`: Mean surface curvature and Gibbs-Thomson effects.
+  - `SEM`: Virtual scanning electron microscope illumination.
+- **Stage 4 (Real-time Metrics & Print Recipe):**
+  - Live calculation of fractal dimension $D_f$ via 3D octree box-counting.
+  - Physical print constraints (minimum branch thickness, overhang limit) enforced directly in the growth solver.
+  - Export: Watertight 3MF/STL for 3D printing alongside a shareable seed string (`K3D-[Seed]-[Params]`).
 
-**Not included:** no slicer, no shop, no gallery platform. The generator goes where people already are.
+**Not included:** No proprietary slicer, no closed marketplace, no cloud batch computation (runs 100% locally in the browser).
+
+## Research Book
+
+- [Chapter 1: Educational & Physical Research](../../02-recherche/kristallwachstum-3d-didaktik-physik.md) — Analysis of WebGPU DLA (`scttfrdmn`, `markstock/dla-nd`), phase-field solidification (`fronkt/solidify`, Kobayashi 1993), and the 4-stage browser architecture.
+- [Chapter 2: Open-Source Scaffolding](../../07-demos/kristallwachstum-3d/README.md) — Concrete WGSL compute kernels (`shaders.wgsl.ts`), DLA drift bias, box-counting, and STL meshing.
 
 ## First step
 
-**Ticket: one seed, one printable object.**
+**Ticket: Hybrid 2D/3D dendrite nucleation in WebGPU with real-time $D_f$ measurement.**
 
-3D DLA with fixed parameters, generate a mesh, check watertightness, export STL, **actually print it**.
+1. Initialize a WebGPU compute pipeline with particle arrays and orientation fields.
+2. Run 50 iterations of Kobayashi phase-field relaxation over the DLA seed cluster.
+3. Display the real-time fractal dimension $D_f$ in the HUD and compare against theoretical values (2D: ~1.71; 3D: ~2.3–2.5).
 
-**Done when:** the thing comes out of the printer with no branch broken off — and the same seed reproduces the same object again.
+**Done when:** A seed reliably grows from a fractal nucleus to an anisotropic dendrite, the fractal dimension is numerically reported in real time, and the resulting mesh exports as a watertight STL.
 
 ## Where it breaks
 
-**The honest weakness of this tin: the pretty part is long since done, the useful part is grunt work.** Anyone building this spends 20% of the time on growth and 80% on geometry repair. Anyone who doesn't know that stops after the first pretty render — which is exactly why there are so many first pretty renders.
-
-**Second risk:** DLA objects look alike. After twenty seeds the visual vocabulary is exhausted. That argues for treating directional bias and boundary conditions as the primary controls — that's where the variance lives, not in the randomness.
-
-## Who's already tried it
-
-Research, September 2026, and the result narrows this tin significantly: **DLA implementations exist in abundance** — 2D morphogenesis experiments, web-based 3D DLA labs, Grasshopper definitions, Blender workflows, script collections. As a "new generator," the idea is dead.
-
-**What I didn't find is the print pipeline as a product:** physical constraints as growth parameters, guaranteed watertightness, seed-as-shareable-recipe. This tin has been rewritten accordingly — it's now about the boring part, because that's the part that's open.
-
-Whoever takes this should know: the novelty isn't in the simulation. It's in the fact that, at the end, something is sitting on the table.
+1. **WebGPU hardware requirement:** Older mobile devices or environments without WebGPU fall back to simplified WebGL2/Canvas modes.
+2. **Numerical instability with large timesteps:** Phase-field equations can oscillate if $\Delta t$ is too large. Adaptive CFL timestep bounds in compute passes are mandatory.
+3. **Morphological fatigue:** Unconstrained DLA trees look visually repetitive after twenty seeds. Only coupling with crystal lattice anisotropy produces authentic mineralogical variety.
 
 ## Prior work
 
-- **Nervous System** — has done nothing but generative design → 3D printing since 2007, from jewelry to lungs. They have exactly the geometry experience others fail on.
-- Existing **DLA implementations** (2D and 3D, openly available) — the growth part doesn't need to be rewritten.
-- **Printables / Prusa community** — generator projects with seed sharing, regular competitions.
-- **Mineralogy education** — DLA explains dendritic growth better than any illustration. In Berlin: TU, Museum für Naturkunde.
+- **scttfrdmn/webgpu-compute-exploration:** Outstanding WebGPU compute demos for DLA and particle physics, but lacks phase-field thermodynamics or 3D print pipelines.
+- **fronkt/solidify:** Landmark WGSL implementation of Kobayashi phase-field at 192³ voxels with 9 lenses and EBSD maps — purely continuum-based without DLA nucleation.
+- **markstock/dla-nd:** Mathematically rigorous 1D–5D off-lattice DLA reference with quartic solver bias correction (C codebase).
+- **Nervous System:** Pioneers of generative 3D printing (Hyphae, Floraform); proprietary commercial focus rather than open educational physics.
+- **Mineralogy classrooms:** Still reliant on plastic lattice models and 2D textbook plates.
 
 ---
 

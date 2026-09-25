@@ -324,5 +324,68 @@ Félix (Berlin)`,
     doseLinks: ['streiflicht'],
     scheduleDe: 'Bereit für Runde 2 (Oktober 2026)',
     scheduleEn: 'Ready for Round 2 dispatch (October 2026)'
+  },
+  {
+    id: 'mail-9',
+    mailIndex: 9,
+    titleDe: 'Mail 9: Kristallwachstum 3D → FU Berlin Geowissenschaften',
+    titleEn: 'Mail 9: 3D Crystal Growth → FU Berlin Geosciences (Mineralogy)',
+    recipientOrg: 'Institut für Geologische Wissenschaften (FU Berlin) · Mineralogie-Petrologie',
+    recipientTypeDe: 'Forschung & Hochschuldidaktik (Rang 2)',
+    recipientTypeEn: 'Academic Research & University Didactics (Rank 2)',
+    contactPathDe: 'Prof. Dr. Timm John (timm.john@fu-berlin.de)',
+    contactPathEn: 'Prof. Dr. Timm John (timm.john@fu-berlin.de)',
+    subjectDe: 'Idee zu verschenken: Interaktive 3D-Kristallisation & Gefüge-Didaktik im Browser',
+    subjectEn: 'Free idea gift: Interactive 3D Crystallization & Microstructure Didactics in the Browser',
+    bodyDe: `Guten Tag Prof. John,
+
+ich recherchiere Software-Werkzeuge, die erst seit kurzer Zeit technisch im Browser möglich sind, und baue nur einen kleinen Teil davon selbst. Diese Idee gehört thematisch in die geowissenschaftliche Lehre (Mineralogie, Kristallographie und Gefügebildung) und nicht zu mir — deshalb schenke ich sie Ihnen und Ihrem Fachbereich.
+
+In der universitären Didaktik werden Nichtgleichgewichts-Kristallisation, Dendritenwachstum und Grenzflächenenergie häufig noch über statische 2D-Diagramme oder Kunststoffgitter vermittelt, weil rigorose 3D-Simulationen historisch Supercomputer brauchten. Gleichzeitig bleiben existierende Web-Demos zur Diffusionsbegrenzten Aggregation (DLA) reine Bildschirmschoner: hübsche Partikelwolken ohne thermodynamischen Antrieb und ohne kristallographische Orientierungsfelder.
+
+Kristallwachstum 3D schließt diese Lücke direkt im Browser über WebGPU:
+1. Hybride Physik: Brownsche DLA-Partikelkeimung mit analytischer Driftkorrektur, gekoppelt mit dem Kobayashi-Phasenfeld-Modell (1993) für unterkühlte Schmelzen auf volumetrischen 3D-Gittern.
+2. Didaktische Gefügelinsen: Echtzeit-Umschaltung zwischen 5 Analyse-Ebenen (Phasenordnungsparameter φ, EBSD-IPF Orientierungsfeld, thermische Unterkühlung ΔT mit latenter Wärme, Gibbs-Thomson-Krümmung und virtuelles Rasterelektronenmikroskop).
+3. Quantitative Didaktik & 3D-Druck: Live-Messung der fraktalen Dimension (D_f) über 3D-Box-Counting, deterministische Rezept-Hashes (K3D-...) und direkter Export wasserdichter, stützfreier Manifold-Meshes (3MF/STL) für den 3D-Druck im Hörsaal.
+
+Ein kompaktes Dokument mit Architektur, physikalischer Herleitung und den Bruchstellen:
+https://github.com/felixinberlin/Amelie/blob/main/05-dosen/kristallwachstum-3d.md
+
+Das funktionale Open-Source-Scaffolding mit WGSL-Shaderkernen, STL-Generator und interaktivem Voxel-Laufzeitkern steht frei bereit:
+https://github.com/felixinberlin/Amelie/tree/main/07-demos/kristallwachstum-3d
+
+Falls das für eine studentische Abschlussarbeit, ein Lehrprojekt in den Geomaterialien oder eine interaktive Vorlesungs-Visualisierung nützlich ist: Nehmen Sie den Code, verändern oder veröffentlichen Sie ihn nach Belieben.
+
+Keine Bedingungen, CC0 / gemeinfrei, keinerlei Gegenleistung erwartet. Wenn Sie für solche interaktiven Visualisierungen im Fachbereich keine Verwendung haben oder bereits an Ähnlichem arbeiten, ignorieren Sie diese Nachricht bitte einfach — ich hake nicht nach.
+
+Mit freundlichen Grüßen
+Félix
+Berlin · github.com/felixinberlin/Amelie`,
+    bodyEn: `Dear Prof. John,
+
+I research software opportunities that only recently became technically viable in the browser, and only build a fraction myself. This idea belongs in geoscientific education (mineralogy, crystallography, and microstructure formation) rather than with me — which is why I am gifting it to you.
+
+In higher education, non-equilibrium crystallization, dendritic growth, and interfacial energy are often still taught using static 2D diagrams because rigorous 3D simulations previously required dedicated scientific workstations. Meanwhile, existing web demos of diffusion-limited aggregation (DLA) remain simple visualizers without thermodynamic driving forces or crystallographic orientation fields.
+
+3D Crystal Growth bridges this gap directly in the browser via WebGPU:
+1. Hybrid physics: Brownian DLA nucleation with analytic drift bias correction coupled to the Kobayashi (1993) phase-field solidification model on volumetric 3D grids.
+2. Educational microstructure lenses: Real-time toggling across 5 scientific views (phase order parameter φ, EBSD-IPF orientation field, thermal undercooling ΔT with latent heat release, Gibbs-Thomson curvature, and virtual SEM backscatter).
+3. Quantitative didactics & 3D printing: Real-time 3D box-counting calculation of the fractal dimension (D_f), deterministic recipe hashes (K3D-...), and direct export of watertight, support-free manifold meshes (3MF/STL).
+
+A concise dossier with architecture, physics derivation, and points of failure:
+https://github.com/felixinberlin/Amelie/blob/main/05-dosen/kristallwachstum-3d.md
+
+The open-source scaffolding with WGSL compute shaders, STL generator, and interactive voxel runtime:
+https://github.com/felixinberlin/Amelie/tree/main/07-demos/kristallwachstum-3d
+
+No strings attached, CC0 public domain, zero compensation expected. If you have no use for this or are already working on something similar, please feel free to ignore this email — I will not follow up.
+
+Warm regards,
+Félix
+Berlin · github.com/felixinberlin/Amelie`,
+    doseLinks: ['kristallwachstum-3d'],
+    scheduleDe: 'Versandfertig (September 2026)',
+    scheduleEn: 'Ready for dispatch (September 2026)',
+    sent: false
   }
 ];

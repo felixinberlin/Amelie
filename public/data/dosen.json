@@ -774,46 +774,50 @@
     "id": "kristallwachstum-3d",
     "title": "Kristallwachstum 3D",
     "titleEn": "3D Crystal Growth Simulation",
-    "oneLinerDe": "Diffusionsbegrenzte Aggregation (DLA) in 3D im Browser — echte Mineralisationsphysik als didaktisches Werkzeug statt als starres Standbild.",
-    "oneLinerEn": "Diffusion-Limited Aggregation (DLA) in real-time 3D in the browser: physical mineralization didactics instead of static diagrams.",
+    "oneLinerDe": "Die erste hybride DLA-Phasenfeld-Pipeline im Browser: Brownsche Keimbildung trifft anisotrope Kobayashi-Thermodynamik — von der fraktalen Didaktik mit 9 Gefügelinsen bis zum wasserdichten 3D-Rezept.",
+    "oneLinerEn": "The first hybrid DLA phase-field pipeline in the browser: Brownian nucleation meets anisotropic Kobayashi thermodynamics — from fractal didactics with 9 microstructure lenses to a watertight 3D recipe.",
     "date": "September 2026",
     "reviewAfter": "September 2027",
-    "recipientsDe": "Geowissenschaften FU Berlin / Lehrmittel-Verlage · Three.js Demoszene",
-    "recipientsEn": "Geosciences university departments · science educators · Three.js graphics community",
+    "recipientsDe": "Geowissenschaften FU Berlin / Lehrmittel-Verlage · nachrangig: Three.js/WebGPU-Demoszene, Nervous System, Printables/Prusa-Community",
+    "recipientsEn": "FU Berlin Geosciences / Educational Publishers · secondary: Three.js/WebGPU demo scene, Nervous System, Printables/Prusa Community",
     "domain": "physics",
     "verdict": "gift",
     "status": "gepackt",
     "tags": [
       "Physik",
       "DLA",
-      "3D",
+      "Phasenfeld",
+      "WebGPU",
       "Three.js",
-      "Didaktik"
+      "Didaktik",
+      "3D-Druck"
     ],
-    "problemDe": "Kristallisation und Dendritenbildung in der Natur (Schneeflocken, Eisblumen, Wismut-Kristalle) werden im Unterricht mit statischen Schemazeichnungen vermittelt, weil 3D-Simulationen früher Supercomputer brauchten.",
-    "problemEn": "Mineral crystallization and dendrite growth are taught using static 2D textbook drawings because compute-heavy 3D simulation previously required dedicated scientific workstations.",
+    "problemDe": "Dendritenwachstum und Gefügebildung werden an Hochschulen mangels zugänglicher Simulationen primär über 2D-Zeichnungen gelehrt. Bestehende DLA-Demos verharren in der Bildschirmschoner-Falle (reine Punktwolken ohne Thermodynamik), während Maker an der aufwändigen Geometriebereinigung für den 3D-Druck scheitern.",
+    "problemEn": "Dendritic solidification and crystalline microstructure are taught using static 2D textbook drawings because 3D simulation previously required dedicated scientific workstations. Existing DLA demos remain trapped as screensavers (point clouds lacking thermodynamics), while makers fail at tedious geometry cleanup for 3D printing.",
     "whyNowDe": [
-      "WebGPU und WebGL2 Compute-Shader berechnen zehntausende Brownian-Particles parallel im Browser.",
-      "Instanced Mesh Rendering erlaubt 100.000 Kristallite bei 60 FPS."
+      "WebGPU Compute Shader (WGSL) berechnen zehntausende Brownian-Partikel und volumetrische 3D-Gitter parallel bei 60+ FPS direkt auf Standard-GPUs.",
+      "Das Kobayashi-Phasenfeld-Modell (1993) für unterkühlte Schmelzen lässt sich heute in WGSL bei bis zu 192³ Voxeln lösen — gekoppelt mit DLA-Keimbildung entsteht exakte Kristallmorphologie.",
+      "GPU Marching Cubes erzeugen direkt wasserdichte Manifold-Netze; kurze Seed-Strings machen jedes Objekt als reproduzierbares Rezept teilbar."
     ],
     "whyNowEn": [
-      "WebGL2 and WebGPU compute shaders simulate tens of thousands of Brownian particles in real time.",
-      "Hardware instanced rendering displays 100k crystalline nodes at 60 FPS in browsers."
+      "WebGPU compute shaders (WGSL) simulate tens of thousands of Brownian particles and volumetric 3D grids in parallel at 60+ FPS on consumer GPUs.",
+      "The Kobayashi (1993) phase-field model for undercooled solidification can now be solved in WGSL at up to 192³ voxels — coupled with DLA nucleation, it delivers authentic crystal morphology.",
+      "GPU marching cubes extract watertight manifold meshes directly; concise seed strings turn every object into a shareable, reproducible recipe."
     ],
-    "sketchDe": "Interaktiver 3D-Kristallisator: Keim setzen, Übersättigung und Temperatur regeln, und dem Dendritenwachstum live in 3D zusehen. Export als 3D-Druck-STL.",
-    "sketchEn": "Interactive browser crystallizer: Seed crystal, tune supersaturation and temperature gradients, watch dendritic lattices grow, export directly as 3D-printable STL.",
+    "sketchDe": "Vierstufen-Pipeline im Browser: 1. WebGPU DLA-Keimbildung mit Quartic-Solver-Driftkorrektur und Orientierungs-SSBO. 2. Kobayashi-Phasenfeld-Relaxation mit anisotroper Oberflächenenergie für Facetten und Trachten. 3. Didaktisches Gefüge-Dashboard mit 9 wissenschaftlichen Analyse-Linsen (MELT, ORIENT/IPF, THERM, CURV, SEM). 4. Echtzeit-Berechnung der fraktalen Dimension (Df) sowie Export als wasserdichtes 3MF/STL mit Seed-Rezept.",
+    "sketchEn": "Four-stage browser pipeline: 1. WebGPU DLA nucleation with quartic-solver drift correction and an orientation SSBO. 2. Kobayashi phase-field relaxation with anisotropic surface energy for crystalline facets. 3. Educational dashboard with 9 scientific microstructure lenses (MELT, ORIENT/IPF, THERM, CURV, SEM). 4. Real-time fractal dimension (Df) box-counting and watertight 3MF/STL export with shareable seed recipes.",
     "firstStepDe": {
-      "ticket": "10.000 Partikel aggregieren in WebGL.",
-      "criteria": "Partikel docken an Kristallkeim an, Verästelung bildet sich flüssig mit mindestens 30 FPS."
+      "ticket": "Hybride WebGPU-Dendriten-Keimung mit Kobayashi-Relaxation und Df-Messung.",
+      "criteria": "DLA-Partikel docken an, 50 Phasenfeld-Zeitschritte glätten die Ränder thermodynamisch konsistent, die fraktale Dimension (Df) wird live ausgegeben und das Mesh exportiert wasserdicht."
     },
     "firstStepEn": {
-      "ticket": "Aggregate 10,000 particles in browser canvas.",
-      "criteria": "Particles Brownian-diffuse and lock to seed lattice, forming organic dendritic arms at 30+ FPS."
+      "ticket": "Hybrid WebGPU dendrite nucleation with Kobayashi relaxation and Df measurement.",
+      "criteria": "DLA particles aggregate, 50 phase-field timesteps smooth the boundary thermodynamically, real-time fractal dimension (Df) is reported, and a watertight STL exports cleanly."
     },
-    "failureModeDe": "Nur hübsches Gimmick: Ohne physikalisch exakte Skalierung der Temperatur- und Diffusionsparameter verkommt es zum Bildschirmschoner.",
-    "failureModeEn": "Screensaver trap: Without rigorously calibrated physical diffusion coefficients, it degrades into decorative visual noise.",
-    "priorArtDe": "Zahlreiche 2D-DLA-Demos existieren; browserbasierte 3D-Echtzeit-Werkzeuge mit physikalischer Parameterführung fehlen.",
-    "priorArtEn": "Abundant 2D DLA demos exist; interactive physically-anchored 3D educational tools remain sparse."
+    "failureModeDe": "Numerische Instabilität bei zu aggressivem Zeitschritt im Phasenfeld-Solver oder Ausfall auf Geräten ohne WebGPU-Treiber (erfordert robusten Fallback auf vereinfachte Gitter). Ohne Gitteranisotropie ermüdet die DLA-Formensprache nach wenigen Seeds.",
+    "failureModeEn": "Numerical instability from overly aggressive timesteps in the phase-field solver or absence of WebGPU drivers (requires a graceful fallback). Without crystal lattice anisotropy, pure DLA forms quickly become visually repetitive.",
+    "priorArtDe": "scttfrdmn/webgpu-compute-exploration demonstriert DLA in WGSL (ohne Phasenfeld/Thermodynamik); fronkt/solidify implementiert Kobayashi-Phasenfeld in WGSL mit 9 Linsen (ohne DLA-Keimung); markstock/dla-nd liefert mathematisch korrekte DLA-Algorithmen (C/Desktop). Die Synthese beider Welten im Browser ist neu.",
+    "priorArtEn": "scttfrdmn/webgpu-compute-exploration demonstrates DLA in WGSL (lacking phase-field/thermodynamics); fronkt/solidify implements Kobayashi phase-field in WGSL with 9 lenses (lacking DLA nucleation); markstock/dla-nd provides rigorous off-lattice DLA algorithms (C/desktop). Combining both into a unified browser pipeline is novel."
   },
   {
     "id": "pin-tumbler",

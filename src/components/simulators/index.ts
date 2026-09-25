@@ -9,3 +9,4 @@ export { CrackFloraSimulator } from './CrackFloraSimulator';
 export { KiezLaermSimulator } from './KiezLaermSimulator';
 export { FugenduellArena } from './FugenduellArena';
 export { TischSchiedsrichterSimulator } from './TischSchiedsrichterSimulator';
+export { KristallwachstumSimulator } from './KristallwachstumSimulator';

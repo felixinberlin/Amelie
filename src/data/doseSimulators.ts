@@ -9,7 +9,8 @@ export type SimulatorKey =
   | 'crackflora'
   | 'laerm'
   | 'fugenduell'
-  | 'schiedsrichter';
+  | 'schiedsrichter'
+  | 'kristall';
 
 export interface DoseSimulatorInfo {
   key: SimulatorKey;
@@ -153,6 +154,16 @@ export const DOSE_SIMULATOR_MAP: Record<string, DoseSimulatorInfo> = {
     descriptionEn: 'The working skeleton: word list, consent, whistle, yellow and red. Listens only if the browser can recognise speech offline — otherwise a typing test mode.',
     descriptionEs: 'El esqueleto funcional: lista de palabras, consentimiento, silbato, amarilla y roja. Solo escucha si el navegador reconoce voz sin conexión.',
     icon: '🟨',
+  },
+  'kristallwachstum-3d': {
+    key: 'kristall',
+    titleDe: 'Kristallwachstum 3D Simulator',
+    titleEn: '3D Crystal Growth Simulator',
+    titleEs: 'Simulador de crecimiento de cristales 3D',
+    descriptionDe: 'Hybride WebGPU DLA- & Phasenfeld-Pipeline mit Kobayashi-Thermodynamik, 9 Gefügelinsen und druckbarem 3MF/STL-Export.',
+    descriptionEn: 'Hybrid WebGPU DLA & phase-field pipeline with Kobayashi thermodynamics, 9 microstructure lenses, and printable 3MF/STL export.',
+    descriptionEs: 'Pipeline híbrido WebGPU DLA y de campo de fase con termodinámica Kobayashi y exportación de malla imprimible 3D.',
+    icon: '💎',
   },
 };
 

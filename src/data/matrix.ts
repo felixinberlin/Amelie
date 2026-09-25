@@ -297,8 +297,8 @@ export const MATRIX_DATA: MatrixRow[] = [
     recipientsEn: 'FU Berlin geosciences · educational publishers · Three.js showcase',
     channelDe: 'Showcase / Open Educational Resources (OER)',
     channelEn: 'Showcase / Open Educational Resources',
-    hookDe: '„DLA in 3D im Browser: Kristallisation als interaktive Physik statt Standbild im Lehrbuch."',
-    hookEn: '"DLA in 3D in browser: crystallization as real-time physics rather than a static diagram."',
+    hookDe: '„Hybride DLA-Phasenfeld-Pipeline in 3D im Browser: Kristallisation & Dendriten als interaktive Physik statt Standbild im Lehrbuch."',
+    hookEn: '"Hybrid 3D DLA phase-field pipeline in the browser: crystallization & dendrites as interactive physics rather than a static diagram."',
     status: 'gepackt',
     doseId: 'kristallwachstum-3d'
   },

@@ -22,6 +22,7 @@ import {
   Maximize2,
   Link2,
   BookOpen,
+  HelpCircle,
 } from 'lucide-react';
 import { DoseItem, Language } from '../types';
 import { AMELIE_PLEDGE } from '../data/manifest';
@@ -43,6 +44,7 @@ import {
   KiezLaermSimulator,
   FugenduellArena,
   TischSchiedsrichterSimulator,
+  KristallwachstumSimulator,
 } from './simulators';
 
 interface DoseModalProps {
@@ -60,6 +62,7 @@ export const DoseModal: React.FC<DoseModalProps> = ({ dose, lang, onClose, onOpe
   const [selectedEmailIndex, setSelectedEmailIndex] = useState(0);
   const [isSimulatorExpanded, setIsSimulatorExpanded] = useState(false);
   const [showBook, setShowBook] = useState(false);
+  const [showSchema, setShowSchema] = useState(false);
   const t = getTranslation(lang);
   const matchedSimulator = DOSE_SIMULATOR_MAP[dose.id];
   const bookChapters = getBook(dose.id);
@@ -284,6 +287,18 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
             </button>
 
             {/* Open Full Single Page */}
+            <button
+              onClick={() => setShowSchema((prev) => !prev)}
+              className={`p-2 rounded-lg transition-colors cursor-pointer ${
+                showSchema
+                  ? 'bg-[#8c1d40] text-white'
+                  : 'text-[#f4ede0] hover:text-white hover:bg-[#8c1d40]'
+              }`}
+              title={lang === 'de' ? 'Schema & Anatomie einer Dose' : lang === 'es' ? 'Esquema y anatomía de una lata' : 'Schema & Anatomy of a Tin'}
+            >
+              <HelpCircle className="w-4 h-4 text-[#f6bd60]" />
+            </button>
+
             {onOpenSinglePage && (
               <button
                 onClick={() => {
@@ -327,6 +342,59 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
           <div className="p-5 rounded-2xl bg-gradient-to-br from-[#faf3e6] to-[#f4e9d5] border border-[#d8cbba] text-[#3b2a1c] font-amelie text-lg sm:text-xl italic leading-relaxed shadow-xs">
             « {lang === 'de' ? dose.oneLinerDe : dose.oneLinerEn} »
           </div>
+
+          {/* Collapsible Canonical Dose Schema Drawer */}
+          {showSchema && (
+            <div className="p-5 rounded-2xl bg-[#2b1e16] text-[#fbf7f0] border-2 border-[#c5832b] space-y-4 shadow-md animate-fadeIn">
+              <div className="flex items-center justify-between pb-2 border-b border-[#5c4a3d]">
+                <div className="flex items-center gap-2">
+                  <span className="text-[#f6bd60] text-lg">✦</span>
+                  <h4 className="font-typewriter text-xs uppercase tracking-wider font-bold text-[#f6bd60]">
+                    {lang === 'de' ? 'Das kanonische Schema einer Dose (Amélie-Manifest)' : lang === 'es' ? 'El esquema canónico de una lata (Manifiesto)' : 'The Canonical Schema of a Tin (Amélie Manifest)'}
+                  </h4>
+                </div>
+                <button
+                  onClick={() => setShowSchema(false)}
+                  className="text-xs text-[#d8cbba] hover:text-white font-typewriter underline"
+                >
+                  {lang === 'de' ? 'Schließen' : 'Close'}
+                </button>
+              </div>
+
+              <p className="text-xs text-[#d8cbba] font-sans leading-relaxed">
+                {lang === 'de'
+                  ? 'Eine Dose ist kein unverbindlicher Einfall, sondern ein vollständiges Geschenkpaket auf 1 Seite mit 5 Pflichtteilen und 2 Datumsankern:'
+                  : 'A tin is not a loose suggestion, but a self-contained 1-page gift package consisting of 5 core pillars and 2 mandatory date anchors:'}
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 pt-1 text-xs">
+                <div className="p-3 rounded-xl bg-[#3b2a1c] border border-[#5c4a3d] space-y-1">
+                  <span className="font-bold text-[#f6bd60] block font-typewriter">1. Das Problem</span>
+                  <span className="text-stone-300 text-[11px] leading-snug block">Wer leidet konkret? Reale Reibung ohne „man könnte".</span>
+                </div>
+                <div className="p-3 rounded-xl bg-[#3b2a1c] border border-[#5c4a3d] space-y-1">
+                  <span className="font-bold text-[#f6bd60] block font-typewriter">2. Warum jetzt?</span>
+                  <span className="text-stone-300 text-[11px] leading-snug block">Welcher technologische Knick macht es erst seit Kurzem bezahlbar?</span>
+                </div>
+                <div className="p-3 rounded-xl bg-[#3b2a1c] border border-[#5c4a3d] space-y-1">
+                  <span className="font-bold text-[#f6bd60] block font-typewriter">3. Die Skizze</span>
+                  <span className="text-stone-300 text-[11px] leading-snug block">Genug System-Architektur, dass ein Fachmensch nickt. Nicht mehr.</span>
+                </div>
+                <div className="p-3 rounded-xl bg-[#3b2a1c] border border-[#5c4a3d] space-y-1">
+                  <span className="font-bold text-[#86efac] block font-typewriter">4. Der erste Schritt (Ticket #1)</span>
+                  <span className="text-stone-300 text-[11px] leading-snug block">Das 2-Tage-Ticket, mit dem man Montag früh beginnt. Mit Kriterien.</span>
+                </div>
+                <div className="p-3 rounded-xl bg-[#3b2a1c] border border-[#5c4a3d] space-y-1">
+                  <span className="font-bold text-[#fca5a5] block font-typewriter">5. Wo es kippt</span>
+                  <span className="text-stone-300 text-[11px] leading-snug block">Die reale Sollbruchstelle, die das Vorhaben killen kann. Schafft Glaubwürdigkeit.</span>
+                </div>
+                <div className="p-3 rounded-xl bg-[#3b2a1c] border border-[#5c4a3d] space-y-1">
+                  <span className="font-bold text-[#93c5fd] block font-typewriter">Pflicht-Datumsanker</span>
+                  <span className="text-stone-300 text-[11px] leading-snug block">«Stand» (wann recherchiert) & «Prüfen ab» (Verfallsdatum zum Friedhof).</span>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Dose Image (if available) */}
           {dose.image && (
@@ -545,6 +613,7 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
                   {matchedSimulator.key === 'laerm' && <KiezLaermSimulator lang={lang} isEmbedded={true} />}
                   {matchedSimulator.key === 'fugenduell' && <FugenduellArena lang={lang} isEmbedded={true} />}
                   {matchedSimulator.key === 'schiedsrichter' && <TischSchiedsrichterSimulator lang={lang} isEmbedded={true} />}
+                  {matchedSimulator.key === 'kristall' && <KristallwachstumSimulator lang={lang} />}
                 </div>
               )}
             </div>
