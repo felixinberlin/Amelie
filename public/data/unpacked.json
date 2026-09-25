@@ -3926,37 +3926,38 @@
   },
   {
     "id": "communal-rainwater-tank-balancer",
-    "title": "Rainwater Harvesting Cistern Volume & Overflow Sizing Calculator",
-    "round": "Katalog 2026",
-    "date": "17.09.2026",
-    "conceptDe": "Berechnet anhand von Dachfläche, Dachneigung und regionalen Niederschlagswerten das ideale Zisternenvolumen für Gartenbewässerung und Toilettenspülung.",
-    "conceptEn": "Calculates optimal rainwater cistern volume and infiltration swale capacity based on roof area, slope material, and regional rainfall patterns.",
-    "status": "ungeprüft",
+    "title": "Hof-Entkoppler: DWA-A 138-1 Versickerung & Gebührenbefreiung",
+    "round": "Inversion Run 1",
+    "date": "25.09.2026",
+    "conceptDe": "Leitet Mieter- und Hofgemeinschaften durch den Vor-Ort-Sickerversuch (Loch-Infiltrationstest) zur kf-Wert-Ermittlung, berechnet Muldenmaße nach DWA-A 138-1 und generiert den offiziellen Erfassungsbogen zur Befreiung von der Niederschlagswassergebühr.",
+    "conceptEn": "Guides housing collectives through DIY on-site soil percolation tests to estimate kf values, calculates swale retention dimensions per DWA-A 138-1, and generates the official municipal stormwater fee exemption application.",
+    "status": "verengt",
     "suggestedVerdict": "gift",
-    "recipientDe": "Fachvereinigung Betriebs- und Regenwassernutzung (fbr) · Baubehörden",
-    "recipientEn": "Rainwater Management Association · Permaculture Design Groups",
+    "recipientDe": "Berliner Regenwasseragentur · BUND Schwammstadt-Initiative",
+    "recipientEn": "Berlin Rainwater Agency · Urban Sponge City Alliances",
     "sourceType": "Civic & Ecology",
-    "sourceDe": "DIN 1989 rainwater harvesting standards & KOSTRA heavy rainfall statistical tables",
-    "sourceEn": "DIN 1989 rainwater harvesting standards & regional heavy precipitation statistics",
-    "evidenceDe": "Bauherren dimensionieren Zisternen entweder viel zu klein (laufen im Mai leer) oder zu groß (faulendes Wasser durch mangelnden Überlauf).",
-    "evidenceEn": "Homeowners install incorrectly sized cisterns that either run dry in early spring or become stagnant due to insufficient overflow turnover.",
-    "reviewDate": "10/2026",
-    "problemDe": "Kostbares Trinkwasser wird für Klospülung und Rasensprengen vergeudet, während Starkregen die Kanalisation überflutet.",
-    "problemEn": "Drinking water is squandered on garden irrigation while unbuffered stormwater overwhelms municipal sewage systems.",
+    "sourceDe": "DWA-A 138-1 (10/2024), Berliner Wasserbetriebe Entwässerungssatzung § 10 & KOSTRA-DWD-2020",
+    "sourceEn": "DWA-A 138-1 infiltration standard (10/2024), municipal stormwater fee schedules & KOSTRA-DWD",
+    "evidenceDe": "RegenRechner der Regenwasseragentur setzt vorherige Fachbemessung voraus (desktop-only). Ingenieurtools (DWA Versickerungs-Expert, RAINPLANER) sind formelgetrieben; der Vor-Ort-Sickerversuch und der behördliche Änderungsantrag fehlen.",
+    "evidenceEn": "Berlin Rainwater Agency cost estimator explicitly requires prior external engineering sizing. Engineering software is form/CAD-driven; DIY percolation tests and direct fee exemption filing remain unaddressed.",
+    "reviewDate": "09/2027",
+    "problemDe": "Städtische Hinterhöfe bleiben betonierte Hitzeinseln und zahlen 1,84 €/m² Niederschlagswassergebühr, weil die hydrogeologische Versickerungsberechnung nach DWA-A 138-1 tausende Euro im Ingenieurbüro kostet.",
+    "problemEn": "Urban courtyards remain sealed concrete heat islands paying €1.84/m² stormwater fees because DWA-A 138-1 hydrogeological infiltration calculations require expensive engineering consultants.",
     "whyNowDe": [
-      "Statistische DWD-Niederschlagsreihen (KOSTRA) erlauben präzise Simulationen von Trockenperioden."
+      "DWA-A 138-1 im Oktober 2024 grundlegend aktualisiert; offene DWD-KOSTRA-Raster und Smartphone-Kameramessung der Versickerungsgeschwindigkeit im Probeschacht machen Fachgutachten im Kleingarten-/Hofmaßstab ersetzbar."
     ],
     "whyNowEn": [
-      "Open rainfall duration tables can simulate dry-spell water depletion curves with slider inputs."
+      "DWA-A 138-1 updated in October 2024; open KOSTRA-DWD precipitation grids and smartphone pit water drop timing allow commodity percolation testing without geotechnical consultants."
     ],
-    "firstStepTicketDe": "Dachflächen-Simulator mit Zisternen-Empfehlung (in Litern) und jährlicher Trinkwasserersparnis",
-    "firstStepTicketEn": "Roof catchment estimator calculating recommended tank volume (liters) and water utility savings",
+    "firstStepTicketDe": "Interaktiver Loch-Sickerversuchs-Timer mit kf-Wert-Schätzung, DWA-A 138-1 Muldenrechner und PDF-Export für die BWB-Änderungsanzeige",
+    "firstStepTicketEn": "Interactive percolation pit timer estimating kf values, sizing DWA-A 138-1 infiltration swales, and exporting municipal stormwater fee adjustment PDFs",
     "tags": [
       "Rainwater",
-      "Water Conservation",
-      "Civil Engineering",
-      "DIN Norm",
-      "Sustainability"
+      "Schwammstadt",
+      "DWA-A 138",
+      "Niederschlagswassergebühr",
+      "Entsiegelung",
+      "Civil Engineering"
     ]
   },
   {

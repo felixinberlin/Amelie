@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/felixinberlin/amelie/main/public/data/amelie-schema.json",
   "version": "1.0.0",
-  "generatedAt": "2026-09-25T15:57:34.434Z",
+  "generatedAt": "2026-09-25T18:18:35.089Z",
   "license": "CC0-1.0 (Public Domain / Kula-Ring)",
   "storageProvider": "github_pages",
   "repository": "https://github.com/felixinberlin/amelie",
@@ -819,17 +819,24 @@
       "sketchDe": "Vierstufen-Pipeline im Browser: 1. WebGPU DLA-Keimbildung mit Quartic-Solver-Driftkorrektur und Orientierungs-SSBO. 2. Kobayashi-Phasenfeld-Relaxation mit anisotroper Oberflächenenergie für Facetten und Trachten. 3. Didaktisches Gefüge-Dashboard mit 9 wissenschaftlichen Analyse-Linsen (MELT, ORIENT/IPF, THERM, CURV, SEM). 4. Echtzeit-Berechnung der fraktalen Dimension (Df) sowie Export als wasserdichtes 3MF/STL mit Seed-Rezept.",
       "sketchEn": "Four-stage browser pipeline: 1. WebGPU DLA nucleation with quartic-solver drift correction and an orientation SSBO. 2. Kobayashi phase-field relaxation with anisotropic surface energy for crystalline facets. 3. Educational dashboard with 9 scientific microstructure lenses (MELT, ORIENT/IPF, THERM, CURV, SEM). 4. Real-time fractal dimension (Df) box-counting and watertight 3MF/STL export with shareable seed recipes.",
       "firstStepDe": {
-        "ticket": "Hybride WebGPU-Dendriten-Keimung mit Kobayashi-Relaxation und Df-Messung.",
-        "criteria": "DLA-Partikel docken an, 50 Phasenfeld-Zeitschritte glätten die Ränder thermodynamisch konsistent, die fraktale Dimension (Df) wird live ausgegeben und das Mesh exportiert wasserdicht."
+        "ticket": "Hybride WebGPU-Dendriten-Keimung mit Kobayashi-Relaxation und Df-Messung (Ticket #01).",
+        "criteria": "DLA-Partikel docken an, 50 Phasenfeld-Zeitschritte glätten die Ränder thermodynamisch konsistent, die fraktale Dimension (Df) wird live via 3D-Box-Counting ausgegeben und das Mesh exportiert wasserdicht als STL."
       },
       "firstStepEn": {
-        "ticket": "Hybrid WebGPU dendrite nucleation with Kobayashi relaxation and Df measurement.",
-        "criteria": "DLA particles aggregate, 50 phase-field timesteps smooth the boundary thermodynamically, real-time fractal dimension (Df) is reported, and a watertight STL exports cleanly."
+        "ticket": "Hybrid WebGPU dendrite nucleation with Kobayashi relaxation and Df measurement (Ticket #01).",
+        "criteria": "DLA particles aggregate, 50 phase-field timesteps smooth the boundary thermodynamically, real-time fractal dimension (Df) is reported via 3D box-counting, and a watertight STL exports cleanly."
       },
       "failureModeDe": "Numerische Instabilität bei zu aggressivem Zeitschritt im Phasenfeld-Solver oder Ausfall auf Geräten ohne WebGPU-Treiber (erfordert robusten Fallback auf vereinfachte Gitter). Ohne Gitteranisotropie ermüdet die DLA-Formensprache nach wenigen Seeds.",
       "failureModeEn": "Numerical instability from overly aggressive timesteps in the phase-field solver or absence of WebGPU drivers (requires a graceful fallback). Without crystal lattice anisotropy, pure DLA forms quickly become visually repetitive.",
       "priorArtDe": "scttfrdmn/webgpu-compute-exploration demonstriert DLA in WGSL (ohne Phasenfeld/Thermodynamik); fronkt/solidify implementiert Kobayashi-Phasenfeld in WGSL mit 9 Linsen (ohne DLA-Keimung); markstock/dla-nd liefert mathematisch korrekte DLA-Algorithmen (C/Desktop). Die Synthese beider Welten im Browser ist neu.",
-      "priorArtEn": "scttfrdmn/webgpu-compute-exploration demonstrates DLA in WGSL (lacking phase-field/thermodynamics); fronkt/solidify implements Kobayashi phase-field in WGSL with 9 lenses (lacking DLA nucleation); markstock/dla-nd provides rigorous off-lattice DLA algorithms (C/desktop). Combining both into a unified browser pipeline is novel."
+      "priorArtEn": "scttfrdmn/webgpu-compute-exploration demonstrates DLA in WGSL (lacking phase-field/thermodynamics); fronkt/solidify implements Kobayashi phase-field in WGSL with 9 lenses (lacking DLA nucleation); markstock/dla-nd provides rigorous off-lattice DLA algorithms (C/desktop). Combining both into a unified browser pipeline is novel.",
+      "emailTemplate": {
+        "to": "timm.john@fu-berlin.de",
+        "subjectDe": "Idee zu verschenken: Interaktive 3D-Kristallisation & Gefüge-Didaktik im Browser",
+        "subjectEn": "Idea gift: Interactive 3D Crystallization & Microstructure Didactics in the Browser",
+        "bodyDe": "Guten Tag Prof. John,\n\nich recherchiere Software-Werkzeuge, die erst seit kurzer Zeit technisch im Browser möglich sind, und baue nur einen kleinen Teil davon selbst. Diese Idee gehört thematisch in die geowissenschaftliche Lehre (Mineralogie, Kristallographie und Gefügebildung) und nicht zu mir — deshalb schenke ich sie Ihnen und Ihrem Fachbereich.\n\nIn der universitären Didaktik werden Nichtgleichgewichts-Kristallisation, Dendritenwachstum und Grenzflächenenergie häufig noch über statische 2D-Diagramme oder Kunststoffgitter vermittelt, weil rigorose 3D-Simulationen historisch Supercomputer brauchten. Gleichzeitig bleiben existierende Web-Demos zur Diffusionsbegrenzten Aggregation (DLA) reine Bildschirmschoner: hübsche Partikelwolken ohne thermodynamischen Antrieb und ohne kristallographische Orientierungsfelder.\n\nKristallwachstum 3D schließt diese Lücke direkt im Browser über WebGPU:\n1. Hybride Physik: Brownsche DLA-Partikelkeimung mit analytischer Driftkorrektur, gekoppelt mit dem Kobayashi-Phasenfeld-Modell (1993) für unterkühlte Schmelzen auf volumetrischen 3D-Gittern.\n2. Didaktische Gefügelinsen: Echtzeit-Umschaltung zwischen 5 Analyse-Ebenen (Phasenordnungsparameter φ, EBSD-IPF Orientierungsfeld, thermische Unterkühlung ΔT mit latenter Wärme, Gibbs-Thomson-Krümmung und virtuelles Rasterelektronenmikroskop).\n3. Quantitative Didaktik & 3D-Druck: Live-Messung der fraktalen Dimension (D_f) über 3D-Box-Counting, deterministische Rezept-Hashes (K3D-...) und direkter Export wasserdichter, stützfreier Manifold-Meshes (3MF/STL) für den 3D-Druck im Hörsaal.\n\nEin kompaktes Dokument mit Architektur, physikalischer Herleitung und den Bruchstellen:\nhttps://github.com/felixinberlin/Amelie/blob/main/05-dosen/kristallwachstum-3d.md\n\nDas funktionale Open-Source-Scaffolding mit WGSL-Shaderkernen, STL-Generator und interaktivem Voxel-Laufzeitkern steht frei bereit:\nhttps://github.com/felixinberlin/Amelie/tree/main/07-demos/kristallwachstum-3d\n\nFalls das für eine studentische Abschlussarbeit, ein Lehrprojekt in den Geomaterialien oder eine interaktive Vorlesungs-Visualisierung nützlich ist: Nehmen Sie den Code, verändern oder veröffentlichen Sie ihn nach Belieben.\n\nKeine Bedingungen, CC0 / gemeinfrei, keinerlei Gegenleistung erwartet. Wenn Sie für solche interaktiven Visualisierungen im Fachbereich keine Verwendung haben oder bereits an Ähnlichem arbeiten, ignorieren Sie diese Nachricht bitte einfach — ich hake nicht nach.\n\nMit freundlichen Grüßen\nFélix\nBerlin · github.com/felixinberlin/Amelie",
+        "bodyEn": "Dear Prof. John,\n\nI research software opportunities that only recently became technically viable in the browser, and only build a fraction myself. This idea belongs in geoscientific education (mineralogy, crystallography, and microstructure formation) rather than with me — which is why I am gifting it to you.\n\nIn higher education, non-equilibrium crystallization, dendritic growth, and interfacial energy are often still taught using static 2D diagrams because rigorous 3D simulations previously required dedicated scientific workstations. Meanwhile, existing web demos of diffusion-limited aggregation (DLA) remain simple visualizers without thermodynamic driving forces or crystallographic orientation fields.\n\n3D Crystal Growth bridges this gap directly in the browser via WebGPU:\n1. Hybrid physics: Brownian DLA nucleation with analytic drift bias correction coupled to the Kobayashi (1993) phase-field solidification model on volumetric 3D grids.\n2. Educational microstructure lenses: Real-time toggling across 5 scientific views (phase order parameter φ, EBSD-IPF orientation field, thermal undercooling ΔT with latent heat release, Gibbs-Thomson curvature, and virtual SEM backscatter).\n3. Quantitative didactics & 3D printing: Real-time 3D box-counting calculation of the fractal dimension (D_f), deterministic recipe hashes (K3D-...), and direct export of watertight, support-free manifold meshes (3MF/STL).\n\nA concise dossier with architecture, physics derivation, and points of failure:\nhttps://github.com/felixinberlin/Amelie/blob/main/05-dosen/kristallwachstum-3d.md\n\nThe open-source scaffolding with WGSL compute shaders, STL generator, and interactive voxel runtime:\nhttps://github.com/felixinberlin/Amelie/tree/main/07-demos/kristallwachstum-3d\n\nNo strings attached, CC0 public domain, zero compensation expected. If you have no use for this or are already working on something similar, please feel free to ignore this email — I will not follow up.\n\nWarm regards,\nFélix\nBerlin · github.com/felixinberlin/Amelie"
+      }
     },
     {
       "id": "pin-tumbler",
@@ -970,48 +977,59 @@
     },
     {
       "id": "tarot-zustandsmaschine",
-      "title": "Tarot-Zustandsmaschine",
-      "titleEn": "Tarot State Machine",
-      "oneLinerDe": "Narratives Debugging und archetypische Zustandsübergänge — Tarot-Karten als formale Zustandsmaschine für kreative Plot- und Systementwürfe.",
-      "oneLinerEn": "Narrative debugging and archetypal state machines: Tarot archetypes modeled as a formal finite state automaton for creative writers and system architects.",
+      "title": "Tarot als Zustandsmaschine",
+      "titleEn": "Tarot Spread Graph DSL",
+      "oneLinerDe": "Ein Legesystem ist bereits ein Programm — Positionen sind Slots mit Koordinaten, Karten sind typisierte Zustände und Bedeutung entsteht aus gerichteten Relationen. Eine offene JSON-Spezifikation für herstellerunabhängige Spreads.",
+      "oneLinerEn": "A spread is already a program: slots have layout coordinates, cards act as typed states, and meaning emerges from directed relations. An open JSON specification for vendor-independent tarot spreads.",
       "date": "September 2026",
       "reviewAfter": "September 2027",
-      "recipientsDe": "Kreativschreib-Communities · Game-Design-Forschung · Interactive Fiction (Twine/Ink)",
-      "recipientsEn": "Creative writing guilds · Game narrative designers · Interactive fiction tooling (Twine/Ink)",
+      "recipientsDe": "Labyrinthos (Tina Gong) · Interactive Fiction / Game-Narrative (Twine / Inkle) · Crowdfunding Deck-Künstler:innen",
+      "recipientsEn": "Labyrinthos (Tina Gong) · Interactive fiction & narrative engines (Twine / Inkle) · Crowdfunding deck artists",
       "domain": "creative",
       "verdict": "gift",
       "status": "gepackt",
       "tags": [
-        "Narrativ",
-        "Zustandsmaschine",
+        "Spezifikation",
+        "JSON Schema",
         "Tarot",
-        "Creative Coding",
-        "Storytelling"
+        "Graph DSL",
+        "State Machine",
+        "Game Design",
+        "Interactive Fiction"
       ],
-      "problemDe": "Plot-Entwürfe in Büchern und Spielen geraten in narrative Sackgassen. Tarot wird oft für Brainstorming genutzt, bleibt aber esoterisch-beliebig statt strukturelle dramaturgische Spannungen aufzudecken.",
-      "problemEn": "Narrative plots in novels and games deadlock in narrative cul-de-sacs. Writers draw cards for inspiration, but lack formal structural transition mechanics linking archetypes into coherent story engines.",
+      "problemDe": "Legesysteme werden seit zweihundert Jahren in Prosa weitergegeben („Karte 2 kreuzt Karte 1\"). Diese strukturellen Beziehungen (orthogonale Drehung, kausale Übergänge, Nachbarschafts-Modifikatoren) sind nirgends formalisiert. Jede Tarot-App implementiert Spreads als starre, festverdrahtete Arrays. Ein neues Legesystem erfordert neuen Code; alternative Decks (22 Majors, 36 Lenormand) bringen Apps zum Absturz.",
+      "problemEn": "Tarot spreads have been passed down for centuries in prose (\"Card 2 crosses Card 1\"). These structural relationships (orthogonal rotations, causal transitions, neighbor modifiers) are nowhere formalized. Every tarot app hardcodes spreads as flat arrays. Adding a spread requires new code; alternative deck sizes (22-card Majors, 36-card Lenormand) crash apps without contracts.",
       "whyNowDe": [
-        "Formale State-Machine-Engines (wie XState) lassen sich nahtlos im Web visualisieren.",
-        "Graph-Layouts (D3 / Dagre) machen komplexe narrative Pfade und Spannungsbögen intuitiv begreifbar."
+        "LLM-Agenten (wie MCP-Server) benötigen strukturierte semantische Graphen statt unstrukturierter Prompts, um relationale Spannungsfelder in Lesungen fundiert zu analysieren.",
+        "Moderne SVG- und CSS-Grid-Renderer im Browser können komplexe Karten-Layouts vollständig autonom aus (x, y, θ)-Slot-Koordinaten berechnen.",
+        "JSON Schema (Draft 2020-12) ermöglicht formale Deck-Verträge (deckContract), die Decks und Spreads typisiert entkoppeln."
       ],
       "whyNowEn": [
-        "Visual state machine tools (like XState) run directly in modern browsers.",
-        "Interactive graph visualizations reveal dramatic tension flow, traps, and resolution pathways."
+        "LLM agents (e.g. MCP servers) require structured semantic graphs rather than raw text prompts to accurately evaluate relational tension between card slots.",
+        "Modern web layout engines can render spread boards autonomously from (x, y, θ) slot coordinates without custom CSS per spread.",
+        "JSON Schema (Draft 2020-12) provides strict deckContract boundaries, cleanly decoupling physical card sets from spread topology."
       ],
-      "sketchDe": "Visualisierer für archetypische Heldenreisen als gerichteter Graph: Karten als Zustände, Übergänge als Konflikte oder Prüfungen. Hebt narrative Zyklen und Sackgassen hervor.",
-      "sketchEn": "Visual hero's journey state machine: cards represent character states, transitions represent crises. Highlights dead ends and narrative pacing flaws.",
+      "sketchDe": "Formale Spezifikation (spread.schema.json): deckContract (Mindestkarten, Arcana-Pflicht), typisierte Slots mit geometrischen Koordinaten (x, y, rotation, layer) und gerichtete Relationen (crosses, grounds, crowns, leads_to, mirrors). Referenz-Definition des Keltischen Kreuzes und 3-Karten-Sequenz.",
+      "sketchEn": "Formal specification (spread.schema.json): deckContract (minimum cards, required arcana), typed slots with geometric coordinates (x, y, rotation, layer), and directed relations (crosses, grounds, crowns, leads_to, mirrors). Reference implementations for Celtic Cross and 3-card linear spreads.",
       "firstStepDe": {
-        "ticket": "Große Arkana als XState-Graph visualisieren.",
-        "criteria": "22 Archetypen mit validen dramaturgischen Übergängen auf einem interaktiven Canvas durchklickbar."
+        "ticket": "Kanonisches Keltisches Kreuz als typisierte JSON-Spezifikation (Ticket #01).",
+        "criteria": "spread.schema.json definiert, celtic-cross.json mit 10 Slots und 8 typisierten Kanten validiert fehlerfrei, und ein generischer Renderer zeichnet das Layout ohne hardcodierte Regeln."
       },
       "firstStepEn": {
-        "ticket": "Model the 22 Major Arcana in an interactive state graph.",
-        "criteria": "Users navigate archetypal character transitions with valid dramatic tension rules."
+        "ticket": "Canonical Celtic Cross as typed JSON specification (Ticket #01).",
+        "criteria": "spread.schema.json established, celtic-cross.json with 10 slots and 8 typed relations validates cleanly, and a generic renderer draws the layout with zero hardcoded CSS rules."
       },
-      "failureModeDe": "Verlust der Poesie durch Über-Formalisierung: Darf kein steriles Diagramm werden, sondern muss narrativen Freiraum lassen.",
-      "failureModeEn": "Over-formalization: Stripping the mythological resonance turns it into dry business flowcharting.",
-      "priorArtDe": "Esoterische Tarot-Apps simulieren Kartenstapel; formale dramaturgische Zustandsmaschinen fehlen.",
-      "priorArtEn": "Countless tarot card drawing apps exist; zero formal dramatic state-transition engines."
+      "failureModeDe": "Überformalisierung vs. intuitive Mehrdeutigkeit: Ein Schema, das versucht, alle spirituellen Nuancen in Enums zu zwingen, scheitert. Die DSL muss strikt Struktur und geometrische Relationen beschreiben, niemals Textbedeutungen (diese bleiben Sache des Decks).",
+      "failureModeEn": "Over-formalization vs. intuitive ambiguity: A schema trying to compress esoteric nuance into rigid enums kills the practice. The DSL must strictly describe topological structure and geometry, never semantic card definitions.",
+      "priorArtDe": "metabismuth/tarot-json liefert Karten-Daten, aber keine Legesysteme; fzlzjerry/tarot-mcp nutzt Spreads nur als Prompt-Vorlagen; Labyrinthos besitzt 30+ kuratierte Spreads, hält sie aber in einer geschlossenen App gefangen. Eine herstellerneutrale Graph-DSL fehlt.",
+      "priorArtEn": "metabismuth/tarot-json solves card catalogs but ignores spreads; fzlzjerry/tarot-mcp uses spreads only as prompt templates; Labyrinthos curates 30+ spreads inside a walled-garden app. A vendor-independent graph DSL does not exist.",
+      "emailTemplate": {
+        "to": "faculty@labyrinthos.co",
+        "subjectDe": "Idee zu verschenken: Eine herstellerunabhängige Graph-DSL für Tarot-Legesysteme",
+        "subjectEn": "Free idea gift: A vendor-independent graph DSL for tarot spreads",
+        "bodyDe": "Guten Tag Tina Gong,\n\nich recherchiere Software-Werkzeuge, die erst seit Kurzem technisch möglich oder fällig sind, und baue nur einen Bruchteil davon selbst. Diese Idee gehört thematisch zu Labyrinthos und der breiteren Indie-Tarot-Community und nicht zu mir — deshalb schenke ich sie Ihnen.\n\nLabyrinthos hat bewiesen, wie viel didaktische Klarheit in einer kuratierten Bibliothek von über dreißig Legesystemen steckt. Gleichzeitig leidet das gesamte digitale Ökosystem (von Indie-Künstlerinnen auf Kickstarter bis zu Entwicklern interaktiver Fiktion) an einem blinden Fleck: Legesysteme werden nach wie vor in unpräziser Prosa oder als starre, festverdrahtete Arrays implementiert. Was es bedeutet, dass Karte 2 Karte 1 „kreuzt\", wie umgekehrte Karten benachbarte Übergänge blockieren oder wie ein System mit Nicht-Standard-Decks (22 Große Arkana) umgeht, ist nirgends maschinenlesbar formalisiert.\n\nDie Idee: Eine offene, herstellerunabhängige Graph-Notation für Legesysteme (Tarot Spread DSL):\n1. Deklarativer Deck-Vertrag: Definiert Mindestkartenzahlen und Arcana-Anforderungen, damit inkompatible Decks deterministisch abgefangen werden.\n2. Geometrische & semantische Slots: Positionen mit relativen Koordinaten (x, y, Rotation in Grad, Z-Ebene) und funktionaler Rolle.\n3. Typisierte Relationen: Gerichtete Kanten (crosses, grounds, crowns, leads_to, mirrors), aus denen Render-Engines das Layout autonom berechnen und LLM-Pipelines relationale Spannungen fundiert analysieren können.\n\nEin kompaktes Dokument mit Architektur, Schemadefinition und den Grenzen (warum Struktur formalisiert werden muss, Bedeutung aber freibleiben muss):\nhttps://github.com/felixinberlin/Amelie/blob/main/05-dosen/tarot-zustandsmaschine.md\n\nDas lauffähige JSON-Schema sowie Referenz-Dateien (Keltisches Kreuz, 3-Karten-Pfad) stehen frei bereit:\nhttps://github.com/felixinberlin/Amelie/tree/main/07-demos/tarot-zustandsmaschine\n\nKeine Bedingungen, CC0 / gemeinfrei, keinerlei Gegenleistung erwartet. Wenn Sie dafür keine Verwendung haben oder bereits an einem eigenen Standard arbeiten, ignorieren Sie diese Nachricht bitte einfach — ich melde mich nicht erneut.\n\nMit freundlichen Grüßen\nFélix\nBerlin · github.com/felixinberlin/Amelie",
+        "bodyEn": "Dear Tina Gong,\n\nI research software opportunities that only recently became technically viable or necessary, and only build a small fraction myself. This idea belongs with Labyrinthos and the wider indie tarot community rather than with me — which is why I am gifting it to you.\n\nLabyrinthos has demonstrated how much educational clarity exists in a thoughtfully curated library of over 30 spreads. At the same time, the broader digital ecosystem (from deck artists crowdfunding on Kickstarter to narrative game designers) suffers from a systemic blind spot: spreads are still passed down in loose prose or hardcoded as rigid arrays. What it physically and semantically means for Card 2 to \"cross\" Card 1, how reversals block neighboring transitions, or how a spread handles non-standard card counts (22-card Majors-only decks) is nowhere machine-readable.\n\nThe idea: An open, vendor-independent graph DSL for tarot spreads:\n1. Declarative Deck Contracts: Validates card counts and arcana constraints so incompatible decks fail gracefully before drawing.\n2. Geometric & Semantic Slots: Positions defined with relative coordinates (x, y, rotation degrees, layer) and functional roles.\n3. Typed Directed Relations: Edges (crosses, grounds, crowns, leads_to, mirrors) enabling renderers to layout boards autonomously and helping LLM agents evaluate relational dynamics rather than isolated cards.\n\nA concise dossier with architecture, schema definitions, and guardrails:\nhttps://github.com/felixinberlin/Amelie/blob/main/05-dosen/tarot-zustandsmaschine.md\n\nThe JSON schema and reference instances (Celtic Cross, 3-Card Linear):\nhttps://github.com/felixinberlin/Amelie/tree/main/07-demos/tarot-zustandsmaschine\n\nNo strings attached, CC0 public domain, zero compensation expected. If you have no use for this or already have an internal format in flight, please feel free to ignore this email — I will not follow up.\n\nWarm regards,\nFélix\nBerlin · github.com/felixinberlin/Amelie"
+      }
     },
     {
       "id": "traumtagebuch",
@@ -6443,37 +6461,38 @@
     },
     {
       "id": "communal-rainwater-tank-balancer",
-      "title": "Rainwater Harvesting Cistern Volume & Overflow Sizing Calculator",
-      "round": "Katalog 2026",
-      "date": "17.09.2026",
-      "conceptDe": "Berechnet anhand von Dachfläche, Dachneigung und regionalen Niederschlagswerten das ideale Zisternenvolumen für Gartenbewässerung und Toilettenspülung.",
-      "conceptEn": "Calculates optimal rainwater cistern volume and infiltration swale capacity based on roof area, slope material, and regional rainfall patterns.",
-      "status": "ungeprüft",
+      "title": "Hof-Entkoppler: DWA-A 138-1 Versickerung & Gebührenbefreiung",
+      "round": "Inversion Run 1",
+      "date": "25.09.2026",
+      "conceptDe": "Leitet Mieter- und Hofgemeinschaften durch den Vor-Ort-Sickerversuch (Loch-Infiltrationstest) zur kf-Wert-Ermittlung, berechnet Muldenmaße nach DWA-A 138-1 und generiert den offiziellen Erfassungsbogen zur Befreiung von der Niederschlagswassergebühr.",
+      "conceptEn": "Guides housing collectives through DIY on-site soil percolation tests to estimate kf values, calculates swale retention dimensions per DWA-A 138-1, and generates the official municipal stormwater fee exemption application.",
+      "status": "verengt",
       "suggestedVerdict": "gift",
-      "recipientDe": "Fachvereinigung Betriebs- und Regenwassernutzung (fbr) · Baubehörden",
-      "recipientEn": "Rainwater Management Association · Permaculture Design Groups",
+      "recipientDe": "Berliner Regenwasseragentur · BUND Schwammstadt-Initiative",
+      "recipientEn": "Berlin Rainwater Agency · Urban Sponge City Alliances",
       "sourceType": "Civic & Ecology",
-      "sourceDe": "DIN 1989 rainwater harvesting standards & KOSTRA heavy rainfall statistical tables",
-      "sourceEn": "DIN 1989 rainwater harvesting standards & regional heavy precipitation statistics",
-      "evidenceDe": "Bauherren dimensionieren Zisternen entweder viel zu klein (laufen im Mai leer) oder zu groß (faulendes Wasser durch mangelnden Überlauf).",
-      "evidenceEn": "Homeowners install incorrectly sized cisterns that either run dry in early spring or become stagnant due to insufficient overflow turnover.",
-      "reviewDate": "10/2026",
-      "problemDe": "Kostbares Trinkwasser wird für Klospülung und Rasensprengen vergeudet, während Starkregen die Kanalisation überflutet.",
-      "problemEn": "Drinking water is squandered on garden irrigation while unbuffered stormwater overwhelms municipal sewage systems.",
+      "sourceDe": "DWA-A 138-1 (10/2024), Berliner Wasserbetriebe Entwässerungssatzung § 10 & KOSTRA-DWD-2020",
+      "sourceEn": "DWA-A 138-1 infiltration standard (10/2024), municipal stormwater fee schedules & KOSTRA-DWD",
+      "evidenceDe": "RegenRechner der Regenwasseragentur setzt vorherige Fachbemessung voraus (desktop-only). Ingenieurtools (DWA Versickerungs-Expert, RAINPLANER) sind formelgetrieben; der Vor-Ort-Sickerversuch und der behördliche Änderungsantrag fehlen.",
+      "evidenceEn": "Berlin Rainwater Agency cost estimator explicitly requires prior external engineering sizing. Engineering software is form/CAD-driven; DIY percolation tests and direct fee exemption filing remain unaddressed.",
+      "reviewDate": "09/2027",
+      "problemDe": "Städtische Hinterhöfe bleiben betonierte Hitzeinseln und zahlen 1,84 €/m² Niederschlagswassergebühr, weil die hydrogeologische Versickerungsberechnung nach DWA-A 138-1 tausende Euro im Ingenieurbüro kostet.",
+      "problemEn": "Urban courtyards remain sealed concrete heat islands paying €1.84/m² stormwater fees because DWA-A 138-1 hydrogeological infiltration calculations require expensive engineering consultants.",
       "whyNowDe": [
-        "Statistische DWD-Niederschlagsreihen (KOSTRA) erlauben präzise Simulationen von Trockenperioden."
+        "DWA-A 138-1 im Oktober 2024 grundlegend aktualisiert; offene DWD-KOSTRA-Raster und Smartphone-Kameramessung der Versickerungsgeschwindigkeit im Probeschacht machen Fachgutachten im Kleingarten-/Hofmaßstab ersetzbar."
       ],
       "whyNowEn": [
-        "Open rainfall duration tables can simulate dry-spell water depletion curves with slider inputs."
+        "DWA-A 138-1 updated in October 2024; open KOSTRA-DWD precipitation grids and smartphone pit water drop timing allow commodity percolation testing without geotechnical consultants."
       ],
-      "firstStepTicketDe": "Dachflächen-Simulator mit Zisternen-Empfehlung (in Litern) und jährlicher Trinkwasserersparnis",
-      "firstStepTicketEn": "Roof catchment estimator calculating recommended tank volume (liters) and water utility savings",
+      "firstStepTicketDe": "Interaktiver Loch-Sickerversuchs-Timer mit kf-Wert-Schätzung, DWA-A 138-1 Muldenrechner und PDF-Export für die BWB-Änderungsanzeige",
+      "firstStepTicketEn": "Interactive percolation pit timer estimating kf values, sizing DWA-A 138-1 infiltration swales, and exporting municipal stormwater fee adjustment PDFs",
       "tags": [
         "Rainwater",
-        "Water Conservation",
-        "Civil Engineering",
-        "DIN Norm",
-        "Sustainability"
+        "Schwammstadt",
+        "DWA-A 138",
+        "Niederschlagswassergebühr",
+        "Entsiegelung",
+        "Civil Engineering"
       ]
     },
     {

@@ -547,3 +547,14 @@ Konsequenz für die Gemini-Lauf-Tabelle unten: „Orgelpfeifen-Bleifraß-Resonan
 |---|---|---|---|
 | **Gestalt-Prüfung** — Echtzeit-Sonifikation/Visualisierung bei Transkription historischer Tabellen zur Vermeidung von Doppel-Eingaben | `frei` | Problem ist bei DO IT (TU BS) benannt, keine Lösung gefunden | 09/2027 |
 | **Die Daten-Schicht** — Synchrone Transkriptions-Events für Citizen Science statt asynchron | `besetzt` | Transcribathons (Europeana) etablieren bereits dieses Format | – |
+
+---
+
+## Inversion Run 1 — 25.09.2026 (method: inversion, Hof-Entkoppler / Niederschlagswassergebühr)
+
+Systemanker: Kommunale Niederschlagswassergebührensatzung (z.B. BWB § 10) & DWA-A 138-1 (10/2024). Inversionsoperatoren: OP-2 (Citizen Shield), OP-3 (Layer Inversion), OP-4 (Vollzugslücke).
+
+| Idee | Urteil | Beleg (kurz) | Prüfen ab |
+|---|---|---|---|
+| **Hof-Entkoppler** (communal-rainwater-tank-balancer) — Vor-Ort-Sickerversuch, Muldenbemessung nach DWA-A 138-1 und automatische Gebührenbefreiung (Niederschlagswassergebühr) | `verengt` | [method: inversion] Empfänger zuerst: Berliner Regenwasseragentur betreibt den RegenRechner (Stand 2025, Desktop-only), verlangt jedoch explizit eine externe Fachbemessung im Vorfeld. Fachsoftware (DWA Versickerungs-Expert 6.0, itwh RW-Tools, RAINPLANER) und Bauteil-Rechner (ACO, Wavin) decken die DWA-A 138-1 (10/2024) rechnerisch ab, setzen aber manuelle kf-Wert-Eingaben und CAD voraus. US-Tools (EPA Stormwater Calculator, Ecopia) modellieren makroregional oder unterstützen Versorger bei Gebührenerhöhung per Luftbild. Die Lücke ist der Vor-Ort-Loch-Infiltrationstest am Smartphone + automatische Ausfüllung der behördlichen Änderungsanzeige (z.B. BWB Entwässerungssatzung § 10) zur Gebührenbefreiung. | 09/2027 |
+

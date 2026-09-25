@@ -131,6 +131,7 @@ Wo Ideen schnell sterben — vor dem Suchen als Vorfilter nutzen.
 | Handy als Schwingungs-/Geräuschmessgerät, Motorgeräusch-Diagnose | **dicht** — die Lücke ist der **Datensatz** für Haushaltsgeräte | Vibration, WiSER VIBE, Resonance, myFrequency, Carithm (Auto); Forschung DCASE/MIMII *(24.09.)* |
 | Bedenkenanmeldung / Baudokumentation | **dicht** | ZVSHK-Muster, PlanRadar, BauMaster, WEKA, cendas; BauAnalyst (automatisch aus dem LV, 03/2026); KI-Bautagebücher mit Sprache (HVNH AI, Hero) *(24.09.)* |
 | Gefahrstoffe in der Gebäudereinigung | **beim Empfänger selbst** | BG BAU: WINGIS (auch mobil), GISCODE, DGUV Regel 101-019. Frei nur die Kamera-Warnung vor dem Mischen — mit hohem Fehlerrisiko *(24.09.)* |
+| **Niederschlagswasser-Gebührenbefreiung & Hof-Versickerung (DWA-A 138-1)** | **verengt** (25.09.2026, method: inversion) | Berliner Regenwasseragentur (RegenRechner 2025: desktop-only, verlangt externe Vorabbemessung); Fachsoftware (DWA Versickerungs-Expert 6.0, itwh, RAINPLANER) formelgetrieben; Lücke: Vor-Ort-Sickerversuch per Smartphone + automatische BWB-Änderungsanzeige (§ 10) |
 
 **Faustregel, jetzt mit vier Runden Evidenz:** Wenn Endnutzer dafür zahlen würden oder eine Stadt es als Pressemitteilung verkaufen kann, existiert es. Frei ist, was ein Fachgremium als PDF veröffentlicht und niemand je in Software gegossen hat.
 **Neu:** Frei ist außerdem, was sich **nicht finanzieren lässt** — ohne Konto, ohne Bestand, ohne Wiederkehr. Solche Ideen existieren im Ausland regelmäßig als Marktplatz-Variante und nirgends als öffentliche. Die Restlücke ist dann die Trägerschaft, nicht die Funktion.
@@ -177,6 +178,7 @@ Wo Ideen schnell sterben — vor dem Suchen als Vorfilter nutzen.
 | Recheck Bruchlesen (vor dem Packen) | 23.09.2026 | 1 (`frei` → `verengt`, FractoDB) | – | 1 | – | – |
 | **9 (TischSchiedsrichter, mitgebrachte Gemini-Idee)** | 24.09.2026 | 1 (+ 1 Prämisse widerlegt, 1 Konkurrent nicht auffindbar, 1 Empfängerprüfung) | 0 | 1 (dünn, nicht gepackt) | 0 | 0 |
 | Abdeckungs-Nachprüfung (8 Dosen ohne Protokollzeile, 6 davon aus dem Katalog) | 24.09.2026 | 8 (7 neu gesucht, 1 nur nachgetragen) | 0 | 7 | 0 | 1 (→ entsorgt) |
+| **Inversion Run 1 (Hof-Entkoppler)** | **25.09.2026** | **1** | **0** | **1** | **0** | **0** |
 
 Runde 4 (nur Researcher #1, 3 Ideen): **0 % frei + verengt.** Kein Abgleich mit dem anderen ideenrunde-Researcher; nicht mit Runde 3 vergleichbar, weil dort zwei Methoden und vier Sessions liefen. Der Altbau-Thermal-Recheck (`verengt` bestätigt) steht nicht in dieser Zeile.
 
@@ -382,3 +384,10 @@ Erste Runde, die mit einer **verschenkten** Dose als Ausgangspunkt arbeitet. Das
 - **Gelernt:** Transkriptions-Schnittstellen (Bisoziation "Gestalt-Prüfung") sind ein guter Hebel, weil viele Citizen Science Projekte (Typ B) massiv analoge Tabellen erfassen und an der Mehrfacheingabe zur Qualitätssicherung ersticken.
 - **Fehler:** Synchrone Events (Die Daten-Schicht) als neue Idee zu werten; Transcribathons sind in der Nische bereits gut etabliert.
 - **Nächstes Mal:** Typ-D-Quellen durchsuchen, um Forschung, die nur als Paper existiert, in ein Citizen Science Werkzeug zu verwandeln.
+
+### Inversion Run 1 — 25.09.2026 (Hof-Entkoppler / Niederschlagswassergebühr)
+- **Erledigt, was seit Runde 8 als „nächstes Mal" stand:** Zweiter Gebührenwerk-Anker („die Preisleiter steht falsch herum", § 2) eingelöst. BWB-Satzung verlangt 1,84 €/m² pro Jahr für versiegelte Flächen. Entsiegelung spart die Gebühr, scheitert aber an der DWA-A 138-1 Versickerungsberechnung im Ingenieurbüro (1.500 €).
+- **Gelernt: Die Lücke stand auf der Website des Empfängers.** Berliner Regenwasseragentur betreibt den *RegenRechner* (Stand 2025), schließt sich aber für mobile Laien selbst aus: desktop-only und setzt ausdrücklich eine „vorherige Bemessung der Maßnahme" voraus. Die Fachsoftware (DWA Versickerungs-Expert 6.0, itwh, RAINPLANER) setzt Expertenparameter (kf-Wert, CAD) voraus. Die Lücke ist genau die Brücke: **Vor-Ort-Lochversuch am Smartphone $\to$ Muldenmaße nach DWA-A 138-1 $\to$ fertige BWB-Änderungsanzeige (§ 10).**
+- **Fehler:** Die Idee stand als generischer „Zisternen-Rechner" (`communal-rainwater-tank-balancer`) mit `status: 'ungeprüft'` im Katalog. Erst die Inversion vom Wassertank zur **Gebührenbefreiung per Entsiegelungsnachweis** hat den Kern freigelegt.
+- **Nächstes Mal:** (1) Dosenentwurf für Hof-Entkoppler packen oder als Geschenk vorbereiten. (2) Zweite Inversion auf Trinkwasserverordnung 2026 (Bleileitungsverbot ab 12.01.2026) oder EU-Ecodesign-Reparaturpässe.
+
