@@ -27,6 +27,19 @@ export interface BoxCountResult {
   counts: number[];
 }
 
+export interface RenderableVoxel {
+  x: number;
+  y: number;
+  z: number;
+  phi: number;
+  temp: number;
+  orientHue: number;
+  zoningStep: number;
+  curvature: number;
+  normal: [number, number, number];
+  isSurface: boolean;
+}
+
 export interface SimulationMetrics {
   fractalDimension: number;
   activeParticles: number;
@@ -42,6 +55,8 @@ export class KristallEngine {
   private phiGrid: Float32Array; // Phase field [0, 1]
   private tempGrid: Float32Array; // Thermal undercooling field
   private orientationGrid: Float32Array; // Quaternions or Euler angles (4 floats per voxel)
+  private birthStepGrid: Uint16Array; // Birth iteration for petrological zoning
+  private nextPhiGrid: Float32Array; // Reusable buffer for zero-alloc relaxation
   private occupiedCount: number = 0;
   private stepCount: number = 0;
 
@@ -49,7 +64,9 @@ export class KristallEngine {
     this.config = config;
     const totalCells = config.gridSize * config.gridSize * config.gridSize;
     this.phiGrid = new Float32Array(totalCells);
+    this.nextPhiGrid = new Float32Array(totalCells);
     this.tempGrid = new Float32Array(totalCells);
+    this.birthStepGrid = new Uint16Array(totalCells);
     this.orientationGrid = new Float32Array(totalCells * 4);
 
     this.resetWithSeed(config.seed);
@@ -59,7 +76,9 @@ export class KristallEngine {
     this.config.seed = seedStr;
     const totalCells = this.config.gridSize * this.config.gridSize * this.config.gridSize;
     this.phiGrid.fill(0);
+    this.nextPhiGrid.fill(0);
     this.tempGrid.fill(this.config.undercooling);
+    this.birthStepGrid.fill(0);
     this.orientationGrid.fill(0);
     this.occupiedCount = 0;
     this.stepCount = 0;
@@ -70,6 +89,7 @@ export class KristallEngine {
     const centerIdx = mid + mid * g + mid * g * g;
 
     this.phiGrid[centerIdx] = 1.0;
+    this.birthStepGrid[centerIdx] = 1;
     this.occupiedCount = 1;
 
     // Slight initial seed facets
@@ -82,8 +102,21 @@ export class KristallEngine {
       for (const [dx, dy, dz] of offsets) {
         const idx = (mid + dx) + (mid + dy) * g + (mid + dz) * g * g;
         this.phiGrid[idx] = 0.8;
+        this.birthStepGrid[idx] = 1;
       }
     }
+  }
+
+  public updateConfig(partial: Partial<SimulationConfig>): void {
+    this.config = { ...this.config, ...partial };
+  }
+
+  public getStepCount(): number {
+    return this.stepCount;
+  }
+
+  public getConfig(): Readonly<SimulationConfig> {
+    return this.config;
   }
 
   /**
@@ -151,6 +184,7 @@ export class KristallEngine {
           if (isNeighborSolid) {
             if (Math.random() <= this.config.stickiness) {
               this.phiGrid[idx] = 1.0;
+              this.birthStepGrid[idx] = this.stepCount + 1;
               this.occupiedCount++;
               break;
             }
@@ -165,7 +199,8 @@ export class KristallEngine {
    */
   private stepKobayashiPhaseField(): void {
     const g = this.config.gridSize;
-    const nextPhi = new Float32Array(this.phiGrid.length);
+    const nextPhi = this.nextPhiGrid;
+    nextPhi.fill(0);
     const dt = 0.008;
     const dx = 0.03;
     const tau = 0.0003;
@@ -213,12 +248,87 @@ export class KristallEngine {
 
           // Allen-Cahn equation
           const dphi = (eps * eps * laplacianPhi + phi * (1.0 - phi) * (phi - 0.5 + m)) / tau;
-          nextPhi[idx] = Math.max(0, Math.min(1, phi + dt * dphi));
+          const updatedPhi = Math.max(0, Math.min(1, phi + dt * dphi));
+          nextPhi[idx] = updatedPhi;
+
+          // Latent heat dissipation: freezing releases latent heat
+          if (updatedPhi > phi) {
+            this.tempGrid[idx] = Math.min(1.0, this.tempGrid[idx] + 0.15 * (updatedPhi - phi));
+            if (updatedPhi >= 0.5 && phi < 0.5 && this.birthStepGrid[idx] === 0) {
+              this.birthStepGrid[idx] = this.stepCount + 1;
+              this.occupiedCount++;
+            }
+          }
         }
       }
     }
 
-    this.phiGrid = nextPhi;
+    // Copy buffer
+    this.phiGrid.set(nextPhi);
+  }
+
+  /**
+   * Extracts visible renderable voxels with full normal, orientation, curvature, and zoning attributes
+   */
+  public getRenderableVoxels(sliceZ?: number): RenderableVoxel[] {
+    const g = this.config.gridSize;
+    const voxels: RenderableVoxel[] = [];
+    const maxZ = sliceZ !== undefined ? Math.min(g - 1, sliceZ) : g - 1;
+
+    for (let z = 1; z <= maxZ; z++) {
+      for (let y = 1; y < g - 1; y++) {
+        for (let x = 1; x < g - 1; x++) {
+          const idx = x + y * g + z * g * g;
+          const phi = this.phiGrid[idx];
+          if (phi < 0.35) continue;
+
+          // Check if surface voxel (at least one neighboring voxel has phi < 0.5)
+          const isSurface =
+            this.phiGrid[x + 1 + y * g + z * g * g] < 0.5 ||
+            this.phiGrid[x - 1 + y * g + z * g * g] < 0.5 ||
+            this.phiGrid[x + (y + 1) * g + z * g * g] < 0.5 ||
+            this.phiGrid[x + (y - 1) * g + z * g * g] < 0.5 ||
+            this.phiGrid[x + y * g + (z + 1) * g * g] < 0.5 ||
+            this.phiGrid[x + y * g + (z - 1) * g * g] < 0.5 ||
+            (sliceZ !== undefined && z === maxZ);
+
+          if (!isSurface && (sliceZ === undefined || z < maxZ)) {
+            continue;
+          }
+
+          const nx = (this.phiGrid[x - 1 + y * g + z * g * g] - this.phiGrid[x + 1 + y * g + z * g * g]);
+          const ny = (this.phiGrid[x + (y - 1) * g + z * g * g] - this.phiGrid[x + (y + 1) * g + z * g * g]);
+          const nz = (this.phiGrid[x + y * g + (z - 1) * g * g] - this.phiGrid[x + y * g + (z + 1) * g * g]);
+          const len = Math.hypot(nx, ny, nz) || 1;
+
+          // Crystallographic orientation hue
+          let orientHue = 0;
+          if (this.config.symmetry === 'cubic') {
+            const angle = Math.atan2(ny, nx);
+            orientHue = (Math.abs(nx / len) * 120 + Math.abs(ny / len) * 240 + Math.abs(nz / len) * 360) % 360;
+          } else {
+            const angle = Math.atan2(ny, nx);
+            orientHue = ((angle * 3 / Math.PI) * 60 + 360) % 360;
+          }
+
+          const curvature = Math.abs(nx + ny + nz) / len;
+
+          voxels.push({
+            x,
+            y,
+            z,
+            phi,
+            temp: this.tempGrid[idx],
+            orientHue,
+            zoningStep: this.birthStepGrid[idx],
+            curvature,
+            normal: [nx / len, ny / len, nz / len],
+            isSurface
+          });
+        }
+      }
+    }
+    return voxels;
   }
 
   /**

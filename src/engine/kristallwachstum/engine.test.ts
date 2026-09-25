@@ -54,4 +54,72 @@ describe('KristallEngine: Hybrid DLA + Kobayashi Phase-Field', () => {
     expect(stl.includes('endfacet')).toBe(true);
     expect(stl.endsWith('endsolid Kristallwachstum3D_K3D-TEST-001\n')).toBe(true);
   });
+
+  it('extracts renderable surface voxels and respects slicing plane', () => {
+    const engine = new KristallEngine(defaultConfig);
+    engine.step(120, 2);
+
+    const allVoxels = engine.getRenderableVoxels();
+    expect(allVoxels.length).toBeGreaterThan(0);
+    const firstVoxel = allVoxels[0];
+    expect(firstVoxel).toHaveProperty('x');
+    expect(firstVoxel).toHaveProperty('y');
+    expect(firstVoxel).toHaveProperty('z');
+    expect(firstVoxel).toHaveProperty('phi');
+    expect(firstVoxel).toHaveProperty('orientHue');
+    expect(firstVoxel).toHaveProperty('normal');
+    expect(firstVoxel.normal.length).toBe(3);
+
+    // Test slicing plane (cut off top half of the grid)
+    const slicedVoxels = engine.getRenderableVoxels(16);
+    expect(slicedVoxels.every((v) => v.z <= 16)).toBe(true);
+  });
+
+  it('supports dynamic config update without breaking state', () => {
+    const engine = new KristallEngine(defaultConfig);
+    engine.updateConfig({ anisotropy: 0.08, undercooling: 0.8 });
+    const cfg = engine.getConfig();
+    expect(cfg.anisotropy).toBe(0.08);
+    expect(cfg.undercooling).toBe(0.8);
+    expect(cfg.seed).toBe('K3D-TEST-001');
+  });
+
+  it('completes 50 iterations of Kobayashi phase-field relaxation without numerical blowup (Ticket 1 DoD)', () => {
+    const engine = new KristallEngine(defaultConfig);
+    // Initial DLA nucleation seed
+    engine.step(200, 0);
+    const initialVoxels = engine.getMetrics().solidVoxels;
+
+    // Run 50 continuous iterations of Kobayashi phase-field relaxation
+    engine.step(0, 50);
+
+    const metricsAfter50 = engine.getMetrics();
+    expect(metricsAfter50.solidVoxels).toBeGreaterThanOrEqual(initialVoxels);
+    // Fractal dimension must be physically plausible (1.85 <= D_f <= 2.85)
+    expect(metricsAfter50.fractalDimension).toBeGreaterThanOrEqual(1.85);
+    expect(metricsAfter50.fractalDimension).toBeLessThanOrEqual(2.85);
+    expect(metricsAfter50.isWatertight).toBe(true);
+
+    // Phi values in the grid must remain strictly within [0, 1]
+    const phiGrid = engine.getPhiGrid();
+    for (let i = 0; i < phiGrid.length; i++) {
+      expect(phiGrid[i]).toBeGreaterThanOrEqual(0.0);
+      expect(phiGrid[i]).toBeLessThanOrEqual(1.0);
+    }
+  });
+
+  it('WebGPUKristallPipeline gracefully detects support and provides safe CPU fallback', async () => {
+    const { WebGPUKristallPipeline } = await import('./webgpuPipeline');
+    const pipeline = new WebGPUKristallPipeline();
+    const isSupported = WebGPUKristallPipeline.isWebGPUSupported();
+    const initialized = await pipeline.initialize(32);
+
+    const status = pipeline.getStatus();
+    expect(status.supported).toBe(isSupported);
+    if (!isSupported) {
+      expect(initialized).toBe(false);
+      expect(status.active).toBe(false);
+    }
+    pipeline.dispose();
+  });
 });

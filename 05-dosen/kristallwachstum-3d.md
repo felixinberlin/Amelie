@@ -31,12 +31,14 @@ Gleichzeitig leidet die Creative-Coding- und Maker-Szene an einem doppelten Bruc
 
 - **Stufe 1 (WebGPU DLA-Keimbildung):** Sphärische Partikelinjektion mit analytischer Quartic-Solver-Driftkorrektur (nach Mark Stock) gegen Artefakte. Orientierungs-SSBO speichert lokale Kristallgitterachsen pro Kristallit.
 - **Stufe 2 (Kobayashi Phasenfeld-Relaxation):** Das DLA-Skelett initialisiert das Phasenfeld $\phi$. Diskrete Allen-Cahn-Schritte mit anisotroper Grenzflächenenergie glätten Kanten, simulieren thermische Unterkühlung und bilden kristallographische Trachten (kubisch, hexagonal) heraus.
-- **Stufe 3 (9 Didaktische Gefügelinsen):** Umschaltbare wissenschaftliche Analyseebenen:
-  - `MELT`: Phasengrenze Schmelze/Festkörper.
+- **Stufe 3 (Wissenschaftliche Gefügelinsen & 3D-Schnitt):** Umschaltbare didaktische Analyseebenen mit interaktiver 3D-Kamera und Schnittebene:
   - `ORIENT`: Kristallorientierung als Inverse-Pole-Figure (IPF) Falschfarbenkarte.
+  - `MELT`: Phasenordnungsparameter $\phi$ (Grenzfläche Schmelze/Festkörper).
   - `THERM`: Lokales Temperatur- und Übersättigungsfeld samt latenter Schmelzwärme.
   - `CURV`: Mittlere Oberflächenkrümmung und Gibbs-Thomson-Effekt.
-  - `SEM`: Virtuelle Rasterelektronenmikroskopie-Beleuchtung.
+  - `SEM`: Virtuelle Rasterelektronenmikroskopie-Beleuchtung (BSE-Kontrast).
+  - `ZONING`: Petrologische Wachstumszonierung (Kristallisationsringe nach Entstehungszeitpunkt).
+  - `Z-SLICE`: Interaktive Schnittebene zur Inspektion innerer Hohlräume (Trichterwachstum).
 - **Stufe 4 (Echtzeit-Metriken & Print-Rezept):**
   - Live-Berechnung der fraktalen Dimension $D_f$ via 3D-Box-Counting.
   - Physische Druckschranken (Mindest-Astdurchmesser, Überhangwinkel) als aktive Wachstumsbegrenzer im Solver.
@@ -49,15 +51,15 @@ Gleichzeitig leidet die Creative-Coding- und Maker-Szene an einem doppelten Bruc
 - [Kapitel 1: Didaktische & Physikalische Recherche](../02-recherche/kristallwachstum-3d-didaktik-physik.md) — Analyse von WebGPU-DLA (`scttfrdmn`, `markstock/dla-nd`), Phasenfeld-Solidification (`fronkt/solidify`, Kobayashi 1993) und der 4-Stufen-Architektur.
 - [Kapitel 2: Open-Source-Scaffolding](../07-demos/kristallwachstum-3d/README.md) — Konkrete WGSL-Shaderkerne (`shaders.wgsl.ts`), DLA-Driftkorrektur, Box-Counting und STL-Export.
 
-## Erster Schritt
+## Umsetzungsstand & Nächster Schritt
 
-**Ticket: Hybride 2D/3D-Dendriten-Keimung in WebGPU mit $D_f$-Messung.**
-
-1. WebGPU Compute Pipeline mit Partikel-Array und Orientierungsfeld aufsetzen.
-2. 50 Iterationen Kobayashi-Phasenfeld-Glättung über das DLA-Aggregat rechnen.
-3. Berechnete fraktale Dimension $D_f$ live im HUD einblenden und mit theoretischen Werten (2D: ~1,71; 3D: ~2,3–2,5) vergleichen.
-
-**Fertig, wenn:** Ein Seed reproduzierbar vom fraktalen Keim zur hexagonalen/kubischen Dendrite wächst, die fraktale Dimension numerisch stabil ausgegeben wird und das Mesh wasserdicht als STL exportiert werden kann.
+- **Ticket 01 (Abgeschlossen & Verifiziert):** Hybride DLA-Brownsche Keimung gekoppelt mit Kobayashi-Phasenfeld-Relaxation, 3D-Box-Counting ($D_f$-Messung im Vergleich zur Literatur), interaktiver 3D-Kamera, Z-Schnitt-Ebene, 6 Gefügelinsen und wasserdichtem STL-Export (`src/engine/kristallwachstum/` & `KristallwachstumSimulator.tsx`).
+- **Ticket 02 (Nächster Schritt): GPU-Marching-Cubes Isosurface-Extraktion & Mehrfarbiger 3MF-Farbexport.**
+  1. Marching-Cubes-Kerne zur glatten Facettenrekonstruktion bei $\phi = 0{,}5$ ohne Treppenartefakte.
+  2. Generierung eines validen 3MF-OPC/ZIP-Archivs mit `<colorgroup>`-Materialkanälen.
+  3. Direktes Backen der EBSD-IPF-Orientierungen und petrologischen Wachstumszonierungen (`ZONING`) als Farbkanäle für Multi-Material-3D-Drucker (z. B. Bambu Lab AMS / Prusa MMU).
+  4. **Fertig, wenn:** Das exportierte 3MF-Archiv von PrusaSlicer/Bambu Studio geladen wird und die internen Wachstumsringe als separate Extruder-Farben fehlerfrei druckbar sind.
+  - Detail-Ticket: [07-demos/kristallwachstum-3d/ticket-02-gpu-marching-cubes-3mf.md](../07-demos/kristallwachstum-3d/ticket-02-gpu-marching-cubes-3mf.md)
 
 ## Wo es kippt
 

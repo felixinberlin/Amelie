@@ -345,7 +345,7 @@ In der universitären Didaktik werden Nichtgleichgewichts-Kristallisation, Dendr
 
 Kristallwachstum 3D schließt diese Lücke direkt im Browser über WebGPU:
 1. Hybride Physik: Brownsche DLA-Partikelkeimung mit analytischer Driftkorrektur, gekoppelt mit dem Kobayashi-Phasenfeld-Modell (1993) für unterkühlte Schmelzen auf volumetrischen 3D-Gittern.
-2. Didaktische Gefügelinsen: Echtzeit-Umschaltung zwischen 5 Analyse-Ebenen (Phasenordnungsparameter φ, EBSD-IPF Orientierungsfeld, thermische Unterkühlung ΔT mit latenter Wärme, Gibbs-Thomson-Krümmung und virtuelles Rasterelektronenmikroskop).
+2. Didaktische Gefügelinsen & 3D-Schnitt: 3D-Orbit mit interaktiver Schnitt-Ebene (Z-Slice zur Begutachtung von Hohlräumen und Trichterwachstum) sowie 6 wissenschaftliche Analyse-Ebenen (EBSD-IPF Orientierungsfeld, Phasenordnungsparameter φ, thermische Unterkühlung ΔT mit latenter Wärme, Gibbs-Thomson-Krümmung, virtuelles Rasterelektronenmikroskop und petrologische Wachstumszonierung).
 3. Quantitative Didaktik & 3D-Druck: Live-Messung der fraktalen Dimension (D_f) über 3D-Box-Counting, deterministische Rezept-Hashes (K3D-...) und direkter Export wasserdichter, stützfreier Manifold-Meshes (3MF/STL) für den 3D-Druck im Hörsaal.
 
 Ein kompaktes Dokument mit Architektur, physikalischer Herleitung und den Bruchstellen:
@@ -369,7 +369,7 @@ In higher education, non-equilibrium crystallization, dendritic growth, and inte
 
 3D Crystal Growth bridges this gap directly in the browser via WebGPU:
 1. Hybrid physics: Brownian DLA nucleation with analytic drift bias correction coupled to the Kobayashi (1993) phase-field solidification model on volumetric 3D grids.
-2. Educational microstructure lenses: Real-time toggling across 5 scientific views (phase order parameter φ, EBSD-IPF orientation field, thermal undercooling ΔT with latent heat release, Gibbs-Thomson curvature, and virtual SEM backscatter).
+2. Educational microstructure lenses & 3D cross-section: 3D orbit with interactive cross-section slicing (Z-slice for inspecting internal voids and hopper growth) and 6 scientific views (EBSD-IPF orientation field, phase order parameter φ, thermal undercooling ΔT with latent heat release, Gibbs-Thomson curvature, virtual SEM backscatter, and petrological growth zoning).
 3. Quantitative didactics & 3D printing: Real-time 3D box-counting calculation of the fractal dimension (D_f), deterministic recipe hashes (K3D-...), and direct export of watertight, support-free manifold meshes (3MF/STL).
 
 A concise dossier with architecture, physics derivation, and points of failure:

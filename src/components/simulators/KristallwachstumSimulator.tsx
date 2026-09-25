@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useMemo } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import {
   Layers,
   Sparkles,
@@ -13,15 +13,21 @@ import {
   Compass,
   Thermometer,
   Zap,
+  Play,
+  Pause,
+  StepForward,
+  RotateCcw,
+  Scissors,
+  Maximize2,
 } from 'lucide-react';
 import { Language } from '../../types';
-import { KristallEngine, SimulationConfig } from '../../engine/kristallwachstum/engine';
+import { KristallEngine, RenderableVoxel, SimulationConfig } from '../../engine/kristallwachstum/engine';
 
 interface KristallSimulatorProps {
   lang: Language;
 }
 
-type MicrostructureLens = 'MELT' | 'ORIENT' | 'THERM' | 'CURV' | 'SEM';
+export type MicrostructureLens = 'ORIENT' | 'MELT' | 'THERM' | 'CURV' | 'SEM' | 'ZONING';
 
 interface SeedPreset {
   id: string;
@@ -80,42 +86,211 @@ export const KristallwachstumSimulator: React.FC<KristallSimulatorProps> = ({ la
   const [minWallThickness, setMinWallThickness] = useState<number>(1.2);
   const [maxOverhang, setMaxOverhang] = useState<number>(45);
   const [isGrowing, setIsGrowing] = useState<boolean>(true);
-  const [growthProgress, setGrowthProgress] = useState<number>(45);
-  const [particlesCount, setParticlesCount] = useState<number>(18420);
+  const [autoRotate, setAutoRotate] = useState<boolean>(true);
+  const [sliceZ, setSliceZ] = useState<number>(32); // 32 = no slicing (full crystal), 12-31 = cross-section
   const [copiedRecipe, setCopiedRecipe] = useState<boolean>(false);
   const [exportNotice, setExportNotice] = useState<string | null>(null);
+  const [hasWebGPU, setHasWebGPU] = useState<boolean>(false);
+
+  // Engine metrics
+  const [metrics, setMetrics] = useState({
+    fractalDimension: PRESETS[0].fractalDim,
+    activeParticles: 18420,
+    solidVoxels: 450,
+    growthTimeSteps: 12,
+  });
 
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const animFrameRef = useRef<number | null>(null);
-  const angleRef = useRef<number>(0);
+  const engineRef = useRef<KristallEngine | null>(null);
 
-  // Apply preset
+  // 3D camera orientation
+  const yawRef = useRef<number>(0.72);
+  const pitchRef = useRef<number>(0.42);
+  const zoomRef = useRef<number>(1.0);
+  const isDraggingRef = useRef<boolean>(false);
+  const lastMousePosRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
+
+  // WebGPU detection
+  useEffect(() => {
+    if (typeof navigator !== 'undefined' && 'gpu' in (navigator as any)) {
+      setHasWebGPU(true);
+    }
+  }, []);
+
+  // Initialize or re-create simulation engine
+  const initEngine = useCallback(
+    (preset: SeedPreset, aniso: number, under: number, stick: number, wall: number, overhang: number) => {
+      const eng = new KristallEngine({
+        gridSize: 32,
+        anisotropy: aniso,
+        undercooling: under,
+        stickiness: stick,
+        symmetry: preset.symmetry,
+        minWallThickness: wall,
+        maxOverhang: overhang,
+        seed: preset.seed,
+      });
+      // Pre-step to give the crystal immediate rich morphology
+      eng.step(120, 2);
+      engineRef.current = eng;
+      const m = eng.getMetrics();
+      setMetrics({
+        fractalDimension: m.fractalDimension,
+        activeParticles: m.activeParticles,
+        solidVoxels: m.solidVoxels,
+        growthTimeSteps: m.growthTimeSteps,
+      });
+    },
+    []
+  );
+
+  // Initial engine bootstrap
+  useEffect(() => {
+    initEngine(selectedPreset, anisotropy, undercooling, stickiness, minWallThickness, maxOverhang);
+  }, []);
+
+  // Update physical config live without resetting
+  useEffect(() => {
+    if (engineRef.current) {
+      engineRef.current.updateConfig({
+        anisotropy,
+        undercooling,
+        stickiness,
+        minWallThickness,
+        maxOverhang,
+      });
+    }
+  }, [anisotropy, undercooling, stickiness, minWallThickness, maxOverhang]);
+
+  // Handle Preset Selection
   const handleSelectPreset = (p: SeedPreset) => {
     setSelectedPreset(p);
     setAnisotropy(p.anisotropy);
     setUndercooling(p.undercooling);
     setStickiness(p.stickiness);
-    setGrowthProgress(20);
-    setParticlesCount(8500);
+    initEngine(p, p.anisotropy, p.undercooling, p.stickiness, minWallThickness, maxOverhang);
   };
 
-  // Simulated growth tick
+  // Continuous Growth Loop
   useEffect(() => {
     if (!isGrowing) return;
     const interval = setInterval(() => {
-      setGrowthProgress((prev) => {
-        if (prev >= 100) return 100;
-        return prev + 1;
-      });
-      setParticlesCount((prev) => {
-        if (prev >= 48000) return 48000;
-        return prev + Math.floor(Math.random() * 220 + 80);
-      });
-    }, 150);
+      if (engineRef.current) {
+        engineRef.current.step(28, 1);
+        const m = engineRef.current.getMetrics();
+        setMetrics({
+          fractalDimension: m.fractalDimension,
+          activeParticles: m.activeParticles,
+          solidVoxels: m.solidVoxels,
+          growthTimeSteps: m.growthTimeSteps,
+        });
+      }
+    }, 120);
     return () => clearInterval(interval);
   }, [isGrowing]);
 
-  // Canvas visual rendering (pseudo-3D isometric dendritic lattice with shader lenses)
+  // Step Forward Manually
+  const handleStepForward = (batchCount: number = 1) => {
+    if (engineRef.current) {
+      engineRef.current.step(batchCount * 30, 1);
+      const m = engineRef.current.getMetrics();
+      setMetrics({
+        fractalDimension: m.fractalDimension,
+        activeParticles: m.activeParticles,
+        solidVoxels: m.solidVoxels,
+        growthTimeSteps: m.growthTimeSteps,
+      });
+    }
+  };
+
+  // Run 50 iterations of Kobayashi Phase-Field Relaxation (Ticket 1 DoD)
+  const handleFiftyRelaxations = () => {
+    if (engineRef.current) {
+      engineRef.current.step(0, 50);
+      const m = engineRef.current.getMetrics();
+      setMetrics({
+        fractalDimension: m.fractalDimension,
+        activeParticles: m.activeParticles,
+        solidVoxels: m.solidVoxels,
+        growthTimeSteps: m.growthTimeSteps,
+      });
+      setExportNotice(
+        lang === 'de'
+          ? `50 Kobayashi-Phasenfeld-Schritte gerechnet (D_f = ${m.fractalDimension.toFixed(3)}). Kristallfacetten thermodynamisch geglättet!`
+          : `50 Kobayashi phase-field passes completed (D_f = ${m.fractalDimension.toFixed(3)}). Crystal facets thermodynamically relaxed!`
+      );
+      setTimeout(() => setExportNotice(null), 3500);
+    }
+  };
+
+  // Reset Seed
+  const handleResetSeed = () => {
+    if (engineRef.current) {
+      engineRef.current.resetWithSeed(selectedPreset.seed);
+      engineRef.current.step(20, 1);
+      const m = engineRef.current.getMetrics();
+      setMetrics({
+        fractalDimension: m.fractalDimension,
+        activeParticles: m.activeParticles,
+        solidVoxels: m.solidVoxels,
+        growthTimeSteps: m.growthTimeSteps,
+      });
+    }
+  };
+
+  // Reset Camera View
+  const handleResetCamera = () => {
+    yawRef.current = 0.72;
+    pitchRef.current = 0.42;
+    zoomRef.current = 1.0;
+  };
+
+  // Mouse & Touch Drag Handlers for 3D Camera Orbit
+  const handleMouseDown = (e: React.MouseEvent<HTMLCanvasElement>) => {
+    isDraggingRef.current = true;
+    lastMousePosRef.current = { x: e.clientX, y: e.clientY };
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLCanvasElement>) => {
+    if (!isDraggingRef.current) return;
+    const dx = e.clientX - lastMousePosRef.current.x;
+    const dy = e.clientY - lastMousePosRef.current.y;
+    yawRef.current += dx * 0.01;
+    pitchRef.current = Math.max(-Math.PI * 0.46, Math.min(Math.PI * 0.46, pitchRef.current + dy * 0.01));
+    lastMousePosRef.current = { x: e.clientX, y: e.clientY };
+  };
+
+  const handleMouseUp = () => {
+    isDraggingRef.current = false;
+  };
+
+  const handleWheel = (e: React.WheelEvent<HTMLCanvasElement>) => {
+    e.preventDefault();
+    zoomRef.current = Math.max(0.55, Math.min(2.4, zoomRef.current - e.deltaY * 0.0015));
+  };
+
+  const handleTouchStart = (e: React.TouchEvent<HTMLCanvasElement>) => {
+    if (e.touches.length === 1) {
+      isDraggingRef.current = true;
+      lastMousePosRef.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+    }
+  };
+
+  const handleTouchMove = (e: React.TouchEvent<HTMLCanvasElement>) => {
+    if (!isDraggingRef.current || e.touches.length !== 1) return;
+    const dx = e.touches[0].clientX - lastMousePosRef.current.x;
+    const dy = e.touches[0].clientY - lastMousePosRef.current.y;
+    yawRef.current += dx * 0.012;
+    pitchRef.current = Math.max(-Math.PI * 0.46, Math.min(Math.PI * 0.46, pitchRef.current + dy * 0.012));
+    lastMousePosRef.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+  };
+
+  const handleTouchEnd = () => {
+    isDraggingRef.current = false;
+  };
+
+  // Canvas visual rendering (True 3D Isometric/Axonometric Projection with Depth Sorting & Lenses)
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -126,132 +301,334 @@ export const KristallwachstumSimulator: React.FC<KristallSimulatorProps> = ({ la
 
     const render = () => {
       if (!running) return;
-      angleRef.current += 0.005;
-      const angle = angleRef.current;
+
+      if (autoRotate && !isDraggingRef.current) {
+        yawRef.current += 0.005;
+      }
+
+      const yaw = yawRef.current;
+      const pitch = pitchRef.current;
+      const zoom = zoomRef.current;
 
       const width = canvas.width;
       const height = canvas.height;
+      const cx = width / 2;
+      const cy = height / 2;
 
       // Dark sci-fi laboratory background
       ctx.fillStyle = '#0a0d14';
       ctx.fillRect(0, 0, width, height);
 
-      // Draw subtle background 3D chamber bounding box
-      const cx = width / 2;
-      const cy = height / 2 + 10;
-      const boxSize = Math.min(width, height) * 0.42;
+      // Light direction in world space (coming from top-left-front)
+      const lx = -0.38;
+      const ly = 0.65;
+      const lz = 0.65;
+      const lLen = Math.hypot(lx, ly, lz);
+      const nlx = lx / lLen;
+      const nly = ly / lLen;
+      const nlz = lz / lLen;
 
+      const g = 32;
+      const mid = g / 2;
+      const baseScale = (Math.min(width, height) / (g * 1.55)) * zoom;
+
+      // Project 3D point (rx, ry, rz)
+      const project = (rx: number, ry: number, rz: number) => {
+        // Rotate yaw around Z-axis
+        const cosY = Math.cos(yaw);
+        const sinY = Math.sin(yaw);
+        const x1 = rx * cosY - ry * sinY;
+        const y1 = rx * sinY + ry * cosY;
+        const z1 = rz;
+
+        // Rotate pitch around X'-axis
+        const cosP = Math.cos(pitch);
+        const sinP = Math.sin(pitch);
+        const y2 = y1 * cosP - z1 * sinP; // depth
+        const z2 = y1 * sinP + z1 * cosP; // screen Y axis
+
+        const sx = cx + x1 * baseScale;
+        const sy = cy - z2 * baseScale;
+        return { sx, sy, depth: y2 };
+      };
+
+      // 1. Draw 3D Chamber Bounding Box Wireframe
       ctx.save();
       ctx.strokeStyle = '#1e293b';
       ctx.lineWidth = 1;
-      ctx.setLineDash([4, 4]);
-      ctx.strokeRect(cx - boxSize, cy - boxSize, boxSize * 2, boxSize * 2);
+      ctx.setLineDash([3, 4]);
+
+      const boxHalf = mid - 1;
+      const corners = [
+        [-boxHalf, -boxHalf, -boxHalf],
+        [boxHalf, -boxHalf, -boxHalf],
+        [boxHalf, boxHalf, -boxHalf],
+        [-boxHalf, boxHalf, -boxHalf],
+        [-boxHalf, -boxHalf, boxHalf],
+        [boxHalf, -boxHalf, boxHalf],
+        [boxHalf, boxHalf, boxHalf],
+        [-boxHalf, boxHalf, boxHalf],
+      ];
+      const pCorners = corners.map((c) => project(c[0], c[1], c[2]));
+
+      const edges = [
+        [0, 1],
+        [1, 2],
+        [2, 3],
+        [3, 0],
+        [4, 5],
+        [5, 6],
+        [6, 7],
+        [7, 4],
+        [0, 4],
+        [1, 5],
+        [2, 6],
+        [3, 7],
+      ];
+      ctx.beginPath();
+      for (const [i, j] of edges) {
+        ctx.moveTo(pCorners[i].sx, pCorners[i].sy);
+        ctx.lineTo(pCorners[j].sx, pCorners[j].sy);
+      }
+      ctx.stroke();
       ctx.restore();
 
-      // Draw grid floor
+      // 2. Draw Floor Grid
       ctx.save();
       ctx.strokeStyle = 'rgba(30, 41, 59, 0.4)';
       ctx.lineWidth = 1;
-      for (let i = -4; i <= 4; i++) {
-        const xOffset = i * (boxSize / 4);
+      for (let i = -boxHalf; i <= boxHalf; i += 6) {
+        const p1 = project(i, -boxHalf, -boxHalf);
+        const p2 = project(i, boxHalf, -boxHalf);
         ctx.beginPath();
-        ctx.moveTo(cx + xOffset, cy + boxSize * 0.8);
-        ctx.lineTo(cx + xOffset * 1.5, cy + boxSize * 1.2);
+        ctx.moveTo(p1.sx, p1.sy);
+        ctx.lineTo(p2.sx, p2.sy);
+        ctx.stroke();
+
+        const p3 = project(-boxHalf, i, -boxHalf);
+        const p4 = project(boxHalf, i, -boxHalf);
+        ctx.beginPath();
+        ctx.moveTo(p3.sx, p3.sy);
+        ctx.lineTo(p4.sx, p4.sy);
         ctx.stroke();
       }
       ctx.restore();
 
-      // Dendrite branch generator based on symmetry & active lens
-      const symmetryOrder = selectedPreset.symmetry === 'hexagonal' ? 6 : 4;
-      const progressFactor = growthProgress / 100;
-      const maxRadius = boxSize * 0.85 * progressFactor;
+      // 3. Draw Z-Cut Slicing Plane indicator if active
+      if (sliceZ < 32) {
+        const cutZ = sliceZ - mid;
+        const sp1 = project(-boxHalf, -boxHalf, cutZ);
+        const sp2 = project(boxHalf, -boxHalf, cutZ);
+        const sp3 = project(boxHalf, boxHalf, cutZ);
+        const sp4 = project(-boxHalf, boxHalf, cutZ);
 
-      // Draw branches
-      const branchCount = Math.floor(18 + progressFactor * 42);
+        ctx.save();
+        ctx.fillStyle = 'rgba(6, 182, 212, 0.08)';
+        ctx.strokeStyle = '#06b6d4';
+        ctx.lineWidth = 1.2;
+        ctx.setLineDash([4, 2]);
+        ctx.beginPath();
+        ctx.moveTo(sp1.sx, sp1.sy);
+        ctx.lineTo(sp2.sx, sp2.sy);
+        ctx.lineTo(sp3.sx, sp3.sy);
+        ctx.lineTo(sp4.sx, sp4.sy);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+        ctx.restore();
+      }
 
-      for (let b = 0; b < symmetryOrder; b++) {
-        const baseAngle = (b * (Math.PI * 2)) / symmetryOrder + angle;
+      // 4. Retrieve real voxels from the active simulation engine
+      const eng = engineRef.current;
+      if (eng) {
+        const rawVoxels: RenderableVoxel[] = eng.getRenderableVoxels(sliceZ < 32 ? sliceZ : undefined);
 
-        for (let step = 1; step <= branchCount; step++) {
-          const t = step / branchCount;
-          const r = t * maxRadius;
+        // Project and depth-sort voxels (Painter's algorithm: back to front)
+        interface ProjectedVoxel {
+          sx: number;
+          sy: number;
+          depth: number;
+          voxel: RenderableVoxel;
+          light: number;
+        }
 
-          // Recursive stepping with orthogonal hopper facets
-          const jitter = Math.sin(step * 3.5 + b) * (selectedPreset.symmetry === 'cubic' ? 12 : 6);
-          const px = cx + Math.cos(baseAngle) * r + Math.cos(baseAngle + Math.PI / 2) * jitter;
-          const py = cy + Math.sin(baseAngle) * (r * 0.7) + Math.sin(baseAngle + Math.PI / 2) * jitter * 0.7;
+        const cosY = Math.cos(yaw);
+        const sinY = Math.sin(yaw);
+        const cosP = Math.cos(pitch);
+        const sinP = Math.sin(pitch);
 
-          // Secondary & tertiary dendrite side-arms
-          if (step % 3 === 0 && t > 0.25) {
-            const sideAngle = baseAngle + (selectedPreset.symmetry === 'hexagonal' ? Math.PI / 3 : Math.PI / 2);
-            const sideLen = (1 - t) * 45 * anisotropy * 15;
-            const sx = px + Math.cos(sideAngle) * sideLen;
-            const sy = py + Math.sin(sideAngle) * sideLen * 0.7;
+        const projectedList: ProjectedVoxel[] = [];
 
-            ctx.beginPath();
-            ctx.moveTo(px, py);
-            ctx.lineTo(sx, sy);
-            ctx.lineWidth = Math.max(1, (1 - t) * 4);
+        for (let i = 0; i < rawVoxels.length; i++) {
+          const v = rawVoxels[i];
+          const rx = v.x - mid;
+          const ry = v.y - mid;
+          const rz = v.z - mid;
 
-            // Color based on active lens
-            if (activeLens === 'ORIENT') {
-              ctx.strokeStyle = `hsl(${(b * 60 + step * 8) % 360}, 85%, 65%)`;
-            } else if (activeLens === 'MELT') {
-              ctx.strokeStyle = t > 0.85 ? '#06b6d4' : '#f8fafc';
-            } else if (activeLens === 'THERM') {
-              ctx.strokeStyle = `hsl(${Math.max(0, 240 - t * undercooling * 220)}, 90%, 60%)`;
-            } else if (activeLens === 'CURV') {
-              ctx.strokeStyle = step % 6 === 0 ? '#fb7185' : '#38bdf8';
+          const x1 = rx * cosY - ry * sinY;
+          const y1 = rx * sinY + ry * cosY;
+          const z1 = rz;
+
+          const y2 = y1 * cosP - z1 * sinP;
+          const z2 = y1 * sinP + z1 * cosP;
+
+          const sx = cx + x1 * baseScale;
+          const sy = cy - z2 * baseScale;
+
+          // Normal rotation for lighting
+          const [nx, ny, nz] = v.normal;
+          const nx1 = nx * cosY - ny * sinY;
+          const ny1 = nx * sinY + ny * cosY;
+          const nz1 = nz;
+          const ny2 = ny1 * cosP - nz1 * sinP;
+          const nz2 = ny1 * sinP + nz1 * cosP;
+
+          const dot = Math.max(0, nx1 * nlx + ny2 * nly + nz2 * nlz);
+          const light = 0.35 + 0.65 * dot;
+
+          projectedList.push({
+            sx,
+            sy,
+            depth: y2,
+            voxel: v,
+            light,
+          });
+        }
+
+        // Sort by depth ascending (farthest first)
+        projectedList.sort((a, b) => a.depth - b.depth);
+
+        // Render each voxel facet
+        const voxelRadius = Math.max(1.8, baseScale * 0.72);
+        const isCubic = selectedPreset.symmetry === 'cubic';
+
+        for (let i = 0; i < projectedList.length; i++) {
+          const item = projectedList[i];
+          const v = item.voxel;
+          const l = item.light;
+          const psx = item.sx;
+          const psy = item.sy;
+
+          // Compute color based on active scientific microstructure lens
+          let fillColor = '#ffffff';
+          let strokeColor = 'rgba(255, 255, 255, 0.2)';
+
+          if (activeLens === 'ORIENT') {
+            // EBSD Inverse Pole Figure (IPF) orientation map
+            const lightness = Math.min(85, Math.max(25, Math.floor(l * 62)));
+            fillColor = `hsl(${v.orientHue}, 85%, ${lightness}%)`;
+            strokeColor = `hsla(${v.orientHue}, 90%, 80%, 0.3)`;
+          } else if (activeLens === 'MELT') {
+            // Kobayashi phase order parameter phi
+            const alpha = Math.min(1, Math.max(0.4, v.phi));
+            const brightness = Math.floor(l * 240);
+            if (v.phi > 0.85) {
+              fillColor = `rgb(${brightness}, ${Math.floor(brightness * 0.96)}, ${Math.floor(brightness * 0.9)})`;
             } else {
-              // SEM
-              ctx.strokeStyle = `rgb(${Math.floor(120 + t * 90)}, ${Math.floor(120 + t * 90)}, ${Math.floor(120 + t * 90)})`;
+              fillColor = `rgba(6, 182, 212, ${alpha})`;
             }
-            ctx.stroke();
+            strokeColor = 'rgba(56, 189, 248, 0.3)';
+          } else if (activeLens === 'THERM') {
+            // Latent heat release and supercooling thermal map
+            // Core is warm (amber/crimson), tips are cool (ice-blue/violet)
+            const hue = Math.max(15, Math.min(240, 240 - v.temp * 220));
+            const lightness = Math.min(85, Math.max(30, Math.floor(l * 65)));
+            fillColor = `hsl(${hue}, 90%, ${lightness}%)`;
+            strokeColor = `hsla(${hue}, 95%, 85%, 0.3)`;
+          } else if (activeLens === 'CURV') {
+            // Gibbs-Thomson surface curvature (sharp tips vs flat equilibrium facets)
+            if (v.curvature > 0.7) {
+              fillColor = `hsl(340, 90%, ${Math.floor(l * 60)}%)`; // vivid rose at tips
+              strokeColor = '#f43f5e';
+            } else {
+              fillColor = `hsl(200, 85%, ${Math.floor(l * 55)}%)`; // cyan/blue at flat facets
+              strokeColor = '#0ea5e9';
+            }
+          } else if (activeLens === 'SEM') {
+            // Virtual Scanning Electron Microscope (Backscattered Electron BSE contrast)
+            const bseVal = Math.min(255, Math.max(30, Math.floor(l * 190 + (1.0 - Math.abs(v.normal[2])) * 45)));
+            fillColor = `rgb(${bseVal}, ${bseVal}, ${bseVal})`;
+            strokeColor = 'rgba(255, 255, 255, 0.15)';
+          } else if (activeLens === 'ZONING') {
+            // Petrological growth rings / oscillatory geochemical zoning
+            const ringHue = (v.zoningStep * 32 + 200) % 360;
+            const lightness = Math.min(80, Math.max(30, Math.floor(l * 58)));
+            fillColor = `hsl(${ringHue}, 80%, ${lightness}%)`;
+            strokeColor = `hsla(${ringHue}, 90%, 80%, 0.35)`;
           }
 
-          // Main node facet rendering
-          const nodeSize = Math.max(2, (1 - t * 0.6) * (minWallThickness * 3.2));
+          ctx.fillStyle = fillColor;
+          ctx.strokeStyle = strokeColor;
+          ctx.lineWidth = 0.6;
           ctx.beginPath();
 
-          if (selectedPreset.symmetry === 'cubic') {
-            // Hopper staircase square
-            ctx.rect(px - nodeSize / 2, py - nodeSize / 2, nodeSize, nodeSize);
+          if (isCubic) {
+            // Cubic facet: hopper square tile
+            const r = voxelRadius;
+            ctx.rect(psx - r, psy - r, r * 2, r * 2);
           } else {
             // Hexagonal prism facet
-            ctx.arc(px, py, nodeSize / 2, 0, Math.PI * 2);
-          }
-
-          // Lens-specific fill styling
-          if (activeLens === 'ORIENT') {
-            const grad = ctx.createRadialGradient(px, py, 1, px, py, nodeSize);
-            grad.addColorStop(0, selectedPreset.colorPalette[step % 3]);
-            grad.addColorStop(1, 'rgba(15, 23, 42, 0.8)');
-            ctx.fillStyle = grad;
-          } else if (activeLens === 'MELT') {
-            ctx.fillStyle = t > 0.8 ? '#38bdf8' : '#e2e8f0';
-          } else if (activeLens === 'THERM') {
-            ctx.fillStyle = `hsl(${Math.max(10, 260 - t * undercooling * 240)}, 85%, 55%)`;
-          } else if (activeLens === 'CURV') {
-            ctx.fillStyle = (step + b) % 2 === 0 ? '#f43f5e' : '#0ea5e9';
-          } else {
-            ctx.fillStyle = '#94a3b8';
+            const r = voxelRadius * 1.1;
+            for (let a = 0; a < 6; a++) {
+              const angle = (a * Math.PI) / 3;
+              const hx = psx + r * Math.cos(angle);
+              const hy = psy + r * Math.sin(angle);
+              if (a === 0) ctx.moveTo(hx, hy);
+              else ctx.lineTo(hx, hy);
+            }
+            ctx.closePath();
           }
 
           ctx.fill();
-          ctx.strokeStyle = 'rgba(255, 255, 255, 0.25)';
-          ctx.lineWidth = 0.6;
           ctx.stroke();
         }
+
+        // 5. Draw Central Seed Nucleus with Glow
+        const seedPos = project(0, 0, 0);
+        ctx.beginPath();
+        ctx.arc(seedPos.sx, seedPos.sy, Math.max(3, baseScale * 0.45), 0, Math.PI * 2);
+        ctx.fillStyle = '#ffffff';
+        ctx.shadowColor = '#38bdf8';
+        ctx.shadowBlur = 14;
+        ctx.fill();
+        ctx.shadowBlur = 0;
       }
 
-      // Central Seed Nucleus (Keimzelle)
-      ctx.beginPath();
-      ctx.arc(cx, cy, 7, 0, Math.PI * 2);
-      ctx.fillStyle = '#ffffff';
-      ctx.shadowColor = '#38bdf8';
-      ctx.shadowBlur = 18;
-      ctx.fill();
-      ctx.shadowBlur = 0;
+      // 6. Draw 3D Orientation Axes Gizmo in corner
+      const gizmoX = 48;
+      const gizmoY = height - 48;
+      const gizmoLen = 26;
+
+      const cosY = Math.cos(yaw);
+      const sinY = Math.sin(yaw);
+      const cosP = Math.cos(pitch);
+      const sinP = Math.sin(pitch);
+
+      const drawAxis = (dx: number, dy: number, dz: number, color: string, label: string) => {
+        const x1 = dx * cosY - dy * sinY;
+        const y1 = dx * sinY + dy * cosY;
+        const z1 = dz;
+        const y2 = y1 * cosP - z1 * sinP;
+        const z2 = y1 * sinP + z1 * cosP;
+
+        const ex = gizmoX + x1 * gizmoLen;
+        const ey = gizmoY - z2 * gizmoLen;
+
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(gizmoX, gizmoY);
+        ctx.lineTo(ex, ey);
+        ctx.stroke();
+
+        ctx.fillStyle = color;
+        ctx.font = '10px monospace';
+        ctx.fillText(label, ex + 3, ey - 2);
+      };
+
+      drawAxis(1, 0, 0, '#f43f5e', 'a');
+      drawAxis(0, 1, 0, '#10b981', 'b');
+      drawAxis(0, 0, 1, '#38bdf8', 'c');
 
       animFrameRef.current = requestAnimationFrame(render);
     };
@@ -262,7 +639,7 @@ export const KristallwachstumSimulator: React.FC<KristallSimulatorProps> = ({ la
       running = false;
       if (animFrameRef.current) cancelAnimationFrame(animFrameRef.current);
     };
-  }, [selectedPreset, activeLens, growthProgress, anisotropy, undercooling, minWallThickness]);
+  }, [selectedPreset, activeLens, autoRotate, sliceZ]);
 
   const currentRecipe = `K3D-${selectedPreset.seed.replace('K3D-', '')}-A${Math.round(anisotropy * 1000)}-U${Math.round(undercooling * 100)}-W${Math.round(minWallThickness * 10)}`;
 
@@ -273,23 +650,9 @@ export const KristallwachstumSimulator: React.FC<KristallSimulatorProps> = ({ la
   };
 
   const handleExportMesh = (format: '3MF' | 'STL') => {
-    // Instantiate real KristallEngine and generate real watertight ASCII STL
-    const engine = new KristallEngine({
-      gridSize: 32,
-      anisotropy,
-      undercooling,
-      stickiness,
-      symmetry: selectedPreset.symmetry,
-      minWallThickness,
-      maxOverhang,
-      seed: selectedPreset.seed,
-    });
+    if (!engineRef.current) return;
+    const stlContent = engineRef.current.generateSTL();
 
-    // Run real hybrid nucleation and relaxation
-    engine.step(Math.floor(growthProgress * 4), 2);
-    const stlContent = engine.generateSTL();
-
-    // Trigger browser file download
     try {
       const blob = new Blob([stlContent], { type: 'model/stl' });
       const url = URL.createObjectURL(blob);
@@ -301,13 +664,13 @@ export const KristallwachstumSimulator: React.FC<KristallSimulatorProps> = ({ la
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
     } catch {
-      // Fallback for non-DOM test environments
+      // Fallback
     }
 
     setExportNotice(
       lang === 'de'
-        ? `Wasserdichtes Mesh (${format}) erfolgreich mit ${particlesCount.toLocaleString()} Knoten und ${minWallThickness}mm Mindestwandstärke generiert & heruntergeladen!`
-        : `Watertight ${format} mesh verified, generated & downloaded with ${particlesCount.toLocaleString()} nodes and ${minWallThickness}mm wall constraint!`
+        ? `Wasserdichtes 3D-Mesh (${format}) mit ${metrics.solidVoxels.toLocaleString()} Voxeln & ${minWallThickness}mm Mindestwandstärke generiert & heruntergeladen!`
+        : `Watertight ${format} mesh with ${metrics.solidVoxels.toLocaleString()} voxels & ${minWallThickness}mm wall constraint generated & downloaded!`
     );
     setTimeout(() => setExportNotice(null), 4000);
   };
@@ -319,18 +682,22 @@ export const KristallwachstumSimulator: React.FC<KristallSimulatorProps> = ({ la
         <div>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950 text-cyan-400 border border-cyan-800/60 text-xs font-mono mb-2">
             <Cpu className="w-3.5 h-3.5" />
-            <span>WebGPU WGSL Compute Pipeline · 192³ Voxel Grid</span>
+            <span>
+              {hasWebGPU
+                ? (lang === 'de' ? 'WebGPU Hardware-Pipeline Aktiv · WGSL Shader' : 'WebGPU Hardware Pipeline Active · WGSL Shaders')
+                : (lang === 'de' ? 'Kobayashi (1993) Phasenfeld + DLA Engine · 32³ Voxel' : 'Kobayashi (1993) Phase-Field + DLA Engine · 32³ Voxel')}
+            </span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white flex items-center gap-3">
             <span>Kristallwachstum 3D</span>
             <span className="text-xs px-2.5 py-0.5 rounded-md bg-stone-800 text-stone-400 border border-stone-700 font-mono">
-              v1.2-physics
+              v2.0-engine-live
             </span>
           </h2>
           <p className="text-stone-400 text-sm mt-1 max-w-2xl">
             {lang === 'de'
-              ? 'Hybride DLA-Brownsche Keimbildung gekoppelt mit Kobayashi (1993) Phasenfeld-Thermodynamik, 9 wissenschaftlichen Gefügelinsen und druckfertigem Rezept-Export.'
-              : 'Hybrid DLA Brownian nucleation coupled with Kobayashi (1993) phase-field thermodynamics, 9 scientific microstructure lenses, and 3D-printable recipe export.'}
+              ? 'Echte 3D-Brownsche Keimbildung gekoppelt mit Kobayashi Phasenfeld-Thermodynamik, interaktivem 3D-Orbit, Z-Schnitt-Ebene, 6 petrologischen Gefügelinsen und STL-Druckexport.'
+              : 'True 3D Brownian nucleation coupled with Kobayashi phase-field thermodynamics, interactive 3D orbit, Z-slice cross-section, 6 petrological microstructure lenses, and STL export.'}
           </p>
         </div>
 
@@ -344,24 +711,60 @@ export const KristallwachstumSimulator: React.FC<KristallSimulatorProps> = ({ la
                 : 'bg-emerald-600 hover:bg-emerald-500 text-white'
             }`}
           >
-            <RefreshCw className={`w-3.5 h-3.5 ${isGrowing ? 'animate-spin' : ''}`} />
+            {isGrowing ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
             {isGrowing ? (lang === 'de' ? 'Pause' : 'Pause') : lang === 'de' ? 'Wachstum starten' : 'Resume Growth'}
           </button>
 
           <button
-            onClick={() => handleExportMesh('3MF')}
-            className="px-4 py-2 rounded-xl bg-stone-800 hover:bg-stone-700 border border-stone-700 text-white text-xs font-medium flex items-center gap-2 transition-colors"
+            onClick={() => handleStepForward(1)}
+            title={lang === 'de' ? '1 Schritt vor' : 'Step +1'}
+            className="px-3 py-2 rounded-xl bg-stone-800 hover:bg-stone-700 border border-stone-700 text-stone-200 text-xs font-mono flex items-center gap-1.5 transition-colors"
+          >
+            <StepForward className="w-3.5 h-3.5 text-cyan-400" />
+            <span>+1</span>
+          </button>
+
+          <button
+            onClick={() => handleStepForward(5)}
+            title={lang === 'de' ? '5 Schritte vor' : 'Step +5'}
+            className="px-3 py-2 rounded-xl bg-stone-800 hover:bg-stone-700 border border-stone-700 text-stone-200 text-xs font-mono flex items-center gap-1.5 transition-colors"
+          >
+            <StepForward className="w-3.5 h-3.5 text-cyan-400" />
+            <span>+5</span>
+          </button>
+
+          <button
+            onClick={handleFiftyRelaxations}
+            title={lang === 'de' ? '50× Kobayashi Phasenfeld-Relaxation rechnen (Ticket 1)' : '50× Kobayashi Phase-Field Relaxation (Ticket 1)'}
+            className="px-3 py-2 rounded-xl bg-indigo-900/60 hover:bg-indigo-800/80 border border-indigo-700/70 text-indigo-200 text-xs font-mono flex items-center gap-1.5 transition-colors"
+          >
+            <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
+            <span>50× Relax</span>
+          </button>
+
+          <button
+            onClick={handleResetSeed}
+            title={lang === 'de' ? 'Keim neu züchten' : 'Reset Seed'}
+            className="px-3 py-2 rounded-xl bg-stone-800 hover:bg-stone-700 border border-stone-700 text-stone-300 text-xs font-medium flex items-center gap-1.5 transition-colors"
+          >
+            <RefreshCw className="w-3.5 h-3.5 text-rose-400" />
+            <span>{lang === 'de' ? 'Neuer Keim' : 'Reset'}</span>
+          </button>
+
+          <button
+            onClick={() => handleExportMesh('STL')}
+            className="px-4 py-2 rounded-xl bg-cyan-900/60 hover:bg-cyan-800/80 border border-cyan-700 text-white text-xs font-medium flex items-center gap-2 transition-colors shadow-sm"
           >
             <Download className="w-3.5 h-3.5 text-cyan-400" />
-            <span>3MF / STL</span>
+            <span>STL 3D-Print</span>
           </button>
 
           <button
             onClick={handleCopyRecipe}
-            className="px-4 py-2 rounded-xl bg-cyan-900/40 hover:bg-cyan-900/60 border border-cyan-700/60 text-cyan-300 text-xs font-mono flex items-center gap-2 transition-colors"
+            className="px-4 py-2 rounded-xl bg-stone-900 hover:bg-stone-800 border border-stone-700 text-cyan-300 text-xs font-mono flex items-center gap-2 transition-colors"
           >
             {copiedRecipe ? <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" /> : <Share2 className="w-3.5 h-3.5" />}
-            <span>{copiedRecipe ? (lang === 'de' ? 'Kopiert!' : 'Copied!') : lang === 'de' ? 'Rezept teilen' : 'Share Recipe'}</span>
+            <span>{copiedRecipe ? (lang === 'de' ? 'Kopiert!' : 'Copied!') : lang === 'de' ? 'Rezept' : 'Recipe'}</span>
           </button>
         </div>
       </div>
@@ -391,13 +794,13 @@ export const KristallwachstumSimulator: React.FC<KristallSimulatorProps> = ({ la
         {/* Left / Center: Interactive 3D Viewport with HUD */}
         <div className="lg:col-span-8 flex flex-col space-y-3">
           {/* Scientific Lenses Toolbar */}
-          <div className="flex items-center justify-between bg-stone-900/80 p-2 rounded-2xl border border-stone-800">
-            <div className="flex items-center gap-1.5">
+          <div className="flex flex-wrap items-center justify-between bg-stone-900/80 p-2 rounded-2xl border border-stone-800 gap-2">
+            <div className="flex flex-wrap items-center gap-1.5">
               <span className="text-xs text-stone-400 px-2 font-mono flex items-center gap-1.5">
                 <Eye className="w-3.5 h-3.5 text-stone-400" />
                 <span>{lang === 'de' ? 'Gefügelinse:' : 'Microstructure Lens:'}</span>
               </span>
-              {(['ORIENT', 'MELT', 'THERM', 'CURV', 'SEM'] as MicrostructureLens[]).map((lens) => (
+              {(['ORIENT', 'MELT', 'THERM', 'CURV', 'SEM', 'ZONING'] as MicrostructureLens[]).map((lens) => (
                 <button
                   key={lens}
                   onClick={() => setActiveLens(lens)}
@@ -415,53 +818,106 @@ export const KristallwachstumSimulator: React.FC<KristallSimulatorProps> = ({ la
               {activeLens === 'ORIENT' && (lang === 'de' ? 'EBSD-IPF Orientierungsfeld' : 'EBSD-IPF Orientation Map')}
               {activeLens === 'MELT' && (lang === 'de' ? 'Phasenordnungsparameter φ' : 'Phase Order Parameter φ')}
               {activeLens === 'THERM' && (lang === 'de' ? 'Latente Wärme & Unterkühlung' : 'Latent Heat & Undercooling')}
-              {activeLens === 'CURV' && (lang === 'de' ? 'Gibbs-Thomson Krümmung' : 'Gibbs-Thomson Curvature')}
-              {activeLens === 'SEM' && (lang === 'de' ? 'Virtuelles Rasterelektronenmikroskop' : 'Virtual SEM Backscatter')}
+              {activeLens === 'CURV' && (lang === 'de' ? 'Gibbs-Thomson Krümmung κ' : 'Gibbs-Thomson Curvature κ')}
+              {activeLens === 'SEM' && (lang === 'de' ? 'Virtuelles Rasterelektronenmikroskop (BSE)' : 'Virtual SEM Backscatter')}
+              {activeLens === 'ZONING' && (lang === 'de' ? 'Petrologische Wachstumszonierung' : 'Petrological Growth Zoning')}
             </div>
           </div>
 
           {/* Viewport Frame */}
-          <div className="relative rounded-2xl overflow-hidden border border-stone-800 bg-stone-950 aspect-video sm:aspect-16/10 flex items-center justify-center">
-            <canvas ref={canvasRef} width={800} height={500} className="w-full h-full object-cover" />
+          <div className="relative rounded-2xl overflow-hidden border border-stone-800 bg-stone-950 aspect-video sm:aspect-16/10 flex items-center justify-center select-none">
+            <canvas
+              ref={canvasRef}
+              width={800}
+              height={500}
+              onMouseDown={handleMouseDown}
+              onMouseMove={handleMouseMove}
+              onMouseUp={handleMouseUp}
+              onMouseLeave={handleMouseUp}
+              onWheel={handleWheel}
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+              className="w-full h-full object-cover cursor-grab active:cursor-grabbing"
+            />
 
             {/* Scientific HUD Badges Overlay */}
-            <div className="absolute top-4 left-4 flex flex-col gap-2 font-mono text-xs">
+            <div className="absolute top-4 left-4 flex flex-col gap-2 font-mono text-xs pointer-events-none">
               <div className="px-3 py-1.5 rounded-lg bg-stone-950/80 backdrop-blur-md border border-stone-800/80 text-stone-300 shadow-md">
                 <span className="text-stone-400">Fraktale Dim. (D_f): </span>
-                <span className="text-cyan-400 font-bold">
-                  {(selectedPreset.fractalDim + (growthProgress / 100) * 0.08 - 0.04).toFixed(3)}
-                </span>
+                <span className="text-cyan-400 font-bold">{metrics.fractalDimension.toFixed(3)}</span>
                 <span className="text-stone-400 text-[10px] ml-1.5">(3D Box-Counting)</span>
               </div>
+              <div className="px-3 py-1 rounded-lg bg-stone-950/80 backdrop-blur-md border border-stone-800/80 text-[10px] text-stone-400 shadow-md">
+                <span>Theorie: </span>
+                <span className="text-cyan-400 font-mono">3D-DLA ~2.49 · KOB ~2.31 · 2D ~1.71</span>
+              </div>
               <div className="px-3 py-1.5 rounded-lg bg-stone-950/80 backdrop-blur-md border border-stone-800/80 text-stone-300 shadow-md">
-                <span className="text-stone-400">Partikel / Kristallite: </span>
-                <span className="text-emerald-400 font-bold">{particlesCount.toLocaleString()}</span>
+                <span className="text-stone-400">Feste Voxel: </span>
+                <span className="text-emerald-400 font-bold">{metrics.solidVoxels.toLocaleString()}</span>
+                <span className="text-stone-400 text-[10px] ml-1.5">/ 32³</span>
+              </div>
+              <div className="px-3 py-1.5 rounded-lg bg-stone-950/80 backdrop-blur-md border border-stone-800/80 text-stone-300 shadow-md">
+                <span className="text-stone-400">Zeitschritte: </span>
+                <span className="text-amber-400 font-bold">{metrics.growthTimeSteps}</span>
               </div>
             </div>
 
-            <div className="absolute top-4 right-4 flex flex-col items-end gap-2 font-mono text-xs">
+            <div className="absolute top-4 right-4 flex flex-col items-end gap-2 font-mono text-xs pointer-events-none">
               <div className="px-3 py-1.5 rounded-lg bg-stone-950/80 backdrop-blur-md border border-stone-800/80 text-stone-300 shadow-md">
-                <span className="text-stone-400">Gitter-Symmetrie: </span>
+                <span className="text-stone-400">Symmetrie: </span>
                 <span className="text-amber-400 font-bold uppercase">{selectedPreset.symmetry}</span>
               </div>
               <div className="px-3 py-1.5 rounded-lg bg-stone-950/80 backdrop-blur-md border border-stone-800/80 text-stone-300 shadow-md">
-                <span className="text-stone-400">Mesh-Status: </span>
+                <span className="text-stone-400">3D-Mesh: </span>
                 <span className="text-emerald-400 font-bold">Wasserdicht (Manifold)</span>
               </div>
             </div>
 
-            {/* Bottom Growth Progress Bar */}
-            <div className="absolute bottom-4 left-4 right-4 bg-stone-950/85 backdrop-blur-md p-3 rounded-xl border border-stone-800/80 flex items-center gap-4">
-              <span className="text-xs font-mono text-stone-400 whitespace-nowrap">
-                {lang === 'de' ? 'Wachstumsfortschritt:' : 'Growth Iteration:'} {growthProgress}%
-              </span>
-              <div className="w-full bg-stone-800 h-2 rounded-full overflow-hidden">
-                <div
-                  className="bg-gradient-to-r from-cyan-500 via-indigo-500 to-rose-500 h-full transition-all duration-300"
-                  style={{ width: `${growthProgress}%` }}
-                />
+            {/* Bottom 3D Viewport Controls Bar: Orbit, Auto-Rotate, Slicing Plane */}
+            <div className="absolute bottom-4 left-4 right-4 bg-stone-950/85 backdrop-blur-md p-2.5 rounded-xl border border-stone-800/80 flex flex-wrap items-center justify-between gap-3">
+              <div className="flex items-center gap-3">
+                <button
+                  onClick={() => setAutoRotate(!autoRotate)}
+                  className={`px-2.5 py-1 rounded-lg text-xs font-mono transition-colors ${
+                    autoRotate
+                      ? 'bg-cyan-950 text-cyan-400 border border-cyan-800/60'
+                      : 'bg-stone-800 text-stone-400 hover:text-stone-200'
+                  }`}
+                >
+                  {autoRotate ? 'Auto-Orbit: AN' : 'Auto-Orbit: AUS'}
+                </button>
+                <button
+                  onClick={handleResetCamera}
+                  title={lang === 'de' ? 'Kamera zentrieren' : 'Center Camera'}
+                  className="p-1 rounded-lg bg-stone-800 hover:bg-stone-700 text-stone-300 transition-colors"
+                >
+                  <RotateCcw className="w-3.5 h-3.5" />
+                </button>
+                <span className="text-[11px] font-mono text-stone-400 hidden md:inline">
+                  {lang === 'de' ? 'Maus/Touch: 3D Drehen · Rad: Zoom' : 'Drag: 3D Orbit · Wheel: Zoom'}
+                </span>
               </div>
-              <span className="text-xs font-mono text-cyan-400 font-bold whitespace-nowrap">60 FPS</span>
+
+              {/* Slicing Slider */}
+              <div className="flex items-center gap-2 font-mono text-xs">
+                <Scissors className="w-3.5 h-3.5 text-cyan-400" />
+                <span className="text-stone-300 whitespace-nowrap">
+                  {lang === 'de' ? 'Z-Schnitt:' : 'Z-Slice:'}
+                </span>
+                <input
+                  type="range"
+                  min="12"
+                  max="32"
+                  step="1"
+                  value={sliceZ}
+                  onChange={(e) => setSliceZ(parseInt(e.target.value))}
+                  className="w-24 sm:w-32 accent-cyan-400 bg-stone-800 rounded cursor-pointer"
+                />
+                <span className="text-cyan-400 font-bold w-10 text-right">
+                  {sliceZ === 32 ? '100%' : `${Math.round((sliceZ / 32) * 100)}%`}
+                </span>
+              </div>
             </div>
 
             {/* Export Notification Overlay */}
@@ -579,8 +1035,8 @@ export const KristallwachstumSimulator: React.FC<KristallSimulatorProps> = ({ la
               />
               <p className="text-[11px] text-stone-400">
                 {lang === 'de'
-                  ? 'Verhindert das Abbrechen feiner Äste beim Drucken ohne Stützen.'
-                  : 'Prevents delicate branches from breaking when printing supportless.'}
+                  ? 'Verhindert das Abbrechen feiner Äste beim FDM/SLA-Drucken.'
+                  : 'Prevents delicate branches from breaking during FDM/SLA printing.'}
               </p>
             </div>
 

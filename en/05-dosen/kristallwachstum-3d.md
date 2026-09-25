@@ -26,12 +26,14 @@ Simultaneously, the creative coding and maker communities suffer from a twofold 
 
 - **Stage 1 (WebGPU DLA Nucleation):** Spherical particle injection with an analytical quartic solver drift correction (after Mark Stock) to eliminate directional bias. An orientation SSBO stores crystal lattice axes per crystallite.
 - **Stage 2 (Kobayashi Phase-Field Relaxation):** The DLA skeleton initializes the phase order parameter $\phi$. Discrete Allen-Cahn steps with anisotropic surface energy smooth interfaces, simulate thermal undercooling, and produce crystallographic facets (cubic, hexagonal).
-- **Stage 3 (9 Educational Microstructure Lenses):** Toggleable scientific analysis layers inspired by material science:
-  - `MELT`: Liquid/solid phase boundary.
+- **Stage 3 (Scientific Microstructure Lenses & 3D Slicing):** Toggleable educational analysis layers with interactive 3D camera orbit and slicing plane:
   - `ORIENT`: Crystal grain orientation as an Inverse Pole Figure (IPF) false-color map.
+  - `MELT`: Phase order parameter $\phi$ (liquid/solid interface boundary).
   - `THERM`: Local thermal and supersaturation field with latent heat release.
   - `CURV`: Mean surface curvature and Gibbs-Thomson effects.
-  - `SEM`: Virtual scanning electron microscope illumination.
+  - `SEM`: Virtual scanning electron microscope illumination (BSE contrast).
+  - `ZONING`: Petrological growth zoning (crystallization rings by birth iteration).
+  - `Z-SLICE`: Interactive cross-section plane to inspect internal cavities and hopper funnels.
 - **Stage 4 (Real-time Metrics & Print Recipe):**
   - Live calculation of fractal dimension $D_f$ via 3D octree box-counting.
   - Physical print constraints (minimum branch thickness, overhang limit) enforced directly in the growth solver.
@@ -44,15 +46,15 @@ Simultaneously, the creative coding and maker communities suffer from a twofold 
 - [Chapter 1: Educational & Physical Research](../../02-recherche/kristallwachstum-3d-didaktik-physik.md) — Analysis of WebGPU DLA (`scttfrdmn`, `markstock/dla-nd`), phase-field solidification (`fronkt/solidify`, Kobayashi 1993), and the 4-stage browser architecture.
 - [Chapter 2: Open-Source Scaffolding](../../07-demos/kristallwachstum-3d/README.md) — Concrete WGSL compute kernels (`shaders.wgsl.ts`), DLA drift bias, box-counting, and STL meshing.
 
-## First step
+## Implementation Status & Next Step
 
-**Ticket: Hybrid 2D/3D dendrite nucleation in WebGPU with real-time $D_f$ measurement.**
-
-1. Initialize a WebGPU compute pipeline with particle arrays and orientation fields.
-2. Run 50 iterations of Kobayashi phase-field relaxation over the DLA seed cluster.
-3. Display the real-time fractal dimension $D_f$ in the HUD and compare against theoretical values (2D: ~1.71; 3D: ~2.3–2.5).
-
-**Done when:** A seed reliably grows from a fractal nucleus to an anisotropic dendrite, the fractal dimension is numerically reported in real time, and the resulting mesh exports as a watertight STL.
+- **Ticket 01 (Completed & Verified):** Hybrid Brownian DLA nucleation coupled with Kobayashi phase-field relaxation, 3D box-counting ($D_f$ measured against literature values), interactive 3D camera orbit, Z-slice cross section, 6 microstructure lenses, and watertight STL export (`src/engine/kristallwachstum/` & `KristallwachstumSimulator.tsx`).
+- **Ticket 02 (Next Step): GPU Marching Cubes Isosurface Extraction & Multi-Color 3MF Export.**
+  1. Marching Cubes kernel for smooth facet reconstruction at $\phi = 0.5$ eliminating voxel staircasing.
+  2. Construction of valid 3MF OPC/ZIP packages with `<colorgroup>` material channels.
+  3. Direct baking of EBSD-IPF crystallographic orientations and petrological growth zoning (`ZONING`) into separate extruder channels for multi-material 3D printing (e.g., Bambu Lab AMS / Prusa MMU).
+  4. **Done when:** The exported 3MF archive loads without repair warnings in PrusaSlicer/Bambu Studio and prints concentric growth rings in distinct filament colors.
+  - Detail Ticket: [07-demos/kristallwachstum-3d/ticket-02-gpu-marching-cubes-3mf.md](../../07-demos/kristallwachstum-3d/ticket-02-gpu-marching-cubes-3mf.md)
 
 ## Where it breaks
 

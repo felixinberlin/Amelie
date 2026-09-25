@@ -14,7 +14,7 @@ In der universitären Didaktik werden Nichtgleichgewichts-Kristallisation, Dendr
 
 Kristallwachstum 3D schließt diese Lücke direkt im Browser über WebGPU:
 1. **Hybride Physik:** Brownsche DLA-Partikelkeimung mit analytischer Driftkorrektur, gekoppelt mit dem Kobayashi-Phasenfeld-Modell (1993) für unterkühlte Schmelzen auf volumetrischen 3D-Gittern.
-2. **Didaktische Gefügelinsen:** Echtzeit-Umschaltung zwischen 5 Analyse-Ebenen (Phasenordnungsparameter φ, EBSD-IPF Orientierungsfeld, thermische Unterkühlung ΔT mit latenter Wärme, Gibbs-Thomson-Krümmung und virtuelles Rasterelektronenmikroskop).
+2. **Didaktische Gefügelinsen & 3D-Schnitt:** 3D-Orbit mit interaktiver Schnitt-Ebene (Z-Slice zur Begutachtung von Hohlräumen und Trichterwachstum) sowie 6 wissenschaftliche Analyse-Ebenen (EBSD-IPF Orientierungsfeld, Phasenordnungsparameter φ, thermische Unterkühlung ΔT mit latenter Wärme, Gibbs-Thomson-Krümmung, virtuelles Rasterelektronenmikroskop und petrologische Wachstumszonierung).
 3. **Quantitative Didaktik & 3D-Druck:** Live-Messung der fraktalen Dimension (D_f) über 3D-Box-Counting, deterministische Rezept-Hashes (`K3D-...`) und direkter Export wasserdichter, stützfreier Manifold-Meshes (3MF/STL) für den 3D-Druck im Hörsaal.
 
 Ein kompaktes Dokument mit Architektur, physikalischer Herleitung und den Bruchstellen (wo das Modell numerisch kippen kann):

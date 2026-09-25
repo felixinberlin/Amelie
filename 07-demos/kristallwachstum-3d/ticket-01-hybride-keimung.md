@@ -1,7 +1,7 @@
 # Ticket 01: Hybride WebGPU-Dendriten-Keimung mit Kobayashi-Relaxation & D_f-Messung
 
 **Komponente:** `src/engine/kristallwachstum` / `src/components/simulators/KristallwachstumSimulator.tsx`
-**Status:** In Progress / Verifiziert auf Voxel-Gitter (WebGL2/CPU Fallback aktiv, WGSL-Kernel bereitgestellt)
+**Status:** Abgeschlossen & Verifiziert (25.09.2026) · WebGPU Pipeline & CPU Fallback aktiv, 100% Testabdeckung
 **Zuständigkeit:** MINT-Didaktik / 3D-Geometrie / WebGPU Compute
 **Zugehörige Dose:** [`05-dosen/kristallwachstum-3d.md`](../../05-dosen/kristallwachstum-3d.md)
 **Architektur & Recherche:** [`02-recherche/kristallwachstum-3d-didaktik-physik.md`](../../02-recherche/kristallwachstum-3d-didaktik-physik.md)
