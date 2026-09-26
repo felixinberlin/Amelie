@@ -56,3 +56,9 @@ Grünflächenverordnungen messen meist nur die 2D-Fläche (z.B. "nicht versiegel
 
 **Die Klang-Plakette (Crowdsourced Resonance)** — **M**
 Brücken und Statuen verwittern innerlich, aber Städte prüfen sie oft nur alle drei Jahre visuell, da fest installierte Sensoren teuer sind. Eine Plakette fordert Passanten auf, mit einer Münze gegen das Bauwerk zu klopfen und den Ton mit dem Handy aufzunehmen. Die App aggregiert hunderte dieser verrauschten Aufnahmen; eine Verschiebung der Resonanzfrequenz über Monate verrät strukturelle Risse, bevor sie sichtbar werden. (Zustand: `frei`)
+
+**Erinnerungs-Lot (Oral History Anachronism Checker)** — **M**
+Heimatvereine und Archive sammeln hunderte Stunden an Zeitzeugenberichten (Oral History). Ein kleines Archivteam kann unmöglich alle beiläufig genannten Fakten (Wetter an einem bestimmten Tag, Fahrpläne, existierende Geschäfte) auf historische Plausibilität prüfen. Ein LLM-basiertes Werkzeug für Archivare liest die Transkripte und markiert automatisch Anachronismen oder Widersprüche (z.B. "Die U2 fuhr im Sommer 1945 nicht"), sodass der Forscher die Verlässlichkeit der Erinnerung einschätzen kann. (Zustand: `frei`)
+
+**Der Kurven-Rider (Strip Chart Digitizer)** — **M**
+Klima- und Wetterarchive besitzen Millionen von kontinuierlichen Papiermessstreifen (z.B. Barographen-Rollen). OCR versagt hier wegen verblasster Tinte und überlagernden Gitternetzen, und manuelles Punkt-für-Punkt-Klicken ist für Citizen Science zu zäh. Der Kurven-Rider scrollt den Scan kontinuierlich über den Bildschirm, während der Volunteer wie in einem Rhythmus-Spiel mit der Maus oder dem Finger der Tintenlinie "nachfährt" und so hochdichte X/Y-Daten im Vorbeiflug erfasst. (Zustand: `frei`)

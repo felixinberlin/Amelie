@@ -523,3 +523,10 @@ Konsequenz für die Gemini-Lauf-Tabelle unten: „Orgelpfeifen-Bleifraß-Resonan
 |---|---|---|---|
 | **Volumen-Lotse** — Smartphone LiDAR-Scan für 3D-Biomasse-Score statt 2D-Flächenregeln | `frei` | LiDAR in Forstwirtschaft prof. im Einsatz; kein Laienwerkzeug für städtisches Grünvolumen | 09/2027 |
 | **Die Klang-Plakette** — Crowdsourced Resonanzanalyse von Infrastruktur durch Münz-Klopfen | `frei` | Tap-Testing ist Bauingenieur-Sache; keine Crowdsourcing-App für Bürger gefunden | 09/2027 |
+
+## Runde 13 (Lacunar) — 24.09.2026
+
+| Idee | Urteil | Beleg (kurz) | Prüfen ab |
+|---|---|---|---|
+| **Erinnerungs-Lot** — LLM-Faktencheck für Oral History Transkripte gegen historische Archive zur Anachronismus-Erkennung | `frei` | Keine KI-Werkzeuge für Archivare zum Abgleich von Zeitzeugenberichten gefunden | 09/2027 |
+| **Der Kurven-Rider** — Kontinuierliches "Nachfahren" (Rhythmus-Spiel-Mechanik) zur Digitalisierung von analogen Kurvenschreibern | `frei` | Zooniverse/Citizen Science nutzt Klick- oder Zeichen-Tools, keine kontinuierlich scrollenden Steuerungs-Interfaces | 09/2027 |

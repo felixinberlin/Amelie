@@ -388,6 +388,11 @@ Erste Runde, die mit einer **verschenkten** Dose als Ausgangspunkt arbeitet. Das
 - **Fehler:** Das `frei` der Klang-Plakette baut auf einer technischen Prämisse auf (dass Handy-Mikros über viele Nutzer hinweg kalibrierbar sind). Dies müsste als Reality-Check technisch vorab intensiver geprüft werden.
 - **Nächstes Mal:** Eine Prämissenprüfung ("Reality Check") bei Hardware/Sensor-Ideen konsequent durchführen, bevor sie ins Protokoll gehen.
 
+### Runde 13 (Lacunar) — 24.09.2026
+- **Gelernt:** Der Wechsel der Interaktionsmetapher (von statischem Klicken zu dynamischem Scrollen/Steuern beim "Kurven-Rider") ist eine sehr starke Bisoziations-Mechanik für Citizen-Science-Eingaben. Die Konzentration auf "Backoffice"-Probleme von Archiven liefert freie Felder.
+- **Fehler:** Keiner im Ablauf.
+- **Nächstes Mal:** Interaktions-Metaphern (wie Spiele-Mechaniken oder physische Werkzeuge) gezielt mit Typ-B-Dateneingaben (Citizen Science Crowdsourcing) kollidieren lassen.
+
 ### Runde 12 (Lacunar) — 24.09.2026
 - **Gelernt:** Typ-D-Quellen (Forschung, die nur als Paper/Profi-Werkzeug existiert) sind extrem ergiebig. Beide Ideen ("Volumen-Lotse" und "Klang-Plakette") übertragen ein etabliertes physikalisches Messprinzip in ein Laien-Setting.
 - **Fehler:** Das `frei` der Klang-Plakette baut auf einer technischen Prämisse auf (dass Handy-Mikros über viele Nutzer hinweg kalibrierbar sind). Dies müsste als Reality-Check technisch vorab intensiver geprüft werden.

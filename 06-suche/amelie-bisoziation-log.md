@@ -178,3 +178,11 @@ Kein Bisoziationslauf, sondern der Punkt (1) aus Run 7, als eigener Durchgang er
 - **Gelernt:** Typ-D-Quellen (Forschung, die nur als Paper/Profi-Werkzeug existiert) sind extrem ergiebig. Beide Ideen ("Volumen-Lotse" und "Klang-Plakette") übertragen ein etabliertes physikalisches Messprinzip in ein Laien-Setting.
 - **Fehler:** Keiner im Ablauf, aber das `frei` der Klang-Plakette baut auf einer Prämisse auf (dass Handy-Mikros über viele Nutzer hinweg kalibrierbar sind). Dies müsste als Reality-Check technisch vorab geprüft werden.
 - **Nächstes Mal:** Eine Prämissenprüfung ("Reality Check") *vor* der Existenzprüfung bei Sensor-Ideen konsequent durchführen.
+
+| 24.09.2026 | Typ B: **Lokale Historie / Zeitzeugen-Archive** (Sammeln von fragmentierten Erinnerungen) | **Gerichtsverhör / Kreuzverhör** (Suche nach dem Widerspruch) | 5 | 3 | 1 | Archive sammeln subjektive Erinnerungen, haben aber nicht das Personal, um Randdetails auf historische Unmöglichkeit (Anachronismen) zu prüfen | Erinnerungs-Lot: **`frei`** (LLMs prüfen Transkripte gegen historische Fakten) |
+| 24.09.2026 | Typ B: **Digitalisierung kontinuierlicher Messstreifen** (DO IT Projekt, historische Wetterdaten auf Papierrollen) | **Rhythmus-Spiel / Guitar Hero** (kontinuierliches visuelles Verfolgen) | 4 | 1 | 1 | Die Digitalisierung von Kurvenschreibern scheitert an OCR und ist manuell als diskretes Punkt-Klicken zu mühsam für Crowdsourcing | Der Kurven-Rider: **`frei`** (Erfassung durch kontinuierliches Steuern auf scrollendem Bild) |
+
+### Run 13
+- **Gelernt:** Der Wechsel der Interaktionsmetapher (von statischem Klicken zu dynamischem Scrollen/Steuern beim Kurven-Rider) ist eine sehr starke Bisoziations-Mechanik für Citizen-Science-Eingaben.
+- **Fehler:** Keiner. Die Ideen lösen reale Backoffice/Workflow-Probleme bei NGOs und Archiven, ohne Consumer-Märkte zu berühren.
+- **Nächstes Mal:** Interaktions-Metaphern (wie Spiele-Mechaniken oder physische Werkzeuge) gezielt mit Typ-B-Dateneingaben kollidieren lassen.
