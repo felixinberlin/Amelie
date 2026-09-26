@@ -134,6 +134,7 @@ Wo Ideen schnell sterben — vor dem Suchen als Vorfilter nutzen.
 | **Niederschlagswasser-Gebührenbefreiung & Hof-Versickerung (DWA-A 138-1)** | **verengt** (25.09.2026, method: inversion) | Berliner Regenwasseragentur (RegenRechner 2025: desktop-only, verlangt externe Vorabbemessung); Fachsoftware (DWA Versickerungs-Expert 6.0, itwh, RAINPLANER) formelgetrieben; Lücke: Vor-Ort-Sickerversuch per Smartphone + automatische BWB-Änderungsanzeige (§ 10) |
 | **Trinkwasserschutz & Bleirohrverbot (TrinkwV § 17 Stichtag 12.01.2026)** | **verengt** (25.09.2026, method: inversion) | Gesundheitsämter (Meldeformulare für Betriebe gem. § 17 Abs. 6); vzbv/Mieterbund (statische Ratgebertexte/Laborhinweise); US-Wasserversorger (ArcGIS Survey123 für EPA-Lead-Service-Line-Inventar). Lücke: mobile zerstörungsfreie Leitungsidentifikation (Magnet, Makro-Wulstlötung, Klopfton) + automatische Vollzugsanzeige |
 | **Legionellen-Befundauswertung & Aushangs-Transparenz (TrinkwV § 31/52)** | **verengt** (25.09.2026, method: inversion) | Fachsoftware für Vermieter (Trinkwasser-App, Hydrosense); Web-Portal (legionellen-was-tun.de: manuelle Zahleneingabe). Lücke: Datenschutzfreundliche On-Device-OCR für Treppenhausbefunde mit automatischer UBA-Klassifikation und BGB-Mängelanzeige |
+| **EU-Ecodesign-Verordnung (ESPR) & Digital Product Passport (DPP)** | **verengt** (25.09.2026, method: inversion) | EU-Initiativen und Pilotprojekte (Phoenix-Nexus, open-dpp) bauen Infrastruktur/B2B/Wiederverkauf; Lücke: Bürger-Werkzeug (OP-2) zur Offenlegung geplanter Obsoleszenz und zur Reparatur-Unterstützung (Citizen Shield) |
 
 **Faustregel, jetzt mit vier Runden Evidenz:** Wenn Endnutzer dafür zahlen würden oder eine Stadt es als Pressemitteilung verkaufen kann, existiert es. Frei ist, was ein Fachgremium als PDF veröffentlicht und niemand je in Software gegossen hat.
 **Neu:** Frei ist außerdem, was sich **nicht finanzieren lässt** — ohne Konto, ohne Bestand, ohne Wiederkehr. Solche Ideen existieren im Ausland regelmäßig als Marktplatz-Variante und nirgends als öffentliche. Die Restlücke ist dann die Trägerschaft, nicht die Funktion.
@@ -181,6 +182,7 @@ Wo Ideen schnell sterben — vor dem Suchen als Vorfilter nutzen.
 | **9 (TischSchiedsrichter, mitgebrachte Gemini-Idee)** | 24.09.2026 | 1 (+ 1 Prämisse widerlegt, 1 Konkurrent nicht auffindbar, 1 Empfängerprüfung) | 0 | 1 (dünn, nicht gepackt) | 0 | 0 |
 | Abdeckungs-Nachprüfung (8 Dosen ohne Protokollzeile, 6 davon aus dem Katalog) | 24.09.2026 | 8 (7 neu gesucht, 1 nur nachgetragen) | 0 | 7 | 0 | 1 (→ entsorgt) |
 | **Inversion Run 1 (Hof-Entkoppler)** | **25.09.2026** | **1** | **0** | **1** | **0** | **0** |
+| **Inversion Run 3 (Reparatur-Lotse)** | **25.09.2026** | **1** | **0** | **1** | **0** | **0** |
 
 Runde 4 (nur Researcher #1, 3 Ideen): **0 % frei + verengt.** Kein Abgleich mit dem anderen ideenrunde-Researcher; nicht mit Runde 3 vergleichbar, weil dort zwei Methoden und vier Sessions liefen. Der Altbau-Thermal-Recheck (`verengt` bestätigt) steht nicht in dieser Zeile.
 
@@ -401,3 +403,9 @@ Erste Runde, die mit einer **verschenkten** Dose als Ausgangspunkt arbeitet. Das
 - **Nächstes Mal:** EU-Ecodesign-Verordnung (ESPR) & Digital Product Passport (DPP) für Textilien/Elektronik: Inversion der Hersteller-Compliance in ein Bürger-Reparatur- und Obsoleszenz-Gegenwerkzeug (OP-2 / OP-4).
 
 
+
+### Inversion Run 3 — 25.09.2026 (Reparatur-Lotse / ESPR & DPP)
+- **Erledigt, was seit Inversion Run 2 als „nächstes Mal" stand:** EU-Ecodesign-Verordnung (ESPR) & Digital Product Passport (DPP) für Textilien/Elektronik geprüft. Inversion der Hersteller-Compliance in ein Bürger-Reparatur- und Obsoleszenz-Gegenwerkzeug (OP-2 / OP-4).
+- **Gelernt: Die Infrastruktur wird gebaut, das Bürger-Tool fehlt.** Die EU formuliert die Vorgaben, und Pilotprojekte (wie open-dpp oder Phoenix-Nexus) bauen die Infrastruktur für die Marktaufsicht oder den Weiterverkauf. Das Gegenwerkzeug fehlt: Ein On-Device Scanner, der die bereitgestellten DPP-Daten nutzt, um Konsumenten vor Ort (im Laden oder bei Defekt) über die Reparierbarkeit und geplante Obsoleszenz aufzuklären.
+- **Fehler:** Zu generisch gestartet mit der Suche nach "DPP app". Erst die Suche im Kontext der Inversions-Operatoren (Citizen Shield gegen Obsoleszenz) offenbarte die Lücke.
+- **Nächstes Mal:** Dosenentwurf für Reparatur-Lotse (espr-reparatur-pass) packen.

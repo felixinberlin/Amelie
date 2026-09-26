@@ -1,6 +1,46 @@
 import { DoseItem, DiscardedItem } from '../types';
 
 export const DOSEN_DATA: DoseItem[] = [
+    {
+    id: 'espr-reparatur-pass',
+    title: "Reparatur-Lotse (ESPR Citizen Shield)",
+    titleEn: "Repair Guide (ESPR Citizen Shield)",
+    oneLinerDe: "Lokaler Auslese-Scanner für Digital Product Passports zur Offenlegung von geplanter Obsoleszenz und zur Bereitstellung lokaler Reparaturanleitungen.",
+    oneLinerEn: "Local scanner for Digital Product Passports revealing planned obsolescence and providing local repair instructions.",
+    date: "25. September 2026",
+    reviewAfter: "September 2027",
+    recipientsDe: "Runder Tisch Reparatur e.V. · Open Repair Alliance",
+    recipientsEn: "Runder Tisch Reparatur e.V. · Open Repair Alliance",
+    domain: 'civic',
+    verdict: 'build_first',
+    status: 'gepackt',
+    tags: ['Reparatur', 'ESPR', 'DPP', 'Zivilgesellschaft', 'Nachhaltigkeit'],
+    problemDe: "Die EU zwingt Hersteller mit dem Digital Product Passport (DPP), Daten zu Reparatur und Lebensdauer bereitzustellen. Konsumenten fehlt jedoch ein Werkzeug, um diese Daten im Alltag nutzbar zu machen.",
+    problemEn: "The EU forces manufacturers via the Digital Product Passport (DPP) to provide repair and lifespan data. However, consumers lack a tool to make this data usable in everyday life.",
+    whyNowDe: [
+        "Die Ecodesign for Sustainable Products Regulation (ESPR) schafft die rechtliche Pflicht, strukturierte Produktdaten per QR-Code bereitzustellen.",
+        "Semantische Standards (CIRPASS-2) sind im Entstehen, aber es gibt noch kein Endnutzer-Tool, das diese als 'Citizen Shield' nutzt."
+    ],
+    whyNowEn: [
+        "The Ecodesign for Sustainable Products Regulation (ESPR) creates the legal duty to provide structured product data via QR code.",
+        "Semantic standards (CIRPASS-2) are emerging, but there is no end-user tool using them as a 'Citizen Shield'."
+    ],
+    priorArtDe: "Pilotprojekte (Phoenix-Nexus) fokussieren auf Infrastruktur, B2B und Weiterverkauf, nicht auf Endnutzer-Hilfe bei Defekt.",
+    priorArtEn: "Pilot projects (Phoenix-Nexus) focus on infrastructure, B2B, and resale, not on end-user help when defects occur.",
+    sketchDe: "Ein lokaler On-Device-Scanner, der die bereitgestellten DPP-Metadaten direkt für den Verbraucher übersetzt: Obsoleszenz-Check, sofortige Reparatur-Anleitungen (via iFixit) und automatische Generierung von Mängelrügen (OP-2).",
+    sketchEn: "A local on-device scanner translating provided DPP metadata directly for the consumer: obsolescence check, instant repair manuals (via iFixit), and automated generation of formal complaints (OP-2).",
+    firstStepDe: {
+        ticket: "Scanner-Prototyp",
+        criteria: "Ein Web-App-Prototyp, der einen simulierten DPP-QR-Code scannt und die Reparatur-Lebensdauer anzeigt."
+    },
+    firstStepEn: {
+        ticket: "Scanner prototype",
+        criteria: "A web app prototype that scans a simulated DPP QR code and displays the repair lifespan."
+    },
+    failureModeDe: "Die Hersteller verstecken die eigentlichen Daten hinter proprietären Logins anstatt offener Standards.",
+    failureModeEn: "Manufacturers hide the actual data behind proprietary logins instead of open standards."
+  },
+
   {
     id: 'altbau-thermal',
     title: 'Altbau Thermal',
