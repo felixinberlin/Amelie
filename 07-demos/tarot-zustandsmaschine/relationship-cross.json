@@ -1,0 +1,94 @@
+{
+  "$schema": "./spread.schema.json",
+  "id": "relationship-cross",
+  "name": "The Relationship Cross",
+  "nameDe": "Das Beziehungskreuz",
+  "author": "Traditional / Labyrinthos-Variation",
+  "tradition": "open",
+  "description": "5 Slots: Situation, Fragende Person, Gegenüber, Hindernis und nächster Schritt — für Beziehungs- und Konfliktanalysen.",
+  "deckContract": {
+    "minCards": 5,
+    "requiredArcana": "any",
+    "allowReversals": true,
+    "significatorRequired": false
+  },
+  "slots": [
+    {
+      "id": "rc_situation",
+      "order": 1,
+      "label": "The Relationship / Core Bond",
+      "labelDe": "Die Beziehung (Kernzustand)",
+      "role": "situation",
+      "layout": { "x": 50, "y": 50, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "rc_querent",
+      "order": 2,
+      "label": "You (Querent's Role)",
+      "labelDe": "Du (Rolle & Haltung der fragenden Person)",
+      "role": "querent",
+      "layout": { "x": 20, "y": 50, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "rc_partner",
+      "order": 3,
+      "label": "Them (Partner's Role)",
+      "labelDe": "Gegenüber (Rolle & Haltung des Partners)",
+      "role": "environment",
+      "layout": { "x": 80, "y": 50, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "rc_obstacle",
+      "order": 4,
+      "label": "The Obstacle / Tension Point",
+      "labelDe": "Das Hindernis (Reibungspunkt)",
+      "role": "obstacle",
+      "layout": { "x": 50, "y": 20, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "rc_advice",
+      "order": 5,
+      "label": "Next Step / Advice",
+      "labelDe": "Nächster Schritt (Empfohlene Haltung)",
+      "role": "advice",
+      "layout": { "x": 50, "y": 80, "rotation": 0, "layer": 0 }
+    }
+  ],
+  "relations": [
+    {
+      "source": "rc_querent",
+      "target": "rc_situation",
+      "type": "leads_to",
+      "tension": 0.3,
+      "evaluateElementalDignity": true
+    },
+    {
+      "source": "rc_partner",
+      "target": "rc_situation",
+      "type": "leads_to",
+      "tension": 0.3,
+      "evaluateElementalDignity": true
+    },
+    {
+      "source": "rc_querent",
+      "target": "rc_partner",
+      "type": "mirrors",
+      "tension": 0.0,
+      "evaluateElementalDignity": true
+    },
+    {
+      "source": "rc_obstacle",
+      "target": "rc_situation",
+      "type": "opposes",
+      "tension": -0.6,
+      "evaluateElementalDignity": true
+    },
+    {
+      "source": "rc_situation",
+      "target": "rc_advice",
+      "type": "leads_to",
+      "tension": 0.4,
+      "evaluateElementalDignity": false
+    }
+  ]
+}

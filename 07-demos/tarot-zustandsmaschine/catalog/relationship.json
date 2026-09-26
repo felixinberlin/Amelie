@@ -1,0 +1,116 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "relationship",
+  "name": "Relationship Dynamics",
+  "nameDe": "Beziehungs-Dynamik (6 Slots)",
+  "author": "Traditional / Labyrinthos-Variation",
+  "tradition": "open",
+  "layoutType": "custom",
+  "difficulty": "intermediate",
+  "description": "6 Slots in symmetrischer Anordnung: Gegenüberstellung zweier Partner (Bewusste Haltung vs. Unbewusste Wurzel) mit zentraler Schnittmenge und gemeinsamem Entwicklungspfad.",
+  "instructions": {
+    "preDraw": "Kläre die Beziehungskonstellation zwischen den beiden Parteien.",
+    "drawingOrder": "1-2: Bewusste Haltungen (Links: Fragende Person, Rechts: Gegenüber), 3-4: Unbewusste Wurzeln (darunter), 5: Die Brücke/Bindeglied, 6: Gemeinsame Zukunft.",
+    "interpretationGuide": "Spiegle die vertikalen Säulen beider Personen und analysiere die Kanten zur zentralen Brücke (Slot 5)."
+  },
+  "deckContract": {
+    "minCards": 6,
+    "requiredArcana": "any",
+    "allowReversals": true,
+    "significatorRequired": false
+  },
+  "slots": [
+    {
+      "id": "rel_querent_conscious",
+      "order": 1,
+      "label": "You: Conscious Attitude & Desires",
+      "labelDe": "Du: Bewusste Haltung & Wünsche",
+      "role": "querent",
+      "layout": { "x": 20, "y": 35, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "rel_partner_conscious",
+      "order": 2,
+      "label": "Partner: Conscious Attitude & Desires",
+      "labelDe": "Gegenüber: Bewusste Haltung & Wünsche",
+      "role": "environment",
+      "layout": { "x": 80, "y": 35, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "rel_querent_subconscious",
+      "order": 3,
+      "label": "You: Subconscious Root & Vulnerabilities",
+      "labelDe": "Du: Unbewusste Wurzel & Verletzlichkeit",
+      "role": "foundation",
+      "layout": { "x": 20, "y": 70, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "rel_partner_subconscious",
+      "order": 4,
+      "label": "Partner: Subconscious Root & Vulnerabilities",
+      "labelDe": "Gegenüber: Unbewusste Wurzel & Verletzlichkeit",
+      "role": "foundation",
+      "layout": { "x": 80, "y": 70, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "rel_central_bond",
+      "order": 5,
+      "label": "The Bond / Active Connection",
+      "labelDe": "Das Bindeglied / Die aktive Verbindung",
+      "role": "situation",
+      "layout": { "x": 50, "y": 35, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "rel_shared_trajectory",
+      "order": 6,
+      "label": "Shared Trajectory / Synthesis",
+      "labelDe": "Gemeinsame Trajektorie / Synthese",
+      "role": "outcome",
+      "layout": { "x": 50, "y": 70, "rotation": 0, "layer": 0 }
+    }
+  ],
+  "relations": [
+    {
+      "source": "rel_querent_conscious",
+      "target": "rel_partner_conscious",
+      "type": "mirrors",
+      "tension": 0.0,
+      "evaluateElementalDignity": true
+    },
+    {
+      "source": "rel_querent_subconscious",
+      "target": "rel_querent_conscious",
+      "type": "grounds",
+      "tension": 0.3,
+      "evaluateElementalDignity": true
+    },
+    {
+      "source": "rel_partner_subconscious",
+      "target": "rel_partner_conscious",
+      "type": "grounds",
+      "tension": 0.3,
+      "evaluateElementalDignity": true
+    },
+    {
+      "source": "rel_querent_conscious",
+      "target": "rel_central_bond",
+      "type": "leads_to",
+      "tension": 0.2,
+      "evaluateElementalDignity": true
+    },
+    {
+      "source": "rel_partner_conscious",
+      "target": "rel_central_bond",
+      "type": "leads_to",
+      "tension": 0.2,
+      "evaluateElementalDignity": true
+    },
+    {
+      "source": "rel_central_bond",
+      "target": "rel_shared_trajectory",
+      "type": "synthesizes",
+      "tension": 0.4,
+      "evaluateElementalDignity": true
+    }
+  ]
+}

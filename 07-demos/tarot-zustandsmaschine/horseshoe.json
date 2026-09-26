@@ -1,0 +1,124 @@
+{
+  "$schema": "./spread.schema.json",
+  "id": "horseshoe",
+  "name": "The Horseshoe",
+  "nameDe": "Das Hufeisen",
+  "author": "Traditional (19th century)",
+  "tradition": "open",
+  "description": "7 Slots in U-Form: Ein klassisches 7-Karten-Legesystem für die ganzheitliche Betrachtung einer Situation von der Vergangenheit über verborgene Wurzeln bis zum Rat und wahrscheinlichen Ausgang.",
+  "deckContract": {
+    "minCards": 7,
+    "requiredArcana": "any",
+    "allowReversals": true,
+    "significatorRequired": false
+  },
+  "slots": [
+    {
+      "id": "hs_past",
+      "order": 1,
+      "label": "The Past",
+      "labelDe": "Die Vergangenheit",
+      "role": "past",
+      "layout": { "x": 10, "y": 20, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "hs_present",
+      "order": 2,
+      "label": "The Present",
+      "labelDe": "Die Gegenwart",
+      "role": "situation",
+      "layout": { "x": 10, "y": 50, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "hs_hidden",
+      "order": 3,
+      "label": "Hidden Influences",
+      "labelDe": "Verborgene Einflüsse",
+      "role": "foundation",
+      "layout": { "x": 10, "y": 80, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "hs_attitude",
+      "order": 4,
+      "label": "Your Attitude",
+      "labelDe": "Innere Haltung",
+      "role": "self_attitude",
+      "layout": { "x": 50, "y": 80, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "hs_external",
+      "order": 5,
+      "label": "External Influences",
+      "labelDe": "Äußere Einflüsse",
+      "role": "environment",
+      "layout": { "x": 90, "y": 80, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "hs_advice",
+      "order": 6,
+      "label": "Advice / Best Action",
+      "labelDe": "Rat / Handlungsempfehlung",
+      "role": "advice",
+      "layout": { "x": 90, "y": 50, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "hs_outcome",
+      "order": 7,
+      "label": "Likely Outcome",
+      "labelDe": "Wahrscheinlicher Ausgang",
+      "role": "outcome",
+      "layout": { "x": 90, "y": 20, "rotation": 0, "layer": 0 }
+    }
+  ],
+  "relations": [
+    {
+      "source": "hs_past",
+      "target": "hs_present",
+      "type": "leads_to",
+      "tension": 0.2,
+      "evaluateElementalDignity": true
+    },
+    {
+      "source": "hs_present",
+      "target": "hs_hidden",
+      "type": "grounds",
+      "tension": 0.3,
+      "evaluateElementalDignity": true
+    },
+    {
+      "source": "hs_hidden",
+      "target": "hs_attitude",
+      "type": "clarifies",
+      "tension": 0.1,
+      "evaluateElementalDignity": true
+    },
+    {
+      "source": "hs_attitude",
+      "target": "hs_external",
+      "type": "mirrors",
+      "tension": 0.0,
+      "evaluateElementalDignity": true
+    },
+    {
+      "source": "hs_external",
+      "target": "hs_advice",
+      "type": "leads_to",
+      "tension": 0.2,
+      "evaluateElementalDignity": false
+    },
+    {
+      "source": "hs_advice",
+      "target": "hs_outcome",
+      "type": "leads_to",
+      "tension": 0.4,
+      "evaluateElementalDignity": true
+    },
+    {
+      "source": "hs_past",
+      "target": "hs_outcome",
+      "type": "mirrors",
+      "tension": -0.1,
+      "evaluateElementalDignity": false
+    }
+  ]
+}

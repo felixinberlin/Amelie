@@ -132,6 +132,8 @@ export const TarotGraphSimulator: React.FC<TarotGraphSimulatorProps> = ({
           >
             <option value="celtic-cross">{isDe ? 'Keltisches Kreuz (10 Slots)' : 'Celtic Cross (10 Slots)'}</option>
             <option value="three-card">{isDe ? '3-Karten-Zeitstrahl' : 'Three-Card Timeline'}</option>
+            <option value="horseshoe">{isDe ? 'Hufeisen (7 Slots)' : 'Horseshoe (7 Slots)'}</option>
+            <option value="relationship-cross">{isDe ? 'Beziehungskreuz (5 Slots)' : 'Relationship Cross (5 Slots)'}</option>
           </select>
 
           <button

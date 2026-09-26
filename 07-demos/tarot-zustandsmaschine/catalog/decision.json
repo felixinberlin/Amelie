@@ -1,0 +1,101 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "decision",
+  "name": "Two-Path Decision",
+  "nameDe": "Entscheidungskreuz (Zwei Wege)",
+  "author": "Traditional / Hajo Banzhaf",
+  "tradition": "open",
+  "layoutType": "triangular",
+  "difficulty": "intermediate",
+  "description": "5 Slots zur Gegenüberstellung zweier Handlungsoptionen (Weg A vs. Weg B) ausgehend von der aktuellen Ausgangslage.",
+  "instructions": {
+    "preDraw": "Definiere Weg A und Weg B präzise vor der Ziehung.",
+    "drawingOrder": "1: Ausgangslage (Zentrum), 2-3: Weg A (Verlauf & Ergebnis), 4-5: Weg B (Verlauf & Ergebnis).",
+    "interpretationGuide": "Vergleiche die Spannungswerte und elementaren Harmonien beider Pfade gegeneinander."
+  },
+  "deckContract": {
+    "minCards": 5,
+    "requiredArcana": "any",
+    "allowReversals": true,
+    "significatorRequired": false
+  },
+  "slots": [
+    {
+      "id": "dec_root",
+      "order": 1,
+      "label": "The Core Dilemma / Present Stance",
+      "labelDe": "Die Ausgangslage (Dilemma)",
+      "role": "situation",
+      "layout": { "x": 50, "y": 80, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "path_a_step",
+      "order": 2,
+      "label": "Path A: Immediate Step",
+      "labelDe": "Weg A: Nächster Schritt",
+      "role": "option_a",
+      "layout": { "x": 25, "y": 45, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "path_a_outcome",
+      "order": 3,
+      "label": "Path A: Outcome & Consequence",
+      "labelDe": "Weg A: Konsequenz / Ziel",
+      "role": "outcome",
+      "layout": { "x": 25, "y": 15, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "path_b_step",
+      "order": 4,
+      "label": "Path B: Immediate Step",
+      "labelDe": "Weg B: Nächster Schritt",
+      "role": "option_b",
+      "layout": { "x": 75, "y": 45, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "path_b_outcome",
+      "order": 5,
+      "label": "Path B: Outcome & Consequence",
+      "labelDe": "Weg B: Konsequenz / Ziel",
+      "role": "outcome",
+      "layout": { "x": 75, "y": 15, "rotation": 0, "layer": 0 }
+    }
+  ],
+  "relations": [
+    {
+      "source": "dec_root",
+      "target": "path_a_step",
+      "type": "leads_to",
+      "tension": 0.2,
+      "evaluateElementalDignity": true
+    },
+    {
+      "source": "path_a_step",
+      "target": "path_a_outcome",
+      "type": "leads_to",
+      "tension": 0.3,
+      "evaluateElementalDignity": true
+    },
+    {
+      "source": "dec_root",
+      "target": "path_b_step",
+      "type": "leads_to",
+      "tension": 0.2,
+      "evaluateElementalDignity": true
+    },
+    {
+      "source": "path_b_step",
+      "target": "path_b_outcome",
+      "type": "leads_to",
+      "tension": 0.3,
+      "evaluateElementalDignity": true
+    },
+    {
+      "source": "path_a_outcome",
+      "target": "path_b_outcome",
+      "type": "opposes",
+      "tension": -0.4,
+      "evaluateElementalDignity": true
+    }
+  ]
+}

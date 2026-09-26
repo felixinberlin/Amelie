@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "single-card",
+  "name": "Single Card Focus",
+  "nameDe": "Tageskarte / Einzelfokus",
+  "author": "Traditional",
+  "tradition": "open",
+  "layoutType": "linear",
+  "difficulty": "beginner",
+  "description": "Ein Einzelkarten-Impuls für den Tag oder zur Kontemplation eines spezifischen Themas.",
+  "instructions": {
+    "preDraw": "Formuliere einen klaren Fokus oder eine offene Frage für den Tag.",
+    "drawingOrder": "Ziehe eine einzelne Karte und lege sie zentriert ab.",
+    "interpretationGuide": "Betrachte Symbolik, Element und Archetyp als archetypischen Impuls."
+  },
+  "deckContract": {
+    "minCards": 1,
+    "requiredArcana": "any",
+    "allowReversals": true,
+    "significatorRequired": false
+  },
+  "slots": [
+    {
+      "id": "focus_card",
+      "order": 1,
+      "label": "Core Focus / Theme of the Day",
+      "labelDe": "Tagesfokus / Kernthema",
+      "role": "situation",
+      "layout": { "x": 50, "y": 50, "rotation": 0, "layer": 0 }
+    }
+  ],
+  "relations": []
+}

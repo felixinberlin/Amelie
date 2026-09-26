@@ -1,0 +1,232 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tarot-schema.org/schemas/v2/tarot-spread-definition.schema.json",
+  "title": "TarotSpreadDefinition",
+  "description": "Formal, vendor-independent specification for divinatory and narrative card spreads with topological slots and directed semantic relations.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "name",
+    "deckContract",
+    "slots",
+    "relations"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "2.0.0"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "nameDe": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "tradition": {
+      "type": "string",
+      "enum": ["rws", "thoth", "marseille", "lenormand", "secular", "open", "custom"]
+    },
+    "layoutType": {
+      "type": "string",
+      "enum": ["linear", "cross", "circular", "symbolic", "triangular", "custom"]
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": ["beginner", "easy", "intermediate", "advanced", "expert"]
+    },
+    "description": {
+      "type": "string"
+    },
+    "instructions": {
+      "$ref": "#/$defs/instructions"
+    },
+    "deckContract": {
+      "$ref": "#/$defs/deckContract"
+    },
+    "readingVariants": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/readingVariant"
+      }
+    },
+    "slots": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/slot"
+      }
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/relation"
+      }
+    }
+  },
+  "$defs": {
+    "instructions": {
+      "type": "object",
+      "properties": {
+        "preDraw": { "type": "string" },
+        "drawingOrder": { "type": "string" },
+        "interpretationGuide": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "deckContract": {
+      "type": "object",
+      "required": ["minCards"],
+      "properties": {
+        "minCards": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "maxCards": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "requiredArcana": {
+          "type": "string",
+          "enum": ["any", "major_only", "minor_only", "full_78", "lenormand_36"],
+          "default": "any"
+        },
+        "allowReversals": {
+          "type": "boolean",
+          "default": true
+        },
+        "significatorRequired": {
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "readingVariant": {
+      "type": "object",
+      "required": ["id", "name"],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "nameDe": { "type": "string" },
+        "description": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "slot": {
+      "type": "object",
+      "required": ["id", "order", "label", "role", "layout"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$"
+        },
+        "order": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "label": { "type": "string" },
+        "labelDe": { "type": "string" },
+        "role": {
+          "type": "string",
+          "enum": [
+            "querent",
+            "situation",
+            "obstacle",
+            "foundation",
+            "past",
+            "crown_aspiration",
+            "near_future",
+            "self_attitude",
+            "environment",
+            "hopes_fears",
+            "outcome",
+            "clarifier",
+            "advice",
+            "synthesis",
+            "option_a",
+            "option_b",
+            "spiritual_path",
+            "custom"
+          ]
+        },
+        "layout": {
+          "$ref": "#/$defs/layout"
+        },
+        "filter": {
+          "type": "string",
+          "enum": ["all", "major_only", "court_only", "minor_numbered_only"]
+        }
+      },
+      "additionalProperties": false
+    },
+    "layout": {
+      "type": "object",
+      "required": ["x", "y"],
+      "properties": {
+        "x": {
+          "description": "Normalized X-coordinate in percentage (0 to 100)",
+          "type": "number"
+        },
+        "y": {
+          "description": "Normalized Y-coordinate in percentage (0 to 100)",
+          "type": "number"
+        },
+        "rotation": {
+          "description": "Rotation angle in degrees (e.g., 90 for crossing cards)",
+          "type": "number",
+          "default": 0
+        },
+        "layer": {
+          "description": "Z-plane stack order (0 = base table, 1 = superimposed)",
+          "type": "integer",
+          "default": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "relation": {
+      "type": "object",
+      "required": ["source", "target", "type"],
+      "properties": {
+        "source": { "type": "string" },
+        "target": { "type": "string" },
+        "type": {
+          "type": "string",
+          "enum": [
+            "crosses",
+            "grounds",
+            "crowns",
+            "leads_to",
+            "mirrors",
+            "opposes",
+            "clarifies",
+            "synthesizes",
+            "adjacent_to"
+          ]
+        },
+        "tension": {
+          "description": "Inherent polarity or structural tension (-1.0 hostile/friction to +1.0 supportive/harmonic)",
+          "type": "number",
+          "minimum": -1,
+          "maximum": 1
+        },
+        "evaluateElementalDignity": {
+          "description": "Whether to dynamically modulate edge weight using Golden Dawn elemental compatibility",
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

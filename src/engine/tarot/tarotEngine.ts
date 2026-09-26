@@ -87,7 +87,9 @@ export interface EvaluatedEdge {
 }
 
 /**
- * 22 Major Arcana + representative Court & Pip cards (total 30 curated cards for interactive simulation)
+ * 22 Major Arcana + 8 representative Minor Arcana (total 30 curated cards for interactive simulation).
+ * Minor Arcana cover all 4 suits (Wands/Fire, Cups/Water, Swords/Air, Pentacles/Earth)
+ * with variety in rank: Aces, Pips (3, 4, 10), and Court cards (Page, Knight, Queen, King).
  */
 export const TAROT_DECK: TarotCard[] = [
   {
@@ -459,6 +461,66 @@ export const TAROT_DECK: TarotCard[] = [
     archetype: 'Der Festungsbauer, der sich selbst einsperrt',
     symbolism: 'Mann hält Münzen krampfhaft auf Kopf, Händen und Füßen',
   },
+  {
+    id: 'knight_wands',
+    name: 'Knight of Wands',
+    nameDe: 'Ritter der Stäbe',
+    arcana: 'minor',
+    suit: 'wands',
+    number: 12,
+    element: 'fire',
+    keywordsDe: ['Abenteuerlust', 'Impulsiver Aufbruch', 'Leidenschaftliche Energie'],
+    keywordsEn: ['Adventure', 'Impulsive Action', 'Passionate Energy'],
+    reversedKeywordsDe: ['Rücksichtslosigkeit', 'Übermut', 'Flüchtige Begeisterung'],
+    reversedKeywordsEn: ['Recklessness', 'Haste', 'Scattered Energy'],
+    archetype: 'Der feurige Reiter, der zuerst losreitet und dann denkt',
+    symbolism: 'Gepanzerter Reiter auf steigendem Pferd, Wüstenlandschaft, Salamander-Tunika',
+  },
+  {
+    id: 'queen_cups',
+    name: 'Queen of Cups',
+    nameDe: 'Königin der Kelche',
+    arcana: 'minor',
+    suit: 'cups',
+    number: 13,
+    element: 'water',
+    keywordsDe: ['Emotionale Tiefe', 'Empathie', 'Intuitive Weisheit'],
+    keywordsEn: ['Emotional Depth', 'Empathy', 'Intuitive Wisdom'],
+    reversedKeywordsDe: ['Emotionale Verstrickung', 'Launenhaftigkeit', 'Abhängigkeit'],
+    reversedKeywordsEn: ['Emotional Instability', 'Codependency', 'Inner Turbulence'],
+    archetype: 'Die Herrscherin über das emotionale Meer',
+    symbolism: 'Thron am Wasser, verschlossener Kelch mit Engelsdeckel, Kieselstrand',
+  },
+  {
+    id: 'page_swords',
+    name: 'Page of Swords',
+    nameDe: 'Page der Schwerter',
+    arcana: 'minor',
+    suit: 'swords',
+    number: 11,
+    element: 'air',
+    keywordsDe: ['Neugier', 'Scharfe Beobachtung', 'Ungestümer Intellekt'],
+    keywordsEn: ['Curiosity', 'Sharp Observation', 'Restless Intellect'],
+    reversedKeywordsDe: ['Geschwätz', 'Zynismus', 'Hinterhältigkeit'],
+    reversedKeywordsEn: ['Gossip', 'Cynicism', 'All Talk No Action'],
+    archetype: 'Der rastlose Wächter auf dem windigen Hügel',
+    symbolism: 'Junger Mensch mit erhobenem Schwert auf Anhöhe, stürmische Wolken',
+  },
+  {
+    id: 'king_pentacles',
+    name: 'King of Pentacles',
+    nameDe: 'König der Münzen',
+    arcana: 'minor',
+    suit: 'pentacles',
+    number: 14,
+    element: 'earth',
+    keywordsDe: ['Wohlstand', 'Verlässlichkeit', 'Meisterhafte Verwaltung'],
+    keywordsEn: ['Abundance', 'Reliability', 'Masterful Stewardship'],
+    reversedKeywordsDe: ['Materialismus', 'Gier', 'Korruption'],
+    reversedKeywordsEn: ['Greed', 'Indulgence', 'Financial Mismanagement'],
+    archetype: 'Der Patriarch auf dem Münzenthron',
+    symbolism: 'Schwerer Thron mit Stierrelief, Weinreben, Rüstung unter Mantel',
+  },
 ];
 
 /**
@@ -517,49 +579,70 @@ export function evaluateSpreadEdge(
   // Clamp tension to [-1.0, 1.0]
   const clamped = Math.max(-1.0, Math.min(1.0, tension));
 
-  // Natural language explanations
+  // Natural language explanations — all 8 relation types covered
   let descDe = '';
   let descEn = '';
 
-  if (relation.type === 'crosses') {
-    descDe = `Orthogonale Überlagerung (90°). ${
-      affinity === 'hostile'
-        ? 'Feindliche Element-Spannung (' + source?.card.element + ' vs ' + target?.card.element + ') verstärkt die Reibung.'
-        : affinity === 'friendly'
-        ? 'Verträgliche Elemente mildern die Hürde zu einem produktiven Reibungspunkt.'
-        : 'Direkte Reibung zwischen aktuellem Thema und Querkarte.'
-    }`;
-    descEn = `Orthogonal cross (90°). ${
-      affinity === 'hostile'
-        ? 'Hostile element friction (' + source?.card.element + ' vs ' + target?.card.element + ') sharpens the conflict.'
-        : affinity === 'friendly'
-        ? 'Compatible elements soften the obstacle into constructive tension.'
-        : 'Direct tension between current core and crossing factor.'
-    }`;
-  } else if (relation.type === 'grounds') {
-    descDe = `Fundamentierende Wurzel. ${
-      affinity === 'friendly'
-        ? 'Wasser & Erde nähren das Fundament stabil.'
-        : 'Unbewusster Unterbau speist die gegenwärtige Konstellation.'
-    }`;
-    descEn = `Foundational root. ${
-      affinity === 'friendly'
-        ? 'Elements harmonize to anchor a grounded base.'
-        : 'Subconscious layer feeding the present state.'
-    }`;
-  } else if (relation.type === 'crowns') {
-    descDe = `Bewusste Krone / Ausrichtung nach oben.`;
-    descEn = `Conscious aspiration / crowning direction.`;
-  } else if (relation.type === 'leads_to') {
-    descDe = source?.isReversed
-      ? 'Umgekehrte Ursprungskarte verzögert oder blockiert den temporalen Fluss.'
-      : 'Direkte temporale Sequenz (Fortschritt zum nächsten Zustand).';
-    descEn = source?.isReversed
-      ? 'Reversed origin card inhibits or stalls narrative momentum.'
-      : 'Direct temporal sequence (momentum toward next state).';
-  } else {
-    descDe = `Beziehungstyp: ${relation.type} (Polarität: ${clamped.toFixed(2)})`;
-    descEn = `Relation type: ${relation.type} (Polarity: ${clamped.toFixed(2)})`;
+  const affinityDescDe = affinity === 'hostile'
+    ? `Feindliche Element-Spannung (${source?.card.element} vs ${target?.card.element}) verschärft die Dynamik.`
+    : affinity === 'friendly'
+    ? `Verträgliche Elemente (${source?.card.element} + ${target?.card.element}) harmonisieren die Verbindung.`
+    : affinity === 'identical'
+    ? `Gleiches Element (${source?.card.element}) verstärkt die vorherrschende Polarität.`
+    : '';
+
+  const affinityDescEn = affinity === 'hostile'
+    ? `Hostile element friction (${source?.card.element} vs ${target?.card.element}) sharpens the dynamic.`
+    : affinity === 'friendly'
+    ? `Compatible elements (${source?.card.element} + ${target?.card.element}) harmonize the connection.`
+    : affinity === 'identical'
+    ? `Identical element (${source?.card.element}) intensifies the prevailing polarity.`
+    : '';
+
+  switch (relation.type) {
+    case 'crosses':
+      descDe = `Orthogonale Überlagerung (90°). ${affinityDescDe || 'Direkte Reibung zwischen aktuellem Thema und Querkarte.'}`;
+      descEn = `Orthogonal cross (90°). ${affinityDescEn || 'Direct tension between current core and crossing factor.'}`;
+      break;
+    case 'grounds':
+      descDe = `Fundamentierende Wurzel: Unbewusster Unterbau speist die gegenwärtige Konstellation. ${affinityDescDe}`.trim();
+      descEn = `Foundational root: Subconscious layer feeding the present state. ${affinityDescEn}`.trim();
+      break;
+    case 'crowns':
+      descDe = `Bewusste Krone: Ausrichtung auf das höchste bewusste Ziel oder die idealisierte Möglichkeit. ${affinityDescDe}`.trim();
+      descEn = `Conscious aspiration: Crowning direction toward the highest conscious goal or idealized possibility. ${affinityDescEn}`.trim();
+      break;
+    case 'leads_to':
+      if (source?.isReversed) {
+        descDe = 'Umgekehrte Ursprungskarte verzögert oder blockiert den temporalen Fluss.';
+        descEn = 'Reversed origin card inhibits or stalls narrative momentum.';
+      } else if (target?.isReversed) {
+        descDe = 'Umgekehrte Zielkarte erschwert die Ankunft im nächsten Zustand.';
+        descEn = 'Reversed target card resists arrival at the next state.';
+      } else {
+        descDe = `Direkte temporale Sequenz (Fortschritt zum nächsten Zustand). ${affinityDescDe}`.trim();
+        descEn = `Direct temporal sequence (momentum toward next state). ${affinityDescEn}`.trim();
+      }
+      break;
+    case 'mirrors':
+      descDe = `Symmetrische Spiegelung: Zwei Perspektiven auf dasselbe Thema reflektieren sich gegenseitig. ${affinityDescDe}`.trim();
+      descEn = `Symmetric reflection: Two perspectives on the same theme mirror each other. ${affinityDescEn}`.trim();
+      break;
+    case 'opposes':
+      descDe = `Antithetische Opposition: Direkte Gegenüberstellung zweier widerstreitender Kräfte. ${affinityDescDe}`.trim();
+      descEn = `Antithetical opposition: Direct confrontation between two competing forces. ${affinityDescEn}`.trim();
+      break;
+    case 'clarifies':
+      descDe = `Erhellung: Die Quellkarte liefert zusätzlichen Kontext oder schärft die Interpretation der Zielkarte. ${affinityDescDe}`.trim();
+      descEn = `Clarification: The source card provides additional context or sharpens interpretation of the target. ${affinityDescEn}`.trim();
+      break;
+    case 'synthesizes':
+      descDe = `Synthese: Mehrere Energien verdichten sich hier zu einem integrierten Gesamtbild. ${affinityDescDe}`.trim();
+      descEn = `Synthesis: Multiple energies converge here into an integrated whole. ${affinityDescEn}`.trim();
+      break;
+    default:
+      descDe = `Beziehungstyp: ${relation.type} (Polarität: ${clamped.toFixed(2)})`;
+      descEn = `Relation type: ${relation.type} (Polarity: ${clamped.toFixed(2)})`;
   }
 
   return {
@@ -573,8 +656,236 @@ export function evaluateSpreadEdge(
   };
 }
 
+// ────────────────────────────────────────────────────────
+// Deck Contract & Spread Validation
+// ────────────────────────────────────────────────────────
+
+export interface DeckContractResult {
+  valid: boolean;
+  errors: string[];
+}
+
 /**
- * Built-in Spread Definitions matching the open JSON Schema
+ * Validates whether a deck of cards satisfies a spread's deckContract.
+ * Returns an object with `valid` boolean and descriptive `errors` array.
+ */
+export function validateDeckContract(
+  deck: TarotCard[],
+  contract: DeckContract
+): DeckContractResult {
+  const errors: string[] = [];
+
+  // Check minimum card count
+  if (deck.length < contract.minCards) {
+    errors.push(
+      `Deck has ${deck.length} cards but spread requires at least ${contract.minCards}.`
+    );
+  }
+
+  // Check arcana requirements
+  if (contract.requiredArcana === 'major_only') {
+    const hasMajors = deck.some((c) => c.arcana === 'major');
+    if (!hasMajors) {
+      errors.push('Deck contract requires Major Arcana cards but none are present.');
+    }
+  } else if (contract.requiredArcana === 'full_78') {
+    const majors = deck.filter((c) => c.arcana === 'major').length;
+    const minors = deck.filter((c) => c.arcana === 'minor').length;
+    if (majors < 22 || minors < 56) {
+      errors.push(
+        `Deck contract requires a full 78-card deck (22 Major + 56 Minor). Found: ${majors} Major, ${minors} Minor.`
+      );
+    }
+  } else if (contract.requiredArcana === 'lenormand_36') {
+    if (deck.length < 36) {
+      errors.push(
+        `Deck contract requires a 36-card Lenormand deck. Found: ${deck.length} cards.`
+      );
+    }
+  } else if (contract.requiredArcana === 'minor_only') {
+    const hasMinors = deck.some((c) => c.arcana === 'minor');
+    if (!hasMinors) {
+      errors.push('Deck contract requires Minor Arcana cards but none are present.');
+    }
+  }
+
+  return { valid: errors.length === 0, errors };
+}
+
+export interface SpreadValidationResult {
+  valid: boolean;
+  errors: string[];
+  warnings: string[];
+}
+
+/**
+ * Validates the structural integrity of a SpreadDefinition:
+ * - Unique slot IDs
+ * - Sequential order numbers
+ * - All relation endpoints reference existing slots
+ * - No self-referencing relations
+ */
+export function validateSpreadDefinition(
+  spread: SpreadDefinition
+): SpreadValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+  const slotIds = new Set(spread.slots.map((s) => s.id));
+
+  // Check for duplicate slot IDs
+  if (slotIds.size !== spread.slots.length) {
+    errors.push('Duplicate slot IDs detected.');
+  }
+
+  // Check sequential order
+  const orders = spread.slots.map((s) => s.order).sort((a, b) => a - b);
+  for (let i = 0; i < orders.length; i++) {
+    if (orders[i] !== i + 1) {
+      errors.push(
+        `Slot order numbers are not sequential starting from 1. Expected ${i + 1}, found ${orders[i]}.`
+      );
+      break;
+    }
+  }
+
+  // Check relation endpoint references
+  for (const rel of spread.relations) {
+    if (!slotIds.has(rel.source)) {
+      errors.push(`Relation source '${rel.source}' does not reference an existing slot.`);
+    }
+    if (!slotIds.has(rel.target)) {
+      errors.push(`Relation target '${rel.target}' does not reference an existing slot.`);
+    }
+    if (rel.source === rel.target) {
+      errors.push(`Self-referencing relation detected: '${rel.source}' → '${rel.target}'.`);
+    }
+  }
+
+  // Warning: orphaned slots (no relations)
+  for (const slot of spread.slots) {
+    const hasRelation = spread.relations.some(
+      (r) => r.source === slot.id || r.target === slot.id
+    );
+    if (!hasRelation) {
+      warnings.push(`Slot '${slot.id}' (order ${slot.order}) has no relations — it is an orphan node.`);
+    }
+  }
+
+  // Warning: deck contract sanity
+  if (spread.deckContract.minCards < spread.slots.length) {
+    warnings.push(
+      `deckContract.minCards (${spread.deckContract.minCards}) is less than the number of slots (${spread.slots.length}).`
+    );
+  }
+
+  return { valid: errors.length === 0, errors, warnings };
+}
+
+// ────────────────────────────────────────────────────────
+// Reading Summary Generator
+// ────────────────────────────────────────────────────────
+
+export interface ReadingSummary {
+  spreadName: string;
+  totalSlots: number;
+  filledSlots: number;
+  reversedCount: number;
+  averageTension: number;
+  dominantElement: TarotElement | null;
+  elementDistribution: Record<TarotElement, number>;
+  hostileEdgeCount: number;
+  friendlyEdgeCount: number;
+  blockedFlowCount: number;
+  narrativeDe: string;
+  narrativeEn: string;
+}
+
+/**
+ * Generates a structural summary of a complete reading, analyzing the
+ * graph topology, elemental balance, reversal density, and tension landscape.
+ */
+export function generateReadingSummary(
+  spread: SpreadDefinition,
+  placements: Record<string, DrawnCardPlacement>,
+  evaluatedEdges: EvaluatedEdge[]
+): ReadingSummary {
+  const filledSlots = Object.keys(placements).length;
+  const reversedCount = Object.values(placements).filter((p) => p.isReversed).length;
+
+  // Element distribution
+  const elementDistribution: Record<TarotElement, number> = { fire: 0, water: 0, air: 0, earth: 0 };
+  for (const p of Object.values(placements)) {
+    elementDistribution[p.card.element]++;
+  }
+  const dominantElement = (Object.entries(elementDistribution) as [TarotElement, number][])
+    .sort((a, b) => b[1] - a[1])[0];
+
+  // Edge analysis
+  const tensions = evaluatedEdges.map((e) => e.effectiveTension);
+  const averageTension = tensions.length > 0
+    ? Number((tensions.reduce((a, b) => a + b, 0) / tensions.length).toFixed(2))
+    : 0;
+  const hostileEdgeCount = evaluatedEdges.filter((e) => e.elementalAffinity === 'hostile').length;
+  const friendlyEdgeCount = evaluatedEdges.filter((e) => e.elementalAffinity === 'friendly').length;
+  const blockedFlowCount = evaluatedEdges.filter(
+    (e) => e.relation.type === 'leads_to' && e.effectiveTension < -0.1
+  ).length;
+
+  // Narrative tone
+  const reversalRatio = filledSlots > 0 ? reversedCount / filledSlots : 0;
+  let toneDe = '';
+  let toneEn = '';
+
+  if (averageTension < -0.3) {
+    toneDe = 'Die Legung ist von starker innerer Spannung und Widerständen geprägt.';
+    toneEn = 'The reading is marked by strong inner tension and resistance.';
+  } else if (averageTension > 0.3) {
+    toneDe = 'Die Legung zeigt ein harmonisches, fließendes Energiebild.';
+    toneEn = 'The reading shows a harmonious, flowing energy pattern.';
+  } else {
+    toneDe = 'Die Legung bewegt sich in einem ausgewogenen Spannungsfeld.';
+    toneEn = 'The reading operates in a balanced tension field.';
+  }
+
+  if (reversalRatio > 0.4) {
+    toneDe += ' Hohe Reversal-Dichte deutet auf Blockaden und innere Umkehrprozesse hin.';
+    toneEn += ' High reversal density suggests blockages and internal recalibration.';
+  }
+
+  if (dominantElement[1] >= 3) {
+    const elemNamesDe: Record<TarotElement, string> = { fire: 'Feuer', water: 'Wasser', air: 'Luft', earth: 'Erde' };
+    toneDe += ` Dominantes Element: ${elemNamesDe[dominantElement[0]]} (${dominantElement[1]}×).`;
+    toneEn += ` Dominant element: ${dominantElement[0]} (${dominantElement[1]}×).`;
+  }
+
+  if (blockedFlowCount > 0) {
+    toneDe += ` ${blockedFlowCount} temporale Übergänge sind blockiert oder verzögert.`;
+    toneEn += ` ${blockedFlowCount} temporal transition(s) blocked or stalled.`;
+  }
+
+  return {
+    spreadName: spread.name,
+    totalSlots: spread.slots.length,
+    filledSlots,
+    reversedCount,
+    averageTension,
+    dominantElement: dominantElement[0],
+    elementDistribution,
+    hostileEdgeCount,
+    friendlyEdgeCount,
+    blockedFlowCount,
+    narrativeDe: toneDe.trim(),
+    narrativeEn: toneEn.trim(),
+  };
+}
+
+// ────────────────────────────────────────────────────────
+// Built-in Spread Definitions
+// ────────────────────────────────────────────────────────
+
+/**
+ * Built-in Spread Definitions matching the open JSON Schema.
+ * 4 canonical spreads covering different reading purposes and card counts.
  */
 export const BUILT_IN_SPREADS: Record<string, SpreadDefinition> = {
   'celtic-cross': {
@@ -607,6 +918,7 @@ export const BUILT_IN_SPREADS: Record<string, SpreadDefinition> = {
       { source: 'near_future', target: 'staff_outcome', type: 'synthesizes', tension: 0.6, evaluateElementalDignity: true },
     ],
   },
+
   'three-card': {
     id: 'three-card',
     name: 'Three-Card Timeline',
@@ -625,4 +937,55 @@ export const BUILT_IN_SPREADS: Record<string, SpreadDefinition> = {
       { source: 'past', target: 'future', type: 'mirrors', tension: 0.0, evaluateElementalDignity: false },
     ],
   },
+
+  'horseshoe': {
+    id: 'horseshoe',
+    name: 'The Horseshoe',
+    nameDe: 'Das Hufeisen',
+    author: 'Traditional (19th century)',
+    description: '7 Slots in U-Form: Vergangenheit, Gegenwart, verborgene Einflüsse, innere Haltung, äußere Einflüsse, Rat und wahrscheinliches Ergebnis.',
+    deckContract: { minCards: 7, requiredArcana: 'any', allowReversals: true },
+    slots: [
+      { id: 'hs_past', order: 1, label: 'The Past', labelDe: 'Vergangenheit', role: 'past', layout: { x: 10, y: 20, rotation: 0, layer: 0 } },
+      { id: 'hs_present', order: 2, label: 'The Present', labelDe: 'Gegenwart', role: 'situation', layout: { x: 10, y: 50, rotation: 0, layer: 0 } },
+      { id: 'hs_hidden', order: 3, label: 'Hidden Influences', labelDe: 'Verborgene Einflüsse', role: 'foundation', layout: { x: 10, y: 80, rotation: 0, layer: 0 } },
+      { id: 'hs_attitude', order: 4, label: 'Your Attitude', labelDe: 'Innere Haltung', role: 'self_attitude', layout: { x: 50, y: 80, rotation: 0, layer: 0 } },
+      { id: 'hs_external', order: 5, label: 'External Influences', labelDe: 'Äußere Einflüsse', role: 'environment', layout: { x: 90, y: 80, rotation: 0, layer: 0 } },
+      { id: 'hs_advice', order: 6, label: 'Advice', labelDe: 'Rat / Empfehlung', role: 'advice', layout: { x: 90, y: 50, rotation: 0, layer: 0 } },
+      { id: 'hs_outcome', order: 7, label: 'Likely Outcome', labelDe: 'Wahrscheinliches Ergebnis', role: 'outcome', layout: { x: 90, y: 20, rotation: 0, layer: 0 } },
+    ],
+    relations: [
+      { source: 'hs_past', target: 'hs_present', type: 'leads_to', tension: 0.2, evaluateElementalDignity: true },
+      { source: 'hs_present', target: 'hs_hidden', type: 'grounds', tension: 0.3, evaluateElementalDignity: true },
+      { source: 'hs_hidden', target: 'hs_attitude', type: 'clarifies', tension: 0.1, evaluateElementalDignity: true },
+      { source: 'hs_attitude', target: 'hs_external', type: 'mirrors', tension: 0.0, evaluateElementalDignity: true },
+      { source: 'hs_external', target: 'hs_advice', type: 'leads_to', tension: 0.2, evaluateElementalDignity: false },
+      { source: 'hs_advice', target: 'hs_outcome', type: 'leads_to', tension: 0.4, evaluateElementalDignity: true },
+      { source: 'hs_past', target: 'hs_outcome', type: 'mirrors', tension: -0.1, evaluateElementalDignity: false },
+    ],
+  },
+
+  'relationship-cross': {
+    id: 'relationship-cross',
+    name: 'The Relationship Cross',
+    nameDe: 'Das Beziehungskreuz',
+    author: 'Traditional / Labyrinthos-Variation',
+    description: '5 Slots: Situation, Fragende Person, Gegenüber, Hindernis und nächster Schritt — für Beziehungsfragen.',
+    deckContract: { minCards: 5, requiredArcana: 'any', allowReversals: true },
+    slots: [
+      { id: 'rc_situation', order: 1, label: 'The Relationship', labelDe: 'Die Beziehung', role: 'situation', layout: { x: 50, y: 50, rotation: 0, layer: 0 } },
+      { id: 'rc_querent', order: 2, label: 'You', labelDe: 'Du / Fragende Person', role: 'querent', layout: { x: 20, y: 50, rotation: 0, layer: 0 } },
+      { id: 'rc_partner', order: 3, label: 'Them / Partner', labelDe: 'Gegenüber / Partner:in', role: 'environment', layout: { x: 80, y: 50, rotation: 0, layer: 0 } },
+      { id: 'rc_obstacle', order: 4, label: 'The Obstacle', labelDe: 'Das Hindernis', role: 'obstacle', layout: { x: 50, y: 20, rotation: 0, layer: 0 } },
+      { id: 'rc_advice', order: 5, label: 'Next Step / Advice', labelDe: 'Nächster Schritt', role: 'advice', layout: { x: 50, y: 80, rotation: 0, layer: 0 } },
+    ],
+    relations: [
+      { source: 'rc_querent', target: 'rc_situation', type: 'leads_to', tension: 0.3, evaluateElementalDignity: true },
+      { source: 'rc_partner', target: 'rc_situation', type: 'leads_to', tension: 0.3, evaluateElementalDignity: true },
+      { source: 'rc_querent', target: 'rc_partner', type: 'mirrors', tension: 0.0, evaluateElementalDignity: true },
+      { source: 'rc_obstacle', target: 'rc_situation', type: 'opposes', tension: -0.6, evaluateElementalDignity: true },
+      { source: 'rc_situation', target: 'rc_advice', type: 'leads_to', tension: 0.4, evaluateElementalDignity: false },
+    ],
+  },
 };
+

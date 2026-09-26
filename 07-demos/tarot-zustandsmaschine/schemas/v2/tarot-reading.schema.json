@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tarot-schema.org/schemas/v2/tarot-reading.schema.json",
+  "title": "TarotReading",
+  "description": "A saved tarot reading record: references a spread definition, captures drawn card placements, elemental dignity metrics, and interpretation notes.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "readingId", "spreadId", "drawnAt", "cards"],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "readingId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "spreadId": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "question": {
+      "type": "string"
+    },
+    "drawnAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "deck": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "reversals": { "type": "boolean", "default": false }
+      },
+      "additionalProperties": false
+    },
+    "cards": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["slotId", "cardId", "orientation"],
+        "properties": {
+          "slotId": { "type": "string" },
+          "cardId": { "type": "string" },
+          "orientation": {
+            "type": "string",
+            "enum": ["upright", "reversed"]
+          },
+          "notes": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "interpretation": {
+      "type": "string"
+    },
+    "metrics": {
+      "type": "object",
+      "properties": {
+        "averageTension": { "type": "number" },
+        "dominantElement": { "type": "string" },
+        "reversedRatio": { "type": "number" }
+      },
+      "additionalProperties": false
+    }
+  }
+}

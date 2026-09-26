@@ -1,0 +1,183 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "tree-of-life",
+  "name": "Tree of Life (Kabbalistic 10 Sephirot)",
+  "nameDe": "Lebensbaum (10 Sephirot)",
+  "author": "Hermetic Order of the Golden Dawn / Traditional",
+  "tradition": "thoth",
+  "layoutType": "symbolic",
+  "difficulty": "expert",
+  "description": "10 Slots im kabbalistischen Lebensbaum: Von Kether (Krone/Urfunke) über die Säulen der Barmherzigkeit und Strenge bis Malkuth (physische Manifestation).",
+  "instructions": {
+    "preDraw": "Tiefgreifende spirituelle oder existenzielle Standortbestimmung.",
+    "drawingOrder": "1: Kether (Oben), 2: Chokmah (Rechts oben), 3: Binah (Links oben), 4: Chesed (Rechts mitte), 5: Geburah (Links mitte), 6: Tiphareth (Zentrum), 7: Netzach (Rechts unten), 8: Hod (Links unten), 9: Yesod (Fundament mitte), 10: Malkuth (Basis unten).",
+    "interpretationGuide": "Analysiere den Blitzstrahl (Lightning Flash) von 1 nach 10 und die Balance zwischen der rechten Säule (Kraft/Gnade) und linken Säule (Form/Strenge) um die mittlere Säule des Bewusstseins."
+  },
+  "deckContract": {
+    "minCards": 10,
+    "requiredArcana": "any",
+    "allowReversals": true,
+    "significatorRequired": false
+  },
+  "slots": [
+    {
+      "id": "sephira_1_kether",
+      "order": 1,
+      "label": "1 Kether (The Crown / Divine Spark)",
+      "labelDe": "1 Kether (Die Krone / Urquelle)",
+      "role": "crown_aspiration",
+      "layout": { "x": 50, "y": 8, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "sephira_2_chokmah",
+      "order": 2,
+      "label": "2 Chokmah (Wisdom / Dynamic Force)",
+      "labelDe": "2 Chokmah (Weisheit / Schöpferische Kraft)",
+      "role": "situation",
+      "layout": { "x": 75, "y": 20, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "sephira_3_binah",
+      "order": 3,
+      "label": "3 Binah (Understanding / Primordial Form)",
+      "labelDe": "3 Binah (Verstand / Urform & Struktur)",
+      "role": "foundation",
+      "layout": { "x": 25, "y": 20, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "sephira_4_chesed",
+      "order": 4,
+      "label": "4 Chesed (Mercy / Expansion & Grace)",
+      "labelDe": "4 Chesed (Gnade / Expansion)",
+      "role": "situation",
+      "layout": { "x": 75, "y": 42, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "sephira_5_geburah",
+      "order": 5,
+      "label": "5 Geburah (Severity / Discipline & Judgment)",
+      "labelDe": "5 Geburah (Strenge / Urteil & Zucht)",
+      "role": "obstacle",
+      "layout": { "x": 25, "y": 42, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "sephira_6_tiphareth",
+      "order": 6,
+      "label": "6 Tiphareth (Beauty / Solar Harmony & Heart)",
+      "labelDe": "6 Tiphareth (Schönheit / Harmonie & Mitte)",
+      "role": "synthesis",
+      "layout": { "x": 50, "y": 52, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "sephira_7_netzach",
+      "order": 7,
+      "label": "7 Netzach (Victory / Emotions & Art)",
+      "labelDe": "7 Netzach (Sieg / Emotion & Instinkt)",
+      "role": "situation",
+      "layout": { "x": 75, "y": 68, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "sephira_8_hod",
+      "order": 8,
+      "label": "8 Hod (Splendor / Intellect & Communication)",
+      "labelDe": "8 Hod (Glanz / Intellekt & Ordnung)",
+      "role": "self_attitude",
+      "layout": { "x": 25, "y": 68, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "sephira_9_yesod",
+      "order": 9,
+      "label": "9 Yesod (Foundation / Subconscious Astral)",
+      "labelDe": "9 Yesod (Fundament / Astralebene & Träume)",
+      "role": "foundation",
+      "layout": { "x": 50, "y": 80, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "sephira_10_malkuth",
+      "order": 10,
+      "label": "10 Malkuth (Kingdom / Physical Reality)",
+      "labelDe": "10 Malkuth (Das Reich / Physische Manifestation)",
+      "role": "outcome",
+      "layout": { "x": 50, "y": 94, "rotation": 0, "layer": 0 }
+    }
+  ],
+  "relations": [
+    {
+      "source": "sephira_1_kether",
+      "target": "sephira_2_chokmah",
+      "type": "leads_to",
+      "tension": 0.2,
+      "evaluateElementalDignity": true
+    },
+    {
+      "source": "sephira_2_chokmah",
+      "target": "sephira_3_binah",
+      "type": "opposes",
+      "tension": -0.2,
+      "evaluateElementalDignity": true
+    },
+    {
+      "source": "sephira_3_binah",
+      "target": "sephira_4_chesed",
+      "type": "leads_to",
+      "tension": 0.1,
+      "evaluateElementalDignity": true
+    },
+    {
+      "source": "sephira_4_chesed",
+      "target": "sephira_5_geburah",
+      "type": "opposes",
+      "tension": -0.3,
+      "evaluateElementalDignity": true
+    },
+    {
+      "source": "sephira_4_chesed",
+      "target": "sephira_6_tiphareth",
+      "type": "synthesizes",
+      "tension": 0.4,
+      "evaluateElementalDignity": true
+    },
+    {
+      "source": "sephira_5_geburah",
+      "target": "sephira_6_tiphareth",
+      "type": "synthesizes",
+      "tension": 0.4,
+      "evaluateElementalDignity": true
+    },
+    {
+      "source": "sephira_6_tiphareth",
+      "target": "sephira_7_netzach",
+      "type": "leads_to",
+      "tension": 0.2,
+      "evaluateElementalDignity": true
+    },
+    {
+      "source": "sephira_7_netzach",
+      "target": "sephira_8_hod",
+      "type": "opposes",
+      "tension": -0.2,
+      "evaluateElementalDignity": true
+    },
+    {
+      "source": "sephira_7_netzach",
+      "target": "sephira_9_yesod",
+      "type": "synthesizes",
+      "tension": 0.3,
+      "evaluateElementalDignity": true
+    },
+    {
+      "source": "sephira_8_hod",
+      "target": "sephira_9_yesod",
+      "type": "synthesizes",
+      "tension": 0.3,
+      "evaluateElementalDignity": true
+    },
+    {
+      "source": "sephira_9_yesod",
+      "target": "sephira_10_malkuth",
+      "type": "leads_to",
+      "tension": 0.4,
+      "evaluateElementalDignity": true
+    }
+  ]
+}

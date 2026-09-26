@@ -29,18 +29,32 @@ Bestehende Tarot-Software (Apps, Webseiten, Bots) implementiert Legesysteme jedo
 
 ## 2. Stand der Technik & Nachbarprojekte (Prior Art)
 
-Ein systematischer Abgleich bestehender Repositories und APIs zeigt eine deutliche Lücke:
+Ein systematischer Abgleich bestehender Repositories, Schemata und APIs zeigt das genaue Profil der bestehenden Ansätze:
 
 | Projekt / Standard | Was es löst | Was fehlt | Lizenz / Status |
 |---|---|---|---|
-| **metabismuth/tarot-json** | 78-Karten-RWS-Katalog (Namen, Bedeutungen, Ränge, Elemente, Bilder). | Reine Datenliste von Karten; keinerlei Legesystem-Logik oder Beziehungen. | MIT, stabil |
-| **fzlzjerry/tarot-mcp** & **gokimedia/tarot-mcp** | Model Context Protocol Server für LLM-Tarot-Agents; parametrisierte Prompts für Keltisches Kreuz. | Behandelt Spreads als Prompt-Templates; keine typisierte Graph-DSL, kein autonomes Layout. | MIT, 2025/2026 |
+| **Tarotsmith Spread Schema** (`tarotschema/codex`, `tarotsmith.com/spreads-schema.json`) | Open-Source JSON-Schema (`DefinedTermSet` via Schema.org) mit Positionstexten und Instruktionen. | **Rein flache Text-Templates:** Keine gerichteten topologischen Kanten (`crosses`, `grounds` etc.), keine geometrischen Rotations- oder Z-Ebenen ($\theta = 90^\circ, z=1$), keine Deck-Verträge, keine dynamische Spannungs-/Würden-Berechnung. | Open Data / CC |
+| **metabismuth/tarot-json** & **Deckaura Dataset** | 78-Karten-RWS-Katalog (Namen, Bedeutungen, Ränge, Elemente, Bilder, Numerologie). | Reine Datenlisten von Karten; keinerlei Legesystem-Logik, Relationen oder Topologie. | MIT / Open Source |
+| **Tarot MCP Server** (`fzlzjerry/tarot-mcp`, `deckaura/tarot-mcp-server`, `tarotoo-mcp-server`, `OracleBone`) | Model Context Protocol Server für KI-Assistenten (Claude Desktop, Cursor); Bereitstellung von Tool-Calls (`draw_card`, `get_meaning`). | Behandeln Spreads als simple Prompt-Strings oder flache Arrays. LLMs erhalten keinen Beziehungs-Graphen und halluzinieren generische Einzelkarten-Horoskope. | MIT / Open Source, 2025/2026 |
+| **Cybertarot** (`feckom/cybertarot`, `cybertarot.ai`, `cybertarot.xyz`) | Web- und KI-basierte Tarot-Anwendungen (Cyberpunk-Ästhetik, WebGL/Mobile-Kopplung). | Starre, fest verdrahtete Legesysteme (1-Karte, 3-Karten, Keltisches Kreuz) in Code; keine offene, austauschbare Graph-DSL. | Open Source / Kommerziell |
 | **RoxyAPI / AstrologyAPI / KundliAPI** | Kommerzielle REST-APIs mit JSON-Endpoints für Standard-Spreads (Celtic Cross, Three Card). | Starre Endpoints; proprietäre Schemata ohne Relationen-Modell oder Deck-Verträge. | Kommerziell / Closed |
-| **yunruse/tarot** | Einfache Web-App zur Kartenziehung mit `interpretations.json` (inkl. Labyrinthos-Zitate). | Statische Einzelkarten-Ziehung; keine relationalen Spread-Definitionen. | CC0 (Code) |
 | **Labyrinthos (Tina Gong)** | Erstklassige Didaktik, über 30 kuratierte Spreads mit visueller Führung; Standard-Referenz. | Proprietäre Mobile-App; kein offener Datenaustausch-Standard für Spreads oder Indie-Devs. | Proprietär |
 | **Twine (Chris Klimas) & Ink (Inkle / Jon Ingold)** | Standard-Engines für interaktive Fiktion; Knoten/Kanten-Strukturen für Verzweigungen. | Exzellente Laufzeit für Narrative State Machines, aber keine native Tarot-/Spread-Repräsentation. | Open Source |
 
-**Befund:** Die Datenseite (Kartenkataloge) ist als JSON gelöst. Die relationale Strukturseite (wie Positionen zueinander stehen, wie sie sich gegenseitig bedingen und wie sie graphisch gerendert werden) ist ungelöst.
+**Befund:** 
+- Die **Karten-Katalogebene** ist durch `tarot-json` und `Deckaura` gelöst.
+- Die **Text-Vorlagenebene** wird von `Tarotsmith` rudimentär als Begriffs-Set abgedeckt.
+- Was im gesamten Open-Source-Ökosystem **vollständig fehlt**, ist die **relationale Topologie**: Eine typisierte Graph-DSL, die Positionen als Knoten mit $(x, y, \theta, z)$-Geometrie, Beziehungen als gerichtete semantische Kanten mit dynamischer Spannungsmodulation (Elementare Würden, Reversal-Flussblockaden) und Decks über formale Verträge (`deckContract`) spezifiziert.
+
+---
+
+## 2.1 Der Open-Source-Beitrag (Public Domain / CC0)
+
+Dieses Vorhaben ist **keine geschlossene Auftragsarbeit für einen einzelnen Empfänger**, sondern ein **bedingungsloser Beitrag an die gesamte Open-Source-Gemeinschaft**:
+1. **Für Open-Source-Entwickler & Frameworks:** Ein universelles Schema (`spread.schema.json`), das in React, Vue, Svelte, Flutter oder Python ohne Anpassung gerendert und validiert werden kann.
+2. **Für MCP-Server & KI-Agenten:** Ein strukturiertes Graph-Format, mit dem MCP-Server (wie `tarotoo` oder `fzlzjerry/tarot-mcp`) LLMs mit echten relationalen Spannungsfeldern füttern können, statt nur Einzelkarten aufzuzählen.
+3. **Für Game-Designer & Interactive Fiction (Twine / Ink):** Eine deterministische Zustandsmaschine für prozedurale Quests und narrative Dynamiken.
+4. **Für Indie-Deck-Künstler:innen:** Ein offenes Standardformat, um eigene Legesysteme zusammen mit physischen Decks maschinenlesbar zu veröffentlichen.
 
 ---
 

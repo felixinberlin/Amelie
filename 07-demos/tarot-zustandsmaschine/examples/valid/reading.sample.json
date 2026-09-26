@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "1.0.0",
+  "readingId": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+  "spreadId": "celtic-cross",
+  "question": "How do we navigate transitioning our open-source project to a self-sustaining standard?",
+  "drawnAt": "2026-09-26T14:30:00.000Z",
+  "deck": {
+    "name": "Rider-Waite-Smith 1909 Pamela Colman Smith Original",
+    "reversals": true
+  },
+  "cards": [
+    {
+      "slotId": "heart_situation",
+      "cardId": "magician",
+      "orientation": "upright",
+      "notes": "Strong agency, creative tools already aligned."
+    },
+    {
+      "slotId": "cross_obstacle",
+      "cardId": "three_swords",
+      "orientation": "upright",
+      "notes": "Sharp intellectual critique / legacy habits crossing the core."
+    },
+    {
+      "slotId": "foundation_root",
+      "cardId": "empress",
+      "orientation": "upright",
+      "notes": "Rich generative soil in the open-source commons."
+    },
+    {
+      "slotId": "past_receding",
+      "cardId": "fool",
+      "orientation": "upright",
+      "notes": "Spontaneous experimental leap initiating the journey."
+    },
+    {
+      "slotId": "crown_aspiration",
+      "cardId": "star",
+      "orientation": "upright",
+      "notes": "Aspirations toward an open, inspiring universal standard."
+    },
+    {
+      "slotId": "near_future",
+      "cardId": "chariot",
+      "orientation": "upright",
+      "notes": "Coordinating divergent forces into disciplined forward drive."
+    },
+    {
+      "slotId": "staff_self",
+      "cardId": "hermit",
+      "orientation": "upright",
+      "notes": "Internal focus on rigorous formal architecture and integrity."
+    },
+    {
+      "slotId": "staff_environment",
+      "cardId": "hierophant",
+      "orientation": "reversed",
+      "notes": "Legacy institutions and walled-garden apps resisting open standards."
+    },
+    {
+      "slotId": "staff_hopes_fears",
+      "cardId": "moon",
+      "orientation": "reversed",
+      "notes": "Fear of ambiguity dissolving into clarity."
+    },
+    {
+      "slotId": "staff_outcome",
+      "cardId": "world",
+      "orientation": "upright",
+      "notes": "Successful synthesis, complete ecosystem integration."
+    }
+  ],
+  "metrics": {
+    "averageTension": 0.18,
+    "dominantElement": "air",
+    "reversedRatio": 0.2
+  },
+  "interpretation": "The reading shows high creative agency (Magician in present) grounded in fertile open source soil (Empress), moving toward full integration (The World) despite institutional inertia."
+}

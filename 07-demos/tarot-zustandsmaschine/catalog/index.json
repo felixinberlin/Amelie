@@ -1,0 +1,71 @@
+{
+  "catalogVersion": "2.0.0",
+  "title": "Open Tarot Spread Catalog",
+  "description": "Canonical collection of formal, validated tarot and divinatory spread definitions conforming to tarot-spread-definition v2.0.0.",
+  "license": "CC0-1.0 / Public Domain",
+  "spreads": [
+    {
+      "id": "single-card",
+      "name": "Single Card Focus",
+      "nameDe": "Tageskarte / Einzelfokus",
+      "layoutType": "linear",
+      "slots": 1,
+      "difficulty": "beginner",
+      "file": "single-card.json"
+    },
+    {
+      "id": "past-present-future",
+      "name": "Past, Present, Future Timeline",
+      "nameDe": "Drei-Karten-Zeitstrahl",
+      "layoutType": "linear",
+      "slots": 3,
+      "difficulty": "beginner",
+      "file": "past-present-future.json"
+    },
+    {
+      "id": "decision",
+      "name": "Two-Path Decision",
+      "nameDe": "Entscheidungskreuz (Zwei Wege)",
+      "layoutType": "triangular",
+      "slots": 5,
+      "difficulty": "intermediate",
+      "file": "decision.json"
+    },
+    {
+      "id": "celtic-cross",
+      "name": "The Celtic Cross",
+      "nameDe": "Das Keltische Kreuz",
+      "layoutType": "cross",
+      "slots": 10,
+      "difficulty": "advanced",
+      "file": "celtic-cross.json"
+    },
+    {
+      "id": "horseshoe",
+      "name": "The Horseshoe Spread",
+      "nameDe": "Das Hufeisen",
+      "layoutType": "linear",
+      "slots": 7,
+      "difficulty": "intermediate",
+      "file": "horseshoe.json"
+    },
+    {
+      "id": "relationship",
+      "name": "Relationship Dynamics",
+      "nameDe": "Beziehungs-Dynamik (6 Slots)",
+      "layoutType": "custom",
+      "slots": 6,
+      "difficulty": "intermediate",
+      "file": "relationship.json"
+    },
+    {
+      "id": "tree-of-life",
+      "name": "Tree of Life (Kabbalistic 10 Sephirot)",
+      "nameDe": "Lebensbaum (10 Sephirot)",
+      "layoutType": "symbolic",
+      "slots": 10,
+      "difficulty": "expert",
+      "file": "tree-of-life.json"
+    }
+  ]
+}

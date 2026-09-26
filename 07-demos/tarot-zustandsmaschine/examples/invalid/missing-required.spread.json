@@ -1,0 +1,8 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "missing-required",
+  "name": "Invalid Spread: Missing Slots and Relations",
+  "deckContract": {
+    "minCards": 3
+  }
+}

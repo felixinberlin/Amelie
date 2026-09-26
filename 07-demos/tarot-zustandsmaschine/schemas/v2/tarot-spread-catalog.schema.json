@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tarot-schema.org/schemas/v2/tarot-spread-catalog.schema.json",
+  "title": "TarotSpreadCatalog",
+  "description": "Root catalog schema holding spread metadata, elemental dignity configuration, and collection of spread definitions.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "spreads"],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "2.0.0"
+    },
+    "metadata": {
+      "$ref": "#/$defs/metadata"
+    },
+    "elementalDignity": {
+      "$ref": "#/$defs/elementalDignity"
+    },
+    "spreads": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "tarot-spread-definition.schema.json"
+      }
+    }
+  },
+  "$defs": {
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "version": { "type": "string" },
+        "license": { "type": "string" },
+        "author": { "type": "string" },
+        "repository": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "elementalDignity": {
+      "type": "object",
+      "properties": {
+        "system": {
+          "type": "string",
+          "enum": ["golden_dawn", "triplicity", "custom"],
+          "default": "golden_dawn"
+        },
+        "friendlyBonus": { "type": "number", "default": 0.25 },
+        "hostilePenalty": { "type": "number", "default": -0.35 },
+        "identicalMod": { "type": "number", "default": 0.15 }
+      },
+      "additionalProperties": false
+    }
+  }
+}
