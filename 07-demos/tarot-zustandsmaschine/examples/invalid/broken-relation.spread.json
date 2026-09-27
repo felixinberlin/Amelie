@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "broken-relation",
+  "name": "Invalid Spread: Broken Relation Target",
+  "deckContract": {
+    "minCards": 2
+  },
+  "slots": [
+    {
+      "id": "slot_a",
+      "order": 1,
+      "label": "Slot A",
+      "role": "situation",
+      "layout": { "x": 30, "y": 50, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "slot_b",
+      "order": 2,
+      "label": "Slot B",
+      "role": "outcome",
+      "layout": { "x": 70, "y": 50, "rotation": 0, "layer": 0 }
+    }
+  ],
+  "relations": [
+    {
+      "source": "slot_a",
+      "target": "nonexistent_target_node",
+      "type": "leads_to",
+      "tension": 0.2
+    }
+  ]
+}

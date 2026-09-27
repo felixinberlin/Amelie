@@ -32,6 +32,29 @@ export interface SpreadSlot {
   layout: SpreadSlotLayout;
 }
 
+export type SpreadLayoutType =
+  | 'linear'
+  | 'cross'
+  | 'circular'
+  | 'symbolic'
+  | 'triangular'
+  | 'custom';
+
+export type SpreadDifficulty = 'beginner' | 'easy' | 'intermediate' | 'advanced' | 'expert';
+
+export interface SpreadInstructions {
+  preDraw?: string;
+  drawingOrder?: string;
+  interpretationGuide?: string;
+}
+
+export interface ReadingVariant {
+  id: string;
+  name: string;
+  nameDe?: string;
+  description?: string;
+}
+
 export type RelationType =
   | 'crosses'
   | 'grounds'
@@ -40,7 +63,8 @@ export type RelationType =
   | 'mirrors'
   | 'opposes'
   | 'clarifies'
-  | 'synthesizes';
+  | 'synthesizes'
+  | 'adjacent_to';
 
 export interface SpreadRelation {
   source: string;
@@ -52,20 +76,55 @@ export interface SpreadRelation {
 
 export interface DeckContract {
   minCards: number;
+  maxCards?: number;
   requiredArcana: 'any' | 'major_only' | 'minor_only' | 'full_78' | 'lenormand_36';
   allowReversals: boolean;
   significatorRequired?: boolean;
 }
 
 export interface SpreadDefinition {
+  schemaVersion?: string;
   id: string;
   name: string;
   nameDe: string;
   author: string;
+  tradition?: 'rws' | 'thoth' | 'marseille' | 'lenormand' | 'secular' | 'open' | 'custom';
+  layoutType?: SpreadLayoutType;
+  difficulty?: SpreadDifficulty;
   description: string;
+  instructions?: SpreadInstructions;
+  readingVariants?: ReadingVariant[];
   deckContract: DeckContract;
   slots: SpreadSlot[];
   relations: SpreadRelation[];
+}
+
+export interface TarotReadingCard {
+  slotId: string;
+  cardId: string;
+  orientation: 'upright' | 'reversed';
+  notes?: string;
+}
+
+export interface TarotReadingMetrics {
+  averageTension?: number;
+  dominantElement?: TarotElement | string;
+  reversedRatio?: number;
+}
+
+export interface TarotReading {
+  schemaVersion: string;
+  readingId: string;
+  spreadId: string;
+  question?: string;
+  drawnAt: string;
+  deck?: {
+    name?: string;
+    reversals?: boolean;
+  };
+  cards: TarotReadingCard[];
+  interpretation?: string;
+  metrics?: TarotReadingMetrics;
 }
 
 export interface DrawnCardPlacement {
@@ -640,6 +699,10 @@ export function evaluateSpreadEdge(
       descDe = `Synthese: Mehrere Energien verdichten sich hier zu einem integrierten Gesamtbild. ${affinityDescDe}`.trim();
       descEn = `Synthesis: Multiple energies converge here into an integrated whole. ${affinityDescEn}`.trim();
       break;
+    case 'adjacent_to':
+      descDe = `Räumliche / thematische Nachbarschaft: Zwei Karten stehen im selben Bedeutungsfeld nebeneinander. ${affinityDescDe}`.trim();
+      descEn = `Spatial / thematic adjacency: Two cards stand alongside each other within the same contextual field. ${affinityDescEn}`.trim();
+      break;
     default:
       descDe = `Beziehungstyp: ${relation.type} (Polarität: ${clamped.toFixed(2)})`;
       descEn = `Relation type: ${relation.type} (Polarity: ${clamped.toFixed(2)})`;
@@ -781,6 +844,118 @@ export function validateSpreadDefinition(
   return { valid: errors.length === 0, errors, warnings };
 }
 
+export interface ReadingValidationResult {
+  valid: boolean;
+  errors: string[];
+  warnings: string[];
+}
+
+/**
+ * Validates a saved TarotReading record against a spread definition.
+ * Checks that all card slotIds match valid slots in the spread, orientations are valid,
+ * and no duplicate slot allocations occur.
+ */
+export function validateReadingRecord(
+  reading: TarotReading,
+  spread?: SpreadDefinition
+): ReadingValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  if (!reading.readingId || reading.readingId.trim() === '') {
+    errors.push('Reading record missing readingId.');
+  }
+  if (!reading.spreadId || reading.spreadId.trim() === '') {
+    errors.push('Reading record missing spreadId.');
+  }
+  if (!reading.drawnAt || isNaN(Date.parse(reading.drawnAt))) {
+    errors.push('Reading record drawnAt must be a valid ISO 8601 date-time string.');
+  }
+  if (!Array.isArray(reading.cards) || reading.cards.length === 0) {
+    errors.push('Reading record must contain at least one drawn card.');
+  } else {
+    const assignedSlots = new Set<string>();
+    const drawnCardIds = new Set<string>();
+
+    for (const cardPlacement of reading.cards) {
+      if (!cardPlacement.slotId) {
+        errors.push('Card placement missing slotId.');
+      } else {
+        if (assignedSlots.has(cardPlacement.slotId)) {
+          errors.push(`Duplicate card assignment to slot '${cardPlacement.slotId}'.`);
+        }
+        assignedSlots.add(cardPlacement.slotId);
+      }
+
+      if (!cardPlacement.cardId) {
+        errors.push('Card placement missing cardId.');
+      } else {
+        if (drawnCardIds.has(cardPlacement.cardId)) {
+          warnings.push(`Card '${cardPlacement.cardId}' was drawn multiple times in the same reading.`);
+        }
+        drawnCardIds.add(cardPlacement.cardId);
+      }
+
+      if (cardPlacement.orientation !== 'upright' && cardPlacement.orientation !== 'reversed') {
+        errors.push(`Invalid card orientation '${cardPlacement.orientation}' for slot '${cardPlacement.slotId}'.`);
+      }
+    }
+
+    if (spread) {
+      if (spread.id !== reading.spreadId) {
+        warnings.push(`Spread ID mismatch: reading references '${reading.spreadId}' but evaluated against '${spread.id}'.`);
+      }
+      const spreadSlotIds = new Set(spread.slots.map((s) => s.id));
+      for (const slotId of assignedSlots) {
+        if (!spreadSlotIds.has(slotId)) {
+          errors.push(`Card placed in slot '${slotId}' which does not exist in spread '${spread.id}'.`);
+        }
+      }
+    }
+  }
+
+  return { valid: errors.length === 0, errors, warnings };
+}
+
+export interface CatalogValidationResult {
+  valid: boolean;
+  errors: string[];
+  warnings: string[];
+  spreadCount: number;
+}
+
+/**
+ * Validates a complete catalog collection of spreads.
+ * Enforces cross-field uniqueness across spread IDs and validates each spread.
+ */
+export function validateSpreadCatalog(spreads: SpreadDefinition[]): CatalogValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+  const spreadIds = new Set<string>();
+
+  for (const spread of spreads) {
+    if (spreadIds.has(spread.id)) {
+      errors.push(`Catalog contains duplicate spread ID: '${spread.id}'.`);
+    }
+    spreadIds.add(spread.id);
+
+    const result = validateSpreadDefinition(spread);
+    for (const err of result.errors) {
+      errors.push(`[${spread.id}] ${err}`);
+    }
+    for (const warn of result.warnings) {
+      warnings.push(`[${spread.id}] ${warn}`);
+    }
+  }
+
+  return {
+    valid: errors.length === 0,
+    errors,
+    warnings,
+    spreadCount: spreads.length,
+  };
+}
+
 // ────────────────────────────────────────────────────────
 // Reading Summary Generator
 // ────────────────────────────────────────────────────────
@@ -887,12 +1062,120 @@ export function generateReadingSummary(
  * Built-in Spread Definitions matching the open JSON Schema.
  * 4 canonical spreads covering different reading purposes and card counts.
  */
+/**
+ * Built-in Spread Definitions matching the open JSON Schema (v2.0.0).
+ * 7 canonical spreads covering all difficulty tiers and layout types.
+ */
 export const BUILT_IN_SPREADS: Record<string, SpreadDefinition> = {
+  'single-card': {
+    schemaVersion: '2.0.0',
+    id: 'single-card',
+    name: 'Single Card Focus',
+    nameDe: 'Tageskarte / Einzelfokus',
+    author: 'Traditional',
+    tradition: 'open',
+    layoutType: 'linear',
+    difficulty: 'beginner',
+    description: 'Ein Einzelkarten-Impuls für den Tag oder zur Kontemplation eines spezifischen Themas.',
+    instructions: {
+      preDraw: 'Formuliere einen klaren Fokus oder eine offene Frage für den Tag.',
+      drawingOrder: 'Ziehe eine einzelne Karte und lege sie zentriert ab.',
+      interpretationGuide: 'Betrachte Symbolik, Element und Archetyp als archetypischen Impuls.',
+    },
+    deckContract: { minCards: 1, requiredArcana: 'any', allowReversals: true },
+    slots: [
+      { id: 'focus_card', order: 1, label: 'Core Focus', labelDe: 'Tagesfokus / Kernthema', role: 'situation', layout: { x: 50, y: 50, rotation: 0, layer: 0 } },
+    ],
+    relations: [],
+  },
+
+  'past-present-future': {
+    schemaVersion: '2.0.0',
+    id: 'past-present-future',
+    name: 'Past, Present, Future Timeline',
+    nameDe: 'Drei-Karten-Zeitstrahl',
+    author: 'Traditional',
+    tradition: 'open',
+    layoutType: 'linear',
+    difficulty: 'beginner',
+    description: '3 Slots: Ursprung (Vergangenheit) → Aktiver Zustand (Gegenwart) → Trajektorie (Zukunft).',
+    instructions: {
+      preDraw: 'Kläre die zeitliche Dimension der Fragestellung.',
+      drawingOrder: 'Ziehe von links nach rechts: Vergangenheit, Gegenwart, Zukunft.',
+      interpretationGuide: 'Analysiere die Übergangskanten und prüfe, ob Reversals den temporalen Fluss blockieren.',
+    },
+    deckContract: { minCards: 3, requiredArcana: 'any', allowReversals: true },
+    slots: [
+      { id: 'time_past', order: 1, label: 'Past / Origin', labelDe: 'Vergangenheit (Ursprung)', role: 'past', layout: { x: 20, y: 50, rotation: 0, layer: 0 } },
+      { id: 'time_present', order: 2, label: 'Present / Active State', labelDe: 'Gegenwart (Aktiver Zustand)', role: 'situation', layout: { x: 50, y: 50, rotation: 0, layer: 0 } },
+      { id: 'time_future', order: 3, label: 'Future / Trajectory', labelDe: 'Zukunft (Trajektorie)', role: 'outcome', layout: { x: 80, y: 50, rotation: 0, layer: 0 } },
+    ],
+    relations: [
+      { source: 'time_past', target: 'time_present', type: 'leads_to', tension: 0.2, evaluateElementalDignity: true },
+      { source: 'time_present', target: 'time_future', type: 'leads_to', tension: 0.2, evaluateElementalDignity: true },
+      { source: 'time_past', target: 'time_future', type: 'mirrors', tension: 0.0, evaluateElementalDignity: false },
+    ],
+  },
+
+  'three-card': {
+    schemaVersion: '2.0.0',
+    id: 'three-card',
+    name: 'Three-Card Timeline',
+    nameDe: 'Drei-Karten-Zeitstrahl',
+    author: 'Traditional',
+    tradition: 'open',
+    layoutType: 'linear',
+    difficulty: 'beginner',
+    description: '3 Slots: Ursprung (Vergangenheit) → Aktiver Zustand (Gegenwart) → Vektor (Zukunft).',
+    deckContract: { minCards: 3, requiredArcana: 'any', allowReversals: true },
+    slots: [
+      { id: 'past', order: 1, label: 'Past', labelDe: 'Vergangenheit', role: 'past', layout: { x: 20, y: 50, rotation: 0, layer: 0 } },
+      { id: 'present', order: 2, label: 'Present', labelDe: 'Gegenwart', role: 'situation', layout: { x: 50, y: 50, rotation: 0, layer: 0 } },
+      { id: 'future', order: 3, label: 'Future', labelDe: 'Zukunft', role: 'outcome', layout: { x: 80, y: 50, rotation: 0, layer: 0 } },
+    ],
+    relations: [
+      { source: 'past', target: 'present', type: 'leads_to', tension: 0.1, evaluateElementalDignity: true },
+      { source: 'present', target: 'future', type: 'leads_to', tension: 0.1, evaluateElementalDignity: true },
+      { source: 'past', target: 'future', type: 'mirrors', tension: 0.0, evaluateElementalDignity: false },
+    ],
+  },
+
+  'decision': {
+    schemaVersion: '2.0.0',
+    id: 'decision',
+    name: 'Two-Path Decision',
+    nameDe: 'Entscheidungskreuz (Zwei Wege)',
+    author: 'Traditional / Hajo Banzhaf',
+    tradition: 'open',
+    layoutType: 'triangular',
+    difficulty: 'intermediate',
+    description: '5 Slots zur Gegenüberstellung zweier Handlungsoptionen (Weg A vs. Weg B) ausgehend von der Ausgangslage.',
+    deckContract: { minCards: 5, requiredArcana: 'any', allowReversals: true },
+    slots: [
+      { id: 'dec_root', order: 1, label: 'The Core Dilemma', labelDe: 'Die Ausgangslage (Dilemma)', role: 'situation', layout: { x: 50, y: 80, rotation: 0, layer: 0 } },
+      { id: 'path_a_step', order: 2, label: 'Path A: Step', labelDe: 'Weg A: Nächster Schritt', role: 'option_a', layout: { x: 25, y: 45, rotation: 0, layer: 0 } },
+      { id: 'path_a_outcome', order: 3, label: 'Path A: Outcome', labelDe: 'Weg A: Konsequenz / Ziel', role: 'outcome', layout: { x: 25, y: 15, rotation: 0, layer: 0 } },
+      { id: 'path_b_step', order: 4, label: 'Path B: Step', labelDe: 'Weg B: Nächster Schritt', role: 'option_b', layout: { x: 75, y: 45, rotation: 0, layer: 0 } },
+      { id: 'path_b_outcome', order: 5, label: 'Path B: Outcome', labelDe: 'Weg B: Konsequenz / Ziel', role: 'outcome', layout: { x: 75, y: 15, rotation: 0, layer: 0 } },
+    ],
+    relations: [
+      { source: 'dec_root', target: 'path_a_step', type: 'leads_to', tension: 0.2, evaluateElementalDignity: true },
+      { source: 'path_a_step', target: 'path_a_outcome', type: 'leads_to', tension: 0.3, evaluateElementalDignity: true },
+      { source: 'dec_root', target: 'path_b_step', type: 'leads_to', tension: 0.2, evaluateElementalDignity: true },
+      { source: 'path_b_step', target: 'path_b_outcome', type: 'leads_to', tension: 0.3, evaluateElementalDignity: true },
+      { source: 'path_a_outcome', target: 'path_b_outcome', type: 'opposes', tension: -0.4, evaluateElementalDignity: true },
+    ],
+  },
+
   'celtic-cross': {
+    schemaVersion: '2.0.0',
     id: 'celtic-cross',
     name: 'The Celtic Cross',
     nameDe: 'Das Keltische Kreuz',
     author: 'Arthur Edward Waite (1910)',
+    tradition: 'rws',
+    layoutType: 'cross',
+    difficulty: 'advanced',
     description: '10 Slots: Zentrales orthogonales Kreuz, 4 Kardinal-Wurzeln, 4-Karten-Stab.',
     deckContract: { minCards: 10, requiredArcana: 'any', allowReversals: true },
     slots: [
@@ -919,30 +1202,15 @@ export const BUILT_IN_SPREADS: Record<string, SpreadDefinition> = {
     ],
   },
 
-  'three-card': {
-    id: 'three-card',
-    name: 'Three-Card Timeline',
-    nameDe: 'Drei-Karten-Zeitstrahl',
-    author: 'Traditional',
-    description: '3 Slots: Ursprung (Vergangenheit) → Aktiver Zustand (Gegenwart) → Vektor (Zukunft).',
-    deckContract: { minCards: 3, requiredArcana: 'any', allowReversals: true },
-    slots: [
-      { id: 'past', order: 1, label: 'Past', labelDe: 'Vergangenheit', role: 'past', layout: { x: 20, y: 50, rotation: 0, layer: 0 } },
-      { id: 'present', order: 2, label: 'Present', labelDe: 'Gegenwart', role: 'situation', layout: { x: 50, y: 50, rotation: 0, layer: 0 } },
-      { id: 'future', order: 3, label: 'Future', labelDe: 'Zukunft', role: 'outcome', layout: { x: 80, y: 50, rotation: 0, layer: 0 } },
-    ],
-    relations: [
-      { source: 'past', target: 'present', type: 'leads_to', tension: 0.1, evaluateElementalDignity: true },
-      { source: 'present', target: 'future', type: 'leads_to', tension: 0.1, evaluateElementalDignity: true },
-      { source: 'past', target: 'future', type: 'mirrors', tension: 0.0, evaluateElementalDignity: false },
-    ],
-  },
-
   'horseshoe': {
+    schemaVersion: '2.0.0',
     id: 'horseshoe',
     name: 'The Horseshoe',
     nameDe: 'Das Hufeisen',
     author: 'Traditional (19th century)',
+    tradition: 'open',
+    layoutType: 'linear',
+    difficulty: 'intermediate',
     description: '7 Slots in U-Form: Vergangenheit, Gegenwart, verborgene Einflüsse, innere Haltung, äußere Einflüsse, Rat und wahrscheinliches Ergebnis.',
     deckContract: { minCards: 7, requiredArcana: 'any', allowReversals: true },
     slots: [
@@ -965,12 +1233,45 @@ export const BUILT_IN_SPREADS: Record<string, SpreadDefinition> = {
     ],
   },
 
+  'relationship': {
+    schemaVersion: '2.0.0',
+    id: 'relationship',
+    name: 'Relationship Dynamics',
+    nameDe: 'Beziehungs-Dynamik (6 Slots)',
+    author: 'Traditional / Labyrinthos-Variation',
+    tradition: 'open',
+    layoutType: 'custom',
+    difficulty: 'intermediate',
+    description: '6 Slots: Gegenüberstellung zweier Partner (Bewusste Haltung vs. Unbewusste Wurzel) mit zentraler Schnittmenge und Entwicklungspfad.',
+    deckContract: { minCards: 6, requiredArcana: 'any', allowReversals: true },
+    slots: [
+      { id: 'rel_querent_conscious', order: 1, label: 'You: Conscious Attitude', labelDe: 'Du: Bewusste Haltung', role: 'querent', layout: { x: 20, y: 35, rotation: 0, layer: 0 } },
+      { id: 'rel_partner_conscious', order: 2, label: 'Partner: Conscious Attitude', labelDe: 'Gegenüber: Bewusste Haltung', role: 'environment', layout: { x: 80, y: 35, rotation: 0, layer: 0 } },
+      { id: 'rel_querent_subconscious', order: 3, label: 'You: Subconscious Root', labelDe: 'Du: Unbewusste Wurzel', role: 'foundation', layout: { x: 20, y: 70, rotation: 0, layer: 0 } },
+      { id: 'rel_partner_subconscious', order: 4, label: 'Partner: Subconscious Root', labelDe: 'Gegenüber: Unbewusste Wurzel', role: 'foundation', layout: { x: 80, y: 70, rotation: 0, layer: 0 } },
+      { id: 'rel_central_bond', order: 5, label: 'The Bond / Active Connection', labelDe: 'Das Bindeglied / Aktive Verbindung', role: 'situation', layout: { x: 50, y: 35, rotation: 0, layer: 0 } },
+      { id: 'rel_shared_trajectory', order: 6, label: 'Shared Trajectory / Synthesis', labelDe: 'Gemeinsame Trajektorie / Synthese', role: 'outcome', layout: { x: 50, y: 70, rotation: 0, layer: 0 } },
+    ],
+    relations: [
+      { source: 'rel_querent_conscious', target: 'rel_partner_conscious', type: 'mirrors', tension: 0.0, evaluateElementalDignity: true },
+      { source: 'rel_querent_subconscious', target: 'rel_querent_conscious', type: 'grounds', tension: 0.3, evaluateElementalDignity: true },
+      { source: 'rel_partner_subconscious', target: 'rel_partner_conscious', type: 'grounds', tension: 0.3, evaluateElementalDignity: true },
+      { source: 'rel_querent_conscious', target: 'rel_central_bond', type: 'leads_to', tension: 0.2, evaluateElementalDignity: true },
+      { source: 'rel_partner_conscious', target: 'rel_central_bond', type: 'leads_to', tension: 0.2, evaluateElementalDignity: true },
+      { source: 'rel_central_bond', target: 'rel_shared_trajectory', type: 'synthesizes', tension: 0.4, evaluateElementalDignity: true },
+    ],
+  },
+
   'relationship-cross': {
+    schemaVersion: '2.0.0',
     id: 'relationship-cross',
     name: 'The Relationship Cross',
-    nameDe: 'Das Beziehungskreuz',
+    nameDe: 'Das Beziehungskreuz (5 Slots)',
     author: 'Traditional / Labyrinthos-Variation',
-    description: '5 Slots: Situation, Fragende Person, Gegenüber, Hindernis und nächster Schritt — für Beziehungsfragen.',
+    tradition: 'open',
+    layoutType: 'cross',
+    difficulty: 'intermediate',
+    description: '5 Slots: Situation, Fragende Person, Gegenüber, Hindernis und nächster Schritt.',
     deckContract: { minCards: 5, requiredArcana: 'any', allowReversals: true },
     slots: [
       { id: 'rc_situation', order: 1, label: 'The Relationship', labelDe: 'Die Beziehung', role: 'situation', layout: { x: 50, y: 50, rotation: 0, layer: 0 } },
@@ -985,6 +1286,44 @@ export const BUILT_IN_SPREADS: Record<string, SpreadDefinition> = {
       { source: 'rc_querent', target: 'rc_partner', type: 'mirrors', tension: 0.0, evaluateElementalDignity: true },
       { source: 'rc_obstacle', target: 'rc_situation', type: 'opposes', tension: -0.6, evaluateElementalDignity: true },
       { source: 'rc_situation', target: 'rc_advice', type: 'leads_to', tension: 0.4, evaluateElementalDignity: false },
+    ],
+  },
+
+  'tree-of-life': {
+    schemaVersion: '2.0.0',
+    id: 'tree-of-life',
+    name: 'Tree of Life (Kabbalistic 10 Sephirot)',
+    nameDe: 'Lebensbaum (10 Sephirot)',
+    author: 'Hermetic Order of the Golden Dawn / Traditional',
+    tradition: 'thoth',
+    layoutType: 'symbolic',
+    difficulty: 'expert',
+    description: '10 Slots im kabbalistischen Lebensbaum: Von Kether (Urquelle) über die Säulen der Gnade und Strenge bis Malkuth (Manifestation).',
+    deckContract: { minCards: 10, requiredArcana: 'any', allowReversals: true },
+    slots: [
+      { id: 'sephira_1_kether', order: 1, label: '1 Kether (The Crown)', labelDe: '1 Kether (Die Krone)', role: 'crown_aspiration', layout: { x: 50, y: 8, rotation: 0, layer: 0 } },
+      { id: 'sephira_2_chokmah', order: 2, label: '2 Chokmah (Wisdom)', labelDe: '2 Chokmah (Weisheit)', role: 'situation', layout: { x: 75, y: 20, rotation: 0, layer: 0 } },
+      { id: 'sephira_3_binah', order: 3, label: '3 Binah (Understanding)', labelDe: '3 Binah (Verstand / Form)', role: 'foundation', layout: { x: 25, y: 20, rotation: 0, layer: 0 } },
+      { id: 'sephira_4_chesed', order: 4, label: '4 Chesed (Mercy)', labelDe: '4 Chesed (Gnade / Expansion)', role: 'situation', layout: { x: 75, y: 42, rotation: 0, layer: 0 } },
+      { id: 'sephira_5_geburah', order: 5, label: '5 Geburah (Severity)', labelDe: '5 Geburah (Strenge / Urteil)', role: 'obstacle', layout: { x: 25, y: 42, rotation: 0, layer: 0 } },
+      { id: 'sephira_6_tiphareth', order: 6, label: '6 Tiphareth (Beauty / Heart)', labelDe: '6 Tiphareth (Schönheit / Mitte)', role: 'synthesis', layout: { x: 50, y: 52, rotation: 0, layer: 0 } },
+      { id: 'sephira_7_netzach', order: 7, label: '7 Netzach (Victory)', labelDe: '7 Netzach (Sieg / Emotion)', role: 'situation', layout: { x: 75, y: 68, rotation: 0, layer: 0 } },
+      { id: 'sephira_8_hod', order: 8, label: '8 Hod (Splendor)', labelDe: '8 Hod (Glanz / Intellekt)', role: 'self_attitude', layout: { x: 25, y: 68, rotation: 0, layer: 0 } },
+      { id: 'sephira_9_yesod', order: 9, label: '9 Yesod (Foundation)', labelDe: '9 Yesod (Fundament / Astral)', role: 'foundation', layout: { x: 50, y: 80, rotation: 0, layer: 0 } },
+      { id: 'sephira_10_malkuth', order: 10, label: '10 Malkuth (Kingdom)', labelDe: '10 Malkuth (Das Reich / Materie)', role: 'outcome', layout: { x: 50, y: 94, rotation: 0, layer: 0 } },
+    ],
+    relations: [
+      { source: 'sephira_1_kether', target: 'sephira_2_chokmah', type: 'leads_to', tension: 0.2, evaluateElementalDignity: true },
+      { source: 'sephira_2_chokmah', target: 'sephira_3_binah', type: 'opposes', tension: -0.2, evaluateElementalDignity: true },
+      { source: 'sephira_3_binah', target: 'sephira_4_chesed', type: 'leads_to', tension: 0.1, evaluateElementalDignity: true },
+      { source: 'sephira_4_chesed', target: 'sephira_5_geburah', type: 'opposes', tension: -0.3, evaluateElementalDignity: true },
+      { source: 'sephira_4_chesed', target: 'sephira_6_tiphareth', type: 'synthesizes', tension: 0.4, evaluateElementalDignity: true },
+      { source: 'sephira_5_geburah', target: 'sephira_6_tiphareth', type: 'synthesizes', tension: 0.4, evaluateElementalDignity: true },
+      { source: 'sephira_6_tiphareth', target: 'sephira_7_netzach', type: 'leads_to', tension: 0.2, evaluateElementalDignity: true },
+      { source: 'sephira_7_netzach', target: 'sephira_8_hod', type: 'opposes', tension: -0.2, evaluateElementalDignity: true },
+      { source: 'sephira_7_netzach', target: 'sephira_9_yesod', type: 'synthesizes', tension: 0.3, evaluateElementalDignity: true },
+      { source: 'sephira_8_hod', target: 'sephira_9_yesod', type: 'synthesizes', tension: 0.3, evaluateElementalDignity: true },
+      { source: 'sephira_9_yesod', target: 'sephira_10_malkuth', type: 'leads_to', tension: 0.4, evaluateElementalDignity: true },
     ],
   },
 };

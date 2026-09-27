@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "past-present-future",
+  "name": "Past, Present, Future Timeline",
+  "nameDe": "Drei-Karten-Zeitstrahl (Vergangenheit, Gegenwart, Zukunft)",
+  "author": "Traditional",
+  "tradition": "open",
+  "layoutType": "linear",
+  "difficulty": "beginner",
+  "description": "Klassischer 3-Karten-Zeitstrahl: Ursprung → Aktiver Zustand → Konsequenz / Trajektorie.",
+  "instructions": {
+    "preDraw": "Kläre die zeitliche Dimension der Fragestellung.",
+    "drawingOrder": "Ziehe von links nach rechts: Vergangenheit, Gegenwart, Zukunft.",
+    "interpretationGuide": "Analysiere die Übergangskanten und prüfe, ob Reversals den temporalen Fluss blockieren."
+  },
+  "deckContract": {
+    "minCards": 3,
+    "requiredArcana": "any",
+    "allowReversals": true,
+    "significatorRequired": false
+  },
+  "slots": [
+    {
+      "id": "time_past",
+      "order": 1,
+      "label": "The Past / Origin",
+      "labelDe": "Die Vergangenheit (Ursprung)",
+      "role": "past",
+      "layout": { "x": 20, "y": 50, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "time_present",
+      "order": 2,
+      "label": "The Present / Active State",
+      "labelDe": "Die Gegenwart (Aktiver Zustand)",
+      "role": "situation",
+      "layout": { "x": 50, "y": 50, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "time_future",
+      "order": 3,
+      "label": "The Future / Trajectory",
+      "labelDe": "Die Zukunft (Trajektorie)",
+      "role": "outcome",
+      "layout": { "x": 80, "y": 50, "rotation": 0, "layer": 0 }
+    }
+  ],
+  "relations": [
+    {
+      "source": "time_past",
+      "target": "time_present",
+      "type": "leads_to",
+      "tension": 0.2,
+      "evaluateElementalDignity": true
+    },
+    {
+      "source": "time_present",
+      "target": "time_future",
+      "type": "leads_to",
+      "tension": 0.2,
+      "evaluateElementalDignity": true
+    },
+    {
+      "source": "time_past",
+      "target": "time_future",
+      "type": "mirrors",
+      "tension": 0.0,
+      "evaluateElementalDignity": false
+    }
+  ]
+}

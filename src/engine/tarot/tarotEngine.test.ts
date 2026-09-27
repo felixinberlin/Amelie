@@ -6,6 +6,8 @@ import {
   evaluateSpreadEdge,
   validateDeckContract,
   validateSpreadDefinition,
+  validateReadingRecord,
+  validateSpreadCatalog,
   generateReadingSummary,
   DrawnCardPlacement,
   TarotElement,
@@ -452,12 +454,49 @@ describe('Spread Definition Validation', () => {
 });
 
 // ────────────────────────────────────────────────────────
-// Built-in Spread Structural Integrity
+// ────────────────────────────────────────────────────────
+// Built-in Spread Structural Integrity & Catalog Coverage
 // ────────────────────────────────────────────────────────
 
-describe('Built-in Spread Structural Integrity', () => {
-  it('contains exactly 4 built-in spreads', () => {
-    expect(Object.keys(BUILT_IN_SPREADS)).toHaveLength(4);
+describe('Built-in Spread Structural Integrity & Catalog Coverage', () => {
+  it('contains all 7 canonical spreads plus backward-compatibility aliases', () => {
+    const keys = Object.keys(BUILT_IN_SPREADS);
+    expect(keys).toContain('single-card');
+    expect(keys).toContain('past-present-future');
+    expect(keys).toContain('three-card');
+    expect(keys).toContain('decision');
+    expect(keys).toContain('celtic-cross');
+    expect(keys).toContain('horseshoe');
+    expect(keys).toContain('relationship');
+    expect(keys).toContain('relationship-cross');
+    expect(keys).toContain('tree-of-life');
+  });
+
+  it('validates Single Card has 1 slot, linear layout and 0 relations', () => {
+    const sc = BUILT_IN_SPREADS['single-card'];
+    expect(sc).toBeDefined();
+    expect(sc.slots).toHaveLength(1);
+    expect(sc.relations).toHaveLength(0);
+    expect(sc.layoutType).toBe('linear');
+    expect(sc.difficulty).toBe('beginner');
+  });
+
+  it('validates Decision Making spread has 5 slots in triangular layout', () => {
+    const dec = BUILT_IN_SPREADS['decision'];
+    expect(dec).toBeDefined();
+    expect(dec.slots).toHaveLength(5);
+    expect(dec.relations).toHaveLength(5);
+    expect(dec.layoutType).toBe('triangular');
+    expect(dec.difficulty).toBe('intermediate');
+  });
+
+  it('validates Tree of Life spread has 10 slots in symbolic layout', () => {
+    const tol = BUILT_IN_SPREADS['tree-of-life'];
+    expect(tol).toBeDefined();
+    expect(tol.slots).toHaveLength(10);
+    expect(tol.relations).toHaveLength(11);
+    expect(tol.layoutType).toBe('symbolic');
+    expect(tol.difficulty).toBe('expert');
   });
 
   it('Horseshoe has 7 slots and 7 relations in U-shape', () => {
@@ -468,18 +507,17 @@ describe('Built-in Spread Structural Integrity', () => {
     expect(hs.deckContract.minCards).toBe(7);
   });
 
-  it('Relationship Cross has 5 slots and 5 relations', () => {
-    const rc = BUILT_IN_SPREADS['relationship-cross'];
-    expect(rc).toBeDefined();
-    expect(rc.slots).toHaveLength(5);
-    expect(rc.relations).toHaveLength(5);
-    expect(rc.deckContract.minCards).toBe(5);
+  it('Relationship spread has 6 slots in custom layout', () => {
+    const rel = BUILT_IN_SPREADS['relationship'];
+    expect(rel).toBeDefined();
+    expect(rel.slots).toHaveLength(6);
+    expect(rel.relations).toHaveLength(6);
+    expect(rel.deckContract.minCards).toBe(6);
   });
 
   it('Three-Card has 3 slots with linear layout', () => {
-    const tc = BUILT_IN_SPREADS['three-card'];
+    const tc = BUILT_IN_SPREADS['past-present-future'];
     expect(tc.slots).toHaveLength(3);
-    // All at same y coordinate (horizontal line)
     const ys = new Set(tc.slots.map((s) => s.layout.y));
     expect(ys.size).toBe(1);
   });
@@ -500,6 +538,100 @@ describe('Built-in Spread Structural Integrity', () => {
         expect(slotIds.has(rel.target), `'${key}': target '${rel.target}' not found`).toBe(true);
       }
     }
+  });
+});
+
+// ────────────────────────────────────────────────────────
+// Tarot Reading & Catalog Validation
+// ────────────────────────────────────────────────────────
+
+describe('Tarot Reading & Catalog Validation', () => {
+  it('validates a correct reading record passes against Celtic Cross', () => {
+    const spread = BUILT_IN_SPREADS['celtic-cross'];
+    const validReading = {
+      schemaVersion: '1.0.0',
+      readingId: 'f47ac10b-58cc-4372-a567-0e02b2c3d479',
+      spreadId: 'celtic-cross',
+      question: 'Project guidance',
+      drawnAt: '2026-09-26T14:30:00.000Z',
+      cards: [
+        { slotId: 'heart_situation', cardId: 'magician', orientation: 'upright' as const },
+        { slotId: 'cross_obstacle', cardId: 'three_swords', orientation: 'upright' as const },
+      ],
+    };
+
+    const result = validateReadingRecord(validReading, spread);
+    expect(result.valid).toBe(true);
+    expect(result.errors).toHaveLength(0);
+  });
+
+  it('detects invalid date in reading record', () => {
+    const badReading = {
+      schemaVersion: '1.0.0',
+      readingId: '123',
+      spreadId: 'celtic-cross',
+      drawnAt: 'invalid-date-string',
+      cards: [{ slotId: 'heart_situation', cardId: 'magician', orientation: 'upright' as const }],
+    };
+    const result = validateReadingRecord(badReading);
+    expect(result.valid).toBe(false);
+    expect(result.errors.some((e) => e.includes('ISO 8601'))).toBe(true);
+  });
+
+  it('detects card placed in non-existent slot', () => {
+    const spread = BUILT_IN_SPREADS['celtic-cross'];
+    const badReading = {
+      schemaVersion: '1.0.0',
+      readingId: '123',
+      spreadId: 'celtic-cross',
+      drawnAt: '2026-09-26T14:30:00.000Z',
+      cards: [{ slotId: 'slot_does_not_exist', cardId: 'magician', orientation: 'upright' as const }],
+    };
+    const result = validateReadingRecord(badReading, spread);
+    expect(result.valid).toBe(false);
+    expect(result.errors.some((e) => e.includes('does not exist'))).toBe(true);
+  });
+
+  it('detects duplicate card assignment to the same slot', () => {
+    const badReading = {
+      schemaVersion: '1.0.0',
+      readingId: '123',
+      spreadId: 'celtic-cross',
+      drawnAt: '2026-09-26T14:30:00.000Z',
+      cards: [
+        { slotId: 'slot_1', cardId: 'magician', orientation: 'upright' as const },
+        { slotId: 'slot_1', cardId: 'fool', orientation: 'upright' as const },
+      ],
+    };
+    const result = validateReadingRecord(badReading);
+    expect(result.valid).toBe(false);
+    expect(result.errors.some((e) => e.includes('Duplicate card assignment'))).toBe(true);
+  });
+
+  it('validates a complete catalog of unique spreads', () => {
+    const uniqueSpreads = [
+      BUILT_IN_SPREADS['single-card'],
+      BUILT_IN_SPREADS['past-present-future'],
+      BUILT_IN_SPREADS['decision'],
+      BUILT_IN_SPREADS['celtic-cross'],
+      BUILT_IN_SPREADS['horseshoe'],
+      BUILT_IN_SPREADS['relationship'],
+      BUILT_IN_SPREADS['tree-of-life'],
+    ];
+    const result = validateSpreadCatalog(uniqueSpreads);
+    expect(result.valid).toBe(true);
+    expect(result.spreadCount).toBe(7);
+    expect(result.errors).toHaveLength(0);
+  });
+
+  it('detects duplicate spread IDs in a catalog', () => {
+    const duplicateCatalog = [
+      BUILT_IN_SPREADS['celtic-cross'],
+      BUILT_IN_SPREADS['celtic-cross'],
+    ];
+    const result = validateSpreadCatalog(duplicateCatalog);
+    expect(result.valid).toBe(false);
+    expect(result.errors.some((e) => e.includes('duplicate spread ID'))).toBe(true);
   });
 });
 

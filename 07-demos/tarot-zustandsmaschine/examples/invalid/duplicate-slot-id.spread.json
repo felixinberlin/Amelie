@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "duplicate-slot-id",
+  "name": "Invalid Spread: Duplicate Slot IDs",
+  "deckContract": {
+    "minCards": 2
+  },
+  "slots": [
+    {
+      "id": "dup_slot",
+      "order": 1,
+      "label": "First Slot",
+      "role": "situation",
+      "layout": { "x": 30, "y": 50, "rotation": 0, "layer": 0 }
+    },
+    {
+      "id": "dup_slot",
+      "order": 2,
+      "label": "Second Slot with Same ID",
+      "role": "outcome",
+      "layout": { "x": 70, "y": 50, "rotation": 0, "layer": 0 }
+    }
+  ],
+  "relations": []
+}

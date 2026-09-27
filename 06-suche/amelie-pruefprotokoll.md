@@ -378,7 +378,7 @@ Details in `amelie-matrix.md`, `05-dosen/_entsorgt.md`. Belege der Einzelzeilen 
 | Pin Tumbler | `verengt` | Lockpicking-Spiele zahlreich (Mobile, Steam, itch.io); keins behandelt Fertigungstoleranzen als Lerngegenstand | 09/2027 |
 | Räucher-Sim | `frei` | Rauch-/Fluidsims und atemgesteuerte Installationen einzeln verbreitet; Kombination als freies Web-Toy nicht gefunden | 09/2028 |
 | Kristallwachstum 3D | `verengt` | DLA-Generatoren im Überfluss (als „neuer Generator" tot); druckfertige Kette (wasserdicht, Zwangsbedingungen, Seed-als-Rezept) nicht gefunden | 09/2027 |
-| Tarot als Zustandsmaschine | `verengt` | Tarot-JSON-Datensätze und Schema-Sammlungen vorhanden; formale deckunabhängige Relationssprache zwischen Positionen nicht gefunden | 09/2027 |
+| Tarot als Zustandsmaschine (Arcana Schema) | `verengt` | Tarot-JSON-Datensätze vorhanden; Arcana Schema (v2.0.0, felixinberlin.github.io/Arcana-schema) veröffentlicht als erste herstellerunabhängige Graph-Spezifikation für Spreads & Readings | 09/2027 |
 | Traumtagebuch | `verengt` | Markt für Traum-Apps mit KI-Deutung/Mustererkennung groß; Kombination „keine Deutung + on-device + offen" nicht gefunden | 03/2027 |
 | Echter Zufall als Service | `frei` | Software-basierter Zufalls-MCP-Server existiert; Brücke von TRNG-Hardware zu MCP nicht gefunden | 09/2027 |
 | Ghost Replay fürs Editieren | `verengt` | Aufzeichnungs-/Replay-Technik für Editor-Sitzungen existiert; systematische Musterauswertung/-vergleich als Forschungsfrage offen | 09/2027 |

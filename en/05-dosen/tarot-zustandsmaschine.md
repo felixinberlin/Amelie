@@ -1,95 +1,71 @@
 ---
 status: Available
-delivery_method: E-Mail
-target_maker: Open Source Community (Labyrinthos / Twine / Ink / Tarot MCP)
+delivery_method: Reddit Post
+target_maker: Open Source Tarot & Developer Community (r/tarot / r/webdev / r/indiegames / r/occult)
 review_score: 31/35
 architecture_tier: Tier 1
 source_type: Type B/D
 ---
-# Tarot Spread Graph DSL (Tarot State Machine)
+# Tarot Spread Graph DSL — Arcana Schema
 
-**One sentence:** A spread is already a program — positions are coordinate slots, cards act as typed states, and meaning emerges from directed relations. An open JSON specification for vendor-independent tarot spreads.
+**One sentence:** Tarot spreads and readings receive an open-source JSON Schema standard (**Arcana Schema v2.0.0**) for spatial board layouts, typed directed graph relations, and deck contracts.
 
 **Status:** September 2026 · **Review from:** September 2027  
-**Recipient:** Open Source Ecosystem (GitHub / npm / MCP / Twine / Ink / Labyrinthos)  
-**Verdict:** 🎁 Gifted as open specification, schema & runnable engine (CC0 Public Domain) — focused on relational graphs  
+**Project & Docs:** [felixinberlin.github.io/Arcana-schema](https://felixinberlin.github.io/Arcana-schema/) · GitHub: [felixinberlin/Arcana-schema](https://github.com/felixinberlin/Arcana-schema)  
+**Recipient / Outreach:** Reddit Community (`r/tarot`, `r/webdev`, `r/indiegames`, `r/occult`), indie deck creators, and game narrative engineers  
+**Verdict:** 🎁 Released & gifted as open specification, npm package (`@arcana-schema/validator`), and interactive schema playground (MIT / CC BY 4.0)  
 **Review:** 31/35 · Tier 1 · Type B/D (Details: [Audit Report](../../06-suche/amelie-39-dosen-audit-report.md))
 
 ---
 
 ## The Problem
 
-Tarot spreads have been passed down for over two centuries almost exclusively in prose: *“Card 1 is the situation, Card 2 crosses it representing the immediate hurdle, Card 3 forms the foundation, Card 4 the receding past...”* That is a specification, but an imprecise one. The crucial structural rules are never machine-readable:
+Tarot spreads have been passed down for over two centuries almost exclusively in prose: *“Card 1 is the situation, Card 2 crosses it representing the immediate hurdle, Card 3 forms the foundation...”* In digital applications, spreads have historically been hardcoded as flat arrays (`cards[0]..cards[9]`). The key structural rules were left unformalized:
 
-- **What does “crosses” mean?** An orthogonal 90° geometric rotation on layer $z=1$ along with a semantic conflict relation between two nodes — formalized nowhere.
-- **How does a reversed card alter neighbor dynamics?** Every experienced reader knows that a reversal does not merely negate a card's keyword; it blocks transition dynamics (`leads_to`) and intensifies inner reflections (`mirrors`).
-- **Deck incompatibilities:** How should the same spread behave when applied to a 22-card Majors-only deck or a 36-card Lenormand deck? Without contracts, digital apps simply crash or draw duplicates.
+- **What does “crosses” mean?** An orthogonal 90° geometric rotation on layer $z=1$ alongside a semantic conflict relation between two nodes — formalized nowhere until now.
+- **How do reversals affect neighboring cards?** A reversal does not merely negate a single card; it blocks transition dynamics (`leads_to`) and heightens symmetrical reflections (`mirrors`).
+- **Deck Incompatibilities:** How should the same spread behave when applied to a 22-card Majors-only deck or a 36-card Lenormand deck?
+- **Fragmented Reading Logs:** Every tarot journal and app stores historical readings in proprietary structures, preventing cross-tool interoperability.
 
-**The consequence:** Every tarot app, Discord bot, and MCP server implements spreads as rigid, hardcoded arrays (`cards[0]..cards[9]`). Adding a new spread requires custom code; alternative decks break existing tooling. Independent artists who crowdfund physical decks on Kickstarter lack the engineering resources to provide digital companions.
+## Arcana Schema Architecture
 
-## Why Now
+**Arcana Schema (v2.0.0)** establishes a formal, dual-validated JSON specification (JSON Schema Draft 2020-12 & Draft-7) with a production validator (`@arcana-schema/validator`):
 
-The honest truth: **A spread DSL could have been written in 2010.** What creates decisive leverage today:
+1. **Clean Separation (`TarotSpreadDefinition` vs. `TarotReading`):** Reusable spread definitions are strictly decoupled from historical session logs.
+2. **Declarative Deck Contracts (`deckContract`):** Enforces minimum card counts (`minCards`), major/minor arcana requirements (`requiredArcana`), and reversal constraints before drawing.
+3. **Geometric Slot Coordinates (`layout`):** Normalized $(x, y, \theta, z)$ coordinates allow frontends to render layouts dynamically without custom CSS per spread.
+4. **Typed Directed Relations (`relations`):** 9 semantic edge types (`crosses`, `grounds`, `crowns`, `leads_to`, `mirrors`, `opposes`, `clarifies`, `culminates_in`, `adjacent_to`).
+5. **Canonical Catalog & SDK:** Ships with canonical reference spreads (Single Card, Past-Present-Future, Celtic Cross, Tree of Life) and deterministic Markdown/HTML renderers.
 
-1. **LLM & AI Agent Architectures (MCP Servers):** Modern Tarot MCP servers (`tarotoo-mcp-server`, `deckaura/tarot-mcp-server`, `fzlzjerry/tarot-mcp`, `OracleBone`) connect AI assistants to tarot decks, but feed models flat prompt strings. A typed graph DSL provides structured tension fields and causal paths so models can generate psychologically grounded reflections rather than generic horoscope slop.
-2. **Generative Graph Layouts in the Browser:** Modern declarative CSS Grid, SVG, and canvas/graph engines (React Flow, Dagre) render layouts autonomously from normalized $(x, y, \theta, z)$ coordinates without hardcoded views.
-3. **Automated Parsing from Literature:** Historical spread descriptions from hundreds of public domain works can now be reliably parsed into formal JSON schema objects via multimodal models.
+## Reddit Post Announcement (Minimal Schema Example)
 
-## The Design
+Community outreach is structured as a Reddit announcement post highlighting the schema and a minimal example:
 
-An open, vendor-independent specification (`spread.schema.json`) based on JSON Schema (Draft 2020-12):
+```json
+{
+  "schemaVersion": "2.0.0",
+  "id": "past-present-future",
+  "name": "Past, Present, Future",
+  "deckContract": { "minCards": 3, "allowReversals": true },
+  "slots": [
+    { "id": "past", "order": 1, "role": "Past Foundations", "layout": { "x": 0.2, "y": 0.5, "rotation": 0 } },
+    { "id": "present", "order": 2, "role": "Present Circumstance", "layout": { "x": 0.5, "y": 0.5, "rotation": 0 } },
+    { "id": "future", "order": 3, "role": "Emerging Outcome", "layout": { "x": 0.8, "y": 0.5, "rotation": 0 } }
+  ],
+  "relations": [
+    { "source": "past", "target": "present", "type": "leads_to" },
+    { "source": "present", "target": "future", "type": "leads_to" }
+  ]
+}
+```
 
-- **Deck Contract (`deckContract`):** Defines prerequisites (`minCards`, `requiredArcana`, `allowReversals`). Fails deterministically before drawing if a deck does not satisfy spread constraints.
-- **Slots (Nodes):** Position with unique ID, bilingual labels, sequential order, geometric layout $(x, y, \theta, z)$, and functional role (`querent`, `situation`, `obstacle`, `foundation`, `outcome`, `advice`, etc.).
-- **Relations (Directed Edges):** Typed semantic connections:
-  - `crosses`: Orthogonal conflict / immediate challenge ($\theta = 90^\circ, z = 1$).
-  - `grounds`: Foundational root feeding the situation.
-  - `crowns`: Conscious aspiration / idealized potential.
-  - `leads_to`: Temporal or causal transition.
-  - `mirrors`: Symmetrical reflection across two perspectives.
-  - `opposes`: Antithetical confrontation between opposing forces.
-  - `clarifies`: Contextual illumination of target card.
-  - `synthesizes`: Integration of converging energies into a whole.
-- **Elemental Dignities (*Golden Dawn*):** Optional dynamic edge tension modulation:
-  - Friendly (+0.25): Fire + Air, Water + Earth.
-  - Hostile (-0.35): Fire vs Water, Air vs Earth.
-  - Identical (+/-0.15): Intensifies prevailing polarity.
-- **Reference Instances:** Celtic Cross (10 slots), Three-Card Timeline (3 slots), Horseshoe (7 slots), Relationship Cross (5 slots).
+## Research & Scaffolding
 
-**The gift is the specification, schema, test suite, and open source scaffolding — free for the entire community.**
-
-## The Dose Book (Research & Scaffolding)
-
-- [Chapter 1: Community Needs & Occult Traditions](../../02-recherche/tarot-occult-community-needs.md) — Analysis of r/tarot, r/occult, and Discord: card-catalog reductionism, reversal blockades, elemental dignities, and proprietary deck traps.
-- [Chapter 2: Architecture & Relational Graph Model](../../02-recherche/tarot-zustandsmaschine-dsl.md) — Comparative analysis of Tarotsmith, Deckaura, Tarot MCP servers, and open graph schemas.
-- [Chapter 3: Open Source Scaffolding & Examples](../../07-demos/tarot-zustandsmaschine/README.md) — Complete JSON Schema (`spread.schema.json`), Celtic Cross, Three-Card, Horseshoe, and Relationship Cross references.
-- [Chapter 4: Open Source Stack Recommendations](../../07-demos/tarot-zustandsmaschine/open-source-stack.md) — Integration guide for `tarot-json`, `XState v5`, `React Flow`, `Ajv`, and `Inkjs`.
-
-## First Step (Completed)
-
-**Ticket #01: Canonical Celtic Cross as Typed JSON Specification & Engine.**
-
-1. Formal JSON Schema definition (`spread.schema.json`) with deck contracts, slots, and 8 relation types.
-2. 4 Canonical reference spreads: Celtic Cross (`celtic-cross.json`), Three-Card (`three-card-linear.json`), Horseshoe (`horseshoe.json`), and Relationship Cross (`relationship-cross.json`).
-3. Fully verified TypeScript engine (`tarotEngine.ts`) with Golden Dawn elemental dignities, reversal modulators, deck contract validation, spread integrity checks, and whole-spread reading summary generator (50 tests in `tarotEngine.test.ts`).
-
-## Boundary & Risk
-
-**Over-formalization vs. Intuitive Ambiguity.** Tarot relies on associative projection and symbolism. A system attempting to force every occult nuance into rigid enums destroys the practice. The boundary is absolute: **The DSL describes topology and geometry, never fixed doctrinal interpretations.** Card meanings remain in the domain of the deck creator and the reader.
-
-**Second Risk (Community Perception):** A technical data format can be perceived as cold reductionism. Positioning is key: This is a **notation system** (like sheet music in musical composition), not a replacement for human intuition.
-
-## Prior Art & Open Source Landscape
-
-- **Tarotsmith Spread Schema (`tarotschema/codex`):** Provides a schema.org `DefinedTermSet` for spread texts, but lacks relational topology, geometric layering, deck contracts, and dynamic edge tension calculations.
-- **metabismuth/tarot-json & Deckaura:** Cataloged the 78 Rider-Waite-Smith cards into clean JSON — the card catalog layer is solved.
-- **Tarot MCP Servers (`tarotoo`, `deckaura`, `fzlzjerry`, `OracleBone`):** Expose tool-calling for LLMs, but lack graph topology to pass relational tension to models.
-- **Cybertarot & Commercial Apps:** Hardcode spreads into rigid UI arrays without an open exchange standard.
-
-**The Gap:** An open, vendor-independent graph notation for spreads that empowers indie deck creators, game designers, and AI pipelines alike.
+- [Chapter 1: Community Needs & Occult Traditions](../../02-recherche/tarot-occult-community-needs.md)
+- [Chapter 2: Architecture & Relational Graph Model](../../02-recherche/tarot-zustandsmaschine-dsl.md)
+- [Chapter 3: Open Source Scaffolding & Examples](../../07-demos/tarot-zustandsmaschine/README.md)
+- [Arcana Schema Live Docs & Playground](https://felixinberlin.github.io/Arcana-schema/)
 
 ---
 
-This idea belongs to no one. Take it, build it, sell it — you owe me nothing, not even a reply. If you ever have an idea you won't build, give it to someone who will.
-
-CC0 1.0 Universal / Public Domain. — Félix, Berlin · github.com/felixinberlin
+CC0 1.0 Universal / MIT & CC BY 4.0. — Félix, Berlin · github.com/felixinberlin/Arcana-schema

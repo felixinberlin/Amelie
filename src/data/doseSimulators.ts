@@ -10,8 +10,7 @@ export type SimulatorKey =
   | 'laerm'
   | 'fugenduell'
   | 'schiedsrichter'
-  | 'kristall'
-  | 'tarot';
+  | 'kristall';
 
 export interface DoseSimulatorInfo {
   key: SimulatorKey;
@@ -165,16 +164,6 @@ export const DOSE_SIMULATOR_MAP: Record<string, DoseSimulatorInfo> = {
     descriptionEn: 'Hybrid WebGPU DLA & phase-field pipeline with Kobayashi thermodynamics, 9 microstructure lenses, and printable 3MF/STL export.',
     descriptionEs: 'Pipeline híbrido WebGPU DLA y de campo de fase con termodinámica Kobayashi y exportación de malla imprimible 3D.',
     icon: '💎',
-  },
-  'tarot-zustandsmaschine': {
-    key: 'tarot',
-    titleDe: 'Tarot Graph & Spread DSL Simulator',
-    titleEn: 'Tarot Graph & Spread DSL Simulator',
-    titleEs: 'Simulador de grafo y DSL de tiradas de tarot',
-    descriptionDe: 'Topologischer Legesystem-Simulator: Keltisches Kreuz und 3-Karten-Zeitstrahl als gerichteter Graph mit Golden-Dawn-Elementar-Würden.',
-    descriptionEn: 'Topological spread layout simulator: Celtic Cross and 3-card timeline as a directed graph with Golden Dawn elemental dignities.',
-    descriptionEs: 'Simulador topológico de tiradas: Cruz Celta y línea temporal de 3 cartas como grafo dirigido con dignidades elementales.',
-    icon: '🔮',
   },
 };
 
