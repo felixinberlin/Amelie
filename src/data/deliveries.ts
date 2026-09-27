@@ -483,13 +483,12 @@ Dual-licensed under MIT (code & schema structure) and CC BY 4.0 (interpretive te
     recipientOrg: 'BIV – Bundesinnungsverband des Gebäudereiniger-Handwerks',
     recipientTypeDe: 'Arbeitgeber-Spitzenverband (2.500 Betriebe, 700.000 Beschäftigte)',
     recipientTypeEn: 'Peak Employer Association (2,500 enterprises, 700,000 workers)',
-    contactPathDe: 'info@die-gebaeudedienstleister.de (z. Hd. Geschäftsführung Technik & Betriebswirtschaft)',
-    contactPathEn: 'info@die-gebaeudedienstleister.de (Attn: Technical & Occupational Safety Board)',
-    contactCc: 'gl@die-gebaeudedienstleister.de',
+    contactPathDe: 'biv@die-gebaeudedienstleister.de (z. Hd. Christine Sudhop / GF Technik & Betriebswirtschaft)',
+    contactPathEn: 'biv@die-gebaeudedienstleister.de (Attn: Christine Sudhop / MD Technology & Economics)',
     subjectDe: 'Arbeitsschutz & Haftungsschutz für Betriebe: Quelloffener Chemikalien-Mischschutz (Geschenk an den BIV)',
     subjectEn: 'Occupational Safety & Liability Shield for Cleaning Contractors: ChemHazard Stop (Open Gift to BIV)',
-    bodyDe: `Sehr geehrte Damen und Herren der Geschäftsführung des BIV,
-sehr geehrte Damen und Herren des Fachausschusses Technik und Betriebswirtschaft,
+    bodyDe: `Sehr geehrte Frau Sudhop,
+sehr geehrte Damen und Herren der Geschäftsführung des BIV,
 
 als Spitzenverband von über 2.500 Dienstleistern mit 700.000 Beschäftigten kennen Sie das tägliche Spannungsfeld Ihrer Mitgliedsbetriebe:
 Unternehmer tragen die volle gesetzliche Fürsorge- und Haftungspflicht für den Arbeitsschutz nach GefStoffV und DGUV Regel 101-019. Gleichzeitig arbeiten Reinigungskräfte in den Objekten unter erheblichem Zeitdruck und über massive Sprachgrenzen hinweg. Das versehentliche Mischen von sauren Entkalkern mit hypochlorithaltiger Bleiche (Chlorgas-Bildung) ist der gefürchtetste Unfallklassiker — Betriebsausfälle, Rettungseinsätze und behördliche Ermittlungen sind die Folge.
@@ -511,8 +510,8 @@ Das Projekt ist vollständig lauffähig, dokumentiert und frei von Rechten Dritt
 
 Mit freundlichen Grüßen für sichere und unfallfreie Betriebe,
 Amélie Initiative (Félix, Berlin)`,
-    bodyEn: `Dear Members of the Executive Board at BIV,
-Dear Technical and Occupational Safety Committee,
+    bodyEn: `Dear Ms. Sudhop,
+Dear Members of the Executive Board at BIV,
 
 Representing over 2,500 service enterprises employing 700,000 workers across Germany, you understand the daily operational challenges of cleaning contractors:
 Employers bear strict legal duty of care and statutory liability for occupational safety (GefStoffV, DGUV Rule 101-019). Yet on the front lines, cleaning personnel work under extreme time constraints and across significant language barriers. Accidental mixing of acidic descalers with hypochlorite bleaches (releasing toxic chlorine gas) remains a persistent operational danger — causing severe respiratory injuries, emergency facility evacuations, and liability investigations.

@@ -104,12 +104,12 @@ BG BAU provides world-leading databases in WINGIS, supported by GESTIS (IFA) and
 
 ### 1. Outreach to Employers: BIV (Federal Association of Contract Cleaners)
 
-**Recipient:** BIV Head Office (`info@die-gebaeudedienstleister.de` / `gl@die-gebaeudedienstleister.de`, Attn: Technical & Occupational Safety Board)  
+**Recipient:** BIV Head Office (`biv@die-gebaeudedienstleister.de`, Attn: Christine Sudhop / Managing Director Technology & Economics)  
 **Subject:** Occupational Safety & Liability Shield for Cleaning Contractors: ChemHazard Stop (Open Gift to BIV)
 
 ```text
+Dear Ms. Sudhop,
 Dear Members of the Executive Board at BIV,
-Dear Technical and Occupational Safety Committee,
 
 Representing over 2,500 service enterprises employing 700,000 workers across Germany, you understand the daily operational challenges of cleaning contractors:
 Employers bear strict legal duty of care and statutory liability for occupational safety (GefStoffV, DGUV Rule 101-019). Yet on the front lines, cleaning personnel work under extreme time constraints and across significant language barriers. Accidental mixing of acidic descalers with hypochlorite bleaches (releasing toxic chlorine gas) remains a persistent operational danger — causing severe respiratory injuries, emergency facility evacuations, and liability investigations.

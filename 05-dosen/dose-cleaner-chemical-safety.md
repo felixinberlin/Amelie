@@ -104,12 +104,12 @@ Die BG BAU betreibt mit WINGIS ein weltweites Vorzeigesystem, flankiert von GEST
 
 ### 1. Anschreiben an die Arbeitgeber: BIV (Bundesinnungsverband des Gebäudereiniger-Handwerks)
 
-**Empfänger:** BIV Bundesgeschäftsstelle (`info@die-gebaeudedienstleister.de` / `gl@die-gebaeudedienstleister.de`, z. Hd. Geschäftsführung Technik & Betriebswirtschaft / Arbeitssicherheit)  
+**Empfänger:** BIV Bundesgeschäftsstelle (`biv@die-gebaeudedienstleister.de`, z. Hd. Christine Sudhop / GF Technik & Betriebswirtschaft)  
 **Betreff:** Arbeitsschutz & Haftungsschutz für Betriebe: Quelloffener Chemikalien-Mischschutz (Geschenk an den BIV)
 
 ```text
-Sehr geehrte Damen und Herren der Geschäftsführung des BIV,
-sehr geehrte Damen und Herren des Fachausschusses Technik und Betriebswirtschaft,
+Sehr geehrte Frau Sudhop,
+sehr geehrte Damen und Herren der Geschäftsführung des BIV,
 
 als Spitzenverband von über 2.500 Dienstleistern mit 700.000 Beschäftigten kennen Sie das tägliche Spannungsfeld Ihrer Mitgliedsbetriebe:
 Unternehmer tragen die volle gesetzliche Fürsorge- und Haftungspflicht für den Arbeitsschutz nach GefStoffV und DGUV Regel 101-019. Gleichzeitig arbeiten Reinigungskräfte in den Objekten unter erheblichem Zeitdruck und über massive Sprachgrenzen hinweg. Das versehentliche Mischen von sauren Entkalkern mit hypochlorithaltiger Bleiche (Chlorgas-Bildung) ist der gefürchtetste Unfallklassiker — Betriebsausfälle, Rettungseinsätze und behördliche Ermittlungen sind die Folge.
