@@ -613,3 +613,17 @@ Drei Researcher liefen parallel auf dasselbe Thema: **#1 ideenrunde** (Primärqu
 | Holzschutzmittel-Altlast-Lotse (Baujahr + Foto) | `besetzt` → Grab `holzschutzmittel-altlast-lotse` | altholz-rustikal.de Schadstoff-Check; PCP optisch unsichtbar | — |
 
 **Bilanz:** 23 Kandidaten aus drei Engines, nach Zusammenlegung der Doppelfunde 19 Zeilen · 2 `frei` (dünn) · 6 `verengt` · 3 `unklar` · 8 `besetzt` (8 Gräber). Trefferquote (frei + verengt) **42 %**.
+
+**Review 27.09.2026 (`idea-reviewer`, 7 Vektoren, Details in `amelie-classification-log.md`) `[reviewed]`:** Keine der sechs Überlebenden war beim ersten Durchgang Dose Ready.
+
+| Idee | Score | Triage | Folge |
+|---|:---:|---|---|
+| Altholz-Weiche | 23/35 | `Verengt` | Kein Duplikat, aber keine eigene Dose: Baustein der Sperrmüll-Weiche (dritter Ausgang „Entsorgung → Holz A I–III / A IV"); kommunale Abfall-ABCs (Vechta, Osterholz) ordnen die Gegenstände schon als Text zu. Kein Nachschieben an die BSR |
+| Brennholz-Kaufprüfer | 23/35 | `Verengt` | Als Modus „Kaufmoment" in den Katalogeintrag `wood-stove-firewood-moisture-estimator`; Volumenteil gestrichen |
+| Abbundzeichen-Fundbuch | 22/35 | `Needs Research` → Nachrecherche Librarian (s. u.) | Prämisse und Empfänger fehlten |
+| Dosenfund-Dolmetscher | 21/35 | `Needs Research` | Überlebt den Kill des Altlast-Lotsen (Produkt ≠ Baujahr), aber die Rezeptur-Tabelle je Marke/Jahrgang existiert nicht öffentlich; Dose im Keller ≠ Anwendung am Holz. Nächster Schritt: historische Holzschutzmittelverzeichnisse (DIBt/IfBt), LfU Nr. 507 |
+| Rückbauholz-Vorsortierer | 21/35 | `Friedhof` → Grab `rueckbauholz-vorsortierer` | ReFoRe: HTWK FLEX erfasst Maße und Schadensmerkmale alter Balken (HoloLens, Artec Leo), TU Braunschweig klassifiziert |
+| Kaminrauch-Beweisbuch | 18/35 | `Friedhof` → Grab `kaminrauch-beweisbuch` | Reality-Check: kein optisches Nachweisverfahren, nachts blind, DSGVO-Haushaltsausnahme greift nicht |
+
+**Nachrecherche Abbundzeichen-Fundbuch (Librarian, 4 Suchen, Schnipsel):** Prämisse jetzt von zwei Seiten belegt — Laien finden die Zeichen und können sie nicht lesen (fachwerk.de: „Bedeutung Zeichen auf alten Holzbalken", Thread 285377; „Schriftzeichen auf alten Holzbalken", Thread 286024); die Forschung sammelt von Hand und bittet öffentlich um Fundmeldungen (Raking Light: Datenbank mit nur 25 Belegen arabischer Abbundzeichen in England, „requests for details of sightings"). Empfänger: IgB-Hausforschung (Hausforschertreffen, Arbeitskreis Haus- und Gefügeforschung Nordwest); Kontakt laut Schnipsel Dr. Julia Ricker — vor Versand verifizieren. Urteil bleibt `frei`, Prämisse nicht mehr dünn.
+

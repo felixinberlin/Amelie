@@ -3365,6 +3365,58 @@ export const DISCARDED_DATA: DiscardedItem[] = [
     diedOn: '2026-09-27',
     resurrectIfDe: 'Wenn ein peer-reviewtes Verfahren PCP/Lindan auf Holzoberflächen mit Smartphone plus Billig-Zubehör (Teststreifen-Kolorimetrie, Mini-NIR/Raman) nachweist.',
     resurrectIfEn: 'If a peer-reviewed method detects PCP/lindane on wood surfaces with a smartphone plus a cheap add-on (test-strip colorimetry, mini NIR/Raman).'
+  },
+  {
+    id: 'rueckbauholz-vorsortierer',
+    title: 'Rückbauholz-Vorsortierer (Handy-Vorsortierung nach DIN 4074 am Rückbauort)',
+    originalIdeaDe: 'Zimmerei fotografiert ausgebaute Balken von vier Seiten; die KI erkennt Äste, Risse, Nagel- und Bohrlöcher und schätzt die Sortierklasse nach DIN 4074-1 (2026-05) samt Recyclingholz-Zusatzregeln als Vorsortierung vor dem Container.',
+    originalIdeaEn: 'Carpenters photograph reclaimed beams from four sides; AI detects knots, cracks, nail and bolt holes and pre-grades them per DIN 4074-1 (2026-05) plus proposed reclaimed-timber rules before they hit the skip.',
+    whyDiscardedDe: 'Der natürliche Empfänger baut es selbst: Im FNR-Verbund ReFoRe (TU Braunschweig iBHolz, Fraunhofer WKI, HTWK Leipzig, 01/2024–12/2026) entwickelt HTWK FLEX die systematische Erfassung von Abmessungen und Schadensmerkmalen wiederverwendbarer Holzbauteile (HoloLens, Artec Leo), die TU Braunschweig klassifiziert die mechanischen Eigenschaften.',
+    whyDiscardedEn: 'The natural recipient is building it: in the FNR-funded ReFoRe consortium (TU Braunschweig iBHolz, Fraunhofer WKI, HTWK Leipzig, 01/2024–12/2026) HTWK FLEX develops systematic capture of dimensions and damage features of reusable timber members (HoloLens, Artec Leo); TU Braunschweig classifies their mechanical properties.',
+    lessonDe: 'Frisch überarbeitete Norm + laufendes Förderprojekt = Empfänger zuerst ganz lesen; die Arbeitspaketbeschreibung tötet, nicht die Förderseite.',
+    lessonEn: 'Freshly revised standard + running funded project = read the recipient fully first; the work-package description kills, not the funding page.',
+    domain: 'Holzbau / Kreislaufwirtschaft',
+    evidence: [
+      'https://flex.htwk-leipzig.de/flexforschung/refore',
+      'https://www.htwk-leipzig.de/forschen/forschungsprojekte/refore',
+      'https://www.tu-braunschweig.de/ibholz/forschung/aktuelle-forschungsprojekte/refore',
+      'https://www.wki.fraunhofer.de/en/research-projects/2024/refore-evaluation-and-processing-of-conctruction-waste-wood-for-reutilization-in-structural-timber-components.html'
+    ],
+    cause: 'beim-empfaenger',
+    killer: 'forschung',
+    foundBy: 'empfaenger',
+    origin: 'quelle',
+    stage: 'kandidat',
+    bornIn: 'Holz-Runde · Ideenrunde #1 + Inversion #3 (Doppelfund), Review 27.09.2026',
+    diedOn: '2026-09-27',
+    resurrectIfDe: 'Wenn der ReFoRe-Abschlussbericht (nach 12/2026) nur ein Scanner-/HoloLens-Konzept ohne Handy-Feldwerkzeug liefert und die Feldtriage am Rückbauort ausdrücklich als offenen nächsten Schritt nennt.',
+    resurrectIfEn: 'If the ReFoRe final report (after 12/2026) delivers only a scanner/HoloLens concept without a phone field tool and explicitly names on-site triage as an open next step.'
+  },
+  {
+    id: 'kaminrauch-beweisbuch',
+    title: 'Kaminrauch-Beweisbuch (Rauchopazität per Handyvideo + DWD-Wind für Nachbarn)',
+    originalIdeaDe: 'Nachbarn filmen die Rauchfahne des Nachbarschornsteins; on-device-KI schätzt Opazität (Ringelmann-analog) und Farbe, kombiniert mit DWD-Wind zu einem Belastungsprotokoll für Ordnungsamt und Bezirksschornsteinfeger.',
+    originalIdeaEn: 'Neighbours film the adjacent chimney plume; on-device AI estimates opacity (Ringelmann-like) and colour, combined with DWD wind into a nuisance log for the authority and district chimney sweep.',
+    whyDiscardedDe: 'Reality-Check: (1) Die 1. BImSchV sieht kein optisches Nachweisverfahren vor, in UK zählt nur Beamten-Augenschein. (2) Holzöfen laufen vor allem an dunklen Winterabenden, eine Opazitätsschätzung per Handykamera ist dann unmöglich. (3) DSGVO: Dauerfilmen des Nachbargrundstücks für Beschwerden fällt nicht unter die Haushaltsausnahme. Übrig bleibt ein Tagebuch mit Winddaten, das jeder Ratgeber empfiehlt (keine neue Fähigkeit).',
+    whyDiscardedEn: 'Reality check: (1) Germany\'s 1. BImSchV provides no optical evidence method; in the UK only officer-observed smoke counts. (2) Stoves run mainly on dark winter evenings, so phone-camera opacity estimation fails. (3) GDPR: continuously filming a neighbour\'s property for complaints is outside the household exemption. What remains is a diary with wind data, which every guide already recommends (no new capability).',
+    lessonDe: 'Erst die Beweismittelfrage, dann die Funktionsfrage — und bei jedem Kamera-Kandidaten die Tageszeit der Belastung prüfen (Nachtcheck).',
+    lessonEn: 'Ask whether the evidence counts before asking whether the function works — and check the time of day of the nuisance for every camera idea (night check).',
+    domain: 'Luftreinhaltung / Nachbarschaft',
+    evidence: [
+      'https://www.schornsteinfegermeister.de/schornsteinfeger-informationen/schornsteinfeger-informationen-ueber-rauchbelaestigung.html',
+      'https://www.walthamforest.gov.uk/neighbourhoods/pollution/air-quality-waltham-forest/smoke-control-and-wood-burning',
+      'https://www.duh.de/fileadmin/user_upload/download/Projektinformation/Verkehr/Clean_Heat/L%C3%A4stige_Holzfeuerung_in_der_Nachbarschaft_H%C3%A4ufige_Fragen_und_Antworten.pdf',
+      'https://thesilverbrief.blog/neighbour-bonfire-smoke-nuisance/'
+    ],
+    cause: 'reality-check',
+    killer: 'keiner',
+    foundBy: 'deutsch',
+    origin: 'brainstorm',
+    stage: 'kandidat',
+    bornIn: 'Holz-Runde · Inversion #3 (OP-2), Gegenbeleg Ideenrunde #1, Review 27.09.2026',
+    diedOn: '2026-09-27',
+    resurrectIfDe: 'Wenn ein Bundesland oder die 1. BImSchV ein bildgestütztes Anlassverfahren (z. B. Foto-/Videomeldung als Auslöser einer Überprüfung) ausdrücklich zulässt und ein kostengünstiger Messweg für die Dunkelheit (PM-Sensor mit Windzuordnung) als Beleg anerkannt wird.',
+    resurrectIfEn: 'If a federal state or the 1. BImSchV explicitly accepts image-based reports as a trigger for inspection, and a low-cost night-capable measurement (PM sensor with wind attribution) is recognised as evidence.'
   }
 ];
 
