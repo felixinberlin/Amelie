@@ -1,6 +1,6 @@
 ---
-status: Available
-delivery_method: Reddit Post
+status: Delivered
+delivery_method: Reddit Post (Modmail Approval Request)
 target_maker: Open Source Tarot & Developer Community (r/tarot / r/webdev / r/indiegames / r/occult)
 review_score: 31/35
 architecture_tier: Tier 1
@@ -58,6 +58,17 @@ Community outreach is structured as a Reddit announcement post highlighting the 
   ]
 }
 ```
+
+## Logs & Learnings
+
+1. **Community Moderation Protocol (Rule 9 - No AI):**
+   - Specialized online communities (such as `r/tarot`) strictly enforce "No AI" rules. Unannounced direct posting leads to post removal or bans.
+   - **Learning:** Reaching out via Reddit Modmail beforehand—transparently declaring human initiative alongside AI drafting—ensures rule compliance and fosters mutual trust.
+2. **Schema Decoupling Insight:**
+   - Initial designs mixed live reading records with spread catalogs into a single monolithic JSON file.
+   - **Learning:** Strictly separating static `TarotSpreadDefinition` (v2.0.0) from dynamic `TarotReading` (v1.0.0) simplifies semver evolution and provides clean APIs for tarot journal apps and AI agents.
+3. **Graph Topology over UI Arrays:**
+   - Replacing hardcoded arrays with normalized $(x, y, \theta, z)$ coordinates and 9 typed directed edge relations empowers frontends to render any spread dynamically without custom UI code.
 
 ## Research & Scaffolding
 

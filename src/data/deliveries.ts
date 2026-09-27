@@ -470,8 +470,9 @@ npm package: \`@arcana-schema/validator\`
 
 Dual-licensed under MIT (code & schema structure) and CC BY 4.0 (interpretive text) — completely free for indie deck creators, game designers, and developers.`,
     doseLinks: ['tarot-zustandsmaschine'],
-    scheduleDe: 'Versandfertig (September 2026)',
-    scheduleEn: 'Ready for dispatch (September 2026)',
-    sent: false
+    scheduleDe: 'Versendet / Mod-Anfrage (27. September 2026)',
+    scheduleEn: 'Sent / Mod Inquiry (September 27, 2026)',
+    sent: true,
+    sentAt: '27. September 2026'
   }
 ];

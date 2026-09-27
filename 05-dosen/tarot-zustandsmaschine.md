@@ -59,6 +59,17 @@ Der Outreach für die Community erfolgt als strukturiertes Reddit-Announcement m
 }
 ```
 
+## Logs & Learnings
+
+1. **Community-Regeln & Modmail-Protokoll (Regel 9 - No AI):**
+   - Viele spezialisierte Foren (wie `r/tarot`) verbieten ungeprüften KI-Content streng. Ein direktes, unangekündigtes Posten führt zu Löschung oder Ban.
+   - **Learning:** Die Vorab-Kontaktaufnahme über Reddit-Modmail mit transparenter Darlegung (Mensch initiated, AI drafting execution) sichert Regelkonformität und baut gegenseitigen Respekt auf.
+2. **Erkenntnis der Schema-Entkopplung:**
+   - Ursprünglich wurden Legungsdaten und Spread-Kataloge in einer einzigen Struktur vermischt.
+   - **Learning:** Die strikte Trennung von statischen `TarotSpreadDefinition` (v2.0.0) und dynamischen `TarotReading` (v1.0.0) vereinfacht die Semver-Garantien und ermöglicht saubere Schnittstellen für Journal-Apps und LLM-Agenten.
+3. **Graph-Topologie schlägt UI-Arrays:**
+   - Das Ersetzen von starren Arrays durch geometrische $(x, y, \theta, z)$ Koordinaten und 9 typisierte Relationen erlaubt es generischen Renderern, jedes beliebige Legesystem ohne neuen Frontend-Code darzustellen.
+
 ## Das Buch zur Dose & Demos
 
 - [Kapitel 1: Foren-Recherche & Community-Bedarfe](../02-recherche/tarot-occult-community-needs.md)
