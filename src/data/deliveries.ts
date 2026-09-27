@@ -534,9 +534,10 @@ Everything is turnkey, verified, and free of third-party IP restrictions:
 With warm regards for safe and incident-free cleaning operations,
 Amélie Initiative (Félix, Berlin)`,
     doseLinks: ['dose-cleaner-chemical-safety'],
-    scheduleDe: 'Versandfertig (September 2026)',
-    scheduleEn: 'Ready for dispatch (September 2026)',
-    sent: false
+    scheduleDe: 'Versendet (27. September 2026)',
+    scheduleEn: 'Sent (September 27, 2026)',
+    sent: true,
+    sentAt: '27. September 2026'
   },
   {
     id: 'mail-12',

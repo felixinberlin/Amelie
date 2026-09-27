@@ -1,5 +1,5 @@
 ---
-status: Available
+status: Delivered
 delivery_method: E-Mail
 target_maker: BIV
 review_score: 34/35

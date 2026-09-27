@@ -1363,7 +1363,7 @@ Dual-licensed under MIT (code & schema structure) and CC BY 4.0 (interpretive te
     recipientsEn: 'BIV (Federal Association of Contract Cleaners) · EU-OSHA · Service Employees International Union (SEIU) · EFCI · IG BAU · BG BAU',
     domain: 'civic',
     verdict: 'gift',
-    status: 'gepackt',
+    status: 'zugestellt',
     problemDe: 'Reinigungskräfte im gewerblichen Bereich arbeiten unter extremem Zeitdruck und häufig über Sprachbarrieren hinweg. Das versehentliche Mischen von sauren Entkalkern mit Hypochlorit-Bleiche setzt tödliches Chlorgas frei. Mischverbote sind Lehrbuchwissen, aber Warnungen verstauben in 15-seitigen Sicherheitsdatenblättern im Büroordner. Bestehende Systeme (WINGIS, GESTIS, DGUV 101-019) sind reine Schreibtisch-Lookups — kein Werkzeug steht im Moment des Mischens an der Putzkammer.',
     problemEn: 'Commercial cleaners work under extreme speed pressure and frequent language barriers. Accidental mixing of acidic descalers with hypochlorite bleach releases deadly chlorine gas into confined restrooms. Mixing bans are textbook knowledge, but safety warnings remain locked in 15-page Safety Data Sheets. Existing systems (WINGIS, GESTIS, DGUV 101-019) are desktop lookup tools — none stands between a worker and two bottles at the moment of mixing.',
     whyNowDe: [

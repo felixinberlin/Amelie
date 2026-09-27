@@ -400,4 +400,19 @@ Erste Runde, die mit einer **verschenkten** Dose als Ausgangspunkt arbeitet. Das
 - **Fehler:** Idee eines Wassertemperatur-Messers am Wasserhahn (Zirkulationswächter nach DVGW W 551) verworfen, da Mieter laut Rechtsprechung am Hahn nur ca. 40–45 °C verlangen können (Verbrühungsschutz), nicht die 60 °C Kesseltemperatur. Der Hebel liegt an den mikrobiologischen Laborgrenzwerten und dem harten Bleiverbot.
 - **Nächstes Mal:** EU-Ecodesign-Verordnung (ESPR) & Digital Product Passport (DPP) für Textilien/Elektronik: Inversion der Hersteller-Compliance in ein Bürger-Reparatur- und Obsoleszenz-Gegenwerkzeug (OP-2 / OP-4).
 
+### Session Outreach & Zustellung ChemGefahr-Stopp — 27.09.2026 (method: outreach-hardening)
+
+- **Erledigt:**
+  - Video-Demonstration (Google Drive) als 0-Byte-Fassade integriert (Lightbox-Embed on demand, unmount on close, keine Bundle-Belastung).
+  - Outreach für ChemGefahr-Stopp (`dose-cleaner-chemical-safety`) um den Arbeitgeber-Spitzenverband BIV (Bundesinnungsverband des Gebäudereiniger-Handwerks, Mail 11) und die europäische Ebene EU-OSHA (Mail 12) erweitert.
+  - E-Mail an BIV (`biv@die-gebaeudedienstleister.de`, z. Hd. Christine Sudhop) und BG BAU (`gefahrstoffe@bgbau.de`) versendet; Status auf `zugestellt` / `Delivered` gesetzt.
+- **Gelernt (E-Mail-Zustellung & Empfänger-Ground-Truth):**
+  - **Funktionsadressen ohne Recherche scheitern hart:** Geratene oder veraltete Adressen (`gebaeudereinigung@igbau.de`, `gisbau@bgbau.de`, `info@die-gebaeudedienstleister.de`, `gl@die-gebaeudedienstleister.de`) werden von Gateways mit `550 User unknown` oder Microsoft 365 Exchange Online mit `550 5.4.1 DBEB Access Denied` abgewiesen.
+  - **Prüfpflicht:** Niemals Abteilungs-Kürzel raten! Vor jedem Versand Impressum und Organigramm prüfen (`biv@die-gebaeudedienstleister.de` mit namentlicher Ansprechpartnerin, `kontakt@igbau.de` z. Hd. Fachgruppe, `gefahrstoffe@bgbau.de`).
+- **Gelernt (Manifest-Regel 5 — Deep-Link-Pflicht):**
+  - Alle Links zum Simulator in E-Mails und Dokumenten **müssen immer den direkten Dosen-Anker tragen** (`https://felixinberlin.github.io/Amelie/#dose=<id>`), niemals die unqualifizierte Startseite. Dies ist nun als **Regel 5** im `AGENTS.md` festgeschrieben.
+- **Nächstes Mal:**
+  - Follow-up/Antwort-Monitoring für BIV, BG BAU und Tarot Arcana Schema.
+  - Ticket 02 für `kristallwachstum-3d` (GPU-Marching-Cubes Isosurface & 3MF) bzw. ESPR/DPP-Inversion.
+
 

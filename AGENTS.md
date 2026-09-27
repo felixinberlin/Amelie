@@ -68,6 +68,10 @@ Wenn du ein Ticket, ein Kriterium oder eine Dosen-Beschreibung änderst, musst d
   * **Spezifikation & Playground LIVE:** Arcana Schema v2.0.0 ([felixinberlin.github.io/Arcana-schema](https://felixinberlin.github.io/Arcana-schema/)) dual-validiert (Draft 2020-12 & Draft-7) mit `@arcana-schema/validator` auf npm.
   * **Post 10 (Reddit Announcement):** An `r/tarot` Moderatoren via Modmail versendet (Vorab-Genehmigung bezüglich Regel 9 / No AI). Status in Dossiers und Zustellliste auf `Delivered` / `sent: true` gesetzt.
   * **Simulator:** Altes `TarotGraphSimulator.tsx` entfernt; verweist im Frontend & Dossier direkt auf die GitHub-Pages-Instanz.
+* **`dose-cleaner-chemical-safety` / ChemGefahr-Stopp (Dose & Mails 11/12):**
+  * **Zustellung ERFOLGT:** Anschreiben an den Spitzenverband **BIV** (`biv@die-gebaeudedienstleister.de`, z. Hd. Christine Sudhop, Mail 11) sowie BG BAU (`gefahrstoffe@bgbau.de`) versendet. Dosenstatus auf `zugestellt` / `Delivered` gesetzt.
+  * **0-Byte Video-Fassade:** Google Drive Demonstration ohne Ladezeit-Einbußen per Lightbox integriert.
+  * **Mail 12 bereit:** Passgenaue europäische Kaltmail an EU-OSHA (`information@osha.europa.eu` via BAuA Focal Point) vorbereitet.
 * **`kristallwachstum-3d` (Dose & Mail 9):**
   * **Ticket 01 ist ABGESCHLOSSEN:** WebGPU-Pipeline (`webgpuPipeline.ts`) mit CPU-Voxel-Laufzeitkern, 50-Schritte-Phasenfeld-Glättung, Live-$D_f$-Literaturvergleich, 6 Gefügelinsen, 3D-Kamera und STL-Export sind verifiziert (8 Tests in `engine.test.ts`).
   * **Ticket 02 ist BEREIT:** GPU-Marching-Cubes Isosurface-Extraktion & Mehrfarbiger 3MF-Farbexport (`07-demos/kristallwachstum-3d/ticket-02-gpu-marching-cubes-3mf.md`).
