@@ -27,6 +27,7 @@ import {
   CheckCircle2,
   BookOpen,
   HelpCircle,
+  Play,
 } from 'lucide-react';
 import { DoseItem, Language, Verdict } from '../types';
 import { AMELIE_PLEDGE } from '../data/manifest';
@@ -508,6 +509,22 @@ ${bookChapters
                 />
               </picture>
             </figure>
+          )}
+
+          {/* Video Demonstration Link (Lazy external stream) */}
+          {dose.videoUrl && (
+            <div className="flex justify-center -mt-1 mb-2">
+              <a
+                href={dose.videoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-950/10 hover:bg-red-950/20 text-red-900 border border-red-300 text-xs font-mono-code font-semibold transition-all hover:scale-105 shadow-xs"
+              >
+                <Play className="w-3.5 h-3.5 fill-current text-red-600" />
+                <span>{dose.videoTitle || (isDe ? 'Video-Demonstration ansehen (Drive)' : 'Watch Video Demo (Drive)')}</span>
+                <ExternalLink className="w-3 h-3 opacity-70" />
+              </a>
+            </div>
           )}
 
           {/* Poetic One-Liner Box */}

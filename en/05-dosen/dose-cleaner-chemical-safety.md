@@ -21,6 +21,8 @@ source_type: Type A
 
 ![Point-of-Action Camera Detection: Smartphone scans acidic descaler and chlorine bleach](/chemhazard-stop.jpg)
 
+> 📹 **Live Demonstration:** [Watch Point-of-Action Video on Google Drive](https://drive.google.com/file/d/1TGYV6aw7zWwe6isgin9UGvTJblDc-t8n/view?usp=drive_link) *(on-demand streaming, 0 KB initial load burden)*
+
 ## The problem
 
 Commercial cleaners work under extreme speed pressure, frequently navigating severe language barriers. Accidental mixing of an acidic descaler with a hypochlorite bleach releases deadly chlorine gas into confined, poorly ventilated restrooms and custodial closets.
@@ -119,6 +121,7 @@ What the Tool Does:
 
 The complete project is turnkey, tested, and released unconditionally into the public domain (CC0):
 • Interactive Web Simulator & Live Demo: https://felixinberlin.github.io/Amelie/
+• Video Demonstration (Point-of-Action Field Test): https://drive.google.com/file/d/1TGYV6aw7zWwe6isgin9UGvTJblDc-t8n/view?usp=drive_link
 • Source Code, Test Suite & Scaffolding: https://github.com/felixinberlin/Amelie/tree/main/07-demos/chemhazard-stop
 
 "This idea belongs to no one. Take it, build it, sell it — you owe me nothing, not even a reply. If you ever have an idea you won't build, give it to someone who will."

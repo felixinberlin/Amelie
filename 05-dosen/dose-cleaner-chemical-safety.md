@@ -21,6 +21,8 @@ source_type: Type A
 
 ![Point-of-Action-Kamerawarnung bei zwei Putzmittelflaschen: Smartphone erkennt sauren WC-Reiniger und Chlor-Bleichmittel](/chemhazard-stop.jpg)
 
+> 📹 **Live-Demonstration:** [Point-of-Action Video auf Google Drive ansehen](https://drive.google.com/file/d/1TGYV6aw7zWwe6isgin9UGvTJblDc-t8n/view?usp=drive_link) *(on-demand gestreamt, 0 KB Vorab-Download)*
+
 ## Das Problem
 
 Reinigungskräfte im gewerblichen Bereich arbeiten unter extremem Zeitdruck und häufig über erhebliche Sprachbarrieren hinweg. Das versehentliche Mischen eines sauren Sanitär-Entkalkers mit einer hypochlorithaltigen Chlorbleiche setzt in engen, fensterlosen Waschräumen und Putzkammern sofort toxisches Chlorgas frei. 
@@ -119,6 +121,7 @@ Was das Werkzeug tut:
 
 Das gesamte Projekt ist schlüsselfertig, lauffähig und bedingungslos gemeinfrei (CC0):
 • Interaktiver Web-Simulator & Live-Demo: https://felixinberlin.github.io/Amelie/
+• Video-Demonstration (Point-of-Action Praxistest): https://drive.google.com/file/d/1TGYV6aw7zWwe6isgin9UGvTJblDc-t8n/view?usp=drive_link
 • Quellcode, Testsuite & Scaffolding: https://github.com/felixinberlin/Amelie/tree/main/07-demos/chemhazard-stop
 
 „Diese Idee gehört niemandem. Nimm sie, bau sie, verkauf sie — du schuldest mir nichts, nicht einmal eine Antwort. Wenn du eines Tages eine Idee hast, die du nicht bauen wirst, gib sie jemandem, der es tut.“

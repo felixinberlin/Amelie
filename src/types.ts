@@ -62,6 +62,10 @@ export interface DoseItem {
   imageAlt?: string;
   /** Breite geteilt durch Höhe. Reserviert den Platz, damit beim Nachladen nichts springt. */
   imageAspect?: number;
+  /** Externe Video-URL (z. B. Google Drive, YouTube) — verhindert schwere Dateiuploads im Web */
+  videoUrl?: string;
+  /** Titel oder Beschreibung des Videos */
+  videoTitle?: string;
   oneLinerDe: string;
   oneLinerEn: string;
   oneLinerEs?: string;

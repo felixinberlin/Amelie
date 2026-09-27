@@ -77,3 +77,8 @@ Um Urheberrechts- und Haftungsfallen auszuschließen, sind die Daten in drei rec
 Die TypeScript-Laufzeitengine und die automatisierte Testsuite liegen in `src/engine/chemhazard/`:
 * `src/engine/chemhazard/chemHazardEngine.ts` — 100% Offline Regel-Kernel & Multi-Kanal-Logik.
 * `src/engine/chemhazard/chemHazardEngine.test.ts` — Vitest-Regressionstests über alle Zustände, Invarianten und 20 Realszenarien.
+
+## 5. Live-Demo & Video-Demonstration
+
+* **Interaktiver Web-Simulator:** [felixinberlin.github.io/Amelie/](https://felixinberlin.github.io/Amelie/) (Dosis: `ChemHazard Stop`)
+* **Video-Demonstration (Point-of-Action Praxistest):** [Auf Google Drive ansehen](https://drive.google.com/file/d/1TGYV6aw7zWwe6isgin9UGvTJblDc-t8n/view?usp=drive_link) *(extern gestreamt, 0 KB Vorab-Download)*

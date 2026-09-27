@@ -1353,6 +1353,8 @@ Dual-licensed under MIT (code & schema structure) and CC BY 4.0 (interpretive te
     image: 'chemhazard-stop.jpg',
     imageAlt: 'Point-of-Action-Kamerawarnung bei zwei Putzmittelflaschen: Smartphone erkennt sauren WC-Reiniger und Chlor-Bleichmittel, schlägt stummen Alarm mit optischem Farb-Stroboskop, Chlorgas-Toxizitätsanzeige und Notfall-Warnung.',
     imageAspect: 0.707,
+    videoUrl: 'https://drive.google.com/file/d/1TGYV6aw7zWwe6isgin9UGvTJblDc-t8n/view?usp=drive_link',
+    videoTitle: 'Point-of-Action Video-Demonstration (ChemHazard Stop)',
     oneLinerDe: 'Kamera auf zwei Putzmittelflaschen richten: Warnt laut in der Sprache der Reinigungskraft vor gefährlichen Gasen und Verätzungen — offline, in unter 1 Sekunde; sagt wenn es etwas nicht prüfen kann, aber niemals „sicher“.',
     oneLinerEn: 'Point a phone camera at two cleaning chemical bottles: Warns audibly in the cleaner\'s language if the combination is dangerous — 100% offline, in under a second; admits when it cannot verify, but never says "safe."',
     date: '27.09.2026',
@@ -1406,6 +1408,7 @@ Was das Werkzeug tut:
 
 Das gesamte Projekt ist schlüsselfertig, lauffähig und bedingungslos gemeinfrei (CC0):
 • Interaktiver Web-Simulator & Live-Demo: https://felixinberlin.github.io/Amelie/
+• Video-Demonstration (Point-of-Action Praxistest): https://drive.google.com/file/d/1TGYV6aw7zWwe6isgin9UGvTJblDc-t8n/view?usp=drive_link
 • Quellcode, Testsuite & Scaffolding: https://github.com/felixinberlin/Amelie/tree/main/07-demos/chemhazard-stop
 
 „Diese Idee gehört niemandem. Nimm sie, bau sie, verkauf sie — du schuldest mir nichts, nicht einmal eine Antwort. Wenn du eines Tages eine Idee hast, die du nicht bauen wirst, gib sie jemandem, der es tut.“
@@ -1428,6 +1431,7 @@ What the Tool Does:
 
 The complete project is turnkey, tested, and released unconditionally into the public domain (CC0):
 • Interactive Web Simulator & Live Demo: https://felixinberlin.github.io/Amelie/
+• Video Demonstration (Point-of-Action Field Test): https://drive.google.com/file/d/1TGYV6aw7zWwe6isgin9UGvTJblDc-t8n/view?usp=drive_link
 • Source Code, Test Suite & Scaffolding: https://github.com/felixinberlin/Amelie/tree/main/07-demos/chemhazard-stop
 
 "This idea belongs to no one. Take it, build it, sell it — you owe me nothing, not even a reply. If you ever have an idea you won't build, give it to someone who will."

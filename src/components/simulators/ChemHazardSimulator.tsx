@@ -22,7 +22,11 @@ import {
   Radio,
   Flame,
   Languages,
-  Camera
+  Camera,
+  Play,
+  X,
+  ExternalLink,
+  Video
 } from 'lucide-react';
 import { doseImageSrc, doseImageSrcSet } from '../../utils/doseImage';
 
@@ -48,6 +52,17 @@ export const ChemHazardSimulator: React.FC<ChemHazardSimulatorProps> = ({
   const [isAlarmPlaying, setIsAlarmPlaying] = useState<boolean>(false);
   const [simulatedMuted, setSimulatedMuted] = useState<boolean>(false);
   const [showMatrixInspection, setShowMatrixInspection] = useState<boolean>(false);
+  const [showVideoModal, setShowVideoModal] = useState<boolean>(false);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && showVideoModal) {
+        setShowVideoModal(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [showVideoModal]);
 
   const audioCtxRef = useRef<AudioContext | null>(null);
   const oscillatorRef = useRef<OscillatorNode | null>(null);
@@ -271,7 +286,19 @@ export const ChemHazardSimulator: React.FC<ChemHazardSimulatorProps> = ({
 
       {/* Point-of-Action Camera Shield FOV */}
       <div className="bg-stone-900/90 border border-stone-800 rounded-xl p-4 sm:p-5 flex flex-col sm:flex-row gap-5 items-center">
-        <div className="w-full sm:w-48 md:w-52 shrink-0 overflow-hidden rounded-lg border border-stone-700/80 shadow-lg bg-black">
+        <div
+          className="w-full sm:w-48 md:w-52 shrink-0 overflow-hidden rounded-lg border border-stone-700/80 shadow-lg bg-black relative group cursor-pointer"
+          onClick={() => setShowVideoModal(true)}
+          role="button"
+          tabIndex={0}
+          aria-label={de ? 'Video-Demonstration im Vollbild abspielen' : 'Play video demonstration'}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              setShowVideoModal(true);
+            }
+          }}
+        >
           <picture>
             <source
               type="image/webp"
@@ -281,11 +308,19 @@ export const ChemHazardSimulator: React.FC<ChemHazardSimulatorProps> = ({
             <img
               src={doseImageSrc('chemhazard-stop.jpg')}
               alt={de ? 'Point-of-Action Kamera-Erkennung: Smartphone scannt sauren WC-Reiniger und Chlorbleiche' : 'Point-of-Action Camera Detection: Smartphone scans acidic descaler and chlorine bleach'}
-              className="w-full h-auto object-cover aspect-[724/1024] hover:scale-105 transition-transform duration-300"
+              className="w-full h-auto object-cover aspect-[724/1024] group-hover:scale-105 transition-transform duration-300 opacity-90 group-hover:opacity-100"
               loading="lazy"
               decoding="async"
             />
           </picture>
+          <div className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/20 transition-colors">
+            <div className="w-12 h-12 rounded-full bg-red-600/95 text-white flex items-center justify-center shadow-xl transform group-hover:scale-110 transition-transform">
+              <Play className="w-5 h-5 ml-0.5 fill-current" />
+            </div>
+          </div>
+          <div className="absolute bottom-2 left-2 right-2 bg-stone-950/85 backdrop-blur-xs text-[10px] font-mono-code text-center text-stone-200 py-0.5 rounded border border-stone-700 shadow-xs">
+            ▶ {de ? 'Video ansehen' : 'Watch Video'}
+          </div>
         </div>
         <div className="space-y-2 text-xs font-mono-code text-stone-300 flex-1 w-full">
           <div className="flex items-center gap-2 text-stone-200 font-bold uppercase tracking-wider text-xs">
@@ -306,6 +341,28 @@ export const ChemHazardSimulator: React.FC<ChemHazardSimulatorProps> = ({
             </span>
             <span className="px-2 py-0.5 rounded-md bg-stone-800 border border-stone-700 text-stone-300">
               📴 100% Offline (Zero Cloud)
+            </span>
+          </div>
+          <div className="flex flex-wrap items-center gap-2 pt-2 text-[11px]">
+            <button
+              type="button"
+              onClick={() => setShowVideoModal(true)}
+              className="px-3 py-1 rounded-md bg-red-600 hover:bg-red-500 text-white font-bold flex items-center gap-1.5 transition-colors shadow-xs"
+            >
+              <Play className="w-3.5 h-3.5 fill-current" />
+              <span>{de ? 'Video-Demo abspielen' : 'Play Video Demo'}</span>
+            </button>
+            <a
+              href="https://drive.google.com/file/d/1TGYV6aw7zWwe6isgin9UGvTJblDc-t8n/view?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-2.5 py-1 rounded-md bg-stone-800 hover:bg-stone-700 border border-stone-700 text-stone-300 flex items-center gap-1 transition-colors"
+            >
+              <span>Google Drive Link</span>
+              <ExternalLink className="w-3 h-3 text-stone-400" />
+            </a>
+            <span className="text-[10px] text-stone-500 font-mono-code">
+              ({de ? 'Lazy Stream · 0 KB App-Last' : 'Lazy Stream · 0 KB App Load'})
             </span>
           </div>
         </div>
@@ -652,6 +709,76 @@ export const ChemHazardSimulator: React.FC<ChemHazardSimulatorProps> = ({
               ? 'Die Vitest-Suite hat alle 210 möglichen Kombinationen der 20 kuratierten Reinigungsmittel getestet. Keine einzige Paarung ergibt jemals „SAFE“ oder die Farbe Grün. Alle Ausgänge sind deterministisch entweder STOP, UNVERIFIED oder NO_KNOWN_INCOMPATIBILITY mit Disclaimer.'
               : 'The Vitest suite verifies all 210 pairwise combinations across our curated product catalog. Exactly zero combinations yield a SAFE state or green color. Every execution strictly maps to STOP, UNVERIFIED, or NO_KNOWN_INCOMPATIBILITY.'}
           </p>
+        </div>
+      )}
+
+      {/* Video Modal (100% Lazy - Zero Load Time Impact) */}
+      {showVideoModal && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-xs animate-in fade-in duration-150"
+          onClick={() => setShowVideoModal(false)}
+        >
+          <div
+            className="bg-stone-900 border border-stone-700 rounded-2xl w-full max-w-4xl flex flex-col overflow-hidden shadow-2xl animate-in zoom-in-95 duration-200"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="flex items-center justify-between p-3.5 sm:p-4 border-b border-stone-800 bg-stone-950">
+              <div className="flex items-center gap-2 text-stone-100 font-bold text-xs sm:text-sm">
+                <Video className="w-4 h-4 text-red-500" />
+                <span>{de ? 'ChemHazard Stop — Point-of-Action Video-Demonstration' : 'ChemHazard Stop — Point-of-Action Video Demonstration'}</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <a
+                  href="https://drive.google.com/file/d/1TGYV6aw7zWwe6isgin9UGvTJblDc-t8n/view?usp=drive_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-amber-400 hover:text-amber-300 flex items-center gap-1 font-mono-code"
+                >
+                  <span className="hidden sm:inline">Google Drive</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+                <button
+                  type="button"
+                  onClick={() => setShowVideoModal(false)}
+                  className="text-stone-400 hover:text-stone-200 p-1 rounded-lg hover:bg-stone-800 transition-colors"
+                  aria-label={de ? 'Schließen' : 'Close'}
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+
+            {/* Video Iframe Container */}
+            <div className="relative w-full aspect-video bg-black flex items-center justify-center">
+              <iframe
+                src="https://drive.google.com/file/d/1TGYV6aw7zWwe6isgin9UGvTJblDc-t8n/preview"
+                title={de ? 'ChemHazard Stop Video Demo' : 'ChemHazard Stop Video Demo'}
+                className="w-full h-full border-0"
+                allow="autoplay; fullscreen"
+                loading="lazy"
+              />
+            </div>
+
+            {/* Modal Footer */}
+            <div className="p-3 bg-stone-950/95 border-t border-stone-800 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] font-mono-code text-stone-400">
+              <span className="flex items-center gap-1.5 text-stone-300">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                {de ? 'On-Demand Lazy Stream (0 KB Vorab-Download für die App)' : 'On-Demand Lazy Stream (0 KB pre-load burden on app)'}
+              </span>
+              <a
+                href="https://drive.google.com/file/d/1TGYV6aw7zWwe6isgin9UGvTJblDc-t8n/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-stone-300 hover:text-white underline flex items-center gap-1"
+              >
+                {de ? 'Im neuen Tab in Google Drive öffnen' : 'Open in new tab on Google Drive'}
+                <ExternalLink className="w-3 h-3" />
+              </a>
+            </div>
+          </div>
         </div>
       )}
     </div>
