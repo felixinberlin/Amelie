@@ -184,3 +184,40 @@ Auftrag: „Use the lacunar skill <-> reviewer -> packer loop and build a new id
 - **Gelernt:** Warum das jetzt geht: WebGL2 und moderne WebAssembly erlauben komplexe 2D-FFTs ($256 \times 256$ bis $512 \times 512$) in unter 2 ms direkt im Browser — 60 FPS interaktives Schlitzen und Maskieren von Lichtwellenfeldern auf dem Handy, ohne Installation oder 2.000-Euro-Thorlabs-Justierbank.
 - **Fehler:** Aufpassen, dass das Spiel nicht wie eine reine Photoshop-Trickkiste wirkt. Die physikalische 4f-Geometrie (Laser $\to$ Objektträger $\to$ Fourier-Linse $\to$ Fourier-Ebene $\to$ Rekonstruktionslinse $\to$ Sensor) muss als echter Strahlengang mit Phase, Wellenlänge und Ortsfrequenzen in Linien/mm sichtbar bleiben.
 - **Nächstes Mal:** Einen Typ-A-Anker aus dem industriellen Arbeitsschutz oder der Akustik-Normung (z. B. DIN 18041 Hörsamkeit in Räumen) gegen einen Collider aus der Ornithologie oder Tierkommunikation testen.
+
+
+### Run 9 — 27.09.2026 (Zielgebiet: **Holz/Wood**, Researcher #2; parallel zu Ideenrunde #1 und Inversion #3)
+
+Vorgabe aus Run 8 umgesetzt: 4 von 5 Collidern aus der Ornithologie (Dialektkartierung, Ringfundmeldung, Gesangslernen, Lauschen). Prämisse im selben Lauf geprüft (Nachprüfung 23.09.). **Evidenz nur Suchschnipsel** — WebFetch in dieser Umgebung durch den Egress-Proxy gesperrt.
+
+**Mode-Liste (15 Einträge, alle gesperrt):**
+1. Holzart per Handyfoto bestimmen (Woodify, Xylorix, XyloTron; KI_Wood-ID von Thünen/ITWM)
+2. Brennholz-Feuchte- oder Trocknungsrechner (Scheitgröße, Holzart, Wetter → „ofenfertig ab …“)
+3. Baumkontrolle/Baumkataster mit KI (Atlas `dicht`, Friedhof)
+4. Holzwurm oder Hausbock per Foto der Ausfluglöcher erkennen
+5. Brennholz- oder Altholz-Marktplatz / Börse für historische Baustoffe
+6. CO₂-Speicher-Rechner für Holzbau
+7. Möbel-Upcycling-Assistent per Foto
+8. Automatische Jahrringerkennung/-messung auf Scans (CooRecorder, DeepDendro u. Ä.)
+9. Waldinventur per Handy-LiDAR (Atlas `dicht`: Vegetationsstruktur per Smartphone-LiDAR)
+10. EUDR-Compliance-Plattform mit Geolokalisierung für Waldbesitzer
+11. Tonholz-Klopfton-/Tap-Tone-FFT-App
+12. AR-Anleitung zum Schnitzen oder Drechseln
+13. Fachwerk-Scan zu BIM / HBIM
+14. Borkenkäfer-Früherkennung per Drohne oder Satellit
+15. Pilzbefall (Hausschwamm) per Foto erkennen
+
+| Date | Anchor (Frame A, source) | Collider (Frame B) | Distance 1–5 | Candidates | Survivors | Best gap (one sentence, no solution) | Amélie verdict(s) |
+|---|---|---|---|---|---|---|---|
+| 27.09.2026 | Typ A/D: **Abbundzeichen als Quelle der Bauforschung** (Gerner, *Abbundzeichen – Zimmererzeichen und Bauforschung*, Fulda 1996; *Carpenters' assembly marks*, Vernacular Architecture 49/1, 2018; arabische Ziffern als Regionalcluster über Dendro, Oxford/Wiltshire) | **Dialektkartierung von Vogelgesang durch Laien** (Goldammer-Dialekte: der einzelne Ruf zählt nichts, die Verteilung alles; saisonal wiederholbar) | 4 | 3 | 1 (+1 Baustein Zweitverwendungs-Detektor) | Die Zeichen, an denen die Bauforschung Umbauten und Zimmermannstraditionen abliest, sind in Privathäusern nur während weniger Sanierungswochen sichtbar und werden fast nur als Einzelfallstudie festgehalten, sodass nie eine Verteilung entsteht, die man lesen könnte | Abbundzeichen-Fundbuch: **`frei` (dünn, Prämisse „Verlust bei Sanierung“ unbelegt)**; 3 Suchen, nur Schnipsel |
+| 27.09.2026 | Typ A: **Auftragsverfahren der Dendrolabore** (Bohrkern vor Ort, regionale Referenzchronologie; DSD Kulturspur; ADG Graubünden *FAQ Privataufträge* 2025; Uni Bamberg) | **Ringfundmeldung der Vogelberingung** (Finder liefert zuerst, bekommt die Geschichte zurück; die Zentrale sortiert) | 4 | 3 | 1 | Wer ein altes Haus datieren will, bezahlt die Probennahme, bevor jemand weiß, ob die Balken genug Ringe und eine Waldkante haben | Datierbarkeits-Vorcheck: **`unklar`** (nichts Bestehendes gefunden; Fotoqualität und Triage-Bedarf beim Labor ungeprüft) |
+| 27.09.2026 | Typ C/A: **Thünen-Kompetenzzentrum Holzherkünfte** (>10.000 Aufträge, +370 % Anfragen seit EUTR, KI_Wood-ID mit ITWM) | **Gesangslernen beim Tutor** (stilles Üben im sensiblen Fenster, bevor gesungen wird) | 4 | 2 | 0 | Holzanatomie wird am echten Präparat im Amt gelernt, ohne stille Übungsphase mit bekannter Lösung | Holzanatomie-Übungsdeck: **`verengt`** (Datenbanken und Faseratlas in Thünen-Schulungen) |
+| 27.09.2026 | Typ A: **Mikrohabitat-Feldkatalog** (Integrate/EFI) | Gleicher Collider (Gesangslernen beim Tutor) | 4 | 1 | 0 | – | Mikrohabitat-Übungsdeck: **`besetzt`** (Marteloskope + I+ Trainer) |
+| 27.09.2026 | Sonic Grading von Tonholz (Pacific Rim Tonewoods; private Deckenmessung der Instrumentenbauer) | **Weinjahrgangstabelle** (Wirkung eines Jahrgangs wird öffentlich und nachträglich über viele Flaschen verdichtet) | 3 | 1 | 1 (schwach) | Die Messwerte einer Decke bleiben beim Instrumentenbauer, und was aus ihnen klanglich wurde, fließt nie zurück | Tonholz-Jahrgangsbuch: **`verengt`** (Prämisse unbelegt) |
+| 27.09.2026 | Typ A: **Hausbock „aktiv oder inaktiv?“** (holzfragen.de, DIN-68800-Praxis) | **Lauschen bei Vögeln** (Warnrufe, Mithören ist gratis) | 4 | 1 | 0 | – | Hausbock-Horchnacht: **`besetzt`** (IADS kommerziell; Signal 20 kHz–2 MHz Körperschall, nicht mit dem Handy messbar) |
+
+- **Gelernt:** Der stärkste Überlebende (Abbundzeichen-Fundbuch) kam wieder aus dem **Ritual-/Zeitachsen-Slot** („nur während der Sanierungswochen sichtbar" gegen „jede Saison wiederholbar") — dritte Bestätigung von Run 1. Der Mechanik-Slot „Einzelbefund gegen Verteilungskarte" gab ihm den Wert.
+- **Gelernt:** Das **Übungsdeck mit bekannter Lösung ist im Forst gebaut** (Marteloskope + EFI I+ Trainer) und bei Thünen Schulungsmaterial. Vor jedem neuen Übungsdeck: „<Fach> Übungsfläche/Schulung Software" suchen.
+- **Gelernt:** Vogel-Collider liefern gegen Holz-Anker zwei tragfähige Formen: *Verteilung statt Einzelfall* (Dialekte) und *Finder liefert zuerst* (Ringfund). Die Lauschen-Form erzeugte nur einen Sensor.
+- **Fehler:** Die Hausbock-Kollision war eine bewusste Sensor-Kollision und endete an der Physik (Körperschall 20 kHz–2 MHz). Die Warnung vom 23.09. hätte genügt.
+- **Nächstes Mal:** (1) Abbundzeichen: Prämissen-Suche im Forum (fachwerk.de „Abbundzeichen gefunden") und namentliche Empfänger (IgB AG Hausforschung, AHF-Vorstand). (2) ADG-Graubünden-FAQ über einen Browser lesen; verlangt sie Vorab-Fotos, ist der Datierbarkeits-Vorcheck tot. (3) Ringfund-Mechanismus (Laienfund → Zentrale → Geschichte zurück) gegen einen weiteren Typ-A-Anker mit Vor-Ort-Honorar testen, z. B. restauratorische Befunduntersuchung.

@@ -299,6 +299,28 @@ export const DOSE_BOOKS: Record<string, BookChapter[]> = {
       kind: 'md',
     },
   ],
+  'abbundzeichen-fundbuch': [
+    {
+      slug: 'scaffolding',
+      path: '07-demos/abbundzeichen-fundbuch/README.md',
+      titleDe: 'Scaffolding & Zählfolgen-Prüfer',
+      titleEn: 'Scaffolding & sequence checker',
+      noteDe: 'Parser für römische Abbundzeichen mit Serienzeichen, fünf Regeln nur als Hinweis oder Verdacht, JSON-Export mit Ort auf Gemeindeebene; 44 Tests mit synthetischen Fixtures.',
+      noteEn: 'Parser for Roman assembly marks with series tags, five rules graded only as hint or suspicion, JSON export with municipality-level location; 44 tests on synthetic fixtures.',
+      date: '27.09.2026',
+      kind: 'md',
+    },
+    {
+      slug: 'ticket-01',
+      path: '07-demos/abbundzeichen-fundbuch/ticket-01-pruefe-zaehlfolge.md',
+      titleDe: 'Ticket 01: Eine Wand, eine Zählfolge, ein Verdacht',
+      titleEn: 'Ticket 01: One wall, one sequence, one suspicion',
+      noteDe: 'Kern und Tests fertig; offen sind das Fixture aus einem publizierten Zeichenregister und die statische Offline-Seite.',
+      noteEn: 'Kernel and tests done; still open: a fixture from a published mark register and the static offline page.',
+      date: '27.09.2026',
+      kind: 'md',
+    },
+  ],
 };
 
 export function getBook(doseId: string): BookChapter[] {
