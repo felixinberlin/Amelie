@@ -181,6 +181,7 @@ Wo Ideen schnell sterben — vor dem Suchen als Vorfilter nutzen.
 | **9 (TischSchiedsrichter, mitgebrachte Gemini-Idee)** | 24.09.2026 | 1 (+ 1 Prämisse widerlegt, 1 Konkurrent nicht auffindbar, 1 Empfängerprüfung) | 0 | 1 (dünn, nicht gepackt) | 0 | 0 |
 | Abdeckungs-Nachprüfung (8 Dosen ohne Protokollzeile, 6 davon aus dem Katalog) | 24.09.2026 | 8 (7 neu gesucht, 1 nur nachgetragen) | 0 | 7 | 0 | 1 (→ entsorgt) |
 | **Inversion Run 1 (Hof-Entkoppler)** | **25.09.2026** | **1** | **0** | **1** | **0** | **0** |
+| **Inversion Run 3 (AusweichZonen-Lotse)** | **27.09.2026** | **1** | **0** | **1** | **0** | **0** |
 
 Runde 4 (nur Researcher #1, 3 Ideen): **0 % frei + verengt.** Kein Abgleich mit dem anderen ideenrunde-Researcher; nicht mit Runde 3 vergleichbar, weil dort zwei Methoden und vier Sessions liefen. Der Altbau-Thermal-Recheck (`verengt` bestätigt) steht nicht in dieser Zeile.
 
@@ -401,3 +402,11 @@ Erste Runde, die mit einer **verschenkten** Dose als Ausgangspunkt arbeitet. Das
 - **Nächstes Mal:** EU-Ecodesign-Verordnung (ESPR) & Digital Product Passport (DPP) für Textilien/Elektronik: Inversion der Hersteller-Compliance in ein Bürger-Reparatur- und Obsoleszenz-Gegenwerkzeug (OP-2 / OP-4).
 
 
+
+### Mail-Ausgang — 27.09.2026 (AG Fraktographie, method: ideenrunde)
+- **Erledigt, was seit Runde 8 als „nächstes Mal" stand:** Mail an die AG Fraktographie entworfen und in `02-recherche/mail-ag-fraktographie.md` hinterlegt.
+
+### Inversion Run 3 — 27.09.2026 (AusweichZonen-Lotse / Bewohnerparken)
+- **Erledigt, was als „nächstes Mal" stand:** Zweiter Gebührenwerk-Anker (Bewohnerparken / Parkraum).
+- **Gelernt:** Bei Straßensperrungen (Baustellen) gibt es eine Vollzugslücke. Die Stadt kennt die Sperrungen und die betroffenen Anwohner mit Parkausweisen, kreuzt die Daten aber nicht proaktiv. Anwohner tragen das Risiko für den entfallenden Parkraum, obwohl sie eine Gebühr bezahlt haben.
+- **Nächstes Mal:** Dritte Inversion auf EU-Ecodesign-Verordnung (ESPR) & Digital Product Passport (DPP) für Textilien/Elektronik: Inversion der Hersteller-Compliance in ein Bürger-Reparatur- und Obsoleszenz-Gegenwerkzeug (OP-2 / OP-4).

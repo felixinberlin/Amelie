@@ -168,7 +168,7 @@ Der Lauf nennt diese Anker in `amelie-bisoziation-log.md`. Sie sind hier vermerk
 | Quelle | Befund | Status | Zuletzt |
 |---|---|---|---|
 | **BSR-Gebühren / Sperrmüllbuchung** | 100 € bis 5 m³ (6–15 Werktage) · 96 € Express (≤ 2 m³, 5 Tage) · 50 € ab Tag 16 · Recyclinghof 3 m³ frei, **aber nur mit Auto** · NochMall-Abholservice kostenpflichtig · Straße 0 € und sofort. Ergab die Dose Sperrmüll-Weiche | durchsucht | 23.09.2026 |
-| Parkraumbewirtschaftung, Pfandsysteme, Anschluss- und Benutzungsgebühren | noch nicht angesehen — dieselbe Bewegung („Preisleiter steht falsch herum") vermutlich übertragbar | **offen, als Nächstes** | – |
+| Parkraumbewirtschaftung, Pfandsysteme, Anschluss- und Benutzungsgebühren | Durchsucht für Bewohnerparken (AusweichZonen-Lotse), Pfand und Anschlussgebühren offen | angekratzt | 27.09.2026 |
 
 **Suchstring:** `<Betrieb> Gebühren Entgelte Preisliste <Jahr>` · `<Leistung> kostenpflichtig kostenlos Voraussetzung`
 
