@@ -61,8 +61,12 @@ Wenn du ein Ticket, ein Kriterium oder eine Dosen-Beschreibung änderst, musst d
 
 ---
 
-## 5. Aktueller Projektstand (Stand: 25. September 2026)
+## 5. Aktueller Projektstand (Stand: 27. September 2026)
 
+* **`tarot-zustandsmaschine` / Arcana Schema (Dose & Post 10):**
+  * **Spezifikation & Playground LIVE:** Arcana Schema v2.0.0 ([felixinberlin.github.io/Arcana-schema](https://felixinberlin.github.io/Arcana-schema/)) dual-validiert (Draft 2020-12 & Draft-7) mit `@arcana-schema/validator` auf npm.
+  * **Post 10 (Reddit Announcement):** An `r/tarot` Moderatoren via Modmail versendet (Vorab-Genehmigung bezüglich Regel 9 / No AI). Status in Dossiers und Zustellliste auf `Delivered` / `sent: true` gesetzt.
+  * **Simulator:** Altes `TarotGraphSimulator.tsx` entfernt; verweist im Frontend & Dossier direkt auf die GitHub-Pages-Instanz.
 * **`kristallwachstum-3d` (Dose & Mail 9):**
   * **Ticket 01 ist ABGESCHLOSSEN:** WebGPU-Pipeline (`webgpuPipeline.ts`) mit CPU-Voxel-Laufzeitkern, 50-Schritte-Phasenfeld-Glättung, Live-$D_f$-Literaturvergleich, 6 Gefügelinsen, 3D-Kamera und STL-Export sind verifiziert (8 Tests in `engine.test.ts`).
   * **Ticket 02 ist BEREIT:** GPU-Marching-Cubes Isosurface-Extraktion & Mehrfarbiger 3MF-Farbexport (`07-demos/kristallwachstum-3d/ticket-02-gpu-marching-cubes-3mf.md`).
@@ -76,7 +80,7 @@ Wenn du ein Ticket, ein Kriterium oder eine Dosen-Beschreibung änderst, musst d
     * `skills/idea-reviewer/` (`idea-reviewer.skill`): 7-Vektoren-Audit (Novelty, Complexity, Possibility, Longevity, Civic SWOT, Tech Tree, Ground Truth) mit Logbuch in `06-suche/amelie-classification-log.md`.
   * **1 Packaging-Agent:**
     * `skills/dose-packer/` (`dose-packer.skill` & Subagent `dose-packer`): Schreibt zweisprachige Dossiers (`05-dosen/`, `en/05-dosen/`), verknüpft Dosen im React-Frontend (`src/data/dosen.ts`), synchronisiert Frontmatter und Caches (`export:data`).
-  * **Aktueller Dosenstand:** 39 Dosen im Bestand. Neu verpackt: `bleifrei-lotse` (Bleifrei-Lotse / TrinkwV § 17) mit Kaltmail an vzbv und Mieterbund. Weitere Kandidaten: `hof-entkoppler` und `legio-klar` in `src/data/ideas/civicAndEcology.ts`.
+  * **Aktueller Dosenstand:** 40 Dosen im Bestand. Neu verpackt: `bleifrei-lotse` und `tarot-zustandsmaschine` (Arcana Schema).
 
 ---
 
