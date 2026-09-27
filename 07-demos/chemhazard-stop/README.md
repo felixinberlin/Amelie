@@ -1,7 +1,7 @@
 # ChemHazard Stop / MischStop — Scaffolding & Offline Regel-Kernel
 
 > **Kompakter 100% Offline-Mischschutz für gewerbliche Reinigungskräfte**  
-> *Gemeinfreies Open-Source-Geschenk (CC0 / AGPL-3.0) für BG BAU, DGUV, IG BAU, SEIU, EFCI und ver.di.*
+> *Gemeinfreies Open-Source-Geschenk (CC0 / AGPL-3.0) für BIV (Gebäudereiniger-Handwerk), EU-OSHA, BG BAU, DGUV, IG BAU, SEIU und ver.di.*
 
 ---
 

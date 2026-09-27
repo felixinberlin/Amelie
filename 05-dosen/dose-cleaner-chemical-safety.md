@@ -1,7 +1,7 @@
 ---
 status: Available
 delivery_method: E-Mail
-target_maker: IG BAU Bundesfachgruppe Gebäudereinigung
+target_maker: BIV
 review_score: 34/35
 architecture_tier: Tier 1
 source_type: Type A
@@ -13,7 +13,7 @@ source_type: Type A
 **Ein Satz:** Kamera auf zwei Putzmittelflaschen richten: Warnt laut in der Sprache der Reinigungskraft vor gefährlichen Gasen und Verätzungen — offline, in unter 1 Sekunde; sagt wenn es etwas nicht prüfen kann, aber niemals „sicher“.
 
 **Stand:** 27.09.2026 · **Prüfen ab:** März 2027
-**Empfänger:** IG BAU Bundesfachgruppe Gebäudereinigung · Berufsgenossenschaft der Bauwirtschaft (BG BAU) · DGUV · EFCI · ver.di · European Cleaning and Facility Services Industry
+**Empfänger:** IG BAU Bundesfachgruppe Gebäudereinigung · Berufsgenossenschaft der Bauwirtschaft (BG BAU) · BIV (Bundesinnungsverband des Gebäudereiniger-Handwerks) · EU-OSHA · DGUV · EFCI · ver.di
 **Verdikt:** 🎁 verschenken  
 **Review:** 34/35 · Tier 1 · Type A (Details: [Audit-Bericht](../06-suche/amelie-classification-log.md))
 
@@ -100,10 +100,85 @@ Die BG BAU betreibt mit WINGIS ein weltweites Vorzeigesystem, flankiert von GEST
 - **Verordnung (EG) Nr. 1272/2008 (CLP-Verordnung)** — Gefahrenhinweise EUH031, H314, H318.
 - **GISBAU / GISCODE-Klassifikationssystem** für Reinigungsmittel (Produktgruppen GD, GG, GS, GU).
 
-## Muster-E-Mail an Empfänger
+## Muster-E-Mails an Empfänger (Schenkungs-Post)
 
-**Empfänger:** IG BAU Bundesfachgruppe Gebäudereinigung / Bundesvorstand (`kontakt@igbau.de`)  
-**CC:** BG BAU – Berufsgenossenschaft der Bauwirtschaft (`info@bgbau.de`, z. Hd. Referat Gefahrstoffe / GISBAU)  
+### 1. Anschreiben an die Arbeitgeber: BIV (Bundesinnungsverband des Gebäudereiniger-Handwerks)
+
+**Empfänger:** BIV Bundesgeschäftsstelle (`info@die-gebaeudedienstleister.de` / `gl@die-gebaeudedienstleister.de`, z. Hd. Geschäftsführung Technik & Betriebswirtschaft / Arbeitssicherheit)  
+**Betreff:** Arbeitsschutz & Haftungsschutz für Betriebe: Quelloffener Chemikalien-Mischschutz (Geschenk an den BIV)
+
+```text
+Sehr geehrte Damen und Herren der Geschäftsführung des BIV,
+sehr geehrte Damen und Herren des Fachausschusses Technik und Betriebswirtschaft,
+
+als Spitzenverband von über 2.500 Dienstleistern mit 700.000 Beschäftigten kennen Sie das tägliche Spannungsfeld Ihrer Mitgliedsbetriebe:
+Unternehmer tragen die volle gesetzliche Fürsorge- und Haftungspflicht für den Arbeitsschutz nach GefStoffV und DGUV Regel 101-019. Gleichzeitig arbeiten Reinigungskräfte in den Objekten unter erheblichem Zeitdruck und über massive Sprachgrenzen hinweg. Das versehentliche Mischen von sauren Entkalkern mit hypochlorithaltiger Bleiche (Chlorgas-Bildung) ist der gefürchtetste Unfallklassiker — Betriebsausfälle, Rettungseinsätze und behördliche Ermittlungen sind die Folge.
+
+Weder 15-seitige Sicherheitsdatenblätter noch deutsche Ordner im Putzraum schützen im Moment des Mischens. Wir haben deshalb ein schlüsselfertiges, 100% offline lauffähiges Point-of-Action-Assistenzwerkzeug entwickelt und schenken es der Branche bedingungslos (CC0 Public Domain):
+
+ChemGefahr-Stopp (MischStop / ChemHazard Stop):
+1. Point-of-Action Scan in unter 1 Sekunde: Die Reinigungskraft richtet das Smartphone an Ort und Stelle auf die zwei Gebinde (Barcode, GISCODE oder Gebinde-Etikett). Ein deterministischer Regel-Kernel prüft lokal und völlig ohne Internetverbindung (<1 ms), ob eine gefährliche chemische Reaktion droht.
+2. Sprachunabhängiger Mehrkanal-Sofort-Alarm: Droht Gefahr, ertönt ein lauter Alarmruf in der jeweiligen Muttersprache der Arbeitskraft (Ukrainisch, Polnisch, Türkisch, Arabisch, Rumänisch, Bulgarisch etc.).
+3. Zuverlässig auch ohne Ton / bei lauten Maschinen: Selbst wenn das Smartphone stummgeschaltet ist oder laute Sauger laufen, sendet das Display ein grelles 15-Hz-Farb-Stroboskop (Rot/Weiß) und vibriert mit unverwechselbarem Notfall-Takt (300-100-300-100-500 ms) — unübersehbar selbst durch dicke Nitrilhandschuhe.
+4. Absoluter Haftungs- und Sicherheitsnachweis (Safety Case): Das System attestiert NIEMALS eine trügerische „Grün/Sicher“-Freigabe, sondern warnt ausschließlich vor erkannter Gefahr (STOP) oder deklariert fehlende Daten transparent als UNVERIFIED. Es ersetzt keine Unterweisung, schützt Betriebe aber vor fatalen Mischunfällen.
+
+Das Projekt ist vollständig lauffähig, dokumentiert und frei von Rechten Dritter:
+• Interaktiver Web-Simulator & Live-Demo: https://felixinberlin.github.io/Amelie/#dose=dose-cleaner-chemical-safety
+• Video-Demonstration (Praxistest am Putzwagen): https://drive.google.com/file/d/1TGYV6aw7zWwe6isgin9UGvTJblDc-t8n/view?usp=drive_link
+• Quellcode, Testsuite & Architektur: https://github.com/felixinberlin/Amelie/tree/main/07-demos/chemhazard-stop
+
+„Diese Idee gehört niemandem. Nimm sie, bau sie, gib sie an eure Mitgliedsbetriebe weiter — Sie schulden mir nichts, nicht einmal eine Antwort. Wenn Sie eines Tages eine Idee haben, die Sie nicht selbst umsetzen, geben Sie sie jemandem weiter, der es tut.“
+
+Mit freundlichen Grüßen für sichere und unfallfreie Betriebe,
+Amélie Initiative (Félix, Berlin)
+```
+
+---
+
+### 2. Anschreiben an die europäische Ebene: EU-OSHA (European Agency for Safety and Health at Work)
+
+**Recipients:** EU-OSHA (`information@osha.europa.eu`, Attn: Prevention and Research Unit / Dangerous Substances Campaign)  
+**CC:** German National Focal Point at BAuA (`eu-osha@baua.bund.de`)  
+**Subject:** Point-of-Action Chemical Safety for Migrant Cleaners: ChemHazard Stop (Open Gift to EU-OSHA)
+
+```text
+Dear Dangerous Substances Prevention Team at EU-OSHA,
+Dear Colleagues at the German National Focal Point,
+
+Across the European Union, millions of commercial cleaners — a predominantly vulnerable, migrant workforce working non-standard hours — handle hazardous chemical formulations daily. 
+
+Despite decades of regulatory efforts under REACH, CLP (Regulation EC 1272/2008), and national safety rules, severe mixing incidents continue to occur in confined spaces. The accidental mixture of acidic descalers with sodium hypochlorite bleaches instantly releases lethal chlorine gas (Cl2). The root cause is structural: 15-page Safety Data Sheets and national technical guidance remain locked in supervisors' folders and are inaccessible across language barriers at 3:00 AM.
+
+To directly support EU-OSHA's mission of safe and healthy workplaces, we have built and open-sourced a turnkey, 100% offline point-of-action safety tool: ChemHazard Stop (MischStop).
+
+We are gifting this entire project unconditionally to the European occupational health community (CC0 Public Domain):
+
+Key Capabilities of ChemHazard Stop:
+1. Instant Point-of-Action Verification: Cleaners aim their smartphone camera at two cleaning product containers (GTIN barcode, GISCODE, or label OCR). A deterministic local rule engine evaluates dangerous reaction risks on-device in <1 millisecond without requiring internet or cellular connectivity.
+2. Polyglot Audio Alerts: When an incompatible pair is detected, loud spoken emergency instructions immediately trigger in the cleaner's native language (Ukrainian, Polish, Turkish, Arabic, Romanian, Bulgarian, Spanish, German, English, etc.).
+3. Sensory Redundancy for Noisy Facilities: If the phone is muted or drowned out by 85 dB machinery, the handset pulses with an unmistakable emergency tactile cadence (300-100-300-100-500 ms) and flashes a high-intensity 15 Hz color optical strobe (red/white) visible even through nitrile gloves.
+4. Formal Safety Case (Never Emits "Safe"): The system strictly rejects false reassurance. It never displays a green "safe" clearance. It either halts the worker on verified danger (STOP) or transparently flags incomplete data as UNVERIFIED.
+
+Compliance & European Data Architecture:
+The core engine runs on public-domain EU CLP statements (specifically EUH031: "Contact with acids liberates toxic gas"). It operates with zero tracking, zero cloud data transfer, and complete offline sovereignty.
+
+Everything is turnkey, tested, and published under CC0 / Public Domain:
+• Interactive Web Simulator & Live Demo: https://felixinberlin.github.io/Amelie/#dose=dose-cleaner-chemical-safety
+• Video Demonstration (Field Demonstration): https://drive.google.com/file/d/1TGYV6aw7zWwe6isgin9UGvTJblDc-t8n/view?usp=drive_link
+• Source Code, Test Suite & Specs: https://github.com/felixinberlin/Amelie/tree/main/07-demos/chemhazard-stop
+
+"This idea belongs to no one. Take it, build it, deploy it across European workplaces — you owe me nothing, not even a reply. If you ever have an idea you won't build, give it to someone who will."
+
+In solidarity for occupational health and safety across Europe,
+Amélie Initiative (Félix, Berlin)
+```
+
+---
+
+### 3. Anschreiben an IG BAU & BG BAU (Gewerkschaft & Gesetzliche Unfallversicherung)
+
+**Empfänger:** IG BAU Bundesfachgruppe Gebäudereinigung / Bundesvorstand (`kontakt@igbau.de`, z. Hd. Ulrike Laux)  
+**CC:** BG BAU – Berufsgenossenschaft der Bauwirtschaft (`info@bgbau.de` / `gefahrstoffe@bgbau.de`, z. Hd. Referat Gefahrstoffe / GISBAU)  
 **Betreff:** Lebensschutz für Reinigungskräfte: ChemGefahr-Stopp (Quelloffenes Geschenk an IG BAU & BG BAU)
 
 ```text

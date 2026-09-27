@@ -13,6 +13,7 @@ Ergänzt `05-dosen/_entsorgt.md`: dort steht die Begründung für gepackte, dann
 |---|---|---|---|
 | **Einführung der `git`-Domäne** — Verschiebung aller 5 Git- und Code-Repo-Dosen (`diffgeist`, `spec-drift-detector`, `agent-postmortem-recorder`, `ghost-replay`, `bugs-spaced-repetition`) aus `tools`/`knowledge` in die neue dedizierte Domäne `'git'` | **`frei`** | Aufspaltung der wachsenden Werkzeug-Kategorie. `DomainCategory` in `src/types.ts` um `'git'` erweitert, `DosenGallery.tsx` Dropdown & Badges angepasst, `zenGames.test.ts` Validierung erweitert, `dosen.ts` aktualisiert, `export:data` regeneriert. | 09/2027 |
 | **Globale Tag-Klickbarkeit & Tag-Listenansicht** — Klick auf Tags in Galerie-Karten, Dosen-Modal, Einzelseiten und Kandidaten-Karten öffnet die gefilterte Tag-Ansicht mit Filter-Banner und Abmeldeschaltfläche | **`frei`** | Konsistente Interaktionslogik für Tag-Navigation über die gesamte React-Applikation hinweg. | 09/2027 |
+| **Erweiterung ChemGefahr-Stopp (BIV & EU-OSHA)** — Passgenaue Kaltmail-Vorlagen für Arbeitgeber-Spitzenverband BIV (`info@die-gebaeudedienstleister.de`, z. Hd. Technik & Umwelt) und europäische Arbeitsschutzbehörde EU-OSHA (`information@osha.europa.eu` via BAuA Focal Point) | **`verengt`** | Ergänzung der Zustellkanäle von `dose-cleaner-chemical-safety`. BIV vertritt 2.500 Reinigungsbetriebe mit 700.000 Kräften; EU-OSHA fokussiert Arbeitsrisiken bei mobilen Arbeitskräften. Mails 11 und 12 in `deliveries.ts` und Dossiers hinterlegt. | 03/2027 |
 
 ---
 

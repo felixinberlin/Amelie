@@ -474,5 +474,140 @@ Dual-licensed under MIT (code & schema structure) and CC BY 4.0 (interpretive te
     scheduleEn: 'Sent / Mod Inquiry (September 27, 2026)',
     sent: true,
     sentAt: '27. September 2026'
+  },
+  {
+    id: 'mail-11',
+    mailIndex: 11,
+    titleDe: 'Mail 11: ChemGefahr-Stopp → BIV (Bundesinnungsverband des Gebäudereiniger-Handwerks)',
+    titleEn: 'Mail 11: ChemHazard Stop → BIV (Federal Association of Contract Cleaners)',
+    recipientOrg: 'BIV – Bundesinnungsverband des Gebäudereiniger-Handwerks',
+    recipientTypeDe: 'Arbeitgeber-Spitzenverband (2.500 Betriebe, 700.000 Beschäftigte)',
+    recipientTypeEn: 'Peak Employer Association (2,500 enterprises, 700,000 workers)',
+    contactPathDe: 'info@die-gebaeudedienstleister.de (z. Hd. Geschäftsführung Technik & Betriebswirtschaft)',
+    contactPathEn: 'info@die-gebaeudedienstleister.de (Attn: Technical & Occupational Safety Board)',
+    contactCc: 'gl@die-gebaeudedienstleister.de',
+    subjectDe: 'Arbeitsschutz & Haftungsschutz für Betriebe: Quelloffener Chemikalien-Mischschutz (Geschenk an den BIV)',
+    subjectEn: 'Occupational Safety & Liability Shield for Cleaning Contractors: ChemHazard Stop (Open Gift to BIV)',
+    bodyDe: `Sehr geehrte Damen und Herren der Geschäftsführung des BIV,
+sehr geehrte Damen und Herren des Fachausschusses Technik und Betriebswirtschaft,
+
+als Spitzenverband von über 2.500 Dienstleistern mit 700.000 Beschäftigten kennen Sie das tägliche Spannungsfeld Ihrer Mitgliedsbetriebe:
+Unternehmer tragen die volle gesetzliche Fürsorge- und Haftungspflicht für den Arbeitsschutz nach GefStoffV und DGUV Regel 101-019. Gleichzeitig arbeiten Reinigungskräfte in den Objekten unter erheblichem Zeitdruck und über massive Sprachgrenzen hinweg. Das versehentliche Mischen von sauren Entkalkern mit hypochlorithaltiger Bleiche (Chlorgas-Bildung) ist der gefürchtetste Unfallklassiker — Betriebsausfälle, Rettungseinsätze und behördliche Ermittlungen sind die Folge.
+
+Weder 15-seitige Sicherheitsdatenblätter noch deutsche Ordner im Putzraum schützen im Moment des Mischens. Wir haben deshalb ein schlüsselfertiges, 100% offline lauffähiges Point-of-Action-Assistenzwerkzeug entwickelt und schenken es der Branche bedingungslos (CC0 Public Domain):
+
+ChemGefahr-Stopp (MischStop / ChemHazard Stop):
+1. Point-of-Action Scan in unter 1 Sekunde: Die Reinigungskraft richtet das Smartphone an Ort und Stelle auf die zwei Gebinde (Barcode, GISCODE oder Gebinde-Etikett). Ein deterministischer Regel-Kernel prüft lokal und völlig ohne Internetverbindung (<1 ms), ob eine gefährliche chemische Reaktion droht.
+2. Sprachunabhängiger Mehrkanal-Sofort-Alarm: Droht Gefahr, ertönt ein lauter Alarmruf in der jeweiligen Muttersprache der Arbeitskraft (Ukrainisch, Polnisch, Türkisch, Arabisch, Rumänisch, Bulgarisch etc.).
+3. Zuverlässig auch ohne Ton / bei lauten Maschinen: Selbst wenn das Smartphone stummgeschaltet ist oder laute Sauger laufen, sendet das Display ein grelles 15-Hz-Farb-Stroboskop (Rot/Weiß) und vibriert mit unverwechselbarem Notfall-Takt (300-100-300-100-500 ms) — unübersehbar selbst durch dicke Nitrilhandschuhe.
+4. Absoluter Haftungs- und Sicherheitsnachweis (Safety Case): Das System attestiert NIEMALS eine trügerische „Grün/Sicher“-Freigabe, sondern warnt ausschließlich vor erkannter Gefahr (STOP) oder deklariert fehlende Daten transparent als UNVERIFIED. Es ersetzt keine Unterweisung, schützt Betriebe aber vor fatalen Mischunfällen.
+
+Das Projekt ist vollständig lauffähig, dokumentiert und frei von Rechten Dritter:
+• Interaktiver Web-Simulator & Live-Demo: https://felixinberlin.github.io/Amelie/#dose=dose-cleaner-chemical-safety
+• Video-Demonstration (Praxistest am Putzwagen): https://drive.google.com/file/d/1TGYV6aw7zWwe6isgin9UGvTJblDc-t8n/view?usp=drive_link
+• Quellcode, Testsuite & Architektur: https://github.com/felixinberlin/Amelie/tree/main/07-demos/chemhazard-stop
+
+„Diese Idee gehört niemandem. Nimm sie, bau sie, gib sie an eure Mitgliedsbetriebe weiter — Sie schulden mir nichts, nicht einmal eine Antwort. Wenn Sie eines Tages eine Idee haben, die Sie nicht selbst umsetzen, geben Sie sie jemandem weiter, der es tut.“
+
+Mit freundlichen Grüßen für sichere und unfallfreie Betriebe,
+Amélie Initiative (Félix, Berlin)`,
+    bodyEn: `Dear Members of the Executive Board at BIV,
+Dear Technical and Occupational Safety Committee,
+
+Representing over 2,500 service enterprises employing 700,000 workers across Germany, you understand the daily operational challenges of cleaning contractors:
+Employers bear strict legal duty of care and statutory liability for occupational safety (GefStoffV, DGUV Rule 101-019). Yet on the front lines, cleaning personnel work under extreme time constraints and across significant language barriers. Accidental mixing of acidic descalers with hypochlorite bleaches (releasing toxic chlorine gas) remains a persistent operational danger — causing severe respiratory injuries, emergency facility evacuations, and liability investigations.
+
+Neither 15-page Safety Data Sheets nor static binder folders in custodial closets protect workers at the point of action. We have built an open-source, turnkey, 100% offline point-of-action safety assistant and are gifting it unconditionally to the industry (CC0 Public Domain):
+
+ChemHazard Stop (MischStop):
+1. Sub-Second Point-of-Action Verification: Cleaners aim their smartphone camera at two chemical containers (GTIN barcode, GISCODE, or label OCR). A deterministic local rule engine evaluates dangerous reaction risks on-device in <1 millisecond with zero cloud dependency.
+2. Polyglot Audio Alerts: In hazardous pairings, loud spoken emergency instructions play immediately in the cleaner's native language (Ukrainian, Polish, Turkish, Arabic, Romanian, Bulgarian, etc.).
+3. Sensory Redundancy for Noisy Facilities: If the handset is muted or drowned out by heavy vacuum equipment, the phone pulses with an unmistakable emergency tactile cadence (300-100-300-100-500 ms) and flashes a high-intensity 15 Hz optical color strobe (red/white) visible through nitrile gloves.
+4. Formal Safety Case (Never Emits "Safe"): The system strictly avoids false reassurance. It never displays a green "safe" clearance. It either halts the worker on verified danger (STOP) or transparently flags incomplete data as UNVERIFIED.
+
+Everything is turnkey, verified, and free of third-party IP restrictions:
+• Interactive Web Simulator & Live Demo: https://felixinberlin.github.io/Amelie/#dose=dose-cleaner-chemical-safety
+• Video Demonstration (Custodial Field Test): https://drive.google.com/file/d/1TGYV6aw7zWwe6isgin9UGvTJblDc-t8n/view?usp=drive_link
+• Source Code, Test Suite & Specs: https://github.com/felixinberlin/Amelie/tree/main/07-demos/chemhazard-stop
+
+"This idea belongs to no one. Take it, build it, deploy it across your member enterprises — you owe me nothing, not even a reply. If you ever have an idea you won't build, give it to someone who will."
+
+With warm regards for safe and incident-free cleaning operations,
+Amélie Initiative (Félix, Berlin)`,
+    doseLinks: ['dose-cleaner-chemical-safety'],
+    scheduleDe: 'Versandfertig (September 2026)',
+    scheduleEn: 'Ready for dispatch (September 2026)',
+    sent: false
+  },
+  {
+    id: 'mail-12',
+    mailIndex: 12,
+    titleDe: 'Mail 12: ChemGefahr-Stopp → EU-OSHA (European Agency for Safety and Health at Work)',
+    titleEn: 'Mail 12: ChemHazard Stop → EU-OSHA (European Agency for Safety and Health at Work)',
+    recipientOrg: 'EU-OSHA (European Agency for Safety and Health at Work)',
+    recipientTypeDe: 'Europäische Arbeitsschutzbehörde (Bilbao / BAuA Focal Point)',
+    recipientTypeEn: 'European Occupational Health & Safety Agency (Bilbao / BAuA Focal Point)',
+    contactPathDe: 'information@osha.europa.eu (z. Hd. Prevention & Research / Dangerous Substances)',
+    contactPathEn: 'information@osha.europa.eu (Attn: Prevention & Research / Dangerous Substances)',
+    contactCc: 'eu-osha@baua.bund.de',
+    subjectDe: 'Punktgenauer Schutz vor Chemikalien-Mischunfällen: ChemGefahr-Stopp (Offenes Geschenk an EU-OSHA)',
+    subjectEn: 'Point-of-Action Chemical Safety for Migrant Cleaners: ChemHazard Stop (Open Gift to EU-OSHA)',
+    bodyDe: `Sehr geehrtes Team der EU-OSHA Kampagne für gefährliche Stoffe,
+sehr geehrte Kolleginnen und Kollegen am deutschen Focal Point (BAuA),
+
+in ganz Europa arbeiten Millionen von gewerblichen Reinigungskräften — eine überwiegend verletzliche, mobile Arbeitsbevölkerung — täglich mit aggressiven chemischen Formulierungen.
+
+Trotz jahrzehntelanger Regulierungsarbeit im Rahmen von REACH und CLP (Verordnung EG 1272/2008) kommt es immer wieder zu schweren Mischunfällen. Das versehentliche Zusammenschütten von sauren Entkalkern mit natriumhypochlorithaltiger Bleiche setzt in engen Sanitärräumen schlagartig tödliches Chlorgas (Cl2) frei. Die Ursache ist strukturell: 15-seitige Sicherheitsdatenblätter und technische Leitfäden bleiben nachts im Büroordner und überwinden keine Sprachbarrieren.
+
+Um die Mission der EU-OSHA für sichere und gesunde Arbeitsplätze direkt an der Basis zu unterstützen, haben wir ein schlüsselfertiges, 100% offline lauffähiges Point-of-Action-Sicherheitswerkzeug entwickelt: ChemGefahr-Stopp (MischStop / ChemHazard Stop).
+
+Wir verschenken das gesamte Projekt bedingungslos an die europäische Arbeitsschutz-Gemeinschaft (CC0 Public Domain):
+1. Verifikation an der Putzkammer in unter 1 ms: Die Reinigungskraft richtet das Smartphone auf zwei Gebinde (GTIN-Barcode, GISCODE oder Etikett). Ein deterministischer lokaler Regel-Kernel prüft Gefahrenrisiken direkt auf dem Gerät ohne Cloud-Abhängigkeit.
+2. Mehrsprachige Audio-Sofortwarnung: Bei Gefahr warnt eine laute Stimme in der jeweiligen Muttersprache der Arbeitskraft (Ukrainisch, Polnisch, Türkisch, Arabisch, Rumänisch, Bulgarisch, Spanisch, Deutsch, Englisch etc.).
+3. Sensorische Redundanz für laute Umgebungen: Selbst bei Stummschaltung oder Maschinenlärm pulsiert das Gerät mit Notfall-Haptik (300-100-300-100-500 ms) und sendet ein grelles 15-Hz-Farb-Stroboskop (Rot/Weiß).
+4. Formaler Sicherheitsnachweis (Kein Grün / Niemals "Sicher"): Das System schließt falsche Sicherheit kategorisch aus. Es warnt vor STOP oder meldet UNVERIFIED.
+
+Das Projekt ist schlüsselfertig, getestet und unter CC0 veröffentlicht:
+• Web-Simulator & Live-Demo: https://felixinberlin.github.io/Amelie/#dose=dose-cleaner-chemical-safety
+• Video-Demonstration (Praxis-Feldtest): https://drive.google.com/file/d/1TGYV6aw7zWwe6isgin9UGvTJblDc-t8n/view?usp=drive_link
+• Quellcode, Testsuite & Spezifikationen: https://github.com/felixinberlin/Amelie/tree/main/07-demos/chemhazard-stop
+
+„Diese Idee gehört niemandem. Nimm sie, bau sie, setze sie in europäischen Betrieben ein — Sie schulden mir nichts, nicht einmal eine Antwort.“
+
+Mit europäischen Grüßen für Sicherheit und Gesundheit bei der Arbeit,
+Amélie Initiative (Félix, Berlin)`,
+    bodyEn: `Dear Dangerous Substances Prevention Team at EU-OSHA,
+Dear Colleagues at the German National Focal Point,
+
+Across the European Union, millions of commercial cleaners — a predominantly vulnerable, migrant workforce working non-standard hours — handle hazardous chemical formulations daily. 
+
+Despite decades of regulatory efforts under REACH, CLP (Regulation EC 1272/2008), and national safety rules, severe mixing incidents continue to occur in confined spaces. The accidental mixture of acidic descalers with sodium hypochlorite bleaches instantly releases lethal chlorine gas (Cl2). The root cause is structural: 15-page Safety Data Sheets and national technical guidance remain locked in supervisors' folders and are inaccessible across language barriers at 3:00 AM.
+
+To directly support EU-OSHA's mission of safe and healthy workplaces, we have built and open-sourced a turnkey, 100% offline point-of-action safety tool: ChemHazard Stop (MischStop).
+
+We are gifting this entire project unconditionally to the European occupational health community (CC0 Public Domain):
+
+Key Capabilities of ChemHazard Stop:
+1. Instant Point-of-Action Verification: Cleaners aim their smartphone camera at two cleaning product containers (GTIN barcode, GISCODE, or label OCR). A deterministic local rule engine evaluates dangerous reaction risks on-device in <1 millisecond without requiring internet or cellular connectivity.
+2. Polyglot Audio Alerts: When an incompatible pair is detected, loud spoken emergency instructions immediately trigger in the cleaner's native language (Ukrainian, Polish, Turkish, Arabic, Romanian, Bulgarian, Spanish, German, English, etc.).
+3. Sensory Redundancy for Noisy Facilities: If the phone is muted or drowned out by 85 dB machinery, the handset pulses with an unmistakable emergency tactile cadence (300-100-300-100-500 ms) and flashes a high-intensity 15 Hz color optical strobe (red/white) visible even through nitrile gloves.
+4. Formal Safety Case (Never Emits "Safe"): The system strictly rejects false reassurance. It never displays a green "safe" clearance. It either halts the worker on verified danger (STOP) or transparently flags incomplete data as UNVERIFIED.
+
+Compliance & European Data Architecture:
+The core engine runs on public-domain EU CLP statements (specifically EUH031: "Contact with acids liberates toxic gas"). It operates with zero tracking, zero cloud data transfer, and complete offline sovereignty.
+
+Everything is turnkey, tested, and published under CC0 / Public Domain:
+• Interactive Web Simulator & Live Demo: https://felixinberlin.github.io/Amelie/#dose=dose-cleaner-chemical-safety
+• Video Demonstration (Field Demonstration): https://drive.google.com/file/d/1TGYV6aw7zWwe6isgin9UGvTJblDc-t8n/view?usp=drive_link
+• Source Code, Test Suite & Specs: https://github.com/felixinberlin/Amelie/tree/main/07-demos/chemhazard-stop
+
+"This idea belongs to no one. Take it, build it, deploy it across European workplaces — you owe me nothing, not even a reply. If you ever have an idea you won't build, give it to someone who will."
+
+In solidarity for occupational health and safety across Europe,
+Amélie Initiative (Félix, Berlin)`,
+    doseLinks: ['dose-cleaner-chemical-safety'],
+    scheduleDe: 'Versandfertig (September 2026)',
+    scheduleEn: 'Ready for dispatch (September 2026)',
+    sent: false
   }
 ];
