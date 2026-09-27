@@ -54,64 +54,73 @@ Die Ursachen genauer:
 
 *Automatisch erzeugt aus `src/data/dosen.ts` (`DISCARDED_DATA`) mit `npm run friedhof`. Nicht von Hand bearbeiten — `npm run lint` meldet Abweichungen.*
 
-**33 Gräber.** 3 davon starben erst als Dose oder Mail-Entwurf (teure Tode). Von 25 dokumentierten Fundwegen kamen 5 ohne neue Suche aus (eigener Atlas, eigenes Protokoll oder Reality-Check) — 20 %.
+**41 Gräber.** 3 davon starben erst als Dose oder Mail-Entwurf (teure Tode). Von 33 dokumentierten Fundwegen kamen 6 ohne neue Suche aus (eigener Atlas, eigenes Protokoll oder Reality-Check) — 18 %.
 
 **Woran sie starben**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Schon gebaut | 23 | 70 % |
-| Beim Empfänger selbst | 4 | 12 % |
-| Reality-Check | 3 | 9 % |
-| Duplikat | 2 | 6 % |
-| Keine neue Fähigkeit | 1 | 3 % |
+| Schon gebaut | 27 | 66 % |
+| Beim Empfänger selbst | 6 | 15 % |
+| Reality-Check | 3 | 7 % |
+| Duplikat | 2 | 5 % |
+| Keine neue Fähigkeit | 2 | 5 % |
+| Falsche Prämisse | 1 | 2 % |
 
 **Welche Suche traf**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Englische Suche | 8 | 24 % |
-| Nicht dokumentiert | 8 | 24 % |
-| Deutsche Suche | 6 | 18 % |
-| Empfänger-Suche | 5 | 15 % |
-| Eigener Atlas / Protokoll | 3 | 9 % |
-| Ohne Suche | 2 | 6 % |
-| Forum / Nische | 1 | 3 % |
+| Deutsche Suche | 10 | 24 % |
+| Englische Suche | 9 | 22 % |
+| Nicht dokumentiert | 8 | 20 % |
+| Empfänger-Suche | 7 | 17 % |
+| Eigener Atlas / Protokoll | 4 | 10 % |
+| Ohne Suche | 2 | 5 % |
+| Forum / Nische | 1 | 2 % |
 
 **Woher sie kamen**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Bisoziation | 12 | 36 % |
-| Brainstorm | 11 | 33 % |
-| Ideenliste | 4 | 12 % |
-| Modell-Katalog | 4 | 12 % |
-| Primärquelle | 2 | 6 % |
+| Brainstorm | 14 | 34 % |
+| Bisoziation | 13 | 32 % |
+| Primärquelle | 6 | 15 % |
+| Ideenliste | 4 | 10 % |
+| Modell-Katalog | 4 | 10 % |
 
 **Wer sie schon hatte**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Firma | 13 | 39 % |
-| Gemeinnützige | 5 | 15 % |
-| Community / Indie | 4 | 12 % |
-| Forschung | 4 | 12 % |
-| Niemand | 4 | 12 % |
-| Eigener Bestand | 2 | 6 % |
-| Behörde | 1 | 3 % |
+| Firma | 17 | 41 % |
+| Forschung | 7 | 17 % |
+| Gemeinnützige | 5 | 12 % |
+| Community / Indie | 4 | 10 % |
+| Niemand | 4 | 10 % |
+| Behörde | 2 | 5 % |
+| Eigener Bestand | 2 | 5 % |
 
 **Wie weit sie kamen**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Kandidat | 30 | 91 % |
-| Dose gepackt | 2 | 6 % |
-| Mail entworfen | 1 | 3 % |
+| Kandidat | 38 | 93 % |
+| Dose gepackt | 2 | 5 % |
+| Mail entworfen | 1 | 2 % |
 
 ### Alle Gräber (neueste zuerst)
 
 | Idee | † | Ursache | Wer sie hatte | Gefunden durch | Herkunft | Kam bis |
 |---|---|---|---|---|---|---|
+| Bohrmehl-Foto (Borkenkäfer im Privatwald) | 27.09.2026 | Falsche Prämisse | Behörde | Eigener Atlas / Protokoll | Primärquelle | Kandidat |
+| Brennholz-Raummaß-Check | 27.09.2026 | Schon gebaut | Firma | Englische Suche | Brainstorm | Kandidat |
+| EUDR-Kleinwald-Erklärung | 27.09.2026 | Schon gebaut | Firma | Empfänger-Suche | Brainstorm | Kandidat |
+| Hausbock-Horcher (Handy-Akustik im Dachstuhl) | 27.09.2026 | Beim Empfänger selbst | Forschung | Deutsche Suche | Primärquelle | Kandidat |
+| Holzart per Handyfoto (EUDR/CITES-Gegencheck) | 27.09.2026 | Beim Empfänger selbst | Forschung | Empfänger-Suche | Primärquelle | Kandidat |
+| Holzschutzmittel-Altlast-Lotse (PCP/Lindan/DDT) | 27.09.2026 | Schon gebaut | Firma | Deutsche Suche | Brainstorm | Kandidat |
+| Mikrohabitat-Übungsdeck (Habitatbaum-Ansprache) | 27.09.2026 | Schon gebaut | Forschung | Deutsche Suche | Bisoziation | Kandidat |
+| Scheitholz-Trocknungsuhr | 27.09.2026 | Keine neue Fähigkeit | Firma | Deutsche Suche | Primärquelle | Kandidat |
 | Die Daten-Schicht (Synchronous Transcription Events) | 24.09.2026 | Schon gebaut | Gemeinnützige | Englische Suche | Bisoziation | Kandidat |
 | ParagraphenDolmetscher | 24.09.2026 | Schon gebaut | Firma | Deutsche Suche | Modell-Katalog | Dose gepackt |
 | Räumungsvorhersage aus Kündigungsfristen | 23.09.2026 | Reality-Check | Niemand | Ohne Suche | Bisoziation | Kandidat |

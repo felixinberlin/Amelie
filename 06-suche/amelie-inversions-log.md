@@ -11,10 +11,19 @@ Cumulative record of all runs of the Asymmetric Inversion Protocol. Every run re
 | 2026-09-25 | 0 | Initialization & Playbook Pattern Synthesis | OP-1 through OP-5 | 5 | 5 | Formalization of Amélie's five core inversion mechanics into an autonomous discovery protocol |
 | 2026-09-25 | 1 | Niederschlagswassergebühr (BWB § 10) & DWA-A 138-1 (10/2024) | OP-2, OP-3, OP-4 | 1 | 1 (verengt) | Vor-Ort-Sickerversuch per Smartphone-Timer/Kamera + DWA-A 138-1 Muldenauslegung + BWB-Änderungsanzeige zur Gebührenbefreiung |
 | 2026-09-25 | 2 | Trinkwasserverordnung 2026 (§ 17 Bleiverbot, § 31/52 Legionellen) | OP-2, OP-3, OP-4 | 2 | 2 (verengt) | Zerstörungsfreie Vor-Ort-Materialprüfung & Vollzugsmeldung ans Gesundheitsamt (Bleifrei-Lotse) + Treppenhaus-OCR für Laborbefunde (LegioKlar) |
+| 2026-09-27 | 3 | Holz: AltholzV Anh. III, EUDR 2023/1115 (i. d. F. 2025), 1. BImSchV § 3/§ 4 + BImSchG § 22, DIN 4074-1/-5 (2026-05), PCP-Richtlinie, HolzSiG | OP-1, OP-2, OP-3, OP-4 | 7 | 4 (verengt) | Kaminrauch-Beweisbuch: on-device Rauchopazität + DWD-Wind als Belastungsprotokoll für Nachbarn (Industrie/Betreiber haben Rauch-KI, Betroffene nicht) · Altholz-Weiche am Anfallort (stromaufwärts vom TOMRA-Band) |
 
 ---
 
 ## Retrospectives
+
+### Run 3 (27.09.2026 · Holz: Altholz, EUDR, Kaminrauch, Rückbau-Balken, Brennholz) — Researcher #3, parallel zu Ideenrunde #1 und Bisoziation #2
+- **Erledigt/überschrieben:** Der Run-2-Punkt „ESPR/DPP" wurde für diese Runde durch Félix' Themenvorgabe „Holz" ersetzt und bleibt offen.
+- **Learned:** Stromaufwärts-Muster bestätigt (Altholz: TOMRA/Monash-Forschung vs. leerer Wertstoffhof). „Fähigkeit besetzt → Einsatzort frei" bei Rauch: Unleash live (Industrie) und FireWell (Betreiber) analysieren Rauch/Flamme, der Nachbar führt ein Papierprotokoll, das Schornsteinfeger und DUH verlangen.
+- **Learned:** Frisch vereinfachtes EU-Recht (EUDR: Postadresse statt Geokoordinaten für Niedrigrisiko-Kleinerzeuger) löscht die Vollzugslücke, und die Forst-Apps (Waldpilot, Sachsenforst) standen schon da. Thünen hat die Holzarten-Apps selbst (CITESwoodID, macroHOLZdata).
+- **Learned (vom Librarian ergänzt, aus Researcher #1):** Beweismittel-Frage vor Funktionsfrage — ein optisches Rauchprotokoll ist in der 1. BImSchV kein Nachweisverfahren; es begründet höchstens den Anlass für eine Überprüfung.
+- **Fehler:** PCP-Lotse ohne Reality-Check angesetzt (Schadstoff optisch unsichtbar; Baujahr-Rechner existiert). Evidenz nur Suchschnipsel, WebFetch gesperrt.
+- **Nächstes Mal:** (a) ReFoRe (HTWK/Fraunhofer WKI) lesen, bevor die Balken-Vorsortierung weitergeht; (b) Normtext 1. BImSchV § 3 Abs. 3 und Händlerpflicht verifizieren; (c) OP-5 auf kommunale Fällungen → Brennholz-/Schnittholz-Verschenken; (d) ESPR/DPP aus Run 2 nachholen.
 
 ### Run 2 (25.09.2026 · Trinkwasserverordnung 2026: Bleirohrverbot & Legionellen)
 - **Erledigt, was in Run 1 als „Nächstes Mal" stand:** Class-A-Norm Trinkwasserverordnung (TrinkwV) mit Stichtag 12.01.2026 (§ 17 Verbot von Bleileitungen) und § 31/§ 52 (Legionellen-Informationspflicht) geprüft.

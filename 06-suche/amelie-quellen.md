@@ -221,3 +221,23 @@ Der Lauf nennt diese Anker in `amelie-bisoziation-log.md`. Sie sind hier vermerk
 - **Merkblätter als Quelle für exakte Schwellenwerte** (neu ab Runde 7): vier Behördenmerkblätter zum selben Schema, zwei verschiedene Signifikanzschwellen. Schemawerte kommen aus dem Schema.
 
 - **Eine Idee nur auf der Angebotsseite denken** (neu ab Runde 8): Die Nachfrageseite in Verschenk-Communities („Wanted", WANTED, ISO) ist Standardfunktion bei Olio, Freecycle/Trash Nothing und Buy Nothing. Wer „aber die Wunschliste fehlt doch" denkt, hat die Hilfeseiten nicht gelesen.
+
+---
+
+## Typ M — Holz: Schadstoff-, Abfall- und Sortierregeln am Übergang Holz → Gebäude/Abfall (neu, Holz-Runde 27.09.2026)
+
+Alle Einträge **nur über Suchschnipsel** erschlossen; die Seiten selbst waren in dieser Umgebung nicht abrufbar.
+
+| Quelle | Befund | Status | Zuletzt |
+|---|---|---|---|
+| LfU Bayern, Schadstoffratgeber Gebäuderückbau (Suchregister Nr. 507 Holzschutzmittel) + Abfallratgeber Bayern (Altholz, Bahnschwellen) | Produktnamen/Zeiträume historischer Holzschutzmittel; Altholz-Infoblätter als reiner Text | `angekratzt` — **ergiebig** (Dosenfund-Dolmetscher, Altholz-Weiche) | 27.09.2026 |
+| AltholzV Anhang III + BAV/EUWID-Novellen-Debatte | Regelvermutung Sortiment → A I–A IV; BAV: Sichtzuordnung „nicht zuverlässig umsetzbar“; Novelle blockiert | `angekratzt` | 27.09.2026 |
+| WRA Waste Wood Assessment Guidance (UK, V3 02/2024) + CIWM/NFDC C&D-Guide | Visueller Papierleitfaden, keine App | `angekratzt` (Auslandsgegenprobe) | 27.09.2026 |
+| DIN 4074-1/-5 (2026-05) + Holzbau Deutschland „Sortierung durch den Zimmermeister“ + Recyclingholz-Papers 2025/26 + ReFoRe | Regelvorschlag für Gebrauchsspuren, kein Feldwerkzeug | `angekratzt` — **ergiebig**, ReFoRe ungelesen | 27.09.2026 |
+| 1. BImSchV / DUH Clean Heat FAQ / UK Smoke Control Areas | Protokoll verlangt, optischer Nachweis nicht vorgesehen | `angekratzt` | 27.09.2026 |
+| Abbundzeichen-Literatur (Gerner 1996; Vernacular Architecture 49/1, 2018) + IgB-Bauernhausarchiv | Zeichen als Bauforschungsquelle, keine Sammlung | `angekratzt` | 27.09.2026 |
+| Thünen-Kompetenzzentrum Holzherkünfte | Apps und KI selbst gebaut | `erschöpft` für Holzartbestimmung | 27.09.2026 |
+| Fraunhofer WKI Holzschutztagung 2022 / holzfragen.de | Hausbock-Akustik gebaut; Körperschall 20 kHz–2 MHz | `erschöpft` für Akustik | 27.09.2026 |
+| TFZ Straubing Bericht 11 · AELF-Borkenkäfer-Merkblätter · EFI I+ | Trocknungskurven, Bohrmehl, Marteloskope | `erschöpft` | 27.09.2026 |
+| **Offen für die nächste Holz-Runde:** Thünen WZE-Kronenansprache-Bildserien, PCP-Richtlinie (Bewertungsschema), DIN 68800-4, Tischler-/Zimmererforen (fachwerk.de), ADG-Graubünden-FAQ Privataufträge, restauratorische Befunduntersuchung | – | `offen` | – |
+
