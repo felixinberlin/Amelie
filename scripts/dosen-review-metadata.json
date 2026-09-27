@@ -198,5 +198,10 @@
     "review_score": "32/35",
     "architecture_tier": "Tier 1",
     "source_type": "Type D"
+  },
+  "abbundzeichen-fundbuch": {
+    "review_score": "26/35",
+    "architecture_tier": "Tier 1",
+    "source_type": "Type D"
   }
 }
