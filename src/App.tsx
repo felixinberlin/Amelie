@@ -271,6 +271,7 @@ export function App() {
             {currentTab === 'normal-jobs' && (
               <NormalJobsExplorer
                 lang={lang}
+                onOpenDose={handleOpenSinglePageById}
               />
             )}
 

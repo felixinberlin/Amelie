@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://amelie.dev/schemas/chemhazard/product.schema.json",
+  "title": "ChemHazard Product Definition",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "brand",
+    "chemicalGroups",
+    "hazardStatements",
+    "verified",
+    "dataLane",
+    "provenance"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "name": {
+      "type": "string"
+    },
+    "brand": {
+      "type": "string"
+    },
+    "gtin": {
+      "type": "string",
+      "pattern": "^[0-9]{8,14}$"
+    },
+    "giscode": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}[0-9]{1,3}$"
+    },
+    "chemicalGroups": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "acid",
+          "hypochlorite",
+          "ammonia",
+          "peroxide",
+          "oxidizer",
+          "caustic_lye",
+          "flammable",
+          "organic_solvent",
+          "neutral"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "hazardStatements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "ph": {
+      "type": "object",
+      "properties": {
+        "min": { "type": "number" },
+        "max": { "type": "number" }
+      }
+    },
+    "verified": {
+      "type": "boolean"
+    },
+    "dataLane": {
+      "type": "string",
+      "enum": ["public_law", "licensed_wingis", "open_community"]
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["sourceDocument", "verificationDate"],
+      "properties": {
+        "sourceDocument": { "type": "string" },
+        "verificationDate": { "type": "string" }
+      }
+    },
+    "activeIngredients": {
+      "type": "string"
+    },
+    "descriptionDe": {
+      "type": "string"
+    },
+    "descriptionEn": {
+      "type": "string"
+    },
+    "typicalUseDe": {
+      "type": "string"
+    },
+    "typicalUseEn": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

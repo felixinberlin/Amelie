@@ -1,0 +1,71 @@
+[
+  {
+    "id": "acid-plus-hypochlorite-chlorine-gas",
+    "requiredHazards": ["acid", "hypochlorite"],
+    "requiredStatements": ["EUH031"],
+    "severity": "LETHAL_GAS",
+    "resultingHazardDe": "Tödliches Chlorgas (Cl2) und Lungenödem",
+    "resultingHazardEn": "Lethal chlorine gas (Cl2) and acute pulmonary edema",
+    "chemicalMechanism": "2 H+ + OCl- + Cl- -> Cl2 (Gas) + H2O. Säure zersetzt Hypochlorit schlagartig unter exothermer Freisetzung von Chlorgas.",
+    "audioShouts": {
+      "de": "STOPP! Nicht mischen! Lebensgefahr durch Chlorgas!",
+      "en": "STOP! Do not mix! Deadly chlorine gas hazard!",
+      "uk": "СТОП! Не змішувати! Смертельна небезпека хлорного газу!",
+      "pl": "STOP! Nie mieszać! Śmiertelne niebezpieczeństwo chloru!",
+      "tr": "DUR! Sakın karıştırma! Ölümcül klor gazı tehlikesi!",
+      "ar": "!توقف! لا تخلط! خطر غاز الكلور القاتل",
+      "ro": "STOP! Nu amestecați! Pericol letal de gaz de clor!"
+    }
+  },
+  {
+    "id": "acid-plus-ammonia-chloramine-heat",
+    "requiredHazards": ["acid", "ammonia"],
+    "severity": "TOXIC_VAPOR",
+    "resultingHazardDe": "Starke exotherme Reaktion und ätzende Aerosole",
+    "resultingHazardEn": "Violent exotherm, ammonium salt fumes and corrosive vapors",
+    "chemicalMechanism": "NH3 + H+ -> NH4+. Neutralisationswärme kann unkontrolliertes Verspritzen von konzentrierter Säure verursachen.",
+    "audioShouts": {
+      "de": "STOPP! Nicht mischen! Verätzungsgefahr durch heftige Reaktion!",
+      "en": "STOP! Do not mix! Violent exothermic reaction hazard!",
+      "uk": "СТОП! Не змішувати! Небезпека сильної хімічної реакції!",
+      "pl": "STOP! Nie mieszać! Niebezpieczeństwo gwałtownej reakcji!",
+      "tr": "DUR! Karıştırma! Şiddetli kimyasal reaksiyon tehlikesi!",
+      "ar": "!توقف! لا تخلط! تفاعل كيميائي عنيف",
+      "ro": "STOP! Nu amestecați! Pericol de reacție chimică violentă!"
+    }
+  },
+  {
+    "id": "hypochlorite-plus-ammonia-chloramines",
+    "requiredHazards": ["hypochlorite", "ammonia"],
+    "severity": "LETHAL_GAS",
+    "resultingHazardDe": "Toxische Chloramine (NH2Cl, NHCl2) und Stickstofftrichlorid",
+    "resultingHazardEn": "Toxic chloramine vapors (NH2Cl, NHCl2) and explosive NCl3",
+    "chemicalMechanism": "NH3 + NaOCl -> NH2Cl + NaOH. Bildet hochgiftige, atemwegsschädigende Chloramindämpfe.",
+    "audioShouts": {
+      "de": "STOPP! Nicht mischen! Giftige Chloramin-Gase!",
+      "en": "STOP! Do not mix! Toxic chloramine gas release!",
+      "uk": "СТОП! Не змішувати! Отруйні хлорамінові гази!",
+      "pl": "STOP! Nie mieszać! Toksyczne gazy chloraminowe!",
+      "tr": "DUR! Karıştırma! Zehirli kloramin gazları!",
+      "ar": "!توقف! لا تخلط! غازات الكلورامين السامة",
+      "ro": "STOP! Nu amestecați! Gaze toxice de cloramină!"
+    }
+  },
+  {
+    "id": "peroxide-plus-caustic-lye",
+    "requiredHazards": ["peroxide", "caustic_lye"],
+    "severity": "EXPLOSIVE_EXOTHERM",
+    "resultingHazardDe": "Zersetzung unter Sauerstofffreisetzung und Druckaufbau",
+    "resultingHazardEn": "Rapid catalytic decomposition and oxygen pressure burst",
+    "chemicalMechanism": "2 H2O2 -> 2 H2O + O2 (exotherm beschleunigt durch OH-).",
+    "audioShouts": {
+      "de": "STOPP! Nicht mischen! Explosive Gasbildung!",
+      "en": "STOP! Do not mix! Explosive oxygen release!",
+      "uk": "СТОП! Не змішувати! Небезпека вибухового виділення газу!",
+      "pl": "STOP! Nie mieszać! Ryzyko wybuchowego wydzielania gazu!",
+      "tr": "DUR! Karıştırma! Patlayıcı gaz oluşumu!",
+      "ar": "!توقف! لا تخلط! خطر انفجار الغاز",
+      "ro": "STOP! Nu amestecați! Pericol de acumulare explozivă de gaz!"
+    }
+  }
+]

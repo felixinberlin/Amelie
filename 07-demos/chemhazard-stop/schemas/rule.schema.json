@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://amelie.dev/schemas/chemhazard/rule.schema.json",
+  "title": "ChemHazard Incompatibility Rule Definition",
+  "type": "object",
+  "required": [
+    "id",
+    "requiredHazards",
+    "severity",
+    "resultingHazardDe",
+    "resultingHazardEn",
+    "chemicalMechanism",
+    "audioShouts"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "requiredHazards": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "acid",
+          "hypochlorite",
+          "ammonia",
+          "peroxide",
+          "oxidizer",
+          "caustic_lye",
+          "flammable",
+          "organic_solvent",
+          "neutral"
+        ]
+      },
+      "minItems": 2,
+      "uniqueItems": true
+    },
+    "requiredStatements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "LETHAL_GAS",
+        "TOXIC_VAPOR",
+        "EXPLOSIVE_EXOTHERM",
+        "SEVERE_CORROSION"
+      ]
+    },
+    "resultingHazardDe": {
+      "type": "string"
+    },
+    "resultingHazardEn": {
+      "type": "string"
+    },
+    "chemicalMechanism": {
+      "type": "string"
+    },
+    "audioShouts": {
+      "type": "object",
+      "required": ["de", "en"],
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}

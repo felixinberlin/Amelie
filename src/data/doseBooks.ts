@@ -257,6 +257,48 @@ export const DOSE_BOOKS: Record<string, BookChapter[]> = {
       kind: 'md',
     },
   ],
+  'dose-cleaner-chemical-safety': [
+    {
+      slug: 'chemie-rechtsnormen',
+      path: '02-recherche/chemhazard-stop-recherche-chemie-rechtsnormen.md',
+      titleDe: 'Chemische Reaktionsmechanismen, CLP-Verordnung & GISCODE-Systematik',
+      titleEn: 'Chemical reaction mechanisms, CLP regulation & GISCODE taxonomy',
+      noteDe: 'Thermodynamik der Chlorgas-Reaktion, sekundäre Gefahrenpaare (Ammoniak, Peroxid) und deterministischer Hebel des EUH031-CLP-Gefahrensatzes.',
+      noteEn: 'Thermodynamics of chlorine gas liberation, secondary hazard pairs, and deterministic EUH031 CLP classification trigger.',
+      date: '27.09.2026',
+      kind: 'md',
+    },
+    {
+      slug: 'empfaenger-arbeitsrealitaet',
+      path: '02-recherche/chemhazard-stop-empfaenger-arbeitsrealitaet.md',
+      titleDe: 'Empfängeranalyse, Arbeitsrealität & Sprachbarrieren im Gebäudereiniger-Handwerk',
+      titleEn: 'Recipient analysis, cleaning frontline reality & language barriers',
+      noteDe: '700.000 Beschäftigte im Reinigungssektor, Nachtarbeit und Scheitern 15-seitiger SDBs; Mandat von IG BAU, BG BAU, DGUV, EFCI und SEIU.',
+      noteEn: '700,000 cleaning workers, shift pressure, and why 15-page SDS fail mid-shift; institutional mandate of IG BAU, BG BAU, DGUV, EFCI, and SEIU.',
+      date: '27.09.2026',
+      kind: 'md',
+    },
+    {
+      slug: 'safety-case-architektur',
+      path: '02-recherche/chemhazard-stop-safety-case-architektur.md',
+      titleDe: 'Der Sicherheitsnachweis: Formale Spezifikation des Dreizustands-Modells & Ausfallmodi',
+      titleEn: 'The safety case: formal three-state model specification & failure modes',
+      noteDe: 'Beweis für das absolute Verbot des grünen Zustands (Never says safe) und architektonische Gegenmaßnahmen für 11 reale Ausfallmodi.',
+      noteEn: 'Formal proof of the green state ban (Never says safe) and architectural remedies against 11 real-world operational failure modes.',
+      date: '27.09.2026',
+      kind: 'md',
+    },
+    {
+      slug: 'roadmap-meilensteine',
+      path: '07-demos/chemhazard-stop/roadmap-meilensteine.md',
+      titleDe: 'Roadmap, Meilensteine & Ausbildungsplan',
+      titleEn: 'Roadmap, milestones & training curriculum',
+      noteDe: 'Meilensteine M0 (Kernel) bis M2 (Gewerkschaftsauslieferung) und 4-Wochen-Trainingsplan für Reinigungsteams und Betriebsräte.',
+      noteEn: 'Milestones M0 (Kernel) through M2 (Union delivery) and 4-week training curriculum for frontline teams and safety stewards.',
+      date: '27.09.2026',
+      kind: 'md',
+    },
+  ],
 };
 
 export function getBook(doseId: string): BookChapter[] {

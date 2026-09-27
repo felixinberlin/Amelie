@@ -33,14 +33,16 @@ import { Language } from '../types';
 import { NORMAL_JOBS_AND_EVERYDAY_PEOPLE_IDEAS } from '../data/ideas/normalJobsAndEverydayPeople';
 import { AMELIE_PLEDGE } from '../data/manifest';
 import { getLocalizedTitle } from '../i18n';
+import { ChemHazardSimulator } from './simulators';
 
 interface NormalJobsExplorerProps {
   lang: Language;
+  onOpenDose?: (doseId: string) => void;
 }
 
 type SectorFilter = 'all' | 'care' | 'craft' | 'cleaning' | 'food' | 'transport' | 'education' | 'forestry';
 
-export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) => {
+export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang, onOpenDose }) => {
   const [activeSector, setActiveSector] = useState<SectorFilter>('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [expandedId, setExpandedId] = useState<string | null>('ai-nurse-shift-guardian');
@@ -57,9 +59,6 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
   const [craftTrade, setCraftTrade] = useState('Fliesenleger');
   const [craftDefect, setCraftDefect] = useState('Estrich-Restfeuchte 3,4% (zulässig max 2,0%)');
   const [craftGenerated, setCraftGenerated] = useState(false);
-
-  const [chemBottleA, setChemBottleA] = useState('acid');
-  const [chemBottleB, setChemBottleB] = useState('bleach');
 
   const [allergenInput, setAllergenInput] = useState('Gewürzmischung mit Senfmehl, Selleriesalz, hydrolysiertes Sojaeiweiß, Weizengluten');
 
@@ -141,12 +140,6 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
   const isRestIllegal = parseFloat(restHours) < 11.0;
   const nightBonusTotal = (nurseNightHours * nurseHourlyWage * 0.25).toFixed(2);
   const sundayBonusTotal = (nurseNightHours * nurseHourlyWage * 0.50).toFixed(2);
-
-  // Chemical hazard detection
-  const isChemDangerous = (chemBottleA === 'acid' && chemBottleB === 'bleach') || 
-                          (chemBottleA === 'bleach' && chemBottleB === 'acid') ||
-                          (chemBottleA === 'ammonia' && chemBottleB === 'bleach') ||
-                          (chemBottleA === 'bleach' && chemBottleB === 'ammonia');
 
   return (
     <div className="max-w-6xl mx-auto space-y-8 pb-20">
@@ -582,76 +575,41 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang }) 
                   )}
 
                   {idea.id === 'ai-cleaner-chemical-safety-voice' && (
-                    <div className="p-5 rounded-2xl bg-amber-50/80 border border-amber-200 space-y-4">
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs font-mono font-bold uppercase text-amber-950 flex items-center gap-1.5">
-                          <ShieldCheck className="w-4 h-4 text-amber-800" />
-                          {lang === 'de' ? 'Interaktiver Test: Chemische Unverträglichkeitsprüfung' : lang === 'es' ? 'Prueba interactiva: Alarma de toxicidad química' : 'Interactive Demo: Chemical Toxicity Alarm'}
-                        </span>
-                        <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-white text-amber-900 border border-amber-300 font-semibold">
-                          GHS Polyglot Shield
-                        </span>
-                      </div>
-
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                        <div>
-                          <label className="block text-stone-600 font-semibold mb-1">
-                            {lang === 'de' ? 'Flasche A (z.B. Sanitär-Entkalker):' : lang === 'es' ? 'Botella A (p. ej. descalcificador ácido):' : 'Bottle A (e.g. Acid Descaler):'}
-                          </label>
-                          <select 
-                            value={chemBottleA}
-                            onChange={(e) => setChemBottleA(e.target.value)}
-                            className="w-full px-2.5 py-1.5 bg-white border border-stone-300 rounded-lg text-stone-900 font-mono"
-                          >
-                            <option value="acid">Phosphorsäure / Essigreiniger (Säure)</option>
-                            <option value="neutral">Neutraler Allzweckreiniger (Tenside)</option>
-                            <option value="bleach">Chlor-Bleichmittel (Natriumhypochlorit)</option>
-                          </select>
-                        </div>
-
-                        <div>
-                          <label className="block text-stone-600 font-semibold mb-1">
-                            {lang === 'de' ? 'Flasche B (z.B. Schimmelentferner):' : lang === 'es' ? 'Botella B (p. ej. lejía antimoho):' : 'Bottle B (e.g. Mold Cleaner):'}
-                          </label>
-                          <select 
-                            value={chemBottleB}
-                            onChange={(e) => setChemBottleB(e.target.value)}
-                            className="w-full px-2.5 py-1.5 bg-white border border-stone-300 rounded-lg text-stone-900 font-mono"
-                          >
-                            <option value="bleach">Chlor-Bleichmittel (Natriumhypochlorit)</option>
-                            <option value="acid">Phosphorsäure / Urinsteinentferner (Säure)</option>
-                            <option value="ammonia">Salmiakgeist (Ammoniakwasser)</option>
-                            <option value="neutral">Alkohol-Glasreiniger</option>
-                          </select>
-                        </div>
-                      </div>
-
-                      <div className={`p-4 rounded-xl border text-xs font-mono transition-all ${
-                        isChemDangerous 
-                          ? 'bg-rose-100/90 border-rose-400 text-rose-950 animate-pulse' 
-                          : 'bg-emerald-50 border-emerald-300 text-emerald-950'
-                      }`}>
-                        {isChemDangerous ? (
-                          <div className="space-y-1">
-                            <div className="font-bold flex items-center gap-1.5 text-sm">
-                              <AlertTriangle className="w-4 h-4 text-rose-600" />
-                              <span>🚨 ALARM: TÖDLICHE Chlorgas-Reaktion! / LETHAL GAS HAZARD!</span>
-                            </div>
-                            <p className="text-xs">
-                              {lang === 'de'
-                                ? 'Säure und Natriumhypochlorit setzen sofort giftiges Chlorgas (Cl₂) frei! Verätzungsgefahr der Lunge. Sprachwarnung auf Arabisch, Ukrainisch, Polnisch, Türkisch wird laut abgespielt.'
-                                : lang === 'es'
-                                ? '¡El ácido y el hipoclorito de sodio liberan gas de cloro tóxico (Cl₂)! Peligro grave para los pulmones. Se activa alarma de voz inmediata.'
-                                : 'Acid + Sodium hypochlorite immediately releases lethal chlorine gas (Cl₂)! Loud native-language audio warning triggers on device.'}
-                            </p>
+                    <div className="space-y-4">
+                      <div className="p-4 rounded-2xl bg-amber-50/90 border border-amber-300 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
+                        <div className="space-y-1">
+                          <div className="flex items-center gap-2">
+                            <span className="px-2 py-0.5 rounded bg-amber-900 text-amber-50 font-mono text-[10px] font-bold uppercase tracking-wider">
+                              {lang === 'de' ? 'Offizielle Amélie-Dose' : lang === 'es' ? 'Lata oficial Amélie' : 'Official Amélie Tin'}
+                            </span>
+                            <span className="font-bold text-amber-950 text-sm">
+                              ChemHazard Stop · MischStop
+                            </span>
                           </div>
-                        ) : (
-                          <div className="flex items-center gap-1.5">
-                            <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                            <span>✅ {lang === 'de' ? 'Kombination unkritisch. Normale Schutzhandschuhe tragen.' : lang === 'es' ? 'Combinación no reactiva. Usar guantes de protección estándar.' : 'Safe combination. Standard protective gloves recommended.'}</span>
-                          </div>
+                          <p className="text-stone-700">
+                            {lang === 'de'
+                              ? 'Diese Idee ist als voll verpackte Dose mit lückenlosem Safety-Case, deterministischem Regelkern, Web-Audio-Sirene und polyglotter Sprachwarnung realisiert.'
+                              : lang === 'es'
+                              ? 'Esta idea se ha desarrollado como una lata completa con caso de seguridad, motor determinista, alarma Web Audio y avisos políglotas.'
+                              : 'This idea graduated into a fully packed tin with a rigorous safety case, deterministic rule engine, Web Audio siren, and polyglot voice alerts.'}
+                          </p>
+                        </div>
+                        {onOpenDose && (
+                          <button
+                            onClick={() => onOpenDose('dose-cleaner-chemical-safety')}
+                            className="shrink-0 px-3.5 py-2 bg-amber-900 hover:bg-amber-800 text-amber-50 rounded-xl font-medium transition-colors shadow-2xs flex items-center gap-1.5 cursor-pointer"
+                          >
+                            <span>{lang === 'de' ? 'Vollständiges Dossier öffnen' : lang === 'es' ? 'Abrir dossier completo' : 'Open Full Dossier'}</span>
+                            <ExternalLink className="w-3.5 h-3.5" />
+                          </button>
                         )}
                       </div>
+
+                      <ChemHazardSimulator 
+                        lang={lang} 
+                        isEmbedded={true} 
+                        onOpenDose={onOpenDose} 
+                      />
                     </div>
                   )}
 

@@ -1583,43 +1583,43 @@
   },
   {
     "id": "dose-cleaner-chemical-safety",
-    "title": "ChemGefahr-Stopp (Chemical Safety & Poison Shield for Cleaners)",
-    "titleEn": "ChemHazard Stop (Chemical Safety Shield for Cleaners)",
-    "oneLinerDe": "Kamera auf 2 Putzmittelflaschen richten: Warnt laut in 20 Sprachen vor Chlorgas und Verätzungen bei falschem Mischen.",
-    "oneLinerEn": "Point phone camera at 2 cleaning chemical bottles: Warns audibly in 20 languages against toxic chlorine gas and acid burns.",
-    "date": "17.09.2026",
+    "title": "ChemGefahr-Stopp / MischStop (ChemHazard Stop)",
+    "titleEn": "ChemHazard Stop / MischStop",
+    "oneLinerDe": "Kamera auf zwei Putzmittelflaschen richten: Warnt laut in der Sprache der Reinigungskraft vor gefährlichen Gasen und Verätzungen — offline, in unter 1 Sekunde; sagt wenn es etwas nicht prüfen kann, aber niemals „sicher“.",
+    "oneLinerEn": "Point a phone camera at two cleaning chemical bottles: Warns audibly in the cleaner's language if the combination is dangerous — 100% offline, in under a second; admits when it cannot verify, but never says \"safe.\"",
+    "date": "27.09.2026",
     "reviewAfter": "März 2027",
-    "recipientsDe": "IG BAU Bundesfachgruppe Gebäudereinigung · Berufsgenossenschaft der Bauwirtschaft (BG BAU)",
-    "recipientsEn": "Service Employees International Union (SEIU) · European Cleaning and Facility Services Industry",
+    "recipientsDe": "IG BAU Bundesfachgruppe Gebäudereinigung · Berufsgenossenschaft der Bauwirtschaft (BG BAU) · DGUV · ver.di",
+    "recipientsEn": "Service Employees International Union (SEIU) · European Cleaning and Facility Services Industry · EFCI · IG BAU · BG BAU",
     "domain": "civic",
     "verdict": "gift",
     "status": "gepackt",
-    "problemDe": "Reinigungskräfte arbeiten nachts unter Zeitdruck, oft mit Sprachbarrieren. Das versehentliche Mischen von Sanitärreinigern (Säure) mit chlorhaltigen Bleichmitteln setzt tödliches Chlorgas frei.",
-    "problemEn": "Commercial cleaners work under extreme speed pressure, frequently facing language hurdles. Accidental mixing of acidic descalers with bleach releases deadly chlorine gas into confined restrooms.",
+    "problemDe": "Reinigungskräfte im gewerblichen Bereich arbeiten unter extremem Zeitdruck und häufig über Sprachbarrieren hinweg. Das versehentliche Mischen von sauren Entkalkern mit Hypochlorit-Bleiche setzt tödliches Chlorgas frei. Mischverbote sind Lehrbuchwissen, aber Warnungen verstauben in 15-seitigen Sicherheitsdatenblättern im Büroordner. Bestehende Systeme (WINGIS, GESTIS, DGUV 101-019) sind reine Schreibtisch-Lookups — kein Werkzeug steht im Moment des Mischens an der Putzkammer.",
+    "problemEn": "Commercial cleaners work under extreme speed pressure and frequent language barriers. Accidental mixing of acidic descalers with hypochlorite bleach releases deadly chlorine gas into confined restrooms. Mixing bans are textbook knowledge, but safety warnings remain locked in 15-page Safety Data Sheets. Existing systems (WINGIS, GESTIS, DGUV 101-019) are desktop lookup tools — none stands between a worker and two bottles at the moment of mixing.",
     "whyNowDe": [
-      "Vision-Modelle erkennen Inhaltsstoffe auf zerkratzten und gebogenen Flaschenetiketten in Sekundenbruchteilen.",
-      "Sofortige laute Audio-Sprachausgabe in der Muttersprache (Ukrainisch, Polnisch, Türkisch, Arabisch, etc.) ohne Textlesen.",
-      "Keine Internetverbindung nötig — läuft offline in Kellern und fensterlosen Waschräumen."
+      "100% Offline-Edge-Inferenz: Schnelle Barcode- (GTIN/GS1), GISCODE- und Etiketten-Erkennung auf Standard-Smartphones ohne Server-Latenz.",
+      "Mehrsprachige Audio-Sofort-Warnung in über 20 Sprachen (Ukrainisch, Polnisch, Türkisch, Arabisch etc.) überwindet Sprachbarrieren ohne Textlese-Zwang.",
+      "Drei-Spuren-Datenmodell trennt gemeinfreies EU-CLP-Recht (EUH031) von optional lizenzierten WINGIS/GISCODE-Daten und offenen SDS."
     ],
     "whyNowEn": [
-      "Vision models parse compound names on warped, wet, and scuffed bottles in milliseconds.",
-      "Instant spoken audio warning in the worker's mother tongue removes the burden of reading technical German.",
-      "Zero internet requirement—runs 100% offline in basement restrooms and custodial closets."
+      "100% Offline edge inference: Real-time GTIN/GS1 barcode, GISCODE, and container scanning on commodity smartphones with zero cloud latency.",
+      "Instant polyglot spoken audio alerts across 20+ languages remove the burden of reading technical German safety manuals.",
+      "Three-lane data architecture separates public-domain EU CLP statements (EUH031) from optional licensed WINGIS/GISCODE data and open SDS."
     ],
-    "sketchDe": "Arbeiter hält 2 Flaschen nebeneinander vor die Handykamera. Wenn Säure + Hypochlorit erkannt werden: Bildschirm blinkt grellrot, Handy vibriert, laute Stimme ruft: \"STOPP! Nicht mischen! Chlorgas-Gefahr!\"",
-    "sketchEn": "Worker holds 2 bottles in front of phone camera. If acid + hypochlorite detected: Screen flashes high-contrast red, phone vibrates, loud voice announces: \"STOP! Do not mix! Poisonous gas!\"",
+    "sketchDe": "Kamera scannt zwei Flaschen (Barcode, GISCODE oder OCR). Lokale Matrix berechnet: combined = hazards(A) | hazards(B). Bei Treffer (z.B. Säure + Hypochlorit) feuern 4 Kanäle: Roter Bildschirm, schriller Alarm, laute Muttersprachen-Stimme, repetitive Vibration. Bei Unbekannt: Bernsteinfarbenes UNVERIFIED. Bei neutraler Paarung: Grauer Info-Screen (niemals grün!) mit Pflicht-Hinweis: „Keine bekannte Gefahr in der DB — keine Sicherheitsfreigabe! Nur mischen, wenn vom Arbeitgeber angewiesen.“",
+    "sketchEn": "Camera scans two bottles (barcode, GISCODE, or label). Local rule engine calculates combined hazard set. On danger trigger, 4 channels fire simultaneously: Flashing red screen, loud multilingual voice alert, shrill alarm tone, repeating haptics. On unknown: Amber UNVERIFIED. On neutral pair: Grey screen (never green!) with disclaimer: \"No known dangerous combination in DB — not a safety clearance. Do not mix unless instructed by employer.\"",
     "firstStepDe": {
-      "ticket": "P0: Bildklassifikation von 2 Haushalts-/Gewerbereinigern mit Inkompatibilitäts-Matrix und Sprachausgabe.",
-      "criteria": "Warnt bei Mischung von WC-Reiniger (Salz-/Phosphorsäure) und Bleiche (Natriumhypochlorit) innerhalb von 1 Sekunde."
+      "ticket": "P0: Standalone Offline-Regel-Kernel & Zwei-Barcode/GISCODE-Prüfinterlock mit 4-Kanal-Alarm.",
+      "criteria": "Deterministische STOP-Erkennung für Säure + Hypochlorit in <50ms auf 20 Testpaaren; unbekannte Produkte strikt UNVERIFIED; kein Testfall gibt jemals Grün oder „sicher“ aus; Audio-Alarm & haptisches Signal verifiziert."
     },
     "firstStepEn": {
-      "ticket": "P0: Visual dual-bottle compound classification with incompatibility matrix and audio alert.",
-      "criteria": "Triggers audio alarm on acid + hypochlorite combination within 1 second of camera detection."
+      "ticket": "P0: Standalone offline rule engine and dual-input interlock with 4-channel alert.",
+      "criteria": "Deterministic STOP detection for acid + hypochlorite in <50ms across 20 test pairs; unknown products strictly UNVERIFIED; zero green/safe states emitted; multi-lingual audio alarm and haptic patterns verified."
     },
-    "failureModeDe": "Stummgeschaltetes Telefon: App muss bei akuter Lebensgefahr die Lautstärke automatisch anheben oder haptischen Alarm (Vibrationsmuster) erzwingen.",
-    "failureModeEn": "Muted audio settings: App must trigger distinctive high-frequency haptic vibration pulses alongside screen flashes.",
-    "priorArtDe": "Beim Empfänger liegt das Informationssystem schon: Die BG BAU betreibt WINGIS (Gefahrstoff-Informationssystem, auch mobil) mit dem GISCODE für Reinigungsmittel, dazu die DGUV Regel 101-019 mit Sammelbetriebsanweisungen. Mischverbote sind Lehrbuchwissen und stehen in jeder Warnung von Gesundheitsbehörden. Nicht gefunden (Prüfung 24.09.2026): eine Kamera-App, die zwei Flaschen erkennt und vor dem Mischen laut warnt. Kipprisiko: Ein falsches „passt\" ist schlimmer als keine App — bei Profiprodukten ist der GISCODE aus Produkt- oder Sicherheitsdatenblatt eine sicherere Eingabe als die Bilderkennung.",
-    "priorArtEn": "The recipient already runs the information system: BG BAU operates WINGIS (hazardous substance information, also mobile) with the GISCODE for cleaning agents, plus DGUV rule 101-019 with collective operating instructions. Mixing bans are textbook knowledge and appear in every public-health warning. Not found (check of 24.09.2026): a camera app that recognises two bottles and warns loudly before mixing. Tipping risk: a false \"all clear\" is worse than no app — for professional products the GISCODE from the product or safety data sheet is a safer input than image recognition.",
+    "failureModeDe": "Stummgeschaltetes Telefon oder laute Umgebung (Staubsauger, Gummihandschuhe auf Lautsprecher): App erzwingt Alarm-Audiostream (bypasst Stummschaltung), gekoppelt mit grellem Vollbild-Flackern, hochfrequentem Vibrationsmuster und extragroßer visueller STOPP-Typografie.",
+    "failureModeEn": "Muted handset or loud environment (vacuum cleaners, heavy gloves covering speaker): App forces system alarm audio stream (bypassing silent mode), paired with full-screen strobe flashing, continuous high-frequency vibration, and oversized STOP typography.",
+    "priorArtDe": "BG BAU betreibt WINGIS und DGUV 101-019 (reine Suchdatenbanken für den PC). Barcode-Apps wie Yuka oder CodeCheck prüfen Kosmetik-Inhaltsstoffe, besitzen aber keine binäre Reaktions-Matrix für 2-Komponenten-Gefahren. Ein offener, kamerabasierter Zwei-Flaschen-Mischinterlock existiert am deutschen Markt nicht.",
+    "priorArtEn": "BG BAU operates WINGIS and DGUV 101-019 (desktop lookup databases). Consumer barcode apps (Yuka, CodeCheck) scan single products for allergens/cosmetics, lacking two-component chemical reaction matrices. No open-source dual-bottle camera mixing interlock exists.",
     "tags": [
       "Echte Arbeit",
       "Reinigung",
@@ -1630,74 +1630,74 @@
     ],
     "emailTemplate": {
       "subjectDe": "Lebensschutz für Reinigungskräfte: ChemGefahr-Stopp (Quelloffenes Geschenk)",
-      "bodyDe": "Liebe Kolleginnen und Kollegen der Gebäudereinigung,\n\nwir haben eine kostenlose Smartphone-Hilfe entwickelt, die Reinigungskräften per Kamera und Audio in 20 Sprachen sekundenschnell warnt, wenn Reinigungsmittel gefährliche Dämpfe bilden. Ein reines Geschenk (CC0) für den Arbeitsschutz.\n\nMit kollegialem Gruß,\nAmélie Initiative",
-      "subjectEn": "Worker Poison Shield for Cleaners: Open Safety Tool (CC0)",
-      "bodyEn": "Dear Cleaning Industry Union Colleagues,\n\nWe have created an open-source smartphone tool warning cleaners in 20 native languages whenever cleaning products threaten toxic vapor releases. An unconditional gift (CC0).\n\nBest regards,\nAmélie Initiative",
+      "bodyDe": "Liebe Kolleginnen und Kollegen der Gebäudereinigung,\n\nwir haben eine offene, 100% offline lauffähige Smartphone-Hilfe (MischStop / ChemHazard Stop) entwickelt: Reinigungskräfte richten die Kamera auf zwei Putzmittelflaschen, und das Gerät warnt laut in der jeweiligen Muttersprache (in über 20 Sprachen) vor lebensgefährlichem Chlorgas und Verätzungen — in unter 1 Sekunde.\n\nDas Werkzeug attestiert niemals Sicherheit (kein grünes Signal), sondern warnt ausschließlich vor bekannter Gefahr oder deklariert fehlende Daten als UNVERIFIED.\n\nEin bedingungsloses, quelloffenes Geschenk (CC0) für den praktischen Arbeitsschutz Ihrer Beschäftigten.\n\nMit kollegialem Gruß,\nAmélie Initiative",
+      "subjectEn": "Poison Shield for Cleaners: ChemHazard Stop Open Safety Aid (CC0)",
+      "bodyEn": "Dear Cleaning Industry Colleagues and Worker Representatives,\n\nWe have developed an open-source, 100% offline smartphone warning aid (ChemHazard Stop): cleaners point their camera at two chemical bottles, and the phone shouts an audible warning in their native language (across 20+ languages) in under one second if a lethal combination (e.g. acid + hypochlorite -> chlorine gas) is detected.\n\nThe tool never certifies safety (no green screen ever) — it strictly warns of detected danger or defaults uncertainty to UNVERIFIED.\n\nAn unconditional, open-source gift (CC0) for frontline worker safety.\n\nBest regards,\nAmélie Initiative",
       "to": "gebaeudereinigung@igbau.de"
     },
     "aiFrontier": {
-      "impossibleBeforeAiDe": "Klassische OCR scheiterte an gewölbten, nassen Flaschen, Spiegelungen und wechselnden Handelsnamen für denselben Wirkstoff.",
-      "impossibleBeforeAiEn": "Traditional optical recognition struggled with curved plastic bottles, wet surfaces, and brand synonyms for identical chemical compounds.",
+      "impossibleBeforeAiDe": "Klassische Barcode-Scanner scheiterten an beschädigten, nassen Industrie-Gebinden ohne Barcode oder an verstaubten Etiketten. Schnelle On-Device-Vision und offline Polyglot-Audio machen Schutz in Sekundenbruchteilen möglich.",
+      "impossibleBeforeAiEn": "Traditional barcode scanners failed on worn, wet industrial barrels without barcodes or damaged labels. Fast on-device vision and offline polyglot audio deliver sub-second protection directly at the custodial cart.",
       "aiTechStack": [
-        "TensorFlow Lite Micro / WebGPU",
-        "GHS Hazard Classification Table",
-        "Polyglot Web Speech Synthesizer",
-        "Offline Asset Cache"
+        "On-Device Barcode/OCR Scanner",
+        "Deterministic Set-Logic Hazard Matrix",
+        "Polyglot Offline Audio Alert Bank",
+        "Signed Offline JSON Package"
       ],
-      "privacyModelDe": "Lokale Kamera-Auswertung im Gerätespeicher; keinerlei Übertragung von Video- oder Standortdaten.",
-      "privacyModelEn": "Strictly on-device visual evaluation; zero video frames or location coordinates ever leave the device.",
-      "ordinaryPeopleBenefitDe": "Rettet die Gesundheit von Menschen, die oft ohne ausreichende Einweisung und Schutzkleidung hart arbeiten müssen.",
-      "ordinaryPeopleBenefitEn": "Safeguards the lungs and health of vulnerable cleaning staff working without adequate protective training.",
+      "privacyModelDe": "100% On-Device: Keinerlei Bildübertragung oder Telemetrie. Funktioniert vollständig ohne Internetverbindung in fensterlosen Kellern.",
+      "privacyModelEn": "100% On-Device: Zero image transmission or telemetry. Operates entirely offline in shielded basement custodial closets.",
+      "ordinaryPeopleBenefitDe": "Schützt Reinigungskräfte, die oft ohne ausreichende Schulung und unter extremem Zeitdruck arbeiten, vor Vergiftung durch Chlorgas und Verätzungen.",
+      "ordinaryPeopleBenefitEn": "Protects frontline custodial workers working under intense time pressure and language barriers from fatal chlorine gas exposure and chemical burns.",
       "learningCurriculumDe": [
         {
           "step": 1,
-          "title": "Woche 1: Kamera-Flaschen-Erkennung",
-          "focus": "Echtzeit-Erkennung von Produktetiketten auf gewölbten zylindrischen Behältern",
-          "milestone": "Zuverlässiges Auslesen von GHS-Gefahrensymbolen und Produktnamen"
+          "title": "Woche 1: Deterministischer Regel-Kernel",
+          "focus": "Mengenbasierte Inkompatibilitäts-Matrix (Säure + Hypochlorit, Säure + Ammoniak) mit strengem Dreizustands-Modell (STOP, UNVERIFIED, NO_KNOWN_INCOMPATIBILITY)",
+          "milestone": "Sub-50ms Auswertung von Produktpaaren mit 100% False-Negative-Regressionstest"
         },
         {
           "step": 2,
-          "title": "Woche 2: Chemische Unverträglichkeits-Matrix",
-          "focus": "Modellierung gefährlicher Reaktionen (Säure + Chlorid, Ammoniak + Bleiche, Laugen)",
-          "milestone": "Sofortige Erkennung letaler Mischungen in unter 500ms"
+          "title": "Woche 2: Barcode-, GISCODE- & Etiketten-Parser",
+          "focus": "Offline-Erkennung von GTIN/EAN, GISCODEs und GHS-Piktogrammen/EUH031 auf Smartphone-Kamera",
+          "milestone": "Robuste Identifikation gängiger Reinigungsmittel in unter 500ms"
         },
         {
           "step": 3,
-          "title": "Woche 3: Mehrsprachige Audio-Warnungen",
-          "focus": "Audio-Synthese in 20 Sprachen mit klaren Instruktionen und visueller Barrierefreiheit",
-          "milestone": "Verständliche akustische Warnung auch ohne Deutschkenntnisse"
+          "title": "Woche 3: 4-Kanal-Alarmsystem & Mehrsprachigkeit",
+          "focus": "Simultaner Alarm (OS-Alarm-Stream, Bildschirm-Blitz, Haptik-Impulse, Sprachausgabe in 20+ Sprachen)",
+          "milestone": "Zuverlässige Warnung auch bei stummem Telefon und lauter Umgebung"
         },
         {
           "step": 4,
-          "title": "Woche 4: Offline-Robustheit im Keller",
-          "focus": "PWA-Verpackung mit vollständigem Offline-Betrieb ohne jeglichen Serverkontakt",
-          "milestone": "Funktioniert zuverlässig in fensterlosen Tiefgaragen und Bunker-WCs"
+          "title": "Woche 4: Signierte Offline-Datenpakete & PWA/Android-Build",
+          "focus": "Kryptografische Signaturprüfung von Offline-JSON-Updates und Feldtest-Packaging",
+          "milestone": "Lauffähiges Scaffolding mit CI-Prüfsuite bereit für BG BAU / Gewerkschafts-Pilot"
         }
       ],
       "learningCurriculumEn": [
         {
           "step": 1,
-          "title": "Week 1: Curved Bottle Label Parsing",
-          "focus": "Real-time extraction of product names and GHS pictograms on cylindrical bottles",
-          "milestone": "Accurate OCR on warped reflective containers"
+          "title": "Week 1: Deterministic Rule Kernel",
+          "focus": "Set-based incompatibility matrix (acid + hypochlorite, acid + ammonia) with strict 3-state logic (STOP, UNVERIFIED, NO_KNOWN_INCOMPATIBILITY)",
+          "milestone": "Sub-50ms pair evaluation with 100% false-negative regression test suite"
         },
         {
           "step": 2,
-          "title": "Week 2: Chemical Incompatibility Matrix",
-          "focus": "Encoding hazardous reactions (acids + bleach, ammonia + hypochlorite, caustic lyes)",
-          "milestone": "Sub-500ms lethal interaction detection"
+          "title": "Week 2: Barcode, GISCODE & Label Scanner",
+          "focus": "Offline parsing of GTIN/EAN, GISCODEs, and GHS hazard statements (EUH031) on device",
+          "milestone": "Robust identification of standard commercial cleaning agents in <500ms"
         },
         {
           "step": 3,
-          "title": "Week 3: Multilingual Voice Warnings",
-          "focus": "Spoken alerts across 20 languages with high-contrast accessibility displays",
-          "milestone": "Instantly comprehensible audio alerts regardless of host language fluency"
+          "title": "Week 3: 4-Channel Alert & Polyglot Voice Engine",
+          "focus": "Simultaneous alarm stream, screen strobe, haptic pulses, and spoken warning in 20+ languages",
+          "milestone": "Fail-safe alerting regardless of handset silent mode or ambient noise"
         },
         {
           "step": 4,
-          "title": "Week 4: Zero-Connectivity Basement PWA",
-          "focus": "PWA service worker packaging enabling 100% offline edge inference",
-          "milestone": "Guaranteed reliability in shielded basement bathrooms without cell reception"
+          "title": "Week 4: Signed Offline Data Packages & Android/PWA Build",
+          "focus": "Cryptographic signature verification for offline data updates and pilot-ready packaging",
+          "milestone": "Tested, turnkey open-source repository ready for BG BAU / union field pilots"
         }
       ]
     }

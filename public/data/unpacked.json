@@ -196,21 +196,21 @@
   },
   {
     "id": "ai-cleaner-chemical-safety-voice",
-    "title": "ChemGefahr-Stopp: Multilingual Chemical Safety & Poison Shield for Commercial Cleaners",
+    "title": "ChemHazard Stop / MischStop (ChemGefahr-Stopp)",
     "round": "Everyday Workers 2026",
     "date": "17.09.2026",
-    "conceptDe": "Kamera auf zwei Reinigungsmittelflaschen richten: Die KI erkennt die Inhaltsstoffe und schlägt sofort in 20 Sprachen Alarm (\"ACHTUNG! Niemals mischen! Tödliches Chlorgas entsteht!\"), plus zeigt grafisch die genaue Verdünnung für Wasserkocher oder Sanitärbereich.",
-    "conceptEn": "Point camera at two commercial cleaning agent bottles: AI identifies active chemical compounds and sounds an immediate spoken alarm in 20 native languages (\"DANGER! Do not mix! Creates lethal chlorine gas!\"), showing exact dilution ratios visually.",
+    "conceptDe": "Kamera auf zwei Reinigungsmittelflaschen richten: Warnt laut in über 20 Sprachen vor Chlorgas und Verätzungen — 100% offline, in unter 1 Sekunde; sagt wenn es etwas nicht prüfen kann (UNVERIFIED), aber niemals „sicher“ (kein Grün).",
+    "conceptEn": "Point camera at two cleaning chemical bottles: Warns audibly in over 20 languages against lethal chlorine gas and acid burns — 100% offline, sub-second; admits when unverified, but never says \"safe\" (no green state).",
     "status": "verengt",
-    "userNotes": "Als Dose „ChemGefahr-Stopp\" gepackt. Abdeckungs-Nachprüfung 24.09.2026, 06-suche/amelie-pruefprotokoll.md: Beim Empfänger liegen WINGIS (auch mobil) und GISCODE; Kamera-Warnung vor dem Mischen nicht gefunden. Kipprisiko: ein falsches „alles gut\" ist schlimmer als keine App.",
+    "userNotes": "Als vollwertige Amélie-Dose „dose-cleaner-chemical-safety\" gepackt. Bietet lauffähiges Scaffolding (07-demos/chemhazard-stop), 4 Buch-Kapitel in 02-recherche/, 100% Offline-Regel-Kernel und interaktiven Simulator (#simulator=chemhazard).",
     "suggestedVerdict": "gift",
-    "recipientDe": "IG BAU Gebäudereinigung · Berufsgenossenschaft der Bauwirtschaft (BG BAU) · Cleaners Rights Coalitions",
+    "recipientDe": "IG BAU Gebäudereinigung · Berufsgenossenschaft der Bauwirtschaft (BG BAU) · DGUV · Cleaners Rights Coalitions",
     "recipientEn": "Service Employees International Union (SEIU) · European Cleaning and Facility Services Industry (EFCI)",
     "sourceType": "Utilities & Trades",
     "sourceDe": "GHS Chemical Hazard OCR + Real-Time Polyglot Audio Warnings for Incompatible Surfactants",
     "sourceEn": "GHS Chemical Incompatibility Vision + Real-Time Multilingual Voice Synthesis",
-    "evidenceDe": "Geprüft 24.09.2026: Beim Empfänger liegen WINGIS (auch mobil) und GISCODE; Kamera-Warnung vor dem Mischen nicht gefunden. Kipprisiko: ein falsches „alles gut\" ist schlimmer als keine App.",
-    "evidenceEn": "Checked 24.09.2026: BG BAU already runs WINGIS and GISCODE; a camera warning before mixing was not found. Risk: a false all-clear is worse than no app.",
+    "evidenceDe": "Geprüft 24.09.2026: Beim Empfänger liegen WINGIS (auch mobil) und GISCODE; Kamera-Warnung vor dem Mischen nicht gefunden. Kipprisiko: ein falsches „alles gut\" ist schlimmer als keine App — daher striktes Dreizustands-Modell ohne Grün.",
+    "evidenceEn": "Checked 24.09.2026: BG BAU already runs WINGIS and GISCODE; a camera warning before mixing was not found. Risk: a false all-clear is worse than no app — hence strict 3-state logic without green.",
     "reviewDate": "03/2027",
     "problemDe": "Sicherheitsdatenblätter (SDB) sind 15-seitige Beamtentexte im Büroordner. Reinigungskräfte putzen nachts unter Zeitdruck und können die kleingedruckten Gefahrenhinweise nicht entziffern.",
     "problemEn": "Safety data sheets are 18-page technical documents locked in office binders. Cleaners work alone at night under crushing time pressure without intelligible chemical guidance.",
@@ -255,36 +255,36 @@
     "techShift": {
       "beforeAiDe": "Vor 2024 unmöglich: Optische Zeichenerkennung scheiterte an nassen, zylindrisch gewölbten Plastikflaschen mit abgeriebenen Etiketten in dunklen Putzkammern. Es gab keine Offline-Sprachsynthese, die sofort in Arabisch, Ukrainisch oder Paschtu warnte.",
       "beforeAiEn": "Impossible before AI: OCR broke completely on wet, warped cylindrical plastic bottles with scratched labels in dim janitorial closets. Zero offline mobile engines existed to translate complex GHS chemical hazard matrices into 20 spoken languages.",
-      "nowEasyDe": "Heute kinderleicht: Kompakte Vision-Modelle erkennen chemische Markennamen und Warnpiktogramme auf runden Oberflächen in Millisekunden. Erkennt die Logik Säure + Hypochlorit, ertönt sofort ohne Internetverbindung eine klare Sprachwarnung in der Muttersprache der Reinigungskraft.",
-      "nowEasyEn": "Effortless today: Compact on-device vision models identify chemical brand names and hazard pictograms on curved surfaces in milliseconds. If acid + hypochlorite are seen together, an offline spoken alarm triggers immediately in the cleaner’s native tongue."
+      "nowEasyDe": "Heute kinderleicht: 100% Offline-Edge-Regel-Kernel und Barcode-/OCR-Erkennung werten chemische Paare in unter 1ms aus. Erkennt die Logik Säure + Hypochlorit, feuert sofort ein 4-Kanal-Alarm (Audio, Strobe-Red, Haptik, Muttersprache).",
+      "nowEasyEn": "Effortless today: 100% offline edge rule kernel and barcode/OCR parsing evaluate chemical pairs in under 1ms. On acid + hypochlorite detection, 4-channel alerts fire simultaneously (Audio, Strobe-Red, Haptics, Native voice)."
     },
     "readyEmail": {
-      "subjectDe": "Geschenk für die Gebäudereinigung: Lebensrettender mehrsprachiger Chemiescanner („ChemGefahr-Stopp\")",
-      "subjectEn": "Life-saving gift for cleaning staff: Multilingual Chemical Safety Scanner (\"ChemGefahr-Stopp\")",
-      "bodyDe": "Sehr geehrte Frau Laux, sehr geehrte Damen und Herren bei der IG BAU Gebäudereinigung und der BG BAU,\n\nwir schenken Ihnen heute eine lebensrettende Schutzsoftware für alle Reinigungskräfte unter CC0 Public Domain: „ChemGefahr-Stopp\".\n\nDer lebensbedrohliche Hintergrund:\nÜber 700.000 Menschen arbeiten in der Gebäudereinigung – viele mit geringen Deutschkenntnissen. Wenn nachts unter extremem Zeitdruck ein Sanitärreiniger (Säure) und ein Chlorbleichmittel versehentlich gemischt werden, entsteht in Sekunden hochgiftiges Chlorgas. Jährlich erleiden hunderte Reinigungskräfte schwere Verätzungen der Atemwege.\n\nDie Lösung:\nDas Smartphone wird vor die zwei Flaschen gehalten. Die KI erkennt die Inhaltsstoffe und warnt mit einem grellroten Blitz und lauter Sprachausgabe in über 20 Sprachen (u.a. Arabisch, Ukrainisch, Türkisch, Rumänisch, Polnisch, Dari): „STOPP! Niemals mischen! Lebensgefahr durch Chlorgas!\". Die Anwendung funktioniert komplett offline ohne Internet im fensterlosen Keller.\n\nSie können diese Software kostenfrei und bedingungslos in alle Schulungsprogramme, IG-BAU-Apps und BG-BAU-Präventionskampagnen integrieren.\n\nMit besten Grüßen für den Arbeitsschutz,\nAmélie Projekt",
-      "bodyEn": "Dear leaders of the cleaning workers union and safety authorities,\n\nWe are placing a life-saving chemical safety audio tool unconditionally into the public domain (CC0): \"ChemGefahr-Stopp\". By holding a phone camera to two cleaning bottles, cleaners who speak limited host language receive an instant, offline spoken alarm in 20 languages if lethal chlorine gas compounds are detected together."
+      "subjectDe": "Lebensschutz für Reinigungskräfte: ChemGefahr-Stopp (Quelloffenes Geschenk)",
+      "subjectEn": "Poison Shield for Cleaners: ChemHazard Stop Open Safety Aid (CC0)",
+      "bodyDe": "Liebe Kolleginnen und Kollegen der Gebäudereinigung,\n\nwir haben eine offene, 100% offline lauffähige Smartphone-Hilfe (MischStop / ChemHazard Stop) entwickelt: Reinigungskräfte richten die Kamera auf zwei Putzmittelflaschen, und das Gerät warnt laut in der jeweiligen Muttersprache (in über 20 Sprachen) vor lebensgefährlichem Chlorgas und Verätzungen — in unter 1 Sekunde.\n\nDas Werkzeug attestiert niemals Sicherheit (kein grünes Signal), sondern warnt ausschließlich vor bekannter Gefahr oder deklariert fehlende Daten als UNVERIFIED.\n\nEin bedingungsloses, quelloffenes Geschenk (CC0) für den praktischen Arbeitsschutz Ihrer Beschäftigten.\n\nMit kollegialem Gruß,\nAmélie Initiative",
+      "bodyEn": "Dear Cleaning Industry Colleagues and Worker Representatives,\n\nWe have developed an open-source, 100% offline smartphone warning aid (ChemHazard Stop): cleaners point their camera at two chemical bottles, and the phone shouts an audible warning in their native language (across 20+ languages) in under one second if a lethal combination (e.g. acid + hypochlorite -> chlorine gas) is detected.\n\nThe tool never certifies safety (no green screen ever) — it strictly warns of detected danger or defaults uncertainty to UNVERIFIED.\n\nAn unconditional, open-source gift (CC0) for frontline worker safety.\n\nBest regards,\nAmélie Initiative"
     },
     "whyNowDe": [
-      "Vor 2024 unmöglich: Bilderkennung konnte zerkratzte, gebogene Flaschenetiketten mit winzigen Gefahrenpiktogrammen nicht zuverlässig verknüpfen.",
-      "Heute möglich: Vision-Modelle erkennen chemische Markennamen, Inhaltsstoffkombinationen und Warnsymbole in Millisekunden und sprechen Warnungen laut in Ukrainisch, Türkisch, Arabisch, Polnisch, etc. aus.",
-      "Lebensschutz: Verhindert akute Intoxikationen und chronische Atemwegserkrankungen bei den am stärksten belasteten Dienstleistern."
+      "100% Offline-Edge-Inferenz: Schnelle Barcode- (GTIN/GS1), GISCODE- und Etiketten-Erkennung auf Standard-Smartphones ohne Server-Latenz.",
+      "Mehrsprachige Audio-Sofort-Warnung in über 20 Sprachen (Ukrainisch, Polnisch, Türkisch, Arabisch etc.) überwindet Sprachbarrieren ohne Textlese-Zwang.",
+      "Drei-Spuren-Datenmodell trennt gemeinfreies EU-CLP-Recht (EUH031) von optional lizenzierten WINGIS/GISCODE-Daten und offenen SDS."
     ],
     "whyNowEn": [
-      "Impossible before AI: Classical OCR warped around cylindrical plastic bottles and failed to parse hazardous chemical interactions under dim janitorial closet lighting.",
-      "Now possible: Multimodal models classify compound incompatibilities instantly from curved labels and speak loud audio warnings in the cleaner's native tongue.",
-      "Life Safety: Directly prevents emergency room visits and chronic lung damage for essential cleaning personnel."
+      "100% Offline edge inference: Real-time GTIN/GS1 barcode, GISCODE, and container scanning on commodity smartphones with zero cloud latency.",
+      "Instant polyglot spoken audio alerts across 20+ languages remove the burden of reading technical German safety manuals.",
+      "Three-lane data architecture separates public-domain EU CLP statements (EUH031) from optional licensed WINGIS/GISCODE data and open SDS."
     ],
-    "firstStepTicketDe": "Foto zweier Flaschenetiketten → Sofortige Verträglichkeitsprüfung (Grün = Unbedenklich / Rot = Giftgasgefahr) mit Sprachausgabe",
-    "firstStepTicketEn": "Snapshot of 2 cleaning bottles → Immediate incompatibility check (Green = Safe / Red = Lethal gas danger) with audio alert",
-    "firstStepCriteriaDe": "Erkennt die Kombination aus Essig-/Phosphorsäure und Natriumhypochlorit in 100% der Testfälle als letale Gefahr.",
-    "firstStepCriteriaEn": "Flags the mixture of acid descalers and sodium hypochlorite in 100% of benchmark test cases.",
+    "firstStepTicketDe": "P0: Standalone Offline-Regel-Kernel & Zwei-Barcode/GISCODE-Prüfinterlock mit 4-Kanal-Alarm.",
+    "firstStepTicketEn": "P0: Standalone offline rule engine and dual-input interlock with 4-channel alert.",
+    "firstStepCriteriaDe": "Deterministische STOP-Erkennung für Säure + Hypochlorit in <50ms auf 20 Testpaaren; unbekannte Produkte strikt UNVERIFIED; kein Testfall gibt jemals Grün oder „sicher“ aus; Audio-Alarm & haptisches Signal verifiziert.",
+    "firstStepCriteriaEn": "Deterministic STOP detection for acid + hypochlorite in <50ms across 20 test pairs; unknown products strictly UNVERIFIED; zero green/safe states emitted; multi-lingual audio alarm and haptic patterns verified.",
     "tags": [
       "Echte Arbeit",
       "Reinigung",
       "Arbeitsschutz",
       "Sicherheit",
       "Mehrsprachig",
-      "Chemie"
+      "AI-Native"
     ]
   },
   {

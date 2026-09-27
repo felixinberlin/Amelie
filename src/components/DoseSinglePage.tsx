@@ -52,6 +52,7 @@ import {
   FugenduellArena,
   TischSchiedsrichterSimulator,
   KristallwachstumSimulator,
+  ChemHazardSimulator,
 } from './simulators';
 
 interface DoseSinglePageProps {
@@ -612,6 +613,7 @@ ${bookChapters
               {simInfo.key === 'fugenduell' && <FugenduellArena lang={lang} />}
               {simInfo.key === 'schiedsrichter' && <TischSchiedsrichterSimulator lang={lang} isEmbedded />}
               {simInfo.key === 'kristall' && <KristallwachstumSimulator lang={lang} />}
+              {simInfo.key === 'chemhazard' && <ChemHazardSimulator lang={lang} isEmbedded />}
             </div>
           )}
         </section>

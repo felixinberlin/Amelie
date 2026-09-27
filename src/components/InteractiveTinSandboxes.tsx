@@ -14,6 +14,7 @@ import {
   FugenduellArena,
   TischSchiedsrichterSimulator,
   KristallwachstumSimulator,
+  ChemHazardSimulator,
 } from './simulators';
 
 export type SandboxKey =
@@ -28,7 +29,8 @@ export type SandboxKey =
   | 'laerm'
   | 'fugenduell'
   | 'schiedsrichter'
-  | 'kristall';
+  | 'kristall'
+  | 'chemhazard';
 
 interface InteractiveTinSandboxesProps {
   lang: Language;
@@ -203,6 +205,16 @@ export const InteractiveTinSandboxes: React.FC<InteractiveTinSandboxesProps> = (
             >
               💎 {lang === 'de' ? 'Kristallwachstum 3D' : lang === 'es' ? 'Crecimiento de Cristales' : 'Crystal Growth 3D'}
             </button>
+            <button
+              onClick={() => setActiveTab('chemhazard')}
+              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                activeTab === 'chemhazard'
+                  ? 'bg-red-950 text-red-200 shadow-xs font-bold border border-red-500 ring-2 ring-red-500/30'
+                  : 'text-stone-600 hover:text-stone-900'
+              }`}
+            >
+              ☣️ {lang === 'de' ? 'ChemHazard Stop' : lang === 'es' ? 'ChemHazard Stop' : 'ChemHazard Stop'}
+            </button>
           </div>
         </div>
       </div>
@@ -243,6 +255,9 @@ export const InteractiveTinSandboxes: React.FC<InteractiveTinSandboxesProps> = (
       )}
       {activeTab === 'kristall' && (
         <KristallwachstumSimulator lang={lang} />
+      )}
+      {activeTab === 'chemhazard' && (
+        <ChemHazardSimulator lang={lang} />
       )}
     </div>
   );

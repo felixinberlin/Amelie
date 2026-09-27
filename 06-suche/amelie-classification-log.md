@@ -191,3 +191,63 @@ Cumulative record of all candidate evaluations conducted by the Idea Reviewer. E
 * **Verdict:** `Dose Ready (Packen)`
 * **Restlücke:** Ein wellenoptisches Physik-Puzzlespiel, das die 2D-Ortsfrequenzfilterung nach Ernst Abbe mit echten Beugungsmasken spielbar macht und physikalische Intuition für analoges optisches Rechnen vermittelt.
 * **Empfohlene nächste Aktion:** Erstellung der zweisprachigen Dosen-Dossiers `05-dosen/abbe-fourier-filter.md` und `en/05-dosen/abbe-fourier-filter.md`, Einbettung in `src/data/dosen.ts` und Export der öffentlichen Caches.
+
+---
+
+### Review Dossier: ChemHazard Stop / MischStop (`dose-cleaner-chemical-safety`)
+* **Review Date:** 27.09.2026
+* **Origin Engine:** `asymmetric-inversion` / `user-proposal`
+* **Intended Recipient:** IG BAU Bundesfachgruppe Gebäudereinigung · Berufsgenossenschaft der Bauwirtschaft (BG BAU) · DGUV · EFCI · SEIU · ver.di · European Cleaning and Facility Services Industry
+
+#### 1. Vector Radar (Score: 34/35)
+
+| Vector | Score (1-5) | Grounding & Empirical Evidence |
+|---|:---:|---|
+| **V1 · Novelty** | **5/5** | **Transformational Safety Case (Boden & Lacunar)**: Verschiebt das Paradigma von passiven Schreibtisch-Lookups (WINGIS/GESTIS) zu einem deterministischen Point-of-Action-Mischschutz. Lacunar Gap: *„Reinigungskräfte arbeiten nachts unter Zeitdruck und Sprachbarrieren ohne ein Werkzeug, das in der Sekunde des Mischens zweier Flaschen deterministisch warnt oder transparent seine Nicht-Prüfbarkeit deklariert — ohne jemals eine trügerische Freigabe auszugeben."* |
+| **V2 · Complexity** | **5/5** | **Tier 1 (100% Offline-First / Zero-Cloud)**: Reiner lokaler Regel-Kernel auf Mengenlogik ($\text{hazards}(A) \cup \text{hazards}(B)$). Läuft 100% offline in fensterlosen Kellern und Putzkammern. Null Cloud-Kosten, null Server, null Benutzerkonto. |
+| **V3 · Possibility** | **5/5** | **Technischer Katalysator 2026**: Schnelle On-Device Barcode-/OCR-Erkennung auf Standard-Smartphones + Offline-Sprachausgabe in 20+ Sprachen. Trennung in 3 Rechtsspuren (Gemeinfreie CLP-Sätze wie EUH031, optionale GISCODE-Lizenzspur, offene SDS-Spur). |
+| **V4 · Future/Longevity** | **5/5** | **Dauerhafte Arbeitsschutz-Verankerung**: GefStoffV, DGUV Regel 101-019 und EU-CLP-Verordnung sind dauerhafte gesetzliche Normen. Unendliche Wartungshalbwertszeit durch signierte, versionierte Offline-JSON-Datenpakete und standardisierte Regel-Engines. |
+| **V5 · Civic SWOT** | **4/5** | **Unbedingtes Geschenk (CC0)**: Schützt schwächste Arbeitskräfte vor Vergiftungen. *Achillesferse:* Stummgeschaltetes Telefon oder laute Putzumgebung $\to$ *Architektonische Lösung:* 4 simultane Alarmkanäle (OS-Alarm-Stream, Stroboskop-Rotblitz, Haptik-Impulse, extragroße Typografie). Kein grüner Zustand, niemals Freigabe („Safe"). |
+| **V6 · Tech Tree** | **5/5** | **Klarer Level-1-Trunk**: Stützt sich auf Barcode/OCR-Scanning und deterministische Mengenvereinigung; schaltet nachgelagert offene Inkompatibilitäts-Ontologien, GS1-Digital-Link-Integration und gewerkschaftliche Meldesysteme frei. |
+| **V7 · Documentation** | **5/5** | **Type A Primärnormen**: GefStoffV, DGUV 101-019, Verordnung (EG) Nr. 1272/2008 (CLP-Sätze EUH031, H314, H318), GISBAU/GISCODE-Katalog. Absolute juristische und chemische Texttreue. |
+
+#### 2. Tech Tree Position
+
+```
+[Layer 0: Roots / Prerequisites]
+├── GefStoffV & DGUV Regel 101-019 (Betriebsanweisungen & Mischverbote)
+├── Verordnung (EG) Nr. 1272/2008 (CLP / EUH031 / GHS Hazard Codes)
+├── GISBAU GISCODE-Klassifikation (Produktgruppen GD, GG, GS, GU)
+└── On-Device Barcode / OCR & Polyglot Audio Engine (Offline Android/PWA)
+        │
+        ▼
+[Layer 1: Trunk / Minimal Core Scaffolding]
+└── ChemHazard Offline Interlock Kernel:
+    3-Zustands-Modell: 🔴 STOP | 🟠 UNVERIFIED | ⚪ NO_KNOWN_INCOMPATIBILITY (Kein Grün!)
+    + Deterministische Mengenprüfung: (hazards(A) ∪ hazards(B)) ⊇ rule.required
+    + 4-Kanal-Alarmsystem (Alarm-Audiostream, Strobe-Red, Haptik, Landessprache)
+    + Signierte, versionierte Offline-JSON-Datenpakete (3 rechtliche Spuren)
+        │
+        ▼
+[Layer 2: Downstream Civic Branches]
+├── Branch A: Gewerkschafts- & BG-BAU-Pilotierung im Gebäudereiniger-Handwerk
+├── Branch B: GS1 Digital Link / QR-Code-Direktintegration für Reinigungsmittelhersteller
+└── Branch C: Offene internationale Chemikalien-Inkompatibilitäts-Ontologie (ODbL/CC0)
+```
+
+#### 3. Civic SWOT
+
+| Strengths (S) | Weaknesses (W) |
+|---|---|
+| • 100% offline, null Cloud-Latenz, null Tracker<br>• Harter Sicherheitsnachweis: Sagt niemals „sicher“ (kein Grün)<br>• Mehrsprachige Sprachausgabe überwindet Sprachbarrieren sofort<br>• Drei getrennte Rechtsspuren schützen vor Urheberrechtsstreit | • Bilderkennung auf stark zerkratzten/nassen Flaschen fehleranfällig $\to$ Barcode/GISCODE als Primäreingabe<br>• Kann unvollständige Herstellerangaben nicht ausgleichen $\to$ strikter Fallback auf UNVERIFIED |
+| **Opportunities (O)** | **Threats (T)** |
+| • Offizielle Übernahme/Empfehlung durch BG BAU, DGUV, IG BAU, SEIU, EFCI<br>• Pilotierung mit großen Gebäudereinigungs-Dienstleistern<br>• Standardisierung als Open-Source-Referenz für Arbeitsschutz-Apps | • Falsches Sicherheitsgefühl bei Nutzern $\to$ Grauer Screen mit Pflicht-Disclaimer, niemals Freigabe<br>• Haftungsrisiken $\to$ Klare Festlegung als Assistenz-Warnhilfe gem. GefStoffV |
+
+* **Achillesferse:** Muted Audio / laute Umgebung & falsches Sicherheitsgefühl $\to$ *Architektonische Lösung:* 4 simultane Alarmkanäle (Alarm-Audio, Bildschirm-Blitz, Haptik, Text) + striktes Dreizustands-Modell ohne Grün/Safe.
+
+#### 4. Triage Verdict & Synthesis
+
+* **Verdict:** `Dose Ready (Packen) · 34/35`
+* **Restlücke:** Ein quelloffener, 100% offline-fähiger Zwei-Flaschen-Mischinterlock, der vor gefährlichen Reaktionen (Säure + Hypochlorit $\to$ Chlorgas) laut in der Muttersprache warnt, Unbekanntes als UNVERIFIED deklariert und niemals eine trügerische Sicherheitsfreigabe erteilt.
+* **Empfohlene nächste Aktion:** Dossiers aktualisiert (`05-dosen/dose-cleaner-chemical-safety.md`), Frontend-Synchronisation in `src/data/dosen.ts`, Erstellung des Scaffolding-Kerns und Testsuite in `07-demos/chemhazard-stop/`.
+

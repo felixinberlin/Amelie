@@ -10,7 +10,9 @@ export type SimulatorKey =
   | 'laerm'
   | 'fugenduell'
   | 'schiedsrichter'
-  | 'kristall';
+  | 'kristall'
+  | 'chemhazard';
+
 
 export interface DoseSimulatorInfo {
   key: SimulatorKey;
@@ -164,6 +166,16 @@ export const DOSE_SIMULATOR_MAP: Record<string, DoseSimulatorInfo> = {
     descriptionEn: 'Hybrid WebGPU DLA & phase-field pipeline with Kobayashi thermodynamics, 9 microstructure lenses, and printable 3MF/STL export.',
     descriptionEs: 'Pipeline híbrido WebGPU DLA y de campo de fase con termodinámica Kobayashi y exportación de malla imprimible 3D.',
     icon: '💎',
+  },
+  'dose-cleaner-chemical-safety': {
+    key: 'chemhazard',
+    titleDe: 'ChemHazard Stop / MischStop',
+    titleEn: 'ChemHazard Stop Dual-Bottle Interlock',
+    titleEs: 'Simulador ChemHazard Stop',
+    descriptionDe: 'Interaktiver Zwei-Flaschen-Mischinterlock mit 100% Offline-Regel-Kernel, CLP/EUH031-Gefahrenmatrix und 4-Kanal-Alarm.',
+    descriptionEn: 'Interactive dual-bottle chemical interlock with 100% offline rule engine, CLP/EUH031 hazard matrix, and 4-channel alarm.',
+    descriptionEs: 'Simulador interactivo de bloqueo de mezcla química con kernel local y alarma multicanal.',
+    icon: '☣️',
   },
 };
 
