@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/felixinberlin/amelie/main/public/data/amelie-schema.json",
   "version": "1.0.0",
-  "generatedAt": "2026-09-27T11:48:17.654Z",
+  "generatedAt": "2026-09-27T12:00:20.847Z",
   "license": "CC0-1.0 (Public Domain / Kula-Ring)",
   "storageProvider": "github_pages",
   "repository": "https://github.com/felixinberlin/amelie",
@@ -1597,6 +1597,9 @@
       "id": "dose-cleaner-chemical-safety",
       "title": "ChemGefahr-Stopp / MischStop (ChemHazard Stop)",
       "titleEn": "ChemHazard Stop / MischStop",
+      "image": "chemhazard-stop.jpg",
+      "imageAlt": "Point-of-Action-Kamerawarnung bei zwei Putzmittelflaschen: Smartphone erkennt sauren WC-Reiniger und Chlor-Bleichmittel, schlägt stummen Alarm mit optischem Farb-Stroboskop, Chlorgas-Toxizitätsanzeige und Notfall-Warnung.",
+      "imageAspect": 0.707,
       "oneLinerDe": "Kamera auf zwei Putzmittelflaschen richten: Warnt laut in der Sprache der Reinigungskraft vor gefährlichen Gasen und Verätzungen — offline, in unter 1 Sekunde; sagt wenn es etwas nicht prüfen kann, aber niemals „sicher“.",
       "oneLinerEn": "Point a phone camera at two cleaning chemical bottles: Warns audibly in the cleaner's language if the combination is dangerous — 100% offline, in under a second; admits when it cannot verify, but never says \"safe.\"",
       "date": "27.09.2026",

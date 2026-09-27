@@ -19,6 +19,8 @@ source_type: Type A
 
 ---
 
+![Point-of-Action Camera Detection: Smartphone scans acidic descaler and chlorine bleach](/chemhazard-stop.jpg)
+
 ## The problem
 
 Commercial cleaners work under extreme speed pressure, frequently navigating severe language barriers. Accidental mixing of an acidic descaler with a hypochlorite bleach releases deadly chlorine gas into confined, poorly ventilated restrooms and custodial closets.

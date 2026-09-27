@@ -21,8 +21,10 @@ import {
   FlaskConical,
   Radio,
   Flame,
-  Languages
+  Languages,
+  Camera
 } from 'lucide-react';
+import { doseImageSrc, doseImageSrcSet } from '../../utils/doseImage';
 
 const products = productsData as unknown as ProductRecord[];
 const rules = rulesData as unknown as IncompatibilityRule[];
@@ -265,6 +267,48 @@ export const ChemHazardSimulator: React.FC<ChemHazardSimulatorProps> = ({
           <HelpCircle className="w-3.5 h-3.5 text-amber-400" />
           {de ? 'Buzil + Unbekanntes Gebinde (UNVERIFIED)' : 'Buzil + Unknown Canister (UNVERIFIED)'}
         </button>
+      </div>
+
+      {/* Point-of-Action Camera Shield FOV */}
+      <div className="bg-stone-900/90 border border-stone-800 rounded-xl p-4 sm:p-5 flex flex-col sm:flex-row gap-5 items-center">
+        <div className="w-full sm:w-48 md:w-52 shrink-0 overflow-hidden rounded-lg border border-stone-700/80 shadow-lg bg-black">
+          <picture>
+            <source
+              type="image/webp"
+              srcSet={doseImageSrcSet('chemhazard-stop.jpg')}
+              sizes="(max-width: 640px) 100vw, 240px"
+            />
+            <img
+              src={doseImageSrc('chemhazard-stop.jpg')}
+              alt={de ? 'Point-of-Action Kamera-Erkennung: Smartphone scannt sauren WC-Reiniger und Chlorbleiche' : 'Point-of-Action Camera Detection: Smartphone scans acidic descaler and chlorine bleach'}
+              className="w-full h-auto object-cover aspect-[724/1024] hover:scale-105 transition-transform duration-300"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+        </div>
+        <div className="space-y-2 text-xs font-mono-code text-stone-300 flex-1 w-full">
+          <div className="flex items-center gap-2 text-stone-200 font-bold uppercase tracking-wider text-xs">
+            <Camera className="w-4 h-4 text-sky-400" />
+            <span>{de ? 'Point-of-Action Kamera-Schutzschild (Field-of-View)' : 'Point-of-Action Camera Shield (Field-of-View)'}</span>
+          </div>
+          <p className="font-sans text-stone-400 text-xs sm:text-sm leading-relaxed">
+            {de
+              ? 'Die Kamera erfasst beide Gebinde zeitgleich oder nacheinander im Field-of-View. Bei Erkennung einer tödlichen Kombination (hier: Säure + Hypochlorit) feuert das Smartphone ein 15-Hz-Farb-Stroboskop (Rot/Weiß), eine laute Notfall-Sprachansage und haptische Vibration.'
+              : 'The camera captures both containers simultaneously or sequentially in the field of view. Upon detecting a lethal pairing (acid + hypochlorite), the handset triggers a 15 Hz visual color strobe (red/white), a loud spoken polyglot warning, and haptic vibration.'}
+          </p>
+          <div className="flex flex-wrap gap-2 pt-1 text-[11px]">
+            <span className="px-2 py-0.5 rounded-md bg-stone-800 border border-stone-700 text-stone-300">
+              📸 Dual-Bottle OCR / Barcode
+            </span>
+            <span className="px-2 py-0.5 rounded-md bg-stone-800 border border-stone-700 text-stone-300">
+              ⚡ &lt; 50 ms Reaktionszeit
+            </span>
+            <span className="px-2 py-0.5 rounded-md bg-stone-800 border border-stone-700 text-stone-300">
+              📴 100% Offline (Zero Cloud)
+            </span>
+          </div>
+        </div>
       </div>
 
       {/* Two Bottles Scanner Dock */}
