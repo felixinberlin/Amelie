@@ -951,12 +951,22 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
                   {candidate.tags && candidate.tags.length > 0 && (
                     <div className="flex flex-wrap items-center gap-1.5 mt-3">
                       {candidate.tags.map((tag) => (
-                        <span
+                        <button
                           key={tag}
-                          className="px-2 py-0.5 text-2xs rounded-md bg-stone-100 text-stone-600 border border-stone-200"
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setSelectedTag(selectedTag === tag ? null : tag);
+                          }}
+                          className={`px-2 py-0.5 text-2xs rounded-md border transition-colors cursor-pointer ${
+                            selectedTag === tag
+                              ? 'bg-amber-600 text-white border-amber-700 font-semibold'
+                              : 'bg-stone-100 hover:bg-amber-50 hover:text-amber-900 text-stone-600 border-stone-200'
+                          }`}
+                          title={lang === 'de' ? `Nach Tag #${tag} filtern` : lang === 'es' ? `Filtrar por #${tag}` : `Filter by #${tag}`}
                         >
                           #{tag}
-                        </span>
+                        </button>
                       ))}
                     </div>
                   )}

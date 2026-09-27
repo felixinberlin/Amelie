@@ -542,7 +542,7 @@
     "reviewAfter": "März 2027",
     "recipientsDe": "claude-reflect (Bayram Annakov), als Pull Request · nachrangig: claude-doctor, RuleReceipt",
     "recipientsEn": "claude-reflect (Bayram Annakov), as a pull request · secondary: claude-doctor, RuleReceipt",
-    "domain": "tools",
+    "domain": "git",
     "verdict": "gift",
     "status": "gepackt",
     "tags": [
@@ -596,7 +596,7 @@
     "reviewAfter": "September 2027",
     "recipientsDe": "Anki-Community / AnkiConnect-Entwickler · GitLens · Weiterbildungsplattformen",
     "recipientsEn": "Anki community / AnkiConnect developers · GitLens · developer education platforms",
-    "domain": "knowledge",
+    "domain": "git",
     "verdict": "gift",
     "status": "gepackt",
     "tags": [
@@ -641,7 +641,7 @@
     "reviewAfter": "März 2027",
     "recipientsDe": "Andrew Nesbitt / Ecosyste.ms · nachrangig: Renovate (Mend), Socket.dev",
     "recipientsEn": "Andrew Nesbitt / Ecosyste.ms · secondary: Renovate (Mend), Socket.dev",
-    "domain": "tools",
+    "domain": "git",
     "verdict": "gift",
     "status": "gepackt",
     "tags": [
@@ -735,7 +735,7 @@
     "reviewAfter": "September 2027",
     "recipientsDe": "PostHog Plugin Community · rrweb Maintainer · Open Source UX Tools",
     "recipientsEn": "PostHog Plugin Community · rrweb maintainers · Open-source UX tooling",
-    "domain": "tools",
+    "domain": "git",
     "verdict": "build_first",
     "status": "gepackt",
     "tags": [
@@ -928,7 +928,7 @@
     "reviewAfter": "März 2027",
     "recipientsDe": "Tessl (Guy Podjarny) · GitHub Spec-Kit Maintainer · OpenAPI / Optic Ökosystem",
     "recipientsEn": "Tessl (Guy Podjarny) · GitHub Spec-Kit maintainers · OpenAPI / Optic ecosystem",
-    "domain": "tools",
+    "domain": "git",
     "verdict": "keep",
     "status": "gepackt",
     "tags": [

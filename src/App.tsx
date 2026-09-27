@@ -48,6 +48,8 @@ export function App() {
   const [dosenList, setDosenList] = useState<DoseItem[]>(getActiveDosen);
   const [candidatesList, setCandidatesList] = useState<CandidateIdea[]>(getActiveCandidates);
 
+  const [selectedGalleryTag, setSelectedGalleryTag] = useState<string | null>(null);
+
   // Direct URL-based Dose Single Page
   const [activeDosePage, setActiveDosePage] = useState<DoseItem | null>(() => {
     const initialId = parseDoseIdFromUrl();
@@ -237,6 +239,12 @@ export function App() {
               setCurrentTab('muster-emails');
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
+            onSelectTag={(tag) => {
+              handleCloseSinglePage();
+              setSelectedGalleryTag(tag);
+              setCurrentTab('dosen');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
           />
         ) : (
           <>
@@ -247,6 +255,8 @@ export function App() {
                 onSelectDose={setSelectedDose}
                 onOpenSinglePage={handleOpenSinglePage}
                 onOpenSimulator={handleOpenSimulator}
+                initialSelectedTag={selectedGalleryTag}
+                onSelectTag={setSelectedGalleryTag}
                 onOpenManifest={() => {
                   setCurrentTab('manifest');
                   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -369,6 +379,12 @@ export function App() {
           onOpenSimulator={(simId) => {
             setSelectedDose(null);
             handleOpenSimulator(simId);
+          }}
+          onSelectTag={(tag) => {
+            setSelectedDose(null);
+            setSelectedGalleryTag(tag);
+            setCurrentTab('dosen');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
         />
       )}

@@ -53,9 +53,10 @@ interface DoseModalProps {
   onClose: () => void;
   onOpenSinglePage?: (dose: DoseItem) => void;
   onOpenSimulator?: (simId: SimulatorKey) => void;
+  onSelectTag?: (tag: string) => void;
 }
 
-export const DoseModal: React.FC<DoseModalProps> = ({ dose, lang, onClose, onOpenSinglePage, onOpenSimulator }) => {
+export const DoseModal: React.FC<DoseModalProps> = ({ dose, lang, onClose, onOpenSinglePage, onOpenSimulator, onSelectTag }) => {
   const [copiedPledge, setCopiedPledge] = useState(false);
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [copiedUrl, setCopiedUrl] = useState(false);
@@ -452,6 +453,29 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
                 {dose.date}
               </span>
             </div>
+            {dose.tags && dose.tags.length > 0 && (
+              <div className="sm:col-span-2 lg:col-span-3 pt-2 border-t border-[#dfd1be]/60">
+                <span className="text-[#8b6f57] block font-typewriter uppercase tracking-wider font-semibold mb-1">
+                  {lang === 'de' ? 'Schlagworte:' : lang === 'es' ? 'Etiquetas:' : 'Tags:'}
+                </span>
+                <div className="flex flex-wrap gap-1.5">
+                  {dose.tags.map((tag, idx) => (
+                    <button
+                      key={idx}
+                      type="button"
+                      onClick={() => {
+                        onClose();
+                        if (onSelectTag) onSelectTag(tag);
+                      }}
+                      className="text-xs font-typewriter px-2 py-0.5 rounded bg-[#faf5eb] hover:bg-[#8c1d40] hover:text-white text-[#5c4a3d] border border-[#dfd1be] transition-colors cursor-pointer"
+                      title={lang === 'de' ? `Nach Tag #${tag} filtern` : lang === 'es' ? `Filtrar por #${tag}` : `Filter by #${tag}`}
+                    >
+                      #{tag}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
 
           {/* The Pledge Banner - Styled like vintage velvet jewelry box */}

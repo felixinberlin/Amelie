@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Search, Filter, Gift, Hammer, Lock, ArrowUpRight, Sparkles, Brain, Link2, Check, ExternalLink, Maximize2 } from 'lucide-react';
+import { Search, Filter, Gift, Hammer, Lock, ArrowUpRight, Sparkles, Brain, Link2, Check, ExternalLink, Maximize2, Tag, X } from 'lucide-react';
 import { DoseItem, Language, Verdict, DomainCategory } from '../types';
 import { getTranslation, getLocalizedTitle, withCount } from '../i18n';
 import { DOSE_SIMULATOR_MAP } from '../data/doseSimulators';
@@ -15,6 +15,8 @@ interface DosenGalleryProps {
   onOpenSimulator?: (simId: SimulatorKey) => void;
   onOpenManifest?: () => void;
   onOpenEmails?: () => void;
+  initialSelectedTag?: string | null;
+  onSelectTag?: (tag: string | null) => void;
 }
 
 interface SimulatorBadgeConfig {
@@ -141,12 +143,24 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
   onOpenSimulator,
   onOpenManifest,
   onOpenEmails,
+  initialSelectedTag = null,
+  onSelectTag,
 }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedVerdict, setSelectedVerdict] = useState<string>('all');
   const [selectedDomain, setSelectedDomain] = useState<string>('all');
+  const [selectedTagState, setSelectedTagState] = useState<string | null>(initialSelectedTag);
   const [copiedDoseId, setCopiedDoseId] = useState<string | null>(null);
   const t = getTranslation(lang);
+
+  const selectedTag = onSelectTag ? initialSelectedTag : selectedTagState;
+  const handleSetSelectedTag = (tag: string | null) => {
+    if (onSelectTag) {
+      onSelectTag(tag);
+    } else {
+      setSelectedTagState(tag);
+    }
+  };
 
   const handleCopyUrl = (e: React.MouseEvent, doseId: string) => {
     e.stopPropagation();
@@ -173,10 +187,11 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
 
       const matchesVerdict = selectedVerdict === 'all' || d.verdict === selectedVerdict;
       const matchesDomain = selectedDomain === 'all' || d.domain === selectedDomain;
+      const matchesTag = !selectedTag || d.tags.includes(selectedTag);
 
-      return matchesSearch && matchesVerdict && matchesDomain;
+      return matchesSearch && matchesVerdict && matchesDomain && matchesTag;
     });
-  }, [dosen, searchQuery, selectedVerdict, selectedDomain, lang]);
+  }, [dosen, searchQuery, selectedVerdict, selectedDomain, selectedTag, lang]);
 
   const domainOptions = [
     { id: 'all', labelDe: 'Alle Bereiche', labelEn: 'All Domains', labelEs: 'Todas las áreas' },
@@ -185,6 +200,7 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
     { id: 'physics', labelDe: 'Hardware & Physik', labelEn: 'Hardware & Physics', labelEs: 'Hardware y Física' },
     { id: 'creative', labelDe: 'Kreativ & Kunst', labelEn: 'Creative & Art', labelEs: 'Creatividad y Arte' },
     { id: 'knowledge', labelDe: 'Lernen & Wissen', labelEn: 'Knowledge & Learning', labelEs: 'Aprendizaje y Ciencia' },
+    { id: 'git', labelDe: 'Git & Repositories', labelEn: 'Git & Repositories', labelEs: 'Git y Repositorios' },
   ];
 
   const verdictOptions = [
@@ -305,6 +321,30 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
           </select>
         </div>
       </div>
+
+      {/* Selected Tag Active Filter Banner */}
+      {selectedTag && (
+        <div className="flex items-center justify-between gap-3 px-4 py-3 rounded-xl bg-[#8c1d40]/10 border border-[#8c1d40]/25 text-[#8c1d40] text-xs font-typewriter font-semibold animate-fadeIn">
+          <div className="flex items-center gap-2">
+            <Tag className="w-4 h-4 text-[#8c1d40]" />
+            <span>
+              {lang === 'de'
+                ? `Gefiltert nach Tag: #${selectedTag} (${filteredDosen.length} ${filteredDosen.length === 1 ? 'Dose' : 'Dosen'})`
+                : lang === 'es'
+                ? `Filtrado por etiqueta: #${selectedTag} (${filteredDosen.length} ${filteredDosen.length === 1 ? 'lata' : 'latas'})`
+                : `Filtered by tag: #${selectedTag} (${filteredDosen.length} ${filteredDosen.length === 1 ? 'tin' : 'tins'})`}
+            </span>
+          </div>
+          <button
+            type="button"
+            onClick={() => handleSetSelectedTag(null)}
+            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#8c1d40] text-white hover:bg-[#721432] transition-colors shadow-2xs cursor-pointer"
+          >
+            <X className="w-3.5 h-3.5" />
+            <span>{lang === 'de' ? 'Filter aufheben' : lang === 'es' ? 'Quitar filtro' : 'Clear Filter'}</span>
+          </button>
+        </div>
+      )}
 
       {/* Grid of Dosen */}
       {filteredDosen.length === 0 ? (
@@ -428,12 +468,22 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
                 <div className="mt-5 pt-3 border-t border-[#dfd1be] flex items-center justify-between gap-2">
                   <div className="flex flex-wrap gap-1">
                     {dose.tags.slice(0, 2).map((tag, idx) => (
-                      <span
+                      <button
                         key={idx}
-                        className="text-[11px] font-typewriter px-2 py-0.5 rounded bg-[#f5ede0] text-[#5c4a3d] border border-[#e2d5c3] font-medium"
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleSetSelectedTag(selectedTag === tag ? null : tag);
+                        }}
+                        className={`text-[11px] font-typewriter px-2 py-0.5 rounded border transition-colors cursor-pointer ${
+                          selectedTag === tag
+                            ? 'bg-[#8c1d40] text-white border-[#721432] font-bold'
+                            : 'bg-[#f5ede0] text-[#5c4a3d] border-[#e2d5c3] hover:bg-[#8c1d40]/10 hover:text-[#8c1d40] font-medium'
+                        }`}
+                        title={lang === 'de' ? `Nach Tag #${tag} filtern` : lang === 'es' ? `Filtrar por #${tag}` : `Filter by #${tag}`}
                       >
-                        {tag}
-                      </span>
+                        #{tag}
+                      </button>
                     ))}
                     {dose.tags.length > 2 && (
                       <span className="text-[11px] font-typewriter text-[#8b6f57] px-1 py-0.5">

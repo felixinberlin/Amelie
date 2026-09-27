@@ -7,6 +7,13 @@ Ergänzt `05-dosen/_entsorgt.md`: dort steht die Begründung für gepackte, dann
 **Vorläufiger Zustand:** `ungeprüft` — Kandidat aus einer Ideenmethode, Existenzprüfung nicht gelaufen. Kein Urteil, zählt in keiner Trefferquote, darf nicht zugestellt werden.
 **Prüfen ab:** Tooling/Konsum + 6 Monate · Zivilgesellschaft + 12 Monate
 
+## Git-Domäne & Tag-Navigation — 27.09.2026 (Struktur-Erweiterung, method: dose-packer)
+
+| Idee / Änderung | Urteil | Beleg (kurz) | Prüfen ab |
+|---|---|---|---|
+| **Einführung der `git`-Domäne** — Verschiebung aller 5 Git- und Code-Repo-Dosen (`diffgeist`, `spec-drift-detector`, `agent-postmortem-recorder`, `ghost-replay`, `bugs-spaced-repetition`) aus `tools`/`knowledge` in die neue dedizierte Domäne `'git'` | **`frei`** | Aufspaltung der wachsenden Werkzeug-Kategorie. `DomainCategory` in `src/types.ts` um `'git'` erweitert, `DosenGallery.tsx` Dropdown & Badges angepasst, `zenGames.test.ts` Validierung erweitert, `dosen.ts` aktualisiert, `export:data` regeneriert. | 09/2027 |
+| **Globale Tag-Klickbarkeit & Tag-Listenansicht** — Klick auf Tags in Galerie-Karten, Dosen-Modal, Einzelseiten und Kandidaten-Karten öffnet die gefilterte Tag-Ansicht mit Filter-Banner und Abmeldeschaltfläche | **`frei`** | Konsistente Interaktionslogik für Tag-Navigation über die gesamte React-Applikation hinweg. | 09/2027 |
+
 ---
 
 ## Runde 13 / Bisoziation Run 8 — 25.09.2026 (Abbe-Puzzle: Der Fourier-Filter, method: lacunar-bisociation)

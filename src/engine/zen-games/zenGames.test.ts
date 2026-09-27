@@ -203,7 +203,7 @@ describe('Amélie Zen Games Modular Engines', () => {
     });
 
     it('ensures each Dose has required bilingual fields and valid domain/status', () => {
-      const validDomains = ['civic', 'tools', 'physics', 'audio', 'creative', 'knowledge'];
+      const validDomains = ['civic', 'tools', 'physics', 'audio', 'creative', 'knowledge', 'git'];
       const validStatuses = ['gefunden', 'gepackt', 'zugestellt', 'antwort', 'gebaut', 'entsorgt'];
 
       for (const dose of DOSEN_DATA) {

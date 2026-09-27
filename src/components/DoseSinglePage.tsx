@@ -63,6 +63,7 @@ interface DoseSinglePageProps {
   onSelectDoseById: (doseId: string) => void;
   onOpenSimulatorTab?: (simId: SimulatorKey) => void;
   onOpenEmailsTab?: () => void;
+  onSelectTag?: (tag: string) => void;
 }
 
 export const DoseSinglePage: React.FC<DoseSinglePageProps> = ({
@@ -74,6 +75,7 @@ export const DoseSinglePage: React.FC<DoseSinglePageProps> = ({
   onSelectDoseById,
   onOpenSimulatorTab,
   onOpenEmailsTab,
+  onSelectTag,
 }) => {
   const [copiedUrl, setCopiedUrl] = useState(false);
   const [copiedMarkdown, setCopiedMarkdown] = useState(false);
@@ -532,12 +534,21 @@ ${bookChapters
                   {dose.domain.toUpperCase()}
                 </span>
                 {dose.tags.map((tag, idx) => (
-                  <span
+                  <button
                     key={idx}
-                    className="text-xs font-typewriter px-2 py-0.5 rounded bg-[#faf5eb] text-[#5c4a3d] border border-[#dfd1be]"
+                    type="button"
+                    onClick={() => {
+                      if (onSelectTag) {
+                        onSelectTag(tag);
+                      } else {
+                        onBack();
+                      }
+                    }}
+                    className="text-xs font-typewriter px-2 py-0.5 rounded bg-[#faf5eb] hover:bg-[#8c1d40] hover:text-white text-[#5c4a3d] border border-[#dfd1be] transition-colors cursor-pointer"
+                    title={isDe ? `Alle Dosen mit Tag #${tag} anzeigen` : isEs ? `Ver latas con etiqueta #${tag}` : `View all tins with tag #${tag}`}
                   >
                     #{tag}
-                  </span>
+                  </button>
                 ))}
               </div>
             </div>

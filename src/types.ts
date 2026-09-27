@@ -48,7 +48,7 @@ export interface SentEmailRecord {
   notes?: string;
 }
 
-export type DomainCategory = 'civic' | 'tools' | 'physics' | 'audio' | 'creative' | 'knowledge';
+export type DomainCategory = 'civic' | 'tools' | 'physics' | 'audio' | 'creative' | 'knowledge' | 'git';
 
 export interface DoseItem {
   id: string;
