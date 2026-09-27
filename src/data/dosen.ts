@@ -1452,8 +1452,8 @@ The complete project is turnkey, tested, and released unconditionally into the p
 
 In solidarity for worker health and safety,
 Amélie Initiative (Félix, Berlin)`,
-      to: 'gebaeudereinigung@igbau.de',
-      cc: 'gefahrstoffe@bgbau.de'
+      to: 'kontakt@igbau.de',
+      cc: 'gisbau@bgbau.de'
     },
     aiFrontier: {
       impossibleBeforeAiDe: 'Klassische Barcode-Scanner scheiterten an beschädigten, nassen Industrie-Gebinden ohne Barcode oder an verstaubten Etiketten. Schnelle On-Device-Vision und offline Polyglot-Audio machen Schutz in Sekundenbruchteilen möglich.',

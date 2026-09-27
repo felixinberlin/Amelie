@@ -102,13 +102,13 @@ BG BAU provides world-leading databases in WINGIS, supported by GESTIS (IFA) and
 
 ## Sample Outreach Email to Recipients
 
-**Recipients:** IG BAU Building Cleaning Union (`gebaeudereinigung@igbau.de`)  
-**CC:** BG BAU – Hazardous Substances & WINGIS Prevention Team (`gefahrstoffe@bgbau.de`)  
+**Recipients:** IG BAU Building Cleaning Union / Federal Board (`kontakt@igbau.de`)  
+**CC:** BG BAU – Hazardous Substances & GISBAU Team (`gisbau@bgbau.de`)  
 **Subject:** Life Protection for Cleaners: ChemHazard Stop (Open Safety Gift to IG BAU & BG BAU)
 
 ```text
-Dear Colleagues at IG BAU Building Cleaning Union,
-Dear Hazardous Substances & WINGIS Prevention Team at BG BAU,
+Dear Colleagues at IG BAU Building Cleaning Union (Attn: Ulrike Laux),
+Dear Hazardous Substances & GISBAU/WINGIS Prevention Team at BG BAU,
 
 We are reaching out to both of you simultaneously because frontline chemical safety requires the joint strength of workforce advocacy (union) and institutional prevention (statutory accident insurance):
 

@@ -102,13 +102,13 @@ Die BG BAU betreibt mit WINGIS ein weltweites Vorzeigesystem, flankiert von GEST
 
 ## Muster-E-Mail an Empfänger
 
-**Empfänger:** IG BAU Bundesfachgruppe Gebäudereinigung (`gebaeudereinigung@igbau.de`)  
-**CC:** BG BAU – Referat Gefahrstoffe / WINGIS (`gefahrstoffe@bgbau.de`)  
+**Empfänger:** IG BAU Bundesfachgruppe Gebäudereinigung / Bundesvorstand (`kontakt@igbau.de`)  
+**CC:** BG BAU – Referat Gefahrstoffe / GISBAU-Team (`gisbau@bgbau.de`)  
 **Betreff:** Lebensschutz für Reinigungskräfte: ChemGefahr-Stopp (Quelloffenes Geschenk an IG BAU & BG BAU)
 
 ```text
-Liebe Kolleginnen und Kollegen der IG BAU Gebäudereinigung,
-sehr geehrtes Team Gefahrstoffe und WINGIS der BG BAU,
+Liebe Kolleginnen und Kollegen der IG BAU Gebäudereinigung (z. Hd. Ulrike Laux),
+sehr geehrtes Team Gefahrstoffe und GISBAU/WINGIS der BG BAU,
 
 wir wenden uns heute gemeinsam an Sie beide, weil der Schutz von Reinigungskräften vor gefährlichen Chemikalien nur im direkten Zusammenspiel von gelebter Arbeitsrealität (Gewerkschaft) und fundierter Prävention (Berufsgenossenschaft) gelingt:
 
