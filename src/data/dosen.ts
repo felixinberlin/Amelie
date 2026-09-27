@@ -1414,7 +1414,7 @@ Respektierung von Standards & Datenhoheit (Drei-Spuren-Architektur):
 Wir betreiben kein unzulässiges Scraping von WINGIS oder GESTIS. Der Regel-Kernel basiert primär auf gemeinfreiem EU-CLP-Recht (insb. EUH031). Die Architektur ist exakt so ausgelegt, dass offizielle WINGIS-GISCODE-Datenbanken der BG BAU als lizenzierte Spur nahtlos andocken können, wenn die BG BAU dies freigeben oder selbst hosten möchte.
 
 Das gesamte Projekt ist schlüsselfertig, lauffähig und bedingungslos gemeinfrei (CC0):
-• Interaktiver Web-Simulator & Live-Demo: https://felixinberlin.github.io/Amelie/
+• Interaktiver Web-Simulator & Live-Demo: https://felixinberlin.github.io/Amelie/#dose=dose-cleaner-chemical-safety
 • Video-Demonstration (Point-of-Action Praxistest): https://drive.google.com/file/d/1TGYV6aw7zWwe6isgin9UGvTJblDc-t8n/view?usp=drive_link
 • Quellcode, Testsuite & Scaffolding: https://github.com/felixinberlin/Amelie/tree/main/07-demos/chemhazard-stop
 
@@ -1444,7 +1444,7 @@ Respecting Authority Data & Architecture:
 We perform zero unauthorized scraping of WINGIS or GESTIS. The engine triggers deterministically on public-domain EU CLP statements (especially EUH031). The architecture separates public data from licensed GISCODE datasets, ready to connect directly with official BG BAU WINGIS catalogs should BG BAU choose to adopt or host it.
 
 The complete project is turnkey, tested, and released unconditionally into the public domain (CC0):
-• Interactive Web Simulator & Live Demo: https://felixinberlin.github.io/Amelie/
+• Interactive Web Simulator & Live Demo: https://felixinberlin.github.io/Amelie/#dose=dose-cleaner-chemical-safety
 • Video Demonstration (Point-of-Action Field Test): https://drive.google.com/file/d/1TGYV6aw7zWwe6isgin9UGvTJblDc-t8n/view?usp=drive_link
 • Source Code, Test Suite & Scaffolding: https://github.com/felixinberlin/Amelie/tree/main/07-demos/chemhazard-stop
 
@@ -1453,7 +1453,7 @@ The complete project is turnkey, tested, and released unconditionally into the p
 In solidarity for worker health and safety,
 Amélie Initiative (Félix, Berlin)`,
       to: 'kontakt@igbau.de',
-      cc: 'gisbau@bgbau.de'
+      cc: 'info@bgbau.de'
     },
     aiFrontier: {
       impossibleBeforeAiDe: 'Klassische Barcode-Scanner scheiterten an beschädigten, nassen Industrie-Gebinden ohne Barcode oder an verstaubten Etiketten. Schnelle On-Device-Vision und offline Polyglot-Audio machen Schutz in Sekundenbruchteilen möglich.',

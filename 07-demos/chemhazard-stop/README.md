@@ -80,5 +80,5 @@ Die TypeScript-Laufzeitengine und die automatisierte Testsuite liegen in `src/en
 
 ## 5. Live-Demo & Video-Demonstration
 
-* **Interaktiver Web-Simulator:** [felixinberlin.github.io/Amelie/](https://felixinberlin.github.io/Amelie/) (Dosis: `ChemHazard Stop`)
+* **Interaktiver Web-Simulator:** [felixinberlin.github.io/Amelie/#dose=dose-cleaner-chemical-safety](https://felixinberlin.github.io/Amelie/#dose=dose-cleaner-chemical-safety) (Dosis: `ChemHazard Stop`)
 * **Video-Demonstration (Point-of-Action Praxistest):** [Auf Google Drive ansehen](https://drive.google.com/file/d/1TGYV6aw7zWwe6isgin9UGvTJblDc-t8n/view?usp=drive_link) *(extern gestreamt, 0 KB Vorab-Download)*

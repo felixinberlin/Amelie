@@ -8,11 +8,12 @@ Willkommen bei **Amélie**. Dieses Dokument ist die erste Anlaufstelle für jede
 
 Amélie ist ein offenes Projekt, das schlüsselfertige Software- und Datenwerkzeuge an Universitäten, Behörden, NGOs und Open-Source-Communities **verschenkt** (CC0 Public Domain).
 * **Kein Pitching:** Wir verkaufen nichts, wollen keine Beratungsmandate und haken niemals nach.
-* **Vier unumstößliche Zustellregeln:**
+* **Fünf unumstößliche Zustellregeln:**
   1. *Geschenk-Prinzip:* Die Idee wird bedingungslos verschenkt.
   2. *Reale Person & Institution:* Adressiert an echte Fachleute mit konkretem Mandat.
   3. *CC0 & Druckfreiheit:* Keine Vorbedingungen, kein Nachfassen.
   4. *Lauffähiges Scaffolding:* Jede Dose hat ein Open-Source-Repository / Scaffolding mit Code und Tests (`07-demos/`).
+  5. *Deep-Link-Pflicht:* Links zum Simulator oder der Live-Demo in E-Mails und Dokumenten MÜSSEN immer den direkten Dosen-Anker tragen (`https://felixinberlin.github.io/Amelie/#dose=<id>`), niemals die unqualifizierte Startseite.
 
 ---
 

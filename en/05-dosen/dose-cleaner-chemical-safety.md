@@ -103,7 +103,7 @@ BG BAU provides world-leading databases in WINGIS, supported by GESTIS (IFA) and
 ## Sample Outreach Email to Recipients
 
 **Recipients:** IG BAU Building Cleaning Union / Federal Board (`kontakt@igbau.de`)  
-**CC:** BG BAU – Hazardous Substances & GISBAU Team (`gisbau@bgbau.de`)  
+**CC:** BG BAU – Statutory Accident Insurance for Construction & Cleaning (`info@bgbau.de`, Attn: Hazardous Substances / GISBAU)  
 **Subject:** Life Protection for Cleaners: ChemHazard Stop (Open Safety Gift to IG BAU & BG BAU)
 
 ```text
@@ -128,7 +128,7 @@ Respecting Authority Data & Architecture:
 We perform zero unauthorized scraping of WINGIS or GESTIS. The engine triggers deterministically on public-domain EU CLP statements (especially EUH031). The architecture separates public data from licensed GISCODE datasets, ready to connect directly with official BG BAU WINGIS catalogs should BG BAU choose to adopt or host it.
 
 The complete project is turnkey, tested, and released unconditionally into the public domain (CC0):
-• Interactive Web Simulator & Live Demo: https://felixinberlin.github.io/Amelie/
+• Interactive Web Simulator & Live Demo: https://felixinberlin.github.io/Amelie/#dose=dose-cleaner-chemical-safety
 • Video Demonstration (Point-of-Action Field Test): https://drive.google.com/file/d/1TGYV6aw7zWwe6isgin9UGvTJblDc-t8n/view?usp=drive_link
 • Source Code, Test Suite & Scaffolding: https://github.com/felixinberlin/Amelie/tree/main/07-demos/chemhazard-stop
 
