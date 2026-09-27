@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://felixinberlin.github.io/Amelie/07-demos/abbundzeichen-fundbuch/schemas/bauteil.schema.json",
+  "title": "Abbundzeichen-Fundbuch — Bauteil (Eingabe)",
+  "description": "Ein erfasstes Bauteil einer freigelegten Fachwerkwand. Entweder wand oder bund ist gesetzt. Zeichen in Kurznotation: römische Ziffer (additiv IIII/VIIII oder subtraktiv IV/IX) plus optional wiederholtes Serienzeichen (^ Ausstich, > Fähnchen, / Beistrich, o Kreis), oder 'unlesbar'. CC0 1.0 Public Domain.",
+  "type": "object",
+  "required": ["id", "position", "rolle", "zeichen"],
+  "anyOf": [{ "required": ["wand"] }, { "required": ["bund"] }],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "wand": { "type": "string", "minLength": 1 },
+    "bund": { "type": "number" },
+    "position": { "type": "number" },
+    "rolle": {
+      "type": "string",
+      "enum": ["staender", "riegel", "strebe", "kopfband", "fussband", "balken", "sparren", "rahm", "schwelle", "sonstiges"]
+    },
+    "zeichen": {
+      "type": "string",
+      "pattern": "^(?:[IVXLCivxlc]+(?:\\^+|>+|/+|[oO]+)?|unlesbar|unreadable|\\?)$"
+    },
+    "markierungsart": { "type": "string", "enum": ["eingeschlagen", "geritzt", "gerissen", "geroetelt", "unbekannt"] },
+    "werkzeug": { "type": "string", "enum": ["stemmeisen", "reissmesser", "beil", "saege", "roetel", "unbekannt"] },
+    "seite": { "type": "string" }
+  }
+}

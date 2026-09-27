@@ -1,0 +1,520 @@
+{
+  "hinweis": "Alle Fälle sind SYNTHETISCH, von Hand für die Tests konstruiert. Keiner ist aus einem publizierten Zeichenregister übertragen (DSD, ing-hofer.de, Gerner 1996 stehen aus).",
+  "faelle": [
+    {
+      "id": "luecklose-wand",
+      "synthetisch": true,
+      "beschreibung": "Synthetisch: Traufwand Nord, fünf Ständer I^–V^ und vier Riegel I^–IIII^, alles in einer Serie.",
+      "bauteile": [
+        {
+          "id": "S1",
+          "wand": "Nord",
+          "position": 1,
+          "rolle": "staender",
+          "zeichen": "I^",
+          "markierungsart": "eingeschlagen",
+          "werkzeug": "stemmeisen"
+        },
+        {
+          "id": "S2",
+          "wand": "Nord",
+          "position": 2,
+          "rolle": "staender",
+          "zeichen": "II^",
+          "markierungsart": "eingeschlagen",
+          "werkzeug": "stemmeisen"
+        },
+        {
+          "id": "S3",
+          "wand": "Nord",
+          "position": 3,
+          "rolle": "staender",
+          "zeichen": "III^",
+          "markierungsart": "eingeschlagen",
+          "werkzeug": "stemmeisen"
+        },
+        {
+          "id": "S4",
+          "wand": "Nord",
+          "position": 4,
+          "rolle": "staender",
+          "zeichen": "IIII^",
+          "markierungsart": "eingeschlagen",
+          "werkzeug": "stemmeisen"
+        },
+        {
+          "id": "S5",
+          "wand": "Nord",
+          "position": 5,
+          "rolle": "staender",
+          "zeichen": "V^",
+          "markierungsart": "eingeschlagen",
+          "werkzeug": "stemmeisen"
+        },
+        {
+          "id": "R1",
+          "wand": "Nord",
+          "position": 1,
+          "rolle": "riegel",
+          "zeichen": "I^",
+          "markierungsart": "eingeschlagen",
+          "werkzeug": "stemmeisen"
+        },
+        {
+          "id": "R2",
+          "wand": "Nord",
+          "position": 2,
+          "rolle": "riegel",
+          "zeichen": "II^",
+          "markierungsart": "eingeschlagen",
+          "werkzeug": "stemmeisen"
+        },
+        {
+          "id": "R3",
+          "wand": "Nord",
+          "position": 3,
+          "rolle": "riegel",
+          "zeichen": "III^",
+          "markierungsart": "eingeschlagen",
+          "werkzeug": "stemmeisen"
+        },
+        {
+          "id": "R4",
+          "wand": "Nord",
+          "position": 4,
+          "rolle": "riegel",
+          "zeichen": "IIII^",
+          "markierungsart": "eingeschlagen",
+          "werkzeug": "stemmeisen"
+        }
+      ],
+      "erwartet": {
+        "regeln": [],
+        "unlesbar": []
+      }
+    },
+    {
+      "id": "fehlender-staender",
+      "synthetisch": true,
+      "beschreibung": "Synthetisch: Ständer III fehlt (Position 3 leer, Ständer später entfernt).",
+      "bauteile": [
+        {
+          "id": "S1",
+          "wand": "Ost",
+          "position": 1,
+          "rolle": "staender",
+          "zeichen": "I"
+        },
+        {
+          "id": "S2",
+          "wand": "Ost",
+          "position": 2,
+          "rolle": "staender",
+          "zeichen": "II"
+        },
+        {
+          "id": "S4",
+          "wand": "Ost",
+          "position": 4,
+          "rolle": "staender",
+          "zeichen": "IIII"
+        },
+        {
+          "id": "S5",
+          "wand": "Ost",
+          "position": 5,
+          "rolle": "staender",
+          "zeichen": "V"
+        }
+      ],
+      "erwartet": {
+        "regeln": [
+          "R1-LUECKE"
+        ],
+        "unlesbar": []
+      }
+    },
+    {
+      "id": "fremder-ausstich",
+      "synthetisch": true,
+      "beschreibung": "Synthetisch: Wand mit einfachem Ausstich; der Ständer an Position 3 trägt III^^ (doppelter Ausstich) — Holz aus einem anderen Verband. Die Folge der Wandserie hat deshalb zugleich eine Lücke bei III.",
+      "bauteile": [
+        {
+          "id": "S1",
+          "wand": "Süd",
+          "position": 1,
+          "rolle": "staender",
+          "zeichen": "I^",
+          "markierungsart": "eingeschlagen",
+          "werkzeug": "stemmeisen"
+        },
+        {
+          "id": "S2",
+          "wand": "Süd",
+          "position": 2,
+          "rolle": "staender",
+          "zeichen": "II^",
+          "markierungsart": "eingeschlagen",
+          "werkzeug": "stemmeisen"
+        },
+        {
+          "id": "S3",
+          "wand": "Süd",
+          "position": 3,
+          "rolle": "staender",
+          "zeichen": "III^^",
+          "markierungsart": "eingeschlagen",
+          "werkzeug": "stemmeisen"
+        },
+        {
+          "id": "S4",
+          "wand": "Süd",
+          "position": 4,
+          "rolle": "staender",
+          "zeichen": "IIII^",
+          "markierungsart": "eingeschlagen",
+          "werkzeug": "stemmeisen"
+        },
+        {
+          "id": "S5",
+          "wand": "Süd",
+          "position": 5,
+          "rolle": "staender",
+          "zeichen": "V^",
+          "markierungsart": "eingeschlagen",
+          "werkzeug": "stemmeisen"
+        }
+      ],
+      "erwartet": {
+        "regeln": [
+          "R1-LUECKE",
+          "R3-FREMDE-SERIE"
+        ],
+        "unlesbar": []
+      }
+    },
+    {
+      "id": "iiii-neben-iv",
+      "synthetisch": true,
+      "beschreibung": "Synthetisch: Ständer zählen additiv (IIII), Riegel derselben Wand subtraktiv (IV).",
+      "bauteile": [
+        {
+          "id": "S1",
+          "wand": "West",
+          "position": 1,
+          "rolle": "staender",
+          "zeichen": "I",
+          "markierungsart": "eingeschlagen",
+          "werkzeug": "stemmeisen"
+        },
+        {
+          "id": "S2",
+          "wand": "West",
+          "position": 2,
+          "rolle": "staender",
+          "zeichen": "II",
+          "markierungsart": "eingeschlagen",
+          "werkzeug": "stemmeisen"
+        },
+        {
+          "id": "S3",
+          "wand": "West",
+          "position": 3,
+          "rolle": "staender",
+          "zeichen": "III",
+          "markierungsart": "eingeschlagen",
+          "werkzeug": "stemmeisen"
+        },
+        {
+          "id": "S4",
+          "wand": "West",
+          "position": 4,
+          "rolle": "staender",
+          "zeichen": "IIII",
+          "markierungsart": "eingeschlagen",
+          "werkzeug": "stemmeisen"
+        },
+        {
+          "id": "S5",
+          "wand": "West",
+          "position": 5,
+          "rolle": "staender",
+          "zeichen": "V",
+          "markierungsart": "eingeschlagen",
+          "werkzeug": "stemmeisen"
+        },
+        {
+          "id": "R1",
+          "wand": "West",
+          "position": 1,
+          "rolle": "riegel",
+          "zeichen": "I",
+          "markierungsart": "eingeschlagen",
+          "werkzeug": "stemmeisen"
+        },
+        {
+          "id": "R2",
+          "wand": "West",
+          "position": 2,
+          "rolle": "riegel",
+          "zeichen": "II",
+          "markierungsart": "eingeschlagen",
+          "werkzeug": "stemmeisen"
+        },
+        {
+          "id": "R3",
+          "wand": "West",
+          "position": 3,
+          "rolle": "riegel",
+          "zeichen": "III",
+          "markierungsart": "eingeschlagen",
+          "werkzeug": "stemmeisen"
+        },
+        {
+          "id": "R4",
+          "wand": "West",
+          "position": 4,
+          "rolle": "riegel",
+          "zeichen": "IV",
+          "markierungsart": "eingeschlagen",
+          "werkzeug": "stemmeisen"
+        }
+      ],
+      "erwartet": {
+        "regeln": [
+          "R4-NOTATIONSBRUCH"
+        ],
+        "unlesbar": []
+      }
+    },
+    {
+      "id": "unlesbares-zeichen",
+      "synthetisch": true,
+      "beschreibung": "Synthetisch: Ständer an Position 3 ist unlesbar; er kann den Wert III tragen, deshalb keine Lücke.",
+      "bauteile": [
+        {
+          "id": "S1",
+          "wand": "Nord",
+          "position": 1,
+          "rolle": "staender",
+          "zeichen": "I>",
+          "markierungsart": "eingeschlagen",
+          "werkzeug": "stemmeisen"
+        },
+        {
+          "id": "S2",
+          "wand": "Nord",
+          "position": 2,
+          "rolle": "staender",
+          "zeichen": "II>",
+          "markierungsart": "eingeschlagen",
+          "werkzeug": "stemmeisen"
+        },
+        {
+          "id": "S3",
+          "wand": "Nord",
+          "position": 3,
+          "rolle": "staender",
+          "zeichen": "unlesbar",
+          "markierungsart": "eingeschlagen",
+          "werkzeug": "stemmeisen"
+        },
+        {
+          "id": "S4",
+          "wand": "Nord",
+          "position": 4,
+          "rolle": "staender",
+          "zeichen": "IIII>",
+          "markierungsart": "eingeschlagen",
+          "werkzeug": "stemmeisen"
+        },
+        {
+          "id": "S5",
+          "wand": "Nord",
+          "position": 5,
+          "rolle": "staender",
+          "zeichen": "V>",
+          "markierungsart": "eingeschlagen",
+          "werkzeug": "stemmeisen"
+        }
+      ],
+      "erwartet": {
+        "regeln": [],
+        "unlesbar": [
+          "S3"
+        ]
+      }
+    },
+    {
+      "id": "umsetzung",
+      "synthetisch": true,
+      "beschreibung": "Synthetisch: Ständer III und IIII sind vertauscht eingebaut (Umsetzung).",
+      "bauteile": [
+        {
+          "id": "S1",
+          "wand": "Hof",
+          "position": 1,
+          "rolle": "staender",
+          "zeichen": "I",
+          "markierungsart": "eingeschlagen",
+          "werkzeug": "stemmeisen"
+        },
+        {
+          "id": "S2",
+          "wand": "Hof",
+          "position": 2,
+          "rolle": "staender",
+          "zeichen": "II",
+          "markierungsart": "eingeschlagen",
+          "werkzeug": "stemmeisen"
+        },
+        {
+          "id": "S3",
+          "wand": "Hof",
+          "position": 3,
+          "rolle": "staender",
+          "zeichen": "IIII",
+          "markierungsart": "eingeschlagen",
+          "werkzeug": "stemmeisen"
+        },
+        {
+          "id": "S4",
+          "wand": "Hof",
+          "position": 4,
+          "rolle": "staender",
+          "zeichen": "III",
+          "markierungsart": "eingeschlagen",
+          "werkzeug": "stemmeisen"
+        },
+        {
+          "id": "S5",
+          "wand": "Hof",
+          "position": 5,
+          "rolle": "staender",
+          "zeichen": "V",
+          "markierungsart": "eingeschlagen",
+          "werkzeug": "stemmeisen"
+        },
+        {
+          "id": "S6",
+          "wand": "Hof",
+          "position": 6,
+          "rolle": "staender",
+          "zeichen": "VI",
+          "markierungsart": "eingeschlagen",
+          "werkzeug": "stemmeisen"
+        }
+      ],
+      "erwartet": {
+        "regeln": [
+          "R5-RICHTUNGSBRUCH"
+        ],
+        "unlesbar": []
+      }
+    },
+    {
+      "id": "bund-absteigend",
+      "synthetisch": true,
+      "beschreibung": "Synthetisch: Querbund 3, römisch einfach, von rechts nach links gezählt (absteigend entlang der Positionen).",
+      "bauteile": [
+        {
+          "id": "B1",
+          "bund": 3,
+          "position": 1,
+          "rolle": "staender",
+          "zeichen": "V"
+        },
+        {
+          "id": "B2",
+          "bund": 3,
+          "position": 2,
+          "rolle": "staender",
+          "zeichen": "IIII"
+        },
+        {
+          "id": "B3",
+          "bund": 3,
+          "position": 3,
+          "rolle": "staender",
+          "zeichen": "III"
+        },
+        {
+          "id": "B4",
+          "bund": 3,
+          "position": 4,
+          "rolle": "staender",
+          "zeichen": "II"
+        },
+        {
+          "id": "B5",
+          "bund": 3,
+          "position": 5,
+          "rolle": "staender",
+          "zeichen": "I"
+        }
+      ],
+      "erwartet": {
+        "regeln": [],
+        "unlesbar": []
+      }
+    },
+    {
+      "id": "doppelung",
+      "synthetisch": true,
+      "beschreibung": "Synthetisch: zwei Ständer mit II in derselben Serie.",
+      "bauteile": [
+        {
+          "id": "S1",
+          "wand": "Giebel",
+          "position": 1,
+          "rolle": "staender",
+          "zeichen": "I/",
+          "markierungsart": "eingeschlagen",
+          "werkzeug": "stemmeisen"
+        },
+        {
+          "id": "S2",
+          "wand": "Giebel",
+          "position": 2,
+          "rolle": "staender",
+          "zeichen": "II/",
+          "markierungsart": "eingeschlagen",
+          "werkzeug": "stemmeisen"
+        },
+        {
+          "id": "S3",
+          "wand": "Giebel",
+          "position": 3,
+          "rolle": "staender",
+          "zeichen": "II/",
+          "markierungsart": "eingeschlagen",
+          "werkzeug": "stemmeisen"
+        },
+        {
+          "id": "S4",
+          "wand": "Giebel",
+          "position": 4,
+          "rolle": "staender",
+          "zeichen": "III/",
+          "markierungsart": "eingeschlagen",
+          "werkzeug": "stemmeisen"
+        },
+        {
+          "id": "S5",
+          "wand": "Giebel",
+          "position": 5,
+          "rolle": "staender",
+          "zeichen": "IIII/",
+          "markierungsart": "eingeschlagen",
+          "werkzeug": "stemmeisen"
+        }
+      ],
+      "erwartet": {
+        "regeln": [
+          "R2-DOPPELUNG"
+        ],
+        "unlesbar": []
+      }
+    }
+  ]
+}

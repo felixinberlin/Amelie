@@ -85,7 +85,13 @@ Wenn du ein Ticket, ein Kriterium oder eine Dosen-Beschreibung änderst, musst d
     * `skills/idea-reviewer/` (`idea-reviewer.skill`): 7-Vektoren-Audit (Novelty, Complexity, Possibility, Longevity, Civic SWOT, Tech Tree, Ground Truth) mit Logbuch in `06-suche/amelie-classification-log.md`.
   * **1 Packaging-Agent:**
     * `skills/dose-packer/` (`dose-packer.skill` & Subagent `dose-packer`): Schreibt zweisprachige Dossiers (`05-dosen/`, `en/05-dosen/`), verknüpft Dosen im React-Frontend (`src/data/dosen.ts`), synchronisiert Frontmatter und Caches (`export:data`).
-  * **Aktueller Dosenstand:** 40 Dosen im Bestand. Neu verpackt: `bleifrei-lotse` und `tarot-zustandsmaschine` (Arcana Schema).
+  * **Aktueller Dosenstand:** 41 Dosen im Bestand, 43 Gräber. Neu verpackt: `abbundzeichen-fundbuch` (Holz-Runde 27.09.2026), `bleifrei-lotse` und `tarot-zustandsmaschine` (Arcana Schema).
+* **Holz-Runde (27.09.2026):**
+  * Drei Engines parallel auf das Thema Holz → 19 geprüfte Ideen (2 frei, 6 verengt, 3 unklar, 8 besetzt) → Reviewer → 1 Dose.
+  * **`abbundzeichen-fundbuch` gepackt** (26/35, Tier 1): Zählfolgen-Prüfer für Abbundzeichen an Fachwerk; Empfänger IgB-Hausforschung. **Kontakt (Dr. Julia Ricker) nur aus Suchschnipsel — vor jedem Versand auf igbauernhaus.de verifizieren.** Keine Mail angelegt.
+  * Scaffolding `07-demos/abbundzeichen-fundbuch/` + Engine `src/engine/abbundzeichen-fundbuch/` (44 Tests). Offen in Ticket 01: Fixture aus publiziertem Zeichenregister, statische Offline-Seite.
+  * Baustein-Empfehlungen des Reviewers (nicht umgesetzt): Altholz-Weiche als dritter Ausgang der `sperrmuell-weiche`; Brennholz-Kaufprüfer als Modus von `wood-stove-firewood-moisture-estimator`. `Needs Research`: Dosenfund-Dolmetscher (historische Holzschutzmittelverzeichnisse DIBt/IfBt).
+  * Evidenz dieser Runde nur Suchschnipsel: Die Netzwerk-Policy der Cloud-Umgebung sperrte Seitenabrufe (lfu.bayern.de, thuenen.de, …).
 
 ---
 
