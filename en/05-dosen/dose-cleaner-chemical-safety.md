@@ -102,22 +102,30 @@ BG BAU provides world-leading databases in WINGIS, supported by GESTIS (IFA) and
 
 ## Sample Outreach Email to Recipients
 
-**Recipients:** Service Employees International Union (SEIU) / EFCI / IG BAU (`gebaeudereinigung@igbau.de`)  
-**Subject:** Poison Shield for Cleaners: ChemHazard Stop Open Safety Aid (CC0 Public Good)
+**Recipients:** IG BAU Building Cleaning Union (`gebaeudereinigung@igbau.de`)  
+**CC:** BG BAU – Hazardous Substances & WINGIS Prevention Team (`gefahrstoffe@bgbau.de`)  
+**Subject:** Life Protection for Cleaners: ChemHazard Stop (Open Safety Gift to IG BAU & BG BAU)
 
 ```text
-Dear Colleagues and Worker Representatives at SEIU / EFCI / IG BAU,
+Dear Colleagues at IG BAU Building Cleaning Union,
+Dear Hazardous Substances & WINGIS Prevention Team at BG BAU,
 
-We have developed an open-source, 100% offline smartphone safety tool (ChemHazard Stop / MischStop) for frontline cleaners:
+We are reaching out to both of you simultaneously because frontline chemical safety requires the joint strength of workforce advocacy (union) and institutional prevention (statutory accident insurance):
+
+We have developed a turnkey, 100% offline point-of-action safety interlock: ChemHazard Stop / MischStop.
 
 The Workplace Reality:
-Cleaners work under intense speed pressure and frequent language barriers. Accidentally mixing acidic descalers with chlorine bleach immediately generates lethal chlorine gas (Cl2). 15-page Safety Data Sheets in a distant office binder cannot protect a worker at the custodial cart, and existing portals (like WINGIS) are desktop-only reference lookups.
+Commercial cleaners work under extreme speed pressure, frequently at night and across severe language barriers. Accidentally mixing acidic descalers (e.g., sulfamic, phosphoric, or hydrochloric acid) with sodium hypochlorite bleach immediately releases lethal chlorine gas (Cl2) into confined, poorly ventilated restrooms.
+Mixing prohibitions are textbook knowledge and thoroughly codified in DGUV Rule 101-019 and WINGIS — yet in the crucial second of mixing, a 15-page Safety Data Sheet filed away in a supervisor's binder provides zero protection. What was missing is a tool standing physically between the worker and two bottles at the custodial cart.
 
 What the Tool Does:
-1. Instant Scan: Point smartphone camera at two chemical containers (barcode, GISCODE, or label OCR). A deterministic local rule engine computes reaction hazards in <1 ms with zero internet connectivity.
-2. Polyglot Audio Alerts: Speaks audible emergency instructions in the cleaner's native language (Ukrainian, Polish, Turkish, Arabic, Romanian, German, English, etc.).
-3. Fail-Safe Without Sound: Even if the phone is silenced/muted or drowned out by 85 dB industrial vacuum cleaners, the device physically vibrates with an unmistakable emergency pulse cadence (300-100-300-100-500 ms) and the screen emits a glaring optical color strobe flash (pulsating high-contrast red/white), ensuring the danger is perceived instantly out of the corner of the eye and through nitrile work gloves.
-4. Formal Safety Case: The engine never certifies safety (zero green/safe clearances) — it strictly triggers STOP on danger, or defaults to UNVERIFIED on incomplete data.
+1. Sub-Second Point-of-Action Scan: Point smartphone camera at two containers (barcode, GISCODE, or label OCR). A deterministic local rule engine evaluates reaction risks in <1 ms on-device with zero internet dependency.
+2. Polyglot Audio Alerts: In hazardous pairings, loud spoken emergency instructions play in the cleaner's native language (Ukrainian, Polish, Turkish, Arabic, Romanian, Bulgarian, German, English, etc.).
+3. Fail-Safe Without Sound: Even if the phone is silenced/muted or drowned out by 85 dB vacuum cleaners, the handset physically pulses with an unmistakable emergency cadence (300-100-300-100-500 ms) while the screen flashes a glaring 15 Hz optical color strobe (red/white) to alert workers even through heavy nitrile gloves.
+4. Formal Safety Invariant: The system never emits a dangerous green "safe" clearance. It strictly triggers STOP on danger, or defaults to UNVERIFIED on incomplete data.
+
+Respecting Authority Data & Architecture:
+We perform zero unauthorized scraping of WINGIS or GESTIS. The engine triggers deterministically on public-domain EU CLP statements (especially EUH031). The architecture separates public data from licensed GISCODE datasets, ready to connect directly with official BG BAU WINGIS catalogs should BG BAU choose to adopt or host it.
 
 The complete project is turnkey, tested, and released unconditionally into the public domain (CC0):
 • Interactive Web Simulator & Live Demo: https://felixinberlin.github.io/Amelie/

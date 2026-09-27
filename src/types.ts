@@ -111,10 +111,12 @@ export interface DoseItem {
     subjectEn: string;
     bodyEn: string;
     to: string;
+    cc?: string;
   };
   emailTemplates?: {
     recipientName: string;
     to: string;
+    cc?: string;
     subjectDe: string;
     bodyDe: string;
     subjectEn: string;
@@ -250,6 +252,7 @@ export type DeliveryEmail = {
   recipientTypeEn: string;
   contactPathDe: string;
   contactPathEn: string;
+  contactCc?: string;
   subjectDe: string;
   subjectEn: string;
   bodyDe: string;

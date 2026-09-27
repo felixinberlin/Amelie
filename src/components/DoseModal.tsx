@@ -90,6 +90,7 @@ export const DoseModal: React.FC<DoseModalProps> = ({ dose, lang, onClose, onOpe
       ? {
           recipientName: lang === 'de' ? dose.recipientsDe : dose.recipientsEn,
           to: dose.emailTemplate.to,
+          cc: dose.emailTemplate.cc,
           subjectDe: dose.emailTemplate.subjectDe,
           bodyDe: dose.emailTemplate.bodyDe,
           subjectEn: dose.emailTemplate.subjectEn,
@@ -104,7 +105,8 @@ export const DoseModal: React.FC<DoseModalProps> = ({ dose, lang, onClose, onOpe
       const subject = lang === 'de' ? activeEmailTemplate.subjectDe : activeEmailTemplate.subjectEn;
       const body = lang === 'de' ? activeEmailTemplate.bodyDe : activeEmailTemplate.bodyEn;
       const to = activeEmailTemplate.to ? `An: ${activeEmailTemplate.to}\n` : '';
-      return `${to}Betreff: ${subject}\n\n${body}`;
+      const cc = activeEmailTemplate.cc ? `CC: ${activeEmailTemplate.cc}\n` : '';
+      return `${to}${cc}Betreff: ${subject}\n\n${body}`;
     }
 
     if (lang === 'de') {

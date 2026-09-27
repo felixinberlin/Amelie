@@ -133,6 +133,7 @@ export const DoseSinglePage: React.FC<DoseSinglePageProps> = ({
           {
             recipientName: dose.recipientsDe || 'Empfänger / Recipient',
             to: dose.emailTemplate.to,
+            cc: dose.emailTemplate.cc,
             subjectDe: dose.emailTemplate.subjectDe,
             subjectEn: dose.emailTemplate.subjectEn,
             bodyDe: dose.emailTemplate.bodyDe,
@@ -158,6 +159,7 @@ export const DoseSinglePage: React.FC<DoseSinglePageProps> = ({
       recipientTypeEn: 'Direct Handover Template (CC0)',
       contactPathDe: tmpl.to,
       contactPathEn: tmpl.to,
+      contactCc: tmpl.cc,
       subjectDe: tmpl.subjectDe,
       subjectEn: tmpl.subjectEn,
       bodyDe: tmpl.bodyDe,
@@ -850,7 +852,8 @@ ${bookChapters
             {linkedEmails.map((mail) => {
               const emailSubject = isDe ? mail.subjectDe : mail.subjectEn;
               const emailBody = isDe ? mail.bodyDe : mail.bodyEn;
-              const fullMailText = `To: ${mail.contactPathDe}\nSubject: ${emailSubject}\n\n${emailBody}`;
+              const ccText = mail.contactCc ? `CC: ${mail.contactCc}\n` : '';
+              const fullMailText = `To: ${mail.contactPathDe}\n${ccText}Subject: ${emailSubject}\n\n${emailBody}`;
 
               return (
                 <div

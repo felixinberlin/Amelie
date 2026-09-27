@@ -103,21 +103,29 @@ Die BG BAU betreibt mit WINGIS ein weltweites Vorzeigesystem, flankiert von GEST
 ## Muster-E-Mail an Empfänger
 
 **Empfänger:** IG BAU Bundesfachgruppe Gebäudereinigung (`gebaeudereinigung@igbau.de`)  
-**Betreff:** Lebensschutz für Reinigungskräfte: ChemGefahr-Stopp (Quelloffenes Geschenk)
+**CC:** BG BAU – Referat Gefahrstoffe / WINGIS (`gefahrstoffe@bgbau.de`)  
+**Betreff:** Lebensschutz für Reinigungskräfte: ChemGefahr-Stopp (Quelloffenes Geschenk an IG BAU & BG BAU)
 
 ```text
 Liebe Kolleginnen und Kollegen der IG BAU Gebäudereinigung,
+sehr geehrtes Team Gefahrstoffe und WINGIS der BG BAU,
 
-wir haben eine offene, 100% offline lauffähige Smartphone-Hilfe (MischStop / ChemHazard Stop) für Reinigungskräfte entwickelt:
+wir wenden uns heute gemeinsam an Sie beide, weil der Schutz von Reinigungskräften vor gefährlichen Chemikalien nur im direkten Zusammenspiel von gelebter Arbeitsrealität (Gewerkschaft) und fundierter Prävention (Berufsgenossenschaft) gelingt:
 
-Das Problem aus der Arbeitsrealität:
-Reinigungskräfte arbeiten unter extremem Zeitdruck und häufig über Sprachbarrieren hinweg. Das versehentliche Mischen von sauren Entkalkern mit chlorhaltiger Bleiche setzt schlagartig tödliches Chlorgas frei. 15-seitige Sicherheitsdatenblätter im Ordner nützen am Putzwagen nichts, und bestehende Portale (wie WINGIS) sind reine Schreibtisch-Datenbanken.
+Wir haben ein offenes, 100% offline lauffähiges Point-of-Action-Sicherheitswerkzeug entwickelt: ChemGefahr-Stopp (MischStop / ChemHazard Stop).
+
+Das Problem an der Putzkammer:
+Reinigungskräfte arbeiten unter extremem Zeitdruck, oft nachts und häufig über Sprachbarrieren hinweg. Das versehentliche Zusammenschütten von sauren Sanitär-Entkalkern (z. B. Amidosulfonsäure, Phosphorsäure) mit hypochlorithaltiger Chlorbleiche setzt in engen, fensterlosen Waschräumen schlagartig tödliches Chlorgas frei.
+Die Mischverbote sind Lehrbuchwissen und in DGUV Regel 101-019 sowie WINGIS exzellent dokumentiert — aber im Moment des Mischens nützt ein 15-seitiges Sicherheitsdatenblatt im Büroordner nichts. Was bisher fehlte, ist ein Werkzeug, das physisch in der Sekunde des Mischens zwischen der Arbeitskraft und den zwei Flaschen steht.
 
 Was das Werkzeug tut:
-1. Sofort-Erkennung: Kamera auf zwei Flaschen richten (Barcode, GISCODE oder Etikett). In unter 1 Sekunde berechnet ein deterministischer Regel-Kernel ohne Internetverbindung das Reaktionsrisiko.
-2. Mehrsprachiger Alarm: Bei Gefahr warnt eine laute Stimme in der jeweiligen Muttersprache (Ukrainisch, Polnisch, Türkisch, Arabisch, Rumänisch, Deutsch, Englisch).
-3. Alarm auch ohne Ton: Selbst wenn das Smartphone stummgeschaltet ist oder laute Staubsauger (85 dB) dröhnen, vibriert das Telefon mit einem unverwechselbaren Notfall-Rhythmus (300-100-300-100-500 ms) und der Bildschirm emittiert einen hochfrequenten optischen Farb-Stroboskop-Blitz (Rot/Weiß), sodass die Gefahr selbst aus dem Augenwinkel und durch Nitrilhandschuhe sofort wahrgenommen wird.
-4. Unbestechlicher Sicherheitsnachweis: Das System gibt niemals eine trügerische „Grün/Sicher“-Entwarnung, sondern warnt bei Gefahr (STOP) oder deklariert fehlende Daten als UNVERIFIED.
+1. Sekundenschneller Scan (Point-of-Action): Kamera auf zwei Gebinde richten (Barcode, GISCODE oder Etikett). Ein deterministischer Regel-Kernel prüft in unter 1 Millisekunde auf dem Gerät, ob eine gefährliche chemische Reaktion droht — komplett ohne Internetverbindung.
+2. Mehrsprachiger Sofort-Alarm: Bei Gefahr warnt eine laute Stimme in der jeweiligen Muttersprache der Reinigungskraft (Ukrainisch, Polnisch, Türkisch, Arabisch, Rumänisch, Bulgarisch, Deutsch, Englisch etc.).
+3. Notfall-Alarm auch ohne Ton: Selbst wenn das Smartphone stummgeschaltet ist oder laute Industriestaubsauger (85 dB) dröhnen, vibriert das Telefon mit einem unverwechselbaren Notfall-Impuls (300-100-300-100-500 ms) und das Display sendet ein grelles optisches 15-Hz-Farb-Stroboskop (Rot/Weiß), sodass die Gefahr selbst aus dem Augenwinkel und durch Nitrilhandschuhe sofort wahrgenommen wird.
+4. Unbestechlicher Sicherheitsnachweis (Safety Case): Das System attestiert niemals eine trügerische „Grün/Sicher“-Entwarnung, sondern warnt ausschließlich vor bekannter Gefahr (STOP) oder deklariert fehlende Daten transparent als UNVERIFIED.
+
+Respektierung von Standards & Datenhoheit (Drei-Spuren-Architektur):
+Wir betreiben kein unzulässiges Scraping von WINGIS oder GESTIS. Der Regel-Kernel basiert primär auf gemeinfreiem EU-CLP-Recht (insb. EUH031). Die Architektur ist exakt so ausgelegt, dass offizielle WINGIS-GISCODE-Datenbanken der BG BAU als lizenzierte Spur nahtlos andocken können, wenn die BG BAU dies freigeben oder selbst hosten möchte.
 
 Das gesamte Projekt ist schlüsselfertig, lauffähig und bedingungslos gemeinfrei (CC0):
 • Interaktiver Web-Simulator & Live-Demo: https://felixinberlin.github.io/Amelie/
@@ -126,7 +134,7 @@ Das gesamte Projekt ist schlüsselfertig, lauffähig und bedingungslos gemeinfre
 
 „Diese Idee gehört niemandem. Nimm sie, bau sie, verkauf sie — du schuldest mir nichts, nicht einmal eine Antwort. Wenn du eines Tages eine Idee hast, die du nicht bauen wirst, gib sie jemandem, der es tut.“
 
-Mit kollegialem Gruß für sichere Arbeit,
+Mit kollegialem Gruß für sichere Arbeit und gesunde Beschäftigte,
 Amélie Initiative (Félix, Berlin)
 ```
 
