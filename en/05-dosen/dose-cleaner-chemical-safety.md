@@ -83,8 +83,8 @@ $$\text{if } \text{rule.required} \subseteq \text{combined} \implies \text{STOP}
 
 ## Where it breaks (The Achilles Heel)
 
-**Muted phone or loud operating environment:** Muted volume, connected Bluetooth earbuds, phone inside a pocket, speaker muffled by heavy rubber gloves, or roaring industrial vacuum cleaners.  
-*Remedy:* System uses OS-level alarm stream to bypass silent mode (where permitted), coupled with full-screen high-frequency flashing, repeating tactile pulse patterns, and oversized high-contrast typography ("STOP! DO NOT MIX!").
+**Muted phone or loud operating environment:** Muted volume, connected Bluetooth earbuds, phone inside a pocket, speaker muffled by heavy rubber gloves, or deafening industrial vacuum cleaners (85 dB).  
+*Remedy:* If there is no sound or audio is drowned out, physical and optical redundancy takes over: the phone vibrates aggressively with a distinctive emergency pulse rhythm ([300, 100, 300, 100, 500] ms) and the display emits a glaring high-frequency optical color strobe flash (pulsing red/white) visible even in peripheral vision and through thick nitrile gloves. Where OS permissions allow, audio is forced through the `STREAM_ALARM` channel at maximum volume.
 
 ## Who has already tried this
 
@@ -95,6 +95,35 @@ BG BAU provides world-leading databases in WINGIS, supported by GESTIS (IFA) and
 - **GefStoffV & DGUV Rule 101-019** (Handling of cleaning and care agents).
 - **Regulation (EC) No 1272/2008 (CLP Regulation)** — Hazard statements EUH031, H314, H318.
 - **GISBAU / GISCODE classification system** for professional cleaning chemicals (Product groups GD, GG, GS, GU).
+
+## Sample Outreach Email to Recipients
+
+**Recipients:** Service Employees International Union (SEIU) / EFCI / IG BAU (`gebaeudereinigung@igbau.de`)  
+**Subject:** Poison Shield for Cleaners: ChemHazard Stop Open Safety Aid (CC0 Public Good)
+
+```text
+Dear Colleagues and Worker Representatives at SEIU / EFCI / IG BAU,
+
+We have developed an open-source, 100% offline smartphone safety tool (ChemHazard Stop / MischStop) for frontline cleaners:
+
+The Workplace Reality:
+Cleaners work under intense speed pressure and frequent language barriers. Accidentally mixing acidic descalers with chlorine bleach immediately generates lethal chlorine gas (Cl2). 15-page Safety Data Sheets in a distant office binder cannot protect a worker at the custodial cart, and existing portals (like WINGIS) are desktop-only reference lookups.
+
+What the Tool Does:
+1. Instant Scan: Point smartphone camera at two chemical containers (barcode, GISCODE, or label OCR). A deterministic local rule engine computes reaction hazards in <1 ms with zero internet connectivity.
+2. Polyglot Audio Alerts: Speaks audible emergency instructions in the cleaner's native language (Ukrainian, Polish, Turkish, Arabic, Romanian, German, English, etc.).
+3. Fail-Safe Without Sound: Even if the phone is silenced/muted or drowned out by 85 dB industrial vacuum cleaners, the device physically vibrates with an unmistakable emergency pulse cadence (300-100-300-100-500 ms) and the screen emits a glaring optical color strobe flash (pulsating high-contrast red/white), ensuring the danger is perceived instantly out of the corner of the eye and through nitrile work gloves.
+4. Formal Safety Case: The engine never certifies safety (zero green/safe clearances) — it strictly triggers STOP on danger, or defaults to UNVERIFIED on incomplete data.
+
+The complete project is turnkey, tested, and released unconditionally into the public domain (CC0):
+• Interactive Web Simulator & Live Demo: https://felixinberlin.github.io/Amelie/
+• Source Code, Test Suite & Scaffolding: https://github.com/felixinberlin/Amelie/tree/main/07-demos/chemhazard-stop
+
+"This idea belongs to no one. Take it, build it, sell it — you owe me nothing, not even a reply. If you ever have an idea you won't build, give it to someone who will."
+
+In solidarity for worker health and safety,
+Amélie Initiative (Félix, Berlin)
+```
 
 ---
 

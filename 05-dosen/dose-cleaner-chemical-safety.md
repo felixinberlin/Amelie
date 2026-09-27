@@ -83,8 +83,8 @@ $$\text{if } \text{rule.required} \subseteq \text{combined} \implies \text{STOP}
 
 ## Wo es kippt (Die Achillesferse)
 
-**Stummes Smartphone in lauter Umgebung:** Muted Audio, Kopfhörer/Bluetooth verbunden, Handy in Hosentasche, Lautsprecher durch Gummihandschuh verdeckt oder laute Staubsauger.  
-*Gegenmaßnahme:* System erzwingt Alarm-Audiostream (bypasst Stummschaltung auf Betriebssystemebene, wo zulässig), kombiniert mit grellem Vollbild-Flackern, distinkten haptischen Impulsmustern und riesiger Typografie („STOPP! NICHT MISCHEN!").
+**Stummes Smartphone in lauter Umgebung:** Muted Audio, Kopfhörer/Bluetooth verbunden, Handy in Hosentasche, Lautsprecher durch Gummihandschuh verdeckt oder laute Staubsauger (85 dB).  
+*Gegenmaßnahme:* Wenn kein Ton an ist oder überhört wird, greift die physisch-optische Redundanz: Das Smartphone vibriert energisch mit unverwechselbarem Notfall-Takt ([300, 100, 300, 100, 500] ms) und der gesamte Bildschirm emittiert einen hochfrequenten optischen Farb-Stroboskop-Blitz (Rot/Weiß), der selbst aus dem Augenwinkel und bei grellem Neonlicht wahrnehmbar ist. Wo Betriebssystem-Berechtigungen vorliegen, wird der Alarm-Audiostream (`STREAM_ALARM`) auf Maximallautstärke forciert.
 
 ## Wer es schon versucht hat
 
@@ -95,6 +95,35 @@ Die BG BAU betreibt mit WINGIS ein weltweites Vorzeigesystem, flankiert von GEST
 - **GefStoffV & DGUV Regel 101-019** (Umgang mit Reinigungs- und Pflegemitteln).
 - **Verordnung (EG) Nr. 1272/2008 (CLP-Verordnung)** — Gefahrenhinweise EUH031, H314, H318.
 - **GISBAU / GISCODE-Klassifikationssystem** für Reinigungsmittel (Produktgruppen GD, GG, GS, GU).
+
+## Muster-E-Mail an Empfänger
+
+**Empfänger:** IG BAU Bundesfachgruppe Gebäudereinigung (`gebaeudereinigung@igbau.de`)  
+**Betreff:** Lebensschutz für Reinigungskräfte: ChemGefahr-Stopp (Quelloffenes Geschenk)
+
+```text
+Liebe Kolleginnen und Kollegen der IG BAU Gebäudereinigung,
+
+wir haben eine offene, 100% offline lauffähige Smartphone-Hilfe (MischStop / ChemHazard Stop) für Reinigungskräfte entwickelt:
+
+Das Problem aus der Arbeitsrealität:
+Reinigungskräfte arbeiten unter extremem Zeitdruck und häufig über Sprachbarrieren hinweg. Das versehentliche Mischen von sauren Entkalkern mit chlorhaltiger Bleiche setzt schlagartig tödliches Chlorgas frei. 15-seitige Sicherheitsdatenblätter im Ordner nützen am Putzwagen nichts, und bestehende Portale (wie WINGIS) sind reine Schreibtisch-Datenbanken.
+
+Was das Werkzeug tut:
+1. Sofort-Erkennung: Kamera auf zwei Flaschen richten (Barcode, GISCODE oder Etikett). In unter 1 Sekunde berechnet ein deterministischer Regel-Kernel ohne Internetverbindung das Reaktionsrisiko.
+2. Mehrsprachiger Alarm: Bei Gefahr warnt eine laute Stimme in der jeweiligen Muttersprache (Ukrainisch, Polnisch, Türkisch, Arabisch, Rumänisch, Deutsch, Englisch).
+3. Alarm auch ohne Ton: Selbst wenn das Smartphone stummgeschaltet ist oder laute Staubsauger (85 dB) dröhnen, vibriert das Telefon mit einem unverwechselbaren Notfall-Rhythmus (300-100-300-100-500 ms) und der Bildschirm emittiert einen hochfrequenten optischen Farb-Stroboskop-Blitz (Rot/Weiß), sodass die Gefahr selbst aus dem Augenwinkel und durch Nitrilhandschuhe sofort wahrgenommen wird.
+4. Unbestechlicher Sicherheitsnachweis: Das System gibt niemals eine trügerische „Grün/Sicher“-Entwarnung, sondern warnt bei Gefahr (STOP) oder deklariert fehlende Daten als UNVERIFIED.
+
+Das gesamte Projekt ist schlüsselfertig, lauffähig und bedingungslos gemeinfrei (CC0):
+• Interaktiver Web-Simulator & Live-Demo: https://felixinberlin.github.io/Amelie/
+• Quellcode, Testsuite & Scaffolding: https://github.com/felixinberlin/Amelie/tree/main/07-demos/chemhazard-stop
+
+„Diese Idee gehört niemandem. Nimm sie, bau sie, verkauf sie — du schuldest mir nichts, nicht einmal eine Antwort. Wenn du eines Tages eine Idee hast, die du nicht bauen wirst, gib sie jemandem, der es tut.“
+
+Mit kollegialem Gruß für sichere Arbeit,
+Amélie Initiative (Félix, Berlin)
+```
 
 ---
 

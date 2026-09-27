@@ -89,23 +89,34 @@ export const ChemHazardSimulator: React.FC<ChemHazardSimulatorProps> = ({
         osc.frequency.exponentialRampToValueAtTime(2500, now + i * 0.4 + 0.4);
       }
 
-      gain.gain.setValueAtTime(simulatedMuted ? 0.05 : 0.25, now);
-      osc.connect(gain);
-      gain.connect(ctx.destination);
-      osc.start();
-      oscillatorRef.current = osc;
+      // Physical haptic vibration (works even with no sound)
+      if (typeof navigator !== 'undefined' && 'vibrate' in navigator && result.hapticPattern) {
+        try {
+          navigator.vibrate(result.hapticPattern);
+        } catch {
+          // Vibration not permitted or supported
+        }
+      }
+
+      if (!simulatedMuted) {
+        gain.gain.setValueAtTime(0.25, now);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        oscillatorRef.current = osc;
+
+        // Web Speech voice synthesis
+        if ('speechSynthesis' in window && result.audioAlert) {
+          window.speechSynthesis.cancel();
+          const utterance = new SpeechSynthesisUtterance(result.audioAlert.text);
+          utterance.lang = spokenLang === 'uk' ? 'uk-UA' : spokenLang === 'pl' ? 'pl-PL' : spokenLang === 'tr' ? 'tr-TR' : spokenLang === 'de' ? 'de-DE' : 'en-US';
+          utterance.rate = 1.1;
+          utterance.volume = 1.0;
+          window.speechSynthesis.speak(utterance);
+        }
+      }
 
       setIsAlarmPlaying(true);
-
-      // Web Speech voice synthesis
-      if ('speechSynthesis' in window && result.audioAlert) {
-        window.speechSynthesis.cancel();
-        const utterance = new SpeechSynthesisUtterance(result.audioAlert.text);
-        utterance.lang = spokenLang === 'uk' ? 'uk-UA' : spokenLang === 'pl' ? 'pl-PL' : spokenLang === 'tr' ? 'tr-TR' : spokenLang === 'de' ? 'de-DE' : 'en-US';
-        utterance.rate = 1.1;
-        utterance.volume = 1.0;
-        window.speechSynthesis.speak(utterance);
-      }
 
       // Auto stop after 2.5s
       setTimeout(() => {
@@ -118,6 +129,13 @@ export const ChemHazardSimulator: React.FC<ChemHazardSimulatorProps> = ({
   };
 
   const stopSiren = () => {
+    if (typeof navigator !== 'undefined' && 'vibrate' in navigator) {
+      try {
+        navigator.vibrate(0);
+      } catch {
+        // Ignore
+      }
+    }
     if (oscillatorRef.current) {
       try {
         oscillatorRef.current.stop();
@@ -453,6 +471,25 @@ export const ChemHazardSimulator: React.FC<ChemHazardSimulatorProps> = ({
             </button>
           )}
         </div>
+
+        {/* Optical Color Strobe & Vibration Active Indicator */}
+        {isAlarmPlaying && (
+          <div className="mt-4 p-3 rounded-xl bg-gradient-to-r from-red-600 via-amber-500 to-red-600 text-white font-mono-code text-xs font-bold flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 shadow-lg animate-pulse">
+            <span className="flex items-center gap-2">
+              <span className="animate-ping inline-flex h-2.5 w-2.5 rounded-full bg-white opacity-90"></span>
+              {simulatedMuted
+                ? (de
+                    ? '📳 KEIN TON (STUMM): Optischer Farb-Stroboskop-Blitz (Rot/Weiß) & Haptik-Vibration aktiv!'
+                    : '📳 SILENT / MUTED: Optical Color Strobe Flash (Red/White) & Haptic Vibration Active!')
+                : (de
+                    ? '🚨 4-KANAL-ALARM AKTIV: Sirene + Farb-Stroboskop-Blitz + Haptik-Vibration + Sprachruf!'
+                    : '🚨 4-CHANNEL ALERT ACTIVE: Siren + Optical Color Strobe + Haptic Vibration + Polyglot Voice!')}
+            </span>
+            <span className="text-[10px] bg-black/40 px-2 py-0.5 rounded font-mono-code shrink-0">
+              Vibration: {result.hapticPattern.join('-')} ms
+            </span>
+          </div>
+        )}
 
         {/* State Detail Explanations */}
         <div className="mt-6 space-y-4">

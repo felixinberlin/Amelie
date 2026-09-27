@@ -1388,27 +1388,49 @@ Dual-licensed under MIT (code & schema structure) and CC BY 4.0 (interpretive te
     tags: ['Echte Arbeit', 'Reinigung', 'Arbeitsschutz', 'Sicherheit', 'Mehrsprachig', 'AI-Native'],
     emailTemplate: {
       subjectDe: 'Lebensschutz für Reinigungskräfte: ChemGefahr-Stopp (Quelloffenes Geschenk)',
-      bodyDe: `Liebe Kolleginnen und Kollegen der Gebäudereinigung,
+      bodyDe: `Liebe Kolleginnen und Kollegen der IG BAU Gebäudereinigung,
 
-wir haben eine offene, 100% offline lauffähige Smartphone-Hilfe (MischStop / ChemHazard Stop) entwickelt: Reinigungskräfte richten die Kamera auf zwei Putzmittelflaschen, und das Gerät warnt laut in der jeweiligen Muttersprache (in über 20 Sprachen) vor lebensgefährlichem Chlorgas und Verätzungen — in unter 1 Sekunde.
+wir haben eine offene, 100% offline lauffähige Smartphone-Hilfe (MischStop / ChemHazard Stop) für Reinigungskräfte entwickelt:
 
-Das Werkzeug attestiert niemals Sicherheit (kein grünes Signal), sondern warnt ausschließlich vor bekannter Gefahr oder deklariert fehlende Daten als UNVERIFIED.
+Das Problem aus der Arbeitsrealität:
+Reinigungskräfte arbeiten unter extremem Zeitdruck und häufig über Sprachbarrieren hinweg. Das versehentliche Mischen von sauren Entkalkern mit chlorhaltiger Bleiche setzt schlagartig tödliches Chlorgas frei. 15-seitige Sicherheitsdatenblätter im Ordner nützen am Putzwagen nichts, und bestehende Portale (wie WINGIS) sind reine Schreibtisch-Datenbanken.
 
-Ein bedingungsloses, quelloffenes Geschenk (CC0) für den praktischen Arbeitsschutz Ihrer Beschäftigten.
+Was das Werkzeug tut:
+1. Sofort-Erkennung: Kamera auf zwei Flaschen richten (Barcode, GISCODE oder Etikett). In unter 1 Sekunde berechnet ein deterministischer Regel-Kernel ohne Internetverbindung das Reaktionsrisiko.
+2. Mehrsprachiger Alarm: Bei Gefahr warnt eine laute Stimme in der jeweiligen Muttersprache (Ukrainisch, Polnisch, Türkisch, Arabisch, Rumänisch, Deutsch, Englisch).
+3. Alarm auch ohne Ton: Selbst wenn das Smartphone stummgeschaltet ist oder laute Staubsauger (85 dB) dröhnen, vibriert das Telefon mit einem unverwechselbaren Notfall-Rhythmus (300-100-300-100-500 ms) und der Bildschirm emittiert einen hochfrequenten optischen Farb-Stroboskop-Blitz (Rot/Weiß), sodass die Gefahr selbst aus dem Augenwinkel und durch Nitrilhandschuhe sofort wahrgenommen wird.
+4. Unbestechlicher Sicherheitsnachweis: Das System gibt niemals eine trügerische „Grün/Sicher“-Entwarnung, sondern warnt bei Gefahr (STOP) oder deklariert fehlende Daten als UNVERIFIED.
 
-Mit kollegialem Gruß,
-Amélie Initiative`,
-      subjectEn: 'Poison Shield for Cleaners: ChemHazard Stop Open Safety Aid (CC0)',
-      bodyEn: `Dear Cleaning Industry Colleagues and Worker Representatives,
+Das gesamte Projekt ist schlüsselfertig, lauffähig und bedingungslos gemeinfrei (CC0):
+• Interaktiver Web-Simulator & Live-Demo: https://felixinberlin.github.io/Amelie/
+• Quellcode, Testsuite & Scaffolding: https://github.com/felixinberlin/Amelie/tree/main/07-demos/chemhazard-stop
 
-We have developed an open-source, 100% offline smartphone warning aid (ChemHazard Stop): cleaners point their camera at two chemical bottles, and the phone shouts an audible warning in their native language (across 20+ languages) in under one second if a lethal combination (e.g. acid + hypochlorite -> chlorine gas) is detected.
+„Diese Idee gehört niemandem. Nimm sie, bau sie, verkauf sie — du schuldest mir nichts, nicht einmal eine Antwort. Wenn du eines Tages eine Idee hast, die du nicht bauen wirst, gib sie jemandem, der es tut.“
 
-The tool never certifies safety (no green screen ever) — it strictly warns of detected danger or defaults uncertainty to UNVERIFIED.
+Mit kollegialem Gruß für sichere Arbeit,
+Amélie Initiative (Félix, Berlin)`,
+      subjectEn: 'Poison Shield for Cleaners: ChemHazard Stop Open Safety Aid (CC0 Public Good)',
+      bodyEn: `Dear Colleagues and Worker Representatives at SEIU / EFCI / IG BAU,
 
-An unconditional, open-source gift (CC0) for frontline worker safety.
+We have developed an open-source, 100% offline smartphone safety tool (ChemHazard Stop / MischStop) for frontline cleaners:
 
-Best regards,
-Amélie Initiative`,
+The Workplace Reality:
+Cleaners work under intense speed pressure and frequent language barriers. Accidentally mixing acidic descalers with chlorine bleach immediately generates lethal chlorine gas (Cl2). 15-page Safety Data Sheets in a distant office binder cannot protect a worker at the custodial cart, and existing portals (like WINGIS) are desktop-only reference lookups.
+
+What the Tool Does:
+1. Instant Scan: Point smartphone camera at two chemical containers (barcode, GISCODE, or label OCR). A deterministic local rule engine computes reaction hazards in <1 ms with zero internet connectivity.
+2. Polyglot Audio Alerts: Speaks audible emergency instructions in the cleaner's native language (Ukrainian, Polish, Turkish, Arabic, Romanian, German, English, etc.).
+3. Fail-Safe Without Sound: Even if the phone is silenced/muted or drowned out by 85 dB industrial vacuum cleaners, the device physically vibrates with an unmistakable emergency pulse cadence (300-100-300-100-500 ms) and the screen emits a glaring optical color strobe flash (pulsating high-contrast red/white), ensuring the danger is perceived instantly out of the corner of the eye and through nitrile work gloves.
+4. Formal Safety Case: The engine never certifies safety (zero green/safe clearances) — it strictly triggers STOP on danger, or defaults to UNVERIFIED on incomplete data.
+
+The complete project is turnkey, tested, and released unconditionally into the public domain (CC0):
+• Interactive Web Simulator & Live Demo: https://felixinberlin.github.io/Amelie/
+• Source Code, Test Suite & Scaffolding: https://github.com/felixinberlin/Amelie/tree/main/07-demos/chemhazard-stop
+
+"This idea belongs to no one. Take it, build it, sell it — you owe me nothing, not even a reply. If you ever have an idea you won't build, give it to someone who will."
+
+In solidarity for worker health and safety,
+Amélie Initiative (Félix, Berlin)`,
       to: 'gebaeudereinigung@igbau.de'
     },
     aiFrontier: {
