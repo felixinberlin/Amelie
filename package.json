@@ -16,7 +16,8 @@
     "export:data": "node scripts/export-public-data.mjs",
     "friedhof": "node scripts/friedhof-muster.mjs",
     "check:friedhof": "node scripts/friedhof-muster.mjs --check",
-    "sync:idea-frontmatter": "node scripts/sync-idea-frontmatter.mjs"
+    "sync:idea-frontmatter": "node scripts/sync-idea-frontmatter.mjs",
+    "wet-ink:lab": "node scripts/wet-ink-lab.mjs"
   },
   "dependencies": {
     "@types/canvas-confetti": "^1.9.0",

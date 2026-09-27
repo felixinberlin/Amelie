@@ -2,46 +2,155 @@ import { PaperMaps } from './paper';
 import { WetInkPaperConfig, WetInkPigmentConfig, WetInkSimParams, SimulationLayer } from './types';
 import { KubelkaMunkLUT } from './kubelka-munk';
 
+/**
+ * CPU reference simulation of ink on paper.
+ *
+ * Three layers, seven pools:
+ *   surface  — h (water film), u/v (velocity), p (pigment suspended in the film)
+ *   fibers   — s (water wicked into cellulose), f (pigment carried in fiber water)
+ *   fixed    — d (pigment bound to fibers — what stays on the page)
+ *
+ * Every pass moves mass between pools as an explicit flux, so the invariants
+ *   waterInjected  == Σh + Σs + waterEvaporated
+ *   pigmentInjected == Σp + Σf + Σd
+ * hold to float precision. Tests rely on that; so should any tuning.
+ *
+ * Physics follows Curtis et al. 1997 (wet-area mask, edge darkening by
+ * contact-line evaporation, deposition/lift-off) and Chu & Tai 2005 (MoXi:
+ * capillary flow along a fiber network that only starts above a saturation
+ * threshold ε_min — the reason a stain frays instead of blurring like smoke).
+ */
+
+/** Fixed simulation timestep. `advance()` sub-steps real time into this. */
+export const WET_INK_DT = 1 / 60;
+/** Upper bound on sub-steps per `advance()` call; a 3 s tab switch cannot explode the sim. */
+export const WET_INK_MAX_SUBSTEPS = 4;
+
+const WET_H = 1e-3;          // surface film counts as wet above this depth
+const WET_S = 0.02;          // fibers count as damp above this saturation
+const DRY_EPS = 1e-4;        // below this a pool is considered empty and flushed
+const TILE_SHIFT = 4;        // 16×16 tiles: dry tiles are skipped by the capillary sweeps
+const FACE_CFL = 0.2;        // max fraction of a cell's film that may cross one face per step
+
+/** Tunable physical constants of the CPU reference model. */
+export const WET_INK_PHYSICS = {
+  pressure: 0.35,            // ∇h → acceleration
+  paperSlope: 0.8,           // paper relief in the free surface (× granulation): film pools in valleys
+  tilt: 0.25,                // easel tilt → acceleration
+  damping: 0.82,             // per-step velocity retention on smooth paper
+  roughnessDrag: 0.25,       // extra damping on paper peaks
+  absorption: 0.08,          // surface → fiber soak rate per step (× capacity² × unsaturation)
+  fiberVolume: 0.1,          // water a fully sized-open fiber cell holds, in film-depth units
+  pigmentSieve: 0.55,        // fraction of pigment the fibers let through while soaking
+  capillary: 0.5,            // max fraction of the way to equal saturation one pair moves per sweep
+  capillaryIterations: 4,    // capillary sweeps per step (alternating direction)
+  mobilityExponent: 3,       // fiber conductance ∝ saturation^n (0 = linear diffusion)
+  kappaScale: 1.0,           // overall capillary conductance
+  felt: 0.04,                // conductance of the felt between strands (strand = 1)
+  chromatography: 0.95,      // pigment lags the water front in fibers (pale halo)
+  depositSurface: 0.001,     // surface pigment adsorption rate
+  depositFiber: 0.001,       // fiber pigment fixation rate
+  liftOff: 0.004,            // deposited pigment re-suspended by standing water (backruns)
+  evaporation: 0.003,        // surface film evaporation per step
+  edgeEvaporation: 5.0,      // extra evaporation at the contact line (× edgeDarkening); the
+                             // pressure gradient it creates pulls pigment outward — the coffee ring
+  fiberEvaporation: 0.0002,  // fiber water evaporation once the film is gone
+};
+
+interface SimSnapshot {
+  waterFilm: Float32Array;
+  velX: Float32Array;
+  velY: Float32Array;
+  pigmentSuspended: Float32Array;
+  fiberMoisture: Float32Array;
+  pigmentFiber: Float32Array;
+  pigmentDeposited: Float32Array;
+  waterInjected: number;
+  waterEvaporated: number;
+  pigmentInjected: number;
+  isActive: boolean;
+  box: [number, number, number, number];
+}
+
+export interface WetInkMassReport {
+  waterInjected: number;
+  waterPresent: number;
+  waterEvaporated: number;
+  /** |injected − present − evaporated| / injected */
+  waterError: number;
+  pigmentInjected: number;
+  pigmentPresent: number;
+  /** |injected − present| / injected */
+  pigmentError: number;
+}
+
+function sum(a: Float32Array): number {
+  let t = 0;
+  for (let i = 0; i < a.length; i++) t += a[i];
+  return t;
+}
+
 export class WetInkSimulation {
   readonly width: number;
   readonly height: number;
   readonly size: number;
 
   // Physical layers (all Float32Array)
-  waterFilm: Float32Array;      // h: surface water depth (0..2+)
-  waterTemp: Float32Array;      // ping-pong buffer for water
-  velX: Float32Array;           // u: surface fluid velocity X
-  velY: Float32Array;           // v: surface fluid velocity Y
-  pigmentSuspended: Float32Array;// p: mobile pigment floating in water film
-  pigmentTemp: Float32Array;    // ping-pong buffer for pigment
+  waterFilm: Float32Array;       // h: surface water depth
+  velX: Float32Array;            // u: surface velocity X (cells / step)
+  velY: Float32Array;            // v: surface velocity Y
+  pigmentSuspended: Float32Array;// p: pigment floating in the film
+  fiberMoisture: Float32Array;   // s: water wicked into fibers (0..capacity)
+  pigmentFiber: Float32Array;    // f: pigment travelling with fiber water
+  pigmentDeposited: Float32Array;// d: pigment bound to fibers (what you see once dry)
 
-  fiberMoisture: Float32Array;  // s: moisture absorbed into cellulose fibers (0..1)
-  fiberMoistureTemp: Float32Array;
-  pigmentDeposited: Float32Array;// d: stained pigment fixed to cellulose fibers (what you see!)
+  // Scratch buffers for flux passes
+  private waterTemp: Float32Array;
+  private pigmentTemp: Float32Array;
+  private pigmentFiberTemp: Float32Array;
+  private edgeMask: Uint8Array;
+  /** Water the fibers of each cell can hold: paper sizing × fiber volume. */
+  fiberCapacity: Float32Array;
+  private invFiberCapacity: Float32Array;
+  private condRight: Float32Array;
+  private condDown: Float32Array;
+  private condDownRight: Float32Array;
+  private condDownLeft: Float32Array;
+  // Sparse bookkeeping: which 16×16 tiles hold a capillary donor, and which to sweep
+  private readonly tilesX: number;
+  private tileWet: Uint8Array;
+  private tileActive: Uint8Array;
 
   paper: PaperMaps;
   paperConfig: WetInkPaperConfig;
   pigmentConfig: WetInkPigmentConfig;
   params: WetInkSimParams;
 
-  // Precomputed High-Performance Optics & Substrate Relief
+  // Precomputed optics & substrate relief
   kmLUT: KubelkaMunkLUT;
   paperReliefR: Float32Array;
   paperReliefG: Float32Array;
   paperReliefB: Float32Array;
 
-  // Active Simulation Bounding Box (Only simulate wet regions, 10x-50x speedup)
+  // Active bounding box (only wet regions are simulated)
   minActiveX: number = 0;
   minActiveY: number = 0;
   maxActiveX: number = 0;
   maxActiveY: number = 0;
   isActive: boolean = false;
 
-  // Stats / Monitoring
-  totalWater: number = 0;
+  // Mass bookkeeping
+  waterInjected: number = 0;
+  waterEvaporated: number = 0;
+  pigmentInjected: number = 0;
+
+  // Stats / monitoring
+  totalWater: number = 0;          // surface + fiber water currently on the page
   totalDepositedPigment: number = 0;
   activeFluidCells: number = 0;
   stepCount: number = 0;
+
+  private timeAccumulator: number = 0;
 
   constructor(
     width: number,
@@ -56,15 +165,26 @@ export class WetInkSimulation {
     this.size = width * height;
 
     this.waterFilm = new Float32Array(this.size);
-    this.waterTemp = new Float32Array(this.size);
     this.velX = new Float32Array(this.size);
     this.velY = new Float32Array(this.size);
     this.pigmentSuspended = new Float32Array(this.size);
-    this.pigmentTemp = new Float32Array(this.size);
-
     this.fiberMoisture = new Float32Array(this.size);
-    this.fiberMoistureTemp = new Float32Array(this.size);
+    this.pigmentFiber = new Float32Array(this.size);
     this.pigmentDeposited = new Float32Array(this.size);
+
+    this.waterTemp = new Float32Array(this.size);
+    this.pigmentTemp = new Float32Array(this.size);
+    this.pigmentFiberTemp = new Float32Array(this.size);
+    this.edgeMask = new Uint8Array(this.size);
+    this.fiberCapacity = new Float32Array(this.size);
+    this.invFiberCapacity = new Float32Array(this.size);
+    this.condRight = new Float32Array(this.size);
+    this.condDown = new Float32Array(this.size);
+    this.condDownRight = new Float32Array(this.size);
+    this.condDownLeft = new Float32Array(this.size);
+    this.tilesX = (width >> TILE_SHIFT) + 1;
+    this.tileWet = new Uint8Array(this.tilesX * ((height >> TILE_SHIFT) + 1));
+    this.tileActive = new Uint8Array(this.tileWet.length);
 
     this.paper = paper;
     this.paperConfig = paperConfig;
@@ -75,12 +195,16 @@ export class WetInkSimulation {
     this.paperReliefG = new Float32Array(this.size);
     this.paperReliefB = new Float32Array(this.size);
     this.updatePaperRelief();
+    this.updateFiberCapacity();
 
-    const km = pigmentConfig.km || {
-      K: [pigmentConfig.r > 150 ? 0.3 : 2.5, pigmentConfig.g > 150 ? 0.3 : 2.5, pigmentConfig.b > 150 ? 0.3 : 2.5],
-      S: [0.3, 0.3, 0.3],
+    this.kmLUT = new KubelkaMunkLUT(this.kmFor(pigmentConfig));
+  }
+
+  private kmFor(config: WetInkPigmentConfig) {
+    return config.km || {
+      K: [config.r > 150 ? 0.3 : 2.5, config.g > 150 ? 0.3 : 2.5, config.b > 150 ? 0.3 : 2.5] as [number, number, number],
+      S: [0.3, 0.3, 0.3] as [number, number, number],
     };
-    this.kmLUT = new KubelkaMunkLUT(km);
   }
 
   private updatePaperRelief(rakingAngle: number = 2.4, rakingIntensity: number = 0.65) {
@@ -98,19 +222,25 @@ export class WetInkSimulation {
     }
   }
 
+  private updateFiberCapacity() {
+    const vol = WET_INK_PHYSICS.fiberVolume;
+    for (let i = 0; i < this.size; i++) {
+      this.fiberCapacity[i] = this.paper.capacityMap[i] * vol;
+      this.invFiberCapacity[i] = 1 / this.fiberCapacity[i];
+    }
+    this.updateConductance();
+  }
+
   setPaper(paper: PaperMaps, config: WetInkPaperConfig) {
     this.paper = paper;
     this.paperConfig = config;
     this.updatePaperRelief();
+    this.updateFiberCapacity();
   }
 
   setPigment(config: WetInkPigmentConfig) {
     this.pigmentConfig = config;
-    const km = config.km || {
-      K: [config.r > 150 ? 0.3 : 2.5, config.g > 150 ? 0.3 : 2.5, config.b > 150 ? 0.3 : 2.5],
-      S: [0.3, 0.3, 0.3],
-    };
-    this.kmLUT = new KubelkaMunkLUT(km);
+    this.kmLUT = new KubelkaMunkLUT(this.kmFor(config));
   }
 
   setParams(params: WetInkSimParams) {
@@ -120,18 +250,21 @@ export class WetInkSimulation {
   clear() {
     this.pushSnapshot();
     this.waterFilm.fill(0);
-    this.waterTemp.fill(0);
     this.velX.fill(0);
     this.velY.fill(0);
     this.pigmentSuspended.fill(0);
-    this.pigmentTemp.fill(0);
     this.fiberMoisture.fill(0);
-    this.fiberMoistureTemp.fill(0);
+    this.pigmentFiber.fill(0);
     this.pigmentDeposited.fill(0);
     this.stepCount = 0;
     this.totalWater = 0;
     this.totalDepositedPigment = 0;
     this.activeFluidCells = 0;
+    this.waterInjected = 0;
+    this.waterEvaporated = 0;
+    this.pigmentInjected = 0;
+    this.timeAccumulator = 0;
+    this.tileWet.fill(0);
     this.isActive = false;
     this.minActiveX = 0;
     this.minActiveY = 0;
@@ -139,43 +272,80 @@ export class WetInkSimulation {
     this.maxActiveY = 0;
   }
 
-  // Snapshot, Undo & Redo stack
-  private historyStack: Array<{
-    waterFilm: Float32Array;
-    velX: Float32Array;
-    velY: Float32Array;
-    pigmentSuspended: Float32Array;
-    fiberMoisture: Float32Array;
-    pigmentDeposited: Float32Array;
-    totalWater: number;
-    totalDepositedPigment: number;
-  }> = [];
+  /** Conservation check: how far the pools drift from what went in. */
+  massReport(): WetInkMassReport {
+    const waterPresent = sum(this.waterFilm) + sum(this.fiberMoisture);
+    const pigmentPresent = sum(this.pigmentSuspended) + sum(this.pigmentFiber) + sum(this.pigmentDeposited);
+    const wIn = this.waterInjected;
+    const pIn = this.pigmentInjected;
+    return {
+      waterInjected: wIn,
+      waterPresent,
+      waterEvaporated: this.waterEvaporated,
+      waterError: wIn > 0 ? Math.abs(wIn - waterPresent - this.waterEvaporated) / wIn : 0,
+      pigmentInjected: pIn,
+      pigmentPresent,
+      pigmentError: pIn > 0 ? Math.abs(pIn - pigmentPresent) / pIn : 0,
+    };
+  }
 
-  private redoStack: Array<{
-    waterFilm: Float32Array;
-    velX: Float32Array;
-    velY: Float32Array;
-    pigmentSuspended: Float32Array;
-    fiberMoisture: Float32Array;
-    pigmentDeposited: Float32Array;
-    totalWater: number;
-    totalDepositedPigment: number;
-  }> = [];
+  // ---------------------------------------------------------------------------
+  // Undo / redo
+  // ---------------------------------------------------------------------------
 
-  pushSnapshot() {
-    if (this.historyStack.length >= 10) {
-      this.historyStack.shift();
-    }
-    this.historyStack.push({
+  private historyStack: SimSnapshot[] = [];
+  private redoStack: SimSnapshot[] = [];
+
+  private capture(): SimSnapshot {
+    return {
       waterFilm: new Float32Array(this.waterFilm),
       velX: new Float32Array(this.velX),
       velY: new Float32Array(this.velY),
       pigmentSuspended: new Float32Array(this.pigmentSuspended),
       fiberMoisture: new Float32Array(this.fiberMoisture),
+      pigmentFiber: new Float32Array(this.pigmentFiber),
       pigmentDeposited: new Float32Array(this.pigmentDeposited),
-      totalWater: this.totalWater,
-      totalDepositedPigment: this.totalDepositedPigment,
-    });
+      waterInjected: this.waterInjected,
+      waterEvaporated: this.waterEvaporated,
+      pigmentInjected: this.pigmentInjected,
+      isActive: this.isActive,
+      box: [this.minActiveX, this.minActiveY, this.maxActiveX, this.maxActiveY],
+    };
+  }
+
+  private restore(snap: SimSnapshot) {
+    this.waterFilm.set(snap.waterFilm);
+    this.velX.set(snap.velX);
+    this.velY.set(snap.velY);
+    this.pigmentSuspended.set(snap.pigmentSuspended);
+    this.fiberMoisture.set(snap.fiberMoisture);
+    this.pigmentFiber.set(snap.pigmentFiber);
+    this.pigmentDeposited.set(snap.pigmentDeposited);
+    this.waterInjected = snap.waterInjected;
+    this.waterEvaporated = snap.waterEvaporated;
+    this.pigmentInjected = snap.pigmentInjected;
+    this.isActive = snap.isActive;
+    [this.minActiveX, this.minActiveY, this.maxActiveX, this.maxActiveY] = snap.box;
+    this.totalWater = sum(this.waterFilm) + sum(this.fiberMoisture);
+    this.totalDepositedPigment = sum(this.pigmentDeposited);
+    this.activeFluidCells = this.totalWater > 0 ? 1 : 0;
+    this.rebuildTiles();
+  }
+
+  private rebuildTiles() {
+    this.tileWet.fill(0);
+    for (let i = 0; i < this.size; i++) {
+      if (this.waterFilm[i] > 0 || this.fiberMoisture[i] > 0) {
+        this.tileWet[((((i / this.width) | 0) >> TILE_SHIFT) * this.tilesX) + ((i % this.width) >> TILE_SHIFT)] = 1;
+      }
+    }
+  }
+
+  pushSnapshot() {
+    if (this.historyStack.length >= 10) {
+      this.historyStack.shift();
+    }
+    this.historyStack.push(this.capture());
     // Any new action clears the redo branch
     this.redoStack = [];
   }
@@ -191,63 +361,54 @@ export class WetInkSimulation {
   undo(): boolean {
     const snap = this.historyStack.pop();
     if (!snap) return false;
-
-    // Save current state to redo
-    this.redoStack.push({
-      waterFilm: new Float32Array(this.waterFilm),
-      velX: new Float32Array(this.velX),
-      velY: new Float32Array(this.velY),
-      pigmentSuspended: new Float32Array(this.pigmentSuspended),
-      fiberMoisture: new Float32Array(this.fiberMoisture),
-      pigmentDeposited: new Float32Array(this.pigmentDeposited),
-      totalWater: this.totalWater,
-      totalDepositedPigment: this.totalDepositedPigment,
-    });
-
-    this.waterFilm.set(snap.waterFilm);
-    this.waterTemp.fill(0);
-    this.velX.set(snap.velX);
-    this.velY.set(snap.velY);
-    this.pigmentSuspended.set(snap.pigmentSuspended);
-    this.pigmentTemp.fill(0);
-    this.fiberMoisture.set(snap.fiberMoisture);
-    this.fiberMoistureTemp.fill(0);
-    this.pigmentDeposited.set(snap.pigmentDeposited);
-    this.totalWater = snap.totalWater;
-    this.totalDepositedPigment = snap.totalDepositedPigment;
-    this.activeFluidCells = snap.totalWater > 0 ? 1 : 0;
+    this.redoStack.push(this.capture());
+    this.restore(snap);
     return true;
   }
 
   redo(): boolean {
     const snap = this.redoStack.pop();
     if (!snap) return false;
-
-    // Save current state back to undo
-    this.historyStack.push({
-      waterFilm: new Float32Array(this.waterFilm),
-      velX: new Float32Array(this.velX),
-      velY: new Float32Array(this.velY),
-      pigmentSuspended: new Float32Array(this.pigmentSuspended),
-      fiberMoisture: new Float32Array(this.fiberMoisture),
-      pigmentDeposited: new Float32Array(this.pigmentDeposited),
-      totalWater: this.totalWater,
-      totalDepositedPigment: this.totalDepositedPigment,
-    });
-
-    this.waterFilm.set(snap.waterFilm);
-    this.waterTemp.fill(0);
-    this.velX.set(snap.velX);
-    this.velY.set(snap.velY);
-    this.pigmentSuspended.set(snap.pigmentSuspended);
-    this.pigmentTemp.fill(0);
-    this.fiberMoisture.set(snap.fiberMoisture);
-    this.fiberMoistureTemp.fill(0);
-    this.pigmentDeposited.set(snap.pigmentDeposited);
-    this.totalWater = snap.totalWater;
-    this.totalDepositedPigment = snap.totalDepositedPigment;
-    this.activeFluidCells = snap.totalWater > 0 ? 1 : 0;
+    this.historyStack.push(this.capture());
+    this.restore(snap);
     return true;
+  }
+
+  // ---------------------------------------------------------------------------
+  // Input
+  // ---------------------------------------------------------------------------
+
+  private growActiveBox(minX: number, minY: number, maxX: number, maxY: number) {
+    const pad = 4;
+    if (!this.isActive) {
+      this.minActiveX = Math.max(1, minX - pad);
+      this.maxActiveX = Math.min(this.width - 2, maxX + pad);
+      this.minActiveY = Math.max(1, minY - pad);
+      this.maxActiveY = Math.min(this.height - 2, maxY + pad);
+      this.isActive = true;
+    } else {
+      this.minActiveX = Math.max(1, Math.min(this.minActiveX, minX - pad));
+      this.maxActiveX = Math.min(this.width - 2, Math.max(this.maxActiveX, maxX + pad));
+      this.minActiveY = Math.max(1, Math.min(this.minActiveY, minY - pad));
+      this.maxActiveY = Math.min(this.height - 2, Math.max(this.maxActiveY, maxY + pad));
+    }
+  }
+
+  /** Adds water and pigment to one cell, clamped, and books exactly what was added. */
+  private deposit(idx: number, water: number, pigment: number, maxWater: number) {
+    this.tileWet[((((idx / this.width) | 0) >> TILE_SHIFT) * this.tilesX) + ((idx % this.width) >> TILE_SHIFT)] = 1;
+    const h0 = this.waterFilm[idx];
+    const h1 = Math.min(maxWater, h0 + water);
+    if (h1 > h0) {
+      this.waterFilm[idx] = h1;
+      this.waterInjected += h1 - h0;
+    }
+    const p0 = this.pigmentSuspended[idx];
+    const p1 = Math.min(3.0, p0 + pigment);
+    if (p1 > p0) {
+      this.pigmentSuspended[idx] = p1;
+      this.pigmentInjected += p1 - p0;
+    }
   }
 
   // Pass 1: Add droplet / stamp
@@ -259,92 +420,44 @@ export class WetInkSimulation {
     pigmentAmount: number,
     dryBrushFilter: boolean = false
   ) {
-    const minX = Math.max(0, Math.floor(centerX - radius));
-    const maxX = Math.min(this.width - 1, Math.ceil(centerX + radius));
-    const minY = Math.max(0, Math.floor(centerY - radius));
-    const maxY = Math.min(this.height - 1, Math.ceil(centerY + radius));
+    // Keep the stamp one cell away from the border: border cells are never simulated.
+    const minX = Math.max(1, Math.floor(centerX - radius));
+    const maxX = Math.min(this.width - 2, Math.ceil(centerX + radius));
+    const minY = Math.max(1, Math.floor(centerY - radius));
+    const maxY = Math.min(this.height - 2, Math.ceil(centerY + radius));
+    if (minX > maxX || minY > maxY || radius <= 0) return;
 
-    if (!this.isActive) {
-      this.minActiveX = Math.max(1, minX - 4);
-      this.maxActiveX = Math.min(this.width - 2, maxX + 4);
-      this.minActiveY = Math.max(1, minY - 4);
-      this.maxActiveY = Math.min(this.height - 2, maxY + 4);
-      this.isActive = true;
-    } else {
-      this.minActiveX = Math.max(1, Math.min(this.minActiveX, minX - 4));
-      this.maxActiveX = Math.min(this.width - 2, Math.max(this.maxActiveX, maxX + 4));
-      this.minActiveY = Math.max(1, Math.min(this.minActiveY, minY - 4));
-      this.maxActiveY = Math.min(this.height - 2, Math.max(this.maxActiveY, maxY + 4));
-    }
-
+    this.growActiveBox(minX, minY, maxX, maxY);
     const rSq = radius * radius;
+    const density = this.pigmentConfig.density;
 
     for (let y = minY; y <= maxY; y++) {
       const dy = y - centerY;
       for (let x = minX; x <= maxX; x++) {
         const dx = x - centerX;
         const dSq = dx * dx + dy * dy;
-        if (dSq <= rSq) {
-          const idx = y * this.width + x;
-          const dist = Math.sqrt(dSq);
-          const falloff = Math.max(0, 1 - dist / radius);
+        if (dSq > rSq) continue;
+        const idx = y * this.width + x;
+        const falloff = Math.max(0, 1 - Math.sqrt(dSq) / radius);
 
-          // Dry brush condition: skip peaks if dryBrushFilter is active
-          if (dryBrushFilter) {
-            const paperHeight = this.paper.heightMap[idx];
-            // If paper peak exceeds contact threshold, brush hair skips over it
-            if (paperHeight > 0.62) {
-              continue;
-            }
-          }
+        // Dry brush: bristles skip over paper peaks
+        if (dryBrushFilter && this.paper.heightMap[idx] > 0.62) continue;
 
-          const addedWater = waterAmount * falloff;
-          const addedPigment = pigmentAmount * falloff * this.pigmentConfig.density;
-
-          this.waterFilm[idx] = Math.min(2.5, this.waterFilm[idx] + addedWater);
-          this.pigmentSuspended[idx] = Math.min(3.0, this.pigmentSuspended[idx] + addedPigment);
-        }
+        this.deposit(idx, waterAmount * falloff, pigmentAmount * falloff * density, 2.5);
       }
     }
   }
 
-  // Force-dry: Evaporates all water immediately and deposits suspended pigment
-  forceDry() {
-    for (let i = 0; i < this.size; i++) {
-      if (this.pigmentSuspended[i] > 0) {
-        this.pigmentDeposited[i] += this.pigmentSuspended[i];
-        this.pigmentSuspended[i] = 0;
-      }
-      this.waterFilm[i] = 0;
-      this.fiberMoisture[i] = 0;
-      this.velX[i] = 0;
-      this.velY[i] = 0;
-    }
-    this.totalWater = 0;
-    this.activeFluidCells = 0;
-    this.isActive = false;
-  }
-
-  // Stamped Vermilion / Hanko Seal with authentic ink feathering
+  // Stamped Vermilion / Hanko Seal
   injectSeal(centerX: number, centerY: number, size: number = 32) {
     const half = Math.floor(size / 2);
-    const minX = Math.max(0, Math.floor(centerX - half));
-    const maxX = Math.min(this.width - 1, Math.ceil(centerX + half));
-    const minY = Math.max(0, Math.floor(centerY - half));
-    const maxY = Math.min(this.height - 1, Math.ceil(centerY + half));
+    const minX = Math.max(1, Math.floor(centerX - half));
+    const maxX = Math.min(this.width - 2, Math.ceil(centerX + half));
+    const minY = Math.max(1, Math.floor(centerY - half));
+    const maxY = Math.min(this.height - 2, Math.ceil(centerY + half));
+    if (minX > maxX || minY > maxY) return;
 
-    if (!this.isActive) {
-      this.minActiveX = Math.max(1, minX - 4);
-      this.maxActiveX = Math.min(this.width - 2, maxX + 4);
-      this.minActiveY = Math.max(1, minY - 4);
-      this.maxActiveY = Math.min(this.height - 2, maxY + 4);
-      this.isActive = true;
-    } else {
-      this.minActiveX = Math.max(1, Math.min(this.minActiveX, minX - 4));
-      this.maxActiveX = Math.min(this.width - 2, Math.max(this.maxActiveX, maxX + 4));
-      this.minActiveY = Math.max(1, Math.min(this.minActiveY, minY - 4));
-      this.maxActiveY = Math.min(this.height - 2, Math.max(this.maxActiveY, maxY + 4));
-    }
+    this.growActiveBox(minX, minY, maxX, maxY);
 
     for (let y = minY; y <= maxY; y++) {
       for (let x = minX; x <= maxX; x++) {
@@ -358,276 +471,486 @@ export class WetInkSimulation {
         const isInnerDot = (dx >= 5 && dx <= 8 && dy >= 5 && dy <= 8);
 
         if (isBorder || isInnerCross || isInnerDot) {
-          const idx = y * this.width + x;
-          this.waterFilm[idx] = Math.min(2.2, this.waterFilm[idx] + 0.9);
-          this.pigmentSuspended[idx] = Math.min(3.0, this.pigmentSuspended[idx] + 1.8);
+          this.deposit(y * this.width + x, 0.9, 1.8, 2.2);
         }
       }
     }
   }
 
-  // Core Simulation Step (7 Passes strictly in order, optimized with active bounding box)
-  step(dt: number = 0.016) {
+  // Force-dry: evaporates all water immediately and fixes all pigment in place
+  forceDry() {
+    for (let i = 0; i < this.size; i++) {
+      this.flushCell(i);
+      this.velX[i] = 0;
+      this.velY[i] = 0;
+    }
+    this.totalWater = 0;
+    this.totalDepositedPigment = sum(this.pigmentDeposited);
+    this.activeFluidCells = 0;
+    this.tileWet.fill(0);
+    this.isActive = false;
+  }
+
+  /** Evaporates whatever water a cell holds and binds all its mobile pigment. */
+  private flushCell(i: number) {
+    this.waterEvaporated += this.waterFilm[i] + this.fiberMoisture[i];
+    this.waterFilm[i] = 0;
+    this.fiberMoisture[i] = 0;
+    this.pigmentDeposited[i] += this.pigmentSuspended[i] + this.pigmentFiber[i];
+    this.pigmentSuspended[i] = 0;
+    this.pigmentFiber[i] = 0;
+  }
+
+  // ---------------------------------------------------------------------------
+  // Time stepping
+  // ---------------------------------------------------------------------------
+
+  /**
+   * Advances by wall-clock time using fixed sub-steps. Time beyond
+   * WET_INK_MAX_SUBSTEPS steps is dropped, so a long pause (tab switch)
+   * slows the ink down instead of destabilising it. Returns steps taken.
+   */
+  advance(seconds: number): number {
+    if (!this.isActive) {
+      this.timeAccumulator = 0;
+      return 0;
+    }
+    this.timeAccumulator = Math.min(
+      this.timeAccumulator + Math.max(0, seconds),
+      WET_INK_DT * WET_INK_MAX_SUBSTEPS
+    );
+    let steps = 0;
+    while (this.timeAccumulator >= WET_INK_DT - 1e-9 && this.isActive) {
+      this.step(WET_INK_DT);
+      this.timeAccumulator -= WET_INK_DT;
+      steps++;
+    }
+    return steps;
+  }
+
+  /** One simulation step. `dt` is clamped to [0, 2/60]; rates are per 1/60 s. */
+  step(dt: number = WET_INK_DT) {
     if (!this.isActive) return;
+    const k = Math.max(0, Math.min(2 * WET_INK_DT, Number.isFinite(dt) ? dt : 0)) / WET_INK_DT;
+    if (k === 0) return;
 
     this.stepCount++;
+    const P = WET_INK_PHYSICS;
     const w = this.width;
-    const h = this.height;
+    const x0 = Math.max(1, this.minActiveX);
+    const x1 = Math.min(w - 2, this.maxActiveX);
+    const y0 = Math.max(1, this.minActiveY);
+    const y1 = Math.min(this.height - 2, this.maxActiveY);
 
-    const startX = Math.max(1, this.minActiveX);
-    const endX = Math.min(w - 2, this.maxActiveX);
-    const startY = Math.max(1, this.minActiveY);
-    const endY = Math.min(h - 2, this.maxActiveY);
+    const h = this.waterFilm;
+    const u = this.velX;
+    const v = this.velY;
+    const p = this.pigmentSuspended;
+    const s = this.fiberMoisture;
+    const f = this.pigmentFiber;
+    const d = this.pigmentDeposited;
+    const paperH = this.paper.heightMap;
+    const cap = this.fiberCapacity;
+    const net = this.paper.fiberNetwork;
+    const params = this.params;
+    const pigment = this.pigmentConfig;
 
-    // --- Pass 2 & 3: Velocity update from water height gradient + Paper roughness drag ---
-    let activeCount = 0;
-    let totalWaterAcc = 0;
-    let totalDepositedAcc = 0;
+    const isWet = (i: number) => h[i] > WET_H || s[i] > WET_S;
 
-    const gravityX = (this.params.tiltX || 0) * 1.8;
-    const gravityY = (this.params.tiltY || 0) * 1.8;
-
-    for (let y = startY; y <= endY; y++) {
-      const yOffset = y * w;
-      for (let x = startX; x <= endX; x++) {
-        const idx = yOffset + x;
-        const water = this.waterFilm[idx];
-
-        if (water > 0.0005) {
-          activeCount++;
-          totalWaterAcc += water;
-
-          // Gradient of surface water level
-          const dhx = this.waterFilm[idx + 1] - this.waterFilm[idx - 1];
-          const dhy = this.waterFilm[idx + w] - this.waterFilm[idx - w];
-
-          // Acceleration from pressure gradient + easel tilt
-          const accelX = -dhx * 2.8 + gravityX;
-          const accelY = -dhy * 2.8 + gravityY;
-
-          // Drag from paper roughness (higher roughness = more resistance)
-          const roughnessDrag = 1.0 - this.paper.heightMap[idx] * 0.45;
-          const damping = 0.88 * roughnessDrag;
-
-          let vx = (this.velX[idx] + accelX * dt * 8.0) * damping;
-          let vy = (this.velY[idx] + accelY * dt * 8.0) * damping;
-
-          // CFL safety clamp: max velocity 1.5 pixels per step
-          const speed = Math.hypot(vx, vy);
-          if (speed > 1.5) {
-            vx = (vx / speed) * 1.5;
-            vy = (vy / speed) * 1.5;
-          }
-
-          this.velX[idx] = vx;
-          this.velY[idx] = vy;
+    // --- Pass 2: face velocities from the free-surface gradient ------------
+    // Staggered (MAC) grid: u[i] lives on the face between i and i+1, v[i] on
+    // the face between i and i+w. Collocated central differences would let odd
+    // and even cells decouple into a checkerboard. Water only moves between
+    // cells inside the wet area — the contact line is pinned.
+    const gx = (params.tiltX || 0) * P.tilt;
+    const gy = (params.tiltY || 0) * P.tilt;
+    const lim = FACE_CFL / k;
+    // Heavy, granulating pigments ride the paper relief: the film pools in the
+    // valleys and leaves its pigment there when it dries.
+    const slope = P.paperSlope * pigment.granulationFactor * params.granulationStrength;
+    for (let y = y0 - 1; y <= y1; y++) {
+      for (let x = x0 - 1; x <= x1; x++) {
+        const i = y * w + x;
+        // Horizontal face (i | i+1), both cells interior
+        if (y >= 1 && x >= 1 && x + 1 <= w - 2 && (h[i] > WET_H || h[i + 1] > WET_H) && isWet(i) && isWet(i + 1)) {
+          const drop = (h[i] + paperH[i] * slope) - (h[i + 1] + paperH[i + 1] * slope);
+          const damp = Math.pow(P.damping * (1 - (paperH[i] + paperH[i + 1]) * 0.5 * P.roughnessDrag), k);
+          const vx = (u[i] + (drop * P.pressure + gx) * k) * damp;
+          u[i] = vx > lim ? lim : vx < -lim ? -lim : vx;
         } else {
-          this.velX[idx] = 0;
-          this.velY[idx] = 0;
+          u[i] = 0;
+        }
+        // Vertical face (i | i+w)
+        const j = i + w;
+        if (x >= 1 && y >= 1 && y + 1 <= this.height - 2 && (h[i] > WET_H || h[j] > WET_H) && isWet(i) && isWet(j)) {
+          const drop = (h[i] + paperH[i] * slope) - (h[j] + paperH[j] * slope);
+          const damp = Math.pow(P.damping * (1 - (paperH[i] + paperH[j]) * 0.5 * P.roughnessDrag), k);
+          const vy = (v[i] + (drop * P.pressure + gy) * k) * damp;
+          v[i] = vy > lim ? lim : vy < -lim ? -lim : vy;
+        } else {
+          v[i] = 0;
         }
       }
     }
 
-    // --- Pass 4: Advect Suspended Pigment (Semi-Lagrangian transport on velocity) ---
-    this.pigmentTemp.set(this.pigmentSuspended);
-
-    for (let y = startY; y <= endY; y++) {
-      const yOffset = y * w;
-      for (let x = startX; x <= endX; x++) {
-        const idx = yOffset + x;
-        if (this.waterFilm[idx] > 0.001) {
-          const vx = this.velX[idx];
-          const vy = this.velY[idx];
-
-          // Backtrace point
-          const srcX = Math.max(0, Math.min(w - 1.01, x - vx * 1.2));
-          const srcY = Math.max(0, Math.min(h - 1.01, y - vy * 1.2));
-
-          // Bilinear sample from pigmentTemp
-          const x0 = Math.floor(srcX);
-          const y0 = Math.floor(srcY);
-          const x1 = x0 + 1;
-          const y1 = y0 + 1;
-          const fx = srcX - x0;
-          const fy = srcY - y0;
-
-          const p00 = this.pigmentTemp[y0 * w + x0];
-          const p10 = this.pigmentTemp[y0 * w + x1];
-          const p01 = this.pigmentTemp[y1 * w + x0];
-          const p11 = this.pigmentTemp[y1 * w + x1];
-
-          const pTop = p00 * (1 - fx) + p10 * fx;
-          const pBot = p01 * (1 - fx) + p11 * fx;
-          this.pigmentSuspended[idx] = pTop * (1 - fy) + pBot * fy;
-        }
+    // --- Pass 3/4: conservative upwind transport of film + pigment ----------
+    // Each face moves mass from its upwind cell; a cell has four faces each
+    // capped at FACE_CFL, so no cell can be drained below zero.
+    const hN = this.waterTemp;
+    const pN = this.pigmentTemp;
+    for (let y = y0 - 1; y <= y1 + 1; y++) {
+      const row = y * w;
+      for (let x = x0 - 1; x <= x1 + 1; x++) {
+        hN[row + x] = h[row + x];
+        pN[row + x] = p[row + x];
       }
     }
-
-    // --- Pass 5: Capillary Flow in Paper Fibers with Threshold & Precomputed Anisotropy ---
-    this.fiberMoistureTemp.set(this.fiberMoisture);
-
-    const threshold = this.params.enableCapillaryThreshold ? this.params.capillaryThreshold : 0.001;
-    const capillaryRate = this.params.capillarySpeed * this.pigmentConfig.bleedSpeed * 0.22;
-
-    const paper = this.paper;
-    const fiberMoistureTemp = this.fiberMoistureTemp;
-    const capacityMap = paper.capacityMap;
-    const fiberWeightH = paper.fiberWeightH;
-    const fiberWeightV = paper.fiberWeightV;
-    const fiberWeightD1 = paper.fiberWeightD1;
-    const fiberWeightD2 = paper.fiberWeightD2;
-
-    for (let y = startY; y <= endY; y++) {
-      const yOffset = y * w;
-      for (let x = startX; x <= endX; x++) {
-        const idx = yOffset + x;
-        const moisture = fiberMoistureTemp[idx];
-
-        if (moisture > threshold) {
-          const wH = fiberWeightH[idx];
-          const wV = fiberWeightV[idx];
-          const wD1 = fiberWeightD1[idx] * 0.707;
-          const wD2 = fiberWeightD2[idx] * 0.707;
-
-          // 8 neighbor indices and precalculated anisotropic conductance
-          const nIndices = [
-            idx + 1, idx - 1, idx + w, idx - w,
-            idx + w + 1, idx + w - 1, idx - w + 1, idx - w - 1
-          ];
-          const weights = [wH, wH, wV, wV, wD1, wD2, wD2, wD1];
-
-          for (let i = 0; i < 8; i++) {
-            const nIdx = nIndices[i];
-            const nCap = capacityMap[nIdx];
-            const nMoisture = fiberMoistureTemp[nIdx];
-
-            if (nMoisture < moisture && nMoisture < nCap) {
-              const flow = (moisture - nMoisture) * capillaryRate * weights[i];
-              this.fiberMoisture[idx] -= flow * 0.125;
-              this.fiberMoisture[nIdx] = Math.min(nCap, this.fiberMoisture[nIdx] + flow * 0.125);
-
-              // Drag some suspended pigment into fiber capillary zone
-              if (this.pigmentSuspended[idx] > 0.005) {
-                const pigmentBleed = flow * 0.18 * this.pigmentSuspended[idx];
-                this.pigmentSuspended[idx] -= pigmentBleed;
-                this.pigmentDeposited[nIdx] += pigmentBleed;
-              }
-            }
+    for (let y = y0 - 1; y <= y1; y++) {
+      for (let x = x0 - 1; x <= x1; x++) {
+        const i = y * w + x;
+        const fu = u[i] * k;
+        if (fu !== 0) {
+          const src = fu > 0 ? i : i + 1;
+          const dst = fu > 0 ? i + 1 : i;
+          const m = h[src] * Math.abs(fu);
+          if (m > 0) {
+            const pm = (p[src] / h[src]) * m;
+            hN[src] -= m;
+            hN[dst] += m;
+            pN[src] -= pm;
+            pN[dst] += pm;
+          }
+        }
+        const fv = v[i] * k;
+        if (fv !== 0) {
+          const src = fv > 0 ? i : i + w;
+          const dst = fv > 0 ? i + w : i;
+          const m = h[src] * Math.abs(fv);
+          if (m > 0) {
+            const pm = (p[src] / h[src]) * m;
+            hN[src] -= m;
+            hN[dst] += m;
+            pN[src] -= pm;
+            pN[dst] += pm;
           }
         }
       }
     }
-
-    // --- Pass 6: Transfer Surface -> Fibers & Granulation Deposition ---
-    const absorptionRate = 0.035 * (1.0 / Math.max(0.1, this.paperConfig.capacity));
-    const depositionBase = 0.02 * this.params.granulationStrength;
-
-    for (let y = startY; y <= endY; y++) {
-      const yOffset = y * w;
-      for (let x = startX; x <= endX; x++) {
-        const i = yOffset + x;
-        const water = this.waterFilm[i];
-        const cap = capacityMap[i];
-        const moisture = this.fiberMoisture[i];
-
-        // Surface water soaks into fibers
-        if (water > 0.0001 && moisture < cap) {
-          const soak = Math.min(water, (cap - moisture) * absorptionRate);
-          this.waterFilm[i] -= soak;
-          this.fiberMoisture[i] += soak;
-        }
-
-        // Pigment deposition onto fibers
-        const susp = this.pigmentSuspended[i];
-        if (susp > 0.0001) {
-          // Granulation effect: pigment deposits faster in valleys (1 - heightMap)
-          const valleyFactor = 0.5 + (1.0 - paper.heightMap[i]) * 1.5 * this.pigmentConfig.granulationFactor;
-          const depAmount = Math.min(susp, susp * depositionBase * valleyFactor);
-
-          this.pigmentSuspended[i] -= depAmount;
-          this.pigmentDeposited[i] += depAmount;
-        }
-
-        totalDepositedAcc += this.pigmentDeposited[i];
+    for (let y = y0 - 1; y <= y1 + 1; y++) {
+      const row = y * w;
+      for (let x = x0 - 1; x <= x1 + 1; x++) {
+        const i = row + x;
+        h[i] = hN[i] > 0 ? hN[i] : 0;
+        p[i] = pN[i] > 0 ? pN[i] : 0;
       }
     }
 
-    // --- Pass 7: Evaporate & Edge Darkening (Coffee-Ring Effect) ---
-    const evapRate = this.params.evaporationRate * this.paperConfig.evaporationMult * 0.004;
-    const edgeDarken = this.params.edgeDarkeningStrength * this.pigmentConfig.edgeDarkening;
+    // --- Pass 5a: surface → fiber absorption --------------------------------
+    const sieve = P.pigmentSieve * (1 - pigment.granulationFactor * 0.5);
+    // Unsized paper (high capacity) drinks fast; sized paper lets the film stand.
+    const absorb = P.absorption * this.paperConfig.capacity * this.paperConfig.capacity * k;
+    for (let y = y0; y <= y1; y++) {
+      for (let x = x0; x <= x1; x++) {
+        const i = y * w + x;
+        const hi = h[i];
+        const room = cap[i] - s[i];
+        if (hi <= DRY_EPS || room <= 0) continue;
+        // Soak rate falls as the fibers saturate
+        const q = Math.min(hi, absorb * (room / cap[i]) * (0.35 + 0.65 * net[i]), room);
+        const pq = (p[i] * q / hi) * sieve;
+        h[i] -= q;
+        s[i] += q;
+        p[i] -= pq;
+        f[i] += pq;
+      }
+    }
 
-    for (let y = startY; y <= endY; y++) {
-      const yOffset = y * w;
-      for (let x = startX; x <= endX; x++) {
-        const idx = yOffset + x;
-        const water = this.waterFilm[idx];
-        const moisture = this.fiberMoisture[idx];
+    // --- Pass 5b: capillary flow along fibers with threshold ε_min ----------
+    const threshold = params.enableCapillaryThreshold ? params.capillaryThreshold : 0.0;
+    const kappa = P.kappaScale * params.capillarySpeed * pigment.bleedSpeed * k;
+    this.dilateTiles();
+    for (let it = 0; it < P.capillaryIterations; it++) {
+      this.capillaryPass(x0, y0, x1, y1, kappa, threshold, (it & 1) === 1);
+    }
 
+    // --- Pass 6: deposition, fixation, lift-off (granulation lives here) ---
+    const depSurface = P.depositSurface * params.granulationStrength * k;
+    const depFiber = P.depositFiber * k;
+    const lift = P.liftOff * params.backrunStrength * k;
+    for (let y = y0; y <= y1; y++) {
+      for (let x = x0; x <= x1; x++) {
+        const i = y * w + x;
+        if (p[i] > 0) {
+          // Pigment settles into paper valleys
+          const valley = 0.35 + (1 - paperH[i]) * 1.6 * pigment.granulationFactor;
+          const q = Math.min(p[i], p[i] * depSurface * valley);
+          p[i] -= q;
+          d[i] += q;
+        }
+        if (f[i] > 0) {
+          const q = Math.min(f[i], f[i] * depFiber);
+          f[i] -= q;
+          d[i] += q;
+        }
+        // Standing water re-suspends some bound pigment (backruns, blooms)
+        if (h[i] > 0.15 && d[i] > 0) {
+          const q = d[i] * lift * Math.min(1, h[i]);
+          d[i] -= q;
+          p[i] += q;
+        }
+      }
+    }
+
+    // --- Pass 7: evaporation, fastest at the contact line -------------------
+    // Deegan 1997: the rim thins first, the next step's pressure gradient
+    // refills it from the interior, and that flow carries pigment to the edge.
+    const evap = P.evaporation * params.evaporationRate * this.paperConfig.evaporationMult * k;
+    const edgeBoost = 1 + P.edgeEvaporation * params.edgeDarkeningStrength * pigment.edgeDarkening;
+    const fiberEvap = P.fiberEvaporation * params.evaporationRate * this.paperConfig.evaporationMult * k;
+    const edge = this.edgeMask;
+    for (let y = y0; y <= y1; y++) {
+      for (let x = x0; x <= x1; x++) {
+        const i = y * w + x;
+        edge[i] = h[i] > WET_H && (h[i - 1] <= WET_H || h[i + 1] <= WET_H || h[i - w] <= WET_H || h[i + w] <= WET_H) ? 1 : 0;
+      }
+    }
+
+    let activeCount = 0;
+    let waterAcc = 0;
+    let bx0 = w, by0 = this.height, bx1 = -1, by1 = -1;
+    const tileWet = this.tileWet;
+    const tilesX = this.tilesX;
+    const donorLevel = threshold;
+    tileWet.fill(0);
+    for (let y = y0 - 1; y <= y1 + 1; y++) {
+      for (let x = x0 - 1; x <= x1 + 1; x++) {
+        const i = y * w + x;
+        const inside = x >= x0 && x <= x1 && y >= y0 && y <= y1;
+        if (inside) {
+          if (h[i] > 0) {
+            const e = Math.min(h[i], evap * (edge[i] ? edgeBoost : 1));
+            h[i] -= e;
+            this.waterEvaporated += e;
+          } else if (s[i] > 0) {
+            const e = Math.min(s[i], fiberEvap);
+            s[i] -= e;
+            this.waterEvaporated += e;
+          }
+          // Dried out: whatever pigment was mobile gets bound where it is
+          if (h[i] <= DRY_EPS && h[i] > 0) {
+            this.waterEvaporated += h[i];
+            h[i] = 0;
+          }
+          if (h[i] === 0 && p[i] > 0) {
+            d[i] += p[i];
+            p[i] = 0;
+          }
+          if (s[i] <= DRY_EPS && s[i] > 0) {
+            this.waterEvaporated += s[i];
+            s[i] = 0;
+          }
+          if (s[i] === 0 && h[i] === 0 && f[i] > 0) {
+            d[i] += f[i];
+            f[i] = 0;
+          }
+        }
+        const water = h[i] + s[i];
         if (water > 0) {
-          // Check if at wet boundary (neighbor has low water)
-          const nL = this.waterFilm[idx - 1];
-          const nR = this.waterFilm[idx + 1];
-          const nU = this.waterFilm[idx - w];
-          const nD = this.waterFilm[idx + w];
-
-          const isEdge = (nL < 0.02 || nR < 0.02 || nU < 0.02 || nD < 0.02);
-
-          // Edge evaporates faster
-          const localEvap = isEdge ? evapRate * 2.2 : evapRate;
-          this.waterFilm[idx] = Math.max(0, water - localEvap);
-
-          // Edge darkening: deposit pigment aggressively at evaporating contact line
-          if (isEdge && this.pigmentSuspended[idx] > 0.01) {
-            const edgeDeposit = this.pigmentSuspended[idx] * (0.05 * edgeDarken);
-            this.pigmentSuspended[idx] -= edgeDeposit;
-            this.pigmentDeposited[idx] += edgeDeposit * 1.4;
-          }
-        }
-
-        // Fiber moisture slow evaporation
-        if (moisture > 0) {
-          this.fiberMoisture[idx] = Math.max(0, moisture - evapRate * 0.35);
-        }
-      }
-    }
-
-    // --- Pass 8: Backrun / Cauliflower dynamics ---
-    if (this.params.backrunStrength > 0) {
-      for (let y = Math.max(2, startY); y <= Math.min(h - 3, endY); y += 2) {
-        const yOffset = y * w;
-        for (let x = Math.max(2, startX); x <= Math.min(w - 3, endX); x += 2) {
-          const idx = yOffset + x;
-          const water = this.waterFilm[idx];
-
-          if (water > 0.3) {
-            const nIndices = [idx - 1, idx + 1, idx - w, idx + w];
-            for (let k = 0; k < 4; k++) {
-              const ni = nIndices[k];
-              if (this.waterFilm[ni] < 0.05 && this.fiberMoisture[ni] > 0.15) {
-                const push = 0.015 * this.params.backrunStrength;
-                if (this.pigmentSuspended[idx] > push) {
-                  this.pigmentSuspended[idx] -= push;
-                  this.pigmentDeposited[ni] += push * 1.8;
-                }
-              }
-            }
-          }
+          waterAcc += water;
+          // Only cells that can still give water away need capillary sweeps
+          if (h[i] > 0 || s[i] > donorLevel * cap[i]) tileWet[(y >> TILE_SHIFT) * tilesX + (x >> TILE_SHIFT)] = 1;
+          if (h[i] > WET_H) activeCount++;
+          if (x < bx0) bx0 = x;
+          if (x > bx1) bx1 = x;
+          if (y < by0) by0 = y;
+          if (y > by1) by1 = y;
         }
       }
     }
 
     this.activeFluidCells = activeCount;
-    this.totalWater = totalWaterAcc;
-    this.totalDepositedPigment = totalDepositedAcc;
+    this.totalWater = waterAcc;
 
-    // Expand bounding box slightly for the next step to allow smooth percolation
-    if (activeCount > 0 || totalWaterAcc > 0.001) {
-      this.minActiveX = Math.max(1, this.minActiveX - 2);
-      this.maxActiveX = Math.min(w - 2, this.maxActiveX + 2);
-      this.minActiveY = Math.max(1, this.minActiveY - 2);
-      this.maxActiveY = Math.min(h - 2, this.maxActiveY + 2);
-    } else {
+    if (bx1 < 0) {
+      // Everything evaporated: flush stragglers in the ring around the box
+      for (let y = y0 - 1; y <= y1 + 1; y++) {
+        for (let x = x0 - 1; x <= x1 + 1; x++) {
+          const i = y * w + x;
+          if (p[i] > 0 || f[i] > 0) this.flushCell(i);
+          u[i] = 0;
+          v[i] = 0;
+        }
+      }
       this.isActive = false;
+      this.totalWater = 0;
+    } else {
+      // Shrink-wrap the box around remaining water, with room to spread
+      this.minActiveX = Math.max(1, bx0 - 2);
+      this.maxActiveX = Math.min(w - 2, bx1 + 2);
+      this.minActiveY = Math.max(1, by0 - 2);
+      this.maxActiveY = Math.min(this.height - 2, by1 + 2);
+    }
+
+    // Deposited total is only needed for stats; keep it cheap.
+    if (!this.isActive || (this.stepCount & 7) === 0) {
+      this.totalDepositedPigment = sum(d);
+    }
+  }
+
+  /**
+   * Static fiber conductance (0..1) of every cell pair: fiber alignment with
+   * the pair's direction × whether a strand connects both cells. Depends only
+   * on the paper, so it is computed once instead of every sweep.
+   */
+  private updateConductance() {
+    const w = this.width;
+    const felt = WET_INK_PHYSICS.felt;
+    const net = this.paper.fiberNetwork;
+    const wH = this.paper.fiberWeightH;
+    const wV = this.paper.fiberWeightV;
+    const wD1 = this.paper.fiberWeightD1;
+    const wD2 = this.paper.fiberWeightD2;
+    const conduct = (a: number, b: number, dir: number) =>
+      Math.min(1, dir * (felt + (1 - felt) * Math.min(net[a], net[b])));
+    for (let y = 0; y < this.height - 1; y++) {
+      for (let x = 0; x < w; x++) {
+        const i = y * w + x;
+        this.condRight[i] = x + 1 < w ? conduct(i, i + 1, (wH[i] + wH[i + 1]) * 0.5) : 0;
+        this.condDown[i] = conduct(i, i + w, (wV[i] + wV[i + w]) * 0.5);
+        this.condDownRight[i] = x + 1 < w ? conduct(i, i + w + 1, (wD1[i] + wD1[i + w + 1]) * 0.35) : 0;
+        this.condDownLeft[i] = x > 0 ? conduct(i, i + w - 1, (wD2[i] + wD2[i + w - 1]) * 0.35) : 0;
+      }
+    }
+  }
+
+  /**
+   * A tile is swept if it or any neighbour tile holds a donor: surface water
+   * (which feeds the fibers) or fiber water above ε_min. Water moves at most
+   * one cell per sweep, so with ≤ 16 sweeps per step it cannot outrun the
+   * one-tile margin before the set is rebuilt. Damp paper below the threshold
+   * — most of the drying phase — costs nothing.
+   */
+  private dilateTiles() {
+    const tx = this.tilesX;
+    const ty = this.tileWet.length / tx;
+    const wet = this.tileWet;
+    const act = this.tileActive;
+    act.fill(0);
+    for (let y = 0; y < ty; y++) {
+      for (let x = 0; x < tx; x++) {
+        if (!wet[y * tx + x]) continue;
+        for (let dy = -1; dy <= 1; dy++) {
+          const yy = y + dy;
+          if (yy < 0 || yy >= ty) continue;
+          for (let dx = -1; dx <= 1; dx++) {
+            const xx = x + dx;
+            if (xx >= 0 && xx < tx) act[yy * tx + xx] = 1;
+          }
+        }
+      }
+    }
+  }
+
+  /**
+   * One capillary sweep over the fiber layer (active tiles only).
+   *
+   * Each cell pair moves a fraction θ of the way towards equal saturation
+   * (s / capacity), updating in place (Gauss–Seidel). A single pair can never
+   * overshoot, so the sweep is unconditionally stable, exactly conservative
+   * and needs no snapshot — and strands can conduct at full speed, which an
+   * explicit diffusion step (≤ 1/16 per pair) cannot.
+   *
+   * Nothing leaves a donor below ε_min. Each hop along a strand roughly halves
+   * saturation, so the threshold also bounds how far water cascades in one
+   * sweep: the front advances along the best-connected strands and stalls in
+   * the felt between them — the frayed edge, instead of a blur (MoXi).
+   * Odd sweeps run backwards so the traversal order leaves no directional bias.
+   */
+  private capillaryPass(x0: number, y0: number, x1: number, y1: number, kappa: number, threshold: number, backwards: boolean) {
+    const w = this.width;
+    const s = this.fiberMoisture;
+    const f = this.pigmentFiber;
+    const cap = this.fiberCapacity;
+    const invCap = this.invFiberCapacity;
+    const T = 1 << TILE_SHIFT;
+    const tilesX = this.tilesX;
+    const act = this.tileActive;
+    const chroma = WET_INK_PHYSICS.chromatography;
+    const thetaMax = WET_INK_PHYSICS.capillary;
+    const mobilityExp = WET_INK_PHYSICS.mobilityExponent;
+    const minDonor = WET_S * 0.5;
+
+    const flow = (i: number, j: number, c: number) => {
+      const ri = s[i] * invCap[i];
+      const rj = s[j] * invCap[j];
+      let a = i, b = j, ra = ri, rb = rj;
+      if (rj > ri) { a = j; b = i; ra = rj; rb = ri; }
+      if (ra <= threshold || ra === rb) return;
+      const sa = s[a];
+      if (sa <= minDonor) return;
+      // Paper conducts far better wet than damp (Richards / Washburn): upwind
+      // mobility grows with the donor's saturation, which keeps the wetted
+      // zone nearly full up to a sharp front instead of a long diffusive ramp.
+      let mob = ra;
+      for (let e = 1; e < mobilityExp; e++) mob *= ra;
+      let theta = kappa * c * mob;
+      if (theta > thetaMax) theta = thetaMax;
+      const capA = cap[a];
+      const capB = cap[b];
+      // Fraction θ of the transfer that would equalise both saturations
+      const q = theta * (ra - rb) * ((capA * capB) / (capA + capB));
+      if (q <= 0) return;
+      const fq = (f[a] / sa) * q * chroma;
+      s[a] = sa - q;
+      s[b] += q;
+      f[a] -= fq;
+      f[b] += fq;
+    };
+
+    // Pairs never touch the border ring: border cells are not simulated, so
+    // water that reached them could never evaporate.
+    const xMax = w - 2;
+    const yMax = this.height - 2;
+    const cR = this.condRight;
+    const cD = this.condDown;
+    const cDR = this.condDownRight;
+    const cDL = this.condDownLeft;
+    const lim = threshold * 0.999;
+    const cell = (x: number, y: number, canDown: boolean) => {
+      const i = y * w + x;
+      const canRight = x + 1 <= xMax;
+      // Water only leaves a donor above ε_min, so a pair with neither side
+      // above it cannot flow — that is most of a damp halo.
+      const di = s[i] * invCap[i] > lim;
+      if (canRight && (di || s[i + 1] * invCap[i + 1] > lim)) flow(i, i + 1, cR[i]);
+      if (!canDown) return;
+      if (di || s[i + w] * invCap[i + w] > lim) flow(i, i + w, cD[i]);
+      if (canRight && (di || s[i + w + 1] * invCap[i + w + 1] > lim)) flow(i, i + w + 1, cDR[i]);
+      if (x >= x0 && x - 1 >= 1 && (di || s[i + w - 1] * invCap[i + w - 1] > lim)) flow(i, i + w - 1, cDL[i]);
+    };
+
+    const rx0 = x0 - 1, rx1 = x1 + 1, ry0 = y0 - 1, ry1 = y1 + 1;
+    const tx0 = rx0 >> TILE_SHIFT, tx1 = rx1 >> TILE_SHIFT;
+    const ty0 = ry0 >> TILE_SHIFT, ty1 = ry1 >> TILE_SHIFT;
+    const tyStart = backwards ? ty1 : ty0, tyEnd = backwards ? ty0 - 1 : ty1 + 1, tStep = backwards ? -1 : 1;
+    const txStart = backwards ? tx1 : tx0, txEnd = backwards ? tx0 - 1 : tx1 + 1;
+    for (let ty = tyStart; ty !== tyEnd; ty += tStep) {
+      for (let tx = txStart; tx !== txEnd; tx += tStep) {
+        if (!act[ty * tilesX + tx]) continue;
+        const sx0 = Math.max(1, rx0, tx * T), sx1 = Math.min(x1, tx * T + T - 1);
+        const sy0 = Math.max(1, ry0, ty * T), sy1 = Math.min(y1, ty * T + T - 1);
+        if (backwards) {
+          for (let y = sy1; y >= sy0; y--) {
+            const canDown = y + 1 <= yMax;
+            for (let x = sx1; x >= sx0; x--) cell(x, y, canDown);
+          }
+        } else {
+          for (let y = sy0; y <= sy1; y++) {
+            const canDown = y + 1 <= yMax;
+            for (let x = sx0; x <= sx1; x++) cell(x, y, canDown);
+          }
+        }
+      }
     }
   }
 
@@ -654,9 +977,11 @@ export class WetInkSimulation {
         const ny = this.paper.rakingNormalsY[i];
         const slope = nx * lx + ny * ly;
         const shade = Math.max(0, Math.min(255, 230 + slope * 180 * rakingIntensity));
-        pixels[pIdx] = shade;
-        pixels[pIdx + 1] = shade * 0.98;
-        pixels[pIdx + 2] = shade * 0.92;
+        // Fiber strands shimmer faintly through the relief
+        const strand = this.paper.fiberNetwork[i] * 10;
+        pixels[pIdx] = shade - strand;
+        pixels[pIdx + 1] = shade * 0.98 - strand;
+        pixels[pIdx + 2] = shade * 0.92 - strand;
         pixels[pIdx + 3] = 255;
       }
       return;
@@ -687,9 +1012,7 @@ export class WetInkSimulation {
     if (layer === 'pigment') {
       for (let i = 0; i < this.size; i++) {
         const pIdx = i * 4;
-        const d = this.pigmentDeposited[i];
-        const p = this.pigmentSuspended[i];
-        const total = d + p;
+        const total = this.pigmentDeposited[i] + this.pigmentFiber[i] + this.pigmentSuspended[i];
         if (total > 0.001) {
           const intensity = Math.min(1.0, total * 0.9);
           pixels[pIdx] = (255 - (255 - pr) * intensity) | 0;
@@ -712,9 +1035,9 @@ export class WetInkSimulation {
         const vx = this.velX[i];
         const vy = this.velY[i];
         const spd = Math.hypot(vx, vy);
-        pixels[pIdx] = (128 + vx * 80) | 0;
-        pixels[pIdx + 1] = (128 + vy * 80) | 0;
-        pixels[pIdx + 2] = Math.min(255, (spd * 160) | 0);
+        pixels[pIdx] = (128 + vx * 300) | 0;
+        pixels[pIdx + 1] = (128 + vy * 300) | 0;
+        pixels[pIdx + 2] = Math.min(255, (spd * 600) | 0);
         pixels[pIdx + 3] = 255;
       }
       return;
@@ -731,6 +1054,7 @@ export class WetInkSimulation {
     const baseG = this.paperReliefG;
     const baseB = this.paperReliefB;
     const pigmentDeposited = this.pigmentDeposited;
+    const pigmentFiber = this.pigmentFiber;
     const pigmentSuspended = this.pigmentSuspended;
     const waterFilm = this.waterFilm;
 
@@ -740,9 +1064,7 @@ export class WetInkSimulation {
       const bG = baseG[i];
       const bB = baseB[i];
 
-      const deposited = pigmentDeposited[i];
-      const suspended = pigmentSuspended[i];
-      const totalPigment = deposited * 1.1 + suspended * 0.85;
+      const totalPigment = pigmentDeposited[i] * 1.1 + pigmentFiber[i] + pigmentSuspended[i] * 0.85;
 
       let r = bR * 255;
       let g = bG * 255;

@@ -18,6 +18,8 @@ export interface WetInkPaperConfig {
   fiberBaseAngle: number;   // radians, primary fiber orientation
   capacity: number;         // 0 to 1: sizing (how much water fibers absorb before surface pools)
   evaporationMult: number;  // evaporation speed modifier
+  fiberLength?: number;     // mean strand length in cells (default derived from fiberStrength)
+  fiberCoverage?: number;   // strand length per cell of area (default derived from fiberStrength)
 }
 
 export interface WetInkPigmentConfig {

@@ -6,3 +6,5 @@ export * from './brush';
 export * from './kubelka-munk';
 export * from './shaders';
 export * from './webgl2-engine';
+export * from './metrics';
+export * from './scenarios';

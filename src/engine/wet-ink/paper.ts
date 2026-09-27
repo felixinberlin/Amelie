@@ -97,6 +97,56 @@ export interface PaperMaps {
   fiberWeightV: Float32Array;
   fiberWeightD1: Float32Array;
   fiberWeightD2: Float32Array;
+  // Rasterized strand network (0..1): where individual cellulose fibers lie.
+  // Capillary water wicks along strands, which is what makes a wet edge fray.
+  fiberNetwork: Float32Array;
+}
+
+/**
+ * Strand geometry per paper. Long sparse strands (washi) feather far in one
+ * direction; short dense felt (copy paper) spreads almost round.
+ */
+export function fiberStrandShape(config: WetInkPaperConfig): { length: number; coverage: number; angleJitter: number } {
+  return {
+    length: config.fiberLength ?? 4 + config.fiberStrength * 40,
+    coverage: config.fiberCoverage ?? 0.35 + config.fiberStrength * 0.2,
+    angleJitter: (1 - config.fiberStrength) * Math.PI,
+  };
+}
+
+function rasterizeFiberNetwork(
+  width: number,
+  height: number,
+  fiberAngleMap: Float32Array,
+  config: WetInkPaperConfig,
+  seed: number
+): Float32Array {
+  const net = new Float32Array(width * height);
+  const rng = createSeededRng(seed + 777);
+  const { length, coverage, angleJitter } = fiberStrandShape(config);
+  // Number of strands so that total strand length ≈ coverage × area
+  const count = Math.round((coverage * width * height) / length);
+
+  for (let n = 0; n < count; n++) {
+    let x = rng() * width;
+    let y = rng() * height;
+    const len = length * (0.5 + rng());
+    const idx0 = Math.min(width * height - 1, (y | 0) * width + (x | 0));
+    let angle = fiberAngleMap[idx0] + (rng() - 0.5) * angleJitter;
+    const weight = 0.5 + rng() * 0.5;
+    // Walk the strand in unit steps, bending gently
+    for (let t = 0; t < len; t++) {
+      const xi = x | 0;
+      const yi = y | 0;
+      if (xi < 0 || yi < 0 || xi >= width || yi >= height) break;
+      const i = yi * width + xi;
+      net[i] = Math.min(1, net[i] + weight);
+      angle += (rng() - 0.5) * 0.15;
+      x += Math.cos(angle);
+      y += Math.sin(angle);
+    }
+  }
+  return net;
 }
 
 export function generatePaperMaps(
@@ -177,6 +227,8 @@ export function generatePaperMaps(
     }
   }
 
+  const fiberNetwork = rasterizeFiberNetwork(width, height, fiberAngleMap, config, seed);
+
   return {
     width,
     height,
@@ -190,5 +242,6 @@ export function generatePaperMaps(
     fiberWeightV,
     fiberWeightD1,
     fiberWeightD2,
+    fiberNetwork,
   };
 }

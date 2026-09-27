@@ -3,3 +3,4 @@ amelie.WinMerge
 node_modules
 dist
 .claude/worktrees/
+scripts/wet-ink-lab/out/
