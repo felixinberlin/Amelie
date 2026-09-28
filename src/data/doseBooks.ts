@@ -321,6 +321,28 @@ export const DOSE_BOOKS: Record<string, BookChapter[]> = {
       kind: 'md',
     },
   ],
+  'vernichtungs-offenlegungsregister': [
+    {
+      slug: 'scaffolding',
+      path: '07-demos/vernichtungs-offenlegungsregister/README.md',
+      titleDe: 'Scaffolding & Offenlegungs-Prüfer',
+      titleEn: 'Scaffolding & disclosure checker',
+      noteDe: 'Deterministischer Prüfer gegen ein vorläufiges Anhang-I-Schema, sechs Regeln nur als Fragen, Register mit genau zwei neutralen Status; 28 Tests mit synthetischen Fixtures.',
+      noteEn: 'Deterministic checker against a provisional Annex I schema, six rules phrased only as questions, register with exactly two neutral statuses; 28 tests on synthetic fixtures.',
+      date: '28.09.2026',
+      kind: 'md',
+    },
+    {
+      slug: 'ticket-01',
+      path: '07-demos/vernichtungs-offenlegungsregister/ticket-01-anhang1-pruefer.md',
+      titleDe: 'Ticket 01: Anhang I als Schema, ein Prüfer, eine echte Offenlegung',
+      titleEn: 'Ticket 01: Annex I as a schema, one checker, one real disclosure',
+      noteDe: 'Prüfer, Register und Tests fertig; offen sind der Abgleich mit dem Normtext und die von Hand übertragene Signify-Offenlegung GJ 2025.',
+      noteEn: 'Checker, register and tests done; still open: checking against the legal text and the hand-transcribed Signify FY 2025 disclosure.',
+      date: '28.09.2026',
+      kind: 'md',
+    },
+  ],
 };
 
 export function getBook(doseId: string): BookChapter[] {

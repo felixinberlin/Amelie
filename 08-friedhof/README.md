@@ -54,65 +54,74 @@ Die Ursachen genauer:
 
 *Automatisch erzeugt aus `src/data/dosen.ts` (`DISCARDED_DATA`) mit `npm run friedhof`. Nicht von Hand bearbeiten — `npm run lint` meldet Abweichungen.*
 
-**43 Gräber.** 3 davon starben erst als Dose oder Mail-Entwurf (teure Tode). Von 35 dokumentierten Fundwegen kamen 6 ohne neue Suche aus (eigener Atlas, eigenes Protokoll oder Reality-Check) — 17 %.
+**52 Gräber.** 3 davon starben erst als Dose oder Mail-Entwurf (teure Tode). Von 43 dokumentierten Fundwegen kamen 7 ohne neue Suche aus (eigener Atlas, eigenes Protokoll oder Reality-Check) — 16 %.
 
 **Woran sie starben**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Schon gebaut | 27 | 63 % |
-| Beim Empfänger selbst | 7 | 16 % |
-| Reality-Check | 4 | 9 % |
-| Duplikat | 2 | 5 % |
-| Keine neue Fähigkeit | 2 | 5 % |
+| Schon gebaut | 30 | 58 % |
+| Beim Empfänger selbst | 11 | 21 % |
+| Reality-Check | 5 | 10 % |
+| Keine neue Fähigkeit | 3 | 6 % |
+| Duplikat | 2 | 4 % |
 | Falsche Prämisse | 1 | 2 % |
 
 **Welche Suche traf**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Deutsche Suche | 11 | 26 % |
-| Englische Suche | 9 | 21 % |
-| Empfänger-Suche | 8 | 19 % |
-| Nicht dokumentiert | 8 | 19 % |
-| Eigener Atlas / Protokoll | 4 | 9 % |
-| Ohne Suche | 2 | 5 % |
+| Englische Suche | 14 | 27 % |
+| Deutsche Suche | 11 | 21 % |
+| Empfänger-Suche | 10 | 19 % |
+| Nicht dokumentiert | 9 | 17 % |
+| Eigener Atlas / Protokoll | 4 | 8 % |
+| Ohne Suche | 3 | 6 % |
 | Forum / Nische | 1 | 2 % |
 
 **Woher sie kamen**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Brainstorm | 15 | 35 % |
-| Bisoziation | 13 | 30 % |
-| Primärquelle | 7 | 16 % |
-| Ideenliste | 4 | 9 % |
-| Modell-Katalog | 4 | 9 % |
+| Bisoziation | 18 | 35 % |
+| Brainstorm | 16 | 31 % |
+| Primärquelle | 10 | 19 % |
+| Ideenliste | 4 | 8 % |
+| Modell-Katalog | 4 | 8 % |
 
 **Wer sie schon hatte**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Firma | 17 | 40 % |
-| Forschung | 8 | 19 % |
-| Gemeinnützige | 5 | 12 % |
-| Niemand | 5 | 12 % |
-| Community / Indie | 4 | 9 % |
-| Behörde | 2 | 5 % |
-| Eigener Bestand | 2 | 5 % |
+| Firma | 19 | 37 % |
+| Gemeinnützige | 10 | 19 % |
+| Forschung | 8 | 15 % |
+| Niemand | 6 | 12 % |
+| Community / Indie | 5 | 10 % |
+| Behörde | 2 | 4 % |
+| Eigener Bestand | 2 | 4 % |
 
 **Wie weit sie kamen**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Kandidat | 40 | 93 % |
-| Dose gepackt | 2 | 5 % |
+| Kandidat | 49 | 94 % |
+| Dose gepackt | 2 | 4 % |
 | Mail entworfen | 1 | 2 % |
 
 ### Alle Gräber (neueste zuerst)
 
 | Idee | † | Ursache | Wer sie hatte | Gefunden durch | Herkunft | Kam bis |
 |---|---|---|---|---|---|---|
+| Akku-Ankaufsuntersuchung (Batteriepass × Pferdekauf) | 28.09.2026 | Schon gebaut | Firma | Nicht dokumentiert | Bisoziation | Kandidat |
+| Akkutausch-Protokoll (BattVO Art. 11) | 28.09.2026 | Beim Empfänger selbst | Gemeinnützige | Englische Suche | Brainstorm | Kandidat |
+| EPREL-Reparierbarkeits-Nachprüfer | 28.09.2026 | Beim Empfänger selbst | Gemeinnützige | Englische Suche | Primärquelle | Kandidat |
+| Ersatzteilpreis-Pegel (Ersatzteilpreis-Zeitreihe) | 28.09.2026 | Keine neue Fähigkeit | Gemeinnützige | Englische Suche | Bisoziation | Kandidat |
+| Nachschraub-Probe (Reparierbarkeitsklasse nachzählen) | 28.09.2026 | Beim Empfänger selbst | Gemeinnützige | Empfänger-Suche | Bisoziation | Kandidat |
+| Neuware-Fundbuch (Fundmeldung vernichteter Neuware) | 28.09.2026 | Reality-Check | Niemand | Ohne Suche | Bisoziation | Kandidat |
+| Reparaturformular-Generator (Europäisches Reparaturinformationsformular) | 28.09.2026 | Schon gebaut | Firma | Englische Suche | Primärquelle | Kandidat |
+| Reparaturverlangen-/Gewährleistungs-Uhr | 28.09.2026 | Beim Empfänger selbst | Gemeinnützige | Empfänger-Suche | Primärquelle | Kandidat |
+| Update-Pegel (Sicherheitsupdates über die Zeit) | 28.09.2026 | Schon gebaut | Community / Indie | Englische Suche | Bisoziation | Kandidat |
 | Bohrmehl-Foto (Borkenkäfer im Privatwald) | 27.09.2026 | Falsche Prämisse | Behörde | Eigener Atlas / Protokoll | Primärquelle | Kandidat |
 | Brennholz-Raummaß-Check | 27.09.2026 | Schon gebaut | Firma | Englische Suche | Brainstorm | Kandidat |
 | EUDR-Kleinwald-Erklärung | 27.09.2026 | Schon gebaut | Firma | Empfänger-Suche | Brainstorm | Kandidat |

@@ -11,13 +11,13 @@ Eine Teamrunde ist die Holz-Runde (27.09.2026) als wiederholbares Verfahren. Dor
 
 | Rolle | Agent (`.claude/agents/`) | Skill | Darf schreiben |
 |---|---|---|---|
-| Orchestrator | — (Hauptsitzung) | diese | Rundenplan, Merge-Tabelle, Commit |
+| Orchestrator | — (Hauptsitzung) | diese | Rundenplan, Merge-Tabelle (Scratchpad), Projektstand in `AGENTS.md`, Commit |
 | Engine 1 | `ideen-scout` | `amelie-ideenrunde` | nichts (liefert Text) |
 | Engine 2 | `bisoziations-kollider` | `lacunar-bisociation` | `06-suche/amelie-bisoziation-log.md` |
 | Engine 3 | `inversions-agent` | `asymmetric-inversion` | `06-suche/amelie-inversions-log.md` |
 | Prüfer | `idea-reviewer` | `idea-reviewer` | `06-suche/amelie-classification-log.md` |
-| Packer | `dose-packer` | `dose-packer` | `05-dosen/`, `en/05-dosen/`, `src/data/dosen.ts`, `public/data/` |
-| Gerüstbauer | `demo-builder` | `demo-builder` | `07-demos/<id>/`, `src/engine/<id>/`, `src/data/doseBooks.ts` |
+| Packer | `dose-packer` | `dose-packer` | `05-dosen/`, `en/05-dosen/`, `src/data/dosen.ts` (`DOSEN_DATA`), `scripts/dosen-review-metadata.json`, `public/data/`, die eine Gepackt-Zeile im Prüfprotokoll |
+| Gerüstbauer | `demo-builder` | `demo-builder` | `07-demos/<id>/`, `07-demos/README.md`, `src/engine/<id>/`, `src/data/doseBooks.ts` |
 | Gedächtnis | `bibliothekar` | — | Prüfprotokoll, Playbook, Quellen, `08-friedhof/`, `DISCARDED_DATA` in `src/data/dosen.ts` |
 
 **Eine Datei, ein Schreiber.** Das ist die wichtigste Regel dieser Skill. Parallel laufen nur Agenten mit disjunkten Schreibrechten.
