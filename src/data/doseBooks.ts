@@ -343,6 +343,28 @@ export const DOSE_BOOKS: Record<string, BookChapter[]> = {
       kind: 'md',
     },
   ],
+  'umsetzungsplan-register': [
+    {
+      slug: 'scaffolding',
+      path: '07-demos/umsetzungsplan-register/README.md',
+      titleDe: 'Scaffolding & Umsetzungsplan-Prüfer',
+      titleEn: 'Scaffolding & implementation plan checker',
+      noteDe: 'Deterministischer Prüfer gegen die 7 Pflichtangaben des BAFA-Merkblatts (Schema vorläufig, Feld merkblattFassung), sechs Regeln nur als Fragen, Register mit zwei neutralen Status, Aggregat mit Selektionshinweis ohne Ranking; 29 Tests mit synthetischen Fixtures.',
+      noteEn: 'Deterministic checker against the 7 mandatory fields of the BAFA leaflet (provisional schema, field merkblattFassung), six rules phrased only as questions, register with two neutral statuses, aggregate with selection note and no ranking; 29 tests on synthetic fixtures.',
+      date: '28.09.2026',
+      kind: 'md',
+    },
+    {
+      slug: 'ticket-01',
+      path: '07-demos/umsetzungsplan-register/ticket-01-schema-pruefer.md',
+      titleDe: 'Ticket 01: Schema aus dem BAFA-Merkblatt, ein Prüfer, drei echte Pläne',
+      titleEn: 'Ticket 01: Schema from the BAFA leaflet, one checker, three real plans',
+      noteDe: 'Prüfer, Register, Auswertung und Tests fertig; offen sind die gültige Merkblattfassung und die drei von Hand übertragenen echten Pläne.',
+      noteEn: 'Checker, register, evaluation and tests done; still open: the current leaflet version and the three hand-transcribed real plans.',
+      date: '28.09.2026',
+      kind: 'md',
+    },
+  ],
 };
 
 export function getBook(doseId: string): BookChapter[] {

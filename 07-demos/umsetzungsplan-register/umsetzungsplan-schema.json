@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://felixinberlin.github.io/Amelie/07-demos/umsetzungsplan-register/umsetzungsplan-schema.json",
+  "title": "Umsetzungsplan nach § 9 EnEfG (vorläufig)",
+  "description": "Übertragener Umsetzungsplan eines Unternehmens. VORLÄUFIG: gelesen ist nur das BAFA-Merkblatt in der Fassung 02/2025. Die Fassungen 10/2025 und 05/2026 sind ungelesen. CC0 1.0 Public Domain.",
+  "schemaStatus": "vorläufig",
+  "merkblattFassungGelesen": "02/2025",
+  "merkblattFassungenUngelesen": ["10/2025", "05/2026"],
+  "type": "object",
+  "required": ["unternehmen", "planstand", "format", "rechtsstand", "merkblattFassung", "quelle", "massnahmen"],
+  "properties": {
+    "unternehmen": { "type": "string", "minLength": 1 },
+    "planstand": { "type": "string", "minLength": 1 },
+    "synthetisch": { "type": "boolean", "description": "true für konstruierte Testdaten" },
+    "format": { "enum": ["tabelle", "freitext"] },
+    "rechtsstand": { "enum": ["a.F.", "n.F."] },
+    "merkblattFassung": { "type": "string", "minLength": 1, "description": "Fassung des Merkblatts oder „unbekannt“" },
+    "quelle": {
+      "type": "object",
+      "required": ["url", "abgerufenAm"],
+      "properties": {
+        "url": { "type": "string", "pattern": "^https?://" },
+        "abgerufenAm": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+        "archivSnapshot": { "type": "string" }
+      }
+    },
+    "massnahmen": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "prioritaet": { "type": ["number", "string"] },
+          "bezeichnung": { "type": "string" },
+          "investitionEur": { "type": ["number", "string"] },
+          "zeitrahmen": { "type": "string" },
+          "herkunft": { "type": "string" },
+          "verantwortlich": { "type": "string" },
+          "status": { "type": "string", "description": "Vokabular siehe x-statusVokabular; Werte außerhalb lösen eine Frage aus, keinen Fehler" }
+        }
+      }
+    },
+    "freitext": { "type": "string" }
+  },
+  "x-pflichtangaben": ["prioritaet", "bezeichnung", "investitionEur", "zeitrahmen", "herkunft", "verantwortlich", "status"],
+  "x-statusVokabular": ["Offen", "In Bearbeitung", "Abgeschlossen"],
+  "x-annahmen": [
+    { "feld": "prioritaet", "herkunft": "BAFA-Merkblatt EnEfG, Fassung 02/2025 (Kopie visalvis.de), gelesen" },
+    { "feld": "investitionEur", "herkunft": "Merkblatt 02/2025 nennt die Spalte; die Einheit Euro ist eine Annahme" },
+    { "feld": "zeitrahmen", "herkunft": "Merkblatt 02/2025 nennt die Spalte; Parserform ist eine Annahme" },
+    { "feld": "status", "herkunft": "Merkblatt 02/2025, gelesen; Sanofi-Aventis (11/2025) und VON ARDENNE (04/2025) laut Dossier wortgleich" },
+    { "feld": "merkblattFassung", "herkunft": "Suchschnipsel zu neueren Fassungen; bafa.de nicht gelesen" }
+  ]
+}

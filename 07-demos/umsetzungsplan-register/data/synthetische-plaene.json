@@ -1,0 +1,122 @@
+{
+  "_lizenz": "CC0 1.0 Public Domain",
+  "_hinweis": "ALLE Einträge sind SYNTHETISCH: erfundene Firmen, erfundene Zahlen, URLs auf example.org. Keine Fixture bildet einen echten Plan ab. Die drei echten Fixtures (Muster GmbH aus dem Merkblatt, Sanofi-Aventis 11/2025, VON ARDENNE 04/2025) sind noch NICHT übertragen (Ticket 01).",
+  "faelle": [
+    {
+      "fall": "vollstaendig",
+      "beschreibung": "Vollständiger Plan, alle sieben Pflichtangaben, Merkblatt 02/2025, n. F.",
+      "erwartet": [],
+      "plan": {
+        "unternehmen": "Beispiel Metall GmbH",
+        "planstand": "2026-01",
+        "synthetisch": true,
+        "format": "tabelle",
+        "rechtsstand": "n.F.",
+        "merkblattFassung": "02/2025",
+        "quelle": { "url": "https://example.org/beispiel-metall/umsetzungsplan.pdf", "abgerufenAm": "2026-09-28", "archivSnapshot": "https://example.org/archiv/beispiel-metall-2026-09-28" },
+        "massnahmen": [
+          { "id": "M1", "prioritaet": 1, "bezeichnung": "Abwärmenutzung Glühofen", "investitionEur": 120000, "zeitrahmen": "2026-2027", "herkunft": "Energieaudit", "verantwortlich": "Leitung Produktion", "status": "Offen" },
+          { "id": "M2", "prioritaet": 2, "bezeichnung": "LED-Umrüstung Halle 2", "investitionEur": "45.000 €", "zeitrahmen": "Q3 2026", "herkunft": "Energieaudit", "verantwortlich": "Leitung Instandhaltung", "status": "In Bearbeitung" },
+          { "id": "M3", "prioritaet": 3, "bezeichnung": "Druckluftleckage beseitigen", "investitionEur": 8000, "zeitrahmen": "2025", "herkunft": "Energieaudit", "verantwortlich": "Leitung Instandhaltung", "status": "Abgeschlossen" }
+        ]
+      }
+    },
+    {
+      "fall": "pflichtangabe-ohne-wert",
+      "beschreibung": "Bei M2 ist keine Herkunft und keine verantwortliche Funktion übertragen.",
+      "erwartet": ["U1-PFLICHTANGABE", "U1-PFLICHTANGABE"],
+      "plan": {
+        "unternehmen": "Muster Chemie AG",
+        "planstand": "2025-11",
+        "synthetisch": true,
+        "format": "tabelle",
+        "rechtsstand": "a.F.",
+        "merkblattFassung": "02/2025",
+        "quelle": { "url": "https://example.org/muster-chemie/plan.pdf", "abgerufenAm": "2026-09-28" },
+        "massnahmen": [
+          { "id": "M1", "prioritaet": 1, "bezeichnung": "Dampfnetz dämmen", "investitionEur": "1,2 Mio. €", "zeitrahmen": "2026-2028", "herkunft": "Energieaudit", "verantwortlich": "Technischer Leiter", "status": "Offen" },
+          { "id": "M2", "prioritaet": 2, "bezeichnung": "Pumpentausch", "investitionEur": 60000, "zeitrahmen": "2026", "status": "Offen" }
+        ]
+      }
+    },
+    {
+      "fall": "status-ausserhalb",
+      "beschreibung": "Status geplant ist nicht im Vokabular.",
+      "erwartet": ["U2-STATUS"],
+      "plan": {
+        "unternehmen": "Probe Backwaren KG",
+        "planstand": "2026-03",
+        "synthetisch": true,
+        "format": "tabelle",
+        "rechtsstand": "n.F.",
+        "merkblattFassung": "02/2025",
+        "quelle": { "url": "https://example.org/probe-backwaren/plan.html", "abgerufenAm": "2026-09-28" },
+        "massnahmen": [
+          { "id": "M1", "prioritaet": 1, "bezeichnung": "Ofenwärme rückgewinnen", "investitionEur": 30000, "zeitrahmen": "2027", "herkunft": "Energieaudit", "verantwortlich": "Betriebsleitung", "status": "geplant" }
+        ]
+      }
+    },
+    {
+      "fall": "zeitrahmen-und-investition",
+      "beschreibung": "Zeitrahmen ohne Jahreszahl, Investitionsvolumen nicht numerisch.",
+      "erwartet": ["U3-ZEITRAHMEN", "U4-INVESTITION"],
+      "plan": {
+        "unternehmen": "Fiktiv Textil SE",
+        "planstand": "2026-05",
+        "synthetisch": true,
+        "format": "tabelle",
+        "rechtsstand": "n.F.",
+        "merkblattFassung": "02/2025",
+        "quelle": { "url": "https://example.org/fiktiv-textil/plan.pdf", "abgerufenAm": "2026-09-28" },
+        "massnahmen": [
+          { "id": "M1", "prioritaet": 1, "bezeichnung": "Trockner erneuern", "investitionEur": "nach Angebot", "zeitrahmen": "zeitnah", "herkunft": "Energieaudit", "verantwortlich": "Werksleitung", "status": "Offen" }
+        ]
+      }
+    },
+    {
+      "fall": "erklaertext-ohne-tabelle",
+      "beschreibung": "Plan nur als Erklärtext (Muster wie SWU im Dossier), Felder unbekannt.",
+      "erwartet": ["U0-KEINE-TABELLE"],
+      "plan": {
+        "unternehmen": "Exempel Stadtwerke GmbH",
+        "planstand": "2026-02",
+        "synthetisch": true,
+        "format": "freitext",
+        "rechtsstand": "n.F.",
+        "merkblattFassung": "unbekannt",
+        "quelle": { "url": "https://example.org/exempel-stadtwerke/erklaerung.pdf", "abgerufenAm": "2026-09-28" },
+        "massnahmen": [],
+        "freitext": "Synthetischer Beispieltext: zwei Seiten Erklärung, keine Tabelle."
+      }
+    },
+    {
+      "fall": "neuere-merkblattfassung",
+      "beschreibung": "Plan nennt die ungelesene Fassung 05/2026.",
+      "erwartet": ["U5-MERKBLATT"],
+      "plan": {
+        "unternehmen": "Demo Papier GmbH",
+        "planstand": "2026-06",
+        "synthetisch": true,
+        "format": "tabelle",
+        "rechtsstand": "n.F.",
+        "merkblattFassung": "05/2026",
+        "quelle": { "url": "https://example.org/demo-papier/plan.pdf", "abgerufenAm": "2026-09-28" },
+        "massnahmen": [
+          { "id": "M1", "prioritaet": "hoch", "bezeichnung": "Trockenpartie optimieren", "investitionEur": "unbekannt", "zeitrahmen": "2026", "herkunft": "Energieaudit", "verantwortlich": "Produktionsleitung", "status": "Offen" }
+        ]
+      }
+    }
+  ],
+  "suchnachweise": [
+    {
+      "unternehmen": "Attrappe Logistik GmbH",
+      "planstand": "2026",
+      "synthetisch": true,
+      "stand": "2026-09-28",
+      "suchweg": {
+        "orte": ["example.org/attrappe-logistik (Nachhaltigkeit)", "example.org/attrappe-logistik (Jahresbericht)"],
+        "suchbegriffe": ["Umsetzungsplan EnEfG", "Energieaudit Maßnahmen"]
+      }
+    }
+  ]
+}
