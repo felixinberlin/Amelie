@@ -54,59 +54,59 @@ Die Ursachen genauer:
 
 *Automatisch erzeugt aus `src/data/dosen.ts` (`DISCARDED_DATA`) mit `npm run friedhof`. Nicht von Hand bearbeiten — `npm run lint` meldet Abweichungen.*
 
-**52 Gräber.** 3 davon starben erst als Dose oder Mail-Entwurf (teure Tode). Von 43 dokumentierten Fundwegen kamen 7 ohne neue Suche aus (eigener Atlas, eigenes Protokoll oder Reality-Check) — 16 %.
+**58 Gräber.** 3 davon starben erst als Dose oder Mail-Entwurf (teure Tode). Von 49 dokumentierten Fundwegen kamen 7 ohne neue Suche aus (eigener Atlas, eigenes Protokoll oder Reality-Check) — 14 %.
 
 **Woran sie starben**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Schon gebaut | 30 | 58 % |
-| Beim Empfänger selbst | 11 | 21 % |
-| Reality-Check | 5 | 10 % |
-| Keine neue Fähigkeit | 3 | 6 % |
-| Duplikat | 2 | 4 % |
-| Falsche Prämisse | 1 | 2 % |
+| Schon gebaut | 35 | 60 % |
+| Beim Empfänger selbst | 11 | 19 % |
+| Reality-Check | 5 | 9 % |
+| Keine neue Fähigkeit | 3 | 5 % |
+| Duplikat | 2 | 3 % |
+| Falsche Prämisse | 2 | 3 % |
 
 **Welche Suche traf**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Englische Suche | 14 | 27 % |
-| Deutsche Suche | 11 | 21 % |
-| Empfänger-Suche | 10 | 19 % |
-| Nicht dokumentiert | 9 | 17 % |
-| Eigener Atlas / Protokoll | 4 | 8 % |
-| Ohne Suche | 3 | 6 % |
+| Englische Suche | 17 | 29 % |
+| Deutsche Suche | 14 | 24 % |
+| Empfänger-Suche | 10 | 17 % |
+| Nicht dokumentiert | 9 | 16 % |
+| Eigener Atlas / Protokoll | 4 | 7 % |
+| Ohne Suche | 3 | 5 % |
 | Forum / Nische | 1 | 2 % |
 
 **Woher sie kamen**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Bisoziation | 18 | 35 % |
-| Brainstorm | 16 | 31 % |
-| Primärquelle | 10 | 19 % |
-| Ideenliste | 4 | 8 % |
-| Modell-Katalog | 4 | 8 % |
+| Bisoziation | 19 | 33 % |
+| Brainstorm | 16 | 28 % |
+| Primärquelle | 15 | 26 % |
+| Ideenliste | 4 | 7 % |
+| Modell-Katalog | 4 | 7 % |
 
 **Wer sie schon hatte**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Firma | 19 | 37 % |
-| Gemeinnützige | 10 | 19 % |
-| Forschung | 8 | 15 % |
-| Niemand | 6 | 12 % |
-| Community / Indie | 5 | 10 % |
-| Behörde | 2 | 4 % |
-| Eigener Bestand | 2 | 4 % |
+| Firma | 21 | 36 % |
+| Gemeinnützige | 10 | 17 % |
+| Forschung | 8 | 14 % |
+| Niemand | 7 | 12 % |
+| Community / Indie | 6 | 10 % |
+| Behörde | 4 | 7 % |
+| Eigener Bestand | 2 | 3 % |
 
 **Wie weit sie kamen**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Kandidat | 49 | 94 % |
-| Dose gepackt | 2 | 4 % |
+| Kandidat | 55 | 95 % |
+| Dose gepackt | 2 | 3 % |
 | Mail entworfen | 1 | 2 % |
 
 ### Alle Gräber (neueste zuerst)
@@ -115,10 +115,16 @@ Die Ursachen genauer:
 |---|---|---|---|---|---|---|
 | Akku-Ankaufsuntersuchung (Batteriepass × Pferdekauf) | 28.09.2026 | Schon gebaut | Firma | Nicht dokumentiert | Bisoziation | Kandidat |
 | Akkutausch-Protokoll (BattVO Art. 11) | 28.09.2026 | Beim Empfänger selbst | Gemeinnützige | Englische Suche | Brainstorm | Kandidat |
+| BFSG-Barrierefreiheitserklärungen-Register | 28.09.2026 | Schon gebaut | Firma | Deutsche Suche | Primärquelle | Kandidat |
+| CSRD/ESRS-Berichtsregister | 28.09.2026 | Schon gebaut | Behörde | Englische Suche | Primärquelle | Kandidat |
 | EPREL-Reparierbarkeits-Nachprüfer | 28.09.2026 | Beim Empfänger selbst | Gemeinnützige | Englische Suche | Primärquelle | Kandidat |
 | Ersatzteilpreis-Pegel (Ersatzteilpreis-Zeitreihe) | 28.09.2026 | Keine neue Fähigkeit | Gemeinnützige | Englische Suche | Bisoziation | Kandidat |
+| GPAI-Trainingsdaten-Zusammenfassungen (Register) | 28.09.2026 | Schon gebaut | Community / Indie | Englische Suche | Primärquelle | Kandidat |
+| Hersteller-Register-Abgleich (BattG / LUCID / PPWR) | 28.09.2026 | Schon gebaut | Behörde | Deutsche Suche | Bisoziation | Kandidat |
+| LkSG-Berichtsregister (BAFA-Berichte) | 28.09.2026 | Falsche Prämisse | Niemand | Deutsche Suche | Primärquelle | Kandidat |
 | Nachschraub-Probe (Reparierbarkeitsklasse nachzählen) | 28.09.2026 | Beim Empfänger selbst | Gemeinnützige | Empfänger-Suche | Bisoziation | Kandidat |
 | Neuware-Fundbuch (Fundmeldung vernichteter Neuware) | 28.09.2026 | Reality-Check | Niemand | Ohne Suche | Bisoziation | Kandidat |
+| pCbCR-Sammler (öffentliche Ertragsteuerinformationsberichte) | 28.09.2026 | Schon gebaut | Firma | Englische Suche | Primärquelle | Kandidat |
 | Reparaturformular-Generator (Europäisches Reparaturinformationsformular) | 28.09.2026 | Schon gebaut | Firma | Englische Suche | Primärquelle | Kandidat |
 | Reparaturverlangen-/Gewährleistungs-Uhr | 28.09.2026 | Beim Empfänger selbst | Gemeinnützige | Empfänger-Suche | Primärquelle | Kandidat |
 | Update-Pegel (Sicherheitsupdates über die Zeit) | 28.09.2026 | Schon gebaut | Community / Indie | Englische Suche | Bisoziation | Kandidat |
