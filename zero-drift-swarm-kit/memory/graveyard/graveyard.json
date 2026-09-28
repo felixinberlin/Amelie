@@ -1,0 +1,22 @@
+[
+  {
+    "id": "naive-regex-json-parser",
+    "name": "Naive Regex Markdown JSON Extractor",
+    "date": "2026-09-28",
+    "cause": "reality-check",
+    "killer": "Multi-line nested codeblocks in LLM output",
+    "foundBy": "Vitest edge-case runner",
+    "stage": "tdd-test",
+    "resurrectIf": "Never. Use an AST-based tokenizer instead."
+  },
+  {
+    "id": "direct-git-worktree-concurrency",
+    "name": "Shared-Branch Concurrent Subagent Commits",
+    "date": "2026-09-28",
+    "cause": "complexity",
+    "killer": "Git index lock race condition (.git/index.lock)",
+    "foundBy": "Stress test simulation",
+    "stage": "architecture-review",
+    "resurrectIf": "Only with an external distributed lock manager."
+  }
+]
