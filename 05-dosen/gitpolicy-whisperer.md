@@ -1,0 +1,7 @@
+# GitPolicy-Whisperer: Local LLM for Policy Diff Explanation
+
+**Concept:** Public administrations and NGOs face the challenge of transparently and understandably communicating the evolution of policies, laws, and internal regulations. Current methods for tracking changes (e.g., in PDF documents) are often opaque and time-consuming. This project proposes an open-source tool that leverages Git versioning for text-based policy documents and uses a local, privacy-preserving AI (WASM/WebGPU) to explain 'diffs' between versions in plain language.
+
+**Fictional Scenario:** In the 'Law and Procedures' department of the Berlin Senate Department for Interior and Sport, a new data security regulation needs to be communicated internally. The changes are complex and affect multiple departments. The GitPolicy-Whisperer analyzes the Git diff of the new regulation version and generates an easy-to-understand summary of the changes, their implications, and required actions. This accelerates the internal coordination process and minimizes misunderstandings.
+
+**Technology:** Utilizes WASM or WebGPU-based local large language models (LLMs) within the browser to analyze Git diffs of Markdown, JSON, or XML-formatted policy documents. The user interface visualizes the changes and the AI-generated explanations, optionally with references to affected sections or consequences. Focus on zero-latency feedback and delightful visual UX.
