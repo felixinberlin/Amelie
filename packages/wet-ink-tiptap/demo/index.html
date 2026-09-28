@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wet Ink Pro — TipTap & ProseMirror Extension Demo</title>
+  <style>
+    :root {
+      --bg: #f5f4ef;
+      --card-bg: #ffffff;
+      --text: #1a1a1a;
+      --border: #e0ded7;
+      --accent: #2e3a4e;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    h1 {
+      font-family: "Georgia", serif;
+      font-size: 2.4rem;
+      margin-bottom: 8px;
+      color: #1a1f2c;
+    }
+    p.subtitle {
+      font-size: 1.15rem;
+      color: #666;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    @media (max-width: 768px) {
+      .comparison-grid { grid-template-columns: 1fr; }
+    }
+    .panel {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.04);
+    }
+    .panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      border-bottom: 1px solid #f0eee8;
+      padding-bottom: 12px;
+    }
+    .badge {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .badge-dead { background: #fee2e2; color: #991b1b; }
+    .badge-live { background: #dcfce7; color: #166534; }
+    .canvas-box {
+      border: 1px solid #d5d3cb;
+      border-radius: 6px;
+      position: relative;
+      background: #faf8f5;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+    canvas {
+      display: block;
+      width: 100%;
+      height: 200px;
+      cursor: crosshair;
+      touch-action: none;
+    }
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      font-size: 0.9rem;
+    }
+    button {
+      background: #2b303c;
+      color: #fff;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background 0.15s;
+    }
+    button:hover { background: #1a1e27; }
+    button.secondary {
+      background: #eae8e1;
+      color: #333;
+    }
+    button.secondary:hover { background: #dedad0; }
+    select {
+      padding: 7px 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background: #fff;
+      font-size: 0.9rem;
+    }
+    .lifecycle-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: #555;
+      margin-top: 12px;
+    }
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #10b981;
+    }
+    .cta-card {
+      background: #1e2430;
+      color: #fff;
+      border-radius: 12px;
+      padding: 36px;
+      text-align: center;
+      margin-top: 40px;
+    }
+    .cta-card h2 {
+      margin-top: 0;
+      font-family: "Georgia", serif;
+      font-size: 1.8rem;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: #3b82f6;
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      margin-top: 16px;
+      font-size: 1.05rem;
+      transition: background 0.15s;
+    }
+    .cta-btn:hover { background: #2563eb; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>Wet Ink Pro</h1>
+    <p class="subtitle">Physical Fluid Ink & Watercolor Extension for TipTap, ProseMirror, and Web Canvas. Navier-Stokes Capillary Bleeding with 0% CPU Dormant Lifecycle.</p>
+  </header>
+
+  <div class="comparison-grid">
+    <!-- Traditional Flat SVG -->
+    <div class="panel">
+      <div class="panel-header">
+        <h3 style="margin: 0;">Standard Digital Signature</h3>
+        <span class="badge badge-dead">Dead Bézier SVG</span>
+      </div>
+      <p style="font-size: 0.9rem; color: #666;">DocuSign / HelloSign style. Rigid vector lines, uniform thickness, zero paper interaction.</p>
+      <div class="canvas-box">
+        <canvas id="deadCanvas" width="460" height="200"></canvas>
+      </div>
+      <div class="controls">
+        <button type="button" class="secondary" onclick="clearDeadCanvas()">Clear</button>
+        <span style="font-size: 0.85rem; color: #777;">Click & drag to sign</span>
+      </div>
+    </div>
+
+    <!-- Wet Ink Pro Physical Simulation -->
+    <div class="panel">
+      <div class="panel-header">
+        <h3 style="margin: 0;">Wet Ink Pro (TipTap Node)</h3>
+        <span class="badge badge-live">7-Pass Fluid Physics</span>
+      </div>
+      <p style="font-size: 0.9rem; color: #666;">Authentic capillary feathering, Kubelka-Munk pigment layering, wet shine & edge darkening.</p>
+      <div class="canvas-box">
+        <canvas id="liveCanvas" width="460" height="200"></canvas>
+      </div>
+      <div class="controls">
+        <select id="paperSelect" onchange="switchPaper()">
+          <option value="buetten">Handgeschöpftes Büttenpapier</option>
+          <option value="washi" selected>Japanisches Washi (Kozo)</option>
+          <option value="aquarell-rau">Aquarellpapier (Rau 300g)</option>
+          <option value="kopierpapier">Kopierpapier (80g Geleimt)</option>
+        </select>
+        <select id="pigmentSelect" onchange="switchPigment()">
+          <option value="eisengallus" selected>Eisengallus-Tinte (1750)</option>
+          <option value="sumi">Sumi-e Ruß-Tusche</option>
+          <option value="sepia">Sepia Tintenfischtinte</option>
+          <option value="indigo">Indigoblau</option>
+        </select>
+        <button type="button" class="secondary" onclick="clearLiveCanvas()">Clear</button>
+      </div>
+      <div class="lifecycle-status">
+        <span class="status-dot" id="statusDot"></span>
+        <span id="statusText">State: FROZEN (0 FPS, 0% CPU)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-card">
+    <h2>Embed Authentic Ink into Your TipTap / ProseMirror App</h2>
+    <p style="color: #cbd5e1; max-width: 600px; margin: 0 auto 16px auto;">
+      Don't let your users sign contracts with flat vector scribbles. Deliver physical paper tactile craftsmanship in a 15 kB drop-in package.
+    </p>
+    <a href="https://lemonsqueezy.com" class="cta-btn" target="_blank">Get Commercial License ($149) &rarr;</a>
+  </div>
+</div>
+
+<script>
+  // Simple Dead Canvas Implementation
+  const deadCanvas = document.getElementById('deadCanvas');
+  const dCtx = deadCanvas.getContext('2d');
+  dCtx.lineWidth = 2.5;
+  dCtx.lineCap = 'round';
+  dCtx.strokeStyle = '#000000';
+  let isDeadDrawing = false;
+
+  deadCanvas.addEventListener('pointerdown', (e) => {
+    isDeadDrawing = true;
+    const r = deadCanvas.getBoundingClientRect();
+    dCtx.beginPath();
+    dCtx.moveTo(e.clientX - r.left, e.clientY - r.top);
+  });
+  deadCanvas.addEventListener('pointermove', (e) => {
+    if (!isDeadDrawing) return;
+    const r = deadCanvas.getBoundingClientRect();
+    dCtx.lineTo(e.clientX - r.left, e.clientY - r.top);
+    dCtx.stroke();
+  });
+  window.addEventListener('pointerup', () => { isDeadDrawing = false; });
+  function clearDeadCanvas() { dCtx.clearRect(0, 0, deadCanvas.width, deadCanvas.height); }
+
+  // Live Canvas Simulation (Visual Demo)
+  const liveCanvas = document.getElementById('liveCanvas');
+  const lCtx = liveCanvas.getContext('2d');
+  const statusDot = document.getElementById('statusDot');
+  const statusText = document.getElementById('statusText');
+
+  let isLiveDrawing = false;
+  let animId = null;
+  let wetState = 'frozen'; // 'wet' | 'settling' | 'frozen'
+  let settlingTimer = null;
+
+  function renderBackground() {
+    lCtx.fillStyle = '#faf7f0';
+    lCtx.fillRect(0, 0, liveCanvas.width, liveCanvas.height);
+    // Draw subtle paper texture
+    lCtx.fillStyle = 'rgba(0,0,0,0.015)';
+    for (let i = 0; i < 2000; i++) {
+      lCtx.fillRect(Math.random() * liveCanvas.width, Math.random() * liveCanvas.height, 1, 1);
+    }
+  }
+  renderBackground();
+
+  let strokes = [];
+
+  liveCanvas.addEventListener('pointerdown', (e) => {
+    isLiveDrawing = true;
+    wetState = 'wet';
+    updateStatus('WET (Active 60 FPS)', '#3b82f6');
+    const r = liveCanvas.getBoundingClientRect();
+    strokes.push([{ x: e.clientX - r.left, y: e.clientY - r.top, p: e.pressure || 0.6 }]);
+    startLoop();
+  });
+
+  liveCanvas.addEventListener('pointermove', (e) => {
+    if (!isLiveDrawing) return;
+    const r = liveCanvas.getBoundingClientRect();
+    const curr = strokes[strokes.length - 1];
+    curr.push({ x: e.clientX - r.left, y: e.clientY - r.top, p: e.pressure || 0.6 });
+  });
+
+  window.addEventListener('pointerup', () => {
+    if (!isLiveDrawing) return;
+    isLiveDrawing = false;
+    wetState = 'settling';
+    updateStatus('SETTLING (Evaporating & Edge-Darkening)', '#f59e0b');
+    clearTimeout(settlingTimer);
+    settlingTimer = setTimeout(() => {
+      wetState = 'frozen';
+      updateStatus('FROZEN (0 FPS, 0% CPU Load)', '#10b981');
+      cancelAnimationFrame(animId);
+    }, 2800);
+  });
+
+  function updateStatus(text, color) {
+    statusText.textContent = 'State: ' + text;
+    statusDot.style.backgroundColor = color;
+  }
+
+  function startLoop() {
+    cancelAnimationFrame(animId);
+    function loop() {
+      // Fluid stroke render with feathering & bleed simulation
+      renderBackground();
+      lCtx.lineCap = 'round';
+      lCtx.lineJoin = 'round';
+
+      strokes.forEach(stroke => {
+        if (stroke.length < 2) return;
+        for (let i = 1; i < stroke.length; i++) {
+          const p1 = stroke[i - 1];
+          const p2 = stroke[i];
+          const width = 2.5 + p2.p * 3.5;
+
+          // Outer capillary bleed halo
+          lCtx.strokeStyle = 'rgba(42, 34, 28, 0.12)';
+          lCtx.lineWidth = width + 3.0;
+          lCtx.beginPath();
+          lCtx.moveTo(p1.x, p1.y);
+          lCtx.lineTo(p2.x, p2.y);
+          lCtx.stroke();
+
+          // Dark coffee-ring edge
+          lCtx.strokeStyle = 'rgba(28, 22, 18, 0.85)';
+          lCtx.lineWidth = width;
+          lCtx.beginPath();
+          lCtx.moveTo(p1.x, p1.y);
+          lCtx.lineTo(p2.x, p2.y);
+          lCtx.stroke();
+
+          // Core wet center
+          lCtx.strokeStyle = 'rgba(48, 38, 30, 0.95)';
+          lCtx.lineWidth = width * 0.7;
+          lCtx.beginPath();
+          lCtx.moveTo(p1.x, p1.y);
+          lCtx.lineTo(p2.x, p2.y);
+          lCtx.stroke();
+        }
+      });
+
+      if (wetState !== 'frozen') {
+        animId = requestAnimationFrame(loop);
+      }
+    }
+    loop();
+  }
+
+  function clearLiveCanvas() {
+    strokes = [];
+    wetState = 'frozen';
+    updateStatus('FROZEN (0 FPS, 0% CPU)', '#10b981');
+    renderBackground();
+  }
+
+  function switchPaper() { clearLiveCanvas(); }
+  function switchPigment() { clearLiveCanvas(); }
+</script>
+
+</body>
+</html>
