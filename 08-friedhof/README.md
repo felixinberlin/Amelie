@@ -54,28 +54,28 @@ Die Ursachen genauer:
 
 *Automatisch erzeugt aus `src/data/dosen.ts` (`DISCARDED_DATA`) mit `npm run friedhof`. Nicht von Hand bearbeiten — `npm run lint` meldet Abweichungen.*
 
-**58 Gräber.** 3 davon starben erst als Dose oder Mail-Entwurf (teure Tode). Von 49 dokumentierten Fundwegen kamen 7 ohne neue Suche aus (eigener Atlas, eigenes Protokoll oder Reality-Check) — 14 %.
+**62 Gräber.** 3 davon starben erst als Dose oder Mail-Entwurf (teure Tode). Von 53 dokumentierten Fundwegen kamen 7 ohne neue Suche aus (eigener Atlas, eigenes Protokoll oder Reality-Check) — 13 %.
 
 **Woran sie starben**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Schon gebaut | 35 | 60 % |
-| Beim Empfänger selbst | 11 | 19 % |
-| Reality-Check | 5 | 9 % |
+| Schon gebaut | 35 | 56 % |
+| Beim Empfänger selbst | 12 | 19 % |
+| Reality-Check | 7 | 11 % |
 | Keine neue Fähigkeit | 3 | 5 % |
+| Falsche Prämisse | 3 | 5 % |
 | Duplikat | 2 | 3 % |
-| Falsche Prämisse | 2 | 3 % |
 
 **Welche Suche traf**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Englische Suche | 17 | 29 % |
-| Deutsche Suche | 14 | 24 % |
-| Empfänger-Suche | 10 | 17 % |
-| Nicht dokumentiert | 9 | 16 % |
-| Eigener Atlas / Protokoll | 4 | 7 % |
+| Englische Suche | 18 | 29 % |
+| Deutsche Suche | 16 | 26 % |
+| Empfänger-Suche | 11 | 18 % |
+| Nicht dokumentiert | 9 | 15 % |
+| Eigener Atlas / Protokoll | 4 | 6 % |
 | Ohne Suche | 3 | 5 % |
 | Forum / Nische | 1 | 2 % |
 
@@ -83,29 +83,29 @@ Die Ursachen genauer:
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Bisoziation | 19 | 33 % |
-| Brainstorm | 16 | 28 % |
-| Primärquelle | 15 | 26 % |
-| Ideenliste | 4 | 7 % |
-| Modell-Katalog | 4 | 7 % |
+| Bisoziation | 20 | 32 % |
+| Primärquelle | 18 | 29 % |
+| Brainstorm | 16 | 26 % |
+| Ideenliste | 4 | 6 % |
+| Modell-Katalog | 4 | 6 % |
 
 **Wer sie schon hatte**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Firma | 21 | 36 % |
-| Gemeinnützige | 10 | 17 % |
-| Forschung | 8 | 14 % |
-| Niemand | 7 | 12 % |
+| Firma | 21 | 34 % |
+| Gemeinnützige | 10 | 16 % |
+| Forschung | 9 | 15 % |
+| Behörde | 7 | 11 % |
+| Niemand | 7 | 11 % |
 | Community / Indie | 6 | 10 % |
-| Behörde | 4 | 7 % |
 | Eigener Bestand | 2 | 3 % |
 
 **Wie weit sie kamen**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Kandidat | 55 | 95 % |
+| Kandidat | 59 | 95 % |
 | Dose gepackt | 2 | 3 % |
 | Mail entworfen | 1 | 2 % |
 
@@ -117,10 +117,14 @@ Die Ursachen genauer:
 | Akkutausch-Protokoll (BattVO Art. 11) | 28.09.2026 | Beim Empfänger selbst | Gemeinnützige | Englische Suche | Brainstorm | Kandidat |
 | BFSG-Barrierefreiheitserklärungen-Register | 28.09.2026 | Schon gebaut | Firma | Deutsche Suche | Primärquelle | Kandidat |
 | CSRD/ESRS-Berichtsregister | 28.09.2026 | Schon gebaut | Behörde | Englische Suche | Primärquelle | Kandidat |
+| DSA-Anordnungs-Gegenbuch (Art.-15-Berichte gegen DSC-Anordnungen) | 28.09.2026 | Falsche Prämisse | Forschung | Englische Suche | Bisoziation | Kandidat |
 | EPREL-Reparierbarkeits-Nachprüfer | 28.09.2026 | Beim Empfänger selbst | Gemeinnützige | Englische Suche | Primärquelle | Kandidat |
 | Ersatzteilpreis-Pegel (Ersatzteilpreis-Zeitreihe) | 28.09.2026 | Keine neue Fähigkeit | Gemeinnützige | Englische Suche | Bisoziation | Kandidat |
+| EzB-Register (Erklärungen zur Barrierefreiheit öffentlicher Stellen) | 28.09.2026 | Beim Empfänger selbst | Behörde | Empfänger-Suche | Primärquelle | Kandidat |
+| Gleichstellungsbericht-Archiv (§ 21 EntgTranspG) | 28.09.2026 | Reality-Check | Behörde | Deutsche Suche | Primärquelle | Kandidat |
 | GPAI-Trainingsdaten-Zusammenfassungen (Register) | 28.09.2026 | Schon gebaut | Community / Indie | Englische Suche | Primärquelle | Kandidat |
 | Hersteller-Register-Abgleich (BattG / LUCID / PPWR) | 28.09.2026 | Schon gebaut | Behörde | Deutsche Suche | Bisoziation | Kandidat |
+| Konfliktmineralien-Berichtsregister (Unionseinführer nach VO (EU) 2017/821) | 28.09.2026 | Reality-Check | Behörde | Deutsche Suche | Primärquelle | Kandidat |
 | LkSG-Berichtsregister (BAFA-Berichte) | 28.09.2026 | Falsche Prämisse | Niemand | Deutsche Suche | Primärquelle | Kandidat |
 | Nachschraub-Probe (Reparierbarkeitsklasse nachzählen) | 28.09.2026 | Beim Empfänger selbst | Gemeinnützige | Empfänger-Suche | Bisoziation | Kandidat |
 | Neuware-Fundbuch (Fundmeldung vernichteter Neuware) | 28.09.2026 | Reality-Check | Niemand | Ohne Suche | Bisoziation | Kandidat |

@@ -3945,6 +3945,105 @@ export const DISCARDED_DATA: DiscardedItem[] = [
     diedOn: '2026-09-28',
     resurrectIfDe: 'Wenn ESAP die Berichte nicht maschinenlesbar oder nicht kostenfrei bereitstellt.',
     resurrectIfEn: 'If ESAP does not provide the reports machine-readable or free of charge.'
+  },
+  {
+    id: 'dsa-anordnungs-gegenbuch',
+    title: 'DSA-Anordnungs-Gegenbuch (Art.-15-Berichte gegen DSC-Anordnungen)',
+    originalIdeaDe: 'Gegenbuch der Transparenzberichte nach DSA Art. 15: Summen der Anordnungen „aus Deutschland" aus den Berichten der Vermittlungsdienste gegen die vom Digital Services Coordinator gemeldeten Anordnungen.',
+    originalIdeaEn: 'A counter-ledger of DSA Art. 15 transparency reports: totals of orders "from Germany" in the intermediary services\' reports against the orders reported by the Digital Services Coordinator.',
+    whyDiscardedDe: 'Die Differenz, die das Gegenbuch messen würde, erklärt der DSC-Bericht 2025 selbst: Wegen Art. 9 Abs. 6 / 10 Abs. 6 DSA werden viele, v. a. strafprozessuale Anordnungen gar nicht an den DSC übermittelt. Ein Vergleich kleiner Anbieter (Nicht-VLOP) hat keinen Nenner und wird von niemandem als Engpass genannt; die VLOP-Seite ist Forschungsgebiet (HIIG, Trujillo et al. 2026, RTFP, Open Terms Archive). Dreifachfund aller Engines, Score 22/35, V5 = 2.',
+    whyDiscardedEn: 'The DSC report 2025 itself explains the gap the counter-ledger would measure: because of Art. 9(6) / 10(6) DSA, many orders, especially criminal-procedure ones, are not transmitted to the DSC at all. A comparison of small providers (non-VLOP) has no denominator and nobody names it as a bottleneck; the VLOP side is an established research field (HIIG, Trujillo et al. 2026, RTFP, Open Terms Archive). Triple find by all engines, score 22/35, V5 = 2.',
+    lessonDe: 'Dreifachfund ist keine Qualität. Bei Gegenstück-Paaren zuerst prüfen, ob die Stelle die Lücke selbst begründet.',
+    lessonEn: 'A triple find is not quality. For counterpart pairs, first check whether the authority itself explains the gap.',
+    domain: 'Plattformrecht & Transparenz',
+    evidence: [
+      'DSA Art. 15 / DVO (EU) 2024/2835 Art. 1-3 — Format ja, Sammler nein [Seite]',
+      'DSC-Tätigkeitsbericht 2025 — 19 Art.-9- und 23 Art.-10-Anordnungen, Lücke selbst erklärt [Seite]',
+      'Trujillo/Tessa/Cresci, arXiv 2605.17655 (17.05.2026); HIIG 09/2025; RTFP; Open Terms Archive [Seite]'
+    ],
+    cause: 'praemisse',
+    killer: 'forschung',
+    foundBy: 'englisch',
+    origin: 'bisoziation',
+    stage: 'kandidat',
+    bornIn: 'Offenlegungs-Runde 28.09.2026 · Dreifachfund (Ideenrunde + Bisoziation Run 11 + Inversion Run 5)',
+    diedOn: '2026-09-28',
+    resurrectIfDe: 'Wenn der DSC ein Anbieterverzeichnis (Nenner) veröffentlicht oder eine Stelle mit Mandat (GFF, Bundestag) öffentlich nach der Zahl der nicht übermittelten Anordnungen fragt.',
+    resurrectIfEn: 'If the DSC publishes a provider directory (denominator) or a body with a mandate (GFF, Bundestag) publicly asks for the number of orders not transmitted.'
+  },
+  {
+    id: 'ezb-register',
+    title: 'EzB-Register (Erklärungen zur Barrierefreiheit öffentlicher Stellen)',
+    originalIdeaDe: 'Namentliches Vollregister der Erklärungen zur Barrierefreiheit von Webauftritten und Apps öffentlicher Stellen, maschinell gelesen.',
+    originalIdeaEn: 'A named full register of the accessibility statements of public bodies\' websites and apps, machine-read.',
+    whyDiscardedDe: 'Der Staat misst es schon: Der zweite Überwachungsbericht nach Art. 8 RL 2016/2102 (BFIT-Bund mit Landesstellen) prüfte 7.239 Webauftritte und 269 Apps und weist den Anteil mit Erklärung aus (36,13 % → 47,75 %); das NL-Dashboard ist staatlich, der Atlas digitale Barrierefreiheit (DasDies, AWO) prüfte 2024 alle rund 11.000 Kommunen. Format (Mustererklärung DB 2018/1523) und Sammler (Überwachungsstelle) sind per Norm vorhanden. Restlücke ist eine namentliche Vollliste, also ein Pranger statt eines Befunds; Why-Now dünn, die Pflicht gilt seit 2020.',
+    whyDiscardedEn: 'The state already measures it: the second monitoring report under Art. 8 Directive 2016/2102 (BFIT-Bund with the Länder bodies) checked 7,239 websites and 269 apps and reports the share with a statement (36.13% to 47.75%); the NL dashboard is governmental, and the Atlas digitale Barrierefreiheit (DasDies, AWO) checked all roughly 11,000 municipalities in 2024. Format (model statement, Decision 2018/1523) and collector (monitoring body) exist by norm. The remaining gap is a named full list, a pillory rather than a finding; weak why-now, the duty has applied since 2020.',
+    lessonDe: 'Bei Register-Ideen zuerst den Empfänger fragen, ob er es schon führt. Wo Norm Format und Überwachungsstelle nennt, bleibt nur der Pranger als Restlücke.',
+    lessonEn: 'For register ideas, first ask the recipient whether they already keep one. Where the norm names format and monitoring body, only the pillory remains as a gap.',
+    domain: 'Barrierefreiheit & Recht',
+    evidence: [
+      'reha-recht.de — Zweiter Überwachungsbericht Art. 8 RL 2016/2102 (05.03.2025) [Seite]',
+      'NL-Dashboard Barrierefreiheit, staatlich [Seite]',
+      'Atlas digitale Barrierefreiheit (DasDies, AWO), ~11.000 Kommunen [Schnipsel]'
+    ],
+    cause: 'beim-empfaenger',
+    killer: 'behoerde',
+    foundBy: 'empfaenger',
+    origin: 'quelle',
+    stage: 'kandidat',
+    bornIn: 'Offenlegungs-Runde 28.09.2026 · Inversion Run 5',
+    diedOn: '2026-09-28',
+    resurrectIfDe: 'Wenn der Überwachungsbericht auf die EzB-Kennzahl verzichtet oder BFIT-Bund öffentlich ein Vollverzeichnis nachfragt.',
+    resurrectIfEn: 'If the monitoring report drops the accessibility-statement metric or BFIT-Bund publicly asks for a full directory.'
+  },
+  {
+    id: 'gleichstellungsbericht-archiv',
+    title: 'Gleichstellungsbericht-Archiv (§ 21 EntgTranspG)',
+    originalIdeaDe: 'Archiv der Berichte zur Gleichstellung und Entgeltgleichheit nach EntgTranspG als Nullmessung vor der Entgelttransparenz-Richtlinie.',
+    originalIdeaEn: 'Archive of the equality and pay-equity reports under the EntgTranspG as a baseline before the Pay Transparency Directive.',
+    whyDiscardedDe: 'Die Prämisse „Nullmessung" trägt nicht: § 21 EntgTranspG verlangt Prosa zu Maßnahmen und nur nach Geschlecht aufgeschlüsselte Beschäftigten- und Voll-/Teilzeitzahlen, keine Entgeltangaben; ein Entgeltgefälle als Ausgangswert ist nicht zu gewinnen. Der Fundort ist per Gesetz zentral (§ 22 Abs. 4: Offenlegung im Unternehmensregister). Das Fenster schließt zudem, weil die RL 2023/970 Berichte einführt, die die Überwachungsstelle selbst sammelt und veröffentlicht (Art. 29).',
+    whyDiscardedEn: 'The "baseline" premise does not hold: Section 21 EntgTranspG requires prose on measures and only headcounts split by sex and full/part-time, no pay data; a pay gap cannot be derived as a baseline. The location is central by statute (Section 22(4): disclosure in the company register). The window is also closing, since Directive 2023/970 introduces reports that the monitoring body itself collects and publishes (Art. 29).',
+    lessonDe: 'Vor jedem Archiv fragen, was die Norm an Inhalt verlangt, nicht nur, dass sie etwas verlangt. Pflichtberichte ohne die Kennzahl, die man braucht, sind keine Nullmessung.',
+    lessonEn: 'Before any archive, ask what content the norm requires, not merely that it requires something. Mandatory reports without the figure you need are no baseline.',
+    domain: 'Gleichstellung & Recht',
+    evidence: [
+      '§§ 21, 22 EntgTranspG — Inhalt ohne Entgeltdaten, Offenlegung im Unternehmensregister [Seite]',
+      'RL (EU) 2023/970 Art. 29 Abs. 3 lit. c — Überwachungsstelle sammelt und veröffentlicht [Seite]'
+    ],
+    cause: 'reality-check',
+    killer: 'behoerde',
+    foundBy: 'deutsch',
+    origin: 'quelle',
+    stage: 'kandidat',
+    bornIn: 'Offenlegungs-Runde 28.09.2026 · Ideenrunde S4',
+    diedOn: '2026-09-28',
+    resurrectIfDe: 'Nie in dieser Form; die Umsetzung der RL 2023/970 ist ein eigenes Thema.',
+    resurrectIfEn: 'Never in this form; transposition of Directive 2023/970 is a separate topic.'
+  },
+  {
+    id: 'konfliktmineralien-berichtsregister',
+    title: 'Konfliktmineralien-Berichtsregister (Unionseinführer nach VO (EU) 2017/821)',
+    originalIdeaDe: 'Offenes Register der Sorgfaltspflichtberichte deutscher Unionseinführer von Zinn, Tantal, Wolfram und Gold.',
+    originalIdeaEn: 'An open register of the due-diligence reports of German Union importers of tin, tantalum, tungsten and gold.',
+    whyDiscardedDe: 'Kein Nenner: In Deutschland unterliegen rund 150 Unionseinführer der Verordnung, ihre Identität (Zolldaten) ist nicht öffentlich; eine öffentliche Liste gibt es laut IPIS nur in Österreich. DEKSOR (BGR) prüft risikobasiert jährlich, Art. 7 Abs. 3 verlangt einen öffentlichen Jahresbericht. Ein Register ohne Einführerliste findet nur, wer freiwillig sichtbar ist. Kein Why-Now: keine neue Pflicht seit 2021, die NGO-Auswertung 2023 (IPIS-Koalition) lief einmalig und folgenlos.',
+    whyDiscardedEn: 'No denominator: in Germany roughly 150 Union importers fall under the regulation, their identity (customs data) is not public; according to IPIS a public list exists only in Austria. DEKSOR (BGR) audits annually on a risk basis, Art. 7(3) requires a public annual report. A register without an importer list only finds those who are voluntarily visible. No why-now: no new duty since 2021, the 2023 NGO evaluation (IPIS coalition) was one-off and without consequence.',
+    lessonDe: 'Pflichtfrage 2 (gibt es eine Liste der Verpflichteten?) entscheidet vor dem Scaffolding. Ohne Nenner ist ein Register nur eine Sammlung der Freiwilligen.',
+    lessonEn: 'Mandatory question 2 (is there a list of the obligated parties?) decides before scaffolding. Without a denominator a register is only a collection of volunteers.',
+    domain: 'Lieferketten & Rohstoffe',
+    evidence: [
+      'IHK / BGR-FAQ — rund 150 Unionseinführer in DE, DEKSOR-Prüfung [Schnipsel]',
+      'IPIS — öffentliche Einführerliste nur in Österreich [Schnipsel]',
+      'VO (EU) 2017/821 Art. 7 Abs. 3 — öffentlicher Jahresbericht (via legislation.gov.uk) [Seite]'
+    ],
+    cause: 'reality-check',
+    killer: 'behoerde',
+    foundBy: 'deutsch',
+    origin: 'quelle',
+    stage: 'kandidat',
+    bornIn: 'Offenlegungs-Runde 28.09.2026 · Doppelfund (Ideenrunde S3 + Inversion Run 5)',
+    diedOn: '2026-09-28',
+    resurrectIfDe: 'Wenn die Kommission oder DEKSOR eine Liste der Unionseinführer veröffentlicht.',
+    resurrectIfEn: 'If the Commission or DEKSOR publishes a list of Union importers.'
   }
 ];
 
