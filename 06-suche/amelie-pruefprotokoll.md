@@ -43,8 +43,9 @@ Félix’ Auftrag: „Germany legalized weed — explore the market.“ Vier par
 | **KiCanG-Sicher** — Kindersichere Aufbewahrungsprüfung und Vergiftungs-Sofortwissen | **`besetzt`** | BfR-App „Vergiftungsunfälle bei Kindern“ (kostenlos, Giftnotruf nach Standort), kigiapp.de, BZgA/BIÖG „Cannabis: Legal, aber…“ Digitale Toolbox, X-CAN Serious Game (Uni Würzburg), DigiSucht. +17 % Vergiftungsanfragen GIZ-Nord 2025, 2.569 Hospitalisierungen 2024 — Tools existieren, Problem ist Bekanntheit | – |
 | **Abstandsmelder für CSC-Gründer** — Standorteignung prüfen (vs. Bubatzkarte = Konsumzonen) | **`unklar`** | Nicht vertieft. Gleiche OSM-Datenbasis wie Bubatzkarte, einmaliger Bedarf, Behörde prüft ohnehin. Wahrscheinlich besetzt | 03/2027 |
 | **Ernteprotokoll-Standard** — Offenes JSON-Schema für CSC-Chargen-Dokumentation | **`besetzt`** | cannaUNITY (GitHub, KCanG-konform), OpenTHC (CRE mit API), opencanbau.org, Cannabase. US: METRC, BioTrackTHC. Open-Source-Projekte definieren de facto Datenmodelle | – |
+| **Psychedelischer Filtertip-Generator & Eco-Print** — Prozedurale psychedelische Muster in Filtertip-Maße + Druckbogen / Print-on-Demand-Anbindung | **`verengt` (dünn)** | Generische Muster-Generatoren existieren (pppsychedelic/fffuel.co, MagicPattern, Graphite, Vondy AI), kennen aber keine Filtertip-Maße/PDF-Tiling; Eco-Druckdienstleister & Print-on-Demand in der EU (Longpapers24 ab 40 Booklets, KAiLAR, Kushtom, Snail Papers, Monkey King) bieten Kleinserien mit Sojatinte & ungebleichtem Naturkarton. Restlücke: One-Click SVG/PDF-Generator für den Heimdruck mit Warnhinweis vor toxischer Druckertinte; aber reine Consumer-Spielerei ohne institutionellen Mandatsträger (Friedhof-Muster 1 & 2). | 03/2027 |
 
-**Bilanz:** 0 frei, 2 verengt (beide dünn, keine Dose), 1 unklar, 2 besetzt. Keine Dose. **Atlas:** Cannabis = dicht (Consumer + Vereins + Behörde + Prävention). Marktanreiz vorhanden (Compliance = Geld).
+**Bilanz (6 Kandidaten):** 0 frei, 3 verengt (alle dünn, keine Dose), 1 unklar, 2 besetzt. Keine Dose. **Atlas:** Cannabis = dicht (Consumer + Vereins + Behörde + Prävention + Zubehör/Druck). Marktanreiz vorhanden (Compliance/Konsum = Geld).
 
 ---
 
