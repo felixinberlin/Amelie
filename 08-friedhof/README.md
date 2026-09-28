@@ -54,14 +54,14 @@ Die Ursachen genauer:
 
 *Automatisch erzeugt aus `src/data/dosen.ts` (`DISCARDED_DATA`) mit `npm run friedhof`. Nicht von Hand bearbeiten — `npm run lint` meldet Abweichungen.*
 
-**67 Gräber.** 3 davon starben erst als Dose oder Mail-Entwurf (teure Tode). Von 58 dokumentierten Fundwegen kamen 8 ohne neue Suche aus (eigener Atlas, eigenes Protokoll oder Reality-Check) — 14 %.
+**69 Gräber.** 3 davon starben erst als Dose oder Mail-Entwurf (teure Tode). Von 60 dokumentierten Fundwegen kamen 8 ohne neue Suche aus (eigener Atlas, eigenes Protokoll oder Reality-Check) — 13 %.
 
 **Woran sie starben**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Schon gebaut | 37 | 55 % |
-| Beim Empfänger selbst | 14 | 21 % |
+| Schon gebaut | 39 | 57 % |
+| Beim Empfänger selbst | 14 | 20 % |
 | Reality-Check | 7 | 10 % |
 | Falsche Prämisse | 4 | 6 % |
 | Keine neue Fähigkeit | 3 | 4 % |
@@ -71,8 +71,8 @@ Die Ursachen genauer:
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Deutsche Suche | 20 | 30 % |
-| Englische Suche | 18 | 27 % |
+| Deutsche Suche | 21 | 30 % |
+| Englische Suche | 19 | 28 % |
 | Empfänger-Suche | 11 | 16 % |
 | Nicht dokumentiert | 9 | 13 % |
 | Eigener Atlas / Protokoll | 4 | 6 % |
@@ -83,9 +83,9 @@ Die Ursachen genauer:
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Bisoziation | 21 | 31 % |
-| Primärquelle | 18 | 27 % |
-| Brainstorm | 16 | 24 % |
+| Bisoziation | 21 | 30 % |
+| Primärquelle | 20 | 29 % |
+| Brainstorm | 16 | 23 % |
 | Ideenliste | 8 | 12 % |
 | Modell-Katalog | 4 | 6 % |
 
@@ -93,19 +93,19 @@ Die Ursachen genauer:
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Firma | 20 | 30 % |
-| Forschung | 13 | 19 % |
-| Gemeinnützige | 10 | 15 % |
-| Behörde | 9 | 13 % |
+| Firma | 21 | 30 % |
+| Behörde | 11 | 16 % |
+| Forschung | 11 | 16 % |
+| Gemeinnützige | 10 | 14 % |
+| Community / Indie | 7 | 10 % |
 | Niemand | 7 | 10 % |
-| Community / Indie | 6 | 9 % |
 | Eigener Bestand | 2 | 3 % |
 
 **Wie weit sie kamen**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Kandidat | 64 | 96 % |
+| Kandidat | 66 | 96 % |
 | Dose gepackt | 2 | 3 % |
 | Mail entworfen | 1 | 1 % |
 
@@ -116,7 +116,8 @@ Die Ursachen genauer:
 | Akku-Ankaufsuntersuchung (Batteriepass × Pferdekauf) | 28.09.2026 | Schon gebaut | Firma | Nicht dokumentiert | Bisoziation | Kandidat |
 | Akkutausch-Protokoll (BattVO Art. 11) | 28.09.2026 | Beim Empfänger selbst | Gemeinnützige | Englische Suche | Brainstorm | Kandidat |
 | Barrieren-Spontanmeldung (BFSG × Pharmakovigilanz) | 28.09.2026 | Beim Empfänger selbst | Behörde | Deutsche Suche | Bisoziation | Kandidat |
-| BFSG-Erklärungsprüfer (Barrierefreiheitsinformationen von Online-Shops) | 28.09.2026 | Schon gebaut | Firma | Deutsche Suche | Primärquelle | Kandidat |
+| BFSG-Barrierefreiheitserklärungen-Register | 28.09.2026 | Schon gebaut | Firma | Deutsche Suche | Primärquelle | Kandidat |
+| CSRD/ESRS-Berichtsregister | 28.09.2026 | Schon gebaut | Behörde | Englische Suche | Primärquelle | Kandidat |
 | DSA-Anordnungs-Gegenbuch (Art.-15-Berichte gegen DSC-Zahl) | 28.09.2026 | Falsche Prämisse | Forschung | Englische Suche | Bisoziation | Kandidat |
 | Entgeltgefälle-Register (Art. 9 RL 2023/970) | 28.09.2026 | Beim Empfänger selbst | Behörde | Ohne Suche | Primärquelle | Kandidat |
 | EPREL-Reparierbarkeits-Nachprüfer | 28.09.2026 | Beim Empfänger selbst | Gemeinnützige | Englische Suche | Primärquelle | Kandidat |
@@ -124,14 +125,15 @@ Die Ursachen genauer:
 | EzB-Register (Erklärung zur Barrierefreiheit öffentlicher Stellen) | 28.09.2026 | Beim Empfänger selbst | Behörde | Empfänger-Suche | Primärquelle | Kandidat |
 | FloraScan / Invasives-Scout (Browser-Native Neophyten-Erkennung) | 28.09.2026 | Schon gebaut | Forschung | Deutsche Suche | Ideenliste | Kandidat |
 | Gleichstellungsbericht-Archiv (§ 21 EntgTranspG) | 28.09.2026 | Reality-Check | Behörde | Deutsche Suche | Primärquelle | Kandidat |
-| GPAI-Summaries-Register (AI Act Art. 53 Trainingsdaten-Zusammenfassungen) | 28.09.2026 | Schon gebaut | Forschung | Englische Suche | Primärquelle | Kandidat |
+| GPAI-Trainingsdaten-Zusammenfassungen (Register) | 28.09.2026 | Schon gebaut | Community / Indie | Englische Suche | Primärquelle | Kandidat |
+| Hersteller-Register-Abgleich (BattG / LUCID / PPWR) | 28.09.2026 | Schon gebaut | Behörde | Deutsche Suche | Bisoziation | Kandidat |
 | Kiez-Ohr / Kiez-Radar (Browser-Native Mängelmelder NLP) | 28.09.2026 | Schon gebaut | Behörde | Deutsche Suche | Ideenliste | Kandidat |
 | Konfliktmineralien-Berichtsregister (Art. 7 Abs. 3 VO 2017/821) | 28.09.2026 | Reality-Check | Behörde | Deutsche Suche | Primärquelle | Kandidat |
-| LkSG-Berichtsregister (§§ 12/13 LkSG) | 28.09.2026 | Falsche Prämisse | Niemand | Deutsche Suche | Primärquelle | Kandidat |
+| LkSG-Berichtsregister (BAFA-Berichte) | 28.09.2026 | Falsche Prämisse | Niemand | Deutsche Suche | Primärquelle | Kandidat |
 | Nachschraub-Probe (Reparierbarkeitsklasse nachzählen) | 28.09.2026 | Beim Empfänger selbst | Gemeinnützige | Empfänger-Suche | Bisoziation | Kandidat |
 | Neuware-Fundbuch (Fundmeldung vernichteter Neuware) | 28.09.2026 | Reality-Check | Niemand | Ohne Suche | Bisoziation | Kandidat |
+| pCbCR-Sammler (öffentliche Ertragsteuerinformationsberichte) | 28.09.2026 | Schon gebaut | Firma | Englische Suche | Primärquelle | Kandidat |
 | PedalPath Planner (WebGPU Radwege-Planer) | 28.09.2026 | Schon gebaut | Community / Indie | Deutsche Suche | Ideenliste | Kandidat |
-| Public-CbCR-Sammelbuch (Ertragsteuerinformationsberichte) | 28.09.2026 | Schon gebaut | Forschung | Englische Suche | Bisoziation | Kandidat |
 | Quanten-Spielwiese (Browser-Native Quantum Visualizer) | 28.09.2026 | Falsche Prämisse | Forschung | Englische Suche | Ideenliste | Kandidat |
 | Reparaturformular-Generator (Europäisches Reparaturinformationsformular) | 28.09.2026 | Schon gebaut | Firma | Englische Suche | Primärquelle | Kandidat |
 | Reparaturverlangen-/Gewährleistungs-Uhr | 28.09.2026 | Beim Empfänger selbst | Gemeinnützige | Empfänger-Suche | Primärquelle | Kandidat |

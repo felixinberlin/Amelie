@@ -2440,8 +2440,8 @@ Amélie Initiative (Félix, Berlin)`
     id: 'umsetzungsplan-register',
     title: 'Umsetzungsplan-Register',
     titleEn: 'Implementation Plan Register',
-    oneLinerDe: 'Ein offenes Register der Umsetzungspläne, die Unternehmen nach § 9 EnEfG (und EED Art. 11 Abs. 2) für ihre wirtschaftlichen Energiesparmaßnahmen veröffentlichen müssen. Sein Kern ist ein deterministischer Prüfer gegen die sieben Pflichtangaben des BAFA-Merkblatts, der je Plan die Statusverteilung und das Investitionsvolumen der offenen Maßnahmen ausgibt und nie „säumig“ sagt, sondern nur „gefunden“ oder „kein Plan gefunden (Stand, Suchweg)“.',
-    oneLinerEn: 'An open register of the implementation plans that companies must publish under § 9 of the German Energy Efficiency Act (EnEfG, and EED Art. 11(2)) for their cost-effective energy-saving measures. Its core is a deterministic checker against the seven mandatory items in the BAFA guidance sheet that outputs, per plan, the status distribution and the investment volume of open measures, and never says "overdue", only "found" or "no plan found (as of, search path)".',
+    oneLinerDe: 'Ein offenes Register der Umsetzungspläne, die Unternehmen nach § 9 EnEfG (und EED Art. 11 Abs. 2) für ihre wirtschaftlichen Energiesparmaßnahmen veröffentlichen müssen. Sein Kern ist ein deterministischer Prüfer gegen die Pflichtangaben des BAFA-Merkblatts (Fassung 16.09.2026: fünf), der je Plan die Statusverteilung und das Investitionsvolumen der offenen Maßnahmen ausgibt und nie „säumig“ sagt, sondern nur „gefunden“ oder „kein Plan gefunden (Stand, Suchweg)“.',
+    oneLinerEn: 'An open register of the implementation plans that companies must publish under § 9 of the German Energy Efficiency Act (EnEfG, and EED Art. 11(2)) for their cost-effective energy-saving measures. Its core is a deterministic checker against the mandatory items in the BAFA guidance sheet (16 September 2026 version: five) that outputs, per plan, the status distribution and the investment volume of open measures, and never says "overdue", only "found" or "no plan found (as of, search path)".',
     date: '28. September 2026',
     reviewAfter: 'September 2027',
     recipientsDe: 'DENEFF e.V. (Deutsche Unternehmensinitiative Energieeffizienz), Christian Noll, geschäftsführender Vorstand (Effizienzpolitik, gegen die Aufweichung der EnEfG-Novelle) — Name und Funktion von deneff.org (07.07.2026), vor Versand erneut verifizieren · nachrangig: Umweltinstitut München e.V., Dr. Leonard Burtscher (Stand 2024, nicht verifiziert)',
@@ -2454,22 +2454,22 @@ Amélie Initiative (Félix, Berlin)`
     problemEn: 'Companies above a consumption threshold must, after their energy audit, draw up and publish an implementation plan for all cost-effective energy-saving measures (§ 9 EnEfG), but need not carry them out. The plans sit scattered as PDFs on company websites or in the company report; there is no register, no list of obliged companies and nobody counting them. An exact-title search finds at least ten plans, one already returns 404. Thousands of companies must say publicly which cost-effective savings measures are still open, but nobody counts how many are left undone. DENEFF and Umweltinstitut therefore argue in the Bundestag procedure on the amendment (first reading 24 Sep 2026) with model calculations only.',
     whyNowDe: [
       'Die Novelle wird gerade verhandelt: BT-Drs. 21/8027 vom 16.09.2026 [Seite] — § 9 n. F. für 2,77 bis < 23,6 GWh/a, Veröffentlichung binnen drei Monaten nach dem Audit, jährliche Aktualisierung, BAFA-Stichproben auch zur Veröffentlichung, Bußgeld bei Nicht-Veröffentlichung, aber kein Unternehmensregister. Der Bundesrat beantragt die Streichung der Veröffentlichungspflicht, die Bundesregierung hält daran fest.',
-      'Das Format existiert faktisch: Das BAFA-Merkblatt schreibt sieben Pflichtangaben mit Statusvokabular {Offen, In Bearbeitung, Abgeschlossen} vor; Sanofi (11/2025) und VON ARDENNE (04/2025) übernehmen die Spalten wörtlich [Seite]. Damit ist der Kern deterministisch prüfbar.',
+      'Das Format existiert faktisch: Das BAFA-Merkblatt (Fassung 16.09.2026) schreibt fünf Pflichtangaben vor, Statusvokabular {Offen, In Bearbeitung, Abgeschlossen} als Kann-Regel; Sanofi (11/2025) übernimmt Spalten und Statuswörter, VON ARDENNE (04/2025) die Spalten mit eigenen Statuswörtern [Seite]. Damit ist der Kern deterministisch prüfbar.',
       'Die Pflicht ist unionsrechtlich gedeckelt (EED Art. 11 Abs. 2 UAbs. 3 [Seite]) und wird jährlich aktualisiert: Es entsteht eine Zeitreihe, wie viele „Offen“ zu „Abgeschlossen“ werden. Und die Pläne verschwinden (404) — wer jetzt archiviert, sichert den Jahrgang.'
     ],
     whyNowEn: [
       'The amendment is being negotiated now: BT-Drs. 21/8027 of 16 Sep 2026 [page] — new § 9 for 2.77 to < 23.6 GWh/a, publication within three months after the audit, annual update, BAFA spot checks now covering publication, fines for non-publication, but no company register. The Bundesrat requests deleting the publication duty; the federal government keeps it.',
-      'The format exists in practice: the BAFA guidance sheet prescribes seven mandatory items with the status vocabulary {Offen, In Bearbeitung, Abgeschlossen}; Sanofi (11/2025) and VON ARDENNE (04/2025) copy the columns verbatim [page]. That makes the core deterministically checkable.',
+      'The format exists in practice: the BAFA guidance sheet (16 September 2026 version) prescribes five mandatory items, with the status vocabulary {Offen, In Bearbeitung, Abgeschlossen} as a may-rule; Sanofi (11/2025) copies columns and status words, VON ARDENNE (04/2025) the columns with its own status words [page]. That makes the core deterministically checkable.',
       'The duty is capped by EU law (EED Art. 11(2) third subparagraph [page]) and updated annually: a time series of how many "open" measures become "completed" emerges. And the plans are disappearing (404) — whoever archives now secures the vintage.'
     ],
-    sketchDe: 'Eingabe: je Unternehmen und Planstand ein Plan, von Hand oder als bestätigter LLM-Vorschlag in umsetzungsplan-schema.json übertragen, mit Quell-URL, Abrufdatum, Archiv-Snapshot und Feld rechtsstand (a. F. / n. F.); für fehlende Pläne Stand und Suchweg. Logik: deterministischer Prüfer pruefeUmsetzungsplan() ohne Netz und Modell: sieben Pflichtangaben vorhanden, Status aus dem Vokabular, Zeitrahmen parsebar, Investitionsvolumen numerisch; Ausgabe Statusverteilung und Investitionssumme der offenen Maßnahmen (jede Maßnahme im Plan ist per Definition wirtschaftlich, § 9 Abs. 2). Registerkern (Status, Suchnachweis, Snapshot, CSV, Sprachwächter) aus vernichtungs-offenlegungsregister wiederverwendet. Ausgabe: statische CSV/JSON mit nur zwei Status, „gefunden“ oder „kein Plan gefunden (Stand, Suchweg)“, nie „säumig“ oder „Verstoß“, weil die Pflicht bedingt ist. Keine Quote gegen die Schätzung von rund 16.461 Verpflichteten, nur „N gefundene Pläne, davon M Maßnahmen offen“; Selektionshinweis fest im Kopf jeder Auswertung. Schema vorläufig, bis die aktuelle BAFA-Merkblattfassung gelesen ist. Nicht dabei: keine MWh und kein Kapitalwert (stehen nicht in den Plänen), kein Firmenranking, kein Dauer-Crawler, kein Server, keine Beratung.',
-    sketchEn: 'Input: one plan per company and plan version, entered into umsetzungsplan-schema.json by hand or as a confirmed LLM suggestion, with source URL, retrieval date, archive snapshot and a rechtsstand field (old / amended § 9); for missing plans, date and search path. Logic: deterministic checker pruefeUmsetzungsplan() without network or model: seven mandatory items present, status from the vocabulary, time frame parseable, investment volume numeric; outputs status distribution and investment total of open measures (every measure in the plan is cost-effective by definition, § 9(2)). Register core (status, search record, snapshot, CSV, language guard) reused from vernichtungs-offenlegungsregister. Output: static CSV/JSON with only two statuses, "found" or "no plan found (as of, search path)", never "overdue" or "violation", because the duty is conditional. No rate against the estimate of about 16,461 obliged companies, only "N plans found, M measures of them open"; a selection notice fixed at the top of every analysis. Schema provisional until the current BAFA guidance-sheet version has been read. Not included: no MWh and no net present value (not in the plans), no company ranking, no permanent crawler, no server, no advice.',
+    sketchDe: 'Eingabe: je Unternehmen und Planstand ein Plan, von Hand oder als bestätigter LLM-Vorschlag in umsetzungsplan-schema.json übertragen, mit Quell-URL, Abrufdatum, Archiv-Snapshot und Feld rechtsstand (a. F. / n. F.); für fehlende Pläne Stand und Suchweg. Logik: deterministischer Prüfer pruefeUmsetzungsplan() ohne Netz und Modell: Pflichtangaben der Merkblattfassung vorhanden, Status aus dem Vokabular (sonst Rückfrage), Zeitrahmen parsebar, Investitionsvolumen numerisch; Ausgabe Statusverteilung und Investitionssumme der offenen Maßnahmen (jede Maßnahme im Plan ist per Definition wirtschaftlich, § 9 Abs. 2). Registerkern (Status, Suchnachweis, Snapshot, CSV, Sprachwächter) aus vernichtungs-offenlegungsregister wiederverwendet. Ausgabe: statische CSV/JSON mit nur zwei Status, „gefunden“ oder „kein Plan gefunden (Stand, Suchweg)“, nie „säumig“ oder „Verstoß“, weil die Pflicht bedingt ist. Keine Quote gegen die Schätzung von rund 16.461 Verpflichteten, nur „N gefundene Pläne, davon M Maßnahmen offen“; Selektionshinweis fest im Kopf jeder Auswertung. Schema nach Merkblattfassung versioniert (Standard 16.09.2026). Nicht dabei: keine MWh und kein Kapitalwert (stehen nicht in den Plänen), kein Firmenranking, kein Dauer-Crawler, kein Server, keine Beratung.',
+    sketchEn: 'Input: one plan per company and plan version, entered into umsetzungsplan-schema.json by hand or as a confirmed LLM suggestion, with source URL, retrieval date, archive snapshot and a rechtsstand field (old / amended § 9); for missing plans, date and search path. Logic: deterministic checker pruefeUmsetzungsplan() without network or model: mandatory items of the guidance-sheet version present, status from the vocabulary (otherwise ask back), time frame parseable, investment volume numeric; outputs status distribution and investment total of open measures (every measure in the plan is cost-effective by definition, § 9(2)). Register core (status, search record, snapshot, CSV, language guard) reused from vernichtungs-offenlegungsregister. Output: static CSV/JSON with only two statuses, "found" or "no plan found (as of, search path)", never "overdue" or "violation", because the duty is conditional. No rate against the estimate of about 16,461 obliged companies, only "N plans found, M measures of them open"; a selection notice fixed at the top of every analysis. Schema versioned by guidance-sheet edition (default 16 September 2026). Not included: no MWh and no net present value (not in the plans), no company ranking, no permanent crawler, no server, no advice.',
     firstStepDe: {
-      ticket: 'Sieben Pflichtangaben als Schema, ein Prüfer, drei echte Pläne: umsetzungsplan-schema.json aus den sieben BAFA-Pflichtangaben (Priorität, Maßnahme, Investitionsvolumen, Zeitrahmen, Herkunft, verantwortliche Funktion, Status ∈ {Offen, In Bearbeitung, Abgeschlossen}) plus Feld rechtsstand (a. F. / n. F.) und ein deterministischer TypeScript-Prüfer pruefeUmsetzungsplan(plan). Vorbedingung: aktuell gültige Merkblattfassung auf bafa.de lesen; sonst trägt das Schema den Status „vorläufig“ und nennt die gelesene Fassung (12.02.2025).',
+      ticket: 'Pflichtangaben als Schema, ein Prüfer, drei echte Pläne: umsetzungsplan-schema.json je Merkblattfassung (16.09.2026: Priorität, Maßnahme, Investitionsvolumen, Zeitrahmen, Status; 12.02.2025, vorläufig: zusätzlich Herkunft, verantwortliche Funktion), Statusvokabular {Offen, In Bearbeitung, Abgeschlossen} als Kann-Regel mit Rückfrage bei fremden Statuswörtern, plus Feld rechtsstand (a. F. / n. F.) und ein deterministischer TypeScript-Prüfer pruefeUmsetzungsplan(plan). Merkblatt 16.09.2026 am 28.09.2026 gelesen.',
       criteria: 'Fertig, wenn eine Vitest-Suite grün ist (vollständiger Plan ohne Befund, fehlende Pflichtangabe, Status außerhalb des Vokabulars, unparsebarer Zeitrahmen, nicht-numerisches Investitionsvolumen, Statusverteilung und Investitionssumme „Offen“ korrekt, Freitext-Plan ohne Tabelle), drei Fixtures von Hand mit Quell-URL und Abrufdatum übertragen sind (Muster GmbH aus dem Merkblatt, Sanofi 11/2025, VON ARDENNE 04/2025), ein Test sicherstellt, dass keine Ausgabe „säumig“, „Verstoß“ oder „violation“ enthält, fehlende Pläne nur als „kein Plan gefunden“ mit Datum und Suchweg erscheinen und keine Quote gegen die Verpflichtetenzahl gebildet wird, jede Auswertung den Selektionshinweis trägt und keine Firmenrangfolge ausgibt, der Registerkern aus src/engine/vernichtungs-offenlegungsregister/ importiert wird, das Schema seinen Stand ausweist und alles unter 07-demos/umsetzungsplan-register/ liegt.'
     },
     firstStepEn: {
-      ticket: 'Seven mandatory items as a schema, one checker, three real plans: umsetzungsplan-schema.json from the seven BAFA mandatory items (priority, measure, investment volume, time frame, origin, responsible function, status ∈ {Offen, In Bearbeitung, Abgeschlossen}) plus a rechtsstand field (old / amended § 9) and a deterministic TypeScript checker pruefeUmsetzungsplan(plan). Precondition: read the currently valid guidance-sheet version on bafa.de; otherwise the schema carries the status "provisional" and names the version read (12 Feb 2025).',
+      ticket: 'Mandatory items as a schema, one checker, three real plans: umsetzungsplan-schema.json per guidance-sheet version (16 Sep 2026: priority, measure, investment volume, time frame, status; 12 Feb 2025, provisional: plus origin, responsible function), status vocabulary {Offen, In Bearbeitung, Abgeschlossen} as a may-rule that asks back on foreign status words, plus a rechtsstand field (old / amended § 9) and a deterministic TypeScript checker pruefeUmsetzungsplan(plan). Guidance sheet of 16 Sep 2026 read on 28 Sep 2026.',
       criteria: 'Done when a Vitest suite is green (complete plan with no finding, missing mandatory item, status outside the vocabulary, unparseable time frame, non-numeric investment volume, correct status distribution and "open" investment total, prose-only plan without a table), three fixtures are transcribed by hand with source URL and retrieval date (Muster GmbH from the guidance sheet, Sanofi 11/2025, VON ARDENNE 04/2025), a test ensures no output contains "säumig", "Verstoß" or "violation", missing plans only appear as "no plan found" with date and search path and no rate against the number of obliged companies is computed, every analysis carries the selection notice and no company ranking is output, the register core is imported from src/engine/vernichtungs-offenlegungsregister/, the schema states its status, and everything lives under 07-demos/umsetzungsplan-register/.'
     },
     failureModeDe: 'Eine Quote aus gefundenen Plänen wird als Branchenquote gelesen: Veröffentlichen tun die Sorgfältigen, und wer keinen Plan zeigt, kann ausgenommen, unter der Schwelle oder nachlässig sein. Gegenmaßnahme in der Architektur: nur „N gefundene Pläne, davon M Maßnahmen offen“, Selektionshinweis in jeder Auswertung, nie „säumig“, keine Quote gegen die 16.461-Schätzung. Zweitens Pranger- und Lead-Listen-Lesart (offene Maßnahmen + Investitionsvolumen je Firma ist auch eine Vertriebsliste): kein Firmenranking, nur Aggregat und Einzelnachweis mit Quelle. Drittens beantragt der Bundesrat die Streichung der Veröffentlichungspflicht; das wäre wegen EED Art. 11 Abs. 2 unionsrechtswidrig, hieße aber de facto weniger Pläne — die Dose trägt unter altem und neuem § 9 (Feld rechtsstand). Offen gelegt: Schema vorläufig bis zur aktuellen Merkblattfassung, Formatdrift möglich, keine Energiemengen, Empfängerperson vor Versand erneut verifizieren.',
@@ -3929,54 +3929,6 @@ export const DISCARDED_DATA: DiscardedItem[] = [
     resurrectIfEn: 'If the Commission or DEKSOR publishes a list of Union importers.'
   },
   {
-    id: 'gpai-summaries-register',
-    title: 'GPAI-Summaries-Register (AI Act Art. 53 Trainingsdaten-Zusammenfassungen)',
-    originalIdeaDe: 'Register der Pflicht-Zusammenfassungen der Trainingsdaten nach Art. 53 Abs. 1 lit. d AI Act, geprüft gegen das Template der Kommission (24.07.2025); Nebenzuschnitt der Bisoziation: Rückfrage für Rechteinhaber, welche Modelle die eigene Domain unter den Top-Domains führen.',
-    originalIdeaEn: 'A register of the mandatory training-data summaries under Art. 53(1)(d) AI Act, checked against the Commission template (24.07.2025); bisociation side cut: a lookup for rights holders showing which models list their domain among the top domains.',
-    whyDiscardedDe: 'Gebaut: gpailedger.com führt 124 Modelle von 31 Anbietern, 75 veröffentlichte und 49 fehlende Summaries, täglich versioniert mit SHA-256 und OpenTimestamps, Metadaten CC0 (Stand 28.09.2026). Die Qualitätsprüfung gibt es zusätzlich als FAccT-2026-Paper. Doppelkill — Ideen-Scout und Bisoziation fanden und töteten es unabhängig.',
-    whyDiscardedEn: 'Built: gpailedger.com tracks 124 models from 31 providers, 75 published and 49 missing summaries, versioned daily with SHA-256 and OpenTimestamps, metadata CC0 (as of 28.09.2026). The quality check also exists as a FAccT 2026 paper. Double kill — the idea scout and the bisociation engine found and killed it independently.',
-    lessonDe: 'Das Offenlegungsmuster ist nur frei, wo keine Forschungsgruppe von den Daten lebt. Vorab fragen: Wer würde darüber ein Paper schreiben? Fällt die Antwort leicht, zuerst dort suchen.',
-    lessonEn: 'The disclosure pattern is only free where no research group lives off the data. Ask first: who would write a paper about this? If the answer comes easily, search there first.',
-    domain: 'KI-Regulierung & Offenlegung',
-    evidence: [
-      'gpailedger.com — 124 Modelle, 31 Anbieter, CC0-Metadaten, Stand 28.09.2026 [Seite]',
-      'FAccT 2026, doi.org/10.1145/3805689.3806755 [Schnipsel]'
-    ],
-    cause: 'gebaut',
-    killer: 'forschung',
-    foundBy: 'englisch',
-    origin: 'quelle',
-    stage: 'kandidat',
-    bornIn: 'Offenlegungs-Runde 28.09.2026 · Ideenrunde (Engine 1) + Bisoziation Run 11 (Engine 2, KI-VO × Provenienzforschung), Doppelkill',
-    diedOn: '2026-09-28',
-    resurrectIfDe: 'Wenn gpailedger.com eingestellt wird und kein anderer offener Tracker die Summaries versioniert.',
-    resurrectIfEn: 'If gpailedger.com shuts down and no other open tracker versions the summaries.'
-  },
-  {
-    id: 'lksg-berichtsregister',
-    title: 'LkSG-Berichtsregister (§§ 12/13 LkSG)',
-    originalIdeaDe: 'Die Berichte nach §§ 12/13 Lieferkettensorgfaltspflichtengesetz sammeln und vergleichbar machen.',
-    originalIdeaEn: 'Collect the reports under §§ 12/13 of the German Supply Chain Due Diligence Act (LkSG) and make them comparable.',
-    whyDiscardedDe: 'Die Prämisse ist tot: Das BAFA hat die Prüfung der Unternehmensberichte nach §§ 12/13 LkSG „ab sofort vollständig" eingestellt, die Einreichung ist „nicht mehr möglich"; ein Änderungsgesetz streicht die Berichtspflicht rückwirkend. Das Pflichtdokument existiert nicht mehr. Doppelkill — Ideen-Scout und Inversion töteten es unabhängig mit je einer Suche.',
-    whyDiscardedEn: 'The premise is dead: BAFA has stopped reviewing company reports under §§ 12/13 LkSG "completely, with immediate effect", submission is "no longer possible", and an amending act abolishes the reporting duty retroactively. The mandatory document no longer exists. Double kill — the idea scout and the inversion agent each killed it with one search.',
-    lessonDe: 'Vor der Sammlersuche die Gegenprobe „Gilt die Pflicht noch?" — Regime unter Abschaffung oder Verschiebung (LkSG, EUDR, CSDDD) liefern keine Dokumente.',
-    lessonEn: 'Before searching for collectors, check "does the obligation still apply?" — regimes being abolished or postponed (LkSG, EUDR, CSDDD) yield no documents.',
-    domain: 'Lieferketten & Offenlegung',
-    evidence: [
-      'bafa.de/DE/Lieferketten/Berichtspflicht/berichtspflicht_node.html — Prüfung eingestellt, Einreichung nicht mehr möglich [Seite]',
-      'bundestag.de / bundesregierung.de — Änderungsgesetz, 1. Lesung 16.01.2026 [Schnipsel]'
-    ],
-    cause: 'praemisse',
-    killer: 'keiner',
-    foundBy: 'deutsch',
-    origin: 'quelle',
-    stage: 'kandidat',
-    bornIn: 'Offenlegungs-Runde 28.09.2026 · Ideenrunde (Engine 1) + Inversion Run 5 (Engine 3), Doppelkill',
-    diedOn: '2026-09-28',
-    resurrectIfDe: 'Wenn die CSDDD-Umsetzung eine öffentliche Berichtspflicht ohne Register zurückbringt.',
-    resurrectIfEn: 'If the CSDDD transposition brings back a public reporting duty without a register.'
-  },
-  {
     id: 'waermeplan-register',
     title: 'Wärmeplan-Register (kommunale Wärmepläne nach WPG)',
     originalIdeaDe: 'Die nach §§ 13/23 Wärmeplanungsgesetz veröffentlichten kommunalen Wärmepläne sammeln und vergleichbar machen.',
@@ -4001,29 +3953,6 @@ export const DISCARDED_DATA: DiscardedItem[] = [
     resurrectIfEn: 'If the KWW atlas is discontinued or stops adding new plans.'
   },
   {
-    id: 'bfsg-erklaerungspruefer',
-    title: 'BFSG-Erklärungsprüfer (Barrierefreiheitsinformationen von Online-Shops)',
-    originalIdeaDe: 'Die Pflichtinformationen zur Barrierefreiheit nach § 14 und Anlage 3 BFSG bei Online-Shops sammeln und auf Vollständigkeit prüfen.',
-    originalIdeaEn: 'Collect the mandatory accessibility information under § 14 and Annex 3 of the German Accessibility Strengthening Act (BFSG) from online shops and check it for completeness.',
-    whyDiscardedDe: 'Gebaut und kommerziell dicht: DataPulse hat 2.446 Shops ausgewertet, mindshape 1.000 Websites; Audit-Agenturen und Scanner verkaufen die Prüfung, die MLBF ist im Vollzug. Faustregel „Endnutzer zahlen" trifft.',
-    whyDiscardedEn: 'Built and commercially dense: DataPulse analysed 2,446 shops, mindshape 1,000 websites; audit agencies and scanners sell the check, and the MLBF enforces. The rule of thumb "end users pay" applies.',
-    lessonDe: 'Wo Firmen für die Prüfung ihrer eigenen Pflichtangabe zahlen, ist auch die Außensicht schon eine Studie oder ein Scanner.',
-    lessonEn: 'Where companies pay to have their own mandatory statement checked, the outside view is already a study or a scanner.',
-    domain: 'Barrierefreiheit & Online-Handel',
-    evidence: [
-      'assistenzplus.de — BFSG-Veränderungen (DataPulse 2.446 Shops, mindshape 1.000 Websites, MLBF) [Schnipsel]'
-    ],
-    cause: 'gebaut',
-    killer: 'kommerziell',
-    foundBy: 'deutsch',
-    origin: 'quelle',
-    stage: 'kandidat',
-    bornIn: 'Offenlegungs-Runde 28.09.2026 · Ideenrunde (Engine 1)',
-    diedOn: '2026-09-28',
-    resurrectIfDe: 'Nie als Shop-Prüfung. Höchstens, wenn die Marktüberwachung ein offenes Prüfformat anfordert, das die Scanner nicht liefern.',
-    resurrectIfEn: 'Never as a shop check. At most if market surveillance requests an open audit format the scanners do not provide.'
-  },
-  {
     id: 'barrieren-spontanmeldung',
     title: 'Barrieren-Spontanmeldung (BFSG × Pharmakovigilanz)',
     originalIdeaDe: 'Betroffene melden Barrieren bei Produkten und Dienstleistungen mit Bezug auf die BFSG-Erklärung des Anbieters; eine Sammelstelle aggregiert die Einzelmeldungen wie ein Spontanmeldesystem zu Signalen.',
@@ -4045,29 +3974,6 @@ export const DISCARDED_DATA: DiscardedItem[] = [
     diedOn: '2026-09-28',
     resurrectIfDe: 'Wenn die MLBF ihr Meldeportal einstellt oder Meldungen nicht aggregiert veröffentlicht und ein Betroffenenverband eine eigene Sammlung verlangt.',
     resurrectIfEn: 'If the MLBF closes its reporting portal or does not publish aggregated reports, and a disability organisation asks for its own collection.'
-  },
-  {
-    id: 'public-cbcr-sammelbuch',
-    title: 'Public-CbCR-Sammelbuch (Ertragsteuerinformationsberichte)',
-    originalIdeaDe: 'Die öffentlichen länderbezogenen Ertragsteuerinformationsberichte nach RL (EU) 2021/2101 / § 342m HGB sammeln und vergleichbar machen.',
-    originalIdeaEn: 'Collect the public country-by-country income tax information reports under Directive (EU) 2021/2101 / § 342m HGB and make them comparable.',
-    whyDiscardedDe: 'Gebaut: taxplorer.eu (EU Tax Observatory) sammelt die Berichte von mehr als 800 Konzernen. Steuertransparenz ist ein Forschungsfeld mit eigenem Datenmotiv.',
-    whyDiscardedEn: 'Built: taxplorer.eu (EU Tax Observatory) collects the reports of more than 800 groups. Tax transparency is a research field with its own data motive.',
-    lessonDe: 'Frei ist das Offenlegungsmuster nur, wo keine Forschungsgruppe von den Daten lebt — Steuertransparenz gehört auf die Warnliste.',
-    lessonEn: 'The disclosure pattern is only free where no research group lives off the data — tax transparency belongs on the warning list.',
-    domain: 'Steuertransparenz & Offenlegung',
-    evidence: [
-      'taxplorer.eu (EU Tax Observatory), > 800 Konzerne [Schnipsel]'
-    ],
-    cause: 'gebaut',
-    killer: 'forschung',
-    foundBy: 'englisch',
-    origin: 'bisoziation',
-    stage: 'kandidat',
-    bornIn: 'Offenlegungs-Runde 28.09.2026 · Bisoziation Run 11 (Engine 2, Tail-Kandidat)',
-    diedOn: '2026-09-28',
-    resurrectIfDe: 'Wenn Taxplorer eingestellt wird oder deutsche Konzerne unterhalb der Taxplorer-Abdeckung bleiben und jemand mit Mandat danach fragt.',
-    resurrectIfEn: 'If Taxplorer shuts down, or German groups remain below Taxplorer\'s coverage and someone with a mandate asks for them.'
   },
   {
     id: 'quanten-spielwiese',
@@ -4168,6 +4074,151 @@ export const DISCARDED_DATA: DiscardedItem[] = [
     diedOn: '2026-09-28',
     resurrectIfDe: 'Nie als Allzweck-Kamera-App — nur wenn ein Behörden-Prüfprotokoll für spezifische Neophyten-Meldungen (z. B. Beifuß-Ambrosie) gefordert wird.',
     resurrectIfEn: 'Never as general camera app — only if a regulatory protocol for specific neophyte reporting (e.g. ragweed) is officially mandated.'
+  },
+  {
+    id: 'lksg-berichte-bafa',
+    title: 'LkSG-Berichtsregister (BAFA-Berichte)',
+    originalIdeaDe: 'Offenes Register der jährlichen LkSG-Berichte, geprüft gegen die Berichtspflicht; „fehlend" als Sichtbarkeitssignal.',
+    originalIdeaEn: 'An open register of the annual LkSG reports, checked against the reporting duty; "missing" as a visibility signal.',
+    whyDiscardedDe: 'Die Berichtspflicht ist rückwirkend abgeschafft (BAFA prüft seit 01.10.2025 keine Berichte mehr, Änderungsgesetz). Es gibt keinen Gegenstand, den ein Register sammeln könnte; „fehlend" wäre nicht einmal eine bedingte Pflichtverletzung. Alle drei Engines fanden dasselbe (Dreifach-Kill); die Pflichtfrage „Gilt die Pflicht heute?" hätte ohne Suche gereicht.',
+    whyDiscardedEn: 'The reporting duty was abolished retroactively (BAFA has not reviewed reports since 01.10.2025, amending act). There is nothing for a register to collect; "missing" would not even be a conditional breach. All three engines found the same (triple kill); the question "does the duty apply today?" would have sufficed without a search.',
+    lessonDe: 'Vor jeder Offenlegungsidee zuerst fragen, ob die Pflicht heute überhaupt gilt (Vorfilter 0). Gestrichene Pflichten liefern kein Register, sondern nur einen Nachruf.',
+    lessonEn: 'Before any disclosure idea, first ask whether the duty applies today at all (pre-filter 0). Abolished duties yield no register, only an obituary.',
+    domain: 'Lieferketten & Recht',
+    evidence: [
+      'kpmg-law.de — Änderungsgesetz LkSG, Berichtspflicht entfallen [Schnipsel]',
+      'bafa.de — Hinweise zur Berichtspflicht [Schnipsel]',
+      'bundesregierung.de / taw.de — Abschaffung der Berichtspflicht [Schnipsel]'
+    ],
+    cause: 'praemisse',
+    killer: 'keiner',
+    foundBy: 'deutsch',
+    origin: 'quelle',
+    stage: 'kandidat',
+    bornIn: 'Offenlegung-Runde 28.09.2026 · Dreifachfund (Ideenrunde + Bisoziation Run 11 + Inversion Run 5)',
+    diedOn: '2026-09-28',
+    resurrectIfDe: 'Wenn die CSDDD-Umsetzung eine öffentliche Berichtspflicht mit gesetzlich bestimmtem Format einführt und keine Behörde die Berichte selbst veröffentlicht.',
+    resurrectIfEn: 'If CSDDD transposition introduces a public reporting duty with a statutory format and no authority publishes the reports itself.'
+  },
+  {
+    id: 'pcbcr-sammler',
+    title: 'pCbCR-Sammler (öffentliche Ertragsteuerinformationsberichte)',
+    originalIdeaDe: 'Offenes Register der öffentlichen länderbezogenen Steuerberichte (Public Country-by-Country Reporting) großer Konzerne.',
+    originalIdeaEn: 'An open register of large groups\' public country-by-country tax reports (public CbCR).',
+    whyDiscardedDe: 'Gebaut: Taxplorer und die Aggregationen der Beratungshäuser (u. a. PwC) sammeln und vergleichen die veröffentlichten Berichte bereits. Ein Register der Berichte ist damit kein Fehlbestand mehr.',
+    whyDiscardedEn: 'Built: Taxplorer and the advisory firms\' aggregations (e.g. PwC) already collect and compare the published reports. A register of the reports is no longer a gap.',
+    lessonDe: 'Steuertransparenz hat eine eigene NGO-/Beraterszene; wo Offenlegung Geld oder Kampagnenwert hat, sammelt schon jemand.',
+    lessonEn: 'Tax transparency has its own NGO/adviser scene; where disclosure has money or campaign value, someone already collects.',
+    domain: 'Steuertransparenz',
+    evidence: [
+      'Taxplorer — pCbCR-Datenbank [Schnipsel]',
+      'PwC — pCbCR-Auswertungen [Schnipsel]'
+    ],
+    cause: 'gebaut',
+    killer: 'kommerziell',
+    foundBy: 'englisch',
+    origin: 'quelle',
+    stage: 'kandidat',
+    bornIn: 'Offenlegung-Runde 28.09.2026 · Ideenrunde (Engine 1)',
+    diedOn: '2026-09-28',
+    resurrectIfDe: 'Wenn Taxplorer eingestellt wird und kein anderer Sammler die pCbCR-Berichte pflegt.',
+    resurrectIfEn: 'If Taxplorer is discontinued and no other collector maintains the pCbCR reports.'
+  },
+  {
+    id: 'gpai-trainingsdaten-zusammenfassungen',
+    title: 'GPAI-Trainingsdaten-Zusammenfassungen (Register)',
+    originalIdeaDe: 'Sammelstelle für die öffentlichen Zusammenfassungen der Trainingsdaten von KI-Modellen mit allgemeinem Verwendungszweck (AI Act Art. 53), geprüft gegen das Kommissionsmuster.',
+    originalIdeaEn: 'A collection point for the public training-data summaries of general-purpose AI models (AI Act Art. 53), checked against the Commission template.',
+    whyDiscardedDe: 'Gebaut: „GPAI Ledger" führt die Zusammenfassungen bereits als öffentliches Verzeichnis. Das Feld ist ein aktives KI-Governance-Thema mit Community-Werkzeugen.',
+    whyDiscardedEn: 'Built: "GPAI Ledger" already keeps the summaries as a public directory. The field is an active AI-governance topic with community tools.',
+    lessonDe: 'KI-Regulierung zieht schneller Sammler an als jedes andere Regime; Vorfilter 4 (Registerträger existiert schon?) zuerst.',
+    lessonEn: 'AI regulation attracts collectors faster than any other regime; pre-filter 4 (does a register holder already exist?) first.',
+    domain: 'KI-Regulierung',
+    evidence: [
+      'GPAI Ledger — Verzeichnis der Trainingsdaten-Zusammenfassungen [Schnipsel]'
+    ],
+    cause: 'gebaut',
+    killer: 'community',
+    foundBy: 'englisch',
+    origin: 'quelle',
+    stage: 'kandidat',
+    bornIn: 'Offenlegung-Runde 28.09.2026 · Ideenrunde (Engine 1)',
+    diedOn: '2026-09-28',
+    resurrectIfDe: 'Wenn GPAI Ledger aufgegeben wird und das AI Office keine eigene Liste veröffentlicht.',
+    resurrectIfEn: 'If GPAI Ledger is abandoned and the AI Office publishes no list of its own.'
+  },
+  {
+    id: 'bfsg-barrierefreiheitserklaerungen',
+    title: 'BFSG-Barrierefreiheitserklärungen-Register',
+    originalIdeaDe: 'Verzeichnis der Barrierefreiheitserklärungen, die Anbieter nach dem Barrierefreiheitsstärkungsgesetz (BFSG) veröffentlichen müssen.',
+    originalIdeaEn: 'A directory of the accessibility statements providers must publish under the German Accessibility Strengthening Act (BFSG).',
+    whyDiscardedDe: 'Besetzt: Der Händlerbund bündelt Erklärung und Prüfhilfen für Händler, die Marktüberwachungsstelle (MLBF) führt die Aufsicht. Das Feld ist Compliance-Markt mit Abmahn-Anreiz.',
+    whyDiscardedEn: 'Occupied: the Händlerbund bundles statement templates and checks for merchants, the market surveillance body (MLBF) runs enforcement. The field is a compliance market with a warning-letter incentive.',
+    lessonDe: 'Wo ein Abmahn- oder Bußgeldanreiz besteht, gibt es Compliance-Anbieter; das Register-Muster braucht ein Feld ohne Geschäftsmodell.',
+    lessonEn: 'Where a warning-letter or fine incentive exists, compliance vendors exist; the register pattern needs a field without a business model.',
+    domain: 'Barrierefreiheit & Recht',
+    evidence: [
+      'Händlerbund — BFSG-Erklärung und Prüfung [Schnipsel]',
+      'MLBF — Marktüberwachung Barrierefreiheit [Schnipsel]'
+    ],
+    cause: 'gebaut',
+    killer: 'kommerziell',
+    foundBy: 'deutsch',
+    origin: 'quelle',
+    stage: 'kandidat',
+    bornIn: 'Offenlegung-Runde 28.09.2026 · Ideenrunde (Engine 1)',
+    diedOn: '2026-09-28',
+    resurrectIfDe: 'Wenn die Marktüberwachung keine öffentliche Erklärungsliste führt und kein Verband ein Verzeichnis anbietet.',
+    resurrectIfEn: 'If market surveillance publishes no list of statements and no association offers a directory.'
+  },
+  {
+    id: 'hersteller-register-battg-lucid-ppwr',
+    title: 'Hersteller-Register-Abgleich (BattG / LUCID / PPWR)',
+    originalIdeaDe: 'Öffentlicher Abgleich, welche Hersteller in den Registern für Batterien, Verpackungen und PPWR-Pflichten stehen und welche nicht.',
+    originalIdeaEn: 'A public comparison of which producers appear in the battery, packaging and PPWR registers and which do not.',
+    whyDiscardedDe: 'Besetzt: Das Register besteht per Design und ist öffentlich (LUCID/ZSVR, stiftung ear), dazu eine öffentliche Liste hinterlegter Vollständigkeitserklärungen. Nenner und Registerträger sind da; ZSVR gleicht Meldung und Systemmenge selbst ab. Dreifachfund der Engines.',
+    whyDiscardedEn: 'Occupied: the register exists by design and is public (LUCID/ZSVR, stiftung ear), plus a public list of filed completeness declarations. Denominator and register holder exist; ZSVR reconciles reports and system volumes itself. Triple find across engines.',
+    lessonDe: 'Das Muster „Offenlegung ohne Register" gilt nur, wo das Gesetz kein Register vorsieht. Hier hat die Behörde das Register selbst gebaut.',
+    lessonEn: 'The pattern "disclosure without a register" applies only where the law provides none. Here the authority built the register itself.',
+    domain: 'Kreislaufwirtschaft & Recht',
+    evidence: [
+      'oeffentliche-register.verpackungsregister.org — LUCID, Vollständigkeitserklärungen [Schnipsel]',
+      'stiftung-ear.de — Herstellerregister Batterien [Schnipsel]'
+    ],
+    cause: 'gebaut',
+    killer: 'behoerde',
+    foundBy: 'deutsch',
+    origin: 'bisoziation',
+    stage: 'kandidat',
+    bornIn: 'Offenlegung-Runde 28.09.2026 · Bisoziation Run 11 (Dreifachfund mit Ideenrunde K10 + Inversion Run 5)',
+    diedOn: '2026-09-28',
+    resurrectIfDe: 'Wenn ein Register-Träger seine Daten schließt und ein Dritter sie nicht mehr auswerten darf.',
+    resurrectIfEn: 'If a register holder closes its data and third parties may no longer analyse them.'
+  },
+  {
+    id: 'csrd-esrs-register',
+    title: 'CSRD/ESRS-Berichtsregister',
+    originalIdeaDe: 'Offene Tabelle der ersten ESRS-Nachhaltigkeitsberichte (DE/EU), ESEF-iXBRL geparst, vor dem Start der offiziellen Plattform.',
+    originalIdeaEn: 'An open table of the first ESRS sustainability reports (DE/EU), ESEF iXBRL parsed, ahead of the official platform.',
+    whyDiscardedDe: 'Besetzt (Dreifach-Kill aller Engines): Das Register besteht per Design (Unternehmensregister, ESAP: Aufbau ab 10.07.2026, Betrieb bis 10.07.2027, CSRD-Daten ab 10.01.2028, kostenlos). Dazu Haufe „Sustainability Reporting Navigator", ein Hochschulprojekt „CSRD: Datenbank für Reports" und filings.xbrl.org. Die Zwischenzeit 2026–2028 ist die einzige Restlücke, und ihr Why-Now-Fenster fällt mit ESAP zusammen.',
+    whyDiscardedEn: 'Occupied (triple kill by all engines): the register exists by design (company register, ESAP: build-up from 10.07.2026, operation until 10.07.2027, CSRD data from 10.01.2028, free). Also Haufe "Sustainability Reporting Navigator", a university project "CSRD: database for reports" and filings.xbrl.org. The 2026-2028 interim is the only remaining gap, and its why-now window coincides with ESAP.',
+    lessonDe: 'Wenn eine EU-Behörde das Register per Design baut, ist die Zwischenzeit kein tragfähiges Why-Now.',
+    lessonEn: 'When an EU authority builds the register by design, the interim period is not a viable why-now.',
+    domain: 'Nachhaltigkeitsberichte & Recht',
+    evidence: [
+      'ESAP — European Single Access Point, ESMA/EFRAG [Schnipsel]',
+      'Haufe — Sustainability Reporting Navigator [Schnipsel]',
+      'filings.xbrl.org — XBRL International ESEF-Filings [Schnipsel]'
+    ],
+    cause: 'gebaut',
+    killer: 'behoerde',
+    foundBy: 'englisch',
+    origin: 'quelle',
+    stage: 'kandidat',
+    bornIn: 'Offenlegung-Runde 28.09.2026 · Dreifachfund (Ideenrunde + Bisoziation Run 11 + Inversion Run 5)',
+    diedOn: '2026-09-28',
+    resurrectIfDe: 'Wenn ESAP die Berichte nicht maschinenlesbar oder nicht kostenfrei bereitstellt.',
+    resurrectIfEn: 'If ESAP does not provide the reports machine-readable or free of charge.'
   }
 ];
 

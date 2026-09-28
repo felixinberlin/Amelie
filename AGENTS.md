@@ -26,7 +26,7 @@ Amélie speichert sein Gedächtnis nicht in Chat-Transkripten, sondern im Dateis
   * `amelie-suchplaybook.md`: Die Heuristiken, Stoppregeln und erprobten Suchstrategien.
   * `amelie-inversions-log.md` & `amelie-bisoziation-log.md`: Operative Protokolle der Ideenfindung.
 * **`08-friedhof/` (Rückwärts-Gedächtnis / Obduktionssaal):**
-  * Enthält 33 beerdigte Ideen mit vollem Totenschein (`cause`, `killer`, `foundBy`, `stage`).
+  * Enthält 58 beerdigte Ideen mit vollem Totenschein (`cause`, `killer`, `foundBy`, `stage`).
   * **Regel:** Vor jeder neuen Ideengenerierung ist der Gang über den Friedhof Pflicht, um keine Wiedergänger zu produzieren.
 
 ---
@@ -91,7 +91,21 @@ Wenn du ein Ticket, ein Kriterium oder eine Dosen-Beschreibung änderst, musst d
   * **1 Packaging-Agent:**
     * `skills/dose-packer/` (`dose-packer.skill` & Subagent `dose-packer`): Schreibt zweisprachige Dossiers (`05-dosen/`, `en/05-dosen/`), verknüpft Dosen im React-Frontend (`src/data/dosen.ts`), synchronisiert Frontmatter und Caches (`export:data`).
   * **Orchestrierung (Team-Agenten):** `skills/amelie-orchestrator/` beschreibt die Teamrunde (Vorflug → 3 Engines parallel → Konvergenz-Merge → Reviewer → Packer → Demo-Builder → Bibliothekar → Abschluss). Die Rollen liegen als Subagenten in `.claude/agents/` (`ideen-scout`, `bisoziations-kollider`, `inversions-agent`, `idea-reviewer`, `dose-packer`, `demo-builder`, `bibliothekar`) mit disjunkten Schreibrechten.
-  * **Aktueller Dosenstand:** 42 Dosen im Bestand, 52 Gräber. Neu verpackt: `vernichtungs-offenlegungsregister` (Teamrunde ESPR 28.09.2026), `abbundzeichen-fundbuch` (Holz-Runde 27.09.2026), `bleifrei-lotse` und `tarot-zustandsmaschine` (Arcana Schema).
+  * **Aktueller Dosenstand:** 44 Dosen im Bestand, 69 Gräber. Neu verpackt: `umsetzungsplan-register` (Offenlegungs-Runde Lauf A 28.09.2026), `vernichtungs-offenlegungsregister` (Teamrunde ESPR 28.09.2026), `abbundzeichen-fundbuch` (Holz-Runde 27.09.2026), `bleifrei-lotse` und `tarot-zustandsmaschine` (Arcana Schema).
+* **Offenlegungs-Runde, Lauf A (lokal, 28.09.2026, Teamrunde 2 mit `venture-analyst`):**
+  * Gleiches Thema wie Lauf B, parallel und ohne Absprache gelaufen; Abgleich im Prüfprotokoll. **Netz offen**, Normtexte als `[Seite]` gelesen (eur-lex nur über `publications.europa.eu/resource/celex/<CELEX>`).
+  * 22 Engine-Kandidaten → 14 Ideen, zwei Dreifachfunde (EnEfG § 9, DSA Art. 15) → Reviewer → **1 Dose, 1 Needs Research (`wahlwerbe-herbarium`, 12/2026), 7 neue Gräber** (4 Überschneidungen mit Lauf B nicht doppelt begraben; Konfliktmineralien: A am Volltext → Grab, überholt B).
+  * **`umsetzungsplan-register` gepackt** (25/35, `build_first`): offenes Register der veröffentlichten Umsetzungspläne nach § 9 EnEfG (BT-Drs. 21/8027; EED Art. 11 Abs. 2 sichert die Veröffentlichung). Nie „säumig“, keine Quote, kein Ranking. Schema gegen BAFA-Merkblatt **16.09.2026 (fünf Pflichtangaben)**. Empfänger DENEFF (Christian Noll) — **vor Versand verifizieren**. Keine Mail angelegt.
+  * Scaffolding `07-demos/umsetzungsplan-register/` + Engine (89 Tests), drei echte Fixtures (Muster GmbH, Sanofi, VON ARDENNE) mit SHA-256; Registerkern aus `vernichtungs-offenlegungsregister` importiert.
+  * **Venture-Spur:** 5 Firmenseiten-Zwillinge geprüft → 0 Leads, 5 Kills (Formulare, meist gratis). Nichts in `ventures/`.
+  * **Lehre:** Vor Phase 0 `git fetch` und offene PRs/`claude/*`-Branches auf dasselbe Thema prüfen — zwei Sitzungen im selben Repo verdoppelten die Suche.
+
+* **Offenlegung-Runde, Lauf B (Cloud-Sitzung, 28.09.2026, Teamrunde 2):**
+  * Thema: Muster „Offenlegungspflicht ohne Register" auf LkSG, EUDR, CSRD, BattVO, VerpackG/PPWR übertragen. 15 Ideen → 0 frei, 3 verengt, 6 unklar, 6 besetzt → **0 Dosen** (Reviewer: keine `Dose Ready`), 6 neue Gräber (58 gesamt).
+  * Muster trägt nur bei junger Pflicht ohne Registerträger (ESPR war die Ausnahme). Neue Vorfilter 0–4 im Playbook-Atlas. Empfehlung: Themenwechsel weg von EU-Compliance-Regimen.
+  * `Needs Research` (je 20/35): Konfliktmineralien-Berichtsregister (DEKSOR/BGR), LkSG-Beschwerdekanal-Verzeichnis. Bausteine: Nenner-Schätzer → `vernichtungs-offenlegungsregister`.
+  * Evidenz durchgehend nur Suchschnipsel (Egress-Proxy sperrt Behörden-Seiten).
+
 * **Holz-Runde (27.09.2026):**
   * Drei Engines parallel auf das Thema Holz → 19 geprüfte Ideen (2 frei, 6 verengt, 3 unklar, 8 besetzt) → Reviewer → 1 Dose.
   * **`abbundzeichen-fundbuch` gepackt** (26/35, Tier 1): Zählfolgen-Prüfer für Abbundzeichen an Fachwerk; Empfänger IgB-Hausforschung. **Kontakt (Dr. Julia Ricker) nur aus Suchschnipsel — vor jedem Versand auf igbauernhaus.de verifizieren.** Keine Mail angelegt.

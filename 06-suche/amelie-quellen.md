@@ -260,7 +260,7 @@ Alle Einträge **nur über Suchschnipsel** erschlossen; eur-lex.europa.eu, brubr
 
 ---
 
-## Typ O — Pflichtveröffentlichungen ohne Register: Offenlegungsregime DE/EU (neu, Offenlegungs-Runde 28.09.2026)
+## Typ O — Pflichtveröffentlichungen ohne Register: Offenlegungsregime DE/EU (neu, Offenlegungs-Runde Lauf A 28.09.2026, Volltext)
 
 **Netz offen, Normtexte gelesen `[Seite]`**; EU-Recht über `publications.europa.eu/resource/celex/<CELEX>` bzw. legislation.gov.uk (eur-lex direkt: WAF-Challenge). Nur Suchtreffer ohne Abruf tragen `[Schnipsel]`. Vor jedem Eintrag hier die drei Pflichtfragen des Atlas (Playbook, Zeile „Offenlegungspflicht ohne Register").
 
@@ -271,12 +271,33 @@ Alle Einträge **nur über Suchschnipsel** erschlossen; eur-lex.europa.eu, brubr
 | **DSA Art. 15 + DVO (EU) 2024/2835** (harmonisierte CSV-Vorlagen) + **DSC-Tätigkeitsbericht 2025** (dsc.bund.de) | Format ja, Sammler nur für VLOPs (Kommission); DSC erklärt Anordnungsdifferenz selbst (Art. 9(6)/10(6)); VLOP-Seite Forschung (HIIG, RTFP, Open Terms Archive, Trujillo et al. 2026) | `erschöpft` für Register/Gegenbuch (Grab `dsa-anordnungs-gegenbuch`) [Seite] | 28.09.2026 |
 | **TTPA VO (EU) 2024/900 Art. 12/13** (CELEX) + netzpolitik.org 04.09.2026 + Parteiseiten Wahl Berlin (volt, gruene.berlin) | Hinweis nur während Schaltung auffindbar, EU-Archiv nur online; keine Sammlung offline; PWTG offen | `angekratzt` — **ergiebig** (K3 `wahlwerbe-herbarium`, Needs Research; WV 12/2026) [Seite] | 28.09.2026 |
 | **§ 12b BGG + RL 2016/2102 Art. 8** (zweiter Überwachungsbericht BFIT-Bund, reha-recht.de) + digitoegankelijk.nl + DasDies-Atlas | Staat misst EzB-Quote (7.239 Webauftritte); NL-Register staatlich | `erschöpft` (Grab `ezb-register`) [Seite] | 28.09.2026 |
-| **BFSG § 14, Anlage 3, § 32** + MLBF-Meldeportal + DataPulse/mindshape-Studien | Shopprüfung kommerziell, Meldungen beim Empfänger | `erschöpft` (Gräber `bfsg-erklaerungspruefer`, `barrieren-spontanmeldung`) [Schnipsel] | 28.09.2026 |
+| **BFSG § 14, Anlage 3, § 32** + MLBF-Meldeportal + DataPulse/mindshape-Studien | Shopprüfung kommerziell, Meldungen beim Empfänger | `erschöpft` (Gräber `bfsg-barrierefreiheitserklaerungen`, `barrieren-spontanmeldung`) [Schnipsel] | 28.09.2026 |
 | **§§ 21/22 EntgTranspG** + **RL (EU) 2023/970 Art. 9, 29** (CELEX 32023L0970) | Berichte im Unternehmensregister, ohne Entgeltdaten; Überwachungsstelle muss vergleichend veröffentlichen | `erschöpft` (Gräber `gleichstellungsbericht-archiv`, `entgeltgefaelle-register`) [Seite] | 28.09.2026 |
 | **VO (EU) 2017/821 Art. 7 Abs. 3** (legislation.gov.uk, CELEX 32017R0821) + IPIS/ARM 2023 + DEKSOR (bgr.bund.de nicht abrufbar, 400/406) | Einführerliste nur Zolldaten, DEKSOR prüft selbst | `erschöpft` (Grab `konfliktmineralien-berichtsregister`) [Seite/Schnipsel] | 28.09.2026 |
 | **EUDR VO (EU) 2023/1115 Art. 12 Abs. 3** (CELEX 32023R1115) + VO (EU) 2025/2650 (Verschiebung) | Erster Jahresbericht für GJ 2027; Nicht-KMU, CSRD-Ausweichweg; Informationssystem vertraulich | `offen` — **Wiedervorlage Q1/2028** (K7 `unklar`) | 28.09.2026 |
-| **LkSG §§ 12/13** (bafa.de Berichtspflicht) | Prüfung eingestellt, Pflicht wird rückwirkend gestrichen | `erschöpft` (Grab `lksg-berichtsregister`) [Seite] | 28.09.2026 |
-| **AI Act Art. 53 Abs. 1 lit. d** (gpailedger.com), **Public CbCR** (taxplorer.eu), **WPG** (kww-halle.de Wärmewendeatlas) | Jeweils gebaut: Forschung/staatlich | `erschöpft` (Gräber `gpai-summaries-register`, `public-cbcr-sammelbuch`, `waermeplan-register`) | 28.09.2026 |
+| **LkSG §§ 12/13** (bafa.de Berichtspflicht) | Prüfung eingestellt, Pflicht wird rückwirkend gestrichen | `erschöpft` (Grab `lksg-berichte-bafa`) [Seite] | 28.09.2026 |
+| **AI Act Art. 53 Abs. 1 lit. d** (gpailedger.com), **Public CbCR** (taxplorer.eu), **WPG** (kww-halle.de Wärmewendeatlas) | Jeweils gebaut: Forschung/staatlich | `erschöpft` (Gräber `gpai-trainingsdaten-zusammenfassungen`, `pcbcr-sammler`, `waermeplan-register`) | 28.09.2026 |
+
+---
+
+## Typ O (Lauf B) — EU-Offenlegungsregime: Lieferkette, Nachhaltigkeit, Verpackung, Steuer, KI (Offenlegung-Runde Lauf B 28.09.2026, Schnipsel)
+
+Alle Einträge **nur über Suchschnipsel** erschlossen; das Netz war gesperrt, keine Seite im Volltext gelesen.
+
+| Quelle | Befund | Status | Zuletzt |
+|---|---|---|---|
+| **VO (EU) 2017/821 Art. 7 + BGR/DEKSOR** (Sorgfaltspflichtberichte der Unionseinführer; DEKSOR-Bericht 2025 auf dggv.de; OEFSE RR17; Firmenberichte Treibacher/Agosi/Heraeus) | Pflicht seit 01.01.2021, bedingt durch Mengenschwellen; keine Liste Verpflichteter gefunden; DEKSOR prüft und veröffentlicht selbst | `angekratzt` — **offen: DEKSOR-Bericht 2025 als [Seite] lesen** (Population, Veröffentlichungspflicht) | 28.09.2026 |
+| **LkSG § 6 Abs. 2 / § 8 + Änderungsgesetz** (gesetze-im-internet, BAFA, kpmg-law, bundesregierung, taw; Germanwatch/Misereor, Seite germanwatch.org/en/93384) | Berichtspflicht rückwirkend gestrichen (BAFA prüft seit 01.10.2025 nicht); Grundsatzerklärung und Beschwerdeverfahren bleiben, aber ohne Sammelort; kein Verzeichnis der Verfahrensordnungen gefunden | `angekratzt` — **ergiebig** für Beschwerdekanal-Verzeichnis (`unklar`); Berichts-Ast `erschöpft` (Grab `lksg-berichte-bafa`). **Offen: Germanwatch 93384 als [Seite] lesen** | 28.09.2026 |
+| **CSRD/ESRS, ESAP, Unternehmensregister** (amf-france, dfsa.dk, forvismazars, saim; Haufe Navigator, filings.xbrl.org) | Register per Design (ESAP: Aufbau ab 10.07.2026, CSRD-Daten ab 10.01.2028); Omnibus-Kreis > 1.000 Beschäftigte und > 450 Mio. € Umsatz; DE-Umsetzungsgesetz fehlt | `erschöpft` für Register (Grab `csrd-esrs-register`); CSRD-Fehlanzeigen `unklar` | 28.09.2026 |
+| **EUDR VO (EU) 2023/1115 + Reg. (EU) 2025/2650** (TRACES NT, lawcode, twobirds, stibbe) | Sorgfaltserklärungen nicht öffentlich by design; Anwendung 30.12.2026/30.06.2027; Bericht ab 2028 | `erschöpft` (Grab `eudr-kleinwald-erklaerung` + verfrühte Protokollzeile) | 28.09.2026 |
+| **Verpackungsregister LUCID / ZSVR + stiftung ear** (oeffentliche-register.verpackungsregister.org, verpackungsgesetz.com, deutsche-recycling.de, stiftung-ear.de) | Register öffentlich, Liste hinterlegter Vollständigkeitserklärungen, ZSVR-Abgleich; PPWR seit 12.08.2026 | `erschöpft` (Grab `hersteller-register-battg-lucid-ppwr`) | 28.09.2026 |
+| **BattVO Art. 48 Sorgfalt** (lizenzero, batteriegesetz, tracepass.eu) | Pflicht auf 18.08.2027 verschoben | `angekratzt` — Wiedervorlage 08/2027 | 28.09.2026 |
+| **pCbCR: Taxplorer, PwC** | Sammler und Auswertungen vorhanden | `erschöpft` (Grab `pcbcr-sammler`) | 28.09.2026 |
+| **AI Act Art. 53: GPAI Ledger** | Öffentliches Verzeichnis der Trainingsdaten-Zusammenfassungen | `erschöpft` (Grab `gpai-trainingsdaten-zusammenfassungen`) | 28.09.2026 |
+| **BFSG: Händlerbund, MLBF** | Compliance-Markt und Marktüberwachung | `erschöpft` (Grab `bfsg-barrierefreiheitserklaerungen`) | 28.09.2026 |
+| **Entgelttransparenz-RL (personalwirtschaft, haufe)** | Frist 07.06.2026 verpasst, DE-Gesetz bis Anfang 2027 | `offen` — Wiedervorlage nach Kabinettsentwurf | 28.09.2026 |
+| **DSA-Transparenzberichte (HIIG)** | Keine Verpflichtetenliste | `angekratzt` | 28.09.2026 |
+| **Capture-Recapture (PMC5976169, UEA 2018_03)** | Standardverfahren für Registervollständigkeit; Baustein für den Nenner der ESPR-Dose | `angekratzt` — Methodenquelle, kein Ideenlieferant | 28.09.2026 |
 
 ---
 
@@ -289,4 +310,3 @@ Quellen und Register, die im Zuge der Triage von über 100 automatisierten Batch
 | **TED (Tenders Electronic Daily) & EU eForms / Bund.de Vergabe** (ted.europa.eu, vergabe.bund.de, Bekanntmachungsservice BKMS) | Offizielle XML/eForms-Feeds für öffentliche Ausschreibungen ab EU-Schwellenwert. Bietervorbereitung und Kriterienprüfung sind ein dicht besetzter kommerzieller Markt (Vergabe-Manager, RIB Software, Vergabe24). Als Amélie-Gemeingut fehlt die behördliche Vollzugslücke; kommerzieller B2B-Zwilling im Venture-Branch (`procure-lens-pro`). | `durchsucht` | 28.09.2026 |
 | **SPDX 2.3 & Open Source License Metadata** (spdx.org/licenses, spdx.dev, ClearlyDefined, OpenSSF) | Standardisierte SPDX-Lizenzbezeichner und maschinenlesbare Lizenzausdrücke. Developer-Compliance in CI/CD ist vollständig durch FOSSology, ScanCode Toolkit, Snyk, FOSSA und Renovate abgedeckt. Kein behördliches oder zivilgesellschaftliches Vollzugsmandat; als kommerzielles CI-Guardrail im Venture-Branch (`spdx-driftguard-ci`). | `durchsucht` | 28.09.2026 |
 | **Sensor.Community (Luftdaten.info) & OpenAQ** (sensor.community, openaq.org, archive.sensor.community) | Globale Citizen-Science-Feinstaub- und Sensordaten als offene REST- und Archiv-APIs. Kartenvisualisierung, Grenzwert-Alerts und historische Downloads sind durch die Initiativen selbst und OpenAQ bereits stabil und frei bereitgestellt; kein unbearbeiteter manueller Auswertungsstau. | `durchsucht` | 28.09.2026 |
-

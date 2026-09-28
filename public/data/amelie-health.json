@@ -1,17 +1,17 @@
 {
   "auditVersion": 1,
-  "generatedAt": "2026-09-28T19:09:02.250Z",
+  "generatedAt": "2026-09-28T19:19:29.102Z",
   "repository": {
-    "commit": "851296a",
-    "branch": "main"
+    "commit": "1582d31",
+    "branch": "merge/offenlegung"
   },
   "inventory": {
     "doses": 44,
-    "graves": 67,
+    "graves": 69,
     "demos": 9,
     "researchEntries": 35,
     "candidateIdeas": 20,
-    "books": 29
+    "books": 31
   },
   "distributions": {
     "doseStatus": {
@@ -33,7 +33,7 @@
       "audio": 1
     },
     "graveCategory": {
-      "gebaut": 37,
+      "gebaut": 39,
       "beim-empfaenger": 14,
       "reality-check": 7,
       "duplikat": 2,
@@ -75,14 +75,6 @@
   ],
   "findings": [
     {
-      "id": "DEMO-NO-README-umsetzungsplan-register",
-      "severity": "warning",
-      "category": "demo",
-      "message": "Demo 07-demos/umsetzungsplan-register is missing a README file.",
-      "file": "07-demos/umsetzungsplan-register",
-      "relatedId": "umsetzungsplan-register"
-    },
-    {
       "id": "DEMO-UNLINKED-chemhazard-stop",
       "severity": "warning",
       "category": "demo",
@@ -91,14 +83,14 @@
       "relatedId": "chemhazard-stop"
     },
     {
-      "id": "DRIFT-AGENTS.md-Gräber-33",
+      "id": "DRIFT-AGENTS.md-Gräber-58",
       "severity": "warning",
       "category": "documentation",
-      "message": "AGENTS.md claims 33 Gräber, but deterministic source scanner finds 67.",
+      "message": "AGENTS.md claims 58 Gräber, but deterministic source scanner finds 69.",
       "file": "AGENTS.md",
       "details": {
-        "claim": "33 beerdigte Ideen",
-        "actual": 67,
+        "claim": "58 beerdigte Ideen",
+        "actual": 69,
         "type": "stale_count"
       }
     },
@@ -106,11 +98,11 @@
       "id": "DRIFT-AGENTS.md-Gräber-9",
       "severity": "warning",
       "category": "documentation",
-      "message": "AGENTS.md claims 9 Gräber, but deterministic source scanner finds 67.",
+      "message": "AGENTS.md claims 9 Gräber, but deterministic source scanner finds 69.",
       "file": "AGENTS.md",
       "details": {
         "claim": "9 Gräber",
-        "actual": 67,
+        "actual": 69,
         "type": "stale_count"
       }
     },
