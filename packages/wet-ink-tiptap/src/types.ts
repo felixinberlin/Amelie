@@ -1,5 +1,6 @@
 export type WetInkPaperType = 'buetten' | 'washi' | 'aquarell-rau' | 'kopierpapier';
 export type WetInkPigmentType = 'sumi' | 'sepia' | 'eisengallus' | 'indigo' | 'aquarell-rot';
+export type WetInkToolType = 'fountain-pen' | 'sumi-brush' | 'wash-brush' | 'dip-pen';
 export type WetInkLifecycleState = 'wet' | 'settling' | 'frozen';
 
 export interface WetInkStrokePoint {
@@ -10,7 +11,7 @@ export interface WetInkStrokePoint {
 }
 
 export interface WetInkStroke {
-  tool: 'fountain-pen' | 'sumi-brush' | 'wash-brush';
+  tool: WetInkToolType;
   points: WetInkStrokePoint[];
   colorHex?: string;
   startTime: number;
@@ -26,15 +27,30 @@ export interface WetInkNodeAttributes {
   caption?: string;
   readOnly?: boolean;
   isFrozen?: boolean;
+  soundMuted?: boolean;
 }
 
 export interface WetInkExtensionOptions {
   defaultPaper: WetInkPaperType;
   defaultPigment: WetInkPigmentType;
+  defaultTool?: WetInkToolType;
   defaultWidth: number;
   defaultHeight: number;
   dryingTimeLimit: number; // max settling duration in ms (default: 4000)
   enableToolbar: boolean;
+  enableAudio: boolean;    // Web Audio nib synthesizer
   readOnly: boolean;
-  onSave?: (data: { pngDataUrl: string; strokes: WetInkStroke[]; attributes: WetInkNodeAttributes }) => void;
+  onSave?: (data: { pngDataUrl: string; svgData?: string; strokes: WetInkStroke[]; attributes: WetInkNodeAttributes }) => void;
+}
+
+export interface SVGExportOptions {
+  thresholds?: {
+    wash?: number;
+    midtone?: number;
+    core?: number;
+  };
+  colorHex?: string;
+  backgroundColor?: string;
+  simplifyTolerance?: number;
+  xmlDeclaration?: boolean;
 }

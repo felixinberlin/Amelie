@@ -39,10 +39,10 @@
     "id": "wet-ink-pro-sdk",
     "name": "Wet Ink Pro SDK & Plugins",
     "category": "developer-sdk",
-    "stage": "architecture-ready",
+    "stage": "shipped",
     "pricingModel": "commercial-license",
-    "targetPrice": "$49 - $299",
-    "targetAudience": "TipTap / ProseMirror / tldraw Webapps, E-Signature Platforms, Legaltech",
+    "targetPrice": "$49 - $399",
+    "targetAudience": "TipTap / ProseMirror / React Webapps, Obsidian Users, E-Signature Platforms, Legaltech",
     "amelieTwin": "wet-ink",
     "mvpEngineReady": true,
     "lastUpdated": "2026-09-28"

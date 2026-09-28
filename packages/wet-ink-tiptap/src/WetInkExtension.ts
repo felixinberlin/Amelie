@@ -5,10 +5,12 @@ import { WetInkNodeView } from './WetInkNodeView';
 export const DEFAULT_WET_INK_OPTIONS: WetInkExtensionOptions = {
   defaultPaper: 'buetten',
   defaultPigment: 'eisengallus',
+  defaultTool: 'fountain-pen',
   defaultWidth: 480,
   defaultHeight: 160,
   dryingTimeLimit: 4000,
   enableToolbar: true,
+  enableAudio: true,
   readOnly: false
 };
 

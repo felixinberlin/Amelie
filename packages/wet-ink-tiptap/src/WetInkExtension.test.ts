@@ -6,8 +6,18 @@ import {
 } from './serialization';
 import { getWetInkNodeSpec, createTipTapWetInkExtension, DEFAULT_WET_INK_OPTIONS } from './WetInkExtension';
 import { WetInkStroke, WetInkNodeAttributes } from './types';
+import { PenAudioSynthesizer } from './audio';
+import { WetInkSVGExporter } from './svgExport';
+import { WetInkSignature } from './react/index';
+import { registerWetInkCodeBlock } from './obsidian/index';
+import {
+  WetInkSimulation,
+  generatePaperMaps,
+  PAPER_PRESETS,
+  PIGMENT_PRESETS
+} from '../../../src/engine/wet-ink/index';
 
-describe('Wet Ink TipTap Extension & Serialization', () => {
+describe('Wet Ink TipTap Extension & Ecosystem', () => {
   const sampleStrokes: WetInkStroke[] = [
     {
       tool: 'fountain-pen',
@@ -159,6 +169,99 @@ describe('Wet Ink TipTap Extension & Serialization', () => {
       expect(typeof extension.parseHTML).toBe('function');
       expect(typeof extension.renderHTML).toBe('function');
       expect(typeof extension.addNodeView).toBe('function');
+    });
+  });
+
+  describe('Procedural Pen Audio Synthesizer', () => {
+    it('initializes and manages mute state cleanly without errors in non-browser env', () => {
+      const synth = new PenAudioSynthesizer(false);
+      expect(synth.getMuted()).toBe(false);
+
+      synth.setMuted(true);
+      expect(synth.getMuted()).toBe(true);
+
+      // Safe invocation without window.AudioContext
+      synth.startStroke(0.5);
+      synth.updateMotion(1.2, 0.7);
+      synth.endStroke();
+      synth.destroy();
+    });
+  });
+
+  describe('Marching Squares Multi-Iso SVG Vector Exporter', () => {
+    it('extracts multi-density iso contours from simulation arrays', () => {
+      const width = 64;
+      const height = 48;
+      const paperConfig = PAPER_PRESETS[0];
+      const pigmentConfig = PIGMENT_PRESETS[0];
+      const paperMaps = generatePaperMaps(width, height, paperConfig, 42);
+
+      const sim = new WetInkSimulation(
+        width,
+        height,
+        paperMaps,
+        paperConfig,
+        pigmentConfig,
+        {
+          capillaryThreshold: 0.08,
+          enableCapillaryThreshold: true,
+          capillarySpeed: 1.0,
+          evaporationRate: 1.0,
+          edgeDarkeningStrength: 1.0,
+          granulationStrength: 1.0,
+          backrunStrength: 0.8,
+          dryBrushSensitivity: 1.0
+        }
+      );
+
+      // Inject synthetic circular deposit
+      const cx = 32, cy = 24, r = 10;
+      for (let y = 0; y < height; y++) {
+        for (let x = 0; x < width; x++) {
+          const dist = Math.hypot(x - cx, y - cy);
+          if (dist < r) {
+            const val = 1.0 - (dist / r);
+            sim.pigmentDeposited[y * width + x] = val;
+          }
+        }
+      }
+
+      const svg = WetInkSVGExporter.export(sim, {
+        colorHex: '#222222',
+        xmlDeclaration: true
+      });
+
+      expect(svg).toContain('<?xml version="1.0"');
+      expect(svg).toContain('<svg xmlns="http://www.w3.org/2000/svg"');
+      expect(svg).toContain('viewBox="0 0 64 48"');
+      expect(svg).toContain('Layer 1: Capillary Wash');
+      expect(svg).toContain('Layer 2: Main Pigment Body');
+      expect(svg).toContain('Layer 3: Dense Core Deposits');
+      expect(svg).toContain('fill="#222222"');
+      expect(svg).toContain('M '); // Contains vector path commands
+    });
+  });
+
+  describe('React Component & Obsidian Adapter', () => {
+    it('exports WetInkSignature component with displayName', () => {
+      expect(WetInkSignature).toBeDefined();
+      expect(WetInkSignature.displayName).toBe('WetInkSignature');
+    });
+
+    it('registers Obsidian codeblock processor with correct handler', () => {
+      let registeredName = '';
+      let registeredHandler: any = null;
+
+      const mockPlugin = {
+        registerMarkdownCodeBlockProcessor: (name: string, handler: any) => {
+          registeredName = name;
+          registeredHandler = handler;
+        }
+      };
+
+      registerWetInkCodeBlock(mockPlugin);
+      expect(registeredName).toBe('wet-ink');
+      expect(typeof registeredHandler).toBe('function');
     });
   });
 });
