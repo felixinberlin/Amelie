@@ -8,3 +8,5 @@ export * from './shaders';
 export * from './webgl2-engine';
 export * from './metrics';
 export * from './scenarios';
+export * from './audio';
+export * from './svgExport';

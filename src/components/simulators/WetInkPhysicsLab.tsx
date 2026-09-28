@@ -767,6 +767,33 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
           </div>
         </div>
       )}
+
+      {/* Subtle Craftsmanship & Extended Architecture Footer */}
+      <div className="pt-3 border-t border-stone-800 flex flex-col sm:flex-row items-center justify-between text-[11px] text-stone-500 gap-2">
+        <div className="flex items-center gap-1.5">
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+          <span className="font-serif italic text-stone-400">
+            {lang === 'de'
+              ? 'Amélie Werkstatt-Modell (CC0 Public Domain)'
+              : lang === 'es'
+              ? 'Modelo de taller de Amélie (Dominio público CC0)'
+              : 'Amélie Workshop Reference (CC0 Public Domain)'}
+          </span>
+        </div>
+        <div className="text-stone-500 text-center sm:text-right">
+          {lang === 'de'
+            ? 'Für schlüsselfertige Editor-Plugins (TipTap, React, Obsidian) oder Pro-Integrationen: '
+            : lang === 'es'
+            ? 'Para plugins de editor (TipTap, React, Obsidian) o versión pro: '
+            : 'For turnkey editor plugins (TipTap, React, Obsidian) or pro integrations: '}
+          <a
+            href="mailto:Felix@amelieproject.org?subject=Wet%20Ink%20Pro%20Integration"
+            className="text-stone-400 hover:text-amber-400 font-medium underline underline-offset-2 transition-colors cursor-pointer"
+          >
+            Felix@amelieproject.org
+          </a>
+        </div>
+      </div>
     </div>
   );
 };

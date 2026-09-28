@@ -11,6 +11,8 @@ import {
   Layers,
   Sparkles,
   Cpu,
+  Volume2,
+  VolumeX,
 } from 'lucide-react';
 import { Language } from '../../types';
 import { WetInkPhysicsLab } from './WetInkPhysicsLab';
@@ -24,6 +26,8 @@ import { PAPER_PRESETS, PIGMENT_PRESETS } from '../../engine/wet-ink/presets';
 import { WetInkSimulation } from '../../engine/wet-ink/simulation';
 import { generatePaperMaps } from '../../engine/wet-ink/paper';
 import { WetInkBrushManager, BrushToolType } from '../../engine/wet-ink/brush';
+import { PenAudioSynthesizer } from '../../engine/wet-ink/audio';
+import { WetInkSVGExporter } from '../../engine/wet-ink/svgExport';
 
 interface WetInkSimulatorProps {
   lang: Language;
@@ -89,6 +93,25 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
     tiltX: 0,
     tiltY: 0,
   });
+
+  // Procedural Audio Synthesizer (Nib-on-Paper Friction)
+  const audioSynthRef = useRef<PenAudioSynthesizer | null>(null);
+  const [soundMuted, setSoundMuted] = useState<boolean>(false);
+  const lastPointerRef = useRef<{ x: number; y: number; time: number }>({ x: 0, y: 0, time: 0 });
+
+  useEffect(() => {
+    audioSynthRef.current = new PenAudioSynthesizer(soundMuted);
+    return () => {
+      audioSynthRef.current?.destroy();
+      audioSynthRef.current = null;
+    };
+  }, []);
+
+  const toggleSound = () => {
+    const next = !soundMuted;
+    setSoundMuted(next);
+    audioSynthRef.current?.setMuted(next);
+  };
 
   // Init simulation engine
   const initSimulation = useCallback(() => {
@@ -177,12 +200,27 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
     }
   };
 
+  // Blotting Paper: Absorbs surface moisture immediately while fixing settled pigment
+  const handleBlot = () => {
+    if (simRef.current) {
+      simRef.current.waterFilm.fill(0);
+      const dep = simRef.current.pigmentDeposited;
+      const susp = simRef.current.pigmentSuspended;
+      for (let i = 0; i < dep.length; i++) {
+        dep[i] += susp[i];
+        susp[i] = 0;
+      }
+      setIsWet(false);
+    }
+  };
+
   // Auto-stroke Demo (Ensō)
   const handleAutoDemo = () => {
     if (!simRef.current) return;
     simRef.current.pushSnapshot();
     setCanUndo(true);
     setIsWet(true);
+    audioSynthRef.current?.startStroke(selectedPaper.roughness);
 
     const centerX = SIM_WIDTH * 0.5;
     const centerY = SIM_HEIGHT * 0.5;
@@ -197,6 +235,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
     autoStrokeTimerRef.current = window.setInterval(() => {
       if (!simRef.current) {
         if (autoStrokeTimerRef.current) clearInterval(autoStrokeTimerRef.current);
+        audioSynthRef.current?.endStroke();
         return;
       }
       step++;
@@ -208,11 +247,13 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
       const pressure = 0.4 + Math.sin(progress * Math.PI) * 0.6;
       const dryBrush = progress > 0.8;
 
+      audioSynthRef.current?.updateMotion(1.4, pressure);
       simRef.current.injectInk(x, y, 7 * pressure, 1.2, 1.0, dryBrush);
 
       if (step >= totalSteps) {
         if (autoStrokeTimerRef.current) clearInterval(autoStrokeTimerRef.current);
         autoStrokeTimerRef.current = null;
+        audioSynthRef.current?.endStroke();
       }
     }, 22);
   };
@@ -226,6 +267,22 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
     a.href = url;
     a.download = `wet-ink-${Date.now()}.png`;
     a.click();
+  };
+
+  // Export Artwork as Vector SVG (Marching Squares Multi-Iso)
+  const handleExportSvg = () => {
+    if (!simRef.current) return;
+    const svg = WetInkSVGExporter.export(simRef.current, {
+      colorHex: selectedPigment.colorHex,
+      xmlDeclaration: true
+    });
+    const blob = new Blob([svg], { type: 'image/svg+xml' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `wet-ink-${Date.now()}.svg`;
+    a.click();
+    URL.revokeObjectURL(url);
   };
 
   // Mount & init
@@ -297,6 +354,9 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
     setIsDrawing(true);
     setIsWet(true);
     const { x, y, pressure } = getCanvasCoords(e);
+    lastPointerRef.current = { x, y, time: performance.now() };
+    audioSynthRef.current?.startStroke(selectedPaper.roughness);
+
     if (simRef.current) {
       brushManagerRef.current.stroke(
         simRef.current,
@@ -317,6 +377,15 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
   const handlePointerMove = (e: React.PointerEvent<HTMLCanvasElement>) => {
     if (!isDrawing || !simRef.current) return;
     const { x, y, pressure } = getCanvasCoords(e);
+    const now = performance.now();
+    const dt = Math.max(1, now - lastPointerRef.current.time);
+    const dx = x - lastPointerRef.current.x;
+    const dy = y - lastPointerRef.current.y;
+    const velocity = Math.hypot(dx, dy) / dt;
+    lastPointerRef.current = { x, y, time: now };
+
+    audioSynthRef.current?.updateMotion(velocity, pressure);
+
     brushManagerRef.current.stroke(
       simRef.current,
       x,
@@ -339,6 +408,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
       // ignore
     }
     setIsDrawing(false);
+    audioSynthRef.current?.endStroke();
     brushManagerRef.current.endStroke();
   };
 
@@ -430,7 +500,19 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
         </div>
 
         {/* Primary Action Buttons */}
-        <div className="flex items-center gap-1.5 self-end sm:self-auto">
+        <div className="flex flex-wrap items-center gap-1.5 self-end sm:self-auto">
+          <button
+            onClick={toggleSound}
+            className={`p-2 rounded-xl border text-xs transition-colors cursor-pointer ${
+              !soundMuted
+                ? 'bg-amber-500/20 text-amber-300 border-amber-500/40 hover:bg-amber-500/30'
+                : 'bg-stone-800 hover:bg-stone-700 text-stone-400 border-stone-700'
+            }`}
+            title={soundMuted ? (lang === 'de' ? 'Ton aktivieren' : 'Enable Nib Sound') : (lang === 'de' ? 'Ton stummschalten' : 'Mute Sound')}
+          >
+            {!soundMuted ? <Volume2 className="w-4 h-4 text-amber-400" /> : <VolumeX className="w-4 h-4 text-stone-500" />}
+          </button>
+
           <button
             onClick={handleUndo}
             disabled={!canUndo}
@@ -442,6 +524,15 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
             title={lang === 'de' ? 'Rückgängig' : lang === 'es' ? 'Deshacer' : 'Undo'}
           >
             <RotateCcw className="w-4 h-4 text-amber-400" />
+          </button>
+
+          <button
+            onClick={handleBlot}
+            className="px-3 py-1.5 rounded-xl bg-stone-800 hover:bg-stone-700 text-stone-200 border border-stone-700 text-xs font-medium transition-colors cursor-pointer inline-flex items-center gap-1.5"
+            title={lang === 'de' ? 'Löschpapier: Saugt Oberflächenwasser sofort ab' : lang === 'es' ? 'Papel secante: absorbe agua inmediatamente' : 'Blotting Paper: Absorbs surface moisture immediately'}
+          >
+            <span>🧻</span>
+            <span>{lang === 'de' ? 'Löschpapier' : lang === 'es' ? 'Papel secante' : 'Blot'}</span>
           </button>
 
           <button
@@ -476,10 +567,20 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
 
           <button
             onClick={handleExportPng}
-            className="p-2 rounded-xl bg-stone-800 hover:bg-stone-700 text-stone-200 border border-stone-700 text-xs transition-colors cursor-pointer"
+            className="p-2 rounded-xl bg-stone-800 hover:bg-stone-700 text-stone-200 border border-stone-700 text-xs transition-colors cursor-pointer inline-flex items-center gap-1"
             title={lang === 'de' ? 'Als PNG speichern' : lang === 'es' ? 'Guardar PNG' : 'Save PNG'}
           >
             <Download className="w-4 h-4 text-emerald-400" />
+            <span className="font-mono text-[10px] font-bold">PNG</span>
+          </button>
+
+          <button
+            onClick={handleExportSvg}
+            className="p-2 rounded-xl bg-stone-800 hover:bg-stone-700 text-stone-200 border border-stone-700 text-xs transition-colors cursor-pointer inline-flex items-center gap-1"
+            title={lang === 'de' ? 'Als Vektor-SVG exportieren' : lang === 'es' ? 'Exportar SVG vectorial' : 'Export Vector SVG'}
+          >
+            <Download className="w-4 h-4 text-blue-400" />
+            <span className="font-mono text-[10px] font-bold">SVG</span>
           </button>
         </div>
       </div>
@@ -740,6 +841,33 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
               </button>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Subtle Craftsmanship & Extended Architecture Footer */}
+      <div className="pt-3 border-t border-stone-200/70 flex flex-col sm:flex-row items-center justify-between text-[11px] text-stone-500 gap-2">
+        <div className="flex items-center gap-1.5">
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+          <span className="font-serif italic text-stone-600">
+            {lang === 'de'
+              ? 'Amélie Werkstatt-Modell (CC0 Public Domain)'
+              : lang === 'es'
+              ? 'Modelo de taller de Amélie (Dominio público CC0)'
+              : 'Amélie Workshop Reference (CC0 Public Domain)'}
+          </span>
+        </div>
+        <div className="text-stone-400 text-center sm:text-right">
+          {lang === 'de'
+            ? 'Für schlüsselfertige Editor-Plugins (TipTap, React, Obsidian) oder Pro-Integrationen: '
+            : lang === 'es'
+            ? 'Para plugins de editor (TipTap, React, Obsidian) o versión pro: '
+            : 'For turnkey editor plugins (TipTap, React, Obsidian) or pro integrations: '}
+          <a
+            href="mailto:Felix@amelieproject.org?subject=Wet%20Ink%20Pro%20Integration"
+            className="text-stone-600 hover:text-amber-800 font-medium underline underline-offset-2 transition-colors cursor-pointer"
+          >
+            Felix@amelieproject.org
+          </a>
         </div>
       </div>
       </div>

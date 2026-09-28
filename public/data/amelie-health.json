@@ -1,9 +1,9 @@
 {
   "auditVersion": 1,
-  "generatedAt": "2026-09-28T14:01:44.682Z",
+  "generatedAt": "2026-09-28T17:06:05.710Z",
   "repository": {
-    "commit": "eb65958",
-    "branch": "main"
+    "commit": "98caaea",
+    "branch": "local-zero-drift-swarm-kit"
   },
   "inventory": {
     "doses": 43,
@@ -57,18 +57,8 @@
     {
       "id": "ideaFrontmatter",
       "name": "check:idea-frontmatter",
-      "status": "fail",
-      "findings": [
-        {
-          "id": "CHECK-FAIL-ideaFrontmatter",
-          "severity": "error",
-          "category": "test",
-          "message": "Validation check \"check:idea-frontmatter\" failed: Frontmatter veraltet: 05-dosen/amelie-umwelt-anomalie.md",
-          "details": {
-            "fullOutput": "Frontmatter veraltet: 05-dosen/amelie-umwelt-anomalie.md\n\n1 Dose(n) mit veralteter Frontmatter. node scripts/sync-idea-frontmatter.mjs ausführen.\n"
-          }
-        }
-      ]
+      "status": "pass",
+      "findings": []
     },
     {
       "id": "protokoll",
@@ -84,15 +74,6 @@
     }
   ],
   "findings": [
-    {
-      "id": "CHECK-FAIL-ideaFrontmatter",
-      "severity": "error",
-      "category": "test",
-      "message": "Validation check \"check:idea-frontmatter\" failed: Frontmatter veraltet: 05-dosen/amelie-umwelt-anomalie.md",
-      "details": {
-        "fullOutput": "Frontmatter veraltet: 05-dosen/amelie-umwelt-anomalie.md\n\n1 Dose(n) mit veralteter Frontmatter. node scripts/sync-idea-frontmatter.mjs ausführen.\n"
-      }
-    },
     {
       "id": "DEMO-UNLINKED-chemhazard-stop",
       "severity": "warning",

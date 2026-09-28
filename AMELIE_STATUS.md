@@ -1,6 +1,6 @@
 # Amélie Status
 
-Generated: 2026-09-28T14:01:44.682Z
+Generated: 2026-09-28T17:06:05.710Z
 
 ## System
 
@@ -35,7 +35,7 @@ Generated: 2026-09-28T14:01:44.682Z
 |---|---|
 | check:dosen | PASS |
 | check:books | PASS |
-| check:idea-frontmatter | FAIL |
+| check:idea-frontmatter | PASS |
 | check:protokoll | PASS |
 | check:friedhof | PASS |
 
@@ -43,7 +43,7 @@ Generated: 2026-09-28T14:01:44.682Z
 
 ### Errors
 
-* **[CHECK-FAIL-ideaFrontmatter]** Validation check "check:idea-frontmatter" failed: Frontmatter veraltet: 05-dosen/amelie-umwelt-anomalie.md
+None.
 
 ### Warnings
 
@@ -61,5 +61,5 @@ None.
 ## Generated from
 
 * Audit version: 1
-* Commit: eb65958
-* Branch: main
+* Commit: 98caaea
+* Branch: local-zero-drift-swarm-kit
