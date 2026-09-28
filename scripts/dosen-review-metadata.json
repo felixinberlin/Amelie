@@ -208,5 +208,10 @@
     "review_score": "24/35",
     "architecture_tier": "Tier 1",
     "source_type": "Type A"
+  },
+  "umsetzungsplan-register": {
+    "review_score": "25/35",
+    "architecture_tier": "Tier 1",
+    "source_type": "Type A"
   }
 }

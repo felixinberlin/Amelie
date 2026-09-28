@@ -1,13 +1,13 @@
 {
   "auditVersion": 1,
-  "generatedAt": "2026-09-28T17:43:01.224Z",
+  "generatedAt": "2026-09-28T19:06:05.502Z",
   "repository": {
-    "commit": "c6a0c2b",
-    "branch": "main"
+    "commit": "4a9b0e7",
+    "branch": "claude/wonderful-wright-8jqg8u"
   },
   "inventory": {
-    "doses": 43,
-    "graves": 52,
+    "doses": 44,
+    "graves": 58,
     "demos": 8,
     "researchEntries": 35,
     "candidateIdeas": 20,
@@ -16,15 +16,15 @@
   "distributions": {
     "doseStatus": {
       "zugestellt": 5,
-      "gepackt": 38
+      "gepackt": 39
     },
     "doseVerdict": {
       "gift": 34,
-      "build_first": 8,
+      "build_first": 9,
       "keep": 1
     },
     "doseDomain": {
-      "civic": 18,
+      "civic": 19,
       "physics": 9,
       "git": 5,
       "creative": 4,
@@ -33,12 +33,12 @@
       "audio": 1
     },
     "graveCategory": {
-      "gebaut": 30,
+      "gebaut": 35,
       "beim-empfaenger": 11,
       "reality-check": 5,
       "duplikat": 2,
       "mode": 3,
-      "praemisse": 1
+      "praemisse": 2
     }
   },
   "checks": [
@@ -83,14 +83,14 @@
       "relatedId": "chemhazard-stop"
     },
     {
-      "id": "DRIFT-AGENTS.md-Gräber-33",
+      "id": "DRIFT-AGENTS.md-Gräber-6",
       "severity": "warning",
       "category": "documentation",
-      "message": "AGENTS.md claims 33 Gräber, but deterministic source scanner finds 52.",
+      "message": "AGENTS.md claims 6 Gräber, but deterministic source scanner finds 58.",
       "file": "AGENTS.md",
       "details": {
-        "claim": "33 beerdigte Ideen",
-        "actual": 52,
+        "claim": "6 Gräber",
+        "actual": 58,
         "type": "stale_count"
       }
     },
@@ -98,11 +98,11 @@
       "id": "DRIFT-AGENTS.md-Gräber-9",
       "severity": "warning",
       "category": "documentation",
-      "message": "AGENTS.md claims 9 Gräber, but deterministic source scanner finds 52.",
+      "message": "AGENTS.md claims 9 Gräber, but deterministic source scanner finds 58.",
       "file": "AGENTS.md",
       "details": {
         "claim": "9 Gräber",
-        "actual": 52,
+        "actual": 58,
         "type": "stale_count"
       }
     },
@@ -110,11 +110,11 @@
       "id": "DRIFT-en/README.md-Dosen-15",
       "severity": "warning",
       "category": "documentation",
-      "message": "en/README.md claims 15 Dosen, but deterministic source scanner finds 43.",
+      "message": "en/README.md claims 15 Dosen, but deterministic source scanner finds 44.",
       "file": "en/README.md",
       "details": {
         "claim": "15 tins",
-        "actual": 43,
+        "actual": 44,
         "type": "stale_count"
       }
     },
@@ -122,11 +122,11 @@
       "id": "DRIFT-README.de.md-Dosen-15",
       "severity": "warning",
       "category": "documentation",
-      "message": "README.de.md claims 15 Dosen, but deterministic source scanner finds 43.",
+      "message": "README.de.md claims 15 Dosen, but deterministic source scanner finds 44.",
       "file": "README.de.md",
       "details": {
         "claim": "15 Dosen",
-        "actual": 43,
+        "actual": 44,
         "type": "stale_count"
       }
     },
@@ -134,11 +134,11 @@
       "id": "DRIFT-README.md-Dosen-15",
       "severity": "warning",
       "category": "documentation",
-      "message": "README.md claims 15 Dosen, but deterministic source scanner finds 43.",
+      "message": "README.md claims 15 Dosen, but deterministic source scanner finds 44.",
       "file": "README.md",
       "details": {
         "claim": "15 tins",
-        "actual": 43,
+        "actual": 44,
         "type": "stale_count"
       }
     }
