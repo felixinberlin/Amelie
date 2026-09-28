@@ -46,6 +46,7 @@ Every commercial opportunity in this directory is audited against five market ve
 ventures/
 ├── README.md               # Operating manual & commercial criteria
 ├── funding-and-angels.md   # Comprehensive investor & grant guide (Angels, EU, Grants)
+├── kapital-und-kanaele.md  # Solo founder economics, Merchant of Record, GründungsBONUS, B2G channels
 ├── market-leads.json       # Structured ledger of commercial leads (auto-exported)
 └── opportunities/          # Detailed product dossiers & MVP specifications
     ├── espr-discloseready.md
@@ -76,4 +77,8 @@ ventures/
 
 ## Funding inputs
 
-Capital and grant sources for the commercial twins (EXIST, Berlin Startup-Stipendium, HTGF, BAND, Ananda, GovTech Campus, GovTecHH, city challenges) are listed in section E of `06-suche/amelie-foerderlandschaft.md`. Snippet-level evidence only; verify before use.
+Capital and grant sources for the commercial twins:
+- **Strategy, Stage-Roadmap & Pitch-Matrix:** See [funding-and-angels.md](funding-and-angels.md) (BAND, EBAN, INVEST 25% rebate, HTGF, Earlybird Vision Lab).
+- **Solo-Founder Economics, Kanäle & Competitor-Checks:** See [kapital-und-kanaele.md](kapital-und-kanaele.md) (IBB GründungsBONUS Plus, Merchant of Record, TinySeed, Calm Company Fund, Complir warning, Bund Direktvergabe bis 50k €).
+- **Komplette Förderlandkarte:** Siehe Abschnitt E in `06-suche/amelie-foerderlandschaft.md` und `06-suche/amelie-foerder-und-preisatlas.md`.
+

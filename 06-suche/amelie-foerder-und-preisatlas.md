@@ -4,7 +4,8 @@
 > *„Förderprogramme, Preise und Ausschreibungen sind keine Bittsteller-Fallen. Sie sind die ungeschminktesten Schmerzbekenntnisse des Staates und der Gesellschaft: Wer Geld auslobt, beweist, dass das Problem existiert und von den bestehenden Institutionen mit Bordmitteln nicht gelöst werden kann.“*
 
 Stand: **28. September 2026**  
-Gültigkeit: **Amélie Such-Engines (Scout, Collider, Inversion) & Ventures Hub (Parallel Lab)**
+Gültigkeit: **Amélie Such-Engines (Scout, Collider, Inversion) & Ventures Hub (Parallel Lab)**  
+Zugehörige Detailkarten: [Katalog & Fristen](amelie-foerderlandschaft.md) · [A Bund](foerderlandschaft/A-bund.md) · [B EU](foerderlandschaft/B-eu.md) · [C Stiftungen & Preise](foerderlandschaft/C-stiftungen-preise.md) · [D Investoren](foerderlandschaft/D-investoren.md) · [E Städte & Vergabe](foerderlandschaft/E-staedte-vergabe.md) · [Venture Guide](ventures/funding-and-angels.md) · [Kapital & Kanäle](ventures/kapital-und-kanaele.md)
 
 ---
 

@@ -303,9 +303,11 @@ Alle Einträge **nur über Suchschnipsel** erschlossen; das Netz war gesperrt, k
 
 ---
 
-## Typ P — Öffentliche Vergabe, Open-Source-Compliance & Sensornetzwerke (neu, PR-Triage 28.09.2026)
+## Typ P — Förderlandschaft, Vergabe & Compliance: Geldflüsse als Herkunftsort (neu, 28.09.2026)
 
-Quellen und Register, die im Zuge der Triage von über 100 automatisierten Batch-PRs und der Ausgründung von kommerziellen Zwillingen in den Venture-Zweig auditiert wurden.
+Systematische Landkarte aus Bund, EU, Stiftungen, Preisen, Investoren, Städten und Vergabe: `amelie-foerderlandschaft.md` (Synthese, Rangliste, Such-Rezepte, Kalender), `amelie-foerder-und-preisatlas.md` und fünf Rohkarten unter `foerderlandschaft/` (A Bund, B EU, C Stiftungen/Preise, D Investoren, E Städte/Vergabe, zusammen rund 190 Programmzeilen). Alle Angaben Schnipsel-Evidenz. Vier Signale: besetzt (geförderte Projekte), Bedarf (Ausschreibungen, Haushaltstitel), Empfänger (Programmträger, Preisträger), Kommerz (für `ventures/kapital-und-kanaele.md` und `funding-and-angels.md`). Geldgeber sind Signal, nicht Zustellkanal (Zustellregeln 1 und 3).
+
+Ergänzend auditiert im Zuge der PR-Triage und Ausgründung kommerzieller Zwillinge:
 
 | Quelle | Befund | Status | Zuletzt |
 |---|---|---|---|
