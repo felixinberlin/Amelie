@@ -1,0 +1,9 @@
+# Quantum Playground: Interactive Quantum Mechanics Explorer
+
+**Problem:** Quantum mechanics is renowned for its abstract and difficult-to-visualize concepts. Physics educators and science communicators face the challenge of conveying wave functions, superposition, entanglement, and tunneling effects in an intuitive manner. Existing tools are often either static animations, proprietary software, or require complex setups, hindering accessible and interactive exploration.
+
+**Proposed Solution:** A browser-native application leveraging the power of WebGPU to visualize fundamental quantum mechanical phenomena in real-time and with high interactivity. Users could adjust parameters such as potential barriers, particle masses, or initial states directly in the browser and immediately see the resulting wave functions, probability densities, and temporal evolution as appealing 2D or 3D graphics. The focus is on 'playful' exploration that fosters a deep, intuitive understanding.
+
+**Technology:** WebGPU for performant calculations and rendering, WebAssembly (WASM) for the physics computation core (e.g., Schrödinger equation solver), TypeScript/React for the user interface. This enables seamless, zero-latency interaction directly in the web browser, without a server backend or installations.
+
+**Institutional Value:** Physics didactics departments at universities (e.g., Humboldt University Berlin) could use the tool in lectures and exercises. Public educational institutions like Urania Berlin or planetariums could utilize it for interactive exhibits to engage a broader audience with quantum physics.
