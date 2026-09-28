@@ -118,16 +118,26 @@ Draft the 3-level ASCII or Mermaid Tech Tree (Roots $\to$ Trunk $\to$ Branches).
 ### Step 3 · Civic SWOT Synthesis
 Compile the 4-quadrant Civic SWOT table, identifying the single most fatal threat (*The Achilles Heel*) and the strongest defensibility anchor.
 
-### Step 4 · Synthesis & Triage Verdict
+### Step 4 · Synthesis & Triage Verdict (The Bifurcated Gate)
 Synthesize scores into a composite recommendation:
-* **`Dose Ready (Packen)`**: Score $\ge 24/35$, no vector $< 3$, Tier 1/2 complexity, verified Type A/B/D source. Ready for `05-dosen/` packaging.
+* **`Dose Ready (Packen)`**: Score $\ge 24/35$, no vector $< 3$, Tier 1/2 complexity, verified Type A/B/D source. Ready for `05-dosen/` packaging as a public-good CC0 gift.
+* **`Market Route (Venture Incubator)`**: High business value, clear B2B willingness-to-pay, compliance liability avoidance, or high developer utility, but incompatible with Amélie's CC0 gift mandate (e.g. requires Tier 3/4 backend, recurring operational cost, or targets commercial operators). Exported to `ventures/market-leads.json`.
 * **`Verengt (Narrowed Pivot)`**: Strong core idea, but direct implementation hits crowded fields or requires enterprise architecture. Formulate the single narrow residual gap.
 * **`Needs Research (Unklar)`**: Ground truth numbers ambiguous or physics signal-to-noise unverified. Pass back to discovery engine.
-* **`Graveyard Candidate (Friedhof)`**: Fails "Why Now", duplicates commercial software $\le 12$ months old, or fails physical/legal reality-check. Formulate the death certificate.
+* **`Graveyard Candidate (Friedhof)`**: Fails "Why Now", duplicates commercial software $\le 12$ months old with zero gap, or fails physical/legal reality-check. Formulate the death certificate.
+
+#### Commercial Evaluation for `Market Route` Candidates
+When an idea is triaged as `Market Route`, evaluate the 5 Commercial Vectors:
+1. **Pain & WTP (Willingness to Pay):** Statutory fine avoidance, compliance audit cost reduction, or direct engineering time savings.
+2. **Time-to-Ship (TTS):** Feasibility of delivering a functional MVP in $\le 7$ days using deterministic logic or existing engine kernels.
+3. **Distribution Channel:** Organic search intent, EU regulatory deadlines, developer communities (`r/ClaudeCode`, Hacker News), or niche trade associations.
+4. **Monetization Architecture:** One-off license ($79–$299), Micro-SaaS subscription (€49–€199/mo), or commercial SDK embed.
+5. **Defensibility:** Grounded in deterministic parsers, physics simulations, or regulatory rule engines rather than fragile naive LLM prompts.
 
 ### Step 5 · Log & Output
 1. Append the full review to `06-suche/amelie-classification-log.md`.
-2. Present the user with the structured Review Scorecard, Tech Tree, SWOT, and Triage Verdict.
+2. If `Market Route`: trigger `npm run export:market` to sync candidate into `ventures/market-leads.json`.
+3. Present the user with the structured Review Scorecard, Tech Tree, SWOT, and Triage Verdict.
 
 ---
 
@@ -164,7 +174,7 @@ Synthesize scores into a composite recommendation:
 | • ... | • ... |
 
 #### 4. Synthesis Verdict & Triage
-* **Verdict:** `[Dose Ready | Verengt | Needs Research | Friedhof]`
+* **Verdict:** `[Dose Ready | Market Route | Verengt | Needs Research | Friedhof]`
 * **The Residual Gap / Condition:** [One sharp sentence]
 * **Actionable Next Step:** [Concrete engineering ticket or search mandate]
 ```

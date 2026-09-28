@@ -1,0 +1,50 @@
+[
+  {
+    "id": "zero-drift-swarm-kit",
+    "name": "Zero-Drift Swarm Kit",
+    "category": "developer-tools",
+    "stage": "shipped",
+    "pricingModel": "one-time",
+    "targetPrice": "$79 - $299",
+    "targetAudience": "AI Engineers, Tech Leads, Startups using Claude Code / Cursor",
+    "amelieTwin": "amelie-orchestrator",
+    "mvpEngineReady": true,
+    "lastUpdated": "2026-09-28"
+  },
+  {
+    "id": "espr-discloseready",
+    "name": "ESPR DiscloseReady",
+    "category": "b2b-compliance",
+    "stage": "ready-to-scaffold",
+    "pricingModel": "subscription-or-annual",
+    "targetPrice": "€490 - €1,490/year",
+    "targetAudience": "European Fashion, Electronics & Retail Brands subject to ESPR Art. 24",
+    "amelieTwin": "vernichtungs-offenlegungsregister",
+    "mvpEngineReady": true,
+    "lastUpdated": "2026-09-28"
+  },
+  {
+    "id": "wet-ink-pro-sdk",
+    "name": "Wet Ink Pro SDK & Plugins",
+    "category": "developer-sdk",
+    "stage": "architecture-ready",
+    "pricingModel": "commercial-license",
+    "targetPrice": "$49 - $299",
+    "targetAudience": "TipTap / ProseMirror / tldraw Webapps, E-Signature Platforms, Legaltech",
+    "amelieTwin": "wet-ink",
+    "mvpEngineReady": true,
+    "lastUpdated": "2026-09-28"
+  },
+  {
+    "id": "clp-chemical-safety-api",
+    "name": "CLP Chemical Hazard Verification API",
+    "category": "b2b-api",
+    "stage": "engine-verified",
+    "pricingModel": "api-subscription",
+    "targetPrice": "€199 - €790/month",
+    "targetAudience": "Facility Management Software, Industrial Cleaning Giants, Hospital Safety",
+    "amelieTwin": "dose-cleaner-chemical-safety",
+    "mvpEngineReady": true,
+    "lastUpdated": "2026-09-28"
+  }
+]
