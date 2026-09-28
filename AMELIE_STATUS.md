@@ -1,12 +1,12 @@
 # Amélie Status
 
-Generated: 2026-09-28T17:06:05.710Z
+Generated: 2026-09-28T17:16:32.702Z
 
 ## System
 
 * Dosen: 43
 * Gräber: 52
-* Demos: 7
+* Demos: 8
 * Books: 29
 * Research entries: 35
 * Candidate ideas: 20
@@ -61,5 +61,5 @@ None.
 ## Generated from
 
 * Audit version: 1
-* Commit: 98caaea
-* Branch: local-zero-drift-swarm-kit
+* Commit: 98dc68b
+* Branch: feat/dose-wet-ink

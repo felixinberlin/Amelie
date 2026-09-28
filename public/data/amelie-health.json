@@ -1,14 +1,14 @@
 {
   "auditVersion": 1,
-  "generatedAt": "2026-09-28T17:06:05.710Z",
+  "generatedAt": "2026-09-28T17:16:32.702Z",
   "repository": {
-    "commit": "98caaea",
-    "branch": "local-zero-drift-swarm-kit"
+    "commit": "98dc68b",
+    "branch": "feat/dose-wet-ink"
   },
   "inventory": {
     "doses": 43,
     "graves": 52,
-    "demos": 7,
+    "demos": 8,
     "researchEntries": 35,
     "candidateIdeas": 20,
     "books": 29
@@ -19,9 +19,9 @@
       "gepackt": 38
     },
     "doseVerdict": {
-      "gift": 33,
+      "gift": 34,
       "build_first": 8,
-      "keep": 2
+      "keep": 1
     },
     "doseDomain": {
       "civic": 18,

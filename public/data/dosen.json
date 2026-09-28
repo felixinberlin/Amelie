@@ -1067,49 +1067,52 @@
   {
     "id": "wet-ink",
     "title": "Wet Ink",
-    "titleEn": "Wet Ink (Capillary Flow Simulator)",
-    "oneLinerDe": "Tinte auf Papier als echte Simulation — Kapillarfluss, Bleeding, Faser-Anisotropie, Edge Darkening. Eine Physik, tief statt breit.",
-    "oneLinerEn": "Real ink on paper physics: capillary flow, fiber anisotropy, bleed spread, and pigment edge darkening in WebGL2.",
+    "titleEn": "Wet Ink (Capillary Flow Simulator & Modular SDK)",
+    "oneLinerDe": "Tinte auf Papier als echte physikalische Mehrschicht-Simulation — Kapillarfluss mit Schwellenwert, Faser-Anisotropie, Kubelka-Munk-Optik, taktile Akustik und modulares SDK.",
+    "oneLinerEn": "Physical ink on paper simulation: capillary pore thresholding, fiber anisotropy, Kubelka-Munk optical glazing, tactile acoustics, and headless SDK.",
     "date": "September 2026",
     "reviewAfter": "September 2027",
-    "recipientsDe": "Escape Motions (Rebelle) · Sumi-e & Kalligrafie-Szene · WebGL Grafik-Lehre",
-    "recipientsEn": "Escape Motions (Rebelle) · Sumi-e & calligraphy communities · WebGL graphics education",
+    "recipientsDe": "Escape Motions (Rebelle) · Open-Source RTE & Editor-Communities (TipTap, ProseMirror, Obsidian, tldraw) · Sumi-e & Kalligrafie-Szene · WebGL Grafik-Lehre",
+    "recipientsEn": "Escape Motions (Rebelle) · Open-source RTE & editor communities (TipTap, ProseMirror, Obsidian, tldraw) · Sumi-e & calligraphy circles · WebGL graphics education",
     "domain": "creative",
-    "verdict": "keep",
+    "verdict": "gift",
     "status": "gepackt",
     "tags": [
       "WebGL2",
       "Physik",
       "Shader",
       "Kalligrafie",
-      "Implementierungsplan"
+      "Headless-SDK",
+      "TipTap",
+      "React",
+      "Obsidian"
     ],
-    "problemDe": "Digitale Pinselwerkzeuge in Photoshop oder Procreate nutzen Bitmap-Stempel. Echte Tinte verhält sich physikalisch grundlegend anders: Sie wandert entlang von Papierfasern (Feathering), lagert Pigmente am getrockneten Rand ab (Edge Darkening) und granuliert in Papiertälern.",
+    "problemDe": "Digitale Pinselwerkzeuge in Photoshop, Procreate oder Web-Editoren nutzen Bitmap-Stempel. Echte Tinte verhält sich physikalisch grundlegend anders: Sie wandert kapillar entlang von Papierfasern (Feathering), lagert Pigmente am getrockneten Rand ab (Edge Darkening) und granuliert in Papiertälern.",
     "problemEn": "Digital brushes rely on repeated bitmap stamps. Real wet ink behaves fundamentally like fluid porous physics: capillary bleed along cellulose fibers, coffee-ring edge darkening, and pigment pooling in paper valleys.",
     "whyNowDe": [
-      "WebGL2 mit Float-Texturen erlaubt gekoppelte Mehrschicht-Simulation in Echtzeit.",
-      "Kubelka-Munk Farbmischung ersetzt simples Alpha-Blending durch physikalische Lichtbrechung.",
-      "Durchdachter 12-Tage-Plan mit CPU-Referenz-Shadern löst bisherige Testbarkeits-Probleme."
+      "WebGL2 mit Float-Texturen erlaubt gekoppelte Dreischicht-Simulation (Papier, Wasser, Fasern) bei 60 FPS in jedem Browser.",
+      "Kubelka-Munk Farbmischung ersetzt simples Alpha-Blending durch physikalische Lichtabsorption und -streuung.",
+      "Headless entkoppelte Architektur (@wet-ink/core) mit Adaptern für TipTap, React, Obsidian und Web Components."
     ],
     "whyNowEn": [
-      "WebGL2 float textures support multi-layered physical ink simulation at 60 FPS in browsers.",
-      "Kubelka-Munk optical color absorption models realistic glazed pigment wash layering.",
-      "Fully specified 12-day engineering plan with CPU-to-GPU unit test harness."
+      "WebGL2 float textures support 3-layer physical ink simulation (paper, water, fibers) at 60 FPS in any standard browser.",
+      "Kubelka-Munk optical model enables authentic subtractive pigment wash glazing instead of alpha blending.",
+      "Headless decoupled architecture (@wet-ink/core) with turnkey adapters for TipTap, React, Obsidian, and Web Components."
     ],
-    "sketchDe": "Drei gekoppelte Texturschichten: Papierfasern (Höhe, Richtung, Kapazität), Oberflächenwasser (Geschwindigkeit, Pigment), Faserschicht (Deponiertes Pigment). Sieben Shader-Pässe mit Kapillarschwelle.",
-    "sketchEn": "Three linked simulation textures: paper substrate (roughness, grain vector, moisture capacity), water layer (velocity, suspended pigment), and stained fiber layer. 7 sequential shader passes.",
+    "sketchDe": "Drei gekoppelte Texturschichten: Papierfasern (Höhe, Richtung, Kapazität), Oberflächenwasser (Geschwindigkeit, Pigment), Faserschicht (Deponiertes Pigment). Sieben Shader-Pässe mit Kapillarschwelle, Web Audio Haptik und Marching Squares Vektorexport.",
+    "sketchEn": "Three linked simulation textures: paper substrate (roughness, grain vector, moisture capacity), water layer (velocity, suspended pigment), and stained fiber layer. 7 sequential shader passes, Web Audio acoustics, and Marching Squares vectorizer.",
     "firstStepDe": {
-      "ticket": "Ticket #1: @wet-ink/core — Headless Fluid-Kernel & TipTap/RTE Signatur-Block.",
-      "criteria": "Framework-freie TS-Engine (<15 kB) mit 7-Pass-Simulation, Kapillarschwelle ε_min und 3-Phasen-Lifecycle (Nass 60 FPS → Trocknen 3s → 0 FPS Ruhezustand). Lauffähig als Drop-in in TipTap und tldraw."
+      "ticket": "Ticket #1 & #2: @wet-ink/core Headless Fluid-Kernel, RTE-Adapter, Akustik & Vektor-SVG.",
+      "criteria": "Framework-freie TS-Engine (<15 kB) mit 7-Pass-Simulation, Kapillarschwelle ε_min und 3-Phasen-Lifecycle (Nass 60 FPS → Trocknen 3s → 0 FPS Ruhezustand). Lauffähig mit TipTap, React, Obsidian und Live-Simulator (315 Tests grün)."
     },
     "firstStepEn": {
-      "ticket": "Ticket #1: @wet-ink/core — Headless Fluid Kernel & TipTap/RTE Signature Node.",
-      "criteria": "Zero-dependency TS engine (<15 kB) with 7-pass simulation, capillary threshold ε_min, and 3-phase lifecycle (Wet 60 FPS → Drying 3s → 0 FPS Rest). Runs as a drop-in node in TipTap and tldraw."
+      "ticket": "Ticket #1 & #2: @wet-ink/core Headless Fluid Kernel, RTE Adapters, Acoustics & Vector SVG.",
+      "criteria": "Zero-dependency TS engine (<15 kB) with 7-pass simulation, capillary threshold ε_min, and 3-phase lifecycle (Wet 60 FPS → Drying 3s → 0 FPS Rest). Integrated into TipTap, React, Obsidian, and live simulator (315 tests passing)."
     },
-    "failureModeDe": "Rauch statt Tinte: Ohne strikte Kapillarschwelle diffundiert das Pigment wolkig wie Rauch. Reihenfolge im Plan: Feathering vor Fluidströmung.",
-    "failureModeEn": "The smoke bug: Without a strict capillary threshold, ink bleeds like soft smoke. The 12-day plan enforces capillary threshold before fluid advection.",
-    "priorArtDe": "Kommerzielle Monolithe verlangen 90–150 $ (Rebelle) oder 10–65 $/Monat (Adobe Fresco) für proprietäre Desktop-Silos. Unsere freie Web-Infrastruktur verschenkt diese Physik als offenes Plugin.",
-    "priorArtEn": "Commercial monoliths charge $90–$150 (Rebelle) or $10–$65/mo (Adobe Fresco) for closed desktop silos. Our open web infrastructure releases this physics as a free, embeddable plugin."
+    "failureModeDe": "Rauch statt Tinte: Ohne strikte Kapillarschwelle diffundiert das Pigment wolkig wie Rauch. Gelöst durch Kapillarschwelle vor der fluiden Advektion und Ruhezustands-Wächter gegen GPU-Last.",
+    "failureModeEn": "The smoke bug: Without a strict capillary threshold, ink bleeds like soft smoke. Enforces capillary threshold before fluid advection, with idle sleep monitoring against GPU drain.",
+    "priorArtDe": "Kommerzielle Monolithe verlangen 90–150 $ (Rebelle) oder 10–65 $/Monat (Adobe Fresco) für proprietäre Desktop-Silos. Unsere freie Web-Infrastruktur verschenkt diese Physik als offenes modulares Ökosystem.",
+    "priorArtEn": "Commercial monoliths charge $90–$150 (Rebelle) or $10–$65/mo (Adobe Fresco) for closed desktop silos. Our open web infrastructure releases this physics as a free, modular ecosystem."
   },
   {
     "id": "pillsafe-vision",

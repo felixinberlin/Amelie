@@ -424,7 +424,7 @@ Details in `amelie-matrix.md`, `05-dosen/_entsorgt.md`. Belege der Einzelzeilen 
 | Diffgeist | `frei` | personalisierte Release-Notes (nur was der eigene Code tatsächlich aufruft) nicht gefunden; Zeitfenster geschätzt auf Monate | 03/2027 |
 | Spec-Drift Detector | `frei` | Prosa-Spec-Drift 2026 öffentlich als offene Falle benannt, kein etabliertes Werkzeug; API-Schema-Drift-Markt (anderer Scope) ist besetzt | 03/2027 |
 | Agent Postmortem Recorder | `verengt` | Session-/Observability-Analyse reichlich vorhanden; kein Tool schließt zu konkretem `CLAUDE.md`-Regel-Patch | ~~03/2027~~ → siehe Nachprüfung 24.09.2026 |
-| Wet Ink (Plan) | `frei` | Escape Motions/Rebelle macht Desktop-Fluid-Aquarell professionell; keine WebGL2-Browser-Entsprechung gefunden | 09/2027 |
+| Wet Ink | `frei` | Escape Motions/Rebelle macht Desktop-Fluid-Aquarell professionell; im Web als modulares offenes SDK (@wet-ink/core, TipTap, React, Obsidian) mit 7-Pass-Kapillarfluss, Kubelka-Munk, Web Audio und Marching-Squares-SVG unter CC0 verschenkt | 09/2027 |
 | Pin Tumbler | `verengt` | Lockpicking-Spiele zahlreich (Mobile, Steam, itch.io); keins behandelt Fertigungstoleranzen als Lerngegenstand | 09/2027 |
 | Räucher-Sim | `frei` | Rauch-/Fluidsims und atemgesteuerte Installationen einzeln verbreitet; Kombination als freies Web-Toy nicht gefunden | 09/2028 |
 | Kristallwachstum 3D | `verengt` | DLA-Generatoren im Überfluss (als „neuer Generator" tot); druckfertige Kette (wasserdicht, Zwangsbedingungen, Seed-als-Rezept) nicht gefunden | 09/2027 |
