@@ -1,0 +1,7 @@
+# CivicEye Sprite: Browser-Native Public Space Object Recognition
+
+**Problem:** Berlin's district offices (Bezirksämter) and NGOs like BUND receive a daily deluge of citizen reports concerning the state of public spaces – ranging from graffiti and damaged benches to specific plant species. The manual review, categorization, and forwarding of these reports are time-consuming and prone to errors. Citizens often struggle to accurately describe an issue, which reduces administrative efficiency.
+
+**Solution:** CivicEye Sprite is a browser-native tool that enables advanced object recognition directly within the user's or administrator's web browser. Utilizing WebGPU and ONNX Runtime Web, local AI models can analyze photos of public spaces. For instance, if the tool identifies graffiti on a wall or a damaged street light, it immediately provides visual feedback to the user (e.g., with a bounding box and label). This real-time feedback helps citizens create more precise reports and allows administrative staff to pre-classify incoming photos automatically, significantly accelerating their workflow.
+
+**Amélie Fit:** This project embodies the Amélie principles: it's a specialized, non-generic application of AI that addresses a concrete administrative friction point. The browser-native execution guarantees data privacy and zero-latency, creating a playful and responsive user experience. It's a CC0 tool designed to empower municipalities and NGOs to streamline their services and enhance civic engagement.
