@@ -1,0 +1,5 @@
+# Dose: Urban Albedo & Microclimate Designer (UAM Designer)
+
+Cities are getting hotter, and urban planners struggle to quantify how different materials or green spaces impact local temperatures. Expensive simulations are often out of reach for smaller projects or citizen initiatives. This tool, the UAM Designer, inverts this by providing an accessible, browser-based 3D simulation environment.
+
+Users can interactively modify building materials, add green infrastructure, and immediately visualize the predicted microclimatic effects, especially concerning albedo and heat absorption. It empowers municipal departments and citizens to design cooler, more livable urban spaces by making complex physics intuitive and actionable. Imagine dragging a 'green roof' onto a building and instantly seeing the surrounding temperature drop in the simulation. This closes a critical gap in proactive urban planning and citizen engagement.
