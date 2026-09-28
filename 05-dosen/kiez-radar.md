@@ -1,0 +1,5 @@
+# Dose: Kiez-Radar (Browser-Native Public Issue Reporter with Local AI)
+
+Kiez-Radar is an open-source tool empowering citizens to easily and effectively report public space deficiencies (e.g., broken park benches, overflowing bins, graffiti). Instead of filling out complex forms or calling hotlines, users simply take a photo of the problem with their smartphone. An in-browser AI (WASM/WebGPU) analyzes the image, categorizes the issue, and suggests relevant report details. Geolocation data is captured automatically.
+
+The report is then submitted in a standardized format to the responsible authority (e.g., the local district office), ideally via a simple API or as a structured email. A key feature is transparent feedback to the reporter regarding the processing status – from "reported" to "in progress" to "resolved." This closes the current communication gap and fosters civic engagement.
