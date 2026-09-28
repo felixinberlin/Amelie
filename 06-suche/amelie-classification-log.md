@@ -530,3 +530,183 @@ Cumulative record of all candidate evaluations conducted by the Idea Reviewer. E
 * **Verdict:** `Dose Ready (Packen)` **mit Auflage**: Der Kontakt Dr. Julia Ricker ist vor jeder Mail an der IgB-Seite zu verifizieren. Die Mail trägt den Deep-Link `#dose=abbundzeichen-fundbuch`.
 * **Restlücke:** Ein Werkzeug, das Sanierende die Zeichen in genau dem Zeitfenster, in dem sie sichtbar sind, in eine prüfbare Zählfolge übersetzen lässt und den Befund in einem Format ablegt, das Hausforschende sammeln können.
 * **Nächster Schritt:** An den dose-packer übergeben (`reviewer-handoff-abbundzeichen.md`). Das Erstticket ist der Grammatikprüfer mit Vitest.
+
+---
+
+## ESPR-Runde (Teamrunde, Orchestrierung Run 1) — 28.09.2026
+
+**Reviewer:** Idea Reviewer (7-Vektoren-Audit) · **Eingänge:** Konsolidierte Merge-Tabelle K1–K11 aus Engine 1 (`amelie-ideenrunde`), Engine 2 (`lacunar-bisociation`, Run 10) und Engine 3 (`asymmetric-inversion`, Run 4) · **Geprüft:** K1–K7 mit Scorecard, K8–K11 nur bestätigt · **Friedhof-Gang:** `08-friedhof/README.md`: kein ESPR-, Ökodesign- oder Ersatzteil-Grab, nächster Nachbar ist `Repair-Café-Diagnoseassistent` (beim Empfänger, 16.09.2026). Kein Wiedergänger. **Bestandsgang `05-dosen/`:** keine Dose im Feld. Nachbarn sind nur `klang-stethoskop` (gleicher Empfänger, Netzwerk Reparatur-Initiativen, andere Fähigkeit) und `sperrmuell-weiche` (Wiederverwenden oder vernichten, aber beim Bürger, nicht beim Händler). Kein Kandidat ist ein Baustein einer vorhandenen Dose.
+**Evidenzstufe:** Alle Engine-Belege und alle Reviewer-Belege sind **[Schnipsel]**. WebFetch auf eur-lex.europa.eu und brubru.beresol.eu liefert `EGRESS_BLOCKED`. Der Reviewer hat **15 eigene Suchen** gemacht, 11 davon als unabhängige Gegen-Suche zu K1. Der Normtext von Art. 24 ESPR und der DVO (EU) 2026/2 wurde **nicht** im Primärtext gelesen.
+**Ergebnis in einem Satz:** **Eine Dose Ready, knapp und mit Auflagen: K1.** K3 geht als Needs Research mit einem Datentest zurück. K2, K4, K5, K6 und K7 sind Friedhof-Kandidaten. K1 und K2 werden **nicht** zusammengelegt.
+
+### Scoreboard ESPR-Runde
+
+| Rang | Idea ID | Titel | Herkunft | Score (/35) | Niedrigster Vektor | Tier | Quelle | Triage Verdict |
+|:---:|---|---|---|:---:|---|:---:|---|---|
+| 1 | `vernichtungs-offenlegungsregister` | Vernichtungs-Offenlegungsregister (K1) | #1 + #2 + #3 (Dreifachfund) | **24/35** | V1/V2/V5/V7 = 3 | Tier 1 (Kern) / Tier 2 (Register) | Type A (nur Schnipsel) + 1 Firmenoffenlegung | `Dose Ready (knapp, mit Auflagen)` |
+| 2 | `reparaturfall-pflichtabgleich` | Reparaturfall → Pflichtverstoß (K3, + Stoppuhr-Feld) | #1 (+ #3 Stoppuhr) | **22/35** | V5 = 2 | Tier 1/2 | Type A + ORDS | `Needs Research (Datentest ORDS)` |
+| 3 | `nachschraub-probe` | Nachschraub-Probe (K4) | #2 | **21/35** | V5 = 2 | Tier 1 → 3 | Type A + Audit-Schnipsel | `Friedhof (beim-empfaenger)` |
+| 4 | `ersatzteilpreis-pegel` | Ersatzteilpreis-Zeitreihe (K2) | #1 + #2 (Doppelfund) | **19/35** | V1/V4 = 2 | Tier 2/3 (Scraper) | Type A (schwacher Hebel) | `Friedhof (mode)`, kein Baustein von K1 |
+| 5 | `akkutausch-protokoll` | Akkutausch-Protokoll (K5) | #3 | **19/35** | V1/V3/V5/V6 = 2 | Tier 1 | Type A (erst ab 18.02.2027) | `Friedhof (beim-empfaenger)`, Wiedervorlage 18.02.2027 |
+| 6 | `update-pegel` | Update-Pegel (K7) | #2 | **19/35** | V1/V5/V6 = 2 | Tier 1/2 | Type A (Hebel schwach) | `Friedhof (gebaut)` |
+| 7 | `neuware-fundbuch` | Neuware-Fundbuch (K6) | #2 | **16/35** | V3/V5 = 1 | Tier 2/3 | keine Engpassquelle | `Friedhof (reality-check)` |
+
+---
+
+### Review Scorecard: Vernichtungs-Offenlegungsregister (`vernichtungs-offenlegungsregister`) — K1
+**Origin:** Dreifachfund: `amelie-ideenrunde` („Vernichtungs-Register", frei dünn), `lacunar-bisociation` („Offenlegungs-Sammelbuch", Art. 24 × Ringfundzentrale, frei dünn), `asymmetric-inversion` („Offenlegungsregister", OP-4, frei) · **Category:** civic / Umwelt-Vollzug · **Intended Recipient:** Deutsche Umwelthilfe (Bereich Kreislaufwirtschaft), nachrangig Greenpeace e.V. (Kampagne Warenvernichtung), Changing Markets. Keine Person verifiziert.
+
+**Gegen-Suche des Reviewers (11 Suchen, alle [Schnipsel]):**
+- **Aggregator?** EN: „ESPR Article 24 disclosure tracker NGO database", „Changing Markets / EEB / Zero Waste Europe unsold goods disclosures analysis", „tracker … journalists investigation". DE: „Offenlegung vernichtete unverkaufte Produkte … Greenpeace Deutsche Umwelthilfe Auswertung". Gefunden wurden nur herstellerseitige Compliance-Werkzeuge (Flexireo, Generation Impact, Cleo Labs, Complir, Compliance & Risks) und Kanzlei-Erklärtexte. **Kein NGO-, Journalisten- oder Kommissions-Aggregator.** Die Kommission muss die Art.-24-Offenlegungen berücksichtigen, bevor sie das Vernichtungsverbot auf weitere Produkte ausweitet (Art. 25 ESPR, laut Cooley/Linklaters-Schnipsel). Laut ESPR-Arbeitsplan 2025–2030 plant sie aber keine Ausweitung in den nächsten fünf Jahren. Ein eigener Sammelanreiz der Kommission ist also kurzfristig schwach. Das bestätigt `frei`, macht die Kommission aber zum Datennutzer. Sie ist nicht Empfänger und nicht Killer.
+- **Prämisse: Gibt es die Offenlegungen schon?** Ja. **Signify N.V., „Disclosure on Discarded Unsold Consumer Products", GJ 2025, veröffentlicht als eigenständiges PDF am 04.05.2026** (assets.signify.com/…/20260504-signify-espr-disclosure.pdf) [Schnipsel]. Die Suche nach dem exakten Titel fand nur dieses eine Dokument. Die Offenlegungen sind also real, verstreut und schwer auffindbar. Das ist die Lücke.
+- **Zeitkonflikt Engine 2 („erste Berichte decken 2025") gegen Engine 3 („Pflichtformat erst für GJ ab 02.03.2027"):** **Beide haben recht, sie meinen verschiedene Dinge.** Die Mehrheitslesart in 6 unabhängigen Schnipseln (Cooley 07.05.2026, Generation Impact, Freshfields, trade-e-bility, CertLex/IHK-Tenor, Signify als Tatbeleg): Die Offenlegungspflicht für große Unternehmen gilt ab dem ersten vollen Geschäftsjahr nach Inkrafttreten der ESPR, also **GJ 2025, offenzulegen binnen 12 Monaten, bei Kalender-GJ bis 31.12.2026, im freien Format**. Die DVO 2026/2 (ABl. 10.02.2026) gilt ab 02.03.2027. **Das Anhang-I-Tabellenformat ist Pflicht für GJ, die am oder nach dem 02.03.2027 beginnen, also bei Kalender-GJ erstmals GJ 2028, offengelegt 2029** (ein deutscher Schnipsel nennt ausdrücklich „erstmals GJ 2028"). Eine Minderheitslesart (Cattwyk-Schnipsel: GJ ab 02.03.2026) wird hier verworfen, ist aber nicht widerlegt. Freshfields widerspricht sich zwischen zwei Schnipseln selbst. **Folge: drei Jahrgänge (GJ 2025, 2026, 2027; veröffentlicht 2026–2028) in freiem, heterogenem Format.** In genau diesem Fenster wird die Wirkung des Textil-Vernichtungsverbots (seit 19.07.2026) zum ersten Mal sichtbar.
+- **Why Now echt oder bloßer Parser?** Why Now ist **echt, aber befristet.** Für GJ 2025–2027 muss man Tabellen, Fließtext und CSRD-Kapitel aus PDF und HTML normalisieren. Das ist eine LLM-Extraktion mit menschlicher Bestätigung. Ab Offenlegungsjahr 2029 genügt ein deterministischer Parser gegen Anhang I. **Konsequenz für den Zuschnitt:** Der dauerhafte Kern ist der deterministische Anhang-I-Prüfer. Die LLM-Stufe ist ein Übergangsmodul und darf nicht das Herz der Dose sein.
+
+**Zwei Einwände des Advocatus Diaboli, die den Zuschnitt ändern:**
+1. **Eine fehlende Offenlegung ist kein Verstoß.** Die Pflicht entsteht nur, wenn ein Unternehmen unverkaufte Ware entsorgt. „Keine Offenlegung gefunden" kann heißen „nichts entsorgt". Die Beweismittel-These von Engine 3 („fehlende Offenlegung ist selbst die prüfbare Tatsache") trägt deshalb **nicht**. Das Register darf nur „keine Offenlegung gefunden (Stand: Datum, Suchweg)" ausgeben, nie „Verstoß" oder „säumig".
+2. **Es gibt keine Nennerliste.** Niemand führt eine Liste der verpflichteten Unternehmen. Das Register braucht deshalb eine kuratierte Startliste, z. B. große Bekleidungs- und Schuhhändler in DE, die unter das Verbot fallen, plus eine Exakttitel-Suche. Ohne Nenner ist jede Quote eine Behauptung.
+
+**Präzedenz (Reviewer-Wissen, nicht gesucht):** Beim UK Modern Slavery Act haben NGOs (Business & Human Rights Resource Centre, TISCreport) zuerst die verstreuten Pflichterklärungen gesammelt. Später baute die Regierung ein eigenes Register. Das Muster funktioniert also. Es zeigt aber auch, dass die Behörde nachziehen kann. Deshalb V1 = 3, nicht 4.
+
+#### 1. Vector Radar (Score: 24/35)
+| Vector | Score (1-5) | Key Finding / Grounding |
+|---|:---:|---|
+| **V1 · Novelty** | 3/5 | Exploratory mit Inversionsanteil. Lückensatz ohne Lösung: „Die Pflichtzahlen über vernichtete Ware stehen jedes Jahr auf hunderten Firmenseiten und in PDFs, aber nirgends nebeneinander." Abzug, weil das Muster „Pflichterklärungen sammeln" aus dem Modern Slavery Act bekannt ist. |
+| **V2 · Complexity** | 3/5 | Kern Tier 1: Anhang-I-Schema, Plausibilitätsprüfer, Erfassungsmaske. Register Tier 2: statische CSV/JSON im Repo, **jährlicher** manueller oder per Action ausgelöster Lauf. Die LLM-Extraktion (Übergangsjahre) läuft beim Kurator, nicht im Dauerbetrieb. Kein Server, aber jährliche Kuratorarbeit. |
+| **V3 · Possibility** | 4/5 | Prämisse belegt (Signify GJ 2025). Zeitfenster geklärt (Mehrheitslesart). Der Kern ist deterministisch: Prozentsummen, Grund ∈ Ausnahmeliste, CN-Code-Format, Stück/Gewicht-Plausibilität je Warengruppe, Schätzkennzeichnung. Rechtlich unkritisch: Es werden öffentliche Pflichtangaben zitiert, mit Datum und Quelle. |
+| **V4 · Future/Longevity** | 4/5 | EU-Verordnung, ab 19.07.2030 auch mittlere Unternehmen. Der Anhang-I-Prüfer hält, solange die DVO gilt. Abzug: jährliche Kuration, und die Kommission kann ein eigenes Register nachziehen (UK-Präzedenz). |
+| **V5 · Civic SWOT** | 3/5 | Achillesferse: „fehlend ≠ Verstoß" plus fehlender Nenner, dazu Äußerungsrisiko bei „unplausibel"-Markierungen. Architektonisch abgefangen durch neutrale Formulierung und Quellen-Screenshot. Stärke: DUH und Greenpeace haben ein Kampagnenmandat zum Thema, und die Kommission braucht die Daten für Art. 25. |
+| **V6 · Tech Tree** | 4/5 | Klarer Stamm (Anhang-I-Schema + Prüfer). Äste: Wirkungsmessung Textilverbot, Evidenz für Art.-25-Ausweitung, Mittelstand ab 2030, Übertragung auf andere Offenlegungspflichten („Offenlegungspflicht ohne Register"). |
+| **V7 · Documentation** | 3/5 | Type A (ESPR Art. 24/25, DVO 2026/2 Anhang I) **nur über Schnipsel**, dazu ein Firmen-PDF als Schnipsel. Kein Paragraph und kein Spaltenkopf im Primärtext gelesen. Deshalb nicht 4. |
+
+#### 2. Tech Tree Position
+```
+[Roots] ESPR (EU) 2024/1781 Art. 24/25 · DVO (EU) 2026/2 Anhang I (Tabellenformat, CN-Codes, Gründe, Behandlungswege) · Kombinierte Nomenklatur (CN) · DelVO Ausnahmen Art. 25 · pdf.js / Tabellen-Extraktion
+        └── [Trunk] anhang1-schema.json + pruefe(offenlegung) → {Befunde[], neutral formuliert} + Erfassungsmaske + Fixture (Signify GJ 2025 von Hand übertragen)
+                    ├── [Branch A] Register: statische CSV je Unternehmen × GJ, Status „gefunden / keine Offenlegung gefunden (Stand, Suchweg)"
+                    ├── [Branch B] Übergangsmodul GJ 2025–2027: LLM-Vorschlag → menschliche Bestätigung → Schema
+                    └── [Branch C] Evidenzbasis für DUH/Greenpeace-Kampagnen und für die Art.-25-Bewertung der Kommission; Mittelstand ab 2030
+```
+
+#### 3. Civic SWOT
+| Strengths (S) | Weaknesses (W) |
+|---|---|
+| • Öffentliche Pflichtangaben, zitiert mit Quelle und Datum, keine personenbezogenen Daten<br>• Deterministischer Kern, der das Pflichtformat überlebt<br>• CC0-Datensatz, den die Kommission nutzen darf | • Kein Nenner (keine Liste der Verpflichteten)<br>• Fehlend ≠ Verstoß<br>• Jährliche Kuratorarbeit, Übergangsjahre brauchen LLM plus Mensch |
+| **Opportunities (O)** | **Threats (T)** |
+| • Erster Jahrgang erscheint jetzt (bis 31.12.2026): wer zuerst sammelt, setzt das Format der Debatte<br>• Wirkungsnachweis des Textilverbots ab GJ 2026<br>• Muster übertragbar auf andere Offenlegungspflichten | • Kommission oder ein Compliance-Anbieter baut ein eigenes Register (UK-Präzedenz)<br>• Abmahnrisiko bei wertenden Markierungen<br>• Kurator-Ermüdung nach dem ersten Jahrgang |
+
+* **Achillesferse:** Das Register wird als Pranger gelesen, obwohl eine fehlende Offenlegung nichts beweist. → *Abhilfe:* nur neutrale Status („gefunden", „keine Offenlegung gefunden, Stand …"), Plausibilitätsbefunde als Fragen formulieren, jede Zeile mit Quell-URL, Abrufdatum und Archiv-Snapshot.
+* **Verteidigungsanker:** Der Anhang-I-Prüfer ist bis 2029 nützlich, auch als Selbsttest für Unternehmen, und danach der einzige nötige Parser.
+
+#### 4. Synthesis Verdict & Triage
+* **Verdict:** `Dose Ready (Packen)`, **knapp (24/35) und mit Auflagen.** Kein Vektor < 3, Kern Tier 1, Type A identifiziert. `frei` steht nur auf Schnipseln, aber nach eigener unabhängiger Gegen-Suche (11 Suchen, EN + DE, NGO/Journalismus/Kommission). Deshalb ist `Dose Ready` nach Teamregel zulässig.
+* **Auflagen:** (1) **Vor Ticket 01** den Normtext DVO 2026/2 Art. 2/3 + Anhang I und ESPR Art. 24 Abs. 1 als [Seite] lesen. Das Spaltenschema darf nicht aus Kanzleitexten stammen; ist der Normtext nicht erreichbar, wird das Schema als `vorläufig` markiert. (2) Ausgabesprache: nie „Verstoß" oder „säumig". (3) Empfängerperson vor jedem Versand auf duh.de verifizieren. (4) **Kein Zusammenlegen mit K2** (siehe dort).
+* **Vorgeschlagene id:** `vernichtungs-offenlegungsregister`
+* **Empfänger:** Deutsche Umwelthilfe e.V., Bereich Kreislaufwirtschaft (Mandat: Kampagnen gegen Retouren- und Warenvernichtung, warnt öffentlich vor Vollzugslücken beim Vernichtungsverbot). Nachrangig Greenpeace e.V. (Warenvernichtung) und Changing Markets. Ansprechperson **vor Versand verifizieren**.
+* **Erster Schritt (Ticket 01):** Das Anhang-I-Format der DVO 2026/2 als JSON-Schema und einen deterministischen Prüfer `pruefeOffenlegung()` bauen (Prozentsummen = 100, Grund ∈ Ausnahmeliste, CN-Code-Format, Stück/Gewicht-Plausibilität, Schätzkennzeichnung), mit Vitest und der händisch übertragenen Signify-Offenlegung GJ 2025 als erster Fixture.
+
+---
+
+### Review Scorecard: Ersatzteilpreis-Zeitreihe (`ersatzteilpreis-pegel`) — K2
+**Origin:** `amelie-ideenrunde` („Ersatzteilpreis-Monitor", verengt) + `lacunar-bisociation` („Ersatzteilpreis-Pegel", Hochwassermarke, verengt). Nachbar `asymmetric-inversion` („Ersatzteil-Stoppuhr", verengt dünn) · **Intended Recipient:** vzbv, BEUC, Runder Tisch Reparatur, Right to Repair Europe
+
+| Vector | Score | Key Finding |
+|---|:---:|---|
+| **V1 · Novelty** | 2/5 | Die Lücke „wer eine Erhöhung behauptet, hat keinen datierten Vorher-Wert" schließt das Internet Archive (Save Page Now: jeder erzeugt auf Knopfdruck einen datierten Beleg). Preisverläufe sind ein Standardmuster (Keepa, camelcamelcamel). Übrig bleibt nur systematische Abdeckung. |
+| **V2 · Complexity** | 3/5 | Braucht einen geplanten Scraper über viele Herstellerseiten (GitHub Action + statische Zeitreihe). Machbar, aber kein Tier-1-Kern. |
+| **V3 · Possibility** | 3/5 | Technisch trivial. Rechtlich schwach: VO 2023/1670 Anh. II verlangt nur einen *Richt*preis, der Höchstpreis wurde gestrichen; Art. 5 RL 2024/1799 „angemessen" ist nirgends beziffert. Die Zeitreihe misst gegen keinen Schwellenwert. |
+| **V4 · Future/Longevity** | 2/5 | Scraper verrotten, sobald Herstellerseiten umgebaut werden. Das ist die kürzeste Halbwertszeit der Runde, obwohl das Recht zehn Jahre gilt. |
+| **V5 · Civic SWOT** | 3/5 | Empfänger mit Mandat vorhanden, aber sie machen Stichproben selbst (BEUC 06/2026, vzbv-Marktcheck). Achillesferse: die Pflege. |
+| **V6 · Tech Tree** | 3/5 | Kein eigener Stamm, nur ein Datenkanal. |
+| **V7 · Documentation** | 3/5 | Type A (VO 2023/1670 Anh. II, RL 2024/1799 Art. 5) nur als Schnipsel. Engpass nur indirekt (BEUC-Stichprobe). |
+
+**Score: 19/35.**
+* **K1 + K2 als eine Dose („ESPR-Vollzugsspiegel")?** **Nein.** Gemeinsam haben sie nur das Muster „sammeln, was Firmen veröffentlichen müssen". Sonst unterscheidet sich alles: Daten (Jahres-PDF gegen laufende Preisseite), Takt (jährlich gegen laufender Scraper), Rechtshebel (Pflichtformat gegen unbestimmtes „angemessen"), Empfänger (DUH/Greenpeace gegen vzbv/BEUC/R2R). Das Zusammenlegen würde K1 einen verrottenden Tier-3-Scraper und einen schwachen Hebel anhängen, K1 schwächen und K2 nur retten. Genau das ist nicht erlaubt.
+* **Baustein?** Keine Amélie-Dose passt. Richtig ist ein **Feld im laufenden Monitoring von R2R Europe/BEUC** („Teilpreis ÷ Einführungspreis, datiert, mit Archiv-Snapshot"). Das ist ein Hinweis, keine Dose.
+* **Ersatzteil-Stoppuhr (Nachbar):** Sie ist ein Formular ohne Why Now und keine eigene Dose. Sie geht als optionales Feld „Bestelldatum/Lieferdatum" in K3 auf.
+* **Verdict:** `Friedhof` · `cause: mode` · `killer: gemeinnuetzig` (Internet Archive / Save Page Now; Stichproben BEUC/vzbv) · `foundBy: englisch` · `origin: bisoziation` · `stage: kandidat` · **resurrectIf:** Ein Gericht, eine Behörde oder das deutsche Umsetzungsgesetz beziffert „angemessener Preis" relativ zu einem Referenzpreis. Dann wird die Zeitreihe zum Prüfwerkzeug.
+
+---
+
+### Review Scorecard: Reparaturfall → Pflichtverstoß (`reparaturfall-pflichtabgleich`) — K3
+**Origin:** `amelie-ideenrunde` (verengt) · **Intended Recipient:** Open Repair Alliance / Runder Tisch Reparatur, Netzwerk Reparatur-Initiativen (anstiftung)
+
+| Vector | Score | Key Finding |
+|---|:---:|---|
+| **V1 · Novelty** | 3/5 | Lückensatz: „Wenn im Repair Café eine Reparatur an einem fehlenden Teil scheitert, weiß niemand, ob der Hersteller dieses Teil zu diesem Zeitpunkt hätte liefern müssen." |
+| **V2 · Complexity** | 4/5 | Tier 1: deterministische Fristentabelle (Produktgruppe × Inverkehrbringen → Teilepflicht in Jahren, Lieferfrist in Werktagen) aus den Ökodesign-VOs (2019/2023 Waschmaschinen, Geschirrspüler, Kühlgeräte, Displays; 2023/1670 Smartphones). ORDS-CSV statisch. |
+| **V3 · Possibility** | 3/5 | ORDS hat die Felder Produktkategorie, Marke, Baujahr/Produktalter und **Reparaturbarriere** (u. a. Ersatzteil nicht verfügbar) [Schnipsel openrepair.org]. Ob genug Fälle *im Geltungsbereich* liegen (Geräte ab 03/2021 bzw. 06/2025), ist offen. Repair Cafés sehen überwiegend alte Geräte. |
+| **V4 · Future/Longevity** | 4/5 | Ökodesign-Teilepflichten gelten 7–10 Jahre je Gerät, weitere Produktgruppen kommen dazu. Die Tabelle ist statisch pflegbar. |
+| **V5 · Civic SWOT** | 2/5 | Achillesferse: Ein Ehrenamtsprotokoll ist kein Beweismittel, und das Baujahr fehlt oft. Zudem wertet die ORA Reparaturbarrieren selbst aus (Nähe zu `beim-empfaenger`). |
+| **V6 · Tech Tree** | 3/5 | Die Fristentabelle ist ein wiederverwendbarer Stamm (auch für K2-Stoppuhr-Feld, Verbraucherseite). |
+| **V7 · Documentation** | 3/5 | Type A (Ökodesign-VOs, Anhänge) + ORDS-Standard, alles als Schnipsel. |
+
+**Score: 22/35.**
+* **Verdict:** `Needs Research`, Datentest vor jeder weiteren Arbeit: **Aus dem öffentlichen ORA-Datensatz zählen, wie viele Fälle pro Jahr (DE/EU) eine regulierte Produktgruppe, ein Produktalter im Geltungsbereich und die Barriere „Ersatzteil" haben.** Liegen es nur wenige Dutzend Fälle pro Jahr, geht die Idee in den Friedhof (`praemisse`). Liegen es mehr, folgt eine Empfängerprüfung: Hat die ORA diese Auswertung schon? Wenn ja, `beim-empfaenger`.
+
+---
+
+### Review Scorecard: Nachschraub-Probe (`nachschraub-probe`) — K4
+**Origin:** `lacunar-bisociation` (Reparierbarkeitsklasse × Speedrun-Verifikation, verengt nahe beim Empfänger) · **Intended Recipient:** Right to Repair Europe / iFixit EU Policy
+
+| Vector | Score | Key Finding |
+|---|:---:|---|
+| **V1 · Novelty** | 3/5 | „claimed/verified" als zwei Spalten ist ein guter Rahmen. Unabhängige Verifikation gibt es aber schon: **TCO Certified** verifiziert Reparierbarkeitsindizes (EU/FR-Methodik) durch akkreditierte Prüfer, und UL 1590 ist ein Verifikationsverfahren [Schnipsel]. |
+| **V2 · Complexity** | 3/5 | Die Rechenformel nach VO 2023/1669 ist Tier 1. Video → Zerlegeschritte per VLM ist Tier 3, alternativ Handzählung. |
+| **V3 · Possibility** | 3/5 | Zerlegeschritte aus Teardown-Videos zu zählen ist machbar. Die EN-45554-Zählregeln sind fein, Laien zählen uneinheitlich. |
+| **V4 · Future/Longevity** | 4/5 | EU-Label, weitere Produktgruppen folgen. |
+| **V5 · Civic SWOT** | 2/5 | Achillesferse: Der natürliche Empfänger (iFixit) hat den Teardown-Korpus, die Zählkompetenz und das EPREL-Audit (09/2026) und würde es selbst machen. Die Marktüberwachung muss ohnehin selbst prüfen. Die Laienzählung ist nur ein Anlass. |
+| **V6 · Tech Tree** | 3/5 | Ast am iFixit-Korpus, kein eigener Stamm. |
+| **V7 · Documentation** | 3/5 | Type A (VO 2023/1669) + Audit-Schnipsel. |
+
+**Score: 21/35.**
+* **Verdict:** `Friedhof` · `cause: beim-empfaenger` · `killer: gemeinnuetzig` (iFixit/Right to Repair Europe; Nebenbefund kommerziell: TCO Certified) · `foundBy: empfaenger` · `origin: bisoziation` · `stage: kandidat` · **resurrectIf:** Eine Marktüberwachungsbehörde veröffentlicht ein Format, in dem sie Dritt-Zerlegeprotokolle als Anlass annimmt, und iFixit bedient es nicht.
+
+---
+
+### Review Scorecard: Akkutausch-Protokoll (`akkutausch-protokoll`) — K5
+**Origin:** `asymmetric-inversion` (OP-2/4, verengt verfrüht) · **Intended Recipient:** iFixit / Right to Repair Europe
+
+| V1 | V2 | V3 | V4 | V5 | V6 | V7 | Summe |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| 2 | 4 | 2 | 4 | 2 | 2 | 3 | **19/35** |
+
+Kurzbegründung: Die Checkliste nach Leitlinie C/2025/214 ist ein Formular ohne Why Now (V1 2). Die Pflicht gilt erst ab 18.02.2027, und ein Laienprotokoll ist kein Beweismittel (V3 2). iFixit verfolgt die Umsetzung aktiv (V5 2). Es gibt keinen eigenen Stamm, nur ein Feld in iFixit-Guides (V6 2).
+* **Verdict:** `Friedhof` · `cause: beim-empfaenger` · `killer: gemeinnuetzig` (iFixit) · `foundBy: englisch` · `origin: brainstorm` (Inversionsoperator) · `stage: kandidat` · **resurrectIf:** Nach dem 18.02.2027 fordert eine Marktüberwachungsbehörde Bürgerhinweise zu Art. 11 BattVO an, und iFixit strukturiert sie nicht.
+
+---
+
+### Review Scorecard: Update-Pegel (`update-pegel`) — K7
+**Origin:** `lacunar-bisociation` (Update-Pflicht × Hochwassermarke, verengt, Hebel schwach) · **Intended Recipient:** —
+
+| V1 | V2 | V3 | V4 | V5 | V6 | V7 | Summe |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| 2 | 4 | 3 | 3 | 2 | 2 | 3 | **19/35** |
+
+Kurzbegründung: **endoflife.date/samsung-mobile** führt 441 Samsung-Versionen mit Enddatum der Sicherheitsupdates. Dazu kommen endoflife.ai, eosl.date, SnoopSnitch und Presse-Übersichten (Engadget, nokiamob 08/2026) [Schnipsel]. Der Rechtshebel ist schwach, weil die Pflicht nur „wenn" ein Update erscheint greift.
+* **Verdict:** `Friedhof` · `cause: gebaut` · `killer: community` (endoflife.date) · `foundBy: englisch` · `origin: bisoziation` · `stage: kandidat` · **resurrectIf:** nie für den Verlauf. Nur wenn eine Behörde einen konkreten Abgleich „zugesagte Updatejahre (EPREL) gegen gelieferte Patchlevel" als Vollzugsformat verlangt.
+
+---
+
+### Review Scorecard: Neuware-Fundbuch (`neuware-fundbuch`) — K6
+**Origin:** `lacunar-bisociation` (Art. 25 × Ringfundmeldung, unklar) · **Intended Recipient:** Greenpeace
+
+| V1 | V2 | V3 | V4 | V5 | V6 | V7 | Summe |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| 4 | 3 | 1 | 3 | 1 | 2 | 2 | **16/35** |
+
+Kurzbegründung: Der Lückensatz ist originell (V1 4). Der Reality-Check scheitert aber zweifach. (a) Vernichtung durch große Unternehmen geschieht bei beauftragten Entsorgern (Verbrennung, Schredder) und ist für Bürger unsichtbar. Was Bürger mit Etikett im Container finden, ist fast immer private Neuware-Entsorgung oder Spende. Ein Einzelfund beweist nichts, und Chargen gleicher SKU sehen nur Beschäftigte der Entsorger. (b) Meldungen dieser Beschäftigten wären Hinweisgeber-Fälle (HinSchG) mit Arbeitsrechts- und Datenschutzfolgen. Das kann kein Fundbuch leisten.
+* **Verdict:** `Friedhof` · `cause: reality-check` · `killer: keiner` · `foundBy: ohne-suche` · `origin: bisoziation` · `stage: kandidat` · **resurrectIf:** Eine Behörde oder NGO richtet einen geschützten Hinweisgeberkanal für Entsorger-Beschäftigte zu Art. 25 ein und braucht ein Chargen-Erfassungsformat.
+
+---
+
+### K8–K11 (besetzt, nur Bestätigung)
+- **K8 Reparaturverlangen-/Gewährleistungs-Uhr:** **Bestätigt** `besetzt` (`beim-empfaenger`/`mode`). Verbraucherzentralen haben Themenseiten und Musterbriefe zum Recht auf Reparatur seit 31.07.2026. Der Briefgenerator wäre schon 2018 baubar gewesen.
+- **K9 Reparaturformular-Generator:** **Bestätigt** `besetzt`. Ergänzung: Das Europäische Reparaturinformationsformular (Anh. I RL 2024/1799) füllt der Reparierende aus, nicht der Verbraucher. Das Werkzeug gehört damit zur Anbieterseite (FixFirst), `mode`.
+- **K10 EPREL-Reparierbarkeits-Nachprüfer:** **Bestätigt** `besetzt` (`beim-empfaenger`): R2R Europe/iFixit-Audit der EPREL-Datensätze, 09/2026.
+- **K11 Akku-Ankaufsuntersuchung:** **Bestätigt** `besetzt` („Certified by Bosch", Händlerzertifikat ab 2027). Einwand nur zur Methode: Die Warnliste (Aviloo/TÜV bei EV-Akkus) hätte die Idee vor der Suche töten müssen.
+
+### Retro des Reviewers (ESPR-Runde)
+- **Zeitkonflikte zwischen Engines sind oft keine Widersprüche, sondern zwei verschiedene Stichtage.** Hier waren es „Pflicht gilt" (GJ 2025) und „Format gilt" (GJ ab 02.03.2027). Vor einem Urteil beide Daten getrennt ausweisen. Der Zeitraum dazwischen ist oft genau das Why-Now-Fenster.
+- **„Offenlegungspflicht ohne Register → Register frei" braucht zwei Zusatzprüfungen:** Ist die Pflicht bedingt, sodass „fehlend" nichts beweist? Und gibt es eine Nennerliste der Verpflichteten? Beide Prüfungen haben die Beweismittel-These von Engine 3 entkräftet, ohne die Idee zu töten.
+- **Exakttitel-Suche nach dem Pflichtdokument ist die schnellste Prämissenprobe.** Die Überschrift aus dem Durchführungsrechtsakt fand die Signify-Offenlegung, nachdem sieben thematische Suchen nichts gebracht hatten. Das wird Standard für jede Offenlegungsidee.
