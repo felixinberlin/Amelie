@@ -8,6 +8,18 @@ Ergänzt `05-dosen/_entsorgt.md`: dort steht die Begründung für gepackte, dann
 **Prüfen ab:** Tooling/Konsum + 6 Monate · Zivilgesellschaft + 12 Monate
 
 
+## Runde 16 / Open Data & Phänologie-Erkundung — 28.09.2026 (method: ideenrunde, pure idea evaluation)
+
+Untersuchung von Typ-A und Typ-B Quellen (DWD Phänologie, DWD Waldbrand-Streufeuchte, Totholz-Kolk-Peiler). Nur Ideen- und Urteils-Evaluierung (kein Dosen-Packaging / Scaffolding-Code).
+
+| Idee | Urteil | Beleg (kurz) | Prüfen ab |
+|---|---|---|---|
+| **Phäno-Kalender-Sync** — DWD CDC Phänologie-FTP Transformatations-API & lokales Phasen-Radar | **`verengt`** | DWD stellt CDC-Phänologie-FTP (historische ZIPs, CSVs) bereit; DWD WarnWetter & Flora Incognita ("PhänoNetz") erfassen Beobachtungen per KI. Restlücke: Einfacher JSON-Feed/Vektorkarten-Converter für kommunale Stadtgrün-Behörden ohne FTP-Parser-Setup. | 03/2027 |
+| **Streufeuchte-Horcher / Waldbrand-Knistern** — Akustischer Unterholz-Trockenheits-Schätzer vs. DWD-Streuwaage | **`besetzt`** | DWD nutzt den kanadischen Fire Weather Index (FWI) mit Streuwaagen und physikalischen Berechnungen (Streufeuchte SF); "Knistern" ist im Arbeitsschutz ein verbales Warnsignal, kein messbarer akustischer Proxy. | – |
+| **Totholz-Kolk-Peiler** — Wasserbauliche Strukturgüte-Kartierung nach WRRL per Drohnen/Kamera-Foto | **`unklar`** | Egress-Proxy sperrt tiefere WRRL-Handbücher der Wasserstraßen- und Schifffahrtsverwaltung (WSA). Fachkontakt zu Gewässerökologen erforderlich. | 03/2027 |
+
+---
+
 ## Runde 15 / Wasser & Starkregen — 28.09.2026 (method: ideenrunde / mitforschen.org & FloReST)
 
 Recherche in der Typ-B-Quelle `mitforschen.org` (Projekt FloReST, Schwammbox, KlimNet) und Wasserwirtschaft-Forschung. 4 Suchen. **Muster: Citizen Science sammelt Schadensfotos, kommunale Gefahrenkarten fehlen die kleinräumigen Wasserlauf-Hindernisse.**
