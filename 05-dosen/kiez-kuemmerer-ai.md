@@ -1,0 +1,7 @@
+# Dossier: KiezKümmerer AI – Browser-Native Civic Asset Scanner
+
+**Problem:** Maintaining public infrastructure like benches, streetlights, or playgrounds is an immense task for cities. Citizens report damages, but often imprecisely or through cumbersome channels. Municipalities lack an efficient, up-to-date, and participatory method for inventorying assets and reporting defects.
+
+**Solution:** "KiezKümmerer AI" is a browser-native application that enables citizens to visually identify public assets in their surroundings and report their condition. Using local AI (WASM/WebGPU) directly on the device, the app recognizes objects like park benches, waste bins, or street signs via the camera. The AI assists in categorizing the problem and generates a structured report that can be sent directly to the relevant district office or city department. This significantly simplifies the reporting process, improves data quality for administration, and fosters civic engagement.
+
+**Amélie Fit:** This project leverages cutting-edge, local AI technologies for direct civic benefit. It is highly interactive, privacy-preserving, and solves a real problem for city administration by bridging citizen participation with efficient asset maintenance.
