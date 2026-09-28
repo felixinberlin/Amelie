@@ -31,6 +31,18 @@ Amélie speichert sein Gedächtnis nicht in Chat-Transkripten, sondern im Dateis
 
 ---
 
+### Förderlandschaft (`06-suche/amelie-foerderlandschaft.md` + `amelie-foerder-und-preisatlas.md`)
+
+Geldgeber, Preise, EU-Programme, Städte und Angels sind Ideenquelle, Besetzt-Test und Empfängerliste zugleich. **Katalog** (Fristen, Summen, Passung, Status) in `amelie-foerderlandschaft.md`, **Methodik und Suchrezepte** im Atlas. Nutzung:
+* **Vor jeder Ideensuche:** Geförderte-Projekte-Listen (Prototype Fund, Civic Coding, DBU, mFUND, Open Source Wettbewerb) nach dem Thema durchsehen. Ein Treffer ist ein `besetzt`-Signal.
+* **Jede Dose bekommt eine Förderbrücke:** „Wer könnte Ticket 01 finanzieren?" (Prototype Fund, DBU-Skizze, BMJV/BLE, mFUND, CERV, Civic Coding) plus Voraussetzungen. Nur ein Hinweis, kein Pitching.
+* **Empfänger:** Preisträger, Jurys, Smart-City-Modellprojekte (Ablage OpenCoDE.de, Stelle KTS), Unit GovTech Berlin.
+* **Venture:** Abschnitt E des Katalogs und `ventures/funding-and-angels.md`. Behördenvertrieb ist der Engpass (GovTech Startup Monitor 2026), Pilot vor Ausschreibung.
+* **Evidenz ist Suchschnipsel** (Stand 28.09.2026). Vor Nennung in einer Mail oder Dose Frist, Summe und Zulässigkeit auf der Primärseite prüfen und den Katalog nachziehen. Abgelaufene Fristen nie als offen darstellen.
+* **Offen (nicht entschieden):** Rechtsform/Antragsteller, CC0-Vereinbarkeit mit Prototype-Fund-Lizenzpflicht, Fördertipps in Empfängermails. Bis zur Entscheidung keine Mail mit Fördertipp versenden.
+
+---
+
 ## 3. Die „Dual Data"-Architektur (Häufige Stolperfalle!)
 
 Das Projekt besitzt eine zweistufige Datenebene:
