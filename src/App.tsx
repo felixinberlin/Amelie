@@ -15,6 +15,7 @@ import { NormalJobsExplorer } from './components/NormalJobsExplorer';
 import { WhimsyAndGoodnessView } from './components/WhimsyAndGoodnessView';
 import { GitHubPagesDataHub } from './components/GitHubPagesDataHub';
 import { MusterEmailsSection } from './components/MusterEmailsSection';
+import { SelfAuditView } from './components/SelfAuditView';
 import { DOSEN_DATA, DISCARDED_DATA } from './data/dosen';
 import { MATRIX_DATA } from './data/matrix';
 import { DELIVERIES_DATA } from './data/deliveries';
@@ -296,6 +297,10 @@ export function App() {
                 candidates={candidatesList}
                 onDataChanged={refreshData}
               />
+            )}
+
+            {currentTab === 'audit' && (
+              <SelfAuditView lang={lang} />
             )}
 
             {currentTab === 'google-import' && (

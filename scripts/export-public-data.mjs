@@ -38,6 +38,15 @@ try {
   writeFileSync(join(pub, 'dosen.json'), JSON.stringify(DOSEN_DATA, null, 2) + '\n');
   writeFileSync(join(pub, 'unpacked.json'), JSON.stringify(CANDIDATE_IDEAS_DATA, null, 2) + '\n');
   console.log(`public/data geschrieben: ${DOSEN_DATA.length} Dosen, ${CANDIDATE_IDEAS_DATA.length} Kandidaten.`);
+
+  // Self-Audit artifacts update
+  const auditEntry = join(dir, 'audit-entry.ts');
+  const auditOut = join(dir, 'audit-bundle.mjs');
+  writeFileSync(auditEntry, `export { writeAuditArtifacts } from ${JSON.stringify(join(repoRoot, 'src/audit/index.ts'))};`);
+  await build({ entryPoints: [auditEntry], bundle: true, format: 'esm', platform: 'node', outfile: auditOut, logLevel: 'error' });
+  const { writeAuditArtifacts } = await import(pathToFileURL(auditOut).href);
+  writeAuditArtifacts({ root: repoRoot });
+  console.log('public/data/amelie-health.json & AMELIE_STATUS.md aktualisiert.');
 } finally {
   rmSync(dir, { recursive: true, force: true });
 }

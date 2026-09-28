@@ -1,0 +1,150 @@
+{
+  "auditVersion": 1,
+  "generatedAt": "2026-09-28T13:41:52.853Z",
+  "repository": {
+    "commit": "f43f8c5",
+    "branch": "main"
+  },
+  "inventory": {
+    "doses": 42,
+    "graves": 52,
+    "demos": 7,
+    "researchEntries": 34,
+    "candidateIdeas": 20,
+    "books": 29
+  },
+  "distributions": {
+    "doseStatus": {
+      "zugestellt": 5,
+      "gepackt": 37
+    },
+    "doseVerdict": {
+      "gift": 32,
+      "build_first": 8,
+      "keep": 2
+    },
+    "doseDomain": {
+      "civic": 17,
+      "physics": 9,
+      "git": 5,
+      "creative": 4,
+      "knowledge": 3,
+      "tools": 3,
+      "audio": 1
+    },
+    "graveCategory": {
+      "gebaut": 30,
+      "beim-empfaenger": 11,
+      "reality-check": 5,
+      "duplikat": 2,
+      "mode": 3,
+      "praemisse": 1
+    }
+  },
+  "checks": [
+    {
+      "id": "dosen",
+      "name": "check:dosen",
+      "status": "pass",
+      "findings": []
+    },
+    {
+      "id": "books",
+      "name": "check:books",
+      "status": "pass",
+      "findings": []
+    },
+    {
+      "id": "ideaFrontmatter",
+      "name": "check:idea-frontmatter",
+      "status": "pass",
+      "findings": []
+    },
+    {
+      "id": "protokoll",
+      "name": "check:protokoll",
+      "status": "pass",
+      "findings": []
+    },
+    {
+      "id": "friedhof",
+      "name": "check:friedhof",
+      "status": "pass",
+      "findings": []
+    }
+  ],
+  "findings": [
+    {
+      "id": "DEMO-UNLINKED-chemhazard-stop",
+      "severity": "warning",
+      "category": "demo",
+      "message": "Demo folder \"07-demos/chemhazard-stop\" does not correspond to any active Dose or Grave ID.",
+      "file": "07-demos/chemhazard-stop",
+      "relatedId": "chemhazard-stop"
+    },
+    {
+      "id": "DRIFT-AGENTS.md-Gräber-33",
+      "severity": "warning",
+      "category": "documentation",
+      "message": "AGENTS.md claims 33 Gräber, but deterministic source scanner finds 52.",
+      "file": "AGENTS.md",
+      "details": {
+        "claim": "33 beerdigte Ideen",
+        "actual": 52,
+        "type": "stale_count"
+      }
+    },
+    {
+      "id": "DRIFT-AGENTS.md-Gräber-9",
+      "severity": "warning",
+      "category": "documentation",
+      "message": "AGENTS.md claims 9 Gräber, but deterministic source scanner finds 52.",
+      "file": "AGENTS.md",
+      "details": {
+        "claim": "9 Gräber",
+        "actual": 52,
+        "type": "stale_count"
+      }
+    },
+    {
+      "id": "DRIFT-en/README.md-Dosen-15",
+      "severity": "warning",
+      "category": "documentation",
+      "message": "en/README.md claims 15 Dosen, but deterministic source scanner finds 42.",
+      "file": "en/README.md",
+      "details": {
+        "claim": "15 tins",
+        "actual": 42,
+        "type": "stale_count"
+      }
+    },
+    {
+      "id": "DRIFT-README.de.md-Dosen-15",
+      "severity": "warning",
+      "category": "documentation",
+      "message": "README.de.md claims 15 Dosen, but deterministic source scanner finds 42.",
+      "file": "README.de.md",
+      "details": {
+        "claim": "15 Dosen",
+        "actual": 42,
+        "type": "stale_count"
+      }
+    },
+    {
+      "id": "DRIFT-README.md-Dosen-15",
+      "severity": "warning",
+      "category": "documentation",
+      "message": "README.md claims 15 Dosen, but deterministic source scanner finds 42.",
+      "file": "README.md",
+      "details": {
+        "claim": "15 tins",
+        "actual": 42,
+        "type": "stale_count"
+      }
+    }
+  ],
+  "generatedFiles": {
+    "json": "public/data/amelie-health.json",
+    "markdown": "AMELIE_STATUS.md"
+  }
+}

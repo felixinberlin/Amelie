@@ -13,6 +13,7 @@ import {
   Heart,
   Smile,
   FolderGit2,
+  Activity,
   ChevronDown,
   Check,
 } from 'lucide-react';
@@ -148,6 +149,12 @@ export const Header: React.FC<HeaderProps> = ({
           label: t.nav.githubPages,
           icon: FolderGit2,
           desc: t.nav.desc.githubPages,
+        },
+        {
+          id: 'audit',
+          label: 'Self-Audit Cockpit',
+          icon: Activity,
+          desc: 'Deterministic offline repository health inspection',
         },
       ],
     },

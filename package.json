@@ -17,6 +17,7 @@
     "friedhof": "node scripts/friedhof-muster.mjs",
     "check:friedhof": "node scripts/friedhof-muster.mjs --check",
     "sync:idea-frontmatter": "node scripts/sync-idea-frontmatter.mjs",
+    "audit": "node scripts/run-audit.mjs",
     "wet-ink:lab": "node scripts/wet-ink-lab.mjs"
   },
   "dependencies": {
