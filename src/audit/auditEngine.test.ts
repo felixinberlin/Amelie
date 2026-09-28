@@ -4,7 +4,7 @@ import { runAudit } from './index';
 describe('Amélie Self-Audit Engine', () => {
   it('1. returns correct Dose count (>0)', () => {
     const { health } = runAudit({ skipValidationScripts: true });
-    expect(health.inventory.doses).toBe(42);
+    expect(health.inventory.doses).toBe(43);
   });
 
   it('2. returns correct Grave count (>0)', () => {
@@ -84,7 +84,7 @@ describe('Amélie Self-Audit Engine', () => {
   it('13. runs offline without network', () => {
     // verified by execution context
     const { health } = runAudit({ skipValidationScripts: true });
-    expect(health.inventory.doses).toBe(42);
+    expect(health.inventory.doses).toBe(43);
   });
 
   it('14. handles empty or missing directory gracefully', () => {

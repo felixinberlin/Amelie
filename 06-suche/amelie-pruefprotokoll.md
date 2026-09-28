@@ -14,6 +14,7 @@ Untersuchung von Typ-A und Typ-B Quellen (DWD Phänologie, DWD Waldbrand-Streufe
 
 | Idee | Urteil | Beleg (kurz) | Prüfen ab |
 |---|---|---|---|
+| **Umwelt-Anomalie-Detektor (`amelie-umwelt-anomalie`)** — Statistische Anomalie-Erkennung für Bürgerwissenschaften & Kommunen | **`frei`** | Client-seitiges Anomaly Detection Tool (CSV/GBIF/UBA APIs) für BUND und kommunale Umweltämter zur FrRule-Erkennung ungewöhnlicher Trends. | 03/2027 |
 | **Phäno-Kalender-Sync** — DWD CDC Phänologie-FTP Transformatations-API & lokales Phasen-Radar | **`verengt`** | DWD stellt CDC-Phänologie-FTP (historische ZIPs, CSVs) bereit; DWD WarnWetter & Flora Incognita ("PhänoNetz") erfassen Beobachtungen per KI. Restlücke: Einfacher JSON-Feed/Vektorkarten-Converter für kommunale Stadtgrün-Behörden ohne FTP-Parser-Setup. | 03/2027 |
 | **Streufeuchte-Horcher / Waldbrand-Knistern** — Akustischer Unterholz-Trockenheits-Schätzer vs. DWD-Streuwaage | **`besetzt`** | DWD nutzt den kanadischen Fire Weather Index (FWI) mit Streuwaagen und physikalischen Berechnungen (Streufeuchte SF); "Knistern" ist im Arbeitsschutz ein verbales Warnsignal, kein messbarer akustischer Proxy. | – |
 | **Totholz-Kolk-Peiler** — Wasserbauliche Strukturgüte-Kartierung nach WRRL per Drohnen/Kamera-Foto | **`unklar`** | Egress-Proxy sperrt tiefere WRRL-Handbücher der Wasserstraßen- und Schifffahrtsverwaltung (WSA). Fachkontakt zu Gewässerökologen erforderlich. | 03/2027 |

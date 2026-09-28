@@ -1,3 +1,8 @@
+---
+status: Available
+delivery_method: E-Mail
+target_maker: BUND
+---
 # Dossier: Environmental Anomaly Detector for Citizen Science and Municipalities
 
 ## Problem Statement

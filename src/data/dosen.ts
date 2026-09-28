@@ -2435,6 +2435,45 @@ Amélie Initiative (Félix, Berlin)`
     failureModeEn: 'The register is read as a pillory although a missing disclosure proves nothing: the duty is conditional, there is no list of obliged companies, and "implausible" flags carry a cease-and-desist risk. Architectural remedy: only two neutral statuses, findings as questions, every row with source URL, retrieval date and archive snapshot, no rates, a published start list. Second, curator fatigue and catch-up by the Commission or a compliance vendor (UK Modern Slavery precedent); that is why the core is the checker, not the collection. Disclosed openly: evidence from search snippets only (eur-lex EGRESS_BLOCKED), timeline per majority reading, schema provisional, no recipient person identified.',
     priorArtDe: 'Frei (28.09.2026, Dreifachfund aller drei Engines, 11 unabhängige Gegen-Suchen des Reviewers DE/EN, nur Suchschnipsel): Kein NGO-, Journalisten- oder Kommissions-Aggregator der Art.-24-Offenlegungen gefunden. Nur herstellerseitige Compliance-Werkzeuge (Flexireo, Generation Impact, Cleo Labs, Complir, Compliance & Risks) und Kanzlei-Erklärtexte (Cooley 07.05.2026, Freshfields, Linklaters, Cattwyk, trade-e-bility). Die Kommission ist Datennutzerin für Art. 25, plant laut Arbeitsplan 2025–2030 aber keine Ausweitung. Prämisse belegt: Signify, „Disclosure on Discarded Unsold Consumer Products“, GJ 2025 (PDF 04.05.2026). Muster bekannt aus dem UK Modern Slavery Act (NGOs sammelten zuerst). Restlücke: offenes, datiertes Register mit deterministischem Anhang-I-Prüfer und neutralem Status. Dose: https://felixinberlin.github.io/Amelie/#dose=vernichtungs-offenlegungsregister',
     priorArtEn: 'Free (28 Sep 2026, triple find by all three engines, 11 independent counter-searches by the reviewer in German and English, search snippets only): no NGO, journalist or Commission aggregator of Art. 24 disclosures found. Only vendor-side compliance tools (Flexireo, Generation Impact, Cleo Labs, Complir, Compliance & Risks) and law-firm explainers (Cooley 7 May 2026, Freshfields, Linklaters, Cattwyk, trade-e-bility). The Commission is a data user for Art. 25 but plans no extension per its 2025–2030 working plan. Premise confirmed: Signify, "Disclosure on Discarded Unsold Consumer Products", FY 2025 (PDF 4 May 2026). Known pattern from the UK Modern Slavery Act (NGOs collected first). Remaining gap: an open, dated register with a deterministic Annex I checker and neutral status. Tin: https://felixinberlin.github.io/Amelie/#dose=vernichtungs-offenlegungsregister'
+  },
+  {
+    id: 'amelie-umwelt-anomalie',
+    title: 'Umwelt-Anomalie-Detektor',
+    titleEn: 'Environmental Anomaly Detector for Citizen Science and Municipalities',
+    oneLinerDe: 'Statistische Anomalie-Erkennung für Bürgerwissenschaften (BUND) und kommunale Umweltämter — erkennt ungewöhnliche Trends in Zeitreihen und Geodaten (GBIF, UBA) direkt im Browser.',
+    oneLinerEn: 'Statistical anomaly detection for citizen science (BUND) and municipal environmental agencies — identifies unusual trends in time series and geodata (GBIF, UBA) client-side.',
+    date: '28. September 2026',
+    reviewAfter: 'März 2027',
+    recipientsDe: 'BUND (Bund für Umwelt und Naturschutz Deutschland) · kommunale Umweltämter',
+    recipientsEn: 'BUND (Friends of the Earth Germany) · municipal environmental agencies',
+    domain: 'civic',
+    verdict: 'gift',
+    status: 'gepackt',
+    tags: ['Open Data', 'Citizen Science', 'BUND', 'Umweltbundesamt', 'GBIF', 'Anomalie', 'Statistik'],
+    problemDe: 'Die Erhebung von Umweltdaten durch Bürgerwissenschaften und kommunale Umweltämter nimmt stetig zu. Die Herausforderung liegt im schnellen Erfassen signifikanter Veränderungen oder ungewöhnlicher Muster in großen Datensätzen ohne teure Spezialsoftware.',
+    problemEn: 'Environmental data collection by citizen scientists and municipal environmental agencies is growing steadily. The challenge lies in quickly identifying significant changes or unusual patterns in large datasets without expensive specialized software.',
+    whyNowDe: [
+      'Offene Datenschnittstellen (GBIF, Umweltbundesamt APIs) sind reif und frei zugänglich.',
+      'Statistische Web-Algorithmen und Visualisierungsbibliotheken (D3.js, scikit-learn.js) laufen performant 100% offline im Browser.'
+    ],
+    whyNowEn: [
+      'Open data APIs (GBIF, German Federal Environmental Agency) are mature and accessible.',
+      'Statistical web algorithms and visualization libraries run performantly 100% client-side.'
+    ],
+    sketchDe: 'Browser-Applikation zum Upload von CSVs oder Anbindung von Open APIs (GBIF, UBA). Ein deterministischer Anomalie-Detektor hebt Abweichungen in Zeitreihen und Raumkoordinaten visuell auf Karten und Diagrammen hervor.',
+    sketchEn: 'Browser app for CSV upload or Open API connection (GBIF, UBA). A deterministic anomaly detector visually highlights deviations in time series and spatial coordinates on maps and charts.',
+    firstStepDe: {
+      ticket: 'Minimaler CSV-Uploader mit 2D-Zeitreihen-Anomalielöser.',
+      criteria: 'Fertig, wenn hochgeladene Messreihen Ausreißer nach 3-Sigma-Regel oder IQR im Browser visualisieren.'
+    },
+    firstStepEn: {
+      ticket: 'Minimal CSV uploader with 2D time series anomaly solver.',
+      criteria: 'Done when uploaded measurement series visualize outliers via 3-sigma or IQR rule client-side.'
+    },
+    failureModeDe: 'Scheingenauigkeit: Fehlalarme bei natürlichen Schwankungen. Gegenmaßnahme: klare Konfidenzintervalle und transparente Schwellenwerte.',
+    failureModeEn: 'False positives on natural fluctuations. Remedy: clear confidence intervals and transparent thresholds.',
+    priorArtDe: 'Frei (28.09.2026): Verschiedene GIS- und Statistiktools existieren für Experten; kein niederschwelliges, kostenloses Web-Tool für Ehrenamtliche.',
+    priorArtEn: 'Free (28 Sep 2026): Various expert GIS and statistical tools exist; no lightweight, free web tool for volunteers.'
   }
 ];
 

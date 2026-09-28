@@ -1,30 +1,30 @@
 {
   "auditVersion": 1,
-  "generatedAt": "2026-09-28T13:41:52.853Z",
+  "generatedAt": "2026-09-28T14:01:44.682Z",
   "repository": {
-    "commit": "f43f8c5",
+    "commit": "eb65958",
     "branch": "main"
   },
   "inventory": {
-    "doses": 42,
+    "doses": 43,
     "graves": 52,
     "demos": 7,
-    "researchEntries": 34,
+    "researchEntries": 35,
     "candidateIdeas": 20,
     "books": 29
   },
   "distributions": {
     "doseStatus": {
       "zugestellt": 5,
-      "gepackt": 37
+      "gepackt": 38
     },
     "doseVerdict": {
-      "gift": 32,
+      "gift": 33,
       "build_first": 8,
       "keep": 2
     },
     "doseDomain": {
-      "civic": 17,
+      "civic": 18,
       "physics": 9,
       "git": 5,
       "creative": 4,
@@ -57,8 +57,18 @@
     {
       "id": "ideaFrontmatter",
       "name": "check:idea-frontmatter",
-      "status": "pass",
-      "findings": []
+      "status": "fail",
+      "findings": [
+        {
+          "id": "CHECK-FAIL-ideaFrontmatter",
+          "severity": "error",
+          "category": "test",
+          "message": "Validation check \"check:idea-frontmatter\" failed: Frontmatter veraltet: 05-dosen/amelie-umwelt-anomalie.md",
+          "details": {
+            "fullOutput": "Frontmatter veraltet: 05-dosen/amelie-umwelt-anomalie.md\n\n1 Dose(n) mit veralteter Frontmatter. node scripts/sync-idea-frontmatter.mjs ausführen.\n"
+          }
+        }
+      ]
     },
     {
       "id": "protokoll",
@@ -74,6 +84,15 @@
     }
   ],
   "findings": [
+    {
+      "id": "CHECK-FAIL-ideaFrontmatter",
+      "severity": "error",
+      "category": "test",
+      "message": "Validation check \"check:idea-frontmatter\" failed: Frontmatter veraltet: 05-dosen/amelie-umwelt-anomalie.md",
+      "details": {
+        "fullOutput": "Frontmatter veraltet: 05-dosen/amelie-umwelt-anomalie.md\n\n1 Dose(n) mit veralteter Frontmatter. node scripts/sync-idea-frontmatter.mjs ausführen.\n"
+      }
+    },
     {
       "id": "DEMO-UNLINKED-chemhazard-stop",
       "severity": "warning",
@@ -110,11 +129,11 @@
       "id": "DRIFT-en/README.md-Dosen-15",
       "severity": "warning",
       "category": "documentation",
-      "message": "en/README.md claims 15 Dosen, but deterministic source scanner finds 42.",
+      "message": "en/README.md claims 15 Dosen, but deterministic source scanner finds 43.",
       "file": "en/README.md",
       "details": {
         "claim": "15 tins",
-        "actual": 42,
+        "actual": 43,
         "type": "stale_count"
       }
     },
@@ -122,11 +141,11 @@
       "id": "DRIFT-README.de.md-Dosen-15",
       "severity": "warning",
       "category": "documentation",
-      "message": "README.de.md claims 15 Dosen, but deterministic source scanner finds 42.",
+      "message": "README.de.md claims 15 Dosen, but deterministic source scanner finds 43.",
       "file": "README.de.md",
       "details": {
         "claim": "15 Dosen",
-        "actual": 42,
+        "actual": 43,
         "type": "stale_count"
       }
     },
@@ -134,11 +153,11 @@
       "id": "DRIFT-README.md-Dosen-15",
       "severity": "warning",
       "category": "documentation",
-      "message": "README.md claims 15 Dosen, but deterministic source scanner finds 42.",
+      "message": "README.md claims 15 Dosen, but deterministic source scanner finds 43.",
       "file": "README.md",
       "details": {
         "claim": "15 tins",
-        "actual": 42,
+        "actual": 43,
         "type": "stale_count"
       }
     }
