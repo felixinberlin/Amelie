@@ -93,9 +93,9 @@ Wenn du ein Ticket, ein Kriterium oder eine Dosen-Beschreibung änderst, musst d
   * **Orchestrierung (Team-Agenten):** `skills/amelie-orchestrator/` beschreibt die Teamrunde (Vorflug → 3 Engines parallel → Konvergenz-Merge → Reviewer → Packer → Demo-Builder → Bibliothekar → Abschluss). Die Rollen liegen als Subagenten in `.claude/agents/` (`ideen-scout`, `bisoziations-kollider`, `inversions-agent`, `idea-reviewer`, `dose-packer`, `demo-builder`, `bibliothekar`) mit disjunkten Schreibrechten.
   * **Aktueller Dosenstand:** 42 Dosen im Bestand, 58 Gräber. Neu verpackt: `vernichtungs-offenlegungsregister` (Teamrunde ESPR 28.09.2026), `abbundzeichen-fundbuch` (Holz-Runde 27.09.2026), `bleifrei-lotse` und `tarot-zustandsmaschine` (Arcana Schema).
 * **Offenlegung-Runde (28.09.2026, Teamrunde 2):**
-  * Thema: Muster „Offenlegungspflicht ohne Register" auf LkSG, EUDR, CSRD, BattVO, VerpackG/PPWR übertragen. 15 Ideen → 0 frei, 3 verengt, 6 unklar, 6 besetzt → **0 Dosen** (Reviewer: keine `Dose Ready`), 6 neue Gräber (58 gesamt).
+  * Thema: Muster „Offenlegungspflicht ohne Register" auf LkSG, EUDR, CSRD, BattVO, VerpackG/PPWR übertragen. Zwei parallele Läufe (A: Schnipsel, 15 Ideen, 0 Dose Ready, 6 Gräber; B: Normtexte gelesen, 14 Ideen). Abgleich im Prüfprotokoll: **`umsetzungsplan-register` (EnEfG § 9, 25/35) ist `Dose Ready`, noch nicht gepackt** (Empfänger DENEFF, Kontakt unverifiziert); Konfliktmineralien ist Friedhof-Kandidat (17/35). Gräber P2/P4/P5/P6 stehen noch aus (58 Gräber aktuell).
   * Muster trägt nur bei junger Pflicht ohne Registerträger (ESPR war die Ausnahme). Neue Vorfilter 0–4 im Playbook-Atlas. Empfehlung: Themenwechsel weg von EU-Compliance-Regimen.
-  * `Needs Research` (je 20/35): Konfliktmineralien-Berichtsregister (DEKSOR/BGR), LkSG-Beschwerdekanal-Verzeichnis. Bausteine: Nenner-Schätzer → `vernichtungs-offenlegungsregister`.
+  * `Needs Research`: LkSG-Beschwerdekanal-Verzeichnis (20/35), Wahlwerbe-Herbarium (22/35). Bausteine: Nenner-Schätzer → `vernichtungs-offenlegungsregister`.
   * Evidenz durchgehend nur Suchschnipsel (Egress-Proxy sperrt Behörden-Seiten).
 
 * **Holz-Runde (27.09.2026):**
