@@ -16,12 +16,14 @@ import {
   Activity,
   ChevronDown,
   Check,
+  Coins,
 } from 'lucide-react';
 import { Language } from '../types';
 import { getTranslation, withCount } from '../i18n';
 import { SIMULATOR_COUNT } from '../data/doseSimulators';
 import { NORMAL_JOBS_AND_EVERYDAY_PEOPLE_IDEAS } from '../data/ideas/normalJobsAndEverydayPeople';
 import { AMELIE_MUSTERS } from '../data/musterEmails';
+import { FUNDING_DATA } from '../data/funding';
 
 interface HeaderProps {
   currentTab: string;
@@ -81,6 +83,12 @@ export const Header: React.FC<HeaderProps> = ({
       label: t.nav.matrix,
       icon: Mail,
       badge: mailsCount,
+    },
+    {
+      id: 'funding',
+      label: lang === 'de' ? 'Förderkompass' : lang === 'es' ? 'Brújula de fondos' : 'Funding compass',
+      icon: Coins,
+      badge: FUNDING_DATA.length,
     },
     {
       id: 'manifest',

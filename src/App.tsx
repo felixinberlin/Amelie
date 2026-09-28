@@ -16,6 +16,7 @@ import { WhimsyAndGoodnessView } from './components/WhimsyAndGoodnessView';
 import { GitHubPagesDataHub } from './components/GitHubPagesDataHub';
 import { MusterEmailsSection } from './components/MusterEmailsSection';
 import { SelfAuditView } from './components/SelfAuditView';
+import { FundingCompass } from './components/FundingCompass';
 import { DOSEN_DATA, DISCARDED_DATA } from './data/dosen';
 import { MATRIX_DATA } from './data/matrix';
 import { DELIVERIES_DATA } from './data/deliveries';
@@ -350,6 +351,8 @@ export function App() {
                 onOpenModal={(dose) => setSelectedDose(dose)}
               />
             )}
+
+            {currentTab === 'funding' && <FundingCompass lang={lang} />}
 
             {currentTab === 'manifest' && (
               <ManifestView
