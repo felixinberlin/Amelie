@@ -241,3 +241,17 @@ Alle Einträge **nur über Suchschnipsel** erschlossen; die Seiten selbst waren 
 | TFZ Straubing Bericht 11 · AELF-Borkenkäfer-Merkblätter · EFI I+ | Trocknungskurven, Bohrmehl, Marteloskope | `erschöpft` | 27.09.2026 |
 | **Offen für die nächste Holz-Runde:** Thünen WZE-Kronenansprache-Bildserien, PCP-Richtlinie (Bewertungsschema), DIN 68800-4, Tischler-/Zimmererforen (fachwerk.de), ADG-Graubünden-FAQ Privataufträge, restauratorische Befunduntersuchung | – | `offen` | – |
 
+
+---
+
+## Typ N — EU-Produktrecht: Ökodesign, Reparatur, Batterien (neu, ESPR-Runde 28.09.2026)
+
+Alle Einträge **nur über Suchschnipsel** erschlossen; eur-lex.europa.eu, brubru.beresol.eu, cooley.com und ifixit.com lieferten `EGRESS_BLOCKED`. Kein Normtext im Volltext gelesen.
+
+| Quelle | Befund | Status | Zuletzt |
+|---|---|---|---|
+| **ESPR VO (EU) 2024/1781 Art. 24/25 + DVO (EU) 2026/2** (Offenlegung entsorgter unverkaufter Produkte; Anhang I Tabellenformat; ABl. 10.02.2026, gilt ab 02.03.2027) | Pflicht große Unternehmen ab GJ 2025 im freien Format (binnen 12 Monaten), Anhang-I-Format für GJ ab 02.03.2027; Vernichtungsverbot Bekleidung/Schuhe seit 19.07.2026. Kein Register der Offenlegungen. Tatbeleg: Signify „Disclosure on Discarded Unsold Consumer Products" GJ 2025 (PDF 04.05.2026). Sekundär: Cooley 07.05.2026, Freshfields (widersprüchlich), Linklaters, trade-e-bility, Generation Impact, Cattwyk (Minderheitslesart), UBA-Themenseite | `angekratzt` — **ergiebig** (Dreifachfund → Dose `vernichtungs-offenlegungsregister`). **Offen: Normtext Anhang I + Art. 24 Abs. 1 und Signify-PDF als [Seite] lesen** (Netzfreigabe eur-lex.europa.eu, assets.signify.com nötig) | 28.09.2026 |
+| **Recht auf Reparatur RL (EU) 2024/1799** (Art. 4 Reparaturinformationsformular Anh. I, Art. 5 Ersatzteile „angemessener Preis", Anh. II Produktgruppen; DE-Umsetzung BGBl. 2026 I Nr. 212, in Kraft seit 31.07.2026) | Verbraucherseite beim Empfänger (VZ-Themenseiten + Musterbriefe), Formular anbieterseitig (FixFirst); „angemessen" nirgends beziffert | `erschöpft` für Verbraucherbriefe und Formulare; `angekratzt` für Anh. II Waschmaschinen/Geschirrspüler (nächster Bisoziationsanker) | 28.09.2026 |
+| **VO (EU) 2023/1669** (Energielabel mit Reparierbarkeitsklasse Smartphones/Tablets) **+ VO (EU) 2023/1670** (Ökodesign: Ersatzteile 7 Jahre, Lieferfrist 5/10 Werktage, Richtpreis Anh. II, Updates) — beide seit 20.06.2025 | Selbstauskunft ohne Nachprüfer; EPREL-Audit R2R Europe/iFixit 09/2026 (2.334 Datensätze, ~80 % ohne verwertbare Angaben); TCO Certified verifiziert; endoflife.date führt Update-Enden | `erschöpft` produktseitig (EPREL-Nachprüfer, Nachschraub-Probe, Update-Pegel, Ersatzteilpreis-Pegel alle im Friedhof) | 28.09.2026 |
+| **BattVO (EU) 2023/1542** (Art. 11 austauschbare Gerätebatterien ab 18.02.2027, Leitlinie C/2025/214; Art. 77 Batteriepass ab 18.02.2027) | Noch nicht in Kraft; iFixit verfolgt Art. 11; Gebrauchtakku-Zertifikate kommerziell („Certified by Bosch", Aviloo, TÜV) | `angekratzt` — **Wiedervorlage nach 18.02.2027** (Grab `akkutausch-protokoll`) | 28.09.2026 |
+| **Open Repair Data Standard (ORDS) / Open Repair Alliance — offener Datensatz** (openrepair.org/open-data; Netzwerk Reparatur-Initiativen Statistik) | Felder Produktkategorie, Marke, Baujahr/Alter, Reparaturbarriere (u. a. Ersatzteil nicht verfügbar); Baujahr oft leer | `offen` — **nächster Schritt: Datentest für K3 `reparaturfall-pflichtabgleich`** (Fälle/Jahr im Geltungsbereich der Teilepflichten zählen). Datensatz nicht heruntergeladen | 28.09.2026 |

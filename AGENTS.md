@@ -62,7 +62,7 @@ Wenn du ein Ticket, ein Kriterium oder eine Dosen-Beschreibung änderst, musst d
 
 ---
 
-## 5. Aktueller Projektstand (Stand: 27. September 2026)
+## 5. Aktueller Projektstand (Stand: 28. September 2026)
 
 * **`tarot-zustandsmaschine` / Arcana Schema (Dose & Post 10):**
   * **Spezifikation & Playground LIVE:** Arcana Schema v2.0.0 ([felixinberlin.github.io/Arcana-schema](https://felixinberlin.github.io/Arcana-schema/)) dual-validiert (Draft 2020-12 & Draft-7) mit `@arcana-schema/validator` auf npm.
@@ -85,13 +85,21 @@ Wenn du ein Ticket, ein Kriterium oder eine Dosen-Beschreibung änderst, musst d
     * `skills/idea-reviewer/` (`idea-reviewer.skill`): 7-Vektoren-Audit (Novelty, Complexity, Possibility, Longevity, Civic SWOT, Tech Tree, Ground Truth) mit Logbuch in `06-suche/amelie-classification-log.md`.
   * **1 Packaging-Agent:**
     * `skills/dose-packer/` (`dose-packer.skill` & Subagent `dose-packer`): Schreibt zweisprachige Dossiers (`05-dosen/`, `en/05-dosen/`), verknüpft Dosen im React-Frontend (`src/data/dosen.ts`), synchronisiert Frontmatter und Caches (`export:data`).
-  * **Aktueller Dosenstand:** 41 Dosen im Bestand, 43 Gräber. Neu verpackt: `abbundzeichen-fundbuch` (Holz-Runde 27.09.2026), `bleifrei-lotse` und `tarot-zustandsmaschine` (Arcana Schema).
+  * **Orchestrierung (Team-Agenten):** `skills/amelie-orchestrator/` beschreibt die Teamrunde (Vorflug → 3 Engines parallel → Konvergenz-Merge → Reviewer → Packer → Demo-Builder → Bibliothekar → Abschluss). Die Rollen liegen als Subagenten in `.claude/agents/` (`ideen-scout`, `bisoziations-kollider`, `inversions-agent`, `idea-reviewer`, `dose-packer`, `demo-builder`, `bibliothekar`) mit disjunkten Schreibrechten.
+  * **Aktueller Dosenstand:** 42 Dosen im Bestand, 52 Gräber. Neu verpackt: `vernichtungs-offenlegungsregister` (Teamrunde ESPR 28.09.2026), `abbundzeichen-fundbuch` (Holz-Runde 27.09.2026), `bleifrei-lotse` und `tarot-zustandsmaschine` (Arcana Schema).
 * **Holz-Runde (27.09.2026):**
   * Drei Engines parallel auf das Thema Holz → 19 geprüfte Ideen (2 frei, 6 verengt, 3 unklar, 8 besetzt) → Reviewer → 1 Dose.
   * **`abbundzeichen-fundbuch` gepackt** (26/35, Tier 1): Zählfolgen-Prüfer für Abbundzeichen an Fachwerk; Empfänger IgB-Hausforschung. **Kontakt (Dr. Julia Ricker) nur aus Suchschnipsel — vor jedem Versand auf igbauernhaus.de verifizieren.** Keine Mail angelegt.
   * Scaffolding `07-demos/abbundzeichen-fundbuch/` + Engine `src/engine/abbundzeichen-fundbuch/` (44 Tests). Offen in Ticket 01: Fixture aus publiziertem Zeichenregister, statische Offline-Seite.
   * Baustein-Empfehlungen des Reviewers (nicht umgesetzt): Altholz-Weiche als dritter Ausgang der `sperrmuell-weiche`; Brennholz-Kaufprüfer als Modus von `wood-stove-firewood-moisture-estimator`. `Needs Research`: Dosenfund-Dolmetscher (historische Holzschutzmittelverzeichnisse DIBt/IfBt).
   * Evidenz dieser Runde nur Suchschnipsel: Die Netzwerk-Policy der Cloud-Umgebung sperrte Seitenabrufe (lfu.bayern.de, thuenen.de, …).
+
+* **Teamrunde ESPR (28.09.2026, erste Orchestrierungs-Runde):**
+  * Thema ESPR/DPP + Recht auf Reparatur (seit Inversion Run 2 dreimal übertragen). 16 Engine-Kandidaten → 11 Ideen (1 frei, 5 verengt, 1 unklar, 4 besetzt) → Reviewer → 1 Dose, 1 Needs Research, 9 Gräber.
+  * **`vernichtungs-offenlegungsregister` gepackt** (24/35, `build_first`): **Dreifachfund** aller drei Engines. Offenes Register der Offenlegungen vernichteter unverkaufter Ware nach ESPR Art. 24 / DVO (EU) 2026/2; Kern ist ein deterministischer Anhang-I-Prüfer, der **nie „Verstoß" sagt** (die Pflicht ist bedingt). Empfänger DUH Kreislaufwirtschaft — **Ansprechperson vor Versand verifizieren**. Keine Mail angelegt.
+  * Scaffolding `07-demos/vernichtungs-offenlegungsregister/` + Engine (28 Tests). **Schema `vorläufig`**, Fixtures synthetisch. Offen in Ticket 01: Normtext DVO 2026/2 Anhang I + ESPR Art. 24 lesen, Signify-Offenlegung GJ 2025 von Hand übertragen.
+  * `reparaturfall-pflichtabgleich` (K3) ist `Needs Research`: ORDS-Datentest zuerst.
+  * Evidenz nur Suchschnipsel (eur-lex, duh.de, repair.eu u. a. vom Proxy gesperrt).
 
 ---
 
