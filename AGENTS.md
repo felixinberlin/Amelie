@@ -64,6 +64,11 @@ Wenn du ein Ticket, ein Kriterium oder eine Dosen-Beschreibung änderst, musst d
 
 ## 5. Aktueller Projektstand (Stand: 28. September 2026)
 
+* **Post 13 — Amélie selbst → r/ClaudeCode (28.09.2026, gepostet):**
+  * Showcase-Kommentar im „Weekly Showcase Thread" von `r/ClaudeCode`: verschenkt wird die Methode (Orchestrator + 7 Subagenten), keine einzelne Dose. Eintrag `post-13` in `src/data/deliveries.ts` (ohne `doseLinks`, `sent: true`), Notiz in `03-zuordnung/mails-q4-2026/post-13-reddit-claudecode.md`.
+  * `loadSentEmailsMap` übernimmt für Einträge ohne verlinkte Dose den Seed-Status (`sent`/`sentAt`), statt sie als unversendet zu melden.
+  * Kein zweiter Post zum selben Projekt (Subreddit-Regel); Fragen im Thread beantworten ist erlaubt.
+
 * **`tarot-zustandsmaschine` / Arcana Schema (Dose & Post 10):**
   * **Spezifikation & Playground LIVE:** Arcana Schema v2.0.0 ([felixinberlin.github.io/Arcana-schema](https://felixinberlin.github.io/Arcana-schema/)) dual-validiert (Draft 2020-12 & Draft-7) mit `@arcana-schema/validator` auf npm.
   * **Post 10 (Reddit Announcement):** An `r/tarot` Moderatoren via Modmail versendet (Vorab-Genehmigung bezüglich Regel 9 / No AI). Status in Dossiers und Zustellliste auf `Delivered` / `sent: true` gesetzt.
