@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://felixinberlin.github.io/Amelie/07-demos/umsetzungsplan-register/umsetzungsplan-schema.json",
+  "title": "Umsetzungsplan nach § 9 EnEfG — Schema, versioniert nach BAFA-Merkblattfassung",
+  "description": "Ein übertragener Umsetzungsplan für Endenergieeinsparmaßnahmen nach § 9 EnEfG. Texte je Zeile wortgetreu wie im Dokument; der Prüfer liest Beträge und Zeitrahmen selbst. Pflichtangaben je Fassung in x-fassungen. Die Fassung 16.09.2026 ist Feld für Feld gegen Abschnitt 5 des Merkblatts geprüft (selbst gelesen am 28.09.2026); die Fassung 12.02.2025 wurde nicht selbst gelesen und bleibt vorläufig. Lizenz: CC0 1.0 Public Domain.",
+  "schemaStatus": "gegen Merkblatt 16.09.2026 geprüft am 2026-09-28",
+  "x-fassungen": [
+    {
+      "fassung": "2026-09-16",
+      "schemaStatus": "gegen Merkblatt 16.09.2026 geprüft am 2026-09-28",
+      "rechtsstand": "a. F.",
+      "pflichtangaben": ["prioritaet", "massnahme", "investitionsvolumen", "zeitrahmen", "status"],
+      "hinweise": [
+        "Merkblatt Abschnitt 5: Priorisierung, Bezeichnung, kalkuliertes Investitionsvolumen, Zeitrahmen, Angaben zum Umsetzungsfortschritt.",
+        "Investitionsvolumen darf aufgerundet oder als Bandbreite stehen; optional nur das Gesamtinvestitionsvolumen (Fußnote * zum Muster).",
+        "Zeitrahmen soll Monat und Jahr enthalten.",
+        "Status „kann“ in den Kategorien Offen / In Bearbeitung / Abgeschlossen erfolgen — das Vokabular ist nicht zwingend.",
+        "Herkunft der Maßnahme und verantwortliche Person stehen seit der 7. Änderung (30.04.2026, „Reduzierung und Klarstellung der Inhalte“) nicht mehr im Muster."
+      ],
+      "quelle": "https://www.bafa.de/SharedDocs/Downloads/DE/Energie/ea_merkblatt_energieefffizienzgesetz.pdf?__blob=publicationFile&v=14",
+      "sha256": "1a62fa7dac0253e007eca19a32b9c12395d3d272e600b7f839d869dbc435d529"
+    },
+    {
+      "fassung": "2025-02-12",
+      "schemaStatus": "vorläufig",
+      "rechtsstand": "a. F.",
+      "pflichtangaben": ["prioritaet", "massnahme", "investitionsvolumen", "zeitrahmen", "herkunft", "verantwortlich", "status"],
+      "hinweise": [
+        "Nicht selbst gelesen. Sieben Angaben laut Reviewer-Lesung einer Kopie auf visalvis.de (06-suche/amelie-classification-log.md)."
+      ],
+      "quelle": "visalvis.de (Kopie, URL nicht festgehalten)"
+    }
+  ],
+  "x-statusVokabular": ["Offen", "In Bearbeitung", "Abgeschlossen"],
+  "type": "object",
+  "required": ["unternehmen", "datenart", "rechtsstand", "merkblattFassung", "erstellt", "format", "quelle", "massnahmen"],
+  "additionalProperties": false,
+  "properties": {
+    "unternehmen": { "type": "string", "minLength": 1 },
+    "datenart": {
+      "enum": ["veroeffentlichter-plan", "merkblatt-muster", "synthetisch"],
+      "description": "veroeffentlichter-plan = echtes PDF; merkblatt-muster = Beispiel aus dem Merkblatt; synthetisch = erfundene Testdaten"
+    },
+    "rechtsstand": {
+      "enum": ["a. F.", "n. F."],
+      "description": "a. F. = § 9 EnEfG vor der Novelle; n. F. = nach der Novelle (Regierungsentwurf BT-Drs. 21/8027)"
+    },
+    "merkblattFassung": { "enum": ["2025-02-12", "2026-09-16"] },
+    "erstellt": { "type": "string", "pattern": "^\\d{4}-(0[1-9]|1[0-2])(-\\d{2})?$" },
+    "aktualisiert": { "type": "string", "pattern": "^\\d{4}-(0[1-9]|1[0-2])(-\\d{2})?$" },
+    "format": { "enum": ["tabelle", "freitext"] },
+    "quelle": {
+      "type": "object",
+      "required": ["url", "abgerufenAm"],
+      "additionalProperties": false,
+      "properties": {
+        "url": { "type": "string", "pattern": "^https?://" },
+        "abgerufenAm": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+        "archivSnapshot": { "type": "string", "pattern": "^https?://" },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "verantwortlichPlan": { "type": "string", "minLength": 1 },
+    "gesamtInvestitionsvolumen": { "type": "string", "minLength": 1 },
+    "massnahmen": { "type": "array", "items": { "$ref": "#/definitions/massnahme" } },
+    "anmerkung": { "type": "string" }
+  },
+  "definitions": {
+    "massnahme": {
+      "type": "object",
+      "required": ["id"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "prioritaet": { "type": "string" },
+        "massnahme": { "type": "string" },
+        "investitionsvolumen": { "type": "string", "description": "wortgetreu, z. B. „2.575.074,00 €“, „bis 20.000 €“, „2.000 € - 5.000 €“; „unbekannt“ = nicht lesbar" },
+        "zeitrahmen": { "type": "string", "description": "wortgetreu, z. B. „07/2022 - 03/2027“, „Februar 2025 - Juni 2025“, „Q2 - Q3 2024“" },
+        "herkunft": { "type": "string" },
+        "verantwortlich": { "type": "string" },
+        "status": { "type": "string", "description": "wortgetreu; Merkblatt-Kategorien: Offen, In Bearbeitung, Abgeschlossen" }
+      }
+    }
+  }
+}
