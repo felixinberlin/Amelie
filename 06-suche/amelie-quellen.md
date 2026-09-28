@@ -59,7 +59,9 @@ Diese Liste sagt, **wo** gegraben wird, und hält fest, **was schon durchgegrabe
 
 ---
 
-## Typ D — Geldgeber und Bauaufträge (für Schritt 2, nicht für Ideen)
+## Typ D — Geldgeber, Förderprogramme & Bauaufträge (Schritt 2 & Ideen-Inversion)
+
+*Muster: Geldgeber sind zugleich Schmerzbekenntnisse des Staates (Abschnitt 1 Zuwendungszweck = Lückenbauplan) und die Stelle, die Ticket 01 für den Empfänger finanziert. Vollständiger Katalog und Heuristik: `06-suche/amelie-foerder-und-preisatlas.md`.*
 
 | Quelle | Zweck | Status |
 |---|---|---|
@@ -310,3 +312,52 @@ Quellen und Register, die im Zuge der Triage von über 100 automatisierten Batch
 | **TED (Tenders Electronic Daily) & EU eForms / Bund.de Vergabe** (ted.europa.eu, vergabe.bund.de, Bekanntmachungsservice BKMS) | Offizielle XML/eForms-Feeds für öffentliche Ausschreibungen ab EU-Schwellenwert. Bietervorbereitung und Kriterienprüfung sind ein dicht besetzter kommerzieller Markt (Vergabe-Manager, RIB Software, Vergabe24). Als Amélie-Gemeingut fehlt die behördliche Vollzugslücke; kommerzieller B2B-Zwilling im Venture-Branch (`procure-lens-pro`). | `durchsucht` | 28.09.2026 |
 | **SPDX 2.3 & Open Source License Metadata** (spdx.org/licenses, spdx.dev, ClearlyDefined, OpenSSF) | Standardisierte SPDX-Lizenzbezeichner und maschinenlesbare Lizenzausdrücke. Developer-Compliance in CI/CD ist vollständig durch FOSSology, ScanCode Toolkit, Snyk, FOSSA und Renovate abgedeckt. Kein behördliches oder zivilgesellschaftliches Vollzugsmandat; als kommerzielles CI-Guardrail im Venture-Branch (`spdx-driftguard-ci`). | `durchsucht` | 28.09.2026 |
 | **Sensor.Community (Luftdaten.info) & OpenAQ** (sensor.community, openaq.org, archive.sensor.community) | Globale Citizen-Science-Feinstaub- und Sensordaten als offene REST- und Archiv-APIs. Kartenvisualisierung, Grenzwert-Alerts und historische Downloads sind durch die Initiativen selbst und OpenAQ bereits stabil und frei bereitgestellt; kein unbearbeiteter manueller Auswertungsstau. | `durchsucht` | 28.09.2026 |
+
+## Typ Q — Preise, Awards & Challenges (Problemradar & Jury-Empfänger)
+
+*Muster: Preisausschreiben (Bundespreis Ecodesign, Deutscher Nachhaltigkeitspreis, Mobilitätspreis, Otto-Brenner-Preis, Civic Tech Awards) definieren die Benchmark offener Probleme. Die Shortlists zeigen, was besetzt ist; die Ausschreibungstexte zeigen, was ungelöst ist; die Fachjury liefert die namentlichen Empfänger mit Mandat. Vollständiger Katalog: `06-suche/amelie-foerder-und-preisatlas.md`.*
+
+| Quelle | Befund | Status | Zuletzt |
+|---|---|---|---|
+| **Bundespreis Ecodesign** (BMUV/UBA/IDZ) | Zirkuläre Kriterien, Reparierbarkeit, Demontage; UBA-Referatsleiter in der Jury | `angekratzt` | 28.09.2026 |
+| **Deutscher Nachhaltigkeitspreis & Mobilitätspreis** | 100 Branchenprofile (CSRD-Lücken) bzw. kommunale Mobilitätsdaten | `angekratzt` | 28.09.2026 |
+| **Civic Innovation Platform / „Gemeinsam wird es KI“** (BMAS) | Gemeinwohlorientierte KI in der Arbeitswelt; Förderungen bis 750k € | `angekratzt` | 28.09.2026 |
+| **Otto-Brenner-Preis & EU Prize for Citizen Science** | Aufgedeckte Datenblindstellen bzw. paneuropäische Auswertungsstaus | `angekratzt` | 28.09.2026 |
+
+---
+
+## Typ R — Europa-Fonds & EU-Programme (Horizon Europe, EIC, LIFE, DEP)
+
+*Muster: EU-Rahmenprogramme steuern Milliarden über Work Programmes. Die dort formulierten „Specific Challenges" sind die Vorlauf-Themen der nächsten drei Jahre. Details in `06-suche/amelie-foerder-und-preisatlas.md`.*
+
+| Quelle | Befund | Status | Zuletzt |
+|---|---|---|---|
+| **EIC Pathfinder / Transition / Accelerator** (eic.ec.europa.eu) | DeepTech von TRL 1 bis 9; Pathfinder Grants bis 4 Mio. €; Accelerator Blended Finance | `angekratzt` | 28.09.2026 |
+| **Horizon Europe Missions** | 100 Smart Cities, Climate Adaptation, Ocean/Waters, Soil Deal | `angekratzt` | 28.09.2026 |
+| **LIFE Programme & Digital Europe (DEP)** | Circular Economy & Nature bzw. European Data Spaces & Interoperable Europe Act | `angekratzt` | 28.09.2026 |
+| **Interreg (Europe, Central, Baltic)** | Grenzüberschreitende Open-Data- und Verwaltungstransfers zwischen Kommunen | `angekratzt` | 28.09.2026 |
+
+---
+
+## Typ S — Kommunale Investitionsprogramme, Smart Cities & GovTech
+
+*Muster: Kommunen tragen die Vollzugslast von 90 % der Umwelt- und Sozialpflichten. Programme wie Modellprojekte Smart Cities (MPSC) und Plattformen wie GovTech Deutschland e.V. suchen gezielt nach übertragbaren Open-Source-Werkzeugen. Details in `06-suche/amelie-foerder-und-preisatlas.md`.*
+
+| Quelle | Befund | Status | Zuletzt |
+|---|---|---|---|
+| **Modellprojekte Smart Cities (MPSC)** (BMWSB/KfW, 73 Kommunen, 820 Mio. €) | Phase der Nachnutzung/Verstetigung; MPSC-Marktplatz für Open-Source-Transfer | `angekratzt` | 28.09.2026 |
+| **GovTech Deutschland e.V. & GovTech Kommunal** (Bonn, Berlin, Hamburg, Saarland, Thüringen) | Technologieplattform der Verwaltung; Kooperationskanal für Dosen | `angekratzt` | 28.09.2026 |
+| **Städtische Innovationslabore & Bauträger** (CityLAB Berlin, Innovation Lab München, Hamburg Urban Data Hub) | Konkrete Pilotpartner und Open-Source-Bauträger im urbanen Raum | `angekratzt` | 28.09.2026 |
+
+---
+
+## Typ V — Business Angels, Impact Syndikate & Frühphasen-Kapital (Venture-Input)
+
+*Muster: Wenn die Gabel-Triage des Idea-Reviewers einen B2B-Zwilling mit direkter Zahlungsbereitschaft (Compliance-SaaS, CI-Guardrails) identifiziert, sind Business Angels und themenfokussierte Syndikate die passenden Erstfinanzierer. Details in `ventures/funding-and-angels.md` und `06-suche/amelie-foerder-und-preisatlas.md`.*
+
+| Quelle | Befund | Status | Zuletzt |
+|---|---|---|---|
+| **BAND (Business Angels Netzwerk Deutschland e.V.) & EBAN** | Dachverbände mit über 40 regionalen BANs und europäischen Climate/DeepTech-Communities | `angekratzt` | 28.09.2026 |
+| **Impact Angels & Green Angels** | Syndikate für Kreislaufwirtschaft, ESG-Compliance und CleanTech | `angekratzt` | 28.09.2026 |
+| **Earlybird Vision Lab / Visionaries Club / CDTM Angels** | Frühphasen-Investoren für Developer-Tools und B2B-SaaS | `angekratzt` | 28.09.2026 |
+

@@ -51,6 +51,8 @@ Claude lernt nicht zwischen Chats. Dieses Dokument und `amelie-pruefprotokoll.md
 
 - **Der „Profi-Tool teuer, für Bürger nichts"-Satz ist eine Hypothese, kein Befund** (neu ab 24.09.2026) → Sechs von sechs Dosen aus dem Katalog hatten in „Wer es schon versucht hat" dieselbe Satzschablone: Industrie-/Profiwerkzeug für viel Geld, „für normale Bürger gab es nur Ratlosigkeit". Jedes Mal gab es eine kostenlose oder billige Endnutzer-App. Suche: `<Funktion> app free` / `<Funktion> kostenlos App <Jahr>`. Findet in einer Suche, was der Satz bestreitet.
 
+- **Die Fördercall- und Preis-Inversion** (neu ab 28.09.2026) → Wer Geld auslobt (Calls für Civic Tech, Smart Cities, DBU, Prototype Fund, EIC, EU Missions, Bundespreis Ecodesign), hat die Ground Truth des Problems bereits amtlich verifiziert. Suche: `<Thema> Förderrichtlinie Zuwendungszweck "Bundesanzeiger"` · `<Thema> Preis Jury Nominierte Kriterien`. In *1. Förderziel* steht das ungelöste Defizit (die Bauanleitung für die Dose); in der Fachjury oder beim Projektträger sitzt die namentliche Person mit Mandat (Regel 2). Vollständiger Katalog: `06-suche/amelie-foerder-und-preisatlas.md`.
+
 **Was nicht funktioniert hat:**
 
 - `<Thema> KI verständlich App` auf Deutsch → Content-Farmen (bau.de-Klone). Urteil daraus: **unklar**, nicht „frei". Mit Organisationsnamen neu suchen.

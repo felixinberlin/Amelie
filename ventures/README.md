@@ -45,6 +45,7 @@ Every commercial opportunity in this directory is audited against five market ve
 ```
 ventures/
 ├── README.md               # Operating manual & commercial criteria
+├── funding-and-angels.md   # Comprehensive investor & grant guide (Angels, EU, Grants)
 ├── market-leads.json       # Structured ledger of commercial leads (auto-exported)
 └── opportunities/          # Detailed product dossiers & MVP specifications
     ├── espr-discloseready.md
@@ -70,3 +71,9 @@ ventures/
     - `ventures/opportunities/procure-lens-pro.md` (VergabePilot B2B / tender pre-flight audit against formal disqualification)
     - `ventures/market-leads.json` (10 active leads)
   - Kept on a dedicated local branch to maintain strict architectural separation from Amélie's public CC0 `main` branch until ready for commercial dispatch. To work on these leads in a new session: `git checkout feat/venture-leads-round-2`.
+
+---
+
+## Funding inputs
+
+Capital and grant sources for the commercial twins (EXIST, Berlin Startup-Stipendium, HTGF, BAND, Ananda, GovTech Campus, GovTecHH, city challenges) are listed in section E of `06-suche/amelie-foerderlandschaft.md`. Snippet-level evidence only; verify before use.
