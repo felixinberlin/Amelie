@@ -50,21 +50,20 @@ export class WetInkBrushManager {
     let enableDryFilter = false;
 
     if (state.tool === 'fountain-pen') {
-      radius = state.baseRadius * (0.6 + pressure * 0.8);
-      waterAmt = 0.35 * state.waterRatio;
-      pigmentAmt = 0.9;
+      radius = state.baseRadius * (0.7 + pressure * 0.8);
+      waterAmt = 0.45 * state.waterRatio;
+      pigmentAmt = 0.92;
     } else if (state.tool === 'sumi-brush') {
       // Fast stroke = thinner, drier (authentic calligraphy behavior)
-      // A flick (~1 px/ms) leaves ~40 % of the width a slow, pressed stroke does
-      const speedThinning = Math.max(0.35, 1 / (1 + speed * 1.5));
-      radius = state.baseRadius * (0.5 + pressure * 1.2) * speedThinning;
-      waterAmt = 0.6 * state.waterRatio * speedThinning;
-      pigmentAmt = 0.85;
+      const speedThinning = Math.max(0.40, 1 / (1 + speed * 1.0));
+      radius = state.baseRadius * (0.6 + pressure * 1.2) * speedThinning;
+      waterAmt = 0.7 * state.waterRatio * speedThinning;
+      pigmentAmt = 0.88;
 
       // Dry brush trigger on fast flick or light pressure
-      if (state.dryBrush && (speed > 0.8 || pressure < 0.3)) {
+      if (state.dryBrush && (speed > 0.8 || pressure < 0.35)) {
         enableDryFilter = true;
-        waterAmt *= 0.4;
+        waterAmt *= 0.5;
       }
     } else if (state.tool === 'wash-brush') {
       radius = state.baseRadius * 2.2;
@@ -81,15 +80,12 @@ export class WetInkBrushManager {
       pigmentAmt = 0.0;
     }
 
-    // Ink is laid down per unit of path, not per pointer event: stamps sit
-    // every `spacing` px along the path (the remainder carries over between
-    // events), each holding the ink for that stretch. Otherwise a slow stroke —
-    // many events, tiny steps — would flood the paper, and a fast one would
-    // leave a string of pearls.
-    const spacing = Math.max(1.5, radius * 0.35);
+    // Ink is laid down per unit of path with tight continuous spacing so lines never break
+    const spacing = Math.max(1.0, radius * 0.28);
     const perStamp = (INK_PER_RADIUS * spacing) / Math.max(1, radius);
+    const firstStamp = Math.max(0.45, perStamp);
     if (isFirstPoint || this.lastX === null || this.lastY === null) {
-      sim.injectInk(x, y, radius, waterAmt * perStamp, pigmentAmt * perStamp, enableDryFilter);
+      sim.injectInk(x, y, radius, waterAmt * firstStamp, pigmentAmt * firstStamp, enableDryFilter);
       this.carry = 0;
     } else {
       let along = spacing - this.carry;

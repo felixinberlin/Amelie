@@ -1,9 +1,9 @@
 {
   "auditVersion": 1,
-  "generatedAt": "2026-09-28T17:16:32.702Z",
+  "generatedAt": "2026-09-28T17:43:01.224Z",
   "repository": {
-    "commit": "98dc68b",
-    "branch": "feat/dose-wet-ink"
+    "commit": "c6a0c2b",
+    "branch": "main"
   },
   "inventory": {
     "doses": 43,

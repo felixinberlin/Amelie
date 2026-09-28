@@ -22,7 +22,7 @@ import {
   WetInkPigmentConfig,
   WetInkSimParams,
 } from '../../engine/wet-ink/types';
-import { PAPER_PRESETS, PIGMENT_PRESETS } from '../../engine/wet-ink/presets';
+import { PAPER_PRESETS, PIGMENT_PRESETS, createPigmentFromHex } from '../../engine/wet-ink';
 import { WetInkSimulation } from '../../engine/wet-ink/simulation';
 import { generatePaperMaps } from '../../engine/wet-ink/paper';
 import { WetInkBrushManager, BrushToolType } from '../../engine/wet-ink/brush';
@@ -38,12 +38,17 @@ interface WetInkSimulatorProps {
 const SIM_WIDTH = 384;
 const SIM_HEIGHT = 256;
 
-// 4 Classic historical pigments
-const ESSENTIAL_PIGMENTS: WetInkPigmentConfig[] = [
+// Curated palette of authentic historical pigments
+const PALETTE_PIGMENTS: WetInkPigmentConfig[] = [
   PIGMENT_PRESETS.find((p: WetInkPigmentConfig) => p.id === 'sumi') || PIGMENT_PRESETS[0],
+  PIGMENT_PRESETS.find((p: WetInkPigmentConfig) => p.id === 'preussischblau') || PIGMENT_PRESETS[3],
+  PIGMENT_PRESETS.find((p: WetInkPigmentConfig) => p.id === 'koenigsblau') || PIGMENT_PRESETS[4],
+  PIGMENT_PRESETS.find((p: WetInkPigmentConfig) => p.id === 'indigo') || PIGMENT_PRESETS[0],
   PIGMENT_PRESETS.find((p: WetInkPigmentConfig) => p.id === 'sepia') || PIGMENT_PRESETS[1],
-  PIGMENT_PRESETS.find((p: WetInkPigmentConfig) => p.id === 'preussischblau') || PIGMENT_PRESETS[2],
-  PIGMENT_PRESETS.find((p: WetInkPigmentConfig) => p.id === 'zinnober') || PIGMENT_PRESETS[3],
+  PIGMENT_PRESETS.find((p: WetInkPigmentConfig) => p.id === 'zinnober') || PIGMENT_PRESETS[6],
+  PIGMENT_PRESETS.find((p: WetInkPigmentConfig) => p.id === 'krapplack') || PIGMENT_PRESETS[5],
+  PIGMENT_PRESETS.find((p: WetInkPigmentConfig) => p.id === 'kadmiumgelb') || PIGMENT_PRESETS[2],
+  PIGMENT_PRESETS.find((p: WetInkPigmentConfig) => p.id === 'viridian') || PIGMENT_PRESETS[7],
 ];
 
 // 2 Key distinct paper substrates: absorbent Washi vs crisp Sized
@@ -61,6 +66,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
   const brushManagerRef = useRef<WetInkBrushManager>(new WetInkBrushManager());
   const animFrameIdRef = useRef<number | null>(null);
   const autoStrokeTimerRef = useRef<number | null>(null);
+  const isDrawingRef = useRef<boolean>(false);
 
   // Core Tools: Brush (medium wet), Pen (fine crisp), Water (dilution & backruns)
   const [currentTool, setCurrentTool] = useState<BrushToolType>('sumi-brush');
@@ -68,7 +74,8 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
 
   // Substrate & Pigment
   const [selectedPaper, setSelectedPaper] = useState<WetInkPaperConfig>(ESSENTIAL_PAPERS[0]);
-  const [selectedPigment, setSelectedPigment] = useState<WetInkPigmentConfig>(ESSENTIAL_PIGMENTS[0]);
+  const [selectedPigment, setSelectedPigment] = useState<WetInkPigmentConfig>(PALETTE_PIGMENTS[0]);
+  const [customColorHex, setCustomColorHex] = useState<string>('#0c356a');
 
   // Physics: View mode, capillary bleed speed, board tilt
   const [viewMode, setViewMode] = useState<SimulationLayer>('composite');
@@ -113,7 +120,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
     audioSynthRef.current?.setMuted(next);
   };
 
-  // Init simulation engine
+  // Init simulation engine once on mount
   const initSimulation = useCallback(() => {
     const paperMaps = generatePaperMaps(SIM_WIDTH, SIM_HEIGHT, selectedPaper, 42);
     const sim = new WetInkSimulation(
@@ -126,7 +133,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
     );
     simRef.current = sim;
     setCanUndo(sim.canUndo());
-  }, [selectedPaper, selectedPigment, params]);
+  }, []);
 
   // Handle Paper Substrate change
   const handlePaperChange = (paper: WetInkPaperConfig) => {
@@ -137,11 +144,22 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
     }
   };
 
-  // Handle Pigment change
+  // Handle Pigment change: changes the ink formula without wiping artwork
   const handlePigmentChange = (pigment: WetInkPigmentConfig) => {
     setSelectedPigment(pigment);
+    if (pigment.colorHex) setCustomColorHex(pigment.colorHex);
     if (simRef.current) {
       simRef.current.setPigment(pigment);
+    }
+  };
+
+  // Handle custom color selection via native color input
+  const handleCustomColorChange = (hex: string) => {
+    setCustomColorHex(hex);
+    const customPig = createPigmentFromHex(hex, 'custom', 'Eigene Tinte', 'Custom Ink');
+    setSelectedPigment(customPig);
+    if (simRef.current) {
+      simRef.current.setPigment(customPig);
     }
   };
 
@@ -304,7 +322,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
     const loop = () => {
       const sim = simRef.current;
       if (sim) {
-        if (sim.totalWater > 0.005 || isDrawing) {
+        if (sim.totalWater > 0.005 || isDrawingRef.current) {
           sim.step(0.016);
           setIsWet(true);
           needsRender = true;
@@ -315,7 +333,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
         if (needsRender) {
           sim.renderToImageData(imgData, viewMode, 2.4, 0.65);
           ctx.putImageData(imgData, 0, 0);
-          if (sim.totalWater <= 0.005 && !isDrawing) {
+          if (sim.totalWater <= 0.005 && !isDrawingRef.current) {
             needsRender = false;
           }
         }
@@ -330,7 +348,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
         cancelAnimationFrame(animFrameIdRef.current);
       }
     };
-  }, [viewMode, isDrawing]);
+  }, [viewMode]);
 
   // Pointer drawing handlers
   const getCanvasCoords = (e: React.PointerEvent<HTMLCanvasElement>) => {
@@ -347,12 +365,13 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
 
   const handlePointerDown = (e: React.PointerEvent<HTMLCanvasElement>) => {
     e.currentTarget.setPointerCapture(e.pointerId);
+    isDrawingRef.current = true;
+    setIsDrawing(true);
+    setIsWet(true);
     if (simRef.current) {
       simRef.current.pushSnapshot();
       setCanUndo(true);
     }
-    setIsDrawing(true);
-    setIsWet(true);
     const { x, y, pressure } = getCanvasCoords(e);
     lastPointerRef.current = { x, y, time: performance.now() };
     audioSynthRef.current?.startStroke(selectedPaper.roughness);
@@ -367,7 +386,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
           tool: currentTool,
           baseRadius: brushRadius,
           waterRatio: currentTool === 'water-drop' ? 2.0 : 1.0,
-          dryBrush: true,
+          dryBrush: currentTool === 'sumi-brush',
         },
         true
       );
@@ -375,7 +394,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
   };
 
   const handlePointerMove = (e: React.PointerEvent<HTMLCanvasElement>) => {
-    if (!isDrawing || !simRef.current) return;
+    if (!isDrawingRef.current || !simRef.current) return;
     const { x, y, pressure } = getCanvasCoords(e);
     const now = performance.now();
     const dt = Math.max(1, now - lastPointerRef.current.time);
@@ -395,7 +414,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
         tool: currentTool,
         baseRadius: brushRadius,
         waterRatio: currentTool === 'water-drop' ? 2.0 : 1.0,
-        dryBrush: true,
+        dryBrush: currentTool === 'sumi-brush',
       },
       false
     );
@@ -407,6 +426,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
     } catch {
       // ignore
     }
+    isDrawingRef.current = false;
     setIsDrawing(false);
     audioSynthRef.current?.endStroke();
     brushManagerRef.current.endStroke();
@@ -694,37 +714,67 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
             2. {lang === 'de' ? 'Farbe & Papier' : lang === 'es' ? 'Tinta y papel' : 'Ink & Paper'}
           </label>
 
-          {/* 4 Essential Pigments */}
-          <div className="flex gap-2">
-            {ESSENTIAL_PIGMENTS.map((pig) => {
-              const isSelected = selectedPigment.id === pig.id;
-              return (
-                <button
-                  key={pig.id}
-                  onClick={() => handlePigmentChange(pig)}
-                  className={`flex-1 p-2 rounded-xl border flex flex-col items-center gap-1 transition-all cursor-pointer ${
-                    isSelected
-                      ? 'border-stone-900 bg-stone-100 font-bold ring-1 ring-stone-900 shadow-xs'
-                      : 'border-stone-200 hover:bg-stone-50'
-                  }`}
-                  title={lang === 'de' ? pig.nameDe : pig.nameEn}
-                >
-                  <span
-                    className="w-5 h-5 rounded-full border border-black/20 shadow-2xs"
-                    style={{ backgroundColor: pig.colorHex }}
-                  />
-                  <span className="text-[10px] text-stone-700 truncate w-full text-center">
-                    {pig.id === 'sumi'
-                      ? 'Sumi'
-                      : pig.id === 'sepia'
-                      ? 'Sepia'
-                      : pig.id === 'preussischblau'
-                      ? 'Blau'
-                      : 'Rot'}
-                  </span>
-                </button>
-              );
-            })}
+          {/* Historical Pigments & Interactive Color Selector */}
+          <div className="space-y-2">
+            <div className="flex items-center justify-between">
+              <span className="text-[10px] uppercase font-bold text-stone-500 font-mono">
+                {lang === 'de' ? 'Pigment-Rezeptur' : lang === 'es' ? 'Fórmula del pigmento' : 'Pigment Formula'}
+              </span>
+              <label className="flex items-center gap-1.5 bg-stone-100 hover:bg-stone-200/80 px-2 py-0.5 rounded-lg border border-stone-200 cursor-pointer transition-colors" title={lang === 'de' ? 'Farbe frei wählen' : 'Choose custom color'}>
+                <input
+                  type="color"
+                  value={selectedPigment.colorHex || customColorHex}
+                  onChange={(e) => handleCustomColorChange(e.target.value)}
+                  className="w-4 h-4 rounded border-0 p-0 cursor-pointer bg-transparent"
+                />
+                <span className="font-mono text-[10px] text-stone-600 font-bold uppercase">
+                  {selectedPigment.colorHex || customColorHex}
+                </span>
+              </label>
+            </div>
+
+            {/* Quick Palette Chips */}
+            <div className="grid grid-cols-5 sm:grid-cols-9 gap-1.5">
+              {PALETTE_PIGMENTS.map((pig) => {
+                const isSelected = selectedPigment.id === pig.id || selectedPigment.colorHex === pig.colorHex;
+                return (
+                  <button
+                    key={pig.id}
+                    onClick={() => handlePigmentChange(pig)}
+                    className={`p-1.5 rounded-xl border flex flex-col items-center gap-1 transition-all cursor-pointer ${
+                      isSelected
+                        ? 'border-stone-900 bg-stone-100 font-bold ring-2 ring-stone-900 shadow-xs scale-105'
+                        : 'border-stone-200 hover:bg-stone-50 hover:border-stone-300'
+                    }`}
+                    title={lang === 'de' ? pig.nameDe : pig.nameEn}
+                  >
+                    <span
+                      className="w-4 h-4 rounded-full border border-black/25 shadow-2xs shrink-0"
+                      style={{ backgroundColor: pig.colorHex }}
+                    />
+                    <span className="text-[9px] text-stone-700 truncate w-full text-center leading-tight">
+                      {pig.id === 'sumi'
+                        ? 'Sumi'
+                        : pig.id === 'preussischblau'
+                        ? 'Preußisch'
+                        : pig.id === 'koenigsblau'
+                        ? 'Königsb.'
+                        : pig.id === 'indigo'
+                        ? 'Indigo'
+                        : pig.id === 'sepia'
+                        ? 'Sepia'
+                        : pig.id === 'zinnober'
+                        ? 'Zinnober'
+                        : pig.id === 'krapplack'
+                        ? 'Krapp'
+                        : pig.id === 'kadmiumgelb'
+                        ? 'Gelb'
+                        : 'Viridian'}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
           {/* 2 Essential Papers: Absorbent Washi vs Sized Smooth */}

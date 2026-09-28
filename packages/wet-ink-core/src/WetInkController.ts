@@ -4,6 +4,7 @@ import {
   generatePaperMaps,
   PAPER_PRESETS,
   PIGMENT_PRESETS,
+  createPigmentFromHex,
   WET_INK_DT,
   WetInkPaperConfig,
   WetInkPigmentConfig,
@@ -50,6 +51,7 @@ export class WetInkController {
   private activeTool: WetInkToolType = 'fountain-pen';
   private activePaper: WetInkPaperType = 'buetten';
   private activePigment: WetInkPigmentType = 'eisengallus';
+  private activePigmentConfig: WetInkPigmentConfig;
   private readOnly: boolean = false;
 
   private currentStroke: WetInkStroke | null = null;
@@ -66,9 +68,10 @@ export class WetInkController {
 
   constructor(options: WetInkControllerOptions) {
     this.events = new WetInkEventEmitter();
-    this.dryingLimitMs = options.dryingLimitMs ?? 4000;
+    // 3. Initialize Physical Fluid Simulation
     this.activePaper = options.paper ?? 'buetten';
-    this.activePigment = options.pigment ?? 'eisengallus';
+    this.activePigmentConfig = this.resolvePigmentConfig(options.pigment ?? 'eisengallus');
+    this.activePigment = this.activePigmentConfig.id;
     this.activeTool = options.tool ?? 'fountain-pen';
     this.readOnly = options.readOnly ?? false;
     this.strokes = options.initialStrokes ? [...options.initialStrokes] : [];
@@ -120,7 +123,7 @@ export class WetInkController {
     this.audioSynth = new PenAudioSynthesizer(isMuted);
 
     // 3. Initialize Physical Fluid Simulation
-    this.sim = this.buildSimulation(width, height, this.activePaper, this.activePigment);
+    this.sim = this.buildSimulation(width, height, this.activePaper, this.activePigmentConfig);
     this.brushManager = new WetInkBrushManager();
 
     // 4. Bind Input Handlers
@@ -147,14 +150,29 @@ export class WetInkController {
     }
   }
 
+  private resolvePigmentConfig(pigment: WetInkPigmentType | WetInkPigmentConfig): WetInkPigmentConfig {
+    if (typeof pigment === 'object' && pigment !== null && 'km' in pigment) {
+      return pigment as WetInkPigmentConfig;
+    }
+    const clean = String(pigment).trim();
+    if (clean.startsWith('#')) {
+      return createPigmentFromHex(clean);
+    }
+    const found = PIGMENT_PRESETS.find(p => p.id === clean);
+    if (found) return found;
+    if (/^[0-9a-fA-F]{3,8}$/.test(clean)) {
+      return createPigmentFromHex(`#${clean}`);
+    }
+    return PIGMENT_PRESETS[0];
+  }
+
   private buildSimulation(
     w: number,
     h: number,
     paperId: WetInkPaperType,
-    pigmentId: WetInkPigmentType
+    pigmentConfig: WetInkPigmentConfig
   ): WetInkSimulation {
     const paperConfig = PAPER_PRESETS.find(p => p.id === paperId) || PAPER_PRESETS[0];
-    const pigmentConfig = PIGMENT_PRESETS.find(p => p.id === pigmentId) || PIGMENT_PRESETS[0];
     const paperMaps = generatePaperMaps(w, h, paperConfig, 42);
 
     const simParams: WetInkSimParams = {
@@ -224,9 +242,23 @@ export class WetInkController {
     return this.activePigment;
   }
 
-  public setPigment(pigment: WetInkPigmentType): void {
-    this.activePigment = pigment;
-    this.clear();
+  public getPigmentConfig(): WetInkPigmentConfig {
+    return this.activePigmentConfig;
+  }
+
+  public setPigment(pigment: WetInkPigmentType | WetInkPigmentConfig): void {
+    this.activePigmentConfig = this.resolvePigmentConfig(pigment);
+    this.activePigment = this.activePigmentConfig.id;
+    this.sim.setPigment(this.activePigmentConfig);
+    this.renderCurrentFrame();
+  }
+
+  public setColor(colorHex: string): void {
+    this.setPigment(colorHex);
+  }
+
+  public getColor(): string {
+    return this.activePigmentConfig?.colorHex || '#181615';
   }
 
   public setAudioMuted(muted: boolean): void {
@@ -288,8 +320,10 @@ export class WetInkController {
     this.canvas.setPointerCapture(e.pointerId);
 
     const rect = this.canvas.getBoundingClientRect();
-    const x = Math.max(0, Math.min(this.canvas.width - 1, e.clientX - rect.left));
-    const y = Math.max(0, Math.min(this.canvas.height - 1, e.clientY - rect.top));
+    const scaleX = rect.width > 0 ? this.canvas.width / rect.width : 1;
+    const scaleY = rect.height > 0 ? this.canvas.height / rect.height : 1;
+    const x = Math.max(0, Math.min(this.canvas.width - 1, (e.clientX - rect.left) * scaleX));
+    const y = Math.max(0, Math.min(this.canvas.height - 1, (e.clientY - rect.top) * scaleY));
     const pressure = e.pressure && e.pressure > 0 ? e.pressure : 0.5;
     const now = performance.now();
 
@@ -300,6 +334,7 @@ export class WetInkController {
     this.currentStroke = {
       tool: this.activeTool,
       startTime: now,
+      colorHex: this.getColor(),
       points: [{ x, y, pressure, timeOffset: 0 }]
     };
 
@@ -332,8 +367,10 @@ export class WetInkController {
     if (!this.currentStroke || this.lifecycleState !== 'wet') return;
 
     const rect = this.canvas.getBoundingClientRect();
-    const x = Math.max(0, Math.min(this.canvas.width - 1, e.clientX - rect.left));
-    const y = Math.max(0, Math.min(this.canvas.height - 1, e.clientY - rect.top));
+    const scaleX = rect.width > 0 ? this.canvas.width / rect.width : 1;
+    const scaleY = rect.height > 0 ? this.canvas.height / rect.height : 1;
+    const x = Math.max(0, Math.min(this.canvas.width - 1, (e.clientX - rect.left) * scaleX));
+    const y = Math.max(0, Math.min(this.canvas.height - 1, (e.clientY - rect.top) * scaleY));
     const pressure = e.pressure && e.pressure > 0 ? e.pressure : 0.5;
     const now = performance.now();
     const timeOffset = now - this.currentStroke.startTime;

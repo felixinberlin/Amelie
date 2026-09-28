@@ -13,14 +13,15 @@ export class WetInkSignatureElement extends BaseElement {
   private controller: WetInkController | null = null;
 
   static get observedAttributes() {
-    return ['paper', 'pigment', 'tool', 'width', 'height', 'audio', 'readonly', 'toolbar'];
+    return ['paper', 'pigment', 'color', 'tool', 'width', 'height', 'audio', 'readonly', 'toolbar'];
   }
 
   connectedCallback() {
     if (this.controller) return;
 
     const paper = (this.getAttribute('paper') as WetInkPaperType) || 'buetten';
-    const pigment = (this.getAttribute('pigment') as WetInkPigmentType) || 'eisengallus';
+    const color = this.getAttribute('color');
+    const pigment = color || (this.getAttribute('pigment') as WetInkPigmentType) || 'eisengallus';
     const tool = (this.getAttribute('tool') as WetInkToolType) || 'fountain-pen';
     const width = parseInt(this.getAttribute('width') || '480', 10);
     const height = parseInt(this.getAttribute('height') || '160', 10);
@@ -66,6 +67,9 @@ export class WetInkSignatureElement extends BaseElement {
         break;
       case 'pigment':
         if (newValue) this.controller.setPigment(newValue as WetInkPigmentType);
+        break;
+      case 'color':
+        if (newValue) this.controller.setColor(newValue);
         break;
       case 'audio':
         this.controller.setAudioMuted(newValue === 'false');

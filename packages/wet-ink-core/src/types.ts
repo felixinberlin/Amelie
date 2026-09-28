@@ -1,7 +1,23 @@
+import type { WetInkPigmentConfig } from '../../../src/engine/wet-ink/presets';
+
 export type WetInkPaperType = 'buetten' | 'washi' | 'aquarell-rau' | 'kopierpapier';
-export type WetInkPigmentType = 'sumi' | 'sepia' | 'eisengallus' | 'indigo' | 'aquarell-rot';
+export type WetInkPigmentPresetId =
+  | 'sumi'
+  | 'sepia'
+  | 'preussischblau'
+  | 'koenigsblau'
+  | 'kadmiumgelb'
+  | 'zinnober'
+  | 'krapplack'
+  | 'viridian'
+  | 'eisengallus'
+  | 'indigo'
+  | 'aquarell-rot';
+export type WetInkPigmentType = WetInkPigmentPresetId | string;
 export type WetInkToolType = 'fountain-pen' | 'sumi-brush' | 'wash-brush' | 'dip-pen';
 export type WetInkLifecycleState = 'wet' | 'settling' | 'frozen';
+
+export type { WetInkPigmentConfig };
 
 export interface WetInkStrokePoint {
   x: number;
@@ -55,8 +71,8 @@ export interface WetInkControllerOptions {
   height?: number;
   /** Paper substrate preset (default: 'buetten') */
   paper?: WetInkPaperType;
-  /** Pigment formulation preset (default: 'eisengallus') */
-  pigment?: WetInkPigmentType;
+  /** Pigment formulation preset, custom hex string, or WetInkPigmentConfig (default: 'eisengallus') */
+  pigment?: WetInkPigmentType | WetInkPigmentConfig;
   /** Drawing tool nib preset (default: 'fountain-pen') */
   tool?: WetInkToolType;
   /** Enable real-time Web Audio nib friction acoustic synthesis (default: true) */
