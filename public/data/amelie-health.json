@@ -1,9 +1,9 @@
 {
   "auditVersion": 1,
-  "generatedAt": "2026-09-28T19:19:29.102Z",
+  "generatedAt": "2026-09-28T19:22:29.878Z",
   "repository": {
-    "commit": "1582d31",
-    "branch": "merge/offenlegung"
+    "commit": "de7ba7b",
+    "branch": "main"
   },
   "inventory": {
     "doses": 44,

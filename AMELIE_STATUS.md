@@ -1,6 +1,6 @@
 # Amélie Status
 
-Generated: 2026-09-28T19:19:29.102Z
+Generated: 2026-09-28T19:22:29.878Z
 
 ## System
 
@@ -61,5 +61,5 @@ None.
 ## Generated from
 
 * Audit version: 1
-* Commit: 1582d31
-* Branch: merge/offenlegung
+* Commit: de7ba7b
+* Branch: main
