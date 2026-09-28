@@ -1,0 +1,29 @@
+{
+  "name": "@wet-ink/core",
+  "version": "1.0.0",
+  "description": "Headless physical fluid ink & watercolor simulation engine. Navier-Stokes advection, capillary paper fiber bleeding, Kubelka-Munk optical blending, procedural nib acoustics, and Marching Squares vector SVG export.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "test": "vitest run",
+    "build": "tsc"
+  },
+  "keywords": [
+    "wet-ink",
+    "fluid-simulation",
+    "digital-signatures",
+    "canvas",
+    "watercolor",
+    "calligraphy",
+    "marching-squares",
+    "web-audio"
+  ],
+  "author": "Felix <felix@tortilladepatas.de>",
+  "license": "Commercial",
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "vitest": ">=3"
+  }
+}

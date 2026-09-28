@@ -1,56 +1,6 @@
-import { WetInkNodeAttributes, WetInkStroke } from './types';
-
-/**
- * Compact delta-encoding and serialization for Wet Ink strokes.
- */
-
-export function serializeStrokes(strokes: WetInkStroke[]): string {
-  if (!strokes || strokes.length === 0) return '[]';
-  // Strip out redundant precision to keep JSON minimal (<2KB)
-  const compact = strokes.map(stroke => ({
-    t: stroke.tool === 'fountain-pen' ? 0 : stroke.tool === 'sumi-brush' ? 1 : 2,
-    p: stroke.points.map(pt => [
-      Math.round(pt.x * 10) / 10,
-      Math.round(pt.y * 10) / 10,
-      Math.round(pt.pressure * 100) / 100,
-      Math.round(pt.timeOffset)
-    ])
-  }));
-  return JSON.stringify(compact);
-}
-
-export function deserializeStrokes(raw: string): WetInkStroke[] {
-  if (!raw || raw === '[]') return [];
-  try {
-    const parsed = JSON.parse(raw);
-    if (!Array.isArray(parsed)) return [];
-    
-    return parsed.map((item: any) => {
-      // Handle compact representation
-      if (item.t !== undefined && Array.isArray(item.p)) {
-        const toolMap: Record<number, 'fountain-pen' | 'sumi-brush' | 'wash-brush'> = {
-          0: 'fountain-pen',
-          1: 'sumi-brush',
-          2: 'wash-brush'
-        };
-        return {
-          tool: toolMap[item.t] || 'fountain-pen',
-          startTime: 0,
-          points: item.p.map((pt: number[]) => ({
-            x: pt[0],
-            y: pt[1],
-            pressure: pt[2] ?? 0.5,
-            timeOffset: pt[3] ?? 0
-          }))
-        };
-      }
-      // Handle standard representation
-      return item as WetInkStroke;
-    });
-  } catch {
-    return [];
-  }
-}
+export { serializeStrokes, deserializeStrokes } from '../../wet-ink-core/src/serialization';
+import { deserializeStrokes } from '../../wet-ink-core/src/serialization';
+import { WetInkNodeAttributes } from './types';
 
 /**
  * Parses node attributes from an existing DOM element (<figure class="wet-ink-block">).
