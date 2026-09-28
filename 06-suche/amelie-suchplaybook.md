@@ -61,6 +61,10 @@ Claude lernt nicht zwischen Chats. Dieses Dokument und `amelie-pruefprotokoll.md
 
 ---
 
+### Rezept: Geldspur (neu 28.09.2026, ungetestet)
+
+Erst den Geldfluss lesen, dann die Idee suchen. Vier Signale (besetzt, Bedarf, Empfänger, Kommerz), Rangliste der Quellen und die Rezepte für Vergabedaten, Förderkatalog und Projektlisten stehen in `amelie-foerderlandschaft.md`. **Vor der englischen Suche:** Projektliste des Förderers durchsuchen (Prototype Fund, NLnet, DBU, OSBA, MPSC); ein geförderter Vorgänger ist ein Grab-Kandidat. **Bedarf:** Ausschreibung mit „Innovationspartnerschaft" oder „Machbarkeitsstudie" oder ein Haushaltstitel mit Betrag zählt als Why-Now. Geldgeber sind Signal, nicht Zustellkanal (Zustellregeln 1 und 3). Die Stichwortmuster sind Hypothesen, bis sie gegen echte Vergabedaten laufen.
+
 ## 3. Besetzungsatlas (Stand 24.09.2026)
 
 Wo Ideen schnell sterben — vor dem Suchen als Vorfilter nutzen.
@@ -478,3 +482,11 @@ Erste Runde, die mit einer **verschenkten** Dose als Ausgangspunkt arbeitet. Das
   2. **Offene Punkte als [Seite] lesen** (Netzfreigabe nötig): **DEKSOR-Bericht 2025** (dggv.de, für Konfliktmineralien-Population und Veröffentlichungspflicht) und **Germanwatch-Seite 93384** (Beschwerdemechanismen, für Empfängerfrage). Danach entweder Grab (`beim-empfaenger` / `praemisse`) oder Ticket.
   3. Gemeinsamen **Vorfilter 0-4 in die Orchestrator-Skill** vor Phase 1 aufnehmen, damit Engines nicht dasselbe Nein dreimal suchen.
   4. Weiter offen: DVO 2026/2 Anhang I + Signify als [Seite]; K3 ORDS-Datentest; Wiedervorlagen O5/O7/O8/O10/O15 (Termine im Prüfprotokoll).
+
+### Förderlandschaft — 28.09.2026 (Rechercheauftrag: Geldquellen als Herkunftsort für Ideen und Empfänger)
+
+- **Erledigt:** Fünf Rechercheure parallel (Bund, EU, Stiftungen/Preise, Investoren, Städte/Vergabe), rund 190 Programmzeilen als Rohkarten unter `foerderlandschaft/`, Synthese `amelie-foerderlandschaft.md`, Eingabe `ventures/kapital-und-kanaele.md`, Quellen-Typ P.
+- **Gelernt (Feld):** Geld ist ein **Signal, kein Kanal**: fast jedes Programm verlangt einen Antragsteller mit Rechtsform, und Amélie stellt keine Anträge. Nutzbar sind Projektlisten (besetzt), Ausschreibungen und Haushaltstitel (Bedarf), Preisträger und Programmträger (Empfänger). Stiftung heißt nicht Budget: mehrere große Stiftungen nehmen 2026 keine externen Anträge an.
+- **Gelernt (Methode):** Das Suchbudget einer Sitzung (200 WebSearch-Aufrufe) war nach rund 30 Recherche-Suchen je Rechercheur erschöpft, weil alle fünf parallel liefen. Parallelität verteilt das Budget, sie vergrößert es nicht. Für breite Kartierungen das Budget vorab erhöhen.
+- **Fehler:** Keine Programmseite gelesen; Lücken bei Interreg, ESF+, EIT, Ländern und Agentur-Vergaben. Stichwortmuster für Vergabedaten nie gegen echte Treffer getestet.
+- **Nächstes Mal:** (1) Domains freigeben und Suchbudget erhöhen (Liste in `amelie-foerderlandschaft.md` §7). (2) Projektlisten von Prototype Fund, NLnet, OSBA, DBU und Civic Coding im Besetzungsatlas-Format abziehen. (3) Vergabe-Bulk von `oeffentlichevergabe.de` probeweise laden und Stichwortmuster messen. (4) Entscheidung Félix: eigener Discovery-Modus „Geldspur" oder Erweiterung von `amelie-ideenrunde`.

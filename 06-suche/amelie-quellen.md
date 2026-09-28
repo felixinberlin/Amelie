@@ -276,3 +276,9 @@ Alle Einträge **nur über Suchschnipsel** erschlossen; das Netz war gesperrt, k
 | **Entgelttransparenz-RL (personalwirtschaft, haufe)** | Frist 07.06.2026 verpasst, DE-Gesetz bis Anfang 2027 | `offen` — Wiedervorlage nach Kabinettsentwurf | 28.09.2026 |
 | **DSA-Transparenzberichte (HIIG)** | Keine Verpflichtetenliste | `angekratzt` | 28.09.2026 |
 | **Capture-Recapture (PMC5976169, UEA 2018_03)** | Standardverfahren für Registervollständigkeit; Baustein für den Nenner der ESPR-Dose | `angekratzt` — Methodenquelle, kein Ideenlieferant | 28.09.2026 |
+
+---
+
+## Typ P — Förderlandschaft: Geldflüsse als Herkunftsort (neu, 28.09.2026)
+
+Erste Landkarte aus Bund, EU, Stiftungen, Preisen, Investoren, Städten und Vergabe: `amelie-foerderlandschaft.md` (Synthese, Rangliste, Such-Rezepte, Kalender) und fünf Rohkarten unter `foerderlandschaft/` (A Bund, B EU, C Stiftungen/Preise, D Investoren, E Städte/Vergabe, zusammen rund 190 Programmzeilen). **Alle Angaben Schnipsel-Evidenz**, keine Programmseite gelesen. Vier Signale: besetzt (geförderte Projekte), Bedarf (Ausschreibungen, Haushaltstitel), Empfänger (Programmträger, Preisträger), Kommerz (für `ventures/kapital-und-kanaele.md`). Geldgeber sind Signal, nicht Zustellkanal (Zustellregeln 1 und 3). Löst „Typ D" als Ideenquelle ab, ohne ihn zu ersetzen.
