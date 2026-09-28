@@ -21,6 +21,12 @@ describe('loadSentEmailsMap (echte 05-dosen/-Frontmatter)', () => {
     expect(map['mail-1'].sentAt).toMatch(/^2026-09-19/);
     expect(map['mail-1'].notes).toContain('EnergyMap Berlin');
   });
+
+  it('übernimmt für Posts ohne verlinkte Dose den Seed-Status', async () => {
+    const map = await loadSentEmailsMap();
+    expect(map['post-13'].sent).toBe(true); // r/ClaudeCode Weekly Showcase
+    expect(map['post-13'].sentAt).toBe('2026-09-28');
+  });
 });
 
 describe('loadDeliveryStateForDose', () => {

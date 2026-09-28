@@ -36,6 +36,12 @@ export async function loadSentEmailsMap(): Promise<Record<string, SentEmailRecor
   const frontmatterByDoseId = await loadAllDoseFrontmatter();
   const result: Record<string, SentEmailRecord> = {};
   for (const mail of DELIVERIES_DATA) {
+    // Posts that gift the method itself (no linked Dose) have no frontmatter
+    // to derive from — their seed `sent`/`sentAt` is the record.
+    if (!mail.doseLinks?.length) {
+      result[mail.id] = { sent: !!mail.sent, sentAt: mail.sentAt ?? '' };
+      continue;
+    }
     const frontmatter = pickRepresentativeFrontmatter(mail.doseLinks ?? [], frontmatterByDoseId);
     result[mail.id] = mapIdeaFrontmatterToDeliveryState(frontmatter);
   }
