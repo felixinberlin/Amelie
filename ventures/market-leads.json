@@ -24,6 +24,18 @@
     "lastUpdated": "2026-09-28"
   },
   {
+    "id": "bedenkenblitz-vob",
+    "name": "BedenkenBlitz (VOB/B Liability Shield)",
+    "category": "vertical-saas",
+    "stage": "ready-to-scaffold",
+    "pricingModel": "monthly-subscription",
+    "targetPrice": "€19 - €49/month",
+    "targetAudience": "German Trade Contractors (Fliesenleger, Maler, SHK, Bauunternehmen)",
+    "amelieTwin": "dose-tradesman-liability-shield",
+    "mvpEngineReady": true,
+    "lastUpdated": "2026-09-28"
+  },
+  {
     "id": "wet-ink-pro-sdk",
     "name": "Wet Ink Pro SDK & Plugins",
     "category": "developer-sdk",
@@ -36,6 +48,18 @@
     "lastUpdated": "2026-09-28"
   },
   {
+    "id": "eudr-timber-pass",
+    "name": "EUDR TimberPass (SME Due Diligence)",
+    "category": "b2b-compliance",
+    "stage": "architecture-validated",
+    "pricingModel": "per-filing-or-subscription",
+    "targetPrice": "€19/filing or €49/month",
+    "targetAudience": "Small Forest Owners, Local Sawmills, Timber Merchants, Carpenters",
+    "amelieTwin": "EUDR-Kleinwald-Erklärung",
+    "mvpEngineReady": false,
+    "lastUpdated": "2026-09-28"
+  },
+  {
     "id": "clp-chemical-safety-api",
     "name": "CLP Chemical Hazard Verification API",
     "category": "b2b-api",
@@ -44,6 +68,30 @@
     "targetPrice": "€199 - €790/month",
     "targetAudience": "Facility Management Software, Industrial Cleaning Giants, Hospital Safety",
     "amelieTwin": "dose-cleaner-chemical-safety",
+    "mvpEngineReady": true,
+    "lastUpdated": "2026-09-28"
+  },
+  {
+    "id": "lichtplan-audit-pro",
+    "name": "Lichtplan Audit Pro",
+    "category": "b2b-compliance",
+    "stage": "criteria-extracted",
+    "pricingModel": "per-project-or-subscription",
+    "targetPrice": "€99/project or €49/month",
+    "targetAudience": "Architecture Firms, Lighting Designers, Commercial Real Estate Developers",
+    "amelieTwin": "lichtplan-check",
+    "mvpEngineReady": true,
+    "lastUpdated": "2026-09-28"
+  },
+  {
+    "id": "arcana-tarot-engine",
+    "name": "Arcana Divination Engine & App",
+    "category": "consumer-app",
+    "stage": "engine-published",
+    "pricingModel": "freemium-or-one-time",
+    "targetPrice": "$9.99 one-time or $2.99/month",
+    "targetAudience": "Tarot Practitioners, Esoteric Enthusiasts, Creative Writers",
+    "amelieTwin": "tarot-zustandsmaschine",
     "mvpEngineReady": true,
     "lastUpdated": "2026-09-28"
   }
