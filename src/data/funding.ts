@@ -59,11 +59,16 @@ export interface FundingItem {
   checked: string;
 }
 
+export type FundingEventType = 'deadline' | 'opening' | 'event' | 'pitch';
+
 export interface FundingEvent {
-  date: string; // ISO
+  date: string; // ISO YYYY-MM-DD
   labelDe: string;
   labelEn: string;
   refId?: string;
+  type?: FundingEventType;
+  descriptionDe?: string;
+  descriptionEn?: string;
 }
 
 const C = '2026-09-28';
@@ -1191,14 +1196,186 @@ export const FUNDING_DATA: FundingItem[] = [
 ];
 
 export const FUNDING_EVENTS: FundingEvent[] = [
-  { date: '2026-10-01', labelDe: 'Prototype Fund Klasse 03 öffnet', labelEn: 'Prototype Fund class 03 opens', refId: 'prototype-fund' },
-  { date: '2026-10-13', labelDe: 'Smart Country Convention Berlin (bis 15.10.)', labelEn: 'Smart Country Convention Berlin (until 15 Oct)', refId: 'open-source-wettbewerb' },
-  { date: '2026-10-15', labelDe: 'Open Source Wettbewerb: Finalisten und Preisverleihung', labelEn: 'Open Source Competition: finalists and awards', refId: 'open-source-wettbewerb' },
-  { date: '2026-10-22', labelDe: 'SPRIND „Next Frontier Robotics" Frist', labelEn: 'SPRIND “Next Frontier Robotics” deadline', refId: 'sprind' },
-  { date: '2026-11-16', labelDe: 'Hamburg Digital Check Frist (KMU)', labelEn: 'Hamburg Digital Check deadline (SMEs)', refId: 'landesprogramme-kmu' },
-  { date: '2026-11-30', labelDe: 'Prototype Fund Klasse 03 Frist', labelEn: 'Prototype Fund class 03 deadline', refId: 'prototype-fund' },
-  { date: '2027-05-13', labelDe: 'Horizon Europe Demokratie 2027 öffnet', labelEn: 'Horizon Europe Democracy 2027 opens', refId: 'horizon-cl2-2026' },
-  { date: '2027-09-23', labelDe: 'Horizon Europe Demokratie 2027 Frist', labelEn: 'Horizon Europe Democracy 2027 deadline', refId: 'horizon-cl2-2026' },
+  {
+    date: '2026-10-01',
+    labelDe: 'Prototype Fund Klasse 03 öffnet',
+    labelEn: 'Prototype Fund class 03 opens',
+    refId: 'prototype-fund',
+    type: 'opening',
+    descriptionDe: 'Bewerbungsportal öffnet bis 30.11.2026 für bis zu 47.500 € Förderung (Einzelne/kleine Teams).',
+    descriptionEn: 'Application portal opens until 30 Nov 2026 for up to €47.5k funding (individuals/small teams).',
+  },
+  {
+    date: '2026-10-01',
+    labelDe: 'Digital Europe AI & Data öffnet',
+    labelEn: 'Digital Europe AI & Data opens',
+    refId: 'digital-europe',
+    type: 'opening',
+    descriptionDe: 'EU-Calls zu gemeinsamen Datenräumen und vertrauenswürdiger KI-Infrastruktur.',
+    descriptionEn: 'EU calls for European data spaces and trusted AI infrastructure.',
+  },
+  {
+    date: '2026-10-08',
+    labelDe: 'Interreg Ostsee Kleinprojekte Frist',
+    labelEn: 'Interreg Baltic Sea small projects deadline',
+    refId: 'interreg-central',
+    type: 'deadline',
+    descriptionDe: 'Transnationale Kooperationen für resiliente und digitale Ostseeregionen.',
+    descriptionEn: 'Transnational cooperation calls for resilient and digital Baltic Sea regions.',
+  },
+  {
+    date: '2026-10-13',
+    labelDe: 'Smart Country Convention Berlin (bis 15.10.)',
+    labelEn: 'Smart Country Convention Berlin (until 15 Oct)',
+    refId: 'open-source-wettbewerb',
+    type: 'event',
+    descriptionDe: 'Leitmesse für den öffentlichen Sektor, E-Government und Smart Cities im Messezentrum Berlin.',
+    descriptionEn: 'Leading convention for public sector digitalisation and smart cities in Berlin.',
+  },
+  {
+    date: '2026-10-15',
+    labelDe: 'Open Source Wettbewerb: Finalisten & Verleihung',
+    labelEn: 'Open Source Competition: finalists & ceremony',
+    refId: 'open-source-wettbewerb',
+    type: 'event',
+    descriptionDe: 'OSBA-Preisverleihung auf der SCC; zeigt prämierte Open-Source-Verwaltungssoftware und Amtsmandate.',
+    descriptionEn: 'OSBA award ceremony at SCC; highlights awarded public sector open-source tools.',
+  },
+  {
+    date: '2026-10-15',
+    labelDe: 'Aktion Mensch Förderantrags-Fenster',
+    labelEn: 'Aktion Mensch grant window',
+    refId: 'ehrensache-gemeinwohl',
+    type: 'deadline',
+    descriptionDe: 'Stichtag für Inklusions- und Barrierefreiheitsprojekte gemeinnütziger Initiativen.',
+    descriptionEn: 'Deadline for inclusion and accessibility projects from non-profit organisations.',
+  },
+  {
+    date: '2026-10-22',
+    labelDe: 'SPRIND „Next Frontier Robotics" Frist',
+    labelEn: 'SPRIND “Next Frontier Robotics” deadline',
+    refId: 'sprind',
+    type: 'deadline',
+    descriptionDe: 'Radikale Innovationen für autonome Systeme und DeepTech-Scaffoldings.',
+    descriptionEn: 'Radical innovation challenge for autonomous physical systems and deep tech.',
+  },
+  {
+    date: '2026-10-28',
+    labelDe: 'EIC Pathfinder Challenges Frist',
+    labelEn: 'EIC Pathfinder Challenges deadline',
+    refId: 'horizon-cl2-2026',
+    type: 'deadline',
+    descriptionDe: 'Europäischer Innovationsrat für zukunftsweisende DeepTech-Forschungsprojekte bis 4 Mio. €.',
+    descriptionEn: 'European Innovation Council vision grants up to €4m for early deep tech.',
+  },
+  {
+    date: '2026-11-01',
+    labelDe: 'DSEE „Digital in die Zukunft, mit KI und Co."',
+    labelEn: 'DSEE “Digital into the future with AI” deadline',
+    refId: 'dsee',
+    type: 'deadline',
+    descriptionDe: '2.000 × 1.000 Euro Mikroförderung der Deutschen Stiftung für Engagement und Ehrenamt.',
+    descriptionEn: '2,000 × €1,000 micro-grants for non-profit civic tech and AI adoption.',
+  },
+  {
+    date: '2026-11-03',
+    labelDe: 'NLnet Open Internet Stack / Restack Frist',
+    labelEn: 'NLnet Open Internet Stack / Restack deadline',
+    refId: 'ngi-zero',
+    type: 'deadline',
+    descriptionDe: '5.000–50.000 € für Open Source Kerntechnik, Dezentralisierung und digitale Souveränität.',
+    descriptionEn: '€5,000–50,000 grants for open core internet tech, decentralisation and security.',
+  },
+  {
+    date: '2026-11-04',
+    labelDe: 'EIC Accelerator Cut-off (Kommerz & Scale)',
+    labelEn: 'EIC Accelerator Cut-off (commercial & scale)',
+    refId: 'horizon-cl2-2026',
+    type: 'deadline',
+    descriptionDe: 'Blended Finance für Startups mit hohem Impact (bis 2,5 Mio. € Grant + Eigenkapital).',
+    descriptionEn: 'Blended finance for high-impact commercial scaling (€2.5m grant + equity).',
+  },
+  {
+    date: '2026-11-15',
+    labelDe: 'DSEE 100xDigital Frist für Gemeinnützige',
+    labelEn: 'DSEE 100xDigital deadline for non-profits',
+    refId: 'dsee',
+    type: 'deadline',
+    descriptionDe: 'Umfassendes Begleit- und Förderprogramm zur Digitalisierung von Vereinen.',
+    descriptionEn: 'Comprehensive support and grant programme for NGO digital transformation.',
+  },
+  {
+    date: '2026-11-16',
+    labelDe: 'Hamburg Digital Check Frist (KMU)',
+    labelEn: 'Hamburg Digital Check deadline (SMEs)',
+    refId: 'landesprogramme-kmu',
+    type: 'deadline',
+    descriptionDe: 'Bis zu 7.500 € Zuschuss für digitale Beratungs- und Implementierungsleistungen.',
+    descriptionEn: 'Up to €7.5k digital implementation vouchers for Hamburg SMEs.',
+  },
+  {
+    date: '2026-11-20',
+    labelDe: 'Civic Coding Pitch & Connect (Berlin)',
+    labelEn: 'Civic Coding Pitch & Connect (Berlin)',
+    refId: 'civic-coding',
+    type: 'pitch',
+    descriptionDe: 'Vernetzungsevent in Berlin zwischen zivilgesellschaftlichen Problemträgern und Tech-Entwicklern.',
+    descriptionEn: 'Matchmaking in Berlin between civil society organisations and tech builders.',
+  },
+  {
+    date: '2026-11-30',
+    labelDe: 'Prototype Fund Klasse 03 Frist (23:59 Uhr)',
+    labelEn: 'Prototype Fund class 03 deadline (23:59 CET)',
+    refId: 'prototype-fund',
+    type: 'deadline',
+    descriptionDe: 'Einsendeschluss für Förderrunde 03 (Datensicherheit und Software-Infrastruktur).',
+    descriptionEn: 'Application cut-off for Round 03 (data security and software infrastructure).',
+  },
+  {
+    date: '2026-11-30',
+    labelDe: 'BMFTR Generative KI in Geistes- & Sozialwissenschaften',
+    labelEn: 'BMFTR GenAI in Humanities & Social Sciences deadline',
+    refId: 'citizen-science',
+    type: 'deadline',
+    descriptionDe: 'Skizzenfrist für Forschungsinstitute mit Bedarf an quantitativen Analyse-Tools.',
+    descriptionEn: 'Outline deadline for researchers needing empirical NLP/data tools.',
+  },
+  {
+    date: '2026-12-15',
+    labelDe: 'EUI-IA Bekanntgabe der europäischen Stadtprojekte',
+    labelEn: 'EUI-IA European Urban Initiative results',
+    refId: 'mpsc',
+    type: 'event',
+    descriptionDe: 'Ergebnisse der innovativen Stadtprojekte; liefert Besetzt-Signale und Mandatsträger.',
+    descriptionEn: 'Results of urban innovation calls; reveals mandate holders and funded solutions.',
+  },
+  {
+    date: '2026-12-31',
+    labelDe: 'INVEST-Zuschuss (25 % für Business Angels) Zeitfenster',
+    labelEn: 'INVEST 25% angel grant year-end window',
+    refId: 'band',
+    type: 'deadline',
+    descriptionDe: 'Auslaufen der aktuellen Förderperiode des BMWK-Zuschusses für private Angel-Investoren.',
+    descriptionEn: 'Current expiry window of the BMWK 25% tax-free grant for angel investors.',
+  },
+  {
+    date: '2027-05-13',
+    labelDe: 'Horizon Europe Demokratie 2027 öffnet',
+    labelEn: 'Horizon Europe Democracy 2027 opens',
+    refId: 'horizon-cl2-2026',
+    type: 'opening',
+    descriptionDe: 'Vorlauf-Calls für partizipative Technologien und europäische Bürgerbeteiligung.',
+    descriptionEn: 'Calls opening for participatory tech and citizen democracy across Europe.',
+  },
+  {
+    date: '2027-09-23',
+    labelDe: 'Horizon Europe Demokratie 2027 Frist',
+    labelEn: 'Horizon Europe Democracy 2027 deadline',
+    refId: 'horizon-cl2-2026',
+    type: 'deadline',
+    descriptionDe: 'Einreichungsschluss für Cluster-2-Verbundanträge.',
+    descriptionEn: 'Submission deadline for Cluster 2 consortium grants.',
+  },
 ];
 
 export type FundingStatus = 'opens-soon' | 'open' | 'closing' | 'closed' | 'rolling' | 'paused' | 'cycle' | 'resource';
@@ -1308,3 +1485,471 @@ export const FUNDING_RECIPES: { titleDe: string; titleEn: string; query: string;
 
 export const FUNDING_GAPS_DE = 'Offene Lücken: ZEIT Stiftung, Schöpflin, Körber und Bertelsmann einzeln, Heinz Nixdorf, Software AG Stiftung, EIT, EIC Pathfinder, Deutscher Digitalpreis, Startnext, SEND, Ashoka, GovTech-Angel-Listen und die Volltexte fast aller Programmseiten.';
 export const FUNDING_GAPS_EN = 'Open gaps: ZEIT Stiftung, Schöpflin, Körber and Bertelsmann individually, Heinz Nixdorf, Software AG Stiftung, EIT, EIC Pathfinder, Deutscher Digitalpreis, Startnext, SEND, Ashoka, GovTech angel lists, and the full text of almost all programme pages.';
+
+// ── Gründer- & Venture-Lab Datensätze ─────────────────────────────────
+
+export interface VentureLead {
+  id: string;
+  name: string;
+  badge: string;
+  category: 'compliance' | 'developer-tools' | 'legal-tech' | 'physics-sdk';
+  oneLinerDe: string;
+  oneLinerEn: string;
+  problemDe: string;
+  problemEn: string;
+  targetDe: string;
+  targetEn: string;
+  pricingDe: string;
+  pricingEn: string;
+  defensibilityDe: string;
+  defensibilityEn: string;
+  fundingFitDe: string;
+  fundingFitEn: string;
+  competitorWarningDe?: string;
+  competitorWarningEn?: string;
+  channelDe: string;
+  channelEn: string;
+  status: 'active' | 'validated' | 'research';
+}
+
+export const VENTURE_LEADS_DATA: VentureLead[] = [
+  {
+    id: 'espr-discloseready',
+    name: 'ESPR DiscloseReady',
+    badge: 'EU-Compliance',
+    category: 'compliance',
+    oneLinerDe: 'Automatisierte Vernichtungs-Offenlegung nach ESPR Art. 24 & DVO 2026/2.',
+    oneLinerEn: 'Automated destruction disclosures under ESPR Art. 24 & Implementing Reg 2026/2.',
+    problemDe: 'Große Händler & Hersteller müssen unverkauft vernichtete Konsumgüter offenlegen. Bußgelder und Reputationsschäden bei Falschangaben.',
+    problemEn: 'Retailers and brands must publish unsold destroyed consumer goods. Strict penalties and public scrutiny for non-compliance.',
+    targetDe: 'Modeketten, Elektronikhändler, E-Commerce-Plattformen > 250 MA.',
+    targetEn: 'Fashion brands, electronics retailers, e-commerce platforms > 250 FTE.',
+    pricingDe: '199 €/Monat oder 1.490 €/Jahresbericht.',
+    pricingEn: '€199/month or €1,490/annual audit report.',
+    defensibilityDe: 'Deterministischer Anhang-I-Prüfer; mathematische Nenner-Schätzung (Capture-Recapture).',
+    defensibilityEn: 'Deterministic Annex I rule auditor with capture-recapture denominator estimation.',
+    fundingFitDe: 'GründungsBONUS Plus Berlin · TinySeed / Calm Company Fund.',
+    fundingFitEn: 'Berlin GründungsBONUS Plus · TinySeed / Calm Company Fund.',
+    competitorWarningDe: 'Complir (Kopenhagen) sammelte im September 2026 11 Mio. $ Seed (General Catalyst, YC) für breite Produkt-Compliance ein. Amélie-Lead bleibt strikt auf ESPR Art. 24 fokussiert!',
+    competitorWarningEn: 'Complir (Copenhagen) raised an $11m Seed round in Sep 2026 (General Catalyst, YC) for broad product compliance. Keep this tool tightly focused on ESPR Art. 24!',
+    channelDe: 'ESG-Beauftragte, Auditoren, Kanzleien via LinkedIn & Compliance-Newsletter.',
+    channelEn: 'ESG officers, sustainability auditors, and legal counsels via LinkedIn & newsletters.',
+    status: 'active',
+  },
+  {
+    id: 'spdx-driftguard-ci',
+    name: 'SPDX DriftGuard CI',
+    badge: 'DevOps / Legal',
+    category: 'developer-tools',
+    oneLinerDe: 'Zero-Latency License Compliance Guardrail für GitHub Actions & GitLab CI.',
+    oneLinerEn: 'Zero-latency license compliance guardrail for GitHub Actions & GitLab CI.',
+    problemDe: 'Versehentliches Hineinziehen von Copyleft (GPL/AGPL) oder Restriktiv-Lizenzen in kommerzielle Closed-Source-Repositories.',
+    problemEn: 'Accidental ingestion of viral copyleft (GPL/AGPL) or restricted licenses into proprietary codebases.',
+    targetDe: 'B2B SaaS Startups, Software-Agenturen, Enterprise-Entwicklungsteams.',
+    targetEn: 'B2B SaaS startups, software consultancies, enterprise engineering teams.',
+    pricingDe: '49 €/Monat je GitHub-Organisation (unbegrenzte Repos).',
+    pricingEn: '€49/month per GitHub organisation (unlimited repositories).',
+    defensibilityDe: 'Vollständiger Offline-SPDX-Parser ohne Cloud-Aufruf; < 200 ms Laufzeit in der CI-Pipeline.',
+    defensibilityEn: 'Full offline SPDX expression evaluator with zero cloud latency (< 200 ms execution).',
+    fundingFitDe: 'Bootstrapping + Merchant of Record (Paddle/Lemon Squeezy) · GitHub Sponsors.',
+    fundingFitEn: 'Bootstrapping + Merchant of Record (Paddle/Lemon Squeezy) · GitHub Sponsors.',
+    channelDe: 'GitHub Marketplace, r/devops, Hacker News Show HN.',
+    channelEn: 'GitHub Marketplace, r/devops, Hacker News Show HN.',
+    status: 'validated',
+  },
+  {
+    id: 'procure-lens-pro',
+    name: 'ProcureLens Pro (VergabePilot B2B)',
+    badge: 'GovTech B2B',
+    category: 'legal-tech',
+    oneLinerDe: 'Pre-Flight-Check für öffentliche Ausschreibungsunterlagen gegen Formfehler.',
+    oneLinerEn: 'Pre-flight tender bid validator against formal procedural disqualification.',
+    problemDe: 'Über 30 % der Bieter fliegen bei öffentlichen Vergaben (TED/eForms) wegen trivialer Formfehler oder fehlender Eigenerklärungen vorab raus.',
+    problemEn: 'Over 30% of bidder submissions in public procurement are disqualified early due to minor formal omissions.',
+    targetDe: 'Mittelständische Bauunternehmen, IT-Dienstleister, Planungsbüros.',
+    targetEn: 'SME construction contractors, IT service providers, architecture consultancies.',
+    pricingDe: '299 € Einmalkauf pro Ausschreibung oder 149 €/Monat Flatrate.',
+    pricingEn: '€299 one-off bid validation or €149/month flat.',
+    defensibilityDe: 'Regelwerk aller Ausschlussgründe nach VgV, UVgO und VOB/A; keine Halluzinationen.',
+    defensibilityEn: 'Exhaustive deterministic disqualification rules across VgV, UVgO, and VOB/A.',
+    fundingFitDe: 'Bund Direktvergabe (bis 50.000 € netto) · GovTech Campus Seed.',
+    fundingFitEn: 'Federal Direct Award (up to €50k net) · GovTech Campus Seed.',
+    channelDe: 'Bieterradare, Vergabe24, RIB-Software-Ökosystem, LinkedIn Handwerk/IT.',
+    channelEn: 'Public tender platforms, Vergabe24, construction trade networks.',
+    status: 'active',
+  },
+  {
+    id: 'bedenkenblitz-vob',
+    name: 'BedenkenBlitz VOB',
+    badge: 'Handwerk & Bau',
+    category: 'legal-tech',
+    oneLinerDe: 'Rechtssichere VOB/B § 4 Abs. 3 Bedenkenanmeldung in 60 Sekunden auf der Baustelle.',
+    oneLinerEn: 'Legally bulletproof VOB/B § 4 (3) notice of formal contractor reservations in 60s.',
+    problemDe: 'Handwerker haften bei Bauschäden voll, wenn sie Vorarbeiten nicht rechtzeitig und formal schriftlich gerügt haben.',
+    problemEn: 'Contractors bear full defect liability if they fail to serve formal written notices of prior defects.',
+    targetDe: 'Elektriker, SHK-Betriebe, Trockenbauer, Fliesenleger, Bauleiter.',
+    targetEn: 'Electricians, HVAC technicians, dry-construction contractors, site supervisors.',
+    pricingDe: '79 € Einmalkauf (Lebenszeitlizenz) oder 19 €/Monat für Teams.',
+    pricingEn: '€79 one-off lifetime license or €19/month team subscription.',
+    defensibilityDe: 'Rechtsnormgeprüfte Textbausteine mit Fotobeweis-Signatur und PDF/A-Export.',
+    defensibilityEn: 'Court-admissible text templates with cryptographically hashed photo timestamps.',
+    fundingFitDe: 'Eigenumsatz über Merchant of Record · Handwerkskammern.',
+    fundingFitEn: 'Self-funded via Merchant of Record · Crafts guild partnerships.',
+    channelDe: 'Handwerker-Foren, Meisterkurs-Alumni, Instagram/TikTok Handwerk.',
+    channelEn: 'Trades forums, master craftsman cohorts, trade guild newsletters.',
+    status: 'active',
+  },
+  {
+    id: 'eudr-timber-pass',
+    name: 'EUDR TimberPass',
+    badge: 'Supply Chain',
+    category: 'compliance',
+    oneLinerDe: 'Sorgfaltserklärungs-Generator für Holzhändler nach EUDR VO (EU) 2023/1115.',
+    oneLinerEn: 'Due diligence declaration generator for timber traders under EUDR Reg 2023/1115.',
+    problemDe: 'Ab 30.12.2026 müssen Händler Geokoordinaten aller Holzeinschlagflächen im EU-TRACES-System hinterlegen.',
+    problemEn: 'By 30 Dec 2026, timber traders must lodge exact polygon coordinates into EU TRACES.',
+    targetDe: 'Sägewerke, Holzimporteure, Möbelhersteller, Papierindustrie.',
+    targetEn: 'Sawmills, timber importers, furniture manufacturers, pulp and paper industry.',
+    pricingDe: '390 €/Monat für B2B-Importeure.',
+    pricingEn: '€390/month for B2B importers.',
+    defensibilityDe: 'GeoJSON-Polygon-Validierer gegen geschützte Waldbereiche; automatische TRACES-Schnittstelle.',
+    defensibilityEn: 'GeoJSON polygon validator against deforested GIS layers with automated TRACES format checks.',
+    fundingFitDe: 'GründungsBONUS Plus · DBU Green Start-ups.',
+    fundingFitEn: 'Berlin GründungsBONUS Plus · DBU Green Start-ups.',
+    channelDe: 'Holz-Zentralblatt, GD Holz Verband, Fachmessen LIGNA.',
+    channelEn: 'Timber trade journals, timber trade federations, LIGNA trade fair.',
+    status: 'research',
+  },
+  {
+    id: 'zero-drift-swarm-kit',
+    name: 'Zero-Drift Swarm Kit',
+    badge: 'AI Systems',
+    category: 'developer-tools',
+    oneLinerDe: 'Deterministische State-Machine für multi-agentische Coding-Swarms ohne Context-Drift.',
+    oneLinerEn: 'Deterministic state-machine for multi-agent coding swarms with zero context drift.',
+    problemDe: 'LLM-Agentenschwärme verlieren in komplexen Refactorings das Ziel, erzeugen tote Branches und halluzinieren.',
+    problemEn: 'Autonomous LLM agent teams drift out of sync, generate redundant code, and cause branch chaos.',
+    targetDe: 'KI-Startups, Agentic-AI-Entwickler, Autonomous Engineering Labs.',
+    targetEn: 'AI startups, agentic AI builders, autonomous software engineering labs.',
+    pricingDe: '249 $ Einmalkauf (Commercial Source License) + Pro SDK 49 $/Mo.',
+    pricingEn: '$249 one-time commercial license + $49/mo enterprise updates.',
+    defensibilityDe: 'Disjunkte Schreibrechte, DAG-Verifikation und Snapshot-Rollback-Engine.',
+    defensibilityEn: 'Disjoint write boundaries, DAG invariant verification, and instantaneous rollback.',
+    fundingFitDe: 'TinySeed · Calm Company Fund · GitHub Sponsors.',
+    fundingFitEn: 'TinySeed · Calm Company Fund · GitHub Sponsors.',
+    channelDe: 'r/ClaudeCode, Hacker News, X/Twitter AI engineering community.',
+    channelEn: 'r/ClaudeCode, Hacker News, X/Twitter AI engineering community.',
+    status: 'validated',
+  },
+  {
+    id: 'wet-ink-pro-sdk',
+    name: 'Wet Ink Pro SDK',
+    badge: 'Graphics Engine',
+    category: 'physics-sdk',
+    oneLinerDe: 'Echtzeitfähige Washi-Tusche- und Aquarellsimulation nach Kubelka-Munk für iPad & Web.',
+    oneLinerEn: 'Real-time Washi ink and watercolor Kubelka-Munk physics engine for iPad & Web.',
+    problemDe: 'Digitale Pinsel wirken synthetisch und berücksichtigen weder Papierfaserabsorption noch Trocknungssättigung.',
+    problemEn: 'Digital brushes feel plastic and ignore realistic paper capillary absorption and drying.',
+    targetDe: 'Mal-Apps, Notiz-Apps, Manga-Software, Kreativ-Tablet-Entwickler.',
+    targetEn: 'Painting apps, note-taking suites, creative tablet software developers.',
+    pricingDe: '1.200 $ / Jahr SDK-Kommerzlizenz oder 1,5 % Revenue Share.',
+    pricingEn: '$1,200/year commercial SDK license or 1.5% revenue share.',
+    defensibilityDe: 'Deterministischer Kubelka-Munk-Absorptionskern mit WebAssembly-Beschleunigung.',
+    defensibilityEn: 'Deterministic Kubelka-Munk fiber absorption engine running at 60 FPS in WebAssembly.',
+    fundingFitDe: 'Prototype Fund (für offenen Kern) + Startnext / Vorverkauf.',
+    fundingFitEn: 'Prototype Fund (open core) + Startnext pre-orders.',
+    channelDe: 'Procreate-Foren, Unity Asset Store, r/DigitalArt, Hacker News.',
+    channelEn: 'Procreate communities, Unity Asset Store, r/DigitalArt, Hacker News.',
+    status: 'validated',
+  },
+  {
+    id: 'arcana-tarot-engine',
+    name: 'Arcana Tarot Engine Pro',
+    badge: 'Entertainment Tech',
+    category: 'developer-tools',
+    oneLinerDe: 'Dual-validierte JSON-Schema-Zustandsmaschine für narrative Symbolik & Card-Spreads.',
+    oneLinerEn: 'Dual-validated JSON Schema state machine for narrative card spreads and game systems.',
+    problemDe: 'Spiele- und App-Entwickler codieren Legesysteme, Umkehrungen und Bedeutungen ad-hoc ohne Typensicherheit.',
+    problemEn: 'Game developers and indie creators code card spreads and reversals ad-hoc without formal schemas.',
+    targetDe: 'Indie-Game-Entwickler, Storytelling-Apps, Brettspiel-Digitalisierer.',
+    targetEn: 'Indie game devs, narrative interactive fiction creators, digital boardgame studios.',
+    pricingDe: '99 $ Developer License.',
+    pricingEn: '$99 developer lifetime license.',
+    defensibilityDe: 'npm-Paket `@arcana-schema/validator` mit Draft-7 & Draft 2020-12 Konformität.',
+    defensibilityEn: 'npm package `@arcana-schema/validator` with dual Draft-7 and 2020-12 compliance.',
+    fundingFitDe: 'itch.io Store · Gumroad · Steam Indie Bundles.',
+    fundingFitEn: 'itch.io Store · Gumroad · Steam Indie Bundles.',
+    channelDe: 'r/tarot, r/gamedev, itch.io, Discord Indie Game Hubs.',
+    channelEn: 'r/tarot, r/gamedev, itch.io, Discord indie game communities.',
+    status: 'validated',
+  },
+];
+
+// ── Solo-Gründer Leitfaden ──────────────────────────────────────────
+
+export interface SoloFounderTip {
+  id: string;
+  titleDe: string;
+  titleEn: string;
+  badgeDe: string;
+  badgeEn: string;
+  amountDe: string;
+  amountEn: string;
+  summaryDe: string;
+  summaryEn: string;
+  prosDe: string[];
+  prosEn: string[];
+  watchOutDe: string;
+  watchOutEn: string;
+  link?: string;
+}
+
+export const SOLO_FOUNDER_GUIDES: SoloFounderTip[] = [
+  {
+    id: 'ibb-bonus',
+    titleDe: 'IBB GründungsBONUS Plus',
+    titleEn: 'IBB GründungsBONUS Plus',
+    badgeDe: 'Berlin Solo-Tipp',
+    badgeEn: 'Berlin Solo Pick',
+    amountDe: 'bis zu 50.000 € (50 % Kostenzuschuss, nicht-rückzahlbar)',
+    amountEn: 'up to €50,000 (50% non-repayable grant)',
+    summaryDe: 'Ideal für Solo-Gründer und kleine Tech-Teams mit Sitz in Berlin. Finanziert Entwicklung, Marketing, Server und Sachmittel im ersten Gründungsjahr.',
+    summaryEn: 'Ideal for solo founders and tech micro-teams based in Berlin. Covers software development, marketing, servers and equipment in year one.',
+    prosDe: [
+      'Alleinbewerbung ohne Hochschule oder Co-Founder möglich',
+      'Keine Anteilsabgabe, kein Kredit, 100 % Zuschuss',
+      'Vergütung für externe Spezialisten und Arbeitsmittel',
+    ],
+    prosEn: [
+      'Available for solo applicants without university ties or co-founders',
+      'Non-dilutive grant, no debt, zero equity given up',
+      'Covers contractor expenses, dev tools and equipment',
+    ],
+    watchOutDe: 'Ausgaben dürfen vor dem offiziellen Antragseingang nicht begonnen worden sein. Reihenfolge zwingend einhalten!',
+    watchOutEn: 'Expenses incurred prior to formal application submission are strictly ineligible. Respect the sequence!',
+    link: 'https://www.ibb.de/de/foerderprogramme/gruendungsbonus.html',
+  },
+  {
+    id: 'prototype-fund-solo',
+    titleDe: 'Prototype Fund (BMBF / OKF)',
+    titleEn: 'Prototype Fund (BMBF / OKF)',
+    badgeDe: 'Open Source',
+    badgeEn: 'Open Source',
+    amountDe: 'bis zu 47.500 € (Einzelperson, 6 Monate Vollzeit)',
+    amountEn: 'up to €47,500 (individual, 6 months full-time)',
+    summaryDe: 'Finanziert die Entwicklung von gemeinwohlorientierter Open-Source-Software. Perfekt, um den offenen Kern einer Idee vorab zu bauen.',
+    summaryEn: 'Funds public-interest open-source software development. Ideal for building the open-source foundational layer.',
+    prosDe: [
+      'Ausdrücklich für Einzelpersonen (Freiberufler/Solo-Selbstständige)',
+      'Einfacher zweistufiger Antrag ohne Berater',
+      'Hohe Reputation in der Open-Source-Community',
+    ],
+    prosEn: [
+      'Specifically tailored to solo developers and freelance builders',
+      'Lean two-stage application process without red tape',
+      'Prestigious track record across the European open-source scene',
+    ],
+    watchOutDe: 'Zwingende OSI-Lizenzpflicht: Nur für den offenen Kern (z. B. Amélie-Dose), nicht für proprietäre Pro-Layer!',
+    watchOutEn: 'Strict OSI open-source license obligation: only suitable for open cores, never for proprietary pro layers!',
+    link: 'https://prototypefund.de',
+  },
+  {
+    id: 'mor-payments',
+    titleDe: 'Merchant of Record (Paddle / Lemon Squeezy)',
+    titleEn: 'Merchant of Record (Paddle / Lemon Squeezy)',
+    badgeDe: 'Monetarisierung',
+    badgeEn: 'Monetisation',
+    amountDe: '5 % + 0,50 $ pro Transaktion (statt eigener USt-Registrierung)',
+    amountEn: '5% + $0.50 per transaction (replaces global VAT handling)',
+    summaryDe: 'Ermöglicht weltweiten Softwareverkauf ab Tag 1, ohne in 100 Ländern Mehrwertsteuer- und Steuer-IDs anzumelden.',
+    summaryEn: 'Allows selling software globally from day 1 without registering for VAT/sales tax across dozens of jurisdictions.',
+    prosDe: [
+      'Übernimmt EU-MOSS, US Sales Tax und globale Steuerabfuhr automatisch',
+      'Kein bürokratischer Steuerberater-Engpass für Solo-Entwickler',
+      'Auszahlung monatlich gesammelt per SEPA auf das Geschäftskonto',
+    ],
+    prosEn: [
+      'Handles EU-MOSS, US sales tax and global tax remittance automatically',
+      'Eliminates legal VAT headaches for solo engineers',
+      'Consolidated monthly payout directly to business bank account',
+    ],
+    watchOutDe: 'Gumroad nimmt 10 % plus Stripe-Gebühren und übernimmt Steuern in vielen EU-Ländern nicht lückenlos.',
+    watchOutEn: 'Gumroad charges a flat 10% fee plus Stripe transaction costs without full international tax indemnity.',
+    link: 'https://www.paddle.com',
+  },
+  {
+    id: 'tinyseed-calm',
+    titleDe: 'Bootstrapping & Calm SaaS (TinySeed / Calm Company Fund)',
+    titleEn: 'Bootstrapping & Calm SaaS (TinySeed / Calm Company Fund)',
+    badgeDe: 'Kapital für B2B',
+    badgeEn: 'Calm Capital',
+    amountDe: '120.000 $ für 10–12 % oder Shared-Earnings-Agreement (SEAL)',
+    amountEn: '$120,000 for 10–12% or Shared Earnings Agreement (SEAL)',
+    summaryDe: 'Die Alternative zum klassischen Venture Capital: Investoren für profitable, nachhaltige Software ohne Hyper-Growth-Zwang.',
+    summaryEn: 'The alternative to hyper-growth VC: backing profitable, resilient SaaS businesses with sustainable cash flows.',
+    prosDe: [
+      'Kein Zwang zum Unicorn-Exit nach 7 Jahren',
+      'Mentorennetzwerk aus erfolgreichen Micro-SaaS-Gründern',
+      'Gewinnausschüttungen an Gründer werden gefördert',
+    ],
+    prosEn: [
+      'No structural pressure for a forced 100x unicorn exit',
+      'Hands-on mentorship from veteran bootstrapped founders',
+      'Founder dividends and cash distributions are encouraged',
+    ],
+    watchOutDe: 'Verlangt in der Regel ersten Traktion / MRR (wenige zahlende Kunden reichen oft schon).',
+    watchOutEn: 'Generally requires early proof of traction or initial MRR (even modest initial paying users).',
+    link: 'https://tinyseed.com',
+  },
+  {
+    id: 'direktvergabe-bund',
+    titleDe: 'Bundes-Direktvergabe bis 50.000 € netto',
+    titleEn: 'Federal Direct Award up to €50,000 net',
+    badgeDe: 'B2G-Umsatz',
+    badgeEn: 'B2G Revenue',
+    amountDe: 'Aufträge bis 50.000 € ohne formelle Ausschreibung (§ 14 UVgO)',
+    amountEn: 'Contracts up to €50k net without public tender procedures',
+    summaryDe: 'Seit 01.07.2026 dürfen Bundesbehörden Liefer- und Dienstleistungen bis 50.000 € netto formlos direkt vergeben.',
+    summaryEn: 'Since 1 July 2026, German federal ministries and agencies can award software contracts up to €50k without formal tenders.',
+    prosDe: [
+      'Keine 24 Wochen Ausschreibungsmarathon für Kleinstfirmen',
+      'Einfache Eigenerklärung statt monatelanger Bürgschaften',
+      'Pilotprojekte lassen sich schnell in bezahlte Aufträge überführen',
+    ],
+    prosEn: [
+      'Bypasses 24-week procurement marathons for micro-enterprises',
+      'Simple self-declaration replaces tedious bank guarantees',
+      'Pilots can be swiftly converted into paid production contracts',
+    ],
+    watchOutDe: 'Unter der Schwelle sind Aufträge in Vergabeportalen unsichtbar. Direkter Fachkontakt mit Mandat erforderlich!',
+    watchOutEn: 'Under this threshold, tenders never appear on TED/BKMS. Direct contact with a mandate holder is vital!',
+    link: 'https://www.oeffentlichevergabe.de',
+  },
+  {
+    id: 'invest-angels',
+    titleDe: 'INVEST-Zuschuss für Business Angels',
+    titleEn: 'INVEST Grant for Business Angels',
+    badgeDe: 'Angel-Hebel',
+    badgeEn: 'Angel Catalyst',
+    amountDe: '25 % steuerfreier Erwerbszuschuss für private Investoren',
+    amountEn: '25% tax-free acquisition subsidy for private angel tickets',
+    summaryDe: 'Macht Angel-Investments für Privatinvestoren hochattraktiv: Der Bund erstattet dem Angel ein Viertel des Investments direkt zurück.',
+    summaryEn: 'Makes angel checks highly compelling: the German state reimburses 25% of the angel’s check directly and tax-free.',
+    prosDe: [
+      'Reduziert das effektive Verlustrisiko für den Angel spürbar',
+      'Starkes Verkaufsargument beim Pitch vor BAND- und EBAN-Mitgliedern',
+      'Steuerfreier Exitzuschuss bei gewinnbringendem Verkauf',
+    ],
+    prosEn: [
+      'Substantially mitigates downside risk for the angel investor',
+      'Compelling pitch argument when presenting to BAND and EBAN angels',
+      'Additional tax-free exit bonus upon profitable acquisition',
+    ],
+    watchOutDe: 'Aktuelle Förderperiode läuft bis 31.12.2026! Vorherige Förderfähigkeit des Startups beim BAFA prüfen.',
+    watchOutEn: 'Current funding cycle ends on 31 Dec 2026! Ensure pre-qualification at BAFA prior to check signing.',
+    link: 'https://www.bafa.de/DE/Wirtschaft/Beratung_Finanzierung/Invest/invest_node.html',
+  },
+];
+
+// ── Reale NGO- & Stadtprojekte Datensätze ─────────────────────────────
+
+export interface RealProjectChallenge {
+  id: string;
+  titleDe: string;
+  titleEn: string;
+  initiator: string;
+  badgeDe: string;
+  badgeEn: string;
+  type: 'ngo-challenge' | 'smart-city' | 'civic-award';
+  descriptionDe: string;
+  descriptionEn: string;
+  painDe: string;
+  painEn: string;
+  opportunityDe: string;
+  opportunityEn: string;
+  url?: string;
+}
+
+export const REAL_PROJECTS_DATA: RealProjectChallenge[] = [
+  {
+    id: 'civic-coding-challenges',
+    titleDe: '22 Civic Coding Challenges realer NGOs',
+    titleEn: '22 Civic Coding Challenges from Real NGOs',
+    initiator: 'Civic Coding Hub (BMAS, BMUKN, BMFSFJ)',
+    badgeDe: 'Bedarf & Mandat',
+    badgeEn: 'Validated Need',
+    type: 'ngo-challenge',
+    descriptionDe: '22 dokumentierte Aufgabenstellungen von Umweltverbänden, Wohlfahrtsorganisationen und Bürgerinitiativen mit konkreten Daten- und Vollzugsproblemen.',
+    descriptionEn: '22 documented real-world problem statements submitted by environmental NGOs, welfare charities and civic initiatives.',
+    painDe: 'Fehlende digitale Prüfwerkzeuge bei Barrierefreiheit, Arbeitszeitdokumentation und Lieferkettenkontrolle.',
+    painEn: 'Severe shortage of practical digital validation tools in accessibility, working hours and supply-chain auditing.',
+    opportunityDe: 'Jede Challenge nennt die verantwortliche Ansprechperson und den konkreten institutionellen Bedarf (Regel 2).',
+    opportunityEn: 'Every challenge specifies the named organizational lead and their institutional mandate (Rule 2).',
+    url: 'https://www.civic-coding.de',
+  },
+  {
+    id: 'mpsc-73-cities',
+    titleDe: '73 Modellprojekte Smart Cities (820 Mio. € Investition)',
+    titleEn: '73 Smart City Model Projects (€820m Investment)',
+    initiator: 'BMWSB · KfW · KTS (Fraunhofer IAO)',
+    badgeDe: 'Kommunales Netzwerk',
+    badgeEn: 'Municipal Network',
+    type: 'smart-city',
+    descriptionDe: '73 ausgewählte deutsche Kommunen mit eigenem Digitalisierungsbudget, Strategie und Open-Source-Verpflichtung.',
+    descriptionEn: '73 selected German municipalities with dedicated digitisation budgets and open-source mandates.',
+    painDe: 'Gefahr von isolierten Insellösungen; Pflicht zur Nachnutzung und Veröffentlichung auf OpenCoDE.de.',
+    painEn: 'Risk of siloed solutions; strict mandate for cross-city reusability and OpenCoDE.de code releases.',
+    opportunityDe: 'Kommunale Bauämter und Umweltdezernate sind dankbare Abnehmer für standardisierte Amélie-Werkzeuge.',
+    opportunityEn: 'City planning and environmental departments are prime adopters for standardised CC0 open tools.',
+    url: 'https://www.smart-city-dialog.de/modellprojekte',
+  },
+  {
+    id: 'unit-govtech-berlin',
+    titleDe: 'Unit GovTech Berlin (Senatskanzlei)',
+    titleEn: 'GovTech Berlin Unit (Senate Chancellery)',
+    initiator: 'Senatskanzlei Berlin (Staatssekretär Hundt) · GovTech Deutschland',
+    badgeDe: 'Pilot-Kanal',
+    badgeEn: 'Pilot Channel',
+    type: 'smart-city',
+    descriptionDe: 'Zentrale Berliner Anlaufstelle zur schnellen Erprobung innovativer Verwaltungswerkzeuge unter Staatssekretär Hundt.',
+    descriptionEn: 'Central Berlin unit matching agency needs with tech innovators and open prototypes under State Secretary Hundt.',
+    painDe: 'Klassische Verwaltungsvergaben dauern im Schnitt 24 Wochen; Behörden scheuen das Risiko unbekannter Software.',
+    painEn: 'Traditional municipal procurement takes 24 weeks; civil servants avoid unproven software.',
+    opportunityDe: 'Reallabor für Pilotformate: Ein funktionierendes Amélie-Scaffolding kann direkt in den Testbetrieb gehen.',
+    opportunityEn: 'Living sandbox for rapid piloting: a functioning CC0 scaffolding can enter pilot trials immediately.',
+    url: 'https://www.berlin.de/senatskanzlei/',
+  },
+  {
+    id: 'bundespreis-ecodesign-benchmark',
+    titleDe: 'Bundespreis Ecodesign Fachjury',
+    titleEn: 'Federal Ecodesign Award Specialist Jury',
+    initiator: 'BMUV · Umweltbundesamt (UBA) · IDZ Berlin',
+    badgeDe: 'Problemradar',
+    badgeEn: 'Problem Radar',
+    type: 'civic-award',
+    descriptionDe: 'Höchste staatliche Auszeichnung für zirkuläres Produktdesign durch BMUV, Umweltbundesamt und IDZ.',
+    descriptionEn: 'Highest state award for circular design by the Environment Ministry, UBA and IDZ.',
+    painDe: 'Hersteller kämpfen mit unklaren Reparatur- und Demontierbarkeitskriterien im Vorlauf zur ESPR-Verordnung.',
+    painEn: 'Brands struggle with opaque repairability and dismantling metrics ahead of mandatory ESPR enforcement.',
+    opportunityDe: 'Die Jurymitglieder (UBA-Fachgebietsleiter) sind die maßgeblichen Gestalter der kommenden Vollzugsregeln.',
+    opportunityEn: 'The specialist jury members (UBA division heads) draft the upcoming statutory enforcement rules.',
+    url: 'https://bundespreis-ecodesign.de',
+  },
+  {
+    id: 'citizen-science-auswertung',
+    titleDe: 'EU Prize for Citizen Science Gemeinschaften',
+    titleEn: 'EU Prize for Citizen Science Communities',
+    initiator: 'Europäische Kommission · Ars Electronica',
+    badgeDe: 'Citizen Science',
+    badgeEn: 'Citizen Science',
+    type: 'civic-award',
+    descriptionDe: 'Auszeichnung europäischer Bürgerwissenschafts-Initiativen mit großem zivilgesellschaftlichen Engagement.',
+    descriptionEn: 'European recognition for grassroots citizen science networks handling massive observation sets.',
+    painDe: 'Ehrenamtliche erfassen Millionen Fotos, Audiospuren und Messwerte, scheitern aber an der manuellen Auswertung.',
+    painEn: 'Volunteers collect millions of photos and audio recordings but face massive manual analysis backlogs.',
+    opportunityDe: 'Idealer Einsatzort für on-device ML und deterministische Auswertungsdosen (Vogelschlag, Akustik, Biodiversität).',
+    opportunityEn: 'Prime venue for on-device ML and deterministic verification tools (bird-strike, bioacoustics, biodiversity).',
+    url: 'https://citizenscience.ars.electronica.art',
+  },
+];
+

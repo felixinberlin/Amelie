@@ -47,3 +47,38 @@ describe('Förderkompass-Daten', () => {
     expect(daysUntil('2026-09-30', at('2026-09-28'))).toBe(3);
   });
 });
+
+describe('Gründer & B2B-Zwillinge Datensätze', () => {
+  it('enthält alle 8 kommerziellen Zwillinge mit eindeutigen IDs und Preisen', async () => {
+    const { VENTURE_LEADS_DATA } = await import('./funding');
+    expect(VENTURE_LEADS_DATA.length).toBe(8);
+    const ids = VENTURE_LEADS_DATA.map((v) => v.id);
+    expect(new Set(ids).size).toBe(8);
+    for (const v of VENTURE_LEADS_DATA) {
+      expect(v.pricingDe).toBeTruthy();
+      expect(v.defensibilityDe).toBeTruthy();
+      expect(v.channelDe).toBeTruthy();
+    }
+  });
+
+  it('enthält Solo-Gründer Leitfäden mit konkreten Summen und Dos and Don’ts', async () => {
+    const { SOLO_FOUNDER_GUIDES } = await import('./funding');
+    expect(SOLO_FOUNDER_GUIDES.length).toBeGreaterThanOrEqual(6);
+    for (const g of SOLO_FOUNDER_GUIDES) {
+      expect(g.amountDe).toBeTruthy();
+      expect(g.prosDe.length).toBeGreaterThan(0);
+      expect(g.watchOutDe).toBeTruthy();
+    }
+  });
+
+  it('enthält reale NGO- und Smart-City-Challenges mit Schmerzpunkten und Chancen', async () => {
+    const { REAL_PROJECTS_DATA } = await import('./funding');
+    expect(REAL_PROJECTS_DATA.length).toBeGreaterThanOrEqual(5);
+    for (const p of REAL_PROJECTS_DATA) {
+      expect(p.initiator).toBeTruthy();
+      expect(p.painDe).toBeTruthy();
+      expect(p.opportunityDe).toBeTruthy();
+    }
+  });
+});
+

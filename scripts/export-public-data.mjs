@@ -27,19 +27,20 @@ writeFileSync(
   `export { DOSEN_DATA, DISCARDED_DATA } from ${JSON.stringify(join(repoRoot, 'src/data/dosen.ts'))};
 export { CANDIDATE_IDEAS_DATA } from ${JSON.stringify(join(repoRoot, 'src/data/unpacked.ts'))};
 export { exportDatabaseAsJson } from ${JSON.stringify(join(repoRoot, 'src/services/storageService.ts'))};
-export { FUNDING_DATA } from ${JSON.stringify(join(repoRoot, 'src/data/funding.ts'))};
+export { FUNDING_DATA, VENTURE_LEADS_DATA, SOLO_FOUNDER_GUIDES, REAL_PROJECTS_DATA } from ${JSON.stringify(join(repoRoot, 'src/data/funding.ts'))};
 `
 );
 
 try {
   await build({ entryPoints: [entry], bundle: true, format: 'esm', platform: 'node', outfile: out, logLevel: 'error' });
-  const { DOSEN_DATA, CANDIDATE_IDEAS_DATA, exportDatabaseAsJson, FUNDING_DATA } = await import(pathToFileURL(out).href);
+  const { DOSEN_DATA, CANDIDATE_IDEAS_DATA, exportDatabaseAsJson, FUNDING_DATA, VENTURE_LEADS_DATA, SOLO_FOUNDER_GUIDES, REAL_PROJECTS_DATA } = await import(pathToFileURL(out).href);
   const pub = join(repoRoot, 'public/data');
   writeFileSync(join(pub, 'amelie-ideas.json'), exportDatabaseAsJson(DOSEN_DATA, CANDIDATE_IDEAS_DATA) + '\n');
   writeFileSync(join(pub, 'dosen.json'), JSON.stringify(DOSEN_DATA, null, 2) + '\n');
   writeFileSync(join(pub, 'unpacked.json'), JSON.stringify(CANDIDATE_IDEAS_DATA, null, 2) + '\n');
   writeFileSync(join(pub, 'funding.json'), JSON.stringify(FUNDING_DATA, null, 2) + '\n');
-  console.log(`public/data geschrieben: ${DOSEN_DATA.length} Dosen, ${CANDIDATE_IDEAS_DATA.length} Kandidaten, ${FUNDING_DATA.length} Fördereinträge.`);
+  writeFileSync(join(pub, 'ventures.json'), JSON.stringify({ ventureLeads: VENTURE_LEADS_DATA, soloFounderGuides: SOLO_FOUNDER_GUIDES, realProjects: REAL_PROJECTS_DATA }, null, 2) + '\n');
+  console.log(`public/data geschrieben: ${DOSEN_DATA.length} Dosen, ${CANDIDATE_IDEAS_DATA.length} Kandidaten, ${FUNDING_DATA.length} Fördereinträge, ${VENTURE_LEADS_DATA.length} B2B-Zwillinge.`);
 
   // Self-Audit artifacts update
   const auditEntry = join(dir, 'audit-entry.ts');
