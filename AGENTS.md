@@ -106,6 +106,11 @@ Wenn du ein Ticket, ein Kriterium oder eine Dosen-Beschreibung änderst, musst d
   * `reparaturfall-pflichtabgleich` (K3) ist `Needs Research`: ORDS-Datentest zuerst.
   * Evidenz nur Suchschnipsel (eur-lex, duh.de, repair.eu u. a. vom Proxy gesperrt).
 
+* **PR-Triage & Ventures-Zweig (28.09.2026):**
+  * **PR-Bereinigung:** Automatische Batch-Läufe produzierten über 100 PRs (viele Stubs & Duplikate). In zwei Triage-Runden wurden insgesamt 92 Duplikate und unvollständige Stubs geschlossen und deren Remote-Branches gelöscht (Queue von 68 auf 16 distinkte Cluster-Leads reduziert).
+  * **Lokaler Branch `feat/venture-leads-round-2`:** Enthält die durch den `venture-analyst` bewerteten kommerziellen Zwillinge (`spdx-driftguard-ci` und `procure-lens-pro` sowie 10 Leads in `ventures/market-leads.json`).
+  * **Eiserne Trennung:** Kommerzielle Produktkonzepte verbleiben auf `feat/venture-*`, während `main` 100 % CC0 Gemeingut bleibt. Für zukünftige Venture-Sessions: `git checkout feat/venture-leads-round-2`.
+
 ---
 
 ## 6. Checkliste vor dem Beenden einer Sitzung

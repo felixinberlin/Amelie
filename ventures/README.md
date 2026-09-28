@@ -59,3 +59,14 @@ ventures/
 
 - **Export new leads from Amélie:** `npm run export:market`
 - **Audit current opportunities:** `node scripts/export-market-leads.mjs --status`
+
+---
+
+## 5. Active Feature Branches & Session Continuity
+
+- **Local Branch `feat/venture-leads-round-2`:**
+  - Houses the latest batch of commercial leads and opportunity dossiers extracted from the September 28, 2026 discovery runs:
+    - `ventures/opportunities/spdx-driftguard-ci.md` (SPDX license whitelist CI guard against copyleft/AGPL drift)
+    - `ventures/opportunities/procure-lens-pro.md` (VergabePilot B2B / tender pre-flight audit against formal disqualification)
+    - `ventures/market-leads.json` (10 active leads)
+  - Kept on a dedicated local branch to maintain strict architectural separation from Amélie's public CC0 `main` branch until ready for commercial dispatch. To work on these leads in a new session: `git checkout feat/venture-leads-round-2`.
