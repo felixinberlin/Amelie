@@ -277,3 +277,16 @@ Alle Einträge **nur über Suchschnipsel** erschlossen; eur-lex.europa.eu, brubr
 | **EUDR VO (EU) 2023/1115 Art. 12 Abs. 3** (CELEX 32023R1115) + VO (EU) 2025/2650 (Verschiebung) | Erster Jahresbericht für GJ 2027; Nicht-KMU, CSRD-Ausweichweg; Informationssystem vertraulich | `offen` — **Wiedervorlage Q1/2028** (K7 `unklar`) | 28.09.2026 |
 | **LkSG §§ 12/13** (bafa.de Berichtspflicht) | Prüfung eingestellt, Pflicht wird rückwirkend gestrichen | `erschöpft` (Grab `lksg-berichtsregister`) [Seite] | 28.09.2026 |
 | **AI Act Art. 53 Abs. 1 lit. d** (gpailedger.com), **Public CbCR** (taxplorer.eu), **WPG** (kww-halle.de Wärmewendeatlas) | Jeweils gebaut: Forschung/staatlich | `erschöpft` (Gräber `gpai-summaries-register`, `public-cbcr-sammelbuch`, `waermeplan-register`) | 28.09.2026 |
+
+---
+
+## Typ P — Öffentliche Vergabe, Open-Source-Compliance & Sensornetzwerke (neu, PR-Triage 28.09.2026)
+
+Quellen und Register, die im Zuge der Triage von über 100 automatisierten Batch-PRs und der Ausgründung von kommerziellen Zwillingen in den Venture-Zweig auditiert wurden.
+
+| Quelle | Befund | Status | Zuletzt |
+|---|---|---|---|
+| **TED (Tenders Electronic Daily) & EU eForms / Bund.de Vergabe** (ted.europa.eu, vergabe.bund.de, Bekanntmachungsservice BKMS) | Offizielle XML/eForms-Feeds für öffentliche Ausschreibungen ab EU-Schwellenwert. Bietervorbereitung und Kriterienprüfung sind ein dicht besetzter kommerzieller Markt (Vergabe-Manager, RIB Software, Vergabe24). Als Amélie-Gemeingut fehlt die behördliche Vollzugslücke; kommerzieller B2B-Zwilling im Venture-Branch (`procure-lens-pro`). | `durchsucht` | 28.09.2026 |
+| **SPDX 2.3 & Open Source License Metadata** (spdx.org/licenses, spdx.dev, ClearlyDefined, OpenSSF) | Standardisierte SPDX-Lizenzbezeichner und maschinenlesbare Lizenzausdrücke. Developer-Compliance in CI/CD ist vollständig durch FOSSology, ScanCode Toolkit, Snyk, FOSSA und Renovate abgedeckt. Kein behördliches oder zivilgesellschaftliches Vollzugsmandat; als kommerzielles CI-Guardrail im Venture-Branch (`spdx-driftguard-ci`). | `durchsucht` | 28.09.2026 |
+| **Sensor.Community (Luftdaten.info) & OpenAQ** (sensor.community, openaq.org, archive.sensor.community) | Globale Citizen-Science-Feinstaub- und Sensordaten als offene REST- und Archiv-APIs. Kartenvisualisierung, Grenzwert-Alerts und historische Downloads sind durch die Initiativen selbst und OpenAQ bereits stabil und frei bereitgestellt; kein unbearbeiteter manueller Auswertungsstau. | `durchsucht` | 28.09.2026 |
+

@@ -7,6 +7,20 @@ Ergänzt `05-dosen/_entsorgt.md`: dort steht die Begründung für gepackte, dann
 **Vorläufiger Zustand:** `ungeprüft` — Kandidat aus einer Ideenmethode, Existenzprüfung nicht gelaufen. Kein Urteil, zählt in keiner Trefferquote, darf nicht zugestellt werden.
 **Prüfen ab:** Tooling/Konsum + 6 Monate · Zivilgesellschaft + 12 Monate
 
+---
+
+## PR-Triage & Batch-Bereinigung — 28.09.2026 (method: review / triage)
+
+Triage von über 100 automatisierten Batch-PRs; Schiedsrichter-Urteile für abgelehnte und beerdigte Kandidaten:
+
+| Idee | Urteil | Beleg (kurz) | Prüfen ab |
+|---|---|---|---|
+| **Quanten-Spielwiese** (quanten-spielwiese) — Browser-native Quantenmechanik-Simulation mit WebGPU | `besetzt` | Reine MINT-Labordidaktik ohne behördliche Vollzugslücke. Durch PhET Interactive Simulations (University of Colorado), falstad.com und Quantum Flytrap seit Jahren kostenlos abgedeckt. | – |
+| **PedalPath Planner** (pedalpath-planner) — WebGPU-Simulated Bicycle Infrastructure Designer | `besetzt` | Vollständig durch Streetmix (streetmix.net), FixMyCity und ADFC-Radnetzplaner abgedeckt. | – |
+| **Kiez-Ohr / Kiez-Radar** (kiez-ohr-nlp) — Browser-Native NLP für Bürgerhinweise und Mängel | `besetzt` | Offizielle Portale der Kommunen (Ordnungsamt-Online Berlin, Mängelmelder.de, BSR-App) existieren. Inoffizielle Scraper scheitern an fehlender Verwaltungsschnittstelle. | – |
+| **Invasives-Scout / FloraScan** (florascan-invasive-webgpu) — Browser-Native Erkennung invasiver Neophyten | `besetzt` | Institutionell finanzierte ML-Systeme (Flora Incognita / BfN, iNaturalist, ObsIdentify) belegen die Bilderkennung mit Millionen verifizierter Referenzbilder. | – |
+
+---
 
 ## Runde 16 / Open Data & Phänologie-Erkundung — 28.09.2026 (method: ideenrunde, pure idea evaluation)
 

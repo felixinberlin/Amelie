@@ -4068,6 +4068,107 @@ export const DISCARDED_DATA: DiscardedItem[] = [
     diedOn: '2026-09-28',
     resurrectIfDe: 'Wenn Taxplorer eingestellt wird oder deutsche Konzerne unterhalb der Taxplorer-Abdeckung bleiben und jemand mit Mandat danach fragt.',
     resurrectIfEn: 'If Taxplorer shuts down, or German groups remain below Taxplorer\'s coverage and someone with a mandate asks for them.'
+  },
+  {
+    id: 'quanten-spielwiese',
+    title: 'Quanten-Spielwiese (Browser-Native Quantum Visualizer)',
+    originalIdeaDe: 'Interaktive Simulation von Schrödinger-Gleichungen und quantenmechanischen Phänomenen mit WebGPU und WASM im Browser.',
+    originalIdeaEn: 'Interactive simulation of Schrödinger equations and quantum mechanical phenomena with WebGPU and WASM in the browser.',
+    whyDiscardedDe: 'Reine didaktische MINT-Laborsimulation ohne behördlichen oder zivilgesellschaftlichen Vollzugsstau (Prämisse). PhET der University of Colorado, falstad.com und Quantum Flytrap decken das seit Jahren kostenlos ab.',
+    whyDiscardedEn: 'Pure didactic STEM simulation without regulatory or civic enforcement bottleneck. PhET by University of Colorado, falstad.com and Quantum Flytrap have covered this for years for free.',
+    lessonDe: 'Didaktische Physik-Spielereien ohne Vollzugslücke sind kein Amélie-Gemeingut.',
+    lessonEn: 'Didactic physics playgrounds without governance or enforcement gaps are not Amélie civic goods.',
+    domain: 'Physik & Didaktik',
+    evidence: [
+      'PhET Interactive Simulations (University of Colorado)',
+      'falstad.com Quantum Physics Simulators',
+      'Quantum Flytrap'
+    ],
+    cause: 'praemisse',
+    killer: 'forschung',
+    foundBy: 'englisch',
+    origin: 'ideenliste',
+    stage: 'kandidat',
+    bornIn: 'PR-Triage Batch-Run 28.09.2026',
+    diedOn: '2026-09-28',
+    resurrectIfDe: 'Nie als reine Physik-Simulation — nur wenn eine Behörde ein konkretes Quantensensor-Prüfschema vorschreibt.',
+    resurrectIfEn: 'Never as pure physics simulation — only if an authority mandates a specific quantum sensor testing schema.'
+  },
+  {
+    id: 'pedalpath-planner',
+    title: 'PedalPath Planner (WebGPU Radwege-Planer)',
+    originalIdeaDe: 'Interaktives WebGPU-Planungswerkzeug für kommunale Radwegeinfrastruktur und Querschnittsaufteilungen.',
+    originalIdeaEn: 'Interactive WebGPU planning tool for municipal bicycle infrastructure and street cross-section allocation.',
+    whyDiscardedDe: 'Vollständig durch bestehende Open-Source- und Verbands-Tools abgedeckt: Streetmix ist der weltweite Standard, dazu FixMyCity und ADFC-Radnetzplaner.',
+    whyDiscardedEn: 'Fully covered by existing open-source and advocacy tools: Streetmix is the global standard, alongside FixMyCity and ADFC cycling network planners.',
+    lessonDe: 'Kommunale Straßenraum- und Radwege-Planung ist eine dicht besetzte Open-Source-Domäne.',
+    lessonEn: 'Municipal street space and cycling planning is a densely populated open-source domain.',
+    domain: 'Mobilität & Stadtplanung',
+    evidence: [
+      'streetmix.net',
+      'FixMyCity',
+      'ADFC Radnetzplaner'
+    ],
+    cause: 'gebaut',
+    killer: 'community',
+    foundBy: 'deutsch',
+    origin: 'ideenliste',
+    stage: 'kandidat',
+    bornIn: 'PR-Triage Batch-Run 28.09.2026',
+    diedOn: '2026-09-28',
+    resurrectIfDe: 'Nie — Streetmix und ADFC decken zivilgesellschaftliche Straßenquerschnittsplanung ab.',
+    resurrectIfEn: 'Never — Streetmix and ADFC cover civic street cross-section planning.'
+  },
+  {
+    id: 'kiez-ohr-nlp',
+    title: 'Kiez-Ohr / Kiez-Radar (Browser-Native Mängelmelder NLP)',
+    originalIdeaDe: 'Bürgerhinweise zu Müll, Schlaglöchern und Defekten per On-Device-NLP kategorisieren und an Ämter leiten.',
+    originalIdeaEn: 'Categorize citizen reports on litter, potholes and infrastructure defects via on-device NLP and route to authorities.',
+    whyDiscardedDe: 'Gebaut und Standardmuster: Jede deutsche Kommune betreibt offizielle Portale (Ordnungsamt-Online Berlin, Mängelmelder.de, BSR-App). Inoffizielle Dritt-Tools scheitern an fehlenden Schnittstellen.',
+    whyDiscardedEn: 'Built and standard pattern: Every German municipality operates official portals (Ordnungsamt-Online Berlin, Mängelmelder.de, BSR app). Unofficial third-party tools fail without API access.',
+    lessonDe: 'Beschwerde- und Meldewerkzeuge funktionieren nur mit offiziellem Behörden-Kanal; inoffizielle Scraper erzeugen nur Verwaltungswiderstand.',
+    lessonEn: 'Complaint and reporting tools only work with official municipal channels; unofficial scrapers create administrative friction.',
+    domain: 'Verwaltung & Bürgerhinweise',
+    evidence: [
+      'Ordnungsamt-Online Berlin',
+      'Maengelmelder.de',
+      'BSR-App'
+    ],
+    cause: 'gebaut',
+    killer: 'behoerde',
+    foundBy: 'deutsch',
+    origin: 'ideenliste',
+    stage: 'kandidat',
+    bornIn: 'PR-Triage Batch-Run 28.09.2026',
+    diedOn: '2026-09-28',
+    resurrectIfDe: 'Nie — Städte akzeptieren keine Mängelberichte über inoffizielle Dritt-Apps ohne verifizierte Authentifizierung.',
+    resurrectIfEn: 'Never — Cities do not accept defect reports via unofficial third-party apps without verified authentication.'
+  },
+  {
+    id: 'florascan-invasive-webgpu',
+    title: 'FloraScan / Invasives-Scout (Browser-Native Neophyten-Erkennung)',
+    originalIdeaDe: 'Browser-native Bilderkennung für invasive Pflanzenarten (Neophyten) mit WebGPU On-Device-Inferenz.',
+    originalIdeaEn: 'Browser-native image classification for invasive plant species (neophytes) via WebGPU on-device inference.',
+    whyDiscardedDe: 'Besetzt durch millionenfach genutzte und staatlich geförderte Fachsysteme: Flora Incognita (TU Ilmenau / BfN), iNaturalist und ObsIdentify verfügen über riesige Referenzdatensätze und trainierte Expertennetzwerke.',
+    whyDiscardedEn: 'Occupied by federally funded systems with millions of users: Flora Incognita (TU Ilmenau / BfN), iNaturalist, and ObsIdentify possess massive verified datasets and expert verification networks.',
+    lessonDe: 'Rein visuelle Artbestimmung erfordert gigantische Referenzkorpora; gegen Flora Incognita und iNaturalist kann ein statisches WebGPU-Modell nicht konkurrieren.',
+    lessonEn: 'Purely visual species identification requires massive reference corpora; a static WebGPU model cannot compete with Flora Incognita and iNaturalist.',
+    domain: 'Naturschutz & Biodiversität',
+    evidence: [
+      'Flora Incognita (BfN / TU Ilmenau)',
+      'iNaturalist',
+      'ObsIdentify'
+    ],
+    cause: 'gebaut',
+    killer: 'forschung',
+    foundBy: 'deutsch',
+    origin: 'ideenliste',
+    stage: 'kandidat',
+    bornIn: 'PR-Triage Batch-Run 28.09.2026',
+    diedOn: '2026-09-28',
+    resurrectIfDe: 'Nie als Allzweck-Kamera-App — nur wenn ein Behörden-Prüfprotokoll für spezifische Neophyten-Meldungen (z. B. Beifuß-Ambrosie) gefordert wird.',
+    resurrectIfEn: 'Never as general camera app — only if a regulatory protocol for specific neophyte reporting (e.g. ragweed) is officially mandated.'
   }
 ];
+
 

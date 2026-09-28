@@ -1,14 +1,14 @@
 {
   "auditVersion": 1,
-  "generatedAt": "2026-09-28T18:53:13.219Z",
+  "generatedAt": "2026-09-28T19:09:02.250Z",
   "repository": {
-    "commit": "ccf683a",
+    "commit": "851296a",
     "branch": "main"
   },
   "inventory": {
     "doses": 44,
-    "graves": 52,
-    "demos": 8,
+    "graves": 67,
+    "demos": 9,
     "researchEntries": 35,
     "candidateIdeas": 20,
     "books": 29
@@ -33,12 +33,12 @@
       "audio": 1
     },
     "graveCategory": {
-      "gebaut": 30,
-      "beim-empfaenger": 11,
-      "reality-check": 5,
+      "gebaut": 37,
+      "beim-empfaenger": 14,
+      "reality-check": 7,
       "duplikat": 2,
       "mode": 3,
-      "praemisse": 1
+      "praemisse": 4
     }
   },
   "checks": [
@@ -75,6 +75,14 @@
   ],
   "findings": [
     {
+      "id": "DEMO-NO-README-umsetzungsplan-register",
+      "severity": "warning",
+      "category": "demo",
+      "message": "Demo 07-demos/umsetzungsplan-register is missing a README file.",
+      "file": "07-demos/umsetzungsplan-register",
+      "relatedId": "umsetzungsplan-register"
+    },
+    {
       "id": "DEMO-UNLINKED-chemhazard-stop",
       "severity": "warning",
       "category": "demo",
@@ -86,11 +94,11 @@
       "id": "DRIFT-AGENTS.md-Gräber-33",
       "severity": "warning",
       "category": "documentation",
-      "message": "AGENTS.md claims 33 Gräber, but deterministic source scanner finds 52.",
+      "message": "AGENTS.md claims 33 Gräber, but deterministic source scanner finds 67.",
       "file": "AGENTS.md",
       "details": {
         "claim": "33 beerdigte Ideen",
-        "actual": 52,
+        "actual": 67,
         "type": "stale_count"
       }
     },
@@ -98,11 +106,11 @@
       "id": "DRIFT-AGENTS.md-Gräber-9",
       "severity": "warning",
       "category": "documentation",
-      "message": "AGENTS.md claims 9 Gräber, but deterministic source scanner finds 52.",
+      "message": "AGENTS.md claims 9 Gräber, but deterministic source scanner finds 67.",
       "file": "AGENTS.md",
       "details": {
         "claim": "9 Gräber",
-        "actual": 52,
+        "actual": 67,
         "type": "stale_count"
       }
     },
