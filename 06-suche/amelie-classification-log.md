@@ -710,3 +710,179 @@ Kurzbegründung: Der Lückensatz ist originell (V1 4). Der Reality-Check scheite
 - **Zeitkonflikte zwischen Engines sind oft keine Widersprüche, sondern zwei verschiedene Stichtage.** Hier waren es „Pflicht gilt" (GJ 2025) und „Format gilt" (GJ ab 02.03.2027). Vor einem Urteil beide Daten getrennt ausweisen. Der Zeitraum dazwischen ist oft genau das Why-Now-Fenster.
 - **„Offenlegungspflicht ohne Register → Register frei" braucht zwei Zusatzprüfungen:** Ist die Pflicht bedingt, sodass „fehlend" nichts beweist? Und gibt es eine Nennerliste der Verpflichteten? Beide Prüfungen haben die Beweismittel-These von Engine 3 entkräftet, ohne die Idee zu töten.
 - **Exakttitel-Suche nach dem Pflichtdokument ist die schnellste Prämissenprobe.** Die Überschrift aus dem Durchführungsrechtsakt fand die Signify-Offenlegung, nachdem sieben thematische Suchen nichts gebracht hatten. Das wird Standard für jede Offenlegungsidee.
+
+---
+
+## Offenlegungs-Runde (Teamrunde, Orchestrierung Run 2) — 28.09.2026
+
+**Reviewer:** Idea Reviewer (7-Vektoren-Audit) · **Eingänge:** Merge K1–K6 aus Engine 1 (`amelie-ideenrunde`), Engine 2 (`lacunar-bisociation`, Run 11), Engine 3 (`asymmetric-inversion`, Run 5); K7–K13 gehen direkt an den Bibliothekar · **Friedhof-Gang:** `08-friedhof/README.md`: kein Grab zu EnEfG, DSA, TTPA, EzB, EntgTranspG oder Konfliktmineralien. Nächster Nachbar ist `Wheelmap: Eingangsfoto → Barrierefreiheit` (16.09.2026, anderes Objekt). Kein Wiedergänger. **Bestandsgang `05-dosen/`:** Einziger struktureller Nachbar ist `vernichtungs-offenlegungsregister` (gleiches Muster, anderes Regime, anderer Empfänger). K1 ist **kein Baustein** davon, soll aber dessen Registerkern übernehmen (zwei Status, Fundstelle, Abrufdatum, Archiv-Snapshot).
+**Evidenzstufe:** Netz offen. Der Reviewer hat die Normtexte **selbst gelesen [Seite]**: BT-Drs. 21/8027 (PDF, 118 S., dserver.bundestag.de), EED (EU) 2023/1791 Art. 11, DSA Art. 15/24, DVO (EU) 2024/2835 Art. 1–3, TTPA (EU) 2024/900 Art. 12/13 (alle EU-Texte über `publications.europa.eu/resource/celex/<CELEX>`), §§ 21/22 EntgTranspG, BAFA-Merkblatt EnEfG (Stand 12.02.2025, Kopie auf visalvis.de), DSC-Tätigkeitsbericht 2025, drei echte Umsetzungsplan-PDFs. 14 Suchen, 12 Abrufe.
+**Ergebnis in einem Satz:** **Eine Dose Ready: K1 (25/35).** K3 geht als Needs Research zurück. K2, K4, K5 und K6 sind Friedhof-Kandidaten. Kein `Market Route`.
+
+### Scoreboard Offenlegungs-Runde
+
+| Rang | Idea ID | Titel | Herkunft | Score (/35) | Niedrigster Vektor | Tier | Quelle | Triage Verdict |
+|:---:|---|---|---|:---:|---|:---:|---|---|
+| 1 | `umsetzungsplan-register` | EnEfG-§-9-Umsetzungsplan-Register (K1) | #1 + #2 + #3 (Dreifachfund) | **25/35** | V1/V2/V5 = 3 | Tier 1 (Kern) / Tier 2 (Register) | Type A [Seite] + 3 Plan-PDFs [Seite] | `Dose Ready (mit Auflagen)` |
+| 2 | `dsa-anordnungs-gegenbuch` | DSA-Art.-15-Cluster (K2) | #1 + #2 + #3 (Dreifachfund) | **22/35** | V5 = 2 | Tier 2 | Type A [Seite] | `Friedhof (praemisse)` |
+| 3 | `wahlwerbe-herbarium` | Wahlwerbe-Herbarium TTPA (K3) | #2 | **22/35** | V5 = 2 | Tier 2 | Type A [Seite] + netzpolitik [Seite] | `Needs Research` |
+| 4 | `ezb-register` | EzB-Register (K4) | #3 | **20/35** | V1/V5/V6 = 2 | Tier 2/3 (Crawler) | Type A + Überwachungsbericht | `Friedhof (beim-empfaenger)` |
+| 5 | `konfliktmineralien-berichtsregister` | Konfliktmineralien-Register (K6) | #1 + #3 (Doppelfund) | **17/35** | V5 = 1 | Tier 2 | Type A | `Friedhof (reality-check)` |
+| 6 | `gleichstellungsbericht-archiv` | Gleichstellungsbericht-Archiv (K5) | #1 (+ #3 berührt) | **16/35** | V4 = 1 | Tier 2 | Type A [Seite] | `Friedhof (reality-check)` |
+
+---
+
+### Review Scorecard: EnEfG-§-9-Umsetzungsplan-Register (`umsetzungsplan-register`) — K1
+**Origin:** Dreifachfund (E1 S1 frei dünn, E2 unklar „Tendenz tot", E3 frei dünn) · **Category:** civic / Energie-Vollzug · **Intended Recipient:** DENEFF (Christian Noll, geschäftsführender Vorstand, als Autor der Novellen-Erklärseite vom 07.07.2026 genannt [Seite]); nachrangig Umweltinstitut München (Dr. Leonard Burtscher, Autor der EnEfG-Meldung vom 17.07.2024 [Seite], heutige Funktion nicht geprüft).
+
+**Kernfrage des Merge (Unternehmensregister?), geklärt am Primärtext:**
+- **Nein.** Der Regierungsentwurf **BT-Drs. 21/8027 vom 16.09.2026** [Seite] enthält in § 9 n. F. **kein Unternehmensregister** und keinen § 8b HGB. Das Wort „Unternehmensregister" kommt im ganzen Entwurf nur als Destatis-Statistikquelle vor. § 9 Abs. 1 n. F.: Pflicht, „innerhalb von drei Monaten nach Abschluss eines Energieaudits … Umsetzungspläne zu erstellen und zu veröffentlichen" (2,77 bis < 23,6 GWh). Abs. 4: jährliche Aktualisierung; Pläne und Umsetzungsquote „**sollen** im Jahresbericht des Unternehmens aufgeführt werden". Abs. 5: Ausnahme für Geschäftsgeheimnisse. Abs. 6: Ausnahme für Unternehmen mit EnMS/UMS. § 18 n. F.: BAFA-Stichproben auch zur Veröffentlichung. § 19 Abs. 1 Nr. 2: Bußgeld für Nicht-Veröffentlichung. Die Schnipsel von Engine 2 (energieundrecht.com, twobirds) und der Grant-Thornton/DQS-Schnipsel „Veröffentlichung im Unternehmensregister" sind **durch den Primärtext widerlegt**. Vermutlich beschreiben sie den Referentenentwurf. **Der Fundort bleibt verstreut: Firmenwebsite oder Jahresbericht.**
+- **Neues Risiko im selben Dokument:** Der **Bundesrat beantragt die Streichung der Veröffentlichungspflicht** (Stellungnahme Nr. 25: „Die Streichung der Veröffentlichungspflicht ist … ein Beitrag zum Bürokratieabbau"). Die Bundesregierung stimmt nur „teilweise" zu, nämlich bei der 23,6-GWh-Lücke, und hält an der Drei-Monats-Frist und der Veröffentlichung fest [Seite].
+- **Das Risiko ist gedeckelt:** **EED Art. 11 Abs. 2 UAbs. 3** [Seite, CELEX 32023L1791]: „Die Mitgliedstaaten stellen sicher, dass die Aktionspläne und Umsetzungsquote der Empfehlungen im Jahresbericht des Unternehmens aufgeführt und öffentlich zugänglich gemacht werden." Eine Streichung wäre also unionsrechtswidrig. Die Pflicht ist unionsrechtlich verankert und gilt in allen 27 Mitgliedstaaten für Unternehmen > 10 TJ ohne EnMS.
+- **Pflichtfrage 3 (nennt die Norm einen Sammler oder ein Format?):** Einen Sammler nennen weder EED noch EnEfG. Art. 11 Abs. 3 EED sieht nur eine Behördenplattform für Verbrauchsdaten vor, nicht für die Pläne. Ein **Format gibt es aber faktisch**: Das BAFA-Merkblatt schreibt 7 Pflichtangaben mit Musterbeispiel vor (Priorität, Maßnahmenbezeichnung, Investitionsvolumen, Zeitrahmen, Herkunft, verantwortliche Funktion, Status ∈ {Offen, In Bearbeitung, Abgeschlossen}) und nennt als Ort „öffentlicher Unternehmensbericht oder separates Dokument auf der Internetseite" [Seite, Merkblatt 12.02.2025].
+- **Prämissenprobe mit echten PDFs:** Die Exakttitel-Suche liefert ≥ 10 Pläne [Schnipsel]. Selbst gelesen [Seite]: **Sanofi-Aventis Deutschland (11/2025)** und **VON ARDENNE (07.04.2025)** übernehmen die 7 Spalten des BAFA-Musters **wörtlich**. SWU ist ein zweiseitiges Erklärdokument ohne Standardtabelle. **Diakonie Stetten liefert schon heute 404**, Linkfäule nach gut einem Jahr. **Korrektur an Engine 1/3:** Die Pläne enthalten **weder MWh/a noch Kapitalwert**. Die Kernzahl „als wirtschaftlich ausgewiesen, aber nicht umgesetzt" lässt sich trotzdem bilden, denn jede Maßnahme im Plan ist per Definition wirtschaftlich (§ 9 Abs. 2) und der Status steht in der Tabelle. Eine Energie-Einsparsumme lässt sich **nicht** bilden. Aggregierbar ist dagegen das Investitionsvolumen der offenen Maßnahmen.
+- **Sammler?** Gegen-Suchen (DE/EN, DENEFF, Fraunhofer ISI, Umweltinstitut, BfEE, EED-Art.-11-Tracker) finden nur Berater-Erklärtexte, die Fraunhofer-ISI-Kurzexpertise für DENEFF und Umweltinstitut (Modellrechnung ~54 TWh Mindereinsparung, nicht aus Plandaten) [Schnipsel] sowie zwei Springer-Papers 2025 zu **nicht-öffentlichen** Auditdaten der Energieagenturen [Schnipsel]. **Kein Aggregator der veröffentlichten Pläne.** Umweltinstitut-Seite [Seite]: kritisiert, sammelt nicht.
+- **Atlas-Pflichtfragen:** (1) **Bedingt**: Verbrauchsschwelle nicht öffentlich, EnMS-Ausnahme, Geschäftsgeheimnis-Schwärzung, Frist läuft ab Audit. Das Werkzeug sagt nie „säumig". (2) **Keine Liste der Verpflichteten.** Nenner nur als Schätzung: Die Drucksache rechnet mit **rund 16.461 Verpflichteten** nach der Novelle, vorher ~24.855 [Seite]. Das ist eine Behördenschätzung, keine Liste. Ausgabe also „N gefundene Pläne", nie eine Quote der Verpflichteten.
+
+**Einwände des Advocatus Diaboli:**
+1. **Selektionsverzerrung:** Veröffentlichen tun die Sorgfältigen. Die Umsetzungsquote der gefundenen Pläne ist eine Obergrenze-Tendenz für Disziplinierte, kein Branchenmaß. Das muss im Werkzeug stehen.
+2. **Lead-Liste:** Eine Tabelle „offene wirtschaftliche Maßnahmen + Investitionsvolumen je Firma" ist auch eine Vertriebsliste für Contractoren und Energiedienstleister. Das ist kein Grund zum Töten, denn die Daten sind Pflichtveröffentlichungen. Es ist aber ein Grund für eine neutrale Präsentation ohne Ranking und ein Hinweis an den venture-analyst (siehe unten).
+3. **Formatdrift:** Mit Wegfall der Drittbestätigung und einer Novelle des Merkblatts kann sich das Muster ändern. Das Schema muss versioniert gegen die **jeweils gültige** Merkblattfassung laufen. Gelesen wurde die Fassung 02/2025, laut Schnipseln gibt es neuere Fassungen von 10/2025 und 05/2026.
+
+#### 1. Vector Radar (Score: 25/35)
+| Vector | Score (1-5) | Key Finding / Grounding |
+|---|:---:|---|
+| **V1 · Novelty** | 3/5 | Exploratory. Lückensatz: „Tausende Firmen müssen öffentlich sagen, welche wirtschaftlichen Sparmaßnahmen noch offen sind, aber niemand zählt, wie viele liegen bleiben." Abzug: gleiches Muster wie `vernichtungs-offenlegungsregister`. |
+| **V2 · Complexity** | 3/5 | Kern Tier 1 (7-Felder-Schema + Prüfer + Statusquote). Register Tier 2 (statische CSV, jährlicher Kuratorlauf, Archiv-Snapshots). PDF-Tabellenextraktion beim Kurator. |
+| **V3 · Possibility** | 4/5 | Prämisse am Primärmaterial belegt: echte PDFs folgen dem BAFA-Muster wörtlich, Status ist ein geschlossenes Vokabular, also deterministisch prüfbar. Einschränkung: keine MWh, heterogene Ausreißer (SWU). |
+| **V4 · Future/Longevity** | 4/5 | Unionsrechtlich verankert (EED Art. 11 Abs. 2), jährliche Aktualisierung ergibt eine Zeitreihe. Abzug: Fundort und Format können mit Novelle und Merkblatt driften. |
+| **V5 · Civic SWOT** | 3/5 | Stärke: Die Debatte läuft jetzt (1. Lesung 24.09.2026, Bundesrat will die Veröffentlichung streichen), der Empfänger argumentiert bislang nur mit Modellrechnungen. Achillesferse: bedingte Pflicht, kein Nenner, Selektionsverzerrung, Lead-Listen-Lesart. |
+| **V6 · Tech Tree** | 4/5 | Klarer Stamm. Äste: Zeitreihe Umsetzungsquote, Übertragung auf alle 27 MS (EED Art. 11), gemeinsamer Offenlegungs-Kern mit `vernichtungs-offenlegungsregister`. |
+| **V7 · Documentation** | 4/5 | Type A im Primärtext gelesen: § 9 EnEfG, BT-Drs. 21/8027 inkl. Stellungnahme/Gegenäußerung, EED Art. 11, BAFA-Merkblatt; dazu 3 echte Pläne. Nicht 5, weil nicht die aktuelle Merkblattfassung gelesen wurde. |
+
+#### 2. Tech Tree Position
+```
+[Roots] EED (EU) 2023/1791 Art. 11 Abs. 2 · § 9 EnEfG (+ BT-Drs. 21/8027) · BAFA-Merkblatt EnEfG (7 Pflichtangaben, Status-Vokabular) · DIN EN 17463 (Wirtschaftlichkeitsdefinition) · pdf.js / Tabellenextraktion
+        └── [Trunk] umsetzungsplan-schema.json (versioniert nach Merkblattfassung) + pruefePlan(plan) → {pflichtangabenFehlend[], statusVerteilung, investitionOffen} + 3 Fixtures (Sanofi, VON ARDENNE, Muster GmbH aus Merkblatt)
+                    ├── [Branch A] Register: statische CSV je Unternehmen × Planstand, Status „gefunden / kein Plan gefunden (Stand, Suchweg)", Archiv-Snapshot gegen Linkfäule
+                    ├── [Branch B] Zeitreihe ab jährlicher Aktualisierung: Wie viele „Offen" werden „Abgeschlossen"?
+                    └── [Branch C] Evidenz für DENEFF/Umweltinstitut im Bundestagsverfahren; Übertragung auf andere EU-Staaten
+```
+
+#### 3. Civic SWOT
+| Strengths (S) | Weaknesses (W) |
+|---|---|
+| • Öffentliche Pflichtdokumente, keine personenbezogenen Daten (nur Funktionsbezeichnungen)<br>• De-facto-Standardformat des BAFA, deterministischer Kern<br>• Unionsrechtlich abgesichert | • Kein Nenner, bedingte Pflicht<br>• Selektionsverzerrung der Quote<br>• Keine Energiemengen in den Plänen |
+| **Opportunities (O)** | **Threats (T)** |
+| • Bundestagsverfahren läuft (Herbst 2026)<br>• Pläne verschwinden (404), wer jetzt archiviert, sichert den Jahrgang<br>• EU-weite Übertragung | • Streichung durch Bundestag (dann Vertragsverletzung, aber de facto weniger Pläne)<br>• Pranger- und Lead-Listen-Lesart<br>• BAFA oder BfEE bauen eigenes Register |
+
+* **Achillesferse:** Eine Quote aus gefundenen Plänen wird als Branchenquote gelesen. → *Abhilfe:* Ausgabe nur „N gefundene Pläne, davon M Maßnahmen offen", Selektionshinweis fest im Kopf jeder Auswertung, nie „säumig".
+* **Verteidigungsanker:** Der Prüfer gegen die BAFA-Pflichtangaben ist auch für Unternehmen und BAFA-Stichproben nützlich.
+
+#### 4. Synthesis Verdict & Triage
+* **Verdict:** `Dose Ready (Packen)`, **25/35, mit Auflagen.** Kein Vektor < 3, Kern Tier 1, Type A im Primärtext gelesen. `frei` steht nicht mehr nur auf Schnipseln: Die Normlage (kein Sammler, kein Register) ist [Seite]. Die Abwesenheit eines Aggregators ist durch eigene Gegen-Suche (6 Suchen, DE/EN) gestützt.
+* **Auflagen:** (1) Schema aus der **aktuell gültigen** BAFA-Merkblattfassung ableiten (bafa.de lesen; bis dahin `vorläufig`). (2) Nie „säumig" oder „Verstoß"; nur zwei Status. (3) Keine Quote gegen die 16.461-Schätzung; Selektionshinweis Pflicht. (4) Kein Ranking nach Firmen, nur Aggregat und Einzelnachweis. (5) Registerkern (Status, Fundstelle, Abrufdatum, Snapshot) aus `src/engine/vernichtungs-offenlegungsregister/` wiederverwenden, nicht neu erfinden. (6) Empfängerperson vor Versand auf deneff.org verifizieren. (7) Bundestagsbeschluss abwarten ist **nicht** nötig: Die Dose trägt unter altem und neuem § 9. Das Schema braucht aber ein Feld `rechtsstand` (a. F. / n. F.).
+* **Vorgeschlagene id:** `umsetzungsplan-register`
+* **Empfänger:** DENEFF e.V., Christian Noll (geschäftsführender Vorstand; Mandat: Effizienzpolitik, kämpft gegen die Aufweichung der Novelle) — Name und Adresse von deneff.org [Seite, 07.07.2026], **vor Versand erneut verifizieren**. Nachrangig Umweltinstitut München (Dr. Leonard Burtscher, Stand 2024, **nicht verifiziert**).
+* **Erster Schritt (Ticket 01):** `umsetzungsplan-schema.json` aus den 7 BAFA-Pflichtangaben und dem Statusvokabular bauen, dazu einen deterministischen Prüfer `pruefeUmsetzungsplan()` (Pflichtangaben vorhanden, Status ∈ Vokabular, Zeitrahmen parsebar, Investitionsvolumen numerisch, Statusverteilung und Investitionssumme „Offen"). Vitest mit drei Fixtures: Muster GmbH aus dem Merkblatt, Sanofi 11/2025 und VON ARDENNE 04/2025, von Hand übertragen, mit Quell-URL und Abrufdatum.
+* **Venture-Notiz (kein Market Route):** Die Lead-Listen-Lesart hat B2B-Wert für Energiedienstleister. Die Daten sind aber öffentliche Pflichtangaben und als CC0 trivial kopierbar. Die Verteidigungsfähigkeit ist gering, das Gemeingut überwiegt. Kein Gabelurteil.
+
+---
+
+### Review Scorecard: DSA-Art.-15-Cluster (`dsa-anordnungs-gegenbuch`) — K2
+**Origin:** Dreifachfund mit drei Zuschnitten: E1 „langer Schwanz Nicht-VLOP" (verengt), E2 „Anordnungs-Gegenbuch" (verengt), E3 „Berichtsvergleich" (besetzt, nur Schnipsel) · **Intended Recipient:** GFF, netzpolitik.org, AlgorithmWatch, DSA Observatory (nicht verifiziert).
+
+**Widerspruch der Engines aufgelöst [Seite]:**
+- **„Kommission sammelt" (E3) stimmt nur für VLOP/VLOSE.** digital-strategy.ec.europa.eu/en/policies/dsa-brings-transparency verlinkt nur Berichte der benannten sehr großen Dienste. Für Art.-15-Berichte aller anderen Vermittlungsdienste nennt die Seite kein Repositorium [Seite]. Auch die **DVO 2024/2835** nennt keinen Sammler: Art. 1 Abs. 2 „öffentlich zugänglich gemacht", Art. 2 Abs. 3 binnen zwei Monaten, Art. 3 fünf Jahre Aufbewahrung und öffentliche Zugänglichkeit aller Fassungen [Seite]. **Pflichtfrage 3: Format ja (CSV/XLSX Anhang I), Sammler nein.** Für Nicht-VLOPs ist E1/E2 also richtig.
+- **Das Gegenbuch hat eine echte Datengrundlage:** DSA Art. 15 Abs. 1 lit. a verlangt die Aufschlüsselung der Anordnungen „nach … dem die Anordnung erlassenden Mitgliedstaat" [Seite]. Summen „aus DE" lassen sich also aus jedem Bericht ablesen.
+- **Aber die Lücke ist erklärt, nicht versteckt:** Der DSC-Bericht 2025 [Seite] nennt 19 Art.-9- und 23 Art.-10-Anordnungen und begründet selbst, warum das nicht alle sind: Wegen Art. 9 Abs. 6 / 10 Abs. 6 DSA werden viele, v. a. strafprozessuale Anordnungen nicht an den DSC übermittelt; das Portal läuft erst seit 2025 an. Das Gegenbuch würde eine Differenz messen, die die Behörde bereits rechtlich erklärt. **Beweismittelwert gering.**
+- **VLOP-Seite dicht (Forschung):** HIIG 09/2025, RTFP (GitHub), Open Terms Archive (29 Anbieter), Trujillo/Tessa/Cresci „Disarranged Harmonization …" (arXiv 2605.17655, 17.05.2026, 8 größte Social-Media-Plattformen) [Seite]. VLOPs dominieren die Anordnungszahlen. Ohne VLOPs bleibt das Gegenbuch fast leer, mit VLOPs ist es Forschungsgebiet.
+- **Nicht-VLOP-Vergleich:** Kein Nenner (keine öffentliche Anbieterliste, Kleinst-/Kleinunternehmen nach Art. 15 Abs. 2 ausgenommen). Niemand nennt fehlende Vergleichbarkeit kleiner Anbieter als Engpass.
+
+#### Vector Radar (Score: 22/35)
+| Vector | Score | Key Finding |
+|---|:---:|---|
+| V1 | 3/5 | Gegenstück-Paar ist originell, Lückensatz trägt aber nur für Nicht-VLOPs. |
+| V2 | 3/5 | Tier 2: CSV-Parser deterministisch, Auffinden der Berichte ist Crawl-Arbeit ohne Liste. |
+| V3 | 3/5 | Technisch machbar, Datenbasis außerhalb der VLOPs dünn. |
+| V4 | 4/5 | EU-Verordnung, harmonisiertes Format seit 2026. |
+| V5 | 2/5 | Differenz vom DSC selbst erklärt, kein Empfänger mit Vollzugshebel, Nicht-VLOP-Vergleich ohne Nachfrage. |
+| V6 | 3/5 | Parser wäre wiederverwendbar, aber kein Ast mit Wirkung. |
+| V7 | 4/5 | DSA, DVO, DSC-Bericht im Primärtext. |
+
+* **Verdict:** `Friedhof`. **Totenschein:** `cause: praemisse` (die DSC-Differenz ist rechtlich erklärt; ein Vergleich kleiner Anbieter wird von niemandem als Engpass genannt), `killer: forschung` (VLOP-Seite: HIIG, Trujillo et al. 2026, RTFP, Open Terms Archive), `foundBy: englisch`, `origin: bisoziation` (Gegenbuch) / `quelle` (E1), `stage: kandidat`. **resurrectIf:** Der DSC veröffentlicht ein Anbieterverzeichnis (Nenner), oder eine Stelle mit Mandat (GFF, Bundestag) fragt nach der Zahl der nicht übermittelten Anordnungen.
+* **Einmal-Test statt Dose (für Journalisten, nicht Amélie):** Summe „DE" aus den H1/2026-CSV von Meta, Google und TikTok gegen 42 DSC-Anordnungen. Das ist eine Tabellenkalkulation, kein Werkzeug.
+
+---
+
+### Review Scorecard: Wahlwerbe-Herbarium (`wahlwerbe-herbarium`) — K3
+**Origin:** E2 (TTPA × Herbarium, D4, frei dünn) · **Intended Recipient:** LobbyControl; Martin Fuchs (Fachkontakt); FragDenStaat/OKF — **keine Person verifiziert**.
+
+**Gegen-Suche und Primärtext:**
+- **TTPA Art. 12 Abs. 3** [Seite]: Die Transparenzbekanntmachung muss „während des Zeitraums der Schaltung … jederzeit leicht auffindbar sein". **Abs. 4:** Die Herausgeber **bewahren** sie sieben Jahre **auf**, von öffentlicher Zugänglichkeit ist nicht die Rede. Die These „ereignisgebundene Offenlegung verschwindet" ist damit **normativ gedeckt**. Ob die Hinweise tatsächlich verschwinden, ist noch nicht gezeigt: gruene.berlin und volt Berlin waren eine Woche nach der Wahl noch online (E2 [Seite]).
+- **Art. 13** [Seite]: Das europäische Archiv umfasst nur **Online**-Anzeigen. **Pflichtfrage 3: Für Offline-Werbung (Plakate, Flyer) nennt die Norm keinen Sammler.** Die Lücke ist strukturell.
+- **netzpolitik.org, 04.09.2026 (Ingo Dachwitz)** [Seite]: einmalige Stichprobe Sachsen-Anhalt, keine Sammlung angekündigt. **Martin Fuchs fordert** eine gemeinsame, maschinenlesbare Plattform „z. B. bei Landeswahlleiter oder Landesdatenschutzbeauftragten". Die Nachfrage ist belegt, aber an eine **Behörde** adressiert. Beträge sind real und heterogen (CDU Magdeburg ~30.000 €, FDP ~275.000 € Plakate, SPD bis 229,90 € pro Plakat).
+- **Sammler?** Zwei Gegen-Suchen (DE/EN) [Schnipsel]: nichts zu Offline-Hinweisen. Online-Seite: liberties.eu, Who Targets Me, TechPolicy.Press arbeiten nach dem Rückzug von Meta und Google aus politischer Werbung (10/2025).
+- **PWTG:** 1. Lesung 27.02.2026, nicht beschlossen [Schnipsel]. Es regelt Aufsicht und womöglich eine Veröffentlichungsplattform. Das ist die offene Killerfrage.
+- **Atlas:** (1) Bedingt (was „politische Werbung" ist, bleibt umstritten), also nur „kein Hinweis gefunden am <Datum>". (2) Nenner nur für Parteien (zugelassene Wahlvorschläge), nicht für Dritte.
+
+#### Vector Radar (Score: 22/35)
+| Vector | Score | Key Finding |
+|---|:---:|---|
+| V1 | 4/5 | Lückensatz: „Was eine Partei im Wahlkampf über Kosten und Geldgeber ihrer Plakate erklärt, muss nach der Wahl nicht mehr öffentlich sein." Kein Vorbild offline. |
+| V2 | 3/5 | Tier 2: Kampagnen-Crawl + Archiv-Snapshot (SavePageNow) + QR-Foto-Erfassung. |
+| V3 | 3/5 | Machbar, aber QR oft unlesbar, Formate heterogen, Erfassung zeitkritisch. |
+| V4 | 3/5 | EU-Verordnung, aber episodisch (Wahltermine). PWTG kann eine Behördenplattform schaffen. |
+| V5 | 2/5 | Beweismittelwert unklar: keine Aufsicht bis PWTG, Vergleich mit Rechenschaftsbericht strukturell schwach (andere Aggregationsebene), Ehrenamtsermüdung zwischen Wahlen. |
+| V6 | 3/5 | Stamm (Hinweis-Schema nach Art. 12 Abs. 1 lit. a–e) klar, Äste abhängig von PWTG. |
+| V7 | 4/5 | TTPA Art. 12/13 und netzpolitik im Primärtext. |
+
+* **Verdict:** `Needs Research`. **Drei Prüfaufträge:** (a) PWTG-Entwurf (BT-Drs.) lesen: Welche Aufsicht? Sieht das Gesetz eine Veröffentlichungsplattform vor? Wenn ja → Friedhof `behoerde`. (b) **Verschwinden messen:** Am ~01.12.2026 die Hinweis-Seiten der Wahlen Sachsen-Anhalt, Berlin und MV (09/2026) erneut abrufen. Sind > 50 % weg, ist die Prämisse belegt. (c) Einen Rechenschaftsbericht (PartG) neben die Hinweise legen und prüfen, ob Beträge überhaupt vergleichbar sind. Wiedervorlage **12/2026**.
+
+---
+
+### Review Scorecard: EzB-Register (`ezb-register`) — K4
+**Origin:** E3 · **Intended Recipient:** BFIT-Bund / Überwachungsstellen der Länder; DasDies (AWO).
+
+- **Der Staat misst es schon:** Der zweite Überwachungsbericht nach Art. 8 RL 2016/2102 (an die Kommission übermittelt am 05.03.2025, BFIT-Bund mit Landesstellen) prüfte **7.239 Webauftritte und 269 Apps** und weist den **Anteil mit Erklärung zur Barrierefreiheit** aus: **36,13 % (2020/21) → 47,75 % (2024)** [Seite, reha-recht.de]. Das NL-Dashboard ist staatlich (E3 [Seite]). Der **Atlas digitale Barrierefreiheit** (DasDies, AWO) hat 2024 alle ~11.000 Kommunen geprüft, einschließlich „Barrierefreiheit erwähnt" [Schnipsel]. Pflichtfrage 3: Die RL nennt Mustererklärung (DB 2018/1523) und Überwachungsstelle, also sind Format und Sammler per Norm vorhanden.
+- **Restlücke:** eine namentliche Vollliste statt Stichprobe. Das ist ein Pranger, kein Befund, und der Why-Now (LLM liest Erklärungen) ist dünn, denn die Pflicht besteht seit 2020.
+
+| V1 2 · V2 3 · V3 3 · V4 4 · V5 2 · V6 2 · V7 4 | **20/35** |
+|---|---|
+
+* **Verdict:** `Friedhof`. **Totenschein:** `cause: beim-empfaenger`, `killer: behoerde` (BFIT-Bund + Länder, Überwachungsbericht Art. 8 WAD; daneben Atlas digitale Barrierefreiheit, gemeinnützig), `foundBy: empfaenger`, `origin: quelle`, `stage: kandidat`. **resurrectIf:** Der Überwachungsbericht verzichtet auf die EzB-Kennzahl, oder BFIT-Bund fragt öffentlich nach einem Vollverzeichnis.
+
+---
+
+### Review Scorecard: Gleichstellungsbericht-Archiv (`gleichstellungsbericht-archiv`) — K5
+**Origin:** E1 S4 (+ E3 Entgeltgefälle besetzt per Gesetz) · **Intended Recipient:** djb, BPW Germany.
+
+- **Pflichtfrage 3 beantwortet die Normfrage selbst:** **§ 22 Abs. 4 EntgTranspG** [Seite]: Der Bericht ist dem Lagebericht als Anlage beizufügen „und im **Unternehmensregister** offenzulegen". Der Fundort ist also gesetzlich zentral.
+- **Die Prämisse „Nullmessung vor der Entgelttransparenz-RL" trägt nicht:** **§ 21 Abs. 1/2** [Seite] verlangt Prosa zu Maßnahmen und nur nach Geschlecht aufgeschlüsselte **Beschäftigten- und Voll-/Teilzeitzahlen**, **keine Entgeltangaben**. Ein Entgeltgefälle als Ausgangswert lässt sich daraus nicht gewinnen.
+- **Fenster schließt:** Die RL 2023/970 (Frist 07.06.2026 verpasst) bringt Art.-9-Berichte, die die Überwachungsstelle nach Art. 29 Abs. 3 lit. c selbst sammelt und veröffentlicht (E3 [Seite]).
+
+| V1 2 · V2 3 · V3 2 · V4 1 · V5 2 · V6 2 · V7 4 | **16/35** |
+|---|---|
+
+* **Verdict:** `Friedhof`. **Totenschein:** `cause: reality-check` (Berichte enthalten keine Entgeltdaten; Fundort per Gesetz zentral), `killer: behoerde` (Unternehmensregister; künftig Überwachungsstelle Art. 29 RL 2023/970), `foundBy: deutsch`, `origin: quelle`, `stage: kandidat`. **resurrectIf:** nie in dieser Form; die RL-Umsetzung ist ein eigenes Thema (K5b schon `behoerde`).
+
+---
+
+### Review Scorecard: Konfliktmineralien-Berichtsregister (`konfliktmineralien-berichtsregister`) — K6
+**Origin:** E1 S3 + E3 (Doppelfund) · **Intended Recipient:** IPIS, Germanwatch, AK Rohstoffe.
+
+- **Pflichtfrage 2 scheitert endgültig:** In DE unterliegen ~150 Unionseinführer jährlich der VO (Zolldaten) [Schnipsel, IHK/BGR-FAQ]. Ihre Identität ist nicht öffentlich (IPIS: öffentliche Liste nur in Österreich [Schnipsel, E1]). **DEKSOR (BGR) prüft risikobasiert jährlich** [Schnipsel]. Art. 7 Abs. 3 verlangt einen öffentlichen Jahresbericht [Seite, E1 via legislation.gov.uk]. Ein Register ohne Einführerliste findet nur, wer freiwillig sichtbar ist.
+- Kein Why-Now: keine neue Pflicht seit 2021, die NGO-Auswertung 2023 lief einmalig und ohne Folgen.
+
+| V1 2 · V2 3 · V3 2 · V4 3 · V5 1 · V6 2 · V7 4 | **17/35** |
+|---|---|
+
+* **Verdict:** `Friedhof`. **Totenschein:** `cause: reality-check` (kein Nenner; Einführeridentität aus Zolldaten nicht öffentlich), `killer: behoerde` (DEKSOR/BGR; daneben IPIS-Koalition 2023, forschung), `foundBy: deutsch`, `origin: quelle`, `stage: kandidat`. **resurrectIf:** Die Kommission oder DEKSOR veröffentlicht eine Liste der Unionseinführer.
+
+---
+
+### Retro des Reviewers (Offenlegungs-Runde)
+- **Schnipsel über Gesetzentwürfe sind besonders unzuverlässig:** Zwei Kanzlei- und Beraterschnipsel („Veröffentlichung im Unternehmensregister") beschrieben offenbar den Referentenentwurf. Die Drucksache sagte etwas anderes. **Bei laufenden Novellen immer die jüngste BT-Drucksache lesen** (`dserver.bundestag.de/btd/<WP>/<3-stellig>/<WP><5-stellig>.pdf`), inklusive Stellungnahme des Bundesrats und Gegenäußerung. Dort stand das eigentliche Risiko (Streichungsantrag).
+- **Pflichtfrage 3 um die Gegenrichtung erweitern:** Nicht nur „nennt die Norm einen Sammler?", sondern auch „**deckelt eine höhere Norm die Pflicht?**" (EED Art. 11 über § 9 EnEfG). Das macht die Lebensdauer gegen nationale Abschwächung robust.
+- **Prämissenprobe heißt: drei echte Dokumente öffnen, nicht nur Titel finden.** Erst das Lesen zeigte, dass die Pläne keine MWh enthalten und dem BAFA-Muster wörtlich folgen. Das hat die Kernzahl verändert und den deterministischen Kern erst möglich gemacht.
+- **Dreifachfund ≠ Qualität:** K2 war dreifach gefunden und stirbt trotzdem, weil die Differenz, die es messen wollte, von der Behörde bereits erklärt ist. Bei Gegenstück-Paaren zuerst prüfen, ob die Stelle die Lücke selbst begründet.
