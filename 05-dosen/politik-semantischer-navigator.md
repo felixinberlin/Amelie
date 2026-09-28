@@ -1,0 +1,7 @@
+# Dossier: Policy Semantic Navigator
+
+The "Policy Semantic Navigator" is a browser-native tool designed to enhance the efficiency and coherence of policy development and review within public administrations. Current processes for analyzing legislative drafts, regulations, expert opinions, and public consultations often rely on manual review and keyword-based search, leading to significant friction and potential inconsistencies.
+
+This tool leverages local Large Language Models (LLMs) and WebGPU/WASM technologies to semantically index documents directly within the user's browser. It creates an interactive knowledge graph that visualizes connections, dependencies, overlaps, and potential conflicts between various policy documents. Case workers and legislators can thus intuitively navigate complex topics, better understand the cumulative impacts of regulations, and quickly identify historical references.
+
+The project addresses the gap in the ability to quickly and comprehensively identify semantic relationships within large text corpora of public administration. It enables a "VibeCoding" experience through a responsive, visual user interface that makes knowledge discovery playful and efficient.
