@@ -343,6 +343,28 @@ export const DOSE_BOOKS: Record<string, BookChapter[]> = {
       kind: 'md',
     },
   ],
+  'umsetzungsplan-register': [
+    {
+      slug: 'scaffolding',
+      path: '07-demos/umsetzungsplan-register/README.md',
+      titleDe: 'Scaffolding & Umsetzungsplan-Prüfer',
+      titleEn: 'Scaffolding & implementation plan checker',
+      noteDe: 'Prüfer gegen das BAFA-Merkblatt 16.09.2026 (fünf Angaben, nicht sieben), acht Regeln nur als Fragen, Aggregat mit Selektionshinweis ohne Quote, Register über den Kern der Schwester-Dose; drei echte Pläne übertragen, 89 Tests.',
+      noteEn: 'Checker against the BAFA guidance of 16.09.2026 (five items, not seven), eight rules phrased only as questions, aggregate with selection note and no quota, register via the sister tin’s core; three real plans transcribed, 89 tests.',
+      date: '28.09.2026',
+      kind: 'md',
+    },
+    {
+      slug: 'ticket-01',
+      path: '07-demos/umsetzungsplan-register/ticket-01-pflichtangaben-pruefer.md',
+      titleDe: 'Ticket 01: Pflichtangaben als Schema, ein Prüfer, drei echte Pläne',
+      titleEn: 'Ticket 01: Required items as a schema, one checker, three real plans',
+      noteDe: 'Schema, Prüfer, Register und Auswertung fertig; offen sind Archiv-Snapshots, die Lesung der Merkblattfassung 12.02.2025 und ein sichtbarer Kuratorentscheid zu Statuswörtern wie „geplant".',
+      noteEn: 'Schema, checker, register and aggregate done; still open: archive snapshots, reading the 12.02.2025 guidance version and a visible curator decision on status words such as "geplant".',
+      date: '28.09.2026',
+      kind: 'md',
+    },
+  ],
 };
 
 export function getBook(doseId: string): BookChapter[] {
