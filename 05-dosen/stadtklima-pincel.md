@@ -1,0 +1,5 @@
+# StadtKlima Pinsel: Interactive Urban Micro-Climate Designer
+
+"StadtKlima Pinsel" (City Climate Brush) is a browser-native tool that empowers urban planners, architects, and citizens to visualize and simulate the micro-climatic impacts of urban development interventions in real-time. Users can "paint" on a digital map (based on real geodata like building heights, green spaces, sealed surfaces) – for example, drawing a park, modifying a building, or greening a street. The tool then immediately calculates and visualizes the effects on local temperatures, wind flows, or heat stress in the selected area, powered by WebGPU/WASM for fast, local computations.
+
+This overcomes the barriers of complex simulation software and makes climate adaptation strategies tangible and interactive, fostering better design and public engagement.
