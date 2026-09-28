@@ -7,6 +7,23 @@ Ergänzt `05-dosen/_entsorgt.md`: dort steht die Begründung für gepackte, dann
 **Vorläufiger Zustand:** `ungeprüft` — Kandidat aus einer Ideenmethode, Existenzprüfung nicht gelaufen. Kein Urteil, zählt in keiner Trefferquote, darf nicht zugestellt werden.
 **Prüfen ab:** Tooling/Konsum + 6 Monate · Zivilgesellschaft + 12 Monate
 
+
+## Runde 14 / Cannabis-Runde — 27.09.2026 (method: ideenrunde, Marktexploration)
+
+Félix’ Auftrag: „Germany legalized weed — explore the market.“ Vier parallele Researcher (alle an Rate-Limit gestorben), dann Handrecherche. 12 Websuchen, 2 Seitenabrufe. Empfänger → Deutsch → Englisch → Nische, alle vier Stufen. **Der entscheidende Kill kam aus Suche 3 (Englisch):** drei Open-Source-CSC-Plattformen (cannaUNITY, opencanbau, OpenTHC), die in deutschen Suchen unsichtbar waren.
+
+| Idee | Urteil | Beleg (kurz) | Prüfen ab |
+|---|---|---|---|
+| **VereinsLabor** — Laborergebnis-Versteher für Cannabis-Qualitätskontrolle (THC/CBD, Pestizide, Schwermetalle, Mykotoxine gegen fehlende Bundesgrenzwerte) | **`verengt` (dünn)** | §§ 17–18 KCanG: Pflichtanalysen, aber kein bundeseinheitlicher Grenzwert. Labore liefern Zahlen (Eurofins, nuklab.de, vericann.de), CSC-Software verwaltet Chargen, keines interpretiert Laborergebnisse. Temporäre Lücke: Grenzwerte kommen, dann Feature in bestehende Tools | 03/2027 |
+| **MeldeFlickenteppich** — Bundesländer-Navigator für CSC-Berichtspflichten (§ 25 KCanG, 16 verschiedene Zuständigkeiten) | **`verengt` (dünn)** | Kein bundeseinheitliches Formular, 16 verschiedene Behörden. Report-Generierung durch 5 kommerzielle + 3 Open-Source-CSC-Plattformen abgedeckt (cannaUNITY auf GitHub, opencanbau.org, OpenTHC CRE, Cannabase). Restlücke = Nachschlagewerk, kein Softwareprojekt | 03/2027 |
+| **KiCanG-Sicher** — Kindersichere Aufbewahrungsprüfung und Vergiftungs-Sofortwissen | **`besetzt`** | BfR-App „Vergiftungsunfälle bei Kindern“ (kostenlos, Giftnotruf nach Standort), kigiapp.de, BZgA/BIÖG „Cannabis: Legal, aber…“ Digitale Toolbox, X-CAN Serious Game (Uni Würzburg), DigiSucht. +17 % Vergiftungsanfragen GIZ-Nord 2025, 2.569 Hospitalisierungen 2024 — Tools existieren, Problem ist Bekanntheit | – |
+| **Abstandsmelder für CSC-Gründer** — Standorteignung prüfen (vs. Bubatzkarte = Konsumzonen) | **`unklar`** | Nicht vertieft. Gleiche OSM-Datenbasis wie Bubatzkarte, einmaliger Bedarf, Behörde prüft ohnehin. Wahrscheinlich besetzt | 03/2027 |
+| **Ernteprotokoll-Standard** — Offenes JSON-Schema für CSC-Chargen-Dokumentation | **`besetzt`** | cannaUNITY (GitHub, KCanG-konform), OpenTHC (CRE mit API), opencanbau.org, Cannabase. US: METRC, BioTrackTHC. Open-Source-Projekte definieren de facto Datenmodelle | – |
+
+**Bilanz:** 0 frei, 2 verengt (beide dünn, keine Dose), 1 unklar, 2 besetzt. Keine Dose. **Atlas:** Cannabis = dicht (Consumer + Vereins + Behörde + Prävention). Marktanreiz vorhanden (Compliance = Geld).
+
+---
+
 ## Git-Domäne & Tag-Navigation — 27.09.2026 (Struktur-Erweiterung, method: dose-packer)
 
 | Idee / Änderung | Urteil | Beleg (kurz) | Prüfen ab |
