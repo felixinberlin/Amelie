@@ -1,0 +1,3 @@
+# Quanten-Sim: Browser-Native Quantum Mechanics Visualizer
+
+Interactive, browser-native quantum mechanics visualizer. Leverages WebGPU/WASM for real-time simulations and visualizations of wave functions, potentials, and quantum states. The goal is to provide students and educators with intuitive access to complex phenomena like tunneling, superposition, and entanglement, without reliance on proprietary software. Offers immediate visual feedback on parameter changes. Enhances understanding of abstract concepts through playful exploration and direct manipulation of simulation parameters.
