@@ -713,6 +713,50 @@ Kurzbegründung: Der Lückensatz ist originell (V1 4). Der Reality-Check scheite
 
 ---
 
+## Offenlegung-Runde, Parallellauf B (28.09.2026) — Reviewer-Urteile
+
+Kontext: Übertragung des Atlas-Musters „Offenlegungspflicht ohne Register → Register frei" (Dose `vernichtungs-offenlegungsregister`) auf KonfliktminVO, LkSG, CSRD, EUDR, BattVO, PPWR. Alle Evidenz `[Schnipsel]`, Netz gesperrt; eine eigene Gegen-Suche (WebSearch, ebenfalls Schnipsel) fand kein Verzeichnis der LkSG-Beschwerdeverfahren und keine zentrale Datenbank der Konfliktmineralien-Sorgfaltsberichte. Das ist Negativbefund aus Schnipseln, kein `frei`. **Ergebnis der Runde: 0 × Dose Ready** (kein Packen erzwungen, GOVERNANCE §4).
+
+### Review: Konfliktmineralien-Berichtsregister (`konfliktmineralien-berichtsregister`) — E1
+**Origin:** `amelie-ideenrunde` · **Empfänger:** offen (BGR/DEKSOR ist Registerträger-Risiko, nicht Empfänger)
+
+| V1 | V2 | V3 | V4 | V5 | V6 | V7 | Summe |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| 3 | 4 | 3 | 3 | 2 | 2 | 3 | **20/35** |
+
+Kurzbegründung: Pflicht gilt seit 01.01.2021 (VO 2017/821 Art. 7), bedingt durch Mengenschwellen. Das ist der richtige Typ. V5 2, weil die Population klein ist (Unionseinführer über Schwelle: in DE nur wenige Dutzend, Schätzung, unbelegt) und BGR/DEKSOR die Berichte selbst prüft und einen Bericht veröffentlicht. OECD-Due-Diligence-Community, RMI und Global Witness bedienen den Bereich. Pflichtfrage 2 (Verpflichtetenliste) nicht gefunden. V6 2: keine Äste über die Dose hinaus. V7 3: Type A (Art. 7), Fixture nicht gelesen, nur Schnipsel.
+* **Verdict:** `Needs Research` (nicht `Verengt`: Prämisse „DEKSOR sammelt nicht" ungeprüft) · **Auflagen:** (1) Exakttitel-Suche nach „Bericht über die Erfüllung der Sorgfaltspflichten Unionseinführer" auf BGR/DEKSOR-Seite und in der Kommissionsliste (Art. 9/Art. 12); (2) Population zählen (BGR-Jahresbericht): unter 50 deutsche Berichtspflichtige → Friedhof `ohne-nutzer`/`beim-empfaenger`; (3) Prüfen, ob Art. 7 Veröffentlichung auf der eigenen Website überhaupt verpflichtend ist (sonst Beweismittel-Schwäche); (4) Omnibus/Revisionsstand der VO prüfen.
+
+### Review: LkSG-Beschwerdekanal-Verzeichnis (`lksg-beschwerdekanal-verzeichnis`) — E2 (+E3 verwandt)
+**Origin:** `lacunar-bisociation` (FDSN-Steckbrief) · **Empfänger:** Germanwatch / CorA / BHRRC (Registerträger-Risiko zugleich)
+
+| V1 | V2 | V3 | V4 | V5 | V6 | V7 | Summe |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| 3 | 3 | 3 | 2 | 2 | 3 | 4 | **20/35** |
+
+Kurzbegründung: Lückensatz trägt („Beschwerdeverfahren müssen öffentlich, leicht auffindbar sein, aber niemand sieht sie als Gesamtheit"). V7 4: § 8 LkSG ist Type A. V2 3: Ein Feldschema mit handgepflegten Einträgen ist Tier 1/2, die LLM-Extraktion aus mehrsprachigen PDFs wäre Tier 3, und ohne sie ist die Pflegelast bei Tausenden Firmen Bitrot. V4 2: Berichtspflicht gestrichen, das Gesetz wird laufend geändert und geht in die CSDDD-Umsetzung über. Der Stichtag der Pflicht ist unsicher. V5 2: Germanwatch/CorA/BHRRC, Business & Human Rights Resource Centre und die Kampagne der Initiative Lieferkettengesetz sind natürliche Registerträger und kennen die Kanäle (Germanwatch-Seite 93384 im Schnipsel). Die eigentliche Populationsgröße ist ausreichend (ca. 900 Firmen ab 1.000 Beschäftigte, Schätzung), aber das Register würde Firmen bloßstellen, wenn ein Kanal nicht auffindbar ist, obwohl „fehlend" nicht „Verstoß" heißt. Mystery-Shopping ist verworfen (heikel).
+* **Verdict:** `Needs Research` (nicht Dose Ready: 20 < 24, Prämisse nur Schnipsel) · **Auflagen:** (1) Exakttitel-Suche: „Verfahrensordnung Beschwerdeverfahren LkSG Übersicht aller Unternehmen" sowie BHRRC-Datenbank, OECD-Kontaktstellen-Beschwerdedatenbank (die führt Fälle, nicht Kanäle), Germanwatch 93384 im Volltext lesen; (2) klären, ob die LkSG-Änderung § 8 unberührt lässt; (3) Nenner klären (BAFA veröffentlicht keine Liste; Nenner-Schätzer nur mit Unsicherheitsband); (4) Empfänger-Kontaktfrage zuerst, wenn Germanwatch/CorA das Verzeichnis schon führen → Friedhof `beim-empfaenger`.
+
+### Review: Nenner-Schätzer (Fang-Wiederfang) — E2
+**Origin:** `lacunar-bisociation` · **Standalone:** 16/35 (V1 2, V2 5, V3 3, V4 2, V5 1, V6 2, V7 1)
+
+Kurzbegründung: Lincoln-Petersen ist Standardverfahren, keine neue Fähigkeit. Die Annahme unabhängiger Listen ist bei Offenlegungen verletzt (große Konzerne stehen auf allen Listen). Bei `vernichtungs-offenlegungsregister` schätzt der Schätzer außerdem nur die Zahl vorhandener Offenlegungen, nicht die Zahl der Verpflichteten, weil die Pflicht bedingt ist.
+* **Verdict:** `Baustein` von `vernichtungs-offenlegungsregister` (Nachteil „kein Nenner") · **Auflagen:** Nur als Vollständigkeitsband mit Annahmenvermerk und ohne Quote „x % fehlen"; nie als Verstoßsignal; keine eigene Dose, kein eigener Empfänger. Umsetzung erst nach Ticket 01 der Dose.
+
+### Review: Grundsatzerklärungs-Stratigrafie / LkSG-Register — E2 + E3 (Doppelfund unklar/unklar)
+**Standalone:** 15/35 (V1 3, V2 4, V3 2, V4 2, V5 1, V6 1, V7 2)
+
+Kurzbegründung: Doppelfund, aber beide Engines fanden dieselbe Schwäche. Die Berichtspflicht ist gestrichen, die Erklärung (§ 6 Abs. 2) ist nicht öffentlich pflichtig, also fehlt die Grundlage („nie da" wäre nicht beweisbar). Ohne Archivbasis ist der Verlauf nur ab dem eigenen Abruf messbar (Datum je Abruf).
+* **Verdict:** `Baustein` von `lksg-beschwerdekanal-verzeichnis` (Feld „Stand/Abrufdatum", Verlauf je Snapshot), sonst nichts · **Auflage:** Nicht als eigenes Register verfolgen.
+
+### Übrige Merge-Zeilen (nicht reviewt, Bestätigung)
+DSA-Transparenzberichte (verengt schwach, Pflichtfrage 2 verfehlt), CSRD/ESRS (besetzt, ESAP), CSRD-Fehlanzeigen, EUDR (verfrüht, nicht öffentlich), LkSG-Berichte BAFA (Pflicht gestrichen), Batterie-Sorgfaltspflicht (18.08.2027), Hersteller-Register (besetzt), pCbCR, GPAI, BFSG (besetzt), Entgelttransparenz (verfrüht, Wiedervorlage) → Bibliothekar/Gräber wie im Merge.
+
+### Retro des Reviewers (Offenlegung-Runde)
+- Das Muster überträgt sich nicht. Die ESPR-Dose war Ausnahme (junge Pflicht, Format per DVO, kein Register vorgesehen). Ältere Regime haben Register per Design, sind gestrichen oder verschoben.
+- Vorfilter-Reihenfolge einhalten: (0) gilt die Pflicht heute? (1) bedingt? (2) Verpflichtetenliste? (3) öffentlich? (4) Träger vorhanden? Kandidaten mit `Needs Research` brauchen zuerst (4) und (2).
+- Bei Register-Ideen zuerst den Empfänger fragen, ob er es schon führt (Germanwatch/BHRRC), bevor Zeit in Scaffolding geht.
+
 ## Offenlegungs-Runde (Teamrunde, Orchestrierung Run 2) — 28.09.2026
 
 **Reviewer:** Idea Reviewer (7-Vektoren-Audit) · **Eingänge:** Merge K1–K6 aus Engine 1 (`amelie-ideenrunde`), Engine 2 (`lacunar-bisociation`, Run 11), Engine 3 (`asymmetric-inversion`, Run 5); K7–K13 gehen direkt an den Bibliothekar · **Friedhof-Gang:** `08-friedhof/README.md`: kein Grab zu EnEfG, DSA, TTPA, EzB, EntgTranspG oder Konfliktmineralien. Nächster Nachbar ist `Wheelmap: Eingangsfoto → Barrierefreiheit` (16.09.2026, anderes Objekt). Kein Wiedergänger. **Bestandsgang `05-dosen/`:** Einziger struktureller Nachbar ist `vernichtungs-offenlegungsregister` (gleiches Muster, anderes Regime, anderer Empfänger). K1 ist **kein Baustein** davon, soll aber dessen Registerkern übernehmen (zwei Status, Fundstelle, Abrufdatum, Archiv-Snapshot).

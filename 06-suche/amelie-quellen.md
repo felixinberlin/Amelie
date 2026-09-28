@@ -255,3 +255,24 @@ Alle Einträge **nur über Suchschnipsel** erschlossen; eur-lex.europa.eu, brubr
 | **VO (EU) 2023/1669** (Energielabel mit Reparierbarkeitsklasse Smartphones/Tablets) **+ VO (EU) 2023/1670** (Ökodesign: Ersatzteile 7 Jahre, Lieferfrist 5/10 Werktage, Richtpreis Anh. II, Updates) — beide seit 20.06.2025 | Selbstauskunft ohne Nachprüfer; EPREL-Audit R2R Europe/iFixit 09/2026 (2.334 Datensätze, ~80 % ohne verwertbare Angaben); TCO Certified verifiziert; endoflife.date führt Update-Enden | `erschöpft` produktseitig (EPREL-Nachprüfer, Nachschraub-Probe, Update-Pegel, Ersatzteilpreis-Pegel alle im Friedhof) | 28.09.2026 |
 | **BattVO (EU) 2023/1542** (Art. 11 austauschbare Gerätebatterien ab 18.02.2027, Leitlinie C/2025/214; Art. 77 Batteriepass ab 18.02.2027) | Noch nicht in Kraft; iFixit verfolgt Art. 11; Gebrauchtakku-Zertifikate kommerziell („Certified by Bosch", Aviloo, TÜV) | `angekratzt` — **Wiedervorlage nach 18.02.2027** (Grab `akkutausch-protokoll`) | 28.09.2026 |
 | **Open Repair Data Standard (ORDS) / Open Repair Alliance — offener Datensatz** (openrepair.org/open-data; Netzwerk Reparatur-Initiativen Statistik) | Felder Produktkategorie, Marke, Baujahr/Alter, Reparaturbarriere (u. a. Ersatzteil nicht verfügbar); Baujahr oft leer | `offen` — **nächster Schritt: Datentest für K3 `reparaturfall-pflichtabgleich`** (Fälle/Jahr im Geltungsbereich der Teilepflichten zählen). Datensatz nicht heruntergeladen | 28.09.2026 |
+
+---
+
+## Typ O — EU-Offenlegungsregime: Lieferkette, Nachhaltigkeit, Verpackung, Steuer, KI (neu, Offenlegung-Runde 28.09.2026)
+
+Alle Einträge **nur über Suchschnipsel** erschlossen; das Netz war gesperrt, keine Seite im Volltext gelesen.
+
+| Quelle | Befund | Status | Zuletzt |
+|---|---|---|---|
+| **VO (EU) 2017/821 Art. 7 + BGR/DEKSOR** (Sorgfaltspflichtberichte der Unionseinführer; DEKSOR-Bericht 2025 auf dggv.de; OEFSE RR17; Firmenberichte Treibacher/Agosi/Heraeus) | Pflicht seit 01.01.2021, bedingt durch Mengenschwellen; keine Liste Verpflichteter gefunden; DEKSOR prüft und veröffentlicht selbst | `angekratzt` — **offen: DEKSOR-Bericht 2025 als [Seite] lesen** (Population, Veröffentlichungspflicht) | 28.09.2026 |
+| **LkSG § 6 Abs. 2 / § 8 + Änderungsgesetz** (gesetze-im-internet, BAFA, kpmg-law, bundesregierung, taw; Germanwatch/Misereor, Seite germanwatch.org/en/93384) | Berichtspflicht rückwirkend gestrichen (BAFA prüft seit 01.10.2025 nicht); Grundsatzerklärung und Beschwerdeverfahren bleiben, aber ohne Sammelort; kein Verzeichnis der Verfahrensordnungen gefunden | `angekratzt` — **ergiebig** für Beschwerdekanal-Verzeichnis (`unklar`); Berichts-Ast `erschöpft` (Grab `lksg-berichte-bafa`). **Offen: Germanwatch 93384 als [Seite] lesen** | 28.09.2026 |
+| **CSRD/ESRS, ESAP, Unternehmensregister** (amf-france, dfsa.dk, forvismazars, saim; Haufe Navigator, filings.xbrl.org) | Register per Design (ESAP: Aufbau ab 10.07.2026, CSRD-Daten ab 10.01.2028); Omnibus-Kreis > 1.000 Beschäftigte und > 450 Mio. € Umsatz; DE-Umsetzungsgesetz fehlt | `erschöpft` für Register (Grab `csrd-esrs-register`); CSRD-Fehlanzeigen `unklar` | 28.09.2026 |
+| **EUDR VO (EU) 2023/1115 + Reg. (EU) 2025/2650** (TRACES NT, lawcode, twobirds, stibbe) | Sorgfaltserklärungen nicht öffentlich by design; Anwendung 30.12.2026/30.06.2027; Bericht ab 2028 | `erschöpft` (Grab `eudr-kleinwald-erklaerung` + verfrühte Protokollzeile) | 28.09.2026 |
+| **Verpackungsregister LUCID / ZSVR + stiftung ear** (oeffentliche-register.verpackungsregister.org, verpackungsgesetz.com, deutsche-recycling.de, stiftung-ear.de) | Register öffentlich, Liste hinterlegter Vollständigkeitserklärungen, ZSVR-Abgleich; PPWR seit 12.08.2026 | `erschöpft` (Grab `hersteller-register-battg-lucid-ppwr`) | 28.09.2026 |
+| **BattVO Art. 48 Sorgfalt** (lizenzero, batteriegesetz, tracepass.eu) | Pflicht auf 18.08.2027 verschoben | `angekratzt` — Wiedervorlage 08/2027 | 28.09.2026 |
+| **pCbCR: Taxplorer, PwC** | Sammler und Auswertungen vorhanden | `erschöpft` (Grab `pcbcr-sammler`) | 28.09.2026 |
+| **AI Act Art. 53: GPAI Ledger** | Öffentliches Verzeichnis der Trainingsdaten-Zusammenfassungen | `erschöpft` (Grab `gpai-trainingsdaten-zusammenfassungen`) | 28.09.2026 |
+| **BFSG: Händlerbund, MLBF** | Compliance-Markt und Marktüberwachung | `erschöpft` (Grab `bfsg-barrierefreiheitserklaerungen`) | 28.09.2026 |
+| **Entgelttransparenz-RL (personalwirtschaft, haufe)** | Frist 07.06.2026 verpasst, DE-Gesetz bis Anfang 2027 | `offen` — Wiedervorlage nach Kabinettsentwurf | 28.09.2026 |
+| **DSA-Transparenzberichte (HIIG)** | Keine Verpflichtetenliste | `angekratzt` | 28.09.2026 |
+| **Capture-Recapture (PMC5976169, UEA 2018_03)** | Standardverfahren für Registervollständigkeit; Baustein für den Nenner der ESPR-Dose | `angekratzt` — Methodenquelle, kein Ideenlieferant | 28.09.2026 |
