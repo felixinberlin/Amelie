@@ -8,6 +8,17 @@ Ergänzt `05-dosen/_entsorgt.md`: dort steht die Begründung für gepackte, dann
 **Prüfen ab:** Tooling/Konsum + 6 Monate · Zivilgesellschaft + 12 Monate
 
 
+## Runde 15 / Wasser & Starkregen — 28.09.2026 (method: ideenrunde / mitforschen.org & FloReST)
+
+Recherche in der Typ-B-Quelle `mitforschen.org` (Projekt FloReST, Schwammbox, KlimNet) und Wasserwirtschaft-Forschung. 4 Suchen. **Muster: Citizen Science sammelt Schadensfotos, kommunale Gefahrenkarten fehlen die kleinräumigen Wasserlauf-Hindernisse.**
+
+| Idee | Urteil | Beleg (kurz) | Prüfen ab |
+|---|---|---|---|
+| **Starkregen-Foto-Assistent** — On-Device EXIF/GPS Extrahierer + Gefahrenkarten-Abgleich für Bürger-Starkregenmeldungen | **`verengt`** | FloReST (BMBF-Projekt, Hochschule Trier / RLP) baut mit `florest-smart-app` auf GitLab RLP genau eine CCS-App für Notabflusswege und Problemstellen. Restlücke: Reines Web-Tool ohne Registrierung zur EXIF-Säuberung & Direkteingabe für kommunale Geoportale. | 03/2027 |
+| **Schwammflur-Rechner** — Mikro-Retentionsvolumen-Rechner für Kleingärten & Dachbegrünung | **`besetzt`** | SCHWAMMBOX (Selbitz, Bayern), ParKli-Make, KlimPark und bestehende Gründach-Rechner der Verbraucherzentralen / Senatsverwaltungen. | – |
+
+---
+
 ## Runde 14 / Cannabis-Runde — 27.09.2026 (method: ideenrunde, Marktexploration)
 
 Félix’ Auftrag: „Germany legalized weed — explore the market.“ Vier parallele Researcher (alle an Rate-Limit gestorben), dann Handrecherche. 12 Websuchen, 2 Seitenabrufe. Empfänger → Deutsch → Englisch → Nische, alle vier Stufen. **Der entscheidende Kill kam aus Suche 3 (Englisch):** drei Open-Source-CSC-Plattformen (cannaUNITY, opencanbau, OpenTHC), die in deutschen Suchen unsichtbar waren.
