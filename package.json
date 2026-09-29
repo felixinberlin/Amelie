@@ -18,6 +18,7 @@
     "friedhof": "node scripts/friedhof-muster.mjs",
     "quellen": "node scripts/quellen.mjs",
     "bib": "node scripts/bibliothek.mjs",
+    "vergleich": "node scripts/model-compare.mjs",
     "check:quellen": "node scripts/quellen.mjs check",
     "check:friedhof": "node scripts/friedhof-muster.mjs --check",
     "sync:idea-frontmatter": "node scripts/sync-idea-frontmatter.mjs",
