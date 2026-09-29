@@ -23,13 +23,11 @@ import { Language } from '../types';
 import { getTranslation, withCount } from '../i18n';
 import { SIMULATOR_COUNT } from '../data/doseSimulators';
 import { NORMAL_JOBS_AND_EVERYDAY_PEOPLE_IDEAS } from '../data/ideas/normalJobsAndEverydayPeople';
+import { PLAYABLE_GAME_COUNT } from './GamesView';
 import { GAME_IDEAS } from '../data/ideas/games';
 import { GAME_DOSE_IDS } from '../data/pipeline';
 import { AMELIE_MUSTERS } from '../data/musterEmails';
 import { FUNDING_DATA } from '../data/funding';
-
-// Spielbare Mini-Spiele in der GamesView (Getreidesack, Gartenzwerg, Fotoautomat)
-const GAME_PLAYABLE_COUNT = 3;
 
 interface HeaderProps {
   currentTab: string;
@@ -94,7 +92,7 @@ export const Header: React.FC<HeaderProps> = ({
       id: 'games',
       label: t.nav.games,
       icon: Gamepad2,
-      badge: GAME_IDEAS.length + GAME_DOSE_IDS.length + GAME_PLAYABLE_COUNT,
+      badge: GAME_IDEAS.length + GAME_DOSE_IDS.length + PLAYABLE_GAME_COUNT,
     },
     {
       id: 'funding',

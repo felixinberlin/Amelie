@@ -7,6 +7,7 @@ import { getLocalizedTitle } from '../i18n';
 import { GrainSackZenGame } from './GrainSackZenGame';
 import { TravelingGnomeGame } from './TravelingGnomeGame';
 import { PhotoboothAlbumGame } from './PhotoboothAlbumGame';
+import { HofLichterGame } from './HofLichterGame';
 import { CremeBruleeGame } from './CremeBruleeGame';
 
 interface GamesViewProps {
@@ -15,7 +16,7 @@ interface GamesViewProps {
   onOpenDose: (doseId: string) => void;
 }
 
-type PlayableId = 'grain' | 'gnome' | 'photobooth' | 'cremebrulee';
+type PlayableId = 'hof' | 'grain' | 'gnome' | 'photobooth' | 'cremebrulee';
 
 const PLAYABLES: Array<{
   id: PlayableId;
@@ -25,6 +26,7 @@ const PLAYABLES: Array<{
   es: string;
   Component: React.FC<{ lang: Language }>;
 }> = [
+  { id: 'hof', emoji: '🏮', de: 'Lichter im Hof', en: 'Lights in the Courtyard', es: 'Luces en el patio', Component: HofLichterGame },
   { id: 'cremebrulee', emoji: '🍮', de: 'Die perfekte Zuckerkruste (Crème Brûlée)', en: 'The Perfect Caramelized Crust (Crème Brûlée)', es: 'La costra de azúcar perfecta (Crème Brûlée)', Component: CremeBruleeGame },
   { id: 'grain', emoji: '🌾', de: 'Hand im Getreidesack', en: 'Hand in the Grain Sack', es: 'Mano en el saco de grano', Component: GrainSackZenGame },
   { id: 'gnome', emoji: '🧙', de: 'Der reisende Gartenzwerg', en: 'The Traveling Gnome', es: 'El gnomo viajero', Component: TravelingGnomeGame },
@@ -33,9 +35,11 @@ const PLAYABLES: Array<{
 
 const pick = (lang: Language, de: string, en: string, es: string) => (lang === 'de' ? de : lang === 'es' ? es : en);
 
+export const PLAYABLE_GAME_COUNT = PLAYABLES.length;
+
 export const GamesView: React.FC<GamesViewProps> = ({ lang, dosen, onOpenDose }) => {
   const [query, setQuery] = useState('');
-  const [activePlayable, setActivePlayable] = useState<PlayableId | null>(null);
+  const [activePlayable, setActivePlayable] = useState<PlayableId | null>('hof');
   const q = query.trim().toLowerCase();
 
   const gameDosen = useMemo(
