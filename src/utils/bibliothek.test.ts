@@ -38,6 +38,17 @@ describe('Argumente und Suche', () => {
     expect(a.many('evidence')).toEqual(['a', 'b']);
     expect(a.one('runde')).toBe('R 1');
   });
+  it('lässt Schalter den folgenden Begriff nicht verschlucken', () => {
+    const a = parseArgs(['find', 'foldit', '--any', 'eterna', 'eyewire', '--wort']);
+    expect(a.pos).toEqual(['find', 'foldit', 'eterna', 'eyewire']);
+    expect(a.has('any') && a.has('wort')).toBe(true);
+  });
+  it('kennt die Wortgrenze: pegel trifft nicht Ersatzteilpreis-Pegel-Nachbarn im Wort', () => {
+    expect(matches('Wetterverlauf', ['wette'])).toBe(true);
+    expect(matches('Wetterverlauf', ['wette'], false, true)).toBe(false);
+    expect(matches('Die Wette gilt', ['wette'], false, true)).toBe(true);
+    expect(matches('Pegel-Wette (x)', ['pegel', 'wette'], false, true)).toBe(true);
+  });
   it('vereinheitlicht Umlaute und Groß-/Kleinschreibung', () => {
     expect(norm('Straßennamen-Prüfer')).toBe('strassennamen-pruefer');
     expect(matches('Der Straßennamen-Prüfer', ['strassennamen', 'PRUEFER'])).toBe(true);
@@ -166,6 +177,7 @@ describe('Quellenmeldung', () => {
     expect(text).toMatch(/Dose „keine-dose“/);
     expect(text).toMatch(/NEU braucht typ=/);
     expect(text).toMatch(/note= fehlt/);
+    expect(parseQuellenmeldung(`QUELLE NEU: Testquelle | typ=M | kategorie=forschung | enthaelt=x | note=y`, ctx).fehler.join()).toMatch(/erlaubt: fachgremium/);
   });
   it('meldet einen Text ohne Meldungszeilen', () => {
     expect(parseQuellenmeldung('nichts', ctx).fehler[0]).toMatch(/keine/);

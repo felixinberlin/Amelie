@@ -4,10 +4,11 @@
 // Lesen darf jeder Agent, schreiben nur der Bibliothekar (Handbuch: 06-suche/amelie-bibliothek-cli.md).
 //
 //   LESEN (alle Agenten)
-//   npm run bib -- find <begriff…> [--any] [--alle] [--json]   Doppelprüfung über Protokoll, Friedhof, Dosen, Kandidaten, Quellen, Logs
+//   npm run bib -- find <begriff…> [--any] [--wort] [--alle] [--json]   Doppelprüfung über Protokoll, Friedhof, Dosen, Kandidaten, Quellen, Logs
 //   npm run bib -- vorflug [--thema x] [--netz]                git fetch, fremde Branches/Commits, optional Netztest
 //   npm run bib -- grab list [--cause x] [--killer x] [--found-by x] [--stage x] [--origin x] [--since 2026-09-01]
 //   npm run bib -- grab show <id>
+//   npm run bib -- grab werte                                  erlaubte Werte des Totenscheins
 //   npm run bib -- grab stats
 //   npm run bib -- protokoll show <id|begriff…>
 //   npm run bib -- protokoll stats
@@ -16,6 +17,7 @@
 //   SCHREIBEN (nur Bibliothekar; jeder Befehl kennt --dry-run)
 //   npm run bib -- grab add --from grab.json | (Einzelflags, siehe hilfe)
 //   npm run bib -- protokoll add --runde "…" --titel "…" --urteil frei|verengt|unklar|besetzt --beleg "…" --evidenz seite|schnipsel --method ideenrunde --pruefen-ab 09/2027 [--id x] [--was "…"] [--nr H9] [--neuer-abschnitt "Einleitung"]
+//   npm run bib -- quellen formate                             (lesen) gültige typ/kategorie/status-Werte + Beispielzeilen
 //   npm run bib -- quellen import <datei|-> --agent <name> --runde "…"
 //   npm run bib -- abschluss [--schnell]                       export:data → lint → test, dann Übersicht der offenen Änderungen
 //
@@ -27,7 +29,7 @@ import { repoRoot, GRAEBER_FILE, loadGraeber, readDataIds } from './dosen-lib.mj
 import { loadQuellen, refIds } from './quellen-lib.mjs';
 import {
   parseArgs, findAll, parseProtokoll, protokollStats, buildProtokollFelder, insertProtokollRow,
-  validateGrab, orderGrab, readCandidates, parseQuellenmeldung, meldungToArgs, matches, PROTOKOLL, verdictOf,
+  validateGrab, orderGrab, readEnum, readCandidates, parseQuellenmeldung, meldungToArgs, matches, PROTOKOLL, verdictOf,
 } from './bibliothek-lib.mjs';
 
 const [cmd = 'hilfe', ...rest] = process.argv.slice(2);
@@ -41,10 +43,10 @@ const pad = (s, n) => String(s).padEnd(n).slice(0, n);
 const HILFE = `Bibliotheks-CLI — npm run bib -- <befehl>
 
 LESEN (alle Agenten)
-  find <begriff…> [--any] [--alle] [--json]   „Gibt es das schon?“ über Protokoll, Friedhof, Dosen, Kandidaten, Quellen, Logs.
-                                              Exit 2 = Treffer in Protokoll/Friedhof/Dosen/Kandidaten. Mehrere Begriffe = alle müssen passen (--any: einer genügt).
+  find <begriff…> [--any] [--wort] [--alle] [--json]   „Gibt es das schon?“ über Protokoll, Friedhof, Dosen, Kandidaten, Quellen, Logs.
+                                              Exit 2 = Treffer in Protokoll/Friedhof/Dosen/Kandidaten. Mehrere Begriffe = alle müssen passen (--any: einer genügt; --wort: nur ganze Wörter).
   vorflug [--thema x] [--netz]                git fetch, fremde Branches und Commits der letzten 14 Tage, offene Themen; --netz testet Hosts
-  grab list|show|stats                        Friedhof lesen (Filter: --cause --killer --found-by --stage --origin --since)
+  grab list|show|stats|werte                  Friedhof lesen; werte = erlaubte Totenschein-Werte (Filter: --cause --killer --found-by --stage --origin --since)
   protokoll show <id|begriff…>                Zeilen des Prüfprotokolls
   protokoll stats                             Urteile je Abschnitt und Methode
   status                                      Bestand auf einen Blick
@@ -65,8 +67,8 @@ Handbuch: 06-suche/amelie-bibliothek-cli.md`;
 // ---------------------------------------------------------------- find
 
 function cmdFind() {
-  if (!pos.length) die('Aufruf: bib find <begriff…> [--any] [--alle] [--json]');
-  const hits = findAll(pos, { any: has('any'), quellen: loadQuellen().quellen });
+  if (!pos.length) die('Aufruf: bib find <begriff…> [--any] [--wort] [--alle] [--json]   (Schalter stehen vor oder nach den Begriffen)');
+  const hits = findAll(pos, { any: has('any'), wort: has('wort'), quellen: loadQuellen().quellen });
   const bindend = hits.filter((h) => h.bindend);
   if (has('json')) console.log(JSON.stringify({ begriffe: pos, schonDa: bindend.length > 0, treffer: hits }, null, 2));
   else {
@@ -131,7 +133,12 @@ function cmdGrab() {
   const graeber = loadGraeber();
   if (sub === 'list') {
     let list = graeber;
-    for (const [flag, key] of [['cause', 'cause'], ['killer', 'killer'], ['found-by', 'foundBy'], ['stage', 'stage'], ['origin', 'origin']]) if (one(flag)) list = list.filter((g) => g[key] === one(flag));
+    for (const [flag, key, typ] of [['cause', 'cause', 'Todesursache'], ['killer', 'killer', 'Killerart'], ['found-by', 'foundBy', 'Fundweg'], ['stage', 'stage', 'Stadium'], ['origin', 'origin', 'Herkunft']]) {
+      if (!one(flag)) continue;
+      const erlaubt = readEnum(typ);
+      if (!erlaubt.includes(one(flag))) die(`--${flag} „${one(flag)}“ ungültig. Erlaubt: ${erlaubt.join(' · ')}`);
+      list = list.filter((g) => g[key] === one(flag));
+    }
     if (one('since')) list = list.filter((g) => g.diedOn >= one('since'));
     list = [...list].sort((a, b) => b.diedOn.localeCompare(a.diedOn));
     for (const g of list) console.log(`${pad(g.diedOn, 10)} ${pad(g.cause, 15)} ${pad(g.killer, 15)} ${pad(g.foundBy, 15)} ${pad(g.stage, 12)} ${pad(g.id, 34)} ${g.title.slice(0, 50)}`);
@@ -146,8 +153,10 @@ function cmdGrab() {
       console.log(`${pad(key, 8)} ${Object.entries(n).sort((a, b) => b[1] - a[1]).map(([k, v]) => `${k} ${v}`).join(' · ')}`);
     }
     console.log(`\n${graeber.length} Gräber`);
+  } else if (sub === 'werte') {
+    for (const [name, typ] of [['cause', 'Todesursache'], ['killer', 'Killerart'], ['foundBy', 'Fundweg'], ['origin', 'Herkunft'], ['stage', 'Stadium']]) console.log(`${pad(name, 8)} ${readEnum(typ).join(' · ')}`);
   } else if (sub === 'add') grabAdd(graeber);
-  else die(`Unbekannter Unterbefehl „grab ${sub}“ (list | show | stats | add)`);
+  else die(`Unbekannter Unterbefehl „grab ${sub}“ (list | show | stats | werte | add)`);
 }
 
 function grabAdd(graeber) {
@@ -213,8 +222,22 @@ function protokollAdd(text) {
 
 // ---------------------------------------------------------------- quellen import
 
+function quellenFormate() {
+  const d = loadQuellen();
+  const liste = (o) => Object.keys(o).join(' · ');
+  console.log(`typ        ${d.typen.map((t) => `${t.id} ${t.titel}`).join('\n           ')}`);
+  console.log(`kategorie  ${liste(d.katalog.kategorien)}`);
+  console.log(`status     ${d.katalog.status.map((s) => s.id).join(' · ')}   (durchsucht/erschöpft nur mit evidenz=seite)`);
+  console.log(`evidenz    ${liste(d.katalog.evidenz)}`);
+  console.log(`zugang     ja · teilweise · gesperrt · unbekannt, optional [wie: …]   (Art: ${liste(d.katalog.zugangArt)})`);
+  console.log(`rolle      ${liste(d.katalog.rollen)}`);
+  console.log(`\nBestehende Quelle:\n  QUELLE <id> | status=angekratzt | evidenz=schnipsel | zugang=ja | ertrag=Grab <id>, Idee <id> | urls=https://a https://b | note=Ein Satz.`);
+  console.log(`Neue Quelle (typ, kategorie, enthaelt Pflicht; kein " | " im Freitext):\n  QUELLE NEU: Name | typ=D | kategorie=norm | enthaelt=Was dort steht | status=angekratzt | evidenz=schnipsel | zugang=ja | ertrag=– | urls=https://… | note=Ein Satz.`);
+}
+
 function cmdQuellen() {
   const [sub, file] = pos;
+  if (sub === 'formate') return quellenFormate();
   if (sub !== 'import') die('Aufruf: bib quellen import <datei|-> --agent <name> --runde "…"');
   if (!file) die('Datei fehlt (oder - für stdin)');
   const agent = one('agent') ?? die('--agent fehlt (wer hat gemeldet?)');

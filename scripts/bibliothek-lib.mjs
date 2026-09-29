@@ -16,6 +16,9 @@ const KEBAB = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
 // ---------------------------------------------------------------- Argumente
 
+/** Schalter ohne Wert: sie dürfen den folgenden Begriff nicht als Wert verschlucken (`find a --any b`). */
+export const BOOLEAN_FLAGS = new Set(['any', 'alle', 'json', 'dry-run', 'netz', 'schnell', 'abschnitte', 'wort']);
+
 /** `--flag wert`, `--flag` (= "true") und Positionsargumente. */
 export function parseArgs(argv) {
   const flags = {};
@@ -23,7 +26,7 @@ export function parseArgs(argv) {
   for (let i = 0; i < argv.length; i++) {
     if (argv[i].startsWith('--')) {
       const key = argv[i].slice(2);
-      const val = argv[i + 1] !== undefined && !argv[i + 1].startsWith('--') ? argv[++i] : 'true';
+      const val = !BOOLEAN_FLAGS.has(key) && argv[i + 1] !== undefined && !argv[i + 1].startsWith('--') ? argv[++i] : 'true';
       (flags[key] ??= []).push(val);
     } else pos.push(argv[i]);
   }
@@ -40,12 +43,18 @@ export function norm(s) {
     .normalize('NFD').replace(/[̀-ͯ]/g, '');
 }
 
-/** Alle (oder mit any: mindestens ein) Suchbegriffe müssen im Text stehen. */
-export function matches(text, terms, any = false) {
+/**
+ * Alle (oder mit any: mindestens ein) Suchbegriffe müssen im Text stehen.
+ * Mit wort=true zählen nur ganze Wörter (`pegel` trifft nicht „Wetterverlauf“, `spiel` nicht „Spielarchiv“).
+ */
+export function matches(text, terms, any = false, wort = false) {
   const t = norm(text);
   const ts = terms.map(norm).filter(Boolean);
   if (!ts.length) return false;
-  return any ? ts.some((x) => t.includes(x)) : ts.every((x) => t.includes(x));
+  const hit = wort
+    ? (x) => new RegExp(`(^|[^a-z0-9])${x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}([^a-z0-9]|$)`).test(t)
+    : (x) => t.includes(x);
+  return any ? ts.some(hit) : ts.every(hit);
 }
 
 export function snippet(text, terms, width = 160) {
@@ -213,10 +222,10 @@ const LOG_FILES = [
 ];
 
 /** Durchsucht das gesamte Gedächtnis. `kind` „bindend“ heißt: Treffer sind ein „schon da“-Signal. */
-export function findAll(terms, { any = false, root = repoRoot, quellen = [] } = {}) {
+export function findAll(terms, { any = false, wort = false, root = repoRoot, quellen = [] } = {}) {
   const hits = [];
   const add = (kind, bindend, id, title, text, where) => {
-    if (matches(`${id} ${title} ${text}`, terms, any)) hits.push({ kind, bindend, id, title, where, snippet: snippet(text || title, terms) });
+    if (matches(`${id} ${title} ${text}`, terms, any, wort)) hits.push({ kind, bindend, id, title, where, snippet: snippet(text || title, terms) });
   };
   const protokoll = readFileSync(PROTOKOLL, 'utf8');
   for (const r of parseProtokoll(protokoll)) add('protokoll', true, '', r.idee, r.text, `06-suche/amelie-pruefprotokoll.md:${r.line} [${r.urteil ?? '?'}]`);
@@ -276,7 +285,7 @@ export function orderGrab(g) {
 
 // ---------------------------------------------------------------- Quellenmeldungen
 
-const slug = (s) => norm(s).replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 60);
+const slug = (s) => norm(s).replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 40).replace(/-+$/, '');
 
 /**
  * Zerlegt Zeilen im Format
@@ -308,16 +317,16 @@ export function parseQuellenmeldung(text, { quellen, katalog, doseIds, graveIds,
     if (neu) {
       if (bekannt.has(id)) problem('NEU, aber die id gibt es schon — ohne NEU melden');
       for (const k of ['typ', 'kategorie', 'enthaelt']) if (!f[k]) problem(`NEU braucht ${k}=`);
-      if (f.typ && !typen.includes(f.typ)) problem(`typ „${f.typ}“ unbekannt`);
-      if (f.kategorie && !katalog.kategorien[f.kategorie]) problem(`kategorie „${f.kategorie}“ unbekannt`);
+      if (f.typ && !typen.includes(f.typ)) problem(`typ „${f.typ}“ unbekannt (erlaubt: ${typen.join(' ')}; Erklärung: bib quellen formate)`);
+      if (f.kategorie && !katalog.kategorien[f.kategorie]) problem(`kategorie „${f.kategorie}“ unbekannt (erlaubt: ${Object.keys(katalog.kategorien).join(' · ')})`);
       Object.assign(e, { typ: f.typ, kategorie: f.kategorie, enthaelt: f.enthaelt, fokus: f.fokus, tags: (f.tags ?? '').split(/[,\s]+/).filter(Boolean), rollen: (f.rolle ?? '').split(/[,\s]+/).filter(Boolean) });
     } else if (!bekannt.has(id)) problem('unbekannte Quelle — als NEU: Name melden oder id prüfen (`quellen list`)');
     if (f.status) {
-      if (!katalog.status.some((s) => s.id === f.status)) problem(`status „${f.status}“ unbekannt`);
+      if (!katalog.status.some((s) => s.id === f.status)) problem(`status „${f.status}“ unbekannt (erlaubt: ${katalog.status.map((s) => s.id).join(' · ')})`);
       e.status = f.status;
     }
     if (f.evidenz) {
-      if (!katalog.evidenz[f.evidenz]) problem(`evidenz „${f.evidenz}“ unbekannt`);
+      if (!katalog.evidenz[f.evidenz]) problem(`evidenz „${f.evidenz}“ unbekannt (erlaubt: ${Object.keys(katalog.evidenz).join(' · ')})`);
       e.evidenz = f.evidenz;
     }
     if ((e.status === 'durchsucht' || e.status === 'erschöpft') && e.evidenz !== 'seite') problem(`status=${e.status} verlangt evidenz=seite (Regel 1: nur hochsetzen, wenn selbst gelesen)`);
