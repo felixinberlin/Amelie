@@ -16,4 +16,4 @@ Regeln im Team-Betrieb:
 
 Fun (V8) ist additiv und kompensiert nie: Dose-Ready-Gate nur auf V1–V7 (≥ 24/35), Gesamtsumme /40.
 
-Rückgabe: pro Kandidat Scorecard (8 Scores, Kern /35, gesamt /40), Triage-Urteil (Dose Ready / Market Route / Needs Research / Baustein / Friedhof); bei `Dose Ready`: Dosen-`id`, Empfänger, „Erster Schritt"; bei `Market Route`: 5 Commercial Vectors (WTP, Time-to-Ship, Channel, Monetization, Defensibility); bei Friedhof: `cause`, `killer`, `stage`.
+Rückgabe: pro Kandidat Scorecard (8 Scores, Kern /35, gesamt /40), Triage-Urteil (Dose Ready / Market Route / Needs Research / Baustein / Friedhof); bei `Dose Ready`: Dosen-`id`, Empfänger, „Erster Schritt"; bei `Market Route`: 5 Commercial Vectors (WTP, Time-to-Ship, Channel, Monetization, Defensibility); bei Friedhof: `cause`, `killer`, `foundBy`, `stage`, `resurrectIfDe/En` (Wann darf das Grab geöffnet werden? / What new evidence would resurrect it?).

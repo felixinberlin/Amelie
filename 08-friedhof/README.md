@@ -111,89 +111,89 @@ Die Ursachen genauer:
 
 ### Alle Gräber (neueste zuerst)
 
-| Idee | † | Ursache | Wer sie hatte | Gefunden durch | Herkunft | Kam bis |
-|---|---|---|---|---|---|---|
-| Bergsonnenuhr-Peiler (Zwölfer-Bergnamen) | 29.09.2026 | Falsche Prämisse | Community / Indie | Ohne Suche | Bisoziation | Kandidat |
-| Dialekt-Quiz / Mundart-Diktat / Aufnahme-App | 29.09.2026 | Schon gebaut | Forschung | Deutsche Suche | Primärquelle | Kandidat |
-| Hofnamen-Karte mit Adresse und Audio | 29.09.2026 | Schon gebaut | Behörde | Deutsche Suche | Bisoziation | Kandidat |
-| Namen gegen Ackerzahl | 29.09.2026 | Reality-Check | Niemand | Ohne Suche | Bisoziation | Kandidat |
-| Namens-Zeuge (Flurname kennt vergessene Grube) | 29.09.2026 | Reality-Check | Niemand | Ohne Suche | Bisoziation | Kandidat |
-| Omas-Rezept-Mengenübersetzer | 29.09.2026 | Schon gebaut | Firma | Deutsche Suche | Bisoziation | Kandidat |
-| Ortsnamen-Endungen-Atlas | 29.09.2026 | Schon gebaut | Forschung | Deutsche Suche | Bisoziation | Kandidat |
-| Plattdeutsch-TTS / -Übersetzer | 29.09.2026 | Beim Empfänger selbst | Behörde | Deutsche Suche | Primärquelle | Kandidat |
-| Sagen-Abenteuer (Ortssage als Kinder-Kurzabenteuer) | 29.09.2026 | Keine neue Fähigkeit | Firma | Ohne Suche | Bisoziation | Kandidat |
-| Straßennamen-Herkunft-Quiz / QR-Schild-Erklärer | 29.09.2026 | Schon gebaut | Community / Indie | Deutsche Suche | Primärquelle | Kandidat |
-| Vorbewohner-Finder (Adressbücher) | 29.09.2026 | Beim Empfänger selbst | Gemeinnützige | Deutsche Suche | Bisoziation | Kandidat |
-| Zeitzeugen-Transkription / Entrauscher | 29.09.2026 | Beim Empfänger selbst | Forschung | Englische Suche | Primärquelle | Kandidat |
-| Akku-Ankaufsuntersuchung (Batteriepass × Pferdekauf) | 28.09.2026 | Schon gebaut | Firma | Nicht dokumentiert | Bisoziation | Kandidat |
-| Akkutausch-Protokoll (BattVO Art. 11) | 28.09.2026 | Beim Empfänger selbst | Gemeinnützige | Englische Suche | Brainstorm | Kandidat |
-| Barrieren-Spontanmeldung (BFSG × Pharmakovigilanz) | 28.09.2026 | Beim Empfänger selbst | Behörde | Deutsche Suche | Bisoziation | Kandidat |
-| BFSG-Barrierefreiheitserklärungen-Register | 28.09.2026 | Schon gebaut | Firma | Deutsche Suche | Primärquelle | Kandidat |
-| CSRD/ESRS-Berichtsregister | 28.09.2026 | Schon gebaut | Behörde | Englische Suche | Primärquelle | Kandidat |
-| DSA-Anordnungs-Gegenbuch (Art.-15-Berichte gegen DSC-Zahl) | 28.09.2026 | Falsche Prämisse | Forschung | Englische Suche | Bisoziation | Kandidat |
-| Entgeltgefälle-Register (Art. 9 RL 2023/970) | 28.09.2026 | Beim Empfänger selbst | Behörde | Ohne Suche | Primärquelle | Kandidat |
-| EPREL-Reparierbarkeits-Nachprüfer | 28.09.2026 | Beim Empfänger selbst | Gemeinnützige | Englische Suche | Primärquelle | Kandidat |
-| Ersatzteilpreis-Pegel (Ersatzteilpreis-Zeitreihe) | 28.09.2026 | Keine neue Fähigkeit | Gemeinnützige | Englische Suche | Bisoziation | Kandidat |
-| EzB-Register (Erklärung zur Barrierefreiheit öffentlicher Stellen) | 28.09.2026 | Beim Empfänger selbst | Behörde | Empfänger-Suche | Primärquelle | Kandidat |
-| FloraScan / Invasives-Scout (Browser-Native Neophyten-Erkennung) | 28.09.2026 | Schon gebaut | Forschung | Deutsche Suche | Ideenliste | Kandidat |
-| Gleichstellungsbericht-Archiv (§ 21 EntgTranspG) | 28.09.2026 | Reality-Check | Behörde | Deutsche Suche | Primärquelle | Kandidat |
-| GPAI-Trainingsdaten-Zusammenfassungen (Register) | 28.09.2026 | Schon gebaut | Community / Indie | Englische Suche | Primärquelle | Kandidat |
-| Hersteller-Register-Abgleich (BattG / LUCID / PPWR) | 28.09.2026 | Schon gebaut | Behörde | Deutsche Suche | Bisoziation | Kandidat |
-| Kiez-Ohr / Kiez-Radar (Browser-Native Mängelmelder NLP) | 28.09.2026 | Schon gebaut | Behörde | Deutsche Suche | Ideenliste | Kandidat |
-| Konfliktmineralien-Berichtsregister (Art. 7 Abs. 3 VO 2017/821) | 28.09.2026 | Reality-Check | Behörde | Deutsche Suche | Primärquelle | Kandidat |
-| LkSG-Berichtsregister (BAFA-Berichte) | 28.09.2026 | Falsche Prämisse | Niemand | Deutsche Suche | Primärquelle | Kandidat |
-| Nachschraub-Probe (Reparierbarkeitsklasse nachzählen) | 28.09.2026 | Beim Empfänger selbst | Gemeinnützige | Empfänger-Suche | Bisoziation | Kandidat |
-| Neuware-Fundbuch (Fundmeldung vernichteter Neuware) | 28.09.2026 | Reality-Check | Niemand | Ohne Suche | Bisoziation | Kandidat |
-| pCbCR-Sammler (öffentliche Ertragsteuerinformationsberichte) | 28.09.2026 | Schon gebaut | Firma | Englische Suche | Primärquelle | Kandidat |
-| PedalPath Planner (WebGPU Radwege-Planer) | 28.09.2026 | Schon gebaut | Community / Indie | Deutsche Suche | Ideenliste | Kandidat |
-| Quanten-Spielwiese (Browser-Native Quantum Visualizer) | 28.09.2026 | Falsche Prämisse | Forschung | Englische Suche | Ideenliste | Kandidat |
-| Reparaturformular-Generator (Europäisches Reparaturinformationsformular) | 28.09.2026 | Schon gebaut | Firma | Englische Suche | Primärquelle | Kandidat |
-| Reparaturverlangen-/Gewährleistungs-Uhr | 28.09.2026 | Beim Empfänger selbst | Gemeinnützige | Empfänger-Suche | Primärquelle | Kandidat |
-| Update-Pegel (Sicherheitsupdates über die Zeit) | 28.09.2026 | Schon gebaut | Community / Indie | Englische Suche | Bisoziation | Kandidat |
-| Wärmeplan-Register (kommunale Wärmepläne nach WPG) | 28.09.2026 | Schon gebaut | Behörde | Deutsche Suche | Primärquelle | Kandidat |
-| Bohrmehl-Foto (Borkenkäfer im Privatwald) | 27.09.2026 | Falsche Prämisse | Behörde | Eigener Atlas / Protokoll | Primärquelle | Kandidat |
-| Brennholz-Raummaß-Check | 27.09.2026 | Schon gebaut | Firma | Englische Suche | Brainstorm | Kandidat |
-| EUDR-Kleinwald-Erklärung | 27.09.2026 | Schon gebaut | Firma | Empfänger-Suche | Brainstorm | Kandidat |
-| Hausbock-Horcher (Handy-Akustik im Dachstuhl) | 27.09.2026 | Beim Empfänger selbst | Forschung | Deutsche Suche | Primärquelle | Kandidat |
-| Holzart per Handyfoto (EUDR/CITES-Gegencheck) | 27.09.2026 | Beim Empfänger selbst | Forschung | Empfänger-Suche | Primärquelle | Kandidat |
-| Holzschutzmittel-Altlast-Lotse (PCP/Lindan/DDT) | 27.09.2026 | Schon gebaut | Firma | Deutsche Suche | Brainstorm | Kandidat |
-| Kaminrauch-Beweisbuch (Rauchopazität per Handyvideo + DWD-Wind für Nachbarn) | 27.09.2026 | Reality-Check | Niemand | Deutsche Suche | Brainstorm | Kandidat |
-| Mikrohabitat-Übungsdeck (Habitatbaum-Ansprache) | 27.09.2026 | Schon gebaut | Forschung | Deutsche Suche | Bisoziation | Kandidat |
-| Rückbauholz-Vorsortierer (Handy-Vorsortierung nach DIN 4074 am Rückbauort) | 27.09.2026 | Beim Empfänger selbst | Forschung | Empfänger-Suche | Primärquelle | Kandidat |
-| Scheitholz-Trocknungsuhr | 27.09.2026 | Keine neue Fähigkeit | Firma | Deutsche Suche | Primärquelle | Kandidat |
-| Die Daten-Schicht (Synchronous Transcription Events) | 24.09.2026 | Schon gebaut | Gemeinnützige | Englische Suche | Bisoziation | Kandidat |
-| ParagraphenDolmetscher | 24.09.2026 | Schon gebaut | Firma | Deutsche Suche | Modell-Katalog | Dose gepackt |
-| Räumungsvorhersage aus Kündigungsfristen | 23.09.2026 | Reality-Check | Niemand | Ohne Suche | Bisoziation | Kandidat |
-| Wunschseite / Nachfrage-Karte | 23.09.2026 | Schon gebaut | Firma | Englische Suche | Bisoziation | Kandidat |
-| Crack Flora Watcher (Ritzengrün-Wächter) | 21.09.2026 | Schon gebaut | Gemeinnützige | Englische Suche | Modell-Katalog | Mail entworfen |
-| Gamifizierte Ritzenpflanzen-Entdeckung | 21.09.2026 | Beim Empfänger selbst | Forschung | Empfänger-Suche | Modell-Katalog | Dose gepackt |
-| Samenkarten-Markt, Cross-City-Handel, Auktionshaus | 21.09.2026 | Keine neue Fähigkeit | Niemand | Ohne Suche | Brainstorm | Kandidat |
-| Spiel über echte Pflanzenarten | 21.09.2026 | Schon gebaut | Firma | Englische Suche | Brainstorm | Kandidat |
-| Abrechnungsfoto → Raumverbrauch als Kalibrierung | 19.09.2026 | Reality-Check | Niemand | Deutsche Suche | Bisoziation | Kandidat |
-| Hausakte mit gespiegelten Grundrissen | 19.09.2026 | Duplikat | Eigener Bestand | Eigener Atlas / Protokoll | Bisoziation | Kandidat |
-| Hausweite Symptomkarte (Schimmel über Etagen) | 19.09.2026 | Reality-Check | Niemand | Deutsche Suche | Bisoziation | Kandidat |
-| Kirchen-Baubegehung digital | 19.09.2026 | Schon gebaut | Firma | Empfänger-Suche | Primärquelle | Kandidat |
-| Raumscan/LiDAR → Heizlast | 19.09.2026 | Schon gebaut | Firma | Deutsche Suche | Bisoziation | Kandidat |
-| Sandstein-Streiflicht-Relief | 19.09.2026 | Duplikat | Eigener Bestand | Eigener Atlas / Protokoll | Modell-Katalog | Kandidat |
-| Schadenskartierung per Foto (Denkmalfassade) | 19.09.2026 | Schon gebaut | Firma | Deutsche Suche | Primärquelle | Kandidat |
-| Schimmel-Symptomdiagnose (Ursachen-Band) | 19.09.2026 | Schon gebaut | Firma | Eigener Atlas / Protokoll | Bisoziation | Kandidat |
-| Baum-Stigmergie (Kontrollhistorie am Baum) | 18.09.2026 | Schon gebaut | Firma | Deutsche Suche | Bisoziation | Kandidat |
-| Baum-Verfallsdatum (Befund verfällt ohne Foto-Bestätigung) | 18.09.2026 | Schon gebaut | Firma | Englische Suche | Bisoziation | Kandidat |
-| Handy-Barometer/Infraschall für Feuerkugeln | 18.09.2026 | Schon gebaut | Forschung | Englische Suche | Bisoziation | Kandidat |
-| Radio-Meteorscatter × visuelle Zeugenmeldung | 18.09.2026 | Schon gebaut | Forschung | Englische Suche | Bisoziation | Kandidat |
-| Tafel-Warenannahme per Foto | 18.09.2026 | Beim Empfänger selbst | Gemeinnützige | Empfänger-Suche | Brainstorm | Kandidat |
-| Balkonkraftwerk-Verschattung per Handykamera | 16.09.2026 | Schon gebaut | Community / Indie | Forum / Nische | Brainstorm | Kandidat |
-| Betriebskostenabrechnung prüfen | 16.09.2026 | Schon gebaut | Firma | Nicht dokumentiert | Brainstorm | Kandidat |
-| Chor-Übedateien aus Aufnahme (SATB-Trennung) | 16.09.2026 | Schon gebaut | Firma | Englische Suche | Brainstorm | Kandidat |
-| Hitze-Schattenrouten für Ältere | 16.09.2026 | Schon gebaut | Forschung | Nicht dokumentiert | Brainstorm | Kandidat |
-| Kreuzungs-Falschparker & Schulweg-Gefahrenkarte | 16.09.2026 | Schon gebaut | Behörde | Nicht dokumentiert | Brainstorm | Kandidat |
-| Mängelanzeige-/Schimmel-Assistent für Mieter | 16.09.2026 | Schon gebaut | Firma | Nicht dokumentiert | Brainstorm | Kandidat |
-| Repair-Café-Diagnoseassistent | 16.09.2026 | Beim Empfänger selbst | Gemeinnützige | Empfänger-Suche | Brainstorm | Kandidat |
-| Wheelmap: Eingangsfoto → Barrierefreiheit | 16.09.2026 | Beim Empfänger selbst | Gemeinnützige | Empfänger-Suche | Brainstorm | Kandidat |
-| Commute Oracle | 09/2026 | Schon gebaut | Firma | Nicht dokumentiert | Ideenliste | Kandidat |
-| git-archaeologist (MCP) | 09/2026 | Schon gebaut | Community / Indie | Nicht dokumentiert | Ideenliste | Kandidat |
-| Home-Network MCP | 09/2026 | Schon gebaut | Community / Indie | Nicht dokumentiert | Ideenliste | Kandidat |
-| Repo-Museum | 09/2026 | Schon gebaut | Community / Indie | Nicht dokumentiert | Ideenliste | Kandidat |
+| Idee | † | Ursache | Wer sie hatte | Gefunden durch | Herkunft | Kam bis | Auferstehung wenn |
+|---|---|---|---|---|---|---|---|
+| Bergsonnenuhr-Peiler (Zwölfer-Bergnamen) | 29.09.2026 | Falsche Prämisse | Community / Indie | Ohne Suche | Bisoziation | Kandidat | Wenn eine Forschungsfrage entsteht, die die Benennungsorte statistisch über viele Gipfel eingrenzt und die Liste das nicht leistet. |
+| Dialekt-Quiz / Mundart-Diktat / Aufnahme-App | 29.09.2026 | Schon gebaut | Forschung | Deutsche Suche | Primärquelle | Kandidat | Wenn die Apps eingestellt werden und ihre Daten nicht offen bleiben. |
+| Hofnamen-Karte mit Adresse und Audio | 29.09.2026 | Schon gebaut | Behörde | Deutsche Suche | Bisoziation | Kandidat | Wenn eine deutsche Landesstelle Hofnamen nachweislich nicht führt und keine Community-Karte besteht. |
+| Namen gegen Ackerzahl | 29.09.2026 | Reality-Check | Niemand | Ohne Suche | Bisoziation | Kandidat | Wenn die Bodenschätzung bundesweit offen wird. |
+| Namens-Zeuge (Flurname kennt vergessene Grube) | 29.09.2026 | Reality-Check | Niemand | Ohne Suche | Bisoziation | Kandidat | Wenn ein Landesamt eine Namen-Sachverhalt-Zuordnung an 20 Fällen belegt und den Hinweis selbst tragen will. |
+| Omas-Rezept-Mengenübersetzer | 29.09.2026 | Schon gebaut | Firma | Deutsche Suche | Bisoziation | Kandidat | Wenn eine Messreihe historischer Löffel- und Tassenmaße entsteht, die keine Seite trägt. |
+| Ortsnamen-Endungen-Atlas | 29.09.2026 | Schon gebaut | Forschung | Deutsche Suche | Bisoziation | Kandidat | Wenn der Atlas offline geht und GN250 die Bestandteile nicht mehr trägt. |
+| Plattdeutsch-TTS / -Übersetzer | 29.09.2026 | Beim Empfänger selbst | Behörde | Deutsche Suche | Primärquelle | Kandidat | Wenn das Projekt der Landschaft ohne offene Daten endet und ein anderes Platt (Mecklenburg, Westfalen) unversorgt bleibt. |
+| Sagen-Abenteuer (Ortssage als Kinder-Kurzabenteuer) | 29.09.2026 | Keine neue Fähigkeit | Firma | Ohne Suche | Bisoziation | Kandidat | Wenn ein Heimatverein Sagen offen lizenziert und eine geprüfte Ortsbindung anbietet, die Standortspiele nicht leisten. |
+| Straßennamen-Herkunft-Quiz / QR-Schild-Erklärer | 29.09.2026 | Schon gebaut | Community / Indie | Deutsche Suche | Primärquelle | Kandidat | Wenn die OSM-Etymologie-Daten für Deutschland dünn bleiben und keine Kommune Schilder trägt. |
+| Vorbewohner-Finder (Adressbücher) | 29.09.2026 | Beim Empfänger selbst | Gemeinnützige | Deutsche Suche | Bisoziation | Kandidat | Wenn CompGen den Zugang schließt oder Adressbücher außerhalb der Abdeckung liegen und Nutzer das nachweisen. |
+| Zeitzeugen-Transkription / Entrauscher | 29.09.2026 | Beim Empfänger selbst | Forschung | Englische Suche | Primärquelle | Kandidat | Wenn Oral-History.Digital die Transkription einstellt oder sie für kleine Heimatarchive nicht zugänglich ist. |
+| Akku-Ankaufsuntersuchung (Batteriepass × Pferdekauf) | 28.09.2026 | Schon gebaut | Firma | Nicht dokumentiert | Bisoziation | Kandidat | Nie als Zertifikat. Höchstens, wenn der Batteriepass SoH-Daten öffentlich lesbar macht und kein Händlerprogramm Privatverkäufe abdeckt. |
+| Akkutausch-Protokoll (BattVO Art. 11) | 28.09.2026 | Beim Empfänger selbst | Gemeinnützige | Englische Suche | Brainstorm | Kandidat | Nach dem 18.02.2027, wenn eine Marktüberwachungsbehörde Bürgerhinweise zu Art. 11 BattVO anfordert und iFixit sie nicht strukturiert. |
+| Barrieren-Spontanmeldung (BFSG × Pharmakovigilanz) | 28.09.2026 | Beim Empfänger selbst | Behörde | Deutsche Suche | Bisoziation | Kandidat | Wenn die MLBF ihr Meldeportal einstellt oder Meldungen nicht aggregiert veröffentlicht und ein Betroffenenverband eine eigene Sammlung verlangt. |
+| BFSG-Barrierefreiheitserklärungen-Register | 28.09.2026 | Schon gebaut | Firma | Deutsche Suche | Primärquelle | Kandidat | Wenn die Marktüberwachung keine öffentliche Erklärungsliste führt und kein Verband ein Verzeichnis anbietet. |
+| CSRD/ESRS-Berichtsregister | 28.09.2026 | Schon gebaut | Behörde | Englische Suche | Primärquelle | Kandidat | Wenn ESAP die Berichte nicht maschinenlesbar oder nicht kostenfrei bereitstellt. |
+| DSA-Anordnungs-Gegenbuch (Art.-15-Berichte gegen DSC-Zahl) | 28.09.2026 | Falsche Prämisse | Forschung | Englische Suche | Bisoziation | Kandidat | Wenn der DSC ein öffentliches Anbieterverzeichnis (Nenner) veröffentlicht oder eine Stelle mit Mandat (GFF, Bundestag) nach der Zahl der nicht übermittelten Anordnungen fragt. |
+| Entgeltgefälle-Register (Art. 9 RL 2023/970) | 28.09.2026 | Beim Empfänger selbst | Behörde | Ohne Suche | Primärquelle | Kandidat | Wenn das deutsche Umsetzungsgesetz die Veröffentlichungspflicht der Überwachungsstelle nicht übernimmt oder die Stelle nach Umsetzung keine vergleichbaren Daten veröffentlicht. |
+| EPREL-Reparierbarkeits-Nachprüfer | 28.09.2026 | Beim Empfänger selbst | Gemeinnützige | Englische Suche | Primärquelle | Kandidat | Wenn R2R Europe/iFixit das Audit nicht wiederholen und EPREL um weitere Produktgruppen mit Reparierbarkeitsklasse erweitert wird, die niemand prüft. |
+| Ersatzteilpreis-Pegel (Ersatzteilpreis-Zeitreihe) | 28.09.2026 | Keine neue Fähigkeit | Gemeinnützige | Englische Suche | Bisoziation | Kandidat | Wenn ein Gericht, eine Behörde oder das deutsche Umsetzungsgesetz „angemessener Preis" relativ zu einem Referenzpreis beziffert — dann wird die Zeitreihe zum Prüfwerkzeug. |
+| EzB-Register (Erklärung zur Barrierefreiheit öffentlicher Stellen) | 28.09.2026 | Beim Empfänger selbst | Behörde | Empfänger-Suche | Primärquelle | Kandidat | Wenn der Überwachungsbericht auf die EzB-Kennzahl verzichtet oder die BFIT-Bund öffentlich nach einem Vollverzeichnis fragt. |
+| FloraScan / Invasives-Scout (Browser-Native Neophyten-Erkennung) | 28.09.2026 | Schon gebaut | Forschung | Deutsche Suche | Ideenliste | Kandidat | Nie als Allzweck-Kamera-App — nur wenn ein Behörden-Prüfprotokoll für spezifische Neophyten-Meldungen (z. B. Beifuß-Ambrosie) gefordert wird. |
+| Gleichstellungsbericht-Archiv (§ 21 EntgTranspG) | 28.09.2026 | Reality-Check | Behörde | Deutsche Suche | Primärquelle | Kandidat | Nie in dieser Form; die Umsetzung der RL 2023/970 ist ein eigenes Thema (Grab entgeltgefaelle-register). |
+| GPAI-Trainingsdaten-Zusammenfassungen (Register) | 28.09.2026 | Schon gebaut | Community / Indie | Englische Suche | Primärquelle | Kandidat | Wenn GPAI Ledger aufgegeben wird und das AI Office keine eigene Liste veröffentlicht. |
+| Hersteller-Register-Abgleich (BattG / LUCID / PPWR) | 28.09.2026 | Schon gebaut | Behörde | Deutsche Suche | Bisoziation | Kandidat | Wenn ein Register-Träger seine Daten schließt und ein Dritter sie nicht mehr auswerten darf. |
+| Kiez-Ohr / Kiez-Radar (Browser-Native Mängelmelder NLP) | 28.09.2026 | Schon gebaut | Behörde | Deutsche Suche | Ideenliste | Kandidat | Nie — Städte akzeptieren keine Mängelberichte über inoffizielle Dritt-Apps ohne verifizierte Authentifizierung. |
+| Konfliktmineralien-Berichtsregister (Art. 7 Abs. 3 VO 2017/821) | 28.09.2026 | Reality-Check | Behörde | Deutsche Suche | Primärquelle | Kandidat | Wenn die Kommission oder DEKSOR eine Liste der Unionseinführer veröffentlicht. |
+| LkSG-Berichtsregister (BAFA-Berichte) | 28.09.2026 | Falsche Prämisse | Niemand | Deutsche Suche | Primärquelle | Kandidat | Wenn die CSDDD-Umsetzung eine öffentliche Berichtspflicht mit gesetzlich bestimmtem Format einführt und keine Behörde die Berichte selbst veröffentlicht. |
+| Nachschraub-Probe (Reparierbarkeitsklasse nachzählen) | 28.09.2026 | Beim Empfänger selbst | Gemeinnützige | Empfänger-Suche | Bisoziation | Kandidat | Wenn eine Marktüberwachungsbehörde ein Format veröffentlicht, in dem sie Dritt-Zerlegeprotokolle als Anlass annimmt, und iFixit es nicht bedient. |
+| Neuware-Fundbuch (Fundmeldung vernichteter Neuware) | 28.09.2026 | Reality-Check | Niemand | Ohne Suche | Bisoziation | Kandidat | Wenn eine Behörde oder NGO einen geschützten Hinweisgeberkanal für Entsorger-Beschäftigte zu Art. 25 ESPR einrichtet und ein Chargen-Erfassungsformat braucht. |
+| pCbCR-Sammler (öffentliche Ertragsteuerinformationsberichte) | 28.09.2026 | Schon gebaut | Firma | Englische Suche | Primärquelle | Kandidat | Wenn Taxplorer eingestellt wird und kein anderer Sammler die pCbCR-Berichte pflegt. |
+| PedalPath Planner (WebGPU Radwege-Planer) | 28.09.2026 | Schon gebaut | Community / Indie | Deutsche Suche | Ideenliste | Kandidat | Nie — Streetmix und ADFC decken zivilgesellschaftliche Straßenquerschnittsplanung ab. |
+| Quanten-Spielwiese (Browser-Native Quantum Visualizer) | 28.09.2026 | Falsche Prämisse | Forschung | Englische Suche | Ideenliste | Kandidat | Nie als reine Physik-Simulation — nur wenn eine Behörde ein konkretes Quantensensor-Prüfschema vorschreibt. |
+| Reparaturformular-Generator (Europäisches Reparaturinformationsformular) | 28.09.2026 | Schon gebaut | Firma | Englische Suche | Primärquelle | Kandidat | Nie für Anbieter. Nur wenn ein Formular-Teil für Verbraucher verpflichtend wird (etwa ein Gegenstück zum Angebot, das der Kunde prüfen muss) und die Anbieter-Tools ihn nicht abbilden. |
+| Reparaturverlangen-/Gewährleistungs-Uhr | 28.09.2026 | Beim Empfänger selbst | Gemeinnützige | Empfänger-Suche | Primärquelle | Kandidat | Nie als Brief- oder Fristrechner. Höchstens, wenn die Verbraucherzentralen ihre Musterbriefe einstellen. |
+| Update-Pegel (Sicherheitsupdates über die Zeit) | 28.09.2026 | Schon gebaut | Community / Indie | Englische Suche | Bisoziation | Kandidat | Nie für den Verlauf. Nur wenn eine Behörde einen konkreten Abgleich „zugesagte Updatejahre (EPREL) gegen gelieferte Patchlevel" als Vollzugsformat verlangt. |
+| Wärmeplan-Register (kommunale Wärmepläne nach WPG) | 28.09.2026 | Schon gebaut | Behörde | Deutsche Suche | Primärquelle | Kandidat | Wenn der KWW-Atlas eingestellt wird oder aufhört, neue Pläne aufzunehmen. |
+| Bohrmehl-Foto (Borkenkäfer im Privatwald) | 27.09.2026 | Falsche Prämisse | Behörde | Eigener Atlas / Protokoll | Primärquelle | Kandidat | Wenn eine Forstbehörde benennt, dass Waldbesitzer Bohrmehl nicht erkennen (statt nicht ablaufen) — nie für die reine Meldefunktion. |
+| Brennholz-Raummaß-Check | 27.09.2026 | Schon gebaut | Firma | Englische Suche | Brainstorm | Kandidat | Nie als Funktion; nur falls Eichbehörden oder eine Verbraucherzentrale ein amtliches Nachmessverfahren für Schüttraummeter fordern, das die Apps nicht abbilden. |
+| EUDR-Kleinwald-Erklärung | 27.09.2026 | Schon gebaut | Firma | Empfänger-Suche | Brainstorm | Kandidat | Wenn die EUDR-Vereinfachung für Kleinerzeuger zurückgenommen wird und die bestehenden Forst-Apps die Einreichung hinter eine Bezahlschranke legen. |
+| Hausbock-Horcher (Handy-Akustik im Dachstuhl) | 27.09.2026 | Beim Empfänger selbst | Forschung | Deutsche Suche | Primärquelle | Kandidat | Wenn ein Körperschall-Aufsatz fürs Handy (≥ 100 kHz) unter 50 € erhältlich wird und weder WKI noch IADS ein Laienwerkzeug für die Aktiv/Inaktiv-Frage anbieten. |
+| Holzart per Handyfoto (EUDR/CITES-Gegencheck) | 27.09.2026 | Beim Empfänger selbst | Forschung | Empfänger-Suche | Primärquelle | Kandidat | Nie für die Holzartbestimmung; höchstens, wenn Thünen die Apps einstellt und die ITWM-KI nie veröffentlicht wird. |
+| Holzschutzmittel-Altlast-Lotse (PCP/Lindan/DDT) | 27.09.2026 | Schon gebaut | Firma | Deutsche Suche | Brainstorm | Kandidat | Wenn ein peer-reviewtes Verfahren PCP/Lindan auf Holzoberflächen mit Smartphone plus Billig-Zubehör (Teststreifen-Kolorimetrie, Mini-NIR/Raman) nachweist. |
+| Kaminrauch-Beweisbuch (Rauchopazität per Handyvideo + DWD-Wind für Nachbarn) | 27.09.2026 | Reality-Check | Niemand | Deutsche Suche | Brainstorm | Kandidat | Wenn ein Bundesland oder die 1. BImSchV ein bildgestütztes Anlassverfahren (z. B. Foto-/Videomeldung als Auslöser einer Überprüfung) ausdrücklich zulässt und ein kostengünstiger Messweg für die Dunkelheit (PM-Sensor mit Windzuordnung) als Beleg anerkannt wird. |
+| Mikrohabitat-Übungsdeck (Habitatbaum-Ansprache) | 27.09.2026 | Schon gebaut | Forschung | Deutsche Suche | Bisoziation | Kandidat | Nie als Übungsdeck; höchstens, wenn das I+-Marteloskop-Netz eingestellt wird. |
+| Rückbauholz-Vorsortierer (Handy-Vorsortierung nach DIN 4074 am Rückbauort) | 27.09.2026 | Beim Empfänger selbst | Forschung | Empfänger-Suche | Primärquelle | Kandidat | Wenn der ReFoRe-Abschlussbericht (nach 12/2026) nur ein Scanner-/HoloLens-Konzept ohne Handy-Feldwerkzeug liefert und die Feldtriage am Rückbauort ausdrücklich als offenen nächsten Schritt nennt. |
+| Scheitholz-Trocknungsuhr | 27.09.2026 | Keine neue Fähigkeit | Firma | Deutsche Suche | Primärquelle | Kandidat | Wenn eine KI-Messung des Wassergehalts (aus Foto oder Klopfton) belegt machbar wird — dann ist die Messung die Idee, nicht die Uhr. |
+| Die Daten-Schicht (Synchronous Transcription Events) | 24.09.2026 | Schon gebaut | Gemeinnützige | Englische Suche | Bisoziation | Kandidat | Wenn eine technologische Neuerung den synchronen Event funktional unabdingbar macht. |
+| ParagraphenDolmetscher | 24.09.2026 | Schon gebaut | Firma | Deutsche Suche | Modell-Katalog | Dose gepackt | Wenn jobcenter.guru und die übrigen kostenlosen Angebote verschwinden — und dann zuerst KlarLokal prüfen, nicht diese Dose. |
+| Räumungsvorhersage aus Kündigungsfristen | 23.09.2026 | Reality-Check | Niemand | Ohne Suche | Bisoziation | Kandidat | Wenn es eine rechtmäßige, anonymisierte Quelle für Umzugsvolumen gibt. |
+| Wunschseite / Nachfrage-Karte | 23.09.2026 | Schon gebaut | Firma | Englische Suche | Bisoziation | Kandidat | nie. |
+| Crack Flora Watcher (Ritzengrün-Wächter) | 21.09.2026 | Schon gebaut | Gemeinnützige | Englische Suche | Modell-Katalog | Mail entworfen | Wenn GrowApp und Nature's Notebook eingestellt werden. Die Nachfolgerin ist die Dose „Beobachtungsposten mit Übergabe". |
+| Gamifizierte Ritzenpflanzen-Entdeckung | 21.09.2026 | Beim Empfänger selbst | Forschung | Empfänger-Suche | Modell-Katalog | Dose gepackt | nie — beim Empfänger selbst. |
+| Samenkarten-Markt, Cross-City-Handel, Auktionshaus | 21.09.2026 | Keine neue Fähigkeit | Niemand | Ohne Suche | Brainstorm | Kandidat | nie. |
+| Spiel über echte Pflanzenarten | 21.09.2026 | Schon gebaut | Firma | Englische Suche | Brainstorm | Kandidat | nie — Genre ist besetzt; frei blieb nur das lebende Spielobjekt. |
+| Abrechnungsfoto → Raumverbrauch als Kalibrierung | 19.09.2026 | Reality-Check | Niemand | Deutsche Suche | Bisoziation | Kandidat | Wenn Heizkostenverteiler kWh statt dimensionsloser Einheiten liefern (Fernablesung ab 2027 prüfen). |
+| Hausakte mit gespiegelten Grundrissen | 19.09.2026 | Duplikat | Eigener Bestand | Eigener Atlas / Protokoll | Bisoziation | Kandidat | nie — lebt in Altbau Thermal weiter. |
+| Hausweite Symptomkarte (Schimmel über Etagen) | 19.09.2026 | Reality-Check | Niemand | Deutsche Suche | Bisoziation | Kandidat | Wenn sich die Rechtsprechung zu Wärmebrücken im Bestand ändert. |
+| Kirchen-Baubegehung digital | 19.09.2026 | Schon gebaut | Firma | Empfänger-Suche | Primärquelle | Kandidat | nie. |
+| Raumscan/LiDAR → Heizlast | 19.09.2026 | Schon gebaut | Firma | Deutsche Suche | Bisoziation | Kandidat | nie. |
+| Sandstein-Streiflicht-Relief | 19.09.2026 | Duplikat | Eigener Bestand | Eigener Atlas / Protokoll | Modell-Katalog | Kandidat | nie — lebt als Streiflicht weiter. |
+| Schadenskartierung per Foto (Denkmalfassade) | 19.09.2026 | Schon gebaut | Firma | Deutsche Suche | Primärquelle | Kandidat | nie. |
+| Schimmel-Symptomdiagnose (Ursachen-Band) | 19.09.2026 | Schon gebaut | Firma | Eigener Atlas / Protokoll | Bisoziation | Kandidat | nie. |
+| Baum-Stigmergie (Kontrollhistorie am Baum) | 18.09.2026 | Schon gebaut | Firma | Deutsche Suche | Bisoziation | Kandidat | nie — Muster „Objekt + Prüfpflicht" ist dicht. |
+| Baum-Verfallsdatum (Befund verfällt ohne Foto-Bestätigung) | 18.09.2026 | Schon gebaut | Firma | Englische Suche | Bisoziation | Kandidat | nie. |
+| Handy-Barometer/Infraschall für Feuerkugeln | 18.09.2026 | Schon gebaut | Forschung | Englische Suche | Bisoziation | Kandidat | nie. |
+| Radio-Meteorscatter × visuelle Zeugenmeldung | 18.09.2026 | Schon gebaut | Forschung | Englische Suche | Bisoziation | Kandidat | nie. |
+| Tafel-Warenannahme per Foto | 18.09.2026 | Beim Empfänger selbst | Gemeinnützige | Empfänger-Suche | Brainstorm | Kandidat | Wenn das Förderprojekt ausläuft und die App nicht weiterbetrieben wird. |
+| Balkonkraftwerk-Verschattung per Handykamera | 16.09.2026 | Schon gebaut | Community / Indie | Forum / Nische | Brainstorm | Kandidat | nie — Balkonsolar ist ein aktiver Bastlermarkt. |
+| Betriebskostenabrechnung prüfen | 16.09.2026 | Schon gebaut | Firma | Nicht dokumentiert | Brainstorm | Kandidat | nie. |
+| Chor-Übedateien aus Aufnahme (SATB-Trennung) | 16.09.2026 | Schon gebaut | Firma | Englische Suche | Brainstorm | Kandidat | nie — Stem-Trennung ist ein dichter Markt. |
+| Hitze-Schattenrouten für Ältere | 16.09.2026 | Schon gebaut | Forschung | Nicht dokumentiert | Brainstorm | Kandidat | nie — Forschung und Kommunen sind aktiv. |
+| Kreuzungs-Falschparker & Schulweg-Gefahrenkarte | 16.09.2026 | Schon gebaut | Behörde | Nicht dokumentiert | Brainstorm | Kandidat | nie. |
+| Mängelanzeige-/Schimmel-Assistent für Mieter | 16.09.2026 | Schon gebaut | Firma | Nicht dokumentiert | Brainstorm | Kandidat | nie — Mieter-Tools sind kommerziell dicht. |
+| Repair-Café-Diagnoseassistent | 16.09.2026 | Beim Empfänger selbst | Gemeinnützige | Empfänger-Suche | Brainstorm | Kandidat | nie — beim Empfänger selbst. |
+| Wheelmap: Eingangsfoto → Barrierefreiheit | 16.09.2026 | Beim Empfänger selbst | Gemeinnützige | Empfänger-Suche | Brainstorm | Kandidat | nie — beim Empfänger selbst. |
+| Commute Oracle | 09/2026 | Schon gebaut | Firma | Nicht dokumentiert | Ideenliste | Kandidat | nie — Pendelprognose ist ein Kernprodukt großer Kartenanbieter. |
+| git-archaeologist (MCP) | 09/2026 | Schon gebaut | Community / Indie | Nicht dokumentiert | Ideenliste | Kandidat | nie — naheliegendes Tooling im aktiven MCP-Ökosystem wird mehrfach gebaut. |
+| Home-Network MCP | 09/2026 | Schon gebaut | Community / Indie | Nicht dokumentiert | Ideenliste | Kandidat | nie — mindestens vier unabhängige Server. |
+| Repo-Museum | 09/2026 | Schon gebaut | Community / Indie | Nicht dokumentiert | Ideenliste | Kandidat | nur als eigenes Spielzeug, nie als Geschenk — die Metapher ist Design, keine Fähigkeit. |
 
 <!-- MUSTER:END -->
 

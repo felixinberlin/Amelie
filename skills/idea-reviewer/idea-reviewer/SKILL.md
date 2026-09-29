@@ -114,7 +114,7 @@ Maps where the idea lives within the broader open-source knowledge graph:
 ### Step 0 · Intake & Input Normalization
 1. Receive idea candidate from user or from discovery logs (`06-suche/`).
 2. Identify origin method: `amelie-ideenrunde`, `lacunar-bisociation`, `asymmetric-inversion`, or `user-proposal`.
-3. Check graveyard (`08-friedhof/README.md`) to verify idea is not already dead.
+3. Check graveyard (`08-friedhof/README.md`): verify idea is not already dead, or evaluate whether new evidence satisfies its specific resurrection condition (`resurrectIf`).
 
 ### Step 1 · Vector Evaluation
 Evaluate the candidate across all 8 vectors using the rubrics in `references/vector-rubrics.md`. Assign integer scores (1–5) and write 1–2 grounding sentences per vector. Report the core score `/35` (V1–V7) and the total `/40` (with V8 Fun).
@@ -131,7 +131,7 @@ Synthesize scores into a composite recommendation:
 * **`Market Route (Venture Incubator)`**: High business value, clear B2B willingness-to-pay, compliance liability avoidance, or high developer utility, but incompatible with Amélie's CC0 gift mandate (e.g. requires Tier 3/4 backend, recurring operational cost, or targets commercial operators). Exported to `ventures/market-leads.json`.
 * **`Verengt (Narrowed Pivot)`**: Strong core idea, but direct implementation hits crowded fields or requires enterprise architecture. Formulate the single narrow residual gap.
 * **`Needs Research (Unklar)`**: Ground truth numbers ambiguous or physics signal-to-noise unverified. Pass back to discovery engine.
-* **`Graveyard Candidate (Friedhof)`**: Fails "Why Now", duplicates commercial software $\le 12$ months old with zero gap, or fails physical/legal reality-check. Formulate the death certificate.
+* **`Graveyard Candidate (Friedhof)`**: Fails "Why Now", duplicates commercial software $\le 12$ months old with zero gap, or fails physical/legal reality-check. Formulate the death certificate with mandatory resurrection condition (`resurrectIfDe` / `resurrectIfEn`).
 
 #### Commercial Evaluation for `Market Route` Candidates
 When an idea is triaged as `Market Route`, evaluate the 5 Commercial Vectors:

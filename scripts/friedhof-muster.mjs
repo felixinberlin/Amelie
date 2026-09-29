@@ -49,7 +49,7 @@ function tabelle(titel, rows, labels, of = m.total) {
 }
 
 const zeile = (d) =>
-  `| ${d.title} | ${formatTodesdatum(d.diedOn, 'de')} | ${URSACHE[d.cause].de} | ${KILLER[d.killer].de} | ${FUNDWEG[d.foundBy].de} | ${HERKUNFT[d.origin].de} | ${STADIUM[d.stage].de} |`;
+  `| ${d.title} | ${formatTodesdatum(d.diedOn, 'de')} | ${URSACHE[d.cause].de} | ${KILLER[d.killer].de} | ${FUNDWEG[d.foundBy].de} | ${HERKUNFT[d.origin].de} | ${STADIUM[d.stage].de} | ${d.resurrectIfDe.replace(/\|/g, '\\|')} |`;
 
 const block = [
   START,
@@ -72,8 +72,8 @@ const block = [
   '',
   '### Alle Gräber (neueste zuerst)',
   '',
-  '| Idee | † | Ursache | Wer sie hatte | Gefunden durch | Herkunft | Kam bis |',
-  '|---|---|---|---|---|---|---|',
+  '| Idee | † | Ursache | Wer sie hatte | Gefunden durch | Herkunft | Kam bis | Auferstehung wenn |',
+  '|---|---|---|---|---|---|---|---|',
   ...nachTodesdatum(DISCARDED_DATA).map(zeile),
   '',
   END,
