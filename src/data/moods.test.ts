@@ -36,6 +36,25 @@ describe('Stimmungen', () => {
     }
   });
 
+  it('jede Stimmung definiert Schrift- und Körpertokens; überschriebene Stein-Skalen sind vollständig', () => {
+    const extra = ['font-body', 'font-display', 'font-mono', 'body-image', 'body-size', 'header-trim'];
+    const steps = ['50', '100', '200', '300', '400', '500', '600', '700', '800', '900'];
+    const blocks = [css.split(":root[data-mood='")[0]];
+    for (const m of MOODS.filter((x) => x.id !== DEFAULT_MOOD)) {
+      blocks.push(css.split(`:root[data-mood='${m.id}'] {`)[1].split('\n}')[0]);
+    }
+    blocks.forEach((block, i) => {
+      const name = i === 0 ? DEFAULT_MOOD : MOODS.filter((x) => x.id !== DEFAULT_MOOD)[i - 1].id;
+      for (const t of extra) {
+        // Stimmungen dürfen Schrift und Hintergrund von der Standardstimmung erben; nur der Standard muss alles setzen.
+        if (i === 0) expect(block, `${name} --m-${t}`).toContain(`--m-${t}:`);
+      }
+      if (/--color-stone-/.test(block)) {
+        for (const st of steps) expect(block, `${name} --color-stone-${st}`).toContain(`--color-stone-${st}:`);
+      }
+    });
+  });
+
   it('URL schlägt Gespeichertes schlägt Standard; Unbekanntes wird ignoriert', () => {
     expect(resolveInitialMood('?mood=kitchen', 'warm')).toBe('kitchen');
     expect(resolveInitialMood('', 'warm')).toBe('warm');

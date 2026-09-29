@@ -249,7 +249,7 @@ export const Header: React.FC<HeaderProps> = ({
                 onClick={() => setLang('en')}
                 className={`px-2.5 py-1 rounded text-xs font-typewriter transition-all cursor-pointer ${
                   lang === 'en'
-                    ? 'bg-[var(--m-bg)] text-[var(--m-accent)] shadow-xs font-bold border border-[#d4c3b0]'
+                    ? 'bg-[var(--m-bg)] text-[var(--m-accent)] shadow-xs font-bold border border-[var(--m-line-strong)]'
                     : 'text-[var(--m-ink-3)] hover:text-[var(--m-ink)]'
                 }`}
                 title="English (Canonical XLIFF source)"
@@ -260,7 +260,7 @@ export const Header: React.FC<HeaderProps> = ({
                 onClick={() => setLang('de')}
                 className={`px-2.5 py-1 rounded text-xs font-typewriter transition-all cursor-pointer ${
                   lang === 'de'
-                    ? 'bg-[var(--m-bg)] text-[var(--m-accent)] shadow-xs font-bold border border-[#d4c3b0]'
+                    ? 'bg-[var(--m-bg)] text-[var(--m-accent)] shadow-xs font-bold border border-[var(--m-line-strong)]'
                     : 'text-[var(--m-ink-3)] hover:text-[var(--m-ink)]'
                 }`}
                 title="Deutsch"
@@ -271,7 +271,7 @@ export const Header: React.FC<HeaderProps> = ({
                 onClick={() => setLang('es')}
                 className={`px-2.5 py-1 rounded text-xs font-typewriter transition-all cursor-pointer ${
                   lang === 'es'
-                    ? 'bg-[var(--m-bg)] text-[var(--m-accent)] shadow-xs font-bold border border-[#d4c3b0]'
+                    ? 'bg-[var(--m-bg)] text-[var(--m-accent)] shadow-xs font-bold border border-[var(--m-line-strong)]'
                     : 'text-[var(--m-ink-3)] hover:text-[var(--m-ink)]'
                 }`}
                 title="Español"

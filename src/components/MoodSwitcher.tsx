@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Palette, Check } from 'lucide-react';
 import { Language } from '../types';
-import { MOODS, MoodId } from '../data/moods';
-import { applyMood, clearMoodFromUrl, initMood, storeMood } from '../utils/mood';
+import { DEFAULT_MOOD, MOODS, MoodId, isMoodId } from '../data/moods';
+import { applyMood, clearMoodFromUrl, storeMood } from '../utils/mood';
 
 interface MoodSwitcherProps {
   lang: Language;
@@ -12,39 +12,73 @@ const label = (lang: Language) => (lang === 'de' ? 'Stimmung' : lang === 'es' ? 
 
 /** Knopf mit Auswahlfeld: wechselt die Stimmung der ganzen Seite per Klick. */
 export const MoodSwitcher: React.FC<MoodSwitcherProps> = ({ lang }) => {
-  const [mood, setMood] = useState<MoodId>(initMood);
+  const [mood, setMood] = useState<MoodId>(() => {
+    const current = document.documentElement.dataset.mood; // von initMood() in main.tsx gesetzt
+    return isMoodId(current) ? current : DEFAULT_MOOD;
+  });
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const onDown = (e: MouseEvent) => {
       if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
     };
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setOpen(false);
-    };
     document.addEventListener('mousedown', onDown);
-    document.addEventListener('keydown', onKey);
-    return () => {
-      document.removeEventListener('mousedown', onDown);
-      document.removeEventListener('keydown', onKey);
-    };
+    return () => document.removeEventListener('mousedown', onDown);
   }, []);
+
+  // Beim Öffnen wandert der Fokus zur aktiven Stimmung (Pfeiltasten führen von dort weiter).
+  useEffect(() => {
+    if (!open) return;
+    const items = ref.current?.querySelectorAll<HTMLElement>('[role="menuitemradio"]');
+    const active = ref.current?.querySelector<HTMLElement>('[role="menuitemradio"][aria-checked="true"]');
+    (active ?? items?.[0])?.focus();
+  }, [open]);
+
+  const close = (returnFocus: boolean) => {
+    setOpen(false);
+    if (returnFocus) triggerRef.current?.focus();
+  };
+
+  const onMenuKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      close(true);
+      return;
+    }
+    const keys = ['ArrowDown', 'ArrowUp', 'Home', 'End'];
+    if (!keys.includes(e.key)) return;
+    e.preventDefault();
+    const items = Array.from(ref.current?.querySelectorAll<HTMLElement>('[role="menuitemradio"]') ?? []);
+    const i = items.indexOf(document.activeElement as HTMLElement);
+    const next =
+      e.key === 'Home' ? 0 : e.key === 'End' ? items.length - 1 : (i + (e.key === 'ArrowDown' ? 1 : -1) + items.length) % items.length;
+    items[next]?.focus();
+  };
 
   const choose = (id: MoodId) => {
     setMood(id);
     applyMood(id);
     storeMood(id);
     clearMoodFromUrl();
-    setOpen(false);
+    close(true);
   };
 
   const current = MOODS.find((m) => m.id === mood) ?? MOODS[0];
 
   return (
-    <div className="relative" ref={ref}>
+    <div
+      className="relative"
+      ref={ref}
+      onBlur={(e) => {
+        // Fokus verlässt das Feld (z. B. per Tab zum „Mehr“-Menü): Auswahl schließen.
+        if (open && !e.currentTarget.contains(e.relatedTarget as Node | null)) setOpen(false);
+      }}
+    >
       <button
         type="button"
+        ref={triggerRef}
         onClick={() => setOpen((o) => !o)}
         aria-haspopup="true"
         aria-expanded={open}
@@ -62,6 +96,7 @@ export const MoodSwitcher: React.FC<MoodSwitcherProps> = ({ lang }) => {
         <div
           role="menu"
           aria-label={label(lang)}
+          onKeyDown={onMenuKeyDown}
           className="absolute right-0 top-full mt-2 w-72 max-w-[calc(100vw-1.5rem)] rounded-2xl bg-[var(--m-surface)] border border-[var(--m-line)] shadow-2xl p-2 z-50 animate-fadeIn"
         >
           <div className="px-2.5 pt-1 pb-2 text-[10px] font-typewriter uppercase tracking-widest font-bold text-[var(--m-accent)]">
