@@ -36,6 +36,7 @@ If `06-suche/amelie-inversions-log.md` does not yet exist, initialize it from `a
 1. Read the latest retro in `06-suche/amelie-inversions-log.md`. Its "Next Time" directive is your first constraint.
 2. Check `06-suche/amelie-suchplaybook.md` (the Besetzungsatlas) to ensure the target field is not already marked `dicht`.
 3. Check `08-friedhof/README.md`. Never reincarnate a corpse whose resurrection condition has not been met.
+4. Run the check as a command: `npm run bib -- find <terms>` (protocol, graveyard, doses, candidates, sources, logs at once; exit code 2 = already there), `npm run bib -- grab list --cause <cause>` for the warning list, `npm run bib -- vorflug --thema "<terms>"` for foreign branches on the same topic. Read-only — manual in `06-suche/amelie-bibliothek-cli.md`.
 
 ### Step 1 · Select a Grounded Target System
 Pick a real-world system that currently possesses budget, software, or legal enforcement. The target MUST belong to one of four Anchor Classes (detailed in `references/mandate-sources.md`):
@@ -86,7 +87,7 @@ Subject the candidate to Amélie's rigorous verification order (max 4 searches):
 **Stopping Rule**: If an existing tool/product fully covers the premise and is $\le 12$ months old $\to$ verdict `besetzt`. Do not rationalize. If it has a structural flaw (e.g., commercial paywall, account requirement) $\to$ verdict `verengt`.
 
 ### Step 7 · Log & Update
-1. Append all candidates and verdicts to `06-suche/amelie-pruefprotokoll.md` tagged with `[method: inversion]`.
+1. Append all candidates and verdicts to `06-suche/amelie-pruefprotokoll.md` tagged with `[method: inversion]`. In a team round (Orchestrator) you do **not** write the protocol: hand the rows to the librarian, who runs `npm run bib -- protokoll add`. Alone, use that command yourself (validates verdict, evidence mark, method and review date; `--dry-run` shows the row first).
 2. Update `06-suche/amelie-inversions-log.md` with:
    - Target System & Operator
    - Asymmetry Map

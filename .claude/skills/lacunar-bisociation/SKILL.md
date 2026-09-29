@@ -37,6 +37,8 @@ Look for it in the repo at `06-suche/amelie-bisoziation-log.md`. If it is missin
 
 Read the log's last retro first. Its "next time" item is this run's first constraint, for example "Frame B from biology, not from software". Also note frame pairs that were already tried, so you don't repeat them.
 
+Check every surviving candidate against the whole memory with `npm run bib -- find <terms>` (protocol, graveyard, doses, candidates, sources, logs in one call; exit code 2 = already there; all terms must match, `--any` loosens) and list the graveyard by cause with `npm run bib -- grab list --cause <cause>`. Read-only: protocol rows, graves and source bookings belong to the librarian (`06-suche/amelie-bibliothek-cli.md`).
+
 ### 1 · Saturation: map the field until it feels full
 
 Costa's claim is that lacunar novelty follows a lived *saturation* of a conceptual field: you exhaust what is there before the gap becomes visible. Emulate that directly.

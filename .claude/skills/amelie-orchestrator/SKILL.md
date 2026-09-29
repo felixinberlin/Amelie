@@ -18,7 +18,7 @@ Eine Teamrunde ist die Holz-Runde (27.09.2026) als wiederholbares Verfahren. Dor
 | Prüfer | `idea-reviewer` | `idea-reviewer` | `06-suche/amelie-classification-log.md` |
 | Packer | `dose-packer` | `dose-packer` | `05-dosen/`, `en/05-dosen/`, `src/data/dosen.ts` (`DOSEN_DATA`), `scripts/dosen-review-metadata.json`, `public/data/`, die eine Gepackt-Zeile im Prüfprotokoll |
 | Gerüstbauer | `demo-builder` | `demo-builder` | `07-demos/<id>/`, `07-demos/README.md`, `src/engine/<id>/`, `src/data/doseBooks.ts` |
-| Gedächtnis | `bibliothekar` | — | Prüfprotokoll, Playbook, Quellen, `08-friedhof/`, `DISCARDED_DATA` in `src/data/dosen.ts` |
+| Gedächtnis | `bibliothekar` | — | Prüfprotokoll, Playbook, Quellen, `08-friedhof/`, `src/data/graeber.json` — jeweils über die Bibliotheks-CLI (`npm run bib`, `npm run quellen`) |
 
 **Eine Datei, ein Schreiber.** Das ist die wichtigste Regel dieser Skill. Parallel laufen nur Agenten mit disjunkten Schreibrechten.
 
@@ -32,7 +32,7 @@ Phase 1  Entdeckung (parallel)   ─ ideen-scout ‖ bisoziations-kollider ‖ i
 Phase 2  Konvergenz-Merge        ─ Orchestrator: deduplizieren, Doppelfunde markieren, gegen Protokoll/Atlas halten
 Phase 3  Review                  ─ idea-reviewer auf alle frei/verengt-Kandidaten
 Phase 4  Verpacken (optional)    ─ dose-packer, dann demo-builder, je Dose Ready (max. 1–2 pro Runde)
-Phase 5  Gedächtnis              ─ bibliothekar (nach Phase 4: teilt src/data/dosen.ts mit dem Packer)
+Phase 5  Gedächtnis              ─ bibliothekar (nach Phase 4: Packer und Bibliothekar schreiben beide ins Prüfprotokoll)
 Phase 6  Abschluss               ─ Orchestrator: npm run lint && npm test, Commit, Push, Bericht
 ```
 
@@ -40,8 +40,8 @@ Phase 6  Abschluss               ─ Orchestrator: npm run lint && npm test, Com
 
 1. **Retro lesen:** letzte Retro in `06-suche/amelie-suchplaybook.md` sowie in Inversions- und Bisoziations-Log. Ein „Nächstes Mal"-Punkt, der schon zweimal übertragen wurde, hat Vorrang vor freier Themenwahl.
 2. **Thema wählen:** Vorgabe des Nutzers, sonst der älteste offene Retro-Punkt. Vorher gegen den Besetzungsatlas halten — ein `dicht`-Feld ist kein Rundenthema (Runde 14 Cannabis: 0 frei).
-3. **Netz prüfen** (Holz-Retro): `curl -s -o /dev/null -w '%{http_code}' <Behörden-URL>`. Bei `000` gilt: Engines markieren jede Evidenz als `[Schnipsel]`, WebFetch zusätzlich versuchen, und der Bericht sagt es ausdrücklich.
-4. **Friedhofsgang:** `08-friedhof/README.md` — Todesursachen, die zum Thema passen, gehen als Warnliste in alle Engine-Prompts.
+3. **Vorflug per CLI:** `npm run bib -- vorflug --thema "<Begriffe>" --netz` — `git fetch`, fremde Branches/Commits der letzten 14 Tage zum Thema (Lehre Offenlegungs-Runde: zwei Sitzungen im selben Repo verdoppelten die Suche), Treffer im Gedächtnis und ein Netztest. Offene PRs zusätzlich mit `list_pull_requests` prüfen. Bei einem Netztest mit ✗ gilt: Engines markieren jede Evidenz als `[Schnipsel]`, WebFetch zusätzlich versuchen, und der Bericht sagt es ausdrücklich.
+4. **Friedhofsgang:** `npm run bib -- find <Thema>` und `npm run bib -- grab list --cause <ursache>` (plus `08-friedhof/README.md` für die Taxonomie) — Todesursachen, die zum Thema passen, und Exit-2-Treffer gehen als Warnliste in alle Engine-Prompts.
 5. **Quellen wählen:** `npm run quellen -- next --limit 5 [--tag <Thema>]` (Register `src/data/quellen.json`, Handbuch `06-suche/amelie-quellen-register.md`); jeder Engine-Prompt bekommt 1–2 offene Quellen samt `zugang.wie`, und verlangt am Ende einen Block **Quellenmeldung**.
 6. **Baseline:** `npm run lint && npm test` grün, sonst erst reparieren oder melden.
 
@@ -69,13 +69,13 @@ Nur bei `Dose Ready` und Summe ≥ 24/35. Höchstens eine, ausnahmsweise zwei Do
 
 ### Phase 5 · Gedächtnis
 
-Läuft **nach** dem Packer, weil Gräber in `DISCARDED_DATA` (`src/data/dosen.ts`) stehen und der Packer dieselbe Datei bearbeitet. Ohne Phase 4 darf er direkt nach Phase 3 starten.
+Gräber liegen seit dem 29.09.2026 in `src/data/graeber.json` (Schreibweg: `npm run bib -- grab add`). Der Bibliothekar läuft trotzdem **nach** dem Packer: beide schreiben das Prüfprotokoll (`bib protokoll add` liest und schreibt die ganze Datei, parallele Aufrufe würden sich überschreiben), und ein Kill, der eine bereits gepackte Dose ist, fasst auch `DOSEN_DATA` an. Ohne Phase 4 darf er direkt nach Phase 3 starten.
 
-Der Bibliothekar bekommt: Merge-Tabelle, Reviewer-Urteile, Engine-Retros, Netzstatus. Er schreibt Protokoll, Playbook (Trefferquote, Atlas, Retro), Friedhof und das **Quellen-Register** (jede Quellenmeldung der Engines per `npm run quellen -- log|add|rate`; `amelie-quellen.md` wird erzeugt, nie von Hand editiert). Die Retro enthält einen Abschnitt **„Orchestrierung"**: Was hat die Parallelität gebracht (Doppelfunde, Widersprüche), was hat sie gekostet.
+Der Bibliothekar bekommt: Merge-Tabelle, Reviewer-Urteile, Engine-Retros, Netzstatus. Er schreibt Protokoll (`bib protokoll add`), Playbook (Trefferquote aus `bib protokoll stats`, Atlas, Retro), Friedhof (`bib grab add`) und das **Quellen-Register** (die Quellenmeldungen der Engines gesammelt per `npm run bib -- quellen import <datei> --agent … --runde …`; Einzelfälle mit `npm run quellen -- log|add|rate`; `amelie-quellen.md` wird erzeugt, nie von Hand editiert). Die Retro enthält einen Abschnitt **„Orchestrierung"**: Was hat die Parallelität gebracht (Doppelfunde, Widersprüche), was hat sie gekostet.
 
 ### Phase 6 · Abschluss
 
-1. `npm run lint && npm test` — beide grün, sonst zurück an den zuständigen Agenten.
+1. `npm run bib -- abschluss` (= `export:data` → `lint` → `test`, listet offene Änderungen) — alles ✓, sonst zurück an den zuständigen Agenten.
 2. Diff lesen: Hat ein Agent außerhalb seiner Schreibrechte geschrieben? Rückgängig machen.
 3. Commit (ein Commit pro Phase ist gut lesbar), Push auf den Arbeitszweig.
 4. Bericht an den Nutzer: Zahlen (geprüft / frei / verengt / unklar / besetzt), Doppelfunde, Dosen, Gräber, offene Punkte, Evidenz-Warnung falls `[Schnipsel]`. **Keine Mail wird versendet** — Zustellung bleibt Félix' Entscheidung.
