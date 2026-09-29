@@ -362,6 +362,7 @@ export function App() {
               <SearchPlaybookStudio
                 lang={lang}
                 onSendToPipeline={handleBisociationToPacker}
+                onNavigateToDose={(doseId) => handleSelectDoseById(doseId)}
               />
             )}
 
