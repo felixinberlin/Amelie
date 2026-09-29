@@ -18,6 +18,18 @@ export function readStoredMood(): string | null {
   }
 }
 
+/** Entfernt ?mood= aus der Adresszeile, damit die Auswahl einen Reload übersteht. */
+export function clearMoodFromUrl(): void {
+  try {
+    const url = new URL(window.location.href);
+    if (!url.searchParams.has('mood')) return;
+    url.searchParams.delete('mood');
+    window.history.replaceState(window.history.state, '', url);
+  } catch {
+    /* Adresszeile bleibt unverändert */
+  }
+}
+
 export function storeMood(id: MoodId): void {
   try {
     localStorage.setItem(MOOD_STORAGE_KEY, id);

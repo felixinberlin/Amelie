@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Palette, Check } from 'lucide-react';
 import { Language } from '../types';
 import { MOODS, MoodId } from '../data/moods';
-import { applyMood, initMood, storeMood } from '../utils/mood';
+import { applyMood, clearMoodFromUrl, initMood, storeMood } from '../utils/mood';
 
 interface MoodSwitcherProps {
   lang: Language;
@@ -35,6 +35,7 @@ export const MoodSwitcher: React.FC<MoodSwitcherProps> = ({ lang }) => {
     setMood(id);
     applyMood(id);
     storeMood(id);
+    clearMoodFromUrl();
     setOpen(false);
   };
 
