@@ -3,6 +3,7 @@ import { CandidateIdea } from '../../types';
 export const NORMAL_JOBS_AND_EVERYDAY_PEOPLE_IDEAS: CandidateIdea[] = [
   {
     id: 'ai-nurse-shift-guardian',
+    packedDoseId: 'dose-nurse-shift-guardian',
     title: 'DienstplanWächter: Roster Auditor, Bonus Calculator & Rest-Time Shield for Nurses',
     round: 'Everyday Workers 2026',
     date: '17.09.2026',
@@ -117,6 +118,7 @@ Zero paywalls, zero subscriptions. Free for all unions and healthcare workers wo
   },
   {
     id: 'ai-tradesman-liability-shield',
+    packedDoseId: 'dose-tradesman-liability-shield',
     title: 'BedenkenBlitz: Instant VOB/B Construction Liability Shield for Tradespeople',
     round: 'Everyday Workers 2026',
     date: '17.09.2026',
@@ -218,6 +220,7 @@ We present to you a completely free public domain tool (CC0): "BedenkenBlitz". I
   },
   {
     id: 'ai-cleaner-chemical-safety-voice',
+    packedDoseId: 'dose-cleaner-chemical-safety',
     title: 'ChemHazard Stop / MischStop (ChemGefahr-Stopp)',
     round: 'Everyday Workers 2026',
     date: '17.09.2026',

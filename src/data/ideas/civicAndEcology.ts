@@ -153,6 +153,7 @@ export const CIVIC_AND_ECOLOGY_IDEAS: CandidateIdea[] = [
   },
   {
     id: 'bleifrei-lotse',
+    packedDoseId: 'bleifrei-lotse',
     title: 'Bleifrei-Lotse: TrinkwV § 17 Bleirohr-Detektor & Behörden-Melder',
     round: 'Inversion Run 2',
     date: '25.09.2026',

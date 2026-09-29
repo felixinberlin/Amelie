@@ -26,12 +26,20 @@ import {
   Tag,
   Dices,
   Brain,
-  CircleDashed
+  CircleDashed,
+  Gift
 } from 'lucide-react';
 import { Language, CandidateIdea, CandidateStatus, Verdict } from '../types';
 import { CANDIDATE_IDEAS_DATA } from '../data/unpacked';
 import { loadCandidates, saveCandidates, clearCandidates, isReadyToPack } from '../utils/candidateStorage';
 import { getTranslation, getLocalizedTitle } from '../i18n';
+import {
+  pipelineIdeas,
+  PIPELINE_THEMES,
+  themeIdOf,
+  RESEARCH_THEME_ID,
+  RESEARCH_THEME_LABEL,
+} from '../data/pipeline';
 
 interface UnpackedIdeasViewProps {
   lang: Language;
@@ -66,23 +74,43 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
   const [sourceFilter, setSourceFilter] = useState<string>('all');
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<'cards' | 'table'>('cards');
-  const [expandedId, setExpandedId] = useState<string | null>('glasanflug-ampel');
+  const [expandedId, setExpandedId] = useState<string | null>(null);
   const [copiedMd, setCopiedMd] = useState(false);
   const [showAddModal, setShowAddModal] = useState(false);
+  const [themeFilter, setThemeFilter] = useState<string>('all');
+  const [showPacked, setShowPacked] = useState(false);
+
+  // Nur, was in die Pipeline gehört: ohne Spiele (Tab Games), ohne Alltagsberufe
+  // (Tab Alltagsarbeit) und standardmäßig ohne bereits gepackte Ideen.
+  const scoped = useMemo(() => pipelineIdeas(candidates, showPacked), [candidates, showPacked]);
+  const packedHiddenCount = useMemo(
+    () => pipelineIdeas(candidates, true).length - pipelineIdeas(candidates, false).length,
+    [candidates]
+  );
+  const themeChips = useMemo(() => {
+    const counts = new Map<string, number>();
+    scoped.forEach((c) => counts.set(themeIdOf(c), (counts.get(themeIdOf(c)) ?? 0) + 1));
+    return [
+      ...PIPELINE_THEMES.map((th) => ({ id: th.id, label: th.label[lang] })),
+      { id: RESEARCH_THEME_ID, label: RESEARCH_THEME_LABEL[lang] },
+    ]
+      .map((th) => ({ ...th, count: counts.get(th.id) ?? 0 }))
+      .filter((th) => th.count > 0);
+  }, [scoped, lang]);
 
   // Dynamic unique source types
   const uniqueSourceTypes = useMemo(() => {
     const set = new Set<string>();
-    candidates.forEach((c) => {
+    scoped.forEach((c) => {
       if (c.sourceType) set.add(c.sourceType);
     });
     return Array.from(set).sort();
-  }, [candidates]);
+  }, [scoped]);
 
   // Top/Popular tags for quick filtering
   const popularTags = useMemo(() => {
     const tagCounts: Record<string, number> = {};
-    candidates.forEach((c) => {
+    scoped.forEach((c) => {
       c.tags?.forEach((tag) => {
         tagCounts[tag] = (tagCounts[tag] || 0) + 1;
       });
@@ -91,7 +119,7 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
       .sort((a, b) => b[1] - a[1])
       .slice(0, 14)
       .map(([tag]) => tag);
-  }, [candidates]);
+  }, [scoped]);
 
   // Download JSON
   const handleDownloadJson = () => {
@@ -269,8 +297,8 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
 
   // Pick a random surprise gift idea
   const handleSurpriseMe = () => {
-    const readyCandidates = candidates.filter((c) => isReadyToPack(c.status));
-    const pool = readyCandidates.length > 0 ? readyCandidates : candidates;
+    const readyCandidates = scoped.filter((c) => isReadyToPack(c.status));
+    const pool = readyCandidates.length > 0 ? readyCandidates : scoped;
     const randomIndex = Math.floor(Math.random() * pool.length);
     const chosen = pool[randomIndex];
     if (chosen) {
@@ -278,6 +306,7 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
       setSelectedTag(null);
       setStatusFilter('all');
       setSourceFilter('all');
+      setThemeFilter('all');
       setExpandedId(chosen.id);
       setTimeout(() => {
         const el = document.getElementById(`candidate-card-${chosen.id}`);
@@ -289,7 +318,10 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
   };
 
   // Filtering
-  const filteredCandidates = candidates.filter((c) => {
+  const filteredCandidates = scoped.filter((c) => {
+    // Theme filter
+    if (themeFilter !== 'all' && themeIdOf(c) !== themeFilter) return false;
+
     // Status filter
     if (statusFilter === 'ready') {
       if (!isReadyToPack(c.status)) return false;
@@ -327,10 +359,10 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
     return true;
   });
 
-  const readyCount = candidates.filter((c) => isReadyToPack(c.status)).length;
-  const investigatingCount = candidates.filter((c) => c.status === 'unklar').length;
-  const saturatedCount = candidates.filter((c) => c.status === 'besetzt').length;
-  const uncheckedCount = candidates.filter((c) => c.status === 'ungeprüft').length;
+  const readyCount = scoped.filter((c) => isReadyToPack(c.status)).length;
+  const investigatingCount = scoped.filter((c) => c.status === 'unklar').length;
+  const saturatedCount = scoped.filter((c) => c.status === 'besetzt').length;
+  const uncheckedCount = scoped.filter((c) => c.status === 'ungeprüft').length;
 
   const getStatusBadge = (status: CandidateStatus) => {
     switch (status) {
@@ -503,7 +535,7 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
             <div className="text-xs text-stone-600 font-medium">
               {lang === 'de' ? 'Gesamter Katalog' : lang === 'es' ? 'Catálogo total' : 'Total Ideas'}
             </div>
-            <div className="text-xl font-bold text-stone-900 mt-0.5">{candidates.length}</div>
+            <div className="text-xl font-bold text-stone-900 mt-0.5">{scoped.length}</div>
           </button>
         </div>
       </div>
@@ -564,10 +596,10 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
               onChange={(e) => setSourceFilter(e.target.value)}
               className="bg-white border border-stone-300 rounded-xl px-3 py-1.5 shadow-2xs text-xs font-medium text-stone-700 focus:outline-none cursor-pointer max-w-[180px] truncate"
             >
-              <option value="all">{lang === 'de' ? `Alle Kategorien (${candidates.length})` : lang === 'es' ? `Todas las categorías (${candidates.length})` : `All Categories (${candidates.length})`}</option>
+              <option value="all">{lang === 'de' ? `Alle Kategorien (${scoped.length})` : lang === 'es' ? `Todas las categorías (${scoped.length})` : `All Categories (${scoped.length})`}</option>
               {uniqueSourceTypes.map((st) => (
                 <option key={st} value={st}>
-                  {st} ({candidates.filter((c) => c.sourceType === st).length})
+                  {st} ({scoped.filter((c) => c.sourceType === st).length})
                 </option>
               ))}
             </select>
@@ -609,12 +641,55 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
           </div>
         </div>
 
+        {/* Theme groups + packed toggle */}
+        <div className="flex flex-wrap items-center gap-1.5 text-xs">
+          <button
+            onClick={() => setThemeFilter('all')}
+            className={`px-2.5 py-1 rounded-full font-medium transition-colors ${
+              themeFilter === 'all' ? 'bg-stone-900 text-white' : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
+            }`}
+          >
+            {lang === 'de' ? 'Alle Bereiche' : lang === 'es' ? 'Todas las áreas' : 'All areas'} ({scoped.length})
+          </button>
+          {themeChips.map((th) => (
+            <button
+              key={th.id}
+              onClick={() => setThemeFilter(themeFilter === th.id ? 'all' : th.id)}
+              className={`px-2.5 py-1 rounded-full font-medium transition-colors ${
+                themeFilter === th.id
+                  ? 'bg-[#8c1d40] text-white shadow-2xs'
+                  : 'bg-stone-100 text-stone-600 hover:bg-amber-50 hover:text-amber-900'
+              }`}
+            >
+              {th.label} ({th.count})
+            </button>
+          ))}
+          {packedHiddenCount > 0 && (
+            <label className="ml-auto inline-flex items-center gap-1.5 cursor-pointer text-stone-600 select-none">
+              <input
+                type="checkbox"
+                checked={showPacked}
+                onChange={(e) => setShowPacked(e.target.checked)}
+                className="accent-[#8c1d40]"
+              />
+              <Gift className="w-3.5 h-3.5 text-[#8c1d40]" />
+              <span>
+                {lang === 'de'
+                  ? `Schon als Dose gepackt zeigen (${packedHiddenCount})`
+                  : lang === 'es'
+                  ? `Mostrar ya empaquetadas (${packedHiddenCount})`
+                  : `Show ideas already packed as Tins (${packedHiddenCount})`}
+              </span>
+            </label>
+          )}
+        </div>
+
         {/* Quick Tag Pill Chips */}
         {popularTags.length > 0 && (
           <div className="flex items-center gap-1.5 overflow-x-auto pb-1 pt-0.5 scrollbar-none text-xs">
             <span className="text-stone-400 flex items-center gap-1 shrink-0 font-medium pl-0.5">
               <Tag className="w-3 h-3 text-stone-400" />
-              <span>{lang === 'de' ? 'Themen:' : lang === 'es' ? 'Temas:' : 'Themes:'}</span>
+              <span>{lang === 'de' ? 'Tags:' : lang === 'es' ? 'Etiquetas:' : 'Tags:'}</span>
             </span>
             <button
               onClick={() => setSelectedTag(null)}
@@ -648,21 +723,21 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
         <div>
           {lang === 'de' ? (
             <span>
-              Zeige <strong>{filteredCandidates.length}</strong> von {candidates.length} Ideen
+              Zeige <strong>{filteredCandidates.length}</strong> von {scoped.length} Ideen
               {selectedTag && <> · Thema: <span className="font-semibold text-amber-700">#{selectedTag}</span></>}
               {sourceFilter !== 'all' && <> · Kategorie: <span className="font-semibold text-amber-700">{sourceFilter}</span></>}
               {statusFilter !== 'all' && <> · Status: <span className="font-semibold text-stone-800">{statusFilter}</span></>}
             </span>
           ) : lang === 'es' ? (
             <span>
-              Mostrando <strong>{filteredCandidates.length}</strong> de {candidates.length} ideas
+              Mostrando <strong>{filteredCandidates.length}</strong> de {scoped.length} ideas
               {selectedTag && <> · Tema: <span className="font-semibold text-amber-700">#{selectedTag}</span></>}
               {sourceFilter !== 'all' && <> · Categoría: <span className="font-semibold text-amber-700">{sourceFilter}</span></>}
               {statusFilter !== 'all' && <> · Estado: <span className="font-semibold text-stone-800">{statusFilter}</span></>}
             </span>
           ) : (
             <span>
-              Showing <strong>{filteredCandidates.length}</strong> of {candidates.length} ideas
+              Showing <strong>{filteredCandidates.length}</strong> of {scoped.length} ideas
               {selectedTag && <> · Tag: <span className="font-semibold text-amber-700">#{selectedTag}</span></>}
               {sourceFilter !== 'all' && <> · Category: <span className="font-semibold text-amber-700">{sourceFilter}</span></>}
               {statusFilter !== 'all' && <> · Status: <span className="font-semibold text-stone-800">{statusFilter}</span></>}
@@ -734,6 +809,12 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
                         <td className="py-3 px-3 align-top">
                           <div className="scale-90 origin-left">
                             {getStatusBadge(candidate.status)}
+                            {candidate.packedDoseId && (
+                              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[#8c1d40]/10 text-[#8c1d40] border border-[#8c1d40]/25">
+                                <Gift className="w-3 h-3" />
+                                {lang === 'de' ? 'als Dose gepackt' : lang === 'es' ? 'ya empaquetada' : 'packed as Tin'}
+                              </span>
+                            )}
                           </div>
                         </td>
                         <td className="py-3 px-4 align-top text-stone-700 leading-relaxed">
@@ -860,6 +941,12 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
                     <div className="space-y-2 flex-1">
                       <div className="flex flex-wrap items-center gap-2">
                         {getStatusBadge(candidate.status)}
+                        {candidate.packedDoseId && (
+                          <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[#8c1d40]/10 text-[#8c1d40] border border-[#8c1d40]/25">
+                            <Gift className="w-3 h-3" />
+                            {lang === 'de' ? 'als Dose gepackt' : lang === 'es' ? 'ya empaquetada' : 'packed as Tin'}
+                          </span>
+                        )}
                         <span className="px-2 py-0.5 text-xs rounded-md bg-stone-100 text-stone-600 font-mono">
                           {candidate.round}
                         </span>

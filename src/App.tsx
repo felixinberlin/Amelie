@@ -17,6 +17,8 @@ import { GitHubPagesDataHub } from './components/GitHubPagesDataHub';
 import { MusterEmailsSection } from './components/MusterEmailsSection';
 import { SelfAuditView } from './components/SelfAuditView';
 import { FundingCompass } from './components/FundingCompass';
+import { GamesView } from './components/GamesView';
+import { pipelineIdeas } from './data/pipeline';
 import { DOSEN_DATA, DISCARDED_DATA } from './data/dosen';
 import { MATRIX_DATA } from './data/matrix';
 import { DELIVERIES_DATA } from './data/deliveries';
@@ -217,7 +219,7 @@ export function App() {
         lang={lang}
         setLang={setLang}
         dosenCount={dosenList.length}
-        unpackedCount={candidatesList.length + importedCandidates.length}
+        unpackedCount={pipelineIdeas([...importedCandidates, ...candidatesList]).length}
         discardedCount={DISCARDED_DATA.length}
         mailsCount={DELIVERIES_DATA.length}
       />
@@ -280,6 +282,18 @@ export function App() {
             {currentTab === 'whimsy' && (
               <WhimsyAndGoodnessView
                 lang={lang}
+                onOpenGames={() => {
+                  setCurrentTab('games');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+              />
+            )}
+
+            {currentTab === 'games' && (
+              <GamesView
+                lang={lang}
+                dosen={dosenList}
+                onOpenDose={handleOpenSinglePageById}
               />
             )}
 

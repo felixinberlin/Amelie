@@ -69,6 +69,10 @@
         <source>Funny &amp; Better</source>
         <target state="translated">Alegre y mejor</target>
       </trans-unit>
+      <trans-unit id="nav.games" resname="nav.games">
+        <source>Games</source>
+        <target state="translated">Juegos</target>
+      </trans-unit>
       <trans-unit id="nav.packer" resname="nav.packer">
         <source>Pack a Tin</source>
         <target state="translated">Empaquetar lata</target>
