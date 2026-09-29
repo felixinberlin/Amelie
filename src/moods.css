@@ -50,6 +50,10 @@ header.sticky::after {
   height: 6px;
   background: var(--m-header-trim);
 }
+/* Standardstimmung (ohne data-mood): kein Streifen, Kopfzeile bleibt so hoch wie zuvor. */
+:root:not([data-mood]) header.sticky::after {
+  display: none;
+}
 
 /* ───────── Warm: Terrakotta, Honig, Sandstein ───────── */
 :root[data-mood='warm'] {
@@ -135,8 +139,8 @@ header.sticky::after {
 
 /* ───────── Decisive: Schwarz, Signalrot, keine Umwege ───────── */
 :root[data-mood='decisive'] {
-  --m-accent: #0b0b0f;
-  --m-accent-strong: #000000;
+  --m-accent: #d91e36;
+  --m-accent-strong: #a8142a;
   --m-on-accent: #ffffff;
   --m-ink: #0b0b0f;
   --m-ink-2: #26262b;
@@ -151,8 +155,8 @@ header.sticky::after {
   --m-surface: #ffffff;
   --m-surface-2: #efefec;
   --m-sunk: #e4e4e0;
-  --m-green: #0b0b0f;
-  --m-green-2: #e5233d;
+  --m-green: #14532d;
+  --m-green-2: #1a7f37;
   --m-font-body: 'Plus Jakarta Sans', -apple-system, 'Segoe UI', sans-serif;
   --m-font-display: 'Plus Jakarta Sans', -apple-system, 'Segoe UI', sans-serif;
   --m-font-mono: 'JetBrains Mono', 'Courier Prime', monospace;
