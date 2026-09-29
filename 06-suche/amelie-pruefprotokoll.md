@@ -857,3 +857,12 @@ Teamrunde „Multiplayer“ (gemeinsames Spielen, Regelwerke, Recht, Institution
 | K6 | **Hausregel-Folgenabschätzung** (`hausregel-folgenabschaetzung`) — Folgen einer Hausregel (Monopoly Free Parking) simulieren | [method: bisociation] | `besetzt` | E2 (Mode), kein Grab: Ludii modelliert Regelvarianten, pro Spiel müsste die Regel programmiert werden, Nachbar statt Idee | [Schnipsel] | 29.09.2026 | 09/2027 |
 | K7 | **Doppelkopf-/Skat-Turniersitzplan** (`turniersitzplan`) — Sitzplan nach Social-Golfer-Problem für Spielrunden | [method: bisociation] | `unklar` | E2 (dünn), kein Grab: Excel-Vorlagen und Doko-App vorhanden, DDV-Regeln losen vorab, kein Lückensatz ohne Lösung | [Schnipsel] | 29.09.2026 | 09/2027 |
 | K8 | **Handicap Kind/Erwachsener (Punktehistorie)** (`handicap-kind-erwachsener`) — Handicap-Vorgaben aus Punktehistorie nach Golf-WHS-Muster | [method: bisociation] | `besetzt` | E2, kein Grab: BGG-Threads und „A Simple System for Fairer Games“ dicht, Datenmenge je Paar klein | [Schnipsel] | 29.09.2026 | 09/2027 |
+
+
+## Lab-Lacunar-Erstlauf (Walnüsse) — 29.09.2026
+
+Lab-Lauf lacunar-20260929T203438-f693a3 (Walnüsse); Existenzprüfung durch den Bibliothekar, Suchschnipsel.
+
+| # | Idee | Methode | Urteil (Merge → nach Review) | Beleg (kurz) | Evidenz | Geprüft | Prüfen ab |
+|---|---|---|---|---|---|---|---|
+| N1 | **Walnuss-Klopftest (Fallgeräusch) als Handy-App** | [method: bisoziation] | `besetzt` | Existenzprüfung 29.09.2026 (Bibliothekar, nur Suchschnipsel). Forschung dicht: Impact-Acoustics (94,7 %/96,5 %), spike-triggered acoustic sensing 2026. Industrie: Nuttechnology Leernuss-Sortierer, TOMRA. Handy-Muster besetzt bei Melonen (Melony, Melon Aid, Watermelon Ripeness/Prober). Kein Walnuss-App-Treffer, aber Bedarf durch Schütteltest ohne App gedeckt. Abgrenzung: KlangStethoskop (Gerätegeräusch), Hausbock-Horcher (Holzbohrer, Grab), Orgelpfeifen-Bleifraß (Metallresonanz): gleiches Muster, andere Domäne. Walnuss-Duell ist Baustein (Trainingsdaten), keine eigene Zeile. Empfänger fehlt. | [Schnipsel] | 29.09.2026 | 03/2027 |
