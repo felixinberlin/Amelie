@@ -1,9 +1,9 @@
 {
   "auditVersion": 1,
-  "generatedAt": "2026-09-29T21:47:10.902Z",
+  "generatedAt": "2026-09-29T22:08:02.777Z",
   "repository": {
-    "commit": "8bd549c",
-    "branch": "claude/lab-lacunar-erstlauf-walnuesse"
+    "commit": "bbefb28",
+    "branch": "claude/fervent-davinci-lwvslj"
   },
   "inventory": {
     "doses": 45,
