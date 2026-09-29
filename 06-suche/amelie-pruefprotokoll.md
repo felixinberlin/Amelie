@@ -9,6 +9,16 @@ Ergänzt `05-dosen/_entsorgt.md`: dort steht die Begründung für gepackte, dann
 
 ---
 
+## Inversion Run 3 — 27.09.2026 (method: inversion, Zweiter Gebührenwerk-Anker / Bewohnerparken)
+
+Systemanker: Kommunale Gebührenordnungen / Bewohnerparkausweise. Inversionsoperator: OP-4 (Vollzugslücke / Asymmetrie des Risikos).
+
+| Idee | Urteil | Beleg (kurz) | Prüfen ab |
+|---|---|---|---|
+| **AusweichZonen-Lotse** (ausweichzonen-lotse) — Automatisierter Antrag auf temporäre Umschreibung in die Nachbarzone oder taggenaue Gebührenerstattung bei behördlichen Straßensperrungen | `verengt` | [method: inversion] Bewohnerparkgebühren steigen (bis 260€/Jahr). Bei langfristigen Vollsperrungen (Baustellen) gibt es proaktiv keine Gebührenerstattung oder automatische Ausweichzone, obwohl die Stadt beide Datenpunkte (Meldeadresse/Parkausweis und Straßensperrung) besitzt. BVerwG-Rechtsprechung verneint generelle Entschädigungsansprüche bei Straßenbau für Anlieger. Es gibt keine App, die öffentliche Transparenzdaten (Baustellen-Karten) und Bewohnerparkausweise kreuzt, um temporäre Umbuchungen auf die direkte Nachbarzone automatisch zu beantragen. | 09/2027 |
+
+---
+
 ## PR-Triage & Batch-Bereinigung — 28.09.2026 (method: review / triage)
 
 Triage von über 100 automatisierten Batch-PRs; Schiedsrichter-Urteile für abgelehnte und beerdigte Kandidaten:
