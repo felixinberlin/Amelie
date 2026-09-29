@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "0.1.0",
+  "datenart": "synthetisch",
+  "hinweis": "Erfundene Gemeinde. Keine Straße hier existiert amtlich; Ähnlichkeit zu echten Straßen ist Zufall der Namenshäufigkeit. Kein Netzabruf. Echte Daten: siehe ticket-01 (GovData, OSM Overpass).",
+  "gemeinde": "Musterstadt (synthetisch)",
+  "strassen": [
+    { "id": "m01", "name": "Lindenstraße", "ortsteil": "Nord" },
+    { "id": "m02", "name": "Ahornweg", "ortsteil": "Nord" },
+    { "id": "m03", "name": "Meierstraße", "ortsteil": "Mitte" },
+    { "id": "m04", "name": "Bahnhofstraße", "ortsteil": "Mitte" },
+    { "id": "m05", "name": "Hauptstraße", "ortsteil": "Mitte" },
+    { "id": "m06", "name": "Weißdornweg", "ortsteil": "Süd" },
+    { "id": "m07", "name": "Schulstraße", "ortsteil": "Mitte" },
+    { "id": "m08", "name": "Goetheplatz", "ortsteil": "Mitte" },
+    { "id": "m09", "name": "Gartenallee", "ortsteil": "Süd" },
+    { "id": "m10", "name": "Mühlbachweg", "ortsteil": "Süd" },
+    { "id": "m11", "name": "Birkenallee", "ortsteil": "Nord" },
+    { "id": "m12", "name": "Kirchplatz", "ortsteil": "Mitte" },
+    { "id": "m13", "name": "Wiesenweg", "ortsteil": "Süd" },
+    { "id": "m14", "name": "Feldstraße", "ortsteil": "Süd" },
+    { "id": "m15", "name": "Rosenstraße", "ortsteil": "Süd" },
+    { "id": "m16", "name": "Am Steinbruch", "ortsteil": "Nord" },
+    { "id": "m17", "name": "Grüner Weg", "ortsteil": "Nord" },
+    { "id": "m18", "name": "Ring", "ortsteil": "Mitte" }
+  ]
+}

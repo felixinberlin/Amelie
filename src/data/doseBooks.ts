@@ -365,6 +365,28 @@ export const DOSE_BOOKS: Record<string, BookChapter[]> = {
       kind: 'md',
     },
   ],
+  'strassennamen-pruefer': [
+    {
+      slug: 'scaffolding',
+      path: '07-demos/strassennamen-pruefer/README.md',
+      titleDe: 'Scaffolding & Straßennamen-Prüfer',
+      titleEn: 'Scaffolding & street name checker',
+      noteDe: 'Vier Regeln (identisch, Grundwort, Klang, Distanz) nur als Hinweise mit Fundstelle, nie „unzulässig"; Personennamen-Ausnahme sichtbar statt versteckt; 31 Tests mit synthetischen Fixtures.',
+      noteEn: 'Four rules (identical, generic word, sound, distance) only as notes with a reference, never "inadmissible"; person-name exception shown, not hidden; 31 tests on synthetic fixtures.',
+      date: '29.09.2026',
+      kind: 'md',
+    },
+    {
+      slug: 'ticket-01',
+      path: '07-demos/strassennamen-pruefer/ticket-01-strassenname-pruefer.md',
+      titleDe: 'Ticket 01: Ein Vorschlag, ein Verzeichnis, ein Prüfhinweis',
+      titleEn: 'Ticket 01: One proposal, one directory, one note',
+      noteDe: 'Kern und Tests fertig; offen sind die echten Richtlinienpaare, ein GovData/OSM-Auszug mit Falschalarm-Messung und die Offline-Seite.',
+      noteEn: 'Core and tests done; still open: the real guideline pairs, a GovData/OSM extract with false-alarm measurement and the offline page.',
+      date: '29.09.2026',
+      kind: 'md',
+    },
+  ],
 };
 
 export function getBook(doseId: string): BookChapter[] {

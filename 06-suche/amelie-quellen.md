@@ -363,3 +363,26 @@ Ergänzend auditiert im Zuge der PR-Triage und Ausgründung kommerzieller Zwilli
 | **Impact Angels & Green Angels** | Syndikate für Kreislaufwirtschaft, ESG-Compliance und CleanTech | `angekratzt` | 28.09.2026 |
 | **Earlybird Vision Lab / Visionaries Club / CDTM Angels** | Frühphasen-Investoren für Developer-Tools und B2B-SaaS | `angekratzt` | 28.09.2026 |
 
+---
+
+## Typ W — Heimatgedächtnis: Flurnamen, Mundart, Ortsnamen, Straßenbenennung (neu, Heimatgedächtnis-Runde 29.09.2026)
+
+*Muster: Institute und Vereine sammeln Ortswissen (Flurnamen, Dialekt, Necknamen, Karteikarten) und zählen ihre Abdeckung selbst; Spielschicht und Prüfen gegen Regeln fehlen. Straßenbenennungsrichtlinien sind ein Typ-B-Regelwerk ohne Software. Evidenz `[Seite]` = gelesen, sonst Schnipsel.*
+
+| Quelle | Befund | Status | Zuletzt |
+|---|---|---|---|
+| **udi.kallimachos.de** (UDI Würzburg, Ortsnecknamen) | 1.503 Einträge, 1.495 Orte, Karte, Monatsquiz „Wässd du dos?" seit 04/2016; Lizenz nicht angegeben [Seite] | `durchsucht` | 29.09.2026 |
+| **ortschroniken-mv.de** (Flurnamenarchiv Rostock) | 23k transkribiert, ~13k verortet, ~8k nicht verortbar, manuell [Seite] | `durchsucht` | 29.09.2026 |
+| **mitforschen.org** (Flurnamen Thüringen) | 400+ Freiwillige, ~126.000 Namen, Förderung 2026 ausgesetzt; 3.600 Karten [Seite] | `durchsucht` | 29.09.2026 |
+| **lagis-hessen.de** (Flurnamen Hessen) | Abdeckungskarte, kein Mitmachen [Seite] | `angekratzt` | 29.09.2026 |
+| **ostfriesischelandschaft.de** (AG Flurnamendeutung) | ~72.000 Namen, festes Deutungsschema, ehrenamtlich [Seite]; TTS-Stimme 13.09.2026 [Schnipsel] | `angekratzt` | 29.09.2026 |
+| **uni-marburg.de** (Netzwerk Regionale Sprache und KI, Dialekte-KI) | fordert offene Dialektdaten, plant Übersetzer, kein Mitmachangebot [Seite] | `angekratzt` | 29.09.2026 |
+| **wossidlo.uni-rostock.de** (Wossidlo-Archiv) | Arbeitskreis entziffert von Hand [Seite] | `angekratzt` | 29.09.2026 |
+| **ki-mv.de** (WossiDiA) | ~2 Mio. Dokumente, 983.441 Scans, kein HTR erwähnt [Seite] | `angekratzt` | 29.09.2026 |
+| **arXiv 2608.12894** (BavGround) | 2 interne Annotatoren [Seite] | `angekratzt` | 29.09.2026 |
+| **arXiv 2603.15130** (Bavarian-GenIQA) | 76-Sprecher-Umfrage [Schnipsel] | `angekratzt` | 29.09.2026 |
+| **arXiv 2509.13835** | Dialekt-NLP-Nachbar [Schnipsel] | `angekratzt` | 29.09.2026 |
+| **Wikipedia „Zwölfer (Bergname)"** | ~50–60 Gipfel, Azimut von Hand [Seite]; Grundlage der Prämissen-Widerlegung `bergsonnenuhr-peiler` | `durchsucht` | 29.09.2026 |
+| **Kommunale Straßenbenennungsrichtlinien** (Drensteinfurt, Bornheim, Dortmund, Frankfurt-Leitfaden 2023) | Regeltexte „gleichklingende Namen vermeiden", Grundwort-Regel [Seite]; Ground Truth für `strassennamen-pruefer` | `durchsucht` | 29.09.2026 |
+| **sprachspuren.de** (Wenkerbögen-App) | ~10 % transliteriert, App manuell mit Kurrent-Hilfe [Schnipsel/Seite] | `angekratzt` | 29.09.2026 |
+| **CompGen, Volksliederarchiv, DORIS OÖ, OSM Etymologie, IfL Siedlungsnamen** | Besetzungsbelege der Gräber dieser Runde [Schnipsel] | `angekratzt` | 29.09.2026 |
