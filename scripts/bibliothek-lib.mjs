@@ -224,21 +224,21 @@ const LOG_FILES = [
 /** Durchsucht das gesamte Gedächtnis. `kind` „bindend“ heißt: Treffer sind ein „schon da“-Signal. */
 export function findAll(terms, { any = false, wort = false, root = repoRoot, quellen = [] } = {}) {
   const hits = [];
-  const add = (kind, bindend, id, title, text, where) => {
-    if (matches(`${id} ${title} ${text}`, terms, any, wort)) hits.push({ kind, bindend, id, title, where, snippet: snippet(text || title, terms) });
+  const add = (kind, bindend, id, title, text, where, extra = {}) => {
+    if (matches(`${id} ${title} ${text}`, terms, any, wort)) hits.push({ kind, bindend, id, title, where, ...extra, snippet: snippet(text || title, terms) });
   };
   const protokoll = readFileSync(PROTOKOLL, 'utf8');
-  for (const r of parseProtokoll(protokoll)) add('protokoll', true, '', r.idee, r.text, `06-suche/amelie-pruefprotokoll.md:${r.line} [${r.urteil ?? '?'}]`);
+  for (const r of parseProtokoll(protokoll)) add('protokoll', true, '', r.idee, r.text, `06-suche/amelie-pruefprotokoll.md:${r.line} [${r.urteil ?? '?'}]`, { file: '06-suche/amelie-pruefprotokoll.md', line: r.line, verdict: r.urteil, section: r.section });
   for (const g of loadGraeber()) {
-    add('grab', true, g.id, g.title, [g.originalIdeaDe, g.whyDiscardedDe, g.lessonDe, g.domain, ...(g.evidence ?? [])].join(' '), `graeber.json [${g.cause}/${g.killer}, ${g.diedOn}]`);
+    add('grab', true, g.id, g.title, [g.originalIdeaDe, g.whyDiscardedDe, g.lessonDe, g.domain, ...(g.evidence ?? [])].join(' '), `graeber.json [${g.cause}/${g.killer}, ${g.diedOn}]`, { file: 'src/data/graeber.json', cause: g.cause, killer: g.killer, diedOn: g.diedOn });
   }
-  for (const d of readDosen()) add('dose', true, d.id, d.title, d.text, d.file);
-  for (const c of readCandidates(root)) add('kandidat', true, c.id, c.title, c.concept, `${c.file} [${c.status || '?'}${c.packedDoseId ? ` → Dose ${c.packedDoseId}` : ''}]`);
-  for (const q of quellen) add('quelle', false, q.id, q.name, [q.enthaelt, q.fokus, ...(q.tags ?? [])].join(' '), `quellen.json [${q.status}]`);
+  for (const d of readDosen()) add('dose', true, d.id, d.title, d.text, d.file, { file: d.file });
+  for (const c of readCandidates(root)) add('kandidat', true, c.id, c.title, c.concept, `${c.file} [${c.status || '?'}${c.packedDoseId ? ` → Dose ${c.packedDoseId}` : ''}]`, { file: c.file, status: c.status || null, packedDoseId: c.packedDoseId });
+  for (const q of quellen) add('quelle', false, q.id, q.name, [q.enthaelt, q.fokus, ...(q.tags ?? [])].join(' '), `quellen.json [${q.status}]`, { file: 'src/data/quellen.json', status: q.status });
   for (const f of LOG_FILES) {
     const p = join(root, f);
     if (!existsSync(p)) continue;
-    readFileSync(p, 'utf8').split('\n').forEach((line, i) => add('log', false, '', f.split('/').pop(), line, `${f}:${i + 1}`));
+    readFileSync(p, 'utf8').split('\n').forEach((line, i) => add('log', false, '', f.split('/').pop(), line, `${f}:${i + 1}`, { file: f, line: i + 1 }));
   }
   return hits;
 }

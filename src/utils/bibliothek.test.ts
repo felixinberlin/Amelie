@@ -212,14 +212,14 @@ describe('CLI-Durchlauf (Regression: echte Dosen-/Grab-Mengen)', () => {
     expect(ok.status, ok.stderr).toBe(0);
     expect(ok.stdout).toContain(`--grab ${grab}`);
     const nein = cli(['quellen', 'import', datei('nein.txt', `QUELLE ${bekannt} | ertrag=Grab gibt-es-nicht-xyz | note=Test.`), '--agent', 'test', '--runde', 'T', '--dry-run']);
-    expect(nein.status).toBe(1);
+    expect(nein.status).toBe(10); // Exit 10 = Validierung (stabile Codes, siehe scripts/bib-errors.mjs)
     expect(nein.stderr).toMatch(/Grab „gibt-es-nicht-xyz“ existiert nicht/);
   });
 
   it('grab add --from mit Liste prüft alle gegeneinander und schreibt nichts bei einem Fehler (dry-run)', () => {
     const g = { ...loadGraeber()[0], id: 'testgrab-a' };
     const dup = cli(['grab', 'add', '--from', datei('l.json', JSON.stringify([g, { ...g }])), '--dry-run']);
-    expect(dup.status).toBe(1);
+    expect(dup.status).toBe(10);
     expect(dup.stderr).toMatch(/Eintrag 2 \(testgrab-a\)[\s\S]*gibt es schon/);
     const ok = cli(['grab', 'add', '--from', datei('l2.json', JSON.stringify([g, { ...g, id: 'testgrab-b' }])), '--dry-run']);
     expect(ok.status, ok.stderr).toBe(0);

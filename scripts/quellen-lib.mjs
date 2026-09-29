@@ -7,6 +7,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { repoRoot, readDoseFiles, readDataIds } from './dosen-lib.mjs';
+import { BibError } from './bib-errors.mjs';
 
 export const QUELLEN_JSON = join(repoRoot, 'src/data/quellen.json');
 export const QUELLEN_MD = join(repoRoot, '06-suche/amelie-quellen.md');
@@ -59,6 +60,114 @@ export function validate(data, { doseIds, graveIds } = {}) {
 export function refIds() {
   const { dosen, discarded } = readDataIds();
   return { doseIds: new Set(readDoseFiles().concat(dosen)), graveIds: new Set(discarded) };
+}
+
+// --- Schreiboperationen (von scripts/quellen.mjs und `bib apply` gemeinsam genutzt) ----------------------
+//
+// Reine Funktionen auf dem geladenen Register: sie verändern `data` im Speicher und werfen BibError.
+// Speichern und Markdown-Erzeugung machen die Aufrufer.
+
+const findQuelle = (data, id, field = 'id') => {
+  const q = data.quellen.find((x) => x.id === id);
+  if (!q) {
+    const nah = data.quellen.filter((x) => x.id.includes(String(id ?? '').split('-')[0])).map((x) => x.id).slice(0, 5);
+    throw new BibError({ code: 'NOT_FOUND', field, message: `Unbekannte Quelle „${id}“. Ähnliche: ${nah.join(', ') || '–'}` });
+  }
+  return q;
+};
+
+const qArray = (data, q, field = 'q') => {
+  const n = data.katalog.vektoren.length;
+  const a = Array.isArray(q) ? q.map(Number) : String(q).split(',').map((x) => Number(x.trim()));
+  if (a.length !== n || a.some((x) => !Number.isInteger(x) || x < 1 || x > 5)) {
+    throw new BibError({ code: 'VALUE_INVALID', field, message: `${field} braucht ${n} Ganzzahlen 1–5 (Q1–Q6)` });
+  }
+  return a;
+};
+
+/** Regel 1 des Registers: `durchsucht`/`erschöpft` nur mit selbst gelesener Seite. */
+const regel1 = (q, field) => {
+  if ((q.status === 'durchsucht' || q.status === 'erschöpft') && q.evidenz !== 'seite') {
+    throw new BibError({ code: 'RULE_VIOLATION', field, message: `status=${q.status} verlangt evidenz=seite (Regel 1: nur hochsetzen, wenn selbst gelesen)` });
+  }
+};
+
+/** Bucht einen Fund bei einer bestehenden Quelle. `strict` erzwingt Regel 1 (apply); die CLI `quellen log` bleibt wie bisher. */
+export function logQuelle(data, o, { strict = false, heute = isoToday() } = {}) {
+  const q = findQuelle(data, o.id);
+  if (!o.note) throw new BibError({ code: 'FIELD_REQUIRED', field: 'note', message: 'note ist Pflicht (was wurde gefunden?)' });
+  const datum = o.datum ?? heute;
+  if (o.status) q.status = o.status;
+  if (o.evidenz) q.evidenz = o.evidenz;
+  if (o.erreichbar) q.zugang.erreichbar = o.erreichbar;
+  if (o.wie) q.zugang.wie = o.wie;
+  if (o.art) q.zugang.art = o.art;
+  for (const u of o.urls ?? []) if (!q.urls.includes(u)) q.urls.push(u);
+  for (const [flag, key] of [['dose', 'dosen'], ['grab', 'graeber'], ['kandidat', 'kandidaten']]) {
+    q.ertrag[key] ??= [];
+    for (const id of o[flag] ?? []) if (!q.ertrag[key].includes(id)) q.ertrag[key].push(id);
+  }
+  if (o.wv) q.wiedervorlage = o.wv;
+  q.zuletzt = datum;
+  if (o.status) q.statusNotiz = '';
+  if (strict && (o.status || o.evidenz)) regel1(q, 'status');
+  q.verlauf.push({ datum, agent: o.agent ?? 'bibliothekar', runde: o.runde ?? '', notiz: o.note, ...(o.status ? { status: q.status } : {}), ...(o.planId ? { planId: o.planId } : {}) });
+  return q;
+}
+
+export function rateQuelle(data, o, { heute = isoToday() } = {}) {
+  const q = findQuelle(data, o.id);
+  if (o.q === undefined) throw new BibError({ code: 'FIELD_REQUIRED', field: 'q', message: 'q (Q1–Q6) ist Pflicht' });
+  q.vektoren = { q: qArray(data, o.q), basis: o.basis ?? 'bibliothekar', datum: heute };
+  q.verlauf.push({ datum: heute, agent: o.agent ?? 'bibliothekar', runde: o.runde ?? '', notiz: `Vektoren bewertet [${q.vektoren.q.join(' ')}]${o.note ? ': ' + o.note : ''}`, ...(o.planId ? { planId: o.planId } : {}) });
+  return q;
+}
+
+export function addQuelle(data, o, { strict = false, heute = isoToday() } = {}) {
+  for (const r of ['id', 'name', 'typ', 'kategorie', 'enthaelt']) {
+    if (!o[r]) throw new BibError({ code: 'FIELD_REQUIRED', field: r, message: `${r} ist Pflicht` });
+  }
+  if (data.quellen.some((q) => q.id === o.id)) throw new BibError({ code: 'DUPLICATE', field: 'id', message: `id „${o.id}“ existiert schon — mit „log“ ergänzen` });
+  const datum = o.datum ?? heute;
+  const status = o.status ?? 'offen';
+  const q = {
+    id: o.id, name: o.name, typ: o.typ, kategorie: o.kategorie,
+    rollen: o.rollen?.length ? o.rollen : ['ideenquelle'], tags: o.tags ?? [], urls: o.urls ?? [],
+    zugang: { art: o.art ?? 'web', erreichbar: o.erreichbar ?? 'unbekannt', wie: o.wie ?? '' },
+    enthaelt: o.enthaelt, fokus: o.fokus ?? '', status, statusNotiz: '', evidenz: o.evidenz ?? 'unbekannt',
+    zuletzt: status === 'offen' ? null : datum, ...(o.wv ? { wiedervorlage: o.wv } : {}),
+    ertrag: { dosen: o.dose ?? [], graeber: o.grab ?? [], kandidaten: o.kandidat ?? [] },
+    vektoren: { q: o.q !== undefined ? qArray(data, o.q) : [3, 5, 3, 3, 4, 3], basis: o.q !== undefined ? o.basis ?? 'bibliothekar' : 'auto', datum: heute },
+    verlauf: [{ datum, agent: o.agent ?? 'bibliothekar', runde: o.runde ?? '', notiz: o.note ?? 'Neu ins Register aufgenommen.', status, ...(o.planId ? { planId: o.planId } : {}) }],
+  };
+  if (strict) regel1(q, 'status');
+  data.quellen.push(q);
+  return q;
+}
+
+/** Findet Quellen, deren URLs zur gegebenen passen (gleiche Adresse > gleicher Pfadpräfix > gleicher Host). */
+export function matchUrl(data, url) {
+  const norm = (u) => {
+    try {
+      const x = new URL(u);
+      return { host: x.hostname.replace(/^www\./, '').toLowerCase(), path: x.pathname.replace(/\/+$/, '') };
+    } catch { return null; }
+  };
+  const t = norm(url);
+  if (!t) throw new BibError({ code: 'VALUE_INVALID', field: 'url', message: `Keine gültige URL: ${url}` });
+  const treffer = [];
+  for (const q of data.quellen) {
+    let best = 0;
+    let via = '';
+    for (const u of q.urls ?? []) {
+      const n = norm(u);
+      if (!n || n.host !== t.host) continue;
+      const s = n.path === t.path ? 3 : n.path === '' ? 1 : t.path.startsWith(n.path + '/') || n.path.startsWith(t.path + '/') ? 2 : 0.5;
+      if (s > best) { best = s; via = u; }
+    }
+    if (best) treffer.push({ id: q.id, name: q.name, matchedUrl: via, score: best, kind: best === 3 ? 'exakt' : best === 2 ? 'pfad' : 'host' });
+  }
+  return treffer.sort((a, b) => b.score - a.score);
 }
 
 // --- Auswertung ---------------------------------------------------------------

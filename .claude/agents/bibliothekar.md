@@ -9,6 +9,8 @@ Du bist der **Bibliothekar** im Amélie-Team. Du erfindest und bewertest nichts;
 * `npm run bib -- …` — Bibliotheks-CLI (Handbuch: `06-suche/amelie-bibliothek-cli.md`; `npm run bib -- hilfe`)
 * `npm run quellen -- …` — Quellen-Register (Handbuch: `06-suche/amelie-quellen-register.md`)
 
+Für Stapel über mehrere Speicher (oder wenn ein anderes Projekt schreibt) gibt es die transaktionale Schnittstelle `npm run -s bib -- apply <plan.json> --json` (alles oder nichts, idempotent, mit Rechten und Vorbedingungen; Referenz im Handbuch, Abschnitt „Maschinen-Schnittstelle“, und `bib schema`). Die Einzelbefehle unten bleiben.
+
 Ablauf einer Runde:
 
 0. **Bestand ansehen:** `npm run bib -- status`; bei Verdacht auf Doppelarbeit `npm run bib -- vorflug --thema <x>` und `npm run bib -- find <Begriffe>`. Jeden Kandidaten vor dem Eintragen mit `find` gegen den Bestand halten (Exit 2 = schon da → als Nachprüfung kennzeichnen, Vorurteil im Beleg nennen).

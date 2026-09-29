@@ -66,6 +66,111 @@ Vektoren Q1–Q6 bewertet weiterhin `npm run quellen -- rate`.
 
 Führt nacheinander `npm run export:data`, `npm run lint` und `npm test` aus (bei rotem Lint Abbruch, `--schnell` lässt die Tests aus), fasst ✓/✗ zusammen und listet die noch nicht committeten Änderungen. Exit-Code 1, wenn etwas rot ist. Ersetzt die manuelle Checkliste aus `CLAUDE.md` §6 (außer Commit und Push).
 
+## Maschinen-Schnittstelle: `apply`, `schema`, Lookups (für das Lab und andere Agenten-Projekte)
+
+Wer Amélies Gedächtnis von außen beschreibt (z. B. der Lab-Bibliothekar), braucht keine eigene Kopie der Regeln, keine mehreren CLIs und kein eigenes Zurückrollen: **eine Eingabe, ein JSON-Ergebnis, alles oder nichts.** Die Regeln liegen hier, in Amélie.
+
+### `bib apply <plan.json|-> [--dry-run] [--json] [--key k] [--wait s] [--actor a] [--agent a] [--runde r] [--plan-id id]`
+
+```json
+{
+  "plan_id": "lab-2026-09-29-017",
+  "actor": "lab-librarian",
+  "agent": "lab", "runde": "Multiplayer-Runde",
+  "human_accepted": false,
+  "expect": { "hashes": { "src/data/quellen.json": "sha256:…" } },
+  "ops": [
+    { "op": "source.log", "id": "wetterturnier", "note": "Zugang bestätigt.", "erreichbar": "ja" },
+    { "op": "grave.add", "grave": { "id": "…", "title": "…", "…": "…" } },
+    { "op": "protokoll.add", "runde": "Multiplayer-Runde", "titel": "…", "urteil": "unklar", "beleg": "…", "evidenz": "schnipsel", "method": "ideenrunde", "pruefenAb": "12/2026", "human_accepted": true },
+    { "op": "vector.set", "kind": "dose", "id": "abbe-fourier-filter", "set": { "V1": 3 }, "expect": { "V1": 4 }, "evidence": "Warum sich V1 ändert (ein Satz mit Beleg)." }
+  ]
+}
+```
+
+| Operation | Pflichtfelder | Regeln |
+|---|---|---|
+| `source.add` | `id name typ kategorie enthaelt` (+ optionale wie bei `quellen add`) | Katalogwerte, Regel 1, Ertragsverweise |
+| `source.log` | `id note` (+ `status evidenz erreichbar wie urls dose grab kandidat wv …`) | Regel 1 (`durchsucht`/`erschöpft` nur mit `evidenz=seite`), `grab`/`dose` müssen existieren (auch aus früheren Operationen desselben Plans) |
+| `source.rate` | `id q` (6 Zahlen 1–5) | |
+| `grave.add` | `grave` (Totenschein-Objekt) | alle Pflichtfelder, Aufzählungen aus `src/types.ts`, keine doppelte `id`, keine noch lebende Dose, Nachruf bei Stadium `dose`/`zugestellt` |
+| `protokoll.add` | `runde titel urteil beleg evidenz method pruefenAb` (+ `id was nr datum neuerAbschnitt`) | 4- und 8-Spalten-Tabelle, Evidenzmarke, Prüfdatum `MM/JJJJ` |
+| `vector.set` | `kind id set evidence` (+ `expect reason`) | nur V1–V7, 1–5, \|Δ\| ≤ 2 je Vektor, **V8 (Fun) nie**, Evidenz (mindestens ein Satz) Pflicht; jede Änderung im Vektor-Log `src/data/vectorChanges.json` |
+
+Reihenfolge zählt: Operationen laufen nacheinander auf demselben Zustand (ein `grave.add` vor dem `source.log --grab`).
+
+**Ablauf:** Form prüfen → Rechte des Akteurs → Schreibsperre → Journal-Recovery → Idempotenz (Ledger) → Vorbedingungen → **alle** Operationen im Speicher durchspielen → `--dry-run` endet hier → Snapshot + Journal → Speicher und erzeugte Dateien schreiben (`amelie-quellen.md`, Friedhof-README, `public/data/*`, `AMELIE_STATUS.md`) → nachprüfen (Register, Friedhof, Protokollabdeckung) → Ledger + Audit. Jeder Fehler nach dem Snapshot rollt **alle** Dateien zurück, auch die erzeugten. Ein hart abgebrochener Lauf (Prozess getötet) hinterlässt `06-suche/.bib-journal.json`; der nächste Schreibvorgang rollt zuerst diesen Zustand zurück (Ergebnisfeld `recovered`).
+
+**Ergebnis (`--json`):**
+
+```json
+{ "ok": true, "exit": 0, "plan_id": "…", "key": "…", "dry_run": false, "already_applied": false, "actor": "lab-librarian",
+  "ops": [ { "index": 0, "op": "source.log", "ok": true, "target": "wetterturnier", "detail": "…" } ],
+  "files": [ "src/data/quellen.json", "06-suche/amelie-quellen.md", "…" ],
+  "errors": [] }
+```
+
+Fehler haben immer die Form `{ "code": "…", "field": "ops[2].grave", "message": "…", "op": 2 }`. `code` und Exit-Code sind stabil, `message` darf sich ändern.
+
+| Exit | Code(s) | Bedeutung |
+|---|---|---|
+| 0 | – | ok; auch bei `already_applied: true` |
+| 1 | `USAGE` | falscher Aufruf |
+| 2 | – | nur `find`: Treffer in Protokoll/Friedhof/Dosen/Kandidaten |
+| 4 | – | `exists`/`quellen match`/`grab show`: nichts gefunden |
+| 10 | `PLAN_INVALID` `OP_UNKNOWN` `FIELD_REQUIRED` `VALUE_INVALID` `NOT_FOUND` `DUPLICATE` `RULE_VIOLATION` | Validierung: nichts geschrieben |
+| 11 | `PRECONDITION_FAILED` | `expect` stimmt nicht mehr: nichts geschrieben |
+| 12 | `PERMISSION_DENIED` | Akteur darf die Operation nicht: nichts geschrieben |
+| 13 | `LOCK_TIMEOUT` | Schreibsperre nicht bekommen |
+| 14 | `APPLY_FAILED` | beim Schreiben etwas schiefgegangen, alles zurückgerollt |
+
+Bei mehreren Fehlern gewinnt der schwerste Code (Rechte vor Vorbedingung vor Form).
+
+### Idempotenz: `--key`
+
+Der Schlüssel ist `--key`, sonst `key` im Plan, sonst `plan_id`. Das Ledger `06-suche/bib-ledger.json` merkt sich jeden angewendeten Schlüssel samt Dateien und Hashes danach. Ein zweiter Aufruf mit demselben Schlüssel schreibt nichts und antwortet `already_applied: true` (Exit 0). Ein Wiederholen nach einem Absturz ist damit harmlos. `bib exists plan <key>` und `bib ledger` zeigen, was angewendet wurde.
+
+### Schreibsperre: `--wait`
+
+Es schreibt immer nur einer (`06-suche/.bib.lock`, mit PID und Akteur). Das gilt für `apply` **und** für die direkten Schreibbefehle (`grab add`, `protokoll add`, `quellen import`, `quellen log|rate|add`); ein Kindprozess des Halters erbt die Sperre. `--wait <Sekunden>` wartet darauf, sonst sofort Exit 13. Verwaiste Sperren (Prozess tot oder älter als 15 Minuten) werden geräumt. `--dry-run` liest nur und braucht die Sperre nicht. `bib abschluss` hält sie nicht (es läuft Minuten).
+
+### Vorbedingungen: `expect`
+
+* **Dateien:** `expect.hashes` im Plan oder an einer Operation: `{ "<pfad>": "sha256:…" }`. `bib state --json` liefert die aktuellen Hashes aller Speicher. Weicht eine Datei ab, wird nichts geschrieben (Exit 11). Das schützt vor „der Beurteiler hat auf altem Stand entschieden“.
+* **Vektoren:** `expect: { "V1": 4 }` an `vector.set`: der heutige Wert muss stimmen, sonst `PRECONDITION_FAILED`. Auch Vektoren, die nur in `expect` stehen, werden geprüft.
+
+### Akteure und Rechte: `06-suche/bib-actors.json`
+
+```json
+{ "default": "deny",
+  "actors": {
+    "bibliothekar": { "allow": ["*"] },
+    "lab-librarian": { "allow": ["source.log", "grave.add"], "conditional": { "protokoll.add": { "requires": "human_accepted" } } } } }
+```
+
+`allow` nennt Operationen (`*` = alle). `conditional.<op>.requires` verlangt, dass die Operation **oder** der Plan das Feld mit `true` trägt. Unbekannte Akteure sind gesperrt. Geprüft wird vor Sperre und Zustand; eine einzige verbotene Operation blockiert den ganzen Plan. Änderungen an den Rechten sind ein Commit in Amélie, nicht im Lab. Die direkten CLI-Befehle sind der Bibliothekar und nicht eingeschränkt.
+
+### Herkunft
+
+`--agent`, `--runde`, `--plan-id` (oder die Plan-Felder) landen im Verlauf der Quellen (`verlauf[].agent/runde/planId`), im Vektor-Log und im **Audit-Log** `06-suche/bib-audit.jsonl` (eine Zeile je Operation, eine je angewendetem Plan, eine je Wiederherstellung; auch die direkten Schreibbefehle schreiben hinein). Das Audit-Log ist append-only und wird mitcommittet.
+
+### Lookups und Schema (nur lesend)
+
+| Befehl | Zweck |
+|---|---|
+| `bib schema` | Erlaubte Werte als JSON: Quellentypen/-kategorien/-status/-evidenz, Grab-Ursachen/-Killer/-Fundwege/-Herkunft/-Stadien, Urteile, Vektorregeln, Operationen mit Pflicht-/Optionalfeldern, Rechte der Akteure, Exit- und Fehlercodes. Das Lab kopiert diese Listen nicht mehr. |
+| `bib exists <source\|grave\|dose\|candidate\|protokoll\|plan> <id>` | Vorprüfung, Exit 0 = gibt es, 4 = nicht |
+| `bib quellen match --url <u>` | welche Quelle gehört zu dieser Adresse (`exakt` > `pfad` > `host`, gleiche Domain ohne `www.`) |
+| `bib find <…> --json` | strukturierte Treffer: `kind`, `binding`, `id`, `title`, `file`, `line`, `verdict`/`status`/`cause`, `snippet`; oben `alreadyThere` |
+| `bib state` | Hashes der Speicher, Sperre, offenes Journal, Ledger-Größe |
+| `bib vector show <dose\|candidate> <id>` | Vektoren und letzte Änderungen |
+
+`--json` gilt für **jeden** Befehl: reines JSON auf stdout, Fehler als `{ "ok": false, "errors": [ {code, field, message} ] }`. Bequemlichkeit für Menschen: `bib vector set --kind dose --id x --set V1=3 --expect V1=4 --evidence "…"` baut einen Ein-Operationen-Plan und ruft `apply` (Akteur `bibliothekar`, ohne `public/data`-Export).
+
+### Noch nicht enthalten
+
+Terminologie, Fragen und Dossier-Notizen (`dossier.annotate`) gibt es in Amélie noch nicht als Speicher. Sobald das Lab das Format und den Zielort festlegt, kommen sie als weitere Operationen dazu; bis dahin antwortet `apply` mit `OP_UNKNOWN` (Exit 10).
+
 ## Wer nutzt was
 
 | Agent | Befehle |

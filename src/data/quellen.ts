@@ -20,6 +20,8 @@ export interface QuelleVerlauf {
   runde: string;
   notiz: string;
   status?: QuelleStatus;
+  /** gesetzt, wenn der Eintrag über `bib apply` kam (Herkunft des Plans) */
+  planId?: string;
 }
 
 export interface Quelle {

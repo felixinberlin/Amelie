@@ -16,7 +16,8 @@
 // Schreibende Befehle validieren vor dem Speichern und erzeugen die .md neu.
 
 import { readFileSync, writeFileSync } from 'node:fs';
-import { loadQuellen, saveQuellen, validate, refIds, renderMarkdown, stats, scoreOf, empfehlung, isoToday, QUELLEN_MD } from './quellen-lib.mjs';
+import { acquireLock, auditAppend, repoRoot } from './bib-store.mjs';
+import { loadQuellen, saveQuellen, validate, refIds, renderMarkdown, stats, scoreOf, empfehlung, isoToday, logQuelle, rateQuelle, addQuelle, QUELLEN_MD } from './quellen-lib.mjs';
 
 const [cmd = 'help', ...rest] = process.argv.slice(2);
 const flags = {};
@@ -32,6 +33,10 @@ const one = (k) => flags[k]?.[0];
 const many = (k) => flags[k] ?? [];
 const die = (msg) => { console.error(msg); process.exit(1); };
 
+// Schreibbefehle nehmen dieselbe Sperre wie `bib apply` (Kindprozess von `bib quellen import` erbt sie über BIB_LOCK_TOKEN).
+if (['log', 'rate', 'add', 'md'].includes(cmd)) {
+  try { acquireLock(repoRoot, { wait: Number(one('wait') ?? 0), actor: one('agent') ?? 'quellen-cli' }); } catch (e) { console.error(e.message); process.exit(13); }
+}
 const data = loadQuellen();
 const find = (id) => data.quellen.find((q) => q.id === id) ?? die(`Unbekannte Quelle „${id}“. Ähnliche: ${data.quellen.filter((q) => q.id.includes(id.split('-')[0])).map((q) => q.id).slice(0, 5).join(', ') || '–'}`);
 
@@ -41,13 +46,9 @@ function commit() {
   data.stand = isoToday();
   saveQuellen(data);
   writeFileSync(QUELLEN_MD, renderMarkdown(data));
+  auditAppend(repoRoot, { event: 'cli', cmd: `quellen ${cmd}`, actor: one('agent') ?? 'bibliothekar', agent: one('agent'), runde: one('runde'), id: pos[0] ?? one('id') });
 }
 
-const qArr = (s) => {
-  const a = s.split(',').map((n) => Number(n.trim()));
-  if (a.length !== data.katalog.vektoren.length) die(`--q braucht ${data.katalog.vektoren.length} kommagetrennte Zahlen (Q1–Q6)`);
-  return a;
-};
 const line = (q) => `${q.id.padEnd(44).slice(0, 44)} ${q.typ} ${q.status.padEnd(10)} ${String(q.zuletzt ?? '–').padEnd(10)} Q=${String(scoreOf(q)).padStart(2)}${q.vektoren.basis === 'auto' ? '*' : ' '} [${q.vektoren.q.join(' ')}] ${q.name.slice(0, 50)}`;
 
 function filtered() {
@@ -88,53 +89,27 @@ switch (cmd) {
     break;
   }
   case 'log': {
-    const q = find(pos[0]);
-    if (!one('note')) die('--note ist Pflicht (was wurde gefunden?)');
-    const datum = one('datum') ?? isoToday();
-    if (one('status')) q.status = one('status');
-    if (one('evidenz')) q.evidenz = one('evidenz');
-    if (one('erreichbar')) q.zugang.erreichbar = one('erreichbar');
-    if (one('wie')) q.zugang.wie = one('wie');
-    if (one('art')) q.zugang.art = one('art');
-    for (const u of many('url')) if (!q.urls.includes(u)) q.urls.push(u);
-    for (const [flag, key] of [['dose', 'dosen'], ['grab', 'graeber'], ['kandidat', 'kandidaten']]) {
-      q.ertrag[key] ??= [];
-      for (const id of many(flag)) if (!q.ertrag[key].includes(id)) q.ertrag[key].push(id);
-    }
-    if (one('wv')) q.wiedervorlage = one('wv');
-    q.zuletzt = datum;
-    if (one('status')) q.statusNotiz = '';
-    q.verlauf.push({ datum, agent: one('agent') ?? 'bibliothekar', runde: one('runde') ?? '', notiz: one('note'), ...(one('status') ? { status: q.status } : {}) });
-    commit();
-    console.log(`Gebucht: ${q.id} → ${q.status}, ${q.verlauf.length} Verlaufseinträge.`);
+    try {
+      const q = logQuelle(data, { id: pos[0], note: one('note'), datum: one('datum'), status: one('status'), evidenz: one('evidenz'), erreichbar: one('erreichbar'), wie: one('wie'), art: one('art'), urls: many('url'), dose: many('dose'), grab: many('grab'), kandidat: many('kandidat'), wv: one('wv'), agent: one('agent'), runde: one('runde') });
+      commit();
+      console.log(`Gebucht: ${q.id} → ${q.status}, ${q.verlauf.length} Verlaufseinträge.`);
+    } catch (e) { die(e.message); }
     break;
   }
   case 'rate': {
-    const q = find(pos[0]);
-    if (!one('q')) die('--q Q1,Q2,Q3,Q4,Q5,Q6 ist Pflicht');
-    q.vektoren = { q: qArr(one('q')), basis: one('basis') ?? 'bibliothekar', datum: isoToday() };
-    q.verlauf.push({ datum: isoToday(), agent: one('agent') ?? 'bibliothekar', runde: one('runde') ?? '', notiz: `Vektoren bewertet [${q.vektoren.q.join(' ')}]${one('note') ? ': ' + one('note') : ''}` });
-    commit();
-    console.log(`Bewertet: ${q.id} = ${scoreOf(q)}/30`);
+    try {
+      const q = rateQuelle(data, { id: pos[0], q: one('q'), basis: one('basis'), note: one('note'), agent: one('agent'), runde: one('runde') });
+      commit();
+      console.log(`Bewertet: ${q.id} = ${scoreOf(q)}/30`);
+    } catch (e) { die(e.message); }
     break;
   }
   case 'add': {
-    for (const r of ['id', 'name', 'typ', 'kategorie', 'enthaelt']) if (!one(r)) die(`--${r} ist Pflicht`);
-    if (data.quellen.some((q) => q.id === one('id'))) die(`id „${one('id')}“ existiert schon — mit „log“ ergänzen`);
-    const datum = one('datum') ?? isoToday();
-    const status = one('status') ?? 'offen';
-    data.quellen.push({
-      id: one('id'), name: one('name'), typ: one('typ'), kategorie: one('kategorie'),
-      rollen: many('rolle').length ? many('rolle') : ['ideenquelle'], tags: many('tag'), urls: many('url'),
-      zugang: { art: one('art') ?? 'web', erreichbar: one('erreichbar') ?? 'unbekannt', wie: one('wie') ?? '' },
-      enthaelt: one('enthaelt'), fokus: one('fokus') ?? '', status, statusNotiz: '', evidenz: one('evidenz') ?? 'unbekannt',
-      zuletzt: status === 'offen' ? null : datum, ...(one('wv') ? { wiedervorlage: one('wv') } : {}),
-      ertrag: { dosen: many('dose'), graeber: many('grab'), kandidaten: many('kandidat') },
-      vektoren: { q: one('q') ? qArr(one('q')) : [3, 5, 3, 3, 4, 3], basis: one('q') ? one('basis') ?? 'bibliothekar' : 'auto', datum: isoToday() },
-      verlauf: [{ datum, agent: one('agent') ?? 'bibliothekar', runde: one('runde') ?? '', notiz: one('note') ?? 'Neu ins Register aufgenommen.', status }],
-    });
-    commit();
-    console.log(`Aufgenommen: ${one('id')}`);
+    try {
+      addQuelle(data, { id: one('id'), name: one('name'), typ: one('typ'), kategorie: one('kategorie'), enthaelt: one('enthaelt'), fokus: one('fokus'), tags: many('tag'), rollen: many('rolle'), urls: many('url'), status: one('status'), evidenz: one('evidenz'), art: one('art'), erreichbar: one('erreichbar'), wie: one('wie'), q: one('q'), basis: one('basis'), dose: many('dose'), grab: many('grab'), kandidat: many('kandidat'), wv: one('wv'), datum: one('datum'), agent: one('agent'), runde: one('runde'), note: one('note') });
+      commit();
+      console.log(`Aufgenommen: ${one('id')}`);
+    } catch (e) { die(e.message); }
     break;
   }
   case 'md': {
