@@ -4,3 +4,7 @@ node_modules
 dist
 .claude/worktrees/
 scripts/wet-ink-lab/out/
+
+# Bibliotheks-CLI: Laufzeitdateien (Sperre, Crash-Journal)
+06-suche/.bib.lock
+06-suche/.bib-journal.json

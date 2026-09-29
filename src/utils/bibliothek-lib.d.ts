@@ -31,3 +31,38 @@ declare module '*dosen-lib.mjs' {
   export function loadGraeber(file?: string): any[];
   export function readDataIds(): { dosen: string[]; discarded: string[] };
 }
+
+declare module '*bib-errors.mjs' {
+  export class BibError extends Error { code: string; field: string; op?: number; constructor(o: { code: string; field?: string; message: string; op?: number }); toJSON(): { code: string; field: string; message: string; op?: number } }
+  export const EXIT: Record<string, number>;
+  export const ERROR_CODES: Record<string, number>;
+  export function exitFor(errors: { code: string }[]): number;
+}
+
+declare module '*bib-store.mjs' {
+  export const REL: Record<string, string>;
+  export function acquireLock(root: string, o?: { wait?: number; actor?: string }): () => void;
+  export function snapshot(root: string, extra?: string[]): any;
+  export function restore(root: string, snap: any): void;
+  export function writeJournal(root: string, snap: any, meta: any): void;
+  export function recoverJournal(root: string): any;
+  export function hashFile(root: string, rel: string): string;
+  export function storeHashes(root: string): Record<string, string>;
+  export function readLedger(root: string): { applied: Record<string, any> };
+  export function permit(config: any, actor: string, op: string, o?: { flags?: Record<string, boolean> }): { ok: boolean; reason?: string };
+}
+
+declare module '*bib-apply.mjs' {
+  export function applyPlan(plan: any, opts?: { root?: string; dryRun?: boolean; wait?: number; key?: string; planId?: string; actor?: string; agent?: string; runde?: string; generate?: boolean; exportData?: boolean; hooks?: { afterWrite?: () => void } }): any;
+  export function readPlanFile(file: string): any;
+}
+
+declare module '*bib-ops.mjs' {
+  export function buildSchema(root: string): any;
+  export const OPERATIONS: Record<string, { required: string[]; optional: string[] }>;
+}
+
+declare module '*quellen-lib.mjs' {
+  export function matchUrl(data: any, url: string): { id: string; name: string; matchedUrl: string; score: number; kind: string }[];
+  export function loadQuellen(): any;
+}

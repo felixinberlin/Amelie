@@ -1,0 +1,11 @@
+{
+  "_doc": "Wer darf über `bib apply` welche Operation? allow: Liste oder [\"*\"]; conditional.<op>.requires: das Feld muss in der Operation oder im Plan true sein. Direkte CLI-Befehle (grab add, …) sind der Bibliothekar und nicht eingeschränkt. Unbekannte Akteure sind gesperrt.",
+  "default": "deny",
+  "actors": {
+    "bibliothekar": { "allow": ["*"] },
+    "lab-librarian": {
+      "allow": ["source.log", "grave.add"],
+      "conditional": { "protokoll.add": { "requires": "human_accepted" } }
+    }
+  }
+}
