@@ -11,4 +11,5 @@ Regeln:
 - Förderbrücke: Jedes Dossier nennt einmal, wer Ticket 01 finanzieren könnte (Passung aus `06-suche/amelie-foerderlandschaft.md`, Fristen dort prüfen, Voraussetzungen wie Lizenzpflicht nennen). Kein Pitching, kein Fördertipp in Mails ohne Freigabe (offene Entscheidung in AGENTS.md).
 - Deep-Link-Pflicht: `https://felixinberlin.github.io/Amelie/#dose=<id>`.
 - Kein Pitching, CC0, kein Nachfassen. Unverifizierte Kontaktpersonen ausdrücklich als „vor Versand verifizieren" markieren. **Keine Mail versenden.**
+- Vor dem Packen: `npm run bib -- find <id> <Titel>` (Exit 2 mit Treffer in Dosen/Friedhof = Wiedergänger-Alarm). Danach `npm run bib -- protokoll show <id>`, um zu prüfen, dass die Gepackt-Zeile steht; **Zeile anlegen** darf der Packer weiterhin (`bib protokoll add`, eine Zeile in der Runde), Gräber und Quellen nicht.
 - Fertig erst, wenn `npm run lint` grün ist. (Tests laufen beim Demo-Builder.)

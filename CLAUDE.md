@@ -27,8 +27,10 @@ Amélie speichert sein Gedächtnis nicht in Chat-Transkripten, sondern im Dateis
   * `amelie-suchplaybook.md`: Die Heuristiken, Stoppregeln und erprobten Suchstrategien.
   * `amelie-inversions-log.md` & `amelie-bisoziation-log.md`: Operative Protokolle der Ideenfindung.
 * **`08-friedhof/` (Rückwärts-Gedächtnis / Obduktionssaal):**
-  * Enthält 58 beerdigte Ideen mit vollem Totenschein (`cause`, `killer`, `foundBy`, `stage`).
-  * **Regel:** Vor jeder neuen Ideengenerierung ist der Gang über den Friedhof Pflicht, um keine Wiedergänger zu produzieren.
+  * Enthält die beerdigten Ideen mit vollem Totenschein (`cause`, `killer`, `foundBy`, `stage`). Die Totenscheine liegen als Daten in `src/data/graeber.json` (nicht mehr in `dosen.ts`; `DISCARDED_DATA` liest sie von dort).
+  * **Regel:** Vor jeder neuen Ideengenerierung ist der Gang über den Friedhof Pflicht, um keine Wiedergänger zu produzieren — am schnellsten mit `npm run bib -- find <Begriffe>` und `npm run bib -- grab list --cause …`.
+
+* **Bibliotheks-CLI (`npm run bib -- hilfe`, Handbuch `06-suche/amelie-bibliothek-cli.md`):** ein Werkzeug für das ganze Gedächtnis. **Lesen (alle Agenten):** `find` (Doppelprüfung über Protokoll, Friedhof, Dosen, Kandidaten, Quellen, Logs; Exit 2 = schon da), `vorflug` (git fetch, fremde Branches, Netztest), `grab list|show|stats`, `protokoll show|stats`, `status`. **Schreiben (nur Bibliothekar, mit `--dry-run`):** `grab add`, `protokoll add`, `quellen import`, `abschluss`.
 
 ---
 
@@ -73,10 +75,13 @@ Wenn du ein Ticket, ein Kriterium oder eine Dosen-Beschreibung änderst, musst d
   * `check:protokoll` (stellt sicher, dass jedes Urteil im Prüfprotokoll steht)
   * `check:friedhof` (prüft Totenscheine und README im Friedhof)
   * `check:quellen` (validiert das Quellen-Register und prüft, dass `06-suche/amelie-quellen.md` daraus aktuell erzeugt ist)
+* **Bibliotheks-CLI:** `npm run bib -- <befehl>` (siehe §2); Rundenabschluss in einem Schritt: `npm run bib -- abschluss` (`export:data` → `lint` → `test`).
 
 ---
 
 ## 5. Aktueller Projektstand (Stand: 28. September 2026)
+
+* **Bibliotheks-CLI (29.09.2026):** `npm run bib -- …` (Handbuch `06-suche/amelie-bibliothek-cli.md`). Bisher hatte nur das Quellen-Register eine CLI; Protokoll, Friedhof und Doppelprüfung waren Handarbeit oder `grep`. Jetzt: `find` (Doppelprüfung über alles, Exit 2 = schon da), `vorflug`, `grab list|show|stats|add`, `protokoll show|stats|add`, `quellen import` (Quellenmeldungen buchen, alles-oder-nichts), `status`, `abschluss`. **Gräber liegen jetzt in `src/data/graeber.json`** (statt in `dosen.ts`; `DISCARDED_DATA` liest sie). Agenten-Definitionen (Engines, Reviewer, Packer, Bibliothekar) und Orchestrator-Skill nutzen die Befehle; Tests `src/utils/bibliothek.test.ts`. Playbook-Schreiben bleibt Handarbeit.
 
 * **Vektor V8 „Fun" (29.09.2026):**
   * Der Reviewer bewertet jetzt **8 Vektoren** (V1–V7 Kern /35, V8 Fun additiv → Gesamt /40). Fun kompensiert nie; das Dose-Ready-Gate rechnet nur V1–V7 (≥ 24/35). Rubrik: `skills/idea-reviewer/idea-reviewer/references/vector-rubrics.md`.

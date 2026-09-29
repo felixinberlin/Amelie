@@ -1,6 +1,6 @@
 # Nachrufe
 
-Die langen Geschichten zu einzelnen Gräbern — für die Toten, deren Lehre nicht in zwei Sätze passt. Der Totenschein jedes Grabs (Ursache, Killer, Fundweg, Herkunft, Stadium) steht in `src/data/dosen.ts` (`DISCARDED_DATA`), die Auswertung in `08-friedhof/README.md`.
+Die langen Geschichten zu einzelnen Gräbern — für die Toten, deren Lehre nicht in zwei Sätze passt. Der Totenschein jedes Grabs (Ursache, Killer, Fundweg, Herkunft, Stadium) steht in `src/data/graeber.json` (`DISCARDED_DATA` in `src/data/dosen.ts` liest sie), die Auswertung in `08-friedhof/README.md`.
 
 Bis zum 24.09.2026 hieß diese Datei `05-dosen/_entsorgt.md` und begann mit dem Satz: *„Regel 7 sagt: Was nicht mehr stimmt, wird gelöscht, nicht archiviert."* Die Regel ist geändert (Manifest, Abschnitt „Der Friedhof"). Was hier steht, ist kein Archiv: Es sind Obduktionsberichte.
 

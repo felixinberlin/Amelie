@@ -1,5 +1,5 @@
 // @ts-ignore
-import { readFileSync, readdirSync } from 'node:fs';
+import { readFileSync, readdirSync, existsSync } from 'node:fs';
 // @ts-ignore
 import { join, dirname } from 'node:path';
 // @ts-ignore
@@ -21,9 +21,13 @@ export function readDataIds(file = DATA_FILE) {
     throw new Error(`Konnte DOSEN_DATA/DISCARDED_DATA in ${file} nicht finden.`);
   }
   const collect = (text: string) => [...text.matchAll(ID_LINE)].map((m) => m[1]);
+  // Gräber liegen seit der Bibliotheks-CLI in graeber.json neben dosen.ts.
+  const graeberFile = join(dirname(file), 'graeber.json');
   return {
     dosen: collect(src.slice(dosenStart, discardedStart)),
-    discarded: collect(src.slice(discardedStart)),
+    discarded: existsSync(graeberFile)
+      ? (JSON.parse(readFileSync(graeberFile, 'utf8')) as { id: string }[]).map((g) => g.id)
+      : collect(src.slice(discardedStart)),
   };
 }
 

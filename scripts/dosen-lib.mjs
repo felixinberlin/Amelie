@@ -4,18 +4,22 @@
 // bewusst: Ein Guard, der eine Toolchain braucht, läuft irgendwann nicht mehr.
 // Gelesen wird nur, was stabil ist — die id-Zeilen innerhalb der beiden Arrays.
 
-import { readFileSync, readdirSync } from 'node:fs';
+import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 export const repoRoot = join(dirname(fileURLToPath(import.meta.url)), '..');
 export const DATA_FILE = join(repoRoot, 'src/data/dosen.ts');
 export const DOSEN_DIR = join(repoRoot, '05-dosen');
+export const GRAEBER_FILE = join(repoRoot, 'src/data/graeber.json');
+
+/** Gräber (Totenscheine) liegen als JSON; geschrieben wird nur über `npm run bib -- grab add`. */
+export const loadGraeber = (file = GRAEBER_FILE) => JSON.parse(readFileSync(file, 'utf8'));
 
 const ID_LINE = /^ {4}id: '([^']+)'/gm;
 
-/** Gibt die ids aus DOSEN_DATA und DISCARDED_DATA getrennt zurück. */
-export function readDataIds(file = DATA_FILE) {
+/** Gibt die ids aus DOSEN_DATA und den Gräbern (graeber.json) getrennt zurück. */
+export function readDataIds(file = DATA_FILE, graeberFile = GRAEBER_FILE) {
   const src = readFileSync(file, 'utf8');
   const dosenStart = src.indexOf('export const DOSEN_DATA');
   const discardedStart = src.indexOf('export const DISCARDED_DATA');
@@ -25,7 +29,7 @@ export function readDataIds(file = DATA_FILE) {
   const collect = (text) => [...text.matchAll(ID_LINE)].map((m) => m[1]);
   return {
     dosen: collect(src.slice(dosenStart, discardedStart)),
-    discarded: collect(src.slice(discardedStart)),
+    discarded: existsSync(graeberFile) ? loadGraeber(graeberFile).map((g) => g.id) : collect(src.slice(discardedStart)),
   };
 }
 
