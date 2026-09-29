@@ -114,7 +114,7 @@ Maps where the idea lives within the broader open-source knowledge graph:
 ### Step 0 · Intake & Input Normalization
 1. Receive idea candidate from user or from discovery logs (`06-suche/`).
 2. Identify origin method: `amelie-ideenrunde`, `lacunar-bisociation`, `asymmetric-inversion`, or `user-proposal`.
-3. Check graveyard (`08-friedhof/README.md`) to verify idea is not already dead.
+3. Check graveyard (`08-friedhof/README.md`) to verify idea is not already dead. Quick path: `npm run bib -- find <terms>` (doses, candidates, protocol, graveyard, logs at once; exit code 2 = already there, which also answers "is it rather a **Baustein** of an existing dose?") and `npm run bib -- grab show <id>` for a grave's death certificate and resurrection condition. Read-only; the librarian writes graves (`grab add`), see `06-suche/amelie-bibliothek-cli.md`.
 
 ### Step 1 · Vector Evaluation
 Evaluate the candidate across all 8 vectors using the rubrics in `references/vector-rubrics.md`. Assign integer scores (1–5) and write 1–2 grounding sentences per vector. Report the core score `/35` (V1–V7) and the total `/40` (with V8 Fun).

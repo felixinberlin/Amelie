@@ -54,58 +54,58 @@ Die Ursachen genauer:
 
 *Automatisch erzeugt aus `src/data/graeber.json` (`DISCARDED_DATA`) mit `npm run friedhof` (läuft nach `npm run bib -- grab add` von selbst). Nicht von Hand bearbeiten — `npm run lint` meldet Abweichungen.*
 
-**81 Gräber.** 3 davon starben erst als Dose oder Mail-Entwurf (teure Tode). Von 72 dokumentierten Fundwegen kamen 12 ohne neue Suche aus (eigener Atlas, eigenes Protokoll oder Reality-Check) — 17 %.
+**92 Gräber.** 3 davon starben erst als Dose oder Mail-Entwurf (teure Tode). Von 83 dokumentierten Fundwegen kamen 15 ohne neue Suche aus (eigener Atlas, eigenes Protokoll oder Reality-Check) — 18 %.
 
 **Woran sie starben**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Schon gebaut | 44 | 54 % |
-| Beim Empfänger selbst | 17 | 21 % |
-| Reality-Check | 9 | 11 % |
-| Falsche Prämisse | 5 | 6 % |
-| Keine neue Fähigkeit | 4 | 5 % |
+| Schon gebaut | 47 | 51 % |
+| Beim Empfänger selbst | 19 | 21 % |
+| Reality-Check | 12 | 13 % |
+| Falsche Prämisse | 8 | 9 % |
+| Keine neue Fähigkeit | 4 | 4 % |
 | Duplikat | 2 | 2 % |
 
 **Welche Suche traf**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Deutsche Suche | 28 | 35 % |
-| Englische Suche | 20 | 25 % |
-| Empfänger-Suche | 11 | 14 % |
-| Nicht dokumentiert | 9 | 11 % |
-| Ohne Suche | 8 | 10 % |
-| Eigener Atlas / Protokoll | 4 | 5 % |
+| Deutsche Suche | 32 | 35 % |
+| Englische Suche | 24 | 26 % |
+| Empfänger-Suche | 11 | 12 % |
+| Ohne Suche | 11 | 12 % |
+| Nicht dokumentiert | 9 | 10 % |
+| Eigener Atlas / Protokoll | 4 | 4 % |
 | Forum / Nische | 1 | 1 % |
 
 **Woher sie kamen**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Bisoziation | 29 | 36 % |
-| Primärquelle | 24 | 30 % |
-| Brainstorm | 16 | 20 % |
-| Ideenliste | 8 | 10 % |
-| Modell-Katalog | 4 | 5 % |
+| Bisoziation | 32 | 35 % |
+| Primärquelle | 32 | 35 % |
+| Brainstorm | 16 | 17 % |
+| Ideenliste | 8 | 9 % |
+| Modell-Katalog | 4 | 4 % |
 
 **Wer sie schon hatte**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Firma | 23 | 28 % |
-| Forschung | 14 | 17 % |
-| Behörde | 13 | 16 % |
-| Gemeinnützige | 11 | 14 % |
-| Community / Indie | 9 | 11 % |
-| Niemand | 9 | 11 % |
+| Firma | 26 | 28 % |
+| Forschung | 16 | 17 % |
+| Behörde | 14 | 15 % |
+| Gemeinnützige | 12 | 13 % |
+| Niemand | 12 | 13 % |
+| Community / Indie | 10 | 11 % |
 | Eigener Bestand | 2 | 2 % |
 
 **Wie weit sie kamen**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Kandidat | 78 | 96 % |
+| Kandidat | 89 | 97 % |
 | Dose gepackt | 2 | 2 % |
 | Mail entworfen | 1 | 1 % |
 
@@ -113,16 +113,27 @@ Die Ursachen genauer:
 
 | Idee | † | Ursache | Wer sie hatte | Gefunden durch | Herkunft | Kam bis | Auferstehung wenn |
 |---|---|---|---|---|---|---|---|
+| Augenzähler-Foto (Würfel- oder Kartenaugen per Foto zählen) | 29.09.2026 | Falsche Prämisse | Niemand | Ohne Suche | Primärquelle | Kandidat | Nie, solange Zählen schneller ist als Fotografieren. |
 | Bergsonnenuhr-Peiler (Zwölfer-Bergnamen) | 29.09.2026 | Falsche Prämisse | Community / Indie | Ohne Suche | Bisoziation | Kandidat | Wenn eine Forschungsfrage entsteht, die die Benennungsorte statistisch über viele Gipfel eingrenzt und die Liste das nicht leistet. |
+| Boule-Messfoto (welche Kugel liegt näher?) | 29.09.2026 | Schon gebaut | Firma | Englische Suche | Primärquelle | Kandidat | Nie als Foto-Messer; nur wenn der Deutsche Pétanque Verband eine offene, geprüfte Messmethode als Turnierstandard ausschreibt, die keine der Apps erfüllt. |
+| Cache-Schutzgebiets-Check (Geocaching-Koordinaten gegen BfN-Schutzgebiete) | 29.09.2026 | Schon gebaut | Community / Indie | Deutsche Suche | Primärquelle | Kandidat | Wenn Opencaching oder ein Landesverband Wegpunkte/Finals nachweislich nicht prüft und Cache-Verbände einen offenen Wegpunkt-Checker als Beilage zum Listing anfragen, oder die BfN-Daten unter freier Lizenz einen Browser-Checker tragen. |
 | Dialekt-Quiz / Mundart-Diktat / Aufnahme-App | 29.09.2026 | Schon gebaut | Forschung | Deutsche Suche | Primärquelle | Kandidat | Wenn die Apps eingestellt werden und ihre Daten nicht offen bleiben. |
 | Hofnamen-Karte mit Adresse und Audio | 29.09.2026 | Schon gebaut | Behörde | Deutsche Suche | Bisoziation | Kandidat | Wenn eine deutsche Landesstelle Hofnamen nachweislich nicht führt und keine Community-Karte besteht. |
+| Kader-Zuverlässigkeit (Vereinsfußball als k-aus-n-System) | 29.09.2026 | Falsche Prämisse | Niemand | Ohne Suche | Bisoziation | Kandidat | Wenn ein Kreisspielausschuss oder eine SpielerPlus-/Spond-Auswertung Zusagequoten nach Anlässen veröffentlicht (Datensatz mit Abhängigkeit) und ein Verband daraus eine Kadergrößen-Empfehlung ableiten will. |
+| Kollektivziel-Ledger (Gemeinschaftsziele in Spielen nachweisen) | 29.09.2026 | Beim Empfänger selbst | Gemeinnützige | Englische Suche | Primärquelle | Kandidat | Wenn ein Fördergeber oder eine Aufsicht für Spiele-Impact-Zusagen einen unabhängigen Nachweis verlangt und ein offenes Berichtsformat sucht. |
+| LAN-Stromplaner (Lastrechnung für LAN-Partys) | 29.09.2026 | Falsche Prämisse | Niemand | Ohne Suche | Bisoziation | Kandidat | Nie als Rechner; nur wenn ein Veranstalterverband oder eine Elektro-Innung eine Prüfliste für Lastplanung von Veranstaltungen als offenes Formular anfragt. |
+| Lootbox-Odds-Auditor (Spieler poolen Öffnungsergebnisse gegen die Herstellerangabe) | 29.09.2026 | Reality-Check | Firma | Englische Suche | Primärquelle | Kandidat | Wenn Deutschland oder die EU eine Odds-Offenlegungspflicht mit Behördenverfahren einführt, das Stichproben als Beschwerdeunterlage annimmt. |
 | Namen gegen Ackerzahl | 29.09.2026 | Reality-Check | Niemand | Ohne Suche | Bisoziation | Kandidat | Wenn die Bodenschätzung bundesweit offen wird. |
 | Namens-Zeuge (Flurname kennt vergessene Grube) | 29.09.2026 | Reality-Check | Niemand | Ohne Suche | Bisoziation | Kandidat | Wenn ein Landesamt eine Namen-Sachverhalt-Zuordnung an 20 Fällen belegt und den Hinweis selbst tragen will. |
 | Omas-Rezept-Mengenübersetzer | 29.09.2026 | Schon gebaut | Firma | Deutsche Suche | Bisoziation | Kandidat | Wenn eine Messreihe historischer Löffel- und Tassenmaße entsteht, die keine Seite trägt. |
 | Ortsnamen-Endungen-Atlas | 29.09.2026 | Schon gebaut | Forschung | Deutsche Suche | Bisoziation | Kandidat | Wenn der Atlas offline geht und GN250 die Bestandteile nicht mehr trägt. |
 | Plattdeutsch-TTS / -Übersetzer | 29.09.2026 | Beim Empfänger selbst | Behörde | Deutsche Suche | Primärquelle | Kandidat | Wenn das Projekt der Landschaft ohne offene Daten endet und ein anderes Platt (Mecklenburg, Westfalen) unversorgt bleibt. |
+| Preisturnier-Ampel (ist mein Kartenturnier erlaubnispflichtig?) | 29.09.2026 | Reality-Check | Behörde | Deutsche Suche | Primärquelle | Kandidat | Wenn eine Glücksspielbehörde der Länder oder ein Skatverband eine maschinenlesbare Prüfliste für Vereinsturniere veröffentlicht und um ein offenes Formular bittet. |
 | Sagen-Abenteuer (Ortssage als Kinder-Kurzabenteuer) | 29.09.2026 | Keine neue Fähigkeit | Firma | Ohne Suche | Bisoziation | Kandidat | Wenn ein Heimatverein Sagen offen lizenziert und eine geprüfte Ortsbindung anbietet, die Standortspiele nicht leisten. |
+| Skill-Luck-Index (Glücksanteil einer Spielrunde messen, Doppelkopf/Skat) | 29.09.2026 | Reality-Check | Forschung | Englische Suche | Bisoziation | Kandidat | Wenn ein Turnierverband Ergebnisse von mehr als 30 Spielern über viele Runden offen veröffentlicht und einen Glücksanteil-Bericht für die Regelbewertung anfragt. |
+| Spielregel-Elemente-Extraktor (Anleitungen maschinell codieren) | 29.09.2026 | Beim Empfänger selbst | Forschung | Deutsche Suche | Primärquelle | Kandidat | Wenn EMPAMOS Daten und Methode offen legt und eine Lücke bei einer Spielschicht für Laien benennt. |
 | Straßennamen-Herkunft-Quiz / QR-Schild-Erklärer | 29.09.2026 | Schon gebaut | Community / Indie | Deutsche Suche | Primärquelle | Kandidat | Wenn die OSM-Etymologie-Daten für Deutschland dünn bleiben und keine Kommune Schilder trägt. |
+| Tippgemeinschafts-Beleg (Teilnehmerliste und Einzahlung vor der Ziehung festhalten) | 29.09.2026 | Schon gebaut | Firma | Deutsche Suche | Primärquelle | Kandidat | Nie; nur wenn eine Lottogesellschaft ein offenes, herstellerunabhängiges Nachweisformat für Spielgemeinschaften ausschreibt. |
 | Vorbewohner-Finder (Adressbücher) | 29.09.2026 | Beim Empfänger selbst | Gemeinnützige | Deutsche Suche | Bisoziation | Kandidat | Wenn CompGen den Zugang schließt oder Adressbücher außerhalb der Abdeckung liegen und Nutzer das nachweisen. |
 | Zeitzeugen-Transkription / Entrauscher | 29.09.2026 | Beim Empfänger selbst | Forschung | Englische Suche | Primärquelle | Kandidat | Wenn Oral-History.Digital die Transkription einstellt oder sie für kleine Heimatarchive nicht zugänglich ist. |
 | Akku-Ankaufsuntersuchung (Batteriepass × Pferdekauf) | 28.09.2026 | Schon gebaut | Firma | Nicht dokumentiert | Bisoziation | Kandidat | Nie als Zertifikat. Höchstens, wenn der Batteriepass SoH-Daten öffentlich lesbar macht und kein Händlerprogramm Privatverkäufe abdeckt. |

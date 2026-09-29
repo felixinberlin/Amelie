@@ -2730,18 +2730,22 @@
       "tags": [
         "spiel"
       ],
-      "urls": [],
+      "urls": [
+        "https://itch.io/jam/scientific-game-jam-2026",
+        "https://www.scientificgamejam.org",
+        "https://playing4theplanet.org/green-game-jam-2026"
+      ],
       "zugang": {
         "art": "web",
-        "erreichbar": "unbekannt",
-        "wie": ""
+        "erreichbar": "ja",
+        "wie": "itch.io per WebFetch, Programm auf scientificgamejam.org"
       },
       "enthaelt": "Jams, die Forschung und Spielentwicklung paaren",
       "fokus": "",
-      "status": "offen",
-      "statusNotiz": "als Community-Weg für Ideen mit Skelett",
-      "evidenz": "unbekannt",
-      "zuletzt": null,
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-29",
       "ertrag": {
         "dosen": [],
         "graeber": [],
@@ -2749,14 +2753,14 @@
       },
       "vektoren": {
         "q": [
+          1,
+          2,
+          4,
+          4,
           3,
-          5,
-          3,
-          3,
-          5,
-          3
+          1
         ],
-        "basis": "auto",
+        "basis": "bibliothekar",
         "datum": "2026-09-29"
       },
       "verlauf": [
@@ -2765,6 +2769,19 @@
           "agent": "migration",
           "runde": "Register-Einführung",
           "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        },
+        {
+          "datum": "2026-09-29",
+          "agent": "ideen-scout",
+          "runde": "Multiplayer-Runde",
+          "notiz": "SGJ 2026 mit 39 Einzelspieler-Beiträgen ohne Multiplayer, CC-BY-NC 3.0, Partnerliste CNRS/CEA/CNES, aber kein Einreichweg für Forschende; Green Game Jam nennt keine Messmethode.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-09-29",
+          "agent": "bibliothekar",
+          "runde": "",
+          "notiz": "Vektoren bewertet [1 2 4 4 3 1]: Multiplayer-Runde: gelesen, 39 Einzelspieler-Beiträge, kein Einreichweg"
         }
       ]
     },
@@ -6913,6 +6930,1588 @@
           "runde": "Quellen-Register / Social-Frage",
           "notiz": "Aufgenommen; Domain am 29.09.2026 per WebFetch/curl aus der Cloud-Umgebung nicht erreichbar. Zugangsweg aus Vorwissen, ungeprüft.",
           "status": "offen"
+        }
+      ]
+    },
+    {
+      "id": "playing-for-the-planet-impact-report-2025",
+      "name": "Playing for the Planet Impact Report 2025",
+      "typ": "G",
+      "kategorie": "spiel",
+      "rollen": [
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.playing4theplanet.org/annual-impact-report-2025"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Jahresbericht der Alliance mit Zahlen zum Green Game Jam",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-29",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "kollektivziel-ledger"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "ideen-scout",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Selbstauskunft 235 Mio. Spieler und 284.000 USD 2025 (57 Studios), Träger und Prüfer in einer Hand, damit ist das Kollektivziel-Ledger beim Empfänger.",
+          "status": "angekratzt"
+        },
+        {
+          "datum": "2026-09-29",
+          "agent": "bibliothekar",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Ertrag verknüpft: Grab kollektivziel-ledger (bib quellen import lehnt Grab im ertrag ab, siehe CLI-Bericht)"
+        }
+      ]
+    },
+    {
+      "id": "vsl-verband-schweizer-ludotheken",
+      "name": "Verband der Schweizer Ludotheken VSL (ludo.ch)",
+      "typ": "W",
+      "kategorie": "empfaenger",
+      "rollen": [
+        "empfaenger"
+      ],
+      "tags": [],
+      "urls": [
+        "https://ludo.ch/de/",
+        "https://www.ludothek-spiez.ch/informationen/benutzungsordnung/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "https://ludo.ch/de/ per WebFetch, Unterseite /de/verband/dienstleistungen/ lieferte 404"
+      },
+      "enthaelt": "Dachverband von ca. 350 Ludotheken mit Kursen und Beratung (Adressbuch, LUPO-Schulung)",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-29",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "ludothek-vollstaendigkeit"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "ideen-scout",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Sekretariat Jacqueline Pircher (nur Geschäftsstelle, keine Fachperson); Rückgabekontrolle ist Handarbeit nach Inventarliste (Benutzungsordnung Spiez).",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "lupo-ludothekprogramm",
+      "name": "LUPO Ludothekprogramm (ludothekprogramm.ch)",
+      "typ": "W",
+      "kategorie": "empfaenger",
+      "rollen": [
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.ludothekprogramm.ch/",
+        "https://hilfe.ludothekprogramm.ch/de/einstellungen/allgemeine-einstellungen/spielinhalt"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "Hilfe-Seiten hilfe.ludothekprogramm.ch und LUPO-11-Blog gelesen, Startseite 503"
+      },
+      "enthaelt": "Kommerzielle Ausleihsoftware für Ludotheken (Abgleich mit Ludothek-Prüfer)",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-29",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "ludothek-vollstaendigkeit"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          3,
+          4,
+          3,
+          4
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "ideen-scout",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Verwaltungssoftware der Schweizer Ludotheken; Funktionsumfang (Packlisten je Spiel) offen, vom Reviewer später geklärt.",
+          "status": "angekratzt"
+        },
+        {
+          "datum": "2026-09-29",
+          "agent": "idea-reviewer",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Spielinhalt nur als Freitext, Etikettendruck, Barcode; kein Fehlteil-Tracking und keine Rückgabekontrolle dokumentiert.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-09-29",
+          "agent": "bibliothekar",
+          "runde": "",
+          "notiz": "Vektoren bewertet [2 3 3 4 3 4]: Multiplayer-Runde: Hilfe gelesen, Startseite 503, Freitext-Inventar"
+        }
+      ]
+    },
+    {
+      "id": "empamos-th-nuernberg-spielearchiv",
+      "name": "EMPAMOS TH Nürnberg und Deutsches Spielearchiv",
+      "typ": "G",
+      "kategorie": "spiel",
+      "rollen": [
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [
+        "https://museenblog-nuernberg.de/2023/06/01/spieleforschung-im-spielearchiv/",
+        "https://www.th-nuernberg.de/fakultaeten/in/forschung/machine-learning/empamos/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "museenblog-nuernberg.de/2023/06/01/spieleforschung-im-spielearchiv/"
+      },
+      "enthaelt": "Forschungsprojekt zur maschinellen Codierung von Spielregeln, Adressbuch Spielearchiv",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-29",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "spielregel-elemente-extraktor"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "ideen-scout",
+          "runde": "Multiplayer-Runde",
+          "notiz": "ML-Analyse von Anleitungen aus über 40.000 Spielen, 104 Spielelemente, Kooperation Ravensburger, seit 2023.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-09-29",
+          "agent": "bibliothekar",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Ertrag verknüpft: Grab spielregel-elemente-extraktor (bib quellen import lehnt Grab im ertrag ab, siehe CLI-Bericht)"
+        }
+      ]
+    },
+    {
+      "id": "wetterturnier",
+      "name": "Wetterturnier (wetterturnier.de)",
+      "typ": "G",
+      "kategorie": "spiel",
+      "rollen": [
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [
+        "https://wetterturnier.de/history/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "wetterturnier.de/history/"
+      },
+      "enthaelt": "Multiplayer-Prognosewettbewerb mit Punktesystem seit 2000",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-29",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "pegel-wette"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "ideen-scout",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Aktives Prognoseturnier FU Berlin/Uni Innsbruck (Stand 25.09.2026 je Stadt 19 bis 77 Tipper), nur Wetter, kein Pegel.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "dpv-petanque-spielregeln",
+      "name": "Deutscher Pétanque Verband Regelwerk",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://deutscher-petanque-verband.de/wp-content/uploads/2026/03/DPV-Spielregeln-mit-kl.-Inhaltsverzeichnis.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Offizielle Pétanque-Spielregeln (Stand 03/2026) mit Messregeln",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-29",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "boule-messfoto"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "ideen-scout",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Messregeln und Schiedsrichter-Entscheid; Messfoto-Apps existieren mehrfach.",
+          "status": "angekratzt"
+        },
+        {
+          "datum": "2026-09-29",
+          "agent": "bibliothekar",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Ertrag verknüpft: Grab boule-messfoto (bib quellen import lehnt Grab im ertrag ab, siehe CLI-Bericht)"
+        }
+      ]
+    },
+    {
+      "id": "lfulg-sachsen-hq50-hochwasserspiel",
+      "name": "LfULG Sachsen HQ50 Hochwasserspiel",
+      "typ": "G",
+      "kategorie": "spiel",
+      "rollen": [
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.medienservice.sachsen.de/medien/news/1075794"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "medienservice.sachsen.de/medien/news/1075794"
+      },
+      "enthaelt": "Serious Game HQ50 aus HoWa-PRO für den Katastrophenschutz",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-29",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "pegel-wette"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "ideen-scout",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Entscheidungsspiel ohne Pegelprognose (Start 23.05.2024), nur Pressekontakt.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "skill-luck-forschung-heidelberg",
+      "name": "Skill-Luck-Forschung Heidelberg (Duersch/Oechssler)",
+      "typ": "I",
+      "kategorie": "messverfahren",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.uni-heidelberg.de/en/newsroom/skat-and-poker-more-luck-than-skill",
+        "https://arxiv.org/abs/2410.14363"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Elo-Verfahren zur Messung von Glück gegen Geschick in Spielen",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-29",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "skill-luck-index"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "ideen-scout",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Skat und Poker über 50 % Glück, Doppelkopf/Schafkopf unvermessen, aber Schafkopf-Urteil vorhanden.",
+          "status": "angekratzt"
+        },
+        {
+          "datum": "2026-09-29",
+          "agent": "bibliothekar",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Ertrag verknüpft: Grab skill-luck-index (bib quellen import lehnt Grab im ertrag ab, siehe CLI-Bericht)"
+        }
+      ]
+    },
+    {
+      "id": "gluecksspielstaatsvertrag-glustv",
+      "name": "Glücksspielstaatsvertrag (gesetze-im-internet.de, Dritt-PDF Hohenheim)",
+      "typ": "O",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://gluecksspiel.uni-hohenheim.de/fakultaet/GlueStV.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "gesperrt",
+        "wie": "gesetze-im-internet.de Timeout am 29.09.2026, Volltext nur als Dritt-PDF gluecksspiel.uni-hohenheim.de"
+      },
+      "enthaelt": "Normvolltext GlüStV, Abgrenzung Glücksspiel und Geschicklichkeit",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-29",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "preisturnier-ampel"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "ideen-scout",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Normvolltext nicht gelesen, Urteil preisturnier-ampel nur auf Ratgeber-Schnipseln.",
+          "status": "angekratzt"
+        },
+        {
+          "datum": "2026-09-29",
+          "agent": "bibliothekar",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Ertrag verknüpft: Grab preisturnier-ampel (bib quellen import lehnt Grab im ertrag ab, siehe CLI-Bericht)"
+        }
+      ]
+    },
+    {
+      "id": "arxiv-2604-13390-critical-mass-collapse",
+      "name": "arXiv 2604.13390 Critical-Mass Collapse in Online Multiplayer Games (Sheta, Georgia Tech)",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://arxiv.org/abs/2604.13390",
+        "https://arxiv.org/html/2604.13390"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "Abstract und HTML-Volltext gelesen, keine zweite Version"
+      },
+      "enthaelt": "Formales Modell für Kritische-Masse-Schwelle und Hazard-Zerfall in Multiplayer-Spielen, kein Code, keine Daten",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-29",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "kritische-masse-rechner"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          3,
+          2,
+          5,
+          5,
+          4,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "bisoziations-kollider",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Anker ohne Werkzeug, Fallstudien illustrativ, Autor als möglicher Empfänger; Wiedervorlage 12/2026, ob Code nachgereicht wird.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-09-29",
+          "agent": "idea-reviewer",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Reviewer: kein Code, keine Daten, Fallstudien illustrativ, lehnt Skalar-Schwelle ausdrücklich ab; Rechenregel des Kandidaten ist Lehrbuch, nicht aus dem Paper.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-09-29",
+          "agent": "bibliothekar",
+          "runde": "",
+          "notiz": "Vektoren bewertet [3 2 5 5 4 3]: Multiplayer-Runde: Anker der besten Idee (R1, Needs Research); kein Code, v2 abwarten"
+        }
+      ]
+    },
+    {
+      "id": "eu-stop-destroying-videogames",
+      "name": "EU Stop Destroying Videogames, Kommissionsantwort 16.06.2026",
+      "typ": "O",
+      "kategorie": "norm",
+      "rollen": [
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [
+        "https://germany.representation.ec.europa.eu/news/kommission-pruft-europaische-burgerinitiative-stop-destroying-videogames-2026-01-26_de"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "teilweise",
+        "wie": "lewissilkin.com und Vertretung der Kommission in Deutschland, Primärtext nicht gelesen"
+      },
+      "enthaelt": "Verhaltenskodex-Dialog Industrie und Verbraucher bis Ende 2026, 1.294.188 gültige Unterschriften, kein Gesetz",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-29",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "kritische-masse-rechner"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "bisoziations-kollider",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Eine Definition praktisch unspielbar über Spielerzahlen fand die Suche nicht; Kodex-Entwurf vor Nutzung primär lesen.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "steamdata-steam-web-api",
+      "name": "steamdata.dev und Steam Web API GetNumberOfCurrentPlayers",
+      "typ": "E",
+      "kategorie": "datensatz",
+      "rollen": [
+        "evidenz"
+      ],
+      "tags": [],
+      "urls": [
+        "https://steamdata.dev"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "teilweise",
+        "wie": "API-Schlüssel nötig, steamdata.dev Weboberfläche"
+      },
+      "enthaelt": "Stündliche Steam-Spielerzahlen je App, API mit Schlüssel",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-29",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "kritische-masse-rechner"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "bisoziations-kollider",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Datenbasis für den Kritische-Masse-Rechner; Nutzungsbedingungen und Abrufgrenzen ungeprüft.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "boule-bocce-messapps",
+      "name": "Boule- und Bocce-Messapps (Booble, Tape measure for pétanque, Bocce Labs, US-Patent 9754373)",
+      "typ": "I",
+      "kategorie": "messverfahren",
+      "rollen": [
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [
+        "https://apps.apple.com/us/app/tape-measure-for-p%C3%A9tanque/id6449738365"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "App-Stores und patents.google.com"
+      },
+      "enthaelt": "Foto-basierte Entfernungsmessung Kugel zu Zielkugel",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-29",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "boule-messfoto"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "bisoziations-kollider",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Negativbefund: das Feld Streit um Entfernung ist besetzt.",
+          "status": "angekratzt"
+        },
+        {
+          "datum": "2026-09-29",
+          "agent": "bibliothekar",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Ertrag verknüpft: Grab boule-messfoto (bib quellen import lehnt Grab im ertrag ab, siehe CLI-Bericht)"
+        }
+      ]
+    },
+    {
+      "id": "amateurfussball-kader-absagen",
+      "name": "Kader und Absagen im Amateurfußball (schwaebische.de, fussballtraining.de, Trainertalk)",
+      "typ": "X",
+      "kategorie": "soziale-plattform",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.trainertalk.de/forum/thread/9103-wie-gro%C3%9F-sollte-so-ein-kader-eigentlich-sein/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "freie Webseiten"
+      },
+      "enthaelt": "Berichte und Forenfäden über Spielabsagen wegen Unterbesetzung, Kaderrichtwert 16 bis 18",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-29",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "kader-zuverlaessigkeit"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "bisoziations-kollider",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Keine Wahrscheinlichkeitsrechnung im Netz gefunden, Empfänger unverifiziert.",
+          "status": "angekratzt"
+        },
+        {
+          "datum": "2026-09-29",
+          "agent": "bibliothekar",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Ertrag verknüpft: Grab kader-zuverlaessigkeit (bib quellen import lehnt Grab im ertrag ab, siehe CLI-Bericht)"
+        }
+      ]
+    },
+    {
+      "id": "geocaching-wiki-naturschutz",
+      "name": "Geocaching.com Wiki Deutschland Naturschutz",
+      "typ": "X",
+      "kategorie": "soziale-plattform",
+      "rollen": [
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [
+        "https://gcwiki.atlassian.net"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "gcwiki.atlassian.net, nur als Suchschnipsel gesehen"
+      },
+      "enthaelt": "Reviewer-Regeln für Caches in Schutzgebieten, UNB-Genehmigungspflicht je Bundesland",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-29",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "cache-schutzgebiet-check"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "inversions-agent",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Prüfschritt sitzt beim Reviewer der Plattform; Seite nicht gelesen.",
+          "status": "angekratzt"
+        },
+        {
+          "datum": "2026-09-29",
+          "agent": "bibliothekar",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Ertrag verknüpft: Grab cache-schutzgebiet-check (bib quellen import lehnt Grab im ertrag ab, siehe CLI-Bericht)"
+        }
+      ]
+    },
+    {
+      "id": "bfn-geodienste-schutzgebiete",
+      "name": "BfN Geodienste Schutzgebiete",
+      "typ": "E",
+      "kategorie": "datensatz",
+      "rollen": [
+        "evidenz"
+      ],
+      "tags": [],
+      "urls": [
+        "https://geodienste.bfn.de/schutzgebiete"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "Webseite, WFS nicht getestet"
+      },
+      "enthaelt": "Karte und Geodienst der Schutzgebiete in Deutschland (geodienste.bfn.de/schutzgebiete)",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-29",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "cache-schutzgebiet-check"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "inversions-agent",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Baustein für den Cache-Check, Lizenz und WFS-Abruf ungeprüft.",
+          "status": "angekratzt"
+        },
+        {
+          "datum": "2026-09-29",
+          "agent": "bibliothekar",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Ertrag verknüpft: Grab cache-schutzgebiet-check (bib quellen import lehnt Grab im ertrag ab, siehe CLI-Bericht)"
+        }
+      ]
+    },
+    {
+      "id": "gie-ev-geocaching-naturschutz",
+      "name": "GiE e.V. Geocaching und Naturschutz",
+      "typ": "W",
+      "kategorie": "empfaenger",
+      "rollen": [
+        "empfaenger"
+      ],
+      "tags": [],
+      "urls": [
+        "https://gie-ev.de"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "gie-ev.de, nur Suchschnipsel"
+      },
+      "enthaelt": "Geocaching-Verband mit Naturschutz-Leitfaden",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-29",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "cache-schutzgebiet-check"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "inversions-agent",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Möglicher Empfänger, nicht kontaktiert, Person nicht ermittelt.",
+          "status": "angekratzt"
+        },
+        {
+          "datum": "2026-09-29",
+          "agent": "bibliothekar",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Ertrag verknüpft: Grab cache-schutzgebiet-check (bib quellen import lehnt Grab im ertrag ab, siehe CLI-Bericht)"
+        }
+      ]
+    },
+    {
+      "id": "lotto-bw-mustervertrag-tippgemeinschaft",
+      "name": "Lotto BW Mustervertrag Tippgemeinschaft",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.lotto-bw.de"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "PDF auf lotto-bw.de, nur Suchschnipsel"
+      },
+      "enthaelt": "Mustervertrag Tippgemeinschaft nach § 722 BGB",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-29",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "tippgemeinschafts-beleg"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "inversions-agent",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Beweismittel Vertrag vor Abgabe des Scheins ist durch die Vorlage gedeckt.",
+          "status": "angekratzt"
+        },
+        {
+          "datum": "2026-09-29",
+          "agent": "bibliothekar",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Ertrag verknüpft: Grab tippgemeinschafts-beleg (bib quellen import lehnt Grab im ertrag ab, siehe CLI-Bericht)"
+        }
+      ]
+    },
+    {
+      "id": "lootbox-odds-community-tests",
+      "name": "Lootbox-Odds Tests und Trackers (gametyrant, lemonlama, Bruin)",
+      "typ": "X",
+      "kategorie": "soziale-plattform",
+      "rollen": [
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.gametyrant.com"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "freie Webseiten, nur Suchschnipsel"
+      },
+      "enthaelt": "Fachpresse und Community-Tests zu Lootbox-Wahrscheinlichkeiten, Bruin als kommerzieller Tracker",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-29",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "lootbox-odds-auditor"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "inversions-agent",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Niemand verifiziert Odds behördlich, Stichprobe 500 Boxen belegt nichts.",
+          "status": "angekratzt"
+        },
+        {
+          "datum": "2026-09-29",
+          "agent": "bibliothekar",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Ertrag verknüpft: Grab lootbox-odds-auditor (bib quellen import lehnt Grab im ertrag ab, siehe CLI-Bericht)"
+        }
+      ]
+    },
+    {
+      "id": "korea-game-industry-promotion-act-art-33",
+      "name": "Korea Game Industry Promotion Act Art. 33 (Odds-Pflicht)",
+      "typ": "H",
+      "kategorie": "auslandsregulierung",
+      "rollen": [
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "teilweise",
+        "wie": "Presseberichte, Normtext nicht gelesen"
+      },
+      "enthaelt": "Odds-Pflicht seit 22.03.2024, GAMEC-Verbraucherzentrum Busan, KFTC-Bußgelder",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-29",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "lootbox-odds-auditor"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "inversions-agent",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Gegenprobe: dort prüft die Behörde mit Herstellerdaten selbst, Spielerstichproben sind kein Nachweis.",
+          "status": "angekratzt"
+        },
+        {
+          "datum": "2026-09-29",
+          "agent": "bibliothekar",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Ertrag verknüpft: Grab lootbox-odds-auditor (bib quellen import lehnt Grab im ertrag ab, siehe CLI-Bericht)"
+        }
+      ]
+    },
+    {
+      "id": "lbo-kinderspielflaeche-abloesesatzungen",
+      "name": "Kinderspielflächenpflicht in Landesbauordnungen und Ablösesatzungen",
+      "typ": "O",
+      "kategorie": "norm",
+      "rollen": [
+        "evidenz"
+      ],
+      "tags": [],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "teilweise",
+        "wie": "Rechtslupe, Schwarzwälder Bote, Kinderhilfswerk als Schnipsel, Volltexte der 16 LBO nicht gelesen"
+      },
+      "enthaelt": "Spielflächenpflicht ab 3 Wohnungen, 30 m², Befreiung bei 500 m, Ablöse je Gemeinde",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-29",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "spielplatzpflicht-vorpruefer"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "inversions-agent",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Datentest des Reviewers: drei LBO (BW § 9, NRW § 8, BauO Bln § 8) als Seite lesen.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "spielplatzbedarfsplanung-berlin-koeln-minden",
+      "name": "Spielplatz-Bedarfsplanung Berlin, Köln, Minden",
+      "typ": "S",
+      "kategorie": "kommunal",
+      "rollen": [
+        "evidenz"
+      ],
+      "tags": [],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "kommunale Webseiten, nur Schnipsel"
+      },
+      "enthaelt": "Richtwerte 1 bis 4 m² je Einwohner, Berlin Versorgung 60 %",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-29",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "spielplatzpflicht-vorpruefer"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "inversions-agent",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Kommunen planen selbst, Nachbar und Datenquelle für den Vorprüfer.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "18-bimschv-sportanlagenlaerm",
+      "name": "18. BImSchV Sportanlagenlärmschutzverordnung",
+      "typ": "O",
+      "kategorie": "norm",
+      "rollen": [
+        "evidenz"
+      ],
+      "tags": [],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "gesperrt",
+        "wie": "gesetze-im-internet.de Timeout am 29.09.2026, nur Schnipsel IZU, LfU, Baunetz"
+      },
+      "enthaelt": "Beurteilungszeiträume und Ruhezeiten für Sportanlagen, Novelle angekündigt",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-29",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "sportlaerm-belegungs-vorpruefer"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "inversions-agent",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Wiedervorlage nach Novelle-Entscheid der 18. BImSchV.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "joost-dev-blog-matchmaking",
+      "name": "Joost Dev Blog Matchmaking braucht enorme Spielerzahlen",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "evidenz"
+      ],
+      "tags": [],
+      "urls": [
+        "http://joostdevblog.blogspot.com/2014/11/why-good-matchmaking-requires-enormous.html"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "Blog per WebFetch"
+      },
+      "enthaelt": "Statische Rechnung, warum gutes Matchmaking tausende gleichzeitige Spieler braucht (2014)",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-29",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "kritische-masse-rechner"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "idea-reviewer",
+          "runde": "Multiplayer-Runde",
+          "notiz": "1.000 Spieler ergeben 30 min pro Match, bestätigt die Split-Empfindlichkeit der Wartezeit-Formel.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "isthisgamedead-com",
+      "name": "isthisgamedead.com",
+      "typ": "E",
+      "kategorie": "datensatz",
+      "rollen": [
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [
+        "https://isthisgamedead.com/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "Webseite per WebFetch"
+      },
+      "enthaelt": "Vitalitätsscore 0 bis 100 für Steam-Spiele aus Population, Trend, Updates und Twitch",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-29",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "kritische-masse-rechner"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "idea-reviewer",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Keine Wartezeit, keine Modus-Schwelle, keine Prognose.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "pegelonline-rest-api-wsv",
+      "name": "PEGELONLINE REST-API der WSV",
+      "typ": "E",
+      "kategorie": "datensatz",
+      "rollen": [
+        "evidenz"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.pegelonline.wsv.de/webservice/guideRestapi",
+        "https://www.pegelonline.wsv.de/webservices/rest-api/v2/stations.json"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "REST ohne Anmeldung, Live-Abruf am 29.09.2026"
+      },
+      "enthaelt": "Wasserstände und Prognosezeitreihen der Bundeswasserstraßen, 30 Tage rückwirkend, DL-DE-Zero-2.0",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-29",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "pegel-wette"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          5,
+          5,
+          3,
+          2
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "idea-reviewer",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Persistenz-RMSE bei Niedrigwasser 2 bis 8 cm, nur 30 Tage Historie, amtliche Prognose als zweite Basislinie.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-09-29",
+          "agent": "bibliothekar",
+          "runde": "",
+          "notiz": "Vektoren bewertet [2 3 5 5 3 2]: Multiplayer-Runde: Datentest R3, nur 30 Tage Historie"
+        }
+      ]
+    },
+    {
+      "id": "opencaching-de-schutzgebiete",
+      "name": "Opencaching Deutschland Schutzgebiete",
+      "typ": "X",
+      "kategorie": "soziale-plattform",
+      "rollen": [
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [
+        "https://blog.opencaching.de/schutzgebiete/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "blog.opencaching.de/schutzgebiete per WebFetch"
+      },
+      "enthaelt": "Automatischer Abgleich der Cache-Koordinaten mit BfN-Schutzgebieten seit 2009",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-29",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "cache-schutzgebiet-check"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          2,
+          5,
+          5,
+          1,
+          2
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "idea-reviewer",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Prüft nur die Kopfkoordinaten, Wegpunkte und Finals von Multis nicht.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-09-29",
+          "agent": "bibliothekar",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Ertrag verknüpft: Grab cache-schutzgebiet-check (bib quellen import lehnt Grab im ertrag ab, siehe CLI-Bericht)"
+        },
+        {
+          "datum": "2026-09-29",
+          "agent": "bibliothekar",
+          "runde": "",
+          "notiz": "Vektoren bewertet [2 2 5 5 1 2]: Multiplayer-Runde: killte R7, Zielsystem der Zielgruppe bereits gebaut"
+        }
+      ]
+    },
+    {
+      "id": "lds-sachsen-gluecksspiel-turnierpoker",
+      "name": "Landesdirektion Sachsen Glücksspiel Turnierpoker",
+      "typ": "O",
+      "kategorie": "norm",
+      "rollen": [
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.lds.sachsen.de/gluecksspiel/?ID=12356&art_param=825"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "teilweise",
+        "wie": "nur Suchschnipsel"
+      },
+      "enthaelt": "Behördliche Erläuterung, wann Turnierpoker unerlaubtes Glücksspiel ist",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-29",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "preisturnier-ampel"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "idea-reviewer",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Entscheidung im Einzelfall, Startgeld nur Kostendeckung ist kein Glücksspiel.",
+          "status": "angekratzt"
+        },
+        {
+          "datum": "2026-09-29",
+          "agent": "bibliothekar",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Ertrag verknüpft: Grab preisturnier-ampel (bib quellen import lehnt Grab im ertrag ab, siehe CLI-Bericht)"
         }
       ]
     }

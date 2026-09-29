@@ -4,6 +4,10 @@ import {
   validateGrab, orderGrab, readEnum, parseQuellenmeldung, meldungToArgs, findAll,
 } from '../../scripts/bibliothek-lib.mjs';
 import { loadGraeber } from '../../scripts/dosen-lib.mjs';
+import { spawnSync } from 'node:child_process';
+import { mkdtempSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 import quellenJson from '../data/quellen.json';
 
 const KLASSISCH = `# Protokoll
@@ -37,6 +41,17 @@ describe('Argumente und Suche', () => {
     expect(a.has('any')).toBe(true);
     expect(a.many('evidence')).toEqual(['a', 'b']);
     expect(a.one('runde')).toBe('R 1');
+  });
+  it('lässt Schalter den folgenden Begriff nicht verschlucken', () => {
+    const a = parseArgs(['find', 'foldit', '--any', 'eterna', 'eyewire', '--wort']);
+    expect(a.pos).toEqual(['find', 'foldit', 'eterna', 'eyewire']);
+    expect(a.has('any') && a.has('wort')).toBe(true);
+  });
+  it('kennt die Wortgrenze: pegel trifft nicht Ersatzteilpreis-Pegel-Nachbarn im Wort', () => {
+    expect(matches('Wetterverlauf', ['wette'])).toBe(true);
+    expect(matches('Wetterverlauf', ['wette'], false, true)).toBe(false);
+    expect(matches('Die Wette gilt', ['wette'], false, true)).toBe(true);
+    expect(matches('Pegel-Wette (x)', ['pegel', 'wette'], false, true)).toBe(true);
   });
   it('vereinheitlicht Umlaute und Groß-/Kleinschreibung', () => {
     expect(norm('Straßennamen-Prüfer')).toBe('strassennamen-pruefer');
@@ -166,6 +181,7 @@ describe('Quellenmeldung', () => {
     expect(text).toMatch(/Dose „keine-dose“/);
     expect(text).toMatch(/NEU braucht typ=/);
     expect(text).toMatch(/note= fehlt/);
+    expect(parseQuellenmeldung(`QUELLE NEU: Testquelle | typ=M | kategorie=forschung | enthaelt=x | note=y`, ctx).fehler.join()).toMatch(/erlaubt: fachgremium/);
   });
   it('meldet einen Text ohne Meldungszeilen', () => {
     expect(parseQuellenmeldung('nichts', ctx).fehler[0]).toMatch(/keine/);
@@ -178,5 +194,42 @@ describe('find über das echte Gedächtnis', () => {
     const kinds = new Set(hits.filter((h) => h.bindend).map((h) => h.kind));
     expect(kinds).toEqual(new Set(['protokoll', 'grab', 'dose']));
     expect(findAll(['qqqxyzzy-gibtsnicht']).length).toBe(0);
+  });
+});
+
+describe('CLI-Durchlauf (Regression: echte Dosen-/Grab-Mengen)', () => {
+  const cli = (args: string[]) => spawnSync('node', ['scripts/bibliothek.mjs', ...args], { encoding: 'utf8' });
+  const datei = (name: string, inhalt: string) => {
+    const p = join(mkdtempSync(join(tmpdir(), 'bib-test-')), name);
+    writeFileSync(p, inhalt);
+    return p;
+  };
+  const bekannt: string = (quellenJson as any).quellen[0].id;
+
+  it('quellen import akzeptiert ertrag=Grab/Dose mit echten ids und lehnt erfundene ab', () => {
+    const grab = loadGraeber()[0].id;
+    const ok = cli(['quellen', 'import', datei('ok.txt', `QUELLE ${bekannt} | ertrag=Grab ${grab} | note=Test.`), '--agent', 'test', '--runde', 'T', '--dry-run']);
+    expect(ok.status, ok.stderr).toBe(0);
+    expect(ok.stdout).toContain(`--grab ${grab}`);
+    const nein = cli(['quellen', 'import', datei('nein.txt', `QUELLE ${bekannt} | ertrag=Grab gibt-es-nicht-xyz | note=Test.`), '--agent', 'test', '--runde', 'T', '--dry-run']);
+    expect(nein.status).toBe(1);
+    expect(nein.stderr).toMatch(/Grab „gibt-es-nicht-xyz“ existiert nicht/);
+  });
+
+  it('grab add --from mit Liste prüft alle gegeneinander und schreibt nichts bei einem Fehler (dry-run)', () => {
+    const g = { ...loadGraeber()[0], id: 'testgrab-a' };
+    const dup = cli(['grab', 'add', '--from', datei('l.json', JSON.stringify([g, { ...g }])), '--dry-run']);
+    expect(dup.status).toBe(1);
+    expect(dup.stderr).toMatch(/Eintrag 2 \(testgrab-a\)[\s\S]*gibt es schon/);
+    const ok = cli(['grab', 'add', '--from', datei('l2.json', JSON.stringify([g, { ...g, id: 'testgrab-b' }])), '--dry-run']);
+    expect(ok.status, ok.stderr).toBe(0);
+    expect(ok.stdout).toContain('2 Gräber');
+  });
+
+  it('grab list meldet ungültige Filterwerte, find --any nimmt Begriffe nach dem Schalter', () => {
+    expect(cli(['grab', 'list', '--cause', 'besetzt']).stderr).toMatch(/Erlaubt: gebaut/);
+    const f = cli(['find', 'qqqxyzzy', '--any', 'strassennamen', 'qqqabc']);
+    expect(f.stdout).toMatch(/strassennamen/i);
+    expect(f.status).toBe(2);
   });
 });

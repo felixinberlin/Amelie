@@ -45,6 +45,8 @@ Wenn der Nutzer selbst eine Idee mitbringt: die direkt prüfen, Schritt 3 übers
 
 Jede Idee zuerst gegen das Protokoll (schon geprüft?) und den Besetzungsatlas im Playbook (Feld `dicht`?) halten. Treffer → ohne Suche protokollieren als `besetzt (Atlas)` bzw. mit Verweis auf die alte Zeile. Suchen sind für echte Unsicherheit da.
 
+**Per CLI:** Dieser Abgleich ist ein Befehl: `npm run bib -- find <Begriffe>` durchsucht Protokoll, Friedhof, Dosen, Kandidaten, Quellen und Logs zugleich (Exit 2 = schon da; mehrere Begriffe müssen alle passen, `--any` lockert); Friedhofsgang gezielt mit `npm run bib -- grab list --cause <ursache>`; Vorflug mit `npm run bib -- vorflug --thema "…"`. Nur Lesebefehle — Protokollzeilen, Gräber und Quellenbuchungen schreibt der Bibliothekar (`protokoll add`, `grab add`, `quellen import`; Handbuch `06-suche/amelie-bibliothek-cli.md`).
+
 ### 5 · Prüfen
 
 Pro Idee höchstens vier Suchen, in der Reihenfolge aus `references/suchmethode.md` — **der wahrscheinliche Empfänger zuerst**. Urteil sofort mit Beleg festhalten:
