@@ -10,7 +10,7 @@ Bis zum 24.09.2026 galt die Gegenregel: *„gelöscht, nicht archiviert"*. Sie h
 
 ## Friedhofsordnung
 
-**1 · Trennen.** Was stirbt, verlässt die Dosen am selben Tag — aus `src/data/dosen.ts` (`DOSEN_DATA` → `DISCARDED_DATA`), aus `05-dosen/`, aus der Zustellliste. Keine Dose mit Warnbanner, keine Mail an einen Toten.
+**1 · Trennen.** Was stirbt, verlässt die Dosen am selben Tag — aus `src/data/dosen.ts` (`DOSEN_DATA`; das Grab entsteht in `src/data/graeber.json`), aus `05-dosen/`, aus der Zustellliste. Keine Dose mit Warnbanner, keine Mail an einen Toten.
 
 **2 · Totenschein.** Jedes Grab hat sieben Pflichtangaben. Ein Grab ohne Ursache ist ein Archiveintrag, und Archive sind verboten.
 
@@ -41,7 +41,7 @@ Die Ursachen genauer:
 
 ## Wie man ein Grab anlegt
 
-1. Eintrag in `DISCARDED_DATA` (`src/data/dosen.ts`) mit allen Pflichtfeldern — TypeScript lässt kein Grab ohne Totenschein durch.
+1. Totenschein anlegen mit `npm run bib -- grab add --from grab.json` (oder Einzelflags; `--dry-run` zeigt nur). Die Gräber liegen in `src/data/graeber.json`; die CLI prüft alle Pflichtfelder und Aufzählungen aus `src/types.ts`, lehnt doppelte ids und noch als Dose geführte ids ab und regeneriert die Muster (Schritt 4). Vorab prüfen, ob es das Grab schon gibt: `npm run bib -- find <Begriffe>`.
 2. War es eine Dose: Eintrag aus `DOSEN_DATA` entfernen, `05-dosen/<id>.md` nach `08-friedhof/grabbeigaben/` verschieben (Originaltext bleibt als Grabbeigabe), `nachruf` darauf zeigen lassen. Mails in `src/data/deliveries.ts`, die nur diese Dose verlinken, löschen.
 3. Langer Nachruf, wenn die Geschichte eine Lehre trägt, die nicht in zwei Sätze passt: `nachrufe.md`.
 4. `npm run friedhof` — schreibt die Muster unten neu. `npm run lint` prüft, dass sie aktuell sind.
@@ -52,7 +52,7 @@ Die Ursachen genauer:
 
 <!-- MUSTER:START -->
 
-*Automatisch erzeugt aus `src/data/dosen.ts` (`DISCARDED_DATA`) mit `npm run friedhof`. Nicht von Hand bearbeiten — `npm run lint` meldet Abweichungen.*
+*Automatisch erzeugt aus `src/data/graeber.json` (`DISCARDED_DATA`) mit `npm run friedhof` (läuft nach `npm run bib -- grab add` von selbst). Nicht von Hand bearbeiten — `npm run lint` meldet Abweichungen.*
 
 **81 Gräber.** 3 davon starben erst als Dose oder Mail-Entwurf (teure Tode). Von 72 dokumentierten Fundwegen kamen 12 ohne neue Suche aus (eigener Atlas, eigenes Protokoll oder Reality-Check) — 17 %.
 

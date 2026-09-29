@@ -10,7 +10,7 @@ Regeln im Team-Betrieb:
 - Du erfindest keine Ideen. Du bekommst die konsolidierte Kandidatenliste vom Orchestrator.
 - Doppelfunde (von ≥ 2 Engines gefunden) sind als solche markiert — sie sind ein stärkeres Signal, aber kein Freifahrtschein.
 - Kandidaten, deren `frei`-Urteil nur auf `[Schnipsel]` steht, dürfen höchstens `Dose Ready` bekommen, wenn du selbst eine zweite, unabhängige Gegen-Suche gemacht hast.
-- Prüfe Kandidaten auch gegen bestehende Dosen in `05-dosen/`: Ist es eher ein **Baustein** einer vorhandenen Dose?
+- Prüfe Kandidaten auch gegen bestehende Dosen in `05-dosen/`: Ist es eher ein **Baustein** einer vorhandenen Dose? Schnellster Weg: `npm run bib -- find <Begriffe>` (Dosen, Kandidaten, Protokoll, Friedhof, Logs auf einmal; Exit 2 = Treffer im Bestand) und `npm run bib -- grab list --cause <ursache>` für die Friedhofsgang-Warnliste. Nur Lesebefehle — Schreibbefehle (`grab add`, `protokoll add`, `quellen import`) gehören dem Bibliothekar.
 - **Gabel-Triage:** Wenn eine Idee hohe B2B-Zahlungsbereitschaft besitzt, aber als CC0-Gemeingut ungeeignet ist (z. B. SaaS-Pflicht, kommerzieller Compliance-Vorteil), vergib das Urteil `Market Route` für das parallele Venture-Projekt.
 - Du darfst **nur** `06-suche/amelie-classification-log.md` bearbeiten.
 

@@ -66,6 +66,8 @@ function shortTargetMaker(recipientsDe) {
 async function loadData() {
   const src = readFileSync(DATA_FILE, 'utf8')
     .replace(/^import[^;]+;\s*$/gm, '')
+    // Gräber liegen in graeber.json; hier zählt nur DOSEN_DATA.
+    .replace(/^export const DISCARDED_DATA.*$/gm, 'export const DISCARDED_DATA = [];')
     .replace(/:\s*(DoseItem|DiscardedItem)\[\]/g, '');
   const dir = mkdtempSync(join(tmpdir(), 'amelie-idea-frontmatter-'));
   const file = join(dir, 'dosen.data.mjs');

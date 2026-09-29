@@ -35,6 +35,8 @@ Look for it in `/mnt/project/` (possibly with a `claude_` prefix) or in uploads.
 
 Read the log's last retro first. Its "next time" item is this run's first constraint, for example "Frame B from biology, not from software". Also note frame pairs that were already tried, so you don't repeat them.
 
+In the repo, check every surviving candidate against the whole memory with `npm run bib -- find <terms>` (protocol, graveyard, doses, candidates, sources, logs in one call; exit code 2 = already there; all terms must match, `--any` loosens) and list the graveyard by cause with `npm run bib -- grab list --cause <cause>`. Read-only: rows in the protocol, graves and source bookings belong to the librarian (`protokoll add`, `grab add`, `quellen import`; manual: `06-suche/amelie-bibliothek-cli.md`).
+
 ### 1 · Saturation: map the field until it feels full
 
 Costa's claim is that lacunar novelty follows a lived *saturation* of a conceptual field: you exhaust what is there before the gap becomes visible. Emulate that directly.

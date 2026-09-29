@@ -1,5 +1,5 @@
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
-import { join } from 'node:path';
+import { join, dirname } from 'node:path';
 import { repoRoot, readDataIds, readDoseFiles } from './dosenLibHelper';
 import { AuditFinding } from './types';
 
@@ -159,32 +159,21 @@ export function collectInventory(root?: string): InventoryResult {
   }
 
   // 2. Gräber (DISCARDED_DATA)
-  const discardedText = doseSrc.slice(discardedStart);
-  const graveBlocks = discardedText.split(/{\s*\n\s*id: '/g).slice(1);
+  const graeberPath = join(dirname(dosenDataPath), 'graeber.json');
+  const rawGraves: Record<string, string>[] = existsSync(graeberPath)
+    ? JSON.parse(readFileSync(graeberPath, 'utf8'))
+    : [];
   const graves: GraveInventoryItem[] = [];
 
-  for (const block of graveBlocks) {
-    const id = block.slice(0, block.indexOf("'"));
-    const titleMatch = block.match(/\n\s*title: '((?:[^'\\]|\\.)*)'/);
-    const title = titleMatch ? titleMatch[1].replace(/\\'/g, "'") : id;
-
-    const causeMatch = block.match(/\n\s*cause: '([^']*)'/);
-    const cause = causeMatch ? causeMatch[1] : 'unknown';
-
-    const killerMatch = block.match(/\n\s*killer: '([^']*)'/);
-    const killer = killerMatch ? killerMatch[1] : 'unknown';
-
-    const foundByMatch = block.match(/\n\s*foundBy: '([^']*)'/);
-    const foundBy = foundByMatch ? foundByMatch[1] : 'unknown';
-
-    const originMatch = block.match(/\n\s*origin: '([^']*)'/);
-    const origin = originMatch ? originMatch[1] : 'unknown';
-
-    const stageMatch = block.match(/\n\s*stage: '([^']*)'/);
-    const stage = stageMatch ? stageMatch[1] : 'unknown';
-
-    const diedOnMatch = block.match(/\n\s*diedOn: '([^']*)'/);
-    const diedOn = diedOnMatch ? diedOnMatch[1] : 'unknown';
+  for (const g of rawGraves) {
+    const id = g.id;
+    const title = g.title ?? id;
+    const cause = g.cause ?? 'unknown';
+    const killer = g.killer ?? 'unknown';
+    const foundBy = g.foundBy ?? 'unknown';
+    const origin = g.origin ?? 'unknown';
+    const stage = g.stage ?? 'unknown';
+    const diedOn = g.diedOn ?? 'unknown';
 
     graves.push({ id, title, cause, killer, foundBy, origin, stage, diedOn });
 
