@@ -1,0 +1,667 @@
+{
+  "abbe-fourier-filter": {
+    "v": [
+      4,
+      5,
+      5,
+      5,
+      4,
+      4,
+      5
+    ],
+    "fun": 5,
+    "funSource": "play",
+    "funDe": "Blenden in der Beugungsebene schneiden und in Echtzeit Zäune verschwinden lassen ist ein echtes Puzzlespiel mit Wiederspielwert und Meisterschaftskurve.",
+    "funEn": "Cutting apertures in the diffraction plane and watching fences vanish in real time is a genuine puzzle game with replay value and a mastery curve.",
+    "note": "V1-V7 aus amelie-classification-log.md (Review Dossier 25.09.2026)"
+  },
+  "abbundzeichen-fundbuch": {
+    "v": [
+      4,
+      4,
+      3,
+      3,
+      4,
+      4,
+      4
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Zählfolgen-Detektivarbeit an einer freigelegten Wand mit Aha-Moment bei Lücke oder Fremdserie, aber Erfassung per Formular ohne Spielschleife.",
+    "funEn": "Sequence detective work on an exposed wall with an aha moment at a gap or foreign series, but entry is form-based with no play loop.",
+    "note": "Re-Review 27.09.2026 in classification-log"
+  },
+  "agent-postmortem-recorder": {
+    "v": [
+      4,
+      5,
+      5,
+      4,
+      4,
+      4,
+      4
+    ],
+    "fun": 2,
+    "funSource": "discovery",
+    "funDe": "Der Patch liefert eine nüchterne Wiederholungsstatistik für Agent-Regeln; ein kleiner Aha-Moment („diese Regel wirkt nicht“), aber nichts zum Ausprobieren.",
+    "funEn": "The patch yields a sober recurrence statistic for agent rules; a small aha (\"this rule does not work\") but nothing to play with."
+  },
+  "altbau-thermal": {
+    "v": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      5
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Grundriss zeichnen und die kalte Ecke hinter dem Schrank aufleuchten sehen gibt einen echten Aha-Moment, bleibt aber Auswertungswerkzeug.",
+    "funEn": "Drawing a floor plan and seeing the cold corner behind the wardrobe light up gives a real aha moment, but it remains an evaluation tool."
+  },
+  "amelie-umwelt-anomalie": {
+    "v": [
+      2,
+      4,
+      4,
+      3,
+      3,
+      2,
+      2
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "CSV rein, markierte Ausreißer im Diagramm raus: klar und nützlich, aber ohne Spielschleife oder Überraschung.",
+    "funEn": "CSV in, flagged outliers on a chart out: clear and useful, but no play loop or surprise.",
+    "note": "Keine Scorecard im Log; frische, ehrliche 7-Vektor-Bewertung aus dem generischen Dossier (keine Quellen, kein Ground Truth, Anomalie-Erkennung ist Standard)."
+  },
+  "biotoptyp-assistent": {
+    "v": [
+      4,
+      4,
+      5,
+      5,
+      4,
+      4,
+      5
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Foto hochladen und einen Biotoptyp-Vorschlag samt Wertpunkt-Spanne zurückbekommen hat ein kleines Ratespiel-Moment, bleibt aber Fachwerkzeug.",
+    "funEn": "Uploading a photo and getting a biotope-type suggestion with a point range has a small guessing-game moment but remains a professional tool."
+  },
+  "bleifrei-lotse": {
+    "v": [
+      4,
+      4,
+      5,
+      5,
+      4,
+      4,
+      5
+    ],
+    "fun": 2,
+    "funSource": "sensory",
+    "funDe": "Magnet-Check und Klopfton haben einen kleinen haptischen Reiz, das Ergebnis ist aber ein Behördenschreiben und Anzeigeformular.",
+    "funEn": "Magnet check and tap-tone have a slight tactile appeal, but the output is an official letter and notification form."
+  },
+  "bruchlesen": {
+    "v": [
+      5,
+      4,
+      5,
+      4,
+      4,
+      5,
+      5
+    ],
+    "fun": 5,
+    "funSource": "mastery",
+    "funDe": "Streiflicht drehen, Ursprung und Last schätzen und dann den Riss rückwärts ablaufen sehen ist eine Übungsschleife mit Lernkurve und unendlich vielen Fällen.",
+    "funEn": "Turning the raking light, guessing origin and load, then watching the crack run backwards is a practice loop with a mastery curve and endless cases."
+  },
+  "bugs-spaced-repetition": {
+    "v": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "fun": 3,
+    "funSource": "mastery",
+    "funDe": "Aus den eigenen Bugfix-Commits werden Karteikarten mit Lernkurve; das Umdrehen der Karte ist angenehm, aber der Stoff ist der eigene Fehler.",
+    "funEn": "Own bugfix commits become flashcards with a learning curve; flipping the card is pleasant, but the material is one's own mistakes."
+  },
+  "chaos-clock": {
+    "v": [
+      5,
+      4,
+      5,
+      4,
+      4,
+      4,
+      4
+    ],
+    "fun": 4,
+    "funSource": "humor",
+    "funDe": "Der Würfel-Termin und die abschaltbaren Kalender-Streiche sorgen für Schmunzeln und Weitererzählen, bleiben aber ein Add-on ohne tiefe Spielschleife.",
+    "funEn": "The dice-rolled slot and switchable calendar pranks bring smiles and sharing, though it stays an add-on without a deep play loop."
+  },
+  "couleur-sphinx": {
+    "v": [
+      4,
+      4,
+      5,
+      4,
+      4,
+      4,
+      4
+    ],
+    "fun": 4,
+    "funSource": "humor",
+    "funDe": "Eine Sphinx an der Haustür, die Couleurwissen abfragt, ist skurril, hat Hardware-Haptik und wird Gästen vorgeführt.",
+    "funEn": "A sphinx at the front door quizzing fraternity lore is quirky, tactile hardware and gets shown off to guests."
+  },
+  "denkmal-verlaufsblick": {
+    "v": [
+      4,
+      4,
+      5,
+      4,
+      4,
+      4,
+      4
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Übereinandergelegte Fotos zeigen sichtbar, was sich am Gebäude verändert hat, ein echter Aha-Moment, doch das Thema Verfall ist gedämpft.",
+    "funEn": "Overlaid photos visibly reveal what changed on the building, a real aha moment, though the subject of decay is sombre."
+  },
+  "diffgeist": {
+    "v": [
+      4,
+      4,
+      5,
+      4,
+      4,
+      4,
+      4
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Ein präziser Diff gegen den eigenen Code ist nützlich und klar, lädt aber weder zum Spielen noch zum Schmunzeln ein.",
+    "funEn": "A precise diff against your own code is useful and clear, but invites neither play nor a smile."
+  },
+  "dose-cleaner-chemical-safety": {
+    "v": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      4,
+      5
+    ],
+    "fun": 3,
+    "funSource": "sensory",
+    "funDe": "Kamera auf zwei Flaschen und sofortige Sprachwarnung ist ein spürbares Sofort-Feedback, das Thema bleibt aber ernst und arbeitsbezogen.",
+    "funEn": "Pointing the camera at two bottles for an instant spoken warning gives tangible immediate feedback, but the subject stays serious and work-bound."
+  },
+  "dose-nurse-shift-guardian": {
+    "v": [
+      4,
+      4,
+      5,
+      5,
+      5,
+      4,
+      5
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Dienstplan fotografieren und Zuschlagsberechnung samt Ruhezeitwarnung erhalten: nützlich und klar, aber ein Zahlen- und Warnergebnis ohne Spielraum.",
+    "funEn": "Photograph the roster and get surcharge maths plus rest-time warnings: useful and clear, but a numbers-and-warnings output with no room for play."
+  },
+  "dose-tradesman-liability-shield": {
+    "v": [
+      4,
+      5,
+      5,
+      5,
+      5,
+      4,
+      5
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Sprachmemo plus Foto ergibt zügig einen Bedenkenentwurf, ein praktischer Zeitgewinn ohne Spiel- oder Überraschungsmoment.",
+    "funEn": "Voice memo plus photo quickly yields an objection-notice draft, a practical time-saver without play or surprise."
+  },
+  "echter-zufall": {
+    "v": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      5
+    ],
+    "fun": 3,
+    "funSource": "sensory",
+    "funDe": "Würfel und Kartenziehung aus echtem Rauschen haben einen Wow-Faktor, der erste Schritt ist aber ein dreißigzeiliger Server ohne eigene Oberfläche.",
+    "funEn": "Dice and card draws from real noise carry a wow factor, yet the first step is a thirty-line server without its own interface."
+  },
+  "eichflaechen-trainer": {
+    "v": [
+      4,
+      5,
+      5,
+      4,
+      4,
+      4,
+      4
+    ],
+    "fun": 4,
+    "funSource": "mastery",
+    "funDe": "Eigenen Code raten und sofort mit dem Expertenkonsens abgleichen ist eine echte Quiz-Schleife mit Lernkurve, die man zum Üben wiederholt.",
+    "funEn": "Guessing your own code and instantly comparing it with the expert consensus is a real quiz loop with a learning curve worth repeating."
+  },
+  "eurobirdcast": {
+    "v": [
+      5,
+      3,
+      4,
+      5,
+      4,
+      4,
+      5
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Vogelzug aus Radardaten sichtbar zu machen hat Staunen-Potenzial, das Endprodukt ist aber eine nachrechenbare Abschaltempfehlung.",
+    "funEn": "Making bird migration visible from radar data has wonder potential, but the end product is a verifiable curtailment recommendation."
+  },
+  "feuerkugel-sofortnetz": {
+    "v": [
+      5,
+      3,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "fun": 2,
+    "funSource": "discovery",
+    "funDe": "Das Staunen über eine Feuerkugel steckt im Thema, das Werkzeug selbst ist aber Alarmierung und Kameraaufruf ohne Spielschleife.",
+    "funEn": "The wonder of a fireball lives in the topic, but the tool itself is alerting and camera-footage requests with no play loop."
+  },
+  "fugenduell-asphalt-arena": {
+    "v": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "fun": 5,
+    "funSource": "play",
+    "funDe": "Ein rundenbasiertes Strategiespiel mit 14 realen Pionierarten und CSR-Dreieck: echtes Spiel mit Wiederspielwert, Staunen über Löwenzahn-Wurzeldruck inklusive.",
+    "funEn": "A turn-based strategy game with 14 real pioneer species and a CSR triangle: a genuine game with replay value and wonder at dandelion root pressure."
+  },
+  "fugenduell-patenschaft": {
+    "v": [
+      4,
+      4,
+      5,
+      4,
+      4,
+      4,
+      4
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Ein alternder, übergebbarer Beobachtungsposten ist sinnvoll und leise sympathisch, bietet aber keine Interaktionsschleife.",
+    "funEn": "An ageing, hand-over-able observation post is sensible and quietly likeable but offers no interaction loop."
+  },
+  "ghost-replay": {
+    "v": [
+      4,
+      4,
+      5,
+      4,
+      4,
+      4,
+      4
+    ],
+    "fun": 4,
+    "funSource": "play",
+    "funDe": "Den eigenen Editier-Rhythmus als Trackmania-Geist gegen sich selbst abzuspielen ist ein sofort erkennbarer, teilbarer Spielgedanke.",
+    "funEn": "Replaying your own editing rhythm as a Trackmania ghost is an instantly graspable, shareable play idea."
+  },
+  "glasanflug-ampel": {
+    "v": [
+      4,
+      5,
+      5,
+      5,
+      4,
+      4,
+      5
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Fassadenfoto wird durchgerechnet und die Ampel samt Eingangswerten sichtbar; der Browser-Simulator macht Spaß beim Ausprobieren, das Thema bleibt aber ernst.",
+    "funEn": "A facade photo is computed and the traffic light with its inputs is shown; the browser simulator is fun to try, but the subject stays serious."
+  },
+  "kartierlotse": {
+    "v": [
+      4,
+      4,
+      5,
+      4,
+      4,
+      4,
+      4
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Der Live-Hinweis, welche Zeigerart noch fehlt, macht die Begehung zur kleinen Detektivsuche im Feld.",
+    "funEn": "The live hint about which indicator species is still missing turns the field survey into a small detective hunt."
+  },
+  "kiez-laermkarte": {
+    "v": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Zu sehen, wann die eigene Straße leise ist, und mit dem Handy selbst zu messen, gibt einen Aha-Moment, bleibt aber eine Karte.",
+    "funEn": "Seeing when your own street is quiet and measuring it with your phone gives an aha moment, but it remains a map."
+  },
+  "klang-stethoskop": {
+    "v": [
+      4,
+      4,
+      5,
+      4,
+      4,
+      4,
+      4
+    ],
+    "fun": 4,
+    "funSource": "sensory",
+    "funDe": "Ins Handy-Mikrofon lauschen und live Spektrogramm plus Lagerschaden-Diagnose sehen ist ein sinnlicher Hook, den man Freunden am eigenen Gerät vorführt.",
+    "funEn": "Listening through the phone mic and watching a live spectrogram plus bearing diagnosis is a sensory hook you show friends on their own appliance."
+  },
+  "klarlokal": {
+    "v": [
+      4,
+      4,
+      5,
+      5,
+      4,
+      4,
+      4
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Brief fotografieren und Übersetzung erhalten funktioniert klar und mit menschlichem Ton, das Thema Behördenpost bleibt aber trocken.",
+    "funEn": "Photographing a letter and getting a translation works clearly with a human tone, but the subject of official mail stays dry."
+  },
+  "kristallwachstum-3d": {
+    "v": [
+      5,
+      4,
+      5,
+      5,
+      4,
+      5,
+      5
+    ],
+    "fun": 5,
+    "funSource": "play",
+    "funDe": "Ein 3D-Kristall, den man im Browser wachsen lässt, dreht und druckt, ist ein anfassbares Spielzeug mit Staunfaktor.",
+    "funEn": "A 3D crystal you grow, rotate and print in the browser is a pokeable toy with real wonder."
+  },
+  "lebendes-spielobjekt": {
+    "v": [
+      4,
+      4,
+      5,
+      3,
+      4,
+      4,
+      4
+    ],
+    "fun": 4,
+    "funSource": "play",
+    "funDe": "Eine echte Pflanze an einer echten Fuge als Spielobjekt, das erfrieren oder weggekehrt werden kann, ist eine starke Spielidee mit Risiko und Staunen; das Skelett ist aber noch klein.",
+    "funEn": "A real plant in a real pavement crack as a game object that can freeze or be swept away is a strong play idea with stakes and wonder; the skeleton is still small."
+  },
+  "lichtplan-check": {
+    "v": [
+      4,
+      4,
+      5,
+      5,
+      4,
+      4,
+      5
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Ein Formular, das Quellen und Kipppunkte zeigt, ist klar und lehrreich, aber ohne Rückmeldeschleife zum Ausprobieren.",
+    "funEn": "A form showing sources and tipping points is clear and instructive but has no experiment-and-respond loop."
+  },
+  "pillsafe-vision": {
+    "v": [
+      4,
+      3,
+      4,
+      5,
+      4,
+      4,
+      4
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Foto der Dosette und Abgleich mit dem Plan ist nützlich und beruhigend, aber angstbesetzt und ohne Freude an der Nutzung.",
+    "funEn": "Photographing the pill organiser and matching it to the plan is useful and reassuring, but anxiety-laden with no joy in use."
+  },
+  "pin-tumbler": {
+    "v": [
+      4,
+      4,
+      5,
+      4,
+      4,
+      4,
+      4
+    ],
+    "fun": 5,
+    "funSource": "play",
+    "funDe": "Ein anfassbarer Schloss-Simulator, in dem man das Binden der Stifte spürt (Vibration) und Toleranzen selbst verändert, ist ein Spielzeug, das man ohne Anlass weiterbenutzt.",
+    "funEn": "A hands-on lock simulator where you feel pins binding (vibration) and tweak tolerances yourself is a toy you keep using without needing to."
+  },
+  "raeucher-sim": {
+    "v": [
+      4,
+      4,
+      5,
+      4,
+      4,
+      4,
+      4
+    ],
+    "fun": 5,
+    "funSource": "sensory",
+    "funDe": "Rauch, den man per Atem ins Mikrofon lenkt, ist ein reines Spielzeug, das man ohne Zweck immer wieder anstupst.",
+    "funEn": "Smoke steered by breath into the microphone is a pure toy you keep poking at with no purpose."
+  },
+  "spec-drift-detector": {
+    "v": [
+      4,
+      5,
+      5,
+      4,
+      4,
+      4,
+      4
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Ein roter Build bei Divergenz ist klar und ein wenig befriedigend, aber ein CI-Check lädt weder zum Spielen noch zum Schmunzeln ein.",
+    "funEn": "A red build on divergence is clear and mildly satisfying, but a CI check invites neither play nor a smile."
+  },
+  "sperrmuell-radar": {
+    "v": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Die Karte mit trockenen Fundstücken am Bordstein hat Schatzsuche-Charme und einen Aha-Moment, bleibt aber ein Kartenwerkzeug.",
+    "funEn": "A map of dry finds at the curb has treasure-hunt charm and an aha moment, but remains a map tool."
+  },
+  "sperrmuell-weiche": {
+    "v": [
+      5,
+      4,
+      5,
+      5,
+      4,
+      4,
+      5
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Das Foto-Urteil Ofen oder NochMall mit Preisfolge bietet einen zufriedenstellenden Verdict-Moment im schlichten Ton.",
+    "funEn": "The photo verdict furnace or NochMall with price consequence offers a satisfying verdict moment in a plain tone."
+  },
+  "tarot-zustandsmaschine": {
+    "v": [
+      5,
+      5,
+      5,
+      4,
+      4,
+      5,
+      4
+    ],
+    "fun": 3,
+    "funSource": "play",
+    "funDe": "Die Schema-Spielwiese mit Legesystemen und Karten macht Ausprobieren angenehm, das Kernprodukt bleibt aber eine Spezifikation.",
+    "funEn": "The schema playground with spreads and cards makes experimenting pleasant, but the core product remains a specification."
+  },
+  "tischschiedsrichter": {
+    "v": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "fun": 4,
+    "funSource": "humor",
+    "funDe": "Ein Gerät, das beim Reizwort pfeift und Gelb bzw. Rot zeigt, ist humorvoll, sofort verständlich und wird am Familientisch herumgezeigt.",
+    "funEn": "A device that whistles and shows yellow or red at a trigger word is humorous, instantly understood and gets shown around the family table."
+  },
+  "traumtagebuch": {
+    "v": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Wiederkehrende Traummotive als Cluster über die Zeit auftauchen zu sehen gibt einen persönlichen Aha-Effekt, nutzt sich aber als Tagebuch leise ab.",
+    "funEn": "Seeing recurring dream motifs emerge as clusters over time gives a personal aha, though as a diary it wears quietly."
+  },
+  "umsetzungsplan-register": {
+    "v": [
+      3,
+      3,
+      4,
+      4,
+      3,
+      4,
+      4
+    ],
+    "fun": 1,
+    "funSource": "none",
+    "funDe": "Ein Register mit Pflichtangaben-Prüfer für Energiesparpläne ist trockenes Nachschlagen ohne Rückkopplung oder Überraschung.",
+    "funEn": "A register with a mandatory-fields checker for energy plans is dry lookup with no feedback loop or surprise.",
+    "note": "Aus classification-log Scorecard K1 (25/35)"
+  },
+  "vernichtungs-offenlegungsregister": {
+    "v": [
+      3,
+      3,
+      4,
+      4,
+      3,
+      4,
+      3
+    ],
+    "fun": 1,
+    "funSource": "none",
+    "funDe": "Ein Tabellenformat-Prüfer für Offenlegungen mit den Ausgaben „gefunden“ oder „keine gefunden“ ist reine Nachschlagearbeit ohne Rückkopplung oder Überraschung.",
+    "funEn": "A table-format checker for disclosures returning \"found\" or \"not found\" is pure lookup work with no feedback loop or surprise.",
+    "note": "V1-V7 from amelie-classification-log.md Review Scorecard (24/35)."
+  },
+  "waermesignatur": {
+    "v": [
+      4,
+      5,
+      5,
+      5,
+      4,
+      4,
+      5
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Aus zwölf Zählerwerten die eigene Heizsignatur als Band zu sehen ist ein hübscher Erkenntnismoment, danach kaum Wiederspielwert.",
+    "funEn": "Seeing your own heating signature as a band from twelve meter readings is a nice insight moment with little replay value."
+  },
+  "wet-ink": {
+    "v": [
+      5,
+      4,
+      5,
+      4,
+      4,
+      5,
+      5
+    ],
+    "fun": 5,
+    "funSource": "sensory",
+    "funDe": "Tinte, die im Browser mit Kapillarfluss und taktilem Klang ins Papier läuft, lädt zum Herumspielen um seiner selbst willen ein.",
+    "funEn": "Ink bleeding into paper in the browser with capillary flow and tactile sound invites play for its own sake."
+  }
+}

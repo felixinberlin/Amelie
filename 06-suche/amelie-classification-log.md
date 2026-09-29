@@ -932,3 +932,60 @@ DSA-Transparenzberichte (verengt schwach, Pflichtfrage 2 verfehlt), CSRD/ESRS (b
 - **Dreifachfund ≠ Qualität:** K2 war dreifach gefunden und stirbt trotzdem, weil die Differenz, die es messen wollte, von der Behörde bereits erklärt ist. Bei Gegenstück-Paaren zuerst prüfen, ob die Stelle die Lücke selbst begründet.
 
 > **Korrektur (Orchestrator, 28.09.2026, nach demo-builder):** Für K1 `umsetzungsplan-register` gilt nicht mehr „7 BAFA-Pflichtangaben, Sanofi/VON ARDENNE übernehmen wörtlich". Das aktuelle BAFA-Merkblatt EnEfG (16.09.2026, Abschnitt 5, [Seite]) nennt **fünf** Angaben (Priorität, Maßnahme, Investitionsvolumen, Zeitrahmen, Status); Herkunft und verantwortliche Funktion entfielen mit der 7. Änderung vom 30.04.2026, das Statusvokabular ist Kann-Regel. VON ARDENNE schreibt „geplant/laufend/abgeschlossen". Score und Triage bleiben (V7 eher gestärkt: Schema jetzt gegen die gültige Fassung geprüft). Dossier, `DOSEN_DATA` und Scaffolding sind nachgezogen.
+
+---
+
+## Fun-Re-Klassifikation (V8) — 29.09.2026
+
+Neuer Vektor **V8 · Fun** (Rubrik: `skills/idea-reviewer/idea-reviewer/references/vector-rubrics.md`). Alle 44 verpackten Dosen wurden vom Idea Reviewer (drei parallele Läufe) auf V8 bewertet; V1–V7 blieben unverändert (39 aus dem Portfolio-Audit, 5 aus den Runden-Scorecards, `amelie-umwelt-anomalie` frisch geschätzt). **Fun kompensiert nie:** Das Dose-Ready-Gate rechnet nur V1–V7 (≥ 24/35); die Gesamtsumme steht als /40. Frontend-Daten: `src/data/doseVectors.json`.
+
+| Dose | Kern (/35) | Fun (V8) | Gesamt (/40) | Fun-Quelle | Begründung |
+|---|:---:|:---:|:---:|---|---|
+| `kristallwachstum-3d` | 33 | **5** | 38 | play | Ein 3D-Kristall, den man im Browser wachsen lässt, dreht und druckt, ist ein anfassbares Spielzeug mit Staunfaktor. |
+| `abbe-fourier-filter` | 32 | **5** | 37 | play | Blenden in der Beugungsebene schneiden und in Echtzeit Zäune verschwinden lassen ist ein echtes Puzzlespiel mit Wiederspielwert und Meisterschaftskurve. _(Hinweis: V1-V7 aus amelie-classification-log.md (Review Dossier 25.09.2026))_ |
+| `bruchlesen` | 32 | **5** | 37 | mastery | Streiflicht drehen, Ursprung und Last schätzen und dann den Riss rückwärts ablaufen sehen ist eine Übungsschleife mit Lernkurve und unendlich vielen Fällen. |
+| `wet-ink` | 32 | **5** | 37 | sensory | Tinte, die im Browser mit Kapillarfluss und taktilem Klang ins Papier läuft, lädt zum Herumspielen um seiner selbst willen ein. |
+| `pin-tumbler` | 29 | **5** | 34 | play | Ein anfassbarer Schloss-Simulator, in dem man das Binden der Stifte spürt (Vibration) und Toleranzen selbst verändert, ist ein Spielzeug, das man ohne Anlass weiterbenutzt. |
+| `raeucher-sim` | 29 | **5** | 34 | sensory | Rauch, den man per Atem ins Mikrofon lenkt, ist ein reines Spielzeug, das man ohne Zweck immer wieder anstupst. |
+| `fugenduell-asphalt-arena` | 28 | **5** | 33 | play | Ein rundenbasiertes Strategiespiel mit 14 realen Pionierarten und CSR-Dreieck: echtes Spiel mit Wiederspielwert, Staunen über Löwenzahn-Wurzeldruck inklusive. |
+| `chaos-clock` | 30 | **4** | 34 | humor | Der Würfel-Termin und die abschaltbaren Kalender-Streiche sorgen für Schmunzeln und Weitererzählen, bleiben aber ein Add-on ohne tiefe Spielschleife. |
+| `eichflaechen-trainer` | 30 | **4** | 34 | mastery | Eigenen Code raten und sofort mit dem Expertenkonsens abgleichen ist eine echte Quiz-Schleife mit Lernkurve, die man zum Üben wiederholt. |
+| `couleur-sphinx` | 29 | **4** | 33 | humor | Eine Sphinx an der Haustür, die Couleurwissen abfragt, ist skurril, hat Hardware-Haptik und wird Gästen vorgeführt. |
+| `ghost-replay` | 29 | **4** | 33 | play | Den eigenen Editier-Rhythmus als Trackmania-Geist gegen sich selbst abzuspielen ist ein sofort erkennbarer, teilbarer Spielgedanke. |
+| `klang-stethoskop` | 29 | **4** | 33 | sensory | Ins Handy-Mikrofon lauschen und live Spektrogramm plus Lagerschaden-Diagnose sehen ist ein sinnlicher Hook, den man Freunden am eigenen Gerät vorführt. |
+| `lebendes-spielobjekt` | 28 | **4** | 32 | play | Eine echte Pflanze an einer echten Fuge als Spielobjekt, das erfrieren oder weggekehrt werden kann, ist eine starke Spielidee mit Risiko und Staunen; das Skelett ist aber noch klein. |
+| `tischschiedsrichter` | 28 | **4** | 32 | humor | Ein Gerät, das beim Reizwort pfeift und Gelb bzw. Rot zeigt, ist humorvoll, sofort verständlich und wird am Familientisch herumgezeigt. |
+| `dose-cleaner-chemical-safety` | 34 | **3** | 37 | sensory | Kamera auf zwei Flaschen und sofortige Sprachwarnung ist ein spürbares Sofort-Feedback, das Thema bleibt aber ernst und arbeitsbezogen. |
+| `glasanflug-ampel` | 32 | **3** | 35 | discovery | Fassadenfoto wird durchgerechnet und die Ampel samt Eingangswerten sichtbar; der Browser-Simulator macht Spaß beim Ausprobieren, das Thema bleibt aber ernst. |
+| `sperrmuell-weiche` | 32 | **3** | 35 | discovery | Das Foto-Urteil Ofen oder NochMall mit Preisfolge bietet einen zufriedenstellenden Verdict-Moment im schlichten Ton. |
+| `tarot-zustandsmaschine` | 32 | **3** | 35 | play | Die Schema-Spielwiese mit Legesystemen und Karten macht Ausprobieren angenehm, das Kernprodukt bleibt aber eine Spezifikation. |
+| `waermesignatur` | 32 | **3** | 35 | discovery | Aus zwölf Zählerwerten die eigene Heizsignatur als Band zu sehen ist ein hübscher Erkenntnismoment, danach kaum Wiederspielwert. |
+| `biotoptyp-assistent` | 31 | **3** | 34 | discovery | Foto hochladen und einen Biotoptyp-Vorschlag samt Wertpunkt-Spanne zurückbekommen hat ein kleines Ratespiel-Moment, bleibt aber Fachwerkzeug. |
+| `eurobirdcast` | 30 | **3** | 33 | discovery | Vogelzug aus Radardaten sichtbar zu machen hat Staunen-Potenzial, das Endprodukt ist aber eine nachrechenbare Abschaltempfehlung. |
+| `altbau-thermal` | 29 | **3** | 32 | discovery | Grundriss zeichnen und die kalte Ecke hinter dem Schrank aufleuchten sehen gibt einen echten Aha-Moment, bleibt aber Auswertungswerkzeug. |
+| `denkmal-verlaufsblick` | 29 | **3** | 32 | discovery | Übereinandergelegte Fotos zeigen sichtbar, was sich am Gebäude verändert hat, ein echter Aha-Moment, doch das Thema Verfall ist gedämpft. |
+| `echter-zufall` | 29 | **3** | 32 | sensory | Würfel und Kartenziehung aus echtem Rauschen haben einen Wow-Faktor, der erste Schritt ist aber ein dreißigzeiliger Server ohne eigene Oberfläche. |
+| `kartierlotse` | 29 | **3** | 32 | discovery | Der Live-Hinweis, welche Zeigerart noch fehlt, macht die Begehung zur kleinen Detektivsuche im Feld. |
+| `bugs-spaced-repetition` | 28 | **3** | 31 | mastery | Aus den eigenen Bugfix-Commits werden Karteikarten mit Lernkurve; das Umdrehen der Karte ist angenehm, aber der Stoff ist der eigene Fehler. |
+| `kiez-laermkarte` | 28 | **3** | 31 | discovery | Zu sehen, wann die eigene Straße leise ist, und mit dem Handy selbst zu messen, gibt einen Aha-Moment, bleibt aber eine Karte. |
+| `sperrmuell-radar` | 28 | **3** | 31 | discovery | Die Karte mit trockenen Fundstücken am Bordstein hat Schatzsuche-Charme und einen Aha-Moment, bleibt aber ein Kartenwerkzeug. |
+| `traumtagebuch` | 28 | **3** | 31 | discovery | Wiederkehrende Traummotive als Cluster über die Zeit auftauchen zu sehen gibt einen persönlichen Aha-Effekt, nutzt sich aber als Tagebuch leise ab. |
+| `abbundzeichen-fundbuch` | 26 | **3** | 29 | discovery | Zählfolgen-Detektivarbeit an einer freigelegten Wand mit Aha-Moment bei Lücke oder Fremdserie, aber Erfassung per Formular ohne Spielschleife. _(Hinweis: Re-Review 27.09.2026 in classification-log)_ |
+| `dose-tradesman-liability-shield` | 33 | **2** | 35 | none | Sprachmemo plus Foto ergibt zügig einen Bedenkenentwurf, ein praktischer Zeitgewinn ohne Spiel- oder Überraschungsmoment. |
+| `dose-nurse-shift-guardian` | 32 | **2** | 34 | none | Dienstplan fotografieren und Zuschlagsberechnung samt Ruhezeitwarnung erhalten: nützlich und klar, aber ein Zahlen- und Warnergebnis ohne Spielraum. |
+| `bleifrei-lotse` | 31 | **2** | 33 | sensory | Magnet-Check und Klopfton haben einen kleinen haptischen Reiz, das Ergebnis ist aber ein Behördenschreiben und Anzeigeformular. |
+| `lichtplan-check` | 31 | **2** | 33 | none | Ein Formular, das Quellen und Kipppunkte zeigt, ist klar und lehrreich, aber ohne Rückmeldeschleife zum Ausprobieren. |
+| `agent-postmortem-recorder` | 30 | **2** | 32 | discovery | Der Patch liefert eine nüchterne Wiederholungsstatistik für Agent-Regeln; ein kleiner Aha-Moment („diese Regel wirkt nicht“), aber nichts zum Ausprobieren. |
+| `klarlokal` | 30 | **2** | 32 | none | Brief fotografieren und Übersetzung erhalten funktioniert klar und mit menschlichem Ton, das Thema Behördenpost bleibt aber trocken. |
+| `spec-drift-detector` | 30 | **2** | 32 | none | Ein roter Build bei Divergenz ist klar und ein wenig befriedigend, aber ein CI-Check lädt weder zum Spielen noch zum Schmunzeln ein. |
+| `diffgeist` | 29 | **2** | 31 | none | Ein präziser Diff gegen den eigenen Code ist nützlich und klar, lädt aber weder zum Spielen noch zum Schmunzeln ein. |
+| `fugenduell-patenschaft` | 29 | **2** | 31 | none | Ein alternder, übergebbarer Beobachtungsposten ist sinnvoll und leise sympathisch, bietet aber keine Interaktionsschleife. |
+| `feuerkugel-sofortnetz` | 28 | **2** | 30 | discovery | Das Staunen über eine Feuerkugel steckt im Thema, das Werkzeug selbst ist aber Alarmierung und Kameraaufruf ohne Spielschleife. |
+| `pillsafe-vision` | 28 | **2** | 30 | none | Foto der Dosette und Abgleich mit dem Plan ist nützlich und beruhigend, aber angstbesetzt und ohne Freude an der Nutzung. |
+| `amelie-umwelt-anomalie` | 20 | **2** | 22 | none | CSV rein, markierte Ausreißer im Diagramm raus: klar und nützlich, aber ohne Spielschleife oder Überraschung. _(Hinweis: Keine Scorecard im Log; frische, ehrliche 7-Vektor-Bewertung aus dem generischen Dossier (keine Quellen, kein Ground Truth, Anomalie-Erkennung ist Standard).)_ |
+| `umsetzungsplan-register` | 25 | **1** | 26 | none | Ein Register mit Pflichtangaben-Prüfer für Energiesparpläne ist trockenes Nachschlagen ohne Rückkopplung oder Überraschung. _(Hinweis: Aus classification-log Scorecard K1 (25/35))_ |
+| `vernichtungs-offenlegungsregister` | 24 | **1** | 25 | none | Ein Tabellenformat-Prüfer für Offenlegungen mit den Ausgaben „gefunden“ oder „keine gefunden“ ist reine Nachschlagearbeit ohne Rückkopplung oder Überraschung. _(Hinweis: V1-V7 from amelie-classification-log.md Review Scorecard (24/35).)_ |
+
+**Verteilung Fun:** 5× 7 · 4× 7 · 3× 16 · 2× 12 · 1× 2 · Ø 3.11
+
+**Lesart:** Die Fun-Spitze (5) sind Simulationen und Spiele zum Anfassen; die Fun-Basis (1–2) sind Register und Prüfer mit Dokument als Ergebnis. Das ist kein Qualitätsurteil, sondern ein Hinweis für Empfängerwahl (Museen, Schulen, Communities) und Demo-Reihenfolge.

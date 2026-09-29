@@ -32,6 +32,7 @@ import {
 import { DoseItem, Language, Verdict } from '../types';
 import { AMELIE_PLEDGE } from '../data/manifest';
 import { getTranslation, getLocalizedTitle } from '../i18n';
+import { DoseVectorPanel } from './DoseVectorPanel';
 import { getDoseUrl } from '../utils/doseUrl';
 import { DELIVERIES_DATA } from '../data/deliveries';
 import { DOSE_SIMULATOR_MAP, SimulatorKey } from '../data/doseSimulators';
@@ -533,6 +534,9 @@ ${bookChapters
           <div className="p-5 sm:p-6 rounded-2xl bg-[var(--m-surface)]/90 border border-[var(--m-line-strong)] text-[var(--m-ink)] font-amelie text-lg sm:text-xl md:text-2xl italic leading-relaxed shadow-xs">
             « {isDe ? dose.oneLinerDe : (isEs && dose.oneLinerEs) || dose.oneLinerEn} »
           </div>
+
+          {/* Reviewer vectors (V1–V8) */}
+          <DoseVectorPanel doseId={dose.id} lang={lang} />
 
           {/* Recipient & Tags Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">

@@ -32,6 +32,7 @@ import { getDoseUrl } from '../utils/doseUrl';
 import { DOSE_SIMULATOR_MAP, SimulatorKey } from '../data/doseSimulators';
 import { getBook } from '../data/doseBooks';
 import { DoseBook } from './DoseBook';
+import { DoseVectorPanel } from './DoseVectorPanel';
 import { doseImageSrc, doseImageSrcSet, doseImageSizes } from '../utils/doseImage';
 import {
   AltbauThermalSimulator,
@@ -442,6 +443,9 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
               </a>
             </div>
           )}
+
+          {/* Reviewer vectors (V1–V8) */}
+          <DoseVectorPanel doseId={dose.id} lang={lang} />
 
           {/* Metadata Row */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs bg-[var(--m-sunk)] p-4 rounded-xl border border-[var(--m-line)]">

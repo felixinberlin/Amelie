@@ -1,12 +1,12 @@
 # Amélie — Idea Classification & Review Log
 
-Cumulative record of all candidate evaluations conducted by the Idea Reviewer. Every entry records the 7-vector ratings, civic SWOT, tech tree coordinates, and triage recommendations.
+Cumulative record of all candidate evaluations conducted by the Idea Reviewer. Every entry records the 8-vector ratings (V8 = Fun), civic SWOT, tech tree coordinates, and triage recommendations.
 
 ---
 
 ## Cumulative Scoreboard
 
-| Date | Idea ID | Title | Origin Engine | Vector Score (/35) | Primary Source | Triage Verdict | Next Action |
+| Date | Idea ID | Title | Origin Engine | Core (/35) · Total (/40) | Primary Source | Triage Verdict | Next Action |
 |---|---|---|---|:---:|---|:---:|---|
 
 ---
