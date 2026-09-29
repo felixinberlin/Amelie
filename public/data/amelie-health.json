@@ -1,8 +1,8 @@
 {
   "auditVersion": 1,
-  "generatedAt": "2026-09-29T08:32:44.451Z",
+  "generatedAt": "2026-09-29T08:52:24.707Z",
   "repository": {
-    "commit": "2e401f6",
+    "commit": "79ddc13",
     "branch": "claude/loving-franklin-1tv4el"
   },
   "inventory": {
@@ -81,6 +81,18 @@
       "message": "Demo folder \"07-demos/chemhazard-stop\" does not correspond to any active Dose or Grave ID.",
       "file": "07-demos/chemhazard-stop",
       "relatedId": "chemhazard-stop"
+    },
+    {
+      "id": "DRIFT-AGENTS.md-Dosen-6",
+      "severity": "warning",
+      "category": "documentation",
+      "message": "AGENTS.md claims 6 Dosen, but deterministic source scanner finds 44.",
+      "file": "AGENTS.md",
+      "details": {
+        "claim": "6 Dosen",
+        "actual": 44,
+        "type": "stale_count"
+      }
     },
     {
       "id": "DRIFT-AGENTS.md-Gräber-58",
