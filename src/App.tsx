@@ -205,7 +205,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#fbf7f0] text-[#2b1e16] flex flex-col font-sans selection:bg-[#f6bd60]/40 selection:text-[#701531]">
+    <div className="min-h-screen bg-[var(--m-bg)] text-[var(--m-ink)] flex flex-col font-sans selection:bg-[var(--m-gold)]/40 selection:text-[var(--m-accent-strong)]">
       {/* Top Navigation */}
       <Header
         currentTab={currentTab}
@@ -413,35 +413,35 @@ export function App() {
       )}
 
       {/* Footer */}
-      <footer className="border-t border-[#dfd1be] bg-gradient-to-b from-[#f8f1e5] to-[#f0e3ce] mt-auto">
+      <footer className="border-t border-[var(--m-line)] bg-gradient-to-b from-[#f8f1e5] to-[#f0e3ce] mt-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#5c4a3d]">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[var(--m-ink-2)]">
             <div className="flex items-center gap-2">
-              <span className="p-1 rounded-full bg-[#8c1d40]/10 text-[#8c1d40]">
+              <span className="p-1 rounded-full bg-[var(--m-accent)]/10 text-[var(--m-accent)]">
                 <Gift className="w-4 h-4" />
               </span>
-              <span className="font-amelie font-bold text-sm text-[#2b1e16]">
+              <span className="font-amelie font-bold text-sm text-[var(--m-ink)]">
                 Amélie Poulain · Kula-Ring
               </span>
-              <span className="text-[#8b6f57]">✦</span>
+              <span className="text-[var(--m-muted)]">✦</span>
               <span>{t.ui.footer_text}</span>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center gap-3 text-[#5c4a3d] font-typewriter">
+            <div className="flex flex-wrap items-center justify-center gap-3 text-[var(--m-ink-2)] font-typewriter">
               <button
                 onClick={() => {
                   setCurrentTab('data-hub');
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
-                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white border border-[#dfd1be] hover:border-[#8c1d40] text-[#2b1e16] text-[11px] font-semibold transition-colors cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white border border-[var(--m-line)] hover:border-[var(--m-accent)] text-[var(--m-ink)] text-[11px] font-semibold transition-colors cursor-pointer"
               >
-                <FolderGit2 className="w-3.5 h-3.5 text-[#2e7d32]" />
+                <FolderGit2 className="w-3.5 h-3.5 text-[var(--m-green-2)]" />
                 <span>GitHub Pages (JSON & Markdown)</span>
               </button>
-              <span className="hidden sm:inline text-[#8b6f57]">·</span>
-              <span className="italic font-amelie text-xs text-[#4a3b2c]">« {t.ui.footer_quote} »</span>
-              <span className="hidden sm:inline text-[#8b6f57]">·</span>
-              <span className="text-[#8c1d40] font-bold">Félix (Berlin), 2026</span>
+              <span className="hidden sm:inline text-[var(--m-muted)]">·</span>
+              <span className="italic font-amelie text-xs text-[var(--m-ink-2)]">« {t.ui.footer_quote} »</span>
+              <span className="hidden sm:inline text-[var(--m-muted)]">·</span>
+              <span className="text-[var(--m-accent)] font-bold">Félix (Berlin), 2026</span>
             </div>
           </div>
         </div>

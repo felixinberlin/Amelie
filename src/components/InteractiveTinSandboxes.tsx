@@ -169,7 +169,7 @@ export const InteractiveTinSandboxes: React.FC<InteractiveTinSandboxesProps> = (
               onClick={() => setActiveTab('laerm')}
               className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
                 activeTab === 'laerm'
-                  ? 'bg-white text-[#8c1d40] shadow-xs font-bold border border-[#8c1d40]/40'
+                  ? 'bg-white text-[var(--m-accent)] shadow-xs font-bold border border-[var(--m-accent)]/40'
                   : 'text-stone-600 hover:text-stone-900'
               }`}
             >

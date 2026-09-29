@@ -657,7 +657,7 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
               onClick={() => setThemeFilter(themeFilter === th.id ? 'all' : th.id)}
               className={`px-2.5 py-1 rounded-full font-medium transition-colors ${
                 themeFilter === th.id
-                  ? 'bg-[#8c1d40] text-white shadow-2xs'
+                  ? 'bg-[var(--m-accent)] text-white shadow-2xs'
                   : 'bg-stone-100 text-stone-600 hover:bg-amber-50 hover:text-amber-900'
               }`}
             >
@@ -670,9 +670,9 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
                 type="checkbox"
                 checked={showPacked}
                 onChange={(e) => setShowPacked(e.target.checked)}
-                className="accent-[#8c1d40]"
+                className="accent-[var(--m-accent)]"
               />
-              <Gift className="w-3.5 h-3.5 text-[#8c1d40]" />
+              <Gift className="w-3.5 h-3.5 text-[var(--m-accent)]" />
               <span>
                 {lang === 'de'
                   ? `Schon als Dose gepackt zeigen (${packedHiddenCount})`
@@ -810,7 +810,7 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
                           <div className="scale-90 origin-left">
                             {getStatusBadge(candidate.status)}
                             {candidate.packedDoseId && (
-                              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[#8c1d40]/10 text-[#8c1d40] border border-[#8c1d40]/25">
+                              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[var(--m-accent)]/10 text-[var(--m-accent)] border border-[var(--m-accent)]/25">
                                 <Gift className="w-3 h-3" />
                                 {lang === 'de' ? 'als Dose gepackt' : lang === 'es' ? 'ya empaquetada' : 'packed as Tin'}
                               </span>
@@ -841,7 +841,7 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
                         </td>
                       </tr>
                       {isExpanded && (
-                        <tr className="bg-[#fcfaf6] border-b border-stone-200">
+                        <tr className="bg-[var(--m-surface)] border-b border-stone-200">
                           <td colSpan={5} className="p-4 text-xs">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 bg-white p-3.5 rounded-xl border border-stone-200/80">
                               <div>
@@ -942,7 +942,7 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
                       <div className="flex flex-wrap items-center gap-2">
                         {getStatusBadge(candidate.status)}
                         {candidate.packedDoseId && (
-                          <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[#8c1d40]/10 text-[#8c1d40] border border-[#8c1d40]/25">
+                          <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[var(--m-accent)]/10 text-[var(--m-accent)] border border-[var(--m-accent)]/25">
                             <Gift className="w-3 h-3" />
                             {lang === 'de' ? 'als Dose gepackt' : lang === 'es' ? 'ya empaquetada' : 'packed as Tin'}
                           </span>
@@ -977,7 +977,7 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
 
                       {/* Recipient & Evidence Snippet */}
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs">
-                        <div className="bg-[#fcfaf6] border border-stone-200/70 rounded-xl p-3">
+                        <div className="bg-[var(--m-surface)] border border-stone-200/70 rounded-xl p-3">
                           <div className="font-semibold text-stone-800 flex items-center gap-1.5 mb-1">
                             <Building2 className="w-3.5 h-3.5 text-amber-700" />
                             <span>{lang === 'de' ? 'Empfänger / Mandat:' : lang === 'es' ? 'Destinatario / Mandato:' : 'Target Recipient:'}</span>
@@ -985,7 +985,7 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
                           <p className="text-stone-600 leading-normal">{recipient}</p>
                         </div>
 
-                        <div className="bg-[#fcfaf6] border border-stone-200/70 rounded-xl p-3">
+                        <div className="bg-[var(--m-surface)] border border-stone-200/70 rounded-xl p-3">
                           <div className="font-semibold text-stone-800 flex items-center gap-1.5 mb-1">
                             <BookOpen className="w-3.5 h-3.5 text-stone-600" />
                             <span>{lang === 'de' ? 'Prüfbefund / Vorarbeiten:' : lang === 'es' ? 'Evidencia / Antecedentes:' : 'Evidence / Prior Art:'}</span>

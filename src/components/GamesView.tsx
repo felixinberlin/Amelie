@@ -107,7 +107,7 @@ export const GamesView: React.FC<GamesViewProps> = ({ lang, dosen, onOpenDose })
       {shownPlayables.length > 0 && (
         <section className="space-y-3" aria-labelledby="games-playable-heading">
           <h2 id="games-playable-heading" className="flex items-center gap-2 text-lg font-serif font-bold text-stone-900">
-            <Play className="w-4 h-4 text-[#8c1d40]" />
+            <Play className="w-4 h-4 text-[var(--m-accent)]" />
             {pick(lang, 'Jetzt spielbar', 'Playable now', 'Jugables ahora')} ({shownPlayables.length})
           </h2>
           <div className="flex flex-wrap gap-2">
@@ -117,8 +117,8 @@ export const GamesView: React.FC<GamesViewProps> = ({ lang, dosen, onOpenDose })
                 onClick={() => setActivePlayable(activePlayable === p.id ? null : p.id)}
                 className={`px-3.5 py-2 rounded-xl text-sm font-medium border transition-all ${
                   activePlayable === p.id
-                    ? 'bg-[#8c1d40] text-white border-[#741533] shadow-xs'
-                    : 'bg-white text-stone-700 border-stone-200 hover:border-[#8c1d40]/40'
+                    ? 'bg-[var(--m-accent)] text-white border-[var(--m-accent-strong)] shadow-xs'
+                    : 'bg-white text-stone-700 border-stone-200 hover:border-[var(--m-accent)]/40'
                 }`}
               >
                 <span className="mr-1.5">{p.emoji}</span>
@@ -139,7 +139,7 @@ export const GamesView: React.FC<GamesViewProps> = ({ lang, dosen, onOpenDose })
       {shownDosen.length > 0 && (
         <section className="space-y-3" aria-labelledby="games-dosen-heading">
           <h2 id="games-dosen-heading" className="flex items-center gap-2 text-lg font-serif font-bold text-stone-900">
-            <Gift className="w-4 h-4 text-[#8c1d40]" />
+            <Gift className="w-4 h-4 text-[var(--m-accent)]" />
             {pick(lang, 'Als Dose verpackt', 'Packed as Tins', 'Empaquetadas como latas')} ({shownDosen.length})
           </h2>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -149,12 +149,12 @@ export const GamesView: React.FC<GamesViewProps> = ({ lang, dosen, onOpenDose })
                 <button
                   key={d.id}
                   onClick={() => onOpenDose(d.id)}
-                  className="text-left bg-white border border-stone-200 hover:border-[#8c1d40]/40 rounded-2xl p-5 shadow-2xs transition-all flex flex-col gap-2"
+                  className="text-left bg-white border border-stone-200 hover:border-[var(--m-accent)]/40 rounded-2xl p-5 shadow-2xs transition-all flex flex-col gap-2"
                 >
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-[#8c1d40] font-bold">{d.status}</span>
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-[var(--m-accent)] font-bold">{d.status}</span>
                   <span className="font-serif text-lg font-bold text-stone-900 leading-snug">{t.title}</span>
                   <span className="text-sm text-stone-700 leading-relaxed line-clamp-4">{t.oneLiner}</span>
-                  <span className="mt-auto pt-2 inline-flex items-center gap-1 text-xs font-semibold text-[#8c1d40]">
+                  <span className="mt-auto pt-2 inline-flex items-center gap-1 text-xs font-semibold text-[var(--m-accent)]">
                     {pick(lang, 'Dose öffnen', 'Open Tin', 'Abrir lata')} <ArrowRight className="w-3.5 h-3.5" />
                   </span>
                 </button>
@@ -167,7 +167,7 @@ export const GamesView: React.FC<GamesViewProps> = ({ lang, dosen, onOpenDose })
       {shownIdeas.length > 0 && (
         <section className="space-y-3" aria-labelledby="games-ideas-heading">
           <h2 id="games-ideas-heading" className="flex items-center gap-2 text-lg font-serif font-bold text-stone-900">
-            <Lightbulb className="w-4 h-4 text-[#8c1d40]" />
+            <Lightbulb className="w-4 h-4 text-[var(--m-accent)]" />
             {pick(lang, 'Spielideen', 'Game ideas', 'Ideas de juego')} ({shownIdeas.length})
           </h2>
           <div className="grid gap-4 md:grid-cols-2">
@@ -178,7 +178,7 @@ export const GamesView: React.FC<GamesViewProps> = ({ lang, dosen, onOpenDose })
                   <div className="flex flex-wrap items-center gap-1.5 text-[10px] font-mono">
                     <span className="px-2 py-0.5 rounded bg-stone-100 text-stone-600 border border-stone-200">{i.status}</span>
                     {i.packedDoseId && (
-                      <span className="px-2 py-0.5 rounded bg-[#8c1d40]/10 text-[#8c1d40] border border-[#8c1d40]/25 font-semibold">
+                      <span className="px-2 py-0.5 rounded bg-[var(--m-accent)]/10 text-[var(--m-accent)] border border-[var(--m-accent)]/25 font-semibold">
                         {pick(lang, 'als Dose gepackt', 'packed as Tin', 'ya empaquetada')}
                       </span>
                     )}
@@ -201,7 +201,7 @@ export const GamesView: React.FC<GamesViewProps> = ({ lang, dosen, onOpenDose })
                   {i.packedDoseId && (
                     <button
                       onClick={() => onOpenDose(i.packedDoseId!)}
-                      className="mt-auto pt-2 self-start inline-flex items-center gap-1 text-xs font-semibold text-[#8c1d40] hover:underline"
+                      className="mt-auto pt-2 self-start inline-flex items-center gap-1 text-xs font-semibold text-[var(--m-accent)] hover:underline"
                     >
                       <Sparkles className="w-3.5 h-3.5" />
                       {pick(lang, 'Dose öffnen', 'Open Tin', 'Abrir lata')}

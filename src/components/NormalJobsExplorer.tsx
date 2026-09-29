@@ -277,7 +277,7 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang, on
                       {lang === 'de' ? 'Schenkung (CC0)' : lang === 'es' ? 'Donación (CC0)' : 'Gift (CC0)'}
                     </span>
                     {idea.packedDoseId && (
-                      <span className="px-2 py-0.5 rounded bg-[#8c1d40]/10 text-[#8c1d40] border border-[#8c1d40]/25 font-semibold flex items-center gap-1">
+                      <span className="px-2 py-0.5 rounded bg-[var(--m-accent)]/10 text-[var(--m-accent)] border border-[var(--m-accent)]/25 font-semibold flex items-center gap-1">
                         <Gift className="w-3 h-3" />
                         {lang === 'de' ? 'Als Dose gepackt' : lang === 'es' ? 'Ya empaquetada' : 'Packed as Tin'}
                         {onOpenDose && (
@@ -287,7 +287,7 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang, on
                               e.stopPropagation();
                               onOpenDose(idea.packedDoseId!);
                             }}
-                            className="ml-1 underline underline-offset-2 hover:text-[#741533]"
+                            className="ml-1 underline underline-offset-2 hover:text-[var(--m-accent-strong)]"
                           >
                             {lang === 'de' ? 'öffnen' : lang === 'es' ? 'abrir' : 'open'}
                           </button>

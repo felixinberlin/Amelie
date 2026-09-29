@@ -118,17 +118,17 @@ export const ManifestView: React.FC<ManifestViewProps> = ({ lang, onOpenEmails }
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <div className="flex items-center gap-2">
-              <span className="text-xs font-typewriter uppercase tracking-wider text-[#8c1d40] font-bold px-2 py-0.5 rounded bg-[#8c1d40]/10 border border-[#8c1d40]/25">
+              <span className="text-xs font-typewriter uppercase tracking-wider text-[var(--m-accent)] font-bold px-2 py-0.5 rounded bg-[var(--m-accent)]/10 border border-[var(--m-accent)]/25">
                 {lang === 'de' ? 'LES 5 RÈGLES D\'OR' : lang === 'es' ? 'LAS 5 REGLAS DE ORO' : 'THE 5 GOLDEN RULES'}
               </span>
-              <span className="text-xs font-typewriter text-[#8b6f57]">
+              <span className="text-xs font-typewriter text-[var(--m-muted)]">
                 ✦ CC0 · Kula-Ring ✦
               </span>
             </div>
-            <h3 className="text-2xl sm:text-3xl font-bold font-amelie text-[#2b1e16] mt-1">
+            <h3 className="text-2xl sm:text-3xl font-bold font-amelie text-[var(--m-ink)] mt-1">
               {lang === 'de' ? 'Die sechs Amélie-Regeln' : lang === 'es' ? 'Las seis reglas de Amélie' : 'The Six Amélie Rules'}
             </h3>
-            <p className="text-xs sm:text-sm text-[#6b5849] mt-0.5">
+            <p className="text-xs sm:text-sm text-[var(--m-ink-3)] mt-0.5">
               {lang === 'de'
                 ? 'Jede Regel schützt davor, aus einer selbstlosen Gabe ein getarntes B2B-Startup oder eine Belästigung zu machen.'
                 : lang === 'es'
@@ -140,9 +140,9 @@ export const ManifestView: React.FC<ManifestViewProps> = ({ lang, onOpenEmails }
           {onOpenEmails && (
             <button
               onClick={onOpenEmails}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#8c1d40] hover:bg-[#741533] text-white text-xs font-typewriter font-bold shadow-2xs transition-colors shrink-0 cursor-pointer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[var(--m-accent)] hover:bg-[var(--m-accent-strong)] text-white text-xs font-typewriter font-bold shadow-2xs transition-colors shrink-0 cursor-pointer"
             >
-              <Sparkles className="w-3.5 h-3.5 text-[#f6bd60]" />
+              <Sparkles className="w-3.5 h-3.5 text-[var(--m-gold)]" />
               <span>
                 {lang === 'de'
                   ? 'Muster-E-Mails ansehen →'
@@ -164,26 +164,26 @@ export const ManifestView: React.FC<ManifestViewProps> = ({ lang, onOpenEmails }
                 key={rule.number}
                 className={`p-6 rounded-2xl border flex flex-col justify-between transition-all hover:shadow-md relative overflow-hidden ${
                   isRuleOne
-                    ? 'md:col-span-2 bg-[#faf4e8] border-[#8c1d40]/40 shadow-xs'
+                    ? 'md:col-span-2 bg-[var(--m-surface-2)] border-[var(--m-accent)]/40 shadow-xs'
                     : isRuleThree
-                    ? 'bg-[#fffdf9] border-[#8c1d40]/30 shadow-2xs'
-                    : 'bg-[#fffdf9] border-[#dfd1be]'
+                    ? 'bg-[var(--m-surface)] border-[var(--m-accent)]/30 shadow-2xs'
+                    : 'bg-[var(--m-surface)] border-[var(--m-line)]'
                 }`}
               >
                 {/* Subtle Amélie background badge for Rule 1 & 3 */}
                 {isRuleOne && (
-                  <div className="absolute right-4 top-2 select-none pointer-events-none opacity-5 font-typewriter text-8xl font-black text-[#8c1d40]">
+                  <div className="absolute right-4 top-2 select-none pointer-events-none opacity-5 font-typewriter text-8xl font-black text-[var(--m-accent)]">
                     #1
                   </div>
                 )}
 
                 <div className="space-y-2 relative">
                   <div className="flex items-center gap-3">
-                    <span className="w-8 h-8 rounded-xl bg-[#8c1d40] text-[#f6bd60] font-mono-code text-sm font-bold flex items-center justify-center shrink-0 shadow-2xs border border-[#701531]">
+                    <span className="w-8 h-8 rounded-xl bg-[var(--m-accent)] text-[var(--m-gold)] font-mono-code text-sm font-bold flex items-center justify-center shrink-0 shadow-2xs border border-[var(--m-accent-strong)]">
                       {rule.number}
                     </span>
                     <div>
-                      <span className="text-[10px] font-typewriter uppercase tracking-widest text-[#8c1d40] font-bold block">
+                      <span className="text-[10px] font-typewriter uppercase tracking-widest text-[var(--m-accent)] font-bold block">
                         {rule.number === 1
                           ? (lang === 'de' ? 'KARDINALREGEL' : lang === 'es' ? 'REGLA CARDINAL' : 'CARDINAL RULE')
                           : rule.number === 2
@@ -196,7 +196,7 @@ export const ManifestView: React.FC<ManifestViewProps> = ({ lang, onOpenEmails }
                           ? (lang === 'de' ? 'BAU-DISZIPLIN' : lang === 'es' ? 'DISCIPLINA DE CONSTRUCCIÓN' : 'BUILDING DISCIPLINE')
                           : (lang === 'de' ? 'DER TOTENSCHEIN' : lang === 'es' ? 'EL CERTIFICADO' : 'THE DEATH CERTIFICATE')}
                       </span>
-                      <h4 className="text-base sm:text-lg font-bold font-amelie text-[#2b1e16]">
+                      <h4 className="text-base sm:text-lg font-bold font-amelie text-[var(--m-ink)]">
                         {localizedRule.title}
                       </h4>
                     </div>
@@ -206,10 +206,10 @@ export const ManifestView: React.FC<ManifestViewProps> = ({ lang, onOpenEmails }
                   </p>
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-[#dfd1be] pl-11 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                  <span className="text-xs font-typewriter text-[#8c1d40] font-semibold block">
+                <div className="mt-4 pt-3 border-t border-[var(--m-line)] pl-11 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                  <span className="text-xs font-typewriter text-[var(--m-accent)] font-semibold block">
                     ✦ {lang === 'de' ? 'Faustformel: ' : lang === 'es' ? 'Regla práctica: ' : 'Rule of Thumb: '}
-                    <span className="font-normal italic text-[#2b1e16]">
+                    <span className="font-normal italic text-[var(--m-ink)]">
                       {localizedRule.thumb}
                     </span>
                   </span>
@@ -221,7 +221,7 @@ export const ManifestView: React.FC<ManifestViewProps> = ({ lang, onOpenEmails }
       </section>
 
       {/* Interactive Gifting Compass */}
-      <section className="p-6 md:p-8 rounded-2xl bg-gradient-to-br from-[#fdfbf7] via-amber-50/40 to-stone-50 border border-amber-800/30 shadow-xs space-y-6">
+      <section className="p-6 md:p-8 rounded-2xl bg-gradient-to-br from-[var(--m-surface)] via-amber-50/40 to-stone-50 border border-amber-800/30 shadow-xs space-y-6">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-stone-200/80">
           <div>
             <div className="flex items-center gap-2 text-xs font-mono-code uppercase tracking-wider text-amber-900 font-bold mb-1">
@@ -438,7 +438,7 @@ export const ManifestView: React.FC<ManifestViewProps> = ({ lang, onOpenEmails }
           {AMELIE_LOOP_STEPS.map((step) => (
             <div
               key={step.step}
-              className="p-5 rounded-xl border border-stone-200 bg-[#fdfbf7] flex flex-col justify-between shadow-2xs hover:border-amber-800/30 transition-colors"
+              className="p-5 rounded-xl border border-stone-200 bg-[var(--m-surface)] flex flex-col justify-between shadow-2xs hover:border-amber-800/30 transition-colors"
             >
               <div className="space-y-2">
                 <div className="flex items-center justify-between text-xs">
@@ -488,7 +488,7 @@ export const ManifestView: React.FC<ManifestViewProps> = ({ lang, onOpenEmails }
           </p>
         </div>
 
-        <div className="bg-[#fdfbf7] rounded-2xl border border-stone-200 overflow-hidden shadow-xs">
+        <div className="bg-[var(--m-surface)] rounded-2xl border border-stone-200 overflow-hidden shadow-xs">
           <div className="divide-y divide-stone-200">
             {TERRITORY_ATLAS.map((item, idx) => {
               const isOpen = idx === 3;

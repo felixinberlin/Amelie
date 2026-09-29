@@ -194,7 +194,7 @@ export const HofLichterGame: React.FC<HofLichterGameProps> = ({ lang }) => {
         {solved && (
           <div className="mx-auto max-w-md rounded-2xl bg-[#fff7ed] text-[#3b2f5c] p-5 space-y-3 shadow-lg">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#8c1d40]">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[var(--m-accent)]">
                 {pick(lang, 'Der Hof leuchtet', 'The courtyard glows', 'El patio brilla')}
               </span>
               <span className="text-lg text-amber-500" aria-label={`${stars}/3`}>
@@ -206,7 +206,7 @@ export const HofLichterGame: React.FC<HofLichterGameProps> = ({ lang }) => {
             {hasNext ? (
               <button
                 onClick={() => loadLevel(levelIdx + 1)}
-                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#8c1d40] text-white text-sm font-semibold hover:bg-[#741533] transition-colors"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[var(--m-accent)] text-white text-sm font-semibold hover:bg-[var(--m-accent-strong)] transition-colors"
               >
                 {pick(lang, 'Nächstes Haus', 'Next building', 'Siguiente edificio')} <ArrowRight className="w-4 h-4" />
               </button>
