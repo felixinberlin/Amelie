@@ -1,14 +1,14 @@
 {
   "$schema": "https://raw.githubusercontent.com/felixinberlin/amelie/main/public/data/amelie-schema.json",
   "version": "1.0.0",
-  "generatedAt": "2026-09-29T22:08:02.744Z",
+  "generatedAt": "2026-09-29T22:20:49.025Z",
   "license": "CC0-1.0 (Public Domain / Kula-Ring)",
   "storageProvider": "github_pages",
   "repository": "https://github.com/felixinberlin/amelie",
   "stats": {
-    "totalDosen": 45,
+    "totalDosen": 44,
     "totalUnpacked": 154,
-    "totalDiscarded": 94
+    "totalDiscarded": 95
   },
   "dosen": [
     {
@@ -152,63 +152,6 @@
       "failureModeEn": "A number that sounds more certain than the evidence gets abused in both directions — hence a filled-in sheet with visible inputs instead of a verdict. The evidence partly contradicts the scheme: Li et al. 2025 (3,078 buildings, 65,633 survey days) found vegetation predicting at 1,000 m to 10 km, and trees within 5 m reduced autumn risk; Samuels et al. 2022 found small transom windows struck nearly as often as large glass doors. The decision deliberately leaves reflectance out because \"no suitable classification criteria exist yet\" — measuring it extends the scheme and must be declared. And the path from planning aid to pillory is short: reports carry addresses, so assessments belong in the letter to the owner, not on a public map.",
       "priorArtDe": "Verengt (21./22.09.2026, korrigiert von „frei\"): Der Rechner existiert zweimal, nur anderswo. FLAP Canada betreibt mit flapapp.ca eine kostenlose BirdSafe-App, die Tag- und Nachtrisiko pro Fassade schätzt — als geführter Fragebogen ohne Bildauswertung. LEED führt seit April 2026 in v5 Vogelschlag in zwei Credits mit Threat Factor ≤ 30 nach ABC-Skala, CSA A460:19 gilt als kanadischer Alternativweg; Pilot Credit SSpc55 rechnet mit offizieller Tabellenvorlage, bewertet aber Materialien aus der Planung. New York (Local Law 15, seit 2021) und Toronto (seit 2010) haben Nachweismärkte, bedient von Beratungsbüros; Compliance-Software nicht gefunden. Österreich prüft Markierungen nach ONR 191040 im Flugtunnel Hohenau (mindestens 90 % Meiderate) — die Produktseite ist gründlich abgedeckt. In Deutschland: LAG VSW Beschluss 21/01 (aktualisiert 2023, im Auftrag der LANA, den Ländern zur Anwendung empfohlen), Berliner Beurteilungshilfe, Merkblätter — kein digitales Werkzeug, das das Schema rechnet. Die Gegenrichtung ist seit Februar 2026 besetzt: vogelschlagmelder.de sammelt Opferfunde, die Gefahrenkarte dort ist eine Heatmap der Meldungen, keine Bewertung. Melden ist gelöst, Bewerten nicht.",
       "priorArtEn": "Narrowed (21/22 Sep 2026, corrected from \"free\"): the calculator exists twice, elsewhere. FLAP Canada runs flapapp.ca, a free BirdSafe app estimating day and night risk per façade — a guided questionnaire without image analysis. Since April 2026 LEED v5 carries bird collisions in two credits requiring an ABC threat factor ≤ 30, with CSA A460:19 as the Canadian compliance path; Pilot Credit SSpc55 computes via an official spreadsheet but scores materials from a design. New York (Local Law 15, in force since 2021) and Toronto (since 2010) created documentation markets served by consultancies; compliance software was not found. Austria tests markings under ONR 191040 in the Hohenau flight tunnel (at least 90 % avoidance) — the product side is thoroughly covered. In Germany: LAG VSW decision 21/01 (updated 2023, commissioned by the LANA and recommended to the federal states), Berlin's assessment aid, various leaflets — no digital tool that computes the scheme. The opposite direction has been occupied since February 2026: vogelschlagmelder.de collects victim reports, and its hazard map is a heatmap of those reports, not an assessment. Reporting is solved. Rating is not."
-    },
-    {
-      "id": "eurobirdcast",
-      "title": "EuroBirdCast",
-      "titleEn": "EuroBirdCast: Auditable Migration Curtailment",
-      "image": "eurobird.png",
-      "imageAlt": "Dreiteilige Infografik zu EuroBirdCast: links eine Karte der europäischen Wetterradare mit Abdeckungskreisen, in der Mitte der Weg vom Rohsignal über die Vogelextraktion zur Mehrradar-Fusion, rechts eine Zugdichtekarte über Deutschland mit Dreistundenprognose.",
-      "imageAspect": 1.5,
-      "oneLinerDe": "Aus bereits offen vorliegenden, wetterradarbasierten Vogelzugprofilen eine turbinenspezifische Abschaltempfehlung erzeugen, die eine Behörde ohne den Dienst selbst nachrechnen kann. Arbeitstitel — der Name kollidiert mit BirdCast (Cornell/CSU).",
-      "oneLinerEn": "Turn already public, weather-radar-derived bird migration profiles into a turbine-specific curtailment recommendation a regulator can recompute without the service itself. Working title — the name collides with BirdCast (Cornell/CSU).",
-      "date": "22. September 2026 (nach Prüfung neu geschrieben)",
-      "reviewAfter": "März 2027",
-      "recipientsDe": "Offen — erst nach M0 zu entscheiden. Kandidaten: BfN / BioConsult SH (Fortsetzung von RADBIRD), Vogelschutzwarte im LfU Brandenburg (Zentrale Fundkartei), Betreiberverbände. Ausdrücklich nicht: ENRAM (seit 2017 beendet), UvA/WSL/INBO (betreiben HiRAD selbst), Prototype Fund (nicht antragsberechtigt).",
-      "recipientsEn": "Open — to be decided only after M0. Candidates: BfN / BioConsult SH (RADBIRD successor), LfU Brandenburg bird conservation station (central carcass registry), operator associations. Explicitly not: ENRAM (ended 2017), UvA/WSL/INBO (they run HiRAD themselves), Prototype Fund (not eligible).",
-      "domain": "physics",
-      "verdict": "build_first",
-      "status": "gepackt",
-      "tags": [
-        "Vogelschutz",
-        "Windkraft",
-        "Radar",
-        "Open Data",
-        "vol2bird",
-        "MTR",
-        "Nachrechenbarkeit",
-        "Verdikt korrigiert"
-      ],
-      "problemDe": "Die Erstfassung dieser Dose behauptete, Windparks würden pauschal nach Kalendermonaten abgeschaltet. Das stimmt nicht: Onshore in Deutschland gibt es für den Vogelzug überhaupt keine Abschaltauflage. Die Nachtabschaltungen im Spätsommer sind Fledermaus-Auflagen und an Temperatur (≥ 10 °C) und Windgeschwindigkeit (< 6 m/s) gekoppelt, die phänologischen gelten Brutvögeln (§ 45b BNatSchG, nicht § 44). Das wirkliche Problem ist ein anderes: Wo abgeschaltet wird — in den Niederlanden seit Mai 2023 verpflichtend, bei kommerziellen Systemen automatisch — kann niemand außerhalb des Systems nachprüfen, ob eine Abschaltung richtig war oder eine unterlassene falsch. Es fehlt die Nachrechenbarkeit, nicht die Messung.",
-      "problemEn": "The first draft of this tin claimed wind farms are shut down by calendar month. They are not: onshore Germany has no migration-based curtailment obligation at all. The late-summer night shutdowns are bat conditions tied to temperature (≥ 10 °C) and wind speed (< 6 m/s); the phenological ones protect breeding birds (§ 45b BNatSchG, not § 44). The real problem is a different one: where curtailment does happen — mandatory in the Netherlands since May 2023, automatic in commercial systems — nobody outside the system can verify whether a shutdown was justified or a missing one was not. What is missing is recomputability, not measurement.",
-      "whyNowDe": [
-        "Die Profile für Deutschland sind bereits gerechnet und offen: RMI/KMI Belgien rechnet seit Oktober 2019 täglich vol2bird-Profile für die deutschen Radare deess (Essen) und denhb (Neuheilenbach), frei abrufbar. Kein eigenes Ingest, kein HDF5, kein Docker nötig.",
-        "FlySafe (UvA/KNMI/niederländische Luftwaffe) liefert seit August 2026 5-Minuten-Echtzeitprofile über NL, BE und DE, frei nutzbar über das KNMI Data Platform.",
-        "Der Werkzeugkasten ist gepflegt: vol2birdR 1.3.2 (16.09.2026), bioRad 0.12.0.9000 (21.07.2026), getRad (CRAN) für die DWD-Rohdaten.",
-        "Die Schwellenwerte sind veröffentlicht: 250 und 500 MTR (Welcker 2022, BfN-Schriften 635); NL offshore 500 Vögel/km/h, windabhängig 400/900/500 (van Bemmelen u. a. 2022).",
-        "Die Gegenrichtung ist besetzt und damit Kalibrierquelle: Die Vogelschutzwarte im LfU Brandenburg führt seit 2002 die bundesweite Zentrale Fundkartei für Windkraftopfer."
-      ],
-      "whyNowEn": [
-        "The profiles for Germany are already computed and open: RMI/KMI Belgium has computed daily vol2bird profiles for the German radars deess (Essen) and denhb (Neuheilenbach) since October 2019, freely available. No ingestion, no HDF5, no Docker needed.",
-        "FlySafe (UvA/KNMI/Royal Netherlands Air Force) has delivered free 5-minute real-time profiles across NL, BE and DE since August 2026 via the KNMI Data Platform.",
-        "The toolchain is maintained: vol2birdR 1.3.2 (16 Sep 2026), bioRad 0.12.0.9000 (21 Jul 2026), getRad (CRAN) for the raw DWD data.",
-        "The thresholds are published: 250 and 500 MTR (Welcker 2022, BfN-Schriften 635); NL offshore 500 birds/km/h, wind-dependent 400/900/500 (van Bemmelen et al. 2022).",
-        "The opposite direction is occupied and therefore a calibration source: the LfU Brandenburg bird conservation station has run the national carcass registry for wind turbine casualties since 2002."
-      ],
-      "sketchDe": "Eingabe sind fertige VPTS-Profile (RMI/KMI für deess und denhb, FlySafe für Echtzeit) statt eigener Radarverarbeitung. Daraus wird eine einzige Kennzahl abgeleitet: MTR auf Rotorhöhe, also Vögel je Kilometer Frontbreite und Stunde, integriert über die Rotorebene (Referenzanlage DE-Zubau H1/2025: Nabe 146 m, Rotor 150 m, also 71–221 m). MTR ist die Einheit, in der die Schwellenwerte in DE, NL und BE formuliert sind, und damit die einzige, in der sich ein Ergebnis gegen veröffentlichte Grenzwerte prüfen lässt. Die Schwellen stehen in einer Datei mit Quellenangabe, nicht im Code, und werden mit Unsicherheitsband geführt. Der eigentliche Beitrag ist die Audit-Zeile: Radarquelle, Zeit, Höhenprofil, MTR, Unsicherheit, verwendete Schwelle mit Quelle, Ertragsverlust und Entscheidung — so, dass eine Behörde die Abschaltung ohne den Dienst nachrechnen kann. Genau das hält kein kommerzielles System offen.",
-      "sketchEn": "Input is finished VPTS profiles (RMI/KMI for deess and denhb, FlySafe for real time) instead of in-house radar processing. From them a single metric is derived: MTR at rotor height, birds per km of front per hour integrated over the rotor-swept zone (German reference turbine H1/2025: hub 146 m, rotor 150 m, hence 71–221 m). MTR is the unit in which thresholds are formulated in DE, NL and BE, and therefore the only one in which a result can be checked against published limits. Thresholds live in a cited data file rather than in code and carry an uncertainty band. The actual contribution is the audit record: radar source, time, altitude profile, MTR, uncertainty, threshold with citation, energy loss and decision — such that a regulator can recompute the curtailment without the service. No commercial system exposes this.",
-      "firstStepDe": {
-        "ticket": "M0: Bedarfsklärung. Zwei Fragen, kein Produkt.",
-        "criteria": "An BfN/BioConsult SH: Das Vorhaben FKZ 3523 15 1601 (Vogelzug-Vorhersage für bedarfsgerechte Turbinenabschaltungen in der AWZ, 12/2023–11/2025) ist ausgelaufen — was fehlt dem Ergebnis zur Betriebsreife? An die Vogelschutzwarte im LfU Brandenburg: Wären Totfunddaten der Zentralen Fundkartei in einer Form verfügbar, die eine Schwellen-Kalibrierung trägt? Fertig, wenn aus beiden Richtungen eine Antwort vorliegt, die einen Bedarf benennt oder verneint. Kippschalter: Verneinen beide, wandert die Idee nach _entsorgt.md — ein vollwertiges Ergebnis. Erst danach lohnt M1 (Profil-Lesbarkeit, MTR auf Rotorhöhe); die volle Staffel steht in 02-recherche/eurobirdcast-roadmap-2026-09-22.md."
-      },
-      "firstStepEn": {
-        "ticket": "M0: establish demand. Two questions, no product.",
-        "criteria": "To BfN/BioConsult SH: project FKZ 3523 15 1601 (migration forecasting for demand-driven turbine curtailment in the EEZ, 12/2023–11/2025) has ended — what does the result still lack to be operational? To the LfU Brandenburg bird conservation station: would carcass data from the central registry be available in a form that can carry a threshold calibration? Done when an answer from both directions either names a demand or denies it. Kill switch: if both deny it, the idea moves to _entsorgt.md — a full result. Only then is M1 (profile readability, MTR at rotor height) worth starting; the full sequence is in 02-recherche/eurobirdcast-roadmap-2026-09-22.md."
-      },
-      "failureModeDe": "Der Nullbefund vom Gotthard ist das größte Risiko: Tettamanti (J. Environ. Manage. 401, 1.3.2026) zeigt fünf Anlagen mit BirdScan-MV1-Radar und turbinenindividuellen MTR-Schwellen, bei denen die Abschaltzeit von 318 h auf 28–96 h je Anlage sank — die Kollisionszahl blieb bei rund 190 Tieren pro Jahr unverändert. Mehr zeitliche Präzision rettete dort nicht mehr Vögel. Zweitens fehlt der Käufer: ein Werkzeug für eine Pflicht, die es in Deutschland für den Zug nicht gibt, wird nicht betrieben — deshalb steht M0 vor dem Code. Drittens Scheingenauigkeit: Die Messabweichung zwischen Radarsystemen liegt bei 250 MTR bei rund 100 MTR; eine Ampel ohne Unsicherheitsband behauptet Präzision, die die Messung nicht hergibt. Viertens Lizenz: OPERA/Meteogate liefert research-only, die Zulässigkeit eines Betriebsdienstes ist ungeprüft.",
-      "failureModeEn": "The Gotthard null result is the biggest risk: Tettamanti (J. Environ. Manage. 401, 1 Mar 2026) documents five turbines with BirdScan MV1 radar and turbine-specific MTR thresholds where downtime fell from 318 h to 28–96 h per turbine — while the collision count stayed at roughly 190 animals per year. More temporal precision did not save more birds there. Second, there is no buyer: a tool for an obligation that does not exist for migration in Germany will not be operated — hence M0 before any code. Third, false precision: the deviation between radar systems is around 100 MTR at 250 MTR; a traffic light without an uncertainty band claims precision the measurement cannot deliver. Fourth, licensing: OPERA/Meteogate is research-only and the admissibility of an operating service is unverified.",
-      "priorArtDe": "Verdikt korrigiert am 22.09.2026 von „verifiziert neuartig\" auf besetzt/verengt. Bauer u. a. (Nature Sustainability, 2.6.2026, doi 10.1038/s41893-026-01853-4) werten 37 Radare über DE/FR/BE/NL/LU und rund 42.000 Turbinen aus; ihr Szenario 3 schaltet ab, wenn die Kollisionen je erzeugter Kilowattstunde eine Grenze überschreiten — das ist exakt der BP/MWh-Index dieser Dose, drei Monate älter, mit offenem Code. Vorläufer der Metrik: Bureau Waardenburg 2022 (Percentage of Collisions Avoided gegen MWh). In den Niederlanden ist Start/Stop seit Mai 2023 für alle Parks mit kavelbesluit verpflichtend, mit Behördensoftware EVAS und veröffentlichten Saisonberichten — also dem Audit-Trail, den die Erstfassung als Alleinstellung reklamierte; das zugrunde liegende Prognosemodell gilt laut Technolution 2025 allerdings als wenig zuverlässig bei Zugspitzen und nutzt kein Wetterradar. Robin Radar Systems verkauft SCADA-gekoppelte Abschaltung inklusive Algorithmus für Massenzug (Eneco Maasvlakte 2, 22 Turbinen vollautomatisch); Swiss Birdradar bietet BirdScan MV1 (inzwischen „legacy\", abgelöst durch FaunaScan MV2) mit automatischer Kommunikation zur Windparksteuerung. Beide proprietär. FlySafe (UvA/KNMI) liefert seit August 2026 Echtzeitprofile auch für Deutschland. RADBIRD (BfN/Vogelwarte Helgoland, 2019–2021) wurde als FKZ 3523 15 1601 (BioConsult SH, bis 11/2025) fortgesetzt. HiRAD (Biodiversa+: WSL, UvA, INBO, FMI, Agroscope, mit Swiss BirdRadar Solution AG) ist genau das Konsortium, das die Erstfassungs-Mail vorschlug zu gründen. ENRAM dagegen war eine COST-Action 2013–2017 und existiert nicht mehr.",
-      "priorArtEn": "Verdict corrected on 22 Sep 2026 from \"verified novel\" to occupied/narrowed. Bauer et al. (Nature Sustainability, 2 Jun 2026, doi 10.1038/s41893-026-01853-4) analyse 37 radars across DE/FR/BE/NL/LU and around 42,000 turbines; their scenario 3 curtails when collisions per kilowatt-hour generated exceed a limit — exactly the BP/MWh index of this tin, three months older, with open code. Earlier ancestor: Bureau Waardenburg 2022 (Percentage of Collisions Avoided against MWh). In the Netherlands, Start/Stop has been mandatory since May 2023 for every farm with a kavelbesluit, with government software EVAS and published seasonal reports — the audit trail the first draft claimed as its unique contribution; the underlying forecast model is however rated of low reliability at migration peaks (Technolution 2025) and uses no weather radar. Robin Radar Systems sells SCADA-coupled curtailment including a mass-migration algorithm (Eneco Maasvlakte 2, 22 turbines fully automatic); Swiss Birdradar offers BirdScan MV1 (now \"legacy\", superseded by FaunaScan MV2) with automatic communication to wind park controls. Both proprietary. FlySafe (UvA/KNMI) has delivered real-time profiles covering Germany since August 2026. RADBIRD (BfN/Helgoland, 2019–2021) was continued as FKZ 3523 15 1601 (BioConsult SH, until 11/2025). HiRAD (Biodiversa+: WSL, UvA, INBO, FMI, Agroscope, with Swiss BirdRadar Solution AG) is precisely the consortium the first draft proposed forming. ENRAM, by contrast, was a COST Action from 2013 to 2017 and no longer exists."
     },
     {
       "id": "sperrmuell-radar",
@@ -12137,6 +12080,28 @@
       "diedOn": "2026-09-29",
       "resurrectIfDe": "Wenn eine begutachtete Studie an Walnüssen belegt, dass Schalenform oder -textur (Foto oder 3D-Scan) den Kernzustand vorhersagt.",
       "resurrectIfEn": "If a peer-reviewed study on walnuts shows that shell shape or texture (photo or 3D scan) predicts the kernel's condition."
+    },
+    {
+      "id": "eurobirdcast",
+      "title": "EuroBirdCast: Vogelzug-Abschaltung, nachrechenbar",
+      "originalIdeaDe": "Aus bereits öffentlich vorliegenden, wetterradarbasierten Vogelzugprofilen eine turbinenspezifische Abschaltempfehlung erzeugen, die eine Behörde ohne den Dienst selbst nachrechnen kann.",
+      "originalIdeaEn": "Generate a turbine-specific curtailment recommendation from already public weather-radar-based bird migration profiles that an authority can recompute itself without the service.",
+      "whyDiscardedDe": "Das BfN meldet als Antwort auf M0, dass aktuell keine Lücke bei der Reproduzierbarkeit von Abschaltentscheidungen besteht. Im Vorprojekt FKZ 3519 86 0500 erwiesen sich Wetterradardaten des DWD als ungeeignet (Verteilung, Datenformat). Sie fokussieren auf spezialisierte Vogelradare.",
+      "whyDiscardedEn": "The BfN responded to M0 stating there is currently no gap in reproducibility of curtailment decisions. In previous project FKZ 3519 86 0500, DWD weather radar data proved unsuitable (station distribution, format). They are focusing on specialized bird radars.",
+      "lessonDe": "Auch wenn Wetterradar-Daten offen und verarbeitbar sind, können sie für die fachliche Anforderung ungeeignet sein. Die Rückfrage beim Empfänger (BfN) hat die Lücke (Kippschalter M0) eindeutig geschlossen.",
+      "lessonEn": "Even if weather radar data is open and processable, it may be unsuitable for the technical requirement. The inquiry to the recipient (BfN) definitively closed the gap (M0 kill switch).",
+      "domain": "ecology",
+      "evidence": [],
+      "cause": "praemisse",
+      "killer": "behoerde",
+      "foundBy": "empfaenger",
+      "origin": "modell-katalog",
+      "stage": "zugestellt",
+      "bornIn": "AI Frontier 2026",
+      "diedOn": "2026-09-30",
+      "resurrectIfDe": "Nie für Wetterradar.",
+      "resurrectIfEn": "Never for weather radar.",
+      "nachruf": "08-friedhof/grabbeigaben/eurobirdcast.md"
     }
   ]
 }

@@ -62,8 +62,8 @@ describe('Buch zur Dose — Zugriff', () => {
   });
 
   it('findet ein Kapitel über seinen Slug', () => {
-    const kapitel = findChapter('eurobirdcast', 'besetzung');
-    expect(kapitel?.path).toBe('02-recherche/eurobirdcast-besetzung-2026-09-22.md');
+    const kapitel = findChapter('agent-postmortem-recorder', 'nachpruefung');
+    expect(kapitel?.path).toBe('02-recherche/agent-postmortem-recorder-nachpruefung-2026-09-24.md');
   });
 
   it('führt den Patch als eigene Kapitelart', () => {
@@ -71,6 +71,6 @@ describe('Buch zur Dose — Zugriff', () => {
   });
 
   it('gibt undefined für einen unbekannten Slug', () => {
-    expect(findChapter('eurobirdcast', 'gibt-es-nicht')).toBeUndefined();
+    expect(findChapter('agent-postmortem-recorder', 'gibt-es-nicht')).toBeUndefined();
   });
 });

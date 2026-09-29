@@ -1,3 +1,4 @@
 {"at":"2026-09-29T22:05:37.199Z","event":"cli","actor":"bibliothekar","runde":"Lab-Lacunar-Erstlauf (Walnüsse) — 29.09.2026","cmd":"protokoll add","id":"Walnuss-Klopftest (Fallgeräusch) als Handy-App"}
 {"at":"2026-09-29T22:07:16.317Z","event":"cli","cmd":"quellen log","actor":"bibliothekar","agent":"bibliothekar","runde":"Lab-Lacunar-Erstlauf (Walnüsse)","id":"unece-norm-ddp-02-walnusskerne-handelsqu"}
 {"at":"2026-09-29T22:07:23.488Z","event":"cli","cmd":"quellen log","actor":"bibliothekar","agent":"bibliothekar","runde":"Lab-Lacunar-Erstlauf (Walnüsse)","id":"aufprallakustik-an-walnuessen-ijabe-pmc"}
+{"at":"2026-09-29T22:20:44.232Z","event":"cli","actor":"bibliothekar","cmd":"grab add","ids":["eurobirdcast"]}

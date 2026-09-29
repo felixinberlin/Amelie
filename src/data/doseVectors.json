@@ -272,21 +272,6 @@
     "funDe": "Eigenen Code raten und sofort mit dem Expertenkonsens abgleichen ist eine echte Quiz-Schleife mit Lernkurve, die man zum Üben wiederholt.",
     "funEn": "Guessing your own code and instantly comparing it with the expert consensus is a real quiz loop with a learning curve worth repeating."
   },
-  "eurobirdcast": {
-    "v": [
-      5,
-      3,
-      4,
-      5,
-      4,
-      4,
-      5
-    ],
-    "fun": 3,
-    "funSource": "discovery",
-    "funDe": "Vogelzug aus Radardaten sichtbar zu machen hat Staunen-Potenzial, das Endprodukt ist aber eine nachrechenbare Abschaltempfehlung.",
-    "funEn": "Making bird migration visible from radar data has wonder potential, but the end product is a verifiable curtailment recommendation."
-  },
   "feuerkugel-sofortnetz": {
     "v": [
       5,
