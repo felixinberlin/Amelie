@@ -23,3 +23,17 @@ describe('Reviewer-Vektoren (V1–V8)', () => {
     for (const id of Object.keys(DOSE_VECTORS)) expect(ids.has(id)).toBe(true);
   });
 });
+
+describe('Kandidaten-Vektoren', () => {
+  it('jeder ungepackte Kandidat hat Vektoren, gepackte erben von ihrer Dose', async () => {
+    const { CANDIDATE_IDEAS_DATA } = await import('./unpacked');
+    const { CANDIDATE_VECTORS, getCandidateVectors } = await import('./vectors');
+    for (const c of CANDIDATE_IDEAS_DATA) {
+      const vec = getCandidateVectors(c.id, c.packedDoseId);
+      expect(vec, `Vektoren fehlen für Kandidat ${c.id}`).toBeDefined();
+      for (const s of [...vec!.v, vec!.fun]) expect(s >= 1 && s <= 5).toBe(true);
+    }
+    const ids = new Set(CANDIDATE_IDEAS_DATA.map((c) => c.id));
+    for (const id of Object.keys(CANDIDATE_VECTORS)) expect(ids.has(id)).toBe(true);
+  });
+});

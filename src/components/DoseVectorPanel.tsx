@@ -4,6 +4,7 @@ import {
   VECTOR_CATALOG,
   FUN_SOURCE_LABEL,
   getDoseVectors,
+  getCandidateVectors,
   vectorScore,
   vectorLabel,
   vectorQuestion,
@@ -12,7 +13,9 @@ import {
 } from '../data/vectors';
 
 interface Props {
+  /** Dose-Id (oder Kandidaten-Id, wenn `candidate` gesetzt) */
   doseId: string;
+  candidate?: { packedDoseId?: string };
   lang: Language;
   /** compact = nur Mini-Balken (Galeriekarte) */
   compact?: boolean;
@@ -22,8 +25,8 @@ interface Props {
 const barColor = (score: number, isFun: boolean) =>
   isFun ? 'var(--m-copper)' : score >= 4 ? 'var(--m-green)' : score === 3 ? 'var(--m-gold)' : 'var(--m-accent)';
 
-export const DoseVectorPanel: React.FC<Props> = ({ doseId, lang, compact }) => {
-  const vec = getDoseVectors(doseId);
+export const DoseVectorPanel: React.FC<Props> = ({ doseId, candidate, lang, compact }) => {
+  const vec = candidate ? getCandidateVectors(doseId, candidate.packedDoseId) : getDoseVectors(doseId);
   const isDe = lang === 'de';
   if (!vec) return null;
   const core = coreScore(vec);
@@ -58,7 +61,9 @@ export const DoseVectorPanel: React.FC<Props> = ({ doseId, lang, compact }) => {
     <section className="rounded-xl border border-[var(--m-line)] bg-[var(--m-sunk)] p-4" aria-label={isDe ? 'Reviewer-Vektoren' : 'Reviewer vectors'}>
       <div className="flex flex-wrap items-baseline justify-between gap-2 mb-3">
         <h4 className="font-typewriter uppercase tracking-wider text-xs font-semibold text-[var(--m-muted)]">
-          {isDe ? 'Vektoren (Idea Reviewer)' : 'Vectors (Idea Reviewer)'}
+          {candidate
+            ? (isDe ? 'Vektoren (Reviewer, Schreibtisch-Triage)' : 'Vectors (Reviewer, desk triage)')
+            : (isDe ? 'Vektoren (Idea Reviewer)' : 'Vectors (Idea Reviewer)')}
         </h4>
         <span className="text-xs font-typewriter text-[var(--m-ink)]">
           {isDe ? 'Kern' : 'Core'} <strong>{core}/35</strong> · {isDe ? 'gesamt inkl. Fun' : 'total incl. Fun'} <strong>{total}/40</strong>

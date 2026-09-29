@@ -31,6 +31,8 @@ import {
 } from 'lucide-react';
 import { Language, CandidateIdea, CandidateStatus, Verdict } from '../types';
 import { CANDIDATE_IDEAS_DATA } from '../data/unpacked';
+import { DoseVectorPanel } from './DoseVectorPanel';
+import { VECTOR_CATALOG, getCandidateVectors, vectorScore, totalScore, coreScore, vectorLabel, VectorKey } from '../data/vectors';
 import { loadCandidates, saveCandidates, clearCandidates, isReadyToPack } from '../utils/candidateStorage';
 import { getTranslation, getLocalizedTitle } from '../i18n';
 import {
@@ -78,6 +80,7 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
   const [copiedMd, setCopiedMd] = useState(false);
   const [showAddModal, setShowAddModal] = useState(false);
   const [themeFilter, setThemeFilter] = useState<string>('all');
+  const [vectorSort, setVectorSort] = useState<string>('default');
   const [showPacked, setShowPacked] = useState(false);
 
   // Nur, was in die Pipeline gehört: ohne Spiele (Tab Games), ohne Alltagsberufe
@@ -318,7 +321,7 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
   };
 
   // Filtering
-  const filteredCandidates = scoped.filter((c) => {
+  const unsortedCandidates = scoped.filter((c) => {
     // Theme filter
     if (themeFilter !== 'all' && themeIdOf(c) !== themeFilter) return false;
 
@@ -358,6 +361,20 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
 
     return true;
   });
+
+  const vectorSortScore = (c: CandidateIdea, key: string) => {
+    const vec = getCandidateVectors(c.id, c.packedDoseId);
+    if (!vec) return -1;
+    if (key === 'total') return totalScore(vec);
+    if (key === 'core') return coreScore(vec);
+    return vectorScore(vec, key as VectorKey);
+  };
+  const filteredCandidates =
+    vectorSort === 'default'
+      ? unsortedCandidates
+      : [...unsortedCandidates].sort(
+          (a, b) => vectorSortScore(b, vectorSort) - vectorSortScore(a, vectorSort) || vectorSortScore(b, 'total') - vectorSortScore(a, 'total'),
+        );
 
   const readyCount = scoped.filter((c) => isReadyToPack(c.status)).length;
   const investigatingCount = scoped.filter((c) => c.status === 'unklar').length;
@@ -600,6 +617,24 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
               {uniqueSourceTypes.map((st) => (
                 <option key={st} value={st}>
                   {st} ({scoped.filter((c) => c.sourceType === st).length})
+                </option>
+              ))}
+            </select>
+
+            {/* Sort by reviewer vector */}
+            <select
+              id="vector-sort-select"
+              value={vectorSort}
+              onChange={(e) => setVectorSort(e.target.value)}
+              aria-label={lang === 'de' ? 'Nach Vektor sortieren' : 'Sort by vector'}
+              className="bg-white border border-stone-300 rounded-xl px-3 py-1.5 shadow-2xs text-xs font-medium text-stone-700 focus:outline-none cursor-pointer max-w-[190px] truncate"
+            >
+              <option value="default">{lang === 'de' ? 'Sortierung: Standard' : 'Sort: default'}</option>
+              <option value="total">{lang === 'de' ? 'Vektoren: Gesamt (/40)' : 'Vectors: total (/40)'}</option>
+              <option value="core">{lang === 'de' ? 'Vektoren: Kern (/35)' : 'Vectors: core (/35)'}</option>
+              {VECTOR_CATALOG.map((def) => (
+                <option key={def.key} value={def.key}>
+                  {def.code} · {vectorLabel(def, lang)}
                 </option>
               ))}
             </select>
@@ -992,6 +1027,10 @@ export const UnpackedIdeasView: React.FC<UnpackedIdeasViewProps> = ({
                           </div>
                           <p className="text-stone-600 leading-normal">{evidence}</p>
                         </div>
+                      </div>
+
+                      <div className="pt-1">
+                        <DoseVectorPanel doseId={candidate.id} candidate={candidate} lang={lang} />
                       </div>
                     </div>
 
