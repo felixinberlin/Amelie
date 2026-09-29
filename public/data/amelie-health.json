@@ -1,9 +1,9 @@
 {
   "auditVersion": 1,
-  "generatedAt": "2026-09-29T07:07:20.669Z",
+  "generatedAt": "2026-09-29T07:46:09.748Z",
   "repository": {
-    "commit": "e32b472",
-    "branch": "claude/serene-hopper-xf7sid"
+    "commit": "c19ce67",
+    "branch": "main"
   },
   "inventory": {
     "doses": 44,

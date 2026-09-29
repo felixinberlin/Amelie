@@ -18,6 +18,15 @@ import {
   GnomeCostumeConfig,
   GnomeDestinationConfig,
 } from './travelingGnomeEngine';
+import {
+  createInitialCaramelState,
+  generateCrackPattern,
+  calculateAcousticCrackProfile,
+  evaluateSecretDiscovery,
+  calculateSatisfaction,
+  SECRET_QUOTES,
+  FLAVOR_CONFIGS,
+} from './cremeBruleeEngine';
 
 describe('Amélie Zen Games Modular Engines', () => {
   describe('Photobooth Puzzle Engine', () => {
@@ -192,6 +201,69 @@ describe('Amélie Zen Games Modular Engines', () => {
       const letterEn = generatePostcardSalutation(dest, costume, 'en');
       expect(letterEn).toContain('Dear Dad');
       expect(letterEn).toContain('baguette');
+    });
+  });
+
+  describe('Crème Brûlée Zen Engine', () => {
+    it('initializes pristine caramel state for flavors', () => {
+      const state = createInitialCaramelState('vanilla');
+      expect(state.flavor).toBe('vanilla');
+      expect(state.cracks.length).toBe(0);
+      expect(state.spoonTaps).toBe(0);
+      expect(state.satisfactionScore).toBe(0);
+      expect(FLAVOR_CONFIGS.vanilla.basePitch).toBeGreaterThan(0);
+    });
+
+    it('generates procedural branching fracture patterns on spoon strike', () => {
+      const crack = generateCrackPattern(10, -15, 0.7, 0, 150);
+      expect(crack.x).toBe(10);
+      expect(crack.y).toBe(-15);
+      expect(crack.force).toBe(0.7);
+      expect(crack.branches.length).toBeGreaterThanOrEqual(3);
+      for (const branch of crack.branches) {
+        expect(branch.width).toBeGreaterThan(0);
+        expect(branch.alpha).toBeGreaterThan(0);
+      }
+    });
+
+    it('computes acoustic crack synthesis profiles with frequency scaling', () => {
+      const thinProfile = calculateAcousticCrackProfile(0.8, 0.8, 'vanilla');
+      const thickProfile = calculateAcousticCrackProfile(0.8, 2.4, 'vanilla');
+
+      // Thinner crust yields a higher frequency snap than thicker crust
+      expect(thinProfile.fundamentalFreq).toBeGreaterThan(thickProfile.fundamentalFreq);
+      expect(thinProfile.decayTime).toBeGreaterThan(0);
+      expect(thinProfile.noiseLevel).toBeGreaterThan(0);
+    });
+
+    it('evaluates discovering hidden quotes upon striking their location', () => {
+      const state = createInitialCaramelState('vanilla');
+      const testSecrets = SECRET_QUOTES.map((s) => ({ ...s }));
+      const targetSecret = testSecrets[0];
+      const ramekinRadius = 150;
+      const targetX = targetSecret.xRatio * ramekinRadius;
+      const targetY = targetSecret.yRatio * ramekinRadius;
+
+      const { newlyDiscovered, updatedSecrets } = evaluateSecretDiscovery(
+        state,
+        testSecrets,
+        targetX,
+        targetY,
+        ramekinRadius
+      );
+
+      expect(newlyDiscovered).not.toBeNull();
+      expect(newlyDiscovered?.id).toBe(targetSecret.id);
+      expect(updatedSecrets.find((s) => s.id === targetSecret.id)?.discovered).toBe(true);
+    });
+
+    it('calculates increasing satisfaction score based on taps, shatters, and secrets', () => {
+      expect(calculateSatisfaction(0, 0, 0)).toBe(0);
+      const intermediate = calculateSatisfaction(4, 0.4, 1);
+      const mastery = calculateSatisfaction(12, 0.9, 4);
+      expect(intermediate).toBeGreaterThan(0);
+      expect(mastery).toBeGreaterThan(intermediate);
+      expect(mastery).toBeLessThanOrEqual(100);
     });
   });
 

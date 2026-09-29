@@ -7,6 +7,7 @@ import { getLocalizedTitle } from '../i18n';
 import { GrainSackZenGame } from './GrainSackZenGame';
 import { TravelingGnomeGame } from './TravelingGnomeGame';
 import { PhotoboothAlbumGame } from './PhotoboothAlbumGame';
+import { CremeBruleeGame } from './CremeBruleeGame';
 
 interface GamesViewProps {
   lang: Language;
@@ -14,7 +15,7 @@ interface GamesViewProps {
   onOpenDose: (doseId: string) => void;
 }
 
-type PlayableId = 'grain' | 'gnome' | 'photobooth';
+type PlayableId = 'grain' | 'gnome' | 'photobooth' | 'cremebrulee';
 
 const PLAYABLES: Array<{
   id: PlayableId;
@@ -24,6 +25,7 @@ const PLAYABLES: Array<{
   es: string;
   Component: React.FC<{ lang: Language }>;
 }> = [
+  { id: 'cremebrulee', emoji: '🍮', de: 'Die perfekte Zuckerkruste (Crème Brûlée)', en: 'The Perfect Caramelized Crust (Crème Brûlée)', es: 'La costra de azúcar perfecta (Crème Brûlée)', Component: CremeBruleeGame },
   { id: 'grain', emoji: '🌾', de: 'Hand im Getreidesack', en: 'Hand in the Grain Sack', es: 'Mano en el saco de grano', Component: GrainSackZenGame },
   { id: 'gnome', emoji: '🧙', de: 'Der reisende Gartenzwerg', en: 'The Traveling Gnome', es: 'El gnomo viajero', Component: TravelingGnomeGame },
   { id: 'photobooth', emoji: '📸', de: 'Ninos Fotoautomaten-Album', en: "Nino's Photobooth Album", es: 'El álbum del fotomatón de Nino', Component: PhotoboothAlbumGame },
