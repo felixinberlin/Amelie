@@ -5,7 +5,10 @@
     "bibliothekar": { "allow": ["*"] },
     "lab-librarian": {
       "allow": ["source.log", "grave.add"],
-      "conditional": { "protokoll.add": { "requires": "human_accepted" } }
+      "conditional": {
+        "protokoll.add": { "requires": "human_accepted" },
+        "source.add": { "requires": "human_accepted" }
+      }
     }
   }
 }

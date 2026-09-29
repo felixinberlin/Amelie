@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import {
   parseArgs, norm, matches, parseProtokoll, protokollStats, buildProtokollFelder, formatProtokollRow, insertProtokollRow,
-  validateGrab, orderGrab, readEnum, parseQuellenmeldung, meldungToArgs, findAll,
+  validateGrab, orderGrab, matchScore, stemOf, readEnum, parseQuellenmeldung, meldungToArgs, findAll,
 } from '../../scripts/bibliothek-lib.mjs';
 import { loadGraeber } from '../../scripts/dosen-lib.mjs';
 import { spawnSync } from 'node:child_process';
@@ -59,6 +59,17 @@ describe('Argumente und Suche', () => {
     expect(matches('Der Straßennamen-Prüfer', ['strassennamen', 'xyz'])).toBe(false);
     expect(matches('Der Straßennamen-Prüfer', ['strassennamen', 'xyz'], true)).toBe(true);
     expect(matches('irgendwas', [])).toBe(false);
+  });
+
+  it('Wortstamm und Kompositum-Endstück (--stamm) mit Trefferwert', () => {
+    expect(stemOf('fallgeraeusche')).toBe('fallgeraeusch');
+    expect(matches('Geräuschdiagnose per Handy', ['fallgeräusche'])).toBe(false);
+    expect(matches('Geräuschdiagnose per Handy', ['fallgeräusche'], false, false, true)).toBe(true);
+    expect(matchScore('Walnuss-Fallgeräusch', ['fallgeräusche'], { stamm: true })).toBe(0.6);
+    expect(matchScore('Geräuschdiagnose', ['fallgeräusche'], { stamm: true })).toBe(0.3);
+    expect(matchScore('Walnuss-Fallgeräusche', ['fallgeräusche'])).toBe(1);
+    expect(matchScore('Walnuss', ['fallgeräusche'], { stamm: true })).toBe(0);
+    expect(matchScore('Walnuss-Fallgeräusche', ['walnuss', 'quatsch'], { any: true })).toBe(0.5);
   });
 });
 

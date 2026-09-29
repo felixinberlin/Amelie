@@ -17,7 +17,7 @@ const KEBAB = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 // ---------------------------------------------------------------- Argumente
 
 /** Schalter ohne Wert: sie dürfen den folgenden Begriff nicht als Wert verschlucken (`find a --any b`). */
-export const BOOLEAN_FLAGS = new Set(['any', 'alle', 'json', 'dry-run', 'netz', 'schnell', 'abschnitte', 'wort', 'mock', 'yes', 'check']);
+export const BOOLEAN_FLAGS = new Set(['any', 'alle', 'json', 'dry-run', 'netz', 'schnell', 'abschnitte', 'wort', 'stamm', 'mock', 'yes', 'check']);
 
 /** `--flag wert`, `--flag` (= "true") und Positionsargumente. */
 export function parseArgs(argv) {
@@ -47,14 +47,39 @@ export function norm(s) {
  * Alle (oder mit any: mindestens ein) Suchbegriffe müssen im Text stehen.
  * Mit wort=true zählen nur ganze Wörter (`pegel` trifft nicht „Wetterverlauf“, `spiel` nicht „Spielarchiv“).
  */
-export function matches(text, terms, any = false, wort = false) {
+export function matches(text, terms, any = false, wort = false, stamm = false) {
+  return matchScore(text, terms, { any, wort, stamm }) > 0;
+}
+
+/** Einfacher Wortstamm: eine deutsche Endung (en, er, es, e, n, s) abschneiden, Rest mindestens 4 Zeichen. */
+export function stemOf(t) {
+  const m = /^(.{4,}?)(en|er|es|e|n|s)$/.exec(t);
+  return m ? m[1] : t;
+}
+
+/**
+ * Trefferstärke 0…1 (0 = kein Treffer). Jeder Begriff zählt: exakt 1,0 · Wortstamm 0,6 · Kompositum-Endstück 0,3
+ * (Stamm und Endstück nur mit stamm=true; das Endstück hat mindestens 7 Zeichen, damit `fallgeraeusche` das `geraeusch` findet).
+ * Alle Begriffe müssen treffen (mit any: mindestens einer); die Stärke ist der Mittelwert über alle Begriffe.
+ */
+export function matchScore(text, terms, { any = false, wort = false, stamm = false } = {}) {
   const t = norm(text);
   const ts = terms.map(norm).filter(Boolean);
-  if (!ts.length) return false;
-  const hit = wort
+  if (!ts.length) return 0;
+  const exact = wort
     ? (x) => new RegExp(`(^|[^a-z0-9])${x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}([^a-z0-9]|$)`).test(t)
     : (x) => t.includes(x);
-  return any ? ts.some(hit) : ts.every(hit);
+  const one = (x) => {
+    if (exact(x)) return 1;
+    if (!stamm) return 0;
+    const st = stemOf(x);
+    if (st !== x && t.includes(st)) return 0.6;
+    for (let i = 1; st.length - i >= 7; i++) if (t.includes(st.slice(i))) return 0.3;
+    return 0;
+  };
+  const w = ts.map(one);
+  if (any ? !w.some((x) => x > 0) : !w.every((x) => x > 0)) return 0;
+  return Math.round((w.reduce((a, b) => a + b, 0) / ts.length) * 100) / 100;
 }
 
 export function snippet(text, terms, width = 160) {
@@ -222,10 +247,11 @@ const LOG_FILES = [
 ];
 
 /** Durchsucht das gesamte Gedächtnis. `kind` „bindend“ heißt: Treffer sind ein „schon da“-Signal. */
-export function findAll(terms, { any = false, wort = false, root = repoRoot, quellen = [] } = {}) {
+export function findAll(terms, { any = false, wort = false, stamm = false, root = repoRoot, quellen = [] } = {}) {
   const hits = [];
   const add = (kind, bindend, id, title, text, where, extra = {}) => {
-    if (matches(`${id} ${title} ${text}`, terms, any, wort)) hits.push({ kind, bindend, id, title, where, ...extra, snippet: snippet(text || title, terms) });
+    const score = matchScore(`${id} ${title} ${text}`, terms, { any, wort, stamm });
+    if (score > 0) hits.push({ kind, bindend, id, title, where, score, ...extra, snippet: snippet(text || title, terms.map((x) => (stamm ? stemOf(norm(x)) : x))) });
   };
   const protokoll = readFileSync(PROTOKOLL, 'utf8');
   for (const r of parseProtokoll(protokoll)) add('protokoll', true, '', r.idee, r.text, `06-suche/amelie-pruefprotokoll.md:${r.line} [${r.urteil ?? '?'}]`, { file: '06-suche/amelie-pruefprotokoll.md', line: r.line, verdict: r.urteil, section: r.section });

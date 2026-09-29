@@ -8,7 +8,7 @@ Ein Werkzeug für das ganze Gedächtnis: `npm run bib -- <befehl>` (Skript `scri
 
 | Befehl | Zweck |
 |---|---|
-| `find <begriff…> [--any] [--alle] [--json]` | **„Gibt es das schon?“** Durchsucht Prüfprotokoll, Friedhof (`graeber.json`), Dosen (`05-dosen/`), Kandidaten (`unpacked.ts`, `ideas/*.ts`), Quellen-Register und die Logs (Klassifikation, Bisoziation, Inversion, Playbook/Atlas, Förderlandschaft, Nachrufe). Mehrere Begriffe: alle müssen im selben Eintrag stehen, `--any` genügt einer. Umlaute und Groß-/Kleinschreibung sind egal (`strassennamen` findet „Straßennamen“). |
+| `find <begriff…> [--any] [--wort] [--stamm] [--alle] [--json]` | **„Gibt es das schon?“** Durchsucht Prüfprotokoll, Friedhof (`graeber.json`), Dosen (`05-dosen/`), Kandidaten (`unpacked.ts`, `ideas/*.ts`), Quellen-Register und die Logs (Klassifikation, Bisoziation, Inversion, Playbook/Atlas, Förderlandschaft, Nachrufe). Mehrere Begriffe: alle müssen im selben Eintrag stehen, `--any` genügt einer. Umlaute und Groß-/Kleinschreibung sind egal (`strassennamen` findet „Straßennamen“). **`--stamm`** findet auch Wortstämme (Endung en/er/es/e/n/s weg) und Kompositum-Endstücke ab 7 Zeichen (`fallgeräusche` findet „Fallgeräusch“ und „Geräuschdiagnose“). Mit `--json` trägt jeder Treffer einen **`score`** 0…1: exakt 1,0 · Stamm 0,6 · Endstück 0,3, gemittelt über die Begriffe (bei `--any` zählen fehlende Begriffe als 0). Der Score ist ein Hinweis, kein Urteil: ein Endstück-Treffer (0,3) ist meist Nachbarschaft, kein Doppelfund. |
 | `vorflug [--thema x] [--netz]` | `git fetch`, Remote-Branches mit Commits der letzten 14 Tage, mit `--thema` Commits/Branches/Gedächtnis-Treffer zum Thema, mit `--netz` ein 5-Sekunden-Test einiger Hosts. Offene PRs kann die CLI nicht sehen: dafür `list_pull_requests`. |
 | `grab werte` | Erlaubte Werte des Totenscheins (cause, killer, foundBy, origin, stage). `grab list` meldet ungültige Filterwerte mit dieser Liste, statt „0 Gräber“ zu zeigen. |
 | `quellen formate` | Gültige `typ`/`kategorie`/`status`/`evidenz`/`zugang`/`rolle`-Werte des Quellen-Registers plus zwei Beispielzeilen der Quellenmeldung. Vor jeder Meldung lesen: `typ` ist ein historischer Buchstabe A–W (Playbook), keine freie Beschreibung, und `kategorie` stammt aus einer festen Liste. |
@@ -18,7 +18,7 @@ Ein Werkzeug für das ganze Gedächtnis: `npm run bib -- <befehl>` (Skript `scri
 | `protokoll stats [--abschnitte]` | Urteile gesamt, je Methode (`[method: …]`) und je Rundenabschnitt. Grundlage der Trefferquote. |
 | `status` | Dosen, Gräber, Protokollzeilen, Kandidaten, Quellen, Branch, offene Änderungen. |
 
-**Schalter** (`--any`, `--wort`, `--alle`, `--json`, `--dry-run`, `--netz`, `--schnell`, `--abschnitte`) nehmen keinen Wert und dürfen vor oder nach den Begriffen stehen. `--wort` zählt nur ganze Wörter (`wette` trifft nicht „Wetterverlauf“); ohne `--wort` ist die Suche eine Teilstring-Suche mit Umlaut-Faltung. Kompositum ohne Treffer sagt nichts über das Feld: mit Teilbegriffen und `--any` gegenprüfen. Ohne `-s` (`npm run -s bib -- …`) steht npm-Rauschen in der Ausgabe; alternativ `node scripts/bibliothek.mjs …`.
+**Schalter** (`--any`, `--wort`, `--stamm`, `--alle`, `--json`, `--dry-run`, `--netz`, `--schnell`, `--abschnitte`) nehmen keinen Wert und dürfen vor oder nach den Begriffen stehen. `--wort` zählt nur ganze Wörter (`wette` trifft nicht „Wetterverlauf“); ohne `--wort` ist die Suche eine Teilstring-Suche mit Umlaut-Faltung. Kompositum ohne Treffer sagt nichts über das Feld: mit `--stamm` oder Teilbegriffen und `--any` gegenprüfen. Ohne `-s` (`npm run -s bib -- …`) steht npm-Rauschen in der Ausgabe; alternativ `node scripts/bibliothek.mjs …`.
 
 **Exit-Codes von `find`:** `0` = kein Treffer in Protokoll/Friedhof/Dosen/Kandidaten, `2` = **schon da**. Treffer nur in Quellen oder Logs (Hintergrund) ändern den Exit-Code nicht. Ein Treffer heißt nicht „tot“, sondern: lesen und abgrenzen, bevor `frei` vergeben wird. Kein Treffer heißt nicht „frei“: die Existenzsuche bleibt Pflicht.
 
@@ -145,10 +145,14 @@ Es schreibt immer nur einer (`06-suche/.bib.lock`, mit PID und Akteur). Das gilt
 { "default": "deny",
   "actors": {
     "bibliothekar": { "allow": ["*"] },
-    "lab-librarian": { "allow": ["source.log", "grave.add"], "conditional": { "protokoll.add": { "requires": "human_accepted" } } } } }
+    "lab-librarian": { "allow": ["source.log", "grave.add"], "conditional": { "protokoll.add": { "requires": "human_accepted" }, "source.add": { "requires": "human_accepted" } } } } }
 ```
 
 `allow` nennt Operationen (`*` = alle). `conditional.<op>.requires` verlangt, dass die Operation **oder** der Plan das Feld mit `true` trägt. Unbekannte Akteure sind gesperrt. Geprüft wird vor Sperre und Zustand; eine einzige verbotene Operation blockiert den ganzen Plan. Änderungen an den Rechten sind ein Commit in Amélie, nicht im Lab. Die direkten CLI-Befehle sind der Bibliothekar und nicht eingeschränkt.
+
+**Neue Quellen vom Lab sind Vorschläge (30.09.2026):** `lab-librarian` darf `source.add` nur mit `human_accepted: true`. Der Ablauf: Das Lab legt den Plan mit `source.add` in den PR (Datei `results/…write-plan.json` oder als Anhang der Übergabenotiz), der Bibliothekar prüft die Quelle (Typ, Kategorie, Doppelfund über `bib quellen match --url`, `bib find`), setzt `human_accepted: true` und wendet den Plan selbst an. Ein Lab-Aufruf ohne das Feld endet mit Exit 12. **Bekannte Lücke:** `bib quellen import` prüft die Rechte-Datei nicht; das Lab soll ihn nicht mehr benutzen, sondern `bib apply` mit `source.add`. Eine technische Sperre gibt es dafür noch nicht.
+
+**`06-suche/bib-ledger.json` und `06-suche/bib-audit.jsonl` gehören ins Repo** (Entscheidung 30.09.2026): Das Ledger ist der Idempotenz-Zustand (ohne ihn wiederholt sich ein Plan nach einem frischen Checkout), das Audit-Log ist die Herkunft jeder Schreiboperation. Wer `bib apply` ausführt, committet beide Dateien mit den Daten in dieselbe Änderung. Nicht in `.gitignore` (dort stehen nur Sperre und Crash-Journal).
 
 ### Herkunft
 

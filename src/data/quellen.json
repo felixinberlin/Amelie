@@ -8540,7 +8540,10 @@
       "zuletzt": "2026-09-29",
       "ertrag": {
         "dosen": [],
-        "graeber": [],
+        "graeber": [
+          "walnuss-dichte-photogrammetrie",
+          "walnuss-schalenform-kernqualitaet"
+        ],
         "kandidaten": []
       },
       "vektoren": {
@@ -8562,6 +8565,12 @@
           "runde": "Lab-Lauf Lacunar 29.09.2026",
           "notiz": "Anker (Typ A) des Lab-Laufs vom 29.09.2026; die Norm gilt für Kerne, nicht für Nüsse in der Schale (laut Suchantwort). Nur als Suchzusammenfassung gelesen, nicht im Volltext.",
           "status": "angekratzt"
+        },
+        {
+          "datum": "2026-09-29",
+          "agent": "bibliothekar",
+          "runde": "Lab-Lacunar-Erstlauf (Walnüsse)",
+          "notiz": "Bibliothekar 30.09.2026: nur Suchschnipsel, Volltext nicht gelesen. Ertrag: beide Lab-Gräber stützen sich indirekt auf die Norm-Sichtprüfung."
         }
       ]
     },
@@ -8591,7 +8600,9 @@
       "zuletzt": "2026-09-29",
       "ertrag": {
         "dosen": [],
-        "graeber": [],
+        "graeber": [
+          "walnuss-schalenform-kernqualitaet"
+        ],
         "kandidaten": []
       },
       "vektoren": {
@@ -8613,6 +8624,12 @@
           "runde": "Lab-Lauf Lacunar 29.09.2026",
           "notiz": "Beleg dafür, dass die Walnuss-Klopftest-Idee des Lab-Laufs vom 29.09.2026 als Forschung bereits veröffentlicht ist; die Zahlen stammen aus Suchzusammenfassungen, die Arbeiten selbst wurden nicht gelesen.",
           "status": "angekratzt"
+        },
+        {
+          "datum": "2026-09-29",
+          "agent": "bibliothekar",
+          "runde": "Lab-Lacunar-Erstlauf (Walnüsse)",
+          "notiz": "Bibliothekar 30.09.2026: Forschung belegt (94,7 %/96,5 %), nur Suchschnipsel. Stützt Existenzprüfung Walnuss-Klopftest (besetzt)."
         }
       ]
     }

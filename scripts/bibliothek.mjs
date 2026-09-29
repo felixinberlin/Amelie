@@ -5,7 +5,7 @@
 // Jeder Befehl kennt --json (maschinenlesbar, Fehler als {code, field, message}); Exit-Codes sind stabil (scripts/bib-errors.mjs).
 //
 //   LESEN
-//   npm run bib -- find <begriff…> [--any] [--wort] [--alle] [--json]
+//   npm run bib -- find <begriff…> [--any] [--wort] [--stamm] [--alle] [--json]
 //   npm run bib -- exists <source|grave|dose|candidate|protokoll|plan> <id>
 //   npm run bib -- quellen match --url <u>       welche Quelle gehört zu dieser Adresse?
 //   npm run bib -- schema                        erlaubte Werte, Regeln, Operationen, Codes als JSON
@@ -70,8 +70,9 @@ const audit = (entry) => { if (!dry) auditAppend(repoRoot, { event: 'cli', actor
 const HILFE = `Bibliotheks-CLI — npm run bib -- <befehl>   (jeder Befehl: --json; Schreibbefehle: --dry-run, --wait <s>)
 
 LESEN (alle Agenten)
-  find <begriff…> [--any] [--wort] [--alle]   „Gibt es das schon?“ über Protokoll, Friedhof, Dosen, Kandidaten, Quellen, Logs.
-                                              Exit 2 = Treffer in Protokoll/Friedhof/Dosen/Kandidaten. Mehrere Begriffe = alle müssen passen (--any: einer genügt; --wort: nur ganze Wörter).
+  find <begriff…> [--any] [--wort] [--stamm] [--alle]   „Gibt es das schon?“ über Protokoll, Friedhof, Dosen, Kandidaten, Quellen, Logs.
+                                              Exit 2 = Treffer in Protokoll/Friedhof/Dosen/Kandidaten. Mehrere Begriffe = alle müssen passen (--any: einer genügt; --wort: nur ganze Wörter; --stamm: auch Wortstämme und Kompositum-Endstücke, „fallgeräusche“ findet „geräusch“).
+                                              --json liefert je Treffer „score“ 0…1 (exakt 1,0 · Stamm 0,6 · Endstück 0,3, Mittel über die Begriffe).
   exists <source|grave|dose|candidate|protokoll|plan> <id>   Vorprüfung; Exit 0 = gibt es, 4 = gibt es nicht
   quellen match --url <u>                     welche Quelle gehört zu dieser Adresse (exakt > Pfad > Host)? Exit 4 = keine
   quellen formate                             gültige typ/kategorie/status-Werte der Quellenmeldung
@@ -105,11 +106,11 @@ Handbuch: 06-suche/amelie-bibliothek-cli.md`;
 // ---------------------------------------------------------------- find, exists, match
 
 function cmdFind() {
-  if (!pos.length) die('Aufruf: bib find <begriff…> [--any] [--wort] [--alle] [--json]   (Schalter stehen vor oder nach den Begriffen)');
-  const hits = findAll(pos, { any: has('any'), wort: has('wort'), quellen: loadQuellen().quellen });
+  if (!pos.length) die('Aufruf: bib find <begriff…> [--any] [--wort] [--stamm] [--alle] [--json]   (Schalter stehen vor oder nach den Begriffen)');
+  const hits = findAll(pos, { any: has('any'), wort: has('wort'), stamm: has('stamm'), quellen: loadQuellen().quellen });
   const bindend = hits.filter((h) => h.bindend);
   if (json) {
-    out({ ok: true, terms: pos, any: has('any'), wort: has('wort'), alreadyThere: bindend.length > 0, hits: hits.map(({ bindend: b, ...h }) => ({ ...h, binding: b })) });
+    out({ ok: true, terms: pos, any: has('any'), wort: has('wort'), stamm: has('stamm'), alreadyThere: bindend.length > 0, hits: hits.map(({ bindend: b, ...h }) => ({ ...h, binding: b })) });
   } else {
     const titel = { protokoll: 'Prüfprotokoll', grab: 'Friedhof', dose: 'Dosen', kandidat: 'Kandidaten', quelle: 'Quellen-Register', log: 'Logs, Playbook, Förderlandschaft' };
     for (const kind of Object.keys(titel)) {

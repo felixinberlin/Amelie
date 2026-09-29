@@ -8,7 +8,9 @@ declare module '*bibliothek-lib.mjs' {
   export interface ProtokollFelder { nr?: string; idee: string; method: string; urteil: string; beleg: string; marke: string; datum: string; pruefenAb: string }
   export function parseArgs(argv: string[]): Args;
   export function norm(s: unknown): string;
-  export function matches(text: string, terms: string[], any?: boolean, wort?: boolean): boolean;
+  export function matches(text: string, terms: string[], any?: boolean, wort?: boolean, stamm?: boolean): boolean;
+  export function stemOf(term: string): string;
+  export function matchScore(text: string, terms: string[], opts?: { any?: boolean; wort?: boolean; stamm?: boolean }): number;
   export function snippet(text: string, terms: string[], width?: number): string;
   export function verdictOf(cell: string): string | null;
   export function parseProtokoll(text: string): ProtokollRow[];
