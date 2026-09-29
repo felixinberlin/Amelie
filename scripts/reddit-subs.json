@@ -1,0 +1,17 @@
+{
+  "period": "week",
+  "subs": [
+    { "sub": "SideProject", "group": "build" },
+    { "sub": "startups", "group": "build" },
+    { "sub": "SaaS", "group": "build" },
+    { "sub": "indiehackers", "group": "build" },
+    { "sub": "AppIdeas", "group": "ideas" },
+    { "sub": "opensource", "group": "oss" },
+    { "sub": "coolgithubprojects", "group": "oss" },
+    { "sub": "selfhosted", "group": "oss" },
+    { "sub": "ClaudeCode", "group": "ai" },
+    { "sub": "ClaudeAI", "group": "ai" },
+    { "sub": "civictech", "group": "civic" },
+    { "sub": "opendata", "group": "civic" }
+  ]
+}

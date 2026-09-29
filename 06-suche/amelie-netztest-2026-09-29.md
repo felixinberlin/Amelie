@@ -68,3 +68,10 @@ Die früheren Sperrvermerke (lfu.bayern.de, thuenen.de, eur-lex, duh.de) sind da
 
 * Typ X ist nicht mehr pauschal „Egress gesperrt": Reddit-RSS, HN, Lobsters, dev.to, Mastodon, Hugging Face und Trending über Jina sind erreichbar. Q1–Q6 bleiben `basis: auto`; bewertet wird erst, wenn eine Runde die Quelle wirklich anfasst.
 * Offen: Cellar-Text für ESPR/DVO, BGR mit Cookie-Jar, Tiefe der Reddit-Abdeckung (Rate-Limit), Verifikation, ob `r.jina.ai` dauerhaft nutzbar ist.
+
+## 6. Umsetzung: Reddit-Cache und Quellen-Tab
+
+* `scripts/fetch-reddit.mjs` (`npm run fetch:reddit`) holt seriell mit 65 s Pause `top.rss?t=week` je Sub aus `scripts/reddit-subs.json` und schreibt `public/data/reddit.json`. Fällt ein Sub aus (429/403), bleibt sein alter Bestand mit `stale: true`.
+* `.github/workflows/reddit-cache.yml` läuft täglich 03:17 UTC, committet bei Änderung nach `main` und stößt den Deploy per `workflow_dispatch` an.
+* **Ungeprüft:** ob Reddit die Feeds von GitHub-Runner-IPs ausliefert. Aus dieser Sitzung ging es nur über den Proxy. Erster Lauf per „Run workflow" prüfen; bei 403 den Lauf auf eine andere Umgebung legen.
+* Frontend: Tab **Reddit** (`RedditView`) und Tab **Quellen** (`QuellenView`, alle 128 Register-Einträge mit Filter, Suche, Sortierung) im Menü „Mehr & Werkzeuge". `public/data/reddit.json` ist mit r/opensource und r/coolgithubprojects vom 29.09.2026 vorbefüllt, die übrigen Subs stehen auf „noch nicht geholt".

@@ -13,6 +13,7 @@
     "check:books": "node scripts/check-dose-books.mjs",
     "check:idea-frontmatter": "node scripts/sync-idea-frontmatter.mjs --check",
     "check:protokoll": "node scripts/check-protokoll-coverage.mjs",
+    "fetch:reddit": "node scripts/fetch-reddit.mjs",
     "export:data": "node scripts/export-public-data.mjs",
     "friedhof": "node scripts/friedhof-muster.mjs",
     "quellen": "node scripts/quellen.mjs",
