@@ -54,15 +54,15 @@ Die Ursachen genauer:
 
 *Automatisch erzeugt aus `src/data/graeber.json` (`DISCARDED_DATA`) mit `npm run friedhof` (läuft nach `npm run bib -- grab add` von selbst). Nicht von Hand bearbeiten — `npm run lint` meldet Abweichungen.*
 
-**92 Gräber.** 3 davon starben erst als Dose oder Mail-Entwurf (teure Tode). Von 83 dokumentierten Fundwegen kamen 15 ohne neue Suche aus (eigener Atlas, eigenes Protokoll oder Reality-Check) — 18 %.
+**94 Gräber.** 3 davon starben erst als Dose oder Mail-Entwurf (teure Tode). Von 85 dokumentierten Fundwegen kamen 15 ohne neue Suche aus (eigener Atlas, eigenes Protokoll oder Reality-Check) — 18 %.
 
 **Woran sie starben**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Schon gebaut | 47 | 51 % |
-| Beim Empfänger selbst | 19 | 21 % |
-| Reality-Check | 12 | 13 % |
+| Schon gebaut | 47 | 50 % |
+| Beim Empfänger selbst | 19 | 20 % |
+| Reality-Check | 14 | 15 % |
 | Falsche Prämisse | 8 | 9 % |
 | Keine neue Fähigkeit | 4 | 4 % |
 | Duplikat | 2 | 2 % |
@@ -71,8 +71,8 @@ Die Ursachen genauer:
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Deutsche Suche | 32 | 35 % |
-| Englische Suche | 24 | 26 % |
+| Deutsche Suche | 32 | 34 % |
+| Englische Suche | 26 | 28 % |
 | Empfänger-Suche | 11 | 12 % |
 | Ohne Suche | 11 | 12 % |
 | Nicht dokumentiert | 9 | 10 % |
@@ -83,8 +83,8 @@ Die Ursachen genauer:
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Bisoziation | 32 | 35 % |
-| Primärquelle | 32 | 35 % |
+| Bisoziation | 34 | 36 % |
+| Primärquelle | 32 | 34 % |
 | Brainstorm | 16 | 17 % |
 | Ideenliste | 8 | 9 % |
 | Modell-Katalog | 4 | 4 % |
@@ -96,8 +96,8 @@ Die Ursachen genauer:
 | Firma | 26 | 28 % |
 | Forschung | 16 | 17 % |
 | Behörde | 14 | 15 % |
+| Niemand | 14 | 15 % |
 | Gemeinnützige | 12 | 13 % |
-| Niemand | 12 | 13 % |
 | Community / Indie | 10 | 11 % |
 | Eigener Bestand | 2 | 2 % |
 
@@ -105,7 +105,7 @@ Die Ursachen genauer:
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Kandidat | 89 | 97 % |
+| Kandidat | 91 | 97 % |
 | Dose gepackt | 2 | 2 % |
 | Mail entworfen | 1 | 1 % |
 
@@ -120,6 +120,7 @@ Die Ursachen genauer:
 | Dialekt-Quiz / Mundart-Diktat / Aufnahme-App | 29.09.2026 | Schon gebaut | Forschung | Deutsche Suche | Primärquelle | Kandidat | Wenn die Apps eingestellt werden und ihre Daten nicht offen bleiben. |
 | Hofnamen-Karte mit Adresse und Audio | 29.09.2026 | Schon gebaut | Behörde | Deutsche Suche | Bisoziation | Kandidat | Wenn eine deutsche Landesstelle Hofnamen nachweislich nicht führt und keine Community-Karte besteht. |
 | Kader-Zuverlässigkeit (Vereinsfußball als k-aus-n-System) | 29.09.2026 | Falsche Prämisse | Niemand | Ohne Suche | Bisoziation | Kandidat | Wenn ein Kreisspielausschuss oder eine SpielerPlus-/Spond-Auswertung Zusagequoten nach Anlässen veröffentlicht (Datensatz mit Abhängigkeit) und ein Verband daraus eine Kadergrößen-Empfehlung ableiten will. |
+| Kernqualität aus der Schalenform (Micro-CT-Abgleich, Handy-Modell je Ernte) | 29.09.2026 | Reality-Check | Niemand | Englische Suche | Bisoziation | Kandidat | Wenn eine begutachtete Studie an Walnüssen belegt, dass Schalenform oder -textur (Foto oder 3D-Scan) den Kernzustand vorhersagt. |
 | Kollektivziel-Ledger (Gemeinschaftsziele in Spielen nachweisen) | 29.09.2026 | Beim Empfänger selbst | Gemeinnützige | Englische Suche | Primärquelle | Kandidat | Wenn ein Fördergeber oder eine Aufsicht für Spiele-Impact-Zusagen einen unabhängigen Nachweis verlangt und ein offenes Berichtsformat sucht. |
 | LAN-Stromplaner (Lastrechnung für LAN-Partys) | 29.09.2026 | Falsche Prämisse | Niemand | Ohne Suche | Bisoziation | Kandidat | Nie als Rechner; nur wenn ein Veranstalterverband oder eine Elektro-Innung eine Prüfliste für Lastplanung von Veranstaltungen als offenes Formular anfragt. |
 | Lootbox-Odds-Auditor (Spieler poolen Öffnungsergebnisse gegen die Herstellerangabe) | 29.09.2026 | Reality-Check | Firma | Englische Suche | Primärquelle | Kandidat | Wenn Deutschland oder die EU eine Odds-Offenlegungspflicht mit Behördenverfahren einführt, das Stichproben als Beschwerdeunterlage annimmt. |
@@ -135,6 +136,7 @@ Die Ursachen genauer:
 | Straßennamen-Herkunft-Quiz / QR-Schild-Erklärer | 29.09.2026 | Schon gebaut | Community / Indie | Deutsche Suche | Primärquelle | Kandidat | Wenn die OSM-Etymologie-Daten für Deutschland dünn bleiben und keine Kommune Schilder trägt. |
 | Tippgemeinschafts-Beleg (Teilnehmerliste und Einzahlung vor der Ziehung festhalten) | 29.09.2026 | Schon gebaut | Firma | Deutsche Suche | Primärquelle | Kandidat | Nie; nur wenn eine Lottogesellschaft ein offenes, herstellerunabhängiges Nachweisformat für Spielgemeinschaften ausschreibt. |
 | Vorbewohner-Finder (Adressbücher) | 29.09.2026 | Beim Empfänger selbst | Gemeinnützige | Deutsche Suche | Bisoziation | Kandidat | Wenn CompGen den Zugang schließt oder Adressbücher außerhalb der Abdeckung liegen und Nutzer das nachweisen. |
+| Walnuss-Dichte per Photogrammetrie (Volumen aus Video, Gewicht von der Küchenwaage) | 29.09.2026 | Reality-Check | Niemand | Englische Suche | Bisoziation | Kandidat | Wenn eine begutachtete Studie an Walnüssen zeigt, dass die Gesamtdichte (Volumen und Gewicht) Füll- von Hohlnüssen oder schimmligen Kernen trennt. |
 | Zeitzeugen-Transkription / Entrauscher | 29.09.2026 | Beim Empfänger selbst | Forschung | Englische Suche | Primärquelle | Kandidat | Wenn Oral-History.Digital die Transkription einstellt oder sie für kleine Heimatarchive nicht zugänglich ist. |
 | Akku-Ankaufsuntersuchung (Batteriepass × Pferdekauf) | 28.09.2026 | Schon gebaut | Firma | Nicht dokumentiert | Bisoziation | Kandidat | Nie als Zertifikat. Höchstens, wenn der Batteriepass SoH-Daten öffentlich lesbar macht und kein Händlerprogramm Privatverkäufe abdeckt. |
 | Akkutausch-Protokoll (BattVO Art. 11) | 28.09.2026 | Beim Empfänger selbst | Gemeinnützige | Englische Suche | Brainstorm | Kandidat | Nach dem 18.02.2027, wenn eine Marktüberwachungsbehörde Bürgerhinweise zu Art. 11 BattVO anfordert und iFixit sie nicht strukturiert. |

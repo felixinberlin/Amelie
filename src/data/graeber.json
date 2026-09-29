@@ -2244,5 +2244,52 @@
     "diedOn": "2026-09-29",
     "resurrectIfDe": "Nie; nur wenn eine Lottogesellschaft ein offenes, herstellerunabhängiges Nachweisformat für Spielgemeinschaften ausschreibt.",
     "resurrectIfEn": "Never; only if a lottery company tenders an open, vendor-neutral proof format for betting pools."
+  },
+  {
+    "id": "walnuss-dichte-photogrammetrie",
+    "title": "Walnuss-Dichte per Photogrammetrie (Volumen aus Video, Gewicht von der Küchenwaage)",
+    "originalIdeaDe": "Eine App erstellt per Photogrammetrie aus einem kurzen Video ein 3D-Modell der Walnuss, berechnet mit dem eingegebenen Gewicht die Dichte und schätzt daraus, ob der Kern gut ist.",
+    "originalIdeaEn": "An app builds a 3D model of the walnut from a short video by photogrammetry, computes the density from the entered weight and estimates from it whether the kernel is good.",
+    "whyDiscardedDe": "Die Prämisse, dass die Bruttodichte der Nuss den Kernzustand vorhersagt, fand die Reality-Check-Suche nicht belegt: Die gefundenen Verfahren gehen durch die Schale (Aufprallakustik, Röntgen, Hyperspektral) oder prüfen den Kern selbst. Beleg ist eine Suchzusammenfassung (Schnipsel): „nicht belegt“ heißt hier nicht „widerlegt“. Der Kandidat ist außerdem messtechnisch heikel (Schalendicke und Hohlraum verändern Volumen und Gewicht unabhängig vom Kern).",
+    "whyDiscardedEn": "The reality-check search did not find the premise that a nut's bulk density predicts the kernel's condition. The methods it found go through the shell (impact acoustics, X-ray, hyperspectral) or examine the kernel itself. The evidence is a search summary (snippet): “not found” here does not mean “disproved”. The candidate is also delicate to measure (shell thickness and cavity change volume and weight independently of the kernel).",
+    "lessonDe": "Eine Größe, die nur indirekt am Kern hängt (Dichte der ganzen Nuss), braucht vor dem Ausarbeiten einen Beleg, dass sie ihn vorhersagt.",
+    "lessonEn": "A quantity that is only indirectly tied to the kernel (density of the whole nut) needs evidence that it predicts the kernel before it is worked out.",
+    "domain": "Lebensmittel · Walnuss-Qualität (zerstörungsfreie Prüfung)",
+    "evidence": [
+      "Lab-Lauf lacunar-20260929T203438-f693a3, Reality-Check-Suche 2 (Dichte und Akustik) [Schnipsel]",
+      "https://ijabe.org/index.php/ijabe/article/download/387/466/2076 [Schnipsel]"
+    ],
+    "cause": "reality-check",
+    "killer": "keiner",
+    "foundBy": "englisch",
+    "origin": "bisoziation",
+    "stage": "kandidat",
+    "bornIn": "Lab-Lauf 29.09.2026 · Bisoziation (Amélie-lab, Lacunar, lacunar-20260929T203438-f693a3)",
+    "diedOn": "2026-09-29",
+    "resurrectIfDe": "Wenn eine begutachtete Studie an Walnüssen zeigt, dass die Gesamtdichte (Volumen und Gewicht) Füll- von Hohlnüssen oder schimmligen Kernen trennt.",
+    "resurrectIfEn": "If a peer-reviewed study on walnuts shows that overall density (volume and weight) separates filled from hollow nuts or mouldy kernels."
+  },
+  {
+    "id": "walnuss-schalenform-kernqualitaet",
+    "title": "Kernqualität aus der Schalenform (Micro-CT-Abgleich, Handy-Modell je Ernte)",
+    "originalIdeaDe": "Kleinbauern schicken eine Probe von 100 Nüssen ans Labor (Micro-CT); eine KI lernt für Ernte und Sorte die Beziehung zwischen äußerer Schalenform und innerer Kernqualität und liefert ein Handy-Modell, das nur aus einem Foto der Schale urteilt.",
+    "originalIdeaEn": "Smallholders send a sample of 100 nuts to a lab (micro-CT); an AI learns, for that harvest and variety, the relation between outer shell shape and inner kernel quality and delivers a phone model that judges from a photo of the shell alone.",
+    "whyDiscardedDe": "Die Reality-Check-Suche fand kein Modell, das die Kernqualität allein aus der äußeren Schalenmorphologie vorhersagt; die belegten Verfahren (Röntgen mit Deep Learning, Hyperspektral, Aufprallakustik) durchdringen die Schale oder prüfen den Kern. Beleg ist eine Suchzusammenfassung („in den Ergebnissen nicht ausführlich dokumentiert“, Schnipsel): nicht belegt, nicht widerlegt. Der Labordienst mit CT wäre für Kleinbauern zudem teurer als die Nuss.",
+    "whyDiscardedEn": "The reality-check search found no model that predicts kernel quality from outer shell morphology alone; the documented methods (X-ray with deep learning, hyperspectral, impact acoustics) penetrate the shell or examine the kernel. The evidence is a search summary (“not extensively documented in the results”, snippet): not shown, not disproved. A CT lab service would also cost smallholders more than the nut is worth.",
+    "lessonDe": "Wenn die ganze Idee an einer Korrelation zwischen zwei schwer verbindbaren Eigenschaften hängt (außen Form, innen Defekt), gehört die Suche nach genau dieser Korrelation vor die Ausarbeitung (Retro des Lab-Laufs).",
+    "lessonEn": "If the whole idea rests on a correlation between two hard-to-link properties (outside shape, inside defect), the search for exactly that correlation belongs before the elaboration (retro of the Lab run).",
+    "domain": "Lebensmittel · Walnuss-Qualität (zerstörungsfreie Prüfung)",
+    "evidence": [
+      "Lab-Lauf lacunar-20260929T203438-f693a3, Reality-Check-Suche 3 (14 Quellen, u. a. PMC12753250, PMC9658913, mdpi.com 2076-3417/13/12/7311) [Schnipsel]"
+    ],
+    "cause": "reality-check",
+    "killer": "keiner",
+    "foundBy": "englisch",
+    "origin": "bisoziation",
+    "stage": "kandidat",
+    "bornIn": "Lab-Lauf 29.09.2026 · Bisoziation (Amélie-lab, Lacunar, lacunar-20260929T203438-f693a3)",
+    "diedOn": "2026-09-29",
+    "resurrectIfDe": "Wenn eine begutachtete Studie an Walnüssen belegt, dass Schalenform oder -textur (Foto oder 3D-Scan) den Kernzustand vorhersagt.",
+    "resurrectIfEn": "If a peer-reviewed study on walnuts shows that shell shape or texture (photo or 3D scan) predicts the kernel's condition."
   }
 ]

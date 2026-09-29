@@ -8514,6 +8514,107 @@
           "notiz": "Ertrag verknüpft: Grab preisturnier-ampel (bib quellen import lehnt Grab im ertrag ab, siehe CLI-Bericht)"
         }
       ]
+    },
+    {
+      "id": "unece-norm-ddp-02-walnusskerne-handelsqu",
+      "name": "UNECE-Norm DDP-02 Walnusskerne (Handelsqualität)",
+      "typ": "A",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://unece.org/DAM/trade/agr/standard/dry/dry_e/02WalnutKernels_e.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "pdf"
+      },
+      "enthaelt": "Handelsnorm für Walnusskerne: Mängelliste (Schrumpfung, Schimmel, Fäulnis, Insektenschäden), Qualitätsklassen, Stichprobenprüfung durch Sichtung nach dem Knacken",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-29",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "lab",
+          "runde": "Lab-Lauf Lacunar 29.09.2026",
+          "notiz": "Anker (Typ A) des Lab-Laufs vom 29.09.2026; die Norm gilt für Kerne, nicht für Nüsse in der Schale (laut Suchantwort). Nur als Suchzusammenfassung gelesen, nicht im Volltext.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "aufprallakustik-an-walnuessen-ijabe-pmc",
+      "name": "Aufprallakustik an Walnüssen (IJABE, PMC)",
+      "typ": "I",
+      "kategorie": "messverfahren",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://ijabe.org/index.php/ijabe/article/download/387/466/2076",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13564734/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "web"
+      },
+      "enthaelt": "Veröffentlichte Verfahren zur zerstörungsfreien Prüfung von Walnüssen per Aufprallgeräusch (Füll- gegen Hohlnuss 94,7 %, Freifall mit Deep Learning bis 96,5 %), daneben Röntgen und Hyperspektral",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-29",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "lab",
+          "runde": "Lab-Lauf Lacunar 29.09.2026",
+          "notiz": "Beleg dafür, dass die Walnuss-Klopftest-Idee des Lab-Laufs vom 29.09.2026 als Forschung bereits veröffentlicht ist; die Zahlen stammen aus Suchzusammenfassungen, die Arbeiten selbst wurden nicht gelesen.",
+          "status": "angekratzt"
+        }
+      ]
     }
   ],
   "nichtNutzen": [

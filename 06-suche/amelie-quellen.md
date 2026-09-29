@@ -7,7 +7,7 @@ Runde 2 hat gezeigt: Überlebende Ideen kommen aus Primärquellen, nicht aus Bra
 
 **Status:** `offen` (Nie gegraben oder nur als Anker genannt.) · `angekratzt` (Eine Suche oder ein Schnipsel; Publikationsliste nicht gelesen.) · `durchsucht` (Publikationsliste/Seite selbst gelesen.) · `erschöpft` (Anker dicht, kein weiterer Kandidat zu erwarten.) · `gesperrt` (Nicht (mehr) nutzen, z. B. Empfänger mit Nachfass-Sperre.)
 
-**Bestand:** 156 Quellen · 22 offen · 77 angekratzt · 37 durchsucht · 19 erschöpft · 1 gesperrt · Evidenz: 72 gelesen, 63 nur Schnipsel, 21 unbekannt.
+**Bestand:** 158 Quellen · 22 offen · 79 angekratzt · 37 durchsucht · 19 erschöpft · 1 gesperrt · Evidenz: 72 gelesen, 65 nur Schnipsel, 21 unbekannt.
 
 **Vektoren Q1–Q6** (1–5, Summe /30): Q1 Ergiebigkeit · Q2 Restpotenzial · Q3 Zugang · Q4 Belastbarkeit · Q5 Geländefreiheit · Q6 Anschluss. `auto` = aus Status/Evidenz/Ertrag abgeleitet, noch nicht bewertet.
 
@@ -33,6 +33,7 @@ Runde 2 hat gezeigt: Überlebende Ideen kommen aus Primärquellen, nicht aus Bra
 | **WSA/WRRL Gewässerökologie** `wsa-wrrl-gewaesseroekologie` | **Fokus:** Totholz-Kolk-Peiler | Webseite | `offen` | – | – | 22* |
 | **Berliner Leitfaden „Bauen mit Glas und Licht" (2021)** `berlin-leitfaden-bauen-mit-glas-und-licht` | **Fokus:** Licht-Glocken-Kataster | Webseite | `offen` — (Senatsverwaltung-Zeile oben; als Anker genannt, Leitfaden nicht gelesen) | – | – | 24* |
 | **Deutscher Pétanque Verband Regelwerk** `dpv-petanque-spielregeln` | Offizielle Pétanque-Spielregeln (Stand 03/2026) mit Messregeln *[Schnipsel]* | Webseite | `angekratzt` *(29.09.2026: Ertrag verknüpft: Grab boule-messfoto (bib quellen import lehnt Grab im ertrag ab, siehe CLI-Bericht))* | 29.09.2026 | Grab `boule-messfoto` | 21* |
+| **UNECE-Norm DDP-02 Walnusskerne (Handelsqualität)** `unece-norm-ddp-02-walnusskerne-handelsqu` | Handelsnorm für Walnusskerne: Mängelliste (Schrumpfung, Schimmel, Fäulnis, Insektenschäden), Qualitätsklassen, Stichprobenprüfung durch Sichtung nach dem Knacken *[Schnipsel]* | Webseite: pdf | `angekratzt` *(29.09.2026: Anker (Typ A) des Lab-Laufs vom 29.09.2026; die Norm gilt für Kerne, nicht für Nüsse in der Schale (laut Suchantwort). Nur als Suchzusammenfassung gelesen, nicht im Volltext.)* | 29.09.2026 | – | 21* |
 
 **Suchstring:** `<Gremium> Bewertungsverfahren Punktesystem` · `<Gremium> Kartieranleitung` · `<Gremium> Checkliste Vollzug`
 
@@ -151,6 +152,7 @@ Runde 2 hat gezeigt: Überlebende Ideen kommen aus Primärquellen, nicht aus Bra
 | **Li u. a., Biological Conservation 310 (2025)** `li-et-al-biological-conservation-2025` | Nationale Citizen-Science-Erhebung China 2021–2023: 3.078 Gebäude, 65.633 Erfassungstage, 676 Arten. Vegetation wirkt am stärksten auf 1.000 m (Frühjahr) und 10 km (Herbst); Bäume innerhalb 5 m senkten das Herbstrisiko; niedrigere Gebäude mit hohem Glasanteil gefährlicher. Steht quer zur Nahbereichs-Spiegelungslogik der deutschen Merkblätter — gehört in jedes „Wo es kippt" zu diesem Thema. | Webseite | `durchsucht` | 22.09.2026 (WV 03/2027) | – | 21* |
 | **Skill-Luck-Forschung Heidelberg (Duersch/Oechssler)** `skill-luck-forschung-heidelberg` | Elo-Verfahren zur Messung von Glück gegen Geschick in Spielen *[Schnipsel]* | Webseite | `angekratzt` *(29.09.2026: Ertrag verknüpft: Grab skill-luck-index (bib quellen import lehnt Grab im ertrag ab, siehe CLI-Bericht))* | 29.09.2026 | Grab `skill-luck-index` | 21* |
 | **Boule- und Bocce-Messapps (Booble, Tape measure for pétanque, Bocce Labs, US-Patent 9754373)** `boule-bocce-messapps` | Foto-basierte Entfernungsmessung Kugel zu Zielkugel *[Schnipsel]* | Webseite: App-Stores und patents.google.com | `angekratzt` *(29.09.2026: Ertrag verknüpft: Grab boule-messfoto (bib quellen import lehnt Grab im ertrag ab, siehe CLI-Bericht))* | 29.09.2026 | Grab `boule-messfoto` | 21* |
+| **Aufprallakustik an Walnüssen (IJABE, PMC)** `aufprallakustik-an-walnuessen-ijabe-pmc` | Veröffentlichte Verfahren zur zerstörungsfreien Prüfung von Walnüssen per Aufprallgeräusch (Füll- gegen Hohlnuss 94,7 %, Freifall mit Deep Learning bis 96,5 %), daneben Röntgen und Hyperspektral *[Schnipsel]* | Webseite: web | `angekratzt` *(29.09.2026: Beleg dafür, dass die Walnuss-Klopftest-Idee des Lab-Laufs vom 29.09.2026 als Forschung bereits veröffentlicht ist; die Zahlen stammen aus Suchzusammenfassungen, die Arbeiten selbst wurden nicht gelesen.)* | 29.09.2026 | – | 21* |
 
 **Suchstring:** `<Messgröße> from street view imagery deep learning` · `<Messgröße> urban scale estimation` · `<Phänomen> national citizen science dataset collisions`
 
