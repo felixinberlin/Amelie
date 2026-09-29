@@ -6,6 +6,8 @@ import { DOSE_SIMULATOR_MAP } from '../data/doseSimulators';
 import { getDoseUrl } from '../utils/doseUrl';
 import { SimulatorKey } from '../data/doseSimulators';
 import { AmelieRulesBanner } from './AmelieRulesBanner';
+import { DoseVectorPanel } from './DoseVectorPanel';
+import { VECTOR_CATALOG, getDoseVectors, vectorScore, totalScore, coreScore, vectorLabel, VectorKey } from '../data/vectors';
 
 interface DosenGalleryProps {
   dosen: DoseItem[];
@@ -148,6 +150,7 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
 }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedVerdict, setSelectedVerdict] = useState<string>('all');
+  const [sortBy, setSortBy] = useState<string>('default');
   const [selectedDomain, setSelectedDomain] = useState<string>('all');
   const [selectedTagState, setSelectedTagState] = useState<string | null>(initialSelectedTag);
   const [copiedDoseId, setCopiedDoseId] = useState<string | null>(null);
@@ -171,7 +174,7 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
   };
 
   const filteredDosen = useMemo(() => {
-    return dosen.filter((d) => {
+    const list = dosen.filter((d) => {
       const q = searchQuery.toLowerCase();
       const localizedTitle = getLocalizedTitle(d, lang).toLowerCase();
       const matchesSearch =
@@ -191,7 +194,18 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
 
       return matchesSearch && matchesVerdict && matchesDomain && matchesTag;
     });
-  }, [dosen, searchQuery, selectedVerdict, selectedDomain, selectedTag, lang]);
+    if (sortBy === 'default') return list;
+    const scoreOf = (id: string, key: string) => {
+      const vec = getDoseVectors(id);
+      if (!vec) return -1;
+      if (key === 'total') return totalScore(vec);
+      if (key === 'core') return coreScore(vec);
+      return vectorScore(vec, key as VectorKey);
+    };
+    return [...list].sort(
+      (a, b) => scoreOf(b.id, sortBy) - scoreOf(a.id, sortBy) || scoreOf(b.id, 'total') - scoreOf(a.id, 'total'),
+    );
+  }, [dosen, searchQuery, selectedVerdict, selectedDomain, selectedTag, sortBy, lang]);
 
   const domainOptions = [
     { id: 'all', labelDe: 'Alle Bereiche', labelEn: 'All Domains', labelEs: 'Todas las áreas' },
@@ -316,6 +330,23 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
             {verdictOptions.map((opt) => (
               <option key={opt.id} value={opt.id}>
                 {getVerdictOptionLabel(opt)}
+              </option>
+            ))}
+          </select>
+
+          {/* Sort by reviewer vector */}
+          <select
+            value={sortBy}
+            onChange={(e) => setSortBy(e.target.value)}
+            aria-label={lang === 'de' ? 'Nach Vektor sortieren' : 'Sort by vector'}
+            className="px-3.5 py-2.5 rounded-xl border border-[var(--m-line-strong)] bg-[var(--m-surface)] text-[#3d2f23] text-xs font-semibold focus:outline-hidden focus:ring-2 focus:ring-[var(--m-accent)]/20 shadow-2xs cursor-pointer"
+          >
+            <option value="default">{lang === 'de' ? 'Sortierung: Standard' : 'Sort: default'}</option>
+            <option value="total">{lang === 'de' ? 'Vektoren: Gesamt (/40)' : 'Vectors: total (/40)'}</option>
+            <option value="core">{lang === 'de' ? 'Vektoren: Kern (/35)' : 'Vectors: core (/35)'}</option>
+            {VECTOR_CATALOG.map((def) => (
+              <option key={def.key} value={def.key}>
+                {def.code} · {vectorLabel(def, lang)}
               </option>
             ))}
           </select>
@@ -462,6 +493,10 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
                       {lang === 'de' ? dose.recipientsDe : dose.recipientsEn}
                     </p>
                   </div>
+                </div>
+
+                <div className="mt-3">
+                  <DoseVectorPanel doseId={dose.id} lang={lang} compact />
                 </div>
 
                 {/* Tags & Action */}

@@ -25,6 +25,7 @@ const out = join(dir, 'bundle.mjs');
 writeFileSync(
   entry,
   `export { DOSEN_DATA, DISCARDED_DATA } from ${JSON.stringify(join(repoRoot, 'src/data/dosen.ts'))};
+export { VECTOR_CATALOG, DOSE_VECTORS } from ${JSON.stringify(join(repoRoot, 'src/data/vectors.ts'))};
 export { CANDIDATE_IDEAS_DATA } from ${JSON.stringify(join(repoRoot, 'src/data/unpacked.ts'))};
 export { exportDatabaseAsJson } from ${JSON.stringify(join(repoRoot, 'src/services/storageService.ts'))};
 export { FUNDING_DATA, VENTURE_LEADS_DATA, SOLO_FOUNDER_GUIDES, REAL_PROJECTS_DATA } from ${JSON.stringify(join(repoRoot, 'src/data/funding.ts'))};
@@ -33,10 +34,11 @@ export { FUNDING_DATA, VENTURE_LEADS_DATA, SOLO_FOUNDER_GUIDES, REAL_PROJECTS_DA
 
 try {
   await build({ entryPoints: [entry], bundle: true, format: 'esm', platform: 'node', outfile: out, logLevel: 'error' });
-  const { DOSEN_DATA, CANDIDATE_IDEAS_DATA, exportDatabaseAsJson, FUNDING_DATA, VENTURE_LEADS_DATA, SOLO_FOUNDER_GUIDES, REAL_PROJECTS_DATA } = await import(pathToFileURL(out).href);
+  const { VECTOR_CATALOG, DOSE_VECTORS, DOSEN_DATA, CANDIDATE_IDEAS_DATA, exportDatabaseAsJson, FUNDING_DATA, VENTURE_LEADS_DATA, SOLO_FOUNDER_GUIDES, REAL_PROJECTS_DATA } = await import(pathToFileURL(out).href);
   const pub = join(repoRoot, 'public/data');
   writeFileSync(join(pub, 'amelie-ideas.json'), exportDatabaseAsJson(DOSEN_DATA, CANDIDATE_IDEAS_DATA) + '\n');
   writeFileSync(join(pub, 'dosen.json'), JSON.stringify(DOSEN_DATA, null, 2) + '\n');
+  writeFileSync(join(pub, 'vectors.json'), JSON.stringify({ catalog: VECTOR_CATALOG, doses: DOSE_VECTORS }, null, 2) + '\n');
   writeFileSync(join(pub, 'unpacked.json'), JSON.stringify(CANDIDATE_IDEAS_DATA, null, 2) + '\n');
   writeFileSync(join(pub, 'funding.json'), JSON.stringify(FUNDING_DATA, null, 2) + '\n');
   writeFileSync(join(pub, 'ventures.json'), JSON.stringify({ ventureLeads: VENTURE_LEADS_DATA, soloFounderGuides: SOLO_FOUNDER_GUIDES, realProjects: REAL_PROJECTS_DATA }, null, 2) + '\n');

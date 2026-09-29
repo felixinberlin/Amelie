@@ -76,6 +76,11 @@ Wenn du ein Ticket, ein Kriterium oder eine Dosen-Beschreibung änderst, musst d
 
 ## 5. Aktueller Projektstand (Stand: 28. September 2026)
 
+* **Vektor V8 „Fun" (29.09.2026):**
+  * Der Reviewer bewertet jetzt **8 Vektoren** (V1–V7 Kern /35, V8 Fun additiv → Gesamt /40). Fun kompensiert nie; das Dose-Ready-Gate rechnet nur V1–V7 (≥ 24/35). Rubrik: `skills/idea-reviewer/idea-reviewer/references/vector-rubrics.md`.
+  * Alle 44 Dosen wurden neu klassifiziert (Log: Abschnitt „Fun-Re-Klassifikation" in `06-suche/amelie-classification-log.md`). Datenquelle fürs Frontend: `src/data/doseVectors.json` (+ Katalog `src/data/vectors.ts`, Export `public/data/vectors.json`). Sichtbar im Dosen-Modal, auf der Einzelseite (`DoseVectorPanel`) und als Mini-Balken plus Sortierung in der Galerie.
+  * **Bei jeder neuen Dose:** Eintrag in `src/data/doseVectors.json` ergänzen (`vectors.test.ts` schlägt sonst fehl), dann `npm run export:data`.
+
 * **Tab-Aufräumrunde (29.09.2026):**
   * Neuer Tab **Games** (`GamesView`, Hauptnavigation): spielbare Mini-Spiele (aus „Funny & Better" umgezogen; neu: „Lichter im Hof", Regelkern `src/engine/zen-games/hofLichterEngine.ts`), Spiel-Dosen (`GAME_DOSE_IDS` in `src/data/pipeline.ts`) und Spielideen (`src/data/ideas/games.ts`, `GAME_IDEAS`). Neue Spielideen dort eintragen, nicht in die Themenlisten.
   * **Ideen-Pipeline** zeigt nur noch nicht gepackte Themenideen: ohne Spiele, ohne Alltagsberufe (eigener Tab), ohne Ideen mit `packedDoseId` (per Häkchen einblendbar); Themenkörbe in `PIPELINE_THEMES`. `CANDIDATE_IDEAS_DATA` bleibt vollständig (Export, Protokoll-Abgleich).

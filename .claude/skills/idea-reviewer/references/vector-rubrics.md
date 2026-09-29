@@ -1,4 +1,4 @@
-# The 7-Vector Scoring Rubrics
+# The 8-Vector Scoring Rubrics
 
 Detailed quantitative scoring standards, calibration anchors, and deduction rules for the Idea Reviewer.
 
@@ -122,3 +122,27 @@ Measures primary source grounding to ensure the idea is not a hallucinated need.
 | **3** | **Type C / D Paper** | Peer-reviewed academic paper (arXiv, Springer) or documented AI pilot workshop report (CompGen). | Scientifically proven, but user friction unquantified. |
 | **4** | **Type B Bottleneck** | Official NGO / research institute annual report explicitly naming an unautomated evaluation bottleneck (Thünen MonViA). | Operationally verified manual pain point. |
 | **5** | **Type A Mandate** | Published legal ordinance (BGBl.), DIN/EN/VDI standard, or official municipal fee schedule (*Satzung*). | Absolute statutory ground truth. |
+
+---
+
+## Vector 8 · Fun (Freude, Spiellust, Schmunzeln)
+
+Measures whether using or receiving the gift is *enjoyable in itself* — beyond being useful. Added 29.09.2026. Fun is **not** a proxy for frivolity: a legal-compliance checker can be delightful (a satisfying reveal, a clever interaction, a moment of "aha"), and a game can be joyless. Score the experience of the first five minutes and the recipient's inclination to share it.
+
+| Score | Fun Profile | Signals |
+|:---:|---|---|
+| **1** | **Pure Chore** | Form-filling, dry lookup, dread-inducing subject; no feedback loop, no surprise. Value is entirely extrinsic. |
+| **2** | **Neutral Utility** | Works, clear, but nothing invites play or a smile. Output is a document or a number. |
+| **3** | **Pleasant** | Some tactile/visual feedback (live preview, animation, sound), an "aha" moment, or a light tone. Users would not mind using it twice. |
+| **4** | **Delightful** | Clear play loop: experiment, immediate response, discovery, or a physical/sensory hook (simulation, sound, camera). Users show it to others unprompted. |
+| **5** | **Irresistible** | Genuine toy or game quality: replayability, mastery curve, humor or wonder; people use it *without needing to*. |
+
+### Calibration Anchors
+* **1** — a statutory-form generator with a single output PDF and no interaction.
+* **3** — a decision tree with a satisfying verdict screen and a plain-language, human tone.
+* **5** — a physical simulation you can poke (crystal growth, wet ink, pin tumbler) or a playable game.
+
+### Rules
+* Fun is scored on the **first-step ticket's realistic scope**, not on the dream version.
+* Fun **never compensates** for a weak core vector: it does not enter the Dose Ready gate (see SKILL.md, Step 4). It is an additional lens for prioritising delivery, recipient fit (museums, schools, communities) and demo choice.
+* State the *fun source* in one phrase: `play` · `sensory` · `discovery` · `humor` · `mastery` · `none`.
