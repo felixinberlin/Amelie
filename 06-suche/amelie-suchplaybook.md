@@ -202,6 +202,7 @@ Wo Ideen schnell sterben — vor dem Suchen als Vorfilter nutzen.
 | Abdeckungs-Nachprüfung (8 Dosen ohne Protokollzeile, 6 davon aus dem Katalog) | 24.09.2026 | 8 (7 neu gesucht, 1 nur nachgetragen) | 0 | 7 | 0 | 1 (→ entsorgt) |
 | **Inversion Run 1 (Hof-Entkoppler)** | **25.09.2026** | **1** | **0** | **1** | **0** | **0** |
 | Inversion Run 2 (Bleifrei-Lotse, LegioKlar) | 25.09.2026 | 2 | 0 | 2 | 0 | 0 |
+| **Inversion Run 3 (AusweichZonen-Lotse)** | **27.09.2026** | **1** | **0** | **1** | **0** | **0** |
 | **Holz-Runde (3 Engines parallel; Doppelfunde einmal gezählt)** | **27.09.2026** | **19** (#1: 10, #2: 6, #3: 7; 4 Doppelfunde) | **2** | **6** | **3** | **8** |
 | **ESPR-Runde (Teamrunde, Orchestrierung Run 1; 3 Engines parallel; Doppelfunde einmal gezählt)** | **28.09.2026** | **11** (#1: 6, #2: 6, #3: 4 = 16 Kandidaten; 1 Dreifachfund, 1 Doppelfund, 1 Doppelkill, 1 Doppelbeleg, Stoppuhr in K2 aufgegangen) | **1** | **5** | **1** | **4** |
 | **Offenlegungs-Runde Lauf A (lokal; Teamrunde, Orchestrierung Run 2; 3 Engines parallel; Doppelfunde einmal gezählt)** | **28.09.2026** | **14** (#1: 9, #2: 6, #3: 7 = 22 Kandidaten; 2 Dreifachfunde, 2 Doppelfunde, 2 Doppelkills; K5b aus der Inversion eigene Zeile) | **1** | **4** | **2** | **7** |
@@ -424,6 +425,14 @@ Erste Runde, die mit einer **verschenkten** Dose als Ausgangspunkt arbeitet. Das
 - **Gelernt: Treppenhaus-Aushänge brauchen OCR-Verdolmetschung (OP-3).** Laborberichte zu Legionellen werden von Vermietern oft nur kurz ausgehängt und sind voller unverständlicher Fachwerte. Lokales clientseitiges OCR übersetzt KBE/100ml direkt in die UBA-Maßnahmenmatrix und berechnet Mietminderungsansprüche.
 - **Fehler:** Idee eines Wassertemperatur-Messers am Wasserhahn (Zirkulationswächter nach DVGW W 551) verworfen, da Mieter laut Rechtsprechung am Hahn nur ca. 40–45 °C verlangen können (Verbrühungsschutz), nicht die 60 °C Kesseltemperatur. Der Hebel liegt an den mikrobiologischen Laborgrenzwerten und dem harten Bleiverbot.
 - **Nächstes Mal:** EU-Ecodesign-Verordnung (ESPR) & Digital Product Passport (DPP) für Textilien/Elektronik: Inversion der Hersteller-Compliance in ein Bürger-Reparatur- und Obsoleszenz-Gegenwerkzeug (OP-2 / OP-4).
+
+### Mail-Ausgang — 27.09.2026 (AG Fraktographie, method: ideenrunde)
+- **Erledigt, was seit Runde 8 als „nächstes Mal" stand:** Mail an die AG Fraktographie entworfen und in `02-recherche/mail-ag-fraktographie.md` hinterlegt.
+
+### Inversion Run 3 — 27.09.2026 (AusweichZonen-Lotse / Bewohnerparken)
+- **Erledigt, was als „nächstes Mal" stand:** Zweiter Gebührenwerk-Anker (Bewohnerparken / Parkraum).
+- **Gelernt:** Bei Straßensperrungen (Baustellen) gibt es eine Vollzugslücke. Die Stadt kennt die Sperrungen und die betroffenen Anwohner mit Parkausweisen, kreuzt die Daten aber nicht proaktiv. Anwohner tragen das Risiko für den entfallenden Parkraum, obwohl sie eine Gebühr bezahlt haben.
+- **Nächstes Mal:** Dritte Inversion auf EU-Ecodesign-Verordnung (ESPR) & Digital Product Passport (DPP) für Textilien/Elektronik: Inversion der Hersteller-Compliance in ein Bürger-Reparatur- und Obsoleszenz-Gegenwerkzeug (OP-2 / OP-4).
 
 ### Session Outreach & Zustellung ChemGefahr-Stopp — 27.09.2026 (method: outreach-hardening)
 
