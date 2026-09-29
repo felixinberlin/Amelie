@@ -17,7 +17,7 @@ const KEBAB = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 // ---------------------------------------------------------------- Argumente
 
 /** Schalter ohne Wert: sie dürfen den folgenden Begriff nicht als Wert verschlucken (`find a --any b`). */
-export const BOOLEAN_FLAGS = new Set(['any', 'alle', 'json', 'dry-run', 'netz', 'schnell', 'abschnitte', 'wort']);
+export const BOOLEAN_FLAGS = new Set(['any', 'alle', 'json', 'dry-run', 'netz', 'schnell', 'abschnitte', 'wort', 'mock', 'yes', 'check']);
 
 /** `--flag wert`, `--flag` (= "true") und Positionsargumente. */
 export function parseArgs(argv) {

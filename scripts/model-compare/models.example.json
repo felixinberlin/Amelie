@@ -1,0 +1,34 @@
+{
+  "_doc": "Kopie nach scripts/model-compare/models.local.json (steht in .gitignore) und anpassen. provider: anthropic | vertex-claude | gemini | mock. price = Dollar je Million Token {in, out}; ohne Preis bleibt die Kostenzeile n/a. Modell-Ids für Gemini bewusst leer (SET_ME): bitte die aktuelle Id aus deiner Google-Cloud-Konsole eintragen.",
+  "judge": "claude-opus",
+  "models": [
+    {
+      "id": "claude-opus",
+      "provider": "vertex-claude",
+      "model": "claude-opus-5-5",
+      "project": null,
+      "region": "global",
+      "effort": "high",
+      "price": { "in": 4, "out": 20 },
+      "priceNote": "Erstanbieter-Preis der Referenz; auf Vertex gelten Partnerpreise, bitte gegen die Vertex-Preisseite prüfen."
+    },
+    {
+      "id": "claude-sonnet",
+      "provider": "vertex-claude",
+      "model": "claude-sonnet-5-5",
+      "region": "global",
+      "effort": "medium",
+      "price": { "in": 2, "out": 10 },
+      "priceNote": "Erstanbieter-Preis der Referenz; Vertex separat prüfen."
+    },
+    {
+      "id": "gemini",
+      "provider": "gemini",
+      "model": "SET_ME",
+      "vertex": true,
+      "project": null,
+      "location": "global",
+      "price": null
+    }
+  ]
+}
