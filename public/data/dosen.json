@@ -2847,5 +2847,53 @@
     "failureModeEn": "False positives on natural fluctuations. Remedy: clear confidence intervals and transparent thresholds.",
     "priorArtDe": "Frei (28.09.2026): Verschiedene GIS- und Statistiktools existieren für Experten; kein niederschwelliges, kostenloses Web-Tool für Ehrenamtliche.",
     "priorArtEn": "Free (28 Sep 2026): Various expert GIS and statistical tools exist; no lightweight, free web tool for volunteers."
+  },
+  {
+    "id": "strassennamen-pruefer",
+    "title": "Straßennamen-Prüfer",
+    "titleEn": "Street Name Checker",
+    "oneLinerDe": "Ein deterministischer Prüfer, der einen vorgeschlagenen neuen Straßennamen gegen das Straßenverzeichnis einer Gemeinde hält und Doppelungen und Klangzwillinge als Prüfhinweis mit Fundstelle meldet, nie als „unzulässig\".",
+    "oneLinerEn": "A deterministic checker that holds a proposed new street name against a municipality's street register and reports duplicates and sound-alikes as a review hint with the matching entry, never as \"not permitted\".",
+    "date": "29. September 2026",
+    "reviewAfter": "September 2027",
+    "recipientsDe": "Eine Person im Fachbereich Vermessung/Geoinformation einer Stadt (z. B. Frankfurt, Hannover, Düsseldorf) oder einer Landesvermessung — keine Person ermittelt, Name, Zuständigkeit und Adresse vor Versand verifizieren",
+    "recipientsEn": "A person in the surveying/geoinformation department of a city (e.g. Frankfurt, Hannover, Düsseldorf) or a state survey office — no person identified, verify name, remit and address before sending",
+    "domain": "civic",
+    "verdict": "gift",
+    "status": "gepackt",
+    "tags": [
+      "Straßennamen",
+      "Vermessung",
+      "Geoinformation",
+      "Kommunalverwaltung",
+      "Kölner Phonetik",
+      "Heimatgedächtnis"
+    ],
+    "problemDe": "Für ein Neubaugebiet brauchen Dutzende Straßen Namen, die sich nach kommunalen Richtlinien nicht mit vorhandenen verwechseln lassen dürfen (Frankfurt 2023: gleichklingende Namen vermeiden, nicht nur durch das Grundwort unterscheiden). Das Vermessungsamt prüft die Ähnlichkeit von Hand gegen das Verzeichnis; ein Werkzeug wurde nicht gefunden. Rutscht ein Zwilling durch, trifft es Rettung, Post und Ortsfremde (VGH Mannheim 13.11.1978: Umbenennung wegen Verwechslungsgefahr).",
+    "problemEn": "A new development area needs dozens of street names that under municipal guidelines must not be confusable with existing ones (Frankfurt 2023: avoid names that sound alike, avoid names distinguished only by the base word). The surveying office checks similarity against the register by hand; no tool was found. If a twin slips through, emergency services, post and visitors are affected (VGH Mannheim 13 Nov 1978: renaming because of risk of confusion).",
+    "whyNowDe": [
+      "Straßenlisten sind maschinenlesbar (GovData, OSM über Overpass); das Verzeichnis ist ohne Sonderzugang zu bekommen.",
+      "Die Regeln stehen in veröffentlichten Richtlinien (Drensteinfurt, Bornheim, Dortmund, Frankfurt 2023) und sind formalisierbar: Normalisierung, Grundwort, Klang, Editierdistanz, Ausnahme für Personennamen.",
+      "Ein reiner Client-Kern ist als statische Seite trivial auszuliefern; keine Daten verlassen den Rechner."
+    ],
+    "whyNowEn": [
+      "Street lists are machine-readable (GovData, OSM via Overpass); the register can be had without special access.",
+      "The rules are in published guidelines (Drensteinfurt, Bornheim, Dortmund, Frankfurt 2023) and can be formalised: normalisation, base word, sound, edit distance, exception for personal names.",
+      "A pure client kernel is trivial to ship as a static page; no data leaves the machine."
+    ],
+    "sketchDe": "Eingabe: Straßenliste der Gemeinde (CSV/GeoJSON) und ein oder mehrere Namensvorschläge. Logik: Normalisierung (ß/ss, Umlaute, Grundwort -straße/-weg/-allee/-platz abgestreift), Kölner Phonetik als eines von mehreren Signalen (für ganze Adressen ungeeignet), Editierdistanz, Grundwort-Doppelung; Ausnahme für Personennamen und räumlichen Zusammenhang als Schalter; jede Regel mit ID und Klartextbegründung. Ausgabe: Prüfhinweis je Vorschlag mit Fundstelle, nie „unzulässig\"; die Entscheidung bleibt bei Amt und Gremium. Nicht dabei: kein Flurnamen-Vorschlagsfundus (Ausbaustufe), keine Herkunftserklärung der Namen, kein Server, keine Rechtsauskunft.",
+    "sketchEn": "Input: the municipality's street list (CSV/GeoJSON) and one or more name proposals. Logic: normalisation (ß/ss, umlauts, base word -straße/-weg/-allee/-platz stripped), Cologne phonetics as one signal among several (unsuitable for whole addresses), edit distance, base-word duplication; exception for personal names and spatial context as a switch; every rule with an ID and plain-language reason. Output: a review hint per proposal with the matching entry, never \"not permitted\"; the decision stays with office and council. Not included: no field-name suggestion pool (extension stage), no explanation of name origins, no server, no legal advice.",
+    "firstStepDe": {
+      "ticket": "Ein Vorschlag, ein Verzeichnis, ein Prüfhinweis: reiner TypeScript-Kern pruefeStrassenname(vorschlag, verzeichnis, optionen) mit den Regeln aus drei kommunalen Richtlinien als Regelquelle, dazu eine statische Offline-Seite.",
+      "criteria": "Fertig, wenn eine Vitest-Suite mit ≥ 20 Fällen grün ist (Grundwort-Doppelung, ß/ss, Umlaute, Klangzwilling, Personennamen-Ausnahme, unverdächtiger Name), ein Testset bekannter Verwechslungspaare aus Richtlinien-Beispielen und VGH-Fall erkannt wird und eine echte Straßenliste (GovData oder OSM-Overpass) ohne unerklärte Treffer-Flut läuft; jede Meldung trägt Regel-ID, Fundstelle und Begründung (De/En), das Wort „unzulässig\" wird nirgends ausgegeben; die Seite läuft offline ohne Netzwerkaufruf, Ablage unter 07-demos/strassennamen-pruefer/."
+    },
+    "firstStepEn": {
+      "ticket": "One proposal, one register, one hint: a pure TypeScript kernel pruefeStrassenname(proposal, register, options) using the rules of three municipal guidelines as its rule source, plus a static offline page.",
+      "criteria": "Done when a Vitest suite with ≥ 20 cases is green (base-word duplication, ß/ss, umlauts, sound-alike, personal-name exception, unremarkable name), a test set of known confusable pairs from guideline examples and the VGH case is detected and a real street list (GovData or OSM Overpass) runs without an unexplained flood of hits; every message carries rule ID, matching entry and reason (De/En), the word \"not permitted\" is never output; the page runs offline with no network call, stored under 07-demos/strassennamen-pruefer/."
+    },
+    "failureModeDe": "Gate nur knapp erreicht (24/35): Die Ämter prüfen möglicherweise schon intern (ALKIS-Fachschalen, Adressverwaltung); gefunden wurde nichts, ausgeschlossen ist es nicht. Dann bleibt höchstens eine Zweitmeinung für kleine Gemeinden. Zweitens Falschalarm-Flut durch Phonetik. Gegenmaßnahme: nur Hinweise, Rangfolge nach Regelstärke, einstellbare Schwellen, Kölner Phonetik nie allein. Offen gelegt: Empfängerperson nicht ermittelt (vor Versand verifizieren), Fun niedrig (2, Nachschlagen).",
+    "failureModeEn": "Gate only just reached (24/35): offices may already check internally (ALKIS specialist schemas, address management); nothing was found, but it is not ruled out. Then at most a second opinion for small municipalities remains. Second, a flood of false alarms from phonetics. Remedy: hints only, ranking by rule strength, adjustable thresholds, Cologne phonetics never alone. Disclosed: recipient person not identified (verify before sending), fun low (2, lookup).",
+    "priorArtDe": "Unklar bis frei (29.09.2026, Suchschnipsel und Richtlinien-Ausschnitte): Ämter (Münster, Hildesheim, Düsseldorf, Tübingen, Bamberg, Städtetag) prüfen manuell; zwei Gegen-Suchen (Tool/Software für Ähnlichkeitsprüfung, OSM-Forum „Doppelte Straßennamen finden\") fanden kein Werkzeug. Besetzt ist die Nachbarfrage Herkunftserklärung (OSM name:etymology:wikidata, Schilder in Koblenz, Leipzig, Braunschweig, Hannover). ALKIS-interne Prüfung nicht ausgeschlossen. Förderbrücke (nur Hinweis, Fristen aus Katalog-Schnipsel, vor Nennung prüfen): Prototype Fund Klasse 03 (01.10.–30.11.2026; Wohnsitz DE, Teams bis 4, volle Open-Source-Lizenz, Behörden und Vereine ausgeschlossen), nachrangig mFUND. Dose: https://felixinberlin.github.io/Amelie/#dose=strassennamen-pruefer",
+    "priorArtEn": "Unclear to free (29 Sep 2026, search snippets and guideline excerpts): offices (Münster, Hildesheim, Düsseldorf, Tübingen, Bamberg, Städtetag) check manually; two counter-searches (tool/software for similarity checks, OSM forum \"find duplicate street names\") found no tool. The neighbouring question of explaining name origins is occupied (OSM name:etymology:wikidata, signs in Koblenz, Leipzig, Braunschweig, Hannover). ALKIS-internal checks not ruled out. Funding bridge (hint only, deadlines from catalogue snippet, verify before mentioning): Prototype Fund class 03 (1 Oct–30 Nov 2026; residence in Germany, teams up to 4, full open-source licence, public bodies and associations excluded), secondarily mFUND. Tin: https://felixinberlin.github.io/Amelie/#dose=strassennamen-pruefer"
   }
 ]

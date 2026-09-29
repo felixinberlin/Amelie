@@ -1025,3 +1025,38 @@ Alle 146 ungepackten Kandidaten aus `CANDIDATE_IDEAS_DATA` wurden vom Idea Revie
 | `seed-germination-soil-temp-calendar` | ungeprüft | 24 | 3 | 27 |
 
 **Fun-Verteilung:** 5× 3 · 4× 26 · 3× 57 · 2× 47 · 1× 13 · Ø 2.72. Vollständige Werte im Frontend (Ideen-Pipeline, Sortierung nach Vektor).
+
+---
+
+## Heimatgedächtnis-Runde 29.09.2026 (Teamrunde "Heimatgedächtnis & Spiel") — Reviewer-Urteile
+
+Quelle: Konvergenz-Merge Abschnitt A (14 Kandidaten; Cluster #3 zählt als eine Idee). Abschnitt B (besetzt) unbewertet an den Bibliothekar. Vorprüfung gegen Friedhof-README und Prüfprotokoll: keine Wiedergänger (kein Treffer zu Flurname, Dialekt, Wenker, Abzählreim, Straßenname). Gezielt nachgeprüft (WebFetch/WebSearch, `[Seite]` wo gelesen): UDI Würzburg, Wenkerbögen-App (sprachspuren.de), Marburg-Meldungen 2026, Babbelbox (hessenschau), Zwölfer-Wikipedia, kommunale Straßenbenennungs-Richtlinien. Alle Empfänger-Personen unverifiziert. V8 (Fun) additiv, nicht im Gate.
+
+| Idee | V1 | V2 | V3 | V4 | V5 | V6 | V7 | Kern /35 | V8 | Urteil |
+|---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|---|
+| `strassennamen-pruefer` (#4) | 3 | 3 | 4 | 3 | 3 | 4 | 4 | **24** | 2 | **Dose Ready (knapp)** |
+| `flurnamen-verortungsspiel` (#3 zusammengeführt) | 3 | 3 | 3 | 3 | 3 | 3 | 4 | 22 | 4 | Needs Research |
+| `bergsonnenuhr-peiler` (#9) | 2 | 3 | 4 | 3 | 3 | 3 | 3 | 21 | 4 | Friedhof |
+| `ortsneckname` (#1) | 2 | 4 | 3 | 3 | 3 | 3 | 3 | 21 | 4 | Needs Research |
+| `abzaehlreim` (#2) | 3 | 4 | 3 | 3 | 3 | 3 | 2 | 21 | 4 | Needs Research |
+| `wenkerbogen-lesehilfe` (#8) | 3 | 2 | 3 | 3 | 3 | 3 | 4 | 21 | 3 | Needs Research |
+| `legenden-alibi` (#11) | 4 | 3 | 3 | 3 | 2 | 3 | 3 | 21 | 4 | Needs Research |
+| `flurnamen-deutungswerkbank` (#6) | 3 | 3 | 2 | 3 | 3 | 3 | 3 | 20 | 4 | Needs Research (Stufe 2 von #3) |
+| `mundart-echtheitsprobe` (#7) | 3 | 2 | 3 | 3 | 3 | 3 | 3 | 20 | 4 | Needs Research |
+| `wetterregel-liga` (#10) | 3 | 3 | 3 | 3 | 2 | 3 | 2 | 19 | 4 | Needs Research (niedrig) |
+| `wossidlo-entzifferer` (#5) | 3 | 2 | 2 | 3 | 2 | 2 | 4 | 18 | 4 | Needs Research (niedrig; Empfängergruppe von #3) |
+| `namens-zeuge` (#12) | 3 | 3 | 2 | 3 | 2 | 2 | 2 | 17 | 3 | Friedhof |
+| `namen-vs-ackerzahl` (#13) | 3 | 3 | 3 | 2 | 2 | 2 | 2 | 17 | 3 | Friedhof |
+| `sagen-abenteuer` (#14) | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 14 | 5 | Friedhof |
+
+**Dose Ready: `strassennamen-pruefer` (Gesamt 26/40).** Deterministischer Ähnlichkeits-Prüfer für neue Straßennamen gegen das bestehende Straßenverzeichnis einer Gemeinde: Normalisierung (ß/ss, Umlaute, Grundwort -straße/-weg/-allee/-platz abgestreift), Kölner Phonetik plus Editierdistanz, Ausnahme Personennamen/räumlicher Zusammenhang. Ausgabe ist ein Prüfhinweis mit Fundstelle, nie „unzulässig". Ground Truth `[Seite]` (kommunale Richtlinien, Web-Fetch-Snippets gelesen): Drensteinfurt, Bornheim, Dortmund, Frankfurt-Leitfaden 2023 („gleichklingende Namen sind zu vermeiden", „nur durch das Grundwort unterschieden" vermeiden); Vermessungsamt führt Vorschlagsliste und prüft Ähnlichkeit von Hand; VGH Mannheim 13.11.1978 (Umbenennung wegen Verwechslungsgefahr). Zwei unabhängige Gegen-Suchen (Tool/Software für Ähnlichkeitsprüfung, OSM-Forum „Doppelte Straßennamen finden"): kein Werkzeug gefunden. Kölner Phonetik ist für ganze Adressen ungeeignet (Wikipedia), daher nur als eines von mehreren Signalen. Empfänger: eine Person im Fachbereich Vermessung/Geoinformation einer Stadt (z. B. Frankfurt, Hannover, Düsseldorf) oder Landesvermessung; **Person und Zuständigkeit vor Versand verifizieren**. Erster Schritt: Engine mit 3 Richtlinien als Regelquelle, Testset aus bekannten Verwechslungspaaren, Straßenliste aus GovData/OSM (Overpass), reine Client-Seite. Risiko: Gate nur knapp erreicht (V1/V5 dünn); ALKIS-Fachschalen könnten interne Prüfungen haben (nicht gefunden). Fun 2 (Nachschlagen). Der Flurnamen-Vorschlagsfundus aus K8/H2 bleibt Ausbaustufe, nicht Ticket 01.
+
+**Needs Research, Datentests.**
+- `flurnamen-verortungsspiel`: Varianten fundort/motivraten/Nebel der Namen zusammengeführt (Ortskundige verorten Unverortetes; Nebel-Ansicht als UI). Beleg `[Seite]`: Rostock ~8.000 nicht verortbar, manuell; Thüringen ~126.000 Namen, 400+ Freiwillige, Förderung ausgesetzt. Datentest zuerst: Leave-one-out mit den bereits verorteten Rostocker Namen (räumlicher Nachbar-Prior, kein LLM). Nur eine Dose pro Rostocker Empfängergruppe: #5 nicht parallel.
+- `ortsneckname`: UDI hat Datenbank (1.503 Einträge, 1.495 Orte) **und** das Monatsquiz „Wässd du dos?" seit 04/2016 `[Seite/Schnipsel]`: Spielform in Franken besetzt. Lücke nur außerhalb Frankens (verstreute Heimatverein-Listen, Bücher); Urheberrecht offen. Lizenz der UDI-Daten nicht angegeben.
+- `abzaehlreim`: Volksliederarchiv listet ~1.300 Kinderreime, keine Karte; V7 2 (kein Engpass genannt). Trägerschaft des Archivs (privat?) und BAdW-Bezug ungeklärt.
+- `wenkerbogen-lesehilfe`: Wenkerbögen-App rein manuell `[Seite]` (Kurrent-Anzeige, GitHub-Sync, >100.000 Sätze); Transkribus-Kurrentmodelle frei. Handout 12/2025 nicht lesbar (PDF), Kill-Risiko hoch, DSA/Mainz-Akademie könnte HTR planen.
+- `mundart-echtheitsprobe`: Marburg Netzwerk „Regionale Sprache und KI" (2026) fordert offene Daten, kein Mitmachangebot `[Seite]`; Babbelbox-Entwickler findet keine Sprecher `[Seite]`. Timing gut, aber Sammelbetrieb braucht Träger.
+- `legenden-alibi`, `wetterregel-liga`, `flurnamen-deutungswerkbank`, `wossidlo-entzifferer`: je ein Datentest nötig (Itinerar-Abdeckung, DWD/Phänologie-Regelbeispiele, Belegformen-Quelle, Transkribus-Kurrent an 20 Karten).
+
+**Friedhof-Empfehlungen.** `bergsonnenuhr-peiler`: cause `praemisse`, killer `community`, stage `kandidat`. Zwölfer = wahrer Mittag = Azimut 180 Grad konstant (Linie, kein Ring); Elfer/Zehner: bei 47,1 N Azimut 148–165 Grad je nach Jahreszeit (Band); Wikipedia „Zwölfer (Bergname)" rechnet Abweichungen je Gipfel schon von Hand. `namens-zeuge`: cause `reality-check`, killer `keiner`, stage `kandidat` (Altlast-Haftungsnähe, Namen-Sachverhalt-Zuordnung ungetestet). `namen-vs-ackerzahl`: cause `reality-check`, killer `keiner` (Einzelstudie statt Werkzeug, Bodenschätzung föderal uneinheitlich). `sagen-abenteuer`: cause `mode`, killer `kommerziell` (Standortspiele/Warnliste), LLM-Geschichten für Kinder.

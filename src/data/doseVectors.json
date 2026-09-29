@@ -663,5 +663,21 @@
     "funSource": "sensory",
     "funDe": "Tinte, die im Browser mit Kapillarfluss und taktilem Klang ins Papier läuft, lädt zum Herumspielen um seiner selbst willen ein.",
     "funEn": "Ink bleeding into paper in the browser with capillary flow and tactile sound invites play for its own sake."
+  },
+  "strassennamen-pruefer": {
+    "v": [
+      3,
+      3,
+      4,
+      3,
+      3,
+      4,
+      4
+    ],
+    "fun": 2,
+    "funSource": "discovery",
+    "funDe": "Nachschlagen im Straßenverzeichnis mit kleinem Aha bei einem Klangzwilling, aber ein kommunales Verfahren ohne Spielschleife.",
+    "funEn": "Lookup in the street register with a small aha at a sound-alike, but a municipal procedure with no play loop.",
+    "note": "Reviewer 29.09.2026 in classification-log (Heimatgedächtnis-Runde): V1/V5 dünn, ALKIS-intern nicht ausgeschlossen, Ground Truth kommunale Richtlinien + VGH Mannheim 1978"
   }
 }

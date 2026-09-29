@@ -2515,6 +2515,47 @@ Amélie Initiative (Félix, Berlin)`
     failureModeEn: 'False positives on natural fluctuations. Remedy: clear confidence intervals and transparent thresholds.',
     priorArtDe: 'Frei (28.09.2026): Verschiedene GIS- und Statistiktools existieren für Experten; kein niederschwelliges, kostenloses Web-Tool für Ehrenamtliche.',
     priorArtEn: 'Free (28 Sep 2026): Various expert GIS and statistical tools exist; no lightweight, free web tool for volunteers.'
+  },
+  {
+    id: 'strassennamen-pruefer',
+    title: 'Straßennamen-Prüfer',
+    titleEn: 'Street Name Checker',
+    oneLinerDe: 'Ein deterministischer Prüfer, der einen vorgeschlagenen neuen Straßennamen gegen das Straßenverzeichnis einer Gemeinde hält und Doppelungen und Klangzwillinge als Prüfhinweis mit Fundstelle meldet, nie als „unzulässig".',
+    oneLinerEn: 'A deterministic checker that holds a proposed new street name against a municipality\'s street register and reports duplicates and sound-alikes as a review hint with the matching entry, never as "not permitted".',
+    date: '29. September 2026',
+    reviewAfter: 'September 2027',
+    recipientsDe: 'Eine Person im Fachbereich Vermessung/Geoinformation einer Stadt (z. B. Frankfurt, Hannover, Düsseldorf) oder einer Landesvermessung — keine Person ermittelt, Name, Zuständigkeit und Adresse vor Versand verifizieren',
+    recipientsEn: 'A person in the surveying/geoinformation department of a city (e.g. Frankfurt, Hannover, Düsseldorf) or a state survey office — no person identified, verify name, remit and address before sending',
+    domain: 'civic',
+    verdict: 'gift',
+    status: 'gepackt',
+    tags: ['Straßennamen', 'Vermessung', 'Geoinformation', 'Kommunalverwaltung', 'Kölner Phonetik', 'Heimatgedächtnis'],
+    problemDe: 'Für ein Neubaugebiet brauchen Dutzende Straßen Namen, die sich nach kommunalen Richtlinien nicht mit vorhandenen verwechseln lassen dürfen (Frankfurt 2023: gleichklingende Namen vermeiden, nicht nur durch das Grundwort unterscheiden). Das Vermessungsamt prüft die Ähnlichkeit von Hand gegen das Verzeichnis; ein Werkzeug wurde nicht gefunden. Rutscht ein Zwilling durch, trifft es Rettung, Post und Ortsfremde (VGH Mannheim 13.11.1978: Umbenennung wegen Verwechslungsgefahr).',
+    problemEn: 'A new development area needs dozens of street names that under municipal guidelines must not be confusable with existing ones (Frankfurt 2023: avoid names that sound alike, avoid names distinguished only by the base word). The surveying office checks similarity against the register by hand; no tool was found. If a twin slips through, emergency services, post and visitors are affected (VGH Mannheim 13 Nov 1978: renaming because of risk of confusion).',
+    whyNowDe: [
+      'Straßenlisten sind maschinenlesbar (GovData, OSM über Overpass); das Verzeichnis ist ohne Sonderzugang zu bekommen.',
+      'Die Regeln stehen in veröffentlichten Richtlinien (Drensteinfurt, Bornheim, Dortmund, Frankfurt 2023) und sind formalisierbar: Normalisierung, Grundwort, Klang, Editierdistanz, Ausnahme für Personennamen.',
+      'Ein reiner Client-Kern ist als statische Seite trivial auszuliefern; keine Daten verlassen den Rechner.'
+    ],
+    whyNowEn: [
+      'Street lists are machine-readable (GovData, OSM via Overpass); the register can be had without special access.',
+      'The rules are in published guidelines (Drensteinfurt, Bornheim, Dortmund, Frankfurt 2023) and can be formalised: normalisation, base word, sound, edit distance, exception for personal names.',
+      'A pure client kernel is trivial to ship as a static page; no data leaves the machine.'
+    ],
+    sketchDe: 'Eingabe: Straßenliste der Gemeinde (CSV/GeoJSON) und ein oder mehrere Namensvorschläge. Logik: Normalisierung (ß/ss, Umlaute, Grundwort -straße/-weg/-allee/-platz abgestreift), Kölner Phonetik als eines von mehreren Signalen (für ganze Adressen ungeeignet), Editierdistanz, Grundwort-Doppelung; Ausnahme für Personennamen und räumlichen Zusammenhang als Schalter; jede Regel mit ID und Klartextbegründung. Ausgabe: Prüfhinweis je Vorschlag mit Fundstelle, nie „unzulässig"; die Entscheidung bleibt bei Amt und Gremium. Nicht dabei: kein Flurnamen-Vorschlagsfundus (Ausbaustufe), keine Herkunftserklärung der Namen, kein Server, keine Rechtsauskunft.',
+    sketchEn: 'Input: the municipality\'s street list (CSV/GeoJSON) and one or more name proposals. Logic: normalisation (ß/ss, umlauts, base word -straße/-weg/-allee/-platz stripped), Cologne phonetics as one signal among several (unsuitable for whole addresses), edit distance, base-word duplication; exception for personal names and spatial context as a switch; every rule with an ID and plain-language reason. Output: a review hint per proposal with the matching entry, never "not permitted"; the decision stays with office and council. Not included: no field-name suggestion pool (extension stage), no explanation of name origins, no server, no legal advice.',
+    firstStepDe: {
+      ticket: 'Ein Vorschlag, ein Verzeichnis, ein Prüfhinweis: reiner TypeScript-Kern pruefeStrassenname(vorschlag, verzeichnis, optionen) mit den Regeln aus drei kommunalen Richtlinien als Regelquelle, dazu eine statische Offline-Seite.',
+      criteria: 'Fertig, wenn eine Vitest-Suite mit ≥ 20 Fällen grün ist (Grundwort-Doppelung, ß/ss, Umlaute, Klangzwilling, Personennamen-Ausnahme, unverdächtiger Name), ein Testset bekannter Verwechslungspaare aus Richtlinien-Beispielen und VGH-Fall erkannt wird und eine echte Straßenliste (GovData oder OSM-Overpass) ohne unerklärte Treffer-Flut läuft; jede Meldung trägt Regel-ID, Fundstelle und Begründung (De/En), das Wort „unzulässig" wird nirgends ausgegeben; die Seite läuft offline ohne Netzwerkaufruf, Ablage unter 07-demos/strassennamen-pruefer/.'
+    },
+    firstStepEn: {
+      ticket: 'One proposal, one register, one hint: a pure TypeScript kernel pruefeStrassenname(proposal, register, options) using the rules of three municipal guidelines as its rule source, plus a static offline page.',
+      criteria: 'Done when a Vitest suite with ≥ 20 cases is green (base-word duplication, ß/ss, umlauts, sound-alike, personal-name exception, unremarkable name), a test set of known confusable pairs from guideline examples and the VGH case is detected and a real street list (GovData or OSM Overpass) runs without an unexplained flood of hits; every message carries rule ID, matching entry and reason (De/En), the word "not permitted" is never output; the page runs offline with no network call, stored under 07-demos/strassennamen-pruefer/.'
+    },
+    failureModeDe: 'Gate nur knapp erreicht (24/35): Die Ämter prüfen möglicherweise schon intern (ALKIS-Fachschalen, Adressverwaltung); gefunden wurde nichts, ausgeschlossen ist es nicht. Dann bleibt höchstens eine Zweitmeinung für kleine Gemeinden. Zweitens Falschalarm-Flut durch Phonetik. Gegenmaßnahme: nur Hinweise, Rangfolge nach Regelstärke, einstellbare Schwellen, Kölner Phonetik nie allein. Offen gelegt: Empfängerperson nicht ermittelt (vor Versand verifizieren), Fun niedrig (2, Nachschlagen).',
+    failureModeEn: 'Gate only just reached (24/35): offices may already check internally (ALKIS specialist schemas, address management); nothing was found, but it is not ruled out. Then at most a second opinion for small municipalities remains. Second, a flood of false alarms from phonetics. Remedy: hints only, ranking by rule strength, adjustable thresholds, Cologne phonetics never alone. Disclosed: recipient person not identified (verify before sending), fun low (2, lookup).',
+    priorArtDe: 'Unklar bis frei (29.09.2026, Suchschnipsel und Richtlinien-Ausschnitte): Ämter (Münster, Hildesheim, Düsseldorf, Tübingen, Bamberg, Städtetag) prüfen manuell; zwei Gegen-Suchen (Tool/Software für Ähnlichkeitsprüfung, OSM-Forum „Doppelte Straßennamen finden") fanden kein Werkzeug. Besetzt ist die Nachbarfrage Herkunftserklärung (OSM name:etymology:wikidata, Schilder in Koblenz, Leipzig, Braunschweig, Hannover). ALKIS-interne Prüfung nicht ausgeschlossen. Förderbrücke (nur Hinweis, Fristen aus Katalog-Schnipsel, vor Nennung prüfen): Prototype Fund Klasse 03 (01.10.–30.11.2026; Wohnsitz DE, Teams bis 4, volle Open-Source-Lizenz, Behörden und Vereine ausgeschlossen), nachrangig mFUND. Dose: https://felixinberlin.github.io/Amelie/#dose=strassennamen-pruefer',
+    priorArtEn: 'Unclear to free (29 Sep 2026, search snippets and guideline excerpts): offices (Münster, Hildesheim, Düsseldorf, Tübingen, Bamberg, Städtetag) check manually; two counter-searches (tool/software for similarity checks, OSM forum "find duplicate street names") found no tool. The neighbouring question of explaining name origins is occupied (OSM name:etymology:wikidata, signs in Koblenz, Leipzig, Braunschweig, Hannover). ALKIS-internal checks not ruled out. Funding bridge (hint only, deadlines from catalogue snippet, verify before mentioning): Prototype Fund class 03 (1 Oct–30 Nov 2026; residence in Germany, teams up to 4, full open-source licence, public bodies and associations excluded), secondarily mFUND. Tin: https://felixinberlin.github.io/Amelie/#dose=strassennamen-pruefer'
   }
 ];
 
@@ -4219,6 +4260,285 @@ export const DISCARDED_DATA: DiscardedItem[] = [
     diedOn: '2026-09-28',
     resurrectIfDe: 'Wenn ESAP die Berichte nicht maschinenlesbar oder nicht kostenfrei bereitstellt.',
     resurrectIfEn: 'If ESAP does not provide the reports machine-readable or free of charge.'
+  },
+  {
+    id: 'hofnamen-karte',
+    title: 'Hofnamen-Karte mit Adresse und Audio',
+    originalIdeaDe: 'Hof- und Hausnamen (Vulgonamen) mit Adresse und Aussprache-Audio als Karte.',
+    originalIdeaEn: 'Map of farm and house names with address and audio pronunciation.',
+    whyDiscardedDe: 'Besetzt (Dreifach-Kill aller Engines): Österreich hat die Daten amtlich und offen (DORIS Oberösterreich, rund 100.000 Hofnamen; FLU-LED Kärnten; Steiermark-Adressregister mit Vulgonamen). Für Deutschland nicht geprüft, die Lücke dort ist ungeklärt.',
+    whyDiscardedEn: 'Occupied (triple kill by all engines): Austria holds the data officially and openly (DORIS Upper Austria, about 100,000 farm names; FLU-LED Carinthia; Styria address register with vulgo names). Germany was not checked, so the gap there is unresolved.',
+    lessonDe: 'Bei Ortswissen zuerst die Landesämter des Nachbarlands suchen: Sammeln ist dort amtlich erledigt.',
+    lessonEn: 'For local knowledge, search the neighbouring country\'s state offices first: collecting is done there officially.',
+    domain: 'Heimatgedächtnis & Ortswissen',
+    evidence: [
+      'DORIS Oberösterreich — Hofnamen [Schnipsel]',
+      'FLU-LED Kärnten [Schnipsel]'
+    ],
+    cause: 'gebaut',
+    killer: 'behoerde',
+    foundBy: 'deutsch',
+    origin: 'bisoziation',
+    stage: 'kandidat',
+    bornIn: 'Heimatgedächtnis-Runde 29.09.2026 · Bisoziation Run 12 (Dreifachfund mit Ideenrunde und Inversion Run 6 H7)',
+    diedOn: '2026-09-29',
+    resurrectIfDe: 'Wenn eine deutsche Landesstelle Hofnamen nachweislich nicht führt und keine Community-Karte besteht.',
+    resurrectIfEn: 'If no German state body holds farm names and no community map exists.'
+  },
+  {
+    id: 'dialekt-quiz-mundart-diktat',
+    title: 'Dialekt-Quiz / Mundart-Diktat / Aufnahme-App',
+    originalIdeaDe: 'Quiz, Diktat oder Aufnahme-App, mit der Sprecher Mundart erkennen, abgeben und vergleichen (auch als Familien-Dialektbohrkern).',
+    originalIdeaEn: 'Quiz, dictation or recording app in which speakers recognise, submit and compare dialect (also as a family dialect core sample).',
+    whyDiscardedDe: 'Besetzt (Dreifach-Kill): Dialäkt Äpp, DialektDetect, DICLA, AdA, OeDA Salzburg, dialektatlas.ch und die App „Grüezi, Moin, Servus" decken Sammeln, Quiz und Karte ab.',
+    whyDiscardedEn: 'Occupied (triple kill): Dialäkt Äpp, DialektDetect, DICLA, AdA, OeDA Salzburg, dialektatlas.ch and the "Grüezi, Moin, Servus" app cover collecting, quiz and map.',
+    lessonDe: 'Dialekt-Apps sind das dichteste Feld des Heimatgedächtnisses; nur das Prüfen gegen Messbares ist dort noch offen.',
+    lessonEn: 'Dialect apps are the densest field of local memory; only checking against something measurable is still open there.',
+    domain: 'Heimatgedächtnis & Ortswissen',
+    evidence: [
+      'Dialäkt Äpp, DialektDetect, DICLA, AdA, OeDA Salzburg, dialektatlas.ch [Schnipsel]'
+    ],
+    cause: 'gebaut',
+    killer: 'forschung',
+    foundBy: 'deutsch',
+    origin: 'quelle',
+    stage: 'kandidat',
+    bornIn: 'Heimatgedächtnis-Runde 29.09.2026 · Ideenrunde E1 (Dreifachfund mit Bisoziation Run 12 und Inversion Run 6 H6)',
+    diedOn: '2026-09-29',
+    resurrectIfDe: 'Wenn die Apps eingestellt werden und ihre Daten nicht offen bleiben.',
+    resurrectIfEn: 'If the apps are shut down and their data does not stay open.'
+  },
+  {
+    id: 'zeitzeugen-transkription',
+    title: 'Zeitzeugen-Transkription / Entrauscher',
+    originalIdeaDe: 'Automatische Transkription und Entrauschen von Zeitzeugen-Interviews für Heimatarchive.',
+    originalIdeaEn: 'Automatic transcription and denoising of oral-history interviews for local archives.',
+    whyDiscardedDe: 'Beim Empfänger: ASR4Memory (WhisperX) ist in Oral-History.Digital integriert; die Archive bekommen die Funktion aus ihrer eigenen Plattform.',
+    whyDiscardedEn: 'At the recipient: ASR4Memory (WhisperX) is integrated into Oral-History.Digital; archives get the function from their own platform.',
+    lessonDe: 'Bei Archiv-Werkzeugen zuerst die Plattform des Empfängers prüfen, nicht die Ideenlisten.',
+    lessonEn: 'For archive tools, check the recipient\'s own platform first, not idea lists.',
+    domain: 'Heimatgedächtnis & Ortswissen',
+    evidence: [
+      'ASR4Memory / Oral-History.Digital [Schnipsel]'
+    ],
+    cause: 'beim-empfaenger',
+    killer: 'forschung',
+    foundBy: 'englisch',
+    origin: 'quelle',
+    stage: 'kandidat',
+    bornIn: 'Heimatgedächtnis-Runde 29.09.2026 · Ideenrunde E1 (Doppelkill mit Bisoziation Run 12)',
+    diedOn: '2026-09-29',
+    resurrectIfDe: 'Wenn Oral-History.Digital die Transkription einstellt oder sie für kleine Heimatarchive nicht zugänglich ist.',
+    resurrectIfEn: 'If Oral-History.Digital drops transcription or it is inaccessible to small local archives.'
+  },
+  {
+    id: 'strassennamen-herkunft-quiz',
+    title: 'Straßennamen-Herkunft-Quiz / QR-Schild-Erklärer',
+    originalIdeaDe: 'Quiz oder QR-Schild, das die Herkunft von Straßennamen erklärt.',
+    originalIdeaEn: 'Quiz or QR sign that explains where street names come from.',
+    whyDiscardedDe: 'Besetzt: OSM-Tag name:etymology:wikidata, „Back of Your Hand" und Erklärschilder in Koblenz, Leipzig, Braunschweig und Hannover decken die Herkunftsfrage ab. Nachbar der Dose `strassennamen-pruefer`, die eine andere Frage stellt (Verwechslung statt Herkunft).',
+    whyDiscardedEn: 'Occupied: the OSM tag name:etymology:wikidata, "Back of Your Hand" and explanatory signs in Koblenz, Leipzig, Braunschweig and Hannover cover the origin question. Neighbour of the tin `strassennamen-pruefer`, which asks a different question (confusion, not origin).',
+    lessonDe: 'Bei Straßennamen ist die Herkunft besetzt, das Prüfen gegen die Richtlinie war frei: die Frage entscheidet.',
+    lessonEn: 'For street names, origin is occupied while checking against the guideline was free: the question decides.',
+    domain: 'Heimatgedächtnis & Ortswissen',
+    evidence: [
+      'OSM name:etymology:wikidata, Back of Your Hand [Schnipsel]',
+      'Koblenz, Leipzig, Braunschweig, Hannover [Schnipsel]'
+    ],
+    cause: 'gebaut',
+    killer: 'community',
+    foundBy: 'deutsch',
+    origin: 'quelle',
+    stage: 'kandidat',
+    bornIn: 'Heimatgedächtnis-Runde 29.09.2026 · Ideenrunde E1 (Doppelfund mit Inversion Run 6 H9)',
+    diedOn: '2026-09-29',
+    resurrectIfDe: 'Wenn die OSM-Etymologie-Daten für Deutschland dünn bleiben und keine Kommune Schilder trägt.',
+    resurrectIfEn: 'If OSM etymology data stays thin for Germany and no municipality carries signs.'
+  },
+  {
+    id: 'plattdeutsch-tts-uebersetzer',
+    title: 'Plattdeutsch-TTS / -Übersetzer',
+    originalIdeaDe: 'Sprachausgabe und Übersetzer für Plattdeutsch.',
+    originalIdeaEn: 'Text-to-speech and translator for Low German.',
+    whyDiscardedDe: 'Beim Empfänger: Die Ostfriesische Landschaft hat am 13.09.2026 eine ostfriesische TTS-Stimme veröffentlicht, der Übersetzer ist in Arbeit.',
+    whyDiscardedEn: 'At the recipient: the Ostfriesische Landschaft released an East Frisian TTS voice on 13 Sep 2026, the translator is in progress.',
+    lessonDe: 'Frische Funktion beim Empfänger tötet die Idee, bevor die Suche breit wird.',
+    lessonEn: 'A fresh feature at the recipient kills the idea before the search widens.',
+    domain: 'Heimatgedächtnis & Ortswissen',
+    evidence: [
+      'Ostfriesische Landschaft — TTS-Stimme 13.09.2026 [Schnipsel]'
+    ],
+    cause: 'beim-empfaenger',
+    killer: 'behoerde',
+    foundBy: 'deutsch',
+    origin: 'quelle',
+    stage: 'kandidat',
+    bornIn: 'Heimatgedächtnis-Runde 29.09.2026 · Ideenrunde E1',
+    diedOn: '2026-09-29',
+    resurrectIfDe: 'Wenn das Projekt der Landschaft ohne offene Daten endet und ein anderes Platt (Mecklenburg, Westfalen) unversorgt bleibt.',
+    resurrectIfEn: 'If the Landschaft project ends without open data and another Low German variety (Mecklenburg, Westphalia) stays unserved.'
+  },
+  {
+    id: 'ortsnamen-endungen-atlas',
+    title: 'Ortsnamen-Endungen-Atlas',
+    originalIdeaDe: 'Karte der Ortsnamen-Endungen (-ingen, -hausen, -dorf) mit Deutung.',
+    originalIdeaEn: 'Map of place-name endings (-ingen, -hausen, -dorf) with interpretation.',
+    whyDiscardedDe: 'Besetzt: Das IfL bietet den „Kleinen Atlas der Siedlungsnamen", dazu die amtlichen Geographischen Namen GN250.',
+    whyDiscardedEn: 'Occupied: the IfL offers the "Kleiner Atlas der Siedlungsnamen", plus the official geographic names GN250.',
+    lessonDe: 'Kartierung von Namensbestandteilen ist Handwerk der Namenforschung und dort erledigt.',
+    lessonEn: 'Mapping name components is the craft of name research and done there.',
+    domain: 'Heimatgedächtnis & Ortswissen',
+    evidence: [
+      'IfL Kleiner Atlas der Siedlungsnamen, GN250 [Schnipsel]'
+    ],
+    cause: 'gebaut',
+    killer: 'forschung',
+    foundBy: 'deutsch',
+    origin: 'bisoziation',
+    stage: 'kandidat',
+    bornIn: 'Heimatgedächtnis-Runde 29.09.2026 · Inversion Run 6 H10',
+    diedOn: '2026-09-29',
+    resurrectIfDe: 'Wenn der Atlas offline geht und GN250 die Bestandteile nicht mehr trägt.',
+    resurrectIfEn: 'If the atlas goes offline and GN250 no longer carries the components.'
+  },
+  {
+    id: 'vorbewohner-finder',
+    title: 'Vorbewohner-Finder (Adressbücher)',
+    originalIdeaDe: 'Wer wohnte früher in meinem Haus: Suche in digitalisierten Adressbüchern.',
+    originalIdeaEn: 'Who lived in my house before: search across digitised address books.',
+    whyDiscardedDe: 'Beim Empfänger: CompGen (Verein für Computergenealogie) hat seit 11/2025 rund 14 Millionen Adressbuch-Einträge durchsuchbar.',
+    whyDiscardedEn: 'At the recipient: CompGen (genealogy society) has had about 14 million address-book entries searchable since 11/2025.',
+    lessonDe: 'Ein Verein mit 14 Mio. Einträgen ist kein Lückenfall.',
+    lessonEn: 'A society with 14 million entries is not a gap.',
+    domain: 'Heimatgedächtnis & Ortswissen',
+    evidence: [
+      'CompGen Adressbuch-Datenbank [Schnipsel]'
+    ],
+    cause: 'beim-empfaenger',
+    killer: 'gemeinnuetzig',
+    foundBy: 'deutsch',
+    origin: 'bisoziation',
+    stage: 'kandidat',
+    bornIn: 'Heimatgedächtnis-Runde 29.09.2026 · Inversion Run 6 H8',
+    diedOn: '2026-09-29',
+    resurrectIfDe: 'Wenn CompGen den Zugang schließt oder Adressbücher außerhalb der Abdeckung liegen und Nutzer das nachweisen.',
+    resurrectIfEn: 'If CompGen closes access or address books outside its coverage matter and users show it.'
+  },
+  {
+    id: 'omas-rezept-mengenuebersetzer',
+    title: 'Omas-Rezept-Mengenübersetzer',
+    originalIdeaDe: 'Übersetzt historische Mengenangaben („eine Prise", „ein Stück Butter") in Gramm.',
+    originalIdeaEn: 'Translates historical quantities ("a pinch", "a lump of butter") into grams.',
+    whyDiscardedDe: 'Besetzt: oma-kocht.de, smarticular und Wikibooks führen Umrechnungstabellen.',
+    whyDiscardedEn: 'Occupied: oma-kocht.de, smarticular and Wikibooks carry conversion tables.',
+    lessonDe: 'Alltagsumrechnung ist ein Standardmuster und bringt keine neue Fähigkeit.',
+    lessonEn: 'Everyday conversion is a standard pattern and adds no new capability.',
+    domain: 'Heimatgedächtnis & Ortswissen',
+    evidence: [
+      'oma-kocht.de, smarticular, Wikibooks [Schnipsel]'
+    ],
+    cause: 'gebaut',
+    killer: 'kommerziell',
+    foundBy: 'deutsch',
+    origin: 'bisoziation',
+    stage: 'kandidat',
+    bornIn: 'Heimatgedächtnis-Runde 29.09.2026 · Bisoziation Run 12 (Kill)',
+    diedOn: '2026-09-29',
+    resurrectIfDe: 'Wenn eine Messreihe historischer Löffel- und Tassenmaße entsteht, die keine Seite trägt.',
+    resurrectIfEn: 'If a measurement series of historical spoon and cup sizes emerges that no site carries.'
+  },
+  {
+    id: 'bergsonnenuhr-peiler',
+    title: 'Bergsonnenuhr-Peiler (Zwölfer-Bergnamen)',
+    originalIdeaDe: 'Aus Gipfelname und Uhrzeit den Ring möglicher Benennungsorte berechnen.',
+    originalIdeaEn: 'From summit name and time of day, compute the ring of possible naming locations.',
+    whyDiscardedDe: 'Falsche Prämisse: Beim Zwölfer steht die Sonne mittags im Süden, der wahre Mittag hat Azimut 180 Grad. Möglich ist also eine Linie, kein Ring. Bei Elfer und Zehner ergibt sich ein Band (bei 47,1 Grad Nord Azimut 148 bis 165 Grad je nach Jahreszeit). Die Wikipedia-Liste „Zwölfer (Bergname)" (rund 50 bis 60 Gipfel) rechnet die Abweichungen je Gipfel schon von Hand. Der Bibliothekar entschied abweichend nicht für Needs Research: Der Kern ist Schulgeometrie, kein Werkzeug, das Fachleute vermissen.',
+    whyDiscardedEn: 'False premise: for the Zwölfer the sun stands in the south at noon, true noon has azimuth 180 degrees. So the result is a line, not a ring. For Elfer and Zehner it is a band (at 47.1 degrees north azimuth 148 to 165 degrees by season). The Wikipedia list "Zwölfer (Bergname)" (about 50 to 60 summits) already works out the deviations by hand. The librarian decided against Needs Research: the core is school geometry, not a tool experts miss.',
+    lessonDe: 'Vor dem Bau die Geometrie nachrechnen: Ein Ring, der eine Linie ist, kippt die Idee ohne Suche.',
+    lessonEn: 'Recompute the geometry before building: a ring that is a line topples the idea without search.',
+    domain: 'Heimatgedächtnis & Ortswissen',
+    evidence: [
+      'Wikipedia — Zwölfer (Bergname) [Seite]'
+    ],
+    cause: 'praemisse',
+    killer: 'community',
+    foundBy: 'ohne-suche',
+    origin: 'bisoziation',
+    stage: 'kandidat',
+    bornIn: 'Heimatgedächtnis-Runde 29.09.2026 · Bisoziation Run 12 (K1)',
+    diedOn: '2026-09-29',
+    resurrectIfDe: 'Wenn eine Forschungsfrage entsteht, die die Benennungsorte statistisch über viele Gipfel eingrenzt und die Liste das nicht leistet.',
+    resurrectIfEn: 'If a research question emerges that narrows naming locations statistically across many summits and the list does not.'
+  },
+  {
+    id: 'namens-zeuge',
+    title: 'Namens-Zeuge (Flurname kennt vergessene Grube)',
+    originalIdeaDe: 'Flurname verrät Grube oder Teich, den keine Karte mehr zeigt; nur Hinweis, nie „Altlast".',
+    originalIdeaEn: 'A field name reveals a pit or pond no map shows any more; hint only, never "contaminated site".',
+    whyDiscardedDe: 'Reality-Check: Haftungsnähe (Altlast-Wort), die Zuordnung Name zu Sachverhalt ist ungetestet, ein Empfänger als Person fehlt. Die Wüstungsforschung arbeitet von Hand.',
+    whyDiscardedEn: 'Reality check: liability proximity (contaminated-site wording), mapping name to fact is untested, and no recipient person exists. Deserted-settlement research works by hand.',
+    lessonDe: 'Ein Hinweis, der Altlasten berührt, braucht einen Träger mit Haftungsklarheit, sonst ist er ein Risiko statt eines Geschenks.',
+    lessonEn: 'A hint touching contaminated sites needs a holder with liability clarity, else it is a risk rather than a gift.',
+    domain: 'Heimatgedächtnis & Ortswissen',
+    evidence: [
+      'LAGIS Hessen — Flurname „beim Pfuhl" [Schnipsel]',
+      'Geotopkataster Bayern [Schnipsel]'
+    ],
+    cause: 'reality-check',
+    killer: 'keiner',
+    foundBy: 'ohne-suche',
+    origin: 'bisoziation',
+    stage: 'kandidat',
+    bornIn: 'Heimatgedächtnis-Runde 29.09.2026 · Bisoziation Run 12 (K4)',
+    diedOn: '2026-09-29',
+    resurrectIfDe: 'Wenn ein Landesamt eine Namen-Sachverhalt-Zuordnung an 20 Fällen belegt und den Hinweis selbst tragen will.',
+    resurrectIfEn: 'If a state office demonstrates a name-to-fact mapping on 20 cases and wants to carry the hint itself.'
+  },
+  {
+    id: 'namen-vs-ackerzahl',
+    title: 'Namen gegen Ackerzahl',
+    originalIdeaDe: 'Bewertungsnamen (Hunger-, Fett-, Sauer-) gegen die amtliche Bodenzahl legen.',
+    originalIdeaEn: 'Compare valuation names (hunger, fat, sour) against the official soil rating.',
+    whyDiscardedDe: 'Reality-Check: keine Studie als Werkzeug gefunden, die Bodenschätzung ist föderal uneinheitlich offen (Niedersachsen, Rheinland-Pfalz offen, Bayern kostenpflichtig). Ergebnis wäre eine Einzelstudie statt eines Werkzeugs.',
+    whyDiscardedEn: 'Reality check: no study found as a tool; soil valuation data is unevenly open across states (Lower Saxony, Rhineland-Palatinate open, Bavaria paid). The outcome would be a one-off study, not a tool.',
+    lessonDe: 'Wenn die Daten nur in einem Teil der Länder offen sind, trägt kein bundesweites Werkzeug.',
+    lessonEn: 'If the data is open in only some states, no nationwide tool is viable.',
+    domain: 'Heimatgedächtnis & Ortswissen',
+    evidence: [
+      'Bodenschätzung Länderlage [Schnipsel]'
+    ],
+    cause: 'reality-check',
+    killer: 'keiner',
+    foundBy: 'ohne-suche',
+    origin: 'bisoziation',
+    stage: 'kandidat',
+    bornIn: 'Heimatgedächtnis-Runde 29.09.2026 · Bisoziation Run 12 (K5)',
+    diedOn: '2026-09-29',
+    resurrectIfDe: 'Wenn die Bodenschätzung bundesweit offen wird.',
+    resurrectIfEn: 'If soil valuation data becomes open nationwide.'
+  },
+  {
+    id: 'sagen-abenteuer',
+    title: 'Sagen-Abenteuer (Ortssage als Kinder-Kurzabenteuer)',
+    originalIdeaDe: 'Ortssage und Flurnamen werden zu einem Kurzabenteuer für Kinder desselben Dorfes.',
+    originalIdeaEn: 'Local legend and field names become a short adventure for children of the same village.',
+    whyDiscardedDe: 'Keine neue Fähigkeit: Standortspiele mit kuratierten Objekten sind dicht (Warnliste), und LLM-erzählte Geschichten für Kinder sind ein Standardmuster. Reviewer 14/35, niedrigster Wert der Runde bei Fun 5.',
+    whyDiscardedEn: 'No new capability: location games with curated objects are dense (warning list), and LLM-told stories for children are a standard pattern. Reviewer 14/35, lowest of the round despite Fun 5.',
+    lessonDe: 'Hoher Fun-Wert ohne Fähigkeit ist ein Modeeffekt; V8 kompensiert nie.',
+    lessonEn: 'High fun without capability is a fashion effect; V8 never compensates.',
+    domain: 'Heimatgedächtnis & Ortswissen',
+    evidence: [
+      'Standortspiel-Warnliste im Playbook [Schnipsel]'
+    ],
+    cause: 'mode',
+    killer: 'kommerziell',
+    foundBy: 'ohne-suche',
+    origin: 'bisoziation',
+    stage: 'kandidat',
+    bornIn: 'Heimatgedächtnis-Runde 29.09.2026 · Bisoziation Run 12 (K9)',
+    diedOn: '2026-09-29',
+    resurrectIfDe: 'Wenn ein Heimatverein Sagen offen lizenziert und eine geprüfte Ortsbindung anbietet, die Standortspiele nicht leisten.',
+    resurrectIfEn: 'If a local history society licenses legends openly and offers a verified place binding that location games cannot.'
   }
 ];
 

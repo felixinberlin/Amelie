@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "0.1.0",
+  "datenart": "synthetisch",
+  "hinweis": "Testpaare gegen data/synthetisches-verzeichnis.json. Kein Paar ist ein amtlich dokumentierter Fall. Herkunft nennt nur, woher die Paarform stammt: 'dossier' = als Beispiel im Dossier 05-dosen/strassennamen-pruefer.md genannt (Meier/Maier; Lindenweg gegen Lindenstraße), 'synthetisch' = für diesen Test ausgedacht. Richtlinien-Beispielpaare aus Drensteinfurt, Bornheim, Dortmund, Frankfurt sind NICHT übertragen (Ticket 01, Aufgabe 2).",
+  "paare": [
+    { "id": "p01", "vorschlag": "Lindenweg", "vorhanden": "Lindenstraße", "erwartet": "S2-GRUNDWORT", "herkunft": "dossier" },
+    { "id": "p02", "vorschlag": "Maierweg", "vorhanden": "Meierstraße", "erwartet": "S3-KLANG", "herkunft": "dossier" },
+    { "id": "p03", "vorschlag": "Weissdornweg", "vorhanden": "Weißdornweg", "erwartet": "S1-IDENTISCH", "herkunft": "synthetisch" },
+    { "id": "p04", "vorschlag": "Muehlbachweg", "vorhanden": "Mühlbachweg", "erwartet": "S1-IDENTISCH", "herkunft": "synthetisch" },
+    { "id": "p05", "vorschlag": "Lindenstr.", "vorhanden": "Lindenstraße", "erwartet": "S1-IDENTISCH", "herkunft": "synthetisch" },
+    { "id": "p06", "vorschlag": "Birkenplatz", "vorhanden": "Birkenallee", "erwartet": "S2-GRUNDWORT", "herkunft": "synthetisch" },
+    { "id": "p07", "vorschlag": "Wiesenstraße", "vorhanden": "Wiesenweg", "erwartet": "S2-GRUNDWORT", "herkunft": "synthetisch" },
+    { "id": "p08", "vorschlag": "Feldtstraße", "vorhanden": "Feldstraße", "erwartet": "S3-KLANG", "herkunft": "synthetisch" },
+    { "id": "p09", "vorschlag": "Kirchplatz", "vorhanden": "Kirchplatz", "erwartet": "S1-IDENTISCH", "herkunft": "synthetisch" }
+  ],
+  "ohneHinweis": ["Sonnenblumenweg", "Fliederallee", "Am Kiesgrubenblick"]
+}

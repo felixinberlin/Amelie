@@ -54,65 +54,77 @@ Die Ursachen genauer:
 
 *Automatisch erzeugt aus `src/data/dosen.ts` (`DISCARDED_DATA`) mit `npm run friedhof`. Nicht von Hand bearbeiten — `npm run lint` meldet Abweichungen.*
 
-**69 Gräber.** 3 davon starben erst als Dose oder Mail-Entwurf (teure Tode). Von 60 dokumentierten Fundwegen kamen 8 ohne neue Suche aus (eigener Atlas, eigenes Protokoll oder Reality-Check) — 13 %.
+**81 Gräber.** 3 davon starben erst als Dose oder Mail-Entwurf (teure Tode). Von 72 dokumentierten Fundwegen kamen 12 ohne neue Suche aus (eigener Atlas, eigenes Protokoll oder Reality-Check) — 17 %.
 
 **Woran sie starben**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Schon gebaut | 39 | 57 % |
-| Beim Empfänger selbst | 14 | 20 % |
-| Reality-Check | 7 | 10 % |
-| Falsche Prämisse | 4 | 6 % |
-| Keine neue Fähigkeit | 3 | 4 % |
-| Duplikat | 2 | 3 % |
+| Schon gebaut | 44 | 54 % |
+| Beim Empfänger selbst | 17 | 21 % |
+| Reality-Check | 9 | 11 % |
+| Falsche Prämisse | 5 | 6 % |
+| Keine neue Fähigkeit | 4 | 5 % |
+| Duplikat | 2 | 2 % |
 
 **Welche Suche traf**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Deutsche Suche | 21 | 30 % |
-| Englische Suche | 19 | 28 % |
-| Empfänger-Suche | 11 | 16 % |
-| Nicht dokumentiert | 9 | 13 % |
-| Eigener Atlas / Protokoll | 4 | 6 % |
-| Ohne Suche | 4 | 6 % |
+| Deutsche Suche | 28 | 35 % |
+| Englische Suche | 20 | 25 % |
+| Empfänger-Suche | 11 | 14 % |
+| Nicht dokumentiert | 9 | 11 % |
+| Ohne Suche | 8 | 10 % |
+| Eigener Atlas / Protokoll | 4 | 5 % |
 | Forum / Nische | 1 | 1 % |
 
 **Woher sie kamen**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Bisoziation | 21 | 30 % |
-| Primärquelle | 20 | 29 % |
-| Brainstorm | 16 | 23 % |
-| Ideenliste | 8 | 12 % |
-| Modell-Katalog | 4 | 6 % |
+| Bisoziation | 29 | 36 % |
+| Primärquelle | 24 | 30 % |
+| Brainstorm | 16 | 20 % |
+| Ideenliste | 8 | 10 % |
+| Modell-Katalog | 4 | 5 % |
 
 **Wer sie schon hatte**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Firma | 21 | 30 % |
-| Behörde | 11 | 16 % |
-| Forschung | 11 | 16 % |
-| Gemeinnützige | 10 | 14 % |
-| Community / Indie | 7 | 10 % |
-| Niemand | 7 | 10 % |
-| Eigener Bestand | 2 | 3 % |
+| Firma | 23 | 28 % |
+| Forschung | 14 | 17 % |
+| Behörde | 13 | 16 % |
+| Gemeinnützige | 11 | 14 % |
+| Community / Indie | 9 | 11 % |
+| Niemand | 9 | 11 % |
+| Eigener Bestand | 2 | 2 % |
 
 **Wie weit sie kamen**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Kandidat | 66 | 96 % |
-| Dose gepackt | 2 | 3 % |
+| Kandidat | 78 | 96 % |
+| Dose gepackt | 2 | 2 % |
 | Mail entworfen | 1 | 1 % |
 
 ### Alle Gräber (neueste zuerst)
 
 | Idee | † | Ursache | Wer sie hatte | Gefunden durch | Herkunft | Kam bis |
 |---|---|---|---|---|---|---|
+| Bergsonnenuhr-Peiler (Zwölfer-Bergnamen) | 29.09.2026 | Falsche Prämisse | Community / Indie | Ohne Suche | Bisoziation | Kandidat |
+| Dialekt-Quiz / Mundart-Diktat / Aufnahme-App | 29.09.2026 | Schon gebaut | Forschung | Deutsche Suche | Primärquelle | Kandidat |
+| Hofnamen-Karte mit Adresse und Audio | 29.09.2026 | Schon gebaut | Behörde | Deutsche Suche | Bisoziation | Kandidat |
+| Namen gegen Ackerzahl | 29.09.2026 | Reality-Check | Niemand | Ohne Suche | Bisoziation | Kandidat |
+| Namens-Zeuge (Flurname kennt vergessene Grube) | 29.09.2026 | Reality-Check | Niemand | Ohne Suche | Bisoziation | Kandidat |
+| Omas-Rezept-Mengenübersetzer | 29.09.2026 | Schon gebaut | Firma | Deutsche Suche | Bisoziation | Kandidat |
+| Ortsnamen-Endungen-Atlas | 29.09.2026 | Schon gebaut | Forschung | Deutsche Suche | Bisoziation | Kandidat |
+| Plattdeutsch-TTS / -Übersetzer | 29.09.2026 | Beim Empfänger selbst | Behörde | Deutsche Suche | Primärquelle | Kandidat |
+| Sagen-Abenteuer (Ortssage als Kinder-Kurzabenteuer) | 29.09.2026 | Keine neue Fähigkeit | Firma | Ohne Suche | Bisoziation | Kandidat |
+| Straßennamen-Herkunft-Quiz / QR-Schild-Erklärer | 29.09.2026 | Schon gebaut | Community / Indie | Deutsche Suche | Primärquelle | Kandidat |
+| Vorbewohner-Finder (Adressbücher) | 29.09.2026 | Beim Empfänger selbst | Gemeinnützige | Deutsche Suche | Bisoziation | Kandidat |
+| Zeitzeugen-Transkription / Entrauscher | 29.09.2026 | Beim Empfänger selbst | Forschung | Englische Suche | Primärquelle | Kandidat |
 | Akku-Ankaufsuntersuchung (Batteriepass × Pferdekauf) | 28.09.2026 | Schon gebaut | Firma | Nicht dokumentiert | Bisoziation | Kandidat |
 | Akkutausch-Protokoll (BattVO Art. 11) | 28.09.2026 | Beim Empfänger selbst | Gemeinnützige | Englische Suche | Brainstorm | Kandidat |
 | Barrieren-Spontanmeldung (BFSG × Pharmakovigilanz) | 28.09.2026 | Beim Empfänger selbst | Behörde | Deutsche Suche | Bisoziation | Kandidat |

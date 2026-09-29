@@ -4,12 +4,12 @@ import { runAudit } from './index';
 describe('Amélie Self-Audit Engine', () => {
   it('1. returns correct Dose count (>0)', () => {
     const { health } = runAudit({ skipValidationScripts: true });
-    expect(health.inventory.doses).toBe(44);
+    expect(health.inventory.doses).toBe(45);
   });
 
   it('2. returns correct Grave count (>0)', () => {
     const { health } = runAudit({ skipValidationScripts: true });
-    expect(health.inventory.graves).toBe(69);
+    expect(health.inventory.graves).toBe(81);
   });
 
   it('3. detects duplicate IDs if artificially injected', () => {
@@ -84,7 +84,7 @@ describe('Amélie Self-Audit Engine', () => {
   it('13. runs offline without network', () => {
     // verified by execution context
     const { health } = runAudit({ skipValidationScripts: true });
-    expect(health.inventory.doses).toBe(44);
+    expect(health.inventory.doses).toBe(45);
   });
 
   it('14. handles empty or missing directory gracefully', () => {
