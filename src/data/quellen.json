@@ -1,0 +1,6525 @@
+{
+  "schema": 1,
+  "stand": "2026-09-29",
+  "katalog": {
+    "status": [
+      {
+        "id": "offen",
+        "de": "offen",
+        "en": "open",
+        "hint": "Nie gegraben oder nur als Anker genannt."
+      },
+      {
+        "id": "angekratzt",
+        "de": "angekratzt",
+        "en": "scratched",
+        "hint": "Eine Suche oder ein Schnipsel; Publikationsliste nicht gelesen."
+      },
+      {
+        "id": "durchsucht",
+        "de": "durchsucht",
+        "en": "searched",
+        "hint": "Publikationsliste/Seite selbst gelesen."
+      },
+      {
+        "id": "erschöpft",
+        "de": "erschöpft",
+        "en": "exhausted",
+        "hint": "Anker dicht, kein weiterer Kandidat zu erwarten."
+      },
+      {
+        "id": "gesperrt",
+        "de": "gesperrt",
+        "en": "blocked",
+        "hint": "Nicht (mehr) nutzen, z. B. Empfänger mit Nachfass-Sperre."
+      }
+    ],
+    "kategorien": {
+      "fachgremium": {
+        "de": "Fachgremium mit Schema",
+        "en": "Expert body with schema"
+      },
+      "citizen-science": {
+        "de": "Citizen Science",
+        "en": "Citizen science"
+      },
+      "ki-versuch": {
+        "de": "Öffentlicher KI-Versuch",
+        "en": "Public AI experiment"
+      },
+      "foerderung": {
+        "de": "Förderung & Programme",
+        "en": "Funding & programmes"
+      },
+      "preis": {
+        "de": "Preis & Challenge",
+        "en": "Prize & challenge"
+      },
+      "kapital": {
+        "de": "Kapital & Angels",
+        "en": "Capital & angels"
+      },
+      "kommunal": {
+        "de": "Kommunal & GovTech",
+        "en": "Municipal & GovTech"
+      },
+      "statistik": {
+        "de": "Mengen-/Kostenstatistik",
+        "en": "Volume/cost statistics"
+      },
+      "beobachtungsplattform": {
+        "de": "Beobachtungsplattform",
+        "en": "Observation platform"
+      },
+      "spiel": {
+        "de": "Spiel mit Wissenschaftsanspruch",
+        "en": "Science game"
+      },
+      "auslandsregulierung": {
+        "de": "Regulierung im Ausland",
+        "en": "Foreign regulation"
+      },
+      "messverfahren": {
+        "de": "Messverfahren & Evidenz",
+        "en": "Measurement method & evidence"
+      },
+      "tarif": {
+        "de": "Gebühren & Tarife",
+        "en": "Fees & tariffs"
+      },
+      "potenzialstudie": {
+        "de": "Potenzialstudie",
+        "en": "Potential study"
+      },
+      "referenzsammlung": {
+        "de": "Referenzsammlung",
+        "en": "Reference collection"
+      },
+      "norm": {
+        "de": "Norm, Recht & Pflicht",
+        "en": "Norm, law & duty"
+      },
+      "empfaenger": {
+        "de": "Empfänger",
+        "en": "Recipient"
+      },
+      "datensatz": {
+        "de": "Datensatz / Code",
+        "en": "Dataset / code"
+      }
+    },
+    "rollen": {
+      "ideenquelle": {
+        "de": "Ideenquelle",
+        "en": "Idea source"
+      },
+      "besetzt-test": {
+        "de": "Besetzt-Test",
+        "en": "Occupancy test"
+      },
+      "evidenz": {
+        "de": "Evidenz / Munition",
+        "en": "Evidence"
+      },
+      "empfaenger": {
+        "de": "Empfänger",
+        "en": "Recipient"
+      },
+      "geldgeber": {
+        "de": "Geldgeber",
+        "en": "Funder"
+      }
+    },
+    "zugangArt": {
+      "web": "Webseite",
+      "pdf": "PDF",
+      "repo": "Quellcode-Repo",
+      "api": "API",
+      "norm": "Norm/Volltext",
+      "formular": "Formular/Portal",
+      "app": "App",
+      "register": "Register/Datenbank",
+      "paywall": "Paywall",
+      "offline": "offline/Papier"
+    },
+    "erreichbar": {
+      "ja": "ja",
+      "teilweise": "teilweise",
+      "gesperrt": "gesperrt",
+      "unbekannt": "unbekannt"
+    },
+    "evidenz": {
+      "seite": "Seite/Volltext gelesen",
+      "schnipsel": "nur Suchschnipsel",
+      "unbekannt": "unbekannt"
+    },
+    "basis": {
+      "auto": "automatisch abgeleitet",
+      "bibliothekar": "Bibliothekar",
+      "reviewer": "Reviewer",
+      "mensch": "Félix"
+    },
+    "vektoren": [
+      {
+        "key": "q1",
+        "code": "Q1",
+        "labelDe": "Ergiebigkeit",
+        "labelEn": "Yield",
+        "questionDe": "Wie viele überlebende Ideen, Dosen oder Gräber sind aus der Quelle entstanden? (5 = mehrere Dosen)",
+        "questionEn": "How many surviving ideas, doses or graves came out of it? (5 = several doses)"
+      },
+      {
+        "key": "q2",
+        "code": "Q2",
+        "labelDe": "Restpotenzial",
+        "labelEn": "Remaining potential",
+        "questionDe": "Wie viel Ungegrabenes liegt noch da? (5 = offen, 1 = erschöpft)",
+        "questionEn": "How much is still unexplored? (5 = open, 1 = exhausted)"
+      },
+      {
+        "key": "q3",
+        "code": "Q3",
+        "labelDe": "Zugang",
+        "labelEn": "Access",
+        "questionDe": "Wie leicht kommt ein Agent an den Volltext? (5 = frei, klonbar/abrufbar; 1 = gesperrt)",
+        "questionEn": "How easily can an agent reach the full text? (5 = free; 1 = blocked)"
+      },
+      {
+        "key": "q4",
+        "code": "Q4",
+        "labelDe": "Belastbarkeit",
+        "labelEn": "Reliability",
+        "questionDe": "Primärquelle im Volltext (5) oder nur Suchschnipsel (2)?",
+        "questionEn": "Primary source full text (5) or only search snippets (2)?"
+      },
+      {
+        "key": "q5",
+        "code": "Q5",
+        "labelDe": "Geländefreiheit",
+        "labelEn": "Terrain freedom",
+        "questionDe": "Wie unbesetzt ist das Feld? (5 = kaum besetzt, 1 = Anker dicht, Wiedergänger-Gefahr)",
+        "questionEn": "How unoccupied is the field? (5 = hardly any, 1 = dense)"
+      },
+      {
+        "key": "q6",
+        "code": "Q6",
+        "labelDe": "Anschluss",
+        "labelEn": "Connectivity",
+        "questionDe": "Führt die Quelle zu Empfängern, Geldgebern oder Förderbrücken? (5 = Adressbuch mit Mandat)",
+        "questionEn": "Does it lead to recipients, funders or funding bridges? (5 = directory with mandate)"
+      }
+    ]
+  },
+  "typen": [
+    {
+      "id": "A",
+      "titel": "Fachgremien mit Schemata ohne Software",
+      "muster": "ein PDF mit Punktesystem, Checkliste oder Schwellenwerten, das Menschen von Hand anwenden.",
+      "suchstring": "`<Gremium> Bewertungsverfahren Punktesystem` · `<Gremium> Kartieranleitung` · `<Gremium> Checkliste Vollzug`",
+      "hinweis": ""
+    },
+    {
+      "id": "B",
+      "titel": "Citizen Science mit manueller Auswertung",
+      "muster": "Ehrenamtliche liefern Fotos oder Daten, Profis werten monatelang von Hand aus.",
+      "suchstring": "`<Projekt> Auswertung dauert` · `<Projekt> Rückmeldung Monate` · `<Projekt> Werkstattbericht KI`",
+      "hinweis": ""
+    },
+    {
+      "id": "C",
+      "titel": "Organisationen mit öffentlichen KI-Versuchen",
+      "muster": "ein Blogpost „Kann KI uns helfen?\" mit benannten Schwächen. Die Schwäche ist die Idee.",
+      "suchstring": "",
+      "hinweis": ""
+    },
+    {
+      "id": "D",
+      "titel": "Geldgeber, Förderprogramme & Bauaufträge (Schritt 2 & Ideen-Inversion)",
+      "muster": "Geldgeber sind zugleich Schmerzbekenntnisse des Staates (Abschnitt 1 Zuwendungszweck = Lückenbauplan) und die Stelle, die Ticket 01 für den Empfänger finanziert. Vollständiger Katalog und Heuristik: `06-suche/amelie-foerder-und-preisatlas.md`.",
+      "suchstring": "",
+      "hinweis": ""
+    },
+    {
+      "id": "E",
+      "titel": "Behördliche Mengen- und Kostenstatistiken",
+      "muster": "Eine Zahl, die den Schmerz quantifiziert, gehört in jede Dose, die an eine Verwaltung oder Stiftung geht.",
+      "suchstring": "",
+      "hinweis": ""
+    },
+    {
+      "id": "F",
+      "titel": "Internationale Phänologie-/Beobachtungsplattformen",
+      "muster": "Werkzeuge, die über ihre **Funktion** definiert sind („dieselbe Pflanze über Zeit\"), nicht über ihren Gegenstand. Sie tauchen bei deutschen Themensuchen nie auf und killen trotzdem Ideen.",
+      "suchstring": "",
+      "hinweis": ""
+    },
+    {
+      "id": "G",
+      "titel": "Spiele mit Wissenschaftsanspruch",
+      "muster": "Das Feld hat Konferenzen, und deren Programme sind Adressbücher. „Ein Indie-Entwickler\" ist keine Adresse.",
+      "suchstring": "",
+      "hinweis": ""
+    },
+    {
+      "id": "H",
+      "titel": "Regulierung im Ausland",
+      "muster": "Ein deutsches Gremium veröffentlicht ein PDF. Ein anderes Land macht dieselbe Sache zur Auflage — und dort existiert dann ein Rechenblatt, eine Norm oder eine App.",
+      "suchstring": "`<Thema> LEED credit` · `<Thema> city ordinance compliance` · `<Thema> standard rating calculator` · `<Thema> threat factor` · `<Thema> DIY assessment app`",
+      "hinweis": "Kein Ideenlieferant, sondern die Stelle, an der ein `frei` stirbt. Vor jedem `frei` aus Typ A abzufragen."
+    },
+    {
+      "id": "I",
+      "titel": "Messverfahren aus Nachbarbranchen und harte Evidenz",
+      "muster": "Die Messung, an der eine Naturschutzidee hängt, ist in einer ganz anderen Branche längst gelöst und publiziert — und daneben liegt die Studie, die sagt, wie viel Präzision die Sache überhaupt trägt. Beides vor dem Bauen lesen, nicht danach.",
+      "suchstring": "`<Messgröße> from street view imagery deep learning` · `<Messgröße> urban scale estimation` · `<Phänomen> national citizen science dataset collisions`",
+      "hinweis": ""
+    },
+    {
+      "id": "J",
+      "titel": "Gebührenwerke und Tarife",
+      "muster": "eine Preisliste, die von Hand angewandt wird und dabei Anreize setzt. Ein Typ-A-Dokument, nur dass es nicht bewertet, sondern belohnt und bestraft. Nebeneinandergelegt zeigt die Leiter oft, dass der erwünschte Weg der teuerste und der schädliche der kostenlose ist.",
+      "suchstring": "`<Betrieb> Gebühren Entgelte Preisliste <Jahr>` · `<Leistung> kostenpflichtig kostenlos Voraussetzung`",
+      "hinweis": ""
+    },
+    {
+      "id": "K",
+      "titel": "Amtliche Potenzialstudien",
+      "muster": "eine Behörde lässt untersuchen, wo in einem Stoffstrom noch etwas zu holen wäre, und der Bericht sagt selbst, welcher Weg sich nicht lohnt. Der verworfene Weg ist meist der, den die Branche gerade optimiert.",
+      "suchstring": "`<Stoffstrom> Potenzial Studie Umweltbundesamt ausgeschöpft` · `<Stoffstrom> Wiederverwendung Quote Anteil verwertbar`",
+      "hinweis": ""
+    },
+    {
+      "id": "L",
+      "titel": "Fachliche Referenzsammlungen",
+      "muster": "Eine Fachgesellschaft sammelt über Jahre echte Fälle mit dokumentierter Ursache — als Nachschlagewerk. Dieselbe Sammlung ist das Material, das jedem Übungsgerät fehlt.",
+      "suchstring": "`<Fach> Datenbank Referenz Schadensfälle` · `<Fach> Arbeitskreis Schulung` — **auf Deutsch zuerst**, wenn eine deutsche Institution das Feld trägt",
+      "hinweis": ""
+    },
+    {
+      "id": "M",
+      "titel": "Holz: Schadstoff-, Abfall- und Sortierregeln am Übergang Holz → Gebäude/Abfall",
+      "muster": "Alle Einträge **nur über Suchschnipsel** erschlossen; die Seiten selbst waren in dieser Umgebung nicht abrufbar.",
+      "suchstring": "",
+      "hinweis": ""
+    },
+    {
+      "id": "N",
+      "titel": "EU-Produktrecht: Ökodesign, Reparatur, Batterien",
+      "muster": "Alle Einträge **nur über Suchschnipsel** erschlossen; eur-lex.europa.eu, brubru.beresol.eu, cooley.com und ifixit.com lieferten `EGRESS_BLOCKED`. Kein Normtext im Volltext gelesen.",
+      "suchstring": "",
+      "hinweis": ""
+    },
+    {
+      "id": "O",
+      "titel": "Pflichtveröffentlichungen ohne Register: Offenlegungsregime DE/EU · Lauf B: EU-Offenlegungsregime: Lieferkette, Nachhaltigkeit, Verpackung, Steuer, KI (Offenlegung-Runde Lauf B 28.09.2026, Schnipsel)",
+      "muster": "*Netz offen, Normtexte gelesen `[Seite]`**; EU-Recht über `publications.europa.eu/resource/celex/<CELEX>` bzw. legislation.gov.uk (eur-lex direkt: WAF-Challenge). Nur Suchtreffer ohne Abruf tragen `[Schnipsel]`. Vor jedem Eintrag hier die drei Pflichtfragen des Atlas (Playbook, Zeile „Offenlegungspflicht ohne Register\").",
+      "suchstring": "",
+      "hinweis": ""
+    },
+    {
+      "id": "P",
+      "titel": "Förderlandschaft, Vergabe & Compliance: Geldflüsse als Herkunftsort",
+      "muster": "Systematische Landkarte aus Bund, EU, Stiftungen, Preisen, Investoren, Städten und Vergabe: `amelie-foerderlandschaft.md` (Synthese, Rangliste, Such-Rezepte, Kalender), `amelie-foerder-und-preisatlas.md` und fünf Rohkarten unter `foerderlandschaft/` (A Bund, B EU, C Stiftungen/Preise, D Investoren, E Städte/Vergabe, zusammen rund 190 Programmzeilen). Alle Angaben Schnipsel-Evidenz. Vier Signale: besetzt (geförderte Projekte), Bedarf (Ausschreibungen, Haushaltstitel), Empfänger (Programmträger, Preisträger), Kommerz (für `ventures/kapital-und-kanaele.md` und `funding-and-angels.md`). Geldgeber sind Signal, nicht Zustellkanal (Zustellregeln 1 und 3).",
+      "suchstring": "",
+      "hinweis": ""
+    },
+    {
+      "id": "Q",
+      "titel": "Preise, Awards & Challenges (Problemradar & Jury-Empfänger)",
+      "muster": "Preisausschreiben (Bundespreis Ecodesign, Deutscher Nachhaltigkeitspreis, Mobilitätspreis, Otto-Brenner-Preis, Civic Tech Awards) definieren die Benchmark offener Probleme. Die Shortlists zeigen, was besetzt ist; die Ausschreibungstexte zeigen, was ungelöst ist; die Fachjury liefert die namentlichen Empfänger mit Mandat. Vollständiger Katalog: `06-suche/amelie-foerder-und-preisatlas.md`.",
+      "suchstring": "",
+      "hinweis": ""
+    },
+    {
+      "id": "R",
+      "titel": "Europa-Fonds & EU-Programme (Horizon Europe, EIC, LIFE, DEP)",
+      "muster": "EU-Rahmenprogramme steuern Milliarden über Work Programmes. Die dort formulierten „Specific Challenges\" sind die Vorlauf-Themen der nächsten drei Jahre. Details in `06-suche/amelie-foerder-und-preisatlas.md`.",
+      "suchstring": "",
+      "hinweis": ""
+    },
+    {
+      "id": "S",
+      "titel": "Kommunale Investitionsprogramme, Smart Cities & GovTech",
+      "muster": "Kommunen tragen die Vollzugslast von 90 % der Umwelt- und Sozialpflichten. Programme wie Modellprojekte Smart Cities (MPSC) und Plattformen wie GovTech Deutschland e.V. suchen gezielt nach übertragbaren Open-Source-Werkzeugen. Details in `06-suche/amelie-foerder-und-preisatlas.md`.",
+      "suchstring": "",
+      "hinweis": ""
+    },
+    {
+      "id": "V",
+      "titel": "Business Angels, Impact Syndikate & Frühphasen-Kapital (Venture-Input)",
+      "muster": "Wenn die Gabel-Triage des Idea-Reviewers einen B2B-Zwilling mit direkter Zahlungsbereitschaft (Compliance-SaaS, CI-Guardrails) identifiziert, sind Business Angels und themenfokussierte Syndikate die passenden Erstfinanzierer. Details in `ventures/funding-and-angels.md` und `06-suche/amelie-foerder-und-preisatlas.md`.",
+      "suchstring": "",
+      "hinweis": ""
+    },
+    {
+      "id": "W",
+      "titel": "Empfänger (in Runde 8 geprüft)",
+      "muster": "Wer bekommt Ticket 01? Rang, Sperren und Vorbilder mit benannter Schwäche.",
+      "suchstring": "",
+      "hinweis": ""
+    }
+  ],
+  "quellen": [
+    {
+      "id": "lag-vogelschutzwarten",
+      "name": "LAG Vogelschutzwarten (vogelschutzwarten.de)",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [
+        "vogel",
+        "glas"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "",
+      "fokus": "weitere Bewertungsverfahren außer Glas",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-18",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          4,
+          4,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "lana-bund-laender-ag-naturschutz",
+      "name": "LANA (Bund-Länder-AG Naturschutz)",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [
+        "naturschutz"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "",
+      "fokus": "Beschlüsse mit Bewertungsschemata",
+      "status": "angekratzt",
+      "statusNotiz": "Eingriffsregelung/Biotopwertverfahren ist bereits gesetzlich kodifiziert (BKompV); gegengecheckt in Runde 3: Ökokonto-/Kompensationsflächen-Software (z. B. giscity) und BWKalk decken Berechnung und Flächenverwaltung, nicht die Zuordnung eines Biotoptyps aus Bild — siehe Biotoptyp-Assistent",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-18",
+      "ertrag": {
+        "dosen": [
+          "biotoptyp-assistent"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          4,
+          4,
+          2,
+          2,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "bundesamt-fuer-naturschutz",
+      "name": "Bundesamt für Naturschutz (BfN)",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [
+        "naturschutz"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "",
+      "fokus": "Skripten, Leitfäden, Kartieranleitungen",
+      "status": "angekratzt",
+      "statusNotiz": "BfN-Schriften 721 „Kartieranleitung für die Biotoptypen nach Anlage 2 der BKompV\" gefunden (668 Biotoptypen, feste Schwellenwerte, Kartiermethodik von Hand). Daraus entstanden: Biotoptyp-Assistent (`05-dosen/biotoptyp-assistent.md`)",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-18",
+      "ertrag": {
+        "dosen": [
+          "biotoptyp-assistent"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          4,
+          4,
+          2,
+          2,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "senatsverwaltung-berlin-umwelt",
+      "name": "Senatsverwaltung Berlin, Umwelt",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [
+        "licht",
+        "glas",
+        "abfall",
+        "gebaeude",
+        "berlin"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "pdf",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "",
+      "fokus": "Leitfäden (z. B. „Bauen mit Glas und Licht\", 2021) · Abfallwirtschaftskonzept 2020–2030 · Re-Use Berlin Übersichtskarte (existiert nur als 2,8-MB-PDF!)",
+      "status": "angekratzt",
+      "statusNotiz": "Re-Use Berlin als PDF gefunden; Zahlen zur Stadtreinigung 2025/2026 gesichert (200.000 Meldungen, 13 Mio. €)",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-20",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          2,
+          2,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "denkmalbehoerden-landesaemter",
+      "name": "Denkmalbehörden, Landesämter",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [
+        "naturschutz",
+        "denkmal"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "",
+      "fokus": "Schadenskartierungs-Anleitungen",
+      "status": "angekratzt",
+      "statusNotiz": "(Suchen von zwei Researchern am 19.09.2026, keine Leitfaden-Publikation gelesen) — Leitfäden existieren (Berlin LDA „Leitfaden zur Erstellung von restauratorischen Dokumentationen“, LAD Baden-Württemberg „Dokumentation im konstruktiven Holzbau“, Niedersachsen, Sachsen-Anhalt „Handreichung zur Bestandsuntersuchung“, LVR-Handreichungen, Baubegehungs-Checklisten, z. B. EKBO). Typ A ist hier kein Schema ohne Software: Schadenskartierung ist Software-Branche (Metigo MAP, KALIV); Denkmal/Kirche ist „physisches Objekt + wiederkehrende Prüfung“ mit Anbietern (ARCHIKART) und KI-Pilotprojekten (Wiro Rostock). Erträge: Researcher #2 — Denkmal-Verlaufsblick (`verengt`, kam von der Ehrenamts-/Bürgerseite, also eher Typ B); Researcher #1 — 3 Ideen abgeleitet, 0 überlebt (Kirchen-Baubegehung `besetzt`, Schadenskartierung per Foto `besetzt`, Orgel-Resonanz `unklar`). Nicht weiter hier graben; Restwert nur Orgel (Orgelbauer-Kontakt)",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-19",
+      "ertrag": {
+        "dosen": [
+          "denkmal-verlaufsblick"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          4,
+          5,
+          4,
+          4,
+          3,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "landesumweltbehoerden-licht",
+      "name": "Landesumweltbehörden „Licht & Naturschutz\" (Hamburg BUKEA u. a.)",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [
+        "licht",
+        "naturschutz"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "",
+      "fokus": "weitere Länder-Leitfäden ohne Tool (analog zu Hamburg)",
+      "status": "angekratzt",
+      "statusNotiz": "ergiebig, Lichtplan-Check entstand hieraus",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-18",
+      "ertrag": {
+        "dosen": [
+          "lichtplan-check"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          4,
+          4,
+          2,
+          2,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "berliner-biotopkartierung",
+      "name": "Berliner Biotopkartierung — Kartieranleitung & Geländekartierungsbogen",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [
+        "naturschutz",
+        "berlin"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "norm",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Belege: (Senatsverwaltung für Umwelt, Verkehr und Klimaschutz; § 30 BNatSchG)",
+      "fokus": "weitere Kriterienbündel, die sich in „hart messbar\" und „Urteil des Kartierers\" trennen lassen",
+      "status": "angekratzt",
+      "statusNotiz": "ergiebig, Anker von drei Kandidaten (Eichflächen-Trainer `frei`, Kartierlotse `verengt`, Strukturmonitoring `verengt`, nicht gepackt). als Anker der Bisoziation-Session (Runde 3) genannt, Quelle nicht separat durchgesehen; Nachbarquellen (andere Länder, LRT-Anleitungen) offen",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-18",
+      "ertrag": {
+        "dosen": [
+          "eichflaechen-trainer",
+          "kartierlotse"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          5,
+          4,
+          2,
+          2,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "fll-baumkontrollrichtlinie",
+      "name": "FLL-Baumkontrollrichtlinie / kommunale Baumkontrolle (Regelkontrolle, VTA)",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [
+        "baum"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "",
+      "fokus": "",
+      "status": "erschöpft",
+      "statusNotiz": "Anker dicht — beide Kandidaten (Baum-Stigmergie, Baum-Verfallsdatum) `besetzt`; kein dritter Kandidat aus dieser Quelle. Muster „physisches Objekt + gesetzliche Sichtprüfung\" nur nach Atlas-Check nutzen (Playbook, Atlas)",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-18",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          1,
+          4,
+          4,
+          2,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "mitforschen-org",
+      "name": "mitforschen.org (Plattform aller deutschen CS-Projekte; Wissenschaft im Dialog, Museum für Naturkunde, BMFTR)",
+      "typ": "B",
+      "kategorie": "citizen-science",
+      "rollen": [
+        "ideenquelle",
+        "empfaenger"
+      ],
+      "tags": [
+        "citizen-science"
+      ],
+      "urls": [
+        "https://www.mitforschen.org/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "teilweise",
+        "wie": "Kanonische URL https://www.mitforschen.org/. Aus der Sandbox nur per WebFetch erreichbar; curl blockt die Allowlist."
+      },
+      "enthaelt": "",
+      "fokus": "Projekte mit Foto-Upload und Rückmeldung „nach Auswertung\"",
+      "status": "offen",
+      "statusNotiz": "bleibt als Quelle (Entscheidung Félix 23.09.2026). Kein Empfänger, sondern Verzeichnis zum Durchsuchen. Der Vermerk „als Nächstes\" ist gestrichen — sie wird genommen, wenn eine Runde eine Typ-B-Quelle braucht, nicht als Schuld. Seite läuft über HTTPS (kanonische URL `https://www.mitforschen.org/`); aus der Sandbox nur per WebFetch erreichbar, `curl` blockt die Allowlist",
+      "evidenz": "unbekannt",
+      "zuletzt": "2026-09-23",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          5,
+          4
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "ams-imo-feuerkugelmeldung",
+      "name": "AMS/IMO-Feuerkugelmeldung",
+      "typ": "B",
+      "kategorie": "citizen-science",
+      "rollen": [
+        "ideenquelle",
+        "empfaenger"
+      ],
+      "tags": [
+        "citizen-science"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Belege: deutsche Feuerkugelnetz-Nachfolger (Zeugenmeldeformulare)",
+      "fokus": "Zeugen melden Stunden bis Tage später aus dem Gedächtnis, Profis triangulieren asynchron — „nicht in Echtzeit\" (AMS)",
+      "status": "angekratzt",
+      "statusNotiz": "ergiebig, Feuerkugel-Sofortnetz entstand hieraus; zwei weitere Kandidaten dort `besetzt` (FRIPON, RedVox). Weitere Feuerkugel-/Meteor-Meldenetze ungelesen",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-18",
+      "ertrag": {
+        "dosen": [
+          "feuerkugel-sofortnetz"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          4,
+          5,
+          4,
+          4,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "deutsche-stiftung-denkmalschutz",
+      "name": "Deutsche Stiftung Denkmalschutz",
+      "typ": "B",
+      "kategorie": "citizen-science",
+      "rollen": [
+        "ideenquelle",
+        "empfaenger"
+      ],
+      "tags": [
+        "denkmal",
+        "citizen-science"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "formular",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Belege: (Schwarzbuch, Meldeportal, ehrenamtliche Beiräte)",
+      "fokus": "Ehrenamts-Beobachtung mit rückblickender Auswertung",
+      "status": "angekratzt",
+      "statusNotiz": "(Suchtreffer, Portal nicht gelesen) — Idee: Denkmal-Verlaufsblick",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-19",
+      "ertrag": {
+        "dosen": [
+          "denkmal-verlaufsblick"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          4,
+          4,
+          4,
+          4,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "thuenen-wildbienen-monitoring",
+      "name": "Thünen Wildbienen-Monitoring",
+      "typ": "B",
+      "kategorie": "citizen-science",
+      "rollen": [
+        "ideenquelle",
+        "empfaenger"
+      ],
+      "tags": [
+        "insekten"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "",
+      "fokus": "Hummel-Monitoring zusätzlich zur Nisthilfe",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-16",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          2,
+          2,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "compgen",
+      "name": "CompGen (genealogy.net)",
+      "typ": "B",
+      "kategorie": "citizen-science",
+      "rollen": [
+        "ideenquelle",
+        "empfaenger"
+      ],
+      "tags": [],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "",
+      "fokus": "andere Erfassungsprojekte außer Grabsteine (Adressbücher, Verlustlisten)",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-16",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          2,
+          2,
+          5,
+          4
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "naturkundemuseum-berlin-citizen-science-bereich",
+      "name": "Naturkundemuseum Berlin, Citizen-Science-Bereich",
+      "typ": "B",
+      "kategorie": "citizen-science",
+      "rollen": [
+        "ideenquelle",
+        "empfaenger"
+      ],
+      "tags": [
+        "foerderung",
+        "berlin"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "",
+      "fokus": "Projekte mit Engpass",
+      "status": "offen",
+      "statusNotiz": "",
+      "evidenz": "unbekannt",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "nabu-vogelschlagmelder",
+      "name": "NABU Vogelschlagmelder (Jena, Leipzig, Berlin)",
+      "typ": "B",
+      "kategorie": "citizen-science",
+      "rollen": [
+        "ideenquelle",
+        "empfaenger"
+      ],
+      "tags": [
+        "vogel",
+        "glas",
+        "naturschutz",
+        "citizen-science",
+        "berlin"
+      ],
+      "urls": [
+        "https://vogelschlagmelder.de",
+        "https://berlin.vogelschlagmelder.de",
+        "https://codeberg.org/nabu-jena/Vogelschlagmelder"
+      ],
+      "zugang": {
+        "art": "repo",
+        "erreichbar": "ja",
+        "wie": "Quellcode GPLv3 auf codeberg.org/nabu-jena/Vogelschlagmelder (klonbar); Live-Karten auf vogelschlagmelder.de und berlin.vogelschlagmelder.de."
+      },
+      "enthaelt": "Seit Februar/März 2026 live, `vogelschlagmelder.de` und `berlin.vogelschlagmelder.de`. Meldung mit bis zu fünf Fotos, Anprallspur und Größe, Fassadenausrichtung, Geokodierung, Artangabe. Gefahrenkarte = Heatmap der Meldungen, keine Bewertung. Quellcode GPLv3, `codeberg.org/nabu-jena/Vogelschlagmelder` (Python, Docker, OpenAPI, 159 Commits, aktiv 09/2026, selbst hostbar), Maintainer Maximilian Schätz. Berliner Kontakt: Julia Lorenz, Helen Friedlein, `artenschutz_am_gebaeude@nabu-berlin.de` — sie nutzen die Daten für die Ansprache von Eigentümern und Behörden. Muster: die Ehrenamtsplattform, die genau die Rohdaten sammelt, die eine Bewertungsschicht braucht.",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "Empfänger",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-22",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          4,
+          4,
+          5,
+          4
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "lbv-lfu-vogelschlag-untersuchung-muenchen",
+      "name": "Untersuchung zum Vogelschlag an Glas in München",
+      "typ": "B",
+      "kategorie": "citizen-science",
+      "rollen": [
+        "ideenquelle",
+        "empfaenger"
+      ],
+      "tags": [
+        "vogel",
+        "glas"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Wölfl & Bornemann (LBV) mit LfU Bayern, 2021. Neun Komplexe, 1.957 m Fassade, 13 Wochen. Markierte Lärmschutzwände 0 auf 93 m, unmarkierte Glaswände 0,41/m, Fassaden 0,02/m; drei Glaswände ~46 Kollisionen je 100 m in drei Monaten. Nennt die LAG-VSW-Schwellen im Klartext (2 normal, ab 5 signifikant erhöht je 100 m und Jahr) und stuft die Objekte von Hand in Priorität 1/2 ein. Doppelt wertvoll: Munition und fertige Testfälle.",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-22",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          4,
+          4,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "compgen-grabstein-projekt",
+      "name": "CompGen Grabstein-Projekt",
+      "typ": "C",
+      "kategorie": "ki-versuch",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "",
+      "fokus": "Halluzination bei Verwitterung → Streiflicht",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-16",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          4,
+          4,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "repair-cafe-international",
+      "name": "Repair Café International",
+      "typ": "C",
+      "kategorie": "ki-versuch",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [
+        "reparatur"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "",
+      "fokus": "noch nicht gelesen, ob Schwächen genannt",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-16",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          4,
+          4,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "sozialhelden-hiig",
+      "name": "Sozialhelden / HIIG",
+      "typ": "C",
+      "kategorie": "ki-versuch",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [
+        "open-data"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "",
+      "fokus": "Datensatz 2023; Grenzen im Datensatz-Paper?",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-16",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          2,
+          2,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "citylab-berlin-blog-sommerkonferenz",
+      "name": "CityLAB Berlin Blog & Sommerkonferenz",
+      "typ": "C",
+      "kategorie": "ki-versuch",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [
+        "abfall",
+        "berlin"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "",
+      "fokus": "Themen: BärGPT, Beyond Forms, Kiezlabor, Beteiligung, Open Source; Kreislaufwirtschaft fehlt",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-20",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          4,
+          4,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "prototype-fund",
+      "name": "Prototype Fund",
+      "typ": "D",
+      "kategorie": "foerderung",
+      "rollen": [
+        "geldgeber",
+        "ideenquelle",
+        "empfaenger"
+      ],
+      "tags": [
+        "foerderung"
+      ],
+      "urls": [
+        "https://bewerben.prototypefund.de"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "Vor jedem Hinweis Status und Zulässigkeit auf bewerben.prototypefund.de prüfen (nur Freiberufler:innen/GbR ≤ 4 Personen)."
+      },
+      "enthaelt": "",
+      "fokus": "Fristen, Zuschnitt · Korrektur 20.09.2026: Nur Freiberufler:innen/Selbstständige oder GbR (≤ 4 Personen) förderfähig. Keine Stiftungen, Behörden oder Vereine. Vor jedem Hinweis Status auf `bewerben.prototypefund.de` prüfen!",
+      "status": "durchsucht",
+      "statusNotiz": "(20.09.2026)",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-20",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          4,
+          4,
+          5,
+          4
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "citylab-berlin",
+      "name": "CityLAB Berlin",
+      "typ": "D",
+      "kategorie": "foerderung",
+      "rollen": [
+        "geldgeber",
+        "ideenquelle",
+        "empfaenger"
+      ],
+      "tags": [
+        "berlin"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "",
+      "fokus": "Empfänger Rang 1 (Bauträger, GovTech TestLAB, Kiezlabor)",
+      "status": "durchsucht",
+      "statusNotiz": "(20.09.2026)",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-20",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          4,
+          4,
+          5,
+          4
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "re-use-berlin-zero-waste-agentur",
+      "name": "Re-Use Berlin / Zero-Waste-Agentur (SenUVK)",
+      "typ": "D",
+      "kategorie": "foerderung",
+      "rollen": [
+        "geldgeber",
+        "ideenquelle",
+        "empfaenger"
+      ],
+      "tags": [
+        "abfall",
+        "berlin"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "",
+      "fokus": "Domänenpartner Kreislaufwirtschaft",
+      "status": "angekratzt",
+      "statusNotiz": "(20.09.2026)",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-20",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          2,
+          2,
+          5,
+          4
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "bsr",
+      "name": "BSR (Berliner Stadtreinigung)",
+      "typ": "D",
+      "kategorie": "foerderung",
+      "rollen": [
+        "geldgeber",
+        "ideenquelle",
+        "empfaenger"
+      ],
+      "tags": [
+        "berlin"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "",
+      "fokus": "Kieztage 2026 (~80 Termine, alle Bezirke) als Kaltstart-Bühne; NochMall",
+      "status": "angekratzt",
+      "statusNotiz": "(20.09.2026)",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-20",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          2,
+          2,
+          5,
+          4
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "open-repair-alliance",
+      "name": "Open Repair Alliance",
+      "typ": "D",
+      "kategorie": "foerderung",
+      "rollen": [
+        "geldgeber",
+        "ideenquelle",
+        "empfaenger"
+      ],
+      "tags": [
+        "reparatur"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "",
+      "fokus": "Datenquelle",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          2,
+          2,
+          5,
+          4
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "bsr-mengenstatistik-2025",
+      "name": "Berliner Stadtreinigung (BSR) / Berliner Zeitung (22.03.2026) / EUWID (08/2025)",
+      "typ": "E",
+      "kategorie": "statistik",
+      "rollen": [
+        "evidenz"
+      ],
+      "tags": [
+        "abfall",
+        "citizen-science",
+        "berlin"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "2025 fast 200.000 Meldungen illegaler Ablagerungen (>500/Tag); Beseitigungskosten >13 Mio. € (2024: 10,3 Mio. €); 54.000 m³ (2024, +8 %). Typisch: Möbel, Kühlschränke, Matratzen.",
+      "fokus": "Sperrmüll-Radar v2 (`05-dosen/sperrmuell-radar.md`), Mail 2 an CityLAB",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-20",
+      "ertrag": {
+        "dosen": [
+          "sperrmuell-radar"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          4,
+          3,
+          4,
+          4,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "lana-bfn-kartieranleitung-lrt-6120",
+      "name": "LANA/BfN Kartieranleitung LRT 6120 (Trockenrasen)",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [
+        "naturschutz"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "",
+      "fokus": "Trockenrasen-Transekte; Überschneidung mit Kartierlotse klären",
+      "status": "offen",
+      "statusNotiz": "(BfN-Zeile oben ist wegen Schrift 721 `angekratzt`, LRT-6120-Anleitung selbst ungelesen)",
+      "evidenz": "seite",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [
+          "kartierlotse"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          4,
+          5,
+          4,
+          4,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "nabu-batcorder-gewaesser",
+      "name": "NABU-Batcorder-Monitoring Gewässer",
+      "typ": "B",
+      "kategorie": "citizen-science",
+      "rollen": [
+        "ideenquelle",
+        "empfaenger"
+      ],
+      "tags": [],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "",
+      "fokus": "Fledermaus-Echo-Entwirrer",
+      "status": "offen",
+      "statusNotiz": "",
+      "evidenz": "unbekannt",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "thuenen-monvia-hummel-nistkasten",
+      "name": "Thünen MonViA, Hummel-Nistkasten",
+      "typ": "B",
+      "kategorie": "citizen-science",
+      "rollen": [
+        "ideenquelle",
+        "empfaenger"
+      ],
+      "tags": [
+        "insekten"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "",
+      "fokus": "Hummel-Schleusenwächter",
+      "status": "angekratzt",
+      "statusNotiz": "(Nisthilfe-Foto-Auswertung Runde 2; Hummel-Strang wie in Zeile oben vermerkt)",
+      "evidenz": "schnipsel",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          2,
+          2,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "orgelpfeifen-bleifrass-bdo",
+      "name": "Stiftung Denkmalschutz / BDO, Orgelpfeifen-Bleifraß",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [
+        "denkmal"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "pdf",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "",
+      "fokus": "Orgelpfeifen-Resonanz",
+      "status": "angekratzt",
+      "statusNotiz": "19.09.2026 — HfK-Bremen/DBU-Projekt, IDW-Meldung, CORDIS COLLAPSE gelesen; Handbuch Orgelkorrosion 2019 (PDF) nicht lesbar; Idee `unklar`",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-19",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          2,
+          4,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "dwd-waldbrandgefahrenindex-landesforst",
+      "name": "DWD Waldbrandgefahrenindex / Landesforst",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "",
+      "fokus": "Waldbrand-Streu-Knistern",
+      "status": "offen",
+      "statusNotiz": "",
+      "evidenz": "unbekannt",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "dwd-phaenologischer-kalender",
+      "name": "DWD Phänologischer Kalender",
+      "typ": "B",
+      "kategorie": "citizen-science",
+      "rollen": [
+        "ideenquelle",
+        "empfaenger"
+      ],
+      "tags": [
+        "phaenologie"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "",
+      "fokus": "Knospen-Countdown",
+      "status": "offen",
+      "statusNotiz": "",
+      "evidenz": "unbekannt",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "tafel-deutschland-e-v",
+      "name": "Tafel Deutschland e. V.",
+      "typ": "B",
+      "kategorie": "citizen-science",
+      "rollen": [
+        "ideenquelle",
+        "empfaenger"
+      ],
+      "tags": [],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "",
+      "fokus": "Tafel-Frische-Triage",
+      "status": "angekratzt",
+      "statusNotiz": "Achtung: laufendes BMEL-Projekt „Tafel macht Zukunft\" — zuerst dessen Umfang lesen",
+      "evidenz": "schnipsel",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          2,
+          2,
+          5,
+          4
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "wsa-wrrl-gewaesseroekologie",
+      "name": "WSA/WRRL Gewässerökologie",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [
+        "holz"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "",
+      "fokus": "Totholz-Kolk-Peiler",
+      "status": "offen",
+      "statusNotiz": "",
+      "evidenz": "unbekannt",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "berlin-leitfaden-bauen-mit-glas-und-licht",
+      "name": "Berliner Leitfaden „Bauen mit Glas und Licht\" (2021)",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [
+        "licht",
+        "glas",
+        "gebaeude",
+        "berlin"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "",
+      "fokus": "Licht-Glocken-Kataster",
+      "status": "offen",
+      "statusNotiz": "(Senatsverwaltung-Zeile oben; als Anker genannt, Leitfaden nicht gelesen)",
+      "evidenz": "seite",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          4,
+          4,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "growapp-globe-phenology",
+      "name": "GrowApp / GLOBE European Phenology Campaign (`growapp.today`, `globe.gov`)",
+      "typ": "F",
+      "kategorie": "beobachtungsplattform",
+      "rollen": [
+        "besetzt-test",
+        "evidenz"
+      ],
+      "tags": [
+        "phaenologie"
+      ],
+      "urls": [
+        "https://growapp.today",
+        "https://globe.gov"
+      ],
+      "zugang": {
+        "art": "app",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Wiederholungsfoto derselben Einzelpflanze, voriges Bild transparent zum Ausrichten, automatischer Zeitraffer ab Bild 2; GLOBE Niederlande, Update Frühjahr 2024",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "ergiebig, hat Crack Flora Watcher gekippt; Länderliste, Datenexport und Nutzerzahlen ungelesen",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-21",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          4,
+          5,
+          4,
+          4,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "usa-npn-natures-notebook",
+      "name": "USA National Phenology Network / Nature's Notebook (`usanpn.org`)",
+      "typ": "F",
+      "kategorie": "beobachtungsplattform",
+      "rollen": [
+        "besetzt-test",
+        "evidenz"
+      ],
+      "tags": [
+        "phaenologie"
+      ],
+      "urls": [
+        "https://usanpn.org"
+      ],
+      "zugang": {
+        "art": "app",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Einzelpflanzen mit Spitznamen registrieren, im Feld markieren, wiederholt besuchen; kuratierte Artenliste; neue App Frühjahr 2026 mit „leveled approach to monitoring\"",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "(FAQ gelesen) — Artenliste nicht durchgesehen, Ritzenunkraut unklar",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-21",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          5,
+          4,
+          4,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "flora-incognita-krautschau",
+      "name": "Flora Incognita, Projektseite Krautschau (`floraincognita.de/krautschau/`)",
+      "typ": "F",
+      "kategorie": "beobachtungsplattform",
+      "rollen": [
+        "besetzt-test",
+        "evidenz"
+      ],
+      "tags": [
+        "foerderung",
+        "phaenologie"
+      ],
+      "urls": [
+        "https://floraincognita.de/krautschau/"
+      ],
+      "zugang": {
+        "art": "app",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Eigenes Krautschau-Projekt in der App, Abzeichen 40 Arten / fünf Stufen, „Flora-Routine\" mit Geozone und Auto-Tagging",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "(Seite gelesen) — Achtung: war in der Dose als nachrangiger Empfänger geführt und ist zugleich Konkurrenz",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-21",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          4,
+          4,
+          4,
+          4
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "senckenberg-krautschau",
+      "name": "Senckenberg #Krautschau (`senckenberg.de/de/krautschau/`)",
+      "typ": "F",
+      "kategorie": "beobachtungsplattform",
+      "rollen": [
+        "besetzt-test",
+        "evidenz"
+      ],
+      "tags": [
+        "phaenologie"
+      ],
+      "urls": [
+        "https://senckenberg.de/de/krautschau/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Aktionszeitraum 2026 09.05.–10.06. (85 Spaziergänge, 66 Städte), 2027 14.–23.05.; Koordination Julia Krohmer + Alexandra-Maria Klein (Uni Freiburg); empfiehlt Flora Incognita und ObsIdentify",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "(Seite gelesen)",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-21",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          4,
+          4,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "usa-npn-local-phenology-program-guide",
+      "name": "USA-NPN Local Phenology Program Guide",
+      "typ": "F",
+      "kategorie": "beobachtungsplattform",
+      "rollen": [
+        "besetzt-test",
+        "evidenz"
+      ],
+      "tags": [
+        "phaenologie"
+      ],
+      "urls": [
+        "https://usanpn.org/files/education/2018-0621-localphenologyprogram_guide_final_1.pdf"
+      ],
+      "zugang": {
+        "art": "pdf",
+        "erreichbar": "ja",
+        "wie": "PDF direkt lesbar; die Projektseite allein liefert den Befund nicht."
+      },
+      "enthaelt": "Personalwechsel als Organisationsaufgabe: Nachfolge dokumentieren, zweite Person als Admin, Gruppen-Eigentümerschaft per „Manage Users\" übertragen — „before you depart\" — Belege: (PDF, `usanpn.org/files/education/2018-0621-localphenologyprogram_guide_final_1.pdf`)",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "(PDF gelesen) — ergiebig: hat die Restlücke der neuen Dose präzisiert. Die Projektseite allein hätte den Befund nicht geliefert",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-21",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          4,
+          3,
+          4,
+          4,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "giessdenkiez-quellcode",
+      "name": "Quellcode des Empfängers — `github.com/technologiestiftung/giessdenkiez-de`",
+      "typ": "F",
+      "kategorie": "beobachtungsplattform",
+      "rollen": [
+        "besetzt-test",
+        "evidenz"
+      ],
+      "tags": [],
+      "urls": [
+        "https://github.com/technologiestiftung/giessdenkiez-de"
+      ],
+      "zugang": {
+        "art": "repo",
+        "erreichbar": "ja",
+        "wie": "`git clone` über HTTPS + `grep` (Volltext). GitHub-API und Issue-/Discussion-Seiten sind gesperrt (robots.txt) — Issues vor Zustellung von Hand nachsehen."
+      },
+      "enthaelt": "`adoptTree`/`unadoptTree`/`refreshIsTreeAdoptedByOthers`, sonst nichts; null Treffer für Ablauf/Inaktivität/Übertragung; Adoption nicht exklusiv; Oberflächentext „lässt Du Deine Nachbarschaft wissen, dass für diese Bäume gesorgt wird\" — Belege: (Klon 21.09.2026)",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "(Volltext) — Issues/Discussions nicht lesbar (API gesperrt, robots.txt), vor Zustellung von Hand nachsehen",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-21",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          2,
+          5,
+          5,
+          4
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "citylab-giess-den-kiez",
+      "name": "CityLAB Gieß den Kiez (`citylab-berlin.org/en/projects/giess-den-kiez/`)",
+      "typ": "F",
+      "kategorie": "beobachtungsplattform",
+      "rollen": [
+        "besetzt-test",
+        "evidenz"
+      ],
+      "tags": [
+        "baum",
+        "berlin"
+      ],
+      "urls": [
+        "https://citylab-berlin.org/en/projects/giess-den-kiez/"
+      ],
+      "zugang": {
+        "art": "repo",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Baum adoptieren, Gießmenge protokollieren, Patenbäume im Profil; 885.825 Bäume, quelloffen mit Fork-Wiki, seit 2020 laufend",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "(Projektseite gelesen) — zu Exklusivität/Inaktivität/Übertragung sagt die Seite nichts; ggf. Repo/Issues lesen",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-21",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          4,
+          4,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "ecsa-2026-w16-games-for-good",
+      "name": "ECSA 2026, Workshop W16 „Games for good: Games and gamification for Citizen Science\"",
+      "typ": "G",
+      "kategorie": "spiel",
+      "rollen": [
+        "ideenquelle",
+        "empfaenger"
+      ],
+      "tags": [
+        "spiel",
+        "citizen-science"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "Programm des Workshops ist ein Adressbuch des Felds; Termin vorbei, nächstes Fenster ECSA 2027."
+      },
+      "enthaelt": "Convenors: Liz Dowthwaite + Nimisha Parashar (Univ. Nottingham), Jesse Himmelstein (Play Curious), Attila Szantner (MMOS); Beiträge: Forschung, Spiel-Demos, Projektvorstellungen — Belege: (Oulu, 03.03.2026)",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "Termin vorbei, also kein Zustellziel, aber der Adressbestand des Felds. Nächstes Fenster ECSA 2027",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-21",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          4,
+          4,
+          5,
+          4
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "mmos-project-discovery",
+      "name": "MMOS / Project Discovery (`mmos.ch`)",
+      "typ": "G",
+      "kategorie": "spiel",
+      "rollen": [
+        "ideenquelle",
+        "empfaenger"
+      ],
+      "tags": [
+        "spiel"
+      ],
+      "urls": [
+        "https://mmos.ch"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Echte Forschungsaufgaben in bestehende Spiele eingebettet (EVE Online), hunderttausende Spieler, *Nature Biotechnology* 2024, GDC-Talk",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "(Suchtreffer) — umgekehrtes Modell, Wissenschaft ins Spiel statt Spiel um Weltstück",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-21",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          2,
+          2,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "the-plant-game-plantnet",
+      "name": "The Plant Game / Pl@ntNet (`theplantgame.com`, `docs.plantnet.org`)",
+      "typ": "G",
+      "kategorie": "spiel",
+      "rollen": [
+        "ideenquelle",
+        "empfaenger"
+      ],
+      "tags": [
+        "spiel"
+      ],
+      "urls": [
+        "https://theplantgame.com",
+        "https://docs.plantnet.org"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Drei Modi inkl. Duell gegen Freunde oder Zufallsgegner, adaptive Schwierigkeit",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "Doku nennt keine Duellregeln, keine Spielerzahlen, kein Datum; Aktivitätsstand vor Zustellung prüfen",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-21",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          2,
+          2,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "stray-fawn-studio-publishing",
+      "name": "Stray Fawn Studio / Publishing (`strayfawnstudio.com`)",
+      "typ": "G",
+      "kategorie": "spiel",
+      "rollen": [
+        "ideenquelle",
+        "empfaenger"
+      ],
+      "tags": [],
+      "urls": [
+        "https://strayfawnstudio.com"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Publishing seit 03/2023, Fokus Strategie/Simulation/City-Building, „pitch deck and trailer\" an `pitch@strayfawnstudio.com`",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "kein Empfänger, Verkaufskanal; als Vorarbeit führen (*Niche*)",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-21",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          4,
+          4,
+          5,
+          4
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "scientific-game-jam-green-game-jam",
+      "name": "Scientific Game Jam (itch.io), Green Game Jam (Playing for the Planet)",
+      "typ": "G",
+      "kategorie": "spiel",
+      "rollen": [
+        "ideenquelle",
+        "empfaenger"
+      ],
+      "tags": [
+        "spiel"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Jams, die Forschung und Spielentwicklung paaren",
+      "fokus": "",
+      "status": "offen",
+      "statusNotiz": "als Community-Weg für Ideen mit Skelett",
+      "evidenz": "unbekannt",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "leed-pilot-credits",
+      "name": "LEED Pilot Credits (USGBC)",
+      "typ": "H",
+      "kategorie": "auslandsregulierung",
+      "rollen": [
+        "besetzt-test",
+        "evidenz"
+      ],
+      "tags": [
+        "glas"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "SSpc55 „Bird Collision Deterrence\": `(Zone 1 + Zone 2 gewichtete Fläche) / bereinigte Fassadenfläche = Bird Collision Threat Rating`, Ziel ≤ 15, Zone 1 = erste 36 Fuß über Grund (+ 12 Fuß über Gründach), verglaste Ecken und Durchflüge ≤ 25, Nachweis über offizielle Tabellenvorlage. Gewichte = Material Threat Factors aus Flugtunneltests. Die gesamte Pilot-Credit-Bibliothek ist ein Katalog solcher Verfahren — für andere Themen ungehoben.",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "(Vogelschlag), sehr ergiebig für andere Themen",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-21",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          5,
+          4,
+          4,
+          4,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "american-bird-conservancy",
+      "name": "American Bird Conservancy",
+      "typ": "H",
+      "kategorie": "auslandsregulierung",
+      "rollen": [
+        "besetzt-test",
+        "evidenz"
+      ],
+      "tags": [],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Material Threat Factors, „Bird-friendly Building Design\", LEED-Innovation-Credit — die Datenbasis hinter dem Rechner",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-21",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          2,
+          2,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "kommunale-ordnungen-usa",
+      "name": "Kommunale Ordnungen USA (NYC Local Law 15/2020 u. a.)",
+      "typ": "H",
+      "kategorie": "auslandsregulierung",
+      "rollen": [
+        "besetzt-test",
+        "evidenz"
+      ],
+      "tags": [],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Bird-friendly-Materials-Pflicht seit 10.01.2021; bedient von Beratungsbüros und Materiallisten, keine Compliance-Software gefunden",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-21",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          2,
+          2,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "flap-canada",
+      "name": "FLAP Canada",
+      "typ": "H",
+      "kategorie": "auslandsregulierung",
+      "rollen": [
+        "besetzt-test",
+        "evidenz"
+      ],
+      "tags": [
+        "glas",
+        "eu-recht"
+      ],
+      "urls": [
+        "https://flapapp.ca"
+      ],
+      "zugang": {
+        "art": "app",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "BirdSafe DIY Building Risk Assessment App (`flapapp.ca`): kostenlos, Browser, Tag- und Nachtrisiko pro Fassade, Fragebogen ohne Bildauswertung; dazu kostenpflichtige BirdSafe-Begutachtung mit Ortsterminen und „An Analysis of Collision Mitigation Effectiveness\"",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-21",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          4,
+          4,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "schweiz-zuercher-pbg-ergaenzung-zu-glasfassaden",
+      "name": "Schweiz: Zürcher PBG-Ergänzung zu Glasfassaden",
+      "typ": "H",
+      "kategorie": "auslandsregulierung",
+      "rollen": [
+        "besetzt-test",
+        "evidenz"
+      ],
+      "tags": [
+        "vogel",
+        "glas"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Planungs- und Baugesetz um Vogelschutz an transparenten Fassaden ergänzt — eigene Rechtslage, eigener Markt",
+      "fokus": "",
+      "status": "offen",
+      "statusNotiz": "",
+      "evidenz": "unbekannt",
+      "zuletzt": "2026-09-21",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "leed-v5",
+      "name": "LEED v5 (USGBC/CAGBC), Stand 24.04.2026",
+      "typ": "H",
+      "kategorie": "auslandsregulierung",
+      "rollen": [
+        "besetzt-test",
+        "evidenz"
+      ],
+      "tags": [
+        "vogel"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "pdf",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Vogelschlag jetzt in zwei Credits (BD+C SS 1 Option 2, O+M SS 2 Option 2), verlangt Threat Factor ≤ 30 nach ABC-Skala; CSA A460:19 (R2024) als kanadischer Alternativweg anerkannt (RACP15, Abschnitte 3.2 und 3.3). Toronto seit 2010, NYC Local Law 15 seit 10.01.2021. Die Zertifizierungsseite verdichtet sich jährlich — deutsche Seite bleibt PDF.",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-22",
+      "wiedervorlage": "2027-03",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          4,
+          4,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "onr-191040-flugtunnel-hohenau-ringelsdorf",
+      "name": "ONR 191040 / Flugtunnel Hohenau-Ringelsdorf",
+      "typ": "H",
+      "kategorie": "auslandsregulierung",
+      "rollen": [
+        "besetzt-test",
+        "evidenz"
+      ],
+      "tags": [
+        "vogel",
+        "foerderung"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Österreichische Prüfnorm: Eine Markierung gilt als Vogelschutzglas, wenn mindestens 90 % der Vögel die markierte Scheibe meiden. Tunnel seit 2010, geleitet von Martin Rössler; die Wiener Umweltanwaltschaft veröffentlicht die Rangliste geprüfter Muster. Die Produktwirksamkeit ist damit normiert und öffentlich — als Ideenfeld geschlossen.",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-22",
+      "wiedervorlage": "2027-03",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          4,
+          4,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "fenster-wand-verhaeltnis-strassenbilder",
+      "name": "Fenster-Wand-Verhältnis aus Straßenbildern",
+      "typ": "I",
+      "kategorie": "messverfahren",
+      "rollen": [
+        "evidenz",
+        "besetzt-test"
+      ],
+      "tags": [
+        "glas",
+        "naturschutz",
+        "energie",
+        "gebaeude",
+        "ki"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Suppa, Aliberti, Bottero & Corrado, *Building Simulation* 18(8), 2025: YOLOv9 auf Google Street View, 94 % der Fassaden innerhalb ±5 Prozentpunkten der Handmessung, 100 % innerhalb ±10, Workflow offen (Turin). Dazu Applied Energy 2026 zur urbanen WWR-Schätzung, DLR zur direkten WWR-Vorhersage, Concordia über Google-3D-Kacheln, Fassadenparsing mit SOLOv2. Die Gebäudeenergie-Branche hat die Messung gelöst, auf die der Naturschutz wartet.",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-22",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          4,
+          4,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "li-et-al-biological-conservation-2025",
+      "name": "Li u. a., Biological Conservation 310 (2025)",
+      "typ": "I",
+      "kategorie": "messverfahren",
+      "rollen": [
+        "evidenz",
+        "besetzt-test"
+      ],
+      "tags": [
+        "glas",
+        "foerderung",
+        "gebaeude"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Nationale Citizen-Science-Erhebung China 2021–2023: 3.078 Gebäude, 65.633 Erfassungstage, 676 Arten. Vegetation wirkt am stärksten auf 1.000 m (Frühjahr) und 10 km (Herbst); Bäume innerhalb 5 m senkten das Herbstrisiko; niedrigere Gebäude mit hohem Glasanteil gefährlicher. Steht quer zur Nahbereichs-Spiegelungslogik der deutschen Merkblätter — gehört in jedes „Wo es kippt\" zu diesem Thema.",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-22",
+      "wiedervorlage": "03/2027",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          4,
+          4,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "bsr-gebuehren-sperrmuellbuchung",
+      "name": "BSR-Gebühren / Sperrmüllbuchung",
+      "typ": "J",
+      "kategorie": "tarif",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [
+        "abfall",
+        "foerderung",
+        "berlin"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "100 € bis 5 m³ (6–15 Werktage) · 96 € Express (≤ 2 m³, 5 Tage) · 50 € ab Tag 16 · Recyclinghof 3 m³ frei, aber nur mit Auto · NochMall-Abholservice kostenpflichtig · Straße 0 € und sofort. Ergab die Dose Sperrmüll-Weiche",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-23",
+      "ertrag": {
+        "dosen": [
+          "sperrmuell-weiche"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          4,
+          3,
+          4,
+          4,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "parkraum-pfand-anschlussgebuehren",
+      "name": "Parkraumbewirtschaftung, Pfandsysteme, Anschluss- und Benutzungsgebühren",
+      "typ": "J",
+      "kategorie": "tarif",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [
+        "foerderung"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Durchsucht für Bewohnerparken (AusweichZonen-Lotse), Pfand und Anschlussgebühren offen",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-27",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          2,
+          2,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "uba-2022-nutzung-von-abfallstroemen",
+      "name": "UBA 2022, Nutzung von Abfallströmen",
+      "typ": "K",
+      "kategorie": "potenzialstudie",
+      "rollen": [
+        "evidenz"
+      ],
+      "tags": [
+        "abfall"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Sperrmüll 2017: 2.355.300 t, ~30 % Polstermöbel/Matratzen/Teppiche, 40 % Sortieranlage, 34 % thermisch. Befund: Entlastung kommt aus Abfallberatung, getrennter Sammlung und Wiederverwendung — nicht aus besserer Sortiertechnik",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "(Zusammenfassung gelesen, Originalbericht nicht)",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-23",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          4,
+          4,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "uba-bmuv-potenzialstudien-weitere",
+      "name": "Weitere UBA-/BMUV-Potenzialstudien zu anderen Stoffströmen",
+      "typ": "K",
+      "kategorie": "potenzialstudie",
+      "rollen": [
+        "evidenz"
+      ],
+      "tags": [],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "offen",
+      "fokus": "",
+      "status": "offen",
+      "statusNotiz": "",
+      "evidenz": "unbekannt",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "fractodb-fractographics",
+      "name": "FractoDB + FractoGraphics (AG Fraktographie von DGM/DVM an der BAM, seit 2013)",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "evidenz",
+        "ideenquelle"
+      ],
+      "tags": [
+        "foerderung",
+        "werkstoff",
+        "berlin"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Tausende reale Bruchflächenbilder aus Schadensfällen und Vergleichsuntersuchungen, kostenlos auf Anfrage (`fraktographie@bam.de`), Symbolsprache für Befunde; Kurs „Fraktographie metallischer Werkstoffe\" 03/2027 Berlin, Arbeitskreis 20.11.2026 Berlin. Referenzsammlung, die niemand als Übungsmaterial nutzt — Empfänger der Dose Bruchlesen",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "(Seiten gelesen)",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-23",
+      "ertrag": {
+        "dosen": [
+          "bruchlesen"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          4,
+          3,
+          4,
+          4,
+          5,
+          4
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "bsr-empfaenger",
+      "name": "BSR",
+      "typ": "W",
+      "kategorie": "empfaenger",
+      "rollen": [
+        "empfaenger"
+      ],
+      "tags": [
+        "abfall",
+        "foerderung",
+        "berlin"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "formular",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Besitzt beide Enden der Sperrmüll-Weiche: kostenpflichtige Sperrmüllabholung und NochMall mit eigenem Abholservice (Formular, Fotoupload, Etage, verbindliches Angebot in 48 h). Keine Verbindung zwischen beiden. Rang 1 für alles Entsorgungsnahe",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-23",
+      "ertrag": {
+        "dosen": [
+          "sperrmuell-weiche"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          4,
+          4,
+          2,
+          2,
+          5,
+          4
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "citylab-berlin-empfaenger",
+      "name": "CityLAB Berlin",
+      "typ": "W",
+      "kategorie": "empfaenger",
+      "rollen": [
+        "empfaenger"
+      ],
+      "tags": [
+        "berlin"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "teilweise",
+        "wie": ""
+      },
+      "enthaelt": "Gesperrt bis auf Weiteres. Mail 2 ging am 20.09.2026 dorthin, Mail 4 (Patenschaft) liegt bewusst zurück. Eine dritte Sendung an dieselbe Adresse wäre Nachfassen — Manifestregel",
+      "fokus": "",
+      "status": "gesperrt",
+      "statusNotiz": "",
+      "evidenz": "unbekannt",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          1,
+          2,
+          3,
+          5,
+          1
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "somerset-council-british-heart-foundation",
+      "name": "Somerset Council × British Heart Foundation (UK)",
+      "typ": "W",
+      "kategorie": "empfaenger",
+      "rollen": [
+        "empfaenger"
+      ],
+      "tags": [],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Kein Empfänger, sondern Vorbild mit benannter Schwäche (Triage erst im Depot nach der Abholung)",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-23",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          2,
+          2,
+          5,
+          4
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "lfu-bayern-schadstoffratgeber",
+      "name": "LfU Bayern, Schadstoffratgeber Gebäuderückbau",
+      "typ": "M",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [
+        "abfall",
+        "holz",
+        "offenlegung",
+        "gebaeude"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "gesperrt",
+        "wie": "lfu.bayern.de war in der Cloud-Umgebung nicht abrufbar; nur Suchschnipsel."
+      },
+      "enthaelt": "Produktnamen/Zeiträume historischer Holzschutzmittel; Altholz-Infoblätter als reiner Text — Belege: (Suchregister Nr. 507 Holzschutzmittel) + Abfallratgeber Bayern (Altholz, Bahnschwellen)",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "ergiebig (Dosenfund-Dolmetscher, Altholz-Weiche)",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-27",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          4,
+          4,
+          2,
+          2,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "altholzv-anhang-iii-bav",
+      "name": "AltholzV Anhang III + BAV/EUWID-Novellen-Debatte",
+      "typ": "M",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [
+        "abfall",
+        "holz"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "norm",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Regelvermutung Sortiment → A I–A IV; BAV: Sichtzuordnung „nicht zuverlässig umsetzbar“; Novelle blockiert",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-27",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          2,
+          2,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "wra-waste-wood-assessment-guidance",
+      "name": "WRA Waste Wood Assessment Guidance (UK, V3 02/2024) + CIWM/NFDC C&D-Guide",
+      "typ": "M",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [],
+      "urls": [],
+      "zugang": {
+        "art": "norm",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Visueller Papierleitfaden, keine App",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "(Auslandsgegenprobe)",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-27",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          2,
+          2,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "din-4074-1-5-holzbau-deutschland",
+      "name": "DIN 4074-1/-5 (2026-05) + Holzbau Deutschland „Sortierung durch den Zimmermeister“ + Recyclingholz-Papers 2025/26 + ReFoRe",
+      "typ": "M",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [
+        "abfall",
+        "holz",
+        "gebaeude"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "norm",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Regelvorschlag für Gebrauchsspuren, kein Feldwerkzeug",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "ergiebig, ReFoRe ungelesen",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-27",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          4,
+          5,
+          4,
+          4,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "bimschv-1-duh-clean-heat-faq",
+      "name": "1. BImSchV / DUH Clean Heat FAQ / UK Smoke Control Areas",
+      "typ": "M",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [],
+      "urls": [],
+      "zugang": {
+        "art": "norm",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Protokoll verlangt, optischer Nachweis nicht vorgesehen",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-27",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          2,
+          2,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "abbundzeichen-literatur-igb",
+      "name": "Abbundzeichen-Literatur",
+      "typ": "M",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [
+        "holz",
+        "foerderung"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "norm",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Zeichen als Bauforschungsquelle, keine Sammlung — Belege: (Gerner 1996; Vernacular Architecture 49/1, 2018) + IgB-Bauernhausarchiv",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-27",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          2,
+          2,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "thuenen-holzherkuenfte",
+      "name": "Thünen-Kompetenzzentrum Holzherkünfte",
+      "typ": "M",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [
+        "holz",
+        "ki"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "gesperrt",
+        "wie": "Netzwerk-Policy der Cloud-Umgebung sperrte Seitenabrufe (Holz-Runde); nur Suchschnipsel."
+      },
+      "enthaelt": "Apps und KI selbst gebaut",
+      "fokus": "",
+      "status": "erschöpft",
+      "statusNotiz": "für Holzartbestimmung",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-27",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          1,
+          2,
+          5,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "fraunhofer-wki-holzschutztagung",
+      "name": "Fraunhofer WKI Holzschutztagung 2022 / holzfragen.de",
+      "typ": "M",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [
+        "holz"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "norm",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Hausbock-Akustik gebaut; Körperschall 20 kHz–2 MHz",
+      "fokus": "",
+      "status": "erschöpft",
+      "statusNotiz": "für Akustik",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-27",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          1,
+          4,
+          5,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "tfz-straubing-aelf-borkenkaefer",
+      "name": "TFZ Straubing Bericht 11 · AELF-Borkenkäfer-Merkblätter · EFI I+",
+      "typ": "M",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [
+        "offenlegung"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "norm",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Trocknungskurven, Bohrmehl, Marteloskope",
+      "fokus": "",
+      "status": "erschöpft",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-27",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          1,
+          4,
+          5,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "holz-sammelposten-offen",
+      "name": "Offen für die nächste Holz-Runde: Thünen WZE-Kronenansprache-Bildserien, PCP-Richtlinie",
+      "typ": "M",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [
+        "holz"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "norm",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "– — Belege: (Bewertungsschema), DIN 68800-4, Tischler-/Zimmererforen (fachwerk.de), ADG-Graubünden-FAQ Privataufträge, restauratorische Befunduntersuchung",
+      "fokus": "",
+      "status": "offen",
+      "statusNotiz": "",
+      "evidenz": "unbekannt",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "espr-art-24-dvo-2026-2",
+      "name": "ESPR VO (EU) 2024/1781 Art. 24/25 + DVO (EU) 2026/2 (Offenlegung entsorgter unverkaufter Produkte; Anhang I Tabellenformat; ABl. 10.02.2026, gilt ab 02.03.2027)",
+      "typ": "N",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [
+        "eu-recht",
+        "offenlegung"
+      ],
+      "urls": [
+        "https://publications.europa.eu/resource/celex/<CELEX>"
+      ],
+      "zugang": {
+        "art": "norm",
+        "erreichbar": "teilweise",
+        "wie": "EU-Recht im Volltext: https://publications.europa.eu/resource/celex/<CELEX> mit `Accept: application/xhtml+xml` und `Accept-Language: deu`. eur-lex.europa.eu direkt liefert HTTP 202 mit WAF-Challenge und leerem Body."
+      },
+      "enthaelt": "Pflicht große Unternehmen ab GJ 2025 im freien Format (binnen 12 Monaten), Anhang-I-Format für GJ ab 02.03.2027; Vernichtungsverbot Bekleidung/Schuhe seit 19.07.2026. Kein Register der Offenlegungen. Tatbeleg: Signify „Disclosure on Discarded Unsold Consumer Products\" GJ 2025 (PDF 04.05.2026). Sekundär: Cooley 07.05.2026, Freshfields (widersprüchlich), Linklaters, trade-e-bility, Generation Impact, Cattwyk (Minderheitslesart), UBA-Themenseite",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "ergiebig (Dreifachfund → Dose `vernichtungs-offenlegungsregister`). Offen: Normtext Anhang I + Art. 24 Abs. 1 und Signify-PDF als [Seite] lesen — seit der Offenlegungs-Runde (28.09.2026) ohne Netzfreigabe möglich: Netz offen, eur-lex über `publications.europa.eu/resource/celex/<CELEX>`",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [
+          "vernichtungs-offenlegungsregister"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          4,
+          4,
+          4,
+          5,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "recht-auf-reparatur-rl-2024-1799",
+      "name": "Recht auf Reparatur RL",
+      "typ": "N",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [
+        "reparatur",
+        "eu-recht",
+        "preis"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "norm",
+        "erreichbar": "ja",
+        "wie": "Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat."
+      },
+      "enthaelt": "Verbraucherseite beim Empfänger (VZ-Themenseiten + Musterbriefe), Formular anbieterseitig (FixFirst); „angemessen\" nirgends beziffert — Belege: (EU) 2024/1799 (Art. 4 Reparaturinformationsformular Anh. I, Art. 5 Ersatzteile „angemessener Preis\", Anh. II Produktgruppen; DE-Umsetzung BGBl. 2026 I Nr. 212, in Kraft seit 31.07.2026)",
+      "fokus": "",
+      "status": "erschöpft",
+      "statusNotiz": "für Verbraucherbriefe und Formulare; `angekratzt` für Anh. II Waschmaschinen/Geschirrspüler (nächster Bisoziationsanker)",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          1,
+          4,
+          5,
+          4,
+          4
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "energielabel-vo-2023-1669-1670",
+      "name": "VO (EU) 2023/1669 (Energielabel mit Reparierbarkeitsklasse Smartphones/Tablets) + VO (EU) 2023/1670 (Ökodesign: Ersatzteile 7 Jahre, Lieferfrist 5/10 Werktage, Richtpreis Anh. II, Updates) — beide seit 20.06.2025",
+      "typ": "N",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [
+        "energie",
+        "eu-recht",
+        "foerderung",
+        "preis"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "norm",
+        "erreichbar": "ja",
+        "wie": "Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat."
+      },
+      "enthaelt": "Selbstauskunft ohne Nachprüfer; EPREL-Audit R2R Europe/iFixit 09/2026 (2.334 Datensätze, ~80 % ohne verwertbare Angaben); TCO Certified verifiziert; endoflife.date führt Update-Enden",
+      "fokus": "",
+      "status": "erschöpft",
+      "statusNotiz": "produktseitig (EPREL-Nachprüfer, Nachschraub-Probe, Update-Pegel, Ersatzteilpreis-Pegel alle im Friedhof)",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          1,
+          4,
+          5,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "battvo-2023-1542",
+      "name": "BattVO (EU) 2023/1542 (Art. 11 austauschbare Gerätebatterien ab 18.02.2027, Leitlinie C/2025/214; Art. 77 Batteriepass ab 18.02.2027)",
+      "typ": "N",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [
+        "eu-recht"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "norm",
+        "erreichbar": "unbekannt",
+        "wie": "Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat."
+      },
+      "enthaelt": "Noch nicht in Kraft; iFixit verfolgt Art. 11; Gebrauchtakku-Zertifikate kommerziell („Certified by Bosch\", Aviloo, TÜV)",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "Wiedervorlage nach 18.02.2027 (Grab `akkutausch-protokoll`)",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "akkutausch-protokoll"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          4,
+          2,
+          2,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "ords-open-repair-alliance-datensatz",
+      "name": "Open Repair Data Standard",
+      "typ": "N",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [
+        "reparatur",
+        "barrierefreiheit",
+        "open-data"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "norm",
+        "erreichbar": "unbekannt",
+        "wie": "Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat."
+      },
+      "enthaelt": "Felder Produktkategorie, Marke, Baujahr/Alter, Reparaturbarriere (u. a. Ersatzteil nicht verfügbar); Baujahr oft leer — Belege: (ORDS) / Open Repair Alliance — offener Datensatz (openrepair.org/open-data; Netzwerk Reparatur-Initiativen Statistik)",
+      "fokus": "",
+      "status": "offen",
+      "statusNotiz": "nächster Schritt: Datentest für K3 `reparaturfall-pflichtabgleich` (Fälle/Jahr im Geltungsbereich der Teilepflichten zählen). Datensatz nicht heruntergeladen",
+      "evidenz": "unbekannt",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "enefg-9-bt-drs-21-8027",
+      "name": "§ 9 EnEfG + BT-Drs. 21/8027 (Regierungsentwurf Novelle, 16.09.2026, inkl. Stellungnahme Bundesrat Nr. 25 + Gegenäußerung; dserver.bundestag.de) + EED (EU) 2023/1791 Art. 11 Abs. 2 (CELEX 32023L1791)",
+      "typ": "O",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [
+        "energie",
+        "eu-recht",
+        "offenlegung",
+        "foerderung"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "norm",
+        "erreichbar": "ja",
+        "wie": "Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat."
+      },
+      "enthaelt": "Veröffentlichungspflicht der Umsetzungspläne, kein Unternehmensregister, „soll\" Jahresbericht; BR will Streichung, EED schreibt Veröffentlichung vor; ~16.461 Verpflichtete (Schätzung), keine Liste",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "ergiebig (Dreifachfund → Dose `umsetzungsplan-register`) [Seite]",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [
+          "umsetzungsplan-register"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          4,
+          4,
+          4,
+          5,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "bafa-merkblatt-enefg-echte-plaene",
+      "name": "BAFA-Merkblatt EnEfG",
+      "typ": "O",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [
+        "energie",
+        "kapital"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "norm",
+        "erreichbar": "ja",
+        "wie": "Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat."
+      },
+      "enthaelt": "7 Pflichtangaben + Statusvokabular, Pläne folgen wörtlich; keine MWh/Kapitalwert; Diakonie Stetten 404 — Belege: (Stand 12.02.2025, Kopie visalvis.de) + echte Pläne Sanofi 11/2025, VON ARDENNE 04/2025, SWU; Exakttitel-Suche ≥ 10 PDFs",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "[Seite] — Offen: aktuelle Merkblattfassung (10/2025 bzw. 05/2026) auf bafa.de lesen",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          4,
+          5,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "dsa-art-15-dvo-2024-2835",
+      "name": "DSA Art. 15 + DVO (EU) 2024/2835 (harmonisierte CSV-Vorlagen) + DSC-Tätigkeitsbericht 2025 (dsc.bund.de)",
+      "typ": "O",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [
+        "eu-recht",
+        "offenlegung"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "norm",
+        "erreichbar": "ja",
+        "wie": "Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat."
+      },
+      "enthaelt": "Format ja, Sammler nur für VLOPs (Kommission); DSC erklärt Anordnungsdifferenz selbst (Art. 9(6)/10(6)); VLOP-Seite Forschung (HIIG, RTFP, Open Terms Archive, Trujillo et al. 2026)",
+      "fokus": "",
+      "status": "erschöpft",
+      "statusNotiz": "für Register/Gegenbuch (Grab `dsa-anordnungs-gegenbuch`) [Seite]",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "dsa-anordnungs-gegenbuch"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          1,
+          4,
+          5,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "ttpa-vo-2024-900-art-12",
+      "name": "TTPA VO (EU) 2024/900 Art. 12/13 (CELEX) + netzpolitik.org 04.09.2026 + Parteiseiten Wahl Berlin (volt, gruene.berlin)",
+      "typ": "O",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [
+        "eu-recht",
+        "berlin"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "norm",
+        "erreichbar": "ja",
+        "wie": "Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat."
+      },
+      "enthaelt": "Hinweis nur während Schaltung auffindbar, EU-Archiv nur online; keine Sammlung offline; PWTG offen",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "ergiebig (K3 `wahlwerbe-herbarium`, Needs Research; WV 12/2026) [Seite]",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          4,
+          4,
+          4,
+          5,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "bgg-12b-rl-2016-2102",
+      "name": "§ 12b BGG + RL 2016/2102 Art. 8 (zweiter Überwachungsbericht BFIT-Bund, reha-recht.de) + digitoegankelijk.nl + DasDies-Atlas",
+      "typ": "O",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [
+        "offenlegung",
+        "barrierefreiheit"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "norm",
+        "erreichbar": "ja",
+        "wie": "Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat."
+      },
+      "enthaelt": "Staat misst EzB-Quote (7.239 Webauftritte); NL-Register staatlich",
+      "fokus": "",
+      "status": "erschöpft",
+      "statusNotiz": "(Grab `ezb-register`) [Seite]",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "ezb-register"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          1,
+          4,
+          5,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "bfsg-14-anlage-3-32-mlbf",
+      "name": "BFSG § 14, Anlage 3, § 32 + MLBF-Meldeportal + DataPulse/mindshape-Studien",
+      "typ": "O",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [
+        "citizen-science",
+        "barrierefreiheit"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "norm",
+        "erreichbar": "unbekannt",
+        "wie": "Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat."
+      },
+      "enthaelt": "Shopprüfung kommerziell, Meldungen beim Empfänger",
+      "fokus": "",
+      "status": "erschöpft",
+      "statusNotiz": "(Gräber `bfsg-barrierefreiheitserklaerungen`, `barrieren-spontanmeldung`) [Schnipsel]",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "bfsg-barrierefreiheitserklaerungen"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          1,
+          2,
+          2,
+          4,
+          4
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "entgtranspg-21-22-rl-2023-970",
+      "name": "§§ 21/22 EntgTranspG + RL (EU) 2023/970 Art. 9, 29 (CELEX 32023L0970)",
+      "typ": "O",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [
+        "eu-recht",
+        "offenlegung",
+        "foerderung"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "norm",
+        "erreichbar": "ja",
+        "wie": "Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat."
+      },
+      "enthaelt": "Berichte im Unternehmensregister, ohne Entgeltdaten; Überwachungsstelle muss vergleichend veröffentlichen",
+      "fokus": "",
+      "status": "erschöpft",
+      "statusNotiz": "(Gräber `gleichstellungsbericht-archiv`, `entgeltgefaelle-register`) [Seite]",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "gleichstellungsbericht-archiv"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          1,
+          4,
+          5,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "vo-2017-821-art-7-abs-3",
+      "name": "VO (EU) 2017/821 Art. 7 Abs. 3 (legislation.gov.uk, CELEX 32017R0821) + IPIS/ARM 2023 + DEKSOR (bgr.bund.de nicht abrufbar, 400/406)",
+      "typ": "O",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [
+        "eu-recht"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "norm",
+        "erreichbar": "teilweise",
+        "wie": "Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat."
+      },
+      "enthaelt": "Einführerliste nur Zolldaten, DEKSOR prüft selbst",
+      "fokus": "",
+      "status": "erschöpft",
+      "statusNotiz": "(Grab `konfliktmineralien-berichtsregister`) [Seite/Schnipsel]",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "konfliktmineralien-berichtsregister"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          1,
+          2,
+          2,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "eudr-art-12-abs-3",
+      "name": "EUDR VO (EU) 2023/1115 Art. 12 Abs. 3 (CELEX 32023R1115) + VO (EU) 2025/2650 (Verschiebung)",
+      "typ": "O",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [
+        "eu-recht",
+        "offenlegung",
+        "foerderung"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "norm",
+        "erreichbar": "unbekannt",
+        "wie": "Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat."
+      },
+      "enthaelt": "Erster Jahresbericht für GJ 2027; Nicht-KMU, CSRD-Ausweichweg; Informationssystem vertraulich",
+      "fokus": "",
+      "status": "offen",
+      "statusNotiz": "Wiedervorlage Q1/2028 (K7 `unklar`)",
+      "evidenz": "unbekannt",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          5,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "lksg-12-13",
+      "name": "LkSG §§ 12/13 (bafa.de Berichtspflicht)",
+      "typ": "O",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [
+        "offenlegung",
+        "lieferkette"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "norm",
+        "erreichbar": "ja",
+        "wie": "Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat."
+      },
+      "enthaelt": "Prüfung eingestellt, Pflicht wird rückwirkend gestrichen",
+      "fokus": "",
+      "status": "erschöpft",
+      "statusNotiz": "(Grab `lksg-berichte-bafa`) [Seite]",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "lksg-berichte-bafa"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          1,
+          4,
+          5,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "ai-act-art-53-abs-1-lit-d",
+      "name": "AI Act Art. 53 Abs. 1 lit. d",
+      "typ": "O",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [
+        "eu-recht"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "norm",
+        "erreichbar": "ja",
+        "wie": "Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat."
+      },
+      "enthaelt": "Jeweils gebaut: Forschung/staatlich — Belege: (gpailedger.com), Public CbCR (taxplorer.eu), WPG (kww-halle.de Wärmewendeatlas)",
+      "fokus": "",
+      "status": "erschöpft",
+      "statusNotiz": "(Gräber `gpai-trainingsdaten-zusammenfassungen`, `pcbcr-sammler`, `waermeplan-register`)",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "gpai-trainingsdaten-zusammenfassungen"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          1,
+          4,
+          5,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "vo-2017-821-art-7-bgr-deksor",
+      "name": "VO (EU) 2017/821 Art. 7 + BGR/DEKSOR (Sorgfaltspflichtberichte der Unionseinführer; DEKSOR-Bericht 2025 auf dggv.de; OEFSE RR17; Firmenberichte Treibacher/Agosi/Heraeus)",
+      "typ": "O",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [
+        "eu-recht",
+        "offenlegung",
+        "lieferkette"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "norm",
+        "erreichbar": "ja",
+        "wie": "Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat."
+      },
+      "enthaelt": "Pflicht seit 01.01.2021, bedingt durch Mengenschwellen; keine Liste Verpflichteter gefunden; DEKSOR prüft und veröffentlicht selbst",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "offen: DEKSOR-Bericht 2025 als [Seite] lesen (Population, Veröffentlichungspflicht)",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          4,
+          5,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "lksg-6-abs-2-8-aenderungsgesetz",
+      "name": "LkSG § 6 Abs. 2 / § 8",
+      "typ": "O",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [
+        "eu-recht",
+        "offenlegung",
+        "foerderung",
+        "lieferkette"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "norm",
+        "erreichbar": "ja",
+        "wie": "Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat."
+      },
+      "enthaelt": "Berichtspflicht rückwirkend gestrichen (BAFA prüft seit 01.10.2025 nicht); Grundsatzerklärung und Beschwerdeverfahren bleiben, aber ohne Sammelort; kein Verzeichnis der Verfahrensordnungen gefunden — Belege: Änderungsgesetz (gesetze-im-internet, BAFA, kpmg-law, bundesregierung, taw; Germanwatch/Misereor, Seite germanwatch.org/en/93384)",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "ergiebig für Beschwerdekanal-Verzeichnis (`unklar`); Berichts-Ast `erschöpft` (Grab `lksg-berichte-bafa`). Offen: Germanwatch 93384 als [Seite] lesen",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "lksg-berichte-bafa"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          4,
+          4,
+          4,
+          5,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "csrd-esrs-esap",
+      "name": "CSRD/ESRS, ESAP, Unternehmensregister",
+      "typ": "O",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [
+        "eu-recht",
+        "offenlegung",
+        "gebaeude"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "norm",
+        "erreichbar": "ja",
+        "wie": "Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat."
+      },
+      "enthaelt": "Register per Design (ESAP: Aufbau ab 10.07.2026, CSRD-Daten ab 10.01.2028); Omnibus-Kreis > 1.000 Beschäftigte und > 450 Mio. € Umsatz; DE-Umsetzungsgesetz fehlt — Belege: (amf-france, dfsa.dk, forvismazars, saim; Haufe Navigator, filings.xbrl.org)",
+      "fokus": "",
+      "status": "erschöpft",
+      "statusNotiz": "für Register (Grab `csrd-esrs-register`); CSRD-Fehlanzeigen `unklar`",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "csrd-esrs-register"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          1,
+          4,
+          5,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "eudr-reg-2025-2650",
+      "name": "EUDR VO (EU) 2023/1115 + Reg. (EU) 2025/2650 (TRACES NT, lawcode, twobirds, stibbe)",
+      "typ": "O",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [
+        "eu-recht",
+        "offenlegung",
+        "lieferkette"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "norm",
+        "erreichbar": "ja",
+        "wie": "Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat."
+      },
+      "enthaelt": "Sorgfaltserklärungen nicht öffentlich by design; Anwendung 30.12.2026/30.06.2027; Bericht ab 2028",
+      "fokus": "",
+      "status": "erschöpft",
+      "statusNotiz": "(Grab `eudr-kleinwald-erklaerung` + verfrühte Protokollzeile)",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "eudr-kleinwald-erklaerung"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          1,
+          4,
+          5,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "verpackungsregister-lucid",
+      "name": "Verpackungsregister LUCID / ZSVR",
+      "typ": "O",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [
+        "abfall",
+        "offenlegung",
+        "foerderung"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "norm",
+        "erreichbar": "ja",
+        "wie": "Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat."
+      },
+      "enthaelt": "Register öffentlich, Liste hinterlegter Vollständigkeitserklärungen, ZSVR-Abgleich; PPWR seit 12.08.2026 — Belege: stiftung ear (oeffentliche-register.verpackungsregister.org, verpackungsgesetz.com, deutsche-recycling.de, stiftung-ear.de)",
+      "fokus": "",
+      "status": "erschöpft",
+      "statusNotiz": "(Grab `hersteller-register-battg-lucid-ppwr`)",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "hersteller-register-battg-lucid-ppwr"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          1,
+          4,
+          5,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "battvo-art-48-sorgfalt",
+      "name": "BattVO Art. 48 Sorgfalt (lizenzero, batteriegesetz, tracepass.eu)",
+      "typ": "O",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [
+        "eu-recht",
+        "lieferkette"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "norm",
+        "erreichbar": "unbekannt",
+        "wie": "Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat."
+      },
+      "enthaelt": "Pflicht auf 18.08.2027 verschoben",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "Wiedervorlage 08/2027",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          2,
+          2,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "pcbcr-taxplorer-pwc",
+      "name": "pCbCR: Taxplorer, PwC",
+      "typ": "O",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [],
+      "urls": [],
+      "zugang": {
+        "art": "norm",
+        "erreichbar": "ja",
+        "wie": "Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat."
+      },
+      "enthaelt": "Sammler und Auswertungen vorhanden",
+      "fokus": "",
+      "status": "erschöpft",
+      "statusNotiz": "(Grab `pcbcr-sammler`)",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "pcbcr-sammler"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          1,
+          4,
+          5,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "ai-act-art-53-gpai-ledger",
+      "name": "AI Act Art. 53: GPAI Ledger",
+      "typ": "O",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [
+        "eu-recht",
+        "foerderung"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "norm",
+        "erreichbar": "ja",
+        "wie": "Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat."
+      },
+      "enthaelt": "Öffentliches Verzeichnis der Trainingsdaten-Zusammenfassungen",
+      "fokus": "",
+      "status": "erschöpft",
+      "statusNotiz": "(Grab `gpai-trainingsdaten-zusammenfassungen`)",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "gpai-trainingsdaten-zusammenfassungen"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          1,
+          4,
+          5,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "bfsg-haendlerbund-mlbf",
+      "name": "BFSG: Händlerbund, MLBF",
+      "typ": "O",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [
+        "barrierefreiheit"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "norm",
+        "erreichbar": "ja",
+        "wie": "Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat."
+      },
+      "enthaelt": "Compliance-Markt und Marktüberwachung",
+      "fokus": "",
+      "status": "erschöpft",
+      "statusNotiz": "(Grab `bfsg-barrierefreiheitserklaerungen`)",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "bfsg-barrierefreiheitserklaerungen"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          1,
+          4,
+          5,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "entgelttransparenz-rl",
+      "name": "Entgelttransparenz-RL (personalwirtschaft, haufe)",
+      "typ": "O",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [
+        "offenlegung"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "norm",
+        "erreichbar": "unbekannt",
+        "wie": "Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat."
+      },
+      "enthaelt": "Frist 07.06.2026 verpasst, DE-Gesetz bis Anfang 2027",
+      "fokus": "",
+      "status": "offen",
+      "statusNotiz": "Wiedervorlage nach Kabinettsentwurf",
+      "evidenz": "unbekannt",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "dsa-transparenzberichte",
+      "name": "DSA-Transparenzberichte (HIIG)",
+      "typ": "O",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [
+        "eu-recht",
+        "offenlegung"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "norm",
+        "erreichbar": "unbekannt",
+        "wie": "Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat."
+      },
+      "enthaelt": "Keine Verpflichtetenliste",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          2,
+          2,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "capture-recapture",
+      "name": "Capture-Recapture (PMC5976169, UEA 2018_03)",
+      "typ": "O",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle",
+        "evidenz"
+      ],
+      "tags": [
+        "eu-recht",
+        "offenlegung"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "norm",
+        "erreichbar": "unbekannt",
+        "wie": "Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat."
+      },
+      "enthaelt": "Standardverfahren für Registervollständigkeit; Baustein für den Nenner der ESPR-Dose",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "Methodenquelle, kein Ideenlieferant",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          2,
+          2,
+          5,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "ted-eu-eforms-bund-de-vergabe",
+      "name": "TED (Tenders Electronic Daily) & EU eForms / Bund.de Vergabe (ted.europa.eu, vergabe.bund.de, Bekanntmachungsservice BKMS)",
+      "typ": "P",
+      "kategorie": "foerderung",
+      "rollen": [
+        "geldgeber",
+        "ideenquelle",
+        "empfaenger"
+      ],
+      "tags": [
+        "kapital"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Offizielle XML/eForms-Feeds für öffentliche Ausschreibungen ab EU-Schwellenwert. Bietervorbereitung und Kriterienprüfung sind ein dicht besetzter kommerzieller Markt (Vergabe-Manager, RIB Software, Vergabe24). Als Amélie-Gemeingut fehlt die behördliche Vollzugslücke; kommerzieller B2B-Zwilling im Venture-Branch (`procure-lens-pro`).",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          4,
+          4,
+          3,
+          4
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "spdx-2-3-open-source-license",
+      "name": "SPDX 2.3 & Open Source License Metadata",
+      "typ": "P",
+      "kategorie": "foerderung",
+      "rollen": [
+        "geldgeber",
+        "ideenquelle",
+        "empfaenger"
+      ],
+      "tags": [
+        "foerderung",
+        "kapital"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Standardisierte SPDX-Lizenzbezeichner und maschinenlesbare Lizenzausdrücke. Developer-Compliance in CI/CD ist vollständig durch FOSSology, ScanCode Toolkit, Snyk, FOSSA und Renovate abgedeckt. Kein behördliches oder zivilgesellschaftliches Vollzugsmandat; als kommerzielles CI-Guardrail im Venture-Branch (`spdx-driftguard-ci`). — Belege: (spdx.org/licenses, spdx.dev, ClearlyDefined, OpenSSF)",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          4,
+          4,
+          5,
+          4
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "sensor-community-openaq",
+      "name": "Sensor.Community",
+      "typ": "P",
+      "kategorie": "foerderung",
+      "rollen": [
+        "geldgeber",
+        "ideenquelle",
+        "empfaenger"
+      ],
+      "tags": [],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Globale Citizen-Science-Feinstaub- und Sensordaten als offene REST- und Archiv-APIs. Kartenvisualisierung, Grenzwert-Alerts und historische Downloads sind durch die Initiativen selbst und OpenAQ bereits stabil und frei bereitgestellt; kein unbearbeiteter manueller Auswertungsstau. — Belege: (Luftdaten.info) & OpenAQ (sensor.community, openaq.org, archive.sensor.community)",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          4,
+          4,
+          5,
+          4
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "bundespreis-ecodesign",
+      "name": "Bundespreis Ecodesign (BMUV/UBA/IDZ)",
+      "typ": "Q",
+      "kategorie": "preis",
+      "rollen": [
+        "geldgeber",
+        "empfaenger",
+        "ideenquelle"
+      ],
+      "tags": [
+        "eu-recht",
+        "preis"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Zirkuläre Kriterien, Reparierbarkeit, Demontage; UBA-Referatsleiter in der Jury",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          2,
+          2,
+          5,
+          4
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "deutscher-nachhaltigkeitspreis-mobilitaetspreis",
+      "name": "Deutscher Nachhaltigkeitspreis & Mobilitätspreis",
+      "typ": "Q",
+      "kategorie": "preis",
+      "rollen": [
+        "geldgeber",
+        "empfaenger",
+        "ideenquelle"
+      ],
+      "tags": [
+        "eu-recht",
+        "preis"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "100 Branchenprofile (CSRD-Lücken) bzw. kommunale Mobilitätsdaten",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          2,
+          2,
+          5,
+          4
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "civic-innovation-platform-bmas",
+      "name": "Civic Innovation Platform / „Gemeinsam wird es KI“ (BMAS)",
+      "typ": "Q",
+      "kategorie": "preis",
+      "rollen": [
+        "geldgeber",
+        "empfaenger",
+        "ideenquelle"
+      ],
+      "tags": [
+        "foerderung",
+        "ki"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Gemeinwohlorientierte KI in der Arbeitswelt; Förderungen bis 750k €",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          2,
+          2,
+          5,
+          4
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "otto-brenner-preis-eu-prize-for",
+      "name": "Otto-Brenner-Preis & EU Prize for Citizen Science",
+      "typ": "Q",
+      "kategorie": "preis",
+      "rollen": [
+        "geldgeber",
+        "empfaenger",
+        "ideenquelle"
+      ],
+      "tags": [
+        "preis",
+        "citizen-science"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Aufgedeckte Datenblindstellen bzw. paneuropäische Auswertungsstaus",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          2,
+          2,
+          5,
+          4
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "eic-pathfinder-transition-accelerator",
+      "name": "EIC Pathfinder / Transition / Accelerator (eic.ec.europa.eu)",
+      "typ": "R",
+      "kategorie": "foerderung",
+      "rollen": [
+        "geldgeber",
+        "ideenquelle",
+        "empfaenger"
+      ],
+      "tags": [
+        "foerderung"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "DeepTech von TRL 1 bis 9; Pathfinder Grants bis 4 Mio. €; Accelerator Blended Finance",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          2,
+          2,
+          5,
+          4
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "horizon-europe-missions",
+      "name": "Horizon Europe Missions",
+      "typ": "R",
+      "kategorie": "foerderung",
+      "rollen": [
+        "geldgeber",
+        "ideenquelle",
+        "empfaenger"
+      ],
+      "tags": [
+        "foerderung"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "100 Smart Cities, Climate Adaptation, Ocean/Waters, Soil Deal",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          2,
+          2,
+          5,
+          4
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "life-programme-digital-europe",
+      "name": "LIFE Programme & Digital Europe (DEP)",
+      "typ": "R",
+      "kategorie": "foerderung",
+      "rollen": [
+        "geldgeber",
+        "ideenquelle",
+        "empfaenger"
+      ],
+      "tags": [
+        "foerderung"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Circular Economy & Nature bzw. European Data Spaces & Interoperable Europe Act",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          2,
+          2,
+          5,
+          4
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "interreg",
+      "name": "Interreg (Europe, Central, Baltic)",
+      "typ": "R",
+      "kategorie": "foerderung",
+      "rollen": [
+        "geldgeber",
+        "ideenquelle",
+        "empfaenger"
+      ],
+      "tags": [
+        "foerderung"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Grenzüberschreitende Open-Data- und Verwaltungstransfers zwischen Kommunen",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          2,
+          2,
+          5,
+          4
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "modellprojekte-smart-cities-mpsc",
+      "name": "Modellprojekte Smart Cities (MPSC) (BMWSB/KfW, 73 Kommunen, 820 Mio. €)",
+      "typ": "S",
+      "kategorie": "kommunal",
+      "rollen": [
+        "empfaenger",
+        "geldgeber"
+      ],
+      "tags": [
+        "open-data"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Phase der Nachnutzung/Verstetigung; MPSC-Marktplatz für Open-Source-Transfer",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          2,
+          2,
+          5,
+          4
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "govtech-deutschland-kommunal",
+      "name": "GovTech Deutschland e.V. & GovTech Kommunal",
+      "typ": "S",
+      "kategorie": "kommunal",
+      "rollen": [
+        "empfaenger",
+        "geldgeber"
+      ],
+      "tags": [
+        "berlin"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Technologieplattform der Verwaltung; Kooperationskanal für Dosen — Belege: (Bonn, Berlin, Hamburg, Saarland, Thüringen)",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          2,
+          2,
+          5,
+          4
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "staedtische-innovationslabore",
+      "name": "Städtische Innovationslabore & Bauträger",
+      "typ": "S",
+      "kategorie": "kommunal",
+      "rollen": [
+        "empfaenger",
+        "geldgeber"
+      ],
+      "tags": [
+        "open-data",
+        "berlin"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Konkrete Pilotpartner und Open-Source-Bauträger im urbanen Raum — Belege: (CityLAB Berlin, Innovation Lab München, Hamburg Urban Data Hub)",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          2,
+          2,
+          5,
+          4
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "band-eban",
+      "name": "BAND (Business Angels Netzwerk Deutschland e.V.) & EBAN",
+      "typ": "V",
+      "kategorie": "kapital",
+      "rollen": [
+        "geldgeber"
+      ],
+      "tags": [
+        "kapital"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Dachverbände mit über 40 regionalen BANs und europäischen Climate/DeepTech-Communities",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          2,
+          2,
+          5,
+          4
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "impact-angels-green-angels",
+      "name": "Impact Angels & Green Angels",
+      "typ": "V",
+      "kategorie": "kapital",
+      "rollen": [
+        "geldgeber"
+      ],
+      "tags": [
+        "abfall",
+        "kapital"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Syndikate für Kreislaufwirtschaft, ESG-Compliance und CleanTech",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          2,
+          2,
+          5,
+          4
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "earlybird-visionaries-cdtm",
+      "name": "Earlybird Vision Lab / Visionaries Club / CDTM Angels",
+      "typ": "V",
+      "kategorie": "kapital",
+      "rollen": [
+        "geldgeber"
+      ],
+      "tags": [
+        "kapital"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Frühphasen-Investoren für Developer-Tools und B2B-SaaS",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          4,
+          2,
+          2,
+          5,
+          4
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        }
+      ]
+    },
+    {
+      "id": "eu-recht-volltext-celex",
+      "name": "EU-Recht im Volltext (publications.europa.eu, CELEX)",
+      "typ": "N",
+      "kategorie": "norm",
+      "rollen": [
+        "evidenz"
+      ],
+      "tags": [
+        "eu-recht"
+      ],
+      "urls": [
+        "https://publications.europa.eu/resource/celex/"
+      ],
+      "zugang": {
+        "art": "norm",
+        "erreichbar": "ja",
+        "wie": "GET https://publications.europa.eu/resource/celex/<CELEX> mit `Accept: application/xhtml+xml` und `Accept-Language: deu` liefert den amtlichen Volltext. Für EU-Recht vor 2021 alternativ legislation.gov.uk. eur-lex.europa.eu direkt NICHT nutzen: HTTP 202 mit WAF-Challenge und leerem Body zählt nicht als erreichbar."
+      },
+      "enthaelt": "Amtlicher Volltext von Verordnungen und Richtlinien nach CELEX-Nummer (z. B. 32023L0970 Entgelttransparenz-RL).",
+      "fokus": "Zugangsweg für alle Norm-Quellen (Typ N/O).",
+      "status": "durchsucht",
+      "statusNotiz": "Zugangsweg, kein Ideenfeld",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-28",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          5,
+          5,
+          5,
+          2
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "migration",
+          "runde": "Register-Einführung",
+          "notiz": "Aus dem Abschnitt „Nicht mehr als Quelle nutzen\" (eur-lex direkt abrufen) als Zugangs-Eintrag herausgelöst."
+        }
+      ]
+    }
+  ],
+  "nichtNutzen": [
+    "Allgemeine Suchen „KI App <Alltagsthema>\" → Content-Farmen, besetzte Märkte (siehe Besetzungsatlas im Playbook).",
+    "Eigenes Brainstorming ohne Quelle → Trefferquote Runde 2: 0 von 10 `frei`; die eine Ausnahme (Bebauungsplan-Leser, nach Recheck 19.09.2026 `verengt`) hat dünne Evidenz und wäre ohne Organisationsnamen-Suche nicht über `unklar` hinausgekommen.",
+    "Typ-A-Anker „physisches Objekt + wiederkehrende gesetzliche Sichtprüfung\" (Bäume, Spielplätze, Aufzüge, Feuerlöscher, Brücken) → erst gegen den Atlas halten, nicht zwei Kandidaten aus derselben Quelle prüfen (Runde 3, Baumkontrolle).",
+    "**Nur deutschsprachige Suchen bei Alltagsideen** → Runde 4: Sperrmüll-Radar war nur auf Deutsch frei; auf Englisch existierte CurbAlert bereits viermal. Vor jeder Zusage englische Suche Pflicht. **Runde 6 bestätigt zum dritten Mal:** Crack Flora Watcher war deutsch `verengt`, englisch `besetzt` (GrowApp, Nature's Notebook).",
+    "**Die Projektseite für den Funktionsumfang halten**, wenn der Empfänger quelloffen ist → Runde 6: Die Seite von Gieß den Kiez sagt zu Verfall und Übertragung nichts, der Klon sagt es eindeutig. Bei öffentlichem Repo ist `git clone` + `grep` die stärkere Evidenz und kostet zwei Minuten (GitHub-API und Issue-Seiten können gesperrt sein, `git clone` über HTTPS geht trotzdem).",
+    "**Nur nach dem Gegenstand suchen** („Ritzenpflanzen-App\") → findet nie die Werkzeuge, die über ihre **Funktion** definiert sind (Typ F oben). Die Mechanik immer separat suchen, siehe Playbook §2.",
+    "**Typ A allein als Beleg für `frei`** (neu ab Runde 7): „Ein Fachgremium hat ein PDF und niemand hat es programmiert\" ist ein Anfangsverdacht, kein Urteil. Ohne Typ-H-Gegenprobe wird daraus kein `frei`.",
+    "**Merkblätter als Quelle für exakte Schwellenwerte** (neu ab Runde 7): vier Behördenmerkblätter zum selben Schema, zwei verschiedene Signifikanzschwellen. Schemawerte kommen aus dem Schema.",
+    "**Eine Idee nur auf der Angebotsseite denken** (neu ab Runde 8): Die Nachfrageseite in Verschenk-Communities („Wanted\", WANTED, ISO) ist Standardfunktion bei Olio, Freecycle/Trash Nothing und Buy Nothing. Wer „aber die Wunschliste fehlt doch\" denkt, hat die Hilfeseiten nicht gelesen.",
+    "**Kanzlei- und Beraterschnipsel über laufende Gesetzentwürfe** (neu, Offenlegungs-Runde 28.09.2026): „Veröffentlichung im Unternehmensregister\" (energieundrecht.com, twobirds, Grant Thornton, DQS) beschrieb den Referentenentwurf der EnEfG-Novelle; die BT-Drucksache 21/8027 sagte das Gegenteil. Bei Novellen gilt nur die jüngste Drucksache inkl. Stellungnahme Bundesrat und Gegenäußerung.",
+    "**eur-lex.europa.eu direkt abrufen** (neu, 28.09.2026): HTTP 202 mit WAF-Challenge und leerem Body — nicht als „erreichbar\" werten. Stattdessen `https://publications.europa.eu/resource/celex/<CELEX>` mit `Accept: application/xhtml+xml`, `Accept-Language: deu` (amtlicher Volltext) oder für EU-Recht vor 2021 legislation.gov.uk."
+  ]
+}

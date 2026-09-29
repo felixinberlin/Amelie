@@ -71,7 +71,7 @@ Nur bei `Dose Ready` und Summe ≥ 24/35. Höchstens eine, ausnahmsweise zwei Do
 
 Läuft **nach** dem Packer, weil Gräber in `DISCARDED_DATA` (`src/data/dosen.ts`) stehen und der Packer dieselbe Datei bearbeitet. Ohne Phase 4 darf er direkt nach Phase 3 starten.
 
-Der Bibliothekar bekommt: Merge-Tabelle, Reviewer-Urteile, Engine-Retros, Netzstatus. Er schreibt Protokoll, Playbook (Trefferquote, Atlas, Retro), Quellen und Friedhof. Die Retro enthält einen Abschnitt **„Orchestrierung"**: Was hat die Parallelität gebracht (Doppelfunde, Widersprüche), was hat sie gekostet.
+Der Bibliothekar bekommt: Merge-Tabelle, Reviewer-Urteile, Engine-Retros, Netzstatus. Er schreibt Protokoll, Playbook (Trefferquote, Atlas, Retro), Friedhof und das **Quellen-Register** (jede Quellenmeldung der Engines per `npm run quellen -- log|add|rate`; `amelie-quellen.md` wird erzeugt, nie von Hand editiert). Die Retro enthält einen Abschnitt **„Orchestrierung"**: Was hat die Parallelität gebracht (Doppelfunde, Widersprüche), was hat sie gekostet.
 
 ### Phase 6 · Abschluss
 

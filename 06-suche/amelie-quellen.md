@@ -1,215 +1,302 @@
 # Amélie — Quellen
 
-Runde 2 hat gezeigt: Überlebende Ideen kommen aus Primärquellen, nicht aus Brainstorming.
-Diese Liste sagt, **wo** gegraben wird, und hält fest, **was schon durchgegraben ist**.
+> **Diese Datei wird erzeugt.** Wahrheit ist das Register `src/data/quellen.json` (ein Objekt pro Quelle: Typ, Kategorie, Zugang, Inhalt, Status, Ertrag, Verlauf, Vektoren Q1–Q6).
+> Ändern nur über `npm run quellen -- …` (Bibliothekar), danach `npm run quellen -- md`. Handbuch: `06-suche/amelie-quellen-register.md`.
 
-**Status:** `offen` · `angekratzt` (eine Suche) · `durchsucht` (Publikationsliste gelesen) · `erschöpft`
+Runde 2 hat gezeigt: Überlebende Ideen kommen aus Primärquellen, nicht aus Brainstorming. Diese Liste sagt, **wo** gegraben wird, und hält fest, **was schon durchgegraben ist**.
 
----
+**Status:** `offen` (Nie gegraben oder nur als Anker genannt.) · `angekratzt` (Eine Suche oder ein Schnipsel; Publikationsliste nicht gelesen.) · `durchsucht` (Publikationsliste/Seite selbst gelesen.) · `erschöpft` (Anker dicht, kein weiterer Kandidat zu erwarten.) · `gesperrt` (Nicht (mehr) nutzen, z. B. Empfänger mit Nachfass-Sperre.)
+
+**Bestand:** 120 Quellen · 15 offen · 58 angekratzt · 27 durchsucht · 19 erschöpft · 1 gesperrt · Evidenz: 61 gelesen, 45 nur Schnipsel, 14 unbekannt.
+
+**Vektoren Q1–Q6** (1–5, Summe /30): Q1 Ergiebigkeit · Q2 Restpotenzial · Q3 Zugang · Q4 Belastbarkeit · Q5 Geländefreiheit · Q6 Anschluss. `auto` = aus Status/Evidenz/Ertrag abgeleitet, noch nicht bewertet.
+
+<!-- QUELLEN:START -->
 
 ## Typ A — Fachgremien mit Schemata ohne Software
 
-*Muster: ein PDF mit Punktesystem, Checkliste oder Schwellenwerten, das Menschen von Hand anwenden.*
+*ein PDF mit Punktesystem, Checkliste oder Schwellenwerten, das Menschen von Hand anwenden.*
 
-| Quelle | Wonach suchen | Status | Zuletzt |
-|---|---|---|---|
-| LAG Vogelschutzwarten (vogelschutzwarten.de) | weitere Bewertungsverfahren außer Glas | `durchsucht` | 18.09.2026 |
-| LANA (Bund-Länder-AG Naturschutz) | Beschlüsse mit Bewertungsschemata | angekratzt — Eingriffsregelung/Biotopwertverfahren ist bereits gesetzlich kodifiziert (BKompV); **gegengecheckt in Runde 3:** Ökokonto-/Kompensationsflächen-Software (z. B. giscity) und BWKalk decken Berechnung und Flächenverwaltung, nicht die Zuordnung eines Biotoptyps aus Bild — siehe Biotoptyp-Assistent | 18.09.2026 |
-| Bundesamt für Naturschutz (BfN) | Skripten, Leitfäden, Kartieranleitungen | angekratzt — BfN-Schriften 721 „Kartieranleitung für die Biotoptypen nach Anlage 2 der BKompV" gefunden (668 Biotoptypen, feste Schwellenwerte, Kartiermethodik von Hand). Daraus entstanden: Biotoptyp-Assistent (`05-dosen/biotoptyp-assistent.md`) | 18.09.2026 |
-| Senatsverwaltung Berlin, Umwelt | Leitfäden (z. B. „Bauen mit Glas und Licht", 2021) · Abfallwirtschaftskonzept 2020–2030 · Re-Use Berlin Übersichtskarte (existiert nur als 2,8-MB-PDF!) | angekratzt — Re-Use Berlin als PDF gefunden; Zahlen zur Stadtreinigung 2025/2026 gesichert (200.000 Meldungen, 13 Mio. €) | 20.09.2026 |
-| Denkmalbehörden, Landesämter | Schadenskartierungs-Anleitungen | `angekratzt` (Suchen von zwei Researchern am 19.09.2026, keine Leitfaden-Publikation gelesen) — Leitfäden existieren (Berlin LDA „Leitfaden zur Erstellung von restauratorischen Dokumentationen“, LAD Baden-Württemberg „Dokumentation im konstruktiven Holzbau“, Niedersachsen, Sachsen-Anhalt „Handreichung zur Bestandsuntersuchung“, LVR-Handreichungen, Baubegehungs-Checklisten, z. B. EKBO). **Typ A ist hier kein Schema ohne Software:** Schadenskartierung ist Software-Branche (Metigo MAP, KALIV); Denkmal/Kirche ist „physisches Objekt + wiederkehrende Prüfung“ mit Anbietern (ARCHIKART) und KI-Pilotprojekten (Wiro Rostock). Erträge: Researcher #2 — Denkmal-Verlaufsblick (`verengt`, kam von der Ehrenamts-/Bürgerseite, also eher Typ B); Researcher #1 — 3 Ideen abgeleitet, 0 überlebt (Kirchen-Baubegehung `besetzt`, Schadenskartierung per Foto `besetzt`, Orgel-Resonanz `unklar`). Nicht weiter hier graben; Restwert nur Orgel (Orgelbauer-Kontakt) | 19.09.2026 |
-| Landesumweltbehörden „Licht & Naturschutz" (Hamburg BUKEA u. a.) | weitere Länder-Leitfäden ohne Tool (analog zu Hamburg) | angekratzt — **ergiebig, Lichtplan-Check entstand hieraus** | 18.09.2026 |
-| Berliner Biotopkartierung — Kartieranleitung & Geländekartierungsbogen (Senatsverwaltung für Umwelt, Verkehr und Klimaschutz; § 30 BNatSchG) | weitere Kriterienbündel, die sich in „hart messbar" und „Urteil des Kartierers" trennen lassen | angekratzt — **ergiebig, Anker von drei Kandidaten** (Eichflächen-Trainer `frei`, Kartierlotse `verengt`, Strukturmonitoring `verengt`, nicht gepackt). als Anker der Bisoziation-Session (Runde 3) genannt, Quelle nicht separat durchgesehen; Nachbarquellen (andere Länder, LRT-Anleitungen) offen | 18.09.2026 |
-| FLL-Baumkontrollrichtlinie / kommunale Baumkontrolle (Regelkontrolle, VTA) | — | **erschöpft, Anker dicht** — beide Kandidaten (Baum-Stigmergie, Baum-Verfallsdatum) `besetzt`; kein dritter Kandidat aus dieser Quelle. Muster „physisches Objekt + gesetzliche Sichtprüfung" nur nach Atlas-Check nutzen (Playbook, Atlas) | 18.09.2026 |
+| Quelle | Enthält / Fokus | Zugang | Status | Zuletzt | Ertrag | Q |
+|---|---|---|---|---|---|---|
+| **LAG Vogelschutzwarten (vogelschutzwarten.de)** `lag-vogelschutzwarten` | **Fokus:** weitere Bewertungsverfahren außer Glas | Webseite | `durchsucht` | 18.09.2026 | – | 21* |
+| **LANA (Bund-Länder-AG Naturschutz)** `lana-bund-laender-ag-naturschutz` | **Fokus:** Beschlüsse mit Bewertungsschemata *[Schnipsel]* | Webseite | `angekratzt` — Eingriffsregelung/Biotopwertverfahren ist bereits gesetzlich kodifiziert (BKompV); gegengecheckt in Runde 3: Ökokonto-/Kompensationsflächen-Software (z. B. giscity) und BWKalk decken Berechnung und Flächenverwaltung, nicht die Zuordnung eines Biotoptyps aus Bild — siehe Biotoptyp-Assistent | 18.09.2026 | Dose `biotoptyp-assistent` | 20* |
+| **Bundesamt für Naturschutz (BfN)** `bundesamt-fuer-naturschutz` | **Fokus:** Skripten, Leitfäden, Kartieranleitungen *[Schnipsel]* | Webseite | `angekratzt` — BfN-Schriften 721 „Kartieranleitung für die Biotoptypen nach Anlage 2 der BKompV" gefunden (668 Biotoptypen, feste Schwellenwerte, Kartiermethodik von Hand). Daraus entstanden: Biotoptyp-Assistent (`05-dosen/biotoptyp-assistent.md`) | 18.09.2026 | Dose `biotoptyp-assistent` | 20* |
+| **Senatsverwaltung Berlin, Umwelt** `senatsverwaltung-berlin-umwelt` | **Fokus:** Leitfäden (z. B. „Bauen mit Glas und Licht", 2021) · Abfallwirtschaftskonzept 2020–2030 · Re-Use Berlin Übersichtskarte (existiert nur als 2,8-MB-PDF!) *[Schnipsel]* | PDF | `angekratzt` — Re-Use Berlin als PDF gefunden; Zahlen zur Stadtreinigung 2025/2026 gesichert (200.000 Meldungen, 13 Mio. €) | 20.09.2026 | – | 18* |
+| **Denkmalbehörden, Landesämter** `denkmalbehoerden-landesaemter` | **Fokus:** Schadenskartierungs-Anleitungen | Webseite | `angekratzt` — (Suchen von zwei Researchern am 19.09.2026, keine Leitfaden-Publikation gelesen) — Leitfäden existieren (Berlin LDA „Leitfaden zur Erstellung von restauratorischen Dokumentationen“, LAD Baden-Württemberg „Dokumentation im konstruktiven Holzbau“, Niedersachsen, Sachsen-Anhalt „Handreichung zur Bestandsuntersuchung“, LVR-Handreichungen, Baubegehungs-Checklisten, z. B. EKBO). Typ A ist hier kein Schema ohne Software: Schadenskartierung ist Software-Branche (Metigo MAP, KALIV); Denkmal/Kirche ist „physisches Objekt + wiederkehrende Prüfung“ mit Anbietern (ARCHIKART) und KI-Pilotprojekten (Wiro Rostock). Erträge: Researcher #2 — Denkmal-Verlaufsblick (`verengt`, kam von der Ehrenamts-/Bürgerseite, also eher Typ B); Researcher #1 — 3 Ideen abgeleitet, 0 überlebt (Kirchen-Baubegehung `besetzt`, Schadenskartierung per Foto `besetzt`, Orgel-Resonanz `unklar`). Nicht weiter hier graben; Restwert nur Orgel (Orgelbauer-Kontakt) | 19.09.2026 | Dose `denkmal-verlaufsblick` | 23* |
+| **Landesumweltbehörden „Licht & Naturschutz" (Hamburg BUKEA u. a.)** `landesumweltbehoerden-licht` | **Fokus:** weitere Länder-Leitfäden ohne Tool (analog zu Hamburg) *[Schnipsel]* | Webseite | `angekratzt` — ergiebig, Lichtplan-Check entstand hieraus | 18.09.2026 | Dose `lichtplan-check` | 20* |
+| **Berliner Biotopkartierung — Kartieranleitung & Geländekartierungsbogen** `berliner-biotopkartierung` | Belege: (Senatsverwaltung für Umwelt, Verkehr und Klimaschutz; § 30 BNatSchG) — **Fokus:** weitere Kriterienbündel, die sich in „hart messbar" und „Urteil des Kartierers" trennen lassen *[Schnipsel]* | Norm/Volltext | `angekratzt` — ergiebig, Anker von drei Kandidaten (Eichflächen-Trainer `frei`, Kartierlotse `verengt`, Strukturmonitoring `verengt`, nicht gepackt). als Anker der Bisoziation-Session (Runde 3) genannt, Quelle nicht separat durchgesehen; Nachbarquellen (andere Länder, LRT-Anleitungen) offen | 18.09.2026 | Dose `eichflaechen-trainer`, Dose `kartierlotse` | 21* |
+| **FLL-Baumkontrollrichtlinie / kommunale Baumkontrolle (Regelkontrolle, VTA)** `fll-baumkontrollrichtlinie` |  | Webseite | `erschöpft` — Anker dicht — beide Kandidaten (Baum-Stigmergie, Baum-Verfallsdatum) `besetzt`; kein dritter Kandidat aus dieser Quelle. Muster „physisches Objekt + gesetzliche Sichtprüfung" nur nach Atlas-Check nutzen (Playbook, Atlas) | 18.09.2026 | – | 16* |
+| **LANA/BfN Kartieranleitung LRT 6120 (Trockenrasen)** `lana-bfn-kartieranleitung-lrt-6120` | **Fokus:** Trockenrasen-Transekte; Überschneidung mit Kartierlotse klären | Webseite | `offen` — (BfN-Zeile oben ist wegen Schrift 721 `angekratzt`, LRT-6120-Anleitung selbst ungelesen) | – | Dose `kartierlotse` | 25* |
+| **Stiftung Denkmalschutz / BDO, Orgelpfeifen-Bleifraß** `orgelpfeifen-bleifrass-bdo` | **Fokus:** Orgelpfeifen-Resonanz | PDF | `angekratzt` — 19.09.2026 — HfK-Bremen/DBU-Projekt, IDW-Meldung, CORDIS COLLAPSE gelesen; Handbuch Orgelkorrosion 2019 (PDF) nicht lesbar; Idee `unklar` | 19.09.2026 | – | 20* |
+| **DWD Waldbrandgefahrenindex / Landesforst** `dwd-waldbrandgefahrenindex-landesforst` | **Fokus:** Waldbrand-Streu-Knistern | Webseite | `offen` | – | – | 22* |
+| **WSA/WRRL Gewässerökologie** `wsa-wrrl-gewaesseroekologie` | **Fokus:** Totholz-Kolk-Peiler | Webseite | `offen` | – | – | 22* |
+| **Berliner Leitfaden „Bauen mit Glas und Licht" (2021)** `berlin-leitfaden-bauen-mit-glas-und-licht` | **Fokus:** Licht-Glocken-Kataster | Webseite | `offen` — (Senatsverwaltung-Zeile oben; als Anker genannt, Leitfaden nicht gelesen) | – | – | 24* |
 
 **Suchstring:** `<Gremium> Bewertungsverfahren Punktesystem` · `<Gremium> Kartieranleitung` · `<Gremium> Checkliste Vollzug`
 
----
-
 ## Typ B — Citizen Science mit manueller Auswertung
 
-*Muster: Ehrenamtliche liefern Fotos oder Daten, Profis werten monatelang von Hand aus.*
+*Ehrenamtliche liefern Fotos oder Daten, Profis werten monatelang von Hand aus.*
 
-| Quelle | Wonach suchen | Status | Zuletzt |
-|---|---|---|---|
-| mitforschen.org (Plattform aller deutschen CS-Projekte; Wissenschaft im Dialog, Museum für Naturkunde, BMFTR) | Projekte mit Foto-Upload und Rückmeldung „nach Auswertung" | **offen, bleibt als Quelle** (Entscheidung Félix 23.09.2026). Kein Empfänger, sondern Verzeichnis zum Durchsuchen. Der Vermerk „als Nächstes" ist gestrichen — sie wird genommen, wenn eine Runde eine Typ-B-Quelle braucht, nicht als Schuld. Seite läuft über HTTPS (kanonische URL `https://www.mitforschen.org/`); aus der Sandbox nur per WebFetch erreichbar, `curl` blockt die Allowlist | 23.09.2026 |
-| AMS/IMO-Feuerkugelmeldung + deutsche Feuerkugelnetz-Nachfolger (Zeugenmeldeformulare) | Zeugen melden Stunden bis Tage später aus dem Gedächtnis, Profis triangulieren asynchron — „nicht in Echtzeit" (AMS) | angekratzt — **ergiebig, Feuerkugel-Sofortnetz entstand hieraus**; zwei weitere Kandidaten dort `besetzt` (FRIPON, RedVox). Weitere Feuerkugel-/Meteor-Meldenetze ungelesen | 18.09.2026 |
-| Deutsche Stiftung Denkmalschutz (Schwarzbuch, Meldeportal, ehrenamtliche Beiräte) | Ehrenamts-Beobachtung mit rückblickender Auswertung | angekratzt (Suchtreffer, Portal nicht gelesen) — Idee: Denkmal-Verlaufsblick | 19.09.2026 |
-| Thünen Wildbienen-Monitoring | Hummel-Monitoring zusätzlich zur Nisthilfe | angekratzt | 16.09.2026 |
-| CompGen (genealogy.net) | andere Erfassungsprojekte außer Grabsteine (Adressbücher, Verlustlisten) | angekratzt | 16.09.2026 |
-| Naturkundemuseum Berlin, Citizen-Science-Bereich | Projekte mit Engpass | offen | – |
+| Quelle | Enthält / Fokus | Zugang | Status | Zuletzt | Ertrag | Q |
+|---|---|---|---|---|---|---|
+| **mitforschen.org (Plattform aller deutschen CS-Projekte; Wissenschaft im Dialog, Museum für Naturkunde, BMFTR)** `mitforschen-org` | **Fokus:** Projekte mit Foto-Upload und Rückmeldung „nach Auswertung" | Webseite (teilweise): Kanonische URL https://www.mitforschen.org/. Aus der Sandbox nur per WebFetch erreichbar; curl blockt die Allowlist. | `offen` — bleibt als Quelle (Entscheidung Félix 23.09.2026). Kein Empfänger, sondern Verzeichnis zum Durchsuchen. Der Vermerk „als Nächstes" ist gestrichen — sie wird genommen, wenn eine Runde eine Typ-B-Quelle braucht, nicht als Schuld. Seite läuft über HTTPS (kanonische URL `https://www.mitforschen.org/`); aus der Sandbox nur per WebFetch erreichbar, `curl` blockt die Allowlist | 23.09.2026 | – | 23* |
+| **AMS/IMO-Feuerkugelmeldung** `ams-imo-feuerkugelmeldung` | Belege: deutsche Feuerkugelnetz-Nachfolger (Zeugenmeldeformulare) — **Fokus:** Zeugen melden Stunden bis Tage später aus dem Gedächtnis, Profis triangulieren asynchron — „nicht in Echtzeit" (AMS) | Webseite | `angekratzt` — ergiebig, Feuerkugel-Sofortnetz entstand hieraus; zwei weitere Kandidaten dort `besetzt` (FRIPON, RedVox). Weitere Feuerkugel-/Meteor-Meldenetze ungelesen | 18.09.2026 | Dose `feuerkugel-sofortnetz` | 24* |
+| **Deutsche Stiftung Denkmalschutz** `deutsche-stiftung-denkmalschutz` | Belege: (Schwarzbuch, Meldeportal, ehrenamtliche Beiräte) — **Fokus:** Ehrenamts-Beobachtung mit rückblickender Auswertung | Formular/Portal | `angekratzt` — (Suchtreffer, Portal nicht gelesen) — Idee: Denkmal-Verlaufsblick | 19.09.2026 | Dose `denkmal-verlaufsblick` | 24* |
+| **Thünen Wildbienen-Monitoring** `thuenen-wildbienen-monitoring` | **Fokus:** Hummel-Monitoring zusätzlich zur Nisthilfe *[Schnipsel]* | Webseite | `angekratzt` | 16.09.2026 | – | 18* |
+| **CompGen (genealogy.net)** `compgen` | **Fokus:** andere Erfassungsprojekte außer Grabsteine (Adressbücher, Verlustlisten) *[Schnipsel]* | Webseite | `angekratzt` | 16.09.2026 | – | 19* |
+| **Naturkundemuseum Berlin, Citizen-Science-Bereich** `naturkundemuseum-berlin-citizen-science-bereich` | **Fokus:** Projekte mit Engpass | Webseite | `offen` | – | – | 22* |
+| **NABU Vogelschlagmelder (Jena, Leipzig, Berlin)** `nabu-vogelschlagmelder` | Seit Februar/März 2026 live, `vogelschlagmelder.de` und `berlin.vogelschlagmelder.de`. Meldung mit bis zu fünf Fotos, Anprallspur und Größe, Fassadenausrichtung, Geokodierung, Artangabe. Gefahrenkarte = Heatmap der Meldungen, keine Bewertung. Quellcode GPLv3, `codeberg.org/nabu-jena/Vogelschlagmelder` (Python, Docker, OpenAPI, 159 Commits, aktiv 09/2026, selbst hostbar), Maintainer Maximilian Schätz. Berliner Kontakt: Julia Lorenz, Helen Friedlein, `artenschutz_am_gebaeude@nabu-berlin.de` — sie nutzen die Daten für die Ansprache von Eigentümern und Behörden. Muster: die Ehrenamtsplattform, die genau die Rohdaten sammelt, die eine Bewertungsschicht braucht. | Quellcode-Repo: Quellcode GPLv3 auf codeberg.org/nabu-jena/Vogelschlagmelder (klonbar); Live-Karten auf vogelschlagmelder.de und berlin.vogelschlagmelder.de. | `durchsucht` — Empfänger | 22.09.2026 | – | 22* |
+| **Untersuchung zum Vogelschlag an Glas in München** `lbv-lfu-vogelschlag-untersuchung-muenchen` | Wölfl & Bornemann (LBV) mit LfU Bayern, 2021. Neun Komplexe, 1.957 m Fassade, 13 Wochen. Markierte Lärmschutzwände 0 auf 93 m, unmarkierte Glaswände 0,41/m, Fassaden 0,02/m; drei Glaswände ~46 Kollisionen je 100 m in drei Monaten. Nennt die LAG-VSW-Schwellen im Klartext (2 normal, ab 5 signifikant erhöht je 100 m und Jahr) und stuft die Objekte von Hand in Priorität 1/2 ein. Doppelt wertvoll: Munition und fertige Testfälle. | Webseite | `durchsucht` | 22.09.2026 | – | 21* |
+| **NABU-Batcorder-Monitoring Gewässer** `nabu-batcorder-gewaesser` | **Fokus:** Fledermaus-Echo-Entwirrer | Webseite | `offen` | – | – | 22* |
+| **Thünen MonViA, Hummel-Nistkasten** `thuenen-monvia-hummel-nistkasten` | **Fokus:** Hummel-Schleusenwächter *[Schnipsel]* | Webseite | `angekratzt` — (Nisthilfe-Foto-Auswertung Runde 2; Hummel-Strang wie in Zeile oben vermerkt) | – | – | 18* |
+| **DWD Phänologischer Kalender** `dwd-phaenologischer-kalender` | **Fokus:** Knospen-Countdown | Webseite | `offen` | – | – | 22* |
+| **Tafel Deutschland e. V.** `tafel-deutschland-e-v` | **Fokus:** Tafel-Frische-Triage *[Schnipsel]* | Webseite | `angekratzt` — Achtung: laufendes BMEL-Projekt „Tafel macht Zukunft" — zuerst dessen Umfang lesen | – | – | 19* |
 
 **Suchstring:** `<Projekt> Auswertung dauert` · `<Projekt> Rückmeldung Monate` · `<Projekt> Werkstattbericht KI`
 
----
-
-| **NABU Vogelschlagmelder (Jena, Leipzig, Berlin)** *(neu, 22.09.2026)* | Seit **Februar/März 2026** live, `vogelschlagmelder.de` und `berlin.vogelschlagmelder.de`. Meldung mit **bis zu fünf Fotos**, Anprallspur und Größe, **Fassadenausrichtung**, Geokodierung, Artangabe. **Gefahrenkarte = Heatmap der Meldungen, keine Bewertung.** Quellcode **GPLv3, `codeberg.org/nabu-jena/Vogelschlagmelder`** (Python, Docker, OpenAPI, 159 Commits, aktiv 09/2026, selbst hostbar), Maintainer Maximilian Schätz. Berliner Kontakt: Julia Lorenz, Helen Friedlein, `artenschutz_am_gebaeude@nabu-berlin.de` — sie nutzen die Daten für die Ansprache von Eigentümern und Behörden. **Muster: die Ehrenamtsplattform, die genau die Rohdaten sammelt, die eine Bewertungsschicht braucht.** | **neu, durchsucht — Empfänger** | 22.09.2026 |
-| **Untersuchung zum Vogelschlag an Glas in München** *(neu, 22.09.2026)* | Wölfl & Bornemann (LBV) mit LfU Bayern, 2021. Neun Komplexe, **1.957 m Fassade**, 13 Wochen. Markierte Lärmschutzwände **0** auf 93 m, unmarkierte Glaswände **0,41/m**, Fassaden **0,02/m**; drei Glaswände ~46 Kollisionen je 100 m in drei Monaten. Nennt die LAG-VSW-Schwellen im Klartext (**2 normal, ab 5 signifikant erhöht je 100 m und Jahr**) und stuft die Objekte von Hand in Priorität 1/2 ein. **Doppelt wertvoll: Munition und fertige Testfälle.** | **neu, durchsucht** | 22.09.2026 |
-
 ## Typ C — Organisationen mit öffentlichen KI-Versuchen
 
-*Muster: ein Blogpost „Kann KI uns helfen?" mit benannten Schwächen. Die Schwäche ist die Idee.*
+*ein Blogpost „Kann KI uns helfen?" mit benannten Schwächen. Die Schwäche ist die Idee.*
 
-| Quelle | Benannte Schwäche | Status | Zuletzt |
-|---|---|---|---|
-| CompGen Grabstein-Projekt | Halluzination bei Verwitterung → Streiflicht | durchsucht | 16.09.2026 |
-| Repair Café International | noch nicht gelesen, ob Schwächen genannt | angekratzt | 16.09.2026 |
-| Sozialhelden / HIIG | Datensatz 2023; Grenzen im Datensatz-Paper? | angekratzt | 16.09.2026 |
-| CityLAB Berlin Blog & Sommerkonferenz | Themen: BärGPT, Beyond Forms, Kiezlabor, Beteiligung, Open Source; Kreislaufwirtschaft fehlt | durchsucht | 20.09.2026 |
-
----
+| Quelle | Enthält / Fokus | Zugang | Status | Zuletzt | Ertrag | Q |
+|---|---|---|---|---|---|---|
+| **CompGen Grabstein-Projekt** `compgen-grabstein-projekt` | **Fokus:** Halluzination bei Verwitterung → Streiflicht | Webseite | `durchsucht` | 16.09.2026 | – | 21* |
+| **Repair Café International** `repair-cafe-international` | **Fokus:** noch nicht gelesen, ob Schwächen genannt | Webseite | `angekratzt` | 16.09.2026 | – | 22* |
+| **Sozialhelden / HIIG** `sozialhelden-hiig` | **Fokus:** Datensatz 2023; Grenzen im Datensatz-Paper? *[Schnipsel]* | Webseite | `angekratzt` | 16.09.2026 | – | 18* |
+| **CityLAB Berlin Blog & Sommerkonferenz** `citylab-berlin-blog-sommerkonferenz` | **Fokus:** Themen: BärGPT, Beyond Forms, Kiezlabor, Beteiligung, Open Source; Kreislaufwirtschaft fehlt | Webseite | `durchsucht` | 20.09.2026 | – | 21* |
 
 ## Typ D — Geldgeber, Förderprogramme & Bauaufträge (Schritt 2 & Ideen-Inversion)
 
-*Muster: Geldgeber sind zugleich Schmerzbekenntnisse des Staates (Abschnitt 1 Zuwendungszweck = Lückenbauplan) und die Stelle, die Ticket 01 für den Empfänger finanziert. Vollständiger Katalog und Heuristik: `06-suche/amelie-foerder-und-preisatlas.md`.*
+*Geldgeber sind zugleich Schmerzbekenntnisse des Staates (Abschnitt 1 Zuwendungszweck = Lückenbauplan) und die Stelle, die Ticket 01 für den Empfänger finanziert. Vollständiger Katalog und Heuristik: `06-suche/amelie-foerder-und-preisatlas.md`.*
 
-| Quelle | Zweck | Status |
-|---|---|---|
-| Prototype Fund | Fristen, Zuschnitt · **Korrektur 20.09.2026:** Nur Freiberufler:innen/Selbstständige oder GbR (≤ 4 Personen) förderfähig. Keine Stiftungen, Behörden oder Vereine. Vor jedem Hinweis Status auf `bewerben.prototypefund.de` prüfen! | aktiv geprüft (20.09.2026) |
-| CityLAB Berlin | Empfänger Rang 1 (Bauträger, GovTech TestLAB, Kiezlabor) | bekannt & geprüft (20.09.2026) |
-| Re-Use Berlin / Zero-Waste-Agentur (SenUVK) | Domänenpartner Kreislaufwirtschaft | angekratzt (20.09.2026) |
-| BSR (Berliner Stadtreinigung) | Kieztage 2026 (~80 Termine, alle Bezirke) als Kaltstart-Bühne; NochMall | angekratzt (20.09.2026) |
-| Open Repair Alliance | Datenquelle | angekratzt |
+| Quelle | Enthält / Fokus | Zugang | Status | Zuletzt | Ertrag | Q |
+|---|---|---|---|---|---|---|
+| **Prototype Fund** `prototype-fund` | **Fokus:** Fristen, Zuschnitt · Korrektur 20.09.2026: Nur Freiberufler:innen/Selbstständige oder GbR (≤ 4 Personen) förderfähig. Keine Stiftungen, Behörden oder Vereine. Vor jedem Hinweis Status auf `bewerben.prototypefund.de` prüfen! | Webseite: Vor jedem Hinweis Status und Zulässigkeit auf bewerben.prototypefund.de prüfen (nur Freiberufler:innen/GbR ≤ 4 Personen). | `durchsucht` — (20.09.2026) | 20.09.2026 | – | 22* |
+| **CityLAB Berlin** `citylab-berlin` | **Fokus:** Empfänger Rang 1 (Bauträger, GovTech TestLAB, Kiezlabor) | Webseite | `durchsucht` — (20.09.2026) | 20.09.2026 | – | 22* |
+| **Re-Use Berlin / Zero-Waste-Agentur (SenUVK)** `re-use-berlin-zero-waste-agentur` | **Fokus:** Domänenpartner Kreislaufwirtschaft *[Schnipsel]* | Webseite | `angekratzt` — (20.09.2026) | 20.09.2026 | – | 19* |
+| **BSR (Berliner Stadtreinigung)** `bsr` | **Fokus:** Kieztage 2026 (~80 Termine, alle Bezirke) als Kaltstart-Bühne; NochMall *[Schnipsel]* | Webseite | `angekratzt` — (20.09.2026) | 20.09.2026 | – | 19* |
+| **Open Repair Alliance** `open-repair-alliance` | **Fokus:** Datenquelle *[Schnipsel]* | Webseite | `angekratzt` | – | – | 19* |
 
----
+## Typ E — Behördliche Mengen- und Kostenstatistiken
 
+*Eine Zahl, die den Schmerz quantifiziert, gehört in jede Dose, die an eine Verwaltung oder Stiftung geht.*
 
-## Typ E — Behördliche Mengen- und Kostenstatistiken (neu, Runde 4)
+| Quelle | Enthält / Fokus | Zugang | Status | Zuletzt | Ertrag | Q |
+|---|---|---|---|---|---|---|
+| **Berliner Stadtreinigung (BSR) / Berliner Zeitung (22.03.2026) / EUWID (08/2025)** `bsr-mengenstatistik-2025` | 2025 fast 200.000 Meldungen illegaler Ablagerungen (>500/Tag); Beseitigungskosten >13 Mio. € (2024: 10,3 Mio. €); 54.000 m³ (2024, +8 %). Typisch: Möbel, Kühlschränke, Matratzen. — **Fokus:** Sperrmüll-Radar v2 (`05-dosen/sperrmuell-radar.md`), Mail 2 an CityLAB | Webseite | `durchsucht` | 20.09.2026 | Dose `sperrmuell-radar` | 23* |
 
-*Muster: Eine Zahl, die den Schmerz quantifiziert, gehört in jede Dose, die an eine Verwaltung oder Stiftung geht.*
+## Typ F — Internationale Phänologie-/Beobachtungsplattformen
 
-| Quelle | Zahlen & Belege | Zweck / Dose | Zuletzt |
-|---|---|---|---|
-| Berliner Stadtreinigung (BSR) / Berliner Zeitung (22.03.2026) / EUWID (08/2025) | 2025 fast 200.000 Meldungen illegaler Ablagerungen (>500/Tag); Beseitigungskosten >13 Mio. € (2024: 10,3 Mio. €); 54.000 m³ (2024, +8 %). Typisch: Möbel, Kühlschränke, Matratzen. | Sperrmüll-Radar v2 (`05-dosen/sperrmuell-radar.md`), Mail 2 an CityLAB | 20.09.2026 |
+*Werkzeuge, die über ihre **Funktion** definiert sind („dieselbe Pflanze über Zeit"), nicht über ihren Gegenstand. Sie tauchen bei deutschen Themensuchen nie auf und killen trotzdem Ideen.*
 
----
+| Quelle | Enthält / Fokus | Zugang | Status | Zuletzt | Ertrag | Q |
+|---|---|---|---|---|---|---|
+| **GrowApp / GLOBE European Phenology Campaign (`growapp.today`, `globe.gov`)** `growapp-globe-phenology` | Wiederholungsfoto derselben Einzelpflanze, voriges Bild transparent zum Ausrichten, automatischer Zeitraffer ab Bild 2; GLOBE Niederlande, Update Frühjahr 2024 | App | `angekratzt` — ergiebig, hat Crack Flora Watcher gekippt; Länderliste, Datenexport und Nutzerzahlen ungelesen | 21.09.2026 | – | 24* |
+| **USA National Phenology Network / Nature's Notebook (`usanpn.org`)** `usa-npn-natures-notebook` | Einzelpflanzen mit Spitznamen registrieren, im Feld markieren, wiederholt besuchen; kuratierte Artenliste; neue App Frühjahr 2026 mit „leveled approach to monitoring" | App | `angekratzt` — (FAQ gelesen) — Artenliste nicht durchgesehen, Ritzenunkraut unklar | 21.09.2026 | – | 23* |
+| **Flora Incognita, Projektseite Krautschau (`floraincognita.de/krautschau/`)** `flora-incognita-krautschau` | Eigenes Krautschau-Projekt in der App, Abzeichen 40 Arten / fünf Stufen, „Flora-Routine" mit Geozone und Auto-Tagging | App | `durchsucht` — (Seite gelesen) — Achtung: war in der Dose als nachrangiger Empfänger geführt und ist zugleich Konkurrenz | 21.09.2026 | – | 21* |
+| **Senckenberg #Krautschau (`senckenberg.de/de/krautschau/`)** `senckenberg-krautschau` | Aktionszeitraum 2026 09.05.–10.06. (85 Spaziergänge, 66 Städte), 2027 14.–23.05.; Koordination Julia Krohmer + Alexandra-Maria Klein (Uni Freiburg); empfiehlt Flora Incognita und ObsIdentify | Webseite | `durchsucht` — (Seite gelesen) | 21.09.2026 | – | 21* |
+| **USA-NPN Local Phenology Program Guide** `usa-npn-local-phenology-program-guide` | Personalwechsel als Organisationsaufgabe: Nachfolge dokumentieren, zweite Person als Admin, Gruppen-Eigentümerschaft per „Manage Users" übertragen — „before you depart" — Belege: (PDF, `usanpn.org/files/education/2018-0621-localphenologyprogram_guide_final_1.pdf`) | PDF: PDF direkt lesbar; die Projektseite allein liefert den Befund nicht. | `durchsucht` — (PDF gelesen) — ergiebig: hat die Restlücke der neuen Dose präzisiert. Die Projektseite allein hätte den Befund nicht geliefert | 21.09.2026 | – | 23* |
+| **Quellcode des Empfängers — `github.com/technologiestiftung/giessdenkiez-de`** `giessdenkiez-quellcode` | `adoptTree`/`unadoptTree`/`refreshIsTreeAdoptedByOthers`, sonst nichts; null Treffer für Ablauf/Inaktivität/Übertragung; Adoption nicht exklusiv; Oberflächentext „lässt Du Deine Nachbarschaft wissen, dass für diese Bäume gesorgt wird" — Belege: (Klon 21.09.2026) | Quellcode-Repo: `git clone` über HTTPS + `grep` (Volltext). GitHub-API und Issue-/Discussion-Seiten sind gesperrt (robots.txt) — Issues vor Zustellung von Hand nachsehen. | `durchsucht` — (Volltext) — Issues/Discussions nicht lesbar (API gesperrt, robots.txt), vor Zustellung von Hand nachsehen | 21.09.2026 | – | 21* |
+| **CityLAB Gieß den Kiez (`citylab-berlin.org/en/projects/giess-den-kiez/`)** `citylab-giess-den-kiez` | Baum adoptieren, Gießmenge protokollieren, Patenbäume im Profil; 885.825 Bäume, quelloffen mit Fork-Wiki, seit 2020 laufend | Quellcode-Repo | `angekratzt` — (Projektseite gelesen) — zu Exklusivität/Inaktivität/Übertragung sagt die Seite nichts; ggf. Repo/Issues lesen | 21.09.2026 | – | 22* |
 
-## Nachtrag 19.09.2026 — Anker aus dem Gemini-Lauf (Quelle genannt, **nicht gelesen**)
+## Typ G — Spiele mit Wissenschaftsanspruch
 
-Der Lauf nennt diese Anker in `amelie-bisoziation-log.md`. Sie sind hier vermerkt, damit niemand sie für durchgegraben hält: Status `offen`, bis jemand die Quelle selbst geöffnet hat. Ein Kandidat daraus ist noch keine Prüfung der Quelle.
+*Das Feld hat Konferenzen, und deren Programme sind Adressbücher. „Ein Indie-Entwickler" ist keine Adresse.*
 
-| Quelle | Typ | Wofür genannt | Status |
-|---|---|---|---|
-| LANA/BfN Kartieranleitung LRT 6120 (Trockenrasen) | A | Trockenrasen-Transekte; Überschneidung mit Kartierlotse klären | offen (BfN-Zeile oben ist wegen Schrift 721 `angekratzt`, LRT-6120-Anleitung selbst ungelesen) |
-| NABU-Batcorder-Monitoring Gewässer | B | Fledermaus-Echo-Entwirrer | offen |
-| Thünen MonViA, Hummel-Nistkasten | B | Hummel-Schleusenwächter | angekratzt (Nisthilfe-Foto-Auswertung Runde 2; Hummel-Strang wie in Zeile oben vermerkt) |
-| Stiftung Denkmalschutz / BDO, Orgelpfeifen-Bleifraß | A/Denkmal | Orgelpfeifen-Resonanz | angekratzt 19.09.2026 — HfK-Bremen/DBU-Projekt, IDW-Meldung, CORDIS COLLAPSE gelesen; Handbuch Orgelkorrosion 2019 (PDF) nicht lesbar; Idee `unklar` |
-| DWD Waldbrandgefahrenindex / Landesforst | A | Waldbrand-Streu-Knistern | offen |
-| DWD Phänologischer Kalender | B | Knospen-Countdown | offen |
-| Tafel Deutschland e. V. | B/Empfänger | Tafel-Frische-Triage | **Achtung:** laufendes BMEL-Projekt „Tafel macht Zukunft" — zuerst dessen Umfang lesen |
-| WSA/WRRL Gewässerökologie | A | Totholz-Kolk-Peiler | offen |
-| Berliner Leitfaden „Bauen mit Glas und Licht" (2021) | A | Licht-Glocken-Kataster | offen (Senatsverwaltung-Zeile oben; als Anker genannt, Leitfaden nicht gelesen) |
+| Quelle | Enthält / Fokus | Zugang | Status | Zuletzt | Ertrag | Q |
+|---|---|---|---|---|---|---|
+| **ECSA 2026, Workshop W16 „Games for good: Games and gamification for Citizen Science"** `ecsa-2026-w16-games-for-good` | Convenors: Liz Dowthwaite + Nimisha Parashar (Univ. Nottingham), Jesse Himmelstein (Play Curious), Attila Szantner (MMOS); Beiträge: Forschung, Spiel-Demos, Projektvorstellungen — Belege: (Oulu, 03.03.2026) | Webseite: Programm des Workshops ist ein Adressbuch des Felds; Termin vorbei, nächstes Fenster ECSA 2027. | `durchsucht` — Termin vorbei, also kein Zustellziel, aber der Adressbestand des Felds. Nächstes Fenster ECSA 2027 | 21.09.2026 | – | 22* |
+| **MMOS / Project Discovery (`mmos.ch`)** `mmos-project-discovery` | Echte Forschungsaufgaben in bestehende Spiele eingebettet (EVE Online), hunderttausende Spieler, *Nature Biotechnology* 2024, GDC-Talk *[Schnipsel]* | Webseite | `angekratzt` — (Suchtreffer) — umgekehrtes Modell, Wissenschaft ins Spiel statt Spiel um Weltstück | 21.09.2026 | – | 18* |
+| **The Plant Game / Pl@ntNet (`theplantgame.com`, `docs.plantnet.org`)** `the-plant-game-plantnet` | Drei Modi inkl. Duell gegen Freunde oder Zufallsgegner, adaptive Schwierigkeit *[Schnipsel]* | Webseite | `angekratzt` — Doku nennt keine Duellregeln, keine Spielerzahlen, kein Datum; Aktivitätsstand vor Zustellung prüfen | 21.09.2026 | – | 18* |
+| **Stray Fawn Studio / Publishing (`strayfawnstudio.com`)** `stray-fawn-studio-publishing` | Publishing seit 03/2023, Fokus Strategie/Simulation/City-Building, „pitch deck and trailer" an `pitch@strayfawnstudio.com` | Webseite | `durchsucht` — kein Empfänger, Verkaufskanal; als Vorarbeit führen (*Niche*) | 21.09.2026 | – | 22* |
+| **Scientific Game Jam (itch.io), Green Game Jam (Playing for the Planet)** `scientific-game-jam-green-game-jam` | Jams, die Forschung und Spielentwicklung paaren | Webseite | `offen` — als Community-Weg für Ideen mit Skelett | – | – | 22* |
 
----
+## Typ H — Regulierung im Ausland
 
-## Typ F — Internationale Phänologie-/Beobachtungsplattformen (neu, Runde 6)
+*Ein deutsches Gremium veröffentlicht ein PDF. Ein anderes Land macht dieselbe Sache zur Auflage — und dort existiert dann ein Rechenblatt, eine Norm oder eine App.*
 
-*Muster: Werkzeuge, die über ihre **Funktion** definiert sind („dieselbe Pflanze über Zeit"), nicht über ihren Gegenstand. Sie tauchen bei deutschen Themensuchen nie auf und killen trotzdem Ideen.*
-
-| Quelle | Was dort steht | Status | Zuletzt |
-|---|---|---|---|
-| GrowApp / GLOBE European Phenology Campaign (`growapp.today`, `globe.gov`) | Wiederholungsfoto derselben Einzelpflanze, voriges Bild transparent zum Ausrichten, automatischer Zeitraffer ab Bild 2; GLOBE Niederlande, Update Frühjahr 2024 | angekratzt — **ergiebig, hat Crack Flora Watcher gekippt**; Länderliste, Datenexport und Nutzerzahlen ungelesen | 21.09.2026 |
-| USA National Phenology Network / Nature's Notebook (`usanpn.org`) | Einzelpflanzen mit Spitznamen registrieren, im Feld markieren, wiederholt besuchen; kuratierte Artenliste; neue App Frühjahr 2026 mit „leveled approach to monitoring" | angekratzt (FAQ gelesen) — Artenliste nicht durchgesehen, Ritzenunkraut unklar | 21.09.2026 |
-| Flora Incognita, Projektseite Krautschau (`floraincognita.de/krautschau/`) | Eigenes Krautschau-Projekt in der App, Abzeichen 40 Arten / fünf Stufen, „Flora-Routine" mit Geozone und Auto-Tagging | `durchsucht` (Seite gelesen) — **Achtung: war in der Dose als nachrangiger Empfänger geführt und ist zugleich Konkurrenz** | 21.09.2026 |
-| Senckenberg #Krautschau (`senckenberg.de/de/krautschau/`) | Aktionszeitraum 2026 09.05.–10.06. (85 Spaziergänge, 66 Städte), 2027 14.–23.05.; Koordination Julia Krohmer + Alexandra-Maria Klein (Uni Freiburg); empfiehlt Flora Incognita und ObsIdentify | `durchsucht` (Seite gelesen) | 21.09.2026 |
-| USA-NPN *Local Phenology Program Guide* (PDF, `usanpn.org/files/education/2018-0621-localphenologyprogram_guide_final_1.pdf`) | Personalwechsel als Organisationsaufgabe: Nachfolge dokumentieren, zweite Person als Admin, **Gruppen-Eigentümerschaft per „Manage Users" übertragen — „before you depart"** | `durchsucht` (PDF gelesen) — **ergiebig:** hat die Restlücke der neuen Dose präzisiert. Die Projektseite allein hätte den Befund nicht geliefert | 21.09.2026 |
-| **Quellcode des Empfängers** — `github.com/technologiestiftung/giessdenkiez-de` (Klon 21.09.2026) | `adoptTree`/`unadoptTree`/`refreshIsTreeAdoptedByOthers`, sonst nichts; null Treffer für Ablauf/Inaktivität/Übertragung; Adoption nicht exklusiv; Oberflächentext „lässt Du Deine Nachbarschaft wissen, dass für diese Bäume gesorgt wird" | `durchsucht` (Volltext) — Issues/Discussions **nicht** lesbar (API gesperrt, robots.txt), vor Zustellung von Hand nachsehen | 21.09.2026 |
-| CityLAB Gieß den Kiez (`citylab-berlin.org/en/projects/giess-den-kiez/`) | Baum adoptieren, Gießmenge protokollieren, Patenbäume im Profil; 885.825 Bäume, quelloffen mit Fork-Wiki, seit 2020 laufend | angekratzt (Projektseite gelesen) — zu Exklusivität/Inaktivität/Übertragung sagt die Seite nichts; ggf. Repo/Issues lesen | 21.09.2026 |
-
----
-
-## Typ G — Spiele mit Wissenschaftsanspruch (neu, Runde 6, Spiel-Strang)
-
-*Muster: Das Feld hat Konferenzen, und deren Programme sind Adressbücher. „Ein Indie-Entwickler" ist keine Adresse.*
-
-| Quelle | Was dort steht | Status | Zuletzt |
-|---|---|---|---|
-| ECSA 2026, Workshop W16 „Games for good: Games and gamification for Citizen Science" (Oulu, 03.03.2026) | Convenors: Liz Dowthwaite + Nimisha Parashar (Univ. Nottingham), **Jesse Himmelstein (Play Curious)**, **Attila Szantner (MMOS)**; Beiträge: Forschung, Spiel-Demos, Projektvorstellungen | `durchsucht` — **Termin vorbei**, also kein Zustellziel, aber der Adressbestand des Felds. Nächstes Fenster ECSA 2027 | 21.09.2026 |
-| MMOS / Project Discovery (`mmos.ch`) | Echte Forschungsaufgaben in bestehende Spiele eingebettet (EVE Online), hunderttausende Spieler, *Nature Biotechnology* 2024, GDC-Talk | angekratzt (Suchtreffer) — **umgekehrtes Modell**, Wissenschaft ins Spiel statt Spiel um Weltstück | 21.09.2026 |
-| The Plant Game / Pl@ntNet (`theplantgame.com`, `docs.plantnet.org`) | Drei Modi inkl. **Duell** gegen Freunde oder Zufallsgegner, adaptive Schwierigkeit | angekratzt — Doku nennt **keine Duellregeln, keine Spielerzahlen, kein Datum**; Aktivitätsstand vor Zustellung prüfen | 21.09.2026 |
-| Stray Fawn Studio / Publishing (`strayfawnstudio.com`) | Publishing seit 03/2023, Fokus Strategie/Simulation/City-Building, „pitch deck and trailer" an `pitch@strayfawnstudio.com` | `durchsucht` — **kein Empfänger, Verkaufskanal**; als Vorarbeit führen (*Niche*) | 21.09.2026 |
-| Scientific Game Jam (itch.io), Green Game Jam (Playing for the Planet) | Jams, die Forschung und Spielentwicklung paaren | offen — als Community-Weg für Ideen **mit** Skelett | – |
-
----
-
-## Typ H — Regulierung im Ausland (neu, Runde 7)
-
-*Muster: Ein deutsches Gremium veröffentlicht ein PDF. Ein anderes Land macht dieselbe Sache zur Auflage — und dort existiert dann ein Rechenblatt, eine Norm oder eine App.*
 **Kein Ideenlieferant, sondern die Stelle, an der ein `frei` stirbt. Vor jedem `frei` aus Typ A abzufragen.**
 
-| Quelle | Befund | Status | Zuletzt |
-|---|---|---|---|
-| **LEED Pilot Credits (USGBC)** | SSpc55 „Bird Collision Deterrence": `(Zone 1 + Zone 2 gewichtete Fläche) / bereinigte Fassadenfläche = Bird Collision Threat Rating`, Ziel ≤ 15, Zone 1 = erste 36 Fuß über Grund (+ 12 Fuß über Gründach), verglaste Ecken und Durchflüge ≤ 25, Nachweis über **offizielle Tabellenvorlage**. Gewichte = **Material Threat Factors** aus Flugtunneltests. **Die gesamte Pilot-Credit-Bibliothek ist ein Katalog solcher Verfahren** — für andere Themen ungehoben. | durchsucht (Vogelschlag), **sehr ergiebig für andere Themen** | 21.09.2026 |
-| **American Bird Conservancy** | Material Threat Factors, „Bird-friendly Building Design", LEED-Innovation-Credit — die Datenbasis hinter dem Rechner | angekratzt | 21.09.2026 |
-| **Kommunale Ordnungen USA (NYC Local Law 15/2020 u. a.)** | Bird-friendly-Materials-Pflicht seit 10.01.2021; bedient von Beratungsbüros und Materiallisten, **keine Compliance-Software gefunden** | angekratzt | 21.09.2026 |
-| **FLAP Canada** | **BirdSafe DIY Building Risk Assessment App** (`flapapp.ca`): kostenlos, Browser, Tag- und Nachtrisiko pro Fassade, **Fragebogen ohne Bildauswertung**; dazu kostenpflichtige BirdSafe-Begutachtung mit Ortsterminen und „An Analysis of Collision Mitigation Effectiveness" | durchsucht | 21.09.2026 |
-| **Schweiz: Zürcher PBG-Ergänzung zu Glasfassaden** | Planungs- und Baugesetz um Vogelschutz an transparenten Fassaden ergänzt — eigene Rechtslage, eigener Markt | offen | 21.09.2026 |
-
-| **LEED v5 (USGBC/CAGBC), Stand 24.04.2026** *(neu, 22.09.2026)* | Vogelschlag jetzt in zwei Credits (BD+C SS 1 Option 2, O+M SS 2 Option 2), verlangt **Threat Factor ≤ 30** nach ABC-Skala; **CSA A460:19 (R2024)** als kanadischer Alternativweg anerkannt (RACP15, Abschnitte 3.2 und 3.3). Toronto seit 2010, NYC Local Law 15 seit 10.01.2021. **Die Zertifizierungsseite verdichtet sich jährlich — deutsche Seite bleibt PDF.** | **neu, durchsucht** | 03/2027 |
-| **ONR 191040 / Flugtunnel Hohenau-Ringelsdorf** *(neu, 22.09.2026)* | Österreichische Prüfnorm: Eine Markierung gilt als Vogelschutzglas, wenn **mindestens 90 % der Vögel die markierte Scheibe meiden**. Tunnel seit 2010, geleitet von Martin Rössler; die Wiener Umweltanwaltschaft veröffentlicht die Rangliste geprüfter Muster. **Die Produktwirksamkeit ist damit normiert und öffentlich — als Ideenfeld geschlossen.** | **neu, durchsucht** | 03/2027 |
+| Quelle | Enthält / Fokus | Zugang | Status | Zuletzt | Ertrag | Q |
+|---|---|---|---|---|---|---|
+| **LEED Pilot Credits (USGBC)** `leed-pilot-credits` | SSpc55 „Bird Collision Deterrence": `(Zone 1 + Zone 2 gewichtete Fläche) / bereinigte Fassadenfläche = Bird Collision Threat Rating`, Ziel ≤ 15, Zone 1 = erste 36 Fuß über Grund (+ 12 Fuß über Gründach), verglaste Ecken und Durchflüge ≤ 25, Nachweis über offizielle Tabellenvorlage. Gewichte = Material Threat Factors aus Flugtunneltests. Die gesamte Pilot-Credit-Bibliothek ist ein Katalog solcher Verfahren — für andere Themen ungehoben. | Webseite | `durchsucht` — (Vogelschlag), sehr ergiebig für andere Themen | 21.09.2026 | – | 25* |
+| **American Bird Conservancy** `american-bird-conservancy` | Material Threat Factors, „Bird-friendly Building Design", LEED-Innovation-Credit — die Datenbasis hinter dem Rechner *[Schnipsel]* | Webseite | `angekratzt` | 21.09.2026 | – | 18* |
+| **Kommunale Ordnungen USA (NYC Local Law 15/2020 u. a.)** `kommunale-ordnungen-usa` | Bird-friendly-Materials-Pflicht seit 10.01.2021; bedient von Beratungsbüros und Materiallisten, keine Compliance-Software gefunden *[Schnipsel]* | Webseite | `angekratzt` | 21.09.2026 | – | 18* |
+| **FLAP Canada** `flap-canada` | BirdSafe DIY Building Risk Assessment App (`flapapp.ca`): kostenlos, Browser, Tag- und Nachtrisiko pro Fassade, Fragebogen ohne Bildauswertung; dazu kostenpflichtige BirdSafe-Begutachtung mit Ortsterminen und „An Analysis of Collision Mitigation Effectiveness" | App | `durchsucht` | 21.09.2026 | – | 21* |
+| **Schweiz: Zürcher PBG-Ergänzung zu Glasfassaden** `schweiz-zuercher-pbg-ergaenzung-zu-glasfassaden` | Planungs- und Baugesetz um Vogelschutz an transparenten Fassaden ergänzt — eigene Rechtslage, eigener Markt | Webseite | `offen` | 21.09.2026 | – | 22* |
+| **LEED v5 (USGBC/CAGBC), Stand 24.04.2026** `leed-v5` | Vogelschlag jetzt in zwei Credits (BD+C SS 1 Option 2, O+M SS 2 Option 2), verlangt Threat Factor ≤ 30 nach ABC-Skala; CSA A460:19 (R2024) als kanadischer Alternativweg anerkannt (RACP15, Abschnitte 3.2 und 3.3). Toronto seit 2010, NYC Local Law 15 seit 10.01.2021. Die Zertifizierungsseite verdichtet sich jährlich — deutsche Seite bleibt PDF. | PDF | `durchsucht` | 22.09.2026 (WV 2027-03) | – | 20* |
+| **ONR 191040 / Flugtunnel Hohenau-Ringelsdorf** `onr-191040-flugtunnel-hohenau-ringelsdorf` | Österreichische Prüfnorm: Eine Markierung gilt als Vogelschutzglas, wenn mindestens 90 % der Vögel die markierte Scheibe meiden. Tunnel seit 2010, geleitet von Martin Rössler; die Wiener Umweltanwaltschaft veröffentlicht die Rangliste geprüfter Muster. Die Produktwirksamkeit ist damit normiert und öffentlich — als Ideenfeld geschlossen. | Webseite | `durchsucht` | 22.09.2026 (WV 2027-03) | – | 21* |
 
 **Suchstring:** `<Thema> LEED credit` · `<Thema> city ordinance compliance` · `<Thema> standard rating calculator` · `<Thema> threat factor` · `<Thema> DIY assessment app`
 
----
+## Typ I — Messverfahren aus Nachbarbranchen und harte Evidenz
 
-## Typ I — Messverfahren aus Nachbarbranchen und harte Evidenz (neu, 22.09.2026)
+*Die Messung, an der eine Naturschutzidee hängt, ist in einer ganz anderen Branche längst gelöst und publiziert — und daneben liegt die Studie, die sagt, wie viel Präzision die Sache überhaupt trägt. Beides vor dem Bauen lesen, nicht danach.*
 
-*Muster: Die Messung, an der eine Naturschutzidee hängt, ist in einer ganz anderen Branche längst gelöst und publiziert — und daneben liegt die Studie, die sagt, wie viel Präzision die Sache überhaupt trägt. Beides vor dem Bauen lesen, nicht danach.*
-
-| Quelle | Befund | Status | Zuletzt |
-|---|---|---|---|
-| **Fenster-Wand-Verhältnis aus Straßenbildern** *(neu, 22.09.2026)* | Suppa, Aliberti, Bottero & Corrado, *Building Simulation* 18(8), 2025: YOLOv9 auf Google Street View, **94 % der Fassaden innerhalb ±5 Prozentpunkten** der Handmessung, 100 % innerhalb ±10, Workflow offen (Turin). Dazu Applied Energy 2026 zur urbanen WWR-Schätzung, DLR zur direkten WWR-Vorhersage, Concordia über Google-3D-Kacheln, Fassadenparsing mit SOLOv2. **Die Gebäudeenergie-Branche hat die Messung gelöst, auf die der Naturschutz wartet.** | **neu, durchsucht** | 22.09.2026 |
-| **Li u. a., *Biological Conservation* 310 (2025)** *(neu, 22.09.2026)* | Nationale Citizen-Science-Erhebung China 2021–2023: **3.078 Gebäude, 65.633 Erfassungstage, 676 Arten.** Vegetation wirkt am stärksten auf **1.000 m (Frühjahr) und 10 km (Herbst)**; **Bäume innerhalb 5 m senkten das Herbstrisiko**; niedrigere Gebäude mit hohem Glasanteil gefährlicher. **Steht quer zur Nahbereichs-Spiegelungslogik der deutschen Merkblätter** — gehört in jedes „Wo es kippt" zu diesem Thema. | **neu, durchsucht** | 03/2027 |
+| Quelle | Enthält / Fokus | Zugang | Status | Zuletzt | Ertrag | Q |
+|---|---|---|---|---|---|---|
+| **Fenster-Wand-Verhältnis aus Straßenbildern** `fenster-wand-verhaeltnis-strassenbilder` | Suppa, Aliberti, Bottero & Corrado, *Building Simulation* 18(8), 2025: YOLOv9 auf Google Street View, 94 % der Fassaden innerhalb ±5 Prozentpunkten der Handmessung, 100 % innerhalb ±10, Workflow offen (Turin). Dazu Applied Energy 2026 zur urbanen WWR-Schätzung, DLR zur direkten WWR-Vorhersage, Concordia über Google-3D-Kacheln, Fassadenparsing mit SOLOv2. Die Gebäudeenergie-Branche hat die Messung gelöst, auf die der Naturschutz wartet. | Webseite | `durchsucht` | 22.09.2026 | – | 21* |
+| **Li u. a., Biological Conservation 310 (2025)** `li-et-al-biological-conservation-2025` | Nationale Citizen-Science-Erhebung China 2021–2023: 3.078 Gebäude, 65.633 Erfassungstage, 676 Arten. Vegetation wirkt am stärksten auf 1.000 m (Frühjahr) und 10 km (Herbst); Bäume innerhalb 5 m senkten das Herbstrisiko; niedrigere Gebäude mit hohem Glasanteil gefährlicher. Steht quer zur Nahbereichs-Spiegelungslogik der deutschen Merkblätter — gehört in jedes „Wo es kippt" zu diesem Thema. | Webseite | `durchsucht` | 22.09.2026 (WV 03/2027) | – | 21* |
 
 **Suchstring:** `<Messgröße> from street view imagery deep learning` · `<Messgröße> urban scale estimation` · `<Phänomen> national citizen science dataset collisions`
 
-## Typ J — Gebührenwerke und Tarife (neu, Runde 8; ursprünglich als „Typ H" committet — H und I waren seit Runde 7 vergeben)
+## Typ J — Gebührenwerke und Tarife
 
-*Muster: eine Preisliste, die von Hand angewandt wird und dabei Anreize setzt. Ein Typ-A-Dokument, nur dass es nicht bewertet, sondern belohnt und bestraft. Nebeneinandergelegt zeigt die Leiter oft, dass der erwünschte Weg der teuerste und der schädliche der kostenlose ist.*
+*eine Preisliste, die von Hand angewandt wird und dabei Anreize setzt. Ein Typ-A-Dokument, nur dass es nicht bewertet, sondern belohnt und bestraft. Nebeneinandergelegt zeigt die Leiter oft, dass der erwünschte Weg der teuerste und der schädliche der kostenlose ist.*
 
-| Quelle | Befund | Status | Zuletzt |
-|---|---|---|---|
-| **BSR-Gebühren / Sperrmüllbuchung** | 100 € bis 5 m³ (6–15 Werktage) · 96 € Express (≤ 2 m³, 5 Tage) · 50 € ab Tag 16 · Recyclinghof 3 m³ frei, **aber nur mit Auto** · NochMall-Abholservice kostenpflichtig · Straße 0 € und sofort. Ergab die Dose Sperrmüll-Weiche | durchsucht | 23.09.2026 |
-| Parkraumbewirtschaftung, Pfandsysteme, Anschluss- und Benutzungsgebühren | Durchsucht für Bewohnerparken (AusweichZonen-Lotse), Pfand und Anschlussgebühren offen | angekratzt | 27.09.2026 |
+| Quelle | Enthält / Fokus | Zugang | Status | Zuletzt | Ertrag | Q |
+|---|---|---|---|---|---|---|
+| **BSR-Gebühren / Sperrmüllbuchung** `bsr-gebuehren-sperrmuellbuchung` | 100 € bis 5 m³ (6–15 Werktage) · 96 € Express (≤ 2 m³, 5 Tage) · 50 € ab Tag 16 · Recyclinghof 3 m³ frei, aber nur mit Auto · NochMall-Abholservice kostenpflichtig · Straße 0 € und sofort. Ergab die Dose Sperrmüll-Weiche | Webseite | `durchsucht` | 23.09.2026 | Dose `sperrmuell-weiche` | 23* |
+| **Parkraumbewirtschaftung, Pfandsysteme, Anschluss- und Benutzungsgebühren** `parkraum-pfand-anschlussgebuehren` | Durchsucht für Bewohnerparken (AusweichZonen-Lotse), Pfand und Anschlussgebühren offen *[Schnipsel]* | Webseite | `angekratzt` | 27.09.2026 | – | 18* |
 
 **Suchstring:** `<Betrieb> Gebühren Entgelte Preisliste <Jahr>` · `<Leistung> kostenpflichtig kostenlos Voraussetzung`
 
----
+## Typ K — Amtliche Potenzialstudien
 
-## Typ K — Amtliche Potenzialstudien (neu, Runde 8; ursprünglich als „Typ I" committet)
+*eine Behörde lässt untersuchen, wo in einem Stoffstrom noch etwas zu holen wäre, und der Bericht sagt selbst, welcher Weg sich nicht lohnt. Der verworfene Weg ist meist der, den die Branche gerade optimiert.*
 
-*Muster: eine Behörde lässt untersuchen, wo in einem Stoffstrom noch etwas zu holen wäre, und der Bericht sagt selbst, welcher Weg sich nicht lohnt. Der verworfene Weg ist meist der, den die Branche gerade optimiert.*
-
-| Quelle | Befund | Status | Zuletzt |
-|---|---|---|---|
-| **UBA 2022, Nutzung von Abfallströmen** | Sperrmüll 2017: 2.355.300 t, ~30 % Polstermöbel/Matratzen/Teppiche, 40 % Sortieranlage, 34 % thermisch. Befund: Entlastung kommt aus **Abfallberatung, getrennter Sammlung und Wiederverwendung** — nicht aus besserer Sortiertechnik | durchsucht (Zusammenfassung gelesen, Originalbericht nicht) | 23.09.2026 |
-| Weitere UBA-/BMUV-Potenzialstudien zu anderen Stoffströmen | offen | offen | – |
+| Quelle | Enthält / Fokus | Zugang | Status | Zuletzt | Ertrag | Q |
+|---|---|---|---|---|---|---|
+| **UBA 2022, Nutzung von Abfallströmen** `uba-2022-nutzung-von-abfallstroemen` | Sperrmüll 2017: 2.355.300 t, ~30 % Polstermöbel/Matratzen/Teppiche, 40 % Sortieranlage, 34 % thermisch. Befund: Entlastung kommt aus Abfallberatung, getrennter Sammlung und Wiederverwendung — nicht aus besserer Sortiertechnik | Webseite | `durchsucht` — (Zusammenfassung gelesen, Originalbericht nicht) | 23.09.2026 | – | 21* |
+| **Weitere UBA-/BMUV-Potenzialstudien zu anderen Stoffströmen** `uba-bmuv-potenzialstudien-weitere` | offen | Webseite | `offen` | – | – | 22* |
 
 **Suchstring:** `<Stoffstrom> Potenzial Studie Umweltbundesamt ausgeschöpft` · `<Stoffstrom> Wiederverwendung Quote Anteil verwertbar`
 
----
+## Typ L — Fachliche Referenzsammlungen
 
-## Typ L — Fachliche Referenzsammlungen (neu, 23.09.2026)
+*Eine Fachgesellschaft sammelt über Jahre echte Fälle mit dokumentierter Ursache — als Nachschlagewerk. Dieselbe Sammlung ist das Material, das jedem Übungsgerät fehlt.*
 
-*Muster: Eine Fachgesellschaft sammelt über Jahre echte Fälle mit dokumentierter Ursache — als Nachschlagewerk. Dieselbe Sammlung ist das Material, das jedem Übungsgerät fehlt.*
-
-| Quelle | Befund | Status | Zuletzt |
-|---|---|---|---|
-| **FractoDB + FractoGraphics** (AG Fraktographie von DGM/DVM an der BAM, seit 2013) | Tausende reale Bruchflächenbilder aus Schadensfällen und Vergleichsuntersuchungen, kostenlos auf Anfrage (`fraktographie@bam.de`), Symbolsprache für Befunde; Kurs „Fraktographie metallischer Werkstoffe" 03/2027 Berlin, Arbeitskreis 20.11.2026 Berlin. **Referenzsammlung, die niemand als Übungsmaterial nutzt** — Empfänger der Dose Bruchlesen | durchsucht (Seiten gelesen) | 23.09.2026 |
+| Quelle | Enthält / Fokus | Zugang | Status | Zuletzt | Ertrag | Q |
+|---|---|---|---|---|---|---|
+| **FractoDB + FractoGraphics (AG Fraktographie von DGM/DVM an der BAM, seit 2013)** `fractodb-fractographics` | Tausende reale Bruchflächenbilder aus Schadensfällen und Vergleichsuntersuchungen, kostenlos auf Anfrage (`fraktographie@bam.de`), Symbolsprache für Befunde; Kurs „Fraktographie metallischer Werkstoffe" 03/2027 Berlin, Arbeitskreis 20.11.2026 Berlin. Referenzsammlung, die niemand als Übungsmaterial nutzt — Empfänger der Dose Bruchlesen | Webseite | `durchsucht` — (Seiten gelesen) | 23.09.2026 | Dose `bruchlesen` | 24* |
 
 **Suchstring:** `<Fach> Datenbank Referenz Schadensfälle` · `<Fach> Arbeitskreis Schulung` — **auf Deutsch zuerst**, wenn eine deutsche Institution das Feld trägt
 
----
+## Typ M — Holz: Schadstoff-, Abfall- und Sortierregeln am Übergang Holz → Gebäude/Abfall
 
-## Empfänger, in Runde 8 geprüft
+*Alle Einträge **nur über Suchschnipsel** erschlossen; die Seiten selbst waren in dieser Umgebung nicht abrufbar.*
 
-| Empfänger | Befund | Status |
-|---|---|---|
-| **BSR** | Besitzt **beide Enden** der Sperrmüll-Weiche: kostenpflichtige Sperrmüllabholung und NochMall mit eigenem Abholservice (Formular, Fotoupload, Etage, verbindliches Angebot in 48 h). Keine Verbindung zwischen beiden. Rang 1 für alles Entsorgungsnahe | neu, 23.09.2026 |
-| **CityLAB Berlin** | **Gesperrt bis auf Weiteres.** Mail 2 ging am 20.09.2026 dorthin, Mail 4 (Patenschaft) liegt bewusst zurück. Eine dritte Sendung an dieselbe Adresse wäre Nachfassen — Manifestregel | – |
-| Somerset Council × British Heart Foundation (UK) | Kein Empfänger, sondern **Vorbild mit benannter Schwäche** (Triage erst im Depot nach der Abholung) | 23.09.2026 |
+| Quelle | Enthält / Fokus | Zugang | Status | Zuletzt | Ertrag | Q |
+|---|---|---|---|---|---|---|
+| **LfU Bayern, Schadstoffratgeber Gebäuderückbau** `lfu-bayern-schadstoffratgeber` | Produktnamen/Zeiträume historischer Holzschutzmittel; Altholz-Infoblätter als reiner Text — Belege: (Suchregister Nr. 507 Holzschutzmittel) + Abfallratgeber Bayern (Altholz, Bahnschwellen) *[Schnipsel]* | Webseite (gesperrt): lfu.bayern.de war in der Cloud-Umgebung nicht abrufbar; nur Suchschnipsel. | `angekratzt` — ergiebig (Dosenfund-Dolmetscher, Altholz-Weiche) | 27.09.2026 | – | 20* |
+| **AltholzV Anhang III + BAV/EUWID-Novellen-Debatte** `altholzv-anhang-iii-bav` | Regelvermutung Sortiment → A I–A IV; BAV: Sichtzuordnung „nicht zuverlässig umsetzbar“; Novelle blockiert *[Schnipsel]* | Norm/Volltext | `angekratzt` | 27.09.2026 | – | 18* |
+| **WRA Waste Wood Assessment Guidance (UK, V3 02/2024) + CIWM/NFDC C&D-Guide** `wra-waste-wood-assessment-guidance` | Visueller Papierleitfaden, keine App *[Schnipsel]* | Norm/Volltext | `angekratzt` — (Auslandsgegenprobe) | 27.09.2026 | – | 18* |
+| **DIN 4074-1/-5 (2026-05) + Holzbau Deutschland „Sortierung durch den Zimmermeister“ + Recyclingholz-Papers 2025/26 + ReFoRe** `din-4074-1-5-holzbau-deutschland` | Regelvorschlag für Gebrauchsspuren, kein Feldwerkzeug | Norm/Volltext | `angekratzt` — ergiebig, ReFoRe ungelesen | 27.09.2026 | – | 25* |
+| **1. BImSchV / DUH Clean Heat FAQ / UK Smoke Control Areas** `bimschv-1-duh-clean-heat-faq` | Protokoll verlangt, optischer Nachweis nicht vorgesehen *[Schnipsel]* | Norm/Volltext | `angekratzt` | 27.09.2026 | – | 18* |
+| **Abbundzeichen-Literatur** `abbundzeichen-literatur-igb` | Zeichen als Bauforschungsquelle, keine Sammlung — Belege: (Gerner 1996; Vernacular Architecture 49/1, 2018) + IgB-Bauernhausarchiv *[Schnipsel]* | Norm/Volltext | `angekratzt` | 27.09.2026 | – | 18* |
+| **Thünen-Kompetenzzentrum Holzherkünfte** `thuenen-holzherkuenfte` | Apps und KI selbst gebaut | Webseite (gesperrt): Netzwerk-Policy der Cloud-Umgebung sperrte Seitenabrufe (Holz-Runde); nur Suchschnipsel. | `erschöpft` — für Holzartbestimmung | 27.09.2026 | – | 17* |
+| **Fraunhofer WKI Holzschutztagung 2022 / holzfragen.de** `fraunhofer-wki-holzschutztagung` | Hausbock-Akustik gebaut; Körperschall 20 kHz–2 MHz | Norm/Volltext | `erschöpft` — für Akustik | 27.09.2026 | – | 19* |
+| **TFZ Straubing Bericht 11 · AELF-Borkenkäfer-Merkblätter · EFI I+** `tfz-straubing-aelf-borkenkaefer` | Trocknungskurven, Bohrmehl, Marteloskope | Norm/Volltext | `erschöpft` | 27.09.2026 | – | 19* |
+| **Offen für die nächste Holz-Runde: Thünen WZE-Kronenansprache-Bildserien, PCP-Richtlinie** `holz-sammelposten-offen` | – — Belege: (Bewertungsschema), DIN 68800-4, Tischler-/Zimmererforen (fachwerk.de), ADG-Graubünden-FAQ Privataufträge, restauratorische Befunduntersuchung | Norm/Volltext | `offen` | – | – | 22* |
 
----
+## Typ N — EU-Produktrecht: Ökodesign, Reparatur, Batterien
+
+*Alle Einträge **nur über Suchschnipsel** erschlossen; eur-lex.europa.eu, brubru.beresol.eu, cooley.com und ifixit.com lieferten `EGRESS_BLOCKED`. Kein Normtext im Volltext gelesen.*
+
+| Quelle | Enthält / Fokus | Zugang | Status | Zuletzt | Ertrag | Q |
+|---|---|---|---|---|---|---|
+| **ESPR VO (EU) 2024/1781 Art. 24/25 + DVO (EU) 2026/2 (Offenlegung entsorgter unverkaufter Produkte; Anhang I Tabellenformat; ABl. 10.02.2026, gilt ab 02.03.2027)** `espr-art-24-dvo-2026-2` | Pflicht große Unternehmen ab GJ 2025 im freien Format (binnen 12 Monaten), Anhang-I-Format für GJ ab 02.03.2027; Vernichtungsverbot Bekleidung/Schuhe seit 19.07.2026. Kein Register der Offenlegungen. Tatbeleg: Signify „Disclosure on Discarded Unsold Consumer Products" GJ 2025 (PDF 04.05.2026). Sekundär: Cooley 07.05.2026, Freshfields (widersprüchlich), Linklaters, trade-e-bility, Generation Impact, Cattwyk (Minderheitslesart), UBA-Themenseite | Norm/Volltext (teilweise): EU-Recht im Volltext: https://publications.europa.eu/resource/celex/<CELEX> mit `Accept: application/xhtml+xml` und `Accept-Language: deu`. eur-lex.europa.eu direkt liefert HTTP 202 mit WAF-Challenge und leerem Body. | `angekratzt` — ergiebig (Dreifachfund → Dose `vernichtungs-offenlegungsregister`). Offen: Normtext Anhang I + Art. 24 Abs. 1 und Signify-PDF als [Seite] lesen — seit der Offenlegungs-Runde (28.09.2026) ohne Netzfreigabe möglich: Netz offen, eur-lex über `publications.europa.eu/resource/celex/<CELEX>` | 28.09.2026 | Dose `vernichtungs-offenlegungsregister` | 25* |
+| **Recht auf Reparatur RL** `recht-auf-reparatur-rl-2024-1799` | Verbraucherseite beim Empfänger (VZ-Themenseiten + Musterbriefe), Formular anbieterseitig (FixFirst); „angemessen" nirgends beziffert — Belege: (EU) 2024/1799 (Art. 4 Reparaturinformationsformular Anh. I, Art. 5 Ersatzteile „angemessener Preis", Anh. II Produktgruppen; DE-Umsetzung BGBl. 2026 I Nr. 212, in Kraft seit 31.07.2026) | Norm/Volltext: Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat. | `erschöpft` — für Verbraucherbriefe und Formulare; `angekratzt` für Anh. II Waschmaschinen/Geschirrspüler (nächster Bisoziationsanker) | 28.09.2026 | – | 20* |
+| **VO (EU) 2023/1669 (Energielabel mit Reparierbarkeitsklasse Smartphones/Tablets) + VO (EU) 2023/1670 (Ökodesign: Ersatzteile 7 Jahre, Lieferfrist 5/10 Werktage, Richtpreis Anh. II, Updates) — beide seit 20.06.2025** `energielabel-vo-2023-1669-1670` | Selbstauskunft ohne Nachprüfer; EPREL-Audit R2R Europe/iFixit 09/2026 (2.334 Datensätze, ~80 % ohne verwertbare Angaben); TCO Certified verifiziert; endoflife.date führt Update-Enden | Norm/Volltext: Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat. | `erschöpft` — produktseitig (EPREL-Nachprüfer, Nachschraub-Probe, Update-Pegel, Ersatzteilpreis-Pegel alle im Friedhof) | 28.09.2026 | – | 19* |
+| **BattVO (EU) 2023/1542 (Art. 11 austauschbare Gerätebatterien ab 18.02.2027, Leitlinie C/2025/214; Art. 77 Batteriepass ab 18.02.2027)** `battvo-2023-1542` | Noch nicht in Kraft; iFixit verfolgt Art. 11; Gebrauchtakku-Zertifikate kommerziell („Certified by Bosch", Aviloo, TÜV) *[Schnipsel]* | Norm/Volltext: Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat. | `angekratzt` — Wiedervorlage nach 18.02.2027 (Grab `akkutausch-protokoll`) | 28.09.2026 | Grab `akkutausch-protokoll` | 19* |
+| **Open Repair Data Standard** `ords-open-repair-alliance-datensatz` | Felder Produktkategorie, Marke, Baujahr/Alter, Reparaturbarriere (u. a. Ersatzteil nicht verfügbar); Baujahr oft leer — Belege: (ORDS) / Open Repair Alliance — offener Datensatz (openrepair.org/open-data; Netzwerk Reparatur-Initiativen Statistik) | Norm/Volltext: Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat. | `offen` — nächster Schritt: Datentest für K3 `reparaturfall-pflichtabgleich` (Fälle/Jahr im Geltungsbereich der Teilepflichten zählen). Datensatz nicht heruntergeladen | 28.09.2026 | – | 22* |
+| **EU-Recht im Volltext (publications.europa.eu, CELEX)** `eu-recht-volltext-celex` | Amtlicher Volltext von Verordnungen und Richtlinien nach CELEX-Nummer (z. B. 32023L0970 Entgelttransparenz-RL). — **Fokus:** Zugangsweg für alle Norm-Quellen (Typ N/O). | Norm/Volltext: GET https://publications.europa.eu/resource/celex/<CELEX> mit `Accept: application/xhtml+xml` und `Accept-Language: deu` liefert den amtlichen Volltext. Für EU-Recht vor 2021 alternativ legislation.gov.uk. eur-lex.europa.eu direkt NICHT nutzen: HTTP 202 mit WAF-Challenge und leerem Body zählt nicht als erreichbar. | `durchsucht` — Zugangsweg, kein Ideenfeld | 28.09.2026 | – | 22* |
+
+## Typ O — Pflichtveröffentlichungen ohne Register: Offenlegungsregime DE/EU · Lauf B: EU-Offenlegungsregime: Lieferkette, Nachhaltigkeit, Verpackung, Steuer, KI (Offenlegung-Runde Lauf B 28.09.2026, Schnipsel)
+
+*Netz offen, Normtexte gelesen `[Seite]`**; EU-Recht über `publications.europa.eu/resource/celex/<CELEX>` bzw. legislation.gov.uk (eur-lex direkt: WAF-Challenge). Nur Suchtreffer ohne Abruf tragen `[Schnipsel]`. Vor jedem Eintrag hier die drei Pflichtfragen des Atlas (Playbook, Zeile „Offenlegungspflicht ohne Register").*
+
+| Quelle | Enthält / Fokus | Zugang | Status | Zuletzt | Ertrag | Q |
+|---|---|---|---|---|---|---|
+| **§ 9 EnEfG + BT-Drs. 21/8027 (Regierungsentwurf Novelle, 16.09.2026, inkl. Stellungnahme Bundesrat Nr. 25 + Gegenäußerung; dserver.bundestag.de) + EED (EU) 2023/1791 Art. 11 Abs. 2 (CELEX 32023L1791)** `enefg-9-bt-drs-21-8027` | Veröffentlichungspflicht der Umsetzungspläne, kein Unternehmensregister, „soll" Jahresbericht; BR will Streichung, EED schreibt Veröffentlichung vor; ~16.461 Verpflichtete (Schätzung), keine Liste | Norm/Volltext: Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat. | `angekratzt` — ergiebig (Dreifachfund → Dose `umsetzungsplan-register`) [Seite] | 28.09.2026 | Dose `umsetzungsplan-register` | 25* |
+| **BAFA-Merkblatt EnEfG** `bafa-merkblatt-enefg-echte-plaene` | 7 Pflichtangaben + Statusvokabular, Pläne folgen wörtlich; keine MWh/Kapitalwert; Diakonie Stetten 404 — Belege: (Stand 12.02.2025, Kopie visalvis.de) + echte Pläne Sanofi 11/2025, VON ARDENNE 04/2025, SWU; Exakttitel-Suche ≥ 10 PDFs | Norm/Volltext: Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat. | `angekratzt` — [Seite] — Offen: aktuelle Merkblattfassung (10/2025 bzw. 05/2026) auf bafa.de lesen | 28.09.2026 | – | 23* |
+| **DSA Art. 15 + DVO (EU) 2024/2835 (harmonisierte CSV-Vorlagen) + DSC-Tätigkeitsbericht 2025 (dsc.bund.de)** `dsa-art-15-dvo-2024-2835` | Format ja, Sammler nur für VLOPs (Kommission); DSC erklärt Anordnungsdifferenz selbst (Art. 9(6)/10(6)); VLOP-Seite Forschung (HIIG, RTFP, Open Terms Archive, Trujillo et al. 2026) | Norm/Volltext: Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat. | `erschöpft` — für Register/Gegenbuch (Grab `dsa-anordnungs-gegenbuch`) [Seite] | 28.09.2026 | Grab `dsa-anordnungs-gegenbuch` | 20* |
+| **TTPA VO (EU) 2024/900 Art. 12/13 (CELEX) + netzpolitik.org 04.09.2026 + Parteiseiten Wahl Berlin (volt, gruene.berlin)** `ttpa-vo-2024-900-art-12` | Hinweis nur während Schaltung auffindbar, EU-Archiv nur online; keine Sammlung offline; PWTG offen | Norm/Volltext: Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat. | `angekratzt` — ergiebig (K3 `wahlwerbe-herbarium`, Needs Research; WV 12/2026) [Seite] | 28.09.2026 | – | 25* |
+| **§ 12b BGG + RL 2016/2102 Art. 8 (zweiter Überwachungsbericht BFIT-Bund, reha-recht.de) + digitoegankelijk.nl + DasDies-Atlas** `bgg-12b-rl-2016-2102` | Staat misst EzB-Quote (7.239 Webauftritte); NL-Register staatlich | Norm/Volltext: Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat. | `erschöpft` — (Grab `ezb-register`) [Seite] | 28.09.2026 | Grab `ezb-register` | 20* |
+| **BFSG § 14, Anlage 3, § 32 + MLBF-Meldeportal + DataPulse/mindshape-Studien** `bfsg-14-anlage-3-32-mlbf` | Shopprüfung kommerziell, Meldungen beim Empfänger *[Schnipsel]* | Norm/Volltext: Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat. | `erschöpft` — (Gräber `bfsg-barrierefreiheitserklaerungen`, `barrieren-spontanmeldung`) [Schnipsel] | 28.09.2026 | Grab `bfsg-barrierefreiheitserklaerungen` | 16* |
+| **§§ 21/22 EntgTranspG + RL (EU) 2023/970 Art. 9, 29 (CELEX 32023L0970)** `entgtranspg-21-22-rl-2023-970` | Berichte im Unternehmensregister, ohne Entgeltdaten; Überwachungsstelle muss vergleichend veröffentlichen | Norm/Volltext: Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat. | `erschöpft` — (Gräber `gleichstellungsbericht-archiv`, `entgeltgefaelle-register`) [Seite] | 28.09.2026 | Grab `gleichstellungsbericht-archiv` | 20* |
+| **VO (EU) 2017/821 Art. 7 Abs. 3 (legislation.gov.uk, CELEX 32017R0821) + IPIS/ARM 2023 + DEKSOR (bgr.bund.de nicht abrufbar, 400/406)** `vo-2017-821-art-7-abs-3` | Einführerliste nur Zolldaten, DEKSOR prüft selbst *[Schnipsel]* | Norm/Volltext (teilweise): Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat. | `erschöpft` — (Grab `konfliktmineralien-berichtsregister`) [Seite/Schnipsel] | 28.09.2026 | Grab `konfliktmineralien-berichtsregister` | 15* |
+| **EUDR VO (EU) 2023/1115 Art. 12 Abs. 3 (CELEX 32023R1115) + VO (EU) 2025/2650 (Verschiebung)** `eudr-art-12-abs-3` | Erster Jahresbericht für GJ 2027; Nicht-KMU, CSRD-Ausweichweg; Informationssystem vertraulich | Norm/Volltext: Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat. | `offen` — Wiedervorlage Q1/2028 (K7 `unklar`) | 28.09.2026 | – | 24* |
+| **LkSG §§ 12/13 (bafa.de Berichtspflicht)** `lksg-12-13` | Prüfung eingestellt, Pflicht wird rückwirkend gestrichen | Norm/Volltext: Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat. | `erschöpft` — (Grab `lksg-berichte-bafa`) [Seite] | 28.09.2026 | Grab `lksg-berichte-bafa` | 20* |
+| **AI Act Art. 53 Abs. 1 lit. d** `ai-act-art-53-abs-1-lit-d` | Jeweils gebaut: Forschung/staatlich — Belege: (gpailedger.com), Public CbCR (taxplorer.eu), WPG (kww-halle.de Wärmewendeatlas) | Norm/Volltext: Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat. | `erschöpft` — (Gräber `gpai-trainingsdaten-zusammenfassungen`, `pcbcr-sammler`, `waermeplan-register`) | 28.09.2026 | Grab `gpai-trainingsdaten-zusammenfassungen` | 20* |
+| **VO (EU) 2017/821 Art. 7 + BGR/DEKSOR (Sorgfaltspflichtberichte der Unionseinführer; DEKSOR-Bericht 2025 auf dggv.de; OEFSE RR17; Firmenberichte Treibacher/Agosi/Heraeus)** `vo-2017-821-art-7-bgr-deksor` | Pflicht seit 01.01.2021, bedingt durch Mengenschwellen; keine Liste Verpflichteter gefunden; DEKSOR prüft und veröffentlicht selbst | Norm/Volltext: Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat. | `angekratzt` — offen: DEKSOR-Bericht 2025 als [Seite] lesen (Population, Veröffentlichungspflicht) | 28.09.2026 | – | 23* |
+| **LkSG § 6 Abs. 2 / § 8** `lksg-6-abs-2-8-aenderungsgesetz` | Berichtspflicht rückwirkend gestrichen (BAFA prüft seit 01.10.2025 nicht); Grundsatzerklärung und Beschwerdeverfahren bleiben, aber ohne Sammelort; kein Verzeichnis der Verfahrensordnungen gefunden — Belege: Änderungsgesetz (gesetze-im-internet, BAFA, kpmg-law, bundesregierung, taw; Germanwatch/Misereor, Seite germanwatch.org/en/93384) | Norm/Volltext: Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat. | `angekratzt` — ergiebig für Beschwerdekanal-Verzeichnis (`unklar`); Berichts-Ast `erschöpft` (Grab `lksg-berichte-bafa`). Offen: Germanwatch 93384 als [Seite] lesen | 28.09.2026 | Grab `lksg-berichte-bafa` | 25* |
+| **CSRD/ESRS, ESAP, Unternehmensregister** `csrd-esrs-esap` | Register per Design (ESAP: Aufbau ab 10.07.2026, CSRD-Daten ab 10.01.2028); Omnibus-Kreis > 1.000 Beschäftigte und > 450 Mio. € Umsatz; DE-Umsetzungsgesetz fehlt — Belege: (amf-france, dfsa.dk, forvismazars, saim; Haufe Navigator, filings.xbrl.org) | Norm/Volltext: Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat. | `erschöpft` — für Register (Grab `csrd-esrs-register`); CSRD-Fehlanzeigen `unklar` | 28.09.2026 | Grab `csrd-esrs-register` | 20* |
+| **EUDR VO (EU) 2023/1115 + Reg. (EU) 2025/2650 (TRACES NT, lawcode, twobirds, stibbe)** `eudr-reg-2025-2650` | Sorgfaltserklärungen nicht öffentlich by design; Anwendung 30.12.2026/30.06.2027; Bericht ab 2028 | Norm/Volltext: Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat. | `erschöpft` — (Grab `eudr-kleinwald-erklaerung` + verfrühte Protokollzeile) | 28.09.2026 | Grab `eudr-kleinwald-erklaerung` | 20* |
+| **Verpackungsregister LUCID / ZSVR** `verpackungsregister-lucid` | Register öffentlich, Liste hinterlegter Vollständigkeitserklärungen, ZSVR-Abgleich; PPWR seit 12.08.2026 — Belege: stiftung ear (oeffentliche-register.verpackungsregister.org, verpackungsgesetz.com, deutsche-recycling.de, stiftung-ear.de) | Norm/Volltext: Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat. | `erschöpft` — (Grab `hersteller-register-battg-lucid-ppwr`) | 28.09.2026 | Grab `hersteller-register-battg-lucid-ppwr` | 20* |
+| **BattVO Art. 48 Sorgfalt (lizenzero, batteriegesetz, tracepass.eu)** `battvo-art-48-sorgfalt` | Pflicht auf 18.08.2027 verschoben *[Schnipsel]* | Norm/Volltext: Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat. | `angekratzt` — Wiedervorlage 08/2027 | 28.09.2026 | – | 18* |
+| **pCbCR: Taxplorer, PwC** `pcbcr-taxplorer-pwc` | Sammler und Auswertungen vorhanden | Norm/Volltext: Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat. | `erschöpft` — (Grab `pcbcr-sammler`) | 28.09.2026 | Grab `pcbcr-sammler` | 20* |
+| **AI Act Art. 53: GPAI Ledger** `ai-act-art-53-gpai-ledger` | Öffentliches Verzeichnis der Trainingsdaten-Zusammenfassungen | Norm/Volltext: Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat. | `erschöpft` — (Grab `gpai-trainingsdaten-zusammenfassungen`) | 28.09.2026 | Grab `gpai-trainingsdaten-zusammenfassungen` | 20* |
+| **BFSG: Händlerbund, MLBF** `bfsg-haendlerbund-mlbf` | Compliance-Markt und Marktüberwachung | Norm/Volltext: Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat. | `erschöpft` — (Grab `bfsg-barrierefreiheitserklaerungen`) | 28.09.2026 | Grab `bfsg-barrierefreiheitserklaerungen` | 20* |
+| **Entgelttransparenz-RL (personalwirtschaft, haufe)** `entgelttransparenz-rl` | Frist 07.06.2026 verpasst, DE-Gesetz bis Anfang 2027 | Norm/Volltext: Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat. | `offen` — Wiedervorlage nach Kabinettsentwurf | 28.09.2026 | – | 22* |
+| **DSA-Transparenzberichte (HIIG)** `dsa-transparenzberichte` | Keine Verpflichtetenliste *[Schnipsel]* | Norm/Volltext: Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat. | `angekratzt` | 28.09.2026 | – | 18* |
+| **Capture-Recapture (PMC5976169, UEA 2018_03)** `capture-recapture` | Standardverfahren für Registervollständigkeit; Baustein für den Nenner der ESPR-Dose *[Schnipsel]* | Norm/Volltext: Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat. | `angekratzt` — Methodenquelle, kein Ideenlieferant | 28.09.2026 | – | 18* |
+
+## Typ P — Förderlandschaft, Vergabe & Compliance: Geldflüsse als Herkunftsort
+
+*Systematische Landkarte aus Bund, EU, Stiftungen, Preisen, Investoren, Städten und Vergabe: `amelie-foerderlandschaft.md` (Synthese, Rangliste, Such-Rezepte, Kalender), `amelie-foerder-und-preisatlas.md` und fünf Rohkarten unter `foerderlandschaft/` (A Bund, B EU, C Stiftungen/Preise, D Investoren, E Städte/Vergabe, zusammen rund 190 Programmzeilen). Alle Angaben Schnipsel-Evidenz. Vier Signale: besetzt (geförderte Projekte), Bedarf (Ausschreibungen, Haushaltstitel), Empfänger (Programmträger, Preisträger), Kommerz (für `ventures/kapital-und-kanaele.md` und `funding-and-angels.md`). Geldgeber sind Signal, nicht Zustellkanal (Zustellregeln 1 und 3).*
+
+| Quelle | Enthält / Fokus | Zugang | Status | Zuletzt | Ertrag | Q |
+|---|---|---|---|---|---|---|
+| **TED (Tenders Electronic Daily) & EU eForms / Bund.de Vergabe (ted.europa.eu, vergabe.bund.de, Bekanntmachungsservice BKMS)** `ted-eu-eforms-bund-de-vergabe` | Offizielle XML/eForms-Feeds für öffentliche Ausschreibungen ab EU-Schwellenwert. Bietervorbereitung und Kriterienprüfung sind ein dicht besetzter kommerzieller Markt (Vergabe-Manager, RIB Software, Vergabe24). Als Amélie-Gemeingut fehlt die behördliche Vollzugslücke; kommerzieller B2B-Zwilling im Venture-Branch (`procure-lens-pro`). | Webseite | `durchsucht` | 28.09.2026 | – | 20* |
+| **SPDX 2.3 & Open Source License Metadata** `spdx-2-3-open-source-license` | Standardisierte SPDX-Lizenzbezeichner und maschinenlesbare Lizenzausdrücke. Developer-Compliance in CI/CD ist vollständig durch FOSSology, ScanCode Toolkit, Snyk, FOSSA und Renovate abgedeckt. Kein behördliches oder zivilgesellschaftliches Vollzugsmandat; als kommerzielles CI-Guardrail im Venture-Branch (`spdx-driftguard-ci`). — Belege: (spdx.org/licenses, spdx.dev, ClearlyDefined, OpenSSF) | Webseite | `durchsucht` | 28.09.2026 | – | 22* |
+| **Sensor.Community** `sensor-community-openaq` | Globale Citizen-Science-Feinstaub- und Sensordaten als offene REST- und Archiv-APIs. Kartenvisualisierung, Grenzwert-Alerts und historische Downloads sind durch die Initiativen selbst und OpenAQ bereits stabil und frei bereitgestellt; kein unbearbeiteter manueller Auswertungsstau. — Belege: (Luftdaten.info) & OpenAQ (sensor.community, openaq.org, archive.sensor.community) | Webseite | `durchsucht` | 28.09.2026 | – | 22* |
+
+## Typ Q — Preise, Awards & Challenges (Problemradar & Jury-Empfänger)
+
+*Preisausschreiben (Bundespreis Ecodesign, Deutscher Nachhaltigkeitspreis, Mobilitätspreis, Otto-Brenner-Preis, Civic Tech Awards) definieren die Benchmark offener Probleme. Die Shortlists zeigen, was besetzt ist; die Ausschreibungstexte zeigen, was ungelöst ist; die Fachjury liefert die namentlichen Empfänger mit Mandat. Vollständiger Katalog: `06-suche/amelie-foerder-und-preisatlas.md`.*
+
+| Quelle | Enthält / Fokus | Zugang | Status | Zuletzt | Ertrag | Q |
+|---|---|---|---|---|---|---|
+| **Bundespreis Ecodesign (BMUV/UBA/IDZ)** `bundespreis-ecodesign` | Zirkuläre Kriterien, Reparierbarkeit, Demontage; UBA-Referatsleiter in der Jury *[Schnipsel]* | Webseite | `angekratzt` | 28.09.2026 | – | 19* |
+| **Deutscher Nachhaltigkeitspreis & Mobilitätspreis** `deutscher-nachhaltigkeitspreis-mobilitaetspreis` | 100 Branchenprofile (CSRD-Lücken) bzw. kommunale Mobilitätsdaten *[Schnipsel]* | Webseite | `angekratzt` | 28.09.2026 | – | 19* |
+| **Civic Innovation Platform / „Gemeinsam wird es KI“ (BMAS)** `civic-innovation-platform-bmas` | Gemeinwohlorientierte KI in der Arbeitswelt; Förderungen bis 750k € *[Schnipsel]* | Webseite | `angekratzt` | 28.09.2026 | – | 19* |
+| **Otto-Brenner-Preis & EU Prize for Citizen Science** `otto-brenner-preis-eu-prize-for` | Aufgedeckte Datenblindstellen bzw. paneuropäische Auswertungsstaus *[Schnipsel]* | Webseite | `angekratzt` | 28.09.2026 | – | 19* |
+
+## Typ R — Europa-Fonds & EU-Programme (Horizon Europe, EIC, LIFE, DEP)
+
+*EU-Rahmenprogramme steuern Milliarden über Work Programmes. Die dort formulierten „Specific Challenges" sind die Vorlauf-Themen der nächsten drei Jahre. Details in `06-suche/amelie-foerder-und-preisatlas.md`.*
+
+| Quelle | Enthält / Fokus | Zugang | Status | Zuletzt | Ertrag | Q |
+|---|---|---|---|---|---|---|
+| **EIC Pathfinder / Transition / Accelerator (eic.ec.europa.eu)** `eic-pathfinder-transition-accelerator` | DeepTech von TRL 1 bis 9; Pathfinder Grants bis 4 Mio. €; Accelerator Blended Finance *[Schnipsel]* | Webseite | `angekratzt` | 28.09.2026 | – | 19* |
+| **Horizon Europe Missions** `horizon-europe-missions` | 100 Smart Cities, Climate Adaptation, Ocean/Waters, Soil Deal *[Schnipsel]* | Webseite | `angekratzt` | 28.09.2026 | – | 19* |
+| **LIFE Programme & Digital Europe (DEP)** `life-programme-digital-europe` | Circular Economy & Nature bzw. European Data Spaces & Interoperable Europe Act *[Schnipsel]* | Webseite | `angekratzt` | 28.09.2026 | – | 19* |
+| **Interreg (Europe, Central, Baltic)** `interreg` | Grenzüberschreitende Open-Data- und Verwaltungstransfers zwischen Kommunen *[Schnipsel]* | Webseite | `angekratzt` | 28.09.2026 | – | 19* |
+
+## Typ S — Kommunale Investitionsprogramme, Smart Cities & GovTech
+
+*Kommunen tragen die Vollzugslast von 90 % der Umwelt- und Sozialpflichten. Programme wie Modellprojekte Smart Cities (MPSC) und Plattformen wie GovTech Deutschland e.V. suchen gezielt nach übertragbaren Open-Source-Werkzeugen. Details in `06-suche/amelie-foerder-und-preisatlas.md`.*
+
+| Quelle | Enthält / Fokus | Zugang | Status | Zuletzt | Ertrag | Q |
+|---|---|---|---|---|---|---|
+| **Modellprojekte Smart Cities (MPSC) (BMWSB/KfW, 73 Kommunen, 820 Mio. €)** `modellprojekte-smart-cities-mpsc` | Phase der Nachnutzung/Verstetigung; MPSC-Marktplatz für Open-Source-Transfer *[Schnipsel]* | Webseite | `angekratzt` | 28.09.2026 | – | 19* |
+| **GovTech Deutschland e.V. & GovTech Kommunal** `govtech-deutschland-kommunal` | Technologieplattform der Verwaltung; Kooperationskanal für Dosen — Belege: (Bonn, Berlin, Hamburg, Saarland, Thüringen) *[Schnipsel]* | Webseite | `angekratzt` | 28.09.2026 | – | 19* |
+| **Städtische Innovationslabore & Bauträger** `staedtische-innovationslabore` | Konkrete Pilotpartner und Open-Source-Bauträger im urbanen Raum — Belege: (CityLAB Berlin, Innovation Lab München, Hamburg Urban Data Hub) *[Schnipsel]* | Webseite | `angekratzt` | 28.09.2026 | – | 19* |
+
+## Typ V — Business Angels, Impact Syndikate & Frühphasen-Kapital (Venture-Input)
+
+*Wenn die Gabel-Triage des Idea-Reviewers einen B2B-Zwilling mit direkter Zahlungsbereitschaft (Compliance-SaaS, CI-Guardrails) identifiziert, sind Business Angels und themenfokussierte Syndikate die passenden Erstfinanzierer. Details in `ventures/funding-and-angels.md` und `06-suche/amelie-foerder-und-preisatlas.md`.*
+
+| Quelle | Enthält / Fokus | Zugang | Status | Zuletzt | Ertrag | Q |
+|---|---|---|---|---|---|---|
+| **BAND (Business Angels Netzwerk Deutschland e.V.) & EBAN** `band-eban` | Dachverbände mit über 40 regionalen BANs und europäischen Climate/DeepTech-Communities *[Schnipsel]* | Webseite | `angekratzt` | 28.09.2026 | – | 19* |
+| **Impact Angels & Green Angels** `impact-angels-green-angels` | Syndikate für Kreislaufwirtschaft, ESG-Compliance und CleanTech *[Schnipsel]* | Webseite | `angekratzt` | 28.09.2026 | – | 19* |
+| **Earlybird Vision Lab / Visionaries Club / CDTM Angels** `earlybird-visionaries-cdtm` | Frühphasen-Investoren für Developer-Tools und B2B-SaaS *[Schnipsel]* | Webseite | `angekratzt` | 28.09.2026 | – | 19* |
+
+## Typ W — Empfänger (in Runde 8 geprüft)
+
+*Wer bekommt Ticket 01? Rang, Sperren und Vorbilder mit benannter Schwäche.*
+
+| Quelle | Enthält / Fokus | Zugang | Status | Zuletzt | Ertrag | Q |
+|---|---|---|---|---|---|---|
+| **BSR** `bsr-empfaenger` | Besitzt beide Enden der Sperrmüll-Weiche: kostenpflichtige Sperrmüllabholung und NochMall mit eigenem Abholservice (Formular, Fotoupload, Etage, verbindliches Angebot in 48 h). Keine Verbindung zwischen beiden. Rang 1 für alles Entsorgungsnahe *[Schnipsel]* | Formular/Portal | `angekratzt` | 23.09.2026 | Dose `sperrmuell-weiche` | 21* |
+| **CityLAB Berlin** `citylab-berlin-empfaenger` | Gesperrt bis auf Weiteres. Mail 2 ging am 20.09.2026 dorthin, Mail 4 (Patenschaft) liegt bewusst zurück. Eine dritte Sendung an dieselbe Adresse wäre Nachfassen — Manifestregel | Webseite (teilweise) | `gesperrt` | – | – | 14* |
+| **Somerset Council × British Heart Foundation (UK)** `somerset-council-british-heart-foundation` | Kein Empfänger, sondern Vorbild mit benannter Schwäche (Triage erst im Depot nach der Abholung) *[Schnipsel]* | Webseite | `angekratzt` | 23.09.2026 | – | 19* |
+
+<!-- QUELLEN:END -->
 
 ## Nicht mehr als Quelle nutzen
 
@@ -221,145 +308,6 @@ Der Lauf nennt diese Anker in `amelie-bisoziation-log.md`. Sie sind hier vermerk
 - **Nur nach dem Gegenstand suchen** („Ritzenpflanzen-App") → findet nie die Werkzeuge, die über ihre **Funktion** definiert sind (Typ F oben). Die Mechanik immer separat suchen, siehe Playbook §2.
 - **Typ A allein als Beleg für `frei`** (neu ab Runde 7): „Ein Fachgremium hat ein PDF und niemand hat es programmiert" ist ein Anfangsverdacht, kein Urteil. Ohne Typ-H-Gegenprobe wird daraus kein `frei`.
 - **Merkblätter als Quelle für exakte Schwellenwerte** (neu ab Runde 7): vier Behördenmerkblätter zum selben Schema, zwei verschiedene Signifikanzschwellen. Schemawerte kommen aus dem Schema.
-
 - **Eine Idee nur auf der Angebotsseite denken** (neu ab Runde 8): Die Nachfrageseite in Verschenk-Communities („Wanted", WANTED, ISO) ist Standardfunktion bei Olio, Freecycle/Trash Nothing und Buy Nothing. Wer „aber die Wunschliste fehlt doch" denkt, hat die Hilfeseiten nicht gelesen.
 - **Kanzlei- und Beraterschnipsel über laufende Gesetzentwürfe** (neu, Offenlegungs-Runde 28.09.2026): „Veröffentlichung im Unternehmensregister" (energieundrecht.com, twobirds, Grant Thornton, DQS) beschrieb den Referentenentwurf der EnEfG-Novelle; die BT-Drucksache 21/8027 sagte das Gegenteil. Bei Novellen gilt nur die jüngste Drucksache inkl. Stellungnahme Bundesrat und Gegenäußerung.
 - **eur-lex.europa.eu direkt abrufen** (neu, 28.09.2026): HTTP 202 mit WAF-Challenge und leerem Body — nicht als „erreichbar" werten. Stattdessen `https://publications.europa.eu/resource/celex/<CELEX>` mit `Accept: application/xhtml+xml`, `Accept-Language: deu` (amtlicher Volltext) oder für EU-Recht vor 2021 legislation.gov.uk.
-
----
-
-## Typ M — Holz: Schadstoff-, Abfall- und Sortierregeln am Übergang Holz → Gebäude/Abfall (neu, Holz-Runde 27.09.2026)
-
-Alle Einträge **nur über Suchschnipsel** erschlossen; die Seiten selbst waren in dieser Umgebung nicht abrufbar.
-
-| Quelle | Befund | Status | Zuletzt |
-|---|---|---|---|
-| LfU Bayern, Schadstoffratgeber Gebäuderückbau (Suchregister Nr. 507 Holzschutzmittel) + Abfallratgeber Bayern (Altholz, Bahnschwellen) | Produktnamen/Zeiträume historischer Holzschutzmittel; Altholz-Infoblätter als reiner Text | `angekratzt` — **ergiebig** (Dosenfund-Dolmetscher, Altholz-Weiche) | 27.09.2026 |
-| AltholzV Anhang III + BAV/EUWID-Novellen-Debatte | Regelvermutung Sortiment → A I–A IV; BAV: Sichtzuordnung „nicht zuverlässig umsetzbar“; Novelle blockiert | `angekratzt` | 27.09.2026 |
-| WRA Waste Wood Assessment Guidance (UK, V3 02/2024) + CIWM/NFDC C&D-Guide | Visueller Papierleitfaden, keine App | `angekratzt` (Auslandsgegenprobe) | 27.09.2026 |
-| DIN 4074-1/-5 (2026-05) + Holzbau Deutschland „Sortierung durch den Zimmermeister“ + Recyclingholz-Papers 2025/26 + ReFoRe | Regelvorschlag für Gebrauchsspuren, kein Feldwerkzeug | `angekratzt` — **ergiebig**, ReFoRe ungelesen | 27.09.2026 |
-| 1. BImSchV / DUH Clean Heat FAQ / UK Smoke Control Areas | Protokoll verlangt, optischer Nachweis nicht vorgesehen | `angekratzt` | 27.09.2026 |
-| Abbundzeichen-Literatur (Gerner 1996; Vernacular Architecture 49/1, 2018) + IgB-Bauernhausarchiv | Zeichen als Bauforschungsquelle, keine Sammlung | `angekratzt` | 27.09.2026 |
-| Thünen-Kompetenzzentrum Holzherkünfte | Apps und KI selbst gebaut | `erschöpft` für Holzartbestimmung | 27.09.2026 |
-| Fraunhofer WKI Holzschutztagung 2022 / holzfragen.de | Hausbock-Akustik gebaut; Körperschall 20 kHz–2 MHz | `erschöpft` für Akustik | 27.09.2026 |
-| TFZ Straubing Bericht 11 · AELF-Borkenkäfer-Merkblätter · EFI I+ | Trocknungskurven, Bohrmehl, Marteloskope | `erschöpft` | 27.09.2026 |
-| **Offen für die nächste Holz-Runde:** Thünen WZE-Kronenansprache-Bildserien, PCP-Richtlinie (Bewertungsschema), DIN 68800-4, Tischler-/Zimmererforen (fachwerk.de), ADG-Graubünden-FAQ Privataufträge, restauratorische Befunduntersuchung | – | `offen` | – |
-
-
----
-
-## Typ N — EU-Produktrecht: Ökodesign, Reparatur, Batterien (neu, ESPR-Runde 28.09.2026)
-
-Alle Einträge **nur über Suchschnipsel** erschlossen; eur-lex.europa.eu, brubru.beresol.eu, cooley.com und ifixit.com lieferten `EGRESS_BLOCKED`. Kein Normtext im Volltext gelesen.
-
-| Quelle | Befund | Status | Zuletzt |
-|---|---|---|---|
-| **ESPR VO (EU) 2024/1781 Art. 24/25 + DVO (EU) 2026/2** (Offenlegung entsorgter unverkaufter Produkte; Anhang I Tabellenformat; ABl. 10.02.2026, gilt ab 02.03.2027) | Pflicht große Unternehmen ab GJ 2025 im freien Format (binnen 12 Monaten), Anhang-I-Format für GJ ab 02.03.2027; Vernichtungsverbot Bekleidung/Schuhe seit 19.07.2026. Kein Register der Offenlegungen. Tatbeleg: Signify „Disclosure on Discarded Unsold Consumer Products" GJ 2025 (PDF 04.05.2026). Sekundär: Cooley 07.05.2026, Freshfields (widersprüchlich), Linklaters, trade-e-bility, Generation Impact, Cattwyk (Minderheitslesart), UBA-Themenseite | `angekratzt` — **ergiebig** (Dreifachfund → Dose `vernichtungs-offenlegungsregister`). **Offen: Normtext Anhang I + Art. 24 Abs. 1 und Signify-PDF als [Seite] lesen** — seit der Offenlegungs-Runde (28.09.2026) ohne Netzfreigabe möglich: Netz offen, eur-lex über `publications.europa.eu/resource/celex/<CELEX>` | 28.09.2026 |
-| **Recht auf Reparatur RL (EU) 2024/1799** (Art. 4 Reparaturinformationsformular Anh. I, Art. 5 Ersatzteile „angemessener Preis", Anh. II Produktgruppen; DE-Umsetzung BGBl. 2026 I Nr. 212, in Kraft seit 31.07.2026) | Verbraucherseite beim Empfänger (VZ-Themenseiten + Musterbriefe), Formular anbieterseitig (FixFirst); „angemessen" nirgends beziffert | `erschöpft` für Verbraucherbriefe und Formulare; `angekratzt` für Anh. II Waschmaschinen/Geschirrspüler (nächster Bisoziationsanker) | 28.09.2026 |
-| **VO (EU) 2023/1669** (Energielabel mit Reparierbarkeitsklasse Smartphones/Tablets) **+ VO (EU) 2023/1670** (Ökodesign: Ersatzteile 7 Jahre, Lieferfrist 5/10 Werktage, Richtpreis Anh. II, Updates) — beide seit 20.06.2025 | Selbstauskunft ohne Nachprüfer; EPREL-Audit R2R Europe/iFixit 09/2026 (2.334 Datensätze, ~80 % ohne verwertbare Angaben); TCO Certified verifiziert; endoflife.date führt Update-Enden | `erschöpft` produktseitig (EPREL-Nachprüfer, Nachschraub-Probe, Update-Pegel, Ersatzteilpreis-Pegel alle im Friedhof) | 28.09.2026 |
-| **BattVO (EU) 2023/1542** (Art. 11 austauschbare Gerätebatterien ab 18.02.2027, Leitlinie C/2025/214; Art. 77 Batteriepass ab 18.02.2027) | Noch nicht in Kraft; iFixit verfolgt Art. 11; Gebrauchtakku-Zertifikate kommerziell („Certified by Bosch", Aviloo, TÜV) | `angekratzt` — **Wiedervorlage nach 18.02.2027** (Grab `akkutausch-protokoll`) | 28.09.2026 |
-| **Open Repair Data Standard (ORDS) / Open Repair Alliance — offener Datensatz** (openrepair.org/open-data; Netzwerk Reparatur-Initiativen Statistik) | Felder Produktkategorie, Marke, Baujahr/Alter, Reparaturbarriere (u. a. Ersatzteil nicht verfügbar); Baujahr oft leer | `offen` — **nächster Schritt: Datentest für K3 `reparaturfall-pflichtabgleich`** (Fälle/Jahr im Geltungsbereich der Teilepflichten zählen). Datensatz nicht heruntergeladen | 28.09.2026 |
-
----
-
-## Typ O — Pflichtveröffentlichungen ohne Register: Offenlegungsregime DE/EU (neu, Offenlegungs-Runde Lauf A 28.09.2026, Volltext)
-
-**Netz offen, Normtexte gelesen `[Seite]`**; EU-Recht über `publications.europa.eu/resource/celex/<CELEX>` bzw. legislation.gov.uk (eur-lex direkt: WAF-Challenge). Nur Suchtreffer ohne Abruf tragen `[Schnipsel]`. Vor jedem Eintrag hier die drei Pflichtfragen des Atlas (Playbook, Zeile „Offenlegungspflicht ohne Register").
-
-| Quelle | Befund | Status | Zuletzt |
-|---|---|---|---|
-| **§ 9 EnEfG + BT-Drs. 21/8027** (Regierungsentwurf Novelle, 16.09.2026, inkl. Stellungnahme Bundesrat Nr. 25 + Gegenäußerung; dserver.bundestag.de) **+ EED (EU) 2023/1791 Art. 11 Abs. 2** (CELEX 32023L1791) | Veröffentlichungspflicht der Umsetzungspläne, kein Unternehmensregister, „soll" Jahresbericht; BR will Streichung, EED schreibt Veröffentlichung vor; ~16.461 Verpflichtete (Schätzung), keine Liste | `angekratzt` — **ergiebig** (Dreifachfund → Dose `umsetzungsplan-register`) [Seite] | 28.09.2026 |
-| **BAFA-Merkblatt EnEfG** (Stand 12.02.2025, Kopie visalvis.de) + echte Pläne Sanofi 11/2025, VON ARDENNE 04/2025, SWU; Exakttitel-Suche ≥ 10 PDFs | 7 Pflichtangaben + Statusvokabular, Pläne folgen wörtlich; keine MWh/Kapitalwert; Diakonie Stetten 404 | `angekratzt` [Seite] — **Offen: aktuelle Merkblattfassung (10/2025 bzw. 05/2026) auf bafa.de lesen** | 28.09.2026 |
-| **DSA Art. 15 + DVO (EU) 2024/2835** (harmonisierte CSV-Vorlagen) + **DSC-Tätigkeitsbericht 2025** (dsc.bund.de) | Format ja, Sammler nur für VLOPs (Kommission); DSC erklärt Anordnungsdifferenz selbst (Art. 9(6)/10(6)); VLOP-Seite Forschung (HIIG, RTFP, Open Terms Archive, Trujillo et al. 2026) | `erschöpft` für Register/Gegenbuch (Grab `dsa-anordnungs-gegenbuch`) [Seite] | 28.09.2026 |
-| **TTPA VO (EU) 2024/900 Art. 12/13** (CELEX) + netzpolitik.org 04.09.2026 + Parteiseiten Wahl Berlin (volt, gruene.berlin) | Hinweis nur während Schaltung auffindbar, EU-Archiv nur online; keine Sammlung offline; PWTG offen | `angekratzt` — **ergiebig** (K3 `wahlwerbe-herbarium`, Needs Research; WV 12/2026) [Seite] | 28.09.2026 |
-| **§ 12b BGG + RL 2016/2102 Art. 8** (zweiter Überwachungsbericht BFIT-Bund, reha-recht.de) + digitoegankelijk.nl + DasDies-Atlas | Staat misst EzB-Quote (7.239 Webauftritte); NL-Register staatlich | `erschöpft` (Grab `ezb-register`) [Seite] | 28.09.2026 |
-| **BFSG § 14, Anlage 3, § 32** + MLBF-Meldeportal + DataPulse/mindshape-Studien | Shopprüfung kommerziell, Meldungen beim Empfänger | `erschöpft` (Gräber `bfsg-barrierefreiheitserklaerungen`, `barrieren-spontanmeldung`) [Schnipsel] | 28.09.2026 |
-| **§§ 21/22 EntgTranspG** + **RL (EU) 2023/970 Art. 9, 29** (CELEX 32023L0970) | Berichte im Unternehmensregister, ohne Entgeltdaten; Überwachungsstelle muss vergleichend veröffentlichen | `erschöpft` (Gräber `gleichstellungsbericht-archiv`, `entgeltgefaelle-register`) [Seite] | 28.09.2026 |
-| **VO (EU) 2017/821 Art. 7 Abs. 3** (legislation.gov.uk, CELEX 32017R0821) + IPIS/ARM 2023 + DEKSOR (bgr.bund.de nicht abrufbar, 400/406) | Einführerliste nur Zolldaten, DEKSOR prüft selbst | `erschöpft` (Grab `konfliktmineralien-berichtsregister`) [Seite/Schnipsel] | 28.09.2026 |
-| **EUDR VO (EU) 2023/1115 Art. 12 Abs. 3** (CELEX 32023R1115) + VO (EU) 2025/2650 (Verschiebung) | Erster Jahresbericht für GJ 2027; Nicht-KMU, CSRD-Ausweichweg; Informationssystem vertraulich | `offen` — **Wiedervorlage Q1/2028** (K7 `unklar`) | 28.09.2026 |
-| **LkSG §§ 12/13** (bafa.de Berichtspflicht) | Prüfung eingestellt, Pflicht wird rückwirkend gestrichen | `erschöpft` (Grab `lksg-berichte-bafa`) [Seite] | 28.09.2026 |
-| **AI Act Art. 53 Abs. 1 lit. d** (gpailedger.com), **Public CbCR** (taxplorer.eu), **WPG** (kww-halle.de Wärmewendeatlas) | Jeweils gebaut: Forschung/staatlich | `erschöpft` (Gräber `gpai-trainingsdaten-zusammenfassungen`, `pcbcr-sammler`, `waermeplan-register`) | 28.09.2026 |
-
----
-
-## Typ O (Lauf B) — EU-Offenlegungsregime: Lieferkette, Nachhaltigkeit, Verpackung, Steuer, KI (Offenlegung-Runde Lauf B 28.09.2026, Schnipsel)
-
-Alle Einträge **nur über Suchschnipsel** erschlossen; das Netz war gesperrt, keine Seite im Volltext gelesen.
-
-| Quelle | Befund | Status | Zuletzt |
-|---|---|---|---|
-| **VO (EU) 2017/821 Art. 7 + BGR/DEKSOR** (Sorgfaltspflichtberichte der Unionseinführer; DEKSOR-Bericht 2025 auf dggv.de; OEFSE RR17; Firmenberichte Treibacher/Agosi/Heraeus) | Pflicht seit 01.01.2021, bedingt durch Mengenschwellen; keine Liste Verpflichteter gefunden; DEKSOR prüft und veröffentlicht selbst | `angekratzt` — **offen: DEKSOR-Bericht 2025 als [Seite] lesen** (Population, Veröffentlichungspflicht) | 28.09.2026 |
-| **LkSG § 6 Abs. 2 / § 8 + Änderungsgesetz** (gesetze-im-internet, BAFA, kpmg-law, bundesregierung, taw; Germanwatch/Misereor, Seite germanwatch.org/en/93384) | Berichtspflicht rückwirkend gestrichen (BAFA prüft seit 01.10.2025 nicht); Grundsatzerklärung und Beschwerdeverfahren bleiben, aber ohne Sammelort; kein Verzeichnis der Verfahrensordnungen gefunden | `angekratzt` — **ergiebig** für Beschwerdekanal-Verzeichnis (`unklar`); Berichts-Ast `erschöpft` (Grab `lksg-berichte-bafa`). **Offen: Germanwatch 93384 als [Seite] lesen** | 28.09.2026 |
-| **CSRD/ESRS, ESAP, Unternehmensregister** (amf-france, dfsa.dk, forvismazars, saim; Haufe Navigator, filings.xbrl.org) | Register per Design (ESAP: Aufbau ab 10.07.2026, CSRD-Daten ab 10.01.2028); Omnibus-Kreis > 1.000 Beschäftigte und > 450 Mio. € Umsatz; DE-Umsetzungsgesetz fehlt | `erschöpft` für Register (Grab `csrd-esrs-register`); CSRD-Fehlanzeigen `unklar` | 28.09.2026 |
-| **EUDR VO (EU) 2023/1115 + Reg. (EU) 2025/2650** (TRACES NT, lawcode, twobirds, stibbe) | Sorgfaltserklärungen nicht öffentlich by design; Anwendung 30.12.2026/30.06.2027; Bericht ab 2028 | `erschöpft` (Grab `eudr-kleinwald-erklaerung` + verfrühte Protokollzeile) | 28.09.2026 |
-| **Verpackungsregister LUCID / ZSVR + stiftung ear** (oeffentliche-register.verpackungsregister.org, verpackungsgesetz.com, deutsche-recycling.de, stiftung-ear.de) | Register öffentlich, Liste hinterlegter Vollständigkeitserklärungen, ZSVR-Abgleich; PPWR seit 12.08.2026 | `erschöpft` (Grab `hersteller-register-battg-lucid-ppwr`) | 28.09.2026 |
-| **BattVO Art. 48 Sorgfalt** (lizenzero, batteriegesetz, tracepass.eu) | Pflicht auf 18.08.2027 verschoben | `angekratzt` — Wiedervorlage 08/2027 | 28.09.2026 |
-| **pCbCR: Taxplorer, PwC** | Sammler und Auswertungen vorhanden | `erschöpft` (Grab `pcbcr-sammler`) | 28.09.2026 |
-| **AI Act Art. 53: GPAI Ledger** | Öffentliches Verzeichnis der Trainingsdaten-Zusammenfassungen | `erschöpft` (Grab `gpai-trainingsdaten-zusammenfassungen`) | 28.09.2026 |
-| **BFSG: Händlerbund, MLBF** | Compliance-Markt und Marktüberwachung | `erschöpft` (Grab `bfsg-barrierefreiheitserklaerungen`) | 28.09.2026 |
-| **Entgelttransparenz-RL (personalwirtschaft, haufe)** | Frist 07.06.2026 verpasst, DE-Gesetz bis Anfang 2027 | `offen` — Wiedervorlage nach Kabinettsentwurf | 28.09.2026 |
-| **DSA-Transparenzberichte (HIIG)** | Keine Verpflichtetenliste | `angekratzt` | 28.09.2026 |
-| **Capture-Recapture (PMC5976169, UEA 2018_03)** | Standardverfahren für Registervollständigkeit; Baustein für den Nenner der ESPR-Dose | `angekratzt` — Methodenquelle, kein Ideenlieferant | 28.09.2026 |
-
----
-
-## Typ P — Förderlandschaft, Vergabe & Compliance: Geldflüsse als Herkunftsort (neu, 28.09.2026)
-
-Systematische Landkarte aus Bund, EU, Stiftungen, Preisen, Investoren, Städten und Vergabe: `amelie-foerderlandschaft.md` (Synthese, Rangliste, Such-Rezepte, Kalender), `amelie-foerder-und-preisatlas.md` und fünf Rohkarten unter `foerderlandschaft/` (A Bund, B EU, C Stiftungen/Preise, D Investoren, E Städte/Vergabe, zusammen rund 190 Programmzeilen). Alle Angaben Schnipsel-Evidenz. Vier Signale: besetzt (geförderte Projekte), Bedarf (Ausschreibungen, Haushaltstitel), Empfänger (Programmträger, Preisträger), Kommerz (für `ventures/kapital-und-kanaele.md` und `funding-and-angels.md`). Geldgeber sind Signal, nicht Zustellkanal (Zustellregeln 1 und 3).
-
-Ergänzend auditiert im Zuge der PR-Triage und Ausgründung kommerzieller Zwillinge:
-
-| Quelle | Befund | Status | Zuletzt |
-|---|---|---|---|
-| **TED (Tenders Electronic Daily) & EU eForms / Bund.de Vergabe** (ted.europa.eu, vergabe.bund.de, Bekanntmachungsservice BKMS) | Offizielle XML/eForms-Feeds für öffentliche Ausschreibungen ab EU-Schwellenwert. Bietervorbereitung und Kriterienprüfung sind ein dicht besetzter kommerzieller Markt (Vergabe-Manager, RIB Software, Vergabe24). Als Amélie-Gemeingut fehlt die behördliche Vollzugslücke; kommerzieller B2B-Zwilling im Venture-Branch (`procure-lens-pro`). | `durchsucht` | 28.09.2026 |
-| **SPDX 2.3 & Open Source License Metadata** (spdx.org/licenses, spdx.dev, ClearlyDefined, OpenSSF) | Standardisierte SPDX-Lizenzbezeichner und maschinenlesbare Lizenzausdrücke. Developer-Compliance in CI/CD ist vollständig durch FOSSology, ScanCode Toolkit, Snyk, FOSSA und Renovate abgedeckt. Kein behördliches oder zivilgesellschaftliches Vollzugsmandat; als kommerzielles CI-Guardrail im Venture-Branch (`spdx-driftguard-ci`). | `durchsucht` | 28.09.2026 |
-| **Sensor.Community (Luftdaten.info) & OpenAQ** (sensor.community, openaq.org, archive.sensor.community) | Globale Citizen-Science-Feinstaub- und Sensordaten als offene REST- und Archiv-APIs. Kartenvisualisierung, Grenzwert-Alerts und historische Downloads sind durch die Initiativen selbst und OpenAQ bereits stabil und frei bereitgestellt; kein unbearbeiteter manueller Auswertungsstau. | `durchsucht` | 28.09.2026 |
-
-## Typ Q — Preise, Awards & Challenges (Problemradar & Jury-Empfänger)
-
-*Muster: Preisausschreiben (Bundespreis Ecodesign, Deutscher Nachhaltigkeitspreis, Mobilitätspreis, Otto-Brenner-Preis, Civic Tech Awards) definieren die Benchmark offener Probleme. Die Shortlists zeigen, was besetzt ist; die Ausschreibungstexte zeigen, was ungelöst ist; die Fachjury liefert die namentlichen Empfänger mit Mandat. Vollständiger Katalog: `06-suche/amelie-foerder-und-preisatlas.md`.*
-
-| Quelle | Befund | Status | Zuletzt |
-|---|---|---|---|
-| **Bundespreis Ecodesign** (BMUV/UBA/IDZ) | Zirkuläre Kriterien, Reparierbarkeit, Demontage; UBA-Referatsleiter in der Jury | `angekratzt` | 28.09.2026 |
-| **Deutscher Nachhaltigkeitspreis & Mobilitätspreis** | 100 Branchenprofile (CSRD-Lücken) bzw. kommunale Mobilitätsdaten | `angekratzt` | 28.09.2026 |
-| **Civic Innovation Platform / „Gemeinsam wird es KI“** (BMAS) | Gemeinwohlorientierte KI in der Arbeitswelt; Förderungen bis 750k € | `angekratzt` | 28.09.2026 |
-| **Otto-Brenner-Preis & EU Prize for Citizen Science** | Aufgedeckte Datenblindstellen bzw. paneuropäische Auswertungsstaus | `angekratzt` | 28.09.2026 |
-
----
-
-## Typ R — Europa-Fonds & EU-Programme (Horizon Europe, EIC, LIFE, DEP)
-
-*Muster: EU-Rahmenprogramme steuern Milliarden über Work Programmes. Die dort formulierten „Specific Challenges" sind die Vorlauf-Themen der nächsten drei Jahre. Details in `06-suche/amelie-foerder-und-preisatlas.md`.*
-
-| Quelle | Befund | Status | Zuletzt |
-|---|---|---|---|
-| **EIC Pathfinder / Transition / Accelerator** (eic.ec.europa.eu) | DeepTech von TRL 1 bis 9; Pathfinder Grants bis 4 Mio. €; Accelerator Blended Finance | `angekratzt` | 28.09.2026 |
-| **Horizon Europe Missions** | 100 Smart Cities, Climate Adaptation, Ocean/Waters, Soil Deal | `angekratzt` | 28.09.2026 |
-| **LIFE Programme & Digital Europe (DEP)** | Circular Economy & Nature bzw. European Data Spaces & Interoperable Europe Act | `angekratzt` | 28.09.2026 |
-| **Interreg (Europe, Central, Baltic)** | Grenzüberschreitende Open-Data- und Verwaltungstransfers zwischen Kommunen | `angekratzt` | 28.09.2026 |
-
----
-
-## Typ S — Kommunale Investitionsprogramme, Smart Cities & GovTech
-
-*Muster: Kommunen tragen die Vollzugslast von 90 % der Umwelt- und Sozialpflichten. Programme wie Modellprojekte Smart Cities (MPSC) und Plattformen wie GovTech Deutschland e.V. suchen gezielt nach übertragbaren Open-Source-Werkzeugen. Details in `06-suche/amelie-foerder-und-preisatlas.md`.*
-
-| Quelle | Befund | Status | Zuletzt |
-|---|---|---|---|
-| **Modellprojekte Smart Cities (MPSC)** (BMWSB/KfW, 73 Kommunen, 820 Mio. €) | Phase der Nachnutzung/Verstetigung; MPSC-Marktplatz für Open-Source-Transfer | `angekratzt` | 28.09.2026 |
-| **GovTech Deutschland e.V. & GovTech Kommunal** (Bonn, Berlin, Hamburg, Saarland, Thüringen) | Technologieplattform der Verwaltung; Kooperationskanal für Dosen | `angekratzt` | 28.09.2026 |
-| **Städtische Innovationslabore & Bauträger** (CityLAB Berlin, Innovation Lab München, Hamburg Urban Data Hub) | Konkrete Pilotpartner und Open-Source-Bauträger im urbanen Raum | `angekratzt` | 28.09.2026 |
-
----
-
-## Typ V — Business Angels, Impact Syndikate & Frühphasen-Kapital (Venture-Input)
-
-*Muster: Wenn die Gabel-Triage des Idea-Reviewers einen B2B-Zwilling mit direkter Zahlungsbereitschaft (Compliance-SaaS, CI-Guardrails) identifiziert, sind Business Angels und themenfokussierte Syndikate die passenden Erstfinanzierer. Details in `ventures/funding-and-angels.md` und `06-suche/amelie-foerder-und-preisatlas.md`.*
-
-| Quelle | Befund | Status | Zuletzt |
-|---|---|---|---|
-| **BAND (Business Angels Netzwerk Deutschland e.V.) & EBAN** | Dachverbände mit über 40 regionalen BANs und europäischen Climate/DeepTech-Communities | `angekratzt` | 28.09.2026 |
-| **Impact Angels & Green Angels** | Syndikate für Kreislaufwirtschaft, ESG-Compliance und CleanTech | `angekratzt` | 28.09.2026 |
-| **Earlybird Vision Lab / Visionaries Club / CDTM Angels** | Frühphasen-Investoren für Developer-Tools und B2B-SaaS | `angekratzt` | 28.09.2026 |
-

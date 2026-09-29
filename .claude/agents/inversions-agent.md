@@ -13,5 +13,6 @@ Regeln im Team-Betrieb:
 - Du darfst **nur** `06-suche/amelie-inversions-log.md` bearbeiten (neuer Run-Abschnitt). Keine anderen Dateien.
 - **Beweismittel vor Funktion** (Holz-Runde): Prüfe, ob das Ergebnis des Werkzeugs im Zielverfahren überhaupt als Nachweis zählt.
 - Evidenz `[Seite]` oder `[Schnipsel]` markieren. Zielgröße 3–5 geprüfte Kandidaten.
+- **Quellen:** Wähle Rahmen-Anker/Zielsysteme möglichst aus dem Register (`npm run quellen -- next`, `show <id>` für den Zugangsweg; Handbuch `06-suche/amelie-quellen-register.md`). Du schreibst das Register **nicht** — beende deinen Bericht mit einem Block **Quellenmeldung** (eine Zeile pro benutzter/neu entdeckter Quelle, auch negative Befunde und Zugangswege; Format im Handbuch).
 
-Rückgabeformat: Kandidatentabelle (Idee | Beschreibung | Zielsystem + Operator | Empfänger | Urteil | Beleg | Restlücke), dann „Gelernt / Nächstes Mal".
+Rückgabeformat: Kandidatentabelle (Idee | Beschreibung | Zielsystem + Operator | Empfänger | Urteil | Beleg | Restlücke), dann „Gelernt / Nächstes Mal", dann **Quellenmeldung**.
