@@ -19,6 +19,8 @@ import {
   Coins,
   Gamepad2,
   Radar,
+  MessageSquare,
+  Library,
 } from 'lucide-react';
 import { Language } from '../types';
 import { getTranslation, withCount } from '../i18n';
@@ -30,6 +32,7 @@ import { GAME_DOSE_IDS } from '../data/pipeline';
 import { MoodSwitcher } from './MoodSwitcher';
 import { AMELIE_MUSTERS } from '../data/musterEmails';
 import { FUNDING_DATA } from '../data/funding';
+import { QUELLEN_DATA } from '../data/quellen';
 
 interface HeaderProps {
   currentTab: string;
@@ -156,6 +159,19 @@ export const Header: React.FC<HeaderProps> = ({
           label: t.nav.packer,
           icon: PlusCircle,
           desc: t.nav.desc.packer,
+        },
+        {
+          id: 'quellen',
+          label: lang === 'de' ? 'Quellen' : 'Sources',
+          icon: Library,
+          badge: QUELLEN_DATA.length,
+          desc: lang === 'de' ? 'Register aller Quellen mit Zugang, Status und Q1–Q6' : 'Register of all sources with access, status and Q1–Q6',
+        },
+        {
+          id: 'reddit',
+          label: 'Reddit',
+          icon: MessageSquare,
+          desc: lang === 'de' ? 'Wochen-Top ausgewählter Subreddits (nächtlicher Cache)' : 'Weekly top of selected subreddits (nightly cache)',
         },
         {
           id: 'playbook',

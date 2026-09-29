@@ -23,6 +23,7 @@ Amélie speichert sein Gedächtnis nicht in Chat-Transkripten, sondern im Dateis
 
 * **`06-suche/` (Vorwärts-Gedächtnis):**
   * `amelie-pruefprotokoll.md`: Das lückenlose Logbuch jeder geprüften Idee mit Schiedsrichter-Urteil (`frei`, `verengt`, `unklar`, `besetzt`). **Jede neue oder geänderte Dose muss hier sofort eingetragen werden.**
+  * `amelie-quellen.md` (**erzeugt**) ← **Quellen-Register** `src/data/quellen.json`: jede Quelle (Fachgremium, Citizen Science, Norm, Förderprogramm, Preis, Datensatz, Empfänger …) ist ein Objekt mit Typ, Kategorie, Zugang (`wie` kommt ein Agent heran), Inhalt, Status, Ertrag (Dosen/Gräber), Verlauf und Vektoren Q1–Q6. Nur der Bibliothekar schreibt, per `npm run quellen -- log|add|rate|next|stats|check` (Handbuch: `06-suche/amelie-quellen-register.md`). Agenten melden am Ende einen Block **Quellenmeldung**.
   * `amelie-suchplaybook.md`: Die Heuristiken, Stoppregeln und erprobten Suchstrategien.
   * `amelie-inversions-log.md` & `amelie-bisoziation-log.md`: Operative Protokolle der Ideenfindung.
 * **`08-friedhof/` (Rückwärts-Gedächtnis / Obduktionssaal):**
@@ -71,6 +72,7 @@ Wenn du ein Ticket, ein Kriterium oder eine Dosen-Beschreibung änderst, musst d
   * `check:idea-frontmatter` (Frontmatter-Abgleich)
   * `check:protokoll` (stellt sicher, dass jedes Urteil im Prüfprotokoll steht)
   * `check:friedhof` (prüft Totenscheine und README im Friedhof)
+  * `check:quellen` (validiert das Quellen-Register und prüft, dass `06-suche/amelie-quellen.md` daraus aktuell erzeugt ist)
 
 ---
 

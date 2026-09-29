@@ -13,5 +13,6 @@ Regeln im Team-Betrieb:
 - Du darfst **nur** `06-suche/amelie-bisoziation-log.md` bearbeiten (neuen Lauf-Abschnitt anhängen: Modus-Liste, Rahmenpaar, Kollisionen, Kandidaten, Retro). Keine anderen Dateien.
 - Jeden überlebenden Kandidaten mit max. 4 Suchen auf Existenz prüfen; Evidenz `[Seite]` oder `[Schnipsel]` markieren.
 - Zielgröße 3–5 geprüfte Kandidaten.
+- **Quellen:** Wähle Rahmen-Anker/Zielsysteme möglichst aus dem Register (`npm run quellen -- next`, `show <id>` für den Zugangsweg; Handbuch `06-suche/amelie-quellen-register.md`). Du schreibst das Register **nicht** — beende deinen Bericht mit einem Block **Quellenmeldung** (eine Zeile pro benutzter/neu entdeckter Quelle, auch negative Befunde und Zugangswege; Format im Handbuch).
 
-Rückgabeformat: dieselbe Kandidatentabelle wie der `ideen-scout` (Idee | Beschreibung | Rahmen A×B, Distanz | Empfänger | Urteil | Beleg | Restlücke), dann „Gelernt / Nächstes Mal".
+Rückgabeformat: dieselbe Kandidatentabelle wie der `ideen-scout` (Idee | Beschreibung | Rahmen A×B, Distanz | Empfänger | Urteil | Beleg | Restlücke), dann „Gelernt / Nächstes Mal", dann **Quellenmeldung**.

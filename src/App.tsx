@@ -18,6 +18,8 @@ import { MusterEmailsSection } from './components/MusterEmailsSection';
 import { SelfAuditView } from './components/SelfAuditView';
 import { FundingCompass } from './components/FundingCompass';
 import { GamesView } from './components/GamesView';
+import { RedditView } from './components/RedditView';
+import { QuellenView } from './components/QuellenView';
 import { VectorCompareView } from './components/VectorCompareView';
 import { pipelineIdeas } from './data/pipeline';
 import { DOSEN_DATA, DISCARDED_DATA } from './data/dosen';
@@ -385,6 +387,10 @@ export function App() {
             )}
 
             {currentTab === 'funding' && <FundingCompass lang={lang} />}
+
+            {currentTab === 'quellen' && <QuellenView lang={lang} />}
+
+            {currentTab === 'reddit' && <RedditView lang={lang} />}
 
             {currentTab === 'manifest' && (
               <ManifestView

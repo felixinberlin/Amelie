@@ -1,0 +1,517 @@
+{
+  "generatedAt": "2026-09-29T09:50:49.470Z",
+  "period": "week",
+  "source": "reddit.com Atom-Feeds (top.rss), Reihenfolge = Ranking; keine Scores",
+  "feeds": [
+    {
+      "sub": "SideProject",
+      "group": "build",
+      "period": "week",
+      "fetchedAt": null,
+      "stale": true,
+      "error": "noch nicht geholt",
+      "posts": []
+    },
+    {
+      "sub": "startups",
+      "group": "build",
+      "period": "week",
+      "fetchedAt": null,
+      "stale": true,
+      "error": "noch nicht geholt",
+      "posts": []
+    },
+    {
+      "sub": "SaaS",
+      "group": "build",
+      "period": "week",
+      "fetchedAt": null,
+      "stale": true,
+      "error": "noch nicht geholt",
+      "posts": []
+    },
+    {
+      "sub": "indiehackers",
+      "group": "build",
+      "period": "week",
+      "fetchedAt": null,
+      "stale": true,
+      "error": "noch nicht geholt",
+      "posts": []
+    },
+    {
+      "sub": "AppIdeas",
+      "group": "ideas",
+      "period": "week",
+      "fetchedAt": null,
+      "stale": true,
+      "error": "noch nicht geholt",
+      "posts": []
+    },
+    {
+      "sub": "opensource",
+      "group": "oss",
+      "period": "week",
+      "fetchedAt": "2026-09-29T09:50:49.470Z",
+      "stale": false,
+      "error": null,
+      "posts": [
+        {
+          "id": "t3_1wod038",
+          "title": "PhotoSuite: A free, open source Photoshop with the looks and compatibility",
+          "url": "https://www.reddit.com/r/opensource/comments/1wod038/photosuite_a_free_open_source_photoshop_with_the/",
+          "author": "patrik667",
+          "published": "2026-09-23T17:49:06+00:00",
+          "excerpt": ""
+        },
+        {
+          "id": "t3_1wpjw66",
+          "title": "I got my first open-source PR merged today",
+          "url": "https://www.reddit.com/r/opensource/comments/1wpjw66/i_got_my_first_opensource_pr_merged_today/",
+          "author": "ragendem",
+          "published": "2026-09-25T01:51:43+00:00",
+          "excerpt": "And it feels amazing! It was minor, but it's a project I'm using so I know exactly how it's going to help people in the future. As soon as I realized, I went to the PR list to see the purple \"Merged\" badge next to the comment and the bit of code I wrote - and now I'm on the \"Con…"
+        },
+        {
+          "id": "t3_1wrwflk",
+          "title": "A startup harvested my email from GitHub and registered me for its Zoom webinar. Contributors, check your email settings.",
+          "url": "https://www.reddit.com/r/opensource/comments/1wrwflk/a_startup_harvested_my_email_from_github_and/",
+          "author": "Ghostfly-",
+          "published": "2026-09-27T21:36:59+00:00",
+          "excerpt": "A short warning for anyone who contributes to open source on GitHub. My personal email used to be public on my GitHub profile. On 27 September, I got a Zoom email saying I was registered for a US startup's webinar (\"Q&A With The Cactus Needle Team\"). I never signed up, never use…"
+        },
+        {
+          "id": "t3_1wqq2kj",
+          "title": "LocalSend appreciation post",
+          "url": "https://www.reddit.com/r/opensource/comments/1wqq2kj/localsend_appreciation_post/",
+          "author": "fearless7464",
+          "published": "2026-09-26T13:05:11+00:00",
+          "excerpt": "I am loving it like I use an android phone like from 2021 and a potato laptop running linux lite (ubuntu-xfce) for studies like watching lectures and all. Before I knew about localsend it was a hassle to transfer like even normal images, I used to put those in google keepnotes a…"
+        },
+        {
+          "id": "t3_1wqzuko",
+          "title": "I built Hookecho, a free, open-source weather radar with advanced storm analysis—what would you want in a tool like this?",
+          "url": "https://www.reddit.com/r/opensource/comments/1wqzuko/i_built_hookecho_a_free_opensource_weather_radar/",
+          "author": "d4vid87",
+          "published": "2026-09-26T19:51:36+00:00",
+          "excerpt": ""
+        },
+        {
+          "id": "t3_1wr5tkv",
+          "title": "Why does ExifCleaner show network traffic if it claims to work offline?",
+          "url": "https://www.reddit.com/r/opensource/comments/1wr5tkv/why_does_exifcleaner_show_network_traffic_if_it/",
+          "author": "MadInReddit",
+          "published": "2026-09-27T00:16:55+00:00",
+          "excerpt": "As a disclaimer, I have no clue about programming, how networks work, or anything in that area. So please don't take the following as an accusation against ExifCleaner, but see it as a genuine question instead. ​I think there is no metadata remover with a GUI better known than E…"
+        },
+        {
+          "id": "t3_1wo8oah",
+          "title": "OpenDisk: a free, fast, open source disk manager for macOS",
+          "url": "https://www.reddit.com/r/opensource/comments/1wo8oah/opendisk_a_free_fast_open_source_disk_manager_for/",
+          "author": "herovals",
+          "published": "2026-09-23T15:10:42+00:00",
+          "excerpt": "I've been working on OpenDisk, an open source app that shows what's taking up space on your Mac and lets you clear it out. What it does: Scans a 1 TB drive in about 17 seconds. DaisyDisk took 37 on the same machine. Rescans in a couple of seconds, because it only looks at folder…"
+        },
+        {
+          "id": "t3_1wpzwi5",
+          "title": "Open Volar S Project: TV Tuner (A865R) now on Linux!",
+          "url": "https://www.reddit.com/r/opensource/comments/1wpzwi5/open_volar_s_project_tv_tuner_a865r_now_on_linux/",
+          "author": "Substantial_Swan_144",
+          "published": "2026-09-25T15:50:54+00:00",
+          "excerpt": "Hello, everyone, a few days prior, I had announced my efforts on reverse engineering the A865R. The company has hidden the drivers from their website a long time ago, and it's probably a matter of time until they are completely removed (currently, they can only be obtained if yo…"
+        },
+        {
+          "id": "t3_1wqsthg",
+          "title": "I found this open source, self-hosted alternative to Trakt/Letterboxd /etc.",
+          "url": "https://www.reddit.com/r/opensource/comments/1wqsthg/i_found_this_open_source_selfhosted_alternative/",
+          "author": "Teknevra",
+          "published": "2026-09-26T15:05:50+00:00",
+          "excerpt": "Due to the impending Letterboxd sale https://www.comingsoon.net/movies/news/2197146-letterboxd-a24-new-york-times-acquisition-report As well as the blowback towards Trakt from (both former, as well as current) users, I went looking to see if I could potentially find any open sou…"
+        },
+        {
+          "id": "t3_1wskac4",
+          "title": "OpenVue 1.0 is officially out and here's what's next: Volt, Vapor & 2.0",
+          "url": "https://www.reddit.com/r/opensource/comments/1wskac4/openvue_10_is_officially_out_and_heres_whats_next/",
+          "author": "sane6120",
+          "published": "2026-09-28T17:03:35+00:00",
+          "excerpt": "Quick update for everyone following the project: OpenVue 1.0.0 is officially live on npm. For context if you missed the previous threads: OpenVue is an MIT licensed fork of PrimeVue 4.5.5, maintained under the OpenVi Foundation. Since the RC post, here's what landed in 1.0: Tree…"
+        },
+        {
+          "id": "t3_1ws5rol",
+          "title": "GOSDIR: Government Open Source Directory",
+          "url": "https://www.reddit.com/r/opensource/comments/1ws5rol/gosdir_government_open_source_directory/",
+          "author": "brlcad",
+          "published": "2026-09-28T05:13:34+00:00",
+          "excerpt": "HERE is a little side project of mine conceived years ago at a Military Open Source (Mil-OSS) Working Group meeting, a directory of open source projects with government origins, proper licensing, and a public repo. Still working on lots of enhancements and wading through a backl…"
+        },
+        {
+          "id": "t3_1wpwsfr",
+          "title": "Which CC license should I enforce for user uploaded levels?",
+          "url": "https://www.reddit.com/r/opensource/comments/1wpwsfr/which_cc_license_should_i_enforce_for_user/",
+          "author": "je386",
+          "published": "2026-09-25T13:46:46+00:00",
+          "excerpt": "I asked about this more in general a while ago https://www.reddit.com/r/opensource/s/Z3ijx28cic And now I am wondering which license I should enforce users to accept when uploading maps and levels made with the map and level editor that is included in my game. The game itself is…"
+        },
+        {
+          "id": "t3_1woxwd9",
+          "title": "LibrePing — AGPL decentralized uptime monitoring (libp2p mesh, Go)",
+          "url": "https://www.reddit.com/r/opensource/comments/1woxwd9/libreping_agpl_decentralized_uptime_monitoring/",
+          "author": "ohcumgache",
+          "published": "2026-09-24T10:22:18+00:00",
+          "excerpt": "Open-source alternative angle: LibrePing is AGPL-3.0 uptime monitoring where hubs peer over libp2p instead of a central control plane. Checks and results are signed; alerts are encrypted to the notifying hubs. Demo (no account): https://nl.lp.mw.gg Repo: https://github.com/mwgg/…"
+        },
+        {
+          "id": "t3_1woij2b",
+          "title": "Chrono Mock - Time/date manipulation tool for Windows Apps",
+          "url": "https://www.reddit.com/r/opensource/comments/1woij2b/chrono_mock_timedate_manipulation_tool_for/",
+          "author": "DonislawDev",
+          "published": "2026-09-23T21:16:56+00:00",
+          "excerpt": "Hello, I had created Chrono Mock an app which let's you manipulate time/date in other apps without changing the whole system time and date. It's mostly tool for qa/devs It's a GUI/CLI, imagine you want to check how the other app will behave in x/y/z date or mamybe you want to ru…"
+        },
+        {
+          "id": "t3_1wq2845",
+          "title": "Linka a open source and federate social media for android 1.5",
+          "url": "https://www.reddit.com/r/opensource/comments/1wq2845/linka_a_open_source_and_federate_social_media_for/",
+          "author": "Massive_Two6466",
+          "published": "2026-09-25T17:20:17+00:00",
+          "excerpt": "Hey everyone, Linka is a federated, open-source social network for Android 1.5 (yes, that 2009 version) or for Linux via a Qt-based version. Before you ask why I developed it for such an obsolete Android version: there are many communities that still use these devices—not for da…"
+        },
+        {
+          "id": "t3_1woabeb",
+          "title": "I built a free, open-source weather radar app with a simple Radar mode and an Analyst Workstation",
+          "url": "https://www.reddit.com/r/opensource/comments/1woabeb/i_built_a_free_opensource_weather_radar_app_with/",
+          "author": "d4vid87",
+          "published": "2026-09-23T16:11:27+00:00",
+          "excerpt": "I’ve been working on HookEcho because radar tools often feel crowded when you just want to check a storm, but limiting when you need to dig deeper. It opens with a single radar map. Switch to Analyst mode for linked views, storm-focused layouts, and an inspector showing the unde…"
+        },
+        {
+          "id": "t3_1wp0ikj",
+          "title": "Plembfin v1.2.2: safer Up Next sync and separate identity for same-title shows",
+          "url": "https://www.reddit.com/r/opensource/comments/1wp0ikj/plembfin_v122_safer_up_next_sync_and_separate/",
+          "author": "Lasikie",
+          "published": "2026-09-24T12:38:09+00:00",
+          "excerpt": "Plembfin v1.2.2 is out. I maintain Plembfin, an AGPL-3.0 self-hosted watch-state hub for Plex, Emby, Jellyfin and Trakt. This release focuses on correctness across provider sync: Shows with the same title but different TMDB/TVDB IDs stay separate everywhere, including original/r…"
+        },
+        {
+          "id": "t3_1wr0w8n",
+          "title": "Bean Network Tester v0.7 release - Windows network conditions simulator + network tools",
+          "url": "https://www.reddit.com/r/opensource/comments/1wr0w8n/bean_network_tester_v07_release_windows_network/",
+          "author": "DonislawDev",
+          "published": "2026-09-26T20:35:08+00:00",
+          "excerpt": ""
+        },
+        {
+          "id": "t3_1wqy2s0",
+          "title": "Darkly - Forbidden Editor for Artists",
+          "url": "https://www.reddit.com/r/opensource/comments/1wqy2s0/darkly_forbidden_editor_for_artists/",
+          "author": "the-techromancer",
+          "published": "2026-09-26T18:39:48+00:00",
+          "excerpt": ""
+        },
+        {
+          "id": "t3_1wq4ho9",
+          "title": "paceSharp – an open-source Windows disk space analyzer inspired by SpaceMonger",
+          "url": "https://www.reddit.com/r/opensource/comments/1wq4ho9/pacesharp_an_opensource_windows_disk_space/",
+          "author": "ClearanceClarence_AI",
+          "published": "2026-09-25T18:49:30+00:00",
+          "excerpt": "I’ve been working on SpaceSharp , a free and open-source disk space analyzer for Windows 10 and 11. It’s inspired by SpaceMonger , which I’ve always liked for its visual approach to disk usage. I wanted to build a modern, open-source take on that concept with an interactive tree…"
+        },
+        {
+          "id": "t3_1woekmz",
+          "title": "New open weights: Ming adds a design generator and a separate layer-decomposition model",
+          "url": "https://www.reddit.com/r/opensource/comments/1woekmz/new_open_weights_ming_adds_a_design_generator_and/",
+          "author": "siddhantfuture",
+          "published": "2026-09-23T18:47:26+00:00",
+          "excerpt": "AntLing's new Ming release has two parts: a model that creates design images, and one that separates an existing image into layers. Ming-Image-0.1-Design targets UI visuals, posters, infographics and other layouts with text. It can generate transparent-background images too. Min…"
+        },
+        {
+          "id": "t3_1wsulro",
+          "title": "PCart Companion App for Linux",
+          "url": "https://www.reddit.com/r/opensource/comments/1wsulro/pcart_companion_app_for_linux/",
+          "author": "Agathoarn_",
+          "published": "2026-09-28T23:39:32+00:00",
+          "excerpt": "I've released a Qt companion app for Linux for my open source hardware for modern PC software cartridges. This app runs in your system tray and automatically launches software from attached cartridges based on the present config file. Config files and custom settings can be set…"
+        },
+        {
+          "id": "t3_1wstjn6",
+          "title": "Kova v0.7.12 - Markdown Presentation Software (Now with VSCode Plugin!)",
+          "url": "https://www.reddit.com/r/opensource/comments/1wstjn6/kova_v0712_markdown_presentation_software_now/",
+          "author": "TeaAlligator",
+          "published": "2026-09-28T22:53:06+00:00",
+          "excerpt": "Hi all, It's been a couple months since I last posted an update on Kova's progress, I have been chipping away at the core functionally within the application and wanted to post a brief update. Some highlights: Full self-contained HTML exporting - demo here: https://kova.md/demo/…"
+        },
+        {
+          "id": "t3_1wrmgdg",
+          "title": "Wanted to share a tool I've put together that allows for compiling, building and installing ios apps fully from windows",
+          "url": "https://www.reddit.com/r/opensource/comments/1wrmgdg/wanted_to_share_a_tool_ive_put_together_that/",
+          "author": "floofysox",
+          "published": "2026-09-27T15:03:04+00:00",
+          "excerpt": "I like making tools for my personal use, and since I have an iphone, I've had to essentially make webapps and dedicate a port to them so I can access them on my phone. I have made native apps before, but I always had to borrow a mac from someone for a few days because Apple only…"
+        },
+        {
+          "id": "t3_1wqzgnh",
+          "title": "GitHub - gkoos/caracal: Scoped distributed resilience for asynchronous operations",
+          "url": "https://www.reddit.com/r/opensource/comments/1wqzgnh/github_gkooscaracal_scoped_distributed_resilience/",
+          "author": "OtherwisePush6424",
+          "published": "2026-09-26T19:35:56+00:00",
+          "excerpt": ""
+        }
+      ]
+    },
+    {
+      "sub": "coolgithubprojects",
+      "group": "oss",
+      "period": "week",
+      "fetchedAt": "2026-09-29T09:50:49.470Z",
+      "stale": false,
+      "error": null,
+      "posts": [
+        {
+          "id": "t3_1wq4z97",
+          "title": "He literally built iHatePDF because iLovePDF rejected his job application",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wq4z97/he_literally_built_ihatepdf_because_ilovepdf/",
+          "author": "Cod3Conjurer",
+          "published": "2026-09-25T19:08:18+00:00",
+          "excerpt": "A fun little PDF tool built to mess around with your friends. Upload a PDF, generate the result, and see what happens. It's purely for entertainment, don't use it for anything serious or to mislead people. Live Demo: https://ihate-pdf.vercel.app/ Source Code: https://github.com/…"
+        },
+        {
+          "id": "t3_1wos52v",
+          "title": "I've spent 8 years building Pyxel, a retro game engine for Python",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wos52v/ive_spent_8_years_building_pyxel_a_retro_game/",
+          "author": "tkitao",
+          "published": "2026-09-24T04:36:13+00:00",
+          "excerpt": "Hi, I'm the creator of Pyxel. The gallery shows community games, a playable sample, and the built-in image/tilemap and sound/music editors. You can make a retro game in Python and share it as a browser game. Code and getting started: https://github.com/kitao/pyxel Pyxel is free…"
+        },
+        {
+          "id": "t3_1wrgom6",
+          "title": "Build a modern LLM from scratch. Every line commented. Explained like we are five.",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wrgom6/build_a_modern_llm_from_scratch_every_line/",
+          "author": "raiyanyahya",
+          "published": "2026-09-27T10:20:40+00:00",
+          "excerpt": ""
+        },
+        {
+          "id": "t3_1wque96",
+          "title": "WikiCrawl - An interactive Wikipedia crawler that builds knowledge graphs",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wque96/wikicrawl_an_interactive_wikipedia_crawler_that/",
+          "author": "theporcupineapple",
+          "published": "2026-09-26T16:11:38+00:00",
+          "excerpt": "I built WikiCrawl, an open-source project that visualizes the connections between Wikipedia articles as an interactive network. You can provide a starting topic, crawl linked articles, and watch the graph expand as new pages and relationships are discovered. The goal is to make…"
+        },
+        {
+          "id": "t3_1wng9dj",
+          "title": "visually keeping track of what my coding agent does in the codebase",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wng9dj/visually_keeping_track_of_what_my_coding_agent/",
+          "author": "Candid_Discipline848",
+          "published": "2026-09-22T17:39:18+00:00",
+          "excerpt": "I work with coding agents and its very tempting to hand off control and never look at the code. For many tasks its quite important though to keep track of whats going on and babysit the agent carefully. Looking at the code throuh a bazilion ide tabs sucks though and since you ar…"
+        },
+        {
+          "id": "t3_1wo4kvl",
+          "title": "Deft: an open-source, self-hosted workspace for chat, tasks and knowledge—with MCP and experimental sideloadable apps",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wo4kvl/deft_an_opensource_selfhosted_workspace_for_chat/",
+          "author": "maneek21",
+          "published": "2026-09-23T12:26:24+00:00",
+          "excerpt": "I wanted Slack to do more, fewer SaaS bills, and more control over where my work lives. Apparently my answer was to give myself considerably more work. Deft brings chat, tasks and project knowledge into one self-hosted workspace. The bit I care most about is keeping the discussi…"
+        },
+        {
+          "id": "t3_1wpb9wa",
+          "title": "I built Deviload, a free yt-dlp desktop app with a timeline video editor and phone transfer (Rust + Tauri)",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wpb9wa/i_built_deviload_a_free_ytdlp_desktop_app_with_a/",
+          "author": "Old_Employment8066",
+          "published": "2026-09-24T19:33:42+00:00",
+          "excerpt": "Deviload is a free, open-source desktop app for downloading video and music from YouTube and over a thousand other sites. It runs on yt-dlp and FFmpeg, and the app itself is built with Rust and Tauri 2. I started it for friends who didn't want to touch the command line, and it g…"
+        },
+        {
+          "id": "t3_1wshvur",
+          "title": "Mouzi 0.2 update! An open-source Downloads folder organizer for Windows and Linux",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wshvur/mouzi_02_update_an_opensource_downloads_folder/",
+          "author": "bankrut",
+          "published": "2026-09-28T15:36:01+00:00",
+          "excerpt": "Mouzi just got a big update with version 0.2! Mouzi is a free, open-source desktop app that organizes your Downloads folder using local rules. It runs entirely on your computer, without an account, cloud processing or telemetry. The biggest addition is a preview before organizin…"
+        },
+        {
+          "id": "t3_1wnh6bz",
+          "title": "I built a free and open source US tax software that can be used with Claude or Codex",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wnh6bz/i_built_a_free_and_open_source_us_tax_software/",
+          "author": "atulanand94",
+          "published": "2026-09-22T18:11:25+00:00",
+          "excerpt": "Its a tax software that is built from ground up using IRS guidelines. Its single binary and runs on macOS, Linux, and Windows. The whole idea is that it can be used by your agents as a cli to instantly do tax calculations and print the pdf return out for you. Why Professional ta…"
+        },
+        {
+          "id": "t3_1wp89wz",
+          "title": "I made a web app that uses public GitHub activity to create a user identity card. What would make this better?",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wp89wz/i_made_a_web_app_that_uses_public_github_activity/",
+          "author": "Pierce221",
+          "published": "2026-09-24T17:40:54+00:00",
+          "excerpt": "I think you can tell a lot from a persons GitHub Profile. This was the concept behind a project I've been working on to try and capture personality from code and the public API. This \"Coder Cards\" app turns public GitHub activity into a shareable snapshot of your coding identity…"
+        },
+        {
+          "id": "t3_1wri3j6",
+          "title": "Gravitype - a terminal typing game where words fall from the sky",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wri3j6/gravitype_a_terminal_typing_game_where_words_fall/",
+          "author": "Responsible_You_6039",
+          "published": "2026-09-27T11:42:08+00:00",
+          "excerpt": "i saw a web game where words fell from the top of the page and u had to type them out before they reached the bottom and wanted to build it for the terminal. posting here after the first stable release, planning to add some other features going forward, would love it if you coul…"
+        },
+        {
+          "id": "t3_1wouy37",
+          "title": "Favnyr : a local file browser with multi views,tabs & much more",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wouy37/favnyr_a_local_file_browser_with_multi_viewstabs/",
+          "author": "GlitchAwakened",
+          "published": "2026-09-24T07:16:40+00:00",
+          "excerpt": "Favnyr is a lightweight file browser I’m developing for Windows and Linux. At its core are workspaces: separate environments that keep their own views, tabs, folders, layouts, and display settings. You could have one workspace for work, another for games, and another for learnin…"
+        },
+        {
+          "id": "t3_1wo0p43",
+          "title": "phosphor-cam: real time ASCII, Dither, Halftone, Voxel webcam renderer, React + TS + Canvas 2D",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wo0p43/phosphorcam_real_time_ascii_dither_halftone_voxel/",
+          "author": "Aroy666",
+          "published": "2026-09-23T09:01:09+00:00",
+          "excerpt": "Phosphor-Cam : a real-time ASCII, Dither, Halftone, and Voxel webcam renderer built with React and the 2D Canvas API. No WebGL. This is essentially V2, with Dither, Halftone, and Voxel renderers added. The initial version only had the ASCII renderer. I abandoned it for a few mon…"
+        },
+        {
+          "id": "t3_1wp6gw2",
+          "title": "Perdanga11 - native C++ replacement for the Windows 11 Start Menu. Exe size: ~4 MB.",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wp6gw2/perdanga11_native_c_replacement_for_the_windows/",
+          "author": "RomanKojima",
+          "published": "2026-09-24T16:33:36+00:00",
+          "excerpt": "Specs: Exe size: ~4 MB Installed size: ~7 MB RAM usage: ~20 MB Features: Custom Tabs: Group items into custom tabs with drag-and-drop reordering. Fast Local Search: Non-blocking search across all drives. Multi-Launch: Shift + Click (or middle-click) to launch multiple apps witho…"
+        },
+        {
+          "id": "t3_1wsfeb9",
+          "title": "Voiden: an offline, Git-native API IDE built on Markdown",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wsfeb9/voiden_an_offline_gitnative_api_ide_built_on/",
+          "author": "nikolasdimitroulakis",
+          "published": "2026-09-28T14:00:00+00:00",
+          "excerpt": "Voiden is an API IDE for people who want to design, test, and document APIs in one place, the same way they write code. Everything lives in .void files: plain Markdown you can read, run, and commit. Most API clients stop at sending requests. Voiden covers the whole loop: spec, r…"
+        },
+        {
+          "id": "t3_1wsshjt",
+          "title": "LibreDB Studio: a self-hosted SQL IDE that runs in your browser, for 46 databases",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wsshjt/libredb_studio_a_selfhosted_sql_ide_that_runs_in/",
+          "author": "Green_Competition_21",
+          "published": "2026-09-28T22:07:38+00:00",
+          "excerpt": "Repo: https://github.com/libredb/libredb-studio Demo: https://app.libredb.org Youtube : https://www.youtube.com/watch?v=rWANKEDszs4 Deploy it next to your database with Docker or Helm and open it in the browser. No SSH tunnels, no desktop client on every laptop. Postgres, MySQL,…"
+        },
+        {
+          "id": "t3_1wsefpg",
+          "title": "JellyBox gets a real spotify-like continuity feature",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wsefpg/jellybox_gets_a_real_spotifylike_continuity/",
+          "author": "avdept",
+          "published": "2026-09-28T13:19:43+00:00",
+          "excerpt": "I've been working few months of real continuity feature for my music player JellyBox The player works with Jellyfin/Emby/Navidrome and provides native clients for mobile and desktop platforms. Few words about feature - its basically a stream handoff between connected devices - f…"
+        },
+        {
+          "id": "t3_1wqwgcg",
+          "title": "SultanC a self hosting systems programming language with first class Arabic and English syntax",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wqwgcg/sultanc_a_self_hosting_systems_programming/",
+          "author": "supax0",
+          "published": "2026-09-26T17:34:47+00:00",
+          "excerpt": "I’ve been building SultanC for about two years. It started from something personal: when I was younger, learning programming was delayed because I first had to learn enough English to understand the material. I wanted to build the language I wish I had back then. SultanC has gro…"
+        },
+        {
+          "id": "t3_1wn5f3s",
+          "title": "Built a visitor messages / comment section for GitHub profile, using discussions as the backend.",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wn5f3s/built_a_visitor_messages_comment_section_for/",
+          "author": "Lisky_Boy",
+          "published": "2026-09-22T10:11:07+00:00",
+          "excerpt": "I always loved the feature that Steam provided with their steam profiles, including showcases and recently played stuff, but comments stood out from 'em. GitHub never offered this feature as an inbuilt one, and nor am I saying what I built is something unique, no. Yes, GitHub ac…"
+        },
+        {
+          "id": "t3_1wshsay",
+          "title": "openGym: self-hosted workout & body-weight tracker. v1.3.9 adds editing your history, photos on exercises, and optional password login",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wshsay/opengym_selfhosted_workout_bodyweight_tracker/",
+          "author": "0_KermitTheFrog_0",
+          "published": "2026-09-28T15:32:18+00:00",
+          "excerpt": "Hi! I've been working on openGym, a gym and body-weight tracker you run on your own server. It started as a small page for myself in July, and thanks to a lot of people here and on GitHub it has grown into a real app. v1.3.9 came out this week, so this seemed like a good moment…"
+        },
+        {
+          "id": "t3_1wpz33z",
+          "title": "I built Peerino – a P2P file sharing app with no cloud, no accounts, and no intermediary",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wpz33z/i_built_peerino_a_p2p_file_sharing_app_with_no/",
+          "author": "FewTangerine4686",
+          "published": "2026-09-25T15:18:31+00:00",
+          "excerpt": "Hey everyone, I've been working on **Peerino**, a desktop app for sharing files directly between devices. No cloud, no account, no login. The file travels straight from my PC to yours. **The part I'm most proud of: the recipient doesn't need the app ** When I send a file, Peerin…"
+        },
+        {
+          "id": "t3_1wqxou9",
+          "title": "Open-source app for learning Japanese inspired by Duolingo",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wqxou9/opensource_app_for_learning_japanese_inspired_by/",
+          "author": "tentoumushy",
+          "published": "2026-09-26T18:24:12+00:00",
+          "excerpt": "As someone who loves both coding and language learning (I'm learning Japanese right now), I always wished there was a free, open-source tool for learning Japanese, just like Monkeytype in the typing community. Here's the main selling point: I added a gazillion different color th…"
+        },
+        {
+          "id": "t3_1wsutys",
+          "title": "Open-source AWS-compatible cloud for your own hardware — EC2, S3, VPC, EKS, RDS on a single box",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wsutys/opensource_awscompatible_cloud_for_your_own/",
+          "author": "LegitimateWolf6611",
+          "published": "2026-09-28T23:49:49+00:00",
+          "excerpt": "Disclaimer: I'm an engineer at Mulga, the company behind this. Self-promo, but it's AGPL-3.0 and free to run. The Problem It Solves Spinifex reimplements the AWS APIs on hardware you own: EC2, EBS, S3, VPC, IAM, ALB/NLB, EKS, ECS, ECR and RDS. It's real compute: instances are ac…"
+        },
+        {
+          "id": "t3_1wqw4e6",
+          "title": "[Update] Edge-Drop v0.3.2: top-edge dock, shelf search, Colors tab, sharper text",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wqw4e6/update_edgedrop_v032_topedge_dock_shelf_search/",
+          "author": "AdiArtist",
+          "published": "2026-09-26T17:21:27+00:00",
+          "excerpt": "[Update] Edge-Drop v0.3.2: top-edge dock, shelf search, Colors tab, sharper text Update to my open-source clipboard shelf for Windows (posted here about a month ago). v0.3.2 is out, and the headline feature is the top-edge dock: the shelf can now sit horizontally along the top o…"
+        },
+        {
+          "id": "t3_1wq2a3v",
+          "title": "Linka a open source and federate social media for android 1.5",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wq2a3v/linka_a_open_source_and_federate_social_media_for/",
+          "author": "Massive_Two6466",
+          "published": "2026-09-25T17:22:22+00:00",
+          "excerpt": "Hey everyone, Linka is a federated, open-source social network for Android 1.5 (yes, that 2009 version) or for Linux via a Qt-based version. Before you ask why I developed it for such an obsolete Android version: there are many communities that still use these devices—not for da…"
+        }
+      ]
+    },
+    {
+      "sub": "selfhosted",
+      "group": "oss",
+      "period": "week",
+      "fetchedAt": null,
+      "stale": true,
+      "error": "noch nicht geholt",
+      "posts": []
+    },
+    {
+      "sub": "ClaudeCode",
+      "group": "ai",
+      "period": "week",
+      "fetchedAt": null,
+      "stale": true,
+      "error": "noch nicht geholt",
+      "posts": []
+    },
+    {
+      "sub": "ClaudeAI",
+      "group": "ai",
+      "period": "week",
+      "fetchedAt": null,
+      "stale": true,
+      "error": "noch nicht geholt",
+      "posts": []
+    },
+    {
+      "sub": "civictech",
+      "group": "civic",
+      "period": "week",
+      "fetchedAt": null,
+      "stale": true,
+      "error": "noch nicht geholt",
+      "posts": []
+    },
+    {
+      "sub": "opendata",
+      "group": "civic",
+      "period": "week",
+      "fetchedAt": null,
+      "stale": true,
+      "error": "noch nicht geholt",
+      "posts": []
+    }
+  ]
+}

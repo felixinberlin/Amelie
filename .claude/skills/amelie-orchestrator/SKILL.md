@@ -42,7 +42,8 @@ Phase 6  Abschluss               ─ Orchestrator: npm run lint && npm test, Com
 2. **Thema wählen:** Vorgabe des Nutzers, sonst der älteste offene Retro-Punkt. Vorher gegen den Besetzungsatlas halten — ein `dicht`-Feld ist kein Rundenthema (Runde 14 Cannabis: 0 frei).
 3. **Netz prüfen** (Holz-Retro): `curl -s -o /dev/null -w '%{http_code}' <Behörden-URL>`. Bei `000` gilt: Engines markieren jede Evidenz als `[Schnipsel]`, WebFetch zusätzlich versuchen, und der Bericht sagt es ausdrücklich.
 4. **Friedhofsgang:** `08-friedhof/README.md` — Todesursachen, die zum Thema passen, gehen als Warnliste in alle Engine-Prompts.
-5. **Baseline:** `npm run lint && npm test` grün, sonst erst reparieren oder melden.
+5. **Quellen wählen:** `npm run quellen -- next --limit 5 [--tag <Thema>]` (Register `src/data/quellen.json`, Handbuch `06-suche/amelie-quellen-register.md`); jeder Engine-Prompt bekommt 1–2 offene Quellen samt `zugang.wie`, und verlangt am Ende einen Block **Quellenmeldung**.
+6. **Baseline:** `npm run lint && npm test` grün, sonst erst reparieren oder melden.
 
 ### Phase 1 · Entdeckung
 
@@ -70,7 +71,7 @@ Nur bei `Dose Ready` und Summe ≥ 24/35. Höchstens eine, ausnahmsweise zwei Do
 
 Läuft **nach** dem Packer, weil Gräber in `DISCARDED_DATA` (`src/data/dosen.ts`) stehen und der Packer dieselbe Datei bearbeitet. Ohne Phase 4 darf er direkt nach Phase 3 starten.
 
-Der Bibliothekar bekommt: Merge-Tabelle, Reviewer-Urteile, Engine-Retros, Netzstatus. Er schreibt Protokoll, Playbook (Trefferquote, Atlas, Retro), Quellen und Friedhof. Die Retro enthält einen Abschnitt **„Orchestrierung"**: Was hat die Parallelität gebracht (Doppelfunde, Widersprüche), was hat sie gekostet.
+Der Bibliothekar bekommt: Merge-Tabelle, Reviewer-Urteile, Engine-Retros, Netzstatus. Er schreibt Protokoll, Playbook (Trefferquote, Atlas, Retro), Friedhof und das **Quellen-Register** (jede Quellenmeldung der Engines per `npm run quellen -- log|add|rate`; `amelie-quellen.md` wird erzeugt, nie von Hand editiert). Die Retro enthält einen Abschnitt **„Orchestrierung"**: Was hat die Parallelität gebracht (Doppelfunde, Widersprüche), was hat sie gekostet.
 
 ### Phase 6 · Abschluss
 
