@@ -55,6 +55,9 @@
       <trans-unit id="nav.whimsy" resname="nav.whimsy">
         <source>Funny &amp; Better</source>
       </trans-unit>
+      <trans-unit id="nav.games" resname="nav.games">
+        <source>Games</source>
+      </trans-unit>
       <trans-unit id="nav.packer" resname="nav.packer">
         <source>Pack a Tin</source>
       </trans-unit>

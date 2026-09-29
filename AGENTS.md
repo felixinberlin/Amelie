@@ -76,6 +76,11 @@ Wenn du ein Ticket, ein Kriterium oder eine Dosen-Beschreibung änderst, musst d
 
 ## 5. Aktueller Projektstand (Stand: 28. September 2026)
 
+* **Tab-Aufräumrunde (29.09.2026):**
+  * Neuer Tab **Games** (`GamesView`, Hauptnavigation): spielbare Mini-Spiele (aus „Funny & Better" umgezogen), Spiel-Dosen (`GAME_DOSE_IDS` in `src/data/pipeline.ts`) und Spielideen (`src/data/ideas/games.ts`, `GAME_IDEAS`). Neue Spielideen dort eintragen, nicht in die Themenlisten.
+  * **Ideen-Pipeline** zeigt nur noch nicht gepackte Themenideen: ohne Spiele, ohne Alltagsberufe (eigener Tab), ohne Ideen mit `packedDoseId` (per Häkchen einblendbar); Themenkörbe in `PIPELINE_THEMES`. `CANDIDATE_IDEAS_DATA` bleibt vollständig (Export, Protokoll-Abgleich).
+  * **Alltagsarbeit:** jede Idee in genau einem Berufsfeld (`src/data/everydaySectors.ts`); Badge „Als Dose gepackt" mit Link. Wird eine Idee zur Dose, `packedDoseId` setzen.
+
 * **Post 13 — Amélie selbst → r/ClaudeCode (28.09.2026, gepostet):**
   * Showcase-Kommentar im „Weekly Showcase Thread" von `r/ClaudeCode`: verschenkt wird die Methode (Orchestrator + 7 Subagenten), keine einzelne Dose. Eintrag `post-13` in `src/data/deliveries.ts` (ohne `doseLinks`, `sent: true`), Notiz in `03-zuordnung/mails-q4-2026/post-13-reddit-claudecode.md`.
   * `loadSentEmailsMap` übernimmt für Einträge ohne verlinkte Dose den Seed-Status (`sent`/`sentAt`), statt sie als unversendet zu melden.

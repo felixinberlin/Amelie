@@ -4,6 +4,7 @@ import { ALL_NEW_CANDIDATE_IDEAS } from './ideas';
 const INITIAL_CANDIDATE_IDEAS: CandidateIdea[] = [
   {
     id: 'glasanflug-ampel',
+    packedDoseId: 'glasanflug-ampel',
     title: 'Glasanflug-Ampel',
     round: 'Runde 2',
     date: '16.09.2026',

@@ -28,15 +28,13 @@ import { Language } from '../types';
 import { DOSEN_DATA } from '../data/dosen';
 import { SIMULATOR_COUNT } from '../data/doseSimulators';
 import { NORMAL_JOBS_AND_EVERYDAY_PEOPLE_IDEAS } from '../data/ideas/normalJobsAndEverydayPeople';
-import { GrainSackZenGame } from './GrainSackZenGame';
-import { TravelingGnomeGame } from './TravelingGnomeGame';
-import { PhotoboothAlbumGame } from './PhotoboothAlbumGame';
 
 interface WhimsyAndGoodnessViewProps {
   lang: Language;
+  onOpenGames?: () => void;
 }
 
-export const WhimsyAndGoodnessView: React.FC<WhimsyAndGoodnessViewProps> = ({ lang }) => {
+export const WhimsyAndGoodnessView: React.FC<WhimsyAndGoodnessViewProps> = ({ lang, onOpenGames }) => {
   // Web Audio sound synthesizer for crunchy crème brûlée crack & stone skipping
   const audioCtxRef = useRef<AudioContext | null>(null);
 
@@ -467,14 +465,23 @@ export const WhimsyAndGoodnessView: React.FC<WhimsyAndGoodnessViewProps> = ({ la
         </div>
       </div>
 
-      {/* SILLY GAME 1: PLONGER LA MAIN AU PLUS PROFOND D'UN SAC DE GRAINS */}
-      <GrainSackZenGame lang={lang} />
-
-      {/* SILLY GAME 2: LE NAIN DE JARDIN VOYAGEUR (THE TRAVELING GNOME) */}
-      <TravelingGnomeGame lang={lang} />
-
-      {/* SILLY GAME 3: L'ALBUM DE PHOTOMATON DE NINO (THE METRO PHOTOBOOTH & MYSTERY MAN) */}
-      <PhotoboothAlbumGame lang={lang} />
+      {/* Die drei Mini-Spiele (Getreidesack, Gartenzwerg, Fotoautomat) wohnen jetzt im Tab „Games". */}
+      {onOpenGames && (
+        <button
+          type="button"
+          onClick={onOpenGames}
+          className="w-full text-left p-5 rounded-3xl bg-[#f7f4ec] border border-amber-900/20 hover:border-amber-900/40 transition-colors flex items-center justify-between gap-3"
+        >
+          <span className="text-sm text-amber-950">
+            {lang === 'de'
+              ? '🎮 Die Mini-Spiele (Getreidesack, Gartenzwerg, Fotoautomat) sind in den Tab „Games“ umgezogen.'
+              : lang === 'es'
+              ? '🎮 Los minijuegos (saco de grano, gnomo, fotomatón) se han mudado a la pestaña «Games».'
+              : '🎮 The mini-games (grain sack, gnome, photobooth) moved to the Games tab.'}
+          </span>
+          <span className="text-xs font-semibold text-[#8c1d40] shrink-0">Games →</span>
+        </button>
+      )}
 
       {/* SECTION 2: AMÉLIE'S RANDOM ACT OF KIND MISCHIEF (Zettel aus der Blechdose) */}
       <div className="p-6 md:p-8 rounded-3xl bg-[#f7f4ec] border border-amber-900/20 space-y-5">

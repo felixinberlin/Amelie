@@ -283,6 +283,8 @@ export interface CandidateIdea {
   conceptEn: string;
   status: CandidateStatus;
   suggestedVerdict: Verdict;
+  /** Id der Dose, in die diese Idee bereits verpackt wurde (Pipeline blendet sie standardmäßig aus). */
+  packedDoseId?: string;
   recipientDe: string;
   recipientEn: string;
   sourceType:
