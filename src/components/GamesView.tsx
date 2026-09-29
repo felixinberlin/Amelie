@@ -7,6 +7,7 @@ import { getLocalizedTitle } from '../i18n';
 import { GrainSackZenGame } from './GrainSackZenGame';
 import { TravelingGnomeGame } from './TravelingGnomeGame';
 import { PhotoboothAlbumGame } from './PhotoboothAlbumGame';
+import { HofLichterGame } from './HofLichterGame';
 
 interface GamesViewProps {
   lang: Language;
@@ -14,7 +15,7 @@ interface GamesViewProps {
   onOpenDose: (doseId: string) => void;
 }
 
-type PlayableId = 'grain' | 'gnome' | 'photobooth';
+type PlayableId = 'hof' | 'grain' | 'gnome' | 'photobooth';
 
 const PLAYABLES: Array<{
   id: PlayableId;
@@ -24,6 +25,7 @@ const PLAYABLES: Array<{
   es: string;
   Component: React.FC<{ lang: Language }>;
 }> = [
+  { id: 'hof', emoji: '🏮', de: 'Lichter im Hof', en: 'Lights in the Courtyard', es: 'Luces en el patio', Component: HofLichterGame },
   { id: 'grain', emoji: '🌾', de: 'Hand im Getreidesack', en: 'Hand in the Grain Sack', es: 'Mano en el saco de grano', Component: GrainSackZenGame },
   { id: 'gnome', emoji: '🧙', de: 'Der reisende Gartenzwerg', en: 'The Traveling Gnome', es: 'El gnomo viajero', Component: TravelingGnomeGame },
   { id: 'photobooth', emoji: '📸', de: 'Ninos Fotoautomaten-Album', en: "Nino's Photobooth Album", es: 'El álbum del fotomatón de Nino', Component: PhotoboothAlbumGame },
@@ -31,9 +33,11 @@ const PLAYABLES: Array<{
 
 const pick = (lang: Language, de: string, en: string, es: string) => (lang === 'de' ? de : lang === 'es' ? es : en);
 
+export const PLAYABLE_GAME_COUNT = PLAYABLES.length;
+
 export const GamesView: React.FC<GamesViewProps> = ({ lang, dosen, onOpenDose }) => {
   const [query, setQuery] = useState('');
-  const [activePlayable, setActivePlayable] = useState<PlayableId | null>(null);
+  const [activePlayable, setActivePlayable] = useState<PlayableId | null>('hof');
   const q = query.trim().toLowerCase();
 
   const gameDosen = useMemo(
