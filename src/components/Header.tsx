@@ -26,6 +26,7 @@ import { NORMAL_JOBS_AND_EVERYDAY_PEOPLE_IDEAS } from '../data/ideas/normalJobsA
 import { PLAYABLE_GAME_COUNT } from './GamesView';
 import { GAME_IDEAS } from '../data/ideas/games';
 import { GAME_DOSE_IDS } from '../data/pipeline';
+import { MoodSwitcher } from './MoodSwitcher';
 import { AMELIE_MUSTERS } from '../data/musterEmails';
 import { FUNDING_DATA } from '../data/funding';
 
@@ -203,36 +204,36 @@ export const Header: React.FC<HeaderProps> = ({
   const isMoreActive = Boolean(activeMoreItem);
 
   return (
-    <header className="border-b border-[#dfd1be] bg-[#fbf6ee]/95 backdrop-blur-md sticky top-0 z-40 shadow-xs">
+    <header className="border-b border-[var(--m-line)] bg-[var(--m-bg-2)]/95 backdrop-blur-md sticky top-0 z-40 shadow-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top bar: Brand identity (left) and Always-Visible Language Switcher (right) */}
-        <div className="py-2.5 sm:py-3 flex items-center justify-between gap-3 border-b border-[#dfd1be]/60">
+        <div className="py-2.5 sm:py-3 flex items-center justify-between gap-3 border-b border-[var(--m-line)]/60">
           {/* Brand identity */}
           <div className="flex items-center gap-3 min-w-0">
             <div
               onClick={() => setCurrentTab('dosen')}
-              className="w-10 h-10 rounded-xl bg-[#8c1d40] border border-[#741533] flex items-center justify-center text-[#fff9f5] shadow-xs shrink-0 transform -rotate-1 hover:rotate-0 transition-transform cursor-pointer"
+              className="w-10 h-10 rounded-xl bg-[var(--m-accent)] border border-[var(--m-accent-strong)] flex items-center justify-center text-[var(--m-on-accent)] shadow-xs shrink-0 transform -rotate-1 hover:rotate-0 transition-transform cursor-pointer"
             >
-              <Gift className="w-5 h-5 text-[#f6bd60]" />
+              <Gift className="w-5 h-5 text-[var(--m-gold)]" />
             </div>
 
             <div className="min-w-0">
               <div className="flex items-center gap-2">
                 <button
                   onClick={() => setCurrentTab('dosen')}
-                  className="text-xl sm:text-2xl font-bold font-amelie tracking-tight text-[#2b1e16] hover:text-[#8c1d40] transition-colors cursor-pointer text-left truncate"
+                  className="text-xl sm:text-2xl font-bold font-amelie tracking-tight text-[var(--m-ink)] hover:text-[var(--m-accent)] transition-colors cursor-pointer text-left truncate"
                 >
                   {t.app.title}
                 </button>
-                <span className="text-[10px] font-typewriter px-1.5 py-0.5 rounded border border-[#8c1d40]/30 bg-[#8c1d40]/10 text-[#8c1d40] font-bold shrink-0">
+                <span className="text-[10px] font-typewriter px-1.5 py-0.5 rounded border border-[var(--m-accent)]/30 bg-[var(--m-accent)]/10 text-[var(--m-accent)] font-bold shrink-0">
                   CC0
                 </span>
-                <span className="hidden md:inline-block text-[10px] font-typewriter text-[#8b6f57] shrink-0">
+                <span className="hidden md:inline-block text-[10px] font-typewriter text-[var(--m-muted)] shrink-0">
                   {t.app.kula_ring}
                 </span>
               </div>
-              <p className="text-[11px] sm:text-xs text-[#6b5849] font-medium truncate hidden sm:block">
-                <span className="italic font-amelie text-[#8c1d40] font-semibold">{t.app.kula_french}</span>
+              <p className="text-[11px] sm:text-xs text-[var(--m-ink-3)] font-medium truncate hidden sm:block">
+                <span className="italic font-amelie text-[var(--m-accent)] font-semibold">{t.app.kula_french}</span>
                 <span className="mx-1.5 opacity-40">·</span>
                 <span>{t.app.tagline}</span>
               </p>
@@ -241,14 +242,15 @@ export const Header: React.FC<HeaderProps> = ({
 
           {/* Right side: Language Selector - ALWAYS VISIBLE, shrink-0, perfectly positioned on right */}
           <div className="flex items-center gap-2 shrink-0">
-            <div className="flex items-center gap-1 bg-[#ede3d1]/90 p-1 rounded-lg border border-[#d8cbba] shadow-2xs">
-              <Globe className="w-3.5 h-3.5 text-[#8c1d40] ml-1 mr-0.5 hidden sm:inline-block" />
+            <MoodSwitcher lang={lang} />
+            <div className="flex items-center gap-1 bg-[var(--m-sunk)]/90 p-1 rounded-lg border border-[var(--m-line-strong)] shadow-2xs">
+              <Globe className="w-3.5 h-3.5 text-[var(--m-accent)] ml-1 mr-0.5 hidden sm:inline-block" />
               <button
                 onClick={() => setLang('en')}
                 className={`px-2.5 py-1 rounded text-xs font-typewriter transition-all cursor-pointer ${
                   lang === 'en'
-                    ? 'bg-[#fbf7f0] text-[#8c1d40] shadow-xs font-bold border border-[#d4c3b0]'
-                    : 'text-[#6b5849] hover:text-[#2b1e16]'
+                    ? 'bg-[var(--m-bg)] text-[var(--m-accent)] shadow-xs font-bold border border-[#d4c3b0]'
+                    : 'text-[var(--m-ink-3)] hover:text-[var(--m-ink)]'
                 }`}
                 title="English (Canonical XLIFF source)"
               >
@@ -258,8 +260,8 @@ export const Header: React.FC<HeaderProps> = ({
                 onClick={() => setLang('de')}
                 className={`px-2.5 py-1 rounded text-xs font-typewriter transition-all cursor-pointer ${
                   lang === 'de'
-                    ? 'bg-[#fbf7f0] text-[#8c1d40] shadow-xs font-bold border border-[#d4c3b0]'
-                    : 'text-[#6b5849] hover:text-[#2b1e16]'
+                    ? 'bg-[var(--m-bg)] text-[var(--m-accent)] shadow-xs font-bold border border-[#d4c3b0]'
+                    : 'text-[var(--m-ink-3)] hover:text-[var(--m-ink)]'
                 }`}
                 title="Deutsch"
               >
@@ -269,8 +271,8 @@ export const Header: React.FC<HeaderProps> = ({
                 onClick={() => setLang('es')}
                 className={`px-2.5 py-1 rounded text-xs font-typewriter transition-all cursor-pointer ${
                   lang === 'es'
-                    ? 'bg-[#fbf7f0] text-[#8c1d40] shadow-xs font-bold border border-[#d4c3b0]'
-                    : 'text-[#6b5849] hover:text-[#2b1e16]'
+                    ? 'bg-[var(--m-bg)] text-[var(--m-accent)] shadow-xs font-bold border border-[#d4c3b0]'
+                    : 'text-[var(--m-ink-3)] hover:text-[var(--m-ink)]'
                 }`}
                 title="Español"
               >
@@ -296,18 +298,18 @@ export const Header: React.FC<HeaderProps> = ({
                   }}
                   className={`flex items-center gap-2 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-xs sm:text-sm font-medium whitespace-nowrap transition-all cursor-pointer ${
                     isActive
-                      ? 'bg-[#8c1d40] text-[#fff9f5] shadow-xs border border-[#741533]'
-                      : 'text-[#6b5849] hover:text-[#2b1e16] hover:bg-[#ede3d1]/60 border border-transparent'
+                      ? 'bg-[var(--m-accent)] text-[var(--m-on-accent)] shadow-xs border border-[var(--m-accent-strong)]'
+                      : 'text-[var(--m-ink-3)] hover:text-[var(--m-ink)] hover:bg-[var(--m-sunk)]/60 border border-transparent'
                   }`}
                 >
-                  <Icon className={`w-4 h-4 ${isActive ? 'text-[#f6bd60]' : 'text-[#8b6f57]'}`} />
+                  <Icon className={`w-4 h-4 ${isActive ? 'text-[var(--m-gold)]' : 'text-[var(--m-muted)]'}`} />
                   <span className={isActive ? 'font-semibold tracking-tight' : ''}>{tab.label}</span>
                   {tab.badge !== undefined && (
                     <span
                       className={`text-xs px-2 py-0.5 rounded-full font-typewriter font-bold ${
                         isActive
-                          ? 'bg-[#741533] text-[#fde047]'
-                          : 'bg-[#ede3d1] text-[#5c4a3d] border border-[#d8cbba]'
+                          ? 'bg-[var(--m-accent-strong)] text-[#fde047]'
+                          : 'bg-[var(--m-sunk)] text-[var(--m-ink-2)] border border-[var(--m-line-strong)]'
                       }`}
                     >
                       {tab.badge}
@@ -328,31 +330,31 @@ export const Header: React.FC<HeaderProps> = ({
               onClick={() => setIsMoreOpen((prev) => !prev)}
               className={`flex items-center gap-2 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-xs sm:text-sm font-medium whitespace-nowrap transition-all cursor-pointer ${
                 isMoreActive
-                  ? 'bg-[#8c1d40] text-[#fff9f5] shadow-xs border border-[#741533]'
+                  ? 'bg-[var(--m-accent)] text-[var(--m-on-accent)] shadow-xs border border-[var(--m-accent-strong)]'
                   : isMoreOpen
-                  ? 'bg-[#ede3d1] text-[#2b1e16] border border-[#d8cbba]'
-                  : 'text-[#6b5849] hover:text-[#2b1e16] hover:bg-[#ede3d1]/60 border border-transparent'
+                  ? 'bg-[var(--m-sunk)] text-[var(--m-ink)] border border-[var(--m-line-strong)]'
+                  : 'text-[var(--m-ink-3)] hover:text-[var(--m-ink)] hover:bg-[var(--m-sunk)]/60 border border-transparent'
               }`}
               title={t.nav.tools_archive_desc}
             >
               {isMoreActive && activeMoreItem ? (
                 React.createElement(activeMoreItem.icon, {
-                  className: 'w-4 h-4 text-[#f6bd60]',
+                  className: 'w-4 h-4 text-[var(--m-gold)]',
                 })
               ) : (
-                <Sparkles className={`w-4 h-4 ${isMoreOpen ? 'text-[#8c1d40]' : 'text-[#8b6f57]'}`} />
+                <Sparkles className={`w-4 h-4 ${isMoreOpen ? 'text-[var(--m-accent)]' : 'text-[var(--m-muted)]'}`} />
               )}
               <span className={isMoreActive ? 'font-semibold tracking-tight' : ''}>
                 {isMoreActive && activeMoreItem ? activeMoreItem.label : t.nav.more}
               </span>
               {isMoreActive && activeMoreItem?.badge !== undefined && (
-                <span className="text-xs px-1.5 py-0.5 rounded-full font-typewriter font-bold bg-[#741533] text-[#fde047]">
+                <span className="text-xs px-1.5 py-0.5 rounded-full font-typewriter font-bold bg-[var(--m-accent-strong)] text-[#fde047]">
                   {activeMoreItem.badge}
                 </span>
               )}
               <ChevronDown
                 className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                  isMoreOpen ? 'rotate-180 text-[#8c1d40]' : isMoreActive ? 'text-[#f6bd60]' : 'text-[#8b6f57]'
+                  isMoreOpen ? 'rotate-180 text-[var(--m-accent)]' : isMoreActive ? 'text-[var(--m-gold)]' : 'text-[var(--m-muted)]'
                 }`}
               />
             </button>
@@ -363,20 +365,20 @@ export const Header: React.FC<HeaderProps> = ({
                 id="header-more-dropdown-menu"
                 role="menu"
                 aria-orientation="vertical"
-                className="absolute right-0 top-full mt-2 w-80 sm:w-96 max-w-[calc(100vw-1.5rem)] rounded-2xl bg-[#fffdf9] border border-[#dfd1be] shadow-2xl p-2.5 z-50 animate-fadeIn max-h-[calc(100vh-6rem)] overflow-y-auto divide-y divide-[#f0e4d4]"
+                className="absolute right-0 top-full mt-2 w-80 sm:w-96 max-w-[calc(100vw-1.5rem)] rounded-2xl bg-[var(--m-surface)] border border-[var(--m-line)] shadow-2xl p-2.5 z-50 animate-fadeIn max-h-[calc(100vh-6rem)] overflow-y-auto divide-y divide-[var(--m-sunk)]"
               >
                 <div className="px-2.5 py-2">
-                  <span className="text-[10px] font-typewriter uppercase tracking-widest text-[#8c1d40] font-bold block">
+                  <span className="text-[10px] font-typewriter uppercase tracking-widest text-[var(--m-accent)] font-bold block">
                     ✦ {t.nav.tools_archive} ✦
                   </span>
-                  <p className="text-xs text-[#6b5849] mt-0.5">
+                  <p className="text-xs text-[var(--m-ink-3)] mt-0.5">
                     {t.nav.tools_archive_desc}
                   </p>
                 </div>
 
                 {moreGroups.map((group, gIdx) => (
                   <div key={gIdx} className="py-2 first:pt-1 space-y-1">
-                    <div className="px-2.5 py-0.5 text-[10px] font-typewriter font-bold uppercase tracking-wider text-[#8c1d40]/80">
+                    <div className="px-2.5 py-0.5 text-[10px] font-typewriter font-bold uppercase tracking-wider text-[var(--m-accent)]/80">
                       {group.title}
                     </div>
                     {group.items.map((item) => {
@@ -391,16 +393,16 @@ export const Header: React.FC<HeaderProps> = ({
                           }}
                           className={`w-full flex items-center justify-between px-2.5 py-2 rounded-xl text-left transition-all cursor-pointer ${
                             isItemActive
-                              ? 'bg-[#8c1d40] text-white shadow-2xs'
-                              : 'hover:bg-[#faf4e8] text-[#2b1e16]'
+                              ? 'bg-[var(--m-accent)] text-white shadow-2xs'
+                              : 'hover:bg-[var(--m-surface-2)] text-[var(--m-ink)]'
                           }`}
                         >
                           <div className="flex items-center gap-2.5 min-w-0">
                             <div
                               className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 ${
                                 isItemActive
-                                  ? 'bg-[#741533] text-[#f6bd60]'
-                                  : 'bg-[#ede3d1] text-[#8c1d40]'
+                                  ? 'bg-[var(--m-accent-strong)] text-[var(--m-gold)]'
+                                  : 'bg-[var(--m-sunk)] text-[var(--m-accent)]'
                               }`}
                             >
                               <Icon className="w-3.5 h-3.5" />
@@ -411,7 +413,7 @@ export const Header: React.FC<HeaderProps> = ({
                               </div>
                               <div
                                 className={`text-[10px] truncate ${
-                                  isItemActive ? 'text-[#f6bd60]/90' : 'text-[#8b6f57]'
+                                  isItemActive ? 'text-[var(--m-gold)]/90' : 'text-[var(--m-muted)]'
                                 }`}
                               >
                                 {item.desc}
@@ -424,14 +426,14 @@ export const Header: React.FC<HeaderProps> = ({
                               <span
                                 className={`text-[11px] px-1.5 py-0.5 rounded-full font-typewriter font-bold ${
                                   isItemActive
-                                    ? 'bg-[#741533] text-[#fde047]'
-                                    : 'bg-[#ede3d1] text-[#5c4a3d]'
+                                    ? 'bg-[var(--m-accent-strong)] text-[#fde047]'
+                                    : 'bg-[var(--m-sunk)] text-[var(--m-ink-2)]'
                                 }`}
                               >
                                 {item.badge}
                               </span>
                             )}
-                            {isItemActive && <Check className="w-4 h-4 text-[#f6bd60]" />}
+                            {isItemActive && <Check className="w-4 h-4 text-[var(--m-gold)]" />}
                           </div>
                         </button>
                       );

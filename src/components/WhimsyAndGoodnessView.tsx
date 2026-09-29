@@ -218,31 +218,31 @@ export const WhimsyAndGoodnessView: React.FC<WhimsyAndGoodnessViewProps> = ({ la
   return (
     <div className="max-w-6xl mx-auto space-y-10 pb-20">
       {/* Header Banner */}
-      <div className="bg-gradient-to-br from-[#faf4e8] via-[#f5ece0] to-[#eee2cf] border border-[#d8cbba] rounded-3xl p-6 md:p-10 space-y-5 shadow-sm relative overflow-hidden">
-        <div className="absolute top-0 right-0 transform translate-x-12 -translate-y-12 w-80 h-80 bg-[#c5832b]/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="bg-gradient-to-br from-[var(--m-surface-2)] via-[var(--m-surface-2)] to-[#eee2cf] border border-[var(--m-line-strong)] rounded-3xl p-6 md:p-10 space-y-5 shadow-sm relative overflow-hidden">
+        <div className="absolute top-0 right-0 transform translate-x-12 -translate-y-12 w-80 h-80 bg-[var(--m-copper)]/15 rounded-full blur-3xl pointer-events-none" />
         
-        <div className="flex flex-wrap items-center gap-2 text-xs font-typewriter tracking-wider uppercase text-[#701531] font-bold">
-          <span className="px-3 py-1 rounded-full bg-[#8c1d40]/10 border border-[#8c1d40]/25 flex items-center gap-1.5 shadow-2xs">
-            <Sparkles className="w-3.5 h-3.5 text-[#8c1d40]" />
+        <div className="flex flex-wrap items-center gap-2 text-xs font-typewriter tracking-wider uppercase text-[var(--m-accent-strong)] font-bold">
+          <span className="px-3 py-1 rounded-full bg-[var(--m-accent)]/10 border border-[var(--m-accent)]/25 flex items-center gap-1.5 shadow-2xs">
+            <Sparkles className="w-3.5 h-3.5 text-[var(--m-accent)]" />
             {lang === 'de' ? '✦ Le Fabuleux Destin d\'Amélie ✦' : lang === 'es' ? '✦ El Fabuloso Destino de Amélie ✦' : '✦ The Amélie Principle ✦'}
           </span>
-          <span className="px-3 py-1 rounded-full bg-[#1b4332]/10 text-[#1b4332] border border-[#1b4332]/25 font-bold">
+          <span className="px-3 py-1 rounded-full bg-[var(--m-green)]/10 text-[var(--m-green)] border border-[var(--m-green)]/25 font-bold">
             Montmartre · Café des 2 Moulins
           </span>
-          <span className="px-3 py-1 rounded-full bg-[#c5832b]/10 text-[#78350f] border border-[#c5832b]/25">
+          <span className="px-3 py-1 rounded-full bg-[var(--m-copper)]/10 text-[#78350f] border border-[var(--m-copper)]/25">
             {lang === 'de' ? 'Freude ohne Rechnung' : lang === 'es' ? 'Alegría sin factura' : 'Joy with Zero Invoice'}
           </span>
         </div>
 
         <div className="space-y-3 max-w-4xl">
-          <h1 className="text-2xl md:text-4xl font-amelie font-bold text-[#2b1e16] tracking-tight leading-tight">
+          <h1 className="text-2xl md:text-4xl font-amelie font-bold text-[var(--m-ink)] tracking-tight leading-tight">
             {lang === 'de'
               ? '« Nous voulons rendre le monde plus joyeux et meilleur. »'
               : lang === 'es'
               ? '« Queremos hacer el mundo un lugar más alegre y mejor. »'
               : '« We want to make the world a funny and better place. »'}
           </h1>
-          <p className="text-[#4a3b2c] text-sm md:text-base leading-relaxed font-sans">
+          <p className="text-[var(--m-ink-2)] text-sm md:text-base leading-relaxed font-sans">
             {lang === 'de'
               ? 'Die Welt ertrinkt in zynischen Apps, Mahnungen, kalten Tabellen und endlosen Abos. Amélie Poulain erinnerte uns daran: Echte Veränderung beginnt oft mit einem Augenzwinkern — einem reisenden Gartenzwerg, dem Knacken des Zuckers auf der Crème Brûlée, einer heimlich bezahlten Tasse Kaffee oder einem Werkzeug, das einer Krankenschwester nachts 300 Euro zustehendes Gehalt rettet.'
               : lang === 'es'
@@ -253,12 +253,12 @@ export const WhimsyAndGoodnessView: React.FC<WhimsyAndGoodnessViewProps> = ({ la
 
         {/* Amélie's Secret Joys Bar */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 pt-2 text-xs">
-          <div className="p-4 rounded-2xl bg-[#faf3e6] border border-[#d8cbba] space-y-1 shadow-2xs">
-            <span className="font-amelie font-bold text-sm text-[#2b1e16] block flex items-center gap-1.5">
-              <Utensils className="w-4 h-4 text-[#c5832b]" />
+          <div className="p-4 rounded-2xl bg-[var(--m-bg-2)] border border-[var(--m-line-strong)] space-y-1 shadow-2xs">
+            <span className="font-amelie font-bold text-sm text-[var(--m-ink)] block flex items-center gap-1.5">
+              <Utensils className="w-4 h-4 text-[var(--m-copper)]" />
               {lang === 'de' ? 'Crème Brûlée knacken' : lang === 'es' ? 'Romper la Crème Brûlée' : 'Crack Crème Brûlée'}
             </span>
-            <span className="text-[#5c4a3d] leading-snug block">
+            <span className="text-[var(--m-ink-2)] leading-snug block">
               {lang === 'de'
                 ? 'Den Teelöffel umdrehen und mit der Spitze die karamellisierte Kruste knacken lassen.'
                 : lang === 'es'
@@ -267,12 +267,12 @@ export const WhimsyAndGoodnessView: React.FC<WhimsyAndGoodnessViewProps> = ({ la
             </span>
           </div>
 
-          <div className="p-4 rounded-2xl bg-[#faf3e6] border border-[#d8cbba] space-y-1 shadow-2xs">
-            <span className="font-amelie font-bold text-sm text-[#2b1e16] block flex items-center gap-1.5">
-              <Waves className="w-4 h-4 text-[#1b4332]" />
+          <div className="p-4 rounded-2xl bg-[var(--m-bg-2)] border border-[var(--m-line-strong)] space-y-1 shadow-2xs">
+            <span className="font-amelie font-bold text-sm text-[var(--m-ink)] block flex items-center gap-1.5">
+              <Waves className="w-4 h-4 text-[var(--m-green)]" />
               {lang === 'de' ? 'Steinehüpfen am Kanal' : lang === 'es' ? 'Hacer rebotar piedras' : 'Stone Skipping on Canal'}
             </span>
-            <span className="text-[#5c4a3d] leading-snug block">
+            <span className="text-[var(--m-ink-2)] leading-snug block">
               {lang === 'de'
                 ? 'Flache Kieselsteine auf dem Canal Saint-Martin springen lassen: eins, zwei, drei, vier!'
                 : lang === 'es'
@@ -281,12 +281,12 @@ export const WhimsyAndGoodnessView: React.FC<WhimsyAndGoodnessViewProps> = ({ la
             </span>
           </div>
 
-          <div className="p-4 rounded-2xl bg-[#faf3e6] border border-[#d8cbba] space-y-1 shadow-2xs">
-            <span className="font-amelie font-bold text-sm text-[#2b1e16] block flex items-center gap-1.5">
+          <div className="p-4 rounded-2xl bg-[var(--m-bg-2)] border border-[var(--m-line-strong)] space-y-1 shadow-2xs">
+            <span className="font-amelie font-bold text-sm text-[var(--m-ink)] block flex items-center gap-1.5">
               <Hand className="w-4 h-4 text-[#b45309]" />
               {lang === 'de' ? 'Hand im Kornsack' : lang === 'es' ? 'Mano en el saco' : 'Hand in Grain Sack'}
             </span>
-            <span className="text-[#5c4a3d] leading-snug block">
+            <span className="text-[var(--m-ink-2)] leading-snug block">
               {lang === 'de'
                 ? 'Tief in einen Jutesack voller Linsen tauchen und das kühle Korn an den Fingern spüren.'
                 : lang === 'es'
@@ -295,12 +295,12 @@ export const WhimsyAndGoodnessView: React.FC<WhimsyAndGoodnessViewProps> = ({ la
             </span>
           </div>
 
-          <div className="p-4 rounded-2xl bg-[#faf3e6] border border-[#d8cbba] space-y-1 shadow-2xs">
-            <span className="font-amelie font-bold text-sm text-[#2b1e16] block flex items-center gap-1.5">
-              <Camera className="w-4 h-4 text-[#8c1d40]" />
+          <div className="p-4 rounded-2xl bg-[var(--m-bg-2)] border border-[var(--m-line-strong)] space-y-1 shadow-2xs">
+            <span className="font-amelie font-bold text-sm text-[var(--m-ink)] block flex items-center gap-1.5">
+              <Camera className="w-4 h-4 text-[var(--m-accent)]" />
               {lang === 'de' ? 'Reisender Gartenzwerg' : lang === 'es' ? 'Gnomo trotamundos' : 'Traveling Gnome'}
             </span>
-            <span className="text-[#5c4a3d] leading-snug block">
+            <span className="text-[var(--m-ink-2)] leading-snug block">
               {lang === 'de'
                 ? 'Den verstaubten Gartenzwerg entführen und Postkarten von Weltwundern senden.'
                 : lang === 'es'
@@ -479,7 +479,7 @@ export const WhimsyAndGoodnessView: React.FC<WhimsyAndGoodnessViewProps> = ({ la
               ? '🎮 Los minijuegos (saco de grano, gnomo, fotomatón) se han mudado a la pestaña «Games».'
               : '🎮 The mini-games (grain sack, gnome, photobooth) moved to the Games tab.'}
           </span>
-          <span className="text-xs font-semibold text-[#8c1d40] shrink-0">Games →</span>
+          <span className="text-xs font-semibold text-[var(--m-accent)] shrink-0">Games →</span>
         </button>
       )}
 
@@ -625,7 +625,7 @@ export const WhimsyAndGoodnessView: React.FC<WhimsyAndGoodnessViewProps> = ({ la
       </div>
 
       {/* SECTION 4: AUDIT / SYSTEM REVIEW STATUS */}
-      <div className="p-6 md:p-8 rounded-3xl bg-[#fcfaf6] border border-stone-200/90 space-y-4">
+      <div className="p-6 md:p-8 rounded-3xl bg-[var(--m-surface)] border border-stone-200/90 space-y-4">
         <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-stone-700">
           <ShieldCheck className="w-4 h-4 text-emerald-700" />
           <span>{lang === 'de' ? 'Gesamt-Review: Was das Amélie-Projekt bereits schenkt' : lang === 'es' ? 'Revisión general: Lo que el proyecto Amélie ya regala' : 'Full Review: What the Amélie Project Already Delivers'}</span>

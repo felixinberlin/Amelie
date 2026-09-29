@@ -504,12 +504,12 @@ export const GrainSackZenGame: React.FC<GrainSackZenGameProps> = ({ lang }) => {
   const foundCount = treasures.filter((t) => t.found).length;
 
   return (
-    <div className="bg-white border border-[#d8cbba] rounded-3xl p-6 md:p-8 space-y-6 shadow-sm">
+    <div className="bg-white border border-[var(--m-line-strong)] rounded-3xl p-6 md:p-8 space-y-6 shadow-sm">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-stone-200 pb-5">
         <div className="space-y-1">
-          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[#701531]">
-            <Sparkles className="w-4 h-4 text-[#8c1d40]" />
+          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[var(--m-accent-strong)]">
+            <Sparkles className="w-4 h-4 text-[var(--m-accent)]" />
             <span>
               {lang === 'de'
                 ? 'Amélie Poulains sensorische Oase'
@@ -518,7 +518,7 @@ export const GrainSackZenGame: React.FC<GrainSackZenGameProps> = ({ lang }) => {
                 : 'Amélie Poulain’s Sensorial Oasis'}
             </span>
           </div>
-          <h3 className="text-xl md:text-2xl font-amelie font-bold text-[#2b1e16]">
+          <h3 className="text-xl md:text-2xl font-amelie font-bold text-[var(--m-ink)]">
             {lang === 'de'
               ? '« Plonger la main au plus profond d’un sac de grains »'
               : lang === 'es'
@@ -601,7 +601,7 @@ export const GrainSackZenGame: React.FC<GrainSackZenGameProps> = ({ lang }) => {
       </div>
 
       {/* Interactive Grain Canvas */}
-      <div className="relative rounded-2xl overflow-hidden border-4 border-[#c5832b]/30 shadow-inner bg-stone-900 select-none">
+      <div className="relative rounded-2xl overflow-hidden border-4 border-[var(--m-copper)]/30 shadow-inner bg-stone-900 select-none">
         <canvas
           ref={canvasRef}
           onPointerMove={handlePointerMove}
@@ -648,7 +648,7 @@ export const GrainSackZenGame: React.FC<GrainSackZenGameProps> = ({ lang }) => {
       </div>
 
       {/* Recovered Treasures Showcase Shelf */}
-      <div className="p-4 rounded-2xl bg-[#faf4e8] border border-[#d8cbba] space-y-3">
+      <div className="p-4 rounded-2xl bg-[var(--m-surface-2)] border border-[var(--m-line-strong)] space-y-3">
         <div className="flex items-center justify-between">
           <span className="text-xs font-mono font-bold uppercase tracking-wider text-amber-950 flex items-center gap-1.5">
             <Award className="w-4 h-4 text-amber-700" />

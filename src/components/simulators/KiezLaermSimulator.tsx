@@ -236,7 +236,7 @@ export const KiezLaermSimulator: React.FC<KiezLaermSimulatorProps> = ({ lang, on
       <div className="rounded-2xl bg-[#faf6ee] border border-[#d6c7b2] p-6 shadow-xs">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
           <div className="space-y-1.5">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#8c1d40]/10 text-[#8c1d40] text-xs font-mono-code font-semibold border border-[#8c1d40]/20">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--m-accent)]/10 text-[var(--m-accent)] text-xs font-mono-code font-semibold border border-[var(--m-accent)]/20">
               <Compass className="w-3.5 h-3.5" />
               <span>
                 {lang === 'de'
@@ -266,7 +266,7 @@ export const KiezLaermSimulator: React.FC<KiezLaermSimulatorProps> = ({ lang, on
             {onOpenDose && (
               <button
                 onClick={() => onOpenDose('kiez-laermkarte')}
-                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#8c1d40] text-white text-xs font-semibold hover:bg-[#701531] transition-colors shadow-xs"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[var(--m-accent)] text-white text-xs font-semibold hover:bg-[var(--m-accent-strong)] transition-colors shadow-xs"
               >
                 <span>{lang === 'de' ? 'Dose Kiez-Lärmkarte öffnen' : lang === 'es' ? 'Abrir lata de ruido' : 'View Kiez Tin'}</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -315,7 +315,7 @@ export const KiezLaermSimulator: React.FC<KiezLaermSimulatorProps> = ({ lang, on
                     onClick={() => setSelectedProfileId(p.id)}
                     className={`w-full text-left p-3 rounded-lg border text-xs transition-all ${
                       isSelected
-                        ? 'border-[#8c1d40] bg-[#8c1d40]/5 font-semibold text-stone-900 shadow-xs ring-1 ring-[#8c1d40]/30'
+                        ? 'border-[var(--m-accent)] bg-[var(--m-accent)]/5 font-semibold text-stone-900 shadow-xs ring-1 ring-[var(--m-accent)]/30'
                         : 'border-stone-200 bg-stone-50/50 hover:bg-stone-100/60 text-stone-700'
                     }`}
                   >
@@ -354,7 +354,7 @@ export const KiezLaermSimulator: React.FC<KiezLaermSimulatorProps> = ({ lang, on
               <label className="text-xs font-bold text-stone-700 uppercase tracking-wider block font-mono-code">
                 {lang === 'de' ? 'Fensterzustand & Schalldämmung' : lang === 'es' ? 'Estado de la ventana' : 'Window Acoustic State'}
               </label>
-              <span className="text-xs font-mono-code text-[#8c1d40] font-bold">
+              <span className="text-xs font-mono-code text-[var(--m-accent)] font-bold">
                 -{windowAttenuation} dB(A)
               </span>
             </div>
@@ -364,7 +364,7 @@ export const KiezLaermSimulator: React.FC<KiezLaermSimulatorProps> = ({ lang, on
                 onClick={() => setWindowState('open')}
                 className={`py-2 px-2.5 rounded-lg border text-center transition-all text-xs ${
                   windowState === 'open'
-                    ? 'border-[#8c1d40] bg-[#8c1d40]/10 text-[#8c1d40] font-bold shadow-xs'
+                    ? 'border-[var(--m-accent)] bg-[var(--m-accent)]/10 text-[var(--m-accent)] font-bold shadow-xs'
                     : 'border-stone-200 hover:bg-stone-50 text-stone-600'
                 }`}
               >
@@ -377,7 +377,7 @@ export const KiezLaermSimulator: React.FC<KiezLaermSimulatorProps> = ({ lang, on
                 onClick={() => setWindowState('tilted')}
                 className={`py-2 px-2.5 rounded-lg border text-center transition-all text-xs ${
                   windowState === 'tilted'
-                    ? 'border-[#8c1d40] bg-[#8c1d40]/10 text-[#8c1d40] font-bold shadow-xs'
+                    ? 'border-[var(--m-accent)] bg-[var(--m-accent)]/10 text-[var(--m-accent)] font-bold shadow-xs'
                     : 'border-stone-200 hover:bg-stone-50 text-stone-600'
                 }`}
               >
@@ -390,7 +390,7 @@ export const KiezLaermSimulator: React.FC<KiezLaermSimulatorProps> = ({ lang, on
                 onClick={() => setWindowState('closed')}
                 className={`py-2 px-2.5 rounded-lg border text-center transition-all text-xs ${
                   windowState === 'closed'
-                    ? 'border-[#8c1d40] bg-[#8c1d40]/10 text-[#8c1d40] font-bold shadow-xs'
+                    ? 'border-[var(--m-accent)] bg-[var(--m-accent)]/10 text-[var(--m-accent)] font-bold shadow-xs'
                     : 'border-stone-200 hover:bg-stone-50 text-stone-600'
                 }`}
               >
@@ -415,7 +415,7 @@ export const KiezLaermSimulator: React.FC<KiezLaermSimulatorProps> = ({ lang, on
                 step="1"
                 value={tranquilityThreshold}
                 onChange={(e) => setTranquilityThreshold(Number(e.target.value))}
-                className="w-full accent-[#8c1d40] h-1.5 bg-stone-200 rounded-lg cursor-pointer"
+                className="w-full accent-[var(--m-accent)] h-1.5 bg-stone-200 rounded-lg cursor-pointer"
               />
               <div className="flex justify-between text-[10px] text-stone-600 font-mono-code">
                 <span>35 dB (Flüstern)</span>
@@ -499,7 +499,7 @@ export const KiezLaermSimulator: React.FC<KiezLaermSimulatorProps> = ({ lang, on
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 p-3.5 rounded-xl bg-stone-50 border border-stone-200/80">
               <div className="space-y-0.5">
                 <div className="text-[11px] text-stone-600 font-medium">Uhrzeit</div>
-                <div className="text-xl font-mono-code font-bold text-[#8c1d40]">
+                <div className="text-xl font-mono-code font-bold text-[var(--m-accent)]">
                   {String(currentHour).padStart(2, '0')}:00
                 </div>
                 <div className="text-[10px] text-stone-600 font-mono-code">
@@ -583,7 +583,7 @@ export const KiezLaermSimulator: React.FC<KiezLaermSimulatorProps> = ({ lang, on
                         style={{ height: `${heightPercent}%` }}
                         className={`w-full rounded-t-sm transition-all duration-200 ${
                           isCurrent
-                            ? 'bg-[#8c1d40] ring-2 ring-[#8c1d40]/40 shadow-sm'
+                            ? 'bg-[var(--m-accent)] ring-2 ring-[var(--m-accent)]/40 shadow-sm'
                             : isQuiet
                             ? 'bg-emerald-500/80 hover:bg-emerald-600'
                             : isNight
@@ -619,7 +619,7 @@ export const KiezLaermSimulator: React.FC<KiezLaermSimulatorProps> = ({ lang, on
                 max="23"
                 value={currentHour}
                 onChange={(e) => setCurrentHour(Number(e.target.value))}
-                className="w-full accent-[#8c1d40] h-2 bg-stone-200 rounded-lg cursor-pointer"
+                className="w-full accent-[var(--m-accent)] h-2 bg-stone-200 rounded-lg cursor-pointer"
               />
             </div>
           </div>
@@ -627,7 +627,7 @@ export const KiezLaermSimulator: React.FC<KiezLaermSimulatorProps> = ({ lang, on
           {/* Biological & Scientific Verdict: "Kann ich mit offenem Fenster schlafen?" */}
           <div className="rounded-xl bg-white border border-stone-200 p-5 shadow-xs space-y-4">
             <div className="flex items-center gap-2 pb-2 border-b border-stone-100">
-              <Bed className="w-4 h-4 text-[#8c1d40]" />
+              <Bed className="w-4 h-4 text-[var(--m-accent)]" />
               <h4 className="text-sm font-bold text-stone-900 uppercase tracking-wider font-mono-code">
                 {lang === 'de'
                   ? 'Schlaftest: Kann ich hier mit gekipptem Fenster schlafen?'

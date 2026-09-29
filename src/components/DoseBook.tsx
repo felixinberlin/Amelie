@@ -129,7 +129,7 @@ export const DoseBook: React.FC<DoseBookProps> = ({
 
       <div className="grid md:grid-cols-[minmax(0,17rem)_1fr]">
         {/* Inhaltsverzeichnis */}
-        <nav className="border-b md:border-b-0 md:border-r border-[#d8cbba] bg-[#faf5eb] p-3 space-y-1.5">
+        <nav className="border-b md:border-b-0 md:border-r border-[var(--m-line-strong)] bg-[var(--m-surface-2)] p-3 space-y-1.5">
           {toc.map((c) => {
             const active = c.i === index;
             return (
@@ -140,16 +140,16 @@ export const DoseBook: React.FC<DoseBookProps> = ({
                 className={`w-full text-left px-3 py-2.5 rounded-xl border transition-colors cursor-pointer ${
                   active
                     ? 'bg-white border-[#c9a227] shadow-sm'
-                    : 'bg-transparent border-transparent hover:bg-[#f0e7d6]'
+                    : 'bg-transparent border-transparent hover:bg-[var(--m-sunk)]'
                 }`}
               >
                 <div className="flex items-start gap-2">
-                  <FileText className="w-3.5 h-3.5 mt-0.5 shrink-0 text-[#8b6f57]" />
+                  <FileText className="w-3.5 h-3.5 mt-0.5 shrink-0 text-[var(--m-muted)]" />
                   <div className="min-w-0">
-                    <div className="font-typewriter text-xs font-bold text-[#2b1e16] leading-snug">
+                    <div className="font-typewriter text-xs font-bold text-[var(--m-ink)] leading-snug">
                       {c.title}
                     </div>
-                    <div className="font-typewriter text-[11px] text-[#6b5647] leading-snug mt-1">
+                    <div className="font-typewriter text-[11px] text-[var(--m-ink-3)] leading-snug mt-1">
                       {c.note}
                     </div>
                     <div className="font-mono-code text-[10px] text-[#9a8570] mt-1">
@@ -166,12 +166,12 @@ export const DoseBook: React.FC<DoseBookProps> = ({
 
         {/* Kapitel */}
         <div className="min-w-0">
-          <div className="flex flex-wrap items-center gap-2 px-5 py-3 border-b border-[#e5dac8] bg-white/60">
+          <div className="flex flex-wrap items-center gap-2 px-5 py-3 border-b border-[var(--m-line)] bg-white/60">
             <a
               href={getRepoFileUrl(chapter.path)}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 font-mono-code text-[11px] text-[#5c4a3d] hover:text-[#8b1e2f] underline decoration-dotted break-all"
+              className="inline-flex items-center gap-1.5 font-mono-code text-[11px] text-[var(--m-ink-2)] hover:text-[#8b1e2f] underline decoration-dotted break-all"
             >
               <ExternalLink className="w-3 h-3 shrink-0" />
               {chapter.path}
@@ -195,7 +195,7 @@ export const DoseBook: React.FC<DoseBookProps> = ({
               href={getRepoHistoryUrl(chapter.path)}
               target="_blank"
               rel="noopener noreferrer"
-              className={`inline-flex items-center gap-1.5 font-typewriter text-[11px] text-[#5c4a3d] hover:text-[#8b1e2f] ${isPatch ? '' : 'ml-auto'}`}
+              className={`inline-flex items-center gap-1.5 font-typewriter text-[11px] text-[var(--m-ink-2)] hover:text-[#8b1e2f] ${isPatch ? '' : 'ml-auto'}`}
               title={
                 isDe
                   ? 'Commit-Historie: wann was geprüft und was korrigiert wurde'
@@ -209,7 +209,7 @@ export const DoseBook: React.FC<DoseBookProps> = ({
 
           <div className="p-5 md:p-7 max-h-[70vh] overflow-y-auto">
             {state === 'loading' && (
-              <div className="flex items-center gap-2 font-typewriter text-xs text-[#6b5647] py-8">
+              <div className="flex items-center gap-2 font-typewriter text-xs text-[var(--m-ink-3)] py-8">
                 <Loader2 className="w-4 h-4 animate-spin" />
                 {isDe ? 'Kapitel wird geladen …' : isEs ? 'Cargando capítulo …' : 'Loading chapter …'}
               </div>
@@ -254,11 +254,11 @@ export const DoseBook: React.FC<DoseBookProps> = ({
           </div>
 
           {/* Blättern */}
-          <div className="flex items-center justify-between gap-2 px-5 py-3 border-t border-[#e5dac8] bg-[#faf5eb]">
+          <div className="flex items-center justify-between gap-2 px-5 py-3 border-t border-[var(--m-line)] bg-[var(--m-surface-2)]">
             <button
               onClick={() => setIndex((i) => Math.max(0, i - 1))}
               disabled={index === 0}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-[#d8cbba] bg-white font-typewriter text-xs font-bold text-[#5c4a3d] disabled:opacity-40 disabled:cursor-not-allowed hover:bg-[#f0e7d6] transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-[var(--m-line-strong)] bg-white font-typewriter text-xs font-bold text-[var(--m-ink-2)] disabled:opacity-40 disabled:cursor-not-allowed hover:bg-[var(--m-sunk)] transition-colors cursor-pointer"
             >
               <ChevronLeft className="w-3.5 h-3.5" />
               {isDe ? 'Voriges' : isEs ? 'Anterior' : 'Previous'}
@@ -266,7 +266,7 @@ export const DoseBook: React.FC<DoseBookProps> = ({
             <button
               onClick={() => setIndex((i) => Math.min(chapters.length - 1, i + 1))}
               disabled={index === chapters.length - 1}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-[#d8cbba] bg-white font-typewriter text-xs font-bold text-[#5c4a3d] disabled:opacity-40 disabled:cursor-not-allowed hover:bg-[#f0e7d6] transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-[var(--m-line-strong)] bg-white font-typewriter text-xs font-bold text-[var(--m-ink-2)] disabled:opacity-40 disabled:cursor-not-allowed hover:bg-[var(--m-sunk)] transition-colors cursor-pointer"
             >
               {isDe ? 'Nächstes' : isEs ? 'Siguiente' : 'Next'}
               <ChevronRight className="w-3.5 h-3.5" />

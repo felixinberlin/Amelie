@@ -211,7 +211,7 @@ ${priorArt || '...'}
       </div>
 
       {!previewMode ? (
-        <form onSubmit={(e) => { e.preventDefault(); setPreviewMode(true); }} className="space-y-6 bg-[#fdfbf7] p-6 md:p-8 rounded-2xl border border-stone-200 shadow-xs">
+        <form onSubmit={(e) => { e.preventDefault(); setPreviewMode(true); }} className="space-y-6 bg-[var(--m-surface)] p-6 md:p-8 rounded-2xl border border-stone-200 shadow-xs">
           {/* Title & Verdict */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="sm:col-span-2 space-y-1">
@@ -380,7 +380,7 @@ ${priorArt || '...'}
           </div>
         </form>
       ) : (
-        <div className="space-y-6 bg-[#fdfbf7] p-6 md:p-8 rounded-2xl border border-stone-200 shadow-xs">
+        <div className="space-y-6 bg-[var(--m-surface)] p-6 md:p-8 rounded-2xl border border-stone-200 shadow-xs">
           {/* Action Bar */}
           <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-stone-200">
             <span className="text-xs font-mono-code text-stone-600">

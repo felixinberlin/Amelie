@@ -29,27 +29,27 @@ export const AmelieRulesBanner: React.FC<AmelieRulesBannerProps> = ({
   const isEs = lang === 'es';
 
   return (
-    <div className="relative rounded-2xl bg-[#faf4e8] border border-[#d8cbba] p-5 md:p-6 shadow-xs overflow-hidden transition-all">
+    <div className="relative rounded-2xl bg-[var(--m-surface-2)] border border-[var(--m-line-strong)] p-5 md:p-6 shadow-xs overflow-hidden transition-all">
       {/* Decorative French Postal Markings */}
       <div className="absolute -right-4 -bottom-6 select-none pointer-events-none opacity-5 hidden lg:block">
-        <div className="font-typewriter text-9xl font-black text-[#8c1d40]">PAR AVION</div>
+        <div className="font-typewriter text-9xl font-black text-[var(--m-accent)]">PAR AVION</div>
       </div>
 
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-[#e2d5c3]">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-[var(--m-line)]">
         <div className="flex items-start sm:items-center gap-3.5">
-          <div className="w-10 h-10 rounded-xl bg-[#8c1d40] text-[#fbf7f0] flex items-center justify-center shrink-0 shadow-sm border border-[#701531]">
-            <Compass className="w-5 h-5 text-[#f6bd60]" />
+          <div className="w-10 h-10 rounded-xl bg-[var(--m-accent)] text-[var(--m-bg)] flex items-center justify-center shrink-0 shadow-sm border border-[var(--m-accent-strong)]">
+            <Compass className="w-5 h-5 text-[var(--m-gold)]" />
           </div>
           <div>
             <div className="flex flex-wrap items-center gap-2">
-              <span className="font-typewriter text-[11px] font-bold uppercase tracking-widest text-[#8c1d40] px-2 py-0.5 rounded bg-[#8c1d40]/10 border border-[#8c1d40]/20">
+              <span className="font-typewriter text-[11px] font-bold uppercase tracking-widest text-[var(--m-accent)] px-2 py-0.5 rounded bg-[var(--m-accent)]/10 border border-[var(--m-accent)]/20">
                 {isDe ? 'Die Amélie-Philosophie' : isEs ? 'La filosofía Amélie' : 'The Amélie Philosophy'}
               </span>
-              <span className="text-[11px] font-typewriter text-[#8b6f57]">
+              <span className="text-[11px] font-typewriter text-[var(--m-muted)]">
                 Montmartre · 6 Règles d'Or · CC0
               </span>
             </div>
-            <h3 className="text-xl sm:text-2xl font-bold font-amelie text-[#2b1e16] tracking-tight mt-0.5">
+            <h3 className="text-xl sm:text-2xl font-bold font-amelie text-[var(--m-ink)] tracking-tight mt-0.5">
               {isDe ? 'Die sechs Regeln: Ideen, die jemand anderem gehören' : isEs ? 'Las seis reglas: ideas que pertenecen a otra persona' : 'The Six Rules: Ideas that belong to someone else'}
             </h3>
           </div>
@@ -59,9 +59,9 @@ export const AmelieRulesBanner: React.FC<AmelieRulesBannerProps> = ({
           {onOpenEmails && (
             <button
               onClick={onOpenEmails}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-typewriter font-semibold bg-[#ede3d1] hover:bg-[#e2d5c3] text-[#4a3728] border border-[#d4c4b0] transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-typewriter font-semibold bg-[var(--m-sunk)] hover:bg-[var(--m-line)] text-[#4a3728] border border-[#d4c4b0] transition-colors cursor-pointer"
             >
-              <Mail className="w-3.5 h-3.5 text-[#8c1d40]" />
+              <Mail className="w-3.5 h-3.5 text-[var(--m-accent)]" />
               <span>{isDe ? 'Muster-Mails' : isEs ? 'Correos de ejemplo' : 'Sample Emails'}</span>
             </button>
           )}
@@ -69,16 +69,16 @@ export const AmelieRulesBanner: React.FC<AmelieRulesBannerProps> = ({
           {onOpenManifest && (
             <button
               onClick={onOpenManifest}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-typewriter font-semibold bg-[#8c1d40] hover:bg-[#741533] text-[#fff9f5] transition-colors shadow-2xs cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-typewriter font-semibold bg-[var(--m-accent)] hover:bg-[var(--m-accent-strong)] text-[var(--m-on-accent)] transition-colors shadow-2xs cursor-pointer"
             >
-              <Sparkles className="w-3.5 h-3.5 text-[#f6bd60]" />
+              <Sparkles className="w-3.5 h-3.5 text-[var(--m-gold)]" />
               <span>{isDe ? 'Zum Manifest' : isEs ? 'Manifiesto' : 'Manifesto'}</span>
             </button>
           )}
 
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="p-1.5 rounded-lg text-[#6b5849] hover:bg-[#ede3d1] transition-colors cursor-pointer border border-transparent hover:border-[#d4c4b0]"
+            className="p-1.5 rounded-lg text-[var(--m-ink-3)] hover:bg-[var(--m-sunk)] transition-colors cursor-pointer border border-transparent hover:border-[#d4c4b0]"
             title={isExpanded ? (isDe ? 'Einklappen' : isEs ? 'Plegar' : 'Collapse') : (isDe ? 'Ausklappen' : isEs ? 'Desplegar' : 'Expand')}
           >
             {isExpanded ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
@@ -87,7 +87,7 @@ export const AmelieRulesBanner: React.FC<AmelieRulesBannerProps> = ({
       </div>
 
       {/* Quote Banner */}
-      <div className="pt-3 text-xs sm:text-sm text-[#5c4a3d] font-serif-title italic leading-relaxed">
+      <div className="pt-3 text-xs sm:text-sm text-[var(--m-ink-2)] font-serif-title italic leading-relaxed">
         « {isDe
           ? 'Amélie Poulain findet eine alte Blechdose hinter einer Fliese, recherchiert vierzig Jahre später den Jungen, dem sie gehörte, legt sie ihm in eine Telefonzelle und verschwindet. Sie sucht sich die Person aus, bevor sie das Geschenk macht, und fragt hinterher nie nach.'
           : isEs
@@ -108,19 +108,19 @@ export const AmelieRulesBanner: React.FC<AmelieRulesBannerProps> = ({
               }}
               className={`p-3 rounded-xl text-left border transition-all cursor-pointer flex flex-col justify-between ${
                 isSelected
-                  ? 'bg-[#8c1d40] text-white border-[#701531] shadow-md ring-2 ring-[#f6bd60]/40'
-                  : 'bg-[#fffdf9] text-[#2b1e16] border-[#dfd1be] hover:border-[#8c1d40]/40 hover:bg-[#fcf7ed]'
+                  ? 'bg-[var(--m-accent)] text-white border-[var(--m-accent-strong)] shadow-md ring-2 ring-[var(--m-gold)]/40'
+                  : 'bg-[var(--m-surface)] text-[var(--m-ink)] border-[var(--m-line)] hover:border-[var(--m-accent)]/40 hover:bg-[#fcf7ed]'
               }`}
             >
               <div className="flex items-center justify-between gap-1 mb-1.5">
                 <span
                   className={`w-5 h-5 rounded-full text-[11px] font-mono-code font-bold flex items-center justify-center shrink-0 ${
-                    isSelected ? 'bg-[#f6bd60] text-[#701531]' : 'bg-[#ede3d1] text-[#8c1d40]'
+                    isSelected ? 'bg-[var(--m-gold)] text-[var(--m-accent-strong)]' : 'bg-[var(--m-sunk)] text-[var(--m-accent)]'
                   }`}
                 >
                   {rule.number}
                 </span>
-                <span className={`text-[10px] font-typewriter uppercase tracking-wider ${isSelected ? 'text-[#f6bd60]' : 'text-[#8b6f57]'}`}>
+                <span className={`text-[10px] font-typewriter uppercase tracking-wider ${isSelected ? 'text-[var(--m-gold)]' : 'text-[var(--m-muted)]'}`}>
                   {rule.number === 1
                     ? (isDe ? 'Zustellung' : isEs ? 'Entrega' : 'Delivery')
                     : rule.number === 2
@@ -144,27 +144,27 @@ export const AmelieRulesBanner: React.FC<AmelieRulesBannerProps> = ({
 
       {/* Expanded Details Section */}
       {isExpanded && (
-        <div className="mt-5 pt-4 border-t border-[#dfd1be] space-y-4 animate-fadeIn">
+        <div className="mt-5 pt-4 border-t border-[var(--m-line)] space-y-4 animate-fadeIn">
           {selectedRuleNum ? (
             (() => {
               const rule = MANIFEST_RULES.find((r) => r.number === selectedRuleNum);
               if (!rule) return null;
               return (
-                <div className="p-4 rounded-xl bg-white border border-[#8c1d40]/30 shadow-2xs space-y-2">
+                <div className="p-4 rounded-xl bg-white border border-[var(--m-accent)]/30 shadow-2xs space-y-2">
                   <div className="flex items-center gap-2">
-                    <span className="px-2 py-0.5 rounded bg-[#8c1d40] text-white font-mono-code text-xs font-bold">
+                    <span className="px-2 py-0.5 rounded bg-[var(--m-accent)] text-white font-mono-code text-xs font-bold">
                       {isDe ? `Regel #${rule.number}` : isEs ? `Regla #${rule.number}` : `Rule #${rule.number}`}
                     </span>
-                    <h4 className="text-sm sm:text-base font-bold font-amelie text-[#2b1e16]">
+                    <h4 className="text-sm sm:text-base font-bold font-amelie text-[var(--m-ink)]">
                       {isDe ? rule.titleDe : isEs ? translate(`manifest.rule${rule.number}.title`, 'es', rule.titleEn) : rule.titleEn}
                     </h4>
                   </div>
-                  <p className="text-xs sm:text-sm text-[#4a3b2c] leading-relaxed">
+                  <p className="text-xs sm:text-sm text-[var(--m-ink-2)] leading-relaxed">
                     {isDe ? rule.descriptionDe : isEs ? translate(`manifest.rule${rule.number}.desc`, 'es', rule.descriptionEn) : rule.descriptionEn}
                   </p>
-                  <div className="pt-2 text-xs font-typewriter text-[#8c1d40] font-semibold">
+                  <div className="pt-2 text-xs font-typewriter text-[var(--m-accent)] font-semibold">
                     ✦ {isDe ? 'Faustformel: ' : isEs ? 'Regla general: ' : 'Rule of Thumb: '}
-                    <span className="font-normal italic text-[#2b1e16]">
+                    <span className="font-normal italic text-[var(--m-ink)]">
                       {isDe ? rule.ruleOfThumbDe : isEs ? translate(`manifest.rule${rule.number}.thumb`, 'es', rule.ruleOfThumbEn) : rule.ruleOfThumbEn}
                     </span>
                   </div>
@@ -172,9 +172,9 @@ export const AmelieRulesBanner: React.FC<AmelieRulesBannerProps> = ({
               );
             })()
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs text-[#5c4a3d]">
-              <div className="p-3.5 rounded-xl bg-white border border-[#dfd1be] space-y-1">
-                <span className="font-typewriter font-bold text-[#8c1d40] uppercase text-[11px] block">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs text-[var(--m-ink-2)]">
+              <div className="p-3.5 rounded-xl bg-white border border-[var(--m-line)] space-y-1">
+                <span className="font-typewriter font-bold text-[var(--m-accent)] uppercase text-[11px] block">
                   ✦ {isDe ? 'Das 1:20 Verhältnis' : isEs ? 'La proporción 1:20' : 'The 1:20 Ratio'}
                 </span>
                 <p>
@@ -185,8 +185,8 @@ export const AmelieRulesBanner: React.FC<AmelieRulesBannerProps> = ({
                     : 'Commodity AI makes extraction and coding virtually free. You find ideas 20x faster than you can build: keep 1, gift the other 19.'}
                 </p>
               </div>
-              <div className="p-3.5 rounded-xl bg-white border border-[#dfd1be] space-y-1">
-                <span className="font-typewriter font-bold text-[#1b4332] uppercase text-[11px] block">
+              <div className="p-3.5 rounded-xl bg-white border border-[var(--m-line)] space-y-1">
+                <span className="font-typewriter font-bold text-[var(--m-green)] uppercase text-[11px] block">
                   ✦ {isDe ? 'Der Kula-Ring (Die Gabe)' : isEs ? 'El anillo de Kula (el regalo)' : 'The Kula Ring (The Gift)'}
                 </span>
                 <p>
@@ -201,20 +201,20 @@ export const AmelieRulesBanner: React.FC<AmelieRulesBannerProps> = ({
           )}
 
           {/* Quick Pledge Copy Bar */}
-          <div className="p-3.5 rounded-xl bg-[#2b1e16] text-[#fbf7f0] flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-sm">
+          <div className="p-3.5 rounded-xl bg-[var(--m-ink)] text-[var(--m-bg)] flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-sm">
             <div className="flex items-center gap-2 text-xs">
-              <Sparkles className="w-4 h-4 text-[#f6bd60] shrink-0" />
+              <Sparkles className="w-4 h-4 text-[var(--m-gold)] shrink-0" />
               <span className="italic font-amelie">
                 "{AMELIE_PLEDGE[lang]}"
               </span>
             </div>
             <button
               onClick={copyPledge}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#8c1d40] hover:bg-[#a3224b] text-white text-xs font-typewriter font-bold transition-colors shrink-0 cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[var(--m-accent)] hover:bg-[#a3224b] text-white text-xs font-typewriter font-bold transition-colors shrink-0 cursor-pointer"
             >
               {copiedPledge ? (
                 <>
-                  <Check className="w-3.5 h-3.5 text-[#f6bd60]" />
+                  <Check className="w-3.5 h-3.5 text-[var(--m-gold)]" />
                   <span>{isDe ? 'Kopiert!' : isEs ? '¡Copiado!' : 'Copied!'}</span>
                 </>
               ) : (
