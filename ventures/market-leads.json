@@ -118,5 +118,53 @@
     "amelieTwin": "procure-lens",
     "mvpEngineReady": false,
     "lastUpdated": "2026-09-28"
+  },
+  {
+    "id": "canopy-audit-pro",
+    "name": "CanopyAudit Pro (Urbane Baumschutz- & FLL-Compliance)",
+    "category": "b2b-compliance",
+    "stage": "criteria-extracted",
+    "pricingModel": "per-project-or-subscription",
+    "targetPrice": "\u20ac290/report or \u20ac590/month",
+    "targetAudience": "Commercial Real Estate Developers, Housing Corporations (e.g. Vonovia), Municipal Facility Managers",
+    "amelieTwin": "gruenflaechen-regelwerk-auditor",
+    "mvpEngineReady": false,
+    "lastUpdated": "2026-09-29"
+  },
+  {
+    "id": "esrs-e4-nature-portfolio",
+    "name": "NaturePortfolio (CSRD ESRS E4 & TNFD Reporting)",
+    "category": "b2b-compliance",
+    "stage": "criteria-extracted",
+    "pricingModel": "monthly-subscription",
+    "targetPrice": "\u20ac490 - \u20ac990/month",
+    "targetAudience": "Infrastructure Developers, Utilities (Wind/Solar Parks), Real Estate ESG Leads subject to CSRD E4",
+    "amelieTwin": "eco-stratege",
+    "mvpEngineReady": false,
+    "lastUpdated": "2026-09-29"
+  },
+  {
+    "id": "doppik-diff-pro",
+    "name": "DoppikDiff Pro (Kommunalhaushalts- & Nachtrags-Analyzer)",
+    "category": "vertical-saas",
+    "stage": "criteria-extracted",
+    "pricingModel": "monthly-subscription-or-report",
+    "targetPrice": "\u20ac149/month or \u20ac890/audit report",
+    "targetAudience": "Municipal Consulting Firms (Rödl & Partner, PwC Public Sector), Local Council Factions, State Audit Courts",
+    "amelieTwin": "haushaltslupe",
+    "mvpEngineReady": false,
+    "lastUpdated": "2026-09-29"
+  },
+  {
+    "id": "cyanowatch-pro",
+    "name": "CyanoWatch Pro (WRRL & Badegewässer-Frühwarnung)",
+    "category": "b2b-api",
+    "stage": "criteria-extracted",
+    "pricingModel": "seasonal-subscription",
+    "targetPrice": "\u20ac390/month per lake region (May-Sept)",
+    "targetAudience": "Municipal Waterworks, Tourism Boards, Lake Recreation Operators",
+    "amelieTwin": "aquascan-sentinel",
+    "mvpEngineReady": false,
+    "lastUpdated": "2026-09-29"
   }
 ]
