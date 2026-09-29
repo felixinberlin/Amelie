@@ -105,3 +105,39 @@ Unternehmen oberhalb einer Verbrauchsschwelle müssen nach ihrem Energieaudit ei
 Diese Idee gehört niemandem. Nimm sie, bau sie, verkauf sie — du schuldest mir nichts, nicht einmal eine Antwort. Wenn du eines Tages eine Idee hast, die du nicht bauen wirst, gib sie jemandem, der es tut.
 
 CC0 / Public Domain. — Félix, Berlin · github.com/felixinberlin
+
+---
+## External Google AI-Lab Research Findings (Refereed)
+*Evaluated by Independent Researcher Agent on 2026-09-29*
+**Confidence Score:** `0.90` · **Findings:** 7 (Grounded: 0, Verified: 5)
+
+### Key Grounded Findings
+- **The German Energy Efficiency Act (EnEfG), in force since November 2023, mandates companies with an annual final energy consumption exceeding certain thresholds (e.g., 2.5 GWh or 2.77 GWh) to create, develop, and publish implementation plans for economically viable energy-saving measures.** `[F1]` `[verified]` ⚠️ `[ungrounded]`
+  > "Section 9(1) EnEfG (Draft) gives businesses with an average total annual final energy consumption of more than 2.77 GWh and less than 23.6 GWh three years from completion of an energy audit to draw up and publish feasible implementation plans for all energy-saving measures identified as economically viable in an audit conducted pursuant to section 8(1), sentence 1 EDL-G."
+  *Source (commercial):* [https://www.gleisslutz.com/en/aktuelles/know-how/gesetzentwurf-zur-beschleunigung-der-umsetzung-der-energieeffizienzr...](https://www.gleisslutz.com/en/aktuelles/know-how/gesetzentwurf-zur-beschleunigung-der-umsetzung-der-energieeffizienzrichtlinie)
+- **These implementation plans under EnEfG must be updated annually to reflect progress and formally acknowledged by company management.** `[F2]` `[verified]` ⚠️ `[ungrounded]`
+  > "The implementation plans must be updated annually to reflect progress in implementing the identified measures and formally acknowledged by company management."
+  *Source (commercial):* [https://www.gleisslutz.com/en/aktuelles/know-how/gesetzentwurf-zur-beschleunigung-der-umsetzung-der-energieeffizienzr...](https://www.gleisslutz.com/en/aktuelles/know-how/gesetzentwurf-zur-beschleunigung-der-umsetzung-der-energieeffizienzrichtlinie)
+- **Initially, the completeness and accuracy of EnEfG implementation plans had to be confirmed by a certifier, environmental verifier, or energy auditor prior to publication, but a draft amendment suggests this requirement might be removed, with plans instead being submitted to management and included in annual reports.** `[F3]` `[verified]` ⚠️ `[ungrounded]`
+  > "The completeness and accuracy of the implementation plans must be confirmed by a certifier, environmental verifier or energy auditor prior to publication."
+  *Source (commercial):* [https://www.arvato-systems.com/blog/enefg-obliges-to-save-energy](https://www.arvato-systems.com/blog/enefg-obliges-to-save-energy)
+- **Fines of up to 50,000 Euros can be imposed for non-compliance with the EnEfG requirements regarding the creation, publication, or confirmation of implementation plans.** `[F4]` ⚠️ `[ungrounded]`
+  > "Für die nicht, verspätete, unvollständige oder fehlerhafte Erstellung, Bestätigung oder Veröffentlichung der Umsetzungspläne selbst drohen zudem Bußgelder von bis zu 50.000 Euro."
+  *Source (commercial):* [https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIcQKcsQdlz5_N4HFjDtzvfRSp7WjNPTkSuKKnz2DaycSDmu...](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIcQKcsQdlz5_N4HFjDtzvfRSp7WjNPTkSuKKnz2DaycSDmuUsSUWLCP6VDl38oCCd_JW8111Gtj0Te2euL0-tigTjXxtOkebS7H4zDWnHZZadEHFQultZGesAEZkCfCNejxTwCp8E19IvOY8WiYQJcEHHvgPKTSOF4oTHE4TQ1Y8camnujtIUAFTPeBingeeukPCMnX8=)
+- **There is a specific 'Energy Efficiency Register for Data Centers' in Germany, where data centers with a nominal connected load of 300 kW or more must submit specific energy consumption data to federal authorities by March 31st of each year.** `[F5]` `[verified]` ⚠️ `[ungrounded]`
+  > "The German government is launching an Energy Efficiency Register for Data Centers. By March 31 of each year, data centers must submit their energy efficiency data to the register."
+  *Source (commercial):* [https://dc-intelligence.com/dci-en/certificate/energieeffiezienzgesetz-enefg/](https://dc-intelligence.com/dci-en/certificate/energieeffiezienzgesetz-enefg/)
+- **The U.S. Department of Energy developed the 'Standard Energy Efficiency Data (SEED) Platform™', an open-source enterprise data platform for managing building performance data, but this is focused on building performance rather than corporate implementation plans and is US-based.** `[F6]` `[verified]` ⚠️ `[ungrounded]`
+  > "To address this challenge and save state and local governments from having to make duplicative, siloed investments, the U.S. Department of Energy developed the the Standard Energy Efficiency Data (SEED) Platform™. SEED is an open-source secure, enterprise data platform for managing portfolio scale building performance data from a variety of sources."
+  *Source (government):* [https://www.energy.gov/cmei/buildings/standard-energy-efficiency-data-seed-platform](https://www.energy.gov/cmei/buildings/standard-energy-efficiency-data-seed-platform)
+- **The European Energy Efficiency Directive (EED) sets overall energy efficiency targets and obligations for Member States, but the provided search results do not indicate a centralized EU-wide public registry for corporate energy efficiency implementation plans.** `[F7]` `[not_found]` ⚠️ `[ungrounded]`
+  > "The revised Energy Efficiency Directive (EU/2023/1791) significantly raises the EU's ambition on energy efficiency. It establishes 'energy efficiency first' as a fundamental principle of EU energy policy, giving it legal-standing for the first time."
+  *Source (government):* [https://energy.ec.europa.eu/topics/energy-efficiency/energy-efficiency-targets-directive-and-rules/energy-efficiency-...](https://energy.ec.europa.eu/topics/energy-efficiency/energy-efficiency-targets-directive-and-rules/energy-efficiency-directive_en)
+
+### Gaps & Unresolved Technical Questions
+- ❓ While the EnEfG mandates the 'publication' of energy efficiency implementation plans, the specific mechanism or platform for this publication for general corporate plans is not clearly defined in the search results, suggesting a lack of a centralized, standardized public open-data registry for these plans.
+- ❓ The existence of a specialized 'Energy Efficiency Register for Data Centers' implies that a broader, centralized public open-data registry for all corporate energy efficiency implementation plans under EnEfG does not currently exist or is not widely publicized.
+- ❓ There is no evidence in the search results of a centralized, standardized public open-data registry at the EU level for corporate energy efficiency implementation plans, despite the overarching EU Energy Efficiency Directive.
+
+### Competing & Alternative Terminology
+`BAFA (Bundesamt für Wirtschaft und Ausfuhrkontrolle): Federal Office for Economic Affairs and Export Control (Germany)`, `BfEE (Bundesstelle für Energieeffizienz): Federal Energy Efficiency Centre (Germany)`, `DIN EN 17463 (VALERI): Standard for cost-benefit analysis of energy efficiency measures`, `EED (Energy Efficiency Directive): EU Energy Efficiency Directive`, `EMAS (Eco-Management and Audit Scheme): A voluntary EU scheme for environmental management and environmental audits`, `EnEfG (Energieeffizienzgesetz): German Energy Efficiency Act`, `GWh: Gigawatt-hour`, `ISO 50001: International standard for energy management systems`, `PUE (Power Usage Effectiveness): A metric for data center energy efficiency`, `Umsetzungsplan: Implementation plan`
