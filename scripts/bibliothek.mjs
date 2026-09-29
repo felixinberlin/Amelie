@@ -52,7 +52,7 @@ LESEN (alle Agenten)
   status                                      Bestand auf einen Blick
 
 SCHREIBEN (nur Bibliothekar, --dry-run zeigt nur)
-  grab add --from <datei.json>                Totenschein aus JSON (Objekt) anlegen, Friedhof-README neu erzeugen
+  grab add --from <datei.json>                Totenschein aus JSON (Objekt oder Liste von Objekten) anlegen, Friedhof-README neu erzeugen
   grab add --id … --title … --original-de … --original-en … --why-de … --why-en … --lesson-de … --lesson-en …
            --domain … --cause … --killer … --found-by … --origin … --stage … --born-in … --died-on … --resurrect-de … --resurrect-en …
            [--evidence "…"]… [--nachruf pfad]
@@ -163,7 +163,7 @@ function grabAdd(graeber) {
   let g;
   if (one('from')) {
     g = JSON.parse(readFileSync(one('from') === '-' ? 0 : one('from'), 'utf8'));
-    if (Array.isArray(g)) die('--from erwartet ein Objekt (ein Grab je Aufruf)');
+    if (Array.isArray(g)) return grabAddMehrere(graeber, g);
   } else {
     const map = { id: 'id', title: 'title', 'title-key': 'titleKey', 'original-de': 'originalIdeaDe', 'original-en': 'originalIdeaEn', 'why-de': 'whyDiscardedDe', 'why-en': 'whyDiscardedEn', 'lesson-de': 'lessonDe', 'lesson-en': 'lessonEn', domain: 'domain', cause: 'cause', killer: 'killer', 'found-by': 'foundBy', origin: 'origin', stage: 'stage', 'born-in': 'bornIn', 'died-on': 'diedOn', 'resurrect-de': 'resurrectIfDe', 'resurrect-en': 'resurrectIfEn', nachruf: 'nachruf' };
     g = { evidence: many('evidence') };
@@ -179,6 +179,24 @@ function grabAdd(graeber) {
   console.log(`Begraben: ${grab.id} (${grab.cause}/${grab.killer}, ${grab.diedOn}) — jetzt ${graeber.length + 1} Gräber.`);
   console.log(r.status === 0 ? r.stdout.trim() : 'friedhof-muster fehlgeschlagen:\n' + r.stderr);
   console.log('Nächste Schritte: Quelle mit `quellen log <id> --grab ' + grab.id + '` verknüpfen, Protokollzeile (`bib protokoll add`), `npm run export:data`.');
+}
+
+/** `--from datei.json` mit einer Liste: alles prüfen (auch gegeneinander), dann einmal schreiben. */
+function grabAddMehrere(graeber, liste) {
+  const doseIds = readDataIds().dosen;
+  const fehler = [];
+  const neu = [];
+  for (const [i, g] of liste.entries()) {
+    const errs = validateGrab(g, { graeber: [...graeber, ...neu], doseIds });
+    if (errs.length) fehler.push(`Eintrag ${i + 1} (${g?.id ?? '?'}):\n` + errs.map((e) => '    - ' + e).join('\n'));
+    else neu.push(orderGrab(g));
+  }
+  if (fehler.length) die('Totenscheine ungültig, nichts gespeichert:\n  ' + fehler.join('\n  '));
+  if (dry) return console.log(`[dry-run] würde ${neu.length} Gräber anlegen: ${neu.map((g) => g.id).join(', ')}`);
+  writeFileSync(GRAEBER_FILE, JSON.stringify([...graeber, ...neu], null, 2) + '\n');
+  const r = run('node', ['scripts/friedhof-muster.mjs']);
+  console.log(`Begraben: ${neu.map((g) => g.id).join(', ')} — jetzt ${graeber.length + neu.length} Gräber.`);
+  console.log(r.status === 0 ? r.stdout.trim() : 'friedhof-muster fehlgeschlagen:\n' + r.stderr);
 }
 
 // ---------------------------------------------------------------- protokoll
@@ -244,8 +262,8 @@ function cmdQuellen() {
   const runde = one('runde') ?? die('--runde fehlt');
   const text = readFileSync(file === '-' ? 0 : file, 'utf8');
   const data = loadQuellen();
-  const { dosen, discarded } = refIds();
-  const { eintraege, fehler } = parseQuellenmeldung(text, { quellen: data.quellen, katalog: data.katalog, typen: data.typen.map((t) => t.id), doseIds: new Set(dosen), graveIds: new Set(discarded) });
+  const { doseIds, graveIds } = refIds(); // schon Sets (Form aus quellen-lib.mjs)
+  const { eintraege, fehler } = parseQuellenmeldung(text, { quellen: data.quellen, katalog: data.katalog, typen: data.typen.map((t) => t.id), doseIds, graveIds });
   if (fehler.length) die('Quellenmeldung fehlerhaft, nichts gebucht:\n' + fehler.map((f) => '  - ' + f).join('\n'));
   let ok = 0;
   for (const e of eintraege) {

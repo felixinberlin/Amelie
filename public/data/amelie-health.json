@@ -1,13 +1,13 @@
 {
   "auditVersion": 1,
-  "generatedAt": "2026-09-29T17:22:08.140Z",
+  "generatedAt": "2026-09-29T18:15:17.470Z",
   "repository": {
-    "commit": "6518337",
+    "commit": "18b89fc",
     "branch": "claude/fervent-davinci-lwvslj"
   },
   "inventory": {
     "doses": 45,
-    "graves": 81,
+    "graves": 92,
     "demos": 10,
     "researchEntries": 35,
     "candidateIdeas": 20,
@@ -33,12 +33,12 @@
       "audio": 1
     },
     "graveCategory": {
-      "gebaut": 44,
-      "beim-empfaenger": 17,
-      "reality-check": 9,
+      "gebaut": 47,
+      "beim-empfaenger": 19,
+      "reality-check": 12,
       "duplikat": 2,
       "mode": 4,
-      "praemisse": 5
+      "praemisse": 8
     }
   },
   "checks": [
@@ -110,11 +110,11 @@
       "id": "DRIFT-AGENTS.md-Gräber-58",
       "severity": "warning",
       "category": "documentation",
-      "message": "AGENTS.md claims 58 Gräber, but deterministic source scanner finds 81.",
+      "message": "AGENTS.md claims 58 Gräber, but deterministic source scanner finds 92.",
       "file": "AGENTS.md",
       "details": {
         "claim": "58 beerdigte Ideen",
-        "actual": 81,
+        "actual": 92,
         "type": "stale_count"
       }
     },
@@ -122,11 +122,11 @@
       "id": "DRIFT-AGENTS.md-Gräber-9",
       "severity": "warning",
       "category": "documentation",
-      "message": "AGENTS.md claims 9 Gräber, but deterministic source scanner finds 81.",
+      "message": "AGENTS.md claims 9 Gräber, but deterministic source scanner finds 92.",
       "file": "AGENTS.md",
       "details": {
         "claim": "9 Gräber",
-        "actual": 81,
+        "actual": 92,
         "type": "stale_count"
       }
     },

@@ -43,7 +43,7 @@ npm run bib -- protokoll add --runde "Heimatgedächtnis-Runde" --titel "Ortsneck
 npm run bib -- grab add --from grab.json [--dry-run]
 ```
 
-`grab.json` ist **ein** Objekt mit den Feldern des Totenscheins (Vorlage: ein Eintrag aus `src/data/graeber.json`, Felder und Werte: `08-friedhof/README.md`, Typen: `src/types.ts` → `DiscardedItem`). Statt `--from` gehen auch Einzelflags (`--id --title --original-de --original-en --why-de --why-en --lesson-de --lesson-en --domain --cause --killer --found-by --origin --stage --born-in --died-on --resurrect-de --resurrect-en [--evidence …]… [--nachruf pfad]`).
+`grab.json` ist **ein** Objekt oder eine **Liste** von Objekten (dann wird alles geprüft, auch gegeneinander, und nur einmal geschrieben; ein Fehler bricht alles ab) mit den Feldern des Totenscheins (Vorlage: ein Eintrag aus `src/data/graeber.json`, Felder und Werte: `08-friedhof/README.md`, Typen: `src/types.ts` → `DiscardedItem`). Statt `--from` gehen auch Einzelflags (`--id --title --original-de --original-en --why-de --why-en --lesson-de --lesson-en --domain --cause --killer --found-by --origin --stage --born-in --died-on --resurrect-de --resurrect-en [--evidence …]… [--nachruf pfad]`).
 
 Geprüft wird: alle Pflichtfelder, `cause`/`killer`/`foundBy`/`origin`/`stage` gegen die Aufzählungen in `src/types.ts` (die CLI liest sie von dort, kein Drift), kebab-case-`id`, keine doppelte `id`, `diedOn` als ISO-Datum oder -Monat, `nachruf`-Pfad existiert, und bei `stage` `dose`/`zugestellt` ist ein `nachruf` (Grabbeigabe) Pflicht. **Eine `id`, die noch in `05-dosen/` liegt, wird abgelehnt** — erst nach Friedhofsordnung Schritt 2 bestatten. Danach schreibt die CLI `src/data/graeber.json` und regeneriert die Muster in `08-friedhof/README.md`.
 

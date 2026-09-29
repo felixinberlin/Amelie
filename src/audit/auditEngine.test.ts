@@ -1,15 +1,16 @@
 import { describe, it, expect } from 'vitest';
 import { runAudit } from './index';
+import { DOSEN_DATA, DISCARDED_DATA } from '../data/dosen';
 
 describe('Amélie Self-Audit Engine', () => {
   it('1. returns correct Dose count (>0)', () => {
     const { health } = runAudit({ skipValidationScripts: true });
-    expect(health.inventory.doses).toBe(45);
+    expect(health.inventory.doses).toBe(DOSEN_DATA.length);
   });
 
   it('2. returns correct Grave count (>0)', () => {
     const { health } = runAudit({ skipValidationScripts: true });
-    expect(health.inventory.graves).toBe(81);
+    expect(health.inventory.graves).toBe(DISCARDED_DATA.length);
   });
 
   it('3. detects duplicate IDs if artificially injected', () => {
