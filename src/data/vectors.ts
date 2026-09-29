@@ -1,5 +1,6 @@
 import type { Language } from '../types';
 import doseVectorsJson from './doseVectors.json';
+import candidateVectorsJson from './candidateVectors.json';
 
 /**
  * Vektor-Katalog des Idea Reviewers (Skill `idea-reviewer`, Rubrik in
@@ -73,6 +74,14 @@ export const DOSE_VECTORS: Record<string, DoseVectors> = doseVectorsJson as unkn
 
 export function getDoseVectors(id: string): DoseVectors | undefined {
   return DOSE_VECTORS[id];
+}
+
+/** Desk-Triage der ungepackten Kandidaten (Reviewer, ohne Websuche; gepackte erben die Vektoren ihrer Dose). */
+export const CANDIDATE_VECTORS: Record<string, DoseVectors> = candidateVectorsJson as unknown as Record<string, DoseVectors>;
+
+/** Löst Vektoren für eine Dose oder einen Kandidaten (Kandidat → eigene Werte oder Vektoren der gepackten Dose). */
+export function getCandidateVectors(id: string, packedDoseId?: string): DoseVectors | undefined {
+  return CANDIDATE_VECTORS[id] ?? (packedDoseId ? DOSE_VECTORS[packedDoseId] : undefined);
 }
 
 export function vectorScore(vec: DoseVectors, key: VectorKey): number {

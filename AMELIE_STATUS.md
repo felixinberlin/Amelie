@@ -1,6 +1,6 @@
 # Amélie Status
 
-Generated: 2026-09-29T08:25:41.093Z
+Generated: 2026-09-29T08:52:24.707Z
 
 ## System
 
@@ -48,6 +48,7 @@ None.
 ### Warnings
 
 * **[DEMO-UNLINKED-chemhazard-stop]** Demo folder "07-demos/chemhazard-stop" does not correspond to any active Dose or Grave ID. (07-demos/chemhazard-stop)
+* **[DRIFT-AGENTS.md-Dosen-6]** AGENTS.md claims 6 Dosen, but deterministic source scanner finds 44. (AGENTS.md)
 * **[DRIFT-AGENTS.md-Gräber-58]** AGENTS.md claims 58 Gräber, but deterministic source scanner finds 69. (AGENTS.md)
 * **[DRIFT-AGENTS.md-Gräber-9]** AGENTS.md claims 9 Gräber, but deterministic source scanner finds 69. (AGENTS.md)
 * **[DRIFT-en/README.md-Dosen-15]** en/README.md claims 15 Dosen, but deterministic source scanner finds 44. (en/README.md)
@@ -61,5 +62,5 @@ None.
 ## Generated from
 
 * Audit version: 1
-* Commit: 9af5e4d
+* Commit: 79ddc13
 * Branch: claude/loving-franklin-1tv4el

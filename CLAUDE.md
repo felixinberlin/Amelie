@@ -79,6 +79,8 @@ Wenn du ein Ticket, ein Kriterium oder eine Dosen-Beschreibung änderst, musst d
 * **Vektor V8 „Fun" (29.09.2026):**
   * Der Reviewer bewertet jetzt **8 Vektoren** (V1–V7 Kern /35, V8 Fun additiv → Gesamt /40). Fun kompensiert nie; das Dose-Ready-Gate rechnet nur V1–V7 (≥ 24/35). Rubrik: `skills/idea-reviewer/idea-reviewer/references/vector-rubrics.md`.
   * Alle 44 Dosen wurden neu klassifiziert (Log: Abschnitt „Fun-Re-Klassifikation" in `06-suche/amelie-classification-log.md`). Datenquelle fürs Frontend: `src/data/doseVectors.json` (+ Katalog `src/data/vectors.ts`, Export `public/data/vectors.json`). Sichtbar im Dosen-Modal, auf der Einzelseite (`DoseVectorPanel`) und als Mini-Balken plus Sortierung in der Galerie.
+  * Auch die 146 ungepackten Kandidaten haben V1–V8 (Schreibtisch-Triage ohne Websuche, `src/data/candidateVectors.json`; gepackte erben von ihrer Dose). Sichtbar in der Ideen-Pipeline (Panel + Sortierung). Neue Kandidaten dort eintragen (`vectors.test.ts` prüft es).
+  * **Vergleichsseite** (Haupt-Tab Compare, `VectorCompareView`): bis zu 6 Dosen/Kandidaten anklicken, Netzdiagramm über V1–V8 plus Tabelle nebeneinander (gepackte Kandidaten werden nicht doppelt gelistet); die Auswahl steht im Link (`#compare=dose:<id>,cand:<id>`, Button „Auswahl teilen").
   * **Bei jeder neuen Dose:** Eintrag in `src/data/doseVectors.json` ergänzen (`vectors.test.ts` schlägt sonst fehl), dann `npm run export:data`.
 
 * **Tab-Aufräumrunde (29.09.2026):**

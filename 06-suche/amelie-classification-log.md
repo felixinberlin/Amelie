@@ -989,3 +989,39 @@ Neuer Vektor **V8 · Fun** (Rubrik: `skills/idea-reviewer/idea-reviewer/referenc
 **Verteilung Fun:** 5× 7 · 4× 7 · 3× 16 · 2× 12 · 1× 2 · Ø 3.11
 
 **Lesart:** Die Fun-Spitze (5) sind Simulationen und Spiele zum Anfassen; die Fun-Basis (1–2) sind Register und Prüfer mit Dokument als Ergebnis. Das ist kein Qualitätsurteil, sondern ein Hinweis für Empfängerwahl (Museen, Schulen, Communities) und Demo-Reihenfolge.
+
+---
+
+## Kandidaten-Triage mit V1–V8 — 29.09.2026
+
+Alle 146 ungepackten Kandidaten aus `CANDIDATE_IDEAS_DATA` wurden vom Idea Reviewer in sechs parallelen Läufen als **Schreibtisch-Triage** bewertet (aus dem Steckbrief, **ohne Websuche und ohne erneute Vorprüfung**; V7 spiegelt nur die Güte der zitierten Quelle). Die 8 bereits gepackten Kandidaten erben die Vektoren ihrer Dose (`packedDoseId`). Das sind **keine Triage-Urteile**: Sie ersetzen weder Prüfprotokoll noch Vollreview; Dose Ready setzt weiterhin ein vollständiges Review voraus. Daten: `src/data/candidateVectors.json`. Top 25 nach Gesamtwert:
+
+| Kandidat | Status | Kern (/35) | Fun | Gesamt (/40) |
+|---|---|:---:|:---:|:---:|
+| `attic-insulation-dewpoint-locator` | ungeprüft | 29 | 4 | 33 |
+| `legio-klar` | verengt | 29 | 3 | 32 |
+| `tile-layout-waste-minimizer` | ungeprüft | 28 | 4 | 32 |
+| `communal-rainwater-tank-balancer` | verengt | 28 | 3 | 31 |
+| `ceramic-kiln-firing-ramp-schedule` | ungeprüft | 26 | 4 | 30 |
+| `compost-carbon-nitrogen-ratio-balancer` | ungeprüft | 26 | 4 | 30 |
+| `lime-mortar-historic-masonry-calc` | ungeprüft | 27 | 3 | 30 |
+| `tenant-heating-bill-verifier` | ungeprüft | 28 | 2 | 30 |
+| `bebauungsplan-leser` | verengt | 25 | 4 | 29 |
+| `ceramic-glaze-unity-molecular-formula-balancer` | ungeprüft | 25 | 4 | 29 |
+| `filament-hygroscopy-drying-oven-timer` | ungeprüft | 26 | 3 | 29 |
+| `wood-lathe-safe-rpm-calculator` | ungeprüft | 26 | 3 | 29 |
+| `wood-stove-firewood-moisture-estimator` | ungeprüft | 26 | 3 | 29 |
+| `bicycle-wheel-spoke-resonance-tuner` | ungeprüft | 24 | 4 | 28 |
+| `brettchen-vorsortierer` | frei | 25 | 3 | 28 |
+| `greenhouse-thermal-water-barrel-sizer` | ungeprüft | 25 | 3 | 28 |
+| `heating-hydraulic-balancing-calc` | ungeprüft | 25 | 3 | 28 |
+| `honey-moisture-refractometer-correction` | ungeprüft | 26 | 2 | 28 |
+| `sandstein-streiflicht-relief` | verengt | 23 | 5 | 28 |
+| `streiflicht` | verengt | 24 | 4 | 28 |
+| `wood-moisture-shrinkage-calc` | ungeprüft | 25 | 3 | 28 |
+| `bicycle-chain-wear-ruler-calc` | ungeprüft | 25 | 2 | 27 |
+| `licht-glocken-kataster` | verengt | 24 | 3 | 27 |
+| `offline-audio-story-old-phone` | ungeprüft | 22 | 5 | 27 |
+| `seed-germination-soil-temp-calendar` | ungeprüft | 24 | 3 | 27 |
+
+**Fun-Verteilung:** 5× 3 · 4× 26 · 3× 57 · 2× 47 · 1× 13 · Ø 2.72. Vollständige Werte im Frontend (Ideen-Pipeline, Sortierung nach Vektor).

@@ -18,6 +18,7 @@ import { MusterEmailsSection } from './components/MusterEmailsSection';
 import { SelfAuditView } from './components/SelfAuditView';
 import { FundingCompass } from './components/FundingCompass';
 import { GamesView } from './components/GamesView';
+import { VectorCompareView } from './components/VectorCompareView';
 import { pipelineIdeas } from './data/pipeline';
 import { DOSEN_DATA, DISCARDED_DATA } from './data/dosen';
 import { MATRIX_DATA } from './data/matrix';
@@ -26,12 +27,13 @@ import { CANDIDATE_IDEAS_DATA } from './data/unpacked';
 import { DoseItem, Language, CandidateIdea } from './types';
 import { getTranslation } from './i18n';
 import { getActiveDosen, getActiveCandidates, saveCandidateLocal } from './services/storageService';
-import { parseDoseIdFromUrl, parseSimulatorFromUrl, setDoseUrl, clearDoseUrl } from './utils/doseUrl';
+import { parseDoseIdFromUrl, parseSimulatorFromUrl, parseCompareFromUrl, setDoseUrl, clearDoseUrl } from './utils/doseUrl';
 import { SimulatorKey, DOSE_SIMULATOR_MAP } from './data/doseSimulators';
 import { Gift, FolderGit2 } from 'lucide-react';
 
 export function App() {
   const [currentTab, setCurrentTab] = useState<string>(() => {
+    if (parseCompareFromUrl() !== null) return 'compare';
     if (parseSimulatorFromUrl()) return 'sandboxes';
     return 'dosen';
   });
@@ -79,6 +81,13 @@ export function App() {
         }
       }
       
+      if (parseCompareFromUrl() !== null) {
+        setCurrentTab('compare');
+        setActiveDosePage(null);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+
       const rawSim = parseSimulatorFromUrl();
       if (rawSim) {
         let simKey: SimulatorKey = 'glasanflug';
@@ -293,6 +302,15 @@ export function App() {
               <GamesView
                 lang={lang}
                 dosen={dosenList}
+                onOpenDose={handleOpenSinglePageById}
+              />
+            )}
+
+            {currentTab === 'compare' && (
+              <VectorCompareView
+                lang={lang}
+                dosen={dosenList}
+                candidates={candidatesList}
                 onOpenDose={handleOpenSinglePageById}
               />
             )}
