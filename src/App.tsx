@@ -18,6 +18,7 @@ import { MusterEmailsSection } from './components/MusterEmailsSection';
 import { SelfAuditView } from './components/SelfAuditView';
 import { FundingCompass } from './components/FundingCompass';
 import { GamesView } from './components/GamesView';
+import { VectorCompareView } from './components/VectorCompareView';
 import { pipelineIdeas } from './data/pipeline';
 import { DOSEN_DATA, DISCARDED_DATA } from './data/dosen';
 import { MATRIX_DATA } from './data/matrix';
@@ -293,6 +294,15 @@ export function App() {
               <GamesView
                 lang={lang}
                 dosen={dosenList}
+                onOpenDose={handleOpenSinglePageById}
+              />
+            )}
+
+            {currentTab === 'compare' && (
+              <VectorCompareView
+                lang={lang}
+                dosen={dosenList}
+                candidates={candidatesList}
                 onOpenDose={handleOpenSinglePageById}
               />
             )}

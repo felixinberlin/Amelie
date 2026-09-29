@@ -18,6 +18,7 @@ import {
   Check,
   Coins,
   Gamepad2,
+  Radar,
 } from 'lucide-react';
 import { Language } from '../types';
 import { getTranslation, withCount } from '../i18n';
@@ -94,6 +95,11 @@ export const Header: React.FC<HeaderProps> = ({
       label: t.nav.games,
       icon: Gamepad2,
       badge: GAME_IDEAS.length + GAME_DOSE_IDS.length + PLAYABLE_GAME_COUNT,
+    },
+    {
+      id: 'compare',
+      label: lang === 'de' ? 'Vergleich' : lang === 'es' ? 'Comparar' : 'Compare',
+      icon: Radar,
     },
     {
       id: 'funding',
