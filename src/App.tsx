@@ -27,12 +27,13 @@ import { CANDIDATE_IDEAS_DATA } from './data/unpacked';
 import { DoseItem, Language, CandidateIdea } from './types';
 import { getTranslation } from './i18n';
 import { getActiveDosen, getActiveCandidates, saveCandidateLocal } from './services/storageService';
-import { parseDoseIdFromUrl, parseSimulatorFromUrl, setDoseUrl, clearDoseUrl } from './utils/doseUrl';
+import { parseDoseIdFromUrl, parseSimulatorFromUrl, parseCompareFromUrl, setDoseUrl, clearDoseUrl } from './utils/doseUrl';
 import { SimulatorKey, DOSE_SIMULATOR_MAP } from './data/doseSimulators';
 import { Gift, FolderGit2 } from 'lucide-react';
 
 export function App() {
   const [currentTab, setCurrentTab] = useState<string>(() => {
+    if (parseCompareFromUrl() !== null) return 'compare';
     if (parseSimulatorFromUrl()) return 'sandboxes';
     return 'dosen';
   });
@@ -80,6 +81,13 @@ export function App() {
         }
       }
       
+      if (parseCompareFromUrl() !== null) {
+        setCurrentTab('compare');
+        setActiveDosePage(null);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+
       const rawSim = parseSimulatorFromUrl();
       if (rawSim) {
         let simKey: SimulatorKey = 'glasanflug';

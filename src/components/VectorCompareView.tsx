@@ -1,7 +1,8 @@
-import React, { useMemo, useState } from 'react';
-import { Search, X, Radar, Gift, Sparkles, RotateCcw, ExternalLink } from 'lucide-react';
+import React, { useEffect, useMemo, useState } from 'react';
+import { Search, X, Radar, Gift, Sparkles, RotateCcw, ExternalLink, Link2, Check } from 'lucide-react';
 import { CandidateIdea, DoseItem, Language } from '../types';
 import { getLocalizedTitle } from '../i18n';
+import { parseCompareFromUrl, getCompareUrl, setCompareUrl, clearCompareUrl } from '../utils/doseUrl';
 import {
   VECTOR_CATALOG,
   FUN_SOURCE_LABEL,
@@ -55,7 +56,6 @@ export const VectorCompareView: React.FC<Props> = ({ lang, dosen, candidates, on
   const isDe = lang === 'de';
   const [query, setQuery] = useState('');
   const [scope, setScope] = useState<'all' | 'dose' | 'candidate'>('all');
-  const [selected, setSelected] = useState<string[]>(() => ['dose:kristallwachstum-3d', 'dose:dose-cleaner-chemical-safety']);
   const [hover, setHover] = useState<string | null>(null);
 
   const entries = useMemo<Entry[]>(() => {
@@ -73,6 +73,43 @@ export const VectorCompareView: React.FC<Props> = ({ lang, dosen, candidates, on
   }, [dosen, candidates, lang]);
 
   const byId = useMemo(() => new Map(entries.map((e) => [e.id, e])), [entries]);
+
+  // Auswahl kommt aus dem Link (#compare=…), sonst ein Startpaar; unbekannte Ids fallen weg.
+  const fromUrl = (): string[] => {
+    const ids = parseCompareFromUrl();
+    if (ids === null) return ['dose:kristallwachstum-3d', 'dose:dose-cleaner-chemical-safety'];
+    return [...new Set(ids)].filter((id) => byId.has(id)).slice(0, MAX_SELECTED);
+  };
+  const [selected, setSelected] = useState<string[]>(fromUrl);
+  const [copied, setCopied] = useState(false);
+
+  // Auswahl → URL (replaceState löst kein hashchange aus, also keine Schleife)
+  useEffect(() => {
+    setCompareUrl(selected);
+  }, [selected]);
+
+  // Link wird bei geöffneter Seite geändert (z. B. neuer Link eingefügt) → Auswahl übernehmen
+  useEffect(() => {
+    const onHash = () => {
+      if (parseCompareFromUrl() !== null) setSelected(fromUrl());
+    };
+    window.addEventListener('hashchange', onHash);
+    return () => window.removeEventListener('hashchange', onHash);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [byId]);
+
+  // Beim Verlassen der Seite den Hash aufräumen
+  useEffect(() => () => clearCompareUrl(), []);
+
+  const copyLink = async () => {
+    try {
+      await navigator.clipboard.writeText(getCompareUrl(selected));
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      /* Zwischenablage gesperrt: Adresszeile enthält den Link ohnehin */
+    }
+  };
   const chosen = selected.map((id) => byId.get(id)).filter((e): e is Entry => !!e);
 
   const visible = useMemo(() => {
@@ -97,9 +134,21 @@ export const VectorCompareView: React.FC<Props> = ({ lang, dosen, candidates, on
           <Radar className="w-4 h-4" />
           {isDe ? 'Vektor-Vergleich' : 'Vector comparison'}
         </div>
-        <h2 className="mt-1 text-3xl font-bold font-amelie text-[var(--m-ink)]">
-          {isDe ? 'Ideen nebeneinander legen' : 'Lay ideas side by side'}
-        </h2>
+        <div className="mt-1 flex flex-wrap items-center justify-between gap-3">
+          <h2 className="text-3xl font-bold font-amelie text-[var(--m-ink)]">
+            {isDe ? 'Ideen nebeneinander legen' : 'Lay ideas side by side'}
+          </h2>
+          <button
+            type="button"
+            onClick={copyLink}
+            disabled={selected.length === 0}
+            className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl border border-[var(--m-line-strong)] text-xs font-semibold text-[var(--m-ink)] hover:bg-[var(--m-sunk)] disabled:opacity-40"
+            title={isDe ? 'Link zu dieser Auswahl kopieren' : 'Copy a link to this selection'}
+          >
+            {copied ? <Check className="w-3.5 h-3.5 text-[var(--m-green)]" /> : <Link2 className="w-3.5 h-3.5" />}
+            {copied ? (isDe ? 'Link kopiert!' : 'Link copied!') : isDe ? 'Auswahl teilen' : 'Share selection'}
+          </button>
+        </div>
         <p className="mt-2 text-sm text-[var(--m-ink-2)] max-w-3xl">
           {isDe
             ? `Wähle bis zu ${MAX_SELECTED} Dosen oder Kandidaten und vergleiche ihre acht Reviewer-Vektoren im Netzdiagramm. Kandidaten sind Schreibtisch-Triage (ohne Websuche), Dosen sind vollständig geprüft. Bei V2 heißt 5 „leicht zu bauen".`
