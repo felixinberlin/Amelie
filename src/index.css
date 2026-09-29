@@ -33,7 +33,7 @@
 
 /* Amélie Tinplate Canister (Boîte en fer-blanc) styling */
 .amelie-tin-box {
-  background: linear-gradient(145deg, var(--m-surface) 0%, var(--m-sunk) 50%, #eee3cf 100%);
+  background: linear-gradient(145deg, var(--m-surface) 0%, var(--m-sunk) 50%, color-mix(in srgb, var(--m-sunk), var(--m-line) 60%) 100%);
   border: 1px solid var(--m-line-strong);
   box-shadow: 
     inset 0 1px 0 rgba(255, 255, 255, 0.8),
@@ -53,7 +53,7 @@
 }
 
 .amelie-tin-header {
-  background: linear-gradient(180deg, var(--m-surface-2) 0%, #f0e6d2 100%);
+  background: linear-gradient(180deg, var(--m-surface-2) 0%, var(--m-sunk) 100%);
   border-bottom: 1px solid var(--m-line);
 }
 
@@ -155,12 +155,12 @@
   height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #f5eee2;
+  background: var(--m-bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: #d4c3b0;
+  background: var(--m-line-strong);
   border-radius: 9999px;
-  border: 1px solid #f5eee2;
+  border: 1px solid var(--m-bg);
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #ba9f84;

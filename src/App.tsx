@@ -413,7 +413,7 @@ export function App() {
       )}
 
       {/* Footer */}
-      <footer className="border-t border-[var(--m-line)] bg-gradient-to-b from-[#f8f1e5] to-[#f0e3ce] mt-auto">
+      <footer className="border-t border-[var(--m-line)] bg-gradient-to-b from-[var(--m-bg-2)] to-[var(--m-sunk)] mt-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[var(--m-ink-2)]">
             <div className="flex items-center gap-2">
