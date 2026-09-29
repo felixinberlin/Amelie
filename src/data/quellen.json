@@ -106,6 +106,10 @@
       "datensatz": {
         "de": "Datensatz / Code",
         "en": "Dataset / code"
+      },
+      "soziale-plattform": {
+        "de": "Soziale Plattform & Forum",
+        "en": "Social platform & forum"
       }
     },
     "rollen": {
@@ -350,6 +354,13 @@
       "muster": "Wenn die Gabel-Triage des Idea-Reviewers einen B2B-Zwilling mit direkter Zahlungsbereitschaft (Compliance-SaaS, CI-Guardrails) identifiziert, sind Business Angels und themenfokussierte Syndikate die passenden Erstfinanzierer. Details in `ventures/funding-and-angels.md` und `06-suche/amelie-foerder-und-preisatlas.md`.",
       "suchstring": "",
       "hinweis": ""
+    },
+    {
+      "id": "X",
+      "titel": "Soziale Plattformen & Foren (neu, 29.09.2026)",
+      "muster": "Schmerzäußerungen und „Gibt es das schon?\"-Fragen stehen in Foren, bevor sie in Leitfäden stehen — und dieselben Orte sind der schärfste Besetzt-Test. Zugangsweg und Nutzungsbedingungen zuerst klären, nicht scrapen auf Verdacht.",
+      "suchstring": "`site:reddit.com <Thema> \"is there an app\"` · `<Thema> \"wish there was\"` · `<Thema> Ask HN` · `<Thema> Mastodon`",
+      "hinweis": "Alle Einträge ungeprüft: Am 29.09.2026 waren reddit.com, hn.algolia.com, x.com, facebook.com, bsky.social und mastodon.social aus der Cloud-Umgebung per Egress-Proxy gesperrt (WebFetch und curl)."
     },
     {
       "id": "W",
@@ -6505,6 +6516,403 @@
           "agent": "migration",
           "runde": "Register-Einführung",
           "notiz": "Aus dem Abschnitt „Nicht mehr als Quelle nutzen\" (eur-lex direkt abrufen) als Zugangs-Eintrag herausgelöst."
+        }
+      ]
+    },
+    {
+      "id": "reddit",
+      "name": "Reddit (Fach-Subreddits)",
+      "typ": "X",
+      "kategorie": "soziale-plattform",
+      "rollen": [
+        "ideenquelle",
+        "besetzt-test"
+      ],
+      "tags": [
+        "ki"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "api",
+        "erreichbar": "gesperrt",
+        "wie": "Offizielle Data API mit OAuth-App (Nutzungsbedingungen beachten, Rate-Limits); .json-Endpunkte nur mit Login-Kontext verlässlich. Ungeprüft. Nicht scrapen, wo die Bedingungen es verbieten."
+      },
+      "enthaelt": "Fachforen, „Is there an app for…\", Showcase-Threads; Post 13 wurde dort bereits gepostet.",
+      "fokus": "Schmerzäußerungen, „gibt es das schon?\", Konkurrenz-/Besetzt-Signale",
+      "status": "offen",
+      "statusNotiz": "Aus Cloud-Umgebung gesperrt (Egress-Proxy), Zugangsweg ungeprüft",
+      "evidenz": "unbekannt",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          1,
+          2,
+          3,
+          2
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "bibliothekar",
+          "runde": "Quellen-Register / Social-Frage",
+          "notiz": "Aufgenommen; Domain am 29.09.2026 per WebFetch/curl aus der Cloud-Umgebung nicht erreichbar. Zugangsweg aus Vorwissen, ungeprüft.",
+          "status": "offen"
+        }
+      ]
+    },
+    {
+      "id": "hacker-news",
+      "name": "Hacker News (Ask HN / Show HN)",
+      "typ": "X",
+      "kategorie": "soziale-plattform",
+      "rollen": [
+        "besetzt-test",
+        "ideenquelle"
+      ],
+      "tags": [
+        "open-data"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "api",
+        "erreichbar": "gesperrt",
+        "wie": "Algolia-API https://hn.algolia.com/api/v1/search?query=… ist frei und ohne Auth — der einfachste Fall, sobald die Domain freigegeben ist."
+      },
+      "enthaelt": "Show-HN-Konkurrenz, Ask-HN-Schmerzäußerungen.",
+      "fokus": "Schmerzäußerungen, „gibt es das schon?\", Konkurrenz-/Besetzt-Signale",
+      "status": "offen",
+      "statusNotiz": "Aus Cloud-Umgebung gesperrt (Egress-Proxy), Zugangsweg ungeprüft",
+      "evidenz": "unbekannt",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          1,
+          2,
+          3,
+          2
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "bibliothekar",
+          "runde": "Quellen-Register / Social-Frage",
+          "notiz": "Aufgenommen; Domain am 29.09.2026 per WebFetch/curl aus der Cloud-Umgebung nicht erreichbar. Zugangsweg aus Vorwissen, ungeprüft.",
+          "status": "offen"
+        }
+      ]
+    },
+    {
+      "id": "mastodon-fediverse",
+      "name": "Mastodon / Fediverse",
+      "typ": "X",
+      "kategorie": "soziale-plattform",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [
+        "open-data"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "api",
+        "erreichbar": "gesperrt",
+        "wie": "Öffentliche Instanz-API (…/api/v2/search, Hashtag-Timelines) ohne Auth für öffentliche Beiträge; Volltextsuche je Instanz eingeschränkt. Ungeprüft."
+      },
+      "enthaelt": "Wissenschaft, Open Source, Verwaltung und Naturschutz sind dort stark vertreten.",
+      "fokus": "Schmerzäußerungen, „gibt es das schon?\", Konkurrenz-/Besetzt-Signale",
+      "status": "offen",
+      "statusNotiz": "Aus Cloud-Umgebung gesperrt (Egress-Proxy), Zugangsweg ungeprüft",
+      "evidenz": "unbekannt",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          1,
+          2,
+          3,
+          2
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "bibliothekar",
+          "runde": "Quellen-Register / Social-Frage",
+          "notiz": "Aufgenommen; Domain am 29.09.2026 per WebFetch/curl aus der Cloud-Umgebung nicht erreichbar. Zugangsweg aus Vorwissen, ungeprüft.",
+          "status": "offen"
+        }
+      ]
+    },
+    {
+      "id": "bluesky",
+      "name": "Bluesky (AT Protocol)",
+      "typ": "X",
+      "kategorie": "soziale-plattform",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [
+        "open-data"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "api",
+        "erreichbar": "gesperrt",
+        "wie": "Öffentliche AppView-API (public.api.bsky.app, app.bsky.feed.searchPosts) und Jetstream/Firehose; teils ohne Auth. Ungeprüft."
+      },
+      "enthaelt": "Wissenschaftsnahe und journalistische Netzwerke, Starter Packs.",
+      "fokus": "Schmerzäußerungen, „gibt es das schon?\", Konkurrenz-/Besetzt-Signale",
+      "status": "offen",
+      "statusNotiz": "Aus Cloud-Umgebung gesperrt (Egress-Proxy), Zugangsweg ungeprüft",
+      "evidenz": "unbekannt",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          1,
+          2,
+          3,
+          2
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "bibliothekar",
+          "runde": "Quellen-Register / Social-Frage",
+          "notiz": "Aufgenommen; Domain am 29.09.2026 per WebFetch/curl aus der Cloud-Umgebung nicht erreichbar. Zugangsweg aus Vorwissen, ungeprüft.",
+          "status": "offen"
+        }
+      ]
+    },
+    {
+      "id": "x-twitter",
+      "name": "X (Twitter)",
+      "typ": "X",
+      "kategorie": "soziale-plattform",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [],
+      "zugang": {
+        "art": "paywall",
+        "erreichbar": "gesperrt",
+        "wie": "Offizielle API nur bezahlt; Scraping verstößt gegen die Nutzungsbedingungen und bricht laufend. Nicht als Standardquelle einplanen."
+      },
+      "enthaelt": "Behörden- und Fachaccounts, Journalismus.",
+      "fokus": "Schmerzäußerungen, „gibt es das schon?\", Konkurrenz-/Besetzt-Signale",
+      "status": "offen",
+      "statusNotiz": "Aus Cloud-Umgebung gesperrt (Egress-Proxy), Zugangsweg ungeprüft",
+      "evidenz": "unbekannt",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          1,
+          2,
+          3,
+          2
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "bibliothekar",
+          "runde": "Quellen-Register / Social-Frage",
+          "notiz": "Aufgenommen; Domain am 29.09.2026 per WebFetch/curl aus der Cloud-Umgebung nicht erreichbar. Zugangsweg aus Vorwissen, ungeprüft.",
+          "status": "offen"
+        }
+      ]
+    },
+    {
+      "id": "facebook-gruppen",
+      "name": "Facebook-Gruppen & Seiten",
+      "typ": "X",
+      "kategorie": "soziale-plattform",
+      "rollen": [
+        "empfaenger"
+      ],
+      "tags": [
+        "citizen-science"
+      ],
+      "urls": [],
+      "zugang": {
+        "art": "offline",
+        "erreichbar": "gesperrt",
+        "wie": "Kein legitimer Massenzugang: Gruppen sind privat, die Graph-API gibt keine Gruppeninhalte frei. Nur manuell durch Félix oder als Empfängerkanal (öffentliche Seiten von Vereinen)."
+      },
+      "enthaelt": "Vereine, Bürgerinitiativen, Ehrenamtsgruppen (Nachbarschaft, Tafel, Repair Café).",
+      "fokus": "Schmerzäußerungen, „gibt es das schon?\", Konkurrenz-/Besetzt-Signale",
+      "status": "offen",
+      "statusNotiz": "Aus Cloud-Umgebung gesperrt (Egress-Proxy), Zugangsweg ungeprüft",
+      "evidenz": "unbekannt",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          1,
+          2,
+          3,
+          2
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "bibliothekar",
+          "runde": "Quellen-Register / Social-Frage",
+          "notiz": "Aufgenommen; Domain am 29.09.2026 per WebFetch/curl aus der Cloud-Umgebung nicht erreichbar. Zugangsweg aus Vorwissen, ungeprüft.",
+          "status": "offen"
+        }
+      ]
+    },
+    {
+      "id": "stack-exchange",
+      "name": "Stack Exchange (Fach-Sites)",
+      "typ": "X",
+      "kategorie": "soziale-plattform",
+      "rollen": [
+        "ideenquelle",
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [],
+      "zugang": {
+        "art": "api",
+        "erreichbar": "gesperrt",
+        "wie": "Freie API https://api.stackexchange.com/2.3/search (ohne Key gedrosselt); Datendumps auf archive.org. Ungeprüft."
+      },
+      "enthaelt": "Wiederkehrende Fachfragen ohne Werkzeug (GIS, Gardening, Sustainability, Law).",
+      "fokus": "Schmerzäußerungen, „gibt es das schon?\", Konkurrenz-/Besetzt-Signale",
+      "status": "offen",
+      "statusNotiz": "Aus Cloud-Umgebung gesperrt (Egress-Proxy), Zugangsweg ungeprüft",
+      "evidenz": "unbekannt",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          1,
+          2,
+          3,
+          2
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "bibliothekar",
+          "runde": "Quellen-Register / Social-Frage",
+          "notiz": "Aufgenommen; Domain am 29.09.2026 per WebFetch/curl aus der Cloud-Umgebung nicht erreichbar. Zugangsweg aus Vorwissen, ungeprüft.",
+          "status": "offen"
+        }
+      ]
+    },
+    {
+      "id": "youtube-kommentare-transkripte",
+      "name": "YouTube (Vorträge, Kommentare, Transkripte)",
+      "typ": "X",
+      "kategorie": "soziale-plattform",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [],
+      "zugang": {
+        "art": "api",
+        "erreichbar": "gesperrt",
+        "wie": "YouTube Data API v3 (Key nötig) für Suche und Kommentare; Transkripte über öffentliche Untertitel. Ungeprüft."
+      },
+      "enthaelt": "Fachvorträge und Konferenzmitschnitte (Feld-Adressbücher wie ECSA), Kommentare als Schmerzsignal.",
+      "fokus": "Schmerzäußerungen, „gibt es das schon?\", Konkurrenz-/Besetzt-Signale",
+      "status": "offen",
+      "statusNotiz": "Aus Cloud-Umgebung gesperrt (Egress-Proxy), Zugangsweg ungeprüft",
+      "evidenz": "unbekannt",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          1,
+          2,
+          3,
+          2
+        ],
+        "basis": "auto",
+        "datum": "2026-09-29"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-29",
+          "agent": "bibliothekar",
+          "runde": "Quellen-Register / Social-Frage",
+          "notiz": "Aufgenommen; Domain am 29.09.2026 per WebFetch/curl aus der Cloud-Umgebung nicht erreichbar. Zugangsweg aus Vorwissen, ungeprüft.",
+          "status": "offen"
         }
       ]
     }
