@@ -176,6 +176,17 @@ Wo Ideen schnell sterben — vor dem Suchen als Vorfilter nutzen.
 
 ---
 
+### Nachtrag Farmacia-Runde (30.09.2026) — Apotheke/Farmacia (DE/ES)
+
+| Feld | Zustand | Belege |
+|---|---|---|
+| **Apotheke/Farmacia (DE/ES): Fachkreisseite** (Notdienst, Rückruf, Retax, Fernleihe, Sustitución, Ausland-Äquivalent, Entsorgung, Ordenación) | **gesättigt, besetzt beim Empfänger oder kommerziell** | CGCOF-Guardia-Finder und BOT PLUS, Kammern planen Notdienst algorithmisch, Deutschlandatlas/BBSR, arzneimittelentsorgung.de, AMK-Rückrufe und RSS, Tauschplattformen (Just Check it, Apo-Mall), Vergleichstabelle zur Apothekenplanung beim Consejo General; 12 direkte Kills, 7 Gräber |
+| **Änderungs-Feeds** (CIMA `registroCambios`, BfArM-Lieferengpass-CSV, CIMA `psuministro`) | **Tag-0-Problem: nur Ist-Stand, kein Vorgängerwert** | `registroCambios` nennt nur die Kategorie (rund 3 % `prosp`, `ft` fast nie), nicht den geänderten Satz; die BfArM-CSV überschreibt das Enddatum, `psuministro` löscht beendete Meldungen; nirgends ein Versionsendpunkt. **Vorfrage vor jeder „Was hat sich geändert“- oder „Wie treu war die Prognose“-Idee: Gibt es die Vorgängerfassung als Datensatz?** Sonst braucht der Kern ein Archiv über Wochen (Datentest erst danach). |
+| **Apotheke/Farmacia: Empfänger** | **Wüste** | Dachverbände (ABDA/AMK, Consejo General, Kammern) und Behörden (BfArM, AEMPS) haben die Werkzeuge selbst oder Haftungsvorbehalt; keine Ansprechperson verifiziert. |
+| **Apotheke/Farmacia: Kandidaten unter dem Gate** | **Needs Research** | Bester `kuehlketten-steckbrief` 23/35 (Datentest: 10 Fachinfos auf Auslagerungsklauseln), dann `engpass-prognosetreue` 22/35 (6 bis 8 Wochen Archiv), `haeufigkeits-umrechner` 22/35. Fun (V8 bis 3) kompensiert nie. |
+
+---
+
 ## 4. Trefferquote (Kalibrierung)
 
 | Runde | Datum | Geprüft | Frei | Verengt | Unklar | Besetzt |
@@ -212,6 +223,7 @@ Wo Ideen schnell sterben — vor dem Suchen als Vorfilter nutzen.
 | **Offenlegung-Runde Lauf B (Cloud, nur Schnipsel; Teamrunde, Orchestrierung Run 2; 3 Engines parallel; Doppelfunde einmal gezählt)** | **28.09.2026** | **15** (Dreifachfunde: LkSG-Bericht, CSRD, EUDR, Batterie, Hersteller-Register; Doppelfunde: Grundsatzerklärung, Entgelttransparenz; 2 Needs Research, 2 Bausteine) | **0** | **3** | **6** (davon 3 verfrüht) | **6** |
 | **Heimatgedächtnis-Runde (Teamrunde, Orchestrierung Run 3; 3 Engines parallel; Doppelfunde einmal gezählt)** | **29.09.2026** | **14** (+ 9 direkt besetzt gemeldet; 5 Doppelfunde/-kills, 1 Dreifach-Cluster (Flurnamen-Spielschicht), Schnipsel-lastig) | **2** (dünn) | **4** | **8** | **0** (Abschnitt-B-Kandidaten: 9 `besetzt`, getrennt gezählt) |
 | **Multiplayer-Runde (Teamrunde, 3 Engines parallel + Reviewer, kein Packer; Doppelfunde einmal gezählt)** | **29.09.2026** | **9** (Reviewer-Kandidaten R1–R9; + 8 direkt gemeldet B: 6 `besetzt`, 2 `unklar`; + 8 E2-Kurzkills K: 7 `besetzt`, 1 `unklar`; 3 Doppelfunde: Boule, Skill-Luck, LAN-Strom; Gesamtprotokoll 25 Zeilen: 0/3/9/13) | **0** | **3** (R3, R4, R7) | **6** (R1, R2, R5, R6, R8, R9) | **0** (Abschnitt B und K getrennt gezählt); Trefferquote frei + verengt 33 % (3 von 9), über alle 25 Zeilen 12 % |
+| **Farmacia-Runde (Teamrunde, Orchestrierung Run 5; 3 Engines parallel + Reviewer, kein Packer; Doppelfunde einmal gezählt)** | **30.09.2026** | **9** (Reviewer-Kandidaten R1–R9; + 12 direkt gemeldet, alle `besetzt`; Doppelfunde R1, R8, Notdienst dreifach, Retax, Altmedikamente; Gesamtprotokoll 21 Zeilen: 0/6/3/12) | **0** | **6** (R1, R2, R4, R5, R6, R7) | **3** (R3, R8, R9) | **0** (Abschnitt D getrennt: 12); Trefferquote frei + verengt 67 % (6 von 9), über alle 21 Zeilen 29 %; Reviewer trotzdem 0 Dose Ready, bestes R4 23/35 (Gate 24) |
 
 Runde 4 (nur Researcher #1, 3 Ideen): **0 % frei + verengt.** Kein Abgleich mit dem anderen ideenrunde-Researcher; nicht mit Runde 3 vergleichbar, weil dort zwei Methoden und vier Sessions liefen. Der Altbau-Thermal-Recheck (`verengt` bestätigt) steht nicht in dieser Zeile.
 
@@ -590,3 +602,19 @@ Zwischenrunde „Fun-Fokus" zuvor: Nur 1 von 5 Ideen mit Fun 5 überlebte bis Ne
   2. **Pegel-Wette und `wetterregel-liga` als gemeinsamen Skill-Score-Kern prüfen** (Brier/RMSE gegen Persistenz), nicht getrennt packen.
   3. **`bib quellen formate` in jeden Engine-Prompt** aufnehmen (typ = Register-Buchstabe, kategorie aus fester Liste, `durchsucht` nur mit `evidenz=seite`).
   4. Nächster Distanz-5-Collider nur, wenn B ohne die Daten des Ankers rechnet; Turnier-/Verbandsordnungen (Paarungssysteme, Spielberechtigung) als Class-C-Feld; Sperr-/Meldeverfahren nur mit Beweismittel-Vorprüfung.
+
+### Farmacia-Runde — 30.09.2026 (Teamrunde, Orchestrierung Run 5; `ideen-scout` ‖ `bisoziations-kollider` ‖ `inversions-agent` → Merge → `idea-reviewer` → Bibliothekar, kein Packer — method: ideenrunde + bisociation + inversion)
+
+- **Erledigt:** Thema Apotheke/Farmacia in Deutschland und Spanien. 9 Reviewer-Kandidaten, 12 direkt besetzt; Protokoll 21 Zeilen (0 frei / 6 verengt / 3 unklar / 12 besetzt); 18 Quellen gebucht (keine abgelehnt); 7 Gräber (Notdienst/Guardia-Atlas, Engpass-Wellenlauf, Retax-Vorprüfer, Altmedikamente-Entsorgungskarte, Kollegen-Fernleihe, `rote-hand-patientenfassung`, `chargen-wahrnehmungskarte`), Bestand 103. Ordenación-Matrix: Ventures-Zone, kein Grab. **0 Dose Ready**, 6 Needs Research (R1, R2, R3, R4, R5, R9), R6/R7 Bausteine, R8 Friedhof.
+- **Gelernt (Feld):** Fachkreisseite gesättigt; Empfänger-Wüste; bester Kandidat (R4 23/35) unter dem Gate. Änderungs-Feeds haben ein Tag-0-Problem (siehe Atlas); Vorfrage: Gibt es die Vorgängerfassung als Datensatz? (verwandt mit der Nenner-Regel der Multiplayer-Runde).
+- **Gelernt (Methode):** Engine 1 holte die Datensatz-APIs (CIMA, BfArM-CSV) mit `curl` statt WebFetch und bekam Ergebnisse (JSON, Latin-1-CSV); für Datensatz-Quellen ist das der Weg, WebFetch eignet sich für Seiten. Der Reviewer wiederholte die Abrufe selbst, so wurden die Zahlen [Seite]. Kühlkette, Rückruf, Nebenwirkung blieben Suchschnipsel.
+- **Fehler:** Quellenmeldungen diesmal formgerecht (Typ und Kategorie gültig, 18 von 18 gebucht), aber Typ/Kategorie teils nächstpassend (Notdienstplanung als `tarif`, Mediately als `datensatz`); kein Typ für Apotheke/Pharmakovigilanz (Entscheidung Félix offen). Belege der S-Sammelkills (Retax, Ausland-Äquivalent, securPharm, BMP-QR) nur in den Engine-Berichten, im Protokoll ohne Einzelbeleg vermerkt. Vektoren Q1–Q6 der neuen Quellen nicht bewertet.
+- **Orchestrierung:**
+  - **Doppelfunde:** R1 (S + K: Fachinfo-/Prospekt-Änderungsdiff) und R8 (I + K: Rote-Hand/Chargen), dazu Notdienst dreifach besetzt sowie Retax und Altmedikamente (je S + I). Kosten: dreimal derselbe Nein-Befund im Notdienst-Feld.
+  - **Konflikt S vs K bei Engpass:** K meldete den Engpass-Wellenlauf als besetzt beim Empfänger (BfArM-Frühwarnsystem, ESMP), S sah `engpass-prognosetreue` als verengt. Reviewer: Needs Research (Datentest Archiv); der Wellenlauf wurde begraben, die Prognosetreue lebt.
+  - **Reviewer-Agent wegen Nutzungslimit abgebrochen**, hatte den Abschnitt „Farmacia-Runde 30.09.2026“ im Klassifikationslog aber vollständig geschrieben (Scorecards, Datentests, Friedhof-Vorschläge, Retro); der Bibliothekar konnte darauf aufsetzen.
+- **Nächstes Mal:**
+  1. Datentest R4 (10 Fachinfos aus EMA-EPAR/CIMA auf zitierbare Auslagerungszahl), dann R2 (git-scraping beider Engpass-Quellen 6 bis 8 Wochen); R1 und R2 gemeinsam entscheiden, ob ein offenes Snapshot-Archiv Gemeingut sein soll. Vorher: Empfänger verifizieren.
+  2. Vor jeder Änderungs- oder Prognose-Idee die Vorfrage „Vorgängerfassung als Datensatz?“ stellen.
+  3. Thema Apotheke/Farmacia bis auf Weiteres nicht erneut anfassen; Themenwechsel.
+  4. Datensatz-APIs mit `curl` prüfen, Zahlen als [Seite] belegen.

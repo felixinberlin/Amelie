@@ -9773,6 +9773,938 @@
           "status": "angekratzt"
         }
       ]
+    },
+    {
+      "id": "bfarm-lieferengpass-csv-pharmnet-bund",
+      "name": "BfArM Lieferengpass-CSV (PharmNet.Bund)",
+      "typ": "E",
+      "kategorie": "datensatz",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://anwendungen.pharmnet-bund.de/lieferengpassmeldungen/public/csv",
+        "https://www.bfarm.de/DE/Arzneimittel/Arzneimittelinformationen/Lieferengpaesse/_node.html"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "api, curl auf https://anwendungen.pharmnet-bund.de/lieferengpassmeldungen/public/csv, Latin-1"
+      },
+      "enthaelt": "Öffentlicher CSV-Export aller Lieferengpassmeldungen (Beginn, Ende, Erst-/Änderungsmeldung, ATC, Wirkstoff, Grund, Alternativpräparat), nur aktueller Stand, keine Historie beendeter Meldungen",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "engpass-prognosetreue"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout+kollider+inversion",
+          "runde": "Farmacia-Runde 30.09.2026",
+          "notiz": "970 Zeilen am 30.09.2026 selbst geholt (Scout und Reviewer); nur letzter Stand je Kette.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "aemps-cima-rest-api-psuministro-registro",
+      "name": "AEMPS CIMA REST API (psuministro, registroCambios, medicamentos, docSegmentado)",
+      "typ": "H",
+      "kategorie": "datensatz",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://cima.aemps.es/cima/rest/psuministro",
+        "https://cima.aemps.es/cima/rest/registroCambios",
+        "https://cima.aemps.es/cima/rest/medicamentos",
+        "https://www.aemps.gob.es/apps/cima/docs/CIMA_REST_API.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "api, https://cima.aemps.es/cima/rest/psuministro und /registroCambios und /medicamentos"
+      },
+      "enthaelt": "Offene schlüssellose JSON-API: Lieferprobleme (nur aktive), Änderungsregister (108.144 Zeilen, nur Kategorie), Prospekt/Ficha técnica je Abschnitt als HTML (nur aktuelle Fassung, keine Versionen)",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout+kollider+inversion",
+          "runde": "Farmacia-Runde 30.09.2026",
+          "notiz": "Alle drei Engines und der Reviewer holten die Endpunkte live; Tag-0-Lücke: keine Vorgängerfassung, kein Versionsendpunkt; Lizenz und Rate-Limits nicht gefunden.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "consejo-general-de-colegios-farmaceutico",
+      "name": "Consejo General de Colegios Farmacéuticos (BOT PLUS, Guardia-Finder)",
+      "typ": "W",
+      "kategorie": "empfaenger",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.farmaceuticos.com/farmacias-de-guardia/",
+        "https://www.farmaceuticos.com/botplus/que-es-botplus/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Spanischer Dachverband der Colegios; BOT PLUS (Sustitución, Problemas de suministro) und nationaler Farmacias-de-guardia-Finder",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout+kollider+inversion",
+          "runde": "Farmacia-Runde 30.09.2026",
+          "notiz": "Besetzt-Test für Spanien-Offizin-Werkzeuge; Ansprechperson nicht gesucht.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "harding-zentrum-fuer-risikokompetenz-fak",
+      "name": "Harding-Zentrum für Risikokompetenz (Faktenboxen)",
+      "typ": "W",
+      "kategorie": "empfaenger",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.hardingcenter.de/en/transfer-and-impact/fact-boxes",
+        "https://medikamente.dvr.de/Haeufigkeitsangaben_von_Nebenwirkungen.htm"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Faktenboxen zu Nutzen und Schaden medizinischer Maßnahmen, Forschung zu Beipackzettel-Verständnis (MPIB)",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "haeufigkeits-umrechner"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout+kollider+inversion",
+          "runde": "Farmacia-Runde 30.09.2026",
+          "notiz": "Möglicher Empfänger, Person offen.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "nhs-sps-managing-temperature-excursions",
+      "name": "NHS SPS Managing temperature excursions (Stabilitätstool)",
+      "typ": "I",
+      "kategorie": "messverfahren",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://sps.nhs.uk/articles/managing-temperature-excursions/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "web"
+      },
+      "enthaelt": "Vorgehen und Stabilitätstool nach Kühlkettenbruch (Max-/Min-Temperatur, Gesamtdauer, Produktangaben), nur Eingabemaske, UK-Markt",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "kuehlketten-steckbrief"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout+kollider+inversion",
+          "runde": "Farmacia-Runde 30.09.2026",
+          "notiz": "Seite geholt; Tool selbst nicht geöffnet.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "farmacia-hospitalaria-protokoll-bei-rotu",
+      "name": "Farmacia Hospitalaria, Protokoll bei Rotura de la cadena de frío (Kategorien A-F)",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://scielo.isciii.es/scielo.php?script=sci_arttext&pid=S1130-63432014000300004",
+        "https://www.aulamedica.es/fh/pdf/328.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "teilweise",
+        "wie": "paywall"
+      },
+      "enthaelt": "Stabilitätstabellen thermolabiler Arzneimittel bei Kettenbruch aus Fichas técnicas und Herstellerauskünften",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "kuehlketten-steckbrief"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout+kollider+inversion",
+          "runde": "Farmacia-Runde 30.09.2026",
+          "notiz": "Nur Suchschnipsel; Autoren (SEFH) als Empfängerkreis nicht verifiziert.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "abda-faktenblaetter-kuehllagerung-notdie",
+      "name": "ABDA Faktenblätter Kühllagerung, Notdienst, Altmedikamente",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.abda.de/fileadmin/user_upload/assets/Faktenblaetter/Faktenblatt_Kuehllagerung.pdf",
+        "https://www.abda.de/fileadmin/user_upload/assets/Faktenblaetter/Faktenblatt_Notdienst.pdf",
+        "https://www.abda.de/fileadmin/user_upload/assets/Faktenblaetter/Faktenblatt_Entsorgung_von_Altmedikamenten.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "teilweise",
+        "wie": "pdf"
+      },
+      "enthaelt": "Zahlen und Regeln zu Kühllagerung, Notdienst (1.100 von 16.000 Apotheken je Nacht) und Altmedikamenten",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "kuehlketten-steckbrief"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout+kollider+inversion",
+          "runde": "Farmacia-Runde 30.09.2026",
+          "notiz": "PDF-Text per Abruf nicht lesbar, Zahlen aus Suchschnipseln.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "abda-arzneimittelkommission-amk-meldunge",
+      "name": "ABDA Arzneimittelkommission (AMK) Meldungen, Rückrufe, Rote-Hand-Briefe (BfArM, AkdÄ, Gelbe Liste)",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.abda.de/fuer-apotheker/arzneimittelkommission/amk/",
+        "https://www.abda.de/fuer-apotheker/arzneimittelkommission/rueckrufe-chargenrueckrufe-und-chargenueberpruefungen/",
+        "https://www.bfarm.de/DE/Arzneimittel/Pharmakovigilanz/Risikoinformationen/Rote-Hand-Briefe/_node.html"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "web; bfarm.de blockiert zeitweise"
+      },
+      "enthaelt": "Qualitätsmängel- und UAW-Meldeformulare, Chargenrückrufe (2023: 8.320 Verdachtsmeldungen aus 4.385 Apotheken, 152 Chargenrückrufe), RSS-Feed; Rote-Hand-Briefe sind bewusst an Fachkreise gerichtet",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout+kollider+inversion",
+          "runde": "Farmacia-Runde 30.09.2026",
+          "notiz": "Fachkreisseite gesättigt; Patientenseite offen ohne erkennbaren Empfängerbedarf.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "notdienstplanung-der-apothekerkammern-ni",
+      "name": "Notdienstplanung der Apothekerkammern (Niedersachsen/SBerg, Bayern 2025, Hessen, LAK BW)",
+      "typ": "H",
+      "kategorie": "tarif",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.pharmazeutische-zeitung.de/it-system-soll-notdienstplaene-verschlanken-140804/",
+        "https://www.apotheke-adhoc.de/nachrichten/detail/apothekenpraxis/niedersachsen-stellt-notdienst-um/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "web"
+      },
+      "enthaelt": "Algorithmische Notdienstplanung mit Distanzmatrix und zumutbaren Entfernungen (15 bis 30 km)",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout+kollider+inversion",
+          "runde": "Farmacia-Runde 30.09.2026",
+          "notiz": "Negativbefund: Fachgremium hat das Werkzeug; Kategorie tarif nur nächstpassend.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "bfarm-fruehwarnsystem-lieferengpaesse-al",
+      "name": "BfArM-Frühwarnsystem Lieferengpässe (ALBVVG) und EMA ESMP",
+      "typ": "N",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.bfarm.de/DE/Arzneimittel/Arzneimittelinformationen/Lieferengpaesse/ALBVVG/_node.html",
+        "https://www.ema.europa.eu/en/human-regulatory-overview/post-authorisation/medicine-shortages-availability-issues/european-shortages-monitoring-platform-esmp"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "teilweise",
+        "wie": "register"
+      },
+      "enthaelt": "Meldepflicht Hersteller, BfArM-Frühwarnsystem (IQVIA, seit Ende 2025), EMA European Shortages Monitoring Platform (Pflicht seit 02.02.2025), öffentliche Engpassliste",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout+kollider+inversion",
+          "runde": "Farmacia-Runde 30.09.2026",
+          "notiz": "Registerträger existiert; Seite nicht selbst geholt.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "apotheken-tauschplattformen-just-check-i",
+      "name": "Apotheken-Tauschplattformen (Just Check it, Apo-Mall, Facebook-Gruppen)",
+      "typ": "X",
+      "kategorie": "soziale-plattform",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.apotheke-adhoc.de/nachrichten/detail/apothekenpraxis/lieferengpaesse-umschlagplatz-facebook-austausch-unter-kollegen/",
+        "https://www.diepta.de/news/neue-serviceplattform-wenn-apotheken-untereinander-tauschen"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "web"
+      },
+      "enthaelt": "Austausch von Arzneimitteln unter Apotheken bei Engpass; rechtlich § 17 Abs. 6c ApBetrO nur Ausnahme",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout+kollider+inversion",
+          "runde": "Farmacia-Runde 30.09.2026",
+          "notiz": "Negativbefund.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "mediately-smpc-updates",
+      "name": "Mediately SmPC-Updates",
+      "typ": "X",
+      "kategorie": "datensatz",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://blog.mediately.co/how-to-communicate-smpc-updates-to-doctors-in-real-time"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "teilweise",
+        "wie": "app"
+      },
+      "enthaelt": "Kommerzielle Arzneimitteldatenbank mit Änderungsmeldungen (114.388 SmPC-Updates April 2022 bis April 2023)",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout+kollider+inversion",
+          "runde": "Farmacia-Runde 30.09.2026",
+          "notiz": "DE/ES-Abdeckung nicht geprüft; Typ/Kategorie nächstpassend.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "farmacias-de-guardia-open-data-datos-gob",
+      "name": "Farmacias de guardia Open Data (datos.gob.es, Madrid, Navarra, Castellón; farmaciaabierta.es)",
+      "typ": "H",
+      "kategorie": "datensatz",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://datos.madrid.es/dataset/214440-0-farmacias-guardia",
+        "https://datosabiertos.navarra.es/es/dataset/farmacias-de-guardia",
+        "https://datos.gob.es/es/catalogo/l02000012-ubicacion-y-disponibilidad-de-las-farmacias-de-guardia-en-la-provincia-de-castellon",
+        "https://farmaciaabierta.es/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "api"
+      },
+      "enthaelt": "Regionale Guardia-Listen als Open Data, kein nationaler Sammelsatz; farmaciaabierta.es aggregiert kommerziell",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout+kollider+inversion",
+          "runde": "Farmacia-Runde 30.09.2026",
+          "notiz": "Nur Fund; kein Kandidat angesetzt.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "einzelimport-fachpresse-apotheke-adhoc-p",
+      "name": "Einzelimport-Fachpresse (apotheke-adhoc, Pharmazeutische Zeitung, DAP)",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.apotheke-adhoc.de/nachrichten/detail/apothekenpraxis/arzneimittel-in-auslaendischer-packung-darauf-ist-zu-achten/",
+        "https://www.pharmazeutische-zeitung.de/was-ist-bei-einzelimporten-zu-beachten-153233/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "teilweise",
+        "wie": "web; DAP-Arbeitshilfen paywall"
+      },
+      "enthaelt": "Pflichten beim Einzelimport § 73 Abs. 3 AMG: Beratung, Dokumentation § 18 ApBetrO, deutsche Packungsbeilage",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "import-prospekt-bruecke"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout+kollider+inversion",
+          "runde": "Farmacia-Runde 30.09.2026",
+          "notiz": "WebFetch funktionierte; ABDA-Leitlinie noch im Volltext zu lesen.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "erreichbarkeitsatlanten-apotheke-deutsch",
+      "name": "Erreichbarkeitsatlanten Apotheke (Deutschlandatlas, BBSR, Landatlas, Thünen, ApoWi)",
+      "typ": "E",
+      "kategorie": "statistik",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.deutschlandatlas.bund.de/DE/Karten/Unsere-Gesundheitsversorgung/132-PKW-Apotheken.html"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "web"
+      },
+      "enthaelt": "Wegezeit/Distanz zur nächsten Apotheke je Gemeinde/Kreis, Raster 250 m",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout+kollider+inversion",
+          "runde": "Farmacia-Runde 30.09.2026",
+          "notiz": "Bund/Forschung-dicht, keine Lücke.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "apothekenreform-apovwg-notdienstfonds-zw",
+      "name": "Apothekenreform ApoVWG (Notdienstfonds, Zweigapotheke, PTA-Vertretung)",
+      "typ": "A",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.abda.de/aktuelles-und-presse/newsroom/detail/apovwg-in-kraft-was-schon-jetzt-gilt-und-was-erst-spaeter-kommt/",
+        "https://www.deutsche-apotheker-zeitung.de/news/artikel/2026/06/01/apothekenreform-bringt-mehr-geld-fuer-den-notdienst"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "norm"
+      },
+      "enthaelt": "Gesetz in Kraft seit 02.07.2026: Notdienstpauschale, Zweigapotheke mit Rechtsanspruch, PTA-Vertretung ab ca. 6 km",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout+kollider+inversion",
+          "runde": "Farmacia-Runde 30.09.2026",
+          "notiz": "Gesetzestext nicht selbst gelesen.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "arzneimittelentsorgung-de-altmedikamente",
+      "name": "arzneimittelentsorgung.de (Altmedikamente-Entsorgung je Landkreis)",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://arzneimittelentsorgung.de"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "web"
+      },
+      "enthaelt": "Entsorgungsweg je Landkreis per PLZ, Apotheken nicht rücknahmepflichtig",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout+kollider+inversion",
+          "runde": "Farmacia-Runde 30.09.2026",
+          "notiz": "Karte existiert seit 2025 (Ecologic).",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "planificacion-farmaceutica-ley-16-1997-c",
+      "name": "Planificación farmacéutica (Ley 16/1997 + CCAA-Regime, Consejo General COF-Resumen)",
+      "typ": "H",
+      "kategorie": "auslandsregulierung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.farmaceuticos.com/farmaceuticos/recursos-farmaceuticos/legislacion/ordenacion-farmaceutica-resumen/",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-1997-9022"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "web"
+      },
+      "enthaelt": "Modul 2.800/3.000 Einwohner, 250 m Mindestabstand, Sonderzonen je CCAA; Übersicht des Consejo General",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout+kollider+inversion",
+          "runde": "Farmacia-Runde 30.09.2026",
+          "notiz": "Vergleichstabelle existiert beim Empfänger; Kaufvermittlung ist Ventures.",
+          "status": "angekratzt"
+        }
+      ]
     }
   ],
   "nichtNutzen": [

@@ -1144,3 +1144,64 @@ Quelle: Merge-Tabelle Abschnitt A (R1–R9). Abschnitt B (besetzt/tot) unbewerte
 - Bausteinbezug: kein Baustein von `biotoptyp-assistent` (andere Eingabe). `invasive-plant-species-scanner`, `trockenrasen-transekte` getrennt halten.
 - Kein Grab: Die Prämisse (kein Robinien-Layer) ist nicht bewiesen. Falls die Anfrage negativ ausfällt, Grab-Vorschlag: cause `reality-check`, killer `keiner`, foundBy `deutsch`, stage `kandidat`, resurrectIfDe: Wenn FIB, LfU oder LFB einen Robinien-Polygonsatz oder den InvaRo-Layer als Vektor (freie Lizenz) veröffentlichen. resurrectIfEn: An open vector layer of black locust stands or of the InvaRo risk zones for Brandenburg becomes available.
 - Evidenz-Warnung: Zenodo-Dateiliste und WMS/WFS-Capabilities selbst abgerufen, alles andere `[Schnipsel]` (FNR, FIB, LFB, waldwissen). Die Lizenz des Biotopkatasters stammt aus dem Metadatensatz. Flächenwiderspruch (8.100 ha gegenüber 22.500 ha) ungeklärt.
+
+## Farmacia-Runde 30.09.2026
+
+Reviewer-Lauf über R1 bis R9 der Merge-Tabelle (Engines: ideen-scout, bisoziations-kollider, inversions-agent). Gate: V1 bis V7 ≥ 24/35. **Ergebnis: 0 Dose Ready** (bestes Ergebnis R4 mit 23/35 und R2 mit 22/35), 6 Needs Research, 1 Baustein, 2 Friedhof-Vorschläge. Nachbarabstand geprüft gegen `pillsafe-vision` (verengt, Wochendosette gegen Medikationsplan) und Grab `barrieren-spontanmeldung` (beim-empfaenger, BFSG × Pharmakovigilanz); `bib find` fand keine Dose zu prospecto, fachinfo, Lieferengpass, Rote-Hand, Kühlkette, Einzelimport (nur Hintergrund in den Engine-Logs).
+
+### Eigene Datentests (Reviewer, 30.09.2026)
+
+- **CIMA `registroCambios`** [Seite, selbst abgerufen]: `totalFilas` 108.144; Stichprobe 20 Seiten × 200 = 4.000 Zeilen (nach nregistro geordnet, daher möglicherweise verzerrt), Zeitraum 01.09.2026 bis 30.09.2026. Feld `cambio`: `otros` 3.155, `matinf` 651, `prosp` 119 (119 verschiedene Registernummern an 8 verschiedenen Tagen), `ft` 1, übrige 40. Nur rund 3 % der Zeilen kennzeichnen eine Prospekt-Änderung, eine Ficha-técnica-Änderung fast nie. Die Meldung sagt **nicht, welcher Satz** sich änderte.
+- **CIMA `docSegmentado/contenido/1|2?nregistro=…&seccion=…`** [Seite]: liefert die **aktuelle** Fassung je Abschnitt als HTML (Beispiel 63189, Abschnitt 4.5 ok). **Keine ältere Fassung, kein Versionsendpunkt.** Ein Satz-Diff ist nur vorwärts möglich, sobald jemand Schnappschüsse archiviert. Das ist die Tag-0-Lücke von R1 und R2 zugleich.
+- **CIMA `psuministro`** [Seite]: 860 aktive Einträge (4 Seiten, 800 gelesen); 241 von 800 ohne `ffin`; 0 mit `ffin` in der Vergangenheit (beendete Meldungen verschwinden), 18 mit Beginn > 2 Jahre; geplante Dauer im Median 188 Tage; frühester Beginn 29.04.2024. Keine Historie.
+- **BfArM-Lieferengpass-CSV** `https://anwendungen.pharmnet-bund.de/lieferengpassmeldungen/public/csv` [Seite, selbst abgerufen]: 970 Zeilen (221 Erstmeldung, 749 Änderungsmeldung), Spalten u. a. Beginn, Ende, Datum der Erstmeldung, Referenzierte Erstmeldung. Nur der **jeweils letzte Stand** je Kette: das ursprünglich gemeldete Enddatum ist überschrieben, nur 18 Zeilen mit Ende in der Vergangenheit. Median Erstmeldung bis aktuelles Ende 353 Tage, 412 Zeilen mit Erstmeldung älter als ein Jahr, älteste 10.07.2018. Folge: die Frage „wie oft wird das Enddatum verschoben“ ist aus einem Einzelabzug nicht beantwortbar, nur aus einem Archiv über Wochen.
+
+### Scorecards
+
+| Nr | Kandidat | V1 | V2 | V3 | V4 | V5 | V6 | V7 | V8 | Kern /35 | Gesamt /40 | Urteil |
+|---|---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|---|
+| R1 | fachinfo-aenderungsdiff | 3 | 2 | 3 | 3 | 3 | 3 | 3 | 2 | 20 | 22 | Needs Research |
+| R2 | engpass-prognosetreue (+ stille-marktaustritte) | 2 | 3 | 3 | 4 | 3 | 3 | 4 | 2 | 22 | 24 | Needs Research |
+| R3 | import-prospekt-bruecke | 3 | 2 | 2 | 3 | 2 | 3 | 3 | 1 | 18 | 19 | Needs Research (niedrig) |
+| R4 | kuehlketten-steckbrief | 3 | 4 | 3 | 3 | 3 | 4 | 3 | 3 | 23 | 26 | Needs Research (Rang 1) |
+| R5 | haeufigkeits-umrechner | 2 | 4 | 3 | 4 | 3 | 3 | 3 | 3 | 22 | 25 | Needs Research (niedrig) |
+| R6 | symptom-rangliste-eigene-medikation | 2 | 4 | 2 | 3 | 2 | 3 | 3 | 3 | 19 | 22 | Baustein (R5 / PillSafe-Warnfeld) |
+| R7 | ersatzpraeparat-erklaerer | 2 | 3 | 3 | 3 | 3 | 3 | 2 | 2 | 19 | 21 | Baustein von `pillsafe-vision` |
+| R8 | rote-hand-patientenfassung + chargen-wahrnehmungskarte | 3 | 3 | 2 | 3 | 2 | 3 | 3 | 2 | 19 | 21 | Friedhof-Vorschlag |
+| R9 | nebenwirkungs-meldeassistent | 3 | 3 | 2 | 3 | 2 | 3 | 3 | 2 | 19 | 21 | Needs Research (niedrig) |
+
+V8-Quelle: R1 none, R2 discovery, R3 none, R4 sensory (Kurve mit Fläche über Grenze), R5 discovery (Piktogramm), R6 play (Suchen), R7 none, R8 none, R9 none.
+
+### Begründungen und Restrisiken
+
+- **R1** (Doppelfund S+K). Datentest: die Meldung nennt nur die Kategorie `prosp`/`ft`, der Volltext ist nur in der aktuellen Fassung greifbar, eine Vorgängerfassung gibt es nirgends offen. Der Kern (Satzdiff) braucht ein laufendes Archiv (Cron, Speicher), also Tier 4 bis 5 und Regel-4-Konflikt für einen Empfänger allein; Ficha-técnica-Änderungen (die sicherheitsrelevanten) sind mit 1 von 4.000 Zeilen selten. Risiko: Nachbarn Mediately, ABDATA, AEMPS-eigene MeQA/KI; generative Zusammenfassung von Sicherheitstexten. Wiedervorlage: wenn ein Archiv oder AEMPS-Versionsendpunkt bestätigt ist; Kurztest: eine Frage an CIMA, ob Vorgängerfassungen abrufbar sind.
+- **R2** (Teilfund mit Engpass-Wellenlauf). Höchster V7 wegen zwei freier maschinenlesbarer Quellen (CSV, psuministro) und ALBVVG-Rahmen; aber beide liefern nur den Ist-Stand, das Ziel (Prognosetreue) verlangt ein Wochen-Archiv. Beim Empfänger arbeitet das BfArM-Frühwarnsystem (laut K, [Schnipsel]). Datentest zuerst: git-scraping beider Quellen über 6 bis 8 Wochen (öffentliche GitHub-Action, keine Amélie-Infrastruktur), dann Kennzahl „Enddatum verschoben“ prüfen. Ohne Ergebnis kein Versand. Baustein `stille-marktaustritte` nicht getrennt bewerten.
+- **R3** (Einzelfund I). Kern ist ein Modell für produktspezifischen Text, also Dosierungsfehler-Haftung und Medizinprodukt-Abgrenzung; Nachfrage unbelegt, Empfänger unverifiziert. Datentest: fünf CIMA-Prospekte gegen QRD-Sätze abgleichen (Anteil deterministisch ersetzbar).
+- **R4** (Einzelfund K). Bester Kandidat, dennoch 23/35, unter dem Gate: der Wert liegt in der Klausel-Extraktion aus Abschnitt 6.3/6.4, und die deutsche Fachinfo ist frei nicht greifbar (fachinfo.de/ABDATA); Logger-Hersteller (ELPRO, SenseAnywhere) dokumentieren Excursions und werben mit Stabilitätsdaten im Logger [Schnipsel, eigene Gegen-Suche], das Tool NHS SPS deckt UK. Pain-Beleg (Herstellerfrage „Höchsttemperatur und Dauer“) nur [Schnipsel]. Datentest: 10 Fachinfos (EMA-EPAR/CIMA) auf Klauseln zu Auslagerung/Excursion prüfen, wie oft eine zitierbare Zahl vorkommt; Haftungssprache „von Fachinfo gedeckt / nicht“, nie „verwendbar“. Empfänger nur Institution (ABDA AMK, Landesapothekerkammer; SEFH, CGCOF), Person nicht verifiziert.
+- **R5** (Einzelfund S). Die Zuordnung Häufigkeitsklasse zu natürlicher Häufigkeit ist deterministisch, aber ohne Placebo-Basislinie (steht nicht in der Fachinfo) kann ein Piktogramm Nocebo fördern; Harding-Zentrum und DVR-Tabelle decken das manuell ab (verengt). Empfänger Harding-Zentrum/IQWiG, Person nicht verifiziert. Höchstens ein gemeinsamer Ticket-Kern mit R6.
+- **R6.** Fachlich Teilmenge von R5 plus Freitext-Zuordnung; V3 2 wegen Halluzinations- und Haftungsrisiko, Nachbarn aponet-Datenbank und Drugs.com. Als Baustein an R5 hängen, nicht eigenständig.
+- **R7.** Der Kern (gleicher Wirkstoff, andere Hilfsstoffe) ist die Wirkstoff-Abgleichslogik, die `pillsafe-vision` schon trägt; Hilfsstoffdaten offen nur in Einzel-Packungsbeilagen (AMIS/CIMA `excipientes`), nicht als Bulk-Stammdaten (IFA/Lauer-Taxe [Schnipsel], CC0-Frage). Baustein von `pillsafe-vision`, keine eigene Dose.
+- **R8** (Doppelfund I+K). Die eigene Gegen-Suche fand: AMK-Rückrufliste, Gelbe Liste „Rückrufe“, Krankenkassen-Erklärseiten mit Chargenanleitung für Patienten, alle [Schnipsel]; die Rote-Hand-Briefe sind laut AMK/BfArM absichtlich fachkreisgerichtet, ein Laienversuch birgt Panik- und Medizinprodukt-Risiko. Die Wahrnehmungskarte (Aggregation gleicher Charge/gleicher Klage) ist Pharmakovigilanz-Datensammlung mit PII und trifft das Grab `barrieren-spontanmeldung`. Kein Doppelfund-Freifahrtschein: zwei Engines fanden dieselbe Lücke, die es als Kommerz- und Verbandsangebot gibt.
+- **R9.** Meldeformular führt bereits Schritt für Schritt (nebenwirkungen.bund.de, [Schnipsel]); kein Patientenassistent gefunden (eine Suche, `[Schnipsel]`). MedDRA-Kodierung liegt beim Empfänger, Sprachmodell-Freitext verlangt Haftungs- und Datenschutzvorbehalt. Nur mit Empfängerzusage (BfArM/PEI, AEMPS), sonst Grab `beim-empfaenger`.
+
+### Vorschläge Friedhof (nur der Bibliothekar schreibt)
+
+1. **`rote-hand-patientenfassung`** (R8, Laienfassung): `cause` beim-empfaenger, `killer` kommerziell (Gelbe Liste, Kassen) bzw. gemeinnuetzig (AMK), `foundBy` deutsch, `stage` kandidat, `origin` inversion. `resurrectIfDe`: Wenn BfArM oder AMK ausdrücklich Laienfassungen von Rote-Hand-Briefen beauftragen oder ein Register mit Patientenzielgruppe entsteht. `resurrectIfEn`: A federal or professional body commissions patient-facing versions of Rote-Hand letters, or a public patient-facing recall register with batch look-up is discontinued.
+2. **`chargen-wahrnehmungskarte`** (R8, K): `cause` praemisse (Feld ist Pharmakovigilanz mit Meldepflichtträgern, kein Bürgerdatensatz), `killer` behoerde, `foundBy` deutsch, `stage` kandidat, `origin` bisoziation. `resurrectIfDe`: Wenn ein Träger (BfArM/PEI/AMK) freiwillige Patientenbeobachtungen je Charge als offene Daten annimmt. `resurrectIfEn`: A regulator accepts voluntary per-batch patient observations as open data.
+
+Kein weiteres Grab vorgeschlagen: R1, R2, R3, R4, R5, R9 leben (`verengt`/`unklar`).
+
+### Bausteine
+
+- R6 als Modus an R5 (ein Ticket-Kern SmPC 4.8 nach Häufigkeitsklasse); R7 als Hilfsstoff-Modus an `pillsafe-vision`.
+- R1 und R2 teilen den Engpass „Snapshot-Archiv“; gemeinsam entscheiden, ob ein offenes Archiv (Daten-Repository, kein Werkzeug) Gemeingut sein soll. Nachbarn ohne Dose: `vernichtungs-offenlegungsregister`, `umsetzungsplan-register` (Registerkern als Vorbild, nicht als Code-Import).
+
+### Empfehlung Packer
+
+Keine Dose Ready, nichts zu packen. Falls die Runde doch weiterlaufen soll: Datentest R4 (10 Fachinfos), dann R2 (6 bis 8 Wochen Archiv). Beide brauchen zuerst einen verifizierten Empfänger; Personen sind nicht verifiziert.
+
+### Retro
+
+- Muster: Änderungs-Feeds (registroCambios, BfArM-CSV) zeigen nur den Ist-Stand oder die Kategorie, nie den alten Wert; jede „Was hat sich geändert“- oder „Wie treu war die Prognose“-Idee hat ein Tag-0-Problem und braucht ein Archiv. Vorfrage künftig: Gibt es die Vorgängerfassung als Datensatz? (verwandt mit der Nenner-Regel der Multiplayer-Runde.)
+- Das Feld Apotheke ist Empfänger-Wüste und regulatorisch (Haftung, Medizinprodukt); die stärksten Fun-Werte (R4, R5) lagen unter dem Gate, Fun kompensiert nicht.
+- Evidenz: CIMA und BfArM-CSV selbst abgerufen [Seite]; Kühlkette, Rückruf, Nebenwirkung nur als Suchschnipsel. Kein Kandidat hätte mit `[Schnipsel]`-Basis über Needs Research hinauskommen dürfen.

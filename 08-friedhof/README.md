@@ -54,16 +54,16 @@ Die Ursachen genauer:
 
 *Automatisch erzeugt aus `src/data/graeber.json` (`DISCARDED_DATA`) mit `npm run friedhof` (läuft nach `npm run bib -- grab add` von selbst). Nicht von Hand bearbeiten — `npm run lint` meldet Abweichungen.*
 
-**96 Gräber.** 4 davon starben erst als Dose oder Mail-Entwurf (teure Tode). Von 87 dokumentierten Fundwegen kamen 15 ohne neue Suche aus (eigener Atlas, eigenes Protokoll oder Reality-Check) — 17 %.
+**103 Gräber.** 4 davon starben erst als Dose oder Mail-Entwurf (teure Tode). Von 94 dokumentierten Fundwegen kamen 15 ohne neue Suche aus (eigener Atlas, eigenes Protokoll oder Reality-Check) — 16 %.
 
 **Woran sie starben**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Schon gebaut | 48 | 50 % |
-| Beim Empfänger selbst | 19 | 20 % |
-| Reality-Check | 14 | 15 % |
-| Falsche Prämisse | 9 | 9 % |
+| Schon gebaut | 50 | 49 % |
+| Beim Empfänger selbst | 23 | 22 % |
+| Reality-Check | 14 | 14 % |
+| Falsche Prämisse | 10 | 10 % |
 | Keine neue Fähigkeit | 4 | 4 % |
 | Duplikat | 2 | 2 % |
 
@@ -71,9 +71,9 @@ Die Ursachen genauer:
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Deutsche Suche | 32 | 33 % |
-| Englische Suche | 27 | 28 % |
-| Empfänger-Suche | 12 | 13 % |
+| Deutsche Suche | 39 | 38 % |
+| Englische Suche | 27 | 26 % |
+| Empfänger-Suche | 12 | 12 % |
 | Ohne Suche | 11 | 11 % |
 | Nicht dokumentiert | 9 | 9 % |
 | Eigener Atlas / Protokoll | 4 | 4 % |
@@ -83,29 +83,30 @@ Die Ursachen genauer:
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Bisoziation | 35 | 36 % |
-| Primärquelle | 32 | 33 % |
-| Brainstorm | 16 | 17 % |
+| Bisoziation | 38 | 37 % |
+| Primärquelle | 35 | 34 % |
+| Brainstorm | 16 | 16 % |
 | Ideenliste | 8 | 8 % |
 | Modell-Katalog | 5 | 5 % |
+| Inversion | 1 | 1 % |
 
 **Wer sie schon hatte**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Firma | 26 | 27 % |
-| Forschung | 17 | 18 % |
-| Behörde | 15 | 16 % |
-| Niemand | 14 | 15 % |
-| Gemeinnützige | 12 | 13 % |
-| Community / Indie | 10 | 10 % |
+| Firma | 28 | 27 % |
+| Behörde | 18 | 17 % |
+| Forschung | 17 | 17 % |
+| Niemand | 14 | 14 % |
+| Gemeinnützige | 13 | 13 % |
+| Community / Indie | 11 | 11 % |
 | Eigener Bestand | 2 | 2 % |
 
 **Wie weit sie kamen**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Kandidat | 92 | 96 % |
+| Kandidat | 99 | 96 % |
 | Dose gepackt | 2 | 2 % |
 | Mail entworfen | 1 | 1 % |
 | Zugestellt | 1 | 1 % |
@@ -114,8 +115,15 @@ Die Ursachen genauer:
 
 | Idee | † | Ursache | Wer sie hatte | Gefunden durch | Herkunft | Kam bis | Auferstehung wenn |
 |---|---|---|---|---|---|---|---|
+| Altmedikamente-Entsorgungskarte (Rücknahme-/Entsorgungsweg je Ort) | 30.09.2026 | Beim Empfänger selbst | Gemeinnützige | Deutsche Suche | Primärquelle | Kandidat | Wenn arzneimittelentsorgung.de eingestellt wird oder eine Karte der tatsächlichen Rücknahmestellen (nicht nur Landkreisweg) gefragt wird. |
+| Chargen-Wahrnehmungskarte (gleiche Charge, gleiche Klage aggregieren) | 30.09.2026 | Falsche Prämisse | Behörde | Deutsche Suche | Bisoziation | Kandidat | Wenn ein Träger (BfArM/PEI/AMK) freiwillige Patientenbeobachtungen je Charge als offene Daten annimmt. |
+| Engpass-Wellenlauf (Ausbreitung von Lieferengpässen über Wirkstoffe/Länder) | 30.09.2026 | Beim Empfänger selbst | Behörde | Deutsche Suche | Bisoziation | Kandidat | Wenn BfArM/EMA das Frühwarnsystem einstellen oder keine Auswertung öffentlich machen. |
 | EuroBirdCast: Vogelzug-Abschaltung, nachrechenbar | 30.09.2026 | Falsche Prämisse | Behörde | Empfänger-Suche | Modell-Katalog | Zugestellt | Nie für Wetterradar. |
+| Kollegen-Fernleihe (Apotheken tauschen Arzneimittel bei Engpass) | 30.09.2026 | Schon gebaut | Community / Indie | Deutsche Suche | Bisoziation | Kandidat | Wenn der Austausch rechtlich geöffnet wird (§ 17 Abs. 6c ApBetrO) und die bestehenden Plattformen ihn nicht bedienen. |
 | Mimikry-Detektor (Tarnwirkung eines Falters vor dem Mikrohabitat bewerten) | 30.09.2026 | Schon gebaut | Forschung | Englische Suche | Bisoziation | Kandidat | Wenn ein Zählschema Tarnwirkung als Fehlerquelle ausweist und eine Messgröße belegt ist. |
+| Notdienst-/Guardia-Atlas (Notdienst-Abdeckung und Erreichbarkeit von Apotheken) | 30.09.2026 | Beim Empfänger selbst | Behörde | Deutsche Suche | Primärquelle | Kandidat | Wenn ein Land keine öffentliche Notdienstplanung oder Erreichbarkeitsanalyse mehr betreibt oder eine offene, versionierte Historie der Notdienstpläne gefragt wird. |
+| Retax-Vorprüfer (Rezept vor Abrechnung auf Retaxrisiko prüfen) | 30.09.2026 | Schon gebaut | Firma | Deutsche Suche | Primärquelle | Kandidat | Wenn ein offener, herstellerunabhängiger Retax-Regelkatalog gefragt wird und keine Software ihn abbildet. |
+| Rote-Hand-Patientenfassung (Rückruf-/Rote-Hand-Brief in Laiensprache mit Chargenabgleich) | 30.09.2026 | Beim Empfänger selbst | Firma | Deutsche Suche | Inversion | Kandidat | Wenn BfArM oder AMK ausdrücklich Laienfassungen von Rote-Hand-Briefen beauftragen oder ein Register mit Patientenzielgruppe entsteht. |
 | Augenzähler-Foto (Würfel- oder Kartenaugen per Foto zählen) | 29.09.2026 | Falsche Prämisse | Niemand | Ohne Suche | Primärquelle | Kandidat | Nie, solange Zählen schneller ist als Fotografieren. |
 | Bergsonnenuhr-Peiler (Zwölfer-Bergnamen) | 29.09.2026 | Falsche Prämisse | Community / Indie | Ohne Suche | Bisoziation | Kandidat | Wenn eine Forschungsfrage entsteht, die die Benennungsorte statistisch über viele Gipfel eingrenzt und die Liste das nicht leistet. |
 | Boule-Messfoto (welche Kugel liegt näher?) | 29.09.2026 | Schon gebaut | Firma | Englische Suche | Primärquelle | Kandidat | Nie als Foto-Messer; nur wenn der Deutsche Pétanque Verband eine offene, geprüfte Messmethode als Turnierstandard ausschreibt, die keine der Apps erfüllt. |

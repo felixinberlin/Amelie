@@ -1,14 +1,14 @@
 {
   "$schema": "https://raw.githubusercontent.com/felixinberlin/amelie/main/public/data/amelie-schema.json",
   "version": "1.0.0",
-  "generatedAt": "2026-09-30T15:00:20.663Z",
+  "generatedAt": "2026-09-30T16:37:11.051Z",
   "license": "CC0-1.0 (Public Domain / Kula-Ring)",
   "storageProvider": "github_pages",
   "repository": "https://github.com/felixinberlin/amelie",
   "stats": {
     "totalDosen": 44,
     "totalUnpacked": 154,
-    "totalDiscarded": 96
+    "totalDiscarded": 103
   },
   "dosen": [
     {
@@ -12127,6 +12127,174 @@
       "diedOn": "2026-09-30",
       "resurrectIfDe": "Wenn ein Zählschema Tarnwirkung als Fehlerquelle ausweist und eine Messgröße belegt ist.",
       "resurrectIfEn": "If a counting scheme names camouflage as an error source and a measure is documented."
+    },
+    {
+      "id": "rote-hand-patientenfassung",
+      "title": "Rote-Hand-Patientenfassung (Rückruf-/Rote-Hand-Brief in Laiensprache mit Chargenabgleich)",
+      "originalIdeaDe": "Rote-Hand-Briefe und AMK-Rückrufe in Laiensprache mit Chargenabgleich für Patienten.",
+      "originalIdeaEn": "Rote-Hand letters and AMK recalls in lay language with batch look-up for patients.",
+      "whyDiscardedDe": "Rote-Hand-Briefe sind bewusst an Fachkreise gerichtet; AMK aggregiert Rückrufe selbst (8.320 Meldungen 2023, 152 Chargenrückrufe), Gelbe Liste und Krankenkassen erklären Chargen für Patienten. Laienversuch birgt Panik- und Medizinprodukt-Risiko. Doppelfund Inversion + Kollider, Evidenz Suchschnipsel.",
+      "whyDiscardedEn": "Rote-Hand letters are deliberately addressed to professionals; AMK aggregates recalls itself (8,320 reports in 2023, 152 batch recalls), Gelbe Liste and health insurers explain batches to patients. A lay version carries panic and medical-device risk. Double find by inversion and collider, evidence search snippets.",
+      "lessonDe": "Zwei Engines fanden dieselbe Lücke, weil sie als Kommerz- und Verbandsangebot bereits gefüllt ist; Fachkreis-Kommunikation ist absichtlich nicht für Laien gebaut.",
+      "lessonEn": "Two engines found the same gap because commercial and association offers already fill it; professional-circle communication is intentionally not built for laypeople.",
+      "domain": "Apotheke / Arzneimittelversorgung (DE/ES)",
+      "evidence": [
+        "ABDA AMK Rückrufe, https://www.abda.de/fuer-apotheker/arzneimittelkommission/rueckrufe-chargenrueckrufe-und-chargenueberpruefungen/ [Schnipsel]",
+        "Reviewer-Urteil Farmacia-Runde 30.09.2026 (R8)"
+      ],
+      "cause": "beim-empfaenger",
+      "killer": "kommerziell",
+      "foundBy": "deutsch",
+      "origin": "inversion",
+      "stage": "kandidat",
+      "bornIn": "Farmacia-Runde 30.09.2026",
+      "diedOn": "2026-09-30",
+      "resurrectIfDe": "Wenn BfArM oder AMK ausdrücklich Laienfassungen von Rote-Hand-Briefen beauftragen oder ein Register mit Patientenzielgruppe entsteht.",
+      "resurrectIfEn": "A federal or professional body commissions patient-facing versions of Rote-Hand letters, or a public patient-facing recall register with batch look-up is discontinued."
+    },
+    {
+      "id": "chargen-wahrnehmungskarte",
+      "title": "Chargen-Wahrnehmungskarte (gleiche Charge, gleiche Klage aggregieren)",
+      "originalIdeaDe": "Wahrnehmungen von Patienten zur gleichen Arzneimittel-Charge (gleiche Klage) aggregieren und sichtbar machen.",
+      "originalIdeaEn": "Aggregate and display patient observations for the same drug batch (same complaint).",
+      "whyDiscardedDe": "Das Feld ist Pharmakovigilanz mit Meldepflichtträgern (AMK, BfArM, PEI), kein Bürgerdatensatz; Aggregation wäre PII-haltige Datensammlung und trifft das Grab barrieren-spontanmeldung. Evidenz Suchschnipsel.",
+      "whyDiscardedEn": "The field is pharmacovigilance with reporting bodies (AMK, BfArM, PEI), not a citizen dataset; aggregation would be PII-bearing data collection and hits the grave barrieren-spontanmeldung. Evidence search snippets.",
+      "lessonDe": "Bei Arzneimittelsicherheit liegt die Datenhoheit bei den Trägern; ein Bürgerregister ohne deren Zusage bleibt Datensammlung ohne Empfänger.",
+      "lessonEn": "In drug safety the data sovereignty lies with the responsible bodies; a citizen register without their commitment remains data collection without a recipient.",
+      "domain": "Apotheke / Arzneimittelversorgung (DE/ES)",
+      "evidence": [
+        "ABDA AMK Meldungen, https://www.abda.de/fuer-apotheker/arzneimittelkommission/amk/ [Schnipsel]",
+        "Reviewer-Urteil Farmacia-Runde 30.09.2026 (R8)"
+      ],
+      "cause": "praemisse",
+      "killer": "behoerde",
+      "foundBy": "deutsch",
+      "origin": "bisoziation",
+      "stage": "kandidat",
+      "bornIn": "Farmacia-Runde 30.09.2026",
+      "diedOn": "2026-09-30",
+      "resurrectIfDe": "Wenn ein Träger (BfArM/PEI/AMK) freiwillige Patientenbeobachtungen je Charge als offene Daten annimmt.",
+      "resurrectIfEn": "A regulator accepts voluntary per-batch patient observations as open data."
+    },
+    {
+      "id": "guardia-atlas",
+      "title": "Notdienst-/Guardia-Atlas (Notdienst-Abdeckung und Erreichbarkeit von Apotheken)",
+      "originalIdeaDe": "Karte oder Analyse der Notdienst- bzw. Guardia-Abdeckung und Erreichbarkeit von Apotheken in Deutschland und Spanien (guardia-atlas, Notdienst-Abdeckung, Erreichbarkeitskarte).",
+      "originalIdeaEn": "Map or analysis of pharmacy on-call (Notdienst/guardia) coverage and accessibility in Germany and Spain.",
+      "whyDiscardedDe": "Dreifachfund aller drei Engines, dreifach besetzt: CGCOF-Farmacias-de-guardia-Finder, Apothekerkammern planen algorithmisch mit Distanzmatrix (Niedersachsen, Bayern, Hessen, LAK BW), Deutschlandatlas/BBSR-Erreichbarkeit; ApoVWG mit Notdienstfonds seit 02.07.2026. Regionale Open Data (Madrid, Navarra) ohne Sammelsatz, aber farmaciaabierta.es aggregiert. Evidenz Suchschnipsel.",
+      "whyDiscardedEn": "Triple find by all three engines, triple occupied: CGCOF guardia finder, chambers plan algorithmically with distance matrices, Deutschlandatlas/BBSR accessibility; ApoVWG on-call fund in force since 02.07.2026. Regional open data without a national set, but farmaciaabierta.es aggregates. Evidence search snippets.",
+      "lessonDe": "Wenn drei Engines dieselbe Lücke finden, ist das bei Versorgungsthemen oft ein Zeichen für Dichte, nicht für Freiheit; Kammern und Bund halten die Planung selbst.",
+      "lessonEn": "When three engines find the same gap, on supply topics this often signals density, not freedom; chambers and the federal level hold the planning themselves.",
+      "domain": "Apotheke / Arzneimittelversorgung (DE/ES)",
+      "evidence": [
+        "https://www.farmaceuticos.com/farmacias-de-guardia/ [Schnipsel]",
+        "https://www.deutschlandatlas.bund.de/DE/Karten/Unsere-Gesundheitsversorgung/132-PKW-Apotheken.html [Schnipsel]",
+        "https://www.pharmazeutische-zeitung.de/it-system-soll-notdienstplaene-verschlanken-140804/ [Schnipsel]"
+      ],
+      "cause": "beim-empfaenger",
+      "killer": "behoerde",
+      "foundBy": "deutsch",
+      "origin": "quelle",
+      "stage": "kandidat",
+      "bornIn": "Farmacia-Runde 30.09.2026",
+      "diedOn": "2026-09-30",
+      "resurrectIfDe": "Wenn ein Land keine öffentliche Notdienstplanung oder Erreichbarkeitsanalyse mehr betreibt oder eine offene, versionierte Historie der Notdienstpläne gefragt wird.",
+      "resurrectIfEn": "A country ends public on-call planning or accessibility analysis, or an open versioned history of on-call rosters is requested."
+    },
+    {
+      "id": "engpass-wellenlauf",
+      "title": "Engpass-Wellenlauf (Ausbreitung von Lieferengpässen über Wirkstoffe/Länder)",
+      "originalIdeaDe": "Zeitliche Ausbreitung von Lieferengpässen über Wirkstoffe und Länder als Wellenlauf sichtbar machen.",
+      "originalIdeaEn": "Show the temporal spread of supply shortages across active substances and countries as a wave.",
+      "whyDiscardedDe": "Besetzt beim Empfänger: BfArM-Frühwarnsystem mit IQVIA seit Ende 2025, EMA ESMP seit 02.2025 (Meldepflicht), öffentliche Engpassliste. Nachbar engpass-prognosetreue (lebt als Needs Research). Evidenz Suchschnipsel.",
+      "whyDiscardedEn": "Occupied at the recipient: BfArM early-warning system with IQVIA since late 2025, EMA ESMP since 02.2025 (reporting duty), public shortage list. Neighbour engpass-prognosetreue (alive as Needs Research). Evidence search snippets.",
+      "lessonDe": "Wenn Register aufgebaut werden, baut der Registerträger auch die Auswertung; eine Analysedose braucht eine Lücke im Datenzugang, nicht im Thema.",
+      "lessonEn": "When registers are built, the register holder also builds the analysis; an analysis dose needs a gap in data access, not in the topic.",
+      "domain": "Apotheke / Arzneimittelversorgung (DE/ES)",
+      "evidence": [
+        "https://www.bfarm.de/DE/Arzneimittel/Arzneimittelinformationen/Lieferengpaesse/ALBVVG/_node.html [Schnipsel]",
+        "https://www.ema.europa.eu/en/human-regulatory-overview/post-authorisation/medicine-shortages-availability-issues/european-shortages-monitoring-platform-esmp [Schnipsel]"
+      ],
+      "cause": "beim-empfaenger",
+      "killer": "behoerde",
+      "foundBy": "deutsch",
+      "origin": "bisoziation",
+      "stage": "kandidat",
+      "bornIn": "Farmacia-Runde 30.09.2026",
+      "diedOn": "2026-09-30",
+      "resurrectIfDe": "Wenn BfArM/EMA das Frühwarnsystem einstellen oder keine Auswertung öffentlich machen.",
+      "resurrectIfEn": "If BfArM/EMA discontinue the early-warning system or publish no analysis."
+    },
+    {
+      "id": "retax-vorpruefer",
+      "title": "Retax-Vorprüfer (Rezept vor Abrechnung auf Retaxrisiko prüfen)",
+      "originalIdeaDe": "Vorprüfer, der Rezepte vor der Abrechnung auf Retaxgründe prüft (Doppelfund Scout + Inversion).",
+      "originalIdeaEn": "Pre-checker that examines prescriptions for reimbursement-refusal (retax) grounds before billing (double find scout + inversion).",
+      "whyDiscardedDe": "Besetzt (Doppelfund S+I), laut Merge-Tabelle; Einzelbeleg liegt im Scout-/Inversionsbericht, Evidenz Suchschnipsel.",
+      "whyDiscardedEn": "Occupied (double find S+I) per the merge table; individual evidence is in the scout and inversion reports, evidence search snippets.",
+      "lessonDe": "Retax-Regeln sind Teil der kommerziellen Apothekensoftware-Welt; Beleg im Bericht statt im Grab prüfen, bevor jemand wieder anfängt.",
+      "lessonEn": "Retax rules belong to the commercial pharmacy-software world; check the evidence in the report before anyone restarts.",
+      "domain": "Apotheke / Arzneimittelversorgung (DE/ES)",
+      "evidence": [
+        "Merge-Tabelle Farmacia-Runde 30.09.2026 (Doppelfund S+I) [Schnipsel]"
+      ],
+      "cause": "gebaut",
+      "killer": "kommerziell",
+      "foundBy": "deutsch",
+      "origin": "quelle",
+      "stage": "kandidat",
+      "bornIn": "Farmacia-Runde 30.09.2026",
+      "diedOn": "2026-09-30",
+      "resurrectIfDe": "Wenn ein offener, herstellerunabhängiger Retax-Regelkatalog gefragt wird und keine Software ihn abbildet.",
+      "resurrectIfEn": "If an open vendor-neutral retax rule catalogue is requested and no software covers it."
+    },
+    {
+      "id": "altmedikamente-entsorgungskarte",
+      "title": "Altmedikamente-Entsorgungskarte (Rücknahme-/Entsorgungsweg je Ort)",
+      "originalIdeaDe": "Karte, die je Ort zeigt, wo Altmedikamente zurückgegeben oder entsorgt werden können (Doppelfund Scout + Inversion).",
+      "originalIdeaEn": "Map showing per location where old medicines can be returned or disposed of (double find scout + inversion).",
+      "whyDiscardedDe": "arzneimittelentsorgung.de (Ecologic, seit 2025) zeigt den Entsorgungsweg je Landkreis per PLZ; Apotheken sind nicht rücknahmepflichtig (ABDA-Faktenblatt). Besetzt beim Empfänger. Evidenz Suchschnipsel.",
+      "whyDiscardedEn": "arzneimittelentsorgung.de (Ecologic, since 2025) shows the disposal route per district by postcode; pharmacies have no take-back duty (ABDA fact sheet). Occupied at the recipient. Evidence search snippets.",
+      "lessonDe": "Doppelfund plus schon existierende Karte: vor jeder Karten-Idee zuerst die einschlägigen Landkreis-Suchen und Umweltprojekte prüfen.",
+      "lessonEn": "Double find plus an existing map: before any map idea first check the relevant district lookups and environmental projects.",
+      "domain": "Apotheke / Arzneimittelversorgung (DE/ES)",
+      "evidence": [
+        "https://arzneimittelentsorgung.de [Schnipsel]",
+        "ABDA Faktenblatt Entsorgung von Altmedikamenten [Schnipsel]"
+      ],
+      "cause": "beim-empfaenger",
+      "killer": "gemeinnuetzig",
+      "foundBy": "deutsch",
+      "origin": "quelle",
+      "stage": "kandidat",
+      "bornIn": "Farmacia-Runde 30.09.2026",
+      "diedOn": "2026-09-30",
+      "resurrectIfDe": "Wenn arzneimittelentsorgung.de eingestellt wird oder eine Karte der tatsächlichen Rücknahmestellen (nicht nur Landkreisweg) gefragt wird.",
+      "resurrectIfEn": "If arzneimittelentsorgung.de is discontinued or a map of actual take-back points (not just district route) is requested."
+    },
+    {
+      "id": "kollegen-fernleihe",
+      "title": "Kollegen-Fernleihe (Apotheken tauschen Arzneimittel bei Engpass)",
+      "originalIdeaDe": "Plattform, über die Apotheken bei Lieferengpass Arzneimittel untereinander tauschen.",
+      "originalIdeaEn": "Platform through which pharmacies swap medicines among themselves during shortages.",
+      "whyDiscardedDe": "Besetzt: Just Check it, Apo-Mall und Facebook-Gruppen existieren; rechtlich ist der Austausch nach § 17 Abs. 6c ApBetrO nur Ausnahme. Evidenz Suchschnipsel.",
+      "whyDiscardedEn": "Occupied: Just Check it, Apo-Mall and Facebook groups exist; legally the exchange under § 17 (6c) ApBetrO is only an exception. Evidence search snippets.",
+      "lessonDe": "Tauschmärkte unter Fachleuten entstehen selbst in Foren; rechtlich enger Rahmen macht eine Neugründung ohne Empfänger unattraktiv.",
+      "lessonEn": "Swap markets among professionals emerge on their own in forums; a legally narrow frame makes a new build without a recipient unattractive.",
+      "domain": "Apotheke / Arzneimittelversorgung (DE/ES)",
+      "evidence": [
+        "https://www.apotheke-adhoc.de/nachrichten/detail/apothekenpraxis/lieferengpaesse-umschlagplatz-facebook-austausch-unter-kollegen/ [Schnipsel]",
+        "https://www.diepta.de/news/neue-serviceplattform-wenn-apotheken-untereinander-tauschen [Schnipsel]"
+      ],
+      "cause": "gebaut",
+      "killer": "community",
+      "foundBy": "deutsch",
+      "origin": "bisoziation",
+      "stage": "kandidat",
+      "bornIn": "Farmacia-Runde 30.09.2026",
+      "diedOn": "2026-09-30",
+      "resurrectIfDe": "Wenn der Austausch rechtlich geöffnet wird (§ 17 Abs. 6c ApBetrO) und die bestehenden Plattformen ihn nicht bedienen.",
+      "resurrectIfEn": "If the exchange is legally opened (§ 17 (6c) ApBetrO) and existing platforms do not serve it."
     }
   ]
 }
