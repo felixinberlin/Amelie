@@ -19,7 +19,7 @@
 //   npm run bib -- status
 //
 //   SCHREIBEN (jeder Befehl kennt --dry-run; Schreibbefehle nehmen die Schreibsperre, --wait <s> wartet darauf)
-//   npm run bib -- apply <plan.json|-> [--dry-run] [--json] [--key k] [--wait s] [--actor a] [--agent a] [--runde r] [--plan-id id]
+//   npm run bib -- apply <plan.json|-> [--dry-run] [--json] [--key k] [--wait s] [--actor a] [--agent a] [--runde r] [--plan-id id] [--no-export]
 //   npm run bib -- vector set --kind dose --id x --set V1=3,V3=4 [--expect V1=4] --evidence "…"
 //   npm run bib -- grab add --from grab.json | Einzelflags
 //   npm run bib -- protokoll add --runde … --titel … --urteil … --beleg … --evidenz … --method … --pruefen-ab MM/JJJJ
@@ -86,7 +86,7 @@ LESEN (alle Agenten)
   status                                      Bestand auf einen Blick
 
 SCHREIBEN (nur Bibliothekar bzw. Akteure nach 06-suche/bib-actors.json)
-  apply <plan.json|-> [--key k] [--actor a] [--agent a] [--runde r] [--plan-id id]
+  apply <plan.json|-> [--key k] [--actor a] [--agent a] [--runde r] [--plan-id id] [--no-export]
                                               ein typisierter Stapel, alles oder nichts, idempotent (Ledger), mit Vorbedingungen (expect).
                                               Operationen: source.add, source.log, source.rate, grave.add, protokoll.add, vector.set (siehe schema)
   vector set --kind dose|candidate --id x --set V1=3,V3=4 [--expect V1=4] --evidence "…" [--reason "…"] [--actor a]
@@ -191,10 +191,10 @@ function printApply(res) {
 
 function cmdApply() {
   const [file] = pos;
-  if (!file) die('Aufruf: bib apply <plan.json|-> [--dry-run] [--json] [--key k] [--wait s] [--actor a] [--agent a] [--runde r] [--plan-id id]');
+  if (!file) die('Aufruf: bib apply <plan.json|-> [--dry-run] [--json] [--key k] [--wait s] [--actor a] [--agent a] [--runde r] [--plan-id id] [--no-export]');
   let plan;
   try { plan = readPlanFile(file); } catch (e) { fail(e); }
-  const res = applyPlan(plan, { dryRun: dry, wait: Number(one('wait') ?? 0), key: one('key'), actor: one('actor'), agent: one('agent'), runde: one('runde'), planId: one('plan-id') });
+  const res = applyPlan(plan, { dryRun: dry, wait: Number(one('wait') ?? 0), key: one('key'), actor: one('actor'), agent: one('agent'), runde: one('runde'), planId: one('plan-id'), exportData: has('no-export') ? false : undefined });
   printApply(res);
   process.exit(res.exit);
 }

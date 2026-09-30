@@ -320,4 +320,9 @@ describe('CLI mit --json (echtes Repo, nur lesend oder dry-run)', () => {
     expect(bad.status).toBe(EXIT.PERMISSION);
     rmSync(dir, { recursive: true, force: true });
   });
+  it('hilfe nennt apply --no-export (Lab ohne node_modules)', () => {
+    const r = cli(['hilfe']);
+    expect(r.status).toBe(0);
+    expect(r.stdout).toContain('--no-export');
+  });
 });

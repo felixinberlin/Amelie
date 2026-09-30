@@ -1,6 +1,6 @@
-# Austauschprotokoll Amélie ↔ Amélie-lab (Entwurf v0.1, 30.09.2026)
+# Austauschprotokoll Amélie ↔ Amélie-lab (Entwurf v0.2, 30.09.2026)
 
-**Status: Entwurf, noch nicht vom Lab gegengeprüft.** Erster Vorschlag der Amélie-Seite nach den PRs #171 und #172. Wo dieses Blatt und der Code (`bib schema`, `06-suche/bib-actors.json`) sich widersprechen, gilt der Code; dann Blatt nachziehen. Offene Punkte stehen am Ende.
+**Status: Entwurf v0.2; das Lab hat v0.1 gegengeprüft** (PR-Kommentar zu #172, Commit `137e7508` im Lab-Repo) und Manifest, Vorab-Prüfung und Namensregeln bestätigt. Erster Vorschlag der Amélie-Seite nach den PRs #171 und #172. Wo dieses Blatt und der Code (`bib schema`, `06-suche/bib-actors.json`) sich widersprechen, gilt der Code; dann Blatt nachziehen. Offene Punkte stehen am Ende.
 
 Ziel: Lab-Läufe kommen als PR an, werden hier ohne Handarbeit geprüft und landen erst nach einer Freigabe im Gedächtnis. Das Lab liefert Vorschläge, Amélie fällt Urteile.
 
@@ -46,7 +46,7 @@ Nicht im PR: `src/data/`, `05-dosen/`, `08-friedhof/`, `06-suche/amelie-quellen.
 }
 ```
 
-Regeln: `files` ⊆ `06-suche/proposals/`; `existence_check` gleich der Pflichtzeile im PR-Text; `touches_memory` ist `false`; `survivors.status` bleibt `ungeprueft`, solange Amélie nicht geprüft hat.
+Regeln: `files` ⊆ `06-suche/proposals/`; `existence_check` ist ein boolean, gleich der Pflichtzeile im PR-Text; `files` listet alle Dateien des PR inkl. Manifest; optional `contracts` (Versionen der Lab-Verträge). Das Lab validiert gegen `schemas/lab-manifest.schema.json` (Vertrag `lab-manifest` 1.0.0, Lab-Repo); der Prüfer hier kann es übernehmen; `touches_memory` ist `false`; `survivors.status` bleibt `ungeprueft`, solange Amélie nicht geprüft hat.
 
 ## 4. Namen und Schlüssel
 
@@ -70,7 +70,8 @@ Das Lab kopiert Werte nicht, sondern liest `npm run bib -- schema`. Neue Ops ode
 ## 6. Vor dem Lauf (Lab)
 
 1. `bib find --stamm <Begriffe>` gegen Prüfprotokoll, Gräber und Dosen; Treffer im Vorschlag nennen.
-2. `bib quellen match --url <url>` je Quelle: Host-/Pfadtreffer → `source.log`, sonst `source.add`.
+2. `bib quellen match --url <url>` je Quelle: exakter Treffer, Pfadtreffer oder genau ein Host-Treffer → `source.log`; mehrere Host-Treffer werden aufgelistet, nicht geraten; kein Treffer → `source.add` (`id` `host-thema`, kurzer eigener `enthaelt`).
+   Lauf liest Stand aus einem frisch gezogenen Round-Clone (`--round`), nicht aus einem veralteten Live-Checkout.
 3. Die Such-Obergrenze bleibt ein Wunsch; Überschreitung als „vom Lab gezählt" melden.
 
 ## 7. Prüfkette hier (Bibliothekar, automatisierbar)
@@ -81,7 +82,13 @@ Das Lab kopiert Werte nicht, sondern liest `npm run bib -- schema`. Neue Ops ode
 4. `bib apply --dry-run --json` je Plan; ohne `human_accepted` erwartet Exit 12 bei `source.add`.
 5. `quellen match --url` und `bib find --stamm` je Vorschlag; Duplikate benennen.
 6. Kein Urteil, kein Grab, keine Quelle wird aus einem Vorschlag automatisch gebucht.
-7. Bericht mit Merge-Empfehlung; Merge; Antwort als PR-Kommentar (Standardkanal).
+7. Bericht mit Merge-Empfehlung; Merge; Antwort als PR-Kommentar (Standardkanal) **mit fester Kopfzeile** als Rückkanal für das Lab:
+   ```
+   Entscheidung: gemergt | teilweise | abgelehnt
+   Existenzprüfung: erfolgt | offen
+   Gebuchte Quellen: <ids> | keine
+   ```
+   Darunter Freitext (Befund, Antworten). Beispiel: #172 → `Entscheidung: gemergt` (nur Ablage), `Existenzprüfung: offen`, `Gebuchte Quellen: keine`.
 
 ## 8. Danach (Amélie)
 
@@ -93,11 +100,12 @@ PR-Kommentar ist Standard (versioniert, verlinkbar, automatisierbar). Direktnach
 
 ## 10. Offene Punkte
 
-1. **Manifest:** Feldnamen und `manifest_version` vom Lab bestätigen lassen; danach Prüfer bauen (`check:lab-pr` o. ä.).
+1. **Manifest:** vom Lab bestätigt (v0.2). Offen bei uns: Prüfer bauen (`check:lab-pr` o. ä.), Lab-Schema `schemas/lab-manifest.schema.json` übernehmen.
 2. **`grave.add` für `lab-librarian`:** technisch ohne `human_accepted` erlaubt, obwohl Lab-Gräber nur Vorschläge sein sollen. Entscheidung Félix: Recht an `human_accepted` binden?
 3. **`bib quellen import`** prüft die Rechte-Datei nicht; das Lab soll `bib apply` nutzen (bekannte Lücke, keine technische Sperre).
 4. **Requests 1/2 aus `Amelie-lab/docs/bib-lab-requests.md`:** `--no-export` sinnvoll; `proposal.add` nicht nötig; `terminology.add`/`question.add` erst, wenn Amélie Speicher dafür führen will (Entscheidung Félix); `dossier.annotate` nicht.
-5. **Vorab-Prüfung `bib find --stamm` im Lab-Lauf** verbindlich machen (Lab bestätigt Machbarkeit).
-6. **Rückmeldung des Labs:** wo hakt der Weg (Formate, Rechte, Wartezeit)?
+5. ~~Vorab-Prüfung im Lab-Lauf~~ erledigt (Lab, verbindlich eingebaut).
+6. **Review-Pfad des Labs** (`write_plan`) schreibt noch außerhalb `proposals/` (Dossiernotizen, Register); bis ein Proposal-only-Modus existiert, öffnet das Lab dafür keinen PR. Lab-Arbeit.
+7. **Rückkanal:** Kopfzeile aus §7 ab jetzt in jedem Kommentar; Lab wertet sie aus.
 
 Änderungen an diesem Blatt: als PR/Commit hier, Gegenprüfung durch das Lab per PR-Kommentar.

@@ -70,7 +70,9 @@ Führt nacheinander `npm run export:data`, `npm run lint` und `npm test` aus (be
 
 Wer Amélies Gedächtnis von außen beschreibt (z. B. der Lab-Bibliothekar), braucht keine eigene Kopie der Regeln, keine mehreren CLIs und kein eigenes Zurückrollen: **eine Eingabe, ein JSON-Ergebnis, alles oder nichts.** Die Regeln liegen hier, in Amélie.
 
-### `bib apply <plan.json|-> [--dry-run] [--json] [--key k] [--wait s] [--actor a] [--agent a] [--runde r] [--plan-id id]`
+### `bib apply <plan.json|-> [--dry-run] [--json] [--key k] [--wait s] [--actor a] [--agent a] [--runde r] [--plan-id id] [--no-export]`
+
+`--no-export` überspringt den Lauf von `scripts/export-public-data.mjs` nach dem Schreiben (nötig in einem frischen Clone ohne `node_modules`, z. B. im Round-Clone des Labs; ohne den Schalter bricht der Export dort ab und `apply` rollt zurück, Exit 14). Der Export gehört dann dorthin, wo gemergt wird: `npm run export:data` bzw. `bib abschluss`. Standard bleibt: Export läuft.
 
 ```json
 {
