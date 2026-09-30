@@ -173,9 +173,20 @@ Es schreibt immer nur einer (`06-suche/.bib.lock`, mit PID und Akteur). Das gilt
 
 `--json` gilt für **jeden** Befehl: reines JSON auf stdout, Fehler als `{ "ok": false, "errors": [ {code, field, message} ] }`. Bequemlichkeit für Menschen: `bib vector set --kind dose --id x --set V1=3 --expect V1=4 --evidence "…"` baut einen Ein-Operationen-Plan und ruft `apply` (Akteur `bibliothekar`, ohne `public/data`-Export).
 
+### Terminologie und Fragen (30.09.2026)
+
+Zwei Textspeicher, beide append-only und idempotent (ein Duplikat wird übersprungen, `skipped: true`, kein Fehler):
+
+| Op | Felder | Wirkung |
+|---|---|---|
+| `terminology.add` | `term`, `language` (ISO 639-1 oder `und`), `notes` (alle einzeilig) | hängt `- <term> (<language>): <notes>` an `06-suche/terminology-map.md` an (Datei mit `# Terminologie-Map` angelegt, falls sie fehlt); gleicher Begriff ohne Beachtung der Groß-/Kleinschreibung wird übersprungen |
+| `question.add` | `question` (einzeilig) | hängt `- <question>` an `06-suche/open-questions.md` an (`# Offene Fragen`); identischer Text wird übersprungen |
+
+Beide Speicher stehen in `bib state` (Hashes) und im Schnappschuss der Transaktion. Rechte: Der `bibliothekar` darf beide; ob `lab-librarian` sie ohne `human_accepted` darf, ist eine Entscheidung von Félix (offen, `06-suche/bib-actors.json` ist unverändert).
+
 ### Noch nicht enthalten
 
-Terminologie, Fragen und Dossier-Notizen (`dossier.annotate`) gibt es in Amélie noch nicht als Speicher. Sobald das Lab das Format und den Zielort festlegt, kommen sie als weitere Operationen dazu; bis dahin antwortet `apply` mit `OP_UNKNOWN` (Exit 10).
+Dossier-Notizen (`dossier.annotate`) und `proposal.add` gibt es nicht (Drift-Guards in `05-dosen/` und `08-friedhof/`; das Lab schreibt Vorschläge selbst nach `06-suche/proposals/`). Bis dahin antwortet `apply` mit `OP_UNKNOWN` (Exit 10).
 
 ## Wer nutzt was
 

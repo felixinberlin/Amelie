@@ -19,7 +19,7 @@ Bis zum 24.09.2026 galt die Gegenregel: *„gelöscht, nicht archiviert"*. Sie h
 | `cause` | Woran starb sie? | `gebaut` · `beim-empfaenger` · `duplikat` · `mode` · `reality-check` · `praemisse` |
 | `killer` | Wer hatte sie schon? | `kommerziell` · `gemeinnuetzig` · `behoerde` · `forschung` · `community` · `eigener-bestand` · `keiner` |
 | `foundBy` | Welche Suche fand es heraus? | `englisch` · `deutsch` · `forum` · `empfaenger` · `eigener-bestand` · `ohne-suche` · `unbekannt` |
-| `origin` | Woher kam die Idee? | `ideenliste` · `brainstorm` · `quelle` · `bisoziation` · `modell-katalog` |
+| `origin` | Woher kam die Idee? | `ideenliste` · `brainstorm` · `quelle` · `bisoziation` · `inversion` · `modell-katalog` |
 | `stage` | Wie weit kam sie? | `kandidat` · `dose` · `mail-entwurf` · `zugestellt` |
 | `bornIn` / `diedOn` | Wann? | Runde und Methode · ISO-Datum |
 | `resurrectIfDe/En` | Wann darf das Grab geöffnet werden? | Satz — „nie" ist erlaubt |

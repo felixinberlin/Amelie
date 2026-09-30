@@ -17,7 +17,7 @@ import { OPERATIONS, doseIdsOf, loadState } from './bib-ops.mjs';
 import { renderMarkdown, validate as validateQuellen } from './quellen-lib.mjs';
 
 const isoToday = () => new Date().toISOString().slice(0, 10);
-const STORE_FILE = { quellen: REL.quellen, graeber: REL.graeber, protokoll: REL.protokoll, doseVectors: REL.doseVectors, candidateVectors: REL.candidateVectors, vectorLog: REL.vectorLog };
+const STORE_FILE = { quellen: REL.quellen, graeber: REL.graeber, protokoll: REL.protokoll, terminologie: REL.terminologie, fragen: REL.fragen, doseVectors: REL.doseVectors, candidateVectors: REL.candidateVectors, vectorLog: REL.vectorLog };
 
 const errOf = (e, op) => (e instanceof BibError ? { ...e.toJSON(), ...(op !== undefined ? { op } : {}) } : { code: 'APPLY_FAILED', field: '', message: String(e?.message ?? e), ...(op !== undefined ? { op } : {}) });
 
@@ -179,7 +179,7 @@ export function applyPlan(plan, opts = {}) {
         writeFileSync(join(root, rel), text);
       };
       for (const k of state.dirty) {
-        if (k === 'protokoll') write(STORE_FILE[k], state.protokoll);
+        if (k === 'protokoll' || k === 'terminologie' || k === 'fragen') write(STORE_FILE[k], state[k]);
         else if (k === 'quellen') {
           state.quellen.stand = ctx.heute;
           write(REL.quellen, toJsonText(state.quellen));

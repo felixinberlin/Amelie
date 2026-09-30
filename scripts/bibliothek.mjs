@@ -88,7 +88,7 @@ LESEN (alle Agenten)
 SCHREIBEN (nur Bibliothekar bzw. Akteure nach 06-suche/bib-actors.json)
   apply <plan.json|-> [--key k] [--actor a] [--agent a] [--runde r] [--plan-id id] [--no-export]
                                               ein typisierter Stapel, alles oder nichts, idempotent (Ledger), mit Vorbedingungen (expect).
-                                              Operationen: source.add, source.log, source.rate, grave.add, protokoll.add, vector.set (siehe schema)
+                                              Operationen: source.add, source.log, source.rate, grave.add, protokoll.add, vector.set, terminology.add, question.add (siehe schema)
   vector set --kind dose|candidate --id x --set V1=3,V3=4 [--expect V1=4] --evidence "…" [--reason "…"] [--actor a]
                                               |Δ| ≤ 2, V1–V7, V8 nie, Evidenz Pflicht, jede Änderung im Log
   grab add --from <datei.json>                Totenschein (Objekt oder Liste) anlegen, Friedhof-README neu erzeugen

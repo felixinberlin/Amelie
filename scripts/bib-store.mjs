@@ -21,6 +21,8 @@ export const REL = Object.freeze({
   graeber: 'src/data/graeber.json',
   friedhofReadme: '08-friedhof/README.md',
   protokoll: '06-suche/amelie-pruefprotokoll.md',
+  terminologie: '06-suche/terminology-map.md',
+  fragen: '06-suche/open-questions.md',
   doseVectors: 'src/data/doseVectors.json',
   candidateVectors: 'src/data/candidateVectors.json',
   vectorLog: 'src/data/vectorChanges.json',
@@ -48,7 +50,7 @@ export const sha256 = (buf) => 'sha256:' + createHash('sha256').update(buf).dige
 export const hashFile = (root, rel) => (existsSync(abs(root, rel)) ? sha256(readFileSync(abs(root, rel))) : 'absent');
 /** Hashes aller Speicher; Grundlage für `expect.hashes` in Plänen. */
 export const storeHashes = (root) => Object.fromEntries(
-  ['quellen', 'graeber', 'protokoll', 'doseVectors', 'candidateVectors', 'vectorLog'].map((k) => [REL[k], hashFile(root, REL[k])]),
+  ['quellen', 'graeber', 'protokoll', 'terminologie', 'fragen', 'doseVectors', 'candidateVectors', 'vectorLog'].map((k) => [REL[k], hashFile(root, REL[k])]),
 );
 
 // ---------------------------------------------------------------- Sperre

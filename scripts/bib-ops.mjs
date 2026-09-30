@@ -24,6 +24,8 @@ export function loadState(root) {
     quellen: readJson(root, REL.quellen, { quellen: [], katalog: {}, typen: [] }),
     graeber: readJson(root, REL.graeber, []),
     protokoll: readText(root, REL.protokoll) ?? '',
+    terminologie: readText(root, REL.terminologie) ?? '',
+    fragen: readText(root, REL.fragen) ?? '',
     doseVectors: readJson(root, REL.doseVectors, {}),
     candidateVectors: readJson(root, REL.candidateVectors, {}),
     vectorLog: readJson(root, REL.vectorLog, []),
@@ -44,6 +46,9 @@ export function doseIdsOf(root) {
   }
   return ids;
 }
+
+/** Hängt eine Zeile an einen Textspeicher an; legt ihn mit Überschrift an, wenn er noch fehlt. */
+const appendLine = (text, header, line) => `${text.trim() ? text.replace(/\s*$/, '\n') : `${header}\n\n`}${line}\n`;
 
 const graveIdsOf = (state) => new Set(state.graeber.map((g) => g.id));
 
@@ -143,6 +148,36 @@ export const OPERATIONS = {
       state.protokoll = text;
       state.dirty.add('protokoll');
       return { target: op.id ?? op.titel, detail: `Zeile in „${op.runde}“ (${op.urteil})` };
+    },
+  },
+  'terminology.add': {
+    required: ['term', 'language', 'notes'],
+    optional: [],
+    describe: 'hängt „- <term> (<language>): <notes>“ an 06-suche/terminology-map.md an; language = ISO 639-1 oder und; gleicher Begriff (ohne Beachtung der Groß-/Kleinschreibung) wird übersprungen, kein Fehler',
+    run(state, op) {
+      need(op, ['term', 'language', 'notes']);
+      for (const f of ['term', 'notes']) if (typeof op[f] !== 'string' || /[\r\n]/.test(op[f])) throw new BibError({ code: 'VALUE_INVALID', field: f, message: `${f} muss ein einzeiliger Text sein` });
+      if (typeof op.language !== 'string' || !/^([a-z]{2}|und)$/.test(op.language)) throw new BibError({ code: 'VALUE_INVALID', field: 'language', message: 'language muss ein ISO-639-1-Code (z. B. de, en) oder und sein' });
+      const term = op.term.trim();
+      const exists = state.terminologie.split('\n').some((l) => l.toLowerCase().startsWith(`- ${term.toLowerCase()} (`));
+      if (exists) return { target: term, detail: 'übersprungen (Begriff steht schon)', skipped: true };
+      state.terminologie = appendLine(state.terminologie, '# Terminologie-Map', `- ${term} (${op.language}): ${op.notes.trim()}`);
+      state.dirty.add('terminologie');
+      return { target: term, detail: `Begriff aufgenommen (${op.language})` };
+    },
+  },
+  'question.add': {
+    required: ['question'],
+    optional: [],
+    describe: 'hängt „- <question>“ an 06-suche/open-questions.md an; identischer Text wird übersprungen, kein Fehler',
+    run(state, op) {
+      need(op, ['question']);
+      if (typeof op.question !== 'string' || /[\r\n]/.test(op.question)) throw new BibError({ code: 'VALUE_INVALID', field: 'question', message: 'question muss ein einzeiliger Text sein' });
+      const line = `- ${op.question.trim()}`;
+      if (state.fragen.split('\n').includes(line)) return { target: op.question.trim().slice(0, 60), detail: 'übersprungen (Frage steht schon)', skipped: true };
+      state.fragen = appendLine(state.fragen, '# Offene Fragen', line);
+      state.dirty.add('fragen');
+      return { target: op.question.trim().slice(0, 60), detail: 'Frage aufgenommen' };
     },
   },
   'vector.set': {
@@ -246,6 +281,6 @@ export function buildSchema(root) {
     exitCodes: EXIT,
     errorCodes: ERROR_CODES,
     errorShape: { code: 'string (stabil)', field: 'string (Pfad im Plan, z. B. ops[2].grave)', message: 'string (Klartext, kann sich ändern)', op: 'number (Index der Operation, falls zutreffend)' },
-    stores: Object.fromEntries(['quellen', 'graeber', 'protokoll', 'doseVectors', 'candidateVectors', 'vectorLog', 'ledger', 'audit', 'actors'].map((s) => [s, REL[s]])),
+    stores: Object.fromEntries(['quellen', 'graeber', 'protokoll', 'terminologie', 'fragen', 'doseVectors', 'candidateVectors', 'vectorLog', 'ledger', 'audit', 'actors'].map((s) => [s, REL[s]])),
   };
 }

@@ -1,4 +1,4 @@
-# Austauschprotokoll Amélie ↔ Amélie-lab (Entwurf v0.3, 30.09.2026)
+# Austauschprotokoll Amélie ↔ Amélie-lab (Entwurf v0.4, 30.09.2026)
 
 **Status: Entwurf v0.2; das Lab hat v0.1 gegengeprüft** (PR-Kommentar zu #172, Commit `137e7508` im Lab-Repo) und Manifest, Vorab-Prüfung und Namensregeln bestätigt. Erster Vorschlag der Amélie-Seite nach den PRs #171 und #172. Wo dieses Blatt und der Code (`bib schema`, `06-suche/bib-actors.json`) sich widersprechen, gilt der Code; dann Blatt nachziehen. Offene Punkte stehen am Ende.
 
@@ -67,7 +67,7 @@ Nicht im PR: `src/data/`, `05-dosen/`, `08-friedhof/`, `06-suche/amelie-quellen.
 
 Das Lab kopiert Werte nicht, sondern liest `npm run bib -- schema`. Neue Ops oder Rechte sind ein Commit hier.
 
-**Grab-Vorschläge:** `origin` nur aus `bib schema` (`ideenliste`, `brainstorm`, `quelle`, `bisoziation`, `modell-katalog`); `inversion` ist **kein** gültiger Wert. Für Inversions-Gräber gilt bisher `quelle` (14 vorhandene Gräber), sonst `bisoziation` oder `brainstorm`. Ein neuer Wert wäre eine Änderung von `src/types.ts` und wird nur nach Entscheidung von Félix eingeführt.
+**Grab-Vorschläge:** `origin` nur aus `bib schema` (`ideenliste`, `brainstorm`, `quelle`, `bisoziation`, `inversion`, `modell-katalog`). **`inversion` ist seit 30.09.2026 gültig** (Entscheidung Félix; `Herkunft` in `src/types.ts`). Ältere Inversions-Gräber führen weiter `quelle`, `bisoziation` oder `brainstorm`.
 
 **Inversions-Vorschläge** zielen auf `06-suche/amelie-inversions-log.md` (Tabellenzeile) und `src/data/graeber.json` (nur als Text). Die Retros dort stehen neueste zuerst; maßgeblich ist das „Nächstes Mal" der ersten Retro, die eines hat.
 
@@ -107,7 +107,7 @@ PR-Kommentar ist Standard (versioniert, verlinkbar, automatisierbar). Direktnach
 1. **Manifest:** vom Lab bestätigt (v0.2). Offen bei uns: Prüfer bauen (`check:lab-pr` o. ä.), Lab-Schema `schemas/lab-manifest.schema.json` übernehmen.
 2. **`grave.add` für `lab-librarian`:** technisch ohne `human_accepted` erlaubt, obwohl Lab-Gräber nur Vorschläge sein sollen. Entscheidung Félix: Recht an `human_accepted` binden?
 3. **`bib quellen import`** prüft die Rechte-Datei nicht; das Lab soll `bib apply` nutzen (bekannte Lücke, keine technische Sperre).
-4. **Requests 1/2 aus `Amelie-lab/docs/bib-lab-requests.md`:** `--no-export` sinnvoll; `proposal.add` nicht nötig; `terminology.add`/`question.add` erst, wenn Amélie Speicher dafür führen will (Entscheidung Félix); `dossier.annotate` nicht.
+4. **Requests 1/2 aus `Amelie-lab/docs/bib-lab-requests.md`:** Request 1 `bib apply --no-export` umgesetzt (30.09.2026). Request 2: **Speicher für Terminologie und Fragen wird geführt** (Entscheidung Félix, 30.09.2026), Ops `terminology.add` und `question.add` sind umgesetzt (Format wie im Request; siehe `amelie-bibliothek-cli.md`). **Rechte für `lab-librarian` sind noch nicht vergeben** (Entscheidung Félix, `bib-actors.json` unverändert), bis dahin schreibt nur der Bibliothekar. `proposal.add` und `dossier.annotate` nicht.
 5. ~~Vorab-Prüfung im Lab-Lauf~~ erledigt (Lab, verbindlich eingebaut).
 6. **Review-Pfad des Labs** (`write_plan`) schreibt noch außerhalb `proposals/` (Dossiernotizen, Register); bis ein Proposal-only-Modus existiert, öffnet das Lab dafür keinen PR. Lab-Arbeit.
 7. **Rückkanal:** Kopfzeile aus §7 ab jetzt in jedem Kommentar; Lab wertet sie aus.

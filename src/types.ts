@@ -187,7 +187,7 @@ export type Fundweg =
   | 'unbekannt';
 
 /** Woher die Idee kam. */
-export type Herkunft = 'ideenliste' | 'brainstorm' | 'quelle' | 'bisoziation' | 'modell-katalog';
+export type Herkunft = 'ideenliste' | 'brainstorm' | 'quelle' | 'bisoziation' | 'inversion' | 'modell-katalog';
 
 /** Wie weit sie kam, bevor sie starb. Je weiter, desto teurer der Tod. */
 export type Stadium = 'kandidat' | 'dose' | 'mail-entwurf' | 'zugestellt';

@@ -246,7 +246,7 @@ describe('bib schema, Lookups, Fehlercodes', () => {
     expect(s.sources.kategorie).toContain('norm');
     expect(s.graves.cause).toEqual(expect.arrayContaining(['gebaut', 'praemisse']));
     expect(s.graves.required).toContain('resurrectIfDe');
-    expect(Object.keys(s.operations).sort()).toEqual(['grave.add', 'protokoll.add', 'source.add', 'source.log', 'source.rate', 'vector.set']);
+    expect(Object.keys(s.operations).sort()).toEqual(['grave.add', 'protokoll.add', 'question.add', 'source.add', 'source.log', 'source.rate', 'terminology.add', 'vector.set']);
     expect(s.vectors).toMatchObject({ forbidden: ['V8'], maxDelta: 2, evidenceRequired: true });
     expect(s.actors['lab-librarian'].conditional['protokoll.add']).toEqual({ requires: 'human_accepted' });
     expect(s.exitCodes).toMatchObject({ VALIDATION: 10, PRECONDITION: 11, PERMISSION: 12, LOCK: 13, APPLY_FAILED: 14 });
@@ -324,5 +324,48 @@ describe('CLI mit --json (echtes Repo, nur lesend oder dry-run)', () => {
     const r = cli(['hilfe']);
     expect(r.status).toBe(0);
     expect(r.stdout).toContain('--no-export');
+  });
+});
+
+describe('bib apply: Terminologie, Fragen und origin inversion', () => {
+  let f: ReturnType<typeof fixture>;
+  beforeEach(() => { f = fixture(); });
+  const read = (rel: string) => (existsSync(join(f.root, rel)) ? readFileSync(join(f.root, rel), 'utf8') : null);
+
+  it('terminology.add legt die Datei mit Überschrift an, ist idempotent und ignoriert Groß-/Kleinschreibung', () => {
+    const op = { op: 'terminology.add', term: 'Vollzugslücke', language: 'de', notes: 'Norm ohne Durchsetzung' };
+    const r = applyPlan(base([op]), { root: f.root });
+    expect(r.ok, JSON.stringify(r.errors)).toBe(true);
+    expect(read(REL.terminologie)).toBe('# Terminologie-Map\n\n- Vollzugslücke (de): Norm ohne Durchsetzung\n');
+    const r2 = applyPlan(base([{ ...op, term: 'VOLLZUGSLÜCKE', notes: 'anders' }, { ...op, term: 'Gegenwerkzeug', language: 'und', notes: 'counter tool' }]), { root: f.root });
+    expect(r2.ok).toBe(true);
+    expect(r2.ops[0].skipped).toBe(true);
+    expect(read(REL.terminologie)).toBe('# Terminologie-Map\n\n- Vollzugslücke (de): Norm ohne Durchsetzung\n- Gegenwerkzeug (und): counter tool\n');
+  });
+
+  it('terminology.add lehnt ungültige Sprache und mehrzeilige Texte ab, ohne etwas zu schreiben', () => {
+    const before = hashes(f.root);
+    const r = applyPlan(base([{ op: 'terminology.add', term: 'x', language: 'deu', notes: 'n' }, { op: 'terminology.add', term: 'y', language: 'de', notes: 'a\nb' }]), { root: f.root });
+    expect(r.ok).toBe(false);
+    expect(r.errors.map((e: any) => [e.code, e.field])).toEqual([['VALUE_INVALID', 'ops[0].language'], ['VALUE_INVALID', 'ops[1].notes']]);
+    expect(hashes(f.root)).toBe(before);
+    expect(read(REL.terminologie)).toBeNull();
+  });
+
+  it('question.add hängt an, überspringt identische Fragen und schreibt nichts, wenn alles schon steht', () => {
+    const op = { op: 'question.add', question: 'Wer verantwortet die Ablage?' };
+    expect(applyPlan(base([op]), { root: f.root }).ok).toBe(true);
+    expect(read(REL.fragen)).toBe('# Offene Fragen\n\n- Wer verantwortet die Ablage?\n');
+    const r = applyPlan(base([op]), { root: f.root });
+    expect(r.ok).toBe(true);
+    expect(r.ops[0].skipped).toBe(true);
+    expect(r.files).not.toContain(REL.fragen);
+    expect(read(REL.fragen)).toBe('# Offene Fragen\n\n- Wer verantwortet die Ablage?\n');
+  });
+
+  it('grave.add nimmt origin inversion an', () => {
+    const r = applyPlan(base([{ op: 'grave.add', grave: { ...GRAVE, id: 'inv-grab', origin: 'inversion' } }]), { root: f.root });
+    expect(r.ok, JSON.stringify(r.errors)).toBe(true);
+    expect(JSON.parse(readFileSync(join(f.root, REL.graeber), 'utf8')).at(-1)).toMatchObject({ id: 'inv-grab', origin: 'inversion' });
   });
 });
