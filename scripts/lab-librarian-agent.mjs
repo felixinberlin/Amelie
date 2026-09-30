@@ -5,7 +5,9 @@
 // eigene Werkzeuge. Kein Claude-Code-Subagent. Er ist NUR LESEND: die Werkzeuge schreiben nichts, der Agent bucht
 // nichts und liefert einen Bericht mit der Zeile „EMPFEHLUNG: merge|nicht mergen“.
 //
-// Werkzeuge:  bib_find · quellen_match · list_proposals · read_proposal
+// Werkzeuge:  bib_find · quellen_match · list_proposals · read_proposal  (Kern, nur lesend)
+//             dazu das Kit aus scripts/agent-kit.mjs: run_cli · read_file · search_repo · web_fetch ·
+//             list_skills/load_skill (Skills des Projekts) · list_agents/call_agent (andere Amélie-Agenten als Unter-Agent, nur lesend)
 // Modell:     scripts/model-compare/models.local.json (Eintrag "librarian": "<id>", sonst "judge", sonst das erste Modell)
 
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
@@ -15,6 +17,7 @@ import { matchUrl } from './quellen-lib.mjs';
 import { createProvider, runConversation } from './model-compare/providers.mjs';
 import { loadConfig } from './model-compare/runner.mjs';
 import { PROPOSALS } from './lab-review-lib.mjs';
+import { KIT_TOOLS, createKit } from './agent-kit.mjs';
 
 const MAX_READ = 24000;
 
@@ -90,6 +93,13 @@ Regeln (06-suche/amelie-lab-protokoll.md §7):
 - Vorschläge müssen als Vorschläge formuliert sein, nicht wie Änderungen, die hier schon gelten.
 - Du erfindest keine Belege. Was du nicht mit einem Werkzeug geprüft hast, sagst du so.
 
+Hilfsmittel des Projekts, die du nutzt, wenn die Prüfung sie braucht (nicht als Routine):
+- run_cli: weitere Lesebefehle der Bibliotheks-CLI (grab list/show, protokoll show, vorflug, quellen next). read_file und search_repo: Playbook, Atlas, Friedhof, Protokolle lesen.
+- load_skill: Skills sind Anleitungen des Projekts (z. B. idea-reviewer mit Rubrik, amelie-ideenrunde mit Suchmethode). Lade einen, wenn ein Vorschlag nach dessen Methode beurteilt werden muss.
+- call_agent: ideen-scout (Existenzprüfung), idea-reviewer (Vektoren), inversions-agent, bisoziations-kollider. Sie laufen nur lesend und sind teuer. Protokoll §8: Eine Existenzprüfung setzen Félix oder der Orchestrator an, nicht du. Rufe einen Agenten nur, wenn eine konkrete Frage der Prüfung ohne ihn offen bliebe (etwa: Hält ein als „frei“ behaupteter Survivor einer Nachprüfung stand?), und nenne im Bericht, warum.
+- web_fetch: eine Quellen-URL ansehen, wenn ein Vorschlag sie behauptet und du es prüfen willst.
+Alles ist nur lesend. Nichts davon ändert Dateien, bucht oder mergt.
+
 Vorgehen: list_proposals, dann die Vorschlagsdatei (.md) und das Manifest mit read_proposal lesen. Jeden genannten Begriff mit bib_find (klein geschrieben, mehrere Begriffe nur wenn sie zusammen vorkommen sollen) und jede Quelle mit quellen_match gegenprüfen.
 
 Antwort: Deutsch, höchstens 40 Zeilen, kurze Sätze. Erst Befunde (Duplikate, Fehltreffer, Formulierung), dann offene Punkte für Félix. Die LETZTE Zeile ist genau eine von:
@@ -115,9 +125,15 @@ export function pickModel(cfg, id) {
   return spec;
 }
 
+/** Werkzeugliste des Agenten. delegate=false blendet die Unter-Agenten aus. */
+export function librarianTools({ delegate = true } = {}) {
+  const kit = ['run_cli', 'read_file', 'search_repo', 'web_fetch', 'list_skills', 'load_skill', ...(delegate ? ['list_agents', 'call_agent'] : [])];
+  return [...LIBRARIAN_TOOLS, ...kit.map((n) => KIT_TOOLS[n])];
+}
+
 /**
- * Läuft den Agenten. opts: { root, worktree, pr, files, results, manifest, model?, maxTurns? }
- * deps: { adapter? (Tests), config? } → { text, usage, toolLog, stop, cost, model }
+ * Läuft den Agenten. opts: { root, worktree, pr, files, results, manifest, model?, maxTurns?, delegate?, maxAgentCalls? }
+ * deps: { adapter? (Tests), config? } → { text, usage, toolLog, stop, cost, model, agentCalls }
  */
 export async function runLabLibrarian(opts, deps = {}) {
   const root = opts.root;
@@ -128,16 +144,26 @@ export async function runLabLibrarian(opts, deps = {}) {
     spec = pickModel(cfg, opts.model);
     adapter = await createProvider(spec);
   }
-  const handlers = createLibrarianHandlers({ root, proposalsDir: join(opts.worktree, PROPOSALS) });
+  const delegate = opts.delegate !== false;
+  const quellen = JSON.parse(readFileSync(join(root, 'src/data/quellen.json'), 'utf8'));
+  const kit = createKit({
+    root, quellen, maxAgentCalls: opts.maxAgentCalls ?? 3,
+    makeAdapter: delegate ? async (role) => (deps.makeAdapter ? deps.makeAdapter(role) : adapter) : undefined,
+    fetchFn: deps.fetchFn,
+  });
+  const core = createLibrarianHandlers({ root, proposalsDir: join(opts.worktree, PROPOSALS) });
+  const handlers = { ...kit.handlers, ...core }; // die Kernwerkzeuge (bib_find, quellen_match, read_proposal) haben Vorrang
   const r = await runConversation(adapter, {
     system: SYSTEM_PROMPT,
     user: userPrompt(opts),
-    tools: LIBRARIAN_TOOLS,
+    tools: librarianTools({ delegate }),
     handlers,
     maxTurns: opts.maxTurns ?? 16,
     meta: { engine: 'bibliothekar' },
   });
+  const sub = kit.ledger.agentCalls.reduce((a, c) => ({ in: a.in + (c.usage?.in ?? 0), out: a.out + (c.usage?.out ?? 0) }), { in: 0, out: 0 });
+  const usage = { ...r.usage, in: r.usage.in + sub.in, out: r.usage.out + sub.out, subagent: sub };
   const price = spec.price;
-  const cost = price ? (r.usage.in * price.in + r.usage.out * price.out) / 1e6 : null;
-  return { ...r, cost, model: spec.id };
+  const cost = price ? (usage.in * price.in + usage.out * price.out) / 1e6 : null;
+  return { ...r, usage, cost, model: spec.id, agentCalls: kit.ledger.agentCalls };
 }

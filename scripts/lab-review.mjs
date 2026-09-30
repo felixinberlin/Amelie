@@ -33,6 +33,7 @@ const HILFE = `Lab-PR-Prüfung (Bibliothekar ruft die Prüfkette aus dem Lab-Pro
 
 Optionen für review:
   --no-agent        nur die maschinellen Prüfungen, kein Bibliothekar-Agent (kostet nichts)
+  --no-delegate     der Agent darf keine anderen Amélie-Agenten rufen (Skills und Lesewerkzeuge bleiben)
   --post            Kommentar mit fester Kopfzeile in den PR schreiben (nur bei Merge oder Ablehnung)
   --merge           mergen, wenn alles grün ist und der Bibliothekar „EMPFEHLUNG: merge" gibt; danach git pull --ff-only
   --keep            Worktree nicht löschen
@@ -40,8 +41,9 @@ Optionen für review:
 
 Maschinell (immer): Umfang nur neue Dateien in ${PROPOSALS} (vor jeder Codeausführung), Manifest
 (check:lab-pr mit PR-Text), lint, test, bib apply --dry-run je Plan.
-Agent (scripts/lab-librarian-agent.mjs): eigene Schleife gegen ein Modell (Claude, Vertex oder Gemini), Werkzeuge
-bib_find, quellen_match, list_proposals, read_proposal, alle nur lesend. Er bucht nie etwas.
+Agent (scripts/lab-librarian-agent.mjs): eigene Schleife gegen ein Modell (Claude, Vertex oder Gemini). Werkzeuge, alle nur
+lesend: bib_find, quellen_match, read_proposal, run_cli (bib/quellen-Lesebefehle), read_file, search_repo, web_fetch, dazu
+Skills des Projekts (load_skill) und andere Amélie-Agenten als Unter-Agent (call_agent). Er bucht nie etwas.
 Einrichten wie beim Modellvergleich: 06-suche/amelie-modellvergleich.md (SDK per npm i --no-save, models.local.json).`;
 
 function ghJson(args) {
@@ -126,10 +128,11 @@ async function review() {
     if (!has('no-agent')) {
       step('Bibliothekar (eigenständiger Agent, nur lesend)');
       try {
-        const a = await runLabLibrarian({ root: ROOT, worktree: wt, pr, files, results, manifest, model: opt('model') });
+        const a = await runLabLibrarian({ root: ROOT, worktree: wt, pr, files, results, manifest, model: opt('model'), delegate: !has('no-delegate') });
         agentText = a.text.trim();
         recommendation = parseRecommendation(agentText);
         const cost = a.cost === null ? '' : `, ca. ${a.cost.toFixed(2)} $`;
+        for (const c of a.agentCalls) console.log(`   Unter-Agent ${c.agent}: ${c.turns} Runden, ${c.toolLog.length} Werkzeugaufrufe`);
         console.log(`   ${a.model}: ${a.turns} Runden, ${a.toolLog.length} Werkzeugaufrufe, ${a.usage.in + a.usage.out} Token${cost}`);
         record('Bibliothekar-Agent', recommendation !== null, recommendation ? `Empfehlung: ${recommendation}` : 'Bericht ohne Zeile „EMPFEHLUNG: merge|nicht mergen"');
       } catch (e) {
