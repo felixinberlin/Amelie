@@ -26,7 +26,8 @@
     "sync:idea-frontmatter": "node scripts/sync-idea-frontmatter.mjs",
     "audit": "node scripts/run-audit.mjs",
     "wet-ink:lab": "node scripts/wet-ink-lab.mjs",
-    "export:market": "node scripts/export-market-leads.mjs"
+    "export:market": "node scripts/export-market-leads.mjs",
+    "lab": "node scripts/lab-review.mjs"
   },
   "dependencies": {
     "@types/canvas-confetti": "^1.9.0",

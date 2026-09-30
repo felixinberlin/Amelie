@@ -81,6 +81,8 @@ Das Lab kopiert Werte nicht, sondern liest `npm run bib -- schema`. Neue Ops ode
 
 ## 7. Prüfkette hier (Bibliothekar, automatisierbar)
 
+Automatisiert: `npm run lab -- review <pr>` (Handbuch `06-suche/amelie-lab-review-cli.md`).
+
 1. Diff-Umfang: nur `06-suche/proposals/`, nur neue Dateien.
 2. Manifest lesen: Felder vollständig, Regeln aus §3.
 3. Worktree im Scratchpad, `npm run lint` und `npm test` einzeln (nicht `bib abschluss`).

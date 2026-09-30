@@ -2,7 +2,8 @@
 // Prüft Lab-Manifeste (Protokoll: 06-suche/amelie-lab-protokoll.md §3, §7).
 //
 //   node scripts/check-lab-pr.mjs                       alle 06-suche/proposals/*.manifest.json (Teil von npm run lint)
-//   node scripts/check-lab-pr.mjs --pr <base> [--pr-text datei]
+//   node scripts/check-lab-pr.mjs --pr <base> [--pr-text datei] [--root <verzeichnis>]
+//        --root: Manifeste und Diff aus einem anderen Checkout (Worktree eines PR); Schema und Quellenregister bleiben von hier
 //        zusätzlich für einen PR: geänderte Dateien gegen <base>...HEAD (nur neu, nur proposals/, deckungsgleich mit
 //        files), Pflichtzeile „Existenzprüfung: ja|nein" gegen existence_check und Quellen-Ops gegen das Register.
 //
@@ -15,14 +16,15 @@ import { spawnSync } from 'node:child_process';
 import Ajv2020 from 'ajv/dist/2020.js';
 import { matchUrl } from './quellen-lib.mjs';
 
-const ROOT = new URL('..', import.meta.url).pathname;
+const SELF = new URL('..', import.meta.url).pathname;
+const ROOT = (() => { const i = process.argv.indexOf('--root'); return i >= 0 ? process.argv[i + 1] : SELF; })();
 const PROPOSALS = '06-suche/proposals/';
 const SCHEMA = '06-suche/lab-manifest.schema.json';
 
 const ajv = new Ajv2020({ allErrors: true, strict: false });
 let validateSchema;
 function schemaValidator(root) {
-  if (!validateSchema) validateSchema = ajv.compile(JSON.parse(readFileSync(join(root, SCHEMA), 'utf8')));
+  if (!validateSchema) validateSchema = ajv.compile(JSON.parse(readFileSync(join(SELF, SCHEMA), 'utf8')));
   return validateSchema;
 }
 
@@ -62,7 +64,8 @@ export function checkManifest(m, ctx = {}) {
     for (const d of ctx.diffFiles.filter((x) => x.status !== 'A')) errs.push(`PR ändert bestehende Datei (${d.status}): ${d.path} (create-only)`);
     const inPr = new Set(ctx.diffFiles.map((d) => d.path));
     for (const f of m.files) if (!inPr.has(f)) errs.push(`files nennt ${f}, im PR nicht enthalten`);
-    for (const p of inPr) if (!m.files.includes(p)) errs.push(`PR enthält ${p}, nicht in files des Manifests`);
+    const claimed = ctx.unionFiles ?? m.files; // PR mit mehreren Läufen: jede Datei gehört zu irgendeinem Manifest
+    for (const p of inPr) if (!claimed.includes(p)) errs.push(`PR enthält ${p}, nicht in files ${ctx.unionFiles ? 'eines Manifests' : 'des Manifests'}`);
   }
   if (ctx.register) {
     const ids = new Set(ctx.register.quellen.map((q) => q.id));
@@ -101,7 +104,7 @@ function main() {
   const ctxBase = { root: ROOT };
   if (base) {
     ctxBase.diffFiles = gitDiff(ROOT, base);
-    ctxBase.register = JSON.parse(readFileSync(join(ROOT, 'src/data/quellen.json'), 'utf8'));
+    ctxBase.register = JSON.parse(readFileSync(join(SELF, 'src/data/quellen.json'), 'utf8'));
     if (prTextFile) ctxBase.prText = readFileSync(prTextFile, 'utf8');
   }
   let bad = 0;
@@ -109,6 +112,11 @@ function main() {
   if (base && !targets.length && ctxBase.diffFiles.length) {
     console.error('✗ Der PR ändert Dateien, enthält aber kein Manifest unter 06-suche/proposals/*.manifest.json');
     process.exit(1);
+  }
+  if (base) {
+    const union = new Set();
+    for (const f of targets) { try { for (const x of JSON.parse(readFileSync(join(dir, f), 'utf8')).files ?? []) union.add(x); } catch { /* steht unten im Befund */ } }
+    ctxBase.unionFiles = [...union];
   }
   for (const f of targets) {
     let m;

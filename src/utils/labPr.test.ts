@@ -63,3 +63,17 @@ describe('check:lab-pr: checkManifest', () => {
     expect(e).toMatch(/unbekannte Quelle gibtsnicht/);
   });
 });
+
+describe('PR mit mehreren Läufen', () => {
+  it('eine Datei eines anderen Manifests im selben PR ist kein Fehler, eine unbekannte schon', () => {
+    const other = '06-suche/proposals/lab-2026-09-30-inversion-20260930T110000-def456.md';
+    const diffFiles = [
+      ...base().files.map((path: string) => ({ status: 'A', path })),
+      { status: 'A', path: other },
+    ];
+    const union = [...base().files, other];
+    expect(checkManifest(base(), { ...ctx, diffFiles, unionFiles: union })).toEqual([]);
+    expect(checkManifest(base(), { ...ctx, diffFiles }).join()).toContain('nicht in files des Manifests');
+    expect(checkManifest(base(), { ...ctx, diffFiles, unionFiles: base().files }).join()).toContain('eines Manifests');
+  });
+});
