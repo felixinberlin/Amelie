@@ -182,7 +182,7 @@ Zwei Textspeicher, beide append-only und idempotent (ein Duplikat wird überspru
 | `terminology.add` | `term`, `language` (ISO 639-1 oder `und`), `notes` (alle einzeilig) | hängt `- <term> (<language>): <notes>` an `06-suche/terminology-map.md` an (Datei mit `# Terminologie-Map` angelegt, falls sie fehlt); gleicher Begriff ohne Beachtung der Groß-/Kleinschreibung wird übersprungen |
 | `question.add` | `question` (einzeilig) | hängt `- <question>` an `06-suche/open-questions.md` an (`# Offene Fragen`); identischer Text wird übersprungen |
 
-Beide Speicher stehen in `bib state` (Hashes) und im Schnappschuss der Transaktion. Rechte: Der `bibliothekar` darf beide; ob `lab-librarian` sie ohne `human_accepted` darf, ist eine Entscheidung von Félix (offen, `06-suche/bib-actors.json` ist unverändert).
+Beide Speicher stehen in `bib state` (Hashes) und im Schnappschuss der Transaktion. Rechte: `bibliothekar` und `lab-librarian` dürfen beide, `lab-librarian` ohne `human_accepted` (Entscheidung Félix, 30.09.2026).
 
 ### Noch nicht enthalten
 

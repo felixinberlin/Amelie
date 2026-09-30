@@ -4,7 +4,7 @@
   "actors": {
     "bibliothekar": { "allow": ["*"] },
     "lab-librarian": {
-      "allow": ["source.log", "grave.add"],
+      "allow": ["source.log", "grave.add", "terminology.add", "question.add"],
       "conditional": {
         "protokoll.add": { "requires": "human_accepted" },
         "source.add": { "requires": "human_accepted" }

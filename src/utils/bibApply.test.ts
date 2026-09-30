@@ -363,6 +363,13 @@ describe('bib apply: Terminologie, Fragen und origin inversion', () => {
     expect(read(REL.fragen)).toBe('# Offene Fragen\n\n- Wer verantwortet die Ablage?\n');
   });
 
+  it('lab-librarian darf terminology.add und question.add ohne human_accepted, source.add weiter nicht', () => {
+    const ok = applyPlan(base([{ op: 'terminology.add', term: 'Testbegriff', language: 'de', notes: 'n' }, { op: 'question.add', question: 'Frage?' }], { actor: 'lab-librarian' }), { root: f.root });
+    expect(ok.ok, JSON.stringify(ok.errors)).toBe(true);
+    const no = applyPlan(base([{ op: 'source.add', id: 'x-y', name: 'X', typ: 'A', kategorie: 'norm', enthaelt: 'e', urls: ['https://example.org/z'] }], { actor: 'lab-librarian' }), { root: f.root });
+    expect(no.exit).toBe(EXIT.PERMISSION);
+  });
+
   it('grave.add nimmt origin inversion an', () => {
     const r = applyPlan(base([{ op: 'grave.add', grave: { ...GRAVE, id: 'inv-grab', origin: 'inversion' } }]), { root: f.root });
     expect(r.ok, JSON.stringify(r.errors)).toBe(true);
