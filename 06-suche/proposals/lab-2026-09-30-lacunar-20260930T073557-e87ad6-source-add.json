@@ -1,0 +1,23 @@
+{
+  "plan_id": "lab-2026-09-30-lacunar-20260930T073557-e87ad6-source-add",
+  "actor": "lab-librarian",
+  "agent": "lab",
+  "runde": "lacunar-20260930T073557-e87ad6",
+  "_note": "Vorschlag des Labs, nicht angewendet. Der Bibliothekar prüft (typ, kategorie, `bib quellen match --url`, `bib find`); `human_accepted: true` setzt nur Félix, danach `npm run bib -- apply` auf diese Datei.",
+  "ops": [
+    {
+      "op": "source.add",
+      "id": "schmetterlingszaehlungen-nach-der-transect-methode",
+      "name": "Schmetterlingszählungen nach der Transect-Methode",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "enthaelt": "Die Transect-Methode zur Schmetterlingszählung weist verschiedene Fehlerquellen und Schwierigkeiten auf, darunter die Nichterfüllung grundlegender Annahmen (z.B. sichere Entdeckung), starke Abhängigkeit von Wetterbedingungen, Schwankungen in der Beobachtererfahrung und -effizienz, variable Nachweisbarkeit der Schmetterlinge durch Habitatmerkmale sowie Schwierigkeiten bei der Erfassung …",
+      "status": "angekratzt",
+      "evidenz": "schnipsel",
+      "note": "Anker des Lab-Laufs lacunar-20260930T073557-e87ad6 (Ideen für Schmetterlinge); nur als Suchschnipsel gelesen.",
+      "urls": [
+        "https://butterfly-monitoring.net/sites/default/files/Pdf/Manual/Butterfly%20Transect%20Counts-Manual%20v2_2023.pdf"
+      ]
+    }
+  ]
+}
