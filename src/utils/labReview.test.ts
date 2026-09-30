@@ -4,7 +4,7 @@ import { mkdirSync, mkdtempSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { createLibrarianHandlers, pickModel, runLabLibrarian } from '../../scripts/lab-librarian-agent.mjs';
-import { buildComment, checkPr, checkScope, decide, parseNameStatus, parseRecommendation } from '../../scripts/lab-review-lib.mjs';
+import { assess, buildComment, checkPr, checkScope, decide, parseNameStatus, parseRecommendation } from '../../scripts/lab-review-lib.mjs';
 
 describe('lab-review Regeln', () => {
   it('Umfang: nur neue Dateien in 06-suche/proposals/', () => {
@@ -36,6 +36,25 @@ describe('lab-review Regeln', () => {
     expect(decide({ blockers: [], merged: true })).toBe('gemergt');
     expect(decide({ blockers: ['lint'], merged: false })).toBe('abgelehnt');
     expect(decide({ blockers: [], merged: false })).toBeNull();
+  });
+
+  it('ein ausgefallener Agent lehnt nie ab und sperrt nur den Merge', () => {
+    const ok = [{ name: 'lint', ok: true }, { name: 'test', ok: true }];
+    const down = [...ok, { name: 'Bibliothekar-Agent', ok: false, note: 'nicht gelaufen', tool: true }];
+    const a = assess({ results: down, recommendation: null });
+    expect(a.blockers).toEqual([]);
+    expect(a.incomplete).toHaveLength(1);
+    expect(a.mergeReady).toBe(false);
+    expect(decide({ blockers: a.blockers, merged: false })).toBeNull(); // → nichts wird gepostet
+  });
+
+  it('Sachbefunde lehnen ab, „nicht mergen“ auch, nur Grün plus „merge“ ist mergebar', () => {
+    const ok = [{ name: 'lint', ok: true }];
+    expect(assess({ results: [{ name: 'Umfang', ok: false, note: 'x' }] }).blockers).toEqual(['Umfang: x']);
+    expect(assess({ results: ok, recommendation: 'nicht mergen' }).blockers).toHaveLength(1);
+    expect(assess({ results: ok, recommendation: 'merge' }).mergeReady).toBe(true);
+    expect(assess({ results: ok, recommendation: null }).mergeReady).toBe(false);
+    expect(assess({ results: ok, noAgent: true }).mergeReady).toBe(true);
   });
 
   it('Kommentar beginnt mit der festen Kopfzeile und enthält die Empfehlungszeile nicht', () => {

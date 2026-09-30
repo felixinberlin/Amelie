@@ -156,3 +156,22 @@ describe('Wiederholung bei vorübergehenden Anbieterfehlern', () => {
     expect(slept).toBe(0);
   });
 });
+
+describe('Abschlussbericht, wenn der Agent keine Empfehlung liefert', () => {
+  it('erzwingt nach der Rundengrenze einen Bericht ohne Werkzeuge', async () => {
+    const wt = mkdtempSync(join(tmpdir(), 'lab-fin-'));
+    mkdirSync(join(wt, '06-suche/proposals'), { recursive: true });
+    const adapter = {
+      name: 'endlos',
+      start: ({ user }: any) => ({ final: String(user).includes('Werkzeuglauf ist beendet') }),
+      async step(st: any) {
+        if (st.final) return { text: 'Bericht aus dem Verlauf.\nEMPFEHLUNG: nicht mergen', calls: [], usage: { in: 5, out: 5 }, stop: 'end_turn' };
+        return { text: '', calls: [{ id: 'x', name: 'list_proposals', args: {} }], usage: { in: 10, out: 10 }, stop: 'tool_use' };
+      },
+      addToolResults() {},
+    };
+    const r = await runLabLibrarian({ root: ROOT, worktree: wt, pr: { number: 1, title: 't' }, files: [], results: [], manifest: null, maxTurns: 2 }, { adapter });
+    expect(r.text).toContain('EMPFEHLUNG: nicht mergen');
+    expect(r.usage.in).toBe(10 + 10 + 5);
+  });
+});

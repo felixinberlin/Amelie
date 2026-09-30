@@ -62,3 +62,18 @@ export function buildComment({ decision, existenzCheck, sources = [], findings =
   if (text) body.push('', '**Prüfung des Bibliothekars**', text);
   return `${head.join('\n')}\n\n${body.join('\n')}\n`.replace(/\n{3,}/g, '\n\n');
 }
+
+/**
+ * Bewertet die Prüfschritte. results: [{name, ok, note, tool}], tool = Schritt ausgefallen (Agent, Netz).
+ * - blockers: Sachbefunde (Umfang, Manifest, Pläne, lint, test, Empfehlung „nicht mergen“) → Ablehnung
+ * - incomplete: ausgefallene Schritte → keine Entscheidung, nie gepostet, nie gemergt
+ * - mergeReady: nichts davon, und (ohne Agent) oder Empfehlung „merge“
+ */
+export function assess({ results, recommendation = null, noAgent = false }) {
+  const label = (x) => `${x.name}${x.note ? `: ${x.note}` : ''}`;
+  const blockers = results.filter((x) => !x.ok && !x.tool).map(label);
+  if (recommendation === 'nicht mergen') blockers.push('Der Bibliothekar empfiehlt, nicht zu mergen.');
+  const incomplete = results.filter((x) => !x.ok && x.tool).map(label);
+  const mergeReady = blockers.length === 0 && incomplete.length === 0 && (noAgent || recommendation === 'merge');
+  return { blockers, incomplete, mergeReady };
+}

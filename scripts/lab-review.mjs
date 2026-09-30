@@ -14,7 +14,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { runLabLibrarian } from './lab-librarian-agent.mjs';
-import { PROPOSALS, buildComment, checkPr, checkScope, decide, parseNameStatus, parseRecommendation } from './lab-review-lib.mjs';
+import { PROPOSALS, assess, buildComment, checkPr, checkScope, decide, parseNameStatus, parseRecommendation } from './lab-review-lib.mjs';
 
 const ROOT = fileURLToPath(new URL('..', import.meta.url));
 const [cmd = 'hilfe', ...rest] = process.argv.slice(2);
@@ -61,8 +61,9 @@ function list() {
 
 /** Ergebnis eines Prüfschritts: { name, ok, note } */
 const results = [];
-const record = (name, ok, note = '') => { results.push({ name, ok, note }); console.log(`${ok ? '✓' : '✗'} ${name}${note ? `: ${note}` : ''}`); };
-const lastLines = (s, n = 6) => s.trim().split('\n').slice(-n).join(' | ');
+// tool=true: der Schritt ist ausgefallen (Agent, Netz), das ist keine Sachfeststellung über den PR und führt nie zu einer Ablehnung
+const record = (name, ok, note = '', tool = false) => { results.push({ name, ok, note, tool }); console.log(`${ok ? '✓' : '✗'} ${name}${note ? `: ${note}` : ''}`); };
+const lastLines = (s, n = 6) => s.replace(/\x1b\[[0-9;]*m/g, '').trim().split('\n').slice(-n).join(' | ');
 
 async function review() {
   const n = Number(pos[0]);
@@ -134,21 +135,19 @@ async function review() {
         const cost = a.cost === null ? '' : `, ca. ${a.cost.toFixed(2)} $`;
         for (const c of a.agentCalls) console.log(`   Unter-Agent ${c.agent}: ${c.turns} Runden, ${c.toolLog.length} Werkzeugaufrufe`);
         console.log(`   ${a.model}: ${a.turns} Runden, ${a.toolLog.length} Werkzeugaufrufe, ${a.usage.in + a.usage.out} Token${cost}`);
-        record('Bibliothekar-Agent', recommendation !== null, recommendation ? `Empfehlung: ${recommendation}` : 'Bericht ohne Zeile „EMPFEHLUNG: merge|nicht mergen"');
+        record('Bibliothekar-Agent', recommendation !== null, recommendation ? `Empfehlung: ${recommendation}` : 'Bericht ohne Zeile „EMPFEHLUNG: merge|nicht mergen"', recommendation === null);
       } catch (e) {
-        record('Bibliothekar-Agent', false, `nicht gelaufen: ${e.message}`);
+        record('Bibliothekar-Agent', false, `nicht gelaufen: ${e.message}`, true);
       }
     }
   }
 
   // ── Entscheidung ───────────────────────────────────────────────────────────
-  const blockers = results.filter((x) => !x.ok).map((x) => `${x.name}${x.note ? `: ${x.note}` : ''}`);
-  if (recommendation === 'nicht mergen') blockers.push('Der Bibliothekar empfiehlt, nicht zu mergen.');
-  const mergeReady = blockers.length === 0 && (has('no-agent') || recommendation === 'merge');
+  const { blockers, incomplete, mergeReady } = assess({ results, recommendation, noAgent: has('no-agent') });
 
   let merged = false;
   if (has('merge')) {
-    if (!mergeReady) console.log('\n✗ --merge ignoriert: ' + (blockers.length ? 'es gibt Befunde (siehe oben).' : 'ohne Bibliothekar-Empfehlung „merge" wird nicht gemergt (mit --no-agent nur den Schalter weglassen oder selbst mergen).'));
+    if (!mergeReady) console.log('\n✗ --merge ignoriert: ' + (blockers.length ? 'es gibt Befunde (siehe oben).' : incomplete.length ? 'der Lauf ist unvollständig (siehe oben), es gibt keine Entscheidung.' : 'ohne Bibliothekar-Empfehlung „merge" wird nicht gemergt (mit --no-agent nur den Schalter weglassen oder selbst mergen).'));
     else {
       step('Mergen');
       r = sh('gh', ['pr', 'merge', String(n), '--merge']);
@@ -169,7 +168,7 @@ async function review() {
   writeFileSync(reportPath, (comment ?? buildComment({ decision: 'offen (Empfehlung: ' + (mergeReady ? 'merge' : 'nicht mergen') + ')', existenzCheck: manifest?.existence_check === true, findings, agentText })));
 
   if (has('post')) {
-    if (!comment) console.log('\n✗ --post ignoriert: ohne Merge und ohne Ablehnung gibt es keine Entscheidung. Erst mit --merge laufen lassen.');
+    if (!comment) console.log('\n✗ --post ignoriert: ' + (incomplete.length ? 'der Lauf ist unvollständig, deshalb gibt es keine Entscheidung und es wird nichts gepostet.' : 'ohne Merge und ohne Ablehnung gibt es keine Entscheidung. Erst mit --merge laufen lassen.'));
     else {
       r = sh('gh', ['pr', 'comment', String(n), '--body-file', reportPath]);
       if (r.status !== 0) die(`gh pr comment: ${r.stderr.trim()}`);
@@ -183,6 +182,7 @@ async function review() {
   }
   sh('git', ['update-ref', '-d', `refs/lab/pr-${n}`]);
   console.log(`\nBericht: ${reportPath}`);
+  if (!merged && !blockers.length && incomplete.length) { console.log(`Ergebnis: unvollständig (${incomplete.length} Schritt(e) ausgefallen), keine Entscheidung. Nochmal laufen lassen oder mit --no-agent prüfen.`); process.exit(3); }
   console.log(merged ? `Ergebnis: gemergt` : blockers.length ? `Ergebnis: ${blockers.length} Befund(e), nicht mergebar` : `Ergebnis: mergebar${recommendation ? ' (Empfehlung des Bibliothekars)' : ' (maschinell, ohne Agent)'}. Mergen mit: npm run lab -- review ${n} --merge --post`);
   process.exit(blockers.length ? 2 : 0);
 }

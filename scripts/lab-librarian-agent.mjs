@@ -16,7 +16,7 @@ import { findAll } from './bibliothek-lib.mjs';
 import { matchUrl } from './quellen-lib.mjs';
 import { createProvider, runConversation } from './model-compare/providers.mjs';
 import { loadConfig } from './model-compare/runner.mjs';
-import { PROPOSALS } from './lab-review-lib.mjs';
+import { PROPOSALS, parseRecommendation } from './lab-review-lib.mjs';
 import { KIT_TOOLS, createKit } from './agent-kit.mjs';
 
 const MAX_READ = 24000;
@@ -101,7 +101,9 @@ Hilfsmittel des Projekts, die du nutzt, wenn die Prüfung sie braucht (nicht als
 - web_fetch: eine Quellen-URL ansehen, wenn ein Vorschlag sie behauptet und du es prüfen willst.
 Alles ist nur lesend. Nichts davon ändert Dateien, bucht oder mergt.
 
-Vorgehen: list_proposals, dann die Vorschlagsdatei (.md) und das Manifest mit read_proposal lesen. Jeden genannten Begriff mit bib_find (klein geschrieben, mehrere Begriffe nur wenn sie zusammen vorkommen sollen) und jede Quelle mit quellen_match gegenprüfen.
+Vorgehen: list_proposals, dann die Vorschlagsdateien (.md) und Manifeste mit read_proposal lesen. Ein PR kann mehrere Läufe enthalten (mehrere .md und Manifeste): gehe jede .md durch und nenne im Bericht, wie viele du geprüft hast und welche nicht. Jeden genannten Begriff mit bib_find (klein geschrieben, mehrere Begriffe nur wenn sie zusammen vorkommen sollen) und jede Quelle mit quellen_match gegenprüfen.
+
+Halte das Budget ein: nach höchstens 12 Werkzeugaufrufen schreibst du den Bericht, auch wenn du nicht alles geprüft hast (nenne, was offen blieb).
 
 Antwort: Deutsch, höchstens 40 Zeilen, kurze Sätze. Erst Befunde (Duplikate, Fehltreffer, Formulierung), dann offene Punkte für Félix. Die LETZTE Zeile ist genau eine von:
 EMPFEHLUNG: merge
@@ -181,9 +183,21 @@ export async function runLabLibrarian(opts, deps = {}) {
     user: userPrompt(opts),
     tools: librarianTools({ delegate }),
     handlers,
-    maxTurns: opts.maxTurns ?? 16,
+    maxTurns: opts.maxTurns ?? 24,
     meta: { engine: 'bibliothekar' },
   });
+  // Kein Bericht mit Empfehlung (Rundengrenze oder abgebrochen): ein Abschlussaufruf ohne Werkzeuge erzwingt ihn aus dem bisherigen Verlauf.
+  if (!parseRecommendation(r.text)) {
+    const digest = r.toolLog.map((t) => `- ${t.name}(${JSON.stringify(t.args).slice(0, 120)}): ${String(t.result).replace(/\s+/g, ' ').slice(0, 200)}`).join('\n');
+    const fin = await runConversation(adapter, {
+      system: SYSTEM_PROMPT,
+      user: `${userPrompt(opts)}\n\nDein Werkzeuglauf ist beendet (${r.stop}). Bisherige Ergebnisse:\n${digest || '(keine)'}\n${r.text ? `\nDein bisheriger Text:\n${r.text}\n` : ''}\nSchreibe jetzt ohne weitere Werkzeuge den Bericht. Was du nicht geprüft hast, nennst du. Letzte Zeile: EMPFEHLUNG: merge oder EMPFEHLUNG: nicht mergen.`,
+      tools: [], handlers: {}, maxTurns: 1, meta: { engine: 'bibliothekar' },
+    });
+    r.text = fin.text || r.text;
+    r.usage = { ...r.usage, in: r.usage.in + fin.usage.in, out: r.usage.out + fin.usage.out, turns: r.usage.turns + fin.usage.turns };
+    r.turns += fin.turns;
+  }
   const sub = kit.ledger.agentCalls.reduce((a, c) => ({ in: a.in + (c.usage?.in ?? 0), out: a.out + (c.usage?.out ?? 0) }), { in: 0, out: 0 });
   const usage = { ...r.usage, in: r.usage.in + sub.in, out: r.usage.out + sub.out, subagent: sub };
   const price = spec.price;

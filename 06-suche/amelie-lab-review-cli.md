@@ -35,13 +35,17 @@ Optionen: `--model <id>` (Modell aus `scripts/model-compare/models.local.json`; 
 
 Zurückhaltung ist Teil der Anweisung: Eine Existenzprüfung setzen nach Protokoll §8 Félix oder der Orchestrator an. Der Agent ruft einen Unter-Agenten nur, wenn eine konkrete Frage der Prüfung sonst offen bliebe, und begründet das im Bericht. `--no-delegate` nimmt ihm `call_agent` ganz weg (Skills und Lesewerkzeuge bleiben).
 
+## Was „abgelehnt“ heißt
+
+Nur Sachbefunde lehnen ab: Umfang, Manifest, Pläne, `lint`, `test` oder die Empfehlung „nicht mergen“. Ein **ausgefallener Schritt** (Agent startet nicht, liefert keinen Bericht, Netzfehler) macht den Lauf nur **unvollständig**: Exit 3, keine Entscheidung, `--merge` und `--post` greifen nicht, es wird nichts in den PR geschrieben. Hintergrund: Der Kommentar ist der Rückkanal an das Lab; eine Ablehnung ohne Sachgrund würde es in die Irre führen. Liefert der Agent nach seinen Werkzeugrunden keine Empfehlung, erzwingt ein Abschlussaufruf ohne Werkzeuge den Bericht.
+
 ## Nach außen geht nur mit Schalter
 
 * `--merge`: nur wenn alle Prüfungen grün sind **und** der Agent „merge“ empfiehlt (mit `--no-agent` wird nie gemergt). Dann `gh pr merge --merge` und `git pull --ff-only`.
 * `--post`: schreibt den Kommentar mit der festen Kopfzeile (Entscheidung / Existenzprüfung / Gebuchte Quellen) aus dem Protokoll. Nur bei Merge oder Ablehnung, sonst gibt es keine Entscheidung.
 * Quellen werden **nie** gebucht. „Gebuchte Quellen“ steht immer auf `keine`; das entscheidet Félix.
 
-Bericht liegt nach jedem Lauf unter `/tmp/amelie-lab-pr-<nr>-bericht.md`. Exit 0 = mergebar, 2 = Befunde.
+Bericht liegt nach jedem Lauf unter `/tmp/amelie-lab-pr-<nr>-bericht.md`. Exit 0 = mergebar, 2 = Befunde, 3 = unvollständig.
 
 ## Einrichten des Agenten
 
