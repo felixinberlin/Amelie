@@ -5,6 +5,7 @@
 //   read_file     Dateien des Repos lesen (ohne .git, node_modules, Zugangsdaten)
 //   search_repo   git grep im Repo
 //   web_fetch     Webseite holen (Text, gekürzt; Werkzeug des Modellvergleichs)
+//   web_search    Suche über den Suchdienst des Schwesterprojekts Amélie-lab (Gratis-Kontingent, AMELIE_LAB oder ../Amelie-lab)
 //   list_skills / load_skill   die Skills unter .claude/skills (Anleitungen, als Text in den Kontext geladen)
 //   list_agents / call_agent   die anderen Amélie-Agenten aus .claude/agents als Unter-Agent rufen, NUR LESEND
 //
@@ -140,6 +141,11 @@ export const KIT_TOOLS = {
     description: 'Holt eine Webseite (http/https) als Text, gekürzt auf etwa 8000 Zeichen. Nur was du so geholt hast, darfst du mit [Seite] belegen, sonst [Schnipsel].',
     input_schema: { type: 'object', properties: { url: { type: 'string' } }, required: ['url'] },
   },
+  web_search: {
+    name: 'web_search',
+    description: 'Websuche über den Suchdienst des Labs (Google Grounded Search, Gratis-Kontingent): liefert Antworttext und Quellen-URLs. Suchtreffer sind [Schnipsel]; erst was du mit web_fetch geholt hast, ist [Seite]. Ohne Punktzahlen, Urteile oder interne Begriffe in der Frage.',
+    input_schema: { type: 'object', properties: { question: { type: 'string' }, max_queries: { type: 'number', description: '1 bis 3, Standard 2' } }, required: ['question'] },
+  },
   list_skills: { name: 'list_skills', description: 'Listet die Skills des Projekts (Anleitungen unter .claude/skills) mit Kurzbeschreibung.', input_schema: { type: 'object', properties: {} } },
   load_skill: {
     name: 'load_skill',
@@ -156,7 +162,7 @@ export const KIT_TOOLS = {
 
 const AGENT_TOOL_MAP = {
   Read: ['read_file'], Grep: ['search_repo'], Glob: ['search_repo'], Bash: ['run_cli'], WebFetch: ['web_fetch'],
-  WebSearch: [], // serverseitige Suche des Anbieters (nativeSearch), kein eigenes Werkzeug
+  WebSearch: ['web_search'], // zusätzlich zur serverseitigen Suche des Anbieters (nativeSearch), falls der Lab-Suchdienst da ist
 };
 
 /** Werkzeugnamen, die eine Agentendefinition bekommt (nie Edit/Write, nie call_agent). */
@@ -166,6 +172,14 @@ export function toolsForAgent(def) {
   return [...names];
 }
 
+// ---------------------------------------------------------------- Lab-Suchdienst
+
+/** Verzeichnis des Schwesterprojekts mit Suchdienst und venv, oder null. */
+export function labSearchDir(root, env = process.env) {
+  const dir = resolve(env.AMELIE_LAB || join(root, '..', 'Amelie-lab'));
+  return existsSync(join(dir, 'agents/search_service.py')) && existsSync(join(dir, '.venv/bin/python')) ? dir : null;
+}
+
 // ---------------------------------------------------------------- Handler
 
 /**
@@ -173,7 +187,8 @@ export function toolsForAgent(def) {
  *  makeAdapter(role) → Adapter für Unter-Agenten (ohne: call_agent meldet, dass er nicht verfügbar ist)
  *  ledger: { agentCalls: [{ agent, usage, turns, toolLog }] }, wird gefüllt
  */
-export function createKit({ root, makeAdapter, depth = 0, ledger = { agentCalls: [] }, maxAgentCalls = 3, maxAgentTurns = 14, fetchFn, quellen = [] } = {}) {
+export function createKit({ root, makeAdapter, depth = 0, ledger = { agentCalls: [] }, maxAgentCalls = 3, maxAgentTurns = 14, fetchFn, quellen = [], nativeSearch, labDir = labSearchDir(root) } = {}) {
+  if (nativeSearch === undefined) nativeSearch = !labDir; // Gemini lässt Anbieter-Suche und Funktionswerkzeuge nicht zusammen zu: mit Lab-Suchdienst aus
   const web = createWebHandlers({ quellen, ...(fetchFn ? { fetchFn } : {}) });
   const handlers = {
     async run_cli(args) {
@@ -206,6 +221,16 @@ export function createKit({ root, makeAdapter, depth = 0, ledger = { agentCalls:
       return lines.slice(0, 40).map((l) => l.slice(0, 220)).join('\n') + (lines.length > 40 ? `\n[… ${lines.length - 40} weitere]` : '');
     },
     web_fetch: (a) => web.web_fetch(a),
+    async web_search(a) {
+      if (!labDir) return 'Fehler: Lab-Suchdienst nicht gefunden (AMELIE_LAB setzen oder ../Amelie-lab mit .venv).';
+      const q = String(a?.question ?? '').trim();
+      if (q.length < 5) return 'Fehler: question ist zu kurz.';
+      const n = Math.min(3, Math.max(1, Number(a?.max_queries) || 2));
+      const r = spawnSync(join(labDir, '.venv/bin/python'), ['-m', 'agents.search_service', q, '--max-queries', String(n)], { cwd: labDir, encoding: 'utf8', timeout: 120_000, maxBuffer: 8 * 1024 * 1024 });
+      const out = String(r.stdout ?? '').trim();
+      if (r.status !== 0 || !out) return `Fehler: Suche fehlgeschlagen (Exit ${r.status}): ${String(r.stderr ?? '').split('\n').filter((l) => !/AFC|automatic function/i.test(l)).join(' ').slice(-400)}`;
+      return out.slice(0, MAX_OUT);
+    },
     async list_skills() { return listSkills(root).map((s) => `${s.name}: ${s.description}`).join('\n') || '(keine)'; },
     async load_skill(a) { return loadSkill(root, a?.name, a?.reference); },
     async list_agents() { return listAgents(root).map((a) => `${a.name}: ${a.description}`).join('\n') || '(keine)'; },
@@ -221,12 +246,12 @@ export function createKit({ root, makeAdapter, depth = 0, ledger = { agentCalls:
       const def = existsSync(file) ? parseAgentDef(readFileSync(file, 'utf8')) : null;
       if (!def) return `Fehler: Definition von ${name} fehlt.`;
       const names = toolsForAgent(def);
-      const sub = createKit({ root, makeAdapter, depth: depth + 1, ledger, fetchFn, quellen });
+      const sub = createKit({ root, makeAdapter, depth: depth + 1, ledger, fetchFn, quellen, nativeSearch, labDir });
       const system = `${def.body}\n\n---\nBetriebsart: Du läufst als Unter-Agent einer Lab-PR-Prüfung im NUR-LESEN-Modus. Schreibrechte entfallen: Was du sonst in eine Datei schreiben würdest, gibst du als Text in deinem Bericht zurück. Du rufst keine weiteren Agenten. Skills kannst du mit load_skill laden (Skill-Pfade in deiner Anweisung entsprechen .claude/skills/<name>/SKILL.md). Halte den Bericht kurz.`;
       const r = await runConversation(await makeAdapter(name), {
         system, user: task, tools: names.map((n) => KIT_TOOLS[n]),
         handlers: Object.fromEntries(names.map((n) => [n, sub.handlers[n]])),
-        nativeSearch: def.tools.includes('WebSearch'), maxTurns: maxAgentTurns, meta: { engine: name },
+        nativeSearch: nativeSearch && def.tools.includes('WebSearch'), maxTurns: maxAgentTurns, meta: { engine: name },
       });
       ledger.agentCalls.push({ agent: name, usage: r.usage, turns: r.turns, toolLog: r.toolLog, stop: r.stop });
       return `[Bericht von ${name}, ${r.turns} Runden, ${r.toolLog.length} Werkzeugaufrufe]\n${String(r.text || '(leer)').slice(0, 12000)}`;
