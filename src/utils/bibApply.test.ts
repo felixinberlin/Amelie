@@ -173,20 +173,18 @@ describe('bib apply: Rechte der Akteure', () => {
   beforeEach(() => { f = fixture(); });
   const as = (actor: string, ops: any[], extra: any = {}) => applyPlan(base(ops, { actor, ...extra }), { root: f.root });
 
-  it('lab-librarian: source.log und grave.add ja, protokoll.add nur mit human_accepted, vector.set nein, Unbekannte nein', () => {
+  it('lab-librarian: source.log, grave.add und protokoll.add ja (ohne human_accepted), vector.set nein, Unbekannte nein', () => {
     expect(as('lab-librarian', [{ op: 'source.log', id: f.id0, note: 'x' }, { op: 'grave.add', grave: GRAVE }]).ok).toBe(true);
-    const nein = as('lab-librarian', [PROT]);
+    expect(as('lab-librarian', [PROT]).ok).toBe(true);
+    const nein = as('lab-librarian', [{ op: 'vector.set', kind: 'dose', id: 'dose-a', set: { V1: 3 }, evidence: 'eine Begründung' }]);
     expect(nein).toMatchObject({ ok: false, exit: EXIT.PERMISSION });
     expect(nein.errors[0]).toMatchObject({ code: 'PERMISSION_DENIED', field: 'ops[0].op' });
-    expect(as('lab-librarian', [PROT], { human_accepted: true }).ok).toBe(true);
-    expect(as('lab-librarian', [{ ...PROT, titel: 'B', id: 'b', human_accepted: true }]).ok).toBe(true);
-    expect(as('lab-librarian', [{ op: 'vector.set', kind: 'dose', id: 'dose-a', set: { V1: 3 }, evidence: 'eine Begründung' }]).exit).toBe(EXIT.PERMISSION);
     expect(as('irgendwer', [PROT]).exit).toBe(EXIT.PERMISSION);
   });
 
   it('eine verbotene Operation blockiert den ganzen Plan, auch die erlaubten', () => {
     const before = hashes(f.root);
-    const r = as('lab-librarian', [{ op: 'source.log', id: f.id0, note: 'x' }, PROT]);
+    const r = as('lab-librarian', [{ op: 'source.log', id: f.id0, note: 'x' }, { op: 'vector.set', kind: 'dose', id: 'dose-a', set: { V1: 3 }, evidence: 'eine Begründung' }]);
     expect(r.ok).toBe(false);
     expect(hashes(f.root)).toBe(before);
   });
@@ -248,7 +246,8 @@ describe('bib schema, Lookups, Fehlercodes', () => {
     expect(s.graves.required).toContain('resurrectIfDe');
     expect(Object.keys(s.operations).sort()).toEqual(['grave.add', 'protokoll.add', 'question.add', 'source.add', 'source.log', 'source.rate', 'terminology.add', 'vector.set']);
     expect(s.vectors).toMatchObject({ forbidden: ['V8'], maxDelta: 2, evidenceRequired: true });
-    expect(s.actors['lab-librarian'].conditional['protokoll.add']).toEqual({ requires: 'human_accepted' });
+    expect(s.actors['lab-librarian'].allow).toEqual(expect.arrayContaining(['source.add', 'protokoll.add', 'terminology.add', 'question.add']));
+    expect(s.actors['lab-librarian'].conditional).toEqual({});
     expect(s.exitCodes).toMatchObject({ VALIDATION: 10, PRECONDITION: 11, PERMISSION: 12, LOCK: 13, APPLY_FAILED: 14 });
     expect(s.errorShape.code).toBeTruthy();
   });
@@ -363,10 +362,16 @@ describe('bib apply: Terminologie, Fragen und origin inversion', () => {
     expect(read(REL.fragen)).toBe('# Offene Fragen\n\n- Wer verantwortet die Ablage?\n');
   });
 
-  it('lab-librarian darf terminology.add und question.add ohne human_accepted, source.add weiter nicht', () => {
-    const ok = applyPlan(base([{ op: 'terminology.add', term: 'Testbegriff', language: 'de', notes: 'n' }, { op: 'question.add', question: 'Frage?' }], { actor: 'lab-librarian' }), { root: f.root });
+  it('lab-librarian darf source.add, protokoll.add, terminology.add und question.add ohne human_accepted, unbekannte Akteure nicht', () => {
+    const ops = [
+      { op: 'terminology.add', term: 'Testbegriff', language: 'de', notes: 'n' },
+      { op: 'question.add', question: 'Frage?' },
+      { op: 'source.add', id: 'x-y', name: 'X', typ: 'A', kategorie: 'fachgremium', enthaelt: 'e', status: 'angekratzt', evidenz: 'schnipsel', urls: ['https://example.org/z'] },
+      PROT,
+    ];
+    const ok = applyPlan(base(ops, { actor: 'lab-librarian' }), { root: f.root });
     expect(ok.ok, JSON.stringify(ok.errors)).toBe(true);
-    const no = applyPlan(base([{ op: 'source.add', id: 'x-y', name: 'X', typ: 'A', kategorie: 'norm', enthaelt: 'e', urls: ['https://example.org/z'] }], { actor: 'lab-librarian' }), { root: f.root });
+    const no = applyPlan(base([{ op: 'question.add', question: 'Andere?' }], { actor: 'unbekannt' }), { root: f.root });
     expect(no.exit).toBe(EXIT.PERMISSION);
   });
 

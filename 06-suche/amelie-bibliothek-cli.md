@@ -147,12 +147,12 @@ Es schreibt immer nur einer (`06-suche/.bib.lock`, mit PID und Akteur). Das gilt
 { "default": "deny",
   "actors": {
     "bibliothekar": { "allow": ["*"] },
-    "lab-librarian": { "allow": ["source.log", "grave.add"], "conditional": { "protokoll.add": { "requires": "human_accepted" }, "source.add": { "requires": "human_accepted" } } } } }
+    "lab-librarian": { "allow": ["source.log", "source.add", "grave.add", "protokoll.add", "terminology.add", "question.add"] } } }
 ```
 
 `allow` nennt Operationen (`*` = alle). `conditional.<op>.requires` verlangt, dass die Operation **oder** der Plan das Feld mit `true` trägt. Unbekannte Akteure sind gesperrt. Geprüft wird vor Sperre und Zustand; eine einzige verbotene Operation blockiert den ganzen Plan. Änderungen an den Rechten sind ein Commit in Amélie, nicht im Lab. Die direkten CLI-Befehle sind der Bibliothekar und nicht eingeschränkt.
 
-**Neue Quellen vom Lab sind Vorschläge (30.09.2026):** `lab-librarian` darf `source.add` nur mit `human_accepted: true`. Der Ablauf: Das Lab legt den Plan mit `source.add` in den PR (Datei `results/…write-plan.json` oder als Anhang der Übergabenotiz), der Bibliothekar prüft die Quelle (Typ, Kategorie, Doppelfund über `bib quellen match --url`, `bib find`), setzt `human_accepted: true` und wendet den Plan selbst an. Ein Lab-Aufruf ohne das Feld endet mit Exit 12. **Bekannte Lücke:** `bib quellen import` prüft die Rechte-Datei nicht; das Lab soll ihn nicht mehr benutzen, sondern `bib apply` mit `source.add`. Eine technische Sperre gibt es dafür noch nicht.
+**Rechte des Labs (Entscheidung Félix, 30.09.2026):** `lab-librarian` darf `source.add` und `protokoll.add` **ohne** `human_accepted`; die frühere Bedingung ist entfernt (der Mechanismus `conditional` bleibt für andere Akteure). Die Konvention im Protokoll (Lab-PRs sind Vorschläge unter `06-suche/proposals/`, Anwenden prüft der Bibliothekar) gilt weiter. Früherer Ablauf, heute nur noch Konvention: Das Lab legt den Plan mit `source.add` in den PR (Datei `results/…write-plan.json` oder als Anhang der Übergabenotiz), der Bibliothekar prüft die Quelle (Typ, Kategorie, Doppelfund über `bib quellen match --url`, `bib find`), setzt `human_accepted: true` und wendet den Plan selbst an. Ein Lab-Aufruf mit `source.add` ohne das Feld war früher Exit 12, ist jetzt erlaubt. **Bekannte Lücke:** `bib quellen import` prüft die Rechte-Datei nicht; das Lab soll ihn nicht mehr benutzen, sondern `bib apply` mit `source.add`. Eine technische Sperre gibt es dafür noch nicht.
 
 **`06-suche/bib-ledger.json` und `06-suche/bib-audit.jsonl` gehören ins Repo** (Entscheidung 30.09.2026): Das Ledger ist der Idempotenz-Zustand (ohne ihn wiederholt sich ein Plan nach einem frischen Checkout), das Audit-Log ist die Herkunft jeder Schreiboperation. Wer `bib apply` ausführt, committet beide Dateien mit den Daten in dieselbe Änderung. Nicht in `.gitignore` (dort stehen nur Sperre und Crash-Journal).
 

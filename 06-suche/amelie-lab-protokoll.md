@@ -1,4 +1,4 @@
-# Austauschprotokoll Amélie ↔ Amélie-lab (Entwurf v0.5, 30.09.2026)
+# Austauschprotokoll Amélie ↔ Amélie-lab (Entwurf v0.6, 30.09.2026)
 
 **Status: Entwurf v0.2; das Lab hat v0.1 gegengeprüft** (PR-Kommentar zu #172, Commit `137e7508` im Lab-Repo) und Manifest, Vorab-Prüfung und Namensregeln bestätigt. Erster Vorschlag der Amélie-Seite nach den PRs #171 und #172. Wo dieses Blatt und der Code (`bib schema`, `06-suche/bib-actors.json`) sich widersprechen, gilt der Code; dann Blatt nachziehen. Offene Punkte stehen am Ende.
 
@@ -61,9 +61,9 @@ Nicht im PR: `src/data/`, `05-dosen/`, `08-friedhof/`, `06-suche/amelie-quellen.
 | Op | `lab-librarian` | Vermerk |
 |---|---|---|
 | `source.log` | ja | Standardfall bei Host-/Pfadtreffer |
-| `source.add` | nur mit `human_accepted: true` | nur bei neuem Host oder Pfad; Lab setzt das Feld nie |
+| `source.add` | ja (seit 30.09.2026 ohne `human_accepted`, Entscheidung Félix) | nur bei neuem Host oder Pfad; Konvention: im PR weiter als Vorschlag, Anwenden prüft der Bibliothekar |
 | `grave.add` | ja (bleibt erlaubt, Entscheidung Félix 30.09.2026) | Konvention: Lab-Gräber weiter nur als Vorschlag im `.md`; Gräber anwenden tut der Bibliothekar |
-| `protokoll.add` | nur mit `human_accepted: true` | Urteile sind Amélies |
+| `protokoll.add` | ja (seit 30.09.2026 ohne `human_accepted`, Entscheidung Félix) | Konvention: Urteile fällt weiter Amélie; das Lab schreibt keine Urteile (Existenzprüfung: nein) |
 | `terminology.add`, `question.add` | ja (seit 30.09.2026, Entscheidung Félix) | append-only, idempotent |
 
 Das Lab kopiert Werte nicht, sondern liest `npm run bib -- schema`. Neue Ops oder Rechte sind ein Commit hier.
@@ -84,7 +84,7 @@ Das Lab kopiert Werte nicht, sondern liest `npm run bib -- schema`. Neue Ops ode
 1. Diff-Umfang: nur `06-suche/proposals/`, nur neue Dateien.
 2. Manifest lesen: Felder vollständig, Regeln aus §3.
 3. Worktree im Scratchpad, `npm run lint` und `npm test` einzeln (nicht `bib abschluss`).
-4. `bib apply --dry-run --json` je Plan; ohne `human_accepted` erwartet Exit 12 bei `source.add`.
+4. `bib apply --dry-run --json` je Plan (Rechte und Regeln prüfen; seit 30.09.2026 ist `source.add` für das Lab technisch erlaubt).
 5. `quellen match --url` und `bib find --stamm` je Vorschlag; Duplikate benennen.
 6. Kein Urteil, kein Grab, keine Quelle wird aus einem Vorschlag automatisch gebucht.
 7. Bericht mit Merge-Empfehlung; Merge; Antwort als PR-Kommentar (Standardkanal) **mit fester Kopfzeile** als Rückkanal für das Lab:
@@ -106,7 +106,7 @@ PR-Kommentar ist Standard (versioniert, verlinkbar, automatisierbar). Direktnach
 ## 10. Offene Punkte
 
 1. **Manifest:** vom Lab bestätigt (v0.2). Offen bei uns: Prüfer bauen (`check:lab-pr` o. ä.), Lab-Schema `schemas/lab-manifest.schema.json` übernehmen.
-2. **`grave.add` für `lab-librarian`:** technisch ohne `human_accepted` erlaubt, obwohl Lab-Gräber nur Vorschläge sein sollen. Entscheidung Félix: Recht an `human_accepted` binden?
+2. ~~`grave.add`~~ entschieden: bleibt erlaubt; `human_accepted`-Bindung für `source.add` und `protokoll.add` entfernt (Entscheidung Félix, 30.09.2026). Die Konvention „Lab-PRs sind Vorschläge“ ersetzt jetzt die technische Sperre.
 3. **`bib quellen import`** prüft die Rechte-Datei nicht; das Lab soll `bib apply` nutzen (bekannte Lücke, keine technische Sperre).
 4. **Requests 1/2 aus `Amelie-lab/docs/bib-lab-requests.md`:** Request 1 `bib apply --no-export` umgesetzt (30.09.2026). Request 2: **Speicher für Terminologie und Fragen wird geführt** (Entscheidung Félix, 30.09.2026), Ops `terminology.add` und `question.add` sind umgesetzt (Format wie im Request; siehe `amelie-bibliothek-cli.md`). Rechte für `lab-librarian` auf `terminology.add`/`question.add` vergeben (Entscheidung Félix, 30.09.2026). `proposal.add` und `dossier.annotate` nicht.
 5. ~~Vorab-Prüfung im Lab-Lauf~~ erledigt (Lab, verbindlich eingebaut).
