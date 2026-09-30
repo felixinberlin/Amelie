@@ -21,6 +21,7 @@ import { GamesView } from './components/GamesView';
 import { RedditView } from './components/RedditView';
 import { QuellenView } from './components/QuellenView';
 import { VectorCompareView } from './components/VectorCompareView';
+import { VenturesTab } from './components/VenturesTab';
 import { pipelineIdeas } from './data/pipeline';
 import { DOSEN_DATA, DISCARDED_DATA } from './data/dosen';
 import { MATRIX_DATA } from './data/matrix';
@@ -36,7 +37,7 @@ import { Gift, FolderGit2 } from 'lucide-react';
 export function App() {
   const [currentTab, setCurrentTab] = useState<string>(() => {
     if (parseCompareFromUrl() !== null) return 'compare';
-    if (parseVentureFromUrl()) return 'funding';
+    if (parseVentureFromUrl()) return 'ventures';
     if (parseSimulatorFromUrl()) return 'sandboxes';
     return 'dosen';
   });
@@ -50,7 +51,11 @@ export function App() {
     }
     return 'altbau';
   });
-  const [lang, setLang] = useState<Language>('en');
+  const [lang, setLang] = useState<Language>(() => {
+    // Deep-Link-Parameter: #venture=<id>&lang=es
+    const m = typeof window !== 'undefined' ? window.location.hash.match(/[&?]lang=(de|en|es)\b/) : null;
+    return (m?.[1] as Language) ?? 'en';
+  });
   const [selectedDose, setSelectedDose] = useState<DoseItem | null>(null);
   const [packerDraft, setPackerDraft] = useState<any>(null);
   const [importedCandidates, setImportedCandidates] = useState<CandidateIdea[]>([]);
@@ -92,7 +97,7 @@ export function App() {
       }
 
       if (parseVentureFromUrl()) {
-        setCurrentTab('funding');
+        setCurrentTab('ventures');
         setActiveDosePage(null);
         window.scrollTo({ top: 0, behavior: 'smooth' });
         return;
@@ -395,7 +400,9 @@ export function App() {
               />
             )}
 
-            {currentTab === 'funding' && <FundingCompass key={parseVentureFromUrl() ?? 'funding'} lang={lang} />}
+            {currentTab === 'funding' && <FundingCompass lang={lang} />}
+
+            {currentTab === 'ventures' && <VenturesTab lang={lang} />}
 
             {currentTab === 'quellen' && <QuellenView lang={lang} />}
 

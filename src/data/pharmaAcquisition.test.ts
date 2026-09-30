@@ -1,3 +1,4 @@
+import { APPROACH_ES, FACTS_ES, TEST_ES } from './pharmaAcquisitionEs';
 import { describe, it, expect } from 'vitest';
 import {
   APPROACHES,
@@ -6,6 +7,8 @@ import {
   PHARMA_SOURCES,
   computeAll,
   computeApproach,
+  cashCurve,
+  PHARMA_TEST_PLAN,
 } from './pharmaAcquisition';
 
 describe('Apotheken-Vermittlung: Kostenmodell', () => {
@@ -55,5 +58,22 @@ describe('Apotheken-Vermittlung: Kostenmodell', () => {
     const ids = new Set(PHARMA_SOURCES.map((s) => s.id));
     for (const f of PHARMA_FACTS) expect(ids.has(f.sourceId)).toBe(true);
     for (const s of PHARMA_SOURCES) expect(s.url.startsWith('https://')).toBe(true);
+  });
+
+  it('die Kapitalkurve endet dort, wo das 24-Monats-Ergebnis liegt', () => {
+    for (const ap of APPROACHES) {
+      const r = computeApproach(ap);
+      expect(cashCurve(ap)[24]).toBeCloseTo(r.net24m, 4);
+      expect(cashCurve(ap)[0]).toBe(-ap.setupEur);
+    }
+  });
+
+  it('die spanische Fassung deckt jeden Ansatz, jeden Beleg und jeden Testschritt', () => {
+    for (const ap of APPROACHES) {
+      const es = APPROACH_ES[ap.id];
+      expect(es?.name && es.what && es.risk).toBeTruthy();
+    }
+    expect(FACTS_ES.length).toBe(PHARMA_FACTS.length);
+    expect(TEST_ES.length).toBe(PHARMA_TEST_PLAN.length);
   });
 });

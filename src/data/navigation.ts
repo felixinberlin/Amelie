@@ -38,7 +38,7 @@ export const NAV_SECTIONS: NavSection[] = [
     id: 'research',
     label: { de: 'Recherche', en: 'Research', es: 'Investigación' },
     hint: { de: 'Quellen, Geldgeber, Empfänger', en: 'Sources, funders, recipients', es: 'Fuentes, financiadores, destinatarios' },
-    tabs: ['quellen', 'reddit', 'funding', 'playbook', 'matrix', 'muster-emails'],
+    tabs: ['quellen', 'reddit', 'funding', 'ventures', 'playbook', 'matrix', 'muster-emails'],
   },
   {
     id: 'workshop',

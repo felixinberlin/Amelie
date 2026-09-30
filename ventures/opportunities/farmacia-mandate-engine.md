@@ -5,7 +5,7 @@
 **Status:** Research (modelo de costes hecho; conversiones sin medir)  
 **Category:** Servicio de intermediación + herramienta opcional  
 **Target Buyer:** intermediarios nuevos, asesores de farmacia y despachos en España  
-**Vista interactiva:** <https://felixinberlin.github.io/Amelie/#venture=farmacia-mandate-engine> (sliders de precio, comisión y tasa de cierre)
+**Vista interactiva:** <https://felixinberlin.github.io/Amelie/#venture=farmacia-mandate-engine&lang=es> (pestaña Ventures: gráficos, sliders de precio, comisión y tasa de cierre; también en DE/EN)
 
 > Todas las cifras de la tabla de enfoques son **supuestos**, no mediciones. Los datos de mercado son fragmentos de búsqueda del 30.09.2026: hay que comprobarlos en la fuente antes de citarlos. Código del modelo: `src/data/pharmaAcquisition.ts` (6 tests).
 

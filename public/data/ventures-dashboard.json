@@ -1,0 +1,290 @@
+{
+  "generatedFrom": "ventures/",
+  "leads": [
+    {
+      "id": "zero-drift-swarm-kit",
+      "name": "Zero-Drift Swarm Kit",
+      "category": "developer-tools",
+      "stage": "shipped",
+      "pricingModel": "one-time",
+      "targetPrice": "$79 - $299",
+      "targetAudience": "AI Engineers, Tech Leads, Startups using Claude Code / Cursor",
+      "amelieTwin": "amelie-orchestrator",
+      "mvpEngineReady": true,
+      "lastUpdated": "2026-09-28",
+      "vectors": {
+        "w": 5,
+        "t": 5,
+        "c": 5,
+        "m": 5,
+        "d": 4
+      }
+    },
+    {
+      "id": "espr-discloseready",
+      "name": "ESPR DiscloseReady",
+      "category": "b2b-compliance",
+      "stage": "ready-to-scaffold",
+      "pricingModel": "subscription-or-annual",
+      "targetPrice": "€490 - €1,490/year",
+      "targetAudience": "European Fashion, Electronics & Retail Brands subject to ESPR Art. 24",
+      "amelieTwin": "vernichtungs-offenlegungsregister",
+      "mvpEngineReady": true,
+      "lastUpdated": "2026-09-28",
+      "vectors": {
+        "w": 5,
+        "t": 4,
+        "c": 5,
+        "m": 4,
+        "d": 5
+      }
+    },
+    {
+      "id": "bedenkenblitz-vob",
+      "name": "BedenkenBlitz (VOB/B Liability Shield)",
+      "category": "vertical-saas",
+      "stage": "ready-to-scaffold",
+      "pricingModel": "monthly-subscription",
+      "targetPrice": "€19 - €49/month",
+      "targetAudience": "German Trade Contractors (Fliesenleger, Maler, SHK, Bauunternehmen)",
+      "amelieTwin": "dose-tradesman-liability-shield",
+      "mvpEngineReady": true,
+      "lastUpdated": "2026-09-28",
+      "vectors": {
+        "w": 5,
+        "t": 4,
+        "c": 5,
+        "m": 5,
+        "d": 4
+      }
+    },
+    {
+      "id": "wet-ink-pro-sdk",
+      "name": "Wet Ink Pro SDK & Plugins",
+      "category": "developer-sdk",
+      "stage": "shipped",
+      "pricingModel": "commercial-license",
+      "targetPrice": "$49 - $399",
+      "targetAudience": "TipTap / ProseMirror / React Webapps, Obsidian Users, E-Signature Platforms, Legaltech",
+      "amelieTwin": "wet-ink",
+      "mvpEngineReady": true,
+      "lastUpdated": "2026-09-28",
+      "vectors": {
+        "w": 4,
+        "t": 5,
+        "c": 5,
+        "m": 4,
+        "d": 5
+      }
+    },
+    {
+      "id": "eudr-timber-pass",
+      "name": "EUDR TimberPass (SME Due Diligence)",
+      "category": "b2b-compliance",
+      "stage": "architecture-validated",
+      "pricingModel": "per-filing-or-subscription",
+      "targetPrice": "€19/filing or €49/month",
+      "targetAudience": "Small Forest Owners, Local Sawmills, Timber Merchants, Carpenters",
+      "amelieTwin": "EUDR-Kleinwald-Erklärung",
+      "mvpEngineReady": false,
+      "lastUpdated": "2026-09-28",
+      "vectors": {
+        "w": 5,
+        "t": 3,
+        "c": 5,
+        "m": 4,
+        "d": 4
+      }
+    },
+    {
+      "id": "clp-chemical-safety-api",
+      "name": "CLP Chemical Hazard Verification API",
+      "category": "b2b-api",
+      "stage": "engine-verified",
+      "pricingModel": "api-subscription",
+      "targetPrice": "€199 - €790/month",
+      "targetAudience": "Facility Management Software, Industrial Cleaning Giants, Hospital Safety",
+      "amelieTwin": "dose-cleaner-chemical-safety",
+      "mvpEngineReady": true,
+      "lastUpdated": "2026-09-28",
+      "vectors": {
+        "w": 5,
+        "t": 4,
+        "c": 4,
+        "m": 4,
+        "d": 5
+      }
+    },
+    {
+      "id": "lichtplan-audit-pro",
+      "name": "Lichtplan Audit Pro",
+      "category": "b2b-compliance",
+      "stage": "criteria-extracted",
+      "pricingModel": "per-project-or-subscription",
+      "targetPrice": "€99/project or €49/month",
+      "targetAudience": "Architecture Firms, Lighting Designers, Commercial Real Estate Developers",
+      "amelieTwin": "lichtplan-check",
+      "mvpEngineReady": true,
+      "lastUpdated": "2026-09-28",
+      "vectors": {
+        "w": 4,
+        "t": 4,
+        "c": 4,
+        "m": 4,
+        "d": 4
+      }
+    },
+    {
+      "id": "arcana-tarot-engine",
+      "name": "Arcana Divination Engine & App",
+      "category": "consumer-app",
+      "stage": "engine-published",
+      "pricingModel": "freemium-or-one-time",
+      "targetPrice": "$9.99 one-time or $2.99/month",
+      "targetAudience": "Tarot Practitioners, Esoteric Enthusiasts, Creative Writers",
+      "amelieTwin": "tarot-zustandsmaschine",
+      "mvpEngineReady": true,
+      "lastUpdated": "2026-09-28",
+      "vectors": {
+        "w": 4,
+        "t": 5,
+        "c": 5,
+        "m": 4,
+        "d": 5
+      }
+    },
+    {
+      "id": "spdx-driftguard-ci",
+      "name": "SPDX DriftGuard CI",
+      "category": "developer-tools",
+      "stage": "architecture-validated",
+      "pricingModel": "one-time-or-subscription",
+      "targetPrice": "$99 one-time or $29/month",
+      "targetAudience": "Commercial SaaS Companies, Enterprises, Startups worried about AGPL/copyleft drift",
+      "amelieTwin": "git-license-spdx-drift-guard",
+      "mvpEngineReady": false,
+      "lastUpdated": "2026-09-28",
+      "vectors": {
+        "w": 5,
+        "t": 5,
+        "c": 5,
+        "m": 4,
+        "d": 4
+      }
+    },
+    {
+      "id": "procure-lens-pro",
+      "name": "ProcureLens Pro (VergabePilot B2B)",
+      "category": "b2b-compliance",
+      "stage": "criteria-extracted",
+      "pricingModel": "monthly-subscription",
+      "targetPrice": "€99 - €249/month",
+      "targetAudience": "European SMEs, IT & Construction Contractors bidding on EU/German public tenders",
+      "amelieTwin": "procure-lens",
+      "mvpEngineReady": false,
+      "lastUpdated": "2026-09-28",
+      "vectors": {
+        "w": 5,
+        "t": 4,
+        "c": 4,
+        "m": 5,
+        "d": 4
+      }
+    },
+    {
+      "id": "canopy-audit-pro",
+      "name": "CanopyAudit Pro (Urbane Baumschutz- & FLL-Compliance)",
+      "category": "b2b-compliance",
+      "stage": "criteria-extracted",
+      "pricingModel": "per-project-or-subscription",
+      "targetPrice": "€290/report or €590/month",
+      "targetAudience": "Commercial Real Estate Developers, Housing Corporations (e.g. Vonovia), Municipal Facility Managers",
+      "amelieTwin": "gruenflaechen-regelwerk-auditor",
+      "mvpEngineReady": false,
+      "lastUpdated": "2026-09-29",
+      "vectors": {
+        "w": 5,
+        "t": 4,
+        "c": 4,
+        "m": 4,
+        "d": 4
+      }
+    },
+    {
+      "id": "esrs-e4-nature-portfolio",
+      "name": "NaturePortfolio (CSRD ESRS E4 & TNFD Reporting)",
+      "category": "b2b-compliance",
+      "stage": "criteria-extracted",
+      "pricingModel": "monthly-subscription",
+      "targetPrice": "€490 - €990/month",
+      "targetAudience": "Infrastructure Developers, Utilities (Wind/Solar Parks), Real Estate ESG Leads subject to CSRD E4",
+      "amelieTwin": "eco-stratege",
+      "mvpEngineReady": false,
+      "lastUpdated": "2026-09-29",
+      "vectors": {
+        "w": 5,
+        "t": 4,
+        "c": 4,
+        "m": 5,
+        "d": 4
+      }
+    },
+    {
+      "id": "doppik-diff-pro",
+      "name": "DoppikDiff Pro (Kommunalhaushalts- & Nachtrags-Analyzer)",
+      "category": "vertical-saas",
+      "stage": "criteria-extracted",
+      "pricingModel": "monthly-subscription-or-report",
+      "targetPrice": "€149/month or €890/audit report",
+      "targetAudience": "Municipal Consulting Firms (Rödl & Partner, PwC Public Sector), Local Council Factions, State Audit Courts",
+      "amelieTwin": "haushaltslupe",
+      "mvpEngineReady": false,
+      "lastUpdated": "2026-09-29",
+      "vectors": {
+        "w": 4,
+        "t": 4,
+        "c": 4,
+        "m": 4,
+        "d": 4
+      }
+    },
+    {
+      "id": "cyanowatch-pro",
+      "name": "CyanoWatch Pro (WRRL & Badegewässer-Frühwarnung)",
+      "category": "b2b-api",
+      "stage": "criteria-extracted",
+      "pricingModel": "seasonal-subscription",
+      "targetPrice": "€390/month per lake region (May-Sept)",
+      "targetAudience": "Municipal Waterworks, Tourism Boards, Lake Recreation Operators",
+      "amelieTwin": "aquascan-sentinel",
+      "mvpEngineReady": false,
+      "lastUpdated": "2026-09-29",
+      "vectors": {
+        "w": 4,
+        "t": 4,
+        "c": 4,
+        "m": 4,
+        "d": 4
+      }
+    },
+    {
+      "id": "farmacia-mandate-engine",
+      "name": "Farmacia-Mandate (Vermittler-Akquise Spanien)",
+      "category": "brokerage",
+      "stage": "research",
+      "pricingModel": "success-fee",
+      "targetPrice": "3 % per side (assumption); optional radar €99 - €299/month",
+      "targetAudience": "New pharmacy-transaction brokers, advisers and law firms in Spain",
+      "amelieTwin": "none (external request, Reddit)",
+      "mvpEngineReady": false,
+      "lastUpdated": "2026-09-30",
+      "vectors": {
+        "w": 4,
+        "t": 2,
+        "c": 2,
+        "m": 4,
+        "d": 2
+      }
+    }
+  ]
+}

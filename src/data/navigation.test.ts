@@ -6,11 +6,11 @@ describe('navigation', () => {
     expect(new Set(ALL_NAV_TABS).size).toBe(ALL_NAV_TABS.length);
   });
   it('kein Bereich ist überladen', () => {
-    for (const s of NAV_SECTIONS) expect(s.tabs.length).toBeLessThanOrEqual(6);
+    for (const s of NAV_SECTIONS) expect(s.tabs.length).toBeLessThanOrEqual(7);
   });
-  it('alle 19 bisherigen Ziele sind erreichbar', () => {
+  it('alle 20 Ziele sind erreichbar', () => {
     const expected = ['dosen', 'matrix', 'games', 'compare', 'funding', 'manifest', 'unpacked', 'sandboxes', 'normal-jobs', 'whimsy',
-      'packer', 'quellen', 'reddit', 'playbook', 'google-import', 'data-hub', 'audit', 'muster-emails', 'discarded'];
+      'packer', 'quellen', 'reddit', 'playbook', 'google-import', 'data-hub', 'audit', 'muster-emails', 'discarded', 'ventures'];
     expect([...ALL_NAV_TABS].sort()).toEqual([...expected].sort());
   });
   it('Werkstatt erscheint nur im Admin-Modus oder wenn ein Tab daraus aktiv ist', () => {

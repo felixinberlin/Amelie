@@ -29,8 +29,6 @@ import {
   Eye,
 } from 'lucide-react';
 import { Language } from '../types';
-import { PharmaAcquisitionPanel } from './PharmaAcquisitionPanel';
-import { parseVentureFromUrl } from '../utils/doseUrl';
 import {
   FUNDING_DATA,
   FUNDING_EVENTS,
@@ -118,7 +116,7 @@ export const FundingCompass: React.FC<FundingCompassProps> = ({ lang }) => {
   const now = useMemo(() => new Date(), []);
 
   // Main active tab
-  const [activeTab, setActiveTab] = useState<MainTab>(() => (parseVentureFromUrl() ? 'founders' : 'calendar'));
+  const [activeTab, setActiveTab] = useState<MainTab>('calendar');
 
   // Calendar state
   const [calDate, setCalDate] = useState<Date>(() => new Date(2026, 9, 1)); // October 2026
@@ -136,7 +134,7 @@ export const FundingCompass: React.FC<FundingCompassProps> = ({ lang }) => {
 
   // Founders state
   const [ventureCategory, setVentureCategory] = useState<string>('all');
-  const [expandedVenture, setExpandedVenture] = useState<string | null>(() => parseVentureFromUrl());
+  const [expandedVenture, setExpandedVenture] = useState<string | null>(null);
 
   // Projects state
   const [projectTypeFilter, setProjectTypeFilter] = useState<string>('all');
@@ -1123,9 +1121,7 @@ export const FundingCompass: React.FC<FundingCompassProps> = ({ lang }) => {
                 return (
                   <div
                     key={lead.id}
-                    className={`rounded-2xl border border-[var(--m-line)] bg-[var(--m-surface)] p-4 sm:p-5 flex flex-col justify-between hover:shadow-sm transition ${
-                      isExpanded && lead.id === 'farmacia-mandate-engine' ? 'md:col-span-2' : ''
-                    }`}
+                    className="rounded-2xl border border-[var(--m-line)] bg-[var(--m-surface)] p-4 sm:p-5 flex flex-col justify-between hover:shadow-sm transition"
                   >
                     <div>
                       <div className="flex items-start justify-between gap-2 mb-2">
@@ -1194,7 +1190,11 @@ export const FundingCompass: React.FC<FundingCompassProps> = ({ lang }) => {
                             <span className="font-typewriter font-bold text-[var(--m-ink-3)]">{L('Passende Frühfinanzierung: ', 'Early Funding Fit: ')}</span>
                             {L(lead.fundingFitDe, lead.fundingFitEn)}
                           </p>
-                          {lead.id === 'farmacia-mandate-engine' && <PharmaAcquisitionPanel lang={lang} />}
+                          {lead.id === 'farmacia-mandate-engine' && (
+                            <a href="#venture=farmacia-mandate-engine" className="inline-block mt-1 font-semibold text-[var(--m-accent)] underline">
+                              {L('Vollständige Analyse mit Diagrammen im Ventures-Tab →', 'Full analysis with charts in the Ventures tab →')}
+                            </a>
+                          )}
                         </div>
                       )}
                     </div>

@@ -260,6 +260,27 @@ export function computeApproach(
   };
 }
 
+/** Kumulierter Kassenstand je Monat 0..months (Investition am Start, dann Provision minus Kosten). */
+export function cashCurve(
+  approach: PharmaApproach,
+  a: PharmaAssumptions = BASE_ASSUMPTIONS,
+  months = 36,
+): number[] {
+  const closingsPerMonth = (approach.leadsPerYear * approach.leadToMandate * a.mandateToClose) / 12;
+  const feePerClosing = a.dealPriceEur * a.feePct;
+  const share = approach.successFeeShare ?? 0;
+  const monthsToFirstFee = approach.monthsToFirstLead + 1 + a.monthsMandateToClose;
+  const out = [-approach.setupEur];
+  let cum = -approach.setupEur;
+  for (let m = 1; m <= months; m++) {
+    const activeFraction = Math.max(0, Math.min(1, m - monthsToFirstFee));
+    const fee = closingsPerMonth * feePerClosing * activeFraction;
+    cum += fee * (1 - share) - approach.monthlyEur;
+    out.push(cum);
+  }
+  return out;
+}
+
 export function computeAll(a: PharmaAssumptions = BASE_ASSUMPTIONS): ApproachResult[] {
   return APPROACHES.map((ap) => computeApproach(ap, a));
 }
