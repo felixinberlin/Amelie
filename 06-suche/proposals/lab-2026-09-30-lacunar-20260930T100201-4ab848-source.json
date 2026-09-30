@@ -1,0 +1,18 @@
+{
+  "plan_id": "lab-2026-09-30-lacunar-20260930T100201-4ab848-source",
+  "actor": "lab-librarian",
+  "agent": "lab",
+  "runde": "lacunar-20260930T100201-4ab848",
+  "_note": "Vorschlag des Labs, nicht angewendet. Der Bibliothekar prüft (typ, kategorie, `bib quellen match --url`, `bib find`); `human_accepted: true` setzt nur Félix, danach `npm run bib -- apply` auf diese Datei.",
+  "ops": [
+    {
+      "op": "source.log",
+      "id": "waldwissen-net-strategien-zum-management",
+      "note": "Anker des Lab-Laufs lacunar-20260930T100201-4ab848 (Rubinien als invasive Species): https://www.waldwissen.net/de/waldwirtschaft/schadensmanagement/neue-arten/management-der-invasiven-robinie; nur als Suchtreffer, nicht gelesen.",
+      "evidenz": "schnipsel",
+      "urls": [
+        "https://www.waldwissen.net/de/waldwirtschaft/schadensmanagement/neue-arten/management-der-invasiven-robinie"
+      ]
+    }
+  ]
+}
