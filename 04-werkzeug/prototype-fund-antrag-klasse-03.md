@@ -27,7 +27,7 @@ Weitere offene Punkte (unverändert): Antragsberechtigung (Einzelperson/GbR, Woh
 **Titel:** Zero-Drift: eine offene Bibliothek für überprüfbare Zusammenarbeit von KI-Agenten an gemeinsamem Projektwissen
 
 **Kurzbeschreibung (ca. 500 Zeichen):**
-Teams, die KI-Coding-Agenten einsetzen, verlieren Zuverlässigkeit: Agenten überschreiben sich gegenseitig, Dokumentation und Code laufen auseinander, gescheiterte Wege werden wiederholt. Zero-Drift ist eine Open-Source-Bibliothek, die genau diese Fehlerklassen mechanisch verhindert: ein transaktionaler Einzelschreiber für gemeinsamen Zustand (Rollback, Audit-Log, Rechte pro Agent), deklarative Drift-Prüfungen zwischen Spezifikation und Code und ein strukturiertes, maschinenlesbares Register gescheiterter Ansätze. Entstanden und erprobt in einem laufenden Projekt mit 44 Dokumenten, 95 Sackgassen und 302 geprüften Einträgen.
+Teams, die KI-Coding-Agenten einsetzen, verlieren Zuverlässigkeit: Agenten überschreiben sich gegenseitig, Dokumentation und Code laufen auseinander, gescheiterte Wege werden wiederholt. Zero-Drift ist eine Open-Source-Bibliothek, die genau diese Fehlerklassen mechanisch verhindert: ein transaktionaler Einzelschreiber für gemeinsamen Zustand (Rollback, Audit-Log, Rechte pro Agent), Anbindung an vorhandene Drift-Prüfungen und ein offener, maschinenlesbarer Datensatz gescheiterter Ansätze. Entstanden und erprobt in einem laufenden Projekt mit 44 Dokumenten, 95 Sackgassen und 302 geprüften Einträgen.
 
 **English abstract:**
 Teams using AI coding agents lose reliability: agents overwrite each other, docs and code drift apart, failed approaches get repeated. Zero-Drift is an open-source library that prevents these failure classes mechanically: a transactional single-writer store for shared state (rollback, audit log, per-agent permissions), declarative drift checks between specs and code, and a structured machine-readable registry of failed approaches. Extracted from a running project with 44 dossiers, 95 dead ends and 302 audited entries.
@@ -45,8 +45,8 @@ Teams using AI coding agents lose reliability: agents overwrite each other, docs
 ## 3. Lösung: drei kleine, unabhängig nutzbare Bausteine
 
 1. **`zdrift-store`:** transaktionaler Einzelschreiber. Typisierte Operationen, alles oder nichts, Schreibsperre, Vorbedingungen (Hashes), idempotent über ein Ledger, Rollback nach Absturz, Audit-Log, Rechte pro Akteur.
-2. **`zdrift-check`:** deklarative Drift-Prüfung. Regeln wie „jede Spezifikation in `specs/` hat einen Eintrag in `registry.ts` und umgekehrt", ausführbar in CI, Exit-Codes.
-3. **`zdrift-graveyard`:** JSON-Schema und Validator für Totenscheine gescheiterter Ansätze (`cause`, `killer`, `foundBy`, `stage`) plus Abfrage („gab es das schon?") mit eindeutigem Exit-Code.
+2. **`zdrift-check` (Adapter):** Regel „Spezifikation ↔ typisiertes Register" für vorhandene Drift-Werkzeuge, ausführbar in CI. Kein eigenes Drift-Framework, siehe §6.
+3. **`zdrift-graveyard`:** JSON-Schema, Validator und Abfrage („gab es das schon?") für Totenscheine (`cause`, `killer`, `foundBy`, `stage`) und der Friedhof-Datensatz selbst.
 
 Alle drei sind heute im Repo vorhanden, aber **an das Repo-Layout gebunden** (`scripts/bib-*.mjs`, `scripts/check-*.mjs`, `scripts/friedhof-muster.mjs`). Die Arbeit ist Extraktion, Verallgemeinerung, Tests und Dokumentation, nicht Erfindung.
 
@@ -56,9 +56,9 @@ Bewusst nur vier. Die Jury bevorzugt einen fokussierten Kern.
 
 | AP | Ergebnis | Nachweis | Aufwand |
 |---|---|---|---|
-| 1 | **`zdrift-store`** als eigenständiges Paket: konfigurierbares Speicherlayout, Operationen per JSON-Schema, Sperre, Snapshot/Journal/Rollback, Ledger, Akteursrechte | Testsuite inkl. Crash-Simulation und parallelen Schreibversuchen; Beispiel mit zwei konkurrierenden Agenten | 9 Wochen |
-| 2 | **`zdrift-check`:** deklarative Regeln, CI-Aktion, verständliche Fehlermeldungen | Regeln laufen auf zwei unterschiedlichen Fremd-Layouts (z. B. Amélie und ein externes Repo) | 5 Wochen |
-| 3 | **`zdrift-graveyard`:** Schema v1, Validator, Abfrage-CLI, Export des Amélie-Friedhofs (95 Totenscheine) als offener Datensatz mit Datenblatt und Zenodo-DOI | Datensatz + Datenblatt, Validierung fehlerfrei | 4 Wochen |
+| 1 | **`zdrift-store`** als eigenständiges Paket (Kern des Antrags): konfigurierbares Speicherlayout, Operationen per JSON-Schema, Sperre, Snapshot/Journal/Rollback, Ledger, Akteursrechte | Testsuite inkl. Crash-Simulation und parallelen Schreibversuchen; Beispiel mit zwei konkurrierenden Agenten | 11 Wochen |
+| 2 | **Anbindung statt Neubau:** Register-Parität (Spezifikation ↔ typisiertes Register) als Regel für vorhandene Drift-Werkzeuge (z. B. fiberplane/drift), plus CI-Beispiel | Regel läuft auf zwei unterschiedlichen Layouts (Amélie und ein externes Repo) | 3 Wochen |
+| 3 | **Friedhof-Datensatz:** Schema v1, Validator, Abfrage-CLI, Export der 95 Totenscheine als offener Datensatz mit Datenblatt und Zenodo-DOI; Prüfauftrag, ob sich Ereignistypen mit PROJECTMEM abbilden lassen | Datensatz + Datenblatt, Validierung fehlerfrei; Ergebnis des Abgleichs dokumentiert | 4 Wochen |
 | 4 | **Evaluation und Doku:** gemessen an echten Läufen (Amélie-Repo, ein externer Pilot **[FÉLIX: nennen oder streichen]**): Zahl verhinderter Kollisionen, gefangener Drift-Fälle, Fehlalarme; Schnellstart Deutsch/Englisch | Bericht mit Methode, Zahlen und Grenzen; Anleitung, die ein Fremder in 30 Minuten durchläuft | 6 Wochen |
 
 **Nicht gefördert werden soll:** Ideensuche, Dosen-Erstellung, Empfängerkommunikation, Agentenprompts, Marketing des Kits.
@@ -70,9 +70,12 @@ Bewusst nur vier. Die Jury bevorzugt einen fokussierten Kern.
 - **Reichweite (ehrlich):** heute unbelegt. Es gibt keine externen Nutzer:innen. Der Pilot in AP 4 ist der erste Beleg und ohne ihn ist die Aussage „nützlich" eine Behauptung.
 - **Offenheit:** Kern unter OSI-Lizenz **[FÉLIX: MIT oder EUPL-1.2]**, Datensatz CC0, keine Registrierung, kein Tracking.
 
-## 6. Innovation gegenüber Vorhandenem
+## 6. Innovation gegenüber Vorhandenem (Besetzt-Test vom 30.09.2026, Details: `prototype-fund-besetzt-test-agentenwerkzeuge.md`)
 
-Es gibt Frameworks zur Orchestrierung von Agenten und Sammlungen von Postmortems. Das Neue, soweit ich es aus Suchschnipseln beurteilen kann, ist die Kombination aus **transaktionalem Einzelschreiber für Projektwissen**, **mechanischen Drift-Prüfungen** und **abfragbarem Fehlschlagregister** als kleine, austauschbare Bibliotheken. Nicht geprüft: aktuelle Agenten-Frameworks und MCP-Memory-Server. **[FÉLIX/ich: vor Abgabe Besetzt-Test gegen Agenten-Memory-Bibliotheken und die Prototype-Fund-Projektliste durchführen.]** Ergebnis ins Prüfprotokoll eintragen.
+- **Neu, soweit gefunden:** transaktionaler Einzelschreiber für gemeinsame Projektdateien (Snapshot, Journal, Rollback, Ledger, Vorbedingungen per Hash, Rechte pro Akteur). In einer ersten Recherche (Suchschnipsel) habe ich dafür keine Bibliothek gefunden. Das Muster „ein Schreiber, viele Leser" ist bekannt; agent-locks koordiniert Arbeitsansprüche, CORAL umgeht das Problem durch eindeutige Dateinamen, AgentRoom nutzt CRDTs. Ein Forschungsüberblick nennt fehlende transaktionale Semantik als offenes Problem.
+- **Bereits besetzt:** Drift-Prüfung zwischen Doku und Code (fiberplane/drift, MIT; OpenSpec u. a.) und Fehlschlag-Gedächtnis für Coding-Agenten (PROJECTMEM). Dafür wird nichts neu gebaut, sondern angebunden.
+- **Frei, aber Datensatz statt Werkzeug:** 95 Totenscheine gescheiterter Gemeinwohl-Ideen mit Schema.
+- **Nicht geprüft:** npm/PyPI, Code-Suche auf GitHub, die Prototype-Fund-Projektliste. Vor Abgabe wiederholen.
 
 ## 7. Stand und Belege (nachprüfbar im Repo)
 
