@@ -8535,7 +8535,7 @@
       "status": "angekratzt",
       "statusNotiz": "",
       "evidenz": "schnipsel",
-      "zuletzt": "2026-09-29",
+      "zuletzt": "2026-09-30",
       "ertrag": {
         "dosen": [],
         "graeber": [
@@ -8569,6 +8569,13 @@
           "agent": "bibliothekar",
           "runde": "Lab-Lacunar-Erstlauf (Walnüsse)",
           "notiz": "Bibliothekar 30.09.2026: nur Suchschnipsel, Volltext nicht gelesen. Ertrag: beide Lab-Gräber stützen sich indirekt auf die Norm-Sichtprüfung."
+        },
+        {
+          "datum": "2026-09-30",
+          "agent": "bibliothekar",
+          "runde": "Lab-Vorschläge 30.09.2026 (alle angenommen)",
+          "notiz": "Anker des Lab-Laufs lacunar-20260929T203438-f693a3 (Ideen für Walnüsse): https://unece.org/DAM/trade/agr/standard/dry/dry_e/02WalnutKernels_e.pdf; nur als Suchtreffer, nicht gelesen.",
+          "planId": "lab-2026-09-30-lacunar-20260929T203438-f693a3-source"
         }
       ]
     },
@@ -8652,7 +8659,7 @@
       "fokus": "",
       "status": "angekratzt",
       "statusNotiz": "",
-      "evidenz": "seite",
+      "evidenz": "schnipsel",
       "zuletzt": "2026-09-30",
       "ertrag": {
         "dosen": [],
@@ -8690,6 +8697,13 @@
           "runde": "Lab-Lacunar-Lauf Schmetterlinge 30.09.2026",
           "notiz": "Lab-Lauf 30.09.2026: Methode verlangt Sichtzählung und gleichmäßiges Gehen; fünf Lab-Ideen daran geprüft, keine Dose.",
           "status": "angekratzt"
+        },
+        {
+          "datum": "2026-09-30",
+          "agent": "bibliothekar",
+          "runde": "Lab-Vorschläge 30.09.2026 (alle angenommen)",
+          "notiz": "Anker des Lab-Laufs lacunar-20260930T064824-38e1d7 (Ideen für Schmetterlinge): https://butterfly-monitoring.net/de/bms-methods; nur als Suchtreffer, nicht gelesen.",
+          "planId": "lab-2026-09-30-lacunar-20260930T064824-38e1d7-source"
         }
       ]
     },
@@ -9176,7 +9190,8 @@
       ],
       "tags": [],
       "urls": [
-        "https://www.waldwissen.net/de/waldwirtschaft/schadensmanagement/neue-arten/management-der-invasiven-robinie"
+        "https://www.waldwissen.net/de/waldwirtschaft/schadensmanagement/neue-arten/management-der-invasiven-robinie",
+        "https://www.waldwissen.net/de/waldwirtschaft/waldbau/die-robinie-gibt-zu-diskutieren"
       ],
       "zugang": {
         "art": "web",
@@ -9212,6 +9227,20 @@
           "agent": "robinien-engines",
           "runde": "Robinien-Runde 30.09.2026 (Venture-Lauf)",
           "notiz": "Fachartikel als Wirksamkeitsbeleg.",
+          "status": "angekratzt"
+        },
+        {
+          "datum": "2026-09-30",
+          "agent": "bibliothekar",
+          "runde": "Lab-Vorschläge 30.09.2026 (alle angenommen)",
+          "notiz": "Anker des Lab-Laufs lacunar-20260930T100201-4ab848 (Rubinien als invasive Species): https://www.waldwissen.net/de/waldwirtschaft/schadensmanagement/neue-arten/management-der-invasiven-robinie; nur als Suchtreffer, nicht gelesen.",
+          "planId": "lab-2026-09-30-lacunar-20260930T100201-4ab848-source"
+        },
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout",
+          "runde": "Lab-Survivors Existenzprüfung 30.09.2026",
+          "notiz": "Lab-Survivors Existenzprüfung (4ab848 S1, S2): Ringeln, Nachkontrolle im 2. Jahr, Datenlücke Waldbau gemischte Bestände; keine Zahlen zu Austriebsparametern.",
           "status": "angekratzt"
         }
       ]
@@ -10701,6 +10730,1286 @@
           "runde": "Farmacia-Runde 30.09.2026",
           "notiz": "Vergleichstabelle existiert beim Empfänger; Kaufvermittlung ist Ventures.",
           "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "schmetterlingszaehlungen-nach-der-transect-methode",
+      "name": "Schmetterlingszählungen nach der Transect-Methode",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://butterfly-monitoring.net/sites/default/files/Pdf/Manual/Butterfly%20Transect%20Counts-Manual%20v2_2023.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Die Transect-Methode zur Schmetterlingszählung weist verschiedene Fehlerquellen und Schwierigkeiten auf, darunter die Nichterfüllung grundlegender Annahmen (z.B. sichere Entdeckung), starke Abhängigkeit von Wetterbedingungen, Schwankungen in der Beobachtererfahrung und -effizienz, variable Nachweisbarkeit der Schmetterlinge durch Habitatmerkmale sowie Schwierigkeiten bei der Erfassung …",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "bibliothekar",
+          "runde": "Lab-Vorschläge 30.09.2026 (alle angenommen)",
+          "notiz": "Anker des Lab-Laufs lacunar-20260930T073557-e87ad6 (Ideen für Schmetterlinge); nur als Suchschnipsel gelesen.",
+          "status": "angekratzt",
+          "planId": "lab-2026-09-30-lacunar-20260930T073557-e87ad6-source-add"
+        }
+      ]
+    },
+    {
+      "id": "itv-altlasten-manuelle-detektion-und-klassifikation",
+      "name": "Manuelle Detektion und Klassifikation von Kampfmitteln im Boden",
+      "typ": "D",
+      "kategorie": "foerderung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.itv-altlasten.de/wp-content/uploads/2019/11/Informationsschrift_Detektionsverfahren_in_der_Kampfmittelra%CC%88umung_C7_2016-1.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Manuelle Detektion und Klassifikation von Kampfmitteln im Boden (Typ D: research without a tool); Anker des Lab-Laufs lacunar-20260930T100431-797290, nicht gelesen.",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "bibliothekar",
+          "runde": "Lab-Vorschläge 30.09.2026 (alle angenommen)",
+          "notiz": "Anker des Lab-Laufs lacunar-20260930T100431-797290 (Jamlitz, Lieberose); nur als Suchtreffer gelesen.",
+          "status": "angekratzt",
+          "planId": "lab-2026-09-30-lacunar-20260930T100431-797290-source"
+        }
+      ]
+    },
+    {
+      "id": "zubairkhalid-interspecies-aggression-assessment-protocol",
+      "name": "Interspecies Aggression Assessment Protocol",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.zubairkhalid.com/knowledge/veterinary-medicine/anxiety-and-behavior-support/dog-aggression-towards-cats"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Interspecies Aggression Assessment Protocol (Typ A: scheme without software); Anker des Lab-Laufs lacunar-20260930T113750-f2ef4a, nicht gelesen.",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "bibliothekar",
+          "runde": "Lab-Vorschläge 30.09.2026 (alle angenommen)",
+          "notiz": "Anker des Lab-Laufs lacunar-20260930T113750-f2ef4a (Ideen für Hunde und katze in die gleiche Haus); nur als Suchtreffer gelesen.",
+          "status": "angekratzt",
+          "planId": "lab-2026-09-30-lacunar-20260930T113750-f2ef4a-source"
+        }
+      ]
+    },
+    {
+      "id": "pmc-nir-insektenmonitoring",
+      "name": "Nah-Infrarot-Sensornetz zur autonomen Langzeitüberwachung von Insekten (PMC8850605)",
+      "typ": "I",
+      "kategorie": "messverfahren",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8850605/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Verteilte drahtlose Sensoren, die rückgestreute Nah-Infrarot-Modulationssignaturen von Insekten aufzeichnen (Flügelschlag-Harmonik, Melanisierung, Flugrichtung). Insekten allgemein, nicht Falter im Transekt.",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "bibliothekar",
+          "runde": "Lab-Vorschläge 30.09.2026 (alle angenommen)",
+          "notiz": "Fundstelle der Sensor-Suche des Lab-Laufs lacunar-20260930T064824-38e1d7; Beleg für 'warum jetzt' bei zwei Survivors, nur als Suchzusammenfassung gelesen.",
+          "status": "angekratzt",
+          "planId": "lab-2026-09-30-lacunar-schmetterlinge-offen"
+        }
+      ]
+    },
+    {
+      "id": "ufz-tagfalter-monitoring-deutschland",
+      "name": "Tagfalter-Monitoring Deutschland (UFZ)",
+      "typ": "B",
+      "kategorie": "citizen-science",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.ufz.de/tagfalter-monitoring/index.php?de=41769"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Deutsches Tagfalter-Monitoring auf Transektbasis mit ehrenamtlichen Zählenden; Programm, Auswertung und Kontakt beim UFZ.",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "bibliothekar",
+          "runde": "Lab-Vorschläge 30.09.2026 (alle angenommen)",
+          "notiz": "Fundstelle der Anker-Suche des Lab-Laufs lacunar-20260930T064824-38e1d7; die Seite wurde nicht gelesen. Möglicher Empfänger- und Besetzt-Test-Kontext.",
+          "status": "angekratzt",
+          "planId": "lab-2026-09-30-lacunar-schmetterlinge-offen"
+        }
+      ]
+    },
+    {
+      "id": "bfn-fachinformation-gebietsfremde-baumar",
+      "name": "BfN Fachinformation gebietsfremde Baumarten und Invasivität",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.bfn.de/gebietsfremde-baumarteninvasivitaet"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Managementliste invasiver Baumarten, Einordnung Robinie (nicht Unionsliste)",
+      "fokus": "",
+      "status": "offen",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout",
+          "runde": "Lab-Survivors Existenzprüfung 30.09.2026",
+          "notiz": "Lab-Survivors (Läufe 1c9c25, 458e61 (Prämisse)). Robinie nur Managementliste, keine Beseitigungspflicht.",
+          "status": "offen"
+        }
+      ]
+    },
+    {
+      "id": "holzquelle-com-holzmarktplatz-at-de",
+      "name": "holzquelle.com (Holzmarktplatz AT/DE)",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://holzquelle.com/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Provisionsfreier Holzmarktplatz, Filter Holzart und Standort",
+      "fokus": "",
+      "status": "offen",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout",
+          "runde": "Lab-Survivors Existenzprüfung 30.09.2026",
+          "notiz": "Lab-Survivors (1c9c25 S1 (besetzt)).",
+          "status": "offen"
+        }
+      ]
+    },
+    {
+      "id": "ixp-pataca-de-galicia-consejo-regulador",
+      "name": "IXP Pataca de Galicia (Consejo Regulador)",
+      "typ": "W",
+      "kategorie": "empfaenger",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://patacadegalicia.es/es/envases-autorizados/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Contraetiqueta, Register Plantagen und Packbetriebe, Trazabilidad",
+      "fokus": "",
+      "status": "offen",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "patata-galicia-wareneingang"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout",
+          "runde": "Lab-Survivors Existenzprüfung 30.09.2026",
+          "notiz": "Lab-Survivors (d2bbcb S4 (verengt)).",
+          "status": "offen"
+        }
+      ]
+    },
+    {
+      "id": "comunidad-de-madrid-precauciones-con-las",
+      "name": "Comunidad de Madrid, Precauciones con las tortillas",
+      "typ": "H",
+      "kategorie": "auslandsregulierung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.comunidad.madrid/servicios/salud/precauciones-tortillas"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Verbraucher- und Gastro-Hinweise zu Tortilla, Huevina, 63 °C / 20 s",
+      "fokus": "",
+      "status": "offen",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout",
+          "runde": "Lab-Survivors Existenzprüfung 30.09.2026",
+          "notiz": "Lab-Survivors (d2bbcb S2, S3).",
+          "status": "offen"
+        }
+      ]
+    },
+    {
+      "id": "bremen-gutachten-management-invasiver-ne",
+      "name": "Bremen-Gutachten Management invasiver Neophyten (Tesch 2019)",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://umwelt.bremen.de/sixcms/media.php/13/2b_Tesch-Gutachten_Neophyten%20Bremen%20Text-Endf%202019-08a.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Bewertungsschema und GIS-Datenbank zur Priorisierung der Neophytenbekämpfung",
+      "fokus": "",
+      "status": "offen",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout",
+          "runde": "Lab-Survivors Existenzprüfung 30.09.2026",
+          "notiz": "Lab-Survivors (458e61 S1 (unklar)).",
+          "status": "offen"
+        }
+      ]
+    },
+    {
+      "id": "lfu-brandenburg-ekis-kompensationsverzei",
+      "name": "LfU Brandenburg EKIS (Kompensationsverzeichnis)",
+      "typ": "W",
+      "kategorie": "empfaenger",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://lfu.brandenburg.de/lfu/de/aufgaben/natur/planungs-und-genehmigungsverfahren/ekis/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Öffentliches Landesregister der Kompensationsflächen per WMS/WFS, Betreiber LfU Naturschutz (§ 6 BNatSchG), \"kein Anspruch auf Vollständigkeit\"",
+      "fokus": "",
+      "status": "offen",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout",
+          "runde": "Lab-Survivors Existenzprüfung 30.09.2026",
+          "notiz": "Lab-Survivors (0c956a S1 (verengt: Bürgerschicht offen)). Ansprechperson laut Seite genannt, nicht verifiziert. quellen match ordnet die URL nur per Host dem Natura-2000-Eintrag zu.",
+          "status": "offen"
+        }
+      ]
+    },
+    {
+      "id": "lbv-aufi-ausgleichsflaechen-buergermeldu",
+      "name": "LBV AuFi (Ausgleichsflächen-Bürgermeldung Bayern) eingestellt",
+      "typ": "B",
+      "kategorie": "citizen-science",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.lbv.de/naturschutz/standpunkte/ausgleichsflaechen/aufi/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "AuFi 2026 abgeschaltet, ins amtliche Ökoflächenkataster Bayern integriert",
+      "fokus": "",
+      "status": "offen",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "kompensationsflaechen-app"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout",
+          "runde": "Lab-Survivors Existenzprüfung 30.09.2026",
+          "notiz": "Lab-Survivors (Gegenindiz zu 0c956a S1, Grab kompensationsflaechen-app).",
+          "status": "offen"
+        }
+      ]
+    },
+    {
+      "id": "bmel-leitfaden-lebensmittel-spenden-2024",
+      "name": "BMEL-Leitfaden Lebensmittel spenden (2024)",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.in-form.de/service/broschueren/ernaehrung-und-bewegung-allgemeines/lebensmittel-spenden-ein-leitfaden-fuer-die-weitergabe-von-lebensmitteln"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Haftungs- und Steuer-Checklisten für die Weitergabe von Lebensmitteln",
+      "fokus": "",
+      "status": "offen",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "spendenverpackung-ar-assistent"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout",
+          "runde": "Lab-Survivors Existenzprüfung 30.09.2026",
+          "notiz": "Lab-Survivors (cfc447 S1, S2 (besetzt)). BMLEH-PDF lebensmittel-spenden.pdf ECONNRESET, Inhalt über IN-FORM gelesen.",
+          "status": "offen"
+        }
+      ]
+    },
+    {
+      "id": "tafel-deutschland-eco-plattform",
+      "name": "Tafel Deutschland eco-Plattform",
+      "typ": "W",
+      "kategorie": "empfaenger",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.tafel.de/presse/pressemitteilungen/pressemitteilungen-2023/tafeln-entwickeln-eco-plattform",
+        "https://eco.tafel.de/datenschutz"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Digitaler Lieferschein und Betriebskooperation für Lebensmittelspenden",
+      "fokus": "",
+      "status": "offen",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "spendenverpackung-ar-assistent"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout",
+          "runde": "Lab-Survivors Existenzprüfung 30.09.2026",
+          "notiz": "Lab-Survivors (cfc447 S2, S3 (besetzt)).",
+          "status": "offen"
+        }
+      ]
+    },
+    {
+      "id": "agentische-seo-tools-mit-autopilot-sedes",
+      "name": "Agentische SEO-Tools mit Autopilot (sedestral)",
+      "typ": "C",
+      "kategorie": "ki-versuch",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://sedestral.com/en/blog/agent-seo-ai-tools-that-autonomously-optimize-seo"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Autopilot/Auto-Publish-SEO-Agenten, Standard ist Freigabe-Inbox",
+      "fokus": "",
+      "status": "offen",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "seo-headline-ki-typo3"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout",
+          "runde": "Lab-Survivors Existenzprüfung 30.09.2026",
+          "notiz": "Lab-Survivors (051b08 S1 (besetzt)).",
+          "status": "offen"
+        }
+      ]
+    },
+    {
+      "id": "nul-drohnen-zur-erfolgskontrolle-von-aus",
+      "name": "NuL Drohnen zur Erfolgskontrolle von Ausgleichsflächen",
+      "typ": "I",
+      "kategorie": "messverfahren",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.nul-online.de/themen/landschafts-und-umweltplanung/article-7732698-201982/der-einsatz-von-drohnen-zur-erfolgskontrolle-.html"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Luftbildvergleich und Geländemodell zur Erfolgskontrolle",
+      "fokus": "",
+      "status": "offen",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout",
+          "runde": "Lab-Survivors Existenzprüfung 30.09.2026",
+          "notiz": "Lab-Survivors (0c956a S2 (unklar)).",
+          "status": "offen"
+        }
+      ]
+    },
+    {
+      "id": "lanuk-nrw-neobiota-robinie-massnahmen",
+      "name": "LANUK NRW Neobiota Robinie Maßnahmen",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://neobiota.naturschutzinformationen.nrw.de/neobiota/de/arten/pflanzen/3527/massnahmen"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Bekämpfung, mehrjährige Nachbearbeitung, keine Kontrollintervalle",
+      "fokus": "",
+      "status": "offen",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout",
+          "runde": "Lab-Survivors Existenzprüfung 30.09.2026",
+          "notiz": "Lab-Survivors (4ab848 S2).",
+          "status": "offen"
+        }
+      ]
+    },
+    {
+      "id": "lfu-brandenburg-kampfmittelproblematik",
+      "name": "LfU Brandenburg Kampfmittelproblematik",
+      "typ": "W",
+      "kategorie": "empfaenger",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://lfu.brandenburg.de/lfu/de/aufgaben/boden/altlasten/spezielle-altlastenthemen/kampfmittelproblematik/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "KMBD-Zuständigkeit, Kampfmittelfreiheitsbescheinigung",
+      "fokus": "",
+      "status": "offen",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "uxo-3d-palimpsest"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout",
+          "runde": "Lab-Survivors Existenzprüfung 30.09.2026",
+          "notiz": "Lab-Survivors (797290 S2).",
+          "status": "offen"
+        }
+      ]
+    },
+    {
+      "id": "bullinger-kampfmittelerkundung-brandenbu",
+      "name": "Bullinger Kampfmittelerkundung Brandenburg",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://bullinger-gmbh.de/geo/luftbildauswertung/kampfmittel/regelungen-bundeslaender/erkundung-brandenburg"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "KMBD Belastungskarte, Antragsweg, Gebühr 50 bis 300 Euro, 575.000 ha Verdacht",
+      "fokus": "",
+      "status": "offen",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "uxo-3d-palimpsest"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout",
+          "runde": "Lab-Survivors Existenzprüfung 30.09.2026",
+          "notiz": "Lab-Survivors (797290 S2, S4). Privatfirma, nennt KMBD als Hoheitsträger.",
+          "status": "offen"
+        }
+      ]
+    },
+    {
+      "id": "kaggle-uxo-classification-from-magnetome",
+      "name": "Kaggle UXO Classification from Magnetometry Data",
+      "typ": "I",
+      "kategorie": "datensatz",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.kaggle.com/datasets/mbjunior/uxo-classification-from-magnetometry-data"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Simulierter Magnetometer-Datensatz UXO/Nicht-UXO",
+      "fokus": "",
+      "status": "offen",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "uxo-3d-palimpsest"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout",
+          "runde": "Lab-Survivors Existenzprüfung 30.09.2026",
+          "notiz": "Lab-Survivors (797290 S3, S5 (besetzt)).",
+          "status": "offen"
+        }
+      ]
+    },
+    {
+      "id": "ami-automated-monitoring-of-insects",
+      "name": "AMI Automated Monitoring of Insects",
+      "typ": "I",
+      "kategorie": "messverfahren",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.insectmonitoring.org/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Forschungskonsortium für automatisierte Insekten-Kamerafallen",
+      "fokus": "",
+      "status": "offen",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "transekt-sensorfeld"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout",
+          "runde": "Lab-Survivors Existenzprüfung 30.09.2026",
+          "notiz": "Lab-Survivors (38e1d7 F4).",
+          "status": "offen"
+        }
+      ]
+    },
+    {
+      "id": "nabu-naturgucker-faltererkennungshilfe",
+      "name": "NABU naturgucker Faltererkennungshilfe",
+      "typ": "B",
+      "kategorie": "citizen-science",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://nabu-naturgucker.de/hilfe/meldeportal/bilder-videos/faltererkennungshilfe/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "KI-Faltererkennungshilfe im Meldeportal",
+      "fokus": "",
+      "status": "offen",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout",
+          "runde": "Lab-Survivors Existenzprüfung 30.09.2026",
+          "notiz": "Lab-Survivors (38e1d7 F1 (Besetzt-Signal)).",
+          "status": "offen"
+        }
+      ]
+    },
+    {
+      "id": "campeonato-nacional-de-tortilla-de-patat",
+      "name": "Campeonato Nacional de Tortilla de Patatas (Organisatoren, Jury)",
+      "typ": "W",
+      "kategorie": "empfaenger",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.directoalpaladar.com/actualidad-1/restaurante-falda-madrid-gana-veterano-campeonato-nacional-a-mejor-tortilla-patatas-espana"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Wettbewerb, Jury, Format; Kriterien in den Treffern nicht ausgeführt",
+      "fokus": "",
+      "status": "offen",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "tortilla-heritage-stilzuordnung"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout",
+          "runde": "Lab-Survivors Existenzprüfung 30.09.2026",
+          "notiz": "Lab-Survivors (8dcdf7 T4 (verengt)). Ansprechperson offen.",
+          "status": "offen"
+        }
+      ]
+    },
+    {
+      "id": "tierhaushalt-produkte-als-besetzt-belege",
+      "name": "Tierhaushalt-Produkte als Besetzt-Belege (MeowTalk, Petlibro Scout, SureFlap)",
+      "typ": "C",
+      "kategorie": "ki-versuch",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://meowtalk.io/en",
+        "https://petlibro.com/products/scout-smart-camera",
+        "https://www.surepetcare.com/en-us/pet-doors/microchip-pet-door"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Kommerzielle Tierübersetzer-Apps, Multi-Pet-Kameras, Mikrochip-Klappen",
+      "fokus": "",
+      "status": "offen",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "raum-umbauer"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout",
+          "runde": "Lab-Survivors Existenzprüfung 30.09.2026",
+          "notiz": "Lab-Survivors (f2ef4a S1-S4 (besetzt)).",
+          "status": "offen"
+        }
+      ]
+    },
+    {
+      "id": "aspca-safer-verhaltensassessment-hund-ka",
+      "name": "ASPCA SAFER Verhaltensassessment Hund/Katze",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.aspcapro.org/sites/default/files/safer-guide-and-forms.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Tierheim-Verhaltensassessment (SAFER, FSA), Hinweis: Hund-Katze-Tests sind unzuverlässige Prädiktoren",
+      "fokus": "",
+      "status": "offen",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout",
+          "runde": "Lab-Survivors Existenzprüfung 30.09.2026",
+          "notiz": "Lab-Survivors (f2ef4a (Hintergrund, kein Anker)).",
+          "status": "offen"
         }
       ]
     }

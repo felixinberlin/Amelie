@@ -14,6 +14,7 @@ import { REGIONAL_AND_RESILIENCE_IDEAS } from './regionalAndResilience';
 import { AI_NATIVE_FRONTIER_IDEAS } from './aiNativeFrontier';
 import { NORMAL_JOBS_AND_EVERYDAY_PEOPLE_IDEAS } from './normalJobsAndEverydayPeople';
 import { GAME_IDEAS } from './games';
+import { FARMACIA_ROUND_IDEAS } from './farmaciaRound';
 
 export {
   PRIVACY_AND_LOCAL_IDEAS,
@@ -30,12 +31,14 @@ export {
   REGIONAL_AND_RESILIENCE_IDEAS,
   AI_NATIVE_FRONTIER_IDEAS,
   NORMAL_JOBS_AND_EVERYDAY_PEOPLE_IDEAS,
-  GAME_IDEAS
+  GAME_IDEAS,
+  FARMACIA_ROUND_IDEAS
 };
 
 export const ALL_NEW_CANDIDATE_IDEAS: CandidateIdea[] = [
   ...NORMAL_JOBS_AND_EVERYDAY_PEOPLE_IDEAS,
   ...GAME_IDEAS,
+  ...FARMACIA_ROUND_IDEAS,
   ...AI_NATIVE_FRONTIER_IDEAS,
   ...PRIVACY_AND_LOCAL_IDEAS,
   ...HOME_AND_FINANCE_IDEAS,

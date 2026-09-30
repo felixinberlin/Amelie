@@ -1,11 +1,11 @@
 # Amélie Status
 
-Generated: 2026-09-30T16:54:10.084Z
+Generated: 2026-09-30T18:46:35.259Z
 
 ## System
 
 * Dosen: 44
-* Gräber: 103
+* Gräber: 124
 * Demos: 10
 * Books: 29
 * Research entries: 36
@@ -22,12 +22,12 @@ Generated: 2026-09-30T16:54:10.084Z
 
 | Category | Count |
 |---|---:|
-| beim-empfaenger | 23 |
+| beim-empfaenger | 24 |
 | duplikat | 2 |
-| gebaut | 50 |
-| mode | 4 |
-| praemisse | 10 |
-| reality-check | 14 |
+| gebaut | 61 |
+| mode | 8 |
+| praemisse | 12 |
+| reality-check | 17 |
 
 ## Validation
 
@@ -49,8 +49,8 @@ None.
 
 * **[DEMO-UNLINKED-chemhazard-stop]** Demo folder "07-demos/chemhazard-stop" does not correspond to any active Dose or Grave ID. (07-demos/chemhazard-stop)
 * **[DRIFT-AGENTS.md-Dosen-6]** AGENTS.md claims 6 Dosen, but deterministic source scanner finds 44. (AGENTS.md)
-* **[DRIFT-AGENTS.md-Gräber-58]** AGENTS.md claims 58 Gräber, but deterministic source scanner finds 103. (AGENTS.md)
-* **[DRIFT-AGENTS.md-Gräber-9]** AGENTS.md claims 9 Gräber, but deterministic source scanner finds 103. (AGENTS.md)
+* **[DRIFT-AGENTS.md-Gräber-58]** AGENTS.md claims 58 Gräber, but deterministic source scanner finds 124. (AGENTS.md)
+* **[DRIFT-AGENTS.md-Gräber-9]** AGENTS.md claims 9 Gräber, but deterministic source scanner finds 124. (AGENTS.md)
 * **[DRIFT-en/README.md-Dosen-15]** en/README.md claims 15 Dosen, but deterministic source scanner finds 44. (en/README.md)
 * **[DRIFT-README.de.md-Dosen-15]** README.de.md claims 15 Dosen, but deterministic source scanner finds 44. (README.de.md)
 * **[DRIFT-README.md-Dosen-15]** README.md claims 15 Dosen, but deterministic source scanner finds 44. (README.md)
@@ -62,5 +62,5 @@ None.
 ## Generated from
 
 * Audit version: 1
-* Commit: c84ea88
-* Branch: claude/keen-ptolemy-y3n54k
+* Commit: 413c852
+* Branch: main

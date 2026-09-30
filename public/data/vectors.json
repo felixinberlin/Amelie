@@ -3077,6 +3077,166 @@
       "funDe": "Ein Tresor-Audit liefert eine nüchterne Checkliste.",
       "funEn": "A vault audit yields a sober checklist.",
       "note": "Schreibtisch-Triage (ohne Websuche)"
+    },
+    "kuehlketten-steckbrief": {
+      "v": [
+        2,
+        4,
+        3,
+        3,
+        3,
+        4,
+        4
+      ],
+      "fun": 3,
+      "funSource": "sensory",
+      "funDe": "Eine Kurve mit der Fläche über der Grenze zu sehen, macht den Kühlkettenbruch greifbar.",
+      "funEn": "Seeing a curve with the area above the limit makes the cold-chain break tangible.",
+      "note": "Reviewer-Scorecard 30.09.2026"
+    },
+    "engpass-prognosetreue": {
+      "v": [
+        2,
+        3,
+        3,
+        4,
+        3,
+        3,
+        4
+      ],
+      "fun": 2,
+      "funSource": "discovery",
+      "funDe": "Zu sehen, wie oft Enddaten wandern, ist ein kleiner Aha-Moment.",
+      "funEn": "Seeing how often end dates drift is a small aha moment.",
+      "note": "Reviewer-Scorecard 30.09.2026"
+    },
+    "fachinfo-aenderungsdiff": {
+      "v": [
+        3,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "fun": 2,
+      "funSource": "none",
+      "funDe": "Ein Satzvergleich ist nüchtern.",
+      "funEn": "A sentence diff is sober.",
+      "note": "Reviewer-Scorecard 30.09.2026"
+    },
+    "haeufigkeits-umrechner": {
+      "v": [
+        2,
+        4,
+        3,
+        4,
+        3,
+        3,
+        3
+      ],
+      "fun": 3,
+      "funSource": "discovery",
+      "funDe": "Piktogramme machen Häufigkeiten begreifbar.",
+      "funEn": "Pictograms make frequencies graspable.",
+      "note": "Reviewer-Scorecard 30.09.2026"
+    },
+    "import-prospekt-bruecke": {
+      "v": [
+        3,
+        2,
+        2,
+        3,
+        2,
+        3,
+        3
+      ],
+      "fun": 1,
+      "funSource": "none",
+      "funDe": "Eine Beratungsunterlage ist Arbeit, kein Spiel.",
+      "funEn": "An advisory sheet is work, not play.",
+      "note": "Reviewer-Scorecard 30.09.2026"
+    },
+    "nebenwirkungs-meldeassistent": {
+      "v": [
+        3,
+        3,
+        2,
+        3,
+        2,
+        3,
+        3
+      ],
+      "fun": 2,
+      "funSource": "none",
+      "funDe": "Ein Meldeformular ist ernst.",
+      "funEn": "A report form is serious.",
+      "note": "Reviewer-Scorecard 30.09.2026"
+    },
+    "kompensationsflaechen-buergerlayer": {
+      "v": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4
+      ],
+      "fun": 2,
+      "funSource": "discovery",
+      "funDe": "Flächen auf der Karte zu finden hat einen kleinen Entdeckerreiz.",
+      "funEn": "Finding areas on the map has a small explorer appeal.",
+      "note": "Reviewer-Scorecard 30.09.2026"
+    },
+    "salmonellen-wetterwarnung": {
+      "v": [
+        2,
+        3,
+        2,
+        3,
+        2,
+        3,
+        2
+      ],
+      "fun": 2,
+      "funSource": "none",
+      "funDe": "Eine Warnung ist nützlich, nicht spielerisch.",
+      "funEn": "A warning is useful, not playful.",
+      "note": "Reviewer-Scorecard 30.09.2026"
+    },
+    "robinien-austrieb-prognose": {
+      "v": [
+        3,
+        2,
+        2,
+        3,
+        3,
+        3,
+        1
+      ],
+      "fun": 2,
+      "funSource": "none",
+      "funDe": "Ein Prognosewert ist nüchtern.",
+      "funEn": "A forecast value is sober.",
+      "note": "Reviewer-Scorecard 30.09.2026"
+    },
+    "virtuelle-robinien": {
+      "v": [
+        3,
+        2,
+        2,
+        2,
+        2,
+        3,
+        2
+      ],
+      "fun": 4,
+      "funSource": "play",
+      "funDe": "Bekämpfungsstrategien spielen und den Bestand in drei Jahren wachsen sehen.",
+      "funEn": "Play control strategies and watch the stand grow over three years.",
+      "note": "Reviewer-Scorecard 30.09.2026"
     }
   }
 }

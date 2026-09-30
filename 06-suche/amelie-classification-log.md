@@ -1205,3 +1205,76 @@ Keine Dose Ready, nichts zu packen. Falls die Runde doch weiterlaufen soll: Date
 - Muster: Änderungs-Feeds (registroCambios, BfArM-CSV) zeigen nur den Ist-Stand oder die Kategorie, nie den alten Wert; jede „Was hat sich geändert“- oder „Wie treu war die Prognose“-Idee hat ein Tag-0-Problem und braucht ein Archiv. Vorfrage künftig: Gibt es die Vorgängerfassung als Datensatz? (verwandt mit der Nenner-Regel der Multiplayer-Runde.)
 - Das Feld Apotheke ist Empfänger-Wüste und regulatorisch (Haftung, Medizinprodukt); die stärksten Fun-Werte (R4, R5) lagen unter dem Gate, Fun kompensiert nicht.
 - Evidenz: CIMA und BfArM-CSV selbst abgerufen [Seite]; Kühlkette, Rückruf, Nebenwirkung nur als Suchschnipsel. Kein Kandidat hätte mit `[Schnipsel]`-Basis über Needs Research hinauskommen dürfen.
+
+## Existenzprüfung Lab-Survivors und Neubewertung 30.09.2026
+
+Phase 3 nach dem Scout-Merge der 42 Lab-Survivors (Quelle: `lab-survivors-merge.md` im Sitzungs-Scratchpad; Läufe unter `06-suche/proposals/`). Gate: V1 bis V7 ≥ 24/35. **Ergebnis: 0 Dose Ready.** Teil A: `kuehlketten-steckbrief` bleibt bei 23/35 (Needs Research, Rang 1). Teil B: 8 verengte und 2 unklare Survivors triagiert: 5 Needs Research, 1 Baustein, 4 Friedhof-Vorschläge. Belege [Seite] = selbst geholt, [Schnipsel] = nur Suchtreffer.
+
+### Teil A: Neubewertung `kuehlketten-steckbrief` (R4)
+
+Belege: Datentest `06-suche/datentests/kuehlkette-cima-2026-09-30.md` [Seite, live CIMA]: 13 von 17 Kühlprodukten nennen Temperatur und Dauer außerhalb der Kühlung in der Ficha técnica (Untergrenze, enges Muster, Stichprobe bekannter Marken). Der Test beweist nur, dass die Zahl **dasteht**.
+
+**Eigene Gegen-Suche (Existiert der Nutzen schon?): ja, zum größten Teil.**
+- **SEFH-Übersicht 2025** [Seite, revistafarmaciahospitalaria.es]: „Stability of thermolabile drugs at room temperature. A review“ (Suárez-Casillas et al., Farm Hosp 2025), **203 Kühlarzneimittel** mit Tabelle (SmPC-Angabe, Zusatzquellen, Herstellerauskunft), Open Access, **CC BY-NC-ND**. Der Empfänger hat die Stabilitäts-Nachschlagetabelle also schon veröffentlicht; dazu das ältere SEFH-Protokoll 2011 mit Kategorien A bis F [Schnipsel]. Die ND-Klausel verbietet zudem eine CC0-Ableitung: die Klauseln müssten direkt aus den Fachinformationen kommen.
+- **Herstellerwerkzeuge** : Sanofi „Vaccine Stability Calculator“ (Impfstoffart, Temperatur, Dauer, nur Fachkreise, nur Sanofi, Insulin geplant; apotheke adhoc, 26.06.2026) [Seite]; Genentech „Storage Temperature Excursion Tool“ [Schnipsel]; NHS SPS Stabilitätstool (UK) [Seite, Bibliothek]; Herstellerauskunft per Hotline ist der übliche Weg [Schnipsel, PZ/apotheke adhoc].
+- **Nicht gefunden** [Schnipsel, eine Suche]: ein freies Werkzeug, das eine Logger-CSV hochlädt, die Exkursionen (Höchst-/Tiefsttemperatur, Gesamtdauer über 8 °C, Mehrfach-Exkursionen) auszählt und gegen die Fachinfo-Klausel hält. Diese Lücke ist dünn: Die Auszählung ist trivial, der Wert liegt in der Tabelle, und die hat die SEFH.
+
+| Nr | Kandidat | V1 | V2 | V3 | V4 | V5 | V6 | V7 | V8 | Kern /35 | Gesamt /40 | Urteil |
+|---|---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|---|
+| R4 | kuehlketten-steckbrief (vorher 3/4/3/3/3/4/3/3) | 2 | 4 | 3 | 3 | 3 | 4 | 4 | 3 | **23** | 26 | **Needs Research** (unter Gate) |
+
+Bewegung: V1 3 → 2 (SEFH-Review, Sanofi/Genentech-Rechner: die Nachschlageleistung ist besetzt, nur das Logger-Frontend ist offen), V7 3 → 4 (zitierbare Zahl in 76 % der Stichprobe belegt, aber nur Spanien, Untergrenze, deutsche Fachinfo nicht frei). Netto unverändert 23. V3 bleibt 3: der Test prüft nicht, ob die Klausel zur Offizin-Situation passt (mehrere Exkursionen, Summe der Teilzeiten). V5 bleibt 3: Nutzen in der Offizin ungemessen, der Pain-Beleg (Hersteller fragen „Höchsttemperatur und Dauer“) ist weiter [Schnipsel]. Der Datentest beantwortet „steht die Zahl da“, nicht „wer braucht das und bekommt es“. V8 3 (sensory: Kurve mit Fläche über der Grenze).
+
+**Urteil Needs Research, kein Dose Ready, nicht Friedhof.** Begründung: Gate um einen Punkt verfehlt, und die Frage des Empfängers ist entscheidender als die Zahl: Die SEFH-Arbeitsgruppe Stabilität (Autoren des Reviews) hat den Kern publiziert; ein Steckbrief wäre bestenfalls ein Logger-Frontend zu ihrer Tabelle, also ein Geschenk an genau diese Gruppe, die dann auch sagen muss, ob sie es will. Keine Person verifiziert; Institutionen: SEFH (Grupo de estabilidad), CGCOF, AEMPS; DE: ABDA AMK, Landesapothekerkammern.
+
+**Was den Weg zur Dose öffnet (Vorfragen in dieser Reihenfolge):**
+1. Empfänger-Vorfrage ohne Mail: Bietet die SEFH-Tabelle einen maschinenlesbaren Stand (Supplement, CSV), und erlaubt die Lizenz (CC BY-NC-ND) eine Nachnutzung? Wenn nein: Klauseln selbst aus CIMA 6.3/6.4 extrahieren (der Datentest-Code tut das schon).
+2. Zweite Gegen-Suche nach einem Logger-Frontend (Hersteller ELPRO, Sensmax, Realog; Schnipsel bisher).
+3. Deutscher Teil: Ohne freie Fachinfo-Quelle ist der Steckbrief ein ES-Werkzeug; ein Empfänger in DE fehlt.
+
+**Ticketskizze, falls später Dose Ready (keine Empfehlung an den Packer jetzt):** id-Vorschlag `kuehlketten-steckbrief`; Ticket 01: Logger-CSV (Zeit, °C) im Browser auszählen (Höchst-/Tiefsttemperatur, Gesamtdauer über 8 °C, Einzel-Exkursionen) und je Produkt die wörtliche Fachinfo-Klausel mit Abschnitt und CIMA-Link anzeigen. **Nie sagen:** „verwendbar“, „sicher“, „unbedenklich“, „wirksam“; nur „von der Fachinformation gedeckt“, „nicht gedeckt“, „Fachinformation nennt keine Angabe, Hersteller fragen“. Die Summe mehrerer Exkursionen nie selbst als „gedeckt“ werten, wenn die Klausel dazu schweigt. Kein Medizinprodukt-Anspruch, kein Ersatz für die Herstellerauskunft.
+
+### Teil B: Triage der Survivors
+
+| Nr | Survivor | V1 | V2 | V3 | V4 | V5 | V6 | V7 | V8 | Kern /35 | Gesamt /40 | Urteil |
+|---|---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|---|
+| B1 | d2bbcb S4 Patata de Galicia Wareneingang | 2 | 4 | 3 | 2 | 2 | 2 | 2 | 1 | 17 | 18 | Friedhof-Vorschlag |
+| B2 | 0c956a S1 Kompensationsflächen-Bürgerschicht (BB) | 3 | 3 | 3 | 3 | 3 | 3 | 4 | 2 | 22 | 24 | Needs Research (Rang 1 von B) |
+| B3 | 8dcdf7 T4 Tortilla-Heritage | 2 | 3 | 2 | 2 | 2 | 3 | 1 | 4 | 15 | 19 | Friedhof-Vorschlag |
+| B4 | 38e1d7 F4 Sensorfeld Transekt | 2 | 2 | 2 | 2 | 2 | 3 | 2 | 3 | 15 | 18 | Friedhof-Vorschlag |
+| B5 | 4ab848 S2 Virtuelle Robinien | 3 | 2 | 2 | 2 | 2 | 3 | 2 | 4 | 16 | 20 | Needs Research (niedrig, eher Spielidee) |
+| B6 | 4ab848 S3 Sauerteig-Scorecard Standortvitalität | 2 | 4 | 3 | 2 | 2 | 3 | 2 | 3 | 18 | 21 | Baustein von `robinien-nachsorge-beweisakte` |
+| B7 | f2ef4a S3 Raum-Umbauer | 2 | 1 | 2 | 2 | 2 | 2 | 1 | 3 | 12 | 15 | Friedhof-Vorschlag |
+| B8 | f2ef4a S4 Dynamische Raumteilung | 2 | 1 | 2 | 2 | 2 | 2 | 1 | 3 | 12 | 15 | Friedhof-Vorschlag (mit B7 ein Grab) |
+| B9 | d2bbcb S3 Salmonellenrisiko aus Wetter | 2 | 3 | 2 | 3 | 2 | 3 | 2 | 2 | 17 | 19 | Needs Research (niedrig) |
+| B10 | 4ab848 S1 Resilienz-Prognose Austrieb | 3 | 2 | 2 | 3 | 3 | 3 | 1 | 2 | 17 | 19 | Needs Research (niedrig) |
+
+V8-Quellen: B3 play (Stilraten), B5 play, B6 discovery, B4/B7/B8 sensory bzw. discovery, B9 none. Fun kompensiert nie.
+
+**Begründungen (ein Satz, Todesursache nach `08-friedhof/README.md`):**
+
+- **B1.** Der Consejo Regulador der IGP Patata de Galicia führt Contraetiquetas und Register selbst, ein Wareneingangs-Prüfer für Gastro ist ein Nischenwerkzeug ohne Empfänger; Vorschlag `cause` beim-empfaenger, `killer` behoerde, `foundBy` empfaenger, `stage` kandidat, `origin` inversion; `resurrectIfDe/En`: Wenn ein Consejo Regulador oder eine Einkaufsgemeinschaft ausdrücklich ein offenes Prüfwerkzeug für Wareneingänge anfragt / If an IGP regulatory council or buying group explicitly asks for an open goods-receipt check tool.
+- **B2.** Datentest selbst gemacht [Seite]: EKIS-WFS `https://maps.brandenburg.de/services/wfs/ekis` (WFS 2.0.0, GML, kein JSON) liefert `EKIS:Kompensation` mit **17.774 Flächen** und `EKIS:Eingriff` mit **8.992 Punkten**; in den ersten 3.000 Kompensationsflächen sind Art (2.923 Realkompensation, 77 Flächenpool), Vorhabensbezeichnung, Aktenzeichen der Zulassungsbehörde, Bezeichnung der Kompensation und Eingriff_ID zu 100 % gefüllt. Aber das Schema hat nur **6 Attribute**: keine Maßnahmenbeschreibung, keine Frist, kein Umsetzungs- oder Kontrollstatus, kein Datum, daher lässt sich ein „Mangel“ nie gegen das Register prüfen, nur als Vor-Ort-Beobachtung melden; die Geometrie trägt, der Vollzug nicht. Gegenindiz: AuFi Bayern (Bürgermeldung zu Ausgleichsflächen) 2026 abgeschaltet [Schnipsel/Seite lbv.de]; LBV und BfN-Skripte belegen das Nachkontroll-Defizit [Schnipsel]. Offen: Gibt es in Brandenburg schon einen Meldeweg (Maerker o. ä.), und wollen LfU/Untere Naturschutzbehörden Hinweise entgegennehmen? Empfänger nur Institution (LfU Referat EKIS, Untere Naturschutzbehörden); Person nicht verifiziert. Vorschlag: zweiter Schritt nach Empfänger-Vorfrage; nicht die Kartierung (besetzt), nur eine vorausgefüllte, sachliche Hinweis-Mail mit Aktenzeichen an die zuständige Behörde, nie „Verstoß“.
+- **B3.** Die Stileinteilung (mit/ohne Zwiebel, Kerngrad) ist umstritten, es gibt keine messbare Wahrheit und der Nutzen ist gering; Vorschlag `cause` praemisse, `killer` keiner, `foundBy` ohne-suche, `stage` kandidat, `origin` bisoziation; `resurrectIfDe/En`: Wenn ein Wettbewerb oder eine Zunft eine veröffentlichte, überprüfbare Stilklassifikation mit Referenzbildern anbietet / If a contest or guild publishes a verifiable style classification with reference images.
+- **B4.** Schon als S4 im Protokoll (Zeile 881); Hardware und Forschungsprojekte (AMI, insectmonitoring.org) decken es, ein Empfänger ohne Basteln fehlt; Vorschlag `cause` gebaut, `killer` forschung, `foundBy` englisch, `stage` kandidat, `origin` bisoziation; `resurrectIfDe/En`: Wenn ein Tagfalter-Monitoring (TMD) offene Sensordaten je Transekt als Schnittstelle anbietet / If a butterfly monitoring scheme publishes open per-transect sensor data.
+- **B5.** Spiel mit Stockausschlag-Mechanik ist neu gegenüber vorhandenen Lernspielen, aber die Parameter (bis 40.000 Ruten/ha, Wurzelbrut zu Stockausschlag 30:70 aus dem Modellprojekt) sind nicht nachgeprüft und es gibt keinen Empfänger; in die Spielideen (`GAME_IDEAS`) legen, keine Dose; Wiedervorlage, wenn LFE Eberswalde die Parameter als Quelle belegt.
+- **B6.** Überschneidet `robinien-nachsorge-beweisakte` (Kandidat N2); als Modus der Vitalitätsbeurteilung dort anhängen, nie eigenständig.
+- **B7/B8.** Mikrochip-Klappen und Mechatronik decken den Kern, Hardware ohne Empfänger und ohne Mandat; Vorschlag ein Grab `raum-umbauer` (B8 als Variante): `cause` gebaut, `killer` kommerziell, `foundBy` deutsch, `stage` kandidat, `origin` bisoziation; `resurrectIfDe/En`: Wenn eine offene Hardware-Spezifikation mit Tierschutz- oder Forschungsmandat einen Empfänger hat / If open hardware with an animal-welfare or research mandate names a recipient.
+- **B9.** Datentest nicht in einem Schritt möglich: RENAVE/CNE-Wochenberichte nach Comunidad autónoma liegen laut Suche als PDF vor, nicht als maschinenlesbare Reihe [Schnipsel]; dazu Wetter-Join und eine vorhandene epidemiologische Literatur zur Saisonalität [Schnipsel]; Needs Research (niedrig), Datentest: Kommt die Reihe als CSV aus ISCIII/SiVIRA? Gesundheitsprognose mit Haftungsrisiko, Empfänger fehlt.
+- **B10.** Datentest nicht in einem Schritt: Standort↔Austrieb-Trainingsdaten liegen, wenn überhaupt, bei LFE Eberswalde/FVA; nächster Nachbar der Risikoatlas InvaRo (Register, nicht gelesen); Needs Research (niedrig), nur mit Datenzusage.
+
+### Vorschläge Friedhof (nur der Bibliothekar schreibt)
+
+`patata-galicia-wareneingang` (B1), `tortilla-heritage-stilzuordnung` (B3), `transekt-sensorfeld` (B4), `raum-umbauer` (B7+B8): Felder siehe oben. Nicht begraben: B2, B5, B9, B10 (leben als Needs Research), B6 (Baustein).
+
+### Empfehlung Packer
+
+Keine Dose Ready, nichts zu packen. Wiedervorlage in dieser Reihenfolge: R4 (Empfänger-Vorfrage SEFH, Lizenz, Logger-Frontend), B2 (Meldeweg Brandenburg und Empfängerinteresse).
+
+### Retro
+
+- Der Datentest beantwortet „steht es da“, nicht „wer braucht es“: R4 zeigt, dass ein besserer V7 bei besetzter V1 netto null ergibt; vor dem Datentest hätte die Gegen-Suche nach der Empfänger-Veröffentlichung (SEFH-Review 2025) gehört. Neue Vorfrage: Hat der Empfänger die Nachschlagetabelle schon publiziert?
+- Lizenzprüfung gehört in den Reviewer: CC BY-NC-ND am Empfänger-Review schließt die CC0-Ableitung aus.
+- Datentests sollten Attribute zählen, nicht nur Zeilen: Der EKIS-Datensatz ist vollständig (17.774 Flächen), aber ohne Status und Frist; die Idee „Nachkontrolle“ hat deshalb keinen Vergleichswert im Register.
+- Lab-Survivors bleiben schwach: generische Empfänger, Hardware, Techniken als Anlass; 0 Dose Ready auch nach Datentests.
+- Evidenz: CIMA (Datentest), EKIS-WFS, SEFH-Review und Sanofi-Meldung [Seite]; Logger-Frontend, RENAVE-Format, Genentech-Tool, AuFi-Abschaltung [Schnipsel].

@@ -112,5 +112,25 @@ export const GAME_IDEAS: CandidateIdea[] = [
     firstStepCriteriaEn: 'In a recorded table scene (4 people, 10 minutes) at least 80 % of spoken list words detected and at most 2 false whistles; runs in airplane mode.',
     userNotes: 'Am 24.09.2026 als Spielzeug-Dose gepackt (05-dosen/tischschiedsrichter.md), mit lauffähigem Skelett im Tab Sandboxes. Empfänger: die Öffentlichkeit. Prüfung: 02-recherche/tischschiedsrichter-review-2026-09-24.md',
     tags: ['Family', 'Audio AI', 'Local-First', 'Party Game', 'Vibecode']
+  },
+  {
+    id: 'virtuelle-robinien',
+    title: 'Virtuelle Robinien',
+    titleEn: 'Virtual black locust',
+    round: 'Lab-Survivors Existenzprüfung 30.09.2026',
+    date: '30.09.2026',
+    conceptDe: 'Lernspiel: Bekämpfungsstrategien gegen die Robinie anwenden (Ringeln, Mahd, Beweidung) und den Bestand über drei Jahre ansehen. Regelkern braucht belegte Austriebsparameter; es gibt keine Beseitigungspflicht, nur die BfN-Managementliste.',
+    conceptEn: 'Learning game: apply control strategies against black locust (girdling, mowing, grazing) and watch the stand over three years. The rule core needs documented resprouting parameters; there is no removal duty, only the BfN management list.',
+    status: 'verengt',
+    suggestedVerdict: 'keep',
+    recipientDe: 'Landesämter mit Neobiota-Portal (LANUK NRW) · LFE Eberswalde',
+    recipientEn: 'State agencies with a neobiota portal (LANUK NRW) · LFE Eberswalde',
+    sourceType: 'Civic & Ecology',
+    sourceDe: 'Brandenburger Modellprojekt Robinie (bis 40.000 Ruten/ha, Wurzelbrut zu Stockausschlag 30:70, nicht nachgeprüft); LANUK NRW Maßnahmenblatt',
+    sourceEn: 'Brandenburg black locust model project (up to 40,000 shoots/ha, root suckers to stump sprouts 30:70, unverified); LANUK NRW measures sheet',
+    evidenceDe: 'Lernspiele zu invasiven Arten existieren, keines mit Stockausschlag-Mechanik [Schnipsel]. Reviewer 16/35, V8 Fun 4, Needs Research niedrig.',
+    evidenceEn: 'Learning games on invasive species exist, none with a stump-sprout mechanic [snippet]. Reviewer 16/35, V8 fun 4, needs research (low).',
+    reviewDate: '03/2027',
+    tags: ['Spiel', 'Robinie', 'Neobiota', 'Needs Research']
   }
 ];

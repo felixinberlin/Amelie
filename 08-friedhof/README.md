@@ -54,59 +54,59 @@ Die Ursachen genauer:
 
 *Automatisch erzeugt aus `src/data/graeber.json` (`DISCARDED_DATA`) mit `npm run friedhof` (läuft nach `npm run bib -- grab add` von selbst). Nicht von Hand bearbeiten — `npm run lint` meldet Abweichungen.*
 
-**103 Gräber.** 4 davon starben erst als Dose oder Mail-Entwurf (teure Tode). Von 94 dokumentierten Fundwegen kamen 15 ohne neue Suche aus (eigener Atlas, eigenes Protokoll oder Reality-Check) — 16 %.
+**124 Gräber.** 4 davon starben erst als Dose oder Mail-Entwurf (teure Tode). Von 114 dokumentierten Fundwegen kamen 16 ohne neue Suche aus (eigener Atlas, eigenes Protokoll oder Reality-Check) — 14 %.
 
 **Woran sie starben**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Schon gebaut | 50 | 49 % |
-| Beim Empfänger selbst | 23 | 22 % |
-| Reality-Check | 14 | 14 % |
-| Falsche Prämisse | 10 | 10 % |
-| Keine neue Fähigkeit | 4 | 4 % |
+| Schon gebaut | 61 | 49 % |
+| Beim Empfänger selbst | 24 | 19 % |
+| Reality-Check | 17 | 14 % |
+| Falsche Prämisse | 12 | 10 % |
+| Keine neue Fähigkeit | 8 | 6 % |
 | Duplikat | 2 | 2 % |
 
 **Welche Suche traf**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Deutsche Suche | 39 | 38 % |
-| Englische Suche | 27 | 26 % |
-| Empfänger-Suche | 12 | 12 % |
-| Ohne Suche | 11 | 11 % |
-| Nicht dokumentiert | 9 | 9 % |
-| Eigener Atlas / Protokoll | 4 | 4 % |
+| Deutsche Suche | 49 | 40 % |
+| Englische Suche | 35 | 28 % |
+| Empfänger-Suche | 13 | 10 % |
+| Ohne Suche | 12 | 10 % |
+| Nicht dokumentiert | 10 | 8 % |
+| Eigener Atlas / Protokoll | 4 | 3 % |
 | Forum / Nische | 1 | 1 % |
 
 **Woher sie kamen**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Bisoziation | 38 | 37 % |
-| Primärquelle | 35 | 34 % |
-| Brainstorm | 16 | 16 % |
-| Ideenliste | 8 | 8 % |
-| Modell-Katalog | 5 | 5 % |
-| Inversion | 1 | 1 % |
+| Bisoziation | 50 | 40 % |
+| Primärquelle | 35 | 28 % |
+| Brainstorm | 16 | 13 % |
+| Inversion | 10 | 8 % |
+| Ideenliste | 8 | 6 % |
+| Modell-Katalog | 5 | 4 % |
 
 **Wer sie schon hatte**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Firma | 28 | 27 % |
-| Behörde | 18 | 17 % |
-| Forschung | 17 | 17 % |
-| Niemand | 14 | 14 % |
-| Gemeinnützige | 13 | 13 % |
-| Community / Indie | 11 | 11 % |
+| Firma | 36 | 29 % |
+| Niemand | 23 | 19 % |
+| Behörde | 19 | 15 % |
+| Forschung | 19 | 15 % |
+| Gemeinnützige | 14 | 11 % |
+| Community / Indie | 11 | 9 % |
 | Eigener Bestand | 2 | 2 % |
 
 **Wie weit sie kamen**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Kandidat | 99 | 96 % |
+| Kandidat | 120 | 97 % |
 | Dose gepackt | 2 | 2 % |
 | Mail entworfen | 1 | 1 % |
 | Zugestellt | 1 | 1 % |
@@ -115,15 +115,36 @@ Die Ursachen genauer:
 
 | Idee | † | Ursache | Wer sie hatte | Gefunden durch | Herkunft | Kam bis | Auferstehung wenn |
 |---|---|---|---|---|---|---|---|
+| 3D-Palimpsest für Kampfmittel-Bodenanomalien | 30.09.2026 | Schon gebaut | Firma | Englische Suche | Bisoziation | Kandidat | Wenn der KMBD oder ein Erkundungsverband eine offene Schichtansicht für Geophysik-Rohdaten ausdrücklich anfragt. |
 | Altmedikamente-Entsorgungskarte (Rücknahme-/Entsorgungsweg je Ort) | 30.09.2026 | Beim Empfänger selbst | Gemeinnützige | Deutsche Suche | Primärquelle | Kandidat | Wenn arzneimittelentsorgung.de eingestellt wird oder eine Karte der tatsächlichen Rücknahmestellen (nicht nur Landkreisweg) gefragt wird. |
+| Baumart und Vitalität per Foto-KI | 30.09.2026 | Schon gebaut | Firma | Deutsche Suche | Inversion | Kandidat | Wenn eine Baumschutzbehörde eine belastbare Vitalitätsansprache per Foto als Nachweis zulässt und die Apps diese nicht liefern. |
+| Baumumfang per LiDAR-App messen (Baumschutzsatzung) | 30.09.2026 | Schon gebaut | Firma | Deutsche Suche | Inversion | Kandidat | Wenn eine Kommune ein Messprotokoll per App als Antragsanlage verbindlich annimmt und die vorhandenen Apps das nicht leisten. |
+| Biofeedback-Halsband mit individueller Frequenz (Mehrtierhaushalt) | 30.09.2026 | Reality-Check | Niemand | Deutsche Suche | Bisoziation | Kandidat | Wenn eine Tierschutz- oder Verhaltensforschungsstelle ein offenes Messprotokoll mit belegter Wirkung verlangt. |
+| Bürger-App zur Dokumentation von Kompensationsflächen | 30.09.2026 | Schon gebaut | Gemeinnützige | Englische Suche | Inversion | Kandidat | Wenn das LfU Brandenburg oder eine untere Naturschutzbehörde Bürgermeldungen zu Kompensationsflächen ausdrücklich annehmen will und EKIS um Status-Attribute erweitert wird. |
 | Chargen-Wahrnehmungskarte (gleiche Charge, gleiche Klage aggregieren) | 30.09.2026 | Falsche Prämisse | Behörde | Deutsche Suche | Bisoziation | Kandidat | Wenn ein Träger (BfArM/PEI/AMK) freiwillige Patientenbeobachtungen je Charge als offene Daten annimmt. |
 | Engpass-Wellenlauf (Ausbreitung von Lieferengpässen über Wirkstoffe/Länder) | 30.09.2026 | Beim Empfänger selbst | Behörde | Deutsche Suche | Bisoziation | Kandidat | Wenn BfArM/EMA das Frühwarnsystem einstellen oder keine Auswertung öffentlich machen. |
+| Ersatzbaum-Fotomonitoring durch Bürger | 30.09.2026 | Keine neue Fähigkeit | Niemand | Deutsche Suche | Inversion | Kandidat | Wenn ein Grünflächenamt Bürgerfotos für die Anwuchskontrolle nach Ersatzpflanzung nachweislich auswertet. |
 | EuroBirdCast: Vogelzug-Abschaltung, nachrechenbar | 30.09.2026 | Falsche Prämisse | Behörde | Empfänger-Suche | Modell-Katalog | Zugestellt | Nie für Wetterradar. |
+| Fällgenehmigung-KI (Notwendigkeit und Ersatzpflanzung) | 30.09.2026 | Keine neue Fähigkeit | Niemand | Deutsche Suche | Inversion | Kandidat | Wenn eine Kommune ihre Satzung als maschinenlesbare Regeln veröffentlicht und ein Amt einen deterministischen Vorprüfer ausdrücklich anfragt. |
+| Habitat-Veränderungs-Detektor (3D-Zeitreihe am Transekt) | 30.09.2026 | Schon gebaut | Forschung | Deutsche Suche | Bisoziation | Kandidat | Wenn ein Tagfalter-Monitoring ein Videoprotokoll je Transekt vorschreibt und die 3D-Auswertung offen nachnutzbar ist. |
+| KI-Dauer-Mikro-A/B-Test von Seitenelementen | 30.09.2026 | Schon gebaut | Firma | Englische Suche | Bisoziation | Kandidat | Wenn ein Gemeinwohl-Träger belegt, dass Verwaltungsseiten per Dauertest nachweislich verständlicher werden und keine Plattform das abdeckt. |
+| KI-Layer für dynamische Überschriften (TYPO3) | 30.09.2026 | Schon gebaut | Firma | Englische Suche | Bisoziation | Kandidat | Wenn eine öffentliche Stelle Anpassung von Inhalten nach Nutzerabsicht als Barrierefreiheits- oder Verständlichkeitsziel ausschreibt. |
 | Kollegen-Fernleihe (Apotheken tauschen Arzneimittel bei Engpass) | 30.09.2026 | Schon gebaut | Community / Indie | Deutsche Suche | Bisoziation | Kandidat | Wenn der Austausch rechtlich geöffnet wird (§ 17 Abs. 6c ApBetrO) und die bestehenden Plattformen ihn nicht bedienen. |
+| Kontextabhängige Neuordnung von Inhaltsblöcken | 30.09.2026 | Schon gebaut | Firma | Englische Suche | Bisoziation | Kandidat | Wenn eine Verwaltung kontextabhängige Darstellung als Bürgerdienst fordert und keine Suite sie offen liefert. |
 | Mimikry-Detektor (Tarnwirkung eines Falters vor dem Mikrohabitat bewerten) | 30.09.2026 | Schon gebaut | Forschung | Englische Suche | Bisoziation | Kandidat | Wenn ein Zählschema Tarnwirkung als Fehlerquelle ausweist und eine Messgröße belegt ist. |
 | Notdienst-/Guardia-Atlas (Notdienst-Abdeckung und Erreichbarkeit von Apotheken) | 30.09.2026 | Beim Empfänger selbst | Behörde | Deutsche Suche | Primärquelle | Kandidat | Wenn ein Land keine öffentliche Notdienstplanung oder Erreichbarkeitsanalyse mehr betreibt oder eine offene, versionierte Historie der Notdienstpläne gefragt wird. |
+| Patata de Galicia Wareneingangs-Prüfer | 30.09.2026 | Beim Empfänger selbst | Behörde | Empfänger-Suche | Inversion | Kandidat | Wenn ein Consejo Regulador oder eine Einkaufsgemeinschaft ausdrücklich ein offenes Prüfwerkzeug für Wareneingänge anfragt. |
+| Raum-Umbauer und dynamische Raumteilung (Mehrtierhaushalt) | 30.09.2026 | Schon gebaut | Firma | Deutsche Suche | Bisoziation | Kandidat | Wenn eine offene Hardware-Spezifikation mit Tierschutz- oder Forschungsmandat einen Empfänger hat. |
 | Retax-Vorprüfer (Rezept vor Abrechnung auf Retaxrisiko prüfen) | 30.09.2026 | Schon gebaut | Firma | Deutsche Suche | Primärquelle | Kandidat | Wenn ein offener, herstellerunabhängiger Retax-Regelkatalog gefragt wird und keine Software ihn abbildet. |
+| Robinien-Duftprofil-App (VOC-Stresszustand) | 30.09.2026 | Reality-Check | Niemand | Deutsche Suche | Bisoziation | Kandidat | Wenn ein Forschungsinstitut eine belegte VOC-Signatur für Stockausschlag-Ermüdung publiziert und ein Feldsensor zugänglich ist. |
+| Robinien-Risikoflächen aus Geodaten und Luftbildern | 30.09.2026 | Keine neue Fähigkeit | Niemand | Deutsche Suche | Inversion | Kandidat | Wenn ein Landesbetrieb Forst oder eine Naturschutzbehörde Robinien-Polygone offen veröffentlicht und einen Risikoatlas anfragt. |
+| Robinienbekämpfung-Dashboard für Kommunen | 30.09.2026 | Keine neue Fähigkeit | Niemand | Deutsche Suche | Inversion | Kandidat | Wenn ein Land Bekämpfungsmaßnahmen an Robinie als offenes Register führt. |
 | Rote-Hand-Patientenfassung (Rückruf-/Rote-Hand-Brief in Laiensprache mit Chargenabgleich) | 30.09.2026 | Beim Empfänger selbst | Firma | Deutsche Suche | Inversion | Kandidat | Wenn BfArM oder AMK ausdrücklich Laienfassungen von Rote-Hand-Briefen beauftragen oder ein Register mit Patientenzielgruppe entsteht. |
+| Sensorfeld am Transekt (Schall, NIR, Mikroschatten) | 30.09.2026 | Schon gebaut | Forschung | Englische Suche | Bisoziation | Kandidat | Wenn ein Tagfalter-Monitoring (TMD) offene Sensordaten je Transekt als Schnittstelle anbietet. |
+| Stimmungsabhängige Tonanpassung von Website-Inhalten | 30.09.2026 | Schon gebaut | Firma | Englische Suche | Bisoziation | Kandidat | Wenn eine Redaktion Tonfall-Hinweise als Freigabe-Vorschlag (nie als stille Änderung) fordert und Werkzeuge fehlen. |
+| Tortilla-Heritage Stilzuordnung (mit/ohne Zwiebel, Kerngrad) | 30.09.2026 | Falsche Prämisse | Niemand | Ohne Suche | Bisoziation | Kandidat | Wenn ein Wettbewerb oder eine Zunft eine veröffentlichte, überprüfbare Stilklassifikation mit Referenzbildern anbietet. |
+| Tortilla-Setz-Simulation (Struktur und Feuchte über Stunden) | 30.09.2026 | Reality-Check | Niemand | Nicht dokumentiert | Bisoziation | Kandidat | Wenn ein Wettbewerb oder eine Forschungsgruppe Messreihen zu Struktur und Feuchte gegarter Tortillas veröffentlicht. |
+| Zertifizierter Spenden-Verpackungsassistent mit AR | 30.09.2026 | Falsche Prämisse | Niemand | Englische Suche | Inversion | Kandidat | Wenn ein Tafel-Landesverband oder eine Lebensmittelaufsicht einen Verpackungs-Vorprüfer ausdrücklich anfragt und der BMEL-Leitfaden die Fragen nicht beantwortet. |
 | Augenzähler-Foto (Würfel- oder Kartenaugen per Foto zählen) | 29.09.2026 | Falsche Prämisse | Niemand | Ohne Suche | Primärquelle | Kandidat | Nie, solange Zählen schneller ist als Fotografieren. |
 | Bergsonnenuhr-Peiler (Zwölfer-Bergnamen) | 29.09.2026 | Falsche Prämisse | Community / Indie | Ohne Suche | Bisoziation | Kandidat | Wenn eine Forschungsfrage entsteht, die die Benennungsorte statistisch über viele Gipfel eingrenzt und die Liste das nicht leistet. |
 | Boule-Messfoto (welche Kugel liegt näher?) | 29.09.2026 | Schon gebaut | Firma | Englische Suche | Primärquelle | Kandidat | Nie als Foto-Messer; nur wenn der Deutsche Pétanque Verband eine offene, geprüfte Messmethode als Turnierstandard ausschreibt, die keine der Apps erfüllt. |

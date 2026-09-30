@@ -1,13 +1,13 @@
 {
   "auditVersion": 1,
-  "generatedAt": "2026-09-30T16:54:10.084Z",
+  "generatedAt": "2026-09-30T18:46:35.259Z",
   "repository": {
-    "commit": "c84ea88",
-    "branch": "claude/keen-ptolemy-y3n54k"
+    "commit": "413c852",
+    "branch": "main"
   },
   "inventory": {
     "doses": 44,
-    "graves": 103,
+    "graves": 124,
     "demos": 10,
     "researchEntries": 36,
     "candidateIdeas": 20,
@@ -33,12 +33,12 @@
       "audio": 1
     },
     "graveCategory": {
-      "gebaut": 50,
-      "beim-empfaenger": 23,
-      "reality-check": 14,
+      "gebaut": 61,
+      "beim-empfaenger": 24,
+      "reality-check": 17,
       "duplikat": 2,
-      "mode": 4,
-      "praemisse": 10
+      "mode": 8,
+      "praemisse": 12
     }
   },
   "checks": [
@@ -98,11 +98,11 @@
       "id": "DRIFT-AGENTS.md-Gräber-58",
       "severity": "warning",
       "category": "documentation",
-      "message": "AGENTS.md claims 58 Gräber, but deterministic source scanner finds 103.",
+      "message": "AGENTS.md claims 58 Gräber, but deterministic source scanner finds 124.",
       "file": "AGENTS.md",
       "details": {
         "claim": "58 beerdigte Ideen",
-        "actual": 103,
+        "actual": 124,
         "type": "stale_count"
       }
     },
@@ -110,11 +110,11 @@
       "id": "DRIFT-AGENTS.md-Gräber-9",
       "severity": "warning",
       "category": "documentation",
-      "message": "AGENTS.md claims 9 Gräber, but deterministic source scanner finds 103.",
+      "message": "AGENTS.md claims 9 Gräber, but deterministic source scanner finds 124.",
       "file": "AGENTS.md",
       "details": {
         "claim": "9 Gräber",
-        "actual": 103,
+        "actual": 124,
         "type": "stale_count"
       }
     },
