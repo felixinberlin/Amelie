@@ -10,7 +10,7 @@ Diese Punkte sind im Repo als offen geführt (`06-suche/amelie-foerderlandschaft
 
 1. **Antragsberechtigung.** Laut Repo-Notiz nur Freiberufler:innen/Selbstständige oder GbR (≤ 4 Personen), keine Vereine, Stiftungen oder Behörden. Wohnsitz in Deutschland. **[FÉLIX]** Trifft das auf dich zu (Einzelperson, freiberuflich)? Auf `bewerben.prototypefund.de` gegenprüfen.
 2. **Lizenz.** Der Prototype Fund verlangt Open Source. Das Repo ist komplett CC0. Ob CC0 für **Code** akzeptiert wird, ist nicht geklärt (CC0 ist keine OSI-Lizenz). Vorschlag: Code unter MIT (oder EUPL-1.2), Inhalte (Dossiers, Gräber, Daten) bleiben CC0. Das ist eine Entscheidung für dich, sie ändert `LICENSE` und `package.json`.
-3. **Fördersumme.** Im Repo stehen widersprüchliche Angaben (Einzelperson 47.500 €; Team 95.000 € bzw. 158.000 €). Aktuelle Werte in der Ausschreibung nachlesen. Dieser Entwurf rechnet mit der Einzelperson-Variante.
+3. **Fördersumme.** Laut Suchschnipseln (30.09.2026): Team bis 4 Personen bis 95.000 € (6 Monate) bzw. 158.333 € (10 Monate); Einzelperson bis 47.500 € (6 Monate). Team = GbR nach Jury-Auswahl. Förderzeit Juni–November 2027. Dieser Entwurf rechnet mit der Einzelperson-Variante; Partner: siehe `prototype-fund-partner-suche.md`.
 4. **Vorhabenbeginn.** Bundesmittel fördern in der Regel nichts, was schon läuft. Das Repo existiert und ist weit fortgeschritten. Der Antrag muss deshalb **neue, klar abgegrenzte Arbeit** beschreiben (siehe Arbeitspakete), nicht den Bestand.
 5. **Passung zur Haltung.** Amélie verkauft nichts und pitcht keine Empfänger. Ein eigener Förderantrag verletzt das nicht (Regel 1–3 betreffen die Zustellung an Empfänger), sollte aber im README kurz erwähnt werden, damit es nicht wie ein Widerspruch wirkt.
 
