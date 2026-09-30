@@ -303,7 +303,8 @@ describe('Prompts und Ablauf (Mock, ohne Netz)', () => {
 });
 
 describe('CLI', () => {
-  const cli = (args: string[]) => spawnSync('node', ['scripts/model-compare.mjs', ...args], { encoding: 'utf8', cwd: real });
+  // Immer die Beispielkonfiguration: eine lokale models.local.json (git-ignoriert) darf die Tests nicht verändern.
+  const cli = (args: string[]) => spawnSync('node', ['scripts/model-compare.mjs', ...args, '--config', 'scripts/model-compare/models.example.json'], { encoding: 'utf8', cwd: real });
   it('dry-run zeigt die Prompts und ruft nichts auf; echte Läufe ohne Zugang oder ohne --yes brechen ab', () => {
     const d = cli(['run', '--thema', 'Testthema', '--dry-run']);
     expect(d.status, d.stderr).toBe(0);
