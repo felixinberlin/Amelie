@@ -3,7 +3,7 @@ import { mkdirSync, mkdtempSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { DELEGABLE, cliDenied, createKit, listAgents, listSkills, loadSkill, parseAgentDef, safePath, toolsForAgent } from '../../scripts/agent-kit.mjs';
-import { isTransient, librarianTools, runLabLibrarian, withRetry } from '../../scripts/lab-librarian-agent.mjs';
+import { isTransient, librarianTools, planGroups, reviewPlans, runLabLibrarian, withRetry } from '../../scripts/lab-librarian-agent.mjs';
 
 const ROOT = process.cwd();
 
@@ -173,5 +173,50 @@ describe('Abschlussbericht, wenn der Agent keine Empfehlung liefert', () => {
     const r = await runLabLibrarian({ root: ROOT, worktree: wt, pr: { number: 1, title: 't' }, files: [], results: [], manifest: null, maxTurns: 2 }, { adapter });
     expect(r.text).toContain('EMPFEHLUNG: nicht mergen');
     expect(r.usage.in).toBe(10 + 10 + 5);
+  });
+});
+
+describe('jeder Lauf eines PR wird einzeln geprüft', () => {
+  const P = '06-suche/proposals/';
+  const mk = (id: string) => ({ plan_id: id, files: [`${P}${id}.md`, `${P}${id}.manifest.json`] });
+  const files = ['a', 'b', 'c'].flatMap((id) => [`${P}${id}.md`, `${P}${id}.manifest.json`]).map((path) => ({ status: 'A', path }));
+  const setup = () => {
+    const wt = mkdtempSync(join(tmpdir(), 'lab-plans-'));
+    mkdirSync(join(wt, P), { recursive: true });
+    for (const id of ['a', 'b', 'c']) writeFileSync(join(wt, P, `${id}.md`), `Vorschlag ${id}`);
+    return wt;
+  };
+  const base = (wt: string) => ({ root: ROOT, worktree: wt, pr: { number: 7, title: 't' }, files, results: [], manifests: [mk('a'), mk('b'), mk('c')], concurrency: 2 });
+  /** Geskriptet: liest alle sichtbaren Dateien, berichtet, welche er sah, und urteilt je nach Kennung. */
+  const adapterFor = (verdict: (scope: string) => string | null) => ({
+    name: 's',
+    start: ({ user }: any) => ({ scope: /Lauf (\S+);/.exec(user)?.[1] ?? '?', turn: 0, seen: [] as string[] }),
+    async step(st: any) {
+      st.turn++;
+      if (st.turn === 1) return { text: '', calls: [{ id: '1', name: 'list_proposals', args: {} }], usage: { in: 5, out: 5 }, stop: 'tool_use' };
+      const v = verdict(st.scope);
+      if (v === 'crash') throw new Error('Anbieter tot');
+      return { text: `Sichtbar: ${st.seen.join(',')}${v ? `\nEMPFEHLUNG: ${v}` : ''}`, calls: [], usage: { in: 5, out: 5 }, stop: 'end_turn' };
+    },
+    addToolResults(st: any, res: any[]) { st.seen.push(...res[0].content.split('\n')); },
+  });
+
+  it('gruppiert die Dateien nach Manifest und zeigt jedem Lauf nur seine', async () => {
+    expect(planGroups(files, [mk('a'), mk('b')]).map((g: any) => g.files.length)).toEqual([2, 2]);
+    const r = await reviewPlans(base(setup()), { adapter: adapterFor(() => 'merge') });
+    expect(r.recommendation).toBe('merge');
+    expect(r.covered).toBe(3);
+    expect(r.per.map((x: any) => x.r.text.split('\n')[0])).toEqual(['Sichtbar: a.md', 'Sichtbar: b.md', 'Sichtbar: c.md']);
+    expect(r.text).toContain('Geprüft: 3 von 3 Läufen');
+  });
+
+  it('ein „nicht mergen“ entscheidet alles, ein Ausfall macht es unvollständig', async () => {
+    const no = await reviewPlans(base(setup()), { adapter: adapterFor((s) => (s === 'b' ? 'nicht mergen' : 'merge')) });
+    expect(no.recommendation).toBe('nicht mergen');
+    const crash = await reviewPlans(base(setup()), { adapter: adapterFor((s) => (s === 'c' ? 'crash' : 'merge')) });
+    expect(crash.recommendation).toBeNull();
+    expect(crash.covered).toBe(2);
+    expect(crash.text).toContain('Agent ausgefallen: Anbieter tot');
+    expect(crash.text).toContain('Geprüft: 2 von 3');
   });
 });

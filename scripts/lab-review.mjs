@@ -13,7 +13,7 @@ import { existsSync, mkdtempSync, readFileSync, readdirSync, rmSync, symlinkSync
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { runLabLibrarian } from './lab-librarian-agent.mjs';
+import { reviewPlans, runLabLibrarian } from './lab-librarian-agent.mjs';
 import { PROPOSALS, assess, buildComment, checkPr, checkScope, decide, parseNameStatus, parseRecommendation } from './lab-review-lib.mjs';
 
 const ROOT = fileURLToPath(new URL('..', import.meta.url));
@@ -129,7 +129,12 @@ async function review() {
     if (!has('no-agent')) {
       step('Bibliothekar (eigenständiger Agent, nur lesend)');
       try {
-        const a = await runLabLibrarian({ root: ROOT, worktree: wt, pr, files, results, manifest, model: opt('model'), delegate: !has('no-delegate') });
+        const manifests = files.map((f) => f.path).filter((x) => x.endsWith('.manifest.json'))
+          .map((x) => { try { return JSON.parse(readFileSync(join(wt, x), 'utf8')); } catch { return null; } }).filter(Boolean);
+        const base = { root: ROOT, worktree: wt, pr, files, results, model: opt('model'), delegate: !has('no-delegate') };
+        // Mehrere Läufe im PR: jeder Lauf bekommt einen eigenen Agentenlauf, damit keiner ungeprüft bleibt.
+        const a = manifests.length ? await reviewPlans({ ...base, manifests }) : await runLabLibrarian({ ...base, manifest });
+        if (a.per) console.log(`   ${a.covered} von ${a.total} Läufen geprüft`);
         agentText = a.text.trim();
         recommendation = parseRecommendation(agentText);
         const cost = a.cost === null ? '' : `, ca. ${a.cost.toFixed(2)} $`;

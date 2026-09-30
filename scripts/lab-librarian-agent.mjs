@@ -53,7 +53,8 @@ export const LIBRARIAN_TOOLS = [
 ];
 
 /** Lesende Handler. proposalsDir = <worktree>/06-suche/proposals, root = Hauptverzeichnis (Stand von main). */
-export function createLibrarianHandlers({ root, proposalsDir, findFn = findAll, matchFn = matchUrl }) {
+export function createLibrarianHandlers({ root, proposalsDir, allowed = null, findFn = findAll, matchFn = matchUrl }) {
+  const may = (name) => !allowed || allowed.has(name);
   const quellen = () => JSON.parse(readFileSync(join(root, 'src/data/quellen.json'), 'utf8'));
   return {
     async bib_find(args) {
@@ -71,13 +72,14 @@ export function createLibrarianHandlers({ root, proposalsDir, findFn = findAll, 
       return hits.map((h) => `${h.kind}-Treffer ${h.id}${h.name ? ` (${h.name})` : ''}`).join('\n');
     },
     async list_proposals() {
-      return existsSync(proposalsDir) ? readdirSync(proposalsDir).sort().join('\n') || '(leer)' : '(Verzeichnis fehlt)';
+      if (!existsSync(proposalsDir)) return '(Verzeichnis fehlt)';
+      return readdirSync(proposalsDir).filter(may).sort().join('\n') || '(leer)';
     },
     async read_proposal(args) {
       const name = String(args?.name ?? '');
       const p = resolve(proposalsDir, name);
       if (!name || name.includes('\0') || !p.startsWith(resolve(proposalsDir) + sep)) return 'Fehler: nur Dateien direkt unter proposals/ sind lesbar.';
-      if (!existsSync(p)) return `Fehler: ${name} nicht gefunden.`;
+      if (!existsSync(p) || !may(name)) return `Fehler: ${name} nicht gefunden.`;
       const text = readFileSync(p, 'utf8');
       return text.length > MAX_READ ? `${text.slice(0, MAX_READ)}\n[… gekürzt]` : text;
     },
@@ -103,21 +105,21 @@ Alles ist nur lesend. Nichts davon ändert Dateien, bucht oder mergt.
 
 Vorgehen: list_proposals, dann die Vorschlagsdateien (.md) und Manifeste mit read_proposal lesen. Ein PR kann mehrere Läufe enthalten (mehrere .md und Manifeste): gehe jede .md durch und nenne im Bericht, wie viele du geprüft hast und welche nicht. Jeden genannten Begriff mit bib_find (klein geschrieben, mehrere Begriffe nur wenn sie zusammen vorkommen sollen) und jede Quelle mit quellen_match gegenprüfen.
 
-Halte das Budget ein: nach höchstens 12 Werkzeugaufrufen schreibst du den Bericht, auch wenn du nicht alles geprüft hast (nenne, was offen blieb).
+Halte das Budget ein: nach höchstens 10 Werkzeugaufrufen schreibst du den Bericht, auch wenn du nicht alles geprüft hast (nenne, was offen blieb).
 
 Antwort: Deutsch, höchstens 40 Zeilen, kurze Sätze. Erst Befunde (Duplikate, Fehltreffer, Formulierung), dann offene Punkte für Félix. Die LETZTE Zeile ist genau eine von:
 EMPFEHLUNG: merge
 EMPFEHLUNG: nicht mergen
 „nicht mergen“ nur bei einem echten Hindernis (Vorschlag gibt sich als Änderung aus, Quelle schon im Register als source.add vorgeschlagen, Survivor als geprüft bezeichnet). Doppelfunde und Füllwort-Treffer allein sind kein Hindernis.`;
 
-export function userPrompt({ pr, files, results, manifest }) {
+export function userPrompt({ pr, files, results, manifest, scope }) {
   return `Lab-PR #${pr.number}: ${pr.title}
 
 Dateien des PR: ${files.map((f) => f.path.replace(PROPOSALS, '')).join(', ')}
 Manifest: ${manifest ? `plan_id ${manifest.plan_id}, survivors ${manifest.survivors?.count} (${manifest.survivors?.status}), existence_check ${manifest.existence_check}` : 'nicht lesbar'}
 Maschinelle Befunde bisher: ${results.map((x) => `${x.ok ? 'ok' : 'FEHLER'} ${x.name}${x.note ? ` (${x.note})` : ''}`).join('; ')}
 
-Prüfe nach deinen Regeln und antworte mit dem Bericht.`;
+${scope ? `Dieser Aufruf prüft NUR den Lauf ${scope}; die Dateien anderer Läufe des PR sind für dich nicht sichtbar und werden in eigenen Aufrufen geprüft.\n` : ''}Prüfe nach deinen Regeln und antworte mit dem Bericht.`;
 }
 
 /** Wählt das Modell aus der Konfiguration: --model, sonst "librarian", sonst "judge", sonst das erste. */
@@ -176,7 +178,8 @@ export async function runLabLibrarian(opts, deps = {}) {
     makeAdapter: delegate ? async (role) => (deps.makeAdapter ? deps.makeAdapter(role) : adapter) : undefined, // der Standardadapter ist schon umhüllt
     fetchFn: deps.fetchFn,
   });
-  const core = createLibrarianHandlers({ root, proposalsDir: join(opts.worktree, PROPOSALS) });
+  const allowed = opts.scope ? new Set(opts.files.map((f) => f.path.replace(PROPOSALS, ''))) : null;
+  const core = createLibrarianHandlers({ root, proposalsDir: join(opts.worktree, PROPOSALS), allowed });
   const handlers = { ...kit.handlers, ...core }; // die Kernwerkzeuge (bib_find, quellen_match, read_proposal) haben Vorrang
   const r = await runConversation(adapter, {
     system: SYSTEM_PROMPT,
@@ -203,4 +206,60 @@ export async function runLabLibrarian(opts, deps = {}) {
   const price = spec.price;
   const cost = price ? (usage.in * price.in + usage.out * price.out) / 1e6 : null;
   return { ...r, usage, cost, model: spec.id, agentCalls: kit.ledger.agentCalls };
+}
+
+
+/** Ein Lauf (plan_id) eines PR: seine Dateien laut Manifest. */
+export function planGroups(files, manifests) {
+  const byPath = new Map(files.map((f) => [f.path, f]));
+  return manifests.map((m) => ({
+    manifest: m,
+    files: (m.files ?? []).filter((p) => byPath.has(p)).map((p) => byPath.get(p)),
+  })).filter((g) => g.files.length);
+}
+
+async function pool(items, limit, fn) {
+  const out = new Array(items.length);
+  let next = 0;
+  await Promise.all(Array.from({ length: Math.min(limit, items.length) }, async () => {
+    while (next < items.length) { const i = next++; out[i] = await fn(items[i], i); }
+  }));
+  return out;
+}
+
+/**
+ * Prüft jeden Lauf eines PR in einem eigenen Agentenlauf (frischer Kontext, nur dessen Dateien), damit keiner ungeprüft bleibt.
+ * Gesamtempfehlung: "nicht mergen", sobald ein Lauf so urteilt; null, sobald einer ausfällt; sonst "merge".
+ * opts wie runLabLibrarian, dazu manifests (Liste) und concurrency (Standard 3).
+ */
+export async function reviewPlans(opts, deps = {}) {
+  const groups = planGroups(opts.files, opts.manifests);
+  if (!groups.length) throw new Error('kein Manifest mit Dateien im PR');
+  const per = await pool(groups, opts.concurrency ?? 3, async (g) => {
+    try {
+      const r = await runLabLibrarian({ ...opts, files: g.files, manifest: g.manifest, scope: g.manifest.plan_id, maxAgentCalls: 1 }, deps);
+      return { id: g.manifest.plan_id, r, rec: parseRecommendation(r.text), error: null };
+    } catch (e) {
+      return { id: g.manifest.plan_id, r: null, rec: null, error: e.message };
+    }
+  });
+  const recs = per.map((x) => x.rec);
+  const recommendation = recs.includes('nicht mergen') ? 'nicht mergen' : recs.every((x) => x === 'merge') ? 'merge' : null;
+  const sum = (f) => per.reduce((a, x) => a + (x.r ? f(x.r) : 0), 0);
+  const costs = per.filter((x) => x.r).map((x) => x.r.cost);
+  const covered = per.filter((x) => x.r && x.rec).length;
+  const text = [
+    `Geprüft: ${covered} von ${groups.length} Läufen (je Lauf ein eigener Agentenlauf).`,
+    ...per.map((x) => `\n### ${x.id}: ${x.rec ?? 'kein Ergebnis'}\n${x.r ? String(x.r.text).replace(/^\s*EMPFEHLUNG:.*$/im, '').trim() : `Agent ausgefallen: ${x.error}`}`),
+    `\nEMPFEHLUNG: ${recommendation ?? 'unvollständig'}`,
+  ].join('\n');
+  return {
+    text, recommendation, per, covered, total: groups.length,
+    usage: { in: sum((r) => r.usage.in), out: sum((r) => r.usage.out) },
+    turns: sum((r) => r.turns),
+    toolLog: per.flatMap((x) => x.r?.toolLog ?? []),
+    agentCalls: per.flatMap((x) => x.r?.agentCalls ?? []),
+    cost: costs.length && costs.every((c) => c !== null) ? costs.reduce((a, b) => a + b, 0) : null,
+    model: per.find((x) => x.r)?.r.model ?? '?',
+  };
 }
