@@ -926,3 +926,14 @@ Farmacia-Runde 30.09.2026: Apotheke/Farmacia (Deutschland und Spanien). Drei Eng
 | D10 | **Sustitución bei Desabastecimiento (Ersatz bei Lieferproblem, Spanien)** (`sustitucion-desabastecimiento`) | [method: ideenrunde] | `besetzt` | S-Sammelkill. BOT PLUS (Consejo General) führt Sustitución und Problemas de suministro (Quellenmeldung, Schnipsel). | [Schnipsel] | 30.09.2026 | 09/2027 |
 | D11 | **securPharm-Alarm-Triage** (`securpharm-alarm-triage`) | [method: ideenrunde] | `besetzt` | S-Sammelkill, laut Merge-Tabelle besetzt; Einzelbeleg nicht ausgewiesen. | [Schnipsel] | 30.09.2026 | 09/2027 |
 | D12 | **BMP-QR-Reader (Bundeseinheitlicher Medikationsplan)** (`bmp-qr-reader`) | [method: ideenrunde] | `besetzt` | S-Sammelkill, laut Merge-Tabelle besetzt; Einzelbeleg nicht ausgewiesen. Nachbar pillsafe-vision (Medikationsplan-Abgleich), keine Doppelung. | [Schnipsel] | 30.09.2026 | 09/2027 |
+
+---
+
+## Glasanflug-Nachtrag — 30.09.2026 (Antwort NABU + WUA-Tabelle, method: review)
+
+Auslöser: Standardantwort der NABU-Bundesgeschäftsstelle vom 29.09.2026 auf die Mail vom 22.09.2026 (Sammeladresse) mit Verweis auf die WUA-Broschüre „Geprüfte Muster" (5. Aufl. 2022). Die Antwort geht auf die Idee nicht ein, stellt aber klar: Die Markierungsbewertungen sind produktspezifische WUA-Flugtunnel-Ergebnisse und nicht gesetzlich verbindlich.
+
+| Idee | Urteil | Beleg (kurz) | Prüfen ab |
+|---|---|---|---|
+| **Markierungs-Nachweisabgleich** (`markierungs-nachweisabgleich`) — geplantes Muster, Ebene und Außenreflexion gegen die WUA-Tabelle; Ausgabe „getestet / nicht getestet / außerhalb des Geltungsbereichs", nie „unwirksam" | `verengt` | [Seite] WUA-Broschüre 2022 (Nutzerupload): Tabelle 1S–16S und 1D–14D, WIN-Ergebnisse gelten nur bis zur geprüften Außenreflexion (8S zu 6S: 10 % statt 9 % bei AR 19 %). Eigentümerin der Tabelle ist die WUA Wien, nicht der Empfänger der Dose. Schweizer Produktseite ist eine Linkliste ohne Prüfsystem, glaslotsen.de berät ohne Werkzeug [Seite] (Ventures-Agent). Nachnutzungsrecht an der Tabelle ungeklärt. Ventures-Urteil: als Produkt Kill (Zahlungsbereitschaft 2/5, Verteidigbarkeit 1/5), besser Gabe an WUA. Demo als Baustein im Simulator, keine eigene Dose. | 03/2027 |
+| *Empfängerprüfung:* **WUA Wien / Biol. Station Hohenau-Ringelsdorf** | **Eigentümerin der Tabelle, anderer Empfänger als NABU/LAG VSW** | Ansprechperson nicht verifiziert. Vor Versand Urheber- und Nachnutzungsrecht klären, nur Prüflogik und Schema anbieten. | 03/2027 |

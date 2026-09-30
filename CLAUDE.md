@@ -82,6 +82,8 @@ Wenn du ein Ticket, ein Kriterium oder eine Dosen-Beschreibung änderst, musst d
 
 ## 5. Aktueller Projektstand (Stand: 28. September 2026)
 
+* **Glasanflug-Antwort (30.09.2026):** Standardantwort der NABU-Bundesgeschäftsstelle auf Mail 5 (Sammeladresse, 22.09.): kein Interesse an der Idee bekundet, aber Korrektur: WUA-Markierungsbewertungen sind produktspezifisch und nicht rechtsverbindlich (Mailsatz zu „zertifizierten 9x9-Rastern" war zu stark, in `deliveries.ts` und den Entwürfen korrigiert). Dose um „Antwort und Lehre" ergänzt, Simulator um **Markierungs-Abgleich** (`src/engine/glasanflug/markierung.ts`, Tatsachenauszug der WUA-Broschüre 2022, sagt nie „unwirksam", nur „nicht getestet" oder „außerhalb des Geltungsbereichs"). **Offen:** Nachnutzungsrecht an der WUA-Tabelle ungeklärt; Eigentümerin ist die WUA Wien, ein anderer Empfänger als NABU/LAG VSW (Ansprechperson nicht verifiziert). Ventures-Prüfung: als Produkt Kill, besser Gabe. Keine Mail angelegt.
+
 * **Farmacia-Runde (30.09.2026, Teamrunde 5, auf Wunsch nach dem Ventures-Lauf):**
   * Thema Apotheke/Farmacia (ES und DE). Vorflug mit `bib vorflug --netz`: keine Parallel-PRs, Netz offen. Drei Engines parallel → Merge → Reviewer → Bibliothekar (kein Packer/Demo-Builder). Protokoll der Runde: 21 Zeilen (0 frei / 6 verengt / 3 unklar / 12 besetzt).
   * **0 Dose Ready** (bestes Ergebnis `kuehlketten-steckbrief` 23/35, Gate 24), Needs Research: `kuehlketten-steckbrief` (Rang 1), `engpass-prognosetreue`, `fachinfo-aenderungsdiff`, `haeufigkeits-umrechner`, `import-prospekt-bruecke`, `nebenwirkungs-meldeassistent`; **7 neue Gräber (103 gesamt)**, 18 neue Quellen.
