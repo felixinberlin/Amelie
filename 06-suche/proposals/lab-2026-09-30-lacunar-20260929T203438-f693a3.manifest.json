@@ -1,0 +1,34 @@
+{
+  "manifest_version": 1,
+  "run_id": "lacunar-20260929T203438-f693a3",
+  "plan_id": "lab-2026-09-30-lacunar-20260929T203438-f693a3",
+  "engine": "lacunar",
+  "model": "gemini-2.5-pro",
+  "existence_check": false,
+  "survivors": {
+    "count": 2,
+    "status": "ungeprueft"
+  },
+  "files": [
+    "06-suche/proposals/lab-2026-09-30-lacunar-20260929T203438-f693a3.md",
+    "06-suche/proposals/lab-2026-09-30-lacunar-20260929T203438-f693a3-source.json",
+    "06-suche/proposals/lab-2026-09-30-lacunar-20260929T203438-f693a3.manifest.json"
+  ],
+  "source_ops": [
+    {
+      "op": "source.log",
+      "id": "unece-norm-ddp-02-walnusskerne-handelsqu",
+      "human_accepted": false,
+      "urls": [
+        "https://unece.org/DAM/trade/agr/standard/dry/dry_e/02WalnutKernels_e.pdf"
+      ]
+    }
+  ],
+  "grave_proposals": 2,
+  "touches_memory": false,
+  "contracts": {
+    "write-plan": "see plan",
+    "lacunar-run": "1.0.0"
+  },
+  "contract_version": "1.0.0"
+}

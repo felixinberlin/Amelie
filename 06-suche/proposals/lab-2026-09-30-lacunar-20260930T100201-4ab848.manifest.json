@@ -1,0 +1,34 @@
+{
+  "manifest_version": 1,
+  "run_id": "lacunar-20260930T100201-4ab848",
+  "plan_id": "lab-2026-09-30-lacunar-20260930T100201-4ab848",
+  "engine": "lacunar",
+  "model": "gemini-2.5-flash",
+  "existence_check": false,
+  "survivors": {
+    "count": 4,
+    "status": "ungeprueft"
+  },
+  "files": [
+    "06-suche/proposals/lab-2026-09-30-lacunar-20260930T100201-4ab848.md",
+    "06-suche/proposals/lab-2026-09-30-lacunar-20260930T100201-4ab848-source.json",
+    "06-suche/proposals/lab-2026-09-30-lacunar-20260930T100201-4ab848.manifest.json"
+  ],
+  "source_ops": [
+    {
+      "op": "source.log",
+      "id": "waldwissen-net-strategien-zum-management",
+      "human_accepted": false,
+      "urls": [
+        "https://www.waldwissen.net/de/waldwirtschaft/schadensmanagement/neue-arten/management-der-invasiven-robinie"
+      ]
+    }
+  ],
+  "grave_proposals": 1,
+  "touches_memory": false,
+  "contracts": {
+    "write-plan": "see plan",
+    "lacunar-run": "1.2.0"
+  },
+  "contract_version": "1.0.0"
+}
