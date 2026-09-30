@@ -1118,3 +1118,29 @@ Quelle: Merge-Tabelle Abschnitt A (R1–R9). Abschnitt B (besetzt/tot) unbewerte
 - Muster für den Atlas: „Rechenregel plus Schieber" trägt nicht, wenn der entscheidende Eingang (hier Modus-Anteil, Skill-Split) unbeobachtbar ist; die Ausgabe ist dann die Annahme. Vorher fragen: Gibt es den Nenner als Datensatz?
 - Muster: Tipp-/Wett-Ideen auf offenen Zeitreihen brauchen eine Basislinie, die ein Mensch schlagen kann; bei Pegeln und ruhigem Wetter gewinnt die Persistenz (24-h-RMSE bei Niedrigwasser 2–8 cm).
 - Vor „frei" bei Community-Systemen immer auch das Zielsystem der Zielgruppe (Opencaching, nicht nur Geocaching.com) prüfen: R7 wäre sonst als „verengt" durchgegangen.
+
+## Robinien-Runde 30.09.2026
+
+**Kandidat `robinien-abstandsampel`** (Dreifachfund; Auftragskarte / InvaRo-Parzellenabfrage). Reviewer-Urteil nur für die Gemeingut-Seite.
+
+| Vektor | Score | Befund |
+|---|:---:|---|
+| V1 Novelty | 2 | Kombinatorisch: Abstandsabfrage (50 m / 500 m) über zwei fremde Schichten. Die Regel stammt aus InvaRo selbst (FIB/HU), die Idee ist deren Atlas als Abfrage. |
+| V2 Komplexität | 3 | Tier 2 (Static Open Data Hybrid), sofern Polygone vorliegen. Biotopkataster-WFS antwortet (siehe V7). CORS und Umfang nicht getestet. |
+| V3 Possibility | 2 | Datentest verfehlt: Es gibt keine Robinien-Polygone zum Download und keinen InvaRo-GIS-Layer. Ohne die Robinien-Seite läuft keine Abstandsrechnung. |
+| V4 Longevity | 3 | Rückenwind schwach: Robinie steht nicht auf der EU-Unionsliste, Landesforst fördert sie als Wirtschaftsbaumart, LIFE Trockenrasen endet 2026, Bestand von 2022, ein Bundesland. Wartung unkritisch (statisch). |
+| V5 Civic SWOT | 3 | Stärke: reale Empfänger (FIB, LfU N2, UNB). Achillesferse: Naturschutz-Forst-Konflikt, Flächenwiderspruch (8.100 ha LFB gegenüber 22.500 ha InvaRo); eine „Ampel" für Parzellen wirkt wie ein Bescheid. |
+| V6 Tech Tree | 3 | Wurzeln: EPSG:25833, WFS, Puffer-Geometrie. Stamm: Abstand Parzelle-Biotop. Ast: Maßnahmenlisten. Nachbarn `biotoptyp-assistent` (Foto zu Biotoptyp), `florascan-invasive-webgpu` (besetzt). |
+| V7 Dokumentation | 3 | Typ B/D. Zenodo 6460638 (CC BY 4.0, 14.04.2022, per API geprüft) besteht aus zwei PDFs (5,6 MB Arbeitspapier, 199,8 MB Atlas); kein Shape, kein GeoTIFF. Biotopkataster: WMS und WFS 2.0 antworten (GetCapabilities 30.09.2026), Lizenz DL-DE-BY 2.0. |
+| V8 Fun | 2 | discovery: Kartenblick auf den eigenen Ort; kein Spiel. |
+
+**Kern 19/35, gesamt 21/40.** Gate 24/35 verfehlt, V3 unter 3.
+
+**Urteil: `Needs Research`** (nicht Dose Ready, nicht Market Route, kein Friedhof).
+- Begründung: Die Biotop-Seite ist als offener Dienst da. Die Robinien-Seite fehlt als Rohdatum. Der Atlas ist Rasterbild in einem PDF, das bei einer Digitalisierung nicht amtlich wäre. Die Idee ist als Abfrage richtig gedacht, aber die Daten fehlen. Market Route entfällt (Marktseite: Käuferkreis winzig; SaaS-Pflicht ist keine Voraussetzung).
+- Gegen-Suche (eigene, unabhängig von den Engines): Geoportal Brandenburg (WMS-/Dienste-Listen), FNR-Pressemitteilung, FIB-Projektseite, LFB-Drittmittelprojekt Robinie, waldwissen. Ergebnis: kein fertiges Produkt gefunden, kein Neophyten-Layer und keine Robinie-Polygone. Auch die Forst-Seite nennt nur Zahlen (8.100 ha DSW2) und eine Verbreitungskarte 2010, keinen Download. Nichts gefunden heißt nicht, dass nichts existiert: Forst-Geoportal-Viewer und LFB-Anfrage sind nicht geprüft.
+- Datentest zuerst: (1) Bei FIB (Dr. Hildmann) oder LFB anfragen, ob der InvaRo-Layer oder die Robinienpolygone (DSW/Forstgrundkarte) als Vektor vorliegen und freigegeben würden. Das ist eine Anfrage, kein Pitch. (2) Alternativ prüfen, ob Robinienforst im Biotopkataster-WFS als Biotoptyp kartiert ist und die Abdeckung reicht (nicht getestet; Forsten sind dort vermutlich nicht flächendeckend). (3) Aus dem Atlas-PDF drei Ausschnitte georeferenzieren und gegen den Biotopkataster legen (Genauigkeit).
+- Wiedervorlage: sobald ein Robinien-Polygonsatz mit freier Lizenz oder ein InvaRo-Vektor bestätigt ist; dann Tier-2-Prüfer (Parzelle oder Punkt, Abstand, Risikoklasse) mit Ausgabe „Prüfhinweis", nie „Verstoß" oder „Handlungspflicht". Empfänger vorerst FIB, nur nach Personenprüfung.
+- Bausteinbezug: kein Baustein von `biotoptyp-assistent` (andere Eingabe). `invasive-plant-species-scanner`, `trockenrasen-transekte` getrennt halten.
+- Kein Grab: Die Prämisse (kein Robinien-Layer) ist nicht bewiesen. Falls die Anfrage negativ ausfällt, Grab-Vorschlag: cause `reality-check`, killer `keiner`, foundBy `deutsch`, stage `kandidat`, resurrectIfDe: Wenn FIB, LfU oder LFB einen Robinien-Polygonsatz oder den InvaRo-Layer als Vektor (freie Lizenz) veröffentlichen. resurrectIfEn: An open vector layer of black locust stands or of the InvaRo risk zones for Brandenburg becomes available.
+- Evidenz-Warnung: Zenodo-Dateiliste und WMS/WFS-Capabilities selbst abgerufen, alles andere `[Schnipsel]` (FNR, FIB, LFB, waldwissen). Die Lizenz des Biotopkatasters stammt aus dem Metadatensatz. Flächenwiderspruch (8.100 ha gegenüber 22.500 ha) ungeklärt.

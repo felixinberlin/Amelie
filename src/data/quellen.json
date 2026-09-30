@@ -9015,6 +9015,764 @@
           "status": "angekratzt"
         }
       ]
+    },
+    {
+      "id": "life-trockenrasen-brandenburg-stiftung-n",
+      "name": "LIFE Trockenrasen Brandenburg (Stiftung NaturSchutzFonds, Uni Potsdam, NABU-Stiftung)",
+      "typ": "R",
+      "kategorie": "foerderung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.life-trockenrasen.de/massnahmen/entnahme-von-neophyten"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Neophyten-Rückdrängung 2019–2026 in 29 Natura-2000-Gebieten: Ringeln, Fällung nach 2–3 Jahren, Nachsorge 2–5 Jahre",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "robinien-engines",
+          "runde": "Robinien-Runde 30.09.2026 (Venture-Lauf)",
+          "notiz": "Kontakt nur von der Seite; Projekt läuft 2026 aus; Vergabe und Kosten nicht genannt.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "invaro-robinien-risikoatlas-brandenburg",
+      "name": "InvaRo Robinien-Risikoatlas Brandenburg (FIB e. V., HU Berlin, Zenodo 6460638)",
+      "typ": "L",
+      "kategorie": "datensatz",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://zenodo.org/records/6460638",
+        "https://www.fnr.de/presse/pressemitteilungen/archiv/archiv-nachricht/500-meter-distanz-geben-sicherheit-robinie-in-nachbarschaft-zu-sensiblen-biotopen"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "teilweise",
+        "wie": ""
+      },
+      "enthaelt": "Risikoklassen Robinie/Trockenrasen (50 m sehr hoch, 500 m Sicherheitsabstand, Samenflug 77 m); Atlas 199,8 MB PDF, CC BY 4.0, Stand 14.04.2022; kein GIS-Dienst gefunden",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "robinien-engines",
+          "runde": "Robinien-Runde 30.09.2026 (Venture-Lauf)",
+          "notiz": "Rohdatenanfrage beim FIB offen.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "landesbetrieb-forst-brandenburg-robinie",
+      "name": "Landesbetrieb Forst Brandenburg, Robinie (LFE-Projekt ROBINIE, Merkblatt fb_robinie)",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://forst.brandenburg.de/lfb/de/ueber-uns/landeskompetenzzentrum-lfe/lfe-drittmittelprojekt-robinie/",
+        "https://forst.brandenburg.de/sixcms/media.php/9/fb_robinie.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Robinie als Wirtschaftsbaumart, 8.100 ha inventarisiert, Sortimentswünsche, Konflikt Naturschutz/Honig",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "robinien-engines",
+          "runde": "Robinien-Runde 30.09.2026 (Venture-Lauf)",
+          "notiz": "PDF lokal per Ghostscript gelesen; Widerspruch der Flächenzahl zu InvaRo (22.500 ha) ungeklärt.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "waldwissen-net-strategien-zum-management",
+      "name": "waldwissen.net, Strategien zum Management der invasiven Robinie",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.waldwissen.net/de/waldwirtschaft/schadensmanagement/neue-arten/management-der-invasiven-robinie"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Einzelne Schnitte wirkungslos, Stockausschlag, kein generell empfohlenes Tilgungsverfahren",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "robinien-engines",
+          "runde": "Robinien-Runde 30.09.2026 (Venture-Lauf)",
+          "notiz": "Fachartikel als Wirksamkeitsbeleg.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "richtlinie-mluk-forst-rl-nsw-und-bew-nat",
+      "name": "Richtlinie MLUK-Forst-RL-NSW und BEW (Naturschutzmaßnahmen im Wald, Bravors)",
+      "typ": "P",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://bravors.brandenburg.de/verwaltungsvorschriften/mluk_forst_rl_nsw_und_bew_2021"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "teilweise",
+        "wie": ""
+      },
+      "enthaelt": "Fördergegenstand I.2.5 Entnahme gebietsfremder Gehölze in Wald-LRT, Zweckbindung 5 Jahre, Widerruf I.6.2",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "robinien-engines",
+          "runde": "Robinien-Runde 30.09.2026 (Venture-Lauf)",
+          "notiz": "Nur HTML-Zusammenfassung gelesen, PDF-Fassung 2022 nicht lesbar; I.5.7 (100 %) nicht sicher zugeordnet.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "eu-mleuv-forst-richtlinie-brandenburg-20",
+      "name": "EU-MLEUV-Forst-Richtlinie Brandenburg 2025",
+      "typ": "P",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://forst.brandenburg.de/sixcms/media.php/9/EU-MLEUV-Forst-Richtlinie_2025_gezeichnet_geaendert_1712.pdf",
+        "https://forst.brandenburg.de/lfb/de/ueber-uns/bewilligungsbehoerde-forst/foerderung-forstwirtschaftlicher-vorhaben/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Waldumbau-Kulisse, Nr. 1.4.7.2; Waldumbau für neue Anträge seit 01.03.2026 gesperrt",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "robinien-engines",
+          "runde": "Robinien-Runde 30.09.2026 (Venture-Lauf)",
+          "notiz": "Robinie im Text nicht genannt; Suchtreffer wieder offen seit 07.09.2026 widersprüchlich und unbestätigt.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "stiftung-naturschutzfonds-brandenburg-pr",
+      "name": "Stiftung NaturSchutzFonds Brandenburg, Projektförderung und Finanzhilfe-Richtlinie",
+      "typ": "P",
+      "kategorie": "foerderung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://naturschutzfonds.de/natur-schuetzen/projektfoerderung",
+        "https://www.naturschutzfonds.de/fileadmin/nsf/Dokumente/Foerderung/Foerderrichtlinie.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Förderung ab 5.000 EUR, Antrag durch natürliche und juristische Personen, Bindungsfrist typisch 25 Jahre",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "robinien-engines",
+          "runde": "Robinien-Runde 30.09.2026 (Venture-Lauf)",
+          "notiz": "Nur Suchschnipsel, vor Nennung auf der Primärseite prüfen.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "flaechenagentur-brandenburg-gmbh-und-fla",
+      "name": "Flächenagentur Brandenburg GmbH und Flächenpoolverordnung",
+      "typ": "P",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.flaechenagentur.de/leistungen/",
+        "https://www.flaechenagentur.de/leistungen/flaechenangebote/",
+        "https://bravors.brandenburg.de/de/verordnungen-213984"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Eingriffsregelung, Flächenpools und Ökokonto; Entrobinierung als Maßnahmentyp nicht belegt",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "robinien-engines",
+          "runde": "Robinien-Runde 30.09.2026 (Venture-Lauf)",
+          "notiz": "Nur Suchschnipsel.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "natura-2000-managementplanung-brandenbur",
+      "name": "Natura-2000-Managementplanung Brandenburg (LfU, Maßnahmenblätter)",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://lfu.brandenburg.de/lfu/de/aufgaben/natur/natura-2000/managementplanung/",
+        "https://mleuv-daten.brandenburg.de/n/natura2000/managementplanung/396/FFH-396-Massnahmenblaetter.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Managementpläne je FFH-Gebiet als PDF, Robinie-Rückdrängung als Maßnahme, Umsetzung freiwillig; kein Umsetzungskataster gefunden",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "robinien-engines",
+          "runde": "Robinien-Runde 30.09.2026 (Venture-Lauf)",
+          "notiz": "Nur Suchschnipsel.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "vergabemarktplatz-brandenburg-cpv-772000",
+      "name": "Vergabemarktplatz Brandenburg, CPV 77200000 Forstdienstleistungen (Portal)",
+      "typ": "D",
+      "kategorie": "foerderung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://vergabemarktplatz.brandenburg.de/VMPCenter/company/announcements/categoryOverview.do?method=showTable&cpvCode=77200000-2"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Forst- und Fällaufträge (LFB, Kommunen), kostenlose Alerts",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "robinien-engines",
+          "runde": "Robinien-Runde 30.09.2026 (Venture-Lauf)",
+          "notiz": "Stand 30.09.2026 laufend: LfU-Los Artenhilfsmaßnahme Magerrasen Schönwalde (Frist 05.10.2026) und Berlin-Senat-Los Landschaftspflege FFH/NSG (Frist 20.10.2026); Einzelausschreibungen sind Hinweis, keine eigene Quelle.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "tendigo-ausschreibungsportal",
+      "name": "tendigo (Ausschreibungsportal)",
+      "typ": "D",
+      "kategorie": "foerderung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://tendigo.de/ausschreibung/artenhilfsmassnahme-im-ffh-gebiet-magerrasen-schoenwalde-aus-0abb4a572d"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Aggregator für Ausschreibungen; Fundstelle des Loses Artenhilfsmaßnahme FFH-Gebiet Magerrasen Schönwalde",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "robinien-engines",
+          "runde": "Robinien-Runde 30.09.2026 (Venture-Lauf)",
+          "notiz": "Schönwalde-Los gelesen (Frist 05.10.2026), Einzellos ist Hinweis, keine eigene Quelle.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "biotopkataster-brandenburg-lfu-wms-wfs",
+      "name": "Biotopkataster Brandenburg (LfU, WMS/WFS)",
+      "typ": "L",
+      "kategorie": "datensatz",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://metaver.de/trefferanzeige?docuuid=95DC1532-DEDA-4B8A-B1E8-B3DCB50EB4E7"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Geschützte Biotope und FFH-Lebensraumtypen, Lizenz DL-DE-BY 2.0",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "robinien-engines",
+          "runde": "Robinien-Runde 30.09.2026 (Venture-Lauf)",
+          "notiz": "Abruf nicht getestet.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "natapp-naturschutz-app",
+      "name": "NatApp Naturschutz-App",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.naturschutz-app.de/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Dokumentation von Naturschutzmaßnahmen als App; Besetzt-Signal für Nachweis und Erfolgskontrolle",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "robinien-engines",
+          "runde": "Robinien-Runde 30.09.2026 (Venture-Lauf)",
+          "notiz": "Nur Suchschnipsel.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "lwaldg-brandenburg-kahlschlagverbot-lfb",
+      "name": "LWaldG Brandenburg, Kahlschlagverbot (LFB-Seite)",
+      "typ": "P",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://forst.brandenburg.de/lfb/de/themen/wald-nutzen/kahlschlagsverbot/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Kahlschlag über 2 ha und unter 40 % Bestockung, Aufforstung binnen 36 Monaten, Anzeige 5 Werktage",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "robinien-engines",
+          "runde": "Robinien-Runde 30.09.2026 (Venture-Lauf)",
+          "notiz": "Nur Suchschnipsel.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "marktdaten-robinienholz-robinia24-holzfa",
+      "name": "Marktdaten Robinienholz (robinia24, Holzfachzentrum Potsdam)",
+      "typ": "L",
+      "kategorie": "datensatz",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://robinia24.de/collections/robinienstaemme",
+        "https://www.holzfachzentrumpotsdam.de/browse/Gartenholz-3195/RobinieNaturstaemme-3199"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Händler-Verkaufspreise für Robinienstämme, keine Waldbezugspreise",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "robinien-engines",
+          "runde": "Robinien-Runde 30.09.2026 (Venture-Lauf)",
+          "notiz": "Nur Suchschnipsel.",
+          "status": "angekratzt"
+        }
+      ]
     }
   ],
   "nichtNutzen": [
