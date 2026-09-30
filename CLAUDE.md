@@ -75,6 +75,7 @@ Wenn du ein Ticket, ein Kriterium oder eine Dosen-Beschreibung änderst, musst d
   * `check:protokoll` (stellt sicher, dass jedes Urteil im Prüfprotokoll steht)
   * `check:friedhof` (prüft Totenscheine und README im Friedhof)
   * `check:quellen` (validiert das Quellen-Register und prüft, dass `06-suche/amelie-quellen.md` daraus aktuell erzeugt ist)
+  * `check:diagramme` (parst alle ```` ```mermaid ````-Blöcke in den Markdown-Dateien; ein Syntaxfehler bricht Lint ab)
 * **Bibliotheks-CLI:** `npm run bib -- <befehl>` (siehe §2); Rundenabschluss in einem Schritt: `npm run bib -- abschluss` (`export:data` → `lint` → `test`).
 
 ---
