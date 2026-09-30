@@ -1,9 +1,9 @@
 {
   "auditVersion": 1,
-  "generatedAt": "2026-09-30T16:37:11.092Z",
+  "generatedAt": "2026-09-30T16:54:10.084Z",
   "repository": {
-    "commit": "e7a9378",
-    "branch": "main"
+    "commit": "c84ea88",
+    "branch": "claude/keen-ptolemy-y3n54k"
   },
   "inventory": {
     "doses": 44,

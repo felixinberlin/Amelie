@@ -86,6 +86,17 @@ And demand for it just jumped:
 
 **The gap that remains:** the **German scheme** as an executable, citable module **on a reporting platform that already collects the necessary photos** — situational factors estimated rather than asked for, the result a checkable sheet for the authority and the owner rather than a certification score.
 
+## Reply and lesson (30 Sep 2026)
+
+**A reply arrived** (NABU federal office, nature-conservation communications, 29 Sep 2026) to the 22 Sep 2026 mail sent to a shared address. It is a polite standard answer that does not address the idea, points to the brochure and the WUA overview, and asks for donations. No interest, no refusal, no follow-up.
+
+It contains a correction we adopt:
+- The brochure's ratings are **flight-tunnel results of the Vienna Environmental Advocacy (WUA) for specific products**. Differently designed, even similar markings can work better or worse; equally effective solutions must not be excluded up front. The tested markings are **not legally binding**.
+- The 22 Sep mail said "certified dot grids (9x9 cm) instead of useless stickers". That overstated it: the 90 mm grid belongs to the SEEN aluminium dots (9 mm diameter), not to a general rule. The dose itself only computes the LAG VSW scheme and gives no product recommendation.
+- Recipient lesson: the shared address yields a standard answer. The assessment layer still belongs to NABU Berlin / Jena (reporting tool) and LAG VSW as owner of the scheme; **the owner of the marking table is the WUA in Vienna**, a different recipient.
+
+**Demo building block (30 Sep 2026):** `src/engine/glasanflug/markierung.ts` compares a planned pattern with a factual excerpt of the WUA table. A pattern not in the table yields "not tested", never "ineffective". If the planned external reflectance exceeds the tested value or is missing, the check reports "outside tested scope". Reuse rights for the table are **not cleared**; before any gift to the WUA, check rows against wua-wien.at and ask the WUA. Ventures check: as a standalone product a kill (low willingness to pay and defensibility, data belongs to third parties), a better fit as a gift.
+
 ## Prior work
 
 - **LAG VSW 21/01** — `vogelschutzwarten.de/glasanflug.htm`. *Not machine-readable during this research (robots.txt / 403 on every mirror found). Copy the point values from the original, not from leaflets — they disagree (Nuremberg 2023 says "more than four" rather than five victims per 100 m).*

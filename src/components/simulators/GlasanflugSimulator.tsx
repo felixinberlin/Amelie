@@ -11,6 +11,13 @@ import {
   SCHEMA_QUELLE,
 } from '../../engine/glasanflug/schema';
 import { Eingabe, bewerte, signifikanzschwelle } from '../../engine/glasanflug/score';
+import {
+  KATEGORIE_TEXT,
+  Testart,
+  WUA_MUSTER,
+  findeMuster,
+  pruefeMarkierung,
+} from '../../engine/glasanflug/markierung';
 import { GlasanflugVisualizer } from './GlasanflugVisualizer';
 
 interface GlasanflugSimulatorProps {
@@ -51,6 +58,21 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
   const [kollisionen, setKollisionen] = useState('6');
   const [fassadenlaenge, setFassadenlaenge] = useState('120');
 
+  const [testart, setTestart] = useState<Testart>('spiegelung');
+  const [musterNr, setMusterNr] = useState<string>('6S');
+  const [ebene, setEbene] = useState<1 | 2>(2);
+  const [ar, setAr] = useState('8');
+
+  const markierung = useMemo(
+    () =>
+      pruefeMarkierung({
+        test: testart,
+        musterNr: musterNr === '' ? null : musterNr,
+        position: ebene,
+        arProzent: ar.trim() === '' || Number.isNaN(Number(ar)) ? null : Number(ar),
+      }),
+    [testart, musterNr, ebene, ar]
+  );
   const ergebnis = useMemo(() => bewerte(eingabe, fussnote2), [eingabe, fussnote2]);
   const monitoring = useMemo(
     () => signifikanzschwelle(Number(kollisionen), Number(fassadenlaenge)),
@@ -361,6 +383,108 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
             {de
               ? 'Nur für Bestandsbauten mit Monitoring. Fundraten sind vorher um Abräumung durch Prädatoren und Sucheffizienz zu korrigieren — in Deutschland werden schätzungsweise nur 15 bis 35 % der Opfer gefunden.'
               : 'Only for existing buildings with monitoring. Find rates must first be corrected for scavenging and searcher efficiency — an estimated 15 to 35 % of victims are ever found.'}
+          </p>
+        </div>
+
+
+        {/* Markierungsnachweis gegen die WUA-Tabelle */}
+        <div className="bg-white rounded-2xl border border-stone-200 p-4 space-y-2">
+          <span className="text-[10px] font-bold uppercase tracking-wider font-mono-code text-stone-500 block">
+            {de ? 'Markierung gegen geprüfte Muster (WUA, Demo-Auszug)' : 'Marking vs. tested patterns (WUA, demo excerpt)'}
+          </span>
+          <p className="text-[11px] text-stone-600 leading-relaxed">
+            {de
+              ? 'Ein Muster, das nicht in der Tabelle steht, ist nicht getestet — nicht unwirksam. Die Tabelle sind produktspezifische Flugtunnel-Ergebnisse, keine verbindliche Liste.'
+              : 'A pattern missing from the table is untested — not ineffective. The table lists product-specific flight-tunnel results, not a binding list.'}
+          </p>
+          <div className="grid grid-cols-2 gap-2">
+            <label className="text-[11px] text-stone-600 col-span-2">
+              {de ? 'Anwendungsfall' : 'Use case'}
+              <select
+                value={testart}
+                onChange={(e) => {
+                  const t = e.target.value as Testart;
+                  setTestart(t);
+                  if (musterNr && findeMuster(musterNr)?.test !== t) setMusterNr('');
+                }}
+                className="w-full mt-0.5 text-xs px-2 py-1 rounded-lg border border-stone-300"
+              >
+                <option value="spiegelung">{de ? 'Fenster/Fassade (Spiegelung, WIN)' : 'Window/façade (reflection, WIN)'}</option>
+                <option value="durchsicht">{de ? 'Lärmschutzwand/Brüstung (Durchsicht, ONR)' : 'Noise barrier/balustrade (see-through, ONR)'}</option>
+              </select>
+            </label>
+            <label className="text-[11px] text-stone-600 col-span-2">
+              {de ? 'Geplantes Muster' : 'Planned pattern'}
+              <select
+                value={musterNr}
+                onChange={(e) => setMusterNr(e.target.value)}
+                className="w-full mt-0.5 text-xs px-2 py-1 rounded-lg border border-stone-300"
+              >
+                <option value="">{de ? 'Anderes Muster (nicht in der Tabelle)' : 'Other pattern (not in the table)'}</option>
+                {WUA_MUSTER.filter((m) => m.test === testart).map((m) => (
+                  <option key={m.nr} value={m.nr}>
+                    {m.nr} · {de ? m.nameDe : m.nameEn}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label className="text-[11px] text-stone-600">
+              {de ? 'Ebene' : 'Position'}
+              <select
+                value={ebene}
+                onChange={(e) => setEbene(Number(e.target.value) as 1 | 2)}
+                className="w-full mt-0.5 text-xs px-2 py-1 rounded-lg border border-stone-300"
+              >
+                <option value={1}>{de ? '1 · Anflugseite' : '1 · approach side'}</option>
+                <option value={2}>{de ? '2 · Rückseite/innen' : '2 · back/inner'}</option>
+              </select>
+            </label>
+            {testart === 'spiegelung' && (
+              <label className="text-[11px] text-stone-600">
+                {de ? 'Außenreflexion AR (%) — leer = unbekannt' : 'External reflectance AR (%) — empty = unknown'}
+                <input
+                  value={ar}
+                  onChange={(e) => setAr(e.target.value)}
+                  inputMode="decimal"
+                  className="w-full mt-0.5 text-xs px-2 py-1 rounded-lg border border-stone-300 focus:border-amber-700 focus:outline-none"
+                />
+              </label>
+            )}
+          </div>
+          <div
+            className={`p-3 rounded-xl border text-xs ${
+              markierung.befund === 'getestet'
+                ? 'bg-emerald-50 border-emerald-300 text-emerald-950'
+                : markierung.befund === 'nicht_getestet'
+                ? 'bg-stone-50 border-stone-300 text-stone-800'
+                : 'bg-amber-50 border-amber-300 text-amber-950'
+            }`}
+          >
+            <p className="font-semibold">
+              {markierung.befund === 'getestet' &&
+                (de ? 'Geprüft, Geltungsbereich eingehalten' : 'Tested, scope respected')}
+              {markierung.befund === 'nicht_getestet' && (de ? 'Nicht getestet — Wirkung unbekannt' : 'Not tested — effect unknown')}
+              {markierung.befund === 'geltungsbereich_ueberschritten' &&
+                (de ? 'Außerhalb des geprüften Geltungsbereichs' : 'Outside the tested scope')}
+              {markierung.befund === 'ebene_abweichend' &&
+                (de ? 'Andere Ebene als geprüft' : 'Different position than tested')}
+            </p>
+            {markierung.muster && markierung.kategorie && (
+              <p className="mt-1 font-mono-code text-[11px]">
+                {markierung.muster.nr}: {markierung.muster.anfluegeProzent} % {de ? 'Anflüge' : 'strikes'} → {de ? 'Kategorie' : 'category'}{' '}
+                {markierung.kategorie} ({KATEGORIE_TEXT[markierung.kategorie].grenze}) · {de ? KATEGORIE_TEXT[markierung.kategorie].de : KATEGORIE_TEXT[markierung.kategorie].en}
+              </p>
+            )}
+            <ul className="mt-1.5 space-y-1 list-disc pl-4 text-[11px] leading-relaxed">
+              {markierung.hinweise.map((h, i) => (
+                <li key={i}>{de ? h.de : h.en}</li>
+              ))}
+            </ul>
+          </div>
+          <p className="text-[10px] text-stone-500 leading-relaxed">
+            {de
+              ? 'Quelle: Wiener Umweltanwaltschaft / Biologische Station Hohenau-Ringelsdorf, Geprüfte Muster, 5. Aufl. 2022 (Tatsachenauszug zur Demo). Vor Verwendung gegen wua-wien.at prüfen; Nachnutzungsrecht an der Tabelle ist nicht geklärt.'
+              : 'Source: Vienna Environmental Advocacy / Hohenau-Ringelsdorf Biological Station, tested patterns, 5th ed. 2022 (factual excerpt for the demo). Check against wua-wien.at before use; reuse rights for the table are not cleared.'}
           </p>
         </div>
 

@@ -6,6 +6,8 @@
 **Dose:** `05-dosen/glasanflug-ampel.md` · **Code:** `04-werkzeug/glasanflug-ampel/`
 **Regel 4:** Einzelmaintainer, unbezahlt. Diese Mail geht nur mit Code — der liegt bei.
 
+**Stand 30.09.2026:** Die Mail an die Sammeladresse (22.09.) wurde mit Standardantwort beantwortet; keine Aussage zu Markierungen als Vorgabe machen (WUA-Ergebnisse sind produktspezifisch und nicht verbindlich, Quelle Dose „Antwort und Lehre"). Die Markierungstabelle gehört der WUA Wien, nicht diesem Empfänger.
+
 ---
 
 Hallo Herr Schätz,

@@ -207,7 +207,7 @@ Félix (Berlin)`,
 
 ich recherchiere Software-Werkzeuge, die als verbindliche Normen existieren, aber nie als handhabbares Werkzeug gebaut wurden. Diese Idee gehört zu Ihnen.
 
-Ihr „Prüfleitfaden Vogelschutz an Glas" definiert wissenschaftlich präzise Kriterien für BNatSchG §44: Reflexionsgrad, Scheibengeometrie, Durchsicht und zertifizierte Punktraster (9x9 cm) statt nutzloser Greifvogel-Aufkleber. Doch Architekten und Bauämter müssen sich noch immer durch 30 Seiten PDF arbeiten.
+Ihr „Prüfleitfaden Vogelschutz an Glas" definiert wissenschaftlich präzise Kriterien für BNatSchG §44: Reflexionsgrad, Scheibengeometrie, Durchsicht und Markierungen, deren Wirkung im Flugtunnel geprüft wurde, statt Greifvogel-Aufkleber. Doch Architekten und Bauämter müssen sich noch immer durch 30 Seiten PDF arbeiten.
 
 Die Idee: Eine clientseitige Web-App ohne Server („Glasanflug-Ampel"). 3 Fragen zu Glasart, Umgebungsvegetation und Markierungsposition führen zu einer sofortigen Ampelbewertung (Grün/Gelb/Rot) mit druckbarem PDF-Prüfnachweis für die Genehmigungsbehörde.
 
@@ -221,7 +221,7 @@ Félix (Berlin)`,
 
 I research software opportunities that exist as authoritative regulatory standards but have never been implemented as frictionless web tools. This idea belongs with your working group.
 
-Your testing guide "Vogelschutz an Glas" establishes rigorous criteria under German conservation law (§44 BNatSchG): reflection percentages, surrounding greenery, through-vision corridors, and certified dot grids (9x9 cm) rather than useless raptor stickers. Yet architects and municipal authorities still thumb through a 30-page static PDF.
+Your testing guide "Vogelschutz an Glas" establishes rigorous criteria under German conservation law (§44 BNatSchG): reflection percentages, surrounding greenery, through-vision corridors, and markings whose effect was tested in a flight tunnel, rather than raptor stickers. Yet architects and municipal authorities still thumb through a 30-page static PDF.
 
 The concept: A zero-server client-side web tool ("Glass Hazard Score"). Answering 3 physical parameters produces an instant traffic-light rating (Green/Amber/Red) and an exportable compliance certificate for building permit applications.
 
@@ -232,8 +232,10 @@ CC0 Public Domain, completely unencumbered. If you already have this in producti
 Warm regards,
 Félix (Berlin)`,
     doseLinks: ['glasanflug-ampel'],
-    scheduleDe: 'Bereit für Runde 2 (Oktober 2026)',
-    scheduleEn: 'Ready for Round 2 dispatch (October 2026)'
+    scheduleDe: 'Gesendet 22.09.2026 an Sammeladresse; Standardantwort 29.09.2026 (siehe Dose, „Antwort und Lehre"). Nicht nachfassen.',
+    scheduleEn: 'Sent 22 Sep 2026 to a shared address; standard reply 29 Sep 2026 (see dose, "Reply and lesson"). Do not follow up.',
+    sent: true,
+    sentAt: '2026-09-22'
   },
   {
     id: 'mail-6',
