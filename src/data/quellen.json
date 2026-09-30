@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "stand": "2026-09-29",
+  "stand": "2026-09-30",
   "katalog": {
     "status": [
       {
@@ -8630,6 +8630,389 @@
           "agent": "bibliothekar",
           "runde": "Lab-Lacunar-Erstlauf (Walnüsse)",
           "notiz": "Bibliothekar 30.09.2026: Forschung belegt (94,7 %/96,5 %), nur Suchschnipsel. Stützt Existenzprüfung Walnuss-Klopftest (besetzt)."
+        }
+      ]
+    },
+    {
+      "id": "ebms-methoden-tagfalter-transekt",
+      "name": "European Butterfly Monitoring Scheme (eBMS), Methoden der Tagfalter-Transektzählung",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://butterfly-monitoring.net/de/bms-methods"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Zählschema für Tagfalter-Transekte (Zählbogen, Korridor, Wetterdaten) mit benannten Fehlerquellen; von Hand angewendet, keine Software.",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "geisterfalter-ar",
+          "falter-stimmungsindikator",
+          "transekt-schrittmodell"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "lab",
+          "runde": "Lab-Lauf Lacunar 30.09.2026 (Schmetterlinge)",
+          "notiz": "Anker (Frame A) des Lab-Laufs lacunar-20260930T064824-38e1d7 (Schmetterlinge).",
+          "status": "angekratzt",
+          "planId": "lab-2026-09-30-lacunar-schmetterlinge-source-add"
+        },
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout",
+          "runde": "Lab-Lacunar-Lauf Schmetterlinge 30.09.2026",
+          "notiz": "Lab-Lauf 30.09.2026: Methode verlangt Sichtzählung und gleichmäßiges Gehen; fünf Lab-Ideen daran geprüft, keine Dose.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "tagfalter-monitoring-deutschland-ufz-tmd",
+      "name": "Tagfalter-Monitoring Deutschland (UFZ, TMD-App und Portal)",
+      "typ": "A",
+      "kategorie": "citizen-science",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.ufz.de/tagfalter-monitoring/",
+        "https://www.monitoringzentrum.de/monitoringprogramme-biodiversitaet/tagfalter-monitoring-deutschland-tmd"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "web"
+      },
+      "enthaelt": "Bundesweites Tagfaltermonitoring mit TMD-App und Online-Portal (UFZ, GfS); Kontakt tagfalter-monitoring@ufz.de; Team laut NMZB Harpke, Kühn, Musche, Settele, Zuständigkeit unverifiziert",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "geisterfalter-ar",
+          "falter-stimmungsindikator",
+          "transekt-schrittmodell"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout",
+          "runde": "Lab-Lacunar-Lauf Schmetterlinge 30.09.2026",
+          "notiz": "Empfänger Tagfaltermonitoring, nur Sammeladresse; App und Portal vorhanden, keine Kamera-/KI-Erfassung genannt.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "ebms-butterflycount-app",
+      "name": "eBMS ButterflyCount-App",
+      "typ": "B",
+      "kategorie": "citizen-science",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://butterfly-monitoring.net/ebms-app"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "app"
+      },
+      "enthaelt": "Zähl-App mit Transekt-, 15-min- und Einzelartenmodus (Butterfly Conservation Europe, UKCEH); Foto-KI nur für Nachtfalter-Lichtfallen",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "geisterfalter-ar",
+          "transekt-sensorfeld"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout",
+          "runde": "Lab-Lacunar-Lauf Schmetterlinge 30.09.2026",
+          "notiz": "Besetzt die Erfassungsseite der Transektzählung.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "seek-by-inaturalist",
+      "name": "Seek by iNaturalist",
+      "typ": "B",
+      "kategorie": "citizen-science",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.inaturalist.org/pages/seek_app"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "app"
+      },
+      "enthaelt": "Live-Kamera-Artbestimmung für Pflanzen und Tiere inkl. Falter",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "geisterfalter-ar"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout",
+          "runde": "Lab-Lacunar-Lauf Schmetterlinge 30.09.2026",
+          "notiz": "Besetzt den Bildteil der Idee geisterfalter-ar.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "tarnwirkung-quantifizieren-troscianko-20",
+      "name": "Tarnwirkung quantifizieren (Troscianko 2017, Pike 2018, micaToolbox)",
+      "typ": "I",
+      "kategorie": "messverfahren",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://bmcecolevol.biomedcentral.com/articles/10.1186/s12862-016-0854-2",
+        "https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13019"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "web"
+      },
+      "enthaelt": "Messgrößen für Tarnwirkung (Luminanzdifferenz, GabRat, Salienz), micaToolbox",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "mimikry-detektor"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout",
+          "runde": "Lab-Lacunar-Lauf Schmetterlinge 30.09.2026",
+          "notiz": "Besetzt die Tarnbewertung; Volltext nicht gelesen.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "insekten-sensorik-im-feld-nir-kamerafall",
+      "name": "Insekten-Sensorik im Feld (NIR, Kamerafallen; PMC8850605)",
+      "typ": "I",
+      "kategorie": "messverfahren",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8850605/",
+        "https://www.nature.com/articles/s41598-022-06439-6",
+        "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0295474"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "teilweise",
+        "wie": "paywall"
+      },
+      "enthaelt": "NIR-Sensoren und Kamerafallen zur Insektenüberwachung; Falter-Flügelschlag unter 20 Hz nur als Suchauszug",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "transekt-sensorfeld",
+          "geisterfalter-ar"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout",
+          "runde": "Lab-Lacunar-Lauf Schmetterlinge 30.09.2026",
+          "notiz": "PMC/Nature per Captcha oder Redirect gesperrt, Wiley/ScienceDirect 403; Volltext nicht gelesen.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "butterflyset-und-uav-flugtracking",
+      "name": "ButterFlySet und UAV-Flugtracking",
+      "typ": "I",
+      "kategorie": "datensatz",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://homepages.inf.ed.ac.uk/rbf/VAIB24PAPERS/vaib24ka.pdf",
+        "https://www.biorxiv.org/content/10.1101/2024.07.17.603869.full.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "pdf"
+      },
+      "enthaelt": "Flugpose-Datensatz und UAV-Tracking für Falter",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-09-30",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "falter-stimmungsindikator"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-09-30"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-09-30",
+          "agent": "ideen-scout",
+          "runde": "Lab-Lacunar-Lauf Schmetterlinge 30.09.2026",
+          "notiz": "Keine Stimmungs-Messgröße, nur Flugtracking.",
+          "status": "angekratzt"
         }
       ]
     }

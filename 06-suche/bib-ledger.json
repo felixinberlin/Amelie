@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "applied": {
+    "lab-2026-09-30-lacunar-schmetterlinge-source-add": {
+      "plan_id": "lab-2026-09-30-lacunar-schmetterlinge-source-add",
+      "actor": "lab-librarian",
+      "agent": "lab",
+      "runde": "Lab-Lauf Lacunar 30.09.2026 (Schmetterlinge)",
+      "at": "2026-09-30T07:26:12.938Z",
+      "ops": [
+        {
+          "index": 0,
+          "op": "source.add",
+          "target": "ebms-methoden-tagfalter-transekt"
+        }
+      ],
+      "files": [
+        "06-suche/amelie-quellen.md",
+        "AMELIE_STATUS.md",
+        "public/data/amelie-health.json",
+        "public/data/amelie-ideas.json",
+        "public/data/quellen.json",
+        "src/data/quellen.json"
+      ],
+      "hashes": {
+        "src/data/quellen.json": "sha256:aeae9ac9d0861099b9efbe6aaffbe56ff0f30f1c61cfc34ec2b369365b3191e5",
+        "src/data/graeber.json": "sha256:5edddb289da34dc458cce1cb5be27fe0dcb14d176420caef2b410312bb5da5d8",
+        "06-suche/amelie-pruefprotokoll.md": "sha256:83bb5def191bbe86830834831cccd426547f4a98b1c67cd664bcd539450cfb74",
+        "src/data/doseVectors.json": "sha256:fb58743901afc0e7897df6bf55fd1dfa95b1cd7db885dad3da324716200dfbb9",
+        "src/data/candidateVectors.json": "sha256:eb81e10856deb4d8768a267b5547de5deb7c842a5378ed75df4b439e8d7c917a",
+        "src/data/vectorChanges.json": "absent"
+      }
+    }
+  }
+}

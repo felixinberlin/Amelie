@@ -2,3 +2,20 @@
 {"at":"2026-09-29T22:07:16.317Z","event":"cli","cmd":"quellen log","actor":"bibliothekar","agent":"bibliothekar","runde":"Lab-Lacunar-Erstlauf (Walnüsse)","id":"unece-norm-ddp-02-walnusskerne-handelsqu"}
 {"at":"2026-09-29T22:07:23.488Z","event":"cli","cmd":"quellen log","actor":"bibliothekar","agent":"bibliothekar","runde":"Lab-Lacunar-Erstlauf (Walnüsse)","id":"aufprallakustik-an-walnuessen-ijabe-pmc"}
 {"at":"2026-09-29T22:20:44.232Z","event":"cli","actor":"bibliothekar","cmd":"grab add","ids":["eurobirdcast"]}
+{"at":"2026-09-30T07:26:13.445Z","event":"op","plan_id":"lab-2026-09-30-lacunar-schmetterlinge-source-add","actor":"lab-librarian","agent":"lab","runde":"Lab-Lauf Lacunar 30.09.2026 (Schmetterlinge)","op":"source.add","target":"ebms-methoden-tagfalter-transekt","detail":"Quelle aufgenommen (angekratzt)"}
+{"at":"2026-09-30T07:26:13.446Z","event":"apply","plan_id":"lab-2026-09-30-lacunar-schmetterlinge-source-add","key":"lab-2026-09-30-lacunar-schmetterlinge-source-add","actor":"lab-librarian","ops":1,"files":6}
+{"at":"2026-09-30T07:28:52.419Z","event":"cli","actor":"bibliothekar","runde":"Lab-Lacunar-Lauf Schmetterlinge","cmd":"protokoll add","id":"geisterfalter-ar"}
+{"at":"2026-09-30T07:28:52.575Z","event":"cli","actor":"bibliothekar","runde":"Lab-Lacunar-Lauf Schmetterlinge","cmd":"protokoll add","id":"falter-stimmungsindikator"}
+{"at":"2026-09-30T07:28:52.731Z","event":"cli","actor":"bibliothekar","runde":"Lab-Lacunar-Lauf Schmetterlinge","cmd":"protokoll add","id":"mimikry-detektor"}
+{"at":"2026-09-30T07:28:52.879Z","event":"cli","actor":"bibliothekar","runde":"Lab-Lacunar-Lauf Schmetterlinge","cmd":"protokoll add","id":"transekt-sensorfeld"}
+{"at":"2026-09-30T07:28:53.027Z","event":"cli","actor":"bibliothekar","runde":"Lab-Lacunar-Lauf Schmetterlinge","cmd":"protokoll add","id":"transekt-schrittmodell"}
+{"at":"2026-09-30T07:29:08.694Z","event":"cli","actor":"bibliothekar","cmd":"grab add","ids":["mimikry-detektor"]}
+{"at":"2026-09-30T07:29:27.530Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Lacunar-Lauf Schmetterlinge 30.09.2026","id":"tagfalter-monitoring-deutschland-ufz-tmd"}
+{"at":"2026-09-30T07:29:27.587Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Lacunar-Lauf Schmetterlinge 30.09.2026","id":"ebms-butterflycount-app"}
+{"at":"2026-09-30T07:29:27.638Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Lacunar-Lauf Schmetterlinge 30.09.2026","id":"seek-by-inaturalist"}
+{"at":"2026-09-30T07:29:27.693Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Lacunar-Lauf Schmetterlinge 30.09.2026","id":"tarnwirkung-quantifizieren-troscianko-20"}
+{"at":"2026-09-30T07:29:27.745Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Lacunar-Lauf Schmetterlinge 30.09.2026","id":"insekten-sensorik-im-feld-nir-kamerafall"}
+{"at":"2026-09-30T07:29:27.803Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Lacunar-Lauf Schmetterlinge 30.09.2026","id":"butterflyset-und-uav-flugtracking"}
+{"at":"2026-09-30T07:29:27.807Z","event":"cli","actor":"bibliothekar","agent":"ideen-scout","runde":"Lab-Lacunar-Lauf Schmetterlinge 30.09.2026","cmd":"quellen import","count":6}
+{"at":"2026-09-30T07:29:33.693Z","event":"cli","cmd":"quellen log","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Lacunar-Lauf Schmetterlinge 30.09.2026","id":"ebms-methoden-tagfalter-transekt"}
+{"at":"2026-09-30T07:29:33.700Z","event":"cli","actor":"bibliothekar","agent":"ideen-scout","runde":"Lab-Lacunar-Lauf Schmetterlinge 30.09.2026","cmd":"quellen import","count":1}

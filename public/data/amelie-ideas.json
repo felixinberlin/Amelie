@@ -1,14 +1,14 @@
 {
   "$schema": "https://raw.githubusercontent.com/felixinberlin/amelie/main/public/data/amelie-schema.json",
   "version": "1.0.0",
-  "generatedAt": "2026-09-29T22:20:49.025Z",
+  "generatedAt": "2026-09-30T07:32:17.567Z",
   "license": "CC0-1.0 (Public Domain / Kula-Ring)",
   "storageProvider": "github_pages",
   "repository": "https://github.com/felixinberlin/amelie",
   "stats": {
     "totalDosen": 44,
     "totalUnpacked": 154,
-    "totalDiscarded": 95
+    "totalDiscarded": 96
   },
   "dosen": [
     {
@@ -12102,6 +12102,31 @@
       "resurrectIfDe": "Nie für Wetterradar.",
       "resurrectIfEn": "Never for weather radar.",
       "nachruf": "08-friedhof/grabbeigaben/eurobirdcast.md"
+    },
+    {
+      "id": "mimikry-detektor",
+      "title": "Mimikry-Detektor (Tarnwirkung eines Falters vor dem Mikrohabitat bewerten)",
+      "originalIdeaDe": "Ein Werkzeug bewertet die Tarnwirkung eines Falters vor seinem Mikrohabitat und meldet sie den Zählenden zurück (Lab-Lauf Schmetterlinge × Tintenfisch-Tarnung).",
+      "originalIdeaEn": "A tool rates how well a butterfly is camouflaged against its microhabitat and reports it back to the counters (lab run butterflies × cuttlefish camouflage).",
+      "whyDiscardedDe": "Tarnwirkung ist mit vorhandenen Verfahren messbar (Troscianko 2017, Pike 2018, micaToolbox); für die Transektzählung bringt sie nichts, denn dort fehlt Artbestimmung und Erfassung, nicht die Tarnbewertung. Evidenz überwiegend Suchschnipsel.",
+      "whyDiscardedEn": "Camouflage efficacy is already measurable with existing methods (Troscianko 2017, Pike 2018, micaToolbox); it does not help transect counting, where species identification and recording are the bottleneck, not camouflage rating. Evidence mostly search snippets.",
+      "lessonDe": "Ein Collider, der nur ein Merkmal der Tierwelt liefert, ersetzt keinen Engpass des Ankers; erst prüfen, ob das Zählschema die Messgröße überhaupt braucht.",
+      "lessonEn": "A collider that only supplies an animal trait does not replace a bottleneck in the anchor; first check whether the counting scheme needs the measure at all.",
+      "domain": "Biologie / Citizen Science (Tagfalter-Monitoring)",
+      "evidence": [
+        "Troscianko et al. 2017, BMC Evol Biol",
+        "Pike 2018, Methods Ecol Evol",
+        "micaToolbox"
+      ],
+      "cause": "gebaut",
+      "killer": "forschung",
+      "foundBy": "englisch",
+      "origin": "bisoziation",
+      "stage": "kandidat",
+      "bornIn": "Lab-Lacunar-Lauf Schmetterlinge 30.09.2026",
+      "diedOn": "2026-09-30",
+      "resurrectIfDe": "Wenn ein Zählschema Tarnwirkung als Fehlerquelle ausweist und eine Messgröße belegt ist.",
+      "resurrectIfEn": "If a counting scheme names camouflage as an error source and a measure is documented."
     }
   ]
 }

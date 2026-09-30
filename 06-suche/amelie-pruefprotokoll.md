@@ -866,3 +866,17 @@ Lab-Lauf lacunar-20260929T203438-f693a3 (Walnüsse); Existenzprüfung durch den 
 | # | Idee | Methode | Urteil (Merge → nach Review) | Beleg (kurz) | Evidenz | Geprüft | Prüfen ab |
 |---|---|---|---|---|---|---|---|
 | N1 | **Walnuss-Klopftest (Fallgeräusch) als Handy-App** | [method: bisoziation] | `besetzt` | Existenzprüfung 29.09.2026 (Bibliothekar, nur Suchschnipsel). Forschung dicht: Impact-Acoustics (94,7 %/96,5 %), spike-triggered acoustic sensing 2026. Industrie: Nuttechnology Leernuss-Sortierer, TOMRA. Handy-Muster besetzt bei Melonen (Melony, Melon Aid, Watermelon Ripeness/Prober). Kein Walnuss-App-Treffer, aber Bedarf durch Schütteltest ohne App gedeckt. Abgrenzung: KlangStethoskop (Gerätegeräusch), Hausbock-Horcher (Holzbohrer, Grab), Orgelpfeifen-Bleifraß (Metallresonanz): gleiches Muster, andere Domäne. Walnuss-Duell ist Baustein (Trainingsdaten), keine eigene Zeile. Empfänger fehlt. | [Schnipsel] | 29.09.2026 | 03/2027 |
+
+---
+
+## Lab-Lacunar-Lauf Schmetterlinge
+
+Lab-Lauf lacunar-20260930T064824-38e1d7 (Schmetterlinge × Tintenfisch-Tarnung, Distanz 5); Existenzprüfung durch den ideen-scout, Evidenz überwiegend Suchschnipsel (PMC, Nature, Wiley, ScienceDirect nicht lesbar). Ausbeute: 0 frei.
+
+| # | Idee | Methode | Urteil (Merge → nach Review) | Beleg (kurz) | Evidenz | Geprüft | Prüfen ab |
+|---|---|---|---|---|---|---|---|
+| S1 | **Geisterfalter-AR (Bild + Akustik am Transekt)** (`geisterfalter-ar`) | [method: bisoziation] | `unklar` | Lab-Lauf 30.09.2026, Existenzprüfung ideen-scout, Evidenz überwiegend Schnipsel. Bildteil besetzt (Seek/iNaturalist, eBMS-ButterflyCount); Akustik bei Faltern unbelegt (Flügelschlag <20 Hz, PMC8850605 nur Schnipsel); AR widerspricht dem Sichtzählprinzip der BMS-Methode. Tendenz besetzt, kein Grab. | [Schnipsel] | 30.09.2026 | 09/2027 |
+| S2 | **Stimmungs-/Aktivitätsindikator für Falter** (`falter-stimmungsindikator`) | [method: bisoziation] | `unklar` | Lab-Lauf 30.09.2026, Existenzprüfung ideen-scout, Evidenz überwiegend Schnipsel. Keine Messgröße für Stimmung; Flugtracking nur Forschung (ButterFlySet, UAV-Tracking); "langsam gehen" ist Methodenvorgabe der BMS, kein Lückensatz. Kein Grab. | [Schnipsel] | 30.09.2026 | 09/2027 |
+| S3 | **Mimikry-/Tarnwirkungs-Detektor** (`mimikry-detektor`) | [method: bisoziation] | `besetzt` | Lab-Lauf 30.09.2026, Existenzprüfung ideen-scout, Evidenz überwiegend Schnipsel. Tarnwirkung messbar mit vorhandenen Verfahren (Troscianko 2017 BMC Evol Biol, Pike 2018 MEE, micaToolbox); für die Transektzählung ohne Nutzen (Zählung braucht Artbestimmung, nicht Tarnbewertung). Grab gebaut/forschung. | [Schnipsel] | 30.09.2026 | 09/2027 |
+| S4 | **Sensorfeld am Transekt (Schall, NIR, Mikroschatten)** (`transekt-sensorfeld`) | [method: bisoziation] | `verengt` | Lab-Lauf 30.09.2026, Existenzprüfung ideen-scout, Evidenz überwiegend Schnipsel. NIR-Sensoren und Kamerafallen für Insekten in der Forschung belegt (PMC8850605, PLOS ONE 2024); Feldnutzung am Zählweg für Falter nicht belegt. Forschung besetzt das Feld, Rest-Lücke offen. Kein Grab. | [Schnipsel] | 30.09.2026 | 09/2027 |
+| S5 | **Schritt-Vorschlagsmodell am Transekt** (`transekt-schrittmodell`) | [method: bisoziation] | `unklar` | Lab-Lauf 30.09.2026, Existenzprüfung ideen-scout, Evidenz überwiegend Schnipsel. Methodenwidrig: BMS-Zählung verlangt gleichmäßiges Gehen, Vorschläge erzeugen Beobachter-Bias; keine Quelle nennt den Engpass. Kein Grab. | [Schnipsel] | 30.09.2026 | 09/2027 |

@@ -54,13 +54,13 @@ Die Ursachen genauer:
 
 *Automatisch erzeugt aus `src/data/graeber.json` (`DISCARDED_DATA`) mit `npm run friedhof` (läuft nach `npm run bib -- grab add` von selbst). Nicht von Hand bearbeiten — `npm run lint` meldet Abweichungen.*
 
-**95 Gräber.** 4 davon starben erst als Dose oder Mail-Entwurf (teure Tode). Von 86 dokumentierten Fundwegen kamen 15 ohne neue Suche aus (eigener Atlas, eigenes Protokoll oder Reality-Check) — 17 %.
+**96 Gräber.** 4 davon starben erst als Dose oder Mail-Entwurf (teure Tode). Von 87 dokumentierten Fundwegen kamen 15 ohne neue Suche aus (eigener Atlas, eigenes Protokoll oder Reality-Check) — 17 %.
 
 **Woran sie starben**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Schon gebaut | 47 | 49 % |
+| Schon gebaut | 48 | 50 % |
 | Beim Empfänger selbst | 19 | 20 % |
 | Reality-Check | 14 | 15 % |
 | Falsche Prämisse | 9 | 9 % |
@@ -71,10 +71,10 @@ Die Ursachen genauer:
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Deutsche Suche | 32 | 34 % |
-| Englische Suche | 26 | 27 % |
+| Deutsche Suche | 32 | 33 % |
+| Englische Suche | 27 | 28 % |
 | Empfänger-Suche | 12 | 13 % |
-| Ohne Suche | 11 | 12 % |
+| Ohne Suche | 11 | 11 % |
 | Nicht dokumentiert | 9 | 9 % |
 | Eigener Atlas / Protokoll | 4 | 4 % |
 | Forum / Nische | 1 | 1 % |
@@ -83,8 +83,8 @@ Die Ursachen genauer:
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Bisoziation | 34 | 36 % |
-| Primärquelle | 32 | 34 % |
+| Bisoziation | 35 | 36 % |
+| Primärquelle | 32 | 33 % |
 | Brainstorm | 16 | 17 % |
 | Ideenliste | 8 | 8 % |
 | Modell-Katalog | 5 | 5 % |
@@ -94,18 +94,18 @@ Die Ursachen genauer:
 | | Gräber | Anteil |
 |---|---:|---:|
 | Firma | 26 | 27 % |
-| Forschung | 16 | 17 % |
+| Forschung | 17 | 18 % |
 | Behörde | 15 | 16 % |
 | Niemand | 14 | 15 % |
 | Gemeinnützige | 12 | 13 % |
-| Community / Indie | 10 | 11 % |
+| Community / Indie | 10 | 10 % |
 | Eigener Bestand | 2 | 2 % |
 
 **Wie weit sie kamen**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Kandidat | 91 | 96 % |
+| Kandidat | 92 | 96 % |
 | Dose gepackt | 2 | 2 % |
 | Mail entworfen | 1 | 1 % |
 | Zugestellt | 1 | 1 % |
@@ -115,6 +115,7 @@ Die Ursachen genauer:
 | Idee | † | Ursache | Wer sie hatte | Gefunden durch | Herkunft | Kam bis | Auferstehung wenn |
 |---|---|---|---|---|---|---|---|
 | EuroBirdCast: Vogelzug-Abschaltung, nachrechenbar | 30.09.2026 | Falsche Prämisse | Behörde | Empfänger-Suche | Modell-Katalog | Zugestellt | Nie für Wetterradar. |
+| Mimikry-Detektor (Tarnwirkung eines Falters vor dem Mikrohabitat bewerten) | 30.09.2026 | Schon gebaut | Forschung | Englische Suche | Bisoziation | Kandidat | Wenn ein Zählschema Tarnwirkung als Fehlerquelle ausweist und eine Messgröße belegt ist. |
 | Augenzähler-Foto (Würfel- oder Kartenaugen per Foto zählen) | 29.09.2026 | Falsche Prämisse | Niemand | Ohne Suche | Primärquelle | Kandidat | Nie, solange Zählen schneller ist als Fotografieren. |
 | Bergsonnenuhr-Peiler (Zwölfer-Bergnamen) | 29.09.2026 | Falsche Prämisse | Community / Indie | Ohne Suche | Bisoziation | Kandidat | Wenn eine Forschungsfrage entsteht, die die Benennungsorte statistisch über viele Gipfel eingrenzt und die Liste das nicht leistet. |
 | Boule-Messfoto (welche Kugel liegt näher?) | 29.09.2026 | Schon gebaut | Firma | Englische Suche | Primärquelle | Kandidat | Nie als Foto-Messer; nur wenn der Deutsche Pétanque Verband eine offene, geprüfte Messmethode als Turnierstandard ausschreibt, die keine der Apps erfüllt. |

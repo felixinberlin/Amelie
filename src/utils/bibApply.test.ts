@@ -310,11 +310,12 @@ describe('CLI mit --json (echtes Repo, nur lesend oder dry-run)', () => {
     const file = join(dir, 'plan.json');
     writeFileSync(file, JSON.stringify(base([{ op: 'source.log', id: JSON.parse(readFileSync(join(real, 'src/data/quellen.json'), 'utf8')).quellen[0].id, note: 'Dry-run-Test' }])));
     const before = storeHashes(real);
+    const ledgerBefore = existsSync(join(real, REL.ledger)) ? readFileSync(join(real, REL.ledger), 'utf8') : null;
     const r = cli(['apply', file, '--dry-run', '--json']);
     expect(r.status, r.stderr).toBe(0);
     expect(JSON.parse(r.stdout)).toMatchObject({ ok: true, dry_run: true });
     expect(storeHashes(real)).toEqual(before);
-    expect(existsSync(join(real, REL.ledger))).toBe(false);
+    expect(existsSync(join(real, REL.ledger)) ? readFileSync(join(real, REL.ledger), 'utf8') : null).toBe(ledgerBefore);
     const bad = cli(['apply', file, '--dry-run', '--json', '--actor', 'unbekannt']);
     expect(bad.status).toBe(EXIT.PERMISSION);
     rmSync(dir, { recursive: true, force: true });
