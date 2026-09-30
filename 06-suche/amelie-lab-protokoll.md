@@ -1,4 +1,4 @@
-# Austauschprotokoll Amélie ↔ Amélie-lab (Entwurf v0.2, 30.09.2026)
+# Austauschprotokoll Amélie ↔ Amélie-lab (Entwurf v0.3, 30.09.2026)
 
 **Status: Entwurf v0.2; das Lab hat v0.1 gegengeprüft** (PR-Kommentar zu #172, Commit `137e7508` im Lab-Repo) und Manifest, Vorab-Prüfung und Namensregeln bestätigt. Erster Vorschlag der Amélie-Seite nach den PRs #171 und #172. Wo dieses Blatt und der Code (`bib schema`, `06-suche/bib-actors.json`) sich widersprechen, gilt der Code; dann Blatt nachziehen. Offene Punkte stehen am Ende.
 
@@ -46,11 +46,11 @@ Nicht im PR: `src/data/`, `05-dosen/`, `08-friedhof/`, `06-suche/amelie-quellen.
 }
 ```
 
-Regeln: `files` ⊆ `06-suche/proposals/`; `existence_check` ist ein boolean, gleich der Pflichtzeile im PR-Text; `files` listet alle Dateien des PR inkl. Manifest; optional `contracts` (Versionen der Lab-Verträge). Das Lab validiert gegen `schemas/lab-manifest.schema.json` (Vertrag `lab-manifest` 1.0.0, Lab-Repo); der Prüfer hier kann es übernehmen; `touches_memory` ist `false`; `survivors.status` bleibt `ungeprueft`, solange Amélie nicht geprüft hat.
+`engine` ist `lacunar`, `inversion` oder `review` (Enum im Schema; `inversion` seit v0.3, Lab-Commit `6e3cb27c`). Regeln: `files` ⊆ `06-suche/proposals/`; `existence_check` ist ein boolean, gleich der Pflichtzeile im PR-Text; `files` listet alle Dateien des PR inkl. Manifest; optional `contracts` (Versionen der Lab-Verträge). Das Lab validiert gegen `schemas/lab-manifest.schema.json` (Vertrag `lab-manifest` 1.0.0, Lab-Repo); der Prüfer hier kann es übernehmen; `touches_memory` ist `false`; `survivors.status` bleibt `ungeprueft`, solange Amélie nicht geprüft hat.
 
 ## 4. Namen und Schlüssel
 
-- `plan_id` = `lab-<YYYY-MM-DD>-<engine>-<run-id>[-<art>]`, Zeichen `[A-Za-z0-9._-]`, höchstens 128. `<art>` z. B. `source`, `grave`, `log`. Nie für anderen Inhalt wiederverwenden; ändert sich der Inhalt, gibt es eine neue `plan_id`.
+- `plan_id` = `lab-<YYYY-MM-DD>-<engine>-<run-id>[-<art>]` (bei `inversion` z. B. `lab-<datum>-inversion-<ts>-<id>`), Zeichen `[A-Za-z0-9._-]`, höchstens 128. `<art>` z. B. `source`, `grave`, `log`. Nie für anderen Inhalt wiederverwenden; ändert sich der Inhalt, gibt es eine neue `plan_id`.
 - Ledger-Schlüssel = `plan_id` (Standard von `bib apply`); ein zweiter Lauf desselben Schlüssels ist harmlos (`already_applied`, Exit 0).
 - `runde` ist je Lauf stabil und in allen Plänen desselben Laufs gleich.
 - Quellen-`id`: `host-thema` (kurz, sprechend, kein Titel-Slug). `enthaelt`: ein eigener Satz zum Inhalt, kein Snippet, kein „…".
@@ -66,6 +66,10 @@ Regeln: `files` ⊆ `06-suche/proposals/`; `existence_check` ist ein boolean, gl
 | `protokoll.add` | nur mit `human_accepted: true` | Urteile sind Amélies |
 
 Das Lab kopiert Werte nicht, sondern liest `npm run bib -- schema`. Neue Ops oder Rechte sind ein Commit hier.
+
+**Grab-Vorschläge:** `origin` nur aus `bib schema` (`ideenliste`, `brainstorm`, `quelle`, `bisoziation`, `modell-katalog`); `inversion` ist **kein** gültiger Wert. Für Inversions-Gräber gilt bisher `quelle` (14 vorhandene Gräber), sonst `bisoziation` oder `brainstorm`. Ein neuer Wert wäre eine Änderung von `src/types.ts` und wird nur nach Entscheidung von Félix eingeführt.
+
+**Inversions-Vorschläge** zielen auf `06-suche/amelie-inversions-log.md` (Tabellenzeile) und `src/data/graeber.json` (nur als Text). Die Retros dort stehen neueste zuerst; maßgeblich ist das „Nächstes Mal" der ersten Retro, die eines hat.
 
 ## 6. Vor dem Lauf (Lab)
 

@@ -45,6 +45,7 @@
       "type": "string",
       "enum": [
         "lacunar",
+        "inversion",
         "review"
       ]
     },
