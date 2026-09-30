@@ -1,0 +1,34 @@
+{
+  "manifest_version": 1,
+  "run_id": "lacunar-20260930T064824-38e1d7",
+  "plan_id": "lab-2026-09-30-lacunar-20260930T064824-38e1d7",
+  "engine": "lacunar",
+  "model": "gemini-2.5-flash",
+  "existence_check": false,
+  "survivors": {
+    "count": 5,
+    "status": "ungeprueft"
+  },
+  "files": [
+    "06-suche/proposals/lab-2026-09-30-lacunar-20260930T064824-38e1d7.md",
+    "06-suche/proposals/lab-2026-09-30-lacunar-20260930T064824-38e1d7-source.json",
+    "06-suche/proposals/lab-2026-09-30-lacunar-20260930T064824-38e1d7.manifest.json"
+  ],
+  "source_ops": [
+    {
+      "op": "source.log",
+      "id": "ebms-methoden-tagfalter-transekt",
+      "human_accepted": false,
+      "urls": [
+        "https://butterfly-monitoring.net/de/bms-methods"
+      ]
+    }
+  ],
+  "grave_proposals": 0,
+  "touches_memory": false,
+  "contracts": {
+    "write-plan": "see plan",
+    "lacunar-run": "1.0.0"
+  },
+  "contract_version": "1.0.0"
+}
