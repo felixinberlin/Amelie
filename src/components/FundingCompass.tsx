@@ -29,6 +29,8 @@ import {
   Eye,
 } from 'lucide-react';
 import { Language } from '../types';
+import { PharmaAcquisitionPanel } from './PharmaAcquisitionPanel';
+import { parseVentureFromUrl } from '../utils/doseUrl';
 import {
   FUNDING_DATA,
   FUNDING_EVENTS,
@@ -116,7 +118,7 @@ export const FundingCompass: React.FC<FundingCompassProps> = ({ lang }) => {
   const now = useMemo(() => new Date(), []);
 
   // Main active tab
-  const [activeTab, setActiveTab] = useState<MainTab>('calendar');
+  const [activeTab, setActiveTab] = useState<MainTab>(() => (parseVentureFromUrl() ? 'founders' : 'calendar'));
 
   // Calendar state
   const [calDate, setCalDate] = useState<Date>(() => new Date(2026, 9, 1)); // October 2026
@@ -134,7 +136,7 @@ export const FundingCompass: React.FC<FundingCompassProps> = ({ lang }) => {
 
   // Founders state
   const [ventureCategory, setVentureCategory] = useState<string>('all');
-  const [expandedVenture, setExpandedVenture] = useState<string | null>(null);
+  const [expandedVenture, setExpandedVenture] = useState<string | null>(() => parseVentureFromUrl());
 
   // Projects state
   const [projectTypeFilter, setProjectTypeFilter] = useState<string>('all');
@@ -1079,7 +1081,7 @@ export const FundingCompass: React.FC<FundingCompassProps> = ({ lang }) => {
                 <div className="flex items-center gap-2">
                   <Rocket className="w-4 h-4 text-[var(--m-accent)]" />
                   <h4 className="font-amelie text-lg sm:text-xl font-bold text-[var(--m-ink)]">
-                    {L('Die 8 Kommerziellen B2B-Zwillinge (Venture Leads)', 'The 8 Commercial B2B Twins (Venture Leads)')}
+                    {L(`Die ${VENTURE_LEADS_DATA.length} Kommerziellen Leads (Venture Leads)`, `The ${VENTURE_LEADS_DATA.length} Commercial Leads (Venture Leads)`)}
                   </h4>
                 </div>
                 <p className="text-xs text-[var(--m-ink-3)] mt-0.5">
@@ -1090,11 +1092,12 @@ export const FundingCompass: React.FC<FundingCompassProps> = ({ lang }) => {
               {/* Category filter pills */}
               <div className="flex flex-wrap gap-1">
                 {[
-                  { id: 'all', de: 'Alle (8)', en: 'All (8)' },
+                  { id: 'all', de: `Alle (${VENTURE_LEADS_DATA.length})`, en: `All (${VENTURE_LEADS_DATA.length})` },
                   { id: 'compliance', de: 'Compliance', en: 'Compliance' },
                   { id: 'developer-tools', de: 'Dev Tools', en: 'Dev Tools' },
                   { id: 'legal-tech', de: 'Legal Tech', en: 'Legal Tech' },
                   { id: 'physics-sdk', de: 'Engines / SDK', en: 'Engines / SDK' },
+                  { id: 'brokerage', de: 'Vermittlung', en: 'Brokerage' },
                 ].map((c) => (
                   <button
                     key={c.id}
@@ -1120,7 +1123,9 @@ export const FundingCompass: React.FC<FundingCompassProps> = ({ lang }) => {
                 return (
                   <div
                     key={lead.id}
-                    className="rounded-2xl border border-[var(--m-line)] bg-[var(--m-surface)] p-4 sm:p-5 flex flex-col justify-between hover:shadow-sm transition"
+                    className={`rounded-2xl border border-[var(--m-line)] bg-[var(--m-surface)] p-4 sm:p-5 flex flex-col justify-between hover:shadow-sm transition ${
+                      isExpanded && lead.id === 'farmacia-mandate-engine' ? 'md:col-span-2' : ''
+                    }`}
                   >
                     <div>
                       <div className="flex items-start justify-between gap-2 mb-2">
@@ -1189,6 +1194,7 @@ export const FundingCompass: React.FC<FundingCompassProps> = ({ lang }) => {
                             <span className="font-typewriter font-bold text-[var(--m-ink-3)]">{L('Passende Frühfinanzierung: ', 'Early Funding Fit: ')}</span>
                             {L(lead.fundingFitDe, lead.fundingFitEn)}
                           </p>
+                          {lead.id === 'farmacia-mandate-engine' && <PharmaAcquisitionPanel lang={lang} />}
                         </div>
                       )}
                     </div>

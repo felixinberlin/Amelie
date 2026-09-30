@@ -1492,7 +1492,7 @@ export interface VentureLead {
   id: string;
   name: string;
   badge: string;
-  category: 'compliance' | 'developer-tools' | 'legal-tech' | 'physics-sdk';
+  category: 'compliance' | 'developer-tools' | 'legal-tech' | 'physics-sdk' | 'brokerage';
   oneLinerDe: string;
   oneLinerEn: string;
   problemDe: string;
@@ -1682,6 +1682,29 @@ export const VENTURE_LEADS_DATA: VentureLead[] = [
     channelDe: 'r/tarot, r/gamedev, itch.io, Discord Indie Game Hubs.',
     channelEn: 'r/tarot, r/gamedev, itch.io, Discord indie game communities.',
     status: 'validated',
+  },
+  {
+    id: 'farmacia-mandate-engine',
+    name: 'Farmacia-Mandate (Vermittler-Akquise Spanien)',
+    badge: 'Vermittlung / ES',
+    category: 'brokerage',
+    oneLinerDe: 'Kundengewinnung für die Vermittlung von Apothekenkäufen und -verkäufen: sieben Ansätze mit Zeit, Kosten, Investition und ROI.',
+    oneLinerEn: 'Client acquisition for brokering pharmacy purchases and sales: seven approaches with time, cost, investment and ROI.',
+    problemDe: 'Käufer gibt es genug, Verkäufer nicht. Wer Vermittlungsaufträge von Inhabern gewinnt, verdient 3 bis 5 % je Seite (Konkurrenzangabe) an Deals um 1 Mio. €. Etablierte Vermittler besetzen Suche und Empfehler.',
+    problemEn: 'Buyers are plentiful, sellers are not. Whoever wins mandates from owners earns 3 to 5 % per side (competitor claim) on deals around €1 m. Established brokers hold search and referrals.',
+    targetDe: 'Neue Vermittler, Apothekenberater und Kanzleien in Spanien; 22.311 Apotheken, nur Apotheker dürfen besitzen.',
+    targetEn: 'New brokers, pharmacy advisers and law firms in Spain; 22,311 pharmacies, only pharmacists may own.',
+    pricingDe: 'Erfolgsprovision 3 % je Seite (Annahme); Radar als Werkzeug optional 99 bis 299 €/Monat.',
+    pricingEn: 'Success fee 3 % per side (assumption); optional radar tool at €99 to 299/month.',
+    defensibilityDe: 'Schwach als Produkt: Vermittlung lebt von Vertrauen. Der Radar (Betriebsjahre, Umsatzklasse aus öffentlichen Daten) ist der einzige deterministische Teil.',
+    defensibilityEn: 'Weak as a product: brokerage runs on trust. The radar (years open, sales band from public data) is the only deterministic part.',
+    fundingFitDe: 'Kein Förderfall; Startkosten der Tests liegen bei rund 4.650 €.',
+    fundingFitEn: 'Not a grant case; the test costs about €4,650.',
+    competitorWarningDe: 'Farmaconsulting (80 Mitarbeitende, 22.000 bekannte Käufer), Asefarma und 15 weitere Vermittler. Ein Konkurrenzportal wirbt mit „ohne Provision“.',
+    competitorWarningEn: 'Farmaconsulting (80 staff, 22,000 known buyers), Asefarma and 15 more brokers. A competing portal advertises "no commission".',
+    channelDe: 'Briefe an Inhaber, Bewertungsrechner mit Google Ads, Empfehler bei Steuerberatern und Anwälten. E-Mail ohne Einwilligung ist verboten (LSSI Art. 21).',
+    channelEn: 'Letters to owners, a valuation calculator with Google Ads, referrals via tax advisers and lawyers. Unsolicited e-mail is banned (LSSI Art. 21).',
+    status: 'research',
   },
 ];
 

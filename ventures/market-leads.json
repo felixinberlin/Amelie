@@ -150,14 +150,14 @@
     "stage": "criteria-extracted",
     "pricingModel": "monthly-subscription-or-report",
     "targetPrice": "\u20ac149/month or \u20ac890/audit report",
-    "targetAudience": "Municipal Consulting Firms (Rödl & Partner, PwC Public Sector), Local Council Factions, State Audit Courts",
+    "targetAudience": "Municipal Consulting Firms (R\u00f6dl & Partner, PwC Public Sector), Local Council Factions, State Audit Courts",
     "amelieTwin": "haushaltslupe",
     "mvpEngineReady": false,
     "lastUpdated": "2026-09-29"
   },
   {
     "id": "cyanowatch-pro",
-    "name": "CyanoWatch Pro (WRRL & Badegewässer-Frühwarnung)",
+    "name": "CyanoWatch Pro (WRRL & Badegew\u00e4sser-Fr\u00fchwarnung)",
     "category": "b2b-api",
     "stage": "criteria-extracted",
     "pricingModel": "seasonal-subscription",
@@ -166,5 +166,17 @@
     "amelieTwin": "aquascan-sentinel",
     "mvpEngineReady": false,
     "lastUpdated": "2026-09-29"
+  },
+  {
+    "id": "farmacia-mandate-engine",
+    "name": "Farmacia-Mandate (Vermittler-Akquise Spanien)",
+    "category": "brokerage",
+    "stage": "research",
+    "pricingModel": "success-fee",
+    "targetPrice": "3 % per side (assumption); optional radar \u20ac99 - \u20ac299/month",
+    "targetAudience": "New pharmacy-transaction brokers, advisers and law firms in Spain",
+    "amelieTwin": "none (external request, Reddit)",
+    "mvpEngineReady": false,
+    "lastUpdated": "2026-09-30"
   }
 ]

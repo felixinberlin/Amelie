@@ -257,3 +257,20 @@ export function clearCompareUrl(): void {
     /* ignorieren */
   }
 }
+
+/** `#venture=<id>` öffnet den Gründer-Bereich mit dem Venture-Lead. `null` = kein Link. */
+export function parseVentureFromUrl(): string | null {
+  if (typeof window === 'undefined') return null;
+  try {
+    const match = window.location.hash.match(/^#(?:\/)?venture=([^&]+)/i);
+    return match ? decodeURIComponent(match[1]).trim() || null : null;
+  } catch (err) {
+    console.error('Error parsing venture from URL:', err);
+    return null;
+  }
+}
+
+/** Permanente URL für einen Venture-Lead. */
+export function getVentureUrl(ventureId: string): string {
+  return `${getBaseUrl()}#venture=${encodeURIComponent(ventureId)}`;
+}

@@ -49,11 +49,11 @@ describe('Förderkompass-Daten', () => {
 });
 
 describe('Gründer & B2B-Zwillinge Datensätze', () => {
-  it('enthält alle 8 kommerziellen Zwillinge mit eindeutigen IDs und Preisen', async () => {
+  it('enthält alle 9 kommerziellen Leads mit eindeutigen IDs und Preisen', async () => {
     const { VENTURE_LEADS_DATA } = await import('./funding');
-    expect(VENTURE_LEADS_DATA.length).toBe(8);
+    expect(VENTURE_LEADS_DATA.length).toBe(9);
     const ids = VENTURE_LEADS_DATA.map((v) => v.id);
-    expect(new Set(ids).size).toBe(8);
+    expect(new Set(ids).size).toBe(9);
     for (const v of VENTURE_LEADS_DATA) {
       expect(v.pricingDe).toBeTruthy();
       expect(v.defensibilityDe).toBeTruthy();

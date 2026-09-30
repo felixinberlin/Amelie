@@ -50,6 +50,7 @@ ventures/
 ├── market-leads.json       # Structured ledger of commercial leads (auto-exported)
 └── opportunities/          # Detailed product dossiers & MVP specifications
     ├── espr-discloseready.md
+    ├── farmacia-mandate-engine.md
     ├── wet-ink-pro-sdk.md
     ├── zero-drift-swarm-kit.md
     └── clp-chemical-safety-api.md
