@@ -3,7 +3,7 @@ import { mkdirSync, mkdtempSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { DELEGABLE, cliDenied, createKit, listAgents, listSkills, loadSkill, parseAgentDef, safePath, toolsForAgent } from '../../scripts/agent-kit.mjs';
-import { librarianTools, runLabLibrarian } from '../../scripts/lab-librarian-agent.mjs';
+import { isTransient, librarianTools, runLabLibrarian, withRetry } from '../../scripts/lab-librarian-agent.mjs';
 
 const ROOT = process.cwd();
 
@@ -129,5 +129,30 @@ describe('agent-kit: call_agent', () => {
     expect(r.usage.subagent).toEqual({ in: 100, out: 50 });
     expect(r.usage.in).toBe(10 + 10 + 100);
     expect(r.toolLog.map((t: { name: string }) => t.name)).toEqual(['load_skill', 'call_agent']);
+  });
+});
+
+describe('Wiederholung bei vorübergehenden Anbieterfehlern', () => {
+  it('erkennt 429 und 503, nicht aber andere Fehler', () => {
+    expect(isTransient(new Error('{"error":{"code":429,"status":"RESOURCE_EXHAUSTED"}}'))).toBe(true);
+    expect(isTransient(new Error('503 UNAVAILABLE'))).toBe(true);
+    expect(isTransient(new Error('fetch failed'))).toBe(true);
+    expect(isTransient(Object.assign(new Error('x'), { cause: { code: 'ECONNRESET' } }))).toBe(true);
+    expect(isTransient(new Error('Modell lehnte ab (refusal)'))).toBe(false);
+    expect(isTransient(new Error('SDK fehlt'))).toBe(false);
+  });
+  it('wartet wachsend und gibt nach dem letzten Versuch auf', async () => {
+    const waits: number[] = [];
+    let calls = 0;
+    const flaky = { name: 'f', start: () => ({}), addToolResults() {}, async step() { calls++; if (calls < 3) throw new Error('429 RESOURCE_EXHAUSTED'); return { text: 'ok', calls: [], usage: {}, stop: 'end_turn' }; } };
+    const a = withRetry(flaky, { baseMs: 10, sleep: async (ms: number) => { waits.push(ms); } });
+    expect((await a.step({})).text).toBe('ok');
+    expect(waits).toEqual([10, 20]);
+    const dead = { ...flaky, async step() { throw new Error('429'); } };
+    await expect(withRetry(dead, { tries: 2, baseMs: 1, sleep: async () => {} }).step({})).rejects.toThrow('429');
+    const fatal = { ...flaky, async step() { throw new Error('SDK fehlt'); } };
+    let slept = 0;
+    await expect(withRetry(fatal, { sleep: async () => { slept++; } }).step({})).rejects.toThrow('SDK fehlt');
+    expect(slept).toBe(0);
   });
 });

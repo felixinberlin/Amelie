@@ -30,6 +30,7 @@ export const LIBRARIAN_TOOLS = [
       properties: {
         terms: { type: 'array', items: { type: 'string' }, description: 'Suchbegriffe, klein geschrieben' },
         any: { type: 'boolean' },
+        stamm: { type: 'boolean', description: 'auch Wortstämme und Kompositum-Endstücke' },
       },
       required: ['terms'],
     },
@@ -58,7 +59,7 @@ export function createLibrarianHandlers({ root, proposalsDir, findFn = findAll, 
     async bib_find(args) {
       const terms = Array.isArray(args?.terms) ? args.terms.map(String).filter(Boolean) : [];
       if (!terms.length) return 'Fehler: terms fehlt (Liste von Begriffen).';
-      const hits = findFn(terms, { any: !!args.any, quellen: quellen() });
+      const hits = findFn(terms, { any: !!args.any, stamm: !!args.stamm, wort: !!args.wort, quellen: quellen().quellen });
       const bindend = hits.filter((h) => h.bindend);
       const lines = hits.slice(0, 12).map((h) => `${h.kind}${h.bindend ? '*' : ''} | ${h.id || ''} | ${String(h.title).slice(0, 70)} | ${h.where}`);
       return `${hits.length} Treffer, ${bindend.length} davon „schon da“ (*)${hits.length > 12 ? ', erste 12:' : ':'}\n${lines.join('\n') || '(keine)'}`;
@@ -125,6 +126,28 @@ export function pickModel(cfg, id) {
   return spec;
 }
 
+/** Kurzzeitige Anbieter- und Netzfehler (Kontingent 429, Überlast 503, fetch failed), bei denen Warten und Wiederholen sinnvoll ist. */
+export const isTransient = (e) => /\b(429|503)\b|RESOURCE_EXHAUSTED|UNAVAILABLE|overloaded|fetch failed|ECONNRESET|ETIMEDOUT|EAI_AGAIN|socket hang up/i.test(`${e?.message ?? e} ${e?.cause?.code ?? ''}`);
+
+/** Umhüllt einen Adapter: step() wird bei vorübergehenden Fehlern bis zu `tries` Mal mit wachsender Pause wiederholt. */
+export function withRetry(adapter, { tries = 4, baseMs = 15000, sleep = (ms) => new Promise((r) => setTimeout(r, ms)), onRetry } = {}) {
+  return {
+    ...adapter,
+    start: (a) => adapter.start(a),
+    addToolResults: (st, res) => adapter.addToolResults(st, res),
+    async step(st) {
+      for (let i = 1; ; i++) {
+        try { return await adapter.step(st); } catch (e) {
+          if (i >= tries || !isTransient(e)) throw e;
+          const ms = baseMs * 2 ** (i - 1);
+          onRetry?.(i, ms, e);
+          await sleep(ms);
+        }
+      }
+    },
+  };
+}
+
 /** Werkzeugliste des Agenten. delegate=false blendet die Unter-Agenten aus. */
 export function librarianTools({ delegate = true } = {}) {
   const kit = ['run_cli', 'read_file', 'search_repo', 'web_fetch', 'list_skills', 'load_skill', ...(delegate ? ['list_agents', 'call_agent'] : [])];
@@ -142,13 +165,13 @@ export async function runLabLibrarian(opts, deps = {}) {
   if (!adapter) {
     const cfg = deps.config ?? loadConfig(root);
     spec = pickModel(cfg, opts.model);
-    adapter = await createProvider(spec);
+    adapter = withRetry(await createProvider(spec), deps.retry);
   }
   const delegate = opts.delegate !== false;
-  const quellen = JSON.parse(readFileSync(join(root, 'src/data/quellen.json'), 'utf8'));
+  const quellen = JSON.parse(readFileSync(join(root, 'src/data/quellen.json'), 'utf8')).quellen;
   const kit = createKit({
     root, quellen, maxAgentCalls: opts.maxAgentCalls ?? 3,
-    makeAdapter: delegate ? async (role) => (deps.makeAdapter ? deps.makeAdapter(role) : adapter) : undefined,
+    makeAdapter: delegate ? async (role) => (deps.makeAdapter ? deps.makeAdapter(role) : adapter) : undefined, // der Standardadapter ist schon umhüllt
     fetchFn: deps.fetchFn,
   });
   const core = createLibrarianHandlers({ root, proposalsDir: join(opts.worktree, PROPOSALS) });

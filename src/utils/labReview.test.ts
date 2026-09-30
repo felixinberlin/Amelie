@@ -80,6 +80,9 @@ describe('Bibliothekar als eigenständiger Agent', () => {
     expect(Object.keys(h).sort()).toEqual(['bib_find', 'list_proposals', 'quellen_match', 'read_proposal']);
     expect(await h.quellen_match({ url: 'kein url' })).toContain('Fehler');
     expect(await h.bib_find({ terms: [] })).toContain('Fehler');
+    // echte Daten: das Werkzeug muss durchlaufen (früher: „quellen is not iterable“)
+    expect(await h.bib_find({ terms: ['pillsafe'] })).toMatch(/^\d+ Treffer/);
+    expect(await h.bib_find({ terms: ['geräusch'], stamm: true })).toMatch(/^\d+ Treffer/);
   });
 
   it('die Schleife ruft Werkzeuge und liefert Bericht mit Empfehlung', async () => {
