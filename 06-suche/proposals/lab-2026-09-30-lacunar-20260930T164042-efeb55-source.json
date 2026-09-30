@@ -1,0 +1,23 @@
+{
+  "plan_id": "lab-2026-09-30-lacunar-20260930T164042-efeb55-source",
+  "actor": "lab-librarian",
+  "agent": "lab",
+  "runde": "lacunar-20260930T164042-efeb55",
+  "_note": "Vorschlag des Labs, nicht angewendet. Der Bibliothekar prüft (typ, kategorie, `bib quellen match --url`, `bib find`); `human_accepted: true` setzt nur Félix, danach `npm run bib -- apply` auf diese Datei.",
+  "ops": [
+    {
+      "op": "source.add",
+      "id": "ecochain-fsc-timber-chain-of",
+      "name": "FSC Timber Chain of Custody Certification Audit",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "enthaelt": "FSC Timber Chain of Custody Certification Audit (Typ A: scheme without software); Anker des Lab-Laufs lacunar-20260930T164042-efeb55, nicht gelesen.",
+      "status": "angekratzt",
+      "evidenz": "schnipsel",
+      "note": "Anker des Lab-Laufs lacunar-20260930T164042-efeb55 (timber, PTR (rectangular/square steel tubing), corrugated sheets, and steel coil); nur als Suchtreffer gelesen.",
+      "urls": [
+        "https://ecochain.com/blog/fsc-timber-certification/"
+      ]
+    }
+  ]
+}

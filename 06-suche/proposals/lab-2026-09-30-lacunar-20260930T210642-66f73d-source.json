@@ -1,0 +1,23 @@
+{
+  "plan_id": "lab-2026-09-30-lacunar-20260930T210642-66f73d-source",
+  "actor": "lab-librarian",
+  "agent": "lab",
+  "runde": "lacunar-20260930T210642-66f73d",
+  "_note": "Vorschlag des Labs, nicht angewendet. Der Bibliothekar prüft (typ, kategorie, `bib quellen match --url`, `bib find`); `human_accepted: true` setzt nur Félix, danach `npm run bib -- apply` auf diese Datei.",
+  "ops": [
+    {
+      "op": "source.add",
+      "id": "brandenburg-zeitzeugenportal-brandenburg-manuelle-erfassung",
+      "name": "Zeitzeugenportal Brandenburg (Manuelle Erfassung)",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "enthaelt": "Zeitzeugenportal Brandenburg (Manuelle Erfassung) (Typ A: scheme without software); Anker des Lab-Laufs lacunar-20260930T210642-66f73d, nicht gelesen.",
+      "status": "angekratzt",
+      "evidenz": "schnipsel",
+      "note": "Anker des Lab-Laufs lacunar-20260930T210642-66f73d (Antikrieg, mutter, brandemburg, freiheit); nur als Suchtreffer gelesen.",
+      "urls": [
+        "https://zeitzeugen.brandenburg.de/zeitzeugen/"
+      ]
+    }
+  ]
+}
