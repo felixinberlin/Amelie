@@ -25,7 +25,7 @@ flowchart TD
 
     R -- "Dose Ready" --> P["dose-packer<br/>Dossiers DE+EN, dosen.ts, export:data"]
     R -- "Needs Research / Baustein / Friedhof" --> B
-    R -- "Market Route" -.-> VA["venture-analyst<br/>nur auf feat/venture-*"]
+    R -. "Market Route" .-> VA["venture-analyst<br/>nur auf feat/venture-*"]
 
     P --> D["demo-builder<br/>07-demos/id + Engine + Tests"]
     D --> B
