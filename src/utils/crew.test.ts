@@ -81,7 +81,9 @@ describe('crew: Lauf', () => {
     expect(r.toolLog[0].result).toContain('[Exit 0]');
     expect(r.toolLog[1].result).toContain('nicht erlaubt'); // Schreibbefehl gesperrt
     expect(r.toolLog[2].result).toContain('name: amelie-ideenrunde');
-    expect(r.summary).toBe('1 Ideen: 0 frei / 1 verengt / 0 unklar / 0 besetzt');
+    // ohne web_search/web_fetch im Lauf stuft das Programm „verengt“ auf „unklar“ herab (Beweispflicht)
+    expect(r.summary).toBe('1 Ideen: 0 frei / 0 verengt / 1 unklar / 0 besetzt');
+    expect(r.downgrades).toHaveLength(1);
     expect(r.cost_usd).toBeCloseTo((300 * 1 + 150 * 2) / 1e6);
     expect(existsSync(r.files.json) && existsSync(r.files.md)).toBe(true);
     expect(JSON.parse(readFileSync(r.files.json, 'utf8')).data.candidates[0].id).toBe('test-idee');
@@ -117,7 +119,7 @@ describe('crew: Lauf', () => {
 
   it('verlangt einen Auftrag und kennt nur Crew-Agenten', async () => {
     await expect(runAgent({ root: ROOT, agent: 'ideen-scout', adapter: fixedAdapter('x'), dir: tmpRuns() })).rejects.toThrow(/--thema/);
-    await expect(runAgent({ root: ROOT, agent: 'dose-packer', adapter: fixedAdapter('x'), dir: tmpRuns() })).rejects.toThrow(/kein Agent der Crew/);
+    await expect(runAgent({ root: ROOT, agent: 'kein-agent', adapter: fixedAdapter('x'), dir: tmpRuns() })).rejects.toThrow(/kein Agent der Crew/);
   });
 
   it('jedes Profil liefert eine Mock-Antwort, die seinen Vertrag erfüllt', () => {

@@ -8,7 +8,7 @@
 import { readFileSync } from 'node:fs';
 import { loadConfig, repoRoot } from './model-compare/runner.mjs';
 import { createProvider } from './model-compare/providers.mjs';
-import { withRetry } from './lab-librarian-agent.mjs';
+import { withThrottle, throttleKey, DEFAULTS as THROTTLE } from './crew/throttle.mjs';
 import { EXIT, fixedAdapter, runAgent } from './crew/crew.mjs';
 import { CREW, PROFILES } from './crew/profiles.mjs';
 import { listRuns, loadRun, saveRun } from './crew/runs.mjs';
@@ -34,7 +34,10 @@ Optionen:
   --model <id>             Modell aus scripts/model-compare/models.local.json
                            (Standard: "agents": {"<agent>": id} → "crew" → "librarian" → "judge" → erstes)
   --mock                   ohne Netz und Kosten: feste Antwort, prüft die ganze Kette
-  --max-turns <n>          Werkzeugrunden (Standard 20)
+  --max-turns <n>          Werkzeugrunden (Standard 20); sind sie verbraucht, folgt ein Abschlussaufruf ohne Werkzeuge
+  --gap <ms>               Mindestabstand zwischen Modellaufrufen über ALLE parallelen Läufe (Standard 1500, auch AMELIE_RATE_GAP_MS oder "rate" in models.local.json)
+  --retries <n>            Versuche je Schritt bei 429/503 (Standard 8; Pause wächst, mit Jitter, alle Läufe warten gemeinsam)
+  --no-wrapup              keinen Abschlussaufruf, wenn die Werkzeugrunden verbraucht sind
   --search                 Websuche des Anbieters statt Lab-Suchdienst
   --no-repair              keinen Reparaturaufruf bei Vertragsfehlern
   --write                  nach einem ok-Lauf den erlaubten Schreibweg ausführen (eigenes Log; Bibliothekar: bib apply)
@@ -108,7 +111,14 @@ async function main() {
     adapter = fixedAdapter(() => PROFILES[agent].mockReply({ inputs }), { usage: { in: 1000, out: 400 } });
   } else {
     try { spec = pickCrewModel(loadConfig(repoRoot), agent, opt('model')); } catch (e) { err(e.message); return EXIT.USAGE; }
-    adapter = withRetry(await createProvider(spec), { onRetry: (n, ms, e) => err(`[Wiederholung ${n} in ${Math.round(ms / 1000)} s] ${e?.message ?? e}`) });
+    const cfg = loadConfig(repoRoot);
+    adapter = withThrottle(await createProvider(spec), {
+      key: throttleKey(spec),
+      gapMs: Number(opt('gap') ?? process.env.AMELIE_RATE_GAP_MS ?? cfg.rate?.gapMs ?? THROTTLE.gapMs),
+      tries: Number(opt('retries') ?? cfg.rate?.tries ?? THROTTLE.tries),
+      onRetry: (n, ms, e) => err(`[${agent}] Ratenbegrenzung/Fehler, alle Läufe dieses Modells warten ${Math.round(ms / 1000)} s (Versuch ${n}): ${String(e?.message ?? e).slice(0, 140)}`),
+      onWait: (ms) => err(`[${agent}] wartet ${Math.round(ms / 1000)} s (gemeinsame Drossel)`),
+    });
   }
 
   let record;
@@ -117,6 +127,7 @@ async function main() {
       root: repoRoot, agent, task, thema: opt('thema'), inputs, adapter, spec, dir,
       maxTurns: Number(opt('max-turns')) || 20,
       repair: !flag('no-repair'),
+      wrapUp: !flag('no-wrapup'),
       kitOptions: flag('search') ? { nativeSearch: true } : {},
       log: err,
     });

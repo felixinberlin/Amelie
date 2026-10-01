@@ -15,3 +15,8 @@ scripts/model-compare/models.local.json
 
 # Crew (npm run agent): Laufdatensätze sind Arbeitsmaterial, das Gedächtnis schreibt nur bib apply
 06-suche/agent-runs/
+
+# Zugangsdaten (Klon aus dem Schwesterprojekt): nie committen
+.env
+.env.*
+!.env.example

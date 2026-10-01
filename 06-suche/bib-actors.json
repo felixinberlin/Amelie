@@ -2,13 +2,37 @@
   "_doc": "Wer darf über `bib apply` welche Operation? allow: Liste oder [\"*\"]; conditional.<op>.requires: das Feld muss in der Operation oder im Plan true sein. Direkte CLI-Befehle (grab add, …) sind der Bibliothekar und nicht eingeschränkt. Unbekannte Akteure sind gesperrt.",
   "default": "deny",
   "actors": {
-    "bibliothekar": { "allow": ["*"] },
+    "bibliothekar": {
+      "allow": [
+        "*"
+      ]
+    },
     "lab-librarian": {
-      "allow": ["source.log", "source.add", "grave.add", "protokoll.add", "terminology.add", "question.add"]
+      "allow": [
+        "source.log",
+        "source.add",
+        "grave.add",
+        "protokoll.add",
+        "terminology.add",
+        "question.add"
+      ]
     },
     "cli-bibliothekar": {
       "_note": "Bibliothekar der Crew (npm run agent -- bibliothekar --write). Kein vector.set, kein source.rate: Vektoren bleiben Sache des Reviewers und von Félix.",
-      "allow": ["source.log", "source.add", "grave.add", "protokoll.add", "terminology.add", "question.add"]
+      "allow": [
+        "source.log",
+        "source.add",
+        "grave.add",
+        "protokoll.add",
+        "terminology.add",
+        "question.add"
+      ]
+    },
+    "cli-packer": {
+      "_note": "Packer der Crew (npm run agent -- dose-packer --write): nur eine Prüfprotokoll-Zeile je Dose, keine Gräber, Quellen oder Vektoren.",
+      "allow": [
+        "protokoll.add"
+      ]
     }
   }
 }

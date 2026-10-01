@@ -59,10 +59,30 @@ npm run bib -- abschluss                               # export:data → lint �
 | `inversions-agent` | Engine 3: reguliertes System invertieren | `--thema` | `candidates` | Abschnitt in `06-suche/amelie-inversions-log.md` |
 | `idea-reviewer` | 8 Vektoren, Triage-Urteil | `--input <Engine-Läufe>` | `reviews` | Abschnitt in `06-suche/amelie-classification-log.md` |
 | `bibliothekar` | bucht ins Gedächtnis | `--input <Engines + Reviewer>` | `librarian` | `bib apply` (Akteur `cli-bibliothekar`) + Retro im Suchplaybook |
+| `dose-packer` | packt eine Dose-Ready-Idee | `--input <Reviewer-Lauf>` (+ `--thema <id>`, wenn mehrere) | Paket | Dossiers DE/EN, `dosen.ts`, `doseVectors.json`, Protokollzeile (`bib apply`, Akteur `cli-packer`); Schranke `export:data` + `lint` |
+| `demo-builder` | baut `07-demos/<id>/` und die Engine mit Tests | `--thema <id>` oder `--input <Packer-Lauf>` | Paket | Scaffolding, `src/engine/<id>/`, `doseBooks.ts`, `07-demos/README.md`; Schranke `lint` + `test` |
+| `venture-analyst` | bewertet den kommerziellen Zwilling (5 Vektoren), `lead` oder `kill` | `--thema <id>` oder `--input <Reviewer-Lauf mit Market Route>` | Paket | `ventures/opportunities/<id>.md` + `market-leads.json`, **nur auf `feat/venture-*`**; Schranke `export:market` |
 
-Nicht von der Kommandozeile (bleiben Claude-Code-Subagenten, weil sie Code und Dossiers bauen): `dose-packer`, `demo-builder`, `venture-analyst`.
+### 3a. Pakete der Bauer-Rollen
 
-**Werkzeuge** aller Crew-Agenten (aus `scripts/agent-kit.mjs`, alle nur lesend): `read_file`, `search_repo`, `run_cli` (Lesebefehle von `bib` und `quellen`), `web_fetch`, `web_search`, `list_skills`/`load_skill`. Welche ein Agent bekommt, folgt aus dem `tools:`-Feld seiner Definition; `Edit`/`Write` entfallen immer. Der Bibliothekar hat zusätzlich `plan_check` (Trockenlauf seines Entwurfs gegen das echte Gedächtnis).
+Code: `scripts/crew/bundle.mjs` (Rollen, Prüfung, Schreiben), `scripts/crew/profiles-bundle.mjs` (Aufträge), Tests `src/utils/crewBundle.test.ts`.
+
+* **Rollenvertrag:** jede Rolle darf nur ihre Pfade (`ROLES` in `bundle.mjs`) und ihre Einfügestellen (Objekt vor das `];` von `DOSEN_DATA`, Schlüssel in `DOSE_BOOKS` und `doseVectors.json`, Zeile in `07-demos/README.md`, Eintrag in `market-leads.json`). Nie überschreiben: eine vorhandene Datei oder id lehnt das Paket ab.
+* **Vorabprüfung im Lauf:** `bundle_check` (Form, Pfade, TypeScript-Syntax, Deep-Link, CC0-Zusage) für alle drei; der Demo-Bauer zusätzlich `bundle_test`: das Paket kommt in einen Wegwerf-Worktree und `vitest` + `tsc` laufen dort, das echte Repo bleibt unberührt. Vor der Abgabe prüft das Programm noch einmal (beim Demo-Bauer mit denselben Tests); ein Fehler löst einen Reparaturaufruf aus.
+* **Schreiben mit Schranke (`--write` oder `write <run>`):** Dateien und Einfügungen, beim Packer die Protokollzeile über `bib apply` (Akteur `cli-packer`, nur `protokoll.add`), dann die Schranke der Rolle. Schlägt ein Befehl fehl, wird alles zurückgesetzt: Snapshot der berührten Dateien, neue Dateien gelöscht, von der Schranke erzeugte Dateien per `git` zurück. Schon vorher geänderte Dateien bleiben erhalten.
+* **Ventures:** schreibt nur, wenn der aktuelle Branch `feat/venture-*` heißt (Kill-Urteile schreiben nichts). Nie pushen, nie nach `main`.
+* **Beispiel:**
+  ```bash
+  npm run agent -- dose-packer --input latest:idea-reviewer --thema <id> --dry-write
+  npm run agent -- dose-packer --input latest:idea-reviewer --thema <id> --write
+  npm run agent -- demo-builder --thema <id> --write
+  git checkout feat/venture-leads-round-2
+  npm run agent -- venture-analyst --thema <id> --write
+  ```
+
+**Bauer-Rollen** (seit 01.10.2026 auch von der Kommandozeile): `dose-packer`, `demo-builder`, `venture-analyst`. Sie schreiben nie selbst, sondern liefern ein **Paket** (neue Dateien + wenige benannte Einfügungen), das das Programm prüft und nur mit `--write` schreibt; siehe §3a.
+
+**Werkzeuge** aller Crew-Agenten (aus `scripts/agent-kit.mjs`, alle nur lesend): `read_file`, `search_repo`, `run_cli` (Lesebefehle von `bib` und `quellen`), `web_fetch`, `web_search`, `list_skills`/`load_skill`. Aus dem Schwesterprojekt kommen `web_search` (Google-Suchdienst mit Blind-Gate und Kontingent) und `places_find` (Google Places: wo sitzt ein Empfänger, Mitbewerber oder Partner wirklich; Maps-Schlüssel `GOOGLE_MAPS_API_KEY` im Lab, kein Suchkontingent). Orte sind für alle Information und nicht zitierfähig (Beleg per `web_fetch`), nur der Venture-Analyst darf Maps-Seite und Website zitieren. Obergrenzen je Lauf: 3 Ortsabfragen (Venture 8), 40 Suchen. Welche ein Agent bekommt, folgt aus dem `tools:`-Feld seiner Definition; `Edit`/`Write` entfallen immer. Der Bibliothekar hat zusätzlich `plan_check` (Trockenlauf seines Entwurfs gegen das echte Gedächtnis).
 
 ---
 

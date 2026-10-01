@@ -53,3 +53,28 @@ declare module '*crew/merge.mjs' {
   export function mergeRuns(runs: any[]): any;
   export function renderMerge(m: any): string;
 }
+
+declare module '*crew/bundle.mjs' {
+  export const ROLES: Record<string, any>;
+  export const BUNDLE_SHAPES: Record<string, string>;
+  export function validateBundle(data: any, opts?: { agent?: string; root?: string; requireBranch?: boolean }): string[];
+  export function insertInto(src: string, s: any, rule: any): string;
+  export function applyBundle(opts: { root: string; agent: string; data: any; dryRun?: boolean; gates?: string[][]; log?: (m: string) => void; touch?: string[]; pre?: () => void }): { planned: any[]; gates: any[]; dryRun: boolean };
+  export function testBundle(opts: { root: string; data: any; timeoutMs?: number }): { ok: boolean; output: string };
+  export function bundleToolText(opts: { agent: string; root: string; draft: any; test?: boolean }): string;
+  export function currentBranch(root: string): string;
+}
+
+declare module '*crew/throttle.mjs' {
+  export const DEFAULTS: { gapMs: number; tries: number; baseMs: number; maxMs: number };
+  export function retryHint(err: unknown): number | null;
+  export function backoffMs(i: number, err: unknown, opts?: { baseMs?: number; maxMs?: number; rand?: () => number }): number;
+  export function sharedState(opts?: { key?: string; dir?: string; now?: () => number; sleep?: (ms: number) => Promise<void> }): { file: string; claim: (gapMs: number) => Promise<number>; cooldown: (ms: number) => Promise<number>; peek: () => any; reset: () => void };
+  export function withThrottle(adapter: any, opts?: any): any;
+  export const throttleKey: (spec: any) => string;
+}
+
+declare module '*crew/profiles.mjs' {
+  export function downgradeCandidates(data: any, ctx: { toolLog?: any[] }): string[];
+  export function downgradeReviews(data: any, ctx: { toolLog?: any[] }): string[];
+}

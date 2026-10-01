@@ -55,6 +55,11 @@ export function fixedAdapter(text, { name = 'mock', usage = { in: 0, out: 0 } } 
   };
 }
 
+/** Entfernt Leerraum-Müll (Modelle, die sich festfahren, geben tausende Leerzeichen aus). */
+export const cleanReport = (t) => String(t ?? '').replace(/[ \t]{40,}/g, ' ').replace(/\n{4,}/g, '\n\n').replace(/(\s*\n){6,}/g, '\n\n');
+const hasJson = (t) => /```json\s*\n[\s\S]*?\n```/.test(t);
+const summarizeTools = (log) => (log ?? []).map((t, i) => `${i + 1}. ${t.name}(${JSON.stringify(t.args).slice(0, 200)}) → ${String(t.result).replace(/\s+/g, ' ').slice(0, 300)}`).join('\n') || '(keine)';
+
 const cost = (spec, u) => (spec?.price ? Number((((u.in ?? 0) * spec.price.in + (u.out ?? 0) * spec.price.out) / 1e6).toFixed(4)) : null);
 const addUsage = (a, b) => ({ in: (a.in ?? 0) + (b?.in ?? 0), out: (a.out ?? 0) + (b?.out ?? 0), turns: (a.turns ?? 0) + (b?.turns ?? 0), searches: (a.searches ?? 0) + (b?.searches ?? 0) });
 
@@ -91,7 +96,7 @@ export async function runAgent(opts) {
     writes: [],
   };
 
-  const kit = createKit({ root, quellen: loadQuellen(root), ...(opts.kitOptions ?? {}) });
+  const kit = createKit({ root, quellen: loadQuellen(root), ...(profile.kitOptions ?? {}), ...(opts.kitOptions ?? {}) });
   const names = [...toolsForAgent(def), ...(profile.extraTools ?? [])].filter((n, i, a) => a.indexOf(n) === i);
   const handlers = { ...Object.fromEntries(names.filter((n) => kit.handlers[n]).map((n) => [n, kit.handlers[n]])), ...(profile.handlers?.({ root, kit }) ?? {}) };
   const tools = names.map((n) => KIT_TOOLS[n] ?? profile.toolDefs?.[n]).filter(Boolean);
@@ -108,7 +113,19 @@ export async function runAgent(opts) {
     record.usage = addUsage(record.usage, r.usage);
     record.toolLog = r.toolLog;
     record.stop = r.stop;
-    record.report = String(r.text ?? '');
+    record.report = cleanReport(r.text);
+    if (!hasJson(record.report) && (r.stop === 'max_turns' || !record.report.trim()) && opts.wrapUp !== false) {
+      // Werkzeugrunden verbraucht oder keine Antwort: ein Abschlussaufruf ohne Werkzeuge, nur mit dem, was gesammelt ist
+      log(`[${agent}] keine Antwort mit JSON-Block (Stopp: ${r.stop}), ein Abschlussaufruf ohne Werkzeuge`);
+      const wrap = await runConversation(opts.repairAdapter ?? adapter, {
+        system: `${system}\n\nDu hast keine Werkzeugrunden mehr. Schreibe JETZT deinen Bericht und den JSON-Block aus dem, was du bis hierher gefunden hast. Was du nicht prüfen konntest, ist „unklar“ bzw. Evidenz „schnipsel“, nie erfunden. Keine Werkzeuge, kein Python.`,
+        user: `${task}\n\nBisheriger Stand (Werkzeugaufrufe und Ergebnisse):\n${summarizeTools(r.toolLog)}\n${record.report.trim() ? `\nDein bisheriger Text:\n${record.report.slice(0, 20000)}` : ''}`,
+        tools: [], handlers: {}, maxTurns: 1, meta: { engine: `${agent}-abschluss` },
+      });
+      record.usage = addUsage(record.usage, wrap.usage);
+      record.wrappedUp = true;
+      record.report = cleanReport(wrap.text);
+    }
     if (!record.report.trim()) {
       record.status = 'empty';
       record.errors = [`Leere Antwort (Stopp: ${r.stop})`];
@@ -120,22 +137,29 @@ export async function runAgent(opts) {
         return more.length ? { ok: false, data: c.data, errors: more } : c;
       };
       let check = await fullCheck(record.report);
-      if (!check.ok && opts.repair !== false) {
-        log(`[${agent}] Vertrag verletzt (${check.errors.length} Fehler), ein Reparaturaufruf`);
+      const rounds = opts.repair === false ? 0 : (profile.repairRounds ?? 1);
+      let current = record.report;
+      for (let round = 1; !check.ok && round <= rounds; round++) {
+        log(`[${agent}] Vertrag verletzt (${check.errors.length} Fehler), Reparaturaufruf ${round}/${rounds}`);
         const fix = await runConversation(opts.repairAdapter ?? adapter, {
-          system: `Du reparierst den JSON-Block eines Berichts. Keine neuen Fakten, keine Suche: nur Form und Werte so ändern, dass die Fehlerliste erfüllt ist. Fehlt eine Angabe, schreibe ehrlich, dass sie fehlt (z. B. urteil „unklar“). Antworte NUR mit dem korrigierten \`\`\`json-Block in dieser Form:\n${CONTRACTS[profile.contract].shape}`,
-          user: `Fehler:\n- ${check.errors.join('\n- ')}\n\nBericht:\n${record.report.slice(0, 30000)}`,
+          system: `Du reparierst den JSON-Block eines Berichts. Keine neuen Fakten, keine Suche: nur Form und Werte so ändern, dass die Fehlerliste erfüllt ist. Fehlt eine Angabe, schreibe ehrlich, dass sie fehlt (z. B. urteil „unklar“). Streiche, was die Fehlerliste als nicht vorhanden meldet (unbekannte Typen, Verweise auf Gräber oder Quellen, die es nicht gibt), statt es umzubenennen. Antworte NUR mit dem korrigierten \`\`\`json-Block in dieser Form:\n${CONTRACTS[profile.contract].shape}`,
+          user: `Fehler:\n- ${check.errors.join('\n- ')}\n\nBericht:\n${current.slice(0, 30000)}`,
           tools: [], handlers: {}, maxTurns: 1, meta: { engine: `${agent}-reparatur` },
         });
         record.usage = addUsage(record.usage, fix.usage);
-        const fixed = await fullCheck(fix.text);
         record.repaired = true;
+        const fixed = await fullCheck(fix.text);
         if (fixed.ok) {
           record.report = `${stripJson(record.report)}\n\n${String(fix.text).trim()}`;
           check = fixed;
         } else {
-          check = { ok: false, data: fixed.data ?? check.data, errors: [...check.errors, '— nach Reparatur weiterhin:', ...fixed.errors] };
+          current = `${stripJson(current)}\n\n${String(fix.text).trim()}`;
+          check = { ok: false, data: fixed.data ?? check.data, errors: round === rounds ? [...check.errors, '— nach Reparatur weiterhin:', ...fixed.errors] : fixed.errors };
         }
+      }
+      if (check.ok && profile.postProcess) {
+        const notes = profile.postProcess(check.data, { root, record, toolLog: record.toolLog }) ?? [];
+        if (notes.length) { record.downgrades = notes; record.report = `${stripJson(record.report)}\n\n> **Vom Programm herabgestuft (Beweispflicht):**\n${notes.map((n) => `> - ${n}`).join('\n')}\n\n${record.report.slice(record.report.lastIndexOf('```json'))}`; log(`[${agent}] ${notes.length} Urteil(e) vom Programm herabgestuft: ${notes.slice(0, 3).join(' · ')}`); }
       }
       record.data = check.data;
       record.errors = check.errors;

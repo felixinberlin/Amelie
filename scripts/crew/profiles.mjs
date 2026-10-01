@@ -15,9 +15,55 @@ import { LOGS, renderLogSection } from './write.mjs';
 import { validateLibrarian } from './contracts.mjs';
 import { ACTOR, PLAYBOOK, buildPlan, dryRun, renderRetro } from './librarian.mjs';
 import { runsDir } from './runs.mjs';
+import { makeBundleProfiles } from './profiles-bundle.mjs';
 
 const TRIAGE_ORDER = ['Dose Ready', 'Market Route', 'Needs Research', 'Baustein', 'Friedhof'];
 const count = (list, key, values) => values.map((v) => `${list.filter((x) => x?.[key] === v).length} ${v}`).join(' / ');
+
+
+// ---------------------------------------------------------------- Beweispflicht: das Programm stuft herab, was nicht belegt ist
+
+const SEARCHED = new Set(['web_search', 'web_fetch']);
+const callsOf = (toolLog, names) => (toolLog ?? []).filter((t) => names.has(t.name)).length;
+const PLACEHOLDER_RECIPIENT = /^(felix|félix|ich|niemand|unbekannt|tbd|n\/a|–|-)\b/i;
+
+/** Engines: ohne Suchaufruf im Lauf gibt es kein frei/verengt; „seite“ nur mit mindestens einem web_fetch. */
+export function downgradeCandidates(data, { toolLog }) {
+  const notes = [];
+  const searched = callsOf(toolLog, SEARCHED);
+  const fetched = callsOf(toolLog, new Set(['web_fetch']));
+  for (const c of data.candidates) {
+    if (!searched && (c.urteil === 'frei' || c.urteil === 'verengt')) {
+      notes.push(`${c.id}: ${c.urteil} → unklar (kein web_search/web_fetch im Lauf, Existenzprüfung fehlt)`);
+      c.urteil = 'unklar'; c.evidenz = 'schnipsel';
+      c.restluecke = `${c.restluecke ? `${c.restluecke} ` : ''}[ungeprüft: Lauf ohne Suchaufruf]`.trim();
+    } else if (c.evidenz === 'seite' && !fetched) {
+      notes.push(`${c.id}: Evidenz seite → schnipsel (kein web_fetch im Lauf)`);
+      c.evidenz = 'schnipsel';
+      if (c.urteil === 'frei') c.urteil = 'unklar';
+    }
+  }
+  return notes;
+}
+
+/** Reviewer: Dose Ready nur mit eigener Gegen-Suche (Aufruf im Lauf + URL) und einem benannten Empfänger. */
+export function downgradeReviews(data, { toolLog }) {
+  const notes = [];
+  const searched = callsOf(toolLog, SEARCHED);
+  for (const r of data.reviews) {
+    if (r.triage !== 'Dose Ready') continue;
+    const why = [];
+    if (!searched) why.push('kein web_search/web_fetch im Lauf');
+    if (!/https?:\/\//.test(String(r.gegenSuche ?? ''))) why.push('Gegen-Suche ohne URL');
+    if (PLACEHOLDER_RECIPIENT.test(String(r.dose?.empfaenger ?? '').trim())) why.push(`Empfänger „${r.dose?.empfaenger}“ ist keine Stelle`);
+    if (!why.length) continue;
+    notes.push(`${r.id}: Dose Ready → Needs Research (${why.join('; ')})`);
+    r.triage = 'Needs Research';
+    r.herabgestuft = why;
+    r.begruendung = `[Vom Programm herabgestuft: ${why.join('; ')}] ${r.begruendung ?? ''}`.trim();
+  }
+  return notes;
+}
 
 // ---------------------------------------------------------------- ideen-scout
 
@@ -30,7 +76,7 @@ Arbeitsreihenfolge:
 1. Pflichtlektüre laut deiner Definition (letzte Retro und Besetzungsatlas in 06-suche/amelie-suchplaybook.md, Skill amelie-ideenrunde).
 2. Eine offene Quelle passend zum Thema wählen (run_cli quellen next; quellen show <id>).
 3. 4–6 Ideen aus der Quelle ableiten, jede mit run_cli bib find --stamm <Wortstämme> gegen den Bestand halten.
-4. Je Idee höchstens 4 Suchen, Empfänger zuerst; Prämisse vor Urteil.
+4. Je Idee höchstens 4 Suchen, Empfänger zuerst; Prämisse vor Urteil. Ob es den Empfänger als Stelle wirklich gibt und wo er sitzt, prüft places_find (Information, nicht zitierfähig; Beleg per web_fetch).
 Liefere Bericht + JSON-Block (Vertrag „candidates“).`;
 };
 
@@ -96,7 +142,7 @@ const reviewTask = ({ task, inputs }) => {
   return `${task?.trim() ? `${task.trim()}\n\n` : ''}${cands.length ? `Konsolidierte Kandidatenliste (Existenzprüfung der Engines; besetzte Ideen gehen direkt an den Bibliothekar):
 ${list}
 
-Bewerte jeden Kandidaten über die 8 Vektoren nach der Rubrik (load_skill idea-reviewer, Referenz vector-rubrics). Prüfe Baustein-Nähe zu bestehenden Dosen (run_cli bib find …). Dose Ready nur ab 24/35 und mit eigener, unabhängiger Gegen-Suche. Für Friedhof einen vollständigen Totenschein (Werte: run_cli bib grab werte).` : ''}`;
+Bewerte jeden Kandidaten über die 8 Vektoren nach der Rubrik (load_skill idea-reviewer, Referenz vector-rubrics). Prüfe Baustein-Nähe zu bestehenden Dosen (run_cli bib find …). Dose Ready nur ab 24/35, mit eigener, unabhängiger Gegen-Suche (web_search aufrufen, URL in gegenSuche) und einer benannten Stelle als Empfänger (nie „Felix“, nie eine Kategorie wie „Kommunen“). Ohne Suchaufruf in diesem Lauf stuft das Programm Dose Ready herab. Für Friedhof einen vollständigen Totenschein (Werte: run_cli bib grab werte).` : ''}`;
 };
 
 const reviewMock = ({ inputs } = {}) => {
@@ -193,6 +239,7 @@ export const PROFILES = {
   'ideen-scout': {
     role: 'Engine 1: leitet Ideen aus Primärquellen ab und prüft, ob es sie schon gibt.',
     contract: 'candidates',
+    postProcess: downgradeCandidates,
     buildTask: scoutTask,
     summarize: engineSummary,
     writes: null, // schreibt laut Definition nichts; Ergebnisse gehen an Reviewer und Bibliothekar
@@ -201,6 +248,7 @@ export const PROFILES = {
   'idea-reviewer': {
     role: 'Prüfer: bewertet frei/verengt/unklar-Kandidaten über 8 Vektoren und vergibt ein Triage-Urteil.',
     contract: 'reviews',
+    postProcess: downgradeReviews,
     buildTask: reviewTask,
     summarize: (d) => `${d.reviews.length} Reviews: ${TRIAGE_ORDER.map((t) => `${d.reviews.filter((r) => r.triage === t).length} ${t}`).filter((s) => !s.startsWith('0 ')).join(' / ') || 'keine'}`,
     writes: {
@@ -213,6 +261,7 @@ export const PROFILES = {
   'inversions-agent': {
     role: 'Engine 3: invertiert ein reguliertes oder finanziertes System in ein unbebautes Gemeingut-Werkzeug und prüft die Kandidaten.',
     contract: 'candidates',
+    postProcess: downgradeCandidates,
     buildTask: ({ task, thema }) => {
       if (task && task.trim()) return task.trim();
       if (!thema) throw new Error('inversions-agent braucht --thema "<Thema>" oder --task / --task-file.');
@@ -236,6 +285,7 @@ Im Feld „quelle“ jedes Kandidaten: Zielsystem + Operator. Liefere Bericht + 
   'bisoziations-kollider': {
     role: 'Engine 2: kollidiert einen quellengestützten Rahmen A mit einem fernen Rahmen B und prüft die Ideen, die eine echte Lücke öffnen.',
     contract: 'candidates',
+    postProcess: downgradeCandidates,
     buildTask: ({ task, thema }) => {
       if (task && task.trim()) return task.trim();
       if (!thema) throw new Error('bisoziations-kollider braucht --thema "<Thema>" oder --task / --task-file.');
@@ -259,6 +309,7 @@ Im Feld „quelle“ jedes Kandidaten: Rahmen A × Rahmen B, Distanz. Liefere Be
   bibliothekar: {
     role: 'Gedächtnis: bucht Protokollzeilen, Gräber und Quellen als einen Plan über bib apply und schreibt die Retro ins Playbook.',
     contract: 'librarian',
+    repairRounds: 3,
     extraTools: ['plan_check'],
     toolDefs: { plan_check: PLAN_CHECK_TOOL },
     handlers: ({ root }) => ({
@@ -298,5 +349,8 @@ Im Feld „quelle“ jedes Kandidaten: Rahmen A × Rahmen B, Distanz. Liefere Be
     mockReply: librarianMock,
   },
 };
+
+// Bauer-Rollen (Datei-Pakete mit Schranke), siehe profiles-bundle.mjs
+Object.assign(PROFILES, makeBundleProfiles({ candidatesFromInputs, reviewsFromInputs }));
 
 export const CREW = Object.keys(PROFILES);

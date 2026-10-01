@@ -8,6 +8,7 @@ import { appendFileSync, existsSync, readFileSync } from 'node:fs';
 import { join, resolve, sep } from 'node:path';
 import { applyPlan } from '../bib-apply.mjs';
 import { stripJson } from './contracts.mjs';
+import { applyBundle } from './bundle.mjs';
 
 /** Kopf + Bericht + (optional) Tabelle als Log-Abschnitt. */
 export function renderLogSection({ record, title, table }) {
@@ -63,6 +64,13 @@ export async function applyWrites({ root, record, profile, dryRun = false, allow
         const errs = (r.out?.errors ?? []).map((e) => `${e.code} ${e.field ?? ''}: ${e.message}`).join('; ') || r.out?.raw || '';
         throw Object.assign(new Error(`bib apply ${dryRun ? '--dry-run ' : ''}abgelehnt (Exit ${r.status}): ${errs}`), { exit: r.status, done });
       }
+    } else if (w.kind === 'bundle') {
+      let r;
+      try { r = applyBundle({ root, agent: record.agent, data: w.data, dryRun, gates: w.gates, touch: w.touch, pre: w.pre, log: (m) => process.stderr.write(`[${record.agent}] ${m}\n`) }); } catch (e) {
+        record.writes = [...(record.writes ?? []), ...done];
+        throw e;
+      }
+      for (const p of r.planned) done.push({ kind: 'bundle', file: p.file, bytes: p.bytes, how: p.kind, dryRun, gates: r.gates, at: now().toISOString() });
     } else {
       throw new Error(`Unbekannter Schreibweg „${w.kind}“.`);
     }

@@ -4,6 +4,8 @@
 // er schreibt nie etwas um und ruft kein Modell. Bricht ein Bericht den Vertrag, bekommt der Agent die Fehlerliste
 // für EINEN Reparaturaufruf (ohne neue Suchen). Scheitert auch der, bleibt der Lauf mit den Fehlern erhalten.
 
+import { BUNDLE_SHAPES, validateBundle } from './bundle.mjs';
+
 export const URTEILE = ['frei', 'verengt', 'unklar', 'besetzt'];
 export const EVIDENZ = ['seite', 'schnipsel'];
 
@@ -245,6 +247,10 @@ export const CONTRACTS = {
   candidates: { validate: validateCandidates, shape: CANDIDATES_SHAPE },
   reviews: { validate: validateReviews, shape: REVIEWS_SHAPE, prepare: loadGraveEnums },
   librarian: { validate: validateLibrarian, shape: LIBRARIAN_SHAPE },
+  // Datei-Pakete (Packer, Demo-Bauer, Venture-Analyst): Form hier, Abgleich mit dem Repo in postValidate des Profils
+  'bundle-dose-packer': { validate: (d) => validateBundle(d, { agent: 'dose-packer' }), shape: BUNDLE_SHAPES['dose-packer'] },
+  'bundle-demo-builder': { validate: (d) => validateBundle(d, { agent: 'demo-builder' }), shape: BUNDLE_SHAPES['demo-builder'] },
+  'bundle-venture-analyst': { validate: (d) => validateBundle(d, { agent: 'venture-analyst' }), shape: BUNDLE_SHAPES['venture-analyst'] },
 };
 
 /** Prüft einen Bericht gegen einen Vertrag. { ok, data, errors } */

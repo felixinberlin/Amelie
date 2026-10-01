@@ -6,6 +6,7 @@
 //   search_repo   git grep im Repo
 //   web_fetch     Webseite holen (Text, gekürzt; Werkzeug des Modellvergleichs)
 //   web_search    Suche über den Suchdienst des Schwesterprojekts Amélie-lab (Gratis-Kontingent, AMELIE_LAB oder ../Amelie-lab)
+//   places_find   echte Orte (Behörden, Verbände, Firmen, Adressen) aus Google Places über den Ortsdienst des Labs (Maps-Schlüssel, kein Suchkontingent)
 //   list_skills / load_skill   die Skills unter .claude/skills (Anleitungen, als Text in den Kontext geladen)
 //   list_agents / call_agent   die anderen Amélie-Agenten aus .claude/agents als Unter-Agent rufen, NUR LESEND
 //
@@ -20,6 +21,9 @@ import { createHandlers as createWebHandlers } from './model-compare/tools.mjs';
 
 const MAX_OUT = 8000;
 const MAX_FILE = 24000;
+
+/** Obergrenzen je Lauf (Aufrufe). Orte kosten Maps-Guthaben, Suchen Kontingent; der Venture-Analyst darf mehr Orte. */
+export const DEFAULT_BUDGETS = { places_find: 3, web_search: 40 };
 
 /** Agenten, die als Unter-Agent laufen dürfen: keine Schreiber des Gedächtnisses, keine Bauer. */
 export const DELEGABLE = ['ideen-scout', 'idea-reviewer', 'inversions-agent', 'bisoziations-kollider'];
@@ -146,6 +150,11 @@ export const KIT_TOOLS = {
     description: 'Websuche über den Suchdienst des Labs (Google Grounded Search, Gratis-Kontingent): liefert Antworttext und Quellen-URLs. Suchtreffer sind [Schnipsel]; erst was du mit web_fetch geholt hast, ist [Seite]. Ohne Punktzahlen, Urteile oder interne Begriffe in der Frage.',
     input_schema: { type: 'object', properties: { question: { type: 'string' }, max_queries: { type: 'number', description: '1 bis 3, Standard 2' } }, required: ['question'] },
   },
+  places_find: {
+    name: 'places_find',
+    description: 'Sucht ECHTE Orte (Behörden, Verbände, Institute, Firmen, Läden, Adressen) in Google Places: Name, Adresse, Koordinaten, Website, Bewertung. Prüft, wo ein Empfänger, Mitbewerber oder Partner wirklich sitzt, oder wer in einer Region tätig ist. Einfache Anfrage mit Art des Ortes und Stadt, z. B. „Landesfischereiverband Potsdam“. Sagt nichts darüber, ob eine Idee schon existiert; kein Suchkontingent. Wenige Aufrufe je Lauf. Keine interne Begriffe in der Anfrage (der Dienst lehnt sie ab).',
+    input_schema: { type: 'object', properties: { query: { type: 'string', description: 'Art des Ortes + Stadt oder Region' }, max_results: { type: 'integer', description: '1 bis 8, Standard 5' }, language: { type: 'string', description: 'de, en … Standard de' } }, required: ['query'] },
+  },
   list_skills: { name: 'list_skills', description: 'Listet die Skills des Projekts (Anleitungen unter .claude/skills) mit Kurzbeschreibung.', input_schema: { type: 'object', properties: {} } },
   load_skill: {
     name: 'load_skill',
@@ -162,7 +171,7 @@ export const KIT_TOOLS = {
 
 const AGENT_TOOL_MAP = {
   Read: ['read_file'], Grep: ['search_repo'], Glob: ['search_repo'], Bash: ['run_cli'], WebFetch: ['web_fetch'],
-  WebSearch: ['web_search'], // zusätzlich zur serverseitigen Suche des Anbieters (nativeSearch), falls der Lab-Suchdienst da ist
+  WebSearch: ['web_search', 'places_find'], // zusätzlich zur serverseitigen Suche des Anbieters (nativeSearch), falls der Lab-Suchdienst da ist
 };
 
 /** Werkzeugnamen, die eine Agentendefinition bekommt (nie Edit/Write, nie call_agent). */
@@ -187,7 +196,9 @@ export function labSearchDir(root, env = process.env) {
  *  makeAdapter(role) → Adapter für Unter-Agenten (ohne: call_agent meldet, dass er nicht verfügbar ist)
  *  ledger: { agentCalls: [{ agent, usage, turns, toolLog }] }, wird gefüllt
  */
-export function createKit({ root, makeAdapter, depth = 0, ledger = { agentCalls: [] }, maxAgentCalls = 3, maxAgentTurns = 14, fetchFn, quellen = [], nativeSearch, labDir = labSearchDir(root) } = {}) {
+export function createKit({ root, makeAdapter, depth = 0, ledger = { agentCalls: [] }, maxAgentCalls = 3, maxAgentTurns = 14, fetchFn, quellen = [], nativeSearch, labDir = labSearchDir(root), citePlaces = false, budgets = {} } = {}) {
+  const budget = { ...DEFAULT_BUDGETS, ...budgets };
+  const used = {};
   if (nativeSearch === undefined) nativeSearch = !labDir; // Gemini lässt Anbieter-Suche und Funktionswerkzeuge nicht zusammen zu: mit Lab-Suchdienst aus
   const web = createWebHandlers({ quellen, ...(fetchFn ? { fetchFn } : {}) });
   const handlers = {
@@ -231,6 +242,21 @@ export function createKit({ root, makeAdapter, depth = 0, ledger = { agentCalls:
       if (r.status !== 0 || !out) return `Fehler: Suche fehlgeschlagen (Exit ${r.status}): ${String(r.stderr ?? '').split('\n').filter((l) => !/AFC|automatic function/i.test(l)).join(' ').slice(-400)}`;
       return out.slice(0, MAX_OUT);
     },
+    async places_find(a) {
+      if (!labDir) return 'Fehler: Ortsdienst nicht gefunden (AMELIE_LAB setzen oder ../Amelie-lab mit .venv).';
+      const q = String(a?.query ?? '').trim();
+      if (q.length < 3) return 'Fehler: query ist zu kurz (Art des Ortes + Stadt).';
+      const n = Math.min(8, Math.max(1, Number(a?.max_results) || 5));
+      const lang = /^[a-z]{2}$/.test(String(a?.language ?? '')) ? a.language : 'de';
+      const r = spawnSync(join(labDir, '.venv/bin/python'), ['-m', 'agents.places_service', q, '-n', String(n), '-l', lang, '--json'], { cwd: labDir, encoding: 'utf8', timeout: 60_000, maxBuffer: 4 * 1024 * 1024 });
+      const out = String(r.stdout ?? '').trim();
+      if (r.status !== 0 || !out) return `Fehler: Ortssuche fehlgeschlagen (Exit ${r.status}): ${String(r.stderr ?? r.stdout ?? '').trim().slice(-300)}`;
+      let places;
+      try { places = JSON.parse(out); } catch { return `Fehler: Antwort des Ortsdienstes nicht lesbar: ${out.slice(0, 200)}`; }
+      if (!places.length) return 'Google Places fand nichts. Konkreter fragen (Name, Stadt). Nichts gefunden heißt nicht, dass es das nicht gibt.';
+      const lines = places.map((p) => `- ${p.name} | ${p.address} | ${p.lat}, ${p.lng} | ${p.website ?? '-'} | Bewertung ${p.rating ?? '-'}${p.id ? ` | https://www.google.com/maps/place/?q=place_id:${p.id}` : ''}`);
+      return `${lines.join('\n')}\n${citePlaces ? 'Maps-Seite und Website sind zitierfähig (Evidenz „seite“ nur für das, was dort steht).' : 'Das ist Information zum Nachdenken, nicht zitierfähig: wer belegen will, holt die Seite mit web_fetch.'}`.slice(0, MAX_OUT);
+    },
     async list_skills() { return listSkills(root).map((s) => `${s.name}: ${s.description}`).join('\n') || '(keine)'; },
     async load_skill(a) { return loadSkill(root, a?.name, a?.reference); },
     async list_agents() { return listAgents(root).map((a) => `${a.name}: ${a.description}`).join('\n') || '(keine)'; },
@@ -257,5 +283,15 @@ export function createKit({ root, makeAdapter, depth = 0, ledger = { agentCalls:
       return `[Bericht von ${name}, ${r.turns} Runden, ${r.toolLog.length} Werkzeugaufrufe]\n${String(r.text || '(leer)').slice(0, 12000)}`;
     },
   };
-  return { handlers, ledger };
+  // Obergrenzen je Lauf (wie im Lab: Werkzeugbudgets); darüber meldet das Werkzeug, statt zu laufen
+  for (const [name, max] of Object.entries(budget)) {
+    const inner = handlers[name];
+    if (!inner || !Number.isFinite(max)) continue;
+    handlers[name] = async (args) => {
+      used[name] = (used[name] ?? 0) + 1;
+      if (used[name] > max) return `Fehler: Obergrenze von ${max} Aufrufen für ${name} in diesem Lauf erreicht. Arbeite mit dem, was du hast.`;
+      return inner(args);
+    };
+  }
+  return { handlers, ledger, used };
 }

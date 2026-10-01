@@ -77,7 +77,7 @@ Wenn du ein Ticket, ein Kriterium oder eine Dosen-Beschreibung änderst, musst d
   * `check:quellen` (validiert das Quellen-Register und prüft, dass `06-suche/amelie-quellen.md` daraus aktuell erzeugt ist)
   * `check:diagramme` (parst alle ```` ```mermaid ````-Blöcke in den Markdown-Dateien; ein Syntaxfehler bricht Lint ab)
 * **Bibliotheks-CLI:** `npm run bib -- <befehl>` (siehe §2); Rundenabschluss in einem Schritt: `npm run bib -- abschluss` (`export:data` → `lint` → `test`).
-* **Crew von der Kommandozeile (ohne Claude-Credits):** `npm run agent -- list|runs|show|merge|write|<agent>` und `npm run teamrunde -- "<Thema>" [--mock] [--write]`. Handbuch `06-suche/amelie-kommandozeile.md`, für Menschen `06-suche/amelie-agenten-fuer-menschen.md`.
+* **Crew von der Kommandozeile (ohne Claude-Credits):** `npm run agent -- list|runs|show|merge|write|<agent>` und `npm run teamrunde -- "<Thema>" [--mock] [--write]`. Handbuch `06-suche/amelie-kommandozeile.md`, für Menschen `06-suche/amelie-agenten-fuer-menschen.md`. Packer, Demo-Bauer und Venture-Analyst laufen ebenfalls von dort (Datei-Pakete mit Schranke und Rollback, `scripts/crew/bundle.mjs`, Abschnitt 3a im Handbuch); Venture nur auf `feat/venture-*`.
 
 ---
 

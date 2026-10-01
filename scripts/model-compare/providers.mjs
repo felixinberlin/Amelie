@@ -36,7 +36,7 @@ export async function runConversation(adapter, { system, user, tools, handlers, 
     for (const c of r.calls) {
       const h = handlers[c.name];
       let content;
-      try { content = h ? await h(c.args ?? {}) : `Unbekanntes Werkzeug: ${c.name}`; } catch (e) { content = `Fehler: ${e.message}`; }
+      try { content = h ? await h(c.args ?? {}) : `Unbekanntes Werkzeug: ${c.name}. Es gibt NUR diese Werkzeuge (kein Python, keine Codeausführung): ${Object.keys(handlers).join(', ')}.`; } catch (e) { content = `Fehler: ${e.message}`; }
       toolLog.push({ name: c.name, args: c.args ?? {}, result: String(content).slice(0, 300) });
       results.push({ id: c.id, name: c.name, content: String(content) });
     }

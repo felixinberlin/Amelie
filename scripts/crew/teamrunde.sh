@@ -17,7 +17,7 @@ while [ $# -gt 0 ]; do
   case "$1" in
     --model) COMMON+=(--model "$2"); shift 2 ;;
     --runs-dir) COMMON+=(--runs-dir "$2"); shift 2 ;;
-    --mock) COMMON+=(--mock); shift ;;
+    --mock) COMMON+=(--mock); STAGGER=0; shift ;;
     --write) WRITE=1; shift ;;
     --engines) ENGINES="$2"; shift 2 ;;
     -h|--help) sed -n '2,11p' "$0"; exit 0 ;;
@@ -42,6 +42,7 @@ declare -A PID
 for a in $ENGINES; do
   agent "$a" --thema "$THEMA" --json "${COMMON[@]}" > "$OUT/$a.json" 2> "$OUT/$a.log" &
   PID[$a]=$!
+  sleep "${STAGGER:-4}"   # gestaffelter Start: die Engines treffen nicht gleichzeitig die Quote
 done
 OK_IDS=()
 for a in $ENGINES; do
