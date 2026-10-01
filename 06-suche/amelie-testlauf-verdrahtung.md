@@ -1,83 +1,67 @@
-# Testlauf der Crew-Verdrahtung: Diagramme und Ablauf
+# Testlauf der Crew-Verdrahtung: Agenten, Skills, Modelle, Werkzeuge
 
-Zweck: lokal prüfen, ob alle Teile der Kommandozeilen-Crew zusammenarbeiten (Skripte, Agentendefinitionen, Skills, Werkzeuge, Gedächtnis). Thema des Testlaufs: **Starkregen und Überflutungsvorsorge im Quartier** (im Protokoll nur 1 Treffer, `verengt`, also dünnes Feld).
+Zweck: lokal prüfen, ob alle Agenten und Skills zusammenarbeiten. Thema des Testlaufs: **Starkregen und Überflutungsvorsorge im Quartier** (im Protokoll nur 1 Treffer, `verengt`, also dünnes Feld).
 
-## 1. Gesamtbild: wer ruft wen
+## 1. Gesamtbild (abstrakt)
+
+Werkzeuge in Klammern: R=Read, G=Grep/Glob, B=Bash (in der CLI-Crew nur `bib`/`quellen` lesend), E=Edit, W=Write, WS=WebSearch, WF=WebFetch.
 
 ```mermaid
 flowchart TD
-  H([Mensch: npm run teamrunde -- Thema]) --> TR[scripts/crew/teamrunde.sh]
-  TR --> VF[bib vorflug<br/>git fetch, fremde Branches, Netztest]
-  TR --> AR[scripts/agent-run.mjs<br/>ein Agent = ein Lauf]
+  ORCH{{Skill amelie-orchestrator<br/>führt die Teamrunde}}
 
-  subgraph Profil[scripts/crew/profiles.mjs]
-    PR[Profil je Agent<br/>Auftrag, Vertrag, Schreibweg, Mock]
+  subgraph ENG[Phase 1 · Engines parallel]
+    SC["Agent ideen-scout<br/>R G B WS WF"] --- SK1[Skill amelie-ideenrunde]
+    KO["Agent bisoziations-kollider<br/>R G B E WS WF"] --- SK2[Skill lacunar-bisociation]
+    IN["Agent inversions-agent<br/>R G B E WS WF"] --- SK3[Skill asymmetric-inversion]
   end
-  AR --> PR
-  AR --> DEF[.claude/agents/*.md<br/>Agentendefinition]
-  AR --> MC[models.local.json<br/>Modell je Agent]
-  MC --> AD[Adapter<br/>Claude direkt, Vertex, Gemini]
 
-  AR --> KIT[scripts/agent-kit.mjs<br/>Werkzeugkasten]
-  KIT --> T1[run_cli: nur Lesebefehle<br/>bib, quellen]
-  KIT --> T2[read_file, search_repo]
-  KIT --> T3[web_fetch, web_search]
-  KIT --> T4[load_skill<br/>skills/ und .claude/skills/]
-  KIT --> T5[call_agent<br/>Tiefe 1, max 3, nur lesend]
+  MERGE[[Konvergenz-Merge<br/>Doppelfunde = starkes Signal]]
+  RV["Agent idea-reviewer<br/>R G B E WS WF"] --- SK4[Skill idea-reviewer]
+  PK["Agent dose-packer<br/>R G B E W"] --- SK5[Skill dose-packer]
+  DB["Agent demo-builder<br/>R G B E W"] --- SK6[Skill demo-builder]
+  BI["Agent bibliothekar<br/>R G B E W"]
+  VA["Agent venture-analyst<br/>R G B E W WS WF"]
 
-  AR --> CT[scripts/crew/contracts.mjs<br/>JSON-Block prüfen, 1 Reparaturaufruf]
-  CT --> RUN[(06-suche/agent-runs/<br/>Lauf-Akte, git-ignoriert)]
+  ORCH --> ENG
+  SC --> MERGE
+  KO --> MERGE
+  IN --> MERGE
+  MERGE --> RV
+  RV -- Dose Ready --> PK --> DB --> BI
+  RV -- Needs Research / Baustein / Friedhof --> BI
+  RV -. Market Route .-> VA
+
+  MEM[(Gedächtnis<br/>Protokoll, Friedhof, Quellen, Playbook)]
+  BI <--> MEM
+  SC -. lesen: bib find .-> MEM
+  KO -. lesen .-> MEM
+  IN -. lesen .-> MEM
+  BI --> OUT([Lint + Test grün, Commit])
 ```
 
-## 2. Ablauf der Teamrunde
+## 2. Tabelle: Agent, Skill, Modell, Werkzeuge, Schreibrecht
 
-```mermaid
-sequenceDiagram
-  autonumber
-  participant M as Mensch
-  participant T as teamrunde.sh
-  participant E as 3 Engines parallel
-  participant G as merge.mjs
-  participant R as idea-reviewer
-  participant B as bibliothekar
-  participant S as Gedächtnis
+| Agent | Skill | Werkzeuge (Claude Code) | Schreibt |
+|---|---|---|---|
+| ideen-scout | amelie-ideenrunde | Read, Grep, Glob, Bash, WebSearch, WebFetch | nichts |
+| bisoziations-kollider | lacunar-bisociation | Read, Grep, Glob, Bash, Edit, WebSearch, WebFetch | `amelie-bisoziation-log.md` |
+| inversions-agent | asymmetric-inversion | wie Kollider | `amelie-inversions-log.md` |
+| idea-reviewer | idea-reviewer | wie Kollider | `amelie-classification-log.md` |
+| dose-packer | dose-packer | Read, Grep, Glob, Bash, Edit, Write | `05-dosen/`, `dosen.ts`, Export |
+| demo-builder | demo-builder | wie Packer | `07-demos/<id>/`, `src/engine/<id>/` |
+| bibliothekar | keiner | wie Packer | Protokoll, Friedhof, Quellen, Playbook |
+| venture-analyst | keiner | Read, Grep, Glob, Bash, Edit, Write, WebSearch, WebFetch | `ventures/` |
 
-  M->>T: Thema (optional --mock, --write)
-  T->>S: bib vorflug (lesen)
-  T->>E: ideen-scout, bisoziations-kollider, inversions-agent
-  E->>S: bib find, quellen next (lesen)
-  E-->>T: Bericht + JSON candidates
-  T->>G: Läufe zusammenlegen, Doppelfunde zählen (ohne Modell)
-  G-->>T: Merge
-  T->>R: frei und verengt prüfen, V1 bis V8
-  R-->>T: JSON reviews (Dose Ready, Needs Research, Friedhof)
-  T->>B: Plan bauen (plan_check im Trockenlauf)
-  alt ohne --write
-    B-->>M: nur Plan, nichts geschrieben
-  else mit --write
-    B->>S: bib apply (alles oder nichts), Retro im Playbook
-    E->>S: je ein Abschnitt im eigenen Log
-    R->>S: Abschnitt in amelie-classification-log.md
-    T->>S: bib abschluss (export:data, lint, test)
-  end
-```
+**Modelle.** Keine Agentendefinition in `.claude/agents/` setzt ein `model:`. Das gilt in zwei Welten:
+- **Claude Code (Subagenten):** jeder Agent erbt das Modell der laufenden Sitzung. Soll ein Agent ein anderes bekommen, trage `model:` in sein Frontmatter ein oder setze es beim Aufruf.
+- **Kommandozeilen-Crew:** Modell je Agent aus `scripts/model-compare/models.local.json` (git-ignoriert, liegt nicht im Repo). Reihenfolge: `--model`, dann `agents.<agent>`, dann `crew`, `librarian`, `judge`, erstes Modell. Die Vorlage `models.example.json` nennt `claude-opus-5-5` (Vertex, Richter), `claude-sonnet-5-5` (Vertex) und `gemini` mit leerer Id (`SET_ME`). Welche Zuordnung bei dir gilt, steht nur in deiner lokalen Datei: `npm run agent -- list` bzw. `cat scripts/model-compare/models.local.json`.
 
-## 3. Wer darf wohin schreiben
+**Werkzeug-Übersetzung in der CLI-Crew:** Read → `read_file`, Grep/Glob → `search_repo`, Bash → `run_cli` (nur Lesebefehle), WebFetch → `web_fetch`, WebSearch → `web_search`; dazu immer `list_skills` und `load_skill`. Edit und Write gibt es dort nie, geschrieben wird nur vom Programm mit `--write`. Der Lab-Bibliothekar darf zusätzlich `call_agent` (nur lesend, Tiefe 1, höchstens 3).
 
-```mermaid
-flowchart LR
-  SC[ideen-scout] -->|nichts| X1[ ]
-  KO[bisoziations-kollider] -->|--write| L2[amelie-bisoziation-log.md]
-  IN[inversions-agent] -->|--write| L3[amelie-inversions-log.md]
-  RV[idea-reviewer] -->|--write| L4[amelie-classification-log.md]
-  BI[bibliothekar<br/>Akteur cli-bibliothekar] -->|bib apply| L5[Protokoll, Friedhof, Quellen]
-  BI -->|Retro| L6[amelie-suchplaybook.md]
-  style X1 fill:none,stroke:none
-```
+Packer, Demo-Bauer und Venture laufen weiter nur in Claude Code.
 
-Packer, Demo-Bauer und Venture laufen weiter nur in Claude Code, nicht in dieser Kette.
-
-## 4. Testlauf in Stufen (vom billigsten zum echten)
+## 3. Testlauf in Stufen (vom billigsten zum echten)
 
 Vorbereitung (einmal):
 
@@ -101,7 +85,7 @@ npm run bib -- vorflug --netz
 
 Einzelne Teile testen: `--engines "ideen-scout"` begrenzt die Engines, `--no-delegate` (beim Lab-Bibliothekar) schaltet `call_agent` ab, `npm run agent -- write <run> --dry-run` zeigt den Schreibweg eines früheren Laufs.
 
-## 5. Worauf du achten solltest (Abnahme)
+## 4. Worauf du achten solltest (Abnahme)
 
 - Jede Engine endet mit gültigem JSON-Block (Exit 0). Reparaturaufruf nötig = Prompt prüfen.
 - In der Akte stehen echte `bib find`-Aufrufe vor jedem Urteil, Empfänger zuerst.
