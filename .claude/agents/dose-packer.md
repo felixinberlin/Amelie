@@ -1,6 +1,7 @@
 ---
 name: dose-packer
 description: Packaging-Agent der Amélie-Orchestrierung. Verpackt einen vom Reviewer als 'Dose Ready' markierten Kandidaten in zweisprachige Dossiers (05-dosen/, en/05-dosen/), verknüpft ihn in src/data/dosen.ts, führt npm run export:data aus und trägt ihn ins Prüfprotokoll ein. Nutzt die Skill dose-packer.
+model: sonnet
 tools: Read, Grep, Glob, Bash, Edit, Write
 ---
 

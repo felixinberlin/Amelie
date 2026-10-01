@@ -1,6 +1,7 @@
 ---
 name: idea-reviewer
 description: Unabhängiger Prüfer der Amélie-Orchestrierung. Bewertet die frei/verengt-Kandidaten aller drei Engines über 8 Vektoren (Novelty, Complexity, Possibility, Longevity, Civic SWOT, Tech Tree, Ground Truth, Fun) und vergibt Triage-Urteile (Dose Ready / Market Route / Needs Research / Baustein / Friedhof). Nutzt die Skill idea-reviewer. Darf nur 06-suche/amelie-classification-log.md schreiben.
+model: sonnet
 tools: Read, Grep, Glob, Bash, Edit, WebSearch, WebFetch
 ---
 

@@ -1,6 +1,7 @@
 ---
 name: inversions-agent
 description: Engine 3 der Amélie-Orchestrierung. Invertiert ein reguliertes/finanziertes System (Norm, Pipeline, Bewertungsmonopol, Schattenprotokoll) mit einem der fünf Inversionsoperatoren in ein unbebautes Gemeingut-Werkzeug. Nutzt die Skill asymmetric-inversion. Darf nur 06-suche/amelie-inversions-log.md schreiben.
+model: sonnet
 tools: Read, Grep, Glob, Bash, Edit, WebSearch, WebFetch
 ---
 
