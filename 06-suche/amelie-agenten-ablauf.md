@@ -1,6 +1,6 @@
 # Agenten, Übergaben und Schreibrechte (Diagramme)
 
-Stand 30.09.2026. Quelle der Wahrheit sind `.claude/agents/*.md` (Rechte, Rückgabeformate) und `skills/amelie-orchestrator/` (Ablauf). Bei Änderungen dort dieses Blatt nachziehen. Mermaid rendert auf GitHub direkt.
+Stand 30.09.2026 (Crew von der Kommandozeile seit 01.10.2026: dieselben Rollen als eigenständige Programme, siehe `amelie-kommandozeile.md` und für Menschen `amelie-agenten-fuer-menschen.md`). Quelle der Wahrheit sind `.claude/agents/*.md` (Rechte, Rückgabeformate) und `skills/amelie-orchestrator/` (Ablauf). Bei Änderungen dort dieses Blatt nachziehen. Mermaid rendert auf GitHub direkt.
 
 ## 1. Teamrunde: Ablauf und Übergaben
 
