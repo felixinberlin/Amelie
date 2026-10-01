@@ -1,0 +1,34 @@
+{
+  "manifest_version": 1,
+  "run_id": "lacunar-20261001T115223-57fb6f",
+  "plan_id": "lab-2026-10-01-lacunar-20261001T115223-57fb6f",
+  "engine": "lacunar",
+  "model": "gemini-2.5-flash",
+  "existence_check": false,
+  "survivors": {
+    "count": 3,
+    "status": "ungeprueft"
+  },
+  "files": [
+    "06-suche/proposals/lab-2026-10-01-lacunar-20261001T115223-57fb6f.md",
+    "06-suche/proposals/lab-2026-10-01-lacunar-20261001T115223-57fb6f-source.json",
+    "06-suche/proposals/lab-2026-10-01-lacunar-20261001T115223-57fb6f.manifest.json"
+  ],
+  "source_ops": [
+    {
+      "op": "source.add",
+      "id": "gob-protocolo-de-evaluaci-n",
+      "human_accepted": false,
+      "urls": [
+        "https://www.mapa.gob.es/es/prensa/ultimas-noticias/detalle_noticias/entra-en-vigor-el-nuevo-reglamento-sobre-las-indicaciones-geogr-ficas-y-otros-reg-menes-de-calidad-diferenciada-de-alimentos-en-la-uni-n-europea/0663d7a1-d764-4e91-a901-505760e7850b"
+      ]
+    }
+  ],
+  "grave_proposals": 2,
+  "touches_memory": false,
+  "contracts": {
+    "write-plan": "see plan",
+    "lacunar-run": "1.2.0"
+  },
+  "contract_version": "1.0.0"
+}
