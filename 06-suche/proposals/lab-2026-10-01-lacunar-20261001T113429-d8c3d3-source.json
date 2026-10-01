@@ -1,0 +1,23 @@
+{
+  "plan_id": "lab-2026-10-01-lacunar-20261001T113429-d8c3d3-source",
+  "actor": "lab-librarian",
+  "agent": "lab",
+  "runde": "lacunar-20261001T113429-d8c3d3",
+  "_note": "Vorschlag des Labs, nicht angewendet. Der Bibliothekar prüft (typ, kategorie, `bib quellen match --url`, `bib find`); `human_accepted: true` setzt nur Félix, danach `npm run bib -- apply` auf diese Datei.",
+  "ops": [
+    {
+      "op": "source.add",
+      "id": "web-vision-typo3-inhaltspflege-service",
+      "name": "TYPO3 Inhaltspflege-Service",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "enthaelt": "TYPO3 Inhaltspflege-Service (Typ A: scheme without software); Anker des Lab-Laufs lacunar-20261001T113429-d8c3d3, nicht gelesen.",
+      "status": "angekratzt",
+      "evidenz": "schnipsel",
+      "note": "Anker des Lab-Laufs lacunar-20261001T113429-d8c3d3 (TYPO3 Künstler ai agents brandemburg, service); nur als Suchtreffer gelesen.",
+      "urls": [
+        "https://www.web-vision.de/typo3-cms/inhaltspflege-fuer-typo3-content-service.html"
+      ]
+    }
+  ]
+}

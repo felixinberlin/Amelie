@@ -1,0 +1,23 @@
+{
+  "plan_id": "lab-2026-10-01-lacunar-20261001T163628-ee76cb-source",
+  "actor": "lab-librarian",
+  "agent": "lab",
+  "runde": "lacunar-20261001T163628-ee76cb",
+  "_note": "Vorschlag des Labs, nicht angewendet. Der Bibliothekar prüft (typ, kategorie, `bib quellen match --url`, `bib find`); `human_accepted: true` setzt nur Félix, danach `npm run bib -- apply` auf diese Datei.",
+  "ops": [
+    {
+      "op": "source.add",
+      "id": "ichthyologie-graphical-key-for-the",
+      "name": "Graphical Key for the Identification of German Freshwater Fishes",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "enthaelt": "Graphical Key for the Identification of German Freshwater Fishes (Typ A: scheme without software); Anker des Lab-Laufs lacunar-20261001T163628-ee76cb, nicht gelesen.",
+      "status": "angekratzt",
+      "evidenz": "schnipsel",
+      "note": "Anker des Lab-Laufs lacunar-20261001T163628-ee76cb (DO it yourself, Kunst, Brandemburg, KI Agents, Handy, Natur, Fish); nur als Suchtreffer gelesen.",
+      "urls": [
+        "https://www.ichthyologie.de/wp-content/uploads/2025/03/Stahl_etal_2025_Graphical_key_German_freshwater_fishes-Bull_Fish_Biol-20_87-122.pdf"
+      ]
+    }
+  ]
+}

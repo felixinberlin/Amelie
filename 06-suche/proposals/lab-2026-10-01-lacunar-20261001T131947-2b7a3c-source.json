@@ -1,0 +1,23 @@
+{
+  "plan_id": "lab-2026-10-01-lacunar-20261001T131947-2b7a3c-source",
+  "actor": "lab-librarian",
+  "agent": "lab",
+  "runde": "lacunar-20261001T131947-2b7a3c",
+  "_note": "Vorschlag des Labs, nicht angewendet. Der Bibliothekar prüft (typ, kategorie, `bib quellen match --url`, `bib find`); `human_accepted: true` setzt nur Félix, danach `npm run bib -- apply` auf diese Datei.",
+  "ops": [
+    {
+      "op": "source.add",
+      "id": "mtrlegal-historische-wasserbuecher-brandenburg-und",
+      "name": "Historische Wasserbücher Brandenburg und die Verwaltung alter Rechte",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "enthaelt": "Historische Wasserbücher Brandenburg und die Verwaltung alter Rechte (Typ A: scheme without software); Anker des Lab-Laufs lacunar-20261001T131947-2b7a3c, nicht gelesen.",
+      "status": "angekratzt",
+      "evidenz": "schnipsel",
+      "note": "Anker des Lab-Laufs lacunar-20261001T131947-2b7a3c (Kleine Wasserwerke und Mühlenstaue in Brandenburg: Stilllegungsdruck durch Wasse); nur als Suchtreffer gelesen.",
+      "urls": [
+        "https://www.mtrlegal.com/wiki/wasserbuecher/"
+      ]
+    }
+  ]
+}
