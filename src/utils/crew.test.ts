@@ -280,3 +280,24 @@ describe('crew: inversions-agent', () => {
     expect(PROFILES['inversions-agent'].writes.files).toEqual(['06-suche/amelie-inversions-log.md']);
   });
 });
+
+// ---------------------------------------------------------------- bisoziations-kollider
+
+describe('crew: bisoziations-kollider', () => {
+  it('Standardauftrag lädt die Lacunar-Skill und verlangt Rahmen A × B', () => {
+    const t = PROFILES['bisoziations-kollider'].buildTask({ thema: 'Schmetterlinge' });
+    expect(t).toContain('load_skill lacunar-bisociation');
+    expect(t).toContain('Rahmen A × Rahmen B');
+    expect(() => PROFILES['bisoziations-kollider'].buildTask({})).toThrow(/--thema/);
+    expect(PROFILES['bisoziations-kollider'].writes.files).toEqual(['06-suche/amelie-bisoziation-log.md']);
+  });
+  it('drei Engines parallel, Reviewer sieht Doppelfunde (Mock-Kette)', async () => {
+    const dir = tmpRuns();
+    const runs = await Promise.all(['ideen-scout', 'inversions-agent', 'bisoziations-kollider'].map((agent) =>
+      runAgent({ root: ROOT, agent, thema: 'T', adapter: fixedAdapter(block({ ...goodCandidates, candidates: [cand('gemeinsam'), cand(`${agent}-eigen`)] })), spec: { id: 't' }, dir })));
+    expect(runs.every((r) => r.status === 'ok')).toBe(true);
+    const task = PROFILES['idea-reviewer'].buildTask({ inputs: runs });
+    expect(task).toContain('- gemeinsam (DOPPELFUND: ideen-scout + inversions-agent + bisoziations-kollider)');
+    expect(task.match(/-eigen:/g)?.length).toBe(3);
+  });
+});

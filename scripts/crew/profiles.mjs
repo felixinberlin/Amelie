@@ -158,6 +158,29 @@ Im Feld „quelle“ jedes Kandidaten: Zielsystem + Operator. Liefere Bericht + 
     },
     mockReply: engineMock('inv', 'Zielsystem × OP-1'),
   },
+  'bisoziations-kollider': {
+    role: 'Engine 2: kollidiert einen quellengestützten Rahmen A mit einem fernen Rahmen B und prüft die Ideen, die eine echte Lücke öffnen.',
+    contract: 'candidates',
+    buildTask: ({ task, thema }) => {
+      if (task && task.trim()) return task.trim();
+      if (!thema) throw new Error('bisoziations-kollider braucht --thema "<Thema>" oder --task / --task-file.');
+      return `Teamrunde, Engine 2 (Bisoziation). Thema: ${thema}
+
+Arbeitsreihenfolge:
+1. load_skill lacunar-bisociation (SKILL.md und references/lenses.md); letzte Retro und Atlas in 06-suche/amelie-suchplaybook.md; Modus-Liste und letzte Läufe in 06-suche/amelie-bisoziation-log.md (was schon oft kam, ist verbraucht).
+2. Rahmen A: eine reale Quelle mit Reibung zum Thema, möglichst aus dem Register (run_cli quellen next / quellen show). Rahmen B: ein ferner Bereich (Distanz ≥ 3).
+3. Kollidieren, nur Ideen behalten, die eine echte Lücke öffnen; 3–5 Kandidaten. Jeden mit run_cli bib find --stamm gegen den Bestand halten.
+4. Je Kandidat höchstens 4 Suchen, Empfänger mit Mandat zuerst; Prämisse vor Urteil.
+Im Feld „quelle“ jedes Kandidaten: Rahmen A × Rahmen B, Distanz. Liefere Bericht + JSON-Block (Vertrag „candidates“).`;
+    },
+    summarize: engineSummary,
+    writes: {
+      describe: `${LOGS.bisoziation} (neuer Lauf-Abschnitt, nur mit --write)`,
+      files: [LOGS.bisoziation],
+      build: (record) => [{ kind: 'append', file: LOGS.bisoziation, text: renderLogSection({ record, title: `Bisoziations-Lauf ${record.thema ? `„${record.thema}“ ` : ''}per Kommandozeile`, table: candidateTable(record.data) }) }],
+    },
+    mockReply: engineMock('bis', 'Rahmen A × Rahmen B, Distanz 4'),
+  },
 };
 
 export const CREW = Object.keys(PROFILES);
