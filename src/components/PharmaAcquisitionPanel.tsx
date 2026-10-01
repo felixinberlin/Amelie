@@ -5,13 +5,22 @@ import {
   APPROACHES,
   BASE_ASSUMPTIONS,
   PHARMA_FACTS,
+  PHARMA_LAB_CONTRAST,
+  PHARMA_LAB_FIRMS,
+  PHARMA_LAB_KILL,
+  PHARMA_LAB_MODELS,
+  PHARMA_LAB_NEXT,
+  PHARMA_LAB_PORTALS,
+  PHARMA_LAB_RUN,
   PHARMA_SOURCES,
   PHARMA_TEST_PLAN,
   PHARMA_TEST_STOP_DE,
   PHARMA_TEST_STOP_EN,
   cashCurve,
   computeApproach,
+  type LabName,
   type PharmaApproach,
+  type Tri,
 } from '../data/pharmaAcquisition';
 import { APPROACH_ES, FACTS_ES, MISSING_ES, TEST_ES, TEST_STOP_ES } from '../data/pharmaAcquisitionEs';
 import { VECTOR_KEYS, VECTOR_LABELS, type VentureScores } from '../data/venturesDashboard';
@@ -32,6 +41,13 @@ export const PharmaAcquisitionPanel: React.FC<Props> = ({ lang, vectors }) => {
   const whatOf = (ap: PharmaApproach) => (lang === 'es' ? APPROACH_ES[ap.id].what : lang === 'de' ? ap.whatDe : ap.whatEn);
   const riskOf = (ap: PharmaApproach) => (lang === 'es' ? APPROACH_ES[ap.id].risk : lang === 'de' ? ap.riskDe : ap.riskEn);
   const mon = L('Mon.', 'mo.', 'm.');
+  const tri = (t: Tri) => t[lang];
+  const nameLinks = (list: LabName[]) => list.map((n, i) => (
+    <React.Fragment key={n.url}>
+      {i > 0 && ', '}
+      <a href={n.url} target="_blank" rel="noopener noreferrer" className="text-[var(--m-accent)] hover:underline">{n.name}</a>
+    </React.Fragment>
+  ));
 
   const [dealPriceEur, setDealPriceEur] = useState(BASE_ASSUMPTIONS.dealPriceEur);
   const [feePct, setFeePct] = useState(BASE_ASSUMPTIONS.feePct);
@@ -99,7 +115,7 @@ export const PharmaAcquisitionPanel: React.FC<Props> = ({ lang, vectors }) => {
         </label>
         <label className="block">
           <span className="font-typewriter font-bold text-[var(--m-ink-3)]">{L('Provision je Seite', 'Fee per side', 'Comisión por parte')}: {(feePct * 100).toFixed(1)} %</span>
-          <input type="range" min={0.01} max={0.05} step={0.005} value={feePct}
+          <input type="range" min={0.01} max={0.07} step={0.005} value={feePct}
             onChange={(e) => setFeePct(Number(e.target.value))} className="w-full" />
         </label>
         <label className="block">
@@ -286,6 +302,81 @@ export const PharmaAcquisitionPanel: React.FC<Props> = ({ lang, vectors }) => {
         <p className="mt-1.5 font-semibold text-[var(--m-ink)]">{L(PHARMA_TEST_STOP_DE, PHARMA_TEST_STOP_EN, TEST_STOP_ES)}</p>
       </section>
 
+      {/* Zweiter Lauf: Amélie-lab */}
+      <section id="venture-farmacia-lab-run">
+        <h5 className={sectionTitle}>{L('Zweite Analyse aus dem Lab: vier Geschäftsmodelle', 'Second analysis from the lab: four business models', 'Segundo análisis del Lab: cuatro modelos de negocio')}</h5>
+        <p className="leading-relaxed">
+          {L(
+            `Dieselbe Frage lief am 30.09.2026 im Schwesterprojekt Amélie-lab (Agent Mark, ${PHARMA_LAB_RUN.searches} Suchen). Mark verglich keine Akquisewege, sondern vier Geschäftsmodelle. Zeit, Kosten und ROI je Modell lieferte der Lauf nicht; die Zahlen oben bleiben die einzigen.`,
+            `The same question ran on 30 Sep 2026 in the sister project Amélie-lab (agent Mark, ${PHARMA_LAB_RUN.searches} searches). Mark did not compare acquisition channels but four business models. The run gave no time, cost or ROI per model; the numbers above remain the only ones.`,
+            `La misma pregunta se analizó el 30.09.2026 en el proyecto hermano Amélie-lab (agente Mark, ${PHARMA_LAB_RUN.searches} búsquedas). Mark no comparó vías de captación, sino cuatro modelos de negocio. El análisis no dio tiempos, costes ni ROI por modelo; las cifras de arriba siguen siendo las únicas.`,
+          )}
+        </p>
+        <div className="mt-2 overflow-x-auto rounded-xl border border-[var(--m-line)]">
+          <table className="w-full text-[11px]">
+            <thead className="bg-[var(--m-sunk)] text-left text-[var(--m-ink-3)]">
+              <tr>
+                <th className="p-2">{L('Modell', 'Model', 'Modelo')}</th>
+                <th className="p-2">{L('Betreiber', 'Run by', 'Lo opera')}</th>
+                <th className="p-2">{L('Stand', 'Status', 'Estado')}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {PHARMA_LAB_MODELS.map((m) => (
+                <tr key={m.id} data-lab-model={m.id} className="border-t border-[var(--m-sunk)] align-top">
+                  <td className="p-2 min-w-[14rem]">
+                    <div className="font-semibold text-[var(--m-ink)]">{tri(m.name)}</div>
+                    <div className="mt-0.5">{tri(m.note)}</div>
+                    {m.reopen && <div className="mt-0.5 text-[var(--m-ink-3)]">{tri(m.reopen)}</div>}
+                  </td>
+                  <td className="p-2 whitespace-nowrap">
+                    {m.operator === 'actor'
+                      ? L('der Vermittler selbst', 'the broker', 'el propio intermediario')
+                      : L('Produkt für Dritte', 'product for others', 'producto para terceros')}
+                  </td>
+                  <td className={`p-2 whitespace-nowrap font-semibold ${m.status === 'shortlist' ? 'text-emerald-800' : 'text-rose-800'}`}>
+                    {m.status === 'shortlist' ? L('engere Wahl', 'shortlisted', 'en la lista corta') : L('verworfen', 'killed', 'descartado')}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <h6 className="mt-3 font-semibold text-[var(--m-ink)]">{L('Was noch niemand beantwortet hat', 'What nobody has answered yet', 'Lo que todavía nadie ha respondido')}</h6>
+        <ol className="mt-1 list-decimal pl-5 space-y-1">
+          {PHARMA_LAB_NEXT.map((c) => <li key={c.en}>{tri(c)}</li>)}
+        </ol>
+
+        <h6 className="mt-3 font-semibold text-[var(--m-ink)]">{L('Gegen das Modell oben gelesen', 'Read against the model above', 'Contrastado con el modelo de arriba')}</h6>
+        <ul className="mt-1 list-disc pl-5 space-y-1">
+          {PHARMA_LAB_CONTRAST.map((c) => <li key={c.en}>{tri(c)}</li>)}
+        </ul>
+
+        <h6 className="mt-3 font-semibold text-[var(--m-ink)]">{L('Abbruchkriterien des Labs', 'The lab’s kill criteria', 'Criterios de descarte del Lab')}</h6>
+        <ul className="mt-1 list-disc pl-5 space-y-1">
+          {PHARMA_LAB_KILL.map((c) => <li key={c.en}>{tri(c)}</li>)}
+        </ul>
+
+        <h6 className="mt-3 font-semibold text-[var(--m-ink)]">{L('Weitere Namen im Markt', 'More names in the market', 'Más nombres en el mercado')}</h6>
+        <p className="mt-1">
+          {L('Kanzleien und Berater, die das Lab als direkte Konkurrenz führt: ', 'Law firms and advisers the lab lists as direct competitors: ', 'Despachos y asesores que el Lab clasifica como competencia directa: ')}
+          {nameLinks(PHARMA_LAB_FIRMS)}.
+        </p>
+        <p className="mt-1">
+          {L('Vermittler und Portale aus den Suchtreffern (nicht einzeln geprüft): ', 'Brokers and portals from the search hits (not checked one by one): ', 'Intermediarios y portales de los resultados de búsqueda (sin comprobar uno a uno): ')}
+          {nameLinks(PHARMA_LAB_PORTALS)}.
+        </p>
+
+        <p className="mt-2 text-[11px] text-[var(--m-ink-3)]">
+          {L(
+            `Belegqualität des Lab-Laufs: Von 16 Tatsachenbehauptungen stützt die zitierte Seite ${PHARMA_LAB_RUN.factChecks.supported}, ${PHARMA_LAB_RUN.factChecks.partial} nur teilweise, ${PHARMA_LAB_RUN.factChecks.unsupported} nicht, ${PHARMA_LAB_RUN.factChecks.unchecked} blieben ungeprüft. In die Belege unten kamen nur gestützte Aussagen.`,
+            `Evidence quality of the lab run: of 16 factual claims the cited page supports ${PHARMA_LAB_RUN.factChecks.supported}, ${PHARMA_LAB_RUN.factChecks.partial} only in part, ${PHARMA_LAB_RUN.factChecks.unsupported} not at all, and ${PHARMA_LAB_RUN.factChecks.unchecked} were not checked. Only supported claims went into the evidence below.`,
+            `Calidad de las evidencias del Lab: de 16 afirmaciones de hecho, la página citada respalda ${PHARMA_LAB_RUN.factChecks.supported}, ${PHARMA_LAB_RUN.factChecks.partial} solo en parte, ${PHARMA_LAB_RUN.factChecks.unsupported} no, y ${PHARMA_LAB_RUN.factChecks.unchecked} quedaron sin comprobar. A los datos de abajo solo pasaron las respaldadas.`,
+          )}
+        </p>
+      </section>
+
       {/* Belege */}
       <section>
         <h5 className={sectionTitle}>{L('Belegte Marktdaten (Suchschnipsel, vor Nennung prüfen)', 'Evidence (search snippets, verify before quoting)', 'Datos de mercado (fragmentos de búsqueda, comprobar antes de citar)')}</h5>
@@ -301,6 +392,9 @@ export const PharmaAcquisitionPanel: React.FC<Props> = ({ lang, vectors }) => {
                     {src.title}
                     <ExternalLink className="w-3 h-3" />
                   </a>
+                )}
+                {f.labChecked && (
+                  <span className="ml-1 text-[var(--m-ink-3)]">({L('Seite vom Lab gelesen', 'page read by the lab', 'página leída por el Lab')})</span>
                 )}
               </li>
             );
@@ -325,6 +419,7 @@ const MISSING_DE = [
   'Rechtliche Herkunft der Inhaberadressen (Kammern, Register der Autonomen Gemeinschaften).',
   'Correos-Tarif 2026 für personalisierte Briefe, Tarife von Correo Farmacéutico und El Global, Preis des Infarma-Stands.',
   'Termin der nächsten Infarma.',
+  'Nachfrage und Preis eines bezahlten Leitfadens zum Übertragungsrecht je Autonomer Gemeinschaft (Vorschlag des Labs).',
 ];
 const MISSING_EN = [
   'Annual number of transfers across Spain (not found).',
@@ -332,4 +427,5 @@ const MISSING_EN = [
   'Legal source of owners’ addresses (professional colleges, regional registers).',
   'Correos 2026 rate for personalised letters, Correo Farmacéutico and El Global rates, Infarma stand price.',
   'Date of the next Infarma.',
+  'Demand and price for a paid guide to transfer rules per autonomous community (the lab’s proposal).',
 ];

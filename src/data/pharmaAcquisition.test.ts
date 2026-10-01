@@ -4,6 +4,11 @@ import {
   APPROACHES,
   BASE_ASSUMPTIONS,
   PHARMA_FACTS,
+  PHARMA_LAB_CONTRAST,
+  PHARMA_LAB_KILL,
+  PHARMA_LAB_MODELS,
+  PHARMA_LAB_NEXT,
+  PHARMA_LAB_RUN,
   PHARMA_SOURCES,
   computeAll,
   computeApproach,
@@ -75,5 +80,31 @@ describe('Apotheken-Vermittlung: Kostenmodell', () => {
     }
     expect(FACTS_ES.length).toBe(PHARMA_FACTS.length);
     expect(TEST_ES.length).toBe(PHARMA_TEST_PLAN.length);
+  });
+
+  it('der Lab-Lauf ist dreisprachig und seine Faktenprüfung summiert sich auf 16', () => {
+    const reopen = PHARMA_LAB_MODELS.flatMap((m) => (m.reopen ? [m.reopen] : []));
+    for (const t of [...PHARMA_LAB_MODELS.flatMap((m) => [m.name, m.note]), ...reopen, ...PHARMA_LAB_CONTRAST, ...PHARMA_LAB_NEXT, ...PHARMA_LAB_KILL]) {
+      expect(t.de && t.en && t.es).toBeTruthy();
+    }
+    // Verworfene Modelle bleiben sichtbar und nennen, was sie wieder öffnen würde.
+    for (const m of PHARMA_LAB_MODELS) expect(Boolean(m.reopen)).toBe(m.status === 'killed');
+    expect(PHARMA_LAB_MODELS.filter((m) => m.status === 'shortlist').map((m) => m.id)).toEqual(['V1', 'V4']);
+    const c = PHARMA_LAB_RUN.factChecks;
+    expect(c.supported + c.partial + c.unsupported + c.unchecked).toBe(16);
+  });
+
+  it('stützt die Aussagen zum Lab-Lauf: kein Weg bringt im ersten Jahr einen ganzen Abschluss', () => {
+    for (const ap of APPROACHES) {
+      const r = computeApproach(ap);
+      if (r.monthsToFirstFee === null) continue;
+      // Erster Auftrag je nach Weg nach 2 bis 9 Monaten, Provision frühestens gerundet in Monat 10.
+      expect(ap.monthsToFirstLead + 1).toBeGreaterThanOrEqual(1.5);
+      expect(ap.monthsToFirstLead + 1).toBeLessThanOrEqual(9);
+      expect(Math.round(r.monthsToFirstFee)).toBeGreaterThanOrEqual(10);
+      const feePerClosing = BASE_ASSUMPTIONS.dealPriceEur * BASE_ASSUMPTIONS.feePct;
+      const paidYearOne = (cashCurve(ap, BASE_ASSUMPTIONS, 12)[12] + ap.setupEur + ap.monthlyEur * 12) / (feePerClosing * (1 - (ap.successFeeShare ?? 0)));
+      expect(paidYearOne).toBeLessThan(1);
+    }
   });
 });

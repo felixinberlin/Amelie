@@ -56,6 +56,10 @@ export const FACTS_ES: string[] = [
   '17 intermediarios en un listado; Farmaconsulting declara 80 profesionales y 22.000 compradores conocidos.',
   'El correo electrónico comercial no solicitado está prohibido por el art. 21 de la LSSI sin consentimiento, también entre empresas. Para llamadas puede servir el interés legítimo.',
   'Coste por lead en LinkedIn en España para B2B: de 25 a 100 €, habitualmente de 40 a 80 €.',
+  'La venta de una farmacia no es una compraventa corriente: se suman la regulación autonómica, los requisitos de titularidad y las autorizaciones administrativas.',
+  'La transmisión toca a la vez cuestiones administrativas, regulatorias, fiscales, laborales y patrimoniales.',
+  'Un intermediario general de empresas en España declara una comisión de éxito del 5 al 10 %. No es una tarifa de farmacias; el Lab no comprobó en la página el rango general del 1 al 10 %.',
+  'Mercado de farmacia en España (ventas de las farmacias): 20.050 M USD en 2022, previsión de 31.700 M USD en 2030. Mide lo que venden las farmacias, no las compraventas de farmacias.',
 ];
 
 /** Gleiche Reihenfolge wie PHARMA_TEST_PLAN. */
@@ -75,4 +79,5 @@ export const MISSING_ES: string[] = [
   'Origen legal de las direcciones de los titulares (colegios, registros autonómicos).',
   'Tarifa de Correos 2026 para cartas personalizadas, tarifas de Correo Farmacéutico y El Global, precio del stand de Infarma.',
   'Fecha de la próxima Infarma.',
+  'Demanda y precio de una guía normativa de pago por comunidad autónoma (propuesta del Lab).',
 ];
