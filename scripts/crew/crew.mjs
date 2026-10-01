@@ -98,6 +98,7 @@ export async function runAgent(opts) {
   const system = systemPrompt(def, profile);
 
   try {
+    await CONTRACTS[profile.contract].prepare?.();
     log(`[${agent}] Lauf ${record.run_id} mit ${spec.id}, ${tools.length} Werkzeuge`);
     const r = await runConversation(adapter, {
       system, user: task, tools, handlers,

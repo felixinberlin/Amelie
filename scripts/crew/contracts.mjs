@@ -100,10 +100,97 @@ export const CANDIDATES_SHAPE = `\`\`\`json
 }
 \`\`\``;
 
+// ---------------------------------------------------------------- Vertrag: Reviews (idea-reviewer)
+
+export const TRIAGE = ['Dose Ready', 'Market Route', 'Needs Research', 'Baustein', 'Friedhof'];
+export const DOSE_READY_GATE = 24;
+const VKEYS = ['V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8'];
+
+let graveEnums = null;
+/** Erlaubte Werte des Totenscheins aus src/types.ts (über die Bibliotheks-CLI, damit nichts auseinanderläuft). */
+export async function loadGraveEnums() {
+  if (!graveEnums) {
+    const { readEnum } = await import('../bibliothek-lib.mjs');
+    graveEnums = { cause: readEnum('Todesursache'), killer: readEnum('Killerart'), foundBy: readEnum('Fundweg') };
+  }
+  return graveEnums;
+}
+export function setGraveEnums(e) { graveEnums = e; }
+
+/**
+ * {
+ *   "reviews": [{ "id", "title", "vectors": {V1…V8: 1–5}, "kern", "gesamt", "triage", "begruendung",
+ *                 "gegenSuche"?, "dose"?: {empfaenger, ersterSchritt}, "market"?, "baustein"?,
+ *                 "grab"?: {cause, killer, foundBy, resurrectIfDe, resurrectIfEn} }],
+ *   "lehren": ["…"]
+ * }
+ */
+export function validateReviews(data) {
+  const errors = [];
+  if (!data || typeof data !== 'object' || Array.isArray(data)) return ['Wurzel: muss ein Objekt sein'];
+  if (!Array.isArray(data.reviews)) errors.push('reviews: muss eine Liste sein');
+  (data.reviews ?? []).forEach((r, i) => {
+    const p = `reviews[${i}]`;
+    if (!isStr(r?.id) || !SLUG.test(r.id)) errors.push(`${p}.id: Kurzname in Kleinbuchstaben mit Bindestrichen`);
+    need(errors, r, 'title', p);
+    need(errors, r, 'begruendung', p);
+    const v = r?.vectors ?? {};
+    for (const k of VKEYS) if (!Number.isInteger(v[k]) || v[k] < 1 || v[k] > 5) errors.push(`${p}.vectors.${k}: ganze Zahl 1–5`);
+    const kern = VKEYS.slice(0, 7).reduce((a, k) => a + (Number(v[k]) || 0), 0);
+    if (r?.kern !== kern) errors.push(`${p}.kern: muss die Summe V1–V7 sein (${kern}), nicht ${r?.kern}`);
+    if (r?.gesamt !== kern + (Number(v.V8) || 0)) errors.push(`${p}.gesamt: muss kern + V8 sein (${kern + (Number(v.V8) || 0)})`);
+    oneOf(errors, r, 'triage', p, TRIAGE);
+    if (r?.triage === 'Dose Ready') {
+      if (kern < DOSE_READY_GATE) errors.push(`${p}: „Dose Ready“ erst ab ${DOSE_READY_GATE}/35 (V8 zählt nicht), hier ${kern}`);
+      need(errors, r, 'gegenSuche', p, isStr, 'Text (eigene, unabhängige Gegen-Suche mit URL)');
+      need(errors, r?.dose ?? {}, 'empfaenger', `${p}.dose`);
+      need(errors, r?.dose ?? {}, 'ersterSchritt', `${p}.dose`);
+    }
+    if (r?.triage === 'Market Route') need(errors, r, 'market', p, isStr, 'Text (5 Commercial Vectors)');
+    if (r?.triage === 'Baustein') need(errors, r, 'baustein', p, isStr, 'Text (id der Dose, zu der es gehört)');
+    if (r?.triage === 'Friedhof') {
+      const g = r?.grab ?? {};
+      const e = graveEnums;
+      for (const f of ['cause', 'killer', 'foundBy']) {
+        if (e) oneOf(errors, g, f, `${p}.grab`, e[f]);
+        else need(errors, g, f, `${p}.grab`);
+      }
+      need(errors, g, 'resurrectIfDe', `${p}.grab`);
+      need(errors, g, 'resurrectIfEn', `${p}.grab`);
+    }
+  });
+  strList(errors, data, 'lehren', 'Wurzel');
+  return errors;
+}
+
+export const REVIEWS_SHAPE = `\`\`\`json
+{
+  "reviews": [
+    {
+      "id": "kurzname-wie-im-eingang",
+      "title": "Kurzname für Menschen",
+      "vectors": { "V1": 3, "V2": 3, "V3": 3, "V4": 3, "V5": 3, "V6": 3, "V7": 3, "V8": 2 },
+      "kern": 21,
+      "gesamt": 23,
+      "triage": "Dose Ready | Market Route | Needs Research | Baustein | Friedhof",
+      "begruendung": "Zwei, drei Sätze: warum diese Scores, warum dieses Urteil.",
+      "gegenSuche": "Pflicht bei Dose Ready: eigene Gegen-Suche mit URL",
+      "dose": { "empfaenger": "nur bei Dose Ready", "ersterSchritt": "nur bei Dose Ready" },
+      "market": "nur bei Market Route: WTP, Time-to-Ship, Channel, Monetization, Defensibility",
+      "baustein": "nur bei Baustein: id der Dose",
+      "grab": { "cause": "nur bei Friedhof", "killer": "…", "foundBy": "…", "resurrectIfDe": "Wann darf das Grab geöffnet werden?", "resurrectIfEn": "What new evidence would resurrect it?" }
+    }
+  ],
+  "lehren": ["…"]
+}
+\`\`\`
+Felder, die zum Urteil nicht passen, lässt du weg. kern = Summe V1–V7, gesamt = kern + V8. Erlaubte Werte für grab: \`run_cli bib grab werte\`.`;
+
 // ---------------------------------------------------------------- Register
 
 export const CONTRACTS = {
   candidates: { validate: validateCandidates, shape: CANDIDATES_SHAPE },
+  reviews: { validate: validateReviews, shape: REVIEWS_SHAPE, prepare: loadGraveEnums },
 };
 
 /** Prüft einen Bericht gegen einen Vertrag. { ok, data, errors } */

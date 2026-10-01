@@ -11,7 +11,8 @@ import { createProvider } from './model-compare/providers.mjs';
 import { withRetry } from './lab-librarian-agent.mjs';
 import { EXIT, fixedAdapter, runAgent } from './crew/crew.mjs';
 import { CREW, PROFILES } from './crew/profiles.mjs';
-import { listRuns, loadRun } from './crew/runs.mjs';
+import { listRuns, loadRun, saveRun } from './crew/runs.mjs';
+import { applyWrites } from './crew/write.mjs';
 
 const HELP = `Amélie-Crew — Agenten von der Kommandozeile
 
@@ -19,6 +20,7 @@ const HELP = `Amélie-Crew — Agenten von der Kommandozeile
   npm run agent -- <agent> [Auftrag] [Optionen]       einen Agenten laufen lassen
   npm run agent -- runs [--agent <name>] [--json]     Läufe auflisten (neueste zuerst)
   npm run agent -- show <run> [--json]                einen Lauf zeigen (run_id, Pfad oder latest:<agent>)
+  npm run agent -- write <run> [--dry-run]            Schreibweg eines früheren Laufs ausführen (nach Durchsicht)
 
 Auftrag (einer davon):
   --thema "<Thema>"        Standardauftrag des Agenten zu einem Thema
@@ -33,6 +35,8 @@ Optionen:
   --max-turns <n>          Werkzeugrunden (Standard 20)
   --search                 Websuche des Anbieters statt Lab-Suchdienst
   --no-repair              keinen Reparaturaufruf bei Vertragsfehlern
+  --write                  nach einem ok-Lauf den erlaubten Schreibweg ausführen (eigenes Log; Bibliothekar: bib apply)
+  --dry-write              Schreibweg nur zeigen bzw. prüfen, nichts ändern
   --json                   Laufdatensatz als JSON auf stdout (für Skripte), sonst der Bericht
   --runs-dir <Pfad>        anderes Laufverzeichnis (Standard 06-suche/agent-runs, oder AMELIE_RUNS)
 
@@ -76,6 +80,12 @@ async function main() {
     return EXIT.OK;
   }
 
+  if (cmd === 'write') {
+    let r;
+    try { r = loadRun(repoRoot, argv[1], { dir }); } catch (e) { err(e.message); return EXIT.USAGE; }
+    return doWrite(r, { dryRun: flag('dry-run') });
+  }
+
   if (!PROFILES[cmd]) { err(`„${cmd}“ ist kein Agent und kein Befehl.\n\n${HELP}`); return EXIT.USAGE; }
   const agent = cmd;
   const task = opt('task') ?? (opt('task-file') ? readFileSync(opt('task-file'), 'utf8') : undefined);
@@ -102,12 +112,31 @@ async function main() {
     });
   } catch (e) { err(e.message); return EXIT.USAGE; }
 
+  let code = record.status === 'ok' ? EXIT.OK : EXIT.INCOMPLETE;
+  if (code === EXIT.OK && (flag('write') || flag('dry-write'))) code = await doWrite(record, { dryRun: flag('dry-write'), quiet: true });
   if (flag('json')) console.log(JSON.stringify(record, null, 2));
   else console.log(record.report || '(kein Bericht)');
   if (record.errors.length) err(`\nFehler:\n- ${record.errors.join('\n- ')}`);
   err(`\n[${record.agent}] ${record.status} · ${record.summary} · ${record.usage.in} Token ein, ${record.usage.out} aus · ${record.cost_usd ?? '?'} USD · ${record.toolLog.length} Werkzeugaufrufe`);
   err(`[${record.agent}] run_id=${record.run_id} datei=${record.files?.json ?? '-'}`);
-  return record.status === 'ok' ? EXIT.OK : EXIT.INCOMPLETE;
+  return code;
+}
+
+/** Schreibweg eines Laufs ausführen und den Datensatz mit dem Ergebnis neu speichern. */
+async function doWrite(record, { dryRun, quiet = false }) {
+  const profile = PROFILES[record.agent];
+  if (!profile?.writes) { err(`${record.agent} schreibt laut Definition nichts.`); return EXIT.USAGE; }
+  try {
+    const done = await applyWrites({ root: repoRoot, record, profile, dryRun });
+    for (const w of done) err(`[${record.agent}] ${dryRun ? 'würde schreiben' : 'geschrieben'}: ${w.file ?? `bib apply ${w.plan_id} (Akteur ${w.actor})`}${w.bytes ? `, ${w.bytes} Byte` : ''}`);
+    if (dryRun && !quiet) for (const w of done) if (w.preview) console.log(`--- ${w.file} (Vorschau) ---\n${w.preview}${w.bytes > 600 ? '\n[…]' : ''}`);
+    return EXIT.OK;
+  } catch (e) {
+    err(`[${record.agent}] Schreiben abgelehnt: ${e.message}`);
+    return EXIT.WRITE_FAILED;
+  } finally {
+    saveRun(repoRoot, record, { dir });
+  }
 }
 
 main().then((code) => process.exit(code)).catch((e) => { err(e?.stack ?? String(e)); process.exit(EXIT.INCOMPLETE); });

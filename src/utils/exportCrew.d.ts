@@ -8,6 +8,10 @@ declare module '*crew/contracts.mjs' {
   export function validateCandidates(data: any): string[];
   export function validateReviews(data: any): string[];
   export function validateLibrarian(data: any): string[];
+  export const TRIAGE: string[];
+  export const DOSE_READY_GATE: number;
+  export function loadGraveEnums(): Promise<{ cause: string[]; killer: string[]; foundBy: string[] }>;
+  export function setGraveEnums(e: any): void;
   export function checkReport(contract: string, text: unknown): { ok: boolean; data: any; errors: string[] };
 }
 declare module '*crew/crew.mjs' {
@@ -20,6 +24,7 @@ declare module '*crew/crew.mjs' {
 declare module '*crew/profiles.mjs' {
   export const PROFILES: Record<string, any>;
   export const CREW: string[];
+  export function candidatesFromInputs(inputs: any[]): any[];
 }
 declare module '*crew/runs.mjs' {
   export const RUNS_DIR: string;
@@ -30,7 +35,9 @@ declare module '*crew/runs.mjs' {
   export function loadRun(root: string, ref: string, o?: { dir?: string }): any;
 }
 declare module '*crew/write.mjs' {
+  export const LOGS: Record<string, string>;
   export function appendLog(o: any): any;
+  export function bibApply(o: any): { status: number; out: any };
   export function renderLogSection(o: any): string;
   export function applyWrites(o: any): Promise<any>;
 }

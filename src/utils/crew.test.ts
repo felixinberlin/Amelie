@@ -162,3 +162,96 @@ describe('crew: Kommandozeile', () => {
     expect(cli(['ideen-scout', '--thema', 'x', '--mock', '--input', 'nirgends'], dir).status).toBe(EXIT.USAGE);
   });
 });
+
+// ---------------------------------------------------------------- idea-reviewer
+
+import { validateReviews } from '../../scripts/crew/contracts.mjs';
+import { applyWrites, renderLogSection } from '../../scripts/crew/write.mjs';
+import { mkdirSync, writeFileSync } from 'node:fs';
+
+const review = (o: any = {}) => ({
+  id: 'test-idee', title: 'Test-Idee', vectors: { V1: 3, V2: 3, V3: 3, V4: 3, V5: 3, V6: 3, V7: 3, V8: 2 }, kern: 21, gesamt: 23,
+  triage: 'Friedhof', begruendung: 'b',
+  grab: { cause: 'gebaut', killer: 'kommerziell', foundBy: 'deutsch', resurrectIfDe: 'x', resurrectIfEn: 'y' }, ...o,
+});
+const engineRun = (agent: string, cands: any[]) => ({ run_id: `${agent}-r`, agent, contract: 'candidates', status: 'ok', data: { candidates: cands } });
+const cand = (id: string, urteil = 'verengt') => ({ ...goodCandidates.candidates[0], id, urteil });
+
+describe('crew: idea-reviewer', () => {
+  it('Vertrag rechnet Kern und Gesamt nach und kennt die Gates', async () => {
+    const { loadGraveEnums } = await import('../../scripts/crew/contracts.mjs');
+    await loadGraveEnums();
+    expect(validateReviews({ reviews: [review()], lehren: [] })).toEqual([]);
+    const e = validateReviews({ reviews: [
+      review({ kern: 20 }),
+      review({ id: 'zu-schwach', triage: 'Dose Ready' }),
+      review({ id: 'ohne-schein', grab: { cause: 'erfunden' } }),
+      review({ id: 'v8-zu-gross', vectors: { V1: 3, V2: 3, V3: 3, V4: 3, V5: 3, V6: 3, V7: 3, V8: 6 }, gesamt: 27 }),
+      review({ id: 'baustein', triage: 'Baustein', grab: undefined }),
+    ] }).join('\n');
+    expect(e).toMatch(/kern: muss die Summe V1–V7 sein \(21\), nicht 20/);
+    expect(e).toMatch(/„Dose Ready“ erst ab 24\/35/);
+    expect(e).toMatch(/gegenSuche/);
+    expect(e).toMatch(/grab\.cause: „erfunden“ ist nicht erlaubt/);
+    expect(e).toMatch(/resurrectIfDe/);
+    expect(e).toMatch(/V8: ganze Zahl 1–5/);
+    expect(e).toMatch(/baustein: fehlt/);
+    const ok = review({ id: 'dose', vectors: { V1: 4, V2: 4, V3: 4, V4: 3, V5: 3, V6: 3, V7: 3, V8: 2 }, kern: 24, gesamt: 26, triage: 'Dose Ready', gegenSuche: 'x https://e.org', dose: { empfaenger: 'Amt', ersterSchritt: 'Mail' }, grab: undefined });
+    expect(validateReviews({ reviews: [ok] })).toEqual([]);
+  });
+
+  it('Auftrag aus Engine-Läufen: ohne besetzte, mit Doppelfunden', () => {
+    const task = PROFILES['idea-reviewer'].buildTask({ inputs: [
+      engineRun('ideen-scout', [cand('a'), cand('b', 'besetzt')]),
+      engineRun('inversions-agent', [cand('a'), cand('c', 'unklar')]),
+      { ...engineRun('bisoziations-kollider', [cand('d')]), status: 'contract_failed' },
+    ] });
+    expect(task).toMatch(/- a \(DOPPELFUND: ideen-scout \+ inversions-agent\)/);
+    expect(task).toMatch(/- c:/);
+    expect(task).not.toMatch(/- b:/);
+    expect(task).not.toMatch(/- d:/); // kaputte Läufe zählen nicht
+    expect(() => PROFILES['idea-reviewer'].buildTask({ inputs: [] })).toThrow(/--input/);
+  });
+
+  it('schreibt nur mit Freigabe, nur ins eigene Log, nur einmal', async () => {
+    const root = mkdtempSync(join(tmpdir(), 'crew-root-'));
+    mkdirSync(join(root, '06-suche'));
+    writeFileSync(join(root, '06-suche/amelie-classification-log.md'), '# Log\n\n## Alt\n\nText\n');
+    const record: any = { run_id: 'idea-reviewer-x', agent: 'idea-reviewer', status: 'ok', started: '2026-10-01T10:00:00Z', model: { id: 'm' }, inputs: ['ideen-scout-r'], thema: 'Holz', report: `# Kopf\n\nBefund.\n\n\`\`\`json\n{}\n\`\`\``, data: { reviews: [review()], lehren: [] }, writes: [] };
+    const profile = PROFILES['idea-reviewer'];
+    const dry = await applyWrites({ root, record, profile, dryRun: true });
+    expect(dry[0].dryRun).toBe(true);
+    expect(readFileSync(join(root, '06-suche/amelie-classification-log.md'), 'utf8')).not.toContain('Kommandozeile');
+    await applyWrites({ root, record, profile });
+    const log = readFileSync(join(root, '06-suche/amelie-classification-log.md'), 'utf8');
+    expect(log).toContain('## Review „Holz“ per Kommandozeile (01.10.2026)');
+    expect(log).toContain('| Test-Idee (`test-idee`) | 3 | 3 | 3 | 3 | 3 | 3 | 3 | **21** | 2 | 23 | Friedhof |');
+    expect(log).toContain('Befund.');
+    expect(log).not.toContain('```json');
+    expect(log.startsWith('# Log\n\n## Alt')).toBe(true);
+    await expect(applyWrites({ root, record, profile })).rejects.toThrow(/schon geschrieben/);
+    await expect(applyWrites({ root, record: { ...record, status: 'contract_failed', writes: [] }, profile })).rejects.toThrow(/nicht „ok“/);
+    await expect(applyWrites({ root, record: { ...record, agent: 'ideen-scout', writes: [] }, profile: PROFILES['ideen-scout'] })).rejects.toThrow(/schreibt laut Definition nichts/);
+  });
+
+  it('Log-Abschnitt hebt Überschriften des Berichts unter den Kopf', () => {
+    const s = renderLogSection({ record: { run_id: 'r', agent: 'a', started: '2026-10-01T00:00:00Z', model: { id: 'm' }, report: '# Titel\n\n## Teil\n\nx' }, title: 'T' });
+    expect(s).toMatch(/^## T \(01\.10\.2026\)/);
+    expect(s).toContain('### Teil');
+    expect(s).not.toContain('# Titel');
+  });
+
+  it('Kette per CLI: Scout-Lauf als Eingang des Reviewers', () => {
+    const dir = tmpRuns();
+    const cli = (args: string[]) => spawnSync('node', ['scripts/agent-run.mjs', ...args, '--runs-dir', dir], { cwd: ROOT, encoding: 'utf8' });
+    expect(cli(['ideen-scout', '--thema', 'Holz', '--mock']).status).toBe(0);
+    const r = cli(['idea-reviewer', '--input', 'latest:ideen-scout', '--mock', '--json']);
+    expect(r.status).toBe(0);
+    const rec = JSON.parse(r.stdout);
+    expect(rec.inputs[0]).toMatch(/^ideen-scout-/);
+    expect(rec.data.reviews.map((x: any) => x.id)).toEqual(['mock-idee-a']);
+    const w = cli(['write', rec.run_id, '--dry-run']);
+    expect(w.status).toBe(0);
+    expect(w.stdout).toContain('amelie-classification-log.md (Vorschau)');
+  });
+});
