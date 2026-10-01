@@ -110,6 +110,7 @@ export async function runAgent(opts) {
       system, user, tools, handlers,
       nativeSearch: !!opts.kitOptions?.nativeSearch && def.tools.includes('WebSearch'),
       maxTurns, meta: { engine: agent },
+      ...(profile.requireSearch && (opts.enforce ?? spec.provider !== 'mock') ? { requireTool: { names: ['web_search'], max: 2, nudge: 'Du hast noch keine einzige Suche gemacht. Ohne web_search gilt kein Urteil, das Programm stuft es herab. Rufe jetzt web_search auf (Empfänger zuerst, dann Konkurrenz), hole die wichtigsten Treffer mit web_fetch und schreibe danach deinen Bericht neu.' } } : {}),
     });
     let r = await converse(task);
     record.usage = addUsage(record.usage, r.usage);

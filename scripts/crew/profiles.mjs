@@ -25,6 +25,7 @@ const count = (list, key, values) => values.map((v) => `${list.filter((x) => x?.
 
 const SEARCHED = new Set(['web_search', 'web_fetch']);
 const callsOf = (toolLog, names) => (toolLog ?? []).filter((t) => names.has(t.name)).length;
+const SEARCH_PAGE = /^https?:\/\/([a-z0-9-]+\.)*(google\.[a-z.]+\/(search|url)|bing\.com\/search|duckduckgo\.com\/\?|search\.brave\.com|startpage\.com)/i;
 const PLACEHOLDER_RECIPIENT = /^(felix|félix|ich|niemand|unbekannt|tbd|n\/a|–|-)\b/i;
 
 /** Engines: ohne Suchaufruf im Lauf gibt es kein frei/verengt; „seite“ nur mit mindestens einem web_fetch. */
@@ -54,7 +55,10 @@ export function downgradeReviews(data, { toolLog }) {
     if (r.triage !== 'Dose Ready') continue;
     const why = [];
     if (!searched) why.push('kein web_search/web_fetch im Lauf');
-    if (!/https?:\/\//.test(String(r.gegenSuche ?? ''))) why.push('Gegen-Suche ohne URL');
+    const urls = String(r.gegenSuche ?? '').match(/https?:\/\/[^\s)\]>"']+/g) ?? [];
+    const real = urls.filter((u) => !SEARCH_PAGE.test(u));
+    if (!urls.length) why.push('Gegen-Suche ohne URL');
+    else if (!real.length) why.push('Gegen-Suche nennt nur Suchmaschinen-Links, keine Fundstelle');
     if (PLACEHOLDER_RECIPIENT.test(String(r.dose?.empfaenger ?? '').trim())) why.push(`Empfänger „${r.dose?.empfaenger}“ ist keine Stelle`);
     if (!why.length) continue;
     notes.push(`${r.id}: Dose Ready → Needs Research (${why.join('; ')})`);

@@ -16,12 +16,18 @@ const SDK_HINT = { anthropic: '@anthropic-ai/sdk', 'vertex-claude': '@anthropic-
 
 // ---------------------------------------------------------------- Gesprächsschleife
 
-export async function runConversation(adapter, { system, user, tools, handlers, nativeSearch = false, maxTurns = 20, meta = {} }) {
+/**
+ * requireTool: { names: [..], nudge: 'Text', max: 2 } — beendet das Modell ohne einen Aufruf eines dieser Werkzeuge,
+ * hängt das Programm `nudge` als Nutzerzeile an (adapter.addUser) und zwingt den nächsten Schritt auf eines dieser
+ * Werkzeuge (Gemini: Function-Calling-Modus ANY, Claude: tool_choice). So kann sich ein Modell nicht an der Suche vorbeimogeln.
+ */
+export async function runConversation(adapter, { system, user, tools, handlers, nativeSearch = false, maxTurns = 20, meta = {}, requireTool = null }) {
   const state = await adapter.start({ system, user, tools, nativeSearch, meta });
   const toolLog = [];
   const usage = { in: 0, out: 0, turns: 0, searches: 0 };
   let text = '';
   let stop = '';
+  let nudges = 0;
   for (let turn = 0; turn < maxTurns; turn++) {
     const r = await adapter.step(state);
     usage.turns++;
@@ -31,7 +37,18 @@ export async function runConversation(adapter, { system, user, tools, handlers, 
     if (r.text) text = r.text;
     stop = r.stop ?? '';
     if (r.resume && !r.calls?.length) continue; // serverseitige Pause (Anthropic pause_turn): weitermachen
-    if (!r.calls?.length) return { text, usage, toolLog, stop, turns: usage.turns };
+    state.force = null;
+    if (!r.calls?.length) {
+      const need = requireTool && requireTool.names.some((n) => handlers[n]) && !toolLog.some((t) => requireTool.names.includes(t.name));
+      if (need && adapter.addUser && nudges < (requireTool.max ?? 2)) {
+        nudges++;
+        adapter.addUser(state, requireTool.nudge);
+        state.force = requireTool.names.filter((n) => handlers[n]);
+        usage.nudges = nudges;
+        continue;
+      }
+      return { text, usage, toolLog, stop, turns: usage.turns };
+    }
     const results = [];
     for (const c of r.calls) {
       const h = handlers[c.name];
@@ -91,6 +108,7 @@ function claudeAdapter(spec, client) {
       const req = { model: spec.model, max_tokens: spec.maxTokens ?? 16000, system: st.system, messages: st.messages };
       if (st.tools.length) req.tools = st.tools;
       if (spec.effort) req.output_config = { effort: spec.effort };
+      if (st.force?.length && st.tools.length && !spec.effort) req.tool_choice = st.force.length === 1 ? { type: 'tool', name: st.force[0] } : { type: 'any' };
       const resp = await client.messages.create(req);
       st.messages.push({ role: 'assistant', content: resp.content }); // vollständig zurückgeben (Thinking-Blöcke müssen bleiben)
       const blocks = resp.content ?? [];
@@ -105,6 +123,7 @@ function claudeAdapter(spec, client) {
         resume: resp.stop_reason === 'pause_turn',
       };
     },
+    addUser(st, text) { st.messages.push({ role: 'user', content: [{ type: 'text', text }] }); },
     addToolResults(st, results) {
       st.messages.push({ role: 'user', content: results.map((r) => ({ type: 'tool_result', tool_use_id: r.id, content: r.content })) });
     },
@@ -127,6 +146,7 @@ function geminiAdapter(spec, client) {
     async step(st) {
       const config = { systemInstruction: st.system, maxOutputTokens: spec.maxTokens ?? 16000 };
       if (st.tools.length) config.tools = st.tools;
+      if (st.force?.length && st.tools.length && !st.tools.some((t) => t.googleSearch)) config.toolConfig = { functionCallingConfig: { mode: 'ANY', allowedFunctionNames: st.force } };
       if (spec.temperature != null) config.temperature = spec.temperature;
       const resp = await client.models.generateContent({ model: spec.model, contents: st.contents, config });
       const cand = resp.candidates?.[0];
@@ -139,6 +159,7 @@ function geminiAdapter(spec, client) {
       st.lastCalls = calls;
       return { text, calls, usage: { in: u.promptTokenCount ?? 0, out: (u.candidatesTokenCount ?? 0) + (u.thoughtsTokenCount ?? 0) }, stop: String(cand?.finishReason ?? '') };
     },
+    addUser(st, text) { st.contents.push({ role: 'user', parts: [{ text }] }); },
     addToolResults(st, results) {
       st.contents.push({
         role: 'user',

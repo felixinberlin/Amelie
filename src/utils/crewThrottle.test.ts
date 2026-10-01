@@ -165,3 +165,60 @@ describe('Suchpflicht: Neustart ohne Suche', () => {
     expect(again.restarted).toBeUndefined();
   });
 });
+
+describe('Erzwungene Suche auf API-Ebene', () => {
+  const run = (script: any[]) => {
+    const forced: any[] = []; const users: string[] = []; let i = 0;
+    const adapter: any = {
+      start: () => ({}),
+      async step(st: any) { forced.push(st.force ?? null); return script[Math.min(i++, script.length - 1)]; },
+      addUser: (_st: any, t: string) => users.push(t),
+      addToolResults() {},
+    };
+    return { adapter, forced, users };
+  };
+  const req = { names: ['web_search'], nudge: 'SUCHE JETZT', max: 2 };
+
+  it('Antwort ohne Suche: Nutzerzeile und erzwungener Werkzeugaufruf im nächsten Schritt', async () => {
+    const t2 = run([{ text: 'fertig ohne Suche', calls: [], usage: {} }, { text: '', calls: [{ id: '1', name: 'web_search', args: { question: 'x y z' } }], usage: {} }, { text: 'jetzt mit Suche', calls: [], usage: {} }]);
+    const out = await runConversation(t2.adapter, { system: 's', user: 'u', tools: [], handlers: { web_search: async () => 'treffer' }, requireTool: req });
+    expect(t2.users).toEqual(['SUCHE JETZT']);
+    expect(t2.forced).toEqual([null, ['web_search'], null]);
+    expect(out.text).toBe('jetzt mit Suche');
+    expect(out.toolLog.map((x: any) => x.name)).toEqual(['web_search']);
+  });
+
+  it('gibt nach max Aufforderungen auf und lässt Läufe mit Suche in Ruhe', async () => {
+    const stubborn = run([{ text: 'nein', calls: [], usage: {} }]);
+    const out = await runConversation(stubborn.adapter, { system: 's', user: 'u', tools: [], handlers: { web_search: async () => 'x' }, requireTool: req });
+    expect(stubborn.users.length).toBe(2);
+    expect(out.text).toBe('nein');
+    const fine = run([{ text: '', calls: [{ id: '1', name: 'web_search', args: {} }], usage: {} }, { text: 'ok', calls: [], usage: {} }]);
+    await runConversation(fine.adapter, { system: 's', user: 'u', tools: [], handlers: { web_search: async () => 'x' }, requireTool: req });
+    expect(fine.users).toEqual([]);
+  });
+
+  it('Gemini: toolConfig ANY nur im erzwungenen Schritt; Claude: tool_choice', async () => {
+    const { createProvider } = await import('../../scripts/model-compare/providers.mjs');
+    const seen: any[] = [];
+    const client = { models: { generateContent: async (a: any) => { seen.push(a.config.toolConfig ?? null); return { candidates: [{ content: { role: 'model', parts: [{ text: 'x' }] }, finishReason: 'STOP' }], usageMetadata: {} }; } } };
+    const g: any = await createProvider({ id: 'g', provider: 'gemini', model: 'm' }, { client });
+    const st = g.start({ system: 's', user: 'u', tools: [{ name: 'web_search', description: 'd', input_schema: { type: 'object' } }] });
+    await g.step(st); st.force = ['web_search']; await g.step(st);
+    expect(seen).toEqual([null, { functionCallingConfig: { mode: 'ANY', allowedFunctionNames: ['web_search'] } }]);
+    const reqs: any[] = [];
+    const cclient = { messages: { create: async (a: any) => { reqs.push(a.tool_choice ?? null); return { content: [{ type: 'text', text: 'x' }], stop_reason: 'end_turn', usage: {} }; } } };
+    const c: any = await createProvider({ id: 'c', provider: 'anthropic', model: 'm' }, { client: cclient });
+    const cs = c.start({ system: 's', user: 'u', tools: [{ name: 'web_search', description: 'd', input_schema: { type: 'object' } }] });
+    await c.step(cs); cs.force = ['web_search']; await c.step(cs);
+    expect(reqs).toEqual([null, { type: 'tool', name: 'web_search' }]);
+  });
+
+  it('Reviewer: erfundene Suchmaschinen-Links sind keine Fundstelle', () => {
+    const r = (g: string) => ({ reviews: [{ id: 'x-y', triage: 'Dose Ready', gegenSuche: g, dose: { empfaenger: 'BAW' }, begruendung: 'b' }] });
+    const tl = [{ name: 'web_search' }];
+    expect(downgradeReviews(r('https://www.google.com/search?q=fischabstieg+tool'), { toolLog: tl })[0]).toMatch(/Suchmaschinen-Links/);
+    expect(downgradeReviews(r('siehe https://www.baw.de/de/forschung.html'), { toolLog: tl })).toEqual([]);
+    expect(downgradeReviews(r('https://www.google.com/search?q=a und https://baw.de/x'), { toolLog: tl })).toEqual([]);
+  });
+});
