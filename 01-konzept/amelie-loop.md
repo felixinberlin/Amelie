@@ -108,7 +108,7 @@ Damit du nach sechs Monaten beurteilen kannst, ob das funktioniert, statt zu rat
 
 ## Abbruch
 
-F.A.T. Lab war acht Jahre laut und produktiv und hat dann bewusst aufgehört. Das ist ein Vorbild, kein Scheitern.
+F.A.T. Lab war acht Jahre laut und produktiv und hat dann bewusst aufgehört. Das ist ein Vorbild, kein Scheitern. (Seit 2025 gibt es mit [fffff.ai](https://fffff.ai) einen Reboot; Kontaktwege: `02-recherche/amelie-verwandte.md`.)
 
 **Amélie endet,** wenn nach einem Jahr weder Antworten noch Energie da sind. Dann: Archiv veröffentlichen, einen kurzen Text schreiben, was gelernt wurde, Repo einfrieren. Ein Projekt, das enden darf, ist ein Projekt, das man anfangen kann.
 

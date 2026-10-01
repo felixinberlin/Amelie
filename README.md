@@ -58,6 +58,7 @@ For details on contributing translations or updating strings via CAT tools (Omeg
 
 ### `02-recherche/` — why it works this way and not another
 - **amelie-landschaft.md** — comparable projects worldwide, eight families from YC to TDCommons, with seven findings
+- **amelie-verwandte.md** — the closest relatives and neighbours (F.A.T. Lab, Precious Plastic, open-source-ideas …) with verified contact routes
 - **amelie-bewegungen.md** — the movements behind it: potlatch, the kula ring, Bhoodan, free software, Repair Café, dāna, and sadaqah jariyah
 
 ### `03-zuordnung/` — who gets what

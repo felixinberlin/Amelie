@@ -83,6 +83,8 @@ Wenn du ein Ticket, ein Kriterium oder eine Dosen-Beschreibung änderst, musst d
 
 ## 5. Aktueller Projektstand (Stand: 28. September 2026)
 
+* **Verwandten-Recherche (01.10.2026):** Dossier `02-recherche/amelie-verwandte.md` (en: `amelie-relatives.md`) mit Kontaktwegen zu F.A.T. Lab/fffff.ai (Reboot 2025), Precious Plastic, Open Source Ecology, open-source-ideas, somebodymakethis, captn3m0, WikiHouse, L'Atelier Paysan, Farm Hack, TDCommons, Wikimedia-Wunschliste (Frist 08.11.2026) plus eigene Funde (OK Lab Berlin, Civic Tech Field Guide, Up For Grabs, Zenodo, OSHWA); 8 Quellen im Register (267). **Nichts versendet**; Bartholls Adresse und `hello@wikihouse.cc` unverifiziert; TDCommons-Betreiber laut FAQ bepress/Google, nicht Santa Clara (Landschaftsdoku abgleichen).
+
 * **Glasanflug-Antwort (30.09.2026):** Standardantwort der NABU-Bundesgeschäftsstelle auf Mail 5 (Sammeladresse, 22.09.): kein Interesse an der Idee bekundet, aber Korrektur: WUA-Markierungsbewertungen sind produktspezifisch und nicht rechtsverbindlich (Mailsatz zu „zertifizierten 9x9-Rastern" war zu stark, in `deliveries.ts` und den Entwürfen korrigiert). Dose um „Antwort und Lehre" ergänzt, Simulator um **Markierungs-Abgleich** (`src/engine/glasanflug/markierung.ts`, Tatsachenauszug der WUA-Broschüre 2022, sagt nie „unwirksam", nur „nicht getestet" oder „außerhalb des Geltungsbereichs"). **Offen:** Nachnutzungsrecht an der WUA-Tabelle ungeklärt; Eigentümerin ist die WUA Wien, ein anderer Empfänger als NABU/LAG VSW (Ansprechperson nicht verifiziert). Ventures-Prüfung: als Produkt Kill, besser Gabe. Keine Mail angelegt.
 
 * **Farmacia-Runde (30.09.2026, Teamrunde 5, auf Wunsch nach dem Ventures-Lauf):**

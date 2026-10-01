@@ -196,6 +196,8 @@ Zweitnächster Verwandter, und das mit Absicht: **F.A.T. Lab**. Klein, laut, all
 
 ---
 
+**Kontaktwege und weitere Nachbarn:** siehe [`amelie-verwandte.md`](amelie-verwandte.md).
+
 ## Quellen
 
 Kapitalgeber: [YC Requests for Startups](https://www.ycombinator.com/rfs) · [Emergent Ventures](https://www.mercatus.org/emergent-ventures) · [ACX Grants](https://www.astralcodexten.com/p/acx-grants-results-2025)

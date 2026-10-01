@@ -7,7 +7,7 @@ Runde 2 hat gezeigt: Überlebende Ideen kommen aus Primärquellen, nicht aus Bra
 
 **Status:** `offen` (Nie gegraben oder nur als Anker genannt.) · `angekratzt` (Eine Suche oder ein Schnipsel; Publikationsliste nicht gelesen.) · `durchsucht` (Publikationsliste/Seite selbst gelesen.) · `erschöpft` (Anker dicht, kein weiterer Kandidat zu erwarten.) · `gesperrt` (Nicht (mehr) nutzen, z. B. Empfänger mit Nachfass-Sperre.)
 
-**Bestand:** 259 Quellen · 43 offen · 141 angekratzt · 53 durchsucht · 19 erschöpft · 3 gesperrt · Evidenz: 119 gelesen, 116 nur Schnipsel, 24 unbekannt.
+**Bestand:** 267 Quellen · 43 offen · 141 angekratzt · 61 durchsucht · 19 erschöpft · 3 gesperrt · Evidenz: 127 gelesen, 116 nur Schnipsel, 24 unbekannt.
 
 **Vektoren Q1–Q6** (1–5, Summe /30): Q1 Ergiebigkeit · Q2 Restpotenzial · Q3 Zugang · Q4 Belastbarkeit · Q5 Geländefreiheit · Q6 Anschluss. `auto` = aus Status/Evidenz/Ertrag abgeleitet, noch nicht bewertet.
 
@@ -108,6 +108,7 @@ Runde 2 hat gezeigt: Überlebende Ideen kommen aus Primärquellen, nicht aus Bra
 | **Vergabemarktplatz Brandenburg, CPV 77200000 Forstdienstleistungen (Portal)** `vergabemarktplatz-brandenburg-cpv-772000` | Forst- und Fällaufträge (LFB, Kommunen), kostenlose Alerts | Webseite | `angekratzt` *(30.09.2026: Stand 30.09.2026 laufend: LfU-Los Artenhilfsmaßnahme Magerrasen Schönwalde (Frist 05.10.2026) und Berlin-Senat-Los Landschaftspflege FFH/NSG (Frist 20.10.2026); Einzelausschreibungen sind Hinweis, keine eigene Quelle.)* | 30.09.2026 | – | 21* |
 | **tendigo (Ausschreibungsportal)** `tendigo-ausschreibungsportal` | Aggregator für Ausschreibungen; Fundstelle des Loses Artenhilfsmaßnahme FFH-Gebiet Magerrasen Schönwalde | Webseite | `angekratzt` *(30.09.2026: Schönwalde-Los gelesen (Frist 05.10.2026), Einzellos ist Hinweis, keine eigene Quelle.)* | 30.09.2026 | – | 21* |
 | **Manuelle Detektion und Klassifikation von Kampfmitteln im Boden** `itv-altlasten-manuelle-detektion-und-klassifikation` | Manuelle Detektion und Klassifikation von Kampfmitteln im Boden (Typ D: research without a tool); Anker des Lab-Laufs lacunar-20260930T100431-797290, nicht gelesen. *[Schnipsel]* | Webseite | `angekratzt` *(30.09.2026: Anker des Lab-Laufs lacunar-20260930T100431-797290 (Jamlitz, Lieberose); nur als Suchtreffer gelesen.)* | 30.09.2026 | – | 21* |
+| **Wikimedia Community Wishlist** `wikimedia-community-wishlist` | Wunschpipeline Community zu Foundation; Einreichfrist 8.11.2026, Abstimmung 8.-24.1.2027 | Webseite | `durchsucht` *(01.10.2026: Nur Ideen mit Wikimedia-Bezug.)* | 01.10.2026 | – | 21* |
 
 ## Typ E — Behördliche Mengen- und Kostenstatistiken
 
@@ -267,6 +268,12 @@ Runde 2 hat gezeigt: Überlebende Ideen kommen aus Primärquellen, nicht aus Bra
 | **Stolpersteine Guide** `stolpersteine-guide` | Bundesweite Karte und App zu Stolpersteinen mit Biografien *[Schnipsel]* | Webseite | `angekratzt` *(01.10.2026: Ortsgebundene Erinnerungs-App für NS-Opfer existiert.)* | 01.10.2026 | Grab `erinnerungsspuren-zerfall` | 21* |
 | **MIT Design Lab Memory Traces** `mit-design-lab-memory-traces` | 150 ortsgebundene Erinnerungsepisoden aus Boston mit Mobile-App (2012) | Webseite | `angekratzt` *(01.10.2026: Frühes Vorbild ortsgebundener Erinnerungsspuren.)* | 01.10.2026 | Grab `erinnerungsspuren-zerfall` | 21* |
 | **Stadt Brandenburg an der Havel Friedenswarte-Friedensbotschaften** `stadt-brandenburg-an-der-havel-friedensw` | Schulprojekt 2024 mit Friedensplakaten an der Friedenswarte | Webseite | `angekratzt` *(01.10.2026: Negativbefund, kein Träger für Friedensimpulse.)* | 01.10.2026 | Grab `erinnerungs-emotionskarte` | 21* |
+| **F.A.T. Lab und fffff.ai (Reboot 2025)** `f-a-t-lab-und-fffff-ai-reboot-2025` | Nächste Verwandte: Public-Domain-Kollektiv 2007-2015 (Archiv fffff.at), Reboot als Free Art & Intelligence (fffff.ai) mit Dan Moore und Tobias Leingruber; Aram Bartholl lebt in Berlin | Webseite | `durchsucht` *(01.10.2026: Kontaktweg Bartholl über Inquiries-Mail auf arambartholl.com/info, Adresse dort verschleiert; Verwandtendossier 02-recherche/amelie-verwandte.md.)* | 01.10.2026 | – | 21* |
+| **Precious Plastic** `precious-plastic` | Offene Maschinenpläne als ausführbares Geschenk; Kontakt hello@preciousplastic.com, Discord, keine individuelle Rückmeldung zu Ideen | Webseite | `durchsucht` *(01.10.2026: Nur Community-Kanäle für Einzelfragen.)* | 01.10.2026 | – | 21* |
+| **Open Source Ecology** `open-source-ecology` | Global Village Construction Set; Kontakt info@opensourceecology.org, Wiki, Forum, IRC | Webseite | `durchsucht` *(01.10.2026: Seite nennt sich derzeit nicht medienbereit.)* | 01.10.2026 | – | 21* |
+| **open-source-ideas (GitHub)** `open-source-ideas-github` | Ideenboard für OSS-Projekte, Ideen als Issues, rund 6,8k Sterne | Webseite | `durchsucht` *(01.10.2026: Besetzt-Test-Quelle für Ideen ohne Empfänger.)* | 01.10.2026 | – | 21* |
+| **captn3m0/ideas** `captn3m0-ideas` | Ideenliste unter CC BY 4.0 mit SIMILAR.md zu weiteren Ideensammlungen | Webseite | `durchsucht` *(01.10.2026: Postkarte für Bauende.)* | 01.10.2026 | – | 21* |
+| **Civic Tech Field Guide** `civic-tech-field-guide` | Weltweites Verzeichnis von Civic-Tech-Projekten (Superbloom), Projekte eintragbar | Webseite | `durchsucht` *(01.10.2026: Besetzt-Test vor Civic-Tech-Ideenrunden.)* | 01.10.2026 | – | 21* |
 
 **Suchstring:** `<Fach> Datenbank Referenz Schadensfälle` · `<Fach> Arbeitskreis Schulung` — **auf Deutsch zuerst**, wenn eine deutsche Institution das Feld trägt
 
@@ -445,6 +452,7 @@ Runde 2 hat gezeigt: Überlebende Ideen kommen aus Primärquellen, nicht aus Bra
 | **COAAT Málaga App Control de materiales** `coaat-malaga-app-control-de-materiales` | App der Aparejadores zur Annahme auf der Baustelle: je Material CE/DoP-Pflicht, Norm, Prüfsystem, Datum der Pflicht | Webseite (teilweise): web, Herausgeberseite coaat.es per WebFetch lesen; die Play-Store-Seite es.coaat.conmat liefert per WebFetch eine fremde App | `durchsucht` *(01.10.2026: Stand 2020, kein Scan; COAAT/CGATE ist der Empfänger mit Mandat für die Annahme auf der Baustelle.)* | 01.10.2026 | Grab `dop-scanner-stahl` | 21* |
 | **FSC Trace** `fsc-trace` | FSC-Blockchain-Werkzeug für die CoC: Transaktionsdaten, Art, Volumen, Herkunft, Sorgfaltsberichte | Webseite | `durchsucht` *(01.10.2026: Der Empfänger hat Chargen-Tag und Dauer-Compliance selbst gebaut (12/2024).)* | 01.10.2026 | Grab `holz-chargen-tag-fussabdruck`, Grab `holz-audit-adaptiv` | 21* |
 | **LAkD Brandenburg (Aufarbeitungsbeauftragte)** `lakd-brandenburg-aufarbeitungsbeauftragt` | Gesetzliches Mandat 2009, Bürgerberatung, Akteneinsicht, Härtefallfonds, Träger Zeitzeugenportal Brandenburg | Webseite | `angekratzt` *(01.10.2026: Echter Mandatsträger für SBZ/DDR-Anfragen in Brandenburg, nicht die BLzpB.)* | 01.10.2026 | Grab `familienanekdote-repression-verknuepfer` | 21* |
+| **OK Lab Berlin (Code for Germany)** `ok-lab-berlin-code-for-germany` | Civic-Tech-Gemeinde Berlin, ca. 30 Aktive, Treffen zweiter Montag im Monat im Wikibär; berlin@codefor.de | Webseite | `durchsucht` *(01.10.2026: Ort zum Zeigen, nicht zum Bitten.)* | 01.10.2026 | – | 21* |
 
 <!-- QUELLEN:END -->
 

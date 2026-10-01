@@ -196,6 +196,8 @@ Second-closest relative, and deliberately so: **F.A.T. Lab**. Small, loud, entir
 
 ---
 
+**Contact routes and more neighbours:** see [`amelie-relatives.md`](amelie-relatives.md).
+
 ## Sources
 
 Investors: [YC Requests for Startups](https://www.ycombinator.com/rfs) · [Emergent Ventures](https://www.mercatus.org/emergent-ventures) · [ACX Grants](https://www.astralcodexten.com/p/acx-grants-results-2025)
