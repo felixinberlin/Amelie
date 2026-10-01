@@ -9,7 +9,12 @@
 //
 // Neue Agenten kommen einzeln hinzu, jeweils mit Tests (src/utils/crew.test.ts).
 
+import { mkdirSync, writeFileSync } from 'node:fs';
+import { dirname, join } from 'node:path';
 import { LOGS, renderLogSection } from './write.mjs';
+import { validateLibrarian } from './contracts.mjs';
+import { ACTOR, PLAYBOOK, buildPlan, dryRun, renderRetro } from './librarian.mjs';
+import { runsDir } from './runs.mjs';
 
 const TRIAGE_ORDER = ['Dose Ready', 'Market Route', 'Needs Research', 'Baustein', 'Friedhof'];
 const count = (list, key, values) => values.map((v) => `${list.filter((x) => x?.[key] === v).length} ${v}`).join(' / ');
@@ -112,6 +117,76 @@ const reviewTable = (d) => [
   ...d.reviews.map((r) => `| ${r.title} (\`${r.id}\`) | ${['V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7'].map((k) => r.vectors[k]).join(' | ')} | **${r.kern}** | ${r.vectors.V8} | ${r.gesamt} | ${r.triage} |`),
 ].join('\n');
 
+// ---------------------------------------------------------------- bibliothekar
+
+const PLAN_CHECK_TOOL = {
+  name: 'plan_check',
+  description: 'Prüft deinen JSON-Entwurf (gleiche Form wie dein Abschluss-Block) ohne zu schreiben: Form, Quellenmeldung, dann Trockenlauf von bib apply gegen das echte Gedächtnis. Liefert „sauber“ oder die Fehlerliste. So oft aufrufen, bis er sauber ist.',
+  input_schema: { type: 'object', properties: { draft: { type: 'object', description: 'Dein Entwurf: runde, einleitung, protokoll, graeber, quellenmeldung, retro, offen' } }, required: ['draft'] },
+};
+
+const opCount = (ops) => Object.entries(ops.reduce((a, o) => ({ ...a, [o.op]: (a[o.op] ?? 0) + 1 }), {})).map(([k, v]) => `${v} ${k}`).join(', ');
+
+/** Reviews aus Reviewer-Läufen, nach id. */
+export function reviewsFromInputs(inputs) {
+  const m = new Map();
+  for (const run of inputs ?? []) if (run?.contract === 'reviews' && run?.status === 'ok') for (const r of run.data?.reviews ?? []) m.set(r.id, { ...r, run_id: run.run_id });
+  return m;
+}
+
+function librarianTask({ task, thema, inputs }) {
+  const cands = candidatesFromInputs(inputs);
+  const reviews = reviewsFromInputs(inputs);
+  if (!cands.length && !reviews.size && !(task && task.trim())) throw new Error('bibliothekar braucht --input <Läufe> (Engines und Reviewer) oder --task.');
+  const day = new Date().toISOString().slice(0, 10).split('-').reverse().join('.');
+  const engines = (inputs ?? []).filter((r) => r?.contract === 'candidates' && r.status === 'ok');
+  const lines = (label, list) => (list.length ? `${label}:\n${list.map((x) => `- ${x}`).join('\n')}\n` : '');
+  const kandidaten = cands.map((c) => {
+    const r = reviews.get(c.id);
+    return `- ${c.id} [${c.foundBy.join(' + ')}${c.doppelfund ? ', DOPPELFUND' : ''}]: ${JSON.stringify({ title: c.title, beschreibung: c.beschreibung, quelle: c.quelle, empfaenger: c.empfaenger, urteil: c.urteil, beleg: c.beleg, evidenz: c.evidenz, restluecke: c.restluecke, urls: c.urls })}${r ? `\n  REVIEW: ${JSON.stringify({ kern: r.kern, gesamt: r.gesamt, triage: r.triage, begruendung: r.begruendung, grab: r.grab, dose: r.dose, baustein: r.baustein })}` : ''}`;
+  }).join('\n');
+  return `${task?.trim() ? `${task.trim()}\n\n` : ''}${cands.length || reviews.size ? `Buche die Runde ${thema ? `„${thema}“ ` : ''}ins Gedächtnis. Vorschlag für den Abschnittstitel: „${thema ? `Teamrunde ${thema}` : 'Teamrunde'} ${day}“ (prüfe mit run_cli bib protokoll stats --abschnitte, ob es ihn schon gibt).
+
+Eingänge: ${(inputs ?? []).map((r) => `${r.run_id} (${r.agent}, ${r.status})`).join(', ')}
+
+Kandidaten (Doppelfunde einmal buchen, alle Engines im Beleg nennen):
+${kandidaten || '(keine)'}
+
+${lines('Quellenmeldungen der Engines (deduplizieren, Werte prüfen, Erträge auf Gräber dieses Plans setzen)', engines.flatMap((r) => r.data.quellenmeldung ?? []))}
+${lines('Gelernt (Engines)', engines.flatMap((r) => r.data.gelernt ?? []))}
+${lines('Nächstes Mal (Engines)', engines.flatMap((r) => r.data.naechstesMal ?? []))}
+${lines('Lehren (Reviewer)', [...(inputs ?? [])].filter((r) => r?.contract === 'reviews' && r.status === 'ok').flatMap((r) => r.data.lehren ?? []))}
+Aufgaben:
+1. Je Kandidat eine Protokollzeile (method nach Engine: ideen-scout → ideenrunde, bisoziations-kollider → bisoziation, inversions-agent → inversion). Vorher run_cli bib find --stamm gegen Wiedergänger; ein Wiedergänger wird als Nachprüfung im Beleg markiert, nicht doppelt gebucht. Prüfen ab: 12 Monate nach heute.
+2. Gräber: jede „besetzt“-Idee, die noch nicht begraben ist, und jede Review mit Triage „Friedhof“ (dessen Totenschein übernehmen), mit vollständigem Totenschein auf Deutsch und Englisch.
+3. Quellenmeldungen zusammenführen.
+4. Retro für das Playbook (mindestens ein konkreter „Nächstes Mal“-Punkt) und offene Entscheidungen für Félix.
+5. Entwurf mit plan_check prüfen, bis er sauber ist. Dann Bericht + JSON-Block.` : ''}`;
+}
+
+function librarianMock({ inputs } = {}) {
+  const cands = candidatesFromInputs(inputs);
+  const reviews = reviewsFromInputs(inputs);
+  const list = cands.length ? cands : [{ id: 'mock-idee-b', title: 'Mock-Idee B', urteil: 'besetzt', beleg: 'Gibt es als App, https://example.org/b', evidenz: 'seite', foundBy: ['ideen-scout'], beschreibung: 'Zweite Testidee.' }];
+  const day = new Date().toISOString().slice(0, 10);
+  const method = (a) => ({ 'ideen-scout': 'ideenrunde', 'bisoziations-kollider': 'bisoziation', 'inversions-agent': 'inversion' }[a] ?? 'ideenrunde');
+  const protokoll = list.map((c) => ({ titel: c.title, id: c.id, urteil: c.urteil, beleg: `${c.foundBy.join(' + ')}: ${c.beleg}${reviews.get(c.id) ? ` → nach Review: ${reviews.get(c.id).triage} (${reviews.get(c.id).kern}/35)` : ''}`, evidenz: c.evidenz, method: method(c.foundBy[0]), pruefenAb: '10/2027' }));
+  const dead = list.filter((c) => c.urteil === 'besetzt' || reviews.get(c.id)?.triage === 'Friedhof');
+  const graeber = dead.map((c) => {
+    const g = reviews.get(c.id)?.grab ?? { cause: 'gebaut', killer: 'kommerziell', foundBy: 'deutsch', resurrectIfDe: 'Wenn es das Werkzeug nicht mehr gibt.', resurrectIfEn: 'If the existing tool disappears.' };
+    return { id: c.id, title: c.title, originalIdeaDe: c.beschreibung ?? c.title, originalIdeaEn: `Mock idea: ${c.title}`, whyDiscardedDe: c.beleg, whyDiscardedEn: 'Mock: already exists.', lessonDe: 'Mock-Lehre.', lessonEn: 'Mock lesson.', domain: 'Mock', evidence: ['https://example.org/b'], cause: g.cause, killer: g.killer, foundBy: g.foundBy, origin: 'quelle', stage: 'kandidat', bornIn: 'Mock-Runde (Kommandozeile)', diedOn: day, resurrectIfDe: g.resurrectIfDe, resurrectIfEn: g.resurrectIfEn };
+  });
+  const data = {
+    runde: `Mock-Runde Kommandozeile ${day}`,
+    einleitung: `Mock-Lauf der Crew ohne Netz (${list.length} Ideen).`,
+    protokoll, graeber,
+    quellenmeldung: [],
+    retro: { erledigt: ['Mock-Kette gelaufen.'], gelernt: [], fehler: [], naechstesMal: ['Echten Lauf starten.'], atlas: [] },
+    offen: [],
+  };
+  return `## Buchung (Mock)\n\n${protokoll.length} Protokollzeilen, ${graeber.length} Gräber.\n\n\`\`\`json\n${JSON.stringify(data, null, 2)}\n\`\`\``;
+}
+
 // ---------------------------------------------------------------- Register
 
 export const PROFILES = {
@@ -180,6 +255,47 @@ Im Feld „quelle“ jedes Kandidaten: Rahmen A × Rahmen B, Distanz. Liefere Be
       build: (record) => [{ kind: 'append', file: LOGS.bisoziation, text: renderLogSection({ record, title: `Bisoziations-Lauf ${record.thema ? `„${record.thema}“ ` : ''}per Kommandozeile`, table: candidateTable(record.data) }) }],
     },
     mockReply: engineMock('bis', 'Rahmen A × Rahmen B, Distanz 4'),
+  },
+  bibliothekar: {
+    role: 'Gedächtnis: bucht Protokollzeilen, Gräber und Quellen als einen Plan über bib apply und schreibt die Retro ins Playbook.',
+    contract: 'librarian',
+    extraTools: ['plan_check'],
+    toolDefs: { plan_check: PLAN_CHECK_TOOL },
+    handlers: ({ root }) => ({
+      async plan_check(args) {
+        const draft = args?.draft;
+        if (!draft || typeof draft !== 'object') return 'Fehler: draft fehlt (dein JSON-Entwurf als Objekt).';
+        const form = validateLibrarian(draft);
+        if (form.length) return `Formfehler:\n- ${form.join('\n- ')}`;
+        const { plan, fehler } = buildPlan(draft, { root, planId: 'crew-plan-check' });
+        if (fehler.length) return `Quellenmeldung fehlerhaft:\n- ${fehler.join('\n- ')}`;
+        const r = dryRun({ root, plan });
+        return r.errors.length ? `Trockenlauf abgelehnt (${plan.ops.length} Operationen):\n- ${r.errors.join('\n- ')}` : `Trockenlauf sauber: ${plan.ops.length} Operationen (${opCount(plan.ops)}).`;
+      },
+    }),
+    buildTask: librarianTask,
+    postValidate: (data, { root, record }) => {
+      const { plan, fehler } = buildPlan(data, { root, planId: `crew-${record.run_id}` });
+      if (fehler.length) return fehler.map((f) => `quellenmeldung: ${f}`);
+      return dryRun({ root, plan }).errors;
+    },
+    summarize: (d) => `Plan: ${d.protokoll?.length ?? 0} Protokollzeilen, ${d.graeber?.length ?? 0} Gräber, ${d.quellenmeldung?.length ?? 0} Quellenmeldungen`,
+    writes: {
+      describe: `bib apply als Akteur ${ACTOR} (Protokoll, Gräber, Quellen; alles oder nichts) + Retro-Abschnitt in ${PLAYBOOK}, nur mit --write`,
+      files: [PLAYBOOK],
+      build: (record, { root }) => {
+        const { plan } = buildPlan(record.data, { root, planId: `crew-${record.run_id}` });
+        const planFile = join(runsDir(root), 'bibliothekar', `${record.run_id}.plan.json`);
+        mkdirSync(dirname(planFile), { recursive: true });
+        writeFileSync(planFile, `${JSON.stringify(plan, null, 2)}\n`);
+        const retro = renderRetro(record.data, record);
+        return [
+          { kind: 'bib-apply', planFile, plan_id: plan.plan_id, actor: ACTOR },
+          ...(retro ? [{ kind: 'append', file: PLAYBOOK, text: retro }] : []),
+        ];
+      },
+    },
+    mockReply: librarianMock,
   },
 };
 

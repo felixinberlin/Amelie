@@ -5,6 +5,10 @@
     "bibliothekar": { "allow": ["*"] },
     "lab-librarian": {
       "allow": ["source.log", "source.add", "grave.add", "protokoll.add", "terminology.add", "question.add"]
+    },
+    "cli-bibliothekar": {
+      "_note": "Bibliothekar der Crew (npm run agent -- bibliothekar --write). Kein vector.set, kein source.rate: Vektoren bleiben Sache des Reviewers und von Félix.",
+      "allow": ["source.log", "source.add", "grave.add", "protokoll.add", "terminology.add", "question.add"]
     }
   }
 }

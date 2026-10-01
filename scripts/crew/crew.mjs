@@ -113,16 +113,22 @@ export async function runAgent(opts) {
       record.status = 'empty';
       record.errors = [`Leere Antwort (Stopp: ${r.stop})`];
     } else {
-      let check = checkReport(profile.contract, record.report);
+      const fullCheck = async (text) => {
+        const c = checkReport(profile.contract, text);
+        if (!c.ok || !profile.postValidate) return c;
+        const more = await profile.postValidate(c.data, { root, record });
+        return more.length ? { ok: false, data: c.data, errors: more } : c;
+      };
+      let check = await fullCheck(record.report);
       if (!check.ok && opts.repair !== false) {
         log(`[${agent}] Vertrag verletzt (${check.errors.length} Fehler), ein Reparaturaufruf`);
         const fix = await runConversation(opts.repairAdapter ?? adapter, {
-          system: `Du reparierst den JSON-Block eines Berichts. Keine neuen Fakten, keine Suche: nur die Form so ändern, dass die Fehlerliste erfüllt ist. Fehlt eine Angabe, schreibe ehrlich, dass sie fehlt (z. B. urteil „unklar“). Antworte NUR mit dem korrigierten \`\`\`json-Block in dieser Form:\n${CONTRACTS[profile.contract].shape}`,
+          system: `Du reparierst den JSON-Block eines Berichts. Keine neuen Fakten, keine Suche: nur Form und Werte so ändern, dass die Fehlerliste erfüllt ist. Fehlt eine Angabe, schreibe ehrlich, dass sie fehlt (z. B. urteil „unklar“). Antworte NUR mit dem korrigierten \`\`\`json-Block in dieser Form:\n${CONTRACTS[profile.contract].shape}`,
           user: `Fehler:\n- ${check.errors.join('\n- ')}\n\nBericht:\n${record.report.slice(0, 30000)}`,
           tools: [], handlers: {}, maxTurns: 1, meta: { engine: `${agent}-reparatur` },
         });
         record.usage = addUsage(record.usage, fix.usage);
-        const fixed = checkReport(profile.contract, fix.text);
+        const fixed = await fullCheck(fix.text);
         record.repaired = true;
         if (fixed.ok) {
           record.report = `${stripJson(record.report)}\n\n${String(fix.text).trim()}`;

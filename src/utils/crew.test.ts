@@ -301,3 +301,134 @@ describe('crew: bisoziations-kollider', () => {
     expect(task.match(/-eigen:/g)?.length).toBe(3);
   });
 });
+
+// ---------------------------------------------------------------- bibliothekar
+
+import { validateLibrarian } from '../../scripts/crew/contracts.mjs';
+import { buildPlan, dryRun, quellenOps } from '../../scripts/crew/librarian.mjs';
+import { copyFileSync } from 'node:fs';
+import { dirname } from 'node:path';
+
+const PROTOKOLL_FIX = '# Prüfprotokoll\n\n## Alt — 29.09.2026\n\n| # | Idee | Methode | Urteil | Beleg | Evidenz | Geprüft | Prüfen ab |\n|---|---|---|---|---|---|---|---|\n| T1 | **Alt** | [method: x] | `besetzt` | b | [Seite] | 29.09.2026 | – |\n';
+
+/** Mini-Repo wie in bibApply.test.ts: zwei echte Quellen, leerer Friedhof, Protokoll, Playbook, echte Typen und Rechte. */
+function memFixture() {
+  const root = mkdtempSync(join(tmpdir(), 'crew-mem-'));
+  const put = (rel: string, text: string) => { mkdirSync(dirname(join(root, rel)), { recursive: true }); writeFileSync(join(root, rel), text); };
+  const q = JSON.parse(readFileSync(join(ROOT, 'src/data/quellen.json'), 'utf8'));
+  q.quellen = q.quellen.slice(0, 2).map((x: any) => ({ ...x, urls: x.urls?.length ? x.urls : ['https://example.org/a'] }));
+  put('src/data/quellen.json', JSON.stringify(q, null, 2) + '\n');
+  put('src/data/graeber.json', '[]\n');
+  put('src/data/doseVectors.json', '{}\n');
+  put('src/data/candidateVectors.json', '{}\n');
+  put('06-suche/amelie-pruefprotokoll.md', PROTOKOLL_FIX);
+  put('06-suche/amelie-suchplaybook.md', '# Playbook\n');
+  copyFileSync(join(ROOT, 'src/types.ts'), join(root, 'src/types.ts'));
+  copyFileSync(join(ROOT, '06-suche/bib-actors.json'), join(root, '06-suche/bib-actors.json'));
+  put('.claude/agents/bibliothekar.md', readFileSync(join(ROOT, '.claude/agents/bibliothekar.md'), 'utf8'));
+  return { root, known: q.quellen[0].id as string };
+}
+
+const GRAVE = { id: 'crew-testgrab', title: 'Testgrab', originalIdeaDe: 'a', originalIdeaEn: 'a', whyDiscardedDe: 'b', whyDiscardedEn: 'b', lessonDe: 'c', lessonEn: 'c', domain: 'Test', evidence: ['https://e.org'], cause: 'gebaut', killer: 'kommerziell', foundBy: 'deutsch', origin: 'quelle', stage: 'kandidat', bornIn: 'Crew-Test', diedOn: '2026-10-01', resurrectIfDe: 'nie', resurrectIfEn: 'never' };
+const libData = (o: any = {}) => ({
+  runde: 'Crew-Testrunde 01.10.2026', einleitung: 'Test der Crew.',
+  protokoll: [
+    { titel: 'Testgrab', id: 'crew-testgrab', urteil: 'besetzt', beleg: 'Scout: gibt es https://e.org', evidenz: 'seite', method: 'ideenrunde', pruefenAb: '10/2027' },
+    { titel: 'Zweite', id: 'crew-zweite', urteil: 'verengt', beleg: 'Kollider: halb', evidenz: 'schnipsel', method: 'bisoziation', pruefenAb: '10/2027' },
+  ],
+  graeber: [GRAVE],
+  quellenmeldung: ['QUELLE NEU: Crew Testquelle | typ=L | kategorie=referenzsammlung | enthaelt=Test | status=angekratzt | evidenz=schnipsel | zugang=ja | ertrag=Grab crew-testgrab | urls=https://e.org/q | note=Testmeldung.'],
+  retro: { erledigt: ['Kette getestet.'], naechstesMal: ['Live-Lauf.'] },
+  offen: ['foundBy für spanische Quellen'],
+  ...o,
+});
+
+describe('crew: bibliothekar', () => {
+  it('Vertrag: Form, Prüfdatum, leerer Plan', () => {
+    expect(validateLibrarian(libData())).toEqual([]);
+    const e = validateLibrarian({ runde: '', protokoll: [{ titel: 't', urteil: 'neu', beleg: 'b', evidenz: 'seite', method: 'm', pruefenAb: '2027' }] }).join('\n');
+    expect(e).toMatch(/runde: fehlt/);
+    expect(e).toMatch(/urteil: „neu“/);
+    expect(e).toMatch(/pruefenAb: Format MM\/JJJJ/);
+    expect(validateLibrarian({ runde: 'x', protokoll: [] }).join()).toMatch(/Plan ist leer/);
+  });
+
+  it('Plan: Protokoll zuerst (mit neuem Abschnitt), dann Gräber, dann Quellen mit Ertrag auf das neue Grab', () => {
+    const { plan, fehler } = buildPlan(libData(), { root: ROOT, planId: 'p1' });
+    expect(fehler).toEqual([]);
+    expect(plan.actor).toBe('cli-bibliothekar');
+    expect(plan.ops.map((o: any) => o.op)).toEqual(['protokoll.add', 'protokoll.add', 'grave.add', 'source.add']);
+    expect(plan.ops[0].neuerAbschnitt).toBe('Test der Crew.');
+    expect(plan.ops[1].neuerAbschnitt).toBeUndefined();
+    expect(plan.ops[3]).toMatchObject({ id: 'crew-testquelle', typ: 'L', kategorie: 'referenzsammlung', grab: ['crew-testgrab'], urls: ['https://e.org/q'] });
+    expect(quellenOps(['QUELLE NEU: X | typ=Q9 | kategorie=quatsch | enthaelt=x | note=n'], { root: ROOT }).fehler.join()).toMatch(/typ „Q9“ unbekannt/);
+  });
+
+  it('Trockenlauf gegen das Gedächtnis findet, was bib apply ablehnen würde', () => {
+    const f = memFixture();
+    expect(dryRun({ root: f.root, plan: buildPlan(libData(), { root: ROOT, planId: 'p2' }).plan }).errors).toEqual([]);
+    const bad = buildPlan(libData({ graeber: [{ ...GRAVE, cause: 'tot' }] }), { root: ROOT, planId: 'p3' }).plan;
+    expect(dryRun({ root: f.root, plan: bad }).errors.join()).toMatch(/VALUE_INVALID ops\[2\]\.grave/);
+  });
+
+  it('postValidate macht einen Plan, den bib apply ablehnt, zum Vertragsfehler (mit Reparaturversuch)', async () => {
+    const f = memFixture();
+    const dir = tmpRuns();
+    const bad = libData({ graeber: [{ ...GRAVE, killer: 'niemand' }] });
+    const repairAdapter = scripted([{ text: block(libData()) }]);
+    const r = await runAgent({ root: f.root, agent: 'bibliothekar', task: 'Buche den Test.', adapter: fixedAdapter(`Bericht.\n\n${block(bad)}`), repairAdapter, spec: { id: 't' }, dir });
+    expect(repairAdapter.seen[0].start.user).toMatch(/killer/);
+    expect(r.status).toBe('ok');
+    expect(r.data.graeber[0].killer).toBe('kommerziell');
+  });
+
+  it('plan_check meldet sauber oder Fehler, ohne zu schreiben', async () => {
+    const f = memFixture();
+    const before = readFileSync(join(f.root, 'src/data/graeber.json'), 'utf8');
+    const h = PROFILES.bibliothekar.handlers({ root: f.root });
+    expect(await h.plan_check({ draft: libData() })).toMatch(/Trockenlauf sauber: 4 Operationen \(2 protokoll\.add, 1 grave\.add, 1 source\.add\)/);
+    expect(await h.plan_check({ draft: libData({ graeber: [{ ...GRAVE, foundBy: 'zufall' }] }) })).toMatch(/Trockenlauf abgelehnt/);
+    expect(await h.plan_check({ draft: { runde: 'x' } })).toMatch(/Formfehler/);
+    expect(readFileSync(join(f.root, 'src/data/graeber.json'), 'utf8')).toBe(before);
+  });
+
+  it('--write bucht alles über bib apply und hängt die Retro ans Playbook, einmal', async () => {
+    const f = memFixture();
+    const dir = tmpRuns();
+    const r = await runAgent({ root: f.root, agent: 'bibliothekar', task: 'Buche den Test.', thema: 'Crew', adapter: fixedAdapter(block(libData())), spec: { id: 't', provider: 'gemini' }, dir });
+    expect(r.status).toBe('ok');
+    const done = await applyWrites({ root: f.root, record: r, profile: PROFILES.bibliothekar });
+    expect(done.map((w: any) => w.kind)).toEqual(['bib-apply', 'append']);
+    expect(JSON.parse(readFileSync(join(f.root, 'src/data/graeber.json'), 'utf8')).map((g: any) => g.id)).toEqual(['crew-testgrab']);
+    expect(readFileSync(join(f.root, '06-suche/amelie-pruefprotokoll.md'), 'utf8')).toMatch(/## Crew-Testrunde 01\.10\.2026[\s\S]*Test der Crew\.[\s\S]*\*\*Zweite\*\*/);
+    expect(JSON.parse(readFileSync(join(f.root, 'src/data/quellen.json'), 'utf8')).quellen.some((q: any) => q.id === 'crew-testquelle')).toBe(true);
+    const pb = readFileSync(join(f.root, '06-suche/amelie-suchplaybook.md'), 'utf8');
+    expect(pb).toContain('## Retro Crew-Testrunde 01.10.2026');
+    expect(pb).toContain('- Live-Lauf.');
+    expect(pb).toContain('**Offen (Entscheidung Félix)**');
+    expect(JSON.parse(readFileSync(join(f.root, '06-suche/bib-ledger.json'), 'utf8')).applied[`crew-${r.run_id}`].actor).toBe('cli-bibliothekar');
+    await expect(applyWrites({ root: f.root, record: r, profile: PROFILES.bibliothekar })).rejects.toThrow(/schon geschrieben/);
+  });
+
+  it('Mock-Läufe schreiben nie ins Gedächtnis', async () => {
+    const f = memFixture();
+    const r = await runAgent({ root: f.root, agent: 'bibliothekar', task: 'Buche den Test.', adapter: fixedAdapter(block(libData())), spec: { id: 'mock', provider: 'mock' }, dir: tmpRuns() });
+    await expect(applyWrites({ root: f.root, record: r, profile: PROFILES.bibliothekar })).rejects.toThrow(/Mock-Läufe schreiben nicht/);
+    expect((await applyWrites({ root: f.root, record: r, profile: PROFILES.bibliothekar, dryRun: true }))[0].dryRun).toBe(true);
+  });
+
+  it('Auftrag nennt Reviews, Doppelfunde und Quellenmeldungen der Engines', () => {
+    const t = PROFILES.bibliothekar.buildTask({ thema: 'Holz', inputs: [
+      { ...engineRun('ideen-scout', [cand('a'), cand('b', 'besetzt')]), data: { candidates: [cand('a'), cand('b', 'besetzt')], quellenmeldung: ['QUELLE NEU: Q1 | typ=L'], gelernt: ['g1'] } },
+      engineRun('inversions-agent', [cand('a')]),
+      { run_id: 'rev', agent: 'idea-reviewer', contract: 'reviews', status: 'ok', data: { reviews: [review({ id: 'a' })], lehren: ['l1'] } },
+    ] });
+    expect(t).toMatch(/- a \[ideen-scout \+ inversions-agent, DOPPELFUND\]/);
+    expect(t).toMatch(/REVIEW: \{"kern":21,"gesamt":23,"triage":"Friedhof"/);
+    expect(t).toContain('- QUELLE NEU: Q1 | typ=L');
+    expect(t).toContain('- g1');
+    expect(t).toContain('- l1');
+    expect(t).toContain('Teamrunde Holz');
+    expect(() => PROFILES.bibliothekar.buildTask({ inputs: [] })).toThrow(/--input/);
+  });
+});

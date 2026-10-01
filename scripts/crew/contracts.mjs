@@ -186,11 +186,65 @@ export const REVIEWS_SHAPE = `\`\`\`json
 \`\`\`
 Felder, die zum Urteil nicht passen, lässt du weg. kern = Summe V1–V7, gesamt = kern + V8. Erlaubte Werte für grab: \`run_cli bib grab werte\`.`;
 
+// ---------------------------------------------------------------- Vertrag: Bibliothekar
+
+/**
+ * {
+ *   "runde": "Abschnittstitel im Prüfprotokoll",
+ *   "einleitung": "Einleitung des neuen Abschnitts (Pflicht, wenn der Abschnitt neu ist)",
+ *   "protokoll": [{ "titel", "id", "urteil", "beleg", "evidenz", "method", "pruefenAb", "was"? }],
+ *   "graeber": [ Totenschein-Objekte wie in src/data/graeber.json ],
+ *   "quellenmeldung": ["QUELLE … | …"],
+ *   "retro": { "erledigt": [], "gelernt": [], "fehler": [], "naechstesMal": [], "atlas": [] },
+ *   "offen": ["Entscheidungen für Félix"]
+ * }
+ * Hier nur die Form; ob der Plan durchgeht, entscheidet der Trockenlauf von `bib apply` (postValidate im Profil).
+ */
+export function validateLibrarian(data) {
+  const errors = [];
+  if (!data || typeof data !== 'object' || Array.isArray(data)) return ['Wurzel: muss ein Objekt sein'];
+  need(errors, data, 'runde', 'Wurzel');
+  if (!Array.isArray(data.protokoll)) errors.push('protokoll: muss eine Liste sein (darf leer sein)');
+  (data.protokoll ?? []).forEach((p, i) => {
+    const at = `protokoll[${i}]`;
+    for (const f of ['titel', 'beleg', 'method']) need(errors, p, f, at);
+    oneOf(errors, p, 'urteil', at, URTEILE);
+    oneOf(errors, p, 'evidenz', at, EVIDENZ);
+    if (!/^(\d{2}\/\d{4}|–|-)$/.test(String(p?.pruefenAb ?? ''))) errors.push(`${at}.pruefenAb: Format MM/JJJJ oder –`);
+    if (p?.id !== undefined && !SLUG.test(String(p.id))) errors.push(`${at}.id: Kurzname in Kleinbuchstaben mit Bindestrichen`);
+  });
+  if (data.graeber !== undefined && !Array.isArray(data.graeber)) errors.push('graeber: muss eine Liste sein');
+  (data.graeber ?? []).forEach((g, i) => { if (!g || typeof g !== 'object' || !isStr(g.id)) errors.push(`graeber[${i}]: Totenschein-Objekt mit id`); });
+  strList(errors, data, 'quellenmeldung', 'Wurzel');
+  strList(errors, data, 'offen', 'Wurzel');
+  if (data.retro !== undefined) for (const k of ['erledigt', 'gelernt', 'fehler', 'naechstesMal', 'atlas']) strList(errors, data.retro, k, 'retro');
+  if (!(data.protokoll?.length || data.graeber?.length || data.quellenmeldung?.length)) errors.push('Plan ist leer: weder protokoll noch graeber noch quellenmeldung');
+  return errors;
+}
+
+export const LIBRARIAN_SHAPE = `\`\`\`json
+{
+  "runde": "Titel des Protokollabschnitts, z. B. „Teamrunde Holz 01.10.2026“",
+  "einleitung": "Einleitungssatz des Abschnitts: Anlass, Engines, Zahlen (frei/verengt/unklar/besetzt), Doppelfunde",
+  "protokoll": [
+    { "titel": "Kurzname", "id": "kurzname", "urteil": "frei | verengt | unklar | besetzt", "beleg": "Engine + Beleg + URL; bei Review: → nach Review: <Triage> (x/35)", "evidenz": "seite | schnipsel", "method": "ideenrunde | bisoziation | inversion | review", "pruefenAb": "MM/JJJJ" }
+  ],
+  "graeber": [
+    { "id": "kurzname", "title": "…", "originalIdeaDe": "…", "originalIdeaEn": "…", "whyDiscardedDe": "…", "whyDiscardedEn": "…", "lessonDe": "…", "lessonEn": "…", "domain": "…", "evidence": ["https://…"], "cause": "…", "killer": "…", "foundBy": "…", "origin": "quelle | bisoziation | inversion | …", "stage": "kandidat", "bornIn": "Runde/Lauf", "diedOn": "JJJJ-MM-TT", "resurrectIfDe": "…", "resurrectIfEn": "…" }
+  ],
+  "quellenmeldung": ["QUELLE NEU: Name | typ=L | kategorie=referenzsammlung | enthaelt=… | status=angekratzt | evidenz=schnipsel | zugang=ja | ertrag=Grab kurzname | urls=https://… | note=…"],
+  "retro": { "erledigt": ["…"], "gelernt": ["…"], "fehler": ["…"], "naechstesMal": ["mindestens ein konkreter Punkt"], "atlas": ["neues Feld: … → dicht"] },
+  "offen": ["Entscheidung für Félix"]
+}
+\`\`\`
+Werte für Gräber: \`run_cli bib grab werte\`; Format der Quellenmeldung: \`run_cli bib quellen formate\`. Prüfe deinen Entwurf mit plan_check, bevor du antwortest.`;
+
 // ---------------------------------------------------------------- Register
 
 export const CONTRACTS = {
   candidates: { validate: validateCandidates, shape: CANDIDATES_SHAPE },
   reviews: { validate: validateReviews, shape: REVIEWS_SHAPE, prepare: loadGraveEnums },
+  librarian: { validate: validateLibrarian, shape: LIBRARIAN_SHAPE },
 };
 
 /** Prüft einen Bericht gegen einen Vertrag. { ok, data, errors } */

@@ -41,6 +41,14 @@ declare module '*crew/write.mjs' {
   export function renderLogSection(o: any): string;
   export function applyWrites(o: any): Promise<any>;
 }
+declare module '*crew/librarian.mjs' {
+  export const ACTOR: string;
+  export const PLAYBOOK: string;
+  export function quellenOps(lines: string[], o?: any): { ops: any[]; fehler: string[] };
+  export function buildPlan(data: any, o?: any): { plan: any; fehler: string[] };
+  export function dryRun(o: any): { errors: string[]; out: any; file: string };
+  export function renderRetro(data: any, record: any): string | null;
+}
 declare module '*crew/merge.mjs' {
   export function mergeRuns(runs: any[]): any;
   export function renderMerge(m: any): string;
