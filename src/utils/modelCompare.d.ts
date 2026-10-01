@@ -23,7 +23,7 @@ declare module '*model-compare/tools.mjs' {
 }
 declare module '*model-compare/providers.mjs' {
   export const PROVIDERS: string[];
-  export function runConversation(adapter: any, o: { system: string; user: string; tools: any[]; handlers: Record<string, (a: any) => Promise<string>>; nativeSearch?: boolean; maxTurns?: number; meta?: any }): Promise<{ text: string; usage: any; toolLog: any[]; stop: string; turns: number }>;
+  export function runConversation(adapter: any, o: { system: string; user: string; tools: any[]; handlers: Record<string, (a: any) => Promise<string>>; nativeSearch?: boolean; maxTurns?: number; meta?: any; requireTool?: { names: string[]; nudge: string; max?: number } | null }): Promise<{ text: string; usage: any; toolLog: any[]; stop: string; turns: number }>;
   export function resolveEnv(spec: any, env?: Record<string, string | undefined>): { project: string | null; region: string; geminiKey: string | null };
   export function checkReady(spec: any, o?: { env?: Record<string, string | undefined>; loadSdk?: (name: string) => Promise<any> }): Promise<{ ok: boolean; problems: string[] }>;
   export function mockReply(spec: any, o?: { engine?: string }): string;
