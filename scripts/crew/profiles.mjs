@@ -203,6 +203,7 @@ ${lines('Gelernt (Engines)', engines.flatMap((r) => r.data.gelernt ?? []))}
 ${lines('Nächstes Mal (Engines)', engines.flatMap((r) => r.data.naechstesMal ?? []))}
 ${lines('Lehren (Reviewer)', [...(inputs ?? [])].filter((r) => r?.contract === 'reviews' && r.status === 'ok').flatMap((r) => r.data.lehren ?? []))}
 Aufgaben:
+0. Gebucht werden NUR die Kandidaten der Liste oben (id exakt übernehmen). Keine Zeilen über Prozess, Werkzeuge oder Abschnittstitel („Prüfung Stamm“ o. Ä.): das gehört in die Retro.
 1. Je Kandidat eine Protokollzeile (method nach Engine: ideen-scout → ideenrunde, bisoziations-kollider → bisoziation, inversions-agent → inversion). Vorher run_cli bib find --stamm gegen Wiedergänger; ein Wiedergänger wird als Nachprüfung im Beleg markiert, nicht doppelt gebucht. Prüfen ab: 12 Monate nach heute.
 2. Gräber: jede „besetzt“-Idee, die noch nicht begraben ist, und jede Review mit Triage „Friedhof“ (dessen Totenschein übernehmen), mit vollständigem Totenschein auf Deutsch und Englisch.
 3. Quellenmeldungen zusammenführen.
@@ -239,6 +240,7 @@ export const PROFILES = {
   'ideen-scout': {
     role: 'Engine 1: leitet Ideen aus Primärquellen ab und prüft, ob es sie schon gibt.',
     contract: 'candidates',
+    requireSearch: true,
     postProcess: downgradeCandidates,
     buildTask: scoutTask,
     summarize: engineSummary,
@@ -248,6 +250,7 @@ export const PROFILES = {
   'idea-reviewer': {
     role: 'Prüfer: bewertet frei/verengt/unklar-Kandidaten über 8 Vektoren und vergibt ein Triage-Urteil.',
     contract: 'reviews',
+    requireSearch: true,
     postProcess: downgradeReviews,
     buildTask: reviewTask,
     summarize: (d) => `${d.reviews.length} Reviews: ${TRIAGE_ORDER.map((t) => `${d.reviews.filter((r) => r.triage === t).length} ${t}`).filter((s) => !s.startsWith('0 ')).join(' / ') || 'keine'}`,
@@ -261,6 +264,7 @@ export const PROFILES = {
   'inversions-agent': {
     role: 'Engine 3: invertiert ein reguliertes oder finanziertes System in ein unbebautes Gemeingut-Werkzeug und prüft die Kandidaten.',
     contract: 'candidates',
+    requireSearch: true,
     postProcess: downgradeCandidates,
     buildTask: ({ task, thema }) => {
       if (task && task.trim()) return task.trim();
@@ -285,6 +289,7 @@ Im Feld „quelle“ jedes Kandidaten: Zielsystem + Operator. Liefere Bericht + 
   'bisoziations-kollider': {
     role: 'Engine 2: kollidiert einen quellengestützten Rahmen A mit einem fernen Rahmen B und prüft die Ideen, die eine echte Lücke öffnen.',
     contract: 'candidates',
+    requireSearch: true,
     postProcess: downgradeCandidates,
     buildTask: ({ task, thema }) => {
       if (task && task.trim()) return task.trim();

@@ -145,3 +145,23 @@ describe('Beweispflicht: das Programm stuft herab', () => {
     expect(PROFILES.bibliothekar.repairRounds).toBe(3);
   });
 });
+
+describe('Suchpflicht: Neustart ohne Suche', () => {
+  it('startet einmal neu, wenn kein web_search lief, und zählt beide Läufe', async () => {
+    const dir = mkdtempSync(join(tmpdir(), 'crew-runs-'));
+    const good = `Bericht\n\n\`\`\`json\n${JSON.stringify({ candidates: [], gelernt: [], naechstesMal: [] })}\n\`\`\``;
+    let n = 0; const users: string[] = [];
+    const adapter: any = {
+      start: (a: any) => { users.push(a.user); return {}; },
+      async step() { n++; return n === 2 ? { text: '', calls: [{ id: 's', name: 'web_search', args: { question: 'Test Frage hier' } }], usage: { in: 1, out: 1 } } : { text: good, calls: [], usage: { in: 1, out: 1 }, stop: 'end_turn' }; },
+      addToolResults() {},
+    };
+    const rec = await runAgent({ root: process.cwd(), agent: 'ideen-scout', thema: 'T', adapter, spec: { id: 't', provider: 'mock' }, dir, enforce: true, kitOptions: { labDir: null, nativeSearch: false } });
+    expect(rec.restarted).toBe(true);
+    expect(users.length).toBe(2);
+    expect(users[1]).toMatch(/^PFLICHT/);
+    expect(rec.toolLog.some((t: any) => t.name === 'web_search')).toBe(true);
+    const again = await runAgent({ root: process.cwd(), agent: 'ideen-scout', thema: 'T', adapter: fixedAdapter(good), spec: { id: 't', provider: 'mock' }, dir, enforce: false });
+    expect(again.restarted).toBeUndefined();
+  });
+});

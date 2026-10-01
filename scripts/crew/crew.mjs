@@ -57,6 +57,7 @@ export function fixedAdapter(text, { name = 'mock', usage = { in: 0, out: 0 } } 
 
 /** Entfernt Leerraum-Müll (Modelle, die sich festfahren, geben tausende Leerzeichen aus). */
 export const cleanReport = (t) => String(t ?? '').replace(/[ \t]{40,}/g, ' ').replace(/\n{4,}/g, '\n\n').replace(/(\s*\n){6,}/g, '\n\n');
+const searchCalls = (log) => (log ?? []).filter((t) => t.name === 'web_search' || t.name === 'web_fetch').length;
 const hasJson = (t) => /```json\s*\n[\s\S]*?\n```/.test(t);
 const summarizeTools = (log) => (log ?? []).map((t, i) => `${i + 1}. ${t.name}(${JSON.stringify(t.args).slice(0, 200)}) → ${String(t.result).replace(/\s+/g, ' ').slice(0, 300)}`).join('\n') || '(keine)';
 
@@ -105,12 +106,22 @@ export async function runAgent(opts) {
   try {
     await CONTRACTS[profile.contract].prepare?.();
     log(`[${agent}] Lauf ${record.run_id} mit ${spec.id}, ${tools.length} Werkzeuge`);
-    const r = await runConversation(adapter, {
-      system, user: task, tools, handlers,
+    const converse = (user) => runConversation(adapter, {
+      system, user, tools, handlers,
       nativeSearch: !!opts.kitOptions?.nativeSearch && def.tools.includes('WebSearch'),
       maxTurns, meta: { engine: agent },
     });
+    let r = await converse(task);
     record.usage = addUsage(record.usage, r.usage);
+    // Suchpflicht: eine Antwort ganz ohne web_search/web_fetch ist kein Urteil. Einmal neu, mit ausdrücklicher Pflicht.
+    if (profile.requireSearch && (opts.enforce ?? spec.provider !== 'mock') && !searchCalls(r.toolLog) && handlers.web_search) {
+      log(`[${agent}] kein web_search/web_fetch im Lauf, Neustart mit Suchpflicht`);
+      const first = r;
+      r = await converse(`PFLICHT, weil dein letzter Versuch ohne eine einzige Suche abgegeben wurde: Rufe web_search (und danach web_fetch auf die wichtigsten Treffer) AUF, bevor du ein Urteil schreibst. Beginne mit dem Empfänger, dann mit der Konkurrenz. Ohne Suchaufruf stuft das Programm jedes Urteil herab und der Lauf ist wertlos.\n\n${task}`);
+      record.usage = addUsage(record.usage, r.usage);
+      record.restarted = true;
+      r = { ...r, toolLog: [...first.toolLog, ...r.toolLog] };
+    }
     record.toolLog = r.toolLog;
     record.stop = r.stop;
     record.report = cleanReport(r.text);
