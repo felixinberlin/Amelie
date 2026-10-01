@@ -49,6 +49,11 @@ export const DOSEN_DATA: DoseItem[] = [
   },
   {
     id: 'glasanflug-ampel',
+    videoFile: 'glasanflug-demo.mp4',
+    videoPoster: 'glasanflug-demo-poster.webp',
+    videoAspect: 16 / 9,
+    videoTitle: 'Konzeptvideo: vom Fassadenfoto zur Einstufung (10 s)',
+    videoTitleEn: 'Concept video: from façade photo to rating (10 s)',
     emailTemplates: [
       {
         recipientName: 'NABU Berlin — Artenschutz am Gebäude',

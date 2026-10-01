@@ -34,6 +34,7 @@ import { getBook } from '../data/doseBooks';
 import { DoseBook } from './DoseBook';
 import { DoseVectorPanel } from './DoseVectorPanel';
 import { doseImageSrc, doseImageSrcSet, doseImageSizes } from '../utils/doseImage';
+import { DoseVideo } from './DoseVideo';
 import {
   AltbauThermalSimulator,
   GlasanflugSimulator,
@@ -426,6 +427,11 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
                 />
               </picture>
             </figure>
+          )}
+
+          {/* Eigenes Video: Vorschaubild, Datei lädt erst beim Klick */}
+          {dose.videoFile && (
+            <DoseVideo file={dose.videoFile} poster={dose.videoPoster} aspect={dose.videoAspect} title={lang === 'de' ? dose.videoTitle : dose.videoTitleEn || dose.videoTitle} lang={lang} />
           )}
 
           {/* Video Demonstration Link (Lazy external stream) */}

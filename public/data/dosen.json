@@ -52,6 +52,11 @@
   },
   {
     "id": "glasanflug-ampel",
+    "videoFile": "glasanflug-demo.mp4",
+    "videoPoster": "glasanflug-demo-poster.webp",
+    "videoAspect": 1.7777777777777777,
+    "videoTitle": "Konzeptvideo: vom Fassadenfoto zur Einstufung (10 s)",
+    "videoTitleEn": "Concept video: from façade photo to rating (10 s)",
     "emailTemplates": [
       {
         "recipientName": "NABU Berlin — Artenschutz am Gebäude",

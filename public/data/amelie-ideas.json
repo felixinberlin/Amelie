@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/felixinberlin/amelie/main/public/data/amelie-schema.json",
   "version": "1.0.0",
-  "generatedAt": "2026-10-01T09:55:08.322Z",
+  "generatedAt": "2026-10-01T10:39:16.239Z",
   "license": "CC0-1.0 (Public Domain / Kula-Ring)",
   "storageProvider": "github_pages",
   "repository": "https://github.com/felixinberlin/amelie",
@@ -64,6 +64,11 @@
     },
     {
       "id": "glasanflug-ampel",
+      "videoFile": "glasanflug-demo.mp4",
+      "videoPoster": "glasanflug-demo-poster.webp",
+      "videoAspect": 1.7777777777777777,
+      "videoTitle": "Konzeptvideo: vom Fassadenfoto zur Einstufung (10 s)",
+      "videoTitleEn": "Concept video: from façade photo to rating (10 s)",
       "emailTemplates": [
         {
           "recipientName": "NABU Berlin — Artenschutz am Gebäude",

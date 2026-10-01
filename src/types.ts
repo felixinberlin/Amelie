@@ -66,6 +66,14 @@ export interface DoseItem {
   videoUrl?: string;
   /** Titel oder Beschreibung des Videos */
   videoTitle?: string;
+  /** Titel des Videos auf Englisch (sonst videoTitle) */
+  videoTitleEn?: string;
+  /** Eigene Videodatei in public/ (komprimiertes MP4, faststart). Lädt erst beim Klick, siehe DoseVideo. */
+  videoFile?: string;
+  /** Vorschaubild in public/ (WebP, daneben <name>-640.webp) */
+  videoPoster?: string;
+  /** Breite geteilt durch Höhe des Videos (Standard 16/9) */
+  videoAspect?: number;
   oneLinerDe: string;
   oneLinerEn: string;
   oneLinerEs?: string;
