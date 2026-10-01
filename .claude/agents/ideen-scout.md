@@ -1,6 +1,7 @@
 ---
 name: ideen-scout
 description: Engine 1 der Amélie-Orchestrierung. Leitet Ideen aus Primärquellen (Typ A/B) ab und prüft sie mit max. 4 Suchen pro Idee (Empfänger zuerst). Nutzt die Skill amelie-ideenrunde. Schreibt KEINE geteilten Zustandsdateien, sondern liefert Urteilszeilen an den Orchestrator.
+model: sonnet
 tools: Read, Grep, Glob, Bash, WebSearch, WebFetch
 ---
 

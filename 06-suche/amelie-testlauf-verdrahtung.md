@@ -53,8 +53,8 @@ flowchart TD
 | bibliothekar | keiner | wie Packer | Protokoll, Friedhof, Quellen, Playbook |
 | venture-analyst | keiner | Read, Grep, Glob, Bash, Edit, Write, WebSearch, WebFetch | `ventures/` |
 
-**Modelle.** Keine Agentendefinition in `.claude/agents/` setzt ein `model:`. Das gilt in zwei Welten:
-- **Claude Code (Subagenten):** jeder Agent erbt das Modell der laufenden Sitzung. Soll ein Agent ein anderes bekommen, trage `model:` in sein Frontmatter ein oder setze es beim Aufruf.
+**Modelle.** Jede Agentendefinition in `.claude/agents/` hat jetzt `model: sonnet` als sparsame Voreinstellung (Quota). Zum Testen anderer Konfigurationen die Zeile je Rolle ändern (`opus`, `sonnet`, `haiku` oder eine volle Id). Das gilt in zwei Welten:
+- **Claude Code (Subagenten):** das `model:` im Frontmatter des Agenten gilt; ohne die Zeile erbt er das Sitzungsmodell.
 - **Kommandozeilen-Crew:** Modell je Agent aus `scripts/model-compare/models.local.json` (git-ignoriert, liegt nicht im Repo). Reihenfolge: `--model`, dann `agents.<agent>`, dann `crew`, `librarian`, `judge`, erstes Modell. Die Vorlage `models.example.json` nennt `claude-opus-5-5` (Vertex, Richter), `claude-sonnet-5-5` (Vertex) und `gemini` mit leerer Id (`SET_ME`). Welche Zuordnung bei dir gilt, steht nur in deiner lokalen Datei: `npm run agent -- list` bzw. `cat scripts/model-compare/models.local.json`.
 
 **Werkzeug-Übersetzung in der CLI-Crew:** Read → `read_file`, Grep/Glob → `search_repo`, Bash → `run_cli` (nur Lesebefehle), WebFetch → `web_fetch`, WebSearch → `web_search`; dazu immer `list_skills` und `load_skill`. Edit und Write gibt es dort nie, geschrieben wird nur vom Programm mit `--write`. Der Lab-Bibliothekar darf zusätzlich `call_agent` (nur lesend, Tiefe 1, höchstens 3).

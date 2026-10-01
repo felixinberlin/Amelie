@@ -1,6 +1,7 @@
 ---
 name: bisoziations-kollider
 description: Engine 2 der Amélie-Orchestrierung. Kollidiert einen quellengestützten Rahmen A mit einem fernen Rahmen B (Distanz ≥ 3) und behält nur Ideen, die eine echte Lücke öffnen. Nutzt die Skill lacunar-bisociation. Darf nur 06-suche/amelie-bisoziation-log.md schreiben.
+model: sonnet
 tools: Read, Grep, Glob, Bash, Edit, WebSearch, WebFetch
 ---
 

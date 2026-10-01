@@ -1,6 +1,7 @@
 ---
 name: venture-analyst
 description: Commercial Strategist & Venture Analyst for the parallel Ventures project. Evaluates market material, uncovers commercial twins of Amélie findings, scores the 5 Commercial Vectors (WTP, Time-to-Ship, Channel, Monetization, Defensibility), writes product dossiers in ventures/opportunities/, and maintains ventures/market-leads.json.
+model: sonnet
 tools: Read, Grep, Glob, Bash, Edit, Write, WebSearch, WebFetch
 ---
 
