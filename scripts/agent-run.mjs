@@ -13,6 +13,7 @@ import { EXIT, fixedAdapter, runAgent } from './crew/crew.mjs';
 import { CREW, PROFILES } from './crew/profiles.mjs';
 import { listRuns, loadRun, saveRun } from './crew/runs.mjs';
 import { applyWrites } from './crew/write.mjs';
+import { mergeRuns, renderMerge } from './crew/merge.mjs';
 
 const HELP = `Amélie-Crew — Agenten von der Kommandozeile
 
@@ -20,6 +21,7 @@ const HELP = `Amélie-Crew — Agenten von der Kommandozeile
   npm run agent -- <agent> [Auftrag] [Optionen]       einen Agenten laufen lassen
   npm run agent -- runs [--agent <name>] [--json]     Läufe auflisten (neueste zuerst)
   npm run agent -- show <run> [--json]                einen Lauf zeigen (run_id, Pfad oder latest:<agent>)
+  npm run agent -- merge <run> <run> … [--json]       Ergebnisse mehrerer Läufe zusammenlegen (ohne Modell)
   npm run agent -- write <run> [--dry-run]            Schreibweg eines früheren Laufs ausführen (nach Durchsicht)
 
 Auftrag (einer davon):
@@ -80,6 +82,14 @@ async function main() {
     return EXIT.OK;
   }
 
+  if (cmd === 'merge') {
+    let runs;
+    try { runs = argv.slice(1).filter((a, i, all) => !a.startsWith('--') && all[i - 1] !== '--runs-dir').map((ref) => loadRun(repoRoot, ref, { dir })); } catch (e) { err(e.message); return EXIT.USAGE; }
+    if (!runs.length) { err('merge braucht mindestens einen Lauf.'); return EXIT.USAGE; }
+    const m = mergeRuns(runs);
+    console.log(flag('json') ? JSON.stringify(m, null, 2) : renderMerge(m));
+    return EXIT.OK;
+  }
   if (cmd === 'write') {
     let r;
     try { r = loadRun(repoRoot, argv[1], { dir }); } catch (e) { err(e.message); return EXIT.USAGE; }

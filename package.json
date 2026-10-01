@@ -28,7 +28,8 @@
     "wet-ink:lab": "node scripts/wet-ink-lab.mjs",
     "export:market": "node scripts/export-market-leads.mjs",
     "lab": "node scripts/lab-review.mjs",
-    "agent": "node scripts/agent-run.mjs"
+    "agent": "node scripts/agent-run.mjs",
+    "teamrunde": "bash scripts/crew/teamrunde.sh"
   },
   "dependencies": {
     "@types/canvas-confetti": "^1.9.0",

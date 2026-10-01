@@ -432,3 +432,39 @@ describe('crew: bibliothekar', () => {
     expect(() => PROFILES.bibliothekar.buildTask({ inputs: [] })).toThrow(/--input/);
   });
 });
+
+// ---------------------------------------------------------------- Merge und Teamrunde
+
+import { mergeRuns, renderMerge } from '../../scripts/crew/merge.mjs';
+
+describe('crew: Merge und Teamrunde', () => {
+  it('merge zählt Urteile, Doppelfunde und unvollständige Läufe', () => {
+    const m = mergeRuns([
+      engineRun('ideen-scout', [cand('a'), cand('b', 'besetzt')]),
+      engineRun('inversions-agent', [cand('a', 'verengt')]),
+      { run_id: 'kaputt', agent: 'bisoziations-kollider', contract: 'candidates', status: 'contract_failed', data: null },
+      { run_id: 'rev', agent: 'idea-reviewer', contract: 'reviews', status: 'ok', data: { reviews: [review({ id: 'a' })] } },
+    ]);
+    expect(m.counts).toEqual({ frei: 0, verengt: 1, unklar: 0, besetzt: 1 });
+    expect(m.doppelfunde).toEqual([{ id: 'a', foundBy: ['ideen-scout', 'inversions-agent'] }]);
+    expect(m.zumReviewer).toEqual(['a']);
+    expect(m.unvollstaendig).toEqual(['kaputt']);
+    expect(renderMerge(m)).toContain('| Test-Idee (`a`) | verengt | ideen-scout + inversions-agent **Doppelfund** | 21/35 → Friedhof |');
+  });
+
+  it('teamrunde --mock läuft durch, ohne ins Gedächtnis zu schreiben', () => {
+    const dir = tmpRuns();
+    const tracked = ['06-suche/amelie-pruefprotokoll.md', 'src/data/graeber.json', '06-suche/amelie-suchplaybook.md', '06-suche/amelie-classification-log.md'].map((f) => readFileSync(join(ROOT, f), 'utf8'));
+    const r = spawnSync('bash', ['scripts/crew/teamrunde.sh', 'Holz', '--mock', '--runs-dir', dir], { cwd: ROOT, encoding: 'utf8', timeout: 120_000 });
+    expect(r.status, r.stderr).toBe(0);
+    const out = JSON.parse(r.stdout.trim().split('\n').pop()!);
+    expect(out.engines).toHaveLength(3);
+    expect(out.reviewer).toMatch(/^idea-reviewer-/);
+    expect(out.bibliothekar).toMatch(/^bibliothekar-/);
+    expect(out.written).toBe(false);
+    expect(r.stderr).toContain('würde schreiben: bib apply');
+    expect(r.stderr).not.toMatch(/write ideen-scout-/); // der Scout hat kein Log
+    expect(['06-suche/amelie-pruefprotokoll.md', 'src/data/graeber.json', '06-suche/amelie-suchplaybook.md', '06-suche/amelie-classification-log.md'].map((f) => readFileSync(join(ROOT, f), 'utf8'))).toEqual(tracked);
+    expect(spawnSync('bash', ['scripts/crew/teamrunde.sh'], { cwd: ROOT, encoding: 'utf8' }).status).toBe(1);
+  }, 120_000);
+});
