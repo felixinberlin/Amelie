@@ -255,3 +255,28 @@ describe('crew: idea-reviewer', () => {
     expect(w.stdout).toContain('amelie-classification-log.md (Vorschau)');
   });
 });
+
+// ---------------------------------------------------------------- inversions-agent
+
+describe('crew: inversions-agent', () => {
+  it('Standardauftrag lädt die Inversions-Skill und verlangt Zielsystem + Operator', () => {
+    const t = PROFILES['inversions-agent'].buildTask({ thema: 'Baumschutz' });
+    expect(t).toContain('Thema: Baumschutz');
+    expect(t).toContain('load_skill asymmetric-inversion');
+    expect(t).toContain('Zielsystem + Operator');
+    expect(() => PROFILES['inversions-agent'].buildTask({})).toThrow(/--thema/);
+    expect(loadDef(ROOT, 'inversions-agent').body).toContain('asymmetric-inversion');
+  });
+  it('schreibt einen Lauf-Abschnitt mit Kandidatentabelle nur ins Inversionslog', async () => {
+    const root = mkdtempSync(join(tmpdir(), 'crew-root-'));
+    mkdirSync(join(root, '06-suche'));
+    writeFileSync(join(root, '06-suche/amelie-inversions-log.md'), '# Inversionslog\n');
+    const record: any = { run_id: 'inversions-agent-x', agent: 'inversions-agent', status: 'ok', started: '2026-10-01T10:00:00Z', model: { id: 'm' }, thema: 'Baumschutz', report: 'Bericht', data: { ...goodCandidates, candidates: [{ ...goodCandidates.candidates[0], beleg: 'a | b' }] }, writes: [] };
+    await applyWrites({ root, record, profile: PROFILES['inversions-agent'] });
+    const log = readFileSync(join(root, '06-suche/amelie-inversions-log.md'), 'utf8');
+    expect(log).toContain('## Inversions-Lauf „Baumschutz“ per Kommandozeile (01.10.2026)');
+    expect(log).toContain('| Test-Idee (`test-idee`) |');
+    expect(log).toContain('a \\| b [Schnipsel]'); // Pipe im Beleg bricht die Tabelle nicht
+    expect(PROFILES['inversions-agent'].writes.files).toEqual(['06-suche/amelie-inversions-log.md']);
+  });
+});

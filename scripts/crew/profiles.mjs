@@ -53,6 +53,19 @@ const scoutMock = () => `## Kandidaten (Mock)
 
 const engineSummary = (d) => `${d.candidates.length} Ideen: ${count(d.candidates, 'urteil', ['frei', 'verengt', 'unklar', 'besetzt'])}`;
 
+const cell = (s) => String(s ?? '').replace(/\|/g, '\\|').replace(/\n/g, ' ');
+const candidateTable = (d) => [
+  '| Idee | Beschreibung | Herkunft | Empfänger | Urteil | Beleg | Restlücke |',
+  '|---|---|---|---|---|---|---|',
+  ...d.candidates.map((c) => `| ${cell(c.title)} (\`${c.id}\`) | ${cell(c.beschreibung)} | ${cell(c.quelle)} | ${cell(c.empfaenger)} | \`${c.urteil}\` | ${cell(c.beleg)} [${c.evidenz === 'seite' ? 'Seite' : 'Schnipsel'}] | ${cell(c.restluecke) || '–'} |`),
+].join('\n');
+
+/** Mock-Antwort einer Engine: zwei Kandidaten, eine Quellenmeldung, gültig nach Vertrag „candidates“. */
+const engineMock = (prefix, herkunft) => () => scoutMock()
+  .replaceAll('mock-idee-', `${prefix}-idee-`)
+  .replaceAll('Mock-Idee', `${herkunft} Mock-Idee`)
+  .replaceAll('"Mock (Typ L)"', `"${herkunft} (Mock)"`);
+
 // ---------------------------------------------------------------- Eingänge aus früheren Läufen
 
 /** Alle Kandidaten aus Engine-Läufen, mit Herkunft; gleiche id aus mehreren Läufen = Doppelfund. */
@@ -121,6 +134,29 @@ export const PROFILES = {
       build: (record) => [{ kind: 'append', file: LOGS.classification, text: renderLogSection({ record, title: `Review ${record.thema ? `„${record.thema}“ ` : ''}per Kommandozeile`, table: reviewTable(record.data) }) }],
     },
     mockReply: reviewMock,
+  },
+  'inversions-agent': {
+    role: 'Engine 3: invertiert ein reguliertes oder finanziertes System in ein unbebautes Gemeingut-Werkzeug und prüft die Kandidaten.',
+    contract: 'candidates',
+    buildTask: ({ task, thema }) => {
+      if (task && task.trim()) return task.trim();
+      if (!thema) throw new Error('inversions-agent braucht --thema "<Thema>" oder --task / --task-file.');
+      return `Teamrunde, Engine 3 (Inversion). Thema: ${thema}
+
+Arbeitsreihenfolge:
+1. load_skill asymmetric-inversion (SKILL.md und die references, die die Methode verlangt); letzte Retro und Atlas in 06-suche/amelie-suchplaybook.md; Kopf und letzte Läufe von 06-suche/amelie-inversions-log.md.
+2. Ein reales Zielsystem zum Thema wählen (Norm, Gesetz, Gebührenwerk, Förderprogramm, Bewertungsmonopol), möglichst aus dem Register (run_cli quellen next / quellen show). Asymmetrie-Karte: wer zahlt, wer trägt die Last, wo enden die Daten, was ist der blinde Fleck.
+3. Mit einem der fünf Operatoren invertieren, 3–5 Kandidaten. Jeden mit run_cli bib find --stamm gegen den Bestand halten.
+4. Je Kandidat höchstens 4 Suchen, Empfänger mit Mandat zuerst; „Beweismittel vor Funktion“: zählt das Ergebnis im Zielverfahren überhaupt?
+Im Feld „quelle“ jedes Kandidaten: Zielsystem + Operator. Liefere Bericht + JSON-Block (Vertrag „candidates“).`;
+    },
+    summarize: engineSummary,
+    writes: {
+      describe: `${LOGS.inversion} (neuer Lauf-Abschnitt, nur mit --write)`,
+      files: [LOGS.inversion],
+      build: (record) => [{ kind: 'append', file: LOGS.inversion, text: renderLogSection({ record, title: `Inversions-Lauf ${record.thema ? `„${record.thema}“ ` : ''}per Kommandozeile`, table: candidateTable(record.data) }) }],
+    },
+    mockReply: engineMock('inv', 'Zielsystem × OP-1'),
   },
 };
 
