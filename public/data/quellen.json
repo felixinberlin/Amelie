@@ -12012,6 +12012,1904 @@
           "status": "offen"
         }
       ]
+    },
+    {
+      "id": "ecochain-fsc-timber-chain-of",
+      "name": "FSC Timber Chain of Custody Certification Audit",
+      "typ": "A",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://ecochain.com/blog/fsc-timber-certification/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "FSC Timber Chain of Custody Certification Audit (Typ A); Anker des Lab-Laufs lacunar-20260930T164042-efeb55, nicht gelesen.",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "holz-chargen-tag-fussabdruck"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "lab",
+          "runde": "lacunar-20260930T164042-efeb55",
+          "notiz": "Anker des Lab-Laufs lacunar-20260930T164042-efeb55 (timber, PTR (rectangular/square steel tubing), corrugated sheets, and steel coil); nur als Suchtreffer gelesen. Bibliothekar 01.10.2026: Typ/Kategorie angepasst.",
+          "status": "angekratzt",
+          "planId": "lab-2026-09-30-lacunar-20260930T164042-efeb55-source"
+        },
+        {
+          "datum": "2026-10-01",
+          "agent": "ideen-scout",
+          "runde": "Lab-Nachlieferung 01.10.2026",
+          "notiz": "Lab-Anker (efeb55) nicht selbst gelesen; das CoC-Feld ist über FSC Trace und TRACEX besetzt.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "brandenburg-zeitzeugenportal-brandenburg-manuelle-erfassung",
+      "name": "Zeitzeugenportal Brandenburg (Manuelle Erfassung)",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://zeitzeugen.brandenburg.de/zeitzeugen/",
+        "https://zeitzeugen.brandenburg.de/impressum/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "web, Startseite und /impressum/ per WebFetch lesbar"
+      },
+      "enthaelt": "Zeitzeugenportal Brandenburg (Manuelle Erfassung) (Typ L); Anker des Lab-Laufs lacunar-20260930T210642-66f73d, nicht gelesen.",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "erinnerungsspuren-zerfall"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "lab",
+          "runde": "lacunar-20260930T210642-66f73d",
+          "notiz": "Anker des Lab-Laufs lacunar-20260930T210642-66f73d (Antikrieg, mutter, brandemburg, freiheit); nur als Suchtreffer gelesen. Bibliothekar 01.10.2026: Typ/Kategorie angepasst.",
+          "status": "angekratzt",
+          "planId": "lab-2026-09-30-lacunar-20260930T210642-66f73d-source"
+        },
+        {
+          "datum": "2026-10-01",
+          "agent": "ideen-scout",
+          "runde": "Lab-Nachlieferung 01.10.2026",
+          "notiz": "Lab-Anker 66f73d. Träger ist die LAkD (SED-Unrecht, 60+ Zeugen, Relaunch 2025 VCAT), keine Karte, keine Mitmachfunktion, Antikrieg nicht im Mandat; Anker für Ortsgedächtnis dicht.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "coaat-malaga-app-control-de-materiales",
+      "name": "COAAT Málaga App Control de materiales",
+      "typ": "W",
+      "kategorie": "empfaenger",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.coaat.es/nueva-app-control-materiales-coaat-malaga/",
+        "https://play.google.com/store/apps/details?id=es.coaat.conmat"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "teilweise",
+        "wie": "web, Herausgeberseite coaat.es per WebFetch lesen; die Play-Store-Seite es.coaat.conmat liefert per WebFetch eine fremde App"
+      },
+      "enthaelt": "App der Aparejadores zur Annahme auf der Baustelle: je Material CE/DoP-Pflicht, Norm, Prüfsystem, Datum der Pflicht",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "dop-scanner-stahl"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "ideen-scout",
+          "runde": "Lab-Nachlieferung 01.10.2026",
+          "notiz": "Stand 2020, kein Scan; COAAT/CGATE ist der Empfänger mit Mandat für die Annahme auf der Baustelle.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "material-identity-dictionary-dpp-steel",
+      "name": "material-identity dictionary (DPP steel)",
+      "typ": "N",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://github.com/material-identity/dictionary/issues/119"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "repo, GitHub-Issue per WebFetch lesbar"
+      },
+      "enthaelt": "Offenes Wörterbuch für DPP-Stahl mit declarationOfPerformance (JSON) nach CPR 305/2011 und 2024/3110",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "dop-scanner-stahl"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "ideen-scout",
+          "runde": "Lab-Nachlieferung 01.10.2026",
+          "notiz": "Issue vom 30.09.2026 gemergt; maschinenlesbare DoP für Stahl ist auf Seite der Hersteller schon spezifiziert.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "cidemadera-blog-clasificacion-estructura",
+      "name": "CIDEMADERA Blog Clasificación estructural en obra",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://cidemadera.com/index.php/blog/34-es"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Methoden der Festigkeitssortierung in Spanien (UNE-EN 408, UNE 56544/56546, Ultraschall) und ihre Grenzen bei verbautem Holz",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "holz-sortierklasse-vorort"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "ideen-scout",
+          "runde": "Lab-Nachlieferung 01.10.2026",
+          "notiz": "Belegt: visuelle Sortierung braucht vier freie Seiten, Ultraschall ist laut Norm nicht klassifizierend.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "smart-thumper-mississippi-state-universi",
+      "name": "Smart Thumper (Mississippi State University)",
+      "typ": "I",
+      "kategorie": "messverfahren",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.woodworkingnetwork.com/technology/smartphone-app-tests-lumber-quality-soundwaves-and-vibrations",
+        "https://bioresources.cnr.ncsu.edu/resources/assessment-of-the-application-of-a-smart-thumper-as-a-low-cost-and-portable-device-used-for-stiffness-estimation-of-timber-products/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "iPhone-App, die die Steifigkeit von Schnittholz per Schlag oder Vibration und Mikrofon schätzt, mit Ampelanzeige",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "holz-sortierklasse-vorort"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "ideen-scout",
+          "runde": "Lab-Nachlieferung 01.10.2026",
+          "notiz": "Klopf-App fürs Holz seit 2019; stützt das Atlas-Feld Handy-Ton dicht.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "aitim-boletin-recepcion-en-obra-madera-e",
+      "name": "AITIM Boletín Recepción en obra madera estructural",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.researchgate.net/publication/258241390",
+        "https://aitim.infomadera.net/normativa/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "teilweise",
+        "wie": "Volltext über ResearchGate, nicht abgerufen"
+      },
+      "enthaelt": "AITIM-Artikel zu CE-Kennzeichnung, CTE und korrekter Annahme und Lagerung von Bauholz",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "holz-sortierklasse-vorort"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "ideen-scout",
+          "runde": "Lab-Nachlieferung 01.10.2026",
+          "notiz": "AITIM als Empfänger plausibel; die Annahme ist Prüfung der Unterlagen.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "fsc-trace",
+      "name": "FSC Trace",
+      "typ": "W",
+      "kategorie": "empfaenger",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://madera-sostenible.com/forestal/fsc-desarrolla-fsc-trace-una-herramienta-digital-que-incrementa-la-integridad-y-verificacion-en-el-proceso-de-cadena-de-custodia/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "FSC-Blockchain-Werkzeug für die CoC: Transaktionsdaten, Art, Volumen, Herkunft, Sorgfaltsberichte",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "holz-chargen-tag-fussabdruck",
+          "holz-audit-adaptiv"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "ideen-scout",
+          "runde": "Lab-Nachlieferung 01.10.2026",
+          "notiz": "Der Empfänger hat Chargen-Tag und Dauer-Compliance selbst gebaut (12/2024).",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "tracex-timber-traceability",
+      "name": "TRACEX Timber Traceability",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://tracextech.com/timber-traceability-systems/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Kommerzielle Plattform: digitales Log-Tagging, Chargen-Stammbaum, CoC, EUDR, Geoprüfung",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "holz-chargen-tag-fussabdruck",
+          "holz-chargen-sensorhaut"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "ideen-scout",
+          "runde": "Lab-Nachlieferung 01.10.2026",
+          "notiz": "Besetzt-Test für Rückverfolgung von Holzchargen; keine IoT-Umweltsensorik erwähnt.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "tector-wood-sensors",
+      "name": "Tector Wood Sensors",
+      "typ": "I",
+      "kategorie": "messverfahren",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.tector.com/wood-sensors"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Kabellose Holzfeuchtesensoren mit Alarm und Berichten für BSH und Holzbau in Bau und Betrieb",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "holz-chargen-sensorhaut"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "ideen-scout",
+          "runde": "Lab-Nachlieferung 01.10.2026",
+          "notiz": "Sensorhaut für Holz kommerziell; Transport und Lager nicht ausdrücklich genannt.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "ifactory-ai-vision-lumber-grading",
+      "name": "iFactory AI Vision Lumber Grading",
+      "typ": "I",
+      "kategorie": "messverfahren",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://ifactoryapp.com/ai-vision-camera/ai-vision-lumber-wood-grading-inspection"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Feste Linienkamera im Sägewerk, sortiert nach Aussehen (NHLA), keine Festigkeitsklasse",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "ideen-scout",
+          "runde": "Lab-Nachlieferung 01.10.2026",
+          "notiz": "Lab-Vorabtreffer deckt f9650e S1 nicht ab (keine Mobil-App, keine Festigkeitssortierung).",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "world-forest-id",
+      "name": "World Forest ID",
+      "typ": "I",
+      "kategorie": "messverfahren",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://worldforestid.org/evaluation_platform",
+        "https://www.iaea.org/projects/crp/f22089"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Referenzsammlung und Plattform zur Holzherkunft per Isotopen, Chemie und DNA, mit FSC und AHEC",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "holz-herkunft-isotopen"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "ideen-scout",
+          "runde": "Lab-Nachlieferung 01.10.2026",
+          "notiz": "Belegt den Lab-Grab-Vorschlag efeb55 C6 (Isotopen- und DNA-Herkunft).",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "google-play-store-app-seiten",
+      "name": "Google Play Store App-Seiten",
+      "typ": "X",
+      "kategorie": "soziale-plattform",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://play.google.com/store/apps/details?id=com.finestfor.certiscan"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "gesperrt",
+        "wie": "app, WebFetch auf play.google.com/store/apps/details liefert eine fremde App (Ihre Heimat, QPMS); Herausgeberseite oder apkpure.com nutzen"
+      },
+      "enthaelt": "App-Beschreibungen (certiscan, es.coaat.conmat)",
+      "fokus": "",
+      "status": "gesperrt",
+      "statusNotiz": "",
+      "evidenz": "unbekannt",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "ideen-scout",
+          "runde": "Lab-Nachlieferung 01.10.2026",
+          "notiz": "Negativbefund Zugang; certiscan laut Reviewer-Schnipsel eine GPSR/CE-Compliance-App, kein DoP-Leser.",
+          "status": "gesperrt"
+        }
+      ]
+    },
+    {
+      "id": "arolsen-archives-ki-online-archiv",
+      "name": "Arolsen Archives (KI & Online-Archiv)",
+      "typ": "C",
+      "kategorie": "ki-versuch",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://arolsen-archives.org/news/ki-hilft-bei-rekonstruktion-von-einzelschicksalen/",
+        "https://arolsen-archives.org/en/dossiers/digitalization/digital-memorial-to-the-victims-of-nazism-ai-helps-reconstruct-individual-fates/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "OCR >99 %, Person Matching, Knowledge-Graph-Prototyp, Online-Archiv mit 680.000 Nutzern, Auskunftsdienst (79 % Angehörige)",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "repressionsberichte-ner-lokal",
+          "familienanekdote-repression-verknuepfer"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "ideen-scout",
+          "runde": "Lab-Nachlieferung 01.10.2026",
+          "notiz": "Empfänger mit Mandat baut die Verknüpfung selbst, Anker dicht für aba544 S1/S2.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "juedische-allgemeine-arolsen-anfragestat",
+      "name": "Jüdische Allgemeine, Arolsen-Anfragestatistik 2023",
+      "typ": "E",
+      "kategorie": "statistik",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.juedische-allgemeine.de/allgemein/mehr-als-20-000-anfragen-bei-zentrum-ueber-ns-verfolgung/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "20.000+ Anfragen, 28.000 Personen, 79 % Angehörige, 680.000 Online-Nutzer",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "familienanekdote-repression-verknuepfer"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "ideen-scout",
+          "runde": "Lab-Nachlieferung 01.10.2026",
+          "notiz": "Bedarf der Angehörigen wird als Dienst bedient.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "ki-oh-fu-berlin-dfg-2027-2029",
+      "name": "KI.OH (FU Berlin, DFG 2027–2029)",
+      "typ": "C",
+      "kategorie": "ki-versuch",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.fu-berlin.de/sites/ub/forschen/interviewsammlungen/forschung/kioh/index.html"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Normdaten-NER, Transkription, semantische Suche, Trust Level Engine für sensible Oral-History-Interviews",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "repressionsberichte-ner-lokal",
+          "zeitzeugen-themenpheromone",
+          "mikro-storytelling-erinnerung"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "ideen-scout",
+          "runde": "Lab-Nachlieferung 01.10.2026",
+          "notiz": "Doppelfund zweier Scouts (aba544 S1, 66f73d S2); gefördertes Forschungsprojekt, Grab-Signal (Förderung = besetzt).",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "kz-gedenkstaette-neuengamme-ki-portal",
+      "name": "KZ-Gedenkstätte Neuengamme KI-Portal",
+      "typ": "C",
+      "kategorie": "ki-versuch",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.kz-gedenkstaette-neuengamme.de/nachrichten/news/kuenstliche-intelligenz-hilft-bei-der-erschliessung-von-erinnerungsberichten-im-archiv/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Semantische Suche in 2.200 Erinnerungsberichten (24.06.2026, hauptsache.net), benannte Grenze: Quellenauswahl statt Interpretation",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "repressionsberichte-ner-lokal",
+          "zeitzeugen-themenpheromone",
+          "zeitzeugen-nachrichten-bruecke"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "ideen-scout",
+          "runde": "Lab-Nachlieferung 01.10.2026",
+          "notiz": "Doppelfund zweier Scouts; Gedenkstätte setzt KI-Findhilfe selbst ein, Leitsatz tötet interpretierende Mechaniken.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "totenbuch-speziallager-7-1-sachsenhausen",
+      "name": "Totenbuch Speziallager 7/1 Sachsenhausen",
+      "typ": "L",
+      "kategorie": "datensatz",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.sachsenhausen-sbg.de/en/collection-and-research/archive/book-of-the-dead-soviet-special-camp-1945-1950/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "11.889 Namen mit Lebensdaten, Online-Suche, Kontaktformular je Person",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "familienanekdote-repression-verknuepfer",
+          "gedenktafel-faktencheck"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "ideen-scout",
+          "runde": "Lab-Nachlieferung 01.10.2026",
+          "notiz": "Einzelsuche offen, kein Bulk-Export gesehen.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "stolpersteine-verlegungsschritte-datenba",
+      "name": "Stolpersteine Verlegungsschritte & Datenbank (stolpersteine.eu)",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.stolpersteine.eu/das-kunstdenkmal/schritte-zur-stolperstein-verlegung",
+        "https://www.stolpersteine.eu/wissenwertes/app-stolpersteine-by-gunter-demnig"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Inschriftenprüfung durch Regionalprüfer 4 Monate vorab, Demnig entscheidet, Gedenkbuch als Referenz, Datenbank seit 2020 im Aufbau",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "gedenktafel-faktencheck"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "ideen-scout",
+          "runde": "Lab-Nachlieferung 01.10.2026",
+          "notiz": "Menschliche Prüfinstanz existiert; Datenbank nicht live.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "bundesarchiv-open-data",
+      "name": "Bundesarchiv Open Data",
+      "typ": "L",
+      "kategorie": "datensatz",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.bundesarchiv.de/das-bundesarchiv/aus-unserer-archivarbeit/open-data/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Findmittel EAD 2002 XML CC0; Gedenkbuch nicht als Open Data",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "gedenktafel-faktencheck"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "ideen-scout",
+          "runde": "Lab-Nachlieferung 01.10.2026",
+          "notiz": "Negativbefund: Gedenkbuch-Daten nicht maschinell offen.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "dokumentationszentrum-ns-zwangsarbeit-la",
+      "name": "Dokumentationszentrum NS-Zwangsarbeit Lagerdatenbank",
+      "typ": "L",
+      "kategorie": "datensatz",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.ns-zwangsarbeit.de/recherche/lagerdatenbank"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Hunderte Berliner Lager mit Adresse, Betreiber, Art, Belegung, Nationalitäten",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "repressionsort-foto-erkenner"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "ideen-scout",
+          "runde": "Lab-Nachlieferung 01.10.2026",
+          "notiz": "Berlin dicht; Brandenburg nur über zwangsarbeit-forschung.de (nicht gelesen).",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "erinnerungsorte-brandenburg-karte",
+      "name": "Erinnerungsorte Brandenburg (Karte)",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://erinnerungsorte-brandenburg.de/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "teilweise",
+        "wie": "web, WebFetch liefert nur Meta-Beschreibung (Inhalte per JS), Impressum direkt abrufen"
+      },
+      "enthaelt": "Interaktive Karte der Orte der Erinnerung in Brandenburg",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "repressionsort-foto-erkenner"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "ideen-scout",
+          "runde": "Lab-Nachlieferung 01.10.2026",
+          "notiz": "Von zwei Scouts gefunden; Träger, Umfang und Meldefunktion ungeklärt.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "spur-lab-zeitschichten",
+      "name": "SPUR.lab Zeitschichten",
+      "typ": "C",
+      "kategorie": "ki-versuch",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.spurlab.de/prototypen/zeitschichten"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "AR-Zeitschichten Sachsenhausen 1936 bis heute, BGKG, Kulturstiftung des Bundes/BKM, keine KI",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "repressionsort-foto-erkenner"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "ideen-scout",
+          "runde": "Lab-Nachlieferung 01.10.2026",
+          "notiz": "Ort-Zeitschicht-Vermittlung beim Empfänger besetzt.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "lakd-brandenburg-aufarbeitungsbeauftragt",
+      "name": "LAkD Brandenburg (Aufarbeitungsbeauftragte)",
+      "typ": "W",
+      "kategorie": "empfaenger",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://aufarbeitung.brandenburg.de/ueber-uns/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Gesetzliches Mandat 2009, Bürgerberatung, Akteneinsicht, Härtefallfonds, Träger Zeitzeugenportal Brandenburg",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "familienanekdote-repression-verknuepfer"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "ideen-scout",
+          "runde": "Lab-Nachlieferung 01.10.2026",
+          "notiz": "Echter Mandatsträger für SBZ/DDR-Anfragen in Brandenburg, nicht die BLzpB.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "hdg-und-fraunhofer-iais-multimodales-min",
+      "name": "HdG und Fraunhofer IAIS Multimodales Mining von Zeitzeugeninterviews (bpb Werkstatt)",
+      "typ": "C",
+      "kategorie": "ki-versuch",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.hdg.de/presse/pressemitteilung-2020-12-11-erzaehlte-geschichte-trifft-kuenstliche-intelligenz",
+        "https://www.bpb.de/lernen/digitale-bildung/werkstatt/517178/kuenstliche-intelligenz-trifft-zeitzeugeninterviews/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Emotionserkennung und Audio-Mining in 8.300 Clips des Zeitzeugenportals (Text, Stimme, Mimik), KA3 mit FernUni Hagen, BKM-gefördert 2020 bis 2022; keine NER",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "zeitzeugen-themenpheromone"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "ideen-scout",
+          "runde": "Lab-Nachlieferung 01.10.2026",
+          "notiz": "Von zwei Scouts gemeldet (bpb-Werkstatt und HdG-Pressemitteilung, gleiches Projekt); Vorgänger von KI.OH.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "gedenktafelkommission-pankow-protokolle",
+      "name": "Gedenktafelkommission Pankow (Protokolle)",
+      "typ": "A",
+      "kategorie": "kommunal",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.berlin.de/ba-pankow/politik-und-verwaltung/gremien/beiraete/protokoll_gedenktafelkommission_03-11-2022.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "teilweise",
+        "wie": "pdf, berlin.de liefert 429 bei WebFetch, später erneut"
+      },
+      "enthaelt": "Prüfgremium für Gedenktafeltexte im Bezirk",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "gedenktafel-faktencheck"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "ideen-scout",
+          "runde": "Lab-Nachlieferung 01.10.2026",
+          "notiz": "Prüfweise nicht gelesen.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "gedenkstaettenforum-rundbrief-vom-verges",
+      "name": "GedenkstättenForum Rundbrief Vom vergessenen Lager zum Dokumentationszentrum",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.gedenkstaettenforum.de/aktivitaeten/gedenkstaettenrundbrief/detail/vom-vergessenen-lager-zum-dokumentationszentrum"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "gesperrt",
+        "wie": "web, WebFetch 403; PDF-Variante GedRund111_3-13_01.pdf versuchen"
+      },
+      "enthaelt": "Praxisbericht zur Entdeckung vergessener Lager",
+      "fokus": "",
+      "status": "gesperrt",
+      "statusNotiz": "",
+      "evidenz": "unbekannt",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "ideen-scout",
+          "runde": "Lab-Nachlieferung 01.10.2026",
+          "notiz": "Nicht abrufbar.",
+          "status": "gesperrt"
+        }
+      ]
+    },
+    {
+      "id": "sbgv-bravors",
+      "name": "SBGV (bravors)",
+      "typ": "A",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://bravors.brandenburg.de/verordnungen/sbgv"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Errichtungsverordnung Stiftung Brandenburgische Gedenkstätten",
+      "fokus": "",
+      "status": "offen",
+      "statusNotiz": "",
+      "evidenz": "unbekannt",
+      "zuletzt": null,
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "ideen-scout",
+          "runde": "Lab-Nachlieferung 01.10.2026",
+          "notiz": "Zielsystem des Laufs aba544; selbst nicht gelesen.",
+          "status": "offen"
+        }
+      ]
+    },
+    {
+      "id": "sbg-layer-orte-der-erinnerung-in-der-ber",
+      "name": "SBG-Layer Orte der Erinnerung in der berlinHistory.app",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.below-sbg.de/meldungen/die-stiftung-brandenburgische-gedenkstaetten-praesentiert-111-orte-der-erinnerung-mit-videos-rundgaengen-und-zeitzeugenberichten-im-rahmen-der-berlinhistoryapp/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "111 Orte, 42 Videos, 4 Rundgänge, 130+ Biografien und Zeitzeugenberichte zu NS, Speziallagern und SED-Unrecht in Brandenburg als Kartenlayer, EFRE-gefördert",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "erinnerungsspuren-zerfall"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "ideen-scout",
+          "runde": "Lab-Nachlieferung 01.10.2026",
+          "notiz": "Besetzt-Test für ortsgebundene Zeitzeugen-Audio in Brandenburg.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "zeitzeugenportal-haus-der-geschichte",
+      "name": "Zeitzeugenportal Haus der Geschichte",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.zeitzeugen-portal.de/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Bundesweites Clip-Portal mit Epochen 1914 bis heute, neun Themen, Personen, Suche",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "zeitzeugen-nachrichten-bruecke"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "ideen-scout",
+          "runde": "Lab-Nachlieferung 01.10.2026",
+          "notiz": "Gegenwartsbezug wird redaktionell kuratiert, kein Nachrichten-Matching gefunden.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "haus-der-europaeischen-geschichte-mein-e",
+      "name": "Haus der Europäischen Geschichte Mein Europa auf der Karte",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://historia.europa.eu/de/digitales-angebot/mein-europa-auf-der-karte"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Gemeinschaftliche Karte persönlicher Orte und Verbindungen seit 2017",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "erinnerungs-emotionskarte"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "ideen-scout",
+          "runde": "Lab-Nachlieferung 01.10.2026",
+          "notiz": "Partizipative Erinnerungskarte existiert.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "emotional-mapping-cluster-stanford-londo",
+      "name": "Emotional Mapping Cluster (Stanford London, EmoMap Salzburg, Urban Emotions KIT)",
+      "typ": "I",
+      "kategorie": "messverfahren",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://news.stanford.edu/stories/2017/03/mapping-emotions-london",
+        "https://www.salzburgresearch.at/projekt/emomap/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "teilweise",
+        "wie": "web, salzburgresearch.at Timeout"
+      },
+      "enthaelt": "Methoden und Projekte zur Kartierung gefühlter Emotionen an Orten",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "erinnerungs-emotionskarte"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "ideen-scout",
+          "runde": "Lab-Nachlieferung 01.10.2026",
+          "notiz": "Methode seit 2017 gebaut und beforscht.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "stolpersteine-guide",
+      "name": "Stolpersteine Guide",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://stolpersteine-guide.de/map/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Bundesweite Karte und App zu Stolpersteinen mit Biografien",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "erinnerungsspuren-zerfall"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "ideen-scout",
+          "runde": "Lab-Nachlieferung 01.10.2026",
+          "notiz": "Ortsgebundene Erinnerungs-App für NS-Opfer existiert.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "mit-design-lab-memory-traces",
+      "name": "MIT Design Lab Memory Traces",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://design-lab.mit.edu/projects/memory-traces"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "150 ortsgebundene Erinnerungsepisoden aus Boston mit Mobile-App (2012)",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "erinnerungsspuren-zerfall"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "ideen-scout",
+          "runde": "Lab-Nachlieferung 01.10.2026",
+          "notiz": "Frühes Vorbild ortsgebundener Erinnerungsspuren.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "familien-erinnerungs-apps-familysearch-e",
+      "name": "Familien-Erinnerungs-Apps (FamilySearch Erinnerungen, Heritage-App, erinnerungswerk)",
+      "typ": "X",
+      "kategorie": "soziale-plattform",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.familysearch.org/de/blog/wie-man-mit-der-app-erinnerungen-von-familysearch-arbeitet",
+        "https://erinnerungswerk.com/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Apps zum Hochladen kurzer Erinnerungen mit Audio, Foto und Text für Familien",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "mikro-storytelling-erinnerung"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "ideen-scout",
+          "runde": "Lab-Nachlieferung 01.10.2026",
+          "notiz": "Beleg für das Grab des Lab-Vorschlags 66f73d C10.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "stadt-brandenburg-an-der-havel-friedensw",
+      "name": "Stadt Brandenburg an der Havel Friedenswarte-Friedensbotschaften",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.stadt-brandenburg.de/presse/friedenswarte-sendet-friedensbotschaften"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Schulprojekt 2024 mit Friedensplakaten an der Friedenswarte",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "erinnerungs-emotionskarte"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "ideen-scout",
+          "runde": "Lab-Nachlieferung 01.10.2026",
+          "notiz": "Negativbefund, kein Träger für Friedensimpulse.",
+          "status": "angekratzt"
+        }
+      ]
     }
   ]
 }

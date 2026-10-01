@@ -178,3 +178,57 @@
 {"at":"2026-09-30T18:38:57.587Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Survivors Existenzprüfung 30.09.2026","id":"aspca-safer-verhaltensassessment-hund-ka"}
 {"at":"2026-09-30T18:38:57.645Z","event":"cli","cmd":"quellen log","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Survivors Existenzprüfung 30.09.2026","id":"waldwissen-net-strategien-zum-management"}
 {"at":"2026-09-30T18:38:57.650Z","event":"cli","actor":"bibliothekar","agent":"ideen-scout","runde":"Lab-Survivors Existenzprüfung 30.09.2026","cmd":"quellen import","count":21}
+{"at":"2026-10-01T09:29:27.921Z","event":"op","plan_id":"lab-2026-09-30-lacunar-20260930T164042-efeb55-source","actor":"lab-librarian","agent":"lab","runde":"lacunar-20260930T164042-efeb55","op":"source.add","target":"ecochain-fsc-timber-chain-of","detail":"Quelle aufgenommen (angekratzt)"}
+{"at":"2026-10-01T09:29:27.921Z","event":"apply","plan_id":"lab-2026-09-30-lacunar-20260930T164042-efeb55-source","key":"lab-2026-09-30-lacunar-20260930T164042-efeb55-source","actor":"lab-librarian","ops":1,"files":6}
+{"at":"2026-10-01T09:29:28.932Z","event":"op","plan_id":"lab-2026-09-30-lacunar-20260930T210642-66f73d-source","actor":"lab-librarian","agent":"lab","runde":"lacunar-20260930T210642-66f73d","op":"source.add","target":"brandenburg-zeitzeugenportal-brandenburg-manuelle-erfassung","detail":"Quelle aufgenommen (angekratzt)"}
+{"at":"2026-10-01T09:29:28.932Z","event":"apply","plan_id":"lab-2026-09-30-lacunar-20260930T210642-66f73d-source","key":"lab-2026-09-30-lacunar-20260930T210642-66f73d-source","actor":"lab-librarian","ops":1,"files":6}
+{"at":"2026-10-01T09:49:29.704Z","event":"cli","actor":"bibliothekar","runde":"Lab-Nachlieferung Existenzprüfung 01.10.2026","cmd":"protokoll add","id":"holz-sortierklasse-vorort"}
+{"at":"2026-10-01T09:49:29.929Z","event":"cli","actor":"bibliothekar","runde":"Lab-Nachlieferung Existenzprüfung 01.10.2026","cmd":"protokoll add","id":"dop-scanner-stahl"}
+{"at":"2026-10-01T09:49:30.141Z","event":"cli","actor":"bibliothekar","runde":"Lab-Nachlieferung Existenzprüfung 01.10.2026","cmd":"protokoll add","id":"holz-chargen-tag-fussabdruck"}
+{"at":"2026-10-01T09:49:30.352Z","event":"cli","actor":"bibliothekar","runde":"Lab-Nachlieferung Existenzprüfung 01.10.2026","cmd":"protokoll add","id":"holz-chargen-sensorhaut"}
+{"at":"2026-10-01T09:49:30.621Z","event":"cli","actor":"bibliothekar","runde":"Lab-Nachlieferung Existenzprüfung 01.10.2026","cmd":"protokoll add","id":"repressionsberichte-ner-lokal"}
+{"at":"2026-10-01T09:49:30.850Z","event":"cli","actor":"bibliothekar","runde":"Lab-Nachlieferung Existenzprüfung 01.10.2026","cmd":"protokoll add","id":"familienanekdote-repression-verknuepfer"}
+{"at":"2026-10-01T09:49:31.114Z","event":"cli","actor":"bibliothekar","runde":"Lab-Nachlieferung Existenzprüfung 01.10.2026","cmd":"protokoll add","id":"repressionsort-foto-erkenner"}
+{"at":"2026-10-01T09:49:31.363Z","event":"cli","actor":"bibliothekar","runde":"Lab-Nachlieferung Existenzprüfung 01.10.2026","cmd":"protokoll add","id":"gedenktafel-faktencheck"}
+{"at":"2026-10-01T09:49:31.605Z","event":"cli","actor":"bibliothekar","runde":"Lab-Nachlieferung Existenzprüfung 01.10.2026","cmd":"protokoll add","id":"erinnerungsspuren-zerfall"}
+{"at":"2026-10-01T09:49:31.845Z","event":"cli","actor":"bibliothekar","runde":"Lab-Nachlieferung Existenzprüfung 01.10.2026","cmd":"protokoll add","id":"zeitzeugen-themenpheromone"}
+{"at":"2026-10-01T09:49:32.040Z","event":"cli","actor":"bibliothekar","runde":"Lab-Nachlieferung Existenzprüfung 01.10.2026","cmd":"protokoll add","id":"erinnerungs-emotionskarte"}
+{"at":"2026-10-01T09:49:32.266Z","event":"cli","actor":"bibliothekar","runde":"Lab-Nachlieferung Existenzprüfung 01.10.2026","cmd":"protokoll add","id":"zeitzeugen-nachrichten-bruecke"}
+{"at":"2026-10-01T09:51:38.800Z","event":"cli","actor":"bibliothekar","cmd":"grab add","ids":["holz-sortierklasse-vorort","dop-scanner-stahl","holz-chargen-tag-fussabdruck","holz-chargen-sensorhaut","repressionsberichte-ner-lokal","familienanekdote-repression-verknuepfer","repressionsort-foto-erkenner","gedenktafel-faktencheck","erinnerungsspuren-zerfall","zeitzeugen-themenpheromone","erinnerungs-emotionskarte","zeitzeugen-nachrichten-bruecke","trapezblech-verformung-scan","rostgrad-kamera","holz-audit-adaptiv","holz-herkunft-isotopen","mikro-storytelling-erinnerung"]}
+{"at":"2026-10-01T09:53:40.734Z","event":"cli","cmd":"quellen log","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","id":"ecochain-fsc-timber-chain-of"}
+{"at":"2026-10-01T09:53:40.839Z","event":"cli","cmd":"quellen log","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","id":"brandenburg-zeitzeugenportal-brandenburg-manuelle-erfassung"}
+{"at":"2026-10-01T09:53:40.935Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","id":"coaat-malaga-app-control-de-materiales"}
+{"at":"2026-10-01T09:53:41.023Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","id":"material-identity-dictionary-dpp-steel"}
+{"at":"2026-10-01T09:53:41.110Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","id":"cidemadera-blog-clasificacion-estructura"}
+{"at":"2026-10-01T09:53:41.204Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","id":"smart-thumper-mississippi-state-universi"}
+{"at":"2026-10-01T09:53:41.295Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","id":"aitim-boletin-recepcion-en-obra-madera-e"}
+{"at":"2026-10-01T09:53:41.397Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","id":"fsc-trace"}
+{"at":"2026-10-01T09:53:41.485Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","id":"tracex-timber-traceability"}
+{"at":"2026-10-01T09:53:41.569Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","id":"tector-wood-sensors"}
+{"at":"2026-10-01T09:53:41.649Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","id":"ifactory-ai-vision-lumber-grading"}
+{"at":"2026-10-01T09:53:41.744Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","id":"world-forest-id"}
+{"at":"2026-10-01T09:53:41.839Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","id":"google-play-store-app-seiten"}
+{"at":"2026-10-01T09:53:41.913Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","id":"arolsen-archives-ki-online-archiv"}
+{"at":"2026-10-01T09:53:42.000Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","id":"juedische-allgemeine-arolsen-anfragestat"}
+{"at":"2026-10-01T09:53:42.097Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","id":"ki-oh-fu-berlin-dfg-2027-2029"}
+{"at":"2026-10-01T09:53:42.181Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","id":"kz-gedenkstaette-neuengamme-ki-portal"}
+{"at":"2026-10-01T09:53:42.263Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","id":"totenbuch-speziallager-7-1-sachsenhausen"}
+{"at":"2026-10-01T09:53:42.349Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","id":"stolpersteine-verlegungsschritte-datenba"}
+{"at":"2026-10-01T09:53:42.440Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","id":"bundesarchiv-open-data"}
+{"at":"2026-10-01T09:53:42.538Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","id":"dokumentationszentrum-ns-zwangsarbeit-la"}
+{"at":"2026-10-01T09:53:42.637Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","id":"erinnerungsorte-brandenburg-karte"}
+{"at":"2026-10-01T09:53:42.720Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","id":"spur-lab-zeitschichten"}
+{"at":"2026-10-01T09:53:42.801Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","id":"lakd-brandenburg-aufarbeitungsbeauftragt"}
+{"at":"2026-10-01T09:53:42.886Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","id":"hdg-und-fraunhofer-iais-multimodales-min"}
+{"at":"2026-10-01T09:53:42.971Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","id":"gedenktafelkommission-pankow-protokolle"}
+{"at":"2026-10-01T09:53:43.051Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","id":"gedenkstaettenforum-rundbrief-vom-verges"}
+{"at":"2026-10-01T09:53:43.134Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","id":"sbgv-bravors"}
+{"at":"2026-10-01T09:53:43.215Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","id":"sbg-layer-orte-der-erinnerung-in-der-ber"}
+{"at":"2026-10-01T09:53:43.291Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","id":"zeitzeugenportal-haus-der-geschichte"}
+{"at":"2026-10-01T09:53:43.363Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","id":"haus-der-europaeischen-geschichte-mein-e"}
+{"at":"2026-10-01T09:53:43.462Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","id":"emotional-mapping-cluster-stanford-londo"}
+{"at":"2026-10-01T09:53:43.543Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","id":"stolpersteine-guide"}
+{"at":"2026-10-01T09:53:43.641Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","id":"mit-design-lab-memory-traces"}
+{"at":"2026-10-01T09:53:43.743Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","id":"familien-erinnerungs-apps-familysearch-e"}
+{"at":"2026-10-01T09:53:43.844Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","id":"stadt-brandenburg-an-der-havel-friedensw"}
+{"at":"2026-10-01T09:53:43.855Z","event":"cli","actor":"bibliothekar","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","cmd":"quellen import","count":36}

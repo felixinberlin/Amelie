@@ -546,6 +546,70 @@
         "src/data/candidateVectors.json": "sha256:b1584659a91b5625577433fc6f05ed9bcb300e95b215f12029d6b79d136a239c",
         "src/data/vectorChanges.json": "absent"
       }
+    },
+    "lab-2026-09-30-lacunar-20260930T164042-efeb55-source": {
+      "plan_id": "lab-2026-09-30-lacunar-20260930T164042-efeb55-source",
+      "actor": "lab-librarian",
+      "agent": "lab",
+      "runde": "lacunar-20260930T164042-efeb55",
+      "at": "2026-10-01T09:29:27.219Z",
+      "ops": [
+        {
+          "index": 0,
+          "op": "source.add",
+          "target": "ecochain-fsc-timber-chain-of"
+        }
+      ],
+      "files": [
+        "06-suche/amelie-quellen.md",
+        "AMELIE_STATUS.md",
+        "public/data/amelie-health.json",
+        "public/data/amelie-ideas.json",
+        "public/data/quellen.json",
+        "src/data/quellen.json"
+      ],
+      "hashes": {
+        "src/data/quellen.json": "sha256:e0e3b21fec6781f2a8a245f91388d53b648433502e6eec82d1009965dc631627",
+        "src/data/graeber.json": "sha256:28680cca27935fc12af4b7715298d8b75a9040fa101881baa75fa7760c922d80",
+        "06-suche/amelie-pruefprotokoll.md": "sha256:cfff16fd7b3a7ef2286eaf5ee58d25ba180601cc68c00368a1c50aae93501749",
+        "06-suche/terminology-map.md": "absent",
+        "06-suche/open-questions.md": "absent",
+        "src/data/doseVectors.json": "sha256:fb58743901afc0e7897df6bf55fd1dfa95b1cd7db885dad3da324716200dfbb9",
+        "src/data/candidateVectors.json": "sha256:b1584659a91b5625577433fc6f05ed9bcb300e95b215f12029d6b79d136a239c",
+        "src/data/vectorChanges.json": "absent"
+      }
+    },
+    "lab-2026-09-30-lacunar-20260930T210642-66f73d-source": {
+      "plan_id": "lab-2026-09-30-lacunar-20260930T210642-66f73d-source",
+      "actor": "lab-librarian",
+      "agent": "lab",
+      "runde": "lacunar-20260930T210642-66f73d",
+      "at": "2026-10-01T09:29:28.144Z",
+      "ops": [
+        {
+          "index": 0,
+          "op": "source.add",
+          "target": "brandenburg-zeitzeugenportal-brandenburg-manuelle-erfassung"
+        }
+      ],
+      "files": [
+        "06-suche/amelie-quellen.md",
+        "AMELIE_STATUS.md",
+        "public/data/amelie-health.json",
+        "public/data/amelie-ideas.json",
+        "public/data/quellen.json",
+        "src/data/quellen.json"
+      ],
+      "hashes": {
+        "src/data/quellen.json": "sha256:574e1eea942aff62bf77271a6edddc7040de2d258f246d1d5b6baef3b1d6fd5f",
+        "src/data/graeber.json": "sha256:28680cca27935fc12af4b7715298d8b75a9040fa101881baa75fa7760c922d80",
+        "06-suche/amelie-pruefprotokoll.md": "sha256:cfff16fd7b3a7ef2286eaf5ee58d25ba180601cc68c00368a1c50aae93501749",
+        "06-suche/terminology-map.md": "absent",
+        "06-suche/open-questions.md": "absent",
+        "src/data/doseVectors.json": "sha256:fb58743901afc0e7897df6bf55fd1dfa95b1cd7db885dad3da324716200dfbb9",
+        "src/data/candidateVectors.json": "sha256:b1584659a91b5625577433fc6f05ed9bcb300e95b215f12029d6b79d136a239c",
+        "src/data/vectorChanges.json": "absent"
+      }
     }
   }
 }

@@ -1278,3 +1278,91 @@ Keine Dose Ready, nichts zu packen. Wiedervorlage in dieser Reihenfolge: R4 (Emp
 - Datentests sollten Attribute zählen, nicht nur Zeilen: Der EKIS-Datensatz ist vollständig (17.774 Flächen), aber ohne Status und Frist; die Idee „Nachkontrolle“ hat deshalb keinen Vergleichswert im Register.
 - Lab-Survivors bleiben schwach: generische Empfänger, Hardware, Techniken als Anlass; 0 Dose Ready auch nach Datentests.
 - Evidenz: CIMA (Datentest), EKIS-WFS, SEFH-Review und Sanofi-Meldung [Seite]; Logger-Frontend, RENAVE-Format, Genentech-Tool, AuFi-Abschaltung [Schnipsel].
+
+## Existenzprüfung Lab-Nachlieferung und Neubewertung 01.10.2026
+
+Phase 3 nach dem Scout-Merge der vier nachgelieferten Lab-Läufe (Commit 16e9c22: f9650e, efeb55, aba544, 66f73d; Merge-Tabelle L1–L12 im Orchestrator-Scratchpad `merge.md`). Gate: V1 bis V7 ≥ 24/35. **Ergebnis: 0 Dose Ready, 0 Needs Research, 0 Baustein, 3 Friedhof-Vorschläge (L2, L8, L12).** Die 9 besetzten Gräber und 6 Lab-Grab-Vorschläge sind bestätigt bzw. korrigiert; f9650e C4 (Rostgrad) wird nach eigener Gegen-Suche begraben. Belege [Seite] = selbst geholt, [Schnipsel] = nur Suchtreffer.
+
+**Friedhofsgang/Bestand:** `bib find` ohne Treffer für `leistungserkl`, `gedenk`, `beschichtung`, „zeitzeugen nachrichten“; Treffer `zeitzeugen` nur Grab `zeitzeugen-transkription`; `dpp` nur Logs (Bisoziation Run 10, Inversion). Keine Dose im Feld Bauprodukte/CE, Gedenken oder Korrosion. `vernichtungs-offenlegungsregister` (ESPR Art. 24) ist kein Nachbar von L2 (anderer Pflichtträger, andere Daten). Atlas-Feld „Reparatur/Ökodesign produktseitig … DPP-Plattformen: dicht“ (28.09.) trägt L2 mit. **Kein Kandidat ist Baustein einer vorhandenen Dose.**
+
+### Scoreboard
+
+| Nr | Kandidat | V1 | V2 | V3 | V4 | V5 | V6 | V7 | V8 | Kern /35 | Gesamt /40 | Urteil |
+|---|---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|---|
+| L2 | `dop-scanner-stahl` (f9650e S2, inversion) | 2 | 3 | 2 | 2 | 2 | 3 | 3 | 1 | **17** | 18 | Friedhof-Vorschlag |
+| L8 | `gedenktafel-faktencheck` (aba544 S4, inversion) | 3 | 3 | 2 | 3 | 2 | 2 | 2 | 2 | **17** | 19 | Friedhof-Vorschlag |
+| L12 | `zeitzeugen-nachrichten-bruecke` (66f73d S5, bisoziation) | 2 | 3 | 2 | 2 | 1 | 2 | 2 | 2 | **14** | 16 | Friedhof-Vorschlag |
+
+V8-Quellen: L2 none, L8 discovery (Name finden, Abgleich sehen), L12 discovery. Fun kompensiert nie.
+
+### L2 `dop-scanner-stahl` (verengt → Friedhof)
+
+- **V1 2:** Kombination „QR/Foto + DoP-Werte + Projektanforderung“. COAAT Málaga hat die Annahme-App (CE/DoP-Pflicht, Norm, Prüfsystem je Material, 2020) [Seite, Scout]. Die digitale DoP ist seit **UNE 41316:2020 „smart CE marking“** genormt (AENOR-Revista 363, 11/2020) [Seite, eigene Suche]; „DPP steel“ hat `declarationOfPerformance` als JSON am 30.09.2026 aufgenommen [Seite, Scout]. Lücke ohne Lösungswort: „Baustellenleiter können DoP-Werte nicht schnell gegen das Leistungsverzeichnis halten“ → nach CPR 2024/3110 kommt genau das maschinenlesbar vom Hersteller.
+- **V2 3:** Tier 2 mit OCR/LLM-Parsing heterogener Hersteller-PDFs; ohne Parsing kein Nutzen, mit Parsing Fehlerquelle.
+- **V3 2:** Das „Warum jetzt“ (maschinenlesbare DoP) ist zugleich der Killer: Sobald DPP für Stahl gilt, liest jeder DPP-Reader die Werte; vorher sind die DoPs PDFs in jedem Format. Annahme auf der Baustelle bleibt Unterlagenprüfung durch die Dirección de Ejecución (Aparejador).
+- **V4 2:** Übergangsfenster bis zum delegierten Rechtsakt; danach obsolet. Kein Why-Now laut Atlas.
+- **V5 2:** Achillesferse: Haftung, wenn der Laie „passt“ liest; Empfänger mit Mandat (COAAT/CGATE) hat schon eine App. Lab-Empfänger IEAE nicht verifizierbar.
+- **V6 3:** Wurzel DPP-Wörterbuch/UNE 41316; Zweig wäre ein DPP-Reader, den Hersteller-Plattformen besetzen.
+- **V7 3:** Type A (CPR 305/2011, 2024/3110, UNE 41316) [Schnipsel/Seite], keine Zahl zum Annahmefehler.
+- **Gegen-Suche (eigen, 3 Suchen):** „certiscan“ ist eine GPSR/CE-Compliance-App (Play-Store-Titel) [Schnipsel], kein DoP-Leser für Bauprodukte; „app escanear declaración de prestaciones“ liefert nur Erklärtexte und AENOR; „smart CE marking app“ nur generische QR-Scanner. Kein freier DoP-Scanner gefunden, aber das Format kommt vom Hersteller.
+- **Urteil Friedhof.** Kein Market Route: die Zahlungsbereitschaft liegt bei Herstellern (DPP-Plattformen, dicht), nicht auf der Baustelle.
+- **Grab:** `cause` beim-empfaenger, `killer` gemeinnuetzig (COAAT-Kollegium; offenes DPP-Wörterbuch material-identity), `foundBy` empfaenger, `stage` kandidat, `origin` inversion. `resurrectIfDe/En`: Wenn nach Inkrafttreten des DPP für Bauprodukte (CPR 2024/3110) kein freier Leser existiert, der DoPC-Werte gegen ein Leistungsverzeichnis hält, und ein Aparejadores-Kollegium danach fragt / If, once the construction-products DPP applies, no free reader checks DoPC values against a bill of quantities and a professional college asks for one.
+
+### L8 `gedenktafel-faktencheck` (verengt → Friedhof)
+
+- **V1 3:** Kein Prüfwerkzeug gefunden; Lücke ohne Lösungswort: „Inschriften kommunaler und Vereins-Gedenktafeln werden ohne Abgleich gegen die Opferverzeichnisse geschrieben.“ Stolpersteine haben eine menschliche Prüfinstanz (Regionalprüfer, 4 Monate vorab) [Seite, Scout], Berlin eine Gedenktafelkommission [Schnipsel].
+- **V2 3:** Tier 3: Abgleich nur per Einzelsuche gegen fremde Webdatenbanken; ein Bulk-Datensatz fehlt.
+- **V3 2:** **Ground Truth nicht offen.** Gedenkbuch Bundesarchiv nicht als Open Data [Seite, Scout]. Totenbuch KZ Sachsenhausen: über 20.000 Namen, seit 26.02.2025 wieder online, nur Einzelsuche, Felder nicht genannt [Seite sachsenhausen-sbg.de/meldungen/online-totenbuch-wieder-verfuegbar]; Speziallager 7/1: 11.889 Namen, Einzelsuche [Seite, Scout]. **Ravensbrück hat keine eigene Online-Namensdatenbank**, verweist auf Arolsen, und Sammlung und Datenbanken sind nach einem Cyberangriff derzeit nicht recherchierbar [Seite ravensbrueck-sbg.de/en/research-person]. Automatisch abgleichen hieße Scraping gegen Gedenkstätten-Seiten.
+- **V4 3:** Erinnerungskultur dauerhaft; kein rechtlicher Hebel.
+- **V5 2:** Achillesferse: Ein falsch-positiver „Fehler“-Hinweis auf einer Opfertafel beschädigt Vertrauen und Angehörige; die Abweichung ist oft Quellenvarianz (Schreibweisen, Transliteration), kein Fehler. Kein Empfänger mit Mandat für Nicht-Stolperstein-Tafeln außer Kommunen ad hoc.
+- **V6 2, V7 2:** Fehlerbelege [Schnipsel] betreffen meist Daten und Personen außerhalb des NS-Opferkontexts (Freie Presse Oelsnitz: Bürgermeister; ORF Wien, Buchholz: Daten auf Kriegsopfer- bzw. Gedenktafeln; NSU-Opfer-Tafel korrigiert). Fehler kommen vor, Häufigkeit unbekannt.
+- **Datentest (Frage 2):** Nur teilweise machbar, und nur von Hand. Sachsenhausen (KZ und Speziallager) ja, Name für Name; Ravensbrück nein (keine Online-Suche, derzeit offline); Ersatz Arolsen-Online-Archiv (Einzelsuche). Ein Test mit 10 brandenburgischen Tafeln würde zeigen, ob es Abweichungen gibt, aber nicht die Ursache von V3 beheben: ohne Bulk-Daten kein Werkzeug, nur Recherchearbeit, die die Auskunftsdienste der Gedenkstätten schon leisten. Nicht durchgeführt.
+- **Urteil Friedhof** (V3 strukturell, nicht durch Datentest heilbar).
+- **Grab:** `cause` reality-check, `killer` keiner, `foundBy` deutsch, `stage` kandidat, `origin` inversion. `resurrectIfDe/En`: Wenn Bundesarchiv-Gedenkbuch, Arolsen oder die Stiftung Brandenburgische Gedenkstätten Namenslisten als offenen Datensatz oder API anbieten, oder die Stolperstein-Datenbank mit Schnittstelle live geht / If the Federal Archives memorial book, Arolsen or the Brandenburg Memorials Foundation publish name lists as open data or an API, or the Stolpersteine database goes live with an interface.
+
+### L12 `zeitzeugen-nachrichten-bruecke` (unklar → Friedhof)
+
+- **V1 2, V3 2, V5 1:** Die Mechanik interpretiert: Ein Matching „aktuelle Nachricht ↔ Zeitzeugenaussage“ ist eine historische Parallele, die das Werkzeug zieht, nicht die Quelle. Das widerspricht dem Neuengamme-Leitsatz „Quellenauswahl, keine Interpretation“ [Seite, Scout] und dem Überwältigungsverbot (Beutelsbacher Konsens). Achillesferse: Instrumentalisierung von Opferstimmen für Tagespolitik. Der Mandatsträger (HdG-Zeitzeugenportal) kuratiert Gegenwartsbezug redaktionell [Seite, Scout].
+- **V2 3:** Tier 3 (Nachrichten-Feed).
+- **Gegen-Suche (eigen, 1 Suche):** „KI verknüpft Zeitzeugeninterviews mit aktuellen Nachrichten“ → nur KI-Dialog-Zeitzeugen (heise 2024, HOLO-VOICES NRW 01/2026), museum4punkt0, bpb-Werkstatt, Fraunhofer IAIS [Schnipsel]. Kein Nachrichten-Matching; es fehlt Bedarf und Mandat, nicht Technik.
+- **Urteil Friedhof** (Gedenk-Prämissenfalle).
+- **Grab:** `cause` praemisse, `killer` keiner, `foundBy` deutsch, `stage` kandidat, `origin` bisoziation. `resurrectIfDe/En`: Wenn eine Gedenkstätte oder die bpb ausdrücklich ein Werkzeug sucht, das Lehrkräften zu Tagesthemen passende Zeitzeugen-Clips vorschlägt, ohne Parallelen zu behaupten / If a memorial or the Federal Agency for Civic Education explicitly seeks a tool that suggests testimony clips for current topics to teachers without asserting parallels.
+
+### Grab-Bestätigung der besetzten Ideen (L1, L3–L7, L9–L11)
+
+| Nr | slug | cause | killer | foundBy | Korrektur gegenüber Merge |
+|---|---|---|---|---|---|
+| L1 | `holz-sortierklasse-vorort` | praemisse | forschung | englisch | Merge „praemisse / gebaut“ → cause eindeutig praemisse (Annahme = Unterlagenprüfung, UNE 56544 braucht vier freie Seiten), killer forschung (Smart Thumper, Mississippi State); Nachbar `rueckbauholz-vorsortierer`. foundBy hat keinen Wert für Spanisch: Prämisse kam von cidemadera.com (ES). |
+| L3 | `holz-chargen-tag-fussabdruck` | beim-empfaenger | gemeinnuetzig | empfaenger | bestätigt (FSC Trace 12/2024). **Mit efeb55 C10 zu einem Grab zusammenlegen** (gleicher Killer, Empfänger und Beleg; C10 als Variante, Präzedenz B7+B8). |
+| L4 | `holz-chargen-sensorhaut` | gebaut | kommerziell | englisch | bestätigt (Tector); Zusatz im Text: keine Norm verlangt Feuchteüberwachung im Transport, also auch kein Empfänger. |
+| L5 | `repressionsberichte-ner-lokal` | beim-empfaenger | forschung | empfaenger | bestätigt (KI.OH, Neuengamme, Arolsen); Verweis auf `zeitzeugen-transkription`, eigenes Grab (Erschließung statt Transkription). |
+| L6 | `familienanekdote-repression-verknuepfer` | beim-empfaenger | behoerde | empfaenger | killer ergänzt: öffentlich getragene Archive mit Auskunftsmandat (Arolsen, SBG-Totenbuch, LAkD). |
+| L7 | `repressionsort-foto-erkenner` | praemisse | keiner | deutsch | bestätigt; Datenebene zusätzlich besetzt (Lagerdatenbank, SPUR.lab), daher nur im Text. |
+| L9 | `erinnerungsspuren-zerfall` | praemisse | gemeinnuetzig | deutsch | bestätigt (SBG-Layer berlinHistory.app). |
+| L10 | `zeitzeugen-themenpheromone` | beim-empfaenger | forschung | empfaenger | bestätigt; im Text Prämisse (Ranking macht seltene Stimmen unsichtbar) und Doppelfund mit L5. |
+| L11 | `erinnerungs-emotionskarte` | gebaut | forschung | englisch | bestätigt (HdEG-Karte 2017, Stanford, EmoMap); im Text: kein Mandatsträger. |
+
+### Lab-Grab-Vorschläge
+
+| Lauf | slug-Vorschlag | Titel (gekürzt) | Urteil | cause / killer / foundBy |
+|---|---|---|---|---|
+| f9650e C3 | `trapezblech-verformung-scan` | Trapezblech-Verformung per LiDAR/Photogrammetrie | bestätigt (Belege nur [Schnipsel]) | gebaut / kommerziell / englisch |
+| f9650e C4 | `rostgrad-kamera` | Rostgrad nach ISO 8501-1 per Handykamera | **Grab ja** (eigene Gegen-Suche) | gebaut / forschung / englisch |
+| efeb55 C4 | `holz-audit-adaptiv` | Adaptive, risikobasierte Audit-Planung für Holz-CoC | korrigiert: mode → gebaut | gebaut / kommerziell / englisch |
+| efeb55 C6 | `holz-herkunft-isotopen` | Holzherkunft per Isotopen/DNA | bestätigt | gebaut / forschung / englisch |
+| efeb55 C10 | (in `holz-chargen-tag-fussabdruck`) | Blockchain-Dauerzertifizierung | bestätigt, mit L3 zusammenlegen | beim-empfaenger / gemeinnuetzig / empfaenger |
+| 66f73d C10 | `mikro-storytelling-erinnerung` | Mikro-Storytelling-App für Familienerinnerungen | bestätigt | gebaut / kommerziell / deutsch |
+
+**f9650e C4 Gegen-Suche (5 Suchen, 3 Abrufe):** Rostgraderkennung ist als Forschungsbenchmark gelöst: Xu et al. 2020, „Recognition of rust grade and rust ratio of steel structures based on ensembled CNN“ (Computer-Aided Civil and Infrastructure Engineering) [Schnipsel, Wiley 403]; OTC Asia 2026 „Vision Intelligence Solution for External Surface Corrosion Detection and Rust Grade Classification“ (onepetro, industriell) [Schnipsel, 403]; Korrosionsgrad-YOLOv8 (Sensors 2025, eigene Salzsprühstufen, keine ISO-Grade, kein Handy) [Seite mdpi.com]; RustNet 2025, Roboflow-Korrosionsmodelle, iFactory [Schnipsel]. Hersteller: Elcometer/DeFelsko nur Bildvergleichsbücher (Elcometer 128) [Schnipsel]; Coatings Radar (UK) ist eine Trainings-App zu ISO 4628-3 ohne automatische Bestimmung [Seite coatingsradar.com]. Keine freie Handy-App nach ISO 8501-1 gefunden, aber: (a) die Erkennung ist Forschungsstand, (b) die Norm ist ein Bildvergleich, den Prüfer in Sekunden machen, ein Engpass ist nicht belegt, (c) die Referenzfotos der Norm sind lizenzpflichtig, eine CC0-Trainingsbasis gibt es nicht, (d) der Rostgrad A bis D hat vor dem Strahlen wenig Folgen, maßgeblich ist der Vorbereitungsgrad Sa danach, den der Beschichtungsinspektor abzeichnet. `resurrectIfDe/En`: Wenn ein freier, normnaher Bilddatensatz (Rost- und Vorbereitungsgrade) erscheint und ein Korrosionsschutz-Verband (z. B. GfKORR, Bundesverband Korrosionsschutz) ein offenes Prüfwerkzeug sucht / If a free image dataset of rust and preparation grades appears and a corrosion-protection association seeks an open check tool.
+
+### Empfehlung Packer
+
+Nichts zu packen. Keine Wiedervorlage aus dieser Nachlieferung.
+
+### Retro
+
+- „Übergangslücke bis zur Digitalisierung“ ist kein Why-Now: Wenn das Datenformat (DPP, smart CE marking UNE 41316:2020) schon genormt ist, stirbt das Laienwerkzeug mit dem Inkrafttreten. Vorfrage: „Gibt es den Inhalt bereits als genormtes Maschinenformat beim Hersteller?“
+- Faktencheck-Ideen gegen Opferverzeichnisse: zuerst fragen „Bulk oder nur Einzelsuche?“ und „gerade online?“ (Ravensbrück nach Cyberangriff offline). Ein Datentest von Hand beweist Fehler, nicht die Baubarkeit.
+- Bildvergleichsnormen (ISO 8501-1, ISO 4628) sind seit 2020 Forschungsbenchmarks und haben lizenzpflichtige Referenzbilder: Vorfrage „Sind die Referenzbilder frei?“ vor jeder Kamera-statt-Vergleichsbuch-Idee.
+- `foundBy` hat keinen Wert für spanische Quellen (L1, L2); bisher auf `englisch`/`empfaenger` ausgewichen (Entscheidung Félix).
+- Evidenz: Sachsenhausen-Meldung, Ravensbrück-Recherche, AENOR-Revista, MDPI, Coatings Radar [Seite]; Xu 2020, OTC Asia 2026, Elcometer, certiscan, Gedenktafel-Fehlerberichte, HOLO-VOICES [Schnipsel].

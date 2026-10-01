@@ -54,28 +54,28 @@ Die Ursachen genauer:
 
 *Automatisch erzeugt aus `src/data/graeber.json` (`DISCARDED_DATA`) mit `npm run friedhof` (läuft nach `npm run bib -- grab add` von selbst). Nicht von Hand bearbeiten — `npm run lint` meldet Abweichungen.*
 
-**124 Gräber.** 4 davon starben erst als Dose oder Mail-Entwurf (teure Tode). Von 114 dokumentierten Fundwegen kamen 16 ohne neue Suche aus (eigener Atlas, eigenes Protokoll oder Reality-Check) — 14 %.
+**141 Gräber.** 4 davon starben erst als Dose oder Mail-Entwurf (teure Tode). Von 131 dokumentierten Fundwegen kamen 16 ohne neue Suche aus (eigener Atlas, eigenes Protokoll oder Reality-Check) — 12 %.
 
 **Woran sie starben**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Schon gebaut | 61 | 49 % |
-| Beim Empfänger selbst | 24 | 19 % |
-| Reality-Check | 17 | 14 % |
-| Falsche Prämisse | 12 | 10 % |
+| Schon gebaut | 68 | 48 % |
+| Beim Empfänger selbst | 29 | 21 % |
+| Reality-Check | 18 | 13 % |
+| Falsche Prämisse | 16 | 11 % |
 | Keine neue Fähigkeit | 8 | 6 % |
-| Duplikat | 2 | 2 % |
+| Duplikat | 2 | 1 % |
 
 **Welche Suche traf**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Deutsche Suche | 49 | 40 % |
-| Englische Suche | 35 | 28 % |
-| Empfänger-Suche | 13 | 10 % |
-| Ohne Suche | 12 | 10 % |
-| Nicht dokumentiert | 10 | 8 % |
+| Deutsche Suche | 54 | 38 % |
+| Englische Suche | 42 | 30 % |
+| Empfänger-Suche | 18 | 13 % |
+| Ohne Suche | 12 | 9 % |
+| Nicht dokumentiert | 10 | 7 % |
 | Eigener Atlas / Protokoll | 4 | 3 % |
 | Forum / Nische | 1 | 1 % |
 
@@ -83,10 +83,10 @@ Die Ursachen genauer:
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Bisoziation | 50 | 40 % |
-| Primärquelle | 35 | 28 % |
-| Brainstorm | 16 | 13 % |
-| Inversion | 10 | 8 % |
+| Bisoziation | 59 | 42 % |
+| Primärquelle | 35 | 25 % |
+| Inversion | 18 | 13 % |
+| Brainstorm | 16 | 11 % |
 | Ideenliste | 8 | 6 % |
 | Modell-Katalog | 5 | 4 % |
 
@@ -94,20 +94,20 @@ Die Ursachen genauer:
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Firma | 36 | 29 % |
-| Niemand | 23 | 19 % |
-| Behörde | 19 | 15 % |
-| Forschung | 19 | 15 % |
-| Gemeinnützige | 14 | 11 % |
-| Community / Indie | 11 | 9 % |
-| Eigener Bestand | 2 | 2 % |
+| Firma | 40 | 28 % |
+| Niemand | 26 | 18 % |
+| Forschung | 25 | 18 % |
+| Behörde | 20 | 14 % |
+| Gemeinnützige | 17 | 12 % |
+| Community / Indie | 11 | 8 % |
+| Eigener Bestand | 2 | 1 % |
 
 **Wie weit sie kamen**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Kandidat | 120 | 97 % |
-| Dose gepackt | 2 | 2 % |
+| Kandidat | 137 | 97 % |
+| Dose gepackt | 2 | 1 % |
 | Mail entworfen | 1 | 1 % |
 | Zugestellt | 1 | 1 % |
 
@@ -115,6 +115,23 @@ Die Ursachen genauer:
 
 | Idee | † | Ursache | Wer sie hatte | Gefunden durch | Herkunft | Kam bis | Auferstehung wenn |
 |---|---|---|---|---|---|---|---|
+| Adaptive, risikobasierte Audit-Planung für Holz-CoC | 01.10.2026 | Schon gebaut | Firma | Englische Suche | Bisoziation | Kandidat | Wenn FSC oder PEFC eine offene, risikobasierte Audit-Planung für kleine Zertifikatsinhaber suchen. |
+| CE/DoP-Scanner für Stahlprodukte (Leistungserklärung gegen Projektanforderung) | 01.10.2026 | Beim Empfänger selbst | Gemeinnützige | Empfänger-Suche | Inversion | Kandidat | Wenn nach Inkrafttreten des DPP für Bauprodukte (CPR 2024/3110) kein freier Leser existiert, der DoPC-Werte gegen ein Leistungsverzeichnis hält, und ein Aparejadores-Kollegium danach fragt. |
+| Erinnerungs-Emotionskarte und Friedensimpulse (Brandenburg) | 01.10.2026 | Schon gebaut | Forschung | Englische Suche | Bisoziation | Kandidat | Wenn eine Gedenkstätte oder Landeszentrale eine moderierte Beteiligungskarte ausschreibt und die Methode übernehmen will. |
+| Erinnerungsspuren mit Zerfall (ortsgebundene Zeitzeugen-Fragmente, die ohne Besuch verblassen) | 01.10.2026 | Falsche Prämisse | Gemeinnützige | Deutsche Suche | Bisoziation | Kandidat | Nie mit Zerfall von Zeugnissen; allenfalls Zerfall von Besucher-Markierungen, wenn eine Gedenkstätte das ausdrücklich will. |
+| Familienanekdote-Verknüpfer (Repressionsgeschichten mit Archiven verbinden) | 01.10.2026 | Beim Empfänger selbst | Behörde | Empfänger-Suche | Inversion | Kandidat | Wenn Arolsen oder die LAkD ein offenes Eingabewerkzeug für Familienanekdoten suchen und die Verknüpfung durch Archivare geprüft wird. |
+| Gedenktafel-Faktencheck (Inschriften gegen Opferverzeichnisse) | 01.10.2026 | Reality-Check | Niemand | Deutsche Suche | Inversion | Kandidat | Wenn Bundesarchiv-Gedenkbuch, Arolsen oder die Stiftung Brandenburgische Gedenkstätten Namenslisten als offenen Datensatz oder API anbieten, oder die Stolperstein-Datenbank mit Schnittstelle live geht. |
+| Holz-Chargen-Tag mit Umwelt-Fußabdruck und Dauerzertifizierung | 01.10.2026 | Beim Empfänger selbst | Gemeinnützige | Empfänger-Suche | Bisoziation | Kandidat | Wenn FSC Trace eingestellt wird oder PEFC für kleine Sägewerke kein digitales CoC-Werkzeug anbietet und danach fragt. |
+| Holz-Sortierklasse vor Ort (Bild + Klopfton gegen deklarierte Festigkeitsklasse) | 01.10.2026 | Falsche Prämisse | Forschung | Englische Suche | Inversion | Kandidat | Wenn ein Regelwerk die Nachsortierung verbauten oder gelieferten Holzes durch Laien zulässt und dafür ein offenes Messverfahren benennt. |
+| Holzherkunft per Isotopen/DNA (Biosignatur-Scanner) | 01.10.2026 | Schon gebaut | Forschung | Englische Suche | Bisoziation | Kandidat | Wenn ein mobiles Messgerät Isotopen- oder DNA-Herkunft vor Ort liefert und World Forest ID die Referenzdaten frei gibt. |
+| Mikro-Storytelling-App für Familienerinnerungen | 01.10.2026 | Schon gebaut | Firma | Deutsche Suche | Bisoziation | Kandidat | Wenn ein Archiv kurze Familienerinnerungen mit Normdaten annehmen will und die kommerziellen Apps keinen Export bieten. |
+| Repressions-Berichte-Erschließer lokal (NER für Familien und Gemeindegruppen) | 01.10.2026 | Beim Empfänger selbst | Forschung | Empfänger-Suche | Inversion | Kandidat | Wenn KI.OH oder Arolsen ein Werkzeug für Angehörige ausdrücklich ausschließen und ein Archiv Familienberichte mit Normdaten annehmen will. |
+| Repressionsort-Fotoerkenner (Bürgerfotos möglicher Lager- und Haftorte) | 01.10.2026 | Falsche Prämisse | Niemand | Deutsche Suche | Inversion | Kandidat | Nie als Erkennung; allenfalls als Meldeweg an eine Gedenkstätte, die Hinweise auf unbekannte Lager ausdrücklich sammelt. |
+| Rostgrad nach ISO 8501-1 per Handykamera | 01.10.2026 | Schon gebaut | Forschung | Englische Suche | Inversion | Kandidat | Wenn ein freier, normnaher Bilddatensatz (Rost- und Vorbereitungsgrade) erscheint und ein Korrosionsschutz-Verband (z. B. GfKORR, Bundesverband Korrosionsschutz) ein offenes Prüfwerkzeug sucht. |
+| Sensorhaut je Holzcharge (Klima- und Ortsüberwachung in der Lieferkette) | 01.10.2026 | Schon gebaut | Firma | Englische Suche | Bisoziation | Kandidat | Wenn eine Norm oder die EUDR Klimaüberwachung von Holz im Transport verlangt und es dafür kein offenes Werkzeug gibt. |
+| Thematische Pheromone für Zeitzeugenberichte (Themen verstärken sich durch Häufigkeit) | 01.10.2026 | Beim Empfänger selbst | Forschung | Empfänger-Suche | Bisoziation | Kandidat | Wenn ein Archiv eine Themenkarte ausdrücklich ohne Häufigkeitsgewichtung sucht und KI.OH sie nicht liefert. |
+| Trapezblech-Verformung per LiDAR/Photogrammetrie | 01.10.2026 | Schon gebaut | Firma | Englische Suche | Inversion | Kandidat | Wenn ein Regelwerk die Profilprüfung von Trapezblechen auf der Baustelle verlangt und die kommerziellen Dienste sie nicht abdecken. |
+| Zeitzeugen ↔ aktuelle Nachrichten (Matching von Zeugnissen zu Tagesereignissen) | 01.10.2026 | Falsche Prämisse | Niemand | Deutsche Suche | Bisoziation | Kandidat | Wenn eine Gedenkstätte oder die bpb ausdrücklich ein Werkzeug sucht, das Lehrkräften zu Tagesthemen passende Zeitzeugen-Clips vorschlägt, ohne Parallelen zu behaupten. |
 | 3D-Palimpsest für Kampfmittel-Bodenanomalien | 30.09.2026 | Schon gebaut | Firma | Englische Suche | Bisoziation | Kandidat | Wenn der KMBD oder ein Erkundungsverband eine offene Schichtansicht für Geophysik-Rohdaten ausdrücklich anfragt. |
 | Altmedikamente-Entsorgungskarte (Rücknahme-/Entsorgungsweg je Ort) | 30.09.2026 | Beim Empfänger selbst | Gemeinnützige | Deutsche Suche | Primärquelle | Kandidat | Wenn arzneimittelentsorgung.de eingestellt wird oder eine Karte der tatsächlichen Rücknahmestellen (nicht nur Landkreisweg) gefragt wird. |
 | Baumart und Vitalität per Foto-KI | 30.09.2026 | Schon gebaut | Firma | Deutsche Suche | Inversion | Kandidat | Wenn eine Baumschutzbehörde eine belastbare Vitalitätsansprache per Foto als Nachweis zulässt und die Apps diese nicht liefern. |

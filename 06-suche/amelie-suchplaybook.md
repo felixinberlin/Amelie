@@ -199,6 +199,13 @@ Wo Ideen schnell sterben — vor dem Suchen als Vorfilter nutzen.
 
 **Regel aus der Existenzprüfung:** Lab-Survivors sind kein Mindestbestand an Ideen, sondern Kandidaten, die erst Empfänger, Prämisse und Mandat bestehen müssen; von 42 blieb keiner Dose Ready.
 
+### Nachtrag Lab-Nachlieferung (01.10.2026) — Spanien-Baumaterial und Gedenken/Brandenburg
+
+| Feld | Zustand | Belege |
+|---|---|---|
+| **Bauprodukte CE/DoP/DPP (ES/EU)** | **dicht: Herstellerseite digitalisiert** | Leistungserklärung seit UNE 41316:2020 („smart CE marking“) digital genormt [Seite revista.aenor.com/363]; CPR 2024/3110 bringt die DoPC maschinenlesbar über den DPP; offenes Wörterbuch „DPP steel“ (material-identity) führt `declarationOfPerformance` als JSON seit 30.09.2026 [Seite]. Annahme auf der Baustelle = Unterlagenprüfung; Mandatsträger COAAT/CGATE hat eine eigene App (COAAT Málaga 2020) [Seite]. Holz: CE nach EN 14081-1, Sortierung beim Hersteller, Klopf-App seit 2019 (Smart Thumper). Holz-CoC: FSC Trace beim Zertifizierer, TRACEX kommerziell. Gräber `dop-scanner-stahl`, `holz-sortierklasse-vorort`, `holz-chargen-tag-fussabdruck`, `holz-chargen-sensorhaut`, `rostgrad-kamera`, `trapezblech-verformung-scan`, `holz-audit-adaptiv`, `holz-herkunft-isotopen`. **Vorfrage: Gibt es den Inhalt schon als genormtes Maschinenformat beim Hersteller? „Übergangslücke bis DPP“ ist kein Why-Now.** |
+| **Gedenken/Repressionsdaten/Zeitzeugen-KI** | **dicht beim Empfänger** | Arolsen Archives (OCR >99 %, Person Matching, Knowledge-Graph, Auskunftsdienst) [Seite]; KI.OH (FU Berlin, DFG 2027–2029: Normdaten-NER, semantische Suche, Trust Level Engine) [Seite]; KZ-Gedenkstätte Neuengamme KI-Portal (06/2026, „Quellenauswahl, keine Interpretation“) [Seite]; SBG-Layer 111 Orte in der berlinHistory.app [Seite]; HdG/Fraunhofer IAIS Emotionsmining 8.300 Clips [Seite]; Zeitzeugenportal Brandenburg = LAkD [Seite]. Opferverzeichnisse nur Einzelsuche (Sachsenhausen), Ravensbrück offline, Gedenkbuch nicht Open Data. 9 Gräber (`repressionsberichte-ner-lokal` bis `mikro-storytelling-erinnerung`). **Gedenk-Prämissenfalle: Mechaniken, die löschen, ranken oder interpretieren, sterben auf Stufe Prämisse ohne Suche.** |
+
 ---
 
 ## 4. Trefferquote (Kalibrierung)
@@ -239,6 +246,7 @@ Wo Ideen schnell sterben — vor dem Suchen als Vorfilter nutzen.
 | **Multiplayer-Runde (Teamrunde, 3 Engines parallel + Reviewer, kein Packer; Doppelfunde einmal gezählt)** | **29.09.2026** | **9** (Reviewer-Kandidaten R1–R9; + 8 direkt gemeldet B: 6 `besetzt`, 2 `unklar`; + 8 E2-Kurzkills K: 7 `besetzt`, 1 `unklar`; 3 Doppelfunde: Boule, Skill-Luck, LAN-Strom; Gesamtprotokoll 25 Zeilen: 0/3/9/13) | **0** | **3** (R3, R4, R7) | **6** (R1, R2, R5, R6, R8, R9) | **0** (Abschnitt B und K getrennt gezählt); Trefferquote frei + verengt 33 % (3 von 9), über alle 25 Zeilen 12 % |
 | **Farmacia-Runde (Teamrunde, Orchestrierung Run 5; 3 Engines parallel + Reviewer, kein Packer; Doppelfunde einmal gezählt)** | **30.09.2026** | **9** (Reviewer-Kandidaten R1–R9; + 12 direkt gemeldet, alle `besetzt`; Doppelfunde R1, R8, Notdienst dreifach, Retax, Altmedikamente; Gesamtprotokoll 21 Zeilen: 0/6/3/12) | **0** | **6** (R1, R2, R4, R5, R6, R7) | **3** (R3, R8, R9) | **0** (Abschnitt D getrennt: 12); Trefferquote frei + verengt 67 % (6 von 9), über alle 21 Zeilen 29 %; Reviewer trotzdem 0 Dose Ready, bestes R4 23/35 (Gate 24) |
 | **Existenzprüfung der Lab-Survivors (Teamrunde 6, 5 ideen-scouts parallel + Reviewer; Survivors aus 15 Lab-Läufen; 6 schon im Protokoll, nicht doppelt gezählt)** | **30.09.2026** | **36** neue Protokollzeilen (E1–E36; + Zweitprobe bestätigt: 38e1d7 F1–F5 = S1–S5 und Walnuss-Klopftest = N1; Lauf 129ac0 lieferte 0 Survivors) | **0** | **7** (E9, E10, E21, E24, E25, E34, E35) | **10** (E4, E8, E11, E17–E20, E23, E28, E36) | **19**; Trefferquote frei + verengt 19 % (7 von 36), über alle 42 Survivors 19 % (8 von 42: 0/8/13/21, der Orchestrator-Merge zählte 0/8/12/22); Reviewer 0 Dose Ready, bestes R4 `kuehlketten-steckbrief` 23/35 (Gate 24) |
+| **Lab-Nachlieferung Existenzprüfung (Teamrunde 7, 3 ideen-scouts parallel + Reviewer; 4 Lab-Läufe aus Commit 16e9c22, 13 Survivors; Doppelfund L5/L10 einmal je Idee gezählt)** | **01.10.2026** | **12** neue Protokollzeilen (L1–L12; 66f73d S3 + S4 als L11 zusammengefasst) | **0** | **2** (L2, L8) | **1** (L12) | **9**; Trefferquote frei + verengt 17 % (2 von 12); Reviewer 0 Dose Ready, bestes L2/L8 17/35 (Gate 24); alle 12 plus 5 Lab-Grab-Vorschläge im Friedhof (17 Gräber) |
 
 Runde 4 (nur Researcher #1, 3 Ideen): **0 % frei + verengt.** Kein Abgleich mit dem anderen ideenrunde-Researcher; nicht mit Runde 3 vergleichbar, weil dort zwei Methoden und vier Sessions liefen. Der Altbau-Thermal-Recheck (`verengt` bestätigt) steht nicht in dieser Zeile.
 
@@ -259,6 +267,29 @@ Runde 2 zielte bewusst auf „Zivilgesellschaft" — und lag trotzdem bei ~23 %.
 ---
 
 ## 5. Retro
+
+### Existenzprüfung der Lab-Nachlieferung — 01.10.2026 (Teamrunde 7; 3 `ideen-scout`s parallel auf 13 Survivors aus 4 Lab-Läufen → Merge → `idea-reviewer` → Bibliothekar — method: inversion + bisoziation, Survivors aus `inversion` und `lacunar`)
+
+- **Erledigt:** Keine offenen Lab-PRs; 4 Läufe direkt auf `main` (16e9c22): f9650e + efeb55 (Spanien-Baumaterial), aba544 + 66f73d (Antikrieg/Brandenburg). Maschinell geprüft (`check-lab-pr`, `bib apply` beider Quellenpläne, zwei Typ/Kategorie-Korrekturen). Protokoll: **12 neue Zeilen** (L1–L12; 66f73d S3 + S4 zusammengefasst): 0 frei / 2 verengt / 1 unklar / 9 besetzt. **Reviewer: 0 Dose Ready;** L2 und L8 je 17/35, L12 14/35, alle drei → Friedhof. **17 neue Gräber (124 → 141):** 12 Ideen (L3 und Lab-Vorschlag efeb55 C10 in einem Grab) plus 5 Lab-Grab-Vorschläge (f9650e C3, C4; efeb55 C4, C6; 66f73d C10). **34 neue Quellen (225 → 259)**, 2 Lab-Quellen nachgeführt (`ecochain-fsc-timber-chain-of`, `brandenburg-zeitzeugenportal-brandenburg-manuelle-erfassung`); Doppelmeldungen zusammengeführt (KI.OH, Neuengamme, Erinnerungsorte Brandenburg, HdG/bpb-Werkstatt = ein Projekt). Atlas: zwei neue dichte Felder (Bauprodukte CE/DoP/DPP, Gedenken/Zeitzeugen-KI).
+- **Gelernt:**
+  1. **Gedenk-Prämissenfalle:** Mechaniken, die **löschen, ranken oder interpretieren** (Zerfall, Häufigkeitsranking, Emotionsaggregat, Nachrichten-Parallelen), widersprechen Bewahrungsauftrag, Überwältigungsverbot und dem Leitsatz „Quellenauswahl, keine Interpretation“ (Neuengamme) → Kill auf Stufe Prämisse, ohne Suche.
+  2. **OP-2-Scheinlücken in CE-Regimen:** Der Lab-Operator „Expertenprüfung → Laienwerkzeug“ findet bei Bauprodukten Lücken, die keine sind: Die Prüfung liegt beim Hersteller, die Annahme ist Unterlagenprüfung. Vorfrage: **Gibt es den Inhalt schon als genormtes Maschinenformat beim Hersteller (UNE 41316, DPP)?** „Übergangslücke bis zur Digitalisierung“ ist kein Why-Now.
+  3. **Erinnerungsarbeit:** Der Mandatsträger ist fast immer ein Archiv mit eigenem KI-Programm (Arolsen, KI.OH, Neuengamme, HdG); die Inversion „Bürger statt Stiftung“ erzeugt Silos. Doppelfund KI.OH/Neuengamme (L5 und L10, zwei Scouts, zwei Läufe) bestätigt das Feld.
+  4. **Faktencheck gegen Opferverzeichnisse:** zuerst „Massenabfrage oder nur Einzelsuche?“ und „gerade online?“ (Ravensbrück nach Cyberangriff offline, Gedenkbuch nicht Open Data). Kamera-statt-Vergleichsbuch: sind die Norm-Referenzbilder frei (ISO 8501-1 nein)?
+  5. **Anker-Halter per Impressum klären:** Zeitzeugenportal Brandenburg gehört der LAkD (SED-Unrecht), nicht der SBG; die Lab-Absicht „Antikrieg“ liegt nicht in seinem Mandat.
+- **Fehler:**
+  - **Lab-Empfänger nicht verifiziert:** IEAE (f9650e S2) per Exaktsuche nicht auffindbar; BLzpB (aba544 S2) ohne Archiv- oder Auskunftsmandat; „Vereine“/„Gemeindezentren“ generisch.
+  - Lab-Grab-Vorschläge erneut pauschal `cause=mode`: 4 von 5 bestätigten auf `gebaut` korrigiert (C3, C4, efeb55 C4, 66f73d C10); f9650e C4 (Rostgrad) erst nach eigener Gegen-Suche des Reviewers begraben.
+  - Suchobergrenze der Lab-Läufe überschritten (f9650e 13 Queries in 4 Aufrufen, efeb55 21 in 6).
+  - **Zugang:** WebFetch auf `play.google.com/store/apps/details` liefert eine fremde App (certiscan ungeprüft) → Quelle `google-play-store-app-seiten` als `gesperrt` gebucht; berlin.de 429, gedenkstaettenforum.de 403, erinnerungsorte-brandenburg.de nur Metadaten (JS).
+  - **Zählung Gräber:** Der Merge nannte „17 Vorschläge → 16 Gräber“; die Tabelle „Finale Gräber“ führt aber 17 verschiedene Slugs (12 Ideen + 5 Lab-Vorschläge), die Zusammenlegung L3 + efeb55 C10 steckt schon darin (6 Lab-Vorschläge − 1). Gebucht: **17 Gräber**.
+  - `foundBy` hat keinen Wert für spanische Quellen (L1 auf `englisch`, L2/L3 auf `empfaenger` ausgewichen; im `bornIn` vermerkt).
+- **Nächstes Mal:**
+  1. Lab-Läufe zu Bauprodukten oder anderen CE-Regimen: vor dem Survivor-Stempel die Herstellerseite (DoP, DPP, Normformat) prüfen; OP-2 dort nur mit Beleg einer Laien-Pflicht.
+  2. Gedenk- und Erinnerungsthemen: Prämissenfalle (löschen, ranken, interpretieren) als Filter vor der Suche; Empfänger = Archiv mit Mandat.
+  3. Lab-Empfänger mit Kürzel per Exaktsuche verifizieren; ohne Treffer Kill auf Stufe Empfänger.
+  4. App-Prüfung über Herausgeberseite oder apkpure, nicht über die Play-Store-Seite.
+  5. **Offene Entscheidung Félix:** `foundBy`-Wert für spanische Quellen (neuer Wert `spanisch` in `src/types.ts` oder Konvention `englisch`/`empfaenger` beibehalten). Bis dahin Konvention wie oben.
 
 ### Runde 2 — 16.09.2026
 - **Gelernt:** Empfänger zuerst suchen. Hätte 3 Suchen gespart.
