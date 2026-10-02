@@ -595,10 +595,10 @@
       "infrastructure"
     ],
     "fit": 1,
-    "fitDe": "Rechenkosten der Runden, keine API. Schwelle (5.000 Sterne) vermutlich verfehlt; AI for Science nur mit Uni-Partner (2026er Frist 15.07. zu).",
-    "fitEn": "Covers round compute, no API. Threshold (5,000 stars) probably missed; AI for Science needs a university partner (2026 deadline 15 Jul closed).",
+    "fitDe": "Rechenkosten der Runden, keine API. Nur mit OSI-lizenziertem Projekt und einem Kriterium wie 100+ gemergten PRs in fremden Repos (offizielle Bedingungen, keine 5.000-Sterne-Schwelle); Amélie selbst (2 Sterne, CC0) erfüllt keines, TYPO3-Beiträge eventuell. AI for Science nur mit Uni-Partner (2026er Frist 15.07. zu).",
+    "fitEn": "Covers round compute, no API. Needs an OSI-licensed project and a criterion such as 100+ merged PRs in others’ repos (official terms, no 5,000-star threshold); Amélie itself (2 stars, CC0) meets none, TYPO3 contributions possibly. AI for Science needs a university partner (2026 deadline 15 Jul closed).",
     "evidence": "snippet",
-    "url": "https://support.claude.com/en/articles/11199177-anthropic-s-ai-for-science-program",
+    "url": "https://www.anthropic.com/claude-for-oss-terms",
     "checked": "2026-09-28"
   },
   {

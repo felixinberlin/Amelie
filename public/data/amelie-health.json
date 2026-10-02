@@ -1,9 +1,9 @@
 {
   "auditVersion": 1,
-  "generatedAt": "2026-10-01T11:33:01.062Z",
+  "generatedAt": "2026-10-02T00:02:11.565Z",
   "repository": {
-    "commit": "cd758c0",
-    "branch": "main"
+    "commit": "57ab21f",
+    "branch": "claude/charming-mccarthy-6fd72s"
   },
   "inventory": {
     "doses": 44,
