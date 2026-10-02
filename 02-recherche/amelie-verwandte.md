@@ -2,6 +2,8 @@
 
 *Stand 01.10.2026. Ergänzt `amelie-landschaft.md` um das, was dort fehlt: **wie man die Verwandten erreicht**. Kontaktwege wurden am 01.10.2026 auf den Primärseiten gelesen, wo vermerkt als `[Seite]`; sonst nur Suchschnipsel (`[Schnipsel]`) und vor jedem Kontakt neu zu prüfen.*
 
+**Ausführliche Fassung mit Geschichte, Lizenz, Modell und Lehre je Projekt:** [`amelie-verwandte-dossier.md`](amelie-verwandte-dossier.md) (erzeugt, auch im Frontend unter Recherche, Reiter „Verwandte“).
+
 **Haltung (Regel 3, kein Pitching):** Verwandte sind keine Empfänger einer Dose und keine Kunden. Ein Kontakt ist höchstens ein kurzer, einmaliger Gruß mit Link, ohne Bitte und ohne Nachfassen. Es wurde **nichts versendet**; Entscheidung über jede Kontaktaufnahme liegt bei Félix.
 
 ---

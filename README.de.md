@@ -41,7 +41,7 @@ Stand: September 2026 · Félix, Berlin · alle Inhalte CC0
 
 ### `02-recherche/` — warum es so und nicht anders läuft
 - **amelie-landschaft.md** — vergleichbare Projekte weltweit, acht Familien von YC bis TDCommons, mit sieben Befunden
-- **amelie-verwandte.md** — die nächsten Verwandten und Nachbarn (F.A.T. Lab, Precious Plastic, open-source-ideas …) mit geprüften Kontaktwegen
+- **amelie-verwandte.md** — die nächsten Verwandten und Nachbarn (F.A.T. Lab, Precious Plastic, open-source-ideas …) mit geprüften Kontaktwegen; ausführliches erzeugtes Dossier in `amelie-verwandte-dossier.md`
 - **amelie-bewegungen.md** — die Bewegungen dahinter: Potlatch, Kula-Ring, Bhoodan, Freie Software, Repair Café, Dāna und Sadaqah jariyah
 
 ### `03-zuordnung/` — wer was bekommt

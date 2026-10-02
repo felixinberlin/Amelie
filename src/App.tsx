@@ -19,6 +19,7 @@ import { SelfAuditView } from './components/SelfAuditView';
 import { FundingCompass } from './components/FundingCompass';
 import { GamesView } from './components/GamesView';
 import { RedditView } from './components/RedditView';
+import { SisterProjectsView } from './components/SisterProjectsView';
 import { QuellenView } from './components/QuellenView';
 import { VectorCompareView } from './components/VectorCompareView';
 import { VenturesTab } from './components/VenturesTab';
@@ -405,6 +406,8 @@ export function App() {
             {currentTab === 'ventures' && <VenturesTab lang={lang} />}
 
             {currentTab === 'quellen' && <QuellenView lang={lang} />}
+
+            {currentTab === 'relatives' && <SisterProjectsView lang={lang} />}
 
             {currentTab === 'reddit' && <RedditView lang={lang} />}
 

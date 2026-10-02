@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0 --port 3000",
     "build": "tsc && vite build",
-    "lint": "tsc --noEmit && npm run check:dosen && npm run check:books && npm run check:idea-frontmatter && npm run check:protokoll && npm run check:friedhof && npm run check:quellen && npm run check:diagramme && npm run check:lab-pr",
+    "lint": "tsc --noEmit && npm run check:dosen && npm run check:books && npm run check:idea-frontmatter && npm run check:protokoll && npm run check:friedhof && npm run check:quellen && npm run check:diagramme && npm run check:lab-pr && npm run check:verwandte",
     "preview": "vite preview --port 3000",
     "check:dosen": "node scripts/check-dosen-drift.mjs",
     "test": "vitest run",
@@ -29,7 +29,9 @@
     "export:market": "node scripts/export-market-leads.mjs",
     "lab": "node scripts/lab-review.mjs",
     "agent": "node scripts/agent-run.mjs",
-    "teamrunde": "bash scripts/crew/teamrunde.sh"
+    "teamrunde": "bash scripts/crew/teamrunde.sh",
+    "export:verwandte": "node scripts/export-verwandte.mjs",
+    "check:verwandte": "node scripts/export-verwandte.mjs --check"
   },
   "dependencies": {
     "@types/canvas-confetti": "^1.9.0",

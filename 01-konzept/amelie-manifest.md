@@ -76,7 +76,7 @@ Format: **eine Seite.** Im Projekt heißt sie *die Dose*. Vorlage in `amelie-vor
 
 Ein Geschenk hat ein spezifisches Risiko: Jemand patentiert es und macht es damit für alle anderen unbenutzbar, dich eingeschlossen. **CC0 schützt davor nicht** — es verzichtet auf deine Rechte, hindert aber niemanden daran, dieselbe Idee anzumelden, wenn deine Veröffentlichung für Patentprüfer nicht auffindbar ist.
 
-Das Werkzeug dagegen heißt **defensive Publikation**, und es ist kostenlos: **[TDCommons](https://www.tdcommons.org/)** (Technical Disclosure Commons, betrieben an der Santa Clara University School of Law) nimmt technische Beschreibungen auf, datiert und indexiert sie so, dass Patentämter sie als Stand der Technik finden. Danach ist die Idee dauerhaft frei.
+Das Werkzeug dagegen heißt **defensive Publikation**, und es ist kostenlos: **[TDCommons](https://www.tdcommons.org/)** (Technical Disclosure Commons, laut FAQ von bepress im Auftrag von Google betrieben) nimmt technische Beschreibungen auf, datiert und indexiert sie so, dass Patentämter sie als Stand der Technik finden. Danach ist die Idee dauerhaft frei.
 
 Genutzt wird das fast ausschließlich von Konzernen für ihre Nebenerfindungen. In der Ideen-Verschenk-Szene: praktisch unbekannt. Das ist die Lücke, die dich von jeder Ideenbank der letzten vierzig Jahre unterscheidet.
 

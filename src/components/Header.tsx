@@ -35,6 +35,7 @@ import { GAME_DOSE_IDS } from '../data/pipeline';
 import { MoodSwitcher } from './MoodSwitcher';
 import { AMELIE_MUSTERS } from '../data/musterEmails';
 import { FUNDING_DATA } from '../data/funding';
+import { SISTER_PROJECTS } from '../data/sisterProjects';
 import { QUELLEN_DATA } from '../data/quellen';
 import { NAV_SECTIONS, NavSectionId, sectionOfTab, visibleSections } from '../data/navigation';
 
@@ -92,6 +93,7 @@ export const Header: React.FC<HeaderProps> = ({
     sandboxes: { label: t.nav.sandboxes, icon: Sliders, badge: SIMULATOR_COUNT },
     whimsy: { label: t.nav.whimsy, icon: Smile },
     quellen: { label: lang === 'de' ? 'Quellen' : lang === 'es' ? 'Fuentes' : 'Sources', icon: Library, badge: QUELLEN_DATA.length },
+    relatives: { label: lang === 'de' ? 'Verwandte' : lang === 'es' ? 'Parientes' : 'Relatives', icon: Heart, badge: SISTER_PROJECTS.length },
     reddit: { label: 'Reddit', icon: MessageSquare },
     funding: { label: lang === 'de' ? 'Förderkompass' : lang === 'es' ? 'Brújula de fondos' : 'Funding compass', icon: Coins, badge: FUNDING_DATA.length },
     ventures: { label: 'Ventures', icon: Briefcase },

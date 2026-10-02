@@ -2,6 +2,8 @@
 
 *As of 1 Oct 2026. Companion to `amelie-landschaft.md`: adds **how to reach** the relatives. Contact routes were read on primary pages on 1 Oct 2026 where marked `[page]`; otherwise search snippets only (`[snippet]`), to be re-verified before any contact. German original with full detail: `02-recherche/amelie-verwandte.md`.*
 
+**Full version with history, licence, model and lesson per project:** [`amelie-relatives-dossier.md`](amelie-relatives-dossier.md) (generated, also in the front end under Research, tab "Relatives").
+
 **Stance (rule 3, no pitching):** relatives are neither recipients of a tin nor customers. At most one short greeting with a link, no ask, no follow-up. **Nothing has been sent**; whether to contact anyone is Félix's call.
 
 ## 1. Closest relatives (gift + public domain + walking away)
