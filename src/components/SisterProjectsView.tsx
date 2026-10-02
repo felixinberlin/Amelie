@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { Search, ExternalLink, Mail, Github, MessageCircle, FileText, Globe, Users, CalendarDays, ChevronDown, ChevronUp, Heart, ShieldCheck, AlertTriangle, Library } from 'lucide-react';
 import { Language } from '../types';
+import { UI_ES, SISTER_ES } from '../data/relativesEs';
 import {
   SISTER_PROJECTS,
   SISTER_GROUPS,
@@ -39,7 +40,11 @@ const contactHref = (c: SisterContact) => (c.kind === 'email' ? `mailto:${c.valu
 
 export const SisterProjectsView: React.FC<SisterProjectsViewProps> = ({ lang }) => {
   const isDe = lang === 'de';
-  const L = (de: string, en: string) => (isDe ? de : en);
+  const isEs = lang === 'es';
+  const L = (de: string, en: string) => (isDe ? de : isEs ? (UI_ES[en] ?? en) : en);
+  const gName = (g: { id: string; de: string; en: string }) => (isEs ? SISTER_ES.groups[g.id]?.name ?? UI_ES[g.en] ?? g.en : L(g.de, g.en));
+  const gHint = (g: { id: string; hintDe: string; hintEn: string }) => (isEs ? SISTER_ES.groups[g.id]?.hint ?? g.hintEn : L(g.hintDe, g.hintEn));
+  const tagline = (p: SisterProject) => (isEs ? SISTER_ES.taglines[p.id] ?? p.taglineEn : L(p.taglineDe, p.taglineEn));
   const [group, setGroup] = useState<SisterGroup | 'all'>('all');
   const [query, setQuery] = useState('');
   const [open, setOpen] = useState<string | null>(null);
@@ -66,7 +71,7 @@ export const SisterProjectsView: React.FC<SisterProjectsViewProps> = ({ lang }) 
 
   const approachLabel = (p: SisterProject) => {
     const a = SISTER_APPROACHES.find((x) => x.id === p.approach);
-    return a ? L(a.de, a.en) : '';
+    return a ? (isEs ? SISTER_ES.approaches[a.id] ?? a.en : L(a.de, a.en)) : '';
   };
 
   return (
@@ -79,7 +84,7 @@ export const SisterProjectsView: React.FC<SisterProjectsViewProps> = ({ lang }) 
           </h2>
         </div>
         <p className="text-sm sm:text-base text-[var(--m-ink-2)] max-w-3xl leading-relaxed">
-          {L(
+          {isEs ? SISTER_ES.intro : L(
             'Amélie ist nicht allein. Hier steht, was die nächsten Verwandten tun (Geschenk, Public Domain, offene Baupläne, Ideenbanken, Rechts-Werkzeuge), was Amélie von ihnen lernt und auf welchem Weg sie erreichbar sind. Stand 01.10.2026. Alle Kontakte sind recherchiert, nichts wurde versendet.',
             'Amélie is not alone. This page shows what the closest relatives do (gift, public domain, open blueprints, idea banks, legal tools), what Amélie learns from them and how to reach them. As of 1 Oct 2026. All contacts are researched, nothing has been sent.'
           )}
@@ -88,7 +93,7 @@ export const SisterProjectsView: React.FC<SisterProjectsViewProps> = ({ lang }) 
           <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
           <ul className="space-y-1.5 leading-relaxed list-disc pl-4">
             {SISTER_ETIQUETTE.map((e, i) => (
-              <li key={i}>{L(e.de, e.en)}</li>
+              <li key={i}>{isEs ? SISTER_ES.etiquette[i] ?? e.en : L(e.de, e.en)}</li>
             ))}
           </ul>
         </div>
@@ -110,7 +115,7 @@ export const SisterProjectsView: React.FC<SisterProjectsViewProps> = ({ lang }) 
                     : 'bg-[var(--m-bg)] text-[var(--m-ink-2)] border-[var(--m-line-strong)] hover:border-[var(--m-accent)]/50'
                 }`}
               >
-                {L(g.de, g.en)} <span className="opacity-70">({counts[g.id] || 0})</span>
+                {gName(g)} <span className="opacity-70">({counts[g.id] || 0})</span>
               </button>
             );
           })}
@@ -119,7 +124,7 @@ export const SisterProjectsView: React.FC<SisterProjectsViewProps> = ({ lang }) 
           <p className="text-xs sm:text-sm text-[var(--m-ink-2)]">
             {(() => {
               const g = SISTER_GROUPS.find((x) => x.id === group);
-              return g ? L(g.hintDe, g.hintEn) : '';
+              return g ? gHint(g) : '';
             })()}
           </p>
         )}
@@ -152,11 +157,11 @@ export const SisterProjectsView: React.FC<SisterProjectsViewProps> = ({ lang }) 
               <header className="space-y-1.5">
                 <div className="flex flex-wrap items-center gap-2 text-[11px] font-typewriter">
                   <span className={`px-2 py-0.5 rounded border ${st.cls}`}>{L(st.de, st.en)}</span>
-                  {grp && <span className="px-2 py-0.5 rounded border border-[var(--m-line-strong)] text-[var(--m-ink-2)]">{L(grp.de, grp.en)}</span>}
+                  {grp && <span className="px-2 py-0.5 rounded border border-[var(--m-line-strong)] text-[var(--m-ink-2)]">{gName(grp)}</span>}
                   <span className="text-[var(--m-muted)]">{p.place} · {p.founded}</span>
                 </div>
                 <h3 className="font-amelie text-lg font-bold text-[var(--m-ink)]">{p.name}</h3>
-                <p className="text-sm text-[var(--m-ink-2)] leading-relaxed">{L(p.taglineDe, p.taglineEn)}</p>
+                <p className="text-sm text-[var(--m-ink-2)] leading-relaxed">{tagline(p)}</p>
               </header>
 
               <div className="rounded-lg bg-[var(--m-bg-2)] border border-[var(--m-line)] p-3 text-xs sm:text-sm text-[var(--m-ink-2)] leading-relaxed">
@@ -207,6 +212,7 @@ export const SisterProjectsView: React.FC<SisterProjectsViewProps> = ({ lang }) 
 
               {isOpen && (
                 <div className="space-y-3 text-xs sm:text-sm text-[var(--m-ink-2)] leading-relaxed border-t border-[var(--m-line)] pt-3">
+                  {isEs && <p className="italic text-[var(--m-muted)]">{L('', 'The dossier texts are in English; the interface is translated.')}</p>}
                   <div>
                     <h4 className="font-bold text-[var(--m-ink)] mb-0.5">{L('Was sie tun', 'What they do')}</h4>
                     <p>{L(p.whatDe, p.whatEn)}</p>
@@ -241,7 +247,7 @@ export const SisterProjectsView: React.FC<SisterProjectsViewProps> = ({ lang }) 
         <ol className="space-y-3 list-decimal pl-5 text-sm text-[var(--m-ink-2)] leading-relaxed">
           {SISTER_LESSONS.map((x, i) => (
             <li key={i}>
-              <span className="font-bold text-[var(--m-ink)]">{L(x.titleDe, x.titleEn)}.</span> {L(x.bodyDe, x.bodyEn)}
+              <span className="font-bold text-[var(--m-ink)]">{isEs ? SISTER_ES.lessons[i]?.title ?? x.titleEn : L(x.titleDe, x.titleEn)}.</span> {isEs ? SISTER_ES.lessons[i]?.body ?? x.bodyEn : L(x.bodyDe, x.bodyEn)}
             </li>
           ))}
         </ol>

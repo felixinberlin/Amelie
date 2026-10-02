@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ExternalLink, ShieldCheck, AlertTriangle, CalendarClock, ListChecks, HelpCircle, Coins, Filter, Terminal } from 'lucide-react';
 import { Language } from '../types';
+import { UI_ES, CREDITS_ES } from '../data/relativesEs';
 import {
   AI_CREDIT_SUMMARY,
   AI_CREDIT_PATHS,
@@ -35,7 +36,8 @@ const KIND_LABEL: Record<CreditKind, { de: string; en: string }> = {
 
 export const AiCreditsGuide: React.FC<AiCreditsGuideProps> = ({ lang }) => {
   const isDe = lang === 'de';
-  const L = (de: string, en: string) => (isDe ? de : en);
+  const isEs = lang === 'es';
+  const L = (de: string, en: string) => (isDe ? de : isEs ? (UI_ES[en] ?? en) : en);
   const [fit, setFit] = useState<CreditFit | 'all'>('all');
 
   const programs = AI_CREDIT_PROGRAMS.filter((p) => fit === 'all' || p.fit === fit);
@@ -49,19 +51,21 @@ export const AiCreditsGuide: React.FC<AiCreditsGuideProps> = ({ lang }) => {
             {L('KI-Credits und Runway: wie bezahlt ein Einzelentwickler die Rechenkosten?', 'AI credits and runway: how does a solo developer pay for compute?')}
           </h3>
         </div>
-        <p className="text-sm sm:text-base text-[var(--m-ink-2)] max-w-3xl leading-relaxed">{L(AI_CREDIT_SUMMARY.de, AI_CREDIT_SUMMARY.en)}</p>
+        <p className="text-sm sm:text-base text-[var(--m-ink-2)] max-w-3xl leading-relaxed">{isEs ? CREDITS_ES.summary : L(AI_CREDIT_SUMMARY.de, AI_CREDIT_SUMMARY.en)}</p>
         <p className="mt-3 text-xs text-[var(--m-muted)] font-typewriter">
           {L(`Stand ${AI_CREDIT_CHECKED}. Gelesen auf Primärseite nur: Anthropic-Bedingungen für Open Source, NLnet. Alles andere Suchschnipsel: vor jeder Bewerbung prüfen.`, `As of ${AI_CREDIT_CHECKED}. Read on primary pages only: Anthropic open-source terms, NLnet. Everything else is search snippets: verify before applying.`)}
         </p>
       </section>
+
+      {isEs && <p className="text-xs italic text-[var(--m-muted)]">{L('', 'The dossier texts are in English; the interface is translated.')}</p>}
 
       <section className="space-y-3">
         <h4 className="font-amelie text-lg font-bold text-[var(--m-ink)]">{L('Fünf Wege, nach Tempo geordnet', 'Five paths, ordered by speed')}</h4>
         <div className="grid gap-4 md:grid-cols-2">
           {AI_CREDIT_PATHS.map((p) => (
             <article key={p.id} className="rounded-2xl border border-[var(--m-line-strong)] bg-[var(--m-bg)] p-4 shadow-xs space-y-1.5">
-              <h5 className="font-bold text-[var(--m-ink)]">{L(p.titleDe, p.titleEn)}</h5>
-              <p className="text-[11px] font-typewriter text-[var(--m-accent)]">{L(p.speedDe, p.speedEn)}</p>
+              <h5 className="font-bold text-[var(--m-ink)]">{isEs ? CREDITS_ES.paths[p.id]?.title ?? p.titleEn : L(p.titleDe, p.titleEn)}</h5>
+              <p className="text-[11px] font-typewriter text-[var(--m-accent)]">{isEs ? CREDITS_ES.paths[p.id]?.speed ?? p.speedEn : L(p.speedDe, p.speedEn)}</p>
               <p className="text-sm text-[var(--m-ink-2)] leading-relaxed">{L(p.bodyDe, p.bodyEn)}</p>
             </article>
           ))}
@@ -71,7 +75,7 @@ export const AiCreditsGuide: React.FC<AiCreditsGuideProps> = ({ lang }) => {
       <section className="space-y-3">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <h4 className="font-amelie text-lg font-bold text-[var(--m-ink)]">
-            {L(`Programme (${programs.length} von ${AI_CREDIT_PROGRAMS.length})`, `Programmes (${programs.length} of ${AI_CREDIT_PROGRAMS.length})`)}
+            {isEs ? `Programas (${programs.length} de ${AI_CREDIT_PROGRAMS.length})` : L(`Programme (${programs.length} von ${AI_CREDIT_PROGRAMS.length})`, `Programmes (${programs.length} of ${AI_CREDIT_PROGRAMS.length})`)}
           </h4>
           <div className="flex flex-wrap items-center gap-2" role="group" aria-label={L('Passung filtern', 'Filter by fit')}>
             <Filter className="w-4 h-4 text-[var(--m-muted)]" />
@@ -133,7 +137,7 @@ export const AiCreditsGuide: React.FC<AiCreditsGuideProps> = ({ lang }) => {
         <ol className="grid gap-3 md:grid-cols-2">
           {AI_STARTER_STEPS.map((st, i) => (
             <li key={i} className="rounded-xl border border-[var(--m-line-strong)] bg-[var(--m-bg)] p-4 shadow-xs space-y-1.5">
-              <h5 className="font-bold text-[var(--m-ink)]">{L(st.titleDe, st.titleEn)}</h5>
+              <h5 className="font-bold text-[var(--m-ink)]">{isEs ? CREDITS_ES.stepTitles[i] ?? st.titleEn : L(st.titleDe, st.titleEn)}</h5>
               <p className="text-sm text-[var(--m-ink-2)] leading-relaxed">{L(st.bodyDe, st.bodyEn)}</p>
               {st.command && <code className="block rounded-lg bg-[var(--m-bg-2)] border border-[var(--m-line)] px-3 py-2 text-xs font-typewriter text-[var(--m-ink)] overflow-x-auto">{st.command}</code>}
             </li>
@@ -149,7 +153,7 @@ export const AiCreditsGuide: React.FC<AiCreditsGuideProps> = ({ lang }) => {
         <div className="grid gap-3 md:grid-cols-2">
           {AI_CREDIT_BLOCKERS.map((b) => (
             <article key={b.id} className="rounded-xl border border-amber-300 bg-amber-50 p-4 text-sm text-amber-900 space-y-1">
-              <h5 className="font-bold text-amber-950">{L(b.titleDe, b.titleEn)}</h5>
+              <h5 className="font-bold text-amber-950">{isEs ? CREDITS_ES.blockers[b.id] ?? b.titleEn : L(b.titleDe, b.titleEn)}</h5>
               <p className="leading-relaxed">{L(b.bodyDe, b.bodyEn)}</p>
             </article>
           ))}
@@ -161,14 +165,14 @@ export const AiCreditsGuide: React.FC<AiCreditsGuideProps> = ({ lang }) => {
           <div className="flex items-center gap-2"><CalendarClock className="w-4 h-4 text-[var(--m-accent)]" /><h4 className="font-amelie text-lg font-bold text-[var(--m-ink)]">{L('Termine', 'Dates')}</h4></div>
           <ul className="space-y-2 text-sm text-[var(--m-ink-2)]">
             {AI_CREDIT_DATES.map((d) => (
-              <li key={d.date}><span className="font-typewriter font-bold text-[var(--m-ink)]">{d.date}</span> · {L(d.labelDe, d.labelEn)}</li>
+              <li key={d.date}><span className="font-typewriter font-bold text-[var(--m-ink)]">{d.date}</span> · {isEs ? CREDITS_ES.dates[d.date] ?? d.labelEn : L(d.labelDe, d.labelEn)}</li>
             ))}
           </ul>
         </div>
         <div className="rounded-2xl border border-[var(--m-line-strong)] bg-[var(--m-bg)] p-4 sm:p-5 shadow-xs space-y-3">
           <div className="flex items-center gap-2"><ListChecks className="w-4 h-4 text-[var(--m-accent)]" /><h4 className="font-amelie text-lg font-bold text-[var(--m-ink)]">{L('Nächste Schritte', 'Next steps')}</h4></div>
           <ol className="list-decimal pl-5 space-y-2 text-sm text-[var(--m-ink-2)]">
-            {AI_CREDIT_STEPS.map((s, i) => (<li key={i}>{L(s.de, s.en)}</li>))}
+            {AI_CREDIT_STEPS.map((s, i) => (<li key={i}>{isEs ? CREDITS_ES.steps[i] ?? s.en : L(s.de, s.en)}</li>))}
           </ol>
         </div>
       </section>

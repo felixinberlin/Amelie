@@ -50,3 +50,28 @@ describe('sisterProjects', () => {
     }
   });
 });
+
+import { SISTER_ETIQUETTE, SISTER_LESSONS } from './sisterProjects';
+import { SISTER_ES, CREDITS_ES, UI_ES } from './relativesEs';
+import { AI_CREDIT_STEPS, AI_STARTER_STEPS } from './aiCredits';
+
+describe('spanische Oberfläche', () => {
+  it('deckt Projekte, Gruppen, Haltungen, Etikette und Lehren ab', () => {
+    for (const p of SISTER_PROJECTS) expect(SISTER_ES.taglines[p.id], p.id).toBeTruthy();
+    for (const g of SISTER_GROUPS) expect(SISTER_ES.groups[g.id], g.id).toBeTruthy();
+    for (const a of SISTER_APPROACHES) expect(SISTER_ES.approaches[a.id], a.id).toBeTruthy();
+    expect(SISTER_ES.etiquette).toHaveLength(SISTER_ETIQUETTE.length);
+    expect(SISTER_ES.lessons).toHaveLength(SISTER_LESSONS.length);
+  });
+  it('deckt Wege, Hindernisse, Termine und Schritte der Credits ab', () => {
+    for (const p of AI_CREDIT_PATHS) expect(CREDITS_ES.paths[p.id], p.id).toBeTruthy();
+    for (const b of AI_CREDIT_BLOCKERS) expect(CREDITS_ES.blockers[b.id], b.id).toBeTruthy();
+    for (const d of AI_CREDIT_DATES) expect(CREDITS_ES.dates[d.date], d.date).toBeTruthy();
+    expect(CREDITS_ES.steps).toHaveLength(AI_CREDIT_STEPS.length);
+    expect(CREDITS_ES.stepTitles).toHaveLength(AI_STARTER_STEPS.length);
+  });
+  it('die Bedientexte der Gruppen und Haltungen stehen in der Übersetzungstabelle', () => {
+    for (const g of SISTER_GROUPS) expect(UI_ES[g.en], g.en).toBeTruthy();
+    for (const a of SISTER_APPROACHES) expect(UI_ES[a.en], a.en).toBeTruthy();
+  });
+});

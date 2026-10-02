@@ -23,7 +23,7 @@
 
 ### F.A.T. Lab (Free Art and Technology Lab)
 
-**Status:** ended, restarted 2025 · **Place:** international, Archiv fffff.at · **Since:** 2007
+**Status:** ended, restarted 2025 · **Place:** international · fffff.at · **Since:** 2007
 
 > Public-domain collective, loudly signed, productive for eight years, then deliberately ended.
 
@@ -47,7 +47,7 @@
 
 ### Aram Bartholl
 
-**Status:** active · **Place:** Berlin / Hamburg · **Since:** 1972 geboren
+**Status:** active · **Place:** Berlin / Hamburg · **Since:** b. 1972
 
 > Berlin conceptual artist, F.A.T. Lab member 2009 to 2015, professor at HAW Hamburg.
 
@@ -70,7 +70,7 @@
 
 ### Precious Plastic
 
-**Status:** active · **Place:** Eindhoven / weltweit · **Since:** 2013
+**Status:** active · **Place:** Eindhoven / worldwide · **Since:** 2013
 
 > Open plans for recycling machines, built worldwide: the executable gift.
 
@@ -94,7 +94,7 @@
 
 ### Open Source Ecology (OSE)
 
-**Status:** active · **Place:** Missouri, USA / weltweit · **Since:** 2003
+**Status:** active · **Place:** Missouri, USA / worldwide · **Since:** 2003
 
 > Open blueprints for 50 machines that let small communities supply themselves.
 
@@ -118,7 +118,7 @@
 
 ### Constant vzw
 
-**Status:** active · **Place:** Brüssel · **Since:** 1997
+**Status:** active · **Place:** Brussels · **Since:** 1997
 
 > Interdisciplinary arts-and-technology lab with free software and a Public Domain Day.
 
@@ -144,7 +144,7 @@
 
 ### open-source-ideas (GitHub)
 
-**Status:** active · **Place:** GitHub · **Since:** nicht ermittelt
+**Status:** active · **Place:** GitHub · **Since:** unknown
 
 > Anyone with an OSS idea but no time posts it as an issue; others build it.
 
@@ -167,7 +167,7 @@
 
 ### r/SomebodyMakeThis und somebodymakethis.org
 
-**Status:** active · **Place:** Reddit / Web · **Since:** nicht ermittelt
+**Status:** active · **Place:** Reddit / Web · **Since:** unknown
 
 > Reddit community where people wish for products; a website curates the best ideas.
 
@@ -191,7 +191,7 @@
 
 ### captn3m0/ideas
 
-**Status:** active · **Place:** GitHub · **Since:** nicht ermittelt
+**Status:** active · **Place:** GitHub · **Since:** unknown
 
 > Personal idea list under CC BY 4.0; whoever builds something from it gets a postcard.
 
@@ -253,7 +253,7 @@
 
 **What Amélie learns.** Between open plans and a real house lie approval, structural engineering and manufacturers. For tins with a standards link too: the route from plan to use needs partners.
 
-**Stance when in contact: Community channels only.** Forum or contact page. The address hello@wikihouse.cc comes from search snippets only, the contact page was read.
+**Stance when in contact: Community channels only.** Forum or contact form. The contact page lists no email address; hello@wikihouse.cc from search snippets is not confirmed there and therefore not listed.
 
 **Contact routes**
 
@@ -261,13 +261,13 @@
 - <https://community.wikihouse.cc>: Community forum (page read)
 - <https://www.wikihouse.cc/feedback>: Feedback form (page read)
 - <https://github.com/wikihouseproject/Skylark>: Skylark (GitHub) (page read)
-- [hello@wikihouse.cc](mailto:hello@wikihouse.cc): General (snippet only) (snippet only, verify)
+- <https://form.typeform.com/to/zePfnP4K>: Form "Contact us about your project" (the contact page lists no email address) (page read)
 
 *Evidence: page read, checked 2026-10-01.*
 
 ### L’Atelier Paysan
 
-**Status:** active · **Place:** Frankreich · **Since:** 2009
+**Status:** active · **Place:** France · **Since:** 2009
 
 > Cooperative in which farmers design and build their own tools.
 
@@ -279,12 +279,12 @@
 
 **What Amélie learns.** A fixed circle of recipients with a shared need (expensive, ill-fitting machines) makes the gift connectable. Amélie’s rule 2 (real person, concrete mandate) is the same principle.
 
-**Stance when in contact: Community channels only.** French-speaking. Via the contact page or the animation team; do not use the personal addresses from search snippets without cause.
+**Stance when in contact: Community channels only.** French-speaking. Via the contact page or the animation team; do not use the personal addresses of staff without cause.
 
 **Contact routes**
 
-- <https://www.latelierpaysan.org/Contact>: Contact page (snippet only, verify)
-- [animation@latelierpaysan.org](mailto:animation@latelierpaysan.org): Animation team (snippet only) (snippet only, verify)
+- <https://www.latelierpaysan.org/Contact>: Contact page (page read)
+- [animation@latelierpaysan.org](mailto:animation@latelierpaysan.org): Animation team (listed on the contact page as "animation[at]") (page read)
 - <https://www.latelierpaysan.org/English>: English site (page read)
 
 *Evidence: search snippet, checked 2026-10-01.*
@@ -319,7 +319,7 @@
 
 ### Technical Disclosure Commons (TDCommons)
 
-**Status:** active · **Place:** online · **Since:** ca. 2015 (Datum nicht bestätigt)
+**Status:** active · **Place:** online · **Since:** c. 2015 (unconfirmed)
 
 > Free platform for defensive publications: prior art against enclosure.
 
@@ -342,7 +342,7 @@
 
 ### Zenodo
 
-**Status:** active · **Place:** CERN / OpenAIRE · **Since:** nicht ermittelt
+**Status:** active · **Place:** CERN / OpenAIRE · **Since:** unknown
 
 > Open repository with DOI: the second route to defensive publication.
 
@@ -441,13 +441,13 @@
 
 ### Civic Tech Field Guide
 
-**Status:** active · **Place:** weltweit, gehostet bei Superbloom · **Since:** 2016
+**Status:** active · **Place:** worldwide · Superbloom · **Since:** 2016
 
 > Worldwide directory of civic-tech projects, with its own "graveyard" of failed projects.
 
 **What they do.** Conceived in early 2016 by Micah Sifry (Civic Hall), Matt Stempeck (then Microsoft) and Erin Simpson as an open spreadsheet; in 2018 Stempeck built it into a directory under Civic Hall, supported by the Knight Foundation, Luminate and the Patrick J. McGovern Foundation. Today a project of Superbloom, also supported by Sarapis and donations. Projects can be listed or "claimed", there are volunteers and curators. Notably: a "graveyard" with the text "Learning from the civic tech graveyard".
 
-**Model, licence, scale.** Open directory, maintained by volunteers and funders. Contact by email (obscured in the page text), contact forms on listings optional.
+**Model, licence, scale.** Open directory, maintained by volunteers and funders. Contact by email at info@civictech.guide, contact forms on listings optional.
 
 **Why a sister, where Amélie differs.** Occupancy-test source for anything with a civic-tech angle, and with its graveyard the nearest relative of Amélie’s cemetery.
 
@@ -457,7 +457,8 @@
 
 **Contact routes**
 
-- <https://civictech.guide/contact/>: Contact page (email there, obscured in text) (page read)
+- [info@civictech.guide](mailto:info@civictech.guide): General (decoded from the contact page) (page read)
+- <https://civictech.guide/contact/>: Contact page (page read)
 - <https://civictech.guide/graveyard/>: Graveyard (snippet only, verify)
 - <https://civictech.guide/about>: About the field guide (snippet only, verify)
 
@@ -465,7 +466,7 @@
 
 ### Up For Grabs
 
-**Status:** active · **Place:** GitHub Pages · **Since:** nicht ermittelt
+**Status:** active · **Place:** GitHub Pages · **Since:** unknown
 
 > Connects contributors with curated, self-contained starter tasks in open-source projects.
 

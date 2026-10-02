@@ -24,8 +24,8 @@
 
 ## 3. Other neighbours
 
-- **WikiHouse** (UK): [contact](https://www.wikihouse.cc/contact), [forum](https://community.wikihouse.cc) `[page]`; `hello@wikihouse.cc` `[snippet]`. ShareAlike, not CC0.
-- **L'Atelier Paysan** (FR): [contact](https://www.latelierpaysan.org/Contact); `animation@latelierpaysan.org` `[snippet]`.
+- **WikiHouse** (UK): [contact](https://www.wikihouse.cc/contact), [forum](https://community.wikihouse.cc) `[page]`; the contact page lists no email address, `hello@wikihouse.cc` from search snippets is **not confirmed**. ShareAlike, not CC0.
+- **L'Atelier Paysan** (FR): [contact](https://www.latelierpaysan.org/Contact); `animation@latelierpaysan.org` (as listed on the contact page) `[page]`.
 - **Farm Hack** (US): [contact form](https://farmhack.org/contact), [forum](https://forum.goatech.org/c/farmhack/21) `[page]`.
 - **TDCommons**: [contact](https://www.tdcommons.org/contact.html), free, account required `[page]`. **Correction:** its FAQ says it is operated by bepress at the request of Google; the landscape doc names Santa Clara University School of Law. Clarify before quoting.
 - **Wikimedia Community Wishlist**: [submit a wish](https://meta.wikimedia.org/w/index.php?title=Special:WishlistIntake&returnto=Community_Wishlist) `[page]`. **Deadline 8 Nov 2026**; voting 8–24 Jan 2027.
@@ -33,7 +33,7 @@
 ## 4. Own research: more neighbours
 
 - **OK Lab Berlin** (Code for Germany): [berlin@codefor.de](mailto:berlin@codefor.de), every second Monday at Wikibär, Köpenicker Str. 45 `[page]`. A place to show, not to ask.
-- **Civic Tech Field Guide** (Superbloom): [contact](https://civictech.guide/contact/); projects can be listed or claimed `[page]`.
+- **Civic Tech Field Guide** (Superbloom): [info@civictech.guide](mailto:info@civictech.guide), [contact](https://civictech.guide/contact/); projects can be listed or claimed `[page]`.
 - **Up For Grabs**: [GitHub](https://github.com/up-for-grabs/up-for-grabs.net); projects list themselves with a label `[page]`. A possible bridge for ticket 01 of a tin.
 - **Zenodo** (CERN/OpenAIRE): [support](https://zenodo.org/support) `[page]`. Second route for defensive publication; CC0 must be chosen explicitly (default CC BY 4.0) `[snippet]`.
 - **OSHWA**: [oshwa.org](https://www.oshwa.org/) `[page]`, certification for hardware-adjacent tins.
@@ -43,4 +43,4 @@
 
 ## Open
 
-Who writes to whom and whether at all (Félix). Unverified: Bartholl's address, `hello@wikihouse.cc`, L'Atelier Paysan addresses, the operator of somebodymakethis.org.
+Who writes to whom and whether at all (Félix). Unverified: Bartholl's address (not in the page source, fetch it in the browser) and the operator of somebodymakethis.org. `hello@wikihouse.cc` is not on the WikiHouse contact page (forms only) and was removed from the data. Confirmed on 2 Oct 2026: `animation@latelierpaysan.org`, `info@civictech.guide`.

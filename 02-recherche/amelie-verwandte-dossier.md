@@ -23,7 +23,7 @@
 
 ### F.A.T. Lab (Free Art and Technology Lab)
 
-**Status:** beendet, Neustart 2025 · **Ort:** international, Archiv fffff.at · **Seit:** 2007
+**Status:** beendet, Neustart 2025 · **Ort:** international · fffff.at · **Seit:** 2007
 
 > Public-Domain-Kollektiv, laut signiert, acht Jahre produktiv, dann bewusst beendet.
 
@@ -47,7 +47,7 @@
 
 ### Aram Bartholl
 
-**Status:** aktiv · **Ort:** Berlin / Hamburg · **Seit:** 1972 geboren
+**Status:** aktiv · **Ort:** Berlin / Hamburg · **Seit:** b. 1972
 
 > Berliner Konzeptkünstler, F.A.T.-Lab-Mitglied 2009 bis 2015, Professor an der HAW Hamburg.
 
@@ -70,7 +70,7 @@
 
 ### Precious Plastic
 
-**Status:** aktiv · **Ort:** Eindhoven / weltweit · **Seit:** 2013
+**Status:** aktiv · **Ort:** Eindhoven / worldwide · **Seit:** 2013
 
 > Offene Pläne für Recycling-Maschinen, weltweit nachgebaut: das ausführbare Geschenk.
 
@@ -94,7 +94,7 @@
 
 ### Open Source Ecology (OSE)
 
-**Status:** aktiv · **Ort:** Missouri, USA / weltweit · **Seit:** 2003
+**Status:** aktiv · **Ort:** Missouri, USA / worldwide · **Seit:** 2003
 
 > Offene Baupläne für 50 Maschinen, mit denen kleine Gemeinschaften sich selbst versorgen können.
 
@@ -118,7 +118,7 @@
 
 ### Constant vzw
 
-**Status:** aktiv · **Ort:** Brüssel · **Seit:** 1997
+**Status:** aktiv · **Ort:** Brussels · **Seit:** 1997
 
 > Interdisziplinäres Kunst-und-Technik-Labor mit freier Software und Public-Domain-Tag.
 
@@ -144,7 +144,7 @@
 
 ### open-source-ideas (GitHub)
 
-**Status:** aktiv · **Ort:** GitHub · **Seit:** nicht ermittelt
+**Status:** aktiv · **Ort:** GitHub · **Seit:** unknown
 
 > Wer eine OSS-Idee, aber keine Zeit hat, stellt sie als Issue ein; andere bauen sie.
 
@@ -167,7 +167,7 @@
 
 ### r/SomebodyMakeThis und somebodymakethis.org
 
-**Status:** aktiv · **Ort:** Reddit / Web · **Seit:** nicht ermittelt
+**Status:** aktiv · **Ort:** Reddit / Web · **Seit:** unknown
 
 > Reddit-Community, in der Menschen Produkte wünschen; eine Website kuratiert die besten Ideen.
 
@@ -191,7 +191,7 @@
 
 ### captn3m0/ideas
 
-**Status:** aktiv · **Ort:** GitHub · **Seit:** nicht ermittelt
+**Status:** aktiv · **Ort:** GitHub · **Seit:** unknown
 
 > Persönliche Ideenliste unter CC BY 4.0; wer etwas daraus baut, bekommt eine Postkarte.
 
@@ -253,7 +253,7 @@
 
 **Was Amélie lernt.** Zwischen offenen Plänen und realem Haus liegen Zulassung, Statik und Hersteller. Auch für Dosen mit Normbezug gilt: Der Weg vom Plan zum Einsatz braucht Partner.
 
-**Haltung beim Kontakt: Nur über die Community.** Forum oder Kontaktseite. Die Adresse hello@wikihouse.cc stammt nur aus Suchschnipseln, die Kontaktseite ist gelesen.
+**Haltung beim Kontakt: Nur über die Community.** Forum oder Kontaktformular. Die Kontaktseite nennt keine E-Mail-Adresse; die in Suchschnipseln genannte hello@wikihouse.cc ist dort nicht bestätigt und deshalb nicht aufgeführt.
 
 **Kontaktwege**
 
@@ -261,13 +261,13 @@
 - <https://community.wikihouse.cc>: Community-Forum (Seite gelesen)
 - <https://www.wikihouse.cc/feedback>: Feedback-Formular (Seite gelesen)
 - <https://github.com/wikihouseproject/Skylark>: Skylark (GitHub) (Seite gelesen)
-- [hello@wikihouse.cc](mailto:hello@wikihouse.cc): Allgemein (nur Schnipsel) (nur Schnipsel, prüfen)
+- <https://form.typeform.com/to/zePfnP4K>: Formular „Contact us about your project“ (die Kontaktseite nennt keine E-Mail-Adresse) (Seite gelesen)
 
 *Evidenz: Seite gelesen, geprüft 2026-10-01.*
 
 ### L’Atelier Paysan
 
-**Status:** aktiv · **Ort:** Frankreich · **Seit:** 2009
+**Status:** aktiv · **Ort:** France · **Seit:** 2009
 
 > Genossenschaft, in der Bäuerinnen und Bauern ihre Werkzeuge selbst entwerfen und bauen.
 
@@ -279,12 +279,12 @@
 
 **Was Amélie lernt.** Ein fester Empfängerkreis mit gemeinsamer Not (teure, unpassende Maschinen) macht das Geschenk anschlussfähig. Amélies Regel 2 (reale Person, konkretes Mandat) ist dasselbe Prinzip.
 
-**Haltung beim Kontakt: Nur über die Community.** Französischsprachig. Über die Kontaktseite oder die Animationsgruppe; die persönlichen Adressen aus Suchschnipseln nicht ohne Anlass verwenden.
+**Haltung beim Kontakt: Nur über die Community.** Französischsprachig. Über die Kontaktseite oder die Animationsgruppe; die persönlichen Adressen der Mitarbeitenden nicht ohne Anlass verwenden.
 
 **Kontaktwege**
 
-- <https://www.latelierpaysan.org/Contact>: Kontaktseite (nur Schnipsel, prüfen)
-- [animation@latelierpaysan.org](mailto:animation@latelierpaysan.org): Animationsteam (nur Schnipsel) (nur Schnipsel, prüfen)
+- <https://www.latelierpaysan.org/Contact>: Kontaktseite (Seite gelesen)
+- [animation@latelierpaysan.org](mailto:animation@latelierpaysan.org): Animationsteam (steht so auf der Kontaktseite, dort als „animation[at]“) (Seite gelesen)
 - <https://www.latelierpaysan.org/English>: Englische Seite (Seite gelesen)
 
 *Evidenz: Suchschnipsel, geprüft 2026-10-01.*
@@ -319,7 +319,7 @@
 
 ### Technical Disclosure Commons (TDCommons)
 
-**Status:** aktiv · **Ort:** online · **Seit:** ca. 2015 (Datum nicht bestätigt)
+**Status:** aktiv · **Ort:** online · **Seit:** c. 2015 (unconfirmed)
 
 > Kostenlose Plattform für defensive Publikationen: Stand der Technik gegen Einzäunung.
 
@@ -342,7 +342,7 @@
 
 ### Zenodo
 
-**Status:** aktiv · **Ort:** CERN / OpenAIRE · **Seit:** nicht ermittelt
+**Status:** aktiv · **Ort:** CERN / OpenAIRE · **Seit:** unknown
 
 > Offenes Repositorium mit DOI: der zweite Weg zur defensiven Publikation.
 
@@ -441,13 +441,13 @@
 
 ### Civic Tech Field Guide
 
-**Status:** aktiv · **Ort:** weltweit, gehostet bei Superbloom · **Seit:** 2016
+**Status:** aktiv · **Ort:** worldwide · Superbloom · **Seit:** 2016
 
 > Weltweites Verzeichnis von Civic-Tech-Projekten, mit eigenem „Graveyard“ gescheiterter Projekte.
 
 **Was sie tun.** Ausgedacht Anfang 2016 von Micah Sifry (Civic Hall), Matt Stempeck (damals Microsoft) und Erin Simpson als offene Tabelle; 2018 baute Stempeck sie unter dem Dach von Civic Hall zu einem Verzeichnis aus, unterstützt von Knight Foundation, Luminate und der Patrick J. McGovern Foundation. Heute ein Projekt von Superbloom, getragen auch von Sarapis und Spenden. Projekte lassen sich eintragen oder „beanspruchen“, es gibt Freiwillige und Kuratoren. Besonders: ein „Graveyard“ mit dem Text „Learning from the civic tech graveyard“.
 
-**Modell, Lizenz, Größe.** Offenes Verzeichnis, Pflege durch Freiwillige und Förderer. Kontakt per E-Mail (im Seitentext verschleiert), Kontaktformulare auf Listings optional.
+**Modell, Lizenz, Größe.** Offenes Verzeichnis, Pflege durch Freiwillige und Förderer. Kontakt per E-Mail an info@civictech.guide, Kontaktformulare auf Listings optional.
 
 **Warum Schwester, wo sich Amélie unterscheidet.** Besetzt-Test-Quelle für alles mit Civic-Tech-Bezug, und mit dem Graveyard der nächste Verwandte von Amélies Friedhof.
 
@@ -457,7 +457,8 @@
 
 **Kontaktwege**
 
-- <https://civictech.guide/contact/>: Kontaktseite (E-Mail dort, im Text verschleiert) (Seite gelesen)
+- [info@civictech.guide](mailto:info@civictech.guide): Allgemein (aus der Kontaktseite entschlüsselt) (Seite gelesen)
+- <https://civictech.guide/contact/>: Kontaktseite (Seite gelesen)
 - <https://civictech.guide/graveyard/>: Graveyard (nur Schnipsel, prüfen)
 - <https://civictech.guide/about>: Über das Field Guide (nur Schnipsel, prüfen)
 
@@ -465,7 +466,7 @@
 
 ### Up For Grabs
 
-**Status:** aktiv · **Ort:** GitHub Pages · **Seit:** nicht ermittelt
+**Status:** aktiv · **Ort:** GitHub Pages · **Seit:** unknown
 
 > Verbindet Mitmachende mit kuratierten, eigenständigen Einsteiger-Aufgaben in Open-Source-Projekten.
 
