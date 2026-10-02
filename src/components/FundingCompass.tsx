@@ -25,10 +25,13 @@ import {
   ArrowRight,
   Filter,
   DollarSign,
+  Coins,
   HeartHandshake,
   Eye,
 } from 'lucide-react';
 import { Language } from '../types';
+import { AiCreditsGuide } from './AiCreditsGuide';
+import { AI_CREDIT_PROGRAMS } from '../data/aiCredits';
 import {
   FUNDING_DATA,
   FUNDING_EVENTS,
@@ -58,7 +61,7 @@ interface FundingCompassProps {
   lang: Language;
 }
 
-type MainTab = 'calendar' | 'database' | 'founders' | 'projects' | 'method';
+type MainTab = 'calendar' | 'database' | 'credits' | 'founders' | 'projects' | 'method';
 type StatusFilter = 'live' | 'all';
 type EventFilter = 'all' | 'deadline' | 'opening' | 'pitch' | 'event';
 
@@ -344,6 +347,7 @@ export const FundingCompass: React.FC<FundingCompassProps> = ({ lang }) => {
         {[
           { id: 'calendar', icon: Calendar, label: L('Fristen- & Event-Kalender', 'Deadlines & Events Calendar'), badge: stats.events },
           { id: 'database', icon: Compass, label: L('Förder- & Preiskatalog', 'Funding & Prize Catalog'), badge: stats.total },
+          { id: 'credits', icon: Coins, label: L('KI-Credits & Runway', 'AI credits & runway'), badge: AI_CREDIT_PROGRAMS.length },
           { id: 'founders', icon: Rocket, label: L('Gründer-Labor & B2B-Zwillinge', 'Founders Lab & B2B Twins'), badge: `${stats.founders}+${stats.ventures}` },
           { id: 'projects', icon: Building2, label: L('Reale NGO- & Stadtprojekte', 'Real NGO & City Projects'), badge: stats.projects },
           { id: 'method', icon: BookOpen, label: L('Methodik & Recherche', 'Methodology & Search') },
@@ -962,6 +966,8 @@ export const FundingCompass: React.FC<FundingCompassProps> = ({ lang }) => {
           </section>
         </div>
       )}
+
+      {activeTab === 'credits' && <AiCreditsGuide lang={lang} />}
 
       {/* ── TAB 3: GRÜNDER-LABOR & B2B-ZWILLINGE ────────────────────── */}
       {activeTab === 'founders' && (

@@ -13910,6 +13910,408 @@
           "status": "angekratzt"
         }
       ]
+    },
+    {
+      "id": "f-a-t-lab-und-fffff-ai-reboot-2025",
+      "name": "F.A.T. Lab und fffff.ai (Reboot 2025)",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://fffff.at",
+        "https://fffff.ai",
+        "https://arambartholl.com/info/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Nächste Verwandte: Public-Domain-Kollektiv 2007-2015 (Archiv fffff.at), Reboot als Free Art & Intelligence (fffff.ai) mit Dan Moore und Tobias Leingruber; Aram Bartholl lebt in Berlin",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "claude-code",
+          "runde": "Verwandten-Recherche 01.10.2026",
+          "notiz": "Kontaktweg Bartholl über Inquiries-Mail auf arambartholl.com/info, Adresse dort verschleiert; Verwandtendossier 02-recherche/amelie-verwandte.md.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "precious-plastic",
+      "name": "Precious Plastic",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.preciousplastic.com/contact"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Offene Maschinenpläne als ausführbares Geschenk; Kontakt hello@preciousplastic.com, Discord, keine individuelle Rückmeldung zu Ideen",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "claude-code",
+          "runde": "Verwandten-Recherche 01.10.2026",
+          "notiz": "Nur Community-Kanäle für Einzelfragen.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "open-source-ecology",
+      "name": "Open Source Ecology",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.opensourceecology.org/contact/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Global Village Construction Set; Kontakt info@opensourceecology.org, Wiki, Forum, IRC",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "claude-code",
+          "runde": "Verwandten-Recherche 01.10.2026",
+          "notiz": "Seite nennt sich derzeit nicht medienbereit.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "open-source-ideas-github",
+      "name": "open-source-ideas (GitHub)",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://github.com/open-source-ideas/open-source-ideas"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Ideenboard für OSS-Projekte, Ideen als Issues, rund 6,8k Sterne",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "claude-code",
+          "runde": "Verwandten-Recherche 01.10.2026",
+          "notiz": "Besetzt-Test-Quelle für Ideen ohne Empfänger.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "captn3m0-ideas",
+      "name": "captn3m0/ideas",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://github.com/captn3m0/ideas"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Ideenliste unter CC BY 4.0 mit SIMILAR.md zu weiteren Ideensammlungen",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "claude-code",
+          "runde": "Verwandten-Recherche 01.10.2026",
+          "notiz": "Postkarte für Bauende.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "civic-tech-field-guide",
+      "name": "Civic Tech Field Guide",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://civictech.guide/contact/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Weltweites Verzeichnis von Civic-Tech-Projekten (Superbloom), Projekte eintragbar",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "claude-code",
+          "runde": "Verwandten-Recherche 01.10.2026",
+          "notiz": "Besetzt-Test vor Civic-Tech-Ideenrunden.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "ok-lab-berlin-code-for-germany",
+      "name": "OK Lab Berlin (Code for Germany)",
+      "typ": "W",
+      "kategorie": "empfaenger",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://codefor.de/berlin/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Civic-Tech-Gemeinde Berlin, ca. 30 Aktive, Treffen zweiter Montag im Monat im Wikibär; berlin@codefor.de",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "claude-code",
+          "runde": "Verwandten-Recherche 01.10.2026",
+          "notiz": "Ort zum Zeigen, nicht zum Bitten.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "wikimedia-community-wishlist",
+      "name": "Wikimedia Community Wishlist",
+      "typ": "D",
+      "kategorie": "foerderung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://meta.wikimedia.org/wiki/Community_Wishlist"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Wunschpipeline Community zu Foundation; Einreichfrist 8.11.2026, Abstimmung 8.-24.1.2027",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-01",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-01"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-01",
+          "agent": "claude-code",
+          "runde": "Verwandten-Recherche 01.10.2026",
+          "notiz": "Nur Ideen mit Wikimedia-Bezug.",
+          "status": "durchsucht"
+        }
+      ]
     }
   ]
 }

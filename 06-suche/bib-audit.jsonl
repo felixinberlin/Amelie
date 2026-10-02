@@ -232,3 +232,12 @@
 {"at":"2026-10-01T09:53:43.743Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","id":"familien-erinnerungs-apps-familysearch-e"}
 {"at":"2026-10-01T09:53:43.844Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","id":"stadt-brandenburg-an-der-havel-friedensw"}
 {"at":"2026-10-01T09:53:43.855Z","event":"cli","actor":"bibliothekar","agent":"ideen-scout","runde":"Lab-Nachlieferung 01.10.2026","cmd":"quellen import","count":36}
+{"at":"2026-10-01T23:37:30.033Z","event":"cli","cmd":"quellen add","actor":"claude-code","agent":"claude-code","runde":"Verwandten-Recherche 01.10.2026","id":"f-a-t-lab-und-fffff-ai-reboot-2025"}
+{"at":"2026-10-01T23:37:30.111Z","event":"cli","cmd":"quellen add","actor":"claude-code","agent":"claude-code","runde":"Verwandten-Recherche 01.10.2026","id":"precious-plastic"}
+{"at":"2026-10-01T23:37:30.180Z","event":"cli","cmd":"quellen add","actor":"claude-code","agent":"claude-code","runde":"Verwandten-Recherche 01.10.2026","id":"open-source-ecology"}
+{"at":"2026-10-01T23:37:30.253Z","event":"cli","cmd":"quellen add","actor":"claude-code","agent":"claude-code","runde":"Verwandten-Recherche 01.10.2026","id":"open-source-ideas-github"}
+{"at":"2026-10-01T23:37:30.327Z","event":"cli","cmd":"quellen add","actor":"claude-code","agent":"claude-code","runde":"Verwandten-Recherche 01.10.2026","id":"captn3m0-ideas"}
+{"at":"2026-10-01T23:37:30.395Z","event":"cli","cmd":"quellen add","actor":"claude-code","agent":"claude-code","runde":"Verwandten-Recherche 01.10.2026","id":"civic-tech-field-guide"}
+{"at":"2026-10-01T23:37:30.460Z","event":"cli","cmd":"quellen add","actor":"claude-code","agent":"claude-code","runde":"Verwandten-Recherche 01.10.2026","id":"ok-lab-berlin-code-for-germany"}
+{"at":"2026-10-01T23:37:30.555Z","event":"cli","cmd":"quellen add","actor":"claude-code","agent":"claude-code","runde":"Verwandten-Recherche 01.10.2026","id":"wikimedia-community-wishlist"}
+{"at":"2026-10-01T23:37:30.567Z","event":"cli","actor":"bibliothekar","agent":"claude-code","runde":"Verwandten-Recherche 01.10.2026","cmd":"quellen import","count":8}
