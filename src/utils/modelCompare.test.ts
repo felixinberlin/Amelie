@@ -227,6 +227,34 @@ describe('Anbieter-Adapter (gegen nachgebaute SDK-Antworten)', () => {
     expect(r.toolLog[0].result).toMatch(/Unbekanntes Werkzeug/);
     expect(r.toolLog[1].result).toMatch(/Fehler: kaputt/);
   });
+  it('OpenAI-kompatibel: Werkzeugschleife per fetch, Wiederholung bei 429, Schlüssel im Header, Startklar ohne SDK', async () => {
+    const reqs: any[] = [];
+    const answers = [
+      { status: 429, body: 'slow down' },
+      { status: 200, body: { choices: [{ finish_reason: 'tool_calls', message: { role: 'assistant', content: null, tool_calls: [{ id: 'c1', type: 'function', function: { name: 'bib_find', arguments: '{"terms":["a"]}' } }] } }], usage: { prompt_tokens: 10, completion_tokens: 5 } } },
+      { status: 200, body: { choices: [{ finish_reason: 'stop', message: { role: 'assistant', content: 'Fertig.' } }], usage: { prompt_tokens: 20, completion_tokens: 7 } } },
+    ];
+    const fetchFn = async (url: string, init: any) => {
+      reqs.push({ url, headers: init.headers, body: JSON.parse(init.body) });
+      const a = answers[reqs.length - 1];
+      return { ok: a.status === 200, status: a.status, headers: { get: () => null }, json: async () => a.body, text: async () => String(a.body) };
+    };
+    const a = await createProvider(spec('openai-compat', { model: 'x/y' }), { fetch: fetchFn, env: { OPENROUTER_API_KEY: 'sk-test' }, baseDelay: 1 });
+    const r = await runConversation(a, { system: 'S', user: 'U', tools: TOOL_DEFS, handlers });
+    expect(r.text).toBe('Fertig.');
+    expect(r.usage).toMatchObject({ in: 30, out: 12, turns: 2 });
+    expect(r.toolLog[0]).toMatchObject({ name: 'bib_find', args: { terms: ['a'] }, result: 'ok-find' });
+    expect(reqs).toHaveLength(3);
+    expect(reqs[0].url).toBe('https://openrouter.ai/api/v1/chat/completions');
+    expect(reqs[0].headers.authorization).toBe('Bearer sk-test');
+    expect(reqs[0].body.messages[0]).toEqual({ role: 'system', content: 'S' });
+    const last = reqs[2].body.messages;
+    expect(last.at(-1)).toEqual({ role: 'tool', tool_call_id: 'c1', content: 'ok-find' });
+    expect(last.at(-2).tool_calls[0].id).toBe('c1');
+    const noKey = await checkReady(spec('openai-compat'), { env: {}, loadSdk: async () => ({}) });
+    expect(noKey.problems.join()).toMatch(/OPENROUTER_API_KEY fehlt/);
+    expect((await checkReady(spec('openai-compat', { noKey: true }), { env: {}, loadSdk: async () => ({}) })).ok).toBe(true);
+  });
   it('Startklar-Prüfung nennt fehlende Modell-Id, Zugang und SDK; SDK-Fehler hat einen Installationshinweis', async () => {
     const noSdk = async () => { throw new Error('nope'); };
     const r = await checkReady(spec('gemini', { model: 'SET_ME', vertex: false }), { env: {}, loadSdk: noSdk });
@@ -308,7 +336,7 @@ describe('CLI', () => {
   it('dry-run zeigt die Prompts und ruft nichts auf; echte Läufe ohne Zugang oder ohne --yes brechen ab', () => {
     const d = cli(['run', '--thema', 'Testthema', '--dry-run']);
     expect(d.status, d.stderr).toBe(0);
-    expect(d.stdout).toMatch(/Dry-run: 9 Läufe/);
+    expect(d.stdout).toMatch(/Dry-run: 12 Läufe/);
     const bad = cli(['run', '--thema', 'Testthema', '--models', 'gemini']);
     expect(bad.status).toBe(1);
     expect(bad.stderr).toMatch(/Nicht startklar/);

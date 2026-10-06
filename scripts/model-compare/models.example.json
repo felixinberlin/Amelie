@@ -1,5 +1,5 @@
 {
-  "_doc": "Kopie nach scripts/model-compare/models.local.json (steht in .gitignore) und anpassen. provider: anthropic | vertex-claude | gemini | mock. price = Dollar je Million Token {in, out}; ohne Preis bleibt die Kostenzeile n/a. Modell-Ids für Gemini bewusst leer (SET_ME): bitte die aktuelle Id aus deiner Google-Cloud-Konsole eintragen.",
+  "_doc": "Kopie nach scripts/model-compare/models.local.json (steht in .gitignore) und anpassen. provider: anthropic | vertex-claude | gemini | openai-compat | mock. openai-compat: baseUrl (Standard OpenRouter), apiKeyEnv (Standard OPENROUTER_API_KEY), noKey für lokale Server, extraBody optional; Modell-Ids bei OpenRouter unter openrouter.ai/models prüfen. price = Dollar je Million Token {in, out}; ohne Preis bleibt die Kostenzeile n/a. Modell-Ids für Gemini bewusst leer (SET_ME): bitte die aktuelle Id aus deiner Google-Cloud-Konsole eintragen.",
   "judge": "claude-opus",
   "models": [
     {
@@ -20,6 +20,14 @@
       "effort": "medium",
       "price": { "in": 2, "out": 10 },
       "priceNote": "Erstanbieter-Preis der Referenz; Vertex separat prüfen."
+    },
+    {
+      "id": "openrouter-beispiel",
+      "provider": "openai-compat",
+      "model": "SET_ME",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "price": null
     },
     {
       "id": "gemini",

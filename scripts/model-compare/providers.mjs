@@ -11,7 +11,10 @@
 // Die Aufrufformen sind gegen die installierten Typdefinitionen geprüft (@anthropic-ai/sdk 0.129, vertex-sdk 0.20,
 // @google/genai 2.24); gegen die Live-APIs wurden sie in dieser Umgebung nicht ausgeführt (keine Zugangsdaten).
 
-export const PROVIDERS = ['anthropic', 'vertex-claude', 'gemini', 'mock'];
+// Schlüssel aus .env im Projektwurzelverzeichnis (git-ignoriert); bereits gesetzte Umgebungsvariablen gewinnen.
+try { process.loadEnvFile(new URL('../../.env', import.meta.url)); } catch { /* keine .env: Umgebung zählt */ }
+
+export const PROVIDERS = ['anthropic', 'vertex-claude', 'gemini', 'openai-compat', 'mock'];
 const SDK_HINT = { anthropic: '@anthropic-ai/sdk', 'vertex-claude': '@anthropic-ai/vertex-sdk', gemini: '@google/genai' };
 
 // ---------------------------------------------------------------- Gesprächsschleife
@@ -69,6 +72,7 @@ export function resolveEnv(spec, env = process.env) {
     project: spec.project ?? env.GOOGLE_CLOUD_PROJECT ?? env.ANTHROPIC_VERTEX_PROJECT_ID ?? env.GCLOUD_PROJECT ?? null,
     region: spec.region ?? env.CLOUD_ML_REGION ?? 'global',
     geminiKey: env[spec.apiKeyEnv ?? 'GEMINI_API_KEY'] ?? env.GOOGLE_API_KEY ?? null,
+    compatKey: env[spec.apiKeyEnv ?? 'OPENROUTER_API_KEY'] ?? null,
   };
 }
 
@@ -83,6 +87,7 @@ export async function checkReady(spec, { env = process.env, loadSdk = defaultLoa
     if (spec.vertex && !e.project) problems.push('GCP-Projekt fehlt (GOOGLE_CLOUD_PROJECT oder project)');
     if (!spec.vertex && !e.geminiKey) problems.push('GEMINI_API_KEY fehlt (oder "vertex": true mit Projekt setzen)');
   }
+  if (spec.provider === 'openai-compat' && !spec.noKey && !e.compatKey) problems.push(`${spec.apiKeyEnv ?? 'OPENROUTER_API_KEY'} fehlt (für lokale Server ohne Schlüssel "noKey": true setzen)`);
   if (spec.provider === 'anthropic' && !env.ANTHROPIC_API_KEY && !env.ANTHROPIC_AUTH_TOKEN) problems.push('ANTHROPIC_API_KEY fehlt (oder `ant auth login`; das lässt sich von hier nicht prüfen)');
   if (SDK_HINT[spec.provider]) {
     try { await loadSdk(SDK_HINT[spec.provider]); } catch { problems.push(`SDK fehlt: npm i --no-save ${SDK_HINT[spec.provider]}`); }
@@ -172,6 +177,60 @@ function geminiAdapter(spec, client) {
   };
 }
 
+// ---------------------------------------------------------------- OpenAI-kompatibel (OpenRouter, DeepSeek, Groq, Together, Mistral, Ollama, LiteLLM)
+
+const COMPAT_DEFAULT_URL = 'https://openrouter.ai/api/v1';
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+/** POST mit Wiederholung bei 429/5xx (kostenlose Kontingente drosseln oft). Kein SDK nötig: nur fetch. */
+async function compatPost(url, headers, body, { fetchFn = fetch, retries = 4, baseDelay = 2000 } = {}) {
+  for (let i = 0; ; i++) {
+    const res = await fetchFn(url, { method: 'POST', headers, body: JSON.stringify(body) });
+    if (res.ok) return res.json();
+    const retry = res.status === 429 || res.status >= 500;
+    const txt = await res.text().catch(() => '');
+    if (!retry || i >= retries) throw new Error(`HTTP ${res.status} von ${url}: ${txt.slice(0, 300)}`);
+    const ra = Number(res.headers?.get?.('retry-after'));
+    await sleep(Number.isFinite(ra) && ra > 0 ? Math.min(ra * 1000, 60000) : baseDelay * 2 ** i);
+  }
+}
+
+function openaiCompatAdapter(spec, { key, fetchFn, baseDelay } = {}) {
+  const url = `${String(spec.baseUrl ?? COMPAT_DEFAULT_URL).replace(/\/+$/, '')}/chat/completions`;
+  const headers = { 'content-type': 'application/json', ...(key ? { authorization: `Bearer ${key}` } : {}), ...(spec.headers ?? {}) };
+  return {
+    name: spec.id,
+    start({ system, user, tools }) {
+      // Eingebaute Websuche gibt es hier nicht: Modelle nutzen das Werkzeug web_search des Programms.
+      const t = tools.map((x) => ({ type: 'function', function: { name: x.name, description: x.description, parameters: x.input_schema } }));
+      return { messages: [{ role: 'system', content: system }, { role: 'user', content: user }], tools: t };
+    },
+    async step(st) {
+      const req = { model: spec.model, messages: st.messages, max_tokens: spec.maxTokens ?? 16000 };
+      if (st.tools.length) req.tools = st.tools;
+      if (st.force?.length && st.tools.length) req.tool_choice = st.force.length === 1 ? { type: 'function', function: { name: st.force[0] } } : 'required';
+      if (spec.temperature != null) req.temperature = spec.temperature;
+      Object.assign(req, spec.extraBody ?? {});
+      const resp = await compatPost(url, headers, req, { fetchFn, baseDelay });
+      if (resp.error) throw new Error(`Anbieterfehler: ${resp.error.message ?? JSON.stringify(resp.error).slice(0, 300)}`);
+      const choice = resp.choices?.[0];
+      const msg = choice?.message ?? { role: 'assistant', content: '' };
+      st.messages.push({ role: 'assistant', content: msg.content ?? null, ...(msg.tool_calls?.length ? { tool_calls: msg.tool_calls } : {}) });
+      const calls = (msg.tool_calls ?? []).map((c) => {
+        let args = {};
+        try { args = JSON.parse(c.function?.arguments || '{}'); } catch { args = {}; }
+        return { id: c.id, name: c.function?.name, args };
+      });
+      const u = resp.usage ?? {};
+      return { text: typeof msg.content === 'string' ? msg.content : '', calls, usage: { in: u.prompt_tokens ?? 0, out: u.completion_tokens ?? 0 }, stop: String(choice?.finish_reason ?? '') };
+    },
+    addUser(st, text) { st.messages.push({ role: 'user', content: text }); },
+    addToolResults(st, results) {
+      for (const r of results) st.messages.push({ role: 'tool', tool_call_id: r.id, content: r.content });
+    },
+  };
+}
+
 // ---------------------------------------------------------------- Mock (Trockenlauf und Tests)
 
 const CANNED_ROW = (title, id, urteil, beleg) => `| ${title} (\`${id}\`) | Beschreibung | Typ B | Empfänger | \`${urteil}\` | ${beleg} | Restlücke |`;
@@ -206,6 +265,7 @@ export async function createProvider(spec, deps = {}) {
   const loadSdk = deps.loadSdk ?? defaultLoadSdk;
   const env = resolveEnv(spec, deps.env ?? process.env);
   if (spec.provider === 'mock') return mockAdapter(spec);
+  if (spec.provider === 'openai-compat') return openaiCompatAdapter(spec, { key: env.compatKey, fetchFn: deps.fetch, baseDelay: deps.baseDelay });
   if (deps.client) return spec.provider === 'gemini' ? geminiAdapter(spec, deps.client) : claudeAdapter(spec, deps.client);
   const need = (name) => loadSdk(name).catch(() => { throw new Error(`SDK fehlt: npm i --no-save ${name}`); });
   if (spec.provider === 'anthropic') {
@@ -222,7 +282,7 @@ export async function createProvider(spec, deps = {}) {
     const { GoogleGenAI } = await need('@google/genai');
     const client = spec.vertex
       ? new GoogleGenAI({ vertexai: true, project: env.project, location: spec.location ?? env.region })
-      : new GoogleGenAI({ apiKey: env.geminiKey });
+      : new GoogleGenAI({ vertexai: false, apiKey: env.geminiKey }); // vertexai explizit aus: GOOGLE_GENAI_USE_VERTEXAI in .env darf den Key-Weg nicht kapern
     return geminiAdapter(spec, client);
   }
   throw new Error(`Anbieter „${spec.provider}“ unbekannt (${PROVIDERS.join(' | ')})`);
