@@ -27,7 +27,7 @@ declare module '*model-compare/providers.mjs' {
   export function resolveEnv(spec: any, env?: Record<string, string | undefined>): { project: string | null; region: string; geminiKey: string | null };
   export function checkReady(spec: any, o?: { env?: Record<string, string | undefined>; loadSdk?: (name: string) => Promise<any> }): Promise<{ ok: boolean; problems: string[] }>;
   export function mockReply(spec: any, o?: { engine?: string }): string;
-  export function createProvider(spec: any, deps?: { client?: any; loadSdk?: (name: string) => Promise<any>; env?: Record<string, string | undefined> }): Promise<any>;
+  export function createProvider(spec: any, deps?: { client?: any; fetch?: any; baseDelay?: number; loadSdk?: (name: string) => Promise<any>; env?: Record<string, string | undefined> }): Promise<any>;
 }
 declare module '*model-compare/prompts.mjs' {
   export const ENGINES: Record<string, { agent: string; skill: string; label: string }>;
