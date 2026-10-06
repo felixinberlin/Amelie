@@ -90,7 +90,6 @@ export const KristallwachstumSimulator: React.FC<KristallSimulatorProps> = ({ la
   const [sliceZ, setSliceZ] = useState<number>(32); // 32 = no slicing (full crystal), 12-31 = cross-section
   const [copiedRecipe, setCopiedRecipe] = useState<boolean>(false);
   const [exportNotice, setExportNotice] = useState<string | null>(null);
-  const [hasWebGPU, setHasWebGPU] = useState<boolean>(false);
 
   // Engine metrics
   const [metrics, setMetrics] = useState({
@@ -110,13 +109,6 @@ export const KristallwachstumSimulator: React.FC<KristallSimulatorProps> = ({ la
   const zoomRef = useRef<number>(1.0);
   const isDraggingRef = useRef<boolean>(false);
   const lastMousePosRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
-
-  // WebGPU detection
-  useEffect(() => {
-    if (typeof navigator !== 'undefined' && 'gpu' in (navigator as any)) {
-      setHasWebGPU(true);
-    }
-  }, []);
 
   // Initialize or re-create simulation engine
   const initEngine = useCallback(
@@ -649,7 +641,7 @@ export const KristallwachstumSimulator: React.FC<KristallSimulatorProps> = ({ la
     setTimeout(() => setCopiedRecipe(false), 2200);
   };
 
-  const handleExportMesh = (format: '3MF' | 'STL') => {
+  const handleExportMesh = () => {
     if (!engineRef.current) return;
     const stlContent = engineRef.current.generateSTL();
 
@@ -669,8 +661,8 @@ export const KristallwachstumSimulator: React.FC<KristallSimulatorProps> = ({ la
 
     setExportNotice(
       lang === 'de'
-        ? `Wasserdichtes 3D-Mesh (${format}) mit ${metrics.solidVoxels.toLocaleString()} Voxeln & ${minWallThickness}mm Mindestwandstärke generiert & heruntergeladen!`
-        : `Watertight ${format} mesh with ${metrics.solidVoxels.toLocaleString()} voxels & ${minWallThickness}mm wall constraint generated & downloaded!`
+        ? `Voxel-STL mit ${metrics.solidVoxels.toLocaleString()} Voxeln heruntergeladen (Kantenlänge ${minWallThickness} mm pro Voxel).`
+        : `Voxel STL with ${metrics.solidVoxels.toLocaleString()} voxels downloaded (${minWallThickness} mm per voxel edge).`
     );
     setTimeout(() => setExportNotice(null), 4000);
   };
@@ -683,9 +675,7 @@ export const KristallwachstumSimulator: React.FC<KristallSimulatorProps> = ({ la
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950 text-cyan-400 border border-cyan-800/60 text-xs font-mono mb-2">
             <Cpu className="w-3.5 h-3.5" />
             <span>
-              {hasWebGPU
-                ? (lang === 'de' ? 'WebGPU Hardware-Pipeline Aktiv · WGSL Shader' : 'WebGPU Hardware Pipeline Active · WGSL Shaders')
-                : (lang === 'de' ? 'Kobayashi (1993) Phasenfeld + DLA Engine · 32³ Voxel' : 'Kobayashi (1993) Phase-Field + DLA Engine · 32³ Voxel')}
+              {lang === 'de' ? 'CPU-Voxel-Engine · DLA + Phasenfeld · 32³ Voxel' : 'CPU voxel engine · DLA + phase field · 32³ voxels'}
             </span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white flex items-center gap-3">
@@ -752,7 +742,7 @@ export const KristallwachstumSimulator: React.FC<KristallSimulatorProps> = ({ la
           </button>
 
           <button
-            onClick={() => handleExportMesh('STL')}
+            onClick={handleExportMesh}
             className="px-4 py-2 rounded-xl bg-cyan-900/60 hover:bg-cyan-800/80 border border-cyan-700 text-white text-xs font-medium flex items-center gap-2 transition-colors shadow-sm"
           >
             <Download className="w-3.5 h-3.5 text-cyan-400" />
@@ -850,7 +840,7 @@ export const KristallwachstumSimulator: React.FC<KristallSimulatorProps> = ({ la
               </div>
               <div className="px-3 py-1 rounded-lg bg-stone-950/80 backdrop-blur-md border border-stone-800/80 text-[10px] text-stone-400 shadow-md">
                 <span>Theorie: </span>
-                <span className="text-cyan-400 font-mono">3D-DLA ~2.49 · KOB ~2.31 · 2D ~1.71</span>
+                <span className="text-cyan-400 font-mono">3D-DLA ≈ 2.5 · 2D-DLA ≈ 1.71 (Meakin 1983)</span>
               </div>
               <div className="px-3 py-1.5 rounded-lg bg-stone-950/80 backdrop-blur-md border border-stone-800/80 text-stone-300 shadow-md">
                 <span className="text-stone-400">Feste Voxel: </span>
@@ -867,10 +857,6 @@ export const KristallwachstumSimulator: React.FC<KristallSimulatorProps> = ({ la
               <div className="px-3 py-1.5 rounded-lg bg-stone-950/80 backdrop-blur-md border border-stone-800/80 text-stone-300 shadow-md">
                 <span className="text-stone-400">Symmetrie: </span>
                 <span className="text-amber-400 font-bold uppercase">{selectedPreset.symmetry}</span>
-              </div>
-              <div className="px-3 py-1.5 rounded-lg bg-stone-950/80 backdrop-blur-md border border-stone-800/80 text-stone-300 shadow-md">
-                <span className="text-stone-400">3D-Mesh: </span>
-                <span className="text-emerald-400 font-bold">Wasserdicht (Manifold)</span>
               </div>
             </div>
 

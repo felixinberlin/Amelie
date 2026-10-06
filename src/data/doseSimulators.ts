@@ -162,9 +162,9 @@ export const DOSE_SIMULATOR_MAP: Record<string, DoseSimulatorInfo> = {
     titleDe: 'Kristallwachstum 3D Simulator',
     titleEn: '3D Crystal Growth Simulator',
     titleEs: 'Simulador de crecimiento de cristales 3D',
-    descriptionDe: 'Hybride WebGPU DLA- & Phasenfeld-Pipeline mit Kobayashi-Thermodynamik, 9 Gefügelinsen und druckbarem 3MF/STL-Export.',
-    descriptionEn: 'Hybrid WebGPU DLA & phase-field pipeline with Kobayashi thermodynamics, 9 microstructure lenses, and printable 3MF/STL export.',
-    descriptionEs: 'Pipeline híbrido WebGPU DLA y de campo de fase con termodinámica Kobayashi y exportación de malla imprimible 3D.',
+    descriptionDe: 'Hybride DLA- & Phasenfeld-Simulation (CPU-Voxel-Engine) mit Gefügelinsen, Z-Schnitt und STL-Export.',
+    descriptionEn: 'Hybrid DLA & phase-field simulation (CPU voxel engine) with microstructure lenses, Z-slice and STL export.',
+    descriptionEs: 'Simulación híbrida DLA y de campo de fase (motor de vóxeles en CPU) con lentes de microestructura, corte Z y exportación STL.',
     icon: '💎',
   },
   'dose-cleaner-chemical-safety': {
