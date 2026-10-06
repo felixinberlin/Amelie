@@ -59,7 +59,7 @@ export function heuteAusLaeufen(root, models, runsRel = '06-suche/agent-runs', n
 
 /** Stand für ein Modell als Datensatz; `lines` ist die Anzeige. */
 export async function stand(spec, { root, env = process.env, fetchFn = fetch } = {}) {
-  if (spec.provider === 'openai-compat') {
+  if (spec.provider === 'openai-compat' && /openrouter\.ai/.test(spec.baseUrl ?? 'openrouter.ai')) {
     try {
       const s = await openrouterStand(spec, env, fetchFn);
       if (!s) return { provider: spec.provider, kind: 'none', lines: ['kein Schlüssel gesetzt'] };
@@ -68,9 +68,9 @@ export async function stand(spec, { root, env = process.env, fetchFn = fetch } =
       return { provider: spec.provider, kind: 'openrouter', ...s, lines };
     } catch (e) { return { provider: spec.provider, kind: 'error', lines: [`Abfrage fehlgeschlagen (${e.message})`] }; }
   }
-  if (spec.provider === 'gemini' || spec.provider === 'anthropic' || spec.provider === 'vertex-claude') {
+  if (['gemini', 'anthropic', 'vertex-claude', 'openai-compat'].includes(spec.provider)) {
     const h = heuteAusLaeufen(root)[spec.id];
-    const lines = [h ? `heute ${h.laeufe} Läufe, ${h.in} Token ein, ${h.out} aus, geschätzt ${usd(h.usd)}` : 'heute noch keine Läufe', 'Guthaben/Kontingent nicht abfragbar (Browser: aistudio.google.com/usage bzw. console.anthropic.com)'];
+    const lines = [h ? `heute ${h.laeufe} Läufe, ${h.in} Token ein, ${h.out} aus, geschätzt ${usd(h.usd)}` : 'heute noch keine Läufe', `Guthaben/Kontingent nicht abfragbar (${spec.baseUrl ? `Konsole von ${new URL(spec.baseUrl).host}` : 'Browser: aistudio.google.com/usage bzw. console.anthropic.com'})`];
     return { provider: spec.provider, kind: 'local', heute: h ?? null, lines };
   }
   return { provider: spec.provider, kind: 'none', lines: ['–'] };
