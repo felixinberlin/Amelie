@@ -14,6 +14,8 @@
 // Schlüssel aus .env im Projektwurzelverzeichnis (git-ignoriert); bereits gesetzte Umgebungsvariablen gewinnen.
 try { process.loadEnvFile(new URL('../../.env', import.meta.url)); } catch { /* keine .env: Umgebung zählt */ }
 
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
 export const PROVIDERS = ['anthropic', 'vertex-claude', 'gemini', 'openai-compat', 'mock'];
 const SDK_HINT = { anthropic: '@anthropic-ai/sdk', 'vertex-claude': '@anthropic-ai/vertex-sdk', gemini: '@google/genai' };
 
@@ -137,6 +139,19 @@ function claudeAdapter(spec, client) {
 
 // ---------------------------------------------------------------- Gemini (Gemini-API oder Vertex AI)
 
+/** Wiederholt bei 429/503 (Lastspitzen, Ratenlimit des kostenlosen Kontingents). Tagesquote leer lohnt nicht: dann sofort aufgeben. */
+async function withRetry(fn, { retries = 3, baseDelay = 3000 } = {}) {
+  for (let i = 0; ; i++) {
+    try { return await fn(); } catch (e) {
+      const msg = String(e?.message ?? e);
+      const code = e?.status ?? e?.code ?? Number(/"code":\s*(\d{3})/.exec(msg)?.[1]);
+      const transient = code === 503 || code === 500 || (code === 429 && !/PerDay|daily|limit: 0/i.test(msg));
+      if (!transient || i >= retries) throw e;
+      await sleep(baseDelay * 2 ** i);
+    }
+  }
+}
+
 function geminiAdapter(spec, client) {
   return {
     name: spec.id,
@@ -153,7 +168,7 @@ function geminiAdapter(spec, client) {
       if (st.tools.length) config.tools = st.tools;
       if (st.force?.length && st.tools.length && !st.tools.some((t) => t.googleSearch)) config.toolConfig = { functionCallingConfig: { mode: 'ANY', allowedFunctionNames: st.force } };
       if (spec.temperature != null) config.temperature = spec.temperature;
-      const resp = await client.models.generateContent({ model: spec.model, contents: st.contents, config });
+      const resp = await withRetry(() => client.models.generateContent({ model: spec.model, contents: st.contents, config }), { baseDelay: spec.retryDelay });
       const cand = resp.candidates?.[0];
       if (cand?.content) st.contents.push(cand.content);
       const parts = cand?.content?.parts ?? [];
@@ -180,7 +195,6 @@ function geminiAdapter(spec, client) {
 // ---------------------------------------------------------------- OpenAI-kompatibel (OpenRouter, DeepSeek, Groq, Together, Mistral, Ollama, LiteLLM)
 
 const COMPAT_DEFAULT_URL = 'https://openrouter.ai/api/v1';
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 /** POST mit Wiederholung bei 429/5xx (kostenlose Kontingente drosseln oft). Kein SDK nötig: nur fetch. */
 async function compatPost(url, headers, body, { fetchFn = fetch, retries = 4, baseDelay = 2000 } = {}) {

@@ -227,6 +227,19 @@ describe('Anbieter-Adapter (gegen nachgebaute SDK-Antworten)', () => {
     expect(r.toolLog[0].result).toMatch(/Unbekanntes Werkzeug/);
     expect(r.toolLog[1].result).toMatch(/Fehler: kaputt/);
   });
+  it('Gemini: wiederholt bei 503, gibt bei leerer Tagesquote sofort auf', async () => {
+    let n = 0;
+    const ok = { candidates: [{ content: { role: 'model', parts: [{ text: 'Fertig.' }] }, finishReason: 'STOP' }], usageMetadata: { promptTokenCount: 1, candidatesTokenCount: 1 } };
+    const client = { models: { generateContent: async () => { if (++n < 3) throw Object.assign(new Error('{"error":{"code":503}}'), { status: 503 }); return ok; } } };
+    const a = await createProvider(spec('gemini', { retryDelay: 1 }), { client });
+    expect((await runConversation(a, { system: 'S', user: 'U', tools: [], handlers })).text).toBe('Fertig.');
+    expect(n).toBe(3);
+    let m = 0;
+    const quota = { models: { generateContent: async () => { m++; throw Object.assign(new Error('quota exceeded, limit: 0'), { status: 429 }); } } };
+    const b = await createProvider(spec('gemini', { retryDelay: 1 }), { client: quota });
+    await expect(runConversation(b, { system: 'S', user: 'U', tools: [], handlers })).rejects.toThrow(/quota/);
+    expect(m).toBe(1);
+  });
   it('OpenAI-kompatibel: Werkzeugschleife per fetch, Wiederholung bei 429, Schlüssel im Header, Startklar ohne SDK', async () => {
     const reqs: any[] = [];
     const answers = [
