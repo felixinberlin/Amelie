@@ -14,6 +14,7 @@ import { CREW, PROFILES } from './crew/profiles.mjs';
 import { listRuns, loadRun, saveRun } from './crew/runs.mjs';
 import { applyWrites } from './crew/write.mjs';
 import { mergeRuns, renderMerge } from './crew/merge.mjs';
+import { stand, zeigeStand, differenz } from './model-compare/credits.mjs';
 
 const HELP = `Amélie-Crew — Agenten von der Kommandozeile
 
@@ -30,9 +31,12 @@ Auftrag (einer davon):
   --task-file <Datei>      eigener Auftrag aus Datei
   --input <run>            Ergebnis eines früheren Laufs mitgeben (mehrfach; run_id, Pfad, latest:<agent>)
 
+  credits                  Stand und Verbrauch aller Modelle (OpenRouter echt, Gemini nur geschätzt)
+
 Optionen:
   --model <id>             Modell aus scripts/model-compare/models.local.json
                            (Standard: "agents": {"<agent>": id} → "crew" → "librarian" → "judge" → erstes)
+  --no-credits             Stand vor und nach dem Lauf nicht anzeigen (Standard: an; OpenRouter echt, Gemini geschätzt)
   --mock                   ohne Netz und Kosten: feste Antwort, prüft die ganze Kette
   --max-turns <n>          Werkzeugrunden (Standard 20); sind sie verbraucht, folgt ein Abschlussaufruf ohne Werkzeuge
   --gap <ms>               Mindestabstand zwischen Modellaufrufen über ALLE parallelen Läufe (Standard 1500, auch AMELIE_RATE_GAP_MS oder "rate" in models.local.json)
@@ -99,6 +103,12 @@ async function main() {
     return doWrite(r, { dryRun: flag('dry-run') });
   }
 
+  if (cmd === 'credits') {
+    const cfg = loadConfig(repoRoot);
+    for (const m of cfg.models.filter((x) => x.provider !== 'mock')) zeigeStand('jetzt', m.id, await stand(m, { root: repoRoot }), err);
+    return EXIT.OK;
+  }
+
   if (!PROFILES[cmd]) { err(`„${cmd}“ ist kein Agent und kein Befehl.\n\n${HELP}`); return EXIT.USAGE; }
   const agent = cmd;
   const task = opt('task') ?? (opt('task-file') ? readFileSync(opt('task-file'), 'utf8') : undefined);
@@ -121,6 +131,10 @@ async function main() {
     });
   }
 
+  const zeigen = !flag('mock') && !flag('no-credits');
+  const vor = zeigen ? await stand(spec, { root: repoRoot }) : null;
+  if (zeigen) zeigeStand('vorher', spec.id, vor, err);
+
   let record;
   try {
     record = await runAgent({
@@ -139,6 +153,12 @@ async function main() {
   else console.log(record.report || '(kein Bericht)');
   if (record.errors.length) err(`\nFehler:\n- ${record.errors.join('\n- ')}`);
   err(`\n[${record.agent}] ${record.status} · ${record.summary} · ${record.usage.in} Token ein, ${record.usage.out} aus · ${record.cost_usd ?? '?'} USD · ${record.toolLog.length} Werkzeugaufrufe`);
+  if (zeigen) {
+    const nach = await stand(spec, { root: repoRoot });
+    zeigeStand('nachher', spec.id, nach, err);
+    const d = differenz(vor, nach);
+    err(`[credits] dieser Lauf: ${record.usage.in} Token ein, ${record.usage.out} aus, geschätzt ${record.cost_usd ?? '?'} USD${d ? ` · laut OpenRouter ${d.usd?.toFixed(4)} USD, ${d.freie_anfragen} freie Anfragen` : ''}`);
+  }
   err(`[${record.agent}] run_id=${record.run_id} datei=${record.files?.json ?? '-'}`);
   return code;
 }

@@ -8,6 +8,7 @@ import {
   parseJudge, judgeShare, judgeList, aggregateModel, renderReport,
 } from '../../scripts/model-compare/lib.mjs';
 import { createHandlers, htmlToText, TOOL_DEFS } from '../../scripts/model-compare/tools.mjs';
+import { stand, differenz } from '../../scripts/model-compare/credits.mjs';
 import { createProvider, runConversation, checkReady, mockReply, resolveEnv } from '../../scripts/model-compare/providers.mjs';
 import { buildPrompts, warnliste } from '../../scripts/model-compare/prompts.mjs';
 import { runAll, judgeRun, scoreRunDir } from '../../scripts/model-compare/runner.mjs';
@@ -361,5 +362,20 @@ describe('CLI', () => {
     const r = cli(['models']);
     expect(r.status).toBe(0);
     expect(r.stdout).toMatch(/claude-opus\s+vertex-claude\s+claude-opus-5-5/);
+  });
+});
+
+describe('Credits-Anzeige', () => {
+  it('OpenRouter: Stand aus /key und /credits, Differenz vor/nach; Gemini nur lokal geschätzt', async () => {
+    let used = 1;
+    const fetchFn = async (url: string) => ({ ok: true, status: 200, json: async () => ({ data: url.endsWith('/key') ? { usage: used, free_model_daily_requests: { used: used * 2, limit: 50, remaining: 50 - used * 2 } } : { total_credits: 5, total_usage: used } }) });
+    const spec = { id: 'or', provider: 'openai-compat', model: 'x' };
+    const vor = await stand(spec, { root: '.', env: { OPENROUTER_API_KEY: 'k' }, fetchFn: fetchFn as any });
+    used = 1.5;
+    const nach = await stand(spec, { root: '.', env: { OPENROUTER_API_KEY: 'k' }, fetchFn: fetchFn as any });
+    expect(vor.lines.join()).toMatch(/übrig \$4\.0000.*2\/50/);
+    expect(differenz(vor, nach)).toEqual({ usd: 0.5, freie_anfragen: 1 });
+    const g = await stand({ id: 'g', provider: 'gemini', model: 'm' }, { root: '/nicht/da' });
+    expect(g.lines.join()).toMatch(/nicht abfragbar/);
   });
 });

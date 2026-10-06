@@ -44,3 +44,11 @@ declare module '*model-compare/runner.mjs' {
   export function scoreRunDir(o: { root?: string; run: string; write?: boolean; runsDir?: string; berichteDir?: string }): any;
   export function judgeRun(o: { root?: string; run: string; spec: any; mock?: boolean; runsDir?: string }, deps?: any): Promise<{ judge: string; clusters: number; verdicts: number; missing: number }>;
 }
+
+declare module '*model-compare/credits.mjs' {
+  export function stand(spec: any, opts?: { root?: string; env?: Record<string, string | undefined>; fetchFn?: typeof fetch }): Promise<any>;
+  export function differenz(vor: any, nach: any): { usd: number | null; freie_anfragen: number | null } | null;
+  export function zeigeStand(label: string, id: string, s: any, log: (m: string) => void): void;
+  export function heuteAusLaeufen(root: string, models?: any, runsRel?: string, now?: Date): Record<string, any>;
+  export function openrouterStand(spec: any, env?: Record<string, string | undefined>, fetchFn?: typeof fetch): Promise<any>;
+}
