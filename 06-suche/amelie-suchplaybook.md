@@ -79,6 +79,7 @@ Wo Ideen schnell sterben — vor dem Suchen als Vorfilter nutzen.
 | **Naturschutz-Vollzug: Bewertungsschemata/Checklisten ohne Tool** (Punktesysteme, Monitoring-Auswertung von Hand) | **frei** | Vogelschlag, Wildbienen, Lichtplan-Check |
 | **Naturschutz: KI-Bilderkennung** (Arten-/Biotoptyp aus Foto oder Fernerkundung) | **dicht, aktive Forschung + Produkte** | ObsIdentify (~95 % Trefferquote), Flora Incognita, KIBI-Projekt (BfN, FFH-Typen aus Luftbild), Namis-Biotop-App (DBU) |
 | **Kulturerbe-Physik** (Licht, Oberfläche) | **frei als Werkzeug** | Smartphone-RTI nur als Paper |
+| **EU-Regulierung (Citizen Shield Inversion)** | **frei** | ESPR/DPP ist dicht auf B2B-Compliance-Seite, aber frei für Verbraucher-Reparatur-Tools *[method: inversion, Runde 14]* |
 | Vegetationsstruktur per Smartphone-/Handy-LiDAR (Höhe, Deckung, Verbuschung/Sukzession) | **dicht, aktive Forschung 2025/26** | bioRxiv Stammdurchmesser-Paper, iPhone-LiDAR-Genauigkeitsstudie, Garten+Landschaft-Fachartikel — Sukzession/Verbuschung explizit als Anwendungsfall genannt *[method: bisociation, Runde 3]* |
 | Artenlisten-→-Habitattyp-Vorhersage (automatisierte Klassifikation aus Felddaten) | **angekratzt, Forschung vorhanden, national eng** | e-Surveyor App UK (Ridding et al. 2026, für UK-Klassifikation), Vegapp (Schmidtlein 2026, nur Dateneingabe) — für den deutschen Kartierschlüssel noch nichts gefunden *[method: bisociation, Runde 3]* |
 | Pflanzenbestimmung/-entdeckung, gamifiziert | **dicht, und beim Empfänger selbst** | Seek (iNaturalist) — Badges/Challenges, auch für Ritzenpflanzen. **Verschärft 21.09.2026:** Flora Incognita betreibt ein eigenes Krautschau-Projekt in der App mit Abzeichen über 40 Arten in fünf Stufen plus „Flora-Routine" (Geozone, Auto-Tagging); Senckenberg verlinkt es offiziell und nennt ObsIdentify als Alternative. Der Zusatz „Longitudinalspur bleibt Lücke" ist **überholt**, siehe eigene Zeile |
@@ -181,6 +182,7 @@ Wo Ideen schnell sterben — vor dem Suchen als Vorfilter nutzen.
 | **9 (TischSchiedsrichter, mitgebrachte Gemini-Idee)** | 24.09.2026 | 1 (+ 1 Prämisse widerlegt, 1 Konkurrent nicht auffindbar, 1 Empfängerprüfung) | 0 | 1 (dünn, nicht gepackt) | 0 | 0 |
 | Abdeckungs-Nachprüfung (8 Dosen ohne Protokollzeile, 6 davon aus dem Katalog) | 24.09.2026 | 8 (7 neu gesucht, 1 nur nachgetragen) | 0 | 7 | 0 | 1 (→ entsorgt) |
 | **Inversion Run 1 (Hof-Entkoppler)** | **25.09.2026** | **1** | **0** | **1** | **0** | **0** |
+| R14 | 28.09.2026 | 1 | 1 | 0 | 0 | 0 |
 
 Runde 4 (nur Researcher #1, 3 Ideen): **0 % frei + verengt.** Kein Abgleich mit dem anderen ideenrunde-Researcher; nicht mit Runde 3 vergleichbar, weil dort zwei Methoden und vier Sessions liefen. Der Altbau-Thermal-Recheck (`verengt` bestätigt) steht nicht in dieser Zeile.
 
@@ -416,3 +418,8 @@ Erste Runde, die mit einer **verschenkten** Dose als Ausgangspunkt arbeitet. Das
   - Ticket 02 für `kristallwachstum-3d` (GPU-Marching-Cubes Isosurface & 3MF) bzw. ESPR/DPP-Inversion.
 
 
+
+### Runde 14 / Inversion Run 3 — 28.09.2026 (ESPR/DPP Inversion)
+- **Gelernt: Asymmetrie in neuen Regularien ist ein unbesetzter Raum.** Während der gesamte Markt (Kezzler, Spherity, Arianee) sich auf die Bereitstellung von Digital Product Passports für Hersteller stürzt (B2B-Compliance), existiert kein Consumer-Tool, das die bereitgestellten Daten liest und als Reparatur- oder Obsoleszenz-Wächter umdreht. Regularien wie ESPR sind eine hervorragende Quelle für Citizen-Shield-Werkzeuge (OP-2).
+- **Fehler:** Anfängliche Suche nach "Consumer App" lieferte viel Rauschen, da die Begriffe oft mit B2B-Pilotprojekten für Endkunden verwechselt werden. Die Nischensuche (GitHub/arXiv) war hier effektiver, um die Abwesenheit von Open-Source-Parsern zu bestätigen.
+- **Nächstes Mal:** Ticket 02 für `kristallwachstum-3d` (GPU-Marching-Cubes Isosurface & 3MF) bearbeiten. Die ESPR/DPP-Inversion kann gepackt werden, falls gewünscht.

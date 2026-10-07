@@ -221,3 +221,13 @@ Der Lauf nennt diese Anker in `amelie-bisoziation-log.md`. Sie sind hier vermerk
 - **Merkblätter als Quelle für exakte Schwellenwerte** (neu ab Runde 7): vier Behördenmerkblätter zum selben Schema, zwei verschiedene Signifikanzschwellen. Schemawerte kommen aus dem Schema.
 
 - **Eine Idee nur auf der Angebotsseite denken** (neu ab Runde 8): Die Nachfrageseite in Verschenk-Communities („Wanted", WANTED, ISO) ist Standardfunktion bei Olio, Freecycle/Trash Nothing und Buy Nothing. Wer „aber die Wunschliste fehlt doch" denkt, hat die Hilfeseiten nicht gelesen.
+
+## Typ M — EU-Regulierung und Digitale Pässe (neu, Runde 14)
+
+*Muster: Eine Verordnung zwingt Hersteller zur Datenbereitstellung in strukturierten Formaten, aber der Markt fokussiert sich ausschließlich auf B2B-Compliance.*
+
+| Quelle | Befund | Status | Zuletzt |
+|---|---|---|---|
+| **Ecodesign for Sustainable Products Regulation (ESPR) & Digital Product Passport (DPP)** | Die Verordnung (seit Juli 2024 in Kraft) erzwingt DPPs für erste Produktgruppen ab 2027. Aktuelle CIRPASS-Projekte und kommerzielle Anbieter (Kezzler, Spherity) zielen zu 100 % auf die Hersteller-Compliance. Die Extraktion durch und für Verbraucher (als Citizen Shield zur Durchsetzung von Reparaturrechten) bleibt eine Lücke, die von etablierten Akteuren wie iFixit oder Repair.eu (noch) nicht durch Werkzeuge besetzt ist. | **durchsucht** | 28.09.2026 |
+
+**Suchstring:** `<Regulierung> consumer app` · `<Verordnung> "Digital Product Passport" tool` · `<Gesetz> Bürger Werkzeug`
