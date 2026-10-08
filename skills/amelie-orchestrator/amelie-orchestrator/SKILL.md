@@ -15,6 +15,7 @@ Eine Teamrunde ist die Holz-Runde (27.09.2026) als wiederholbares Verfahren. Dor
 | Engine 1 | `ideen-scout` | `amelie-ideenrunde` | nichts (liefert Text) |
 | Engine 2 | `bisoziations-kollider` | `lacunar-bisociation` | `06-suche/amelie-bisoziation-log.md` |
 | Engine 3 | `inversions-agent` | `asymmetric-inversion` | `06-suche/amelie-inversions-log.md` |
+| Mathematik (bei Bedarf) | `mathematician` | `mathematician` | nichts (liefert Beratung und Quellenmeldung) |
 | Prüfer | `idea-reviewer` | `idea-reviewer` | `06-suche/amelie-classification-log.md` |
 | Packer | `dose-packer` | `dose-packer` | `05-dosen/`, `en/05-dosen/`, `src/data/dosen.ts` (`DOSEN_DATA`), `scripts/dosen-review-metadata.json`, `public/data/`, die eine Gepackt-Zeile im Prüfprotokoll |
 | Gerüstbauer | `demo-builder` | `demo-builder` | `07-demos/<id>/`, `07-demos/README.md`, `src/engine/<id>/`, `src/data/doseBooks.ts` |
@@ -23,6 +24,10 @@ Eine Teamrunde ist die Holz-Runde (27.09.2026) als wiederholbares Verfahren. Dor
 **Eine Datei, ein Schreiber.** Das ist die wichtigste Regel dieser Skill. Parallel laufen nur Agenten mit disjunkten Schreibrechten.
 
 Wenn die Agenten-Definitionen in der laufenden Sitzung nicht als `subagent_type` verfügbar sind (sie werden beim Sitzungsstart geladen), startet der Orchestrator `general-purpose`-Agenten und gibt ihnen als erste Anweisung: „Lies `.claude/agents/<rolle>.md` und handle danach."
+
+## Mathematische Beratung bei Bedarf
+
+Wenn ein Kandidat von einem Theorem, einer Optimierungsannahme, einem Unsicherheitsmodell oder einem neuen Algorithmus abhängt, konsultiere `mathematician` vor Review/Verpackung. Übergib Frage, Nutzen für Menschen, genaue Quellen und Datenmodell. Lies `skills/mathematician/mathematician/SKILL.md`; die Rückgabe geht an den zuständigen Agenten, Quellenmeldungen an Bibliothekar. Keine zusätzliche Pflichtphase für gewöhnliche Runden.
 
 ## Ablauf
 
