@@ -236,6 +236,7 @@ Wo Ideen schnell sterben — vor dem Suchen als Vorfilter nutzen.
 | **9 (TischSchiedsrichter, mitgebrachte Gemini-Idee)** | 24.09.2026 | 1 (+ 1 Prämisse widerlegt, 1 Konkurrent nicht auffindbar, 1 Empfängerprüfung) | 0 | 1 (dünn, nicht gepackt) | 0 | 0 |
 | Abdeckungs-Nachprüfung (8 Dosen ohne Protokollzeile, 6 davon aus dem Katalog) | 24.09.2026 | 8 (7 neu gesucht, 1 nur nachgetragen) | 0 | 7 | 0 | 1 (→ entsorgt) |
 | **Inversion Run 1 (Hof-Entkoppler)** | **25.09.2026** | **1** | **0** | **1** | **0** | **0** |
+| PR #179 (historische DPP-Hypothese 28.09.; Review 08.10.2026, Überschneidung ESPR) | 08.10.2026 | 1 Nachprüfung, keine unabhängige Neuentdeckung | 0 | 0 | 1 | 0 |
 | Inversion Run 2 (Bleifrei-Lotse, LegioKlar) | 25.09.2026 | 2 | 0 | 2 | 0 | 0 |
 | **Inversion Run 3 (AusweichZonen-Lotse)** | **27.09.2026** | **1** | **0** | **1** | **0** | **0** |
 | **Holz-Runde (3 Engines parallel; Doppelfunde einmal gezählt)** | **27.09.2026** | **19** (#1: 10, #2: 6, #3: 7; 4 Doppelfunde) | **2** | **6** | **3** | **8** |
@@ -686,3 +687,11 @@ Zwischenrunde „Fun-Fokus" zuvor: Nur 1 von 5 Ideen mit Fun 5 überlebte bis Ne
   2. R4: SEFH-Tabelle auf maschinenlesbaren Stand und Lizenz prüfen, bevor ein weiterer Datentest läuft. B2/E10: Meldeweg und Empfängerinteresse Brandenburg.
   3. Vor Robinie, Kampfmittel, Tierhaushalt: Mandatsfrage stellen. Felder gelten als dicht, bis ein Empfänger einen konkreten Bedarf nennt.
   4. Quellenmeldungen der Lab-Läufe mit gültigem Typ und Kategorie (`bib quellen formate`) liefern lassen.
+
+
+### PR #179 — ESPR/DPP-Nachprüfung, 08.10.2026
+
+- **Erledigt:** Historischen Hypothesen-Nachtrag integriert; unbelegtes `frei` auf `unklar` korrigiert. Kein Packing, keine neue Dose. Überschneidung mit ESPR-Teamrunde und `reparaturfall-pflichtabgleich` dokumentiert.
+- **Gelernt:** Ein B2B-Schwerpunkt einzelner Anbieter belegt keine freie Verbraucher-Lücke. Die Kommission nennt Verbraucher ausdrücklich; CIRPASS-2 veröffentlicht Links zu Open-Source-Katalog und Repositories (beide Primärseiten im Review gelesen). Die [Partnerseite](https://cirpass2.eu/who-we-are/) benennt Mindworks mit dem Verbraucher-Reader-Pilot T3.4: allgemeiner Reader beim Projekt besetzt, engere Rechtsinterpretation weiterhin unklar. Suchabwesenheit ist kein Existenzbeweis.
+- **Fehler:** Der Ursprungslauf behauptete vollständige Marktkenntnis und automatisch einklagbare Rechte ohne dokumentierte Quellen und Datentest; diese Aussagen wurden verworfen.
+- **Nächstes Mal:** Erst reale Passdaten, Produktregeln und vorhandene Reader prüfen; gegen den bestehenden ESPR-Besetzungsatlas halten. Keine automatische Packfreigabe aus der Hypothese ableiten.

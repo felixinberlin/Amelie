@@ -14312,6 +14312,71 @@
           "status": "durchsucht"
         }
       ]
+    },
+    {
+      "id": "espr-dpp-consumer-pr179",
+      "name": "ESPR/DPP Verbraucherzugang (PR179-Nachprüfung)",
+      "typ": "M",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://environment.ec.europa.eu/strategy/circular-economy/ecodesign-sustainable-products-regulation_en",
+        "https://cirpass2.eu/",
+        "https://cirpass2.eu/who-we-are/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Kommissionsübersicht: Verbraucherzugang, produktspezifische DPP-Inhalte; CIRPASS-2: Pilotprojekte, Open-Source-Katalog und Repositories.",
+      "fokus": "Reale Passdaten und vorhandene Consumer-Reader vor erneuter Bewertung prüfen; Überschneidung mit ESPR-Teamrunde.",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-08",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          1,
+          2,
+          5,
+          5,
+          1,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-08"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-08",
+          "agent": "bibliothekar",
+          "runde": "",
+          "notiz": "08.10.2026: Kommissionsübersicht und CIRPASS-2-Startseite gelesen. Historisches frei auf unklar korrigiert; kein Nachweis einer freien Consumer-Lücke, keine automatische Rechtsableitung.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-08",
+          "agent": "bibliothekar",
+          "runde": "PR179 Review",
+          "notiz": "CIRPASS-2-Partnerseite gelesen: Mindworks entwickelt Consumer-Reader-Pilot T3.4; Energy Web leitet Open-Source-DPP-Toolset. Allgemeiner Reader beim Projekt besetzt, engere Reparaturrechtsinterpretation unklar; fertige App nicht getestet.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-08",
+          "agent": "bibliothekar",
+          "runde": "",
+          "notiz": "Vektoren bewertet [1 2 5 5 1 3]: Primärseiten lesbar; Consumer-Reader ausdrücklich im geförderten Projekt, Rechtsinterpretation und Datenprämisse ungeklärt."
+        }
+      ]
     }
   ]
 }

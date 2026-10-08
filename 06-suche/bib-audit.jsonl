@@ -241,3 +241,6 @@
 {"at":"2026-10-01T23:37:30.460Z","event":"cli","cmd":"quellen add","actor":"claude-code","agent":"claude-code","runde":"Verwandten-Recherche 01.10.2026","id":"ok-lab-berlin-code-for-germany"}
 {"at":"2026-10-01T23:37:30.555Z","event":"cli","cmd":"quellen add","actor":"claude-code","agent":"claude-code","runde":"Verwandten-Recherche 01.10.2026","id":"wikimedia-community-wishlist"}
 {"at":"2026-10-01T23:37:30.567Z","event":"cli","actor":"bibliothekar","agent":"claude-code","runde":"Verwandten-Recherche 01.10.2026","cmd":"quellen import","count":8}
+{"at":"2026-10-08T07:18:24.770Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","id":"espr-dpp-consumer-pr179"}
+{"at":"2026-10-08T07:18:48.023Z","event":"cli","cmd":"quellen log","actor":"bibliothekar","agent":"bibliothekar","runde":"PR179 Review","id":"espr-dpp-consumer-pr179"}
+{"at":"2026-10-08T07:18:48.710Z","event":"cli","cmd":"quellen rate","actor":"bibliothekar","id":"espr-dpp-consumer-pr179"}

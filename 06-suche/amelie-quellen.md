@@ -7,7 +7,7 @@ Runde 2 hat gezeigt: Überlebende Ideen kommen aus Primärquellen, nicht aus Bra
 
 **Status:** `offen` (Nie gegraben oder nur als Anker genannt.) · `angekratzt` (Eine Suche oder ein Schnipsel; Publikationsliste nicht gelesen.) · `durchsucht` (Publikationsliste/Seite selbst gelesen.) · `erschöpft` (Anker dicht, kein weiterer Kandidat zu erwarten.) · `gesperrt` (Nicht (mehr) nutzen, z. B. Empfänger mit Nachfass-Sperre.)
 
-**Bestand:** 267 Quellen · 43 offen · 141 angekratzt · 61 durchsucht · 19 erschöpft · 3 gesperrt · Evidenz: 127 gelesen, 116 nur Schnipsel, 24 unbekannt.
+**Bestand:** 268 Quellen · 43 offen · 141 angekratzt · 62 durchsucht · 19 erschöpft · 3 gesperrt · Evidenz: 128 gelesen, 116 nur Schnipsel, 24 unbekannt.
 
 **Vektoren Q1–Q6** (1–5, Summe /30): Q1 Ergiebigkeit · Q2 Restpotenzial · Q3 Zugang · Q4 Belastbarkeit · Q5 Geländefreiheit · Q6 Anschluss. `auto` = aus Status/Evidenz/Ertrag abgeleitet, noch nicht bewertet.
 
@@ -293,6 +293,7 @@ Runde 2 hat gezeigt: Überlebende Ideen kommen aus Primärquellen, nicht aus Bra
 | **Fraunhofer WKI Holzschutztagung 2022 / holzfragen.de** `fraunhofer-wki-holzschutztagung` | Hausbock-Akustik gebaut; Körperschall 20 kHz–2 MHz | Norm/Volltext | `erschöpft` — für Akustik | 27.09.2026 | – | 19* |
 | **TFZ Straubing Bericht 11 · AELF-Borkenkäfer-Merkblätter · EFI I+** `tfz-straubing-aelf-borkenkaefer` | Trocknungskurven, Bohrmehl, Marteloskope | Norm/Volltext | `erschöpft` | 27.09.2026 | – | 19* |
 | **Offen für die nächste Holz-Runde: Thünen WZE-Kronenansprache-Bildserien, PCP-Richtlinie** `holz-sammelposten-offen` | – — Belege: (Bewertungsschema), DIN 68800-4, Tischler-/Zimmererforen (fachwerk.de), ADG-Graubünden-FAQ Privataufträge, restauratorische Befunduntersuchung | Norm/Volltext | `offen` | – | – | 22* |
+| **ESPR/DPP Verbraucherzugang (PR179-Nachprüfung)** `espr-dpp-consumer-pr179` | Kommissionsübersicht: Verbraucherzugang, produktspezifische DPP-Inhalte; CIRPASS-2: Pilotprojekte, Open-Source-Katalog und Repositories. — **Fokus:** Reale Passdaten und vorhandene Consumer-Reader vor erneuter Bewertung prüfen; Überschneidung mit ESPR-Teamrunde. | Webseite | `durchsucht` *(08.10.2026: Vektoren bewertet [1 2 5 5 1 3]: Primärseiten lesbar; Consumer-Reader ausdrücklich im geförderten Projekt, Rechtsinterpretation und Datenprämisse ungeklärt.)* | 08.10.2026 | – | 17 |
 
 ## Typ N — EU-Produktrecht: Ökodesign, Reparatur, Batterien
 
