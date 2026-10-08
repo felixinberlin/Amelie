@@ -35,3 +35,28 @@ Offline tests:
 The map now includes verified names from the [Aloft OPERA-derived radar catalog](https://aloftdata.eu/radars/), station selection by map click or dropdown, a separate weekly density chart, recorded/daytime/missing counts, and a shortcut to the largest recorded value. Chart traces split at absent observations; the vertical scale varies by station and is labeled. Missing periods are not reconstructed. Playback can skip frames without usable observations while the slider retains every hour. An expanded map supports Escape, keyboard focus return and its own time control. Popup values are inserted as text nodes.
 
 Research teams receive prominent credit. The call for energy operators to open monitoring and mitigation evidence is a request for accountability, not an allegation that this radar dataset measures collisions or establishes liability.
+
+## Review and recent real-data acquisition — 8 October 2026
+
+Downloaded two actual Aloft BALTRAD daily CSVs for **5 October 2026**:
+Protzel (`depro`, Germany) and Wideumont (`bewid`, Belgium), 7,200 layer rows
+per station. The existing density-v2 gate finds **0 / 1,440** eligible rows
+in the 1,000–2,000 m band at Protzel, versus **1,440 / 1,440**, covering 96
+nominal quarter-hour timestamps, at Wideumont. This is a row-level audit;
+complete-profile aggregation and biological validation remain necessary before
+adding recent estimates to the movement map. The requested Dutch `nldbl`
+object returned HTTP 404, which does not imply no migration.
+
+See `recent-acquisition-audit.json` for direct URLs, SHA-256, download sizes,
+retrieval times, server headers and five actual eligible Belgian rows. The
+files use VPTS 1.0: absent `height_reference` means sea level, according to the
+[VPTS specification](https://aloftdata.eu/vpts-csv/). Bucket data are CC0;
+[Aloft warns they are not generally quality controlled](https://aloftdata.eu/faq/).
+Object Last-Modified is retained separately from measurement/retrieval times;
+it does not establish first publication time. No live-feed claim is made.
+Raw CSV files are temporarily in `/tmp/bird-<radar>-20261005.csv`.
+
+The frontend review adds an optional common station-chart scale, exact selected
+hour readings, station CSV export with citation and explicit missing cells,
+playback speed controls, a fullscreen legend, and consistent restart at the
+last frame. Range controls expose the actual UTC timestamp to assistive tools.

@@ -1066,3 +1066,17 @@ EuroBirdCast Systemtest-Nachtrag: Europäischer Vergleich tatsächlich ausgefüh
 EuroBirdCast Nutzerpriorität geändert: zuerst Bewegungskarte statt Prognosesystem. Frontend zeigt animierte, beobachtungsbasierte Woche 1.–7.10.2017 an 21 Radarstandorten (168 Stunden / 1.351 Nachtmessungen); keine synthetischen Routen oder Gegenwartsbehauptung. Quellenmasken, echte bird_u/bird_v-Grundbewegung und Dichte übernommen, Fehlwerte bleiben null. Datengenerator + fünf Tests, unabhängige wissenschaftliche Prüfung und Browserprüfung. Modellforschung/Fachkontakte bleiben aufklappbar. Kein Versand.
 
 EuroBirdCast Demo-Ausbau: verifizierte Namen aller 21 Radarstandorte aus Aloft/OPERA-Katalog; Stationsdiagramm mit getrennten Messsegmenten, Abdeckungszahlen und standortabhängiger Skala; Nachtwiedergabe überspringt Frames ohne Messung, Zeitregler bleibt vollständig. Große Kartenansicht mit Escape und Fokus-Rückgabe. Forschende ausdrücklich gewürdigt; Datenoffenheit/Prüfbarkeit von Energiebetreibern eingefordert, keine unbelegte Kollisions-/Haftungsbehauptung. Quellenregister 292 Einträge, Bewertung unverändert22/35.
+
+### EuroBirdCast review / real radar acquisition — 2026-10-08
+
+Existing `eurobirdcast` verdict unchanged. Downloaded actual 2026-10-05 Aloft
+BALTRAD daily files: depro and bewid, 7,200 rows each. In 1,000–2,000 m,
+density-v2 row eligibility: depro 0/1,440, bewid 1,440/1,440 (96 nominal times).
+Dutch nldbl object returned 404. Audit with source URLs, hashes, retrieval and
+object-modification times: `07-demos/eurobirdcast/map/recent-acquisition-audit.json`.
+Recent data are not yet integrated into the 2017 replay; complete-profile
+aggregation and validation remain open. Improved chart comparison, selected
+readings, CSV export and playback/fullscreen accessibility. No change to dose
+scope, tickets or description; no outreach. Next bounded task: aggregate the
+usable Belgian profiles without inventing coverage, then expose a distinct
+recent-observation view.

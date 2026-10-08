@@ -19,6 +19,7 @@ export function BirdMigrationDemo({ lang = 'en' }: { lang?: Language }) {
   const stationMarks = useRef<Map<string, ReturnType<typeof L.circleMarker>>>(new Map());
   const [frame, setFrame] = useState(Math.min(20, observations.times.length - 1));
   const [playing, setPlaying] = useState(false);
+  const [playbackMs, setPlaybackMs] = useState(650);
   const [selectedStation, setSelectedStation] = useState('depro');
   const [skipDaytime, setSkipDaytime] = useState(true);
   const [expanded, setExpanded] = useState(false);
@@ -28,6 +29,10 @@ export function BirdMigrationDemo({ lang = 'en' }: { lang?: Language }) {
   const time = observations.times[frame];
   const dates = [...new Set(observations.times.map(dayOf))];
   const observed = observations.stations.filter(s => s.readings[frame].density !== null).length;
+  const togglePlayback = () => {
+    if (!playing && frame === observations.times.length - 1) setFrame(0);
+    setPlaying(p => !p);
+  };
   const selectFrame = (value: number) => { setPlaying(false); setFrame(value); };
 
   useEffect(() => {
@@ -97,9 +102,9 @@ export function BirdMigrationDemo({ lang = 'en' }: { lang?: Language }) {
     let next = frame + 1;
     while (skipDaytime && next < observations.times.length && !observations.stations.some(s => s.readings[next].density !== null)) next++;
     if (next >= observations.times.length) { setPlaying(false); return; }
-    const timer = window.setTimeout(() => setFrame(next), 650);
+    const timer = window.setTimeout(() => setFrame(next), playbackMs);
     return () => window.clearTimeout(timer);
-  }, [playing, frame, skipDaytime]);
+  }, [playing, frame, skipDaytime, playbackMs]);
 
   useEffect(() => {
     if (!expanded) return;
@@ -110,7 +115,7 @@ export function BirdMigrationDemo({ lang = 'en' }: { lang?: Language }) {
     const onKey = (event: KeyboardEvent) => {
       if (event.key === 'Escape') { setExpanded(false); return; }
       if (event.key !== 'Tab' || !dialog) return;
-      const focusable = [...dialog.querySelectorAll<HTMLElement>('button, a[href], input, [tabindex="0"]')].filter(e => e.getClientRects().length > 0);
+      const focusable = [...dialog.querySelectorAll<HTMLElement>('button:not([disabled]), a[href], input:not([disabled]), select:not([disabled]), [tabindex="0"]')].filter(e => e.getClientRects().length > 0);
       const first = focusable[0], last = focusable.at(-1);
       if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
       else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
@@ -124,7 +129,8 @@ export function BirdMigrationDemo({ lang = 'en' }: { lang?: Language }) {
         <div key="map-canvas" ref={host} role="region" aria-label="Bird migration radar map" className="rounded-xl border border-slate-200 bg-slate-100" style={{ height: expanded ? 'calc(100dvh - 160px)' : 470, flex: expanded ? 1 : undefined, zIndex: 0 }} />
         <div className="pointer-events-none absolute left-3 bottom-8 z-[10] rounded-lg bg-slate-950/80 px-3 py-1.5 text-xs font-mono text-white" style={expanded ? { left: 20, bottom: 84 } : undefined}>{prettyTime(time, de)} · {observed}/{observations.stations.length} {de ? 'Radare' : 'radars'}</div>
         {!expanded && <button ref={expandButton} type="button" onClick={() => setExpanded(true)} aria-haspopup="dialog" aria-label={de ? 'Karte vergrößern' : 'Expand map'} className="absolute right-3 top-3 z-[10] rounded-lg border border-slate-300 bg-white/95 px-3 py-2 text-xs font-semibold shadow-sm">⛶ {de ? 'Vergrößern' : 'Expand'}</button>}
-        {expanded && <div className="flex items-center gap-3 text-white"><button type="button" onClick={() => setPlaying(p => !p)} aria-label={playing ? 'Pause' : (de ? 'Bewegung abspielen' : 'Play movement')} className="rounded-lg bg-white px-3 py-2 text-slate-900 text-sm">{playing ? 'Ⅱ' : '▶'}</button><input aria-label="Expanded observation time" type="range" min="0" max={observations.times.length - 1} value={frame} onChange={e => selectFrame(Number(e.target.value))} className="flex-1 accent-amber-300" /><span className="text-xs">{observed}/{observations.stations.length} radar</span></div>}
+        {expanded && <p className="text-xs text-slate-300">{de ? 'Historische Wiedergabe · Vögel/km² · Gelb <1, Gold 1–5, Orange 5–20, Rot 20–50, Violett ≥50 · Grau: fehlend / tagsüber · Pfeile: mittlere Richtung, keine Routen' : 'Historical replay · birds/km² · Yellow <1, gold 1–5, orange 5–20, red 20–50, purple ≥50 · Grey: missing / daytime · Arrows: mean bearing, not routes'}</p>}
+        {expanded && <div className="flex items-center gap-3 text-white"><button type="button" onClick={togglePlayback} aria-label={playing ? 'Pause' : (de ? 'Bewegung abspielen' : 'Play movement')} className="rounded-lg bg-white px-3 py-2 text-slate-900 text-sm">{playing ? 'Ⅱ' : '▶'}</button><input aria-label="Expanded observation time" aria-valuetext={prettyTime(time, de)} type="range" min="0" max={observations.times.length - 1} value={frame} onChange={e => selectFrame(Number(e.target.value))} className="flex-1 accent-amber-300" /><span className="text-xs">{observed}/{observations.stations.length} radar</span></div>}
       </div>);
 
   return <section id="bird-migration-demo" aria-labelledby="bird-map-title" className="scroll-mt-48 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
@@ -136,19 +142,20 @@ export function BirdMigrationDemo({ lang = 'en' }: { lang?: Language }) {
     </div>
     <div className="p-4 sm:p-6 space-y-4">
       <div className="flex flex-wrap items-end gap-3">
-        <button type="button" onClick={() => { if (!playing && frame === observations.times.length - 1) setFrame(0); setPlaying(p => !p); }} aria-label={playing ? 'Pause' : (de ? 'Bewegung abspielen' : 'Play movement')} aria-pressed={playing} className="rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-700">{playing ? 'Ⅱ Pause' : `▶ ${de ? 'Bewegung abspielen' : 'Play movement'}`}</button>
+        <button type="button" onClick={togglePlayback} aria-label={playing ? 'Pause' : (de ? 'Bewegung abspielen' : 'Play movement')} aria-pressed={playing} className="rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-700">{playing ? 'Ⅱ Pause' : `▶ ${de ? 'Bewegung abspielen' : 'Play movement'}`}</button>
         <label className="text-xs font-semibold text-slate-600">{de ? 'Datum (UTC)' : 'Date (UTC)'}<select aria-label={de ? 'Datum (UTC)' : 'Date (UTC)'} value={dayOf(time)} onChange={e => {
           const hour = time.slice(11, 13);
           const index = observations.times.findIndex(t => dayOf(t) === e.target.value && t.slice(11, 13) === hour);
           selectFrame(index >= 0 ? index : observations.times.findIndex(t => dayOf(t) === e.target.value));
         }} className="block mt-1 border border-slate-300 rounded-lg p-2 bg-white text-slate-900">{dates.map(date => <option key={date} value={date}>{date}</option>)}</select></label>
+        <label className="text-xs font-semibold text-slate-600">{de ? 'Geschwindigkeit' : 'Playback speed'}<select value={playbackMs} onChange={e => setPlaybackMs(Number(e.target.value))} className="block mt-1 border border-slate-300 rounded-lg p-2 bg-white text-slate-900"><option value={1300}>0.5×</option><option value={650}>1×</option><option value={325}>2×</option></select></label>
         <output data-testid="bird-map-time" className="ml-auto text-sm font-mono text-slate-900">{prettyTime(time, de)}</output>
       </div>
       <div className="flex flex-wrap items-center justify-between gap-3 text-xs text-slate-600">
         <label className="flex items-center gap-2"><input type="checkbox" checked={skipDaytime} onChange={e => setSkipDaytime(e.target.checked)} className="accent-slate-900" />{de ? 'Tagesstunden überspringen' : 'Skip daytime'}</label>
         <span>{de ? 'Wiedergabe: nur Stunden mit vorhandenen Beobachtungen, wenn aktiviert.' : 'When enabled, playback visits only hours with available observations.'}</span>
       </div>
-      <label className="block text-xs font-semibold text-slate-600">{de ? 'Beobachtungszeit · durch die Woche bewegen' : 'Observation time · move through the week'}<input aria-label="Observation time" type="range" min="0" max={observations.times.length - 1} value={frame} onChange={e => selectFrame(Number(e.target.value))} className="block w-full mt-2 accent-slate-900" /></label>
+      <label className="block text-xs font-semibold text-slate-600">{de ? 'Beobachtungszeit · durch die Woche bewegen' : 'Observation time · move through the week'}<input aria-label="Observation time" aria-valuetext={prettyTime(time, de)} type="range" min="0" max={observations.times.length - 1} value={frame} onChange={e => selectFrame(Number(e.target.value))} className="block w-full mt-2 accent-slate-900" /></label>
       <div className="flex justify-between text-xs text-slate-500"><span>1 Oct 2017</span><span>{observed}/{observations.stations.length} {de ? 'Standorte mit Dichtemessung' : 'sites with density observations'}</span><span>7 Oct 2017</span></div>
       {expanded ? createPortal(mapContent, document.body) : mapContent}
       {tilesUnavailable && <p role="status" className="text-xs text-slate-600">{de ? 'Hintergrundkarte nicht vollständig erreichbar. Radarmessungen sind weiter in der Tabelle verfügbar.' : 'Background map is not fully available. Radar observations remain available in the table.'}</p>}

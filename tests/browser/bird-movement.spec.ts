@@ -115,3 +115,35 @@ test('expanded map closes with Escape and restores normal controls', async ({ pa
   await expect(dialog).toHaveCount(0);
   await expect(demo.getByRole('button', { name: 'Expand map', exact: true })).toBeFocused();
 });
+
+test('station observations can be compared on a shared scale and downloaded with provenance', async ({ page }) => {
+  await page.goto(`${project}?lang=en`);
+  const demo = page.locator('#bird-migration-demo');
+  await demo.getByRole('checkbox', { name: 'Use the same scale for all stations' }).check();
+  await expect(demo).toContainText('Shared scale');
+  await expect(demo.getByTestId('bird-station-reading')).toContainText('2017-10-01');
+  const downloadEvent = page.waitForEvent('download');
+  await demo.getByRole('button', { name: 'Download station data (CSV)' }).click();
+  const download = await downloadEvent;
+  expect(download.suggestedFilename()).toBe('eurobirdcast-depro-2017-10-01_07.csv');
+  const stream = await download.createReadStream();
+  const chunks: Buffer[] = [];
+  for await (const chunk of stream!) chunks.push(Buffer.from(chunk));
+  const csv = Buffer.concat(chunks).toString('utf8');
+  expect(csv).toContain('10.5281/zenodo.6874789; CC BY 4.0');
+  expect(csv.trim().split('\r\n')).toHaveLength(171);
+  expect(csv).toContain('daytime,,,');
+});
+
+test('fullscreen replay restarts after the final hour', async ({ page }) => {
+  await page.goto(`${project}?lang=en`);
+  await page.getByRole('button', { name: 'Expand map', exact: true }).click();
+  const dialog = page.getByRole('dialog');
+  const slider = dialog.getByRole('slider', { name: 'Expanded observation time' });
+  await slider.focus();
+  await slider.press('End');
+  await expect(slider).toHaveValue('167');
+  await dialog.getByRole('button', { name: 'Play movement', exact: true }).click();
+  await expect.poll(() => slider.inputValue()).not.toBe('167');
+  await expect(dialog).toContainText('Historical replay');
+});
