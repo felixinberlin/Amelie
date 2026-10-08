@@ -87,6 +87,10 @@ Use existing formats where possible. Required fields:
 
 Inspect citations and full primary papers for finalists. Search independent expert discussion and follow it to technical evidence. Mark inaccessible full texts as blocked. Record what was actually read. Keep source reports ready for Bibliothekar ingestion and deduplication.
 
+## Mathematics consultant
+
+Amélie now includes `.claude/agents/mathematician.md` and `skills/mathematician/mathematician/SKILL.md`. Request an on-demand consultation when a hypothesis depends on a theorem, mathematical model, symbolic calculation or uncertainty guarantee. It supplies the assumption map, derivation, evidence limits and smallest test; BIB and the idea reviewer retain their own responsibilities. Existing Lean and broader math skills are linked in its optional-tool reference.
+
 ## 3. MARK application work
 
 Feed MARK the evidence cards, prior-art findings and current Amélie context. Ask for at most three application hypotheses per finalist. Every hypothesis must name the people who benefit, the improvement to their lives, a user task or wish, current bottleneck, mathematical mechanism, data, comparator, observable benefit and cheapest falsification.
