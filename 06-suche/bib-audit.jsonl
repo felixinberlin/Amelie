@@ -303,3 +303,7 @@
 {"at":"2026-10-08T19:00:57.414Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"EuroBirdCast map readability 2026-10-08","id":"aloft-opera-radar-catalog"}
 {"at":"2026-10-08T19:00:57.634Z","event":"cli","cmd":"quellen log","actor":"bibliothekar","agent":"bibliothekar","runde":"EuroBirdCast map readability 2026-10-08","id":"aloft-opera-radar-catalog"}
 {"at":"2026-10-08T19:00:57.846Z","event":"cli","cmd":"quellen rate","actor":"bibliothekar","id":"aloft-opera-radar-catalog"}
+{"at":"2026-10-08T21:45:53.295Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"EuroBirdCast Governance 2026-10-08","id":"staatscourant-offshore-wind-vogelmigrati"}
+{"at":"2026-10-08T21:45:53.367Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"EuroBirdCast Governance 2026-10-08","id":"kne-antikollisionssysteme"}
+{"at":"2026-10-08T21:45:53.438Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"EuroBirdCast Governance 2026-10-08","id":"davvl-und-bundeswehr-birdtam"}
+{"at":"2026-10-08T21:45:53.444Z","event":"cli","actor":"bibliothekar","agent":"bibliothekar","runde":"EuroBirdCast Governance 2026-10-08","cmd":"quellen import","count":3}

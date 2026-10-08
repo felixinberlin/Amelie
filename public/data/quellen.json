@@ -15819,6 +15819,164 @@
           "notiz": "Vektoren bewertet [3 3 5 4 2 3]: Directly supported one existing project with 21 verified names; finite metadata reference rather than new idea search; public complete page, OPERA-derived rather than independently measured, established radar field, institutional metadata contact available."
         }
       ]
+    },
+    {
+      "id": "staatscourant-offshore-wind-vogelmigrati",
+      "name": "Staatscourant Offshore Wind Vogelmigratie",
+      "typ": "H",
+      "kategorie": "auslandsregulierung",
+      "rollen": [
+        "evidenz"
+      ],
+      "tags": [],
+      "urls": [
+        "https://officielebekendmakingen.nl",
+        "https://www.noordzeeloket.nl"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "web"
+      },
+      "enthaelt": "Niederlaendische Ministerialverordnung zur verpflichtenden Abregelung von Offshore-Windparks bei Vogelzugwellen (Staatscourant 2026, 2036; TenneT Abstimmung, flexible Schwelle, max. 60 h/a)",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-08",
+      "ertrag": {
+        "dosen": [
+          "eurobirdcast"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-08"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-08",
+          "agent": "bibliothekar",
+          "runde": "EuroBirdCast Governance 2026-10-08",
+          "notiz": "Rechtliche und operative Blaupause fuer wetterradar-gestuetzte Windpark-Abregelung auf der Nordsee.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "kne-antikollisionssysteme",
+      "name": "KNE Antikollisionssysteme",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "rollen": [
+        "evidenz"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.kne-artenschutz.de"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "web"
+      },
+      "enthaelt": "Fachliche Anforderungen und Synopsen zu kamerabasierten und radargestuetzten Antikollisionssystemen an Windenergieanlagen (IdentiFlight, Robin Radar) nach BNatSchG und BImSchG",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-08",
+      "ertrag": {
+        "dosen": [
+          "eurobirdcast"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-08"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-08",
+          "agent": "bibliothekar",
+          "runde": "EuroBirdCast Governance 2026-10-08",
+          "notiz": "Kompetenzzentrum Naturschutz und Energiewende klaert den Unterschied zwischen lokaler AKS-Detektion und Grossraum-Wetterradar.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "davvl-und-bundeswehr-birdtam",
+      "name": "DAVVL und Bundeswehr BIRDTAM",
+      "typ": "I",
+      "kategorie": "messverfahren",
+      "rollen": [
+        "evidenz"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.davvl.de",
+        "https://www.bundeswehr.de"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "web"
+      },
+      "enthaelt": "Militaerische und zivile Vogelzugwarnungen BIRDTAM sowie Radarvisualisierungssysteme VoVisWxBw und AVIS des Geoinformationsdienstes der Bundeswehr (ZGeoBw)",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-08",
+      "ertrag": {
+        "dosen": [
+          "eurobirdcast"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-08"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-08",
+          "agent": "bibliothekar",
+          "runde": "EuroBirdCast Governance 2026-10-08",
+          "notiz": "Deutscher Ausschuss zur Verhuetung von Vogelschlaegen im Luftverkehr und ZGeoBw nutzen Grossraumradar fuer verbindliche Flugwarnungen.",
+          "status": "durchsucht"
+        }
+      ]
     }
   ]
 }
