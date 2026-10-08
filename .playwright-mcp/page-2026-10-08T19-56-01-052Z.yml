@@ -1,0 +1,54 @@
+- generic [ref=f1e3]:
+  - banner [ref=f1e4]:
+    - generic [ref=f1e5]:
+      - generic [ref=f1e6]:
+        - generic [ref=f1e7]:
+          - link "Amélie home" [ref=f1e8] [cursor=pointer]:
+            - /url: /Amelie/dosen/
+          - generic [ref=f1e14]:
+            - generic [ref=f1e15]:
+              - link "Amélie" [ref=f1e16] [cursor=pointer]:
+                - /url: /Amelie/dosen/
+              - generic [ref=f1e17]: CC0
+              - generic [ref=f1e18]: ✦ Kula Ring ✦
+            - paragraph [ref=f1e19]: « Le Kula-Ring des Idées »·Ideas that belong to someone else — after Amélie Poulain & the Kula Ring
+        - generic [ref=f1e20]:
+          - button "🎁 Amélie" [ref=f1e22] [cursor=pointer]
+          - generic [ref=f1e30]:
+            - button "EN" [ref=f1e34] [cursor=pointer]
+            - button "DE" [ref=f1e35] [cursor=pointer]
+            - button "ES" [ref=f1e36] [cursor=pointer]
+      - generic [ref=f1e37]:
+        - navigation "Main Navigation" [ref=f1e38]:
+          - link "Gifts" [ref=f1e39] [cursor=pointer]:
+            - /url: /Amelie/dosen/
+          - link "Ideas" [ref=f1e45] [cursor=pointer]:
+            - /url: /Amelie/unpacked/
+          - link "Try it" [ref=f1e49] [cursor=pointer]:
+            - /url: /Amelie/games/
+          - link "Research" [ref=f1e53] [cursor=pointer]:
+            - /url: /Amelie/quellen/
+        - button "Show/hide workshop (operations)" [ref=f1e57] [cursor=pointer]
+      - navigation "Gifts" [ref=f1e60]:
+        - link "The Tins 45" [ref=f1e61] [cursor=pointer]:
+          - /url: /Amelie/dosen/
+          - text: The Tins
+          - generic [ref=f1e66]: "45"
+        - link "Compare" [ref=f1e67] [cursor=pointer]:
+          - /url: /Amelie/compare/
+        - link "Manifesto & Rules" [ref=f1e75] [cursor=pointer]:
+          - /url: /Amelie/manifest/
+  - main [ref=f1e79]:
+    - status [ref=f1e80]: Loading…
+  - contentinfo [ref=f1e81]:
+    - generic [ref=f1e83]:
+      - generic [ref=f1e84]:
+        - generic [ref=f1e90]: Amélie Poulain · Kula-Ring
+        - generic [ref=f1e91]: ✦
+        - generic [ref=f1e92]: All tins are dedicated to the public domain under CC0.
+      - generic [ref=f1e93]:
+        - button "GitHub Pages (JSON & Markdown)" [ref=f1e94] [cursor=pointer]
+        - generic [ref=f1e101]: ·
+        - generic [ref=f1e102]: « "The delivery is the gift, not the find." »
+        - generic [ref=f1e103]: ·
+        - generic [ref=f1e104]: Félix (Berlin), 2026
