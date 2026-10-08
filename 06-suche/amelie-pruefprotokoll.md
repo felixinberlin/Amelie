@@ -1102,3 +1102,16 @@ visible. A forecast for 7 Oct was archived before its data exist
 `forecast_check.py score` once files appear. Bug found by looking: negative
 densities were possible; predictions are now clamped at zero (the first archive
 was unscored and replaced). No outreach; dose scope unchanged.
+
+### EuroBirdCast usability, navigation and interaction polish — 2026-10-08 (Runde 3)
+
+Bestehendes `eurobirdcast`-Urteil unverändert (`verengt`, 22/35). Fokus auf Benutzbarkeit,
+Kartenverständlichkeit und Interaktionsqualität:
+1. Interaktive Tabelle: Klick auf eine Zeile der Radarmessungen markiert den Standort, zentriert die Karte, öffnet das Popup und wählt den Standort im Wochendiagramm aus.
+2. Präzisions-Navigation: Stundenschritt-Schaltflächen (`◀ −1 h`, `+1 h ▶`) und Schnellwahl zur stärksten Zugwelle der Woche (`⚡ Zugspitze` / `Peak wave`), gespiegelt im Vollbild-Dialog.
+3. Himmelsrichtungen und km/h: Vektoren, Popups, Tooltips und Messwert-Tabelle zeigen 16-teilige Himmelsrichtungen (z. B. `SW (215°)`) und Bodengeschwindigkeit in km/h (`42 km/h`) zusätzlich zu m/s.
+4. Wochenüberblick: 24-Stunden-Tagesgrenzen und Datumsbeschriftungen (`1. Okt` .. `7. Okt`) unter dem Balkendiagramm zur sofortigen Orientierung über Zugwellen.
+5. Diagramm-Scrubbing: Klick auf das Wochendiagramm springt direkt zu dieser Stunde auf der Karte; Spitzenwert und -zeitpunkt des Standorts hervorgehoben.
+6. Stationen in Prognosetabelle: Klarnamen (`Wideumont`, `Jabbeke`, `Den Helder`) neben Codes.
+Alle 13 Playwright-Browsertests, 764 Vitest-Tests, 16 Karten-Python-Tests sowie Lint und Produktionsbuild fehlerfrei bestanden. Keine neuen Mails versendet.
+

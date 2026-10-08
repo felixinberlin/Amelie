@@ -1,4 +1,5 @@
 import check from '../data/birdForecastCheck.json';
+import { BIRD_RADAR_NAMES } from '../data/birdRadarNames';
 import { Language } from '../types';
 
 interface Forecast { station: string; targetUtc: string; horizonH: number; model: number; persistence: number | null }
@@ -42,7 +43,8 @@ export function BirdForecastCheck({ lang }: { lang: Language }) {
       <div className="overflow-x-auto"><table className="w-full text-xs text-left"><thead><tr className="text-slate-600"><th scope="col">Radar</th><th scope="col">{de ? 'Zielstunde' : 'Target hour'}</th><th scope="col">{de ? 'Modell' : 'Model'}</th><th scope="col">{de ? 'Gleichbleiben' : 'Unchanged'}</th><th scope="col">{de ? 'Gemessen' : 'Observed'}</th></tr></thead>
         <tbody>{issued.forecasts.map(f => {
           const scored = issued.scored?.results.find(r => r.station === f.station && r.targetUtc === f.targetUtc);
-          return <tr key={f.station + f.targetUtc} className="border-t border-slate-100 font-mono"><td>{f.station.toUpperCase()}</td><td>{when(f.targetUtc)}</td><td>{f.model.toFixed(2)}</td><td>{f.persistence?.toFixed(2)}</td><td>{scored?.observed != null ? scored.observed.toFixed(2) : (de ? 'steht aus' : 'pending')}</td></tr>;
+          const stationName = BIRD_RADAR_NAMES[f.station] ?? f.station.toUpperCase();
+          return <tr key={f.station + f.targetUtc} className="border-t border-slate-100 font-mono"><td>{stationName} <span className="text-slate-400 font-normal">({f.station.toUpperCase()})</span></td><td>{when(f.targetUtc)}</td><td>{f.model.toFixed(2)}</td><td>{f.persistence?.toFixed(2)}</td><td>{scored?.observed != null ? scored.observed.toFixed(2) : (de ? 'steht aus' : 'pending')}</td></tr>;
         })}</tbody></table></div>
       <p className="text-xs text-slate-600">{de ? 'Bewertung später mit' : 'Score later with'} <code>python3 07-demos/eurobirdcast/map/forecast_check.py score</code>.</p>
     </div>}

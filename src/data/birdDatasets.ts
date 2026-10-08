@@ -37,3 +37,12 @@ export const strongestFrame = (data: BirdObservations): number => {
   });
   return best;
 };
+
+/** Convert degrees (0-360, where 0=N, 90=E, 180=S, 270=W) to 16-point cardinal compass string. */
+export const cardinalDirection = (deg: number, de = false): string => {
+  const pointsEn = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW'];
+  const pointsDe = ['N', 'NNO', 'NO', 'ONO', 'O', 'OSO', 'SO', 'SSO', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW'];
+  const points = de ? pointsDe : pointsEn;
+  const idx = Math.round(((deg % 360 + 360) % 360) / 22.5) % 16;
+  return points[idx];
+};

@@ -204,3 +204,39 @@ test('dataset switch returns to the 2017 research replay', async ({ page }) => {
   await expect(demo.getByLabel('Date (UTC)', { exact: true }).locator('option')).toHaveCount(7);
   await expect(demo.getByLabel('Radar station', { exact: true }).locator('option')).toHaveCount(21);
 });
+
+test('hour stepping, peak migration jump and interactive table row selection work', async ({ page }) => {
+  await page.goto(`${project}?lang=en&data=2017`);
+  const demo = page.locator('#bird-migration-demo');
+  const slider = demo.getByRole('slider', { name: 'Observation time', exact: true });
+
+  // Peak wave jump
+  await demo.getByRole('button', { name: 'Jump to peak migration hour', exact: true }).click();
+  const peakVal = await slider.inputValue();
+  expect(Number(peakVal)).toBeGreaterThan(0);
+
+  // Stepping backward and forward
+  await demo.getByRole('button', { name: 'Step back one hour', exact: true }).click();
+  expect(Number(await slider.inputValue())).toBeLessThan(Number(peakVal));
+  await demo.getByRole('button', { name: 'Step forward one hour', exact: true }).click();
+  expect(await slider.inputValue()).toBe(peakVal);
+
+  // Open radar readings table and click a station row
+  const readings = demo.locator('details').filter({ has: page.locator('summary', { hasText: /^Radar readings$/ }) });
+  await readings.locator('summary').click();
+  const bewidRow = readings.locator('tbody tr').filter({ hasText: /Wideumont|BEWID/i });
+  await expect(bewidRow).toBeVisible();
+  await bewidRow.click();
+  await expect(bewidRow).toHaveClass(/bg-sky-50/);
+  await expect(demo.getByLabel('Radar station', { exact: true })).toHaveValue('bewid');
+
+  // Verify cardinal direction format in table
+  await expect(readings).toContainText(/km\/h/);
+
+  // Station chart click to scrub time
+  const chart = demo.locator('svg[aria-label="Observed density over the week"]');
+  await chart.scrollIntoViewIfNeeded();
+  await chart.click({ position: { x: 80, y: 50 } });
+  await expect.poll(() => slider.inputValue()).not.toBe(peakVal);
+});
+

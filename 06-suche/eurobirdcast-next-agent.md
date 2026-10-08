@@ -50,4 +50,13 @@ Pick **one** question with an observable result. Deliver a working incremental i
 
 **Immediate next step (bounded, observable):** after the 7 Oct files appear (check `curl -I https://aloftdata.s3-eu-west-1.amazonaws.com/baltrad/daily/bewid/2026/bewid_vpts_20261007.csv`), run `python3 07-demos/eurobirdcast/map/forecast_check.py score`, then `... evaluate`, commit the `scored-*.json`. This is the first genuinely prospective test (model fixed and hashed before the data existed). Report model vs persistence regardless of the outcome. Then issue another forecast daily to build n; 3 stations × 3 horizons per issue is too few for conclusions before ~2 weeks.
 
-**Open / risks:** weather is not used; adding archived NWP forecasts (question 7) is the obvious lever but must be archived prospectively. Day/night uses NOAA solar elevation > −6° approximation, not astronomical tables. `unscreened` density is not evidence of birds. Raw CSVs are cached in `/tmp/eurobirdcast-recent-cache` (not committed). Do not present the forecast panel as a product; it is a test with a pending prospective result. Ask Peter Desmet / Judy Shamoun-Baranes to review only with Félix's authorization; nothing was sent.
+## Findings of 8 October 2026 (third session, same day) — round 3 polish
+
+- **Usability & navigation polished**:
+  1. Interactive radar table: clicking any station row highlights the station, pans the map, opens its popup, and selects it in the station chart.
+  2. Precision stepping: 1-hour step buttons (`◀ −1 h`, `+1 h ▶`) and single-click jump to the week's peak migration hour (`⚡ Peak wave` / `⚡ Zugspitze`) in both inline and fullscreen modes.
+  3. Cardinal compass directions & metric speed: 16-point cardinal compass bearings (e.g. `SW (215°)`) and km/h ground speed alongside m/s across map vectors, popups, tooltips, and the readings table.
+  4. Week overview strip: added 24-hour day boundaries and date ticks (`1. Okt` .. `7. Okt`) so synoptic waves are intuitive.
+  5. Station chart scrubbing: clicking the weekly density SVG scrubs the map directly to that hour; peak density and timestamp are prominently displayed.
+  6. Human-readable radar station names in the prospective forecast table.
+- **Verification**: 13 browser tests (all passing), 764 Vitest tests, 16 map Python tests, lint and production build green.

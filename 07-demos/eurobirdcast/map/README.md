@@ -74,3 +74,13 @@ Of 19 radars only bejab, bewid and nldhl have screened hours in quantity.
 trained on the 2017 week, features trend / upwind neighbour / hour of day. Results, all variants, in `src/data/birdForecastCheck.json`.
 `issue` archives a forecast (with hash) before its data exist; `score` fetches the later files (404 = pending, never zero).
 Tests: `test_forecast_check.py` (leakage, missing hours, upwind sector, zero clamp, gate rules).
+
+## Usability, interaction and navigation polish — 8 October 2026 (third round)
+
+- **Station navigation**: clicking a row in the radar readings table highlights the station, pans the map, opens its popup, and selects it in the weekly chart.
+- **Precision playback**: added 1-hour step buttons (`◀ −1 h` and `+1 h ▶`) and a single-click shortcut to the week's peak migration hour (`⚡ Peak wave` / `⚡ Zugspitze`). Also available in fullscreen expanded mode.
+- **Directional & speed clarity**: bearings include 16-point cardinal directions (`SW (215°)`) and ground speed converted to km/h (`42 km/h`) across vectors, popups, tooltips, and the readings table.
+- **Week overview strip**: rendered day boundary lines and date labels (`1. Okt` .. `7. Okt`) under the overview bar chart so users see the synoptic waves at a glance.
+- **Interactive chart scrubbing**: clicking anywhere on the weekly station density chart jumps the map directly to that hour. Station peak density and time are highlighted.
+- **Verified**: 13 browser tests, 764 Vitest tests, 16 map Python tests; lint and production build green.
+

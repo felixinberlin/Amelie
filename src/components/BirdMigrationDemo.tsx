@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import { BIRD_DATASETS, BirdDatasetId, BirdObservations, strongestFrame } from '../data/birdDatasets';
+import { BIRD_DATASETS, BirdDatasetId, BirdObservations, cardinalDirection, strongestFrame } from '../data/birdDatasets';
 import { Language } from '../types';
 import { BIRD_RADAR_NAMES } from '../data/birdRadarNames';
 import { BirdStationChart } from './BirdStationChart';
@@ -22,6 +22,7 @@ function WeekOverview({ observations, frame, de, onTime }: { observations: BirdO
   const n = observations.times.length;
   const top = Math.max(1, ...weekMeans.map(v => v ?? 0));
   const bar = 1000 / n;
+  const numDays = Math.floor(n / 24);
   const pick = (event: React.MouseEvent<SVGSVGElement>) => {
     const box = event.currentTarget.getBoundingClientRect();
     const index = Math.min(n - 1, Math.max(0, Math.floor((event.clientX - box.left) / box.width * n)));
@@ -30,9 +31,17 @@ function WeekOverview({ observations, frame, de, onTime }: { observations: BirdO
   return <div>
     <p className="text-xs font-semibold text-slate-600">{de ? 'Wochenüberblick · Mittelwert der geprüften Radare (Vögel/km²) · anklicken zum Springen' : 'Week overview · mean of screened radars (birds/km²) · click to jump'}</p>
     <svg viewBox="0 0 1000 44" preserveAspectRatio="none" role="img" data-testid="bird-week-overview" aria-label={de ? 'Mittlere Vogeldichte je Stunde' : 'Mean bird density per hour'} onClick={pick} className="mt-1 h-11 w-full cursor-pointer rounded-md bg-slate-100">
+      {Array.from({ length: numDays }, (_, d) => <line key={`d-${d}`} x1={d * 24 * bar} x2={d * 24 * bar} y1={0} y2={44} stroke="#cbd5e1" strokeDasharray="2 2" strokeWidth="1" vectorEffect="non-scaling-stroke" />)}
       {weekMeans.map((v, i) => v === null ? null : <rect key={i} x={i * bar + .5} width={bar - 1} y={42 - v / top * 40} height={v / top * 40} fill={intensityColor(v)} stroke="#78350f" strokeWidth=".4" />)}
       <rect x={frame * bar - 1} width={bar + 2} y="0" height="44" fill="none" stroke="#2563eb" strokeWidth="2.5" vectorEffect="non-scaling-stroke" />
     </svg>
+    <div className="flex justify-between text-[11px] font-mono text-slate-500 mt-1 px-1">
+      {Array.from({ length: numDays }, (_, d) => {
+        const time = observations.times[d * 24];
+        const dayNum = Number(time.slice(8, 10));
+        return <span key={d}>{dayNum}. {de ? 'Okt' : 'Oct'}</span>;
+      })}
+    </div>
   </div>;
 }
 
@@ -63,6 +72,32 @@ function BirdMovementView({ dataset, lang, switcher }: { dataset: BirdDatasetId;
     setPlaying(p => !p);
   };
   const selectFrame = (value: number) => { setPlaying(false); setFrame(value); };
+  const peakFrame = useMemo(() => strongestFrame(observations), [observations]);
+  const jumpToPeak = () => { setPlaying(false); setFrame(peakFrame); };
+  const stepBackward = () => {
+    setPlaying(false);
+    let prev = frame - 1;
+    if (skipDaytime) {
+      while (prev >= 0 && !observations.stations.some(s => s.readings[prev].density !== null)) prev--;
+    }
+    if (prev >= 0) setFrame(prev);
+  };
+  const stepForward = () => {
+    setPlaying(false);
+    let next = frame + 1;
+    if (skipDaytime) {
+      while (next < observations.times.length && !observations.stations.some(s => s.readings[next].density !== null)) next++;
+    }
+    if (next < observations.times.length) setFrame(next);
+  };
+  const handleSelectStation = (code: string) => {
+    setSelectedStation(code);
+    const st = observations.stations.find(s => s.code === code);
+    if (st && map.current) {
+      map.current.panTo([st.lat, st.lon]);
+      stationMarks.current.get(code)?.openPopup();
+    }
+  };
 
   useEffect(() => {
     if (!host.current) return;
@@ -99,8 +134,8 @@ function BirdMovementView({ dataset, lang, switcher }: { dataset: BirdDatasetId;
       const value = document.createElement('p'); value.textContent = available ? `${density.toFixed(unscreened ? 2 : 1)} ${recent ? (de ? 'Vögel/km² (Schicht 1–2 km)' : 'birds/km² (1–2 km layer)') : (de ? 'geschätzte Vögel/km²' : 'estimated birds/km²')}${unscreened ? (de ? ' · ohne Regentest (sd_vvp fehlt): Echo kann auch Niederschlag oder Insekten enthalten' : ' · no rain test (sd_vvp missing): echo may include precipitation or insects') : ''}` : missing; content.append(value);
       const stamp = document.createElement('p'); stamp.textContent = prettyTime(time, de); content.append(stamp);
       circle.bindPopup(content);
-      circle.on('click', () => setSelectedStation(station.code));
-      circle.bindTooltip(`${BIRD_RADAR_NAMES[station.code] ?? station.code.toUpperCase()} · ${available ? density.toFixed(1) + (de ? ' Vögel/km²' : ' birds/km²') : missing}`);
+      circle.on('click', () => handleSelectStation(station.code));
+      let tooltipText = `${BIRD_RADAR_NAMES[station.code] ?? station.code.toUpperCase()} · ${available ? density.toFixed(1) + (de ? ' Vögel/km²' : ' birds/km²') : missing}`;
       if (available && density > 0 && reading.u !== null && reading.v !== null) {
         const speed = Math.hypot(reading.u, reading.v);
         if (speed > .01) {
@@ -113,11 +148,16 @@ function BirdMovementView({ dataset, lang, switcher }: { dataset: BirdDatasetId;
           const right: [number, number] = [tip[0] + (-north * 13 - east * 7) * kmToLat, tip[1] + (-east * 13 + north * 7) * kmToLon];
           L.polyline([[station.lat, station.lon], tip], { color: '#0f172a', weight: 2.5, opacity: .85, interactive: false }).addTo(layers);
           L.polyline([left, tip, right], { color: '#0f172a', weight: 2.5, opacity: .85, interactive: false }).addTo(layers);
+          const bearing = (Math.atan2(east, north) * 180 / Math.PI + 360) % 360;
+          const card = cardinalDirection(bearing, de);
+          const speedKmh = Math.round(speed * 3.6);
           const direction = document.createElement('p');
-          direction.textContent = `${de ? 'Mittlere Bewegungsrichtung' : 'Mean movement bearing'}: ${((Math.atan2(east, north) * 180 / Math.PI + 360) % 360).toFixed(0)}° · ${speed.toFixed(1)} m/s`;
+          direction.textContent = `${de ? 'Mittlere Bewegungsrichtung' : 'Mean movement bearing'}: ${card} (${bearing.toFixed(0)}°) · ${speed.toFixed(1)} m/s (${speedKmh} km/h)`;
           content.append(direction);
+          tooltipText += ` · ${card} (${speedKmh} km/h)`;
         }
       }
+      circle.bindTooltip(tooltipText);
     }
   }, [frame, de, time, expanded, observations]);
 
@@ -161,7 +201,14 @@ function BirdMovementView({ dataset, lang, switcher }: { dataset: BirdDatasetId;
         <div className="pointer-events-none absolute left-3 bottom-8 z-[10] rounded-lg bg-slate-950/80 px-3 py-1.5 text-xs font-mono text-white" style={expanded ? { left: 20, bottom: 84 } : undefined}>{prettyTime(time, de)} · {observed}/{observations.stations.length} {de ? 'Radare' : 'radars'}</div>
         {!expanded && <button ref={expandButton} type="button" onClick={() => setExpanded(true)} aria-haspopup="dialog" aria-label={de ? 'Karte vergrößern' : 'Expand map'} className="absolute right-3 top-3 z-[10] rounded-lg border border-slate-300 bg-white/95 px-3 py-2 text-xs font-semibold shadow-sm">⛶ {de ? 'Vergrößern' : 'Expand'}</button>}
         {expanded && <p className="text-xs text-slate-300">{de ? `${recent ? 'Aktuelle Radarbeobachtungen' : 'Historische Wiedergabe'} · Vögel/km² · Gelb <1, Gold 1–5, Orange 5–20, Rot 20–50, Violett ≥50 · Gestrichelt: ungeprüft · Grau: fehlend / tagsüber · Pfeile: mittlere Richtung, länger = schneller, keine Routen` : `${recent ? 'Recent radar observations' : 'Historical replay'} · birds/km² · Yellow <1, gold 1–5, orange 5–20, red 20–50, purple ≥50 · Dashed: unscreened · Grey: missing / daytime · Arrows: mean bearing, longer = faster, not routes`}</p>}
-        {expanded && <div className="flex items-center gap-3 text-white"><button type="button" onClick={togglePlayback} aria-label={playing ? 'Pause' : (de ? 'Bewegung abspielen' : 'Play movement')} className="rounded-lg bg-white px-3 py-2 text-slate-900 text-sm">{playing ? 'Ⅱ' : '▶'}</button><input aria-label="Expanded observation time" aria-valuetext={prettyTime(time, de)} type="range" min="0" max={observations.times.length - 1} value={frame} onChange={e => selectFrame(Number(e.target.value))} className="flex-1 accent-amber-300" /><span className="text-xs">{observed}/{observations.stations.length} radar</span></div>}
+        {expanded && <div className="flex items-center gap-2 sm:gap-3 text-white">
+          <button type="button" onClick={togglePlayback} aria-label={playing ? 'Pause' : (de ? 'Bewegung abspielen' : 'Play movement')} className="rounded-lg bg-white px-3 py-2 text-slate-900 text-sm font-semibold">{playing ? 'Ⅱ' : '▶'}</button>
+          <button type="button" onClick={stepBackward} disabled={frame === 0} aria-label={de ? 'Eine Stunde zurück' : 'Step back one hour'} title={de ? 'Eine Stunde zurück' : 'Step back one hour'} className="rounded-lg border border-slate-700 bg-slate-800 px-2.5 py-2 text-xs text-white disabled:opacity-30">◀</button>
+          <button type="button" onClick={stepForward} disabled={frame === observations.times.length - 1} aria-label={de ? 'Eine Stunde vor' : 'Step forward one hour'} title={de ? 'Eine Stunde vor' : 'Step forward one hour'} className="rounded-lg border border-slate-700 bg-slate-800 px-2.5 py-2 text-xs text-white disabled:opacity-30">▶</button>
+          <button type="button" onClick={jumpToPeak} aria-label={de ? 'Zur Zugspitze springen' : 'Jump to peak migration'} title={de ? `Spitzenstunde: ${prettyTime(observations.times[peakFrame], de)}` : `Peak hour: ${prettyTime(observations.times[peakFrame], de)}`} className="rounded-lg border border-amber-400 bg-amber-400/20 px-2.5 py-2 text-xs font-semibold text-amber-200">⚡</button>
+          <input aria-label="Expanded observation time" aria-valuetext={prettyTime(time, de)} type="range" min="0" max={observations.times.length - 1} value={frame} onChange={e => selectFrame(Number(e.target.value))} className="flex-1 accent-amber-300" />
+          <span className="text-xs font-mono whitespace-nowrap">{observed}/{observations.stations.length} radar</span>
+        </div>}
       </div>);
 
   return <section id="bird-migration-demo" aria-labelledby="bird-map-title" className="scroll-mt-48 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
@@ -176,8 +223,13 @@ function BirdMovementView({ dataset, lang, switcher }: { dataset: BirdDatasetId;
     </div>
     <div className="p-4 sm:p-6 space-y-4">
       {expanded ? createPortal(mapContent, document.body) : mapContent}
-      <div className="flex flex-wrap items-end gap-3">
-        <button type="button" onClick={togglePlayback} aria-label={playing ? 'Pause' : (de ? 'Bewegung abspielen' : 'Play movement')} aria-pressed={playing} className="rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-700">{playing ? 'Ⅱ Pause' : `▶ ${de ? 'Bewegung abspielen' : 'Play movement'}`}</button>
+      <div className="flex flex-wrap items-end gap-2.5 sm:gap-3">
+        <button type="button" onClick={togglePlayback} aria-label={playing ? 'Pause' : (de ? 'Bewegung abspielen' : 'Play movement')} aria-pressed={playing} className="rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-700 transition-colors">{playing ? 'Ⅱ Pause' : `▶ ${de ? 'Bewegung abspielen' : 'Play movement'}`}</button>
+        <div className="flex items-center gap-1">
+          <button type="button" onClick={stepBackward} disabled={frame === 0} aria-label={de ? 'Eine Stunde zurück' : 'Step back one hour'} title={de ? 'Eine Stunde zurück' : 'Step back one hour'} className="rounded-xl border border-slate-300 bg-white px-3 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 disabled:opacity-30 disabled:pointer-events-none transition-colors">◀ −1 h</button>
+          <button type="button" onClick={stepForward} disabled={frame === observations.times.length - 1} aria-label={de ? 'Eine Stunde vor' : 'Step forward one hour'} title={de ? 'Eine Stunde vor' : 'Step forward one hour'} className="rounded-xl border border-slate-300 bg-white px-3 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 disabled:opacity-30 disabled:pointer-events-none transition-colors">+1 h ▶</button>
+        </div>
+        <button type="button" onClick={jumpToPeak} aria-label={de ? 'Zur stärksten Zugstunde springen' : 'Jump to peak migration hour'} title={de ? `Spitzenstunde: ${prettyTime(observations.times[peakFrame], de)}` : `Peak hour: ${prettyTime(observations.times[peakFrame], de)}`} className="rounded-xl border border-amber-300 bg-amber-50 px-3.5 py-3 text-sm font-semibold text-amber-900 hover:bg-amber-100 transition-colors">⚡ {de ? 'Zugspitze' : 'Peak wave'}</button>
         <label className="text-xs font-semibold text-slate-600">{de ? 'Datum (UTC)' : 'Date (UTC)'}<select aria-label={de ? 'Datum (UTC)' : 'Date (UTC)'} value={dayOf(time)} onChange={e => {
           const hour = time.slice(11, 13);
           const index = observations.times.findIndex(t => dayOf(t) === e.target.value && t.slice(11, 13) === hour);
@@ -202,9 +254,17 @@ function BirdMovementView({ dataset, lang, switcher }: { dataset: BirdDatasetId;
       <BirdStationChart dataset={dataset} code={selectedStation} frame={frame} lang={lang} onStation={setSelectedStation} onTime={selectFrame} />
       <BirdForecastCheck lang={lang} />
       <details className="border-t border-slate-200 pt-3"><summary className="cursor-pointer text-sm font-semibold">{de ? 'Radarmessungen' : 'Radar readings'}</summary>
+        <p className="text-xs text-slate-500 mt-1">{de ? 'Klicke auf eine Station in der Tabelle, um sie auf der Karte anzuzeigen und ihr Diagramm aufzurufen.' : 'Click any station row to highlight and center it on the map and view its weekly chart.'}</p>
         <div className="overflow-x-auto mt-3"><table className="w-full text-sm text-left"><caption className="sr-only">{de ? 'Beobachtungen zum gewählten Zeitpunkt' : 'Observations at selected time'}</caption><thead><tr><th scope="col">Radar</th><th scope="col">{de ? 'Vögel/km²' : 'Birds/km²'}</th><th scope="col">{de ? 'Richtung' : 'Bearing'}</th></tr></thead><tbody>{observations.stations.map(s => {
-          const r = s.readings[frame]; const direction = r.density !== null && r.density > 0 && r.u !== null && r.v !== null && Math.hypot(r.u, r.v) > .01 ? `${((Math.atan2(r.u, r.v) * 180 / Math.PI + 360) % 360).toFixed(0)}°` : '—';
-          return <tr key={s.code} className="border-t border-slate-100"><th scope="row" className="py-2 font-normal">{BIRD_RADAR_NAMES[s.code] ?? s.code} <span className="text-xs text-slate-400">{s.code.toUpperCase()}</span></th><td>{r.density === null ? (r.status === 'daytime' ? (de ? 'Tagsüber' : 'Daytime') : (de ? 'Fehlend' : 'Missing')) : r.density.toFixed(2)}{r.status === 'unscreened' ? <span className="text-xs text-amber-700"> {de ? '(ungeprüft)' : '(unscreened)'}</span> : null}</td><td>{direction}</td></tr>;
+          const r = s.readings[frame];
+          let direction = '—';
+          if (r.density !== null && r.density > 0 && r.u !== null && r.v !== null && Math.hypot(r.u, r.v) > .01) {
+            const deg = (Math.atan2(r.u, r.v) * 180 / Math.PI + 360) % 360;
+            const card = cardinalDirection(deg, de);
+            const speedKmh = Math.round(Math.hypot(r.u, r.v) * 3.6);
+            direction = `${card} (${deg.toFixed(0)}°) · ${speedKmh} km/h`;
+          }
+          return <tr key={s.code} onClick={() => handleSelectStation(s.code)} className={`border-t border-slate-100 cursor-pointer transition-colors ${s.code === selectedStation ? 'bg-sky-50 font-medium' : 'hover:bg-slate-50'}`} title={de ? `${BIRD_RADAR_NAMES[s.code] ?? s.code} auswählen` : `Select ${BIRD_RADAR_NAMES[s.code] ?? s.code}`}><th scope="row" className="py-2.5 font-normal">{s.code === selectedStation && <span className="text-blue-600 mr-1" aria-hidden="true">📍</span>}{BIRD_RADAR_NAMES[s.code] ?? s.code} <span className="text-xs text-slate-400">({s.code.toUpperCase()})</span></th><td>{r.density === null ? (r.status === 'daytime' ? (de ? 'Tagsüber' : 'Daytime') : (de ? 'Fehlend' : 'Missing')) : r.density.toFixed(2)}{r.status === 'unscreened' ? <span className="text-xs text-amber-700"> {de ? '(ungeprüft)' : '(unscreened)'}</span> : null}</td><td>{direction}</td></tr>;
         })}</tbody></table></div>
       </details>
       {recent

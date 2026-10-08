@@ -1,7 +1,10 @@
 {
   "auditVersion": 1,
-  "generatedAt": "2026-10-08T19:01:48.053Z",
-  "repository": {},
+  "generatedAt": "2026-10-08T21:26:15.983Z",
+  "repository": {
+    "commit": "1004cc6b",
+    "branch": "main"
+  },
   "inventory": {
     "doses": 45,
     "graves": 140,
@@ -42,130 +45,35 @@
     {
       "id": "dosen",
       "name": "check:dosen",
-      "status": "fail",
-      "findings": [
-        {
-          "id": "CHECK-FAIL-dosen",
-          "severity": "error",
-          "category": "test",
-          "message": "Validation check \"check:dosen\" failed: spawnSync /bin/sh EPERM",
-          "details": {
-            "fullOutput": "spawnSync /bin/sh EPERM"
-          }
-        }
-      ]
+      "status": "pass",
+      "findings": []
     },
     {
       "id": "books",
       "name": "check:books",
-      "status": "fail",
-      "findings": [
-        {
-          "id": "CHECK-FAIL-books",
-          "severity": "error",
-          "category": "test",
-          "message": "Validation check \"check:books\" failed: spawnSync /bin/sh EPERM",
-          "details": {
-            "fullOutput": "spawnSync /bin/sh EPERM"
-          }
-        }
-      ]
+      "status": "pass",
+      "findings": []
     },
     {
       "id": "ideaFrontmatter",
       "name": "check:idea-frontmatter",
-      "status": "fail",
-      "findings": [
-        {
-          "id": "CHECK-FAIL-ideaFrontmatter",
-          "severity": "error",
-          "category": "test",
-          "message": "Validation check \"check:idea-frontmatter\" failed: spawnSync /bin/sh EPERM",
-          "details": {
-            "fullOutput": "spawnSync /bin/sh EPERM"
-          }
-        }
-      ]
+      "status": "pass",
+      "findings": []
     },
     {
       "id": "protokoll",
       "name": "check:protokoll",
-      "status": "fail",
-      "findings": [
-        {
-          "id": "CHECK-FAIL-protokoll",
-          "severity": "error",
-          "category": "test",
-          "message": "Validation check \"check:protokoll\" failed: spawnSync /bin/sh EPERM",
-          "details": {
-            "fullOutput": "spawnSync /bin/sh EPERM"
-          }
-        }
-      ]
+      "status": "pass",
+      "findings": []
     },
     {
       "id": "friedhof",
       "name": "check:friedhof",
-      "status": "fail",
-      "findings": [
-        {
-          "id": "CHECK-FAIL-friedhof",
-          "severity": "error",
-          "category": "test",
-          "message": "Validation check \"check:friedhof\" failed: spawnSync /bin/sh EPERM",
-          "details": {
-            "fullOutput": "spawnSync /bin/sh EPERM"
-          }
-        }
-      ]
+      "status": "pass",
+      "findings": []
     }
   ],
   "findings": [
-    {
-      "id": "CHECK-FAIL-books",
-      "severity": "error",
-      "category": "test",
-      "message": "Validation check \"check:books\" failed: spawnSync /bin/sh EPERM",
-      "details": {
-        "fullOutput": "spawnSync /bin/sh EPERM"
-      }
-    },
-    {
-      "id": "CHECK-FAIL-dosen",
-      "severity": "error",
-      "category": "test",
-      "message": "Validation check \"check:dosen\" failed: spawnSync /bin/sh EPERM",
-      "details": {
-        "fullOutput": "spawnSync /bin/sh EPERM"
-      }
-    },
-    {
-      "id": "CHECK-FAIL-friedhof",
-      "severity": "error",
-      "category": "test",
-      "message": "Validation check \"check:friedhof\" failed: spawnSync /bin/sh EPERM",
-      "details": {
-        "fullOutput": "spawnSync /bin/sh EPERM"
-      }
-    },
-    {
-      "id": "CHECK-FAIL-ideaFrontmatter",
-      "severity": "error",
-      "category": "test",
-      "message": "Validation check \"check:idea-frontmatter\" failed: spawnSync /bin/sh EPERM",
-      "details": {
-        "fullOutput": "spawnSync /bin/sh EPERM"
-      }
-    },
-    {
-      "id": "CHECK-FAIL-protokoll",
-      "severity": "error",
-      "category": "test",
-      "message": "Validation check \"check:protokoll\" failed: spawnSync /bin/sh EPERM",
-      "details": {
-        "fullOutput": "spawnSync /bin/sh EPERM"
-      }
-    },
     {
       "id": "MD-BROKEN-LINK-vernichtungs-offenlegungsregister-../../07-demos/vernichtungs-offenlegungsregister/data/README.md",
       "severity": "error",
