@@ -208,7 +208,7 @@ ${lines('Nächstes Mal (Engines)', engines.flatMap((r) => r.data.naechstesMal ??
 ${lines('Lehren (Reviewer)', [...(inputs ?? [])].filter((r) => r?.contract === 'reviews' && r.status === 'ok').flatMap((r) => r.data.lehren ?? []))}
 Aufgaben:
 0. Gebucht werden NUR die Kandidaten der Liste oben (id exakt übernehmen). Keine Zeilen über Prozess, Werkzeuge oder Abschnittstitel („Prüfung Stamm“ o. Ä.): das gehört in die Retro.
-1. Je Kandidat eine Protokollzeile (method nach Engine: ideen-scout → ideenrunde, bisoziations-kollider → bisoziation, inversions-agent → inversion). Vorher run_cli bib find --stamm gegen Wiedergänger; ein Wiedergänger wird als Nachprüfung im Beleg markiert, nicht doppelt gebucht. Prüfen ab: 12 Monate nach heute.
+1. Je Kandidat eine Protokollzeile (method nach Engine: ideen-scout → ideenrunde, bisoziations-kollider → bisoziation, inversions-agent → inversion, constraint-release-agent → constraint-release). Vorher run_cli bib find --stamm gegen Wiedergänger; ein Wiedergänger wird als Nachprüfung im Beleg markiert, nicht doppelt gebucht. Prüfen ab: 12 Monate nach heute.
 2. Gräber: jede „besetzt“-Idee, die noch nicht begraben ist, und jede Review mit Triage „Friedhof“ (dessen Totenschein übernehmen), mit vollständigem Totenschein auf Deutsch und Englisch.
 3. Quellenmeldungen zusammenführen.
 4. Retro für das Playbook (mindestens ein konkreter „Nächstes Mal“-Punkt) und offene Entscheidungen für Félix.
@@ -220,7 +220,7 @@ function librarianMock({ inputs } = {}) {
   const reviews = reviewsFromInputs(inputs);
   const list = cands.length ? cands : [{ id: 'mock-idee-b', title: 'Mock-Idee B', urteil: 'besetzt', beleg: 'Gibt es als App, https://example.org/b', evidenz: 'seite', foundBy: ['ideen-scout'], beschreibung: 'Zweite Testidee.' }];
   const day = new Date().toISOString().slice(0, 10);
-  const method = (a) => ({ 'ideen-scout': 'ideenrunde', 'bisoziations-kollider': 'bisoziation', 'inversions-agent': 'inversion' }[a] ?? 'ideenrunde');
+  const method = (a) => ({ 'ideen-scout': 'ideenrunde', 'bisoziations-kollider': 'bisoziation', 'inversions-agent': 'inversion', 'constraint-release-agent': 'constraint-release' }[a] ?? 'ideenrunde');
   const protokoll = list.map((c) => ({ titel: c.title, id: c.id, urteil: c.urteil, beleg: `${c.foundBy.join(' + ')}: ${c.beleg}${reviews.get(c.id) ? ` → nach Review: ${reviews.get(c.id).triage} (${reviews.get(c.id).kern}/35)` : ''}`, evidenz: c.evidenz, method: method(c.foundBy[0]), pruefenAb: '10/2027' }));
   const dead = list.filter((c) => c.urteil === 'besetzt' || reviews.get(c.id)?.triage === 'Friedhof');
   const graeber = dead.map((c) => {
@@ -264,6 +264,29 @@ export const PROFILES = {
       build: (record) => [{ kind: 'append', file: LOGS.classification, text: renderLogSection({ record, title: `Review ${record.thema ? `„${record.thema}“ ` : ''}per Kommandozeile`, table: reviewTable(record.data) }) }],
     },
     mockReply: reviewMock,
+  },
+  'constraint-release-agent': {
+    role: 'Engine 4: prüft belegte Änderungen alter Blocker und entwirft falsifizierbare Experimente.',
+    contract: 'candidates',
+    requireSearch: true,
+    postProcess: downgradeCandidates,
+    buildTask: ({ task, thema }) => {
+      if (task && task.trim()) return task.trim();
+      if (!thema) throw new Error('constraint-release-agent braucht --thema oder --task / --task-file.');
+      return `Teamrunde, Engine 4 (What Changed?). Thema: ${thema}
+1. load_skill constraint-release; Pflichtlektüre und letzte Retro im eigenen Log lesen.
+2. Höchstens drei belegte Blocker/Änderungs-Paare prüfen, einschließlich exakter Auferstehungsbedingungen; run_cli bib find --stamm und grab show verwenden.
+3. Datierte Primärbelege, kausale Brücke, Gegenprobe ohne Änderung, Restblocker und unabhängige Empfänger-/Existenzsuche liefern.
+4. Eine kleine Prüfung mit Baseline, Metrik, Pass-/Stoppkriterium und Budget entwerfen. Keine Vertex-Aufrufe.
+Liefere Evidenzkarten im Bericht und Vertrag candidates. quelle/beleg enthalten die ganze Vorher-Nachher-Kette; restluecke enthält Experiment und Restblocker. Gestoppte Paare nur im Bericht, null Kandidaten ist gültig. Keine automatische Wiederbelebung oder Dose-Freigabe.`;
+    },
+    summarize: engineSummary,
+    writes: {
+      describe: `${LOGS.constraintRelease} (neuer Abschnitt, nur mit --write)`,
+      files: [LOGS.constraintRelease],
+      build: (record) => [{ kind: 'append', file: LOGS.constraintRelease, text: renderLogSection({ record, title: 'Constraint Release per Kommandozeile', table: candidateTable(record.data) }) }],
+    },
+    mockReply: () => `## Constraint Release (Mock)\n\nKein Blocker oder Delta recherchiert; dieser leere Lauf prüft nur die CLI-Kette.\n\n\`\`\`json\n${JSON.stringify({ candidates: [], gelernt: ['Mock ist keine Recherche.'], naechstesMal: ['Belegte Paare mit dem nativen Agenten prüfen.'], quellenmeldung: [] })}\n\`\`\``,
   },
   'inversions-agent': {
     role: 'Engine 3: invertiert ein reguliertes oder finanziertes System in ein unbebautes Gemeingut-Werkzeug und prüft die Kandidaten.',

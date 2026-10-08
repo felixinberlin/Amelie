@@ -80,6 +80,7 @@ export async function applyWrites({ root, record, profile, dryRun = false, allow
 }
 
 export const LOGS = {
+  constraintRelease: '06-suche/amelie-constraint-release-log.md',
   classification: '06-suche/amelie-classification-log.md',
   inversion: '06-suche/amelie-inversions-log.md',
   bisoziation: '06-suche/amelie-bisoziation-log.md',

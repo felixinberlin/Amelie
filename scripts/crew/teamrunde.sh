@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Teamrunde der Amélie-Crew von der Kommandozeile, ohne Claude Code.
-# Ablauf wie in skills/amelie-orchestrator: Vorflug → drei Engines parallel → Merge → Reviewer → Bibliothekar.
+# Ablauf wie in skills/amelie-orchestrator: Vorflug → vier Engines parallel → Merge → Reviewer → Bibliothekar.
 #
 #   npm run teamrunde -- "<Thema>" [--model <id>] [--mock] [--write] [--engines "ideen-scout inversions-agent"] [--runs-dir <Pfad>]
 #
@@ -12,7 +12,7 @@
 set -uo pipefail
 cd "$(dirname "$0")/../.."
 
-THEMA=""; WRITE=0; ENGINES="ideen-scout bisoziations-kollider inversions-agent"; COMMON=()
+THEMA=""; WRITE=0; ENGINES="ideen-scout bisoziations-kollider inversions-agent constraint-release-agent"; COMMON=()
 while [ $# -gt 0 ]; do
   case "$1" in
     --model) COMMON+=(--model "$2"); shift 2 ;;

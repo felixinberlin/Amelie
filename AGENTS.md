@@ -117,15 +117,16 @@ Wenn du ein Ticket, ein Kriterium oder eine Dosen-Beschreibung änderst, musst d
   * **Mail 9:** An Prof. Dr. Timm John (FU Berlin Geowissenschaften) ist auditiert und versandfertig.
 * **Agenten- und Skill-Architektur:**
   * **Mathematischer Berater (optional):** `.claude/agents/mathematician.md` + `skills/mathematician/mathematician/SKILL.md`. Bei mathematischen Annahmen, neuen Theoremen, Optimierung, Unsicherheit oder symbolischen/numerischen Prüfungen hinzuziehen. Liefert Beratung an BIB, MARK/Entdeckungs-Engines, Reviewer und Demo-Builder; schreibt keine geteilten Register.
-  * **3 Entdeckungs-Engines:**
+  * **4 Entdeckungs-Engines:**
     * `skills/amelie-ideenrunde/` (Empirische Primärquellen-Suche).
     * `skills/lacunar-bisociation/` (Analoge Kollision & lakunäre Lückenfindung).
     * `skills/asymmetric-inversion/` (Invertierte Reibungsmethode / Vollzugslücken).
+    * `skills/constraint-release/` (What Changed? — belegte Blockeränderung, kausale Brücke, falsifizierbarer Test; Agent `constraint-release-agent`).
   * **1 Reviewer & Vektor-Klassifikator:**
     * `skills/idea-reviewer/` (`idea-reviewer.skill`): 7-Vektoren-Audit (Novelty, Complexity, Possibility, Longevity, Civic SWOT, Tech Tree, Ground Truth) mit Logbuch in `06-suche/amelie-classification-log.md`.
   * **1 Packaging-Agent:**
     * `skills/dose-packer/` (`dose-packer.skill` & Subagent `dose-packer`): Schreibt zweisprachige Dossiers (`05-dosen/`, `en/05-dosen/`), verknüpft Dosen im React-Frontend (`src/data/dosen.ts`), synchronisiert Frontmatter und Caches (`export:data`).
-  * **Orchestrierung (Team-Agenten):** `skills/amelie-orchestrator/` beschreibt die Teamrunde (Vorflug → 3 Engines parallel → Konvergenz-Merge → Reviewer → Packer → Demo-Builder → Bibliothekar → Abschluss). Die Rollen liegen als Subagenten in `.claude/agents/` (`ideen-scout`, `bisoziations-kollider`, `inversions-agent`, `idea-reviewer`, `dose-packer`, `demo-builder`, `bibliothekar`) mit disjunkten Schreibrechten.
+  * **Orchestrierung (Team-Agenten):** `skills/amelie-orchestrator/` beschreibt die Teamrunde (Vorflug → 4 Engines parallel → Konvergenz-Merge → Reviewer → Packer → Demo-Builder → Bibliothekar → Abschluss). Die Rollen liegen als Subagenten in `.claude/agents/` (`ideen-scout`, `bisoziations-kollider`, `inversions-agent`, `constraint-release-agent`, `idea-reviewer`, `dose-packer`, `demo-builder`, `bibliothekar`) mit disjunkten Schreibrechten.
   * **Aktueller Dosenstand:** 45 Dosen im Bestand, 81 Gräber. Neu verpackt: `strassennamen-pruefer` (Heimatgedächtnis-Runde 29.09.2026), `umsetzungsplan-register` (Offenlegungs-Runde Lauf A 28.09.2026), `vernichtungs-offenlegungsregister` (Teamrunde ESPR 28.09.2026), `abbundzeichen-fundbuch` (Holz-Runde 27.09.2026), `bleifrei-lotse` und `tarot-zustandsmaschine` (Arcana Schema).
 * **Offenlegungs-Runde, Lauf A (lokal, 28.09.2026, Teamrunde 2 mit `venture-analyst`):**
   * Gleiches Thema wie Lauf B, parallel und ohne Absprache gelaufen; Abgleich im Prüfprotokoll. **Netz offen**, Normtexte als `[Seite]` gelesen (eur-lex nur über `publications.europa.eu/resource/celex/<CELEX>`).

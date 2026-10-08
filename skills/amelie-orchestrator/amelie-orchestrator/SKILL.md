@@ -1,6 +1,6 @@
 ---
 name: amelie-orchestrator
-description: Orchestriert eine vollständige Amélie-Teamrunde mit allen Skills und Agenten — drei Entdeckungs-Engines parallel (ideen-scout, bisoziations-kollider, inversions-agent), Konvergenz-Merge, unabhängiger Reviewer, Packer, Demo-Builder und Bibliothekar — von der Themenwahl bis zum grünen Lint/Test und Commit. Use whenever the user asks for an agent orchestration, a team round, "alle Agenten", "alle Skills", "Orchestrierung", "Teamrunde", "full pipeline", or wants new ideas worked end-to-end rather than one method alone.
+description: Orchestriert eine vollständige Amélie-Teamrunde mit allen Skills und Agenten — vier Entdeckungs-Engines parallel (ideen-scout, bisoziations-kollider, inversions-agent, constraint-release-agent), Konvergenz-Merge, unabhängiger Reviewer, Packer, Demo-Builder und Bibliothekar — von der Themenwahl bis zum grünen Lint/Test und Commit. Use whenever the user asks for an agent orchestration, a team round, "alle Agenten", "alle Skills", "Orchestrierung", "Teamrunde", "full pipeline", or wants new ideas worked end-to-end rather than one method alone.
 ---
 
 # Amélie — Orchestrator (Teamrunde)
@@ -15,6 +15,7 @@ Eine Teamrunde ist die Holz-Runde (27.09.2026) als wiederholbares Verfahren. Dor
 | Engine 1 | `ideen-scout` | `amelie-ideenrunde` | nichts (liefert Text) |
 | Engine 2 | `bisoziations-kollider` | `lacunar-bisociation` | `06-suche/amelie-bisoziation-log.md` |
 | Engine 3 | `inversions-agent` | `asymmetric-inversion` | `06-suche/amelie-inversions-log.md` |
+| Engine 4 | `constraint-release-agent` | `constraint-release` | `06-suche/amelie-constraint-release-log.md` |
 | Mathematik (bei Bedarf) | `mathematician` | `mathematician` | nichts (liefert Beratung und Quellenmeldung) |
 | Prüfer | `idea-reviewer` | `idea-reviewer` | `06-suche/amelie-classification-log.md` |
 | Packer | `dose-packer` | `dose-packer` | `05-dosen/`, `en/05-dosen/`, `src/data/dosen.ts` (`DOSEN_DATA`), `scripts/dosen-review-metadata.json`, `public/data/`, die eine Gepackt-Zeile im Prüfprotokoll |
@@ -33,7 +34,7 @@ Wenn ein Kandidat von einem Theorem, einer Optimierungsannahme, einem Unsicherhe
 
 ```
 Phase 0  Vorflug (Orchestrator)  ─ Retro lesen, Thema wählen, Netz prüfen, Friedhofsgang, Baseline lint/test
-Phase 1  Entdeckung (parallel)   ─ ideen-scout ‖ bisoziations-kollider ‖ inversions-agent
+Phase 1  Entdeckung (parallel)   ─ ideen-scout ‖ bisoziations-kollider ‖ inversions-agent ‖ constraint-release-agent
 Phase 2  Konvergenz-Merge        ─ Orchestrator: deduplizieren, Doppelfunde markieren, gegen Protokoll/Atlas halten
 Phase 3  Review                  ─ idea-reviewer auf alle frei/verengt-Kandidaten
 Phase 4  Verpacken (optional)    ─ dose-packer, dann demo-builder, je Dose Ready (max. 1–2 pro Runde)
@@ -52,7 +53,7 @@ Phase 6  Abschluss               ─ Orchestrator: npm run lint && npm test, Com
 
 ### Phase 1 · Entdeckung
 
-Drei Agenten **in einer Nachricht** starten, gleiches Thema, gleiche Warnliste, verschiedene Methode. Jeder Prompt enthält: Thema, Rundenname, Datum, Warnliste, Netzstatus, Schreibrechte, Rückgabeformat (siehe Agenten-Definitionen). Nicht vorab Ideen vorgeben — das würde die Konvergenzprobe entwerten.
+Vier Agenten **in einer Nachricht** starten, gleiches Thema, gleiche Warnliste, verschiedene Methode. Jeder Prompt enthält: Thema, Rundenname, Datum, Warnliste, Netzstatus, Schreibrechte, Rückgabeformat (siehe Agenten-Definitionen). Nicht vorab Ideen vorgeben — das würde die Konvergenzprobe entwerten. Engine 4 prüft höchstens drei datierte Blocker/Änderungs-Paare; keine belegte Änderung ergibt null Kandidaten. Konvergenz ist ein Suchsignal, kein unabhängiger Wahrheitsbeweis.
 
 ### Phase 2 · Konvergenz-Merge
 

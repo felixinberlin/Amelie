@@ -240,6 +240,7 @@ const LOG_FILES = [
   '06-suche/amelie-classification-log.md',
   '06-suche/amelie-bisoziation-log.md',
   '06-suche/amelie-inversions-log.md',
+  '06-suche/amelie-constraint-release-log.md',
   '06-suche/amelie-suchplaybook.md',
   '06-suche/amelie-foerderlandschaft.md',
   '06-suche/amelie-foerder-und-preisatlas.md',

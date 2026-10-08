@@ -244,3 +244,9 @@ describe('CLI-Durchlauf (Regression: echte Dosen-/Grab-Mengen)', () => {
     expect(f.status).toBe(2);
   });
 });
+
+
+it('finds the constraint-release engine log through shared memory search', () => {
+  const hits = findAll(['attributing ordinary interpolation']);
+  expect(hits.some((h: any) => h.where.includes('amelie-constraint-release-log.md'))).toBe(true);
+});
