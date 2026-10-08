@@ -60,3 +60,18 @@ Pick **one** question with an observable result. Deliver a working incremental i
   5. Station chart scrubbing: clicking the weekly density SVG scrubs the map directly to that hour; peak density and timestamp are prominently displayed.
   6. Human-readable radar station names in the prospective forecast table.
 - **Verification**: 13 browser tests (all passing), 764 Vitest tests, 16 map Python tests, lint and production build green.
+
+## Findings of 8 October 2026 (fourth session, late night) — Governance, Power Landscape & Librarian Memory Rule
+
+- **Governance & Conceptual Sharpening added:**
+  1. Detailed analysis documented in `02-recherche/eurobirdcast-governance-and-power-2026-10-08.md` and synthesized into bilingual dossiers (`05-dosen/eurobirdcast.md`, `en/05-dosen/eurobirdcast.md`).
+  2. Multi-scale conceptual framing: EuroBirdCast is strictly the **macro-synoptic early-warning layer** (24–48h notice for TSO redispatch reserves and municipal "Lights Out"), while **local micro-curtailment** is handled on-site by dedicated bird radars (Robin Radar / X-Band) and AI camera systems (IdentiFlight under § 45b BNatSchG).
+  3. Four-tier power landscape mapped: Data Sovereigns (DWD/EUMETNET/Aloft), Regulators & Lawmakers (BMUV/Landesämter vs. Dutch precedent *Staatscourant 2026, 2036* with TenneT), Operational Switches (TSOs 50Hertz/TenneT/Amprion/TransnetBW and Wind Operators via SCADA), and Watchdogs/Evidenz (DDA/ornitho.de and NGOs with *Verbandsklagerecht*).
+  4. Three new primary sources imported into `quellen.json` via Bibliothekar (`staatscourant-offshore-wind-vogelmigrati`, `kne-antikollisionssysteme`, `davvl-und-bundeswehr-birdtam`). Total sources: 295.
+
+- **CRITICAL PROTOCOL FOR NEXT SESSIONS (Librarian Gatekeeper Rule):**
+  - **Never edit shared memory files by hand!** Do NOT write to `06-suche/amelie-pruefprotokoll.md`, `src/data/quellen.json`, `06-suche/amelie-quellen.md`, or `src/data/graeber.json` directly from standard agent tools.
+  - All sources must be formatted as structured `Quellenmeldung` blocks and imported strictly via the Bibliothekar: `npm run bib -- quellen import <datei> --agent <name> --runde "<runde>"`.
+  - All protocol additions must use `npm run bib -- protokoll add ...`.
+  - Final consistency, linting, tests, and data exports must be run through `npm run bib -- abschluss`.
+
