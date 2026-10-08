@@ -1,17 +1,17 @@
 {
   "auditVersion": 1,
-  "generatedAt": "2026-10-08T18:05:29.905Z",
+  "generatedAt": "2026-10-08T18:09:13.011Z",
   "repository": {
-    "commit": "188903ce",
+    "commit": "c63b9bda",
     "branch": "main"
   },
   "inventory": {
     "doses": 45,
     "graves": 140,
-    "demos": 11,
+    "demos": 12,
     "researchEntries": 36,
     "candidateIdeas": 20,
-    "books": 36
+    "books": 37
   },
   "distributions": {
     "doseStatus": {
@@ -113,6 +113,14 @@
       "message": "Demo folder \"07-demos/chemhazard-stop\" does not correspond to any active Dose or Grave ID.",
       "file": "07-demos/chemhazard-stop",
       "relatedId": "chemhazard-stop"
+    },
+    {
+      "id": "DEMO-UNLINKED-europe-bird-migration",
+      "severity": "warning",
+      "category": "demo",
+      "message": "Demo folder \"07-demos/europe-bird-migration\" does not correspond to any active Dose or Grave ID.",
+      "file": "07-demos/europe-bird-migration",
+      "relatedId": "europe-bird-migration"
     },
     {
       "id": "DRIFT-AGENTS.md-Dosen-44",

@@ -162,6 +162,7 @@ test('EuroBirdCast is the first project and exposes its revival research', async
   await expect(page.locator('article').first()).toContainText('EuroBirdCast');
   await page.goto('/Amelie/#dose=eurobirdcast&lang=de');
   await expect(page.locator('main h1')).toContainText('EuroBirdCast');
+  await expect(page.getByRole('region', { name: 'Bird migration radar map' })).toBeVisible();
   await page.goto('/Amelie/dosen/eurobirdcast/book/revival/?lang=de');
   await expect(page.locator('main')).toContainText('Wiederaufnahme und Forschungsplan');
   await expect(page.locator('main')).toContainText('Bedarf unklar');

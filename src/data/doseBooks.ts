@@ -31,6 +31,13 @@ export interface BookChapter {
 export const DOSE_BOOKS: Record<string, BookChapter[]> = {
   'eurobirdcast': [
     {
+      slug: 'historical-map', path: '07-demos/europe-bird-migration/README.md',
+      titleDe: 'Interaktive Karte mit echten historischen Daten', titleEn: 'Interactive map with real historical data',
+      noteDe: 'Drei deutsche Radarstationen am 01.10.2023; diagnostische Mittelwerte, keine MTR-Validierung.',
+      noteEn: 'Three German radars on 1 October 2023; diagnostic averages, no MTR validation.',
+      date: '08.10.2026', kind: 'md',
+    },
+    {
       slug: 'revival', path: '02-recherche/eurobirdcast-revival-2026-10-08.md',
       titleDe: 'Wiederaufnahme: Evidenz, Grenzen und Forschungsplan',
       titleEn: 'Revival: evidence, limits and research plan',

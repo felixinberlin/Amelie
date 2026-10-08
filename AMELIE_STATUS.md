@@ -1,13 +1,13 @@
 # Amélie Status
 
-Generated: 2026-10-08T18:05:29.905Z
+Generated: 2026-10-08T18:09:13.011Z
 
 ## System
 
 * Dosen: 45
 * Gräber: 140
-* Demos: 11
-* Books: 36
+* Demos: 12
+* Books: 37
 * Research entries: 36
 * Candidate ideas: 20
 
@@ -51,6 +51,7 @@ Generated: 2026-10-08T18:05:29.905Z
 ### Warnings
 
 * **[DEMO-UNLINKED-chemhazard-stop]** Demo folder "07-demos/chemhazard-stop" does not correspond to any active Dose or Grave ID. (07-demos/chemhazard-stop)
+* **[DEMO-UNLINKED-europe-bird-migration]** Demo folder "07-demos/europe-bird-migration" does not correspond to any active Dose or Grave ID. (07-demos/europe-bird-migration)
 * **[DRIFT-AGENTS.md-Dosen-44]** AGENTS.md claims 44 Dosen, but deterministic source scanner finds 45. (AGENTS.md)
 * **[DRIFT-AGENTS.md-Dosen-6]** AGENTS.md claims 6 Dosen, but deterministic source scanner finds 45. (AGENTS.md)
 * **[DRIFT-AGENTS.md-Gräber-58]** AGENTS.md claims 58 Gräber, but deterministic source scanner finds 140. (AGENTS.md)
@@ -66,5 +67,5 @@ None.
 ## Generated from
 
 * Audit version: 1
-* Commit: 188903ce
+* Commit: c63b9bda
 * Branch: main

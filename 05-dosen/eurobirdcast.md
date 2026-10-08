@@ -55,3 +55,10 @@ DBU-Projektförderung ist eine mögliche Brücke für einen künftigen Umsetzung
 - [CC0 scaffold](../07-demos/eurobirdcast/README.md)
 - [Project](https://felixinberlin.github.io/Amelie/#dose=eurobirdcast)
 - [DBU funding](https://www.dbu.de/foerderung/projektfoerderung/)
+
+
+## Historische Messdatenkarte / Historical observation map
+
+Die Projektseite enthält zusätzlich die am 08.10.2026 auf `origin/main` veröffentlichte Karte: Protzel, Dresden und Ummendorf, 01.10.2023 UTC. `src/data/birdMigrationSample.json` enthält Quell-URLs, SHA-256 und Dateigrößen; Regeneration: `scripts/eurobird-demo/fetch.py`. Diese echte historische Stichprobe ist unabhängig vom synthetischen MTR-Kern: Stunden-/Höhenmittel sind keine vollständige vertikale Integration und validieren keine Abschaltempfehlung. Die Karte benötigt für Basiskacheln Internet; die Messtabelle bleibt ohne Kacheln nutzbar. Keine europaweite Messabdeckung. Weitere Recherche: `02-recherche/eurobirdcast-radar-kakeya-research-2026.md`; kein neues Kakeya-Theorem implementiert.
+
+The project page also includes the historical observation map merged from `origin/main`: three German radars, 1 October 2023 UTC. Source URLs and raw SHA-256 checksums are retained in the sample JSON. This real snapshot is separate from the synthetic MTR kernel; hourly averages do not validate rotor-band traffic or curtailment. No new Kakeya theorem is implemented.

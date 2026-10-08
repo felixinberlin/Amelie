@@ -1,6 +1,6 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { chapterPath, dosePath, withPreferences } from '../routing/routes';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import {
   ArrowLeft,
   Copy,
@@ -34,6 +34,8 @@ import {
 import { DoseItem, Language, Verdict } from '../types';
 import { AMELIE_PLEDGE } from '../data/manifest';
 import { getTranslation, getLocalizedTitle } from '../i18n';
+const BirdMigrationDemo = lazy(() => import('./BirdMigrationDemo').then(m => ({ default: m.BirdMigrationDemo })));
+
 import { DoseVectorPanel } from './DoseVectorPanel';
 import { DoseResearchUpdate } from './DoseResearchUpdate';
 import { getDoseUrl, getSimulatorUrl } from '../utils/doseUrl';
@@ -743,6 +745,11 @@ ${bookChapters
           </p>
         </section>
 
+        {dose.id === 'eurobirdcast' && (
+          <Suspense fallback={<p role="status">Loading migration observations…</p>}>
+            <BirdMigrationDemo />
+          </Suspense>
+        )}
         <DoseResearchUpdate doseId={dose.id} lang={lang} />
 
         {/* Pillar 7: Das Buch zur Dose — Rohrecherche hinter den Behauptungen */}
