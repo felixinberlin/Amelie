@@ -57,6 +57,7 @@ npm run bib -- abschluss                               # export:data → lint �
 | `ideen-scout` | Engine 1: Ideen aus Primärquellen, Existenzprüfung | `--thema` | `candidates` | nichts |
 | `bisoziations-kollider` | Engine 2: Rahmen A × fernen Rahmen B | `--thema` | `candidates` | Abschnitt in `06-suche/amelie-bisoziation-log.md` |
 | `inversions-agent` | Engine 3: reguliertes System invertieren | `--thema` | `candidates` | Abschnitt in `06-suche/amelie-inversions-log.md` |
+| `constraint-release-agent` | Engine 4: Was hat einen alten Blocker verändert? | `--thema` | `candidates` | Abschnitt in `06-suche/amelie-constraint-release-log.md` |
 | `idea-reviewer` | 8 Vektoren, Triage-Urteil | `--input <Engine-Läufe>` | `reviews` | Abschnitt in `06-suche/amelie-classification-log.md` |
 | `bibliothekar` | bucht ins Gedächtnis | `--input <Engines + Reviewer>` | `librarian` | `bib apply` (Akteur `cli-bibliothekar`) + Retro im Suchplaybook |
 | `dose-packer` | packt eine Dose-Ready-Idee | `--input <Reviewer-Lauf>` (+ `--thema <id>`, wenn mehrere) | Paket | Dossiers DE/EN, `dosen.ts`, `doseVectors.json`, Protokollzeile (`bib apply`, Akteur `cli-packer`); Schranke `export:data` + `lint` |
@@ -277,3 +278,16 @@ Aktuelle Mengen: `npm run bib -- status`.
 **Regeln für die Brücke:** Ein Schreibweg (`bib apply`); die Datenbank liest das Audit-Log als Änderungsstrom oder wird von `bib apply` als zweites Ziel bedient. Das Prüfprotokoll braucht zuerst stabile Ids (`bib protokoll show --json` als Ausgangspunkt). Herkunft mitführen (run_id, Modell, Suchfragen, geholte Seiten — die Crew-Datensätze haben `toolLog` dafür). **Offen für Félix:** Ort der Datenbank, öffentlich lesbar oder nicht (`ventures/` darf nie hinein), Rohläufe ja/nein.
 
 Code: `scripts/agent-run.mjs` (CLI), `scripts/crew/` (crew, contracts, profiles, runs, write, librarian, merge, teamrunde.sh), `scripts/agent-kit.mjs` (Werkzeuge). Tests: `src/utils/crew.test.ts`.
+
+
+## What Changed? — native first trial
+
+Ask your current coding agent: “Read `.claude/agents/constraint-release-agent.md` and follow it for EuroBirdCast. Use the existing archived rejection, revival and mathematical consultation; inspect at most three pairs. Record actual reading scope and one bounded experiment. No Vertex or paid provider calls.”
+
+Cost-free CLI plumbing check (not research):
+
+```bash
+npm run agent -- constraint-release-agent --thema EuroBirdCast --mock --dry-write --runs-dir /tmp/amelie-constraint-smoke
+```
+
+`npm run teamrunde` now includes four engines. To retain a smaller round, select them with `--engines`. A real `npm run agent` without `--mock` uses the configured provider; honor the credit restriction and select only an already authorized non-Vertex provider. Native agents can follow the definition without that runner.

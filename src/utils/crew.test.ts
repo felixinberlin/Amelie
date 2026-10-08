@@ -460,7 +460,8 @@ describe('crew: Merge und Teamrunde', () => {
     const r = spawnSync('bash', ['scripts/crew/teamrunde.sh', 'Holz', '--mock', '--runs-dir', dir], { cwd: ROOT, encoding: 'utf8', timeout: 120_000 });
     expect(r.status, r.stderr).toBe(0);
     const out = JSON.parse(r.stdout.trim().split('\n').pop()!);
-    expect(out.engines).toHaveLength(3);
+    expect(out.engines).toHaveLength(4);
+    expect(out.engines.some((id: string) => id.startsWith('constraint-release-agent-'))).toBe(true);
     expect(out.reviewer).toMatch(/^idea-reviewer-/);
     expect(out.bibliothekar).toMatch(/^bibliothekar-/);
     expect(out.written).toBe(false);
@@ -469,4 +470,34 @@ describe('crew: Merge und Teamrunde', () => {
     expect(['06-suche/amelie-pruefprotokoll.md', 'src/data/graeber.json', '06-suche/amelie-suchplaybook.md', '06-suche/amelie-classification-log.md'].map((f) => readFileSync(join(ROOT, f), 'utf8'))).toEqual(tracked);
     expect(spawnSync('bash', ['scripts/crew/teamrunde.sh'], { cwd: ROOT, encoding: 'utf8' }).status).toBe(1);
   }, 120_000);
+});
+
+
+// Engine 4: exercise discovery, empty-result handoff and the append boundary.
+describe('crew: constraint-release-agent', () => {
+  const cli = (args: string[], dir: string) => spawnSync('node', ['scripts/agent-run.mjs', ...args, '--runs-dir', dir], { cwd: ROOT, encoding: 'utf8' });
+  it('is discoverable, loads the skill and accepts a cost-free empty result', () => {
+    expect(CREW).toContain('constraint-release-agent');
+    const profile = PROFILES['constraint-release-agent'];
+    expect(profile.buildTask({ thema: 'EuroBirdCast' })).toContain('load_skill constraint-release');
+    expect(() => profile.buildTask({})).toThrow(/--thema/);
+    expect(loadDef(ROOT, 'constraint-release-agent').body).toContain('constraint-release/SKILL.md');
+    expect(checkReport(profile.contract, profile.mockReply()).data.candidates).toEqual([]);
+    const r = cli(['constraint-release-agent', '--thema', 'EuroBirdCast', '--mock', '--dry-write', '--json'], tmpRuns());
+    expect(r.status).toBe(EXIT.OK);
+    const record = JSON.parse(r.stdout);
+    expect(record.data.candidates).toEqual([]);
+    expect(record.writes).toEqual([expect.objectContaining({ file: '06-suche/amelie-constraint-release-log.md', dryRun: true })]);
+  });
+
+  it('preserves the evidence chain for reviewer and BIB and restricts writes to its log', () => {
+    const c = { ...goodCandidates.candidates[0], quelle: 'Old blocker → dated change → causal bridge', restluecke: 'Remaining blocker; baseline; metric; stop threshold; budget' };
+    const run: any = { run_id: 'constraint-release-agent-test', agent: 'constraint-release-agent', status: 'ok', contract: 'candidates', data: { candidates: [c], quellenmeldung: [] } };
+    expect(PROFILES['idea-reviewer'].buildTask({ inputs: [run] })).toContain(c.quelle);
+    expect(PROFILES['idea-reviewer'].buildTask({ inputs: [run] })).toContain(c.restluecke);
+    const task = PROFILES.bibliothekar.buildTask({ inputs: [run], thema: 'Trial' });
+    expect(task).toContain(c.quelle);
+    expect(task).toContain('constraint-release-agent → constraint-release');
+    expect(PROFILES['constraint-release-agent'].writes.files).toEqual(['06-suche/amelie-constraint-release-log.md']);
+  });
 });
