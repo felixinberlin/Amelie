@@ -1,3 +1,5 @@
+import { MATRIX_DATA } from '../data/matrix';
+import { DELIVERIES_DATA } from '../data/deliveries';
 import React, { useState, useEffect } from 'react';
 import {
   Mail,
@@ -16,13 +18,13 @@ import {
 } from 'lucide-react';
 import { MatrixRow, DeliveryEmail, Language, DoseItem, SentEmailRecord } from '../types';
 import { getTranslation, getLocalizedTitle, withCount } from '../i18n';
-import { resolveEmailBodyDoseUrls, getDoseUrl } from '../utils/doseUrl';
+import { resolveEmailBodyDoseUrls, getDeliveryDoseUrl } from '../utils/doseUrl';
 import { MusterEmailsSection } from './MusterEmailsSection';
 import { loadSentEmailsMap } from '../services/ideaDeliveryService';
 
 interface MatrixViewProps {
-  matrix: MatrixRow[];
-  deliveries: DeliveryEmail[];
+  matrix?: MatrixRow[];
+  deliveries?: DeliveryEmail[];
   dosen: DoseItem[];
   lang: Language;
   onSelectDoseById: (doseId: string) => void;
@@ -31,8 +33,8 @@ interface MatrixViewProps {
 }
 
 export const MatrixView: React.FC<MatrixViewProps> = ({
-  matrix,
-  deliveries,
+  matrix = MATRIX_DATA,
+  deliveries = DELIVERIES_DATA,
   dosen,
   lang,
   onSelectDoseById,
@@ -133,7 +135,7 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
 
   const handleCopyDoseUrl = (e: React.MouseEvent, doseId: string) => {
     e.stopPropagation();
-    const url = getDoseUrl(doseId);
+    const url = getDeliveryDoseUrl(doseId);
     navigator.clipboard.writeText(url);
     setCopiedDoseUrlId(doseId);
     setTimeout(() => setCopiedDoseUrlId(null), 2000);

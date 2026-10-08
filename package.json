@@ -32,7 +32,8 @@
     "credits": "node scripts/agent-run.mjs credits",
     "teamrunde": "bash scripts/crew/teamrunde.sh",
     "export:verwandte": "node scripts/export-verwandte.mjs",
-    "check:verwandte": "node scripts/export-verwandte.mjs --check"
+    "check:verwandte": "node scripts/export-verwandte.mjs --check",
+    "test:browser": "playwright test"
   },
   "dependencies": {
     "@types/canvas-confetti": "^1.9.0",
@@ -47,9 +48,11 @@
     "motion": "^12.4.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-router-dom": "^7.18.4",
     "tailwind-merge": "^2.6.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.64.0",
     "@tailwindcss/vite": "^4.0.0",
     "@types/leaflet": "^1.9.22",
     "@types/node": "^22.0.0",

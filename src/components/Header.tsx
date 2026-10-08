@@ -1,3 +1,6 @@
+import { Link, useLocation } from 'react-router-dom';
+import metadata from 'virtual:site-metadata';
+import { tabPath, withPreferences } from '../routing/routes';
 import React, { useState, useRef, useEffect } from 'react';
 import {
   Gift,
@@ -28,20 +31,11 @@ import {
 import { Language } from '../types';
 import { getTranslation, withCount } from '../i18n';
 import { SIMULATOR_COUNT } from '../data/doseSimulators';
-import { NORMAL_JOBS_AND_EVERYDAY_PEOPLE_IDEAS } from '../data/ideas/normalJobsAndEverydayPeople';
-import { PLAYABLE_GAME_COUNT } from './GamesView';
-import { GAME_IDEAS } from '../data/ideas/games';
-import { GAME_DOSE_IDS } from '../data/pipeline';
 import { MoodSwitcher } from './MoodSwitcher';
-import { AMELIE_MUSTERS } from '../data/musterEmails';
-import { FUNDING_DATA } from '../data/funding';
-import { SISTER_PROJECTS } from '../data/sisterProjects';
-import { QUELLEN_DATA } from '../data/quellen';
 import { NAV_SECTIONS, NavSectionId, sectionOfTab, visibleSections } from '../data/navigation';
 
 interface HeaderProps {
   currentTab: string;
-  setCurrentTab: (tab: string) => void;
   lang: Language;
   setLang: (lang: Language) => void;
   dosenCount: number;
@@ -52,7 +46,6 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({
   currentTab,
-  setCurrentTab,
   lang,
   setLang,
   dosenCount,
@@ -61,6 +54,8 @@ export const Header: React.FC<HeaderProps> = ({
   mailsCount,
 }) => {
   const t = getTranslation(lang);
+  const location = useLocation();
+  const destination = (tab: string) => withPreferences(tabPath(tab), location.search);
   const [adminMode, setAdminMode] = useState<boolean>(() => {
     try {
       return new URLSearchParams(window.location.search).has('admin') || localStorage.getItem('amelie-admin') === '1';
@@ -87,19 +82,19 @@ export const Header: React.FC<HeaderProps> = ({
     compare: { label: lang === 'de' ? 'Vergleich' : lang === 'es' ? 'Comparar' : 'Compare', icon: Radar },
     manifest: { label: t.nav.manifest, icon: Compass },
     unpacked: { label: t.nav.unpacked, icon: Sparkles, badge: unpackedCount, desc: t.nav.desc.unpacked },
-    'normal-jobs': { label: t.nav.normalJobs, icon: Heart, badge: NORMAL_JOBS_AND_EVERYDAY_PEOPLE_IDEAS.length },
+    'normal-jobs': { label: t.nav.normalJobs, icon: Heart, badge: metadata.counts['normal-jobs'] },
     discarded: { label: t.nav.discarded, icon: Trash2, badge: discardedCount },
-    games: { label: t.nav.games, icon: Gamepad2, badge: GAME_IDEAS.length + GAME_DOSE_IDS.length + PLAYABLE_GAME_COUNT },
+    games: { label: t.nav.games, icon: Gamepad2, badge: metadata.counts.games },
     sandboxes: { label: t.nav.sandboxes, icon: Sliders, badge: SIMULATOR_COUNT },
     whimsy: { label: t.nav.whimsy, icon: Smile },
-    quellen: { label: lang === 'de' ? 'Quellen' : lang === 'es' ? 'Fuentes' : 'Sources', icon: Library, badge: QUELLEN_DATA.length },
-    relatives: { label: lang === 'de' ? 'Verwandte' : lang === 'es' ? 'Parientes' : 'Relatives', icon: Heart, badge: SISTER_PROJECTS.length },
+    quellen: { label: lang === 'de' ? 'Quellen' : lang === 'es' ? 'Fuentes' : 'Sources', icon: Library, badge: metadata.counts.quellen },
+    relatives: { label: lang === 'de' ? 'Verwandte' : lang === 'es' ? 'Parientes' : 'Relatives', icon: Heart, badge: metadata.counts.relatives },
     reddit: { label: 'Reddit', icon: MessageSquare },
-    funding: { label: lang === 'de' ? 'Förderkompass' : lang === 'es' ? 'Brújula de fondos' : 'Funding compass', icon: Coins, badge: FUNDING_DATA.length },
+    funding: { label: lang === 'de' ? 'Förderkompass' : lang === 'es' ? 'Brújula de fondos' : 'Funding compass', icon: Coins, badge: metadata.counts.funding },
     ventures: { label: 'Ventures', icon: Briefcase },
     playbook: { label: t.nav.playbook, icon: Search },
     matrix: { label: t.nav.matrix, icon: Mail, badge: mailsCount },
-    'muster-emails': { label: t.nav.musterEmails, icon: Mail, badge: AMELIE_MUSTERS.length },
+    'muster-emails': { label: t.nav.musterEmails, icon: Mail, badge: metadata.counts['muster-emails'] },
     packer: { label: t.nav.packer, icon: PlusCircle },
     'google-import': { label: t.nav.googleImport, icon: FolderSync },
     'data-hub': { label: t.nav.githubPages, icon: FolderGit2 },
@@ -110,10 +105,6 @@ export const Header: React.FC<HeaderProps> = ({
   };
   const sections = visibleSections(currentTab, adminMode);
   const activeSection = sectionOfTab(currentTab);
-  const openSection = (id: NavSectionId) => {
-    const sec = NAV_SECTIONS.find((x) => x.id === id);
-    if (sec && !sec.tabs.includes(currentTab)) setCurrentTab(sec.tabs[0]);
-  };
 
   return (
     <header className="border-b border-[var(--m-line)] bg-[var(--m-bg-2)]/95 backdrop-blur-md sticky top-0 z-40 shadow-xs">
@@ -122,21 +113,19 @@ export const Header: React.FC<HeaderProps> = ({
         <div className="py-2.5 sm:py-3 flex items-center justify-between gap-3 border-b border-[var(--m-line)]/60">
           {/* Brand identity */}
           <div className="flex items-center gap-3 min-w-0">
-            <div
-              onClick={() => setCurrentTab('dosen')}
+            <Link aria-label="Amélie home" to={destination('dosen')}
               className="w-10 h-10 rounded-xl bg-[var(--m-accent)] border border-[var(--m-accent-strong)] flex items-center justify-center text-[var(--m-on-accent)] shadow-xs shrink-0 transform -rotate-1 hover:rotate-0 transition-transform cursor-pointer"
             >
               <Gift className="w-5 h-5 text-[var(--m-gold)]" />
-            </div>
+            </Link>
 
             <div className="min-w-0">
               <div className="flex items-center gap-2">
-                <button
-                  onClick={() => setCurrentTab('dosen')}
+                <Link to={destination('dosen')}
                   className="text-xl sm:text-2xl font-bold font-amelie tracking-tight text-[var(--m-ink)] hover:text-[var(--m-accent)] transition-colors cursor-pointer text-left truncate"
                 >
                   {t.app.title}
-                </button>
+                </Link>
                 <span className="text-[10px] font-typewriter px-1.5 py-0.5 rounded border border-[var(--m-accent)]/30 bg-[var(--m-accent)]/10 text-[var(--m-accent)] font-bold shrink-0">
                   CC0
                 </span>
@@ -201,9 +190,9 @@ export const Header: React.FC<HeaderProps> = ({
               const Icon = sectionIcon[sec.id];
               const isActive = activeSection?.id === sec.id;
               return (
-                <button
+                <Link
                   key={sec.id}
-                  onClick={() => openSection(sec.id)}
+                  to={destination(sec.tabs.includes(currentTab) ? currentTab : sec.tabs[0])}
                   title={sec.hint[L]}
                   aria-current={isActive ? 'page' : undefined}
                   className={`flex items-center gap-2 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-xs sm:text-sm font-medium whitespace-nowrap transition-all cursor-pointer ${
@@ -214,7 +203,7 @@ export const Header: React.FC<HeaderProps> = ({
                 >
                   <Icon className={`w-4 h-4 ${isActive ? 'text-[var(--m-gold)]' : 'text-[var(--m-muted)]'}`} />
                   <span className={isActive ? 'font-semibold tracking-tight' : ''}>{sec.label[L]}</span>
-                </button>
+                </Link>
               );
             })}
           </nav>
@@ -239,9 +228,9 @@ export const Header: React.FC<HeaderProps> = ({
               const Icon = m.icon;
               const isActive = currentTab === id;
               return (
-                <button
+                <Link
                   key={id}
-                  onClick={() => setCurrentTab(id)}
+                  to={destination(id)}
                   aria-current={isActive ? 'page' : undefined}
                   className={`flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs sm:text-[13px] whitespace-nowrap cursor-pointer border ${
                     isActive
@@ -254,7 +243,7 @@ export const Header: React.FC<HeaderProps> = ({
                   {m.badge !== undefined && (
                     <span className="text-[10px] px-1.5 rounded-full font-typewriter bg-[var(--m-bg)] border border-[var(--m-line)] text-[var(--m-ink-2)]">{m.badge}</span>
                   )}
-                </button>
+                </Link>
               );
             })}
           </nav>

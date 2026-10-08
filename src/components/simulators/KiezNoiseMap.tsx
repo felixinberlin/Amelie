@@ -1,3 +1,4 @@
+import 'leaflet/dist/leaflet.css';
 import React, { useEffect, useRef, useState, useMemo } from 'react';
 import * as LeafletModule from 'leaflet';
 import {

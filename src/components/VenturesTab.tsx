@@ -1,3 +1,5 @@
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { venturePath } from '../routing/routes';
 import React, { useEffect, useMemo, useState } from 'react';
 import { Briefcase } from 'lucide-react';
 import { Language } from '../types';
@@ -32,6 +34,8 @@ const Kpi: React.FC<{ label: string; value: React.ReactNode }> = ({ label, value
 
 /** Ventures-Tab: kommerzielle Zwillinge mit Commercial Vectors und die Läufe mit eigener Ansicht. */
 export function VenturesTab({ lang }: { lang: Language }) {
+  const location = useLocation();
+  const navigate = useNavigate();
   const L = (de: string, en: string, es: string) => (lang === 'de' ? de : lang === 'es' ? es : en);
   const [data, setData] = useState<VenturesData | null>(null);
   const [failed, setFailed] = useState(false);
@@ -41,11 +45,7 @@ export function VenturesTab({ lang }: { lang: Language }) {
 
   useEffect(() => { loadVentures().then(setData).catch(() => setFailed(true)); }, []);
 
-  useEffect(() => {
-    const onHash = () => { if (parseVentureFromUrl() === FARMACIA_LEAD_ID) setSub('farmacia'); };
-    window.addEventListener('hashchange', onHash);
-    return () => window.removeEventListener('hashchange', onHash);
-  }, []);
+  useEffect(() => { setSub(parseVentureFromUrl() === FARMACIA_LEAD_ID ? 'farmacia' : parseVentureFromUrl() ? 'leads' : 'overview'); }, [location.pathname]);
 
   const avg = useMemo(() => (data ? averageVectors(data.leads) : null), [data]);
   const stages = useMemo(() => Array.from(new Set((data?.leads ?? []).map((l) => l.stage))), [data]);
@@ -54,6 +54,8 @@ export function VenturesTab({ lang }: { lang: Language }) {
     const sc = (l: { vectors: VentureScores | null }) => (l.vectors ? total(l.vectors) : -1);
     return [...list].sort((a, b) => (sortDesc ? sc(b) - sc(a) : sc(a) - sc(b)));
   }, [data, stage, sortDesc]);
+  const requestedLead = parseVentureFromUrl();
+  const visibleLeads = requestedLead && requestedLead !== FARMACIA_LEAD_ID ? leads.filter(l => l.id === requestedLead) : leads;
   const farmacia = data?.leads.find((l) => l.id === FARMACIA_LEAD_ID);
 
   const tabs: [Sub, string][] = [
@@ -81,7 +83,7 @@ export function VenturesTab({ lang }: { lang: Language }) {
 
       <div className="flex gap-1 overflow-x-auto no-scrollbar">
         {tabs.map(([id, l]) => (
-          <button key={id} onClick={() => setSub(id)}
+          <button key={id} onClick={() => { setSub(id); navigate({ pathname: id === 'farmacia' ? venturePath(FARMACIA_LEAD_ID) : '/ventures/', search: location.search }); }}
             className={`px-2.5 py-1 rounded-lg text-xs border cursor-pointer whitespace-nowrap ${sub === id ? 'bg-[var(--m-sunk)] font-semibold border-[var(--m-line-strong)] text-[var(--m-ink)]' : 'border-transparent text-[var(--m-ink-3)]'}`}>{l}</button>
         ))}
       </div>
@@ -103,7 +105,7 @@ export function VenturesTab({ lang }: { lang: Language }) {
             <div className="text-sm font-semibold text-[var(--m-ink)] mb-2">{L('Ø je Commercial Vector (0–5)', 'Average per commercial vector (0–5)', 'Media por vector comercial (0–5)')}</div>
             {avg && <Bars s={Object.fromEntries(VECTOR_KEYS.map((k) => [k, Math.round(avg[k] * 10) / 10])) as unknown as VentureScores} lang={lang} />}
           </div>
-          <button onClick={() => setSub('farmacia')} className="text-xs underline text-[var(--m-accent)] cursor-pointer">
+          <button onClick={() => navigate({ pathname: venturePath(FARMACIA_LEAD_ID), search: location.search })} className="text-xs underline text-[var(--m-accent)] cursor-pointer">
             {L('Neuester Lauf: Apotheken-Vermittlung in Spanien →', 'Latest run: pharmacy brokerage in Spain →', 'Último análisis: intermediación de farmacias en España →')}
           </button>
         </div>
@@ -118,16 +120,16 @@ export function VenturesTab({ lang }: { lang: Language }) {
             <span className="text-[var(--m-ink-3)]">{leads.length}</span>
           </div>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {leads.map((l) => (
+            {visibleLeads.map((l) => (
               <div key={l.id} className="rounded-xl border border-[var(--m-line)] bg-[var(--m-bg-2)] p-3 space-y-2">
                 <div className="flex items-start justify-between gap-2">
-                  <div className="font-semibold text-sm text-[var(--m-ink)]">{l.name}</div>
+                  <Link to={{ pathname: venturePath(l.id), search: location.search }} className="font-semibold text-sm text-[var(--m-ink)]">{l.name}</Link>
                   <span className="text-[10px] font-typewriter px-1.5 rounded border border-[var(--m-line)] shrink-0">{l.stage}</span>
                 </div>
                 <div className="text-[11px] text-[var(--m-ink-3)]">{l.category} · {l.targetPrice}</div>
                 {l.vectors ? <><Bars s={l.vectors} lang={lang} /><div className="text-[11px] font-typewriter text-[var(--m-ink-2)]">Σ {total(l.vectors)}/25</div></> : <div className="text-[11px] text-[var(--m-ink-3)]">{L('keine Scores', 'no scores', 'sin puntuación')}</div>}
                 {l.id === FARMACIA_LEAD_ID && (
-                  <button onClick={() => setSub('farmacia')} className="text-[11px] underline text-[var(--m-accent)] cursor-pointer">{L('Analyse öffnen', 'Open analysis', 'Abrir análisis')}</button>
+                  <button onClick={() => navigate({ pathname: venturePath(FARMACIA_LEAD_ID), search: location.search })} className="text-[11px] underline text-[var(--m-accent)] cursor-pointer">{L('Analyse öffnen', 'Open analysis', 'Abrir análisis')}</button>
                 )}
               </div>
             ))}

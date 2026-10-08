@@ -2,9 +2,11 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
+import { sitePages } from './scripts/site-pages.mjs';
+
 export default defineConfig({
   base: '/Amelie/',
-  plugins: [react(), tailwindcss()],
+  plugins: [react(), tailwindcss(), sitePages()],
   resolve: {
     dedupe: ['react', 'react-dom'],
   },

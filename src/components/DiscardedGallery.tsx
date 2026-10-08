@@ -1,3 +1,4 @@
+import { DISCARDED_DATA } from '../data/dosen';
 import React, { useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { Flower2, ScrollText, Sprout, Search, BookOpen, ExternalLink, X, Moon } from 'lucide-react';
@@ -16,7 +17,7 @@ import {
 } from '../utils/friedhof';
 
 interface DiscardedGalleryProps {
-  discarded: DiscardedItem[];
+  discarded?: DiscardedItem[];
   lang: Language;
 }
 
@@ -247,7 +248,7 @@ function Grabstein({ item, lang, onOpen }: { item: DiscardedItem; lang: Language
   );
 }
 
-export const DiscardedGallery: React.FC<DiscardedGalleryProps> = ({ discarded, lang }) => {
+export const DiscardedGallery: React.FC<DiscardedGalleryProps> = ({ discarded = DISCARDED_DATA, lang }) => {
   const muster = useMemo(() => friedhofMuster(discarded), [discarded]);
   const [filter, setFilter] = useState<Filter>(null);
   const [query, setQuery] = useState('');

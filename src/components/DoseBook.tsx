@@ -1,3 +1,4 @@
+import { Link, useLocation } from 'react-router-dom';
 import React, { useEffect, useMemo, useState } from 'react';
 import { marked } from 'marked';
 import {
@@ -30,23 +31,35 @@ interface DoseBookProps {
   initialSlug?: string;
   /** Meldet den Kapitelwechsel nach oben, damit die URL mitwandert */
   onChapterChange?: (slug: string) => void;
+  chapterHref?: (slug: string) => string;
 }
 
 marked.setOptions({ gfm: true, breaks: false });
+
+function ChapterControl({ href, disabled, onClick, className, children, 'aria-current': current }: {
+  href?: string; disabled?: boolean; onClick: () => void; className: string;
+  children: React.ReactNode; 'aria-current'?: 'page';
+}) {
+  if (href && !disabled) return <Link to={href} className={className} aria-current={current}>{children}</Link>;
+  return <button disabled={disabled} onClick={onClick} className={className} aria-current={current}>{children}</button>;
+}
 
 export const DoseBook: React.FC<DoseBookProps> = ({
   chapters,
   lang,
   initialSlug,
   onChapterChange,
+  chapterHref,
 }) => {
+  const location = useLocation();
   const isDe = lang === 'de';
   const isEs = lang === 'es';
   const startIndex = Math.max(
     0,
     chapters.findIndex((c) => c.slug === initialSlug)
   );
-  const [index, setIndex] = useState(startIndex);
+  const [localIndex, setIndex] = useState(startIndex);
+  const index = chapterHref ? Math.max(0, chapters.findIndex(c => c.slug === parseBookSlugFromUrl())) : localIndex;
   const [html, setHtml] = useState<string>('');
   const [state, setState] = useState<'idle' | 'loading' | 'error'>('idle');
 
@@ -55,28 +68,8 @@ export const DoseBook: React.FC<DoseBookProps> = ({
     chapter && (chapter.kind === 'md' || chapter.kind === 'patch') && hasSource(chapter.path);
   const isPatch = chapter?.kind === 'patch';
 
-  // Ein Kapitel-Link, der im selben Tab geöffnet wird, ändert nur den Hash —
-  // die Komponente wird dabei nicht neu gebaut. Ohne diesen Zuhörer bliebe der
-  // Leser auf dem Kapitel stehen, das er gerade offen hatte, und der geteilte
-  // Link führte ins falsche Kapitel.
-  useEffect(() => {
-    const folgeUrl = () => {
-      const slug = parseBookSlugFromUrl();
-      if (!slug) return;
-      const ziel = chapters.findIndex((c) => c.slug === slug);
-      if (ziel >= 0) setIndex(ziel);
-    };
-    window.addEventListener('hashchange', folgeUrl);
-    window.addEventListener('popstate', folgeUrl);
-    return () => {
-      window.removeEventListener('hashchange', folgeUrl);
-      window.removeEventListener('popstate', folgeUrl);
-    };
-  }, [chapters]);
-
   useEffect(() => {
     if (!chapter) return;
-    onChapterChange?.(chapter.slug);
     if (!readable) {
       setHtml('');
       setState('idle');
@@ -133,11 +126,12 @@ export const DoseBook: React.FC<DoseBookProps> = ({
           {toc.map((c) => {
             const active = c.i === index;
             return (
-              <button
+              <ChapterControl
                 key={c.slug}
-                onClick={() => setIndex(c.i)}
+                href={chapterHref?.(c.slug)}
+                onClick={() => { setIndex(c.i); onChapterChange?.(c.slug); }}
                 aria-current={active ? 'page' : undefined}
-                className={`w-full text-left px-3 py-2.5 rounded-xl border transition-colors cursor-pointer ${
+                className={`block w-full text-left px-3 py-2.5 rounded-xl border transition-colors cursor-pointer ${
                   active
                     ? 'bg-white border-[#c9a227] shadow-sm'
                     : 'bg-transparent border-transparent hover:bg-[var(--m-sunk)]'
@@ -159,7 +153,7 @@ export const DoseBook: React.FC<DoseBookProps> = ({
                     </div>
                   </div>
                 </div>
-              </button>
+              </ChapterControl>
             );
           })}
         </nav>
@@ -255,22 +249,24 @@ export const DoseBook: React.FC<DoseBookProps> = ({
 
           {/* Blättern */}
           <div className="flex items-center justify-between gap-2 px-5 py-3 border-t border-[var(--m-line)] bg-[var(--m-surface-2)]">
-            <button
-              onClick={() => setIndex((i) => Math.max(0, i - 1))}
+            <ChapterControl
+              href={chapterHref?.(chapters[Math.max(0, index - 1)].slug)}
+              onClick={() => { const next = Math.max(0, index - 1); setIndex(next); onChapterChange?.(chapters[next].slug); }}
               disabled={index === 0}
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-[var(--m-line-strong)] bg-white font-typewriter text-xs font-bold text-[var(--m-ink-2)] disabled:opacity-40 disabled:cursor-not-allowed hover:bg-[var(--m-sunk)] transition-colors cursor-pointer"
             >
               <ChevronLeft className="w-3.5 h-3.5" />
               {isDe ? 'Voriges' : isEs ? 'Anterior' : 'Previous'}
-            </button>
-            <button
-              onClick={() => setIndex((i) => Math.min(chapters.length - 1, i + 1))}
+            </ChapterControl>
+            <ChapterControl
+              href={chapterHref?.(chapters[Math.min(chapters.length - 1, index + 1)].slug)}
+              onClick={() => { const next = Math.min(chapters.length - 1, index + 1); setIndex(next); onChapterChange?.(chapters[next].slug); }}
               disabled={index === chapters.length - 1}
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-[var(--m-line-strong)] bg-white font-typewriter text-xs font-bold text-[var(--m-ink-2)] disabled:opacity-40 disabled:cursor-not-allowed hover:bg-[var(--m-sunk)] transition-colors cursor-pointer"
             >
               {isDe ? 'Nächstes' : isEs ? 'Siguiente' : 'Next'}
               <ChevronRight className="w-3.5 h-3.5" />
-            </button>
+            </ChapterControl>
           </div>
         </div>
       </div>

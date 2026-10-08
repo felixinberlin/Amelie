@@ -1,170 +1,84 @@
-/**
- * Utility functions for permanent Dose URLs and deep linking
- */
+/** Permanent website URLs and backwards-compatible delivery links. */
+import metadata from 'virtual:site-metadata';
+import { chapterPath, dosePath, simulatorPath, venturePath, parsePageRoute, resolveSimulator } from '../routing/routes';
 
 export function getBaseUrl(): string {
-  if (typeof window !== 'undefined' && window.location) {
-    const origin = window.location.origin && window.location.origin !== 'null' && window.location.origin !== 'file://'
-      ? window.location.origin
-      : '';
-    const pathname = window.location.pathname || '/';
-    return `${origin}${pathname}`;
-  }
-  return '';
+  const origin = typeof window !== 'undefined' && /^https?:$/.test(window.location.protocol) ? window.location.origin : '';
+  return `${origin}${import.meta.env.BASE_URL || '/'}`;
 }
 
-/**
- * Returns a permanent canonical URL for a dose
- * e.g. https://domain.app/#dose=altbau-thermal
- */
-export function getDoseUrl(doseId: string): string {
-  const base = getBaseUrl();
-  return `${base}#dose=${encodeURIComponent(doseId)}`;
+function route() {
+  if (typeof window === 'undefined') return null;
+  const base = import.meta.env.BASE_URL || '/';
+  const pathname = window.location.pathname.startsWith(base) ? '/' + window.location.pathname.slice(base.length) : window.location.pathname;
+  return parsePageRoute(pathname, window.location.search);
 }
 
-/**
- * Returns a permanent canonical URL for a simulator in the sandboxes tab
- * e.g. https://domain.app/#sim=glasanflug
- */
-export function getSimulatorUrl(simKey: string): string {
-  const base = getBaseUrl();
-  return `${base}#sim=${encodeURIComponent(simKey)}`;
+function absolute(path: string): string {
+  const url = new URL(path, 'https://amelie.invalid');
+  const lang = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('lang') : null;
+  if (lang && /^(de|en|es)$/.test(lang)) url.searchParams.set('lang', lang);
+  return getBaseUrl() + (url.pathname + url.search + url.hash).slice(1);
+}
+export function getDoseUrl(id: string): string {
+  return absolute(metadata.doseIds.includes(id) ? dosePath(id) : `/dosen/?dose=${encodeURIComponent(id)}`);
+}
+/** Project policy: delivery links always point to the root-level dose anchor. */
+export function getDeliveryDoseUrl(id: string): string { return `${getBaseUrl()}#dose=${encodeURIComponent(id)}`; }
+export function getSimulatorUrl(key: string): string { return absolute(simulatorPath(resolveSimulator(key) ?? key)); }
+export function getBookChapterUrl(id: string, slug: string): string { return absolute(chapterPath(id, slug)); }
+export function getVentureUrl(id: string): string { return absolute(venturePath(id)); }
+export function getCompareUrl(ids: string[]): string {
+  return absolute(`/compare/?${new URLSearchParams({ items: ids.join(',') })}`);
 }
 
-/**
- * Parses the current URL to find if a dose is requested
- * Supports:
- * - Hash: #dose=altbau-thermal or #/dose/altbau-thermal
- * - Search params: ?dose=altbau-thermal
- */
 export function parseDoseIdFromUrl(): string | null {
+  const r = route();
+  if (r?.kind === 'dose') return r.doseId;
   if (typeof window === 'undefined') return null;
-
   try {
-    // 1. Check Hash
-    const hash = window.location.hash;
-    if (hash) {
-      const matchDoseParam = hash.match(/#(?:\/)?dose=([^&]+)/i);
-      if (matchDoseParam && matchDoseParam[1]) {
-        return decodeURIComponent(matchDoseParam[1]);
-      }
-      const matchSlashDose = hash.match(/#(?:\/)?dose\/([^/?&]+)/i);
-      if (matchSlashDose && matchSlashDose[1]) {
-        return decodeURIComponent(matchSlashDose[1]);
-      }
-    }
-
-    // 2. Check Search query parameters
-    const searchParams = new URLSearchParams(window.location.search);
-    const doseQuery = searchParams.get('dose');
-    if (doseQuery) {
-      return doseQuery;
-    }
-  } catch (err) {
-    console.error('Error parsing dose from URL:', err);
-  }
-
-  return null;
+    const match = window.location.hash.match(/^#\/?dose(?:=|\/)([^&/?]+)/i);
+    return match ? decodeURIComponent(match[1]) : new URLSearchParams(window.location.search).get('dose');
+  } catch { return null; }
 }
-
-/**
- * Permanente URL auf ein Kapitel im Buch zur Dose
- * z. B. https://domain.app/#dose=eurobirdcast&buch=besetzung
- */
-export function getBookChapterUrl(doseId: string, slug: string): string {
-  return `${getDoseUrl(doseId)}&buch=${encodeURIComponent(slug)}`;
-}
-
-/**
- * Liest das gewünschte Buchkapitel aus der URL.
- * Unterstützt #dose=<id>&buch=<slug> sowie ?buch=<slug> / ?chapter=<slug>
- */
 export function parseBookSlugFromUrl(): string | null {
+  const r = route();
+  if (r?.kind === 'dose' && r.chapter) return r.chapter;
   if (typeof window === 'undefined') return null;
-
   try {
-    const hash = window.location.hash;
-    if (hash) {
-      const match = hash.match(/[#&](?:buch|chapter|book)=([^&]+)/i);
-      if (match && match[1]) {
-        return decodeURIComponent(match[1]);
-      }
-    }
-
-    const searchParams = new URLSearchParams(window.location.search);
-    const query = searchParams.get('buch') || searchParams.get('chapter') || searchParams.get('book');
-    if (query) return query;
-  } catch (err) {
-    console.error('Error parsing book chapter from URL:', err);
-  }
-
-  return null;
+    const hash = new URLSearchParams(window.location.hash.replace(/^#\/?/, ''));
+    const query = new URLSearchParams(window.location.search);
+    return hash.get('buch') || hash.get('chapter') || hash.get('book') || query.get('buch') || query.get('chapter') || query.get('book');
+  } catch { return null; }
 }
-
-/**
- * Parses the current URL to find if a simulator/sandbox tab is requested
- * Supports:
- * - Hash: #sim=glasanflug or #simulator=glasanflug or #sandbox=glasanflug
- * - Search params: ?sim=glasanflug or ?simulator=glasanflug
- */
 export function parseSimulatorFromUrl(): string | null {
+  const r = route();
+  if (r?.kind === 'simulator') return r.simulator;
   if (typeof window === 'undefined') return null;
-
   try {
-    const hash = window.location.hash;
-    if (hash) {
-      const matchSim = hash.match(/#(?:\/)?(?:sim|simulator|sandbox)=([^&]+)/i);
-      if (matchSim && matchSim[1]) {
-        return decodeURIComponent(matchSim[1]);
-      }
-      const matchSlashSim = hash.match(/#(?:\/)?(?:sim|simulator|sandbox)\/([^/?&]+)/i);
-      if (matchSlashSim && matchSlashSim[1]) {
-        return decodeURIComponent(matchSlashSim[1]);
-      }
-    }
-
-    const searchParams = new URLSearchParams(window.location.search);
-    const simQuery = searchParams.get('sim') || searchParams.get('simulator') || searchParams.get('sandbox');
-    if (simQuery) {
-      return simQuery;
-    }
-  } catch (err) {
-    console.error('Error parsing simulator from URL:', err);
-  }
-
-  return null;
+    const match = window.location.hash.match(/^#\/?(?:sim|simulator|sandbox)(?:=|\/)([^&/?]+)/i);
+    if (match) return decodeURIComponent(match[1]);
+    const query = new URLSearchParams(window.location.search);
+    return query.get('sim') || query.get('simulator') || query.get('sandbox');
+  } catch { return null; }
 }
-
-/**
- * Updates the browser's URL hash to reflect the dose or clear it
- */
-export function setDoseUrl(doseId: string | null): void {
-  if (typeof window === 'undefined') return;
-
+export function parseCompareFromUrl(): string[] | null {
+  if (typeof window === 'undefined') return null;
   try {
-    const currentBase = window.location.pathname + window.location.search;
-    if (doseId) {
-      const newHash = `#dose=${encodeURIComponent(doseId)}`;
-      if (window.location.hash !== newHash) {
-        window.history.pushState({ doseId }, '', `${currentBase}${newHash}`);
-      }
-    } else {
-      if (window.location.hash && window.location.hash.includes('dose=')) {
-        window.history.pushState({}, '', currentBase);
-      }
-    }
-  } catch (err) {
-    // Fallback if pushState fails
-    if (doseId) {
-      window.location.hash = `dose=${encodeURIComponent(doseId)}`;
-    } else {
-      window.location.hash = '';
-    }
-  }
+    const r = route();
+    const match = window.location.hash.match(/^#\/?compare=([^&]*)/i);
+    const value = match ? decodeURIComponent(match[1]) : r?.tab === 'compare' ? new URLSearchParams(window.location.search).get('items') : null;
+    return value === null ? null : value.split(',').map(s => s.trim()).filter(Boolean);
+  } catch { return null; }
 }
-
-export function clearDoseUrl(): void {
-  setDoseUrl(null);
+export function parseVentureFromUrl(): string | null {
+  const r = route();
+  if (r?.kind === 'venture') return r.ventureId;
+  if (typeof window === 'undefined') return null;
+  try {
+    const match = window.location.hash.match(/^#\/?venture=([^&]+)/i);
+    return match ? decodeURIComponent(match[1]) : null;
+  } catch { return null; }
 }
 
 /**
@@ -178,7 +92,7 @@ export function resolveEmailBodyDoseUrls(body: string, doseLinks?: string[]): st
 
   // If there is only one dose link and a generic or named placeholder
   if (doseLinks.length === 1) {
-    const url = getDoseUrl(doseLinks[0]);
+    const url = getDeliveryDoseUrl(doseLinks[0]);
     resolved = resolved.replace(/\[Link zur Dose:[^\]]+\]/gi, url);
     resolved = resolved.replace(/\[Link to Dose:[^\]]+\]/gi, url);
     resolved = resolved.replace(/\[Link to tin:[^\]]+\]/gi, url);
@@ -190,7 +104,7 @@ export function resolveEmailBodyDoseUrls(body: string, doseLinks?: string[]): st
     // - Sperrmüll-Radar: [Link zur Dose]
     // - Kiez-Lärmkarte: [Link zur Dose]
     doseLinks.forEach((id) => {
-      const url = getDoseUrl(id);
+      const url = getDeliveryDoseUrl(id);
       // Replace case where dose ID or key is in placeholder
       const escapedId = id.replace(/-/g, '[-\\s]?');
       const specificRegex = new RegExp(`\\[(?:Link zur Dose|Link to tin):?\\s*${escapedId}[^\\]]*\\]`, 'gi');
@@ -201,76 +115,13 @@ export function resolveEmailBodyDoseUrls(body: string, doseLinks?: string[]): st
     let linkIdx = 0;
     resolved = resolved.replace(/\[(?:Link zur Dose|Link to tin)\]/gi, () => {
       if (linkIdx < doseLinks.length) {
-        const url = getDoseUrl(doseLinks[linkIdx]);
+        const url = getDeliveryDoseUrl(doseLinks[linkIdx]);
         linkIdx++;
         return url;
       }
-      return getDoseUrl(doseLinks[0]);
+      return getDeliveryDoseUrl(doseLinks[0]);
     });
   }
 
   return resolved;
-}
-
-/**
- * Vergleichsseite (Tab „Compare"): Auswahl im Hash, z. B.
- * #compare=dose:kristallwachstum-3d,cand:tile-layout-centerline
- * `null` = kein Vergleichs-Link, leeres Array = Vergleichsseite ohne Auswahl.
- */
-export function parseCompareFromUrl(): string[] | null {
-  if (typeof window === 'undefined') return null;
-  try {
-    const match = window.location.hash.match(/^#(?:\/)?compare=([^&]*)/i);
-    if (!match) return null;
-    return decodeURIComponent(match[1]).split(',').map((s) => s.trim()).filter(Boolean);
-  } catch (err) {
-    console.error('Error parsing comparison from URL:', err);
-    return null;
-  }
-}
-
-const encodeCompareIds = (ids: string[]) => ids.map((id) => encodeURIComponent(id).replace(/%3A/gi, ':')).join(',');
-
-/** Permanente URL für eine Vergleichsauswahl. */
-export function getCompareUrl(ids: string[]): string {
-  return `${getBaseUrl()}#compare=${encodeCompareIds(ids)}`;
-}
-
-/** Schreibt die Auswahl in die Adresszeile, ohne Verlaufseintrag und ohne hashchange. */
-export function setCompareUrl(ids: string[]): void {
-  if (typeof window === 'undefined') return;
-  try {
-    window.history.replaceState(null, '', `#compare=${encodeCompareIds(ids)}`);
-  } catch {
-    /* Sandbox/iframe ohne History-Zugriff: Link-Kopieren funktioniert trotzdem */
-  }
-}
-
-/** Entfernt einen Vergleichs-Hash (beim Verlassen der Seite). */
-export function clearCompareUrl(): void {
-  if (typeof window === 'undefined') return;
-  try {
-    if (/^#(?:\/)?compare=/i.test(window.location.hash)) {
-      window.history.replaceState(null, '', window.location.pathname + window.location.search);
-    }
-  } catch {
-    /* ignorieren */
-  }
-}
-
-/** `#venture=<id>` öffnet den Gründer-Bereich mit dem Venture-Lead. `null` = kein Link. */
-export function parseVentureFromUrl(): string | null {
-  if (typeof window === 'undefined') return null;
-  try {
-    const match = window.location.hash.match(/^#(?:\/)?venture=([^&]+)/i);
-    return match ? decodeURIComponent(match[1]).trim() || null : null;
-  } catch (err) {
-    console.error('Error parsing venture from URL:', err);
-    return null;
-  }
-}
-
-/** Permanente URL für einen Venture-Lead. */
-export function getVentureUrl(ventureId: string): string {
-  return `${getBaseUrl()}#venture=${encodeURIComponent(ventureId)}`;
 }

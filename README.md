@@ -9,6 +9,10 @@ A method for delivering app ideas you won't build yourself to the people who can
 
 ---
 
+## Website architecture
+
+The website has direct page URLs and loads views and simulators on demand. See [routing, compatibility, and verification](docs/website-routing.md).
+
 ## Languages & Internationalization (i18n)
 
 **English is the primary/canonical language** of the codebase, web application, and core documentation.
