@@ -27,10 +27,12 @@ import {
   XCircle,
   HelpCircle,
   Stethoscope,
-  Compass
+  Compass,
+  Gift
 } from 'lucide-react';
 import { Language } from '../types';
 import { NORMAL_JOBS_AND_EVERYDAY_PEOPLE_IDEAS } from '../data/ideas/normalJobsAndEverydayPeople';
+import { sectorOf } from '../data/everydaySectors';
 import { AMELIE_PLEDGE } from '../data/manifest';
 import { getLocalizedTitle } from '../i18n';
 import { ChemHazardSimulator } from './simulators';
@@ -75,14 +77,8 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang, on
       forestry: 0,
     };
     NORMAL_JOBS_AND_EVERYDAY_PEOPLE_IDEAS.forEach(idea => {
-      const tags = idea.tags || [];
-      if (tags.some(t => ['Pflege', 'Gesundheit', 'Wundversorgung', 'Altenpflege', 'Senioren'].includes(t))) counts.care++;
-      if (tags.some(t => ['Handwerk', 'Baustelle', 'Sanitär', 'Dachdecker', 'Schornsteinfeger', 'Kfz', 'Schreiner', 'Tischler', 'Friseur', 'Fleischer'].includes(t))) counts.craft++;
-      if (tags.some(t => ['Reinigung'].includes(t))) counts.cleaning++;
-      if (tags.some(t => ['Lieferanten', 'Paketboten', 'Transport', 'LKW', 'Busfahrer', 'ÖPNV'].includes(t))) counts.transport++;
-      if (tags.some(t => ['Gastronomie', 'Bäcker', 'Kochen', 'Lebensmittel', 'Fleischer', 'Kellner', 'Service'].includes(t))) counts.food++;
-      if (tags.some(t => ['Kita', 'Bildung', 'Erzieher'].includes(t))) counts.education++;
-      if (tags.some(t => ['Forstwirtschaft', 'Wald', 'Landwirtschaft', 'Bauern', 'Gartenbau', 'GaLaBau'].includes(t))) counts.forestry++;
+      const sector = sectorOf(idea);
+      if (sector) counts[sector]++;
     });
     return counts;
   }, []);
@@ -103,16 +99,7 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang, on
 
       if (!matchesSearch) return false;
 
-      const tags = idea.tags || [];
-      if (activeSector === 'all') return true;
-      if (activeSector === 'care') return tags.some(t => ['Pflege', 'Gesundheit', 'Wundversorgung', 'Altenpflege', 'Senioren'].includes(t));
-      if (activeSector === 'craft') return tags.some(t => ['Handwerk', 'Baustelle', 'Sanitär', 'Dachdecker', 'Schornsteinfeger', 'Kfz', 'Schreiner', 'Tischler', 'Friseur', 'Fleischer'].includes(t));
-      if (activeSector === 'cleaning') return tags.some(t => ['Reinigung'].includes(t));
-      if (activeSector === 'food') return tags.some(t => ['Gastronomie', 'Bäcker', 'Kochen', 'Lebensmittel', 'Fleischer', 'Kellner', 'Service'].includes(t));
-      if (activeSector === 'transport') return tags.some(t => ['Lieferanten', 'Paketboten', 'Transport', 'LKW', 'Busfahrer', 'ÖPNV'].includes(t));
-      if (activeSector === 'education') return tags.some(t => ['Kita', 'Bildung', 'Erzieher'].includes(t));
-      if (activeSector === 'forestry') return tags.some(t => ['Forstwirtschaft', 'Wald', 'Landwirtschaft', 'Bauern', 'Gartenbau', 'GaLaBau'].includes(t));
-      return true;
+      return activeSector === 'all' || sectorOf(idea) === activeSector;
     });
   }, [activeSector, searchQuery, lang]);
 
@@ -289,6 +276,24 @@ export const NormalJobsExplorer: React.FC<NormalJobsExplorerProps> = ({ lang, on
                       <Sparkles className="w-3 h-3 text-emerald-700" />
                       {lang === 'de' ? 'Schenkung (CC0)' : lang === 'es' ? 'Donación (CC0)' : 'Gift (CC0)'}
                     </span>
+                    {idea.packedDoseId && (
+                      <span className="px-2 py-0.5 rounded bg-[var(--m-accent)]/10 text-[var(--m-accent)] border border-[var(--m-accent)]/25 font-semibold flex items-center gap-1">
+                        <Gift className="w-3 h-3" />
+                        {lang === 'de' ? 'Als Dose gepackt' : lang === 'es' ? 'Ya empaquetada' : 'Packed as Tin'}
+                        {onOpenDose && (
+                          <button
+                            type="button"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              onOpenDose(idea.packedDoseId!);
+                            }}
+                            className="ml-1 underline underline-offset-2 hover:text-[var(--m-accent-strong)]"
+                          >
+                            {lang === 'de' ? 'öffnen' : lang === 'es' ? 'abrir' : 'open'}
+                          </button>
+                        )}
+                      </span>
+                    )}
                     {persona && (
                       <span className="px-2 py-0.5 rounded bg-stone-100 text-stone-700 border border-stone-200 font-medium flex items-center gap-1">
                         <User className="w-3 h-3 text-stone-500" />

@@ -200,4 +200,96 @@ export const PIGMENT_PRESETS: WetInkPigmentConfig[] = [
       S: [0.22, 0.65, 0.35],
     },
   },
+  {
+    id: 'eisengallus',
+    nameDe: 'Eisengallus-Tinte (Archivalisch)',
+    nameEn: 'Iron Gall Ink (Archival)',
+    nameEs: 'Tinta de agallas de hierro de archivo',
+    colorHex: '#23201d',
+    r: 35,
+    g: 32,
+    b: 29,
+    density: 0.94,
+    granulationFactor: 0.60,
+    bleedSpeed: 0.90,
+    edgeDarkening: 0.95,
+    km: {
+      K: [2.9, 2.8, 2.7],
+      S: [0.14, 0.13, 0.12],
+    },
+  },
+  {
+    id: 'indigo',
+    nameDe: 'Japanisches Indigo (Aizome)',
+    nameEn: 'Japanese Indigo (Aizome)',
+    nameEs: 'Índigo japonés tradicional',
+    colorHex: '#1a2b4c',
+    r: 26,
+    g: 43,
+    b: 76,
+    density: 0.88,
+    granulationFactor: 0.45,
+    bleedSpeed: 1.05,
+    edgeDarkening: 0.85,
+    km: {
+      K: [3.4, 1.8, 0.35],
+      S: [0.19, 0.26, 0.70],
+    },
+  },
 ];
+
+/**
+ * Generates an authentic physical Kubelka-Munk pigment configuration from any hex color code.
+ * Subtractive absorption (K) and scattering (S) spectra are derived from normalized RGB reflectances.
+ */
+export function createPigmentFromHex(
+  hex: string,
+  id: string = 'custom',
+  nameDe: string = 'Eigene Tinte',
+  nameEn: string = 'Custom Ink'
+): WetInkPigmentConfig {
+  const cleanHex = hex.replace('#', '');
+  const r = parseInt(cleanHex.slice(0, 2), 16) || 20;
+  const g = parseInt(cleanHex.slice(2, 4), 16) || 20;
+  const b = parseInt(cleanHex.slice(4, 6), 16) || 20;
+
+  // Normalized substrate-relative reflectances [0.02, 0.95]
+  const R_r = Math.max(0.02, Math.min(0.95, r / 255));
+  const R_g = Math.max(0.02, Math.min(0.95, g / 255));
+  const R_b = Math.max(0.02, Math.min(0.95, b / 255));
+
+  // Kubelka-Munk: K/S = (1 - R_inf)^2 / (2 * R_inf)
+  const calcKS = (R: number) => ((1.0 - R) * (1.0 - R)) / (2.0 * R);
+  const S_base = 0.35;
+
+  const K_r = Math.max(0.05, Math.min(6.0, calcKS(R_r) * S_base));
+  const K_g = Math.max(0.05, Math.min(6.0, calcKS(R_g) * S_base));
+  const K_b = Math.max(0.05, Math.min(6.0, calcKS(R_b) * S_base));
+
+  const S_r = S_base * (0.8 + R_r * 0.4);
+  const S_g = S_base * (0.8 + R_g * 0.4);
+  const S_b = S_base * (0.8 + R_b * 0.4);
+
+  // Density based on darkness
+  const brightness = (r * 0.299 + g * 0.587 + b * 0.114) / 255;
+  const density = 0.70 + (1.0 - brightness) * 0.25;
+
+  return {
+    id,
+    nameDe,
+    nameEn,
+    nameEs: nameEn,
+    colorHex: `#${cleanHex.toLowerCase()}`,
+    r,
+    g,
+    b,
+    density,
+    granulationFactor: 0.50,
+    bleedSpeed: 1.0,
+    edgeDarkening: 0.85,
+    km: {
+      K: [K_r, K_g, K_b],
+      S: [S_r, S_g, S_b],
+    },
+  };
+}

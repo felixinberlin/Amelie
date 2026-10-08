@@ -207,7 +207,7 @@ Félix (Berlin)`,
 
 ich recherchiere Software-Werkzeuge, die als verbindliche Normen existieren, aber nie als handhabbares Werkzeug gebaut wurden. Diese Idee gehört zu Ihnen.
 
-Ihr „Prüfleitfaden Vogelschutz an Glas" definiert wissenschaftlich präzise Kriterien für BNatSchG §44: Reflexionsgrad, Scheibengeometrie, Durchsicht und zertifizierte Punktraster (9x9 cm) statt nutzloser Greifvogel-Aufkleber. Doch Architekten und Bauämter müssen sich noch immer durch 30 Seiten PDF arbeiten.
+Ihr „Prüfleitfaden Vogelschutz an Glas" definiert wissenschaftlich präzise Kriterien für BNatSchG §44: Reflexionsgrad, Scheibengeometrie, Durchsicht und Markierungen, deren Wirkung im Flugtunnel geprüft wurde, statt Greifvogel-Aufkleber. Doch Architekten und Bauämter müssen sich noch immer durch 30 Seiten PDF arbeiten.
 
 Die Idee: Eine clientseitige Web-App ohne Server („Glasanflug-Ampel"). 3 Fragen zu Glasart, Umgebungsvegetation und Markierungsposition führen zu einer sofortigen Ampelbewertung (Grün/Gelb/Rot) mit druckbarem PDF-Prüfnachweis für die Genehmigungsbehörde.
 
@@ -221,7 +221,7 @@ Félix (Berlin)`,
 
 I research software opportunities that exist as authoritative regulatory standards but have never been implemented as frictionless web tools. This idea belongs with your working group.
 
-Your testing guide "Vogelschutz an Glas" establishes rigorous criteria under German conservation law (§44 BNatSchG): reflection percentages, surrounding greenery, through-vision corridors, and certified dot grids (9x9 cm) rather than useless raptor stickers. Yet architects and municipal authorities still thumb through a 30-page static PDF.
+Your testing guide "Vogelschutz an Glas" establishes rigorous criteria under German conservation law (§44 BNatSchG): reflection percentages, surrounding greenery, through-vision corridors, and markings whose effect was tested in a flight tunnel, rather than raptor stickers. Yet architects and municipal authorities still thumb through a 30-page static PDF.
 
 The concept: A zero-server client-side web tool ("Glass Hazard Score"). Answering 3 physical parameters produces an instant traffic-light rating (Green/Amber/Red) and an exportable compliance certificate for building permit applications.
 
@@ -232,8 +232,10 @@ CC0 Public Domain, completely unencumbered. If you already have this in producti
 Warm regards,
 Félix (Berlin)`,
     doseLinks: ['glasanflug-ampel'],
-    scheduleDe: 'Bereit für Runde 2 (Oktober 2026)',
-    scheduleEn: 'Ready for Round 2 dispatch (October 2026)'
+    scheduleDe: 'Gesendet 22.09.2026 an Sammeladresse; Standardantwort 29.09.2026 (siehe Dose, „Antwort und Lehre"). Nicht nachfassen.',
+    scheduleEn: 'Sent 22 Sep 2026 to a shared address; standard reply 29 Sep 2026 (see dose, "Reply and lesson"). Do not follow up.',
+    sent: true,
+    sentAt: '2026-09-22'
   },
   {
     id: 'mail-6',
@@ -609,5 +611,91 @@ Amélie Initiative (Félix, Berlin)`,
     scheduleDe: 'Versandfertig (September 2026)',
     scheduleEn: 'Ready for dispatch (September 2026)',
     sent: false
+  },
+  {
+    id: 'post-13',
+    mailIndex: 13,
+    titleDe: 'Post 13: Amélie selbst (Agenten-Orchestrierung) → r/ClaudeCode Weekly Showcase',
+    titleEn: 'Post 13: Amélie itself (agent orchestration) → r/ClaudeCode Weekly Showcase',
+    recipientOrg: 'Reddit Community r/ClaudeCode (Weekly Showcase Thread)',
+    recipientTypeDe: 'Entwickler-Community · Methode statt Dose · Englisch',
+    recipientTypeEn: 'Developer community · the method, not a tin · English',
+    contactPathDe: 'Kommentar im Weekly Showcase Thread, reddit.com/r/ClaudeCode',
+    contactPathEn: 'Comment in the Weekly Showcase Thread, reddit.com/r/ClaudeCode',
+    subjectDe: 'Amélie: ein Claude-Code-Agententeam, das Software-Ideen findet und verschenkt (CC0)',
+    subjectEn: 'Amélie: a Claude Code agent team that finds software ideas and gives them away (CC0)',
+    bodyDe: `**Was ich gebaut habe**
+
+Amélie ist ein offenes Repo plus eine kleine React-Seite. Es findet App- und Datenwerkzeug-Ideen, die erst seit ein, zwei Jahren baubar sind, weil Klassifikation, Extraktion und Code billig geworden sind. Es prüft, ob es jede Idee schon gibt, und verpackt die Überlebenden als kostenlose „Dose". Jede Dose geht an eine konkrete reale Person an einer Uni, Behörde oder NGO, zu deren Aufgabe das Werkzeug passt. Eine Dose ist ein zweisprachiges Einseiter-Dossier plus ein lauffähiges Scaffolding mit Tests. Alles CC0: kein Pitch, keine Beratung, kein Nachfassen.
+
+Der Name kommt aus dem Film: Amélie findet eine Blechdose, spürt ihren Besitzer auf, gibt sie zurück und fragt nie nach.
+
+Stand: 42 Dosen zugestellt oder versandbereit, 52 tote Ideen auf dem „Friedhof".
+
+**Wie Claude Code genutzt wird**
+
+Diese Woche habe ich meine Solo-Rechercheroutine in ein orchestriertes Team von Subagenten umgebaut (\`.claude/agents/\`), jeder mit eigener Skill:
+
+- **3 Entdeckungs-Engines, parallel auf dasselbe Thema:** \`ideen-scout\` (Primärquellen: Gesetze, Förderaufrufe, Behördenberichte), \`bisoziations-kollider\` (kollidiert zwei ferne Felder, behält nur echte Lücken), \`inversions-agent\` (dreht ein reguliertes System in ein Bürgerwerkzeug, sucht Vollzugslücken).
+- **\`idea-reviewer\`** bewertet die Überlebenden über 7 Vektoren: Neuheit, Komplexität, Machbarkeit, Langlebigkeit, Civic SWOT, Tech-Tree-Position, Evidenzqualität.
+- **\`dose-packer\`** schreibt die DE/EN-Dossiers und verknüpft die Dose mit dem Frontend.
+- **\`demo-builder\`** baut \`07-demos/<id>/\` und eine TypeScript-Engine mit Vitest-Tests.
+- **\`bibliothekar\`** ist der einzige Agent, der das geteilte Gedächtnis schreiben darf: Prüfprotokoll, Suchplaybook, Friedhof.
+
+**Erste volle Teamrunde (ESPR / Recht auf Reparatur):** 16 Engine-Kandidaten → 11 Ideen → 1 Dose: ein offenes Register der Offenlegungen, die Unternehmen nach der EU-Ökodesignverordnung (ESPR, Art. 24) über vernichtete unverkaufte Ware veröffentlichen müssen. Kern ist ein deterministischer Prüfer, der bewusst **nie „Verstoß" sagt**, weil die Pflicht bedingt ist. Alle drei Engines fanden die Idee unabhängig voneinander.
+
+**Was ich gelernt habe**
+
+1. **Konvergenz schlägt Scoring.** Drei Engines mit verschiedenen Methoden auf einem Thema sind eine Gegenprobe. Ein Dreifachfund sagt mehr als jede Rubrik.
+2. **Eine Datei, ein Schreiber.** Parallele Agenten überschrieben sich gegenseitig die Zustandsdateien, bis jede Datei genau einen Besitzer bekam.
+3. **Gedächtnis ins Repo, nicht in den Chat.** Prüfprotokoll = Vorwärts-Gedächtnis, Friedhof = Rückwärts-Gedächtnis. Jede tote Idee bekommt einen Totenschein. Jede Runde beginnt mit dem Gang über den Friedhof.
+4. **Drift per Lint bewachen.** Jede Dose existiert als Markdown *und* als Frontend-Daten; \`npm run lint\` bricht ab, wenn beides auseinanderläuft oder ein Urteil im Protokoll fehlt. Das fing mehr Agentenfehler als jeder Prompt.
+5. **Ehrlich über Evidenz sein.** Die Netzwerk-Policy der Cloud-Sandbox sperrte viele Behördenseiten; die Agenten sahen nur Suchschnipsel. Jetzt ist jede solche Aussage markiert, und jede Dose sagt „Kontakt vor Versand verifizieren".
+
+**Links**
+
+- Repo: https://github.com/felixinberlin/Amelie
+- Live-Dose (ESPR-Register): https://felixinberlin.github.io/Amelie/#dose=vernichtungs-offenlegungsregister
+
+Die Orchestrator-Skill teile ich gern, falls jemand das Muster klauen will. CC0 wie der Rest.`,
+    bodyEn: `**What I built**
+
+Amélie is an open repo plus a small React site. It finds app and data-tool ideas that have only become buildable in the last couple of years, because classification, extraction and code got cheap. It checks whether each idea already exists, then packages the survivors as a free "tin". Each tin goes to one specific real person at a university, agency or NGO whose job the tool fits. A tin is a bilingual one-page dossier plus a runnable scaffold with tests. Everything is CC0: no pitch, no consulting, no follow-up email.
+
+It's named after the film: Amélie finds a tin box, tracks down its owner, hands it back and never checks in.
+
+Currently: 42 tins delivered or ready to deliver, and 52 dead ideas in a "graveyard".
+
+**How Claude Code is used**
+
+This week I turned my solo research routine into an orchestrated team of subagents (\`.claude/agents/\`), each with its own skill:
+
+- **3 discovery engines, run in parallel on the same topic:** \`ideen-scout\` works from primary sources (laws, funding calls, agency reports); \`bisoziations-kollider\` collides two distant fields and keeps only ideas that open a real gap; \`inversions-agent\` flips a regulated system into a citizen-side tool, looking for enforcement gaps.
+- **\`idea-reviewer\`** scores the survivors on 7 vectors: novelty, complexity, feasibility, longevity, civic SWOT, tech-tree position and evidence quality.
+- **\`dose-packer\`** writes the DE/EN dossiers and wires the tin into the frontend data.
+- **\`demo-builder\`** scaffolds \`07-demos/<id>/\` and a TypeScript engine with Vitest tests.
+- **\`bibliothekar\`** (librarian) is the only agent allowed to write the shared memory: the check log, the search playbook and the graveyard.
+
+**First full team run (ESPR / right-to-repair):** 16 engine candidates became 11 distinct ideas and then 1 tin. The tin is an open register of the disclosures companies must publish about destroying unsold goods under the EU's ESPR (Art. 24). Its core is a deterministic checker that is deliberately built to never say "violation", because the legal duty is conditional. All three engines found this idea independently.
+
+**Things I learned**
+
+1. **Convergence beats scoring.** Three engines using different methods on one topic works as a cross-check. When all three find the same idea, that tells me more than any rubric score.
+2. **One file, one writer.** Parallel agents overwrote each other's state files until I gave every file exactly one owner. Only agents whose write permissions don't overlap run in parallel.
+3. **Keep memory in the repo, not the chat.** The check log is the forward memory and the graveyard is the backward memory. Every dead idea gets a "death certificate" (cause, killer, how it was found, stage, lesson, resurrection condition). Every run starts by walking the graveyard. Before that, deleted ideas kept coming back under new names.
+4. **Guard the drift with lint.** Each tin exists as Markdown dossiers *and* as frontend data. \`npm run lint\` runs checks that fail the build when the two disagree, or when a verdict is missing from the log. That caught more agent mistakes than any prompt did.
+5. **Be honest about evidence.** The cloud sandbox's network policy blocked many government sites, so the agents only saw search snippets. Now every claim is marked as snippet-only, and each tin says "verify the contact before sending". An agent that is confident on thin evidence is the main risk here.
+
+**Links**
+
+- Repo: https://github.com/felixinberlin/Amelie
+- Live tin (ESPR register): https://felixinberlin.github.io/Amelie/#dose=vernichtungs-offenlegungsregister
+
+Happy to share the orchestrator skill if anyone wants to steal the pattern. It's CC0 like the rest.`,
+    doseLinks: [],
+    scheduleDe: 'Gepostet (28. September 2026)',
+    scheduleEn: 'Posted (September 28, 2026)',
+    sent: true,
+    sentAt: '2026-09-28'
   }
 ];

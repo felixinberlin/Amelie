@@ -1,0 +1,37 @@
+{
+  "plan_id": "lab-2026-09-30-lacunar-schmetterlinge-offen",
+  "actor": "lab-librarian",
+  "agent": "lab",
+  "runde": "Lab-Lauf Lacunar 30.09.2026 (Schmetterlinge)",
+  "_note": "Nicht freigegeben (Félix, 30.09.2026): PMC-NIR und UFZ bleiben Vorschläge. Kein human_accepted; nicht anwenden ohne Freigabe.",
+  "ops": [
+    {
+      "op": "source.add",
+      "id": "pmc-nir-insektenmonitoring",
+      "name": "Nah-Infrarot-Sensornetz zur autonomen Langzeitüberwachung von Insekten (PMC8850605)",
+      "typ": "I",
+      "kategorie": "messverfahren",
+      "enthaelt": "Verteilte drahtlose Sensoren, die rückgestreute Nah-Infrarot-Modulationssignaturen von Insekten aufzeichnen (Flügelschlag-Harmonik, Melanisierung, Flugrichtung). Insekten allgemein, nicht Falter im Transekt.",
+      "status": "angekratzt",
+      "evidenz": "schnipsel",
+      "note": "Fundstelle der Sensor-Suche des Lab-Laufs lacunar-20260930T064824-38e1d7; Beleg für 'warum jetzt' bei zwei Survivors, nur als Suchzusammenfassung gelesen.",
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8850605/"
+      ]
+    },
+    {
+      "op": "source.add",
+      "id": "ufz-tagfalter-monitoring-deutschland",
+      "name": "Tagfalter-Monitoring Deutschland (UFZ)",
+      "typ": "B",
+      "kategorie": "citizen-science",
+      "enthaelt": "Deutsches Tagfalter-Monitoring auf Transektbasis mit ehrenamtlichen Zählenden; Programm, Auswertung und Kontakt beim UFZ.",
+      "status": "angekratzt",
+      "evidenz": "schnipsel",
+      "note": "Fundstelle der Anker-Suche des Lab-Laufs lacunar-20260930T064824-38e1d7; die Seite wurde nicht gelesen. Möglicher Empfänger- und Besetzt-Test-Kontext.",
+      "urls": [
+        "https://www.ufz.de/tagfalter-monitoring/index.php?de=41769"
+      ]
+    }
+  ]
+}

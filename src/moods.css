@@ -1,0 +1,280 @@
+/*
+ * Stimmungen (Moods) — Farben, Schriften, Rundungen und ein Hauch Dekor der ganzen Seite.
+ *
+ * Die Komponenten kennen keine Hex-Farben mehr, sondern die Tokens `--m-*`.
+ * Zusätzlich färbt jede Stimmung die Tailwind-Skala `stone-*` um, damit auch
+ * alle grauen Flächen und Texte mitgehen. Die Standardstimmung („Amélie") steht in
+ * `:root` und entspricht dem bisherigen Look; jede weitere Stimmung überschreibt
+ * nur, was sie anders will: `:root[data-mood="…"]`.
+ *
+ * Neue Stimmung: (1) Block hier anlegen, (2) Eintrag in `src/data/moods.ts`.
+ * Ein Test prüft, dass beides zusammenpasst.
+ */
+
+:root {
+  --m-accent: #8c1d40;
+  --m-accent-strong: #741533;
+  --m-on-accent: #fff9f5;
+  --m-ink: #2b1e16;
+  --m-ink-2: #5c4a3d;
+  --m-ink-3: #6b5849;
+  --m-muted: #8b6f57;
+  --m-line: #dfd1be;
+  --m-line-strong: #d8cbba;
+  --m-gold: #f6bd60;
+  --m-copper: #c5832b;
+  --m-bg: #fbf7f0;
+  --m-bg-2: #fbf6ee;
+  --m-surface: #fffdf9;
+  --m-surface-2: #faf5eb;
+  --m-sunk: #ede3d1;
+  --m-green: #1b4332;
+  --m-green-2: #2e7d32;
+
+  --m-font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --m-font-display: 'Fraunces', 'Playfair Display', 'Newsreader', Georgia, serif;
+  --m-font-mono: 'Courier Prime', 'JetBrains Mono', monospace;
+
+  --m-body-image:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(217, 119, 6, 0.08), transparent 70%),
+    radial-gradient(circle at 100% 100%, rgba(27, 67, 50, 0.04), transparent 40%),
+    radial-gradient(circle at 0% 100%, rgba(140, 29, 64, 0.04), transparent 40%);
+  --m-body-size: auto;
+  --m-header-trim: none;
+}
+
+/* Ein Dekorstreifen unter der Kopfzeile; jede Stimmung darf ihn füllen. */
+header.sticky::after {
+  content: '';
+  display: block;
+  height: 6px;
+  background: var(--m-header-trim);
+}
+/* Standardstimmung (ohne data-mood): kein Streifen, Kopfzeile bleibt so hoch wie zuvor. */
+:root:not([data-mood]) header.sticky::after {
+  display: none;
+}
+
+/* ───────── Warm: Terrakotta, Honig, Sandstein ───────── */
+:root[data-mood='warm'] {
+  --m-accent: #b4492a;
+  --m-accent-strong: #8f3720;
+  --m-on-accent: #fff8ef;
+  --m-ink: #3b2213;
+  --m-ink-2: #5e3d29;
+  --m-ink-3: #75503a;
+  --m-muted: #9a6b4c;
+  --m-line: #ecd3b6;
+  --m-line-strong: #e2c19c;
+  --m-gold: #f4b860;
+  --m-copper: #d0782f;
+  --m-bg: #fff4e4;
+  --m-bg-2: #ffefd9;
+  --m-surface: #fffaf1;
+  --m-surface-2: #fdeed6;
+  --m-sunk: #f6dfbd;
+  --m-green: #6b4a1f;
+  --m-green-2: #a35d1f;
+  --m-body-image:
+    radial-gradient(ellipse 90% 60% at 50% -10%, rgba(244, 184, 96, 0.35), transparent 70%),
+    radial-gradient(circle at 100% 100%, rgba(180, 73, 42, 0.10), transparent 45%);
+  --m-header-trim: linear-gradient(90deg, #f4b860, #d0782f, #b4492a, #d0782f, #f4b860);
+  --radius-xl: 1rem;
+  --radius-2xl: 1.4rem;
+  --radius-3xl: 1.9rem;
+  --color-stone-50: #fbfaf9;
+  --color-stone-100: #f6f5f3;
+  --color-stone-200: #eee5dd;
+  --color-stone-300: #e2d3c6;
+  --color-stone-400: #c1a186;
+  --color-stone-500: #9e7551;
+  --color-stone-600: #76573d;
+  --color-stone-700: #58412d;
+  --color-stone-800: #32251a;
+  --color-stone-900: #221911;
+  --color-stone-950: #0d0a07;
+}
+
+/* ───────── Happy: Himbeere, Sonnengelb, Minze ───────── */
+:root[data-mood='happy'] {
+  --m-accent: #e63976;
+  --m-accent-strong: #c22a60;
+  --m-on-accent: #ffffff;
+  --m-ink: #2a2440;
+  --m-ink-2: #4a4368;
+  --m-ink-3: #5d5680;
+  --m-muted: #7d76a0;
+  --m-line: #f3dfa2;
+  --m-line-strong: #eecb63;
+  --m-gold: #ffd23f;
+  --m-copper: #ff8c42;
+  --m-bg: #fffbe8;
+  --m-bg-2: #fff6d1;
+  --m-surface: #ffffff;
+  --m-surface-2: #fff4c7;
+  --m-sunk: #ffeaa0;
+  --m-green: #0f9b8e;
+  --m-green-2: #12b886;
+  --m-font-display: 'Fraunces', Georgia, serif;
+  --m-body-image:
+    radial-gradient(circle at 12% 8%, rgba(255, 210, 63, 0.35), transparent 32%),
+    radial-gradient(circle at 92% 14%, rgba(230, 57, 118, 0.14), transparent 30%),
+    radial-gradient(circle at 80% 92%, rgba(15, 155, 142, 0.14), transparent 34%);
+  --m-header-trim: repeating-linear-gradient(90deg, #e63976 0 24px, #ffd23f 24px 48px, #0f9b8e 48px 72px, #ff8c42 72px 96px);
+  --radius-xl: 1.1rem;
+  --radius-2xl: 1.6rem;
+  --radius-3xl: 2.2rem;
+  --color-stone-50: #faf9fa;
+  --color-stone-100: #f4f4f6;
+  --color-stone-200: #e2e0eb;
+  --color-stone-300: #cdcadd;
+  --color-stone-400: #968fb7;
+  --color-stone-500: #665d92;
+  --color-stone-600: #4c466d;
+  --color-stone-700: #393451;
+  --color-stone-800: #211e2f;
+  --color-stone-900: #16141f;
+  --color-stone-950: #09080c;
+}
+
+/* ───────── Decisive: Schwarz, Signalrot, keine Umwege ───────── */
+:root[data-mood='decisive'] {
+  --m-accent: #d91e36;
+  --m-accent-strong: #a8142a;
+  --m-on-accent: #ffffff;
+  --m-ink: #0b0b0f;
+  --m-ink-2: #26262b;
+  --m-ink-3: #3d3d44;
+  --m-muted: #5c5c66;
+  --m-line: #cfcfd2;
+  --m-line-strong: #0b0b0f;
+  --m-gold: #ffd60a;
+  --m-copper: #e5233d;
+  --m-bg: #f6f6f4;
+  --m-bg-2: #ffffff;
+  --m-surface: #ffffff;
+  --m-surface-2: #efefec;
+  --m-sunk: #e4e4e0;
+  --m-green: #14532d;
+  --m-green-2: #1a7f37;
+  --m-font-body: 'Plus Jakarta Sans', -apple-system, 'Segoe UI', sans-serif;
+  --m-font-display: 'Plus Jakarta Sans', -apple-system, 'Segoe UI', sans-serif;
+  --m-font-mono: 'JetBrains Mono', 'Courier Prime', monospace;
+  --m-body-image: none;
+  --m-header-trim: linear-gradient(90deg, #0b0b0f 0 70%, #e5233d 70% 85%, #ffd60a 85% 100%);
+  --radius-md: 0.125rem;
+  --radius-lg: 0.1875rem;
+  --radius-xl: 0.25rem;
+  --radius-2xl: 0.3125rem;
+  --radius-3xl: 0.375rem;
+  --color-stone-50: #fafafa;
+  --color-stone-100: #f5f5f5;
+  --color-stone-200: #e4e4e7;
+  --color-stone-300: #d2d2d5;
+  --color-stone-400: #a0a0a7;
+  --color-stone-500: #73737d;
+  --color-stone-600: #56565d;
+  --color-stone-700: #404045;
+  --color-stone-800: #252528;
+  --color-stone-900: #18181b;
+  --color-stone-950: #0a0a0b;
+}
+:root[data-mood='decisive'] .font-amelie,
+:root[data-mood='decisive'] .font-serif,
+:root[data-mood='decisive'] h1,
+:root[data-mood='decisive'] h2 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* ───────── Calm: Salbei, Nebel, Leinen ───────── */
+:root[data-mood='calm'] {
+  --m-accent: #3d6b5e;
+  --m-accent-strong: #2b4f45;
+  --m-on-accent: #f4faf6;
+  --m-ink: #1f2f2b;
+  --m-ink-2: #3f524d;
+  --m-ink-3: #556963;
+  --m-muted: #7a8f88;
+  --m-line: #d3dfd8;
+  --m-line-strong: #bccfc5;
+  --m-gold: #c9d8a5;
+  --m-copper: #8aa89b;
+  --m-bg: #f3f7f4;
+  --m-bg-2: #ecf3ee;
+  --m-surface: #fbfdfb;
+  --m-surface-2: #e8f0ea;
+  --m-sunk: #dbe7df;
+  --m-green: #2b4f45;
+  --m-green-2: #4f8a74;
+  --m-body-image:
+    radial-gradient(ellipse 90% 60% at 50% -15%, rgba(138, 168, 155, 0.28), transparent 70%),
+    radial-gradient(circle at 0% 100%, rgba(201, 216, 165, 0.22), transparent 40%);
+  --m-header-trim: linear-gradient(90deg, transparent, #bccfc5, transparent);
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+  --color-stone-50: #fafafa;
+  --color-stone-100: #f4f5f5;
+  --color-stone-200: #e3e8e6;
+  --color-stone-300: #cfd8d4;
+  --color-stone-400: #9aaca3;
+  --color-stone-500: #6c8478;
+  --color-stone-600: #506259;
+  --color-stone-700: #3c4942;
+  --color-stone-800: #222a26;
+  --color-stone-900: #171c1a;
+  --color-stone-950: #090b0a;
+}
+
+/* ───────── Kitchen: Kachelwand, Tomatenrot, Basilikum, Butter ───────── */
+:root[data-mood='kitchen'] {
+  --m-accent: #c8382b;
+  --m-accent-strong: #9e2a1f;
+  --m-on-accent: #fffaf0;
+  --m-ink: #3a2418;
+  --m-ink-2: #5a3d2c;
+  --m-ink-3: #6f4f3b;
+  --m-muted: #97735a;
+  --m-line: #e9d6b8;
+  --m-line-strong: #dcc19a;
+  --m-gold: #f2c14e;
+  --m-copper: #d9822b;
+  --m-bg: #fffaf0;
+  --m-bg-2: #fff5e2;
+  --m-surface: #fffefa;
+  --m-surface-2: #fcf1da;
+  --m-sunk: #f5e4c3;
+  --m-green: #3f6b34;
+  --m-green-2: #5a8f3d;
+  /* Kachelwand: quadratische Fliesen mit feinen Fugen, dazu ein Stich Basilikum und Tomate */
+  --m-body-image:
+    linear-gradient(rgba(200, 165, 115, 0.5) 1.5px, transparent 1.5px),
+    linear-gradient(90deg, rgba(200, 165, 115, 0.5) 1.5px, transparent 1.5px),
+    radial-gradient(circle at 100% 0%, rgba(200, 56, 43, 0.08), transparent 35%),
+    radial-gradient(circle at 0% 100%, rgba(90, 143, 61, 0.09), transparent 35%);
+  --m-body-size: 56px 56px, 56px 56px, auto, auto;
+  /* Vichy-Tischdecke */
+  --m-header-trim:
+    repeating-linear-gradient(90deg, rgba(200, 56, 43, 0.85) 0 10px, rgba(200, 56, 43, 0.35) 10px 20px),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.35) 0 3px, transparent 3px 6px);
+  --radius-xl: 1rem;
+  --radius-2xl: 1.4rem;
+  --radius-3xl: 1.9rem;
+  --color-stone-50: #fbfaf9;
+  --color-stone-100: #f6f5f3;
+  --color-stone-200: #ece5df;
+  --color-stone-300: #dfd3c8;
+  --color-stone-400: #bba28b;
+  --color-stone-500: #977659;
+  --color-stone-600: #705842;
+  --color-stone-700: #544131;
+  --color-stone-800: #30261c;
+  --color-stone-900: #201913;
+  --color-stone-950: #0d0a08;
+}
+/* Menütafel-Gefühl: Überschriften in Kreide-Kursiv, Karten mit Tellerrand */
+:root[data-mood='kitchen'] .amelie-tin-box {
+  border-color: var(--m-line-strong);
+  box-shadow: inset 0 0 0 4px var(--m-surface), inset 0 0 0 5px var(--m-line), 0 4px 12px -2px rgba(90, 50, 20, 0.12);
+}

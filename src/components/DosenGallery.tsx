@@ -6,6 +6,8 @@ import { DOSE_SIMULATOR_MAP } from '../data/doseSimulators';
 import { getDoseUrl } from '../utils/doseUrl';
 import { SimulatorKey } from '../data/doseSimulators';
 import { AmelieRulesBanner } from './AmelieRulesBanner';
+import { DoseVectorPanel } from './DoseVectorPanel';
+import { VECTOR_CATALOG, getDoseVectors, vectorScore, totalScore, coreScore, vectorLabel, VectorKey } from '../data/vectors';
 
 interface DosenGalleryProps {
   dosen: DoseItem[];
@@ -34,8 +36,8 @@ const SIMULATOR_BADGES: Record<string, SimulatorBadgeConfig> = {
     labelDe: '🏢 Live-Wärmebilanz Simulator',
     labelEn: '🏢 Live Heat Loss Simulator',
     labelEs: '🏢 Simulador de Pérdida Térmica',
-    colorClasses: 'bg-[#c5832b]/15 hover:bg-[#c5832b]/25 text-[#78350f] border-[#c5832b]/30',
-    iconColor: 'text-[#c5832b]',
+    colorClasses: 'bg-[var(--m-copper)]/15 hover:bg-[var(--m-copper)]/25 text-[#78350f] border-[var(--m-copper)]/30',
+    iconColor: 'text-[var(--m-copper)]',
   },
   'glasanflug-ampel': {
     simKey: 'glasanflug',
@@ -50,31 +52,31 @@ const SIMULATOR_BADGES: Record<string, SimulatorBadgeConfig> = {
     labelDe: '🖋️ Live-Tinte Simulator',
     labelEn: '🖋️ Live Wet Ink Simulator',
     labelEs: '🖋️ Simulador de Tinta Líquida',
-    colorClasses: 'bg-[#c5832b]/15 hover:bg-[#c5832b]/25 text-[#78350f] border-[#c5832b]/30',
-    iconColor: 'text-[#c5832b]',
+    colorClasses: 'bg-[var(--m-copper)]/15 hover:bg-[var(--m-copper)]/25 text-[#78350f] border-[var(--m-copper)]/30',
+    iconColor: 'text-[var(--m-copper)]',
   },
   'wet-ink-capillary': {
     simKey: 'wetink',
     labelDe: '🖋️ Live-Tinte Simulator',
     labelEn: '🖋️ Live Wet Ink Simulator',
     labelEs: '🖋️ Simulador de Tinta Líquida',
-    colorClasses: 'bg-[#c5832b]/15 hover:bg-[#c5832b]/25 text-[#78350f] border-[#c5832b]/30',
-    iconColor: 'text-[#c5832b]',
+    colorClasses: 'bg-[var(--m-copper)]/15 hover:bg-[var(--m-copper)]/25 text-[#78350f] border-[var(--m-copper)]/30',
+    iconColor: 'text-[var(--m-copper)]',
   },
   'klarlokal': {
     simKey: 'klarlokal',
     labelDe: '🛡️ Live-Brecheisen Simulator',
     labelEn: '🛡️ Live Battering Ram',
     labelEs: '🛡️ Simulador KlarLokal',
-    colorClasses: 'bg-[#1b4332]/15 hover:bg-[#1b4332]/25 text-[#1b4332] border-[#1b4332]/30',
-    iconColor: 'text-[#1b4332]',
+    colorClasses: 'bg-[var(--m-green)]/15 hover:bg-[var(--m-green)]/25 text-[var(--m-green)] border-[var(--m-green)]/30',
+    iconColor: 'text-[var(--m-green)]',
   },
   'crack-flora-watcher': {
     simKey: 'crackflora',
     labelDe: '🌱 Live-Ritzengrün Simulator',
     labelEn: '🌱 Live Pavement Lab',
     labelEs: '🌱 Laboratorio de Grietas',
-    colorClasses: 'bg-[#2d5a27]/15 hover:bg-[#2d5a27]/25 text-[#1b4332] border-[#2d5a27]/30',
+    colorClasses: 'bg-[#2d5a27]/15 hover:bg-[#2d5a27]/25 text-[var(--m-green)] border-[#2d5a27]/30',
     iconColor: 'text-[#2d5a27]',
   },
   'kiez-laermkarte': {
@@ -82,8 +84,8 @@ const SIMULATOR_BADGES: Record<string, SimulatorBadgeConfig> = {
     labelDe: '🎧 24h Zeitstruktur & Ruhe-Fenster',
     labelEn: '🎧 24h Noise & Quiet Windows',
     labelEs: '🎧 Simulador de Ruido 24h',
-    colorClasses: 'bg-[#8c1d40]/15 hover:bg-[#8c1d40]/25 text-[#8c1d40] border-[#8c1d40]/30',
-    iconColor: 'text-[#8c1d40]',
+    colorClasses: 'bg-[var(--m-accent)]/15 hover:bg-[var(--m-accent)]/25 text-[var(--m-accent)] border-[var(--m-accent)]/30',
+    iconColor: 'text-[var(--m-accent)]',
   },
   'streiflicht': {
     simKey: 'streiflicht',
@@ -148,6 +150,7 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
 }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedVerdict, setSelectedVerdict] = useState<string>('all');
+  const [sortBy, setSortBy] = useState<string>('default');
   const [selectedDomain, setSelectedDomain] = useState<string>('all');
   const [selectedTagState, setSelectedTagState] = useState<string | null>(initialSelectedTag);
   const [copiedDoseId, setCopiedDoseId] = useState<string | null>(null);
@@ -171,7 +174,7 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
   };
 
   const filteredDosen = useMemo(() => {
-    return dosen.filter((d) => {
+    const list = dosen.filter((d) => {
       const q = searchQuery.toLowerCase();
       const localizedTitle = getLocalizedTitle(d, lang).toLowerCase();
       const matchesSearch =
@@ -191,7 +194,18 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
 
       return matchesSearch && matchesVerdict && matchesDomain && matchesTag;
     });
-  }, [dosen, searchQuery, selectedVerdict, selectedDomain, selectedTag, lang]);
+    if (sortBy === 'default') return list;
+    const scoreOf = (id: string, key: string) => {
+      const vec = getDoseVectors(id);
+      if (!vec) return -1;
+      if (key === 'total') return totalScore(vec);
+      if (key === 'core') return coreScore(vec);
+      return vectorScore(vec, key as VectorKey);
+    };
+    return [...list].sort(
+      (a, b) => scoreOf(b.id, sortBy) - scoreOf(a.id, sortBy) || scoreOf(b.id, 'total') - scoreOf(a.id, 'total'),
+    );
+  }, [dosen, searchQuery, selectedVerdict, selectedDomain, selectedTag, sortBy, lang]);
 
   const domainOptions = [
     { id: 'all', labelDe: 'Alle Bereiche', labelEn: 'All Domains', labelEs: 'Todas las áreas' },
@@ -231,16 +245,16 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
   return (
     <div className="space-y-8 animate-fadeIn">
       {/* Intro Banner */}
-      <div className="relative rounded-2xl bg-gradient-to-br from-[#faf4e8] via-[#f5ece0] to-[#eee2cf] border border-[#d8cbba] p-6 md:p-8 shadow-xs overflow-hidden">
+      <div className="relative rounded-2xl bg-gradient-to-br from-[var(--m-surface-2)] via-[var(--m-surface-2)] to-[#eee2cf] border border-[var(--m-line-strong)] p-6 md:p-8 shadow-xs overflow-hidden">
         {/* Subtle decorative background watermark */}
         <div className="absolute right-4 top-2 select-none pointer-events-none opacity-10 hidden sm:block">
-          <div className="font-amelie text-8xl font-bold text-[#8c1d40]">1974</div>
+          <div className="font-amelie text-8xl font-bold text-[var(--m-accent)]">1974</div>
         </div>
 
         <div className="relative max-w-3xl space-y-3">
           <div className="flex flex-wrap items-center gap-2">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#8c1d40]/10 border border-[#8c1d40]/25 text-[#8c1d40] text-xs font-typewriter font-bold">
-              <Gift className="w-3.5 h-3.5 text-[#8c1d40]" />
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--m-accent)]/10 border border-[var(--m-accent)]/25 text-[var(--m-accent)] text-xs font-typewriter font-bold">
+              <Gift className="w-3.5 h-3.5 text-[var(--m-accent)]" />
               <span>
                 {lang === 'de'
                   ? 'BOÎTES EN FER-BLANC · DOSEN-ARCHIV'
@@ -249,15 +263,15 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
                   : 'BOÎTES EN FER-BLANC · TIN ARCHIVE'}
               </span>
             </div>
-            <span className="text-[11px] font-typewriter text-[#8b6f57] hidden sm:inline">
+            <span className="text-[11px] font-typewriter text-[var(--m-muted)] hidden sm:inline">
               ✦ Montmartre 1997 · Berlin 2026 ✦
             </span>
           </div>
 
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-amelie text-[#2b1e16] tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-amelie text-[var(--m-ink)] tracking-tight">
             {withCount(t.ui.tins_heading, dosen.length)}
           </h2>
-          <p className="text-sm sm:text-base text-[#5c4a3d] leading-relaxed font-sans">
+          <p className="text-sm sm:text-base text-[var(--m-ink-2)] leading-relaxed font-sans">
             {t.ui.tins_subheading}
           </p>
         </div>
@@ -274,18 +288,18 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
       <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
         {/* Search Input */}
         <div className="relative flex-1">
-          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#8b6f57]" />
+          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--m-muted)]" />
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder={t.ui.search_placeholder}
-            className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[#d8cbba] bg-[#fdfbf7] text-[#2b1e16] text-sm focus:outline-hidden focus:ring-2 focus:ring-[#8c1d40]/20 focus:border-[#8c1d40] shadow-2xs font-medium"
+            className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[var(--m-line-strong)] bg-[var(--m-surface)] text-[var(--m-ink)] text-sm focus:outline-hidden focus:ring-2 focus:ring-[var(--m-accent)]/20 focus:border-[var(--m-accent)] shadow-2xs font-medium"
           />
           {searchQuery && (
             <button
               onClick={() => setSearchQuery('')}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-typewriter text-[#8b6f57] hover:text-[#2b1e16]"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-typewriter text-[var(--m-muted)] hover:text-[var(--m-ink)]"
             >
               {lang === 'de' ? 'Löschen' : lang === 'es' ? 'Borrar' : 'Clear'}
             </button>
@@ -298,7 +312,7 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
           <select
             value={selectedDomain}
             onChange={(e) => setSelectedDomain(e.target.value)}
-            className="px-3.5 py-2.5 rounded-xl border border-[#d8cbba] bg-[#fdfbf7] text-[#3d2f23] text-xs font-semibold focus:outline-hidden focus:ring-2 focus:ring-[#8c1d40]/20 shadow-2xs cursor-pointer"
+            className="px-3.5 py-2.5 rounded-xl border border-[var(--m-line-strong)] bg-[var(--m-surface)] text-[#3d2f23] text-xs font-semibold focus:outline-hidden focus:ring-2 focus:ring-[var(--m-accent)]/20 shadow-2xs cursor-pointer"
           >
             {domainOptions.map((opt) => (
               <option key={opt.id} value={opt.id}>
@@ -311,11 +325,28 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
           <select
             value={selectedVerdict}
             onChange={(e) => setSelectedVerdict(e.target.value)}
-            className="px-3.5 py-2.5 rounded-xl border border-[#d8cbba] bg-[#fdfbf7] text-[#3d2f23] text-xs font-semibold focus:outline-hidden focus:ring-2 focus:ring-[#8c1d40]/20 shadow-2xs cursor-pointer"
+            className="px-3.5 py-2.5 rounded-xl border border-[var(--m-line-strong)] bg-[var(--m-surface)] text-[#3d2f23] text-xs font-semibold focus:outline-hidden focus:ring-2 focus:ring-[var(--m-accent)]/20 shadow-2xs cursor-pointer"
           >
             {verdictOptions.map((opt) => (
               <option key={opt.id} value={opt.id}>
                 {getVerdictOptionLabel(opt)}
+              </option>
+            ))}
+          </select>
+
+          {/* Sort by reviewer vector */}
+          <select
+            value={sortBy}
+            onChange={(e) => setSortBy(e.target.value)}
+            aria-label={lang === 'de' ? 'Nach Vektor sortieren' : 'Sort by vector'}
+            className="px-3.5 py-2.5 rounded-xl border border-[var(--m-line-strong)] bg-[var(--m-surface)] text-[#3d2f23] text-xs font-semibold focus:outline-hidden focus:ring-2 focus:ring-[var(--m-accent)]/20 shadow-2xs cursor-pointer"
+          >
+            <option value="default">{lang === 'de' ? 'Sortierung: Standard' : 'Sort: default'}</option>
+            <option value="total">{lang === 'de' ? 'Vektoren: Gesamt (/40)' : 'Vectors: total (/40)'}</option>
+            <option value="core">{lang === 'de' ? 'Vektoren: Kern (/35)' : 'Vectors: core (/35)'}</option>
+            {VECTOR_CATALOG.map((def) => (
+              <option key={def.key} value={def.key}>
+                {def.code} · {vectorLabel(def, lang)}
               </option>
             ))}
           </select>
@@ -324,9 +355,9 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
 
       {/* Selected Tag Active Filter Banner */}
       {selectedTag && (
-        <div className="flex items-center justify-between gap-3 px-4 py-3 rounded-xl bg-[#8c1d40]/10 border border-[#8c1d40]/25 text-[#8c1d40] text-xs font-typewriter font-semibold animate-fadeIn">
+        <div className="flex items-center justify-between gap-3 px-4 py-3 rounded-xl bg-[var(--m-accent)]/10 border border-[var(--m-accent)]/25 text-[var(--m-accent)] text-xs font-typewriter font-semibold animate-fadeIn">
           <div className="flex items-center gap-2">
-            <Tag className="w-4 h-4 text-[#8c1d40]" />
+            <Tag className="w-4 h-4 text-[var(--m-accent)]" />
             <span>
               {lang === 'de'
                 ? `Gefiltert nach Tag: #${selectedTag} (${filteredDosen.length} ${filteredDosen.length === 1 ? 'Dose' : 'Dosen'})`
@@ -338,7 +369,7 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
           <button
             type="button"
             onClick={() => handleSetSelectedTag(null)}
-            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#8c1d40] text-white hover:bg-[#721432] transition-colors shadow-2xs cursor-pointer"
+            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[var(--m-accent)] text-white hover:bg-[var(--m-accent-strong)] transition-colors shadow-2xs cursor-pointer"
           >
             <X className="w-3.5 h-3.5" />
             <span>{lang === 'de' ? 'Filter aufheben' : lang === 'es' ? 'Quitar filtro' : 'Clear Filter'}</span>
@@ -367,7 +398,7 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
               <div
                 key={dose.id}
                 onClick={() => (onOpenSinglePage ? onOpenSinglePage(dose) : onSelectDose(dose))}
-                className="group relative rounded-2xl amelie-tin-box p-6 flex flex-col justify-between transition-all duration-200 hover:-translate-y-1 hover:shadow-xl cursor-pointer border border-[#d8cbba] hover:border-[#c5832b]"
+                className="group relative rounded-2xl amelie-tin-box p-6 flex flex-col justify-between transition-all duration-200 hover:-translate-y-1 hover:shadow-xl cursor-pointer border border-[var(--m-line-strong)] hover:border-[var(--m-copper)]"
               >
                 <div>
                   {/* Card Header Tag */}
@@ -375,13 +406,13 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
                     <span
                       className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold shadow-2xs ${
                         isGift
-                          ? 'bg-[#1b4332] text-[#f4fbf7] border border-[#143527]'
+                          ? 'bg-[var(--m-green)] text-[#f4fbf7] border border-[#143527]'
                           : isBuildFirst
-                          ? 'bg-[#c5832b] text-[#fffdfa] border border-[#a86c1f]'
-                          : 'bg-[#8c1d40] text-[#fff9f5] border border-[#721432]'
+                          ? 'bg-[var(--m-copper)] text-[var(--m-surface)] border border-[#a86c1f]'
+                          : 'bg-[var(--m-accent)] text-[var(--m-on-accent)] border border-[var(--m-accent-strong)]'
                       }`}
                     >
-                      {isGift && <Gift className="w-3 h-3 text-[#f6bd60]" />}
+                      {isGift && <Gift className="w-3 h-3 text-[var(--m-gold)]" />}
                       {isBuildFirst && <Hammer className="w-3 h-3 text-[#fef08a]" />}
                       {isKept && <Lock className="w-3 h-3 text-[#fbcfe8]" />}
                       <span className="tracking-wide">{getVerdictLabel(dose.verdict)}</span>
@@ -391,7 +422,7 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
                       {DOSE_SIMULATOR_MAP[dose.id] && (
                         <span
                           title={lang === 'de' ? 'Mit interaktivem Simulator' : lang === 'es' ? 'Con simulador interactivo' : 'Comes with an interactive simulator'}
-                          className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-typewriter font-bold bg-[#c5832b]/15 text-[#78350f] border border-[#c5832b]/30"
+                          className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-typewriter font-bold bg-[var(--m-copper)]/15 text-[#78350f] border border-[var(--m-copper)]/30"
                         >
                           <span aria-hidden="true">{DOSE_SIMULATOR_MAP[dose.id].icon}</span>
                           <span>{lang === 'de' ? 'Simulator' : lang === 'es' ? 'Simulador' : 'Simulator'}</span>
@@ -407,22 +438,22 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
                       <button
                         type="button"
                         onClick={(e) => handleCopyUrl(e, dose.id)}
-                        className="p-1 rounded-md text-[#8b6f57] hover:text-[#8c1d40] hover:bg-[#8c1d40]/10 transition-colors"
+                        className="p-1 rounded-md text-[var(--m-muted)] hover:text-[var(--m-accent)] hover:bg-[var(--m-accent)]/10 transition-colors"
                         title={copiedDoseId === dose.id ? (lang === 'de' ? 'URL kopiert!' : lang === 'es' ? '¡URL copiada!' : 'URL copied!') : (lang === 'de' ? 'Direkt-URL kopieren' : lang === 'es' ? 'Copiar URL directa' : 'Copy direct URL')}
                       >
-                        {copiedDoseId === dose.id ? <Check className="w-3.5 h-3.5 text-[#1b4332]" /> : <Link2 className="w-3.5 h-3.5" />}
+                        {copiedDoseId === dose.id ? <Check className="w-3.5 h-3.5 text-[var(--m-green)]" /> : <Link2 className="w-3.5 h-3.5" />}
                       </button>
 
-                      <span className="text-xs font-typewriter text-[#8b6f57]">
+                      <span className="text-xs font-typewriter text-[var(--m-muted)]">
                         {dose.date}
                       </span>
                     </div>
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-bold font-amelie text-[#2b1e16] group-hover:text-[#8c1d40] transition-colors tracking-tight flex items-center justify-between mt-1">
+                  <h3 className="text-xl font-bold font-amelie text-[var(--m-ink)] group-hover:text-[var(--m-accent)] transition-colors tracking-tight flex items-center justify-between mt-1">
                     <span>{getLocalizedTitle(dose, lang)}</span>
-                    <ArrowUpRight className="w-4 h-4 text-[#8b6f57] group-hover:text-[#8c1d40] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <ArrowUpRight className="w-4 h-4 text-[var(--m-muted)] group-hover:text-[var(--m-accent)] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </h3>
 
                   {/* Simulator badge if available */}
@@ -449,23 +480,27 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
                   )}
 
                   {/* One Liner */}
-                  <p className="mt-2.5 text-xs sm:text-sm text-[#4a3b2c] italic font-amelie line-clamp-3 leading-relaxed">
+                  <p className="mt-2.5 text-xs sm:text-sm text-[var(--m-ink-2)] italic font-amelie line-clamp-3 leading-relaxed">
                     « {lang === 'de' ? dose.oneLinerDe : dose.oneLinerEn} »
                   </p>
 
                   {/* Recipient */}
-                  <div className="mt-4 pt-3 border-t border-[#dfd1be]">
-                    <span className="text-[11px] font-typewriter text-[#8b6f57] uppercase tracking-wider block font-semibold">
+                  <div className="mt-4 pt-3 border-t border-[var(--m-line)]">
+                    <span className="text-[11px] font-typewriter text-[var(--m-muted)] uppercase tracking-wider block font-semibold">
                       {t.ui.recipient}
                     </span>
-                    <p className="text-xs font-bold text-[#2b1e16] line-clamp-1 mt-0.5">
+                    <p className="text-xs font-bold text-[var(--m-ink)] line-clamp-1 mt-0.5">
                       {lang === 'de' ? dose.recipientsDe : dose.recipientsEn}
                     </p>
                   </div>
                 </div>
 
+                <div className="mt-3">
+                  <DoseVectorPanel doseId={dose.id} lang={lang} compact />
+                </div>
+
                 {/* Tags & Action */}
-                <div className="mt-5 pt-3 border-t border-[#dfd1be] flex items-center justify-between gap-2">
+                <div className="mt-5 pt-3 border-t border-[var(--m-line)] flex items-center justify-between gap-2">
                   <div className="flex flex-wrap gap-1">
                     {dose.tags.slice(0, 2).map((tag, idx) => (
                       <button
@@ -477,8 +512,8 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
                         }}
                         className={`text-[11px] font-typewriter px-2 py-0.5 rounded border transition-colors cursor-pointer ${
                           selectedTag === tag
-                            ? 'bg-[#8c1d40] text-white border-[#721432] font-bold'
-                            : 'bg-[#f5ede0] text-[#5c4a3d] border-[#e2d5c3] hover:bg-[#8c1d40]/10 hover:text-[#8c1d40] font-medium'
+                            ? 'bg-[var(--m-accent)] text-white border-[var(--m-accent-strong)] font-bold'
+                            : 'bg-[#f5ede0] text-[var(--m-ink-2)] border-[var(--m-line)] hover:bg-[var(--m-accent)]/10 hover:text-[var(--m-accent)] font-medium'
                         }`}
                         title={lang === 'de' ? `Nach Tag #${tag} filtern` : lang === 'es' ? `Filtrar por #${tag}` : `Filter by #${tag}`}
                       >
@@ -486,7 +521,7 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
                       </button>
                     ))}
                     {dose.tags.length > 2 && (
-                      <span className="text-[11px] font-typewriter text-[#8b6f57] px-1 py-0.5">
+                      <span className="text-[11px] font-typewriter text-[var(--m-muted)] px-1 py-0.5">
                         +{dose.tags.length - 2}
                       </span>
                     )}
@@ -496,13 +531,13 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
                     <button
                       type="button"
                       onClick={(e) => handleCopyUrl(e, dose.id)}
-                      className="p-1.5 rounded-md text-[11px] font-typewriter text-[#7c6655] hover:text-[#8c1d40] hover:bg-[#faf5eb] border border-transparent hover:border-[#dfd1be] transition-colors flex items-center gap-1"
+                      className="p-1.5 rounded-md text-[11px] font-typewriter text-[#7c6655] hover:text-[var(--m-accent)] hover:bg-[var(--m-surface-2)] border border-transparent hover:border-[var(--m-line)] transition-colors flex items-center gap-1"
                       title={copiedDoseId === dose.id ? (lang === 'de' ? 'URL kopiert!' : lang === 'es' ? '¡URL copiada!' : 'URL copied!') : (lang === 'de' ? 'Dosen-URL kopieren' : lang === 'es' ? 'Copiar URL de la lata' : 'Copy Tin URL')}
                     >
                       {copiedDoseId === dose.id ? (
                         <Check className="w-3.5 h-3.5 text-emerald-600" />
                       ) : (
-                        <Link2 className="w-3.5 h-3.5 text-[#c5832b]" />
+                        <Link2 className="w-3.5 h-3.5 text-[var(--m-copper)]" />
                       )}
                     </button>
 
@@ -512,7 +547,7 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
                         e.stopPropagation();
                         onSelectDose(dose);
                       }}
-                      className="px-2 py-1 rounded-md text-[11px] font-typewriter text-[#7c6655] hover:text-[#8c1d40] hover:bg-[#faf5eb] border border-transparent hover:border-[#dfd1be] transition-colors flex items-center gap-1"
+                      className="px-2 py-1 rounded-md text-[11px] font-typewriter text-[#7c6655] hover:text-[var(--m-accent)] hover:bg-[var(--m-surface-2)] border border-transparent hover:border-[var(--m-line)] transition-colors flex items-center gap-1"
                       title={lang === 'de' ? 'Schnellansicht im Popup' : lang === 'es' ? 'Vista rápida' : 'Quick popup view'}
                     >
                       <Maximize2 className="w-3 h-3" />
@@ -529,7 +564,7 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
                           onSelectDose(dose);
                         }
                       }}
-                      className="text-xs font-bold font-amelie text-[#8c1d40] hover:underline flex items-center gap-0.5 px-2 py-1 rounded-md hover:bg-[#8c1d40]/5"
+                      className="text-xs font-bold font-amelie text-[var(--m-accent)] hover:underline flex items-center gap-0.5 px-2 py-1 rounded-md hover:bg-[var(--m-accent)]/5"
                       title={lang === 'de' ? 'Als Einzelseite öffnen' : lang === 'es' ? 'Abrir como página' : 'Open as Single Page'}
                     >
                       <span>{lang === 'de' ? 'Einzelseite' : t.ui.open_tin}</span>

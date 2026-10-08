@@ -117,6 +117,8 @@ export class WebGL2WetInkEngine {
   private pigment1: WetInkPigmentConfig;
   private pigment2: WetInkPigmentConfig | null = null;
   private params: WetInkSimParams;
+  private lastStrokeX: number | null = null;
+  private lastStrokeY: number | null = null;
 
   // Simulation Metrics
   activeCells: number = 0;
@@ -130,13 +132,15 @@ export class WebGL2WetInkEngine {
     paper: PaperMaps,
     paperConfig: WetInkPaperConfig,
     pigment: WetInkPigmentConfig,
-    params: WetInkSimParams
+    params: WetInkSimParams,
+    pigment2?: WetInkPigmentConfig
   ) {
     this.canvas = canvas;
     this.width = width;
     this.height = height;
     this.paperConfig = paperConfig;
     this.pigment1 = pigment;
+    this.pigment2 = pigment2 || null;
     this.params = params;
 
     const gl = canvas.getContext('webgl2', {
@@ -465,6 +469,102 @@ export class WebGL2WetInkEngine {
   }
 
   /**
+   * Continuous hardware-accelerated brush stroke between two coordinates.
+   * Interpolates splats along the segment in a single WebGL draw pass without state toggling.
+   */
+  strokeSegment(
+    x0: number,
+    y0: number,
+    x1: number,
+    y1: number,
+    radius: number,
+    waterAmount: number,
+    pigmentAmount: number,
+    pigmentSlot: 1 | 2 = 1
+  ) {
+    const gl = this.gl;
+    if (!gl || !this.splatProgram || !this.quadVao || !this.fboA) return;
+
+    const dx = x1 - x0;
+    const dy = y1 - y0;
+    const dist = Math.hypot(dx, dy);
+
+    // Spacing between stamps: tight enough to prevent gaps while preserving fluid dynamics
+    const spacing = Math.max(1.2, radius * 0.28);
+    const steps = dist === 0 ? 1 : Math.max(1, Math.ceil(dist / spacing));
+
+    // Per-stamp fluid & pigment scaled by path spacing relative to radius
+    const stampScale = (spacing / Math.max(1, radius)) / steps;
+    const perStampWater = dist === 0 ? waterAmount : Math.max(0.01, waterAmount * stampScale);
+    const perStampPigment = dist === 0 ? pigmentAmount : Math.max(0.02, pigmentAmount * stampScale);
+
+    gl.viewport(0, 0, this.width, this.height);
+    gl.bindFramebuffer(gl.FRAMEBUFFER, this.fboA.framebuffer);
+    gl.drawBuffers([gl.COLOR_ATTACHMENT0, gl.COLOR_ATTACHMENT1]);
+
+    gl.useProgram(this.splatProgram);
+    gl.bindVertexArray(this.quadVao);
+
+    gl.enable(gl.BLEND);
+    gl.blendFunc(gl.ONE, gl.ONE);
+
+    const normRadius = radius / Math.min(this.width, this.height);
+    gl.uniform1f(this.splatLocs.radius, normRadius);
+    gl.uniform2f(this.splatLocs.aspect, this.width / this.height, 1.0);
+    gl.uniform4f(this.splatLocs.fluidSplat, 0.0, 0.0, perStampWater, 0.0);
+
+    if (pigmentSlot === 1) {
+      gl.uniform4f(this.splatLocs.pigmentSplat, perStampPigment, 0.0, 0.0, 0.0);
+    } else {
+      gl.uniform4f(this.splatLocs.pigmentSplat, 0.0, 0.0, perStampPigment, 0.0);
+    }
+
+    for (let i = 0; i <= steps; i++) {
+      const t = steps === 0 ? 0 : i / steps;
+      const curX = x0 + dx * t;
+      const curY = y0 + dy * t;
+      const uvX = curX / this.width;
+      const uvY = 1.0 - curY / this.height;
+
+      gl.uniform2f(this.splatLocs.point, uvX, uvY);
+      gl.drawArrays(gl.TRIANGLES, 0, 6);
+    }
+
+    gl.disable(gl.BLEND);
+    gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+    gl.bindVertexArray(null);
+
+    this.totalWater += waterAmount * 1.5;
+    this.activeCells = Math.min(this.width * this.height, this.activeCells + ((radius * radius * 3.14) | 0));
+  }
+
+  /**
+   * Continuous stroke method tracking previous position to draw seamless lines.
+   */
+  stroke(
+    x: number,
+    y: number,
+    radius: number,
+    waterAmount: number,
+    pigmentAmount: number,
+    pigmentSlot: 1 | 2 = 1,
+    isFirstPoint: boolean = false
+  ) {
+    if (isFirstPoint || this.lastStrokeX === null || this.lastStrokeY === null) {
+      this.injectInk(x, y, radius, waterAmount, pigmentAmount, pigmentSlot);
+    } else {
+      this.strokeSegment(this.lastStrokeX, this.lastStrokeY, x, y, radius, waterAmount, pigmentAmount, pigmentSlot);
+    }
+    this.lastStrokeX = x;
+    this.lastStrokeY = y;
+  }
+
+  endStroke() {
+    this.lastStrokeX = null;
+    this.lastStrokeY = null;
+  }
+
+  /**
    * Instantly binds suspended wet ink into paper fibers with zero CPU readback stalls.
    */
   forceDry() {
@@ -644,12 +744,18 @@ export class WebGL2WetInkEngine {
     gl.uniform2f(this.renderLocs.texelSize, 1.0 / this.width, 1.0 / this.height);
 
     // Kubelka-Munk Pigment 1 coefficients
-    const km1 = this.pigment1.km || { K: [2.5, 2.5, 2.5], S: [0.2, 0.2, 0.2] };
+    const km1 = this.pigment1.km || {
+      K: [this.pigment1.r > 150 ? 0.3 : 2.5, this.pigment1.g > 150 ? 0.3 : 2.5, this.pigment1.b > 150 ? 0.3 : 2.5],
+      S: [0.3, 0.3, 0.3],
+    };
     gl.uniform3f(this.renderLocs.pigment1_K, km1.K[0], km1.K[1], km1.K[2]);
     gl.uniform3f(this.renderLocs.pigment1_S, km1.S[0], km1.S[1], km1.S[2]);
 
-    // Kubelka-Munk Pigment 2 coefficients (default to yellow if null for layering)
-    const km2 = this.pigment2?.km || { K: [0.12, 0.35, 4.2], S: [0.85, 0.78, 0.20] };
+    // Kubelka-Munk Pigment 2 coefficients (default to Prussian Blue if null)
+    const km2 = this.pigment2?.km || (this.pigment2 ? {
+      K: [this.pigment2.r > 150 ? 0.3 : 2.5, this.pigment2.g > 150 ? 0.3 : 2.5, this.pigment2.b > 150 ? 0.3 : 2.5],
+      S: [0.3, 0.3, 0.3],
+    } : { K: [3.8, 1.9, 0.25], S: [0.18, 0.28, 0.75] });
     gl.uniform3f(this.renderLocs.pigment2_K, km2.K[0], km2.K[1], km2.K[2]);
     gl.uniform3f(this.renderLocs.pigment2_S, km2.S[0], km2.S[1], km2.S[2]);
 

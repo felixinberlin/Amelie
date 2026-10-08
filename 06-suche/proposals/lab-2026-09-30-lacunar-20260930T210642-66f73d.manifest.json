@@ -1,0 +1,34 @@
+{
+  "manifest_version": 1,
+  "run_id": "lacunar-20260930T210642-66f73d",
+  "plan_id": "lab-2026-09-30-lacunar-20260930T210642-66f73d",
+  "engine": "lacunar",
+  "model": "gemini-2.5-flash",
+  "existence_check": false,
+  "survivors": {
+    "count": 5,
+    "status": "ungeprueft"
+  },
+  "files": [
+    "06-suche/proposals/lab-2026-09-30-lacunar-20260930T210642-66f73d.md",
+    "06-suche/proposals/lab-2026-09-30-lacunar-20260930T210642-66f73d-source.json",
+    "06-suche/proposals/lab-2026-09-30-lacunar-20260930T210642-66f73d.manifest.json"
+  ],
+  "source_ops": [
+    {
+      "op": "source.add",
+      "id": "brandenburg-zeitzeugenportal-brandenburg-manuelle-erfassung",
+      "human_accepted": false,
+      "urls": [
+        "https://zeitzeugen.brandenburg.de/zeitzeugen/"
+      ]
+    }
+  ],
+  "grave_proposals": 1,
+  "touches_memory": false,
+  "contracts": {
+    "write-plan": "see plan",
+    "lacunar-run": "1.2.0"
+  },
+  "contract_version": "1.0.0"
+}

@@ -4,3 +4,19 @@ node_modules
 dist
 .claude/worktrees/
 scripts/wet-ink-lab/out/
+
+# Bibliotheks-CLI: Laufzeitdateien (Sperre, Crash-Journal)
+06-suche/.bib.lock
+06-suche/.bib-journal.json
+
+# Modellvergleich: Rohläufe und lokale Konfiguration (Berichte unter 06-suche/modellvergleich/berichte/ werden versioniert)
+06-suche/modellvergleich/runs/
+scripts/model-compare/models.local.json
+
+# Crew (npm run agent): Laufdatensätze sind Arbeitsmaterial, das Gedächtnis schreibt nur bib apply
+06-suche/agent-runs/
+
+# Zugangsdaten (Klon aus dem Schwesterprojekt): nie committen
+.env
+.env.*
+!.env.example

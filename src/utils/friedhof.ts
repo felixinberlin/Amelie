@@ -43,6 +43,7 @@ export const HERKUNFT: Record<Herkunft, Label> = {
   brainstorm: { de: 'Brainstorm', en: 'Brainstorm', es: 'Lluvia de ideas' },
   quelle: { de: 'Primärquelle', en: 'Primary source', es: 'Fuente primaria' },
   bisoziation: { de: 'Bisoziation', en: 'Bisociation', es: 'Bisociación' },
+  inversion: { de: 'Inversion', en: 'Inversion', es: 'Inversión' },
   'modell-katalog': { de: 'Modell-Katalog', en: 'Model catalogue', es: 'Catálogo de modelo' },
 };
 

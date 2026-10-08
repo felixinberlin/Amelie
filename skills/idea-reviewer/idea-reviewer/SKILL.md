@@ -1,11 +1,11 @@
 ---
 name: idea-reviewer
-description: Multi-vector classification, stress-testing, and architectural triage for public-good app ideas in Amélie. Bridges the three discovery engines (amelie-ideenrunde, lacunar-bisociation, asymmetric-inversion) and packaging/delivery. Evaluates candidates across 7 structured vectors: Novelty (Boden taxonomy & Lacunar gap), Complexity (architectural tier & sensor dependency), Possibility/Feasibility ("Why Now" & physics/law reality-check), Future/Longevity (regulatory runway & maintenance half-life), Grounded SWOT (civic gift resilience), Tech Tree Position (roots, trunk, branches), and Available Documentation (Type A–D ground truth fidelity). Use whenever evaluating, reviewing, classifying, or stress-testing an idea — "review idea", "classify idea", "vektoren", "SWOT", "tech tree", "ideenevaluation", "prüfe die Machbarkeit", "stresstest", or before packing a candidate into an Amélie Dose.
+description: Multi-vector classification, stress-testing, and architectural triage for public-good app ideas in Amélie. Bridges the three discovery engines (amelie-ideenrunde, lacunar-bisociation, asymmetric-inversion) and packaging/delivery. Evaluates candidates across 8 structured vectors: Novelty (Boden taxonomy & Lacunar gap), Complexity (architectural tier & sensor dependency), Possibility/Feasibility ("Why Now" & physics/law reality-check), Future/Longevity (regulatory runway & maintenance half-life), Grounded SWOT (civic gift resilience), Tech Tree Position (roots, trunk, branches), Available Documentation (Type A–D ground truth fidelity), and Fun (joy, play and delight of the first five minutes). Use whenever evaluating, reviewing, classifying, or stress-testing an idea — "review idea", "classify idea", "vektoren", "SWOT", "tech tree", "ideenevaluation", "prüfe die Machbarkeit", "stresstest", or before packing a candidate into an Amélie Dose.
 ---
 
 # Amélie — Idea Reviewer & Vector Classifier
 
-A systematic protocol for auditing, classifying, and stress-testing public-good app ideas across seven rigorous structural vectors.
+A systematic protocol for auditing, classifying, and stress-testing public-good app ideas across eight rigorous structural vectors.
 
 ---
 
@@ -37,9 +37,9 @@ If `06-suche/amelie-classification-log.md` does not yet exist, initialize it fro
 
 ---
 
-## 3. The 7-Vector Classification Matrix
+## 3. The 8-Vector Classification Matrix
 
-Every idea submitted to the Reviewer is evaluated against seven explicit vectors. Each vector produces a qualitative verdict, a quantitative score (1–5 scale, where 3 is acceptable threshold and 5 is exceptional), and concrete grounding evidence.
+Every idea submitted to the Reviewer is evaluated against eight explicit vectors (V1–V7 are the *core* vectors, V8 is the *Fun* lens, added 29.09.2026). Each vector produces a qualitative verdict, a quantitative score (1–5 scale, where 3 is acceptable threshold and 5 is exceptional), and concrete grounding evidence.
 
 ```
        [1] Novelty (Boden/Lacunar)
@@ -51,6 +51,8 @@ Every idea submitted to the Reviewer is evaluated against seven explicit vectors
   [6] Tech Tree        [4] Future / Longevity
                 v
         [5] Civic SWOT
+
+  [8] Fun (Freude / Spiellust) — orthogonal lens, scored for every idea
 ```
 
 ### Vector 1 · Novelty & Distance (Boden & Lacunar Criteria)
@@ -100,6 +102,11 @@ Maps where the idea lives within the broader open-source knowledge graph:
   * **Type D**: Academic peer-reviewed research papers (arXiv, ECCV, Springer) with proven algorithms but no end-user tool.
 * **Ground Truth Fidelity**: Are cited numerical thresholds ($\theta$, dB, KBE, kf, $U$-values) verified directly from original primary texts or scraped from third-party blogs?
 
+### Vector 8 · Fun (Freude, Spiellust, Schmunzeln)
+* **Question**: Is the first five minutes with the gift enjoyable in itself, beyond being useful? (Play loop, sensory feedback, discovery, humor, mastery — see `references/vector-rubrics.md`.)
+* **Scale**: 1 = pure chore … 5 = irresistible toy/game. Score the realistic first-step scope, name the *fun source* (`play | sensory | discovery | humor | mastery | none`).
+* **Role in triage**: Fun is **additive and never compensates**: the Dose Ready gate is computed on V1–V7 only (`≥ 24/35`, no core vector `< 3`). The total is reported as `/40`. Fun steers delivery priority, recipient choice (museums, schools, communities, Games tab) and demo choice.
+
 ---
 
 ## 4. The Review Protocol (Step by Step)
@@ -107,10 +114,10 @@ Maps where the idea lives within the broader open-source knowledge graph:
 ### Step 0 · Intake & Input Normalization
 1. Receive idea candidate from user or from discovery logs (`06-suche/`).
 2. Identify origin method: `amelie-ideenrunde`, `lacunar-bisociation`, `asymmetric-inversion`, or `user-proposal`.
-3. Check graveyard (`08-friedhof/README.md`) to verify idea is not already dead.
+3. Check graveyard (`08-friedhof/README.md`): verify idea is not already dead, or evaluate whether new evidence satisfies its specific resurrection condition (`resurrectIf`). In the repo the quick path is `npm run bib -- find <terms>` (doses, candidates, protocol, graveyard, logs at once; exit code 2 = already there, which also answers "is it rather a **Baustein** of an existing dose?") and `npm run bib -- grab show <id>` for a grave's death certificate and resurrection condition. Read-only; the librarian writes graves (`grab add`), see `06-suche/amelie-bibliothek-cli.md`.
 
 ### Step 1 · Vector Evaluation
-Evaluate the candidate across all 7 vectors using the rubrics in `references/vector-rubrics.md`. Assign integer scores (1–5) and write 1–2 grounding sentences per vector.
+Evaluate the candidate across all 8 vectors using the rubrics in `references/vector-rubrics.md`. Assign integer scores (1–5) and write 1–2 grounding sentences per vector. Report the core score `/35` (V1–V7) and the total `/40` (with V8 Fun).
 
 ### Step 2 · Tech Tree Mapping
 Draft the 3-level ASCII or Mermaid Tech Tree (Roots $\to$ Trunk $\to$ Branches).
@@ -118,16 +125,26 @@ Draft the 3-level ASCII or Mermaid Tech Tree (Roots $\to$ Trunk $\to$ Branches).
 ### Step 3 · Civic SWOT Synthesis
 Compile the 4-quadrant Civic SWOT table, identifying the single most fatal threat (*The Achilles Heel*) and the strongest defensibility anchor.
 
-### Step 4 · Synthesis & Triage Verdict
+### Step 4 · Synthesis & Triage Verdict (The Bifurcated Gate)
 Synthesize scores into a composite recommendation:
-* **`Dose Ready (Packen)`**: Score $\ge 24/35$, no vector $< 3$, Tier 1/2 complexity, verified Type A/B/D source. Ready for `05-dosen/` packaging.
+* **`Dose Ready (Packen)`**: Core score (V1–V7) $\ge 24/35$, no vector $< 3$, Tier 1/2 complexity, verified Type A/B/D source. Ready for `05-dosen/` packaging as a public-good CC0 gift.
+* **`Market Route (Venture Incubator)`**: High business value, clear B2B willingness-to-pay, compliance liability avoidance, or high developer utility, but incompatible with Amélie's CC0 gift mandate (e.g. requires Tier 3/4 backend, recurring operational cost, or targets commercial operators). Exported to `ventures/market-leads.json`.
 * **`Verengt (Narrowed Pivot)`**: Strong core idea, but direct implementation hits crowded fields or requires enterprise architecture. Formulate the single narrow residual gap.
 * **`Needs Research (Unklar)`**: Ground truth numbers ambiguous or physics signal-to-noise unverified. Pass back to discovery engine.
-* **`Graveyard Candidate (Friedhof)`**: Fails "Why Now", duplicates commercial software $\le 12$ months old, or fails physical/legal reality-check. Formulate the death certificate.
+* **`Graveyard Candidate (Friedhof)`**: Fails "Why Now", duplicates commercial software $\le 12$ months old with zero gap, or fails physical/legal reality-check. Formulate the death certificate with mandatory resurrection condition (`resurrectIfDe` / `resurrectIfEn`).
+
+#### Commercial Evaluation for `Market Route` Candidates
+When an idea is triaged as `Market Route`, evaluate the 5 Commercial Vectors:
+1. **Pain & WTP (Willingness to Pay):** Statutory fine avoidance, compliance audit cost reduction, or direct engineering time savings.
+2. **Time-to-Ship (TTS):** Feasibility of delivering a functional MVP in $\le 7$ days using deterministic logic or existing engine kernels.
+3. **Distribution Channel:** Organic search intent, EU regulatory deadlines, developer communities (`r/ClaudeCode`, Hacker News), or niche trade associations.
+4. **Monetization Architecture:** One-off license ($79–$299), Micro-SaaS subscription (€49–€199/mo), or commercial SDK embed.
+5. **Defensibility:** Grounded in deterministic parsers, physics simulations, or regulatory rule engines rather than fragile naive LLM prompts.
 
 ### Step 5 · Log & Output
 1. Append the full review to `06-suche/amelie-classification-log.md`.
-2. Present the user with the structured Review Scorecard, Tech Tree, SWOT, and Triage Verdict.
+2. If `Market Route`: trigger `npm run export:market` to sync candidate into `ventures/market-leads.json`.
+3. Present the user with the structured Review Scorecard, Tech Tree, SWOT, and Triage Verdict.
 
 ---
 
@@ -137,7 +154,7 @@ Synthesize scores into a composite recommendation:
 ### Review Scorecard: [Idea Title] (`id`)
 **Origin:** [Method] · **Category:** [Domain] · **Intended Recipient:** [Recipient]
 
-#### 1. Vector Radar (Score: [Total]/35)
+#### 1. Vector Radar (Core: [V1–V7]/35 · Total with Fun: [..]/40)
 | Vector | Score (1-5) | Key Finding / Grounding |
 |---|:---:|---|
 | **V1 · Novelty** | X/5 | [Boden type + Lacunar gap sentence] |
@@ -147,6 +164,7 @@ Synthesize scores into a composite recommendation:
 | **V5 · Civic SWOT** | X/5 | [Defensibility & Achilles heel] |
 | **V6 · Tech Tree** | X/5 | [Root prerequisites & downstream unlocks] |
 | **V7 · Documentation** | X/5 | [Source Type A-D + primary fidelity] |
+| **V8 · Fun** | X/5 | [Fun source: play/sensory/discovery/humor/mastery/none + one sentence] |
 
 #### 2. Tech Tree Position
 ```
@@ -164,7 +182,7 @@ Synthesize scores into a composite recommendation:
 | • ... | • ... |
 
 #### 4. Synthesis Verdict & Triage
-* **Verdict:** `[Dose Ready | Verengt | Needs Research | Friedhof]`
+* **Verdict:** `[Dose Ready | Market Route | Verengt | Needs Research | Friedhof]`
 * **The Residual Gap / Condition:** [One sharp sentence]
 * **Actionable Next Step:** [Concrete engineering ticket or search mandate]
 ```

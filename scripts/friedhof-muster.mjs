@@ -2,7 +2,7 @@
 // Schreibt die Musterauswertung und die Gräberliste in 08-friedhof/README.md
 // (zwischen den Markern <!-- MUSTER:START --> … <!-- MUSTER:END -->).
 //
-// Quelle ist DISCARDED_DATA in src/data/dosen.ts, gerechnet mit derselben
+// Quelle ist DISCARDED_DATA (Daten: src/data/graeber.json, über src/data/dosen.ts exportiert), gerechnet mit derselben
 // Funktion wie die App (src/utils/friedhof.ts) — README und Seite können sich
 // deshalb nicht widersprechen.
 //
@@ -49,12 +49,12 @@ function tabelle(titel, rows, labels, of = m.total) {
 }
 
 const zeile = (d) =>
-  `| ${d.title} | ${formatTodesdatum(d.diedOn, 'de')} | ${URSACHE[d.cause].de} | ${KILLER[d.killer].de} | ${FUNDWEG[d.foundBy].de} | ${HERKUNFT[d.origin].de} | ${STADIUM[d.stage].de} |`;
+  `| ${d.title} | ${formatTodesdatum(d.diedOn, 'de')} | ${URSACHE[d.cause].de} | ${KILLER[d.killer].de} | ${FUNDWEG[d.foundBy].de} | ${HERKUNFT[d.origin].de} | ${STADIUM[d.stage].de} | ${d.resurrectIfDe.replace(/\|/g, '\\|')} |`;
 
 const block = [
   START,
   '',
-  `*Automatisch erzeugt aus \`src/data/dosen.ts\` (\`DISCARDED_DATA\`) mit \`npm run friedhof\`. Nicht von Hand bearbeiten — \`npm run lint\` meldet Abweichungen.*`,
+  `*Automatisch erzeugt aus \`src/data/graeber.json\` (\`DISCARDED_DATA\`) mit \`npm run friedhof\` (läuft nach \`npm run bib -- grab add\` von selbst). Nicht von Hand bearbeiten — \`npm run lint\` meldet Abweichungen.*`,
   '',
   `**${m.total} Gräber.** ${m.spaete} davon starben erst als Dose oder Mail-Entwurf (teure Tode). ` +
     `Von ${m.dokumentierteFundwege} dokumentierten Fundwegen kamen ${m.ohneNeueSuche} ohne neue Suche aus ` +
@@ -72,8 +72,8 @@ const block = [
   '',
   '### Alle Gräber (neueste zuerst)',
   '',
-  '| Idee | † | Ursache | Wer sie hatte | Gefunden durch | Herkunft | Kam bis |',
-  '|---|---|---|---|---|---|---|',
+  '| Idee | † | Ursache | Wer sie hatte | Gefunden durch | Herkunft | Kam bis | Auferstehung wenn |',
+  '|---|---|---|---|---|---|---|---|',
   ...nachTodesdatum(DISCARDED_DATA).map(zeile),
   '',
   END,

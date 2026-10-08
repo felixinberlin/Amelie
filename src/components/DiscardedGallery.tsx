@@ -108,10 +108,10 @@ function Totenschein({ item, lang, onClose }: { item: DiscardedItem; lang: Langu
       aria-labelledby={`totenschein-${item.id}`}
     >
       <div
-        className="relative w-full sm:max-w-xl max-h-[88vh] overflow-y-auto rounded-t-2xl sm:rounded-2xl bg-[#fdfbf7] border border-stone-300 shadow-xl"
+        className="relative w-full sm:max-w-xl max-h-[88vh] overflow-y-auto rounded-t-2xl sm:rounded-2xl bg-[var(--m-surface)] border border-stone-300 shadow-xl"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="sticky top-0 flex items-start justify-between gap-3 border-b border-stone-200 bg-[#fdfbf7]/95 backdrop-blur px-5 py-4">
+        <div className="sticky top-0 flex items-start justify-between gap-3 border-b border-stone-200 bg-[var(--m-surface)]/95 backdrop-blur px-5 py-4">
           <div>
             <p className="text-[11px] font-mono-code uppercase tracking-[0.14em] text-stone-500">
               {tx(lang, 'Totenschein', 'Death certificate', 'Certificado de defunción')} · † {formatTodesdatum(item.diedOn, lang)}
@@ -461,7 +461,7 @@ export const DiscardedGallery: React.FC<DiscardedGalleryProps> = ({ discarded, l
             ),
           ],
         ].map(([h, p]) => (
-          <div key={h} className="rounded-2xl border border-stone-200 bg-[#fdfbf7] p-5">
+          <div key={h} className="rounded-2xl border border-stone-200 bg-[var(--m-surface)] p-5">
             <h4 className="font-serif-title font-bold text-stone-900">{h}</h4>
             <p className="mt-1.5 text-sm text-stone-600 leading-relaxed">{p}</p>
           </div>

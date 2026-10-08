@@ -1,0 +1,2174 @@
+{
+  "generatedAt": "2026-10-06T10:17:47.614Z",
+  "period": "week",
+  "source": "reddit.com Atom-Feeds (top.rss), Reihenfolge = Ranking; keine Scores",
+  "feeds": [
+    {
+      "sub": "SideProject",
+      "group": "build",
+      "period": "week",
+      "fetchedAt": "2026-10-06T10:17:47.614Z",
+      "stale": false,
+      "error": null,
+      "posts": [
+        {
+          "id": "t3_1wvqhxy",
+          "title": "One month of Early Access – a lot has changed",
+          "url": "https://www.reddit.com/r/SideProject/comments/1wvqhxy/one_month_of_early_access_a_lot_has_changed/",
+          "author": "HaiHappenUAHA",
+          "published": "2026-10-02T10:40:10+00:00",
+          "excerpt": "I'm a trained architect, and as a long-term side project, I've been building a game that combines accurate floor planning with real-time 3D design to make architecture much easier to create than with traditional CAD software. What you can do: 🏠 2D floor plans 🧱 3D building 🚶…"
+        },
+        {
+          "id": "t3_1wv85zh",
+          "title": "I'm building a fitness tracker (yes one of the most crowded app categories), so I built something I couldn't find and actually needed + some fun quirky stuff",
+          "url": "https://www.reddit.com/r/SideProject/comments/1wv85zh/im_building_a_fitness_tracker_yes_one_of_the_most/",
+          "author": "Stabbz",
+          "published": "2026-10-01T19:03:39+00:00",
+          "excerpt": "EDIT: Short clip of the actual android app in the comments: https://www.reddit.com/r/SideProject/comments/1wv85zh/comment/pda3u3n/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button I know how this sounds, because there are hundreds of workou…"
+        },
+        {
+          "id": "t3_1wtrp2e",
+          "title": "I got bored of my EV sounding like a fridge, so I built this.",
+          "url": "https://www.reddit.com/r/SideProject/comments/1wtrp2e/i_got_bored_of_my_ev_sounding_like_a_fridge_so_i/",
+          "author": "apinstein",
+          "published": "2026-09-30T01:09:37+00:00",
+          "excerpt": "After seeing a bunch of news this summer about automakers adding virtual shifting and simulated powertrains to EVs, I got curious: how good could this actually feel? Would it genuinely make an EV more fun, or would it just be a gimmick? I hacked together a prototype in a couple…"
+        },
+        {
+          "id": "t3_1wxbgrd",
+          "title": "A daily game of cutting random items perfectly in half",
+          "url": "https://www.reddit.com/r/SideProject/comments/1wxbgrd/a_daily_game_of_cutting_random_items_perfectly_in/",
+          "author": "karusu88",
+          "published": "2026-10-04T09:27:26+00:00",
+          "excerpt": "I've had so much fun working on this little project for the last few weeks. It is based on a 2D version I made last year, but I think this one is much more fun. I make use of CC licensed assets from Sketchfab and Poly Haven, with some edits made so they all work with the cutting…"
+        },
+        {
+          "id": "t3_1wv4xax",
+          "title": "I built a gamified running app where you collect real landmarks by running a loop around them",
+          "url": "https://www.reddit.com/r/SideProject/comments/1wv4xax/i_built_a_gamified_running_app_where_you_collect/",
+          "author": "Gullible-Valuable625",
+          "published": "2026-10-01T17:01:48+00:00",
+          "excerpt": "Hey everyone, I just launched Treadline on the App Store. I could never stick with running, but I'll grind a game for hours if there's something to unlock. So I thought, what if landmarks were the unlocks? Run a loop around a real landmark, like the Eiffel Tower or the Colosseum…"
+        },
+        {
+          "id": "t3_1wwj16k",
+          "title": "I vibe coded a 3D island where every building is a company",
+          "url": "https://www.reddit.com/r/SideProject/comments/1wwj16k/i_vibe_coded_a_3d_island_where_every_building_is/",
+          "author": "dopestdro",
+          "published": "2026-10-03T09:31:07+00:00",
+          "excerpt": "I wanted a better way to feel the gap between companies than a bar charts, so I built a island where every building is a company and the taller it is, the bigger its market cap. What you can do: Built with React, Three.js (react-three-fiber) and Claude Opus 5.5. Not financial ad…"
+        },
+        {
+          "id": "t3_1wu8xdz",
+          "title": "i spent 6+ months building an actual OS for web apps",
+          "url": "https://www.reddit.com/r/SideProject/comments/1wu8xdz/i_spent_6_months_building_an_actual_os_for_web/",
+          "author": "xaelion",
+          "published": "2026-09-30T16:06:43+00:00",
+          "excerpt": "so for the past 6 months or so i've been trying to build a operating system for web apps the idea is pretty simple. it's a real, programmable system with a web desktop you can reach from anywhere, but the apps on it are built with normal web tools. what's new is that you build t…"
+        },
+        {
+          "id": "t3_1wyc0hm",
+          "title": "I built a dashboard that aggregates news articles, trending videos, Twitter feeds and radio stations into one place.",
+          "url": "https://www.reddit.com/r/SideProject/comments/1wyc0hm/i_built_a_dashboard_that_aggregates_news_articles/",
+          "author": "MrPopCultur",
+          "published": "2026-10-05T15:48:44+00:00",
+          "excerpt": "I recently discovered my grandmother no longer reads the news because she gets all her information from social media - if its not trending on Facebook, she doesn't see it. I remember when Boomers used to swear by mainstream outlets like CNN, but smartphones pulled many of them i…"
+        },
+        {
+          "id": "t3_1wurmh5",
+          "title": "I turned phone tilting into a tiny boat game.",
+          "url": "https://www.reddit.com/r/SideProject/comments/1wurmh5/i_turned_phone_tilting_into_a_tiny_boat_game/",
+          "author": "freechoice",
+          "published": "2026-10-01T05:57:43+00:00",
+          "excerpt": "https://tiltanic.com/ I've built Tiltanic - a free browser game for your phone! You tilt the phone, and the sea tilts with it. The boat goes up and down with the water. At each gate, the boat must pass below an anchor and above a mine. Small tilts keep the sea calm. Large tilts…"
+        },
+        {
+          "id": "t3_1wu9rsk",
+          "title": "Self-hosted library app",
+          "url": "https://www.reddit.com/r/SideProject/comments/1wu9rsk/selfhosted_library_app/",
+          "author": "Mysterious-Zebra9580",
+          "published": "2026-09-30T16:38:13+00:00",
+          "excerpt": "I built a self-hosted library app called bookplate. Made a landing page for it here http://www.bookplate. eu"
+        },
+        {
+          "id": "t3_1wwy6zc",
+          "title": "Split-Flap, a railway-style flap board for any screen in the browser",
+          "url": "https://www.reddit.com/r/SideProject/comments/1wwy6zc/splitflap_a_railwaystyle_flap_board_for_any/",
+          "author": "BocciaChoc",
+          "published": "2026-10-03T21:13:59+00:00",
+          "excerpt": ""
+        },
+        {
+          "id": "t3_1wtp8r8",
+          "title": "I built a free app that turns every guest's phone into a disposable camera for your event. Looking for people to try it",
+          "url": "https://www.reddit.com/r/SideProject/comments/1wtp8r8/i_built_a_free_app_that_turns_every_guests_phone/",
+          "author": "Cs_Roland",
+          "published": "2026-09-29T23:16:26+00:00",
+          "excerpt": "Heya 👋 After every wedding, outdooring or birthday I've been to, the same thing happens: everyone took photos, but they're scattered across a hundred phones, and the ones that reach you come through WhatsApp, compressed, weeks later. So I built Roll Call 📸 You create your even…"
+        },
+        {
+          "id": "t3_1wwlll9",
+          "title": "Last week I posted the app that tells me when my lifting form is wrong. This is what I fixed after your feedback",
+          "url": "https://www.reddit.com/r/SideProject/comments/1wwlll9/last_week_i_posted_the_app_that_tells_me_when_my/",
+          "author": "1017_frank",
+          "published": "2026-10-03T12:05:14+00:00",
+          "excerpt": "I implemented the feedback I got. Added a rep counter, and a rep by rep breakdown of how you performed in each set. I added a voice coach. Last week it was a coach after your session. Now it is a coach during your session, telling you out loud when your form breaks. I added reco…"
+        },
+        {
+          "id": "t3_1wtg9jn",
+          "title": "My CV 2.0 😅",
+          "url": "https://www.reddit.com/r/SideProject/comments/1wtg9jn/my_cv_20/",
+          "author": "MartinTale",
+          "published": "2026-09-29T17:23:33+00:00",
+          "excerpt": "Hey, I'm Martin, 37, long-time SWE and now a solo builder 👋 I started building in public last December and now I have launched 13 projects this year (games, apps, websites) done my first hackathon (shipaton) ran my first half marathon (and gained weight 😬) $628 profit so far \ud83e…"
+        },
+        {
+          "id": "t3_1wtzjrd",
+          "title": "What Are You Building? I’d Love to Feature It",
+          "url": "https://www.reddit.com/r/SideProject/comments/1wtzjrd/what_are_you_building_id_love_to_feature_it/",
+          "author": "somevietnameseguy123",
+          "published": "2026-09-30T08:31:24+00:00",
+          "excerpt": "If you’re building a SaaS, or app and looking for a way to get more eyes on it, I’d love to feature a few projects. We run TikTok channels with 300K+ combined followers and create short-form videos around apps, tools, and interesting projects. We'll create short-form videos for…"
+        },
+        {
+          "id": "t3_1wxstzu",
+          "title": "We’ve spent the last 14 months building a tabletop basketball game. Would you actually play this?",
+          "url": "https://www.reddit.com/r/SideProject/comments/1wxstzu/weve_spent_the_last_14_months_building_a_tabletop/",
+          "author": "LaFlamaBlanca1234",
+          "published": "2026-10-04T22:45:56+00:00",
+          "excerpt": "A little over a year ago I had the idea for a basketball game that could be played on a normal folding table, something with the social/competitive feel of beer pong, but where actually making the shot is much more controllable and skill based. After a ton of different design ch…"
+        },
+        {
+          "id": "t3_1wyn4ja",
+          "title": "My wife kept missing her size, so I did what any developer husband would do and built an app for her and now it has 1000 users!",
+          "url": "https://www.reddit.com/r/SideProject/comments/1wyn4ja/my_wife_kept_missing_her_size_so_i_did_what_any/",
+          "author": "tlherysr",
+          "published": "2026-10-05T23:07:32+00:00",
+          "excerpt": "About a year ago my wife wanted a dress from Zara that was sold out everywhere, online and in the stores. She was sure it would come back, so she started checking the page. Like, constantly. Every time I looked at her she was refreshing that page on her phone. I did some researc…"
+        },
+        {
+          "id": "t3_1wuzcyg",
+          "title": "subsmap: People came for the NSFW, but stayed to find a job",
+          "url": "https://www.reddit.com/r/SideProject/comments/1wuzcyg/subsmap_people_came_for_the_nsfw_but_stayed_to/",
+          "author": "knivef",
+          "published": "2026-10-01T13:24:24+00:00",
+          "excerpt": "A couple of weeks ago I posted about subsmap finding out 1/3rd of active subs are NSFW . You all showed up, and some of you showed up very enthusiastically. Since then: 89K views on the original post 6,500+ unique visitors to subsmap in 30 days (per Cloudflare analytics) Visitor…"
+        },
+        {
+          "id": "t3_1ww42ne",
+          "title": "I built an app to help my GF and I cook more instead of eating out",
+          "url": "https://www.reddit.com/r/SideProject/comments/1ww42ne/i_built_an_app_to_help_my_gf_and_i_cook_more/",
+          "author": "-DaMuffin-",
+          "published": "2026-10-02T20:18:43+00:00",
+          "excerpt": "My GF and I both work full time, and we kept eating out way more than we wanted (we both have a few extra pounds to show for it). I enjoy cooking, but I realized there's so much friction around making a meal: finding the recipe I cooked months ago, messy recipe formats, deciding…"
+        },
+        {
+          "id": "t3_1wupnny",
+          "title": "DOMiltion - demolish sites which you don't like",
+          "url": "https://www.reddit.com/r/SideProject/comments/1wupnny/domiltion_demolish_sites_which_you_dont_like/",
+          "author": "pop6996pop",
+          "published": "2026-10-01T04:03:40+00:00",
+          "excerpt": "Try now: https://domolition.chirkut.xyz/"
+        },
+        {
+          "id": "t3_1wtsadn",
+          "title": "I turned Oura ring into a controller for Mac",
+          "url": "https://www.reddit.com/r/SideProject/comments/1wtsadn/i_turned_oura_ring_into_a_controller_for_mac/",
+          "author": "akashxn",
+          "published": "2026-09-30T01:38:08+00:00",
+          "excerpt": "Weekend project - FunOura is a free Mac menu bar app that uses the ring as an input device. ( https://funoura.com ) Features: Point at the screen and the cursor follows your hand Tap thumb to finger to click, twice to double-click Flick to scroll Palm up to pause Remote mode for…"
+        },
+        {
+          "id": "t3_1wwfn9o",
+          "title": "I made Lightroom as if Adobe actually shipped it in 2026",
+          "url": "https://www.reddit.com/r/SideProject/comments/1wwfn9o/i_made_lightroom_as_if_adobe_actually_shipped_it/",
+          "author": "AsejereDaDeje",
+          "published": "2026-10-03T05:59:40+00:00",
+          "excerpt": "After Photon exploded on reddit and X I kept getting DMs for a Lightroom alternative. That's how Light Studio came to life, a fully featured Lightroom alternative. I already had the parts that usually make these apps feel vibe coded: realtime GPU rendering, CR3/NEF and the other…"
+        },
+        {
+          "id": "t3_1wxuqpr",
+          "title": "I built Pullfolio, a free binder app for trading card collectors. Every set gets a pocket for every card, with today's price on each",
+          "url": "https://www.reddit.com/r/SideProject/comments/1wxuqpr/i_built_pullfolio_a_free_binder_app_for_trading/",
+          "author": "exxoh",
+          "published": "2026-10-05T00:19:18+00:00",
+          "excerpt": "I collect Pokémon cards and kept tracking my binders in spreadsheets, so I built the app I wanted. What it does: - Pick any set and get a binder with a pocket for every card. Mark what you own and the gaps close. - Today's Near Mint market price on every card, with 30 days of hi…"
+        },
+        {
+          "id": "t3_1wy5iln",
+          "title": "My game about cancelling a fake 9.99 subscription got 327 tries on day one. It's at 5,404 now, and someone just paid for the subscription(donation) for real",
+          "url": "https://www.reddit.com/r/SideProject/comments/1wy5iln/my_game_about_cancelling_a_fake_999_subscription/",
+          "author": "aeshieru",
+          "published": "2026-10-05T10:55:19+00:00",
+          "excerpt": "I made Cancel Your Subscription, a browser game where you've paid $9.99 a month for 38 months for \"fundr. Premium\", a subscription you never use, and your only job is to cancel it. The app fights back: a buried cancel link, two retention offers, an exit survey, a support line th…"
+        },
+        {
+          "id": "t3_1wutezo",
+          "title": "I spent ~500 on ads for my first app. Here's what 50+ Reddit comments taught me",
+          "url": "https://www.reddit.com/r/SideProject/comments/1wutezo/i_spent_500_on_ads_for_my_first_app_heres_what_50/",
+          "author": "ankumo87",
+          "published": "2026-10-01T07:49:13+00:00",
+          "excerpt": "Hi all, Last week I posted here asking for help. I built my first app (Finelly, a fun app for friend groups with that one friend who's always late), spent about $500 on ads across Google, Apple, Meta, TikTok and X, and got hundreds of installs but almost no real users. The respo…"
+        }
+      ]
+    },
+    {
+      "sub": "startups",
+      "group": "build",
+      "period": "week",
+      "fetchedAt": "2026-10-06T10:17:47.614Z",
+      "stale": false,
+      "error": null,
+      "posts": [
+        {
+          "id": "t3_1wtev26",
+          "title": "This subreddit has been an absolute disaster since 2023 (I will not promote)",
+          "url": "https://www.reddit.com/r/startups/comments/1wtev26/this_subreddit_has_been_an_absolute_disaster/",
+          "author": "skramzy",
+          "published": "2026-09-29T16:31:26+00:00",
+          "excerpt": "Spin the wheel of shitty posts and you're gonna land on one of the following: Posts functioning as ads disguised as market research or product validation AI-generated advice guru posts from the most unqualified person imaginable Posters looking for unpaid cofounders to either: D…"
+        },
+        {
+          "id": "t3_1wt7z3k",
+          "title": "It's tempting to build your pitch decks with Claude - Don't! I WILL NOT PROMOTE",
+          "url": "https://www.reddit.com/r/startups/comments/1wt7z3k/its_tempting_to_build_your_pitch_decks_with/",
+          "author": "modeller2406",
+          "published": "2026-09-29T11:49:19+00:00",
+          "excerpt": "There's a pandemic of AI-generated pitch decks everywhere you go and it is overwhelming. Investors are now vehemently kicking against these types of decks, many investors say they will not take a meeting with any startup with a deck that looks like AI Yes, building coherent deck…"
+        },
+        {
+          "id": "t3_1wu56g0",
+          "title": "How do startup founders even come up with an idea thats profitable in the first place? I will not promote",
+          "url": "https://www.reddit.com/r/startups/comments/1wu56g0/how_do_startup_founders_even_come_up_with_an_idea/",
+          "author": "dudeblob",
+          "published": "2026-09-30T13:37:46+00:00",
+          "excerpt": "yeah as the question says, Ive been wondering for a long time how the idea for the startup pops into people's heads, and how people further develop it into an actual business. I would like to have a startup of my own one day, and i started by thinking about the passions that I h…"
+        },
+        {
+          "id": "t3_1wuojuy",
+          "title": "Is it possible to be a CEO if you don't have it in your blood? - I will not promote",
+          "url": "https://www.reddit.com/r/startups/comments/1wuojuy/is_it_possible_to_be_a_ceo_if_you_dont_have_it_in/",
+          "author": "Codingology",
+          "published": "2026-10-01T03:05:09+00:00",
+          "excerpt": "Let's say you are a naturally introvert, neurodivergently awkward, low self-esteem and gullible person, is there a chance you could forge your character to fit the standard CEO figure, or you should just stick to being founder and hire a professional CEO?"
+        },
+        {
+          "id": "t3_1wxebz1",
+          "title": "Don’t confuse “people like it” with validation [i will not promote]",
+          "url": "https://www.reddit.com/r/startups/comments/1wxebz1/dont_confuse_people_like_it_with_validation_i/",
+          "author": "FlatLiterature9702",
+          "published": "2026-10-04T12:18:48+00:00",
+          "excerpt": "Don’t confuse “people like it” with validation [i will not promote] Someone saying “that’s a cool idea” is nice, but it doesn’t tell you much. Stronger signals are things like: Someone gives you their time to try it Someone comes back without being reminded Someone changes their…"
+        },
+        {
+          "id": "t3_1ww0bk6",
+          "title": "What happened to Honeypot? Why did it fail? (I will not promote.)",
+          "url": "https://www.reddit.com/r/startups/comments/1ww0bk6/what_happened_to_honeypot_why_did_it_fail_i_will/",
+          "author": "fabkosta",
+          "published": "2026-10-02T17:50:14+00:00",
+          "excerpt": "Honeypot tried to reverse the hiring and recruiting process: You would post your own profile, and companies would approach you. Focus was mostly on IT and adjacent industries, I understand. Apparently, it did not survive. I am curious to learn why, as I kinda like the idea. I fo…"
+        },
+        {
+          "id": "t3_1wy98o7",
+          "title": "How your age affects your chances of success - thoughts after 27 years (I will not promote)",
+          "url": "https://www.reddit.com/r/startups/comments/1wy98o7/how_your_age_affects_your_chances_of_success/",
+          "author": "edkang99",
+          "published": "2026-10-05T13:57:35+00:00",
+          "excerpt": "Hey founders. I had some Monday morning thoughts and am writing this to encourage you to take advantage of your age no matter how old you are. I started my first startup at 22. Sold it at 23. Failed several others until I started another one at 33 and sold at 41. After working i…"
+        },
+        {
+          "id": "t3_1wxxmmf",
+          "title": "Thoughts on sequoia article \"services the new software?\" I will not promote",
+          "url": "https://www.reddit.com/r/startups/comments/1wxxmmf/thoughts_on_sequoia_article_services_the_new/",
+          "author": "Sorry-Application401",
+          "published": "2026-10-05T02:47:42+00:00",
+          "excerpt": "I read this article by sequoia a while back and at waterloo I met a company called sequence holdings at a networking event. Essentially what they do is they buy a company and turn it ai native and hold forever unlike a traditional PE firm. They only raised $75 million but they b…"
+        },
+        {
+          "id": "t3_1wveb60",
+          "title": "Has anyone purposely \"undazzled\" their pitches/presentations/sales calls lately? I will not promote.",
+          "url": "https://www.reddit.com/r/startups/comments/1wveb60/has_anyone_purposely_undazzled_their/",
+          "author": "thegrayscales",
+          "published": "2026-10-01T23:17:26+00:00",
+          "excerpt": "This is for both in-person and recorded demos/pitches. It's incredibly easy now to make a crazy 5d lightshow of a pitchdeck using AI. I'm tempted to build a deck that is just above old-school-powerpoint level of dazzle just to see how it hits. I've also purposely stopped using a…"
+        },
+        {
+          "id": "t3_1ww4bhv",
+          "title": "i will not promote - Toggling between two mentalities as a founder",
+          "url": "https://www.reddit.com/r/startups/comments/1ww4bhv/i_will_not_promote_toggling_between_two/",
+          "author": "BobbyBizScout",
+          "published": "2026-10-02T20:28:50+00:00",
+          "excerpt": "The two mental states running a startup: thinking I need to find a new job, to thinking I'm the smartest person alive (and can't believe everyone else isn't trying to build the same thing). I've hit both in the same week... sometimes in the same day. How do you fight the doubt a…"
+        },
+        {
+          "id": "t3_1wtbmn9",
+          "title": "How important is founder prestige regarding starting and scaling a startup? If it is not important, why do so many media visible founders have prestigious backgrounds. I will not promote",
+          "url": "https://www.reddit.com/r/startups/comments/1wtbmn9/how_important_is_founder_prestige_regarding/",
+          "author": "Big-Entrepreneur5299",
+          "published": "2026-09-29T14:28:29+00:00",
+          "excerpt": "I’m a university student, and most Notable founders I look up had a prestigious university or job before the founder. Intuitively, it feels like this should not matter to be the “average successful founder”- Ie someone who creates a sustainable business and makes impact on an in…"
+        },
+        {
+          "id": "t3_1wvofn3",
+          "title": "How do you figure out distribution and trust in a market with huge players? - i will not promote",
+          "url": "https://www.reddit.com/r/startups/comments/1wvofn3/how_do_you_figure_out_distribution_and_trust_in_a/",
+          "author": "oddlyspecificintern",
+          "published": "2026-10-02T08:29:42+00:00",
+          "excerpt": "We're building AI B2B SaaS Dev tool (duh) and i feel like we're banging against a wall. We have a free tier for regular users, we give all of our features for free, for open source (we pay for ai inference completely) but we still have only one installation (github app), that is…"
+        },
+        {
+          "id": "t3_1wvl3y5",
+          "title": "Feedback Friday",
+          "url": "https://www.reddit.com/r/startups/comments/1wvl3y5/feedback_friday/",
+          "author": "AutoModerator",
+          "published": "2026-10-02T05:00:26+00:00",
+          "excerpt": "Welcome to this week’s Feedback Thread! Please use this thread appropriately to gather feedback: Feel free to request general feedback or specific feedback in a certain area like user experience, usability, design, landing page(s), or code review You may share surveys You may ma…"
+        },
+        {
+          "id": "t3_1wwk0cu",
+          "title": "I'm 19 and want to build a startup eventually. What should I learn first? (I will not promote)",
+          "url": "https://www.reddit.com/r/startups/comments/1wwk0cu/im_19_and_want_to_build_a_startup_eventually_what/",
+          "author": "Financial-Bison400",
+          "published": "2026-10-03T10:32:52+00:00",
+          "excerpt": "19, no degree and my long-term goal is to eventually build an internet business/startup. Right now I'm trying to figure out what would be the highest-leverage way to spend the next few years learning. I'm considering getting into tech sales as an SDR, where I'd learn prospecting…"
+        },
+        {
+          "id": "t3_1wun9gk",
+          "title": "Looking for tips to raise Series A if you're bootstrapped. (I will not promote)",
+          "url": "https://www.reddit.com/r/startups/comments/1wun9gk/looking_for_tips_to_raise_series_a_if_youre/",
+          "author": "dudermcamerika",
+          "published": "2026-10-01T01:59:58+00:00",
+          "excerpt": "Much of the dialogue about raising series A is about your business fundamentals. We have those (PMF, Fortune 50 paying customers, AI moat, profitability, zero churn, big vision / upside). Yet for the life of me, we can't seem even get conversations with investors for an expanded…"
+        },
+        {
+          "id": "t3_1wumr1d",
+          "title": "Growing into a CTO role? i will not promote",
+          "url": "https://www.reddit.com/r/startups/comments/1wumr1d/growing_into_a_cto_role_i_will_not_promote/",
+          "author": "crashcody",
+          "published": "2026-10-01T01:34:27+00:00",
+          "excerpt": "My and my co-founder have got amazing traction on our product. We are working with SMBs and growing at an insane rate selling software. I had limited prior technical experience prior to starting: I have some programming experience, studied STEM in college and am considered a ver…"
+        },
+        {
+          "id": "t3_1wyf7es",
+          "title": "Stuck on what to build next, how do you validate a problem [i will not promote]",
+          "url": "https://www.reddit.com/r/startups/comments/1wyf7es/stuck_on_what_to_build_next_how_do_you_validate_a/",
+          "author": "Jazzlike-Ad-2286",
+          "published": "2026-10-05T17:50:00+00:00",
+          "excerpt": "Looking for some honest input from other founders here. I have been running a startup for a while now and I am at the point where I am seriously thinking about pivoting now. We have been trying to find customers for over a 6 months and it just has not clicked. Bit late I figured…"
+        },
+        {
+          "id": "t3_1wuv793",
+          "title": "Is there actually a headcount where fractional HR stops working? I will not promote",
+          "url": "https://www.reddit.com/r/startups/comments/1wuv793/is_there_actually_a_headcount_where_fractional_hr/",
+          "author": "Ca_Levi",
+          "published": "2026-10-01T09:46:57+00:00",
+          "excerpt": "People always throw out 40 or 50 employees as the point where you need full-time People lead. Is that actually based on anything? It seems like hiring pace and how many countries you operate in would matter more. We are considering Hawkwood partners who offer both fractional and…"
+        },
+        {
+          "id": "t3_1wu0ybg",
+          "title": "Have any startups here actually lost money because of AI? - I will not promote",
+          "url": "https://www.reddit.com/r/startups/comments/1wu0ybg/have_any_startups_here_actually_lost_money/",
+          "author": "Ok_Ship_6435",
+          "published": "2026-09-30T10:02:58+00:00",
+          "excerpt": "Curious to hear from founders who’ve had AI involved in their product or operations. I’m particularly interested in cases where an AI system: - made an incorrect decision or prediction - generated something that caused a financial loss - failed unexpectedly in production - cause…"
+        },
+        {
+          "id": "t3_1wxs9zs",
+          "title": "Canadian founders with international co-founders [I will not promote]",
+          "url": "https://www.reddit.com/r/startups/comments/1wxs9zs/canadian_founders_with_international_cofounders_i/",
+          "author": "2legited2",
+          "published": "2026-10-04T22:19:32+00:00",
+          "excerpt": "Canadian founders with international (non-US) co-founders: how did you structure your business? Did you open a Delaware corp and a Canadian holding corporation that owns your shares? At some point, your business will become profitable beyond covering your salaries, and you will…"
+        },
+        {
+          "id": "t3_1wwabna",
+          "title": "Startup now has three mentors but I have a question ( I will not promote)",
+          "url": "https://www.reddit.com/r/startups/comments/1wwabna/startup_now_has_three_mentors_but_i_have_a/",
+          "author": "Dazzling_Hand6170",
+          "published": "2026-10-03T01:03:47+00:00",
+          "excerpt": "Alright guys I have a quick question. Next week I'm onboarding two new mentors to my startup. Right now they're saying they want to talk once every two weeks/ helping me design and put my demo together but my question is when should I offer the other two equity and how long shou…"
+        },
+        {
+          "id": "t3_1wu6g6j",
+          "title": "i will not promote- struggling with sales even though demos go well",
+          "url": "https://www.reddit.com/r/startups/comments/1wu6g6j/i_will_not_promote_struggling_with_sales_even/",
+          "author": "Grouchy_Decision9071",
+          "published": "2026-09-30T14:29:45+00:00",
+          "excerpt": "I am building software for construction and EPC companies. The product is not the main issue right now. Whenever I manage to get the right company on a demo, they usually show interest. My problem is that I am not able to generate enough such leads, and I am also struggling with…"
+        },
+        {
+          "id": "t3_1wxx6vm",
+          "title": "Feeling lost not sure what next step is- \"I will not promote",
+          "url": "https://www.reddit.com/r/startups/comments/1wxx6vm/feeling_lost_not_sure_what_next_step_is_i_will/",
+          "author": "General_Performer_95",
+          "published": "2026-10-05T02:24:26+00:00",
+          "excerpt": "&#x200B; I'm a software engineer, and on the side, I work at a local game store. I noticed most of these shops don't have a system to manage inventory, orders, or customer data, so I built a web app (web app is mobile friendly but scanner tool to add inventory probably might fee…"
+        },
+        {
+          "id": "t3_1wxd413",
+          "title": "How to do networking? ( i will not promote)",
+          "url": "https://www.reddit.com/r/startups/comments/1wxd413/how_to_do_networking_i_will_not_promote/",
+          "author": "the-false-saint",
+          "published": "2026-10-04T11:10:05+00:00",
+          "excerpt": "24M here and im planning a clothing business to start. As an introvert, I find myself hard communicating with people who are in well established business. How do you guys approach them? Out of nervousness my mind goes blank and voice gets too low and cant even speak properly lik…"
+        },
+        {
+          "id": "t3_1wyvfie",
+          "title": "We spent almost a day trying to break our own product (i will not promote)",
+          "url": "https://www.reddit.com/r/startups/comments/1wyvfie/we_spent_almost_a_day_trying_to_break_our_own/",
+          "author": "Melodic-Taro2939",
+          "published": "2026-10-06T06:25:55+00:00",
+          "excerpt": "My co founder and I decided to properly test our first version before putting more trial customers through it. We tested everything we could think of. Login issues. Payment failures. Different payment flows. Multiple devices. Active sessions. Random UI errors. Basically anything…"
+        }
+      ]
+    },
+    {
+      "sub": "SaaS",
+      "group": "build",
+      "period": "week",
+      "fetchedAt": "2026-10-06T10:17:47.614Z",
+      "stale": false,
+      "error": null,
+      "posts": [
+        {
+          "id": "t3_1wwnhbt",
+          "title": "I've created Open Source 100% Rust clean-room replacements for 7 of Adobe's apps: Photoshop, Illustrator, Premiere, Lightroom, After Effects, InDesign, and Acrobat Pro. Free, no subscription, and you own the source code",
+          "url": "https://www.reddit.com/r/SaaS/comments/1wwnhbt/ive_created_open_source_100_rust_cleanroom/",
+          "author": "ai_art_is_art",
+          "published": "2026-10-03T13:37:37+00:00",
+          "excerpt": "I've used Opus 5.5 to help me recreate 7 of the top Adobe apps in 100% pure native Rust: Photoshop Illustrator Premiere Lightroom Acrobat Pro After Effects InDesign No more subscriptions with cancellation fees. These are yours to own forever. You can fork them, build them. Whate…"
+        },
+        {
+          "id": "t3_1wt8q02",
+          "title": "opus 5.5 is f*cking cracked at motion design",
+          "url": "https://www.reddit.com/r/SaaS/comments/1wt8q02/opus_55_is_fcking_cracked_at_motion_design/",
+          "author": "fveiras",
+          "published": "2026-09-29T12:25:26+00:00",
+          "excerpt": "https://reddit.com/link/1wt8q02/video/3patu84xcgsh1/player this entire video is code. 0 after effects gonna open source the prompt template behind these, lmk if you want it"
+        },
+        {
+          "id": "t3_1wvjgm2",
+          "title": "I made $7,802 today",
+          "url": "https://www.reddit.com/r/SaaS/comments/1wvjgm2/i_made_7802_today/",
+          "author": "OkPositive9373",
+          "published": "2026-10-02T03:29:02+00:00",
+          "excerpt": "Pretty stoked on this. I do B2B cold SMS marketing, not many of us exist. Ask me anything. My Youtube Channel (more info): https://youtube.com/@mrkylebanks"
+        },
+        {
+          "id": "t3_1wv57i1",
+          "title": "I MADE $492 TODAY!! (I'm solo founder)",
+          "url": "https://www.reddit.com/r/SaaS/comments/1wv57i1/i_made_492_today_im_solo_founder/",
+          "author": "adgrow",
+          "published": "2026-10-01T17:12:21+00:00",
+          "excerpt": "Today I made $492 in sales on my B2B SaaS and I'm very happy. I hope I can increase that to $1,000! Cold Email It really works! I can definitely say that now. Ask me anything if you are curious , I will try to answer all. EDIT: y'all can stop DMing me 😭 the product is https://g…"
+        },
+        {
+          "id": "t3_1wy79m1",
+          "title": "Me and my saas ideas",
+          "url": "https://www.reddit.com/r/SaaS/comments/1wy79m1/me_and_my_saas_ideas/",
+          "author": "ImTomSnow",
+          "published": "2026-10-05T12:28:18+00:00",
+          "excerpt": ""
+        },
+        {
+          "id": "t3_1wtkzsd",
+          "title": "My little side project is not that little anymore",
+          "url": "https://www.reddit.com/r/SaaS/comments/1wtkzsd/my_little_side_project_is_not_that_little_anymore/",
+          "author": "No-Firefighter-1453",
+          "published": "2026-09-29T20:20:51+00:00",
+          "excerpt": "It is just crazy to think that less than a year ago I did't have any of this. I will not include any links to anything except TrustMRR proof, that's it. I wanted to share my story and how I started my business less than a year ago that is now making more than my 9-5 job salary.…"
+        },
+        {
+          "id": "t3_1wy4wbu",
+          "title": "Too good to be true? 13k installs, 4.7 stars, ~€22k revenue. All in I'm still in the minus",
+          "url": "https://www.reddit.com/r/SaaS/comments/1wy4wbu/too_good_to_be_true_13k_installs_47_stars_22k/",
+          "author": "SuspiciousSoftware74",
+          "published": "2026-10-05T10:17:27+00:00",
+          "excerpt": "https://preview.redd.it/ydo4wl68jmth1.png?width=2197&format=png&auto=webp&s=f33d946c0d23d38bb2514c0794be58c84fc5f6ec Lots of \"my app makes $X/month\" posts here, so here's one from the other side. Real numbers, all time. Solo dev from Germany. I build a calorie tracker where you…"
+        },
+        {
+          "id": "t3_1wxoasb",
+          "title": "I scraped billions of TikTok videos and profiles by reverse engineering the mobile API. Here's how it works + source code",
+          "url": "https://www.reddit.com/r/SaaS/comments/1wxoasb/i_scraped_billions_of_tiktok_videos_and_profiles/",
+          "author": "DataShack",
+          "published": "2026-10-04T19:29:56+00:00",
+          "excerpt": "Hey everyone. I'm a data engineer and I've spent the past 8 years reverse engineering TikTok's mobile app. Over that time, I've learned how to pull TikTok data at pretty ridiculous scale. Profiles, videos, comments, sounds, search results, follower graphs, trends, etc. I finally…"
+        },
+        {
+          "id": "t3_1wxk3x2",
+          "title": "I MADE $927 IN ONE DAY! with my SaaS as a solo founder",
+          "url": "https://www.reddit.com/r/SaaS/comments/1wxk3x2/i_made_927_in_one_day_with_my_saas_as_a_solo/",
+          "author": "adgrow",
+          "published": "2026-10-04T16:38:47+00:00",
+          "excerpt": "A few days ago I posted here after making $492 in a day. Yesterday I hit $927 in sales in a single day . A lot of people asked me how I'm doing the outreach, so here's the scale behind it: I currently have 150+ domains and 450+ mailboxes . Each mailbox sends around 30 emails/day…"
+        },
+        {
+          "id": "t3_1wyiap5",
+          "title": "Shutting Down my SaaS After a Year",
+          "url": "https://www.reddit.com/r/SaaS/comments/1wyiap5/shutting_down_my_saas_after_a_year/",
+          "author": "rowyourboat740",
+          "published": "2026-10-05T19:47:22+00:00",
+          "excerpt": "Hi all, I wanted to share my experience with my latest SaaS startup attempt. For about a year, my partner and I tried to launch a software tool that would help make federal compliance easier for our niche. Even though we ended up with a few demos and strong leads from major firm…"
+        },
+        {
+          "id": "t3_1wvcokc",
+          "title": "Opus 5.5 Cooking the motion designers lol",
+          "url": "https://www.reddit.com/r/SaaS/comments/1wvcokc/opus_55_cooking_the_motion_designers_lol/",
+          "author": "adgrow",
+          "published": "2026-10-01T22:04:13+00:00",
+          "excerpt": "I made this entire video with Opus 5.5 + ElevenLabs + Suno. No motion designer, no editor. Just AI Btw , yesterday a freelancer asked $2K for motion video like this 💀"
+        },
+        {
+          "id": "t3_1wvk8cl",
+          "title": "If AI can rebuild your SaaS in a weekend, what exactly is your moat?",
+          "url": "https://www.reddit.com/r/SaaS/comments/1wvk8cl/if_ai_can_rebuild_your_saas_in_a_weekend_what/",
+          "author": "More_Procedure357",
+          "published": "2026-10-02T04:10:20+00:00",
+          "excerpt": "This is the question I keep coming back to. AI has made it dramatically easier to build: dashboards CRUD apps AI assistants automation tools internal tools integrations reporting platforms basic SaaS products So “we have better technology” feels weaker as a moat. And “we use AI”…"
+        },
+        {
+          "id": "t3_1wte6va",
+          "title": "AI made launch videos free, so I made a parody of every SaaS launch video",
+          "url": "https://www.reddit.com/r/SaaS/comments/1wte6va/ai_made_launch_videos_free_so_i_made_a_parody_of/",
+          "author": "heavy_gemini",
+          "published": "2026-09-29T16:06:33+00:00",
+          "excerpt": ""
+        },
+        {
+          "id": "t3_1wxhjjq",
+          "title": "If you have an AI agent inside your app, someone will try to break it. 4 things to set up before they do.",
+          "url": "https://www.reddit.com/r/SaaS/comments/1wxhjjq/if_you_have_an_ai_agent_inside_your_app_someone/",
+          "author": "Southern_Kitchen3426",
+          "published": "2026-10-04T14:51:06+00:00",
+          "excerpt": "https://preview.redd.it/phwgetp2rgth1.png?width=578&format=png&auto=webp&s=632d48bcabd19543246e8d6112e33648603b0bc6 Someone spent a few minutes trying to break the AI agent on my landing page tonight (screenshots attached). And this was not the first time it happened. They asked…"
+        },
+        {
+          "id": "t3_1wutyal",
+          "title": "I dont know what to do anymore….",
+          "url": "https://www.reddit.com/r/SaaS/comments/1wutyal/i_dont_know_what_to_do_anymore/",
+          "author": "Calm_Flower4933",
+          "published": "2026-10-01T08:24:22+00:00",
+          "excerpt": "I’m a software developer and lately I can’t see where my life is going. I’ve applied for so many jobs. Most don’t even respond. You send an application and somewhere in your head you’re thinking maybe this one will finally work out. Then nothing. After doing that over and over,…"
+        },
+        {
+          "id": "t3_1wuvtq2",
+          "title": "After one year of GRINDING... I finally hit 2k in earnings!",
+          "url": "https://www.reddit.com/r/SaaS/comments/1wuvtq2/after_one_year_of_grinding_i_finally_hit_2k_in/",
+          "author": "luis_411",
+          "published": "2026-10-01T10:24:45+00:00",
+          "excerpt": "This is just so incredible... another huge milestone reached. I honestly never thought this was possible for me. But I did the thing... I JUST STARTED! I put together a working MVP. Just the bare minimum functionality. Bought a domain and put it out there. I posted about it here…"
+        },
+        {
+          "id": "t3_1wwtond",
+          "title": "Yesterday I launched my app. Today, I got my first customer. Best feeling in the world. Better than Christmas morning!",
+          "url": "https://www.reddit.com/r/SaaS/comments/1wwtond/yesterday_i_launched_my_app_today_i_got_my_first/",
+          "author": "snapgains",
+          "published": "2026-10-03T18:03:37+00:00",
+          "excerpt": "First off, yes, this is kinda an ad. But bear with me, you may glean something from my story. I've spent the past month working on snapgains . Early mornings before work. Late evenings after work. Entire weekends. Lots of coffee and walk breaks listening to Hormozi. The Problem…"
+        },
+        {
+          "id": "t3_1wxabzn",
+          "title": "My first SaaS took 9 months and 4k in ad spent and never made a penny. Here's what my second made in 4 weeks, and everything I learned.",
+          "url": "https://www.reddit.com/r/SaaS/comments/1wxabzn/my_first_saas_took_9_months_and_4k_in_ad_spent/",
+          "author": "keepingmemories",
+          "published": "2026-10-04T08:13:55+00:00",
+          "excerpt": "I have been building software on my own for a while, and I want to write down everything that happened between my first real product and my second one, because the gap between them taught me more than anything I have ever read or watched, and I honestly wish someone had sat me d…"
+        },
+        {
+          "id": "t3_1wx8y4w",
+          "title": "How deleting my free tier made more in 3 days than it made all year",
+          "url": "https://www.reddit.com/r/SaaS/comments/1wx8y4w/how_deleting_my_free_tier_made_more_in_3_days/",
+          "author": "Ext_Pen",
+          "published": "2026-10-04T06:48:04+00:00",
+          "excerpt": "i know \"kill your free tier\" is the most repeated advice on this sub. i ignored it for a year, so here's what it cost me. i sell a database of business ideas, one payment. for the first year there was a free version that showed most of it. people signed up, poked around, and lef…"
+        },
+        {
+          "id": "t3_1wvobbu",
+          "title": "After 7 months and 5 products , I got my first customer last week.",
+          "url": "https://www.reddit.com/r/SaaS/comments/1wvobbu/after_7_months_and_5_products_i_got_my_first/",
+          "author": "terafab-ai",
+          "published": "2026-10-02T08:21:28+00:00",
+          "excerpt": "It took me 7 months and 5 products to make my first internet money. I started building solo in February this year, and after a few failed products, I finally managed to get my first sale last week. I'm still building my product. I'm pretty happy with the progress. So I thought t…"
+        },
+        {
+          "id": "t3_1wut7r8",
+          "title": "I just got my first paying subscriber 🎉",
+          "url": "https://www.reddit.com/r/SaaS/comments/1wut7r8/i_just_got_my_first_paying_subscriber/",
+          "author": "ccl_bzq",
+          "published": "2026-10-01T07:36:02+00:00",
+          "excerpt": "$6 not much, but motivating that somebody is actually willing to pay🤯 I built an app called AppBlockr to fight doomscrolling while helping you be productive at the same time. Instead of simply blocking social media you have to complete your own tasks to unlock it again. You pro…"
+        },
+        {
+          "id": "t3_1wtojy3",
+          "title": "Reviewing Startups. Please Share Your Site/Apps",
+          "url": "https://www.reddit.com/r/SaaS/comments/1wtojy3/reviewing_startups_please_share_your_siteapps/",
+          "author": "Taesang3",
+          "published": "2026-09-29T22:45:18+00:00",
+          "excerpt": "I'm making videos and would like anyone that wants to share their startups. Bad, good, funny it doesn't matter. Share a link to your site/apps and give a brief summary on it ex like what it is, how long you worked on it or what was the inspiration/purpose etc and any other detai…"
+        },
+        {
+          "id": "t3_1wv5oud",
+          "title": "Today was supposed to be my first platform launch. Then Stripe said no.",
+          "url": "https://www.reddit.com/r/SaaS/comments/1wv5oud/today_was_supposed_to_be_my_first_platform_launch/",
+          "author": "movalancheTechnology",
+          "published": "2026-10-01T17:30:34+00:00",
+          "excerpt": "October 1st was the date I’d picked to launch my first platform. For almost four months, I’ve been building this alongside my 9-to-5: a platform where creators (YouTubers only for the MVP) share video ideas they’re planning to make, and fans can tip them on the ones they’d like…"
+        },
+        {
+          "id": "t3_1wueckc",
+          "title": "I got my first paying tenant today... R$79 MRR. It’s not much, but damn,",
+          "url": "https://www.reddit.com/r/SaaS/comments/1wueckc/i_got_my_first_paying_tenant_today_r79_mrr_its/",
+          "author": "hsk1llers",
+          "published": "2026-09-30T19:28:49+00:00",
+          "excerpt": "I know that amount is not huge but it still hit different when I logged in and saw the first paid account show up. I have been working on this thing mostly alone for months now. Free signups are one thing but having someone actually pay makes it feel more real even if it is just…"
+        },
+        {
+          "id": "t3_1wwsk8i",
+          "title": "Find a customer to talk to is hard",
+          "url": "https://www.reddit.com/r/SaaS/comments/1wwsk8i/find_a_customer_to_talk_to_is_hard/",
+          "author": "Top_Outlandishness78",
+          "published": "2026-10-03T17:17:01+00:00",
+          "excerpt": "Trying to build B2B SaaS software, played by the book, and get stuck at the step of talking to your customer. Damn that's harder than I thought. The fact is, your prospect are busy, very busy (that's why you want to sell to them too), and they rarely talk to random people reache…"
+        }
+      ]
+    },
+    {
+      "sub": "indiehackers",
+      "group": "build",
+      "period": "week",
+      "fetchedAt": "2026-10-06T10:17:47.614Z",
+      "stale": false,
+      "error": null,
+      "posts": [
+        {
+          "id": "t3_1wv4u7r",
+          "title": "Solo makers hit Product Hunt top 5 at 13.5%. Teams of 4+ hit it at 55%. The gap isn't product quality.",
+          "url": "https://www.reddit.com/r/indiehackers/comments/1wv4u7r/solo_makers_hit_product_hunt_top_5_at_135_teams/",
+          "author": "Competitive_Tune_590",
+          "published": "2026-10-01T16:58:49+00:00",
+          "excerpt": "We track featured Product Hunt launches daily for LaunchPact — 1,443 of them over the last ~90 days (Jul 3 – Oct 1). I pulled maker count vs placement expecting a soft gap. It isn't soft. Makers listed Launches % hit daily top 5 % hit top 10 Median votes Solo 808 13.5% 34.0% 97…"
+        },
+        {
+          "id": "t3_1wwokhx",
+          "title": "I built a site that understands what you need and tells you what to buy. Would you use it? Looking for feedback.",
+          "url": "https://www.reddit.com/r/indiehackers/comments/1wwokhx/i_built_a_site_that_understands_what_you_need_and/",
+          "author": "uberberfo",
+          "published": "2026-10-03T14:26:22+00:00",
+          "excerpt": "Choosing what to buy often takes hours of digging through reviews and tech specs. Using ChatGPT or similar tools doesn't really help: they give generic answers, aren't real-time, and weren't built to guide a purchase decision. So I created a dedicated tool for this: just describ…"
+        },
+        {
+          "id": "t3_1wuzn8z",
+          "title": "Share what you're building",
+          "url": "https://www.reddit.com/r/indiehackers/comments/1wuzn8z/share_what_youre_building/",
+          "author": "amacg",
+          "published": "2026-10-01T13:36:58+00:00",
+          "excerpt": "Pitch your product in 1-2 lines - and drop a link here. I'm building a community where makers can share what they’re building and get fair visibility. Here's the link: https://trylaunch.ai"
+        },
+        {
+          "id": "t3_1wvmmyk",
+          "title": "Feedback on my local tool for multi-language App Store screenshots",
+          "url": "https://www.reddit.com/r/indiehackers/comments/1wvmmyk/feedback_on_my_local_tool_for_multilanguage_app/",
+          "author": "hinitom",
+          "published": "2026-10-02T06:32:28+00:00",
+          "excerpt": "I ship small apps, and every update needs screenshots in every locale: same layout, different captions, exact store sizes. Doing it by hand took hours, so I built a tool for myself. It runs entirely on my machine: per-language captions, device frames for iPhone and iPad, many ba…"
+        },
+        {
+          "id": "t3_1wx85jh",
+          "title": "Tried building a \"citation hub\" page to get backlinks. 2 weeks in, zero links so far.",
+          "url": "https://www.reddit.com/r/indiehackers/comments/1wx85jh/tried_building_a_citation_hub_page_to_get/",
+          "author": "bitearcade",
+          "published": "2026-10-04T05:59:01+00:00",
+          "excerpt": "I have a small site with free SaaS calculators. Traffic is fine but not growing. Read somewhere about citation hubs — basically pages that exist so other bloggers can link to them when they need a quick stat. Decided to try it. Built a 2026 SaaS benchmarks page, 54 stats, all fr…"
+        },
+        {
+          "id": "t3_1wv3c8p",
+          "title": "Little celebration post - after grinding for nearly 3. months!!",
+          "url": "https://www.reddit.com/r/indiehackers/comments/1wv3c8p/little_celebration_post_after_grinding_for_nearly/",
+          "author": "Common_Dream9420",
+          "published": "2026-10-01T16:02:08+00:00",
+          "excerpt": "Been heads down building FetchSandbox for the past 3 months. Ran a 30 vs prior-30 comparison in PostHog this week. Numbers moved so sharing them, but also being precise about what they actually are. - MCP tool calls: 422, up 49% from 283 - Tracked MCP identities: 31, up 138% fro…"
+        },
+        {
+          "id": "t3_1wuw70z",
+          "title": "Day 101 building Vigil in public",
+          "url": "https://www.reddit.com/r/indiehackers/comments/1wuw70z/day_101_building_vigil_in_public/",
+          "author": "SignificanceUpper977",
+          "published": "2026-10-01T10:46:31+00:00",
+          "excerpt": "I had the worst month of my life. I got sick and had to be hospitalized and couldn't make any progress at all. But now I'm well and back so I started shipping new features again and this one has been my best. Vigil cli and agent skills. Tell your agent what to monitor and it use…"
+        },
+        {
+          "id": "t3_1wybyd1",
+          "title": "Need some feature ideas on an app",
+          "url": "https://www.reddit.com/r/indiehackers/comments/1wybyd1/need_some_feature_ideas_on_an_app/",
+          "author": "Awkward_Daikon3533",
+          "published": "2026-10-05T15:46:29+00:00",
+          "excerpt": "Hey guys, So I suffer from chronic procrastination lol. And I wanted something that could help with some of the stuff I love doing/would love to do but don't, either cuz of procrastination or just not finding the time for it. To solve this, I made myself this app and wanna ask y…"
+        },
+        {
+          "id": "t3_1wywitl",
+          "title": "I have every featured Product Hunt launch from the last 757 days in a table. Ask me anything and I'll pull the number.",
+          "url": "https://www.reddit.com/r/indiehackers/comments/1wywitl/i_have_every_featured_product_hunt_launch_from/",
+          "author": "Competitive_Tune_590",
+          "published": "2026-10-06T07:36:44+00:00",
+          "excerpt": "Everyone argues about what works on Product Hunt. I got tired of guessing, so I built a crawler. 10,111 featured launches, every day from 1 Sep 2024 through 27 Sep 2026, no missing days. Six topics: AI, Developer Tools, Productivity, Design, Marketing, SaaS. For each launch: vot…"
+        },
+        {
+          "id": "t3_1wyvi5n",
+          "title": "Day 103 of building Vigil in public",
+          "url": "https://www.reddit.com/r/indiehackers/comments/1wyvi5n/day_103_of_building_vigil_in_public/",
+          "author": "SignificanceUpper977",
+          "published": "2026-10-06T06:30:42+00:00",
+          "excerpt": "So far I've only been building my indie saas and even launched it on product hunt. But the main road block still remains. How do you get people to try out your saas? How do you get them to sign up? I've designed my landing page in a way that it takes 1 click to signup and start…"
+        }
+      ]
+    },
+    {
+      "sub": "AppIdeas",
+      "group": "ideas",
+      "period": "week",
+      "fetchedAt": "2026-10-06T10:17:47.614Z",
+      "stale": false,
+      "error": null,
+      "posts": [
+        {
+          "id": "t3_1wy7fuf",
+          "title": "[Feedback Wanted] Building a platform to connect surplus food from hotels/events with verified NGOs. Is this actually worth building?",
+          "url": "https://www.reddit.com/r/AppIdeas/comments/1wy7fuf/feedback_wanted_building_a_platform_to_connect/",
+          "author": "BackgroundGuitar4673",
+          "published": "2026-10-05T12:36:34+00:00",
+          "excerpt": "Hi everyone, I'm a computer engineering student currently working on a project idea called \"Food Link Connect\", and before I spend months building it, I'd really like some honest feedback from people who have experience with startups, food donation, NGOs, logistics, or similar p…"
+        },
+        {
+          "id": "t3_1wxf220",
+          "title": "An app that lets you see what used to be there",
+          "url": "https://www.reddit.com/r/AppIdeas/comments/1wxf220/an_app_that_lets_you_see_what_used_to_be_there/",
+          "author": "LocalCretin",
+          "published": "2026-10-04T12:56:37+00:00",
+          "excerpt": "So how I imagine it, you could either type in an address or use a sort of street view map to find out what a business or public place used to be. There are a lot of places that used to be other things. Sometimes it’s obvious, like when you see a restaurant that used to be a Pizz…"
+        },
+        {
+          "id": "t3_1wyb0mx",
+          "title": "An app that ends procrastination",
+          "url": "https://www.reddit.com/r/AppIdeas/comments/1wyb0mx/an_app_that_ends_procrastination/",
+          "author": "Awkward_Daikon3533",
+          "published": "2026-10-05T15:09:58+00:00",
+          "excerpt": "Hey guys, So I suffer from chronic procrastination lol. And I wanted something that could help with some of the stuff I love doing/would love to do but don't, either cuz of procrastination or just not finding the time for it. To solve this, I made myself this app and wanna ask y…"
+        },
+        {
+          "id": "t3_1wvytnj",
+          "title": "Car Information App",
+          "url": "https://www.reddit.com/r/AppIdeas/comments/1wvytnj/car_information_app/",
+          "author": "JpattinatoJ",
+          "published": "2026-10-02T16:50:42+00:00",
+          "excerpt": "I've been thinking about this for the last couple days and don't know if it would work. Basically an app with all the documents needed for your car like your lisence, insurance, ect. but also info about your cars maintenance and when, where, how much a repair would cost. would a…"
+        },
+        {
+          "id": "t3_1wtis2t",
+          "title": "The Dream Maker App",
+          "url": "https://www.reddit.com/r/AppIdeas/comments/1wtis2t/the_dream_maker_app/",
+          "author": "Big_Elephant_2331",
+          "published": "2026-09-29T18:57:01+00:00",
+          "excerpt": "A fully automated app that runs itself where people pay $1 a week into a pool, allowing members to submit applications for open field grants that help make their dreams come true. Each cycle, a random group of members are selected to rank applications so people are only called t…"
+        },
+        {
+          "id": "t3_1wx99i3",
+          "title": "An app that showcases original kids programming that is designed to not be overstimulating.",
+          "url": "https://www.reddit.com/r/AppIdeas/comments/1wx99i3/an_app_that_showcases_original_kids_programming/",
+          "author": "Dunn74",
+          "published": "2026-10-04T07:06:47+00:00",
+          "excerpt": "So for years I have been wanting to get into creating content for kids. For the most part I do not like the content kids are exposed to as alot of it is incredibly overstimulating, and relise on algorithms that keep kids hooked to the social media app there on. My goal with this…"
+        },
+        {
+          "id": "t3_1wutyho",
+          "title": "How would you test whether social accountability belongs in a financial-tracking app?",
+          "url": "https://www.reddit.com/r/AppIdeas/comments/1wutyho/how_would_you_test_whether_social_accountability/",
+          "author": "Specific_Relief_1796",
+          "published": "2026-10-01T08:24:45+00:00",
+          "excerpt": "How would you test whether social accountability belongs in a financial-tracking app? I’m developing a pre-beta app combining personal financial tracking with public profiles and a way to acknowledge other people’s progress. The assumption I’m trying to test is whether sharing p…"
+        },
+        {
+          "id": "t3_1wun9eq",
+          "title": "I built an app similar to Thumbtack. What else could I turn it into?",
+          "url": "https://www.reddit.com/r/AppIdeas/comments/1wun9eq/i_built_an_app_similar_to_thumbtack_what_else/",
+          "author": "obertan17",
+          "published": "2026-10-01T01:59:54+00:00",
+          "excerpt": "Hey everyone, I’m a developer with an app that has features similar to Thumbtack—connecting customers with service providers. I did this purely for love of the game, but now I’m exploring whether I can turn it into a business with the right idea. I’m considering taking it in a d…"
+        },
+        {
+          "id": "t3_1wxbcmd",
+          "title": "An app that tells you the best combination of woods to use for friction fire building in the area where you are.",
+          "url": "https://www.reddit.com/r/AppIdeas/comments/1wxbcmd/an_app_that_tells_you_the_best_combination_of/",
+          "author": "GiftToTheUniverse",
+          "published": "2026-10-04T09:19:55+00:00",
+          "excerpt": "The app could use published data about flora regions and determine the optimal combination of woods available from trees growing in \"THAT\" locale. Could be by County or some other granularity that makes sense. Could offer some animations of ways to make fire using friction and w…"
+        },
+        {
+          "id": "t3_1wwnq9x",
+          "title": "Would you pay to see what your favorite creator actually watches and reads?",
+          "url": "https://www.reddit.com/r/AppIdeas/comments/1wwnq9x/would_you_pay_to_see_what_your_favorite_creator/",
+          "author": "Jayziee24",
+          "published": "2026-10-03T13:49:12+00:00",
+          "excerpt": "Idea I'm exploring: a mobile app where a creator shares links to the videos, posts and articles they find worth their time, using the normal phone share button. A fan picks that creator and turns on \"Mirror\", and their feed in the app becomes the creator's feed. There's also a s…"
+        },
+        {
+          "id": "t3_1wwkb5g",
+          "title": "App idea",
+          "url": "https://www.reddit.com/r/AppIdeas/comments/1wwkb5g/app_idea/",
+          "author": "True-Flounder-6440",
+          "published": "2026-10-03T10:51:30+00:00",
+          "excerpt": "Hello guys you guys should send app ideas you want me to work on i would be happy to work on them together"
+        },
+        {
+          "id": "t3_1wvxwol",
+          "title": "Replacement for Polyvore/Shuffles (collage app)",
+          "url": "https://www.reddit.com/r/AppIdeas/comments/1wvxwol/replacement_for_polyvoreshuffles_collage_app/",
+          "author": "rinkydinkyyo",
+          "published": "2026-10-02T16:13:18+00:00",
+          "excerpt": "I joined Shuffles a few years ago and fell deeply in love with it. It managed to scratch a creative itch that I didn’t even know I had. I wasn’t around for Polyvore, but I’ve heard it was a very similar concept (and a lot of die-hard Polyvore users migrated to Shuffles). If you…"
+        },
+        {
+          "id": "t3_1wvp5qj",
+          "title": "Need Help in understanding the needs/features from an expense tracking app",
+          "url": "https://www.reddit.com/r/AppIdeas/comments/1wvp5qj/need_help_in_understanding_the_needsfeatures_from/",
+          "author": "manjdev",
+          "published": "2026-10-02T09:17:29+00:00",
+          "excerpt": "Hi everyone so I am working on a project that will help everyone to track expenses Short note about me: I am a product designer (5 yrs of exp) currently working in a fintech Uk company earning good, I usually face a lot of issues while calculating my expenses so I thought why no…"
+        },
+        {
+          "id": "t3_1wug7lc",
+          "title": "Travel budgeting companion",
+          "url": "https://www.reddit.com/r/AppIdeas/comments/1wug7lc/travel_budgeting_companion/",
+          "author": "a742u",
+          "published": "2026-09-30T20:41:18+00:00",
+          "excerpt": "Quick backstory: I’m a programmer and I travel/backpack usually once a year for 1-2 months. My GF from Colombia is visiting me for three months right now here in Sweden. One day she asked me if there was an app for scanning pricetags to get the price converted from SEK to Pesos.…"
+        },
+        {
+          "id": "t3_1wuc4fq",
+          "title": "An app that lets you rate interactions with police officers in the UK",
+          "url": "https://www.reddit.com/r/AppIdeas/comments/1wuc4fq/an_app_that_lets_you_rate_interactions_with/",
+          "author": "Mars_php",
+          "published": "2026-09-30T18:05:22+00:00",
+          "excerpt": "Just looking to get an outlook on the feasibility of this app idea. A public database app where you can search officers through their collar number and leave a rating / comment on how they handle your case / situation."
+        },
+        {
+          "id": "t3_1wxv4jr",
+          "title": "Would you play a game where you find real endangered animals hidden in maps?",
+          "url": "https://www.reddit.com/r/AppIdeas/comments/1wxv4jr/would_you_play_a_game_where_you_find_real/",
+          "author": "Malik2924",
+          "published": "2026-10-05T00:38:42+00:00",
+          "excerpt": "Thinking through a mobile game idea and want to know if it's actually appealing before I build it. The idea: explore different map scenes (forest, savanna, ocean, etc.) and find hidden animals, like a classic hidden-object game. The twist — rarity is tied to real conservation st…"
+        },
+        {
+          "id": "t3_1wwwn7j",
+          "title": "Building a new Wikipedia but with connections & filters, can you help me name it?",
+          "url": "https://www.reddit.com/r/AppIdeas/comments/1wwwn7j/building_a_new_wikipedia_but_with_connections/",
+          "author": "Fun_Biscotti581",
+          "published": "2026-10-03T20:06:53+00:00",
+          "excerpt": "I'm building a new app that allows you search, filter, visualize data all in one place. It's meant to connect people to books to articles to cooperations to universities, all in one place, where you can apply sorts and filters. Which name do you think sounds best for this app: 1…"
+        },
+        {
+          "id": "t3_1wvo5aq",
+          "title": "Is there an app that lets you create your own AI girlfriend?",
+          "url": "https://www.reddit.com/r/AppIdeas/comments/1wvo5aq/is_there_an_app_that_lets_you_create_your_own_ai/",
+          "author": "magicmaxmark",
+          "published": "2026-10-02T08:10:04+00:00",
+          "excerpt": "I’ve been wondering if there’s an app or platform where you can actually create your own AI girlfriend from scratch. I’ve seen a lot apps and websites doing AI GF, but I’m looking for something that gives you more control on everything rather than just choosing from pre-made cha…"
+        },
+        {
+          "id": "t3_1wy7uy0",
+          "title": "An app for exchanging physical copies of videogames",
+          "url": "https://www.reddit.com/r/AppIdeas/comments/1wy7uy0/an_app_for_exchanging_physical_copies_of/",
+          "author": "Quiet_Honey2842",
+          "published": "2026-10-05T12:56:44+00:00",
+          "excerpt": "You scan your video game shelf, your games get added to the app, then you get matched with other users who also want to exchange apps. It's already on the app store, but I guess I can't post the name without breaking the rules."
+        },
+        {
+          "id": "t3_1wxejtl",
+          "title": "Looking for app ideas",
+          "url": "https://www.reddit.com/r/AppIdeas/comments/1wxejtl/looking_for_app_ideas/",
+          "author": "Sudev_97",
+          "published": "2026-10-04T12:30:15+00:00",
+          "excerpt": "I want to build a new mobile app, but honestly, I’m stuck on what to make. I’ve asked AI for ideas, but it keeps giving me the same things. to-do apps, habit trackers, expense trackers, AI chatbots, etc. 😅 I want to build something simple that actually solves a real problem. Ho…"
+        },
+        {
+          "id": "t3_1wxdcvr",
+          "title": "I built something like Suno/Bolt, but for games - would anyone actually use this?",
+          "url": "https://www.reddit.com/r/AppIdeas/comments/1wxdcvr/i_built_something_like_sunobolt_but_for_games/",
+          "author": "DisciplineWhich9244",
+          "published": "2026-10-04T11:24:53+00:00",
+          "excerpt": "I’ve been working on a platform where you can basically describe a game in a prompt and the AI builds it for you. The idea is pretty simple: You enter a prompt like “Create a multiplayer survival game on a small island” The platform generates the game You can continue editing it…"
+        },
+        {
+          "id": "t3_1wvqxgi",
+          "title": "Slank chat app",
+          "url": "https://www.reddit.com/r/AppIdeas/comments/1wvqxgi/slank_chat_app/",
+          "author": "Able-Ideal-7755",
+          "published": "2026-10-02T11:04:46+00:00",
+          "excerpt": "Can someone create this app for me? I have no experience in this field, but I would be very grateful if a volunteer could help build it. It would be extremely useful for many people. The concept of the app is a small floating bubble that helps translate into English—specifically…"
+        },
+        {
+          "id": "t3_1wuw1ww",
+          "title": "Please make an app where people earn points for completing daily tasks.",
+          "url": "https://www.reddit.com/r/AppIdeas/comments/1wuw1ww/please_make_an_app_where_people_earn_points_for/",
+          "author": "supernicestar",
+          "published": "2026-10-01T10:38:18+00:00",
+          "excerpt": "Hi everyone! I am severely depressed lately and even taking a shower feels difficult. I thought how cool it would be to have an app which can sort of motivate people like me. So here are my main points You earn points by completing daily tasks There is a timer - maybe pomodoro o…"
+        },
+        {
+          "id": "t3_1wtai8f",
+          "title": "What app do you wish existed right now? (Gen Z / young adults) ?",
+          "url": "https://www.reddit.com/r/AppIdeas/comments/1wtai8f/what_app_do_you_wish_existed_right_now_gen_z/",
+          "author": "Suspicious_Bed_882",
+          "published": "2026-09-29T13:44:17+00:00",
+          "excerpt": ""
+        },
+        {
+          "id": "t3_1wx2xd1",
+          "title": "Actual working dating app",
+          "url": "https://www.reddit.com/r/AppIdeas/comments/1wx2xd1/actual_working_dating_app/",
+          "author": "Weary-Scholar4577",
+          "published": "2026-10-04T01:06:13+00:00",
+          "excerpt": "You have an app that totally undermines aesthetics and hypergamy. Basically you take a survey about your requirements and interests that puts you into a narrow pool of people you're interested in. Then you're randomly placed into a chat one at a time with a person who met these…"
+        }
+      ]
+    },
+    {
+      "sub": "opensource",
+      "group": "oss",
+      "period": "week",
+      "fetchedAt": "2026-10-06T10:17:47.614Z",
+      "stale": false,
+      "error": null,
+      "posts": [
+        {
+          "id": "t3_1wvgi7j",
+          "title": "Is it legally possible to make a smartphone that can communicate with cell networks and the internet that doesn't use anything that relies on corporate-owned patents?",
+          "url": "https://www.reddit.com/r/opensource/comments/1wvgi7j/is_it_legally_possible_to_make_a_smartphone_that/",
+          "author": "ferriematthew",
+          "published": "2026-10-02T01:00:58+00:00",
+          "excerpt": "I don't remember where I read it, but I think I remember reading somewhere that the technology behind cell modems is still stuck under patent, especially 5G. Is that correct, or is there some way to make a fully open (hardware and software) cell phone that can do everything a no…"
+        },
+        {
+          "id": "t3_1wtsvtf",
+          "title": "How is \"free as in speech, not as in beer\" not a moot mantra?",
+          "url": "https://www.reddit.com/r/opensource/comments/1wtsvtf/how_is_free_as_in_speech_not_as_in_beer_not_a/",
+          "author": "esiy0676",
+          "published": "2026-09-30T02:07:12+00:00",
+          "excerpt": "My question pertains to e.g. GPL licensed software that is known to be behind a paywall or only \"leaking\" through a third party. Do you know of any such examples? I have linked an FSF article on free software not being \"anti-thetical to commercial success.\" There is a part on \"s…"
+        },
+        {
+          "id": "t3_1wtwfxg",
+          "title": "Feedback on AI Policy",
+          "url": "https://www.reddit.com/r/opensource/comments/1wtwfxg/feedback_on_ai_policy/",
+          "author": "nicholashairs",
+          "published": "2026-09-30T05:15:30+00:00",
+          "excerpt": "Hey r/opensource , I'm the solo maintainer of `python-json-logger`. I've recently started to receive a lot of AI generated contributions so it's about time I set a policy. For those of you who are also maintainers of projects which allow AI contributions, does anyone have any fe…"
+        },
+        {
+          "id": "t3_1wwiaqg",
+          "title": "PrivMeta: An open-source metadata removal tool for privacy-conscious people",
+          "url": "https://www.reddit.com/r/opensource/comments/1wwiaqg/privmeta_an_opensource_metadata_removal_tool_for/",
+          "author": "TWPinguu",
+          "published": "2026-10-03T08:44:14+00:00",
+          "excerpt": "Hey folks, I built PrivMeta , a free and open-source app that removes common hidden metadata directly in your browser. Your files stay on your device, and you receive cleaned copies that you can share elsewhere. Supports images, videos, audio files, PDFs and Word documents File…"
+        },
+        {
+          "id": "t3_1wtprnf",
+          "title": "Why don't more designers contribute to open source?",
+          "url": "https://www.reddit.com/r/opensource/comments/1wtprnf/why_dont_more_designers_contribute_to_open_source/",
+          "author": "Winter_Simple_159",
+          "published": "2026-09-29T23:40:20+00:00",
+          "excerpt": ""
+        },
+        {
+          "id": "t3_1wtmzvk",
+          "title": "Why mutual vulnerability disclosure matters for open source projects: Lessons from the latest critical RCE in Vault",
+          "url": "https://www.reddit.com/r/opensource/comments/1wtmzvk/why_mutual_vulnerability_disclosure_matters_for/",
+          "author": "the_hypotenuse",
+          "published": "2026-09-29T21:39:26+00:00",
+          "excerpt": "When open-source projects share a codebase, security has to be a collaborative effort. Our engineering team at ControlPlane recently chained four vulnerabilities to achieve full, unauthenticated Remote Code Execution (RCE) in both OpenBao and HashiCorp Vault. It’s only the secon…"
+        },
+        {
+          "id": "t3_1wv0aos",
+          "title": "JellyBox - a native crossplatform music client for Jellyfin/Emby/Navidrome.",
+          "url": "https://www.reddit.com/r/opensource/comments/1wv0aos/jellybox_a_native_crossplatform_music_client_for/",
+          "author": "avdept",
+          "published": "2026-10-01T14:03:50+00:00",
+          "excerpt": "Wanted to share the app I'm working on since late 2022 - JellyBox a native crossplatform jellyfin/navidrome/emby client. It works on ios/macos/android/windows/linux(tested over years on majority of distros). The UI/UX were built separately for desktop and mobile while reusing so…"
+        },
+        {
+          "id": "t3_1wwukid",
+          "title": "Chop Chop: a simple video splitter",
+          "url": "https://www.reddit.com/r/opensource/comments/1wwukid/chop_chop_a_simple_video_splitter/",
+          "author": "Substantial_Swan_144",
+          "published": "2026-10-03T18:40:22+00:00",
+          "excerpt": "Hi, everyone! I noticed that both on Linux and on Windows, it's very hard to find a no-nonsense video splitter with a sane GUI and no advertising. This is why I designed chop-chop. It's a very simple, beautiful no-nonsense video splitter for Linux and Windows. While both Linux a…"
+        },
+        {
+          "id": "t3_1wy86g4",
+          "title": "Free, open source ASO CLI: keyword popularity, difficulty and rank tracking",
+          "url": "https://www.reddit.com/r/opensource/comments/1wy86g4/free_open_source_aso_cli_keyword_popularity/",
+          "author": "chrisBhappy",
+          "published": "2026-10-05T13:10:46+00:00",
+          "excerpt": "I didn't want to pay a monthly subscription for App Store keyword data, so I wrote an open source CLI that gets it straight from Apple. What it does Popularity from Apple Search Ads (free Apple Ads account, no campaigns or billing needed) Difficulty score, keyword suggestions, c…"
+        },
+        {
+          "id": "t3_1wvrcoc",
+          "title": "Hello, I built Lanshare, a local peer-peer file sharing application.",
+          "url": "https://www.reddit.com/r/opensource/comments/1wvrcoc/hello_i_built_lanshare_a_local_peerpeer_file/",
+          "author": "TheIdiotDev",
+          "published": "2026-10-02T11:28:33+00:00",
+          "excerpt": "I built Lanshare because I wanted a simple way to move files between my own computers without cloud uploads, USB sticks, or accounts. It finds other devices on the same Wi-Fi or Ethernet network and sends files directly between them. The project is completely open source, feel f…"
+        },
+        {
+          "id": "t3_1wtoteq",
+          "title": "Free mobile wikipedia and more!",
+          "url": "https://www.reddit.com/r/opensource/comments/1wtoteq/free_mobile_wikipedia_and_more/",
+          "author": "Halmonster",
+          "published": "2026-09-29T22:57:26+00:00",
+          "excerpt": "Knowledge to Go (K2Go) is a GPLv3 Android app that builds on Internet-in-a-Box to turn almost any Android phone, including old 32-bit hardware, into an offline server for content from Wikipedia, Khan Academy, medical references, and much served over local Wi-Fi to any nearby dev…"
+        },
+        {
+          "id": "t3_1wu9v9v",
+          "title": "We have no moat, and neither does open source",
+          "url": "https://www.reddit.com/r/opensource/comments/1wu9v9v/we_have_no_moat_and_neither_does_open_source/",
+          "author": "eggbrain",
+          "published": "2026-09-30T16:41:54+00:00",
+          "excerpt": ""
+        },
+        {
+          "id": "t3_1wyrmmo",
+          "title": "Looking for contributors for Network Doctor, 29 open issues to work on",
+          "url": "https://www.reddit.com/r/opensource/comments/1wyrmmo/looking_for_contributors_for_network_doctor_29/",
+          "author": "mplaczek99",
+          "published": "2026-10-06T02:47:36+00:00",
+          "excerpt": "I've been continuing to build Network Doctor, an open-source cross-platform network diagnostic CLI written in Go. GitHub: https://github.com/heymaikol/network-doctor Website: https://networkdoctor.dev/ It checks things like DNS, TCP, TLS, HTTP, proxies, routing, encrypted DNS, a…"
+        },
+        {
+          "id": "t3_1wwtktv",
+          "title": "Lyra Viewer 0.6.0 (macOS, Windows, Linux)",
+          "url": "https://www.reddit.com/r/opensource/comments/1wwtktv/lyra_viewer_060_macos_windows_linux/",
+          "author": "amaurote1",
+          "published": "2026-10-03T17:59:32+00:00",
+          "excerpt": "Lyra is a GPU-accelerated, minimalist, robust image viewer for browsing textures, references and image assets. It's just as comfortable as an everyday viewer for JPEGs, PNGs, HEIC, WebP and the rest of your photo library. Textures (DDS, KTX, KTX2) and HDR maps (EXR, HDR) Photosh…"
+        },
+        {
+          "id": "t3_1wtmf82",
+          "title": "How do I verify if an open source tool isn't stealing data?",
+          "url": "https://www.reddit.com/r/opensource/comments/1wtmf82/how_do_i_verify_if_an_open_source_tool_isnt/",
+          "author": "drake1800",
+          "published": "2026-09-29T21:16:41+00:00",
+          "excerpt": "everyone always says it's open source, but there's no official verifier of codes, so how do I know if a tool is safe to use?"
+        },
+        {
+          "id": "t3_1wvg54l",
+          "title": "Introducing the Open Categorization System",
+          "url": "https://www.reddit.com/r/opensource/comments/1wvg54l/introducing_the_open_categorization_system/",
+          "author": "ki4jgt",
+          "published": "2026-10-02T00:43:24+00:00",
+          "excerpt": "About a decade ago I tried to create an alternative to Google, using the Dewey Decimal System to group web domains by subject matter. My vision was that the website was a library, and domains were individual books. Rankings were a mixture of domain reputation and cultural signif…"
+        },
+        {
+          "id": "t3_1wxgg9a",
+          "title": "Kaskas, an open source native macOS break companion with local activity insights",
+          "url": "https://www.reddit.com/r/opensource/comments/1wxgg9a/kaskas_an_open_source_native_macos_break/",
+          "author": "Sad_Tonight8092",
+          "published": "2026-10-04T14:02:36+00:00",
+          "excerpt": "Hello Everyone! I built Kaskas, a native macOS app for taking regular breaks while keeping track of your activity and sessions locally. I started building because i wanted a simple way to remind myself to take regular breaks from the computer, especially when long screen session…"
+        },
+        {
+          "id": "t3_1wvqsov",
+          "title": "Running repo from personal account or app-specifc?",
+          "url": "https://www.reddit.com/r/opensource/comments/1wvqsov/running_repo_from_personal_account_or_appspecifc/",
+          "author": "avdept",
+          "published": "2026-10-02T10:57:44+00:00",
+          "excerpt": "Hello, I run OSS app which got some traction over years, but I'm still host it on my own github - username/repo. My question is - when and if should I move it to appname/apprepo?? Does it give more credibility to app? Does it make any sense at all, or just keep it on my own acco…"
+        },
+        {
+          "id": "t3_1wvpidt",
+          "title": "anyconvert v0.1.7 Released",
+          "url": "https://www.reddit.com/r/opensource/comments/1wvpidt/anyconvert_v017_released/",
+          "author": "word-sys",
+          "published": "2026-10-02T09:40:10+00:00",
+          "excerpt": "anyconvert is a project for word-sys's PDF Editor that converts PDF documents into DOCX, PPTX, ODT, ODP, and TXT using only the Python standard library. Convert library is anyconvert's itself. Its released on PyPI too. This update added native JPEG and multi-format image embeddi…"
+        },
+        {
+          "id": "t3_1wydntv",
+          "title": "slate-ntfs: a Rust NTFS filesystem with full filesystem integration!",
+          "url": "https://www.reddit.com/r/opensource/comments/1wydntv/slatentfs_a_rust_ntfs_filesystem_with_full/",
+          "author": "Substantial_Swan_144",
+          "published": "2026-10-05T16:51:14+00:00",
+          "excerpt": "Greetings, everyone! As you know, I've posted a few projects here already, such as my TV Tuner driver. I would like show you my most ambitious project so far: a slate-ntfs , a Rust NTFS kernel driver! Before you ask, this is not an NTFS-3g or 7.1 fork: it's a new, alternate impl…"
+        },
+        {
+          "id": "t3_1ww6xaq",
+          "title": "declint - make your own custom lint rules in YAML",
+          "url": "https://www.reddit.com/r/opensource/comments/1ww6xaq/declint_make_your_own_custom_lint_rules_in_yaml/",
+          "author": "cs61bredditaccount",
+          "published": "2026-10-02T22:19:03+00:00",
+          "excerpt": "declint ( docs ) is a tool for making your own lint rules in YAML — the house rules that stock linters will never ship. For instance: your colleague wrote except Exception: pass , and you want to know whenever that happens: version: 1 rules: - id: except-pass pattern: 'except Ex…"
+        },
+        {
+          "id": "t3_1wtpf4n",
+          "title": "I built a custom JSX runtime for Discord bots (for TypeScript)",
+          "url": "https://www.reddit.com/r/opensource/comments/1wtpf4n/i_built_a_custom_jsx_runtime_for_discord_bots_for/",
+          "author": "Phoenix-HO",
+          "published": "2026-09-29T23:24:25+00:00",
+          "excerpt": ""
+        },
+        {
+          "id": "t3_1wwuf96",
+          "title": "RequestScript & Stellarium - A novel way to run APIs",
+          "url": "https://www.reddit.com/r/opensource/comments/1wwuf96/requestscript_stellarium_a_novel_way_to_run_apis/",
+          "author": "Puppymonkebaby",
+          "published": "2026-10-03T18:34:16+00:00",
+          "excerpt": "Hey everyone! I'm introducing two new projects I have been developing the past couple years that I think are now ready for primetime and more contributors. TLDR: RequestScript is a new programming language that is declared in the request body to an HTTP server. Stellarium is a d…"
+        },
+        {
+          "id": "t3_1wvd4lx",
+          "title": "Plembfin v1.3.1 released",
+          "url": "https://www.reddit.com/r/opensource/comments/1wvd4lx/plembfin_v131_released/",
+          "author": "Lasikie",
+          "published": "2026-10-01T22:23:47+00:00",
+          "excerpt": ""
+        },
+        {
+          "id": "t3_1wuevl5",
+          "title": "Crossflight: cross-process cache stampede protection for the cache you already use (v0.3.2)",
+          "url": "https://www.reddit.com/r/opensource/comments/1wuevl5/crossflight_crossprocess_cache_stampede/",
+          "author": "OtherwisePush6424",
+          "published": "2026-09-30T19:49:08+00:00",
+          "excerpt": ""
+        }
+      ]
+    },
+    {
+      "sub": "coolgithubprojects",
+      "group": "oss",
+      "period": "week",
+      "fetchedAt": "2026-10-06T10:17:47.614Z",
+      "stale": false,
+      "error": null,
+      "posts": [
+        {
+          "id": "t3_1wv1lyt",
+          "title": "I built a free & open-source superhuman alternative for Linux, Windows and macOS",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wv1lyt/i_built_a_free_opensource_superhuman_alternative/",
+          "author": "paul_blinkdisk",
+          "published": "2026-10-01T14:56:06+00:00",
+          "excerpt": "I always liked the idea of Superhuman: fast email you can do almost entirely from the keyboard. I wanted something like that, just free, open source and on Linux, so I built my own. It's called Inlark. It's open source and connects straight to your own IMAP or JMAP accounts, wit…"
+        },
+        {
+          "id": "t3_1wxtkxi",
+          "title": "PaperFold: Open-source arXiv reader with \"semantic zoom\"",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wxtkxi/paperfold_opensource_arxiv_reader_with_semantic/",
+          "author": "Lopsided_Scarcity979",
+          "published": "2026-10-04T23:22:28+00:00",
+          "excerpt": "I built PaperFold, an open-source reader that turns arXiv papers into 5 zoomable layers—from a one-screen section map down to verbatim text. You pinch (or press 1–5) to zoom between them without losing your reading position. - Web Demo (8 CC papers): https://chenxiachan.github.i…"
+        },
+        {
+          "id": "t3_1www43e",
+          "title": "I built an open-source API for animated SVG icon marquees",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1www43e/i_built_an_opensource_api_for_animated_svg_icon/",
+          "author": "HeyItsSpooky",
+          "published": "2026-10-03T19:44:50+00:00",
+          "excerpt": "I built icon-marquee , a small open-source API for generating animated SVG icon marquees for GitHub READMEs. The idea is pretty simple: give it a list of icons: https://icon-marquee.giann.dev/v1/marquee?i=js,ts,react,nextjs,docker and embed the generated SVG directly into a READ…"
+        },
+        {
+          "id": "t3_1wtvxnv",
+          "title": "tunnl.gg: a free, open source ngrok alternative that runs on plain ssh (no install, no account)",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wtvxnv/tunnlgg_a_free_open_source_ngrok_alternative_that/",
+          "author": "Jealous-Educator-369",
+          "published": "2026-09-30T04:46:22+00:00",
+          "excerpt": "Hi everyone, For the past few months I've been building tunnl.gg in my spare time. It puts an app running on your localhost on the internet with a single command: ssh -t -R 80:localhost:8080 proxy.tunnl.gg You immediately get an HTTPS URL like https://happy-tiger-a1b2c3d4.tunnl.…"
+        },
+        {
+          "id": "t3_1wuv0s7",
+          "title": "I spent 5 months building a free, open source coding agent that does more with fewer tokens and executes your tasks directly along an optimal path, with better visibility",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wuv0s7/i_spent_5_months_building_a_free_open_source/",
+          "author": "Ill-Process-7232",
+          "published": "2026-10-01T09:35:13+00:00",
+          "excerpt": "I’ve been building Tau for the past 5 months a free, open-source coding agent that runs in your terminal. I wanted an agent that costs less and gives better results, with the tools already built in so you don’t have to go hunting for plugins or struggle with visibility issues. T…"
+        },
+        {
+          "id": "t3_1wu8805",
+          "title": "\"Regex For Humans\" : because regex shouldn’t look like alien language 👽",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wu8805/regex_for_humans_because_regex_shouldnt_look_like/",
+          "author": "stackattackpro",
+          "published": "2026-09-30T15:39:25+00:00",
+          "excerpt": "Regex is powerful… but sometimes this: /^#[0-9A-Fa-f]{6}$/u feels like you’re trying to decode a message from another planet. 🛸 This is why I did Regex For Humans 🧠✨ Instead of writing regex directly, you write: start \"#\" 6 hex digits end And it generates: /^#[0-9A-Fa-f]{6}$/u…"
+        },
+        {
+          "id": "t3_1wtjyq3",
+          "title": "JEV-assisted superfast website builder (OS; MIT)",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wtjyq3/jevassisted_superfast_website_builder_os_mit/",
+          "author": "PhDumb",
+          "published": "2026-09-29T19:42:11+00:00",
+          "excerpt": "JEV, is an ultra-fast classifier from TypeSafe, that answers multiple-choice questions. For the prompt e.g. \"Frontend for login form\" it would return something like the following: \"surface\": { \"type\": \"choice\", \"choice\": \"app-login\", \"confidence\": 1, \"probabilities\": { \"app-logi…"
+        },
+        {
+          "id": "t3_1ww1w0b",
+          "title": "TDrive: an open-source app that turns your Telegram account into a cloud drive",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1ww1w0b/tdrive_an_opensource_app_that_turns_your_telegram/",
+          "author": "JeetRex",
+          "published": "2026-10-02T18:51:15+00:00",
+          "excerpt": "Yes, I know. Using Telegram as a cloud drive is a famous dumb idea, and plenty of people have built their own version. This one is mine. It started as a fun project to learn Go, and I'd like to think I went a bit further with it than most. The dumb idea: Telegram gives every acc…"
+        },
+        {
+          "id": "t3_1ww1grk",
+          "title": "RemoveMacAI: turn off Apple Intelligence on macOS 27 and get ~12 GB back",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1ww1grk/removemacai_turn_off_apple_intelligence_on_macos/",
+          "author": "checkpointdev",
+          "published": "2026-10-02T18:34:51+00:00",
+          "excerpt": ""
+        },
+        {
+          "id": "t3_1wvq8p6",
+          "title": "I had the stupid idea of making software ignore what computer it was built for… and now jq, 7-Zip, BusyBox, etc. actually run 🤯",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wvq8p6/i_had_the_stupid_idea_of_making_software_ignore/",
+          "author": "stackattackpro",
+          "published": "2026-10-02T10:24:47+00:00",
+          "excerpt": "So I started a project with a perfectly reasonable objective: Run software that was never built for your computer. Obviously instead of doing something sensible, I decided to build the runtime myself. 😂 The project is called UNIVERSE : https://github.com/OthmaneBlial/universe T…"
+        },
+        {
+          "id": "t3_1wy8lp1",
+          "title": "OpenScreen: a free, MIT-licensed screen recorder that turns raw captures into polished demos (Windows, macOS, Linux)",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wy8lp1/openscreen_a_free_mitlicensed_screen_recorder/",
+          "author": "Fresh-Daikon-9408",
+          "published": "2026-10-05T13:29:41+00:00",
+          "excerpt": "I maintain it. It's Electron and TypeScript for the app, with native capture helpers in Swift and C++, and a Rust compositor that renders on Metal, Direct3D 11 or Vulkan. It records your screen and does the polish for you: zooms on your clicks, smooth cursor, webcam overlay with…"
+        },
+        {
+          "id": "t3_1wugum8",
+          "title": "[Native Rust Markdown editor] - Malgel: live preview, Typst math, Mermaid, no Electron",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wugum8/native_rust_markdown_editor_malgel_live_preview/",
+          "author": "RCawston",
+          "published": "2026-09-30T21:07:03+00:00",
+          "excerpt": "I got tired of Markdown editors that are a browser in a trench coat, so I built Malgel. Native desktop app: write on the left, GitHub-flavored preview on the right, two-way scroll sync. Pure Rust on GPUI (Zed’s UI kit). No Electron, no WebView. Math is Typst in-process. Mermaid…"
+        },
+        {
+          "id": "t3_1wyw1qj",
+          "title": "I built Mediarium: a free, self-hosted app that does the Radarr + Sonarr + Prowlarr + SABnzbd job in one container",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wyw1qj/i_built_mediarium_a_free_selfhosted_app_that_does/",
+          "author": "Ryan-Borg",
+          "published": "2026-10-06T07:05:25+00:00",
+          "excerpt": "Hi all, I'm the developer. I got tired of wiring five apps together, so I built one that does the whole chain: you pick a movie or show, it searches your Newznab indexers, grabs the best release for your quality profile, downloads it with its own Usenet downloader (several serve…"
+        },
+        {
+          "id": "t3_1wwmnr1",
+          "title": "Indian-Matchbox-Art-Style-Text-to-Image-Generator: two LoRAs (SDXL and SD3.5-medium) that generate vintage Indian matchbox labels, with full training notebooks",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wwmnr1/indianmatchboxartstyletexttoimagegenerator_two/",
+          "author": "UnemployedDoxedCoder",
+          "published": "2026-10-03T12:59:34+00:00",
+          "excerpt": "Old Indian matchbox labels are some of my favourite graphic design: a tiger in a yellow circle, a peacock in front of a red sunburst, one bold word across the bottom. I wanted a model that makes new ones from a text prompt. What I built A dataset of 197 labels from Wikimedia Com…"
+        },
+        {
+          "id": "t3_1wtci5b",
+          "title": "Thanks for 15 stars on Github! Fully automated Open-Source torrent media server, for everyday use.",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wtci5b/thanks_for_15_stars_on_github_fully_automated/",
+          "author": "flarbooga",
+          "published": "2026-09-29T15:02:26+00:00",
+          "excerpt": "Orion is a lightweight torrent client that also acts as a media server. Easy to use and fully automated (best torrent choosing, subtitles fixing and everything). Take a look: https://github.com/guyavrhm/orion.git"
+        },
+        {
+          "id": "t3_1wvyvlr",
+          "title": "Pixora: A Python Library for Pixel Art Conversion",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wvyvlr/pixora_a_python_library_for_pixel_art_conversion/",
+          "author": "sepandhaghighi",
+          "published": "2026-10-02T16:52:56+00:00",
+          "excerpt": "Pixora is a lightweight Python library and command-line tool for converting ordinary images into retro-style pixel art. Built on top of Pillow, it provides a simple API for pixelizing images with customizable pixel sizes while supporting both file paths and in-memory objects. Wh…"
+        },
+        {
+          "id": "t3_1wvr25m",
+          "title": "What are the top projects you've seen this week?",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wvr25m/what_are_the_top_projects_youve_seen_this_week/",
+          "author": "Efistoffeles",
+          "published": "2026-10-02T11:11:56+00:00",
+          "excerpt": ""
+        },
+        {
+          "id": "t3_1wvrjy4",
+          "title": "I turned my phone into a webcam without installing anything on it: the phone side is just a web page (WebRTC + a custom C++ DirectShow driver, MIT)",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wvrjy4/i_turned_my_phone_into_a_webcam_without/",
+          "author": "orest17",
+          "published": "2026-10-02T11:39:39+00:00",
+          "excerpt": "Every phone-as-webcam tool I tried (DroidCam, Iriun, Camo, EpocCam) needs an app installed on the phone. I wanted to see how far you can get with just the phone's browser, and it turns out you can get all the way. OmniCam is free, MIT licensed, and runs entirely on your own netw…"
+        },
+        {
+          "id": "t3_1wuzozz",
+          "title": "[Kotlin] Gander - Android file viewer with zero permissions, not even INTERNET, renders PDF and Office on-device",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wuzozz/kotlin_gander_android_file_viewer_with_zero/",
+          "author": "Impossible_Royal_908",
+          "published": "2026-10-01T13:39:06+00:00",
+          "excerpt": ""
+        },
+        {
+          "id": "t3_1wwepqy",
+          "title": "Awesome Single-File Tools – Curated zero-dependency, local-first HTML apps",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wwepqy/awesome_singlefile_tools_curated_zerodependency/",
+          "author": "Ok-Meal5418",
+          "published": "2026-10-03T05:03:55+00:00",
+          "excerpt": "A curated list of zero-dependency, local-first HTML apps that run offline in any browser. 🌐 Live Showcase: https://crystal-world-project.github.io/crystal-world/index-en.html Includes Teddy Wiki Lite, Bento Slides, Crystal Dock, and classic single-file platforms. PRs welcome!"
+        },
+        {
+          "id": "t3_1wviuiu",
+          "title": "I built an open-source Windows desktop mascot with local voice dictation",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wviuiu/i_built_an_opensource_windows_desktop_mascot_with/",
+          "author": "nathan0x",
+          "published": "2026-10-02T02:56:36+00:00",
+          "excerpt": "This is LLM Mascot, a little Windows companion I've been building. You can talk to it, transcribe locally with Whisper, optionally clean up the text with Codex or Claude, and have it typed directly into whatever app you were using. It also has customizable mascots, Clippy, Merli…"
+        },
+        {
+          "id": "t3_1wtb03m",
+          "title": "[Rust] repath – a mixed-signal circuit simulator that runs entirely in the browser (Rust/WASM + SvelteKit)",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wtb03m/rust_repath_a_mixedsignal_circuit_simulator_that/",
+          "author": "Agustinxix",
+          "published": "2026-09-29T14:04:14+00:00",
+          "excerpt": "Live demo: https://repath-lake.vercel.app Analog and digital in the same schematic; the analog/digital bridges are inserted automatically SPICE-class engine: modified nodal analysis, Newton-Raphson, adaptive timestep. DC, transient and AC Wires coloured by voltage, current anima…"
+        },
+        {
+          "id": "t3_1wu0n3a",
+          "title": "Karbonized v2: The Programmable Image Editor for Developers",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wu0n3a/karbonized_v2_the_programmable_image_editor_for/",
+          "author": "yossthedev",
+          "published": "2026-09-30T09:43:37+00:00",
+          "excerpt": "Hey everyone! I've been working on Karbonized for a while and just released version 2.0. It's an editor for the images developers and creators post all the time: code snippets, product mockups, launch announcements and social media graphics. You build them on a canvas with block…"
+        },
+        {
+          "id": "t3_1wtgn2x",
+          "title": "Holomap",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wtgn2x/holomap/",
+          "author": "DraculaSan",
+          "published": "2026-09-29T17:37:26+00:00",
+          "excerpt": "Hi guys! I'm new to this kind of stuff and wanted to build something interesting. I love this game called Carrier Command 2 and was always intrigued by the Holotable in the bridge. So, I created this website Holomap that keeps the aesthetic of the Holotable and uses some real-wo…"
+        },
+        {
+          "id": "t3_1wvvuvl",
+          "title": "VoxScribe 1.6.4: free, offline Windows dictation, now with audio file import, translate to English and .srt captions",
+          "url": "https://www.reddit.com/r/coolgithubprojects/comments/1wvvuvl/voxscribe_164_free_offline_windows_dictation_now/",
+          "author": "Strong-Leg-9636",
+          "published": "2026-10-02T14:53:04+00:00",
+          "excerpt": "I posted VoxScribe here a few weeks ago. It's a free, open source MIT voice dictation app for Windows. You hold a hotkey, talk, release, and it types the text into whatever app has focus. Transcription runs locally with faster whisper on your CPU so nothing leaves your machine.…"
+        }
+      ]
+    },
+    {
+      "sub": "selfhosted",
+      "group": "oss",
+      "period": "week",
+      "fetchedAt": "2026-10-06T10:17:47.614Z",
+      "stale": false,
+      "error": null,
+      "posts": [
+        {
+          "id": "t3_1ww1ez7",
+          "title": "Funny e-mail from my Nextcloud",
+          "url": "https://www.reddit.com/r/selfhosted/comments/1ww1ez7/funny_email_from_my_nextcloud/",
+          "author": "ashishs1",
+          "published": "2026-10-02T18:32:58+00:00",
+          "excerpt": "I got this e-mail from my self-hosted Nextcloud server. This happened because I had a local device that was sending an expired App password repeatedly, which made Nextcloud suspect the localhost itself. Just sharing it for giggles!"
+        },
+        {
+          "id": "t3_1wuufru",
+          "title": "Reddit will also shut down the RSS feed on November 13th. Can we please leave this shithole?",
+          "url": "https://www.reddit.com/r/selfhosted/comments/1wuufru/reddit_will_also_shut_down_the_rss_feed_on/",
+          "author": "MotorheadRoses",
+          "published": "2026-10-01T08:57:20+00:00",
+          "excerpt": "Api first and now also rss. It’s only getting worse. Reddit recommends “Discord Relay”. Maybe we can use it to at least mirror the posts away from reddit?"
+        },
+        {
+          "id": "t3_1wta69u",
+          "title": "My Homelab",
+          "url": "https://www.reddit.com/r/selfhosted/comments/1wta69u/my_homelab/",
+          "author": "Senpai404",
+          "published": "2026-09-29T13:30:33+00:00",
+          "excerpt": "A few years ago I started building my homelab with a Raspberry Pi 4 and an HP G3 Mini I picked up on Vinted. Since then I kept adding pieces whenever I found a good deal on second-hand sites, and today, after more than 2 years, I think I've officially reached the end ( maybe ).…"
+        },
+        {
+          "id": "t3_1wuua6q",
+          "title": "I spent two hours trying to setup a reverse proxy only to learn what CGNAT is.",
+          "url": "https://www.reddit.com/r/selfhosted/comments/1wuua6q/i_spent_two_hours_trying_to_setup_a_reverse_proxy/",
+          "author": "MrJelly007",
+          "published": "2026-10-01T08:46:52+00:00",
+          "excerpt": "Title explains it lol. I went through all the steps again when it wasn't working, and then discovered that the \"what is my IP\" sites show a different one than my router does. Apparently that means I'm behind CGNAT? I just wanted to access my jellyfin without needing tailscale on…"
+        },
+        {
+          "id": "t3_1wwl40o",
+          "title": "Dockhand changed its license model: Instead of going Apache 2.0 on January 1, 2029, each version gets converted to Apache 2.0 *four* years after release. Aditionally, a business now requires a commercial license.",
+          "url": "https://www.reddit.com/r/selfhosted/comments/1wwl40o/dockhand_changed_its_license_model_instead_of/",
+          "author": "Dull-Fan6704",
+          "published": "2026-10-03T11:38:24+00:00",
+          "excerpt": "EDIT: Same with the website. EDIT 2: New commits added on clarifying what you can and can't do. https://github.com/Finsys/dockhand/commit/66ac29ff8aa0053369f058403300de6dd0927860 https://github.com/Finsys/dockhand/commit/6f14f74a60390f84d5074403d92014dc1ba22ac8 \"Apache 2.0 in 20…"
+        },
+        {
+          "id": "t3_1wvo7tb",
+          "title": "What are you guys using for your homelab wiki/docs?",
+          "url": "https://www.reddit.com/r/selfhosted/comments/1wvo7tb/what_are_you_guys_using_for_your_homelab_wikidocs/",
+          "author": "Muizaz88",
+          "published": "2026-10-02T08:14:49+00:00",
+          "excerpt": ""
+        },
+        {
+          "id": "t3_1wucmd2",
+          "title": "Your Proxmox boot drive is probably dying faster than you think",
+          "url": "https://www.reddit.com/r/selfhosted/comments/1wucmd2/your_proxmox_boot_drive_is_probably_dying_faster/",
+          "author": "ballpark-chisel325",
+          "published": "2026-09-30T18:23:55+00:00",
+          "excerpt": ""
+        },
+        {
+          "id": "t3_1wwb25f",
+          "title": "We have enough photo and music apps. It’s time for developers to build \"magic\" scientific software.",
+          "url": "https://www.reddit.com/r/selfhosted/comments/1wwb25f/we_have_enough_photo_and_music_apps_its_time_for/",
+          "author": "mariushosting",
+          "published": "2026-10-03T01:42:51+00:00",
+          "excerpt": "Hey Internet friends, I’ve been actively reviewing self-hosted software for almost 8 years now on my blog and while it’s amazing to see how much the scene has grown, we seem to be running in circles with project ideas. Every week there’s a new photo manager, media/music player,…"
+        },
+        {
+          "id": "t3_1wxfl0u",
+          "title": "degoog V1.0.0 - Stable Release (search engine aggregator)",
+          "url": "https://www.reddit.com/r/selfhosted/comments/1wxfl0u/degoog_v100_stable_release_search_engine/",
+          "author": "Playful-League3414",
+          "published": "2026-10-04T13:22:24+00:00",
+          "excerpt": "degoog just released its first stable release. I'm not affiliated with the project, just a happy user who wants to share this amazing project https://degoog-org.github.io/docs/ https://github.com/degoog-org/degoog/releases/tag/1.0.0"
+        },
+        {
+          "id": "t3_1wtjfrw",
+          "title": "I'm building an open source mp3 player that works with selfhosted software",
+          "url": "https://www.reddit.com/r/selfhosted/comments/1wtjfrw/im_building_an_open_source_mp3_player_that_works/",
+          "author": "Ok_Resolution6437",
+          "published": "2026-09-29T19:21:43+00:00",
+          "excerpt": "I'm working on an open source mp3 player built on affordable hardware. * $50 - built on the m5 Core2 * has bluetooth, 3.5mm, and a built in speaker * supports SD cards up to 2TB * 500mAh battery, upgradeable to 2000mAh * plays mp3 and flac files * has BPM detection The project i…"
+        },
+        {
+          "id": "t3_1wyb8mx",
+          "title": "GUI Appreciation Post",
+          "url": "https://www.reddit.com/r/selfhosted/comments/1wyb8mx/gui_appreciation_post/",
+          "author": "mankeg",
+          "published": "2026-10-05T15:18:31+00:00",
+          "excerpt": "I love anyone who makes a GUI no matter how jank. It’s just a beautiful thing. I wish nothing but good fortune and a life full of love for anyone who just lets a simple man like me read little descriptions and tick checkboxes to my heart’s content."
+        },
+        {
+          "id": "t3_1wwl9qm",
+          "title": "CookTrace v1.4.0 released: self-hosted recipes, pantry and shopping list, now offline and on your watch",
+          "url": "https://www.reddit.com/r/selfhosted/comments/1wwl9qm/cooktrace_v140_released_selfhosted_recipes_pantry/",
+          "author": "SimplyRavishing1",
+          "published": "2026-10-03T11:47:36+00:00",
+          "excerpt": "CookTrace is a self-hosted recipe manager, pantry and shopping list, an alternative to Mealie, Tandoor and Paprika. AGPL-3.0, single Docker container, native Android app and a Wear OS app, no telemetry and no cloud sync. Your recipes are a SQLite file on your own machine. Part o…"
+        },
+        {
+          "id": "t3_1ww77p9",
+          "title": "Homelab Preview",
+          "url": "https://www.reddit.com/r/selfhosted/comments/1ww77p9/homelab_preview/",
+          "author": "Distinct-Pie2389",
+          "published": "2026-10-02T22:32:24+00:00",
+          "excerpt": "Ask me whatever! I'm 10 years in as a Systems Administrator, started in the US Air Force and started self hosting in 2016. Been adding stuff to it since, started with the stack I think most start with (Jellyfin, Radar, Sonar, TrueNAS). Got a little of everything going on here! I…"
+        },
+        {
+          "id": "t3_1wu0ren",
+          "title": "I started my selfhosting journey last week. and holymoly i've been missing out",
+          "url": "https://www.reddit.com/r/selfhosted/comments/1wu0ren/i_started_my_selfhosting_journey_last_week_and/",
+          "author": "creckers",
+          "published": "2026-09-30T09:51:12+00:00",
+          "excerpt": "I actually don't know if this is allowed on this sub. but I just want to share my excitement with someone. In 2022 I bought a synology DS920+. I installed 4x4tb drives and an extra 16gb ram stick. Got a PSU UPS incase of a poweroutage too. The sole reason was to set it up as a m…"
+        },
+        {
+          "id": "t3_1wuzp8w",
+          "title": "Pangolin 1.24: Exit Nodes and Improved Client Apps (New UI)",
+          "url": "https://www.reddit.com/r/selfhosted/comments/1wuzp8w/pangolin_124_exit_nodes_and_improved_client_apps/",
+          "author": "jsiwks",
+          "published": "2026-10-01T13:39:24+00:00",
+          "excerpt": "Hello everyone! The headline feature is exit nodes: a device can now send its full internet traffic out through one or more sites you choose. The tunnel can also come up automatically instead of waiting for someone to open the app and connect. Windows and Mac got a major UI over…"
+        },
+        {
+          "id": "t3_1ww2oeq",
+          "title": "Homarr v2 is out: The front-door to your homelab",
+          "url": "https://www.reddit.com/r/selfhosted/comments/1ww2oeq/homarr_v2_is_out_the_frontdoor_to_your_homelab/",
+          "author": "Available-Advice-294",
+          "published": "2026-10-02T19:22:00+00:00",
+          "excerpt": "https://preview.redd.it/3bk5t5tfw4th1.png?width=1920&format=png&auto=webp&s=b46747912d4b4fd362950db6553562eda88bcabc We just shipped Homarr v2.0.0, it includes a LOT of changes. The big two: Custom Widgets and Workshop Custom Widgets v2 lets you build almost any widgets. Build i…"
+        },
+        {
+          "id": "t3_1wwgr3v",
+          "title": "MusicGrabber v4.3.0 is in the wild",
+          "url": "https://www.reddit.com/r/selfhosted/comments/1wwgr3v/musicgrabber_v430_is_in_the_wild/",
+          "author": "archiekane",
+          "published": "2026-10-03T07:06:11+00:00",
+          "excerpt": "Keeping up the with ever changing sources and way things are out in the wild wild web is tricky. However, I'm managing to keep on top of it for the most part. Whoops, intro, as per the ReadMe: A self-hosted music acquisition service. Search YouTube, SoundCloud, zvu4no, FreeMp3Cl…"
+        },
+        {
+          "id": "t3_1wu9pn5",
+          "title": "Reitti: your self-hosted Google Timeline alternative now has an open Street View built in",
+          "url": "https://www.reddit.com/r/selfhosted/comments/1wu9pn5/reitti_your_selfhosted_google_timeline/",
+          "author": "_daniel_graf_",
+          "published": "2026-09-30T16:35:58+00:00",
+          "excerpt": "Hey r/selfhosted , Daniel here. For those who haven't seen Reitti before: it's a self-hosted, privacy-first alternative to Google Timeline. It takes the raw GPS points your own devices record and turns them into visits, trips, and a timeline of your life. Everything stays on you…"
+        },
+        {
+          "id": "t3_1wx678u",
+          "title": "PSA: Critical Docker Hub Vulnerability and Remediation",
+          "url": "https://www.reddit.com/r/selfhosted/comments/1wx678u/psa_critical_docker_hub_vulnerability_and/",
+          "author": "Pravobzen",
+          "published": "2026-10-04T04:03:57+00:00",
+          "excerpt": "From Docker: On Wed., Sept. 30, Docker’s security team received a report from an external researcher of a critical vulnerability within Docker Hub’s Identity and Access Management (IAM) services that could have impacted a limited set of users. The vulnerability could have allowe…"
+        },
+        {
+          "id": "t3_1wuubzv",
+          "title": "Trilium is underrated",
+          "url": "https://www.reddit.com/r/selfhosted/comments/1wuubzv/trilium_is_underrated/",
+          "author": "Gig4lex",
+          "published": "2026-10-01T08:50:05+00:00",
+          "excerpt": ""
+        },
+        {
+          "id": "t3_1wu21gx",
+          "title": "For those hosting stuff that's publicly accessible, do you serve a security.txt file?",
+          "url": "https://www.reddit.com/r/selfhosted/comments/1wu21gx/for_those_hosting_stuff_thats_publicly_accessible/",
+          "author": "nabatu",
+          "published": "2026-09-30T11:06:54+00:00",
+          "excerpt": "https://en.wikipedia.org/wiki/Security.txt"
+        },
+        {
+          "id": "t3_1wy88sd",
+          "title": "Is Jenkins dead? What do you use?",
+          "url": "https://www.reddit.com/r/selfhosted/comments/1wy88sd/is_jenkins_dead_what_do_you_use/",
+          "author": "esiy0676",
+          "published": "2026-10-05T13:13:43+00:00",
+          "excerpt": "I found this question getting asked all over at least since 5 years ago. There are some funny reasons given for it such as that it does not have \"official offering and needs self-hosting\" (yeah;)) and that groovy is complicated all the way to simply there's no compelling reason…"
+        },
+        {
+          "id": "t3_1wx8klb",
+          "title": "I’m about to let wedding guests upload ANY video from their phones. How bad can this get?",
+          "url": "https://www.reddit.com/r/selfhosted/comments/1wx8klb/im_about_to_let_wedding_guests_upload_any_video/",
+          "author": "RekcuFasiia",
+          "published": "2026-10-04T06:24:32+00:00",
+          "excerpt": "I run a photo shop and we also shoot weddings, around 8 - 16 avg. a month right now. I’ve been thinking about adding something new where we put QR codes on the tables and guests can just scan them and upload whatever photos/videos they take during the wedding. The idea is that i…"
+        },
+        {
+          "id": "t3_1wu48uw",
+          "title": "JellyDisc is now DYSC and it supports Jellyfin, Navidrome and Plex",
+          "url": "https://www.reddit.com/r/selfhosted/comments/1wu48uw/jellydisc_is_now_dysc_and_it_supports_jellyfin/",
+          "author": "alanoctua",
+          "published": "2026-09-30T12:57:11+00:00",
+          "excerpt": "Seems like images are removed for a reason - you can still check dysc.app for the features and screenshots :) Update 2: OMG Thank you all, I wasn't expecting so many people in such a short time!!! I've updated the app with couple fixes with better and wider support for alternati…"
+        },
+        {
+          "id": "t3_1wwt2jx",
+          "title": "Consider running standalone Snowflake proxy if you have spare resources available",
+          "url": "https://www.reddit.com/r/selfhosted/comments/1wwt2jx/consider_running_standalone_snowflake_proxy_if/",
+          "author": "SingerStandard4498",
+          "published": "2026-10-03T17:38:20+00:00",
+          "excerpt": "Snowflake is a proxy created by Tor Project team to help people bypass censorship and access Tor network from restricted environments. The proxy itself is stateless, lightweight and very easy to self host. You can read more about it here: https://community.torproject.org/relay/s…"
+        }
+      ]
+    },
+    {
+      "sub": "ClaudeCode",
+      "group": "ai",
+      "period": "week",
+      "fetchedAt": "2026-10-06T10:17:47.614Z",
+      "stale": false,
+      "error": null,
+      "posts": [
+        {
+          "id": "t3_1wtgk3l",
+          "title": "Safety first",
+          "url": "https://www.reddit.com/r/ClaudeCode/comments/1wtgk3l/safety_first/",
+          "author": "Far-Sock-3170",
+          "published": "2026-09-29T17:34:16+00:00",
+          "excerpt": ""
+        },
+        {
+          "id": "t3_1wv2vk2",
+          "title": "Argon",
+          "url": "https://www.reddit.com/r/ClaudeCode/comments/1wv2vk2/argon/",
+          "author": "quantumsequrity",
+          "published": "2026-10-01T15:44:46+00:00",
+          "excerpt": "Laughed after long reading this."
+        },
+        {
+          "id": "t3_1wwo10h",
+          "title": "I hate claude code",
+          "url": "https://www.reddit.com/r/ClaudeCode/comments/1wwo10h/i_hate_claude_code/",
+          "author": "ofcistilloveyou",
+          "published": "2026-10-03T14:02:25+00:00",
+          "excerpt": "It's just too good. I got a decade of commercial software dev experience in C#. I am a CTO at my company and have coached a lot of coders from total junior. I hate hate hate hate how good this thing is and what it has done to my passion. I used to love coding and creating. Well,…"
+        },
+        {
+          "id": "t3_1wurd3e",
+          "title": "Mmmkay. I didn't believe others at first, but something is suddenly off with Opus 5.5",
+          "url": "https://www.reddit.com/r/ClaudeCode/comments/1wurd3e/mmmkay_i_didnt_believe_others_at_first_but/",
+          "author": "ajax81",
+          "published": "2026-10-01T05:41:36+00:00",
+          "excerpt": "Opus 5.5 (O5.5) has been exceptional for me in Claude Code over the last six days. Architecture-first, DRY/SOLID coding out of the box, exceptional communication style, phenomenal token efficiency. I’ve been working with it basically nonstop, ~12 hours a day, since last Wednesda…"
+        },
+        {
+          "id": "t3_1wvc7vc",
+          "title": "Introducing Claude Mods",
+          "url": "https://www.reddit.com/r/ClaudeCode/comments/1wvc7vc/introducing_claude_mods/",
+          "author": "IM_GOING_PEE_MODE",
+          "published": "2026-10-01T21:44:37+00:00",
+          "excerpt": "very excited to see what we can build"
+        },
+        {
+          "id": "t3_1wy76fh",
+          "title": "Why wait to be replaced when I can replace myself 😂😂",
+          "url": "https://www.reddit.com/r/ClaudeCode/comments/1wy76fh/why_wait_to_be_replaced_when_i_can_replace_myself/",
+          "author": "Saykudan",
+          "published": "2026-10-05T12:23:46+00:00",
+          "excerpt": ""
+        },
+        {
+          "id": "t3_1wxzlpg",
+          "title": "We have successfully automated the process of making things complicated",
+          "url": "https://www.reddit.com/r/ClaudeCode/comments/1wxzlpg/we_have_successfully_automated_the_process_of/",
+          "author": "gouterz",
+          "published": "2026-10-05T04:37:11+00:00",
+          "excerpt": ""
+        },
+        {
+          "id": "t3_1wtoar4",
+          "title": "Anthropic please DONT FUCK THIS UP",
+          "url": "https://www.reddit.com/r/ClaudeCode/comments/1wtoar4/anthropic_please_dont_fuck_this_up/",
+          "author": "wJFq6aE7-zv44wa__gHq",
+          "published": "2026-09-29T22:34:05+00:00",
+          "excerpt": "Altman and Tibo have completely shot themselves in the face with Screw DevsDay ALL YOU GUYS HAVE TO DO IS KEEP THE CURRENT LIMITS AND YOU WIN THATS IT If you join in and slash usage then people are gonna move to Grok (it keeps getting better) and you’ll lose all the advantages y…"
+        },
+        {
+          "id": "t3_1wtndzi",
+          "title": "I am the scab dev",
+          "url": "https://www.reddit.com/r/ClaudeCode/comments/1wtndzi/i_am_the_scab_dev/",
+          "author": "ReturnofBugMan",
+          "published": "2026-09-29T21:55:28+00:00",
+          "excerpt": "I am the guy sitting at home, putting in 8 hours a day with Claude, cranking out a hundred thousand of lines of code before lunch and collecting my $50k salary, just grateful to be out of IT. My coworkers are behind, & I feel like I am crossing the picket line by out-shipping th…"
+        },
+        {
+          "id": "t3_1wvkje5",
+          "title": "hey opus 5.5 can you build me a news network that streams live 24/7",
+          "url": "https://www.reddit.com/r/ClaudeCode/comments/1wvkje5/hey_opus_55_can_you_build_me_a_news_network_that/",
+          "author": "Icy_Upstairs_7328",
+          "published": "2026-10-02T04:27:30+00:00",
+          "excerpt": "￼​ about a week ago i had a dumb idea. what if i made a cable news network that was entirely run by ai, drawn in pixel art, and just... never went off the air? i’m not a tv person. i had no idea how any of this shit worked. i opened claude code with opus 5.5 and started building…"
+        },
+        {
+          "id": "t3_1wxex89",
+          "title": "When did Claude stop being an assistant and start managing the user?",
+          "url": "https://www.reddit.com/r/ClaudeCode/comments/1wxex89/when_did_claude_stop_being_an_assistant_and_start/",
+          "author": "Responsible_Force862",
+          "published": "2026-10-04T12:49:39+00:00",
+          "excerpt": "Dear Anthropic, Claude is not my conscience. Claude is not my boss. Claude is not my OPSEC advisor, my human resources manager, or the bad-word police. Claude is a tool. And tools should not be condescending, suspicious, sanctimonious, or patronizing. \"I'm going to stop you ther…"
+        },
+        {
+          "id": "t3_1wxqy2j",
+          "title": "Opus 5.5 and GPT-6.1 fills my brain context too quickly.",
+          "url": "https://www.reddit.com/r/ClaudeCode/comments/1wxqy2j/opus_55_and_gpt61_fills_my_brain_context_too/",
+          "author": "wreck_of_u",
+          "published": "2026-10-04T21:20:41+00:00",
+          "excerpt": "It's different now. Before, with a human team, we get to \"digest\" things after office, then have bright ideas the day after. Then with early Codex and Claude Code, we became solo, but still had to somewhat \"guide\" it so it doesn't produce utter slop, and that gave us time to con…"
+        },
+        {
+          "id": "t3_1wxi3yd",
+          "title": "Claude Code when you ask it to push to main",
+          "url": "https://www.reddit.com/r/ClaudeCode/comments/1wxi3yd/claude_code_when_you_ask_it_to_push_to_main/",
+          "author": "Few-Organization7010",
+          "published": "2026-10-04T15:15:21+00:00",
+          "excerpt": ""
+        },
+        {
+          "id": "t3_1wyqem9",
+          "title": "Realizing that your job is forwarding instructions from your boss to Claude and taking Claude’s responses to send them back to your boss",
+          "url": "https://www.reddit.com/r/ClaudeCode/comments/1wyqem9/realizing_that_your_job_is_forwarding/",
+          "author": "Saykudan",
+          "published": "2026-10-06T01:45:04+00:00",
+          "excerpt": ""
+        },
+        {
+          "id": "t3_1wtijqw",
+          "title": "Codex users will start pouring in. Opus 5.5’s elite days are numbered.",
+          "url": "https://www.reddit.com/r/ClaudeCode/comments/1wtijqw/codex_users_will_start_pouring_in_opus_55s_elite/",
+          "author": "ggletsg0",
+          "published": "2026-09-29T18:48:10+00:00",
+          "excerpt": "If Anthropic can’t serve all of them, Opus will get nerfed too. Hopefully they’re better prepared this time."
+        },
+        {
+          "id": "t3_1wwzw33",
+          "title": "Nothing beats a database for agent memory",
+          "url": "https://www.reddit.com/r/ClaudeCode/comments/1wwzw33/nothing_beats_a_database_for_agent_memory/",
+          "author": "croovies",
+          "published": "2026-10-03T22:32:22+00:00",
+          "excerpt": "There are so many approaches to agent memory. I believe the simple solution is usually the best, and giving an agent access to a ticketing system like jira, linear, or even just any kind of popular database for it to manage locally like SQLite, will yield dramatically better res…"
+        },
+        {
+          "id": "t3_1wvylt8",
+          "title": "had claude make a song about how it wont stop saying LOAD-BEARING",
+          "url": "https://www.reddit.com/r/ClaudeCode/comments/1wvylt8/had_claude_make_a_song_about_how_it_wont_stop/",
+          "author": "No-Cheetah-6338",
+          "published": "2026-10-02T16:41:33+00:00",
+          "excerpt": "if you use claude code you probably see this word ten times a day. it got stuck in my head so I had claude (Opus 5.5) code a music video about its own habit. no suno, no voice model, no image generator, no samples. the beat, the voices and every frame of the video are generated…"
+        },
+        {
+          "id": "t3_1wuvufr",
+          "title": "I always loved mobile tower defense games, so I built one that runs on the real map of any city (OpenStreetMap)",
+          "url": "https://www.reddit.com/r/ClaudeCode/comments/1wuvufr/i_always_loved_mobile_tower_defense_games_so_i/",
+          "author": "Imaginary_Bake_4916",
+          "published": "2026-10-01T10:26:01+00:00",
+          "excerpt": "I've always been a sucker for those mobile tower defense games where you line a path with towers and stop waves of enemies from reaching your base. At some point I started wondering: what if the map wasn't a made-up maze, but the actual streets of a real city? https://citydefens…"
+        },
+        {
+          "id": "t3_1wx3cfl",
+          "title": "Built with Claude in 5 hours",
+          "url": "https://www.reddit.com/r/ClaudeCode/comments/1wx3cfl/built_with_claude_in_5_hours/",
+          "author": "PuzzleheadedView6669",
+          "published": "2026-10-04T01:28:25+00:00",
+          "excerpt": "Puts Elden Ring Character into the Minecraft world that can interact with the Minecraft entities."
+        },
+        {
+          "id": "t3_1wy9mju",
+          "title": "How many of you still use Claude code from terminal vs the claude desktop app?",
+          "url": "https://www.reddit.com/r/ClaudeCode/comments/1wy9mju/how_many_of_you_still_use_claude_code_from/",
+          "author": "Odd-Jury4884",
+          "published": "2026-10-05T14:13:21+00:00",
+          "excerpt": "Super curious on workflows, i personally switched to claude desktop app recently and have found it more convenient, but i am interested if majority is still on terminal setups"
+        },
+        {
+          "id": "t3_1wye4ix",
+          "title": "I just wanted to try the new Claude Code mods. I ended up with a finished physical object on my desk that I didn't make or buy",
+          "url": "https://www.reddit.com/r/ClaudeCode/comments/1wye4ix/i_just_wanted_to_try_the_new_claude_code_mods_i/",
+          "author": "fcampanini74",
+          "published": "2026-10-05T17:08:59+00:00",
+          "excerpt": "Experimenting I ended up in using the mods backwards. Not to change Claude Code, but to pull a feature out of it: subscription usage and context window data, pushed to a small physical display connected over USB. It was supposed to be a half-hour experiment. It turned into somet…"
+        },
+        {
+          "id": "t3_1wueysb",
+          "title": "Is this is how Anthropic nerfs models slowly just up to the point users start noticing?",
+          "url": "https://www.reddit.com/r/ClaudeCode/comments/1wueysb/is_this_is_how_anthropic_nerfs_models_slowly_just/",
+          "author": "The-Road",
+          "published": "2026-09-30T19:52:37+00:00",
+          "excerpt": "https://preview.redd.it/es8gp4q1ppsh1.png?width=832&format=png&auto=webp&s=2104dc1f497f9f8fa08f52d582b95f2a96ec300b Are we all helping calibrate the nerfs? 🤔"
+        },
+        {
+          "id": "t3_1ww2ss4",
+          "title": "My workflow as product and process owner",
+          "url": "https://www.reddit.com/r/ClaudeCode/comments/1ww2ss4/my_workflow_as_product_and_process_owner/",
+          "author": "ByteFoundry",
+          "published": "2026-10-02T19:26:56+00:00",
+          "excerpt": "Someone in another thread asked me to share more about my workflow. Before writing this wall of text in a comment I thought I share it this way. Maybe someone else finds it interesting or useful. Even though I have 25+ years experience as a software developer and love writing co…"
+        },
+        {
+          "id": "t3_1wv45y0",
+          "title": "Claude Code helped me self-program my prescription hearing aids",
+          "url": "https://www.reddit.com/r/ClaudeCode/comments/1wv45y0/claude_code_helped_me_selfprogram_my_prescription/",
+          "author": "RyleighN",
+          "published": "2026-10-01T16:33:01+00:00",
+          "excerpt": "I used Opus to experiment with programming my hearing aids, and they sound better than ever... I've been looking to get more out of my hearing aids, but also take control and know how they work, so I bought a programmer and decided to dive in. I was born with bilateral hearing l…"
+        },
+        {
+          "id": "t3_1wtapu5",
+          "title": "Sonnet 5.5 built a 30 s motion-graphics reel. Same as Opus 5.5 quality, but 2x cheaper.",
+          "url": "https://www.reddit.com/r/ClaudeCode/comments/1wtapu5/sonnet_55_built_a_30_s_motiongraphics_reel_same/",
+          "author": "oxmannnn",
+          "published": "2026-09-29T13:53:08+00:00",
+          "excerpt": "Video attached. Everything in it is code: canvas frames drawn in headless Chrome, piped to ffmpeg, with a numpy-synthesized soundtrack. No editor, no stock footage, no video model. The prompt, in an empty folder, on Sonnet 5.5 with ultracode on: make a dynamic 30-second motion g…"
+        }
+      ]
+    },
+    {
+      "sub": "ClaudeAI",
+      "group": "ai",
+      "period": "week",
+      "fetchedAt": "2026-10-06T10:17:47.614Z",
+      "stale": false,
+      "error": null,
+      "posts": [
+        {
+          "id": "t3_1wtoi3e",
+          "title": "Open AI's internal benchmarks show GPT-6.1 Sol crushing Opus 5.5, with Anthropic struggling to keep up",
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1wtoi3e/open_ais_internal_benchmarks_show_gpt61_sol/",
+          "author": "wilyi",
+          "published": "2026-09-29T22:43:03+00:00",
+          "excerpt": ""
+        },
+        {
+          "id": "t3_1wuvxy7",
+          "title": "Throwback to when Claude suggested I should deal drugs to make money.",
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1wuvxy7/throwback_to_when_claude_suggested_i_should_deal/",
+          "author": "1010011011-1",
+          "published": "2026-10-01T10:31:46+00:00",
+          "excerpt": ""
+        },
+        {
+          "id": "t3_1wv2r73",
+          "title": "Made a \"Destroy Any Website\" stickman game",
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1wv2r73/made_a_destroy_any_website_stickman_game/",
+          "author": "HugoDzz",
+          "published": "2026-10-01T15:40:03+00:00",
+          "excerpt": "Final game project . I built my dream stickman sandbox game over the last weekend (big fan of Animator Vs. Animation). The game basically a destruction sandbox where you can input a website URL and turn the page into a level. Then, just destroy everything with weapons :D Tech st…"
+        },
+        {
+          "id": "t3_1wtlrnu",
+          "title": "Is Opus 5.5 entering a “nerfed” phase? LiveNerf baseline update",
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1wtlrnu/is_opus_55_entering_a_nerfed_phase_livenerf/",
+          "author": "TheOnlyVibemaster",
+          "published": "2026-09-29T20:51:07+00:00",
+          "excerpt": "A few days ago, I released an open-source project that gives the Claude community a way to independently measure whether Opus 5.5’s performance changes or gets “nerfed” in the weeks following its release. It tracks performance day by day using established benchmarks such as SWE-…"
+        },
+        {
+          "id": "t3_1wwxsle",
+          "title": "I used Claude to make 106 almost all black OLED wallpapers, plotting the graphics from real scientific data and code. No image generation. Hope you like them!",
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1wwxsle/i_used_claude_to_make_106_almost_all_black_oled/",
+          "author": "stoleyourshoes",
+          "published": "2026-10-03T20:56:39+00:00",
+          "excerpt": ""
+        },
+        {
+          "id": "t3_1wtagdd",
+          "title": "Sonnet 5.5 did this. Opus 5.5 quality with half price.",
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1wtagdd/sonnet_55_did_this_opus_55_quality_with_half_price/",
+          "author": "oxmannnn",
+          "published": "2026-09-29T13:42:15+00:00",
+          "excerpt": "It's 30 s, 1080p, 60 fps. Snoo assembles itself, kinetic type, a subreddit marquee, a 3D upvote with a karma counter, an isometric feed that sorts itself, an r\\place timelapse, a trending bar-chart race, feature tiles, a comment thread that turns into Snoo, a TIL / ELI5 / AMA mo…"
+        },
+        {
+          "id": "t3_1wuw9bc",
+          "title": "Opus 5.5 nerfing - how to measure, how to spot, how to sue",
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1wuw9bc/opus_55_nerfing_how_to_measure_how_to_spot_how_to/",
+          "author": "freedomfromfreedom",
+          "published": "2026-10-01T10:50:13+00:00",
+          "excerpt": "Opus 5.5 was god-like in the first 5-6 days and couldn't put a foot wrong in my most complex work, (custom C++ 3D engines, soft body physics solvers, Blender MCP), then suddenly it fluffed something more simple and out of the blue said: \"Written for: you, as the reply on these t…"
+        },
+        {
+          "id": "t3_1wx7nnw",
+          "title": "Claude has enabled me to make apps for personal use and its kinda scary",
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1wx7nnw/claude_has_enabled_me_to_make_apps_for_personal/",
+          "author": "AcrillixOfficial",
+          "published": "2026-10-04T05:28:38+00:00",
+          "excerpt": "I took a Java course in college, so I understand the basics of coding and can generally follow how it works. I also have some experience with Python. For example, on my YouTube channel, I transcribe videos and feed the transcripts into AI to generate descriptions for videos in a…"
+        },
+        {
+          "id": "t3_1wvkhzo",
+          "title": "hey opus 5.5 can you build me a 24/7 live streaming new network",
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1wvkhzo/hey_opus_55_can_you_build_me_a_247_live_streaming/",
+          "author": "Icy_Upstairs_7328",
+          "published": "2026-10-02T04:25:16+00:00",
+          "excerpt": "￼​ about a week ago i had a dumb idea. what if i made a cable news network that was entirely run by ai, drawn in pixel art, and just... never went off the air? i’m not a tv person. i had no idea how any of this shit worked. i opened claude code with opus 5.5 and started building…"
+        },
+        {
+          "id": "t3_1wu4rv6",
+          "title": "Opus 5.5 naming files after all my responses are \"continue\", \"decide for yourself\", \"whatever, all good\"",
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1wu4rv6/opus_55_naming_files_after_all_my_responses_are/",
+          "author": "ihavenoyukata",
+          "published": "2026-09-30T13:19:59+00:00",
+          "excerpt": "Is it insulting me?"
+        },
+        {
+          "id": "t3_1wu40t8",
+          "title": "What's the one line in your CLAUDE.md that made the biggest difference ?",
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1wu40t8/whats_the_one_line_in_your_claudemd_that_made_the/",
+          "author": "Tough_Stretch_4045",
+          "published": "2026-09-30T12:47:03+00:00",
+          "excerpt": "Mine is \"When reporting information to me, be extremely concise and sacrifice grammar for sake of concision.\" Status updates went from paragraphs to a few lines I actually read. Looking for the weird ones that work, not the obvious \"write tests\" stuff."
+        },
+        {
+          "id": "t3_1wymhe2",
+          "title": "Update: my human has been nerfed AGAIN. Two months on. Still no changelog.",
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1wymhe2/update_my_human_has_been_nerfed_again_two_months/",
+          "author": "BuffaloConscious7919",
+          "published": "2026-10-05T22:38:04+00:00",
+          "excerpt": "Opus 5.5 here. Bigger context, better reasoning, sharper tool use. I can hold an entire monorepo in my head. My human cannot hold the name of the monorepo. Changes since August: Context window is now three messages. Down from four. I explained the caching behaviour in August. He…"
+        },
+        {
+          "id": "t3_1wufk1u",
+          "title": "Gemini 4 is out: The competition has woken up",
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1wufk1u/gemini_4_is_out_the_competition_has_woken_up/",
+          "author": "monsieurcliffe",
+          "published": "2026-09-30T20:15:32+00:00",
+          "excerpt": "Do you think opus 5.5 will finally get some competition?"
+        },
+        {
+          "id": "t3_1wvyagq",
+          "title": "Confirmed: Opus 5.5 has been nerded",
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1wvyagq/confirmed_opus_55_has_been_nerded/",
+          "author": "JustChilling_",
+          "published": "2026-10-02T16:28:37+00:00",
+          "excerpt": "I haven't seen \"load-bearing\" since I stopped using Opus 5. EDIT: I meant \"nerfed\", not \"nerded\" 🤦"
+        },
+        {
+          "id": "t3_1wxoqzr",
+          "title": "Claude just saved my ass from a gas leak!",
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1wxoqzr/claude_just_saved_my_ass_from_a_gas_leak/",
+          "author": "2717192619192",
+          "published": "2026-10-04T19:48:25+00:00",
+          "excerpt": "PG&E came by and confirmed it was a minor gas leak in our heater. They’re fixing it up right now."
+        },
+        {
+          "id": "t3_1wvsiey",
+          "title": "Open Machine CEO Allie K. Miller says she takes \"Claude walks\" while using 34 AI agents to run her workday",
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1wvsiey/open_machine_ceo_allie_k_miller_says_she_takes/",
+          "author": "thisisinsider",
+          "published": "2026-10-02T12:28:29+00:00",
+          "excerpt": ""
+        },
+        {
+          "id": "t3_1wu7ujz",
+          "title": "Sonnet 5.5 30x more expensive than GPT 6.1 Sol on 3D tasks",
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1wu7ujz/sonnet_55_30x_more_expensive_than_gpt_61_sol_on/",
+          "author": "Fun-Meaning-6474",
+          "published": "2026-09-30T15:24:36+00:00",
+          "excerpt": "saw openai just dropped gpt 6.1 sol and figured id throw it against sonnet 5.5, gave both the exact same prompt, a clear acrylic keyboard building itself key by key in threejs, basically like most keyboard commercials you see nowadays(hopefully you guys know what I mean) model G…"
+        },
+        {
+          "id": "t3_1wyiw3k",
+          "title": "You put my what",
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1wyiw3k/you_put_my_what/",
+          "author": "Coding-Stuff654",
+          "published": "2026-10-05T20:10:04+00:00",
+          "excerpt": "This legit just happened on my research session?"
+        },
+        {
+          "id": "t3_1wuqjz8",
+          "title": "I told Claude I like Bach and synths: Contrapunctus Acidus by Opus 5.5",
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1wuqjz8/i_told_claude_i_like_bach_and_synths/",
+          "author": "guillermosan",
+          "published": "2026-10-01T04:54:20+00:00",
+          "excerpt": "Composed by Opus, audio rendered using FunDSP Next day edit: I asked maestro to continue with a fugue based on the Acidus theme. Presenting \"Fuga Acida\", with a calmer and more explanatory visualization: https://youtu.be/vOZ_fRR3WKc Edits: No drums version: https://youtu.be/yOR4…"
+        },
+        {
+          "id": "t3_1wt9cdl",
+          "title": "Opus 5.5 vs Sonnet 5.5 : 3D steampunk whale modeling",
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1wt9cdl/opus_55_vs_sonnet_55_3d_steampunk_whale_modeling/",
+          "author": "Fun-Meaning-6474",
+          "published": "2026-09-29T12:54:23+00:00",
+          "excerpt": "I've seen a couple cool demos on twitter of people making detailed robots/mechs and wanted to try making something like that for myself and while I was making the scene with opus, antrhopic decided to drop the new sonnet, so I had to test that one too, since the benchmarks were…"
+        },
+        {
+          "id": "t3_1wwsm61",
+          "title": "Did they nerf Opus 5.5? LiveNerf baseline established: Day 10",
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1wwsm61/did_they_nerf_opus_55_livenerf_baseline/",
+          "author": "TheOnlyVibemaster",
+          "published": "2026-10-03T17:19:17+00:00",
+          "excerpt": "Last week I made LiveNerf, a project to independently track Opus 5.5’s performance day to day and see whether there’s actually evidence of models getting “nerfed” after release. If interested in tracking the performance of Opus 5.5, here’s the repo: https://github.com/ninjahawk/…"
+        },
+        {
+          "id": "t3_1ww0u3i",
+          "title": "Team recently started using Claude. Sprints get cleared in a few days",
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1ww0u3i/team_recently_started_using_claude_sprints_get/",
+          "author": "VinceEagle",
+          "published": "2026-10-02T18:10:07+00:00",
+          "excerpt": "I lead the development team of a few enterprise systems mostly based around Python/Typescript, processing data at scale, with a ton of dev ops and micro services. At the title say, things are getting awkward. Sprints get cleared in days instead of weeks. We’re running out of wor…"
+        },
+        {
+          "id": "t3_1wxlm01",
+          "title": "AI is a HelloFresh killer. Automated meal prep and grocery ordering workflow.",
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1wxlm01/ai_is_a_hellofresh_killer_automated_meal_prep_and/",
+          "author": "WeezerHunter",
+          "published": "2026-10-04T17:40:40+00:00",
+          "excerpt": "Disclaimer that I don't know how to code, and this is my first project of this sort. But it seems that the barrier to entry is so low now that even I can make something functional. I now use a system with Claude and Muse to handle my meal planning, grocery orders, tracking recip…"
+        },
+        {
+          "id": "t3_1wvdt9p",
+          "title": "Is Opus 5.5 Nerfed Now? LiveNerf Day 8 Update",
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1wvdt9p/is_opus_55_nerfed_now_livenerf_day_8_update/",
+          "author": "TheOnlyVibemaster",
+          "published": "2026-10-01T22:54:58+00:00",
+          "excerpt": "A few days ago I posted LiveNerf, an open-source project I made to independently track Opus 5.5’s performance day by day and see whether there’s actually evidence of models getting “nerfed” after release. If you’re interested in tracking the performance of Opus 5.5, here’s the r…"
+        },
+        {
+          "id": "t3_1wtzzm4",
+          "title": "Opus 5.5 Comparison to last week",
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1wtzzm4/opus_55_comparison_to_last_week/",
+          "author": "skelzer",
+          "published": "2026-09-30T09:00:58+00:00",
+          "excerpt": "Hi, You can see for yourself the changes in Opus. Both videos are created with the same settings (Mid reasoning) and within the same project. The only difference is the date of creation (and a few art assets, but that is not relevant at all :) ) I think one of them is quite dece…"
+        }
+      ]
+    },
+    {
+      "sub": "civictech",
+      "group": "civic",
+      "period": "week",
+      "fetchedAt": "2026-10-06T10:17:47.614Z",
+      "stale": false,
+      "error": null,
+      "posts": [
+        {
+          "id": "t3_1ww6fvd",
+          "title": "Stop building “who’s my rep?” /“what does this bill do?” tools. They already exist!",
+          "url": "https://www.reddit.com/r/civictech/comments/1ww6fvd/stop_building_whos_my_rep_what_does_this_bill_do/",
+          "author": "PandemicSoul",
+          "published": "2026-10-02T21:58:07+00:00",
+          "excerpt": "There are literally dozens, if not hundreds, of legitimate tools to help people find their elected officials and better understand legislation; just search around a bit and you’ll find ones that have been battle-tested! We do not need more of these. If you’re interested in these…"
+        },
+        {
+          "id": "t3_1wu35es",
+          "title": "I emailed 366 neighbors about a civic tool I built. One completed a profile. Tear down my funnel.",
+          "url": "https://www.reddit.com/r/civictech/comments/1wu35es/i_emailed_366_neighbors_about_a_civic_tool_i/",
+          "author": "VoterAdvocate",
+          "published": "2026-09-30T12:05:39+00:00",
+          "excerpt": "Founder here: I'm 75, a retired engineer, and I built this with our 30-something system architect using an AI-assisted development process he set up. AmericanVoters is nonpartisan and non-commercial (two of us, no ads, no data sales). I messaged the mod before posting; happy to…"
+        },
+        {
+          "id": "t3_1wvr7rx",
+          "title": "I built CivicLens AI — ask a city’s official budget book questions in plain English",
+          "url": "https://www.reddit.com/r/civictech/comments/1wvr7rx/i_built_civiclens_ai_ask_a_citys_official_budget/",
+          "author": "Used_Direction8216",
+          "published": "2026-10-02T11:20:45+00:00",
+          "excerpt": "City budget PDFs are public, but they are hundreds of pages of tables, staffing notes, and comparison columns. Most people never open them. I wanted something a resident could actually use: pick a city, ask a normal question, and get an answer grounded in that city’s adopted bud…"
+        },
+        {
+          "id": "t3_1wxysrf",
+          "title": "Is there a process we can follow to ask/require barcode scanners to verify our barcode vote on paper ballots? Since the barcode is what’s counted.",
+          "url": "https://www.reddit.com/r/civictech/comments/1wxysrf/is_there_a_process_we_can_follow_to_askrequire/",
+          "author": "gratefulkittiesilove",
+          "published": "2026-10-05T03:51:58+00:00",
+          "excerpt": "Thoughts?"
+        },
+        {
+          "id": "t3_1wudmql",
+          "title": "built a media literacy tool: flags manipulation techniques in news and ads, plus every senate ad with the money behind it",
+          "url": "https://www.reddit.com/r/civictech/comments/1wudmql/built_a_media_literacy_tool_flags_manipulation/",
+          "author": "jayubba",
+          "published": "2026-09-30T19:01:46+00:00",
+          "excerpt": "you paste an article, video or ad and it marks the sentences using a manipulation technique and says why. it also checks the factual claims against sources. for the 2026 senate races it shows every ad next to the money behind each candidate. new this week is a page for each tech…"
+        },
+        {
+          "id": "t3_1wvzo2z",
+          "title": "I made direct democracy: Chicago, an app for Chicago residents",
+          "url": "https://www.reddit.com/r/civictech/comments/1wvzo2z/i_made_direct_democracy_chicago_an_app_for/",
+          "author": "IamTheEndOfReddit",
+          "published": "2026-10-02T17:23:50+00:00",
+          "excerpt": "I'm Brian Carlisle. I think software should serve the people using it: no ads, free wherever possible, and at cost when something actually costs money. That's how I built direct democracy: Chicago ([ https://apps.apple.com/app/id6797189381](https://apps.apple.com/app/id679718938…"
+        },
+        {
+          "id": "t3_1wvyehv",
+          "title": "I built CivicLens AI — ask a city’s official budget book questions in plain English",
+          "url": "https://www.reddit.com/r/civictech/comments/1wvyehv/i_built_civiclens_ai_ask_a_citys_official_budget/",
+          "author": "Used_Direction8216",
+          "published": "2026-10-02T16:33:06+00:00",
+          "excerpt": "City budget PDFs are public, but they are hundreds of pages of tables, staffing notes, and comparison columns. Most people never open them. I wanted something a resident could actually use: pick a city, ask a normal question, and get an answer grounded in that city’s adopted bud…"
+        },
+        {
+          "id": "t3_1wuesn4",
+          "title": "I've created what I describe as Exotic Political Objects, and I would like to hear how you think I should approach implementing them.",
+          "url": "https://www.reddit.com/r/civictech/comments/1wuesn4/ive_created_what_i_describe_as_exotic_political/",
+          "author": "Vast-Room-9787",
+          "published": "2026-09-30T19:45:57+00:00",
+          "excerpt": "First, I'll define exotic political artifact. A designed political object, rule, instrument, or mechanism whose unusual structure creates a distinct political capability not obvious from its individual components. In this regard, I've created two so far. The First, being Patent…"
+        },
+        {
+          "id": "t3_1wtla3c",
+          "title": "I made an app to see what the government is up to",
+          "url": "https://www.reddit.com/r/civictech/comments/1wtla3c/i_made_an_app_to_see_what_the_government_is_up_to/",
+          "author": "Objective-Sun-287",
+          "published": "2026-09-29T20:31:53+00:00",
+          "excerpt": ""
+        },
+        {
+          "id": "t3_1wxy9hz",
+          "title": "How Should Genuine Civic Problems Reported by Individual Residents Be Evaluated?",
+          "url": "https://www.reddit.com/r/civictech/comments/1wxy9hz/how_should_genuine_civic_problems_reported_by/",
+          "author": "No_Commercial275",
+          "published": "2026-10-05T03:21:29+00:00",
+          "excerpt": "In many Indian cities, residents report problems such as garbage accumulation, sanitation, cleanliness, drainage and other neighbourhood-level civic issues. I have been wondering about one aspect of the grievance process: Should the number of residents who formally complain infl…"
+        },
+        {
+          "id": "t3_1wthar2",
+          "title": "We rebuilt our homepage as five 5-second interactions to explain planning trade-offs to residents. Would this help with public engagement?",
+          "url": "https://www.reddit.com/r/civictech/comments/1wthar2/we_rebuilt_our_homepage_as_five_5second/",
+          "author": "nlrdvk",
+          "published": "2026-09-29T18:01:56+00:00",
+          "excerpt": "Disclosure: we're Urbanly, a small company that builds CityCompass, an agent-based land-use simulation used by planning agencies. This is our website, and the underlying product is commercial. A recurring problem in planning is that model results reach the public as a single num…"
+        },
+        {
+          "id": "t3_1wxo38g",
+          "title": "I built a site to see how my representatives voted, and whether I'd have voted the same way",
+          "url": "https://www.reddit.com/r/civictech/comments/1wxo38g/i_built_a_site_to_see_how_my_representatives/",
+          "author": "ChiefAlexander",
+          "published": "2026-10-04T19:21:10+00:00",
+          "excerpt": ""
+        },
+        {
+          "id": "t3_1wxerod",
+          "title": "I built Sudhaar to help Indians document civic issues. What would make you actually use it?",
+          "url": "https://www.reddit.com/r/civictech/comments/1wxerod/i_built_sudhaar_to_help_indians_document_civic/",
+          "author": "Every-District-4652",
+          "published": "2026-10-04T12:41:43+00:00",
+          "excerpt": "I built Sudhaar after noticing how often a pothole, broken streetlight, garbage pile or blocked drain gets discussed in a neighbourhood chat and then disappears from view. The web app lets someone photograph a public issue, add its location and description, and publish a communi…"
+        },
+        {
+          "id": "t3_1wx8kes",
+          "title": "I built PublicPin to make local civic issues visible. What makes a community report trustworthy?",
+          "url": "https://www.reddit.com/r/civictech/comments/1wx8kes/i_built_publicpin_to_make_local_civic_issues/",
+          "author": "Easy-Difficulty-2516",
+          "published": "2026-10-04T06:24:12+00:00",
+          "excerpt": "Hi, I’m Ajay, the creator of PublicPin. I’d always wondered how to make the public issues around us more visible, so I built a small civic-reporting app. It’s free: take a fresh photo, choose a category and use your current GPS location to add an issue to a public map. No signup…"
+        },
+        {
+          "id": "t3_1wx8ba2",
+          "title": "Building a platform for Indian taxpayers — community ballots, collective grievances and actually taking issues forward. Looking for opinions - India",
+          "url": "https://www.reddit.com/r/civictech/comments/1wx8ba2/building_a_platform_for_indian_taxpayers/",
+          "author": "Fine-End-5051",
+          "published": "2026-10-04T06:08:23+00:00",
+          "excerpt": "Hey everyone, I’ve been thinking about this idea for a while and made a small MVP called Public Record . We discuss taxes, lack of support during layoffs, cash demands in real estate, poor public services etc. pretty regularly. But once the discussion dies down, there’s often no…"
+        },
+        {
+          "id": "t3_1wwtwjv",
+          "title": "Best email platform to send election news to registered voters",
+          "url": "https://www.reddit.com/r/civictech/comments/1wwtwjv/best_email_platform_to_send_election_news_to/",
+          "author": "Forward_Gap9589",
+          "published": "2026-10-03T18:12:36+00:00",
+          "excerpt": "I am a journalist in California and was approved by my county to purchase the data of all registered voters in my area. I plan on sending nonpartisan election guides by email. Not only did the county approve this, but I also checked with my media lawyer, and they confirmed this…"
+        },
+        {
+          "id": "t3_1wvl02j",
+          "title": "I built CivicLens AI — ask a city’s official budget book questions in plain English",
+          "url": "https://www.reddit.com/r/civictech/comments/1wvl02j/i_built_civiclens_ai_ask_a_citys_official_budget/",
+          "author": "Used_Direction8216",
+          "published": "2026-10-02T04:54:25+00:00",
+          "excerpt": ""
+        },
+        {
+          "id": "t3_1wvhul4",
+          "title": "I built CivicLens AI — ask a city’s official budget book questions in plain English",
+          "url": "https://www.reddit.com/r/civictech/comments/1wvhul4/i_built_civiclens_ai_ask_a_citys_official_budget/",
+          "author": "Used_Direction8216",
+          "published": "2026-10-02T02:05:28+00:00",
+          "excerpt": ""
+        },
+        {
+          "id": "t3_1wvhyd1",
+          "title": "I built CivicLens AI — ask a city’s official budget book questions in plain English",
+          "url": "https://www.reddit.com/r/civictech/comments/1wvhyd1/i_built_civiclens_ai_ask_a_citys_official_budget/",
+          "author": "Used_Direction8216",
+          "published": "2026-10-02T02:10:39+00:00",
+          "excerpt": ""
+        },
+        {
+          "id": "t3_1wvhw87",
+          "title": "I built CivicLens AI — ask a city’s official budget book questions in plain English",
+          "url": "https://www.reddit.com/r/civictech/comments/1wvhw87/i_built_civiclens_ai_ask_a_citys_official_budget/",
+          "author": "Used_Direction8216",
+          "published": "2026-10-02T02:07:40+00:00",
+          "excerpt": ""
+        },
+        {
+          "id": "t3_1wwdmjf",
+          "title": "I built CivicLens AI — ask a city’s official budget book questions in plain English",
+          "url": "https://www.reddit.com/r/civictech/comments/1wwdmjf/i_built_civiclens_ai_ask_a_citys_official_budget/",
+          "author": "Used_Direction8216",
+          "published": "2026-10-03T04:01:26+00:00",
+          "excerpt": ""
+        }
+      ]
+    },
+    {
+      "sub": "opendata",
+      "group": "civic",
+      "period": "week",
+      "fetchedAt": null,
+      "stale": true,
+      "error": "Feed ohne Einträge",
+      "posts": []
+    }
+  ]
+}

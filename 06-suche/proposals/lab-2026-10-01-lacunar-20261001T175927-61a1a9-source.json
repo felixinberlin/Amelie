@@ -1,0 +1,23 @@
+{
+  "plan_id": "lab-2026-10-01-lacunar-20261001T175927-61a1a9-source",
+  "actor": "lab-librarian",
+  "agent": "lab",
+  "runde": "lacunar-20261001T175927-61a1a9",
+  "_note": "Vorschlag des Labs, nicht angewendet. Der Bibliothekar prüft (typ, kategorie, `bib quellen match --url`, `bib find`); `human_accepted: true` setzt nur Félix, danach `npm run bib -- apply` auf diese Datei.",
+  "ops": [
+    {
+      "op": "source.add",
+      "id": "dlg-dlg-pruefschema-sensorische-qualitaetspruefung",
+      "name": "DLG Prüfschema sensorische Qualitätsprüfung Speisequark",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "enthaelt": "DLG Prüfschema sensorische Qualitätsprüfung Speisequark (Typ A: scheme without software); Anker des Lab-Laufs lacunar-20261001T175927-61a1a9, nicht gelesen.",
+      "status": "angekratzt",
+      "evidenz": "schnipsel",
+      "note": "Anker des Lab-Laufs lacunar-20261001T175927-61a1a9 (Quark); nur als Suchtreffer gelesen.",
+      "urls": [
+        "https://www.dlg.org/fileadmin/downloads/Expertenwissen/lebensmittelsensorik/2009_2_Expertenwissen_Sensorik_Methoden_Ueberblick.pdf"
+      ]
+    }
+  ]
+}

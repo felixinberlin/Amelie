@@ -25,19 +25,35 @@ const out = join(dir, 'bundle.mjs');
 writeFileSync(
   entry,
   `export { DOSEN_DATA, DISCARDED_DATA } from ${JSON.stringify(join(repoRoot, 'src/data/dosen.ts'))};
+export { VECTOR_CATALOG, DOSE_VECTORS, CANDIDATE_VECTORS } from ${JSON.stringify(join(repoRoot, 'src/data/vectors.ts'))};
+export { QUELLEN_KATALOG, QUELLEN_TYPEN, QUELLEN_DATA } from ${JSON.stringify(join(repoRoot, 'src/data/quellen.ts'))};
 export { CANDIDATE_IDEAS_DATA } from ${JSON.stringify(join(repoRoot, 'src/data/unpacked.ts'))};
 export { exportDatabaseAsJson } from ${JSON.stringify(join(repoRoot, 'src/services/storageService.ts'))};
+export { FUNDING_DATA, VENTURE_LEADS_DATA, SOLO_FOUNDER_GUIDES, REAL_PROJECTS_DATA } from ${JSON.stringify(join(repoRoot, 'src/data/funding.ts'))};
 `
 );
 
 try {
   await build({ entryPoints: [entry], bundle: true, format: 'esm', platform: 'node', outfile: out, logLevel: 'error' });
-  const { DOSEN_DATA, CANDIDATE_IDEAS_DATA, exportDatabaseAsJson } = await import(pathToFileURL(out).href);
+  const { QUELLEN_KATALOG, QUELLEN_TYPEN, QUELLEN_DATA, VECTOR_CATALOG, DOSE_VECTORS, CANDIDATE_VECTORS, DOSEN_DATA, CANDIDATE_IDEAS_DATA, exportDatabaseAsJson, FUNDING_DATA, VENTURE_LEADS_DATA, SOLO_FOUNDER_GUIDES, REAL_PROJECTS_DATA } = await import(pathToFileURL(out).href);
   const pub = join(repoRoot, 'public/data');
   writeFileSync(join(pub, 'amelie-ideas.json'), exportDatabaseAsJson(DOSEN_DATA, CANDIDATE_IDEAS_DATA) + '\n');
   writeFileSync(join(pub, 'dosen.json'), JSON.stringify(DOSEN_DATA, null, 2) + '\n');
+  writeFileSync(join(pub, 'vectors.json'), JSON.stringify({ catalog: VECTOR_CATALOG, doses: DOSE_VECTORS, candidates: CANDIDATE_VECTORS }, null, 2) + '\n');
+  writeFileSync(join(pub, 'quellen.json'), JSON.stringify({ catalog: QUELLEN_KATALOG, typen: QUELLEN_TYPEN, quellen: QUELLEN_DATA }, null, 2) + '\n');
   writeFileSync(join(pub, 'unpacked.json'), JSON.stringify(CANDIDATE_IDEAS_DATA, null, 2) + '\n');
-  console.log(`public/data geschrieben: ${DOSEN_DATA.length} Dosen, ${CANDIDATE_IDEAS_DATA.length} Kandidaten.`);
+  writeFileSync(join(pub, 'funding.json'), JSON.stringify(FUNDING_DATA, null, 2) + '\n');
+  writeFileSync(join(pub, 'ventures.json'), JSON.stringify({ ventureLeads: VENTURE_LEADS_DATA, soloFounderGuides: SOLO_FOUNDER_GUIDES, realProjects: REAL_PROJECTS_DATA }, null, 2) + '\n');
+  console.log(`public/data geschrieben: ${DOSEN_DATA.length} Dosen, ${CANDIDATE_IDEAS_DATA.length} Kandidaten, ${FUNDING_DATA.length} Fördereinträge, ${VENTURE_LEADS_DATA.length} B2B-Zwillinge.`);
+
+  // Self-Audit artifacts update
+  const auditEntry = join(dir, 'audit-entry.ts');
+  const auditOut = join(dir, 'audit-bundle.mjs');
+  writeFileSync(auditEntry, `export { writeAuditArtifacts } from ${JSON.stringify(join(repoRoot, 'src/audit/index.ts'))};`);
+  await build({ entryPoints: [auditEntry], bundle: true, format: 'esm', platform: 'node', outfile: auditOut, logLevel: 'error' });
+  const { writeAuditArtifacts } = await import(pathToFileURL(auditOut).href);
+  writeAuditArtifacts({ root: repoRoot });
+  console.log('public/data/amelie-health.json & AMELIE_STATUS.md aktualisiert.');
 } finally {
   rmSync(dir, { recursive: true, force: true });
 }

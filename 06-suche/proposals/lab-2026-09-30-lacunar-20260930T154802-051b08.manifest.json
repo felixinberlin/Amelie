@@ -1,0 +1,24 @@
+{
+  "manifest_version": 1,
+  "run_id": "lacunar-20260930T154802-051b08",
+  "plan_id": "lab-2026-09-30-lacunar-20260930T154802-051b08",
+  "engine": "lacunar",
+  "model": "gemini-2.5-flash",
+  "existence_check": false,
+  "survivors": {
+    "count": 1,
+    "status": "ungeprueft"
+  },
+  "files": [
+    "06-suche/proposals/lab-2026-09-30-lacunar-20260930T154802-051b08.md",
+    "06-suche/proposals/lab-2026-09-30-lacunar-20260930T154802-051b08.manifest.json"
+  ],
+  "source_ops": [],
+  "grave_proposals": 4,
+  "touches_memory": false,
+  "contracts": {
+    "write-plan": "see plan",
+    "lacunar-run": "1.2.0"
+  },
+  "contract_version": "1.0.0"
+}

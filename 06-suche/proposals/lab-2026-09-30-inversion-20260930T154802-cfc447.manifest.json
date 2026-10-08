@@ -1,0 +1,24 @@
+{
+  "manifest_version": 1,
+  "run_id": "inversion-20260930T154802-cfc447",
+  "plan_id": "lab-2026-09-30-inversion-20260930T154802-cfc447",
+  "engine": "inversion",
+  "model": "gemini-2.5-flash",
+  "existence_check": false,
+  "survivors": {
+    "count": 3,
+    "status": "ungeprueft"
+  },
+  "files": [
+    "06-suche/proposals/lab-2026-09-30-inversion-20260930T154802-cfc447.md",
+    "06-suche/proposals/lab-2026-09-30-inversion-20260930T154802-cfc447.manifest.json"
+  ],
+  "source_ops": [],
+  "grave_proposals": 1,
+  "touches_memory": false,
+  "contracts": {
+    "write-plan": "see plan",
+    "inversion-run": "1.0.0"
+  },
+  "contract_version": "1.0.0"
+}

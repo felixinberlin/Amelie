@@ -1,0 +1,23 @@
+{
+  "plan_id": "lab-2026-09-30-lacunar-schmetterlinge-source-add",
+  "actor": "lab-librarian",
+  "agent": "lab",
+  "runde": "Lab-Lauf Lacunar 30.09.2026 (Schmetterlinge)",
+  "ops": [
+    {
+      "op": "source.add",
+      "id": "ebms-methoden-tagfalter-transekt",
+      "name": "European Butterfly Monitoring Scheme (eBMS), Methoden der Tagfalter-Transektzählung",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "enthaelt": "Zählschema für Tagfalter-Transekte (Zählbogen, Korridor, Wetterdaten) mit benannten Fehlerquellen; von Hand angewendet, keine Software.",
+      "status": "angekratzt",
+      "evidenz": "schnipsel",
+      "note": "Anker (Frame A) des Lab-Laufs lacunar-20260930T064824-38e1d7 (Schmetterlinge).",
+      "urls": [
+        "https://butterfly-monitoring.net/de/bms-methods"
+      ]
+    }
+  ],
+  "human_accepted": true
+}

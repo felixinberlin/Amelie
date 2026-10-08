@@ -76,7 +76,7 @@ Format: **one page.** In the project it's called *the tin*. Template in `amelie-
 
 A gift has a specific risk: someone patents it and thereby makes it unusable for everyone else, you included. **CC0 doesn't protect against that** — it waives your rights but doesn't stop anyone from filing for the same idea if your publication isn't findable by patent examiners.
 
-The tool against this is called **defensive publication**, and it's free: **[TDCommons](https://www.tdcommons.org/)** (Technical Disclosure Commons, operated by Santa Clara University School of Law) takes technical descriptions, dates and indexes them so patent offices find them as prior art. After that, the idea is permanently free.
+The tool against this is called **defensive publication**, and it's free: **[TDCommons](https://www.tdcommons.org/)** (Technical Disclosure Commons, per its FAQ operated by bepress at the request of Google; the earlier Santa Clara claim is unverified as of 1 Oct 2026) takes technical descriptions, dates and indexes them so patent offices find them as prior art. After that, the idea is permanently free.
 
 It's used almost exclusively by corporations for their side inventions. In the idea-giveaway scene: practically unknown. That's the gap that sets you apart from every idea bank of the last forty years.
 

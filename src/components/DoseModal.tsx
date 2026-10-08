@@ -32,7 +32,9 @@ import { getDoseUrl } from '../utils/doseUrl';
 import { DOSE_SIMULATOR_MAP, SimulatorKey } from '../data/doseSimulators';
 import { getBook } from '../data/doseBooks';
 import { DoseBook } from './DoseBook';
+import { DoseVectorPanel } from './DoseVectorPanel';
 import { doseImageSrc, doseImageSrcSet, doseImageSizes } from '../utils/doseImage';
+import { DoseVideo } from './DoseVideo';
 import {
   AltbauThermalSimulator,
   GlasanflugSimulator,
@@ -258,21 +260,21 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-stone-950/70 backdrop-blur-xs flex items-center justify-center p-3 sm:p-4 md:p-6 animate-fadeIn print:p-0 print:bg-white print:fixed print:inset-0">
       <div 
-        className="bg-[#fcf9f2] w-full max-w-4xl rounded-2xl border-2 border-[#c5832b]/60 shadow-2xl overflow-hidden flex flex-col max-h-[92vh] print:max-h-none print:h-auto print:border-none print:shadow-none print:rounded-none relative"
+        className="bg-[#fcf9f2] w-full max-w-4xl rounded-2xl border-2 border-[var(--m-copper)]/60 shadow-2xl overflow-hidden flex flex-col max-h-[92vh] print:max-h-none print:h-auto print:border-none print:shadow-none print:rounded-none relative"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Top Bar - Deep Amélie Wine & Brass */}
-        <div className="bg-[#701531] text-[#fff9f5] px-6 py-4 flex items-center justify-between border-b-2 border-[#c5832b]/40 print:bg-white print:text-black print:border-b-2 print:border-stone-900 print:px-0">
+        <div className="bg-[var(--m-accent-strong)] text-[var(--m-on-accent)] px-6 py-4 flex items-center justify-between border-b-2 border-[var(--m-copper)]/40 print:bg-white print:text-black print:border-b-2 print:border-stone-900 print:px-0">
           <div className="flex items-center gap-3.5">
             <span className="text-2xl print:hidden transform -rotate-3">
               {dose.verdict === 'gift' ? '🎁' : dose.verdict === 'build_first' ? '🔨' : '🔒'}
             </span>
             <div>
               <div className="flex items-center gap-2">
-                <span className="text-[11px] uppercase font-typewriter tracking-widest text-[#f6bd60] print:text-stone-900 font-bold">
+                <span className="text-[11px] uppercase font-typewriter tracking-widest text-[var(--m-gold)] print:text-stone-900 font-bold">
                   {lang === 'de' ? 'Boîte en fer-blanc · Dosen-Inhalt' : lang === 'es' ? 'Boîte en fer-blanc · Contenido' : 'Boîte en fer-blanc · Tin Canister'}
                 </span>
-                <span className="text-[#c5832b]">·</span>
+                <span className="text-[var(--m-copper)]">·</span>
                 <span className="text-xs text-[#fde047]/90 font-typewriter print:text-stone-600">{dose.id}.md</span>
               </div>
               <h2 className="text-xl font-amelie font-bold text-white print:text-black tracking-tight">
@@ -285,10 +287,10 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
             {/* Copy URL */}
             <button
               onClick={copyUrl}
-              className="p-2 rounded-lg text-[#f4ede0] hover:text-white hover:bg-[#8c1d40] transition-colors cursor-pointer"
+              className="p-2 rounded-lg text-[var(--m-sunk)] hover:text-white hover:bg-[var(--m-accent)] transition-colors cursor-pointer"
               title={copiedUrl ? (lang === 'de' ? 'URL kopiert!' : lang === 'es' ? '¡URL copiada!' : 'URL copied!') : (lang === 'de' ? 'Permanente URL kopieren' : lang === 'es' ? 'Copiar URL permanente' : 'Copy Permanent URL')}
             >
-              {copiedUrl ? <Check className="w-4 h-4 text-[#86efac]" /> : <Link2 className="w-4 h-4 text-[#f6bd60]" />}
+              {copiedUrl ? <Check className="w-4 h-4 text-[#86efac]" /> : <Link2 className="w-4 h-4 text-[var(--m-gold)]" />}
             </button>
 
             {/* Open Full Single Page */}
@@ -296,12 +298,12 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
               onClick={() => setShowSchema((prev) => !prev)}
               className={`p-2 rounded-lg transition-colors cursor-pointer ${
                 showSchema
-                  ? 'bg-[#8c1d40] text-white'
-                  : 'text-[#f4ede0] hover:text-white hover:bg-[#8c1d40]'
+                  ? 'bg-[var(--m-accent)] text-white'
+                  : 'text-[var(--m-sunk)] hover:text-white hover:bg-[var(--m-accent)]'
               }`}
               title={lang === 'de' ? 'Schema & Anatomie einer Dose' : lang === 'es' ? 'Esquema y anatomía de una lata' : 'Schema & Anatomy of a Tin'}
             >
-              <HelpCircle className="w-4 h-4 text-[#f6bd60]" />
+              <HelpCircle className="w-4 h-4 text-[var(--m-gold)]" />
             </button>
 
             {onOpenSinglePage && (
@@ -310,30 +312,30 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
                   onClose();
                   onOpenSinglePage(dose);
                 }}
-                className="p-2 rounded-lg text-[#f4ede0] hover:text-white hover:bg-[#8c1d40] transition-colors cursor-pointer"
+                className="p-2 rounded-lg text-[var(--m-sunk)] hover:text-white hover:bg-[var(--m-accent)] transition-colors cursor-pointer"
                 title={lang === 'de' ? 'Als Einzelseite öffnen (mit eigener URL)' : lang === 'es' ? 'Abrir como página completa' : 'Open as Single Page (with URL)'}
               >
-                <Maximize2 className="w-4 h-4 text-[#f6bd60]" />
+                <Maximize2 className="w-4 h-4 text-[var(--m-gold)]" />
               </button>
             )}
 
             <button
               onClick={printDossier}
-              className="p-2 rounded-lg text-[#f4ede0] hover:text-white hover:bg-[#8c1d40] transition-colors cursor-pointer"
+              className="p-2 rounded-lg text-[var(--m-sunk)] hover:text-white hover:bg-[var(--m-accent)] transition-colors cursor-pointer"
               title={lang === 'de' ? 'Dossier als A4 drucken' : lang === 'es' ? 'Imprimir dossier A4' : 'Print A4 Dossier'}
             >
-              <Printer className="w-4 h-4 text-[#f6bd60]" />
+              <Printer className="w-4 h-4 text-[var(--m-gold)]" />
             </button>
             <button
               onClick={downloadMarkdown}
-              className="p-2 rounded-lg text-[#f4ede0] hover:text-white hover:bg-[#8c1d40] transition-colors cursor-pointer"
+              className="p-2 rounded-lg text-[var(--m-sunk)] hover:text-white hover:bg-[var(--m-accent)] transition-colors cursor-pointer"
               title={lang === 'de' ? 'Markdown herunterladen' : lang === 'es' ? 'Descargar markdown' : 'Download markdown file'}
             >
-              <Download className="w-4 h-4 text-[#f6bd60]" />
+              <Download className="w-4 h-4 text-[var(--m-gold)]" />
             </button>
             <button
               onClick={onClose}
-              className="p-2 rounded-lg text-[#f4ede0] hover:text-white hover:bg-[#8c1d40] transition-colors cursor-pointer"
+              className="p-2 rounded-lg text-[var(--m-sunk)] hover:text-white hover:bg-[var(--m-accent)] transition-colors cursor-pointer"
               title={t.ui.close}
             >
               <X className="w-5 h-5" />
@@ -342,58 +344,58 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
         </div>
 
         {/* Modal Scrollable Body */}
-        <div className="p-6 md:p-8 overflow-y-auto space-y-6 text-[#2b1e16]">
+        <div className="p-6 md:p-8 overflow-y-auto space-y-6 text-[var(--m-ink)]">
           {/* One Liner Box */}
-          <div className="p-5 rounded-2xl bg-gradient-to-br from-[#faf3e6] to-[#f4e9d5] border border-[#d8cbba] text-[#3b2a1c] font-amelie text-lg sm:text-xl italic leading-relaxed shadow-xs">
+          <div className="p-5 rounded-2xl bg-gradient-to-br from-[var(--m-bg-2)] to-[var(--m-sunk)] border border-[var(--m-line-strong)] text-[var(--m-ink)] font-amelie text-lg sm:text-xl italic leading-relaxed shadow-xs">
             « {lang === 'de' ? dose.oneLinerDe : dose.oneLinerEn} »
           </div>
 
           {/* Collapsible Canonical Dose Schema Drawer */}
           {showSchema && (
-            <div className="p-5 rounded-2xl bg-[#2b1e16] text-[#fbf7f0] border-2 border-[#c5832b] space-y-4 shadow-md animate-fadeIn">
-              <div className="flex items-center justify-between pb-2 border-b border-[#5c4a3d]">
+            <div className="p-5 rounded-2xl bg-[var(--m-ink)] text-[var(--m-bg)] border-2 border-[var(--m-copper)] space-y-4 shadow-md animate-fadeIn">
+              <div className="flex items-center justify-between pb-2 border-b border-[var(--m-ink-2)]">
                 <div className="flex items-center gap-2">
-                  <span className="text-[#f6bd60] text-lg">✦</span>
-                  <h4 className="font-typewriter text-xs uppercase tracking-wider font-bold text-[#f6bd60]">
+                  <span className="text-[var(--m-gold)] text-lg">✦</span>
+                  <h4 className="font-typewriter text-xs uppercase tracking-wider font-bold text-[var(--m-gold)]">
                     {lang === 'de' ? 'Das kanonische Schema einer Dose (Amélie-Manifest)' : lang === 'es' ? 'El esquema canónico de una lata (Manifiesto)' : 'The Canonical Schema of a Tin (Amélie Manifest)'}
                   </h4>
                 </div>
                 <button
                   onClick={() => setShowSchema(false)}
-                  className="text-xs text-[#d8cbba] hover:text-white font-typewriter underline"
+                  className="text-xs text-[var(--m-line-strong)] hover:text-white font-typewriter underline"
                 >
                   {lang === 'de' ? 'Schließen' : 'Close'}
                 </button>
               </div>
 
-              <p className="text-xs text-[#d8cbba] font-sans leading-relaxed">
+              <p className="text-xs text-[var(--m-line-strong)] font-sans leading-relaxed">
                 {lang === 'de'
                   ? 'Eine Dose ist kein unverbindlicher Einfall, sondern ein vollständiges Geschenkpaket auf 1 Seite mit 5 Pflichtteilen und 2 Datumsankern:'
                   : 'A tin is not a loose suggestion, but a self-contained 1-page gift package consisting of 5 core pillars and 2 mandatory date anchors:'}
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 pt-1 text-xs">
-                <div className="p-3 rounded-xl bg-[#3b2a1c] border border-[#5c4a3d] space-y-1">
-                  <span className="font-bold text-[#f6bd60] block font-typewriter">1. Das Problem</span>
+                <div className="p-3 rounded-xl bg-[var(--m-ink)] border border-[var(--m-ink-2)] space-y-1">
+                  <span className="font-bold text-[var(--m-gold)] block font-typewriter">1. Das Problem</span>
                   <span className="text-stone-300 text-[11px] leading-snug block">Wer leidet konkret? Reale Reibung ohne „man könnte".</span>
                 </div>
-                <div className="p-3 rounded-xl bg-[#3b2a1c] border border-[#5c4a3d] space-y-1">
-                  <span className="font-bold text-[#f6bd60] block font-typewriter">2. Warum jetzt?</span>
+                <div className="p-3 rounded-xl bg-[var(--m-ink)] border border-[var(--m-ink-2)] space-y-1">
+                  <span className="font-bold text-[var(--m-gold)] block font-typewriter">2. Warum jetzt?</span>
                   <span className="text-stone-300 text-[11px] leading-snug block">Welcher technologische Knick macht es erst seit Kurzem bezahlbar?</span>
                 </div>
-                <div className="p-3 rounded-xl bg-[#3b2a1c] border border-[#5c4a3d] space-y-1">
-                  <span className="font-bold text-[#f6bd60] block font-typewriter">3. Die Skizze</span>
+                <div className="p-3 rounded-xl bg-[var(--m-ink)] border border-[var(--m-ink-2)] space-y-1">
+                  <span className="font-bold text-[var(--m-gold)] block font-typewriter">3. Die Skizze</span>
                   <span className="text-stone-300 text-[11px] leading-snug block">Genug System-Architektur, dass ein Fachmensch nickt. Nicht mehr.</span>
                 </div>
-                <div className="p-3 rounded-xl bg-[#3b2a1c] border border-[#5c4a3d] space-y-1">
+                <div className="p-3 rounded-xl bg-[var(--m-ink)] border border-[var(--m-ink-2)] space-y-1">
                   <span className="font-bold text-[#86efac] block font-typewriter">4. Der erste Schritt (Ticket #1)</span>
                   <span className="text-stone-300 text-[11px] leading-snug block">Das 2-Tage-Ticket, mit dem man Montag früh beginnt. Mit Kriterien.</span>
                 </div>
-                <div className="p-3 rounded-xl bg-[#3b2a1c] border border-[#5c4a3d] space-y-1">
+                <div className="p-3 rounded-xl bg-[var(--m-ink)] border border-[var(--m-ink-2)] space-y-1">
                   <span className="font-bold text-[#fca5a5] block font-typewriter">5. Wo es kippt</span>
                   <span className="text-stone-300 text-[11px] leading-snug block">Die reale Sollbruchstelle, die das Vorhaben killen kann. Schafft Glaubwürdigkeit.</span>
                 </div>
-                <div className="p-3 rounded-xl bg-[#3b2a1c] border border-[#5c4a3d] space-y-1">
+                <div className="p-3 rounded-xl bg-[var(--m-ink)] border border-[var(--m-ink-2)] space-y-1">
                   <span className="font-bold text-[#93c5fd] block font-typewriter">Pflicht-Datumsanker</span>
                   <span className="text-stone-300 text-[11px] leading-snug block">«Stand» (wann recherchiert) & «Prüfen ab» (Verfallsdatum zum Friedhof).</span>
                 </div>
@@ -421,10 +423,15 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
                       ? { aspectRatio: String(dose.imageAspect), maxHeight: 'min(50vh, 26rem)' }
                       : { maxHeight: 'min(50vh, 26rem)' }
                   }
-                  className="mx-auto h-auto w-auto max-w-full rounded-2xl border border-[#d8cbba] shadow-xs bg-[#faf5eb]"
+                  className="mx-auto h-auto w-auto max-w-full rounded-2xl border border-[var(--m-line-strong)] shadow-xs bg-[var(--m-surface-2)]"
                 />
               </picture>
             </figure>
+          )}
+
+          {/* Eigenes Video: Vorschaubild, Datei lädt erst beim Klick */}
+          {dose.videoFile && (
+            <DoseVideo file={dose.videoFile} poster={dose.videoPoster} aspect={dose.videoAspect} title={lang === 'de' ? dose.videoTitle : dose.videoTitleEn || dose.videoTitle} lang={lang} />
           )}
 
           {/* Video Demonstration Link (Lazy external stream) */}
@@ -443,21 +450,24 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
             </div>
           )}
 
+          {/* Reviewer vectors (V1–V8) */}
+          <DoseVectorPanel doseId={dose.id} lang={lang} />
+
           {/* Metadata Row */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs bg-[#f4ede0] p-4 rounded-xl border border-[#dfd1be]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs bg-[var(--m-sunk)] p-4 rounded-xl border border-[var(--m-line)]">
             <div>
-              <span className="text-[#8b6f57] block font-typewriter uppercase tracking-wider font-semibold">
+              <span className="text-[var(--m-muted)] block font-typewriter uppercase tracking-wider font-semibold">
                 {t.ui.recipient}
               </span>
-              <span className="font-bold text-[#2b1e16] text-sm">
+              <span className="font-bold text-[var(--m-ink)] text-sm">
                 {lang === 'de' ? dose.recipientsDe : dose.recipientsEn}
               </span>
             </div>
             <div>
-              <span className="text-[#8b6f57] block font-typewriter uppercase tracking-wider font-semibold">
+              <span className="text-[var(--m-muted)] block font-typewriter uppercase tracking-wider font-semibold">
                 {lang === 'de' ? 'Verdikt:' : lang === 'es' ? 'Veredicto:' : 'Verdict:'}
               </span>
-              <span className="font-bold text-[#8c1d40] text-sm">
+              <span className="font-bold text-[var(--m-accent)] text-sm">
                 {dose.verdict === 'gift'
                   ? t.ui.verdict_gift
                   : dose.verdict === 'build_first'
@@ -466,16 +476,16 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
               </span>
             </div>
             <div>
-              <span className="text-[#8b6f57] block font-typewriter uppercase tracking-wider font-semibold">
+              <span className="text-[var(--m-muted)] block font-typewriter uppercase tracking-wider font-semibold">
                 {lang === 'de' ? 'Stand:' : lang === 'es' ? 'Fecha:' : 'Date:'}
               </span>
-              <span className="font-bold text-[#2b1e16] font-typewriter">
+              <span className="font-bold text-[var(--m-ink)] font-typewriter">
                 {dose.date}
               </span>
             </div>
             {dose.tags && dose.tags.length > 0 && (
-              <div className="sm:col-span-2 lg:col-span-3 pt-2 border-t border-[#dfd1be]/60">
-                <span className="text-[#8b6f57] block font-typewriter uppercase tracking-wider font-semibold mb-1">
+              <div className="sm:col-span-2 lg:col-span-3 pt-2 border-t border-[var(--m-line)]/60">
+                <span className="text-[var(--m-muted)] block font-typewriter uppercase tracking-wider font-semibold mb-1">
                   {lang === 'de' ? 'Schlagworte:' : lang === 'es' ? 'Etiquetas:' : 'Tags:'}
                 </span>
                 <div className="flex flex-wrap gap-1.5">
@@ -487,7 +497,7 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
                         onClose();
                         if (onSelectTag) onSelectTag(tag);
                       }}
-                      className="text-xs font-typewriter px-2 py-0.5 rounded bg-[#faf5eb] hover:bg-[#8c1d40] hover:text-white text-[#5c4a3d] border border-[#dfd1be] transition-colors cursor-pointer"
+                      className="text-xs font-typewriter px-2 py-0.5 rounded bg-[var(--m-surface-2)] hover:bg-[var(--m-accent)] hover:text-white text-[var(--m-ink-2)] border border-[var(--m-line)] transition-colors cursor-pointer"
                       title={lang === 'de' ? `Nach Tag #${tag} filtern` : lang === 'es' ? `Filtrar por #${tag}` : `Filter by #${tag}`}
                     >
                       #{tag}
@@ -499,10 +509,10 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
           </div>
 
           {/* The Pledge Banner - Styled like vintage velvet jewelry box */}
-          <div className="p-5 rounded-2xl bg-[#1b4332] text-[#f4fbf7] border-2 border-[#2d5a27] relative shadow-sm">
+          <div className="p-5 rounded-2xl bg-[var(--m-green)] text-[#f4fbf7] border-2 border-[#2d5a27] relative shadow-sm">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-xs font-typewriter uppercase text-[#f6bd60] font-bold tracking-wider flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5 text-[#f6bd60]" />
+              <span className="text-xs font-typewriter uppercase text-[var(--m-gold)] font-bold tracking-wider flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5 text-[var(--m-gold)]" />
                 {t.pledge.title} · PLEDGE CC0
               </span>
               <button
@@ -516,7 +526,7 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
                   </>
                 ) : (
                   <>
-                    <Copy className="w-3.5 h-3.5 text-[#f6bd60]" />
+                    <Copy className="w-3.5 h-3.5 text-[var(--m-gold)]" />
                     <span className="font-typewriter">{t.pledge.copy}</span>
                   </>
                 )}
@@ -529,25 +539,25 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
 
           {/* Section 1: Problem */}
           <div className="space-y-2">
-            <h3 className="text-sm font-bold font-typewriter uppercase tracking-wider text-[#8c1d40] flex items-center gap-2">
-              <AlertTriangle className="w-4 h-4 text-[#8c1d40]" />
+            <h3 className="text-sm font-bold font-typewriter uppercase tracking-wider text-[var(--m-accent)] flex items-center gap-2">
+              <AlertTriangle className="w-4 h-4 text-[var(--m-accent)]" />
               {lang === 'de' ? 'Das Problem' : lang === 'es' ? 'El Problema' : 'The Friction & Problem'}
             </h3>
-            <p className="text-sm text-[#3b2a1c] leading-relaxed bg-[#fbf7f0] p-4 rounded-xl border border-[#e8ded0]">
+            <p className="text-sm text-[var(--m-ink)] leading-relaxed bg-[var(--m-bg)] p-4 rounded-xl border border-[var(--m-sunk)]">
               {lang === 'de' ? dose.problemDe : dose.problemEn}
             </p>
           </div>
 
           {/* Section 2: Why now */}
           <div className="space-y-2">
-            <h3 className="text-sm font-bold font-typewriter uppercase tracking-wider text-[#8c1d40] flex items-center gap-2">
-              <Lightbulb className="w-4 h-4 text-[#c5832b]" />
+            <h3 className="text-sm font-bold font-typewriter uppercase tracking-wider text-[var(--m-accent)] flex items-center gap-2">
+              <Lightbulb className="w-4 h-4 text-[var(--m-copper)]" />
               {lang === 'de' ? 'Warum das jetzt geht (Technologie-Knick)' : lang === 'es' ? 'Por qué ahora (Avance técnico)' : 'Why Now (Technical Breakthrough)'}
             </h3>
-            <ul className="space-y-2 text-sm text-[#3b2a1c]">
+            <ul className="space-y-2 text-sm text-[var(--m-ink)]">
               {(lang === 'de' ? dose.whyNowDe : dose.whyNowEn).map((point, index) => (
-                <li key={index} className="flex items-start gap-3 p-3 rounded-xl bg-[#fbf7f0] border border-[#e8ded0]">
-                  <span className="w-5 h-5 rounded-full bg-[#c5832b]/20 text-[#78350f] flex items-center justify-center text-xs font-typewriter font-bold shrink-0 mt-0.5">
+                <li key={index} className="flex items-start gap-3 p-3 rounded-xl bg-[var(--m-bg)] border border-[var(--m-sunk)]">
+                  <span className="w-5 h-5 rounded-full bg-[var(--m-copper)]/20 text-[#78350f] flex items-center justify-center text-xs font-typewriter font-bold shrink-0 mt-0.5">
                     {index + 1}
                   </span>
                   <span>{point}</span>
@@ -558,24 +568,24 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
 
           {/* Section 3: Sketch */}
           <div className="space-y-2">
-            <h3 className="text-sm font-bold font-typewriter uppercase tracking-wider text-[#8c1d40] flex items-center gap-2">
-              <Wrench className="w-4 h-4 text-[#5c4a3d]" />
+            <h3 className="text-sm font-bold font-typewriter uppercase tracking-wider text-[var(--m-accent)] flex items-center gap-2">
+              <Wrench className="w-4 h-4 text-[var(--m-ink-2)]" />
               {lang === 'de' ? 'Skizze & Architektur' : lang === 'es' ? 'Esquema y Arquitectura' : 'Sketch & Architecture'}
             </h3>
-            <div className="p-4 rounded-xl bg-[#f4ede0] border border-[#dfd1be] text-sm text-[#2b1e16] leading-relaxed font-sans">
+            <div className="p-4 rounded-xl bg-[var(--m-sunk)] border border-[var(--m-line)] text-sm text-[var(--m-ink)] leading-relaxed font-sans">
               {lang === 'de' ? dose.sketchDe : dose.sketchEn}
             </div>
           </div>
 
           {/* Section 4: Ticket #1 */}
           <div className="space-y-2">
-            <h3 className="text-sm font-bold font-typewriter uppercase tracking-wider text-[#1b4332] flex items-center gap-2">
-              <Target className="w-4 h-4 text-[#1b4332]" />
+            <h3 className="text-sm font-bold font-typewriter uppercase tracking-wider text-[var(--m-green)] flex items-center gap-2">
+              <Target className="w-4 h-4 text-[var(--m-green)]" />
               {lang === 'de' ? 'Erster Schritt (Ticket #1)' : lang === 'es' ? 'Primer paso (Ticket #1)' : 'First Milestone (Ticket #1)'}
             </h3>
-            <div className="p-4 rounded-xl bg-[#1b4332]/10 border border-[#1b4332]/30 space-y-2">
-              <div className="font-bold text-[#1b4332] text-sm flex items-center gap-2">
-                <span className="px-2 py-0.5 rounded bg-[#1b4332] text-[#f4fbf7] text-xs font-typewriter">
+            <div className="p-4 rounded-xl bg-[var(--m-green)]/10 border border-[var(--m-green)]/30 space-y-2">
+              <div className="font-bold text-[var(--m-green)] text-sm flex items-center gap-2">
+                <span className="px-2 py-0.5 rounded bg-[var(--m-green)] text-[#f4fbf7] text-xs font-typewriter">
                   Ticket 1
                 </span>
                 <span>{lang === 'de' ? dose.firstStepDe.ticket : dose.firstStepEn.ticket}</span>
@@ -591,22 +601,22 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
 
           {/* Interactive Prototype Section (In the Can / Linked from there) */}
           {matchedSimulator && (
-            <div className="rounded-2xl border-2 border-[#c5832b]/80 bg-gradient-to-br from-[#faf4e6] to-[#f4e9d5] p-5 shadow-sm space-y-4 print:hidden">
+            <div className="rounded-2xl border-2 border-[var(--m-copper)]/80 bg-gradient-to-br from-[#faf4e6] to-[var(--m-sunk)] p-5 shadow-sm space-y-4 print:hidden">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <div className="flex items-center gap-3">
-                  <span className="text-2xl p-2 rounded-xl bg-white shadow-2xs border border-[#dfd1be]">
+                  <span className="text-2xl p-2 rounded-xl bg-white shadow-2xs border border-[var(--m-line)]">
                     {matchedSimulator.icon}
                   </span>
                   <div>
                     <div className="flex items-center gap-2">
-                      <span className="text-2xs font-typewriter uppercase tracking-widest font-bold px-2 py-0.5 rounded bg-[#c5832b] text-white">
+                      <span className="text-2xs font-typewriter uppercase tracking-widest font-bold px-2 py-0.5 rounded bg-[var(--m-copper)] text-white">
                         {lang === 'de' ? '🧪 Interaktiver Prototyp' : lang === 'es' ? '🧪 Prototipo Interactivo' : '🧪 Interactive Prototype'}
                       </span>
-                      <span className="text-2xs font-typewriter text-[#8c1d40] font-bold">
+                      <span className="text-2xs font-typewriter text-[var(--m-accent)] font-bold">
                         {lang === 'de' ? 'In der Dose verpackt' : lang === 'es' ? 'Dentro de la lata' : 'Packaged in Tin'}
                       </span>
                     </div>
-                    <h3 className="text-base font-bold font-amelie text-[#2b1e16] mt-0.5">
+                    <h3 className="text-base font-bold font-amelie text-[var(--m-ink)] mt-0.5">
                       {lang === 'de' ? matchedSimulator.titleDe : lang === 'es' ? matchedSimulator.titleEs : matchedSimulator.titleEn}
                     </h3>
                   </div>
@@ -616,36 +626,36 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
                   <button
                     type="button"
                     onClick={() => setIsSimulatorExpanded((prev) => !prev)}
-                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-white border border-[#c5832b] text-[#2b1e16] hover:bg-[#fffcf7] text-xs font-semibold shadow-2xs transition-all cursor-pointer"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-white border border-[var(--m-copper)] text-[var(--m-ink)] hover:bg-[#fffcf7] text-xs font-semibold shadow-2xs transition-all cursor-pointer"
                   >
                     <span>
                       {isSimulatorExpanded
                         ? (lang === 'de' ? 'Simulator einklappen' : lang === 'es' ? 'Plegar simulador' : 'Collapse Simulator')
                         : (lang === 'de' ? 'In der Dose ausführen' : lang === 'es' ? 'Ejecutar en la lata' : 'Run inside the Can')}
                     </span>
-                    {isSimulatorExpanded ? <ChevronUp className="w-3.5 h-3.5 text-[#c5832b]" /> : <ChevronDown className="w-3.5 h-3.5 text-[#c5832b]" />}
+                    {isSimulatorExpanded ? <ChevronUp className="w-3.5 h-3.5 text-[var(--m-copper)]" /> : <ChevronDown className="w-3.5 h-3.5 text-[var(--m-copper)]" />}
                   </button>
 
                   {onOpenSimulator && (
                     <button
                       type="button"
                       onClick={() => onOpenSimulator(matchedSimulator.key)}
-                      className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#701531] hover:bg-[#8c1d40] text-white text-xs font-semibold shadow-2xs transition-all cursor-pointer"
+                      className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[var(--m-accent-strong)] hover:bg-[var(--m-accent)] text-white text-xs font-semibold shadow-2xs transition-all cursor-pointer"
                     >
                       <span>{lang === 'de' ? 'Vollbild-Labor' : lang === 'es' ? 'Laboratorio Completo' : 'Full Sandbox'}</span>
-                      <ExternalLink className="w-3.5 h-3.5 text-[#f6bd60]" />
+                      <ExternalLink className="w-3.5 h-3.5 text-[var(--m-gold)]" />
                     </button>
                   )}
                 </div>
               </div>
 
-              <p className="text-xs text-[#5c4a3d] leading-relaxed">
+              <p className="text-xs text-[var(--m-ink-2)] leading-relaxed">
                 {lang === 'de' ? matchedSimulator.descriptionDe : lang === 'es' ? matchedSimulator.descriptionEs : matchedSimulator.descriptionEn}
               </p>
 
               {/* Expanded in-can interactive simulator */}
               {isSimulatorExpanded && (
-                <div className="pt-4 border-t border-[#dfd1be] animate-fadeIn">
+                <div className="pt-4 border-t border-[var(--m-line)] animate-fadeIn">
                   {matchedSimulator.key === 'altbau' && <AltbauThermalSimulator lang={lang} isEmbedded={true} />}
                   {matchedSimulator.key === 'glasanflug' && <GlasanflugSimulator lang={lang} isEmbedded={true} />}
                   {matchedSimulator.key === 'streiflicht' && <StreiflichtSimulator lang={lang} isEmbedded={true} />}
@@ -666,21 +676,21 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
 
           {/* Section 5: Failure mode */}
           <div className="space-y-2">
-            <h3 className="text-sm font-bold font-typewriter uppercase tracking-wider text-[#8c1d40] flex items-center gap-2">
-              <ShieldAlert className="w-4 h-4 text-[#8c1d40]" />
+            <h3 className="text-sm font-bold font-typewriter uppercase tracking-wider text-[var(--m-accent)] flex items-center gap-2">
+              <ShieldAlert className="w-4 h-4 text-[var(--m-accent)]" />
               {lang === 'de' ? 'Wo es kippt (Bruchstelle)' : lang === 'es' ? 'Punto crítico de falla' : 'Where it Breaks (Crucial Failure Mode)'}
             </h3>
-            <div className="p-4 rounded-xl bg-[#8c1d40]/10 border border-[#8c1d40]/30 text-sm text-[#741533] leading-relaxed font-medium">
+            <div className="p-4 rounded-xl bg-[var(--m-accent)]/10 border border-[var(--m-accent)]/30 text-sm text-[var(--m-accent-strong)] leading-relaxed font-medium">
               {lang === 'de' ? dose.failureModeDe : dose.failureModeEn}
             </div>
           </div>
 
           {/* Section 6: Prior Art */}
           <div className="space-y-2">
-            <h3 className="text-sm font-bold font-typewriter uppercase tracking-wider text-[#8c1d40]">
+            <h3 className="text-sm font-bold font-typewriter uppercase tracking-wider text-[var(--m-accent)]">
               {lang === 'de' ? 'Wer es schon versucht hat' : lang === 'es' ? 'Intentos previos y brecha' : 'Prior Art & Unoccupied Gap'}
             </h3>
-            <p className="text-sm text-[#4a3b2c] leading-relaxed bg-[#fbf7f0] p-4 rounded-xl border border-[#e8ded0]">
+            <p className="text-sm text-[var(--m-ink-2)] leading-relaxed bg-[var(--m-bg)] p-4 rounded-xl border border-[var(--m-sunk)]">
               {lang === 'de' ? dose.priorArtDe : dose.priorArtEn}
             </p>
           </div>
@@ -780,18 +790,18 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
 
           {/* Das Buch zur Dose (Recherche, Preistabellen, Originaldokumente) */}
           {bookChapters.length > 0 && (
-            <div className="pt-4 border-t border-[#dfd1be] space-y-3">
+            <div className="pt-4 border-t border-[var(--m-line)] space-y-3">
               <div className="flex items-center justify-between">
-                <h3 className="text-sm font-bold font-typewriter uppercase tracking-wider text-[#8c1d40] flex items-center gap-2">
-                  <BookOpen className="w-4 h-4 text-[#8c1d40]" />
+                <h3 className="text-sm font-bold font-typewriter uppercase tracking-wider text-[var(--m-accent)] flex items-center gap-2">
+                  <BookOpen className="w-4 h-4 text-[var(--m-accent)]" />
                   <span>{lang === 'de' ? 'Das Buch zur Dose (Rohrecherche & Preise)' : lang === 'es' ? 'El libro de la lata (Investigación y precios)' : 'The Book Behind the Tin (Research & Pricing)'}</span>
                 </h3>
                 <button
                   type="button"
                   onClick={() => setShowBook((v) => !v)}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-[#c5832b] bg-[#faf4e6] hover:bg-[#f4e9d5] text-[#2b1e16] text-xs font-bold font-typewriter transition-all cursor-pointer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-[var(--m-copper)] bg-[#faf4e6] hover:bg-[var(--m-sunk)] text-[var(--m-ink)] text-xs font-bold font-typewriter transition-all cursor-pointer"
                 >
-                  <BookOpen className="w-3.5 h-3.5 text-[#c5832b]" />
+                  <BookOpen className="w-3.5 h-3.5 text-[var(--m-copper)]" />
                   <span>
                     {showBook
                       ? (lang === 'de' ? 'Buch zuklappen' : lang === 'es' ? 'Cerrar libro' : 'Close book')
@@ -807,12 +817,12 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
                       <button
                         type="button"
                         onClick={() => setShowBook(true)}
-                        className="w-full text-left p-3 rounded-xl border border-[#dfd1be] bg-[#faf5eb] hover:bg-[#f0e7d6] transition-colors cursor-pointer"
+                        className="w-full text-left p-3 rounded-xl border border-[var(--m-line)] bg-[var(--m-surface-2)] hover:bg-[var(--m-sunk)] transition-colors cursor-pointer"
                       >
-                        <div className="font-typewriter text-xs font-bold text-[#2b1e16]">
+                        <div className="font-typewriter text-xs font-bold text-[var(--m-ink)]">
                           {lang === 'de' ? c.titleDe : c.titleEn}
                         </div>
-                        <div className="font-typewriter text-[11px] text-[#6b5647] mt-1 leading-snug">
+                        <div className="font-typewriter text-[11px] text-[var(--m-ink-3)] mt-1 leading-snug">
                           {lang === 'de' ? c.noteDe : c.noteEn}
                         </div>
                       </button>
@@ -828,24 +838,24 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
           )}
 
           {/* Section 7: Outreach Draft */}
-          <div className="pt-4 border-t border-[#dfd1be] space-y-3">
+          <div className="pt-4 border-t border-[var(--m-line)] space-y-3">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-              <h3 className="text-sm font-bold font-typewriter uppercase tracking-wider text-[#8c1d40] flex items-center gap-2">
-                <Send className="w-4 h-4 text-[#8c1d40]" />
+              <h3 className="text-sm font-bold font-typewriter uppercase tracking-wider text-[var(--m-accent)] flex items-center gap-2">
+                <Send className="w-4 h-4 text-[var(--m-accent)]" />
                 {lang === 'de' ? 'Sendefertiger Kaltmail-Entwurf (Dosen-Post)' : lang === 'es' ? 'Borrador de carta listo para enviar' : 'Ready-to-Send Outreach Letter'}
               </h3>
               <button
                 onClick={copyEmail}
-                className="inline-flex items-center gap-1.5 text-xs px-3.5 py-1.5 rounded-lg border border-[#c5832b]/40 bg-[#faf3e6] hover:bg-[#f5ead5] font-typewriter font-bold text-[#78350f] transition-colors shadow-2xs self-start sm:self-auto cursor-pointer"
+                className="inline-flex items-center gap-1.5 text-xs px-3.5 py-1.5 rounded-lg border border-[var(--m-copper)]/40 bg-[var(--m-bg-2)] hover:bg-[#f5ead5] font-typewriter font-bold text-[#78350f] transition-colors shadow-2xs self-start sm:self-auto cursor-pointer"
               >
                 {copiedEmail ? (
                   <>
-                    <Check className="w-3.5 h-3.5 text-[#1b4332]" />
-                    <span className="text-[#1b4332]">{t.ui.email_copied}</span>
+                    <Check className="w-3.5 h-3.5 text-[var(--m-green)]" />
+                    <span className="text-[var(--m-green)]">{t.ui.email_copied}</span>
                   </>
                 ) : (
                   <>
-                    <Copy className="w-3.5 h-3.5 text-[#8b6f57]" />
+                    <Copy className="w-3.5 h-3.5 text-[var(--m-muted)]" />
                     <span>{t.ui.copy_email}</span>
                   </>
                 )}
@@ -855,7 +865,7 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
             {/* Recipient switcher if multiple templates exist */}
             {dose.emailTemplates && dose.emailTemplates.length > 1 && (
               <div className="flex flex-wrap items-center gap-1.5 pt-1">
-                <span className="text-xs font-typewriter text-[#8b6f57] font-semibold mr-1">
+                <span className="text-xs font-typewriter text-[var(--m-muted)] font-semibold mr-1">
                   {t.ui.recipient}
                 </span>
                 {dose.emailTemplates.map((tmpl, idx) => {
@@ -867,8 +877,8 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
                       onClick={() => setSelectedEmailIndex(idx)}
                       className={`text-xs font-typewriter px-3 py-1.5 rounded-lg transition-all border ${
                         isSelected
-                          ? 'bg-[#8c1d40] text-white font-bold border-[#701531] shadow-xs'
-                          : 'bg-[#f4ede0] text-[#5c4a3d] hover:bg-[#eee1d0] border-[#d8cbba]'
+                          ? 'bg-[var(--m-accent)] text-white font-bold border-[var(--m-accent-strong)] shadow-xs'
+                          : 'bg-[var(--m-sunk)] text-[var(--m-ink-2)] hover:bg-[#eee1d0] border-[var(--m-line-strong)]'
                       }`}
                     >
                       {tmpl.recipientName}
@@ -878,11 +888,11 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
               </div>
             )}
 
-            <div className="relative rounded-2xl bg-[#2b1e16] text-[#fbf7f0] border-2 border-[#d8cbba] p-5 shadow-inner overflow-hidden">
-              <div className="absolute top-2 right-3 text-[10px] font-typewriter uppercase tracking-wider text-[#c5832b] select-none pointer-events-none opacity-40">
+            <div className="relative rounded-2xl bg-[var(--m-ink)] text-[var(--m-bg)] border-2 border-[var(--m-line-strong)] p-5 shadow-inner overflow-hidden">
+              <div className="absolute top-2 right-3 text-[10px] font-typewriter uppercase tracking-wider text-[var(--m-copper)] select-none pointer-events-none opacity-40">
                 MACHINE À ÉCRIRE · PARIS 18e
               </div>
-              <pre className="text-xs font-typewriter overflow-x-auto whitespace-pre-wrap leading-relaxed max-h-64 text-[#f5ece0]">
+              <pre className="text-xs font-typewriter overflow-x-auto whitespace-pre-wrap leading-relaxed max-h-64 text-[var(--m-surface-2)]">
                 {emailDraft}
               </pre>
             </div>
@@ -890,9 +900,9 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
         </div>
 
         {/* Modal Footer */}
-        <div className="px-6 py-4 bg-[#f4ede0] border-t border-[#dfd1be] flex flex-wrap items-center justify-between gap-3 text-xs text-[#8b6f57] font-typewriter">
+        <div className="px-6 py-4 bg-[var(--m-sunk)] border-t border-[var(--m-line)] flex flex-wrap items-center justify-between gap-3 text-xs text-[var(--m-muted)] font-typewriter">
           <div className="flex items-center gap-2">
-            <span className="font-bold text-[#8c1d40]">✦</span>
+            <span className="font-bold text-[var(--m-accent)]">✦</span>
             <span>{lang === 'de' ? 'Amélie Dosen-Format · Alle Inhalte CC0 Public Domain' : lang === 'es' ? 'Formato Lata Amélie · Todo CC0 Dominio Público' : 'Amélie Tin Canister · All content CC0 Public Domain'}</span>
           </div>
           <div className="flex items-center gap-2">
@@ -902,7 +912,7 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
                   onClose();
                   onOpenSinglePage(dose);
                 }}
-                className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold rounded-lg bg-[#faf5eb] hover:bg-[#ede3d1] text-[#8c1d40] border border-[#d8cbba] cursor-pointer transition-all font-typewriter"
+                className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold rounded-lg bg-[var(--m-surface-2)] hover:bg-[var(--m-sunk)] text-[var(--m-accent)] border border-[var(--m-line-strong)] cursor-pointer transition-all font-typewriter"
               >
                 <Maximize2 className="w-3.5 h-3.5" />
                 <span>{lang === 'de' ? 'Als Einzelseite öffnen' : lang === 'es' ? 'Página completa' : 'Open Single Page'} →</span>

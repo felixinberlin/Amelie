@@ -1,0 +1,85 @@
+{
+  "hinweis": "Drei von Hand übertragene Umsetzungspläne nach § 9 EnEfG, Texte wortgetreu wie im Dokument (einschließlich Schreibweisen wie „Unternehmensbeschluß Q4I2023“). Alle drei PDFs wurden am 28.09.2026 abgerufen und gelesen; sha256 der Datei steht je Quelle. Muster GmbH ist das Musterbeispiel aus dem BAFA-Merkblatt (Stand 16.09.2026), kein echtes Unternehmen. Archiv-Snapshots stehen aus (Ticket 01, Task 5). Lizenz: CC0 1.0 Public Domain.",
+  "schemaStand": "gegen Merkblatt 16.09.2026 geprüft am 2026-09-28",
+  "plaene": [
+    {
+      "unternehmen": "Muster GmbH",
+      "datenart": "merkblatt-muster",
+      "rechtsstand": "a. F.",
+      "merkblattFassung": "2026-09-16",
+      "erstellt": "2024-01",
+      "aktualisiert": "2025-02",
+      "format": "tabelle",
+      "quelle": {
+        "url": "https://www.bafa.de/SharedDocs/Downloads/DE/Energie/ea_merkblatt_energieefffizienzgesetz.pdf?__blob=publicationFile&v=14",
+        "abgerufenAm": "2026-09-28",
+        "sha256": "1a62fa7dac0253e007eca19a32b9c12395d3d272e600b7f839d869dbc435d529"
+      },
+      "gesamtInvestitionsvolumen": "52.000 € - 65.000 €",
+      "massnahmen": [
+        { "id": "Z1", "prioritaet": "A", "massnahme": "Optimierung der Heizungsanlage", "investitionsvolumen": "bis 20.000 €", "zeitrahmen": "Februar 2025 - Juni 2025", "status": "In Bearbeitung" },
+        { "id": "Z2", "prioritaet": "B", "massnahme": "Dämmung von Rohrleitungen", "investitionsvolumen": "2.000 € - 5.000 €", "zeitrahmen": "Mai 2025 - Juli 2025", "status": "Offen" },
+        { "id": "Z3", "prioritaet": "B", "massnahme": "Austausch ineffizienter Pumpen", "investitionsvolumen": "10.000 € - 15.000 €", "zeitrahmen": "April 2025 - August 2025", "status": "Offen" },
+        { "id": "Z4", "prioritaet": "C", "massnahme": "Einführung eines Energiemonitoringsystems", "investitionsvolumen": "20.000 € - 25.000 €", "zeitrahmen": "Juli 2025 - Dezember 2026", "status": "Offen" }
+      ],
+      "anmerkung": "Merkblatt S. 14–15, Abschnitt 5. Fünf Spalten (Priorität, Maßnahmenbezeichnung, Investitionsvolumen*, Zeitrahmen, Status); Herkunft und verantwortliche Person stehen in dieser Fassung nicht im Muster."
+    },
+    {
+      "unternehmen": "Sanofi-Aventis Deutschland GmbH",
+      "datenart": "veroeffentlichter-plan",
+      "rechtsstand": "a. F.",
+      "merkblattFassung": "2026-09-16",
+      "erstellt": "2025-11",
+      "aktualisiert": "2025-11",
+      "format": "tabelle",
+      "quelle": {
+        "url": "https://www.sanofi.de/assets/dot-de/pages/docs/verantwortung/planet-care/Umsetzungsplan-EnEfg.pdf",
+        "abgerufenAm": "2026-09-28",
+        "sha256": "f791fd2c3ed73139dbc781ae7a510caa8eac355997d86d6fef728f2eb3b84436"
+      },
+      "verantwortlichPlan": "Head of Energy & Sustainability",
+      "gesamtInvestitionsvolumen": "19.712.576,00 €",
+      "massnahmen": [
+        { "id": "Z1", "prioritaet": "A", "massnahme": "HVAC-Programm F&F", "investitionsvolumen": "2.575.074,00 €", "zeitrahmen": "07/2022 - 03/2027", "herkunft": "Energy Roadmap 06/2022", "verantwortlich": "Head of Energy & Sustainability", "status": "In Bearbeitung" },
+        { "id": "Z2", "prioritaet": "A", "massnahme": "HVAC-Programm Devices", "investitionsvolumen": "2.384.540,00 €", "zeitrahmen": "07/2022 - 03/2027", "herkunft": "Energy Roadmap 06/2022", "verantwortlich": "Head of Energy & Sustainability", "status": "In Bearbeitung" },
+        { "id": "Z3", "prioritaet": "A", "massnahme": "HVAC-Programm API", "investitionsvolumen": "1.872.386,00 €", "zeitrahmen": "07/2022 - 03/2027", "herkunft": "Energy Roadmap 06/2022", "verantwortlich": "Head of Energy & Sustainability", "status": "In Bearbeitung" },
+        { "id": "Z4", "prioritaet": "A", "massnahme": "Wärmepumpen Programm Devices", "investitionsvolumen": "899.000,00 €", "zeitrahmen": "06/2023 - 07/2027", "herkunft": "Energy Roadmap 10/2022", "verantwortlich": "Head of Energy & Sustainability", "status": "In Bearbeitung" },
+        { "id": "Z5", "prioritaet": "A", "massnahme": "Wärmepumpen Programm F&F", "investitionsvolumen": "3.400.000,00 €", "zeitrahmen": "06/2023 - 07/2027", "herkunft": "Energy Roadmap 10/2022", "verantwortlich": "Head of Energy & Sustainability", "status": "In Bearbeitung" },
+        { "id": "Z6", "prioritaet": "B", "massnahme": "Metering and Monitoring 2024", "investitionsvolumen": "1.460.000,00 €", "zeitrahmen": "04/2024 - 04/2027", "herkunft": "Unternehmensbeschluss 12/2024", "verantwortlich": "Head of Energy & Sustainability", "status": "In Bearbeitung" },
+        { "id": "Z7", "prioritaet": "C", "massnahme": "Optimierung LED-Beleuchtung Devices", "investitionsvolumen": "1.021.576,00 €", "zeitrahmen": "11/2023 - 03/2027", "herkunft": "Unternehmensbeschluss 05/2023", "verantwortlich": "Head of Energy & Sustainability", "status": "In Bearbeitung" },
+        { "id": "Z8", "prioritaet": "A", "massnahme": "LED Tauschprogramm 2025", "investitionsvolumen": "100.000,00 €", "zeitrahmen": "01/2025 - 11/2025", "herkunft": "WEX / E&LTA", "verantwortlich": "Head of WEX / E&LTA", "status": "In Bearbeitung" },
+        { "id": "Z9", "prioritaet": "A", "massnahme": "E&LTA Flächen-/Energiekonsolidierung", "investitionsvolumen": "900.000,00 €", "zeitrahmen": "12/2024 - 12/2025", "herkunft": "WEX / E&LTA", "verantwortlich": "Head of WEX / E&LTA", "status": "In Bearbeitung" },
+        { "id": "Z10", "prioritaet": "A", "massnahme": "Optimierung WfI - Anlage", "investitionsvolumen": "1.000.000,00 €", "zeitrahmen": "06/2024 - 06/2026", "herkunft": "WEX / E&LTA", "verantwortlich": "Head of WEX / E&LTA", "status": "In Bearbeitung" },
+        { "id": "Z11", "prioritaet": "A", "massnahme": "Thermische Gebäudesanierung", "investitionsvolumen": "4.000.000,00 €", "zeitrahmen": "02/2024 - 03/2026", "herkunft": "Unternehmensbeschluss", "verantwortlich": "Head of WEX / E&LTA", "status": "In Bearbeitung" },
+        { "id": "Z12", "prioritaet": "A", "massnahme": "Optimierung Kaltwasserversorgung", "investitionsvolumen": "100.000,00 €", "zeitrahmen": "12/2024 - 06/2025", "herkunft": "WEX / E&LTA", "verantwortlich": "Head of WEX / E&LTA", "status": "Abgeschlossen" }
+      ],
+      "anmerkung": "Einseitiges PDF, Kopf: Erstellt am 11/2025, Aktualisiert am 11/2025, Verantwortliche Person: Head of Energy & Sustainability. Sieben Spalten wie im älteren Merkblatt-Muster, Status im Merkblatt-Vokabular. Summenzeile 19.712.576,00 €. „WfI“ laut Textebene des PDF."
+    },
+    {
+      "unternehmen": "VON ARDENNE GmbH",
+      "datenart": "veroeffentlichter-plan",
+      "rechtsstand": "a. F.",
+      "merkblattFassung": "2026-09-16",
+      "erstellt": "2025-04-07",
+      "format": "tabelle",
+      "quelle": {
+        "url": "https://vonardenne.de/fileadmin/user_upload/esg/20250407_VONARDENNE_Umsetzungsplan_EnEfg.pdf",
+        "abgerufenAm": "2026-09-28",
+        "sha256": "135c472ece7ef5e386d5404b2dfa396ea5f8209f6f06d281a362b29f537d6013"
+      },
+      "verantwortlichPlan": "Geschäftsführung",
+      "massnahmen": [
+        { "id": "Z1", "prioritaet": "A", "massnahme": "MP1 Kühlwasser Hahnweg 18A", "investitionsvolumen": "449.000,00 €", "zeitrahmen": "Q2 - Q3 2024", "herkunft": "Unternehmensbeschluß Q4I2023 / Energieaudit 2024", "verantwortlich": "Energiemanagement-Team", "status": "abgeschlossen" },
+        { "id": "Z2", "prioritaet": "A", "massnahme": "MP3/MP6 Beleuchtung & -steuerung", "investitionsvolumen": "147.500,00 €", "zeitrahmen": "Q1/2024 - Q4/2025", "herkunft": "Unternehmensbeschluß Q4I2023 / Energieaudit 2024", "verantwortlich": "Energiemanagement-Team", "status": "laufend" },
+        { "id": "Z3", "prioritaet": "A", "massnahme": "MP5 Kühlwasser + Kälte HW8", "investitionsvolumen": "442.867,00 €", "zeitrahmen": "Q1/2026 - Q4/2026", "herkunft": "Unternehmensbeschluß Q4I2023 / Energieaudit 2024", "verantwortlich": "Energiemanagement-Team", "status": "geplant" },
+        { "id": "Z4", "prioritaet": "A", "massnahme": "MP7/MP8 Wärmepumpen / Kühlwasser", "investitionsvolumen": "1.114.904,00 €", "zeitrahmen": "Q4/2024 -Q1/2026", "herkunft": "Unternehmensbeschluß Q4I2023 / Energieaudit 2024", "verantwortlich": "Energiemanagement-Team", "status": "geplant" },
+        { "id": "Z5", "prioritaet": "B", "massnahme": "MP2 Energiezähler Campus", "investitionsvolumen": "107.500,00 €", "zeitrahmen": "Q3/2024 -12/2025", "herkunft": "Unternehmensbeschluß Q4I2023 / Energieaudit 2024", "verantwortlich": "Energiemanagement-Team", "status": "laufend" },
+        { "id": "Z6", "prioritaet": "B", "massnahme": "MP4/MP9 PV Anlagen", "investitionsvolumen": "110.000,00 €", "zeitrahmen": "Q2/2024 & Q1 - Q2/2026", "herkunft": "Unternehmensbeschluß Q4I2023 / Energieaudit 2024", "verantwortlich": "Energiemanagement-Team", "status": "geplant" },
+        { "id": "Z7", "prioritaet": "C", "massnahme": "MP10 Druckluftoptimierung", "investitionsvolumen": "78.000,00 €", "zeitrahmen": "Q3 - Q4/2025", "herkunft": "Unternehmensbeschluß Q4I2023 / Energieaudit 2024", "verantwortlich": "Energiemanagement-Team", "status": "geplant" },
+        { "id": "Z8", "prioritaet": "C", "massnahme": "MP11 Lüftung", "investitionsvolumen": "41.000,00 €", "zeitrahmen": "Q1 - Q3 2026", "herkunft": "Unternehmensbeschluß Q4I2023 / Energieaudit 2024", "verantwortlich": "Energiemanagement-Team", "status": "geplant" },
+        { "id": "Z9", "prioritaet": "C", "massnahme": "MP12 Küchenkälte", "investitionsvolumen": "18.000,00 €", "zeitrahmen": "Q1 - Q3 2026", "herkunft": "Unternehmensbeschluß Q4I2023 / Energieaudit 2024", "verantwortlich": "Energiemanagement-Team", "status": "geplant" }
+      ],
+      "anmerkung": "Einseitiges PDF, Kopf: Erstellt am 07.04.2025, verantwortliche Person: Geschäftsführung. Sieben Spalten wie im älteren Merkblatt-Muster, aber Status „abgeschlossen“ / „laufend“ / „geplant“ statt der Merkblatt-Kategorien. Keine Summenzeile. Zeile Z8 nach dem Seitenbild übertragen (Textebene verschoben)."
+    }
+  ]
+}

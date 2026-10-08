@@ -1,0 +1,23 @@
+{
+  "plan_id": "lab-2026-09-30-lacunar-20260930T100431-797290-source",
+  "actor": "lab-librarian",
+  "agent": "lab",
+  "runde": "lacunar-20260930T100431-797290",
+  "_note": "Vorschlag des Labs, nicht angewendet. Der Bibliothekar prüft (typ, kategorie, `bib quellen match --url`, `bib find`); `human_accepted: true` setzt nur Félix, danach `npm run bib -- apply` auf diese Datei.",
+  "ops": [
+    {
+      "op": "source.add",
+      "id": "itv-altlasten-manuelle-detektion-und-klassifikation",
+      "name": "Manuelle Detektion und Klassifikation von Kampfmitteln im Boden",
+      "typ": "D",
+      "kategorie": "foerderung",
+      "enthaelt": "Manuelle Detektion und Klassifikation von Kampfmitteln im Boden (Typ D: research without a tool); Anker des Lab-Laufs lacunar-20260930T100431-797290, nicht gelesen.",
+      "status": "angekratzt",
+      "evidenz": "schnipsel",
+      "note": "Anker des Lab-Laufs lacunar-20260930T100431-797290 (Jamlitz, Lieberose); nur als Suchtreffer gelesen.",
+      "urls": [
+        "https://www.itv-altlasten.de/wp-content/uploads/2019/11/Informationsschrift_Detektionsverfahren_in_der_Kampfmittelra%CC%88umung_C7_2016-1.pdf"
+      ]
+    }
+  ]
+}

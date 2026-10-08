@@ -1,0 +1,2498 @@
+{
+  "acoustic-appliance-diagnostician": {
+    "v": [
+      3,
+      2,
+      2,
+      3,
+      3,
+      3,
+      3
+    ],
+    "fun": 4,
+    "funSource": "sensory",
+    "funDe": "Ein Spektrogramm live zu sehen, während die Waschmaschine brummt, lädt zum Ausprobieren ein.",
+    "funEn": "Watching a live spectrogram of a humming machine invites poking around.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "ai-apprentice-weld-seam-reflector": {
+    "v": [
+      3,
+      2,
+      2,
+      3,
+      3,
+      2,
+      3
+    ],
+    "fun": 3,
+    "funSource": "mastery",
+    "funDe": "Feedback zur Schweißnaht motiviert Azubis, besser zu werden.",
+    "funEn": "Weld seam feedback motivates apprentices to improve.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "ai-bureaucracy-translator-advocate": {
+    "v": [
+      1,
+      1,
+      3,
+      4,
+      1,
+      2,
+      2
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Bescheid entschlüsseln ist nützlich, aber bereits besetzt und trocken.",
+    "funEn": "Decoding notices is useful but already taken and dry.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "ai-bus-driver-shift-fatigue-shield": {
+    "v": [
+      3,
+      3,
+      2,
+      4,
+      3,
+      3,
+      3
+    ],
+    "fun": 1,
+    "funSource": "none",
+    "funDe": "Dienstplan-Prüfung ist trockene Pflichtarbeit ohne Spielschleife.",
+    "funEn": "Roster auditing is dry chore work with no play loop.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "ai-butcher-curing-salt-haccp-guard": {
+    "v": [
+      3,
+      4,
+      4,
+      3,
+      3,
+      4,
+      3
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Ein Pökelsalz-Rechner liefert eine klare Grammliste, mehr nicht.",
+    "funEn": "A curing-salt calculator gives a clear gram list, nothing more.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "ai-caregiver-wound-documenter": {
+    "v": [
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      1
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Wundfoto und Messwert: nützlich, aber ernst und ohne Spielschleife.",
+    "funEn": "Wound photo and measurement: useful but serious, with no play loop.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "ai-carpenter-wood-moisture-calculator": {
+    "v": [
+      3,
+      4,
+      3,
+      3,
+      3,
+      3,
+      2
+    ],
+    "fun": 3,
+    "funSource": "sensory",
+    "funDe": "Holz arbeiten sehen und Schwundmaß live ausrechnen hat einen Aha-Moment.",
+    "funEn": "Watching wood move and computing shrinkage live gives an aha moment.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "ai-chimney-sweep-flue-gas-guard": {
+    "v": [
+      2,
+      2,
+      2,
+      4,
+      2,
+      2,
+      2
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Foto eines verblassten Thermobons lesen ist eher Pflichtübung mit Sirene.",
+    "funEn": "Reading a faded thermal slip is a chore with a siren.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "ai-community-legal-constitution-drafter": {
+    "v": [
+      2,
+      1,
+      2,
+      3,
+      2,
+      2,
+      2
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Ein Interview, das ein PDF ausspuckt, ohne Spielmoment.",
+    "funEn": "An interview that emits a PDF, with no play moment.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "ai-crop-pathology-micro-botanist": {
+    "v": [
+      1,
+      2,
+      2,
+      3,
+      2,
+      3,
+      1
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Blatt fotografieren und erfahren, was es hat, hat einen kleinen Aha-Moment.",
+    "funEn": "Photographing a leaf to learn what ails it gives a small aha moment.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "ai-delivery-driver-ticket-dispute": {
+    "v": [
+      2,
+      4,
+      2,
+      3,
+      2,
+      2,
+      2
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Ein Einspruchsbrief gegen Knöllchen: nützlich, aber Papierkram.",
+    "funEn": "A dispute letter against parking tickets: useful, but paperwork.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "ai-dyslexia-exam-plain-transformer": {
+    "v": [
+      2,
+      3,
+      2,
+      3,
+      3,
+      2,
+      2
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Nützliche Umformatierung ohne Spielmoment.",
+    "funEn": "Useful reformatting without a play moment.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "ai-elderly-care-sis-guardian": {
+    "v": [
+      2,
+      1,
+      2,
+      4,
+      2,
+      2,
+      2
+    ],
+    "fun": 1,
+    "funSource": "none",
+    "funDe": "Pflegedokumentation per Sprache ist reine Pflichtübung ohne Überraschung.",
+    "funEn": "Voice-driven care documentation is a pure chore with no surprise.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "ai-farmer-fertilizer-ordinance-shield": {
+    "v": [
+      2,
+      1,
+      2,
+      4,
+      2,
+      2,
+      3
+    ],
+    "fun": 1,
+    "funSource": "none",
+    "funDe": "Düngedokumentation im Traktor bleibt Formularpflicht.",
+    "funEn": "Fertilizer record-keeping in a tractor cab remains form-filling.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "ai-forester-timber-pile-scaler": {
+    "v": [
+      2,
+      2,
+      3,
+      3,
+      3,
+      3,
+      2
+    ],
+    "fun": 3,
+    "funSource": "sensory",
+    "funDe": "Foto vom Polter, rote Punkte auf jedem Stamm: das Zählen macht sichtbar Spaß.",
+    "funEn": "Photo a log pile and watch red dots land on every log: satisfying to see.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "ai-hairdresser-color-bleach-formulator": {
+    "v": [
+      2,
+      3,
+      2,
+      3,
+      2,
+      2,
+      2
+    ],
+    "fun": 3,
+    "funSource": "sensory",
+    "funDe": "Haarfoto rein, Farbstufe und Rezept raus: sichtbares Aha, aber Kamerafarbe ist wackelig.",
+    "funEn": "Hair photo in, level and formula out: a visible aha, though camera colour is shaky.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "ai-kindergarten-educator-time-liberator": {
+    "v": [
+      2,
+      1,
+      2,
+      3,
+      2,
+      3,
+      2
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Ein Sprachmemo wird zu freundlichem Entwicklungstext, nützlich, aber ohne Spielmoment.",
+    "funEn": "A voice memo becomes warm developmental prose: useful, but with no play moment.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "ai-landscaper-soil-climate-planting-plan": {
+    "v": [
+      2,
+      3,
+      2,
+      3,
+      3,
+      2,
+      3
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Bodenfoto rein, Pflanzenliste raus: ein kleiner Aha-Moment.",
+    "funEn": "Soil photo in, plant list out: a small aha moment.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "ai-line-cook-allergen-radar": {
+    "v": [
+      2,
+      2,
+      3,
+      4,
+      2,
+      3,
+      4
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Ein nützlicher Etiketten-Scan, aber eher Pflicht als Spiel.",
+    "funEn": "A useful label scan, more duty than play.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "ai-mechanic-obd-swarm-diagnostician": {
+    "v": [
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      1
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Fehlercode eingeben und die Ursachenjagd als kleines Detektivrätsel erleben.",
+    "funEn": "Enter a fault code and experience the root-cause hunt as a small detective puzzle.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "ai-plumber-valve-archaeologist": {
+    "v": [
+      3,
+      2,
+      2,
+      3,
+      2,
+      2,
+      1
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Detektivspaß beim Bestimmen rostiger Armaturen, aber unzuverlässig.",
+    "funEn": "Detective fun identifying rusty fittings, but unreliable.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "ai-roofer-wind-uplift-shield": {
+    "v": [
+      3,
+      4,
+      3,
+      4,
+      2,
+      3,
+      4
+    ],
+    "fun": 1,
+    "funSource": "none",
+    "funDe": "Große Zahlen auf dem Dach: reine Werkzeug-Ergebnisse ohne Spielraum.",
+    "funEn": "Big numbers on the roof: pure tool output with no room for play.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "ai-sensory-deescalation-calm-shield": {
+    "v": [
+      3,
+      2,
+      2,
+      3,
+      3,
+      2,
+      2
+    ],
+    "fun": 4,
+    "funSource": "sensory",
+    "funDe": "Ein Schieberegler, der Geräusche live filtert, lädt zum Ausprobieren ein.",
+    "funEn": "A slider that filters live sound invites experimenting.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "ai-sourdough-baker-thermal-balance": {
+    "v": [
+      2,
+      5,
+      4,
+      3,
+      3,
+      4,
+      2
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Teigtemperatur-Rechner mit Eis-Gramm-Aha, aber kein Foto/KI nötig.",
+    "funEn": "Dough-temperature calculator with an ice-gram aha, no photo or AI needed.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "ai-trucker-rest-emergency-shield": {
+    "v": [
+      3,
+      4,
+      3,
+      4,
+      3,
+      3,
+      4
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Ein Rechtsnachweis-Zettel per Sprachbefehl ist nützlich, aber kein Spielzeug.",
+    "funEn": "A voice-triggered legal slip is useful but not playful.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "ai-waiter-tip-split-shift-guard": {
+    "v": [
+      2,
+      3,
+      3,
+      3,
+      2,
+      2,
+      2
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Trinkgeld- und Schichtprüfung ist ein trockener Rechner.",
+    "funEn": "Tip and shift checking is a dry calculator.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "amateur-radio-emergency-repeater": {
+    "v": [
+      2,
+      3,
+      4,
+      3,
+      3,
+      3,
+      3
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Eine Kompassrose mit Relaisstationen ist hübsch und anschaulich.",
+    "funEn": "A compass rose of repeaters is neat and tangible.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "amphibian-migration-crossing-alert": {
+    "v": [
+      2,
+      2,
+      3,
+      3,
+      3,
+      2,
+      3
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Die Kröten-Warnung für laue Regennächte hat Naturzauber.",
+    "funEn": "Toad alerts for mild rainy nights carry a touch of nature magic.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "attic-insulation-dewpoint-locator": {
+    "v": [
+      3,
+      4,
+      5,
+      4,
+      4,
+      4,
+      5
+    ],
+    "fun": 4,
+    "funSource": "discovery",
+    "funDe": "Kondensationsebene im Dachaufbau live wandern sehen.",
+    "funEn": "Watch the condensation plane travel through the roof build-up live.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "auto-subscription-bill-tracker": {
+    "v": [
+      1,
+      5,
+      4,
+      3,
+      2,
+      3,
+      2
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Ein Kündigungsbrief-Generator ist nützlich, aber trocken.",
+    "funEn": "A cancellation-letter generator is useful but dry.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "balcony-solar-shading-simulator": {
+    "v": [
+      2,
+      3,
+      4,
+      4,
+      3,
+      3,
+      2
+    ],
+    "fun": 4,
+    "funSource": "sensory",
+    "funDe": "Kamera plus Sonnenbahn-Overlay: man zeigt es Nachbarn auf dem Balkon.",
+    "funEn": "Camera plus sun-path overlay: you show it to neighbours on the balcony.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "balkonsolar-verschattung": {
+    "v": [
+      1,
+      3,
+      3,
+      3,
+      1,
+      3,
+      3
+    ],
+    "fun": 3,
+    "funSource": "sensory",
+    "funDe": "Mit der Kamera den Schatten der Bäume zu sehen ist nett, aber schon vielfach gebaut.",
+    "funEn": "Seeing tree shade through the camera is nice, but already built many times.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "bebauungsplan-leser": {
+    "v": [
+      3,
+      3,
+      4,
+      4,
+      3,
+      4,
+      4
+    ],
+    "fun": 4,
+    "funSource": "discovery",
+    "funDe": "Zulässige Baukörper-Hülle in 3D neben dem eigenen Haus entdecken.",
+    "funEn": "Discovering the permitted 3D building envelope next to your own house.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "bicycle-cargo-weight-balance-guide": {
+    "v": [
+      2,
+      5,
+      3,
+      3,
+      3,
+      3,
+      4
+    ],
+    "fun": 3,
+    "funSource": "play",
+    "funDe": "Kisten auf dem Lastenrad zu verschieben zeigt sofort die Wirkung.",
+    "funEn": "Moving boxes on the cargo bike shows the effect instantly.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "bicycle-chain-wear-ruler-calc": {
+    "v": [
+      1,
+      5,
+      5,
+      3,
+      3,
+      4,
+      4
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Ein Lineal-Test mit klarem Ja oder Nein ist nützlich, nüchtern.",
+    "funEn": "A ruler test with a clear yes or no is useful but sober.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "bicycle-flat-tire-vulcanization-timer": {
+    "v": [
+      2,
+      5,
+      5,
+      2,
+      3,
+      2,
+      2
+    ],
+    "fun": 3,
+    "funSource": "humor",
+    "funDe": "Trocknungs-Countdown mit lockerem Ton, kleines Erfolgserlebnis.",
+    "funEn": "A drying countdown with a light tone and a small sense of accomplishment.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "bicycle-wheel-spoke-resonance-tuner": {
+    "v": [
+      3,
+      2,
+      4,
+      3,
+      4,
+      4,
+      4
+    ],
+    "fun": 4,
+    "funSource": "sensory",
+    "funDe": "Speiche zupfen, Ton hören, Newtonzahl sehen: ein echter Sinnesreiz.",
+    "funEn": "Pluck a spoke, hear the pitch, see the Newtons: a genuine sensory hook.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "bird-song-frequency-ear-trainer": {
+    "v": [
+      1,
+      2,
+      4,
+      3,
+      2,
+      3,
+      3
+    ],
+    "fun": 5,
+    "funSource": "play",
+    "funDe": "Vogelstimmen raten und live im Sonagramm sehen ist ein echtes Spiel.",
+    "funEn": "Guessing bird calls and watching the live sonogram is a genuine game.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "brettchen-vorsortierer": {
+    "v": [
+      4,
+      2,
+      3,
+      4,
+      4,
+      4,
+      4
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Zu sehen, wie Nistgänge markiert werden, hat einen kleinen Entdeckerreiz.",
+    "funEn": "Watching nesting tubes get marked has a small discovery appeal.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "caregiver-shift-handover-diary": {
+    "v": [
+      2,
+      3,
+      3,
+      3,
+      2,
+      2,
+      2
+    ],
+    "fun": 1,
+    "funSource": "none",
+    "funDe": "Ein Pflege-Protokoll ist Alltagslast, kein Vergnügen.",
+    "funEn": "A care log is daily burden, not enjoyment.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "cargo-bike-trailer-hitch-compatibility": {
+    "v": [
+      3,
+      5,
+      4,
+      2,
+      3,
+      3,
+      3
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Ein Achsen-Matcher löst ein Problem, ohne Spielreiz.",
+    "funEn": "An axle matcher solves a problem without play appeal.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "cast-iron-seasoning-polymerization-guide": {
+    "v": [
+      2,
+      5,
+      3,
+      3,
+      3,
+      3,
+      2
+    ],
+    "fun": 3,
+    "funSource": "sensory",
+    "funDe": "Patina-Farbtest und Öl-Auswahl haben einen haptischen Reiz.",
+    "funEn": "The patina shade test and oil choice have a tactile appeal.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "ceramic-glaze-unity-molecular-formula-balancer": {
+    "v": [
+      3,
+      5,
+      5,
+      3,
+      3,
+      3,
+      3
+    ],
+    "fun": 4,
+    "funSource": "mastery",
+    "funDe": "Glasuren im Stull-Diagramm verschieben ist ein Experimentierspielzeug für Töpfernde.",
+    "funEn": "Nudging glazes across a Stull chart is an experimentation toy for potters.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "ceramic-kiln-firing-ramp-schedule": {
+    "v": [
+      2,
+      5,
+      5,
+      3,
+      3,
+      4,
+      4
+    ],
+    "fun": 4,
+    "funSource": "play",
+    "funDe": "Brennkurven zu ziehen und Gefahrenzonen aufleuchten zu sehen, ist verspielt.",
+    "funEn": "Dragging firing curves and seeing danger zones light up is playful.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "chainsaw-sharpening-angle-guide": {
+    "v": [
+      2,
+      5,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "fun": 3,
+    "funSource": "mastery",
+    "funDe": "Winkel-Overlay für die Werkbank gibt handwerkliches Erfolgsgefühl.",
+    "funEn": "An angle overlay for the workbench gives a craftsman's sense of success.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "chor-satb-trennung": {
+    "v": [
+      1,
+      2,
+      4,
+      3,
+      1,
+      2,
+      2
+    ],
+    "fun": 4,
+    "funSource": "sensory",
+    "funDe": "Die eigene Stimme im Chor isolieren zu hören macht Freude.",
+    "funEn": "Hearing your own voice isolated from the choir is a joy.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "citizen-noise-pollution-decibel-logger": {
+    "v": [
+      2,
+      2,
+      3,
+      3,
+      2,
+      3,
+      2
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Ein Lärmprotokoll ist nüchterne Beweisführung, auch wenn Live-Pegel kurz Spaß machen.",
+    "funEn": "A noise log is sober evidence work, though a live meter is briefly fun.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "clothesline-drying-time-predictor": {
+    "v": [
+      2,
+      4,
+      4,
+      3,
+      3,
+      3,
+      3
+    ],
+    "fun": 3,
+    "funSource": "humor",
+    "funDe": "Ein Wäsche-Wetterindex bringt Alltagsschmunzeln.",
+    "funEn": "A laundry weather index brings everyday smiles.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "cold-smoke-generator-burn-rate": {
+    "v": [
+      3,
+      5,
+      4,
+      3,
+      3,
+      3,
+      2
+    ],
+    "fun": 3,
+    "funSource": "sensory",
+    "funDe": "Räuchern ist sinnlich, der Rechner zeigt es schön.",
+    "funEn": "Smoking is sensory and the calculator shows it nicely.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "communal-rainwater-tank-balancer": {
+    "v": [
+      4,
+      3,
+      4,
+      4,
+      4,
+      4,
+      5
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Versickerungsloch-Timer und Mulden-Rechner geben einen echten Aha-Moment für den eigenen Hof.",
+    "funEn": "A percolation-pit timer and swale sizer give a real aha moment for your own courtyard.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "community-orchard-fruit-harvest-calendar": {
+    "v": [
+      1,
+      3,
+      4,
+      3,
+      2,
+      3,
+      3
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Eine Karte mit erntereifem Obst weckt Sammel- und Entdeckerlust.",
+    "funEn": "A map of ripe fruit stirs foraging and discovery joy.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "community-seed-variety-archive": {
+    "v": [
+      2,
+      2,
+      4,
+      3,
+      3,
+      3,
+      2
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Faltbare Samentüten mit Sortengeschichte machen Freude beim Basteln und Tauschen.",
+    "funEn": "Foldable seed packets with variety stories are fun to craft and swap.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "community-solar-dividend-allocator": {
+    "v": [
+      2,
+      3,
+      3,
+      4,
+      3,
+      2,
+      2
+    ],
+    "fun": 1,
+    "funSource": "none",
+    "funDe": "Buchhaltungsregister mit CSV-Export ist reine Pflichtarbeit.",
+    "funEn": "A bookkeeping ledger with CSV export is pure chore.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "compost-carbon-nitrogen-ratio-balancer": {
+    "v": [
+      2,
+      5,
+      5,
+      3,
+      4,
+      4,
+      3
+    ],
+    "fun": 4,
+    "funSource": "play",
+    "funDe": "Eimer mischen und die Kompost-Ampel kippen sehen macht Spaß.",
+    "funEn": "Mixing buckets and watching the compost gauge tip is fun.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "cookie-session-sanitizer": {
+    "v": [
+      1,
+      4,
+      4,
+      2,
+      2,
+      2,
+      1
+    ],
+    "fun": 1,
+    "funSource": "none",
+    "funDe": "Unsichtbarer Hintergrunddienst ohne Erlebnis.",
+    "funEn": "An invisible background service with no experience.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "defibrillator-battery-pad-expiry-inspector": {
+    "v": [
+      2,
+      3,
+      4,
+      3,
+      3,
+      3,
+      2
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Wartungserinnerungen sind wichtig, aber trocken.",
+    "funEn": "Maintenance reminders matter but are dry.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "digital-craft-pattern-resizer": {
+    "v": [
+      1,
+      4,
+      3,
+      3,
+      2,
+      2,
+      2
+    ],
+    "fun": 4,
+    "funSource": "play",
+    "funDe": "Schnittmuster live an die eigenen Maße anpassen macht Bastlern Spaß.",
+    "funEn": "Reshaping a pattern live to your own measurements delights makers.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "diy-bokashi-kitchen-fermentation-schedule": {
+    "v": [
+      2,
+      4,
+      4,
+      2,
+      3,
+      2,
+      2
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Gärtagebuch mit Schimmel-Bilderguide ist freundlich und hat etwas Ekel-Charme.",
+    "funEn": "A fermentation diary with a mould photo guide is friendly with some gross-out charm.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "encrypted-p2p-backup-mesh": {
+    "v": [
+      1,
+      1,
+      3,
+      3,
+      2,
+      2,
+      2
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Ein QR-Pairing ist nett, sonst unsichtbare Infrastruktur.",
+    "funEn": "QR pairing is nice, otherwise invisible infrastructure.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "ergonomic-workstation-glare-checker": {
+    "v": [
+      2,
+      2,
+      3,
+      3,
+      2,
+      2,
+      3
+    ],
+    "fun": 3,
+    "funSource": "sensory",
+    "funDe": "Live-Haltungs-Overlay ist eindrücklich, wird aber schnell nervig.",
+    "funEn": "A live posture overlay is striking but quickly becomes annoying.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "exif-metadata-scrubber": {
+    "v": [
+      1,
+      5,
+      5,
+      3,
+      3,
+      2,
+      2
+    ],
+    "fun": 2,
+    "funSource": "discovery",
+    "funDe": "Kurzer Schreck-Moment, wenn die Karte den eigenen Standort zeigt, sonst nüchtern.",
+    "funEn": "A brief shock when the map reveals your own location, otherwise sober.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "family-game-night-trivia-generator": {
+    "v": [
+      1,
+      3,
+      3,
+      2,
+      2,
+      3,
+      1
+    ],
+    "fun": 4,
+    "funSource": "play",
+    "funDe": "Eigene Quizkarten mit Handy-Buzzer machen Familienabende lebendig.",
+    "funEn": "Custom quiz cards with phone buzzers liven up family evenings.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "family-oral-history-restorer": {
+    "v": [
+      2,
+      2,
+      3,
+      3,
+      3,
+      3,
+      2
+    ],
+    "fun": 4,
+    "funSource": "sensory",
+    "funDe": "Rauschen weghören und Omas Stimme klar wiederfinden berührt.",
+    "funEn": "Hearing the hiss vanish and grandma's voice emerge is moving.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "farm-gate-honesty-stall-finder": {
+    "v": [
+      2,
+      3,
+      4,
+      3,
+      2,
+      3,
+      1
+    ],
+    "fun": 4,
+    "funSource": "discovery",
+    "funDe": "Hofläden und Eierkästen in der Nähe zu entdecken macht Freude.",
+    "funEn": "Discovering honesty stalls and egg boxes nearby is a joy.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "filament-hygroscopy-drying-oven-timer": {
+    "v": [
+      3,
+      5,
+      4,
+      3,
+      4,
+      4,
+      3
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Trockenzeit-Rechner mit Materialdatenbank, kleines Aha.",
+    "funEn": "Drying-time calculator with material database, small aha.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "fire-extinguisher-pressure-gauge-inspector": {
+    "v": [
+      2,
+      3,
+      2,
+      3,
+      3,
+      3,
+      3
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Eine Sicherheitsprüfung ist sinnvoll, aber trocken.",
+    "funEn": "A safety check is worthwhile but dry.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "fledermaus-echo-entwirrer": {
+    "v": [
+      4,
+      2,
+      2,
+      3,
+      3,
+      3,
+      2
+    ],
+    "fun": 4,
+    "funSource": "sensory",
+    "funDe": "Ultraschall hörbar und sichtbar machen ist faszinierend, doch die Prämisse ist unbelegt.",
+    "funEn": "Making ultrasound audible and visible is fascinating, though the premise is unproven.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "foundation-earth-electrode-sheet": {
+    "v": [
+      3,
+      4,
+      4,
+      4,
+      3,
+      3,
+      4
+    ],
+    "fun": 1,
+    "funSource": "none",
+    "funDe": "Eine Fotoprotokoll-Checkliste ist reine Pflichtarbeit.",
+    "funEn": "A photo-protocol checklist is pure chore.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "grain-mill-flour-extraction-rate-guide": {
+    "v": [
+      2,
+      5,
+      3,
+      3,
+      3,
+      3,
+      2
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Mahlgrad-Regler mit Brot-Ergebnis, nett aber locker belegt.",
+    "funEn": "Grind-setting slider with bread outcome, nice but loosely sourced.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "greenhouse-thermal-water-barrel-sizer": {
+    "v": [
+      2,
+      5,
+      5,
+      3,
+      3,
+      3,
+      4
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Fässer verschieben und sehen, wie die Nachttemperatur steigt, hat Aha-Effekt.",
+    "funEn": "Adding barrels and watching night temperature rise gives an aha moment.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "handwriting-practice-sheet-generator": {
+    "v": [
+      1,
+      1,
+      5,
+      3,
+      3,
+      3,
+      2
+    ],
+    "fun": 3,
+    "funSource": "play",
+    "funDe": "Eigene Namen und Gedichte auf Lineatur zu drucken macht Kindern Spaß.",
+    "funEn": "Printing their own names and poems on ruled lines delights kids.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "hearing-aid-frequency-balance-tester": {
+    "v": [
+      2,
+      3,
+      2,
+      3,
+      2,
+      3,
+      4
+    ],
+    "fun": 3,
+    "funSource": "sensory",
+    "funDe": "Töne hören und Audiogramm zeichnen ist hörbar, aber ohne Kalibrierung unsauber.",
+    "funEn": "Hearing tones and plotting an audiogram is sensory, but uncalibrated.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "heat-pump-cop-evaluator": {
+    "v": [
+      2,
+      4,
+      4,
+      4,
+      3,
+      3,
+      3
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Der Aha-Moment, wenn der Heizstab auffliegt, macht den Rechner spannend.",
+    "funEn": "The aha moment of catching the backup heater makes the calculator engaging.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "heat-wave-senior-check-in-relay": {
+    "v": [
+      2,
+      4,
+      3,
+      4,
+      3,
+      2,
+      3
+    ],
+    "fun": 1,
+    "funSource": "none",
+    "funDe": "Eine Checkliste für einen ernsten Anlass, bewusst ohne Spielcharakter.",
+    "funEn": "A checklist for a serious occasion, deliberately without play.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "heating-hydraulic-balancing-calc": {
+    "v": [
+      2,
+      5,
+      5,
+      4,
+      2,
+      4,
+      3
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Voreinstellwerte pro Heizkörper zu sehen ist befriedigend, aber technisch.",
+    "funEn": "Seeing presetting values per radiator is satisfying but technical.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "historic-fraktur-blackletter-decoder": {
+    "v": [
+      2,
+      2,
+      5,
+      3,
+      3,
+      3,
+      3
+    ],
+    "fun": 4,
+    "funSource": "discovery",
+    "funDe": "Alte Briefe der Vorfahren entziffern fühlt sich wie Detektivarbeit an.",
+    "funEn": "Deciphering ancestors' letters feels like detective work.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "honey-moisture-refractometer-correction": {
+    "v": [
+      3,
+      5,
+      5,
+      3,
+      3,
+      3,
+      4
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Zwei-Eingaben-Rechner, klar aber ohne Spieleffekt.",
+    "funEn": "A two-input calculator, clear but with no play effect.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "hummel-schleusenwaechter": {
+    "v": [
+      3,
+      2,
+      2,
+      3,
+      3,
+      3,
+      3
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Den Kuckuckshummel zu ertappen hat Detektivreiz.",
+    "funEn": "Catching the cuckoo bumblebee has detective appeal.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "invasive-plant-species-scanner": {
+    "v": [
+      1,
+      2,
+      3,
+      5,
+      2,
+      3,
+      4
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Pflanzen per Kamera bestimmen macht neugierig, Warnungen bremsen etwas.",
+    "funEn": "Identifying plants by camera is curious fun, warnings dampen it a little.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "legio-klar": {
+    "v": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      5
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Ein Aushang wird sofort in klare Ampelsprache übersetzt.",
+    "funEn": "A notice board report is instantly translated into a clear traffic light.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "licht-glocken-kataster": {
+    "v": [
+      4,
+      3,
+      3,
+      4,
+      3,
+      3,
+      4
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Den Lichtsmog der Fassade zu messen zeigt Unsichtbares.",
+    "funEn": "Measuring facade light pollution reveals the invisible.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "lime-mortar-historic-masonry-calc": {
+    "v": [
+      3,
+      5,
+      5,
+      4,
+      3,
+      4,
+      3
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Mischungen für Kalkmörtel auszuprobieren gibt einen Handwerker-Aha-Moment.",
+    "funEn": "Trying lime mortar mixes gives a craftsman's aha.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "local-blood-donation-inventory-radar": {
+    "v": [
+      2,
+      4,
+      2,
+      3,
+      2,
+      2,
+      2
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Ein Pegelanzeiger ist klar, aber lädt nicht zum Spielen ein.",
+    "funEn": "A supply gauge is clear but does not invite play.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "local-food-pantry-demand-board": {
+    "v": [
+      2,
+      2,
+      4,
+      3,
+      3,
+      3,
+      1
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Statustafel in Ampelfarben ist nützlich, aber schlicht.",
+    "funEn": "A traffic-light status board is useful but plain.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "local-offline-ai-docs": {
+    "v": [
+      1,
+      1,
+      3,
+      3,
+      2,
+      2,
+      1
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Lokaler Dokumenten-Chat: nützlich, aber ohne Spielmoment.",
+    "funEn": "Local document chat: useful but no play moment.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "local-personal-wiki-timeline": {
+    "v": [
+      1,
+      5,
+      4,
+      3,
+      2,
+      3,
+      1
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Ein ordentliches Familienarchiv, aber TiddlyWiki kann das längst.",
+    "funEn": "A tidy family archive, but TiddlyWiki already does this.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "long-driveway-mail-notifier": {
+    "v": [
+      2,
+      1,
+      4,
+      2,
+      2,
+      3,
+      2
+    ],
+    "fun": 3,
+    "funSource": "play",
+    "funDe": "Bastelprojekt mit Funk-Ping, aber Hardware statt Browser.",
+    "funEn": "Tinker project with a radio ping, but hardware rather than browser.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "lost-pet-micro-flyer-generator": {
+    "v": [
+      1,
+      1,
+      5,
+      2,
+      3,
+      3,
+      1
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Ein Flyer-Generator liefert ein Blatt Papier, in einer Notlage nicht zum Spaß.",
+    "funEn": "A flyer generator yields a sheet of paper, used in distress, not for fun.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "medical-report-jargon-translator": {
+    "v": [
+      2,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "fun": 1,
+    "funSource": "none",
+    "funDe": "Fachbegriffe nachschlagen ist Pflicht, nicht Vergnügen.",
+    "funEn": "Looking up medical terms is a chore, not a pleasure.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "micro-cooperative-carpool-board": {
+    "v": [
+      1,
+      2,
+      3,
+      3,
+      2,
+      2,
+      1
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Ein Mitfahrbrett ist nützlich, aber ohne Spiel.",
+    "funEn": "A carpool board is useful but has no play.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "minimalist-home-maintenance-wiki": {
+    "v": [
+      1,
+      1,
+      5,
+      3,
+      2,
+      2,
+      1
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Eine Vorlagensammlung funktioniert, lädt aber nicht zum Spielen ein.",
+    "funEn": "A template pack works but does not invite play.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "mushroom-foraging-spore-print-key": {
+    "v": [
+      2,
+      5,
+      3,
+      3,
+      2,
+      3,
+      3
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Bestimmungsschlüssel mit Sporenabdruck fühlt sich wie Detektivarbeit an.",
+    "funEn": "A spore-print key feels like detective work.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "neighborhood-tool-lending-tracker": {
+    "v": [
+      1,
+      3,
+      4,
+      3,
+      2,
+      2,
+      1
+    ],
+    "fun": 3,
+    "funSource": "humor",
+    "funDe": "Freundliche Erinnerungen an geliehene Leiter haben Augenzwinkern.",
+    "funEn": "Friendly reminders about the borrowed ladder carry a wink.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "night-sky-light-pollution-surveyor": {
+    "v": [
+      2,
+      3,
+      2,
+      3,
+      3,
+      2,
+      2
+    ],
+    "fun": 4,
+    "funSource": "discovery",
+    "funDe": "Den eigenen Himmel messen und dunkle Orte entdecken hat Staunfaktor.",
+    "funEn": "Measuring your own sky and discovering dark places has wonder.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "no-login-bill-splitter": {
+    "v": [
+      1,
+      3,
+      3,
+      2,
+      2,
+      2,
+      1
+    ],
+    "fun": 3,
+    "funSource": "play",
+    "funDe": "Positionen antippen und zuweisen fühlt sich leicht spielerisch an.",
+    "funEn": "Tapping and assigning items feels lightly playful.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "offline-audio-story-old-phone": {
+    "v": [
+      3,
+      4,
+      4,
+      3,
+      4,
+      3,
+      1
+    ],
+    "fun": 5,
+    "funSource": "play",
+    "funDe": "Ein Altes-Handy-Märchenkasten mit großen Bildtasten ist ein Spielzeug.",
+    "funEn": "An old-phone story box with big picture buttons is a toy.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "offline-emergency-resource-map": {
+    "v": [
+      1,
+      3,
+      4,
+      3,
+      3,
+      3,
+      2
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Nützliche Offline-Karte ohne Spielreiz.",
+    "funEn": "A useful offline map with no play appeal.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "offline-financial-contract-comparator": {
+    "v": [
+      2,
+      3,
+      3,
+      3,
+      3,
+      3,
+      2
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Ein Klausel-Diff mit Farbmarkierung ist klar, aber nüchtern.",
+    "funEn": "A colour-coded clause diff is clear but sober.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "offline-medication-food-timing-checker": {
+    "v": [
+      2,
+      5,
+      3,
+      3,
+      2,
+      3,
+      2
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Ein Medikamentenplan ist ernst und nüchtern.",
+    "funEn": "A medication schedule is serious and sober.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "offline-wasm-document-toolkit": {
+    "v": [
+      1,
+      2,
+      4,
+      3,
+      1,
+      3,
+      2
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Zweckmäßig, aber es gibt Stirling-PDF und viele Klone.",
+    "funEn": "Functional, but Stirling-PDF and many clones exist.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "orgelpfeifen-bleifrass-resonanz": {
+    "v": [
+      4,
+      2,
+      2,
+      3,
+      3,
+      2,
+      3
+    ],
+    "fun": 4,
+    "funSource": "sensory",
+    "funDe": "Orgelpfeifen anspielen und ihr Ansprechen als Gitter aufleuchten sehen.",
+    "funEn": "Sound organ pipes and watch their onset light up on a grid.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "pantry-expiration-recipe-optimizer": {
+    "v": [
+      1,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Rezeptvorschläge aus Resten machen Lust, gibt es aber hundertfach.",
+    "funEn": "Recipes from leftovers are fun, but exist in hundreds of copies.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "phaenologischer-knospen-countdown": {
+    "v": [
+      3,
+      3,
+      2,
+      3,
+      3,
+      3,
+      3
+    ],
+    "fun": 4,
+    "funSource": "discovery",
+    "funDe": "Knospen fotografieren und den Countdown zum Aufbruch sehen, Naturwunder im Kleinen.",
+    "funEn": "Photographing buds and watching the burst countdown is small-scale natural wonder.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "pond-water-drop-microscope-atlas": {
+    "v": [
+      3,
+      4,
+      4,
+      3,
+      3,
+      3,
+      2
+    ],
+    "fun": 4,
+    "funSource": "discovery",
+    "funDe": "Im Wassertropfen Rädertierchen entdecken ist pures Staunen.",
+    "funEn": "Discovering rotifers in a water drop is pure wonder.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "private-voice-memo-transcriber": {
+    "v": [
+      1,
+      2,
+      4,
+      2,
+      2,
+      3,
+      2
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Diktieren und Notiz erhalten: praktisch, aber ohne Spielfreude.",
+    "funEn": "Dictate and get a note: practical but joyless.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "property-tax-assessment-checker": {
+    "v": [
+      3,
+      4,
+      3,
+      4,
+      3,
+      3,
+      3
+    ],
+    "fun": 1,
+    "funSource": "none",
+    "funDe": "Grundsteuerbescheid prüfen ist reine Pflichtaufgabe.",
+    "funEn": "Checking a property tax notice is a pure chore.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "public-drinking-fountain-frost-map": {
+    "v": [
+      2,
+      3,
+      4,
+      3,
+      2,
+      3,
+      2
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Brunnen an heißen Tagen zu finden ist eine kleine Belohnung.",
+    "funEn": "Finding a fountain on a hot day is a small reward.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "public-transit-delay-refund-claimer": {
+    "v": [
+      2,
+      2,
+      3,
+      4,
+      3,
+      3,
+      4
+    ],
+    "fun": 1,
+    "funSource": "none",
+    "funDe": "Erstattungsformulare sind Verdruss pur.",
+    "funEn": "Refund claim forms are pure dread.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "rain-barrel-mosquito-barrier-guide": {
+    "v": [
+      2,
+      5,
+      5,
+      3,
+      3,
+      2,
+      3
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Rechner plus Checkliste, nützlich und nüchtern.",
+    "funEn": "Calculator plus checklist, useful and sober.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "regional-trades-fair-price-tracker": {
+    "v": [
+      2,
+      5,
+      2,
+      3,
+      2,
+      2,
+      2
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Ein Preisvergleich ist nützlich, aber nüchtern; Crowd-Daten fehlen zudem.",
+    "funEn": "A price check is useful but sober; crowd data is also missing.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "repair-cafe-diagnose": {
+    "v": [
+      1,
+      3,
+      3,
+      3,
+      1,
+      2,
+      2
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Ein Diagnosebaum für Geräte ist nützlich, aber schlicht.",
+    "funEn": "A device diagnosis tree is useful but plain.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "rural-fire-brigade-water-map": {
+    "v": [
+      2,
+      3,
+      4,
+      4,
+      3,
+      3,
+      2
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Ernstes Einsatzwerkzeug, Kompasspfeil ist zweckmäßig.",
+    "funEn": "A serious operational tool; the compass arrow is purely functional.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "sandstein-streiflicht-relief": {
+    "v": [
+      4,
+      2,
+      3,
+      3,
+      4,
+      4,
+      3
+    ],
+    "fun": 5,
+    "funSource": "discovery",
+    "funDe": "Mit Taschenlampe verwitterte Inschriften aus dem Stein auftauchen zu sehen ist Zauber.",
+    "funEn": "Watching weathered inscriptions emerge from stone under a torch is magic.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "school-sick-note-submission-helper": {
+    "v": [
+      1,
+      5,
+      4,
+      4,
+      2,
+      3,
+      3
+    ],
+    "fun": 1,
+    "funSource": "none",
+    "funDe": "Formularausfüllen in 30 Sekunden ist reine Pflicht.",
+    "funEn": "Form-filling in 30 seconds is pure chore.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "schulweg-gefahrenkarte": {
+    "v": [
+      1,
+      3,
+      3,
+      3,
+      1,
+      2,
+      2
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Gefahrenkarte ist wichtig, aber besetzt und nüchtern.",
+    "funEn": "A hazard map is important but taken and sober.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "seed-germination-soil-temp-calendar": {
+    "v": [
+      2,
+      5,
+      5,
+      4,
+      2,
+      3,
+      3
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Ein Keimkalender weckt Vorfreude im Frühling.",
+    "funEn": "A germination calendar builds spring anticipation.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "self-hosted-family-vault": {
+    "v": [
+      1,
+      1,
+      3,
+      3,
+      2,
+      2,
+      2
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Ein Installer, der einfach läuft, ist nützlich, aber nicht verspielt.",
+    "funEn": "A one-click installer that just works is useful, not playful.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "sewing-needle-thread-tension-matrix": {
+    "v": [
+      1,
+      1,
+      5,
+      2,
+      3,
+      3,
+      2
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Ein Symptom-Entscheidungsbaum mit Aha-Moment beim Nähproblem.",
+    "funEn": "A symptom decision tree with an aha moment for sewing woes.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "sheet-metal-bend-allowance-calc": {
+    "v": [
+      1,
+      5,
+      5,
+      3,
+      3,
+      3,
+      4
+    ],
+    "fun": 3,
+    "funSource": "sensory",
+    "funDe": "Die SVG-Abwicklung reagiert sofort auf Radius und Dicke.",
+    "funEn": "The SVG flat pattern reacts instantly to radius and thickness.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "smart-home-leak-energy-detector": {
+    "v": [
+      1,
+      2,
+      4,
+      3,
+      2,
+      2,
+      2
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Ein Dashboard mit drei Kacheln, Alarm nur im Ernstfall.",
+    "funEn": "A three-tile dashboard that only alerts in emergencies.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "smartphone-accelerometer-physics-lab": {
+    "v": [
+      1,
+      5,
+      4,
+      3,
+      3,
+      4,
+      3
+    ],
+    "fun": 4,
+    "funSource": "play",
+    "funDe": "Das Handy schwingen und live die Kurve sehen macht Physik zum Spiel.",
+    "funEn": "Swinging the phone and seeing the live curve makes physics a game.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "solar-inverter-clipping-optimizer": {
+    "v": [
+      2,
+      1,
+      5,
+      3,
+      3,
+      3,
+      3
+    ],
+    "fun": 3,
+    "funSource": "play",
+    "funDe": "Am Schieberegler zu drehen und die Jahreskurve wackeln zu sehen macht Spaß.",
+    "funEn": "Dragging the ratio slider and watching the yearly curve shift is fun.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "sourdough-proofing-temperature-clock": {
+    "v": [
+      2,
+      5,
+      4,
+      3,
+      3,
+      3,
+      3
+    ],
+    "fun": 3,
+    "funSource": "sensory",
+    "funDe": "Temperaturregler mit Teigwachstum macht Spaß, Backende teilen gern.",
+    "funEn": "A temperature slider with dough rise is fun, and bakers love to share.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "streiflicht": {
+    "v": [
+      4,
+      2,
+      4,
+      3,
+      4,
+      4,
+      3
+    ],
+    "fun": 4,
+    "funSource": "discovery",
+    "funDe": "Mit dem Lichtwinkel spielen und verwitterte Schrift aus dem Stein auftauchen sehen.",
+    "funEn": "Play with the light angle and watch weathered lettering emerge from the stone.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "tafel-frische-triage": {
+    "v": [
+      3,
+      2,
+      3,
+      3,
+      3,
+      3,
+      2
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Rote Markierungen auf unverträglichen Obstnachbarn geben einen kleinen Aha-Moment.",
+    "funEn": "Overlays on incompatible fruit neighbours give a small aha moment.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "tafel-warenannahme": {
+    "v": [
+      1,
+      3,
+      3,
+      3,
+      1,
+      2,
+      2
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Zweckmäßige Erfassung am Warenrampe ohne Spielmoment.",
+    "funEn": "Functional dock logging with no play moment.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "tap-water-limescale-predictor": {
+    "v": [
+      2,
+      3,
+      4,
+      3,
+      3,
+      3,
+      3
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "PLZ eingeben, Entkalkungstermin bekommen: nützlich, nüchtern.",
+    "funEn": "Enter postal code, get a descaling date: useful, sober.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "tenant-heating-bill-verifier": {
+    "v": [
+      3,
+      5,
+      5,
+      4,
+      4,
+      3,
+      4
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Zahlenprüfung mit Erfolgserlebnis beim gefundenen Fehler, sonst trocken.",
+    "funEn": "Number checking with a small win when an error is found, otherwise dry.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "thermal-curtain-heat-loss-calc": {
+    "v": [
+      2,
+      5,
+      4,
+      3,
+      3,
+      3,
+      3
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Schieberegler zeigen Euro-Ersparnis, mehr Spiel gibt es nicht.",
+    "funEn": "Sliders show euro savings, and that is all the play there is.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "tile-layout-waste-minimizer": {
+    "v": [
+      3,
+      5,
+      5,
+      3,
+      4,
+      5,
+      3
+    ],
+    "fun": 4,
+    "funSource": "play",
+    "funDe": "Fugenraster per Schieber verschieben und Verschnitt schrumpfen sehen.",
+    "funEn": "Slide the grout grid and watch the cut waste shrink.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "tomato-blight-weather-risk-index": {
+    "v": [
+      2,
+      4,
+      4,
+      3,
+      3,
+      3,
+      4
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Ein Risiko-Dashboard, informativ, aber wenig verspielt.",
+    "funEn": "A risk dashboard, informative but hardly playful.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "totholz-kolk-peiler": {
+    "v": [
+      4,
+      4,
+      2,
+      3,
+      3,
+      3,
+      3
+    ],
+    "fun": 3,
+    "funSource": "sensory",
+    "funDe": "Das Vibrationssignal am Kescher zu spüren ist ein ungewöhnlicher Sinneseindruck.",
+    "funEn": "Feeling vibration through a landing-net pole is an unusual sensory experience.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "trail-obstacle-fallen-tree-reporter": {
+    "v": [
+      2,
+      2,
+      4,
+      3,
+      2,
+      3,
+      1
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Wegemeldungen mit GPS haben Entdeckerreiz.",
+    "funEn": "GPS trail reports have an explorer's appeal.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "trockenrasen-transekte": {
+    "v": [
+      3,
+      2,
+      3,
+      4,
+      3,
+      3,
+      4
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Live-Bedeckungsgrad und Vibrationssignal beim Erreichen der Signifikanz sind ein netter Moment.",
+    "funEn": "Live cover ratio and a vibration cue at significance make a nice moment.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "urban-tree-watering-radar": {
+    "v": [
+      2,
+      3,
+      4,
+      3,
+      2,
+      3,
+      2
+    ],
+    "fun": 4,
+    "funSource": "play",
+    "funDe": "Durstige Bäume finden und gießen fühlt sich wie ein kleines Spiel an.",
+    "funEn": "Finding thirsty trees and watering them feels like a small game.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "village-wood-oven-booking-ledger": {
+    "v": [
+      3,
+      3,
+      4,
+      3,
+      3,
+      3,
+      1
+    ],
+    "fun": 3,
+    "funSource": "sensory",
+    "funDe": "Die Temperaturkaskade vom Pizza- bis zum Dörrobst-Slot hat Dorfcharme.",
+    "funEn": "The temperature cascade from pizza to dried fruit has village charm.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "visual-garden-houseplant-doctor": {
+    "v": [
+      1,
+      2,
+      2,
+      3,
+      2,
+      2,
+      3
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Blatt fotografieren und eine Diagnose bekommen hat Entdeckerreiz.",
+    "funEn": "Snapping a leaf and getting a diagnosis has discovery appeal.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "waldbrand-streu-knistern": {
+    "v": [
+      4,
+      4,
+      2,
+      3,
+      3,
+      3,
+      1
+    ],
+    "fun": 4,
+    "funSource": "sensory",
+    "funDe": "Nadelstreu knistern lassen und Ampel reagieren sehen ist sinnlich.",
+    "funEn": "Crackling pine litter and watching the gauge respond is sensory.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "well-water-colorimeter-test-reader": {
+    "v": [
+      3,
+      4,
+      2,
+      3,
+      3,
+      3,
+      3
+    ],
+    "fun": 3,
+    "funSource": "sensory",
+    "funDe": "Streifen fotografieren und Farbabgleich sehen hat Kamera-Reiz.",
+    "funEn": "Photographing a strip and seeing the colour match has camera appeal.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "wheelmap-eingangsfoto": {
+    "v": [
+      1,
+      2,
+      3,
+      4,
+      1,
+      3,
+      3
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Ein Eingangsfoto liefert eine Zahl, kaum Spielraum.",
+    "funEn": "An entrance photo yields a number, little play.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "window-thermal-camera-leak-calibrator": {
+    "v": [
+      2,
+      4,
+      3,
+      3,
+      2,
+      3,
+      2
+    ],
+    "fun": 4,
+    "funSource": "sensory",
+    "funDe": "Wärmebilder von Fenstern sind ein visueller Aha-Effekt.",
+    "funEn": "Thermal images of windows are a visual aha.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "wood-lathe-safe-rpm-calculator": {
+    "v": [
+      2,
+      5,
+      5,
+      3,
+      4,
+      4,
+      3
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Schieber zeigt, wie Randgeschwindigkeit explodiert, ein echtes Aha.",
+    "funEn": "A slider shows rim speed exploding, a real aha.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "wood-moisture-shrinkage-calc": {
+    "v": [
+      1,
+      5,
+      5,
+      3,
+      3,
+      4,
+      4
+    ],
+    "fun": 3,
+    "funSource": "sensory",
+    "funDe": "Schieberegler zeigen, wie sich Holz bewegt, ganz anschaulich.",
+    "funEn": "Sliders show how wood moves, quite tangibly.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "wood-stove-firewood-moisture-estimator": {
+    "v": [
+      2,
+      5,
+      4,
+      4,
+      3,
+      4,
+      4
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Zu sehen, wie Holz über Monate trocknet, ist ein kleiner Aha-Moment.",
+    "funEn": "Watching logs dry over months is a small aha moment.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "wool-yarn-felting-prevention-gauge": {
+    "v": [
+      2,
+      5,
+      3,
+      3,
+      3,
+      2,
+      1
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Eine Waschcheckliste am Spülbecken, freundlich, aber ohne Spielmoment.",
+    "funEn": "A sink-side wash checklist, friendly but without a play moment.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "zero-cloud-password-hygiene": {
+    "v": [
+      2,
+      3,
+      4,
+      3,
+      2,
+      3,
+      2
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Ein Tresor-Audit liefert eine nüchterne Checkliste.",
+    "funEn": "A vault audit yields a sober checklist.",
+    "note": "Schreibtisch-Triage (ohne Websuche)"
+  },
+  "kuehlketten-steckbrief": {
+    "v": [
+      2,
+      4,
+      3,
+      3,
+      3,
+      4,
+      4
+    ],
+    "fun": 3,
+    "funSource": "sensory",
+    "funDe": "Eine Kurve mit der Fläche über der Grenze zu sehen, macht den Kühlkettenbruch greifbar.",
+    "funEn": "Seeing a curve with the area above the limit makes the cold-chain break tangible.",
+    "note": "Reviewer-Scorecard 30.09.2026"
+  },
+  "engpass-prognosetreue": {
+    "v": [
+      2,
+      3,
+      3,
+      4,
+      3,
+      3,
+      4
+    ],
+    "fun": 2,
+    "funSource": "discovery",
+    "funDe": "Zu sehen, wie oft Enddaten wandern, ist ein kleiner Aha-Moment.",
+    "funEn": "Seeing how often end dates drift is a small aha moment.",
+    "note": "Reviewer-Scorecard 30.09.2026"
+  },
+  "fachinfo-aenderungsdiff": {
+    "v": [
+      3,
+      2,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Ein Satzvergleich ist nüchtern.",
+    "funEn": "A sentence diff is sober.",
+    "note": "Reviewer-Scorecard 30.09.2026"
+  },
+  "haeufigkeits-umrechner": {
+    "v": [
+      2,
+      4,
+      3,
+      4,
+      3,
+      3,
+      3
+    ],
+    "fun": 3,
+    "funSource": "discovery",
+    "funDe": "Piktogramme machen Häufigkeiten begreifbar.",
+    "funEn": "Pictograms make frequencies graspable.",
+    "note": "Reviewer-Scorecard 30.09.2026"
+  },
+  "import-prospekt-bruecke": {
+    "v": [
+      3,
+      2,
+      2,
+      3,
+      2,
+      3,
+      3
+    ],
+    "fun": 1,
+    "funSource": "none",
+    "funDe": "Eine Beratungsunterlage ist Arbeit, kein Spiel.",
+    "funEn": "An advisory sheet is work, not play.",
+    "note": "Reviewer-Scorecard 30.09.2026"
+  },
+  "nebenwirkungs-meldeassistent": {
+    "v": [
+      3,
+      3,
+      2,
+      3,
+      2,
+      3,
+      3
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Ein Meldeformular ist ernst.",
+    "funEn": "A report form is serious.",
+    "note": "Reviewer-Scorecard 30.09.2026"
+  },
+  "kompensationsflaechen-buergerlayer": {
+    "v": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      4
+    ],
+    "fun": 2,
+    "funSource": "discovery",
+    "funDe": "Flächen auf der Karte zu finden hat einen kleinen Entdeckerreiz.",
+    "funEn": "Finding areas on the map has a small explorer appeal.",
+    "note": "Reviewer-Scorecard 30.09.2026"
+  },
+  "salmonellen-wetterwarnung": {
+    "v": [
+      2,
+      3,
+      2,
+      3,
+      2,
+      3,
+      2
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Eine Warnung ist nützlich, nicht spielerisch.",
+    "funEn": "A warning is useful, not playful.",
+    "note": "Reviewer-Scorecard 30.09.2026"
+  },
+  "robinien-austrieb-prognose": {
+    "v": [
+      3,
+      2,
+      2,
+      3,
+      3,
+      3,
+      1
+    ],
+    "fun": 2,
+    "funSource": "none",
+    "funDe": "Ein Prognosewert ist nüchtern.",
+    "funEn": "A forecast value is sober.",
+    "note": "Reviewer-Scorecard 30.09.2026"
+  },
+  "virtuelle-robinien": {
+    "v": [
+      3,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2
+    ],
+    "fun": 4,
+    "funSource": "play",
+    "funDe": "Bekämpfungsstrategien spielen und den Bestand in drei Jahren wachsen sehen.",
+    "funEn": "Play control strategies and watch the stand grow over three years.",
+    "note": "Reviewer-Scorecard 30.09.2026"
+  }
+}

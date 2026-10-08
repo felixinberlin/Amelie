@@ -19,6 +19,7 @@ import { Language } from '../../types';
 import {
   PAPER_PRESETS,
   PIGMENT_PRESETS,
+  createPigmentFromHex,
   generatePaperMaps,
   WetInkPaperConfig,
   WetInkPigmentConfig,
@@ -43,8 +44,11 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const engineRef = useRef<WebGL2WetInkEngine | null>(null);
   const animFrameRef = useRef<number | null>(null);
+  const isDrawingRef = useRef<boolean>(false);
 
   const [activeTab, setActiveTab] = useState<'simulation' | 'kubelka-munk' | 'coffee-ring' | 'fiber-anisotropy' | 'shaders'>('simulation');
+  const [activeSlot, setActiveSlot] = useState<1 | 2>(1);
+  const [brushRadius, setBrushRadius] = useState<number>(14);
   const [selectedPaper, setSelectedPaper] = useState<WetInkPaperConfig>(PAPER_PRESETS[0]);
   const [selectedPigment1, setSelectedPigment1] = useState<WetInkPigmentConfig>(
     PIGMENT_PRESETS.find((p) => p.id === 'kadmiumgelb') || PIGMENT_PRESETS[2]
@@ -170,6 +174,70 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
     }
   };
 
+  const getCanvasCoords = (e: React.PointerEvent<HTMLCanvasElement>) => {
+    const canvas = canvasRef.current;
+    if (!canvas) return { x: 0, y: 0 };
+    const rect = canvas.getBoundingClientRect();
+    const scaleX = SIM_W / rect.width;
+    const scaleY = SIM_H / rect.height;
+    const x = Math.max(0, Math.min(SIM_W - 1, (e.clientX - rect.left) * scaleX));
+    const y = Math.max(0, Math.min(SIM_H - 1, (e.clientY - rect.top) * scaleY));
+    return { x, y };
+  };
+
+  const handlePointerDown = (e: React.PointerEvent<HTMLCanvasElement>) => {
+    e.currentTarget.setPointerCapture(e.pointerId);
+    isDrawingRef.current = true;
+    const { x, y } = getCanvasCoords(e);
+    if (engineRef.current && engineRef.current.isSupported) {
+      engineRef.current.stroke(x, y, brushRadius, 1.0, 1.4, activeSlot, true);
+    }
+  };
+
+  const handlePointerMove = (e: React.PointerEvent<HTMLCanvasElement>) => {
+    if (!isDrawingRef.current) return;
+    const { x, y } = getCanvasCoords(e);
+    if (engineRef.current && engineRef.current.isSupported) {
+      engineRef.current.stroke(x, y, brushRadius, 1.0, 1.4, activeSlot, false);
+    }
+  };
+
+  const handlePointerUp = (e: React.PointerEvent<HTMLCanvasElement>) => {
+    try {
+      e.currentTarget.releasePointerCapture(e.pointerId);
+    } catch {
+      // ignore
+    }
+    isDrawingRef.current = false;
+    if (engineRef.current && engineRef.current.isSupported) {
+      engineRef.current.endStroke();
+    }
+  };
+
+  const handlePigment1Change = (pigment: WetInkPigmentConfig) => {
+    setSelectedPigment1(pigment);
+    if (engineRef.current && engineRef.current.isSupported) {
+      engineRef.current.setPigment(pigment, 1);
+    }
+  };
+
+  const handlePigment2Change = (pigment: WetInkPigmentConfig) => {
+    setSelectedPigment2(pigment);
+    if (engineRef.current && engineRef.current.isSupported) {
+      engineRef.current.setPigment(pigment, 2);
+    }
+  };
+
+  const handleCustomColor1Change = (hex: string) => {
+    const custom = createPigmentFromHex(hex, 'custom-1', 'Pigment 1', 'Pigment 1');
+    handlePigment1Change(custom);
+  };
+
+  const handleCustomColor2Change = (hex: string) => {
+    const custom = createPigmentFromHex(hex, 'custom-2', 'Pigment 2', 'Pigment 2');
+    handlePigment2Change(custom);
+  };
+
   // Evaluate interactive Kubelka-Munk vs RGB blend
   const kmResult = evaluatePigmentMixture(
     [
@@ -259,31 +327,69 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* Main WebGL2 Canvas View */}
           <div className="lg:col-span-8 flex flex-col gap-4 bg-white p-5 rounded-2xl border border-stone-200 shadow-sm">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-wrap items-center justify-between gap-3">
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
                 <h3 className="font-serif font-bold text-stone-900 text-lg">
                   {lang === 'de' ? 'Echtzeit-WebGL2-Reaktionsbecken' : lang === 'es' ? 'Cubeta de reacción WebGL2 en tiempo real' : 'Real-time WebGL2 Reaction Basin'}
                 </h3>
               </div>
+
+              {/* Active Drawing Slot Toggle */}
+              <div className="flex items-center gap-1.5 bg-stone-100 p-1 rounded-xl border border-stone-200">
+                <button
+                  onClick={() => setActiveSlot(1)}
+                  className={`px-2.5 py-1 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all cursor-pointer ${
+                    activeSlot === 1
+                      ? 'bg-white text-stone-950 shadow-xs ring-1 ring-stone-900/10 font-bold'
+                      : 'text-stone-600 hover:text-stone-900'
+                  }`}
+                  title={lang === 'de' ? 'Mit Slot 1 zeichnen' : 'Draw with Slot 1'}
+                >
+                  <span
+                    className="w-3.5 h-3.5 rounded-full border border-black/20 shrink-0"
+                    style={{ backgroundColor: selectedPigment1.colorHex }}
+                  />
+                  <span>Slot 1: {selectedPigment1.nameDe.split(' ')[0]}</span>
+                </button>
+                <button
+                  onClick={() => setActiveSlot(2)}
+                  className={`px-2.5 py-1 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all cursor-pointer ${
+                    activeSlot === 2
+                      ? 'bg-white text-stone-950 shadow-xs ring-1 ring-stone-900/10 font-bold'
+                      : 'text-stone-600 hover:text-stone-900'
+                  }`}
+                  title={lang === 'de' ? 'Mit Slot 2 zeichnen' : 'Draw with Slot 2'}
+                >
+                  <span
+                    className="w-3.5 h-3.5 rounded-full border border-black/20 shrink-0"
+                    style={{ backgroundColor: selectedPigment2.colorHex }}
+                  />
+                  <span>Slot 2: {selectedPigment2.nameDe.split(' ')[0]}</span>
+                </button>
+              </div>
+
+              {/* Action Buttons */}
               <div className="flex items-center gap-2">
                 <button
                   onClick={() => handleInjectDrop(0.35, 0.45, 1)}
-                  className="px-3 py-1 bg-amber-50 text-amber-900 border border-amber-300 rounded-lg text-xs font-semibold hover:bg-amber-100 flex items-center gap-1.5"
+                  className="px-2.5 py-1 bg-amber-50 text-amber-900 border border-amber-300 rounded-lg text-xs font-semibold hover:bg-amber-100 flex items-center gap-1 cursor-pointer"
+                  title="Inject drop of Slot 1"
                 >
                   <Droplets className="w-3 h-3 text-amber-600" />
-                  + {selectedPigment1.nameDe.split(' ')[0]}
+                  + Tropfen 1
                 </button>
                 <button
                   onClick={() => handleInjectDrop(0.65, 0.55, 2)}
-                  className="px-3 py-1 bg-blue-50 text-blue-900 border border-blue-300 rounded-lg text-xs font-semibold hover:bg-blue-100 flex items-center gap-1.5"
+                  className="px-2.5 py-1 bg-blue-50 text-blue-900 border border-blue-300 rounded-lg text-xs font-semibold hover:bg-blue-100 flex items-center gap-1 cursor-pointer"
+                  title="Inject drop of Slot 2"
                 >
                   <Droplets className="w-3 h-3 text-blue-600" />
-                  + {selectedPigment2.nameDe.split(' ')[0]}
+                  + Tropfen 2
                 </button>
                 <button
                   onClick={handleClear}
-                  className="p-1.5 text-stone-500 hover:text-stone-800 hover:bg-stone-100 rounded-lg"
+                  className="p-1.5 text-stone-500 hover:text-stone-800 hover:bg-stone-100 rounded-lg cursor-pointer"
                   title="Clear Paper"
                 >
                   <RefreshCw className="w-4 h-4" />
@@ -297,15 +403,24 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
                 ref={canvasRef}
                 width={SIM_W}
                 height={SIM_H}
-                className="w-full h-full object-contain cursor-crosshair"
-                onClick={(e) => {
-                  const rect = e.currentTarget.getBoundingClientRect();
-                  const x = (e.clientX - rect.left) / rect.width;
-                  const y = (e.clientY - rect.top) / rect.height;
-                  handleInjectDrop(x, y, 1);
-                }}
+                className="w-full h-full object-contain cursor-crosshair touch-none select-none"
+                onPointerDown={handlePointerDown}
+                onPointerMove={handlePointerMove}
+                onPointerUp={handlePointerUp}
+                onPointerCancel={handlePointerUp}
               />
-              <div className="absolute bottom-3 left-3 bg-stone-900/80 backdrop-blur text-stone-200 text-[11px] px-3 py-1 rounded-full font-mono flex items-center gap-2 border border-stone-700/60">
+              <div className="absolute top-3 left-3 bg-stone-900/80 backdrop-blur text-stone-200 text-[10px] px-2.5 py-1 rounded-full font-mono flex items-center gap-1.5 border border-stone-700/60 pointer-events-none">
+                <span
+                  className="w-2 h-2 rounded-full"
+                  style={{
+                    backgroundColor: activeSlot === 1 ? selectedPigment1.colorHex : selectedPigment2.colorHex,
+                  }}
+                />
+                <span>
+                  {lang === 'de' ? 'Zeichnen' : 'Drawing'}: Slot {activeSlot} ({activeSlot === 1 ? selectedPigment1.nameDe.split(' ')[0] : selectedPigment2.nameDe.split(' ')[0]})
+                </span>
+              </div>
+              <div className="absolute bottom-3 left-3 bg-stone-900/80 backdrop-blur text-stone-200 text-[11px] px-3 py-1 rounded-full font-mono flex items-center gap-2 border border-stone-700/60 pointer-events-none">
                 <span>{SIM_W}x{SIM_H} Ping-Pong FBO</span>
                 <span>&bull;</span>
                 <span className="text-emerald-400">WebGL2 Active</span>
@@ -393,6 +508,87 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
                   onChange={(e) => setParams({ ...params, enableCapillaryThreshold: e.target.checked })}
                   className="w-4 h-4 accent-emerald-600 rounded"
                 />
+              </div>
+
+              {/* Pigment Slots & Color Selector */}
+              <div className="pt-3 border-t border-stone-100 space-y-3">
+                <span className="text-xs font-semibold text-stone-900 flex items-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+                  {lang === 'de' ? 'Pigment-Slots & Farbwahl' : lang === 'es' ? 'Slots de pigmento y color' : 'Pigment Slots & Color'}
+                </span>
+
+                {/* Slot 1 Selector */}
+                <div className="space-y-1 bg-stone-50 p-2.5 rounded-xl border border-stone-200">
+                  <div className="flex items-center justify-between text-xs">
+                    <span className="font-semibold text-stone-700">Slot 1:</span>
+                    <label className="flex items-center gap-1 bg-white px-1.5 py-0.5 rounded border border-stone-200 cursor-pointer" title="Pick hex color for Slot 1">
+                      <input
+                        type="color"
+                        value={selectedPigment1.colorHex}
+                        onChange={(e) => handleCustomColor1Change(e.target.value)}
+                        className="w-3.5 h-3.5 rounded border-0 p-0 cursor-pointer bg-transparent"
+                      />
+                      <span className="font-mono text-[10px] text-stone-600 uppercase">{selectedPigment1.colorHex}</span>
+                    </label>
+                  </div>
+                  <select
+                    value={selectedPigment1.id}
+                    onChange={(e) => {
+                      const found = PIGMENT_PRESETS.find((p) => p.id === e.target.value);
+                      if (found) handlePigment1Change(found);
+                    }}
+                    className="w-full text-xs bg-white border border-stone-300 rounded-lg p-1.5 text-stone-800"
+                  >
+                    {PIGMENT_PRESETS.map((p) => (
+                      <option key={p.id} value={p.id}>{p.nameDe}</option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Slot 2 Selector (Blue by default) */}
+                <div className="space-y-1 bg-stone-50 p-2.5 rounded-xl border border-stone-200">
+                  <div className="flex items-center justify-between text-xs">
+                    <span className="font-semibold text-stone-700">Slot 2 (Blau / Kontrast):</span>
+                    <label className="flex items-center gap-1 bg-white px-1.5 py-0.5 rounded border border-stone-200 cursor-pointer" title="Pick hex color for Slot 2">
+                      <input
+                        type="color"
+                        value={selectedPigment2.colorHex}
+                        onChange={(e) => handleCustomColor2Change(e.target.value)}
+                        className="w-3.5 h-3.5 rounded border-0 p-0 cursor-pointer bg-transparent"
+                      />
+                      <span className="font-mono text-[10px] text-stone-600 uppercase">{selectedPigment2.colorHex}</span>
+                    </label>
+                  </div>
+                  <select
+                    value={selectedPigment2.id}
+                    onChange={(e) => {
+                      const found = PIGMENT_PRESETS.find((p) => p.id === e.target.value);
+                      if (found) handlePigment2Change(found);
+                    }}
+                    className="w-full text-xs bg-white border border-stone-300 rounded-lg p-1.5 text-stone-800"
+                  >
+                    {PIGMENT_PRESETS.map((p) => (
+                      <option key={p.id} value={p.id}>{p.nameDe}</option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Brush Radius Slider */}
+                <div className="space-y-1">
+                  <div className="flex justify-between text-xs">
+                    <span className="text-stone-600">{lang === 'de' ? 'Strichstärke:' : 'Brush Radius:'}</span>
+                    <span className="font-mono font-bold text-stone-800">{brushRadius} px</span>
+                  </div>
+                  <input
+                    type="range"
+                    min="4"
+                    max="32"
+                    step="1"
+                    value={brushRadius}
+                    onChange={(e) => setBrushRadius(parseInt(e.target.value, 10))}
+                    className="w-full accent-stone-800 cursor-pointer"
+                  />
+                </div>
               </div>
             </div>
 
@@ -767,6 +963,33 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
           </div>
         </div>
       )}
+
+      {/* Subtle Craftsmanship & Extended Architecture Footer */}
+      <div className="pt-3 border-t border-stone-800 flex flex-col sm:flex-row items-center justify-between text-[11px] text-stone-500 gap-2">
+        <div className="flex items-center gap-1.5">
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+          <span className="font-serif italic text-stone-400">
+            {lang === 'de'
+              ? 'Amélie Werkstatt-Modell (CC0 Public Domain)'
+              : lang === 'es'
+              ? 'Modelo de taller de Amélie (Dominio público CC0)'
+              : 'Amélie Workshop Reference (CC0 Public Domain)'}
+          </span>
+        </div>
+        <div className="text-stone-500 text-center sm:text-right">
+          {lang === 'de'
+            ? 'Für schlüsselfertige Editor-Plugins (TipTap, React, Obsidian) oder Pro-Integrationen: '
+            : lang === 'es'
+            ? 'Para plugins de editor (TipTap, React, Obsidian) o versión pro: '
+            : 'For turnkey editor plugins (TipTap, React, Obsidian) or pro integrations: '}
+          <a
+            href="mailto:Felix@amelieproject.org?subject=Wet%20Ink%20Pro%20Integration"
+            className="text-stone-400 hover:text-amber-400 font-medium underline underline-offset-2 transition-colors cursor-pointer"
+          >
+            Felix@amelieproject.org
+          </a>
+        </div>
+      </div>
     </div>
   );
 };

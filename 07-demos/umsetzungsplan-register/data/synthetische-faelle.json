@@ -1,0 +1,157 @@
+{
+  "hinweis": "ALLE EINTRÄGE SIND SYNTHETISCH. Firmen, Maßnahmen, Beträge und URLs sind erfunden (example.org ist eine reservierte Beispiel-Domain). Sie decken nur Randfälle des Prüfers ab und bilden keinen echten Plan ab. Lizenz: CC0 1.0 Public Domain.",
+  "faelle": [
+    {
+      "fall": "angabe-nicht-uebertragen",
+      "beschreibung": "Eine Zeile ohne Zeitrahmen",
+      "erwartet": ["U1-ANGABE"],
+      "plan": {
+        "unternehmen": "Beispiel Werke GmbH",
+        "datenart": "synthetisch",
+        "rechtsstand": "a. F.",
+        "merkblattFassung": "2026-09-16",
+        "erstellt": "2026-03",
+        "format": "tabelle",
+        "quelle": { "url": "https://example.org/beispiel-werke/umsetzungsplan-2026.pdf", "abgerufenAm": "2026-09-28" },
+        "massnahmen": [
+          { "id": "Z1", "prioritaet": "1", "massnahme": "Druckluftleckagen beheben", "investitionsvolumen": "8.000 €", "zeitrahmen": "04/2026 - 09/2026", "status": "Offen" },
+          { "id": "Z2", "prioritaet": "2", "massnahme": "Hallenbeleuchtung LED", "investitionsvolumen": "40.000 €", "status": "Offen" }
+        ]
+      }
+    },
+    {
+      "fall": "status-ausserhalb",
+      "beschreibung": "Status „erledigt“ statt einer Merkblatt-Kategorie",
+      "erwartet": ["U2-STATUS"],
+      "plan": {
+        "unternehmen": "Muster Metall KG",
+        "datenart": "synthetisch",
+        "rechtsstand": "a. F.",
+        "merkblattFassung": "2026-09-16",
+        "erstellt": "2026-02",
+        "format": "tabelle",
+        "quelle": { "url": "https://example.org/muster-metall/enefg-plan.pdf", "abgerufenAm": "2026-09-28" },
+        "massnahmen": [
+          { "id": "Z1", "prioritaet": "A", "massnahme": "Abwärmenutzung Härterei", "investitionsvolumen": "120.000 €", "zeitrahmen": "Q1/2026 - Q4/2026", "status": "erledigt" }
+        ]
+      }
+    },
+    {
+      "fall": "zeitrahmen-unlesbar",
+      "beschreibung": "Zeitrahmen „zeitnah“",
+      "erwartet": ["U3-ZEITRAHMEN"],
+      "plan": {
+        "unternehmen": "Exempel Druck GmbH",
+        "datenart": "synthetisch",
+        "rechtsstand": "a. F.",
+        "merkblattFassung": "2026-09-16",
+        "erstellt": "2026-05",
+        "format": "tabelle",
+        "quelle": { "url": "https://example.org/exempel-druck/umsetzungsplan.pdf", "abgerufenAm": "2026-09-28" },
+        "massnahmen": [
+          { "id": "Z1", "prioritaet": "A", "massnahme": "Trocknerregelung", "investitionsvolumen": "15.000 €", "zeitrahmen": "zeitnah", "status": "Offen" }
+        ]
+      }
+    },
+    {
+      "fall": "investition-kein-betrag",
+      "beschreibung": "Investitionsvolumen „auf Anfrage“",
+      "erwartet": ["U4-INVESTITION"],
+      "plan": {
+        "unternehmen": "Probe Chemie AG",
+        "datenart": "synthetisch",
+        "rechtsstand": "a. F.",
+        "merkblattFassung": "2026-09-16",
+        "erstellt": "2026-01",
+        "format": "tabelle",
+        "quelle": { "url": "https://example.org/probe-chemie/umsetzungsplan-2026.pdf", "abgerufenAm": "2026-09-28" },
+        "massnahmen": [
+          { "id": "Z1", "prioritaet": "A", "massnahme": "Dampfnetz optimieren", "investitionsvolumen": "auf Anfrage", "zeitrahmen": "06/2026 - 12/2027", "status": "Offen" },
+          { "id": "Z2", "prioritaet": "B", "massnahme": "Pumpen tauschen", "investitionsvolumen": "30.000 €", "zeitrahmen": "06/2026 - 12/2026", "status": "Offen" }
+        ]
+      }
+    },
+    {
+      "fall": "summe-abweichend",
+      "beschreibung": "Summenzeile 100.000 €, Einzelwerte ergeben 90.000 €",
+      "erwartet": ["U5-SUMME"],
+      "plan": {
+        "unternehmen": "Fiktiv Logistik SE",
+        "datenart": "synthetisch",
+        "rechtsstand": "a. F.",
+        "merkblattFassung": "2026-09-16",
+        "erstellt": "2026-04",
+        "format": "tabelle",
+        "quelle": { "url": "https://example.org/fiktiv-logistik/plan.pdf", "abgerufenAm": "2026-09-28" },
+        "gesamtInvestitionsvolumen": "100.000,00 €",
+        "massnahmen": [
+          { "id": "Z1", "prioritaet": "A", "massnahme": "Kühlhaus Türen", "investitionsvolumen": "60.000,00 €", "zeitrahmen": "05/2026 - 10/2026", "status": "In Bearbeitung" },
+          { "id": "Z2", "prioritaet": "B", "massnahme": "Ladetechnik Stapler", "investitionsvolumen": "30.000,00 €", "zeitrahmen": "01/2027 - 06/2027", "status": "Offen" }
+        ]
+      }
+    },
+    {
+      "fall": "zeitrahmen-abgelaufen",
+      "beschreibung": "Zeitrahmen endet 12/2025, Planstand 06/2026, Status „Offen“",
+      "erwartet": ["U6-ZEITRAHMEN-ABGELAUFEN"],
+      "plan": {
+        "unternehmen": "Beispiel Papier GmbH",
+        "datenart": "synthetisch",
+        "rechtsstand": "a. F.",
+        "merkblattFassung": "2026-09-16",
+        "erstellt": "2025-03",
+        "aktualisiert": "2026-06",
+        "format": "tabelle",
+        "quelle": { "url": "https://example.org/beispiel-papier/umsetzungsplan-2026-06.pdf", "abgerufenAm": "2026-09-28" },
+        "massnahmen": [
+          { "id": "Z1", "prioritaet": "A", "massnahme": "Wärmerückgewinnung Trockenpartie", "investitionsvolumen": "250.000 €", "zeitrahmen": "04/2025 - 12/2025", "status": "Offen" },
+          { "id": "Z2", "prioritaet": "B", "massnahme": "Frequenzumrichter", "investitionsvolumen": "20.000 €", "zeitrahmen": "04/2025 - 12/2025", "status": "Abgeschlossen" }
+        ]
+      }
+    },
+    {
+      "fall": "rechtsstand-nf",
+      "beschreibung": "Plan nach § 9 n. F. gegen ein Merkblatt zu § 9 a. F.",
+      "erwartet": ["U7-RECHTSSTAND"],
+      "plan": {
+        "unternehmen": "Muster Glas GmbH",
+        "datenart": "synthetisch",
+        "rechtsstand": "n. F.",
+        "merkblattFassung": "2026-09-16",
+        "erstellt": "2027-05",
+        "format": "tabelle",
+        "quelle": { "url": "https://example.org/muster-glas/umsetzungsplan-2027.pdf", "abgerufenAm": "2026-09-28" },
+        "massnahmen": [
+          { "id": "Z1", "prioritaet": "A", "massnahme": "Wannenisolierung", "investitionsvolumen": "1,2 Mio. €", "zeitrahmen": "Q3/2027 - Q2/2028", "status": "Offen" }
+        ]
+      }
+    },
+    {
+      "fall": "freitext",
+      "beschreibung": "Zweiseitiges Erklärdokument ohne Tabelle (nach dem Vorbild eines Stadtwerke-Dokuments, Inhalt erfunden)",
+      "erwartet": ["U0-FREITEXT"],
+      "plan": {
+        "unternehmen": "Exempel Stadtwerke GmbH",
+        "datenart": "synthetisch",
+        "rechtsstand": "a. F.",
+        "merkblattFassung": "2026-09-16",
+        "erstellt": "2025-10",
+        "format": "freitext",
+        "quelle": { "url": "https://example.org/exempel-stadtwerke/enefg-erklaerung.pdf", "abgerufenAm": "2026-09-28" },
+        "massnahmen": []
+      }
+    }
+  ],
+  "suchnachweise": [
+    {
+      "unternehmen": "Probe Textil GmbH",
+      "planjahr": 2025,
+      "synthetisch": true,
+      "stand": "2026-09-28",
+      "suchweg": {
+        "orte": ["https://example.org/probe-textil/ (Website, Rubrik Nachhaltigkeit)", "Unternehmensregister (Jahresabschluss 2025)"],
+        "suchbegriffe": ["Umsetzungsplan", "§ 9 EnEfG", "Endenergieeinsparmaßnahmen"]
+      }
+    }
+  ]
+}

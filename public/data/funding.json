@@ -1,0 +1,1415 @@
+[
+  {
+    "id": "prototype-fund",
+    "category": "oss",
+    "nameDe": "Prototype Fund",
+    "nameEn": "Prototype Fund",
+    "funder": "OKF Deutschland · BMFTR",
+    "amountDe": "bis 47.500 € (Einzelne, 6 Monate) · Teams bis 158.333 € (10 Monate)",
+    "amountEn": "up to €47,500 (individuals, 6 months) · teams up to €158,333 (10 months)",
+    "timing": "dated",
+    "opens": "2026-10-01",
+    "deadline": "2026-11-30",
+    "applicants": [
+      "individual"
+    ],
+    "topics": [
+      "infrastructure",
+      "democracy",
+      "science",
+      "knowledge",
+      "admin"
+    ],
+    "fit": 3,
+    "fitDe": "Jede Dose mit Ticket 01 ist im Kern ein Prototype-Fund-Antrag. Klasse 03 läuft 01.10.–30.11.2026.",
+    "fitEn": "Every dose with a Ticket 01 is essentially a Prototype Fund application. Class 03 runs 1 Oct – 30 Nov 2026.",
+    "conditionsDe": "Wohnsitz in Deutschland · Einzelne oder Teams bis 4 · Großorganisationen ausgeschlossen · vollständig unter Open-Source-Lizenz, kein Dual Licensing, kein Open Core · Förderschwerpunkte Datensicherheit und Software-Infrastruktur.",
+    "conditionsEn": "Residence in Germany · individuals or teams of up to 4 · large organisations excluded · fully open-source licensed, no dual licensing, no open core · focus on data security and software infrastructure.",
+    "evidence": "snippet",
+    "url": "https://www.prototypefund.de/en",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "sovereign-tech-fund",
+    "category": "oss",
+    "nameDe": "Sovereign Tech Fund",
+    "nameEn": "Sovereign Tech Fund",
+    "funder": "Sovereign Tech Agency",
+    "amountDe": "ab 50.000 €, kein festes Maximum",
+    "amountEn": "from €50,000, no fixed upper limit",
+    "timing": "rolling",
+    "applicants": [
+      "ngo",
+      "startup",
+      "individual"
+    ],
+    "topics": [
+      "infrastructure"
+    ],
+    "fit": 1,
+    "fitDe": "Nur für Bausteine (z. B. ein Registerkern-Paket). Keine Prototypen, keine nutzernahen Anwendungen.",
+    "fitEn": "Only for building blocks (e.g. a register-core package). No prototypes, no user-facing apps.",
+    "evidence": "snippet",
+    "url": "https://www.sovereign.tech/programs/fund",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "sovereign-tech-fellowship",
+    "category": "oss",
+    "nameDe": "Sovereign Tech Fellowship",
+    "nameEn": "Sovereign Tech Fellowship",
+    "funder": "Sovereign Tech Agency",
+    "amountDe": "Vergütung für Maintainer, Community-Manager, Technical Writer",
+    "amountEn": "Pay for maintainers, community managers, technical writers",
+    "timing": "cycle",
+    "deadline": "2026-04-06",
+    "nextDe": "Runde 2027 beobachten",
+    "nextEn": "Watch for the 2027 round",
+    "applicants": [
+      "individual"
+    ],
+    "topics": [
+      "infrastructure"
+    ],
+    "fit": 1,
+    "fitDe": "Nur für Maintainer kritischer Komponenten.",
+    "fitEn": "Only for maintainers of critical components.",
+    "evidence": "snippet",
+    "url": "https://www.sovereign.tech/programs/fellowship",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "ngi-zero",
+    "category": "oss",
+    "nameDe": "NLnet · NGI Zero Commons Fund",
+    "nameEn": "NLnet · NGI Zero Commons Fund",
+    "funder": "NLnet · EU",
+    "amountDe": "5.000–50.000 €",
+    "amountEn": "€5,000–50,000",
+    "timing": "paused",
+    "deadline": "2026-06-01",
+    "nextDe": "Letzte Runde am 01.06.2026 geschlossen; Nachfolger „Open Internet Stack\" beobachten",
+    "nextEn": "Final call closed 1 Jun 2026; watch the successor “Open Internet Stack”",
+    "applicants": [
+      "individual",
+      "ngo",
+      "startup"
+    ],
+    "topics": [
+      "infrastructure",
+      "democracy",
+      "knowledge"
+    ],
+    "fit": 2,
+    "fitDe": "Wäre ideal für Dosen gewesen, aktuell zu.",
+    "fitEn": "Would have been ideal for doses; currently shut.",
+    "evidence": "snippet",
+    "url": "https://nlnet.nl/commonsfund/",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "dbu-digital-natur",
+    "category": "oss",
+    "nameDe": "DBU · Digital.Natur.Landschaft",
+    "nameEn": "DBU · Digital.Natur.Landschaft",
+    "funder": "Deutsche Bundesstiftung Umwelt",
+    "amountDe": "Projekte 50.000–500.000 €, Zuschuss bis 125.000 €",
+    "amountEn": "Projects €50k–500k, grant up to €125k",
+    "timing": "rolling",
+    "applicants": [
+      "ngo",
+      "university",
+      "startup"
+    ],
+    "topics": [
+      "nature",
+      "energy"
+    ],
+    "fit": 3,
+    "fitDe": "Digitale Anwendungen für Biodiversität, Klima und Boden (seit 02/2026). Passt zu Biotoptyp-Assistent, Vogelschlag, Baumkataster. Skizze jederzeit.",
+    "fitEn": "Digital applications for biodiversity, climate and soil (since 02/2026). Fits the biotope assistant, bird-strike and tree-register doses. Outline any time.",
+    "evidence": "snippet",
+    "url": "https://www.dbu.de/foerderung/projektfoerderung/foerderthemen/",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "github-secure-oss",
+    "category": "oss",
+    "nameDe": "GitHub Secure Open Source Fund",
+    "nameEn": "GitHub Secure Open Source Fund",
+    "funder": "GitHub · Sloan, Microsoft u. a.",
+    "amountDe": "10.000 $ pro Projekt + Security-Schulung",
+    "amountEn": "$10,000 per project + security training",
+    "timing": "cycle",
+    "nextDe": "Kohortenbasiert, Bewerbungsfenster prüfen",
+    "nextEn": "Cohort-based, check the application window",
+    "applicants": [
+      "individual",
+      "ngo"
+    ],
+    "topics": [
+      "infrastructure"
+    ],
+    "fit": 1,
+    "fitDe": "Nur sicherheitsrelevante Kerne.",
+    "fitEn": "Security-relevant cores only.",
+    "evidence": "snippet",
+    "url": "https://github.com/open-source/github-secure-open-source-fund",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "mfund",
+    "category": "oss",
+    "nameDe": "mFUND · Förderlinie 1",
+    "nameEn": "mFUND · funding line 1",
+    "funder": "BMV (vormals BMDV)",
+    "amountDe": "kleine Projekte und Studien bis 200.000 €, bis 18 Monate",
+    "amountEn": "small projects and studies up to €200k, up to 18 months",
+    "timing": "rolling",
+    "applicants": [
+      "ngo",
+      "startup",
+      "university",
+      "municipality"
+    ],
+    "topics": [
+      "mobility"
+    ],
+    "fit": 2,
+    "fitDe": "Mobilitäts- und Geodaten-Dosen (Schulweg, Radverkehr, Barrieren). Skizzen laufend.",
+    "fitEn": "Mobility and geodata doses (school routes, cycling, barriers). Outlines accepted continuously.",
+    "evidence": "snippet",
+    "url": "https://www.bmv.de/DE/Themen/Mobilitaet/mFund/Ueberblick/ueberblick.html",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "sprind",
+    "category": "oss",
+    "nameDe": "SPRIND · Funken und Challenges",
+    "nameEn": "SPRIND · Funken and Challenges",
+    "funder": "Bundesagentur für Sprunginnovationen",
+    "amountDe": "Funken bis 350.000 € je Stufe · Challenges bis 7,2 Mio. € je Team",
+    "amountEn": "Funken up to €350k per stage · challenges up to €7.2m per team",
+    "timing": "dated",
+    "deadline": "2026-10-22",
+    "applicants": [
+      "startup",
+      "university"
+    ],
+    "topics": [
+      "science"
+    ],
+    "fit": 0,
+    "fitDe": "Kaum Civic Tech (Challenge „Next Frontier Robotics\", Frist 22.10.2026). Nur für Deep-Tech-Zwillinge.",
+    "fitEn": "Hardly civic tech (challenge “Next Frontier Robotics”, deadline 22 Oct 2026). Deep-tech twins only.",
+    "evidence": "snippet",
+    "url": "https://www.sprind.org/taten/challenges",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "civic-coding",
+    "category": "civil",
+    "nameDe": "Civic Coding · Accelerator",
+    "nameEn": "Civic Coding · Accelerator",
+    "funder": "BMAS, BMBFSFJ, BMUKN, BMDS",
+    "amountDe": "Programm (3 Monate) · Verbünde der Civic Innovation Platform bis 500.000 €",
+    "amountEn": "Programme (3 months) · Civic Innovation Platform consortia up to €500k",
+    "timing": "cycle",
+    "deadline": "2026-07-31",
+    "nextDe": "Accelerator läuft 09.–12.2026; Bewerbung 2027 beobachten",
+    "nextEn": "Accelerator runs Sep–Dec 2026; watch for 2027 applications",
+    "applicants": [
+      "ngo"
+    ],
+    "topics": [
+      "work",
+      "democracy",
+      "admin"
+    ],
+    "fit": 3,
+    "fitDe": "Empfänger-Kanal: Challenges kommen aus NGOs, die eine KI-Lösung suchen.",
+    "fitEn": "Recipient channel: challenges come from NGOs seeking an AI solution.",
+    "evidence": "snippet",
+    "url": "https://www.civic-coding.de/",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "civic-innovation",
+    "category": "civil",
+    "nameDe": "Civic Innovation Platform · „Gemeinsam wird es KI\"",
+    "nameEn": "Civic Innovation Platform · “Gemeinsam wird es KI”",
+    "funder": "BMAS",
+    "amountDe": "Ideenwettbewerb bis 20.000 € (pausiert) · Förderrichtlinien: Verbund bis 500.000 €",
+    "amountEn": "Idea contest up to €20k (paused) · funding guidelines: consortium up to €500k",
+    "timing": "paused",
+    "nextDe": "Ideenwettbewerb pausiert (3 Runden 2020–2023). Aktuelle Richtlinie „Civic Innovation\" prüfen",
+    "nextEn": "Idea contest paused (3 rounds 2020–2023). Check the current “Civic Innovation” guideline",
+    "applicants": [
+      "ngo",
+      "university",
+      "startup"
+    ],
+    "topics": [
+      "work",
+      "democracy"
+    ],
+    "fit": 2,
+    "fitDe": "Arbeits- und Sozialbezug. Detailseiten nicht gelesen.",
+    "fitEn": "Labour and social focus. Detail pages not read.",
+    "evidence": "read",
+    "url": "https://www.civic-innovation.de/start",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "ki-leuchttuerme",
+    "category": "civil",
+    "nameDe": "KI-Leuchttürme für Umwelt, Klima, Natur und Ressourcen",
+    "nameEn": "AI lighthouses for environment, climate, nature and resources",
+    "funder": "BMUKN · Träger ZUG",
+    "amountDe": "Topf ca. 24 Mio. €",
+    "amountEn": "Pot approx. €24m",
+    "timing": "cycle",
+    "nextDe": "Aktuellen Aufruf beim Träger ZUG prüfen",
+    "nextEn": "Check the current call at the project agency ZUG",
+    "applicants": [
+      "ngo",
+      "university",
+      "startup",
+      "municipality"
+    ],
+    "topics": [
+      "nature",
+      "energy"
+    ],
+    "fit": 2,
+    "fitDe": "Natürlicher Klimaschutz mit KI. Nur mit Verbund.",
+    "fitEn": "Natural climate protection with AI. Consortium needed.",
+    "evidence": "snippet",
+    "url": "https://www.bundesumweltministerium.de/programm/ki-leuchttuerme-fuer-umwelt-klima-natur-und-ressourcen",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "bmjv-innovation",
+    "category": "civil",
+    "nameDe": "Innovationsförderung im Verbraucherschutz",
+    "nameEn": "Innovation funding for consumer protection",
+    "funder": "BMJV · BLE",
+    "amountDe": "bis 500.000 € je Projekt",
+    "amountEn": "up to €500k per project",
+    "timing": "rolling",
+    "applicants": [
+      "ngo",
+      "university"
+    ],
+    "topics": [
+      "consumer"
+    ],
+    "fit": 3,
+    "fitDe": "Verbraucher-Dosen mit Verbraucherzentralen oder co2online als Antragsteller.",
+    "fitEn": "Consumer doses with consumer advice centres or co2online as applicant.",
+    "evidence": "snippet",
+    "url": "https://www.foerderdatenbank.de/FDB/Content/DE/Foerderprogramm/Bund/BMU/programm-zur-innovationsfoerderung-im-verbraucher.html",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "citizen-science",
+    "category": "civil",
+    "nameDe": "BMFTR Citizen Science (mit:forschen!)",
+    "nameEn": "BMFTR Citizen Science (mit:forschen!)",
+    "funder": "BMFTR",
+    "amountDe": "10.000–150.000 € (Wissenschaftsjahr-Richtlinie)",
+    "amountEn": "€10k–150k (Science Year guideline)",
+    "timing": "cycle",
+    "deadline": "2025-09-03",
+    "nextDe": "Förderlinie für 2027 beobachten",
+    "nextEn": "Watch the funding line for 2027",
+    "applicants": [
+      "ngo",
+      "university"
+    ],
+    "topics": [
+      "science",
+      "nature"
+    ],
+    "fit": 2,
+    "fitDe": "Quelle für Typ B (Citizen Science mit manueller Auswertung).",
+    "fitEn": "Source for type B (citizen science with manual evaluation).",
+    "evidence": "snippet",
+    "url": "https://www.bmftr.bund.de/DE/Forschung/Gesellschaft/Beteiligungdergesellschaft/CitizenScience/citizenscience_node.html",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "mercator",
+    "category": "civil",
+    "nameDe": "Stiftung Mercator · Digitalisierte Gesellschaft",
+    "nameEn": "Stiftung Mercator · Digitalised society",
+    "funder": "Stiftung Mercator",
+    "amountDe": "projektabhängig",
+    "amountEn": "project-dependent",
+    "timing": "rolling",
+    "applicants": [
+      "ngo"
+    ],
+    "topics": [
+      "democracy",
+      "admin"
+    ],
+    "fit": 1,
+    "fitDe": "Nur über Organisationen. Skizzen jederzeit.",
+    "fitEn": "Via organisations only. Outlines any time.",
+    "evidence": "snippet",
+    "url": "https://www.stiftung-mercator.de/de/woran-wir-arbeiten/projekte/",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "bosch",
+    "category": "civil",
+    "nameDe": "Robert Bosch Stiftung · Digitale Zivilgesellschaft",
+    "nameEn": "Robert Bosch Stiftung · Digital civil society",
+    "funder": "Robert Bosch Stiftung",
+    "amountDe": "projektabhängig",
+    "amountEn": "project-dependent",
+    "timing": "rolling",
+    "applicants": [
+      "ngo"
+    ],
+    "topics": [
+      "democracy"
+    ],
+    "fit": 1,
+    "fitDe": "Nur über Organisationen. Laufende Skizzen.",
+    "fitEn": "Via organisations only. Rolling outlines.",
+    "evidence": "snippet",
+    "url": "https://www.bosch-stiftung.de/de/publikation/digitale-zivilgesellschaft-foerdern",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "foerderfonds-demokratie",
+    "category": "civil",
+    "nameDe": "Förderfonds Demokratie",
+    "nameEn": "Democracy funding pool (Förderfonds Demokratie)",
+    "funder": "Toepfer, Bertelsmann, Telekom-Stiftung, Gerda Henkel, Körber, Bosch, Schöpflin, Mercator",
+    "amountDe": "projektabhängig",
+    "amountEn": "project-dependent",
+    "timing": "rolling",
+    "applicants": [
+      "ngo"
+    ],
+    "topics": [
+      "democracy"
+    ],
+    "fit": 1,
+    "fitDe": "Für Beteiligungs-Dosen über zivilgesellschaftliche Initiativen.",
+    "fitEn": "For participation doses via civil society initiatives.",
+    "evidence": "snippet",
+    "url": "https://www.foerderfonds-demokratie.de/en/wir-ueber-uns",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "ehrensache-gemeinwohl",
+    "category": "civil",
+    "nameDe": "Ehrensache Gemeinwohl",
+    "nameEn": "Ehrensache Gemeinwohl",
+    "funder": "Bertelsmann, DSEE, Hertie, Körber",
+    "amountDe": "Übersicht über Förderangebote",
+    "amountEn": "Overview of funding offers",
+    "timing": "resource",
+    "applicants": [
+      "ngo",
+      "municipality"
+    ],
+    "topics": [
+      "democracy"
+    ],
+    "fit": 1,
+    "fitDe": "Empfängersuche im kommunalen Engagement.",
+    "fitEn": "Recipient search in municipal engagement.",
+    "evidence": "snippet",
+    "url": "https://koerber-stiftung.de/en/projects/ehrensache-gemeinwohl/",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "wikimedia",
+    "category": "civil",
+    "nameDe": "Wikimedia Deutschland · Förderportal",
+    "nameEn": "Wikimedia Deutschland · funding portal",
+    "funder": "Wikimedia Deutschland",
+    "amountDe": "klein, für Engagement und Freies Wissen",
+    "amountEn": "small, for engagement and free knowledge",
+    "timing": "rolling",
+    "applicants": [
+      "individual",
+      "ngo"
+    ],
+    "topics": [
+      "knowledge"
+    ],
+    "fit": 1,
+    "fitDe": "Für Wiki- und Open-Data-nahe Dosen. Beratung seit 05/2026.",
+    "fitEn": "For wiki- and open-data-adjacent doses. Consultations since 05/2026.",
+    "evidence": "snippet",
+    "url": "https://foerderung.wikimedia.de/",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "dsee",
+    "category": "civil",
+    "nameDe": "100xDigital · DSEE",
+    "nameEn": "100xDigital · DSEE",
+    "funder": "Deutsche Stiftung für Engagement und Ehrenamt",
+    "amountDe": "100 gemeinnützige Organisationen",
+    "amountEn": "100 non-profit organisations",
+    "timing": "cycle",
+    "nextDe": "Aktuelle Runde nicht geprüft",
+    "nextEn": "Current round not checked",
+    "applicants": [
+      "ngo"
+    ],
+    "topics": [
+      "democracy"
+    ],
+    "fit": 1,
+    "fitDe": "Empfängerseite: Digitalisierung von Vereinen.",
+    "fitEn": "Recipient side: digitalisation of associations.",
+    "evidence": "snippet",
+    "url": "https://www.deutsche-stiftung-engagement-und-ehrenamt.de/foerderalternativen/",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "vw-stiftung",
+    "category": "civil",
+    "nameDe": "VolkswagenStiftung",
+    "nameEn": "Volkswagen Foundation",
+    "funder": "VolkswagenStiftung",
+    "amountDe": "Wachstumsförderung bis 400.000 € (Wissenschafts- und Datenjournalismus)",
+    "amountEn": "Growth grants up to €400k (science and data journalism)",
+    "timing": "cycle",
+    "nextDe": "Nur Forschung und Journalismus",
+    "nextEn": "Research and journalism only",
+    "applicants": [
+      "university",
+      "ngo"
+    ],
+    "topics": [
+      "science",
+      "knowledge"
+    ],
+    "fit": 1,
+    "fitDe": "Datenjournalismus-Redaktionen sind mögliche Empfänger.",
+    "fitEn": "Data-journalism newsrooms are possible recipients.",
+    "evidence": "snippet",
+    "url": "https://www.volkswagenstiftung.de/de/news/aktuelles/foerderung-fuer-gruenderinnen-im-wissenschaftsjournalismus",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "startsocial",
+    "category": "civil",
+    "nameDe": "startsocial · Beratungsstipendien",
+    "nameEn": "startsocial · advisory scholarships",
+    "funder": "startsocial e.V.",
+    "amountDe": "100 Stipendien à 4 Monate Beratung",
+    "amountEn": "100 scholarships of 4 months advice",
+    "timing": "cycle",
+    "deadline": "2026-07-15",
+    "nextDe": "Runde 2027 beobachten",
+    "nextEn": "Watch the 2027 round",
+    "applicants": [
+      "ngo",
+      "individual"
+    ],
+    "topics": [
+      "democracy"
+    ],
+    "fit": 1,
+    "fitDe": "Für Empfänger-Initiativen oder für Amélie selbst.",
+    "fitEn": "For recipient initiatives or for Amélie itself.",
+    "evidence": "snippet",
+    "url": "https://startsocial.de/",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "mozilla-democracy-ai",
+    "category": "civil",
+    "nameDe": "Mozilla · Democracy x AI",
+    "nameEn": "Mozilla · Democracy x AI",
+    "funder": "Mozilla Foundation",
+    "amountDe": "50.000 $ Kohorte · Fellows bis 100.000 $",
+    "amountEn": "$50k cohort · fellows up to $100k",
+    "timing": "cycle",
+    "deadline": "2026-03-16",
+    "nextDe": "Beobachten",
+    "nextEn": "Watch",
+    "applicants": [
+      "individual",
+      "ngo"
+    ],
+    "topics": [
+      "democracy"
+    ],
+    "fit": 1,
+    "fitDe": "Für Beteiligungs- und Offenlegungs-Dosen mit KI-Bezug.",
+    "fitEn": "For participation and disclosure doses with an AI angle.",
+    "evidence": "snippet",
+    "url": "https://grantedai.com/blog/mozilla-democracy-ai-cohort-50k-grants-2026",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "civitates",
+    "category": "civil",
+    "nameDe": "Civitates",
+    "nameEn": "Civitates",
+    "funder": "Luminate u. a. (europäischer Pool)",
+    "amountDe": "projektabhängig",
+    "amountEn": "project-dependent",
+    "timing": "cycle",
+    "nextDe": "Periodische Calls, Website nicht geprüft",
+    "nextEn": "Periodic calls, website not checked",
+    "applicants": [
+      "ngo"
+    ],
+    "topics": [
+      "democracy",
+      "admin"
+    ],
+    "fit": 1,
+    "fitDe": "Durchsetzung von EU-Tech-Recht: passt zu Offenlegungs-Dosen (DSA, ESPR).",
+    "fitEn": "Enforcement of EU tech law: fits disclosure doses (DSA, ESPR).",
+    "evidence": "snippet",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "claude-for-oss",
+    "category": "civil",
+    "nameDe": "Anthropic · Claude for Open Source / AI for Science",
+    "nameEn": "Anthropic · Claude for Open Source / AI for Science",
+    "funder": "Anthropic",
+    "amountDe": "6 Monate Max 20x (1.200 $) · Science-Credits bis 30.000 $",
+    "amountEn": "6 months Max 20x ($1,200) · science credits up to $30k",
+    "timing": "rolling",
+    "applicants": [
+      "individual",
+      "university"
+    ],
+    "topics": [
+      "science",
+      "infrastructure"
+    ],
+    "fit": 1,
+    "fitDe": "Rechenkosten der Runden, keine API. Nur mit OSI-lizenziertem Projekt und einem Kriterium wie 100+ gemergten PRs in fremden Repos (offizielle Bedingungen, keine 5.000-Sterne-Schwelle); Amélie selbst (2 Sterne, CC0) erfüllt keines, TYPO3-Beiträge eventuell. AI for Science nur mit Uni-Partner (2026er Frist 15.07. zu).",
+    "fitEn": "Covers round compute, no API. Needs an OSI-licensed project and a criterion such as 100+ merged PRs in others’ repos (official terms, no 5,000-star threshold); Amélie itself (2 stars, CC0) meets none, TYPO3 contributions possibly. AI for Science needs a university partner (2026 deadline 15 Jul closed).",
+    "evidence": "snippet",
+    "url": "https://www.anthropic.com/claude-for-oss-terms",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "google-org",
+    "category": "civil",
+    "nameDe": "Google.org · AI Impact Challenges",
+    "nameEn": "Google.org · AI Impact Challenges",
+    "funder": "Google.org",
+    "amountDe": "1–3 Mio. $ (Government Innovation) · 0,5–3 Mio. $ (Science)",
+    "amountEn": "$1–3m (Government Innovation) · $0.5–3m (Science)",
+    "timing": "dated",
+    "deadline": "2026-05-01",
+    "nextDe": "Beide Challenges 2026 geschlossen (03.04. / 01.05.)",
+    "nextEn": "Both 2026 challenges closed (3 Apr / 1 May)",
+    "applicants": [
+      "ngo",
+      "university",
+      "startup"
+    ],
+    "topics": [
+      "admin",
+      "science"
+    ],
+    "fit": 0,
+    "fitDe": "Nur Organisationen, große Vorhaben.",
+    "fitEn": "Organisations only, large projects.",
+    "evidence": "snippet",
+    "url": "https://www.google.org/impact-challenges/ai-government-innovation/",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "openai-people-first",
+    "category": "civil",
+    "nameDe": "OpenAI · People-First AI Fund",
+    "nameEn": "OpenAI · People-First AI Fund",
+    "funder": "OpenAI Foundation",
+    "amountDe": "50 Mio. $ insgesamt, unrestricted",
+    "amountEn": "$50m total, unrestricted",
+    "timing": "dated",
+    "deadline": "2026-07-15",
+    "applicants": [
+      "ngo"
+    ],
+    "topics": [
+      "democracy"
+    ],
+    "fit": 0,
+    "fitDe": "Nur US-501(c)(3): nicht zulässig.",
+    "fitEn": "US 501(c)(3) only: not eligible.",
+    "evidence": "snippet",
+    "url": "https://openaifoundation.org/news/2026-people-first-ai-fund",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "cerv",
+    "category": "eu",
+    "nameDe": "CERV 2026 · Bürgerbeteiligung (Priorität 2.1)",
+    "nameEn": "CERV 2026 · citizens’ engagement (priority 2.1)",
+    "funder": "EU-Kommission · EACEA",
+    "amountDe": "projektabhängig, Konsortien",
+    "amountEn": "project-dependent, consortia",
+    "timing": "cycle",
+    "nextDe": "Aufrufe 2026 auf dem Funding & Tenders Portal, Fristen prüfen",
+    "nextEn": "2026 calls on the Funding & Tenders Portal, check deadlines",
+    "applicants": [
+      "ngo"
+    ],
+    "topics": [
+      "democracy",
+      "admin"
+    ],
+    "fit": 3,
+    "fitDe": "Nennt ausdrücklich digitale Civic-Tech-Werkzeuge zwischen Bürgern und Entscheidern. Mehrländer-Konsortium nötig.",
+    "fitEn": "Explicitly names digital civic-tech tools bridging citizens and decision-makers. Multi-country consortium required.",
+    "evidence": "snippet",
+    "url": "https://www.eacea.ec.europa.eu/news-events/news/2026-cerv-programme-calls-proposals-funding-and-tenders-portal-2025-12-17_en",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "digital-europe",
+    "category": "eu",
+    "nameDe": "Digital Europe · Multi-Country Project",
+    "nameEn": "Digital Europe · Multi-Country Project",
+    "funder": "EU-Kommission",
+    "amountDe": "6 Mio. €, 50 % Kofinanzierung",
+    "amountEn": "€6m, 50 % co-financing",
+    "timing": "cycle",
+    "nextDe": "Arbeitsprogramm 2025–2027",
+    "nextEn": "Work programme 2025–2027",
+    "applicants": [
+      "municipality"
+    ],
+    "topics": [
+      "admin"
+    ],
+    "fit": 0,
+    "fitDe": "Nur Verwaltungen, Interoperabilität.",
+    "fitEn": "Public administrations only, interoperability.",
+    "evidence": "snippet",
+    "url": "https://digital-strategy.ec.europa.eu/en/activities/digital-programme",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "horizon-cl2-2026",
+    "category": "eu",
+    "nameDe": "Horizon Europe · Demokratie 2026",
+    "nameEn": "Horizon Europe · Democracy 2026",
+    "funder": "EU-Kommission",
+    "amountDe": "12 Mio. € für drei Projekte",
+    "amountEn": "€12m for three projects",
+    "timing": "dated",
+    "opens": "2026-05-12",
+    "deadline": "2026-09-23",
+    "nextDe": "Folgeruf HORIZON-CL2-2027-01-DEMOCRACY: 13.05.–23.09.2027",
+    "nextEn": "Follow-up call HORIZON-CL2-2027-01-DEMOCRACY: 13 May – 23 Sep 2027",
+    "applicants": [
+      "university",
+      "ngo"
+    ],
+    "topics": [
+      "democracy",
+      "science"
+    ],
+    "fit": 1,
+    "fitDe": "Vorlauf-Thema für 2027.",
+    "fitEn": "Lead topic for 2027.",
+    "evidence": "snippet",
+    "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/calls-for-proposals?callIdentifier=HORIZON-CL2-2026-01",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "life-2026",
+    "category": "eu",
+    "nameDe": "LIFE 2026",
+    "nameEn": "LIFE 2026",
+    "funder": "EU-Kommission · CINEA",
+    "amountDe": "1–5 Mio. € typisch",
+    "amountEn": "€1–5m typical",
+    "timing": "cycle",
+    "deadline": "2026-09-22",
+    "nextDe": "Runde 2027 beobachten",
+    "nextEn": "Watch the 2027 round",
+    "applicants": [
+      "ngo",
+      "municipality",
+      "university",
+      "startup"
+    ],
+    "topics": [
+      "nature",
+      "energy"
+    ],
+    "fit": 1,
+    "fitDe": "Ein Strang für Zivilgesellschaft in Klima-Governance.",
+    "fitEn": "One strand for civil society in climate governance.",
+    "evidence": "snippet",
+    "url": "https://errin.eu/news/life-calls-proposals-2026-now-open",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "erasmus-small",
+    "category": "eu",
+    "nameDe": "Erasmus+ · Small-scale Partnerships",
+    "nameEn": "Erasmus+ · Small-scale Partnerships",
+    "funder": "EU-Kommission",
+    "amountDe": "kleine Beträge, mind. 2 Organisationen aus 2 Ländern",
+    "amountEn": "small amounts, at least 2 organisations from 2 countries",
+    "timing": "cycle",
+    "nextDe": "Rhythmus laut Programmleitfaden",
+    "nextEn": "Cycle per programme guide",
+    "applicants": [
+      "ngo"
+    ],
+    "topics": [
+      "knowledge"
+    ],
+    "fit": 1,
+    "fitDe": "Nur Bildungs-Dosen.",
+    "fitEn": "Education doses only.",
+    "evidence": "snippet",
+    "url": "https://erasmus-plus.ec.europa.eu/calls/small-scale-cooperation-partnerships",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "interreg-central",
+    "category": "eu",
+    "nameDe": "Interreg Central Europe",
+    "nameEn": "Interreg Central Europe",
+    "funder": "EU · EFRE",
+    "amountDe": "grenzüberschreitende Projekte",
+    "amountEn": "cross-border projects",
+    "timing": "cycle",
+    "nextDe": "Kein Open-Source-Call, aber Präzedenz (DoorCE, ENCLOD)",
+    "nextEn": "No open-source call, but precedent (DoorCE, ENCLOD)",
+    "applicants": [
+      "municipality",
+      "university",
+      "ngo"
+    ],
+    "topics": [
+      "admin",
+      "knowledge"
+    ],
+    "fit": 1,
+    "fitDe": "Open-Data-Werkzeuge zwischen Kommunen.",
+    "fitEn": "Open-data tools between municipalities.",
+    "evidence": "snippet",
+    "url": "https://www.interreg-central.eu/",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "osor",
+    "category": "eu",
+    "nameDe": "OSOR · Funding Opportunities für Open Source im öffentlichen Sektor",
+    "nameEn": "OSOR · funding opportunities for open source in the public sector",
+    "funder": "Interoperable Europe Portal",
+    "amountDe": "Sammelseite (Horizon, Digital Europe, NGI, Interreg, TSI, STA)",
+    "amountEn": "Collection page (Horizon, Digital Europe, NGI, Interreg, TSI, STA)",
+    "timing": "resource",
+    "applicants": [
+      "municipality",
+      "ngo",
+      "individual"
+    ],
+    "topics": [
+      "admin",
+      "infrastructure"
+    ],
+    "fit": 2,
+    "fitDe": "Erste Adresse für jede Neurecherche zu EU-Geld.",
+    "fitEn": "First stop for any fresh search on EU money.",
+    "evidence": "read",
+    "url": "https://interoperable-europe.ec.europa.eu/collection/open-source-observatory-osor/funding-opportunities-open-source-software-projects-public-sector",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "open-source-wettbewerb",
+    "category": "prize",
+    "nameDe": "Open Source Wettbewerb (öffentliche Verwaltung)",
+    "nameEn": "Open Source Competition (public administration)",
+    "funder": "OSBA · Schirmherr BMDS",
+    "amountDe": "Auszeichnung, Community Award",
+    "amountEn": "Award, community award",
+    "timing": "dated",
+    "opens": "2026-03-03",
+    "deadline": "2026-07-15",
+    "nextDe": "Preisverleihung 15.10.2026, Smart Country Convention Berlin",
+    "nextEn": "Award ceremony 15 Oct 2026, Smart Country Convention Berlin",
+    "applicants": [
+      "municipality"
+    ],
+    "topics": [
+      "admin"
+    ],
+    "fit": 2,
+    "fitDe": "Nur Verwaltungen können einreichen. Finalisten- und Preisträgerliste lesen: nachweislich Mandat und Interesse.",
+    "fitEn": "Only administrations can submit. Read the finalist and winner lists: proven mandate and interest.",
+    "evidence": "snippet",
+    "url": "https://open-source-wettbewerb.de/",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "smart-country-startup",
+    "category": "prize",
+    "nameDe": "Smart Country Startup Award 2026",
+    "nameEn": "Smart Country Startup Award 2026",
+    "funder": "Bitkom · Smart Country Convention",
+    "amountDe": "Award, fünf Finalisten (KI und Digital)",
+    "amountEn": "Award, five finalists (AI and digital)",
+    "timing": "dated",
+    "deadline": "2026-10-15",
+    "applicants": [
+      "startup"
+    ],
+    "topics": [
+      "admin"
+    ],
+    "fit": 0,
+    "fitDe": "Finalistenliste als GovTech-Marktbild lesen (Finale bei der Convention 13.–15.10.).",
+    "fitEn": "Read the finalist list as a GovTech market picture (final at the convention 13–15 Oct).",
+    "evidence": "snippet",
+    "url": "https://www.munich-startup.de/121911/smart-country-startup-award-2026-bewerbung/",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "bundespreis-ecodesign",
+    "category": "prize",
+    "nameDe": "Bundespreis Ecodesign",
+    "nameEn": "Federal Ecodesign Award",
+    "funder": "BMUKN · UBA · IDZ",
+    "amountDe": "Internationale Roadshow · 1.000 € nur Kategorie Nachwuchs",
+    "amountEn": "International roadshow · €1,000 only in the young-talent category",
+    "timing": "cycle",
+    "opens": "2026-01-19",
+    "deadline": "2026-04-02",
+    "nextDe": "Ausschreibung 2027 im Januar erwarten",
+    "nextEn": "Expect the 2027 call in January",
+    "applicants": [
+      "startup",
+      "individual"
+    ],
+    "topics": [
+      "energy",
+      "consumer"
+    ],
+    "fit": 1,
+    "fitDe": "Kriterien für Ökodesign (ESPR); Jury aus UBA-Fachleuten.",
+    "fitEn": "Ecodesign criteria (ESPR); jury of UBA experts.",
+    "evidence": "snippet",
+    "url": "https://www.bundespreis-ecodesign.de/de/wettbewerb/ausschreibung",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "eu-citizen-science-prize",
+    "category": "prize",
+    "nameDe": "EU Prize for Citizen Science",
+    "nameEn": "EU Prize for Citizen Science",
+    "funder": "EU-Kommission · Ars Electronica",
+    "amountDe": "Grand Prize bis 60.000 € (laut Atlas, ungeprüft)",
+    "amountEn": "Grand prize up to €60k (per atlas, unchecked)",
+    "timing": "cycle",
+    "nextDe": "2026er Frist nicht gefunden, Open-Call-Seite prüfen",
+    "nextEn": "2026 deadline not found, check the open-call page",
+    "applicants": [
+      "ngo",
+      "university",
+      "individual"
+    ],
+    "topics": [
+      "science",
+      "nature"
+    ],
+    "fit": 1,
+    "fitDe": "Gewinner zeigen paneuropäische Citizen-Science-Initiativen mit Auswertungsstau.",
+    "fitEn": "Winners reveal pan-European citizen-science initiatives with evaluation backlogs.",
+    "evidence": "snippet",
+    "url": "https://ars.electronica.art/citizenscience/en/opencall/",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "icapital",
+    "category": "prize",
+    "nameDe": "European Capital of Innovation (iCapital)",
+    "nameEn": "European Capital of Innovation (iCapital)",
+    "funder": "European Innovation Council",
+    "amountDe": "1 Mio. € / 500.000 € Preisgeld für Städte",
+    "amountEn": "€1m / €500k prize money for cities",
+    "timing": "dated",
+    "opens": "2026-05-05",
+    "deadline": "2026-08-04",
+    "nextDe": "2026 vergeben an Grenoble und Aalborg",
+    "nextEn": "2026 awarded to Grenoble and Aalborg",
+    "applicants": [
+      "municipality"
+    ],
+    "topics": [
+      "admin",
+      "democracy"
+    ],
+    "fit": 0,
+    "fitDe": "Städte-Motiv: Preisgeld-Anreiz, Bürgerbeteiligungswerkzeuge zu übernehmen.",
+    "fitEn": "City motive: prize-money incentive to adopt citizen-participation tools.",
+    "evidence": "snippet",
+    "url": "https://eic.ec.europa.eu/eic-prizes/european-capital-innovation-awards_en",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "smart-city-leipzig",
+    "category": "prize",
+    "nameDe": "Smart City Challenge Leipzig",
+    "nameEn": "Smart City Challenge Leipzig",
+    "funder": "Stadt Leipzig",
+    "amountDe": "drei Lösungsansätze je Aufgabe, Pilot mit der Stadtverwaltung",
+    "amountEn": "three solution approaches per task, pilot with the city administration",
+    "timing": "cycle",
+    "nextDe": "2026 zu, Aufgabenliste als Ideenquelle lesen",
+    "nextEn": "2026 closed, read the task list as an idea source",
+    "applicants": [
+      "startup",
+      "university",
+      "individual"
+    ],
+    "topics": [
+      "admin"
+    ],
+    "fit": 2,
+    "fitDe": "Aufgabenliste einer Stadt = Problemquelle mit Empfänger.",
+    "fitEn": "A city’s task list = problem source with a recipient.",
+    "evidence": "snippet",
+    "url": "https://smart-city-challenge-leipzig.de/",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "muenchen-innovation",
+    "category": "prize",
+    "nameDe": "Münchner Innovationswettbewerb",
+    "nameEn": "Munich Innovation Challenge",
+    "funder": "Landeshauptstadt München",
+    "amountDe": "Testfeld in der Stadt",
+    "amountEn": "Urban test field",
+    "timing": "cycle",
+    "nextDe": "Nächste Runde 2027",
+    "nextEn": "Next round 2027",
+    "applicants": [
+      "startup",
+      "university",
+      "individual"
+    ],
+    "topics": [
+      "admin"
+    ],
+    "fit": 2,
+    "fitDe": "Wie Leipzig: Aufgaben und Ansprechpartner der Stadt.",
+    "fitEn": "Like Leipzig: city tasks and contacts.",
+    "evidence": "snippet",
+    "url": "https://stadt.muenchen.de/infos/innovationswettbewerb.html",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "prix-ars",
+    "category": "prize",
+    "nameDe": "Prix Ars Electronica",
+    "nameEn": "Prix Ars Electronica",
+    "funder": "Ars Electronica",
+    "amountDe": "2026: AI for Social Impact an HelpMum",
+    "amountEn": "2026: AI for Social Impact to HelpMum",
+    "timing": "cycle",
+    "nextDe": "2027 beobachten",
+    "nextEn": "Watch 2027",
+    "applicants": [
+      "individual",
+      "ngo"
+    ],
+    "topics": [
+      "science"
+    ],
+    "fit": 0,
+    "fitDe": "Beobachtung, keine Förderung.",
+    "fitEn": "Observation, not funding.",
+    "evidence": "snippet",
+    "url": "https://ars.electronica.art/prix/en/opencall/",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "unit-govtech-berlin",
+    "category": "city",
+    "nameDe": "Unit GovTech Berlin",
+    "nameEn": "Unit GovTech Berlin",
+    "funder": "Senatskanzlei Berlin · GovTech Deutschland",
+    "amountDe": "kein Budget genannt · gegründet 23.04.2026",
+    "amountEn": "no budget stated · founded 23 Apr 2026",
+    "timing": "rolling",
+    "applicants": [
+      "startup",
+      "ngo"
+    ],
+    "topics": [
+      "admin"
+    ],
+    "fit": 3,
+    "fitDe": "Bester Berlin-Kanal: Behörden melden Bedarfe, Einheit screent den Markt, Pilot, dann Vergabe. Ansprechperson vor Kontakt verifizieren.",
+    "fitEn": "Best Berlin channel: agencies report needs, the unit screens the market, pilot, then procurement. Verify the contact before reaching out.",
+    "evidence": "read",
+    "url": "https://www.berlin.de/moderne-verwaltung/verwaltungsmodernisierung/unit-govtech-berlin-1649442.php",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "mpsc",
+    "category": "city",
+    "nameDe": "Modellprojekte Smart Cities (MPSC)",
+    "nameEn": "Smart Cities model projects (MPSC)",
+    "funder": "BMWSB · KfW",
+    "amountDe": "73 Kommunen, 820 Mio. € · Phase A bis 2,5 Mio. €, Phase B bis 15 Mio. € · 65 % Förderquote",
+    "amountEn": "73 municipalities, €820m · phase A up to €2.5m, phase B up to €15m · 65 % funding rate",
+    "timing": "resource",
+    "applicants": [
+      "municipality"
+    ],
+    "topics": [
+      "admin",
+      "mobility",
+      "energy"
+    ],
+    "fit": 3,
+    "fitDe": "Fertige Empfängerliste mit Budget. Geförderte Projekte müssen Software auf OpenCoDE.de veröffentlichen („Public Money, Public Code\"); die Koordinierungs- und Transferstelle (KTS, Fraunhofer IAO) ist die Anlaufstelle für Nachnutzung.",
+    "fitEn": "A ready-made recipient list with budgets. Funded projects must publish software on OpenCoDE.de (“Public Money, Public Code”); the coordination and transfer office (KTS, Fraunhofer IAO) is the contact for reuse.",
+    "evidence": "snippet",
+    "url": "https://www.smart-city-dialog.de/ueber-uns/modellprojekte-smart-cities",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "govtech-deutschland",
+    "category": "city",
+    "nameDe": "GovTech Deutschland (vormals GovTech Campus)",
+    "nameEn": "GovTech Deutschland (formerly GovTech Campus)",
+    "funder": "Bund, Länder, Tech-Branche",
+    "amountDe": "Plattform, Standorte Berlin, BW, Hessen, Hamburg",
+    "amountEn": "Platform, sites in Berlin, BW, Hesse, Hamburg",
+    "timing": "resource",
+    "applicants": [
+      "startup",
+      "municipality"
+    ],
+    "topics": [
+      "admin"
+    ],
+    "fit": 2,
+    "fitDe": "Kanal für GovTech-Zwillinge und Behördenkontakte.",
+    "fitEn": "Channel for GovTech twins and agency contacts.",
+    "evidence": "snippet",
+    "url": "https://govtechcampus.de/",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "govtechhh",
+    "category": "city",
+    "nameDe": "GovTecHH (Hamburg)",
+    "nameEn": "GovTecHH (Hamburg)",
+    "funder": "Freie und Hansestadt Hamburg",
+    "amountDe": "Startup-Einheit: Probleme sammeln, Pilot",
+    "amountEn": "Startup unit: collect problems, pilot",
+    "timing": "rolling",
+    "applicants": [
+      "startup"
+    ],
+    "topics": [
+      "admin"
+    ],
+    "fit": 2,
+    "fitDe": "Pilotkanal mit Behördenproblemen.",
+    "fitEn": "Pilot channel with agency problems.",
+    "evidence": "snippet",
+    "url": "https://digital.hamburg.de/digitale-stadt/govtechh-644580",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "digital-vereint",
+    "category": "city",
+    "nameDe": "Digital Vereint (Berlin)",
+    "nameEn": "Digital Vereint (Berlin)",
+    "funder": "Berlin · Zivilgesellschaft",
+    "amountDe": "Förderangebote für zivilgesellschaftliche Organisationen",
+    "amountEn": "Funding offers for civil society organisations",
+    "timing": "resource",
+    "applicants": [
+      "ngo"
+    ],
+    "topics": [
+      "democracy"
+    ],
+    "fit": 1,
+    "fitDe": "Übersicht, kein eigener Fonds.",
+    "fitEn": "Overview, not a fund of its own.",
+    "evidence": "snippet",
+    "url": "https://digital-vereint.berlin/de/informieren/foerderangebote-fuer-zivilgesellschaftliche-organisationen",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "citylab",
+    "category": "city",
+    "nameDe": "CityLAB Berlin",
+    "nameEn": "CityLAB Berlin",
+    "funder": "Technologiestiftung Berlin",
+    "amountDe": "Innovationslabor: Open Data, Beteiligung, Stadtpuls",
+    "amountEn": "Innovation lab: open data, participation, Stadtpuls",
+    "timing": "resource",
+    "applicants": [
+      "ngo",
+      "individual",
+      "municipality"
+    ],
+    "topics": [
+      "admin",
+      "democracy",
+      "nature"
+    ],
+    "fit": 2,
+    "fitDe": "Bereits Empfänger in Mail 4 (Patenschaft).",
+    "fitEn": "Already a recipient in mail 4 (sponsorship).",
+    "evidence": "snippet",
+    "url": "https://citylab-berlin.org/en/",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "berlin-govtech-report",
+    "category": "city",
+    "nameDe": "Berlin GovTech/CivicTech-Report",
+    "nameEn": "Berlin GovTech/CivicTech report",
+    "funder": "SenWiEnBe (Januar 2025)",
+    "amountDe": "Studie: flexible Vergabe, Reallabore",
+    "amountEn": "Study: flexible procurement, real-world labs",
+    "timing": "resource",
+    "applicants": [
+      "startup"
+    ],
+    "topics": [
+      "admin"
+    ],
+    "fit": 1,
+    "fitDe": "Lesen: nennt die Beschaffungshürden.",
+    "fitEn": "Read: names the procurement hurdles.",
+    "evidence": "snippet",
+    "url": "https://www.berlin.de/sen/web/presse/pressemitteilungen/2025/berlinstartupreport_ermoeglichung_250114.pdf",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "startup-monitor",
+    "category": "city",
+    "nameDe": "GovTech Startup Monitor 2026",
+    "nameEn": "GovTech Startup Monitor 2026",
+    "funder": "Marktstudie",
+    "amountDe": "83 % halten ihr Produkt für staatstauglich, 42 % haben sich beworben, 72 % nennen zu komplexe Unterlagen, Vergabe im Schnitt 24 Wochen",
+    "amountEn": "83 % consider their product fit for government, 42 % have applied, 72 % cite overly complex documents, procurement takes 24 weeks on average",
+    "timing": "resource",
+    "applicants": [
+      "startup"
+    ],
+    "topics": [
+      "admin"
+    ],
+    "fit": 1,
+    "fitDe": "Venture-Input: Der Engpass ist der Behördenvertrieb, nicht die Technik. Pilot vor Ausschreibung.",
+    "fitEn": "Venture input: the bottleneck is selling to agencies, not the technology. Pilot before tender.",
+    "evidence": "read",
+    "url": "https://bi-medien.de/vergabe-wissen/news/govtech-startup-monitor-2026-veroeffentlicht",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "landesprogramme-kmu",
+    "category": "city",
+    "nameDe": "Landesprogramme (Digitalbonus Bayern, MID NRW, Digital Check Hamburg, SAB Sachsen)",
+    "nameEn": "State programmes (Digitalbonus Bavaria, MID NRW, Digital Check Hamburg, SAB Saxony)",
+    "funder": "Länder",
+    "amountDe": "bis 7.500 € (BY, HH) · bis 15.000 € (NRW) · bis 60 % (SN)",
+    "amountEn": "up to €7,500 (BY, HH) · up to €15,000 (NRW) · up to 60 % (SN)",
+    "timing": "dated",
+    "deadline": "2026-11-16",
+    "nextDe": "Hamburg Digital Check: Frist 16.11.2026",
+    "nextEn": "Hamburg Digital Check: deadline 16 Nov 2026",
+    "applicants": [
+      "startup"
+    ],
+    "topics": [
+      "admin"
+    ],
+    "fit": 0,
+    "fitDe": "Alle nur für KMU. Nichts Civic-Tech-Spezifisches gefunden. Nur für eine Venture-Firma.",
+    "fitEn": "All SME-only. Nothing civic-tech-specific found. Only for a venture company.",
+    "evidence": "snippet",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "exist",
+    "category": "venture",
+    "nameDe": "EXIST-Gründungsstipendium",
+    "nameEn": "EXIST Business Start-up Grant",
+    "funder": "BMWE · ESF",
+    "amountDe": "2.500 €/Monat je Person (bis 3), 5.000 € Coaching, 30.000 € Sachmittel, 12 Monate",
+    "amountEn": "€2,500/month per person (up to 3), €5,000 coaching, €30,000 material, 12 months",
+    "timing": "rolling",
+    "applicants": [
+      "startup",
+      "university"
+    ],
+    "topics": [
+      "infrastructure"
+    ],
+    "fit": 2,
+    "fitDe": "Nur über Hochschule oder Forschungseinrichtung. Zugehörigkeit klären.",
+    "fitEn": "Only via a university or research institution. Clarify affiliation.",
+    "evidence": "snippet",
+    "url": "https://humboldt-innovation.de/en/startup-service/funding-financing/exist-business-start-grant",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "berlin-startup-stipendium",
+    "category": "venture",
+    "nameDe": "Berliner Startup-Stipendium",
+    "nameEn": "Berlin Startup Stipend",
+    "funder": "IBB · ESF+",
+    "amountDe": "bis 2.000 €/Monat, 12 Monate",
+    "amountEn": "up to €2,000/month, 12 months",
+    "timing": "cycle",
+    "deadline": "2026-09-13",
+    "nextDe": "Frist 2026 abgelaufen, Rhythmus prüfen",
+    "nextEn": "2026 deadline passed, check the cycle",
+    "applicants": [
+      "startup",
+      "individual"
+    ],
+    "topics": [
+      "infrastructure"
+    ],
+    "fit": 2,
+    "fitDe": "Für Micro-SaaS-Zwillinge in Berlin.",
+    "fitEn": "For micro-SaaS twins in Berlin.",
+    "evidence": "snippet",
+    "url": "https://www.ibb.de/de/foerderprogramme/berliner-startup-stipendium.html",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "band",
+    "category": "venture",
+    "nameDe": "Business Angels Netzwerk Deutschland (BAND)",
+    "nameEn": "Business Angels Network Germany (BAND)",
+    "funder": "BAND e.V.",
+    "amountDe": "Dachverband; INVEST-Zuschuss für Wagniskapital; 19 Angel-Netzwerke in Berlin",
+    "amountEn": "Umbrella body; INVEST grant for venture capital; 19 angel networks in Berlin",
+    "timing": "rolling",
+    "applicants": [
+      "startup"
+    ],
+    "topics": [
+      "admin"
+    ],
+    "fit": 2,
+    "fitDe": "Passender Erst-Ticket-Kanal für Compliance- und Developer-Tools.",
+    "fitEn": "Suitable first-ticket channel for compliance and developer tools.",
+    "evidence": "snippet",
+    "url": "https://www.business-angels.de/en/",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "htgf",
+    "category": "venture",
+    "nameDe": "High-Tech Gründerfonds (HTGF)",
+    "nameEn": "High-Tech Gründerfonds (HTGF)",
+    "funder": "HTGF",
+    "amountDe": "Pre-Seed-Co-Invest mit Angels (Berlin-Hub)",
+    "amountEn": "Pre-seed co-investment with angels (Berlin hub)",
+    "timing": "rolling",
+    "applicants": [
+      "startup"
+    ],
+    "topics": [
+      "infrastructure"
+    ],
+    "fit": 1,
+    "fitDe": "Erst bei wiederkehrendem Umsatz sinnvoll.",
+    "fitEn": "Only sensible once recurring revenue exists.",
+    "evidence": "snippet",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "ananda",
+    "category": "venture",
+    "nameDe": "Ananda Impact Ventures",
+    "nameEn": "Ananda Impact Ventures",
+    "funder": "Ananda (München)",
+    "amountDe": "73 Mio. € First Close (01/2026), rund 200 Mio. € verwaltet",
+    "amountEn": "€73m first close (01/2026), around €200m under management",
+    "timing": "rolling",
+    "applicants": [
+      "startup"
+    ],
+    "topics": [
+      "nature",
+      "energy"
+    ],
+    "fit": 1,
+    "fitDe": "Für Micro-SaaS zu groß, eher Marktsignal.",
+    "fitEn": "Too large for micro-SaaS, more a market signal.",
+    "evidence": "snippet",
+    "url": "https://ananda.vc/",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "impact-hub-berlin",
+    "category": "venture",
+    "nameDe": "Impact Hub Berlin · Social Impact Lab",
+    "nameEn": "Impact Hub Berlin · Social Impact Lab",
+    "funder": "Impact Hub · Social Impact gGmbH",
+    "amountDe": "Accelerator, Beratung, Netzwerk für Social Startups",
+    "amountEn": "Accelerator, advice, network for social startups",
+    "timing": "cycle",
+    "nextDe": "Programme nicht vertieft",
+    "nextEn": "Programmes not examined in depth",
+    "applicants": [
+      "startup",
+      "ngo"
+    ],
+    "topics": [
+      "democracy"
+    ],
+    "fit": 1,
+    "fitDe": "Für Empfänger-Initiativen oder Amélie selbst.",
+    "fitEn": "For recipient initiatives or Amélie itself.",
+    "evidence": "snippet",
+    "url": "https://berlin.impacthub.net/",
+    "checked": "2026-09-28"
+  },
+  {
+    "id": "payment-rails",
+    "category": "payment",
+    "nameDe": "Open Collective · GitHub Sponsors · Liberapay",
+    "nameEn": "Open Collective · GitHub Sponsors · Liberapay",
+    "funder": "Plattformen",
+    "amountDe": "Open Collective ca. 10 % Gebühr (fiskalischer Host möglich) · Liberapay EU-basiert ohne Plattformgebühr · GitHub Sponsors ohne Gebühr",
+    "amountEn": "Open Collective about 10 % fee (fiscal host possible) · Liberapay EU-based, no platform fee · GitHub Sponsors no fee",
+    "timing": "resource",
+    "applicants": [
+      "individual"
+    ],
+    "topics": [
+      "infrastructure"
+    ],
+    "fit": 1,
+    "fitDe": "Zahlungsweg, falls Amélie Spenden will. Kein Ersatz für Fonds.",
+    "fitEn": "Payment rail if Amélie wants donations. Not a substitute for funds.",
+    "evidence": "snippet",
+    "url": "https://www.oss.fund/guides/how-to-fund-open-source-project/",
+    "checked": "2026-09-28"
+  }
+]

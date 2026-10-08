@@ -84,12 +84,23 @@ Und der Bedarf ist gerade sprunghaft gestiegen:
 - **FLAP Canada, „BirdSafe DIY Building Risk Assessment App"** (`flapapp.ca`): kostenlos, browserbasiert, Tag- und Nachtrisiko pro Fassade — ein geführter Fragebogen ohne Bildauswertung. Daneben kostenpflichtige Vor-Ort-Begutachtung.
 - **LEED v5 und Pilot Credit SSpc55:** echter Punkterechner mit offizieller Tabellenvorlage (`Bird Collision Threat Rating`), Threat Factor ≤ 30 nach ABC-Skala, CSA A460:19 (R2024) als kanadischer Weg. Bewertet Materialien aus der Planung, nicht Situationen aus Bildern: Zertifizierungs-, keine Vollzugslogik.
 - **New York Local Law 15 (seit 2021) und Toronto (seit 2010):** Nachweismärkte, bedient von Planungsbüros. Compliance-Software nicht auffindbar.
-- **Österreich: ONR 191040.** Im Flugtunnel Hohenau-Ringelsdorf geprüft: Markierung qualifiziert sich ab ≥ 90 % Meiderate. Die Wiener Umweltanwaltschaft führt die Liste. Die Produktseite ist abgedeckt — sie gehört nicht in diese Idee.
+- **Österreich: ONR 191040.** Im Flugtunnel Hohenau-Ringelsdorf geprüft: Markierung qualifiziert sich ab ≥ 90 % Meiderate. Die Wiener Umweltanwaltschaft (WUA) führt die Liste der geprüften Muster (Broschüre „Geprüfte Muster", 5. Aufl. 2022: Kategorien A ≤ 10 %, B > 10–20 %, C > 20–42 %, D > 42 % Anflüge; zwei Tests, ONR für Durchsicht und WIN für Spiegelung; WIN-Ergebnisse gelten nur bis zur geprüften Außenreflexion). Die Produktseite ist abgedeckt — sie gehört nicht in die Bewertungsschicht. Als Demo-Baustein im Simulator liegt ein Abgleich, der ein Muster nur mit der Tabelle vergleicht (siehe „Antwort und Lehre").
 - **Deutschland/Schweiz, Schemaseite:** LAG VSW 21/01 (aktualisiert 2023), Berliner Beurteilungshilfe, Merkblätter, `vogelglas.vogelwarte.ch`. Kein digitales Werkzeug, das das Schema rechnet.
 - **Gegenrichtung besetzt:** `vogelschlagmelder.de` (NABU Jena, Leipzig, Berlin) — Meldungen mit bis zu fünf Fotos, Ausrichtung, Fundort; Gefahrenkarte ist eine Heatmap der Meldungen, keine Gebäudebewertung. Melden ist gelöst, Bewerten nicht.
 - **Forschung:** Fassaden- und Glassegmentierung sowie Fenster-Wand-Verhältnis aus Straßenbildern sind gelöst und publiziert; niemand hat sie auf Vogelschlag angewendet.
 
 **Die verbleibende Lücke:** das deutsche Bewertungsschema als ausführbares, zitierfähiges Modul auf einer Meldeplattform, die die nötigen Fotos ohnehin sammelt — Situationsfaktoren geschätzt statt abgefragt, das Ergebnis ein prüfbares Blatt für Behörde und Eigentümer.
+
+## Antwort und Lehre (30.09.2026)
+
+**Eine Antwort ist eingetroffen** (NABU-Bundesgeschäftsstelle, Naturschutzkommunikation, 29.09.2026) auf die Mail vom 22.09.2026 an die Sammeladresse. Sie ist eine freundliche Auskunft ohne Bezug auf die Idee, mit Hinweis auf die Broschüre und die WUA-Übersicht und mit Spendenbitte. Kein Interesse und keine Ablehnung, kein Nachfassen.
+
+Fachlich enthält sie eine Korrektur, die wir übernehmen:
+- Die Bewertungen der Broschüre sind **Flugtunnel-Ergebnisse der WUA für bestimmte Produkte**. Anders gestaltete, auch ähnliche Markierungen können besser oder schlechter wirken; gleich wirksame Lösungen dürfen nicht von vornherein ausgeschlossen werden. Die getesteten Markierungen sind **nicht gesetzlich verbindlich**.
+- Die Mail vom 22.09.2026 sprach von „zertifizierten Punktrastern (9x9 cm) statt nutzloser Aufkleber". Das war zu stark: Das 90-mm-Raster gehört zu den SEEN-Aluminiumpunkten (9 mm Durchmesser), nicht zu einer allgemeinen Vorgabe. Die Dose selbst rechnet nur das LAG-VSW-Schema und gibt keine Produktempfehlung.
+- Empfängerlehre: Die Sammeladresse liefert Standardauskunft. Adressat der Bewertungsschicht bleibt NABU Berlin / Jena (Melder) und die LAG VSW als Eigentümerin des Schemas; **Eigentümerin der Markierungstabelle ist die WUA in Wien**, also ein anderer Empfänger.
+
+**Demo-Baustein (Stand 30.09.2026):** `src/engine/glasanflug/markierung.ts` gleicht ein geplantes Muster mit einem Tatsachenauszug der WUA-Tabelle ab. Ein Muster, das nicht in der Tabelle steht, ergibt „nicht getestet", nie „unwirksam". Liegt die geplante Außenreflexion über dem geprüften Wert oder fehlt sie, meldet der Abgleich „außerhalb des Geltungsbereichs". Nachnutzungsrecht an der Tabelle ist **nicht geklärt**; vor einer Gabe an die WUA die Zeilen gegen wua-wien.at prüfen und die WUA fragen. Ventures-Prüfung: als eigenes Produkt ein Kill (Zahlungsbereitschaft und Verteidigbarkeit gering, Daten gehören Dritten), stimmiger als Gabe.
 
 ## Vorarbeit
 

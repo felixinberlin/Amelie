@@ -1,0 +1,615 @@
+{
+  "version": 1,
+  "applied": {
+    "lab-2026-09-30-lacunar-schmetterlinge-source-add": {
+      "plan_id": "lab-2026-09-30-lacunar-schmetterlinge-source-add",
+      "actor": "lab-librarian",
+      "agent": "lab",
+      "runde": "Lab-Lauf Lacunar 30.09.2026 (Schmetterlinge)",
+      "at": "2026-09-30T07:26:12.938Z",
+      "ops": [
+        {
+          "index": 0,
+          "op": "source.add",
+          "target": "ebms-methoden-tagfalter-transekt"
+        }
+      ],
+      "files": [
+        "06-suche/amelie-quellen.md",
+        "AMELIE_STATUS.md",
+        "public/data/amelie-health.json",
+        "public/data/amelie-ideas.json",
+        "public/data/quellen.json",
+        "src/data/quellen.json"
+      ],
+      "hashes": {
+        "src/data/quellen.json": "sha256:aeae9ac9d0861099b9efbe6aaffbe56ff0f30f1c61cfc34ec2b369365b3191e5",
+        "src/data/graeber.json": "sha256:5edddb289da34dc458cce1cb5be27fe0dcb14d176420caef2b410312bb5da5d8",
+        "06-suche/amelie-pruefprotokoll.md": "sha256:83bb5def191bbe86830834831cccd426547f4a98b1c67cd664bcd539450cfb74",
+        "src/data/doseVectors.json": "sha256:fb58743901afc0e7897df6bf55fd1dfa95b1cd7db885dad3da324716200dfbb9",
+        "src/data/candidateVectors.json": "sha256:eb81e10856deb4d8768a267b5547de5deb7c842a5378ed75df4b439e8d7c917a",
+        "src/data/vectorChanges.json": "absent"
+      }
+    },
+    "lab-2026-09-30-lacunar-20260929T203438-f693a3-source": {
+      "plan_id": "lab-2026-09-30-lacunar-20260929T203438-f693a3-source",
+      "actor": "lab-librarian",
+      "agent": "bibliothekar",
+      "runde": "Lab-Vorschläge 30.09.2026 (alle angenommen)",
+      "at": "2026-09-30T18:26:21.578Z",
+      "ops": [
+        {
+          "index": 0,
+          "op": "source.log",
+          "target": "unece-norm-ddp-02-walnusskerne-handelsqu"
+        }
+      ],
+      "files": [
+        "06-suche/amelie-quellen.md",
+        "src/data/quellen.json"
+      ],
+      "hashes": {
+        "src/data/quellen.json": "sha256:5a2feb9e69fe3aeefd7a0a4f9f7e0ec4e13bb9fd54d0dcbb157bdaa98ee59ba1",
+        "src/data/graeber.json": "sha256:b177ef14d87745d3688e94c73404e494c2e7c6137ed81b0e2b8e4e659943e40c",
+        "06-suche/amelie-pruefprotokoll.md": "sha256:9798919ef3804abd35bc0f0531ef937c477c023dbd2935a2b37fcbbfb8eb699d",
+        "06-suche/terminology-map.md": "absent",
+        "06-suche/open-questions.md": "absent",
+        "src/data/doseVectors.json": "sha256:fb58743901afc0e7897df6bf55fd1dfa95b1cd7db885dad3da324716200dfbb9",
+        "src/data/candidateVectors.json": "sha256:eb81e10856deb4d8768a267b5547de5deb7c842a5378ed75df4b439e8d7c917a",
+        "src/data/vectorChanges.json": "absent"
+      }
+    },
+    "lab-2026-09-30-lacunar-20260930T064824-38e1d7-source": {
+      "plan_id": "lab-2026-09-30-lacunar-20260930T064824-38e1d7-source",
+      "actor": "lab-librarian",
+      "agent": "bibliothekar",
+      "runde": "Lab-Vorschläge 30.09.2026 (alle angenommen)",
+      "at": "2026-09-30T18:26:21.710Z",
+      "ops": [
+        {
+          "index": 0,
+          "op": "source.log",
+          "target": "ebms-methoden-tagfalter-transekt"
+        }
+      ],
+      "files": [
+        "06-suche/amelie-quellen.md",
+        "src/data/quellen.json"
+      ],
+      "hashes": {
+        "src/data/quellen.json": "sha256:4e0250c7f614a140c2e5c94ba4f088e64c83f6ab212d2f3d41a938a96934b77f",
+        "src/data/graeber.json": "sha256:b177ef14d87745d3688e94c73404e494c2e7c6137ed81b0e2b8e4e659943e40c",
+        "06-suche/amelie-pruefprotokoll.md": "sha256:9798919ef3804abd35bc0f0531ef937c477c023dbd2935a2b37fcbbfb8eb699d",
+        "06-suche/terminology-map.md": "absent",
+        "06-suche/open-questions.md": "absent",
+        "src/data/doseVectors.json": "sha256:fb58743901afc0e7897df6bf55fd1dfa95b1cd7db885dad3da324716200dfbb9",
+        "src/data/candidateVectors.json": "sha256:eb81e10856deb4d8768a267b5547de5deb7c842a5378ed75df4b439e8d7c917a",
+        "src/data/vectorChanges.json": "absent"
+      }
+    },
+    "lab-2026-09-30-lacunar-20260930T073557-e87ad6-source-add": {
+      "plan_id": "lab-2026-09-30-lacunar-20260930T073557-e87ad6-source-add",
+      "actor": "lab-librarian",
+      "agent": "bibliothekar",
+      "runde": "Lab-Vorschläge 30.09.2026 (alle angenommen)",
+      "at": "2026-09-30T18:26:21.845Z",
+      "ops": [
+        {
+          "index": 0,
+          "op": "source.add",
+          "target": "schmetterlingszaehlungen-nach-der-transect-methode"
+        }
+      ],
+      "files": [
+        "06-suche/amelie-quellen.md",
+        "src/data/quellen.json"
+      ],
+      "hashes": {
+        "src/data/quellen.json": "sha256:3f158961dc47efcbfdc56cc18a69b8089dccdd42995f483015435da13e333d98",
+        "src/data/graeber.json": "sha256:b177ef14d87745d3688e94c73404e494c2e7c6137ed81b0e2b8e4e659943e40c",
+        "06-suche/amelie-pruefprotokoll.md": "sha256:9798919ef3804abd35bc0f0531ef937c477c023dbd2935a2b37fcbbfb8eb699d",
+        "06-suche/terminology-map.md": "absent",
+        "06-suche/open-questions.md": "absent",
+        "src/data/doseVectors.json": "sha256:fb58743901afc0e7897df6bf55fd1dfa95b1cd7db885dad3da324716200dfbb9",
+        "src/data/candidateVectors.json": "sha256:eb81e10856deb4d8768a267b5547de5deb7c842a5378ed75df4b439e8d7c917a",
+        "src/data/vectorChanges.json": "absent"
+      }
+    },
+    "lab-2026-09-30-lacunar-20260930T100201-4ab848-source": {
+      "plan_id": "lab-2026-09-30-lacunar-20260930T100201-4ab848-source",
+      "actor": "lab-librarian",
+      "agent": "bibliothekar",
+      "runde": "Lab-Vorschläge 30.09.2026 (alle angenommen)",
+      "at": "2026-09-30T18:26:21.966Z",
+      "ops": [
+        {
+          "index": 0,
+          "op": "source.log",
+          "target": "waldwissen-net-strategien-zum-management"
+        }
+      ],
+      "files": [
+        "06-suche/amelie-quellen.md",
+        "src/data/quellen.json"
+      ],
+      "hashes": {
+        "src/data/quellen.json": "sha256:5e60cb3f57a51d6df7534084f3fc6ccbae352c088a2cd25f4363a2b2fb08c35d",
+        "src/data/graeber.json": "sha256:b177ef14d87745d3688e94c73404e494c2e7c6137ed81b0e2b8e4e659943e40c",
+        "06-suche/amelie-pruefprotokoll.md": "sha256:9798919ef3804abd35bc0f0531ef937c477c023dbd2935a2b37fcbbfb8eb699d",
+        "06-suche/terminology-map.md": "absent",
+        "06-suche/open-questions.md": "absent",
+        "src/data/doseVectors.json": "sha256:fb58743901afc0e7897df6bf55fd1dfa95b1cd7db885dad3da324716200dfbb9",
+        "src/data/candidateVectors.json": "sha256:eb81e10856deb4d8768a267b5547de5deb7c842a5378ed75df4b439e8d7c917a",
+        "src/data/vectorChanges.json": "absent"
+      }
+    },
+    "lab-2026-09-30-lacunar-20260930T100431-797290-source": {
+      "plan_id": "lab-2026-09-30-lacunar-20260930T100431-797290-source",
+      "actor": "lab-librarian",
+      "agent": "bibliothekar",
+      "runde": "Lab-Vorschläge 30.09.2026 (alle angenommen)",
+      "at": "2026-09-30T18:26:22.102Z",
+      "ops": [
+        {
+          "index": 0,
+          "op": "source.add",
+          "target": "itv-altlasten-manuelle-detektion-und-klassifikation"
+        }
+      ],
+      "files": [
+        "06-suche/amelie-quellen.md",
+        "src/data/quellen.json"
+      ],
+      "hashes": {
+        "src/data/quellen.json": "sha256:9bb4e7d658fca574c3c4590778ee78555fc445c1531c97a152795b3e06e5afe2",
+        "src/data/graeber.json": "sha256:b177ef14d87745d3688e94c73404e494c2e7c6137ed81b0e2b8e4e659943e40c",
+        "06-suche/amelie-pruefprotokoll.md": "sha256:9798919ef3804abd35bc0f0531ef937c477c023dbd2935a2b37fcbbfb8eb699d",
+        "06-suche/terminology-map.md": "absent",
+        "06-suche/open-questions.md": "absent",
+        "src/data/doseVectors.json": "sha256:fb58743901afc0e7897df6bf55fd1dfa95b1cd7db885dad3da324716200dfbb9",
+        "src/data/candidateVectors.json": "sha256:eb81e10856deb4d8768a267b5547de5deb7c842a5378ed75df4b439e8d7c917a",
+        "src/data/vectorChanges.json": "absent"
+      }
+    },
+    "lab-2026-09-30-lacunar-20260930T113750-f2ef4a-source": {
+      "plan_id": "lab-2026-09-30-lacunar-20260930T113750-f2ef4a-source",
+      "actor": "lab-librarian",
+      "agent": "bibliothekar",
+      "runde": "Lab-Vorschläge 30.09.2026 (alle angenommen)",
+      "at": "2026-09-30T18:26:22.240Z",
+      "ops": [
+        {
+          "index": 0,
+          "op": "source.add",
+          "target": "zubairkhalid-interspecies-aggression-assessment-protocol"
+        }
+      ],
+      "files": [
+        "06-suche/amelie-quellen.md",
+        "src/data/quellen.json"
+      ],
+      "hashes": {
+        "src/data/quellen.json": "sha256:3ac5af4eeadb2782bb4a53006ce0c7ca56e63c03828d547bd93625d016725d26",
+        "src/data/graeber.json": "sha256:b177ef14d87745d3688e94c73404e494c2e7c6137ed81b0e2b8e4e659943e40c",
+        "06-suche/amelie-pruefprotokoll.md": "sha256:9798919ef3804abd35bc0f0531ef937c477c023dbd2935a2b37fcbbfb8eb699d",
+        "06-suche/terminology-map.md": "absent",
+        "06-suche/open-questions.md": "absent",
+        "src/data/doseVectors.json": "sha256:fb58743901afc0e7897df6bf55fd1dfa95b1cd7db885dad3da324716200dfbb9",
+        "src/data/candidateVectors.json": "sha256:eb81e10856deb4d8768a267b5547de5deb7c842a5378ed75df4b439e8d7c917a",
+        "src/data/vectorChanges.json": "absent"
+      }
+    },
+    "lab-2026-09-30-lacunar-schmetterlinge-offen": {
+      "plan_id": "lab-2026-09-30-lacunar-schmetterlinge-offen",
+      "actor": "lab-librarian",
+      "agent": "bibliothekar",
+      "runde": "Lab-Vorschläge 30.09.2026 (alle angenommen)",
+      "at": "2026-09-30T18:26:22.363Z",
+      "ops": [
+        {
+          "index": 0,
+          "op": "source.add",
+          "target": "pmc-nir-insektenmonitoring"
+        },
+        {
+          "index": 1,
+          "op": "source.add",
+          "target": "ufz-tagfalter-monitoring-deutschland"
+        }
+      ],
+      "files": [
+        "06-suche/amelie-quellen.md",
+        "src/data/quellen.json"
+      ],
+      "hashes": {
+        "src/data/quellen.json": "sha256:281b39078bdf1f4e291b85f616e77a58f2db5f5ab3362a4bce6bb0937b962bf5",
+        "src/data/graeber.json": "sha256:b177ef14d87745d3688e94c73404e494c2e7c6137ed81b0e2b8e4e659943e40c",
+        "06-suche/amelie-pruefprotokoll.md": "sha256:9798919ef3804abd35bc0f0531ef937c477c023dbd2935a2b37fcbbfb8eb699d",
+        "06-suche/terminology-map.md": "absent",
+        "06-suche/open-questions.md": "absent",
+        "src/data/doseVectors.json": "sha256:fb58743901afc0e7897df6bf55fd1dfa95b1cd7db885dad3da324716200dfbb9",
+        "src/data/candidateVectors.json": "sha256:eb81e10856deb4d8768a267b5547de5deb7c842a5378ed75df4b439e8d7c917a",
+        "src/data/vectorChanges.json": "absent"
+      }
+    },
+    "lab-survivors-existenzpruefung-2026-09-30": {
+      "plan_id": "lab-survivors-existenzpruefung-2026-09-30",
+      "actor": "bibliothekar",
+      "agent": "bibliothekar",
+      "runde": "Lab-Survivors Existenzprüfung 30.09.2026",
+      "at": "2026-09-30T18:38:19.918Z",
+      "ops": [
+        {
+          "index": 0,
+          "op": "grave.add",
+          "target": "baumumfang-lidar-app"
+        },
+        {
+          "index": 1,
+          "op": "grave.add",
+          "target": "baumart-vitalitaet-ki"
+        },
+        {
+          "index": 2,
+          "op": "grave.add",
+          "target": "faellgenehmigung-ki-pruefer"
+        },
+        {
+          "index": 3,
+          "op": "grave.add",
+          "target": "ersatzbaum-foto-monitoring"
+        },
+        {
+          "index": 4,
+          "op": "grave.add",
+          "target": "seo-headline-ki-typo3"
+        },
+        {
+          "index": 5,
+          "op": "grave.add",
+          "target": "seo-kontext-neuordnung"
+        },
+        {
+          "index": 6,
+          "op": "grave.add",
+          "target": "seo-micro-ab-ki"
+        },
+        {
+          "index": 7,
+          "op": "grave.add",
+          "target": "seo-stimmungs-tonanpassung"
+        },
+        {
+          "index": 8,
+          "op": "grave.add",
+          "target": "spendenverpackung-ar-assistent"
+        },
+        {
+          "index": 9,
+          "op": "grave.add",
+          "target": "haustier-biofeedback-halsband"
+        },
+        {
+          "index": 10,
+          "op": "grave.add",
+          "target": "kompensationsflaechen-app"
+        },
+        {
+          "index": 11,
+          "op": "grave.add",
+          "target": "robinien-risikoflaechen-prognose"
+        },
+        {
+          "index": 12,
+          "op": "grave.add",
+          "target": "robinien-fortschritts-dashboard"
+        },
+        {
+          "index": 13,
+          "op": "grave.add",
+          "target": "tortilla-setzen-simulation"
+        },
+        {
+          "index": 14,
+          "op": "grave.add",
+          "target": "transekt-habitat-3d-zeitreihe"
+        },
+        {
+          "index": 15,
+          "op": "grave.add",
+          "target": "robinien-duftprofil"
+        },
+        {
+          "index": 16,
+          "op": "grave.add",
+          "target": "uxo-3d-palimpsest"
+        },
+        {
+          "index": 17,
+          "op": "grave.add",
+          "target": "patata-galicia-wareneingang"
+        },
+        {
+          "index": 18,
+          "op": "grave.add",
+          "target": "tortilla-heritage-stilzuordnung"
+        },
+        {
+          "index": 19,
+          "op": "grave.add",
+          "target": "transekt-sensorfeld"
+        },
+        {
+          "index": 20,
+          "op": "grave.add",
+          "target": "raum-umbauer"
+        },
+        {
+          "index": 21,
+          "op": "protokoll.add",
+          "target": "robinienholz-plattform"
+        },
+        {
+          "index": 22,
+          "op": "protokoll.add",
+          "target": "robinien-entfernung-doku-app"
+        },
+        {
+          "index": 23,
+          "op": "protokoll.add",
+          "target": "robinien-boerse-kleinmengen"
+        },
+        {
+          "index": 24,
+          "op": "protokoll.add",
+          "target": "robinien-priorisierungs-tool"
+        },
+        {
+          "index": 25,
+          "op": "protokoll.add",
+          "target": "robinien-impact-tracker-fauna"
+        },
+        {
+          "index": 26,
+          "op": "protokoll.add",
+          "target": "hygienerecht-chatbot-eu"
+        },
+        {
+          "index": 27,
+          "op": "protokoll.add",
+          "target": "hygiene-check-eiverarbeitung"
+        },
+        {
+          "index": 28,
+          "op": "protokoll.add",
+          "target": "salmonellen-wetterwarnung"
+        },
+        {
+          "index": 29,
+          "op": "protokoll.add",
+          "target": "patata-galicia-wareneingang"
+        },
+        {
+          "index": 30,
+          "op": "protokoll.add",
+          "target": "kompensationsflaechen-buergerlayer"
+        },
+        {
+          "index": 31,
+          "op": "protokoll.add",
+          "target": "virtuelle-begehung-360"
+        },
+        {
+          "index": 32,
+          "op": "protokoll.add",
+          "target": "oekokonto-gemeinden"
+        },
+        {
+          "index": 33,
+          "op": "protokoll.add",
+          "target": "spenden-haftungs-chatbot"
+        },
+        {
+          "index": 34,
+          "op": "protokoll.add",
+          "target": "mini-donation-protocol"
+        },
+        {
+          "index": 35,
+          "op": "protokoll.add",
+          "target": "spenden-traceability-ledger"
+        },
+        {
+          "index": 36,
+          "op": "protokoll.add",
+          "target": "cuttlefish-stille-edits"
+        },
+        {
+          "index": 37,
+          "op": "protokoll.add",
+          "target": "walnuss-duell"
+        },
+        {
+          "index": 38,
+          "op": "protokoll.add",
+          "target": "kartoffelscheiben-kamera"
+        },
+        {
+          "index": 39,
+          "op": "protokoll.add",
+          "target": "wende-haptik"
+        },
+        {
+          "index": 40,
+          "op": "protokoll.add",
+          "target": "strukturscore-bruchrisiko"
+        },
+        {
+          "index": 41,
+          "op": "protokoll.add",
+          "target": "tortilla-heritage-stilzuordnung"
+        },
+        {
+          "index": 42,
+          "op": "protokoll.add",
+          "target": "post-mortem-foto-analyse"
+        },
+        {
+          "index": 43,
+          "op": "protokoll.add",
+          "target": "robinien-austrieb-prognose"
+        },
+        {
+          "index": 44,
+          "op": "protokoll.add",
+          "target": "virtuelle-robinien"
+        },
+        {
+          "index": 45,
+          "op": "protokoll.add",
+          "target": "sauerteig-scorecard-standortvitalitaet"
+        },
+        {
+          "index": 46,
+          "op": "protokoll.add",
+          "target": "robinien-ar-austriebe"
+        },
+        {
+          "index": 47,
+          "op": "protokoll.add",
+          "target": "bodenscan-roboter-myonen"
+        },
+        {
+          "index": 48,
+          "op": "protokoll.add",
+          "target": "kontext-anomalie-parser-llm"
+        },
+        {
+          "index": 49,
+          "op": "protokoll.add",
+          "target": "sensorfusion-signaturen"
+        },
+        {
+          "index": 50,
+          "op": "protokoll.add",
+          "target": "kampfmittel-gefahrenatlas"
+        },
+        {
+          "index": 51,
+          "op": "protokoll.add",
+          "target": "kampfmittel-signatur-rekonstruktion"
+        },
+        {
+          "index": 52,
+          "op": "protokoll.add",
+          "target": "tier-signal-uebersetzer"
+        },
+        {
+          "index": 53,
+          "op": "protokoll.add",
+          "target": "tier-umgebungs-stimmungssteuerung"
+        },
+        {
+          "index": 54,
+          "op": "protokoll.add",
+          "target": "raum-umbauer"
+        },
+        {
+          "index": 55,
+          "op": "protokoll.add",
+          "target": "dynamische-raumteilung"
+        },
+        {
+          "index": 56,
+          "op": "protokoll.add",
+          "target": "musterprojektion-sicherheitszone"
+        }
+      ],
+      "files": [
+        "06-suche/amelie-pruefprotokoll.md",
+        "08-friedhof/README.md",
+        "AMELIE_STATUS.md",
+        "public/data/amelie-health.json",
+        "public/data/amelie-ideas.json",
+        "public/data/quellen.json",
+        "public/data/unpacked.json",
+        "public/data/vectors.json",
+        "src/data/graeber.json"
+      ],
+      "hashes": {
+        "src/data/quellen.json": "sha256:281b39078bdf1f4e291b85f616e77a58f2db5f5ab3362a4bce6bb0937b962bf5",
+        "src/data/graeber.json": "sha256:28680cca27935fc12af4b7715298d8b75a9040fa101881baa75fa7760c922d80",
+        "06-suche/amelie-pruefprotokoll.md": "sha256:cfff16fd7b3a7ef2286eaf5ee58d25ba180601cc68c00368a1c50aae93501749",
+        "06-suche/terminology-map.md": "absent",
+        "06-suche/open-questions.md": "absent",
+        "src/data/doseVectors.json": "sha256:fb58743901afc0e7897df6bf55fd1dfa95b1cd7db885dad3da324716200dfbb9",
+        "src/data/candidateVectors.json": "sha256:b1584659a91b5625577433fc6f05ed9bcb300e95b215f12029d6b79d136a239c",
+        "src/data/vectorChanges.json": "absent"
+      }
+    },
+    "lab-2026-09-30-lacunar-20260930T164042-efeb55-source": {
+      "plan_id": "lab-2026-09-30-lacunar-20260930T164042-efeb55-source",
+      "actor": "lab-librarian",
+      "agent": "lab",
+      "runde": "lacunar-20260930T164042-efeb55",
+      "at": "2026-10-01T09:29:27.219Z",
+      "ops": [
+        {
+          "index": 0,
+          "op": "source.add",
+          "target": "ecochain-fsc-timber-chain-of"
+        }
+      ],
+      "files": [
+        "06-suche/amelie-quellen.md",
+        "AMELIE_STATUS.md",
+        "public/data/amelie-health.json",
+        "public/data/amelie-ideas.json",
+        "public/data/quellen.json",
+        "src/data/quellen.json"
+      ],
+      "hashes": {
+        "src/data/quellen.json": "sha256:e0e3b21fec6781f2a8a245f91388d53b648433502e6eec82d1009965dc631627",
+        "src/data/graeber.json": "sha256:28680cca27935fc12af4b7715298d8b75a9040fa101881baa75fa7760c922d80",
+        "06-suche/amelie-pruefprotokoll.md": "sha256:cfff16fd7b3a7ef2286eaf5ee58d25ba180601cc68c00368a1c50aae93501749",
+        "06-suche/terminology-map.md": "absent",
+        "06-suche/open-questions.md": "absent",
+        "src/data/doseVectors.json": "sha256:fb58743901afc0e7897df6bf55fd1dfa95b1cd7db885dad3da324716200dfbb9",
+        "src/data/candidateVectors.json": "sha256:b1584659a91b5625577433fc6f05ed9bcb300e95b215f12029d6b79d136a239c",
+        "src/data/vectorChanges.json": "absent"
+      }
+    },
+    "lab-2026-09-30-lacunar-20260930T210642-66f73d-source": {
+      "plan_id": "lab-2026-09-30-lacunar-20260930T210642-66f73d-source",
+      "actor": "lab-librarian",
+      "agent": "lab",
+      "runde": "lacunar-20260930T210642-66f73d",
+      "at": "2026-10-01T09:29:28.144Z",
+      "ops": [
+        {
+          "index": 0,
+          "op": "source.add",
+          "target": "brandenburg-zeitzeugenportal-brandenburg-manuelle-erfassung"
+        }
+      ],
+      "files": [
+        "06-suche/amelie-quellen.md",
+        "AMELIE_STATUS.md",
+        "public/data/amelie-health.json",
+        "public/data/amelie-ideas.json",
+        "public/data/quellen.json",
+        "src/data/quellen.json"
+      ],
+      "hashes": {
+        "src/data/quellen.json": "sha256:574e1eea942aff62bf77271a6edddc7040de2d258f246d1d5b6baef3b1d6fd5f",
+        "src/data/graeber.json": "sha256:28680cca27935fc12af4b7715298d8b75a9040fa101881baa75fa7760c922d80",
+        "06-suche/amelie-pruefprotokoll.md": "sha256:cfff16fd7b3a7ef2286eaf5ee58d25ba180601cc68c00368a1c50aae93501749",
+        "06-suche/terminology-map.md": "absent",
+        "06-suche/open-questions.md": "absent",
+        "src/data/doseVectors.json": "sha256:fb58743901afc0e7897df6bf55fd1dfa95b1cd7db885dad3da324716200dfbb9",
+        "src/data/candidateVectors.json": "sha256:b1584659a91b5625577433fc6f05ed9bcb300e95b215f12029d6b79d136a239c",
+        "src/data/vectorChanges.json": "absent"
+      }
+    }
+  }
+}

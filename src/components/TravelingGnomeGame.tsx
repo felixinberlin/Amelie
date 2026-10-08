@@ -498,12 +498,12 @@ export const TravelingGnomeGame: React.FC<TravelingGnomeGameProps> = ({ lang }) 
   };
 
   return (
-    <div className="bg-white border border-[#d8cbba] rounded-3xl p-6 md:p-8 space-y-6 shadow-sm">
+    <div className="bg-white border border-[var(--m-line-strong)] rounded-3xl p-6 md:p-8 space-y-6 shadow-sm">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-stone-200 pb-5">
         <div className="space-y-1">
-          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[#701531]">
-            <Sparkles className="w-4 h-4 text-[#8c1d40]" />
+          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[var(--m-accent-strong)]">
+            <Sparkles className="w-4 h-4 text-[var(--m-accent)]" />
             <span>
               {lang === 'de'
                 ? 'Der legendäre Amélie-Gartenzwerg-Streich'
@@ -512,7 +512,7 @@ export const TravelingGnomeGame: React.FC<TravelingGnomeGameProps> = ({ lang }) 
                 : 'The Legendary Amélie Garden Gnome Prank'}
             </span>
           </div>
-          <h3 className="text-xl md:text-2xl font-amelie font-bold text-[#2b1e16]">
+          <h3 className="text-xl md:text-2xl font-amelie font-bold text-[var(--m-ink)]">
             {lang === 'de'
               ? '« Le Nain de Jardin Voyageur »'
               : lang === 'es'
@@ -531,7 +531,7 @@ export const TravelingGnomeGame: React.FC<TravelingGnomeGameProps> = ({ lang }) 
         <div className="flex items-center gap-2 shrink-0">
           <button
             onClick={handleSnapPhoto}
-            className="px-4 py-2.5 bg-[#8c1d40] hover:bg-[#701531] text-amber-50 rounded-xl font-bold font-mono text-xs flex items-center gap-2 shadow-md transition-transform active:scale-95 cursor-pointer"
+            className="px-4 py-2.5 bg-[var(--m-accent)] hover:bg-[var(--m-accent-strong)] text-amber-50 rounded-xl font-bold font-mono text-xs flex items-center gap-2 shadow-md transition-transform active:scale-95 cursor-pointer"
           >
             <Camera className="w-4 h-4 text-amber-200" />
             <span>{lang === 'de' ? 'Polaroid schießen!' : lang === 'es' ? '¡Disparar Polaroid!' : 'Snap Polaroid!'}</span>
@@ -544,7 +544,7 @@ export const TravelingGnomeGame: React.FC<TravelingGnomeGameProps> = ({ lang }) 
         {/* Left Column: Destination & Wardrobe Controls (5 cols) */}
         <div className="lg:col-span-5 space-y-4">
           {/* Destination Selector */}
-          <div className="p-4 rounded-2xl bg-[#faf4e8] border border-[#d8cbba] space-y-3">
+          <div className="p-4 rounded-2xl bg-[var(--m-surface-2)] border border-[var(--m-line-strong)] space-y-3">
             <span className="text-xs font-mono font-bold uppercase tracking-wider text-stone-700 flex items-center gap-1.5">
               <Compass className="w-3.5 h-3.5 text-amber-800" />
               {lang === 'de' ? '1. Reiseziel wählen' : lang === 'es' ? '1. Elegir destino' : '1. Select Destination'}
@@ -557,7 +557,7 @@ export const TravelingGnomeGame: React.FC<TravelingGnomeGameProps> = ({ lang }) 
                   onClick={() => setActiveDestIndex(idx)}
                   className={`p-2 rounded-xl text-left border transition-all cursor-pointer flex flex-col justify-between ${
                     idx === activeDestIndex
-                      ? 'bg-white border-[#8c1d40] shadow-xs font-bold text-stone-900 ring-2 ring-[#8c1d40]/20'
+                      ? 'bg-white border-[var(--m-accent)] shadow-xs font-bold text-stone-900 ring-2 ring-[var(--m-accent)]/20'
                       : 'bg-stone-50 border-stone-200 text-stone-600 hover:bg-white'
                   }`}
                 >
@@ -576,9 +576,9 @@ export const TravelingGnomeGame: React.FC<TravelingGnomeGameProps> = ({ lang }) 
           </div>
 
           {/* Gnome Dress-Up Controls */}
-          <div className="p-4 rounded-2xl bg-[#faf4e8] border border-[#d8cbba] space-y-3 text-xs">
+          <div className="p-4 rounded-2xl bg-[var(--m-surface-2)] border border-[var(--m-line-strong)] space-y-3 text-xs">
             <span className="text-xs font-mono font-bold uppercase tracking-wider text-stone-700 flex items-center gap-1.5">
-              <Palette className="w-3.5 h-3.5 text-[#8c1d40]" />
+              <Palette className="w-3.5 h-3.5 text-[var(--m-accent)]" />
               {lang === 'de' ? '2. Zwergen-Garderobe anpassen' : lang === 'es' ? '2. Vestir al gnomo' : '2. Style the Gnome'}
             </span>
 
@@ -599,7 +599,7 @@ export const TravelingGnomeGame: React.FC<TravelingGnomeGameProps> = ({ lang }) 
                     onClick={() => setCostume((c) => ({ ...c, hat: item.id as GnomeCostume['hat'] }))}
                     className={`px-2 py-1 rounded-lg border text-center transition-all cursor-pointer ${
                       costume.hat === item.id
-                        ? 'bg-[#8c1d40] text-white border-[#8c1d40] font-bold'
+                        ? 'bg-[var(--m-accent)] text-white border-[var(--m-accent)] font-bold'
                         : 'bg-white border-stone-200 text-stone-700 hover:bg-stone-50'
                     }`}
                   >
@@ -625,7 +625,7 @@ export const TravelingGnomeGame: React.FC<TravelingGnomeGameProps> = ({ lang }) 
                     onClick={() => setCostume((c) => ({ ...c, eyewear: item.id as GnomeCostume['eyewear'] }))}
                     className={`px-2 py-1 rounded-lg border text-center transition-all cursor-pointer ${
                       costume.eyewear === item.id
-                        ? 'bg-[#8c1d40] text-white border-[#8c1d40] font-bold'
+                        ? 'bg-[var(--m-accent)] text-white border-[var(--m-accent)] font-bold'
                         : 'bg-white border-stone-200 text-stone-700 hover:bg-stone-50'
                     }`}
                   >
@@ -652,7 +652,7 @@ export const TravelingGnomeGame: React.FC<TravelingGnomeGameProps> = ({ lang }) 
                     onClick={() => setCostume((c) => ({ ...c, prop: item.id as GnomeCostume['prop'] }))}
                     className={`px-2 py-1 rounded-lg border text-center transition-all cursor-pointer ${
                       costume.prop === item.id
-                        ? 'bg-[#8c1d40] text-white border-[#8c1d40] font-bold'
+                        ? 'bg-[var(--m-accent)] text-white border-[var(--m-accent)] font-bold'
                         : 'bg-white border-stone-200 text-stone-700 hover:bg-stone-50'
                     }`}
                   >
@@ -685,7 +685,7 @@ export const TravelingGnomeGame: React.FC<TravelingGnomeGameProps> = ({ lang }) 
                   max="15"
                   value={costume.tilt}
                   onChange={(e) => setCostume((c) => ({ ...c, tilt: parseInt(e.target.value) }))}
-                  className="w-full accent-[#8c1d40] cursor-pointer"
+                  className="w-full accent-[var(--m-accent)] cursor-pointer"
                 />
               </div>
             </div>
@@ -841,7 +841,7 @@ export const TravelingGnomeGame: React.FC<TravelingGnomeGameProps> = ({ lang }) 
                 onClick={handleSnapPhoto}
                 className="px-3.5 py-1.5 bg-amber-100 hover:bg-white text-stone-900 rounded-xl font-bold flex items-center gap-1.5 transition-all active:scale-95 cursor-pointer shadow-xs"
               >
-                <Camera className="w-3.5 h-3.5 text-[#8c1d40]" />
+                <Camera className="w-3.5 h-3.5 text-[var(--m-accent)]" />
                 <span>{lang === 'de' ? 'Klick!' : lang === 'es' ? '¡Clic!' : 'Click!'}</span>
               </button>
             </div>
@@ -849,9 +849,9 @@ export const TravelingGnomeGame: React.FC<TravelingGnomeGameProps> = ({ lang }) 
 
           {/* DEVELOPED POLAROID POSTCARD RESULT */}
           {snappedPolaroid && (
-            <div className="p-6 rounded-3xl bg-[#faf4e8] border-2 border-[#8c1d40]/30 shadow-md space-y-4 animate-in fade-in zoom-in-95 duration-500">
+            <div className="p-6 rounded-3xl bg-[var(--m-surface-2)] border-2 border-[var(--m-accent)]/30 shadow-md space-y-4 animate-in fade-in zoom-in-95 duration-500">
               <div className="flex items-center justify-between border-b border-amber-900/15 pb-3">
-                <span className="text-xs font-mono font-bold uppercase text-[#8c1d40] flex items-center gap-1.5">
+                <span className="text-xs font-mono font-bold uppercase text-[var(--m-accent)] flex items-center gap-1.5">
                   <Camera className="w-4 h-4" />
                   {lang === 'de' ? 'Entwickeltes Sofortbild & Luftpost-Grüße' : lang === 'es' ? 'Polaroid revelada y tarjeta aérea' : 'Developed Polaroid & Airmail Card'}
                 </span>
@@ -939,10 +939,10 @@ export const TravelingGnomeGame: React.FC<TravelingGnomeGameProps> = ({ lang }) 
 
       {/* Gallery of World Tour Polaroids */}
       {gallery.length > 0 && (
-        <div className="p-4 rounded-2xl bg-[#faf4e8] border border-[#d8cbba] space-y-3">
+        <div className="p-4 rounded-2xl bg-[var(--m-surface-2)] border border-[var(--m-line-strong)] space-y-3">
           <div className="flex items-center justify-between">
             <span className="text-xs font-mono font-bold uppercase tracking-wider text-amber-950 flex items-center gap-1.5">
-              <ImageIcon className="w-4 h-4 text-[#8c1d40]" />
+              <ImageIcon className="w-4 h-4 text-[var(--m-accent)]" />
               {lang === 'de' ? 'Reisealbum des Zwergs (Heutige Expedition)' : lang === 'es' ? 'Álbum del gnomo (Expedición de hoy)' : 'Gnome’s Travel Album (Today’s Expedition)'}
             </span>
             <span className="text-xs font-mono text-stone-500">
@@ -955,7 +955,7 @@ export const TravelingGnomeGame: React.FC<TravelingGnomeGameProps> = ({ lang }) 
               <div
                 key={snap.id}
                 onClick={() => setSnappedPolaroid(snap)}
-                className="bg-white p-2 rounded-xl border border-stone-200 shadow-2xs hover:shadow-sm hover:border-[#8c1d40] cursor-pointer transition-all text-center flex flex-col justify-between"
+                className="bg-white p-2 rounded-xl border border-stone-200 shadow-2xs hover:shadow-sm hover:border-[var(--m-accent)] cursor-pointer transition-all text-center flex flex-col justify-between"
               >
                 <div className={`w-full h-20 rounded bg-gradient-to-b ${snap.destination.bgGradient} flex items-center justify-center text-xl`}>
                   {snap.destination.flag}

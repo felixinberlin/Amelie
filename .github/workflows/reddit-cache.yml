@@ -1,0 +1,44 @@
+name: Reddit-Cache (nächtlich)
+
+on:
+  schedule:
+    - cron: '17 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: reddit-cache
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      # Seriell mit 65 s Pause (Reddit-Rate-Limit); 12 Subs brauchen rund 15 Minuten.
+      # Schlägt ein Sub fehl, bleibt sein alter Bestand mit stale:true erhalten.
+      - name: Feeds holen
+        run: node scripts/fetch-reddit.mjs
+      - name: Änderung committen und Deploy anstoßen
+        run: |
+          if git diff --quiet -- public/data/reddit.json; then
+            echo "Keine Änderung."; exit 0
+          fi
+          git config user.name "amelie-reddit-cache"
+          git config user.email "actions@users.noreply.github.com"
+          git add public/data/reddit.json
+          git commit -m "Reddit-Cache: nächtlicher Lauf"
+          git push origin HEAD:main
+          # Pushes mit GITHUB_TOKEN lösen keinen Deploy aus, deshalb explizit.
+          gh workflow run deploy.yml --ref main
+        env:
+          GH_TOKEN: ${{ github.token }}

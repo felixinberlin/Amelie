@@ -1,0 +1,26 @@
+{
+  "name": "@wet-ink/obsidian",
+  "version": "1.0.0",
+  "description": "Obsidian markdown codeblock adapter for Wet Ink Pro. Authentic Navier-Stokes fluid ink simulation in notes with Apple Pencil and S-Pen support.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "test": "vitest run",
+    "build": "tsc"
+  },
+  "keywords": [
+    "obsidian",
+    "obsidian-plugin",
+    "wet-ink",
+    "calligraphy",
+    "markdown-codeblock"
+  ],
+  "author": "Felix <felix@tortilladepatas.de>",
+  "license": "Commercial",
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "vitest": ">=3"
+  }
+}

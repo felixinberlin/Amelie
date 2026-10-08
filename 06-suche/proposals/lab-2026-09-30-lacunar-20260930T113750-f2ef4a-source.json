@@ -1,0 +1,23 @@
+{
+  "plan_id": "lab-2026-09-30-lacunar-20260930T113750-f2ef4a-source",
+  "actor": "lab-librarian",
+  "agent": "lab",
+  "runde": "lacunar-20260930T113750-f2ef4a",
+  "_note": "Vorschlag des Labs, nicht angewendet. Der Bibliothekar prüft (typ, kategorie, `bib quellen match --url`, `bib find`); `human_accepted: true` setzt nur Félix, danach `npm run bib -- apply` auf diese Datei.",
+  "ops": [
+    {
+      "op": "source.add",
+      "id": "zubairkhalid-interspecies-aggression-assessment-protocol",
+      "name": "Interspecies Aggression Assessment Protocol",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "enthaelt": "Interspecies Aggression Assessment Protocol (Typ A: scheme without software); Anker des Lab-Laufs lacunar-20260930T113750-f2ef4a, nicht gelesen.",
+      "status": "angekratzt",
+      "evidenz": "schnipsel",
+      "note": "Anker des Lab-Laufs lacunar-20260930T113750-f2ef4a (Ideen für Hunde und katze in die gleiche Haus); nur als Suchtreffer gelesen.",
+      "urls": [
+        "https://www.zubairkhalid.com/knowledge/veterinary-medicine/anxiety-and-behavior-support/dog-aggression-towards-cats"
+      ]
+    }
+  ]
+}

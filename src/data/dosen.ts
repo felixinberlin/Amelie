@@ -1,4 +1,5 @@
 import { DoseItem, DiscardedItem } from '../types';
+import graeberJson from './graeber.json';
 
 export const DOSEN_DATA: DoseItem[] = [
   {
@@ -48,6 +49,11 @@ export const DOSEN_DATA: DoseItem[] = [
   },
   {
     id: 'glasanflug-ampel',
+    videoFile: 'glasanflug-demo.mp4',
+    videoPoster: 'glasanflug-demo-poster.webp',
+    videoAspect: 16 / 9,
+    videoTitle: 'Konzeptvideo: vom Fassadenfoto zur Einstufung (10 s)',
+    videoTitleEn: 'Concept video: from façade photo to rating (10 s)',
     emailTemplates: [
       {
         recipientName: 'NABU Berlin — Artenschutz am Gebäude',
@@ -122,56 +128,8 @@ export const DOSEN_DATA: DoseItem[] = [
     },
     failureModeDe: 'Eine Zahl, die sicherer klingt als die Datenlage, wird in beide Richtungen missbraucht — deshalb ausgefülltes Blatt mit sichtbaren Eingangswerten statt Urteil. Die Evidenz widerspricht dem Schema teilweise: Li u. a. 2025 (3.078 Gebäude, 65.633 Erfassungstage) finden die Vegetationswirkung auf 1.000 m bis 10 km, und Bäume innerhalb von 5 m senkten das Herbstrisiko; Samuels u. a. 2022 fanden kleine Oberlichter fast so oft getroffen wie große Glastüren. Der Beschluss lässt den Reflexionsgrad bewusst außen vor, weil dafür „noch keine geeigneten Einstufungskriterien vorliegen" — wer ihn misst, erweitert das Schema und muss das ausweisen. Und der Weg vom Planungshilfsmittel zum Pranger ist kurz: Meldedaten enthalten Adressen; Bewertungen gehören in das Anschreiben an den Eigentümer, nicht auf eine öffentliche Karte.',
     failureModeEn: 'A number that sounds more certain than the evidence gets abused in both directions — hence a filled-in sheet with visible inputs instead of a verdict. The evidence partly contradicts the scheme: Li et al. 2025 (3,078 buildings, 65,633 survey days) found vegetation predicting at 1,000 m to 10 km, and trees within 5 m reduced autumn risk; Samuels et al. 2022 found small transom windows struck nearly as often as large glass doors. The decision deliberately leaves reflectance out because "no suitable classification criteria exist yet" — measuring it extends the scheme and must be declared. And the path from planning aid to pillory is short: reports carry addresses, so assessments belong in the letter to the owner, not on a public map.',
-    priorArtDe: 'Verengt (21./22.09.2026, korrigiert von „frei"): Der Rechner existiert zweimal, nur anderswo. FLAP Canada betreibt mit flapapp.ca eine kostenlose BirdSafe-App, die Tag- und Nachtrisiko pro Fassade schätzt — als geführter Fragebogen ohne Bildauswertung. LEED führt seit April 2026 in v5 Vogelschlag in zwei Credits mit Threat Factor ≤ 30 nach ABC-Skala, CSA A460:19 gilt als kanadischer Alternativweg; Pilot Credit SSpc55 rechnet mit offizieller Tabellenvorlage, bewertet aber Materialien aus der Planung. New York (Local Law 15, seit 2021) und Toronto (seit 2010) haben Nachweismärkte, bedient von Beratungsbüros; Compliance-Software nicht gefunden. Österreich prüft Markierungen nach ONR 191040 im Flugtunnel Hohenau (mindestens 90 % Meiderate) — die Produktseite ist gründlich abgedeckt. In Deutschland: LAG VSW Beschluss 21/01 (aktualisiert 2023, im Auftrag der LANA, den Ländern zur Anwendung empfohlen), Berliner Beurteilungshilfe, Merkblätter — kein digitales Werkzeug, das das Schema rechnet. Die Gegenrichtung ist seit Februar 2026 besetzt: vogelschlagmelder.de sammelt Opferfunde, die Gefahrenkarte dort ist eine Heatmap der Meldungen, keine Bewertung. Melden ist gelöst, Bewerten nicht.',
-    priorArtEn: 'Narrowed (21/22 Sep 2026, corrected from "free"): the calculator exists twice, elsewhere. FLAP Canada runs flapapp.ca, a free BirdSafe app estimating day and night risk per façade — a guided questionnaire without image analysis. Since April 2026 LEED v5 carries bird collisions in two credits requiring an ABC threat factor ≤ 30, with CSA A460:19 as the Canadian compliance path; Pilot Credit SSpc55 computes via an official spreadsheet but scores materials from a design. New York (Local Law 15, in force since 2021) and Toronto (since 2010) created documentation markets served by consultancies; compliance software was not found. Austria tests markings under ONR 191040 in the Hohenau flight tunnel (at least 90 % avoidance) — the product side is thoroughly covered. In Germany: LAG VSW decision 21/01 (updated 2023, commissioned by the LANA and recommended to the federal states), Berlin\'s assessment aid, various leaflets — no digital tool that computes the scheme. The opposite direction has been occupied since February 2026: vogelschlagmelder.de collects victim reports, and its hazard map is a heatmap of those reports, not an assessment. Reporting is solved. Rating is not.'
-  },
-  {
-    id: 'eurobirdcast',
-    title: 'EuroBirdCast',
-    titleEn: 'EuroBirdCast: Auditable Migration Curtailment',
-    image: 'eurobird.png',
-    imageAlt: 'Dreiteilige Infografik zu EuroBirdCast: links eine Karte der europäischen Wetterradare mit Abdeckungskreisen, in der Mitte der Weg vom Rohsignal über die Vogelextraktion zur Mehrradar-Fusion, rechts eine Zugdichtekarte über Deutschland mit Dreistundenprognose.',
-    imageAspect: 1.5,
-    oneLinerDe: 'Aus bereits offen vorliegenden, wetterradarbasierten Vogelzugprofilen eine turbinenspezifische Abschaltempfehlung erzeugen, die eine Behörde ohne den Dienst selbst nachrechnen kann. Arbeitstitel — der Name kollidiert mit BirdCast (Cornell/CSU).',
-    oneLinerEn: 'Turn already public, weather-radar-derived bird migration profiles into a turbine-specific curtailment recommendation a regulator can recompute without the service itself. Working title — the name collides with BirdCast (Cornell/CSU).',
-    date: '22. September 2026 (nach Prüfung neu geschrieben)',
-    reviewAfter: 'März 2027',
-    recipientsDe: 'Offen — erst nach M0 zu entscheiden. Kandidaten: BfN / BioConsult SH (Fortsetzung von RADBIRD), Vogelschutzwarte im LfU Brandenburg (Zentrale Fundkartei), Betreiberverbände. Ausdrücklich nicht: ENRAM (seit 2017 beendet), UvA/WSL/INBO (betreiben HiRAD selbst), Prototype Fund (nicht antragsberechtigt).',
-    recipientsEn: 'Open — to be decided only after M0. Candidates: BfN / BioConsult SH (RADBIRD successor), LfU Brandenburg bird conservation station (central carcass registry), operator associations. Explicitly not: ENRAM (ended 2017), UvA/WSL/INBO (they run HiRAD themselves), Prototype Fund (not eligible).',
-    domain: 'physics',
-    verdict: 'build_first',
-    status: 'gepackt',
-    tags: ['Vogelschutz', 'Windkraft', 'Radar', 'Open Data', 'vol2bird', 'MTR', 'Nachrechenbarkeit', 'Verdikt korrigiert'],
-    problemDe: 'Die Erstfassung dieser Dose behauptete, Windparks würden pauschal nach Kalendermonaten abgeschaltet. Das stimmt nicht: Onshore in Deutschland gibt es für den Vogelzug überhaupt keine Abschaltauflage. Die Nachtabschaltungen im Spätsommer sind Fledermaus-Auflagen und an Temperatur (≥ 10 °C) und Windgeschwindigkeit (< 6 m/s) gekoppelt, die phänologischen gelten Brutvögeln (§ 45b BNatSchG, nicht § 44). Das wirkliche Problem ist ein anderes: Wo abgeschaltet wird — in den Niederlanden seit Mai 2023 verpflichtend, bei kommerziellen Systemen automatisch — kann niemand außerhalb des Systems nachprüfen, ob eine Abschaltung richtig war oder eine unterlassene falsch. Es fehlt die Nachrechenbarkeit, nicht die Messung.',
-    problemEn: 'The first draft of this tin claimed wind farms are shut down by calendar month. They are not: onshore Germany has no migration-based curtailment obligation at all. The late-summer night shutdowns are bat conditions tied to temperature (≥ 10 °C) and wind speed (< 6 m/s); the phenological ones protect breeding birds (§ 45b BNatSchG, not § 44). The real problem is a different one: where curtailment does happen — mandatory in the Netherlands since May 2023, automatic in commercial systems — nobody outside the system can verify whether a shutdown was justified or a missing one was not. What is missing is recomputability, not measurement.',
-    whyNowDe: [
-      'Die Profile für Deutschland sind bereits gerechnet und offen: RMI/KMI Belgien rechnet seit Oktober 2019 täglich vol2bird-Profile für die deutschen Radare deess (Essen) und denhb (Neuheilenbach), frei abrufbar. Kein eigenes Ingest, kein HDF5, kein Docker nötig.',
-      'FlySafe (UvA/KNMI/niederländische Luftwaffe) liefert seit August 2026 5-Minuten-Echtzeitprofile über NL, BE und DE, frei nutzbar über das KNMI Data Platform.',
-      'Der Werkzeugkasten ist gepflegt: vol2birdR 1.3.2 (16.09.2026), bioRad 0.12.0.9000 (21.07.2026), getRad (CRAN) für die DWD-Rohdaten.',
-      'Die Schwellenwerte sind veröffentlicht: 250 und 500 MTR (Welcker 2022, BfN-Schriften 635); NL offshore 500 Vögel/km/h, windabhängig 400/900/500 (van Bemmelen u. a. 2022).',
-      'Die Gegenrichtung ist besetzt und damit Kalibrierquelle: Die Vogelschutzwarte im LfU Brandenburg führt seit 2002 die bundesweite Zentrale Fundkartei für Windkraftopfer.'
-    ],
-    whyNowEn: [
-      'The profiles for Germany are already computed and open: RMI/KMI Belgium has computed daily vol2bird profiles for the German radars deess (Essen) and denhb (Neuheilenbach) since October 2019, freely available. No ingestion, no HDF5, no Docker needed.',
-      'FlySafe (UvA/KNMI/Royal Netherlands Air Force) has delivered free 5-minute real-time profiles across NL, BE and DE since August 2026 via the KNMI Data Platform.',
-      'The toolchain is maintained: vol2birdR 1.3.2 (16 Sep 2026), bioRad 0.12.0.9000 (21 Jul 2026), getRad (CRAN) for the raw DWD data.',
-      'The thresholds are published: 250 and 500 MTR (Welcker 2022, BfN-Schriften 635); NL offshore 500 birds/km/h, wind-dependent 400/900/500 (van Bemmelen et al. 2022).',
-      'The opposite direction is occupied and therefore a calibration source: the LfU Brandenburg bird conservation station has run the national carcass registry for wind turbine casualties since 2002.'
-    ],
-    sketchDe: 'Eingabe sind fertige VPTS-Profile (RMI/KMI für deess und denhb, FlySafe für Echtzeit) statt eigener Radarverarbeitung. Daraus wird eine einzige Kennzahl abgeleitet: MTR auf Rotorhöhe, also Vögel je Kilometer Frontbreite und Stunde, integriert über die Rotorebene (Referenzanlage DE-Zubau H1/2025: Nabe 146 m, Rotor 150 m, also 71–221 m). MTR ist die Einheit, in der die Schwellenwerte in DE, NL und BE formuliert sind, und damit die einzige, in der sich ein Ergebnis gegen veröffentlichte Grenzwerte prüfen lässt. Die Schwellen stehen in einer Datei mit Quellenangabe, nicht im Code, und werden mit Unsicherheitsband geführt. Der eigentliche Beitrag ist die Audit-Zeile: Radarquelle, Zeit, Höhenprofil, MTR, Unsicherheit, verwendete Schwelle mit Quelle, Ertragsverlust und Entscheidung — so, dass eine Behörde die Abschaltung ohne den Dienst nachrechnen kann. Genau das hält kein kommerzielles System offen.',
-    sketchEn: 'Input is finished VPTS profiles (RMI/KMI for deess and denhb, FlySafe for real time) instead of in-house radar processing. From them a single metric is derived: MTR at rotor height, birds per km of front per hour integrated over the rotor-swept zone (German reference turbine H1/2025: hub 146 m, rotor 150 m, hence 71–221 m). MTR is the unit in which thresholds are formulated in DE, NL and BE, and therefore the only one in which a result can be checked against published limits. Thresholds live in a cited data file rather than in code and carry an uncertainty band. The actual contribution is the audit record: radar source, time, altitude profile, MTR, uncertainty, threshold with citation, energy loss and decision — such that a regulator can recompute the curtailment without the service. No commercial system exposes this.',
-    firstStepDe: {
-      ticket: 'M0: Bedarfsklärung. Zwei Fragen, kein Produkt.',
-      criteria: 'An BfN/BioConsult SH: Das Vorhaben FKZ 3523 15 1601 (Vogelzug-Vorhersage für bedarfsgerechte Turbinenabschaltungen in der AWZ, 12/2023–11/2025) ist ausgelaufen — was fehlt dem Ergebnis zur Betriebsreife? An die Vogelschutzwarte im LfU Brandenburg: Wären Totfunddaten der Zentralen Fundkartei in einer Form verfügbar, die eine Schwellen-Kalibrierung trägt? Fertig, wenn aus beiden Richtungen eine Antwort vorliegt, die einen Bedarf benennt oder verneint. Kippschalter: Verneinen beide, wandert die Idee nach _entsorgt.md — ein vollwertiges Ergebnis. Erst danach lohnt M1 (Profil-Lesbarkeit, MTR auf Rotorhöhe); die volle Staffel steht in 02-recherche/eurobirdcast-roadmap-2026-09-22.md.'
-    },
-    firstStepEn: {
-      ticket: 'M0: establish demand. Two questions, no product.',
-      criteria: 'To BfN/BioConsult SH: project FKZ 3523 15 1601 (migration forecasting for demand-driven turbine curtailment in the EEZ, 12/2023–11/2025) has ended — what does the result still lack to be operational? To the LfU Brandenburg bird conservation station: would carcass data from the central registry be available in a form that can carry a threshold calibration? Done when an answer from both directions either names a demand or denies it. Kill switch: if both deny it, the idea moves to _entsorgt.md — a full result. Only then is M1 (profile readability, MTR at rotor height) worth starting; the full sequence is in 02-recherche/eurobirdcast-roadmap-2026-09-22.md.'
-    },
-    failureModeDe: 'Der Nullbefund vom Gotthard ist das größte Risiko: Tettamanti (J. Environ. Manage. 401, 1.3.2026) zeigt fünf Anlagen mit BirdScan-MV1-Radar und turbinenindividuellen MTR-Schwellen, bei denen die Abschaltzeit von 318 h auf 28–96 h je Anlage sank — die Kollisionszahl blieb bei rund 190 Tieren pro Jahr unverändert. Mehr zeitliche Präzision rettete dort nicht mehr Vögel. Zweitens fehlt der Käufer: ein Werkzeug für eine Pflicht, die es in Deutschland für den Zug nicht gibt, wird nicht betrieben — deshalb steht M0 vor dem Code. Drittens Scheingenauigkeit: Die Messabweichung zwischen Radarsystemen liegt bei 250 MTR bei rund 100 MTR; eine Ampel ohne Unsicherheitsband behauptet Präzision, die die Messung nicht hergibt. Viertens Lizenz: OPERA/Meteogate liefert research-only, die Zulässigkeit eines Betriebsdienstes ist ungeprüft.',
-    failureModeEn: 'The Gotthard null result is the biggest risk: Tettamanti (J. Environ. Manage. 401, 1 Mar 2026) documents five turbines with BirdScan MV1 radar and turbine-specific MTR thresholds where downtime fell from 318 h to 28–96 h per turbine — while the collision count stayed at roughly 190 animals per year. More temporal precision did not save more birds there. Second, there is no buyer: a tool for an obligation that does not exist for migration in Germany will not be operated — hence M0 before any code. Third, false precision: the deviation between radar systems is around 100 MTR at 250 MTR; a traffic light without an uncertainty band claims precision the measurement cannot deliver. Fourth, licensing: OPERA/Meteogate is research-only and the admissibility of an operating service is unverified.',
-    priorArtDe: 'Verdikt korrigiert am 22.09.2026 von „verifiziert neuartig" auf besetzt/verengt. Bauer u. a. (Nature Sustainability, 2.6.2026, doi 10.1038/s41893-026-01853-4) werten 37 Radare über DE/FR/BE/NL/LU und rund 42.000 Turbinen aus; ihr Szenario 3 schaltet ab, wenn die Kollisionen je erzeugter Kilowattstunde eine Grenze überschreiten — das ist exakt der BP/MWh-Index dieser Dose, drei Monate älter, mit offenem Code. Vorläufer der Metrik: Bureau Waardenburg 2022 (Percentage of Collisions Avoided gegen MWh). In den Niederlanden ist Start/Stop seit Mai 2023 für alle Parks mit kavelbesluit verpflichtend, mit Behördensoftware EVAS und veröffentlichten Saisonberichten — also dem Audit-Trail, den die Erstfassung als Alleinstellung reklamierte; das zugrunde liegende Prognosemodell gilt laut Technolution 2025 allerdings als wenig zuverlässig bei Zugspitzen und nutzt kein Wetterradar. Robin Radar Systems verkauft SCADA-gekoppelte Abschaltung inklusive Algorithmus für Massenzug (Eneco Maasvlakte 2, 22 Turbinen vollautomatisch); Swiss Birdradar bietet BirdScan MV1 (inzwischen „legacy", abgelöst durch FaunaScan MV2) mit automatischer Kommunikation zur Windparksteuerung. Beide proprietär. FlySafe (UvA/KNMI) liefert seit August 2026 Echtzeitprofile auch für Deutschland. RADBIRD (BfN/Vogelwarte Helgoland, 2019–2021) wurde als FKZ 3523 15 1601 (BioConsult SH, bis 11/2025) fortgesetzt. HiRAD (Biodiversa+: WSL, UvA, INBO, FMI, Agroscope, mit Swiss BirdRadar Solution AG) ist genau das Konsortium, das die Erstfassungs-Mail vorschlug zu gründen. ENRAM dagegen war eine COST-Action 2013–2017 und existiert nicht mehr.',
-    priorArtEn: 'Verdict corrected on 22 Sep 2026 from "verified novel" to occupied/narrowed. Bauer et al. (Nature Sustainability, 2 Jun 2026, doi 10.1038/s41893-026-01853-4) analyse 37 radars across DE/FR/BE/NL/LU and around 42,000 turbines; their scenario 3 curtails when collisions per kilowatt-hour generated exceed a limit — exactly the BP/MWh index of this tin, three months older, with open code. Earlier ancestor: Bureau Waardenburg 2022 (Percentage of Collisions Avoided against MWh). In the Netherlands, Start/Stop has been mandatory since May 2023 for every farm with a kavelbesluit, with government software EVAS and published seasonal reports — the audit trail the first draft claimed as its unique contribution; the underlying forecast model is however rated of low reliability at migration peaks (Technolution 2025) and uses no weather radar. Robin Radar Systems sells SCADA-coupled curtailment including a mass-migration algorithm (Eneco Maasvlakte 2, 22 turbines fully automatic); Swiss Birdradar offers BirdScan MV1 (now "legacy", superseded by FaunaScan MV2) with automatic communication to wind park controls. Both proprietary. FlySafe (UvA/KNMI) has delivered real-time profiles covering Germany since August 2026. RADBIRD (BfN/Helgoland, 2019–2021) was continued as FKZ 3523 15 1601 (BioConsult SH, until 11/2025). HiRAD (Biodiversa+: WSL, UvA, INBO, FMI, Agroscope, with Swiss BirdRadar Solution AG) is precisely the consortium the first draft proposed forming. ENRAM, by contrast, was a COST Action from 2013 to 2017 and no longer exists.'
+    priorArtDe: 'Verengt (21./22.09.2026, korrigiert von „frei"): Der Rechner existiert zweimal, nur anderswo. FLAP Canada betreibt mit flapapp.ca eine kostenlose BirdSafe-App, die Tag- und Nachtrisiko pro Fassade schätzt — als geführter Fragebogen ohne Bildauswertung. LEED führt seit April 2026 in v5 Vogelschlag in zwei Credits mit Threat Factor ≤ 30 nach ABC-Skala, CSA A460:19 gilt als kanadischer Alternativweg; Pilot Credit SSpc55 rechnet mit offizieller Tabellenvorlage, bewertet aber Materialien aus der Planung. New York (Local Law 15, seit 2021) und Toronto (seit 2010) haben Nachweismärkte, bedient von Beratungsbüros; Compliance-Software nicht gefunden. Österreich prüft Markierungen nach ONR 191040 im Flugtunnel Hohenau (mindestens 90 % Meiderate) — die Produktseite ist gründlich abgedeckt. In Deutschland: LAG VSW Beschluss 21/01 (aktualisiert 2023, im Auftrag der LANA, den Ländern zur Anwendung empfohlen), Berliner Beurteilungshilfe, Merkblätter — kein digitales Werkzeug, das das Schema rechnet. Die Gegenrichtung ist seit Februar 2026 besetzt: vogelschlagmelder.de sammelt Opferfunde, die Gefahrenkarte dort ist eine Heatmap der Meldungen, keine Bewertung. Melden ist gelöst, Bewerten nicht. Antwort 29.09.2026: Die WUA-Markierungstabelle sind produktspezifische Testergebnisse, nicht verbindlich; Eigentümerin ist die WUA Wien, ein anderer Empfänger als der Melder. Der Simulator enthält dazu einen Abgleich, der "nicht getestet" statt "unwirksam" sagt.',
+    priorArtEn: 'Narrowed (21/22 Sep 2026, corrected from "free"): the calculator exists twice, elsewhere. FLAP Canada runs flapapp.ca, a free BirdSafe app estimating day and night risk per façade — a guided questionnaire without image analysis. Since April 2026 LEED v5 carries bird collisions in two credits requiring an ABC threat factor ≤ 30, with CSA A460:19 as the Canadian compliance path; Pilot Credit SSpc55 computes via an official spreadsheet but scores materials from a design. New York (Local Law 15, in force since 2021) and Toronto (since 2010) created documentation markets served by consultancies; compliance software was not found. Austria tests markings under ONR 191040 in the Hohenau flight tunnel (at least 90 % avoidance) — the product side is thoroughly covered. In Germany: LAG VSW decision 21/01 (updated 2023, commissioned by the LANA and recommended to the federal states), Berlin\'s assessment aid, various leaflets — no digital tool that computes the scheme. The opposite direction has been occupied since February 2026: vogelschlagmelder.de collects victim reports, and its hazard map is a heatmap of those reports, not an assessment. Reporting is solved. Rating is not. Reply 29 Sep 2026: the WUA marking table lists product-specific test results, not binding; the WUA in Vienna owns it, a different recipient than the reporting tool. The simulator now includes a check that says "not tested" rather than "ineffective".'
   },
   {
     id: 'sperrmuell-radar',
@@ -1046,43 +1004,43 @@ Dual-licensed under MIT (code & schema structure) and CC BY 4.0 (interpretive te
   {
     id: 'wet-ink',
     title: 'Wet Ink',
-    titleEn: 'Wet Ink (Capillary Flow Simulator)',
-    oneLinerDe: 'Tinte auf Papier als echte Simulation — Kapillarfluss, Bleeding, Faser-Anisotropie, Edge Darkening. Eine Physik, tief statt breit.',
-    oneLinerEn: 'Real ink on paper physics: capillary flow, fiber anisotropy, bleed spread, and pigment edge darkening in WebGL2.',
+    titleEn: 'Wet Ink (Capillary Flow Simulator & Modular SDK)',
+    oneLinerDe: 'Tinte auf Papier als echte physikalische Mehrschicht-Simulation — Kapillarfluss mit Schwellenwert, Faser-Anisotropie, Kubelka-Munk-Optik, taktile Akustik und modulares SDK.',
+    oneLinerEn: 'Physical ink on paper simulation: capillary pore thresholding, fiber anisotropy, Kubelka-Munk optical glazing, tactile acoustics, and headless SDK.',
     date: 'September 2026',
     reviewAfter: 'September 2027',
-    recipientsDe: 'Escape Motions (Rebelle) · Sumi-e & Kalligrafie-Szene · WebGL Grafik-Lehre',
-    recipientsEn: 'Escape Motions (Rebelle) · Sumi-e & calligraphy communities · WebGL graphics education',
+    recipientsDe: 'Escape Motions (Rebelle) · Open-Source RTE & Editor-Communities (TipTap, ProseMirror, Obsidian, tldraw) · Sumi-e & Kalligrafie-Szene · WebGL Grafik-Lehre',
+    recipientsEn: 'Escape Motions (Rebelle) · Open-source RTE & editor communities (TipTap, ProseMirror, Obsidian, tldraw) · Sumi-e & calligraphy circles · WebGL graphics education',
     domain: 'creative',
-    verdict: 'keep',
+    verdict: 'gift',
     status: 'gepackt',
-    tags: ['WebGL2', 'Physik', 'Shader', 'Kalligrafie', 'Implementierungsplan'],
-    problemDe: 'Digitale Pinselwerkzeuge in Photoshop oder Procreate nutzen Bitmap-Stempel. Echte Tinte verhält sich physikalisch grundlegend anders: Sie wandert entlang von Papierfasern (Feathering), lagert Pigmente am getrockneten Rand ab (Edge Darkening) und granuliert in Papiertälern.',
+    tags: ['WebGL2', 'Physik', 'Shader', 'Kalligrafie', 'Headless-SDK', 'TipTap', 'React', 'Obsidian'],
+    problemDe: 'Digitale Pinselwerkzeuge in Photoshop, Procreate oder Web-Editoren nutzen Bitmap-Stempel. Echte Tinte verhält sich physikalisch grundlegend anders: Sie wandert kapillar entlang von Papierfasern (Feathering), lagert Pigmente am getrockneten Rand ab (Edge Darkening) und granuliert in Papiertälern.',
     problemEn: 'Digital brushes rely on repeated bitmap stamps. Real wet ink behaves fundamentally like fluid porous physics: capillary bleed along cellulose fibers, coffee-ring edge darkening, and pigment pooling in paper valleys.',
     whyNowDe: [
-      'WebGL2 mit Float-Texturen erlaubt gekoppelte Mehrschicht-Simulation in Echtzeit.',
-      'Kubelka-Munk Farbmischung ersetzt simples Alpha-Blending durch physikalische Lichtbrechung.',
-      'Durchdachter 12-Tage-Plan mit CPU-Referenz-Shadern löst bisherige Testbarkeits-Probleme.'
+      'WebGL2 mit Float-Texturen erlaubt gekoppelte Dreischicht-Simulation (Papier, Wasser, Fasern) bei 60 FPS in jedem Browser.',
+      'Kubelka-Munk Farbmischung ersetzt simples Alpha-Blending durch physikalische Lichtabsorption und -streuung.',
+      'Headless entkoppelte Architektur (@wet-ink/core) mit Adaptern für TipTap, React, Obsidian und Web Components.'
     ],
     whyNowEn: [
-      'WebGL2 float textures support multi-layered physical ink simulation at 60 FPS in browsers.',
-      'Kubelka-Munk optical color absorption models realistic glazed pigment wash layering.',
-      'Fully specified 12-day engineering plan with CPU-to-GPU unit test harness.'
+      'WebGL2 float textures support 3-layer physical ink simulation (paper, water, fibers) at 60 FPS in any standard browser.',
+      'Kubelka-Munk optical model enables authentic subtractive pigment wash glazing instead of alpha blending.',
+      'Headless decoupled architecture (@wet-ink/core) with turnkey adapters for TipTap, React, Obsidian, and Web Components.'
     ],
-    sketchDe: 'Drei gekoppelte Texturschichten: Papierfasern (Höhe, Richtung, Kapazität), Oberflächenwasser (Geschwindigkeit, Pigment), Faserschicht (Deponiertes Pigment). Sieben Shader-Pässe mit Kapillarschwelle.',
-    sketchEn: 'Three linked simulation textures: paper substrate (roughness, grain vector, moisture capacity), water layer (velocity, suspended pigment), and stained fiber layer. 7 sequential shader passes.',
+    sketchDe: 'Drei gekoppelte Texturschichten: Papierfasern (Höhe, Richtung, Kapazität), Oberflächenwasser (Geschwindigkeit, Pigment), Faserschicht (Deponiertes Pigment). Sieben Shader-Pässe mit Kapillarschwelle, Web Audio Haptik und Marching Squares Vektorexport.',
+    sketchEn: 'Three linked simulation textures: paper substrate (roughness, grain vector, moisture capacity), water layer (velocity, suspended pigment), and stained fiber layer. 7 sequential shader passes, Web Audio acoustics, and Marching Squares vectorizer.',
     firstStepDe: {
-      ticket: 'Ticket #1: @wet-ink/core — Headless Fluid-Kernel & TipTap/RTE Signatur-Block.',
-      criteria: 'Framework-freie TS-Engine (<15 kB) mit 7-Pass-Simulation, Kapillarschwelle ε_min und 3-Phasen-Lifecycle (Nass 60 FPS → Trocknen 3s → 0 FPS Ruhezustand). Lauffähig als Drop-in in TipTap und tldraw.'
+      ticket: 'Ticket #1 & #2: @wet-ink/core Headless Fluid-Kernel, RTE-Adapter, Akustik & Vektor-SVG.',
+      criteria: 'Framework-freie TS-Engine (<15 kB) mit 7-Pass-Simulation, Kapillarschwelle ε_min und 3-Phasen-Lifecycle (Nass 60 FPS → Trocknen 3s → 0 FPS Ruhezustand). Lauffähig mit TipTap, React, Obsidian und Live-Simulator (315 Tests grün).'
     },
     firstStepEn: {
-      ticket: 'Ticket #1: @wet-ink/core — Headless Fluid Kernel & TipTap/RTE Signature Node.',
-      criteria: 'Zero-dependency TS engine (<15 kB) with 7-pass simulation, capillary threshold ε_min, and 3-phase lifecycle (Wet 60 FPS → Drying 3s → 0 FPS Rest). Runs as a drop-in node in TipTap and tldraw.'
+      ticket: 'Ticket #1 & #2: @wet-ink/core Headless Fluid Kernel, RTE Adapters, Acoustics & Vector SVG.',
+      criteria: 'Zero-dependency TS engine (<15 kB) with 7-pass simulation, capillary threshold ε_min, and 3-phase lifecycle (Wet 60 FPS → Drying 3s → 0 FPS Rest). Integrated into TipTap, React, Obsidian, and live simulator (315 tests passing).'
     },
-    failureModeDe: 'Rauch statt Tinte: Ohne strikte Kapillarschwelle diffundiert das Pigment wolkig wie Rauch. Reihenfolge im Plan: Feathering vor Fluidströmung.',
-    failureModeEn: 'The smoke bug: Without a strict capillary threshold, ink bleeds like soft smoke. The 12-day plan enforces capillary threshold before fluid advection.',
-    priorArtDe: 'Kommerzielle Monolithe verlangen 90–150 $ (Rebelle) oder 10–65 $/Monat (Adobe Fresco) für proprietäre Desktop-Silos. Unsere freie Web-Infrastruktur verschenkt diese Physik als offenes Plugin.',
-    priorArtEn: 'Commercial monoliths charge $90–$150 (Rebelle) or $10–$65/mo (Adobe Fresco) for closed desktop silos. Our open web infrastructure releases this physics as a free, embeddable plugin.'
+    failureModeDe: 'Rauch statt Tinte: Ohne strikte Kapillarschwelle diffundiert das Pigment wolkig wie Rauch. Gelöst durch Kapillarschwelle vor der fluiden Advektion und Ruhezustands-Wächter gegen GPU-Last.',
+    failureModeEn: 'The smoke bug: Without a strict capillary threshold, ink bleeds like soft smoke. Enforces capillary threshold before fluid advection, with idle sleep monitoring against GPU drain.',
+    priorArtDe: 'Kommerzielle Monolithe verlangen 90–150 $ (Rebelle) oder 10–65 $/Monat (Adobe Fresco) für proprietäre Desktop-Silos. Unsere freie Web-Infrastruktur verschenkt diese Physik als offenes modulares Ökosystem.',
+    priorArtEn: 'Commercial monoliths charge $90–$150 (Rebelle) or $10–$65/mo (Adobe Fresco) for closed desktop silos. Our open web infrastructure releases this physics as a free, modular ecosystem.'
   },
   {
     id: 'pillsafe-vision',
@@ -2353,818 +2311,214 @@ Amélie Initiative (Félix, Berlin)`
     failureModeEn: 'Confusion with digital Photoshop filters: If learners believe they are merely applying an Instagram blur, the didactic value evaporates. Remedy: Mandatory rendering of the physical 4f optical raypath with calibrated physical units (nm, lines/mm, phase retardance) and explicit historical experiment framing. Discrete FFT boundary aliasing is mitigated via integrated Hanning/Tukey windowing.',
     priorArtDe: 'Frei (25.09.2026): Geometrische Optikspiele (Laser Maze, Chromatron, Optika, Aargon) bilden nur Snellius-Strahlen mit Spiegeln/Prismen ab — null Wellenoptik, null Beugung. Didaktische Mathe-Erklärer (Jezzamon, 3Blue1Brown) bieten passive Schaubilder ohne Spielmechanik oder optischen Strahlengang. Hochschulpraktika verlieren 90 % der Zeit an Justierschrauben. ImageJ bietet FFT nur als Experten-Menüpunkt. Die Lücke ist ein physikalisches Puzzlespiel, das die 2D-Ortsfrequenzfilterung nach Ernst Abbe spielbar macht.',
     priorArtEn: 'Free (25 Sep 2026): Geometric optics games (Laser Maze, Chromatron, Optika, Aargon) only model Snell ray reflection with mirrors/prisms — zero wave mechanics, zero diffraction. Didactic math explainers (Jezzamon, 3Blue1Brown) offer passive diagrams without game mechanics or optical raypaths. University labs lose 90% of time to alignment screws. ImageJ provides FFT only as an unguided utility. The gap is a physical puzzle game rendering Ernst Abbe 2D spatial frequency filtering truly playable.'
+  },
+  {
+    id: 'abbundzeichen-fundbuch',
+    title: 'Abbundzeichen-Fundbuch',
+    titleEn: "Carpenters' Marks Logbook",
+    oneLinerDe: 'Ein Prüfer für Zählfolgen von Abbundzeichen: Sanierende tragen die Zeichen einer freigelegten Fachwerkwand ein, das Werkzeug meldet Lücken, Doppelungen und fremde Serien als Hinweis oder Verdacht (etwa auf Zweitverwendung) und legt den Fund in einem Format ab, das Hausforschende sammeln können.',
+    oneLinerEn: 'A sequence checker for carpenters\' assembly marks: renovators enter the marks of an exposed timber-framed wall, and the tool reports gaps, duplicates and foreign series as a hint or a suspicion (for example of reused timber) and stores the find in a format house historians can collect.',
+    date: '27. September 2026',
+    reviewAfter: 'September 2027',
+    recipientsDe: 'Interessengemeinschaft Bauernhaus e.V. (IgB), Bereich Hausforschung (Hausforschertreffen, Bauernhausarchiv Syke, AK Haus- und Gefügeforschung Nordwest; Kontakt laut Schnipsel Dr. Julia Ricker — vor Versand auf igbauernhaus.de verifizieren) · nachrangig (UK): Raking Light bzw. Vernacular Architecture Group',
+    recipientsEn: 'Interessengemeinschaft Bauernhaus e.V. (IgB), house research section (researchers\' meetings, farmhouse archive Syke, North-West working group on house and timber-frame research; contact per search snippet Dr. Julia Ricker — verify on igbauernhaus.de before sending) · secondary (UK): Raking Light or the Vernacular Architecture Group',
+    domain: 'knowledge',
+    verdict: 'gift',
+    status: 'gepackt',
+    tags: ['Hausforschung', 'Fachwerk', 'Abbundzeichen', 'Denkmalpflege', 'Citizen Science', 'Bisoziation'],
+    problemDe: 'Wer ein Fachwerkhaus saniert, sieht die Abbundzeichen genau einmal, in den wenigen Wochen, in denen Putz und Verkleidung ab sind, und kann sie nicht lesen (wiederkehrende Fragen auf fachwerk.de). Die wenigen Forschenden, die sie lesen, bitten öffentlich um Sichtungen und legen winzige Datenbanken von Hand an (Raking Light: 25 Belege). So entsteht nie eine Verteilung, an der man Umbauten, Zweitverwendung oder regionale Zeichensysteme ablesen könnte.',
+    problemEn: 'Renovators of timber-framed houses see the carpenters\' marks exactly once, during the few weeks when plaster and cladding are off, and cannot read them (recurring questions on fachwerk.de). The few researchers who can read them publicly ask for sightings and compile tiny databases by hand (Raking Light: 25 instances). So no distribution ever emerges from which alterations, reused timber or regional marking systems could be read.',
+    whyNowDe: [
+      'Vision-Sprachmodelle (2025/26) können aus einem Streiflichtfoto Lesungen eingeschlagener oder eingeritzter Zeichen vorschlagen (römische Ziffern, Ausstiche, Rötel) — ungeprüft und für den Kern nicht nötig.',
+      'Die Grammatik macht verrauschte Lesungen prüfbar: Eine Zählfolge ist monoton je Bund bzw. Wand und trägt ein Serienzeichen je Wandseite; ein deterministischer Prüfer erkennt, wenn eine Lesung nicht passt.',
+      'Die Forschung verlangt nach Standardisierung und Sichtungen: Vernacular Architecture 49/1 (2018) zur einheitlichen Erfassung, Raking Light bittet um Fundmeldungen.'
+    ],
+    whyNowEn: [
+      'Vision-language models (2025/26) can suggest readings of struck or scribed marks from a raking-light photo (Roman numerals, tags, red chalk) — untested and not needed for the kernel.',
+      'The grammar makes noisy readings checkable: a numbering sequence is monotonic per frame or wall and carries one series tag per wall face; a deterministic checker notices when a reading does not fit.',
+      'Research is asking for standardisation and sightings: Vernacular Architecture 49/1 (2018) on uniform recording, Raking Light asks for reports of sightings.'
+    ],
+    sketchDe: 'Eingabe: je Bauteil Bund bzw. Wand, Position, Rolle (Ständer, Riegel, Strebe, Sparren …) und Zeichen in kleiner Notation (IIII, IV, XII^, VII>> = Ziffer + Ausstich-Typ und -Anzahl); „unlesbar" ist ein eigener Zustand. Logik: Parser (Wert, Notation additiv/subtraktiv, Serie) und fünf deterministische Regeln — Lücke, Doppelung, fremde Serie, Notationsbruch, Richtungsbruch — jede mit Regel-ID und Klartextbegründung. Ausgabe: Serien, Befunde der Stufe „hinweis" oder „verdacht" (nie „bestätigt"), Liste der unlesbaren Zeichen; JSON-Export mit Feldern nach VA 49/1, Ort nur auf Gemeindeebene. Nicht dabei: keine eigene Karte, keine Sammeldatenbank, kein Server, keine Datierung, keine exakten Standorte.',
+    sketchEn: 'Input: per member its frame or wall, position, role (post, rail, brace, rafter …) and the mark in a small notation (IIII, IV, XII^, VII>> = numeral + tag type and count); "unreadable" is a state of its own. Logic: parser (value, additive/subtractive notation, series) and five deterministic rules — gap, duplicate, foreign series, notation break, direction break — each with a rule ID and plain-language reason. Output: series, findings graded "hint" or "suspicion" (never "confirmed"), list of unreadable marks; JSON export with fields per VA 49/1, place only at municipality level. Not included: no map of its own, no collecting database, no server, no dating, no exact locations.',
+    firstStepDe: {
+      ticket: 'Eine Wand, eine Zählfolge, ein Verdacht: reiner TypeScript-Kern pruefeZaehlfolge(bauteile) für römische Zeichen mit Ausstich/Serienzeichen und römisch einfach (additive Formen wie IIII gültig).',
+      criteria: 'Fertig, wenn eine Vitest-Suite mit ≥ 20 Fällen grün ist (lückenlose Wand, fehlender Ständer, fremder Ausstich, IIII neben IV, unlesbares Zeichen, Umsetzung) und mindestens ein publiziertes Zeichenregister aus der Literatur (DSD-Kulturspur, ing-hofer.de oder Gerner 1996) als Fixture mit dem publizierten Befund übereinstimmt; der Kern läuft als statische Seite offline ohne Netzwerk und ohne Modell, jede Meldung trägt Regel-ID und Begründung (De/En), Ablage unter 07-demos/abbundzeichen-fundbuch/.'
+    },
+    firstStepEn: {
+      ticket: 'One wall, one sequence, one suspicion: a pure TypeScript kernel pruefeZaehlfolge(bauteile) for Roman marks with tags/series marks and plain Roman marks (additive forms such as IIII are valid).',
+      criteria: 'Done when a Vitest suite with ≥ 20 cases is green (complete wall, missing post, foreign tag, IIII next to IV, unreadable mark, relocation) and at least one published mark register from the literature (DSD Kulturspur, ing-hofer.de or Gerner 1996) matches its published finding as a fixture; the kernel runs as a static page offline with no network and no model, every message carries a rule ID and reason (De/En), stored under 07-demos/abbundzeichen-fundbuch/.'
+    },
+    failureModeDe: 'Fehlgelesene Zeichen erzeugen falsche „Zweitverwendungs"-Befunde: Laien halten einen Hinweis für einen Bauforschungsbefund, und eine Sammlung füllt sich mit verrauschten Daten. Gegenmaßnahme in der Architektur: nur „hinweis" und „verdacht", nie ein Befund; Modell-Lesung nur als Vorschlag, gespeichert wird die vom Menschen bestätigte Lesung neben dem Foto; „unlesbar" gleichberechtigt; keine automatische Karte, Export an kuratierende Hausforschende; Standort nur auf Gemeindeebene. Zweitens hat der Empfänger keinen Softwarearm, daher eine statische Seite ohne Betrieb. Offen gelegt: Evidenz nur aus Suchschnipseln (Seitenabrufe gesperrt), VLM-Lesung ungeprüft, Kontakt unverifiziert.',
+    failureModeEn: 'Misread marks produce false "reuse" findings: laypeople take a hint for a building-archaeology finding, and a collection fills with noisy data. Architectural remedy: only "hint" and "suspicion", never a finding; the model reading is only a suggestion, the human-confirmed reading is stored next to the photo; "unreadable" counts equally; no automatic map, export to curating house historians; location only at municipality level. Second, the recipient has no software arm, hence a static page with nothing to operate. Disclosed: evidence from search snippets only (page fetches blocked), VLM reading untested, contact unverified.',
+    priorArtDe: 'Frei (27.09.2026, nur Suchschnipsel, keine Seite im Volltext gelesen): Kein Werkzeug, keine Datenbank und kein Laienmeldeweg für Abbundzeichen gefunden, weder deutsch noch englisch (englisch nur Papers, CAD-Software, Zimmerei-Rechner). Forschung sammelt von Hand (Raking Light, 25 Belege, Aufruf zu Sichtungen; Vernacular Architecture 49/1, 2018). Die Deutsche Stiftung Denkmalschutz vermittelt (Kulturspur „Abbundzeichen"), das IgB-Bauernhausarchiv erfasst Aufmaße, keine Zeichen; Grundlagen bei Gerner (Fulda 1996) und ing-hofer.de. Restlücke: Zeichen im Sanierungsfenster in eine prüfbare Zählfolge übersetzen und in einem sammelbaren Format ablegen. Dose: https://felixinberlin.github.io/Amelie/#dose=abbundzeichen-fundbuch',
+    priorArtEn: 'Free (27 Sep 2026, search snippets only, no page read in full): no tool, no database and no lay reporting route for carpenters\' marks found, in German or English (English only papers, CAD software, carpentry calculators). Research collects by hand (Raking Light, 25 instances, call for sightings; Vernacular Architecture 49/1, 2018). Deutsche Stiftung Denkmalschutz does outreach (Kulturspur "Abbundzeichen"), the IgB farmhouse archive records surveys, not marks; foundations in Gerner (Fulda 1996) and ing-hofer.de. Remaining gap: turn marks into a checkable sequence during the renovation window and store them in a collectable format. Tin: https://felixinberlin.github.io/Amelie/#dose=abbundzeichen-fundbuch'
+  },
+  {
+    id: 'vernichtungs-offenlegungsregister',
+    title: 'Vernichtungs-Offenlegungsregister',
+    titleEn: 'Destruction Disclosure Register',
+    oneLinerDe: 'Ein offenes Register der Pflichtangaben, die große Unternehmen nach Art. 24 ESPR über vernichtete unverkaufte Verbraucherprodukte veröffentlichen müssen. Sein Kern ist ein deterministischer Prüfer gegen das Tabellenformat aus Anhang I der DVO (EU) 2026/2, der nie „Verstoß“ sagt, sondern nur „gefunden“ oder „keine Offenlegung gefunden (Stand, Suchweg)“.',
+    oneLinerEn: 'An open register of the mandatory figures that large companies must publish under Art. 24 ESPR on destroyed unsold consumer products. Its core is a deterministic checker against the table format in Annex I of Implementing Regulation (EU) 2026/2 that never says "violation", only "found" or "no disclosure found (as of, search path)".',
+    date: '28. September 2026',
+    reviewAfter: 'September 2027',
+    recipientsDe: 'Deutsche Umwelthilfe e.V. (DUH), Bereich Kreislaufwirtschaft (Kampagnen gegen Retouren- und Warenvernichtung) — keine Person ermittelt, Ansprechperson vor Versand auf duh.de verifizieren · nachrangig: Greenpeace e.V. (Warenvernichtung), Changing Markets',
+    recipientsEn: 'Deutsche Umwelthilfe e.V. (DUH), circular economy team (campaigns against destroying returns and unsold goods) — no person identified, verify the contact person on duh.de before sending · secondary: Greenpeace e.V. (destruction of goods), Changing Markets',
+    domain: 'civic',
+    verdict: 'build_first',
+    status: 'gepackt',
+    tags: ['ESPR', 'Ökodesign', 'Warenvernichtung', 'Offenlegung', 'Kreislaufwirtschaft', 'Umweltvollzug', 'Dreifachfund'],
+    problemDe: 'Seit dem Geschäftsjahr 2025 müssen große Unternehmen, die unverkaufte Verbraucherprodukte entsorgen, jährlich offenlegen, wie viel, warum und auf welchem Weg (Art. 24 ESPR, VO (EU) 2024/1781). Die Angaben erscheinen verstreut auf Firmenseiten, als eigenes PDF oder als Kapitel im Nachhaltigkeitsbericht; die Exakttitel-Suche fand genau eins (Signify, GJ 2025, PDF vom 04.05.2026). Die Pflichtzahlen über vernichtete Ware stehen jedes Jahr auf hunderten Firmenseiten, aber nirgends nebeneinander. Umweltverbände, die die Wirkung des Vernichtungsverbots (Textilien und Schuhe seit 19.07.2026) belegen wollen, suchen jede Offenlegung einzeln; die Kommission braucht dieselben Zahlen für eine Ausweitung nach Art. 25.',
+    problemEn: 'Since financial year 2025, large companies that discard unsold consumer products must disclose annually how much, why and by which route (Art. 24 ESPR, Regulation (EU) 2024/1781). The figures appear scattered across company websites, as a standalone PDF or as a chapter of the sustainability report; an exact-title search found exactly one (Signify, FY 2025, PDF of 4 May 2026). The mandatory figures on destroyed goods sit every year on hundreds of company pages, but nowhere side by side. Environmental groups that want to show whether the destruction ban works (textiles and footwear since 19 July 2026) hunt down each disclosure one by one; the Commission needs the same figures for an extension under Art. 25.',
+    whyNowDe: [
+      'Der erste Jahrgang erscheint jetzt: Die Offenlegung für GJ 2025 ist binnen 12 Monaten fällig, bei Kalender-GJ bis 31.12.2026, im freien Format. Wer ihn zuerst sammelt, setzt das Format der Debatte.',
+      'Das Pflichtformat kommt später: Die DVO (EU) 2026/2 gilt ab 02.03.2027; das Tabellenformat aus Anhang I ist Pflicht für GJ ab 02.03.2027, bei Kalender-GJ also erstmals GJ 2028, offengelegt 2029 (Mehrheitslesart aus sechs Schnipseln).',
+      'Das Why-Now-Fenster ist befristet: Für GJ 2025–2027 liegen drei Jahrgänge in freiem Format vor, die sich per LLM-Extraktion mit menschlicher Bestätigung in ein Schema bringen lassen. Danach genügt ein Parser. Der dauerhafte Kern ist deshalb der deterministische Anhang-I-Prüfer, die LLM-Stufe nur ein Übergangsmodul.'
+    ],
+    whyNowEn: [
+      'The first vintage is appearing now: the disclosure for FY 2025 is due within 12 months, by 31 December 2026 for calendar FYs, in free format. Whoever collects it first sets the format of the debate.',
+      'The mandatory format comes later: Implementing Regulation (EU) 2026/2 applies from 2 March 2027; the Annex I table format is mandatory for FYs starting on or after 2 March 2027, so for calendar FYs first FY 2028, disclosed in 2029 (majority reading across six snippets).',
+      'The why-now window is time-limited: FY 2025–2027 yield three vintages in free format that LLM extraction with human confirmation can bring into one schema. After that a parser is enough. The durable core is therefore the deterministic Annex I checker; the LLM stage is only a transition module.'
+    ],
+    sketchDe: 'Eingabe: je Unternehmen und GJ eine Offenlegung, von Hand oder als bestätigter LLM-Vorschlag in das Anhang-I-Schema übertragen, mit Quell-URL, Abrufdatum und Archiv-Snapshot; für fehlende Offenlegungen Stand und Suchweg. Logik: deterministischer Prüfer pruefeOffenlegung() ohne Netz und Modell: Prozentsummen der Behandlungswege = 100, Grund aus der Ausnahmeliste, CN-Code-Format, Stück/Gewicht-Plausibilität je Warengruppe, Schätzkennzeichnung; jeder Befund mit Regel-ID und als Frage formuliert. Ausgabe: statische CSV/JSON je Unternehmen × GJ mit nur zwei Status, „gefunden“ oder „keine Offenlegung gefunden (Stand, Suchweg)“, nie „Verstoß“ oder „säumig“, weil die Pflicht bedingt ist. Es gibt keine Liste der Verpflichteten, daher eine offen gelegte, kuratierte Startliste (z. B. große Bekleidungs- und Schuhhändler in DE) und keine Quoten. Das Anhang-I-Schema ist vorläufig, bis es gegen den Normtext (DVO 2026/2 Anhang I, ESPR Art. 24 Abs. 1) geprüft ist. Nicht dabei: keine Bewertung oder Rangliste, kein Dauer-Crawler, kein Server, keine Ersatzteilpreise, keine Rechtsberatung.',
+    sketchEn: 'Input: one disclosure per company and FY, entered into the Annex I schema by hand or as a confirmed LLM suggestion, with source URL, retrieval date and archive snapshot; for missing disclosures, date and search path. Logic: deterministic checker pruefeOffenlegung() without network or model: treatment-route percentages sum to 100, reason from the derogation list, CN code format, units/weight plausibility per product group, estimate flag; every finding with a rule ID and phrased as a question. Output: static CSV/JSON per company × FY with only two statuses, "found" or "no disclosure found (as of, search path)", never "violation" or "overdue", because the duty is conditional. There is no list of obliged companies, hence a published, curated start list (e.g. large clothing and footwear retailers in Germany) and no rates. The Annex I schema is provisional until checked against the legal text (IR 2026/2 Annex I, ESPR Art. 24(1)). Not included: no rating or ranking, no permanent crawler, no server, no spare-part prices, no legal advice.',
+    firstStepDe: {
+      ticket: 'Anhang I als Schema, ein Prüfer, eine echte Offenlegung: das Anhang-I-Format der DVO (EU) 2026/2 als JSON-Schema (anhang1-schema.json) und ein deterministischer TypeScript-Prüfer pruefeOffenlegung(offenlegung). Vorbedingung: Normtext DVO 2026/2 (Art. 2/3, Anhang I) und ESPR Art. 24 Abs. 1 im Volltext lesen; sonst trägt das Schema den Status „vorläufig“ mit Schnipselquelle je Feld.',
+      criteria: 'Fertig, wenn eine Vitest-Suite mit ≥ 15 Fällen grün ist (vollständige Offenlegung ohne Befund, Prozentsumme ≠ 100, Grund außerhalb der Ausnahmeliste, ungültiger CN-Code, Stück/Gewicht unplausibel, fehlende Schätzkennzeichnung, Freitext-Offenlegung ohne Tabelle), die Signify-Offenlegung GJ 2025 von Hand als erste Fixture mit Quell-URL und Abrufdatum übertragen ist, ein Test sicherstellt, dass keine Ausgabe „Verstoß“, „säumig“ oder „violation“ enthält und fehlende Offenlegungen nur als „keine Offenlegung gefunden“ mit Datum und Suchweg erscheinen, jeder Befund Regel-ID und Klartextfrage (De/En) trägt, das Schema seinen Stand ausweist und alles unter 07-demos/vernichtungs-offenlegungsregister/ liegt.'
+    },
+    firstStepEn: {
+      ticket: 'Annex I as a schema, one checker, one real disclosure: the Annex I format of Implementing Regulation (EU) 2026/2 as a JSON Schema (anhang1-schema.json) plus a deterministic TypeScript checker pruefeOffenlegung(offenlegung). Precondition: read the full legal text of IR 2026/2 (Art. 2/3, Annex I) and ESPR Art. 24(1); otherwise the schema carries the status "provisional" with a snippet source per field.',
+      criteria: 'Done when a Vitest suite with ≥ 15 cases is green (complete disclosure with no finding, percentage sum ≠ 100, reason outside the derogation list, invalid CN code, implausible units/weight, missing estimate flag, prose-only disclosure without a table), Signify\'s FY 2025 disclosure is transcribed by hand as the first fixture with source URL and retrieval date, a test ensures no output contains "Verstoß", "säumig" or "violation" and missing disclosures only appear as "no disclosure found" with date and search path, every finding carries a rule ID and a plain-language question (De/En), the schema states its status, and everything lives under 07-demos/vernichtungs-offenlegungsregister/.'
+    },
+    failureModeDe: 'Das Register wird als Pranger gelesen, obwohl eine fehlende Offenlegung nichts beweist: Die Pflicht ist bedingt, es gibt keine Liste der Verpflichteten, und „unplausibel“-Markierungen bergen Abmahnrisiko. Gegenmaßnahme in der Architektur: nur zwei neutrale Status, Befunde als Fragen, jede Zeile mit Quell-URL, Abrufdatum und Archiv-Snapshot, keine Quoten, offen gelegte Startliste. Zweitens Kurator-Ermüdung und Nachzug durch Kommission oder Compliance-Anbieter (UK-Modern-Slavery-Präzedenz); deshalb ist der Kern der Prüfer, nicht die Sammlung. Offen gelegt: Evidenz nur aus Suchschnipseln (eur-lex EGRESS_BLOCKED), Zeitachse nach Mehrheitslesart, Schema vorläufig, keine Empfängerperson ermittelt.',
+    failureModeEn: 'The register is read as a pillory although a missing disclosure proves nothing: the duty is conditional, there is no list of obliged companies, and "implausible" flags carry a cease-and-desist risk. Architectural remedy: only two neutral statuses, findings as questions, every row with source URL, retrieval date and archive snapshot, no rates, a published start list. Second, curator fatigue and catch-up by the Commission or a compliance vendor (UK Modern Slavery precedent); that is why the core is the checker, not the collection. Disclosed openly: evidence from search snippets only (eur-lex EGRESS_BLOCKED), timeline per majority reading, schema provisional, no recipient person identified.',
+    priorArtDe: 'Frei (28.09.2026, Dreifachfund aller drei Engines, 11 unabhängige Gegen-Suchen des Reviewers DE/EN, nur Suchschnipsel): Kein NGO-, Journalisten- oder Kommissions-Aggregator der Art.-24-Offenlegungen gefunden. Nur herstellerseitige Compliance-Werkzeuge (Flexireo, Generation Impact, Cleo Labs, Complir, Compliance & Risks) und Kanzlei-Erklärtexte (Cooley 07.05.2026, Freshfields, Linklaters, Cattwyk, trade-e-bility). Die Kommission ist Datennutzerin für Art. 25, plant laut Arbeitsplan 2025–2030 aber keine Ausweitung. Prämisse belegt: Signify, „Disclosure on Discarded Unsold Consumer Products“, GJ 2025 (PDF 04.05.2026). Muster bekannt aus dem UK Modern Slavery Act (NGOs sammelten zuerst). Restlücke: offenes, datiertes Register mit deterministischem Anhang-I-Prüfer und neutralem Status. Dose: https://felixinberlin.github.io/Amelie/#dose=vernichtungs-offenlegungsregister',
+    priorArtEn: 'Free (28 Sep 2026, triple find by all three engines, 11 independent counter-searches by the reviewer in German and English, search snippets only): no NGO, journalist or Commission aggregator of Art. 24 disclosures found. Only vendor-side compliance tools (Flexireo, Generation Impact, Cleo Labs, Complir, Compliance & Risks) and law-firm explainers (Cooley 7 May 2026, Freshfields, Linklaters, Cattwyk, trade-e-bility). The Commission is a data user for Art. 25 but plans no extension per its 2025–2030 working plan. Premise confirmed: Signify, "Disclosure on Discarded Unsold Consumer Products", FY 2025 (PDF 4 May 2026). Known pattern from the UK Modern Slavery Act (NGOs collected first). Remaining gap: an open, dated register with a deterministic Annex I checker and neutral status. Tin: https://felixinberlin.github.io/Amelie/#dose=vernichtungs-offenlegungsregister'
+  },
+  {
+    id: 'umsetzungsplan-register',
+    title: 'Umsetzungsplan-Register',
+    titleEn: 'Implementation Plan Register',
+    oneLinerDe: 'Ein offenes Register der Umsetzungspläne, die Unternehmen nach § 9 EnEfG (und EED Art. 11 Abs. 2) für ihre wirtschaftlichen Energiesparmaßnahmen veröffentlichen müssen. Sein Kern ist ein deterministischer Prüfer gegen die Pflichtangaben des BAFA-Merkblatts (Fassung 16.09.2026: fünf), der je Plan die Statusverteilung und das Investitionsvolumen der offenen Maßnahmen ausgibt und nie „säumig“ sagt, sondern nur „gefunden“ oder „kein Plan gefunden (Stand, Suchweg)“.',
+    oneLinerEn: 'An open register of the implementation plans that companies must publish under § 9 of the German Energy Efficiency Act (EnEfG, and EED Art. 11(2)) for their cost-effective energy-saving measures. Its core is a deterministic checker against the mandatory items in the BAFA guidance sheet (16 September 2026 version: five) that outputs, per plan, the status distribution and the investment volume of open measures, and never says "overdue", only "found" or "no plan found (as of, search path)".',
+    date: '28. September 2026',
+    reviewAfter: 'September 2027',
+    recipientsDe: 'DENEFF e.V. (Deutsche Unternehmensinitiative Energieeffizienz), Christian Noll, geschäftsführender Vorstand (Effizienzpolitik, gegen die Aufweichung der EnEfG-Novelle) — Name und Funktion von deneff.org (07.07.2026), vor Versand erneut verifizieren · nachrangig: Umweltinstitut München e.V., Dr. Leonard Burtscher (Stand 2024, nicht verifiziert)',
+    recipientsEn: 'DENEFF e.V. (German Business Initiative for Energy Efficiency), Christian Noll, managing board member (efficiency policy, opposing the weakening of the EnEfG amendment) — name and role from deneff.org (7 July 2026), re-verify before sending · secondary: Umweltinstitut München e.V., Dr. Leonard Burtscher (as of 2024, not verified)',
+    domain: 'civic',
+    verdict: 'build_first',
+    status: 'gepackt',
+    tags: ['EnEfG', 'EED', 'Energieeffizienz', 'Offenlegung', 'Umsetzungsplan', 'Energievollzug', 'Dreifachfund'],
+    problemDe: 'Unternehmen oberhalb einer Verbrauchsschwelle müssen nach ihrem Energieaudit einen Umsetzungsplan für alle wirtschaftlichen Endenergieeinsparmaßnahmen erstellen und veröffentlichen (§ 9 EnEfG), aber nicht umsetzen. Die Pläne liegen verstreut als PDF auf Firmenseiten oder im Unternehmensbericht; es gibt kein Register, keine Liste der Verpflichteten und niemanden, der sie zählt. Die Exakttitel-Suche findet mindestens zehn Pläne, einer liefert schon 404. Tausende Firmen müssen öffentlich sagen, welche wirtschaftlichen Sparmaßnahmen noch offen sind, aber niemand zählt, wie viele liegen bleiben. DENEFF und Umweltinstitut argumentieren im Bundestagsverfahren zur Novelle (1. Lesung 24.09.2026) deshalb nur mit Modellrechnungen.',
+    problemEn: 'Companies above a consumption threshold must, after their energy audit, draw up and publish an implementation plan for all cost-effective energy-saving measures (§ 9 EnEfG), but need not carry them out. The plans sit scattered as PDFs on company websites or in the company report; there is no register, no list of obliged companies and nobody counting them. An exact-title search finds at least ten plans, one already returns 404. Thousands of companies must say publicly which cost-effective savings measures are still open, but nobody counts how many are left undone. DENEFF and Umweltinstitut therefore argue in the Bundestag procedure on the amendment (first reading 24 Sep 2026) with model calculations only.',
+    whyNowDe: [
+      'Die Novelle wird gerade verhandelt: BT-Drs. 21/8027 vom 16.09.2026 [Seite] — § 9 n. F. für 2,77 bis < 23,6 GWh/a, Veröffentlichung binnen drei Monaten nach dem Audit, jährliche Aktualisierung, BAFA-Stichproben auch zur Veröffentlichung, Bußgeld bei Nicht-Veröffentlichung, aber kein Unternehmensregister. Der Bundesrat beantragt die Streichung der Veröffentlichungspflicht, die Bundesregierung hält daran fest.',
+      'Das Format existiert faktisch: Das BAFA-Merkblatt (Fassung 16.09.2026) schreibt fünf Pflichtangaben vor, Statusvokabular {Offen, In Bearbeitung, Abgeschlossen} als Kann-Regel; Sanofi (11/2025) übernimmt Spalten und Statuswörter, VON ARDENNE (04/2025) die Spalten mit eigenen Statuswörtern [Seite]. Damit ist der Kern deterministisch prüfbar.',
+      'Die Pflicht ist unionsrechtlich gedeckelt (EED Art. 11 Abs. 2 UAbs. 3 [Seite]) und wird jährlich aktualisiert: Es entsteht eine Zeitreihe, wie viele „Offen“ zu „Abgeschlossen“ werden. Und die Pläne verschwinden (404) — wer jetzt archiviert, sichert den Jahrgang.'
+    ],
+    whyNowEn: [
+      'The amendment is being negotiated now: BT-Drs. 21/8027 of 16 Sep 2026 [page] — new § 9 for 2.77 to < 23.6 GWh/a, publication within three months after the audit, annual update, BAFA spot checks now covering publication, fines for non-publication, but no company register. The Bundesrat requests deleting the publication duty; the federal government keeps it.',
+      'The format exists in practice: the BAFA guidance sheet (16 September 2026 version) prescribes five mandatory items, with the status vocabulary {Offen, In Bearbeitung, Abgeschlossen} as a may-rule; Sanofi (11/2025) copies columns and status words, VON ARDENNE (04/2025) the columns with its own status words [page]. That makes the core deterministically checkable.',
+      'The duty is capped by EU law (EED Art. 11(2) third subparagraph [page]) and updated annually: a time series of how many "open" measures become "completed" emerges. And the plans are disappearing (404) — whoever archives now secures the vintage.'
+    ],
+    sketchDe: 'Eingabe: je Unternehmen und Planstand ein Plan, von Hand oder als bestätigter LLM-Vorschlag in umsetzungsplan-schema.json übertragen, mit Quell-URL, Abrufdatum, Archiv-Snapshot und Feld rechtsstand (a. F. / n. F.); für fehlende Pläne Stand und Suchweg. Logik: deterministischer Prüfer pruefeUmsetzungsplan() ohne Netz und Modell: Pflichtangaben der Merkblattfassung vorhanden, Status aus dem Vokabular (sonst Rückfrage), Zeitrahmen parsebar, Investitionsvolumen numerisch; Ausgabe Statusverteilung und Investitionssumme der offenen Maßnahmen (jede Maßnahme im Plan ist per Definition wirtschaftlich, § 9 Abs. 2). Registerkern (Status, Suchnachweis, Snapshot, CSV, Sprachwächter) aus vernichtungs-offenlegungsregister wiederverwendet. Ausgabe: statische CSV/JSON mit nur zwei Status, „gefunden“ oder „kein Plan gefunden (Stand, Suchweg)“, nie „säumig“ oder „Verstoß“, weil die Pflicht bedingt ist. Keine Quote gegen die Schätzung von rund 16.461 Verpflichteten, nur „N gefundene Pläne, davon M Maßnahmen offen“; Selektionshinweis fest im Kopf jeder Auswertung. Schema nach Merkblattfassung versioniert (Standard 16.09.2026). Nicht dabei: keine MWh und kein Kapitalwert (stehen nicht in den Plänen), kein Firmenranking, kein Dauer-Crawler, kein Server, keine Beratung.',
+    sketchEn: 'Input: one plan per company and plan version, entered into umsetzungsplan-schema.json by hand or as a confirmed LLM suggestion, with source URL, retrieval date, archive snapshot and a rechtsstand field (old / amended § 9); for missing plans, date and search path. Logic: deterministic checker pruefeUmsetzungsplan() without network or model: mandatory items of the guidance-sheet version present, status from the vocabulary (otherwise ask back), time frame parseable, investment volume numeric; outputs status distribution and investment total of open measures (every measure in the plan is cost-effective by definition, § 9(2)). Register core (status, search record, snapshot, CSV, language guard) reused from vernichtungs-offenlegungsregister. Output: static CSV/JSON with only two statuses, "found" or "no plan found (as of, search path)", never "overdue" or "violation", because the duty is conditional. No rate against the estimate of about 16,461 obliged companies, only "N plans found, M measures of them open"; a selection notice fixed at the top of every analysis. Schema versioned by guidance-sheet edition (default 16 September 2026). Not included: no MWh and no net present value (not in the plans), no company ranking, no permanent crawler, no server, no advice.',
+    firstStepDe: {
+      ticket: 'Pflichtangaben als Schema, ein Prüfer, drei echte Pläne: umsetzungsplan-schema.json je Merkblattfassung (16.09.2026: Priorität, Maßnahme, Investitionsvolumen, Zeitrahmen, Status; 12.02.2025, vorläufig: zusätzlich Herkunft, verantwortliche Funktion), Statusvokabular {Offen, In Bearbeitung, Abgeschlossen} als Kann-Regel mit Rückfrage bei fremden Statuswörtern, plus Feld rechtsstand (a. F. / n. F.) und ein deterministischer TypeScript-Prüfer pruefeUmsetzungsplan(plan). Merkblatt 16.09.2026 am 28.09.2026 gelesen.',
+      criteria: 'Fertig, wenn eine Vitest-Suite grün ist (vollständiger Plan ohne Befund, fehlende Pflichtangabe, Status außerhalb des Vokabulars, unparsebarer Zeitrahmen, nicht-numerisches Investitionsvolumen, Statusverteilung und Investitionssumme „Offen“ korrekt, Freitext-Plan ohne Tabelle), drei Fixtures von Hand mit Quell-URL und Abrufdatum übertragen sind (Muster GmbH aus dem Merkblatt, Sanofi 11/2025, VON ARDENNE 04/2025), ein Test sicherstellt, dass keine Ausgabe „säumig“, „Verstoß“ oder „violation“ enthält, fehlende Pläne nur als „kein Plan gefunden“ mit Datum und Suchweg erscheinen und keine Quote gegen die Verpflichtetenzahl gebildet wird, jede Auswertung den Selektionshinweis trägt und keine Firmenrangfolge ausgibt, der Registerkern aus src/engine/vernichtungs-offenlegungsregister/ importiert wird, das Schema seinen Stand ausweist und alles unter 07-demos/umsetzungsplan-register/ liegt.'
+    },
+    firstStepEn: {
+      ticket: 'Mandatory items as a schema, one checker, three real plans: umsetzungsplan-schema.json per guidance-sheet version (16 Sep 2026: priority, measure, investment volume, time frame, status; 12 Feb 2025, provisional: plus origin, responsible function), status vocabulary {Offen, In Bearbeitung, Abgeschlossen} as a may-rule that asks back on foreign status words, plus a rechtsstand field (old / amended § 9) and a deterministic TypeScript checker pruefeUmsetzungsplan(plan). Guidance sheet of 16 Sep 2026 read on 28 Sep 2026.',
+      criteria: 'Done when a Vitest suite is green (complete plan with no finding, missing mandatory item, status outside the vocabulary, unparseable time frame, non-numeric investment volume, correct status distribution and "open" investment total, prose-only plan without a table), three fixtures are transcribed by hand with source URL and retrieval date (Muster GmbH from the guidance sheet, Sanofi 11/2025, VON ARDENNE 04/2025), a test ensures no output contains "säumig", "Verstoß" or "violation", missing plans only appear as "no plan found" with date and search path and no rate against the number of obliged companies is computed, every analysis carries the selection notice and no company ranking is output, the register core is imported from src/engine/vernichtungs-offenlegungsregister/, the schema states its status, and everything lives under 07-demos/umsetzungsplan-register/.'
+    },
+    failureModeDe: 'Eine Quote aus gefundenen Plänen wird als Branchenquote gelesen: Veröffentlichen tun die Sorgfältigen, und wer keinen Plan zeigt, kann ausgenommen, unter der Schwelle oder nachlässig sein. Gegenmaßnahme in der Architektur: nur „N gefundene Pläne, davon M Maßnahmen offen“, Selektionshinweis in jeder Auswertung, nie „säumig“, keine Quote gegen die 16.461-Schätzung. Zweitens Pranger- und Lead-Listen-Lesart (offene Maßnahmen + Investitionsvolumen je Firma ist auch eine Vertriebsliste): kein Firmenranking, nur Aggregat und Einzelnachweis mit Quelle. Drittens beantragt der Bundesrat die Streichung der Veröffentlichungspflicht; das wäre wegen EED Art. 11 Abs. 2 unionsrechtswidrig, hieße aber de facto weniger Pläne — die Dose trägt unter altem und neuem § 9 (Feld rechtsstand). Offen gelegt: Schema vorläufig bis zur aktuellen Merkblattfassung, Formatdrift möglich, keine Energiemengen, Empfängerperson vor Versand erneut verifizieren.',
+    failureModeEn: 'A rate from the plans found is read as a sector rate: the diligent publish, and a company without a visible plan may be exempt, below the threshold or negligent. Architectural remedy: only "N plans found, M measures of them open", a selection notice in every analysis, never "overdue", no rate against the 16,461 estimate. Second, pillory and sales-lead readings (open measures + investment volume per company is also a sales list): no company ranking, only aggregates and individual evidence with source. Third, the Bundesrat requests deleting the publication duty; that would breach EED Art. 11(2) but would de facto mean fewer plans — the tin works under both old and amended § 9 (rechtsstand field). Disclosed openly: schema provisional until the current guidance-sheet version is read, format drift possible, no energy quantities, recipient person to be re-verified before sending.',
+    priorArtDe: 'Frei (28.09.2026, Dreifachfund aller drei Engines, 6 Gegen-Suchen des Reviewers DE/EN, Normtexte und drei Plan-PDFs selbst gelesen): Kein Aggregator der veröffentlichten § 9-Pläne gefunden (DENEFF, Fraunhofer ISI, Umweltinstitut, BfEE, EED-Art.-11-Tracker). Nur Berater-Erklärtexte (Luther, IHK Hannover; Grant Thornton, DQS, twobirds, energieundrecht.com teils mit überholter Referentenentwurfs-Lesart „Unternehmensregister“). Fraunhofer-ISI-Kurzexpertise für DENEFF und Umweltinstitut-Modellrechnung (~54 TWh) arbeiten mit Modellen, nicht mit Plandaten; zwei Springer-Papers 2025 mit nicht-öffentlichen Auditdaten. Die Norm nennt keinen Sammler (EED Art. 11 Abs. 3 nur Verbrauchsdaten). Restlücke: offenes, datiertes Register mit deterministischem Prüfer gegen die BAFA-Pflichtangaben und neutralem Status. Dose: https://felixinberlin.github.io/Amelie/#dose=umsetzungsplan-register',
+    priorArtEn: 'Free (28 Sep 2026, triple find by all three engines, 6 counter-searches by the reviewer in German and English, legal texts and three plan PDFs read in full): no aggregator of published § 9 plans found (DENEFF, Fraunhofer ISI, Umweltinstitut, BfEE, EED Art. 11 trackers). Only consultant explainers (Luther, IHK Hannover; Grant Thornton, DQS, twobirds, energieundrecht.com, partly with an outdated ministerial-draft reading of "company register"). The Fraunhofer ISI short study for DENEFF and the Umweltinstitut model calculation (~54 TWh) use models, not plan data; two 2025 Springer papers use non-public audit data. The law names no collector (EED Art. 11(3) covers consumption data only). Remaining gap: an open, dated register with a deterministic checker against the BAFA mandatory items and neutral status. Tin: https://felixinberlin.github.io/Amelie/#dose=umsetzungsplan-register'
+  },
+  {
+    id: 'amelie-umwelt-anomalie',
+    title: 'Umwelt-Anomalie-Detektor',
+    titleEn: 'Environmental Anomaly Detector for Citizen Science and Municipalities',
+    oneLinerDe: 'Statistische Anomalie-Erkennung für Bürgerwissenschaften (BUND) und kommunale Umweltämter — erkennt ungewöhnliche Trends in Zeitreihen und Geodaten (GBIF, UBA) direkt im Browser.',
+    oneLinerEn: 'Statistical anomaly detection for citizen science (BUND) and municipal environmental agencies — identifies unusual trends in time series and geodata (GBIF, UBA) client-side.',
+    date: '28. September 2026',
+    reviewAfter: 'März 2027',
+    recipientsDe: 'BUND (Bund für Umwelt und Naturschutz Deutschland) · kommunale Umweltämter',
+    recipientsEn: 'BUND (Friends of the Earth Germany) · municipal environmental agencies',
+    domain: 'civic',
+    verdict: 'gift',
+    status: 'gepackt',
+    tags: ['Open Data', 'Citizen Science', 'BUND', 'Umweltbundesamt', 'GBIF', 'Anomalie', 'Statistik'],
+    problemDe: 'Die Erhebung von Umweltdaten durch Bürgerwissenschaften und kommunale Umweltämter nimmt stetig zu. Die Herausforderung liegt im schnellen Erfassen signifikanter Veränderungen oder ungewöhnlicher Muster in großen Datensätzen ohne teure Spezialsoftware.',
+    problemEn: 'Environmental data collection by citizen scientists and municipal environmental agencies is growing steadily. The challenge lies in quickly identifying significant changes or unusual patterns in large datasets without expensive specialized software.',
+    whyNowDe: [
+      'Offene Datenschnittstellen (GBIF, Umweltbundesamt APIs) sind reif und frei zugänglich.',
+      'Statistische Web-Algorithmen und Visualisierungsbibliotheken (D3.js, scikit-learn.js) laufen performant 100% offline im Browser.'
+    ],
+    whyNowEn: [
+      'Open data APIs (GBIF, German Federal Environmental Agency) are mature and accessible.',
+      'Statistical web algorithms and visualization libraries run performantly 100% client-side.'
+    ],
+    sketchDe: 'Browser-Applikation zum Upload von CSVs oder Anbindung von Open APIs (GBIF, UBA). Ein deterministischer Anomalie-Detektor hebt Abweichungen in Zeitreihen und Raumkoordinaten visuell auf Karten und Diagrammen hervor.',
+    sketchEn: 'Browser app for CSV upload or Open API connection (GBIF, UBA). A deterministic anomaly detector visually highlights deviations in time series and spatial coordinates on maps and charts.',
+    firstStepDe: {
+      ticket: 'Minimaler CSV-Uploader mit 2D-Zeitreihen-Anomalielöser.',
+      criteria: 'Fertig, wenn hochgeladene Messreihen Ausreißer nach 3-Sigma-Regel oder IQR im Browser visualisieren.'
+    },
+    firstStepEn: {
+      ticket: 'Minimal CSV uploader with 2D time series anomaly solver.',
+      criteria: 'Done when uploaded measurement series visualize outliers via 3-sigma or IQR rule client-side.'
+    },
+    failureModeDe: 'Scheingenauigkeit: Fehlalarme bei natürlichen Schwankungen. Gegenmaßnahme: klare Konfidenzintervalle und transparente Schwellenwerte.',
+    failureModeEn: 'False positives on natural fluctuations. Remedy: clear confidence intervals and transparent thresholds.',
+    priorArtDe: 'Frei (28.09.2026): Verschiedene GIS- und Statistiktools existieren für Experten; kein niederschwelliges, kostenloses Web-Tool für Ehrenamtliche.',
+    priorArtEn: 'Free (28 Sep 2026): Various expert GIS and statistical tools exist; no lightweight, free web tool for volunteers.'
+  },
+  {
+    id: 'strassennamen-pruefer',
+    title: 'Straßennamen-Prüfer',
+    titleEn: 'Street Name Checker',
+    oneLinerDe: 'Ein deterministischer Prüfer, der einen vorgeschlagenen neuen Straßennamen gegen das Straßenverzeichnis einer Gemeinde hält und Doppelungen und Klangzwillinge als Prüfhinweis mit Fundstelle meldet, nie als „unzulässig".',
+    oneLinerEn: 'A deterministic checker that holds a proposed new street name against a municipality\'s street register and reports duplicates and sound-alikes as a review hint with the matching entry, never as "not permitted".',
+    date: '29. September 2026',
+    reviewAfter: 'September 2027',
+    recipientsDe: 'Eine Person im Fachbereich Vermessung/Geoinformation einer Stadt (z. B. Frankfurt, Hannover, Düsseldorf) oder einer Landesvermessung — keine Person ermittelt, Name, Zuständigkeit und Adresse vor Versand verifizieren',
+    recipientsEn: 'A person in the surveying/geoinformation department of a city (e.g. Frankfurt, Hannover, Düsseldorf) or a state survey office — no person identified, verify name, remit and address before sending',
+    domain: 'civic',
+    verdict: 'gift',
+    status: 'gepackt',
+    tags: ['Straßennamen', 'Vermessung', 'Geoinformation', 'Kommunalverwaltung', 'Kölner Phonetik', 'Heimatgedächtnis'],
+    problemDe: 'Für ein Neubaugebiet brauchen Dutzende Straßen Namen, die sich nach kommunalen Richtlinien nicht mit vorhandenen verwechseln lassen dürfen (Frankfurt 2023: gleichklingende Namen vermeiden, nicht nur durch das Grundwort unterscheiden). Das Vermessungsamt prüft die Ähnlichkeit von Hand gegen das Verzeichnis; ein Werkzeug wurde nicht gefunden. Rutscht ein Zwilling durch, trifft es Rettung, Post und Ortsfremde (VGH Mannheim 13.11.1978: Umbenennung wegen Verwechslungsgefahr).',
+    problemEn: 'A new development area needs dozens of street names that under municipal guidelines must not be confusable with existing ones (Frankfurt 2023: avoid names that sound alike, avoid names distinguished only by the base word). The surveying office checks similarity against the register by hand; no tool was found. If a twin slips through, emergency services, post and visitors are affected (VGH Mannheim 13 Nov 1978: renaming because of risk of confusion).',
+    whyNowDe: [
+      'Straßenlisten sind maschinenlesbar (GovData, OSM über Overpass); das Verzeichnis ist ohne Sonderzugang zu bekommen.',
+      'Die Regeln stehen in veröffentlichten Richtlinien (Drensteinfurt, Bornheim, Dortmund, Frankfurt 2023) und sind formalisierbar: Normalisierung, Grundwort, Klang, Editierdistanz, Ausnahme für Personennamen.',
+      'Ein reiner Client-Kern ist als statische Seite trivial auszuliefern; keine Daten verlassen den Rechner.'
+    ],
+    whyNowEn: [
+      'Street lists are machine-readable (GovData, OSM via Overpass); the register can be had without special access.',
+      'The rules are in published guidelines (Drensteinfurt, Bornheim, Dortmund, Frankfurt 2023) and can be formalised: normalisation, base word, sound, edit distance, exception for personal names.',
+      'A pure client kernel is trivial to ship as a static page; no data leaves the machine.'
+    ],
+    sketchDe: 'Eingabe: Straßenliste der Gemeinde (CSV/GeoJSON) und ein oder mehrere Namensvorschläge. Logik: Normalisierung (ß/ss, Umlaute, Grundwort -straße/-weg/-allee/-platz abgestreift), Kölner Phonetik als eines von mehreren Signalen (für ganze Adressen ungeeignet), Editierdistanz, Grundwort-Doppelung; Ausnahme für Personennamen und räumlichen Zusammenhang als Schalter; jede Regel mit ID und Klartextbegründung. Ausgabe: Prüfhinweis je Vorschlag mit Fundstelle, nie „unzulässig"; die Entscheidung bleibt bei Amt und Gremium. Nicht dabei: kein Flurnamen-Vorschlagsfundus (Ausbaustufe), keine Herkunftserklärung der Namen, kein Server, keine Rechtsauskunft.',
+    sketchEn: 'Input: the municipality\'s street list (CSV/GeoJSON) and one or more name proposals. Logic: normalisation (ß/ss, umlauts, base word -straße/-weg/-allee/-platz stripped), Cologne phonetics as one signal among several (unsuitable for whole addresses), edit distance, base-word duplication; exception for personal names and spatial context as a switch; every rule with an ID and plain-language reason. Output: a review hint per proposal with the matching entry, never "not permitted"; the decision stays with office and council. Not included: no field-name suggestion pool (extension stage), no explanation of name origins, no server, no legal advice.',
+    firstStepDe: {
+      ticket: 'Ein Vorschlag, ein Verzeichnis, ein Prüfhinweis: reiner TypeScript-Kern pruefeStrassenname(vorschlag, verzeichnis, optionen) mit den Regeln aus drei kommunalen Richtlinien als Regelquelle, dazu eine statische Offline-Seite.',
+      criteria: 'Fertig, wenn eine Vitest-Suite mit ≥ 20 Fällen grün ist (Grundwort-Doppelung, ß/ss, Umlaute, Klangzwilling, Personennamen-Ausnahme, unverdächtiger Name), ein Testset bekannter Verwechslungspaare aus Richtlinien-Beispielen und VGH-Fall erkannt wird und eine echte Straßenliste (GovData oder OSM-Overpass) ohne unerklärte Treffer-Flut läuft; jede Meldung trägt Regel-ID, Fundstelle und Begründung (De/En), das Wort „unzulässig" wird nirgends ausgegeben; die Seite läuft offline ohne Netzwerkaufruf, Ablage unter 07-demos/strassennamen-pruefer/.'
+    },
+    firstStepEn: {
+      ticket: 'One proposal, one register, one hint: a pure TypeScript kernel pruefeStrassenname(proposal, register, options) using the rules of three municipal guidelines as its rule source, plus a static offline page.',
+      criteria: 'Done when a Vitest suite with ≥ 20 cases is green (base-word duplication, ß/ss, umlauts, sound-alike, personal-name exception, unremarkable name), a test set of known confusable pairs from guideline examples and the VGH case is detected and a real street list (GovData or OSM Overpass) runs without an unexplained flood of hits; every message carries rule ID, matching entry and reason (De/En), the word "not permitted" is never output; the page runs offline with no network call, stored under 07-demos/strassennamen-pruefer/.'
+    },
+    failureModeDe: 'Gate nur knapp erreicht (24/35): Die Ämter prüfen möglicherweise schon intern (ALKIS-Fachschalen, Adressverwaltung); gefunden wurde nichts, ausgeschlossen ist es nicht. Dann bleibt höchstens eine Zweitmeinung für kleine Gemeinden. Zweitens Falschalarm-Flut durch Phonetik. Gegenmaßnahme: nur Hinweise, Rangfolge nach Regelstärke, einstellbare Schwellen, Kölner Phonetik nie allein. Offen gelegt: Empfängerperson nicht ermittelt (vor Versand verifizieren), Fun niedrig (2, Nachschlagen).',
+    failureModeEn: 'Gate only just reached (24/35): offices may already check internally (ALKIS specialist schemas, address management); nothing was found, but it is not ruled out. Then at most a second opinion for small municipalities remains. Second, a flood of false alarms from phonetics. Remedy: hints only, ranking by rule strength, adjustable thresholds, Cologne phonetics never alone. Disclosed: recipient person not identified (verify before sending), fun low (2, lookup).',
+    priorArtDe: 'Unklar bis frei (29.09.2026, Suchschnipsel und Richtlinien-Ausschnitte): Ämter (Münster, Hildesheim, Düsseldorf, Tübingen, Bamberg, Städtetag) prüfen manuell; zwei Gegen-Suchen (Tool/Software für Ähnlichkeitsprüfung, OSM-Forum „Doppelte Straßennamen finden") fanden kein Werkzeug. Besetzt ist die Nachbarfrage Herkunftserklärung (OSM name:etymology:wikidata, Schilder in Koblenz, Leipzig, Braunschweig, Hannover). ALKIS-interne Prüfung nicht ausgeschlossen. Förderbrücke (nur Hinweis, Fristen aus Katalog-Schnipsel, vor Nennung prüfen): Prototype Fund Klasse 03 (01.10.–30.11.2026; Wohnsitz DE, Teams bis 4, volle Open-Source-Lizenz, Behörden und Vereine ausgeschlossen), nachrangig mFUND. Dose: https://felixinberlin.github.io/Amelie/#dose=strassennamen-pruefer',
+    priorArtEn: 'Unclear to free (29 Sep 2026, search snippets and guideline excerpts): offices (Münster, Hildesheim, Düsseldorf, Tübingen, Bamberg, Städtetag) check manually; two counter-searches (tool/software for similarity checks, OSM forum "find duplicate street names") found no tool. The neighbouring question of explaining name origins is occupied (OSM name:etymology:wikidata, signs in Koblenz, Leipzig, Braunschweig, Hannover). ALKIS-internal checks not ruled out. Funding bridge (hint only, deadlines from catalogue snippet, verify before mentioning): Prototype Fund class 03 (1 Oct–30 Nov 2026; residence in Germany, teams up to 4, full open-source licence, public bodies and associations excluded), secondarily mFUND. Tin: https://felixinberlin.github.io/Amelie/#dose=strassennamen-pruefer'
   }
 ];
 
-export const DISCARDED_DATA: DiscardedItem[] = [
-  {
-    id: 'die-daten-schicht',
-    title: 'Die Daten-Schicht (Synchronous Transcription Events)',
-    originalIdeaDe: 'Eine Transkriptions-Plattform, die nur für intensive, geplante 30-Minuten-"Schichten" öffnet, bei denen Hunderte von Volunteers gleichzeitig tippen.',
-    originalIdeaEn: 'A transcription platform that is intentionally closed most of the time and only opens for intense, scheduled 30-minute "shifts" where hundreds of volunteers type simultaneously.',
-    whyDiscardedDe: 'Das Konzept von synchronen Transkriptions-Events ist unter dem Begriff "Transcribathons" (z.B. von Europeana) bereits etabliert.',
-    whyDiscardedEn: 'The concept of synchronous transcription events is already established under the term "Transcribathons" (e.g. by Europeana).',
-    lessonDe: 'Synchrone Crowdsourcing-Events sind kein neues Format; der Community-Aspekt wird in der Nische bereits gepflegt.',
-    lessonEn: 'Synchronous crowdsourcing events are not a new format; the community aspect is already well cultivated in the niche.',
-    domain: 'Zivilgesellschaft / Citizen Science',
-    evidence: [
-      'Europeana Transcribathons'
-    ],
-    cause: 'gebaut',
-    killer: 'gemeinnuetzig',
-    foundBy: 'englisch',
-    origin: 'bisoziation',
-    stage: 'kandidat',
-    bornIn: 'Lacunar Runde 5',
-    diedOn: '2026-09-24',
-    resurrectIfDe: 'Wenn eine technologische Neuerung den synchronen Event funktional unabdingbar macht.',
-    resurrectIfEn: 'If a technological advancement makes the synchronous event functionally indispensable.'
-  },
-  {
-    id: 'git-archaeologist',
-    title: 'git-archaeologist (MCP)',
-    originalIdeaDe: 'Repo-History als Frage-Interface: Warum existiert diese Zeile? Kette aus blame → PR → Issue → Diskussion.',
-    originalIdeaEn: 'Repo history inquiry interface: Why does this line exist? Connect blame → PR → Issue → discussion thread.',
-    whyDiscardedDe: 'Innerhalb von wenigen Monaten mehrfach unabhängig von verschiedenen Entwicklern und Firmen gebaut (u.a. codebase-archaeology MCP, GitKraken MCP).',
-    whyDiscardedEn: 'Independently built multiple times within months by different developers and companies (codebase-archaeology MCP, GitKraken MCP tools).',
-    lessonDe: 'Bei naheliegenden Tooling-Ideen im aktiven Ökosystem beträgt das Zeitfenster Monate, nicht Jahre.',
-    lessonEn: 'In active developer tooling ecosystems, the window of unbuilt obvious ideas is months, not years.',
-    domain: 'DevTools & MCP',
-    evidence: [
-      'codebase-archaeology MCP Server',
-      'GitKraken Code History MCP integration',
-      'GitHub Copilot commit context tracing'
-    ],
-    cause: 'gebaut',
-    killer: 'community',
-    foundBy: 'unbekannt',
-    origin: 'ideenliste',
-    stage: 'kandidat',
-    bornIn: 'Runde 1 · Ideenliste',
-    diedOn: '2026-09',
-    resurrectIfDe: 'nie — naheliegendes Tooling im aktiven MCP-Ökosystem wird mehrfach gebaut.',
-    resurrectIfEn: 'never — obvious tooling in the active MCP ecosystem gets built many times over.',
-    nachruf: '08-friedhof/nachrufe.md'
-  },
-  {
-    id: 'home-network-mcp',
-    title: 'Home-Network MCP',
-    originalIdeaDe: 'Router als Tool-Server: Wer ist im Netz, Bandbreite, DNS-Blocklisten togglen per Chat statt Web-Interface.',
-    originalIdeaEn: 'Home router as an agent tool server: check active devices, bandwidth, toggle DNS blocklists via chat.',
-    whyDiscardedDe: 'Mindestens vier unabhängige FRITZ!Box-MCP-Server und Home Assistant MCP-Integrationen existieren bereits.',
-    whyDiscardedEn: 'At least four separate FRITZ!Box MCP servers and deep Home Assistant bidirectional integrations already exist in registries.',
-    lessonDe: '„Naheliegendes Gerät + neues Protokoll" ist die am dichtesten besetzte Nische überhaupt. Existiert fast immer bereits.',
-    lessonEn: '"Ubiquitous device + new protocol" is the most crowded niche imaginable. Almost always saturated.',
-    domain: 'IoT & Smart Home',
-    evidence: [
-      'fritzbox-mcp (mehrere Forks auf GitHub)',
-      'Home Assistant MCP server',
-      'OpenWRT chat plugins'
-    ],
-    cause: 'gebaut',
-    killer: 'community',
-    foundBy: 'unbekannt',
-    origin: 'ideenliste',
-    stage: 'kandidat',
-    bornIn: 'Runde 1 · Ideenliste',
-    diedOn: '2026-09',
-    resurrectIfDe: 'nie — mindestens vier unabhängige Server.',
-    resurrectIfEn: 'never — at least four independent servers.',
-    nachruf: '08-friedhof/nachrufe.md'
-  },
-  {
-    id: 'repo-museum',
-    title: 'Repo-Museum',
-    originalIdeaDe: 'Begehbare 3D-Galerie der eigenen Repos: Repo = Raum, Commits = Exponate, tote Branches = Keller.',
-    originalIdeaEn: 'Walkable 3D museum of git repos: repository = exhibition hall, commits = artifacts, stale branches = basement.',
-    whyDiscardedDe: 'Bereits mehrfach als 3D-Städte gebaut (Gource, CodeCity, GitHub Skyline, 3D Repo Explorer). Die Museumsmetapher ist nur Designkosmetik, keine neue Fähigkeit.',
-    whyDiscardedEn: 'Built repeatedly as 3D cities and galleries (Gource, CodeCity, GitHub Skyline). The museum theme is visual styling, not a functional breakthrough.',
-    lessonDe: 'Ein Designunterschied allein ohne funktionale neue Fähigkeit rechtfertigt keine Dose zum Verschenken.',
-    lessonEn: 'A visual theme difference alone without new capability does not justify an Amélie tin gift.',
-    domain: 'Visualisierung & Demos',
-    evidence: [
-      'Gource 3D software visualization',
-      'GitHub Skyline & 3D city repos',
-      'CodeCity academic research'
-    ],
-    cause: 'gebaut',
-    killer: 'community',
-    foundBy: 'unbekannt',
-    origin: 'ideenliste',
-    stage: 'kandidat',
-    bornIn: 'Runde 1 · Ideenliste',
-    diedOn: '2026-09',
-    resurrectIfDe: 'nur als eigenes Spielzeug, nie als Geschenk — die Metapher ist Design, keine Fähigkeit.',
-    resurrectIfEn: 'only as a personal toy, never as a gift — the metaphor is design, not a capability.',
-    nachruf: '08-friedhof/nachrufe.md'
-  },
-  {
-    id: 'commute-oracle',
-    title: 'Commute Oracle',
-    originalIdeaDe: 'Kein offizielles Fahrplan-ETA, sondern ein persönliches Modell, das geloggte Fahrten lernt und sagt, wann man wirklich losmuss.',
-    originalIdeaEn: 'Personal departure oracle: learns your real movement speed rather than transit schedule to predict exact departure time.',
-    whyDiscardedDe: 'Kommerziell vollständig besetzt durch Citymapper (KI-Pendelprognose 2026) und Google Maps. Eine Einzelperson kann ohne Echtzeitflottendaten nicht konkurrieren.',
-    whyDiscardedEn: 'Commercially dominated by Citymapper (AI commute prediction) and Google Maps transit telemetry.',
-    lessonDe: 'Gegen Plattformen mit proprietären Milliarden-Echtzeitdatenpunkten kann ein offenes Geschenk ohne Daten nicht bestehen.',
-    lessonEn: 'An open gift app cannot compete against commercial giants with billion-point live vehicle telemetry.',
-    domain: 'Mobilität & Pendeln',
-    evidence: [
-      'Citymapper departure prediction AI',
-      'Google Maps Commute Assistant',
-      'Transit App personal arrival forecasting'
-    ],
-    cause: 'gebaut',
-    killer: 'kommerziell',
-    foundBy: 'unbekannt',
-    origin: 'ideenliste',
-    stage: 'kandidat',
-    bornIn: 'Runde 1 · Ideenliste',
-    diedOn: '2026-09',
-    resurrectIfDe: 'nie — Pendelprognose ist ein Kernprodukt großer Kartenanbieter.',
-    resurrectIfEn: 'never — commute prediction is a core product of large map providers.',
-    nachruf: '08-friedhof/nachrufe.md'
-  },
-  {
-    id: 'tafel-warenannahme',
-    title: 'Tafel-Warenannahme per Foto',
-    originalIdeaDe: 'Tafel-Fahrer fotografieren gespendete Ware, eine KI erfasst Menge und Qualität.',
-    originalIdeaEn: 'Food-bank drivers photograph donated goods; AI records quantity and quality.',
-    whyDiscardedDe: 'Tafel Deutschland hat es selbst: „Tafel macht Zukunft – gemeinsam digital" (BMEL, 1,5 Mio. €, 3 Jahre) mit Fahrer-App und Foto-Qualitätserfassung, alle großen Handelsketten beteiligt. In Runde 2 übersehen, am 18.09. von zwei Researchern unabhängig gefunden.',
-    whyDiscardedEn: 'Tafel Deutschland built it themselves: a government-funded digitalisation programme (EUR 1.5m, 3 years) with a driver app that records goods quality by photo. Missed in round 2, found independently by two researchers on 18.09.',
-    lessonDe: 'Bei Empfängern mit eigenem Digitalprojekt den ganzen Funktionsumfang lesen, nicht nur die erste Pressemitteilung.',
-    lessonEn: 'For recipients with their own digital project, read the full feature set, not just the first press release.',
-    domain: 'Lebensmittelrettung',
-    evidence: [
-      'Tafel macht Zukunft – gemeinsam digital (BMEL-Förderung)',
-      'Fahrer-App mit Foto-Qualitätserfassung'
-    ],
-    cause: 'beim-empfaenger',
-    killer: 'gemeinnuetzig',
-    foundBy: 'empfaenger',
-    origin: 'brainstorm',
-    stage: 'kandidat',
-    bornIn: 'Runde 2 · Ideenrunde',
-    diedOn: '2026-09-18',
-    resurrectIfDe: 'Wenn das Förderprojekt ausläuft und die App nicht weiterbetrieben wird.',
-    resurrectIfEn: 'If the funded project ends and the app is not maintained.'
-  },
-  {
-    id: 'balkonsolar-verschattung',
-    title: 'Balkonkraftwerk-Verschattung per Handykamera',
-    originalIdeaDe: 'Handykamera am Balkon aufnehmen, Verschattung über das Jahr berechnen, Ertrag eines Balkonkraftwerks schätzen.',
-    originalIdeaEn: 'Point the phone camera from the balcony, compute shading over the year, estimate plug-in solar yield.',
-    whyDiscardedDe: 'Horisol (Indie-App, im Akkudoktor-Forum vorgestellt, Juli 2026) und SunOnTrack AR tun genau das; dazu HTW-Simulator und PVGIS für den Ertrag.',
-    whyDiscardedEn: 'Horisol (indie app, presented in the Akkudoktor forum, July 2026) and SunOnTrack AR do exactly this; HTW simulator and PVGIS cover yield.',
-    lessonDe: 'Indie-Apps unter dem SEO-Radar findet nur die Forensuche — sie ist deshalb Suchschritt 4.',
-    lessonEn: 'Indie apps under the SEO radar only show up in forum searches — hence search step 4.',
-    domain: 'Energie & Solar',
-    evidence: [
-      'Horisol (Akkudoktor-Forum, Juli 2026)',
-      'SunOnTrack AR',
-      'HTW-Simulator, PVGIS'
-    ],
-    cause: 'gebaut',
-    killer: 'community',
-    foundBy: 'forum',
-    origin: 'brainstorm',
-    stage: 'kandidat',
-    bornIn: 'Runde 2 · Ideenrunde',
-    diedOn: '2026-09-16',
-    resurrectIfDe: 'nie — Balkonsolar ist ein aktiver Bastlermarkt.',
-    resurrectIfEn: 'never — plug-in solar is an active hobbyist market.'
-  },
-  {
-    id: 'wheelmap-eingangsfoto',
-    title: 'Wheelmap: Eingangsfoto → Barrierefreiheit',
-    originalIdeaDe: 'Foto eines Hauseingangs → automatische Einschätzung für Wheelmap (Stufe, Rampe, Breite).',
-    originalIdeaEn: 'Photo of an entrance → automatic accessibility assessment for Wheelmap (step, ramp, width).',
-    whyDiscardedDe: 'Der Empfänger hat es selbst angestoßen: HIIG und Wheelmap veröffentlichten 2023 einen offenen Datensatz zu Stufen und Rampen an Eingängen, genau als Grundlage für solche Modelle.',
-    whyDiscardedEn: 'The recipient started it: HIIG and Wheelmap published an open dataset of steps and ramps at entrances in 2023, precisely as training ground for such models.',
-    lessonDe: 'Empfänger zuerst suchen — der billigste Kill und zugleich die schlechteste Erstansprache, die man sich spart.',
-    lessonEn: 'Search the recipient first — the cheapest kill and the worst first contact avoided.',
-    domain: 'Barrierefreiheit',
-    evidence: [
-      'HIIG + Wheelmap: offener Datensatz Stufen/Rampen (2023)'
-    ],
-    cause: 'beim-empfaenger',
-    killer: 'gemeinnuetzig',
-    foundBy: 'empfaenger',
-    origin: 'brainstorm',
-    stage: 'kandidat',
-    bornIn: 'Runde 2 · Ideenrunde',
-    diedOn: '2026-09-16',
-    resurrectIfDe: 'nie — beim Empfänger selbst.',
-    resurrectIfEn: 'never — the recipient owns it.'
-  },
-  {
-    id: 'repair-cafe-diagnose',
-    title: 'Repair-Café-Diagnoseassistent',
-    originalIdeaDe: 'KI-Assistent, der Ehrenamtlichen im Repair Café bei der Fehlerdiagnose hilft.',
-    originalIdeaEn: 'AI assistant that helps Repair Café volunteers diagnose faults.',
-    whyDiscardedDe: 'Repair Café International berichtete im Juli 2026 selbst über KI-Diagnose; dazu das offene Projekt robotfreak/repair-cafe.',
-    whyDiscardedEn: 'Repair Café International reported on AI diagnosis itself in July 2026; there is also the open project robotfreak/repair-cafe.',
-    lessonDe: 'Wenn ein Feld „gerade besetzt wird", ist der Empfänger meist der Erste, der es tut.',
-    lessonEn: 'When a field "is being taken right now", the recipient is usually the first to do it.',
-    domain: 'Reparatur',
-    evidence: [
-      'Repair Café International, Artikel Juli 2026',
-      'github.com/robotfreak/repair-cafe'
-    ],
-    cause: 'beim-empfaenger',
-    killer: 'gemeinnuetzig',
-    foundBy: 'empfaenger',
-    origin: 'brainstorm',
-    stage: 'kandidat',
-    bornIn: 'Runde 2 · Ideenrunde',
-    diedOn: '2026-09-16',
-    resurrectIfDe: 'nie — beim Empfänger selbst.',
-    resurrectIfEn: 'never — the recipient owns it.'
-  },
-  {
-    id: 'chor-satb-trennung',
-    title: 'Chor-Übedateien aus Aufnahme (SATB-Trennung)',
-    originalIdeaDe: 'Aus einer Chorprobenaufnahme einzelne Übedateien für Sopran, Alt, Tenor, Bass erzeugen.',
-    originalIdeaEn: 'Split a choir rehearsal recording into practice tracks for soprano, alto, tenor, bass.',
-    whyDiscardedDe: 'MVSEP hat ein eigenes SATB-Modell, dazu MusiCraft und ChoirMate. Auf Deutsch unsichtbar, die englische Produktsuche fand es sofort.',
-    whyDiscardedEn: 'MVSEP has a dedicated SATB model, plus MusiCraft and ChoirMate. Invisible in German, found at once by an English product search.',
-    lessonDe: 'Kommerzielle Produkte tauchen auf Deutsch oft nicht auf — englische Produktwörter gehören in jede Prüfung.',
-    lessonEn: 'Commercial products often do not show up in German — English product words belong in every check.',
-    domain: 'Audio & Musik',
-    evidence: [
-      'MVSEP SATB-Modell',
-      'MusiCraft',
-      'ChoirMate'
-    ],
-    cause: 'gebaut',
-    killer: 'kommerziell',
-    foundBy: 'englisch',
-    origin: 'brainstorm',
-    stage: 'kandidat',
-    bornIn: 'Runde 2 · Ideenrunde',
-    diedOn: '2026-09-16',
-    resurrectIfDe: 'nie — Stem-Trennung ist ein dichter Markt.',
-    resurrectIfEn: 'never — stem separation is a crowded market.'
-  },
-  {
-    id: 'mieter-schimmel-assistent',
-    title: 'Mängelanzeige-/Schimmel-Assistent für Mieter',
-    originalIdeaDe: 'Mieter dokumentieren Mängel und Schimmel per Foto, die App schreibt die Mängelanzeige.',
-    originalIdeaEn: 'Tenants document defects and mould by photo; the app writes the formal defect notice.',
-    whyDiscardedDe: 'Miet-Akte und SchimmelScan gibt es als kommerzielle Produkte.',
-    whyDiscardedEn: 'Miet-Akte and SchimmelScan exist as commercial products.',
-    lessonDe: 'Wenn Endnutzer dafür zahlen würden, existiert es (Faustregel Atlas).',
-    lessonEn: 'If end users would pay for it, it exists (atlas rule of thumb).',
-    domain: 'Wohnen & Miete',
-    evidence: [
-      'Miet-Akte',
-      'SchimmelScan'
-    ],
-    cause: 'gebaut',
-    killer: 'kommerziell',
-    foundBy: 'unbekannt',
-    origin: 'brainstorm',
-    stage: 'kandidat',
-    bornIn: 'Runde 2 · Ideenrunde',
-    diedOn: '2026-09-16',
-    resurrectIfDe: 'nie — Mieter-Tools sind kommerziell dicht.',
-    resurrectIfEn: 'never — tenant tools are commercially crowded.'
-  },
-  {
-    id: 'betriebskosten-pruefen',
-    title: 'Betriebskostenabrechnung prüfen',
-    originalIdeaDe: 'Foto der Nebenkostenabrechnung → Prüfung auf typische Fehler.',
-    originalIdeaEn: 'Photo of the service-charge statement → check for typical errors.',
-    whyDiscardedDe: 'MietKlar bietet das an.',
-    whyDiscardedEn: 'MietKlar offers this.',
-    lessonDe: 'Dieselbe Faustregel wie beim Schimmel: zahlungsbereite Endnutzer, also schon gebaut.',
-    lessonEn: 'Same rule of thumb as for mould: paying end users, so already built.',
-    domain: 'Wohnen & Miete',
-    evidence: [
-      'MietKlar'
-    ],
-    cause: 'gebaut',
-    killer: 'kommerziell',
-    foundBy: 'unbekannt',
-    origin: 'brainstorm',
-    stage: 'kandidat',
-    bornIn: 'Runde 2 · Ideenrunde',
-    diedOn: '2026-09-16',
-    resurrectIfDe: 'nie.',
-    resurrectIfEn: 'never.'
-  },
-  {
-    id: 'hitze-schattenrouten',
-    title: 'Hitze-Schattenrouten für Ältere',
-    originalIdeaDe: 'Routenplaner, der ältere Menschen an Hitzetagen durch den Schatten führt.',
-    originalIdeaEn: 'Route planner guiding older people through shade on hot days.',
-    whyDiscardedDe: 'HEAL / shaded.ors (HeiGIT), Shadowmap und die Berliner Kühle-Orte-Karten decken das ab.',
-    whyDiscardedEn: 'HEAL / shaded.ors (HeiGIT), Shadowmap and Berlin\'s cool-places maps cover it.',
-    lessonDe: 'Was eine Stadt als Pressemitteilung verkaufen kann, existiert.',
-    lessonEn: 'What a city can sell as a press release already exists.',
-    domain: 'Stadt & Klima',
-    evidence: [
-      'HEAL / shaded.ors (HeiGIT)',
-      'Shadowmap',
-      'Berliner Kühle-Orte-Karten'
-    ],
-    cause: 'gebaut',
-    killer: 'forschung',
-    foundBy: 'unbekannt',
-    origin: 'brainstorm',
-    stage: 'kandidat',
-    bornIn: 'Runde 2 · Ideenrunde',
-    diedOn: '2026-09-16',
-    resurrectIfDe: 'nie — Forschung und Kommunen sind aktiv.',
-    resurrectIfEn: 'never — research and cities are active.'
-  },
-  {
-    id: 'schulweg-gefahrenkarte',
-    title: 'Kreuzungs-Falschparker & Schulweg-Gefahrenkarte',
-    originalIdeaDe: 'Eltern melden zugeparkte Kreuzungen auf Schulwegen, die Karte zeigt Gefahrenstellen.',
-    originalIdeaEn: 'Parents report blocked crossings on school routes; the map shows hazards.',
-    whyDiscardedDe: 'Schulwegportal Berlin, VCD-Schulwege-Check und FixMyBerlin gibt es.',
-    whyDiscardedEn: 'Berlin\'s school-route portal, the VCD school route check and FixMyBerlin exist.',
-    lessonDe: 'Alltagsthemen mit Bürgerbezug sind 2026 voll — die Zivilgesellschafts-Regel gilt nur für Nischen ohne Endnutzer.',
-    lessonEn: 'Everyday civic topics are full in 2026 — the civil-society rule only holds for niches without end users.',
-    domain: 'Verkehr',
-    evidence: [
-      'Schulwegportal Berlin',
-      'VCD-Schulwege-Check',
-      'FixMyBerlin'
-    ],
-    cause: 'gebaut',
-    killer: 'behoerde',
-    foundBy: 'unbekannt',
-    origin: 'brainstorm',
-    stage: 'kandidat',
-    bornIn: 'Runde 2 · Ideenrunde',
-    diedOn: '2026-09-16',
-    resurrectIfDe: 'nie.',
-    resurrectIfEn: 'never.'
-  },
-  {
-    id: 'radio-meteorscatter-korrelation',
-    title: 'Radio-Meteorscatter × visuelle Zeugenmeldung',
-    originalIdeaDe: 'Radio-Meteorechos und visuelle Zeugenmeldungen einer Feuerkugel in Echtzeit korrelieren.',
-    originalIdeaEn: 'Correlate radio meteor echoes with visual fireball witness reports in real time.',
-    whyDiscardedDe: 'FRIPON kombiniert Radio- und Videostationen bereits für Echtzeit-Trajektorien (arXiv 2111.09742).',
-    whyDiscardedEn: 'FRIPON already combines radio and video stations for real-time trajectories (arXiv 2111.09742).',
-    lessonDe: 'Messnetze der Forschung sind oft weiter als ihre Webseiten zeigen — arXiv zuerst.',
-    lessonEn: 'Research measurement networks are often further along than their websites show — check arXiv first.',
-    domain: 'Feuerkugeln & Meteore',
-    evidence: [
-      'FRIPON (arXiv 2111.09742)'
-    ],
-    cause: 'gebaut',
-    killer: 'forschung',
-    foundBy: 'englisch',
-    origin: 'bisoziation',
-    stage: 'kandidat',
-    bornIn: 'Runde 3 · Bisoziation',
-    diedOn: '2026-09-18',
-    resurrectIfDe: 'nie.',
-    resurrectIfEn: 'never.'
-  },
-  {
-    id: 'infraschall-feuerkugel',
-    title: 'Handy-Barometer/Infraschall für Feuerkugeln',
-    originalIdeaDe: 'Barometer und Mikrofon von Handys erfassen den Infraschall einer Feuerkugel.',
-    originalIdeaEn: 'Phone barometers and microphones capture a fireball\'s infrasound.',
-    whyDiscardedDe: 'Die RedVox-App misst Infraschall bereits, unter anderem für Meteore und Boliden.',
-    whyDiscardedEn: 'The RedVox app already measures infrasound, including meteors and bolides.',
-    lessonDe: 'Sensorfusion mit Alltagsgeräten ist ein bekanntes Forschungsmuster, keine Lücke.',
-    lessonEn: 'Sensor fusion with everyday devices is a known research pattern, not a gap.',
-    domain: 'Feuerkugeln & Meteore',
-    evidence: [
-      'RedVox'
-    ],
-    cause: 'gebaut',
-    killer: 'forschung',
-    foundBy: 'englisch',
-    origin: 'bisoziation',
-    stage: 'kandidat',
-    bornIn: 'Runde 3 · Bisoziation',
-    diedOn: '2026-09-18',
-    resurrectIfDe: 'nie.',
-    resurrectIfEn: 'never.'
-  },
-  {
-    id: 'baum-stigmergie',
-    title: 'Baum-Stigmergie (Kontrollhistorie am Baum)',
-    originalIdeaDe: 'Der Baum trägt einen lesbaren, mitwachsenden Hinweis auf seine eigene Kontrollhistorie.',
-    originalIdeaEn: 'The tree carries a legible, growing record of its own inspection history.',
-    whyDiscardedDe: 'Dynamische QR-Baumplaketten mit öffentlichem Portal gibt es kommerziell: baumplaketten.de, BaumDex, Baumsicht, CheckTrees, dazu ein QR-Pilot (ACM 2023).',
-    whyDiscardedEn: 'Dynamic QR tree tags with public portals exist commercially: baumplaketten.de, BaumDex, Baumsicht, CheckTrees, plus a QR pilot (ACM 2023).',
-    lessonDe: 'Physisches Objekt + gesetzliche Sichtprüfung = eigene Softwarebranche. Vor jeder Idee in diesem Muster die Branche suchen.',
-    lessonEn: 'Physical object + statutory visual inspection = its own software industry. Search for the industry before any idea in this pattern.',
-    domain: 'Stadtbäume & Prüfpflicht',
-    evidence: [
-      'baumplaketten.de',
-      'BaumDex',
-      'Baumsicht',
-      'CheckTrees',
-      'QR-Baummanagement (ACM 2023)'
-    ],
-    cause: 'gebaut',
-    killer: 'kommerziell',
-    foundBy: 'deutsch',
-    origin: 'bisoziation',
-    stage: 'kandidat',
-    bornIn: 'Runde 3 · Bisoziation',
-    diedOn: '2026-09-18',
-    resurrectIfDe: 'nie — Muster „Objekt + Prüfpflicht" ist dicht.',
-    resurrectIfEn: 'never — the "object + inspection duty" pattern is dense.'
-  },
-  {
-    id: 'baum-verfallsdatum',
-    title: 'Baum-Verfallsdatum (Befund verfällt ohne Foto-Bestätigung)',
-    originalIdeaDe: 'Ein Kontrollbefund im Baumkataster verliert an Gültigkeit, wenn er nicht per Foto-Vergleich bestätigt wird.',
-    originalIdeaEn: 'A tree-register inspection finding expires unless confirmed by photo comparison.',
-    whyDiscardedDe: 'KI-Baumgesundheit aus Wiederholungsfotos ist 2026 Standard: Tree Inventory AI, greehill, ArboStar, TreeTect.',
-    whyDiscardedEn: 'AI tree health from repeat photography is standard in 2026: Tree Inventory AI, greehill, ArboStar, TreeTect.',
-    lessonDe: 'Stirbt der erste Kandidat eines Ankers an einer ganzen Anbieterkategorie, ist der Anker dicht — wechseln statt nachlegen.',
-    lessonEn: 'If a source\'s first candidate dies against a whole vendor category, the source is dense — switch instead of trying again.',
-    domain: 'Stadtbäume & Prüfpflicht',
-    evidence: [
-      'Tree Inventory AI',
-      'greehill',
-      'ArboStar',
-      'TreeTect'
-    ],
-    cause: 'gebaut',
-    killer: 'kommerziell',
-    foundBy: 'englisch',
-    origin: 'bisoziation',
-    stage: 'kandidat',
-    bornIn: 'Runde 3 · Bisoziation',
-    diedOn: '2026-09-18',
-    resurrectIfDe: 'nie.',
-    resurrectIfEn: 'never.'
-  },
-  {
-    id: 'schimmel-symptomdiagnose',
-    title: 'Schimmel-Symptomdiagnose (Ursachen-Band)',
-    originalIdeaDe: 'Symptome antippen → Band der Ursachen (Wärmebrücke oder Lüften), ohne Grundriss.',
-    originalIdeaEn: 'Tap symptoms → band of causes (thermal bridge or ventilation), no floor plan.',
-    whyDiscardedDe: 'Taupunkt- und fRsi-Rechner gibt es in Menge (SchimmelScan, Silberkraft, Deutschlandrechner), und das Atlasfeld Mieter-Schimmel war bereits dicht.',
-    whyDiscardedEn: 'Dew-point and fRsi calculators abound (SchimmelScan, Silberkraft, Deutschlandrechner), and the tenant-mould atlas field was already dense.',
-    lessonDe: 'Der Atlas hätte die Suche gespart — Vorfilter vor der Suche.',
-    lessonEn: 'The atlas would have saved the search — pre-filter before searching.',
-    domain: 'Wohnen & Miete',
-    evidence: [
-      'SchimmelScan Taupunkt-Rechner',
-      'Silberkraft fRSI-Rechner',
-      'Deutschlandrechner'
-    ],
-    cause: 'gebaut',
-    killer: 'kommerziell',
-    foundBy: 'eigener-bestand',
-    origin: 'bisoziation',
-    stage: 'kandidat',
-    bornIn: 'Runde 4 · Bisoziation (Altbau Thermal)',
-    diedOn: '2026-09-19',
-    resurrectIfDe: 'nie.',
-    resurrectIfEn: 'never.'
-  },
-  {
-    id: 'hausweite-symptomkarte',
-    title: 'Hausweite Symptomkarte (Schimmel über Etagen)',
-    originalIdeaDe: 'Nachbarn melden Schimmel und Kälte pro Wohnung; das Muster über Etagen soll einen Bauschaden beweisen.',
-    originalIdeaEn: 'Neighbours report mould and cold per flat; the pattern across floors is meant to prove a building defect.',
-    whyDiscardedDe: 'Rechtlich wirkungslos: Laut BGH ist eine Wärmebrücke, die dem Standard der Bauzeit entspricht, kein Mangel (Suchtreffer, Volltext nicht gelesen). Ein Beweiswerkzeug für einen Streit, in dem der Befund nicht trägt, hat keinen Empfänger.',
-    whyDiscardedEn: 'Legally ineffective: per the German Federal Court, a thermal bridge that met the standard of its construction era is not a defect (search result, full text not read). An evidence tool for a dispute where the finding does not count has no recipient.',
-    lessonDe: 'Bei Beweis- und Meldewerkzeugen zuerst fragen, ob der Befund rechtlich überhaupt zählt.',
-    lessonEn: 'For evidence and reporting tools, first ask whether the finding counts legally at all.',
-    domain: 'Wohnen & Miete',
-    evidence: [
-      'BGH: Wärmebrücke nach Baualtersstandard kein Mangel (Suchtreffer)'
-    ],
-    cause: 'reality-check',
-    killer: 'keiner',
-    foundBy: 'deutsch',
-    origin: 'bisoziation',
-    stage: 'kandidat',
-    bornIn: 'Runde 4 · Bisoziation (Altbau Thermal)',
-    diedOn: '2026-09-19',
-    resurrectIfDe: 'Wenn sich die Rechtsprechung zu Wärmebrücken im Bestand ändert.',
-    resurrectIfEn: 'If case law on thermal bridges in old buildings changes.'
-  },
-  {
-    id: 'abrechnungsfoto-kalibrierung',
-    title: 'Abrechnungsfoto → Raumverbrauch als Kalibrierung',
-    originalIdeaDe: 'Foto der Heizkostenabrechnung liefert Raumliste und Verbrauch pro Raum als Kalibrierung für die Wohnungssimulation.',
-    originalIdeaEn: 'Photo of the heating bill supplies room list and per-room consumption to calibrate the flat simulation.',
-    whyDiscardedDe: 'Physikalisch nicht tragfähig: Verbrauchseinheiten von ista und Techem sind nicht genormt und ohne Bewertungsfaktoren keine physikalische Größe.',
-    whyDiscardedEn: 'Physically unsound: ista and Techem consumption units are not standardised and, without rating factors, are not a physical quantity.',
-    lessonDe: 'Vor der Existenzfrage prüfen, ob die Eingabedaten messen, was die Idee braucht.',
-    lessonEn: 'Before asking whether it exists, check whether the input data measure what the idea needs.',
-    domain: 'Energie & Heizung',
-    evidence: [
-      'Suchtreffer 123recht / HeizkostenChecker zu Verbrauchseinheiten'
-    ],
-    cause: 'reality-check',
-    killer: 'keiner',
-    foundBy: 'deutsch',
-    origin: 'bisoziation',
-    stage: 'kandidat',
-    bornIn: 'Runde 4 · Bisoziation (Altbau Thermal)',
-    diedOn: '2026-09-19',
-    resurrectIfDe: 'Wenn Heizkostenverteiler kWh statt dimensionsloser Einheiten liefern (Fernablesung ab 2027 prüfen).',
-    resurrectIfEn: 'If heat-cost allocators report kWh instead of dimensionless units (check remote reading from 2027).'
-  },
-  {
-    id: 'hausakte-gespiegelt',
-    title: 'Hausakte mit gespiegelten Grundrissen',
-    originalIdeaDe: 'Bauteil-Parameter einmal pro Haus erfassen, Grundrisse für Nachbarwohnungen spiegeln.',
-    originalIdeaEn: 'Record building parameters once per house, mirror floor plans for neighbouring flats.',
-    whyDiscardedDe: 'Steckt schon in Altbau Thermal („Adresse → Gebäudekontext aus EnergyMap vorbelegen").',
-    whyDiscardedEn: 'Already part of Altbau Thermal ("address → pre-fill building context from EnergyMap").',
-    lessonDe: 'Bisoziation erzeugt gern Bausteine der eigenen Dose — vor dem Zählen gegen den eigenen Bestand prüfen.',
-    lessonEn: 'Bisociation tends to produce building blocks of the own Dose — check against own records before counting.',
-    domain: 'Energie & Heizung',
-    evidence: [
-      'Dose Altbau Thermal'
-    ],
-    cause: 'duplikat',
-    killer: 'eigener-bestand',
-    foundBy: 'eigener-bestand',
-    origin: 'bisoziation',
-    stage: 'kandidat',
-    bornIn: 'Runde 4 · Bisoziation (Altbau Thermal)',
-    diedOn: '2026-09-19',
-    resurrectIfDe: 'nie — lebt in Altbau Thermal weiter.',
-    resurrectIfEn: 'never — lives on inside Altbau Thermal.'
-  },
-  {
-    id: 'raumscan-heizlast',
-    title: 'Raumscan/LiDAR → Heizlast',
-    originalIdeaDe: 'Raum per LiDAR oder Foto scannen, daraus die Heizlast berechnen.',
-    originalIdeaEn: 'Scan a room by LiDAR or photo and compute the heating load.',
-    whyDiscardedDe: 'Für Fachleute fertig: ScanDom Heizlast, Heizreport Scanner App, Heizlast App 3D, magicplan (DIN/TS 12831).',
-    whyDiscardedEn: 'Done for professionals: ScanDom Heizlast, Heizreport Scanner App, Heizlast App 3D, magicplan (DIN/TS 12831).',
-    lessonDe: 'Eingabe-Beschleunigung (Scan statt Zeichnen) ist fast immer schon ein Profi-Produkt.',
-    lessonEn: 'Input acceleration (scan instead of drawing) is almost always a professional product already.',
-    domain: 'Energie & Heizung',
-    evidence: [
-      'ScanDom Heizlast',
-      'Heizreport Scanner App',
-      'Heizlast App 3D',
-      'magicplan'
-    ],
-    cause: 'gebaut',
-    killer: 'kommerziell',
-    foundBy: 'deutsch',
-    origin: 'bisoziation',
-    stage: 'kandidat',
-    bornIn: 'Runde 4 · Bisoziation (Altbau Thermal)',
-    diedOn: '2026-09-19',
-    resurrectIfDe: 'nie.',
-    resurrectIfEn: 'never.'
-  },
-  {
-    id: 'kirchen-baubegehung',
-    title: 'Kirchen-Baubegehung digital',
-    originalIdeaDe: 'Küster:innen machen die jährliche Baubegehung per App mit Foto-Mängelvorschlag statt Papier-Checkliste.',
-    originalIdeaEn: 'Sextons do the annual building inspection by app with photo defect suggestions instead of a paper checklist.',
-    whyDiscardedDe: 'Landeskirchen nutzen Gebäudemanagement-Software; ARCHIKART wirbt mit Zustandserfassung per Kontrollkatalog für Kirchenverwaltungen, dazu allgemeine Mängel-Apps (Capmo, BauMaster, firstaudit). Nur Schnipsel, Alter nicht geprüft.',
-    whyDiscardedEn: 'Regional churches use building-management software; ARCHIKART advertises condition surveys via checklist for church administrations, plus general defect apps (Capmo, BauMaster, firstaudit). Snippets only, age unchecked.',
-    lessonDe: 'Das Muster „Objekt + wiederkehrende Prüfung" hat auch hier seine Branche — der Atlas hätte es vorhergesagt.',
-    lessonEn: 'The "object + recurring inspection" pattern has its industry here too — the atlas would have predicted it.',
-    domain: 'Denkmal & Kirche',
-    evidence: [
-      'ARCHIKART',
-      'Capmo',
-      'BauMaster',
-      'firstaudit'
-    ],
-    cause: 'gebaut',
-    killer: 'kommerziell',
-    foundBy: 'empfaenger',
-    origin: 'quelle',
-    stage: 'kandidat',
-    bornIn: 'Runde 4 · Ideenrunde (Quelle: Denkmalbehörden)',
-    diedOn: '2026-09-19',
-    resurrectIfDe: 'nie.',
-    resurrectIfEn: 'never.'
-  },
-  {
-    id: 'schadenskartierung-foto',
-    title: 'Schadenskartierung per Foto (Denkmalfassade)',
-    originalIdeaDe: 'Foto einer Denkmalfassade → Vorschlag nach dem ZHD-Schadensbildkatalog.',
-    originalIdeaEn: 'Photo of a heritage facade → suggestion according to the ZHD damage catalogue.',
-    whyDiscardedDe: 'Kartierungssoftware existiert (Metigo MAP, KALIV), KI-Schadenserkennung an Denkmalen läuft (Wiro Rostock Pilot 2026, Archimede), Fachtagungen „KI und Denkmalpflege".',
-    whyDiscardedEn: 'Mapping software exists (Metigo MAP, KALIV), AI damage detection on heritage buildings is running (Wiro Rostock pilot 2026, Archimede), specialist conferences on AI in conservation.',
-    lessonDe: 'Fachprüfung ist besetzt; die Lücke lag beim Laien-Verlauf (Denkmal-Verlaufsblick überlebte).',
-    lessonEn: 'Expert inspection is taken; the gap was the layperson\'s time series (Denkmal-Verlaufsblick survived).',
-    domain: 'Denkmal & Kirche',
-    evidence: [
-      'Metigo MAP',
-      'KALIV',
-      'Wiro Rostock (Pilot 2026)',
-      'Archimede'
-    ],
-    cause: 'gebaut',
-    killer: 'kommerziell',
-    foundBy: 'deutsch',
-    origin: 'quelle',
-    stage: 'kandidat',
-    bornIn: 'Runde 4 · Ideenrunde (Quelle: Denkmalbehörden)',
-    diedOn: '2026-09-19',
-    resurrectIfDe: 'nie.',
-    resurrectIfEn: 'never.'
-  },
-  {
-    id: 'sandstein-streiflicht-relief',
-    title: 'Sandstein-Streiflicht-Relief',
-    originalIdeaDe: 'Vier Taschenlampenfotos zu einer Höhenkarte verwitterter Grabsteine verrechnen.',
-    originalIdeaEn: 'Combine four flashlight photos into a height map of weathered gravestones.',
-    whyDiscardedDe: 'Dieselbe Idee wie Streiflicht (Runde 2, `verengt`), mit identischem Beleg. Der Lauf hatte das Protokoll nicht durchsucht.',
-    whyDiscardedEn: 'The same idea as Streiflicht (round 2, narrowed), with identical evidence. The run had not searched the log.',
-    lessonDe: 'Jeder Lauf, auch aus einem anderen Modell, beginnt mit Strg+F im Protokoll.',
-    lessonEn: 'Every run, including from another model, starts with Ctrl+F in the log.',
-    domain: 'Kulturerbe',
-    evidence: [
-      'Streiflicht (Runde 2)'
-    ],
-    cause: 'duplikat',
-    killer: 'eigener-bestand',
-    foundBy: 'eigener-bestand',
-    origin: 'modell-katalog',
-    stage: 'kandidat',
-    bornIn: 'Gemini-Lauf · Bisoziation',
-    diedOn: '2026-09-19',
-    resurrectIfDe: 'nie — lebt als Streiflicht weiter.',
-    resurrectIfEn: 'never — lives on as Streiflicht.'
-  },
-  {
-    id: 'crack-flora-watcher',
-    title: 'Crack Flora Watcher (Ritzengrün-Wächter)',
-    originalIdeaDe: 'Foto derselben Ritzenpflanze über Wochen → Zeitraffer mit Härtegrad-Score → #Krautschau-tauglicher Datensatz.',
-    originalIdeaEn: 'Photograph the same pavement-crack plant over weeks → time-lapse with toughness score → #Krautschau-ready dataset.',
-    whyDiscardedDe: 'Die Dose stand auf einem Satz: „keine der genannten Apps verfolgt dieselbe Einzelpflanze". Die erste englische Suche nach der Funktion fand GrowApp (GLOBE Niederlande: voriges Foto transparent zum Ausrichten, Zeitraffer ab Bild 2) und Nature\'s Notebook (USA-NPN: Einzelpflanzen registrieren und wiederholt besuchen). Die Gamifizierung betreibt Flora Incognita selbst.',
-    whyDiscardedEn: 'The Dose rested on one sentence: "none of the named apps tracks the same individual plant". The first English search for the function found GrowApp (GLOBE Netherlands: previous photo overlaid for alignment, time-lapse from image 2) and Nature\'s Notebook (USA-NPN: register individual plants and revisit them). Flora Incognita runs the gamification itself.',
-    lessonDe: 'Gegenstand und Mechanik getrennt suchen — Werkzeuge, die über ihre Funktion definiert sind, sind unsichtbar, solange man nach dem Gegenstand sucht. Und: Zwei Mails an Senckenberg und Flora Incognita waren schon fertig, eine als „sofort versendbar" markiert.',
-    lessonEn: 'Search object and mechanism separately — tools defined by their function stay invisible while you search for the object. And: two mails to Senckenberg and Flora Incognita were already drafted, one marked "ready to send".',
-    domain: 'Pflanzen & Citizen Science',
-    evidence: [
-      'GrowApp (GLOBE Niederlande)',
-      'Nature\'s Notebook (USA-NPN)',
-      'Flora Incognita Krautschau'
-    ],
-    cause: 'gebaut',
-    killer: 'gemeinnuetzig',
-    foundBy: 'englisch',
-    origin: 'modell-katalog',
-    stage: 'mail-entwurf',
-    bornIn: 'Nachtrag 18.09. (aus dem Gemini-Lauf) · als Dose gepackt, zwei Mails entworfen',
-    diedOn: '2026-09-21',
-    resurrectIfDe: 'Wenn GrowApp und Nature\'s Notebook eingestellt werden. Die Nachfolgerin ist die Dose „Beobachtungsposten mit Übergabe".',
-    resurrectIfEn: 'If GrowApp and Nature\'s Notebook shut down. Its successor is the Dose "Observation post with handover".',
-    nachruf: '08-friedhof/grabbeigaben/crack-flora-watcher.md'
-  },
-  {
-    id: 'gamifizierte-ritzenpflanzen',
-    title: 'Gamifizierte Ritzenpflanzen-Entdeckung',
-    originalIdeaDe: 'Abzeichen und Stufen für das Finden von Pflanzen in Pflasterfugen.',
-    originalIdeaEn: 'Badges and levels for finding plants in pavement cracks.',
-    whyDiscardedDe: 'Flora Incognita betreibt das selbst: Krautschau-Projekt in der App, Abzeichen über bis zu 40 Arten in fünf Stufen, von Senckenberg offiziell empfohlen. Flora Incognita stand in der Dose als nachrangiger Empfänger.',
-    whyDiscardedEn: 'Flora Incognita runs it itself: a Krautschau project in the app, badges for up to 40 species in five levels, officially recommended by Senckenberg. Flora Incognita was listed in the Dose as a secondary recipient.',
-    lessonDe: 'Auch nachrangige Empfänger prüfen — jeder in der Dose genannte.',
-    lessonEn: 'Check secondary recipients too — everyone named in the Dose.',
-    domain: 'Pflanzen & Citizen Science',
-    evidence: [
-      'floraincognita.de/krautschau',
-      'senckenberg.de/de/krautschau'
-    ],
-    cause: 'beim-empfaenger',
-    killer: 'forschung',
-    foundBy: 'empfaenger',
-    origin: 'modell-katalog',
-    stage: 'dose',
-    bornIn: 'Nachtrag 18.09. (aus dem Gemini-Lauf) · Teil von Crack Flora Watcher',
-    diedOn: '2026-09-21',
-    resurrectIfDe: 'nie — beim Empfänger selbst.',
-    resurrectIfEn: 'never — the recipient owns it.'
-  },
-  {
-    id: 'samenkarten-markt',
-    title: 'Samenkarten-Markt, Cross-City-Handel, Auktionshaus',
-    originalIdeaDe: 'Handelsökonomie für Pflanzen-Sammelkarten zwischen Städten.',
-    originalIdeaEn: 'Trading economy for plant collectible cards across cities.',
-    whyDiscardedDe: 'Standard-Spieldesign ohne neue Fähigkeit — das Dokument nennt seine Vorbilder selbst (Pokémon GTS, Neopets, Animal Crossing, Axie Infinity …). Fällt nicht unter die These des Manifests.',
-    whyDiscardedEn: 'Standard game design with no new capability — the document names its own models (Pokémon GTS, Neopets, Animal Crossing, Axie Infinity …). Outside the manifesto\'s thesis.',
-    lessonDe: 'Wenn ein Brainstorm seine Vorbilder aufzählt, ist die Idee das Vorbild.',
-    lessonEn: 'When a brainstorm lists its models, the idea is the model.',
-    domain: 'Spiele',
-    evidence: [
-      'Vorbildliste in economy.txt §9'
-    ],
-    cause: 'mode',
-    killer: 'keiner',
-    foundBy: 'ohne-suche',
-    origin: 'brainstorm',
-    stage: 'kandidat',
-    bornIn: 'Runde 6 · Fugenduell-Brainstorm',
-    diedOn: '2026-09-21',
-    resurrectIfDe: 'nie.',
-    resurrectIfEn: 'never.'
-  },
-  {
-    id: 'spiel-echte-pflanzenarten',
-    title: 'Spiel über echte Pflanzenarten',
-    originalIdeaDe: 'Ein Spiel, dessen Figuren echte Pflanzenarten mit echten Eigenschaften sind.',
-    originalIdeaEn: 'A game whose pieces are real plant species with real traits.',
-    whyDiscardedDe: 'Out and About (Yaldi Games, Steam 2026) und Niche (Stray Fawn, echte Genetik) sind fertig und gut besprochen.',
-    whyDiscardedEn: 'Out and About (Yaldi Games, Steam 2026) and Niche (Stray Fawn, real genetics) are released and well reviewed.',
-    lessonDe: '„Echte Wissenschaft als Spielsystem" ist ein Genre-Werkzeug, kein Alleinstellungsmerkmal.',
-    lessonEn: '"Real science as game system" is a genre tool, not a differentiator.',
-    domain: 'Spiele',
-    evidence: [
-      'Out and About (Yaldi Games, 2026)',
-      'Niche (Stray Fawn)'
-    ],
-    cause: 'gebaut',
-    killer: 'kommerziell',
-    foundBy: 'englisch',
-    origin: 'brainstorm',
-    stage: 'kandidat',
-    bornIn: 'Runde 6 · Spiel-Strang (Nebenbefund)',
-    diedOn: '2026-09-21',
-    resurrectIfDe: 'nie — Genre ist besetzt; frei blieb nur das lebende Spielobjekt.',
-    resurrectIfEn: 'never — the genre is taken; only the living game piece stayed free.'
-  },
-  {
-    id: 'wunschseite-nachfrage',
-    title: 'Wunschseite / Nachfrage-Karte',
-    originalIdeaDe: 'Nicht kartieren, was am Straßenrand steht, sondern was gebraucht wird.',
-    originalIdeaEn: 'Map not what stands on the kerb, but what is needed.',
-    whyDiscardedDe: 'Standardfunktion jeder Verschenk-Community: Olio „Wanted", Trash Nothing / Freecycle WANTED-Posts, Buy Nothing „ISO".',
-    whyDiscardedEn: 'A standard feature of every giveaway community: Olio "Wanted", Trash Nothing / Freecycle WANTED posts, Buy Nothing "ISO".',
-    lessonDe: 'Erst prüfen, wohin das Kernbild eines Colliders zieht — „Tausch" landet in einem dichten Feld.',
-    lessonEn: 'First check where a collider\'s core image pulls — "exchange" lands in a dense field.',
-    domain: 'Verschenken & Tauschen',
-    evidence: [
-      'Olio Wanted',
-      'Trash Nothing / Freecycle',
-      'Buy Nothing ISO'
-    ],
-    cause: 'gebaut',
-    killer: 'kommerziell',
-    foundBy: 'englisch',
-    origin: 'bisoziation',
-    stage: 'kandidat',
-    bornIn: 'Runde 8 · Bisoziation (Trash Map)',
-    diedOn: '2026-09-23',
-    resurrectIfDe: 'nie.',
-    resurrectIfEn: 'never.'
-  },
-  {
-    id: 'raeumungsvorhersage',
-    title: 'Räumungsvorhersage aus Kündigungsfristen',
-    originalIdeaDe: 'Sperrmüllaufkommen je Straße aus dem dreimonatigen Vorlauf von Wohnungskündigungen vorhersagen.',
-    originalIdeaEn: 'Predict bulky waste per street from the three-month notice period of tenancy terminations.',
-    whyDiscardedDe: 'Scheitert an den Daten: Kündigungen sind nicht öffentlich, und wer sie bei Vermietern abfragt, sammelt Umzugsprofile. Kein Empfänger kann das rechtmäßig beschaffen.',
-    whyDiscardedEn: 'Fails on data: terminations are not public, and whoever collects them from landlords builds moving profiles. No recipient can obtain this lawfully.',
-    lessonDe: 'Datenfrage vor Existenzfrage — spart Suchbudget.',
-    lessonEn: 'Data question before existence question — saves search budget.',
-    domain: 'Verschenken & Tauschen',
-    evidence: [
-      'keine Suche; Datenschutz- und Beschaffungsfrage'
-    ],
-    cause: 'reality-check',
-    killer: 'keiner',
-    foundBy: 'ohne-suche',
-    origin: 'bisoziation',
-    stage: 'kandidat',
-    bornIn: 'Runde 8 · Bisoziation (Trash Map)',
-    diedOn: '2026-09-23',
-    resurrectIfDe: 'Wenn es eine rechtmäßige, anonymisierte Quelle für Umzugsvolumen gibt.',
-    resurrectIfEn: 'If a lawful, anonymised source of moving volumes appears.'
-  },
-  {
-    id: 'paragraphen-dolmetscher',
-    title: 'ParagraphenDolmetscher',
-    originalIdeaDe: 'Foto des Amtsbescheids → Beamtendeutsch in drei klaren Sätzen, Frist erkennen, Widerspruch formulieren.',
-    originalIdeaEn: 'Photo of an official decision letter → plain language in three sentences, detect the deadline, draft the objection.',
-    whyDiscardedDe: 'Gibt es, kostenlos und in zehn Sprachen: jobcenter.guru (GuruSense AI) fotografiert den Bescheid, erklärt ihn per KI, erkennt die Frist und entwirft den Widerspruch (Stand der Seite 10.07.2026). Dazu amtly.app, briefgeist.de, papierfrei.app, docugov.ai. Und im eigenen Protokoll stand seit dem 18.09.2026 KlarLokal mit dem Nachbarn Zetteln — dieselbe Idee zum zweiten Mal gepackt. Der Satz der Dose „freie, bedingungslose Werkzeuge existieren nicht" war nie gesucht worden.',
-    whyDiscardedEn: 'It exists, free and in ten languages: jobcenter.guru (GuruSense AI) photographs the letter, explains it with AI, detects the deadline and drafts the objection (page as of 10.07.2026). Also amtly.app, briefgeist.de, papierfrei.app, docugov.ai. And the own check log had listed KlarLokal with its neighbour Zetteln since 18.09.2026 — the same idea packed a second time. The Dose sentence "no free tools exist" had never been searched.',
-    lessonDe: 'Ein Katalogeintrag, der ohne Protokollzeile zur Dose wird, überspringt den Vorfilter — hier hätte ein Blick in den eigenen Atlas genügt. Seit 24.09.2026 verhindert scripts/check-protokoll-coverage.mjs das.',
-    lessonEn: 'A catalogue entry that becomes a Dose without a check-log line skips the pre-filter — a look at the own atlas would have sufficed here. Since 24.09.2026 scripts/check-protokoll-coverage.mjs prevents this.',
-    domain: 'Behörden & Alltag',
-    evidence: [
-      'jobcenter.guru (GuruSense AI) — Foto, Erklärung, Frist, Widerspruchsentwurf, kostenlos',
-      'amtly.app, briefgeist.de, papierfrei.app, docugov.ai',
-      'KlarLokal / Zetteln (Prüfprotokoll, Nachtrag 18.09.2026)'
-    ],
-    cause: 'gebaut',
-    killer: 'kommerziell',
-    foundBy: 'deutsch',
-    origin: 'modell-katalog',
-    stage: 'dose',
-    bornIn: 'Katalog „AI Frontier 2026" (Modelllauf) · als Dose gepackt',
-    diedOn: '2026-09-24',
-    resurrectIfDe: 'Wenn jobcenter.guru und die übrigen kostenlosen Angebote verschwinden — und dann zuerst KlarLokal prüfen, nicht diese Dose.',
-    resurrectIfEn: 'If jobcenter.guru and the other free offerings disappear — and then check KlarLokal first, not this Dose.',
-    nachruf: '08-friedhof/grabbeigaben/paragraphen-dolmetscher.md'
-  }
-];
+/**
+ * Gräber (Totenscheine). Wahrheit ist `graeber.json`; geschrieben wird nur über
+ * `npm run bib -- grab add …` (Bibliothekar). Pflichtfelder prüft die CLI, Typen prüft tsc.
+ */
+export const DISCARDED_DATA: DiscardedItem[] = graeberJson as DiscardedItem[];

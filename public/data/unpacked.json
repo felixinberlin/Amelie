@@ -1,6 +1,7 @@
 [
   {
     "id": "ai-nurse-shift-guardian",
+    "packedDoseId": "dose-nurse-shift-guardian",
     "title": "DienstplanWächter: Roster Auditor, Bonus Calculator & Rest-Time Shield for Nurses",
     "round": "Everyday Workers 2026",
     "date": "17.09.2026",
@@ -103,6 +104,7 @@
   },
   {
     "id": "ai-tradesman-liability-shield",
+    "packedDoseId": "dose-tradesman-liability-shield",
     "title": "BedenkenBlitz: Instant VOB/B Construction Liability Shield for Tradespeople",
     "round": "Everyday Workers 2026",
     "date": "17.09.2026",
@@ -196,6 +198,7 @@
   },
   {
     "id": "ai-cleaner-chemical-safety-voice",
+    "packedDoseId": "dose-cleaner-chemical-safety",
     "title": "ChemHazard Stop / MischStop (ChemGefahr-Stopp)",
     "round": "Everyday Workers 2026",
     "date": "17.09.2026",
@@ -1955,7 +1958,403 @@
     ]
   },
   {
+    "id": "family-game-night-trivia-generator",
+    "title": "Family Game Night Custom Trivia Generator",
+    "round": "Katalog 2026",
+    "date": "17.09.2026",
+    "conceptDe": "Web-App zur schnellen Erstellung personalisierter Quizfragen und Worträtsel basierend auf Familiengeschichte, regionalen Dialekten und lokalen Meilensteinen für Feiern.",
+    "conceptEn": "A web app that generates fresh, customized daily trivia or word puzzles based on local family history, regional landmarks, or inside jokes for gatherings.",
+    "status": "ungeprüft",
+    "suggestedVerdict": "gift",
+    "recipientDe": "Spieleautoren-Zunft · Familienbildungsstätten",
+    "recipientEn": "Board Game Designers Guild · Family Activity Groups",
+    "sourceType": "Micro-Utilities",
+    "sourceDe": "Lightweight web game engines (PICO-8 style / Web Canvas)",
+    "sourceEn": "Lightweight web game engines (PICO-8 style / Web Canvas)",
+    "evidenceDe": "Kommerzielle Quizspiele sind oft zu akademisch oder wiederholen alte Fragen; persönliche Quizze per Hand zu erstellen dauert Tage.",
+    "evidenceEn": "Commercial trivia games are either too generic or obsolete; making custom family trivia decks manually takes hours in slide software.",
+    "reviewDate": "10/2026",
+    "problemDe": "Mangel an verbindenden, generationsübergreifenden Aktivitäten bei Familienfesten und runden Geburtstagen.",
+    "problemEn": "Awkward silence or screen-isolation at multi-generational gatherings lacking a personalized shared social activity.",
+    "whyNowDe": [
+      "Einfache Vorlagen mit Druck- und Beamer-Modus lassen sich ohne Installation in 5 Minuten befüllen."
+    ],
+    "whyNowEn": [
+      "Responsive web canvases can render customized Jeopardy-style buzzer boards directly on a smart TV without setup."
+    ],
+    "firstStepTicketDe": "Fragen-Editor mit Beamer-Vollbildanzeige und Buzzer-Modus über Smartphone-Tasten",
+    "firstStepTicketEn": "Question card editor with projector presentation view and phone-as-buzzer local sync",
+    "tags": [
+      "Games",
+      "Family",
+      "Trivia",
+      "Culture",
+      "Web App"
+    ]
+  },
+  {
+    "id": "bird-song-frequency-ear-trainer",
+    "title": "Local Backyard Bird Song & Spectrogram Ear Trainer",
+    "round": "Katalog 2026",
+    "date": "17.09.2026",
+    "conceptDe": "Interaktiver Gehörtrainer für heimische Gartenvögel: Zeigt gleichzeitig Klang und optisches Spektrogramm (Amsel, Blaumeise, Buchfink, Rotkehlchen) zum spielerischen Erkennenlernen.",
+    "conceptEn": "An interactive ear training game for native songbirds: displays synchronized audio and visual spectrograms (blackbird, robin, chaffinch) for bird call identification.",
+    "status": "ungeprüft",
+    "suggestedVerdict": "gift",
+    "recipientDe": "NABU Vogel des Jahres Kampagne · LBV Bayern",
+    "recipientEn": "Royal Society for the Protection of Birds (RSPB) · Audubon Society",
+    "sourceType": "Education & Family",
+    "sourceDe": "Xeno-Canto open bird sound library & Web Audio FFT sonogram renderer",
+    "sourceEn": "Xeno-Canto open bird sound library & Web Audio FFT sonogram renderer",
+    "evidenceDe": "Früher kannten Kinder 20 Vogelstimmen; heute können die meisten nicht einmal mehr Amsel von Spatz unterscheiden.",
+    "evidenceEn": "Nature alienation has escalated; fewer than 15% of schoolchildren can distinguish common garden bird calls.",
+    "reviewDate": "10/2026",
+    "problemDe": "Verlust des Naturbezugs und der Artenkenntnis in urbanen und ländlichen Familien.",
+    "problemEn": "Extinction of ecological literacy across generations, reducing public commitment to biodiversity conservation.",
+    "whyNowDe": [
+      "Web Audio Sonogramme machen Tonhöhenverläufe und Triller visuell lesbar wie Notenblätter."
+    ],
+    "whyNowEn": [
+      "Real-time audio waterfalls allow children to \"see\" bird pitch melodies, speeding up acoustic retention tenfold."
+    ],
+    "firstStepTicketDe": "Quiz-Spiel mit 10 häufigsten Gartenvögeln mit umschaltbarem Sonogramm-Spickzettel",
+    "firstStepTicketEn": "Audio quiz game featuring 10 common garden songbirds with synchronized visual sonograms",
+    "tags": [
+      "Ornithology",
+      "Birding",
+      "Nature",
+      "Audio",
+      "Education"
+    ]
+  },
+  {
+    "id": "ai-dinner-table-politics-buzzer",
+    "packedDoseId": "tischschiedsrichter",
+    "title": "TischSchiedsrichter: Offline Dinner Table Referee & Keyword Whistle",
+    "round": "AI Frontier 2026",
+    "date": "24.09.2026",
+    "conceptDe": "Ein Smartphone in der Tischmitte hört offline auf eine vorher gemeinsam beschlossene Liste von Reizwörtern (z. B. „Wahl\", „Partei\"). Fällt eines, pfeift es wie ein Schiedsrichter und zeigt Gelb, beim zweiten Mal Rot. Audio verlässt das Gerät nicht.",
+    "conceptEn": "A phone in the middle of the dinner table listens offline for a word list everyone agreed on beforehand (e.g. \"election\", \"party\"). When one is spoken it blows a referee whistle and shows a yellow card, red on repeat. No audio leaves the device.",
+    "status": "verengt",
+    "suggestedVerdict": "build_first",
+    "recipientDe": "Die Öffentlichkeit, mit lauffähigem Skelett (Blogbeitrag/Show HN vor dem 1. Advent)",
+    "recipientEn": "The public, with a working skeleton (blog post / Show HN before Advent)",
+    "sourceType": "Home & Family",
+    "sourceDe": "Mitgebrachte Idee (Gemini-Plan, 24.09.2026); geprüft in 02-recherche/tischschiedsrichter-review-2026-09-24.md",
+    "sourceEn": "User-supplied idea (Gemini plan, 24.09.2026); checked in 02-recherche/tischschiedsrichter-review-2026-09-24.md",
+    "evidenceDe": "Besetzt im Szenario: Noche de Paz / SilentNight (Shackleton, 2015) — Handy in der Tischmitte, politische Wörter, Alarm. Besetzt in der Funktion: JarGone (2018, frei wählbare Wörter, Familie), Swearing Jar (App Store 03/2025, eigene Wörter, Audio mit Identität verknüpft). Restlücke: garantiert offline + Deutsch + freie Wortliste ohne Training + Tischregeln (Gelb/Rot).",
+    "evidenceEn": "Scenario taken: Noche de Paz / SilentNight (Shackleton, 2015) — phone in the middle of the table, political words, alarm. Function taken: JarGone (2018, custom words, family), Swearing Jar (App Store 03/2025, custom words, audio linked to identity). Remaining gap: guaranteed offline + German + open word list without training + table rules (yellow/red).",
+    "reviewDate": "03/2027",
+    "problemDe": "Niemand will derjenige sein, der den Schwiegervater unterbricht. Eine vorher gemeinsam beschlossene Regel mit neutralem Pfiff nimmt dem Gastgeber diese Rolle ab.",
+    "problemEn": "Nobody wants to be the one who interrupts the father-in-law. A rule agreed on beforehand, enforced by a neutral whistle, takes that role off the host.",
+    "workerPersona": {
+      "name": "Markus Thiel (45) — fiktive Persona",
+      "role": "Familienvater und unfreiwilliger Feiertags-Gastgeber",
+      "location": "Recklinghausen, NRW",
+      "quoteDe": "Jedes Jahr an Weihnachten brüllen sich mein Schwiegervater und mein Bruder über Politik an, bis die Kinder den Raum verlassen. Wenn ich dazwischengehe, bin ich der Böse.",
+      "quoteEn": "Every Christmas my father-in-law and my brother shout at each other about politics until the kids leave the room. If I step in, I am the bad guy.",
+      "storyDe": "Markus kocht gern für die Großfamilie. Sobald „Wahlen\" oder „Steuern\" fällt, kippt die Stimmung. Einen Buzzer von Hand drückt niemand gegen den Schwiegervater, und einen Cloud-Lautsprecher stellt er nicht auf den Tisch.",
+      "storyEn": "Markus loves cooking for the extended family. As soon as \"elections\" or \"taxes\" come up, the mood turns. Nobody will press a manual buzzer on the father-in-law, and he will not put a cloud speaker on the table."
+    },
+    "techShift": {
+      "beforeAiDe": "Nicht unmöglich: Noche de Paz (2015) und JarGone (2018) gab es schon. Offline ging aber nur mit fest trainierten Wörtern, eigene Wörter brauchten die Cloud.",
+      "beforeAiEn": "Not impossible: Noche de Paz (2015) and JarGone (2018) existed. Offline only worked with fixed pre-trained words; custom words needed the cloud.",
+      "nowEasyDe": "Heute gehen frei wählbare Wörter offline ohne Training (sherpa-onnx, nur Englisch/Chinesisch; Deutsch über Vosk-Grammatik, mit Fehlalarm-Risiko) oder im Browser per Chrome-On-Device-Spracherkennung (processLocally).",
+      "nowEasyEn": "Today custom words work offline without training (sherpa-onnx, English/Chinese only; German via Vosk grammar mode, with false-alarm risk) or in the browser via Chrome on-device speech recognition (processLocally)."
+    },
+    "whyNowDe": [
+      "Datenschutz belegbar: Die aktuelle Konkurrenz (Swearing Jar) verknüpft laut App-Store-Label Audiodaten mit der Identität.",
+      "Entlastung: Der Pfiff übernimmt die Rolle des „Bösen\", die sonst beim Gastgeber liegt.",
+      "Einwilligung als Spielregel: Alle beschließen die Wortliste vorher gemeinsam."
+    ],
+    "whyNowEn": [
+      "Privacy is provable: the current competitor (Swearing Jar) links audio data to identity according to its App Store label.",
+      "Relief: the whistle takes the \"bad cop\" role that otherwise falls to the host.",
+      "Consent as a game rule: everyone agrees on the word list together beforehand."
+    ],
+    "firstStepTicketDe": "PWA: Wortliste eintragen, Chrome-On-Device-Spracherkennung (processLocally) starten, bei Treffer Pfiff + gelbe Karte, zweiter Treffer rot, 15 s Abkühlzeit.",
+    "firstStepTicketEn": "PWA: enter word list, start Chrome on-device speech recognition (processLocally), on match whistle + yellow card, second match red, 15 s cooldown.",
+    "firstStepCriteriaDe": "In einer aufgenommenen Tischszene (4 Personen, 10 Minuten) mindestens 80 % der gesagten Listenwörter erkannt und höchstens 2 Fehlpfiffe; im Flugmodus lauffähig.",
+    "firstStepCriteriaEn": "In a recorded table scene (4 people, 10 minutes) at least 80 % of spoken list words detected and at most 2 false whistles; runs in airplane mode.",
+    "userNotes": "Am 24.09.2026 als Spielzeug-Dose gepackt (05-dosen/tischschiedsrichter.md), mit lauffähigem Skelett im Tab Sandboxes. Empfänger: die Öffentlichkeit. Prüfung: 02-recherche/tischschiedsrichter-review-2026-09-24.md",
+    "tags": [
+      "Family",
+      "Audio AI",
+      "Local-First",
+      "Party Game",
+      "Vibecode"
+    ]
+  },
+  {
+    "id": "virtuelle-robinien",
+    "title": "Virtuelle Robinien",
+    "titleEn": "Virtual black locust",
+    "round": "Lab-Survivors Existenzprüfung 30.09.2026",
+    "date": "30.09.2026",
+    "conceptDe": "Lernspiel: Bekämpfungsstrategien gegen die Robinie anwenden (Ringeln, Mahd, Beweidung) und den Bestand über drei Jahre ansehen. Regelkern braucht belegte Austriebsparameter; es gibt keine Beseitigungspflicht, nur die BfN-Managementliste.",
+    "conceptEn": "Learning game: apply control strategies against black locust (girdling, mowing, grazing) and watch the stand over three years. The rule core needs documented resprouting parameters; there is no removal duty, only the BfN management list.",
+    "status": "verengt",
+    "suggestedVerdict": "keep",
+    "recipientDe": "Landesämter mit Neobiota-Portal (LANUK NRW) · LFE Eberswalde",
+    "recipientEn": "State agencies with a neobiota portal (LANUK NRW) · LFE Eberswalde",
+    "sourceType": "Civic & Ecology",
+    "sourceDe": "Brandenburger Modellprojekt Robinie (bis 40.000 Ruten/ha, Wurzelbrut zu Stockausschlag 30:70, nicht nachgeprüft); LANUK NRW Maßnahmenblatt",
+    "sourceEn": "Brandenburg black locust model project (up to 40,000 shoots/ha, root suckers to stump sprouts 30:70, unverified); LANUK NRW measures sheet",
+    "evidenceDe": "Lernspiele zu invasiven Arten existieren, keines mit Stockausschlag-Mechanik [Schnipsel]. Reviewer 16/35, V8 Fun 4, Needs Research niedrig.",
+    "evidenceEn": "Learning games on invasive species exist, none with a stump-sprout mechanic [snippet]. Reviewer 16/35, V8 fun 4, needs research (low).",
+    "reviewDate": "03/2027",
+    "tags": [
+      "Spiel",
+      "Robinie",
+      "Neobiota",
+      "Needs Research"
+    ]
+  },
+  {
+    "id": "kuehlketten-steckbrief",
+    "title": "Kühlketten-Steckbrief",
+    "titleEn": "Cold-chain excursion sheet",
+    "round": "Farmacia-Runde 30.09.2026",
+    "date": "30.09.2026",
+    "conceptDe": "Logger-CSV eines Apothekenkühlschranks wird zu Höchst-/Tiefsttemperatur, Dauer über 8 °C und Einzel-Exkursionen. Dazu die wörtliche Klausel der Fachinformation (Abschnitt 6.3/6.4) mit CIMA-Link. Sagt nie „verwendbar“, nur „von der Fachinformation gedeckt“, „nicht gedeckt“ oder „keine Angabe, Hersteller fragen“.",
+    "conceptEn": "A pharmacy fridge logger CSV becomes max/min temperature, time above 8 °C and single excursions, next to the verbatim storage clause of the product information (section 6.3/6.4) with a CIMA link. It never says \"usable\", only \"covered by the product information\", \"not covered\" or \"no statement, ask the manufacturer\".",
+    "status": "verengt",
+    "suggestedVerdict": "keep",
+    "recipientDe": "ABDA Arzneimittelkommission · Landesapothekerkammern · SEFH (Grupo de estabilidad) · CGCOF",
+    "recipientEn": "ABDA Drug Commission · state pharmacists’ chambers · SEFH stability group · CGCOF (Spain)",
+    "sourceType": "Health & Care",
+    "sourceDe": "AEMPS CIMA REST-API (Ficha técnica 6.3/6.4, offen); Datentest 06-suche/datentests/kuehlkette-cima-2026-09-30.md",
+    "sourceEn": "AEMPS CIMA REST API (summary of product characteristics 6.3/6.4, open); data test 06-suche/datentests/kuehlkette-cima-2026-09-30.md",
+    "evidenceDe": "Datentest [Seite]: 13 von 17 Kühlprodukten nennen Temperatur und Dauer außerhalb des Kühlschranks (Untergrenze). Gegenbefund: SEFH-Review 2025 deckt 203 Kühlarzneimittel frei ab (CC BY-NC-ND), Hersteller bieten eigene Rechner. 23/35, Gate 24.",
+    "evidenceEn": "Data test [page]: 13 of 17 refrigerated products state temperature and duration outside the fridge (lower bound). Counter-finding: the SEFH 2025 review already covers 203 refrigerated medicines openly (CC BY-NC-ND) and manufacturers offer calculators. 23/35, gate 24.",
+    "reviewDate": "03/2027",
+    "problemDe": "Nach einem Kühlkettenbruch fragt die Offizin beim Hersteller nach Höchsttemperatur und Dauer. Die Fachinformation nennt die Zahl oft selbst, aber niemand zählt die Logger-Kurve dagegen aus.",
+    "problemEn": "After a cold-chain break the pharmacy asks the manufacturer for peak temperature and duration. The product information often states the number itself, but nobody counts the logger curve against it.",
+    "whyNowDe": [
+      "CIMA liefert die Abschnitte offen als Text; ein Sprachmodell kann die Klausel je Produkt zuverlässig zitieren, wenn es nur die Stelle ausgibt."
+    ],
+    "whyNowEn": [
+      "CIMA serves the sections as open text; a language model can quote the clause per product reliably if it only returns the passage."
+    ],
+    "firstStepTicketDe": "Logger-CSV im Browser auszählen und je Produkt die wörtliche Klausel mit Abschnitt und CIMA-Link zeigen",
+    "firstStepTicketEn": "Count a logger CSV in the browser and show the verbatim clause per product with section and CIMA link",
+    "firstStepCriteriaDe": "Vorfragen zuerst: Ist die SEFH-Tabelle nachnutzbar? Gibt es ein freies Logger-Frontend? Wer ist der Empfänger für den deutschen Teil?",
+    "firstStepCriteriaEn": "Open questions first: is the SEFH table reusable? Is there a free logger front end? Who is the recipient for the German part?",
+    "tags": [
+      "Apotheke",
+      "Kühlkette",
+      "Fachinformation",
+      "CIMA",
+      "Needs Research"
+    ]
+  },
+  {
+    "id": "engpass-prognosetreue",
+    "title": "Engpass-Prognosetreue",
+    "titleEn": "Shortage forecast fidelity",
+    "round": "Farmacia-Runde 30.09.2026",
+    "date": "30.09.2026",
+    "conceptDe": "Öffentliches Snapshot-Archiv der Lieferengpassmeldungen (BfArM-CSV, AEMPS psuministro) und Auswertung, wie oft das gemeldete Enddatum nach hinten geschoben wird, je Wirkstoff und Zulassungsinhaber.",
+    "conceptEn": "A public snapshot archive of drug shortage notices (BfArM CSV, AEMPS psuministro) and an analysis of how often the reported end date is pushed back, per active substance and marketing authorisation holder.",
+    "status": "verengt",
+    "suggestedVerdict": "keep",
+    "recipientDe": "BfArM (Beirat Liefer- und Versorgungsengpässe) · AEMPS (Versorgungsprobleme)",
+    "recipientEn": "BfArM (shortage advisory board) · AEMPS (supply problems)",
+    "sourceType": "Health & Care",
+    "sourceDe": "BfArM-Lieferengpass-CSV und AEMPS CIMA psuministro (beide offen, nur aktueller Stand)",
+    "sourceEn": "BfArM shortage CSV and AEMPS CIMA psuministro (both open, current state only)",
+    "evidenceDe": "Beide Quellen live abgerufen [Seite] (970 bzw. 860 Meldungen), aber ohne Verlauf: das ursprüngliche Enddatum ist überschrieben. Ohne Archiv über Wochen keine Kennzahl (Tag-0-Problem). 22/35.",
+    "evidenceEn": "Both sources fetched live [page] (970 and 860 notices) but without history: the original end date is overwritten. No metric without a multi-week archive (day-zero problem). 22/35.",
+    "reviewDate": "03/2027",
+    "firstStepTicketDe": "Zweimal täglich Snapshots beider Quellen per öffentlicher GitHub-Action archivieren, nach 6 bis 8 Wochen die Verschiebungsrate auszählen",
+    "firstStepTicketEn": "Archive snapshots of both sources twice a day via a public GitHub Action, count the postponement rate after 6 to 8 weeks",
+    "tags": [
+      "Apotheke",
+      "Lieferengpass",
+      "Datensatz",
+      "Archiv",
+      "Needs Research"
+    ]
+  },
+  {
+    "id": "fachinfo-aenderungsdiff",
+    "title": "Fachinfo-Änderungsdiff",
+    "titleEn": "Product-information change diff",
+    "round": "Farmacia-Runde 30.09.2026",
+    "date": "30.09.2026",
+    "conceptDe": "Aus dem CIMA-Änderungsregister (registroCambios) einen Satzvergleich alter und neuer Fassung von Prospekt und Ficha técnica, nur Diff mit Fundstelle, ohne Bewertung. Doppelfund von Scout und Kollider.",
+    "conceptEn": "From the CIMA change register (registroCambios) a sentence-level diff of old and new leaflet and SmPC, diff with location only, no assessment. Found by both scout and collider.",
+    "status": "verengt",
+    "suggestedVerdict": "keep",
+    "recipientDe": "AEMPS (CIMA-Team) · Consejo General de Colegios Farmacéuticos (BOT PLUS)",
+    "recipientEn": "AEMPS (CIMA team) · Spanish General Council of Pharmacists (BOT PLUS)",
+    "sourceType": "Health & Care",
+    "sourceDe": "AEMPS CIMA registroCambios (108.144 Zeilen) und docSegmentado",
+    "sourceEn": "AEMPS CIMA registroCambios (108,144 rows) and docSegmentado",
+    "evidenceDe": "Die Meldung nennt nur die Kategorie (prosp, ft), der Volltext liegt nur in der aktuellen Fassung vor [Seite]: keine Vorgängerfassung, kein Versionsendpunkt. Ein Diff braucht ein Archiv. Nachbarn: Mediately, ABDATA. 20/35.",
+    "evidenceEn": "The notice names only the category (prosp, ft); full text exists only in the current version [page]: no earlier version, no version endpoint. A diff needs an archive. Neighbours: Mediately, ABDATA. 20/35.",
+    "reviewDate": "03/2027",
+    "tags": [
+      "Apotheke",
+      "Beipackzettel",
+      "CIMA",
+      "Archiv",
+      "Needs Research"
+    ]
+  },
+  {
+    "id": "haeufigkeits-umrechner",
+    "title": "Häufigkeits-Umrechner Nebenwirkungen",
+    "titleEn": "Side-effect frequency converter",
+    "round": "Farmacia-Runde 30.09.2026",
+    "date": "30.09.2026",
+    "conceptDe": "Nebenwirkungstabelle (Fachinfo 4.8, MedDRA-Häufigkeitsklassen) als natürliche Häufigkeiten („bis zu 1 von 10“) in Piktogrammen. Die Placebo-Basislinie steht nicht in der Fachinfo und wird nicht erfunden.",
+    "conceptEn": "Side-effect table (SmPC 4.8, MedDRA frequency classes) as natural frequencies (\"up to 1 in 10\") in pictograms. The placebo baseline is not in the SmPC and is not invented.",
+    "status": "verengt",
+    "suggestedVerdict": "keep",
+    "recipientDe": "Harding-Zentrum für Risikokompetenz · IQWiG (gesundheitsinformation.de)",
+    "recipientEn": "Harding Center for Risk Literacy · IQWiG",
+    "sourceType": "Health & Care",
+    "sourceDe": "Fachinformation Abschnitt 4.8; Harding-Zentrum Faktenboxen; DVR-Häufigkeitstabelle",
+    "sourceEn": "SmPC section 4.8; Harding Center fact boxes; DVR frequency table",
+    "evidenceDe": "Umrechnung ist deterministisch, aber ohne Placebo-Basislinie kann ein Piktogramm Nocebo fördern; Faktenboxen und statische Tabellen decken es manuell ab [Schnipsel]. 22/35.",
+    "evidenceEn": "The conversion is deterministic, but without a placebo baseline a pictogram can foster nocebo; fact boxes and static tables cover it by hand [snippet]. 22/35.",
+    "reviewDate": "03/2027",
+    "tags": [
+      "Apotheke",
+      "Nebenwirkungen",
+      "Risikokommunikation",
+      "Needs Research"
+    ]
+  },
+  {
+    "id": "import-prospekt-bruecke",
+    "title": "Import-Prospekt-Brücke",
+    "titleEn": "Import leaflet bridge",
+    "round": "Farmacia-Runde 30.09.2026",
+    "date": "30.09.2026",
+    "conceptDe": "Zweispaltige deutsche Beratungsunterlage aus dem spanischen Prospekt für Einzelimporte (§ 73 Abs. 3 AMG, § 18 ApBetrO): Standardsätze aus der EMA-QRD-Terminologie, nur produktspezifischer Text durchs Modell, mit Quelllink, Abrufdatum, Hash und Apothekerprüfvermerk. Nie „amtliche Gebrauchsinformation“.",
+    "conceptEn": "A two-column German advisory sheet from the Spanish leaflet for single-patient imports: standard sentences from EMA QRD terminology, only product-specific text through the model, with source link, date, hash and pharmacist review note. Never an \"official leaflet\".",
+    "status": "unklar",
+    "suggestedVerdict": "keep",
+    "recipientDe": "ABDA / Bundesapothekerkammer (Arbeitshilfen Einzelimport) · Landesapothekerkammer Baden-Württemberg",
+    "recipientEn": "ABDA / Federal Chamber of Pharmacists (single-import aids) · state chamber Baden-Württemberg",
+    "sourceType": "Health & Care",
+    "sourceDe": "AEMPS CIMA (Prospekt-HTML je Präparat); Fachpresse zu § 73 Abs. 3 AMG",
+    "sourceEn": "AEMPS CIMA (leaflet HTML per product); trade press on § 73(3) AMG",
+    "evidenceDe": "Kein Übersetzungstool für Einzelimport gefunden; Risiko Dosierungsfehler, Medizinprodukt-Abgrenzung offen, Nachfrage unbelegt. 18/35.",
+    "evidenceEn": "No translation tool for single-patient import found; risk of dosing errors, medical-device boundary open, demand unproven. 18/35.",
+    "reviewDate": "03/2027",
+    "tags": [
+      "Apotheke",
+      "Einzelimport",
+      "Prospekt",
+      "Needs Research"
+    ]
+  },
+  {
+    "id": "nebenwirkungs-meldeassistent",
+    "title": "Nebenwirkungs-Meldeassistent",
+    "titleEn": "Adverse-reaction report assistant",
+    "round": "Farmacia-Runde 30.09.2026",
+    "date": "30.09.2026",
+    "conceptDe": "Freitext oder Sprache des Patienten wird zur vorausgefüllten Nebenwirkungsmeldung (BfArM, NotificaRAM). Die Kodierung (MedDRA) bleibt beim Empfänger.",
+    "conceptEn": "Free text or speech from the patient becomes a pre-filled adverse-reaction report (BfArM, NotificaRAM). Coding (MedDRA) stays with the recipient.",
+    "status": "unklar",
+    "suggestedVerdict": "keep",
+    "recipientDe": "BfArM / Paul-Ehrlich-Institut · AEMPS (Farmacovigilancia)",
+    "recipientEn": "BfArM / Paul-Ehrlich-Institut · AEMPS (pharmacovigilance)",
+    "sourceType": "Health & Care",
+    "sourceDe": "nebenwirkungen.bund.de (Patientenmeldung), AEMPS NotificaRAM",
+    "sourceEn": "nebenwirkungen.bund.de (patient reporting), AEMPS NotificaRAM",
+    "evidenceDe": "Das Meldeformular führt Schritt für Schritt; Untererfassung über 90 % [Schnipsel]; kein Patientenassistent gefunden (eine Suche). Tendenz besetzt beim Empfänger. 19/35.",
+    "evidenceEn": "The reporting form already guides step by step; under-reporting over 90 % [snippet]; no patient assistant found (one search). Leaning occupied at the recipient. 19/35.",
+    "reviewDate": "03/2027",
+    "tags": [
+      "Apotheke",
+      "Pharmakovigilanz",
+      "Meldung",
+      "Needs Research"
+    ]
+  },
+  {
+    "id": "kompensationsflaechen-buergerlayer",
+    "title": "Kompensationsflächen: Bürgerschicht auf EKIS",
+    "titleEn": "Compensation areas: citizen layer on EKIS",
+    "round": "Lab-Survivors Existenzprüfung 30.09.2026",
+    "date": "30.09.2026",
+    "conceptDe": "Sachliche, vorausgefüllte Hinweis-Mail an die zuständige Behörde zu einer im EKIS verzeichneten Kompensationsfläche (Aktenzeichen, Vorhabensbezeichnung), nie „Verstoß“. Die Kartierung selbst ist beim LfU Brandenburg besetzt.",
+    "conceptEn": "A factual, pre-filled notice e-mail to the competent authority about a compensation area listed in EKIS (file number, project name), never \"violation\". Mapping itself is taken by the Brandenburg state agency (LfU).",
+    "status": "verengt",
+    "suggestedVerdict": "keep",
+    "recipientDe": "LfU Brandenburg (Referat EKIS) · Untere Naturschutzbehörden",
+    "recipientEn": "LfU Brandenburg (EKIS unit) · lower nature conservation authorities",
+    "sourceType": "Civic & Ecology",
+    "sourceDe": "EKIS-WFS des LfU Brandenburg (maps.brandenburg.de/services/wfs/ekis)",
+    "sourceEn": "EKIS WFS of the LfU Brandenburg (maps.brandenburg.de/services/wfs/ekis)",
+    "evidenceDe": "Datentest [Seite]: 17.774 Kompensationsflächen, aber nur 6 Attribute, ohne Frist, Umsetzungs- oder Kontrollstatus: ein Mangel lässt sich nicht gegen das Register prüfen. Gegenindiz: AuFi Bayern 2026 abgeschaltet [Seite]. 22/35.",
+    "evidenceEn": "Data test [page]: 17,774 compensation areas but only 6 attributes, no deadline, implementation or monitoring status: a defect cannot be checked against the register. Counter-signal: Bavaria’s AuFi shut down in 2026 [page]. 22/35.",
+    "reviewDate": "03/2027",
+    "tags": [
+      "Naturschutz",
+      "Kompensation",
+      "Brandenburg",
+      "Needs Research"
+    ]
+  },
+  {
+    "id": "salmonellen-wetterwarnung",
+    "title": "Salmonellen-Wetterwarnung für Eierspeisen",
+    "titleEn": "Salmonella weather warning for egg dishes",
+    "round": "Lab-Survivors Existenzprüfung 30.09.2026",
+    "date": "30.09.2026",
+    "conceptDe": "Wetter- und Saisondaten ergeben eine Warnung vor erhöhtem Risiko bei Eierspeisen (etwa Tortilla), aus regionalen Fallzahlen.",
+    "conceptEn": "Weather and season data yield a warning of raised risk for egg dishes (for example tortilla), based on regional case numbers.",
+    "status": "unklar",
+    "suggestedVerdict": "keep",
+    "recipientDe": "Gesundheitsbehörden der Autonomen Gemeinschaften · AESAN · AEMET",
+    "recipientEn": "Regional health authorities (Spain) · AESAN · AEMET",
+    "sourceType": "Civic & Ecology",
+    "sourceDe": "RENAVE/CNE-Wochenberichte; Behördenhinweise „Precauciones con las tortillas“",
+    "sourceEn": "RENAVE/CNE weekly reports; authority advice \"Precauciones con las tortillas\"",
+    "evidenceDe": "Kein Modell gefunden; die Fallzahlen liegen als PDF vor, nicht als maschinenlesbare Reihe [Schnipsel]: Datentest in einem Schritt nicht möglich. 17/35.",
+    "evidenceEn": "No model found; case numbers exist as PDF, not as a machine-readable series [snippet]: a one-step data test is not possible. 17/35.",
+    "reviewDate": "03/2027",
+    "tags": [
+      "Lebensmittelsicherheit",
+      "Salmonellen",
+      "Spanien",
+      "Needs Research"
+    ]
+  },
+  {
+    "id": "robinien-austrieb-prognose",
+    "title": "Robinie: Austriebs-Prognose",
+    "titleEn": "Black locust: resprouting forecast",
+    "round": "Lab-Survivors Existenzprüfung 30.09.2026",
+    "date": "30.09.2026",
+    "conceptDe": "KI schätzt aus Standortfotos das Stockausschlag- und Wurzelbrutrisiko nach der Behandlung. Es gibt keine Beseitigungspflicht (Robinie nur auf der BfN-Managementliste).",
+    "conceptEn": "AI estimates the stump-sprout and root-sucker risk after treatment from site photos. There is no removal duty (black locust is only on the BfN management list).",
+    "status": "unklar",
+    "suggestedVerdict": "keep",
+    "recipientDe": "LFE Eberswalde (Landeskompetenzzentrum Forst) · FVA Baden-Württemberg",
+    "recipientEn": "LFE Eberswalde (state forestry competence centre) · FVA Baden-Württemberg",
+    "sourceType": "Civic & Ecology",
+    "sourceDe": "Brandenburger Modellprojekt Robinie; waldwissen.net",
+    "sourceEn": "Brandenburg black locust model project; waldwissen.net",
+    "evidenceDe": "Keine Trainingsdaten (Standort gegen Austriebserfolg) öffentlich gefunden; Datentest zuerst bei LFE Eberswalde oder FVA. 17/35.",
+    "evidenceEn": "No public training data (site against resprouting success) found; data test first with LFE Eberswalde or FVA. 17/35.",
+    "reviewDate": "03/2027",
+    "tags": [
+      "Forst",
+      "Robinie",
+      "Prognose",
+      "Needs Research"
+    ]
+  },
+  {
     "id": "ai-caregiver-pill-camera-verifier",
+    "packedDoseId": "pillsafe-vision",
     "title": "PillSafe Vision: Medication Organizer Verifier for Exhausted Family Caregivers",
     "round": "AI Frontier 2026",
     "date": "17.09.2026",
@@ -2042,6 +2441,7 @@
   },
   {
     "id": "ai-acoustic-apprentice-motor-stethoscope",
+    "packedDoseId": "klang-stethoskop",
     "title": "KlangStethoskop: Acoustic Diagnostic Guide for Heating Pumps & Machine Bearings",
     "round": "AI Frontier 2026",
     "date": "17.09.2026",
@@ -2291,63 +2691,6 @@
       "Gemeinnützigkeit",
       "Demokratie",
       "Recht"
-    ]
-  },
-  {
-    "id": "ai-dinner-table-politics-buzzer",
-    "title": "TischSchiedsrichter: Offline Dinner Table Referee & Keyword Whistle",
-    "round": "AI Frontier 2026",
-    "date": "24.09.2026",
-    "conceptDe": "Ein Smartphone in der Tischmitte hört offline auf eine vorher gemeinsam beschlossene Liste von Reizwörtern (z. B. „Wahl\", „Partei\"). Fällt eines, pfeift es wie ein Schiedsrichter und zeigt Gelb, beim zweiten Mal Rot. Audio verlässt das Gerät nicht.",
-    "conceptEn": "A phone in the middle of the dinner table listens offline for a word list everyone agreed on beforehand (e.g. \"election\", \"party\"). When one is spoken it blows a referee whistle and shows a yellow card, red on repeat. No audio leaves the device.",
-    "status": "verengt",
-    "suggestedVerdict": "build_first",
-    "recipientDe": "Die Öffentlichkeit, mit lauffähigem Skelett (Blogbeitrag/Show HN vor dem 1. Advent)",
-    "recipientEn": "The public, with a working skeleton (blog post / Show HN before Advent)",
-    "sourceType": "Home & Family",
-    "sourceDe": "Mitgebrachte Idee (Gemini-Plan, 24.09.2026); geprüft in 02-recherche/tischschiedsrichter-review-2026-09-24.md",
-    "sourceEn": "User-supplied idea (Gemini plan, 24.09.2026); checked in 02-recherche/tischschiedsrichter-review-2026-09-24.md",
-    "evidenceDe": "Besetzt im Szenario: Noche de Paz / SilentNight (Shackleton, 2015) — Handy in der Tischmitte, politische Wörter, Alarm. Besetzt in der Funktion: JarGone (2018, frei wählbare Wörter, Familie), Swearing Jar (App Store 03/2025, eigene Wörter, Audio mit Identität verknüpft). Restlücke: garantiert offline + Deutsch + freie Wortliste ohne Training + Tischregeln (Gelb/Rot).",
-    "evidenceEn": "Scenario taken: Noche de Paz / SilentNight (Shackleton, 2015) — phone in the middle of the table, political words, alarm. Function taken: JarGone (2018, custom words, family), Swearing Jar (App Store 03/2025, custom words, audio linked to identity). Remaining gap: guaranteed offline + German + open word list without training + table rules (yellow/red).",
-    "reviewDate": "03/2027",
-    "problemDe": "Niemand will derjenige sein, der den Schwiegervater unterbricht. Eine vorher gemeinsam beschlossene Regel mit neutralem Pfiff nimmt dem Gastgeber diese Rolle ab.",
-    "problemEn": "Nobody wants to be the one who interrupts the father-in-law. A rule agreed on beforehand, enforced by a neutral whistle, takes that role off the host.",
-    "workerPersona": {
-      "name": "Markus Thiel (45) — fiktive Persona",
-      "role": "Familienvater und unfreiwilliger Feiertags-Gastgeber",
-      "location": "Recklinghausen, NRW",
-      "quoteDe": "Jedes Jahr an Weihnachten brüllen sich mein Schwiegervater und mein Bruder über Politik an, bis die Kinder den Raum verlassen. Wenn ich dazwischengehe, bin ich der Böse.",
-      "quoteEn": "Every Christmas my father-in-law and my brother shout at each other about politics until the kids leave the room. If I step in, I am the bad guy.",
-      "storyDe": "Markus kocht gern für die Großfamilie. Sobald „Wahlen\" oder „Steuern\" fällt, kippt die Stimmung. Einen Buzzer von Hand drückt niemand gegen den Schwiegervater, und einen Cloud-Lautsprecher stellt er nicht auf den Tisch.",
-      "storyEn": "Markus loves cooking for the extended family. As soon as \"elections\" or \"taxes\" come up, the mood turns. Nobody will press a manual buzzer on the father-in-law, and he will not put a cloud speaker on the table."
-    },
-    "techShift": {
-      "beforeAiDe": "Nicht unmöglich: Noche de Paz (2015) und JarGone (2018) gab es schon. Offline ging aber nur mit fest trainierten Wörtern, eigene Wörter brauchten die Cloud.",
-      "beforeAiEn": "Not impossible: Noche de Paz (2015) and JarGone (2018) existed. Offline only worked with fixed pre-trained words; custom words needed the cloud.",
-      "nowEasyDe": "Heute gehen frei wählbare Wörter offline ohne Training (sherpa-onnx, nur Englisch/Chinesisch; Deutsch über Vosk-Grammatik, mit Fehlalarm-Risiko) oder im Browser per Chrome-On-Device-Spracherkennung (processLocally).",
-      "nowEasyEn": "Today custom words work offline without training (sherpa-onnx, English/Chinese only; German via Vosk grammar mode, with false-alarm risk) or in the browser via Chrome on-device speech recognition (processLocally)."
-    },
-    "whyNowDe": [
-      "Datenschutz belegbar: Die aktuelle Konkurrenz (Swearing Jar) verknüpft laut App-Store-Label Audiodaten mit der Identität.",
-      "Entlastung: Der Pfiff übernimmt die Rolle des „Bösen\", die sonst beim Gastgeber liegt.",
-      "Einwilligung als Spielregel: Alle beschließen die Wortliste vorher gemeinsam."
-    ],
-    "whyNowEn": [
-      "Privacy is provable: the current competitor (Swearing Jar) links audio data to identity according to its App Store label.",
-      "Relief: the whistle takes the \"bad cop\" role that otherwise falls to the host.",
-      "Consent as a game rule: everyone agrees on the word list together beforehand."
-    ],
-    "firstStepTicketDe": "PWA: Wortliste eintragen, Chrome-On-Device-Spracherkennung (processLocally) starten, bei Treffer Pfiff + gelbe Karte, zweiter Treffer rot, 15 s Abkühlzeit.",
-    "firstStepTicketEn": "PWA: enter word list, start Chrome on-device speech recognition (processLocally), on match whistle + yellow card, second match red, 15 s cooldown.",
-    "firstStepCriteriaDe": "In einer aufgenommenen Tischszene (4 Personen, 10 Minuten) mindestens 80 % der gesagten Listenwörter erkannt und höchstens 2 Fehlpfiffe; im Flugmodus lauffähig.",
-    "firstStepCriteriaEn": "In a recorded table scene (4 people, 10 minutes) at least 80 % of spoken list words detected and at most 2 false whistles; runs in airplane mode.",
-    "userNotes": "Am 24.09.2026 als Spielzeug-Dose gepackt (05-dosen/tischschiedsrichter.md), mit lauffähigem Skelett im Tab Sandboxes. Empfänger: die Öffentlichkeit. Prüfung: 02-recherche/tischschiedsrichter-review-2026-09-24.md",
-    "tags": [
-      "Family",
-      "Audio AI",
-      "Local-First",
-      "Party Game",
-      "Vibecode"
     ]
   },
   {
@@ -3435,41 +3778,6 @@
     ]
   },
   {
-    "id": "family-game-night-trivia-generator",
-    "title": "Family Game Night Custom Trivia Generator",
-    "round": "Katalog 2026",
-    "date": "17.09.2026",
-    "conceptDe": "Web-App zur schnellen Erstellung personalisierter Quizfragen und Worträtsel basierend auf Familiengeschichte, regionalen Dialekten und lokalen Meilensteinen für Feiern.",
-    "conceptEn": "A web app that generates fresh, customized daily trivia or word puzzles based on local family history, regional landmarks, or inside jokes for gatherings.",
-    "status": "ungeprüft",
-    "suggestedVerdict": "gift",
-    "recipientDe": "Spieleautoren-Zunft · Familienbildungsstätten",
-    "recipientEn": "Board Game Designers Guild · Family Activity Groups",
-    "sourceType": "Micro-Utilities",
-    "sourceDe": "Lightweight web game engines (PICO-8 style / Web Canvas)",
-    "sourceEn": "Lightweight web game engines (PICO-8 style / Web Canvas)",
-    "evidenceDe": "Kommerzielle Quizspiele sind oft zu akademisch oder wiederholen alte Fragen; persönliche Quizze per Hand zu erstellen dauert Tage.",
-    "evidenceEn": "Commercial trivia games are either too generic or obsolete; making custom family trivia decks manually takes hours in slide software.",
-    "reviewDate": "10/2026",
-    "problemDe": "Mangel an verbindenden, generationsübergreifenden Aktivitäten bei Familienfesten und runden Geburtstagen.",
-    "problemEn": "Awkward silence or screen-isolation at multi-generational gatherings lacking a personalized shared social activity.",
-    "whyNowDe": [
-      "Einfache Vorlagen mit Druck- und Beamer-Modus lassen sich ohne Installation in 5 Minuten befüllen."
-    ],
-    "whyNowEn": [
-      "Responsive web canvases can render customized Jeopardy-style buzzer boards directly on a smart TV without setup."
-    ],
-    "firstStepTicketDe": "Fragen-Editor mit Beamer-Vollbildanzeige und Buzzer-Modus über Smartphone-Tasten",
-    "firstStepTicketEn": "Question card editor with projector presentation view and phone-as-buzzer local sync",
-    "tags": [
-      "Games",
-      "Family",
-      "Trivia",
-      "Culture",
-      "Web App"
-    ]
-  },
-  {
     "id": "offline-emergency-resource-map",
     "title": "Offline Emergency Resource Map",
     "round": "Katalog 2026",
@@ -3962,6 +4270,7 @@
   },
   {
     "id": "bleifrei-lotse",
+    "packedDoseId": "bleifrei-lotse",
     "title": "Bleifrei-Lotse: TrinkwV § 17 Bleirohr-Detektor & Behörden-Melder",
     "round": "Inversion Run 2",
     "date": "25.09.2026",
@@ -4487,41 +4796,6 @@
       "Education",
       "Sensors",
       "Science"
-    ]
-  },
-  {
-    "id": "bird-song-frequency-ear-trainer",
-    "title": "Local Backyard Bird Song & Spectrogram Ear Trainer",
-    "round": "Katalog 2026",
-    "date": "17.09.2026",
-    "conceptDe": "Interaktiver Gehörtrainer für heimische Gartenvögel: Zeigt gleichzeitig Klang und optisches Spektrogramm (Amsel, Blaumeise, Buchfink, Rotkehlchen) zum spielerischen Erkennenlernen.",
-    "conceptEn": "An interactive ear training game for native songbirds: displays synchronized audio and visual spectrograms (blackbird, robin, chaffinch) for bird call identification.",
-    "status": "ungeprüft",
-    "suggestedVerdict": "gift",
-    "recipientDe": "NABU Vogel des Jahres Kampagne · LBV Bayern",
-    "recipientEn": "Royal Society for the Protection of Birds (RSPB) · Audubon Society",
-    "sourceType": "Education & Family",
-    "sourceDe": "Xeno-Canto open bird sound library & Web Audio FFT sonogram renderer",
-    "sourceEn": "Xeno-Canto open bird sound library & Web Audio FFT sonogram renderer",
-    "evidenceDe": "Früher kannten Kinder 20 Vogelstimmen; heute können die meisten nicht einmal mehr Amsel von Spatz unterscheiden.",
-    "evidenceEn": "Nature alienation has escalated; fewer than 15% of schoolchildren can distinguish common garden bird calls.",
-    "reviewDate": "10/2026",
-    "problemDe": "Verlust des Naturbezugs und der Artenkenntnis in urbanen und ländlichen Familien.",
-    "problemEn": "Extinction of ecological literacy across generations, reducing public commitment to biodiversity conservation.",
-    "whyNowDe": [
-      "Web Audio Sonogramme machen Tonhöhenverläufe und Triller visuell lesbar wie Notenblätter."
-    ],
-    "whyNowEn": [
-      "Real-time audio waterfalls allow children to \"see\" bird pitch melodies, speeding up acoustic retention tenfold."
-    ],
-    "firstStepTicketDe": "Quiz-Spiel mit 10 häufigsten Gartenvögeln mit umschaltbarem Sonogramm-Spickzettel",
-    "firstStepTicketEn": "Audio quiz game featuring 10 common garden songbirds with synchronized visual sonograms",
-    "tags": [
-      "Ornithology",
-      "Birding",
-      "Nature",
-      "Audio",
-      "Education"
     ]
   },
   {
@@ -5961,6 +6235,7 @@
   },
   {
     "id": "glasanflug-ampel",
+    "packedDoseId": "glasanflug-ampel",
     "title": "Glasanflug-Ampel",
     "round": "Runde 2",
     "date": "16.09.2026",

@@ -104,7 +104,7 @@ Execute:
 2. `npm run export:data` — exports `public/data/dosen.json` and `public/data/amelie-ideas.json`.
 
 ### Step 5 · Update the Prüfprotokoll (`06-suche/amelie-pruefprotokoll.md`)
-Verify that `06-suche/amelie-pruefprotokoll.md` contains the line for the newly packed Dose with its final verdict.
+Verify that `06-suche/amelie-pruefprotokoll.md` contains the line for the newly packed Dose with its final verdict: `npm run bib -- protokoll show <id>`. If it is missing, add exactly one line with `npm run bib -- protokoll add --runde "<section prefix>" --titel … --id <id> --urteil … --evidenz seite|schnipsel --method … --pruefen-ab MM/JJJJ --beleg …` (`--dry-run` first; recognises the 4- and 8-column tables). Before packing, `npm run bib -- find <id> <title>` catches a dose or grave that already exists (exit code 2). Graves and source bookings are not yours (librarian: `grab add`, `quellen import`).
 
 ### Step 6 · Verify Drift Guards and Test Suites
 Run:

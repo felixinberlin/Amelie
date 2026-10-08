@@ -326,9 +326,9 @@ export const GoogleAccountImporter: React.FC<GoogleAccountImporterProps> = ({
           </div>
 
           {!user && !isFirebaseConfigured() && (
-            <div className="mt-4 p-3 rounded-lg bg-[#f4ece1] border border-[#dfd1be] text-xs text-[#5c4a3d] flex items-center justify-between gap-3">
+            <div className="mt-4 p-3 rounded-lg bg-[#f4ece1] border border-[var(--m-line)] text-xs text-[var(--m-ink-2)] flex items-center justify-between gap-3">
               <div className="flex items-center gap-2">
-                <AlertCircle className="w-4 h-4 shrink-0 text-[#8c1d40]" />
+                <AlertCircle className="w-4 h-4 shrink-0 text-[var(--m-accent)]" />
                 <span>
                   {lang === 'de'
                     ? 'GitHub Pages Statik-Modus: Das Archiv, die Dosen, der Markdown/JSON-Export und der lokale Editor laufen 100% offline ohne Firebase. Live-Import aus Google Docs/Gmail erfordert optionale VITE_FIREBASE_*-Secrets.'

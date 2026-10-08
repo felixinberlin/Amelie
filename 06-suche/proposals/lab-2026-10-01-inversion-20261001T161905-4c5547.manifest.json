@@ -1,0 +1,24 @@
+{
+  "manifest_version": 1,
+  "run_id": "inversion-20261001T161905-4c5547",
+  "plan_id": "lab-2026-10-01-inversion-20261001T161905-4c5547",
+  "engine": "inversion",
+  "model": "deepseek/deepseek-chat",
+  "existence_check": false,
+  "survivors": {
+    "count": 1,
+    "status": "ungeprueft"
+  },
+  "files": [
+    "06-suche/proposals/lab-2026-10-01-inversion-20261001T161905-4c5547.md",
+    "06-suche/proposals/lab-2026-10-01-inversion-20261001T161905-4c5547.manifest.json"
+  ],
+  "source_ops": [],
+  "grave_proposals": 3,
+  "touches_memory": false,
+  "contracts": {
+    "write-plan": "see plan",
+    "inversion-run": "1.0.0"
+  },
+  "contract_version": "1.0.0"
+}

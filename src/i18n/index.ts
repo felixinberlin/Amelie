@@ -131,6 +131,7 @@ export interface I18nCatalog {
     matrix: string;
     manifest: string;
     whimsy: string;
+    games: string;
     packer: string;
     discarded: string;
     githubPages: string;
@@ -274,6 +275,7 @@ export function getTranslation(lang: Language): I18nCatalog {
       matrix: tr('nav.matrix', 'Deliveries & Matrix'),
       manifest: tr('nav.manifest', 'Manifesto & Rules'),
       whimsy: tr('nav.whimsy', 'Funny & Better'),
+      games: tr('nav.games', 'Games'),
       packer: tr('nav.packer', 'Pack a Tin'),
       discarded: tr('nav.discarded', 'Graveyard'),
       githubPages: tr('nav.githubPages', 'GitHub Pages & Data'),

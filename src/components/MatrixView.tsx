@@ -167,13 +167,13 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
   return (
     <div className="space-y-10 animate-fadeIn">
       {/* Sub-Navigation Switcher */}
-      <div className="flex flex-wrap items-center gap-2 p-1.5 rounded-2xl bg-[#ede3d1]/80 border border-[#d8cbba] max-w-2xl shadow-2xs">
+      <div className="flex flex-wrap items-center gap-2 p-1.5 rounded-2xl bg-[var(--m-sunk)]/80 border border-[var(--m-line-strong)] max-w-2xl shadow-2xs">
         <button
           onClick={() => setActiveSection('deliveries')}
           className={`flex-1 min-w-[150px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-typewriter font-semibold transition-all flex items-center justify-center gap-2 cursor-pointer ${
             activeSection === 'deliveries'
-              ? 'bg-[#8c1d40] text-white shadow-xs'
-              : 'text-[#5c4a3d] hover:text-[#2b1e16] hover:bg-[#faf4e8]'
+              ? 'bg-[var(--m-accent)] text-white shadow-xs'
+              : 'text-[var(--m-ink-2)] hover:text-[var(--m-ink)] hover:bg-[var(--m-surface-2)]'
           }`}
         >
           <Calendar className="w-4 h-4" />
@@ -184,8 +184,8 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
           onClick={() => setActiveSection('musters')}
           className={`flex-1 min-w-[150px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-typewriter font-semibold transition-all flex items-center justify-center gap-2 cursor-pointer ${
             activeSection === 'musters'
-              ? 'bg-[#8c1d40] text-white shadow-xs ring-2 ring-[#f6bd60]/40'
-              : 'text-[#5c4a3d] hover:text-[#2b1e16] hover:bg-[#faf4e8]'
+              ? 'bg-[var(--m-accent)] text-white shadow-xs ring-2 ring-[var(--m-gold)]/40'
+              : 'text-[var(--m-ink-2)] hover:text-[var(--m-ink)] hover:bg-[var(--m-surface-2)]'
           }`}
         >
           <Mail className="w-4 h-4" />
@@ -196,8 +196,8 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
           onClick={() => setActiveSection('matrix')}
           className={`flex-1 min-w-[150px] px-4 py-2.5 rounded-xl text-xs sm:text-sm font-typewriter font-semibold transition-all flex items-center justify-center gap-2 cursor-pointer ${
             activeSection === 'matrix'
-              ? 'bg-[#8c1d40] text-white shadow-xs'
-              : 'text-[#5c4a3d] hover:text-[#2b1e16] hover:bg-[#faf4e8]'
+              ? 'bg-[var(--m-accent)] text-white shadow-xs'
+              : 'text-[var(--m-ink-2)] hover:text-[var(--m-ink)] hover:bg-[var(--m-surface-2)]'
           }`}
         >
           <CheckSquare className="w-4 h-4" />
@@ -307,7 +307,7 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
                 className={`p-4 rounded-xl text-left border transition-all cursor-pointer relative flex flex-col justify-between ${
                   isSelected
                     ? 'bg-stone-900 text-white border-stone-800 shadow-md ring-2 ring-amber-500/30'
-                    : 'bg-[#fdfbf7] text-stone-800 border-stone-200 hover:border-amber-800/30 hover:bg-stone-50'
+                    : 'bg-[var(--m-surface)] text-stone-800 border-stone-200 hover:border-amber-800/30 hover:bg-stone-50'
                 }`}
               >
                 <div>
@@ -362,7 +362,7 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
         </div>
 
         {/* Active Email View */}
-        <div className="bg-[#fdfbf7] rounded-2xl border border-stone-200 overflow-hidden shadow-xs space-y-0">
+        <div className="bg-[var(--m-surface)] rounded-2xl border border-stone-200 overflow-hidden shadow-xs space-y-0">
           {/* Status Alert Banner */}
           {isCurrentMailSent ? (
             <div className="p-4 bg-emerald-50 border-b border-emerald-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-emerald-950">
@@ -521,7 +521,7 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
                               onSelectDoseById(doseId);
                             }
                           }}
-                          className="hover:underline font-bold flex items-center gap-1 text-[#8c1d40]"
+                          className="hover:underline font-bold flex items-center gap-1 text-[var(--m-accent)]"
                           title={lang === 'de' ? 'Als Einzelseite öffnen' : lang === 'es' ? 'Abrir como página' : 'Open as Single Page'}
                         >
                           <span>🎁 {linkedDose ? linkedDose.title : doseId}</span>
@@ -655,7 +655,7 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
         </div>
 
         {/* Matrix Table */}
-        <div className="bg-[#fdfbf7] rounded-2xl border border-stone-200 overflow-hidden shadow-xs">
+        <div className="bg-[var(--m-surface)] rounded-2xl border border-stone-200 overflow-hidden shadow-xs">
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse text-xs">
               <thead>
@@ -699,7 +699,7 @@ export const MatrixView: React.FC<MatrixViewProps> = ({
                                   onSelectDoseById(row.doseId!);
                                 }
                               }}
-                              className="text-[#8c1d40] hover:underline text-xs flex items-center gap-1 font-semibold"
+                              className="text-[var(--m-accent)] hover:underline text-xs flex items-center gap-1 font-semibold"
                               title={lang === 'de' ? 'Einzelseite & URL' : lang === 'es' ? 'Página única y URL' : 'Single Page & URL'}
                             >
                               <span>{t.ui.open_tin}</span>

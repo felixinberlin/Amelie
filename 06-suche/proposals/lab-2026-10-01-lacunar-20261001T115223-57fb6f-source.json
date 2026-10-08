@@ -1,0 +1,23 @@
+{
+  "plan_id": "lab-2026-10-01-lacunar-20261001T115223-57fb6f-source",
+  "actor": "lab-librarian",
+  "agent": "lab",
+  "runde": "lacunar-20261001T115223-57fb6f",
+  "_note": "Vorschlag des Labs, nicht angewendet. Der Bibliothekar prüft (typ, kategorie, `bib quellen match --url`, `bib find`); `human_accepted: true` setzt nur Félix, danach `npm run bib -- apply` auf diese Datei.",
+  "ops": [
+    {
+      "op": "source.add",
+      "id": "gob-protocolo-de-evaluaci-n",
+      "name": "Protocolo de Evaluación de Indicaciones Geográficas Protegidas (IGP)",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "enthaelt": "Protocolo de Evaluación de Indicaciones Geográficas Protegidas (IGP) (Typ A: scheme without software); Anker des Lab-Laufs lacunar-20261001T115223-57fb6f, nicht gelesen.",
+      "status": "angekratzt",
+      "evidenz": "schnipsel",
+      "note": "Anker des Lab-Laufs lacunar-20261001T115223-57fb6f (TYPO3 Künstler ai agents brandemburg, service, tortilla de patatas); nur als Suchtreffer gelesen.",
+      "urls": [
+        "https://www.mapa.gob.es/es/prensa/ultimas-noticias/detalle_noticias/entra-en-vigor-el-nuevo-reglamento-sobre-las-indicaciones-geogr-ficas-y-otros-reg-menes-de-calidad-diferenciada-de-alimentos-en-la-uni-n-europea/0663d7a1-d764-4e91-a901-505760e7850b"
+      ]
+    }
+  ]
+}

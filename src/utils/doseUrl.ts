@@ -211,3 +211,66 @@ export function resolveEmailBodyDoseUrls(body: string, doseLinks?: string[]): st
 
   return resolved;
 }
+
+/**
+ * Vergleichsseite (Tab „Compare"): Auswahl im Hash, z. B.
+ * #compare=dose:kristallwachstum-3d,cand:tile-layout-centerline
+ * `null` = kein Vergleichs-Link, leeres Array = Vergleichsseite ohne Auswahl.
+ */
+export function parseCompareFromUrl(): string[] | null {
+  if (typeof window === 'undefined') return null;
+  try {
+    const match = window.location.hash.match(/^#(?:\/)?compare=([^&]*)/i);
+    if (!match) return null;
+    return decodeURIComponent(match[1]).split(',').map((s) => s.trim()).filter(Boolean);
+  } catch (err) {
+    console.error('Error parsing comparison from URL:', err);
+    return null;
+  }
+}
+
+const encodeCompareIds = (ids: string[]) => ids.map((id) => encodeURIComponent(id).replace(/%3A/gi, ':')).join(',');
+
+/** Permanente URL für eine Vergleichsauswahl. */
+export function getCompareUrl(ids: string[]): string {
+  return `${getBaseUrl()}#compare=${encodeCompareIds(ids)}`;
+}
+
+/** Schreibt die Auswahl in die Adresszeile, ohne Verlaufseintrag und ohne hashchange. */
+export function setCompareUrl(ids: string[]): void {
+  if (typeof window === 'undefined') return;
+  try {
+    window.history.replaceState(null, '', `#compare=${encodeCompareIds(ids)}`);
+  } catch {
+    /* Sandbox/iframe ohne History-Zugriff: Link-Kopieren funktioniert trotzdem */
+  }
+}
+
+/** Entfernt einen Vergleichs-Hash (beim Verlassen der Seite). */
+export function clearCompareUrl(): void {
+  if (typeof window === 'undefined') return;
+  try {
+    if (/^#(?:\/)?compare=/i.test(window.location.hash)) {
+      window.history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+  } catch {
+    /* ignorieren */
+  }
+}
+
+/** `#venture=<id>` öffnet den Gründer-Bereich mit dem Venture-Lead. `null` = kein Link. */
+export function parseVentureFromUrl(): string | null {
+  if (typeof window === 'undefined') return null;
+  try {
+    const match = window.location.hash.match(/^#(?:\/)?venture=([^&]+)/i);
+    return match ? decodeURIComponent(match[1]).trim() || null : null;
+  } catch (err) {
+    console.error('Error parsing venture from URL:', err);
+    return null;
+  }
+}
+
+/** Permanente URL für einen Venture-Lead. */
+export function getVentureUrl(ventureId: string): string {
+  return `${getBaseUrl()}#venture=${encodeURIComponent(ventureId)}`;
+}

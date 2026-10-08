@@ -1,0 +1,34 @@
+{
+  "name": "@wet-ink/tiptap",
+  "version": "1.0.0",
+  "description": "Production-grade physical fluid ink & digital watercolor extension for TipTap and ProseMirror. Capillary fiber bleeding, Kubelka-Munk optical blending, and 0% CPU dormant lifecycle.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "test": "vitest run",
+    "build": "tsc",
+    "bundle": "node scripts/bundle-package.mjs"
+  },
+  "keywords": [
+    "tiptap",
+    "prosemirror",
+    "wet-ink",
+    "fluid-simulation",
+    "digital-signatures",
+    "canvas",
+    "watercolor",
+    "calligraphy"
+  ],
+  "author": "Felix <felix@tortilladepatas.de>",
+  "license": "Commercial",
+  "peerDependencies": {
+    "@tiptap/core": "^2.0.0 || ^3.0.0",
+    "@tiptap/pm": "^2.0.0 || ^3.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "vitest": ">=3"
+  }
+}

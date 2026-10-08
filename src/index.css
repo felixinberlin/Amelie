@@ -2,31 +2,29 @@
 
 @layer base {
   body {
-    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    color: #2b1e16;
-    background-color: #fbf7f0;
-    background-image: 
-      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(217, 119, 6, 0.08), transparent 70%),
-      radial-gradient(circle at 100% 100%, rgba(27, 67, 50, 0.04), transparent 40%),
-      radial-gradient(circle at 0% 100%, rgba(140, 29, 64, 0.04), transparent 40%);
+    font-family: var(--m-font-body);
+    color: var(--m-ink);
+    background-color: var(--m-bg);
+    background-image: var(--m-body-image);
+    background-size: var(--m-body-size);
     background-attachment: fixed;
   }
 }
 
 .font-amelie {
-  font-family: 'Fraunces', 'Playfair Display', 'Newsreader', Georgia, serif;
+  font-family: var(--m-font-display);
 }
 
 .font-serif-title {
-  font-family: 'Fraunces', 'Playfair Display', 'Newsreader', Georgia, serif;
+  font-family: var(--m-font-display);
 }
 
 .font-typewriter {
-  font-family: 'Courier Prime', 'JetBrains Mono', monospace;
+  font-family: var(--m-font-mono);
 }
 
 .font-mono-code {
-  font-family: 'Courier Prime', 'JetBrains Mono', monospace;
+  font-family: var(--m-font-mono);
 }
 
 .font-handwriting {
@@ -35,8 +33,8 @@
 
 /* Amélie Tinplate Canister (Boîte en fer-blanc) styling */
 .amelie-tin-box {
-  background: linear-gradient(145deg, #fdfbf7 0%, #f4ede0 50%, #eee3cf 100%);
-  border: 1px solid #d8cbba;
+  background: linear-gradient(145deg, var(--m-surface) 0%, var(--m-sunk) 50%, color-mix(in srgb, var(--m-sunk), var(--m-line) 60%) 100%);
+  border: 1px solid var(--m-line-strong);
   box-shadow: 
     inset 0 1px 0 rgba(255, 255, 255, 0.8),
     inset 0 -1px 0 rgba(110, 75, 45, 0.1),
@@ -55,8 +53,8 @@
 }
 
 .amelie-tin-header {
-  background: linear-gradient(180deg, #faf5eb 0%, #f0e6d2 100%);
-  border-bottom: 1px solid #dfd1be;
+  background: linear-gradient(180deg, var(--m-surface-2) 0%, var(--m-sunk) 100%);
+  border-bottom: 1px solid var(--m-line);
 }
 
 /* Authentic Postal cancellation stamp */
@@ -66,10 +64,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1.5px solid #8c1d40;
+  border: 1.5px solid var(--m-accent);
   border-radius: 9999px;
   padding: 4px 8px;
-  color: #8c1d40;
+  color: var(--m-accent);
   font-family: 'Courier Prime', monospace;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -88,27 +86,27 @@
 /* Vintage French Postage Stamp */
 .amelie-stamp-badge {
   position: relative;
-  background-color: #faf5eb;
+  background-color: var(--m-surface-2);
   border: 1px solid #d4c5b3;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
 /* Rich Amélie Red Accent Button */
 .btn-amelie-rouge {
-  background-color: #8c1d40;
-  color: #fff9f5;
-  border: 1px solid #721432;
+  background-color: var(--m-accent);
+  color: var(--m-on-accent);
+  border: 1px solid var(--m-accent-strong);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);
   transition: all 0.15s ease-in-out;
 }
 .btn-amelie-rouge:hover {
-  background-color: #741533;
+  background-color: var(--m-accent-strong);
   box-shadow: 0 2px 6px rgba(114, 20, 50, 0.3);
 }
 
 /* Montmartre Jade Green Accent Button */
 .btn-amelie-vert {
-  background-color: #1b4332;
+  background-color: var(--m-green);
   color: #f4fbf7;
   border: 1px solid #143527;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);
@@ -121,8 +119,8 @@
 
 /* Antique Amber Gold Accent Button */
 .btn-amelie-or {
-  background-color: #c5832b;
-  color: #fffdfa;
+  background-color: var(--m-copper);
+  color: var(--m-surface);
   border: 1px solid #a86c1f;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);
   transition: all 0.15s ease-in-out;
@@ -130,10 +128,14 @@
 .btn-amelie-or:hover {
   background-color: #ab6e20;
 }
+/* Helles Kupfer der Stimmung „calm“ braucht dunkle Schrift (Kontrast). */
+:root[data-mood='calm'] .btn-amelie-or {
+  color: var(--m-ink);
+}
 
 /* Tactile Crème Brûlée Caramel Glow */
 .creme-brulee-glow {
-  background: radial-gradient(circle, #f6bd60 0%, #e76f51 50%, #9e2a2b 100%);
+  background: radial-gradient(circle, var(--m-gold) 0%, #e76f51 50%, #9e2a2b 100%);
   box-shadow: 0 8px 30px rgba(231, 111, 81, 0.35);
 }
 
@@ -153,12 +155,12 @@
   height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #f5eee2;
+  background: var(--m-bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: #d4c3b0;
+  background: var(--m-line-strong);
   border-radius: 9999px;
-  border: 1px solid #f5eee2;
+  border: 1px solid var(--m-bg);
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #ba9f84;
@@ -187,7 +189,7 @@
 /* nicht wie eine README.                                             */
 /* ------------------------------------------------------------------ */
 .amelie-book-prose {
-  color: #2b1e16;
+  color: var(--m-ink);
   font-family: 'Newsreader', Georgia, serif;
   font-size: 0.95rem;
   line-height: 1.7;
@@ -208,7 +210,7 @@
   font-size: 1.25rem;
   margin: 2rem 0 0.6rem;
   padding-bottom: 0.3rem;
-  border-bottom: 1px solid #e5dac8;
+  border-bottom: 1px solid var(--m-line);
 }
 .amelie-book-prose h3 { font-size: 1.05rem; margin: 1.5rem 0 0.4rem; }
 .amelie-book-prose h4 { font-size: 0.95rem; margin: 1.2rem 0 0.3rem; }
@@ -233,17 +235,17 @@
   margin: 1rem 0;
   padding: 0.5rem 0 0.5rem 1rem;
   border-left: 3px solid #c9a227;
-  background: #faf5eb;
+  background: var(--m-surface-2);
   color: #4a3a2d;
   font-style: italic;
 }
 .amelie-book-prose code {
   font-family: 'JetBrains Mono', ui-monospace, monospace;
   font-size: 0.82em;
-  background: #f0e7d6;
+  background: var(--m-sunk);
   padding: 0.1rem 0.35rem;
   border-radius: 0.35rem;
-  color: #5c4a3d;
+  color: var(--m-ink-2);
 }
 .amelie-book-prose pre {
   margin: 1rem 0;
@@ -263,7 +265,7 @@
 }
 /* Patch-Kapitel: Unified Diff, zeilenweise eingefärbt (src/utils/patchHtml.ts) */
 .amelie-book-prose pre.amelie-diff code > span { display: block; white-space: pre; }
-.amelie-book-prose .diff-file { color: #f6bd60; font-weight: 700; margin-top: 0.9rem; }
+.amelie-book-prose .diff-file { color: var(--m-gold); font-weight: 700; margin-top: 0.9rem; }
 .amelie-book-prose .diff-meta { color: #a8a29e; }
 .amelie-book-prose .diff-hunk { color: #93c5fd; }
 .amelie-book-prose .diff-add { color: #bbf7d0; background: rgba(34, 197, 94, 0.10); }
@@ -274,7 +276,7 @@
 .amelie-book-prose hr {
   margin: 1.75rem 0;
   border: 0;
-  border-top: 1px solid #e5dac8;
+  border-top: 1px solid var(--m-line);
 }
 .amelie-book-prose table {
   width: 100%;
@@ -285,7 +287,7 @@
   display: block;
   overflow-x: auto;
 }
-.amelie-book-prose thead { background: #f0e7d6; }
+.amelie-book-prose thead { background: var(--m-sunk); }
 .amelie-book-prose th,
 .amelie-book-prose td {
   border: 1px solid #ddd0bc;
@@ -293,5 +295,5 @@
   text-align: left;
   vertical-align: top;
 }
-.amelie-book-prose th { font-weight: 700; color: #2b1e16; }
+.amelie-book-prose th { font-weight: 700; color: var(--m-ink); }
 .amelie-book-prose img { max-width: 100%; height: auto; border-radius: 0.5rem; }

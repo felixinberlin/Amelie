@@ -1,0 +1,23 @@
+{
+  "plan_id": "lab-2026-10-01-lacunar-20261001T153054-cca9b8-source",
+  "actor": "lab-librarian",
+  "agent": "lab",
+  "runde": "lacunar-20261001T153054-cca9b8",
+  "_note": "Vorschlag des Labs, nicht angewendet. Der Bibliothekar prüft (typ, kategorie, `bib quellen match --url`, `bib find`); `human_accepted: true` setzt nur Félix, danach `npm run bib -- apply` auf diese Datei.",
+  "ops": [
+    {
+      "op": "source.add",
+      "id": "trademate-manuelle-bestandsverwaltung-in-hoflaeden",
+      "name": "Manuelle Bestandsverwaltung in Hofläden",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "enthaelt": "Manuelle Bestandsverwaltung in Hofläden (Typ A: scheme without software); Anker des Lab-Laufs lacunar-20261001T153054-cca9b8, nicht gelesen.",
+      "status": "angekratzt",
+      "evidenz": "schnipsel",
+      "note": "Anker des Lab-Laufs lacunar-20261001T153054-cca9b8 (Hofläden und Direktvermarkter in der Lausitz: Sortiment, Kasse und Tourenplanung); nur als Suchtreffer gelesen.",
+      "urls": [
+        "https://trademate.de/warenwirtschaft-hofladen.html"
+      ]
+    }
+  ]
+}

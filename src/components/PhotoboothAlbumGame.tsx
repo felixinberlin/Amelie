@@ -340,12 +340,12 @@ export const PhotoboothAlbumGame: React.FC<PhotoboothAlbumGameProps> = ({ lang }
   };
 
   return (
-    <div className="bg-white border border-[#d8cbba] rounded-3xl p-6 md:p-8 space-y-6 shadow-sm">
+    <div className="bg-white border border-[var(--m-line-strong)] rounded-3xl p-6 md:p-8 space-y-6 shadow-sm">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-stone-200 pb-5">
         <div className="space-y-1">
-          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[#701531]">
-            <Sparkles className="w-4 h-4 text-[#8c1d40]" />
+          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[var(--m-accent-strong)]">
+            <Sparkles className="w-4 h-4 text-[var(--m-accent)]" />
             <span>
               {lang === 'de'
                 ? 'Nino Quincampoix’ Pariser Fotomaton-Kabinett'
@@ -354,7 +354,7 @@ export const PhotoboothAlbumGame: React.FC<PhotoboothAlbumGameProps> = ({ lang }
                 : 'Nino Quincampoix’s Paris Photobooth Archive'}
             </span>
           </div>
-          <h3 className="text-xl md:text-2xl font-amelie font-bold text-[#2b1e16]">
+          <h3 className="text-xl md:text-2xl font-amelie font-bold text-[var(--m-ink)]">
             {lang === 'de'
               ? '« L’Album de Photomaton de Nino »'
               : lang === 'es'
@@ -384,7 +384,7 @@ export const PhotoboothAlbumGame: React.FC<PhotoboothAlbumGameProps> = ({ lang }
             <button
               onClick={() => setActiveTab('booth')}
               className={`px-3 py-1.5 rounded-lg font-medium transition-all flex items-center gap-1.5 cursor-pointer ${
-                activeTab === 'booth' ? 'bg-[#8c1d40] text-white shadow-xs' : 'text-stone-700 hover:text-stone-900'
+                activeTab === 'booth' ? 'bg-[var(--m-accent)] text-white shadow-xs' : 'text-stone-700 hover:text-stone-900'
               }`}
             >
               <Camera className="w-3.5 h-3.5" />
@@ -393,7 +393,7 @@ export const PhotoboothAlbumGame: React.FC<PhotoboothAlbumGameProps> = ({ lang }
             <button
               onClick={() => setActiveTab('puzzle')}
               className={`px-3 py-1.5 rounded-lg font-medium transition-all flex items-center gap-1.5 cursor-pointer ${
-                activeTab === 'puzzle' ? 'bg-[#8c1d40] text-white shadow-xs' : 'text-stone-700 hover:text-stone-900'
+                activeTab === 'puzzle' ? 'bg-[var(--m-accent)] text-white shadow-xs' : 'text-stone-700 hover:text-stone-900'
               }`}
             >
               <Puzzle className="w-3.5 h-3.5" />
@@ -462,9 +462,9 @@ export const PhotoboothAlbumGame: React.FC<PhotoboothAlbumGameProps> = ({ lang }
             </div>
 
             {/* Wardrobe / Prop Selection */}
-            <div className="p-4 rounded-2xl bg-[#faf4e8] border border-[#d8cbba] space-y-2.5">
+            <div className="p-4 rounded-2xl bg-[var(--m-surface-2)] border border-[var(--m-line-strong)] space-y-2.5">
               <span className="text-xs font-mono font-bold uppercase text-stone-700 flex items-center gap-1.5">
-                <Smile className="w-3.5 h-3.5 text-[#8c1d40]" />
+                <Smile className="w-3.5 h-3.5 text-[var(--m-accent)]" />
                 {lang === 'de' ? 'Wähle dein Pariser Requisit:' : lang === 'es' ? 'Elige tu accesorio:' : 'Choose your Paris prop:'}
               </span>
 
@@ -482,7 +482,7 @@ export const PhotoboothAlbumGame: React.FC<PhotoboothAlbumGameProps> = ({ lang }
                     onClick={() => setSelectedProp(p.id as PhotoboothProp)}
                     className={`p-2 rounded-xl border text-center transition-all cursor-pointer flex flex-col items-center ${
                       selectedProp === p.id
-                        ? 'bg-[#8c1d40] text-white border-[#8c1d40] font-bold shadow-xs'
+                        ? 'bg-[var(--m-accent)] text-white border-[var(--m-accent)] font-bold shadow-xs'
                         : 'bg-white border-stone-200 text-stone-700 hover:bg-stone-50'
                     }`}
                   >
@@ -501,7 +501,7 @@ export const PhotoboothAlbumGame: React.FC<PhotoboothAlbumGameProps> = ({ lang }
                 className={`flex-1 py-3 rounded-2xl font-bold font-mono text-sm flex items-center justify-center gap-2 shadow-sm transition-all cursor-pointer ${
                   isShooting
                     ? 'bg-amber-800/80 text-amber-100 cursor-wait'
-                    : 'bg-[#8c1d40] hover:bg-[#701531] text-amber-100 active:scale-[0.99]'
+                    : 'bg-[var(--m-accent)] hover:bg-[var(--m-accent-strong)] text-amber-100 active:scale-[0.99]'
                 }`}
               >
                 <Camera className="w-4 h-4 text-amber-200" />
@@ -599,9 +599,9 @@ export const PhotoboothAlbumGame: React.FC<PhotoboothAlbumGameProps> = ({ lang }
       {/* MODE B: NINO'S TORN PHOTO RECONSTRUCTION PUZZLE */}
       {activeTab === 'puzzle' && (
         <div className="space-y-6">
-          <div className="p-4 rounded-2xl bg-[#faf4e8] border border-[#d8cbba] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div className="p-4 rounded-2xl bg-[var(--m-surface-2)] border border-[var(--m-line-strong)] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div className="space-y-1">
-              <span className="text-xs font-mono font-bold uppercase text-[#8c1d40] flex items-center gap-1.5">
+              <span className="text-xs font-mono font-bold uppercase text-[var(--m-accent)] flex items-center gap-1.5">
                 <Scissors className="w-3.5 h-3.5" />
                 {lang === 'de' ? 'Der Mann mit den roten Schuhen' : lang === 'es' ? 'El hombre de los zapatos rojos' : 'The Man in the Red Shoes'}
               </span>
@@ -637,7 +637,7 @@ export const PhotoboothAlbumGame: React.FC<PhotoboothAlbumGameProps> = ({ lang }
                     onClick={() => piece && handlePieceClick(piece.id)}
                     className={`relative w-40 h-40 rounded-xl overflow-hidden cursor-pointer transition-all border-2 select-none flex items-center justify-center ${
                       isSelected
-                        ? 'border-[#8c1d40] ring-4 ring-[#8c1d40]/30 shadow-lg scale-95'
+                        ? 'border-[var(--m-accent)] ring-4 ring-[var(--m-accent)]/30 shadow-lg scale-95'
                         : isCorrect && puzzleSolved
                         ? 'border-emerald-500 shadow-sm'
                         : 'border-stone-400/60 hover:border-stone-600'

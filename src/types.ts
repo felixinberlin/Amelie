@@ -66,6 +66,14 @@ export interface DoseItem {
   videoUrl?: string;
   /** Titel oder Beschreibung des Videos */
   videoTitle?: string;
+  /** Titel des Videos auf Englisch (sonst videoTitle) */
+  videoTitleEn?: string;
+  /** Eigene Videodatei in public/ (komprimiertes MP4, faststart). Lädt erst beim Klick, siehe DoseVideo. */
+  videoFile?: string;
+  /** Vorschaubild in public/ (WebP, daneben <name>-640.webp) */
+  videoPoster?: string;
+  /** Breite geteilt durch Höhe des Videos (Standard 16/9) */
+  videoAspect?: number;
   oneLinerDe: string;
   oneLinerEn: string;
   oneLinerEs?: string;
@@ -187,7 +195,7 @@ export type Fundweg =
   | 'unbekannt';
 
 /** Woher die Idee kam. */
-export type Herkunft = 'ideenliste' | 'brainstorm' | 'quelle' | 'bisoziation' | 'modell-katalog';
+export type Herkunft = 'ideenliste' | 'brainstorm' | 'quelle' | 'bisoziation' | 'inversion' | 'modell-katalog';
 
 /** Wie weit sie kam, bevor sie starb. Je weiter, desto teurer der Tod. */
 export type Stadium = 'kandidat' | 'dose' | 'mail-entwurf' | 'zugestellt';
@@ -283,6 +291,8 @@ export interface CandidateIdea {
   conceptEn: string;
   status: CandidateStatus;
   suggestedVerdict: Verdict;
+  /** Id der Dose, in die diese Idee bereits verpackt wurde (Pipeline blendet sie standardmäßig aus). */
+  packedDoseId?: string;
   recipientDe: string;
   recipientEn: string;
   sourceType:
