@@ -29,7 +29,24 @@ Implemented: animated frontend map with 21 sites, 168 hours and 1,351 available 
 
 ## Limits and history
 
-The BfN rejection of the former offshore proposal remains valid. Radar is not species identification or collision risk. Historical records have unequal effort and changing climate; access and redistribution are source-specific. ERA5 includes later observations, so it cannot certify operational forecast skill. EuroBirdCast is a working title, unaffiliated with BirdCast.
+The BfN rejection of the former offshore proposal (FKZ 3519 86 0500, 30 September 2026) remains fully valid. Weather radar (C-band) operates at 200–2,000 m altitude with kilometre-scale voxels; it cannot distinguish protected individual species (Red Kite, White-tailed Eagle, Red-throated Diver) nor quantify rotor-swept zone collision risk (50–250 m). Automated wind turbine curtailment based solely on weather radar is legally untenable under German immission law (BImSchG).
+
+## Conceptual sharpening & multi-scale architecture
+
+EuroBirdCast is not a turbine sensor; it is the **synoptic macro early-warning layer** ("Bird Weather"):
+1. **Macro Layer (EuroBirdCast):** 24–48h advance situational awareness of synoptic migration waves (>500 birds/km/h) across DWD/EUMETNET radar and Aloft VPTS.
+   - Enables Transmission System Operators (TSOs: 50Hertz, TenneT, Amprion, TransnetBW) to procure redispatch and reserve capacity ahead of potential regional wind curtailment.
+   - Triggers municipal "Lights Out" programs (high-rise and facade lighting shutoffs in Frankfurt, Hamburg, Berlin) and provides civilian synergy with military BIRDTAM alerts (ZGeoBw).
+2. **Meso/Micro Layer (Local Anti-Collision Systems):** Dedicated bird radar (X-band / Robin Radar) and certified camera AI (e.g. IdentiFlight under § 45b BNatSchG) at turbine clusters trigger physical idling (< 2 rpm).
+3. **Open Evidence Baseline:** Creates an auditable benchmark for permitting authorities (LfU / trade inspectorates) and environmental NGOs (NABU, BUND, DUH) to independently verify whether mandatory curtailment windows were observed during mass migration events.
+
+## Power & decision landscape (Who makes it real?)
+
+Regulatory and operational authority is divided across four institutional tiers:
+- **Data Sovereigns:** DWD (17 radars, open data mandate under § 10 DWD-Gesetz) and EUMETNET/OPERA; scientific curation by INBO/Aloft (Peter Desmet) and UvA (Judy Shamoun-Baranes).
+- **Regulators & Lawmakers:** BMUV and state environmental ministries. The operational blueprint is the Netherlands (*Staatscourant 2026, 2036*), where the Ministry of Climate & Green Growth and TenneT mandate flexible curtailment thresholds (< 2 rpm, max 60h/year) for North Sea wind farms (Borssele, Hollandse Kust, IJmuiden Ver).
+- **Operational Switches:** TSOs (redispatch management) and wind operators (RWE, Ørsted, Vattenfall, EnBW via central SCADA control rooms).
+- **Evidence & Legal Standing:** DDA / ornitho.de (ground phenology and acoustic NocMig) and environmental NGOs with legal standing (*Verbandsklage* under UmwRG).
 
 ## Recipient and funding
 
@@ -37,11 +54,11 @@ Peter Desmet (INBO/Aloft): data quality; Judy Shamoun-Baranes (UvA): scientific 
 
 ## Research and demo
 
+- [Governance and power landscape](../../02-recherche/eurobirdcast-governance-and-power-2026-10-08.md)
 - [Forecasting and data fusion](../../02-recherche/eurobirdcast-bird-weather-2026-10-08.md)
 - [Revival research](../../02-recherche/eurobirdcast-revival-2026-10-08.md)
 - [Runnable pilot](../../07-demos/eurobirdcast/forecast/README.md)
 - [DBU](https://www.dbu.de/foerderung/projektfoerderung/)
 - [Project](https://felixinberlin.github.io/Amelie/#dose=eurobirdcast)
-
 - [Real Amélie test](../02-recherche/eurobirdcast-real-test-2026-10-08.md)
 - [Verified contacts and unsent drafts](../02-recherche/eurobirdcast-contacts-2026-10-08.md)

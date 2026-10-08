@@ -1115,3 +1115,11 @@ Kartenverständlichkeit und Interaktionsqualität:
 6. Stationen in Prognosetabelle: Klarnamen (`Wideumont`, `Jabbeke`, `Den Helder`) neben Codes.
 Alle 13 Playwright-Browsertests, 764 Vitest-Tests, 16 Karten-Python-Tests sowie Lint und Produktionsbuild fehlerfrei bestanden. Keine neuen Mails versendet.
 
+### EuroBirdCast Governance-, Macht- und Systemarchitektur-Erweiterung — 2026-10-08
+
+`eurobirdcast`: Urteil unverändert (`verengt`, 22/35). Vertiefte Governance- und Machtanalyse im Dossier und Recherchebericht (`02-recherche/eurobirdcast-governance-and-power-2026-10-08.md`):
+1. Konzeptionelle Schärfung: Klares 2-Skalen-Modell. EuroBirdCast als makro-synoptische Frühwarnschicht (24–48 h Vorwarnung für Übertragungsnetzbetreiber / Redispatch-Planung und kommunales „Lights Out" / Fassadenabschaltung; zivile Ergänzung zu BIRDTAM/ZGeoBw) getrennt von der lokalen Mikro-Ebene (dediziertes Vogelradar / Robin Radar und Kamerasysteme wie IdentiFlight nach § 45b BNatSchG am Park).
+2. Macht- und Entscheidungslandkarte: Vier Entscheidungsebenen identifiziert (Datenhoheit: DWD/EUMETNET + Aloft/INBO; Regulierung: BMUV/Landesumweltämter nach BImSchG vs. niederländischer Präzedenzfall *Staatscourant 2026, 2036* mit flexibler Abschaltschwelle unter 2 U/min; operative Schaltung: TSOs 50Hertz/TenneT/Amprion/TransnetBW und Windparkbetreiber RWE/Ørsted/Vattenfall; Evidenz: DDA/ornitho.de und Umweltverbände mit Klagerecht nach UmwRG).
+3. Keine Dosen-Zustellung oder Pitching; BfN-Ablehnung FKZ 3519 86 0500 bleibt unverändert gültig. DBU/mFUND als offene Förderbrücke dokumentiert. Dossiers (`05-dosen/eurobirdcast.md` und `en/05-dosen/eurobirdcast.md`) aktualisiert.
+
+

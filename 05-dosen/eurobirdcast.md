@@ -32,7 +32,24 @@ Umgesetzt: animierte Frontend-Karte mit 21 Standorten, 168 Stunden und 1.351 ver
 
 ## Grenzen und Historie
 
-Die BfN-Ablehnung der früheren Offshore-Idee bleibt gültig. Radar liefert weder sichere Artbestimmung noch Kollisionsrisiko. Historische Aufzeichnungen haben ungleichen Erfassungsaufwand und verändertes Klima; Zugang und Weitergabe sind quellenspezifisch. ERA5 enthält spätere Beobachtungen und belegt deshalb keine operative Prognosegüte. EuroBirdCast ist ein Arbeitstitel ohne Verbindung zu BirdCast.
+Die BfN-Ablehnung der früheren Offshore-Idee (FKZ 3519 86 0500, 30.09.2026) bleibt uneingeschränkt gültig. Großraum-Wetterradar (C-Band) operiert in 200–2.000 m Höhe mit kilometergroßen Voxeln; es kann weder Einzeltiere geschützter Arten (Rotmilan, Seeadler, Sterntaucher) identifizieren noch das kleinräumige Kollisionsrisiko im Rotorbereich (50–250 m) quantifizieren. Eine automatisierte Abschaltung allein auf Wetterradarbasis ist haftungs- und immissionsschutzrechtlich (BImSchG) unhaltbar.
+
+## Konzeptionelle Schärfung & Systemarchitektur
+
+EuroBirdCast ist kein Mikrosensor an der Turbine, sondern die **synoptische Makro-Frühwarnschicht** („Vogelwetter"):
+1. **Makro-Ebene (EuroBirdCast):** 24–48 h Vorwarnung synoptischer Massenzugwellen (>500 Vögel/km/h) über DWD/EUMETNET C-Band Radar und Aloft VPTS.
+   - Dient Übertragungsnetzbetreibern (TSOs: 50Hertz, TenneT, Amprion, TransnetBW) zur 24–48-stündigen Vorhaltung von Redispatch- und Regelenergiereserven bei drohender Cluster-Abregelung.
+   - Ermöglicht kommunales „Lights Out" (Abschaltung von Hochhaus- und Fassadenbeleuchtung in Frankfurt, Hamburg, Berlin) und liefert zivile Synergien zu BIRDTAM-Warnstufen (ZGeoBw).
+2. **Meso-/Mikro-Ebene (Lokales AKS):** Dediziertes Vogelradar (X-Band / Robin Radar) und validierte KI-Kamerasysteme (z. B. IdentiFlight nach § 45b BNatSchG) direkt am Park triggern die eigentliche Trudelstellung (< 2 U/min).
+3. **Öffentliche Kontroll-Baseline:** EuroBirdCast schafft einen offenen, auditierbaren Benchmark für Genehmigungsbehörden (Staatliche Gewerbeaufsichtsämter / LfU) und Umweltverbände (NABU, BUND, DUH), um interne Betreiberprotokolle in Hauptzugphasen unabhängig zu verifizieren.
+
+## Macht- und Entscheidungslandkarte (Wer entscheidet?)
+
+Die Durchsetzungskraft verteilt sich auf vier institutionelle Ebenen:
+- **Datenhoheit:** DWD (17 Radarstationen, § 10 DWD-Gesetz Open Data) und EUMETNET/OPERA; wissenschaftliche Aufbereitung durch INBO/Aloft (Peter Desmet) und UvA (Judy Shamoun-Baranes).
+- **Regulierung & Recht:** BMUV und Landesumweltministerien (Verwaltungsvorschriften, Windenergie-Erlasse für BImSchG-Genehmigungsbehörden). Die europäische Blaupause liefert die Niederlande (*Staatscourant 2026, 2036*), wo das Ministerie van Klimaat en Groene Groei mit TenneT flexible Abschaltschwellen für Nordsee-Parks (Borssele, Hollandse Kust, IJmuiden Ver; max. 60 h/Jahr) gesetzlich anordnet.
+- **Operative Schaltung:** TSOs (Redispatch-Koordination) und Windparkbetreiber (RWE, Ørsted, Vattenfall, EnBW via SCADA-Leitwarten).
+- **Evidenz & Klagerechte:** DDA / ornitho.de (Bodenevidenz / NocMig) und anerkannte Umweltverbände (Verbandsklagerecht nach UmwRG).
 
 ## Empfänger und Förderbrücke
 
@@ -40,11 +57,11 @@ Peter Desmet (INBO/Aloft): Datenqualität; Judy Shamoun-Baranes (UvA): wissensch
 
 ## Recherche und Demo
 
+- [Governance and power landscape](../02-recherche/eurobirdcast-governance-and-power-2026-10-08.md)
 - [Forecasting and data fusion](../02-recherche/eurobirdcast-bird-weather-2026-10-08.md)
 - [Revival research](../02-recherche/eurobirdcast-revival-2026-10-08.md)
 - [Runnable pilot](../07-demos/eurobirdcast/forecast/README.md)
 - [DBU](https://www.dbu.de/foerderung/projektfoerderung/)
 - [Project](https://felixinberlin.github.io/Amelie/#dose=eurobirdcast)
-
 - [Real Amélie test](../02-recherche/eurobirdcast-real-test-2026-10-08.md)
 - [Verified contacts and unsent drafts](../02-recherche/eurobirdcast-contacts-2026-10-08.md)
