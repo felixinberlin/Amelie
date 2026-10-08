@@ -244,3 +244,9 @@
 {"at":"2026-10-08T07:18:24.770Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","id":"espr-dpp-consumer-pr179"}
 {"at":"2026-10-08T07:18:48.023Z","event":"cli","cmd":"quellen log","actor":"bibliothekar","agent":"bibliothekar","runde":"PR179 Review","id":"espr-dpp-consumer-pr179"}
 {"at":"2026-10-08T07:18:48.710Z","event":"cli","cmd":"quellen rate","actor":"bibliothekar","id":"espr-dpp-consumer-pr179"}
+{"at":"2026-10-08T07:27:40.632Z","event":"cli","actor":"bibliothekar","runde":"PR179 Team-Nachprüfung 08.10.2026","cmd":"protokoll add","id":"DPP-Reparatur-Dolmetscher: individuelle Rechtsableitung"}
+{"at":"2026-10-08T07:27:41.152Z","event":"cli","actor":"bibliothekar","runde":"PR179 Team-Nachprüfung 08.10.2026","cmd":"protokoll add","id":"reparaturfall-pflichtabgleich"}
+{"at":"2026-10-08T07:27:41.726Z","event":"cli","actor":"bibliothekar","runde":"PR179 Team-Nachprüfung 08.10.2026","cmd":"protokoll add","id":"Lokale Reparaturinformations-Belegchronik"}
+{"at":"2026-10-08T07:28:15.032Z","event":"cli","cmd":"quellen log","actor":"bibliothekar","agent":"bibliothekar","runde":"PR179 Team-Nachprüfung 08.10.2026","id":"ords-open-repair-alliance-datensatz"}
+{"at":"2026-10-08T07:28:15.588Z","event":"cli","cmd":"quellen log","actor":"bibliothekar","agent":"bibliothekar","runde":"PR179 Team-Nachprüfung 08.10.2026","id":"espr-dpp-consumer-pr179"}
+{"at":"2026-10-08T07:28:16.221Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"PR179 Team-Nachprüfung 08.10.2026","id":"repair-europe-access-pr179"}

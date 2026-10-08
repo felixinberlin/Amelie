@@ -61,6 +61,8 @@ Wenn du ein Ticket, ein Kriterium oder eine Dosen-Beschreibung änderst, musst d
 
 ## 4. Technische Umgebung & Befehle
 
+* **Vertex-Credits ausgeschöpft (Félix, 08.10.2026):** Keine Vertex-basierten Lab-, Vergleichs- oder Teamrunden starten, bis Félix neue Credits ausdrücklich bestätigt. Teamarbeit in dieser Sitzung läuft über die verfügbaren nativen Agenten; keine Vertex-Modellaufrufe.
+
 * **Node.js:** Node v26 liegt unter `/home/felix/.nvm/versions/node/v26.3.1/bin/node`.  
   Falls `node` in einer Subshell nicht gefunden wird:  
   `export PATH="/home/felix/.nvm/versions/node/v26.3.1/bin:$PATH"`

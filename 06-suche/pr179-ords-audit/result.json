@@ -1,0 +1,163 @@
+{
+  "source_url": "https://raw.githubusercontent.com/openrepair/data/90eba80740506b4fa283288780d34e9e7e01deef/aggregated/202507/OpenRepairData_v0.3_aggregate_202507.csv",
+  "revision": "90eba80740506b4fa283288780d34e9e7e01deef",
+  "upstream_license": "CC BY-SA 4.0",
+  "sha256": "364d741b39b40ce955a5a9f83adf9776b3f40f2f857cc2cd96b6ae1818aabe82",
+  "columns": [
+    "id",
+    "data_provider",
+    "country",
+    "partner_product_category",
+    "product_category",
+    "product_category_id",
+    "brand",
+    "year_of_manufacture",
+    "product_age",
+    "repair_status",
+    "repair_barrier_if_end_of_life",
+    "group_identifier",
+    "event_date",
+    "problem"
+  ],
+  "total_rows": 305649,
+  "event_date_range": [
+    "2012-06-12",
+    "2025-07-31"
+  ],
+  "field_completeness": {
+    "model": {
+      "column_present": false,
+      "nonempty": 0,
+      "total": 305649
+    },
+    "model_identifier": {
+      "column_present": false,
+      "nonempty": 0,
+      "total": 305649
+    },
+    "event_date": {
+      "column_present": true,
+      "nonempty": 305649,
+      "total": 305649
+    },
+    "repair_barrier_if_end_of_life": {
+      "column_present": true,
+      "nonempty": 29911,
+      "total": 305649
+    },
+    "order_date": {
+      "column_present": false,
+      "nonempty": 0,
+      "total": 305649
+    },
+    "delivery_date": {
+      "column_present": false,
+      "nonempty": 0,
+      "total": 305649
+    },
+    "placed_on_market_date": {
+      "column_present": false,
+      "nonempty": 0,
+      "total": 305649
+    },
+    "last_unit_placed_on_market_date": {
+      "column_present": false,
+      "nonempty": 0,
+      "total": 305649
+    },
+    "specific_part": {
+      "column_present": false,
+      "nonempty": 0,
+      "total": 305649
+    },
+    "requester_class": {
+      "column_present": false,
+      "nonempty": 0,
+      "total": 305649
+    },
+    "year_of_manufacture": {
+      "column_present": true,
+      "nonempty": 102134,
+      "total": 305649
+    },
+    "product_age": {
+      "column_present": true,
+      "nonempty": 102112,
+      "total": 305649
+    },
+    "brand": {
+      "column_present": true,
+      "nonempty": 305649,
+      "total": 305649
+    }
+  },
+  "counts": {
+    "rows": 305649,
+    "event_date": 305649,
+    "brand": 305649,
+    "DEU_rows": 36183,
+    "repair_barrier_if_end_of_life": 29911,
+    "DEU_spare_parts_barrier": 1770,
+    "spare_parts_barrier": 11783,
+    "year_of_manufacture": 102134,
+    "product_age": 102112,
+    "spare_parts_barrier_with_age_or_year": 5229,
+    "broad_potentially_regulated_category_spares": 805
+  },
+  "categories": {
+    "Aircon/dehumidifier": 1369,
+    "Battery/charger/adapter": 5461,
+    "Coffee maker": 18116,
+    "DSLR/video camera": 834,
+    "Decorative or safety lights": 6930,
+    "Desktop computer": 2371,
+    "Digital compact camera": 1352,
+    "Fan": 2752,
+    "Flat screen": 3754,
+    "Food processor": 15141,
+    "Games console": 1036,
+    "Hair & beauty item": 5791,
+    "Hair dryer": 3271,
+    "Handheld entertainment device": 2687,
+    "Headphones": 3526,
+    "Hi-Fi integrated": 4224,
+    "Hi-Fi separates": 18280,
+    "Iron": 6771,
+    "Kettle": 6618,
+    "Lamp": 21002,
+    "Laptop": 12304,
+    "Large home electrical": 7821,
+    "Misc": 757,
+    "Mobile": 5188,
+    "Musical instrument": 1114,
+    "PC accessory": 1928,
+    "Paper shredder": 1714,
+    "Portable radio": 13860,
+    "Power tool": 20602,
+    "Printer/scanner": 5630,
+    "Projector": 1196,
+    "Sewing machine": 11619,
+    "Small home electrical": 17067,
+    "Small kitchen item": 14541,
+    "TV and gaming-related accessories": 5603,
+    "Tablet": 3749,
+    "Toaster": 7761,
+    "Toy": 6213,
+    "Vacuum": 25106,
+    "Watch/clock": 10590
+  },
+  "barriers": {
+    "Item too worn out": 5923,
+    "Lack of equipment": 2865,
+    "No way to open product": 4929,
+    "Repair information not available": 4411,
+    "Spare parts not available": 7151,
+    "Spare parts too expensive": 4632
+  },
+  "limitations": [
+    "No legal scope or violation inferred from age, category or barrier.",
+    "Broad categories do not map reliably to regulated product groups.",
+    "Blank field does not prove underlying fact absent.",
+    "No individual records or free-text problems retained in this output."
+  ]
+}

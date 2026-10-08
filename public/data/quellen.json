@@ -4376,18 +4376,21 @@
         "barrierefreiheit",
         "open-data"
       ],
-      "urls": [],
+      "urls": [
+        "https://standard.openrepair.org/standard.html",
+        "https://github.com/openrepair/data/tree/90eba80740506b4fa283288780d34e9e7e01deef/aggregated/202507"
+      ],
       "zugang": {
         "art": "norm",
-        "erreichbar": "unbekannt",
+        "erreichbar": "ja",
         "wie": "Normtext über publications.europa.eu/resource/celex/<CELEX> (EU) bzw. gesetze-im-internet.de / dip.bundestag.de (DE); bei Novellen nur die jüngste Drucksache inkl. Stellungnahme Bundesrat."
       },
       "enthaelt": "Felder Produktkategorie, Marke, Baujahr/Alter, Reparaturbarriere (u. a. Ersatzteil nicht verfügbar); Baujahr oft leer — Belege: (ORDS) / Open Repair Alliance — offener Datensatz (openrepair.org/open-data; Netzwerk Reparatur-Initiativen Statistik)",
       "fokus": "",
-      "status": "offen",
-      "statusNotiz": "nächster Schritt: Datentest für K3 `reparaturfall-pflichtabgleich` (Fälle/Jahr im Geltungsbereich der Teilepflichten zählen). Datensatz nicht heruntergeladen",
-      "evidenz": "unbekannt",
-      "zuletzt": "2026-09-28",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-08",
       "ertrag": {
         "dosen": [],
         "graeber": [],
@@ -4411,6 +4414,13 @@
           "agent": "migration",
           "runde": "Register-Einführung",
           "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        },
+        {
+          "datum": "2026-10-08",
+          "agent": "bibliothekar",
+          "runde": "PR179 Team-Nachprüfung 08.10.2026",
+          "notiz": "Voll-CSV-Audit reproduzierbar zweimal identisch:305649 Zeilen,29911 Barrieren,11783 Ersatzteilbarrieren,5229 mit Alters-/Baujahrswert; DEU36183/1770. Strukturierte Modell/Teil/Marktbereitstellung/Bestell-/Lieferfelder fehlen; keine Rechtskohorte. Code/Aggregation unter06-suche/pr179-ords-audit, Rohdaten nicht im Repo; Daten CC BY-SA4.0. Bestehender K3 bleibt Needs Research22.",
+          "status": "durchsucht"
         }
       ]
     },
@@ -14325,7 +14335,10 @@
       "urls": [
         "https://environment.ec.europa.eu/strategy/circular-economy/ecodesign-sustainable-products-regulation_en",
         "https://cirpass2.eu/",
-        "https://cirpass2.eu/who-we-are/"
+        "https://cirpass2.eu/who-we-are/",
+        "https://cirpass2.eu/project-results/",
+        "https://cirpass2.eu/lighthouse-pilots/",
+        "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/explore-our-faqs_en"
       ],
       "zugang": {
         "art": "web",
@@ -14375,6 +14388,66 @@
           "agent": "bibliothekar",
           "runde": "",
           "notiz": "Vektoren bewertet [1 2 5 5 1 3]: Primärseiten lesbar; Consumer-Reader ausdrücklich im geförderten Projekt, Rechtsinterpretation und Datenprämisse ungeklärt."
+        },
+        {
+          "datum": "2026-10-08",
+          "agent": "bibliothekar",
+          "runde": "PR179 Team-Nachprüfung 08.10.2026",
+          "notiz": "Drei Engines konvergieren: geförderter Consumer-Reader und offene Renderer/Validator/Extractor besetzen generische Lesefunktion. Keine neue CIRPASS-Doppelquelle. Rechtsableitung bleibt unklar17/35; produktbezogene Regeln und tatsächliche Pass-Fixtures fehlen.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "repair-europe-access-pr179",
+      "name": "Right to Repair Europe: Rechteübersicht und Informationszugang",
+      "typ": "N",
+      "kategorie": "empfaenger",
+      "rollen": [
+        "empfaenger",
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [
+        "https://repair.eu/whats-my-right-to-repair/",
+        "https://repair.eu/news/i-used-to-just-call-a-guy-the-struggle-to-get-repair-information/",
+        "https://getyourrighttorepair.com/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Produktbezogene Rechteübersicht, bestehende vertrauliche Fallmeldung und Bericht über Reparaturinformations-Zugangsprobleme.",
+      "fokus": "Lokale Belegchronik nur bei dokumentierter Prozesslücke und akzeptiertem Export; kein weiteres Portal.",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-08",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          2,
+          5,
+          4,
+          1,
+          4
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-08"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-08",
+          "agent": "bibliothekar",
+          "runde": "PR179 Team-Nachprüfung 08.10.2026",
+          "notiz": "Scout/Reviewer lesen Primärseiten. R2R-Zugangsproblem und bestehendes Formular verifiziert. GetYourRepairRight/FixFirst als Wettbewerbsgegenprobe bewirbt Belegupload/Fallverwaltung; Betrieb, Startdatum und Erfolgsbeispiele nicht unabhängig bestätigt. Lokale Chronik23/35 Needs Research, keine persönliche Versandfreigabe.",
+          "status": "durchsucht"
         }
       ]
     }
