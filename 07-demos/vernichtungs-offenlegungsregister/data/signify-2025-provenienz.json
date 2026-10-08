@@ -1,0 +1,182 @@
+{
+  "url": "https://www.assets.signify.com/is/content/Signify/Assets/signify/global/20260504-signify-espr-disclosure.pdf",
+  "landingPage": "https://www.signify.com/global/sustainability",
+  "abgerufenAm": "2026-10-08",
+  "sha256": "84b597fe642d84548d1d7716201879067c9a33b8c0b6d8a7ec24819a22d1f617",
+  "seiten": 2,
+  "veroeffentlichungsmonatLautDokument": "2026-04",
+  "geschaeftsjahr": 2025,
+  "berichtszeitraum": {
+    "von": "2025-01-01",
+    "bis": "2025-12-31"
+  },
+  "unternehmen": "Signify N.V.",
+  "umfangDe": "Unverkaufte Verbraucherprodukte, die in EU-Märkten von Signify N.V. oder unter deren Verantwortung ausgesondert wurden.",
+  "praeventionDe": "Umgesetzt: Lagerbestände auf langsam verkäufliche Produkte prüfen und Nachfrageplanung anpassen; Bestände auf andere Märkte oder Vertriebskanäle umverteilen. Geplant: strengere Umsatz- und Margenschwellen im Portfolio mit Überprüfung, Überarbeitung oder Auslaufen vor der Produktionsausweitung.",
+  "seitenzuordnung": {
+    "1": [
+      "unternehmen",
+      "berichtszeitraum",
+      "veroeffentlichungsmonatLautDokument",
+      "umfangDe",
+      "praeventionDe",
+      "kennung",
+      "offenlegungsartOriginal"
+    ],
+    "2": [
+      "positionen"
+    ]
+  },
+  "positionen": [
+    {
+      "id": "signify-2025-39",
+      "seite": 2,
+      "tabellenzeile": 1,
+      "cnCodeOriginal": "39",
+      "warengruppeDe": "Kunststoff- und Kautschukwaren",
+      "stueckOriginal": "14",
+      "gewichtKgOriginal": "0,39",
+      "stueck": 14,
+      "gewichtKg": 0.39,
+      "verpackungOriginal": "No",
+      "verpackungEnthalten": false,
+      "grundOriginal": "No demand",
+      "gruendeDe": [
+        "fehlende Nachfrage"
+      ],
+      "vorbereitungWiederverwendungProzent": 0,
+      "recyclingProzent": 0,
+      "sonstigeVerwertungProzent": 0,
+      "beseitigungProzent": 100,
+      "vernichtungProzentLautQuelle": 0,
+      "unbekannterBehandlungswegProzent": 0,
+      "mengenErmittlung": "unbekannt"
+    },
+    {
+      "id": "signify-2025-85",
+      "seite": 2,
+      "tabellenzeile": 2,
+      "cnCodeOriginal": "85",
+      "warengruppeDe": "Elektrische Geräte und Teile",
+      "stueckOriginal": "2.061",
+      "gewichtKgOriginal": "1094,07",
+      "stueck": 2061,
+      "gewichtKg": 1094.07,
+      "verpackungOriginal": "No",
+      "verpackungEnthalten": false,
+      "grundOriginal": "No demand",
+      "gruendeDe": [
+        "fehlende Nachfrage"
+      ],
+      "vorbereitungWiederverwendungProzent": 0,
+      "recyclingProzent": 0,
+      "sonstigeVerwertungProzent": 0,
+      "beseitigungProzent": 100,
+      "vernichtungProzentLautQuelle": 0,
+      "unbekannterBehandlungswegProzent": 0,
+      "mengenErmittlung": "unbekannt"
+    },
+    {
+      "id": "signify-2025-8517",
+      "seite": 2,
+      "tabellenzeile": 3,
+      "cnCodeOriginal": "8517",
+      "warengruppeDe": "Telefon- und Kommunikationsgeräte",
+      "stueckOriginal": "210",
+      "gewichtKgOriginal": "136,06",
+      "stueck": 210,
+      "gewichtKg": 136.06,
+      "verpackungOriginal": "No",
+      "verpackungEnthalten": false,
+      "grundOriginal": "No demand",
+      "gruendeDe": [
+        "fehlende Nachfrage"
+      ],
+      "vorbereitungWiederverwendungProzent": 0,
+      "recyclingProzent": 0,
+      "sonstigeVerwertungProzent": 0,
+      "beseitigungProzent": 100,
+      "vernichtungProzentLautQuelle": 0,
+      "unbekannterBehandlungswegProzent": 0,
+      "mengenErmittlung": "unbekannt"
+    },
+    {
+      "id": "signify-2025-8539",
+      "seite": 2,
+      "tabellenzeile": 4,
+      "cnCodeOriginal": "8539",
+      "warengruppeDe": "Elektrische Lampen und LED-Lichtquellen",
+      "stueckOriginal": "157.922",
+      "gewichtKgOriginal": "136.302,11",
+      "stueck": 157922,
+      "gewichtKg": 136302.11,
+      "verpackungOriginal": "No",
+      "verpackungEnthalten": false,
+      "grundOriginal": "No demand",
+      "gruendeDe": [
+        "fehlende Nachfrage"
+      ],
+      "vorbereitungWiederverwendungProzent": 0,
+      "recyclingProzent": 0,
+      "sonstigeVerwertungProzent": 0,
+      "beseitigungProzent": 100,
+      "vernichtungProzentLautQuelle": 0,
+      "unbekannterBehandlungswegProzent": 0,
+      "mengenErmittlung": "unbekannt"
+    },
+    {
+      "id": "signify-2025-94",
+      "seite": 2,
+      "tabellenzeile": 5,
+      "cnCodeOriginal": "94",
+      "warengruppeDe": "Möbel, Leuchten und weitere Waren der Kategorie 94",
+      "stueckOriginal": "39.797",
+      "gewichtKgOriginal": "57.568,69",
+      "stueck": 39797,
+      "gewichtKg": 57568.69,
+      "verpackungOriginal": "No",
+      "verpackungEnthalten": false,
+      "grundOriginal": "No demand",
+      "gruendeDe": [
+        "fehlende Nachfrage"
+      ],
+      "vorbereitungWiederverwendungProzent": 0,
+      "recyclingProzent": 0,
+      "sonstigeVerwertungProzent": 0,
+      "beseitigungProzent": 100,
+      "vernichtungProzentLautQuelle": 0,
+      "unbekannterBehandlungswegProzent": 0,
+      "mengenErmittlung": "unbekannt"
+    },
+    {
+      "id": "signify-2025-48",
+      "seite": 2,
+      "tabellenzeile": 6,
+      "cnCodeOriginal": "48",
+      "warengruppeDe": "Papier und Pappwaren",
+      "stueckOriginal": "29",
+      "gewichtKgOriginal": "456,36",
+      "stueck": 29,
+      "gewichtKg": 456.36,
+      "verpackungOriginal": "No",
+      "verpackungEnthalten": false,
+      "grundOriginal": "No demand",
+      "gruendeDe": [
+        "fehlende Nachfrage"
+      ],
+      "vorbereitungWiederverwendungProzent": 0,
+      "recyclingProzent": 0,
+      "sonstigeVerwertungProzent": 0,
+      "beseitigungProzent": 100,
+      "vernichtungProzentLautQuelle": 0,
+      "unbekannterBehandlungswegProzent": 0,
+      "mengenErmittlung": "unbekannt"
+    }
+  ],
+  "kennung": {
+    "wert": "65220692",
+    "typ": "Niederländisches Handelsregister (KVK)",
+    "seite": 1
+  },
+  "offenlegungsartOriginal": "Standalone public disclosure"
+}

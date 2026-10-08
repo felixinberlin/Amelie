@@ -4,11 +4,9 @@
  *
  * Reiner, deterministischer TypeScript-Kern: kein DOM, kein Netzwerk, kein Modell.
  *
- * SCHEMA-STAND: VORLÄUFIG. Der Normtext der DVO (EU) 2026/2 (Art. 2/3, Anhang I),
- * der Delegierten VO (EU) 2026/296 und von ESPR Art. 24 Abs. 1 wurde NICHT gelesen
- * (Seitenabruf gesperrt). Jedes Feld unten ist eine Annahme aus Sekundärquellen
- * (Kanzlei- und Anbieterschnipsel) und in `ANNAHMEN` einzeln benannt. Es gibt
- * bewusst keine Feldnummern aus Anhang I — die sind unbekannt.
+ * Anhang I / Artikel 1–3 der DVO (EU) 2026/2 im Volltext geprüft am 2026-10-08.
+ * Dies ist ein Übertragungsmodell, keine Rechtsprüfung oder Feststellung der Pflicht.
+ * Historische Quellen bleiben unverändert; zukünftige Formatfragen nur explizit.
  *
  * Harte Invarianten (Safety Case):
  *  1. Das Register kennt genau zwei Status: `gefunden` und
@@ -18,7 +16,7 @@
  *  2. Jeder Befund ist eine Frage mit Regel-ID und Klartext (De/En). Der Prüfer
  *     urteilt nicht über Unternehmen, er stellt Rückfragen an die Übertragung.
  *  3. Kein Ergebnis enthält ein Gesamturteil. Null Befunde heißt nur: keine der
- *     sechs Regeln hat eine Frage ausgelöst.
+ *     Regeln hat eine Frage ausgelöst.
  *  4. Ungültige Eingaben (fehlende Quelle, leerer Suchweg, negativer Anteil,
  *     unbekannter Behandlungsweg, Widerspruch gefunden/nicht gefunden) werfen
  *     einen Fehler — nichts wird still ignoriert.
@@ -32,11 +30,11 @@
 // Schema-Stand und Annahmen
 // ---------------------------------------------------------------------------
 
-/** Stand des Anhang-I-Schemas. Fällt erst, wenn Feld für Feld gegen den Normtext geprüft ist. */
+/** Stand des übertragenen Anhang-I-Modells, unabhängig von der Pflicht einer Quelle. */
 export type SchemaStatus = 'vorläufig' | `gegen Normtext geprüft am ${string}`;
 
-/** Aktueller Stand: vorläufig, weil der Normtext nicht gelesen wurde. */
-export const SCHEMA_STATUS: SchemaStatus = 'vorläufig';
+/** Anhang-I-Feldmodell gegen die Primärquelle geprüft. */
+export const SCHEMA_STATUS: SchemaStatus = 'gegen Normtext geprüft am 2026-10-08';
 
 /** Eine benannte Annahme über ein Feld, mit Herkunft. */
 export interface Annahme {
@@ -47,46 +45,16 @@ export interface Annahme {
 }
 
 /**
- * Alle Feldannahmen des vorläufigen Schemas. Wortgleich (feld) mit
+ * Dokumentierte Feldzuordnungen. Wortgleich (feld) mit
  * `x-annahmen` in `07-demos/vernichtungs-offenlegungsregister/anhang1-schema.json`.
  */
 export const ANNAHMEN: readonly Annahme[] = [
-  {
-    feld: 'stueck',
-    annahmeDe: 'Menge je Warengruppe in Stück.',
-    annahmeEn: 'Quantity per product group in units.',
-    herkunft: 'Kanzlei-Schnipsel (Cooley 07.05.2026, Freshfields) zu ESPR Art. 24 Abs. 1 lit. a; Normtext nicht gelesen',
-  },
-  {
-    feld: 'gewichtKg',
-    annahmeDe: 'Gewicht je Warengruppe in Kilogramm.',
-    annahmeEn: 'Weight per product group in kilograms.',
-    herkunft: 'Kanzlei- und Anbieterschnipsel zu DVO (EU) 2026/2 Anhang I; Normtext nicht gelesen',
-  },
-  {
-    feld: 'gruende',
-    annahmeDe: 'Gründe als Codes aus der Ausnahmeliste (ESPR Art. 25 Abs. 5, präzisiert durch Delegierte VO (EU) 2026/296).',
-    annahmeEn: 'Reasons as codes from the derogation list (ESPR Art. 25(5), specified by Delegated Reg. (EU) 2026/296).',
-    herkunft: 'Kanzleischnipsel (Linklaters, Cattwyk); Liste unten sinngemäß, nicht wortgleich; Normtext nicht gelesen',
-  },
-  {
-    feld: 'behandlungswege',
-    annahmeDe: 'Anteile je Behandlungsweg entlang der Abfallhierarchie in Prozent.',
-    annahmeEn: 'Shares per treatment route along the waste hierarchy in percent.',
-    herkunft: 'Schnipsel zu ESPR Art. 24 Abs. 1 lit. c; Prozentform ist eine Annahme',
-  },
-  {
-    feld: 'cnCode',
-    annahmeDe: 'Warengruppe als achtstelliger Code der Kombinierten Nomenklatur (KN/CN).',
-    annahmeEn: 'Product group as an eight-digit Combined Nomenclature (CN) code.',
-    herkunft: 'Anbieterschnipsel (Generation Impact) zu Anhang I; Normtext nicht gelesen',
-  },
-  {
-    feld: 'geschaetzt',
-    annahmeDe: 'Kennzeichnung, ob Mengen gemessen oder geschätzt sind.',
-    annahmeEn: 'Flag whether quantities are measured or estimated.',
-    herkunft: 'Kanzleischnipsel zu DVO (EU) 2026/2; Normtext nicht gelesen',
-  },
+  { feld: 'stueck', annahmeDe: 'Stückzahl je Kategorie und Grund; Schätzung separat.', annahmeEn: 'Units per category and reason; separate estimate marker.', herkunft: 'DVO 2026/2 Anhang I Abschnitt 2 Fußnoten 6/8' },
+  { feld: 'gewichtKg', annahmeDe: 'Gewicht in kg; Verpackung separat gekennzeichnet.', annahmeEn: 'Weight in kg; packaging separately indicated.', herkunft: 'DVO 2026/2 Anhang I Abschnitt 2 Fußnote 7' },
+  { feld: 'gruende', annahmeDe: 'Freie Gründe; Ausnahmen nur wo einschlägig.', annahmeEn: 'Free reasons; derogations only where applicable.', herkunft: 'DVO 2026/2 Anhang I Abschnitt 2 Fußnote 8' },
+  { feld: 'behandlungswege', annahmeDe: 'Fünf gewichtsbezogene Anteile einschließlich unbekannt; Vernichtung als separate Summe.', annahmeEn: 'Five weight-based shares including unknown; destruction as separate subtotal.', herkunft: 'DVO 2026/2 Anhang I Abschnitt 2 Fußnote Behandlungswege' },
+  { feld: 'cnCode', annahmeDe: 'Zwei Stellen allgemein, vier für Anhang II.', annahmeEn: 'Two digits generally, four for Annex II.', herkunft: 'DVO 2026/2 Artikel 3 und Anhang II' },
+  { feld: 'schaetzungStueck/schaetzungGewicht', annahmeDe: 'Schätzwerte einzeln mit ± markieren; fehlender Marker ist keine behauptete Schätzung.', annahmeEn: 'Mark each estimated value with ±; missing marker does not establish estimation.', herkunft: 'DVO 2026/2 Anhang I Abschnitt 2 Fußnoten 6/7' },
 ] as const;
 
 // ---------------------------------------------------------------------------
@@ -97,37 +65,29 @@ export const ANNAHMEN: readonly Annahme[] = [
 export type Unbekannt = 'unbekannt';
 
 /**
- * Behandlungswege entlang der Abfallhierarchie (Annahme). `sonstige-verwertung`
+ * Behandlungswege nach Anhang I, einschließlich unbekannt. `sonstige-verwertung`
  * umfasst u. a. energetische Verwertung.
  */
 export type Behandlungsweg =
   | 'vorbereitung-wiederverwendung'
-  | 'wiederaufbereitung'
   | 'recycling'
   | 'sonstige-verwertung'
-  | 'beseitigung';
+  | 'beseitigung'
+  | 'unbekannt';
 
 export const BEHANDLUNGSWEGE: readonly Behandlungsweg[] = [
   'vorbereitung-wiederverwendung',
-  'wiederaufbereitung',
   'recycling',
   'sonstige-verwertung',
   'beseitigung',
+  'unbekannt',
 ] as const;
 
 /**
- * Vorläufige Ausnahmeliste (sinngemäß nach Sekundärquellen zu ESPR Art. 25 Abs. 5 /
- * Delegierte VO (EU) 2026/296). Codes sind Amélie-intern, keine Normbezeichner.
+ * Kein abschließender Katalog von Offenlegungsgründen: Ausnahmen sind bedingt.
  */
-export const AUSNAHME_GRUENDE: readonly string[] = [
-  'gesundheit-hygiene-sicherheit',
-  'schaden-nicht-reparierbar',
-  'ungeeignet-fuer-zweck',
-  'spende-abgelehnt',
-  'ungeeignet-fuer-wiederverwendung',
-  'geistiges-eigentum',
-  'geringste-umweltwirkung',
-] as const;
+/** @deprecated No whitelist applies to disclosure reasons; retained for imports only. */
+export const AUSNAHME_GRUENDE: readonly string[] = [];
 
 /** Anteil eines Behandlungswegs in Prozent. */
 export interface WegAnteil {
@@ -142,8 +102,12 @@ export interface Position {
   cnCode?: string | Unbekannt;
   stueck: number | Unbekannt;
   gewichtKg: number | Unbekannt;
-  /** Fehlt das Feld, fragt Regel V5 nach. */
+  /** @deprecated Alte gemeinsame Kennzeichnung; neue Übertragungen nutzen die beiden einzelnen Felder. */
   geschaetzt?: boolean;
+  schaetzungStueck?: boolean | Unbekannt;
+  schaetzungGewicht?: boolean | Unbekannt;
+  verpackung?: boolean | Unbekannt;
+  vernichtetProzent?: number | Unbekannt;
   gruende: string[] | Unbekannt;
   behandlungswege: WegAnteil[] | Unbekannt;
 }
@@ -166,6 +130,11 @@ export interface Offenlegung {
   quelle: Quelle;
   positionen: Position[];
   freitext?: string;
+  /** Historical is the default: Annex I is not retroactively required. */
+  pruefmodus?: 'historisch' | 'anhang-i';
+  zeitraum?: { von: string; bis: string };
+  rechtstraeger?: { kennung: string; typ: string; art: 'einzeln' | 'konsolidiert'; mitglieder: string[] };
+  praevention?: { getroffen: string | Unbekannt; geplant: string | Unbekannt };
 }
 
 /** Nachweis einer erfolglosen Suche: Stand und Suchweg sind Pflicht. */
@@ -178,14 +147,16 @@ export interface Suchnachweis {
   suchweg: { orte: string[]; suchbegriffe: string[] };
 }
 
-/** Die sechs deterministischen Regeln. */
+/** Deterministische Rückfrageregeln, keine rechtliche Bewertung. */
 export type RegelId =
   | 'V0-FREITEXT'
   | 'V1-PROZENTSUMME'
   | 'V2-GRUND'
   | 'V3-CN-CODE'
   | 'V4-STUECK-GEWICHT'
-  | 'V5-SCHAETZUNG';
+  | 'V5-SCHAETZUNG'
+  | 'V6-VERNICHTUNGSSUMME'
+  | 'V7-ANHANG-FELD';
 
 /** Ein Befund ist immer eine Frage an die Übertragung, nie ein Urteil. */
 export interface Befund {
@@ -231,8 +202,8 @@ export interface RegisterZeile {
 // Konstanten und Hilfen
 // ---------------------------------------------------------------------------
 
-/** Rundungstoleranz für die Prozentsumme, in Prozentpunkten (Annahme). */
-export const PROZENT_TOLERANZ = 0.5;
+/** Technische Toleranz für fünf auf ganze Prozent gerundete Anteile, keine Rechtsregel. */
+export const PROZENT_TOLERANZ = 2; // Five whole-number shares: engineering rounding tolerance, not legal exemption.
 
 /**
  * Grobe Spannen kg je Stück nach KN-Kapitel (Heuristik, keine Norm). Sie sollen
@@ -275,7 +246,7 @@ export function istNeutral(text: string): boolean {
 const ISO_DATUM = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/;
 
 function pruefeDatum(wert: unknown, feld: string): string {
-  if (typeof wert !== 'string' || !ISO_DATUM.test(wert) || Number.isNaN(Date.parse(wert))) {
+  if (typeof wert !== 'string' || !ISO_DATUM.test(wert) || (Number.isNaN(Date.parse(wert)) || new Date(wert).toISOString().slice(0, 10) !== wert)) {
     throw new Error(`${feld}: kein gültiges ISO-Datum (JJJJ-MM-TT): ${String(wert)}`);
   }
   return wert;
@@ -298,17 +269,19 @@ function befund(regel: RegelId, position: string | null, frageDe: string, frageE
 }
 
 /**
- * Formale Prüfung eines KN-Codes. Gültig: genau acht Ziffern (Leerzeichen und
- * Punkte werden ignoriert), Kapitel 01–97 ohne das unbelegte Kapitel 77.
+ * Formale Prüfung der Anhang-I-Kategorie: zwei oder gelistete vier Ziffern.
+ * Kapitel 01–97 ohne das unbelegte Kapitel 77; kein Tarifierungsnachweis.
  * Liefert `null` bei gültigem Code, sonst den Grund.
  */
-export function cnCodeProblem(code: string): 'format' | 'kapitel' | 'nur-hs-ebene' | null {
-  const ziffern = code.replace(/[\s.]/g, '');
-  if (!/^\d+$/.test(ziffern)) return 'format';
-  if (ziffern.length === 4 || ziffern.length === 6) return 'nur-hs-ebene';
-  if (ziffern.length !== 8) return 'format';
-  const kapitel = Number(ziffern.slice(0, 2));
+/** Exhaustive four-digit categories from Annex II (2026/2). */
+export const CN_VIERSTELLIG = ['3401','3402','4011','4202','4203','4303','4818','6301','6302','6303','6304','6306','6307','8415','8418','8421','8422','8423','8443','8450','8467','8471','8506','8507','8508','8509','8510','8513','8516','8517','8518','8519','8521','8523','8524','8528','8539','9006','9401','9403','9404','9503','9504','9619'] as const;
+export function cnCodeProblem(code: string): 'format' | 'kapitel' | 'granularitaet' | null {
+  const z = code.replace(/[\s.]/g, '');
+  if (!/^\d+$/.test(z)) return 'format';
+  const kapitel = Number(z.slice(0, 2));
   if (kapitel < 1 || kapitel > 97 || kapitel === 77) return 'kapitel';
+  if (z.length !== 2 && z.length !== 4) return 'format';
+  if (z.length === 4 && !(CN_VIERSTELLIG as readonly string[]).includes(z)) return 'granularitaet';
   return null;
 }
 
@@ -317,12 +290,12 @@ export function cnCodeProblem(code: string): 'format' | 'kapitel' | 'nur-hs-eben
 // ---------------------------------------------------------------------------
 
 /**
- * Prüft eine übertragene Offenlegung deterministisch gegen das vorläufige
- * Anhang-I-Schema. Ohne Netz, ohne Modell. Jeder Befund ist eine Frage.
+ * Prüft Quellenarithmetik und bei ausdrücklicher Auswahl das zukünftige
+ * Anhang-I-Feldmodell. Ohne Netz, ohne Modell. Jeder Befund ist eine Frage.
  *
  * Regeln: V0 Freitext ohne Tabelle · V1 Prozentsumme der Behandlungswege ≠ 100 ·
- * V2 Grund außerhalb der vorläufigen Ausnahmeliste · V3 KN-Code formal ·
- * V4 Stück und Gewicht passen nicht zueinander · V5 Schätzkennzeichnung fehlt.
+ * V2 fehlender Grund oder mehrere Gründe in einer Zeile · V3 KN-Kategorie ·
+ * V4 Mengenheuristik · V5 Schätzbasis · V6 Vernichtungssumme · V7 Formatfelder.
  *
  * @throws bei ungültiger Eingabe (siehe Invariante 4)
  */
@@ -338,6 +311,20 @@ export function pruefeOffenlegung(o: Offenlegung): PruefErgebnis {
     throw new Error('Format „tabelle" ohne Positionen — als „freitext" übertragen oder Positionen ergänzen');
   }
 
+  if (o.pruefmodus !== undefined && o.pruefmodus !== 'historisch' && o.pruefmodus !== 'anhang-i') throw new Error('Unbekannter Prüfmodus');
+  if (o.zeitraum !== undefined && (!o.zeitraum || typeof o.zeitraum !== 'object')) throw new Error('zeitraum: Objekt erwartet');
+  if (o.rechtstraeger !== undefined) {
+    const r=o.rechtstraeger;
+    if (!r || typeof r !== 'object' || typeof r.kennung !== 'string' || !r.kennung.trim() || typeof r.typ !== 'string' || !r.typ.trim() || !['einzeln','konsolidiert'].includes(r.art) || !Array.isArray(r.mitglieder) || r.mitglieder.some(m=>typeof m!=='string'||!m.trim())) throw new Error('rechtstraeger: ungültige Angaben');
+  }
+  if (o.praevention !== undefined) {
+    const r=o.praevention;
+    if (!r || typeof r!=='object' || typeof r.getroffen!=='string' || !r.getroffen.trim() || typeof r.geplant!=='string'||!r.geplant.trim()) throw new Error('praevention: ungültige Angaben');
+  }
+  if (o.zeitraum) {
+    pruefeDatum(o.zeitraum.von, 'zeitraum.von'); pruefeDatum(o.zeitraum.bis, 'zeitraum.bis');
+    if (o.zeitraum.von > o.zeitraum.bis) throw new Error('Geschäftsjahr endet vor Beginn');
+  }
   const befunde: Befund[] = [];
   const felderUnbekannt: string[] = [];
 
@@ -351,16 +338,26 @@ export function pruefeOffenlegung(o: Offenlegung): PruefErgebnis {
       )
     );
     if (o.positionen.length === 0) {
-      felderUnbekannt.push('*.stueck', '*.gewichtKg', '*.gruende', '*.behandlungswege', '*.cnCode', '*.geschaetzt');
+      felderUnbekannt.push('*.stueck', '*.gewichtKg', '*.gruende', '*.behandlungswege', '*.cnCode', '*.schaetzungStueck', '*.schaetzungGewicht', '*.verpackung', '*.vernichtetProzent');
     }
   }
 
+  if (o.pruefmodus === 'anhang-i') {
+    for (const [feld, vorhanden] of [
+      ['zeitraum', Boolean(o.zeitraum)],
+      ['rechtstraeger', Boolean(o.rechtstraeger?.kennung?.trim() && o.rechtstraeger?.typ?.trim() && (o.rechtstraeger.art === 'einzeln' || (o.rechtstraeger.art === 'konsolidiert' && o.rechtstraeger.mitglieder.length)))],
+      ['praevention.getroffen', Boolean(o.praevention?.getroffen?.trim() && o.praevention.getroffen !== 'unbekannt')],
+      ['praevention.geplant', Boolean(o.praevention?.geplant?.trim() && o.praevention.geplant !== 'unbekannt')],
+    ] as const) {
+      if (!vorhanden) { felderUnbekannt.push(feld); befunde.push(befund('V7-ANHANG-FELD', null, `Für den ausdrücklich gewählten zukünftigen Anhang-I-Vergleich fehlt ${feld}. Lässt sich das Feld aus der Quelle übertragen?`, `For the explicitly selected future Annex I comparison, ${feld} is missing. Can it be transcribed from the source?`)); }
+    }
+  }
   const ids = new Set<string>();
   for (const p of o.positionen) {
     if (typeof p.id !== 'string' || p.id === '') throw new Error('Position ohne id');
     if (ids.has(p.id)) throw new Error(`Doppelte Positions-ID: ${p.id}`);
     ids.add(p.id);
-    pruefePosition(p, befunde, felderUnbekannt);
+    pruefePosition(p, befunde, felderUnbekannt, o.pruefmodus === 'anhang-i');
   }
 
   return {
@@ -380,7 +377,10 @@ function pruefeZahl(wert: number | Unbekannt, feld: string): number | null {
   return wert;
 }
 
-function pruefePosition(p: Position, befunde: Befund[], unbekannt: string[]): void {
+function pruefePosition(p: Position, befunde: Befund[], unbekannt: string[], anhang: boolean): void {
+  if (p.cnCode !== undefined && typeof p.cnCode !== 'string') throw new Error(`${p.id}.cnCode: Zeichenkette erwartet`);
+  if (typeof p.warengruppe !== 'string' || !p.warengruppe.trim()) throw new Error(`${p.id}: Warengruppenbeschreibung fehlt`);
+  if (p.verpackung !== undefined && p.verpackung !== 'unbekannt' && typeof p.verpackung !== 'boolean') throw new Error(`${p.id}: ungültige Verpackungsangabe`);
   const stueck = pruefeZahl(p.stueck, `${p.id}.stueck`);
   const kg = pruefeZahl(p.gewichtKg, `${p.id}.gewichtKg`);
   if (stueck === null) unbekannt.push(`${p.id}.stueck`);
@@ -392,13 +392,17 @@ function pruefePosition(p: Position, befunde: Befund[], unbekannt: string[]): vo
   } else {
     if (!Array.isArray(p.behandlungswege)) throw new Error(`${p.id}.behandlungswege: Array oder „unbekannt" erwartet`);
     let summe = 0;
+    const gesehen = new Set<string>();
     for (const w of p.behandlungswege) {
       if (!BEHANDLUNGSWEGE.includes(w.weg)) throw new Error(`${p.id}: unbekannter Behandlungsweg „${String(w.weg)}"`);
       if (typeof w.anteilProzent !== 'number' || !(w.anteilProzent >= 0 && w.anteilProzent <= 100)) {
         throw new Error(`${p.id}: Anteil für ${w.weg} außerhalb 0–100: ${String(w.anteilProzent)}`);
       }
+      if (gesehen.has(w.weg)) throw new Error(`${p.id}: doppelter Behandlungsweg`);
+      gesehen.add(w.weg);
       summe += w.anteilProzent;
     }
+    if (anhang && BEHANDLUNGSWEGE.some(route=>!gesehen.has(route))) befunde.push(befund('V7-ANHANG-FELD',p.id,'Im zukünftigen Anhang-I-Vergleich sind nicht alle fünf Behandlungswege übertragen. Welche Anteile nennt die Quelle einschließlich unbekannt?', 'For the future Annex I comparison not all five treatment routes were transcribed. Which shares does the source give, including unknown?'));
     if (p.behandlungswege.length === 0 || Math.abs(summe - 100) > PROZENT_TOLERANZ) {
       const s = fmt(summe);
       befunde.push(
@@ -416,7 +420,7 @@ function pruefePosition(p: Position, befunde: Befund[], unbekannt: string[]): vo
     }
   }
 
-  // V2 — Grund aus der Ausnahmeliste
+  // V2 — freie Gründe; mehrere Gründe benötigen im Anhang-I-Vergleich getrennte Zeilen
   if (p.gruende === 'unbekannt') {
     unbekannt.push(`${p.id}.gruende`);
   } else {
@@ -431,27 +435,24 @@ function pruefePosition(p: Position, befunde: Befund[], unbekannt: string[]): vo
         )
       );
     }
-    p.gruende.forEach((g, i) => {
-      if (typeof g !== 'string') throw new Error(`${p.id}.gruende[${i}]: Zeichenkette erwartet`);
-      if (!AUSNAHME_GRUENDE.includes(g)) {
-        // Übertragener Freitext wird nur zitiert, wenn er selbst neutral ist;
-        // sonst verweist die Frage auf die Nummer des Grundes.
-        const zitatDe = istNeutral(g) ? `„${g}"` : `Nr. ${i + 1}`;
-        const zitatEn = istNeutral(g) ? `"${g}"` : `no. ${i + 1}`;
-        befunde.push(
-          befund(
-            'V2-GRUND',
-            p.id,
-            `Der Grund ${zitatDe} steht nicht auf der vorläufigen Ausnahmeliste. Entspricht er einer Ausnahme nach Art. 25 Abs. 5 ESPR, oder ist es ein freier Grund?`,
-            `The reason ${zitatEn} is not on the provisional derogation list. Does it match a derogation under Art. 25(5) ESPR, or is it a free-text reason?`
-          )
-        );
-      }
-    });
+    if (p.gruende.some((g) => typeof g !== 'string' || !g.trim())) throw new Error(`${p.id}: leerer oder ungültiger Grund`);
+    if (anhang && p.gruende.length > 1) befunde.push(befund('V2-GRUND', p.id, 'Mehrere Gründe stehen in einer Zeile. Lassen sich Stückzahl und Gewicht nach Grund auf getrennte Zeilen verteilen?', 'Several reasons appear in one row. Can units and weight be split into separate rows by reason?'));
+  }
+  if (p.vernichtetProzent === 'unbekannt' || p.vernichtetProzent === undefined) unbekannt.push(`${p.id}.vernichtetProzent`);
+  else {
+    if (typeof p.vernichtetProzent !== 'number' || !Number.isFinite(p.vernichtetProzent) || p.vernichtetProzent < 0 || p.vernichtetProzent > 100) throw new Error(`${p.id}: ungültige Vernichtungssumme`);
+    if (p.behandlungswege !== 'unbekannt' && ['recycling','sonstige-verwertung','beseitigung'].every(route=>p.behandlungswege !== 'unbekannt' && p.behandlungswege.some(w=>w.weg===route))) {
+      const sum = p.behandlungswege.filter(w => ['recycling','sonstige-verwertung','beseitigung'].includes(w.weg)).reduce((a,w) => a+w.anteilProzent,0);
+      if (Math.abs(sum-p.vernichtetProzent)>2) befunde.push(befund('V6-VERNICHTUNGSSUMME',p.id,`Die Quelle nennt ${p.vernichtetProzent} % Gesamtvernichtung, die drei Teilwege ergeben ${fmt(sum)} %. Sind die Ausgangswerte richtig übertragen?`,`The source states ${p.vernichtetProzent}% total destruction while the three component routes add up to ${fmt(sum)}%. Were the source values transcribed correctly?`));
+    } else unbekannt.push(`${p.id}.vernichtungssumme.berechnung`);
+  }
+  if (typeof p.verpackung !== 'boolean') {
+    unbekannt.push(`${p.id}.verpackung`);
+    if (anhang) befunde.push(befund('V7-ANHANG-FELD',p.id,'Im zukünftigen Anhang-I-Vergleich fehlt die Verpackungsangabe. Enthält das Gewicht die Verpackung?','For the future Annex I comparison the packaging flag is missing. Does the weight include packaging?'));
   }
 
   // V3 — KN-Code formal
-  const cnKapitel = pruefeCn(p, befunde, unbekannt);
+  const cnKapitel = anhang ? pruefeCn(p, befunde, unbekannt) : (p.cnCode?.slice(0, 2) ?? null);
 
   // V4 — Stück und Gewicht zueinander
   if (stueck !== null && kg !== null) {
@@ -481,52 +482,23 @@ function pruefePosition(p: Position, befunde: Befund[], unbekannt: string[]): vo
     }
   }
 
-  // V5 — Schätzkennzeichnung
-  if ((stueck !== null || kg !== null) && typeof p.geschaetzt !== 'boolean') {
-    befunde.push(
-      befund(
-        'V5-SCHAETZUNG',
-        p.id,
-        'Die Mengen tragen keine Kennzeichnung „gemessen" oder „geschätzt". Sagt die Offenlegung, wie sie ermittelt wurden?',
-        'The quantities carry no "measured" or "estimated" flag. Does the disclosure say how they were determined?'
-      )
-    );
+  if (anhang && [stueck,kg,...(p.behandlungswege==='unbekannt'?[]:p.behandlungswege.map(w=>w.anteilProzent)),p.vernichtetProzent].some(n=>typeof n==='number'&&!Number.isInteger(n))) befunde.push(befund('V7-ANHANG-FELD',p.id,'Die übertragenen Originalwerte enthalten Nachkommastellen. Soll für den zukünftigen Anhang-I-Vergleich zusätzlich eine auf ganze Zahlen gerundete Darstellung erstellt werden?', 'The transcribed source values contain decimals. Should a separate whole-number presentation be created for the future Annex I comparison?'));
+  // Estimated quantities are marked independently; absent markers mean unknown.
+  for (const feld of ['schaetzungStueck','schaetzungGewicht'] as const) {
+    const wert = p[feld];
+    if (wert !== undefined && wert !== 'unbekannt' && typeof wert !== 'boolean') throw new Error(`${p.id}.${feld}: ungültige Schätzkennzeichnung`);
+    if (typeof wert !== 'boolean') unbekannt.push(`${p.id}.${feld}`);
   }
+  if (anhang && (p.schaetzungStueck === true && p.schaetzungGewicht === true)) befunde.push(befund('V5-SCHAETZUNG',p.id,'Beide Mengen sind als geschätzt übertragen. Welche genau bestimmte Ausgangsgröße wurde für die Schätzung verwendet?','Both quantities are transcribed as estimated. Which accurately determined baseline was used for estimation?'));
 }
 
 function pruefeCn(p: Position, befunde: Befund[], unbekannt: string[]): string | null {
-  if (p.cnCode === undefined || p.cnCode === 'unbekannt') {
-    unbekannt.push(`${p.id}.cnCode`);
-    return null;
-  }
+  if (p.cnCode === undefined || p.cnCode === 'unbekannt') { unbekannt.push(`${p.id}.cnCode`); return null; }
   if (typeof p.cnCode !== 'string') throw new Error(`${p.id}.cnCode: Zeichenkette erwartet`);
-  const problem = cnCodeProblem(p.cnCode);
-  const z = istNeutral(p.cnCode) ? p.cnCode : '(Code)';
-  if (problem === null) return p.cnCode.replace(/[\s.]/g, '').slice(0, 2);
-  if (problem === 'nur-hs-ebene') {
-    befunde.push(
-      befund(
-        'V3-CN-CODE',
-        p.id,
-        `„${z}" ist nur auf HS-Ebene (4 oder 6 Stellen). Nennt die Offenlegung den achtstelligen KN-Code?`,
-        `"${z}" is at HS level only (4 or 6 digits). Does the disclosure give the eight-digit CN code?`
-      )
-    );
-    return p.cnCode.replace(/[\s.]/g, '').slice(0, 2);
-  }
-  befunde.push(
-    befund(
-      'V3-CN-CODE',
-      p.id,
-      problem === 'kapitel'
-        ? `„${z}" beginnt mit einem Kapitel, das es in der KN nicht gibt. Ist der Code richtig übertragen?`
-        : `„${z}" hat nicht die Form eines achtstelligen KN-Codes. Ist der Code richtig übertragen?`,
-      problem === 'kapitel'
-        ? `"${z}" starts with a chapter that does not exist in the CN. Was the code transcribed correctly?`
-        : `"${z}" is not shaped like an eight-digit CN code. Was the code transcribed correctly?`
-    )
-  );
-  return null;
+  const code=p.cnCode.replace(/[\s.]/g,'');
+  if (cnCodeProblem(code) !== null) befunde.push(befund('V3-CN-CODE',p.id,'Für den zukünftigen Anhang-I-Vergleich sind zwei Stellen oder die gelisteten vierstelligen Kategorien vorgesehen. Welche Kategorie ergibt sich aus der Produktbeschreibung?','For the future Annex I comparison, two digits or the listed four-digit categories are specified. Which category follows from the product description?'));
+  else if (code.length===2 && CN_VIERSTELLIG.some(c=>c.startsWith(code))) befunde.push(befund('V3-CN-CODE',p.id,'Das Kapitel enthält vierstellig zu meldende Kategorien. Gehört das beschriebene Produkt zu einer Kategorie aus Anhang II?','This chapter contains categories reported at four digits. Does the described product belong to an Annex II category?'));
+  return code.slice(0,2);
 }
 
 // ---------------------------------------------------------------------------

@@ -1,7 +1,9 @@
 # Ticket 01: Anhang I als Schema, ein Prüfer, eine echte Offenlegung
 
 **Komponente:** `07-demos/vernichtungs-offenlegungsregister` / `src/engine/vernichtungs-offenlegungsregister`
-**Status:** Offen (Prüfer, Register und Tests fertig; Normtext-Abgleich und Signify-Fixture stehen aus)
+**Status:** Historischer Vertrag vom 28.09.2026; fachlich durch [Ticket 02](ticket-02-normtext-und-realfixture.md) ersetzt.
+
+> Die folgenden Aufgabenstände und Akzeptanzkriterien sind archiviert und bleiben unverändert nachvollziehbar. Der Normtext-Abgleich am 08.10.2026 hat insbesondere Ausnahmewhitelist und Achtstellengebot widerlegt; aktueller Stand im [Normtext-Abgleich](normtext-abgleich-2026-10-08.md).
 **Zuständigkeit:** Civic Tech / Umweltvollzug
 **Zugehörige Dose:** [`05-dosen/vernichtungs-offenlegungsregister.md`](../../05-dosen/vernichtungs-offenlegungsregister.md) · [Die Dose online](https://felixinberlin.github.io/Amelie/#dose=vernichtungs-offenlegungsregister)
 

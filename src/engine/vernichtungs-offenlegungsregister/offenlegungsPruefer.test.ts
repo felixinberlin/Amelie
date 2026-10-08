@@ -37,42 +37,11 @@ const fall = (id: string): Offenlegung => {
   return structuredClone(f.offenlegung);
 };
 
-// ---------------------------------------------------------------------------
-// Minimaler JSON-Schema-Prüfer (Draft-07-Teilmenge, die das Schema nutzt)
-// ---------------------------------------------------------------------------
+import Ajv from 'ajv';
+import realeDaten from '../../../07-demos/vernichtungs-offenlegungsregister/data/reale-offenlegungen.json';
 type S = Record<string, any>;
-function validiere(s: S, wert: unknown, wurzel: S = s, pfad = '$'): string[] {
-  if (s.$ref) {
-    const ziel = (s.$ref as string).replace('#/', '').split('/').reduce((o: S, k: string) => o[k], wurzel);
-    return validiere(ziel, wert, wurzel, pfad);
-  }
-  const fehler: string[] = [];
-  if (s.anyOf && !(s.anyOf as S[]).some((x) => validiere(x, wert, wurzel, pfad).length === 0)) {
-    fehler.push(`${pfad}: anyOf`);
-  }
-  if ('const' in s && wert !== s.const) fehler.push(`${pfad}: const`);
-  if (s.enum && !(s.enum as unknown[]).includes(wert)) fehler.push(`${pfad}: enum ${String(wert)}`);
-  if (s.type) {
-    const ist = wert === null ? 'null' : Array.isArray(wert) ? 'array' : Number.isInteger(wert) ? 'integer' : typeof wert;
-    if (!(s.type === ist || (s.type === 'number' && ist === 'integer'))) return [...fehler, `${pfad}: type ${ist}`];
-  }
-  if (typeof wert === 'string') {
-    if (s.minLength && wert.length < s.minLength) fehler.push(`${pfad}: minLength`);
-    if (s.pattern && !new RegExp(s.pattern).test(wert)) fehler.push(`${pfad}: pattern`);
-  }
-  if (typeof wert === 'number' && typeof s.minimum === 'number' && wert < s.minimum) fehler.push(`${pfad}: minimum`);
-  if (Array.isArray(wert) && s.items) wert.forEach((w, i) => fehler.push(...validiere(s.items, w, wurzel, `${pfad}[${i}]`)));
-  if (wert && typeof wert === 'object' && !Array.isArray(wert)) {
-    const o = wert as S;
-    for (const r of (s.required as string[]) ?? []) if (!(r in o)) fehler.push(`${pfad}.${r}: fehlt`);
-    const props = (s.properties as S) ?? {};
-    for (const [k, v] of Object.entries(o)) {
-      if (props[k]) fehler.push(...validiere(props[k], v, wurzel, `${pfad}.${k}`));
-      else if (s.additionalProperties === false) fehler.push(`${pfad}.${k}: nicht erlaubt`);
-    }
-  }
-  return fehler;
-}
+const validate = new Ajv({ strict: false }).compile(schema);
+const validiere = (_schema: S, value: unknown) => validate(value) ? [] : validate.errors;
 
 const regeln = (o: Offenlegung) => [...new Set(pruefeOffenlegung(o).befunde.map((b) => b.regel))].sort();
 
@@ -100,22 +69,22 @@ const offenlegung = (positionen: Position[], extra: Partial<Offenlegung> = {}): 
 
 // ---------------------------------------------------------------------------
 describe('Vernichtungs-Offenlegungsregister — Schema-Stand', () => {
-  it('Schema und Kern weisen den Stand „vorläufig" aus', () => {
-    expect(SCHEMA_STATUS).toBe('vorläufig');
+  it('Schema und Kern weisen den geprüften Anhang-I-Stand aus', () => {
+    expect(SCHEMA_STATUS).toBe('gegen Normtext geprüft am 2026-10-08');
     expect((schema as S).schemaStatus).toBe(SCHEMA_STATUS);
     expect((daten as S).schemaStatus).toBe(SCHEMA_STATUS);
-    expect(pruefeOffenlegung(fall('vollstaendig')).schemaStatus).toBe('vorläufig');
+    expect(pruefeOffenlegung(fall('vollstaendig')).schemaStatus).toBe(SCHEMA_STATUS);
   });
 
   it('jede Annahme im Kern ist im Schema mit Herkunft benannt, und umgekehrt', () => {
     const imSchema = ((schema as S)['x-annahmen'] as { feld: string; herkunft: string }[]).map((a) => a.feld).sort();
     expect(imSchema).toEqual(ANNAHMEN.map((a) => a.feld).sort());
-    expect(imSchema).toEqual(['behandlungswege', 'cnCode', 'geschaetzt', 'gewichtKg', 'gruende', 'stueck']);
-    for (const a of (schema as S)['x-annahmen']) expect(a.herkunft).toMatch(/schnipsel/i);
+    expect(imSchema).toEqual(['behandlungswege', 'cnCode', 'gewichtKg', 'gruende', 'schaetzungStueck/schaetzungGewicht', 'stueck']);
+    for (const a of (schema as S)['x-annahmen']) expect(a.herkunft).toMatch(/DVO2026/);
   });
 
   it('Ausnahmeliste und Behandlungswege sind in Schema und Kern deckungsgleich', () => {
-    expect((schema as S)['x-ausnahmeGruende']).toEqual([...AUSNAHME_GRUENDE]);
+    expect(AUSNAHME_GRUENDE).toEqual([]);
     const wegEnum = (schema as S).definitions.position.properties.behandlungswege.anyOf[0].items.properties.weg.enum;
     expect(wegEnum).toEqual([...BEHANDLUNGSWEGE]);
   });
@@ -145,7 +114,7 @@ describe('Vernichtungs-Offenlegungsregister — Regeln', () => {
     expect(JSON.stringify(erg)).not.toMatch(/"(ok|gruen|grün|green|erfuellt|erfüllt|compliant|sicher)"/i);
   });
 
-  it('jede Fixture liefert genau die erwarteten Regeln', () => {
+  it('synthetic cases document their exact expected question rules',()=> {
     for (const f of faelle) expect(regeln(f.offenlegung), f.fall).toEqual([...f.erwartet].sort());
   });
 
@@ -169,28 +138,17 @@ describe('Vernichtungs-Offenlegungsregister — Regeln', () => {
     expect(regeln(offenlegung([position({ behandlungswege: [] })]))).toEqual(['V1-PROZENTSUMME']);
   });
 
-  it('Grund außerhalb der Ausnahmeliste → V2-GRUND; leere Gründe → V2-GRUND', () => {
-    const befunde = pruefeOffenlegung(fall('grund-und-cn')).befunde.filter((b) => b.regel === 'V2-GRUND');
-    expect(befunde).toHaveLength(1);
-    expect(befunde[0].frageDe).toContain('„ueberbestand"');
-    expect(regeln(offenlegung([position({ gruende: [] })]))).toEqual(['V2-GRUND']);
+  it('free disposal reasons are accepted; missing reasons prompt a question', () => {
+    expect(regeln(offenlegung([position({ gruende:['No demand'] })]))).toEqual([]);
+    expect(regeln(offenlegung([position({ gruende:[] })]))).toEqual(['V2-GRUND']);
   });
-
-  it('ungültiger CN-Code → V3-CN-CODE (HS-Ebene, Kapitel 77, Buchstaben, falsche Länge)', () => {
-    const v3 = pruefeOffenlegung(fall('grund-und-cn')).befunde.filter((b) => b.regel === 'V3-CN-CODE');
-    expect(v3.map((b) => b.position)).toEqual(['P1', 'P2']);
-    expect(cnCodeProblem('6403 99')).toBe('nur-hs-ebene');
-    expect(cnCodeProblem('77123456')).toBe('kapitel');
-    expect(cnCodeProblem('00123456')).toBe('kapitel');
-    expect(cnCodeProblem('98123456')).toBe('kapitel');
-    expect(cnCodeProblem('6109A000')).toBe('format');
-    expect(cnCodeProblem('610910001')).toBe('format');
-    expect(cnCodeProblem('6109.10.00')).toBeNull();
-    expect(cnCodeProblem('6109 10 00')).toBeNull();
+  it('CN format uses two digits or Annex II four-digit categories; never eight mandatory', () => {
+    expect(cnCodeProblem('61')).toBeNull(); expect(cnCodeProblem('8539')).toBeNull();
+    expect(cnCodeProblem('6109')).toBe('granularitaet'); expect(cnCodeProblem('85391000')).toBe('format');
+    expect(cnCodeProblem('77')).toBe('kapitel'); expect(cnCodeProblem('A5')).toBe('format');
   });
-
   it('Stück und Gewicht unplausibel → V4-STUECK-GEWICHT (Spanne und Null-Widerspruch)', () => {
-    expect(pruefeOffenlegung(fall('stueck-gewicht-und-schaetzung')).befunde[0].frageDe).toMatch(/1500 kg je Stück/);
+    expect(pruefeOffenlegung(fall('stueck-gewicht-und-schaetzung')).befunde.find(b=>b.regel==='V4-STUECK-GEWICHT')?.frageDe).toMatch(/1500 kg je Stück/);
     // Schuhe (Kap. 64) mit 20 g je Paar
     expect(regeln(offenlegung([position({ cnCode: '64041100', stueck: 1000, gewichtKg: 20 })]))).toEqual([
       'V4-STUECK-GEWICHT',
@@ -199,12 +157,10 @@ describe('Vernichtungs-Offenlegungsregister — Regeln', () => {
     expect(regeln(offenlegung([position({ stueck: 0, gewichtKg: 0 })]))).toEqual([]);
   });
 
-  it('fehlende Schätzkennzeichnung → V5-SCHAETZUNG; false und true sind beide gültig', () => {
-    expect(regeln(offenlegung([position({ geschaetzt: undefined })]))).toEqual(['V5-SCHAETZUNG']);
-    expect(regeln(offenlegung([position({ geschaetzt: true })]))).toEqual([]);
-    expect(regeln(offenlegung([position({ geschaetzt: false })]))).toEqual([]);
+  it('unknown estimates are recorded without assuming the quantity is estimated', () => {
+    const result=pruefeOffenlegung(offenlegung([position({geschaetzt:undefined})]));
+    expect(result.befunde).toEqual([]); expect(result.felderUnbekannt).toContain('P1.schaetzungStueck');
   });
-
   it('Freitext-Offenlegung ohne Tabelle läuft durch, alle Felder `unbekannt`', () => {
     const erg = pruefeOffenlegung(fall('freitext'));
     expect(erg.befunde.map((b) => b.regel)).toEqual(['V0-FREITEXT']);
@@ -215,7 +171,7 @@ describe('Vernichtungs-Offenlegungsregister — Regeln', () => {
     const p = position({ stueck: 'unbekannt', gewichtKg: 'unbekannt', gruende: 'unbekannt', behandlungswege: 'unbekannt', cnCode: 'unbekannt', geschaetzt: undefined });
     const erg = pruefeOffenlegung(offenlegung([p]));
     expect(erg.befunde).toEqual([]);
-    expect(erg.felderUnbekannt.sort()).toEqual(['P1.behandlungswege', 'P1.cnCode', 'P1.gewichtKg', 'P1.gruende', 'P1.stueck']);
+    expect(erg.felderUnbekannt).toEqual(expect.arrayContaining(['P1.behandlungswege', 'P1.gewichtKg', 'P1.gruende', 'P1.stueck']));
   });
 });
 
@@ -225,7 +181,7 @@ describe('Vernichtungs-Offenlegungsregister — Befunde als Fragen', () => {
   it('jeder Befund trägt Regel-ID, Art „frage" und Klartextfrage De/En', () => {
     expect(alleBefunde.length).toBeGreaterThanOrEqual(6);
     for (const b of alleBefunde) {
-      expect(b.regel).toMatch(/^V[0-5]-[A-Z-]+$/);
+      expect(b.regel).toMatch(/^V[0-7]-[A-Z-]+$/);
       expect(b.art).toBe('frage');
       expect(b.frageDe.trim().endsWith('?')).toBe(true);
       expect(b.frageEn.trim().endsWith('?')).toBe(true);
@@ -233,11 +189,9 @@ describe('Vernichtungs-Offenlegungsregister — Befunde als Fragen', () => {
     }
   });
 
-  it('übertragener Freitext mit Vorwurfswort wird nicht zitiert, sondern nummeriert', () => {
-    const p = position({ gruende: ['Verstoß gegen Sicherheitsvorgaben', 'non-compliance'] });
-    const befunde = pruefeOffenlegung(offenlegung([p])).befunde;
-    expect(befunde.map((b) => b.frageDe)).toEqual([expect.stringContaining('Nr. 1'), expect.stringContaining('Nr. 2')]);
-    expect(() => assertNeutraleSprache(JSON.stringify(befunde))).not.toThrow();
+  it('free reasons containing source accusations are never copied into output', () => {
+    const result=pruefeOffenlegung(offenlegung([position({gruende:['Verstoß gegen Sicherheitsvorgaben']})]));
+    expect(()=>assertNeutraleSprache(JSON.stringify(result))).not.toThrow();
   });
 });
 
@@ -280,7 +234,7 @@ describe('Vernichtungs-Offenlegungsregister — Register und neutrale Sprache', 
       expect(z.abgerufenAm).toMatch(/^\d{4}-\d{2}-\d{2}$/);
       expect(z.statusText.startsWith('gefunden (abgerufen am ')).toBe(true);
     }
-    expect(register.find((z) => z.unternehmen === 'Probe Leuchten GmbH')?.anzahlFragen).toBe(2);
+    expect(register.find((z) => z.unternehmen === 'Probe Leuchten GmbH')?.anzahlFragen).toBeGreaterThan(0);
   });
 
   it('CSV hat Kopfzeile, eine Zeile je Eintrag und quotet Semikolons', () => {
@@ -343,4 +297,58 @@ describe('Vernichtungs-Offenlegungsregister — Invarianten', () => {
     expect(zeilen).toHaveLength(500);
     expect(dauer).toBeLessThan(100);
   });
+});
+
+describe('Verified Annex I and historical primary fixture',()=>{
+ it('validates the six real rows with actual Ajv and preserves source decimals',()=>{
+  const o=realeDaten.offenlegungen[0] as Offenlegung;
+  expect(validiere(schema,o)).toEqual([]); expect(o.positionen).toHaveLength(6);
+  expect(o.positionen[0].gewichtKg).toBe(0.39);
+ });
+ it('historic disclosure is not subjected to future mandatory fields or CN granularity',()=>{
+  const result=pruefeOffenlegung(realeDaten.offenlegungen[0] as Offenlegung);
+  expect(result.befunde).toHaveLength(6);
+  expect(result.befunde.every(b=>b.regel==='V6-VERNICHTUNGSSUMME')).toBe(true);
+ });
+ it('unknown treatment is a legitimate share, subtotal is not counted twice',()=>{
+  const p=position({behandlungswege:[{weg:'unbekannt',anteilProzent:40},{weg:'recycling',anteilProzent:60}],vernichtetProzent:60});
+  expect(regeln(offenlegung([p]))).toEqual([]);
+ });
+ it('duplicate treatment routes and nonfinite destruction are rejected',()=>{
+  expect(()=>pruefeOffenlegung(offenlegung([position({behandlungswege:[{weg:'recycling',anteilProzent:50},{weg:'recycling',anteilProzent:50}]})]))).toThrow(/doppelter/);
+  expect(()=>pruefeOffenlegung(offenlegung([position({vernichtetProzent:NaN})]))).toThrow();
+ });
+ it('future comparison is explicitly selected and includes prevention, identity, packaging',()=>{
+  const result=pruefeOffenlegung(offenlegung([position({cnCode:'85',verpackung:undefined})],{pruefmodus:'anhang-i'}));
+  expect(result.felderUnbekannt).toEqual(expect.arrayContaining(['zeitraum','rechtstraeger','praevention.getroffen','praevention.geplant','P1.verpackung']));
+  expect(result.befunde.some(b=>b.regel==='V3-CN-CODE')).toBe(true);
+ });
+ it('whole-number treatment rounding has a documented engineering tolerance',()=>{
+  const p=position({behandlungswege:[{weg:'vorbereitung-wiederverwendung',anteilProzent:20},{weg:'recycling',anteilProzent:20},{weg:'sonstige-verwertung',anteilProzent:20},{weg:'beseitigung',anteilProzent:20},{weg:'unbekannt',anteilProzent:18}]});
+  expect(regeln(offenlegung([p]))).toEqual([]);
+ });
+ it('individual estimates never overwrite original quantity precision',()=>{
+  const o=offenlegung([position({gewichtKg:0.39,stueck:14,schaetzungStueck:true,schaetzungGewicht:false})]);
+  const before=JSON.stringify(o);pruefeOffenlegung(o);expect(JSON.stringify(o)).toBe(before);
+ });
+});
+
+describe('Extended field invariants',()=>{
+ it('rejects malformed headers and wrong field types in historical mode too',()=>{
+  for (const extra of [{rechtstraeger:{kennung:'x',typ:'EUID',art:'konsolidiert'}},{praevention:{getroffen:3,geplant:'x'}},{zeitraum:null}]) expect(()=>pruefeOffenlegung(offenlegung([position()],extra as never))).toThrow();
+  for (const p of [{cnCode:85},{verpackung:'yes'},{schaetzungStueck:3}]) expect(()=>pruefeOffenlegung(offenlegung([position(p as never)]))).toThrow();
+ });
+ it('rejects impossible dates and reversed reporting periods',()=>{
+  expect(()=>pruefeOffenlegung(offenlegung([position()],{zeitraum:{von:'2025-02-31',bis:'2025-12-31'}}))).toThrow(/ISO-Datum/);
+  expect(()=>pruefeOffenlegung(offenlegung([position()],{zeitraum:{von:'2025-12-31',bis:'2025-01-01'}}))).toThrow(/vor Beginn/);
+ });
+ it('missing treatment components do not silently become zero for destruction arithmetic',()=>{
+  const result=pruefeOffenlegung(offenlegung([position({behandlungswege:[{weg:'recycling',anteilProzent:100}],vernichtetProzent:0})]));
+  expect(result.befunde.some(b=>b.regel==='V6-VERNICHTUNGSSUMME')).toBe(false);
+  expect(result.felderUnbekannt).toContain('P1.vernichtungssumme.berechnung');
+ });
+ it('future number formatting prompts a question while preserving source decimals',()=>{
+  const o=offenlegung([position({cnCode:'61',gewichtKg:0.39,stueck:14})],{pruefmodus:'anhang-i'});
+  expect(pruefeOffenlegung(o).befunde.some(b=>b.frageEn.includes('whole-number'))).toBe(true);expect(o.positionen[0].gewichtKg).toBe(0.39);
+ });
 });

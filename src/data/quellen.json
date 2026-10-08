@@ -4166,19 +4166,22 @@
         "offenlegung"
       ],
       "urls": [
-        "https://publications.europa.eu/resource/celex/<CELEX>"
+        "https://publications.europa.eu/resource/celex/<CELEX>",
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32026R0002",
+        "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32024R1781",
+        "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32026R0296"
       ],
       "zugang": {
         "art": "norm",
         "erreichbar": "teilweise",
-        "wie": "EU-Recht im Volltext: https://publications.europa.eu/resource/celex/<CELEX> mit `Accept: application/xhtml+xml` und `Accept-Language: deu`. eur-lex.europa.eu direkt liefert HTTP 202 mit WAF-Challenge und leerem Body."
+        "wie": "Web-Tool liest EUR-Lex TXT: 2026/2 EN sowie ESPR 2024/1781 und 2026/296 DE. Lokales curl kann trotz derselben URL leer/challenged sein; publications.europa.eu/resource/celex lieferte hier nur Metadaten, nicht den Normtext."
       },
       "enthaelt": "Pflicht große Unternehmen ab GJ 2025 im freien Format (binnen 12 Monaten), Anhang-I-Format für GJ ab 02.03.2027; Vernichtungsverbot Bekleidung/Schuhe seit 19.07.2026. Kein Register der Offenlegungen. Tatbeleg: Signify „Disclosure on Discarded Unsold Consumer Products\" GJ 2025 (PDF 04.05.2026). Sekundär: Cooley 07.05.2026, Freshfields (widersprüchlich), Linklaters, trade-e-bility, Generation Impact, Cattwyk (Minderheitslesart), UBA-Themenseite",
       "fokus": "",
-      "status": "angekratzt",
-      "statusNotiz": "ergiebig (Dreifachfund → Dose `vernichtungs-offenlegungsregister`). Offen: Normtext Anhang I + Art. 24 Abs. 1 und Signify-PDF als [Seite] lesen — seit der Offenlegungs-Runde (28.09.2026) ohne Netzfreigabe möglich: Netz offen, eur-lex über `publications.europa.eu/resource/celex/<CELEX>`",
+      "status": "durchsucht",
+      "statusNotiz": "",
       "evidenz": "seite",
-      "zuletzt": "2026-09-28",
+      "zuletzt": "2026-10-08",
       "ertrag": {
         "dosen": [
           "vernichtungs-offenlegungsregister"
@@ -4189,14 +4192,14 @@
       "vektoren": {
         "q": [
           4,
-          4,
-          4,
+          2,
+          3,
           5,
-          5,
+          2,
           3
         ],
-        "basis": "auto",
-        "datum": "2026-09-29"
+        "basis": "bibliothekar",
+        "datum": "2026-10-08"
       },
       "verlauf": [
         {
@@ -4204,6 +4207,21 @@
           "agent": "migration",
           "runde": "Register-Einführung",
           "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        },
+        {
+          "datum": "2026-10-08",
+          "agent": "espr-fixture-bibliothekar",
+          "runde": "ESPR-Normtext-Abgleich 08.10.2026",
+          "notiz": "Nachprüfung 08.10.2026 [Seite]: DVO 2026/2 Art. 1–7 und Anhänge I–III, ESPR Art. 24–26, Delegierte VO 2026/296 Art. 1–6 gelesen. Frühere Schnipselannahmen korrigiert: Anhang-I-Format erstes volles GJ nach 02.03.2027 (Kalender-GJ 2028, Offenlegung bis Ende 2029); Zwölfmonatsfrist nicht rückwirkend auf ursprünglichen Art. 24 übertragen. KN zwei-/vierstellig; Gründe offen; unbekannte Behandlung eigener Weg; Vernichtung separate Zwischensumme. Art. 26 verpflichtet Kommission zu konsolidierten Informationen bis 19.07.2027 und alle 36 Monate: frühere Aussage kein Kommissionssammler unzutreffend, keine neue Novelty-Freigabe. Signify-Publikation laut Dokument April 2026, nicht aus Dateiname 04.05.2026 ableiten. Historische freie-Feld-/Fristannahmen im ursprünglichen Quellenobjekt sind durch diese Primärprüfung überholt.",
+          "status": "durchsucht",
+          "planId": "espr-primary-validation-2026-10-08"
+        },
+        {
+          "datum": "2026-10-08",
+          "agent": "espr-fixture-bibliothekar",
+          "runde": "ESPR-Normtext-Abgleich 08.10.2026",
+          "notiz": "Vektoren bewertet [4 2 3 5 2 3]: Primärtexte zugänglich über Web-TXT, lokaler Abruf unzuverlässig; Art. 26 verengt die bislang behauptete Registerlücke. Ergebnis bestehende Dose verbessert, keine neue Ideensuche.",
+          "planId": "espr-primary-validation-2026-10-08"
         }
       ]
     },
@@ -14450,6 +14468,64 @@
           "runde": "PR179 Team-Nachprüfung 08.10.2026",
           "notiz": "Scout/Reviewer lesen Primärseiten. R2R-Zugangsproblem und bestehendes Formular verifiziert. GetYourRepairRight/FixFirst als Wettbewerbsgegenprobe bewirbt Belegupload/Fallverwaltung; Betrieb, Startdatum und Erfolgsbeispiele nicht unabhängig bestätigt. Lokale Chronik23/35 Needs Research, keine persönliche Versandfreigabe.",
           "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "signify-espr-offenlegung-2025",
+      "name": "Signify N.V. — reale ESPR-Offenlegung GJ 2025",
+      "typ": "N",
+      "kategorie": "datensatz",
+      "rollen": [
+        "evidenz"
+      ],
+      "tags": [
+        "abfall",
+        "offenlegung",
+        "eu-recht"
+      ],
+      "urls": [
+        "https://www.assets.signify.com/is/content/Signify/Assets/signify/global/20260504-signify-espr-disclosure.pdf",
+        "https://www.signify.com/global/sustainability"
+      ],
+      "zugang": {
+        "art": "pdf",
+        "erreichbar": "ja",
+        "wie": "Primär-PDF über die Nachhaltigkeitsseite. Download mit Netzwerkfreigabe; beide PDF-Seiten mit Ghostscript gerendert und visuell gelesen, Tabelle mit Volltextextraktion abgeglichen. Original-PDF bleibt außerhalb des Repositorys."
+      },
+      "enthaelt": "Zweiseitige Primärveröffentlichung mit sechs Tabellenzeilen, Mengen, Gewichten, Behandlung, Gründen und Prävention. Veröffentlichung laut Dokument April 2026; Abruf 08.10.2026, SHA-256 und Seitenzuordnung in der Demo-Provenienz.",
+      "fokus": "Faktengetreue Referenzfixture; Beseitigung 100 Prozent und separat Vernichtung 0 Prozent unverändert als Rückfrage erhalten. Historischen Bericht nicht rückwirkend am späteren Anhang-I-Format messen.",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-08",
+      "ertrag": {
+        "dosen": [
+          "vernichtungs-offenlegungsregister"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          2,
+          4,
+          5,
+          3,
+          2
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-08"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-08",
+          "agent": "espr-fixture-bibliothekar",
+          "runde": "ESPR-Normtext-Abgleich 08.10.2026",
+          "notiz": "Erste echte Fixture: sechs Originalzeilen ohne ergänzte KN-Codes; Komma-/Tausenderformat nur numerisch normalisiert, keine Einheitenumrechnung. Mengenmethode unbekannt; Prävention in eigenen Worten. Kein Rechtsurteil.",
+          "status": "durchsucht",
+          "planId": "espr-primary-validation-2026-10-08"
         }
       ]
     }

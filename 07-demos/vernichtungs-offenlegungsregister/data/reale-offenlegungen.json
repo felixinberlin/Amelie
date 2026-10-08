@@ -1,0 +1,242 @@
+{
+  "hinweis": "Echte, manuell übertragene Offenlegung. Historischer Prüfmodus: Geschäftsjahr 2025 liegt vor Anwendung des späteren Anhang-I-Formats. Unbekannte Werte bleiben ausdrücklich unbekannt. Keine Feststellung einer Pflicht oder eines Verstoßes. Herkunft und unveränderte Originalwerte: signify-2025-provenienz.json.",
+  "offenlegungen": [
+    {
+      "unternehmen": "Signify N.V.",
+      "geschaeftsjahr": 2025,
+      "synthetisch": false,
+      "format": "tabelle",
+      "pruefmodus": "historisch",
+      "quelle": {
+        "url": "https://www.assets.signify.com/is/content/Signify/Assets/signify/global/20260504-signify-espr-disclosure.pdf",
+        "abgerufenAm": "2026-10-08"
+      },
+      "zeitraum": {
+        "von": "2025-01-01",
+        "bis": "2025-12-31"
+      },
+      "praevention": {
+        "getroffen": "Lagerbestände auf langsam verkäufliche Produkte prüfen und Nachfrageplanung anpassen; Bestände auf andere Märkte oder Vertriebskanäle umverteilen.",
+        "geplant": "Strengere Umsatz- und Margenschwellen im Portfolio; Produkte vor Produktionsausweitung überprüfen, überarbeiten oder auslaufen lassen."
+      },
+      "positionen": [
+        {
+          "id": "signify-2025-39",
+          "warengruppe": "Kunststoff- und Kautschukwaren",
+          "cnCode": "39",
+          "stueck": 14,
+          "gewichtKg": 0.39,
+          "schaetzungStueck": "unbekannt",
+          "schaetzungGewicht": "unbekannt",
+          "verpackung": false,
+          "gruende": [
+            "fehlende Nachfrage"
+          ],
+          "behandlungswege": [
+            {
+              "weg": "vorbereitung-wiederverwendung",
+              "anteilProzent": 0
+            },
+            {
+              "weg": "recycling",
+              "anteilProzent": 0
+            },
+            {
+              "weg": "sonstige-verwertung",
+              "anteilProzent": 0
+            },
+            {
+              "weg": "beseitigung",
+              "anteilProzent": 100
+            },
+            {
+              "weg": "unbekannt",
+              "anteilProzent": 0
+            }
+          ],
+          "vernichtetProzent": 0
+        },
+        {
+          "id": "signify-2025-85",
+          "warengruppe": "Elektrische Geräte und Teile",
+          "cnCode": "85",
+          "stueck": 2061,
+          "gewichtKg": 1094.07,
+          "schaetzungStueck": "unbekannt",
+          "schaetzungGewicht": "unbekannt",
+          "verpackung": false,
+          "gruende": [
+            "fehlende Nachfrage"
+          ],
+          "behandlungswege": [
+            {
+              "weg": "vorbereitung-wiederverwendung",
+              "anteilProzent": 0
+            },
+            {
+              "weg": "recycling",
+              "anteilProzent": 0
+            },
+            {
+              "weg": "sonstige-verwertung",
+              "anteilProzent": 0
+            },
+            {
+              "weg": "beseitigung",
+              "anteilProzent": 100
+            },
+            {
+              "weg": "unbekannt",
+              "anteilProzent": 0
+            }
+          ],
+          "vernichtetProzent": 0
+        },
+        {
+          "id": "signify-2025-8517",
+          "warengruppe": "Telefon- und Kommunikationsgeräte",
+          "cnCode": "8517",
+          "stueck": 210,
+          "gewichtKg": 136.06,
+          "schaetzungStueck": "unbekannt",
+          "schaetzungGewicht": "unbekannt",
+          "verpackung": false,
+          "gruende": [
+            "fehlende Nachfrage"
+          ],
+          "behandlungswege": [
+            {
+              "weg": "vorbereitung-wiederverwendung",
+              "anteilProzent": 0
+            },
+            {
+              "weg": "recycling",
+              "anteilProzent": 0
+            },
+            {
+              "weg": "sonstige-verwertung",
+              "anteilProzent": 0
+            },
+            {
+              "weg": "beseitigung",
+              "anteilProzent": 100
+            },
+            {
+              "weg": "unbekannt",
+              "anteilProzent": 0
+            }
+          ],
+          "vernichtetProzent": 0
+        },
+        {
+          "id": "signify-2025-8539",
+          "warengruppe": "Elektrische Lampen und LED-Lichtquellen",
+          "cnCode": "8539",
+          "stueck": 157922,
+          "gewichtKg": 136302.11,
+          "schaetzungStueck": "unbekannt",
+          "schaetzungGewicht": "unbekannt",
+          "verpackung": false,
+          "gruende": [
+            "fehlende Nachfrage"
+          ],
+          "behandlungswege": [
+            {
+              "weg": "vorbereitung-wiederverwendung",
+              "anteilProzent": 0
+            },
+            {
+              "weg": "recycling",
+              "anteilProzent": 0
+            },
+            {
+              "weg": "sonstige-verwertung",
+              "anteilProzent": 0
+            },
+            {
+              "weg": "beseitigung",
+              "anteilProzent": 100
+            },
+            {
+              "weg": "unbekannt",
+              "anteilProzent": 0
+            }
+          ],
+          "vernichtetProzent": 0
+        },
+        {
+          "id": "signify-2025-94",
+          "warengruppe": "Möbel, Leuchten und weitere Waren der Kategorie 94",
+          "cnCode": "94",
+          "stueck": 39797,
+          "gewichtKg": 57568.69,
+          "schaetzungStueck": "unbekannt",
+          "schaetzungGewicht": "unbekannt",
+          "verpackung": false,
+          "gruende": [
+            "fehlende Nachfrage"
+          ],
+          "behandlungswege": [
+            {
+              "weg": "vorbereitung-wiederverwendung",
+              "anteilProzent": 0
+            },
+            {
+              "weg": "recycling",
+              "anteilProzent": 0
+            },
+            {
+              "weg": "sonstige-verwertung",
+              "anteilProzent": 0
+            },
+            {
+              "weg": "beseitigung",
+              "anteilProzent": 100
+            },
+            {
+              "weg": "unbekannt",
+              "anteilProzent": 0
+            }
+          ],
+          "vernichtetProzent": 0
+        },
+        {
+          "id": "signify-2025-48",
+          "warengruppe": "Papier und Pappwaren",
+          "cnCode": "48",
+          "stueck": 29,
+          "gewichtKg": 456.36,
+          "schaetzungStueck": "unbekannt",
+          "schaetzungGewicht": "unbekannt",
+          "verpackung": false,
+          "gruende": [
+            "fehlende Nachfrage"
+          ],
+          "behandlungswege": [
+            {
+              "weg": "vorbereitung-wiederverwendung",
+              "anteilProzent": 0
+            },
+            {
+              "weg": "recycling",
+              "anteilProzent": 0
+            },
+            {
+              "weg": "sonstige-verwertung",
+              "anteilProzent": 0
+            },
+            {
+              "weg": "beseitigung",
+              "anteilProzent": 100
+            },
+            {
+              "weg": "unbekannt",
+              "anteilProzent": 0
+            }
+          ],
+          "vernichtetProzent": 0
+        }
+      ]
+    }
+  ]
+}

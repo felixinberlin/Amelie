@@ -1,83 +1,324 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://felixinberlin.github.io/Amelie/07-demos/vernichtungs-offenlegungsregister/anhang1-schema.json",
-  "title": "Offenlegung nach Art. 24 ESPR — vorläufiges Anhang-I-Schema (DVO (EU) 2026/2)",
-  "description": "VORLÄUFIG. Der Normtext der DVO (EU) 2026/2 (Art. 2/3, Anhang I), der Delegierten VO (EU) 2026/296 und von ESPR Art. 24 Abs. 1 wurde nicht gelesen (Seitenabruf gesperrt). Alle Fachfelder sind Annahmen aus Sekundärquellen (Kanzlei- und Anbieterschnipsel), siehe x-annahmen. Es werden bewusst keine Feldnummern aus Anhang I behauptet. Lizenz: CC0 1.0 Public Domain.",
-  "schemaStatus": "vorläufig",
+  "title": "Übertragungsmodell: DVO2026/2 Anhang I (kein Rechtsurteil)",
+  "description": "Anhang I, Artikel1–3 im Volltext geprüft. Historisch standardmäßig; zukünftiger Formatvergleich nur ausdrücklich. Quelle unverändert erhalten, unbekannte Felder zulässig; keine Pflichtfeststellung. CC0.",
+  "schemaStatus": "gegen Normtext geprüft am 2026-10-08",
   "x-annahmen": [
-    { "feld": "stueck", "annahme": "Menge je Warengruppe in Stück", "herkunft": "Kanzlei-Schnipsel (Cooley 07.05.2026, Freshfields) zu ESPR Art. 24 Abs. 1 lit. a; Normtext nicht gelesen" },
-    { "feld": "gewichtKg", "annahme": "Gewicht je Warengruppe in Kilogramm", "herkunft": "Kanzlei- und Anbieterschnipsel zu DVO (EU) 2026/2 Anhang I; Normtext nicht gelesen" },
-    { "feld": "gruende", "annahme": "Gründe als Codes aus der Ausnahmeliste (ESPR Art. 25 Abs. 5, präzisiert durch Delegierte VO (EU) 2026/296); Liste sinngemäß, nicht wortgleich", "herkunft": "Kanzleischnipsel (Linklaters, Cattwyk); Normtext nicht gelesen" },
-    { "feld": "behandlungswege", "annahme": "Anteile je Behandlungsweg entlang der Abfallhierarchie in Prozent", "herkunft": "Schnipsel zu ESPR Art. 24 Abs. 1 lit. c; Prozentform ist eine Annahme" },
-    { "feld": "cnCode", "annahme": "Warengruppe als achtstelliger KN/CN-Code", "herkunft": "Anbieterschnipsel (Generation Impact) zu Anhang I; Normtext nicht gelesen" },
-    { "feld": "geschaetzt", "annahme": "Kennzeichnung, ob Mengen gemessen oder geschätzt sind", "herkunft": "Kanzleischnipsel zu DVO (EU) 2026/2; Normtext nicht gelesen" }
+    {
+      "feld": "stueck",
+      "herkunft": "DVO2026/2 Anhang I Abschnitt2/Artikel3"
+    },
+    {
+      "feld": "gewichtKg",
+      "herkunft": "DVO2026/2 Anhang I Abschnitt2/Artikel3"
+    },
+    {
+      "feld": "gruende",
+      "herkunft": "DVO2026/2 Anhang I Abschnitt2/Artikel3"
+    },
+    {
+      "feld": "behandlungswege",
+      "herkunft": "DVO2026/2 Anhang I Abschnitt2/Artikel3"
+    },
+    {
+      "feld": "cnCode",
+      "herkunft": "DVO2026/2 Anhang I Abschnitt2/Artikel3"
+    },
+    {
+      "feld": "schaetzungStueck/schaetzungGewicht",
+      "herkunft": "DVO2026/2 Anhang I Abschnitt2/Artikel3"
+    }
   ],
   "type": "object",
-  "required": ["unternehmen", "geschaeftsjahr", "format", "quelle", "positionen"],
+  "required": [
+    "unternehmen",
+    "geschaeftsjahr",
+    "format",
+    "quelle",
+    "positionen"
+  ],
   "additionalProperties": false,
   "properties": {
-    "unternehmen": { "type": "string", "minLength": 1 },
-    "geschaeftsjahr": { "type": "integer", "minimum": 2025 },
-    "synthetisch": { "type": "boolean", "description": "true = konstruierte Testdaten, keine echte Offenlegung" },
-    "format": { "enum": ["tabelle", "freitext"] },
-    "freitext": { "type": "string" },
+    "unternehmen": {
+      "type": "string",
+      "minLength": 1
+    },
+    "geschaeftsjahr": {
+      "type": "integer",
+      "minimum": 2025
+    },
+    "synthetisch": {
+      "type": "boolean",
+      "description": "true = konstruierte Testdaten, keine echte Offenlegung"
+    },
+    "format": {
+      "enum": [
+        "tabelle",
+        "freitext"
+      ]
+    },
+    "freitext": {
+      "type": "string"
+    },
     "quelle": {
       "type": "object",
-      "required": ["url", "abgerufenAm"],
+      "required": [
+        "url",
+        "abgerufenAm"
+      ],
       "additionalProperties": false,
       "properties": {
-        "url": { "type": "string", "pattern": "^https?://" },
-        "abgerufenAm": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
-        "archivSnapshot": { "type": "string" }
+        "url": {
+          "type": "string",
+          "pattern": "^https?://"
+        },
+        "abgerufenAm": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "archivSnapshot": {
+          "type": "string"
+        }
       }
     },
-    "positionen": { "type": "array", "items": { "$ref": "#/definitions/position" } }
-  },
-  "definitions": {
-    "unbekannt": { "const": "unbekannt" },
-    "position": {
+    "positionen": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/position"
+      }
+    },
+    "pruefmodus": {
+      "enum": [
+        "historisch",
+        "anhang-i"
+      ]
+    },
+    "zeitraum": {
       "type": "object",
-      "required": ["id", "warengruppe", "stueck", "gewichtKg", "gruende", "behandlungswege"],
+      "required": [
+        "von",
+        "bis"
+      ],
       "additionalProperties": false,
       "properties": {
-        "id": { "type": "string", "minLength": 1 },
-        "warengruppe": { "type": "string" },
-        "cnCode": { "type": "string", "x-annahme": true },
-        "stueck": { "anyOf": [{ "type": "number", "minimum": 0 }, { "$ref": "#/definitions/unbekannt" }], "x-annahme": true },
-        "gewichtKg": { "anyOf": [{ "type": "number", "minimum": 0 }, { "$ref": "#/definitions/unbekannt" }], "x-annahme": true },
-        "geschaetzt": { "type": "boolean", "x-annahme": true },
-        "gruende": {
-          "x-annahme": true,
-          "anyOf": [{ "type": "array", "items": { "type": "string" } }, { "$ref": "#/definitions/unbekannt" }]
+        "von": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
         },
-        "behandlungswege": {
-          "x-annahme": true,
+        "bis": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        }
+      }
+    },
+    "rechtstraeger": {
+      "type": "object",
+      "required": [
+        "kennung",
+        "typ",
+        "art",
+        "mitglieder"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "kennung": {
+          "type": "string",
+          "minLength": 1
+        },
+        "typ": {
+          "type": "string",
+          "minLength": 1
+        },
+        "art": {
+          "enum": [
+            "einzeln",
+            "konsolidiert"
+          ]
+        },
+        "mitglieder": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "praevention": {
+      "type": "object",
+      "required": [
+        "getroffen",
+        "geplant"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "getroffen": {
           "anyOf": [
             {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "required": ["weg", "anteilProzent"],
-                "additionalProperties": false,
-                "properties": {
-                  "weg": { "enum": ["vorbereitung-wiederverwendung", "wiederaufbereitung", "recycling", "sonstige-verwertung", "beseitigung"] },
-                  "anteilProzent": { "type": "number", "minimum": 0 }
-                }
-              }
+              "type": "string",
+              "minLength": 1
             },
-            { "$ref": "#/definitions/unbekannt" }
+            {
+              "const": "unbekannt"
+            }
+          ]
+        },
+        "geplant": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "const": "unbekannt"
+            }
           ]
         }
       }
     }
   },
-  "x-ausnahmeGruende": [
-    "gesundheit-hygiene-sicherheit",
-    "schaden-nicht-reparierbar",
-    "ungeeignet-fuer-zweck",
-    "spende-abgelehnt",
-    "ungeeignet-fuer-wiederverwendung",
-    "geistiges-eigentum",
-    "geringste-umweltwirkung"
-  ]
+  "definitions": {
+    "unbekannt": {
+      "const": "unbekannt"
+    },
+    "position": {
+      "type": "object",
+      "required": [
+        "id",
+        "warengruppe",
+        "stueck",
+        "gewichtKg",
+        "gruende",
+        "behandlungswege"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "warengruppe": {
+          "type": "string"
+        },
+        "cnCode": {
+          "type": "string"
+        },
+        "stueck": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "$ref": "#/definitions/unbekannt"
+            }
+          ]
+        },
+        "gewichtKg": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "$ref": "#/definitions/unbekannt"
+            }
+          ]
+        },
+        "geschaetzt": {
+          "type": "boolean"
+        },
+        "gruende": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "$ref": "#/definitions/unbekannt"
+            }
+          ]
+        },
+        "behandlungswege": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "weg",
+                  "anteilProzent"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "weg": {
+                    "enum": [
+                      "vorbereitung-wiederverwendung",
+                      "recycling",
+                      "sonstige-verwertung",
+                      "beseitigung",
+                      "unbekannt"
+                    ]
+                  },
+                  "anteilProzent": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 100
+                  }
+                }
+              }
+            },
+            {
+              "$ref": "#/definitions/unbekannt"
+            }
+          ]
+        },
+        "schaetzungStueck": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "const": "unbekannt"
+            }
+          ]
+        },
+        "schaetzungGewicht": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "const": "unbekannt"
+            }
+          ]
+        },
+        "verpackung": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "const": "unbekannt"
+            }
+          ]
+        },
+        "vernichtetProzent": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100
+            },
+            {
+              "const": "unbekannt"
+            }
+          ]
+        }
+      }
+    }
+  }
 }

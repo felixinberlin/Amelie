@@ -8,90 +8,53 @@ source_type: Type A
 ---
 # Destruction Disclosure Register
 
-*(German: Vernichtungs-Offenlegungsregister)*
+**One sentence:** An open register of published information on discarded unsold consumer products under Art. 24 ESPR. Its deterministic checker asks questions about the transcription; the register only records "found" or "no disclosure found (as of, search path)".
 
-**One sentence:** An open register of the mandatory figures that large companies must publish under Art. 24 ESPR on destroyed unsold consumer products. Its core is a deterministic checker against the table format in Annex I of Implementing Regulation (EU) 2026/2 that never says "violation", only "found" or "no disclosure found (as of, search path)".
-
-**As of:** 28 September 2026 · **Recheck by:** September 2027
-**Recipient:** **Deutsche Umwelthilfe e.V. (DUH), circular economy team.** DUH campaigns against the destruction of returns and unsold goods and publicly warns of enforcement gaps in the destruction ban ("missing company lists"). **Verify the contact person before sending** (on duh.de: name, role, address). No person has been identified, and no mail goes out without verification. · secondary: Greenpeace e.V. (campaign against the destruction of goods), Changing Markets. No person identified there either.
-**Verdict:** 🔨 **build the skeleton first, then gift.** The recipient has a campaign mandate but no software arm. The gift only becomes usable once schema, checker and one real disclosure as a fixture are in the scaffolding.
-**Review:** 24/35 · Tier 1 (core) / Tier 2 (register) · Type A, search snippets only (details: `06-suche/amelie-classification-log.md`, ESPR round 28.09.2026)
-**Status:** packed, not delivered. No mail created.
-
----
+**As of:** 8 October 2026 · **Recheck by:** September 2027
+**Recipient:** Deutsche Umwelthilfe e.V. (DUH), circular economy team (campaigns against destroying returns and unsold goods) — no person identified, verify the contact person on duh.de before sending · secondary: Greenpeace e.V. (destruction of goods), Changing Markets
+**Review:** 24/35 from 28 September 2026, unchanged. **Status:** packed, not delivered; no mail created.
 
 ## The problem
 
-Since financial year 2025, large companies that discard unsold consumer products must disclose once a year how much they discarded, why, and by which route (Art. 24 ESPR, Regulation (EU) 2024/1781). These figures appear scattered across company websites, as a standalone PDF or as a chapter in the sustainability report. A search for the exact mandatory title ("Disclosure on Discarded Unsold Consumer Products") found exactly one document, Signify's disclosure for FY 2025 dated 4 May 2026. The gap sentence: **the mandatory figures on destroyed goods sit every year on hundreds of company pages and in PDFs, but nowhere side by side.**
-
-**Who suffers:** environmental groups such as DUH and Greenpeace, who want to show whether the destruction ban works (textiles and footwear since 19 July 2026) and have to hunt down every disclosure one by one. The Commission needs the same figures to decide on extending the ban under Art. 25.
+Annual Art. 24 ESPR disclosures appear on company websites or in sustainability reports. A traceable collection must document the source, reporting period and transcription separately. Signify’s FY 2025 disclosure was first read in full and transcribed into six data rows on 8 October 2026. This collection is not a complete market overview and cannot establish which companies have a disclosure duty.
 
 ## Why now
 
-1. **The first vintage is appearing now.** The disclosure for FY 2025 is due within 12 months, i.e. by 31 December 2026 for calendar financial years. Until then the format is free. Whoever collects the first vintage sets the format of the debate.
-2. **The mandatory format is coming, but later.** Implementing Regulation (EU) 2026/2 (OJ 10 February 2026) applies from 2 March 2027. The Annex I table format is mandatory for financial years starting on or after 2 March 2027, so for calendar financial years first for FY 2028, disclosed in 2029. That is the majority reading across six independent snippets. A minority reading (FYs from 2 March 2026) is set aside but not refuted.
-3. **The why-now window is time-limited and named honestly.** For FY 2025 to 2027 (published 2026 to 2028) there will be three vintages in free, heterogeneous formats: tables, prose, CSRD chapters, PDF and HTML. LLM extraction with human confirmation can bring them into one schema, which was not feasible at reasonable cost before 2024. From disclosure year 2029 a deterministic parser is enough. **The durable core is therefore the deterministic checker against Annex I. The LLM stage is a transition module, not the heart of the tin.**
+- The annual disclosure duty under Art. 24 ESPR already exists; Signify’s FY 2025 publication is a readable real example. Scattered sources can now be transcribed manually with traceable provenance.
+- IR (EU) 2026/2 applies from 2 March 2027 to the first full financial year thereafter. For calendar financial years, its format first covers FY 2028, disclosed within twelve months after year-end. This follows from Arts. 1 and 7, replacing the previous majority reading of snippets.
+- A local deterministic checker makes transcription questions reproducible. For historical publications the future format remains a comparison aid; human confirmation and source references remain necessary. No model credits required.
 
-## Sketch
+## Sketch and research update
 
-- **Input:** one disclosure per company and financial year, entered into the Annex I schema by hand or as an LLM suggestion confirmed by a human. Each comes with source URL, retrieval date and an archive snapshot. For missing disclosures, the date and search path are recorded (which pages, which search terms, on which day).
-- **Logic:** `pruefeOffenlegung()` is deterministic and runs without network and without a model. It checks whether the percentages across treatment routes add up to 100, whether every reason comes from the list of derogations, whether CN codes are well-formed, whether units and weight per product group are plausible against each other, and whether estimates are flagged. Every finding carries a rule ID and is **phrased as a question** (e.g. "The shares add up to 92 %. Is a treatment route missing?").
-- **Output:** a static CSV/JSON table per company × financial year with only two statuses: **"found"** or **"no disclosure found (as of: date, search path)"**. The output **never says "violation", "overdue" or "missing"**. The reason: the duty is conditional. It only arises if a company discards unsold goods, and "no disclosure found" may simply mean "nothing discarded".
-- **Start list:** there is no list of obliged companies. The register therefore needs a **curated start list**, e.g. large clothing and footwear retailers in Germany covered by the textile ban, plus the exact-title search. The start list is published and dated. Without a denominator any rate is an assertion, so the register outputs no rates.
-- **Schema status:** the Annex I schema is **`provisional`**. So far it comes only from law-firm and vendor snippets, because the legal text (IR 2026/2 Art. 2/3 and Annex I, ESPR Art. 24(1)) could not be read. The flag is only dropped once the schema has been checked field by field against the legal text.
-
-**Not included:** no rating of companies, no ranking, no naming and shaming, no rates without a denominator. No continuously running crawler, no server, no database (one annual run by the curator is enough). No spare-part prices (the spare-part price time series is explicitly not part of this tin). No legal advice.
+Research update, 8 October 2026: IR (EU) 2026/2 and ESPR Art. 24 read; first real fixture: Signify FY 2025, six rows, PDF SHA-256 and page references. Corrected: CN categories normally use two digits, or four for Annex II products; reasons are open text rather than a blanket derogation list; treatment shares are weight-based, with an explicit unknown route and a separate destruction subtotal. Packaging information and prevention measures are recorded. Original values remain intact: Signify reports 100% disposal and separately 0% destruction; this prompts a question, not an accusation. The historical fixture is not retrospectively judged against the future mandatory format. Input and checking stay local, without network or models; register/CSV retain only two neutral statuses with a source or dated search path. Evidence is available in the book chapter “Legal-text check, 8 October 2026”.
 
 ## First step
 
-**Ticket 01: Annex I as a schema, one checker, one real disclosure.** Model the Annex I format of Implementing Regulation (EU) 2026/2 as a JSON Schema (`anhang1-schema.json`), plus a deterministic TypeScript checker `pruefeOffenlegung(offenlegung)`.
+**Ticket: Ticket 03: Second real disclosure and curated pilot. Ticket 02 documents the legal-text check and first Signify fixture. Next, transcribe another independent publication with provenance and make a bounded register run reproducible.**
 
-**Precondition:** before writing the schema, read the full legal text of IR 2026/2 (Art. 2/3, Annex I) and ESPR Art. 24(1). If it is not reachable, the schema carries `"status": "vorläufig"` (provisional) and names the snippet source for each field.
-
-**Done when:**
-- a Vitest suite with at least 15 cases is green, including: complete disclosure (0 findings), percentage sum ≠ 100, reason outside the derogation list, invalid CN code, implausible units vs. weight, missing estimate flag, prose-only disclosure without a table (passes, fields `unknown`);
-- **Signify's FY 2025 disclosure** (PDF of 4 May 2026) has been transcribed by hand as the first fixture, with source URL and retrieval date;
-- a test ensures that no output contains the words "Verstoß", "säumig" or "violation", and that the only status for missing disclosures is "no disclosure found" with date and search path;
-- every finding carries a rule ID and a plain-language question (De/En);
-- the schema states its status (`provisional` or `checked against legal text on …`);
-- everything lives in the scaffolding under `07-demos/vernichtungs-offenlegungsregister/` (Rule 4).
+Done when a second real disclosure is transcribed with URL, retrieval date, SHA-256 and field references, unknown values remain explicit, selection and search paths are dated, both disclosures export to neutral register JSON/CSV, and regression tests remain green. No completeness rate or company rating; verify the contact before delivery.
 
 ## Where it breaks
 
-**The register is read as a pillory, although a missing disclosure proves nothing.** The duty is conditional, and there is no list of obliged companies. A row "no disclosure found" next to a brand name still reads like an accusation, and an "implausible" flag can trigger a cease-and-desist letter. The remedy is architectural: only the two neutral statuses, findings as questions, every row with source URL, retrieval date and archive snapshot, no rates, a published start list.
-
-**Second: curator fatigue and catch-up.** The register needs curation every year. The Commission or a compliance vendor may build its own register (precedent: the UK Modern Slavery Act, where NGOs collected first and the government later built a registry). That is why the core is the checker, not the collection. It stays useful until 2029 as a self-test for companies and is then the only parser needed.
-
-**Disclosed openly:**
-- **Evidence from search snippets only.** WebFetch on eur-lex.europa.eu returned `EGRESS_BLOCKED`. Neither the legal text nor the Signify disclosure was read in full.
-- **The timeline rests on the majority reading** of law-firm snippets. Freshfields contradicts itself between two snippets.
-- **The Annex I schema is provisional** until checked against the legal text.
-- **No recipient person has been identified.**
+Failure to find a disclosure proves neither a duty nor a legal breach. The register retains two neutral statuses, sources and dated search paths; findings are questions about the transcription. Quantity heuristics, rounded percentages and historical formats are not legal assessments. No company ranking or rate without a denominator. A second real disclosure, curated pilot and verified recipient contact remain open. The historical 24/35 assessment is unchanged; source verification is not a renewed novelty audit.
 
 ## Who has already tried this
 
-**Research 28 September 2026 (ESPR round; triple find by all three engines, 11 independent counter-searches by the reviewer in German and English), search snippets only.** Details: `06-suche/amelie-pruefprotokoll.md`, section ESPR round.
+Historical existence search, 28 September 2026: no open aggregator found; search snippets only, not an exhaustive market check. Recheck, 8 October 2026: IR (EU) 2026/2 Arts. 1–3/7 and Annexes I–II plus ESPR Art. 24 read in full; Signify’s FY 2025 PDF read and six rows transcribed with provenance. This round improves the data model and checker; it does not renew the free-field verdict. Correction: ESPR Art. 26 requires consolidated Commission information by 19 July 2027 and every 36 months thereafter; a register pilot must establish its additional value. Primary sources: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32026R0002 and https://www.assets.signify.com/is/content/Signify/Assets/signify/global/20260504-signify-espr-disclosure.pdf . Tin: https://felixinberlin.github.io/Amelie/#dose=vernichtungs-offenlegungsregister
 
-- **No aggregator found,** neither at NGOs, in journalism nor at the Commission. Searches included "ESPR Article 24 disclosure tracker", analyses by Changing Markets, EEB and Zero Waste Europe, and analyses by Greenpeace and DUH.
-- **Only vendor-side compliance tools:** Flexireo, Generation Impact, Cleo Labs, Complir, Compliance & Risks. Plus explainers by law firms (Cooley 7 May 2026, Freshfields, Linklaters, Cattwyk, trade-e-bility).
-- **The Commission is a data user, not a collector.** It must take the Art. 24 disclosures into account before extending the ban under Art. 25. According to the ESPR working plan 2025–2030, however, it plans no extension in the next five years, so its incentive to collect is weak in the short term.
-- **Premise confirmed:** Signify N.V., "Disclosure on Discarded Unsold Consumer Products", FY 2025, standalone PDF of 4 May 2026.
-- **Known pattern:** under the UK Modern Slavery Act, NGOs (Business & Human Rights Resource Centre, TISCreport) were the first to collect the scattered mandatory statements.
+## Traceable groundwork
 
-**Remaining gap:** an open, dated register of Art. 24 disclosures with a deterministic Annex I checker that lists missing disclosures neutrally as "no disclosure found (as of, search path)".
-
-## Prior art
-
-- Regulation (EU) 2024/1781 (Ecodesign for Sustainable Products, ESPR), Art. 24 (disclosure) and Art. 25 (destruction ban): https://eur-lex.europa.eu/eli/reg/2024/1781/oj (not reachable, `EGRESS_BLOCKED`)
-- Implementing Regulation (EU) 2026/2, Annex I (disclosure format), OJ 10 February 2026, applies from 2 March 2027. Seen only as snippets. **Read the legal text before Ticket 01.**
-- Signify N.V., "Disclosure on Discarded Unsold Consumer Products", FY 2025, PDF of 4 May 2026 (assets.signify.com, file name `20260504-signify-espr-disclosure.pdf`, snippet only; establish the full URL before use)
-- Law-firm explainers (snippets): Cooley (products.cooley.com, 7 May 2026), Freshfields, Linklaters, Cattwyk, trade-e-bility; vendor: Generation Impact
-- Umweltbundesamt (German Environment Agency), topic page on the destruction ban (umweltbundesamt.de, snippet only)
-- DUH press release on missing company lists for the destruction ban (duh.de; mirrored at it-boltwise.de, snippet only)
-- Origin: triple find in the ESPR round. Idea round ("Vernichtungs-Register"), bisociation (ESPR Art. 24 × EURING ringing recovery centre, "Offenlegungs-Sammelbuch") and inversion (OP-4, "Offenlegungsregister"). Atlas pattern: "disclosure duty without a register → register free".
-- The tin online: https://felixinberlin.github.io/Amelie/#dose=vernichtungs-offenlegungsregister
+- [Normtext-Abgleich / Legal-text check](../../../07-demos/vernichtungs-offenlegungsregister/normtext-abgleich-2026-10-08.md)
+- [Signify provenance](../../../07-demos/vernichtungs-offenlegungsregister/data/README.md)
+- [Ticket 02](../../../07-demos/vernichtungs-offenlegungsregister/ticket-02-normtext-und-realfixture.md)
+- [Ticket 03](../../../07-demos/vernichtungs-offenlegungsregister/ticket-03-kuratierter-pilot.md)
+- [ESPR Art. 24–26](https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32024R1781)
+- [IR (EU) 2026/2, Arts. 1–3/7 and Annexes I–II](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32026R0002)
+- [Delegated Regulation (EU) 2026/296](https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32026R0296)
+- [Dose](https://felixinberlin.github.io/Amelie/#dose=vernichtungs-offenlegungsregister)
 
 ---
 
-This idea belongs to no one. Take it, build it, sell it — you owe me nothing, not even a reply. If you ever have an idea you won't build, give it to someone who will.
+This idea belongs to no one. Take it, build it, sell it — you owe me nothing, not even a reply.
+
 CC0 / Public Domain. — Félix, Berlin · github.com/felixinberlin

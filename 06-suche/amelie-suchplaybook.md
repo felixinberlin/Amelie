@@ -704,3 +704,38 @@ Zwischenrunde „Fun-Fokus" zuvor: Nur 1 von 5 Ideen mit Fun 5 überlebte bis Ne
 - **Gelernt:** Die drei Methoden liefern hier eine Enthaltungsgrenze, keinen freien Markt. Consumer-Reader und Rechtsübersicht liegen bereits bei gefördertem Projekt/Empfänger. Beobachtungsdaten und geschätztes Gerätealter ersetzen keine individuellen Rechtsfakten.
 - **Fehler:** Ursprüngliche absolute B2B-/Parser-Abwesenheitsbehauptung und automatische Rechteableitung waren unbelegt. Eine Rekombination derselben Bestandsidee wird nicht als neue Entdeckung gezählt; bestehende Gräber bleiben unverändert.
 - **Nächste Gates:** DPP (17/35) erst mit zehn realen Pass-Fixtures und geprüfter nationaler/produktbezogener Zuordnung; K3 (22/35) erst mit empfängergetragener Stichprobe zu Modell, Teil, Geltungsbereich und Anfrage-/Ergebnisbelegen; lokale Chronik (23/35) erst bei dokumentierter Empfänger-Prozesslücke und drei zulässig genutzten, im tatsächlichen Workflow akzeptierten Exporten. Bis dahin nichts packen oder versenden. Native Agenten und lokale Skripte verwenden; Vertex-Credits sind laut Nutzer erschöpft.
+
+## Retro: ESPR-Normtext-Abgleich 08.10.2026
+
+**Erledigt:** Bestehende Dose `vernichtungs-offenlegungsregister` anhand der
+DVO (EU) 2026/2 Art. 1–7/Anhänge I–III, ESPR Art. 24–26 und der Delegierten
+VO (EU) 2026/296 nachgeprüft; erste echte Fixture mit sechs Signify-Zeilen,
+Originalzahlen, Seitenbelegen und PDF-SHA-256 ergänzt. Keine neue Ideensuche,
+keine neue Dose, kein neuer Neuheitsreview, keine Zustellung. Das frühere
+`frei` (dünn, 24/35) ist historischer Reviewstand, keine aktuelle Bestätigung
+der gesamten Registerlücke.
+
+**Gelernt:** Veröffentlichte Tatsachen zuerst erhalten, dann Fragen formulieren.
+Signify nennt je Zeile 100 % Beseitigung und separat 0 % Vernichtung. Eine
+Übertragung darf die zweite Zahl nicht eigenmächtig auf 100 setzen. Schätzstatus
+und unbekannter Behandlungsweg sind unterschiedliche Felder; weder fehlende
+Methodik noch fehlende Behandlung dürfen als bekannte Null ausgegeben werden.
+Ein historischer Bericht von 2025 wird nicht rückwirkend am späteren Pflichtformat
+gemessen. Dessen Anwendung beginnt beim ersten vollen Geschäftsjahr nach
+02.03.2027 (Kalender-GJ 2028); die Zwölfmonatsfrist wird nicht rückwirkend auf den
+ursprünglichen ESPR-Artikel übertragen.
+
+**Fehler korrigiert:** Achtstellige KN-Codes und eine geschlossene Ausnahmeliste
+waren falsche Annahmen. Der Normtext nennt grundsätzlich zwei-, in bestimmten
+Kategorien vierstellige Codes und offene Entsorgungsgründe. Wiederaufarbeitung
+gehört zur Vorbereitung zur Wiederverwendung. Die Vernichtungssumme ist eine
+Zwischensumme und kein zusätzlicher Behandlungsweg. ESPR Art. 26 verlangt
+Kommissionskonsolidierung bis 19.07.2027 und danach alle 36 Monate; „kein Sammler
+bei der Kommission“ war als pauschale Neuheitsstütze unzutreffend.
+
+**Nächstes Mal:** Erst Primärtext und Bericht visuell lesen, dann Schema bauen.
+EUR-Lex TXT ließ sich hier über das Web-Tool in DE/EN lesen, während lokales curl
+leere Antworten und die CELEX-Resource-Route nur Metadaten lieferte. Zugangswege
+pro Quelle und Werkzeug dokumentieren. Eine zweite echte Offenlegung und ein
+kleiner, kuratierter Pilot müssen zeigen, welchen nachvollziehbaren Zusatznutzen
+das offene Register gegenüber der vorgesehenen Kommissionskonsolidierung bietet.

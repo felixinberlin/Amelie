@@ -1,116 +1,73 @@
-# Vernichtungs-Offenlegungsregister — Scaffolding & Offenlegungs-Prüfer
+# Vernichtungs-Offenlegungsregister — quellengeprüfter Übertragungskern
 
-> Ein deterministischer Prüfer für die Offenlegungen nach Art. 24 ESPR über vernichtete unverkaufte Verbraucherprodukte, gegen ein **vorläufiges** Anhang-I-Schema (DVO (EU) 2026/2). Jeder Befund ist eine **Frage**, und das Register kennt nur zwei Status: **„gefunden"** oder **„keine Offenlegung gefunden (Stand, Suchweg)"**.
-> *CC0 / Public-Domain-Geschenk für die Deutsche Umwelthilfe e.V. (DUH), Bereich Kreislaufwirtschaft.*
->
-> *(English: Destruction Disclosure Register — a deterministic checker for Art. 24 ESPR disclosures on discarded unsold consumer products, against a **provisional** Annex I schema. Every finding is a **question**; the register knows only two statuses: **found** or **no disclosure found (as of, search path)**.)*
+Ein lokaler deterministischer Prüfer für übertragene Offenlegungen zu **entsorgten** unverkauften Verbraucherprodukten nach Art. 24 ESPR. Das Register kennt nur **„gefunden“** oder **„keine Offenlegung gefunden (Stand, Suchweg)“**. Das ist keine Prüfung, ob ein Unternehmen einer Pflicht unterliegt oder diese erfüllt.
 
----
+*Destruction Disclosure Register: a local transcription checker with source provenance and two neutral register statuses. CC0 gift for public-interest use.*
 
-## 1. Problem & Lücke
+## Forschungsupdate / Research update — 08.10.2026
 
-Seit dem Geschäftsjahr 2025 müssen große Unternehmen, die unverkaufte Verbraucherprodukte entsorgen, jährlich offenlegen, wie viel, warum und auf welchem Weg (Art. 24 ESPR, VO (EU) 2024/1781). Die Angaben stehen verstreut auf Firmenseiten, in PDFs und in Nachhaltigkeitsberichten, aber nirgends nebeneinander. Ab Offenlegungsjahr 2029 gilt das Tabellenformat aus Anhang I der DVO (EU) 2026/2; bis dahin ist das Format frei.
+Die [Normtext-Nachprüfung](normtext-abgleich-2026-10-08.md) ersetzt die vorläufigen Annahmen vom 28.09.2026. DVO (EU) 2026/2 Art. 1–7/Anhänge I–III und ESPR Art. 24–26 wurden gelesen; die Ausnahmen vom Vernichtungsverbot wurden als gesonderter Regelungsbereich geprüft. Die erste reale Fixture enthält sechs Signify-Zeilen für GJ 2025 mit SHA-256 und Seitenbelegen. Beide PDF-Seiten wurden auch visuell geprüft.
 
-*The mandatory figures on destroyed goods appear every year on hundreds of company pages and PDFs, but nowhere side by side.*
+**Schema-Stand:** `gegen Normtext geprüft am 2026-10-08`. Das ist der Quellenstand des Übertragungsmodells, keine Zertifizierung. Schema und Prüfer erfassen technische Daten, nicht die vollständige visuelle Darstellung des gesetzlichen Formulars oder sämtliche individuellen Rechtsvoraussetzungen.
 
----
+*Primary sources replaced the snippet-based assumptions. The first real fixture is manually transcribed and visually checked. The schema status describes source verification, not company compliance.*
 
-## 2. Der Sicherheitsnachweis (Safety Case)
+## Korrigierte Datenregeln
 
-> [!CAUTION]
-> **Das Register ist kein Pranger. Es sagt nie „Verstoß", „säumig" oder „violation". Die Pflicht ist bedingt (nur wer entsorgt, muss offenlegen), und es gibt keine Liste der Verpflichteten — „keine Offenlegung gefunden" kann auch „nichts entsorgt" heißen.**
-> *The register never says "violation". The duty is conditional and there is no list of obliged companies.*
+- KN-Kategorien grundsätzlich zwei Stellen, vier für die in Anhang II genannten Kategorien. Bei unzureichender Produktbeschreibung bleibt die Zuordnung eine Frage.
+- Gründe als offene Texte; keine pauschale Liste zulässiger Ausnahmen. Im künftigen Format werden unterschiedliche Gründe auf getrennte Zeilen verteilt.
+- Gewichtsbezogene Behandlungsanteile: Vorbereitung zur Wiederverwendung, Recycling, sonstige Verwertung, Beseitigung und ausdrücklich unbekannte Behandlung. Wiederaufarbeitung ist kein zusätzlicher sechster Anteil.
+- Vernichtung wird separat als Summe aus Recycling, sonstiger Verwertung und Beseitigung erfasst und nie noch einmal in die Komponentensumme gezählt.
+- Schätzkennzeichnungen für Stückzahl und Gewicht getrennt. Eine fehlende Angabe ist kein Nachweis einer Messung. Verpackungsgewicht, Präventionsmaßnahmen, Rechtsträger und Zeitraum können mitgeführt werden; unbelegte Felder bleiben unbekannt.
+- Eine Position führt derzeit genau einen KN-Code. Mehrfach-Codes für gemeinsam verkaufte Sets sind nicht vollständig abgebildet; solche Fälle brauchen manuelle Dokumentation und eine spätere Modellerweiterung.
+- Die Toleranz gerundeter Prozentwerte und grobe kg/Stück-Spannen sind technische Übertragungshilfen, keine Rechtsnormen. Das normalisierte Modell ersetzt keine Prüfung der amtlichen Formularansicht.
 
-Harte Invarianten (jede durch einen Test abgesichert):
+## Historische Quellen und künftiges Format
 
-1. **Zwei Status, sonst nichts.** `RegisterStatus = 'gefunden' | 'keine Offenlegung gefunden'`. Letzterer trägt immer Stand (ISO-Datum) und Suchweg (Orte + Suchbegriffe); ohne beides wirft der Kern.
-2. **Kein Gesamturteil.** `pruefeOffenlegung()` liefert Befunde und unbekannte Felder, aber kein `ok`, `grün` oder `erfüllt`. Null Befunde heißt nur: keine Regel hat eine Frage ausgelöst.
-3. **Befunde sind Fragen.** Jeder Befund trägt Regel-ID, `art: 'frage'` und Klartext De/En, der mit `?` endet — der Kern wirft sonst.
-4. **Neutrale Sprache als Code, nicht als Konvention.** `assertNeutraleSprache()` läuft über jeden erzeugten Text; übertragener Freitext mit Vorwurfswort wird nicht zitiert, sondern nummeriert.
-5. **Jede Zeile mit Herkunft.** „gefunden" nur mit Quell-URL und Abrufdatum; Archiv-Snapshot optional, aber vorgesehen.
-6. **Kein stilles Raten.** Negative Mengen, Anteile außerhalb 0–100, unbekannte Behandlungswege, doppelte Positions-IDs und Widersprüche (gleiches Unternehmen × GJ als gefunden *und* nicht gefunden) werfen einen Fehler.
-7. **Offline, ohne Modell.** Keine Importe, kein `fetch` (per Test auf den Quelltext geprüft).
+`pruefmodus: "historisch"` ist der Standard. Ein zukünftiger Anhang-I-Vergleich wird nur mit `pruefmodus: "anhang-i"` ausdrücklich gewählt; auch dann entscheidet der Kern nicht über die individuelle Pflicht. Nach Art. 1/7 der DVO gilt das Format für das erste volle Geschäftsjahr nach dem 02.03.2027; bei Kalender-GJ folgt daraus 2028 mit Veröffentlichung bis Ende 2029. Die zwölfmonatige Frist wird nicht rückwirkend als ursprüngliche Art.-24-Frist ausgegeben.
 
----
+Die Signify-Fixture bleibt historisch. Ihre Dezimalgewichte werden nicht gerundet, ihre freien Gründe nicht in Ausnahme-Codes umgeschrieben. Die Quelle nennt pro Zeile 100 % Beseitigung und separat 0 % Vernichtung. `V6-VERNICHTUNGSSUMME` fragt nach dieser Übertragung; es gibt keine stille Korrektur und keinen Vorwurf. Siehe [Daten und Provenienz](data/README.md).
 
-## 3. Schema-Stand: vorläufig
+## Sicherheitsnachweis / Safety case
 
-> [!WARNING]
-> **`schemaStatus: "vorläufig"`.** Der Normtext der DVO (EU) 2026/2 (Art. 2/3, Anhang I), der Delegierten VO (EU) 2026/296 und von ESPR Art. 24 Abs. 1 wurde **nicht gelesen** — der Seitenabruf war gesperrt (`EGRESS_BLOCKED`). Das Schema behauptet deshalb keine Feldnummern aus Anhang I.
-> *The legal text was not read. The schema claims no Annex I field numbers.*
+1. Keine Gesamtbewertung: Das Ergebnis enthält nur Unternehmen, GJ, Schema-Stand, Fragen und unbekannte Felder.
+2. Jede Frage trägt eine Regel-ID, `art: "frage"` und Klartext auf Deutsch/Englisch. Der Sprachwächter verhindert Vorwurfswörter in generierten Ausgaben.
+3. Gefundene Angaben brauchen Quell-URL und Abrufdatum; nicht gefundene brauchen Datum und Suchweg. Ein optionaler Snapshot ergänzt die Herkunft, ersetzt die Originalquelle aber nicht.
+4. Ungültige Zahlen, Anteile, Wege und doppelte Positionen werden abgewiesen. Unbekannte Werte werden nicht als Null oder als Erfüllung behandelt.
+5. Kein Ranking, keine Quote gegen eine angenommene Unternehmensliste, keine automatische Zustellung. Die Registerlogik bleibt mit `umsetzungsplan-register` kompatibel.
+6. Der Kern arbeitet offline ohne Modell, Schlüssel oder Server. Keine Vertex-Credits erforderlich.
 
-Die sechs Fachfelder sind Annahmen aus Sekundärquellen (Kanzlei- und Anbieterschnipsel) und in `anhang1-schema.json` unter `x-annahmen` sowie im Kern unter `ANNAHMEN` einzeln mit Herkunft benannt:
+## Module und Regeln
 
-| Feld | Annahme | Herkunft |
-|---|---|---|
-| `stueck` | Menge je Warengruppe in Stück | Kanzleischnipsel zu Art. 24 Abs. 1 |
-| `gewichtKg` | Gewicht je Warengruppe in kg | Kanzlei-/Anbieterschnipsel zu Anhang I |
-| `gruende` | Codes aus der Ausnahmeliste (Art. 25 Abs. 5 ESPR, präzisiert durch Delegierte VO (EU) 2026/296) — sinngemäß, nicht wortgleich | Kanzleischnipsel |
-| `behandlungswege` | Anteile in % entlang der Abfallhierarchie (Vorbereitung zur Wiederverwendung, Wiederaufbereitung, Recycling, sonstige Verwertung, Beseitigung) | Schnipsel zu Art. 24 Abs. 1; Prozentform angenommen |
-| `cnCode` | achtstelliger KN-Code | Anbieterschnipsel zu Anhang I |
-| `geschaetzt` | Kennzeichnung gemessen/geschätzt | Kanzleischnipsel zu DVO 2026/2 |
+| Datei | Aufgabe |
+|---|---|
+| `src/engine/vernichtungs-offenlegungsregister/offenlegungsPruefer.ts` | `pruefeOffenlegung`, `erstelleRegister`, `registerAlsCsv`, Sprachwächter |
+| `src/engine/vernichtungs-offenlegungsregister/offenlegungsPruefer.test.ts` | Regression, Primärformat, historische Fixture, JSON-Schema und Invarianten |
+| `anhang1-schema.json` | Normalisiertes Übertragungsmodell mit Quellenstand |
+| `data/synthetische-offenlegungen.json` | Getrennte konstruierte Testfälle |
+| `data/reale-offenlegungen.json` | Signify GJ 2025, sechs echte Übertragungszeilen |
+| `data/signify-2025-provenienz.json` | Originalzahlen, Seitenzuordnung, Quelle und SHA-256 |
 
-Die Markierung fällt erst, wenn das Schema Feld für Feld gegen den Normtext geprüft ist (`gegen Normtext geprüft am …`).
+`V0-FREITEXT`: Übertragung aus Fließtext; `V1-PROZENTSUMME`: Komponentensumme; `V2-GRUND`: Grund/Zeilenzuordnung; `V3-CN-CODE`: künftige Granularität; `V4-STUECK-GEWICHT`: Mengenheuristik; `V5-SCHAETZUNG`: Schätzgrundlage; `V6-VERNICHTUNGSSUMME`: separate Teilsumme; `V7-ANHANG-FELD`: Felder im ausdrücklich gewählten künftigen Vergleich.
 
----
+## Ausführen / Run
 
-## 4. Architektur-Übersicht
-
-```
-Offenlegung (von Hand oder bestätigter LLM-Vorschlag → anhang1-schema.json)
-   │   + Quelle { url, abgerufenAm, archivSnapshot }
-   ▼
-pruefeOffenlegung()   deterministisch, ohne Netz, ohne Modell
-   │   V0 Freitext ohne Tabelle      V1 Prozentsumme Behandlungswege ≠ 100 (±0,5)
-   │   V2 Grund außerhalb der Liste  V3 KN-Code formal (8 Stellen, Kap. 01–97, ≠ 77)
-   │   V4 Stück ↔ Gewicht            V5 Schätzkennzeichnung fehlt
-   ▼
-PruefErgebnis  { schemaStatus, befunde[{regel, art:'frage', position, frageDe, frageEn}], felderUnbekannt[] }
-   │
-   ▼
-erstelleRegister(offenlegungen, suchnachweise)
-   │   gefunden                    ← Offenlegung mit Quelle
-   │   keine Offenlegung gefunden  ← Suchnachweis mit Stand + Suchweg
-   ▼
-registerAlsCsv()   statische CSV/JSON je Unternehmen × Geschäftsjahr, keine Quoten
+```sh
+npx vitest run src/engine/vernichtungs-offenlegungsregister src/engine/umsetzungsplan-register --maxWorkers=2
+npm run export:data
+npm run lint
+npm test -- --maxWorkers=2
+npm run build
 ```
 
-**Regeln im Detail / rules:**
+## Tickets und nächste Grenze
 
-| ID | Auslöser | Frage (Kurzform) |
-|---|---|---|
-| `V0-FREITEXT` | Format `freitext` | Lassen sich die Felder von Hand übertragen? |
-| `V1-PROZENTSUMME` | Summe der Wegeanteile weicht um mehr als 0,5 Punkte von 100 ab | Fehlt ein Behandlungsweg? / Ist ein Weg doppelt gezählt? |
-| `V2-GRUND` | Grund nicht auf der vorläufigen Ausnahmeliste, oder kein Grund übertragen | Entspricht er einer Ausnahme nach Art. 25 Abs. 5, oder ist es ein freier Grund? |
-| `V3-CN-CODE` | nicht 8 Ziffern, nur HS-Ebene (4/6), oder Kapitel außerhalb 01–97 bzw. 77 | Ist der Code richtig übertragen? |
-| `V4-STUECK-GEWICHT` | kg je Stück außerhalb einer groben Spanne je KN-Kapitel (Heuristik, keine Norm), oder eine Angabe null und die andere nicht | Sind Einheiten vertauscht? |
-| `V5-SCHAETZUNG` | Mengen ohne Kennzeichnung gemessen/geschätzt | Sagt die Offenlegung, wie sie ermittelt wurden? |
+- [Ticket 01](ticket-01-anhang1-pruefer.md): ursprünglicher Vertrag, fachlich durch Ticket 02 ersetzt; historische Akzeptanzkriterien bleiben lesbar.
+- [Ticket 02](ticket-02-normtext-und-realfixture.md): Quellenabgleich, korrigierter Kern und reale Fixture.
+- [Ticket 03](ticket-03-kuratierter-pilot.md): offen; zweite unabhängige Offenlegung, datierte Auswahl und kuratierter Pilot. Empfängerbedarf und Kontakt vor Zustellung verifizieren.
 
----
+ESPR Art. 26 verlangt künftige konsolidierte Kommissionsinformationen. Der zusätzliche Nutzen eines größeren Registers muss deshalb vor einem Pilot erneut geprüft werden. Diese Runde war Quellen- und Implementierungsarbeit, kein erneuter Neuheitsreview.
 
-## 5. Enthaltene Module
+[Die Dose / The Dose](https://felixinberlin.github.io/Amelie/#dose=vernichtungs-offenlegungsregister)
 
-* `src/engine/vernichtungs-offenlegungsregister/offenlegungsPruefer.ts` — Prüfer `pruefeOffenlegung`, Register `erstelleRegister`, Export `registerAlsCsv`, Hilfen `cnCodeProblem`, `assertNeutraleSprache`, Konstanten `SCHEMA_STATUS`, `ANNAHMEN`, `AUSNAHME_GRUENDE`, `BEHANDLUNGSWEGE`.
-* `src/engine/vernichtungs-offenlegungsregister/offenlegungsPruefer.test.ts` — Vitest-Suite (28 Fälle) inkl. kleinem JSON-Schema-Prüfer.
-* `07-demos/vernichtungs-offenlegungsregister/anhang1-schema.json` — **vorläufiges** Anhang-I-Schema (Draft-07) mit `schemaStatus`, `x-annahmen` und `x-ausnahmeGruende`.
-* `07-demos/vernichtungs-offenlegungsregister/data/synthetische-offenlegungen.json` — 5 **synthetische** Offenlegungen erfundener Firmen (Beispiel GmbH, Muster Mode AG, Exempel Schuh KG, Probe Leuchten GmbH, Fiktiv Handel SE) und 1 synthetischer Suchnachweis, alle `synthetisch: true`, URLs auf `example.org`.
-
-> [!NOTE]
-> **Ehrlichkeit / honesty:** Alle Fixtures sind synthetisch. Die erste echte Fixture — die **Signify-Offenlegung zum GJ 2025** (PDF vom 04.05.2026) — ist **noch nicht** übertragen, weil das PDF in dieser Umgebung nicht abrufbar war. Das bleibt in Ticket 01 offen.
-> *All fixtures are synthetic. Signify's FY 2025 disclosure has not been transcribed yet; this stays open in Ticket 01.*
-
----
-
-## 6. Entwicklungs-Tickets
-
-- [ ] [Ticket 01: Anhang I als Schema, ein Prüfer, eine echte Offenlegung](./ticket-01-anhang1-pruefer.md) — Prüfer, Register und Tests fertig; offen: Normtext lesen, Signify-Fixture von Hand übertragen.
-
----
-
-## 7. Live-Demo
-
-* **Die Dose im Web:** [felixinberlin.github.io/Amelie/#dose=vernichtungs-offenlegungsregister](https://felixinberlin.github.io/Amelie/#dose=vernichtungs-offenlegungsregister)
-* **Lokal testen / run locally:** `npx vitest run src/engine/vernichtungs-offenlegungsregister`
-
----
-Lizenz: CC0 1.0 Public Domain.
+Lizenz: CC0 1.0 Public Domain. Verlinkte Originaldokumente sind nicht Teil dieser Lizenzzusage.

@@ -1,6 +1,6 @@
 {
-  "hinweis": "ALLE EINTRÄGE SIND SYNTHETISCH. Firmen, Zahlen und URLs sind erfunden (example.org ist eine reservierte Beispiel-Domain). Keine Zeile bildet eine echte Offenlegung ab. Die erste echte Fixture (Signify N.V., GJ 2025) steht aus, siehe Ticket 01. Lizenz: CC0 1.0 Public Domain.",
-  "schemaStatus": "vorläufig",
+  "hinweis": "Synthetische Prüffälle. Expliziter zukünftiger Anhang-I-Vergleich, keine Feststellung einer Pflicht.",
+  "schemaStatus": "gegen Normtext geprüft am 2026-10-08",
   "faelle": [
     {
       "fall": "vollstaendig",
@@ -20,69 +20,181 @@
           {
             "id": "P1",
             "warengruppe": "T-Shirts aus Baumwolle",
-            "cnCode": "6109 10 00",
+            "cnCode": "61",
             "stueck": 12000,
             "gewichtKg": 2400,
             "geschaetzt": false,
-            "gruende": ["schaden-nicht-reparierbar"],
+            "gruende": [
+              "schaden-nicht-reparierbar"
+            ],
             "behandlungswege": [
-              { "weg": "recycling", "anteilProzent": 70 },
-              { "weg": "sonstige-verwertung", "anteilProzent": 30 }
-            ]
+              {
+                "weg": "recycling",
+                "anteilProzent": 70
+              },
+              {
+                "weg": "sonstige-verwertung",
+                "anteilProzent": 30
+              },
+              {
+                "weg": "vorbereitung-wiederverwendung",
+                "anteilProzent": 0
+              },
+              {
+                "weg": "beseitigung",
+                "anteilProzent": 0
+              },
+              {
+                "weg": "unbekannt",
+                "anteilProzent": 0
+              }
+            ],
+            "schaetzungStueck": false,
+            "schaetzungGewicht": false,
+            "verpackung": false,
+            "vernichtetProzent": 100
           },
           {
             "id": "P2",
             "warengruppe": "Sportschuhe",
-            "cnCode": "64041100",
+            "cnCode": "61",
             "stueck": 800,
             "gewichtKg": 640,
             "geschaetzt": true,
-            "gruende": ["gesundheit-hygiene-sicherheit"],
+            "gruende": [
+              "gesundheit-hygiene-sicherheit"
+            ],
             "behandlungswege": [
-              { "weg": "recycling", "anteilProzent": 55.5 },
-              { "weg": "beseitigung", "anteilProzent": 44.5 }
-            ]
+              {
+                "weg": "recycling",
+                "anteilProzent": 56
+              },
+              {
+                "weg": "beseitigung",
+                "anteilProzent": 44
+              },
+              {
+                "weg": "vorbereitung-wiederverwendung",
+                "anteilProzent": 0
+              },
+              {
+                "weg": "sonstige-verwertung",
+                "anteilProzent": 0
+              },
+              {
+                "weg": "unbekannt",
+                "anteilProzent": 0
+              }
+            ],
+            "schaetzungStueck": false,
+            "schaetzungGewicht": false,
+            "verpackung": false,
+            "vernichtetProzent": 100
           }
-        ]
+        ],
+        "pruefmodus": "anhang-i",
+        "zeitraum": {
+          "von": "2028-01-01",
+          "bis": "2028-12-31"
+        },
+        "rechtstraeger": {
+          "kennung": "synthetisch",
+          "typ": "synthetischer Test",
+          "art": "einzeln",
+          "mitglieder": []
+        },
+        "praevention": {
+          "getroffen": "Synthetische Maßnahme",
+          "geplant": "Synthetische Maßnahme"
+        }
       }
     },
     {
       "fall": "prozentsumme-92",
       "beschreibung": "Behandlungswege summieren sich auf 92 %",
-      "erwartet": ["V1-PROZENTSUMME"],
+      "erwartet": [
+        "V1-PROZENTSUMME"
+      ],
       "offenlegung": {
         "unternehmen": "Muster Mode AG",
         "geschaeftsjahr": 2025,
         "synthetisch": true,
         "format": "tabelle",
-        "quelle": { "url": "https://example.org/muster-mode/espr-art24-2025.html", "abgerufenAm": "2026-09-28" },
+        "quelle": {
+          "url": "https://example.org/muster-mode/espr-art24-2025.html",
+          "abgerufenAm": "2026-09-28"
+        },
         "positionen": [
           {
             "id": "P1",
             "warengruppe": "Herrenhosen",
-            "cnCode": "62034231",
+            "cnCode": "62",
             "stueck": 5000,
             "gewichtKg": 3000,
             "geschaetzt": true,
-            "gruende": ["schaden-nicht-reparierbar"],
+            "gruende": [
+              "schaden-nicht-reparierbar"
+            ],
             "behandlungswege": [
-              { "weg": "recycling", "anteilProzent": 60 },
-              { "weg": "sonstige-verwertung", "anteilProzent": 32 }
-            ]
+              {
+                "weg": "recycling",
+                "anteilProzent": 60
+              },
+              {
+                "weg": "sonstige-verwertung",
+                "anteilProzent": 32
+              },
+              {
+                "weg": "vorbereitung-wiederverwendung",
+                "anteilProzent": 0
+              },
+              {
+                "weg": "beseitigung",
+                "anteilProzent": 0
+              },
+              {
+                "weg": "unbekannt",
+                "anteilProzent": 0
+              }
+            ],
+            "schaetzungStueck": false,
+            "schaetzungGewicht": false,
+            "verpackung": false,
+            "vernichtetProzent": 92
           }
-        ]
+        ],
+        "pruefmodus": "anhang-i",
+        "zeitraum": {
+          "von": "2028-01-01",
+          "bis": "2028-12-31"
+        },
+        "rechtstraeger": {
+          "kennung": "synthetisch",
+          "typ": "synthetischer Test",
+          "art": "einzeln",
+          "mitglieder": []
+        },
+        "praevention": {
+          "getroffen": "Synthetische Maßnahme",
+          "geplant": "Synthetische Maßnahme"
+        }
       }
     },
     {
       "fall": "grund-und-cn",
-      "beschreibung": "Grund außerhalb der Ausnahmeliste, KN-Code nur auf HS-Ebene, KN-Code mit unbelegtem Kapitel 77",
-      "erwartet": ["V2-GRUND", "V3-CN-CODE"],
+      "beschreibung": "Freier Grund ist zulässig; Codes außerhalb des Anhang-I-Kategorieformats lösen Rückfragen aus.",
+      "erwartet": [
+        "V3-CN-CODE"
+      ],
       "offenlegung": {
         "unternehmen": "Exempel Schuh KG",
         "geschaeftsjahr": 2025,
         "synthetisch": true,
         "format": "tabelle",
-        "quelle": { "url": "https://example.org/exempel-schuh/nachhaltigkeitsbericht-2025.pdf", "abgerufenAm": "2026-09-27" },
+        "quelle": {
+          "url": "https://example.org/exempel-schuh/nachhaltigkeitsbericht-2025.pdf",
+          "abgerufenAm": "2026-09-27"
+        },
         "positionen": [
           {
             "id": "P1",
@@ -91,57 +203,194 @@
             "stueck": 1000,
             "gewichtKg": 900,
             "geschaetzt": false,
-            "gruende": ["ueberbestand"],
-            "behandlungswege": [{ "weg": "beseitigung", "anteilProzent": 100 }]
+            "gruende": [
+              "ueberbestand"
+            ],
+            "behandlungswege": [
+              {
+                "weg": "beseitigung",
+                "anteilProzent": 100
+              },
+              {
+                "weg": "vorbereitung-wiederverwendung",
+                "anteilProzent": 0
+              },
+              {
+                "weg": "recycling",
+                "anteilProzent": 0
+              },
+              {
+                "weg": "sonstige-verwertung",
+                "anteilProzent": 0
+              },
+              {
+                "weg": "unbekannt",
+                "anteilProzent": 0
+              }
+            ],
+            "schaetzungStueck": false,
+            "schaetzungGewicht": false,
+            "verpackung": false,
+            "vernichtetProzent": 100
           },
           {
             "id": "P2",
             "warengruppe": "Schnürsenkel",
-            "cnCode": "77123456",
+            "cnCode": "77",
             "stueck": 10,
             "gewichtKg": 5,
             "geschaetzt": true,
-            "gruende": ["spende-abgelehnt"],
-            "behandlungswege": [{ "weg": "vorbereitung-wiederverwendung", "anteilProzent": 100 }]
+            "gruende": [
+              "spende-abgelehnt"
+            ],
+            "behandlungswege": [
+              {
+                "weg": "vorbereitung-wiederverwendung",
+                "anteilProzent": 100
+              },
+              {
+                "weg": "recycling",
+                "anteilProzent": 0
+              },
+              {
+                "weg": "sonstige-verwertung",
+                "anteilProzent": 0
+              },
+              {
+                "weg": "beseitigung",
+                "anteilProzent": 0
+              },
+              {
+                "weg": "unbekannt",
+                "anteilProzent": 0
+              }
+            ],
+            "schaetzungStueck": false,
+            "schaetzungGewicht": false,
+            "verpackung": false,
+            "vernichtetProzent": 0
           }
-        ]
+        ],
+        "pruefmodus": "anhang-i",
+        "zeitraum": {
+          "von": "2028-01-01",
+          "bis": "2028-12-31"
+        },
+        "rechtstraeger": {
+          "kennung": "synthetisch",
+          "typ": "synthetischer Test",
+          "art": "einzeln",
+          "mitglieder": []
+        },
+        "praevention": {
+          "getroffen": "Synthetische Maßnahme",
+          "geplant": "Synthetische Maßnahme"
+        }
       }
     },
     {
       "fall": "stueck-gewicht-und-schaetzung",
-      "beschreibung": "1500 kg je Leuchte (vermutlich Gramm als Kilogramm übertragen), Schätzkennzeichnung fehlt",
-      "erwartet": ["V4-STUECK-GEWICHT", "V5-SCHAETZUNG"],
+      "beschreibung": "Mengenheuristik und kontextabhängige vierstellige Kategorie; Schätzkennzeichnung wird nicht erfunden.",
+      "erwartet": [
+        "V3-CN-CODE",
+        "V4-STUECK-GEWICHT"
+      ],
       "offenlegung": {
         "unternehmen": "Probe Leuchten GmbH",
         "geschaeftsjahr": 2025,
         "synthetisch": true,
         "format": "tabelle",
-        "quelle": { "url": "https://example.org/probe-leuchten/disclosure-fy2025.pdf", "abgerufenAm": "2026-09-28" },
+        "quelle": {
+          "url": "https://example.org/probe-leuchten/disclosure-fy2025.pdf",
+          "abgerufenAm": "2026-09-28"
+        },
         "positionen": [
           {
             "id": "P1",
             "warengruppe": "Deckenleuchten",
-            "cnCode": "94051100",
+            "cnCode": "94",
             "stueck": 2000,
             "gewichtKg": 3000000,
-            "gruende": ["ungeeignet-fuer-zweck"],
-            "behandlungswege": [{ "weg": "recycling", "anteilProzent": 100 }]
+            "gruende": [
+              "ungeeignet-fuer-zweck"
+            ],
+            "behandlungswege": [
+              {
+                "weg": "recycling",
+                "anteilProzent": 100
+              },
+              {
+                "weg": "vorbereitung-wiederverwendung",
+                "anteilProzent": 0
+              },
+              {
+                "weg": "sonstige-verwertung",
+                "anteilProzent": 0
+              },
+              {
+                "weg": "beseitigung",
+                "anteilProzent": 0
+              },
+              {
+                "weg": "unbekannt",
+                "anteilProzent": 0
+              }
+            ],
+            "schaetzungStueck": false,
+            "schaetzungGewicht": false,
+            "verpackung": false,
+            "vernichtetProzent": 100
           }
-        ]
+        ],
+        "pruefmodus": "anhang-i",
+        "zeitraum": {
+          "von": "2028-01-01",
+          "bis": "2028-12-31"
+        },
+        "rechtstraeger": {
+          "kennung": "synthetisch",
+          "typ": "synthetischer Test",
+          "art": "einzeln",
+          "mitglieder": []
+        },
+        "praevention": {
+          "getroffen": "Synthetische Maßnahme",
+          "geplant": "Synthetische Maßnahme"
+        }
       }
     },
     {
       "fall": "freitext",
       "beschreibung": "Offenlegung nur als Absatz im Nachhaltigkeitsbericht, keine Tabelle",
-      "erwartet": ["V0-FREITEXT"],
+      "erwartet": [
+        "V0-FREITEXT"
+      ],
       "offenlegung": {
         "unternehmen": "Fiktiv Handel SE",
         "geschaeftsjahr": 2025,
         "synthetisch": true,
         "format": "freitext",
         "freitext": "Im Geschäftsjahr 2025 wurde ein geringer Teil unverkaufter Ware entsorgt, überwiegend wegen Beschädigung; der Großteil wurde recycelt.",
-        "quelle": { "url": "https://example.org/fiktiv-handel/bericht-2025.html#kreislauf", "abgerufenAm": "2026-09-28" },
-        "positionen": []
+        "quelle": {
+          "url": "https://example.org/fiktiv-handel/bericht-2025.html#kreislauf",
+          "abgerufenAm": "2026-09-28"
+        },
+        "positionen": [],
+        "pruefmodus": "anhang-i",
+        "zeitraum": {
+          "von": "2028-01-01",
+          "bis": "2028-12-31"
+        },
+        "rechtstraeger": {
+          "kennung": "synthetisch",
+          "typ": "synthetischer Test",
+          "art": "einzeln",
+          "mitglieder": []
+        },
+        "praevention": {
+          "getroffen": "Synthetische Maßnahme",
+          "geplant": "Synthetische Maßnahme"
+        }
       }
     }
   ],
@@ -152,8 +401,14 @@
       "synthetisch": true,
       "stand": "2026-09-28",
       "suchweg": {
-        "orte": ["https://example.org/platzhalter-textil/nachhaltigkeit", "Nachhaltigkeitsbericht 2025 (PDF, example.org)"],
-        "suchbegriffe": ["Disclosure on Discarded Unsold Consumer Products", "unverkaufte Verbraucherprodukte Art. 24"]
+        "orte": [
+          "https://example.org/platzhalter-textil/nachhaltigkeit",
+          "Nachhaltigkeitsbericht 2025 (PDF, example.org)"
+        ],
+        "suchbegriffe": [
+          "Disclosure on Discarded Unsold Consumer Products",
+          "unverkaufte Verbraucherprodukte Art. 24"
+        ]
       }
     }
   ]

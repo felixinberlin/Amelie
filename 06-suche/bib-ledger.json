@@ -610,6 +610,50 @@
         "src/data/candidateVectors.json": "sha256:b1584659a91b5625577433fc6f05ed9bcb300e95b215f12029d6b79d136a239c",
         "src/data/vectorChanges.json": "absent"
       }
+    },
+    "espr-primary-validation-2026-10-08": {
+      "plan_id": "espr-primary-validation-2026-10-08",
+      "actor": "bibliothekar",
+      "agent": "espr-fixture-bibliothekar",
+      "runde": "ESPR-Normtext-Abgleich 08.10.2026",
+      "at": "2026-10-08T07:47:38.818Z",
+      "ops": [
+        {
+          "index": 0,
+          "op": "source.add",
+          "target": "signify-espr-offenlegung-2025"
+        },
+        {
+          "index": 1,
+          "op": "source.log",
+          "target": "espr-art-24-dvo-2026-2"
+        },
+        {
+          "index": 2,
+          "op": "source.rate",
+          "target": "espr-art-24-dvo-2026-2"
+        },
+        {
+          "index": 3,
+          "op": "protokoll.add",
+          "target": "vernichtungs-offenlegungsregister"
+        }
+      ],
+      "files": [
+        "06-suche/amelie-pruefprotokoll.md",
+        "06-suche/amelie-quellen.md",
+        "src/data/quellen.json"
+      ],
+      "hashes": {
+        "src/data/quellen.json": "sha256:e7f346e9037f069692fa2a9d7a9a31fce00cbb5bbc07b254d8b483f06cfcc67b",
+        "src/data/graeber.json": "sha256:b90aba0750d83939ad450af14c9ae70ea18f40d7e4a07395a50897ef138e0a2d",
+        "06-suche/amelie-pruefprotokoll.md": "sha256:828a4e23db8b1f153fdbad6fff6882acedacd92350b982c4463d528c40328695",
+        "06-suche/terminology-map.md": "absent",
+        "06-suche/open-questions.md": "absent",
+        "src/data/doseVectors.json": "sha256:fb58743901afc0e7897df6bf55fd1dfa95b1cd7db885dad3da324716200dfbb9",
+        "src/data/candidateVectors.json": "sha256:b1584659a91b5625577433fc6f05ed9bcb300e95b215f12029d6b79d136a239c",
+        "src/data/vectorChanges.json": "absent"
+      }
     }
   }
 }
