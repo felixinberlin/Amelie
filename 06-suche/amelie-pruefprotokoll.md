@@ -1034,3 +1034,13 @@ Nachprüfung der bestehenden Dose, keine Ideensuche und kein erneuter Neuheitsre
 | # | Idee | Methode | Urteil (Merge → nach Review) | Beleg (kurz) | Evidenz | Geprüft | Prüfen ab |
 |---|---|---|---|---|---|---|---|
 | N1 | **Vernichtungs-Offenlegungsregister — Nachprüfung bestehender Dose** (`vernichtungs-offenlegungsregister`) — Normtext-Abgleich und erste echte Referenzfixture, keine neue Idee | [method: ideenrunde] | `frei` | Vorurteil frei (dünn), Dose Ready 24/35 vom 28.09.2026 bleibt historischer Stand; keine neue Novelty-Bewertung. [Seite] DVO 2026/2 Art. 1–7/Anhänge I–III und ESPR Art. 24–26 geprüft; Format erstes volles GJ nach 02.03.2027 (Kalender-GJ 2028, bis Ende 2029), ursprünglicher Art. 24 jährliche Offenlegung ohne rückwirkende Zwölfmonatsfrist. KN zwei-/vierstellig, Gründe offen, Anteile gewichtsbezogen, unbekannt eigener Weg, Vernichtung subtotal. Art. 26 verlangt Kommissionskonsolidierung bis 19.07.2027 und danach alle 36 Monate: ursprüngliches kein Kommissionssammler korrigiert, Pilot muss Zusatznutzen zeigen. Signify GJ 2025: sechs echte Zeilen, beide PDF-Seiten visuell geprüft, SHA-256/Seitenzuordnung/Originalzahlen gespeichert, historischer Prüfmodus; 100 % Beseitigung und separat 0 % Vernichtung als Rückfrage beibehalten. Keine Feststellung der Pflicht oder eines Verstoßes, keine Zustellung. Quellen und Grenzen im Buchkapitel und Demo; synthetische Fälle getrennt. | [Seite] | 2026-10-08 | 09/2027 |
+---
+
+## Glasanflug Neubewertung 06.10.2026
+
+Glasanflug Neubewertung 06.10.2026 (Librarian consolidation): refreshed prior art, frontend-linked source records and a conditional maintenance follow-on.
+
+| # | Idee | Methode | Urteil (Merge → nach Review) | Beleg (kurz) | Evidenz | Geprüft | Prüfen ab |
+|---|---|---|---|---|---|---|---|
+| N1 | **Glasanflug-Ampel — Neubewertung** (`glasanflug-ampel`) — LAG-VSW-Rechner; Bildauswertung bleibt Forschung | [method: review] | `verengt` | FLAP BirdSafe DIY asks façade-risk questions and USGBC 2026 describes photo/rendering-assisted questionnaires; Berlin guidance makes the planning context clearer. Residual claim is the transparent German LAG-VSW calculation layer; no evidence of demand for automated photo scoring. | [Seite] | 06.10.2026 | 03/2027 |
+| N2 | **Installierte Vogelschutzmuster — Zustandsnachweis** (`glasanflug-muster-wartungsnachweis`) — Wiederholte Sichtprüfung der Vollständigkeit und Anordnung vorhandener Muster | [method: bisoziation] | `unklar` | Bisoziation mit Straßenmarkierungswartung ergibt eine mögliche wiederkehrende Zustandsprüfung. ASTM E1710 ist nur ein Analogon; Vorhandensein, Nutzerbedarf und vorhandene Produkte für Vogelschutzmuster sind nicht belegt. | [Seite] | 06.10.2026 | 10/2027 |

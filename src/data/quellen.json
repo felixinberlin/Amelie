@@ -14528,6 +14528,684 @@
           "planId": "espr-primary-validation-2026-10-08"
         }
       ]
+    },
+    {
+      "id": "nabu-jena-vogelschlagmelder",
+      "name": "NABU Jena Vogelschlagmelder",
+      "typ": "B",
+      "kategorie": "citizen-science",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://vogelschlag.nabu-jena.de/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Das Meldeformular erfasst Fotos, Fundort, Abdruck und Fassadenausrichtung; Foto-Nutzungsrechte belegen keine Erlaubnis zum Modelltraining",
+      "fokus": "Welche Merkmale sind aus Meldungsfotos zuverlässig ableitbar, welche Aufnahmen fehlen und welche Nutzungsrechte gelten",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-06",
+      "ertrag": {
+        "dosen": [
+          "glasanflug-ampel"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-06"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-06",
+          "agent": "bibliothekar",
+          "runde": "Glasanflug-Ampel Neubewertung 2026-10-06",
+          "notiz": "Ergänzt die Dose: Datenquelle vorhanden, automatische Bewertung und Trainingsrechte bleiben ungeklärt.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "berliner-senmvku-beurteilungshilfe-vogel",
+      "name": "Berliner SenMVKU Beurteilungshilfe Vogelschlag",
+      "typ": "A",
+      "kategorie": "kommunal",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.berlin.de/sen/uvk/presse/pressemitteilungen/2026/pressemitteilung.1679571.php"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Berlin veröffentlichte am 09.06.2026 eine Beurteilungshilfe zur Einschätzung des Vogelschlagrisikos in Planungs- und Genehmigungsverfahren",
+      "fokus": "Anwendungsbereich der Beurteilungshilfe und Verhältnis zum LAG-VSW-Schema",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-06",
+      "ertrag": {
+        "dosen": [
+          "glasanflug-ampel"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-06"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-06",
+          "agent": "bibliothekar",
+          "runde": "Glasanflug-Ampel Neubewertung 2026-10-06",
+          "notiz": "Stützt den Planungskontext, belegt keine Nachfrage nach automatisierter Fotobewertung.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "lawson-et-al-window-markers-field-study",
+      "name": "Lawson et al. Window markers field study 2026",
+      "typ": "I",
+      "kategorie": "messverfahren",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://academic.oup.com/condor/article/128/3/1/8677179"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Feldstudie mit Vorher-Nachher-Kontrollvergleich zur Wirksamkeit von Fenstermarkierungen; berichtet Rückgänge an behandelten Fassaden",
+      "fokus": "Validierungsdesign und Übertragbarkeit auf eine spätere Wirksamkeitsauswertung",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-06",
+      "ertrag": {
+        "dosen": [
+          "glasanflug-ampel"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-06"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-06",
+          "agent": "bibliothekar",
+          "runde": "Glasanflug-Ampel Neubewertung 2026-10-06",
+          "notiz": "Abstract gelesen; belegt ein Evaluationsdesign, keinen Bedarf für Wartungssoftware.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "lysyk-et-al-ottawa-window-treatment-prep",
+      "name": "Lysyk et al. Ottawa window treatment preprint",
+      "typ": "I",
+      "kategorie": "messverfahren",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://ecoevorxiv.org/repository/view/12042/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Preprint zu Kollisionsdaten an Ottawa-Fassaden 2024/25 und möglichen Einflussfaktoren wie Glasfläche und Vegetation",
+      "fokus": "Vorläufige Feldbefunde und Grenzen nicht begutachteter Evidenz",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-06",
+      "ertrag": {
+        "dosen": [
+          "glasanflug-ampel"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-06"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-06",
+          "agent": "bibliothekar",
+          "runde": "Glasanflug-Ampel Neubewertung 2026-10-06",
+          "notiz": "Abstract gelesen; nicht peer-reviewed.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "flap-birdsafe-diy-assessment",
+      "name": "FLAP BirdSafe DIY assessment",
+      "typ": "B",
+      "kategorie": "citizen-science",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.flapapp.ca/",
+        "https://birdsafe.ca/homeowner-self-assessment/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Gebäudebezogene Einschätzung des Tag- und Nachtrisikos pro Fassade per Fragebogen",
+      "fokus": "Bestehende Fragebogenmerkmale und Abgrenzung zur LAG-VSW-Berechnung",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-06",
+      "ertrag": {
+        "dosen": [
+          "glasanflug-ampel"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-06"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-06",
+          "agent": "bibliothekar",
+          "runde": "Glasanflug-Ampel Neubewertung 2026-10-06",
+          "notiz": "Bestehende Risikobewertung verengt die Neuheit; sie belegt keinen deutschen LAG-VSW-Rechner.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "usgbc-save-the-birds-course-2026",
+      "name": "USGBC Save the Birds course 2026",
+      "typ": "I",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.usgbc.org/sites/default/files/2026-05/Save%20the%20Birds%20course_1.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "2026er Schulungsmaterial beschreibt BirdSafe DIY mit Fotos oder Renderings sowie Fragen zu Vegetation und Reflexion",
+      "fokus": "Aktueller Stand angrenzender nordamerikanischer Gebäudebewertungen",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-06",
+      "ertrag": {
+        "dosen": [
+          "glasanflug-ampel"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-06"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-06",
+          "agent": "bibliothekar",
+          "runde": "Glasanflug-Ampel Neubewertung 2026-10-06",
+          "notiz": "Schulungs-PDF gelesen; belegt angrenzende Vorarbeit, nicht das deutsche Schema.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "astm-e1710-road-marking-retroreflectivit",
+      "name": "ASTM E1710 road marking retroreflectivity",
+      "typ": "I",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://store.astm.org/e1710-18r25.html"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "teilweise",
+        "wie": "Normenübersicht öffentlich; Volltext kostenpflichtig"
+      },
+      "enthaelt": "Prüfverfahren zur Feldmessung der Retroreflexion von Straßenmarkierungen; periodische Messung bei Verschleiß als Wartungsanalogie",
+      "fokus": "Nur konzeptionelle Analogie für wiederholte Zustandsprüfung installierter Vogelschutzmuster",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-06",
+      "ertrag": {
+        "dosen": [
+          "glasanflug-ampel"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-06"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-06",
+          "agent": "bibliothekar",
+          "runde": "Glasanflug-Ampel Neubewertung 2026-10-06",
+          "notiz": "Keine übertragbare Messgröße und kein Beleg für Bedarf an Fassadenwartungssoftware.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "google-maps-platform-terms-street-view-i",
+      "name": "Google Maps Platform Terms — Street View image use",
+      "typ": "I",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://cloud.google.com/maps-platform/terms"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Maps-Content darf nicht außerhalb des Dienstes gescrapt oder gecacht und nicht zum Erstellen abgeleiteter Inhalte oder zum Trainieren, Testen und Validieren von ML-Modellen verwendet werden",
+      "fokus": "Lizenz- und Produktgrenzen für mögliche Street-View-Bildnutzung",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-06",
+      "ertrag": {
+        "dosen": [
+          "glasanflug-ampel"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-06"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-06",
+          "agent": "bibliothekar",
+          "runde": "Glasanflug Bildquellenprüfung 2026-10-06",
+          "notiz": "Schließt Google-Bilder für automatische Bewertung und Trainingsdaten aus.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "google-street-view-static-api-usage-and",
+      "name": "Google Street View Static API — usage and billing",
+      "typ": "I",
+      "kategorie": "messverfahren",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://developers.google.com/maps/documentation/streetview/usage-and-billing"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Static API verlangt aktivierte Abrechnung; Einzelbilder sind auf 640 mal 640 Pixel begrenzt und Panoramaabrufe werden abgerechnet",
+      "fokus": "Kosten und Auflösungsgrenzen für eine rein visuelle Einzelfallansicht",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-06",
+      "ertrag": {
+        "dosen": [
+          "glasanflug-ampel"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-06"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-06",
+          "agent": "bibliothekar",
+          "runde": "Glasanflug Bildquellenprüfung 2026-10-06",
+          "notiz": "Nur mögliche menschliche Referenz; Terms untersagen ML-Ableitungen und Zwischenspeicherung.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "google-street-view-insights",
+      "name": "Google Street View Insights",
+      "typ": "C",
+      "kategorie": "ki-versuch",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://developers.google.com/maps/documentation/street-view-insights/overview"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Google bietet Geobildanalyse über Vertex AI für statistische Erkenntnisse zu ausgewählten Infrastruktur-Assets wie Masten und Schildern",
+      "fokus": "Abgrenzung zu Vogelglas und Vertex-Abhängigkeit",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-06",
+      "ertrag": {
+        "dosen": [
+          "glasanflug-ampel"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-06"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-06",
+          "agent": "bibliothekar",
+          "runde": "Glasanflug Bildquellenprüfung 2026-10-06",
+          "notiz": "Verwendet Vertex AI und adressiert keine Fassadenbewertung; für diese Arbeit ausgeschlossen.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "mapillary-cc-by-sa-und-street-level-imag",
+      "name": "Mapillary CC BY-SA und Street-level imagery",
+      "typ": "B",
+      "kategorie": "citizen-science",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://help.mapillary.com/hc/en-us/articles/115001770409-CC-BY-SA-license-for-open-data",
+        "https://help.mapillary.com/hc/en-us/articles/115001770269-An-Introduction-to-Mapillary"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Kollaborativ erfasste Straßenbilder mit Standort und Aufnahmedatum; Bilder unter CC BY-SA mit Attribution und Share-Alike",
+      "fokus": "Abdeckung je NABU-Fassade, Capture-Datum, Bildwinkel und Lizenzpassung vor Nutzung prüfen",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-06",
+      "ertrag": {
+        "dosen": [
+          "glasanflug-ampel"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-06"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-06",
+          "agent": "bibliothekar",
+          "runde": "Glasanflug Bildquellenprüfung 2026-10-06",
+          "notiz": "Vielversprechender ergänzender Sichtprüfungs-Kandidat; Coverage variiert und Training/CC0-Verträglichkeit vorab klären.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "berlin-digitale-orthophotos",
+      "name": "Berlin Digitale Orthophotos",
+      "typ": "I",
+      "kategorie": "datensatz",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.berlin.de/sen/stadt/stadtdaten/geoinformation/landesvermessung/geotopographie-atkis/dop-digitale-orthophotos/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Amtliche Luftbild-Orthophotos des Berliner Stadtgebiets; DOP bietet senkrechte, maßstabsgetreue Bodenansicht",
+      "fokus": "Umfeldvegetation und räumlicher Kontext, nicht vertikale Fensterdetails",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-06",
+      "ertrag": {
+        "dosen": [
+          "glasanflug-ampel"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-06"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-06",
+          "agent": "bibliothekar",
+          "runde": "Glasanflug Bildquellenprüfung 2026-10-06",
+          "notiz": "Für Vegetations- und Standortkontext nützlich, nicht zur Messung von Fassadenglas.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "berlin-3d-stadtmodell-open-data",
+      "name": "Berlin 3D-Stadtmodell Open Data",
+      "typ": "I",
+      "kategorie": "datensatz",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://daten.berlin.de/artikel/berlin-3d-stadtmodell-als-open-data"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Offene Berliner LoD2-Gebäudemodelle und digitale Oberflächenmodelle, abrufbar nach Stadtbereich",
+      "fokus": "Gebäudeform, Höhe und räumliche Kontextmerkmale",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-06",
+      "ertrag": {
+        "dosen": [
+          "glasanflug-ampel"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-06"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-06",
+          "agent": "bibliothekar",
+          "runde": "Glasanflug Bildquellenprüfung 2026-10-06",
+          "notiz": "Modell/Orthophoto ergänzen Umfeld und Geometrie; sie zeigen keine Fenster- oder Markierungsdetails.",
+          "status": "durchsucht"
+        }
+      ]
     }
   ],
   "nichtNutzen": [

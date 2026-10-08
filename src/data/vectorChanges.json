@@ -1,0 +1,28 @@
+[
+  {
+    "at": "2026-10-06T19:23:46.167Z",
+    "planId": "cli-vector-mux2h7jl",
+    "agent": "bibliothekar",
+    "actor": "bibliothekar",
+    "runde": "",
+    "kind": "dose",
+    "id": "glasanflug-ampel",
+    "vector": "V1",
+    "from": 4,
+    "to": 3,
+    "evidence": "Reviewer reassessment 2026-10-06: BirdSafe DIY and USGBC training describe per-façade questionnaires with photos or renderings. The German LAG-VSW calculator remains distinct, so novelty narrows from 4 to 3."
+  },
+  {
+    "at": "2026-10-06T19:23:50.026Z",
+    "planId": "cli-vector-mux2hair",
+    "agent": "bibliothekar",
+    "actor": "bibliothekar",
+    "runde": "",
+    "kind": "dose",
+    "id": "glasanflug-ampel",
+    "vector": "V4",
+    "from": 5,
+    "to": 4,
+    "evidence": "Reviewer reassessment 2026-10-06: LAG VSW guidance is durable, but it is not itself an enacted statutory mandate; longevity is strong but not maximal."
+  }
+]

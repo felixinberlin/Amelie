@@ -33,6 +33,7 @@ import { DoseItem, Language, Verdict } from '../types';
 import { AMELIE_PLEDGE } from '../data/manifest';
 import { getTranslation, getLocalizedTitle } from '../i18n';
 import { DoseVectorPanel } from './DoseVectorPanel';
+import { DoseResearchUpdate } from './DoseResearchUpdate';
 import { getDoseUrl } from '../utils/doseUrl';
 import { DELIVERIES_DATA } from '../data/deliveries';
 import { DOSE_SIMULATOR_MAP, SimulatorKey } from '../data/doseSimulators';
@@ -752,6 +753,8 @@ ${bookChapters
             {isDe ? dose.priorArtDe : (isEs && dose.priorArtEs) || dose.priorArtEn}
           </p>
         </section>
+
+        <DoseResearchUpdate doseId={dose.id} lang={lang} />
 
         {/* Pillar 7: Das Buch zur Dose — Rohrecherche hinter den Behauptungen */}
         {bookChapters.length > 0 && (

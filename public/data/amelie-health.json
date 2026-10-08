@@ -1,9 +1,9 @@
 {
   "auditVersion": 1,
-  "generatedAt": "2026-10-02T00:06:34.559Z",
+  "generatedAt": "2026-10-08T09:35:26.073Z",
   "repository": {
-    "commit": "2923543",
-    "branch": "claude/charming-mccarthy-6fd72s"
+    "commit": "b2a75a71",
+    "branch": "HEAD"
   },
   "inventory": {
     "doses": 44,
@@ -11,7 +11,7 @@
     "demos": 10,
     "researchEntries": 36,
     "candidateIdeas": 20,
-    "books": 29
+    "books": 33
   },
   "distributions": {
     "doseStatus": {
@@ -74,6 +74,38 @@
     }
   ],
   "findings": [
+    {
+      "id": "MD-BROKEN-LINK-vernichtungs-offenlegungsregister-../../07-demos/vernichtungs-offenlegungsregister/data/README.md",
+      "severity": "error",
+      "category": "integrity",
+      "message": "Markdown file 05-dosen/vernichtungs-offenlegungsregister.md contains broken link to \"../../07-demos/vernichtungs-offenlegungsregister/data/README.md\".",
+      "file": "05-dosen/vernichtungs-offenlegungsregister.md",
+      "relatedId": "vernichtungs-offenlegungsregister"
+    },
+    {
+      "id": "MD-BROKEN-LINK-vernichtungs-offenlegungsregister-../../07-demos/vernichtungs-offenlegungsregister/normtext-abgleich-2026-10-08.md",
+      "severity": "error",
+      "category": "integrity",
+      "message": "Markdown file 05-dosen/vernichtungs-offenlegungsregister.md contains broken link to \"../../07-demos/vernichtungs-offenlegungsregister/normtext-abgleich-2026-10-08.md\".",
+      "file": "05-dosen/vernichtungs-offenlegungsregister.md",
+      "relatedId": "vernichtungs-offenlegungsregister"
+    },
+    {
+      "id": "MD-BROKEN-LINK-vernichtungs-offenlegungsregister-../../07-demos/vernichtungs-offenlegungsregister/ticket-02-normtext-und-realfixture.md",
+      "severity": "error",
+      "category": "integrity",
+      "message": "Markdown file 05-dosen/vernichtungs-offenlegungsregister.md contains broken link to \"../../07-demos/vernichtungs-offenlegungsregister/ticket-02-normtext-und-realfixture.md\".",
+      "file": "05-dosen/vernichtungs-offenlegungsregister.md",
+      "relatedId": "vernichtungs-offenlegungsregister"
+    },
+    {
+      "id": "MD-BROKEN-LINK-vernichtungs-offenlegungsregister-../../07-demos/vernichtungs-offenlegungsregister/ticket-03-kuratierter-pilot.md",
+      "severity": "error",
+      "category": "integrity",
+      "message": "Markdown file 05-dosen/vernichtungs-offenlegungsregister.md contains broken link to \"../../07-demos/vernichtungs-offenlegungsregister/ticket-03-kuratierter-pilot.md\".",
+      "file": "05-dosen/vernichtungs-offenlegungsregister.md",
+      "relatedId": "vernichtungs-offenlegungsregister"
+    },
     {
       "id": "DEMO-UNLINKED-chemhazard-stop",
       "severity": "warning",

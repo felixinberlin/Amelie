@@ -1,13 +1,13 @@
 # Amélie Status
 
-Generated: 2026-10-02T00:06:34.559Z
+Generated: 2026-10-08T09:35:26.073Z
 
 ## System
 
 * Dosen: 44
 * Gräber: 141
 * Demos: 10
-* Books: 29
+* Books: 33
 * Research entries: 36
 * Candidate ideas: 20
 
@@ -43,7 +43,10 @@ Generated: 2026-10-02T00:06:34.559Z
 
 ### Errors
 
-None.
+* **[MD-BROKEN-LINK-vernichtungs-offenlegungsregister-../../07-demos/vernichtungs-offenlegungsregister/data/README.md]** Markdown file 05-dosen/vernichtungs-offenlegungsregister.md contains broken link to "../../07-demos/vernichtungs-offenlegungsregister/data/README.md". (05-dosen/vernichtungs-offenlegungsregister.md)
+* **[MD-BROKEN-LINK-vernichtungs-offenlegungsregister-../../07-demos/vernichtungs-offenlegungsregister/normtext-abgleich-2026-10-08.md]** Markdown file 05-dosen/vernichtungs-offenlegungsregister.md contains broken link to "../../07-demos/vernichtungs-offenlegungsregister/normtext-abgleich-2026-10-08.md". (05-dosen/vernichtungs-offenlegungsregister.md)
+* **[MD-BROKEN-LINK-vernichtungs-offenlegungsregister-../../07-demos/vernichtungs-offenlegungsregister/ticket-02-normtext-und-realfixture.md]** Markdown file 05-dosen/vernichtungs-offenlegungsregister.md contains broken link to "../../07-demos/vernichtungs-offenlegungsregister/ticket-02-normtext-und-realfixture.md". (05-dosen/vernichtungs-offenlegungsregister.md)
+* **[MD-BROKEN-LINK-vernichtungs-offenlegungsregister-../../07-demos/vernichtungs-offenlegungsregister/ticket-03-kuratierter-pilot.md]** Markdown file 05-dosen/vernichtungs-offenlegungsregister.md contains broken link to "../../07-demos/vernichtungs-offenlegungsregister/ticket-03-kuratierter-pilot.md". (05-dosen/vernichtungs-offenlegungsregister.md)
 
 ### Warnings
 
@@ -62,5 +65,5 @@ None.
 ## Generated from
 
 * Audit version: 1
-* Commit: 2923543
-* Branch: claude/charming-mccarthy-6fd72s
+* Commit: b2a75a71
+* Branch: HEAD

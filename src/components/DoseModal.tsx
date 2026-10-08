@@ -33,6 +33,7 @@ import { DOSE_SIMULATOR_MAP, SimulatorKey } from '../data/doseSimulators';
 import { getBook } from '../data/doseBooks';
 import { DoseBook } from './DoseBook';
 import { DoseVectorPanel } from './DoseVectorPanel';
+import { DoseResearchUpdate } from './DoseResearchUpdate';
 import { doseImageSrc, doseImageSrcSet, doseImageSizes } from '../utils/doseImage';
 import { DoseVideo } from './DoseVideo';
 import {
@@ -694,6 +695,8 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
               {lang === 'de' ? dose.priorArtDe : dose.priorArtEn}
             </p>
           </div>
+
+          <DoseResearchUpdate doseId={dose.id} lang={lang} />
 
           {/* Section: AI-Native Frontier & Learning Plan (if present) */}
           {dose.aiFrontier && (

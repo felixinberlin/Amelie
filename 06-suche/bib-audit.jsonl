@@ -255,3 +255,24 @@
 {"at":"2026-10-08T07:47:39.106Z","event":"op","plan_id":"espr-primary-validation-2026-10-08","actor":"bibliothekar","agent":"espr-fixture-bibliothekar","runde":"ESPR-Normtext-Abgleich 08.10.2026","op":"source.rate","target":"espr-art-24-dvo-2026-2","detail":"bewertet 4 2 3 5 2 3"}
 {"at":"2026-10-08T07:47:39.107Z","event":"op","plan_id":"espr-primary-validation-2026-10-08","actor":"bibliothekar","agent":"espr-fixture-bibliothekar","runde":"ESPR-Normtext-Abgleich 08.10.2026","op":"protokoll.add","target":"vernichtungs-offenlegungsregister","detail":"Zeile in „ESPR-Normtext-Abgleich 08.10.2026“ (frei)"}
 {"at":"2026-10-08T07:47:39.107Z","event":"apply","plan_id":"espr-primary-validation-2026-10-08","key":"espr-primary-validation-2026-10-08","actor":"bibliothekar","ops":4,"files":3}
+{"at":"2026-10-06T19:21:52.273Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"Glasanflug-Ampel Neubewertung 2026-10-06","id":"nabu-jena-vogelschlagmelder"}
+{"at":"2026-10-06T19:21:52.335Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"Glasanflug-Ampel Neubewertung 2026-10-06","id":"berliner-senmvku-beurteilungshilfe-vogel"}
+{"at":"2026-10-06T19:21:52.392Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"Glasanflug-Ampel Neubewertung 2026-10-06","id":"lawson-et-al-window-markers-field-study"}
+{"at":"2026-10-06T19:21:52.445Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"Glasanflug-Ampel Neubewertung 2026-10-06","id":"lysyk-et-al-ottawa-window-treatment-prep"}
+{"at":"2026-10-06T19:21:52.498Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"Glasanflug-Ampel Neubewertung 2026-10-06","id":"flap-birdsafe-diy-assessment"}
+{"at":"2026-10-06T19:21:52.555Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"Glasanflug-Ampel Neubewertung 2026-10-06","id":"usgbc-save-the-birds-course-2026"}
+{"at":"2026-10-06T19:21:52.610Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"Glasanflug-Ampel Neubewertung 2026-10-06","id":"astm-e1710-road-marking-retroreflectivit"}
+{"at":"2026-10-06T19:21:52.613Z","event":"cli","actor":"bibliothekar","agent":"bibliothekar","runde":"Glasanflug-Ampel Neubewertung 2026-10-06","cmd":"quellen import","count":7}
+{"at":"2026-10-06T19:22:10.480Z","event":"cli","actor":"bibliothekar","runde":"Glasanflug Neubewertung 06.10.2026","cmd":"protokoll add","id":"glasanflug-ampel"}
+{"at":"2026-10-06T19:23:30.269Z","event":"cli","actor":"bibliothekar","runde":"Glasanflug Neubewertung 06.10.2026","cmd":"protokoll add","id":"glasanflug-muster-wartungsnachweis"}
+{"at":"2026-10-06T19:23:46.232Z","event":"op","plan_id":"cli-vector-mux2h7jl","actor":"bibliothekar","agent":"bibliothekar","runde":"","op":"vector.set","target":"glasanflug-ampel","detail":"V1 4 → 3"}
+{"at":"2026-10-06T19:23:46.233Z","event":"apply","plan_id":"cli-vector-mux2h7jl","key":"cli-vector-mux2h7jl","actor":"bibliothekar","ops":1,"files":2}
+{"at":"2026-10-06T19:23:50.079Z","event":"op","plan_id":"cli-vector-mux2hair","actor":"bibliothekar","agent":"bibliothekar","runde":"","op":"vector.set","target":"glasanflug-ampel","detail":"V4 5 → 4"}
+{"at":"2026-10-06T19:23:50.079Z","event":"apply","plan_id":"cli-vector-mux2hair","key":"cli-vector-mux2hair","actor":"bibliothekar","ops":1,"files":2}
+{"at":"2026-10-06T19:34:34.016Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"Glasanflug Bildquellenprüfung 2026-10-06","id":"google-maps-platform-terms-street-view-i"}
+{"at":"2026-10-06T19:34:34.265Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"Glasanflug Bildquellenprüfung 2026-10-06","id":"google-street-view-static-api-usage-and"}
+{"at":"2026-10-06T19:34:34.534Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"Glasanflug Bildquellenprüfung 2026-10-06","id":"google-street-view-insights"}
+{"at":"2026-10-06T19:34:34.806Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"Glasanflug Bildquellenprüfung 2026-10-06","id":"mapillary-cc-by-sa-und-street-level-imag"}
+{"at":"2026-10-06T19:34:34.918Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"Glasanflug Bildquellenprüfung 2026-10-06","id":"berlin-digitale-orthophotos"}
+{"at":"2026-10-06T19:34:35.159Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"Glasanflug Bildquellenprüfung 2026-10-06","id":"berlin-3d-stadtmodell-open-data"}
+{"at":"2026-10-06T19:34:35.173Z","event":"cli","actor":"bibliothekar","agent":"bibliothekar","runde":"Glasanflug Bildquellenprüfung 2026-10-06","cmd":"quellen import","count":6}

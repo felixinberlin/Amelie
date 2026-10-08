@@ -3,7 +3,7 @@ status: Delivered
 date_delivered: '2026-09-22T00:00:00Z'
 delivery_method: E-Mail
 target_maker: 'NABU Berlin, Projekt „Artenschutz am Gebäude"'
-review_score: 32/35
+review_score: 30/35
 architecture_tier: Tier 1
 source_type: Type A
 ---
@@ -89,7 +89,20 @@ Und der Bedarf ist gerade sprunghaft gestiegen:
 - **Gegenrichtung besetzt:** `vogelschlagmelder.de` (NABU Jena, Leipzig, Berlin) — Meldungen mit bis zu fünf Fotos, Ausrichtung, Fundort; Gefahrenkarte ist eine Heatmap der Meldungen, keine Gebäudebewertung. Melden ist gelöst, Bewerten nicht.
 - **Forschung:** Fassaden- und Glassegmentierung sowie Fenster-Wand-Verhältnis aus Straßenbildern sind gelöst und publiziert; niemand hat sie auf Vogelschlag angewendet.
 
-**Die verbleibende Lücke:** das deutsche Bewertungsschema als ausführbares, zitierfähiges Modul auf einer Meldeplattform, die die nötigen Fotos ohnehin sammelt — Situationsfaktoren geschätzt statt abgefragt, das Ergebnis ein prüfbares Blatt für Behörde und Eigentümer.
+**Die verbleibende, engere Lücke:** ein ausführbares, versioniertes und zitierfähiges Modul für das deutsche LAG-VSW-Schema. BirdSafe zeigt, dass gebäudebezogene Fragebögen mit Fotos/Renderings und Landschaftsfragen bereits existieren; eine deutsche Nachfrage nach automatischer Fotobewertung ist nicht belegt. Bildauswertung und Geodaten bleiben Forschungsvorschläge, keine Fähigkeit des gelieferten Rechners.
+
+## Neubewertung (6. Oktober 2026)
+
+- **Vorarbeiten präzisiert:** FLAPs BirdSafe DIY fragt Fassadenrisiken ab; ein USGBC-Schulungspapier von 2026 beschreibt Fotos oder Renderings als Teil des Fragebogens. Das verengt die Neuheit, belegt aber keinen Rechner für LAG VSW 21/01.
+- **Anwendungskontext:** Berlins Beurteilungshilfe für Planungs- und Genehmigungsverfahren schafft einen konkreten fachlichen Kontext. Sie ist kein Beleg für Nachfrage nach KI-Bewertung.
+- **Meldeweg und Rechte:** Das NABU-Jena-Formular nimmt Fotos, Fundort und Fassadenausrichtung auf. Die dortigen Foto-Nutzungsrechte sind keine bestätigte Erlaubnis für Modelltraining.
+- **Bewertung getrennt von Wirkung:** Eine Feldstudie von 2026 bietet ein Vorher-Nachher-Kontrolldesign für Maßnahmen. Gebäude-Risikobewertung und Wirksamkeitsnachweis sind verschiedene Aufgaben.
+- **Nächste offene Spur:** Eine wiederholte Sichtprüfung installierter Muster könnte Verschleiß oder fehlende Elemente dokumentieren. Bedarf, Produktlage und messbare Wirkung sind ungeklärt; die Analogie zur Straßenmarkierungswartung ist kein übertragbares Messverfahren.
+- **Street View:** Google-Bilder dürfen laut Maps-Bedingungen nicht für abgeleitete Inhalte sowie Training, Test oder Validierung von ML verwendet werden; die Static API kostet pro Abruf, verlangt aktivierte Abrechnung und liefert höchstens 640×640 Pixel. Street View Insights analysiert Daten über Vertex AI und ist für diesen Arbeitsweg ausgeschlossen.
+- **Bessere Ergänzungen:** Mapillary bietet Straßenbilder mit Aufnahmedatum und CC BY-SA. Zuerst Abdeckung der NABU-Fassaden, Perspektive und Lizenzpassung prüfen; Trainings- oder CC0-Nutzung nicht voraussetzen. Berlins Orthophotos und LoD2-Gebäudemodelle helfen bei Vegetations- und Gebäudeumfeld, zeigen aber keine Fassadenfenster.
+- **Aktuelle Einschätzung:** verengt; 30/35 Kernpunkte plus 3/5 Fun = 33/40. Die 30/35 bewerten nur den gelieferten deterministischen Rechner, nicht automatische Fotoauswertung.
+
+Quellen: [NABU-Jena-Melder](https://vogelschlag.nabu-jena.de/), [Berliner SenMVKU](https://www.berlin.de/sen/uvk/presse/pressemitteilungen/2026/pressemitteilung.1679571.php), [FLAP BirdSafe](https://www.flapapp.ca/), [USGBC-Schulung 2026](https://www.usgbc.org/sites/default/files/2026-05/Save%20the%20Birds%20course_1.pdf), [Lawson et al. 2026](https://academic.oup.com/condor/article/128/3/1/8677179), [Ottawa-Preprint](https://ecoevorxiv.org/repository/view/12042/), [Google Maps-Bedingungen](https://cloud.google.com/maps-platform/terms), [Mapillary-Lizenz](https://help.mapillary.com/hc/en-us/articles/115001770409-CC-BY-SA-license-for-open-data), [Berliner Orthophotos](https://www.berlin.de/sen/stadt/stadtdaten/geoinformation/landesvermessung/geotopographie-atkis/dop-digitale-orthophotos/), [Berliner 3D-Stadtmodell](https://daten.berlin.de/artikel/berlin-3d-stadtmodell-als-open-data).
 
 ## Antwort und Lehre (30.09.2026)
 
@@ -119,4 +132,3 @@ Fachlich enthält sie eine Korrektur, die wir übernehmen:
 Diese Idee gehört niemandem. Nimm sie, bau sie, verkauf sie — du schuldest mir nichts, nicht einmal eine Antwort. Wenn du eines Tages eine Idee hast, die du nicht bauen wirst, gib sie jemandem, der es tut.
 
 CC0 / Public Domain. — Félix, Berlin · github.com/felixinberlin
-

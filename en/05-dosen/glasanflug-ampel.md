@@ -2,7 +2,7 @@
 status: Delivered
 delivery_method: E-Mail
 target_maker: NABU Berlin, "Artenschutz am Gebäude" project, together with NABU Jena
-review_score: 32/35
+review_score: 30/35
 architecture_tier: Tier 1
 source_type: Type A
 ---
@@ -84,7 +84,20 @@ And demand for it just jumped:
 - **The opposite direction is newly occupied, and it is the most important change:** **vogelschlagmelder.de** — NABU Jena and Leipzig since February/March 2026, NABU Berlin with its own instance, code **GPLv3 on Codeberg**, active. Reports carry up to five photos, façade orientation, impact mark and geocoding; the **Gefahrenkarte** is a heatmap **of received reports**, not an assessment. **Reporting is solved. Rating is not.**
 - **Research:** façade and glass segmentation, and window-to-wall measurement from street imagery, are solved and published; nobody has pointed them at bird collisions. No open-source project on building collision risk was found.
 
-**The gap that remains:** the **German scheme** as an executable, citable module **on a reporting platform that already collects the necessary photos** — situational factors estimated rather than asked for, the result a checkable sheet for the authority and the owner rather than a certification score.
+**The narrower remaining gap:** an executable, versioned and citable module for the German LAG VSW scheme. BirdSafe shows that façade questionnaires using photos/renderings and landscape questions already exist; demand in Germany for automated photo scoring is unproven. Image analysis and geodata remain research proposals, not capabilities of the delivered calculator.
+
+## Reassessment (6 October 2026)
+
+- **Prior art clarified:** FLAP's BirdSafe DIY asks about façade risk; 2026 USGBC training describes photos or renderings as part of its questionnaire. This narrows novelty but does not establish a calculator for LAG VSW 21/01.
+- **Application context:** Berlin's assessment aid for planning and permitting gives the idea a concrete professional context. It does not prove demand for AI assessment.
+- **Reporting workflow and rights:** NABU Jena's form accepts photos, location and façade orientation. Its photo-use terms do not establish permission for model training.
+- **Assessment is separate from effectiveness:** a 2026 field study provides a before-after control design for evaluating treatments. Building-risk assessment and treatment-effect evidence are different tasks.
+- **Open follow-on:** repeated visual checks of installed patterns could document wear or missing elements. Need, existing products and measurable effect are unknown; road-marking maintenance is an analogy, not a transferable measurement method.
+- **Street View:** Google Maps terms bar using its imagery to create derived content or to train, test, or validate ML. The Static API is billed per request, requires billing, and returns images up to 640×640. Street View Insights analyzes imagery with Vertex AI and is excluded from this workflow.
+- **Better complements:** Mapillary provides street-level images with capture dates under CC BY-SA. First check coverage at NABU façades, viewing angle and license fit; do not assume model-training or CC0 reuse. Berlin orthophotos and LoD2 building models help with vegetation and building context, but do not show façade windows.
+- **Current assessment:** narrowed; 30/35 core points plus 3/5 Fun = 33/40. The 30/35 applies only to the delivered deterministic calculator, not automated photo assessment.
+
+Sources: [NABU Jena reporting tool](https://vogelschlag.nabu-jena.de/), [Berlin SenMVKU](https://www.berlin.de/sen/uvk/presse/pressemitteilungen/2026/pressemitteilung.1679571.php), [FLAP BirdSafe](https://www.flapapp.ca/), [USGBC 2026 training](https://www.usgbc.org/sites/default/files/2026-05/Save%20the%20Birds%20course_1.pdf), [Lawson et al. 2026](https://academic.oup.com/condor/article/128/3/1/8677179), [Ottawa preprint](https://ecoevorxiv.org/repository/view/12042/), [Google Maps terms](https://cloud.google.com/maps-platform/terms), [Mapillary license](https://help.mapillary.com/hc/en-us/articles/115001770409-CC-BY-SA-license-for-open-data), [Berlin orthophotos](https://www.berlin.de/sen/stadt/stadtdaten/geoinformation/landesvermessung/geotopographie-atkis/dop-digitale-orthophotos/), [Berlin 3D model](https://daten.berlin.de/artikel/berlin-3d-stadtmodell-als-open-data).
 
 ## Reply and lesson (30 Sep 2026)
 

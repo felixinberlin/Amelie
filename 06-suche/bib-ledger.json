@@ -654,6 +654,62 @@
         "src/data/candidateVectors.json": "sha256:b1584659a91b5625577433fc6f05ed9bcb300e95b215f12029d6b79d136a239c",
         "src/data/vectorChanges.json": "absent"
       }
+    },
+    "cli-vector-mux2h7jl": {
+      "plan_id": "cli-vector-mux2h7jl",
+      "actor": "bibliothekar",
+      "agent": "bibliothekar",
+      "runde": "",
+      "at": "2026-10-06T19:23:46.167Z",
+      "ops": [
+        {
+          "index": 0,
+          "op": "vector.set",
+          "target": "glasanflug-ampel"
+        }
+      ],
+      "files": [
+        "src/data/doseVectors.json",
+        "src/data/vectorChanges.json"
+      ],
+      "hashes": {
+        "src/data/quellen.json": "sha256:404b99a7d8118359cffff987b15c6500cf45bd3d77b611298ae7f264d8a2d984",
+        "src/data/graeber.json": "sha256:b90aba0750d83939ad450af14c9ae70ea18f40d7e4a07395a50897ef138e0a2d",
+        "06-suche/amelie-pruefprotokoll.md": "sha256:ebf95aae71eaabe6c52dd7aa40e6cc887366916ed7e8fc66c6050e6ca6684374",
+        "06-suche/terminology-map.md": "absent",
+        "06-suche/open-questions.md": "absent",
+        "src/data/doseVectors.json": "sha256:6b6b565baa215af7c31111ba0a5130a10b9df0996ad1c7d49f50bb57352c3d42",
+        "src/data/candidateVectors.json": "sha256:b1584659a91b5625577433fc6f05ed9bcb300e95b215f12029d6b79d136a239c",
+        "src/data/vectorChanges.json": "sha256:fa4bb0572b8a15728a44035c7ea515744374adf6f194ec9188ab72fd5bd8061a"
+      }
+    },
+    "cli-vector-mux2hair": {
+      "plan_id": "cli-vector-mux2hair",
+      "actor": "bibliothekar",
+      "agent": "bibliothekar",
+      "runde": "",
+      "at": "2026-10-06T19:23:50.026Z",
+      "ops": [
+        {
+          "index": 0,
+          "op": "vector.set",
+          "target": "glasanflug-ampel"
+        }
+      ],
+      "files": [
+        "src/data/doseVectors.json",
+        "src/data/vectorChanges.json"
+      ],
+      "hashes": {
+        "src/data/quellen.json": "sha256:404b99a7d8118359cffff987b15c6500cf45bd3d77b611298ae7f264d8a2d984",
+        "src/data/graeber.json": "sha256:b90aba0750d83939ad450af14c9ae70ea18f40d7e4a07395a50897ef138e0a2d",
+        "06-suche/amelie-pruefprotokoll.md": "sha256:ebf95aae71eaabe6c52dd7aa40e6cc887366916ed7e8fc66c6050e6ca6684374",
+        "06-suche/terminology-map.md": "absent",
+        "06-suche/open-questions.md": "absent",
+        "src/data/doseVectors.json": "sha256:4885ae910d57d9e3096d19d6e05a53b391424f508ae47395c9cb7f436d3331b5",
+        "src/data/candidateVectors.json": "sha256:b1584659a91b5625577433fc6f05ed9bcb300e95b215f12029d6b79d136a239c",
+        "src/data/vectorChanges.json": "sha256:7713e34a6b9cd539c2d581109bc53f40f97495968d6358ce51d8995bd4405b79"
+      }
     }
   }
 }

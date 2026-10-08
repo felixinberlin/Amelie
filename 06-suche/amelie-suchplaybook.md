@@ -739,3 +739,17 @@ leere Antworten und die CELEX-Resource-Route nur Metadaten lieferte. Zugangswege
 pro Quelle und Werkzeug dokumentieren. Eine zweite echte Offenlegung und ein
 kleiner, kuratierter Pilot müssen zeigen, welchen nachvollziehbaren Zusatznutzen
 das offene Register gegenüber der vorgesehenen Kommissionskonsolidierung bietet.
+## Glasanflug-Neubewertung — 06.10.2026
+
+- **Erledigt:** Scout, Bisoziations-Kollider und Reviewer getrennt eingesetzt; ihre Befunde im Protokoll, Quellenregister, Dose und Frontend zusammengeführt. Quellenregister bleibt die Datenwahrheit; die Listenansicht wird aus `src/data/quellen.json` generiert. Die Dose wird parallel über Markdown und `src/data/dosen.ts` gerendert.
+- **Gelernt:** BirdSafe/USGBC verengen die Neuheit auf den versionierten deutschen LAG-VSW-Rechner. Fotoautomatisierung bleibt unvalidiert. Ein Wartungsnachweis für installierte Muster ist eine offene Hypothese; Straßenmarkierungen liefern nur eine Analogie.
+- **Fehlergrenze:** Meldefotos bedeuten keine geklärten Trainingsrechte. Ein Feldversuch zur Wirksamkeit darf nicht als Gebäude-Risikobewertung dargestellt werden. Der abstrakte Score sagt keine Todeszahl voraus.
+- **Nächstes Mal:** Vor der März-2027-Wiedervorlage Bedarfsnachweis und vorhandene Wartungsangebote prüfen; zuerst ein einzelnes Bildkriterium mit handbewerteten Fassaden validieren. Neue Forschung zuerst im Register erfassen, Dose und Englischfassung abgleichen, dann `npm run export:data`.
+- **Systemfluss sichtbar gemacht:** Recherche-Agenten liefern Befunde und Quellenmeldungen; der Bibliothekar schreibt Register und Prüfprotokoll über `npm run bib`. Produktdaten liegen in `src/data/dosen.ts`, Vektoren in `src/data/doseVectors.json`; React zeigt Dose und Score in Modal/Einzelseite. `npm run export:data` erzeugt die öffentlichen JSON-Dateien. Die getrennten Wahrheiten erklären, warum eine Dossier-Änderung allein noch nicht in der UI erscheint.
+
+### Bildquellen-Nachtrag — 06.10.2026
+
+- Google Street View ist kein automatisierter Bewertungs- oder Trainingsdatensatz: Maps-Bedingungen untersagen abgeleitete Inhalte und die Nutzung zum Trainieren, Testen oder Validieren von ML; der Bilddienst ist kostenpflichtig und nicht für Bulk-Archivierung gedacht. Street View Insights nutzt Vertex AI und fällt damit für diese Dose aus.
+- Mapillary ist ein prüfbarer Kandidat für punktuelle Ergänzungsbilder. Vor einem Datentest zuerst Abdeckung, Aufnahmedatum und Perspektive pro NABU-Fassade abgleichen; CC BY-SA und CC0-Verteilung/Modellnutzung getrennt klären.
+- Amtliche Berliner Orthophotos und LoD2-Daten ergänzen Vegetations- und Gebäudeumfeld, aber keine Fassadenfenster. Solche Kontextquellen nicht mit direkten Messbildern verwechseln.
+- **Nächster Schritt:** Kleine Coverage-Stichprobe mit 30 handbewerteten Fassaden; nur Metadaten und verfügbare Bild-IDs erfassen, bevor irgendein Bildmaterial kopiert oder für Vision ausgewertet wird.
