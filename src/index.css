@@ -297,3 +297,6 @@
 }
 .amelie-book-prose th { font-weight: 700; color: var(--m-ink); }
 .amelie-book-prose img { max-width: 100%; height: auto; border-radius: 0.5rem; }
+
+/* EuroBirdCast: desaturate the basemap so radar data carries the colour. */
+#bird-migration-demo .leaflet-tile-pane, .bird-expanded-map .leaflet-tile-pane { filter: grayscale(.85) contrast(.9) brightness(1.04); }

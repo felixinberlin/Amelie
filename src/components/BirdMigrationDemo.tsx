@@ -45,15 +45,17 @@ export function BirdMigrationDemo({ lang = 'en' }: { lang?: Language }) {
   useEffect(() => {
     const layers = marks.current; if (!layers) return;
     layers.clearLayers(); stationMarks.current.clear();
-    for (const station of observations.stations) {
+    // Largest circles first so small neighbours stay visible and clickable on top.
+    const ordered = [...observations.stations].sort((a, b) => (b.readings[frame].density ?? 0) - (a.readings[frame].density ?? 0));
+    for (const station of ordered) {
       const reading = station.readings[frame];
       const available = reading.density !== null;
       const density = reading.density ?? 0;
       const missing = reading.status === 'daytime' ? (de ? 'Tagsüber nicht ausgewertet' : 'Daytime not evaluated') : (de ? 'Messwert fehlt' : 'Missing observation');
       const circle = L.circleMarker([station.lat, station.lon], {
-        radius: available ? 6 + Math.min(19, Math.sqrt(density) * 2) : 5,
+        radius: available ? 5 + Math.min(15, Math.sqrt(density) * 1.7) : 5,
         color: available ? '#431407' : '#64748b', fillColor: available ? intensityColor(density) : '#cbd5e1',
-        fillOpacity: available ? .8 : .35, weight: available ? 1.5 : 1, dashArray: available ? undefined : '3 3',
+        fillOpacity: available ? .72 : .35, weight: available ? 1.5 : 1, dashArray: available ? undefined : '3 3',
       }).addTo(layers);
       stationMarks.current.set(station.code, circle);
       // Create text nodes so even a future station label cannot inject popup HTML.
@@ -63,7 +65,7 @@ export function BirdMigrationDemo({ lang = 'en' }: { lang?: Language }) {
       const stamp = document.createElement('p'); stamp.textContent = prettyTime(time, de); content.append(stamp);
       circle.bindPopup(content);
       circle.on('click', () => setSelectedStation(station.code));
-      circle.bindTooltip(`${BIRD_RADAR_NAMES[station.code] ?? station.code.toUpperCase()} · ${available ? density.toFixed(1) + ' birds/km²' : missing}`);
+      circle.bindTooltip(`${BIRD_RADAR_NAMES[station.code] ?? station.code.toUpperCase()} · ${available ? density.toFixed(1) + (de ? ' Vögel/km²' : ' birds/km²') : missing}`);
       if (available && density > 0 && reading.u !== null && reading.v !== null) {
         const speed = Math.hypot(reading.u, reading.v);
         if (speed > .01) {
@@ -117,9 +119,10 @@ export function BirdMigrationDemo({ lang = 'en' }: { lang?: Language }) {
     return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = previousOverflow; expandButton.current?.focus(); };
   }, [expanded]);
 
-  const mapContent = (<div ref={expandedHost} role={expanded ? 'dialog' : undefined} aria-modal={expanded || undefined} aria-label={expanded ? 'Expanded bird movement map' : undefined} className={expanded ? 'fixed inset-0 z-[100] bg-slate-950 p-3 sm:p-5 flex flex-col gap-3' : 'relative'}>
+  const mapContent = (<div ref={expandedHost} role={expanded ? 'dialog' : undefined} aria-modal={expanded || undefined} aria-label={expanded ? 'Expanded bird movement map' : undefined} className={expanded ? 'bird-expanded-map fixed inset-0 z-[100] bg-slate-950 p-3 sm:p-5 flex flex-col gap-3' : 'relative'}>
         {expanded && <div className="flex items-center justify-between gap-3 text-white"><span className="text-sm font-mono">{prettyTime(time, de)}</span><button type="button" onClick={() => setExpanded(false)} aria-label={de ? 'Große Karte schließen' : 'Close expanded map'} className="rounded-lg border border-slate-600 px-3 py-2">✕ {de ? 'Schließen' : 'Close'}</button></div>}
         <div key="map-canvas" ref={host} role="region" aria-label="Bird migration radar map" className="rounded-xl border border-slate-200 bg-slate-100" style={{ height: expanded ? 'calc(100dvh - 160px)' : 470, flex: expanded ? 1 : undefined, zIndex: 0 }} />
+        <div className="pointer-events-none absolute left-3 bottom-8 z-[10] rounded-lg bg-slate-950/80 px-3 py-1.5 text-xs font-mono text-white" style={expanded ? { left: 20, bottom: 84 } : undefined}>{prettyTime(time, de)} · {observed}/{observations.stations.length} {de ? 'Radare' : 'radars'}</div>
         {!expanded && <button ref={expandButton} type="button" onClick={() => setExpanded(true)} aria-haspopup="dialog" aria-label={de ? 'Karte vergrößern' : 'Expand map'} className="absolute right-3 top-3 z-[10] rounded-lg border border-slate-300 bg-white/95 px-3 py-2 text-xs font-semibold shadow-sm">⛶ {de ? 'Vergrößern' : 'Expand'}</button>}
         {expanded && <div className="flex items-center gap-3 text-white"><button type="button" onClick={() => setPlaying(p => !p)} aria-label={playing ? 'Pause' : (de ? 'Bewegung abspielen' : 'Play movement')} className="rounded-lg bg-white px-3 py-2 text-slate-900 text-sm">{playing ? 'Ⅱ' : '▶'}</button><input aria-label="Expanded observation time" type="range" min="0" max={observations.times.length - 1} value={frame} onChange={e => selectFrame(Number(e.target.value))} className="flex-1 accent-amber-300" /><span className="text-xs">{observed}/{observations.stations.length} radar</span></div>}
       </div>);
