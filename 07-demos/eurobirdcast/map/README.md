@@ -29,3 +29,9 @@ Offline tests:
 `python3 -m unittest discover -s 07-demos/eurobirdcast/map -p 'test_*.py'`.
 
 [EuroBirdCast project](https://felixinberlin.github.io/Amelie/#dose=eurobirdcast)
+
+## Frontend exploration
+
+The map now includes verified names from the [Aloft OPERA-derived radar catalog](https://aloftdata.eu/radars/), station selection by map click or dropdown, a separate weekly density chart, recorded/daytime/missing counts, and a shortcut to the largest recorded value. Chart traces split at absent observations; the vertical scale varies by station and is labeled. Missing periods are not reconstructed. Playback can skip frames without usable observations while the slider retains every hour. An expanded map supports Escape, keyboard focus return and its own time control. Popup values are inserted as text nodes.
+
+Research teams receive prominent credit. The call for energy operators to open monitoring and mitigation evidence is a request for accountability, not an allegation that this radar dataset measures collisions or establishes liability.

@@ -300,3 +300,6 @@
 {"at":"2026-10-08T18:27:18.583Z","event":"cli","cmd":"quellen rate","actor":"bibliothekar","id":"dda-ornitho-phenology-contact"}
 {"at":"2026-10-08T18:27:18.743Z","event":"cli","cmd":"quellen log","actor":"bibliothekar","agent":"bibliothekar","runde":"EuroBirdCast real test 2026-10-08","id":"ifv-schmaljohann-migration"}
 {"at":"2026-10-08T18:27:18.913Z","event":"cli","cmd":"quellen rate","actor":"bibliothekar","id":"ifv-schmaljohann-migration"}
+{"at":"2026-10-08T19:00:57.414Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"EuroBirdCast map readability 2026-10-08","id":"aloft-opera-radar-catalog"}
+{"at":"2026-10-08T19:00:57.634Z","event":"cli","cmd":"quellen log","actor":"bibliothekar","agent":"bibliothekar","runde":"EuroBirdCast map readability 2026-10-08","id":"aloft-opera-radar-catalog"}
+{"at":"2026-10-08T19:00:57.846Z","event":"cli","cmd":"quellen rate","actor":"bibliothekar","id":"aloft-opera-radar-catalog"}

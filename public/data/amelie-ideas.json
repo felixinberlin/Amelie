@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/felixinberlin/amelie/main/public/data/amelie-schema.json",
   "version": "1.0.0",
-  "generatedAt": "2026-10-08T18:51:29.171Z",
+  "generatedAt": "2026-10-08T19:01:48.010Z",
   "license": "CC0-1.0 (Public Domain / Kula-Ring)",
   "storageProvider": "github_pages",
   "repository": "https://github.com/felixinberlin/amelie",
@@ -45,8 +45,8 @@
         "EURING and the Migration Atlas synthesize more than 100 years of ringing knowledge; species priors need distinct observation models and access checks.",
         "FlySafe already combines radar and weather for migration forecasts. EuroBirdCast must evaluate additional historical knowledge against existing baselines."
       ],
-      "sketchDe": "Zuerst eine verständliche Bewegungskarte: 21 Radarstandorte, 168 Stunden vom 1.–7. Oktober 2017, Zeitregler, Datumsauswahl und Wiedergabe. Kreisfarbe und -größe zeigen geschätzte höhenintegrierte Vogeldichte; Pfeile die gemessene mittlere Bewegungsrichtung mit schematischer Länge. Fehlende und tagsüber ausgeschlossene Werte bleiben sichtbar unterschieden. Keine erfundenen Verbindungen zwischen Stationen. Wissenschaft, Quellen, Modellvergleich und Fachkontakte sind dahinter aufklappbar. Frische Daten und Prognosen sind spätere Erweiterungen.",
-      "sketchEn": "Start with a clear movement map: 21 radar sites, 168 hours from 1–7 October 2017, time slider, date selection and playback. Circle colour and size show estimated vertically integrated bird density; arrows show measured mean movement bearing with schematic length. Missing and excluded daytime observations stay distinct. No invented connections between stations. Science, sources, model comparison and expert contacts expand behind the map. Fresh observations and forecasts are later additions.",
+      "sketchDe": "Zuerst eine verständliche Bewegungskarte: 21 Radarstandorte, 168 Stunden vom 1.–7. Oktober 2017, Zeitregler, Datumsauswahl, Nachtwiedergabe, verifizierte Standortnamen, Standort-Zeitdiagramme und große Kartenansicht. Kreisfarbe und -größe zeigen geschätzte höhenintegrierte Vogeldichte; Pfeile die gemessene mittlere Bewegungsrichtung mit schematischer Länge. Fehlende und tagsüber ausgeschlossene Werte bleiben sichtbar unterschieden. Keine erfundenen Verbindungen zwischen Stationen. Wissenschaft, Quellen, Modellvergleich und Fachkontakte sind dahinter aufklappbar. Frische Daten und Prognosen sind spätere Erweiterungen.",
+      "sketchEn": "Start with a clear movement map: 21 radar sites, 168 hours from 1–7 October 2017, time slider, date selection, nighttime playback, verified site names, station time charts and an expanded map view. Circle colour and size show estimated vertically integrated bird density; arrows show measured mean movement bearing with schematic length. Missing and excluded daytime observations stay distinct. No invented connections between stations. Science, sources, model comparison and expert contacts expand behind the map. Fresh observations and forecasts are later additions.",
       "firstStepDe": {
         "ticket": "Eine wissenschaftlich nachvollziehbare Bewegungskarte im Frontend zeigen.",
         "criteria": "Umgesetzt: animierte Frontend-Karte mit 21 Standorten, 168 Stunden und 1.351 verfügbaren Nachtmessungen, CC-BY-Quelle und unabhängiger Datenprüfung. Reproduzierbar unter 07-demos/eurobirdcast/map/. Ausgeführt: 07-demos/eurobirdcast/benchmark/ nutzt publizierte Radar-/ERA5-Daten, trainiert 2015, stimmt 2016 ab und testet 18.217 Radarstunden aus 2017. Saisonaler Log-MAE 0,7925; plus Wetter 0,6606. Quellenlizenz, Masken, CRC und SHA-256 dokumentiert. Separater Protzel-Rohdatenpilot bleibt mit 9/4/1 Vogeldiskriminierungsnächten unzureichend. Nächster Abschluss: Ausgabezeit-archivierte Wettervorhersagen, frisches Radar, Mehrsaison-/Standorttests und Artenwissen einzeln prüfen; fachliche QC-Anfrage an INBO/UvA vorbereitet, nicht versendet."

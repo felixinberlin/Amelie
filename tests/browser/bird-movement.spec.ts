@@ -58,3 +58,60 @@ test('German bird movement controls work and research is available on demand', a
   await research.locator(':scope > summary').click();
   await expect(research).toHaveAttribute('open', '');
 });
+
+test('station selection updates the observation chart and preserves missing-data gaps', async ({ page }) => {
+  await page.goto(`${project}?lang=en`);
+  const demo = page.locator('#bird-migration-demo');
+  const station = demo.getByLabel('Radar station', { exact: true });
+  await expect(station.locator('option')).toHaveCount(21);
+  await station.selectOption({ index: 1 });
+  const selected = (await station.inputValue()).toUpperCase();
+  const chart = demo.locator('svg[aria-label="Observed density over the week"]');
+  await expect(chart).toBeVisible();
+  await expect(chart).toContainText(selected);
+  await expect(demo).toContainText('birds/km²');
+  // Daytime / missing observations split the trace instead of becoming zero or an interpolated flight.
+  await expect.poll(() => chart.getByTestId('density-segment').count()).toBeGreaterThan(1);
+});
+
+test('replay defaults to skipping daytime and allows all hours', async ({ page }) => {
+  await page.goto(`${project}?lang=en`);
+  const demo = page.locator('#bird-migration-demo');
+  const skip = demo.getByRole('checkbox', { name: 'Skip daytime', exact: true });
+  await expect(skip).toBeChecked();
+  const slider = demo.getByRole('slider', { name: 'Observation time', exact: true });
+  const selectMidday = async () => {
+    await slider.focus();
+    await slider.press('Home');
+    for (let hour = 0; hour < 12; hour++) await slider.press('ArrowRight');
+    await expect(slider).toHaveValue('12');
+  };
+  await selectMidday();
+  await demo.getByRole('button', { name: 'Play movement', exact: true }).click();
+  await expect.poll(async () => Number(await slider.inputValue()), { intervals: [100] }).toBeGreaterThan(13);
+  await demo.getByRole('button', { name: 'Pause', exact: true }).click();
+  await skip.uncheck();
+  await expect(skip).not.toBeChecked();
+  await selectMidday();
+  await demo.getByRole('button', { name: 'Play movement', exact: true }).click();
+  await expect.poll(() => slider.inputValue(), { intervals: [100] }).toBe('13');
+  await demo.getByRole('button', { name: 'Pause', exact: true }).click();
+});
+
+test('expanded map closes with Escape and restores normal controls', async ({ page }) => {
+  await page.goto(`${project}?lang=en`);
+  const demo = page.locator('#bird-migration-demo');
+  await demo.getByRole('button', { name: 'Expand map', exact: true }).click();
+  const dialog = page.getByRole('dialog', { name: 'Expanded bird movement map', exact: true });
+  await expect(dialog.getByRole('button', { name: 'Close expanded map', exact: true })).toBeVisible();
+  await expect(dialog.getByRole('region', { name: 'Bird migration radar map' })).toBeVisible();
+  const viewport = page.viewportSize()!;
+  await expect.poll(async () => {
+    const bounds = await dialog.boundingBox();
+    return bounds ? Math.max(Math.abs(bounds.x), Math.abs(bounds.y), Math.abs(bounds.width - viewport.width), Math.abs(bounds.height - viewport.height)) : Infinity;
+  }).toBeLessThanOrEqual(1);
+  await page.keyboard.press('Escape');
+  await expect(demo.getByRole('button', { name: 'Expand map', exact: true })).toBeVisible();
+  await expect(dialog).toHaveCount(0);
+  await expect(demo.getByRole('button', { name: 'Expand map', exact: true })).toBeFocused();
+});

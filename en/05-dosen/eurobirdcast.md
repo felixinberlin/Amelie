@@ -15,7 +15,7 @@ The next migration night depends on current conditions and long-term species pat
 
 ## Architecture
 
-Start with a clear movement map: 21 radar sites, 168 hours from 1–7 October 2017, time slider, date selection and playback. Circle colour and size show estimated vertically integrated bird density; arrows show measured mean movement bearing with schematic length. Missing and excluded daytime observations stay distinct. No invented connections between stations. Science, sources, model comparison and expert contacts expand behind the map. Fresh observations and forecasts are later additions.
+Start with a clear movement map: 21 radar sites, 168 hours from 1–7 October 2017, time slider, date selection, nighttime playback, verified site names, station time charts and an expanded map view. Circle colour and size show estimated vertically integrated bird density; arrows show measured mean movement bearing with schematic length. Missing and excluded daytime observations stay distinct. No invented connections between stations. Science, sources, model comparison and expert contacts expand behind the map. Fresh observations and forecasts are later additions.
 
 ## Prior art
 

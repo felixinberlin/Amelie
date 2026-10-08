@@ -1,8 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import observations from '../data/birdMovementMap.json';
 import { Language } from '../types';
+import { BIRD_RADAR_NAMES } from '../data/birdRadarNames';
+import { BirdStationChart } from './BirdStationChart';
 
 const intensityColor = (density: number) => density < 1 ? '#fef08a' : density < 5 ? '#fbbf24' : density < 20 ? '#f97316' : density < 50 ? '#e11d48' : '#9333ea';
 const prettyTime = (time: string, de: boolean) => new Intl.DateTimeFormat(de ? 'de-DE' : 'en-GB', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'UTC' }).format(new Date(time)) + ' UTC';
@@ -13,8 +16,14 @@ export function BirdMigrationDemo({ lang = 'en' }: { lang?: Language }) {
   const host = useRef<HTMLDivElement>(null);
   const map = useRef<ReturnType<typeof L.map> | null>(null);
   const marks = useRef<ReturnType<typeof L.layerGroup> | null>(null);
+  const stationMarks = useRef<Map<string, ReturnType<typeof L.circleMarker>>>(new Map());
   const [frame, setFrame] = useState(Math.min(20, observations.times.length - 1));
   const [playing, setPlaying] = useState(false);
+  const [selectedStation, setSelectedStation] = useState('depro');
+  const [skipDaytime, setSkipDaytime] = useState(true);
+  const [expanded, setExpanded] = useState(false);
+  const expandedHost = useRef<HTMLDivElement>(null);
+  const expandButton = useRef<HTMLButtonElement>(null);
   const [tilesUnavailable, setTilesUnavailable] = useState(false);
   const time = observations.times[frame];
   const dates = [...new Set(observations.times.map(dayOf))];
@@ -31,11 +40,11 @@ export function BirdMigrationDemo({ lang = 'en' }: { lang?: Language }) {
     marks.current = L.layerGroup().addTo(m);
     const observer = new ResizeObserver(() => m.invalidateSize()); observer.observe(host.current);
     return () => { observer.disconnect(); m.remove(); map.current = null; marks.current = null; };
-  }, []);
+  }, [expanded]);
 
   useEffect(() => {
     const layers = marks.current; if (!layers) return;
-    layers.clearLayers();
+    layers.clearLayers(); stationMarks.current.clear();
     for (const station of observations.stations) {
       const reading = station.readings[frame];
       const available = reading.density !== null;
@@ -46,13 +55,15 @@ export function BirdMigrationDemo({ lang = 'en' }: { lang?: Language }) {
         color: available ? '#431407' : '#64748b', fillColor: available ? intensityColor(density) : '#cbd5e1',
         fillOpacity: available ? .8 : .35, weight: available ? 1.5 : 1, dashArray: available ? undefined : '3 3',
       }).addTo(layers);
+      stationMarks.current.set(station.code, circle);
       // Create text nodes so even a future station label cannot inject popup HTML.
       const content = document.createElement('div');
-      const heading = document.createElement('strong'); heading.textContent = station.code.toUpperCase(); content.append(heading);
+      const heading = document.createElement('strong'); heading.textContent = `${BIRD_RADAR_NAMES[station.code] ?? station.code} (${station.code.toUpperCase()})`; content.append(heading);
       const value = document.createElement('p'); value.textContent = available ? `${density.toFixed(1)} ${de ? 'geschätzte Vögel/km²' : 'estimated birds/km²'}` : missing; content.append(value);
       const stamp = document.createElement('p'); stamp.textContent = prettyTime(time, de); content.append(stamp);
       circle.bindPopup(content);
-      circle.bindTooltip(`${station.code.toUpperCase()} · ${available ? density.toFixed(1) + ' birds/km²' : missing}`);
+      circle.on('click', () => setSelectedStation(station.code));
+      circle.bindTooltip(`${BIRD_RADAR_NAMES[station.code] ?? station.code.toUpperCase()} · ${available ? density.toFixed(1) + ' birds/km²' : missing}`);
       if (available && density > 0 && reading.u !== null && reading.v !== null) {
         const speed = Math.hypot(reading.u, reading.v);
         if (speed > .01) {
@@ -70,14 +81,48 @@ export function BirdMigrationDemo({ lang = 'en' }: { lang?: Language }) {
         }
       }
     }
-  }, [frame, de, time]);
+  }, [frame, de, time, expanded]);
+
+  useEffect(() => {
+    for (const station of observations.stations) {
+      const available = station.readings[frame].density !== null;
+      stationMarks.current.get(station.code)?.setStyle({ color: station.code === selectedStation ? '#2563eb' : available ? '#431407' : '#64748b', weight: station.code === selectedStation ? 3 : available ? 1.5 : 1 });
+    }
+  }, [selectedStation, frame, de, expanded]);
 
   useEffect(() => {
     if (!playing) return;
-    if (frame >= observations.times.length - 1) { setPlaying(false); return; }
-    const timer = window.setTimeout(() => setFrame(f => f + 1), 650);
+    let next = frame + 1;
+    while (skipDaytime && next < observations.times.length && !observations.stations.some(s => s.readings[next].density !== null)) next++;
+    if (next >= observations.times.length) { setPlaying(false); return; }
+    const timer = window.setTimeout(() => setFrame(next), 650);
     return () => window.clearTimeout(timer);
-  }, [playing, frame]);
+  }, [playing, frame, skipDaytime]);
+
+  useEffect(() => {
+    if (!expanded) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const dialog = expandedHost.current;
+    const close = dialog?.querySelector<HTMLButtonElement>('button'); close?.focus();
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') { setExpanded(false); return; }
+      if (event.key !== 'Tab' || !dialog) return;
+      const focusable = [...dialog.querySelectorAll<HTMLElement>('button, a[href], input, [tabindex="0"]')].filter(e => e.getClientRects().length > 0);
+      const first = focusable[0], last = focusable.at(-1);
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
+    };
+    document.addEventListener('keydown', onKey);
+    return () => { document.removeEventListener('keydown', onKey); document.body.style.overflow = previousOverflow; expandButton.current?.focus(); };
+  }, [expanded]);
+
+  const mapContent = (<div ref={expandedHost} role={expanded ? 'dialog' : undefined} aria-modal={expanded || undefined} aria-label={expanded ? 'Expanded bird movement map' : undefined} className={expanded ? 'fixed inset-0 z-[100] bg-slate-950 p-3 sm:p-5 flex flex-col gap-3' : 'relative'}>
+        {expanded && <div className="flex items-center justify-between gap-3 text-white"><span className="text-sm font-mono">{prettyTime(time, de)}</span><button type="button" onClick={() => setExpanded(false)} aria-label={de ? 'Große Karte schließen' : 'Close expanded map'} className="rounded-lg border border-slate-600 px-3 py-2">✕ {de ? 'Schließen' : 'Close'}</button></div>}
+        <div key="map-canvas" ref={host} role="region" aria-label="Bird migration radar map" className="rounded-xl border border-slate-200 bg-slate-100" style={{ height: expanded ? 'calc(100dvh - 160px)' : 470, flex: expanded ? 1 : undefined, zIndex: 0 }} />
+        {!expanded && <button ref={expandButton} type="button" onClick={() => setExpanded(true)} aria-haspopup="dialog" aria-label={de ? 'Karte vergrößern' : 'Expand map'} className="absolute right-3 top-3 z-[10] rounded-lg border border-slate-300 bg-white/95 px-3 py-2 text-xs font-semibold shadow-sm">⛶ {de ? 'Vergrößern' : 'Expand'}</button>}
+        {expanded && <div className="flex items-center gap-3 text-white"><button type="button" onClick={() => setPlaying(p => !p)} aria-label={playing ? 'Pause' : (de ? 'Bewegung abspielen' : 'Play movement')} className="rounded-lg bg-white px-3 py-2 text-slate-900 text-sm">{playing ? 'Ⅱ' : '▶'}</button><input aria-label="Expanded observation time" type="range" min="0" max={observations.times.length - 1} value={frame} onChange={e => selectFrame(Number(e.target.value))} className="flex-1 accent-amber-300" /><span className="text-xs">{observed}/{observations.stations.length} radar</span></div>}
+      </div>);
 
   return <section id="bird-migration-demo" aria-labelledby="bird-map-title" className="scroll-mt-48 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
     <div className="bg-slate-950 text-white p-5 sm:p-7 space-y-3">
@@ -96,22 +141,31 @@ export function BirdMigrationDemo({ lang = 'en' }: { lang?: Language }) {
         }} className="block mt-1 border border-slate-300 rounded-lg p-2 bg-white text-slate-900">{dates.map(date => <option key={date} value={date}>{date}</option>)}</select></label>
         <output data-testid="bird-map-time" className="ml-auto text-sm font-mono text-slate-900">{prettyTime(time, de)}</output>
       </div>
+      <div className="flex flex-wrap items-center justify-between gap-3 text-xs text-slate-600">
+        <label className="flex items-center gap-2"><input type="checkbox" checked={skipDaytime} onChange={e => setSkipDaytime(e.target.checked)} className="accent-slate-900" />{de ? 'Tagesstunden überspringen' : 'Skip daytime'}</label>
+        <span>{de ? 'Wiedergabe: nur Stunden mit vorhandenen Beobachtungen, wenn aktiviert.' : 'When enabled, playback visits only hours with available observations.'}</span>
+      </div>
       <label className="block text-xs font-semibold text-slate-600">{de ? 'Beobachtungszeit · durch die Woche bewegen' : 'Observation time · move through the week'}<input aria-label="Observation time" type="range" min="0" max={observations.times.length - 1} value={frame} onChange={e => selectFrame(Number(e.target.value))} className="block w-full mt-2 accent-slate-900" /></label>
       <div className="flex justify-between text-xs text-slate-500"><span>1 Oct 2017</span><span>{observed}/{observations.stations.length} {de ? 'Standorte mit Dichtemessung' : 'sites with density observations'}</span><span>7 Oct 2017</span></div>
-      <div ref={host} role="region" aria-label="Bird migration radar map" className="rounded-xl border border-slate-200 bg-slate-100" style={{ height: 470, zIndex: 0 }} />
+      {expanded ? createPortal(mapContent, document.body) : mapContent}
       {tilesUnavailable && <p role="status" className="text-xs text-slate-600">{de ? 'Hintergrundkarte nicht vollständig erreichbar. Radarmessungen sind weiter in der Tabelle verfügbar.' : 'Background map is not fully available. Radar observations remain available in the table.'}</p>}
       <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs text-slate-700" aria-label={de ? 'Kartenlegende' : 'Map legend'}>
         {[['#fef08a', '0–1'], ['#fbbf24', '1–5'], ['#f97316', '5–20'], ['#e11d48', '20–50'], ['#9333ea', '50+']].map(([color, label]) => <span key={label} className="flex items-center gap-1.5"><span className="h-3 w-3 rounded-full border border-slate-500" style={{ background: color }} />{label}</span>)}
         <span>{de ? 'geschätzte Vögel/km²' : 'estimated birds/km²'}</span><span>↗ {de ? 'Bewegungsrichtung' : 'Movement bearing'}</span><span>◌ {de ? 'fehlend / tagsüber' : 'missing / daytime'}</span>
       </div>
       <p className="text-sm text-slate-600">{de ? 'Kreisfarbe und -größe zeigen die geschätzte Vogeldichte über dem Radarstandort. Pfeile zeigen die gemessene mittlere Bewegungsrichtung; ihre Länge ist schematisch. Graue Punkte und leere Gebiete bedeuten fehlende Beobachtung. Die Karte zeigt weder einzelne Vogelrouten noch eine Vorhersage.' : 'Circle colour and size show estimated bird density above each radar site. Arrows show the measured mean movement bearing; their length is schematic. Grey points and empty areas indicate absent observations. These are neither individual bird tracks nor a forecast.'}</p>
+      <BirdStationChart code={selectedStation} frame={frame} lang={lang} onStation={setSelectedStation} onTime={selectFrame} />
       <details className="border-t border-slate-200 pt-3"><summary className="cursor-pointer text-sm font-semibold">{de ? 'Radarmessungen' : 'Radar readings'}</summary>
         <div className="overflow-x-auto mt-3"><table className="w-full text-sm text-left"><caption className="sr-only">{de ? 'Beobachtungen zum gewählten Zeitpunkt' : 'Observations at selected time'}</caption><thead><tr><th scope="col">Radar</th><th scope="col">{de ? 'Vögel/km²' : 'Birds/km²'}</th><th scope="col">{de ? 'Richtung' : 'Bearing'}</th></tr></thead><tbody>{observations.stations.map(s => {
           const r = s.readings[frame]; const direction = r.density !== null && r.density > 0 && r.u !== null && r.v !== null && Math.hypot(r.u, r.v) > .01 ? `${((Math.atan2(r.u, r.v) * 180 / Math.PI + 360) % 360).toFixed(0)}°` : '—';
-          return <tr key={s.code} className="border-t border-slate-100"><th scope="row" className="py-2 font-normal uppercase">{s.code}</th><td>{r.density === null ? (r.status === 'daytime' ? (de ? 'Tagsüber' : 'Daytime') : (de ? 'Fehlend' : 'Missing')) : r.density.toFixed(2)}</td><td>{direction}</td></tr>;
+          return <tr key={s.code} className="border-t border-slate-100"><th scope="row" className="py-2 font-normal">{BIRD_RADAR_NAMES[s.code] ?? s.code} <span className="text-xs text-slate-400">{s.code.toUpperCase()}</span></th><td>{r.density === null ? (r.status === 'daytime' ? (de ? 'Tagsüber' : 'Daytime') : (de ? 'Fehlend' : 'Missing')) : r.density.toFixed(2)}</td><td>{direction}</td></tr>;
         })}</tbody></table></div>
       </details>
-      <p className="text-xs text-slate-500">{de ? 'Daten:' : 'Data:'} Lippert, Kranstauber, Forré &amp; van Loon (2022), <a className="underline" href="https://doi.org/10.5281/zenodo.6874789">European radar / ERA5 dataset</a> · CC BY 4.0. {de ? 'Für diese Karte zeitlich ausgewählt; veröffentlichte Nacht- und Fehlwertmasken beibehalten. Dichte ist höhenintegriert, Richtung aus bird_u/bird_v. Kartenkacheln benötigen Internet.' : 'Time subset selected for this map; published night and missingness masks retained. Density is vertically integrated; bearing uses bird_u/bird_v. Map tiles require internet.'}</p>
+      <p className="text-xs text-slate-500">{de ? 'Daten:' : 'Data:'} Lippert, Kranstauber, Forré &amp; van Loon (2022), <a className="underline" href="https://doi.org/10.5281/zenodo.6874789">European radar / ERA5 dataset</a> · <a className="underline" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. {de ? 'Für diese Karte zeitlich ausgewählt; veröffentlichte Nacht- und Fehlwertmasken beibehalten. Dichte ist höhenintegriert, Richtung aus bird_u/bird_v. Kartenkacheln benötigen Internet.' : 'Time subset selected for this map; published night and missingness masks retained. Density is vertically integrated; bearing uses bird_u/bird_v. Map tiles require internet.'}</p>
+      <div className="border-t border-slate-200 pt-4 text-xs text-slate-600 space-y-2">
+        <p><strong className="text-slate-900">{de ? 'Danke an die Forschung.' : 'Thank you to the research teams.'}</strong> {de ? 'Diese Karte baut auf der offenen Arbeit von Lippert, Kranstauber, Forré, van Loon und der europäischen Radar-Aeroökologie auf.' : 'This map builds on open work by Lippert, Kranstauber, Forré, van Loon and the European radar-aeroecology community.'}</p>
+        <p>{de ? 'Unser Aufruf an Energiebetreiber: Monitoringdaten öffnen, Ergebnisse von Schutzmaßnahmen veröffentlichen und unabhängige Prüfung ermöglichen. Diese Karte macht Beobachtungen sichtbar; sie misst keine Kollisionen.' : 'Our call to energy operators: open monitoring data, publish mitigation results and enable independent scrutiny. This map makes observations visible; it does not measure collisions.'}</p>
+      </div>
     </div>
   </section>;
 }

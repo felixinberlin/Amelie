@@ -15753,6 +15753,74 @@
           "notiz": "Vektoren bewertet [3 4 4 5 2 5]: Primary page inspected; active existing research field; bounded validation or permission route, no endorsement."
         }
       ]
+    },
+    {
+      "id": "aloft-opera-radar-catalog",
+      "name": "Aloft OPERA-derived European radar site catalog",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "evidenz"
+      ],
+      "tags": [
+        "vogel",
+        "eurobirdcast"
+      ],
+      "urls": [
+        "https://aloftdata.eu/radars/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "ODIM radar codes, official site names, coordinates, antenna height, band, polarization and operating status; derived from OPERA metadata downloaded 2026-02-10.",
+      "fokus": "Verify readable names for the 21 historical EuroBirdCast map sites; operating status today does not determine historical observation validity.",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-08",
+      "ertrag": {
+        "dosen": [
+          "eurobirdcast"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          3,
+          5,
+          4,
+          2,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-08"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-08",
+          "agent": "bibliothekar",
+          "runde": "EuroBirdCast map readability 2026-10-08",
+          "notiz": "Neu ins Register aufgenommen.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-08",
+          "agent": "bibliothekar",
+          "runde": "EuroBirdCast map readability 2026-10-08",
+          "notiz": "Read Belgium, Germany and Netherlands catalog tables; verified all 21 display names used by birdRadarNames.ts. Derived primary OPERA metadata, snapshot 2026-02-10; no inference of live radar operation or new forecasting skill. EuroBirdCast remains 22/35; no outreach.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-08",
+          "agent": "bibliothekar",
+          "runde": "",
+          "notiz": "Vektoren bewertet [3 3 5 4 2 3]: Directly supported one existing project with 21 verified names; finite metadata reference rather than new idea search; public complete page, OPERA-derived rather than independently measured, established radar field, institutional metadata contact available."
+        }
+      ]
     }
   ],
   "nichtNutzen": [

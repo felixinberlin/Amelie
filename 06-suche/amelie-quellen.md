@@ -7,7 +7,7 @@ Runde 2 hat gezeigt: Überlebende Ideen kommen aus Primärquellen, nicht aus Bra
 
 **Status:** `offen` (Nie gegraben oder nur als Anker genannt.) · `angekratzt` (Eine Suche oder ein Schnipsel; Publikationsliste nicht gelesen.) · `durchsucht` (Publikationsliste/Seite selbst gelesen.) · `erschöpft` (Anker dicht, kein weiterer Kandidat zu erwarten.) · `gesperrt` (Nicht (mehr) nutzen, z. B. Empfänger mit Nachfass-Sperre.)
 
-**Bestand:** 291 Quellen · 42 offen · 142 angekratzt · 85 durchsucht · 19 erschöpft · 3 gesperrt · Evidenz: 150 gelesen, 118 nur Schnipsel, 23 unbekannt.
+**Bestand:** 292 Quellen · 42 offen · 142 angekratzt · 86 durchsucht · 19 erschöpft · 3 gesperrt · Evidenz: 151 gelesen, 118 nur Schnipsel, 23 unbekannt.
 
 **Vektoren Q1–Q6** (1–5, Summe /30): Q1 Ergiebigkeit · Q2 Restpotenzial · Q3 Zugang · Q4 Belastbarkeit · Q5 Geländefreiheit · Q6 Anschluss. `auto` = aus Status/Evidenz/Ertrag abgeleitet, noch nicht bewertet.
 
@@ -295,6 +295,7 @@ Runde 2 hat gezeigt: Überlebende Ideen kommen aus Primärquellen, nicht aus Bra
 | **Civic Tech Field Guide** `civic-tech-field-guide` | Weltweites Verzeichnis von Civic-Tech-Projekten (Superbloom), Projekte eintragbar | Webseite | `durchsucht` *(01.10.2026: Besetzt-Test vor Civic-Tech-Ideenrunden.)* | 01.10.2026 | – | 21* |
 | **FluxRGNN European prepared radar benchmark v1.1.0** `eurobirdcast-fluxrgnn-benchmark` | Hourly European radar, ERA5, simulation outputs and model results; Zenodo record 6874789. — **Fokus:** Reuse prepared benchmark with held-out years and stations; inspect license and target before redistribution. | Webseite | `durchsucht` *(08.10.2026: Vektoren bewertet [3 4 5 5 2 3]: Primary page inspected; active existing research field; bounded validation or permission route, no endorsement.)* | 08.10.2026 | Dose `eurobirdcast` | 22 |
 | **bioRad primary analysis and density thresholding documentation** `euroradar-biorad-methods` | Primary package documentation: biological radar workflow, density, velocity and insect discrimination. — **Fokus:** Audit gap semantics and sd_vvp threshold; missing discriminator stays missing. | Webseite | `durchsucht` *(08.10.2026: Vektoren bewertet [3 4 5 5 2 3]: Primary page inspected; active existing research field; bounded validation or permission route, no endorsement.)* | 08.10.2026 | Dose `eurobirdcast` | 22 |
+| **Aloft OPERA-derived European radar site catalog** `aloft-opera-radar-catalog` | ODIM radar codes, official site names, coordinates, antenna height, band, polarization and operating status; derived from OPERA metadata downloaded 2026-02-10. — **Fokus:** Verify readable names for the 21 historical EuroBirdCast map sites; operating status today does not determine historical observation validity. | Webseite | `durchsucht` *(08.10.2026: Vektoren bewertet [3 3 5 4 2 3]: Directly supported one existing project with 21 verified names; finite metadata reference rather than new idea search; public complete page, OPERA-derived rather than independently measured, established radar field, institutional metadata contact available.)* | 08.10.2026 | Dose `eurobirdcast` | 20 |
 
 **Suchstring:** `<Fach> Datenbank Referenz Schadensfälle` · `<Fach> Arbeitskreis Schulung` — **auf Deutsch zuerst**, wenn eine deutsche Institution das Feld trägt
 
