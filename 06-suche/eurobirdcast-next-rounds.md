@@ -37,3 +37,7 @@ Stand: 08.10.2026. Gilt für die bestehende Dose `eurobirdcast`, nicht als neue 
 ## Nicht erneut tun
 
 Kein mathematischer Theoremname als Ersatz für Messdaten; kein Vollständigkeitsversprechen für „alle europäischen Daten“; keine erfundene Artbestimmung; kein Aufweichen eines Gates nach Betrachtung des Scores; keine Verwechslung der historischen Karte mit einer Live-Vorhersage. Das bestehende funktionierende Demo bleibt der Startpunkt.
+
+## Veröffentlichung tatsächlich geprüft
+
+Am 08.10.2026 wurde zusätzlich die öffentliche GitHub-Pages-Version im echten Browser geprüft: Bewegungskarte geladen, Wiedergabe bewegt den Zeitregler, Pause funktioniert, Datum auf 2017-10-07 gewechselt, Tabelle mit 21 Radarzeilen und numerischen Beobachtungen sichtbar, keine Clientfehler. Der Demo-Deploymentlauf 37827734370 war erfolgreich. Diese Prüfung betrifft die tatsächlich veröffentlichte Karte, nicht nur einen lokalen Build; sie macht die historischen Daten nicht zu aktuellen Beobachtungen.
