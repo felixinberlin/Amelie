@@ -1,8 +1,8 @@
 {
   "auditVersion": 1,
-  "generatedAt": "2026-10-08T18:09:13.011Z",
+  "generatedAt": "2026-10-08T18:20:45.756Z",
   "repository": {
-    "commit": "c63b9bda",
+    "commit": "527a475c",
     "branch": "main"
   },
   "inventory": {
@@ -11,7 +11,7 @@
     "demos": 12,
     "researchEntries": 36,
     "candidateIdeas": 20,
-    "books": 37
+    "books": 39
   },
   "distributions": {
     "doseStatus": {

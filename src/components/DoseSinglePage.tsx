@@ -34,6 +34,7 @@ import {
 import { DoseItem, Language, Verdict } from '../types';
 import { AMELIE_PLEDGE } from '../data/manifest';
 import { getTranslation, getLocalizedTitle } from '../i18n';
+const BirdForecastLab = lazy(() => import('./BirdForecastLab').then(m => ({ default: m.BirdForecastLab })));
 const BirdMigrationDemo = lazy(() => import('./BirdMigrationDemo').then(m => ({ default: m.BirdMigrationDemo })));
 
 import { DoseVectorPanel } from './DoseVectorPanel';
@@ -747,6 +748,7 @@ ${bookChapters
 
         {dose.id === 'eurobirdcast' && (
           <Suspense fallback={<p role="status">Loading migration observations…</p>}>
+            <BirdForecastLab lang={lang} />
             <BirdMigrationDemo />
           </Suspense>
         )}

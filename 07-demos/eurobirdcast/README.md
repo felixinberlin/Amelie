@@ -27,3 +27,7 @@ The new project has not been sent to anyone. The former BfN rejection remains va
 [Project](https://felixinberlin.github.io/Amelie/#dose=eurobirdcast) · [Research](../../02-recherche/eurobirdcast-revival-2026-10-08.md)
 
 License: CC0-1.0 for this scaffold and its synthetic tests. Third-party data and packages retain their own licenses.
+
+## Bird Weather direction (8 October 2026)
+
+The new forecasting/fusion experiment is in [forecast/README.md](forecast/README.md). It joins real radar and ERA5 summaries, preserves provenance and blocks model fitting when quality or chronological coverage is inadequate. This MTR core remains a separate unit-tested foundation; it is not a migration forecasting model.

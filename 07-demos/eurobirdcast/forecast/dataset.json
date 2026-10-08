@@ -1,0 +1,572 @@
+{
+  "radar": "depro",
+  "station": "Protzel / Berlin",
+  "bandM": [
+    1000,
+    2000
+  ],
+  "nightUtc": "18:00\u201306:00",
+  "target": "time-slot mean vertically integrated density (birds/km\u00b2)",
+  "quality": "automatic gap and finite-value filtering only; not expert validated",
+  "weatherVariables": [
+    "temperature2mC",
+    "precipitationMm12h",
+    "windEast100mMs",
+    "windNorth100mMs"
+  ],
+  "sources": [
+    {
+      "url": "https://aloftdata.s3-eu-west-1.amazonaws.com/baltrad/monthly/depro/2021/depro_vpts_202110.csv.gz",
+      "sha256": "6f931330d96718d4fc3d7b5ba51fab7a1d5a1c986fdc498263d262cd09df5c71",
+      "bytes": 12447245,
+      "retrievedAtUtc": "2026-10-08T18:12:32.248169+00:00",
+      "license": "CC0-1.0"
+    },
+    {
+      "url": "https://archive-api.open-meteo.com/v1/archive?latitude=52.648667&longitude=13.858212&start_date=2021-10-01&end_date=2021-10-31&hourly=temperature_2m,precipitation,wind_speed_100m,wind_direction_100m&models=era5&timezone=UTC&wind_speed_unit=ms",
+      "sha256": "8a33110136d6565c50d5c8cbad9bb87f3a64956d69d4419e435ef33539aafe48",
+      "bytes": 28293,
+      "retrievedAtUtc": "2026-10-08T18:12:33.709722+00:00",
+      "license": "CC-BY-4.0 (Open-Meteo / Copernicus attribution required)"
+    },
+    {
+      "url": "https://aloftdata.s3-eu-west-1.amazonaws.com/baltrad/monthly/depro/2022/depro_vpts_202210.csv.gz",
+      "sha256": "2e7cbebc402b8f3c22d0233b7768d86a8daf72352ba3451c0b5c706eb46d98bc",
+      "bytes": 12140613,
+      "retrievedAtUtc": "2026-10-08T18:12:37.535798+00:00",
+      "license": "CC0-1.0"
+    },
+    {
+      "url": "https://archive-api.open-meteo.com/v1/archive?latitude=52.648667&longitude=13.858212&start_date=2022-10-01&end_date=2022-10-31&hourly=temperature_2m,precipitation,wind_speed_100m,wind_direction_100m&models=era5&timezone=UTC&wind_speed_unit=ms",
+      "sha256": "540fb864ef58323d2cd84b13365ac251dbc3aee0c76c15e4861f9c572c3743f3",
+      "bytes": 28451,
+      "retrievedAtUtc": "2026-10-08T18:12:38.974054+00:00",
+      "license": "CC-BY-4.0 (Open-Meteo / Copernicus attribution required)"
+    },
+    {
+      "url": "https://aloftdata.s3-eu-west-1.amazonaws.com/baltrad/monthly/depro/2023/depro_vpts_202310.csv.gz",
+      "sha256": "d345150df2b2a2d0d6ae689cc04816101b2e245c9ddf229c7b0227eb1d07a575",
+      "bytes": 7836989,
+      "retrievedAtUtc": "2026-10-08T18:12:41.856902+00:00",
+      "license": "CC0-1.0"
+    },
+    {
+      "url": "https://archive-api.open-meteo.com/v1/archive?latitude=52.648667&longitude=13.858212&start_date=2023-10-01&end_date=2023-10-31&hourly=temperature_2m,precipitation,wind_speed_100m,wind_direction_100m&models=era5&timezone=UTC&wind_speed_unit=ms",
+      "sha256": "17a1cc0a0386c21f16f03513d82609116a45f789775d417b7656b7fb7f8b7244",
+      "bytes": 28356,
+      "retrievedAtUtc": "2026-10-08T18:12:43.200485+00:00",
+      "license": "CC-BY-4.0 (Open-Meteo / Copernicus attribution required)"
+    }
+  ],
+  "excluded": [
+    {
+      "date": "2021-10-01",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.22916666666666666
+    },
+    {
+      "date": "2021-10-02",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.0
+    },
+    {
+      "date": "2021-10-03",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.125
+    },
+    {
+      "date": "2021-10-04",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.1875
+    },
+    {
+      "date": "2021-10-05",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.08333333333333333
+    },
+    {
+      "date": "2021-10-06",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.375
+    },
+    {
+      "date": "2021-10-10",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.5416666666666666
+    },
+    {
+      "date": "2021-10-11",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.08333333333333333
+    },
+    {
+      "date": "2021-10-13",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.5
+    },
+    {
+      "date": "2021-10-14",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.020833333333333332
+    },
+    {
+      "date": "2021-10-15",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.22916666666666666
+    },
+    {
+      "date": "2021-10-16",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.1875
+    },
+    {
+      "date": "2021-10-17",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.3333333333333333
+    },
+    {
+      "date": "2021-10-19",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.125
+    },
+    {
+      "date": "2021-10-20",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.0
+    },
+    {
+      "date": "2021-10-21",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.041666666666666664
+    },
+    {
+      "date": "2021-10-22",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.020833333333333332
+    },
+    {
+      "date": "2021-10-23",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.4791666666666667
+    },
+    {
+      "date": "2021-10-24",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.3541666666666667
+    },
+    {
+      "date": "2021-10-25",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.0
+    },
+    {
+      "date": "2021-10-26",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.08333333333333333
+    },
+    {
+      "date": "2021-10-27",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.0
+    },
+    {
+      "date": "2021-10-28",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.125
+    },
+    {
+      "date": "2021-10-29",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.0
+    },
+    {
+      "date": "2021-10-30",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.0
+    },
+    {
+      "date": "2022-10-01",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.0
+    },
+    {
+      "date": "2022-10-04",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.3958333333333333
+    },
+    {
+      "date": "2022-10-05",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.0
+    },
+    {
+      "date": "2022-10-06",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.3958333333333333
+    },
+    {
+      "date": "2022-10-07",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.2708333333333333
+    },
+    {
+      "date": "2022-10-08",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.0
+    },
+    {
+      "date": "2022-10-09",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.5208333333333334
+    },
+    {
+      "date": "2022-10-10",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.0
+    },
+    {
+      "date": "2022-10-12",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.6458333333333334
+    },
+    {
+      "date": "2022-10-13",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.4375
+    },
+    {
+      "date": "2022-10-14",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.14583333333333334
+    },
+    {
+      "date": "2022-10-15",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.0
+    },
+    {
+      "date": "2022-10-16",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.2708333333333333
+    },
+    {
+      "date": "2022-10-17",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.0625
+    },
+    {
+      "date": "2022-10-18",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.625
+    },
+    {
+      "date": "2022-10-19",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.6458333333333334
+    },
+    {
+      "date": "2022-10-20",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.0
+    },
+    {
+      "date": "2022-10-21",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.041666666666666664
+    },
+    {
+      "date": "2022-10-22",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.3541666666666667
+    },
+    {
+      "date": "2022-10-23",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.020833333333333332
+    },
+    {
+      "date": "2022-10-24",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.0
+    },
+    {
+      "date": "2022-10-25",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.2708333333333333
+    },
+    {
+      "date": "2022-10-26",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.5833333333333334
+    },
+    {
+      "date": "2022-10-27",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.0
+    },
+    {
+      "date": "2022-10-28",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.0
+    },
+    {
+      "date": "2022-10-29",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.125
+    },
+    {
+      "date": "2022-10-30",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.125
+    },
+    {
+      "date": "2023-10-01",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.0
+    },
+    {
+      "date": "2023-10-02",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.0
+    },
+    {
+      "date": "2023-10-03",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.0
+    },
+    {
+      "date": "2023-10-04",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.0
+    },
+    {
+      "date": "2023-10-05",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.0
+    },
+    {
+      "date": "2023-10-06",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.0
+    },
+    {
+      "date": "2023-10-07",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.041666666666666664
+    },
+    {
+      "date": "2023-10-08",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.14583333333333334
+    },
+    {
+      "date": "2023-10-09",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.020833333333333332
+    },
+    {
+      "date": "2023-10-10",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.0
+    },
+    {
+      "date": "2023-10-11",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.041666666666666664
+    },
+    {
+      "date": "2023-10-12",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.08333333333333333
+    },
+    {
+      "date": "2023-10-13",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.16666666666666666
+    },
+    {
+      "date": "2023-10-14",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.0
+    },
+    {
+      "date": "2023-10-15",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.0
+    },
+    {
+      "date": "2023-10-16",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.0
+    },
+    {
+      "date": "2023-10-17",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.0
+    },
+    {
+      "date": "2023-10-18",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.0
+    },
+    {
+      "date": "2023-10-19",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.14583333333333334
+    },
+    {
+      "date": "2023-10-20",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.041666666666666664
+    },
+    {
+      "date": "2023-10-21",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.0
+    },
+    {
+      "date": "2023-10-22",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.0
+    },
+    {
+      "date": "2023-10-23",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.0
+    },
+    {
+      "date": "2023-10-24",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.0
+    },
+    {
+      "date": "2023-10-25",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.0
+    },
+    {
+      "date": "2023-10-26",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.0
+    },
+    {
+      "date": "2023-10-27",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.020833333333333332
+    },
+    {
+      "date": "2023-10-28",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.0
+    },
+    {
+      "date": "2023-10-29",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.0
+    },
+    {
+      "date": "2023-10-30",
+      "reason": "radar-time-coverage-below-75%",
+      "coverage": 0.0
+    }
+  ],
+  "rows": [
+    {
+      "date": "2021-10-07",
+      "nightEndUtc": "2021-10-08T06:00:00Z",
+      "targetBirdsKm2": 6.523098847027435,
+      "radarCoverage": 0.8958333333333334,
+      "weather": [
+        10.691666666666668,
+        0.0,
+        -3.9056368817520135,
+        -2.84604278162868
+      ]
+    },
+    {
+      "date": "2021-10-08",
+      "nightEndUtc": "2021-10-09T06:00:00Z",
+      "targetBirdsKm2": 3.0598062696721824,
+      "radarCoverage": 0.9375,
+      "weather": [
+        5.108333333333333,
+        0.0,
+        -6.408179033311682,
+        1.4250388441152586
+      ]
+    },
+    {
+      "date": "2021-10-09",
+      "nightEndUtc": "2021-10-10T06:00:00Z",
+      "targetBirdsKm2": 4.194122565090657,
+      "radarCoverage": 0.8333333333333334,
+      "weather": [
+        3.1750000000000003,
+        0.0,
+        -5.337248303600398,
+        2.8722087793824174
+      ]
+    },
+    {
+      "date": "2021-10-12",
+      "nightEndUtc": "2021-10-13T06:00:00Z",
+      "targetBirdsKm2": 5.656369800764052,
+      "radarCoverage": 0.9166666666666666,
+      "weather": [
+        4.375,
+        0.0,
+        5.260860627672415,
+        -4.596824567304875
+      ]
+    },
+    {
+      "date": "2021-10-18",
+      "nightEndUtc": "2021-10-19T06:00:00Z",
+      "targetBirdsKm2": 1.752599753076966,
+      "radarCoverage": 0.7708333333333334,
+      "weather": [
+        8.383333333333333,
+        0.0,
+        3.218158812052589,
+        5.12725588259402
+      ]
+    },
+    {
+      "date": "2022-10-02",
+      "nightEndUtc": "2022-10-03T06:00:00Z",
+      "targetBirdsKm2": 4.107922426690447,
+      "radarCoverage": 0.9791666666666666,
+      "weather": [
+        10.358333333333333,
+        0.30000000000000004,
+        8.417177413381582,
+        -3.5161358466115202
+      ]
+    },
+    {
+      "date": "2022-10-03",
+      "nightEndUtc": "2022-10-04T06:00:00Z",
+      "targetBirdsKm2": 4.3647420211964185,
+      "radarCoverage": 0.9375,
+      "weather": [
+        11.633333333333333,
+        0.1,
+        6.579130909375157,
+        -3.6432565857744024
+      ]
+    },
+    {
+      "date": "2022-10-11",
+      "nightEndUtc": "2022-10-12T06:00:00Z",
+      "targetBirdsKm2": 6.721861921900358,
+      "radarCoverage": 0.8125,
+      "weather": [
+        5.508333333333333,
+        0.0,
+        3.0503616748727196,
+        0.060309148654042855
+      ]
+    }
+  ],
+  "heightReference": "AMSL"
+}

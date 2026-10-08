@@ -1051,3 +1051,8 @@ Glasanflug Neubewertung 06.10.2026 (Librarian consolidation): refreshed prior ar
 | Idee | Urteil | Begründung | Stand |
 |---|---|---|---|
 | EuroBirdCast (`eurobirdcast`), Vogelzug-Forschungswerkbank | `verengt` | Alter Offshore-Autopilot bleibt `besetzt`/fachlich verworfen; BfN-Antwort vom 30.09. bleibt erhalten. Neue Restlücke: qualitätsbewusster, portabler Szenariobericht; Bedarf `unklar`. Primärquellen: Desmet 2025, HiRAD 11.02.2026, Staatscourant 2026/2078, BIRDSAFE. Nutzer beauftragt Wiederaufnahme und erste Galerieposition. `build_first`, 22/35 unter Gate, keine erneute Zustellung. Recherche: `02-recherche/eurobirdcast-revival-2026-10-08.md`; ursprünglicher Totenschein archiviert, aus aktiven Gräbern entfernt. | 10/2026 |
+
+
+### EuroBirdCast — Bird Weather, Präzisierung am 08.10.2026
+
+Nutzerauftrag: jüngste Daten mit historischer Vogelzugforschung für Deutschland/Europa verbinden, um Prognosen zu verbessern. Urteil bleibt `verengt`, neuer Bedarf `unklar`; FlySafe ist ein direkter bestehender Vergleich. Radar + ERA5 wurden real heruntergeladen (Protzel, Oktober 2021/2022/2023), aber Qualitätsgate rot: 5/3/0 vollständige Nächte, mit konservativem Radar-Lag 1/0/0. Kein Modell trainiert, keine Verbesserung behauptet. Vollständiger Versuchsplan, Quellenrollen, Grenzen und Quellenmeldung: `02-recherche/eurobirdcast-bird-weather-2026-10-08.md`. Bilinguale Dose, Frontend, Buch und Exporte synchronisiert; ursprünglicher BfN-Kill bleibt erhalten.

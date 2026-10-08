@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/felixinberlin/amelie/main/public/data/amelie-schema.json",
   "version": "1.0.0",
-  "generatedAt": "2026-10-08T18:05:09.717Z",
+  "generatedAt": "2026-10-08T18:20:07.685Z",
   "license": "CC0-1.0 (Public Domain / Kula-Ring)",
   "storageProvider": "github_pages",
   "repository": "https://github.com/felixinberlin/amelie",
@@ -14,9 +14,9 @@
     {
       "id": "eurobirdcast",
       "title": "EuroBirdCast",
-      "titleEn": "EuroBirdCast: Migration Evidence Lab",
-      "oneLinerDe": "Europäischen Nachtzug sichtbar machen und Abschaltszenarien nachrechnen: eine offene Forschungswerkbank mit Datenqualitätsprüfung, Rotorhöhen-Abdeckung und nachvollziehbaren Annahmen.",
-      "oneLinerEn": "Explore European nocturnal migration and replay curtailment scenarios: an open research workbench with data quality checks, rotor-height coverage and explicit assumptions.",
+      "titleEn": "EuroBirdCast: Bird Weather",
+      "oneLinerDe": "Bird Weather für Deutschland und Europa: jüngste Radarbeobachtungen, Wettervorhersagen und historisches Wissen über Vogelzug verbinden — und an ungesehenen Nächten prüfen, ob die Prognose dadurch besser wird.",
+      "oneLinerEn": "Bird Weather for Germany and Europe: combine recent radar, weather forecasts and historical migration knowledge, then test on unseen nights whether the forecasts improve.",
       "date": "8. Oktober 2026",
       "reviewAfter": "April 2027",
       "recipientsDe": "Joep Breuer, TNO / BIRDSAFE (fachlicher Ansprechpartner laut Wozep-Poster 2025); nachrangig HiRAD / UvA. Neuer Bedarf unbestätigt; keine erneute BfN-Zustellung.",
@@ -31,34 +31,34 @@
         "Radar",
         "Forschung"
       ],
-      "problemDe": "Radarprofile beschreiben regionalen Vogelzug; eine Windparkentscheidung braucht zusätzlich lokale Messungen, gültige Regeln und Netzzustand. Das ursprüngliche Projekt wurde nach einer negativen BfN-Bedarfsantwort am 30.09.2026 beerdigt. Die neue, noch unbestätigte Restlücke ist ein portabler Vergleichsbericht: Welche Daten und Höhen wurden tatsächlich erfasst, wie verändert eine frei gewählte Szenarioschwelle das Ergebnis, und was bleibt unbekannt?",
-      "problemEn": "Radar profiles describe regional migration; a wind-farm decision additionally needs local measurements, applicable rules and grid conditions. The original project was buried after negative BfN demand feedback on 30 September 2026. The new, unconfirmed residual gap is a portable comparison report: which data and heights were actually observed, how does a user-selected scenario threshold change the result, and what remains unknown?",
+      "problemDe": "Für die nächste Zugnacht zählen aktuelle Bedingungen und die langfristigen Muster der Arten. Radar, Beringung, GPS und Sichtungen messen aber verschiedene Dinge. EuroBirdCast soll daraus eine nachvollziehbare Vogelzugprognose entwickeln. Der erste reale Radar-/ERA5-Pilot ist am Qualitätsgate gescheitert (Protzel, Oktober 2021–2023: 5/3/0 auswertbare Nächte); eine bessere Prognose ist noch nicht belegt. Die frühere BfN-Ablehnung einer Offshore-Reproduzierbarkeitslücke bleibt gültig.",
+      "problemEn": "The next migration night depends on current conditions and long-term species patterns. Radar, ringing, GPS and sightings measure different things. EuroBirdCast aims to build an auditable migration forecast from them. The first real radar/ERA5 pilot failed its quality gate (Protzel, October 2021–2023: 5/3/0 usable nights); better predictions have not been demonstrated. The previous BfN rejection of an offshore reproducibility gap remains valid.",
       "whyNowDe": [
         "Desmet et al. (2025) dokumentieren europäische VPTS-Datensätze unter CC0; Zeitstempel sind UTC. Offene Daten sind keine Garantie für lokale Eignung.",
         "HiRAD meldete am 11.02.2026 weitere Radarstandorte, warnt aber ausdrücklich vor ungeprüfter biologischer Signalqualität.",
-        "Der niederländische Änderungsbeschluss vom 30.01.2026 ersetzt die feste 500-Vögel/km/h-Schwelle durch modellgestützte Entscheidungen mit flexibler Grenze.",
-        "BIRDSAFE untersucht bereits Radar, Kameras und Abschaltstrategien. EuroBirdCast muss als ergänzendes Exportmodul passen, statt diese Forschung zu duplizieren."
+        "EURING und der Migration Atlas erschließen mehr als 100 Jahre Beringungswissen; artspezifisches Vorwissen braucht eigene Beobachtungsmodelle und Zugangsprüfung.",
+        "FlySafe verbindet bereits Radar und Wetter für Vogelzugprognosen. EuroBirdCast muss zusätzliche historische Wissensquellen gegen bestehende Baselines prüfen."
       ],
       "whyNowEn": [
         "Desmet et al. (2025) document European VPTS datasets released under CC0, with UTC timestamps. Open access does not guarantee local suitability.",
         "HiRAD added radar locations on 11 February 2026 while explicitly warning that biological signal quality has not been evaluated.",
-        "The Dutch amendment of 30 January 2026 replaces the fixed 500 birds/km/h threshold with model-based decisions using a flexible boundary.",
-        "BIRDSAFE already investigates radar, cameras and curtailment strategies. EuroBirdCast must fit as a complementary export module rather than duplicate that research."
+        "EURING and the Migration Atlas synthesize more than 100 years of ringing knowledge; species priors need distinct observation models and access checks.",
+        "FlySafe already combines radar and weather for migration forecasts. EuroBirdCast must evaluate additional historical knowledge against existing baselines."
       ],
-      "sketchDe": "Zwei getrennte Ebenen: europäische VPTS-Profile als regionaler Kontext und lokale Vogelradar-/Leistungsdaten als freiwilliger Import. Dichte (Vögel/km³) × Geschwindigkeit (km/h) × erfasste Schichtdicke (km) ergibt MTR (Vögel/km/h). Fehlende oder qualitätsgesperrte Schichten sperren die Rotorband-Auswertung. Szenarien vergleichen beobachteten Durchzug und hypothetische Energieverluste; weder Kollisionszahlen noch gerettete Vögel werden daraus abgeleitet. Export mit Quelle, Lizenz, UTC, Höhenbezug, Parametern und Softwareversion. Kein Live-Abschaltdienst.",
-      "sketchEn": "Two separate layers: European VPTS profiles for regional context and optional local bird-radar/power imports. Density (birds/km³) × speed (km/h) × observed layer thickness (km) yields MTR (birds/km/h). Missing or quality-rejected layers block rotor-band evaluation. Scenarios compare observed passage and hypothetical energy losses; they do not estimate collisions or birds saved. Exports retain source, license, UTC, height reference, parameters and software version. No live shutdown service.",
+      "sketchDe": "Drei Zeitskalen verbinden: aktuelle Luftbewegung aus Radar, Stunden bis Tage aus Wettervorhersagen, saisonale und artspezifische Muster aus langfristiger Forschung. Quellen behalten Messmodell, Art, Ort, Erfassungsaufwand, Lizenz, Unsicherheit und Verfügbarkeitszeit. Publikationen begründen Merkmale statt als Messpunkte zu dienen. Vergleich: saisonale Historie, plus Wetter, plus jüngstes Radar, danach Artenwissen. Vorhersageziel zuerst nächtliche integrierte Dichte; Richtung/Höhe und regionale Ausbreitung sind spätere getrennte Ziele. Keine Turbinensteuerung. Frontend zeigt Datenrollen, Qualitätsgate und die vorhandene historische Karte.",
+      "sketchEn": "Connect three timescales: recent airborne movement from radar, hours-to-days from weather forecasts, and seasonal/species patterns from long-term research. Preserve each source’s observation model, species, place, effort, license, uncertainty and availability time. Papers inform features rather than becoming measurement points. Compare seasonal history, add weather, add recent radar, then species knowledge. First target: nightly integrated density; direction/altitude and regional propagation are later separate targets. No turbine control. The frontend shows source roles, the quality gate and the existing historical map.",
       "firstStepDe": {
-        "ticket": "Ein Rotorband, ein prüfbarer MTR-Bericht.",
-        "criteria": "Der CC0-TypeScript-Kern und synthetische Tests liegen in 07-demos/eurobirdcast/. Ticket 01 ist erst abgeschlossen, wenn ein archivierter echter VPTS-Ausschnitt mit URL, Lizenz und SHA-256 eingelesen, der Höhenbezug geprüft und die MTR-Handrechnung unabhängig reproduziert ist. Fehlende Schichten, Regenflag, Überlappung, Nullzug und ungültige Werte müssen explizit behandelt werden. Vor Ausbau bestätigt ein Forschungspartner den Nutzen des Exportformats."
+        "ticket": "Historie, Wetter und jüngstes Radar mit einem überprüfbaren Datengate verbinden.",
+        "criteria": "Ausführbar: Python-Pipeline unter 07-demos/eurobirdcast/forecast/, drei archivierte Radar-Monate plus ERA5, Quellen mit SHA-256 und Qualitätsbericht. Das erste Gate ist rot: 5/3/0 Nächte vor Radar-Lag, 1/0/0 danach; deshalb kein Modell und keine Prognose. Nächster Abschluss: genügend qualitätsgesicherte Mehrsaison-Daten, archivierte Vorhersageläufe mit Ausgabezeit und unabhängiger Standort-/Jahrestest; zusätzliche Artenquellen einzeln gegen dieselben Baselines prüfen."
       },
       "firstStepEn": {
-        "ticket": "One rotor band, one auditable MTR report.",
-        "criteria": "The CC0 TypeScript core and synthetic tests are in 07-demos/eurobirdcast/. Ticket 01 completes only after importing an archived real VPTS excerpt with URL, license and SHA-256, verifying the height reference and independently reproducing the MTR calculation. Missing layers, rain flags, overlaps, zero migration and invalid values must be handled explicitly. A research partner must confirm the export format is useful before expansion."
+        "ticket": "Join history, weather and recent radar through a verifiable data gate.",
+        "criteria": "Runnable: Python pipeline in 07-demos/eurobirdcast/forecast/, three archived radar months plus ERA5, source SHA-256 hashes and a quality report. The first gate failed: 5/3/0 nights before radar lag, 1/0/0 afterwards; therefore no model and no forecast. Next completion: sufficient quality-controlled multi-season data, archived weather forecast runs with issue times and independent site/year tests; evaluate additional species sources separately against the same baselines."
       },
       "failureModeDe": "Das BfN sah keine Reproduzierbarkeitslücke und hielt DWD-Wetterradar für den damaligen Offshore-Zweck für ungeeignet. Diese Antwort bleibt gültig. Regionale MTR ist kein Kollisionsrisiko; Teilabdeckung ist kein Nullzug. Neue Bedarfsbestätigung und lokale Validierung fehlen. Wenn BIRDSAFE/HiRAD das Exportformat bereits abdecken oder keinen Nutzen sehen, endet der Ausbau. EuroBirdCast bleibt ein Arbeitstitel ohne Verbindung zum US-Projekt BirdCast.",
       "failureModeEn": "BfN saw no reproducibility gap and considered DWD weather radar unsuitable for the former offshore use case. That feedback remains valid. Regional MTR is not collision risk; partial coverage is not zero migration. New demand confirmation and local validation are missing. Stop expansion if BIRDSAFE/HiRAD already cover the export format or see no value. EuroBirdCast is a working title with no affiliation to the US BirdCast project.",
-      "priorArtDe": "Verengt, Bedarf unklar (08.10.2026): Aloft/CROW visualisieren europäischen Vogelzug; getRad und bioRad liefern Zugang und Auswertung; BirdCast bietet US-Karten und Prognosen. Niederländisches Start/Stop, BIRDSAFE und BfN-Vorhaben bearbeiten Offshore-Schutz bereits. VoVis Wx verarbeitet Radar für militärische Vogelzugberatung. Kein Anspruch auf Neuartigkeit des Radars, der Prognose oder der Abschaltung; nur ein interoperabler, qualitätsbewusster Forschungsbericht ist zu prüfen.",
-      "priorArtEn": "Narrowed, demand uncertain (8 October 2026): Aloft/CROW visualize European migration; getRad and bioRad provide access and analysis; BirdCast offers US maps and forecasts. Dutch Start/Stop, BIRDSAFE and BfN projects already address offshore protection. VoVis Wx processes radar for military migration advice. No novelty claim for radar, forecasting or curtailment; only an interoperable, quality-aware research report remains to be tested."
+      "priorArtDe": "Verengt; Bedarf unklar. FlySafe bietet bereits aktuelle Radarbeobachtungen und mehrtägige Vogelzugprognosen für Deutschland, Belgien und die Niederlande (UvA, 25.08.2026). Aloft/CROW, getRad/bioRad, HiRAD und FluxRGNN bearbeiten Daten, Auswertung und Modelle. EuroBirdPortal, EURING und Movebank liefern unterschiedliche historische Perspektiven. Der mögliche Beitrag ist ein überprüfbarer Vergleich zusätzlicher Wissensquellen; keine behauptete Erstentwicklung oder nachgewiesene Verbesserung.",
+      "priorArtEn": "Narrowed; demand uncertain. FlySafe already provides recent radar observations and multi-day migration forecasts for Germany, Belgium and the Netherlands (UvA, 25 August 2026). Aloft/CROW, getRad/bioRad, HiRAD and FluxRGNN address data, analysis and models. EuroBirdPortal, EURING and Movebank provide different historical perspectives. The potential contribution is a testable comparison of additional knowledge sources; neither a first-of-kind system nor improved accuracy is claimed."
     },
     {
       "id": "altbau-thermal",

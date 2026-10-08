@@ -31,6 +31,20 @@ export interface BookChapter {
 export const DOSE_BOOKS: Record<string, BookChapter[]> = {
   'eurobirdcast': [
     {
+      slug: 'bird-weather', path: '02-recherche/eurobirdcast-bird-weather-2026-10-08.md',
+      titleDe: 'Bird Weather: aktuelle Daten und historisches Wissen', titleEn: 'Bird Weather: recent data and historical knowledge',
+      noteDe: 'Datenfusion, bestehende Prognosen, realer Qualitätsbefund und überprüfbarer Forschungsplan.',
+      noteEn: 'Data fusion, existing forecasts, real quality findings and a testable research plan.',
+      date: '08.10.2026', kind: 'md',
+    },
+    {
+      slug: 'forecast-pilot', path: '07-demos/eurobirdcast/forecast/README.md',
+      titleDe: 'Ausführbarer Radar-/Wetter-Pilot', titleEn: 'Runnable radar/weather pilot',
+      noteDe: 'Provenienz, feste Filter, chronologischer Vergleich und Datenqualitätsgate ohne erfundene Scores.',
+      noteEn: 'Provenance, fixed filters, chronological comparison and quality gating without invented scores.',
+      date: '08.10.2026', kind: 'md',
+    },
+    {
       slug: 'historical-map', path: '07-demos/europe-bird-migration/README.md',
       titleDe: 'Interaktive Karte mit echten historischen Daten', titleEn: 'Interactive map with real historical data',
       noteDe: 'Drei deutsche Radarstationen am 01.10.2023; diagnostische Mittelwerte, keine MTR-Validierung.',

@@ -9,7 +9,7 @@
     "lint": "tsc --noEmit && npm run check:dosen && npm run check:books && npm run check:idea-frontmatter && npm run check:protokoll && npm run check:friedhof && npm run check:quellen && npm run check:diagramme && npm run check:lab-pr && npm run check:verwandte",
     "preview": "vite preview --port 3000",
     "check:dosen": "node scripts/check-dosen-drift.mjs",
-    "test": "vitest run",
+    "test": "vitest run && npm run test:bird-forecast",
     "check:books": "node scripts/check-dose-books.mjs",
     "check:idea-frontmatter": "node scripts/sync-idea-frontmatter.mjs --check",
     "check:protokoll": "node scripts/check-protokoll-coverage.mjs",
@@ -33,7 +33,8 @@
     "teamrunde": "bash scripts/crew/teamrunde.sh",
     "export:verwandte": "node scripts/export-verwandte.mjs",
     "check:verwandte": "node scripts/export-verwandte.mjs --check",
-    "test:browser": "playwright test"
+    "test:browser": "playwright test",
+    "test:bird-forecast": "python3 -m unittest discover -s 07-demos/eurobirdcast/forecast -p 'test_*.py'"
   },
   "dependencies": {
     "@types/canvas-confetti": "^1.9.0",
