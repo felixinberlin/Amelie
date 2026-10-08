@@ -19,7 +19,7 @@ import {
 import { AMELIE_MUSTERS, AMELIE_ANTI_PATTERNS, MusterEmail } from '../data/musterEmails';
 import { DoseItem, Language } from '../types';
 import { getTranslation, getLocalizedTitle } from '../i18n';
-import { getDoseUrl } from '../utils/doseUrl';
+import { getDeliveryDoseUrl } from '../utils/doseUrl';
 import { loadDeliveryStateForDose } from '../services/ideaDeliveryService';
 
 interface MusterEmailsSectionProps {
@@ -70,7 +70,7 @@ export const MusterEmailsSection: React.FC<MusterEmailsSectionProps> = ({
   const currentMuster = AMELIE_MUSTERS.find((m) => m.id === selectedMusterId) || AMELIE_MUSTERS[0];
   const linkedDose = dosen.find((d) => d.id === selectedDoseId) || dosen[0] || null;
 
-  const linkedDoseUrl = linkedDose ? getDoseUrl(linkedDose.id) : '';
+  const linkedDoseUrl = linkedDose ? getDeliveryDoseUrl(linkedDose.id) : '';
   const linkedDoseTitle = linkedDose ? getLocalizedTitle(linkedDose, lang) : '';
 
   // Generate customized email text with real deep link

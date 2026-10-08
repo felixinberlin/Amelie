@@ -1,8 +1,9 @@
+import { useLocation, useNavigate } from 'react-router-dom';
 import React, { useEffect, useMemo, useState } from 'react';
 import { Search, X, Radar, Gift, Sparkles, RotateCcw, ExternalLink, Link2, Check } from 'lucide-react';
 import { CandidateIdea, DoseItem, Language } from '../types';
 import { getLocalizedTitle } from '../i18n';
-import { parseCompareFromUrl, getCompareUrl, setCompareUrl, clearCompareUrl } from '../utils/doseUrl';
+import { parseCompareFromUrl, getCompareUrl } from '../utils/doseUrl';
 import {
   VECTOR_CATALOG,
   FUN_SOURCE_LABEL,
@@ -53,6 +54,8 @@ const pt = (i: number, value: number) => {
 };
 
 export const VectorCompareView: React.FC<Props> = ({ lang, dosen, candidates, onOpenDose }) => {
+  const location = useLocation();
+  const navigate = useNavigate();
   const isDe = lang === 'de';
   const [query, setQuery] = useState('');
   const [scope, setScope] = useState<'all' | 'dose' | 'candidate'>('all');
@@ -80,26 +83,14 @@ export const VectorCompareView: React.FC<Props> = ({ lang, dosen, candidates, on
     if (ids === null) return ['dose:kristallwachstum-3d', 'dose:dose-cleaner-chemical-safety'];
     return [...new Set(ids)].filter((id) => byId.has(id)).slice(0, MAX_SELECTED);
   };
-  const [selected, setSelected] = useState<string[]>(fromUrl);
+  const selected = fromUrl();
+  const setSelected = (value: string[] | ((previous: string[]) => string[])) => {
+    const next = typeof value === 'function' ? value(selected) : value;
+    const query = new URLSearchParams(location.search);
+    query.set('items', next.join(','));
+    navigate({ pathname: '/compare/', search: '?' + query.toString() }, { replace: true });
+  };
   const [copied, setCopied] = useState(false);
-
-  // Auswahl → URL (replaceState löst kein hashchange aus, also keine Schleife)
-  useEffect(() => {
-    setCompareUrl(selected);
-  }, [selected]);
-
-  // Link wird bei geöffneter Seite geändert (z. B. neuer Link eingefügt) → Auswahl übernehmen
-  useEffect(() => {
-    const onHash = () => {
-      if (parseCompareFromUrl() !== null) setSelected(fromUrl());
-    };
-    window.addEventListener('hashchange', onHash);
-    return () => window.removeEventListener('hashchange', onHash);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [byId]);
-
-  // Beim Verlassen der Seite den Hash aufräumen
-  useEffect(() => () => clearCompareUrl(), []);
 
   const copyLink = async () => {
     try {

@@ -1,3 +1,5 @@
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { chapterPath, dosePath, withPreferences } from '../routing/routes';
 import React, { useState, useEffect } from 'react';
 import {
   ArrowLeft,
@@ -34,7 +36,7 @@ import { AMELIE_PLEDGE } from '../data/manifest';
 import { getTranslation, getLocalizedTitle } from '../i18n';
 import { DoseVectorPanel } from './DoseVectorPanel';
 import { DoseResearchUpdate } from './DoseResearchUpdate';
-import { getDoseUrl } from '../utils/doseUrl';
+import { getDoseUrl, getSimulatorUrl } from '../utils/doseUrl';
 import { DELIVERIES_DATA } from '../data/deliveries';
 import { DOSE_SIMULATOR_MAP, SimulatorKey } from '../data/doseSimulators';
 import { getBook } from '../data/doseBooks';
@@ -82,6 +84,8 @@ export const DoseSinglePage: React.FC<DoseSinglePageProps> = ({
   onOpenEmailsTab,
   onSelectTag,
 }) => {
+  const location = useLocation();
+  const navigate = useNavigate();
   const [copiedUrl, setCopiedUrl] = useState(false);
   const [copiedMarkdown, setCopiedMarkdown] = useState(false);
   const [copiedEmailId, setCopiedEmailId] = useState<string | null>(null);
@@ -105,22 +109,9 @@ export const DoseSinglePage: React.FC<DoseSinglePageProps> = ({
 
   // Das Buch zur Dose: die Rohrecherche hinter den Behauptungen
   const bookChapters = getBook(dose.id);
-  const [showBook, setShowBook] = useState<boolean>(() => Boolean(parseBookSlugFromUrl()));
+  const showBook = Boolean(parseBookSlugFromUrl());
   const initialChapterSlug = parseBookSlugFromUrl() || undefined;
 
-  // Ein Kapitel-Link, der im selben Tab geöffnet wird, muss das Buch auch
-  // aufschlagen — sonst landet der Empfänger auf der Dose und sucht selbst.
-  useEffect(() => {
-    const oeffneBeiKapitelLink = () => {
-      if (parseBookSlugFromUrl()) setShowBook(true);
-    };
-    window.addEventListener('hashchange', oeffneBeiKapitelLink);
-    window.addEventListener('popstate', oeffneBeiKapitelLink);
-    return () => {
-      window.removeEventListener('hashchange', oeffneBeiKapitelLink);
-      window.removeEventListener('popstate', oeffneBeiKapitelLink);
-    };
-  }, []);
 
   // Associated delivery emails
   const linkedEmailsFromData = DELIVERIES_DATA.filter(
@@ -283,13 +274,12 @@ ${bookChapters
       {/* 1. TOP BREADCRUMB & ACTION BAR */}
       <nav aria-label="Breadcrumb" className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-3 sm:p-4 rounded-2xl bg-[var(--m-surface)] border border-[var(--m-line)] shadow-2xs">
         <div className="flex items-center gap-2 flex-wrap text-xs">
-          <button
-            onClick={onBack}
+          <Link to={withPreferences('/dosen/', location.search)}
             className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[var(--m-surface-2)] hover:bg-[var(--m-accent)] hover:text-white text-[var(--m-ink-2)] border border-[var(--m-line-strong)] font-typewriter font-bold transition-colors cursor-pointer"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>{isDe ? 'Zurück zur Übersicht' : isEs ? 'Volver al resumen' : 'Back to Overview'}</span>
-          </button>
+          </Link>
 
           <span className="text-[var(--m-muted)]">/</span>
           <span className="text-[var(--m-muted)] font-typewriter hidden md:inline">
@@ -614,13 +604,12 @@ ${bookChapters
               </button>
 
               {onOpenSimulatorTab && (
-                <button
-                  onClick={() => onOpenSimulatorTab(simInfo.key)}
+                <Link to={getSimulatorUrl(simInfo.key)}
                   className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[var(--m-accent)] hover:bg-[var(--m-accent-strong)] text-white text-xs font-typewriter font-bold transition-colors shadow-2xs cursor-pointer"
                 >
                   <ExternalLink className="w-3.5 h-3.5" />
                   <span>{isDe ? 'Im Vollbild-Sandbox öffnen' : isEs ? 'Abrir en sandbox completo' : 'Open in Sandbox Tab'}</span>
-                </button>
+                </Link>
               )}
             </div>
           </div>
@@ -758,7 +747,7 @@ ${bookChapters
 
         {/* Pillar 7: Das Buch zur Dose — Rohrecherche hinter den Behauptungen */}
         {bookChapters.length > 0 && (
-          <section aria-labelledby="book-heading" className="rounded-2xl border border-[var(--m-line)] bg-[var(--m-surface)] p-6 sm:p-8 space-y-4 shadow-2xs">
+          <section id="dose-book" aria-labelledby="book-heading" className="scroll-mt-48 rounded-2xl border border-[var(--m-line)] bg-[var(--m-surface)] p-6 sm:p-8 space-y-4 shadow-2xs">
             <div className="flex items-center gap-2.5 text-[var(--m-muted)] pb-2 border-b border-[var(--m-sunk)]">
               <BookOpen className="w-5 h-5 text-[var(--m-muted)]" />
               <h2 id="book-heading" className="text-lg sm:text-xl font-bold font-amelie text-[var(--m-ink)]">
@@ -782,7 +771,7 @@ ${bookChapters
                 {bookChapters.map((c) => (
                   <li key={c.slug}>
                     <button
-                      onClick={() => setShowBook(true)}
+                      onClick={() => navigate({ pathname: chapterPath(dose.id, bookChapters[0].slug), search: location.search })}
                       className="w-full text-left px-4 py-3 rounded-xl border border-[var(--m-line)] bg-[var(--m-surface-2)] hover:bg-[var(--m-sunk)] transition-colors cursor-pointer"
                     >
                       <div className="font-typewriter text-xs font-bold text-[var(--m-ink)]">
@@ -798,7 +787,7 @@ ${bookChapters
             )}
 
             <button
-              onClick={() => setShowBook((v) => !v)}
+              onClick={() => navigate({ pathname: showBook ? dosePath(dose.id) : chapterPath(dose.id, bookChapters[0].slug), search: location.search })}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[var(--m-ink)] text-[var(--m-surface-2)] font-typewriter text-xs font-bold hover:bg-[#3d2c20] transition-colors cursor-pointer"
             >
               <BookOpen className="w-3.5 h-3.5" />
@@ -812,16 +801,10 @@ ${bookChapters
                 chapters={bookChapters}
                 lang={lang}
                 initialSlug={initialChapterSlug}
+                chapterHref={(slug) => getBookChapterUrl(dose.id, slug)}
                 onChapterChange={(slug) => {
-                  try {
-                    window.history.replaceState(
-                      {},
-                      '',
-                      getBookChapterUrl(dose.id, slug)
-                    );
-                  } catch {
-                    /* URL-Anker ist Komfort, kein Muss */
-                  }
+                  const path = chapterPath(dose.id, slug);
+                  if (location.pathname !== path) navigate({ pathname: path, search: location.search });
                 }}
               />
             )}
@@ -938,8 +921,7 @@ ${bookChapters
       {/* 8. BOTTOM PAGING (Previous / Next Dose) */}
       <footer className="pt-6 border-t border-[var(--m-line)] flex flex-col sm:flex-row items-center justify-between gap-4">
         {prevDose ? (
-          <button
-            onClick={() => onSelectDoseById(prevDose.id)}
+          <Link to={getDoseUrl(prevDose.id)}
             className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[var(--m-surface)] hover:bg-[var(--m-surface-2)] border border-[var(--m-line)] hover:border-[var(--m-accent)] text-xs text-[var(--m-ink)] font-typewriter font-semibold transition-all cursor-pointer w-full sm:w-auto"
           >
             <ChevronLeft className="w-4 h-4 text-[var(--m-accent)]" />
@@ -947,22 +929,20 @@ ${bookChapters
               <span className="text-[10px] text-[var(--m-muted)] block uppercase">{isDe ? 'Vorherige Dose' : isEs ? 'Lata anterior' : 'Previous Tin'}</span>
               <span className="font-bold">{getLocalizedTitle(prevDose, lang)}</span>
             </div>
-          </button>
+          </Link>
         ) : (
           <div />
         )}
 
-        <button
-          onClick={onBack}
+        <Link to={withPreferences('/dosen/', location.search)}
           className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[var(--m-accent)] hover:bg-[var(--m-accent-strong)] text-white text-xs font-typewriter font-bold shadow-xs transition-colors cursor-pointer"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>{isDe ? 'Zurück zu allen Dosen' : isEs ? 'Volver a todas las latas' : 'Back to All Tins'}</span>
-        </button>
+        </Link>
 
         {nextDose ? (
-          <button
-            onClick={() => onSelectDoseById(nextDose.id)}
+          <Link to={getDoseUrl(nextDose.id)}
             className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[var(--m-surface)] hover:bg-[var(--m-surface-2)] border border-[var(--m-line)] hover:border-[var(--m-accent)] text-xs text-[var(--m-ink)] font-typewriter font-semibold transition-all cursor-pointer w-full sm:w-auto justify-end"
           >
             <div className="text-right">
@@ -970,7 +950,7 @@ ${bookChapters
               <span className="font-bold">{getLocalizedTitle(nextDose, lang)}</span>
             </div>
             <ChevronRight className="w-4 h-4 text-[var(--m-accent)]" />
-          </button>
+          </Link>
         ) : (
           <div />
         )}

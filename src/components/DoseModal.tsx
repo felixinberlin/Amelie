@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 import {
   X,
@@ -308,16 +309,13 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
             </button>
 
             {onOpenSinglePage && (
-              <button
-                onClick={() => {
-                  onClose();
-                  onOpenSinglePage(dose);
-                }}
+              <Link to={getDoseUrl(dose.id)}
+                onClick={(event) => { if (!event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) onClose(); }}
                 className="p-2 rounded-lg text-[var(--m-sunk)] hover:text-white hover:bg-[var(--m-accent)] transition-colors cursor-pointer"
                 title={lang === 'de' ? 'Als Einzelseite öffnen (mit eigener URL)' : lang === 'es' ? 'Abrir como página completa' : 'Open as Single Page (with URL)'}
               >
                 <Maximize2 className="w-4 h-4 text-[var(--m-gold)]" />
-              </button>
+              </Link>
             )}
 
             <button
@@ -910,16 +908,13 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
           </div>
           <div className="flex items-center gap-2">
             {onOpenSinglePage && (
-              <button
-                onClick={() => {
-                  onClose();
-                  onOpenSinglePage(dose);
-                }}
+              <Link to={getDoseUrl(dose.id)}
+                onClick={(event) => { if (!event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) onClose(); }}
                 className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold rounded-lg bg-[var(--m-surface-2)] hover:bg-[var(--m-sunk)] text-[var(--m-accent)] border border-[var(--m-line-strong)] cursor-pointer transition-all font-typewriter"
               >
                 <Maximize2 className="w-3.5 h-3.5" />
                 <span>{lang === 'de' ? 'Als Einzelseite öffnen' : lang === 'es' ? 'Página completa' : 'Open Single Page'} →</span>
-              </button>
+              </Link>
             )}
             <button
               onClick={onClose}

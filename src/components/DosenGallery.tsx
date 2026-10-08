@@ -1,9 +1,10 @@
+import { Link } from 'react-router-dom';
 import React, { useState, useMemo } from 'react';
 import { Search, Filter, Gift, Hammer, Lock, ArrowUpRight, Sparkles, Brain, Link2, Check, ExternalLink, Maximize2, Tag, X } from 'lucide-react';
 import { DoseItem, Language, Verdict, DomainCategory } from '../types';
 import { getTranslation, getLocalizedTitle, withCount } from '../i18n';
 import { DOSE_SIMULATOR_MAP } from '../data/doseSimulators';
-import { getDoseUrl } from '../utils/doseUrl';
+import { getDoseUrl, getSimulatorUrl } from '../utils/doseUrl';
 import { SimulatorKey } from '../data/doseSimulators';
 import { AmelieRulesBanner } from './AmelieRulesBanner';
 import { DoseVectorPanel } from './DoseVectorPanel';
@@ -395,9 +396,8 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
             const isKept = dose.verdict === 'keep';
 
             return (
-              <div
+              <article
                 key={dose.id}
-                onClick={() => (onOpenSinglePage ? onOpenSinglePage(dose) : onSelectDose(dose))}
                 className="group relative rounded-2xl amelie-tin-box p-6 flex flex-col justify-between transition-all duration-200 hover:-translate-y-1 hover:shadow-xl cursor-pointer border border-[var(--m-line-strong)] hover:border-[var(--m-copper)]"
               >
                 <div>
@@ -452,19 +452,14 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
 
                   {/* Title */}
                   <h3 className="text-xl font-bold font-amelie text-[var(--m-ink)] group-hover:text-[var(--m-accent)] transition-colors tracking-tight flex items-center justify-between mt-1">
-                    <span>{getLocalizedTitle(dose, lang)}</span>
+                    <Link to={getDoseUrl(dose.id)}>{getLocalizedTitle(dose, lang)}</Link>
                     <ArrowUpRight className="w-4 h-4 text-[var(--m-muted)] group-hover:text-[var(--m-accent)] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </h3>
 
                   {/* Simulator badge if available */}
                   {onOpenSimulator && SIMULATOR_BADGES[dose.id] && (
                     <div className="mt-2.5">
-                      <button
-                        type="button"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          onOpenSimulator(SIMULATOR_BADGES[dose.id].simKey);
-                        }}
+<Link to={getSimulatorUrl(SIMULATOR_BADGES[dose.id].simKey)}
                         className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-typewriter font-bold transition-all border shadow-2xs cursor-pointer ${SIMULATOR_BADGES[dose.id].colorClasses}`}
                       >
                         <Sparkles className={`w-3 h-3 ${SIMULATOR_BADGES[dose.id].iconColor}`} />
@@ -475,7 +470,7 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
                             ? SIMULATOR_BADGES[dose.id].labelEs
                             : SIMULATOR_BADGES[dose.id].labelEn}
                         </span>
-                      </button>
+                      </Link>
                     </div>
                   )}
 
@@ -554,25 +549,16 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
                       <span className="hidden sm:inline">Popup</span>
                     </button>
 
-                    <button
-                      type="button"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        if (onOpenSinglePage) {
-                          onOpenSinglePage(dose);
-                        } else {
-                          onSelectDose(dose);
-                        }
-                      }}
+<Link to={getDoseUrl(dose.id)}
                       className="text-xs font-bold font-amelie text-[var(--m-accent)] hover:underline flex items-center gap-0.5 px-2 py-1 rounded-md hover:bg-[var(--m-accent)]/5"
                       title={lang === 'de' ? 'Als Einzelseite öffnen' : lang === 'es' ? 'Abrir como página' : 'Open as Single Page'}
                     >
                       <span>{lang === 'de' ? 'Einzelseite' : t.ui.open_tin}</span>
                       <span>→</span>
-                    </button>
+                    </Link>
                   </div>
                 </div>
-              </div>
+              </article>
             );
           })}
         </div>

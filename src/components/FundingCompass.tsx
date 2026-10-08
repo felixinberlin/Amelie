@@ -1197,7 +1197,7 @@ export const FundingCompass: React.FC<FundingCompassProps> = ({ lang }) => {
                             {L(lead.fundingFitDe, lead.fundingFitEn)}
                           </p>
                           {lead.id === 'farmacia-mandate-engine' && (
-                            <a href="#venture=farmacia-mandate-engine" className="inline-block mt-1 font-semibold text-[var(--m-accent)] underline">
+                            <a href={`${import.meta.env.BASE_URL}ventures/farmacia-mandate-engine/`} className="inline-block mt-1 font-semibold text-[var(--m-accent)] underline">
                               {L('Vollständige Analyse mit Diagrammen im Ventures-Tab →', 'Full analysis with charts in the Ventures tab →')}
                             </a>
                           )}

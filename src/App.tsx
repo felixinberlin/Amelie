@@ -1,144 +1,112 @@
-import React, { useState, useEffect } from 'react';
+import React, { lazy, useState, useEffect } from 'react';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
+import metadata from 'virtual:site-metadata';
+import { parsePageRoute, legacyDestination, tabPath, simulatorPath } from './routing/routes';
+import { RouteEffects } from './routing/RouteEffects';
+import { PageBoundary } from './components/PageBoundary';
 import { Header } from './components/Header';
-import { DosenGallery } from './components/DosenGallery';
-import { DoseModal } from './components/DoseModal';
-import { DoseSinglePage } from './components/DoseSinglePage';
-import { MatrixView } from './components/MatrixView';
-import { ManifestView } from './components/ManifestView';
-import { DosePacker } from './components/DosePacker';
-import { DiscardedGallery } from './components/DiscardedGallery';
-import { UnpackedIdeasView } from './components/UnpackedIdeasView';
-import { InteractiveTinSandboxes } from './components/InteractiveTinSandboxes';
-import { SearchPlaybookStudio } from './components/SearchPlaybookStudio';
-import { GoogleAccountImporter } from './components/GoogleAccountImporter';
-import { NormalJobsExplorer } from './components/NormalJobsExplorer';
-import { WhimsyAndGoodnessView } from './components/WhimsyAndGoodnessView';
-import { GitHubPagesDataHub } from './components/GitHubPagesDataHub';
-import { MusterEmailsSection } from './components/MusterEmailsSection';
-import { SelfAuditView } from './components/SelfAuditView';
-import { FundingCompass } from './components/FundingCompass';
-import { GamesView } from './components/GamesView';
-import { RedditView } from './components/RedditView';
-import { SisterProjectsView } from './components/SisterProjectsView';
-import { QuellenView } from './components/QuellenView';
-import { VectorCompareView } from './components/VectorCompareView';
-import { VenturesTab } from './components/VenturesTab';
-import { pipelineIdeas } from './data/pipeline';
-import { DOSEN_DATA, DISCARDED_DATA } from './data/dosen';
-import { MATRIX_DATA } from './data/matrix';
-import { DELIVERIES_DATA } from './data/deliveries';
-import { CANDIDATE_IDEAS_DATA } from './data/unpacked';
+const DosenGallery = lazy(() => import('./components/DosenGallery').then(m => ({ default: m.DosenGallery })));
+const DoseModal = lazy(() => import('./components/DoseModal').then(m => ({ default: m.DoseModal })));
+const DoseSinglePage = lazy(() => import('./components/DoseSinglePage').then(m => ({ default: m.DoseSinglePage })));
+const MatrixView = lazy(() => import('./components/MatrixView').then(m => ({ default: m.MatrixView })));
+const ManifestView = lazy(() => import('./components/ManifestView').then(m => ({ default: m.ManifestView })));
+const DosePacker = lazy(() => import('./components/DosePacker').then(m => ({ default: m.DosePacker })));
+const DiscardedGallery = lazy(() => import('./components/DiscardedGallery').then(m => ({ default: m.DiscardedGallery })));
+const UnpackedIdeasView = lazy(() => import('./components/UnpackedIdeasView').then(m => ({ default: m.UnpackedIdeasView })));
+const InteractiveTinSandboxes = lazy(() => import('./components/InteractiveTinSandboxes').then(m => ({ default: m.InteractiveTinSandboxes })));
+const SearchPlaybookStudio = lazy(() => import('./components/SearchPlaybookStudio').then(m => ({ default: m.SearchPlaybookStudio })));
+const GoogleAccountImporter = lazy(() => import('./components/GoogleAccountImporter').then(m => ({ default: m.GoogleAccountImporter })));
+const NormalJobsExplorer = lazy(() => import('./components/NormalJobsExplorer').then(m => ({ default: m.NormalJobsExplorer })));
+const WhimsyAndGoodnessView = lazy(() => import('./components/WhimsyAndGoodnessView').then(m => ({ default: m.WhimsyAndGoodnessView })));
+const GitHubPagesDataHub = lazy(() => import('./components/GitHubPagesDataHub').then(m => ({ default: m.GitHubPagesDataHub })));
+const MusterEmailsSection = lazy(() => import('./components/MusterEmailsSection').then(m => ({ default: m.MusterEmailsSection })));
+const SelfAuditView = lazy(() => import('./components/SelfAuditView').then(m => ({ default: m.SelfAuditView })));
+const FundingCompass = lazy(() => import('./components/FundingCompass').then(m => ({ default: m.FundingCompass })));
+const GamesView = lazy(() => import('./components/GamesView').then(m => ({ default: m.GamesView })));
+const RedditView = lazy(() => import('./components/RedditView').then(m => ({ default: m.RedditView })));
+const SisterProjectsView = lazy(() => import('./components/SisterProjectsView').then(m => ({ default: m.SisterProjectsView })));
+const QuellenView = lazy(() => import('./components/QuellenView').then(m => ({ default: m.QuellenView })));
+const VectorCompareView = lazy(() => import('./components/VectorCompareView').then(m => ({ default: m.VectorCompareView })));
+const VenturesTab = lazy(() => import('./components/VenturesTab').then(m => ({ default: m.VenturesTab })));
 import { DoseItem, Language, CandidateIdea } from './types';
 import { getTranslation } from './i18n';
-import { getActiveDosen, getActiveCandidates, saveCandidateLocal } from './services/storageService';
-import { parseDoseIdFromUrl, parseSimulatorFromUrl, parseCompareFromUrl, parseVentureFromUrl, setDoseUrl, clearDoseUrl } from './utils/doseUrl';
+import { getActiveDosen } from './services/doseStorage';
+import { getDoseUrl } from './utils/doseUrl';
 import { SimulatorKey, DOSE_SIMULATOR_MAP } from './data/doseSimulators';
 import { Gift, FolderGit2 } from 'lucide-react';
 
 export function App() {
-  const [currentTab, setCurrentTab] = useState<string>(() => {
-    if (parseCompareFromUrl() !== null) return 'compare';
-    if (parseVentureFromUrl()) return 'ventures';
-    if (parseSimulatorFromUrl()) return 'sandboxes';
-    return 'dosen';
-  });
-  const [activeSandbox, setActiveSandbox] = useState<SimulatorKey>(() => {
-    const rawSim = parseSimulatorFromUrl();
-    if (rawSim) {
-      if (rawSim in DOSE_SIMULATOR_MAP) {
-        return DOSE_SIMULATOR_MAP[rawSim].key;
-      }
-      return (rawSim as SimulatorKey) || 'altbau';
+  const location = useLocation();
+  const navigate = useNavigate();
+  const route = parsePageRoute(location.pathname, location.search);
+  const currentTab = route.tab;
+  const activeSandbox = route.kind === 'simulator' ? route.simulator : 'altbau';
+  const lang = (new URLSearchParams(location.search).get('lang')?.match(/^(de|en|es)$/)?.[0] ?? 'en') as Language;
+  const navigateTo = (path: string, replace = false) => {
+    const target = new URL(path, window.location.origin);
+    const existing = new URLSearchParams(location.search);
+    for (const key of ['lang', 'admin', 'mood']) {
+      const value = existing.get(key);
+      if (value !== null && !target.searchParams.has(key)) target.searchParams.set(key, value);
     }
-    return 'altbau';
-  });
-  const [lang, setLang] = useState<Language>(() => {
-    // Deep-Link-Parameter: #venture=<id>&lang=es
-    const m = typeof window !== 'undefined' ? window.location.hash.match(/[&?]lang=(de|en|es)\b/) : null;
-    return (m?.[1] as Language) ?? 'en';
-  });
+    navigate(target.pathname + target.search + target.hash, { replace });
+  };
+  const setCurrentTab = (tab: string) => navigateTo(tabPath(tab));
+  const setLang = (language: Language) => {
+    const query = new URLSearchParams(location.search);
+    query.set('lang', language);
+    navigate({ pathname: location.pathname, search: '?' + query.toString(), hash: location.hash }, { replace: true });
+  };
   const [selectedDose, setSelectedDose] = useState<DoseItem | null>(null);
+  useEffect(() => { setSelectedDose(null); }, [location.pathname]);
   const [packerDraft, setPackerDraft] = useState<any>(null);
   const [importedCandidates, setImportedCandidates] = useState<CandidateIdea[]>([]);
   const [dosenList, setDosenList] = useState<DoseItem[]>(getActiveDosen);
-  const [candidatesList, setCandidatesList] = useState<CandidateIdea[]>(getActiveCandidates);
+  const [candidatesList, setCandidatesList] = useState<CandidateIdea[]>([]);
+  const [candidateError, setCandidateError] = useState(false);
 
   const [selectedGalleryTag, setSelectedGalleryTag] = useState<string | null>(null);
 
-  // Direct URL-based Dose Single Page
-  const [activeDosePage, setActiveDosePage] = useState<DoseItem | null>(() => {
-    const initialId = parseDoseIdFromUrl();
-    if (initialId) {
-      const list = getActiveDosen();
-      return list.find((d: DoseItem) => d.id === initialId) || null;
-    }
-    return null;
-  });
-
+  const requestedDose = route.kind === 'dose' ? route.doseId : null;
+  const activeDosePage = requestedDose ? dosenList.find(d => d.id === requestedDose) ?? null : null;
+  const missing = route.kind === 'not-found' || (route.kind === 'dose' && (!activeDosePage || (route.chapter && !metadata.chapters[route.doseId]?.includes(route.chapter)))) || (route.kind === 'venture' && !metadata.ventureIds.includes(route.ventureId));
+  let localCandidateCount = 0;
+  try {
+    const records = JSON.parse(localStorage.getItem('amelie_custom_candidates') ?? '[]');
+    if (Array.isArray(records)) localCandidateCount = new Set(records.filter(c => c?.id && !metadata.candidateIds.includes(c.id) && !c.packedDoseId).map(c => c.id)).size;
+  } catch { /* Unavailable or invalid storage uses source counts. */ }
   const t = getTranslation(lang);
 
-  // Listen to hash and popstate for direct link handling
+  const localQueryId = new URLSearchParams(location.search).get('dose');
+  const isLocalQuery = location.pathname === '/dosen/' && localQueryId !== null && !metadata.doseIds.includes(localQueryId);
+  let legacyTarget = isLocalQuery ? null : legacyDestination(location.search, location.hash);
+  if (legacyTarget) {
+    const target = new URL(legacyTarget, window.location.origin);
+    const legacyRoute = parsePageRoute(target.pathname, target.search);
+    if (legacyRoute.kind === 'dose' && !legacyRoute.chapter && !metadata.doseIds.includes(legacyRoute.doseId)) {
+      target.searchParams.set('dose', legacyRoute.doseId);
+      legacyTarget = '/dosen/' + target.search + target.hash;
+    }
+  }
+
   useEffect(() => {
-    const handleUrlChange = () => {
-      const doseId = parseDoseIdFromUrl();
-      if (doseId) {
-        const found = dosenList.find((d: DoseItem) => d.id === doseId);
-        if (found) {
-          setActiveDosePage(found);
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-          return;
-        }
-      }
-      
-      if (parseCompareFromUrl() !== null) {
-        setCurrentTab('compare');
-        setActiveDosePage(null);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        return;
-      }
-
-      if (parseVentureFromUrl()) {
-        setCurrentTab('ventures');
-        setActiveDosePage(null);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        return;
-      }
-
-      const rawSim = parseSimulatorFromUrl();
-      if (rawSim) {
-        let simKey: SimulatorKey = 'glasanflug';
-        if (rawSim in DOSE_SIMULATOR_MAP) {
-          simKey = DOSE_SIMULATOR_MAP[rawSim].key;
-        } else {
-          simKey = rawSim as SimulatorKey;
-        }
-        setActiveSandbox(simKey);
-        setCurrentTab('sandboxes');
-        setActiveDosePage(null);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        return;
-      }
-
-      setActiveDosePage(null);
-    };
-
-    window.addEventListener('hashchange', handleUrlChange);
-    window.addEventListener('popstate', handleUrlChange);
-    return () => {
-      window.removeEventListener('hashchange', handleUrlChange);
-      window.removeEventListener('popstate', handleUrlChange);
-    };
-  }, [dosenList]);
+    setCandidateError(false);
+    if (!['compare', 'data-hub'].includes(currentTab)) return;
+    let cancelled = false;
+    import('./services/candidateStorage').then(m => { if (!cancelled) setCandidatesList(m.getActiveCandidates()); }).catch(() => { if (!cancelled) setCandidateError(true); });
+    return () => { cancelled = true; };
+  }, [currentTab]);
 
   const refreshData = () => {
     setDosenList(getActiveDosen());
-    setCandidatesList(getActiveCandidates());
+    import('./services/candidateStorage').then(m => setCandidatesList(m.getActiveCandidates())).catch(() => setCandidateError(true));
   };
 
   const handleOpenSinglePage = (dose: DoseItem) => {
-    setDoseUrl(dose.id);
-    setActiveDosePage(dose);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const url = new URL(getDoseUrl(dose.id), window.location.origin);
+    const base = import.meta.env.BASE_URL;
+    navigateTo('/' + url.pathname.slice(base.length) + url.search);
+    setSelectedDose(null);
   };
 
   const handleOpenSinglePageById = (doseId: string) => {
@@ -149,9 +117,7 @@ export function App() {
   };
 
   const handleCloseSinglePage = () => {
-    clearDoseUrl();
-    setActiveDosePage(null);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setCurrentTab('dosen');
   };
 
   const handleSelectDoseById = (doseId: string) => {
@@ -161,18 +127,18 @@ export function App() {
     }
   };
 
-  const handleAddToCandidates = (newCand: CandidateIdea) => {
-    saveCandidateLocal(newCand);
-    setCandidatesList(getActiveCandidates());
+  const handleAddToCandidates = async (newCand: CandidateIdea) => {
+    try {
+      const { saveCandidateLocal } = await import('./services/candidateStorage');
+      saveCandidateLocal(newCand);
+    } catch { setCandidateError(true); return; }
+    import('./services/candidateStorage').then(m => setCandidatesList(m.getActiveCandidates())).catch(() => setCandidateError(true));
     setImportedCandidates((prev) => [newCand, ...prev]);
     setCurrentTab('unpacked');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleOpenSimulator = (simId: SimulatorKey) => {
-    setActiveSandbox(simId);
-    setCurrentTab('sandboxes');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    navigateTo(simulatorPath(simId));
   };
 
   const handleBisociationToPacker = (candidateData: Partial<CandidateIdea>) => {
@@ -198,7 +164,6 @@ export function App() {
       priorArt: (isDe ? candidateData.evidenceDe : candidateData.evidenceEn) || '',
     });
     setCurrentTab('packer');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handlePackCandidate = (candidate: CandidateIdea) => {
@@ -226,33 +191,30 @@ export function App() {
     });
 
     setCurrentTab('packer');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  if (legacyTarget) return <Navigate to={legacyTarget} replace />;
+  if (!location.pathname.endsWith('/')) return <Navigate to={location.pathname + '/' + location.search + location.hash} replace />;
 
   return (
     <div className="min-h-screen bg-[var(--m-bg)] text-[var(--m-ink)] flex flex-col font-sans selection:bg-[var(--m-gold)]/40 selection:text-[var(--m-accent-strong)]">
       {/* Top Navigation */}
       <Header
         currentTab={currentTab}
-        setCurrentTab={(tab) => {
-          if (activeDosePage) {
-            clearDoseUrl();
-            setActiveDosePage(null);
-          }
-          setCurrentTab(tab);
-        }}
         lang={lang}
         setLang={setLang}
         dosenCount={dosenList.length}
-        unpackedCount={pipelineIdeas([...importedCandidates, ...candidatesList]).length}
-        discardedCount={DISCARDED_DATA.length}
-        mailsCount={DELIVERIES_DATA.length}
+        unpackedCount={metadata.counts.unpacked + localCandidateCount}
+        discardedCount={metadata.counts.discarded}
+        mailsCount={metadata.counts.matrix}
       />
 
       {/* Main Content Area */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-10">
-        {activeDosePage ? (
+      <main id="main-content" tabIndex={-1} className="outline-none flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-10">
+        <PageBoundary resetKey={location.pathname + location.search}>
+        {candidateError ? <section role="alert"><p>Ideas could not load.</p><button className="underline" onClick={() => window.location.reload()}>Reload and retry</button></section> : missing ? <section><h1 className="text-2xl">Page not found</h1><p>The requested page is unavailable.</p><Link to="/dosen/" className="underline">Browse gifts</Link></section> : activeDosePage ? (
           <DoseSinglePage
+            key={activeDosePage.id}
             dose={activeDosePage}
             allDosen={dosenList}
             lang={lang}
@@ -260,19 +222,14 @@ export function App() {
             onOpenPopup={(d) => setSelectedDose(d)}
             onSelectDoseById={handleOpenSinglePageById}
             onOpenSimulatorTab={(simId) => {
-              handleCloseSinglePage();
               handleOpenSimulator(simId);
             }}
             onOpenEmailsTab={() => {
-              handleCloseSinglePage();
               setCurrentTab('muster-emails');
-              window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
             onSelectTag={(tag) => {
-              handleCloseSinglePage();
               setSelectedGalleryTag(tag);
               setCurrentTab('dosen');
-              window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
           />
         ) : (
@@ -288,11 +245,9 @@ export function App() {
                 onSelectTag={setSelectedGalleryTag}
                 onOpenManifest={() => {
                   setCurrentTab('manifest');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
                 onOpenEmails={() => {
                   setCurrentTab('muster-emails');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
               />
             )}
@@ -309,7 +264,6 @@ export function App() {
                 lang={lang}
                 onOpenGames={() => {
                   setCurrentTab('games');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
               />
             )}
@@ -358,7 +312,6 @@ export function App() {
                 onPackIdea={(draft) => {
                   setPackerDraft(draft);
                   setCurrentTab('packer');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
                 onAddToCandidates={handleAddToCandidates}
               />
@@ -368,7 +321,7 @@ export function App() {
               <InteractiveTinSandboxes
                 lang={lang}
                 initialSandbox={activeSandbox}
-                onOpenDose={(doseId) => handleSelectDoseById(doseId)}
+                onOpenDose={handleOpenSinglePageById}
               />
             )}
 
@@ -382,8 +335,6 @@ export function App() {
 
             {currentTab === 'matrix' && (
               <MatrixView
-                matrix={MATRIX_DATA}
-                deliveries={DELIVERIES_DATA}
                 dosen={dosenList}
                 lang={lang}
                 onSelectDoseById={handleSelectDoseById}
@@ -416,7 +367,6 @@ export function App() {
                 lang={lang}
                 onOpenEmails={() => {
                   setCurrentTab('muster-emails');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
               />
             )}
@@ -427,17 +377,18 @@ export function App() {
 
             {currentTab === 'discarded' && (
               <DiscardedGallery
-                discarded={DISCARDED_DATA}
                 lang={lang}
               />
             )}
           </>
         )}
+        <RouteEffects missing={Boolean(missing)} title={route.kind === 'dose' && !route.chapter ? activeDosePage?.title : undefined} />
+        </PageBoundary>
       </main>
 
       {/* Modal for viewing active Dose */}
       {selectedDose && (
-        <DoseModal
+        <PageBoundary resetKey={selectedDose.id}><DoseModal
           dose={selectedDose}
           lang={lang}
           onClose={() => setSelectedDose(null)}
@@ -450,9 +401,8 @@ export function App() {
             setSelectedDose(null);
             setSelectedGalleryTag(tag);
             setCurrentTab('dosen');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
-        />
+        /></PageBoundary>
       )}
 
       {/* Footer */}
@@ -474,7 +424,6 @@ export function App() {
               <button
                 onClick={() => {
                   setCurrentTab('data-hub');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
                 className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white border border-[var(--m-line)] hover:border-[var(--m-accent)] text-[var(--m-ink)] text-[11px] font-semibold transition-colors cursor-pointer"
               >

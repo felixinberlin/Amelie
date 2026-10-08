@@ -41,8 +41,6 @@ jobs:
       - name: Build with GitHub Pages base
         run: |
           npm run build
-          touch dist/.nojekyll
-          cp dist/index.html dist/404.html
         env:
           # Optional: enables the Google Workspace import (public client-side values)
           VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY }}

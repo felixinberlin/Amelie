@@ -35,7 +35,7 @@ const PLAYABLES: Array<{
 
 const pick = (lang: Language, de: string, en: string, es: string) => (lang === 'de' ? de : lang === 'es' ? es : en);
 
-export const PLAYABLE_GAME_COUNT = PLAYABLES.length;
+export { PLAYABLE_GAME_COUNT } from '../data/playableGames';
 
 export const GamesView: React.FC<GamesViewProps> = ({ lang, dosen, onOpenDose }) => {
   const [query, setQuery] = useState('');

@@ -1,6 +1,5 @@
 import { DoseItem, CandidateIdea, StorageProvider, IdeasDatabaseExport } from '../types';
-import { DOSEN_DATA, DISCARDED_DATA } from '../data/dosen';
-import { CANDIDATE_IDEAS_DATA } from '../data/unpacked';
+import { DISCARDED_DATA } from '../data/dosen';
 
 const STORAGE_KEY_PROVIDER = 'amelie_storage_provider';
 const STORAGE_KEY_DOSEN = 'amelie_custom_dosen';
@@ -32,118 +31,10 @@ export function setStorageProvider(provider: StorageProvider): void {
   }
 }
 
-/**
- * Load all Dosen (seed dataset merged with any locally created or edited Dosen).
- */
-export function getActiveDosen(): DoseItem[] {
-  try {
-    const localStr = localStorage.getItem(STORAGE_KEY_DOSEN);
-    if (localStr) {
-      const parsed: DoseItem[] = JSON.parse(localStr);
-      if (Array.isArray(parsed) && parsed.length > 0) {
-        // Create map of seed doses
-        const map = new Map<string, DoseItem>();
-        DOSEN_DATA.forEach((d) => map.set(d.id, d));
-        // Overwrite or append custom ones, preserving repository integrity
-        parsed.forEach((d) => {
-          const seed = map.get(d.id);
-          if (seed) {
-            map.set(d.id, {
-              ...d,
-              ...seed,
-              tags: Array.from(new Set([...(seed.tags || []), ...(d.tags || [])])),
-              emailTemplates: (seed.emailTemplates && seed.emailTemplates.length > 0) ? seed.emailTemplates : d.emailTemplates,
-            });
-          } else {
-            map.set(d.id, d);
-          }
-        });
-        return Array.from(map.values());
-      }
-    }
-  } catch (e) {
-    console.warn('Error reading custom dosen from localStorage:', e);
-  }
-  return DOSEN_DATA;
-}
-
-/**
- * Resets local storage cache to match the codebase/repository defaults.
- */
-export function resetDosenStorage(): void {
-  try {
-    localStorage.removeItem(STORAGE_KEY_DOSEN);
-    localStorage.removeItem(STORAGE_KEY_CANDIDATES);
-  } catch (e) {
-    console.error('Failed to reset localStorage:', e);
-  }
-}
-
-/**
- * Save or update a Dose in local storage (GitHub Pages friendly).
- */
-export function saveDoseLocal(dose: DoseItem): void {
-  try {
-    const current = getActiveDosen();
-    const idx = current.findIndex((d) => d.id === dose.id);
-    let updated: DoseItem[];
-    if (idx >= 0) {
-      updated = [...current];
-      updated[idx] = dose;
-    } else {
-      updated = [dose, ...current];
-    }
-    localStorage.setItem(STORAGE_KEY_DOSEN, JSON.stringify(updated));
-  } catch (e) {
-    console.error('Failed to save dose locally:', e);
-  }
-}
-
-/**
- * Load all candidate ideas (unpacked), merging seed data with local additions.
- */
-export function getActiveCandidates(): CandidateIdea[] {
-  try {
-    const localStr = localStorage.getItem(STORAGE_KEY_CANDIDATES);
-    if (localStr) {
-      const parsed: CandidateIdea[] = JSON.parse(localStr);
-      if (Array.isArray(parsed) && parsed.length > 0) {
-        // Repo-Daten gewinnen für bekannte ids — wie bei getActiveDosen. Vorher
-        // gewann die lokale Kopie, und Korrekturen aus dem Prüfprotokoll kamen
-        // bei wiederkehrenden Besuchern nie an.
-        const map = new Map<string, CandidateIdea>();
-        CANDIDATE_IDEAS_DATA.forEach((c) => map.set(c.id, c));
-        parsed.forEach((c) => {
-          if (c && c.id && !map.has(c.id)) map.set(c.id, c);
-        });
-        return Array.from(map.values());
-      }
-    }
-  } catch (e) {
-    console.warn('Error reading custom candidates from localStorage:', e);
-  }
-  return CANDIDATE_IDEAS_DATA;
-}
-
-/**
- * Save or update a Candidate Idea locally.
- */
-export function saveCandidateLocal(candidate: CandidateIdea): void {
-  try {
-    const current = getActiveCandidates();
-    const idx = current.findIndex((c) => c.id === candidate.id);
-    let updated: CandidateIdea[];
-    if (idx >= 0) {
-      updated = [...current];
-      updated[idx] = candidate;
-    } else {
-      updated = [candidate, ...current];
-    }
-    localStorage.setItem(STORAGE_KEY_CANDIDATES, JSON.stringify(updated));
-  } catch (e) {
-    console.error('Failed to save candidate locally:', e);
-  }
-}
+export { getActiveDosen, saveDoseLocal, resetDosenStorage } from './doseStorage';
+export { getActiveCandidates, saveCandidateLocal } from './candidateStorage';
+import { getActiveDosen } from './doseStorage';
+import { getActiveCandidates } from './candidateStorage';
 
 /**
  * Formats full dataset into clean, beautiful JSON ready for committing to Git

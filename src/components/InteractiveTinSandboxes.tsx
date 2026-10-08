@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { simulatorPath, withPreferences } from '../routing/routes';
+import React from 'react';
 import { Sparkles } from 'lucide-react';
 import { Language } from '../types';
 import {
@@ -17,20 +19,7 @@ import {
   ChemHazardSimulator,
 } from './simulators';
 
-export type SandboxKey =
-  | 'altbau'
-  | 'glasanflug'
-  | 'streiflicht'
-  | 'wetink'
-  | 'balkon'
-  | 'regenwasser'
-  | 'klarlokal'
-  | 'crackflora'
-  | 'laerm'
-  | 'fugenduell'
-  | 'schiedsrichter'
-  | 'kristall'
-  | 'chemhazard';
+export type SandboxKey = import('../data/doseSimulators').SimulatorKey;
 
 interface InteractiveTinSandboxesProps {
   lang: Language;
@@ -43,13 +32,8 @@ export const InteractiveTinSandboxes: React.FC<InteractiveTinSandboxesProps> = (
   initialSandbox = 'altbau',
   onOpenDose,
 }) => {
-  const [activeTab, setActiveTab] = useState<SandboxKey>(initialSandbox);
-
-  useEffect(() => {
-    if (initialSandbox) {
-      setActiveTab(initialSandbox);
-    }
-  }, [initialSandbox]);
+  const location = useLocation();
+  const activeTab = initialSandbox;
 
   return (
     <div className="space-y-8">
@@ -85,8 +69,7 @@ export const InteractiveTinSandboxes: React.FC<InteractiveTinSandboxesProps> = (
 
           {/* Selector Tabs */}
           <div className="flex flex-wrap gap-1.5 p-1.5 bg-stone-100 rounded-xl border border-stone-200/80 self-start md:self-auto">
-            <button
-              onClick={() => setActiveTab('altbau')}
+            <Link to={withPreferences(simulatorPath('altbau'), location.search)}
               className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
                 activeTab === 'altbau'
                   ? 'bg-white text-stone-900 shadow-xs font-bold'
@@ -94,9 +77,8 @@ export const InteractiveTinSandboxes: React.FC<InteractiveTinSandboxesProps> = (
               }`}
             >
               🏢 {lang === 'de' ? 'Altbau' : lang === 'es' ? 'Edificio Antiguo' : 'Old Building'}
-            </button>
-            <button
-              onClick={() => setActiveTab('glasanflug')}
+            </Link>
+            <Link to={withPreferences(simulatorPath('glasanflug'), location.search)}
               className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
                 activeTab === 'glasanflug'
                   ? 'bg-white text-stone-900 shadow-xs font-bold'
@@ -104,9 +86,8 @@ export const InteractiveTinSandboxes: React.FC<InteractiveTinSandboxesProps> = (
               }`}
             >
               🐦 {lang === 'de' ? 'Glasanflug' : lang === 'es' ? 'Colisión de Aves' : 'Bird Glass'}
-            </button>
-            <button
-              onClick={() => setActiveTab('streiflicht')}
+            </Link>
+            <Link to={withPreferences(simulatorPath('streiflicht'), location.search)}
               className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
                 activeTab === 'streiflicht'
                   ? 'bg-white text-stone-900 shadow-xs font-bold'
@@ -114,9 +95,8 @@ export const InteractiveTinSandboxes: React.FC<InteractiveTinSandboxesProps> = (
               }`}
             >
               🔦 {lang === 'de' ? 'Streiflicht' : lang === 'es' ? 'Luz Rasante' : 'Raking Light'}
-            </button>
-            <button
-              onClick={() => setActiveTab('wetink')}
+            </Link>
+            <Link to={withPreferences(simulatorPath('wetink'), location.search)}
               className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
                 activeTab === 'wetink'
                   ? 'bg-white text-stone-900 shadow-xs font-bold'
@@ -124,9 +104,8 @@ export const InteractiveTinSandboxes: React.FC<InteractiveTinSandboxesProps> = (
               }`}
             >
               🖋️ {lang === 'de' ? 'Tinte' : lang === 'es' ? 'Tinta Líquida' : 'Wet Ink'}
-            </button>
-            <button
-              onClick={() => setActiveTab('balkon')}
+            </Link>
+            <Link to={withPreferences(simulatorPath('balkon'), location.search)}
               className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
                 activeTab === 'balkon'
                   ? 'bg-white text-amber-900 shadow-xs font-bold border border-amber-300'
@@ -134,9 +113,8 @@ export const InteractiveTinSandboxes: React.FC<InteractiveTinSandboxesProps> = (
               }`}
             >
               ☀️ {lang === 'de' ? 'Balkonkraftwerk' : lang === 'es' ? 'Placas de Balcón' : 'Balcony Solar'}
-            </button>
-            <button
-              onClick={() => setActiveTab('regenwasser')}
+            </Link>
+            <Link to={withPreferences(simulatorPath('regenwasser'), location.search)}
               className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
                 activeTab === 'regenwasser'
                   ? 'bg-white text-blue-900 shadow-xs font-bold border border-blue-300'
@@ -144,9 +122,8 @@ export const InteractiveTinSandboxes: React.FC<InteractiveTinSandboxesProps> = (
               }`}
             >
               🌧️ {lang === 'de' ? 'Regenwasser' : lang === 'es' ? 'Agua de Lluvia' : 'Rainwater'}
-            </button>
-            <button
-              onClick={() => setActiveTab('klarlokal')}
+            </Link>
+            <Link to={withPreferences(simulatorPath('klarlokal'), location.search)}
               className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
                 activeTab === 'klarlokal'
                   ? 'bg-white text-emerald-950 shadow-xs font-bold border border-emerald-400'
@@ -154,9 +131,8 @@ export const InteractiveTinSandboxes: React.FC<InteractiveTinSandboxesProps> = (
               }`}
             >
               🛡️ {lang === 'de' ? 'KlarLokal (Brecheisen)' : lang === 'es' ? 'KlarLokal (Palanca)' : 'KlarLokal (Battering Ram)'}
-            </button>
-            <button
-              onClick={() => setActiveTab('crackflora')}
+            </Link>
+            <Link to={withPreferences(simulatorPath('crackflora'), location.search)}
               className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
                 activeTab === 'crackflora'
                   ? 'bg-white text-lime-950 shadow-xs font-bold border border-lime-500'
@@ -164,9 +140,8 @@ export const InteractiveTinSandboxes: React.FC<InteractiveTinSandboxesProps> = (
               }`}
             >
               🌱 {lang === 'de' ? 'Crack Flora (Ritzengrün)' : lang === 'es' ? 'Crack Flora (Grietas)' : 'Crack Flora (Pavement)'}
-            </button>
-            <button
-              onClick={() => setActiveTab('laerm')}
+            </Link>
+            <Link to={withPreferences(simulatorPath('laerm'), location.search)}
               className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
                 activeTab === 'laerm'
                   ? 'bg-white text-[var(--m-accent)] shadow-xs font-bold border border-[var(--m-accent)]/40'
@@ -174,9 +149,8 @@ export const InteractiveTinSandboxes: React.FC<InteractiveTinSandboxesProps> = (
               }`}
             >
               🎧 {lang === 'de' ? 'Kiez-Lärmkarte' : lang === 'es' ? 'Mapa de Ruido' : 'Kiez Noise Map'}
-            </button>
-            <button
-              onClick={() => setActiveTab('fugenduell')}
+            </Link>
+            <Link to={withPreferences(simulatorPath('fugenduell'), location.search)}
               className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
                 activeTab === 'fugenduell'
                   ? 'bg-white text-amber-950 shadow-xs font-bold border border-amber-500 ring-2 ring-amber-400/30'
@@ -184,9 +158,8 @@ export const InteractiveTinSandboxes: React.FC<InteractiveTinSandboxesProps> = (
               }`}
             >
               ⚔️ {lang === 'de' ? 'Fugenduell (Game)' : lang === 'es' ? 'Fugenduell (Juego)' : 'Fugenduell (Arena)'}
-            </button>
-            <button
-              onClick={() => setActiveTab('schiedsrichter')}
+            </Link>
+            <Link to={withPreferences(simulatorPath('schiedsrichter'), location.search)}
               className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
                 activeTab === 'schiedsrichter'
                   ? 'bg-white text-emerald-900 shadow-xs font-bold border border-emerald-700/50'
@@ -194,9 +167,8 @@ export const InteractiveTinSandboxes: React.FC<InteractiveTinSandboxesProps> = (
               }`}
             >
               🟨 {lang === 'de' ? 'TischSchiedsrichter' : lang === 'es' ? 'Árbitro de sobremesa' : 'Table Referee'}
-            </button>
-            <button
-              onClick={() => setActiveTab('kristall')}
+            </Link>
+            <Link to={withPreferences(simulatorPath('kristall'), location.search)}
               className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
                 activeTab === 'kristall'
                   ? 'bg-stone-900 text-cyan-300 shadow-xs font-bold border border-cyan-500 ring-2 ring-cyan-500/30'
@@ -204,9 +176,8 @@ export const InteractiveTinSandboxes: React.FC<InteractiveTinSandboxesProps> = (
               }`}
             >
               💎 {lang === 'de' ? 'Kristallwachstum 3D' : lang === 'es' ? 'Crecimiento de Cristales' : 'Crystal Growth 3D'}
-            </button>
-            <button
-              onClick={() => setActiveTab('chemhazard')}
+            </Link>
+            <Link to={withPreferences(simulatorPath('chemhazard'), location.search)}
               className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
                 activeTab === 'chemhazard'
                   ? 'bg-red-950 text-red-200 shadow-xs font-bold border border-red-500 ring-2 ring-red-500/30'
@@ -214,7 +185,7 @@ export const InteractiveTinSandboxes: React.FC<InteractiveTinSandboxesProps> = (
               }`}
             >
               ☣️ {lang === 'de' ? 'ChemHazard Stop' : lang === 'es' ? 'ChemHazard Stop' : 'ChemHazard Stop'}
-            </button>
+            </Link>
           </div>
         </div>
       </div>
