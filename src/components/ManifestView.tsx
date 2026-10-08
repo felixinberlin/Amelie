@@ -3,6 +3,7 @@ import { Compass, Sparkles, Copy, Check, CheckCircle2, ShieldCheck, MapPin, Book
 import { MANIFEST_RULES, AMELIE_LOOP_STEPS, AMELIE_PLEDGE, TERRITORY_ATLAS } from '../data/manifest';
 import { Language } from '../types';
 import { getTranslation } from '../i18n';
+import { MathOpportunities } from './MathOpportunities';
 
 interface ManifestViewProps {
   lang: Language;
@@ -74,6 +75,8 @@ export const ManifestView: React.FC<ManifestViewProps> = ({ lang, onOpenEmails }
           </p>
         </div>
       </div>
+
+      <MathOpportunities lang={lang} />
 
       {/* The Pledge Banner */}
       <div className="p-6 md:p-8 rounded-2xl bg-stone-900 text-white border border-amber-900/40 relative shadow-lg">
