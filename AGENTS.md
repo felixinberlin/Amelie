@@ -116,6 +116,7 @@ Wenn du ein Ticket, ein Kriterium oder eine Dosen-Beschreibung änderst, musst d
   * **Ticket 02 ist BEREIT:** GPU-Marching-Cubes Isosurface-Extraktion & Mehrfarbiger 3MF-Farbexport (`07-demos/kristallwachstum-3d/ticket-02-gpu-marching-cubes-3mf.md`).
   * **Mail 9:** An Prof. Dr. Timm John (FU Berlin Geowissenschaften) ist auditiert und versandfertig.
 * **Agenten- und Skill-Architektur:**
+  * **Mathematischer Berater (optional):** `.claude/agents/mathematician.md` + `skills/mathematician/mathematician/SKILL.md`. Bei mathematischen Annahmen, neuen Theoremen, Optimierung, Unsicherheit oder symbolischen/numerischen Prüfungen hinzuziehen. Liefert Beratung an BIB, MARK/Entdeckungs-Engines, Reviewer und Demo-Builder; schreibt keine geteilten Register.
   * **3 Entdeckungs-Engines:**
     * `skills/amelie-ideenrunde/` (Empirische Primärquellen-Suche).
     * `skills/lacunar-bisociation/` (Analoge Kollision & lakunäre Lückenfindung).
