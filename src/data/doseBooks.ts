@@ -31,6 +31,34 @@ export interface BookChapter {
 export const DOSE_BOOKS: Record<string, BookChapter[]> = {
   'eurobirdcast': [
     {
+      slug: 'movement-map', path: '07-demos/eurobirdcast/map/README.md',
+      titleDe: 'Animierte Bewegungskarte: Daten und Methode', titleEn: 'Animated movement map: data and method',
+      noteDe: '21 Radarstandorte, 168 Stunden; reale Dichte und Bewegungsrichtung mit klaren Datenlücken.',
+      noteEn: '21 radar sites, 168 hours; real density and movement bearing with explicit data gaps.',
+      date: '08.10.2026', kind: 'md',
+    },
+    {
+      slug: 'european-benchmark', path: '07-demos/eurobirdcast/benchmark/README.md',
+      titleDe: 'Europäischer Vergleich mit publizierten Daten', titleEn: 'European comparison with published data',
+      noteDe: 'Vorhandenes Radar-/ERA5-Benchmark wiederverwenden; chronologischer Test einfacher Modelle.',
+      noteEn: 'Reuse an existing radar/ERA5 benchmark; chronological testing of simple models.',
+      date: '08.10.2026', kind: 'md',
+    },
+    {
+      slug: 'real-test', path: '02-recherche/eurobirdcast-real-test-2026-10-08.md',
+      titleDe: 'Realer Amélie-Systemtest', titleEn: 'Real Amélie system test',
+      noteDe: 'Unabhängige Prüfungen, korrigierte Datenqualität und Wiederverwendung vorhandener Forschung.',
+      noteEn: 'Independent audits, corrected data quality and reuse of existing research.',
+      date: '08.10.2026', kind: 'md',
+    },
+    {
+      slug: 'contacts', path: '02-recherche/eurobirdcast-contacts-2026-10-08.md',
+      titleDe: 'Wer kann helfen? Sechs verifizierte Kontakte', titleEn: 'Who can help? Six verified contacts',
+      noteDe: 'Konkrete Fachfragen und zwei unversandte persönliche Entwürfe.',
+      noteEn: 'Specific research questions and two unsent personalized drafts.',
+      date: '08.10.2026', kind: 'md',
+    },
+    {
       slug: 'bird-weather', path: '02-recherche/eurobirdcast-bird-weather-2026-10-08.md',
       titleDe: 'Bird Weather: aktuelle Daten und historisches Wissen', titleEn: 'Bird Weather: recent data and historical knowledge',
       noteDe: 'Datenfusion, bestehende Prognosen, realer Qualitätsbefund und überprüfbarer Forschungsplan.',

@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/felixinberlin/amelie/main/public/data/amelie-schema.json",
   "version": "1.0.0",
-  "generatedAt": "2026-10-08T18:20:07.685Z",
+  "generatedAt": "2026-10-08T18:51:29.171Z",
   "license": "CC0-1.0 (Public Domain / Kula-Ring)",
   "storageProvider": "github_pages",
   "repository": "https://github.com/felixinberlin/amelie",
@@ -15,12 +15,12 @@
       "id": "eurobirdcast",
       "title": "EuroBirdCast",
       "titleEn": "EuroBirdCast: Bird Weather",
-      "oneLinerDe": "Bird Weather für Deutschland und Europa: jüngste Radarbeobachtungen, Wettervorhersagen und historisches Wissen über Vogelzug verbinden — und an ungesehenen Nächten prüfen, ob die Prognose dadurch besser wird.",
-      "oneLinerEn": "Bird Weather for Germany and Europe: combine recent radar, weather forecasts and historical migration knowledge, then test on unseen nights whether the forecasts improve.",
+      "oneLinerDe": "Vogelzug wie Wetter sichtbar machen: eine animierte Karte mit echten Radarbeobachtungen, Zugintensität und Bewegungsrichtung über Deutschland und seinen Nachbarländern.",
+      "oneLinerEn": "Make bird migration visible like weather: an animated map of real radar observations, migration intensity and movement direction over Germany and neighbouring countries.",
       "date": "8. Oktober 2026",
       "reviewAfter": "April 2027",
-      "recipientsDe": "Joep Breuer, TNO / BIRDSAFE (fachlicher Ansprechpartner laut Wozep-Poster 2025); nachrangig HiRAD / UvA. Neuer Bedarf unbestätigt; keine erneute BfN-Zustellung.",
-      "recipientsEn": "Joep Breuer, TNO / BIRDSAFE (technical contact in the 2025 Wozep poster); secondary: HiRAD / UvA. New demand unconfirmed; no repeat delivery to BfN.",
+      "recipientsDe": "Peter Desmet, INBO / Aloft (Datenqualität); Judy Shamoun-Baranes, UvA (wissenschaftlicher Vergleich). Verifizierte Fachkontakte, Bedarf unbestätigt; keine erneute BfN-Zustellung.",
+      "recipientsEn": "Peter Desmet, INBO / Aloft (data quality); Judy Shamoun-Baranes, UvA (scientific comparison). Verified expertise, demand unconfirmed; no repeat delivery to BfN.",
       "domain": "physics",
       "verdict": "build_first",
       "status": "gepackt",
@@ -31,8 +31,8 @@
         "Radar",
         "Forschung"
       ],
-      "problemDe": "Für die nächste Zugnacht zählen aktuelle Bedingungen und die langfristigen Muster der Arten. Radar, Beringung, GPS und Sichtungen messen aber verschiedene Dinge. EuroBirdCast soll daraus eine nachvollziehbare Vogelzugprognose entwickeln. Der erste reale Radar-/ERA5-Pilot ist am Qualitätsgate gescheitert (Protzel, Oktober 2021–2023: 5/3/0 auswertbare Nächte); eine bessere Prognose ist noch nicht belegt. Die frühere BfN-Ablehnung einer Offshore-Reproduzierbarkeitslücke bleibt gültig.",
-      "problemEn": "The next migration night depends on current conditions and long-term species patterns. Radar, ringing, GPS and sightings measure different things. EuroBirdCast aims to build an auditable migration forecast from them. The first real radar/ERA5 pilot failed its quality gate (Protzel, October 2021–2023: 5/3/0 usable nights); better predictions have not been demonstrated. The previous BfN rejection of an offshore reproducibility gap remains valid.",
+      "problemDe": "Für die nächste Zugnacht zählen aktuelle Bedingungen und langfristige Artenmuster. Radar, Beringung, GPS und Sichtungen messen verschiedene Dinge. Ein ausführbarer Vergleich auf publizierten europäischen Daten nutzt 61.881 Nacht-Radarstunden an 21 gemeinsamen Standorten: plus Wetter senkt den Log-MAE im Testjahr 2017 um 16,6 % gegenüber saisonaler Historie. Das ist ein historischer Vergleich mit rückblickendem Wetter, noch keine belegte Live-Prognose. Die frühere BfN-Ablehnung bleibt gültig.",
+      "problemEn": "The next migration night depends on current conditions and long-term species patterns. Radar, ringing, GPS and sightings measure different things. A runnable comparison on published European data uses 61,881 nighttime radar hours across 21 shared sites: adding weather reduces held-out 2017 log-MAE by 16.6% against seasonal history. This uses retrospective weather and does not establish live forecast skill. The previous BfN rejection remains valid.",
       "whyNowDe": [
         "Desmet et al. (2025) dokumentieren europäische VPTS-Datensätze unter CC0; Zeitstempel sind UTC. Offene Daten sind keine Garantie für lokale Eignung.",
         "HiRAD meldete am 11.02.2026 weitere Radarstandorte, warnt aber ausdrücklich vor ungeprüfter biologischer Signalqualität.",
@@ -45,15 +45,15 @@
         "EURING and the Migration Atlas synthesize more than 100 years of ringing knowledge; species priors need distinct observation models and access checks.",
         "FlySafe already combines radar and weather for migration forecasts. EuroBirdCast must evaluate additional historical knowledge against existing baselines."
       ],
-      "sketchDe": "Drei Zeitskalen verbinden: aktuelle Luftbewegung aus Radar, Stunden bis Tage aus Wettervorhersagen, saisonale und artspezifische Muster aus langfristiger Forschung. Quellen behalten Messmodell, Art, Ort, Erfassungsaufwand, Lizenz, Unsicherheit und Verfügbarkeitszeit. Publikationen begründen Merkmale statt als Messpunkte zu dienen. Vergleich: saisonale Historie, plus Wetter, plus jüngstes Radar, danach Artenwissen. Vorhersageziel zuerst nächtliche integrierte Dichte; Richtung/Höhe und regionale Ausbreitung sind spätere getrennte Ziele. Keine Turbinensteuerung. Frontend zeigt Datenrollen, Qualitätsgate und die vorhandene historische Karte.",
-      "sketchEn": "Connect three timescales: recent airborne movement from radar, hours-to-days from weather forecasts, and seasonal/species patterns from long-term research. Preserve each source’s observation model, species, place, effort, license, uncertainty and availability time. Papers inform features rather than becoming measurement points. Compare seasonal history, add weather, add recent radar, then species knowledge. First target: nightly integrated density; direction/altitude and regional propagation are later separate targets. No turbine control. The frontend shows source roles, the quality gate and the existing historical map.",
+      "sketchDe": "Zuerst eine verständliche Bewegungskarte: 21 Radarstandorte, 168 Stunden vom 1.–7. Oktober 2017, Zeitregler, Datumsauswahl und Wiedergabe. Kreisfarbe und -größe zeigen geschätzte höhenintegrierte Vogeldichte; Pfeile die gemessene mittlere Bewegungsrichtung mit schematischer Länge. Fehlende und tagsüber ausgeschlossene Werte bleiben sichtbar unterschieden. Keine erfundenen Verbindungen zwischen Stationen. Wissenschaft, Quellen, Modellvergleich und Fachkontakte sind dahinter aufklappbar. Frische Daten und Prognosen sind spätere Erweiterungen.",
+      "sketchEn": "Start with a clear movement map: 21 radar sites, 168 hours from 1–7 October 2017, time slider, date selection and playback. Circle colour and size show estimated vertically integrated bird density; arrows show measured mean movement bearing with schematic length. Missing and excluded daytime observations stay distinct. No invented connections between stations. Science, sources, model comparison and expert contacts expand behind the map. Fresh observations and forecasts are later additions.",
       "firstStepDe": {
-        "ticket": "Historie, Wetter und jüngstes Radar mit einem überprüfbaren Datengate verbinden.",
-        "criteria": "Ausführbar: Python-Pipeline unter 07-demos/eurobirdcast/forecast/, drei archivierte Radar-Monate plus ERA5, Quellen mit SHA-256 und Qualitätsbericht. Das erste Gate ist rot: 5/3/0 Nächte vor Radar-Lag, 1/0/0 danach; deshalb kein Modell und keine Prognose. Nächster Abschluss: genügend qualitätsgesicherte Mehrsaison-Daten, archivierte Vorhersageläufe mit Ausgabezeit und unabhängiger Standort-/Jahrestest; zusätzliche Artenquellen einzeln gegen dieselben Baselines prüfen."
+        "ticket": "Eine wissenschaftlich nachvollziehbare Bewegungskarte im Frontend zeigen.",
+        "criteria": "Umgesetzt: animierte Frontend-Karte mit 21 Standorten, 168 Stunden und 1.351 verfügbaren Nachtmessungen, CC-BY-Quelle und unabhängiger Datenprüfung. Reproduzierbar unter 07-demos/eurobirdcast/map/. Ausgeführt: 07-demos/eurobirdcast/benchmark/ nutzt publizierte Radar-/ERA5-Daten, trainiert 2015, stimmt 2016 ab und testet 18.217 Radarstunden aus 2017. Saisonaler Log-MAE 0,7925; plus Wetter 0,6606. Quellenlizenz, Masken, CRC und SHA-256 dokumentiert. Separater Protzel-Rohdatenpilot bleibt mit 9/4/1 Vogeldiskriminierungsnächten unzureichend. Nächster Abschluss: Ausgabezeit-archivierte Wettervorhersagen, frisches Radar, Mehrsaison-/Standorttests und Artenwissen einzeln prüfen; fachliche QC-Anfrage an INBO/UvA vorbereitet, nicht versendet."
       },
       "firstStepEn": {
-        "ticket": "Join history, weather and recent radar through a verifiable data gate.",
-        "criteria": "Runnable: Python pipeline in 07-demos/eurobirdcast/forecast/, three archived radar months plus ERA5, source SHA-256 hashes and a quality report. The first gate failed: 5/3/0 nights before radar lag, 1/0/0 afterwards; therefore no model and no forecast. Next completion: sufficient quality-controlled multi-season data, archived weather forecast runs with issue times and independent site/year tests; evaluate additional species sources separately against the same baselines."
+        "ticket": "Show a scientifically traceable movement map in the frontend.",
+        "criteria": "Implemented: animated frontend map with 21 sites, 168 hours and 1,351 available nighttime readings, CC-BY attribution and independent data review. Reproduce from 07-demos/eurobirdcast/map/. Executed: 07-demos/eurobirdcast/benchmark/ reuses published radar/ERA5 data, trains on 2015, tunes on 2016 and tests 18,217 radar hours from 2017. Seasonal log-MAE 0.7925; adding weather 0.6606. Source license, masks, CRC and SHA-256 documented. Separate Protzel raw-data pilot remains insufficient with 9/4/1 bird-discriminated nights. Next completion: issue-time weather forecasts, fresh radar, multiple seasons/sites and separate tests of species knowledge; expert QC requests to INBO/UvA drafted, not sent."
       },
       "failureModeDe": "Das BfN sah keine Reproduzierbarkeitslücke und hielt DWD-Wetterradar für den damaligen Offshore-Zweck für ungeeignet. Diese Antwort bleibt gültig. Regionale MTR ist kein Kollisionsrisiko; Teilabdeckung ist kein Nullzug. Neue Bedarfsbestätigung und lokale Validierung fehlen. Wenn BIRDSAFE/HiRAD das Exportformat bereits abdecken oder keinen Nutzen sehen, endet der Ausbau. EuroBirdCast bleibt ein Arbeitstitel ohne Verbindung zum US-Projekt BirdCast.",
       "failureModeEn": "BfN saw no reproducibility gap and considered DWD weather radar unsuitable for the former offshore use case. That feedback remains valid. Regional MTR is not collision risk; partial coverage is not zero migration. New demand confirmation and local validation are missing. Stop expansion if BIRDSAFE/HiRAD already cover the export format or see no value. EuroBirdCast is a working title with no affiliation to the US BirdCast project.",

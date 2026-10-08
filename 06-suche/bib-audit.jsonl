@@ -276,3 +276,27 @@
 {"at":"2026-10-06T19:34:34.918Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"Glasanflug Bildquellenprüfung 2026-10-06","id":"berlin-digitale-orthophotos"}
 {"at":"2026-10-06T19:34:35.159Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"Glasanflug Bildquellenprüfung 2026-10-06","id":"berlin-3d-stadtmodell-open-data"}
 {"at":"2026-10-06T19:34:35.173Z","event":"cli","actor":"bibliothekar","agent":"bibliothekar","runde":"Glasanflug Bildquellenprüfung 2026-10-06","cmd":"quellen import","count":6}
+{"at":"2026-10-08T18:26:50.649Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"EuroBirdCast real test 2026-10-08","id":"eurobirdcast-fluxrgnn-benchmark"}
+{"at":"2026-10-08T18:26:50.905Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"EuroBirdCast real test 2026-10-08","id":"euroradar-biorad-methods"}
+{"at":"2026-10-08T18:26:51.135Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"EuroBirdCast real test 2026-10-08","id":"inbo-peter-desmet-radar"}
+{"at":"2026-10-08T18:26:51.364Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"EuroBirdCast real test 2026-10-08","id":"uva-judy-shamoun-baranes"}
+{"at":"2026-10-08T18:27:06.989Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"EuroBirdCast real test 2026-10-08","id":"euring-historical-migration-access"}
+{"at":"2026-10-08T18:27:07.200Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"EuroBirdCast real test 2026-10-08","id":"movebank-sarah-davidson"}
+{"at":"2026-10-08T18:27:07.400Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"EuroBirdCast real test 2026-10-08","id":"dda-ornitho-phenology-contact"}
+{"at":"2026-10-08T18:27:07.597Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"EuroBirdCast real test 2026-10-08","id":"ifv-schmaljohann-migration"}
+{"at":"2026-10-08T18:27:16.490Z","event":"cli","cmd":"quellen log","actor":"bibliothekar","agent":"bibliothekar","runde":"EuroBirdCast real test 2026-10-08","id":"eurobirdcast-fluxrgnn-benchmark"}
+{"at":"2026-10-08T18:27:16.648Z","event":"cli","cmd":"quellen rate","actor":"bibliothekar","id":"eurobirdcast-fluxrgnn-benchmark"}
+{"at":"2026-10-08T18:27:16.811Z","event":"cli","cmd":"quellen log","actor":"bibliothekar","agent":"bibliothekar","runde":"EuroBirdCast real test 2026-10-08","id":"euroradar-biorad-methods"}
+{"at":"2026-10-08T18:27:16.970Z","event":"cli","cmd":"quellen rate","actor":"bibliothekar","id":"euroradar-biorad-methods"}
+{"at":"2026-10-08T18:27:17.132Z","event":"cli","cmd":"quellen log","actor":"bibliothekar","agent":"bibliothekar","runde":"EuroBirdCast real test 2026-10-08","id":"inbo-peter-desmet-radar"}
+{"at":"2026-10-08T18:27:17.298Z","event":"cli","cmd":"quellen rate","actor":"bibliothekar","id":"inbo-peter-desmet-radar"}
+{"at":"2026-10-08T18:27:17.461Z","event":"cli","cmd":"quellen log","actor":"bibliothekar","agent":"bibliothekar","runde":"EuroBirdCast real test 2026-10-08","id":"uva-judy-shamoun-baranes"}
+{"at":"2026-10-08T18:27:17.613Z","event":"cli","cmd":"quellen rate","actor":"bibliothekar","id":"uva-judy-shamoun-baranes"}
+{"at":"2026-10-08T18:27:17.776Z","event":"cli","cmd":"quellen log","actor":"bibliothekar","agent":"bibliothekar","runde":"EuroBirdCast real test 2026-10-08","id":"euring-historical-migration-access"}
+{"at":"2026-10-08T18:27:17.932Z","event":"cli","cmd":"quellen rate","actor":"bibliothekar","id":"euring-historical-migration-access"}
+{"at":"2026-10-08T18:27:18.085Z","event":"cli","cmd":"quellen log","actor":"bibliothekar","agent":"bibliothekar","runde":"EuroBirdCast real test 2026-10-08","id":"movebank-sarah-davidson"}
+{"at":"2026-10-08T18:27:18.249Z","event":"cli","cmd":"quellen rate","actor":"bibliothekar","id":"movebank-sarah-davidson"}
+{"at":"2026-10-08T18:27:18.418Z","event":"cli","cmd":"quellen log","actor":"bibliothekar","agent":"bibliothekar","runde":"EuroBirdCast real test 2026-10-08","id":"dda-ornitho-phenology-contact"}
+{"at":"2026-10-08T18:27:18.583Z","event":"cli","cmd":"quellen rate","actor":"bibliothekar","id":"dda-ornitho-phenology-contact"}
+{"at":"2026-10-08T18:27:18.743Z","event":"cli","cmd":"quellen log","actor":"bibliothekar","agent":"bibliothekar","runde":"EuroBirdCast real test 2026-10-08","id":"ifv-schmaljohann-migration"}
+{"at":"2026-10-08T18:27:18.913Z","event":"cli","cmd":"quellen rate","actor":"bibliothekar","id":"ifv-schmaljohann-migration"}

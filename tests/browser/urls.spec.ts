@@ -133,6 +133,7 @@ test('every existing section renders without client errors', async ({ page }) =>
 test('browser back restores gallery scroll and focus after lazy content loads', async ({ page }) => {
   await page.goto('/Amelie/dosen/');
   await expect(page.locator('article').last()).toBeVisible();
+  await page.evaluate(() => document.fonts.ready);
   await page.evaluate(() => window.scrollTo(0, 700));
   await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(700);
   // Route via the sticky header so the destination link does not scroll the gallery first.
@@ -163,7 +164,12 @@ test('EuroBirdCast is the first project and exposes its revival research', async
   await page.goto('/Amelie/#dose=eurobirdcast&lang=de');
   await expect(page.locator('main h1')).toContainText('EuroBirdCast');
   await expect(page.getByRole('region', { name: 'Bird migration radar map' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Erster echter Datentest: Qualitätsprüfung nicht bestanden' })).toBeVisible();
+  await page.getByText('Daten, Wissenschaft und Kontakte', { exact: true }).click();
+  await expect(page.getByRole('heading', { name: 'Protzel-Pilot: zu wenige Nächte mit Vogeldiskriminierung' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Bestehende europäische Forschung ausführbar machen' })).toBeVisible();
+  await expect(page.getByRole('table', { name: 'Historischer Test · kleinere Fehler sind besser' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Wer kann konkret helfen?' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Peter Desmet · INBO / Aloft' })).toHaveAttribute('href', 'https://pureportal.inbo.be/nl/persons/peter-desmet/');
   await page.getByLabel('Welche Wissensquelle trägt was bei?').selectOption('ringing');
   await expect(page.getByText('Mehr als 100 Jahre Beringungswissen', { exact: true })).toBeVisible();
   await page.goto('/Amelie/dosen/eurobirdcast/book/bird-weather/?lang=en');

@@ -580,6 +580,8 @@ ${bookChapters
         </div>
       </header>
 
+      {dose.id === 'eurobirdcast' && <Suspense fallback={<p role="status">Loading migration observations…</p>}><BirdMigrationDemo lang={lang} /></Suspense>}
+
       {/* 4. LIVE INTERACTIVE SIMULATOR (If Available for this Dose) */}
       {simInfo && (
         <section aria-labelledby="simulator-heading" className="rounded-3xl border-2 border-[var(--m-copper)]/60 bg-[var(--m-surface)] p-6 sm:p-8 shadow-sm space-y-6">
@@ -748,8 +750,10 @@ ${bookChapters
 
         {dose.id === 'eurobirdcast' && (
           <Suspense fallback={<p role="status">Loading migration observations…</p>}>
-            <BirdForecastLab lang={lang} />
-            <BirdMigrationDemo />
+            <details className="rounded-xl border border-stone-200 bg-white p-5">
+              <summary className="cursor-pointer font-semibold">{isDe ? 'Daten, Wissenschaft und Kontakte' : 'Data, science and contacts'}</summary>
+              <div className="mt-5"><BirdForecastLab lang={lang} /></div>
+            </details>
           </Suspense>
         )}
         <DoseResearchUpdate doseId={dose.id} lang={lang} />

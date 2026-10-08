@@ -15206,6 +15206,553 @@
           "status": "durchsucht"
         }
       ]
+    },
+    {
+      "id": "eurobirdcast-fluxrgnn-benchmark",
+      "name": "FluxRGNN European prepared radar benchmark v1.1.0",
+      "typ": "L",
+      "kategorie": "datensatz",
+      "rollen": [
+        "evidenz",
+        "besetzt-test"
+      ],
+      "tags": [
+        "vogel",
+        "eurobirdcast"
+      ],
+      "urls": [
+        "https://zenodo.org/records/6874789"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Hourly European radar, ERA5, simulation outputs and model results; Zenodo record 6874789.",
+      "fokus": "Reuse prepared benchmark with held-out years and stations; inspect license and target before redistribution.",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-08",
+      "ertrag": {
+        "dosen": [
+          "eurobirdcast"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          4,
+          5,
+          5,
+          2,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-08"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-08",
+          "agent": "bibliothekar",
+          "runde": "EuroBirdCast real test 2026-10-08",
+          "notiz": "Neu ins Register aufgenommen.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-08",
+          "agent": "bibliothekar",
+          "runde": "EuroBirdCast real test 2026-10-08",
+          "notiz": "Existing EuroBirdCast research and verification only; demand unproven, score remains 22/35; no outreach."
+        },
+        {
+          "datum": "2026-10-08",
+          "agent": "bibliothekar",
+          "runde": "",
+          "notiz": "Vektoren bewertet [3 4 5 5 2 3]: Primary page inspected; active existing research field; bounded validation or permission route, no endorsement."
+        }
+      ]
+    },
+    {
+      "id": "euroradar-biorad-methods",
+      "name": "bioRad primary analysis and density thresholding documentation",
+      "typ": "L",
+      "kategorie": "messverfahren",
+      "rollen": [
+        "evidenz"
+      ],
+      "tags": [
+        "vogel",
+        "eurobirdcast"
+      ],
+      "urls": [
+        "https://adokter.r-universe.dev/bioRad/doc/bioRad.html"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Primary package documentation: biological radar workflow, density, velocity and insect discrimination.",
+      "fokus": "Audit gap semantics and sd_vvp threshold; missing discriminator stays missing.",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-08",
+      "ertrag": {
+        "dosen": [
+          "eurobirdcast"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          4,
+          5,
+          5,
+          2,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-08"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-08",
+          "agent": "bibliothekar",
+          "runde": "EuroBirdCast real test 2026-10-08",
+          "notiz": "Neu ins Register aufgenommen.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-08",
+          "agent": "bibliothekar",
+          "runde": "EuroBirdCast real test 2026-10-08",
+          "notiz": "Existing EuroBirdCast research and verification only; demand unproven, score remains 22/35; no outreach."
+        },
+        {
+          "datum": "2026-10-08",
+          "agent": "bibliothekar",
+          "runde": "",
+          "notiz": "Vektoren bewertet [3 4 5 5 2 3]: Primary page inspected; active existing research field; bounded validation or permission route, no endorsement."
+        }
+      ]
+    },
+    {
+      "id": "inbo-peter-desmet-radar",
+      "name": "INBO Peter Desmet radar data and open science contact",
+      "typ": "A",
+      "kategorie": "empfaenger",
+      "rollen": [
+        "empfaenger",
+        "evidenz"
+      ],
+      "tags": [
+        "vogel",
+        "eurobirdcast"
+      ],
+      "urls": [
+        "https://pureportal.inbo.be/nl/persons/peter-desmet/",
+        "https://aloftdata.eu/about/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Official open-data coordinator profile; radar aeroecology software, standards and datasets.",
+      "fokus": "Review corrected EuroBirdCast radar quality protocol and recommend suitable German station-period; no message sent.",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-08",
+      "ertrag": {
+        "dosen": [
+          "eurobirdcast"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          4,
+          4,
+          5,
+          2,
+          5
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-08"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-08",
+          "agent": "bibliothekar",
+          "runde": "EuroBirdCast real test 2026-10-08",
+          "notiz": "Neu ins Register aufgenommen.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-08",
+          "agent": "bibliothekar",
+          "runde": "EuroBirdCast real test 2026-10-08",
+          "notiz": "Existing EuroBirdCast research and verification only; demand unproven, score remains 22/35; no outreach."
+        },
+        {
+          "datum": "2026-10-08",
+          "agent": "bibliothekar",
+          "runde": "",
+          "notiz": "Vektoren bewertet [3 4 4 5 2 5]: Primary page inspected; active existing research field; bounded validation or permission route, no endorsement."
+        }
+      ]
+    },
+    {
+      "id": "uva-judy-shamoun-baranes",
+      "name": "UvA Judy Shamoun-Baranes animal movement ecology",
+      "typ": "A",
+      "kategorie": "empfaenger",
+      "rollen": [
+        "empfaenger",
+        "evidenz"
+      ],
+      "tags": [
+        "vogel",
+        "eurobirdcast"
+      ],
+      "urls": [
+        "https://www.uva.nl/en/profile/s/h/j.z.shamoun-baranes/j.z.shamoun-baranes.html"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Official professor profile, radar/GPS movement modelling, verified institutional email.",
+      "fokus": "Scientific review of regional next-night benchmark and historical fusion; no endorsement or delivery inferred.",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-08",
+      "ertrag": {
+        "dosen": [
+          "eurobirdcast"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          4,
+          4,
+          5,
+          2,
+          5
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-08"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-08",
+          "agent": "bibliothekar",
+          "runde": "EuroBirdCast real test 2026-10-08",
+          "notiz": "Neu ins Register aufgenommen.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-08",
+          "agent": "bibliothekar",
+          "runde": "EuroBirdCast real test 2026-10-08",
+          "notiz": "Existing EuroBirdCast research and verification only; demand unproven, score remains 22/35; no outreach."
+        },
+        {
+          "datum": "2026-10-08",
+          "agent": "bibliothekar",
+          "runde": "",
+          "notiz": "Vektoren bewertet [3 4 4 5 2 5]: Primary page inspected; active existing research field; bounded validation or permission route, no endorsement."
+        }
+      ]
+    },
+    {
+      "id": "euring-historical-migration-access",
+      "name": "EURING historical ringing data and application route",
+      "typ": "A",
+      "kategorie": "datensatz",
+      "rollen": [
+        "evidenz",
+        "empfaenger"
+      ],
+      "tags": [
+        "vogel",
+        "eurobirdcast"
+      ],
+      "urls": [
+        "https://euring.org/data-and-codes/obtaining-data",
+        "https://www.euring.org/about-euring/euring-committees",
+        "https://www.euring.org/about-euring/contact-euring"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "European ringing recovery archive; named current databank coordinators and data application procedure.",
+      "fokus": "Species-region-time bounded historical connectivity priors; permissions and fees before reuse.",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-08",
+      "ertrag": {
+        "dosen": [
+          "eurobirdcast"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          4,
+          4,
+          5,
+          2,
+          5
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-08"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-08",
+          "agent": "bibliothekar",
+          "runde": "EuroBirdCast real test 2026-10-08",
+          "notiz": "Neu ins Register aufgenommen.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-08",
+          "agent": "bibliothekar",
+          "runde": "EuroBirdCast real test 2026-10-08",
+          "notiz": "Existing EuroBirdCast research and verification only; demand unproven, score remains 22/35; no outreach."
+        },
+        {
+          "datum": "2026-10-08",
+          "agent": "bibliothekar",
+          "runde": "",
+          "notiz": "Vektoren bewertet [3 4 4 5 2 5]: Primary page inspected; active existing research field; bounded validation or permission route, no endorsement."
+        }
+      ]
+    },
+    {
+      "id": "movebank-sarah-davidson",
+      "name": "MPI Movebank Sarah Davidson data curation",
+      "typ": "A",
+      "kategorie": "empfaenger",
+      "rollen": [
+        "empfaenger",
+        "evidenz"
+      ],
+      "tags": [
+        "vogel",
+        "eurobirdcast"
+      ],
+      "urls": [
+        "https://www.ab.mpg.de/person/98230/2736"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Official lead data curator profile, data governance, tracking standards and study discovery.",
+      "fokus": "Identify licensed German-European migration tracks for timing and routes, not aerial abundance; owner permissions.",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-08",
+      "ertrag": {
+        "dosen": [
+          "eurobirdcast"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          4,
+          4,
+          5,
+          2,
+          5
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-08"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-08",
+          "agent": "bibliothekar",
+          "runde": "EuroBirdCast real test 2026-10-08",
+          "notiz": "Neu ins Register aufgenommen.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-08",
+          "agent": "bibliothekar",
+          "runde": "EuroBirdCast real test 2026-10-08",
+          "notiz": "Existing EuroBirdCast research and verification only; demand unproven, score remains 22/35; no outreach."
+        },
+        {
+          "datum": "2026-10-08",
+          "agent": "bibliothekar",
+          "runde": "",
+          "notiz": "Vektoren bewertet [3 4 4 5 2 5]: Primary page inspected; active existing research field; bounded validation or permission route, no endorsement."
+        }
+      ]
+    },
+    {
+      "id": "dda-ornitho-phenology-contact",
+      "name": "DDA ornitho German phenology data contacts",
+      "typ": "B",
+      "kategorie": "beobachtungsplattform",
+      "rollen": [
+        "evidenz",
+        "empfaenger"
+      ],
+      "tags": [
+        "vogel",
+        "eurobirdcast"
+      ],
+      "urls": [
+        "https://www.monitoringzentrum.de/monitoringprogramme-biodiversitaet/ornithode",
+        "https://www.ornitho.de/index.php?item=13&m_id=1124"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Official programme names Christopher Koenig and Johannes Wahl; ornitho institutional contact and regional validation.",
+      "fokus": "Permission for aggregated phenology with observer effort and NocMig validation route; public visibility is not a redistribution license.",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-08",
+      "ertrag": {
+        "dosen": [
+          "eurobirdcast"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          4,
+          4,
+          5,
+          2,
+          5
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-08"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-08",
+          "agent": "bibliothekar",
+          "runde": "EuroBirdCast real test 2026-10-08",
+          "notiz": "Neu ins Register aufgenommen.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-08",
+          "agent": "bibliothekar",
+          "runde": "EuroBirdCast real test 2026-10-08",
+          "notiz": "Existing EuroBirdCast research and verification only; demand unproven, score remains 22/35; no outreach."
+        },
+        {
+          "datum": "2026-10-08",
+          "agent": "bibliothekar",
+          "runde": "",
+          "notiz": "Vektoren bewertet [3 4 4 5 2 5]: Primary page inspected; active existing research field; bounded validation or permission route, no endorsement."
+        }
+      ]
+    },
+    {
+      "id": "ifv-schmaljohann-migration",
+      "name": "IfV directory and Heiko Schmaljohann migration expertise",
+      "typ": "A",
+      "kategorie": "empfaenger",
+      "rollen": [
+        "empfaenger",
+        "evidenz"
+      ],
+      "tags": [
+        "vogel",
+        "eurobirdcast"
+      ],
+      "urls": [
+        "https://ifv-vogelwarte.de/institut/personal"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Current IfV staff directory verifies guest role and Oldenburg email heiko.schmaljohann@uol.de.",
+      "fokus": "Published German departure-stopover dataset and historical phenology prior validation; no contact made.",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-08",
+      "ertrag": {
+        "dosen": [
+          "eurobirdcast"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          4,
+          4,
+          5,
+          2,
+          5
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-08"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-08",
+          "agent": "bibliothekar",
+          "runde": "EuroBirdCast real test 2026-10-08",
+          "notiz": "Neu ins Register aufgenommen.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-08",
+          "agent": "bibliothekar",
+          "runde": "EuroBirdCast real test 2026-10-08",
+          "notiz": "Existing EuroBirdCast research and verification only; demand unproven, score remains 22/35; no outreach."
+        },
+        {
+          "datum": "2026-10-08",
+          "agent": "bibliothekar",
+          "runde": "",
+          "notiz": "Vektoren bewertet [3 4 4 5 2 5]: Primary page inspected; active existing research field; bounded validation or permission route, no endorsement."
+        }
+      ]
     }
   ],
   "nichtNutzen": [

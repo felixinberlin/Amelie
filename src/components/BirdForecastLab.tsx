@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { BirdEuropeanBenchmarkPanel } from './BirdEuropeanBenchmarkPanel';
 import { Language } from '../types';
 import experiment from '../data/birdForecastExperiment.json';
 import { BIRD_FORECAST_SOURCES } from '../data/birdForecastSources';
@@ -32,8 +33,9 @@ export function BirdForecastLab({ lang }: { lang: Language }) {
         <a href={source.url} target="_blank" rel="noreferrer" className="inline-block text-sm underline text-sky-800">{de ? 'Originalquelle' : 'Original source'} ↗</a>
       </div>
     </div>
+    <BirdEuropeanBenchmarkPanel lang={lang} />
     <div className="rounded-xl border border-amber-200 bg-amber-50 p-4 space-y-3">
-      <h3 className="font-semibold">{blocked ? (de ? 'Erster echter Datentest: Qualitätsprüfung nicht bestanden' : 'First real-data pilot: quality check not passed') : (de ? 'Historischer Modellvergleich — keine operative Prognose' : 'Historical model comparison — no operational forecast')}</h3>
+      <h3 className="font-semibold">{blocked ? (de ? 'Protzel-Pilot: zu wenige Nächte mit Vogeldiskriminierung' : 'Protzel pilot: too few bird-discriminated nights') : (de ? 'Historischer Modellvergleich — keine operative Prognose' : 'Historical model comparison — no operational forecast')}</h3>
       <p className="text-sm">{de ? 'Protzel / Berlin, Oktober 2021–2023, Höhenband 1.000–2.000 m über Meer. Radar und ERA5-Wetter wurden geladen. Vollständige Höhenschichten und mindestens 75 % der 15-Minuten-Zeitfenster sind Pflicht. Der Bericht zeigt, welche Nächte das feste Datengate passieren.' : 'Protzel / Berlin, October 2021–2023, altitude band 1,000–2,000 m above sea level. Radar and ERA5 weather were downloaded. Complete altitude layers and at least 75% of 15-minute time slots are required. The report shows which nights pass the fixed data gate.'}</p>
       <div className="overflow-x-auto"><table className="w-full text-sm text-left">
         <caption className="sr-only">{de ? 'Datenabdeckung im historischen Pilot' : 'Historical pilot data coverage'}</caption>
@@ -47,8 +49,19 @@ export function BirdForecastLab({ lang }: { lang: Language }) {
       <thead><tr><th scope="col">Model</th><th scope="col">Log-MAE</th><th scope="col">{de ? 'Relativ zur Historie' : 'Relative to history'}</th></tr></thead>
       <tbody>{Object.entries(metrics).map(([name, m]) => <tr key={name}><th scope="row">{name}</th><td>{m.maeLog.toFixed(3)}</td><td>{m.relativeMaeImprovement === null ? '—' : `${(100 * m.relativeMaeImprovement).toFixed(1)}%`}</td></tr>)}</tbody>
     </table></div>}
+    <div className="rounded-xl bg-white border border-sky-200 p-4 space-y-2">
+      <h3 className="font-semibold">{de ? 'Wer kann konkret helfen?' : 'Who can help?'}</h3>
+      <p className="text-sm">{de ? 'Verifizierte Fachkontakte; individuelle Anfragen vorbereitet, keine Nachricht versendet.' : 'Verified research contacts; targeted requests drafted, no messages sent.'}</p>
+      <ul className="text-sm space-y-2">
+        <li><a className="underline" href="https://pureportal.inbo.be/nl/persons/peter-desmet/">Peter Desmet · INBO / Aloft</a> — {de ? 'Radarqualität und passende Datenzeiträume prüfen.' : 'Review radar quality and suitable station periods.'}</li>
+        <li><a className="underline" href="https://www.uva.nl/en/profile/s/h/j.z.shamoun-baranes/j.z.shamoun-baranes.html">Judy Shamoun-Baranes · UvA</a> — {de ? 'Vergleich mit bestehender europäischer Prognoseforschung.' : 'Check the benchmark against existing European forecasting research.'}</li>
+        <li><a className="underline" href="https://ifv-vogelwarte.de/institut/personal">Heiko Schmaljohann · Oldenburg</a> — {de ? 'Abflugökologie und unabhängige deutsche Felddaten.' : 'Departure ecology and independent German field data.'}</li>
+        <li><a className="underline" href="https://www.dda-web.de/ornitho/datennutzung">DDA / ornitho</a> · <a className="underline" href="https://euring.org/data-and-codes/obtaining-data">EURING</a> · <a className="underline" href="https://www.ab.mpg.de/person/98230/2736">Sarah Davidson / Movebank</a> — {de ? 'Artenwissen, Beringung und Tracking mit geregeltem Datenzugang.' : 'Species knowledge, ringing and tracking through their data-access procedures.'}</li>
+      </ul>
+      <p className="text-xs">{de ? 'Bestehende Arbeit wiederverwenden:' : 'Reuse existing work:'} <a className="underline" href="https://zenodo.org/records/6874789">FluxRGNN European radar + ERA5 benchmark ↗</a></p>
+    </div>
     <div className="text-sm space-y-2 text-stone-700">
-      <p>{de ? 'Nächster Vergleich: saisonale Historie → plus Wetter → plus jüngstes Radar → danach artspezifisches Vorwissen. Zielnacht und Radarstandorte bleiben beim Training verborgen; Fehler, Ausfälle und Unsicherheit werden gemeinsam berichtet.' : 'Next comparison: seasonal history → add weather → add recent radar → then species-specific knowledge. Target nights and validation radar sites stay unseen during training; errors, outages and uncertainty are reported together.'}</p>
+      <p>{de ? 'Nächster Vergleich: saisonale Historie → plus Wetter → plus jüngstes Radar → danach artspezifisches Vorwissen. Zieljahresnächte bleiben beim Training verborgen; unabhängige Standorte sind noch zu prüfen; Fehler, Ausfälle und Unsicherheit werden gemeinsam berichtet.' : 'Next comparison: seasonal history → add weather → add recent radar → then species-specific knowledge. Target-year nights stay unseen during training; independent-site validation is still pending; errors, outages and uncertainty are reported together.'}</p>
       <p>{de ? 'Aktuelle Messungen, Vorhersagen und historische Forschung behalten eigene Zeitstempel. Aloft-CSV ist typischerweise bis 48 Stunden verzögert. ERA5 ist rückblickende Wetterrekonstruktion, keine damals verfügbare Vorhersage. Es gibt hier noch keinen Live-Datenanschluss.' : 'Observations, forecasts and historical research retain separate timestamps. Aloft CSV is typically delayed by up to 48 hours. ERA5 reconstructs past weather; it is not an issue-time forecast. This project has no live data connection yet.'}</p>
       <p><a href="https://www.flysafe-birdtam.eu/" target="_blank" rel="noreferrer" className="underline text-sky-800">FlySafe ↗</a> — {de ? 'bestehender öffentlicher Dienst mit aktuellen Radaransichten und Prognosen für Deutschland, Belgien und die Niederlande; Vergleichspartner, kein EuroBirdCast-Datenfeed.' : 'existing public radar views and forecasts for Germany, Belgium and the Netherlands; a comparator, not a EuroBirdCast data feed.'}</p>
     </div>

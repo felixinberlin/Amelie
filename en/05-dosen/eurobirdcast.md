@@ -1,21 +1,21 @@
 ---
 status: Available
 delivery_method: E-Mail
-target_maker: Joep Breuer, TNO / BIRDSAFE
+target_maker: Peter Desmet, INBO / Aloft
 ---
 # EuroBirdCast — Bird Weather
 
-Bird Weather for Germany and Europe: combine recent radar, weather forecasts and historical migration knowledge, then test on unseen nights whether the forecasts improve.
+Make bird migration visible like weather: an animated map of real radar observations, migration intensity and movement direction over Germany and neighbouring countries.
 
-**Status:** Build first. No live forecast and no demonstrated accuracy improvement. CC0 code; third-party data retain their licenses.
+**Status:** Historical movement map working. Retrospective model comparison executed; operational forecasting remains open. CC0 code; third-party data retain their licenses.
 
 ## Problem
 
-The next migration night depends on current conditions and long-term species patterns. Radar, ringing, GPS and sightings measure different things. EuroBirdCast aims to build an auditable migration forecast from them. The first real radar/ERA5 pilot failed its quality gate (Protzel, October 2021–2023: 5/3/0 usable nights); better predictions have not been demonstrated. The previous BfN rejection of an offshore reproducibility gap remains valid.
+The next migration night depends on current conditions and long-term species patterns. Radar, ringing, GPS and sightings measure different things. A runnable comparison on published European data uses 61,881 nighttime radar hours across 21 shared sites: adding weather reduces held-out 2017 log-MAE by 16.6% against seasonal history. This uses retrospective weather and does not establish live forecast skill. The previous BfN rejection remains valid.
 
 ## Architecture
 
-Connect three timescales: recent airborne movement from radar, hours-to-days from weather forecasts, and seasonal/species patterns from long-term research. Preserve each source’s observation model, species, place, effort, license, uncertainty and availability time. Papers inform features rather than becoming measurement points. Compare seasonal history, add weather, add recent radar, then species knowledge. First target: nightly integrated density; direction/altitude and regional propagation are later separate targets. No turbine control. The frontend shows source roles, the quality gate and the existing historical map.
+Start with a clear movement map: 21 radar sites, 168 hours from 1–7 October 2017, time slider, date selection and playback. Circle colour and size show estimated vertically integrated bird density; arrows show measured mean movement bearing with schematic length. Missing and excluded daytime observations stay distinct. No invented connections between stations. Science, sources, model comparison and expert contacts expand behind the map. Fresh observations and forecasts are later additions.
 
 ## Prior art
 
@@ -23,9 +23,9 @@ Narrowed; demand uncertain. FlySafe already provides recent radar observations a
 
 ## First step
 
-Join history, weather and recent radar through a verifiable data gate.
+Show a scientifically traceable movement map in the frontend.
 
-Runnable: Python pipeline in 07-demos/eurobirdcast/forecast/, three archived radar months plus ERA5, source SHA-256 hashes and a quality report. The first gate failed: 5/3/0 nights before radar lag, 1/0/0 afterwards; therefore no model and no forecast. Next completion: sufficient quality-controlled multi-season data, archived weather forecast runs with issue times and independent site/year tests; evaluate additional species sources separately against the same baselines.
+Implemented: animated frontend map with 21 sites, 168 hours and 1,351 available nighttime readings, CC-BY attribution and independent data review. Reproduce from 07-demos/eurobirdcast/map/. Executed: 07-demos/eurobirdcast/benchmark/ reuses published radar/ERA5 data, trains on 2015, tunes on 2016 and tests 18,217 radar hours from 2017. Seasonal log-MAE 0.7925; adding weather 0.6606. Source license, masks, CRC and SHA-256 documented. Separate Protzel raw-data pilot remains insufficient with 9/4/1 bird-discriminated nights. Next completion: issue-time weather forecasts, fresh radar, multiple seasons/sites and separate tests of species knowledge; expert QC requests to INBO/UvA drafted, not sent.
 
 ## Limits and history
 
@@ -33,7 +33,7 @@ The BfN rejection of the former offshore proposal remains valid. Radar is not sp
 
 ## Recipient and funding
 
-Joep Breuer, TNO / BIRDSAFE, is a documented technical contact; a new need is unconfirmed. No outreach. DBU is a potential bridge for a future implementation pilot with a German partner and measurable environmental benefit, subject to eligibility and CC0 checks; monitoring, basic research, statutory obligations and already begun projects are excluded.
+Peter Desmet (INBO/Aloft): data quality; Judy Shamoun-Baranes (UvA): scientific comparison; further verified contacts in the research chapter. New demand unconfirmed; no outreach. DBU is a potential bridge for a future implementation pilot with a German partner and measurable environmental benefit, subject to eligibility and CC0 checks; monitoring, basic research, statutory obligations and already begun projects are excluded.
 
 ## Research and demo
 
@@ -42,3 +42,6 @@ Joep Breuer, TNO / BIRDSAFE, is a documented technical contact; a new need is un
 - [Runnable pilot](../../07-demos/eurobirdcast/forecast/README.md)
 - [DBU](https://www.dbu.de/foerderung/projektfoerderung/)
 - [Project](https://felixinberlin.github.io/Amelie/#dose=eurobirdcast)
+
+- [Real Amélie test](../02-recherche/eurobirdcast-real-test-2026-10-08.md)
+- [Verified contacts and unsent drafts](../02-recherche/eurobirdcast-contacts-2026-10-08.md)

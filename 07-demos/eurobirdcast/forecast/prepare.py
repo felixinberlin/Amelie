@@ -20,6 +20,15 @@ def fetch(url, name):
     if len(raw) > CAP: raise ValueError('Cached file exceeds cap')
     return raw, {'url': url, 'sha256': hashlib.sha256(raw).hexdigest(), 'bytes': len(raw), 'retrievedAtUtc': datetime.fromtimestamp(path.stat().st_mtime, timezone.utc).isoformat()}
 
+def bird_density(row):
+    """Density QC differs from velocity QC; missing discrimination stays missing."""
+    try:
+        density, support, sd, threshold = (float(row[k]) for k in ('dens','n_dbz','sd_vvp','sd_vvp_threshold'))
+    except (ValueError, KeyError, TypeError): return None
+    if not all(math.isfinite(v) for v in (density,support,sd,threshold)) or density < 0 or support <= 0 or threshold < 0 or sd < 0:
+        return None
+    return 0.0 if sd < threshold else density
+
 def prepare():
     rows_out, sources, exclusions = [], [], []
     for year in (2021, 2022, 2023):
@@ -34,9 +43,8 @@ def prepare():
                 # Fixed UTC window is reproducible, not astronomical night.
                 at = datetime.fromisoformat(row['datetime'].replace('Z', '+00:00'))
                 if 6 <= at.hour < 18: continue
-                try: density = float(row['dens'])
-                except ValueError: continue
-                if row['gap'].upper() != 'FALSE' or not math.isfinite(density) or density < 0: continue
+                density = bird_density(row)
+                if density is None: continue
                 scans[(at, row['source_file'])].append((height, density))
         # Accept complete five 200m layers in 1000–2000m; no extrapolation.
         nights = defaultdict(dict)
@@ -45,7 +53,7 @@ def prepare():
             night = (at - timedelta(hours=18)).date()
             if night.month != 10 or night.day >= 31: continue
             slot = int((at - datetime.combine(night, datetime.min.time(), tzinfo=at.tzinfo) - timedelta(hours=18)).total_seconds() // 900)
-            # Deterministic first source file per slot avoids counting versions as independent scans.
+            # Distinct five-minute scans share nominal quarter-hour timestamps. Average within slot.
             nights[night].setdefault(slot, []).append((source_file, sum(d * .2 for h, d in layers)))
         weather_url = ('https://archive-api.open-meteo.com/v1/archive?latitude=52.648667&longitude=13.858212'
             f'&start_date={year}-10-01&end_date={year}-10-31&hourly=temperature_2m,precipitation,wind_speed_100m,wind_direction_100m'
@@ -60,7 +68,7 @@ def prepare():
             coverage = len(slots) / 48
             if coverage < .75:
                 exclusions.append({'date': str(night), 'reason': 'radar-time-coverage-below-75%', 'coverage': coverage}); continue
-            target = sum(min(values, key=lambda pair: pair[0])[1] for values in slots.values())/len(slots)
+            target = sum(sum(v for _,v in values)/len(values) for values in slots.values())/len(slots)
             temps, rain, east, north = [], [], [], []
             for h in range(12):
                 at = (date + timedelta(hours=h)).isoformat(timespec='minutes')
@@ -78,7 +86,7 @@ def prepare():
         print(year, 'usable nights:', sum(r['date'].startswith(str(year)) for r in rows_out), flush=True)
     result = {'radar': 'depro', 'station': 'Protzel / Berlin', 'bandM': [1000,2000],
         'nightUtc': '18:00–06:00', 'heightReference': 'AMSL', 'target': 'time-slot mean vertically integrated density (birds/km²)',
-        'quality': 'automatic gap and finite-value filtering only; not expert validated',
+        'protocol': 'density-v2', 'quality': 'finite density and n_dbz>0; finite sd_vvp required, below recorded threshold set to zero; gap is velocity diagnostic, not density exclusion; within-slot scan mean; not expert validated',
         'weatherVariables': ['temperature2mC','precipitationMm12h','windEast100mMs','windNorth100mMs'],
         'sources': sources, 'excluded': exclusions, 'rows': rows_out}
     (OUT/'dataset.json').write_text(json.dumps(result, indent=2)+'\n')

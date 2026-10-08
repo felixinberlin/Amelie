@@ -23,5 +23,5 @@ export const BIRD_FORECAST_SOURCES = [
   { id: 'science', name: 'Scientific evidence / FluxRGNN', periodDe: 'Versionierte Forschung und ökologische Hypothesen', periodEn: 'Versioned research and ecological hypotheses',
     roleDe: 'Publikationen begründen Merkmale und Modellstruktur; Belege mit Art, Ort, Zeitraum und Methode erfassen.', roleEn: 'Papers inform features and model structure; retain species, place, period and method for each claim.',
     statusDe: 'Methoden recherchiert; keine automatische Literaturübernahme', statusEn: 'Methods researched; no automatic literature ingestion',
-    constraintDe: 'Ein Paper ist kein Messwert. Modelle für andere Kontinente brauchen lokale Prüfung.', constraintEn: 'A paper is not a measurement. Models developed elsewhere need local validation.', url: 'https://arxiv.org/abs/2407.10259' },
+    constraintDe: 'Ein Paper ist kein Messwert. Modelle für andere Kontinente brauchen lokale Prüfung.', constraintEn: 'A paper is not a measurement. Models developed elsewhere need local validation.', url: 'https://zenodo.org/records/6874789' },
 ] as const;

@@ -45,7 +45,7 @@ def predict(fitted, row):
 
 def with_lags(rows):
     answer=[]
-    for row in rows:
+    for row in sorted(rows, key=lambda r: r['date']):
         issue = datetime.fromisoformat(row['date']+'T18:00:00+00:00')
         eligible = [r for r in rows if timedelta(hours=48) <= issue-datetime.fromisoformat(r['nightEndUtc'].replace('Z','+00:00')) <= timedelta(hours=96)]
         if not eligible: continue
@@ -76,7 +76,7 @@ def evaluate(dataset):
             'metrics':{},'predictions':[],
             'limitations':['One radar, October only, fixed 18:00–06:00 UTC window.',
                 'Complete 1000–2000m layer coverage and at least 75% of quarter-hour slots required.',
-                'Gap and finite-value checks do not establish expert biological quality.',
+                'Density-specific support and insect-threshold checks do not establish expert biological quality.',
                 'No improvement or live forecast demonstrated.',
                 'Historical ringing, citizen science and tracking sources researched but not ingested.']}
 

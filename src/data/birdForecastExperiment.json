@@ -15,14 +15,14 @@
     "validation": 2022,
     "test": 2023,
     "counts": {
-      "2021": 1,
+      "2021": 5,
       "2022": 0,
       "2023": 0
     },
     "beforeLagCounts": {
-      "2021": 5,
-      "2022": 3,
-      "2023": 0
+      "2021": 9,
+      "2022": 4,
+      "2023": 1
     }
   },
   "reason": "Fewer than eight common eligible nights in at least one year; no model fitted, no skill estimated.",
@@ -86,22 +86,12 @@
     {
       "date": "2021-10-03",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.125
-    },
-    {
-      "date": "2021-10-04",
-      "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.1875
+      "coverage": 0.6666666666666666
     },
     {
       "date": "2021-10-05",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.08333333333333333
-    },
-    {
-      "date": "2021-10-06",
-      "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.375
+      "coverage": 0.14583333333333334
     },
     {
       "date": "2021-10-10",
@@ -111,12 +101,7 @@
     {
       "date": "2021-10-11",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.08333333333333333
-    },
-    {
-      "date": "2021-10-13",
-      "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.5
+      "coverage": 0.22916666666666666
     },
     {
       "date": "2021-10-14",
@@ -126,7 +111,7 @@
     {
       "date": "2021-10-15",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.22916666666666666
+      "coverage": 0.25
     },
     {
       "date": "2021-10-16",
@@ -136,17 +121,17 @@
     {
       "date": "2021-10-17",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.3333333333333333
+      "coverage": 0.6875
     },
     {
       "date": "2021-10-19",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.125
+      "coverage": 0.25
     },
     {
       "date": "2021-10-20",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.0
+      "coverage": 0.0625
     },
     {
       "date": "2021-10-21",
@@ -157,11 +142,6 @@
       "date": "2021-10-22",
       "reason": "radar-time-coverage-below-75%",
       "coverage": 0.020833333333333332
-    },
-    {
-      "date": "2021-10-23",
-      "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.4791666666666667
     },
     {
       "date": "2021-10-24",
@@ -176,7 +156,7 @@
     {
       "date": "2021-10-26",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.08333333333333333
+      "coverage": 0.16666666666666666
     },
     {
       "date": "2021-10-27",
@@ -201,7 +181,7 @@
     {
       "date": "2022-10-01",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.0
+      "coverage": 0.08333333333333333
     },
     {
       "date": "2022-10-04",
@@ -211,7 +191,7 @@
     {
       "date": "2022-10-05",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.0
+      "coverage": 0.16666666666666666
     },
     {
       "date": "2022-10-06",
@@ -231,12 +211,12 @@
     {
       "date": "2022-10-09",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.5208333333333334
+      "coverage": 0.5833333333333334
     },
     {
       "date": "2022-10-10",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.0
+      "coverage": 0.08333333333333333
     },
     {
       "date": "2022-10-12",
@@ -246,12 +226,12 @@
     {
       "date": "2022-10-13",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.4375
+      "coverage": 0.625
     },
     {
       "date": "2022-10-14",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.14583333333333334
+      "coverage": 0.3958333333333333
     },
     {
       "date": "2022-10-15",
@@ -261,12 +241,12 @@
     {
       "date": "2022-10-16",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.2708333333333333
+      "coverage": 0.2916666666666667
     },
     {
       "date": "2022-10-17",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.0625
+      "coverage": 0.20833333333333334
     },
     {
       "date": "2022-10-18",
@@ -274,34 +254,29 @@
       "coverage": 0.625
     },
     {
-      "date": "2022-10-19",
-      "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.6458333333333334
-    },
-    {
       "date": "2022-10-20",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.0
+      "coverage": 0.3125
     },
     {
       "date": "2022-10-21",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.041666666666666664
+      "coverage": 0.20833333333333334
     },
     {
       "date": "2022-10-22",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.3541666666666667
+      "coverage": 0.375
     },
     {
       "date": "2022-10-23",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.020833333333333332
+      "coverage": 0.14583333333333334
     },
     {
       "date": "2022-10-24",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.0
+      "coverage": 0.2708333333333333
     },
     {
       "date": "2022-10-25",
@@ -326,7 +301,7 @@
     {
       "date": "2022-10-29",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.125
+      "coverage": 0.14583333333333334
     },
     {
       "date": "2022-10-30",
@@ -336,7 +311,7 @@
     {
       "date": "2023-10-01",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.0
+      "coverage": 0.020833333333333332
     },
     {
       "date": "2023-10-02",
@@ -346,7 +321,7 @@
     {
       "date": "2023-10-03",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.0
+      "coverage": 0.08333333333333333
     },
     {
       "date": "2023-10-04",
@@ -356,47 +331,47 @@
     {
       "date": "2023-10-05",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.0
+      "coverage": 0.0625
     },
     {
       "date": "2023-10-06",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.0
+      "coverage": 0.14583333333333334
     },
     {
       "date": "2023-10-07",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.041666666666666664
+      "coverage": 0.2916666666666667
     },
     {
       "date": "2023-10-08",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.14583333333333334
+      "coverage": 0.5625
     },
     {
       "date": "2023-10-09",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.020833333333333332
+      "coverage": 0.1875
     },
     {
       "date": "2023-10-10",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.0
+      "coverage": 0.14583333333333334
     },
     {
       "date": "2023-10-11",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.041666666666666664
+      "coverage": 0.5
     },
     {
       "date": "2023-10-12",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.08333333333333333
+      "coverage": 0.3333333333333333
     },
     {
       "date": "2023-10-13",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.16666666666666666
+      "coverage": 0.4375
     },
     {
       "date": "2023-10-14",
@@ -426,17 +401,17 @@
     {
       "date": "2023-10-19",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.14583333333333334
+      "coverage": 0.5833333333333334
     },
     {
       "date": "2023-10-20",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.041666666666666664
+      "coverage": 0.1875
     },
     {
       "date": "2023-10-21",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.0
+      "coverage": 0.3541666666666667
     },
     {
       "date": "2023-10-22",
@@ -446,42 +421,37 @@
     {
       "date": "2023-10-23",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.0
+      "coverage": 0.14583333333333334
     },
     {
       "date": "2023-10-24",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.0
+      "coverage": 0.2916666666666667
     },
     {
       "date": "2023-10-25",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.0
+      "coverage": 0.2916666666666667
     },
     {
       "date": "2023-10-26",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.0
-    },
-    {
-      "date": "2023-10-27",
-      "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.020833333333333332
+      "coverage": 0.0625
     },
     {
       "date": "2023-10-28",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.0
+      "coverage": 0.3541666666666667
     },
     {
       "date": "2023-10-29",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.0
+      "coverage": 0.1875
     },
     {
       "date": "2023-10-30",
       "reason": "radar-time-coverage-below-75%",
-      "coverage": 0.0
+      "coverage": 0.25
     }
   ],
   "metrics": {},
@@ -489,7 +459,7 @@
   "limitations": [
     "One radar, October only, fixed 18:00\u201306:00 UTC window.",
     "Complete 1000\u20132000m layer coverage and at least 75% of quarter-hour slots required.",
-    "Gap and finite-value checks do not establish expert biological quality.",
+    "Density-specific support and insect-threshold checks do not establish expert biological quality.",
     "No improvement or live forecast demonstrated.",
     "Historical ringing, citizen science and tracking sources researched but not ingested."
   ]

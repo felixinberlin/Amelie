@@ -1,24 +1,24 @@
 ---
 status: Available
 delivery_method: E-Mail
-target_maker: 'Joep Breuer, TNO / BIRDSAFE'
+target_maker: 'Peter Desmet, INBO / Aloft'
 review_score: 22/35
 architecture_tier: Tier 2/3
 source_type: Type A/D
 ---
 # EuroBirdCast — Bird Weather
 
-Bird Weather für Deutschland und Europa: jüngste Radarbeobachtungen, Wettervorhersagen und historisches Wissen über Vogelzug verbinden — und an ungesehenen Nächten prüfen, ob die Prognose dadurch besser wird.
+Vogelzug wie Wetter sichtbar machen: eine animierte Karte mit echten Radarbeobachtungen, Zugintensität und Bewegungsrichtung über Deutschland und seinen Nachbarländern.
 
-**Status:** Erst bauen. Keine Live-Prognose und keine belegte Genauigkeitsverbesserung. CC0-Code; Drittanbieter-Daten behalten ihre Lizenzen.
+**Status:** Historische Bewegungskarte lauffähig. Rückblickender Modellvergleich ausgeführt; operative Prognose noch offen. CC0-Code; Drittanbieter-Daten behalten ihre Lizenzen.
 
 ## Das Problem
 
-Für die nächste Zugnacht zählen aktuelle Bedingungen und die langfristigen Muster der Arten. Radar, Beringung, GPS und Sichtungen messen aber verschiedene Dinge. EuroBirdCast soll daraus eine nachvollziehbare Vogelzugprognose entwickeln. Der erste reale Radar-/ERA5-Pilot ist am Qualitätsgate gescheitert (Protzel, Oktober 2021–2023: 5/3/0 auswertbare Nächte); eine bessere Prognose ist noch nicht belegt. Die frühere BfN-Ablehnung einer Offshore-Reproduzierbarkeitslücke bleibt gültig.
+Für die nächste Zugnacht zählen aktuelle Bedingungen und langfristige Artenmuster. Radar, Beringung, GPS und Sichtungen messen verschiedene Dinge. Ein ausführbarer Vergleich auf publizierten europäischen Daten nutzt 61.881 Nacht-Radarstunden an 21 gemeinsamen Standorten: plus Wetter senkt den Log-MAE im Testjahr 2017 um 16,6 % gegenüber saisonaler Historie. Das ist ein historischer Vergleich mit rückblickendem Wetter, noch keine belegte Live-Prognose. Die frühere BfN-Ablehnung bleibt gültig.
 
 ## Skizze
 
-Drei Zeitskalen verbinden: aktuelle Luftbewegung aus Radar, Stunden bis Tage aus Wettervorhersagen, saisonale und artspezifische Muster aus langfristiger Forschung. Quellen behalten Messmodell, Art, Ort, Erfassungsaufwand, Lizenz, Unsicherheit und Verfügbarkeitszeit. Publikationen begründen Merkmale statt als Messpunkte zu dienen. Vergleich: saisonale Historie, plus Wetter, plus jüngstes Radar, danach Artenwissen. Vorhersageziel zuerst nächtliche integrierte Dichte; Richtung/Höhe und regionale Ausbreitung sind spätere getrennte Ziele. Keine Turbinensteuerung. Frontend zeigt Datenrollen, Qualitätsgate und die vorhandene historische Karte.
+Zuerst eine verständliche Bewegungskarte: 21 Radarstandorte, 168 Stunden vom 1.–7. Oktober 2017, Zeitregler, Datumsauswahl und Wiedergabe. Kreisfarbe und -größe zeigen geschätzte höhenintegrierte Vogeldichte; Pfeile die gemessene mittlere Bewegungsrichtung mit schematischer Länge. Fehlende und tagsüber ausgeschlossene Werte bleiben sichtbar unterschieden. Keine erfundenen Verbindungen zwischen Stationen. Wissenschaft, Quellen, Modellvergleich und Fachkontakte sind dahinter aufklappbar. Frische Daten und Prognosen sind spätere Erweiterungen.
 
 ## Bestehende Angebote
 
@@ -26,9 +26,9 @@ Verengt; Bedarf unklar. FlySafe bietet bereits aktuelle Radarbeobachtungen und m
 
 ## Erster Schritt
 
-Historie, Wetter und jüngstes Radar mit einem überprüfbaren Datengate verbinden.
+Eine wissenschaftlich nachvollziehbare Bewegungskarte im Frontend zeigen.
 
-Ausführbar: Python-Pipeline unter 07-demos/eurobirdcast/forecast/, drei archivierte Radar-Monate plus ERA5, Quellen mit SHA-256 und Qualitätsbericht. Das erste Gate ist rot: 5/3/0 Nächte vor Radar-Lag, 1/0/0 danach; deshalb kein Modell und keine Prognose. Nächster Abschluss: genügend qualitätsgesicherte Mehrsaison-Daten, archivierte Vorhersageläufe mit Ausgabezeit und unabhängiger Standort-/Jahrestest; zusätzliche Artenquellen einzeln gegen dieselben Baselines prüfen.
+Umgesetzt: animierte Frontend-Karte mit 21 Standorten, 168 Stunden und 1.351 verfügbaren Nachtmessungen, CC-BY-Quelle und unabhängiger Datenprüfung. Reproduzierbar unter 07-demos/eurobirdcast/map/. Ausgeführt: 07-demos/eurobirdcast/benchmark/ nutzt publizierte Radar-/ERA5-Daten, trainiert 2015, stimmt 2016 ab und testet 18.217 Radarstunden aus 2017. Saisonaler Log-MAE 0,7925; plus Wetter 0,6606. Quellenlizenz, Masken, CRC und SHA-256 dokumentiert. Separater Protzel-Rohdatenpilot bleibt mit 9/4/1 Vogeldiskriminierungsnächten unzureichend. Nächster Abschluss: Ausgabezeit-archivierte Wettervorhersagen, frisches Radar, Mehrsaison-/Standorttests und Artenwissen einzeln prüfen; fachliche QC-Anfrage an INBO/UvA vorbereitet, nicht versendet.
 
 ## Grenzen und Historie
 
@@ -36,7 +36,7 @@ Die BfN-Ablehnung der früheren Offshore-Idee bleibt gültig. Radar liefert wede
 
 ## Empfänger und Förderbrücke
 
-Joep Breuer, TNO / BIRDSAFE, ist als Fachkontakt belegt; neuer Bedarf unbestätigt. Kein Versand. DBU ist eine mögliche Brücke für einen künftigen Umsetzungspiloten mit deutschem Partner und messbarer Umweltentlastung, vorbehaltlich Förderfähigkeit und CC0-Prüfung; Monitoring, Grundlagenforschung, Pflichtaufgaben und begonnene Vorhaben sind ausgeschlossen.
+Peter Desmet (INBO/Aloft): Datenqualität; Judy Shamoun-Baranes (UvA): wissenschaftlicher Vergleich; weitere verifizierte Kontakte im Recherchekapitel. Neuer Bedarf unbestätigt, kein Versand. DBU ist eine mögliche Brücke für einen künftigen Umsetzungspiloten mit deutschem Partner und messbarer Umweltentlastung, vorbehaltlich Förderfähigkeit und CC0-Prüfung; Monitoring, Grundlagenforschung, Pflichtaufgaben und begonnene Vorhaben sind ausgeschlossen.
 
 ## Recherche und Demo
 
@@ -45,3 +45,6 @@ Joep Breuer, TNO / BIRDSAFE, ist als Fachkontakt belegt; neuer Bedarf unbestäti
 - [Runnable pilot](../07-demos/eurobirdcast/forecast/README.md)
 - [DBU](https://www.dbu.de/foerderung/projektfoerderung/)
 - [Project](https://felixinberlin.github.io/Amelie/#dose=eurobirdcast)
+
+- [Real Amélie test](../02-recherche/eurobirdcast-real-test-2026-10-08.md)
+- [Verified contacts and unsent drafts](../02-recherche/eurobirdcast-contacts-2026-10-08.md)

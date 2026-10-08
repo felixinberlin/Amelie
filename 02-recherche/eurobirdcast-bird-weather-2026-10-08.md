@@ -1,3 +1,5 @@
+> Superseded extraction audit: v1 incorrectly treated velocity gaps as invalid density and omitted insect thresholding. See the density-v2 README and real-test report; historical v1 counts below are retained as an audit trail, not the current result.
+
 # EuroBirdCast — Bird Weather from recent data and long-term science
 
 **8 October 2026.** User direction: combine fresh observations with the history and science of bird migration in Germany/Europe to improve “bird weather” predictions. Research and implemented pilot, not a validated forecasting service. The original offshore/BfN rejection remains on record.

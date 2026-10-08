@@ -753,3 +753,7 @@ das offene Register gegenüber der vorgesehenen Kommissionskonsolidierung bietet
 - Mapillary ist ein prüfbarer Kandidat für punktuelle Ergänzungsbilder. Vor einem Datentest zuerst Abdeckung, Aufnahmedatum und Perspektive pro NABU-Fassade abgleichen; CC BY-SA und CC0-Verteilung/Modellnutzung getrennt klären.
 - Amtliche Berliner Orthophotos und LoD2-Daten ergänzen Vegetations- und Gebäudeumfeld, aber keine Fassadenfenster. Solche Kontextquellen nicht mit direkten Messbildern verwechseln.
 - **Nächster Schritt:** Kleine Coverage-Stichprobe mit 30 handbewerteten Fassaden; nur Metadaten und verfügbare Bild-IDs erfassen, bevor irgendein Bildmaterial kopiert oder für Vision ausgewertet wird.
+
+### Retro 08.10.2026 — EuroBirdCast als echter Systemtest
+
+Bestehende Forschung zuerst wiederverwenden: ein fehlgeschlagener Rohdaten-Pilot ist kein Beleg gegen eine Datenfamilie. Unabhängige Methoden- und Datenprüfung fanden eine Variablenverwechslung (Geschwindigkeits-Gap versus Dichte), fehlende biologische Schwellenprüfung und echte Fünfminutenscans statt vermeintlicher Versionen. QC pro Zielgröße definieren; unbekannte Vogeldiskriminierung weder als Null noch als sichere Vogeldichte ausgeben. Prepared benchmark mit publiziertem Preprocessing ist die nächste Stufe vor eigener kontinentaler Pipeline. Kontakte anhand konkreter Daten-/Validierungsfragen wählen; sechs Namen sind kein Outreach-Erfolg. Keine neue Dose erzwingen, bestehende Bewertung nicht aufblasen, Gegenbefunde erhalten.

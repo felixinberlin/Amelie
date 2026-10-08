@@ -1,0 +1,219 @@
+{
+  "status": "completed",
+  "kind": "European published-data historical benchmark",
+  "liveForecast": false,
+  "source": {
+    "doi": "10.5281/zenodo.6874789",
+    "url": "https://zenodo.org/records/6874789",
+    "license": "CC-BY-4.0",
+    "attribution": "Lippert, Kranstauber, Forr\u00e9 and van Loon (2022), Learning to predict spatio-temporal movement dynamics from weather radar networks",
+    "archiveBytes": 269678095,
+    "bytes": 25332774,
+    "members": [
+      {
+        "member": "data/preprocessed/1H_none_ndummy=0/radar/fall/2015/static_features.csv",
+        "compressed": 1186,
+        "bytes": 2254,
+        "offset": 62620278,
+        "crc": 3348694128,
+        "method": 8,
+        "sha256": "9e186698417bcfb3a02cc33043ecba91477b37dbedba36c20b16fdcdd41113ff"
+      },
+      {
+        "member": "data/preprocessed/1H_none_ndummy=0/radar/fall/2015/dynamic_features.csv",
+        "compressed": 8481489,
+        "bytes": 21073351,
+        "offset": 54130944,
+        "crc": 2023015658,
+        "method": 8,
+        "sha256": "920c8d75d9d3fd3081c1dbdec4f4dfda8b38645b2a4071866bab40a64f137e34"
+      },
+      {
+        "member": "data/preprocessed/1H_none_ndummy=0/radar/fall/2016/static_features.csv",
+        "compressed": 1186,
+        "bytes": 2254,
+        "offset": 71149777,
+        "crc": 3348694128,
+        "method": 8,
+        "sha256": "9e186698417bcfb3a02cc33043ecba91477b37dbedba36c20b16fdcdd41113ff"
+      },
+      {
+        "member": "data/preprocessed/1H_none_ndummy=0/radar/fall/2016/dynamic_features.csv",
+        "compressed": 8494129,
+        "bytes": 21054709,
+        "offset": 62647803,
+        "crc": 4157633638,
+        "method": 8,
+        "sha256": "bf2f655c31ebd357e5877162f6cc53a841bf79cf576fa4f2a512ab6c7bf77a54"
+      },
+      {
+        "member": "data/preprocessed/1H_none_ndummy=0/radar/fall/2017/static_features.csv",
+        "compressed": 1180,
+        "bytes": 2249,
+        "offset": 54103442,
+        "crc": 876834565,
+        "method": 8,
+        "sha256": "e7fe37849a4a783eb61f50d1abaa9ed7762505d9a9e82a9c8e397fc4e6bac838"
+      },
+      {
+        "member": "data/preprocessed/1H_none_ndummy=0/radar/fall/2017/dynamic_features.csv",
+        "compressed": 8353604,
+        "bytes": 20792617,
+        "offset": 45741992,
+        "crc": 3509205341,
+        "method": 8,
+        "sha256": "71beb9b401619a9ac5e68897863e4ed74a48a8b701694bc2d0efca8d7b2b3af1"
+      }
+    ],
+    "sha256": "ade3cb49a887842faff5987494ebc2a83f7a62ee5f6757346012cad082e3b503",
+    "hashScope": "SHA-256 of ordered member provenance JSON; each decompressed member has its own SHA-256 and ZIP CRC. Not whole archive hash."
+  },
+  "coverage": {
+    "stations": [
+      "bejab",
+      "bewid",
+      "bezav",
+      "deboo",
+      "dedrs",
+      "deeis",
+      "deemd",
+      "deess",
+      "defbg",
+      "defld",
+      "dehnr",
+      "deisn",
+      "demem",
+      "deneu",
+      "denhb",
+      "deoft",
+      "depro",
+      "deros",
+      "detur",
+      "deumd",
+      "nldhl"
+    ],
+    "years": [
+      2015,
+      2016,
+      2017
+    ],
+    "rows": 61881,
+    "counts": {
+      "2015": 22480,
+      "2016": 21184,
+      "2017": 18217
+    },
+    "sourceStationCounts": {
+      "2015": 22,
+      "2016": 22,
+      "2017": 22
+    },
+    "excludedNonCommonStations": {
+      "2015": [
+        "nldbl"
+      ],
+      "2016": [
+        "nldbl"
+      ],
+      "2017": [
+        "nlhrw"
+      ]
+    },
+    "stationSelection": "Use only stations marked observed in all three source annual static tables; independent of test target values.",
+    "countries": [
+      "Germany",
+      "Netherlands",
+      "Belgium"
+    ],
+    "period": "Autumn (August\u2013November), source hourly records",
+    "excluded": {
+      "2015": {
+        "daytime": 28784,
+        "source-missing": 3584
+      },
+      "2016": {
+        "daytime": 28678,
+        "source-missing": 4982
+      },
+      "2017": {
+        "daytime": 28701,
+        "source-missing": 7964
+      }
+    },
+    "nighttimeZeroRows": {
+      "2015": 0,
+      "2016": 0,
+      "2017": 0
+    }
+  },
+  "protocol": {
+    "trainYears": [
+      2015
+    ],
+    "validationYear": 2016,
+    "testYear": 2017,
+    "refitYears": [
+      2015,
+      2016
+    ],
+    "target": "Source birds_km2, vertically integrated bird density (birds/km\u00b2); nighttime only",
+    "weatherVariables": [
+      "u",
+      "v",
+      "t2m",
+      "tp",
+      "sp",
+      "cc"
+    ],
+    "models": "Separate ridge model per radar; training-only feature standardization; log1p density; globally choose alpha from 1,10,100 by 2016 pooled log MAE.",
+    "mask": "Source night=True AND missing=False, finite nonnegative density and finite weather; retain valid night zeros; common rows across all three models.",
+    "weather": "Target-hour ERA5 reanalysis: oracle weather, not archived issue-time forecasts"
+  },
+  "metrics": [
+    {
+      "model": "station_climatology",
+      "n": 18217,
+      "mae": 6.860962814453083,
+      "rmse": 13.370130700624927,
+      "logMae": 0.8582027380616815,
+      "relativeLogMaeImprovementVsSeasonal": -0.0829508366206515
+    },
+    {
+      "model": "seasonal",
+      "n": 18217,
+      "mae": 6.495889156473299,
+      "rmse": 12.648567499941889,
+      "logMae": 0.7924669422110642,
+      "relativeLogMaeImprovementVsSeasonal": 0.0
+    },
+    {
+      "model": "weather",
+      "n": 18217,
+      "mae": 5.8117546049818145,
+      "rmse": 12.282796094090417,
+      "logMae": 0.6605578985742796,
+      "relativeLogMaeImprovementVsSeasonal": 0.1664536860916176
+    }
+  ],
+  "tuning": [
+    {
+      "model": "seasonal",
+      "alpha": 1,
+      "validationLogMae": 0.6790806624748887
+    },
+    {
+      "model": "weather",
+      "alpha": 10,
+      "validationLogMae": 0.6217625994445446
+    }
+  ],
+  "limitations": [
+    "Simple independent ablation on published prepared data; not a reproduction of FluxRGNN neural models or original sequence protocol.",
+    "Retrospective target-hour ERA5 is unavailable at forecast issue time; no operational forecast skill established.",
+    "Hourly rows are correlated across time and radars; no confidence intervals or significance claims.",
+    "Source preprocessing and quality decisions inherited; no independent raw-radar biological validation.",
+    "Existing sites only, three autumns; no spring, new-site, present-day or all-Europe generalization demonstrated.",
+    "No ringing, citizen-science, tracking, or paper-extracted priors ingested in this benchmark.",
+    "Source physical-value columns used; no new normalization before training. Upstream processing may still introduce biases."
+  ]
+}
