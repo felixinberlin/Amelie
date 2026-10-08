@@ -85,7 +85,7 @@ describe('Amélie Self-Audit Engine', () => {
   it('13. runs offline without network', () => {
     // verified by execution context
     const { health } = runAudit({ skipValidationScripts: true });
-    expect(health.inventory.doses).toBe(44);
+    expect(health.inventory.doses).toBe(DOSEN_DATA.length);
   });
 
   it('14. handles empty or missing directory gracefully', () => {

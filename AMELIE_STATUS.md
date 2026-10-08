@@ -1,13 +1,13 @@
 # Amélie Status
 
-Generated: 2026-10-08T11:36:01.653Z
+Generated: 2026-10-08T18:05:29.905Z
 
 ## System
 
-* Dosen: 44
-* Gräber: 141
-* Demos: 10
-* Books: 33
+* Dosen: 45
+* Gräber: 140
+* Demos: 11
+* Books: 36
 * Research entries: 36
 * Candidate ideas: 20
 
@@ -15,7 +15,7 @@ Generated: 2026-10-08T11:36:01.653Z
 
 | Status | Count |
 |---|---:|
-| gepackt | 39 |
+| gepackt | 40 |
 | zugestellt | 5 |
 
 ## Grave distribution
@@ -26,7 +26,7 @@ Generated: 2026-10-08T11:36:01.653Z
 | duplikat | 2 |
 | gebaut | 68 |
 | mode | 8 |
-| praemisse | 16 |
+| praemisse | 15 |
 | reality-check | 18 |
 
 ## Validation
@@ -51,12 +51,13 @@ Generated: 2026-10-08T11:36:01.653Z
 ### Warnings
 
 * **[DEMO-UNLINKED-chemhazard-stop]** Demo folder "07-demos/chemhazard-stop" does not correspond to any active Dose or Grave ID. (07-demos/chemhazard-stop)
-* **[DRIFT-AGENTS.md-Dosen-6]** AGENTS.md claims 6 Dosen, but deterministic source scanner finds 44. (AGENTS.md)
-* **[DRIFT-AGENTS.md-Gräber-58]** AGENTS.md claims 58 Gräber, but deterministic source scanner finds 141. (AGENTS.md)
-* **[DRIFT-AGENTS.md-Gräber-9]** AGENTS.md claims 9 Gräber, but deterministic source scanner finds 141. (AGENTS.md)
-* **[DRIFT-en/README.md-Dosen-15]** en/README.md claims 15 Dosen, but deterministic source scanner finds 44. (en/README.md)
-* **[DRIFT-README.de.md-Dosen-15]** README.de.md claims 15 Dosen, but deterministic source scanner finds 44. (README.de.md)
-* **[DRIFT-README.md-Dosen-15]** README.md claims 15 Dosen, but deterministic source scanner finds 44. (README.md)
+* **[DRIFT-AGENTS.md-Dosen-44]** AGENTS.md claims 44 Dosen, but deterministic source scanner finds 45. (AGENTS.md)
+* **[DRIFT-AGENTS.md-Dosen-6]** AGENTS.md claims 6 Dosen, but deterministic source scanner finds 45. (AGENTS.md)
+* **[DRIFT-AGENTS.md-Gräber-58]** AGENTS.md claims 58 Gräber, but deterministic source scanner finds 140. (AGENTS.md)
+* **[DRIFT-AGENTS.md-Gräber-9]** AGENTS.md claims 9 Gräber, but deterministic source scanner finds 140. (AGENTS.md)
+* **[DRIFT-en/README.md-Dosen-15]** en/README.md claims 15 Dosen, but deterministic source scanner finds 45. (en/README.md)
+* **[DRIFT-README.de.md-Dosen-15]** README.de.md claims 15 Dosen, but deterministic source scanner finds 45. (README.de.md)
+* **[DRIFT-README.md-Dosen-15]** README.md claims 15 Dosen, but deterministic source scanner finds 45. (README.md)
 
 ### Information
 
@@ -65,5 +66,5 @@ None.
 ## Generated from
 
 * Audit version: 1
-* Commit: 97a8cee8
+* Commit: 188903ce
 * Branch: main

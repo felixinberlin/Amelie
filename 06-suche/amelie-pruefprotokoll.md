@@ -1044,3 +1044,10 @@ Glasanflug Neubewertung 06.10.2026 (Librarian consolidation): refreshed prior ar
 |---|---|---|---|---|---|---|---|
 | N1 | **Glasanflug-Ampel — Neubewertung** (`glasanflug-ampel`) — LAG-VSW-Rechner; Bildauswertung bleibt Forschung | [method: review] | `verengt` | FLAP BirdSafe DIY asks façade-risk questions and USGBC 2026 describes photo/rendering-assisted questionnaires; Berlin guidance makes the planning context clearer. Residual claim is the transparent German LAG-VSW calculation layer; no evidence of demand for automated photo scoring. | [Seite] | 06.10.2026 | 03/2027 |
 | N2 | **Installierte Vogelschutzmuster — Zustandsnachweis** (`glasanflug-muster-wartungsnachweis`) — Wiederholte Sichtprüfung der Vollständigkeit und Anordnung vorhandener Muster | [method: bisoziation] | `unklar` | Bisoziation mit Straßenmarkierungswartung ergibt eine mögliche wiederkehrende Zustandsprüfung. ASTM E1710 ist nur ein Analogon; Vorhandensein, Nutzerbedarf und vorhandene Produkte für Vogelschutzmuster sind nicht belegt. | [Seite] | 06.10.2026 | 10/2027 |
+
+
+## EuroBirdCast — Wiederaufnahme auf Nutzerauftrag (08.10.2026)
+
+| Idee | Urteil | Begründung | Stand |
+|---|---|---|---|
+| EuroBirdCast (`eurobirdcast`), Vogelzug-Forschungswerkbank | `verengt` | Alter Offshore-Autopilot bleibt `besetzt`/fachlich verworfen; BfN-Antwort vom 30.09. bleibt erhalten. Neue Restlücke: qualitätsbewusster, portabler Szenariobericht; Bedarf `unklar`. Primärquellen: Desmet 2025, HiRAD 11.02.2026, Staatscourant 2026/2078, BIRDSAFE. Nutzer beauftragt Wiederaufnahme und erste Galerieposition. `build_first`, 22/35 unter Gate, keine erneute Zustellung. Recherche: `02-recherche/eurobirdcast-revival-2026-10-08.md`; ursprünglicher Totenschein archiviert, aus aktiven Gräbern entfernt. | 10/2026 |

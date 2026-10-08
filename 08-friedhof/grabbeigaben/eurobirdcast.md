@@ -1,3 +1,5 @@
+> Historisches Dossier. Am 08.10.2026 auf Nutzerauftrag als Forschungswerkbank wiederaufgenommen. Die BfN-Ablehnung bleibt gültig. Aktuell: `05-dosen/eurobirdcast.md`; Totenschein: `eurobirdcast-totenschein-2026-09-30.json`.
+
 ---
 status: Available
 delivery_method: E-Mail

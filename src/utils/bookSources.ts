@@ -15,6 +15,7 @@ const SOURCES = import.meta.glob(
     '/06-suche/**/*.md',
     '/07-demos/**/*.md',
     '/07-demos/**/*.patch',
+    '/08-friedhof/grabbeigaben/eurobirdcast.md',
   ],
   { query: '?raw', import: 'default' }
 ) as Record<string, () => Promise<string>>;

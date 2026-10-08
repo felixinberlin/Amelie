@@ -156,3 +156,13 @@ test('failed lazy chunks show a retry action without removing local drafts', asy
   await expect(page.getByRole('button', { name: 'Reload and retry' })).toBeVisible();
   expect(await page.evaluate(() => localStorage.getItem('amelie_custom_candidates'))).toContain('saved-draft');
 });
+
+test('EuroBirdCast is the first project and exposes its revival research', async ({ page }) => {
+  await page.goto('/Amelie/dosen/?lang=de');
+  await expect(page.locator('article').first()).toContainText('EuroBirdCast');
+  await page.goto('/Amelie/#dose=eurobirdcast&lang=de');
+  await expect(page.locator('main h1')).toContainText('EuroBirdCast');
+  await page.goto('/Amelie/dosen/eurobirdcast/book/revival/?lang=de');
+  await expect(page.locator('main')).toContainText('Wiederaufnahme und Forschungsplan');
+  await expect(page.locator('main')).toContainText('Bedarf unklar');
+});

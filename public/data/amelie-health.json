@@ -1,32 +1,32 @@
 {
   "auditVersion": 1,
-  "generatedAt": "2026-10-08T11:36:01.653Z",
+  "generatedAt": "2026-10-08T18:05:29.905Z",
   "repository": {
-    "commit": "97a8cee8",
+    "commit": "188903ce",
     "branch": "main"
   },
   "inventory": {
-    "doses": 44,
-    "graves": 141,
-    "demos": 10,
+    "doses": 45,
+    "graves": 140,
+    "demos": 11,
     "researchEntries": 36,
     "candidateIdeas": 20,
-    "books": 33
+    "books": 36
   },
   "distributions": {
     "doseStatus": {
-      "zugestellt": 5,
-      "gepackt": 39
+      "gepackt": 40,
+      "zugestellt": 5
     },
     "doseVerdict": {
+      "build_first": 9,
       "gift": 35,
-      "build_first": 8,
       "keep": 1
     },
     "doseDomain": {
+      "physics": 9,
       "civic": 20,
       "git": 5,
-      "physics": 8,
       "creative": 4,
       "knowledge": 3,
       "tools": 3,
@@ -38,7 +38,7 @@
       "reality-check": 18,
       "duplikat": 2,
       "mode": 8,
-      "praemisse": 16
+      "praemisse": 15
     }
   },
   "checks": [
@@ -115,14 +115,26 @@
       "relatedId": "chemhazard-stop"
     },
     {
+      "id": "DRIFT-AGENTS.md-Dosen-44",
+      "severity": "warning",
+      "category": "documentation",
+      "message": "AGENTS.md claims 44 Dosen, but deterministic source scanner finds 45.",
+      "file": "AGENTS.md",
+      "details": {
+        "claim": "44 Dosen",
+        "actual": 45,
+        "type": "stale_count"
+      }
+    },
+    {
       "id": "DRIFT-AGENTS.md-Dosen-6",
       "severity": "warning",
       "category": "documentation",
-      "message": "AGENTS.md claims 6 Dosen, but deterministic source scanner finds 44.",
+      "message": "AGENTS.md claims 6 Dosen, but deterministic source scanner finds 45.",
       "file": "AGENTS.md",
       "details": {
         "claim": "6 Dosen",
-        "actual": 44,
+        "actual": 45,
         "type": "stale_count"
       }
     },
@@ -130,11 +142,11 @@
       "id": "DRIFT-AGENTS.md-Gräber-58",
       "severity": "warning",
       "category": "documentation",
-      "message": "AGENTS.md claims 58 Gräber, but deterministic source scanner finds 141.",
+      "message": "AGENTS.md claims 58 Gräber, but deterministic source scanner finds 140.",
       "file": "AGENTS.md",
       "details": {
         "claim": "58 beerdigte Ideen",
-        "actual": 141,
+        "actual": 140,
         "type": "stale_count"
       }
     },
@@ -142,11 +154,11 @@
       "id": "DRIFT-AGENTS.md-Gräber-9",
       "severity": "warning",
       "category": "documentation",
-      "message": "AGENTS.md claims 9 Gräber, but deterministic source scanner finds 141.",
+      "message": "AGENTS.md claims 9 Gräber, but deterministic source scanner finds 140.",
       "file": "AGENTS.md",
       "details": {
         "claim": "9 Gräber",
-        "actual": 141,
+        "actual": 140,
         "type": "stale_count"
       }
     },
@@ -154,11 +166,11 @@
       "id": "DRIFT-en/README.md-Dosen-15",
       "severity": "warning",
       "category": "documentation",
-      "message": "en/README.md claims 15 Dosen, but deterministic source scanner finds 44.",
+      "message": "en/README.md claims 15 Dosen, but deterministic source scanner finds 45.",
       "file": "en/README.md",
       "details": {
         "claim": "15 tins",
-        "actual": 44,
+        "actual": 45,
         "type": "stale_count"
       }
     },
@@ -166,11 +178,11 @@
       "id": "DRIFT-README.de.md-Dosen-15",
       "severity": "warning",
       "category": "documentation",
-      "message": "README.de.md claims 15 Dosen, but deterministic source scanner finds 44.",
+      "message": "README.de.md claims 15 Dosen, but deterministic source scanner finds 45.",
       "file": "README.de.md",
       "details": {
         "claim": "15 Dosen",
-        "actual": 44,
+        "actual": 45,
         "type": "stale_count"
       }
     },
@@ -178,11 +190,11 @@
       "id": "DRIFT-README.md-Dosen-15",
       "severity": "warning",
       "category": "documentation",
-      "message": "README.md claims 15 Dosen, but deterministic source scanner finds 44.",
+      "message": "README.md claims 15 Dosen, but deterministic source scanner finds 45.",
       "file": "README.md",
       "details": {
         "claim": "15 tins",
-        "actual": 44,
+        "actual": 45,
         "type": "stale_count"
       }
     }

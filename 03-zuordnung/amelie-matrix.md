@@ -386,7 +386,7 @@ Zu jeder Idee aus `ideas-neue-projekte.md`: wer davon profitiert, warum ausgerec
 | Feuerkugel-Sofortnetz | – | Dose nennt keinen Empfänger | **gefunden** — Dose vorhanden (Protokoll: zwei `verengt`-Teile: Sofort-Rekrutierung, Ambient-Rettung); Empfänger und Verdikt noch festzulegen |
 | Bruchlesen | 🎁 | AG Fraktographie (DGM/DVM an der BAM) | **gepackt** 23.09.2026, `verengt` (FractoDB existiert, Übungsmodus ist die Lücke) — Mail vor der AG-Sitzung am 20.11.2026 |
 | Sperrmüll-Weiche | 🎁 | BSR (besitzt Sperrmüllabholung und NochMall) | **gepackt** Runde 8, `verengt` — eigener Empfänger, nicht CityLAB |
-| EuroBirdCast (Arbeitstitel) | 🔨 | offen bis M0 (BfN / BioConsult SH, LfU Brandenburg) | **gepackt** 22.09.2026, `verengt`, Restlücke unklar — erst Bedarfsfrage, kein Mail-Entwurf |
+| EuroBirdCast (Arbeitstitel) | 🔨 | Joep Breuer, TNO / BIRDSAFE; Bedarf unbestätigt | **wiederaufgenommen** 08.10.2026 als Forschungswerkbank; alter BfN-Kill bleibt gültig, kein erneuter Versand |
 | PillSafe Vision | 🎁 | Pflegestützpunkte · BAGSO | **gepackt** (aus dem Katalog), `verengt` seit Prüfung 24.09.2026 — Kipprisiko Medizinprodukt vor Zustellung klären |
 | KlangStethoskop | 🎁 | Netzwerk Reparatur-Initiativen | **gepackt** (aus dem Katalog), `verengt` seit 24.09.2026 — Lücke ist der fehlende Datensatz, nicht die App |
 | ChemGefahr-Stopp | 🎁 | BG BAU · IG BAU | **gepackt** (aus dem Katalog), `verengt` seit 24.09.2026 — BG BAU hat WINGIS/GISCODE; Kipprisiko falsches „passt" |

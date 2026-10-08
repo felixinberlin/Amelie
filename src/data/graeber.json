@@ -2293,28 +2293,6 @@
     "resurrectIfEn": "If a peer-reviewed study on walnuts shows that shell shape or texture (photo or 3D scan) predicts the kernel's condition."
   },
   {
-    "id": "eurobirdcast",
-    "title": "EuroBirdCast: Vogelzug-Abschaltung, nachrechenbar",
-    "originalIdeaDe": "Aus bereits öffentlich vorliegenden, wetterradarbasierten Vogelzugprofilen eine turbinenspezifische Abschaltempfehlung erzeugen, die eine Behörde ohne den Dienst selbst nachrechnen kann.",
-    "originalIdeaEn": "Generate a turbine-specific curtailment recommendation from already public weather-radar-based bird migration profiles that an authority can recompute itself without the service.",
-    "whyDiscardedDe": "Das BfN meldet als Antwort auf M0, dass aktuell keine Lücke bei der Reproduzierbarkeit von Abschaltentscheidungen besteht. Im Vorprojekt FKZ 3519 86 0500 erwiesen sich Wetterradardaten des DWD als ungeeignet (Verteilung, Datenformat). Sie fokussieren auf spezialisierte Vogelradare.",
-    "whyDiscardedEn": "The BfN responded to M0 stating there is currently no gap in reproducibility of curtailment decisions. In previous project FKZ 3519 86 0500, DWD weather radar data proved unsuitable (station distribution, format). They are focusing on specialized bird radars.",
-    "lessonDe": "Auch wenn Wetterradar-Daten offen und verarbeitbar sind, können sie für die fachliche Anforderung ungeeignet sein. Die Rückfrage beim Empfänger (BfN) hat die Lücke (Kippschalter M0) eindeutig geschlossen.",
-    "lessonEn": "Even if weather radar data is open and processable, it may be unsuitable for the technical requirement. The inquiry to the recipient (BfN) definitively closed the gap (M0 kill switch).",
-    "domain": "ecology",
-    "evidence": [],
-    "cause": "praemisse",
-    "killer": "behoerde",
-    "foundBy": "empfaenger",
-    "origin": "modell-katalog",
-    "stage": "zugestellt",
-    "bornIn": "AI Frontier 2026",
-    "diedOn": "2026-09-30",
-    "resurrectIfDe": "Nie für Wetterradar.",
-    "resurrectIfEn": "Never for weather radar.",
-    "nachruf": "08-friedhof/grabbeigaben/eurobirdcast.md"
-  },
-  {
     "id": "mimikry-detektor",
     "title": "Mimikry-Detektor (Tarnwirkung eines Falters vor dem Mikrohabitat bewerten)",
     "originalIdeaDe": "Ein Werkzeug bewertet die Tarnwirkung eines Falters vor seinem Mikrohabitat und meldet sie den Zählenden zurück (Lab-Lauf Schmetterlinge × Tintenfisch-Tarnung).",

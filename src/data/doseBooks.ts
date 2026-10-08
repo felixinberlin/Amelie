@@ -29,6 +29,30 @@ export interface BookChapter {
 }
 
 export const DOSE_BOOKS: Record<string, BookChapter[]> = {
+  'eurobirdcast': [
+    {
+      slug: 'revival', path: '02-recherche/eurobirdcast-revival-2026-10-08.md',
+      titleDe: 'Wiederaufnahme: Evidenz, Grenzen und Forschungsplan',
+      titleEn: 'Revival: evidence, limits and research plan',
+      noteDe: 'Primärquellen, BfN-Gegenbefund, niederländischer Regelstand 2026 und offene Validierung.',
+      noteEn: 'Primary sources, BfN feedback, Dutch 2026 rules and outstanding validation.',
+      date: '08.10.2026', kind: 'md',
+    },
+    {
+      slug: 'scaffold', path: '07-demos/eurobirdcast/README.md',
+      titleDe: 'CC0-Kern: MTR, Abdeckung und Szenarien',
+      titleEn: 'CC0 core: MTR, coverage and scenarios',
+      noteDe: 'Lauffähiger TypeScript-Kern mit synthetischen Tests; echte Messfixture noch offen.',
+      noteEn: 'Runnable TypeScript core with synthetic tests; real measurement fixture pending.',
+      date: '08.10.2026', kind: 'md',
+    },
+    {
+      slug: 'historie', path: '08-friedhof/grabbeigaben/eurobirdcast.md',
+      titleDe: 'Historische Fassung und BfN-Kill', titleEn: 'Historical proposal and BfN rejection',
+      noteDe: 'Die verworfene Prämisse bleibt nachlesbar.', noteEn: 'The rejected premise stays on record.',
+      date: '30.09.2026', kind: 'md',
+    },
+  ],
   'agent-postmortem-recorder': [
     {
       slug: 'nachpruefung',

@@ -1,5 +1,54 @@
 [
   {
+    "id": "eurobirdcast",
+    "title": "EuroBirdCast",
+    "titleEn": "EuroBirdCast: Migration Evidence Lab",
+    "oneLinerDe": "Europäischen Nachtzug sichtbar machen und Abschaltszenarien nachrechnen: eine offene Forschungswerkbank mit Datenqualitätsprüfung, Rotorhöhen-Abdeckung und nachvollziehbaren Annahmen.",
+    "oneLinerEn": "Explore European nocturnal migration and replay curtailment scenarios: an open research workbench with data quality checks, rotor-height coverage and explicit assumptions.",
+    "date": "8. Oktober 2026",
+    "reviewAfter": "April 2027",
+    "recipientsDe": "Joep Breuer, TNO / BIRDSAFE (fachlicher Ansprechpartner laut Wozep-Poster 2025); nachrangig HiRAD / UvA. Neuer Bedarf unbestätigt; keine erneute BfN-Zustellung.",
+    "recipientsEn": "Joep Breuer, TNO / BIRDSAFE (technical contact in the 2025 Wozep poster); secondary: HiRAD / UvA. New demand unconfirmed; no repeat delivery to BfN.",
+    "domain": "physics",
+    "verdict": "build_first",
+    "status": "gepackt",
+    "tags": [
+      "Vogelzug",
+      "Biodiversität",
+      "Open Data",
+      "Radar",
+      "Forschung"
+    ],
+    "problemDe": "Radarprofile beschreiben regionalen Vogelzug; eine Windparkentscheidung braucht zusätzlich lokale Messungen, gültige Regeln und Netzzustand. Das ursprüngliche Projekt wurde nach einer negativen BfN-Bedarfsantwort am 30.09.2026 beerdigt. Die neue, noch unbestätigte Restlücke ist ein portabler Vergleichsbericht: Welche Daten und Höhen wurden tatsächlich erfasst, wie verändert eine frei gewählte Szenarioschwelle das Ergebnis, und was bleibt unbekannt?",
+    "problemEn": "Radar profiles describe regional migration; a wind-farm decision additionally needs local measurements, applicable rules and grid conditions. The original project was buried after negative BfN demand feedback on 30 September 2026. The new, unconfirmed residual gap is a portable comparison report: which data and heights were actually observed, how does a user-selected scenario threshold change the result, and what remains unknown?",
+    "whyNowDe": [
+      "Desmet et al. (2025) dokumentieren europäische VPTS-Datensätze unter CC0; Zeitstempel sind UTC. Offene Daten sind keine Garantie für lokale Eignung.",
+      "HiRAD meldete am 11.02.2026 weitere Radarstandorte, warnt aber ausdrücklich vor ungeprüfter biologischer Signalqualität.",
+      "Der niederländische Änderungsbeschluss vom 30.01.2026 ersetzt die feste 500-Vögel/km/h-Schwelle durch modellgestützte Entscheidungen mit flexibler Grenze.",
+      "BIRDSAFE untersucht bereits Radar, Kameras und Abschaltstrategien. EuroBirdCast muss als ergänzendes Exportmodul passen, statt diese Forschung zu duplizieren."
+    ],
+    "whyNowEn": [
+      "Desmet et al. (2025) document European VPTS datasets released under CC0, with UTC timestamps. Open access does not guarantee local suitability.",
+      "HiRAD added radar locations on 11 February 2026 while explicitly warning that biological signal quality has not been evaluated.",
+      "The Dutch amendment of 30 January 2026 replaces the fixed 500 birds/km/h threshold with model-based decisions using a flexible boundary.",
+      "BIRDSAFE already investigates radar, cameras and curtailment strategies. EuroBirdCast must fit as a complementary export module rather than duplicate that research."
+    ],
+    "sketchDe": "Zwei getrennte Ebenen: europäische VPTS-Profile als regionaler Kontext und lokale Vogelradar-/Leistungsdaten als freiwilliger Import. Dichte (Vögel/km³) × Geschwindigkeit (km/h) × erfasste Schichtdicke (km) ergibt MTR (Vögel/km/h). Fehlende oder qualitätsgesperrte Schichten sperren die Rotorband-Auswertung. Szenarien vergleichen beobachteten Durchzug und hypothetische Energieverluste; weder Kollisionszahlen noch gerettete Vögel werden daraus abgeleitet. Export mit Quelle, Lizenz, UTC, Höhenbezug, Parametern und Softwareversion. Kein Live-Abschaltdienst.",
+    "sketchEn": "Two separate layers: European VPTS profiles for regional context and optional local bird-radar/power imports. Density (birds/km³) × speed (km/h) × observed layer thickness (km) yields MTR (birds/km/h). Missing or quality-rejected layers block rotor-band evaluation. Scenarios compare observed passage and hypothetical energy losses; they do not estimate collisions or birds saved. Exports retain source, license, UTC, height reference, parameters and software version. No live shutdown service.",
+    "firstStepDe": {
+      "ticket": "Ein Rotorband, ein prüfbarer MTR-Bericht.",
+      "criteria": "Der CC0-TypeScript-Kern und synthetische Tests liegen in 07-demos/eurobirdcast/. Ticket 01 ist erst abgeschlossen, wenn ein archivierter echter VPTS-Ausschnitt mit URL, Lizenz und SHA-256 eingelesen, der Höhenbezug geprüft und die MTR-Handrechnung unabhängig reproduziert ist. Fehlende Schichten, Regenflag, Überlappung, Nullzug und ungültige Werte müssen explizit behandelt werden. Vor Ausbau bestätigt ein Forschungspartner den Nutzen des Exportformats."
+    },
+    "firstStepEn": {
+      "ticket": "One rotor band, one auditable MTR report.",
+      "criteria": "The CC0 TypeScript core and synthetic tests are in 07-demos/eurobirdcast/. Ticket 01 completes only after importing an archived real VPTS excerpt with URL, license and SHA-256, verifying the height reference and independently reproducing the MTR calculation. Missing layers, rain flags, overlaps, zero migration and invalid values must be handled explicitly. A research partner must confirm the export format is useful before expansion."
+    },
+    "failureModeDe": "Das BfN sah keine Reproduzierbarkeitslücke und hielt DWD-Wetterradar für den damaligen Offshore-Zweck für ungeeignet. Diese Antwort bleibt gültig. Regionale MTR ist kein Kollisionsrisiko; Teilabdeckung ist kein Nullzug. Neue Bedarfsbestätigung und lokale Validierung fehlen. Wenn BIRDSAFE/HiRAD das Exportformat bereits abdecken oder keinen Nutzen sehen, endet der Ausbau. EuroBirdCast bleibt ein Arbeitstitel ohne Verbindung zum US-Projekt BirdCast.",
+    "failureModeEn": "BfN saw no reproducibility gap and considered DWD weather radar unsuitable for the former offshore use case. That feedback remains valid. Regional MTR is not collision risk; partial coverage is not zero migration. New demand confirmation and local validation are missing. Stop expansion if BIRDSAFE/HiRAD already cover the export format or see no value. EuroBirdCast is a working title with no affiliation to the US BirdCast project.",
+    "priorArtDe": "Verengt, Bedarf unklar (08.10.2026): Aloft/CROW visualisieren europäischen Vogelzug; getRad und bioRad liefern Zugang und Auswertung; BirdCast bietet US-Karten und Prognosen. Niederländisches Start/Stop, BIRDSAFE und BfN-Vorhaben bearbeiten Offshore-Schutz bereits. VoVis Wx verarbeitet Radar für militärische Vogelzugberatung. Kein Anspruch auf Neuartigkeit des Radars, der Prognose oder der Abschaltung; nur ein interoperabler, qualitätsbewusster Forschungsbericht ist zu prüfen.",
+    "priorArtEn": "Narrowed, demand uncertain (8 October 2026): Aloft/CROW visualize European migration; getRad and bioRad provide access and analysis; BirdCast offers US maps and forecasts. Dutch Start/Stop, BIRDSAFE and BfN projects already address offshore protection. VoVis Wx processes radar for military migration advice. No novelty claim for radar, forecasting or curtailment; only an interoperable, quality-aware research report remains to be tested."
+  },
+  {
     "id": "altbau-thermal",
     "title": "Altbau Thermal",
     "titleEn": "Altbau Thermal (Historic Flat Heat Loss)",

@@ -54,16 +54,16 @@ Die Ursachen genauer:
 
 *Automatisch erzeugt aus `src/data/graeber.json` (`DISCARDED_DATA`) mit `npm run friedhof` (läuft nach `npm run bib -- grab add` von selbst). Nicht von Hand bearbeiten — `npm run lint` meldet Abweichungen.*
 
-**141 Gräber.** 4 davon starben erst als Dose oder Mail-Entwurf (teure Tode). Von 131 dokumentierten Fundwegen kamen 16 ohne neue Suche aus (eigener Atlas, eigenes Protokoll oder Reality-Check) — 12 %.
+**140 Gräber.** 3 davon starben erst als Dose oder Mail-Entwurf (teure Tode). Von 130 dokumentierten Fundwegen kamen 16 ohne neue Suche aus (eigener Atlas, eigenes Protokoll oder Reality-Check) — 12 %.
 
 **Woran sie starben**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Schon gebaut | 68 | 48 % |
+| Schon gebaut | 68 | 49 % |
 | Beim Empfänger selbst | 29 | 21 % |
 | Reality-Check | 18 | 13 % |
-| Falsche Prämisse | 16 | 11 % |
+| Falsche Prämisse | 15 | 11 % |
 | Keine neue Fähigkeit | 8 | 6 % |
 | Duplikat | 2 | 1 % |
 
@@ -71,9 +71,9 @@ Die Ursachen genauer:
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Deutsche Suche | 54 | 38 % |
+| Deutsche Suche | 54 | 39 % |
 | Englische Suche | 42 | 30 % |
-| Empfänger-Suche | 18 | 13 % |
+| Empfänger-Suche | 17 | 12 % |
 | Ohne Suche | 12 | 9 % |
 | Nicht dokumentiert | 10 | 7 % |
 | Eigener Atlas / Protokoll | 4 | 3 % |
@@ -88,16 +88,16 @@ Die Ursachen genauer:
 | Inversion | 18 | 13 % |
 | Brainstorm | 16 | 11 % |
 | Ideenliste | 8 | 6 % |
-| Modell-Katalog | 5 | 4 % |
+| Modell-Katalog | 4 | 3 % |
 
 **Wer sie schon hatte**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Firma | 40 | 28 % |
-| Niemand | 26 | 18 % |
+| Firma | 40 | 29 % |
+| Niemand | 26 | 19 % |
 | Forschung | 25 | 18 % |
-| Behörde | 20 | 14 % |
+| Behörde | 19 | 14 % |
 | Gemeinnützige | 17 | 12 % |
 | Community / Indie | 11 | 8 % |
 | Eigener Bestand | 2 | 1 % |
@@ -106,10 +106,9 @@ Die Ursachen genauer:
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Kandidat | 137 | 97 % |
+| Kandidat | 137 | 98 % |
 | Dose gepackt | 2 | 1 % |
 | Mail entworfen | 1 | 1 % |
-| Zugestellt | 1 | 1 % |
 
 ### Alle Gräber (neueste zuerst)
 
@@ -141,7 +140,6 @@ Die Ursachen genauer:
 | Chargen-Wahrnehmungskarte (gleiche Charge, gleiche Klage aggregieren) | 30.09.2026 | Falsche Prämisse | Behörde | Deutsche Suche | Bisoziation | Kandidat | Wenn ein Träger (BfArM/PEI/AMK) freiwillige Patientenbeobachtungen je Charge als offene Daten annimmt. |
 | Engpass-Wellenlauf (Ausbreitung von Lieferengpässen über Wirkstoffe/Länder) | 30.09.2026 | Beim Empfänger selbst | Behörde | Deutsche Suche | Bisoziation | Kandidat | Wenn BfArM/EMA das Frühwarnsystem einstellen oder keine Auswertung öffentlich machen. |
 | Ersatzbaum-Fotomonitoring durch Bürger | 30.09.2026 | Keine neue Fähigkeit | Niemand | Deutsche Suche | Inversion | Kandidat | Wenn ein Grünflächenamt Bürgerfotos für die Anwuchskontrolle nach Ersatzpflanzung nachweislich auswertet. |
-| EuroBirdCast: Vogelzug-Abschaltung, nachrechenbar | 30.09.2026 | Falsche Prämisse | Behörde | Empfänger-Suche | Modell-Katalog | Zugestellt | Nie für Wetterradar. |
 | Fällgenehmigung-KI (Notwendigkeit und Ersatzpflanzung) | 30.09.2026 | Keine neue Fähigkeit | Niemand | Deutsche Suche | Inversion | Kandidat | Wenn eine Kommune ihre Satzung als maschinenlesbare Regeln veröffentlicht und ein Amt einen deterministischen Vorprüfer ausdrücklich anfragt. |
 | Habitat-Veränderungs-Detektor (3D-Zeitreihe am Transekt) | 30.09.2026 | Schon gebaut | Forschung | Deutsche Suche | Bisoziation | Kandidat | Wenn ein Tagfalter-Monitoring ein Videoprotokoll je Transekt vorschreibt und die 3D-Auswertung offen nachnutzbar ist. |
 | KI-Dauer-Mikro-A/B-Test von Seitenelementen | 30.09.2026 | Schon gebaut | Firma | Englische Suche | Bisoziation | Kandidat | Wenn ein Gemeinwohl-Träger belegt, dass Verwaltungsseiten per Dauertest nachweislich verständlicher werden und keine Plattform das abdeckt. |

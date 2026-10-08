@@ -739,6 +739,22 @@
       "funDe": "Nachschlagen im Straßenverzeichnis mit kleinem Aha bei einem Klangzwilling, aber ein kommunales Verfahren ohne Spielschleife.",
       "funEn": "Lookup in the street register with a small aha at a sound-alike, but a municipal procedure with no play loop.",
       "note": "Reviewer 29.09.2026 in classification-log (Heimatgedächtnis-Runde): V1/V5 dünn, ALKIS-intern nicht ausgeschlossen, Ground Truth kommunale Richtlinien + VGH Mannheim 1978"
+    },
+    "eurobirdcast": {
+      "v": [
+        2,
+        3,
+        3,
+        4,
+        4,
+        3,
+        3
+      ],
+      "fun": 3,
+      "funSource": "discovery",
+      "funDe": "Nächtliche Zugpulse entdecken; Forschungswerkzeug ohne Spielschleife.",
+      "funEn": "Discover nocturnal migration pulses; a research tool without a game loop.",
+      "note": "Neubewertung 08.10.2026: 22/35, unter Dose-Ready-Gate; explizite Wiederaufnahme durch Nutzer, build_first, Bedarf unklar. Kein Fortschreiben der alten 30/35."
     }
   },
   "candidates": {
