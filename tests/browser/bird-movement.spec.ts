@@ -5,7 +5,7 @@ const project = '/Amelie/dosen/eurobirdcast/';
 test('historical bird movement map exposes dates, readings and source provenance', async ({ page }) => {
   const errors: string[] = [];
   page.on('pageerror', error => errors.push(error.message));
-  await page.goto(`${project}?lang=en`);
+  await page.goto(`${project}?lang=en&data=2017`);
   const demo = page.locator('#bird-migration-demo');
   await expect(demo.getByRole('heading', { name: 'Bird movement over Germany and neighbouring countries' })).toBeVisible();
   await expect(demo.getByRole('region', { name: 'Bird migration radar map' })).toBeVisible();
@@ -32,7 +32,7 @@ test('historical bird movement map exposes dates, readings and source provenance
 });
 
 test('movement replay can be played and paused without leaking playback', async ({ page }) => {
-  await page.goto(`${project}?lang=en`);
+  await page.goto(`${project}?lang=en&data=2017`);
   const demo = page.locator('#bird-migration-demo');
   const slider = demo.getByRole('slider', { name: 'Observation time', exact: true });
   const initial = await slider.inputValue();
@@ -46,13 +46,14 @@ test('movement replay can be played and paused without leaking playback', async 
 });
 
 test('German bird movement controls work and research is available on demand', async ({ page }) => {
-  await page.goto(`${project}?lang=de`);
+  await page.goto(`${project}?lang=de&data=2017`);
   const demo = page.locator('#bird-migration-demo');
   await expect(demo.getByRole('heading', { name: 'Vogelbewegung über Deutschland und Nachbarländern' })).toBeVisible();
   await expect(demo.getByLabel('Datum (UTC)', { exact: true })).toBeVisible();
   await expect(demo.getByRole('button', { name: 'Bewegung abspielen', exact: true })).toBeVisible();
-  await demo.locator('summary', { hasText: /^Radarmessungen$/ }).click();
-  await expect(demo.getByRole('table')).toBeVisible();
+  const readings = demo.locator('details').filter({ has: page.locator('summary', { hasText: /^Radarmessungen$/ }) });
+  await readings.locator('summary').click();
+  await expect(readings.getByRole('table')).toBeVisible();
   const research = page.locator('details').filter({ has: page.locator('summary', { hasText: /^Daten, Wissenschaft und Kontakte$/ }) });
   await expect(research).not.toHaveAttribute('open', '');
   await research.locator(':scope > summary').click();
@@ -60,7 +61,7 @@ test('German bird movement controls work and research is available on demand', a
 });
 
 test('station selection updates the observation chart and preserves missing-data gaps', async ({ page }) => {
-  await page.goto(`${project}?lang=en`);
+  await page.goto(`${project}?lang=en&data=2017`);
   const demo = page.locator('#bird-migration-demo');
   const station = demo.getByLabel('Radar station', { exact: true });
   await expect(station.locator('option')).toHaveCount(21);
@@ -75,7 +76,7 @@ test('station selection updates the observation chart and preserves missing-data
 });
 
 test('replay defaults to skipping daytime and allows all hours', async ({ page }) => {
-  await page.goto(`${project}?lang=en`);
+  await page.goto(`${project}?lang=en&data=2017`);
   const demo = page.locator('#bird-migration-demo');
   const skip = demo.getByRole('checkbox', { name: 'Skip daytime', exact: true });
   await expect(skip).toBeChecked();
@@ -99,7 +100,7 @@ test('replay defaults to skipping daytime and allows all hours', async ({ page }
 });
 
 test('expanded map closes with Escape and restores normal controls', async ({ page }) => {
-  await page.goto(`${project}?lang=en`);
+  await page.goto(`${project}?lang=en&data=2017`);
   const demo = page.locator('#bird-migration-demo');
   await demo.getByRole('button', { name: 'Expand map', exact: true }).click();
   const dialog = page.getByRole('dialog', { name: 'Expanded bird movement map', exact: true });
@@ -117,7 +118,7 @@ test('expanded map closes with Escape and restores normal controls', async ({ pa
 });
 
 test('station observations can be compared on a shared scale and downloaded with provenance', async ({ page }) => {
-  await page.goto(`${project}?lang=en`);
+  await page.goto(`${project}?lang=en&data=2017`);
   const demo = page.locator('#bird-migration-demo');
   await demo.getByRole('checkbox', { name: 'Use the same scale for all stations' }).check();
   await expect(demo).toContainText('Shared scale');
@@ -136,7 +137,7 @@ test('station observations can be compared on a shared scale and downloaded with
 });
 
 test('fullscreen replay restarts after the final hour', async ({ page }) => {
-  await page.goto(`${project}?lang=en`);
+  await page.goto(`${project}?lang=en&data=2017`);
   await page.getByRole('button', { name: 'Expand map', exact: true }).click();
   const dialog = page.getByRole('dialog');
   const slider = dialog.getByRole('slider', { name: 'Expanded observation time' });
@@ -146,4 +147,60 @@ test('fullscreen replay restarts after the final hour', async ({ page }) => {
   await dialog.getByRole('button', { name: 'Play movement', exact: true }).click();
   await expect.poll(() => slider.inputValue()).not.toBe('167');
   await expect(dialog).toContainText('Historical replay');
+});
+
+test('week overview jumps to a reporting hour and ignores hours without observations', async ({ page }) => {
+  await page.goto(`${project}?lang=en&data=2017`);
+  const demo = page.locator('#bird-migration-demo');
+  const slider = demo.getByRole('slider', { name: 'Observation time', exact: true });
+  const strip = demo.getByTestId('bird-week-overview');
+  await strip.scrollIntoViewIfNeeded();
+  await expect(strip).toBeVisible();
+  const box = (await strip.boundingBox())!;
+  // Hour 12 of day 1 is daytime for every radar: the click must not move the replay.
+  const before = await slider.inputValue();
+  await page.mouse.click(box.x + box.width * (12.5 / 168), box.y + box.height / 2);
+  await expect(slider).toHaveValue(before);
+  // Hour 98 (5 Oct, 02:00 UTC) is in the night peak.
+  await page.mouse.click(box.x + box.width * (98.5 / 168), box.y + box.height / 2);
+  await expect(slider).toHaveValue('98');
+});
+
+test('October 2026 real measurements are the default and separate screened from unscreened radars', async ({ page }) => {
+  const errors: string[] = [];
+  page.on('pageerror', error => errors.push(error.message));
+  await page.goto(`${project}?lang=en`);
+  const demo = page.locator('#bird-migration-demo');
+  await expect(demo.getByRole('button', { name: /October 2026/ })).toHaveAttribute('aria-pressed', 'true');
+  await expect(demo).toContainText('Real radar measurements from 1–6 October 2026');
+  await expect(demo).toContainText('Not a live feed');
+  const dates = demo.getByLabel('Date (UTC)', { exact: true });
+  await expect(dates.locator('option')).toHaveCount(6);
+  await expect(demo.getByLabel('Radar station', { exact: true }).locator('option')).toHaveCount(19);
+  // Screened stations draw a solid trace; German files without sd_vvp must draw the dashed, unscreened one.
+  const chart = demo.locator('svg[aria-label="Observed density over the week"]');
+  await expect.poll(() => chart.getByTestId('density-segment').count()).toBeGreaterThan(0);
+  await demo.getByLabel('Radar station', { exact: true }).selectOption('depro');
+  await expect(demo).toContainText('hours unscreened (sd_vvp missing)');
+  await expect.poll(() => chart.getByTestId('unscreened-segment').count()).toBeGreaterThan(0);
+  expect(errors).toEqual([]);
+});
+
+test('forecast check shows every result and the pending archived forecast without inventing observations', async ({ page }) => {
+  await page.goto(`${project}?lang=en`);
+  const panel = page.locator('#bird-migration-demo').getByTestId('bird-forecast-check');
+  await panel.scrollIntoViewIfNeeded();
+  await expect(panel).toContainText('Can a model learned from 2017 predict the next hours?');
+  await expect(panel.locator('tbody').first().locator('tr')).toHaveCount(3);
+  await expect(panel).toContainText('Forecast archived in advance for 7 October 2026');
+  await expect(panel).toContainText('pending');
+  await expect(panel).toContainText('as a forecast to rely on');
+});
+
+test('dataset switch returns to the 2017 research replay', async ({ page }) => {
+  await page.goto(`${project}?lang=en`);
+  const demo = page.locator('#bird-migration-demo');
+  await demo.getByRole('button', { name: /2017/ }).click();
+  await expect(demo.getByLabel('Date (UTC)', { exact: true }).locator('option')).toHaveCount(7);
+  await expect(demo.getByLabel('Radar station', { exact: true }).locator('option')).toHaveCount(21);
 });

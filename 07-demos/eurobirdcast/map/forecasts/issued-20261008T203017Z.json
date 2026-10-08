@@ -1,0 +1,79 @@
+{
+ "kind": "bird-forecast-issue",
+ "issuedAtUtc": "2026-10-08T20:30:17.967526+00:00",
+ "trainedOn": "2017 week only",
+ "forecasts": [
+  {
+   "station": "bejab",
+   "basedOnUtc": "2026-10-06T23:00:00Z",
+   "targetUtc": "2026-10-07T00:00:00Z",
+   "horizonH": 1,
+   "model": 0.9059090557026578,
+   "persistence": 0.7381480107704799
+  },
+  {
+   "station": "bejab",
+   "basedOnUtc": "2026-10-06T23:00:00Z",
+   "targetUtc": "2026-10-07T02:00:00Z",
+   "horizonH": 3,
+   "model": 1.0782110688814932,
+   "persistence": 0.7381480107704799
+  },
+  {
+   "station": "bejab",
+   "basedOnUtc": "2026-10-06T23:00:00Z",
+   "targetUtc": "2026-10-07T05:00:00Z",
+   "horizonH": 6,
+   "model": 0.8181519043088216,
+   "persistence": 0.7381480107704799
+  },
+  {
+   "station": "bewid",
+   "basedOnUtc": "2026-10-06T23:00:00Z",
+   "targetUtc": "2026-10-07T00:00:00Z",
+   "horizonH": 1,
+   "model": 10.668695391195914,
+   "persistence": 11.608832685152692
+  },
+  {
+   "station": "bewid",
+   "basedOnUtc": "2026-10-06T23:00:00Z",
+   "targetUtc": "2026-10-07T02:00:00Z",
+   "horizonH": 3,
+   "model": 7.798945280357487,
+   "persistence": 11.608832685152692
+  },
+  {
+   "station": "bewid",
+   "basedOnUtc": "2026-10-06T23:00:00Z",
+   "targetUtc": "2026-10-07T05:00:00Z",
+   "horizonH": 6,
+   "model": 5.323322874767227,
+   "persistence": 11.608832685152692
+  },
+  {
+   "station": "nldhl",
+   "basedOnUtc": "2026-10-06T23:00:00Z",
+   "targetUtc": "2026-10-07T00:00:00Z",
+   "horizonH": 1,
+   "model": 0.11365476428196111,
+   "persistence": 0.2014764688909054
+  },
+  {
+   "station": "nldhl",
+   "basedOnUtc": "2026-10-06T23:00:00Z",
+   "targetUtc": "2026-10-07T02:00:00Z",
+   "horizonH": 3,
+   "model": 0.0,
+   "persistence": 0.2014764688909054
+  },
+  {
+   "station": "nldhl",
+   "basedOnUtc": "2026-10-06T23:00:00Z",
+   "targetUtc": "2026-10-07T05:00:00Z",
+   "horizonH": 6,
+   "model": 0.0,
+   "persistence": 0.2014764688909054
+  }
+ ]
+}

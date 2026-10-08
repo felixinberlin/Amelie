@@ -36,3 +36,18 @@ Read [lessons and restart procedure](eurobirdcast-next-rounds.md), [real-system 
 ## Next-round completion criterion
 
 Pick **one** question with an observable result. Deliver a working incremental improvement or a reproducible negative result, with provenance and relevant tests. Keep the published demo usable. Write what changed, what remains unknown, and the next bounded question; commit and push when authorized. Do not claim to have exhausted every possible dataset or scientific paper.
+
+## Findings of 8 October 2026 (second session, same day) — read this first
+
+**Done:** (1) Map made clearer: controls under the map, tighter fit, arrow length = measured mean ground speed, week overview strip (click to jump). (2) **Recent real data integrated** (`map/recent.py`, `src/data/birdRecentMap.json`, dataset switch, default = October 2026). (3) **Forecast learned from 2017, tested honestly** (`map/forecast_check.py`, panel `BirdForecastCheck.tsx`). Checks: 12 browser tests, 16 map Python tests, lint, build green.
+
+**What the data say (answers questions 1–3 partially):**
+- Of 19 radars with 1–6 Oct files, only **bejab, bewid, nldhl** have `sd_vvp` in quantity (66 screened hours each). German BALTRAD files carry it in 0–14 % of rows, so density-v2 rejects them. They are shown as a separate *unscreened* tier. Open: is `sd_vvp` absent in the files but recoverable from the underlying ODIM/VP products or from the monthly Aloft files? Ask before assuming.
+- Week was quiet over Germany (1–2 km layer near zero); Wideumont carries the signal (peak ≈ 24 birds/km²). Recent density is a 1–2 km **layer**; 2017 is a **column**. Never put them on one axis.
+- 2026-10-07 files were not yet published on 8 Oct (objects appear ~1–2 days late, Last-Modified 8 Oct 01:xx for 5 Oct). bezav/deemd have no objects; defld stops after 2 Oct.
+
+**Forecast result (do not oversell):** 2017 leave-one-day-out skill vs persistence +8/+14/+24 % at +1/+3/+6 h; on Oct 2026 a 2017-only model is **worse** (−22/−43/−26 %), updated with earlier 2026 data it is level (+3/−3/+7 %, noise). 12 variants were run (3 horizons × recent weight 0/5/20), all reported, none picked by 2026 score. A zero clamp was added after the panel showed an impossible negative forecast (found by looking at the screen, not by tests; a unit test now covers it). Folds in 2017 are not independent (one synoptic regime).
+
+**Immediate next step (bounded, observable):** after the 7 Oct files appear (check `curl -I https://aloftdata.s3-eu-west-1.amazonaws.com/baltrad/daily/bewid/2026/bewid_vpts_20261007.csv`), run `python3 07-demos/eurobirdcast/map/forecast_check.py score`, then `... evaluate`, commit the `scored-*.json`. This is the first genuinely prospective test (model fixed and hashed before the data existed). Report model vs persistence regardless of the outcome. Then issue another forecast daily to build n; 3 stations × 3 horizons per issue is too few for conclusions before ~2 weeks.
+
+**Open / risks:** weather is not used; adding archived NWP forecasts (question 7) is the obvious lever but must be archived prospectively. Day/night uses NOAA solar elevation > −6° approximation, not astronomical tables. `unscreened` density is not evidence of birds. Raw CSVs are cached in `/tmp/eurobirdcast-recent-cache` (not committed). Do not present the forecast panel as a product; it is a test with a pending prospective result. Ask Peter Desmet / Judy Shamoun-Baranes to review only with Félix's authorization; nothing was sent.

@@ -1080,3 +1080,25 @@ readings, CSV export and playback/fullscreen accessibility. No change to dose
 scope, tickets or description; no outreach. Next bounded task: aggregate the
 usable Belgian profiles without inventing coverage, then expose a distinct
 recent-observation view.
+
+### EuroBirdCast recent observations and forecast check — 2026-10-08
+
+Existing `eurobirdcast` verdict unchanged (22/35). Integrated real Aloft BALTRAD
+daily files for **1–6 October 2026**, 19 radars (110 files, CC0), as a separate
+view next to the 2017 replay: `07-demos/eurobirdcast/map/recent.py` →
+`src/data/birdRecentMap.json` (URLs, SHA-256, sizes, retrieval times). Same
+density-v2 gate and five-complete-layer rule (1000–2000 m) as the forecast
+experiment; hour = mean of scans; daytime hidden by NOAA solar elevation > −6°.
+Finding: most German files lack `sd_vvp` (0–14 % of rows), so only bejab, bewid,
+nldhl have screened hours in quantity (66 each); German density is shown as a
+distinct *unscreened* tier, not as bird density. 7 Oct files not yet published;
+bezav/deemd have no objects; defld stops 2 Oct.
+Forecast check (`forecast_check.py`): ridge model on change of log(1+density),
+trained on the 2017 week only, no weather. Leave-one-day-out 2017: +8/+14/+24 %
+over persistence at +1/+3/+6 h. October 2026: −22/−43/−26 % (2017 only), +3/−3/+7 %
+when updated with earlier 2026 data (noise at 3 stations). Negative result kept
+visible. A forecast for 7 Oct was archived before its data exist
+(`map/forecasts/issued-*.json`, hash in the panel); score with
+`forecast_check.py score` once files appear. Bug found by looking: negative
+densities were possible; predictions are now clamped at zero (the first archive
+was unscored and replaced). No outreach; dose scope unchanged.

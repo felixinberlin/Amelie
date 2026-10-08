@@ -60,3 +60,17 @@ The frontend review adds an optional common station-chart scale, exact selected
 hour readings, station CSV export with citation and explicit missing cells,
 playback speed controls, a fullscreen legend, and consistent restart at the
 last frame. Range controls expose the actual UTC timestamp to assistive tools.
+
+## Recent real observations and forecast check — 8 October 2026
+
+`python3 07-demos/eurobirdcast/map/recent.py` downloads (bounded, 26 MB cap per file, cache `/tmp/eurobirdcast-recent-cache`)
+Aloft BALTRAD daily VPTS files for 1–6 October 2026 (19 radars, CC0) and writes `src/data/birdRecentMap.json`.
+Same density-v2 gate and 1000–1800 m five-layer rule as `../forecast/prepare.py` (the gate function is imported, not copied).
+Statuses: `observed` (gate passed), `unscreened` (density present, `sd_vvp` missing: no rain test, shown dashed, no arrow),
+`daytime` (sun above −6°), `missing`. Density is the **1–2 km layer**, not the column, so it is not comparable with 2017.
+Of 19 radars only bejab, bewid and nldhl have screened hours in quantity.
+
+`python3 07-demos/eurobirdcast/map/forecast_check.py evaluate|issue|score`: ridge forecast of the change in log(1+density),
+trained on the 2017 week, features trend / upwind neighbour / hour of day. Results, all variants, in `src/data/birdForecastCheck.json`.
+`issue` archives a forecast (with hash) before its data exist; `score` fetches the later files (404 = pending, never zero).
+Tests: `test_forecast_check.py` (leakage, missing hours, upwind sector, zero clamp, gate rules).

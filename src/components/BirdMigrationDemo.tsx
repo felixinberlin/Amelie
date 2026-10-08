@@ -1,26 +1,54 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import observations from '../data/birdMovementMap.json';
+import { BIRD_DATASETS, BirdDatasetId, BirdObservations, strongestFrame } from '../data/birdDatasets';
 import { Language } from '../types';
 import { BIRD_RADAR_NAMES } from '../data/birdRadarNames';
 import { BirdStationChart } from './BirdStationChart';
+import { BirdForecastCheck } from './BirdForecastCheck';
 
 const intensityColor = (density: number) => density < 1 ? '#fef08a' : density < 5 ? '#fbbf24' : density < 20 ? '#f97316' : density < 50 ? '#e11d48' : '#9333ea';
 const prettyTime = (time: string, de: boolean) => new Intl.DateTimeFormat(de ? 'de-DE' : 'en-GB', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'UTC' }).format(new Date(time)) + ' UTC';
 const dayOf = (time: string) => time.slice(0, 10);
+const dayLabel = (day: string) => new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }).format(new Date(day));
 
-export function BirdMigrationDemo({ lang = 'en' }: { lang?: Language }) {
+function WeekOverview({ observations, frame, de, onTime }: { observations: BirdObservations; frame: number; de: boolean; onTime: (frame: number) => void }) {
+  // Mean of the radars with a screened reading; hours without one stay blank, never zero.
+  const weekMeans = useMemo(() => observations.times.map((_, i) => {
+    const values = observations.stations.map(s => s.readings[i]).filter(r => r.status === 'observed' && r.density !== null).map(r => r.density as number);
+    return values.length ? values.reduce((a, b) => a + b, 0) / values.length : null;
+  }), [observations]);
+  const n = observations.times.length;
+  const top = Math.max(1, ...weekMeans.map(v => v ?? 0));
+  const bar = 1000 / n;
+  const pick = (event: React.MouseEvent<SVGSVGElement>) => {
+    const box = event.currentTarget.getBoundingClientRect();
+    const index = Math.min(n - 1, Math.max(0, Math.floor((event.clientX - box.left) / box.width * n)));
+    if (weekMeans[index] !== null) onTime(index);
+  };
+  return <div>
+    <p className="text-xs font-semibold text-slate-600">{de ? 'Wochenüberblick · Mittelwert der geprüften Radare (Vögel/km²) · anklicken zum Springen' : 'Week overview · mean of screened radars (birds/km²) · click to jump'}</p>
+    <svg viewBox="0 0 1000 44" preserveAspectRatio="none" role="img" data-testid="bird-week-overview" aria-label={de ? 'Mittlere Vogeldichte je Stunde' : 'Mean bird density per hour'} onClick={pick} className="mt-1 h-11 w-full cursor-pointer rounded-md bg-slate-100">
+      {weekMeans.map((v, i) => v === null ? null : <rect key={i} x={i * bar + .5} width={bar - 1} y={42 - v / top * 40} height={v / top * 40} fill={intensityColor(v)} stroke="#78350f" strokeWidth=".4" />)}
+      <rect x={frame * bar - 1} width={bar + 2} y="0" height="44" fill="none" stroke="#2563eb" strokeWidth="2.5" vectorEffect="non-scaling-stroke" />
+    </svg>
+  </div>;
+}
+
+function BirdMovementView({ dataset, lang, switcher }: { dataset: BirdDatasetId; lang: Language; switcher: React.ReactNode }) {
   const de = lang === 'de';
+  const meta = BIRD_DATASETS[dataset];
+  const observations = meta.data;
+  const recent = dataset === 'recent';
   const host = useRef<HTMLDivElement>(null);
   const map = useRef<ReturnType<typeof L.map> | null>(null);
   const marks = useRef<ReturnType<typeof L.layerGroup> | null>(null);
   const stationMarks = useRef<Map<string, ReturnType<typeof L.circleMarker>>>(new Map());
-  const [frame, setFrame] = useState(Math.min(20, observations.times.length - 1));
+  const [frame, setFrame] = useState(() => recent ? strongestFrame(observations) : Math.min(20, observations.times.length - 1));
   const [playing, setPlaying] = useState(false);
   const [playbackMs, setPlaybackMs] = useState(650);
-  const [selectedStation, setSelectedStation] = useState('depro');
+  const [selectedStation, setSelectedStation] = useState(meta.defaultStation);
   const [skipDaytime, setSkipDaytime] = useState(true);
   const [expanded, setExpanded] = useState(false);
   const expandedHost = useRef<HTMLDivElement>(null);
@@ -29,6 +57,7 @@ export function BirdMigrationDemo({ lang = 'en' }: { lang?: Language }) {
   const time = observations.times[frame];
   const dates = [...new Set(observations.times.map(dayOf))];
   const observed = observations.stations.filter(s => s.readings[frame].density !== null).length;
+  const screened = observations.stations.filter(s => s.readings[frame].status === 'observed').length;
   const togglePlayback = () => {
     if (!playing && frame === observations.times.length - 1) setFrame(0);
     setPlaying(p => !p);
@@ -37,10 +66,10 @@ export function BirdMigrationDemo({ lang = 'en' }: { lang?: Language }) {
 
   useEffect(() => {
     if (!host.current) return;
-    const m = L.map(host.current, { scrollWheelZoom: false, minZoom: 4, maxZoom: 10 });
+    const m = L.map(host.current, { scrollWheelZoom: false, minZoom: 4, maxZoom: 10, zoomSnap: 1 });
     const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>', maxZoom: 10 }).addTo(m);
     tiles.on('tileerror', () => setTilesUnavailable(true));
-    m.fitBounds(L.latLngBounds(observations.stations.map(s => [s.lat, s.lon] as [number, number])), { padding: [45, 45] });
+    m.fitBounds(L.latLngBounds(observations.stations.map(s => [s.lat, s.lon] as [number, number])), { padding: [8, 8] });
     map.current = m;
     marks.current = L.layerGroup().addTo(m);
     const observer = new ResizeObserver(() => m.invalidateSize()); observer.observe(host.current);
@@ -55,18 +84,19 @@ export function BirdMigrationDemo({ lang = 'en' }: { lang?: Language }) {
     for (const station of ordered) {
       const reading = station.readings[frame];
       const available = reading.density !== null;
+      const unscreened = reading.status === 'unscreened';
       const density = reading.density ?? 0;
       const missing = reading.status === 'daytime' ? (de ? 'Tagsüber nicht ausgewertet' : 'Daytime not evaluated') : (de ? 'Messwert fehlt' : 'Missing observation');
       const circle = L.circleMarker([station.lat, station.lon], {
         radius: available ? 5 + Math.min(15, Math.sqrt(density) * 1.7) : 5,
-        color: available ? '#431407' : '#64748b', fillColor: available ? intensityColor(density) : '#cbd5e1',
-        fillOpacity: available ? .72 : .35, weight: available ? 1.5 : 1, dashArray: available ? undefined : '3 3',
+        color: unscreened ? '#92400e' : available ? '#431407' : '#64748b', fillColor: available ? intensityColor(density) : '#cbd5e1',
+        fillOpacity: unscreened ? .22 : available ? .72 : .35, weight: available ? 1.5 : 1, dashArray: unscreened ? '2 3' : available ? undefined : '3 3',
       }).addTo(layers);
       stationMarks.current.set(station.code, circle);
       // Create text nodes so even a future station label cannot inject popup HTML.
       const content = document.createElement('div');
       const heading = document.createElement('strong'); heading.textContent = `${BIRD_RADAR_NAMES[station.code] ?? station.code} (${station.code.toUpperCase()})`; content.append(heading);
-      const value = document.createElement('p'); value.textContent = available ? `${density.toFixed(1)} ${de ? 'geschätzte Vögel/km²' : 'estimated birds/km²'}` : missing; content.append(value);
+      const value = document.createElement('p'); value.textContent = available ? `${density.toFixed(unscreened ? 2 : 1)} ${recent ? (de ? 'Vögel/km² (Schicht 1–2 km)' : 'birds/km² (1–2 km layer)') : (de ? 'geschätzte Vögel/km²' : 'estimated birds/km²')}${unscreened ? (de ? ' · ohne Regentest (sd_vvp fehlt): Echo kann auch Niederschlag oder Insekten enthalten' : ' · no rain test (sd_vvp missing): echo may include precipitation or insects') : ''}` : missing; content.append(value);
       const stamp = document.createElement('p'); stamp.textContent = prettyTime(time, de); content.append(stamp);
       circle.bindPopup(content);
       circle.on('click', () => setSelectedStation(station.code));
@@ -74,28 +104,29 @@ export function BirdMigrationDemo({ lang = 'en' }: { lang?: Language }) {
       if (available && density > 0 && reading.u !== null && reading.v !== null) {
         const speed = Math.hypot(reading.u, reading.v);
         if (speed > .01) {
-          // 65km display length only: observed mean bearing, never a projected route.
+          // Length is proportional to observed mean ground speed (9 km per m/s, capped); never a projected route.
+          const lengthKm = Math.min(130, Math.max(14, speed * 9));
           const north = reading.v / speed, east = reading.u / speed;
           const kmToLat = 1 / 111.2, kmToLon = kmToLat / Math.cos(station.lat * Math.PI / 180);
-          const tip: [number, number] = [station.lat + north * 65 * kmToLat, station.lon + east * 65 * kmToLon];
+          const tip: [number, number] = [station.lat + north * lengthKm * kmToLat, station.lon + east * lengthKm * kmToLon];
           const left: [number, number] = [tip[0] + (-north * 13 + east * 7) * kmToLat, tip[1] + (-east * 13 - north * 7) * kmToLon];
           const right: [number, number] = [tip[0] + (-north * 13 - east * 7) * kmToLat, tip[1] + (-east * 13 + north * 7) * kmToLon];
           L.polyline([[station.lat, station.lon], tip], { color: '#0f172a', weight: 2.5, opacity: .85, interactive: false }).addTo(layers);
           L.polyline([left, tip, right], { color: '#0f172a', weight: 2.5, opacity: .85, interactive: false }).addTo(layers);
           const direction = document.createElement('p');
-          direction.textContent = `${de ? 'Mittlere Bewegungsrichtung' : 'Mean movement bearing'}: ${((Math.atan2(east, north) * 180 / Math.PI + 360) % 360).toFixed(0)}°`;
+          direction.textContent = `${de ? 'Mittlere Bewegungsrichtung' : 'Mean movement bearing'}: ${((Math.atan2(east, north) * 180 / Math.PI + 360) % 360).toFixed(0)}° · ${speed.toFixed(1)} m/s`;
           content.append(direction);
         }
       }
     }
-  }, [frame, de, time, expanded]);
+  }, [frame, de, time, expanded, observations]);
 
   useEffect(() => {
     for (const station of observations.stations) {
       const available = station.readings[frame].density !== null;
-      stationMarks.current.get(station.code)?.setStyle({ color: station.code === selectedStation ? '#2563eb' : available ? '#431407' : '#64748b', weight: station.code === selectedStation ? 3 : available ? 1.5 : 1 });
+      stationMarks.current.get(station.code)?.setStyle({ color: station.code === selectedStation ? '#2563eb' : station.readings[frame].status === 'unscreened' ? '#92400e' : available ? '#431407' : '#64748b', weight: station.code === selectedStation ? 3 : available ? 1.5 : 1 });
     }
-  }, [selectedStation, frame, de, expanded]);
+  }, [selectedStation, frame, de, expanded, observations]);
 
   useEffect(() => {
     if (!playing) return;
@@ -126,10 +157,10 @@ export function BirdMigrationDemo({ lang = 'en' }: { lang?: Language }) {
 
   const mapContent = (<div ref={expandedHost} role={expanded ? 'dialog' : undefined} aria-modal={expanded || undefined} aria-label={expanded ? 'Expanded bird movement map' : undefined} className={expanded ? 'bird-expanded-map fixed inset-0 z-[100] bg-slate-950 p-3 sm:p-5 flex flex-col gap-3' : 'relative'}>
         {expanded && <div className="flex items-center justify-between gap-3 text-white"><span className="text-sm font-mono">{prettyTime(time, de)}</span><button type="button" onClick={() => setExpanded(false)} aria-label={de ? 'Große Karte schließen' : 'Close expanded map'} className="rounded-lg border border-slate-600 px-3 py-2">✕ {de ? 'Schließen' : 'Close'}</button></div>}
-        <div key="map-canvas" ref={host} role="region" aria-label="Bird migration radar map" className="rounded-xl border border-slate-200 bg-slate-100" style={{ height: expanded ? 'calc(100dvh - 160px)' : 470, flex: expanded ? 1 : undefined, zIndex: 0 }} />
+        <div key="map-canvas" ref={host} role="region" aria-label="Bird migration radar map" className="rounded-xl border border-slate-200 bg-slate-100" style={{ height: expanded ? 'calc(100dvh - 160px)' : 560, flex: expanded ? 1 : undefined, zIndex: 0 }} />
         <div className="pointer-events-none absolute left-3 bottom-8 z-[10] rounded-lg bg-slate-950/80 px-3 py-1.5 text-xs font-mono text-white" style={expanded ? { left: 20, bottom: 84 } : undefined}>{prettyTime(time, de)} · {observed}/{observations.stations.length} {de ? 'Radare' : 'radars'}</div>
         {!expanded && <button ref={expandButton} type="button" onClick={() => setExpanded(true)} aria-haspopup="dialog" aria-label={de ? 'Karte vergrößern' : 'Expand map'} className="absolute right-3 top-3 z-[10] rounded-lg border border-slate-300 bg-white/95 px-3 py-2 text-xs font-semibold shadow-sm">⛶ {de ? 'Vergrößern' : 'Expand'}</button>}
-        {expanded && <p className="text-xs text-slate-300">{de ? 'Historische Wiedergabe · Vögel/km² · Gelb <1, Gold 1–5, Orange 5–20, Rot 20–50, Violett ≥50 · Grau: fehlend / tagsüber · Pfeile: mittlere Richtung, keine Routen' : 'Historical replay · birds/km² · Yellow <1, gold 1–5, orange 5–20, red 20–50, purple ≥50 · Grey: missing / daytime · Arrows: mean bearing, not routes'}</p>}
+        {expanded && <p className="text-xs text-slate-300">{de ? `${recent ? 'Aktuelle Radarbeobachtungen' : 'Historische Wiedergabe'} · Vögel/km² · Gelb <1, Gold 1–5, Orange 5–20, Rot 20–50, Violett ≥50 · Gestrichelt: ungeprüft · Grau: fehlend / tagsüber · Pfeile: mittlere Richtung, länger = schneller, keine Routen` : `${recent ? 'Recent radar observations' : 'Historical replay'} · birds/km² · Yellow <1, gold 1–5, orange 5–20, red 20–50, purple ≥50 · Dashed: unscreened · Grey: missing / daytime · Arrows: mean bearing, longer = faster, not routes`}</p>}
         {expanded && <div className="flex items-center gap-3 text-white"><button type="button" onClick={togglePlayback} aria-label={playing ? 'Pause' : (de ? 'Bewegung abspielen' : 'Play movement')} className="rounded-lg bg-white px-3 py-2 text-slate-900 text-sm">{playing ? 'Ⅱ' : '▶'}</button><input aria-label="Expanded observation time" aria-valuetext={prettyTime(time, de)} type="range" min="0" max={observations.times.length - 1} value={frame} onChange={e => selectFrame(Number(e.target.value))} className="flex-1 accent-amber-300" /><span className="text-xs">{observed}/{observations.stations.length} radar</span></div>}
       </div>);
 
@@ -137,10 +168,14 @@ export function BirdMigrationDemo({ lang = 'en' }: { lang?: Language }) {
     <div className="bg-slate-950 text-white p-5 sm:p-7 space-y-3">
       <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-amber-200"><span className="h-2 w-2 rounded-full bg-amber-300" />EuroBirdCast · {de ? 'Radar-Archiv · Beobachtungen' : 'Radar archive · observations'}</div>
       <h2 id="bird-map-title" className="text-2xl sm:text-3xl font-serif-title">{de ? 'Vogelbewegung über Deutschland und Nachbarländern' : 'Bird movement over Germany and neighbouring countries'}</h2>
-      <p className="text-sm text-slate-300">{de ? 'Eine Woche Vogelzug abspielen: 1.–7. Oktober 2017. Echte Radarschätzungen aus Deutschland, Belgien und den Niederlanden.' : 'Replay a week of migration: 1–7 October 2017. Real radar estimates from Germany, Belgium and the Netherlands.'}</p>
-      <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm"><span>{observations.stations.length} {de ? 'Radarstandorte' : 'radar sites'}</span><span>{de ? 'Stündliche Messungen' : 'Hourly observations'}</span><span>{de ? 'Historische Wiedergabe' : 'Historical replay'}</span></div>
+      {switcher}
+      <p className="text-sm text-slate-300">{recent
+        ? (de ? 'Echte Radarmessungen vom 1.–6. Oktober 2026 aus Deutschland, Belgien und den Niederlanden, nachträglich abgerufen. Die belgischen und niederländischen Dateien enthalten überwiegend die Angabe sd_vvp, mit der Vogelecho von Niederschlag getrennt wird; den meisten deutschen Dateien fehlt sie. Solche Werte sind gestrichelt als „ungeprüft“ markiert und können Niederschlag oder Insekten enthalten. Auch geprüfte Werte sind keine Artbestimmung.' : 'Real radar measurements from 1–6 October 2026 over Germany, Belgium and the Netherlands, retrieved after the fact. The Belgian and Dutch files mostly carry sd_vvp, the field that separates bird echoes from precipitation; most German files lack it. Those values are dashed and marked unscreened and may include precipitation or insects. Even screened values are not species identification.')
+        : (de ? 'Eine Woche Vogelzug abspielen: 1.–7. Oktober 2017. Echte Radarschätzungen aus Deutschland, Belgien und den Niederlanden.' : 'Replay a week of migration: 1–7 October 2017. Real radar estimates from Germany, Belgium and the Netherlands.')}</p>
+      <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm"><span>{observations.stations.length} {de ? 'Radarstandorte' : 'radar sites'}</span><span>{de ? 'Stündliche Messungen' : 'Hourly observations'}</span><span>{recent ? (de ? 'Kein Live-Feed' : 'Not a live feed') : (de ? 'Historische Wiedergabe' : 'Historical replay')}</span></div>
     </div>
     <div className="p-4 sm:p-6 space-y-4">
+      {expanded ? createPortal(mapContent, document.body) : mapContent}
       <div className="flex flex-wrap items-end gap-3">
         <button type="button" onClick={togglePlayback} aria-label={playing ? 'Pause' : (de ? 'Bewegung abspielen' : 'Play movement')} aria-pressed={playing} className="rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-700">{playing ? 'Ⅱ Pause' : `▶ ${de ? 'Bewegung abspielen' : 'Play movement'}`}</button>
         <label className="text-xs font-semibold text-slate-600">{de ? 'Datum (UTC)' : 'Date (UTC)'}<select aria-label={de ? 'Datum (UTC)' : 'Date (UTC)'} value={dayOf(time)} onChange={e => {
@@ -155,27 +190,40 @@ export function BirdMigrationDemo({ lang = 'en' }: { lang?: Language }) {
         <label className="flex items-center gap-2"><input type="checkbox" checked={skipDaytime} onChange={e => setSkipDaytime(e.target.checked)} className="accent-slate-900" />{de ? 'Tagesstunden überspringen' : 'Skip daytime'}</label>
         <span>{de ? 'Wiedergabe: nur Stunden mit vorhandenen Beobachtungen, wenn aktiviert.' : 'When enabled, playback visits only hours with available observations.'}</span>
       </div>
+      <WeekOverview observations={observations} frame={frame} de={de} onTime={selectFrame} />
       <label className="block text-xs font-semibold text-slate-600">{de ? 'Beobachtungszeit · durch die Woche bewegen' : 'Observation time · move through the week'}<input aria-label="Observation time" aria-valuetext={prettyTime(time, de)} type="range" min="0" max={observations.times.length - 1} value={frame} onChange={e => selectFrame(Number(e.target.value))} className="block w-full mt-2 accent-slate-900" /></label>
-      <div className="flex justify-between text-xs text-slate-500"><span>1 Oct 2017</span><span>{observed}/{observations.stations.length} {de ? 'Standorte mit Dichtemessung' : 'sites with density observations'}</span><span>7 Oct 2017</span></div>
-      {expanded ? createPortal(mapContent, document.body) : mapContent}
+      <div className="flex justify-between text-xs text-slate-500"><span>{dayLabel(meta.first)}</span><span>{observed}/{observations.stations.length} {de ? 'Standorte mit Dichtemessung' : 'sites with density observations'}{screened < observed ? ` · ${screened} ${de ? 'geprüft' : 'screened'}` : ''}</span><span>{dayLabel(meta.last)}</span></div>
       {tilesUnavailable && <p role="status" className="text-xs text-slate-600">{de ? 'Hintergrundkarte nicht vollständig erreichbar. Radarmessungen sind weiter in der Tabelle verfügbar.' : 'Background map is not fully available. Radar observations remain available in the table.'}</p>}
       <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs text-slate-700" aria-label={de ? 'Kartenlegende' : 'Map legend'}>
         {[['#fef08a', '0–1'], ['#fbbf24', '1–5'], ['#f97316', '5–20'], ['#e11d48', '20–50'], ['#9333ea', '50+']].map(([color, label]) => <span key={label} className="flex items-center gap-1.5"><span className="h-3 w-3 rounded-full border border-slate-500" style={{ background: color }} />{label}</span>)}
-        <span>{de ? 'geschätzte Vögel/km²' : 'estimated birds/km²'}</span><span>↗ {de ? 'Bewegungsrichtung' : 'Movement bearing'}</span><span>◌ {de ? 'fehlend / tagsüber' : 'missing / daytime'}</span>
+        <span>{recent ? (de ? 'Vögel/km² (Schicht 1–2 km)' : 'birds/km² (1–2 km layer)') : (de ? 'geschätzte Vögel/km²' : 'estimated birds/km²')}</span>{recent && <span>◌ {de ? 'gestrichelt = ungeprüft' : 'dashed = unscreened'}</span>}<span>↗ {de ? 'Bewegungsrichtung' : 'Movement bearing'}</span><span>◌ {de ? 'fehlend / tagsüber' : 'missing / daytime'}</span>
       </div>
-      <p className="text-sm text-slate-600">{de ? 'Kreisfarbe und -größe zeigen die geschätzte Vogeldichte über dem Radarstandort. Pfeile zeigen die gemessene mittlere Bewegungsrichtung; ihre Länge ist schematisch. Graue Punkte und leere Gebiete bedeuten fehlende Beobachtung. Die Karte zeigt weder einzelne Vogelrouten noch eine Vorhersage.' : 'Circle colour and size show estimated bird density above each radar site. Arrows show the measured mean movement bearing; their length is schematic. Grey points and empty areas indicate absent observations. These are neither individual bird tracks nor a forecast.'}</p>
-      <BirdStationChart code={selectedStation} frame={frame} lang={lang} onStation={setSelectedStation} onTime={selectFrame} />
+      <p className="text-sm text-slate-600">{de ? 'Kreisfarbe und -größe zeigen die geschätzte Vogeldichte über dem Radarstandort. Pfeile zeigen die gemessene mittlere Bewegungsrichtung; ihre Länge zeigt die mittlere Bodengeschwindigkeit (länger = schneller). Graue Punkte und leere Gebiete bedeuten fehlende Beobachtung. Die Karte zeigt weder einzelne Vogelrouten noch eine Vorhersage.' : 'Circle colour and size show estimated bird density above each radar site. Arrows show the measured mean movement bearing; their length shows the mean ground speed (longer = faster). Grey points and empty areas indicate absent observations. These are neither individual bird tracks nor a forecast.'}</p>
+      <BirdStationChart dataset={dataset} code={selectedStation} frame={frame} lang={lang} onStation={setSelectedStation} onTime={selectFrame} />
+      <BirdForecastCheck lang={lang} />
       <details className="border-t border-slate-200 pt-3"><summary className="cursor-pointer text-sm font-semibold">{de ? 'Radarmessungen' : 'Radar readings'}</summary>
         <div className="overflow-x-auto mt-3"><table className="w-full text-sm text-left"><caption className="sr-only">{de ? 'Beobachtungen zum gewählten Zeitpunkt' : 'Observations at selected time'}</caption><thead><tr><th scope="col">Radar</th><th scope="col">{de ? 'Vögel/km²' : 'Birds/km²'}</th><th scope="col">{de ? 'Richtung' : 'Bearing'}</th></tr></thead><tbody>{observations.stations.map(s => {
           const r = s.readings[frame]; const direction = r.density !== null && r.density > 0 && r.u !== null && r.v !== null && Math.hypot(r.u, r.v) > .01 ? `${((Math.atan2(r.u, r.v) * 180 / Math.PI + 360) % 360).toFixed(0)}°` : '—';
-          return <tr key={s.code} className="border-t border-slate-100"><th scope="row" className="py-2 font-normal">{BIRD_RADAR_NAMES[s.code] ?? s.code} <span className="text-xs text-slate-400">{s.code.toUpperCase()}</span></th><td>{r.density === null ? (r.status === 'daytime' ? (de ? 'Tagsüber' : 'Daytime') : (de ? 'Fehlend' : 'Missing')) : r.density.toFixed(2)}</td><td>{direction}</td></tr>;
+          return <tr key={s.code} className="border-t border-slate-100"><th scope="row" className="py-2 font-normal">{BIRD_RADAR_NAMES[s.code] ?? s.code} <span className="text-xs text-slate-400">{s.code.toUpperCase()}</span></th><td>{r.density === null ? (r.status === 'daytime' ? (de ? 'Tagsüber' : 'Daytime') : (de ? 'Fehlend' : 'Missing')) : r.density.toFixed(2)}{r.status === 'unscreened' ? <span className="text-xs text-amber-700"> {de ? '(ungeprüft)' : '(unscreened)'}</span> : null}</td><td>{direction}</td></tr>;
         })}</tbody></table></div>
       </details>
-      <p className="text-xs text-slate-500">{de ? 'Daten:' : 'Data:'} Lippert, Kranstauber, Forré &amp; van Loon (2022), <a className="underline" href="https://doi.org/10.5281/zenodo.6874789">European radar / ERA5 dataset</a> · <a className="underline" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. {de ? 'Für diese Karte zeitlich ausgewählt; veröffentlichte Nacht- und Fehlwertmasken beibehalten. Dichte ist höhenintegriert, Richtung aus bird_u/bird_v. Kartenkacheln benötigen Internet.' : 'Time subset selected for this map; published night and missingness masks retained. Density is vertically integrated; bearing uses bird_u/bird_v. Map tiles require internet.'}</p>
+      {recent
+        ? <p className="text-xs text-slate-500">{de ? 'Daten:' : 'Data:'} <a className="underline" href="https://aloftdata.eu/">Aloft / BALTRAD</a> {de ? 'tägliche VPTS-Dateien, ' : 'daily VPTS files, '}<a className="underline" href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>. {de ? 'Dieselbe Qualitätsregel wie im Prognose-Experiment (density-v2, fünf vollständige 200-m-Schichten zwischen 1000 und 2000 m). Stundenwerte sind Mittel der Einzelscans; Lücken bleiben leer, Tageslicht (Sonne über −6°) ist ausgeblendet. Aloft weist darauf hin, dass diese Rohdaten nicht allgemein qualitätsgeprüft sind. Quell-URLs, Prüfsummen und Abrufzeiten stehen in der Datei src/data/birdRecentMap.json.' : 'Same quality rule as the forecast experiment (density-v2, five complete 200 m layers between 1000 and 2000 m). Hourly values are means of individual scans; gaps stay empty and daylight (sun above −6°) is hidden. Aloft cautions that these raw files are not generally quality controlled. Source URLs, checksums and retrieval times are in src/data/birdRecentMap.json.'}</p>
+        : <p className="text-xs text-slate-500">{de ? 'Daten:' : 'Data:'} Lippert, Kranstauber, Forré &amp; van Loon (2022), <a className="underline" href="https://doi.org/10.5281/zenodo.6874789">European radar / ERA5 dataset</a> · <a className="underline" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. {de ? 'Für diese Karte zeitlich ausgewählt; veröffentlichte Nacht- und Fehlwertmasken beibehalten. Dichte ist höhenintegriert, Richtung aus bird_u/bird_v. Kartenkacheln benötigen Internet.' : 'Time subset selected for this map; published night and missingness masks retained. Density is vertically integrated; bearing uses bird_u/bird_v. Map tiles require internet.'}</p>}
       <div className="border-t border-slate-200 pt-4 text-xs text-slate-600 space-y-2">
         <p><strong className="text-slate-900">{de ? 'Danke an die Forschung.' : 'Thank you to the research teams.'}</strong> {de ? 'Diese Karte baut auf der offenen Arbeit von Lippert, Kranstauber, Forré, van Loon und der europäischen Radar-Aeroökologie auf.' : 'This map builds on open work by Lippert, Kranstauber, Forré, van Loon and the European radar-aeroecology community.'}</p>
         <p>{de ? 'Unser Aufruf an Energiebetreiber: Monitoringdaten öffnen, Ergebnisse von Schutzmaßnahmen veröffentlichen und unabhängige Prüfung ermöglichen. Diese Karte macht Beobachtungen sichtbar; sie misst keine Kollisionen.' : 'Our call to energy operators: open monitoring data, publish mitigation results and enable independent scrutiny. This map makes observations visible; it does not measure collisions.'}</p>
       </div>
     </div>
   </section>;
+}
+
+export function BirdMigrationDemo({ lang = 'en' }: { lang?: Language }) {
+  const de = lang === 'de';
+  const [dataset, setDataset] = useState<BirdDatasetId>(() => {
+    try { return new URLSearchParams(window.location.search).get('data') === '2017' ? 'historical' : 'recent'; } catch { return 'recent'; }
+  });
+  const options: [BirdDatasetId, string][] = [['recent', de ? 'Oktober 2026 · echte Messungen' : 'October 2026 · real measurements'], ['historical', de ? '2017 · Forschungsdatensatz' : '2017 · research dataset']];
+  const switcher = <div role="group" aria-label={de ? 'Datensatz' : 'Dataset'} className="flex flex-wrap gap-2">{options.map(([id, label]) => <button key={id} type="button" aria-pressed={dataset === id} onClick={() => setDataset(id)} className={`rounded-full border px-3 py-1.5 text-xs font-semibold ${dataset === id ? 'border-amber-300 bg-amber-300 text-slate-900' : 'border-slate-600 text-slate-200 hover:border-amber-200'}`}>{label}</button>)}</div>;
+  return <BirdMovementView key={dataset} dataset={dataset} lang={lang} switcher={switcher} />;
 }
