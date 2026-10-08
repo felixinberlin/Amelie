@@ -1,3 +1,4 @@
+import { BirdMigrationDemo } from './BirdMigrationDemo';
 import { HeartHandshake, Sparkles, ArrowUpRight } from 'lucide-react';
 import type { Language } from '../types';
 
@@ -66,6 +67,7 @@ export function MathOpportunities({ lang }: { lang: Language }) {
         <h4 className="font-semibold text-stone-900">{copy.exampleTitle}</h4>
         <p className="text-sm leading-relaxed text-stone-700">{copy.example}</p>
       </div>
+      <BirdMigrationDemo />
       <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-emerald-900">
         {[
           [copy.handoff, REPO + 'amelie-new-math-agent-handoff.md'],
