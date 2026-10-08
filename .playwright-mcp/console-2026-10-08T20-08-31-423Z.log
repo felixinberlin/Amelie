@@ -1,0 +1,3 @@
+[    1181ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:3000/Amelie/node_modules/.vite/deps/chunk-UVXKGGW7.js?v=cff1aa6f:21608
+[    1260ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/favicon.ico:0
+[    1265ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/favicon.ico:0
