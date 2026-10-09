@@ -28,11 +28,13 @@ interface GlasanflugSimulatorProps {
 
 const HERKUENFTE: Herkunft[] = ['eingabe', 'bild', 'geodaten', 'unbestimmt'];
 
+// A new assessment has no measured inputs. Never present fabricated image or
+// geodata provenance as if the app had already inspected a real façade.
 const START: Eingabe = {
-  glasanteil: { punkte: 3, herkunft: 'bild' },
-  fassadengestaltung: { punkte: 4, herkunft: 'bild' },
-  umgebung: { punkte: 3, herkunft: 'geodaten' },
-  gehoelzabstand: { punkte: 3, herkunft: 'geodaten' },
+  glasanteil: { punkte: null, herkunft: 'unbestimmt' },
+  fassadengestaltung: { punkte: null, herkunft: 'unbestimmt' },
+  umgebung: { punkte: null, herkunft: 'unbestimmt' },
+  gehoelzabstand: { punkte: null, herkunft: 'unbestimmt' },
 };
 
 const STUFEN_FARBE: Record<string, string> = {
@@ -91,6 +93,47 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
       [id]: herkunft === 'unbestimmt' ? { punkte: null, herkunft } : { punkte: e[id].punkte ?? 1, herkunft },
     }));
 
+  const exportAssessment = () => {
+    // Local-only export: no photographs, addresses, or observations are uploaded.
+    const record = {
+      kind: 'amelie-glasanflug-assessment',
+      formatVersion: 1,
+      createdAt: new Date().toISOString(),
+      schema: SCHEMA_QUELLE,
+      disclaimer: 'Draft decision support only; not a legal determination or product certification.',
+      factors: eingabe,
+      exceptionReason: glasVoll ? fussnote2.trim() : null,
+      assessment: {
+        complete: ergebnis.vollstaendig,
+        level: ergebnis.vollstaendig ? ergebnis.stufe : null,
+        total: ergebnis.vollstaendig ? ergebnis.summe : null,
+        missing: ergebnis.unbestimmt,
+        overrides: ergebnis.vorrang,
+      },
+      monitoring: {
+        rawFindsPerYear: kollisionen.trim() === '' ? null : Number(kollisionen),
+        facadeLengthMetres: fassadenlaenge.trim() === '' ? null : Number(fassadenlaenge),
+        result: monitoring,
+        note: 'Raw finds are not corrected for detection probability or scavenging.',
+      },
+      marking: {
+        inputs: { test: testart, pattern: musterNr || null, position: ebene, externalReflectancePercent: ar.trim() === '' ? null : Number(ar) },
+        finding: markierung.befund,
+        category: markierung.kategorie,
+        source: markierung.quelle,
+        notes: markierung.hinweise,
+      },
+    };
+    const url = URL.createObjectURL(new Blob([JSON.stringify(record, null, 2)], { type: 'application/json' }));
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'glasanflug-assessment.json';
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(url);
+  };
+
   const glasVoll = eingabe.glasanteil.punkte === 4;
 
   return (
@@ -112,6 +155,19 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
             ? 'Vier Kriterien mit je 1 bis 4 Punkten, Summe 4 bis 16. Zwei Regeln überstimmen die Summe. Jeder Wert trägt mit, woher er kommt — was das Bild nicht hergibt, bleibt unbestimmt und wird nicht geraten.'
             : 'Four criteria at 1 to 4 points each, sum 4 to 16. Two rules override the sum. Every value carries its origin — whatever the image cannot supply stays undetermined and is not guessed.'}
         </p>
+
+        <div className="rounded-xl border border-sky-200 bg-sky-50 p-3 text-xs text-sky-950" role="note">
+          <strong>{de ? 'Neue Bewertung — noch keine Messdaten' : 'New assessment — no observations yet'}</strong>
+          <p className="mt-1 leading-relaxed">
+            {de
+              ? 'Alle vier Kriterien starten unbestimmt. Wähle unten ein veröffentlichtes Rechenbeispiel oder gib eigene Beobachtungen ein. „Bild“ und „Geodaten“ nur auswählen, wenn du diese Quellen tatsächlich ausgewertet hast.'
+              : 'All four criteria start undetermined. Choose a published worked example or enter your own observations. Select “image” or “geodata” provenance only if you have actually analysed those sources.'}
+          </p>
+          <button type="button" onClick={() => { setEingabe(START); setFussnote2(''); }}
+            className="mt-2 underline font-semibold hover:text-sky-700">
+            {de ? 'Bewertung zurücksetzen' : 'Reset assessment'}
+          </button>
+        </div>
 
         {/* Beispiele aus dem Anhang */}
         <div>
@@ -297,6 +353,16 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
               </div>
             </div>
           )}
+
+          <div className="flex flex-wrap items-center gap-2 mb-4">
+            <button type="button" onClick={exportAssessment}
+              className="rounded-lg border border-amber-500/70 px-3 py-2 text-xs font-semibold text-amber-100 hover:bg-stone-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400">
+              {de ? 'Bewertung als JSON exportieren' : 'Export assessment as JSON'}
+            </button>
+            <span className="text-[11px] text-stone-400">
+              {de ? 'Lokal erstellt · auch unvollständige Bewertungen' : 'Created locally · incomplete assessments included'}
+            </span>
+          </div>
 
           {/* Vorrangregeln */}
           {ergebnis.vorrang.map((v, i) => (
