@@ -1,0 +1,32 @@
+# Reviewer Log
+
+## Hinweisgeberschutz-Radar (HinSchG-Radar)
+- Novelty: 4/5 (Idee eines Meta-Verzeichnisses fehlt in DE, aber Muster "Register für Gesetz ohne Register" ist bekannt)
+- Complexity: 5/5 (Klares Datenmodell, einfacher Crowdsourcing-Ansatz)
+- Possibility: 3/5 (Scraping/Suche über Websites machbar, aber viele interne Meldekanäle sind im Intranet versteckt und nicht öffentlich)
+- Longevity: 3/5 (Relevant, bis das Bundesjustizamt eine eigene Liste veröffentlicht)
+- Civic SWOT: 5/5 (Klarer Nutzen für Zivilgesellschaft und Whistleblower-Netzwerk e.V., deckt Vollzugsdefizit auf)
+- Tech Tree: 4/5 (Baut auf `vernichtungs-offenlegungsregister` auf)
+- Ground Truth: 0/5 (Die Prämisse scheitert: Interne Meldekanäle (§ 12 HinSchG) richten sich an *Beschäftigte* und müssen *nicht* auf der öffentlichen Website stehen, sondern z.B. am Schwarzen Brett oder im Intranet. Eine öffentliche Suche nach diesen Kanälen misst also nicht die Nichterfüllung des Gesetzes, sondern nur die (fehlende) öffentliche Sichtbarkeit eines internen Kanals. Die externe Meldestelle beim BfJ existiert bereits als Anlaufpunkt.)
+- **Summe: 24/35**
+- **Urteil:** Friedhof (cause: praemisse, killer: idea-reviewer)
+
+## Hinweisgeber-Kanal-Check
+- **Urteil:** Friedhof (cause: praemisse, killer: idea-reviewer) - Gleicher Grund wie HinSchG-Radar (Interne Kanäle müssen nicht öffentlich sein).
+
+## Hinweisgeber-Triage-Stratigrafie
+- Novelty: 3/5
+- Complexity: 2/5 (NLP/LLM On-Device in der Verwaltung schwierig auszurollen)
+- Possibility: 2/5 (Datenschutzbedenken, Whistleblower-Meldungen sind hochsensibel)
+- Longevity: 4/5
+- Civic SWOT: 3/5
+- Tech Tree: 2/5
+- Ground Truth: 3/5 (Kommerzielle Tools dominieren (BKMS, Hinweisgebersystem24), aber Kommunen haben wenig Geld)
+- **Summe: 19/35**
+- **Urteil:** Needs Research (Machbarkeit On-Device NLP für sensible Meldungen und Akzeptanz in Behörden prüfen)
+
+## Verpackungs-Taxonomie-Baum
+- **Urteil:** Friedhof (cause: gebaut, killer: idea-reviewer) - Müll-Trenn-Apps (z.B. der BSR, nabu) decken das im Alltag ab, PPWR-Detailfragen betreffen Hersteller, nicht Bürger.
+
+## LUCID-Transparenz-Lotse
+- **Urteil:** Friedhof (cause: praemisse, killer: idea-reviewer) - Konsumenten prüfen vor dem Kauf keine Verpackungslizenzen im LUCID-Register. Fehlender Hebel.

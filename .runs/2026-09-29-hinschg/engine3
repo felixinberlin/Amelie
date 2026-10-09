@@ -1,0 +1,12 @@
+## Kandidaten
+
+| Idee (Kurzname) | Ein-Satz-Beschreibung | Zielsystem + Operator | Empfänger | Urteil | Beleg [Seite\|Schnipsel] | Restlücke |
+|---|---|---|---|---|---|---|
+| Hinweisgeberschutz-Radar (HinSchG-Radar) | Inversion der Compliance-Pflicht: Statt Unternehmen beim Aufbau der Meldestelle zu helfen, suchen Bürger gezielt nach fehlenden oder versteckten Kanälen und machen dies öffentlich (Bürger als Inspektor). | HinSchG + OP-4 (Vollzugslücke) | Whistleblower-Netzwerk e.V. | frei | [Schnipsel] bundesjustizamt.de (BfJ), whistleblower-net.de | BfJ kontrolliert nicht proaktiv alle Unternehmen > 50 Mitarbeiter. Ein offenes Register der (Nicht-)Erfüllung durch Crowdsourcing fehlt. |
+| Hinweisgeber-Triage-Stratigrafie | Inversion der Bearbeitungslast: Die Meldestelle erhält ein lokales On-Device-Tool, das die eintreffenden Meldungen ohne Cloud-API vor-ordnet, um den kommerziellen SaaS-Zwang (Legal Tech) zu durchbrechen. | HinSchG + OP-3 (Layer-Inversion) | Kommunale Spitzenverbände / BfJ | verengt | [Schnipsel] bkms-system.com, eagle-whistleblowing.com | Kommerzielle Whistleblowing-Software ist teuer (SaaS). Lokale Triage für klamme Kommunen bleibt Lücke. |
+| PPWR-Greenwashing-Schild | Inversion der Hersteller-Deklaration: Bürger scannen Verpackungssymbole (z.B. "recycelbar"), das Tool gleicht mit den echten PPWR-Kriterien ab und deckt Greenwashing auf. | PPWR + OP-2 (Citizen Shield) | Deutsche Umwelthilfe (DUH) | besetzt | [Schnipsel] duh.de, nabu.de (Siegel-Checks) | Siegel-Apps (NABU Siegel-Check, ToxFox) und DUH-Kampagnen gegen Greenwashing decken diese Kontrollfunktion bereits gut ab. |
+| LUCID-Transparenz-Lotse | Inversion des ZSVR-Melderegisters: Ein Tool, das das öffentliche LUCID-Register nutzt, um für Verbraucher beim Online-Shopping sofort zu zeigen, ob der Händler seine Verpackungslizenz bezahlt hat. | VerpackG / LUCID + OP-4 (Vollzugslücke) | Verbraucherzentrale Bundesverband (vzbv) | unklar | [Schnipsel] verpackungsregister.org/lucid | LUCID-Register ist öffentlich durchsuchbar. Ob eine Browser-Extension machbar ist und ob Konsumenten danach ihre Kaufentscheidung richten (Prämisse), ist fraglich. |
+
+## Gelernt / Nächstes Mal
+- Gelernt: LUCID ist bereits offen und durchsuchbar. Das Problem beim VerpackG ist nicht fehlende Transparenz, sondern der Vollzug in der Fläche.
+- Nächstes Mal: Die Vollzugslücke beim HinSchG scheint der stärkste Hebel zu sein, da die Aufsichtsbehörde (BfJ) keine Kapazitäten für proaktive Kontrollen bei allen Firmen > 50 Mitarbeiter hat.

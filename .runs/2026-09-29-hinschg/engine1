@@ -1,0 +1,12 @@
+## Kandidaten
+
+| Idee (Kurzname) | Ein-Satz-Beschreibung | Quelle (Typ) | Empfänger (Institution, Mandat) | Urteil (frei/verengt/unklar/besetzt) | Beleg [Seite|Schnipsel] + URL | Restlücke |
+|---|---|---|---|---|---|---|
+| Hinweisgeberschutz-Radar (HinSchG-Radar) | Offene Karte aller Meldestellen nach HinSchG, die keine einfache Online-Meldung anbieten, um den Druck zur Digitalisierung zu erhöhen. | HinSchG / VerpackG (Typ O) | Whistleblower-Netzwerk e.V. | frei | [Schnipsel] bmfsfj.de, bundesjustizamt.de | Eine zentrale, bürgerfreundliche Übersicht der Meldestellen (wer hat eine, wie ist sie erreichbar) für Kommunen und Unternehmen > 50 MA fehlt. |
+| Hinweisgeber-Kanal-Check | Tool, das Unternehmenswebsites scannt und prüft, ob ein Hinweisgeberkanal nach HinSchG leicht auffindbar und barrierefrei ist. | HinSchG (Typ O) | Transparency International Deutschland | verengt | [Schnipsel] transparency.de | Scrape-Tools existieren (Compliance-Märkte), aber ein offenes Monitoring für die Zivilgesellschaft fehlt. |
+| Verpackungs-Scout (PPWR-Radar) | Bürger melden übermäßige Verpackungen im Supermarkt; Abgleich mit den Reduktionszielen der PPWR. | PPWR (Typ O) | Deutsche Umwelthilfe (DUH) | besetzt | [Schnipsel] duh.de (Verpackungsärgernis des Jahres), vzbv.de | Verbraucherzentralen und DUH sammeln bereits Beschwerden zu Mogelpackungen und übermäßiger Verpackung. |
+| VerpackG-Vollzugs-Lotse | Assistent für Gastronomen, der aus dem Speiseangebot und der Betriebsgröße die Pflichten nach VerpackG (Mehrwegangebotspflicht, Systembeteiligung) ermittelt und fertige Nachweise erzeugt. | VerpackG / LUCID (Typ O) | DEHOGA / Umweltämter | besetzt | [Schnipsel] verpackungsregister.org, dehoga-bundesverband.de | ZSVR, IHKs und DEHOGA bieten bereits umfangreiche Checklisten und Rechner an; kommerzielle Compliance-Dienstleister decken den Rest ab. |
+
+## Gelernt / Nächstes Mal
+- Gelernt: Verpackung ist als Endnutzer-Thema extrem dicht besetzt (Mogelpackung, Mehrweg).
+- Nächstes Mal: Den Fokus beim Hinweisgeberschutz stärker auf die inhaltliche Bearbeitung von Meldungen (Triage) statt nur auf das Vorhandensein des Kanals legen.

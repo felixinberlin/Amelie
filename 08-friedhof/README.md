@@ -54,16 +54,16 @@ Die Ursachen genauer:
 
 *Automatisch erzeugt aus `src/data/dosen.ts` (`DISCARDED_DATA`) mit `npm run friedhof`. Nicht von Hand bearbeiten — `npm run lint` meldet Abweichungen.*
 
-**69 Gräber.** 3 davon starben erst als Dose oder Mail-Entwurf (teure Tode). Von 60 dokumentierten Fundwegen kamen 8 ohne neue Suche aus (eigener Atlas, eigenes Protokoll oder Reality-Check) — 13 %.
+**77 Gräber.** 3 davon starben erst als Dose oder Mail-Entwurf (teure Tode). Von 68 dokumentierten Fundwegen kamen 8 ohne neue Suche aus (eigener Atlas, eigenes Protokoll oder Reality-Check) — 12 %.
 
 **Woran sie starben**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Schon gebaut | 39 | 57 % |
-| Beim Empfänger selbst | 14 | 20 % |
-| Reality-Check | 7 | 10 % |
-| Falsche Prämisse | 4 | 6 % |
+| Schon gebaut | 44 | 57 % |
+| Beim Empfänger selbst | 14 | 18 % |
+| Falsche Prämisse | 7 | 9 % |
+| Reality-Check | 7 | 9 % |
 | Keine neue Fähigkeit | 3 | 4 % |
 | Duplikat | 2 | 3 % |
 
@@ -71,41 +71,41 @@ Die Ursachen genauer:
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Deutsche Suche | 21 | 30 % |
-| Englische Suche | 19 | 28 % |
-| Empfänger-Suche | 11 | 16 % |
-| Nicht dokumentiert | 9 | 13 % |
-| Eigener Atlas / Protokoll | 4 | 6 % |
-| Ohne Suche | 4 | 6 % |
+| Deutsche Suche | 29 | 38 % |
+| Englische Suche | 19 | 25 % |
+| Empfänger-Suche | 11 | 14 % |
+| Nicht dokumentiert | 9 | 12 % |
+| Eigener Atlas / Protokoll | 4 | 5 % |
+| Ohne Suche | 4 | 5 % |
 | Forum / Nische | 1 | 1 % |
 
 **Woher sie kamen**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Bisoziation | 21 | 30 % |
-| Primärquelle | 20 | 29 % |
-| Brainstorm | 16 | 23 % |
-| Ideenliste | 8 | 12 % |
-| Modell-Katalog | 4 | 6 % |
+| Bisoziation | 25 | 32 % |
+| Primärquelle | 24 | 31 % |
+| Brainstorm | 16 | 21 % |
+| Ideenliste | 8 | 10 % |
+| Modell-Katalog | 4 | 5 % |
 
 **Wer sie schon hatte**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Firma | 21 | 30 % |
-| Behörde | 11 | 16 % |
-| Forschung | 11 | 16 % |
-| Gemeinnützige | 10 | 14 % |
-| Community / Indie | 7 | 10 % |
-| Niemand | 7 | 10 % |
+| Firma | 22 | 29 % |
+| Gemeinnützige | 13 | 17 % |
+| Behörde | 12 | 16 % |
+| Forschung | 11 | 14 % |
+| Niemand | 10 | 13 % |
+| Community / Indie | 7 | 9 % |
 | Eigener Bestand | 2 | 3 % |
 
 **Wie weit sie kamen**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Kandidat | 66 | 96 % |
+| Kandidat | 74 | 96 % |
 | Dose gepackt | 2 | 3 % |
 | Mail entworfen | 1 | 1 % |
 
@@ -113,6 +113,14 @@ Die Ursachen genauer:
 
 | Idee | † | Ursache | Wer sie hatte | Gefunden durch | Herkunft | Kam bis |
 |---|---|---|---|---|---|---|
+| Hinweisgeber-Kanal-Check | 29.09.2026 | Falsche Prämisse | Niemand | Deutsche Suche | Primärquelle | Kandidat |
+| Hinweisgeberschutz-Radar (HinSchG-Radar) | 29.09.2026 | Falsche Prämisse | Niemand | Deutsche Suche | Primärquelle | Kandidat |
+| LUCID-Transparenz-Lotse | 29.09.2026 | Falsche Prämisse | Niemand | Deutsche Suche | Bisoziation | Kandidat |
+| Mehrweg-Mehrwege-Echolot | 29.09.2026 | Schon gebaut | Firma | Deutsche Suche | Bisoziation | Kandidat |
+| PPWR-Greenwashing-Schild | 29.09.2026 | Schon gebaut | Gemeinnützige | Deutsche Suche | Bisoziation | Kandidat |
+| VerpackG-Vollzugs-Lotse | 29.09.2026 | Schon gebaut | Behörde | Deutsche Suche | Primärquelle | Kandidat |
+| Verpackungs-Scout (PPWR-Radar) | 29.09.2026 | Schon gebaut | Gemeinnützige | Deutsche Suche | Primärquelle | Kandidat |
+| Verpackungs-Taxonomie-Baum | 29.09.2026 | Schon gebaut | Gemeinnützige | Deutsche Suche | Bisoziation | Kandidat |
 | Akku-Ankaufsuntersuchung (Batteriepass × Pferdekauf) | 28.09.2026 | Schon gebaut | Firma | Nicht dokumentiert | Bisoziation | Kandidat |
 | Akkutausch-Protokoll (BattVO Art. 11) | 28.09.2026 | Beim Empfänger selbst | Gemeinnützige | Englische Suche | Brainstorm | Kandidat |
 | Barrieren-Spontanmeldung (BFSG × Pharmakovigilanz) | 28.09.2026 | Beim Empfänger selbst | Behörde | Deutsche Suche | Bisoziation | Kandidat |

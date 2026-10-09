@@ -1,0 +1,12 @@
+## Kandidaten
+
+| Idee (Kurzname) | Ein-Satz-Beschreibung | Rahmen A×B, Distanz | Empfänger | Urteil | Beleg [Seite\|Schnipsel] + URL | Restlücke |
+|---|---|---|---|---|---|---|
+| Hinweisgeber-Triage-Stratigrafie | Eine Triage-Schnittstelle für HinSchG-Meldestellen, die eingehende Text-Meldungen wie Warven-Schichten in Dringlichkeit und Stichhaltigkeit sortiert, um Ressourcen in Kommunen zu schonen. | HinSchG × Stratigrafie (Geologie), Distanz: 4 | Whistleblower-Netzwerk e.V. | verengt | [Schnipsel] hinweisgebersystem24.de, bkms-system.com | Kommerzielle Hinweisgebersysteme bieten Fallmanagement, aber keine automatisierte, quelloffene Triage-Vorprüfung für chronisch unterbesetzte kommunale Meldestellen. |
+| Hinweisgeberschutz-Radar (HinSchG-Radar) | Aggregation und Kartierung der Erreichbarkeit interner Meldestellen nach HinSchG, ähnlich einer seismologischen Stationskarte, um „blinde Flecken" im Whistleblower-Schutz aufzudecken. | HinSchG × Seismologie (FDSN), Distanz: 3 | Whistleblower-Netzwerk e.V. | frei | [Schnipsel] whistleblower-net.de | Ein offenes Verzeichnis existiert nicht; die Pflicht zur Einrichtung besteht, aber ohne zentrale Registrierung. |
+| Verpackungs-Taxonomie-Baum | Ein phylogenetischer Baum für Verpackungsabfälle, der Bürger anleitet, wie PPWR-konforme Materialien getrennt und gemeldet werden müssen. | PPWR × Phylogenetik (Biologie), Distanz: 4 | NABU / BUND | unklar | [Schnipsel] nabu.de, bmuv.de | Trennhilfen (App, Müll-ABC) existieren überall. Ob die PPWR-Spezifika (z.B. Rezyklatanteil, Kompostierbarkeit) ein solches Tool rechtfertigen, muss geprüft werden. |
+| Mehrweg-Mehrwege-Echolot | Analyse von Mehrweg-Rückgabequoten (VerpackG) durch Erfassung von "Echos" (Kunden-Feedback) an den Rückgabestationen, um Reibungspunkte zu identifizieren. | VerpackG × Akustik (Sonar), Distanz: 3 | Zero-Waste-Agentur | besetzt | [Schnipsel] reusable-packaging.org, dbu.de | Markt ist voller kommerzieller Mehrweg-Systemanbieter (Vytal, Recup), die die Rücklaufquoten datengetrieben optimieren. |
+
+## Gelernt / Nächstes Mal
+- Gelernt: Der Seismologie-Collider hat den Doppelfund zum HinSchG-Radar produziert (als Verzeichnis/Karte).
+- Nächstes Mal: Den Triage-Aspekt (Stratigrafie) bei Hinweisgebern vertiefen, da das Sammeln allein oft kein Schmerz der Meldestelle ist, sondern die Abarbeitung.

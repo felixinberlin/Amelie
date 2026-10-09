@@ -9,7 +9,7 @@ describe('Amélie Self-Audit Engine', () => {
 
   it('2. returns correct Grave count (>0)', () => {
     const { health } = runAudit({ skipValidationScripts: true });
-    expect(health.inventory.graves).toBe(69);
+    expect(health.inventory.graves).toBe(77);
   });
 
   it('3. detects duplicate IDs if artificially injected', () => {

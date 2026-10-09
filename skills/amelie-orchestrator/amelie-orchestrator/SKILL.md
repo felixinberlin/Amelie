@@ -27,7 +27,7 @@ Wenn die Agenten-Definitionen in der laufenden Sitzung nicht als `subagent_type`
 ## Ablauf
 
 ```
-Phase 0  Vorflug (Orchestrator)  ─ Retro lesen, Thema wählen, Netz prüfen, Friedhofsgang, Baseline lint/test
+Phase 0  Vorflug (Orchestrator)  ─ Retro lesen, Thema wählen, Netz prüfen, Vorfilter 0-4 anwenden, Friedhofsgang, Baseline lint/test
 Phase 1  Entdeckung (parallel)   ─ ideen-scout ‖ bisoziations-kollider ‖ inversions-agent
 Phase 2  Konvergenz-Merge        ─ Orchestrator: deduplizieren, Doppelfunde markieren, gegen Protokoll/Atlas halten
 Phase 3  Review                  ─ idea-reviewer auf alle frei/verengt-Kandidaten
@@ -42,8 +42,9 @@ Phase 6  Abschluss               ─ Orchestrator: npm run lint && npm test, Com
 2. **Thema wählen:** Vorgabe des Nutzers, sonst der älteste offene Retro-Punkt. Vorher gegen den Besetzungsatlas halten — ein `dicht`-Feld ist kein Rundenthema (Runde 14 Cannabis: 0 frei).
 3. **Netz prüfen** (Holz-Retro): `curl -s -o /dev/null -w '%{http_code}' <Behörden-URL>`. Bei `000` gilt: Engines markieren jede Evidenz als `[Schnipsel]`, WebFetch zusätzlich versuchen, und der Bericht sagt es ausdrücklich.
 4. **Förderlandschaft:** `06-suche/amelie-foerderlandschaft.md` nach Geldgebern und Preisen zum Thema durchsehen (geförderte Projekte = Besetzt-Signal, Ausschreibungstexte = Problemquelle, Preisträger/Programmbüros = Empfänger). Treffer gehen als Hinweis in alle Engine-Prompts; Abschnitt „Fristen" im Katalog auf abgelaufene Einträge prüfen.
-5. **Friedhofsgang:** `08-friedhof/README.md` — Todesursachen, die zum Thema passen, gehen als Warnliste in alle Engine-Prompts.
-6. **Baseline:** `npm run lint && npm test` grün, sonst erst reparieren oder melden.
+5. **Vorfilter 0-4 (für Compliance-/Register-Ideen):** Vor der Suche klären: 0 Läuft die Pflicht heute? 1 Ist die Pflicht bedingt? 2 Gibt es eine Liste Verpflichteter? 3 Sind die Daten öffentlich? 4 Existiert der Registerträger schon? Verwerfe Kandidaten, die hier scheitern.
+6. **Friedhofsgang:** `08-friedhof/README.md` — Todesursachen, die zum Thema passen, gehen als Warnliste in alle Engine-Prompts.
+7. **Baseline:** `npm run lint && npm test` grün, sonst erst reparieren oder melden.
 
 ### Phase 1 · Entdeckung
 

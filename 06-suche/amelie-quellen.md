@@ -363,3 +363,12 @@ Ergänzend auditiert im Zuge der PR-Triage und Ausgründung kommerzieller Zwilli
 | **Impact Angels & Green Angels** | Syndikate für Kreislaufwirtschaft, ESG-Compliance und CleanTech | `angekratzt` | 28.09.2026 |
 | **Earlybird Vision Lab / Visionaries Club / CDTM Angels** | Frühphasen-Investoren für Developer-Tools und B2B-SaaS | `angekratzt` | 28.09.2026 |
 
+
+## Typ O (Lauf C) — EU-Offenlegungsregime: Hinweisgeberschutz, Verpackung (Offenlegung-Runde Lauf C / HinSchG-Runde 29.09.2026)
+
+Alle Einträge **nur über Suchschnipsel** erschlossen.
+
+| Quelle | Befund | Status | Zuletzt |
+|---|---|---|---|
+| **HinSchG §§ 12, 13 (Interne Meldekanäle)** (bmfsfj.de, bundesjustizamt.de, whistleblower-net.de) | Interne Kanäle richten sich an Beschäftigte, keine Pflicht zur Veröffentlichung auf der Unternehmenswebsite. Externe Meldestelle beim BfJ existiert. | `erschöpft` (Gräber `hinschg-radar`, `hinschg-kanal-check`) | 29.09.2026 |
+| **VerpackG / PPWR (Verpackungsverordnung)** (duh.de, vzbv.de, nabu.de, bmuv.de) | Consumer-Beschwerden (Mogelpackungen, übermäßige Verpackung) massiv durch NGOs (DUH, Verbraucherzentralen) besetzt. Trennhilfen (BSR, NABU) existieren. Gastronomie-Vollzug (Mehrwegangebotspflicht) durch kommerzielle Anbieter (Vytal, Recup) und Behörden-Checklisten (ZSVR) abgedeckt. | `erschöpft` (Gräber `verpackungs-scout`, `verpackg-vollzugs-lotse`, `verpackungs-taxonomie-baum`, `mehrweg-echolot`, `ppwr-greenwashing-schild`) | 29.09.2026 |
