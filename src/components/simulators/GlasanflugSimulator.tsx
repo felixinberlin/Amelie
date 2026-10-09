@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useId, useMemo, useState } from 'react';
 import { ShieldAlert, ExternalLink, HelpCircle, AlertTriangle } from 'lucide-react';
 import { Language } from '../../types';
 import {
@@ -178,11 +178,31 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
   };
   const glasVoll = eingabe.glasanteil.punkte === 4;
 
+  const sectionId = useId();
+  const completedCriteria = KRITERIEN.length - ergebnis.unbestimmt.length;
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+    <div className="glasanflug-mobile grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+      <style>{`
+        .glasanflug-mobile { min-width: 0; }
+        .glasanflug-mobile button, .glasanflug-mobile input, .glasanflug-mobile select, .glasanflug-mobile summary { min-height: 44px; }
+        .glasanflug-mobile input, .glasanflug-mobile select { min-width: 0; max-width: 100%; font-size: 16px; }
+        .glasanflug-mobile button:focus-visible, .glasanflug-mobile summary:focus-visible { outline: 2px solid #0369a1; outline-offset: 3px; }
+        .glasanflug-mobile summary { cursor: pointer; padding: 10px 0; font-size: 14px; font-weight: 600; }
+        .glasanflug-mobile [id] { scroll-margin-top: 90px; }
+        @media (max-width: 639px) {
+          .glasanflug-mobile .text-xs, .glasanflug-mobile .text-\\[11px\\], .glasanflug-mobile .text-\\[10px\\] { font-size: 13px; line-height: 1.5; }
+          .glasanflug-mobile label { min-width: 0; }
+        }
+      `}</style>
+      <nav aria-label={de ? 'Bewertungsschritte' : 'Assessment steps'} className="lg:col-span-12 flex flex-wrap items-center gap-2 rounded-xl bg-sky-50 border border-sky-200 p-3 text-sm">
+        <span className="w-full font-semibold text-sky-950" aria-live="polite">{de ? `${completedCriteria} von 4 Kriterien ausgefüllt` : `${completedCriteria} of 4 criteria completed`}</span>
+        <a href={`#${sectionId}-criteria`} className="min-h-11 inline-flex items-center rounded-lg bg-white px-3 border border-sky-200">{de ? '1 · Beobachtungen' : '1 · Observations'}</a>
+        <a href={`#${sectionId}-result`} className="min-h-11 inline-flex items-center rounded-lg bg-white px-3 border border-sky-200">{de ? '2 · Ergebnis' : '2 · Result'}</a>
+        <a href={`#${sectionId}-geodata`} className="min-h-11 inline-flex items-center rounded-lg bg-white px-3 border border-sky-200">{de ? 'Geodaten suchen' : 'Find geodata'}</a>
+      </nav>
       {/* ---------------- Eingabe ---------------- */}
-      <div className="lg:col-span-6 bg-white rounded-2xl border border-stone-200 p-6 shadow-xs space-y-5">
-        <div className="flex items-start justify-between pb-3 border-b border-stone-100 gap-3">
+      <div id={`${sectionId}-criteria`} className="lg:col-span-6 min-w-0 bg-white rounded-2xl border border-stone-200 p-4 sm:p-6 shadow-xs space-y-5">
+        <div className="flex flex-wrap items-start justify-between pb-3 border-b border-stone-100 gap-3">
           <h3 className="font-serif-title font-bold text-stone-900 text-lg flex items-center gap-2">
             <ShieldAlert className="w-5 h-5 text-amber-700 shrink-0" />
             <span>{de ? 'Vogelschlagrisiko an Glas' : 'Bird collision risk at glass'}</span>
@@ -212,10 +232,8 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
         </div>
 
         {/* Beispiele aus dem Anhang */}
-        <div>
-          <label className="block text-[10px] font-bold uppercase tracking-wider font-mono-code text-stone-500 mb-1.5">
-            {de ? 'Beispiele aus dem Anhang des Beschlusses' : 'Worked examples from the decision’s annex'}
-          </label>
+        <details className="rounded-xl border border-stone-200 p-3">
+          <summary>{de ? 'Mit einem veröffentlichten Beispiel ausprobieren' : 'Try a published worked example'}</summary>
           <div className="flex flex-wrap gap-1.5">
             {ANHANG_BEISPIELE.map((b) => (
               <button
@@ -235,23 +253,23 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
               </button>
             ))}
           </div>
-        </div>
+        </details>
 
         {/* Die vier Kriterien */}
         {KRITERIEN.map((k) => {
           const wert = eingabe[k.id];
           return (
             <div key={k.id} className="pt-1">
-              <div className="flex items-baseline justify-between gap-2 mb-1.5">
+              <div className="flex flex-wrap items-baseline justify-between gap-2 mb-2">
                 <label className="block text-xs font-bold uppercase tracking-wider font-mono-code text-stone-600">
                   {de ? k.nameDe : k.nameEn}
                 </label>
-                <span className="text-[10px] text-stone-400 font-mono-code shrink-0">
+                <span className="w-full text-[10px] text-stone-500 leading-relaxed">
                   {de ? k.quelleDe : k.quelleEn}
                 </span>
               </div>
 
-              <div className="grid grid-cols-4 gap-1.5">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                 {k.stufen.map((s) => {
                   const aktiv = wert.punkte === s.punkte;
                   return (
@@ -259,6 +277,7 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
                       key={s.punkte}
                       onClick={() => setPunkte(k.id, s.punkte)}
                       title={de ? s.de : s.en}
+                      aria-pressed={aktiv}
                       className={`p-2 rounded-xl border text-left transition-all text-[11px] leading-snug ${
                         aktiv
                           ? 'border-amber-800 bg-amber-50/80 font-bold text-stone-900'
@@ -266,7 +285,7 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
                       }`}
                     >
                       <span className="font-mono-code text-[10px] block opacity-60">{s.punkte}</span>
-                      {(de ? s.de : s.en).split('—')[0].trim()}
+                      {de ? s.de : s.en}
                     </button>
                   );
                 })}
@@ -277,7 +296,8 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
                   <button
                     key={h}
                     onClick={() => setHerkunft(k.id, h)}
-                    className={`text-[10px] px-1.5 py-0.5 rounded font-mono-code border transition-all ${
+                    aria-pressed={wert.herkunft === h}
+                    className={`text-xs px-2 py-2 rounded-lg font-mono-code border transition-all ${
                       wert.herkunft === h
                         ? h === 'unbestimmt'
                           ? 'border-stone-400 bg-stone-200 text-stone-800'
@@ -317,15 +337,9 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
       </div>
 
       {/* ---------------- Das Blatt ---------------- */}
-      <div className="lg:col-span-6 space-y-4">
-        {/* Optischer Fassaden- & Flugbahn-Simulator */}
-        <GlasanflugVisualizer
-          lang={lang}
-          eingabe={eingabe}
-        />
-
-        <div className="bg-stone-900 text-white rounded-2xl p-6 shadow-md border border-stone-800">
-          <div className="flex items-center justify-between mb-4">
+      <div className="lg:col-span-6 min-w-0 space-y-4">
+        <div id={`${sectionId}-result`} className="bg-stone-900 text-white rounded-2xl p-4 sm:p-6 shadow-md border border-stone-800">
+          <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
             <span className="text-xs font-mono-code uppercase tracking-wider text-stone-400">
               {de ? 'Das Blatt' : 'The sheet'}
             </span>
@@ -419,7 +433,7 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
             </div>
           ))}
 
-          <div className="pt-4 border-t border-stone-800 text-xs flex items-center justify-between text-stone-400 gap-3">
+          <div className="pt-4 border-t border-stone-800 text-xs flex flex-wrap items-center justify-between text-stone-400 gap-3">
             {onOpenDose ? (
               <button
                 onClick={() => onOpenDose('glasanflug-ampel')}
@@ -437,7 +451,11 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
           </div>
         </div>
 
-        <section className="bg-white rounded-2xl border border-stone-200 p-4 space-y-3" aria-label={de ? 'Echte Geodaten' : 'Real geodata'}>
+        <details className="rounded-2xl border border-stone-200 bg-white p-4">
+          <summary>{de ? 'Schematische Fassade ansehen' : 'View schematic façade'}</summary>
+          <GlasanflugVisualizer lang={lang} eingabe={eingabe} />
+        </details>
+        <section id={`${sectionId}-geodata`} className="bg-white rounded-2xl border border-stone-200 p-4 space-y-3" aria-label={de ? 'Echte Geodaten' : 'Real geodata'}>
           <h4 className="font-semibold text-stone-900">{de ? 'Gehölzbeobachtungen (Live-Abfrage)' : 'Vegetation observations (live query)'}</h4>
           <p className="text-xs text-stone-600 leading-relaxed">{de
             ? 'Punktbasierte Abfrage im 100-m-Radius. Entfernungen gelten nur zum eingegebenen Koordinatenpunkt — nicht zur unmarkierten Scheibe. Keine automatische LAG-VSW-Punktevergabe. OSM ist unvollständig.'
@@ -478,10 +496,10 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
           <p className="text-xs text-stone-600">{de ? 'Berlin: Straßenbäume und ein Teil der Anlagenbäume; keine vollständige Erfassung privater Bäume, Hecken oder Sträucher. Koordinaten werden an den gewählten Dienst gesendet.' : 'Berlin: street trees and some park trees; private trees, hedges and shrubs are not fully covered. Coordinates are sent to the selected service.'}</p>
           <div className="grid grid-cols-2 gap-2">
             <label className="text-xs text-stone-700">{de ? 'Breitengrad' : 'Latitude'}
-              <input type="number" step="any" disabled={surveyLoading} value={latitude} onChange={e => {setLatitude(e.target.value);setSurvey(null);}} placeholder="52.52" className="block mt-1 w-full rounded-lg border border-stone-300 px-2 py-2" />
+              <input type="number" inputMode="decimal" step="any" disabled={surveyLoading} value={latitude} onChange={e => {setLatitude(e.target.value);setSurvey(null);}} placeholder="52.52" className="block mt-1 w-full rounded-lg border border-stone-300 px-2 py-2" />
             </label>
             <label className="text-xs text-stone-700">{de ? 'Längengrad' : 'Longitude'}
-              <input type="number" step="any" disabled={surveyLoading} value={longitude} onChange={e => {setLongitude(e.target.value);setSurvey(null);}} placeholder="13.405" className="block mt-1 w-full rounded-lg border border-stone-300 px-2 py-2" />
+              <input type="number" inputMode="decimal" step="any" disabled={surveyLoading} value={longitude} onChange={e => {setLongitude(e.target.value);setSurvey(null);}} placeholder="13.405" className="block mt-1 w-full rounded-lg border border-stone-300 px-2 py-2" />
             </label>
           </div>
           <button type="button" onClick={queryVegetation} disabled={surveyLoading} className="rounded-lg bg-stone-900 text-white px-3 py-2 text-xs font-semibold disabled:opacity-50">
