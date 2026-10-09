@@ -57,13 +57,13 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
   const de = lang === 'de';
   const [eingabe, setEingabe] = useState<Eingabe>(START);
   const [fussnote2, setFussnote2] = useState('');
-  const [kollisionen, setKollisionen] = useState('6');
-  const [fassadenlaenge, setFassadenlaenge] = useState('120');
+  const [kollisionen, setKollisionen] = useState('');
+  const [fassadenlaenge, setFassadenlaenge] = useState('');
 
   const [testart, setTestart] = useState<Testart>('spiegelung');
-  const [musterNr, setMusterNr] = useState<string>('6S');
+  const [musterNr, setMusterNr] = useState<string>('');
   const [ebene, setEbene] = useState<1 | 2>(2);
-  const [ar, setAr] = useState('8');
+  const [ar, setAr] = useState('');
 
   const markierung = useMemo(
     () =>
@@ -77,7 +77,7 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
   );
   const ergebnis = useMemo(() => bewerte(eingabe, fussnote2), [eingabe, fussnote2]);
   const monitoring = useMemo(
-    () => signifikanzschwelle(Number(kollisionen), Number(fassadenlaenge)),
+    () => kollisionen.trim() && fassadenlaenge.trim() ? signifikanzschwelle(Number(kollisionen), Number(fassadenlaenge)) : null,
     [kollisionen, fassadenlaenge]
   );
 
@@ -280,8 +280,6 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
         <GlasanflugVisualizer
           lang={lang}
           eingabe={eingabe}
-          stufe={ergebnis.stufe}
-          summe={ergebnis.summe}
         />
 
         <div className="bg-stone-900 text-white rounded-2xl p-6 shadow-md border border-stone-800">
