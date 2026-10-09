@@ -1,3 +1,5 @@
+import { FugenduellPlantView } from './FugenduellPlantView';
+import { FugenduellCommunity } from './FugenduellCommunity';
 import React, { useState } from 'react';
 import {
   Swords,
@@ -32,7 +34,7 @@ interface FugenduellArenaProps {
 
 type RoundLog = RoundResolutionResult;
 
-export const FugenduellArena: React.FC<FugenduellArenaProps> = ({
+const FugenduellSingleArena: React.FC<FugenduellArenaProps> = ({
   lang,
   onOpenDose,
   isEmbedded = false
@@ -522,8 +524,8 @@ export const FugenduellArena: React.FC<FugenduellArenaProps> = ({
           <div className="p-4 rounded-xl bg-amber-50/70 border border-amber-200 text-xs text-stone-700 leading-relaxed">
             <span className="font-bold text-amber-900">🌱 {isDe ? '14 Asphalthelden & CSR-Balancing:' : isEs ? '14 héroes del asfalto y equilibrio CSR:' : '14 Asphalt Heroes & CSR Balancing:'}</span>{' '}
             {isDe
-              ? 'Jede Art verfügt über ein striktes Budget von maximal 36 Punkten über 6 ökologische Dimensionen (Wurzel, Tritt, Dürre, Saat, Tempo, Chemie), basierend auf empirischen Datenbanken wie UNDERPLOT, LEDA und SID Kew.'
-              : isEs ? 'Cada especie se ajusta a un presupuesto estricto de 36 puntos repartido en 6 rasgos ecológicos (raíz, pisoteo, sequía, semilla, velocidad, química), calibrado con bases de datos revisadas por pares como UNDERPLOT, LEDA y SID Kew.' : 'Every species conforms to a strict 36-point budget across 6 ecological traits (Root, Trample, Drought, Seed, Speed, Chemistry), calibrated using peer-reviewed databases like UNDERPLOT, LEDA, and SID Kew.'}
+              ? 'Jede Art verfügt über ein striktes Budget von maximal 36 Punkten über 6 ökologische Dimensionen (Wurzel, Tritt, Dürre, Saat, Tempo, Chemie), als manuell kuratierte Spielwerte. Die Forschungsquellen und separat verifizierten botanischen Merkmale findest du unter „Pflanze ansehen“.'
+              : isEs ? 'Cada especie se ajusta a un presupuesto estricto de 36 puntos repartido en 6 rasgos ecológicos (raíz, pisoteo, sequía, semilla, velocidad, química), como valores de juego seleccionados manualmente. Consulta los rasgos botánicos verificados por separado en «View plant».' : 'Every species conforms to a strict 36-point budget across 6 ecological traits (Root, Trample, Drought, Seed, Speed, Chemistry), as manually curated game scores. See separately verified botanical traits and their sources in “View plant”.'}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -656,4 +658,14 @@ export const FugenduellArena: React.FC<FugenduellArenaProps> = ({
       )}
     </div>
   );
+};
+
+export const FugenduellArena: React.FC<FugenduellArenaProps> = (props) => {
+  const [mode, setMode] = useState<'community' | 'single' | 'plant'>('community');
+  const de = props.lang === 'de';
+  return <div className="space-y-4"><div className="flex flex-wrap gap-2" aria-label={de ? 'Spielmodus' : 'Game mode'}>
+    <button className="min-h-11 rounded-lg border px-4" aria-pressed={mode === 'community'} onClick={() => setMode('community')}>{de ? 'Gemeinschaft · 3 Pflanzen + Aktionsdeck' : 'Community · 3 plants + action deck'}</button>
+    <button className="min-h-11 rounded-lg border px-4" aria-pressed={mode === 'single'} onClick={() => setMode('single')}>{de ? 'Einzelduell · bestehende Fähigkeiten' : 'Single duel · existing abilities'}</button>
+  <button className="min-h-11 rounded-lg border px-4" aria-pressed={mode === 'plant'} onClick={() => setMode('plant')}>{de ? 'Pflanze ansehen · echte Botanik' : 'View plant · real botany'}</button>
+  </div><div hidden={mode !== 'plant'}><FugenduellPlantView lang={props.lang} /></div><div hidden={mode !== 'community'}><FugenduellCommunity lang={props.lang} /></div><div hidden={mode !== 'single'}><FugenduellSingleArena {...props} /></div></div>;
 };

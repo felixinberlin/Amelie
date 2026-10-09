@@ -1,0 +1,243 @@
+{
+  "plantago-major": {
+    "taxon": "Plantago major",
+    "source": "https://pladias.cz/en/taxon/data/Plantago%20major",
+    "checkedAt": "2026-10-09",
+    "scope": "Czech flora; trait-specific citations and definitions on source page. Indicator values are ordinal ecological preferences, not pH or a measured site state.",
+    "values": {
+      "Height [m]": "0.1–0.4",
+      "Growth form": "clonal herb",
+      "Life form": "hemicryptophyte",
+      "Life strategy (Pierce method based on leaf traits)": "C/CR",
+      "Life strategy (Pierce method, C-score)": "82.3 %",
+      "Life strategy (Pierce method, S-score)": "0 %",
+      "Life strategy (Pierce method, R-score)": "17.7 %",
+      "Flowering period [month]": "June–October",
+      "Light indicator value": "7",
+      "Temperature indicator value": "5x",
+      "Moisture indicator value": "5",
+      "Reaction indicator value": "6x",
+      "Nutrient indicator value": "6",
+      "Salinity indicator value": "1"
+    }
+  },
+  "poa-annua": {
+    "taxon": "Poa annua",
+    "source": "https://pladias.cz/en/taxon/data/Poa%20annua",
+    "checkedAt": "2026-10-09",
+    "scope": "Czech flora; trait-specific citations and definitions on source page. Indicator values are ordinal ecological preferences, not pH or a measured site state.",
+    "values": {
+      "Height [m]": "0.05–0.25",
+      "Growth form": "annual herb",
+      "Life form": "hemicryptophyte (therophyte)",
+      "Life strategy (Pierce method based on leaf traits)": "SR",
+      "Life strategy (Pierce method, C-score)": "6.8 %",
+      "Life strategy (Pierce method, S-score)": "35 %",
+      "Life strategy (Pierce method, R-score)": "58.2 %",
+      "Flowering period [month]": "January–December",
+      "Light indicator value": "7",
+      "Temperature indicator value": "5x",
+      "Moisture indicator value": "6",
+      "Reaction indicator value": "6x",
+      "Nutrient indicator value": "8",
+      "Salinity indicator value": "1"
+    }
+  },
+  "cardamine-hirsuta": {
+    "taxon": "Cardamine hirsuta",
+    "source": "https://pladias.cz/en/taxon/data/Cardamine%20hirsuta",
+    "checkedAt": "2026-10-09",
+    "scope": "Czech flora; trait-specific citations and definitions on source page. Indicator values are ordinal ecological preferences, not pH or a measured site state.",
+    "values": {
+      "Height [m]": "0.1–0.25",
+      "Growth form": "annual herb",
+      "Life form": "therophyte",
+      "Life strategy (Pierce method based on leaf traits)": "R/CR",
+      "Life strategy (Pierce method, C-score)": "22.5 %",
+      "Life strategy (Pierce method, S-score)": "0 %",
+      "Life strategy (Pierce method, R-score)": "77.5 %",
+      "Flowering period [month]": "April–June",
+      "Light indicator value": "6",
+      "Temperature indicator value": "6",
+      "Moisture indicator value": "5",
+      "Reaction indicator value": "5",
+      "Nutrient indicator value": "6",
+      "Salinity indicator value": "0"
+    }
+  },
+  "cymbalaria-muralis": {
+    "taxon": "Cymbalaria muralis",
+    "source": "https://pladias.cz/en/taxon/data/Cymbalaria%20muralis",
+    "checkedAt": "2026-10-09",
+    "scope": "Czech flora; trait-specific citations and definitions on source page. Indicator values are ordinal ecological preferences, not pH or a measured site state.",
+    "values": {
+      "Height [m]": "0.1–0.4",
+      "Growth form": "polycarpic perennial non-clonal herb",
+      "Life form": "hemicryptophyte",
+      "Life strategy (Pierce method based on leaf traits)": "R/CR",
+      "Life strategy (Pierce method, C-score)": "37.3 %",
+      "Life strategy (Pierce method, S-score)": "0 %",
+      "Life strategy (Pierce method, R-score)": "62.7 %",
+      "Flowering period [month]": "May–September",
+      "Light indicator value": "6",
+      "Temperature indicator value": "7",
+      "Moisture indicator value": "4",
+      "Reaction indicator value": "8",
+      "Nutrient indicator value": "5",
+      "Salinity indicator value": "0"
+    }
+  },
+  "asplenium-ruta-muraria": {
+    "taxon": "Asplenium ruta-muraria",
+    "source": "https://pladias.cz/en/taxon/data/Asplenium%20ruta-muraria",
+    "checkedAt": "2026-10-09",
+    "scope": "Czech flora; trait-specific citations and definitions on source page. Indicator values are ordinal ecological preferences, not pH or a measured site state.",
+    "values": {
+      "Height [m]": "0.05–0.2",
+      "Growth form": "clonal herb",
+      "Life form": "hemicryptophyte",
+      "Life strategy (Pierce method based on leaf traits)": "S/CSR",
+      "Life strategy (Pierce method, C-score)": "12.6 %",
+      "Life strategy (Pierce method, S-score)": "54.6 %",
+      "Life strategy (Pierce method, R-score)": "32.8 %",
+      "Flowering period [month]": "July–September",
+      "Light indicator value": "8",
+      "Temperature indicator value": "5",
+      "Moisture indicator value": "3",
+      "Reaction indicator value": "8",
+      "Nutrient indicator value": "3",
+      "Salinity indicator value": "0"
+    }
+  },
+  "portulaca-oleracea": {
+    "taxon": "Portulaca oleracea",
+    "source": "https://pladias.cz/en/taxon/data/Portulaca%20oleracea",
+    "checkedAt": "2026-10-09",
+    "scope": "Czech flora; trait-specific citations and definitions on source page. Indicator values are ordinal ecological preferences, not pH or a measured site state.",
+    "values": {
+      "Height [m]": "0.05–0.3",
+      "Growth form": "annual herb",
+      "Life form": "therophyte",
+      "Life strategy (Pierce method based on leaf traits)": "R",
+      "Life strategy (Pierce method, C-score)": "0.3 %",
+      "Life strategy (Pierce method, S-score)": "0 %",
+      "Life strategy (Pierce method, R-score)": "99.7 %",
+      "Flowering period [month]": "June–October",
+      "Light indicator value": "8",
+      "Temperature indicator value": "8",
+      "Moisture indicator value": "4",
+      "Reaction indicator value": "7",
+      "Nutrient indicator value": "7",
+      "Salinity indicator value": "2"
+    }
+  },
+  "erigeron-canadensis": {
+    "taxon": "Erigeron canadensis",
+    "source": "https://pladias.cz/en/taxon/data/Erigeron%20canadensis",
+    "error": "Taxon heading mismatch",
+    "values": {}
+  },
+  "chelidonium-majus": {
+    "taxon": "Chelidonium majus",
+    "source": "https://pladias.cz/en/taxon/data/Chelidonium%20majus",
+    "checkedAt": "2026-10-09",
+    "scope": "Czech flora; trait-specific citations and definitions on source page. Indicator values are ordinal ecological preferences, not pH or a measured site state.",
+    "values": {
+      "Height [m]": "0.3–0.9",
+      "Growth form": "polycarpic perennial non-clonal herb",
+      "Life form": "hemicryptophyte",
+      "Life strategy (Pierce method based on leaf traits)": "CR",
+      "Life strategy (Pierce method, C-score)": "54.7 %",
+      "Life strategy (Pierce method, S-score)": "6.6 %",
+      "Life strategy (Pierce method, R-score)": "38.8 %",
+      "Flowering period [month]": "May–September",
+      "Light indicator value": "6",
+      "Temperature indicator value": "6",
+      "Moisture indicator value": "5",
+      "Reaction indicator value": "7x",
+      "Nutrient indicator value": "8",
+      "Salinity indicator value": "0"
+    }
+  },
+  "sagina-procumbens": {
+    "taxon": "Sagina procumbens",
+    "source": "https://pladias.cz/en/taxon/data/Sagina%20procumbens",
+    "checkedAt": "2026-10-09",
+    "scope": "Czech flora; trait-specific citations and definitions on source page. Indicator values are ordinal ecological preferences, not pH or a measured site state.",
+    "values": {
+      "Height [m]": "0.02–0.05",
+      "Growth form": "polycarpic perennial non-clonal herb",
+      "Life form": "hemicryptophyte",
+      "Life strategy (Pierce method based on leaf traits)": "SR",
+      "Life strategy (Pierce method, C-score)": "0 %",
+      "Life strategy (Pierce method, S-score)": "45.4 %",
+      "Life strategy (Pierce method, R-score)": "54.6 %",
+      "Flowering period [month]": "May–October",
+      "Light indicator value": "7",
+      "Temperature indicator value": "5x",
+      "Moisture indicator value": "6",
+      "Reaction indicator value": "5",
+      "Nutrient indicator value": "6",
+      "Salinity indicator value": "1"
+    }
+  },
+  "cochlearia-danica": {
+    "taxon": "Cochlearia danica",
+    "source": "https://pladias.cz/en/taxon/data/Cochlearia%20danica",
+    "checkedAt": "2026-10-09",
+    "scope": "Czech flora; trait-specific citations and definitions on source page. Indicator values are ordinal ecological preferences, not pH or a measured site state.",
+    "values": {
+      "Height [m]": "0.1–0.2",
+      "Life form": "therophyte (hemicryptophyte)",
+      "Life strategy (Pierce method based on leaf traits)": "R",
+      "Life strategy (Pierce method, C-score)": "9.6 %",
+      "Life strategy (Pierce method, S-score)": "0 %",
+      "Life strategy (Pierce method, R-score)": "90.4 %",
+      "Flowering period [month]": "May–June"
+    }
+  },
+  "buddleja-davidii": {
+    "taxon": "Buddleja davidii",
+    "source": "https://pladias.cz/en/taxon/data/Buddleja%20davidii",
+    "checkedAt": "2026-10-09",
+    "scope": "Czech flora; trait-specific citations and definitions on source page. Indicator values are ordinal ecological preferences, not pH or a measured site state.",
+    "values": {
+      "Height [m]": "2–5",
+      "Growth form": "shrub",
+      "Life form": "nanophanerophyte",
+      "Life strategy (Pierce method based on leaf traits)": "CS",
+      "Life strategy (Pierce method, C-score)": "48.3 %",
+      "Life strategy (Pierce method, S-score)": "44.6 %",
+      "Life strategy (Pierce method, R-score)": "7.2 %",
+      "Flowering period [month]": "July–August",
+      "Light indicator value": "8",
+      "Temperature indicator value": "7",
+      "Moisture indicator value": "4",
+      "Reaction indicator value": "7",
+      "Nutrient indicator value": "4",
+      "Salinity indicator value": "0"
+    }
+  },
+  "ailanthus-altissima": {
+    "taxon": "Ailanthus altissima",
+    "source": "https://pladias.cz/en/taxon/data/Ailanthus%20altissima",
+    "checkedAt": "2026-10-09",
+    "scope": "Czech flora; trait-specific citations and definitions on source page. Indicator values are ordinal ecological preferences, not pH or a measured site state.",
+    "values": {
+      "Height [m]": "20–25",
+      "Growth form": "tree",
+      "Life form": "macrophanerophyte",
+      "Life strategy (Pierce method based on leaf traits)": "C/CS",
+      "Life strategy (Pierce method, C-score)": "74.9 %",
+      "Life strategy (Pierce method, S-score)": "21.3 %",
+      "Life strategy (Pierce method, R-score)": "3.8 %",
+      "Flowering period [month]": "June",
+      "Light indicator value": "7",
+      "Temperature indicator value": "8",
+      "Moisture indicator value": "5",
+      "Reaction indicator value": "7",
+      "Nutrient indicator value": "7",
+      "Salinity indicator value": "1"
+    }
+  }
+}
