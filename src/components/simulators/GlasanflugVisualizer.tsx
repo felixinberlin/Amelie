@@ -32,11 +32,9 @@ export const GlasanflugVisualizer: React.FC<GlasanflugVisualizerProps> = ({
 
       // 1. Background sky
       const skyGradient = ctx.createLinearGradient(0, 0, 0, h);
-      {
-        skyGradient.addColorStop(0, '#93c5fd');
-        skyGradient.addColorStop(0.6, '#bfdbfe');
-        skyGradient.addColorStop(1, '#e2e8f0');
-      }
+      skyGradient.addColorStop(0, '#93c5fd');
+      skyGradient.addColorStop(0.6, '#bfdbfe');
+      skyGradient.addColorStop(1, '#e2e8f0');
       ctx.fillStyle = skyGradient;
       ctx.fillRect(0, 0, w, h);
 
@@ -169,7 +167,7 @@ export const GlasanflugVisualizer: React.FC<GlasanflugVisualizerProps> = ({
           </div>
           <div>
             <h4 className="font-serif-title font-bold text-stone-100 text-sm">
-              {de ? 'Optischer Fassaden- & Flugbahn-Simulator' : 'Visual Façade & Flight Trajectory Simulator'}
+              {de ? 'Schematische Fassadenansicht' : 'Schematic Façade View'}
             </h4>
             <p className="text-[11px] text-stone-400">
               {de ? 'Schematische Illustration, keine Fotomessung oder Flugprognose' : 'Schematic illustration; not a photograph measurement or flight prediction'}
