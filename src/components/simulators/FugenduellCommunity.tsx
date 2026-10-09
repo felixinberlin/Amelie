@@ -5,6 +5,7 @@ import { ACTIONS, CommunityGame, Habitat, cover, emptyGround, playCommunity, sta
 
 export function FugenduellCommunity({ lang }: { lang: Language }) {
   const de = lang === 'de';
+  const rulesPending = FUGENDUELL_STARTER_ROSTER.some(p=>p.totalBudget === null);
   const [ids, setIds] = useState(['taraxacum-officinale', 'plantago-major', 'bryum-argenteum']);
   const [habitat, setHabitat] = useState<Habitat>('pavement');
   const [seed, setSeed] = useState('1');
@@ -17,8 +18,9 @@ export function FugenduellCommunity({ lang }: { lang: Language }) {
     <header className="rounded-2xl bg-stone-900 text-white p-4 sm:p-6">
       <h2 className="text-2xl font-bold">{de ? 'Eine Fuge. Drei Pflanzen. Dein Deck.' : 'One crack. Three plants. Your deck.'}</h2>
       <p className="mt-2 text-sm">{de ? 'Spiele eine Aktion pro Saison, unterstütze eine Pflanze und halte die anderen am Leben. Unbenutzte Karten bleiben auf der Hand.' : 'Play one action each season, support one plant and keep the others alive. Unplayed cards stay in your hand.'}</p>
-      <p className="mt-2 text-sm text-amber-200">{de ? 'Spielprototyp: Merkmalswerte, Reserven und Deckungsänderungen sind Spielregeln, keine ökologische Vorhersage. Die Fähigkeiten des Einzelduells gelten hier nicht. Ausbreitung steht je nach Art für Samen, Sporen oder vegetatives Wachstum.' : 'Game prototype: trait scores, reserves and coverage changes are game rules, not ecological predictions. Single-duel abilities do not apply here. Dispersal stands for seeds, spores or vegetative spread.'}</p>
+      <p className="mt-2 text-sm text-amber-200">{de ? 'Spielprototyp: Botanische Daten werden zuerst geprüft; Reserven und Deckungsänderungen brauchen danach neue Spielregeln. Die Fähigkeiten des Einzelduells gelten hier nicht. Ausbreitung steht je nach Art für Samen, Sporen oder vegetatives Wachstum.' : 'Game prototype: botanical data are verified first; reserves and coverage changes need new game rules afterwards. Single-duel abilities do not apply here. Dispersal stands for seeds, spores or vegetative spread.'}</p>
     </header>
+    {rulesPending && <p role="status" className="rounded-xl border border-amber-300 bg-amber-50 p-4">{de?'Gemeinschaft zusammenstellen geht weiterhin. Saisonduelle warten auf eine nachvollziehbare Umrechnung der botanischen Daten in Spielregeln. Fehlende Werte sind nicht null Punkte.':'You can still assemble a community. Seasonal battles await a documented conversion of botanical data into game rules. Missing values are not zero points.'}</p>}
     {!game && <div className="rounded-xl border bg-white p-4 space-y-3">
       <h3 className="font-bold">{de ? 'Deine Gemeinschaft zusammenstellen' : 'Build your community'}</h3>
       {ids.map((id, index) => <label key={index} className="block text-sm">{de ? 'Pflanze' : 'Plant'} {index + 1}
@@ -29,7 +31,7 @@ export function FugenduellCommunity({ lang }: { lang: Language }) {
         <option value="pavement">{de ? 'Gehweg · neutraler Spielkontext' : 'Pavement · neutral context'}</option><option value="wall">{de ? 'Mörtelwand · +2 für ausgewählte Mauerarten' : 'Mortar wall · +2 for selected wall species'}</option><option value="roadside">{de ? 'Streusalzrand · im Winter −1 für alle' : 'Salted roadside · −1 for all in winter'}</option>
       </select></label>
       <label className="block text-sm">{de ? 'Startzahl · gleiche Zahl = gleiche Kartenfolge' : 'Seed · same number = same card sequence'}<input type="number" min="0" max="4294967295" step="1" className="mt-1 w-full min-h-11 rounded-lg border p-2 text-base" value={seed} onChange={e => setSeed(e.target.value)} /></label>
-      <button onClick={start} className="min-h-11 rounded-lg bg-emerald-800 px-4 text-white font-bold">{de ? 'Saison beginnen' : 'Start season'}</button>
+      <button disabled={rulesPending} onClick={start} className="min-h-11 rounded-lg bg-emerald-800 px-4 text-white font-bold">{de ? 'Saison beginnen' : 'Start season'}</button>
       {error && <p role="alert" className="text-rose-800">{error}</p>}
     </div>}
     {game && <>

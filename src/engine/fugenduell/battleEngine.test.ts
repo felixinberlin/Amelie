@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import {
   calculateTacticBonus,
   calculateSkillModifiers,
@@ -12,32 +12,13 @@ import { FUGENDUELL_STARTER_ROSTER, SEASONAL_BATTLE_EVENTS, FUGENDUELL_ARENAS } 
 
 describe('Fugenduell Battle Engine', () => {
   describe('validateStarterRoster', () => {
-    it('validates that all starter plants comply with the 36-point budget rule', () => {
-      const result = validateStarterRoster(FUGENDUELL_STARTER_ROSTER);
-      expect(result.errors).toEqual([]);
-      expect(result.valid).toBe(true);
+    it('accepts scientific data with explicit gaps and no balancing budget', async () => {
+      const actual=await vi.importActual<typeof import('../../data/fugenduellData')>('../../data/fugenduellData');
+      expect(validateStarterRoster(actual.FUGENDUELL_STARTER_ROSTER)).toEqual({valid:true,errors:[]});
     });
-
-    it('contains balanced CSR strategy types across the roster', () => {
-      expect(FUGENDUELL_STARTER_ROSTER.length).toBeGreaterThanOrEqual(10);
-      const csrTypes = new Set(FUGENDUELL_STARTER_ROSTER.map(p => p.csr));
-      expect(csrTypes.has('RC')).toBe(true); // Dandelion
-      expect(csrTypes.has('RCS')).toBe(true); // Plantain
-      expect(csrTypes.has('R')).toBe(true); // Poa annua
-      expect(csrTypes.has('SR')).toBe(true); // Sagina
-    });
-
-    it('flags plants exceeding the 36 budget limit', () => {
-      const invalidPlant = {
-        ...FUGENDUELL_STARTER_ROSTER[0],
-        id: 'super-weed',
-        stats: { wurzel: 10, tritt: 10, duerre: 10, saat: 10, tempo: 10, chemie: 10 },
-        totalBudget: 60,
-      };
-      const result = validateStarterRoster([invalidPlant]);
-      expect(result.valid).toBe(false);
-      expect(result.errors.length).toBeGreaterThan(0);
-      expect(result.errors[0]).toContain('exceeds maximum allowed budget of 36');
+    it('rejects non-finite measurements instead of applying a 36-point cap', () => {
+      const invalid={...FUGENDUELL_STARTER_ROSTER[0],stats:{...FUGENDUELL_STARTER_ROSTER[0].stats,wurzel:NaN},totalBudget:null};
+      expect(validateStarterRoster([invalid]).valid).toBe(false);
     });
   });
 
@@ -88,7 +69,7 @@ describe('Fugenduell Battle Engine', () => {
 
     it('applies Chelidonium alkaloid sap to reduce opponent chemistry by 2', () => {
       const mod = calculateSkillModifiers(celandine, dandelion, 'chemie');
-      expect(mod.effectiveAiStat).toBe(Math.max(1, dandelion.stats.chemie - 2));
+      expect(mod.effectiveAiStat).toBe(Math.max(1, dandelion.stats.chemie! - 2));
     });
   });
 
@@ -264,4 +245,11 @@ describe('Fugenduell Battle Engine', () => {
       expect(calculateSeedReward('ai', 20, 0)).toBe(0);
     });
   });
+});
+
+// Historical rule-engine regression tests use synthetic coefficients explicitly.
+vi.mock('../../data/fugenduellData', async importOriginal => {
+ const original=await importOriginal<typeof import('../../data/fugenduellData')>();
+ const { prototypeRoster }=await import('./prototypeRoster.fixture');
+ return {...original,FUGENDUELL_STARTER_ROSTER:prototypeRoster(original.FUGENDUELL_STARTER_ROSTER)};
 });

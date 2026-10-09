@@ -1,3 +1,5 @@
+> **Historischer Spielentwurf, keine verifizierte Wertetabelle.** Seit 09.10.2026 ersetzt der wissenschaftliche Artenbestand diese 0–10-Werte; siehe [Datenprüfung](daten-audit-2026-10-09.md). Die folgenden Zahlen und Spielboni bleiben nur als Entwurf dokumentiert.
+
 # Crack Flora: Fugenduell — Master-Kartendeck (deutsche Fassung)
 
 > Quelle: `crack-flora-master-card-deck.docx` (Gemini-Notebook-Export, 14 Kartenbilder, 08.10.2026) (Binärdatei bewusst nicht im Repo, 32 MB). Übersetzung und Prüfung 09.10.2026.

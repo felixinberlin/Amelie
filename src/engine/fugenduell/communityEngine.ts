@@ -1,3 +1,4 @@
+import { requirePrototypeStat } from './battleEngine';
 import { BOTANY } from '../../data/fugenduellBotany';
 import { FUGENDUELL_STARTER_ROSTER, SEASONAL_BATTLE_EVENTS } from '../../data/fugenduellData';
 
@@ -30,6 +31,7 @@ function refill(side: Community, game: { seed: number }): void {
 }
 export function startCommunity(ids: string[], seed = 1): CommunityGame {
   if (ids.length !== 3 || new Set(ids).size !== 3 || ids.some(id => !FUGENDUELL_STARTER_ROSTER.some(p => p.id === id && !p.bannedFromRanked))) throw new Error('Choose three distinct playable species');
+  if (ids.some(id => FUGENDUELL_STARTER_ROSTER.find(p => p.id === id)?.totalBudget === null)) throw new Error('Game conversion pending');
   if (!Number.isSafeInteger(seed) || seed < 0 || seed > 4294967295) throw new Error('Invalid seed');
   const game: CommunityGame = { player: null!, rival: null!, round: 1, seed, log: [], winner: null };
   const make = (species: string[]): Community => {
@@ -41,7 +43,7 @@ function trait(p: PlantState, round: number, habitat: Habitat): number {
   const species = FUGENDUELL_STARTER_ROSTER.find(s => s.id === p.id)!;
   const stat = SEASONAL_BATTLE_EVENTS[round - 1].testedStat;
   const context = habitat === 'wall' ? (BOTANY[p.id]?.wall ? 2 : 0) : habitat === 'roadside' && stat === 'chemie' ? -1 : 0;
-  return species.stats[stat] + context;
+  return requirePrototypeStat(species, stat) + context;
 }
 function apply(side: Community, index: number, target: number): { demand: number[]; shields: number[]; action: Action } {
   const action = side.hand[index]; const plant = side.plants[target];

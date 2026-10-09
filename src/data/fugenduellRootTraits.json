@@ -1,0 +1,181 @@
+{
+  "source": "https://idata.idiv.de/ddm/data/Showdata/3610",
+  "doi": "10.25829/idiv.3610-56acy9",
+  "version": 39,
+  "csvSha256": "fa1b47a3d058542cb5f55bf8402dac68d76f03ab2ea4af5163ed9541f8bdcc53",
+  "license": "CC BY 4.0",
+  "methodSource": "https://www.nature.com/articles/s41597-026-08151-w",
+  "records": {
+    "taraxacum-officinale": {
+      "taxon": "Taraxacum officinale",
+      "matched": true,
+      "values": {
+        "RDepth": 1.394675,
+        "LRExtent": 0.464825,
+        "BBsize": 15.0
+      },
+      "originalNames": {
+        "RSIP_Original_name": "Taraxacum officinale",
+        "CLOPLA_Original_name": "Taraxacum officinale"
+      }
+    },
+    "plantago-major": {
+      "taxon": "Plantago major",
+      "matched": true,
+      "values": {
+        "RDepth": 0.496666666666667,
+        "LRExtent": 0.33,
+        "BBsize": 20.0
+      },
+      "originalNames": {
+        "RSIP_Original_name": "Plantago major",
+        "CLOPLA_Original_name": "Plantago major"
+      }
+    },
+    "poa-annua": {
+      "taxon": "Poa annua",
+      "matched": true,
+      "values": {
+        "RDepth": 0.17,
+        "LRExtent": 0.11,
+        "BBsize": 4.2
+      },
+      "originalNames": {
+        "RSIP_Original_name": "Poa annua",
+        "CLOPLA_Original_name": "Poa annua"
+      }
+    },
+    "cardamine-hirsuta": {
+      "taxon": "Cardamine hirsuta",
+      "matched": true,
+      "values": {
+        "RDepth": 0.37,
+        "LRExtent": 0.155,
+        "BBsize": 2.5
+      },
+      "originalNames": {
+        "RSIP_Original_name": "Cardamine hirsuta",
+        "CLOPLA_Original_name": "Cardamine hirsuta"
+      }
+    },
+    "cymbalaria-muralis": {
+      "taxon": "Cymbalaria muralis",
+      "matched": true,
+      "values": {
+        "RDepth": null,
+        "LRExtent": null,
+        "BBsize": 15.0
+      },
+      "originalNames": {
+        "CLOPLA_Original_name": "Cymbalaria muralis"
+      }
+    },
+    "asplenium-ruta-muraria": {
+      "taxon": "Asplenium ruta-muraria",
+      "matched": true,
+      "values": {
+        "RDepth": null,
+        "LRExtent": null,
+        "BBsize": 10.0
+      },
+      "originalNames": {
+        "CLOPLA_Original_name": "Asplenium ruta-muraria"
+      }
+    },
+    "bryum-argenteum": {
+      "taxon": "Bryum argenteum",
+      "matched": false,
+      "values": {
+        "RDepth": null,
+        "LRExtent": null,
+        "BBsize": null
+      },
+      "originalNames": {}
+    },
+    "portulaca-oleracea": {
+      "taxon": "Portulaca oleracea",
+      "matched": true,
+      "values": {
+        "RDepth": 0.25,
+        "LRExtent": 0.12,
+        "BBsize": 1.2
+      },
+      "originalNames": {
+        "RSIP_Original_name": "Portulaca oleracea",
+        "CLOPLA_Original_name": "Portulaca oleracea"
+      }
+    },
+    "erigeron-canadensis": {
+      "taxon": "Erigeron canadensis",
+      "matched": true,
+      "values": {
+        "RDepth": 0.64,
+        "LRExtent": 0.4,
+        "BBsize": 2.5
+      },
+      "originalNames": {
+        "RSIP_Original_name": "Conyza canadensis",
+        "CLOPLA_Original_name": "Conyza canadensis"
+      }
+    },
+    "chelidonium-majus": {
+      "taxon": "Chelidonium majus",
+      "matched": true,
+      "values": {
+        "RDepth": null,
+        "LRExtent": null,
+        "BBsize": 20.0
+      },
+      "originalNames": {
+        "CLOPLA_Original_name": "Chelidonium majus"
+      }
+    },
+    "sagina-procumbens": {
+      "taxon": "Sagina procumbens",
+      "matched": true,
+      "values": {
+        "RDepth": 0.04,
+        "LRExtent": 0.04,
+        "BBsize": 12.5
+      },
+      "originalNames": {
+        "RSIP_Original_name": "Sagina procumbens",
+        "CLOPLA_Original_name": "Sagina procumbens"
+      }
+    },
+    "cochlearia-danica": {
+      "taxon": "Cochlearia danica",
+      "matched": true,
+      "values": {
+        "RDepth": null,
+        "LRExtent": null,
+        "BBsize": 11.7
+      },
+      "originalNames": {
+        "CLOPLA_Original_name": "Cochlearia danica"
+      }
+    },
+    "buddleja-davidii": {
+      "taxon": "Buddleja davidii",
+      "matched": true,
+      "values": {
+        "RDepth": null,
+        "LRExtent": null,
+        "BBsize": null
+      },
+      "originalNames": {}
+    },
+    "ailanthus-altissima": {
+      "taxon": "Ailanthus altissima",
+      "matched": true,
+      "values": {
+        "RDepth": null,
+        "LRExtent": null,
+        "BBsize": 0.0
+      },
+      "originalNames": {
+        "CLOPLA_Original_name": "Ailanthus altissima"
+      }
+    }
+  }
+}

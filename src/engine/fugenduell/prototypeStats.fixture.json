@@ -1,0 +1,114 @@
+{
+  "taraxacum-officinale": {
+    "wurzel": 5,
+    "tritt": 5,
+    "duerre": 5,
+    "saat": 6,
+    "tempo": 7,
+    "chemie": 4
+  },
+  "plantago-major": {
+    "wurzel": 5,
+    "tritt": 9,
+    "duerre": 6,
+    "saat": 4,
+    "tempo": 4,
+    "chemie": 4
+  },
+  "poa-annua": {
+    "wurzel": 3,
+    "tritt": 6,
+    "duerre": 4,
+    "saat": 8,
+    "tempo": 10,
+    "chemie": 3
+  },
+  "cardamine-hirsuta": {
+    "wurzel": 3,
+    "tritt": 4,
+    "duerre": 3,
+    "saat": 8,
+    "tempo": 9,
+    "chemie": 5
+  },
+  "cymbalaria-muralis": {
+    "wurzel": 4,
+    "tritt": 3,
+    "duerre": 6,
+    "saat": 7,
+    "tempo": 6,
+    "chemie": 4
+  },
+  "asplenium-ruta-muraria": {
+    "wurzel": 6,
+    "tritt": 2,
+    "duerre": 9,
+    "saat": 4,
+    "tempo": 2,
+    "chemie": 5
+  },
+  "bryum-argenteum": {
+    "wurzel": 3,
+    "tritt": 5,
+    "duerre": 10,
+    "saat": 3,
+    "tempo": 2,
+    "chemie": 4
+  },
+  "portulaca-oleracea": {
+    "wurzel": 4,
+    "tritt": 4,
+    "duerre": 10,
+    "saat": 7,
+    "tempo": 6,
+    "chemie": 4
+  },
+  "erigeron-canadensis": {
+    "wurzel": 4,
+    "tritt": 3,
+    "duerre": 5,
+    "saat": 9,
+    "tempo": 7,
+    "chemie": 5
+  },
+  "chelidonium-majus": {
+    "wurzel": 5,
+    "tritt": 4,
+    "duerre": 4,
+    "saat": 6,
+    "tempo": 5,
+    "chemie": 9
+  },
+  "sagina-procumbens": {
+    "wurzel": 4,
+    "tritt": 8,
+    "duerre": 6,
+    "saat": 5,
+    "tempo": 5,
+    "chemie": 3
+  },
+  "cochlearia-danica": {
+    "wurzel": 4,
+    "tritt": 5,
+    "duerre": 7,
+    "saat": 5,
+    "tempo": 4,
+    "chemie": 7
+  },
+  "buddleja-davidii": {
+    "wurzel": 6,
+    "tritt": 3,
+    "duerre": 6,
+    "saat": 8,
+    "tempo": 5,
+    "chemie": 4
+  },
+  "ailanthus-altissima": {
+    "wurzel": 8,
+    "tritt": 4,
+    "duerre": 7,
+    "saat": 7,
+    "tempo": 4,
+    "chemie": 6
+  }
+}

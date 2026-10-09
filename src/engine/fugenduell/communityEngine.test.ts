@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { ACTIONS, cover, emptyGround, startCommunity, playCommunity } from './communityEngine';
 const ids = ['taraxacum-officinale', 'plantago-major', 'bryum-argenteum'];
 describe('community deck', () => {
@@ -34,4 +34,11 @@ describe('community deck', () => {
   expect(next.player.hand.slice(0,2)).toEqual(hand.slice(1));
   expect(()=>playCommunity(g,99,0,'pavement')).toThrow();expect(g.player.hand).toEqual(hand);
  });
+});
+
+// Historical rule-engine regression tests use synthetic coefficients explicitly.
+vi.mock('../../data/fugenduellData', async importOriginal => {
+ const original=await importOriginal<typeof import('../../data/fugenduellData')>();
+ const { prototypeRoster }=await import('./prototypeRoster.fixture');
+ return {...original,FUGENDUELL_STARTER_ROSTER:prototypeRoster(original.FUGENDUELL_STARTER_ROSTER)};
 });

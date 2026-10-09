@@ -29,3 +29,47 @@ describe('botanical provenance', () => {
   }
  });
 });
+
+describe('scientific skills', () => {
+ it('gives each species four distinct evidence-backed trait cards and no game budget', () => {
+  for (const plant of FUGENDUELL_STARTER_ROSTER) {
+   expect(plant.skills).toHaveLength(4);
+   expect(new Set(plant.skills.map(skill=>skill.id)).size).toBe(4);
+   expect(plant.totalBudget).toBeNull();
+   expect(plant.growthTimeLapseWeeks).toEqual([]);
+   for (const skill of plant.skills) {
+    expect(new URL(skill.source).protocol).toBe('https:');
+    expect(skill.scope).toBeTruthy();
+    expect(skill.descriptionDe).toBeTruthy();
+    for (const value of skill.values) if (typeof value.value === 'number') expect(Number.isFinite(value.value)).toBe(true);
+   }
+   for (const key of ['tritt','duerre','saat','tempo','chemie'] as const) expect(plant.stats[key]).toBeNull();
+  }
+ });
+ it('separates method references from absent physiological observations', () => {
+  for (const plant of FUGENDUELL_STARTER_ROSTER) {
+   expect(plant.stressMeasurements).toHaveLength(4);
+   for (const trait of plant.stressMeasurements) {
+    expect(trait.value).toBeNull(); expect(trait.observationSource).toBeNull();
+    expect(new URL(trait.methodSource).protocol).toBe('https:');
+   }
+  }
+ });
+ it('preserves real units, species means and method-specific CSR', () => {
+  const dandelion=FUGENDUELL_STARTER_ROSTER.find(p=>p.id==='taraxacum-officinale')!;
+  const plantain=FUGENDUELL_STARTER_ROSTER.find(p=>p.id==='plantago-major')!;
+  const moss=FUGENDUELL_STARTER_ROSTER.find(p=>p.id==='bryum-argenteum')!;
+  expect(dandelion.stats.wurzel).toBe(1.394675);
+  expect(plantain.stats.wurzel).toBe(0.496666666666667);
+  expect(plantain.csr).toBe('C/CR');
+  expect(moss.stats.wurzel).toBeNull(); expect(moss.csr).toBeNull();
+  const roots=dandelion.skills.find(s=>s.id==='belowground')!;
+  expect(roots.values.find(v=>v.field==='RDepth')?.unit).toBe('m');
+ });
+ it('never treats scientific metres or missing measurements as game points', async () => {
+  const { calculateSkillModifiers }=await import('../engine/fugenduell/battleEngine');
+  const { startCommunity }=await import('../engine/fugenduell/communityEngine');
+  expect(()=>calculateSkillModifiers(FUGENDUELL_STARTER_ROSTER[0],FUGENDUELL_STARTER_ROSTER[1],'wurzel')).toThrow('Game conversion pending');
+  expect(()=>startCommunity(['taraxacum-officinale','plantago-major','bryum-argenteum'])).toThrow('Game conversion pending');
+ });
+});
