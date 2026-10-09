@@ -19,6 +19,7 @@ import {
   pruefeMarkierung,
 } from '../../engine/glasanflug/markierung';
 import { GlasanflugVisualizer } from './GlasanflugVisualizer';
+import { lookupVegetation, VegetationSurvey } from '../../engine/glasanflug/geodata';
 
 interface GlasanflugSimulatorProps {
   lang: Language;
@@ -134,6 +135,25 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
     URL.revokeObjectURL(url);
   };
 
+  const [latitude, setLatitude] = useState('');
+  const [longitude, setLongitude] = useState('');
+  const [survey, setSurvey] = useState<VegetationSurvey | null>(null);
+  const [surveyError, setSurveyError] = useState('');
+  const [surveyLoading, setSurveyLoading] = useState(false);
+  const queryVegetation = async () => {
+    const lat = Number(latitude);
+    const lon = Number(longitude);
+    setSurvey(null);
+    setSurveyError('');
+    if (!latitude.trim() || !longitude.trim() || !Number.isFinite(lat) || !Number.isFinite(lon) || Math.abs(lat) > 90 || Math.abs(lon) > 180) {
+      setSurveyError(de ? 'Gültige Koordinaten eingeben.' : 'Enter valid coordinates.');
+      return;
+    }
+    setSurveyLoading(true);
+    try { setSurvey(await lookupVegetation(lat, lon)); }
+    catch (error) { setSurveyError(error instanceof Error ? error.message : String(error)); }
+    finally { setSurveyLoading(false); }
+  };
   const glasVoll = eingabe.glasanteil.punkte === 4;
 
   return (
@@ -394,6 +414,31 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
             </span>
           </div>
         </div>
+
+        <section className="bg-white rounded-2xl border border-stone-200 p-4 space-y-3" aria-label={de ? 'Echte Geodaten' : 'Real geodata'}>
+          <h4 className="font-semibold text-stone-900">{de ? 'OSM-Gehölzbeobachtungen (Live-Abfrage)' : 'OSM vegetation observations (live query)'}</h4>
+          <p className="text-xs text-stone-600 leading-relaxed">{de
+            ? 'Punktbasierte Abfrage im 100-m-Radius. Entfernungen gelten nur zum eingegebenen Koordinatenpunkt — nicht zur unmarkierten Scheibe. Keine automatische LAG-VSW-Punktevergabe. OSM ist unvollständig.'
+            : 'Point-only query within 100 m. Distances are from the entered coordinate, not the unmarked glass. No automatic LAG-VSW points. OSM coverage is incomplete.'}</p>
+          <div className="grid grid-cols-2 gap-2">
+            <label className="text-xs text-stone-700">{de ? 'Breitengrad' : 'Latitude'}
+              <input type="number" step="any" value={latitude} onChange={e => {setLatitude(e.target.value);setSurvey(null);}} placeholder="52.52" className="block mt-1 w-full rounded-lg border border-stone-300 px-2 py-2" />
+            </label>
+            <label className="text-xs text-stone-700">{de ? 'Längengrad' : 'Longitude'}
+              <input type="number" step="any" value={longitude} onChange={e => {setLongitude(e.target.value);setSurvey(null);}} placeholder="13.405" className="block mt-1 w-full rounded-lg border border-stone-300 px-2 py-2" />
+            </label>
+          </div>
+          <button type="button" onClick={queryVegetation} disabled={surveyLoading} className="rounded-lg bg-stone-900 text-white px-3 py-2 text-xs font-semibold disabled:opacity-50">
+            {surveyLoading ? (de ? 'Abfrage läuft…' : 'Querying…') : (de ? 'Echte OSM-Daten abfragen' : 'Query real OSM data')}
+          </button>
+          {surveyError && <p role="alert" className="text-xs text-rose-700">{surveyError}</p>}
+          {survey && <div className="text-xs text-stone-700 space-y-2">
+            <p>{survey.observations.length} {de ? 'kartierte Gehölzpunkte gefunden' : 'mapped vegetation points found'} · {new Date(survey.retrievedAt).toLocaleString(de ? 'de-DE' : 'en-GB')}</p>
+            {survey.observations[0] && <p className="font-semibold">{de ? 'Nächster kartierter Punkt' : 'Nearest mapped point'}: {survey.observations[0].distanceMetres} m ({survey.observations[0].kind})</p>}
+            <p className="text-amber-800">{de ? 'Nicht gefunden ≠ nicht vorhanden. Keine Aussage über Versiegelung oder den Glas-Gehölz-Abstand.' : 'Not mapped ≠ absent. No conclusion about sealing or glass-to-vegetation distance.'}</p>
+            <a className="underline text-sky-800" href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">© OpenStreetMap contributors</a>
+          </div>}
+        </section>
 
         {/* Schwellenwerte aus dem Monitoring */}
         <div className="bg-white rounded-2xl border border-stone-200 p-4 space-y-2">
