@@ -1,69 +1,23 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Eye, Shield, Play, RotateCcw, Sparkles, CheckCircle2, XCircle } from 'lucide-react';
+import { Shield, Sparkles } from 'lucide-react';
 import { Language } from '../../types';
-import { Risikostufe } from '../../engine/glasanflug/schema';
 import { Eingabe } from '../../engine/glasanflug/score';
 
 interface GlasanflugVisualizerProps {
   lang: Language;
   eingabe: Eingabe;
-  stufe: Risikostufe | null;
-  summe: number | null;
 }
 
 export const GlasanflugVisualizer: React.FC<GlasanflugVisualizerProps> = ({
   lang,
   eingabe,
-  stufe,
-  summe,
 }) => {
   const de = lang === 'de';
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   const [hasMarking, setHasMarking] = useState<boolean>(false);
   const [markingType, setMarkingType] = useState<'dots' | 'stripes'>('dots');
-  const [visionMode, setVisionMode] = useState<'human' | 'bird'>('human');
-  const [isSimulatingFlight, setIsSimulatingFlight] = useState<boolean>(false);
-  const [flightOutcome, setFlightOutcome] = useState<'idle' | 'avoided' | 'collision'>('idle');
-
-  // Flight animation state
-  const animRef = useRef<{
-    x: number;
-    y: number;
-    vx: number;
-    vy: number;
-    wingPhase: number;
-    active: boolean;
-  }>({
-    x: 20,
-    y: 110,
-    vx: 2.8,
-    vy: 0.1,
-    wingPhase: 0,
-    active: false,
-  });
-
-  // Educational animation only: no empirical avoidance probability can be inferred
-  // from the LAG-VSW risk class or an arbitrary drawn marking.
-  const startFlightTest = () => {
-    animRef.current = {
-      x: 30,
-      y: 90 + Math.random() * 40,
-      vx: 3.2,
-      vy: (Math.random() - 0.5) * 0.8,
-      wingPhase: 0,
-      active: true,
-    };
-    setFlightOutcome('idle');
-    setIsSimulatingFlight(true);
-  };
-
-  const resetFlightTest = () => {
-    animRef.current.active = false;
-    setIsSimulatingFlight(false);
-    setFlightOutcome('idle');
-  };
-
+  // Illustrative façade only: no flight physics, probabilities or bird-vision claims.
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -78,25 +32,18 @@ export const GlasanflugVisualizer: React.FC<GlasanflugVisualizerProps> = ({
 
       // 1. Background sky
       const skyGradient = ctx.createLinearGradient(0, 0, 0, h);
-      if (visionMode === 'bird') {
-        // Avian UV vision perceives subtle UV tints in atmosphere & glass
-        skyGradient.addColorStop(0, '#1e1b4b');
-        skyGradient.addColorStop(0.6, '#312e81');
-        skyGradient.addColorStop(1, '#4c1d95');
-      } else {
-        skyGradient.addColorStop(0, '#93c5fd');
-        skyGradient.addColorStop(0.6, '#bfdbfe');
-        skyGradient.addColorStop(1, '#e2e8f0');
-      }
+      skyGradient.addColorStop(0, '#93c5fd');
+      skyGradient.addColorStop(0.6, '#bfdbfe');
+      skyGradient.addColorStop(1, '#e2e8f0');
       ctx.fillStyle = skyGradient;
       ctx.fillRect(0, 0, w, h);
 
       // Ground
-      ctx.fillStyle = visionMode === 'bird' ? '#14532d' : '#4d7c0f';
+      ctx.fillStyle = '#4d7c0f';
       ctx.fillRect(0, h - 35, w, 35);
 
       // 2. Surrounding Trees (distance from gehoelzabstand: 1 = >50m, 4 = <15m)
-      const treePoints = eingabe.gehoelzabstand.punkte ?? 2;
+      const treePoints = eingabe.gehoelzabstand.punkte ?? 2; // illustrative placeholder, not a measurement
       const treeDistance = treePoints === 4 ? 20 : treePoints === 3 ? 45 : treePoints === 2 ? 80 : 130;
       const treeScale = treePoints === 4 ? 1.25 : treePoints === 3 ? 1.0 : treePoints === 2 ? 0.75 : 0.55;
 
@@ -113,7 +60,7 @@ export const GlasanflugVisualizer: React.FC<GlasanflugVisualizerProps> = ({
       // Foliage
       ctx.beginPath();
       ctx.arc(0, -85, 38, 0, Math.PI * 2);
-      ctx.fillStyle = visionMode === 'bird' ? '#22c55e' : '#15803d';
+      ctx.fillStyle = '#15803d';
       ctx.fill();
 
       ctx.beginPath();
@@ -133,8 +80,8 @@ export const GlasanflugVisualizer: React.FC<GlasanflugVisualizerProps> = ({
       ctx.fillRect(facadeX, facadeY, facadeW, facadeH);
 
       // Window grid based on fassadengestaltung and glasanteil
-      const glasPoints = eingabe.glasanteil.punkte ?? 3;
-      const fassadenPoints = eingabe.fassadengestaltung.punkte ?? 3;
+      const glasPoints = eingabe.glasanteil.punkte ?? 3; // illustrative placeholder, not a measurement
+      const fassadenPoints = eingabe.fassadengestaltung.punkte ?? 3; // illustrative placeholder, not a measurement
 
       const cols = fassadenPoints === 1 ? 4 : fassadenPoints === 2 ? 3 : fassadenPoints === 3 ? 2 : 1;
       const rows = fassadenPoints <= 2 ? 3 : 2;
@@ -162,7 +109,7 @@ export const GlasanflugVisualizer: React.FC<GlasanflugVisualizerProps> = ({
           ctx.clip();
 
           // Reflected tree foliage
-          ctx.fillStyle = visionMode === 'bird' ? `rgba(74, 222, 128, ${reflectionAlpha})` : `rgba(34, 197, 94, ${reflectionAlpha})`;
+          ctx.fillStyle = `rgba(34, 197, 94, ${reflectionAlpha})`;
           ctx.beginPath();
           ctx.arc(wx + cellW * 0.4, wy + cellH * 0.6, cellH * 0.45, 0, Math.PI * 2);
           ctx.fill();
@@ -176,7 +123,7 @@ export const GlasanflugVisualizer: React.FC<GlasanflugVisualizerProps> = ({
 
           // Vogelschutz-Markierung overlay
           if (hasMarking) {
-            ctx.fillStyle = visionMode === 'bird' ? '#f43f5e' : 'rgba(255, 255, 255, 0.85)';
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.85)';
             if (markingType === 'dots') {
               const dotGap = 16;
               for (let dx = wx + 8; dx < wx + cellW; dx += dotGap) {
@@ -204,64 +151,12 @@ export const GlasanflugVisualizer: React.FC<GlasanflugVisualizerProps> = ({
         }
       }
 
-      // 4. Bird Flight Test Animation
-      const flight = animRef.current;
-      if (flight.active) {
-        flight.x += flight.vx;
-        flight.y += flight.vy;
-        flight.wingPhase += 0.35;
-
-        // Collision or avoidance boundary near facade
-        if (flight.x >= facadeX - 25) {
-          const illustrationAvoids = hasMarking;
-          if (illustrationAvoids) {
-            // Divert up and away safely
-            flight.vx = -1.8;
-            flight.vy = -2.8;
-            setFlightOutcome('avoided');
-          } else {
-            // Impact
-            flight.vx = 0;
-            flight.vy = 2.0;
-            setFlightOutcome('collision');
-          }
-          flight.active = false;
-          setIsSimulatingFlight(false);
-        }
-
-        // Draw flying bird
-        ctx.save();
-        ctx.translate(flight.x, flight.y);
-        ctx.fillStyle = '#f59e0b';
-        ctx.strokeStyle = '#b45309';
-        ctx.lineWidth = 1.5;
-
-        // Body
-        ctx.beginPath();
-        ctx.ellipse(0, 0, 9, 4.5, Math.atan2(flight.vy, flight.vx), 0, Math.PI * 2);
-        ctx.fill();
-        ctx.stroke();
-
-        // Wings flapping
-        const wingSpan = Math.sin(flight.wingPhase) * 9;
-        ctx.beginPath();
-        ctx.moveTo(-2, 0);
-        ctx.lineTo(2, wingSpan);
-        ctx.lineTo(6, 0);
-        ctx.closePath();
-        ctx.fillStyle = '#d97706';
-        ctx.fill();
-        ctx.stroke();
-
-        ctx.restore();
-      }
-
       frameId = requestAnimationFrame(render);
     };
 
     frameId = requestAnimationFrame(render);
     return () => cancelAnimationFrame(frameId);
-  }, [eingabe, hasMarking, markingType, visionMode]);
+  }, [eingabe, hasMarking, markingType]);
 
   return (
     <div className="rounded-2xl bg-stone-900 border border-stone-800 p-4 sm:p-5 text-white space-y-4">
@@ -272,40 +167,14 @@ export const GlasanflugVisualizer: React.FC<GlasanflugVisualizerProps> = ({
           </div>
           <div>
             <h4 className="font-serif-title font-bold text-stone-100 text-sm">
-              {de ? 'Optischer Fassaden- & Flugbahn-Simulator' : 'Visual Façade & Flight Trajectory Simulator'}
+              {de ? 'Schematische Fassadenansicht' : 'Schematic Façade View'}
             </h4>
             <p className="text-[11px] text-stone-400">
-              {de
-                ? 'Schematische Illustration — keine Vorhersage und kein Wirksamkeitsnachweis'
-                : 'Schematic illustration — not a prediction or effectiveness test'}
+              {de ? 'Schematische Illustration, keine Fotomessung oder Flugprognose' : 'Schematic illustration; not a photograph measurement or flight prediction'}
             </p>
           </div>
         </div>
 
-        {/* Vision mode switch */}
-        <div className="flex items-center gap-1.5 bg-stone-800 p-1 rounded-xl border border-stone-700">
-          <button
-            onClick={() => setVisionMode('human')}
-            className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-all ${
-              visionMode === 'human'
-                ? 'bg-stone-700 text-white font-bold shadow-xs'
-                : 'text-stone-400 hover:text-stone-200'
-            }`}
-          >
-            {de ? 'Menschliches Auge' : 'Human Vision'}
-          </button>
-          <button
-            onClick={() => setVisionMode('bird')}
-            className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-all flex items-center gap-1 ${
-              visionMode === 'bird'
-                ? 'bg-purple-900 text-purple-200 border border-purple-600 font-bold shadow-xs'
-                : 'text-stone-400 hover:text-stone-200'
-            }`}
-          >
-            <Eye className="w-3 h-3 text-purple-400" />
-            <span>{de ? 'Illustrative UV-Farben' : 'Illustrative UV colours'}</span>
-          </button>
-        </div>
       </div>
 
       {/* Canvas Area */}
@@ -317,42 +186,7 @@ export const GlasanflugVisualizer: React.FC<GlasanflugVisualizerProps> = ({
           className="w-full h-auto block max-h-[260px] object-cover"
         />
 
-        {/* HUD Overlay Badge */}
-        <div className="absolute top-3 left-3 flex flex-wrap gap-2 pointer-events-none">
-          <span className="px-2.5 py-1 rounded-lg bg-stone-900/90 border border-stone-700 text-[11px] font-mono text-stone-200 font-bold">
-            {de ? 'Schematische Darstellung · keine Messwerte' : 'Illustration only · no measured probabilities'}
-          </span>
-          {hasMarking && (
-            <span className="px-2 py-1 rounded-lg bg-emerald-950/90 backdrop-blur-sm border border-emerald-700 text-[11px] font-mono text-emerald-300 font-bold inline-flex items-center gap-1">
-              <Shield className="w-3 h-3 text-emerald-400" />
-              <span>{markingType === 'dots' ? 'Punktmuster (100×100)' : 'Streifen (5mm)'}</span>
-            </span>
-          )}
-        </div>
-
-        {/* Flight outcome banner */}
-        {flightOutcome !== 'idle' && (
-          <div className="absolute bottom-3 right-3 animate-fadeIn">
-            {flightOutcome === 'avoided' ? (
-              <span className="px-3 py-1.5 rounded-xl bg-emerald-900/90 backdrop-blur-sm border border-emerald-600 text-xs text-emerald-200 font-bold inline-flex items-center gap-1.5 shadow-lg">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                <span>{de ? 'Beispiel: Ausweichflug' : 'Example: bird diverts'}</span>
-              </span>
-            ) : (
-              <span className="px-3 py-1.5 rounded-xl bg-rose-900/90 backdrop-blur-sm border border-rose-600 text-xs text-rose-200 font-bold inline-flex items-center gap-1.5 shadow-lg">
-                <XCircle className="w-4 h-4 text-rose-400" />
-                <span>{de ? 'Beispiel: Kollision (keine Prognose)' : 'Example: collision (not a forecast)'}</span>
-              </span>
-            )}
-          </div>
-        )}
       </div>
-
-      <p className="text-[11px] text-stone-300 leading-relaxed" role="note">
-        {de
-          ? 'Die Flugbahn zeigt nur einen Beispielablauf. Farben zeigen keine wissenschaftlich validierte Vogelsicht. Die gezeichneten Punkte und Streifen sind kein geprüftes Produkt; auch mit Markierungen bleibt ein Restrisiko. Für Wirksamkeitsnachweise die geprüften WUA-Muster unten verwenden.'
-          : 'The flight path is an illustrative example. Colours are not a scientifically validated rendering of bird vision. Drawn dots and stripes are not certified products; residual collision risk remains. Use the tested WUA patterns below for evidence.'}
-      </p>
 
       {/* Controls Bar */}
       <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
@@ -396,30 +230,8 @@ export const GlasanflugVisualizer: React.FC<GlasanflugVisualizerProps> = ({
           )}
         </div>
 
-        {/* Flight Simulation Trigger */}
-        <div className="flex items-center gap-2">
-          <button
-            onClick={startFlightTest}
-            disabled={isSimulatingFlight}
-            className={`px-4 py-1.5 rounded-xl text-xs font-bold inline-flex items-center gap-1.5 transition-all cursor-pointer shadow-sm ${
-              isSimulatingFlight
-                ? 'bg-stone-800 text-stone-500 cursor-not-allowed'
-                : 'bg-amber-600 hover:bg-amber-500 text-white'
-            }`}
-          >
-            <Play className="w-3.5 h-3.5 fill-current" />
-            <span>{de ? 'Beispiel-Flug zeigen' : 'Show example flight'}</span>
-          </button>
-
-          <button
-            onClick={resetFlightTest}
-            className="p-1.5 rounded-xl bg-stone-800 hover:bg-stone-700 text-stone-300 border border-stone-700 text-xs transition-colors cursor-pointer"
-            title={de ? 'Zurücksetzen' : 'Reset'}
-          >
-            <RotateCcw className="w-3.5 h-3.5 text-stone-400" />
-          </button>
-        </div>
       </div>
+      <p className="text-[11px] text-stone-400 leading-relaxed">{de ? 'Markierungen dienen hier ausschließlich der Illustration. Wirkung und Eignung lassen sich aus dieser Zeichnung nicht ableiten. Maßgeblich sind spezifische Prüfergebnisse und die Bedingungen am Gebäude.' : 'Markings are illustrative only. This drawing cannot establish efficacy or suitability. Use pattern-specific test evidence and real building conditions.'}</p>
     </div>
   );
 };

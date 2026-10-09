@@ -19,6 +19,9 @@ import {
   pruefeMarkierung,
 } from '../../engine/glasanflug/markierung';
 import { GlasanflugVisualizer } from './GlasanflugVisualizer';
+import { lookupVegetation, VegetationSurvey } from '../../engine/glasanflug/geodata';
+import { lookupBerlinTrees } from '../../engine/glasanflug/berlinTrees';
+import { geocodeAddress, GeocodedCandidate } from '../../engine/glasanflug/geocode';
 
 interface GlasanflugSimulatorProps {
   lang: Language;
@@ -28,11 +31,13 @@ interface GlasanflugSimulatorProps {
 
 const HERKUENFTE: Herkunft[] = ['eingabe', 'bild', 'geodaten', 'unbestimmt'];
 
+// A new assessment has no measured inputs. Never present fabricated image or
+// geodata provenance as if the app had already inspected a real façade.
 const START: Eingabe = {
-  glasanteil: { punkte: 3, herkunft: 'bild' },
-  fassadengestaltung: { punkte: 4, herkunft: 'bild' },
-  umgebung: { punkte: 3, herkunft: 'geodaten' },
-  gehoelzabstand: { punkte: 3, herkunft: 'geodaten' },
+  glasanteil: { punkte: null, herkunft: 'unbestimmt' },
+  fassadengestaltung: { punkte: null, herkunft: 'unbestimmt' },
+  umgebung: { punkte: null, herkunft: 'unbestimmt' },
+  gehoelzabstand: { punkte: null, herkunft: 'unbestimmt' },
 };
 
 const STUFEN_FARBE: Record<string, string> = {
@@ -55,13 +60,13 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
   const de = lang === 'de';
   const [eingabe, setEingabe] = useState<Eingabe>(START);
   const [fussnote2, setFussnote2] = useState('');
-  const [kollisionen, setKollisionen] = useState('6');
-  const [fassadenlaenge, setFassadenlaenge] = useState('120');
+  const [kollisionen, setKollisionen] = useState('');
+  const [fassadenlaenge, setFassadenlaenge] = useState('');
 
   const [testart, setTestart] = useState<Testart>('spiegelung');
-  const [musterNr, setMusterNr] = useState<string>('6S');
+  const [musterNr, setMusterNr] = useState<string>('');
   const [ebene, setEbene] = useState<1 | 2>(2);
-  const [ar, setAr] = useState('8');
+  const [ar, setAr] = useState('');
 
   const markierung = useMemo(
     () =>
@@ -75,7 +80,7 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
   );
   const ergebnis = useMemo(() => bewerte(eingabe, fussnote2), [eingabe, fussnote2]);
   const monitoring = useMemo(
-    () => signifikanzschwelle(Number(kollisionen), Number(fassadenlaenge)),
+    () => kollisionen.trim() && fassadenlaenge.trim() ? signifikanzschwelle(Number(kollisionen), Number(fassadenlaenge)) : null,
     [kollisionen, fassadenlaenge]
   );
 
@@ -91,6 +96,86 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
       [id]: herkunft === 'unbestimmt' ? { punkte: null, herkunft } : { punkte: e[id].punkte ?? 1, herkunft },
     }));
 
+  const exportAssessment = () => {
+    // Local-only export: no photographs, addresses, or observations are uploaded.
+    const record = {
+      kind: 'amelie-glasanflug-assessment',
+      formatVersion: 1,
+      createdAt: new Date().toISOString(),
+      schema: SCHEMA_QUELLE,
+      disclaimer: 'Draft decision support only; not a legal determination or product certification.',
+      factors: eingabe,
+      vegetationSurvey: survey,
+      exceptionReason: glasVoll ? fussnote2.trim() : null,
+      assessment: {
+        complete: ergebnis.vollstaendig,
+        level: ergebnis.vollstaendig ? ergebnis.stufe : null,
+        total: ergebnis.vollstaendig ? ergebnis.summe : null,
+        missing: ergebnis.unbestimmt,
+        overrides: ergebnis.vorrang,
+      },
+      monitoring: {
+        rawFindsPerYear: kollisionen.trim() === '' ? null : Number(kollisionen),
+        facadeLengthMetres: fassadenlaenge.trim() === '' ? null : Number(fassadenlaenge),
+        result: monitoring,
+        note: 'Raw finds are not corrected for detection probability or scavenging.',
+      },
+      marking: {
+        inputs: { test: testart, pattern: musterNr || null, position: ebene, externalReflectancePercent: ar.trim() === '' ? null : Number(ar) },
+        finding: markierung.befund,
+        category: markierung.kategorie,
+        source: markierung.quelle,
+        notes: markierung.hinweise,
+      },
+    };
+    const url = URL.createObjectURL(new Blob([JSON.stringify(record, null, 2)], { type: 'application/json' }));
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'glasanflug-assessment.json';
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(url);
+  };
+
+  const [address, setAddress] = useState('');
+  const [candidates, setCandidates] = useState<GeocodedCandidate[]>([]);
+  const [geocodeLoading, setGeocodeLoading] = useState(false);
+  const [geocodeError, setGeocodeError] = useState('');
+  const findAddress = async () => {
+    setGeocodeLoading(true);
+    setGeocodeError('');
+    setCandidates([]);
+    try {
+      const matches = await geocodeAddress(address);
+      if (!matches.length) setGeocodeError(de ? 'Keine Adresse gefunden.' : 'No matching address found.');
+      setCandidates(matches);
+    } catch (error) {
+      setGeocodeError(error instanceof Error ? error.message : String(error));
+    } finally {
+      setGeocodeLoading(false);
+    }
+  };
+  const [latitude, setLatitude] = useState('');
+  const [longitude, setLongitude] = useState('');
+  const [surveySource, setSurveySource] = useState<'osm' | 'berlin'>('osm');
+  const [survey, setSurvey] = useState<VegetationSurvey | null>(null);
+  const [surveyError, setSurveyError] = useState('');
+  const [surveyLoading, setSurveyLoading] = useState(false);
+  const queryVegetation = async () => {
+    const lat = Number(latitude);
+    const lon = Number(longitude);
+    setSurvey(null);
+    setSurveyError('');
+    if (!latitude.trim() || !longitude.trim() || !Number.isFinite(lat) || !Number.isFinite(lon) || Math.abs(lat) > 90 || Math.abs(lon) > 180) {
+      setSurveyError(de ? 'Gültige Koordinaten eingeben.' : 'Enter valid coordinates.');
+      return;
+    }
+    setSurveyLoading(true);
+    try { setSurvey(await (surveySource === 'berlin' ? lookupBerlinTrees : lookupVegetation)(lat, lon, AbortSignal.timeout(30000))); }
+    catch (error) { setSurveyError(error instanceof Error ? error.message : String(error)); }
+    finally { setSurveyLoading(false); }
+  };
   const glasVoll = eingabe.glasanteil.punkte === 4;
 
   return (
@@ -112,6 +197,19 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
             ? 'Vier Kriterien mit je 1 bis 4 Punkten, Summe 4 bis 16. Zwei Regeln überstimmen die Summe. Jeder Wert trägt mit, woher er kommt — was das Bild nicht hergibt, bleibt unbestimmt und wird nicht geraten.'
             : 'Four criteria at 1 to 4 points each, sum 4 to 16. Two rules override the sum. Every value carries its origin — whatever the image cannot supply stays undetermined and is not guessed.'}
         </p>
+
+        <div className="rounded-xl border border-sky-200 bg-sky-50 p-3 text-xs text-sky-950" role="note">
+          <strong>{de ? 'Neue Bewertung — noch keine Messdaten' : 'New assessment — no observations yet'}</strong>
+          <p className="mt-1 leading-relaxed">
+            {de
+              ? 'Alle vier Kriterien starten unbestimmt. Wähle unten ein veröffentlichtes Rechenbeispiel oder gib eigene Beobachtungen ein. „Bild“ und „Geodaten“ nur auswählen, wenn du diese Quellen tatsächlich ausgewertet hast.'
+              : 'All four criteria start undetermined. Choose a published worked example or enter your own observations. Select “image” or “geodata” provenance only if you have actually analysed those sources.'}
+          </p>
+          <button type="button" onClick={() => { setEingabe(START); setFussnote2(''); }}
+            className="mt-2 underline font-semibold hover:text-sky-700">
+            {de ? 'Bewertung zurücksetzen' : 'Reset assessment'}
+          </button>
+        </div>
 
         {/* Beispiele aus dem Anhang */}
         <div>
@@ -224,8 +322,6 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
         <GlasanflugVisualizer
           lang={lang}
           eingabe={eingabe}
-          stufe={ergebnis.stufe}
-          summe={ergebnis.summe}
         />
 
         <div className="bg-stone-900 text-white rounded-2xl p-6 shadow-md border border-stone-800">
@@ -298,6 +394,16 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
             </div>
           )}
 
+          <div className="flex flex-wrap items-center gap-2 mb-4">
+            <button type="button" onClick={exportAssessment}
+              className="rounded-lg border border-amber-500/70 px-3 py-2 text-xs font-semibold text-amber-100 hover:bg-stone-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400">
+              {de ? 'Bewertung als JSON exportieren' : 'Export assessment as JSON'}
+            </button>
+            <span className="text-[11px] text-stone-400">
+              {de ? 'Lokal erstellt · auch unvollständige Bewertungen' : 'Created locally · incomplete assessments included'}
+            </span>
+          </div>
+
           {/* Vorrangregeln */}
           {ergebnis.vorrang.map((v, i) => (
             <div
@@ -330,6 +436,66 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
             </span>
           </div>
         </div>
+
+        <section className="bg-white rounded-2xl border border-stone-200 p-4 space-y-3" aria-label={de ? 'Echte Geodaten' : 'Real geodata'}>
+          <h4 className="font-semibold text-stone-900">{de ? 'Gehölzbeobachtungen (Live-Abfrage)' : 'Vegetation observations (live query)'}</h4>
+          <p className="text-xs text-stone-600 leading-relaxed">{de
+            ? 'Punktbasierte Abfrage im 100-m-Radius. Entfernungen gelten nur zum eingegebenen Koordinatenpunkt — nicht zur unmarkierten Scheibe. Keine automatische LAG-VSW-Punktevergabe. OSM ist unvollständig.'
+            : 'Point-only query within 100 m. Distances are from the entered coordinate, not the unmarked glass. No automatic LAG-VSW points. OSM coverage is incomplete.'}</p>
+          <div className="space-y-2">
+            <label className="block text-xs text-stone-700">
+              {de ? 'Adresse suchen (optional)' : 'Find an address (optional)'}
+              <input type="search" value={address} onChange={e => { setAddress(e.target.value); setCandidates([]); }}
+                onKeyDown={e => { if (e.key === 'Enter') { e.preventDefault(); if (!geocodeLoading) void findAddress(); } }}
+                placeholder={de ? 'Straße, Hausnummer, Ort' : 'Street, number, city'}
+                className="block mt-1 w-full rounded-lg border border-stone-300 px-2 py-2" />
+            </label>
+            <button type="button" onClick={findAddress} disabled={geocodeLoading || address.trim().length < 4}
+              className="rounded-lg border border-stone-400 px-3 py-2 text-xs font-semibold disabled:opacity-50">
+              {geocodeLoading ? (de ? 'Suche läuft…' : 'Searching…') : (de ? 'Adresse suchen' : 'Search address')}
+            </button>
+            {geocodeError && <p role="alert" className="text-xs text-rose-700">{geocodeError}</p>}
+            {candidates.length > 0 && <div className="space-y-1" aria-label={de ? 'Adressvorschläge' : 'Address candidates'}>
+              <p className="text-xs text-stone-600">{de ? 'Treffer auswählen – nicht automatisch übernommen:' : 'Choose a result – never automatically selected:'}</p>
+              {candidates.map((candidate, index) => (
+                <button type="button" disabled={surveyLoading} key={index}
+                  onClick={() => {setLatitude(String(candidate.latitude)); setLongitude(String(candidate.longitude)); setCandidates([]); setSurvey(null); }}
+                  className="block w-full rounded-lg border border-stone-200 px-2 py-2 text-left text-xs text-stone-800 hover:bg-stone-100">
+                  {candidate.label} ({candidate.latitude.toFixed(5)}, {candidate.longitude.toFixed(5)})
+                </button>
+              ))}
+            </div>}
+            <p className="text-[11px] text-stone-500">
+              {de ? 'Adressdaten werden bei der Suche an Photon (OpenStreetMap/Komoot) übertragen; keine automatische Abfrage während der Eingabe.' : 'Address text is sent to Photon (OpenStreetMap/Komoot) when searching; no automatic requests while typing.'}
+            </p>
+          </div>
+          <label className="block text-xs text-stone-700">{de ? 'Datenquelle' : 'Data source'}
+            <select value={surveySource} disabled={surveyLoading} onChange={e => { setSurveySource(e.target.value as 'osm' | 'berlin'); setSurvey(null); }} className="block mt-1 w-full rounded-lg border border-stone-300 px-2 py-2">
+              <option value="osm">OpenStreetMap</option>
+              <option value="berlin">Geoportal Berlin / Baumbestand Berlin</option>
+            </select>
+          </label>
+          <p className="text-xs text-stone-600">{de ? 'Berlin: Straßenbäume und ein Teil der Anlagenbäume; keine vollständige Erfassung privater Bäume, Hecken oder Sträucher. Koordinaten werden an den gewählten Dienst gesendet.' : 'Berlin: street trees and some park trees; private trees, hedges and shrubs are not fully covered. Coordinates are sent to the selected service.'}</p>
+          <div className="grid grid-cols-2 gap-2">
+            <label className="text-xs text-stone-700">{de ? 'Breitengrad' : 'Latitude'}
+              <input type="number" step="any" disabled={surveyLoading} value={latitude} onChange={e => {setLatitude(e.target.value);setSurvey(null);}} placeholder="52.52" className="block mt-1 w-full rounded-lg border border-stone-300 px-2 py-2" />
+            </label>
+            <label className="text-xs text-stone-700">{de ? 'Längengrad' : 'Longitude'}
+              <input type="number" step="any" disabled={surveyLoading} value={longitude} onChange={e => {setLongitude(e.target.value);setSurvey(null);}} placeholder="13.405" className="block mt-1 w-full rounded-lg border border-stone-300 px-2 py-2" />
+            </label>
+          </div>
+          <button type="button" onClick={queryVegetation} disabled={surveyLoading} className="rounded-lg bg-stone-900 text-white px-3 py-2 text-xs font-semibold disabled:opacity-50">
+            {surveyLoading ? (de ? 'Abfrage läuft…' : 'Querying…') : (de ? 'Geodaten abfragen' : 'Query geodata')}
+          </button>
+          {surveyError && <p role="alert" className="text-xs text-rose-700">{surveyError}</p>}
+          {survey && <div className="text-xs text-stone-700 space-y-2">
+            <p>{survey.source}</p>
+            <p>{survey.observations.length} {de ? 'kartierte Gehölzpunkte gefunden' : 'mapped vegetation points found'} · {new Date(survey.retrievedAt).toLocaleString(de ? 'de-DE' : 'en-GB')}</p>
+            {survey.observations[0] && <p className="font-semibold">{de ? 'Nächster kartierter Punkt' : 'Nearest mapped point'}: {survey.observations[0].distanceMetres} m ({survey.observations[0].kind})</p>}
+            <p className="text-amber-800">{de ? 'Nicht gefunden ≠ nicht vorhanden. Keine Aussage über Versiegelung oder den Glas-Gehölz-Abstand.' : 'Not mapped ≠ absent. No conclusion about sealing or glass-to-vegetation distance.'}</p>
+            <a className="underline text-sky-800" href={survey.sourceUrl ?? "https://www.openstreetmap.org/copyright"} target="_blank" rel="noopener noreferrer">{survey.license ?? "© OpenStreetMap contributors"}</a>
+          </div>}
+        </section>
 
         {/* Schwellenwerte aus dem Monitoring */}
         <div className="bg-white rounded-2xl border border-stone-200 p-4 space-y-2">
