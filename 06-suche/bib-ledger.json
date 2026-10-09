@@ -610,6 +610,80 @@
         "src/data/candidateVectors.json": "sha256:b1584659a91b5625577433fc6f05ed9bcb300e95b215f12029d6b79d136a239c",
         "src/data/vectorChanges.json": "absent"
       }
+    },
+    "jobcenter-runde-09-10-2026": {
+      "plan_id": "jobcenter-runde-09-10-2026",
+      "actor": "bibliothekar",
+      "agent": "bibliothekar",
+      "runde": "",
+      "at": "2026-10-09T12:42:27.408Z",
+      "ops": [
+        {
+          "index": 0,
+          "op": "protokoll.add",
+          "target": "KdU-Heizkosten-Lokalisator"
+        },
+        {
+          "index": 1,
+          "op": "protokoll.add",
+          "target": "Job-Zumutbarkeits-Checker"
+        },
+        {
+          "index": 2,
+          "op": "protokoll.add",
+          "target": "Kooperationsplan-Gegenentwurf"
+        }
+      ],
+      "files": [
+        "06-suche/amelie-pruefprotokoll.md"
+      ],
+      "hashes": {
+        "src/data/quellen.json": "sha256:004cb632c9828ca6f307b58e97c5c505f3c5e69edba96679fbd6f368cd05f04a",
+        "src/data/graeber.json": "sha256:b90aba0750d83939ad450af14c9ae70ea18f40d7e4a07395a50897ef138e0a2d",
+        "06-suche/amelie-pruefprotokoll.md": "sha256:afaddc1f5af66b3e6aa0c3c6b11166ddd2003dfbde2dbc18c54b02ccc99f2205",
+        "06-suche/terminology-map.md": "absent",
+        "06-suche/open-questions.md": "absent",
+        "src/data/doseVectors.json": "sha256:fb58743901afc0e7897df6bf55fd1dfa95b1cd7db885dad3da324716200dfbb9",
+        "src/data/candidateVectors.json": "sha256:b1584659a91b5625577433fc6f05ed9bcb300e95b215f12029d6b79d136a239c",
+        "src/data/vectorChanges.json": "absent"
+      }
+    },
+    "jobcenter-runde-09-10-2026-v3": {
+      "plan_id": "jobcenter-runde-09-10-2026-v3",
+      "actor": "bibliothekar",
+      "agent": "bibliothekar",
+      "runde": "",
+      "at": "2026-10-09T13:04:13.608Z",
+      "ops": [
+        {
+          "index": 0,
+          "op": "protokoll.add",
+          "target": "KdU-Heizkosten-Lokalisator"
+        },
+        {
+          "index": 1,
+          "op": "protokoll.add",
+          "target": "Job-Zumutbarkeits-Checker"
+        },
+        {
+          "index": 2,
+          "op": "protokoll.add",
+          "target": "Kooperationsplan-Gegenentwurf"
+        }
+      ],
+      "files": [
+        "06-suche/amelie-pruefprotokoll.md"
+      ],
+      "hashes": {
+        "src/data/quellen.json": "sha256:5008d5de976f3205f88712d084cdb59ba38bed12fc6e9d09062d8006855a355d",
+        "src/data/graeber.json": "sha256:b90aba0750d83939ad450af14c9ae70ea18f40d7e4a07395a50897ef138e0a2d",
+        "06-suche/amelie-pruefprotokoll.md": "sha256:afaddc1f5af66b3e6aa0c3c6b11166ddd2003dfbde2dbc18c54b02ccc99f2205",
+        "06-suche/terminology-map.md": "absent",
+        "06-suche/open-questions.md": "absent",
+        "src/data/doseVectors.json": "sha256:fb58743901afc0e7897df6bf55fd1dfa95b1cd7db885dad3da324716200dfbb9",
+        "src/data/candidateVectors.json": "sha256:b1584659a91b5625577433fc6f05ed9bcb300e95b215f12029d6b79d136a239c",
+        "src/data/vectorChanges.json": "absent"
+      }
     }
   }
 }

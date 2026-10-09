@@ -241,3 +241,22 @@
 {"at":"2026-10-01T23:37:30.460Z","event":"cli","cmd":"quellen add","actor":"claude-code","agent":"claude-code","runde":"Verwandten-Recherche 01.10.2026","id":"ok-lab-berlin-code-for-germany"}
 {"at":"2026-10-01T23:37:30.555Z","event":"cli","cmd":"quellen add","actor":"claude-code","agent":"claude-code","runde":"Verwandten-Recherche 01.10.2026","id":"wikimedia-community-wishlist"}
 {"at":"2026-10-01T23:37:30.567Z","event":"cli","actor":"bibliothekar","agent":"claude-code","runde":"Verwandten-Recherche 01.10.2026","cmd":"quellen import","count":8}
+{"at":"2026-10-09T12:42:27.723Z","event":"op","plan_id":"jobcenter-runde-09-10-2026","actor":"bibliothekar","agent":"bibliothekar","runde":"","op":"protokoll.add","target":"KdU-Heizkosten-Lokalisator","detail":"Zeile in „Jobcenter-Runde 09.10.2026“ (frei)"}
+{"at":"2026-10-09T12:42:27.723Z","event":"op","plan_id":"jobcenter-runde-09-10-2026","actor":"bibliothekar","agent":"bibliothekar","runde":"","op":"protokoll.add","target":"Job-Zumutbarkeits-Checker","detail":"Zeile in „Jobcenter-Runde 09.10.2026“ (frei)"}
+{"at":"2026-10-09T12:42:27.723Z","event":"op","plan_id":"jobcenter-runde-09-10-2026","actor":"bibliothekar","agent":"bibliothekar","runde":"","op":"protokoll.add","target":"Kooperationsplan-Gegenentwurf","detail":"Zeile in „Jobcenter-Runde 09.10.2026“ (frei)"}
+{"at":"2026-10-09T12:42:27.723Z","event":"apply","plan_id":"jobcenter-runde-09-10-2026","key":"jobcenter-runde-09-10-2026","actor":"bibliothekar","ops":3,"files":1}
+{"at":"2026-10-09T12:44:51.254Z","event":"cli","cmd":"quellen log","actor":"bibliothekar","id":"farmacia-hospitalaria-protokoll-bei-rotu"}
+{"at":"2026-10-09T12:45:13.158Z","event":"cli","cmd":"quellen log","actor":"bibliothekar","id":"tierhaushalt-produkte-als-besetzt-belege"}
+{"at":"2026-10-09T12:45:33.889Z","event":"cli","cmd":"quellen log","actor":"bibliothekar","id":"bullinger-kampfmittelerkundung-brandenbu"}
+{"at":"2026-10-09T12:45:53.069Z","event":"cli","cmd":"quellen log","actor":"bibliothekar","id":"bfn-fachinformation-gebietsfremde-baumar"}
+{"at":"2026-10-09T12:46:15.337Z","event":"cli","cmd":"quellen log","actor":"bibliothekar","id":"lanuk-nrw-neobiota-robinie-massnahmen"}
+{"at":"2026-10-09T12:46:34.292Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Runde 09.10.2026","id":"fachliche-weisungen-ba-sgg-ii"}
+{"at":"2026-10-09T12:46:54.227Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Runde 09.10.2026","id":"hartz4widerspruch-de"}
+{"at":"2026-10-09T12:47:12.485Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Jobcenter-Runde 09.10.2026","id":"tacheles-oertliche-richtlinien-kdu"}
+{"at":"2026-10-09T12:47:35.748Z","event":"cli","actor":"bibliothekar","runde":"Jobcenter-Runde 09.10.2026","cmd":"protokoll add","id":"KdU-Heizkosten-Lokalisator"}
+{"at":"2026-10-09T12:47:54.207Z","event":"cli","actor":"bibliothekar","runde":"Jobcenter-Runde 09.10.2026","cmd":"protokoll add","id":"Job-Zumutbarkeits-Checker"}
+{"at":"2026-10-09T12:48:21.823Z","event":"cli","actor":"bibliothekar","runde":"Jobcenter-Runde 09.10.2026","cmd":"protokoll add","id":"Kooperationsplan-Gegenentwurf"}
+{"at":"2026-10-09T13:04:13.798Z","event":"op","plan_id":"jobcenter-runde-09-10-2026-v3","actor":"bibliothekar","agent":"bibliothekar","runde":"","op":"protokoll.add","target":"KdU-Heizkosten-Lokalisator","detail":"Zeile in „Jobcenter-Runde 09.10.2026“ (frei)"}
+{"at":"2026-10-09T13:04:13.798Z","event":"op","plan_id":"jobcenter-runde-09-10-2026-v3","actor":"bibliothekar","agent":"bibliothekar","runde":"","op":"protokoll.add","target":"Job-Zumutbarkeits-Checker","detail":"Zeile in „Jobcenter-Runde 09.10.2026“ (frei)"}
+{"at":"2026-10-09T13:04:13.798Z","event":"op","plan_id":"jobcenter-runde-09-10-2026-v3","actor":"bibliothekar","agent":"bibliothekar","runde":"","op":"protokoll.add","target":"Kooperationsplan-Gegenentwurf","detail":"Zeile in „Jobcenter-Runde 09.10.2026“ (frei)"}
+{"at":"2026-10-09T13:04:13.798Z","event":"apply","plan_id":"jobcenter-runde-09-10-2026-v3","key":"jobcenter-runde-09-10-2026-v3","actor":"bibliothekar","ops":3,"files":1}

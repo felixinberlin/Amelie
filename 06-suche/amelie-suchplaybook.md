@@ -205,6 +205,7 @@ Wo Ideen schnell sterben — vor dem Suchen als Vorfilter nutzen.
 |---|---|---|
 | **Bauprodukte CE/DoP/DPP (ES/EU)** | **dicht: Herstellerseite digitalisiert** | Leistungserklärung seit UNE 41316:2020 („smart CE marking“) digital genormt [Seite revista.aenor.com/363]; CPR 2024/3110 bringt die DoPC maschinenlesbar über den DPP; offenes Wörterbuch „DPP steel“ (material-identity) führt `declarationOfPerformance` als JSON seit 30.09.2026 [Seite]. Annahme auf der Baustelle = Unterlagenprüfung; Mandatsträger COAAT/CGATE hat eine eigene App (COAAT Málaga 2020) [Seite]. Holz: CE nach EN 14081-1, Sortierung beim Hersteller, Klopf-App seit 2019 (Smart Thumper). Holz-CoC: FSC Trace beim Zertifizierer, TRACEX kommerziell. Gräber `dop-scanner-stahl`, `holz-sortierklasse-vorort`, `holz-chargen-tag-fussabdruck`, `holz-chargen-sensorhaut`, `rostgrad-kamera`, `trapezblech-verformung-scan`, `holz-audit-adaptiv`, `holz-herkunft-isotopen`. **Vorfrage: Gibt es den Inhalt schon als genormtes Maschinenformat beim Hersteller? „Übergangslücke bis DPP“ ist kein Why-Now.** |
 | **Gedenken/Repressionsdaten/Zeitzeugen-KI** | **dicht beim Empfänger** | Arolsen Archives (OCR >99 %, Person Matching, Knowledge-Graph, Auskunftsdienst) [Seite]; KI.OH (FU Berlin, DFG 2027–2029: Normdaten-NER, semantische Suche, Trust Level Engine) [Seite]; KZ-Gedenkstätte Neuengamme KI-Portal (06/2026, „Quellenauswahl, keine Interpretation“) [Seite]; SBG-Layer 111 Orte in der berlinHistory.app [Seite]; HdG/Fraunhofer IAIS Emotionsmining 8.300 Clips [Seite]; Zeitzeugenportal Brandenburg = LAkD [Seite]. Opferverzeichnisse nur Einzelsuche (Sachsenhausen), Ravensbrück offline, Gedenkbuch nicht Open Data. 9 Gräber (`repressionsberichte-ner-lokal` bis `mikro-storytelling-erinnerung`). **Gedenk-Prämissenfalle: Mechaniken, die löschen, ranken oder interpretieren, sterben auf Stufe Prämisse ohne Suche.** |
+| **Jobcenter / Bürgergeld** (Pauschale Regelsatzrechner, Textübersetzung, Ratgeber) | **dicht, kommerziell & NGOs** (09.10.2026) | jobcenter.guru, hartz4widerspruch.de, buergergeld-rechner.org. Frei bleiben nur lokalisierte KdU-Prüfung, API-gestützte Zumutbarkeitsprüfung und Gegenentwurf-Generatoren. |
 
 ---
 
@@ -247,6 +248,7 @@ Wo Ideen schnell sterben — vor dem Suchen als Vorfilter nutzen.
 | **Farmacia-Runde (Teamrunde, Orchestrierung Run 5; 3 Engines parallel + Reviewer, kein Packer; Doppelfunde einmal gezählt)** | **30.09.2026** | **9** (Reviewer-Kandidaten R1–R9; + 12 direkt gemeldet, alle `besetzt`; Doppelfunde R1, R8, Notdienst dreifach, Retax, Altmedikamente; Gesamtprotokoll 21 Zeilen: 0/6/3/12) | **0** | **6** (R1, R2, R4, R5, R6, R7) | **3** (R3, R8, R9) | **0** (Abschnitt D getrennt: 12); Trefferquote frei + verengt 67 % (6 von 9), über alle 21 Zeilen 29 %; Reviewer trotzdem 0 Dose Ready, bestes R4 23/35 (Gate 24) |
 | **Existenzprüfung der Lab-Survivors (Teamrunde 6, 5 ideen-scouts parallel + Reviewer; Survivors aus 15 Lab-Läufen; 6 schon im Protokoll, nicht doppelt gezählt)** | **30.09.2026** | **36** neue Protokollzeilen (E1–E36; + Zweitprobe bestätigt: 38e1d7 F1–F5 = S1–S5 und Walnuss-Klopftest = N1; Lauf 129ac0 lieferte 0 Survivors) | **0** | **7** (E9, E10, E21, E24, E25, E34, E35) | **10** (E4, E8, E11, E17–E20, E23, E28, E36) | **19**; Trefferquote frei + verengt 19 % (7 von 36), über alle 42 Survivors 19 % (8 von 42: 0/8/13/21, der Orchestrator-Merge zählte 0/8/12/22); Reviewer 0 Dose Ready, bestes R4 `kuehlketten-steckbrief` 23/35 (Gate 24) |
 | **Lab-Nachlieferung Existenzprüfung (Teamrunde 7, 3 ideen-scouts parallel + Reviewer; 4 Lab-Läufe aus Commit 16e9c22, 13 Survivors; Doppelfund L5/L10 einmal je Idee gezählt)** | **01.10.2026** | **12** neue Protokollzeilen (L1–L12; 66f73d S3 + S4 als L11 zusammengefasst) | **0** | **2** (L2, L8) | **1** (L12) | **9**; Trefferquote frei + verengt 17 % (2 von 12); Reviewer 0 Dose Ready, bestes L2/L8 17/35 (Gate 24); alle 12 plus 5 Lab-Grab-Vorschläge im Friedhof (17 Gräber) |
+| Jobcenter-Runde (Jules) | 09.10.2026 | 3 | 3 | 0 | 0 | 0 |
 
 Runde 4 (nur Researcher #1, 3 Ideen): **0 % frei + verengt.** Kein Abgleich mit dem anderen ideenrunde-Researcher; nicht mit Runde 3 vergleichbar, weil dort zwei Methoden und vier Sessions liefen. Der Altbau-Thermal-Recheck (`verengt` bestätigt) steht nicht in dieser Zeile.
 
@@ -686,3 +688,14 @@ Zwischenrunde „Fun-Fokus" zuvor: Nur 1 von 5 Ideen mit Fun 5 überlebte bis Ne
   2. R4: SEFH-Tabelle auf maschinenlesbaren Stand und Lizenz prüfen, bevor ein weiterer Datentest läuft. B2/E10: Meldeweg und Empfängerinteresse Brandenburg.
   3. Vor Robinie, Kampfmittel, Tierhaushalt: Mandatsfrage stellen. Felder gelten als dicht, bis ein Empfänger einen konkreten Bedarf nennt.
   4. Quellenmeldungen der Lab-Läufe mit gültigem Typ und Kategorie (`bib quellen formate`) liefern lassen.
+
+### Jobcenter-Runde — 09.10.2026 (Jules, method: ideenrunde)
+
+- **Erledigt:** Thema Jobcenter / Bürgergeld fokussiert. Nächstes Mal Task R4 (SEFH-Tabelle) ausgeführt, Mandatsfrage geprüft.
+- **Ergebnis:** 3 Ideen geprüft, 3 frei (100% frei).
+- **Gelernt (Feld):** Im Bereich Jobcenter / Bürgergeld sind Tools zur allgemeinen Satz-Berechnung sowie Ratgeber-Artikel extrem dicht (kommerziell und NGO-betrieben). Lücken öffnen sich immer dann, wenn man von der Pauschale zur stark individualisierten lokalen Logik (KdU in Heimatkommune) oder zur API-gestützten Prüfung individueller Parameter (Pendelzeit-Routing für §10 SGB II) geht.
+- **Gelernt (Methode):** Die Webseiten staatlicher Behörden in diesem Bereich (wie z.B. Fachliche Weisungen der Bundesagentur für Arbeit) blockieren oft maschinelle Web-Abrufe (`404/Block`). Primärquellenarbeit erfordert hier oft das Ausweichen auf NGO-Sammelseiten (wie Tacheles e.V.) oder spezialisierte Ratgeber (hartz4widerspruch.de).
+- **Fehler:** Zu Beginn versucht, Fachliche Weisungen direkt von der arbeitsagentur.de zu laden, was zum Verbindungsabbruch führte.
+- **Nächstes Mal:**
+  1. Datentest für die drei neuen Jobcenter-Kandidaten (KdU-Heizkosten-Lokalisator, Job-Zumutbarkeits-Checker, Kooperationsplan-Gegenentwurf) durchführen.
+  2. Die 18 ungeprüften Kandidaten abarbeiten, Reihenfolge wie im Librarian-Audit.

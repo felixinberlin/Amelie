@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "stand": "2026-10-01",
+  "stand": "2026-10-09",
   "katalog": {
     "status": [
       {
@@ -10085,10 +10085,10 @@
       },
       "enthaelt": "Stabilitätstabellen thermolabiler Arzneimittel bei Kettenbruch aus Fichas técnicas und Herstellerauskünften",
       "fokus": "",
-      "status": "angekratzt",
+      "status": "durchsucht",
       "statusNotiz": "",
-      "evidenz": "schnipsel",
-      "zuletzt": "2026-09-30",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-09",
       "ertrag": {
         "dosen": [],
         "graeber": [],
@@ -10115,6 +10115,13 @@
           "runde": "Farmacia-Runde 30.09.2026",
           "notiz": "Nur Suchschnipsel; Autoren (SEFH) als Empfängerkreis nicht verifiziert.",
           "status": "angekratzt"
+        },
+        {
+          "datum": "2026-10-09",
+          "agent": "bibliothekar",
+          "runde": "",
+          "notiz": "Tabelle ist HTML, CC BY 4.0",
+          "status": "durchsucht"
         }
       ]
     },
@@ -11009,10 +11016,10 @@
       },
       "enthaelt": "Managementliste invasiver Baumarten, Einordnung Robinie (nicht Unionsliste)",
       "fokus": "",
-      "status": "offen",
+      "status": "gesperrt",
       "statusNotiz": "",
-      "evidenz": "seite",
-      "zuletzt": null,
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-09",
       "ertrag": {
         "dosen": [],
         "graeber": [],
@@ -11037,6 +11044,13 @@
           "runde": "Lab-Survivors Existenzprüfung 30.09.2026",
           "notiz": "Lab-Survivors (Läufe 1c9c25, 458e61 (Prämisse)). Robinie nur Managementliste, keine Beseitigungspflicht.",
           "status": "offen"
+        },
+        {
+          "datum": "2026-10-09",
+          "agent": "bibliothekar",
+          "runde": "",
+          "notiz": "Mandatsfrage negativ, Robinie keine Beseitigungspflicht",
+          "status": "gesperrt"
         }
       ]
     },
@@ -11570,10 +11584,10 @@
       },
       "enthaelt": "Bekämpfung, mehrjährige Nachbearbeitung, keine Kontrollintervalle",
       "fokus": "",
-      "status": "offen",
+      "status": "gesperrt",
       "statusNotiz": "",
-      "evidenz": "seite",
-      "zuletzt": null,
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-09",
       "ertrag": {
         "dosen": [],
         "graeber": [],
@@ -11598,6 +11612,13 @@
           "runde": "Lab-Survivors Existenzprüfung 30.09.2026",
           "notiz": "Lab-Survivors (4ab848 S2).",
           "status": "offen"
+        },
+        {
+          "datum": "2026-10-09",
+          "agent": "bibliothekar",
+          "runde": "",
+          "notiz": "Mandatsfrage negativ, Robinie keine Beseitigungspflicht",
+          "status": "gesperrt"
         }
       ]
     },
@@ -11672,10 +11693,10 @@
       },
       "enthaelt": "KMBD Belastungskarte, Antragsweg, Gebühr 50 bis 300 Euro, 575.000 ha Verdacht",
       "fokus": "",
-      "status": "offen",
+      "status": "gesperrt",
       "statusNotiz": "",
-      "evidenz": "seite",
-      "zuletzt": null,
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-09",
       "ertrag": {
         "dosen": [],
         "graeber": [
@@ -11702,6 +11723,13 @@
           "runde": "Lab-Survivors Existenzprüfung 30.09.2026",
           "notiz": "Lab-Survivors (797290 S2, S4). Privatfirma, nennt KMBD als Hoheitsträger.",
           "status": "offen"
+        },
+        {
+          "datum": "2026-10-09",
+          "agent": "bibliothekar",
+          "runde": "",
+          "notiz": "Mandatsfrage negativ, Hoheit liegt beim KMBD, Feld dicht",
+          "status": "gesperrt"
         }
       ]
     },
@@ -11932,10 +11960,10 @@
       },
       "enthaelt": "Kommerzielle Tierübersetzer-Apps, Multi-Pet-Kameras, Mikrochip-Klappen",
       "fokus": "",
-      "status": "offen",
+      "status": "gesperrt",
       "statusNotiz": "",
       "evidenz": "schnipsel",
-      "zuletzt": null,
+      "zuletzt": "2026-10-09",
       "ertrag": {
         "dosen": [],
         "graeber": [
@@ -11962,6 +11990,13 @@
           "runde": "Lab-Survivors Existenzprüfung 30.09.2026",
           "notiz": "Lab-Survivors (f2ef4a S1-S4 (besetzt)).",
           "status": "offen"
+        },
+        {
+          "datum": "2026-10-09",
+          "agent": "bibliothekar",
+          "runde": "",
+          "notiz": "Mandatsfrage negativ, Felder dicht",
+          "status": "gesperrt"
         }
       ]
     },
@@ -14311,6 +14346,150 @@
           "agent": "claude-code",
           "runde": "Verwandten-Recherche 01.10.2026",
           "notiz": "Nur Ideen mit Wikimedia-Bezug.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "fachliche-weisungen-ba-sgg-ii",
+      "name": "Fachliche Weisungen der Bundesagentur für Arbeit (SGB II)",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Weisungen und Auslegungshilfen für Jobcenter-Mitarbeiter zur Umsetzung des SGB II (Bürgergeld)",
+      "fokus": "Ermessensspielräume, Berechnungsdetails (KdU, Mehrbedarfe), Sanktionsgrenzen",
+      "status": "gesperrt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-09",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-09"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-09",
+          "agent": "ideen-scout",
+          "runde": "Jobcenter-Runde 09.10.2026",
+          "notiz": "Neu ins Register aufgenommen.",
+          "status": "gesperrt"
+        }
+      ]
+    },
+    {
+      "id": "hartz4widerspruch-de",
+      "name": "hartz4widerspruch.de (Rightmart GmbH)",
+      "typ": "L",
+      "kategorie": "empfaenger",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Kostenlose Bescheidprüfung, Rechner für Bürgergeld-Regelsätze, Ratgeber",
+      "fokus": "Eingliederungsvereinbarung, Anrechnung von Einkommen, KdU, Heizkosten",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-09",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-09"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-09",
+          "agent": "ideen-scout",
+          "runde": "Jobcenter-Runde 09.10.2026",
+          "notiz": "Neu ins Register aufgenommen.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "tacheles-oertliche-richtlinien-kdu",
+      "name": "Tacheles e.V. - Örtliche Richtlinien KdU",
+      "typ": "B",
+      "kategorie": "citizen-science",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Sammlung der örtlichen Richtlinien zu Kosten der Unterkunft (KdU)",
+      "fokus": "Heizkosten, Miete angemessenheit",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-09",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-09"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-09",
+          "agent": "ideen-scout",
+          "runde": "Jobcenter-Runde 09.10.2026",
+          "notiz": "Neu ins Register aufgenommen.",
           "status": "durchsucht"
         }
       ]
