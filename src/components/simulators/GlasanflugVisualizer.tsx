@@ -43,17 +43,8 @@ export const GlasanflugVisualizer: React.FC<GlasanflugVisualizerProps> = ({
     active: false,
   });
 
-  // Calculate avoidance probability based on stufe and marking
-  const avoidanceRate = hasMarking
-    ? markingType === 'dots'
-      ? 94
-      : 92
-    : stufe === 'gering'
-    ? 85
-    : stufe === 'mittel'
-    ? 52
-    : 18;
-
+  // Educational animation only: no empirical avoidance probability can be inferred
+  // from the LAG-VSW risk class or an arbitrary drawn marking.
   const startFlightTest = () => {
     animRef.current = {
       x: 30,
@@ -222,8 +213,8 @@ export const GlasanflugVisualizer: React.FC<GlasanflugVisualizerProps> = ({
 
         // Collision or avoidance boundary near facade
         if (flight.x >= facadeX - 25) {
-          const willAvoid = Math.random() * 100 <= avoidanceRate;
-          if (willAvoid || hasMarking || stufe === 'gering') {
+          const illustrationAvoids = hasMarking;
+          if (illustrationAvoids) {
             // Divert up and away safely
             flight.vx = -1.8;
             flight.vy = -2.8;
@@ -235,6 +226,7 @@ export const GlasanflugVisualizer: React.FC<GlasanflugVisualizerProps> = ({
             setFlightOutcome('collision');
           }
           flight.active = false;
+          setIsSimulatingFlight(false);
         }
 
         // Draw flying bird
@@ -269,7 +261,7 @@ export const GlasanflugVisualizer: React.FC<GlasanflugVisualizerProps> = ({
 
     frameId = requestAnimationFrame(render);
     return () => cancelAnimationFrame(frameId);
-  }, [eingabe, stufe, hasMarking, markingType, visionMode, avoidanceRate]);
+  }, [eingabe, hasMarking, markingType, visionMode]);
 
   return (
     <div className="rounded-2xl bg-stone-900 border border-stone-800 p-4 sm:p-5 text-white space-y-4">
@@ -284,8 +276,8 @@ export const GlasanflugVisualizer: React.FC<GlasanflugVisualizerProps> = ({
             </h4>
             <p className="text-[11px] text-stone-400">
               {de
-                ? 'Simulation der Spiegeleffekte & Vögel-Meiderate nach ONR 191040'
-                : 'Reflection physics & bird avoidance simulation per ONR 191040'}
+                ? 'Schematische Illustration — keine Vorhersage und kein Wirksamkeitsnachweis'
+                : 'Schematic illustration — not a prediction or effectiveness test'}
             </p>
           </div>
         </div>
@@ -311,7 +303,7 @@ export const GlasanflugVisualizer: React.FC<GlasanflugVisualizerProps> = ({
             }`}
           >
             <Eye className="w-3 h-3 text-purple-400" />
-            <span>{de ? 'Vogelsicht (UV)' : 'Avian UV Vision'}</span>
+            <span>{de ? 'Illustrative UV-Farben' : 'Illustrative UV colours'}</span>
           </button>
         </div>
       </div>
@@ -327,19 +319,8 @@ export const GlasanflugVisualizer: React.FC<GlasanflugVisualizerProps> = ({
 
         {/* HUD Overlay Badge */}
         <div className="absolute top-3 left-3 flex flex-wrap gap-2 pointer-events-none">
-          <span className="px-2.5 py-1 rounded-lg bg-stone-900/90 backdrop-blur-sm border border-stone-700 text-[11px] font-mono text-stone-200 font-bold">
-            {de ? 'Vermeidungsrate:' : 'Avoidance:'}{' '}
-            <span
-              className={
-                avoidanceRate >= 80
-                  ? 'text-emerald-400'
-                  : avoidanceRate >= 50
-                  ? 'text-amber-400'
-                  : 'text-rose-400'
-              }
-            >
-              {avoidanceRate} %
-            </span>
+          <span className="px-2.5 py-1 rounded-lg bg-stone-900/90 border border-stone-700 text-[11px] font-mono text-stone-200 font-bold">
+            {de ? 'Schematische Darstellung · keine Messwerte' : 'Illustration only · no measured probabilities'}
           </span>
           {hasMarking && (
             <span className="px-2 py-1 rounded-lg bg-emerald-950/90 backdrop-blur-sm border border-emerald-700 text-[11px] font-mono text-emerald-300 font-bold inline-flex items-center gap-1">
@@ -355,17 +336,23 @@ export const GlasanflugVisualizer: React.FC<GlasanflugVisualizerProps> = ({
             {flightOutcome === 'avoided' ? (
               <span className="px-3 py-1.5 rounded-xl bg-emerald-900/90 backdrop-blur-sm border border-emerald-600 text-xs text-emerald-200 font-bold inline-flex items-center gap-1.5 shadow-lg">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                <span>{de ? 'Flugbahn abgewendet! (Keine Kollision)' : 'Diverted safely! (No collision)'}</span>
+                <span>{de ? 'Beispiel: Ausweichflug' : 'Example: bird diverts'}</span>
               </span>
             ) : (
               <span className="px-3 py-1.5 rounded-xl bg-rose-900/90 backdrop-blur-sm border border-rose-600 text-xs text-rose-200 font-bold inline-flex items-center gap-1.5 shadow-lg">
                 <XCircle className="w-4 h-4 text-rose-400" />
-                <span>{de ? 'Kollision! Signifikantes Schlagrisiko' : 'Collision! Significant strike risk'}</span>
+                <span>{de ? 'Beispiel: Kollision (keine Prognose)' : 'Example: collision (not a forecast)'}</span>
               </span>
             )}
           </div>
         )}
       </div>
+
+      <p className="text-[11px] text-stone-300 leading-relaxed" role="note">
+        {de
+          ? 'Die Flugbahn zeigt nur einen Beispielablauf. Farben zeigen keine wissenschaftlich validierte Vogelsicht. Die gezeichneten Punkte und Streifen sind kein geprüftes Produkt; auch mit Markierungen bleibt ein Restrisiko. Für Wirksamkeitsnachweise die geprüften WUA-Muster unten verwenden.'
+          : 'The flight path is an illustrative example. Colours are not a scientifically validated rendering of bird vision. Drawn dots and stripes are not certified products; residual collision risk remains. Use the tested WUA patterns below for evidence.'}
+      </p>
 
       {/* Controls Bar */}
       <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
@@ -421,7 +408,7 @@ export const GlasanflugVisualizer: React.FC<GlasanflugVisualizerProps> = ({
             }`}
           >
             <Play className="w-3.5 h-3.5 fill-current" />
-            <span>{de ? 'Flugtest starten' : 'Run Flight Test'}</span>
+            <span>{de ? 'Beispiel-Flug zeigen' : 'Show example flight'}</span>
           </button>
 
           <button
