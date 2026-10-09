@@ -25,10 +25,17 @@ export function calculateTacticBonus(tactic: TacticalStance, statKey: keyof Plan
 }
 
 type StatKey = keyof PlantRosterItem['stats'];
+/** Prototype rules require explicitly supplied game coefficients, never raw scientific data. */
+export function requirePrototypeStat(plant: PlantRosterItem, key: StatKey): number {
+  if (plant.totalBudget === null) throw new Error('Game conversion pending: scientific measurements cannot be used as game points');
+  const value=plant.stats[key];
+  if (value === null || !Number.isFinite(value)) throw new Error('Missing verified skill value');
+  return value;
+}
 
 /** Flat bonus a plant's own signature skill grants on the tested stat (arena only matters where the deck says so). */
 function ownSkillBonus(plant: PlantRosterItem, statKey: StatKey, arena: ArenaContext | undefined, notes: string[], round = 0, state: DuelState = INITIAL_DUEL_STATE): number {
-  const base = plant.stats[statKey];
+  const base = requirePrototypeStat(plant, statKey);
   switch (plant.id) {
     case 'taraxacum-officinale':
       return statKey === 'wurzel' ? 2 : 0;
@@ -85,7 +92,7 @@ function skillPenaltyAgainst(plant: PlantRosterItem, enemy: PlantRosterItem, sta
 
 /** Stat after arena handicaps (Wall-Rue on asphalt, Scurvygrass away from salt). */
 function arenaAdjustedStat(plant: PlantRosterItem, statKey: StatKey, arena: ArenaContext | undefined, notes: string[]): number {
-  const base = plant.stats[statKey];
+  const base = requirePrototypeStat(plant, statKey);
   if (!arena) return base;
   if (plant.id === 'asplenium-ruta-muraria' && arena.surface === 'asphalt') {
     notes.push('Kalkanker: Werte halbiert auf Asphalt');
@@ -283,33 +290,22 @@ export function calculateSeedReward(winner: 'player' | 'ai' | 'draw' | null, fin
 }
 
 /**
- * Validates that all plant roster species satisfy the 36-point budget rule and data constraints.
+ * Validates scientific measurements. Missing observations are allowed; budgets are not.
  */
 export function validateStarterRoster(roster: PlantRosterItem[]): { valid: boolean; errors: string[] } {
   const errors: string[] = [];
 
   for (const plant of roster) {
-    const sum =
-      plant.stats.wurzel +
-      plant.stats.tritt +
-      plant.stats.duerre +
-      plant.stats.saat +
-      plant.stats.tempo +
-      plant.stats.chemie;
-
-    if (sum !== plant.totalBudget) {
-      errors.push(`Plant ${plant.id} totalBudget (${plant.totalBudget}) does not match stat sum (${sum})`);
+    for (const [key, value] of Object.entries(plant.stats)) {
+      if (value !== null && (!Number.isFinite(value) || value < 0)) errors.push(`Plant ${plant.id} has invalid measurement ${key}`);
     }
-
-    if (sum > 36) {
-      errors.push(`Plant ${plant.id} exceeds maximum allowed budget of 36 points (has ${sum})`);
-    }
+    if (plant.totalBudget !== null) errors.push(`Plant ${plant.id} has a game budget in scientific data`);
 
     if (!plant.signatureSkill || !plant.signatureSkill.nameDe || !plant.signatureSkill.nameEn) {
       errors.push(`Plant ${plant.id} is missing signature skill definitions`);
     }
 
-    if (!plant.csr || !['R', 'C', 'S', 'RC', 'RCS', 'SR', 'CR', 'CS'].includes(plant.csr)) {
+    if (plant.csr !== null && !/^(C|S|R|CS|CR|SR|CSR)(\/(C|S|R|CS|CR|SR|CSR))?$/.test(plant.csr)) {
       errors.push(`Plant ${plant.id} has invalid CSR classification: ${plant.csr}`);
     }
   }

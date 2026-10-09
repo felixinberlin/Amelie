@@ -1,3 +1,5 @@
+> **Historischer Spielentwurf, keine verifizierte Wertetabelle.** Seit 09.10.2026 ersetzt der wissenschaftliche Artenbestand diese 0–10-Werte; siehe [Datenprüfung](daten-audit-2026-10-09.md). Die folgenden Zahlen und Spielboni bleiben nur als Entwurf dokumentiert.
+
 # Crack Flora: Fugenduell — 14 Starter Species Reference Manual
 
 > **Hinweis zur Herkunft:** Das Original in Drive ist eine `.docx`
