@@ -1,0 +1,25 @@
+{
+  "plan_id": "new-idea-pro-day-03",
+  "actor": "cli-bibliothekar",
+  "ops": [
+    {
+      "op": "source.log",
+      "id": "uba-bmuv-potenzialstudien-weitere",
+      "status": "angekratzt",
+      "evidenz": "schnipsel",
+      "note": "Elektroschrott als Potenzial für manuelle Demontage identifiziert, KI-Kamera Demontage-Lotse als Idee."
+    },
+    {
+      "op": "protokoll.add",
+      "runde": "New Idea Pro Day — 07.10.2026",
+      "titel": "Elektroschrott-Demontage-Lotse",
+      "was": "KI-Kamera erkennt auf Platinen werthaltige Bauteile vor dem Schreddern.",
+      "urteil": "frei",
+      "beleg": "Apple hat Daisy für iPhones, Industrie schreddert und sortiert. UBA empfiehlt manuelle Demontage vor dem Schredder, aber Personal fehlt/ist teuer. Keine AR-Demontagehilfe für Handarbeiter gefunden.",
+      "evidenz": "schnipsel",
+      "method": "ideenrunde",
+      "pruefenAb": "04/2027",
+      "neuerAbschnitt": "Manuelle Demontage nach UBA-Empfehlungen als Ansatzpunkt für Repair-Cafés und Recycling."
+    }
+  ]
+}

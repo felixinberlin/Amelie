@@ -686,3 +686,12 @@ Zwischenrunde „Fun-Fokus" zuvor: Nur 1 von 5 Ideen mit Fun 5 überlebte bis Ne
   2. R4: SEFH-Tabelle auf maschinenlesbaren Stand und Lizenz prüfen, bevor ein weiterer Datentest läuft. B2/E10: Meldeweg und Empfängerinteresse Brandenburg.
   3. Vor Robinie, Kampfmittel, Tierhaushalt: Mandatsfrage stellen. Felder gelten als dicht, bis ein Empfänger einen konkreten Bedarf nennt.
   4. Quellenmeldungen der Lab-Läufe mit gültigem Typ und Kategorie (`bib quellen formate`) liefern lassen.
+
+### New Idea Pro Day — 07.10.2026 (method: ideenrunde, manual override)
+
+- **Erledigt:** Eine `offen`-Quelle aus `amelie-quellen.md` (weitere UBA-/BMUV-Potenzialstudien) durchsucht nach "Potenzial" und "Elektroschrott". 1 Idee (`Elektroschrott-Demontage-Lotse`) als `frei` bewertet.
+- **Gelernt:** UBA empfiehlt ausdrücklich die manuelle Demontage werthaltiger Bauteile (Leiterplatten, Stecker) vor dem Schreddern. Es existiert keine KI-geführte AR-Demontagehilfe für Handarbeiter/Repair-Cafés.
+- **Fehler:** Automatische Orchestrierung mit `npm run teamrunde` schlug mangels API-Schlüssel für die AI-Models (GCP Vertex) fehl, manuell eingesprungen.
+- **Nächstes Mal:**
+  1. Den `Elektroschrott-Demontage-Lotse` als Dose packen.
+  2. API-Schlüssel-Fehler in `teamrunde.sh` durch passendes Error-Handling besser abfangen.
