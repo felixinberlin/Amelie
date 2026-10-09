@@ -655,3 +655,13 @@ Zwischenrunde „Fun-Fokus" zuvor: Nur 1 von 5 Ideen mit Fun 5 überlebte bis Ne
   2. R4: SEFH-Tabelle auf maschinenlesbaren Stand und Lizenz prüfen, bevor ein weiterer Datentest läuft. B2/E10: Meldeweg und Empfängerinteresse Brandenburg.
   3. Vor Robinie, Kampfmittel, Tierhaushalt: Mandatsfrage stellen. Felder gelten als dicht, bis ein Empfänger einen konkreten Bedarf nennt.
   4. Quellenmeldungen der Lab-Läufe mit gültigem Typ und Kategorie (`bib quellen formate`) liefern lassen.
+
+### Wasser-Hitze-Zeitraffer-Runde — 01.10.2026 (method: ideenrunde, Einzelidee)
+
+- **Erledigt:** "Nächstes Mal" Check der Lab-Survivors, SEFH, Mandate und Validierungsformate. Ableitung einer neuen Idee aus einer `offen` Typ-B-Quelle (`mitforschen.org`).
+- **Ergebnis:** 1 geprüft · 0 frei / 1 verengt / 0 unklar / 0 besetzt (100 % frei + verengt).
+- **Gelernt (Feld):** Typ-B-Quellen wie `mitforschen.org` zeigen, dass Bürgerbeteiligung für qualitative Datensammlung (Bilder, Geschichten) weit verbreitet ist. Der Engpass liegt oft in der automatisierten Anreicherung dieser qualitativen Daten mit quantitativen offenen Daten (wie DWD), um sie für die Verwaltung nutzbar zu machen.
+- **Fehler:** Die SEFH-Tabelle war unter der angegebenen URL nicht mehr direkt verfügbar (404), was weitere Nachforschungen über Archive oder neue Pfade erfordert hätte.
+- **Nächstes Mal:**
+  1. **SEFH-Tabelle:** Den aktuellen Pfad der SEFH-Stabilitätstabelle recherchieren und den Datentest für R4 (`kuehlketten-steckbrief`) abschließen.
+  2. **Mandatsprüfung:** Vor Robinie, Kampfmittel, Tierhaushalt die Mandatsfrage stellen.

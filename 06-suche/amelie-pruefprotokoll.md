@@ -982,3 +982,9 @@ Existenzprüfung der 42 Survivors aus 15 Lab-Läufen (PR #171 bis #174, `06-such
 | E34 | **Raum-Umbauer (f2ef4a S3)** (`raum-umbauer`) | [method: bisoziation] | `verengt` | Scout: Mikrochip-Klappen (SureFlap) decken den Kern, Mechatronik. Reviewer B7: 12/35, Friedhof gemeinsam mit E35 (Grab gebaut). | [Schnipsel] | 30.09.2026 | 09/2027 |
 | E35 | **Dynamische Raumteilung (f2ef4a S4)** (`dynamische-raumteilung`) | [method: bisoziation] | `verengt` | Scout: Hardware, doppelt zu E34. Reviewer B8: 12/35, als Variante im Grab raum-umbauer. | [Schnipsel] | 30.09.2026 | 09/2027 |
 | E36 | **Musterprojektion Sicherheitszone (f2ef4a S5)** (`musterprojektion-sicherheitszone`) | [method: bisoziation] | `unklar` | Scout: eher leer, keine Wirkungsevidenz. | [Schnipsel] | 30.09.2026 | 09/2027 |
+
+## Runde 17 / Wasser-Hitze-Zeitraffer — 01.10.2026 (method: ideenrunde, Typ-B-Quelle)
+
+| ID | Idee | Methode | Urteil | Beleg (kurz) | Quelle | Datum | Prüfen ab |
+|---|---|---|---|---|---|---|---|
+| E37 | **Wasser-Hitze-Zeitraffer** (`wasser-hitze-zeitraffer`) — Automatische Überlagerung von Bürgerfotos mit offenen DWD-Dürredaten zur Erstellung von auswertbaren Zeitreihen für die Verwaltung | [method: ideenrunde] | `verengt` | Typ-B-Quelle `mitforschen.org` / `changing-natures.org` sammelt qualitative Bürgerfotos zu Wasser/Dürre, überlagert diese aber nicht automatisch mit DWD-Daten. Projekt `urban-tree-watering-radar` nutzt DWD, aber ohne Foto-Zeitraffer. Atlas „Longitudinalbeobachtung derselben Einzelpflanze" ist mit `GrowApp` (automatischer Zeitraffer) `dicht`. **Restlücke:** DWD-Datenanreicherung von Bürgerfotos speziell für Dürre/Gewässer und Verwaltungs-Policies (SenUVK). | [Seite] | 01.10.2026 | 03/2027 |
