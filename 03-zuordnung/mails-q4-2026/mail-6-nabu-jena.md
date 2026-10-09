@@ -1,28 +1,39 @@
-# Mail 6 — Glasanflug-Ampel → NABU Jena (Upstream des Vogelschlagmelders)
+# Mail 6 — Glasanflug-Ampel → NABU Jena
 
-**Status: ENTWURF, nicht gesendet.**
-**An:** Kontaktweg von nabu-jena.de kopieren oder Issue im Codeberg-Repo `nabu-jena/Vogelschlagmelder` — Adresse nicht raten.
-**Betreff:** Modul zum Mitnehmen: LAG-VSW-Bewertung als Regeldatei plus Funktion (CC0)
-**Dose:** `05-dosen/glasanflug-ampel.md` · **Code:** `04-werkzeug/glasanflug-ampel/`
-**Regel 4:** Einzelmaintainer, unbezahlt. Diese Mail geht nur mit Code — der liegt bei.
+**Status: GESENDET am 09.10.2026, vom Nutzer um 13:36 Uhr (Europe/Berlin) bestätigt.** Kein Versand durch den Agenten; keine unabhängige Postfachprüfung.
+**An:** vogelschlag@nabu-jena.de
+**Betreff:** Ein offenes Werkzeug für Ihre Vogelschlag-Arbeit: Glasanflug-Ampel
+**Dose:** `05-dosen/glasanflug-ampel.md`
+**Frontend-ID:** `mail-nabu-jena-2026-10-09` (nicht `mail-6`, dort steht Tessl).
 
-**Stand 30.09.2026:** Die Mail an die Sammeladresse (22.09.) wurde mit Standardantwort beantwortet; keine Aussage zu Markierungen als Vorgabe machen (WUA-Ergebnisse sind produktspezifisch und nicht verbindlich, Quelle Dose „Antwort und Lehre"). Die Markierungstabelle gehört der WUA Wien, nicht diesem Empfänger.
+Dies ist der erste bestätigte Versand an NABU Jena. Die frühere Mail an eine NABU-Sammeladresse vom 22.09. und deren Antwort vom 29.09. sind ein eigener Vorgang, keine Antwort von Jena. Nicht automatisch nachfassen.
 
----
+## Gesendete Fassung
 
-Hallo Herr Schätz,
+Liebes NABU-Jena-Team,
 
-kurz und ohne Feature-Wunsch: Ich habe etwas gebaut, das zu Ihrem Melder passen könnte, und lege es Ihnen hin, ohne dass daraus eine Verpflichtung entsteht.
+Sie haben mit dem Vogelschlagmelder eine wichtige Grundlage geschaffen, um gefährliche Glasflächen sichtbar zu machen. Ich bin Softwareentwickler und habe ein kleines, frei nutzbares Werkzeug gebaut, das Ihre Arbeit ergänzen könnte: die **Glasanflug-Ampel**.
 
-Der Vogelschlagmelder sammelt pro Meldung Fotos, Fassadenausrichtung und Adresse. Das sind fast genau die Eingangsgrößen, nach denen das Bewertungsschema der Vogelschutzwarten fragt (Beschluss 21/01, Stand 2023) — vier Kriterien mit je 1 bis 4 Punkten, Summe 4 bis 16, drei Risikostufen. Nur ist das Schema bisher ein PDF.
+Die Idee dahinter: Beobachtungen an einer Fassade in ein nachvollziehbares Bewertungsblatt nach dem LAG-VSW-Schema übertragen – mit sichtbaren Quellen und ausdrücklich offenen Angaben, wenn etwas nicht bekannt ist.
 
-Beigelegt: das Schema als Regeldatei mit den Wortlauten und einer Versionsangabe, eine reine Funktion, die daraus Punktsumme, Stufe und Begründung rechnet, und eine Testsuite mit allen elf durchgerechneten Beispielen aus dem Anhang des Beschlusses. Python, einzige Abhängigkeit ist YAML, keine Bilderkennung, CC0 — also in einem GPLv3-Projekt verwendbar.
+Die aktuelle Demo bietet:
+- eine manuelle Bewertung anhand der vier Kriterien,
+- eine Adresssuche und Abfragen realer Gehölzdaten aus OpenStreetMap sowie dem offiziellen Berliner Baumkataster,
+- einen Export der Bewertung einschließlich Eingaben, Quellen und ungeklärter Punkte.
 
-Zwei Sachen, die beim Nachrechnen auffielen und die Sie vielleicht interessieren. Erstens: Der Anhang rechnet elf Gebäude durch, und bei einem stehen die Gebäudefaktoren 3 und 3 und darunter „Summe 7". Folgenlos für die Risikostufe, aber ein Argument dafür, das Addieren der Software zu überlassen. Zweitens: Wenn Glasanteil 4 und Fassadengestaltung 1 zusammentreffen, fordern die beiden Vorrangregeln des Schemas das Gegenteil voneinander, und der Beschluss regelt den Fall nicht. Mein Rechner entscheidet ihn deshalb auch nicht, sondern meldet ihn.
+Hier können Sie das Werkzeug direkt ausprobieren:
+https://felixinberlin.github.io/Amelie/#dose=glasanflug-ampel
 
-Was daraus werden könnte, steht auf einer Seite: <Link>. Kurzfassung: Die drei Situationsfaktoren ließen sich aus den Fotos schätzen, die Sie ohnehin haben — der Glasanteil ist in der Gebäudeenergie-Forschung als Fenster-Wand-Verhältnis aus Straßenbildern schon gelöst. Aus der Meldung würde damit ein prüfbares Blatt für den Eigentümer statt einer Zeile in der Statistik.
+Mir ist wichtig, die Grenzen offen zu benennen: Die Demo wertet noch keine Fassadenfotos automatisch aus. Die angezeigten Baumabstände beziehen sich auf den ausgewählten Kartenpunkt, nicht auf eine vermessene Glasscheibe. Fehlende Karteneinträge werden deshalb niemals als fehlende Vegetation gewertet. Das Werkzeug ersetzt keine fachliche Beurteilung vor Ort.
 
-Wenn das nicht in Ihre Richtung passt oder Sie schlicht keine Zeit haben: völlig in Ordnung, ich fasse nicht nach. Der Code liegt unter CC0 und wartet nicht auf mich.
+Der Code und die Tests liegen offen vor:
+https://github.com/felixinberlin/Amelie/tree/main/src/engine/glasanflug
 
-Viele Grüße
-Félix
+Ich entwickle das im Rahmen meines offenen Projekts **Amélie**: praktische Werkzeuge bauen und sie Menschen zur Verfügung stellen, die damit etwas Gutes bewirken können. Der eigene Code steht unter CC0; für eingebundene Geodaten gelten die jeweiligen Quellenlizenzen.
+
+Falls einzelne Teile für Ihre Beratung oder den Vogelschlagmelder hilfreich sind, dürfen Sie sie übernehmen und weiterentwickeln. Daraus entsteht keine Verpflichtung – weder zur Integration noch zu einer Antwort.
+
+Vielen Dank für Ihre Arbeit zum Schutz der Vögel.
+
+Herzliche Grüße aus Brandenburg
+Félix Martínez Resendiz

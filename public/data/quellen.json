@@ -14549,7 +14549,7 @@
       "status": "durchsucht",
       "statusNotiz": "",
       "evidenz": "seite",
-      "zuletzt": "2026-10-06",
+      "zuletzt": "2026-10-09",
       "ertrag": {
         "dosen": [
           "glasanflug-ampel"
@@ -14576,6 +14576,12 @@
           "runde": "Glasanflug-Ampel Neubewertung 2026-10-06",
           "notiz": "Ergänzt die Dose: Datenquelle vorhanden, automatische Bewertung und Trainingsrechte bleiben ungeklärt.",
           "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-09",
+          "agent": "bibliothekar",
+          "runde": "Glasanflug-Sitzung 2026-10-09",
+          "notiz": "Félix bestätigt am 09.10.2026 um 13:36 Europe/Berlin den Versand der deutschen Demo-Mail an vogelschlag@nabu-jena.de. Betreff: Ein offenes Werkzeug für Ihre Vogelschlag-Arbeit: Glasanflug-Ampel. Erstkontakt Jena, getrennt vom NABU-Sammeladressversand 22.09.; keine Postfachprüfung, keine Antwort bekannt, kein automatisches Nachfassen. Archiv: 03-zuordnung/mails-q4-2026/mail-6-nabu-jena.md."
         }
       ]
     },
@@ -15974,6 +15980,60 @@
           "agent": "bibliothekar",
           "runde": "EuroBirdCast Governance 2026-10-08",
           "notiz": "Deutscher Ausschuss zur Verhuetung von Vogelschlaegen im Luftverkehr und ZGeoBw nutzen Grossraumradar fuer verbindliche Flugwarnungen.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "berlin-baumbestand-wfs",
+      "name": "Baumbestand Berlin (WFS)",
+      "typ": "O",
+      "kategorie": "datensatz",
+      "rollen": [
+        "evidenz"
+      ],
+      "tags": [
+        "vogel",
+        "geodaten"
+      ],
+      "urls": [
+        "https://daten.berlin.de/datensaetze/baumbestand-berlin-wfs-48ad3a23",
+        "https://gdi.berlin.de/services/wfs/baumbestand"
+      ],
+      "zugang": {
+        "art": "api",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Offizieller Baumkataster: Straßenbäume und Anlagenbäume; keine vollständige Erfassung aller Gehölze.",
+      "fokus": "Nachvollziehbare Gehölzbeobachtungen für Glasanflug-Ampel ohne automatische Risikobewertung.",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-09",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-09"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-09",
+          "agent": "bibliothekar",
+          "runde": "Glasanflug-Sitzung 2026-10-09",
+          "notiz": "Metadatenseite durch Sitzungs-Orchestrator gelesen: Aktualisierung 09.04.2026, dl-de-zero-2.0. Live-Abfrage HTTP200 GeoJSON und CORS * bestätigt. WFS-BBox EPSG4326 Breite/Länge, GeoJSON Länge/Breite; Layer strassenbaeume und anlagenbaeume. Fehlender Eintrag ist keine Abwesenheit von Gehölzen.",
           "status": "durchsucht"
         }
       ]
