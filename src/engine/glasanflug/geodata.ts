@@ -12,7 +12,10 @@ export interface VegetationObservation {
 export interface VegetationSurvey {
   point: { latitude: number; longitude: number };
   radiusMetres: 100;
-  source: 'OpenStreetMap / Overpass API';
+  source: 'OpenStreetMap / Overpass API' | 'Geoportal Berlin / Baumbestand Berlin';
+  sourceUrl?: string;
+  requestUrls?: string[];
+  license?: string;
   retrievedAt: string;
   observations: VegetationObservation[];
   /** Absence of a mapped feature is NEVER evidence of absence of vegetation. */

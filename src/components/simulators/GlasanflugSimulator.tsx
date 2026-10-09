@@ -20,6 +20,7 @@ import {
 } from '../../engine/glasanflug/markierung';
 import { GlasanflugVisualizer } from './GlasanflugVisualizer';
 import { lookupVegetation, VegetationSurvey } from '../../engine/glasanflug/geodata';
+import { lookupBerlinTrees } from '../../engine/glasanflug/berlinTrees';
 import { geocodeAddress, GeocodedCandidate } from '../../engine/glasanflug/geocode';
 
 interface GlasanflugSimulatorProps {
@@ -104,6 +105,7 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
       schema: SCHEMA_QUELLE,
       disclaimer: 'Draft decision support only; not a legal determination or product certification.',
       factors: eingabe,
+      vegetationSurvey: survey,
       exceptionReason: glasVoll ? fussnote2.trim() : null,
       assessment: {
         complete: ergebnis.vollstaendig,
@@ -156,6 +158,7 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
   };
   const [latitude, setLatitude] = useState('');
   const [longitude, setLongitude] = useState('');
+  const [surveySource, setSurveySource] = useState<'osm' | 'berlin'>('osm');
   const [survey, setSurvey] = useState<VegetationSurvey | null>(null);
   const [surveyError, setSurveyError] = useState('');
   const [surveyLoading, setSurveyLoading] = useState(false);
@@ -169,7 +172,7 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
       return;
     }
     setSurveyLoading(true);
-    try { setSurvey(await lookupVegetation(lat, lon)); }
+    try { setSurvey(await (surveySource === 'berlin' ? lookupBerlinTrees : lookupVegetation)(lat, lon, AbortSignal.timeout(30000))); }
     catch (error) { setSurveyError(error instanceof Error ? error.message : String(error)); }
     finally { setSurveyLoading(false); }
   };
@@ -435,7 +438,7 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
         </div>
 
         <section className="bg-white rounded-2xl border border-stone-200 p-4 space-y-3" aria-label={de ? 'Echte Geodaten' : 'Real geodata'}>
-          <h4 className="font-semibold text-stone-900">{de ? 'OSM-Gehölzbeobachtungen (Live-Abfrage)' : 'OSM vegetation observations (live query)'}</h4>
+          <h4 className="font-semibold text-stone-900">{de ? 'Gehölzbeobachtungen (Live-Abfrage)' : 'Vegetation observations (live query)'}</h4>
           <p className="text-xs text-stone-600 leading-relaxed">{de
             ? 'Punktbasierte Abfrage im 100-m-Radius. Entfernungen gelten nur zum eingegebenen Koordinatenpunkt — nicht zur unmarkierten Scheibe. Keine automatische LAG-VSW-Punktevergabe. OSM ist unvollständig.'
             : 'Point-only query within 100 m. Distances are from the entered coordinate, not the unmarked glass. No automatic LAG-VSW points. OSM coverage is incomplete.'}</p>
@@ -455,7 +458,7 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
             {candidates.length > 0 && <div className="space-y-1" aria-label={de ? 'Adressvorschläge' : 'Address candidates'}>
               <p className="text-xs text-stone-600">{de ? 'Treffer auswählen – nicht automatisch übernommen:' : 'Choose a result – never automatically selected:'}</p>
               {candidates.map((candidate, index) => (
-                <button type="button" key={index}
+                <button type="button" disabled={surveyLoading} key={index}
                   onClick={() => {setLatitude(String(candidate.latitude)); setLongitude(String(candidate.longitude)); setCandidates([]); setSurvey(null); }}
                   className="block w-full rounded-lg border border-stone-200 px-2 py-2 text-left text-xs text-stone-800 hover:bg-stone-100">
                   {candidate.label} ({candidate.latitude.toFixed(5)}, {candidate.longitude.toFixed(5)})
@@ -466,23 +469,31 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
               {de ? 'Adressdaten werden bei der Suche an Photon (OpenStreetMap/Komoot) übertragen; keine automatische Abfrage während der Eingabe.' : 'Address text is sent to Photon (OpenStreetMap/Komoot) when searching; no automatic requests while typing.'}
             </p>
           </div>
+          <label className="block text-xs text-stone-700">{de ? 'Datenquelle' : 'Data source'}
+            <select value={surveySource} disabled={surveyLoading} onChange={e => { setSurveySource(e.target.value as 'osm' | 'berlin'); setSurvey(null); }} className="block mt-1 w-full rounded-lg border border-stone-300 px-2 py-2">
+              <option value="osm">OpenStreetMap</option>
+              <option value="berlin">Geoportal Berlin / Baumbestand Berlin</option>
+            </select>
+          </label>
+          <p className="text-xs text-stone-600">{de ? 'Berlin: Straßenbäume und ein Teil der Anlagenbäume; keine vollständige Erfassung privater Bäume, Hecken oder Sträucher. Koordinaten werden an den gewählten Dienst gesendet.' : 'Berlin: street trees and some park trees; private trees, hedges and shrubs are not fully covered. Coordinates are sent to the selected service.'}</p>
           <div className="grid grid-cols-2 gap-2">
             <label className="text-xs text-stone-700">{de ? 'Breitengrad' : 'Latitude'}
-              <input type="number" step="any" value={latitude} onChange={e => {setLatitude(e.target.value);setSurvey(null);}} placeholder="52.52" className="block mt-1 w-full rounded-lg border border-stone-300 px-2 py-2" />
+              <input type="number" step="any" disabled={surveyLoading} value={latitude} onChange={e => {setLatitude(e.target.value);setSurvey(null);}} placeholder="52.52" className="block mt-1 w-full rounded-lg border border-stone-300 px-2 py-2" />
             </label>
             <label className="text-xs text-stone-700">{de ? 'Längengrad' : 'Longitude'}
-              <input type="number" step="any" value={longitude} onChange={e => {setLongitude(e.target.value);setSurvey(null);}} placeholder="13.405" className="block mt-1 w-full rounded-lg border border-stone-300 px-2 py-2" />
+              <input type="number" step="any" disabled={surveyLoading} value={longitude} onChange={e => {setLongitude(e.target.value);setSurvey(null);}} placeholder="13.405" className="block mt-1 w-full rounded-lg border border-stone-300 px-2 py-2" />
             </label>
           </div>
           <button type="button" onClick={queryVegetation} disabled={surveyLoading} className="rounded-lg bg-stone-900 text-white px-3 py-2 text-xs font-semibold disabled:opacity-50">
-            {surveyLoading ? (de ? 'Abfrage läuft…' : 'Querying…') : (de ? 'Echte OSM-Daten abfragen' : 'Query real OSM data')}
+            {surveyLoading ? (de ? 'Abfrage läuft…' : 'Querying…') : (de ? 'Geodaten abfragen' : 'Query geodata')}
           </button>
           {surveyError && <p role="alert" className="text-xs text-rose-700">{surveyError}</p>}
           {survey && <div className="text-xs text-stone-700 space-y-2">
+            <p>{survey.source}</p>
             <p>{survey.observations.length} {de ? 'kartierte Gehölzpunkte gefunden' : 'mapped vegetation points found'} · {new Date(survey.retrievedAt).toLocaleString(de ? 'de-DE' : 'en-GB')}</p>
             {survey.observations[0] && <p className="font-semibold">{de ? 'Nächster kartierter Punkt' : 'Nearest mapped point'}: {survey.observations[0].distanceMetres} m ({survey.observations[0].kind})</p>}
             <p className="text-amber-800">{de ? 'Nicht gefunden ≠ nicht vorhanden. Keine Aussage über Versiegelung oder den Glas-Gehölz-Abstand.' : 'Not mapped ≠ absent. No conclusion about sealing or glass-to-vegetation distance.'}</p>
-            <a className="underline text-sky-800" href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">© OpenStreetMap contributors</a>
+            <a className="underline text-sky-800" href={survey.sourceUrl ?? "https://www.openstreetmap.org/copyright"} target="_blank" rel="noopener noreferrer">{survey.license ?? "© OpenStreetMap contributors"}</a>
           </div>}
         </section>
 
