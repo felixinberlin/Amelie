@@ -435,3 +435,25 @@ export const SEASONAL_BATTLE_EVENTS: BattleEvent[] = [
     environmentalIntensity: 4
   }
 ];
+
+/** Arena context for the skill conditions of the Crack Flora master deck (Gehwegfuge, Mauerfuge, Streusalz-Zone …). */
+export interface ArenaContext {
+  id: string;
+  labelDe: string;
+  labelEn: string;
+  labelEs: string;
+  surface: 'asphalt' | 'mortar' | 'paving' | 'gravel';
+  disturbance: number;     // 0-10 (Trittlast, Kehrmaschine)
+  surfaceTempC: number;    // Sommer-Oberflächentemperatur
+  vertical: boolean;       // senkrechte Mauerfuge
+  saline: boolean;         // Streusalz-Zone
+}
+
+export const FUGENDUELL_ARENAS: ArenaContext[] = [
+  { id: 'gehwegfuge', labelDe: 'Gehwegfuge (Asphalt)', labelEn: 'Sidewalk crack (asphalt)', labelEs: 'Grieta de acera (asfalto)', surface: 'asphalt', disturbance: 5, surfaceTempC: 40, vertical: false, saline: false },
+  { id: 'hauptstrasse', labelDe: 'Hauptstraße (Pflasterfuge, hohe Trittlast)', labelEn: 'High-traffic walkway (cobbles)', labelEs: 'Calle principal (adoquín, mucho tráfico)', surface: 'paving', disturbance: 8, surfaceTempC: 35, vertical: false, saline: false },
+  { id: 'mauerfuge', labelDe: 'Mauerfuge (Kalkmörtel, senkrecht)', labelEn: 'Wall joint (lime mortar, vertical)', labelEs: 'Junta de muro (mortero de cal, vertical)', surface: 'mortar', disturbance: 1, surfaceTempC: 30, vertical: true, saline: false },
+  { id: 'suedwand', labelDe: 'Südwand-Asphalt (>50 °C)', labelEn: 'South-facing sunbake (>50 °C)', labelEs: 'Asfalto orientado al sur (>50 °C)', surface: 'asphalt', disturbance: 3, surfaceTempC: 52, vertical: false, saline: false },
+  { id: 'streusalz', labelDe: 'Autobahnrand (Streusalz-Zone)', labelEn: 'Highway median (de-icing salt)', labelEs: 'Arcén de autopista (sal de deshielo)', surface: 'gravel', disturbance: 2, surfaceTempC: 38, vertical: false, saline: true },
+  { id: 'gleisbett', labelDe: 'Gleisbett / Brache (Schotter)', labelEn: 'Railway bed / wasteland (gravel)', labelEs: 'Balasto / solar (grava)', surface: 'gravel', disturbance: 2, surfaceTempC: 42, vertical: false, saline: false },
+];

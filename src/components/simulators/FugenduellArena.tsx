@@ -18,9 +18,10 @@ import { Language } from '../../types';
 import {
   FUGENDUELL_STARTER_ROSTER,
   SEASONAL_BATTLE_EVENTS,
+  FUGENDUELL_ARENAS,
   PlantRosterItem
 } from '../../data/fugenduellData';
-import { TacticalStance, RoundResolutionResult } from '../../engine/fugenduell/types';
+import { TacticalStance, RoundResolutionResult, DuelState, INITIAL_DUEL_STATE } from '../../engine/fugenduell/types';
 import { resolveDuelRound, calculateSeedReward } from '../../engine/fugenduell/battleEngine';
 
 interface FugenduellArenaProps {
@@ -48,6 +49,8 @@ export const FugenduellArena: React.FC<FugenduellArenaProps> = ({
   const [playerCoverage, setPlayerCoverage] = useState<number>(50); // 0 to 100%
   const [selectedTactic, setSelectedTactic] = useState<'root_reserve' | 'rapid_spurt' | 'toxin_defense' | 'balanced'>('balanced');
   const [battleLogs, setBattleLogs] = useState<RoundLog[]>([]);
+  const [arenaId, setArenaId] = useState<string>(FUGENDUELL_ARENAS[0].id);
+  const [duelState, setDuelState] = useState<DuelState>(INITIAL_DUEL_STATE);
   const [isBattleOver, setIsBattleOver] = useState<boolean>(false);
   const [viewTab, setViewTab] = useState<'arena' | 'roster' | 'economy' | 'rules'>('arena');
 
@@ -61,6 +64,8 @@ export const FugenduellArena: React.FC<FugenduellArenaProps> = ({
   const playerPlant = FUGENDUELL_STARTER_ROSTER.find(p => p.id === playerSpeciesId) || FUGENDUELL_STARTER_ROSTER[0];
   const aiPlant = FUGENDUELL_STARTER_ROSTER.find(p => p.id === aiSpeciesId) || FUGENDUELL_STARTER_ROSTER[1];
 
+  const arena = FUGENDUELL_ARENAS.find(a => a.id === arenaId) || FUGENDUELL_ARENAS[0];
+
   const currentEvent = SEASONAL_BATTLE_EVENTS[Math.min(currentRound - 1, SEASONAL_BATTLE_EVENTS.length - 1)];
 
   // Reset Duel
@@ -70,6 +75,7 @@ export const FugenduellArena: React.FC<FugenduellArenaProps> = ({
     setCurrentRound(1);
     setPlayerCoverage(50);
     setBattleLogs([]);
+    setDuelState(INITIAL_DUEL_STATE);
     setIsBattleOver(false);
   };
 
@@ -84,15 +90,18 @@ export const FugenduellArena: React.FC<FugenduellArenaProps> = ({
       currentRound,
       currentCoverage: playerCoverage,
       selectedTactic,
+      arena,
+      state: duelState,
       lang: isDe ? 'de' : isEs ? 'es' : 'en',
     });
 
     setBattleLogs(prev => [roundLog, ...prev]);
     setPlayerCoverage(roundLog.newCoverage);
+    setDuelState(roundLog.state);
 
     if (roundLog.isBattleOver) {
       setIsBattleOver(true);
-      const seedBonus = calculateSeedReward(roundLog.winner, roundLog.newCoverage);
+      const seedBonus = calculateSeedReward(roundLog.winner, roundLog.newCoverage, roundLog.state.biodiversity.player);
       if (seedBonus > 0) {
         setCollectedSeeds(prev => prev + seedBonus);
       }
@@ -265,6 +274,29 @@ export const FugenduellArena: React.FC<FugenduellArenaProps> = ({
                 <span className="font-semibold text-rose-900">✨ {aiPlant.signatureSkill.nameDe}: </span>
                 {aiPlant.signatureSkill.mechanismDe}
               </div>
+            </div>
+          </div>
+
+          {/* Arena selector: skill conditions from the master deck (wall, salt, heat, trample load) */}
+          <div className="rounded-xl border border-stone-200 bg-white p-4 space-y-2">
+            <label className="text-xs font-bold uppercase tracking-wider text-stone-500 block" htmlFor="fugenduell-arena">
+              {isDe ? 'Arena (Fugenart)' : isEs ? 'Arena (tipo de junta)' : 'Arena (crack type)'}
+            </label>
+            <select
+              id="fugenduell-arena"
+              value={arenaId}
+              onChange={e => { setArenaId(e.target.value); resetDuel(); }}
+              className="w-full bg-white border border-stone-300 rounded-lg p-2 text-sm font-semibold text-stone-900"
+            >
+              {FUGENDUELL_ARENAS.map(a => (
+                <option key={a.id} value={a.id}>{isDe ? a.labelDe : isEs ? a.labelEs : a.labelEn}</option>
+              ))}
+            </select>
+            <div className="text-[11px] text-stone-600 font-mono">
+              {isDe ? 'Trittlast' : isEs ? 'Tráfico' : 'Foot load'} {arena.disturbance}/10 · {arena.surfaceTempC} °C
+              {arena.vertical ? (isDe ? ' · senkrecht' : isEs ? ' · vertical' : ' · vertical') : ''}
+              {arena.saline ? (isDe ? ' · Salz' : isEs ? ' · sal' : ' · salt') : ''}
+              {' — '}{isDe ? 'Fähigkeiten wie Vertikalkletterer, Salzpumpe oder C4-Turbo hängen davon ab.' : isEs ? 'Habilidades como Vertikalkletterer, Salzpumpe o C4-Turbo dependen de esto.' : 'Skills such as Vertical Climber, Salt Pump or C4-Turbo depend on it.'}
             </div>
           </div>
 
@@ -460,6 +492,9 @@ export const FugenduellArena: React.FC<FugenduellArenaProps> = ({
                       <div className="text-[11px] text-stone-600">
                         {playerPlant.nameCommonDe} (Stat {log.playerStatValue} + Taktik {log.playerTacticBonus > 0 ? `+${log.playerTacticBonus}` : log.playerTacticBonus} + Skill +{log.skillBonusPlayer}) vs {aiPlant.nameCommonDe} (Stat {log.aiStatValue} + Skill +{log.skillBonusAi})
                       </div>
+                      {log.notes.length > 0 && (
+                        <div className="text-[11px] text-emerald-800 mt-0.5">✨ {log.notes.join(' · ')}</div>
+                      )}
                     </div>
 
                     <div className="flex items-center gap-2 font-mono font-bold">

@@ -8,7 +8,7 @@ import {
   getPlantById,
   getEventForRound,
 } from './battleEngine';
-import { FUGENDUELL_STARTER_ROSTER, SEASONAL_BATTLE_EVENTS } from '../../data/fugenduellData';
+import { FUGENDUELL_STARTER_ROSTER, SEASONAL_BATTLE_EVENTS, FUGENDUELL_ARENAS } from '../../data/fugenduellData';
 
 describe('Fugenduell Battle Engine', () => {
   describe('validateStarterRoster', () => {
@@ -157,6 +157,111 @@ describe('Fugenduell Battle Engine', () => {
       expect(calculateSeedReward('player', 65)).toBe(2);
       expect(calculateSeedReward('ai', 35)).toBe(0);
       expect(calculateSeedReward('draw', 50)).toBe(0);
+    });
+  });
+
+  describe('Deck-Fähigkeiten mit Arena-Kontext', () => {
+    const arena = (id: string) => FUGENDUELL_ARENAS.find(a => a.id === id)!;
+    const round = (pId: string, aId: string, r: number, arenaId: string, cov = 50) =>
+      resolveDuelRound({
+        playerPlant: getPlantById(pId),
+        aiPlant: getPlantById(aId),
+        event: getEventForRound(r),
+        currentRound: r,
+        currentCoverage: cov,
+        selectedTactic: 'balanced',
+        aiTacticOverride: 1,
+        arena: arena(arenaId),
+      });
+
+    it('Breitwegerich verdoppelt TRITT bei Störung >= 7', () => {
+      const mod = calculateSkillModifiers(getPlantById('plantago-major'), getPlantById('poa-annua'), 'tritt', arena('hauptstrasse'));
+      expect(mod.pSkillBonus).toBe(9);
+    });
+
+    it('Mauerraute: halbierte Werte auf Asphalt, Dürre-Immunität im Kalkmörtel', () => {
+      const asphalt = calculateSkillModifiers(getPlantById('asplenium-ruta-muraria'), getPlantById('poa-annua'), 'duerre', arena('gehwegfuge'));
+      expect(asphalt.effectivePlayerStat).toBe(4);
+      const mortar = calculateSkillModifiers(getPlantById('asplenium-ruta-muraria'), getPlantById('poa-annua'), 'duerre', arena('mauerfuge'));
+      expect(mortar.pSkillBonus).toBe(4);
+    });
+
+    it('Zimbelkraut +3 nur in senkrechter Wand', () => {
+      expect(calculateSkillModifiers(getPlantById('cymbalaria-muralis'), getPlantById('poa-annua'), 'tritt', arena('mauerfuge')).pSkillBonus).toBe(3);
+      expect(calculateSkillModifiers(getPlantById('cymbalaria-muralis'), getPlantById('poa-annua'), 'tritt', arena('gehwegfuge')).pSkillBonus).toBe(0);
+    });
+
+    it('Portulak: C4-Turbo nur über 35 °C', () => {
+      expect(calculateSkillModifiers(getPlantById('portulaca-oleracea'), getPlantById('poa-annua'), 'duerre', arena('suedwand')).pSkillBonus).toBe(6);
+      expect(calculateSkillModifiers(getPlantById('portulaca-oleracea'), getPlantById('poa-annua'), 'duerre', arena('mauerfuge')).pSkillBonus).toBe(0);
+    });
+
+    it('Löffelkraut: nur in der Salzzone stark, Zugewinn verdoppelt', () => {
+      const off = calculateSkillModifiers(getPlantById('cochlearia-danica'), getPlantById('poa-annua'), 'chemie', arena('gehwegfuge'));
+      expect(off.effectivePlayerStat).toBe(5);
+      const salt = round('cochlearia-danica', 'poa-annua', 6, 'streusalz');
+      const noSalt = round('cochlearia-danica', 'poa-annua', 6, 'gleisbett');
+      expect(salt.coverageShift).toBeGreaterThan(noSalt.coverageShift);
+    });
+
+    it('Schöllkraut senkt nur CHEMIE, Berufkraut halbiert das', () => {
+      const dandelion = getPlantById('taraxacum-officinale');
+      const celandine = getPlantById('chelidonium-majus');
+      expect(calculateSkillModifiers(celandine, dandelion, 'wurzel').effectiveAiStat).toBe(dandelion.stats.wurzel);
+      expect(calculateSkillModifiers(celandine, getPlantById('erigeron-canadensis'), 'chemie').effectiveAiStat).toBe(4);
+    });
+
+    it('Götterbaum senkt alle Werte des Gegners um 2', () => {
+      const mod = calculateSkillModifiers(getPlantById('ailanthus-altissima'), getPlantById('poa-annua'), 'tempo');
+      expect(mod.effectiveAiStat).toBe(8);
+    });
+
+    it('Mastkraut nimmt auf Trittrunden keinen Schaden, Silbermoos fällt nie unter 5 %', () => {
+      const sagina = round('sagina-procumbens', 'plantago-major', 2, 'hauptstrasse');
+      expect(sagina.coverageShift).toBeGreaterThanOrEqual(0);
+      const moss = round('bryum-argenteum', 'ailanthus-altissima', 5, 'gehwegfuge', 6);
+      expect(moss.newCoverage).toBeGreaterThanOrEqual(5);
+    });
+  });
+
+  describe('Mehrrunden-Fähigkeiten', () => {
+    const base = (pId: string, aId: string, r: number, extra = {}) => ({
+      playerPlant: getPlantById(pId),
+      aiPlant: getPlantById(aId),
+      event: getEventForRound(r),
+      currentRound: r,
+      currentCoverage: 50,
+      selectedTactic: 'balanced' as const,
+      aiTacticOverride: 1,
+      ...extra,
+    });
+
+    it('Dauerblüte: Gleichstand geht an Poa annua', () => {
+      // Poa vs Poa-Klon-Gleichstand: Poa gegen Cardamine auf TEMPO ist kein Gleichstand, daher gleiche Werte über Spiegelung
+      const res = resolveDuelRound(base('poa-annua', 'poa-annua', 5));
+      expect(res.coverageShift).toBe(4);
+    });
+
+    it('Fallschirmwolke: Rundensieg gibt Klonpunkt, der in der nächsten Runde zählt', () => {
+      const r1 = resolveDuelRound(base('taraxacum-officinale', 'plantago-major', 1));
+      expect(r1.coverageShift).toBeGreaterThan(0);
+      expect(r1.state.cloneBonus.player).toBe(1);
+      const r2 = resolveDuelRound(base('taraxacum-officinale', 'plantago-major', 4, { state: r1.state }));
+      expect(r2.skillBonusPlayer).toBe(1);
+    });
+
+    it('Mauerkrone: Risse stärken Sommerflieder und schalten Wandfähigkeiten ab', () => {
+      const wall = FUGENDUELL_ARENAS.find(a => a.id === 'mauerfuge')!;
+      const r1 = resolveDuelRound(base('buddleja-davidii', 'poa-annua', 1, { arena: wall }));
+      expect(r1.state.fracture).toBe(1);
+      const cracked = calculateSkillModifiers(getPlantById('cymbalaria-muralis'), getPlantById('poa-annua'), 'tritt', wall, [], 2, r1.state);
+      expect(cracked.pSkillBonus).toBe(0);
+    });
+
+    it('Nektarrausch: genug Biodiversität gibt Zusatzsamen, auch bei Niederlage', () => {
+      expect(calculateSeedReward('ai', 20, 4)).toBe(1);
+      expect(calculateSeedReward('player', 70, 4)).toBe(3);
+      expect(calculateSeedReward('ai', 20, 0)).toBe(0);
     });
   });
 });
