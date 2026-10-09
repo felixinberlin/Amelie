@@ -20,6 +20,7 @@ import {
 } from '../../engine/glasanflug/markierung';
 import { GlasanflugVisualizer } from './GlasanflugVisualizer';
 import { lookupVegetation, VegetationSurvey } from '../../engine/glasanflug/geodata';
+import { geocodeAddress, GeocodedCandidate } from '../../engine/glasanflug/geocode';
 
 interface GlasanflugSimulatorProps {
   lang: Language;
@@ -135,6 +136,24 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
     URL.revokeObjectURL(url);
   };
 
+  const [address, setAddress] = useState('');
+  const [candidates, setCandidates] = useState<GeocodedCandidate[]>([]);
+  const [geocodeLoading, setGeocodeLoading] = useState(false);
+  const [geocodeError, setGeocodeError] = useState('');
+  const findAddress = async () => {
+    setGeocodeLoading(true);
+    setGeocodeError('');
+    setCandidates([]);
+    try {
+      const matches = await geocodeAddress(address);
+      if (!matches.length) setGeocodeError(de ? 'Keine Adresse gefunden.' : 'No matching address found.');
+      setCandidates(matches);
+    } catch (error) {
+      setGeocodeError(error instanceof Error ? error.message : String(error));
+    } finally {
+      setGeocodeLoading(false);
+    }
+  };
   const [latitude, setLatitude] = useState('');
   const [longitude, setLongitude] = useState('');
   const [survey, setSurvey] = useState<VegetationSurvey | null>(null);
@@ -420,6 +439,33 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
           <p className="text-xs text-stone-600 leading-relaxed">{de
             ? 'Punktbasierte Abfrage im 100-m-Radius. Entfernungen gelten nur zum eingegebenen Koordinatenpunkt — nicht zur unmarkierten Scheibe. Keine automatische LAG-VSW-Punktevergabe. OSM ist unvollständig.'
             : 'Point-only query within 100 m. Distances are from the entered coordinate, not the unmarked glass. No automatic LAG-VSW points. OSM coverage is incomplete.'}</p>
+          <div className="space-y-2">
+            <label className="block text-xs text-stone-700">
+              {de ? 'Adresse suchen (optional)' : 'Find an address (optional)'}
+              <input type="search" value={address} onChange={e => { setAddress(e.target.value); setCandidates([]); }}
+                onKeyDown={e => { if (e.key === 'Enter') { e.preventDefault(); if (!geocodeLoading) void findAddress(); } }}
+                placeholder={de ? 'Straße, Hausnummer, Ort' : 'Street, number, city'}
+                className="block mt-1 w-full rounded-lg border border-stone-300 px-2 py-2" />
+            </label>
+            <button type="button" onClick={findAddress} disabled={geocodeLoading || address.trim().length < 4}
+              className="rounded-lg border border-stone-400 px-3 py-2 text-xs font-semibold disabled:opacity-50">
+              {geocodeLoading ? (de ? 'Suche läuft…' : 'Searching…') : (de ? 'Adresse suchen' : 'Search address')}
+            </button>
+            {geocodeError && <p role="alert" className="text-xs text-rose-700">{geocodeError}</p>}
+            {candidates.length > 0 && <div className="space-y-1" aria-label={de ? 'Adressvorschläge' : 'Address candidates'}>
+              <p className="text-xs text-stone-600">{de ? 'Treffer auswählen – nicht automatisch übernommen:' : 'Choose a result – never automatically selected:'}</p>
+              {candidates.map((candidate, index) => (
+                <button type="button" key={index}
+                  onClick={() => {setLatitude(String(candidate.latitude)); setLongitude(String(candidate.longitude)); setCandidates([]); setSurvey(null); }}
+                  className="block w-full rounded-lg border border-stone-200 px-2 py-2 text-left text-xs text-stone-800 hover:bg-stone-100">
+                  {candidate.label} ({candidate.latitude.toFixed(5)}, {candidate.longitude.toFixed(5)})
+                </button>
+              ))}
+            </div>}
+            <p className="text-[11px] text-stone-500">
+              {de ? 'Adressdaten werden bei der Suche an Photon (OpenStreetMap/Komoot) übertragen; keine automatische Abfrage während der Eingabe.' : 'Address text is sent to Photon (OpenStreetMap/Komoot) when searching; no automatic requests while typing.'}
+            </p>
+          </div>
           <div className="grid grid-cols-2 gap-2">
             <label className="text-xs text-stone-700">{de ? 'Breitengrad' : 'Latitude'}
               <input type="number" step="any" value={latitude} onChange={e => {setLatitude(e.target.value);setSurvey(null);}} placeholder="52.52" className="block mt-1 w-full rounded-lg border border-stone-300 px-2 py-2" />
