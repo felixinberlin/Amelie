@@ -307,3 +307,5 @@
 {"at":"2026-10-08T21:45:53.367Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"EuroBirdCast Governance 2026-10-08","id":"kne-antikollisionssysteme"}
 {"at":"2026-10-08T21:45:53.438Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"EuroBirdCast Governance 2026-10-08","id":"davvl-und-bundeswehr-birdtam"}
 {"at":"2026-10-08T21:45:53.444Z","event":"cli","actor":"bibliothekar","agent":"bibliothekar","runde":"EuroBirdCast Governance 2026-10-08","cmd":"quellen import","count":3}
+{"at":"2026-10-09T11:38:28.397Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"Glasanflug-Sitzung 2026-10-09","id":"berlin-baumbestand-wfs"}
+{"at":"2026-10-09T11:38:28.675Z","event":"cli","cmd":"quellen log","actor":"bibliothekar","agent":"bibliothekar","runde":"Glasanflug-Sitzung 2026-10-09","id":"nabu-jena-vogelschlagmelder"}
