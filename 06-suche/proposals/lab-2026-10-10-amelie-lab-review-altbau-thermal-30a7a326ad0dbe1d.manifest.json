@@ -1,0 +1,24 @@
+{
+  "manifest_version": 1,
+  "run_id": "amelie-lab-review-altbau-thermal-30a7a326ad0dbe1d",
+  "plan_id": "lab-2026-10-10-amelie-lab-review-altbau-thermal-30a7a326ad0dbe1d",
+  "engine": "review",
+  "model": "not recorded",
+  "existence_check": false,
+  "survivors": {
+    "count": 0,
+    "status": "keine"
+  },
+  "files": [
+    "06-suche/proposals/lab-2026-10-10-amelie-lab-review-altbau-thermal-30a7a326ad0dbe1d.md",
+    "06-suche/proposals/lab-2026-10-10-amelie-lab-review-altbau-thermal-30a7a326ad0dbe1d.inbox.json",
+    "06-suche/proposals/lab-2026-10-10-amelie-lab-review-altbau-thermal-30a7a326ad0dbe1d.manifest.json"
+  ],
+  "source_ops": [],
+  "grave_proposals": 0,
+  "touches_memory": false,
+  "contracts": {
+    "review-record": "not recorded"
+  },
+  "contract_version": "1.0.0"
+}
