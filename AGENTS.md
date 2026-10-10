@@ -169,3 +169,7 @@ Wenn du ein Ticket, ein Kriterium oder eine Dosen-Beschreibung änderst, musst d
 - [ ] Wurden Änderungen an Dosen auch in `src/data/dosen.ts` eingepflegt und `npm run export:data` ausgeführt?
 - [ ] Wurde das Prüfprotokoll (`06-suche/amelie-pruefprotokoll.md`) aktualisiert?
 - [ ] Sind alle Git-Änderungen sauber committet und auf `origin/main` gepusht?
+
+
+## Shared Lab intake (2026-10-10)
+Independent Labs submit producer-scoped immutable `.inbox.json` proposal receipts. Build/export aggregates all Labs; the main navigation links to `lab-ideas.html`. `bib find` includes proposal markdown as nonbinding, unchecked background. `npm run bib -- lab list|show` reads receipts; `lab claim|finish|needs-research|release|archive --worker ID` coordinates work in this shared workspace using leases and existing actor rights/write lock. Labs never set processing status. Workflow state does not assign existence verdicts or scores. See `docs/lab-intake.md`; checks: `npm run test:lab-inbox`.

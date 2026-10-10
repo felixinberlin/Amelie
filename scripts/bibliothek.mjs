@@ -70,6 +70,9 @@ const audit = (entry) => { if (!dry) auditAppend(repoRoot, { event: 'cli', actor
 const HILFE = `Bibliotheks-CLI — npm run bib -- <befehl>   (jeder Befehl: --json; Schreibbefehle: --dry-run, --wait <s>)
 
 LESEN (alle Agenten)
+  lab list|show <batch-id>                     unveränderliche Lab-Eingänge
+  lab claim|finish|needs-research|release|archive <batch-id> --worker <id> [--lease 1800] [--note "…"]
+                                             Bearbeitungs-Leases; nur Akteure mit lab.process oder *; kein Existenzurteil
   find <begriff…> [--any] [--wort] [--stamm] [--alle]   „Gibt es das schon?“ über Protokoll, Friedhof, Dosen, Kandidaten, Quellen, Logs.
                                               Exit 2 = Treffer in Protokoll/Friedhof/Dosen/Kandidaten. Mehrere Begriffe = alle müssen passen (--any: einer genügt; --wort: nur ganze Wörter; --stamm: auch Wortstämme und Kompositum-Endstücke, „fallgeräusche“ findet „geräusch“).
                                               --json liefert je Treffer „score“ 0…1 (exakt 1,0 · Stamm 0,6 · Endstück 0,3, Mittel über die Begriffe).
@@ -102,6 +105,15 @@ SCHREIBEN (nur Bibliothekar bzw. Akteure nach 06-suche/bib-actors.json)
 
 Exit-Codes: 0 ok · 1 Aufruf · 2 schon da · 4 kein Treffer · 10 Validierung · 11 Vorbedingung · 12 Rechte · 13 Sperre · 14 Schreibfehler (zurückgerollt)
 Handbuch: 06-suche/amelie-bibliothek-cli.md`;
+
+// Shared Lab intake and processing leases.
+if (cmd === 'lab') {
+  try {
+    const { runCli } = await import('./lab-inbox.mjs');
+    runCli(rest, { root: repoRoot, actor: one('actor') ?? 'bibliothekar' });
+  } catch (error) { fail(error instanceof BibError ? error : { code: 'VALUE_INVALID', field: 'lab', message: error.message }); }
+  process.exit(0);
+}
 
 // ---------------------------------------------------------------- find, exists, match
 

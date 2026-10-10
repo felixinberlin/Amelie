@@ -5,16 +5,16 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0 --port 3000",
-    "build": "tsc && vite build",
+    "build": "node scripts/export-lab-inbox.mjs && tsc && vite build",
     "lint": "tsc --noEmit && npm run check:dosen && npm run check:books && npm run check:idea-frontmatter && npm run check:protokoll && npm run check:friedhof && npm run check:quellen && npm run check:diagramme && npm run check:lab-pr && npm run check:verwandte",
     "preview": "vite preview --port 3000",
     "check:dosen": "node scripts/check-dosen-drift.mjs",
-    "test": "vitest run && npm run test:bird-forecast && npm run test:bird-benchmark && npm run test:bird-map",
+    "test": "vitest run && npm run test:bird-forecast && npm run test:bird-benchmark && npm run test:bird-map && npm run test:lab-inbox",
     "check:books": "node scripts/check-dose-books.mjs",
     "check:idea-frontmatter": "node scripts/sync-idea-frontmatter.mjs --check",
     "check:protokoll": "node scripts/check-protokoll-coverage.mjs",
     "fetch:reddit": "node scripts/fetch-reddit.mjs",
-    "export:data": "node scripts/export-public-data.mjs && node scripts/export-ventures.mjs",
+    "export:data": "node scripts/export-lab-inbox.mjs && node scripts/export-public-data.mjs && node scripts/export-ventures.mjs",
     "friedhof": "node scripts/friedhof-muster.mjs",
     "quellen": "node scripts/quellen.mjs",
     "bib": "node scripts/bibliothek.mjs",
@@ -36,7 +36,9 @@
     "test:browser": "playwright test",
     "test:bird-forecast": "python3 -m unittest discover -s 07-demos/eurobirdcast/forecast -p 'test_*.py'",
     "test:bird-benchmark": "python3 -m unittest discover -s 07-demos/eurobirdcast/benchmark -p 'test_*.py'",
-    "test:bird-map": "python3 -m unittest discover -s 07-demos/eurobirdcast/map -p 'test_*.py'"
+    "test:bird-map": "python3 -m unittest discover -s 07-demos/eurobirdcast/map -p 'test_*.py'",
+    "export:lab-inbox": "node scripts/export-lab-inbox.mjs",
+    "test:lab-inbox": "node --test scripts/lab-inbox.test.mjs"
   },
   "dependencies": {
     "@types/canvas-confetti": "^1.9.0",

@@ -186,6 +186,10 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Ebene 1: fünf Bereiche nach Absicht. Ebene 2: die Unterseiten des aktiven Bereichs. */}
         <div className="flex items-center justify-between gap-2 pt-2">
           <nav className="flex items-center gap-1.5 overflow-x-auto no-scrollbar min-w-0" aria-label="Main Navigation">
+            {/* Lab ideas inbox */}
+            <a href={`${import.meta.env.BASE_URL}lab-ideas.html`} className="px-3 py-2 text-sm whitespace-nowrap rounded-xl border border-[var(--m-line)]">
+              {L === 'de' ? 'Lab-Ideen' : L === 'es' ? 'Ideas del Lab' : 'Lab ideas'}
+            </a>
             {sections.map((sec) => {
               const Icon = sectionIcon[sec.id];
               const isActive = activeSection?.id === sec.id;
