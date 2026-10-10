@@ -67,3 +67,22 @@ test('Labs cannot change host processing state; dry-run leaves no status file', 
     assert.ok(result.dry_run);assert.equal(buildInbox(root).index.batches[0].processing.state,'received');
   } finally { rmSync(root,{recursive:true,force:true}); }
 });
+
+test('simultaneous workers cannot both claim the same immutable receipt', async () => {
+  const { spawn } = await import('node:child_process');
+  const root=fixture(),batch=record('lab-a');save(root,'one',batch);
+  const moduleUrl=new URL('./lab-inbox.mjs',import.meta.url).href;
+  const claim=worker=>new Promise((resolve,reject)=>{
+    const code=`import {processBatch} from ${JSON.stringify(moduleUrl)};try{console.log(JSON.stringify(processBatch(${JSON.stringify(root)},{action:'claim',batch_id:${JSON.stringify(batch.batch_id)},worker:${JSON.stringify(worker)}})))}catch(error){console.log(JSON.stringify({code:error.code}));process.exitCode=1;}`;
+    const child=spawn(process.execPath,['--input-type=module','-e',code],{stdio:['ignore','pipe','pipe']});
+    let stdout='',stderr='';child.stdout.on('data',chunk=>stdout+=chunk);child.stderr.on('data',chunk=>stderr+=chunk);
+    child.on('error',reject);child.on('close',exit=>resolve({exit,stdout,stderr}));
+  });
+  try {
+    const results=await Promise.all([claim('one'),claim('two')]);
+    assert.equal(results.filter(r=>r.exit===0).length,1,JSON.stringify(results));
+    const failure=JSON.parse(results.find(r=>r.exit!==0).stdout);
+    assert.ok(['LOCK_TIMEOUT','PRECONDITION_FAILED'].includes(failure.code));
+    assert.equal(buildInbox(root).index.batches[0].processing.state,'in_progress');
+  } finally {rmSync(root,{recursive:true,force:true});}
+});
