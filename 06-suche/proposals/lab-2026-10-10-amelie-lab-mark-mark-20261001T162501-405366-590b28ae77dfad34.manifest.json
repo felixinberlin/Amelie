@@ -1,0 +1,24 @@
+{
+  "manifest_version": 1,
+  "run_id": "amelie-lab-mark-mark-20261001T162501-405366-590b28ae77dfad34",
+  "plan_id": "lab-2026-10-10-amelie-lab-mark-mark-20261001T162501-405366-590b28ae77dfad34",
+  "engine": "review",
+  "model": "gemini-2.5-flash",
+  "existence_check": false,
+  "survivors": {
+    "count": 1,
+    "status": "ungeprueft"
+  },
+  "files": [
+    "06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20261001T162501-405366-590b28ae77dfad34.md",
+    "06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20261001T162501-405366-590b28ae77dfad34.inbox.json",
+    "06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20261001T162501-405366-590b28ae77dfad34.manifest.json"
+  ],
+  "source_ops": [],
+  "grave_proposals": 0,
+  "touches_memory": false,
+  "contracts": {
+    "mark-record": "1.6.0"
+  },
+  "contract_version": "1.0.0"
+}
