@@ -38,7 +38,7 @@
     "test:bird-benchmark": "python3 -m unittest discover -s 07-demos/eurobirdcast/benchmark -p 'test_*.py'",
     "test:bird-map": "python3 -m unittest discover -s 07-demos/eurobirdcast/map -p 'test_*.py'",
     "export:lab-inbox": "node scripts/export-lab-inbox.mjs",
-    "test:lab-inbox": "node --test scripts/lab-inbox.test.mjs"
+    "test:lab-inbox": "node --test --test-isolation=none scripts/lab-inbox.test.mjs"
   },
   "dependencies": {
     "@types/canvas-confetti": "^1.9.0",

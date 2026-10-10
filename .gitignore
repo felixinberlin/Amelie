@@ -24,3 +24,7 @@ scripts/model-compare/models.local.json
 # Browser verification artifacts
 playwright-report/
 test-results/
+
+# Shared Lab inbox is derived from immutable proposal receipts at build time
+/public/data/lab-inbox.json
+/public/data/lab-runs/
