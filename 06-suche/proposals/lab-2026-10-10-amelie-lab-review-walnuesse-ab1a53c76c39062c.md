@@ -1,0 +1,591 @@
+# Proposals from plan lab-2026-10-10-amelie-lab-review-walnuesse-ab1a53c76c39062c
+
+Packet: amelie-lab-review-walnuesse-ab1a53c76c39062c · Candidate: amelie-lab-review-walnuesse-ab1a53c76c39062c
+Not applied. A human decides.
+
+- [06-suche/amelie-lab-protokoll.md] review: amelie-lab-review-walnuesse-ab1a53c76c39062c. Absicht: What is the current state of the art, existing implementations, and competing solutions for 'Walnüsse' (walnuts: tree nut allergy, walnut farming and harvest, walnut-based products, and related software or public-good tools)? Are there known open-source tools, commercial products, or standard frameworks operating in this space?. Modell: not recorded. Existenzprüfung: nein. Alle Ideen ungeprüft. Die folgenden Angaben sind gespeicherte Modellausgaben, keine bestätigten Tatsachen. Nur grounded=true ist Evidenz; Score-Änderungen benötigen zusätzlich quote_status=verified. Quellen, fact_checks und fehlende Felder bleiben wie im Original; keine neuen Prüfungen durchgeführt.
+- [06-suche/amelie-lab-protokoll.md] Originalfeld packet_id, Teil 1 (laut gespeicherter Datei):
+"walnuesse"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld theme, Teil 1 (laut gespeicherter Datei):
+"walnuesse"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld question, Teil 1 (laut gespeicherter Datei):
+"What is the current state of the art, existing implementations, and competing solutions for 'Walnüsse' (walnuts: tree nut allergy, walnut farming and harvest, walnut-based products, and related software or public-good tools)? Are there known open-source tools, commercial products, or standard frameworks operating in this space?"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld runs_executed, Teil 1 (laut gespeicherter Datei):
+1
+- [06-suche/amelie-lab-protokoll.md] Originalfeld findings, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "claim": "Walnut allergy is a significant medical challenge, with studies in Switzerland indicating that 55% of walnut allergy patients are sensitized to walnut extract, and specific proteins like Jug r 1, Jug r 2, Jug r 3, Jug r 4, and Jug r 5 are identified as allergens.",
+    "source": "https://www.rosenfluh.ch/32975",
+    "source_type": "academic article summary",
+    "retrieved_at": "2026-09-29T19:00:00Z",
+    "quote": "Sie hat eine Studie zur Walnussallergie initiiert, die bisher in der Schweiz 31 Patienten (medianes Alter 33 Jahre) mit positivem oralem Walnussprovokationstest oder mit Anaphylaxie in der Anamnese einschliessen konnte. Von den einbezogenen Walnussallergikern waren 55 Prozent gegenüber dem Extrakt sensibilisiert. Auf Jug r 1 waren 32 Prozent sensibilisiert, 35 Prozent auf Jug r 2, 19 Prozent auf Jug r 4, 26 Prozent auf Jug r 3 und 68 Prozent auf Jug r 5.",
+    "reused_from_amelie": false,
+    "source_class": "academic",
+    "grounded": false,
+    "id": "F1",
+    "quote_status": "verified",
+    "resolved_url": "https://www.rosenfluh.ch/congressselection-2017-07/nussallergien-immer-noch-eine-medizinische-herausforderung",
+    "seen_in_runs": [
+      1
+    ]
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld contradictions, Teil 1 (laut gespeicherter Datei):
+[
+  "While some medical advice suggests that children allergic to one tree nut species might not need to avoid all nuts, other sources still recommend avoiding all tree nuts due to the risk of cross-contamination and potential reactions to multiple nut types."
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld gaps, Teil 1 (laut gespeicherter Datei):
+[
+  "There is a lack of specific open-source software tools or public-good applications directly tailored for individual walnut allergy management (e.g., apps for allergen tracking or personalized risk assessment).",
+  "While general farm management software exists, specific open-source tools or highly specialized software tailored exclusively for walnut orchard management (e.g., advanced disease models for walnut-specific pathogens, yield prediction models for diverse walnut varieties) were not explicitly identified.",
+  "The voluntary nature of 'may contain traces' labeling for allergens creates a critical gap for consumers, as a missing label does not guarantee the absence of allergens."
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld terminology, Teil 1 (laut gespeicherter Datei):
+[
+  "Allelopathie: The chemical inhibition of one plant (or other organism) by another, such as Juglon produced by walnut trees affecting other plants.",
+  "Anaphylaxie: A severe, potentially life-threatening allergic reaction.",
+  "Baumnuss: Common term for walnut in Switzerland, though botanically there are differences.",
+  "Jug r 1, Jug r 2, Jug r 3, Jug r 4, Jug r 5: Specific protein allergens found in walnuts.",
+  "Kaltpressung/Heißpressung: Methods for extracting oil from walnuts (cold pressing vs. hot pressing).",
+  "Oraler Walnussprovokationstest: An oral challenge test used in diagnosing walnut allergy.",
+  "Schalenfrüchte: A category of allergens in EU regulations that includes walnuts.",
+  "Walnussmehl: Walnut flour, often produced from de-oiled walnuts.",
+  "Walnüsse: German term for walnuts."
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld confidence, Teil 1 (laut gespeicherter Datei):
+0.8
+- [06-suche/amelie-lab-protokoll.md] Originalfeld queries, Teil 1 (laut gespeicherter Datei):
+[
+  "Baumnussallergie Diagnose Behandlung",
+  "Kommerzielle Walnussprodukte",
+  "Landwirtschaftliche Software Open Source Walnüsse",
+  "Landwirtschaftliche Vorschriften Walnüsse",
+  "Nussallergie Kennzeichnung Vorschriften Deutschland",
+  "Nussallergie öffentliche Tools",
+  "Walnuss Datenstandard",
+  "Walnuss Lebensmittelstandards",
+  "Walnussallergie App",
+  "Walnussallergie Forschung aktuelle Studien",
+  "Walnussallergie Management Software",
+  "Walnussanbau Best Practices",
+  "Walnussanbau Forschung",
+  "Walnussanbau Software",
+  "Walnussernte Technologie",
+  "Walnussmehl Anwendungen",
+  "Walnussplantage Management Tools",
+  "Walnussprodukte Innovationen",
+  "Walnussöl Herstellung Verfahren",
+  "Walnüsse Open Source Werkzeug"
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld quellen_used, Teil 1 (laut gespeicherter Datei):
+[
+  "https://aha.ch",
+  "https://carlroth.blog",
+  "https://croptracker.com",
+  "https://deavita.com",
+  "https://din.de",
+  "https://ecarf.org",
+  "https://essential-foods.de",
+  "https://feucht-obsttechnik.de",
+  "https://florapower.de",
+  "https://focus.de",
+  "https://fructus.ch",
+  "https://fva-bw.de",
+  "https://heirloom.ag",
+  "https://hessen.de",
+  "https://huilerie-olea.fr",
+  "https://kindergesundheit-info.de",
+  "https://lko.at",
+  "https://medscape.com",
+  "https://mein-allergie-portal.com",
+  "https://migros.ch",
+  "https://mprise-agriware.com",
+  "https://nationalnutgrower.com",
+  "https://nuleaffarms.com",
+  "https://nussallergie.org",
+  "https://nussbaumweg.de",
+  "https://nuttechnology.com",
+  "https://obsttechnik.com",
+  "https://oekolandbau.de",
+  "https://semios.com",
+  "https://stoll-walnussprodukte.com",
+  "https://unece.org",
+  "https://verbraucherzentrale.nrw",
+  "https://weber-michl.at",
+  "https://wikifarmer.com",
+  "https://wwf.ch",
+  "https://www.bmleh.de",
+  "https://www.google.com/search?q=time+in+Germany",
+  "https://www.rosenfluh.ch/32975",
+  "https://www.thermofisher.com",
+  "https://www.usda.gov",
+  "https://www.zentrum-der-gesundheit.de",
+  "https://yorktest.com",
+  "https://youtube.com",
+  "https://zdfheute.de"
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld search_accounting, Teil 1 (laut gespeicherter Datei):
+{
+  "month": "2026-09",
+  "queries_in_run": 20,
+  "month_total_queries": 300,
+  "free_allowance_remaining": 4700,
+  "overage_queries": 0,
+  "overage_cost_usd": 0.0,
+  "call_overage_cost_usd": 0.0,
+  "is_within_free_allowance": true
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld blind_review, Teil 1 (laut gespeicherter Datei):
+{
+  "packet_id": "amelie-review-walnuesse",
+  "supported_claims": [],
+  "unsupported_claims": [],
+  "missing_evidence": [
+    "A comprehensive literature review detailing the current state of the art in walnut allergy research, management tools, and patient-facing applications.",
+    "Market research reports or product catalogs for commercial software solutions used in walnut farming, including orchard management, harvest optimization, and post-harvest processing.",
+    "Databases or repositories of open-source tools and projects relevant to agriculture, food processing, or allergy management, specifically mentioning walnuts.",
+    "Documentation or case studies of existing implementations of software or public-good tools across the walnut value chain (from cultivation to consumption).",
+    "Analysis of standard frameworks or regulatory guidelines applicable to walnut production, food safety, or allergy labeling that might influence software development.",
+    "Information on competing solutions in each identified area (allergy, farming, harvest, products) to understand the landscape of existing technologies."
+  ],
+  "possible_prior_art": [
+    {
+      "hypothesis": "Open-source agricultural management software for nut crops.",
+      "terminology_hint": "farm management information systems, open-source agriculture, nut crop software",
+      "flagged_for": "independent_researcher"
+    },
+    {
+      "hypothesis": "Mobile applications or digital platforms for managing food allergies, potentially including specific features for tree nut allergies like walnuts.",
+      "terminology_hint": "allergy management app, food allergy tracker, nut allergy alert system",
+      "flagged_for": "independent_researcher"
+    },
+    {
+      "hypothesis": "Commercial or academic software solutions for orchard management, yield prediction, or harvest logistics, applicable to walnut orchards.",
+      "terminology_hint": "precision agriculture software, orchard management system, crop yield prediction, harvest optimization",
+      "flagged_for": "independent_researcher"
+    },
+    {
+      "hypothesis": "Public-good tools or databases for food composition, allergen information, or dietary guidance that include walnuts.",
+      "terminology_hint": "food composition database, allergen database, dietary guidance tools",
+      "flagged_for": "independent_researcher"
+    }
+  ],
+  "alternative_interpretations": [
+    "The scope of 'Walnüsse' could be interpreted as primarily focusing on the agricultural and commercial aspects, rather than equally balancing allergy management.",
+    "The term 'software or public-good tools' could be interpreted very broadly to include general-purpose data analysis tools, or narrowly to only include highly specialized applications.",
+    "The 'state of the art' could refer to academic research, industry best practices, or consumer-facing technologies, each requiring different search methodologies."
+  ],
+  "critical_questions": [
+    "What specific sub-domains within 'Walnüsse' (e.g., allergy, farming, harvest, products) are of highest priority for this review?",
+    "What is the desired depth of analysis for 'state of the art' (e.g., academic papers, commercial product features, user adoption rates)?",
+    "What geographical scope should be considered for 'existing implementations' and 'competing solutions' (e.g., global, specific regions like Europe or North America)?",
+    "Are there any specific types of 'software or public-good tools' that are of particular interest (e.g., mobile apps, web platforms, IoT integrations, AI-driven systems)?",
+    "What criteria define a 'standard framework' in this context, and what industries or domains should be prioritized for investigation?"
+  ],
+  "confidence": 0.5,
+  "model": "gemini-2.5-flash",
+  "validation": {
+    "notes": [
+      "confidence capped at 0.5: the packet has no source records"
+    ]
+  }
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld trend, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "run": 1,
+    "timestamp": "2026-09-29T19:47:14.828765+00:00",
+    "label": "walnuesse, contract v1.0.0",
+    "status": "ok",
+    "model": "gemini-2.5-flash",
+    "question": "What is the current state of the art, existing implementations, and competing solutions for 'Walnüsse' (walnuts: tree nut allergy, walnut farming and harvest, walnut-based products, and related software or public-good tools)? Are there known open-source tools, commercial products, or standard frameworks operating in this space?",
+    "findings": 1,
+    "new_findings": 1,
+    "grounded": 0,
+    "grounded_ratio": 0.0,
+    "quotes_verified": 1,
+    "quotes_not_found": 0,
+    "specific_urls": 1,
+    "queries": 20,
+    "confidence": 0.8,
+    "gaps": 3,
+    "cost_usd": 0.031557,
+    "review_supported": 0,
+    "review_unsupported": 0,
+    "review_hypotheses": 4
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld runs, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "run": 1,
+    "timestamp": "2026-09-29T19:47:14.828765+00:00",
+    "packet_id": "amelie-review-walnuesse",
+    "label": "walnuesse, contract v1.0.0",
+    "status": "ok",
+    "metrics": {
+      "model": "gemini-2.5-flash",
+      "question": "What is the current state of the art, existing implementations, and competing solutions for 'Walnüsse' (walnuts: tree nut allergy, walnut farming and harvest, walnut-based products, and related software or public-good tools)? Are there known open-source tools, commercial products, or standard frameworks operating in this space?",
+      "findings": 1,
+      "new_findings": 1,
+      "grounded": 0,
+      "grounded_ratio": 0.0,
+      "quotes_verified": 1,
+      "quotes_not_found": 0,
+      "specific_urls": 1,
+      "queries": 20,
+      "confidence": 0.8,
+      "gaps": 3,
+      "cost_usd": 0.031557,
+      "review_supported": 0,
+      "review_unsupported": 0,
+      "review_hypotheses": 4
+    },
+    "result": {
+      "queries": [
+        "Walnussallergie App",
+        "Walnussallergie Management Software",
+        "Nussallergie Kennzeichnung Vorschriften Deutschland",
+        "Walnussallergie Forschung aktuelle Studien",
+        "Baumnussallergie Diagnose Behandlung",
+        "Walnussanbau Software",
+        "Walnussplantage Management Tools",
+        "Walnussernte Technologie",
+        "Walnussanbau Forschung",
+        "Landwirtschaftliche Vorschriften Walnüsse",
+        "Walnussanbau Best Practices",
+        "Walnussprodukte Innovationen",
+        "Walnussöl Herstellung Verfahren",
+        "Walnussmehl Anwendungen",
+        "Walnuss Lebensmittelstandards",
+        "Kommerzielle Walnussprodukte",
+        "Walnüsse Open Source Werkzeug",
+        "Walnuss Datenstandard",
+        "Nussallergie öffentliche Tools",
+        "Landwirtschaftliche Software Open Source Walnüsse"
+      ],
+      "search_attempts": 1,
+      "packet_id": "amelie-review-walnuesse",
+      "question": "What is the current state of the art, existing implementations, and competing solutions for 'Walnüsse' (walnuts: tree nut allergy, walnut farming and harvest, walnut-based products, and related software or public-good tools)? Are there known open-source tools, commercial products, or standard frameworks operating in this space?",
+      "findings": [
+        {
+          "claim": "Walnut allergy is a significant medical challenge, with studies in Switzerland indicating that 55% of walnut allergy patients are sensitized to walnut extract, and specific proteins like Jug r 1, Jug r 2, Jug r 3, Jug r 4, and Jug r 5 are identified as allergens.",
+          "source": "https://www.rosenfluh.ch/32975",
+          "source_type": "academic article summary",
+          "retrieved_at": "2026-09-29T19:00:00Z",
+          "quote": "Sie hat eine Studie zur Walnussallergie initiiert, die bisher in der Schweiz 31 Patienten (medianes Alter 33 Jahre) mit positivem oralem Walnussprovokationstest oder mit Anaphylaxie in der Anamnese einschliessen konnte. Von den einbezogenen Walnussallergikern waren 55 Prozent gegenüber dem Extrakt sensibilisiert. Auf Jug r 1 waren 32 Prozent sensibilisiert, 35 Prozent auf Jug r 2, 19 Prozent auf Jug r 4, 26 Prozent auf Jug r 3 und 68 Prozent auf Jug r 5.",
+          "reused_from_amelie": false,
+          "source_class": "academic",
+          "grounded": false,
+          "id": "F1",
+          "quote_status": "verified",
+          "resolved_url": "https://www.rosenfluh.ch/congressselection-2017-07/nussallergien-immer-noch-eine-medizinische-herausforderung"
+        }
+      ],
+      "contradictions": [
+        "While some medical advice suggests that children allergic to one tree nut species might not need to avoid all nuts, other sources still recommend avoiding all tree nuts due to the risk of cross-contamination and potential reactions to multiple nut types."
+      ],
+      "gaps": [
+        "There is a lack of specific open-source software tools or public-good applications directly tailored for individual walnut allergy management (e.g., apps for allergen tracking or personalized risk assessment).",
+        "While general farm management software exists, specific open-source tools or highly specialized software tailored exclusively for walnut orchard management (e.g., advanced disease models for walnut-specific pathogens, yield prediction models for diverse walnut varieties) were not explicitly identified.",
+        "The voluntary nature of 'may contain traces' labeling for allergens creates a critical gap for consumers, as a missing label does not guarantee the absence of allergens."
+      ],
+      "terminology": [
+        "Walnüsse: German term for walnuts.",
+        "Baumnuss: Common term for walnut in Switzerland, though botanically there are differences.",
+        "Schalenfrüchte: A category of allergens in EU regulations that includes walnuts.",
+        "Jug r 1, Jug r 2, Jug r 3, Jug r 4, Jug r 5: Specific protein allergens found in walnuts.",
+        "Anaphylaxie: A severe, potentially life-threatening allergic reaction.",
+        "Oraler Walnussprovokationstest: An oral challenge test used in diagnosing walnut allergy.",
+        "Allelopathie: The chemical inhibition of one plant (or other organism) by another, such as Juglon produced by walnut trees affecting other plants.",
+        "Kaltpressung/Heißpressung: Methods for extracting oil from walnuts (cold pressing vs. hot pressing).",
+        "Walnussmehl: Walnut flour, often produced from de-oiled walnuts."
+      ],
+      "confidence": 0.8,
+      "quellen_used": [
+        "https://www.rosenfluh.ch/32975",
+        "https://www.thermofisher.com",
+        "https://medscape.com",
+        "https://mein-allergie-portal.com",
+        "https://www.usda.gov",
+        "https://unece.org",
+        "https://migros.ch",
+        "https://wwf.ch",
+        "https://www.zentrum-der-gesundheit.de",
+        "https://weber-michl.at",
+        "https://stoll-walnussprodukte.com",
+        "https://deavita.com",
+        "https://huilerie-olea.fr",
+        "https://essential-foods.de",
+        "https://www.google.com/search?q=time+in+Germany",
+        "https://nussbaumweg.de",
+        "https://florapower.de",
+        "https://focus.de",
+        "https://youtube.com",
+        "https://fructus.ch",
+        "https://feucht-obsttechnik.de",
+        "https://nuttechnology.com",
+        "https://obsttechnik.com",
+        "https://nationalnutgrower.com",
+        "https://hessen.de",
+        "https://fva-bw.de",
+        "https://oekolandbau.de",
+        "https://lko.at",
+        "https://carlroth.blog",
+        "https://www.bmleh.de",
+        "https://nussallergie.org",
+        "https://din.de",
+        "https://kindergesundheit-info.de",
+        "https://verbraucherzentrale.nrw",
+        "https://wikifarmer.com",
+        "https://semios.com",
+        "https://heirloom.ag",
+        "https://mprise-agriware.com",
+        "https://nuleaffarms.com",
+        "https://croptracker.com",
+        "https://yorktest.com",
+        "https://zdfheute.de",
+        "https://ecarf.org",
+        "https://aha.ch"
+      ],
+      "schema_validation_initial": {
+        "status": "invalid",
+        "checked_at": "2026-09-29T19:46:59Z",
+        "schema": "research-result.schema.json",
+        "errors": [
+          {
+            "field": "findings[1].source",
+            "rule": "url_specific",
+            "value": "https://www.thermofisher.com",
+            "message": "source is a bare domain, not a page. Cite the exact page URL your search returned; if you have none for this claim, remove the finding."
+          },
+          {
+            "field": "findings[2].source",
+            "rule": "url_specific",
+            "value": "https://www.bmleh.de",
+            "message": "source is a bare domain, not a page. Cite the exact page URL your search returned; if you have none for this claim, remove the finding."
+          },
+          {
+            "field": "findings[3].source",
+            "rule": "url_specific",
+            "value": "https://www.bmleh.de",
+            "message": "source is a bare domain, not a page. Cite the exact page URL your search returned; if you have none for this claim, remove the finding."
+          },
+          {
+            "field": "findings[4].source",
+            "rule": "url_specific",
+            "value": "https://www.aha.ch",
+            "message": "source is a bare domain, not a page. Cite the exact page URL your search returned; if you have none for this claim, remove the finding."
+          },
+          {
+            "field": "findings[5].source",
+            "rule": "url_specific",
+            "value": "https://www.nussallergie.org",
+            "message": "source is a bare domain, not a page. Cite the exact page URL your search returned; if you have none for this claim, remove the finding."
+          },
+          {
+            "field": "findings[6].source",
+            "rule": "url_specific",
+            "value": "https://www.feucht-obsttechnik.de",
+            "message": "source is a bare domain, not a page. Cite the exact page URL your search returned; if you have none for this claim, remove the finding."
+          },
+          {
+            "field": "findings[7].source",
+            "rule": "url_specific",
+            "value": "https://nationalnutgrower.com",
+            "message": "source is a bare domain, not a page. Cite the exact page URL your search returned; if you have none for this claim, remove the finding."
+          },
+          {
+            "field": "findings[8].source",
+            "rule": "url_specific",
+            "value": "https://semios.com",
+            "message": "source is a bare domain, not a page. Cite the exact page URL your search returned; if you have none for this claim, remove the finding."
+          },
+          {
+            "field": "findings[9].source",
+            "rule": "url_specific",
+            "value": "https://www.zentrum-der-gesundheit.de",
+            "message": "source is a bare domain, not a page. Cite the exact page URL your search returned; if you have none for this claim, remove the finding."
+          },
+          {
+            "field": "findings[10].source",
+            "rule": "url_specific",
+            "value": "https://florapower.de",
+            "message": "source is a bare domain, not a page. Cite the exact page URL your search returned; if you have none for this claim, remove the finding."
+          },
+          {
+            "field": "findings[11].source",
+            "rule": "url_specific",
+            "value": "https://www.stoll-walnussprodukte.com",
+            "message": "source is a bare domain, not a page. Cite the exact page URL your search returned; if you have none for this claim, remove the finding."
+          },
+          {
+            "field": "findings[12].source",
+            "rule": "url_specific",
+            "value": "https://www.usda.gov",
+            "message": "source is a bare domain, not a page. Cite the exact page URL your search returned; if you have none for this claim, remove the finding."
+          },
+          {
+            "field": "findings[13].source",
+            "rule": "url_specific",
+            "value": "https://unece.org",
+            "message": "source is a bare domain, not a page. Cite the exact page URL your search returned; if you have none for this claim, remove the finding."
+          },
+          {
+            "field": "confidence",
+            "rule": "protocol",
+            "value": 0.9,
+            "message": "With contradictions listed, confidence must be < 0.9."
+          }
+        ],
+        "warnings": [
+          "findings[0]: domain 'www.rosenfluh.ch' is unusual for source_type 'academic article summary' (class academic).",
+          "findings[2]: domain 'www.bmleh.de' is unusual for source_type 'government portal' (class government).",
+          "findings[3]: domain 'www.bmleh.de' is unusual for source_type 'government portal' (class government).",
+          "confidence >= 0.8 although gaps are listed; check the confidence is honest."
+        ],
+        "retry_instruction": "Fix the 14 errors above and re-emit the full JSON. Do not change other fields."
+      },
+      "contract_version": "1.0.0",
+      "grounding_sources": [
+        {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMgq7P7lnxgKcKVXE49_0qkZzJmvp4Kf-3pFcG8SDArDfoP2tYHy384v2Lo6LDQJ_-a3Q2xu-QOUzoIRcXRiTnVhClpb9S_hhOh-t_k_x8q_MXk34aEzPRWTba280Bh7p7FblJlAfIWuk37IJGXQ==",
+          "resolved": "https://deutsch.medscape.com/artikelansicht/4906157",
+          "domain": "medscape.com"
+        },
+        {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGAMHMP8FG_97vfTMMXPO5n2rpAlkiea9SEDw2scl_xeKzPqxw_1NnpOKYpwP74dUS0NxlHpsOK1QhRZBx_t1qcg7TloXCNc8R3-nuIWLx3b734gEKfAzwXCVHiCiXtRdvT9pIZvJVu8k-c6Bzab5vVC9qSISRgl9snj9fMRTeF3FFgIMiHKyutLME=",
+          "resolved": "https://www.yorktest.com/de/blog/nussallergien-und-unvertraglichkeiten-erklart/",
+          "domain": "yorktest.com"
+        },
+        {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVd_sfFSISyfX6TgKAxlYPXFd7M-RhIS52f-OY1l_cZBzL-Onz4Jl-0FxwWZqdVeUHXkLrAwyrLMXt9CuJdRLFJriFvcesYd3NvzxVMiI7Vsi6ewFQbDTuJZUJSJ7sQRQ0SAjoI3o2mVrp6WIokgSnhhs1V5A1kK1HQKWYwXkeMvVAXjjFQS0E5g==",
+          "resolved": "https://www.nussallergie.org/allergiemanagement/lebensmittelkennzeichnung.html",
+          "domain": "nussallergie.org"
+        },
+        {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkkPBIuGXr_neTz_SyeZqTIzRBxAmX3d2RR8XM6b6IvwL3KF6lyRaehHM7JnmC0bb9vaLyA_0LXBPKATGKSiFemhSY-1r4FYZSZeqxam0CnoIb_MIQ7Ql2RsKn4onfS-5UFITqOdC3MCXnuRnuZcGDlXKeTTxdts-vJXA=",
+          "resolved": "https://impuls.migros.ch/de/ernaehrung/nahrungsmittel/baumnuesse",
+          "domain": "migros.ch"
+        },
+        {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHcxQKFFxqImROqYMgT3qZrmYf2jf8keJADjh3DpzCZ7yDXOX2GSaXHMBV5IBLitdrbx22o5vAHRNT4Y8PNuIFeQRGdhpVztFcwCXMxU3oiT8HNW3-y0DAjyaH-iLiDlmRNFtivz0BUPpM2zKkhFgwtgxZtaavPIT_XH7pgbJwm-EoCrUkU8zKdq4y-OvSXC_P1HERukqOJKF68fsMB9HXgZs_G-KR5AzOdljEg89ZMU5maDswkLO8Nxji9SLo=",
+          "resolved": "https://www.kindergesundheit-info.de/themen/krankes-kind/erkrankungen/allergien/lebensmittelallergien/lebensmittel-kennzeichnung/",
+          "domain": "kindergesundheit-info.de"
+        },
+        {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGIGT5xwop0COwTQswDEGNMyVgRP2S8PxVpNxl_s8yqfDdJiFBW4nwZ0Kaz91zuOj4NrL-vdM28KYcMQFUJLENAd57IC2DQ4USGCUPhl4nSUQO0LGnTJCm1fPc0HChAhBdoQ9TnSbKFg52xQO7iCfWKcZq0JlAhYFcyqnvvi5OtwENC7DtP6u-eoM8jum6LmdgvGR0BlWuMrnXW31_kh6iW6xJxHxI6Zms=",
+          "resolved": "https://www.rosenfluh.ch/congressselection-2017-07/nussallergien-immer-noch-eine-medizinische-herausforderung",
+          "domain": "rosenfluh.ch"
+        },
+        {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFx0aO75WOu5h7Laeaatbg4DULJEG6zFvKC3bS0ZdCtolmiYvk9mrSTBPkxssJeN6PZ2mA33_f8HhMwbp1vOBVP86PdPNJDsE-853P5g6k99HjKQryFGTWKtpI0UTQ-qwJkP1os8IvWqbiu_4JK6lubntuFsisb8QGDpSFPiOmja3aFDHmnGA==",
+          "resolved": "https://www.thermofisher.com/allergy/de/de/allergen-fact-sheets/walnut.html",
+          "domain": "thermofisher.com"
+        },
+        {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENpVMnY5NBwKMm1w5Z51qUkUJdnu_yQgyFhIi-iX_9wisD2zwkV_qlGcPXf2khW3YQvlV9cqY7G6EQTIJtd34kW491DSZOW4JvM9F_K8Ee5QJSE3o-CFc9",
+          "resolved": "https://www.nussallergie.org/",
+          "domain": "nussallergie.org"
+        },
+        {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEY2OFriu8F_SpicXBr-LqeLtnk8P5gB7npzanydpzqBcP-nbsZMA4HA_8wBDmxK4Nr3i54wvWURo4104EsNZsaVgYpnKOqPneCGSW7uTbXtKpkzZfFVoHY7SVcMra85b_bwV5mwM_epC-ANL7L",
+          "resolved": "https://carlroth.blog/walnussbaum-vs-konkurrenten/",
+          "domain": "carlroth.blog"
+        },
+        {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFU9FDXG263yoGnrgC_EFR2PJUokAo3fDyxNETrF4NKrayaTnZUrxH82FDYCzgdgMGASP4arncb8H5-5mzOt8du7MLbKGO_FKHNy6ulVknx-FLWL7dx1C9YzeAe_cLcmwtSkP2VAEfXOPC0QJ1dJFUxk1t4pHhAuExn3mxBxCek0Yhz",
+          "resolved": "https://wikifarmer.com/library/de/article/anlegen-einer-walnussplantage",
+          "domain": "wikifarmer.com"
+        },
+        {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9-BzUMYz3n4QdxjW05XzLYrYdj3BiYpFrMKOT98sb44faFnC3pMrYO8AuYXxi7joXjVp9mN6T46aeSYsddXChzTZKpQL6fOHujNZA5mndZ6njlSfv_IHkYAfvj5KwKMRNCEAdx0t5JfVS5MMs",
+          "resolved": "https://www.florapower.de/saaten-infothek/walnuss/",
+          "domain": "florapower.de"
+        },
+        {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGSPHJXITrfRdlsbetL5Uo1CILcgS6JBw-jSDUgwtBLrAJeX8xF367bPzpRL1aoCc7gK74B0TLlKCmITgmKi9i3cif9tOOFcTgKM-qEMR1xqewlOkfNj65OSKFzUPKqP0esWLUdFGcRe0zSg7o5X7GO5RSPAZW-",
+          "resolved": "https://weber-michl.at/shop/backware/proteine/walnuss-mehl/",
+          "domain": "weber-michl.at"
+        },
+        {
+          "uri": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHoYCcfgwO-kTLzm5qI2b2e2pGxQk9ZTg4BW60I_ywEnsnA1A-3ZKzTrZ06xisEuRCqjxPn1GmVHIQFdXx5WlLjDSWla-2VVK9xG4TNb9_PHx2P2LO5lm4HyMkSB4JwKtodWqZkkTphkqXD",
+          "resolved": "https://www.stoll-walnussprodukte.com/de/mehle/",
+          "domain": "stoll-walnussprodukte.com"
+        }
+      ],
+      "provenance_stats": {
+        "rewritten": 0,
+        "kept": 1,
+        "unmatched": 0
+      },
+      "search_accounting": {
+        "month": "2026-09",
+        "queries_in_run": 20,
+        "month_total_queries": 300,
+        "free_allowance_remaining": 4700,
+        "overage_queries": 0,
+        "overage_cost_usd": 0.0,
+        "call_overage_cost_usd": 
+- [06-suche/amelie-lab-protokoll.md] Originalfeld runs, Teil 2 (laut gespeicherter Datei):
+0.0,
+        "is_within_free_allowance": true
+      }
+    },
+    "blind_review": {
+      "packet_id": "amelie-review-walnuesse",
+      "supported_claims": [],
+      "unsupported_claims": [],
+      "missing_evidence": [
+        "A comprehensive literature review detailing the current state of the art in walnut allergy research, management tools, and patient-facing applications.",
+        "Market research reports or product catalogs for commercial software solutions used in walnut farming, including orchard management, harvest optimization, and post-harvest processing.",
+        "Databases or repositories of open-source tools and projects relevant to agriculture, food processing, or allergy management, specifically mentioning walnuts.",
+        "Documentation or case studies of existing implementations of software or public-good tools across the walnut value chain (from cultivation to consumption).",
+        "Analysis of standard frameworks or regulatory guidelines applicable to walnut production, food safety, or allergy labeling that might influence software development.",
+        "Information on competing solutions in each identified area (allergy, farming, harvest, products) to understand the landscape of existing technologies."
+      ],
+      "possible_prior_art": [
+        {
+          "hypothesis": "Open-source agricultural management software for nut crops.",
+          "terminology_hint": "farm management information systems, open-source agriculture, nut crop software",
+          "flagged_for": "independent_researcher"
+        },
+        {
+          "hypothesis": "Mobile applications or digital platforms for managing food allergies, potentially including specific features for tree nut allergies like walnuts.",
+          "terminology_hint": "allergy management app, food allergy tracker, nut allergy alert system",
+          "flagged_for": "independent_researcher"
+        },
+        {
+          "hypothesis": "Commercial or academic software solutions for orchard management, yield prediction, or harvest logistics, applicable to walnut orchards.",
+          "terminology_hint": "precision agriculture software, orchard management system, crop yield prediction, harvest optimization",
+          "flagged_for": "independent_researcher"
+        },
+        {
+          "hypothesis": "Public-good tools or databases for food composition, allergen information, or dietary guidance that include walnuts.",
+          "terminology_hint": "food composition database, allergen database, dietary guidance tools",
+          "flagged_for": "independent_researcher"
+        }
+      ],
+      "alternative_interpretations": [
+        "The scope of 'Walnüsse' could be interpreted as primarily focusing on the agricultural and commercial aspects, rather than equally balancing allergy management.",
+        "The term 'software or public-good tools' could be interpreted very broadly to include general-purpose data analysis tools, or narrowly to only include highly specialized applications.",
+        "The 'state of the art' could refer to academic research, industry best practices, or consumer-facing technologies, each requiring different search methodologies."
+      ],
+      "critical_questions": [
+        "What specific sub-domains within 'Walnüsse' (e.g., allergy, farming, harvest, products) are of highest priority for this review?",
+        "What is the desired depth of analysis for 'state of the art' (e.g., academic papers, commercial product features, user adoption rates)?",
+        "What geographical scope should be considered for 'existing implementations' and 'competing solutions' (e.g., global, specific regions like Europe or North America)?",
+        "Are there any specific types of 'software or public-good tools' that are of particular interest (e.g., mobile apps, web platforms, IoT integrations, AI-driven systems)?",
+        "What criteria define a 'standard framework' in this context, and what industries or domains should be prioritized for investigation?"
+      ],
+      "confidence": 0.5,
+      "model": "gemini-2.5-flash",
+      "validation": {
+        "notes": [
+          "confidence capped at 0.5: the packet has no source records"
+        ]
+      }
+    }
+  }
+]
