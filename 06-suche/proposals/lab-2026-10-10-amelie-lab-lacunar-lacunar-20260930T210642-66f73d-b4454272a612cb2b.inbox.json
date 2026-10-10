@@ -1,0 +1,660 @@
+{
+  "batch_id": "amelie-lab-lacunar-lacunar-20260930T210642-66f73d-b4454272a612cb2b",
+  "lab_id": "amelie-lab",
+  "engine": "lacunar",
+  "run_id": "lacunar-20260930T210642-66f73d",
+  "revision": "b4454272a612cb2b8d8330d9a8852e99fa8c19542d5bc18bfb97764122e08225",
+  "created_at": "2026-09-30T21:11:42Z",
+  "model": "gemini-2.5-flash",
+  "intent": "Antikrieg, mutter, brandemburg, freiheit",
+  "ideas": [
+    {
+      "local_id": "C1",
+      "record": {
+        "candidate_id": "C1",
+        "rank": 1,
+        "idea": "Eine App, die 'Erinnerungs-Spuren' an bestimmten geografischen Orten hinterlässt. Diese Spuren sind kurze Audio- oder Textfragmente von Zeitzeugen. Sie 'zerfallen' digital, es sei denn, andere Nutzer besuchen den Ort und 'bestätigen' die Spur durch Zuhören oder eigene Ergänzungen, die sich thematisch verbinden.",
+        "gap": "Die Relevanz und Sichtbarkeit historischer Erinnerungen an bestimmten Orten wird nicht organisch durch kollektive Aufmerksamkeit und Nutzung bestimmt, sondern statisch archiviert.",
+        "gap_stands_alone": true,
+        "boden_type": "exploratory",
+        "removed_assumption": "Die Annahme, dass historische Erinnerungen einmal gesammelt und dann für immer statisch erhalten bleiben müssen.",
+        "who_has_problem": "Historiker, Kultureinrichtungen und interessierte Bürger in Brandenburg, die eine dynamische, partizipative Form der Erinnerungserhaltung suchen.",
+        "why_now": "Fortschritte in der Geolokalisierung und mobilen Audiotechnologien sind vorhanden, aber die KI-gesteuerte dynamische Anpassung und der 'Zerfall' sind erst mit moderner, leicht zugänglicher Rechenleistung für dezentrale Systeme praktikabel geworden.",
+        "buildable": "Ja, mobile Apps mit Geo-Features und Audio-Wiedergabe sind Standard; die 'Zerfalls'-Logik ist implementierbar und erfordert keine unlösbaren technischen Herausforderungen.",
+        "evidence_urls": [
+          "https://zeitzeugen.brandenburg.de/zeitzeugen/",
+          "https://evernote.com/de-de/note-taking/reminder-app-with-location-based-alerts"
+        ],
+        "collider_mechanism": "Die Idee nutzt das Prinzip der Stigmergie, bei der Spuren in der Umgebung hinterlassen werden, die andere Agenten wahrnehmen und darauf reagieren können, sowie das Prinzip des Pheromon-Zerfalls, bei dem Spuren ohne Verstärkung verblassen."
+      }
+    },
+    {
+      "local_id": "C2",
+      "record": {
+        "candidate_id": "C2",
+        "rank": 2,
+        "idea": "Ein KI-basiertes System, das Zeitzeugenberichte in 'thematische Pheromone' umwandelt. Diese 'Pheromone' verknüpfen Berichte über gemeinsame Themen oder Orte. Je häufiger ein Thema in neuen Berichten auftaucht, desto stärker wird die 'Spur', die es sichtbar macht. Ungenutzte Spuren verblassen, was die dynamische Relevanz anzeigt.",
+        "gap": "Die Relevanz und Vernetzung von Themen in großen Sammlungen von Zeitzeugenberichten bleibt statisch oder erfordert manuellen Aufwand, um dynamische Entwicklungen und kollektives Interesse widerzuspiegeln.",
+        "gap_stands_alone": true,
+        "boden_type": "exploratory",
+        "removed_assumption": "Die Annahme, dass die Relevanz eines historischen Themas statisch ist oder nur durch Experten bewertet werden kann.",
+        "who_has_problem": "Historiker, Archivare und Bildungseinrichtungen, die große Mengen an Zeitzeugenberichten effizient erschließen und deren dynamische Relevanz abbilden wollen.",
+        "why_now": "Fortschritte in NLP und KI-basierter Textanalyse ermöglichen die automatische Extraktion und Verknüpfung von Themen aus unstrukturierten Texten und deren dynamische Anpassung über 'thematische Pheromone'.",
+        "buildable": "Ja, NLP-Modelle können Themen identifizieren und ein Graph-basiertes System könnte die 'Pheromone' und deren dynamische Stärke verwalten.",
+        "evidence_urls": [
+          "https://www.bpb.de/lernen/digitale-bildung/werkstatt/517178/kuenstliche-intelligenz-trifft-zeitzeugeninterviews/",
+          "https://www.hdg.de/presse/pressemitteilung-2020-12-11-erzaehlte-geschichte-trifft-kuenstliche-intelligenz"
+        ],
+        "collider_mechanism": "Das System imitiert die Art und Weise, wie Ameisen durch Pheromone dynamisch relevante Pfade markieren und verstärken, basierend auf der kollektiven Aktivität und dem 'Verblassen' von nicht genutzten Spuren."
+      }
+    },
+    {
+      "local_id": "C6",
+      "record": {
+        "candidate_id": "C6",
+        "rank": 3,
+        "idea": "Eine 'Narrativ-Temperaturkarte' von Brandenburg. Nutzer (Zeitzeugen, Nachkommen, Interessierte) können zu bestimmten Orten oder Ereignissen ihre 'gefühlte Temperatur' (z.B. Trauer, Hoffnung, Wut) hinterlassen. Eine KI aggregiert diese Daten zu einer dynamischen Karte, die 'Hotspots' emotionaler Resonanz anzeigt, ohne die einzelnen Beiträge zu bewerten.",
+        "gap": "Es gibt keine einfache Methode für eine breite Öffentlichkeit, ihre emotionalen Reaktionen auf historische Orte oder Ereignisse zu teilen und daraus ein dynamisches, kollektives Stimmungsbild zu generieren, das nicht von einer zentralen Instanz kuratiert wird.",
+        "gap_stands_alone": true,
+        "boden_type": "exploratory",
+        "removed_assumption": "Die Annahme, dass die emotionale Bedeutung historischer Orte nur durch Experten oder durch statische Ausstellungen vermittelt werden kann.",
+        "who_has_problem": "Museen, Gedenkstätten, Geschichtsvereine und Bürger, die ein kollektives, emotionales Stimmungsbild zu historischen Orten und Ereignissen erfassen und visualisieren möchten.",
+        "why_now": "Fortschritte in der KI für Stimmungsanalyse (Sentiment Analysis) und die breite Verfügbarkeit von Mapping-Tools mit Echtzeit-Datenaggregation ermöglichen die Erstellung dynamischer emotionaler Karten.",
+        "buildable": "Ja, mobile Apps zur Dateneingabe, KI zur Aggregation und eine Web-Karte zur Visualisierung sind umsetzbar.",
+        "evidence_urls": [
+          "https://solidlight-inc.com/legacy-magazine/",
+          "https://news.stanford.edu/stories/2017/03/mapping-emotions-london"
+        ],
+        "collider_mechanism": "Die Idee nutzt das Prinzip, dass komplexe Muster (hier: emotionale Hotspots) aus der Summe vieler einfacher, dezentraler Aktionen (das Hinterlassen einer 'Temperatur') ohne zentrale Kontrolle entstehen und dynamisch an die 'Umgebung' (die Beiträge) angepasst werden."
+      }
+    },
+    {
+      "local_id": "C13",
+      "record": {
+        "candidate_id": "C13",
+        "rank": 4,
+        "idea": "Eine App, die es Nutzern ermöglicht, auf sehr einfache Weise (z.B. per Sprachmemo) persönliche 'Friedensimpulse' oder 'Freiheitsgedanken' an einem Ort in Brandenburg zu 'hinterlassen'. Eine KI aggregiert diese Impulse und visualisiert die Dichte und Art der Gedanken an verschiedenen Orten, um ein kollektives Stimmungsbild zu erzeugen, das sich leicht skalieren lässt.",
+        "gap": "Es gibt keine einfache, niederschwellige Möglichkeit für Bürger, ihre individuellen Gedanken und Gefühle zu Frieden und Freiheit an einem Ort auszudrücken und diese spontanen Äußerungen zu einem dynamischen, aggregierten Stimmungsbild zu verdichten.",
+        "gap_stands_alone": true,
+        "boden_type": "exploratory",
+        "removed_assumption": "Die Annahme, dass tiefgreifende Gedanken zu komplexen Themen nur in strukturierten Interviews oder schriftlichen Beiträgen geäußert werden können.",
+        "who_has_problem": "Bürger in Brandenburg, die ihre Gedanken und Gefühle zu Frieden und Freiheit teilen und ein kollektives Stimmungsbild zu diesen Themen visualisieren möchten, sowie lokale Initiativen oder die Landesregierung.",
+        "why_now": "Fortschritte in der Spracherkennung, Sentiment-Analyse per KI und Geotagging über Smartphones ermöglichen die einfache Erfassung und Aggregation von Sprachmemos zu einem kollektiven Stimmungsbild.",
+        "buildable": "Ja, eine App mit Sprachaufnahme, Geotagging, KI-Analyse und einer Kartenvisualisierung ist umsetzbar.",
+        "evidence_urls": [
+          "https://zeitzeugen.brandenburg.de/zeitzeugen/",
+          "https://www.bpb.de/lernen/digitale-bildung/werkstatt/517178/kuenstliche-intelligenz-trifft-zeitzeugeninterviews/"
+        ],
+        "collider_mechanism": "Die Idee nutzt das Prinzip, dass sich komplexe kollektive Informationen (Stimmungsbild) aus einer großen Anzahl von sehr einfachen, unkoordinierten Einzelbeiträgen (Sprachmemos) zusammensetzen und durch das 'Hinterlassen von Spuren' ohne zentrale Kontrolle entstehen."
+      }
+    },
+    {
+      "local_id": "C7",
+      "record": {
+        "candidate_id": "C7",
+        "rank": 5,
+        "idea": "Eine App, die historische Zeitzeugenberichte mit aktuellen Nachrichten und sozialen Medien verbindet. Wenn ein aktuelles Ereignis (z.B. ein Konflikt, eine Freiheitsbewegung) in den Nachrichten auftaucht, schlägt die App relevante Passagen aus historischen Berichten vor, um Kontext und Perspektive zu bieten, und ermutigt zu einer 'Antwort' aus der Gegenwart.",
+        "gap": "Aktuellen Ereignissen fehlt oft ein sofortiger historischer Kontext, und es gibt keine einfache Möglichkeit, historische Lehren direkt mit der Gegenwart zu verbinden und darauf zu reagieren.",
+        "gap_stands_alone": false,
+        "boden_type": "combinational",
+        "removed_assumption": "Die Annahme, dass historische Berichte und aktuelle Nachrichten in getrennten Silos existieren und ihre Verbindung nur durch Experten manuell hergestellt werden kann.",
+        "who_has_problem": "Journalisten, Bildungseinrichtungen und politisch interessierte Bürger, die historische Perspektiven auf aktuelle Ereignisse suchen und zum aktiven Diskurs anregen wollen.",
+        "why_now": "Fortschritte in der KI für Echtzeit-Nachrichtenanalyse und Text-Matching ermöglichen die automatische Verknüpfung von aktuellen Ereignissen mit relevanten historischen Berichten.",
+        "buildable": "Ja, die Integration von Nachrichtenfeeds mit einer Datenbank von Zeitzeugenberichten und einer Matching-KI ist technisch machbar.",
+        "evidence_urls": [
+          "https://www.bpb.de/lernen/digitale-bildung/werkstatt/517178/kuenstliche-intelligenz-trifft-zeitzeugeninterviews/",
+          "https://www.hdg.de/presse/pressemitteilung-2020-12-11-erzaehlte-geschichte-trifft-kuenstliche-intelligenz"
+        ],
+        "collider_mechanism": "Das System imitiert das Prinzip reaktiver, unkoordinierter Aktionen (wie Ameisen auf eine Störung reagieren), bei denen ein externes Ereignis (aktuelle Nachrichten) eine Reaktion (Vorschlag historischer Berichte und Anregung zur Antwort) auslöst, die auf Überleben (Relevanz des historischen Wissens) optimiert ist."
+      }
+    }
+  ],
+  "record": {
+    "run_id": "lacunar-20260930T210642-66f73d",
+    "intent": "Antikrieg, mutter, brandemburg, freiheit",
+    "model": "gemini-2.5-flash",
+    "created_at": "2026-09-30T21:11:42Z",
+    "state_missing": [],
+    "plan": {
+      "area": "Antikrieg, mutter, brandenburg, freiheit",
+      "mode_list": [
+        "Eine App, die Friedensinitiativen in Brandenburg kartiert und vorstellt.",
+        "Ein digitales Archiv von Zeitzeugenberichten (insbesondere von Müttern) über Krieg und Frieden in Brandenburg.",
+        "Eine Plattform für lokale Anti-Kriegs-Aktionen und Demonstrationen in Brandenburg.",
+        "Ein interaktiver Führer zu Gedenkstätten und Orten der Freiheit in Brandenburg.",
+        "Eine App, die Nachrichten und Analysen zum Thema Krieg und Frieden aus einer spezifischen 'Mütter-Perspektive' sammelt.",
+        "Ein Spiel, das historische Ereignisse in Brandenburg im Kontext von Krieg und Freiheit nacherzählt.",
+        "Ein soziales Netzwerk für Menschen, die sich für Frieden und Freiheit in Brandenburg engagieren.",
+        "Eine App, die politische Bildungsmaterialien zu den Themen Krieg, Frieden und Freiheit anbietet, speziell für Brandenburg.",
+        "Ein Tool zur Unterstützung von Flüchtlingen und Kriegsbetroffenen in Brandenburg.",
+        "Eine App, die Kunst- und Kulturprojekte in Brandenburg zum Thema Antikrieg/Freiheit fördert"
+      ],
+      "anchor_queries": [
+        "Manuelle Erfassung von Zeitzeugenberichten über Kriegserfahrungen in Brandenburg",
+        "Protokolle zur Pflege und Zustandserfassung von Kriegsgedenkstätten Brandenburg von Hand",
+        "Qualitative Bewertung von Friedensprojekten in Brandenburg ohne digitale Unterstützung"
+      ]
+    },
+    "frames": {
+      "frame_a": {
+        "name": "Zeitzeugenportal Brandenburg (Manuelle Erfassung)",
+        "source_url": "https://zeitzeugen.brandenburg.de/zeitzeugen/",
+        "source_label": "Typ A: scheme without software",
+        "friction": "Die manuelle Erfassung, Aufbereitung und Zugänglichmachung der Berichte ist zeitaufwändig und skaliert schlecht.",
+        "slots": {
+          "materials": "Gesprochene Berichte (Audio/Video), Transkripte, Kurzbiografien, private Dokumente und Fotos, Erinnerungen, Notizen.",
+          "mechanics": "Interviews führen, aufzeichnen, transkribieren, archivieren, kontextualisieren (mit Kurzbiografien, Dokumenten), katalogisieren, zugänglich machen (online oder physisch). Manuelle Prüfung, Kuratierung.",
+          "goals": "Bewahrung der Erinnerung an historische Ereignisse und Kriegserfahrungen (insbesondere in Brandenburg), Bildungszwecke, Forschung, öffentliche Zugänglichkeit, Schaffung eines kollektiven Gedächtnisses.",
+          "emotions": "Respekt, Empathie, Trauer, Betroffenheit, Wertschätzung (der Zeitzeugen), Wunsch nach Verständigung, Aufklärung, Bewahrung, aber auch Frustration über den Aufwand.",
+          "constraints": "Hoher Zeitaufwand pro Bericht, begrenzte Personalressourcen, technische Ausstattung für Interviews/Archivierung, Datenschutz (Sensibilität der Inhalte), Alter der Zeitzeugen (Dringlichkeit der Erfassung), Skalierbarkeit.",
+          "rituals_timing": "Geplante Interviewtermine, sorgfältige Aufbereitung nach Standardrichtlinien, regelmäßige Archivierung, Veröffentlichungszyklen, thematische Jahre (wie 'KRIEG und FRIEDEN 1945'). Erfassung einmalig oder sehr selten pro Zeitzeuge."
+        }
+      },
+      "frame_b": {
+        "name": "Ameisen-Stigmergie",
+        "domain": "Biologie / Verhaltensökologie",
+        "slots": {
+          "materials": "Pheromone (chemische Spuren), Nistmaterial, Nahrungspartikel, abgestorbene Ameisen, Boden, Hindernisse.",
+          "mechanics": "Individuelle Ameisen bewegen sich scheinbar zufällig; wenn sie etwas Interessantes finden (Nahrung, neue Niststelle), legen sie auf dem Rückweg eine Pheromonspur. Andere Ameisen folgen stärkeren Spuren; Spuren zerfallen über Zeit, wenn sie nicht verstärkt werden. Lokale Interaktionen führen zu emergenten globalen Mustern (z.B. Optimierung von Futterpfaden, Müllentsorgung). Keine zentrale Steuerung.",
+          "goals": "Effiziente Futtersuche, Nestbau, Abfallentsorgung, Verteidigung, Kolonie-Überleben und -Wachstum.",
+          "emotions": "Fokus auf Überleben, Effizienz, Anpassung, kollektiven Nutzen. Aus menschlicher Sicht: Faszination an komplexer Einfachheit, Ehrfurcht vor Natur.",
+          "constraints": "Begrenzte individuelle Intelligenz, keine zentrale Planung, Ressourcenverfügbarkeit, Umwelteinflüsse (Wind, Regen, Fressfeinde), Pheromon-Zerfallsrate.",
+          "rituals_timing": "Kontinuierlicher, dezentraler Prozess, Reaktionen in Echtzeit auf Umweltveränderungen. Spuren werden ständig gelegt und zerfallen. Keine festgelegten Termine, eher ein fließender, adaptiver Kreislauf."
+        }
+      },
+      "distance": 5,
+      "friction_points": [
+        "A strebt nach dauerhafter, unveränderlicher Bewahrung (Archiv), B basiert auf vergänglichen Spuren, die ohne ständige Verstärkung verschwinden.",
+        "A hat eine zentrale Instanz, die Berichte auswählt, aufbereitet und kontextualisiert. B hat keine zentrale Kontrolle; Muster entstehen aus der Summe lokaler, unkoordinierter Aktionen.",
+        "A konserviert Vergangenes für die Zukunft. B ist reaktiv und optimiert gegenwärtige Prozesse für das unmittelbare Überleben.",
+        "A erfordert geschultes Personal für Interviews und Kuratierung. B funktioniert durch die Wiederholung einfacher Aktionen vieler einfacher Individuen.",
+        "A ist aufwändig pro Zeitzeugenbericht. B skaliert durch die Anzahl der Agenten und die Einfachheit ihrer Regeln."
+      ],
+      "personas": [
+        {
+          "who": "Werner, 78, Rentner in Brandenburg, ehemaliger Geschichtslehrer",
+          "would_do": "Er würde die Kollision nutzen, um seine persönlichen Erinnerungen an das Kriegsende in einer Art 'digitalem Fußabdruck' zu hinterlassen, der sich mit anderen Spuren verbindet und so ein größeres Bild formt, ohne dass ein Interviewer alles bewertet und er sich vor Formalitäten fürchten muss."
+        },
+        {
+          "who": "Sarah, 35, engagierte Mutter aus Potsdam, besorgt um die Zukunft ihrer Kinder",
+          "would_do": "Sie würde die Kollision nutzen, um eine Plattform zu haben, auf der die 'Spuren' vergangener Erfahrungen aktiv durch die Gemeinschaft verstärkt oder neu interpretiert werden können, um aktuelle Diskurse zu informieren und die Lehren aus der Geschichte lebendig zu halten."
+        },
+        {
+          "who": "Dr. Lena Müller, 45, Kuratorin im Landesarchiv Brandenburg",
+          "would_do": "Sie würde die Kollision nutzen, um Methoden zu finden, die es ermöglichen, mehr Berichte auf eine sinnvollere, vielleicht dezentralere Weise zu erfassen und ihre Relevanz für ein breiteres Publikum dynamisch sichtbar zu machen, anstatt sie nur statisch zu archivieren."
+        }
+      ],
+      "candidates": [
+        {
+          "id": "C1",
+          "idea": "Eine App, die 'Erinnerungs-Spuren' an bestimmten geografischen Orten hinterlässt. Diese Spuren sind kurze Audio- oder Textfragmente von Zeitzeugen. Sie 'zerfallen' digital, es sei denn, andere Nutzer besuchen den Ort und 'bestätigen' die Spur durch Zuhören oder eigene Ergänzungen, die sich thematisch verbinden.",
+          "typical_probability": 0.05,
+          "friction_point": "A strebt nach dauerhafter, unveränderlicher Bewahrung (Archiv), B basiert auf vergänglichen Spuren, die ohne ständige Verstärkung verschwinden.",
+          "check_queries": [
+            "Geolocation-basierte Audio-Erinnerungen App",
+            "Gamifizierte historische Ortsbegehung App"
+          ]
+        },
+        {
+          "id": "C2",
+          "idea": "Ein KI-basiertes System, das Zeitzeugenberichte in 'thematische Pheromone' umwandelt. Diese 'Pheromone' verknüpfen Berichte über gemeinsame Themen oder Orte. Je häufiger ein Thema in neuen Berichten auftaucht, desto stärker wird die 'Spur', die es sichtbar macht. Ungenutzte Spuren verblassen, was die dynamische Relevanz anzeigt.",
+          "typical_probability": 0.08,
+          "friction_point": "A strebt nach dauerhafter, unveränderlicher Bewahrung (Archiv), B basiert auf vergänglichen Spuren, die ohne ständige Verstärkung verschwinden.",
+          "check_queries": [
+            "KI-Themen-Netzwerk aus Zeitzeugeninterviews",
+            "Dynamische Relevanzanzeige für historische Texte"
+          ]
+        },
+        {
+          "id": "C3",
+          "idea": "Eine interaktive, generative Karte Brandenburgs, auf der sich 'Echo-Punkte' zu Kriegserlebnissen bilden. Jeder Echo-Punkt repräsentiert eine kurze, anonyme Aussage. Diese Echos verstärken sich, wenn ähnliche Echos in der Nähe abgelegt werden, oder verblassen, wenn sie isoliert bleiben und keine Resonanz finden.",
+          "typical_probability": 0.07,
+          "friction_point": "A strebt nach dauerhafter, unveränderlicher Bewahrung (Archiv), B basiert auf vergänglichen Spuren, die ohne ständige Verstärkung verschwinden.",
+          "check_queries": [
+            "Generative Karte historische Ereignisse anonym",
+            "Ortsbezogene Echo-Sammlung Kriegserinnerungen"
+          ]
+        },
+        {
+          "id": "C4",
+          "idea": "Eine 'Gedankenpfad-App', in der Nutzer kurze, persönliche Reflexionen zu historischen Ereignissen in Brandenburg hinterlassen können. Diese Reflexionen werden nicht von einer Zentralstelle kuratiert, sondern bilden organische 'Pfade' und 'Knotenpunkte' aus, wenn andere Nutzer ähnliche Gedanken oder Assoziationen äußern und diese miteinander verknüpfen.",
+          "typical_probability": 0.06,
+          "friction_point": "A hat eine zentrale Instanz, die Berichte auswählt, aufbereitet und kontextualisiert. B hat keine zentrale Kontrolle; Muster entstehen aus der Summe lokaler, unkoordinierter Aktionen.",
+          "check_queries": [
+            "App für assoziative historische Gedankenvernetzung",
+            "Dezentrale Reflexionsplattform Geschichte"
+          ]
+        },
+        {
+          "id": "C5",
+          "idea": "Ein System, das es lokalen Geschichtsvereinen oder Schulen ermöglicht, 'Mini-Archive' von Zeitzeugenstimmen zu erstellen. Diese Mini-Archive können sich über ein dezentrales Protokoll miteinander verbinden und so ein größeres, emergent entstehendes Netzwerk bilden, ohne eine einzelne, übergeordnete Kuratierung.",
+          "typical_probability": 0.09,
+          "friction_point": "A hat eine zentrale Instanz, die Berichte auswählt, aufbereitet und kontextualisiert. B hat keine zentrale Kontrolle; Muster entstehen aus der Summe lokaler, unkoordinierter Aktionen.",
+          "check_queries": [
+            "Dezentrales Archivprotokoll für lokale Geschichtsvereine",
+            "Vernetzung von Bürgerarchiven Geschichte"
+          ]
+        },
+        {
+          "id": "C6",
+          "idea": "Eine 'Narrativ-Temperaturkarte' von Brandenburg. Nutzer (Zeitzeugen, Nachkommen, Interessierte) können zu bestimmten Orten oder Ereignissen ihre 'gefühlte Temperatur' (z.B. Trauer, Hoffnung, Wut) hinterlassen. Eine KI aggregiert diese Daten zu einer dynamischen Karte, die 'Hotspots' emotionaler Resonanz anzeigt, ohne die einzelnen Beiträge zu bewerten.",
+          "typical_probability": 0.07,
+          "friction_point": "A hat eine zentrale Instanz, die Berichte auswählt, aufbereitet und kontextualisiert. B hat keine zentrale Kontrolle; Muster entstehen aus der Summe lokaler, unkoordinierter Aktionen.",
+          "check_queries": [
+            "Emotionale Karten historischer Orte",
+            "KI-Aggregation von Stimmungen zu historischen Ereignissen"
+          ]
+        },
+        {
+          "id": "C7",
+          "idea": "Eine App, die historische Zeitzeugenberichte mit aktuellen Nachrichten und sozialen Medien verbindet. Wenn ein aktuelles Ereignis (z.B. ein Konflikt, eine Freiheitsbewegung) in den Nachrichten auftaucht, schlägt die App relevante Passagen aus historischen Berichten vor, um Kontext und Perspektive zu bieten, und ermutigt zu einer 'Antwort' aus der Gegenwart.",
+          "typical_probability": 0.05,
+          "friction_point": "A konserviert Vergangenes für die Zukunft. B ist reaktiv und optimiert gegenwärtige Prozesse für das unmittelbare Überleben.",
+          "check_queries": [
+            "KI-Kontextualisierung Nachrichten mit historischen Berichten",
+            "Verbindung Zeitzeugenberichte und aktuelle Konflikte App"
+          ]
+        },
+        {
+          "id": "C8",
+          "idea": "Ein 'Zukunfts-Resonanzsystem': Nutzer lesen einen Zeitzeugenbericht und können dann hypothetische 'Entscheidungspfade' oder 'Was-wäre-wenn'-Szenarien für die Gegenwart oder Zukunft entwickeln, die von der KI auf ihre Konsistenz mit historischen Lehren geprüft werden. Die am meisten resonierenden Pfade werden als 'verstärkte Zukunftsszenarien' sichtbar.",
+          "typical_probability": 0.08,
+          "friction_point": "A konserviert Vergangenes für die Zukunft. B ist reaktiv und optimiert gegenwärtige Prozesse für das unmittelbare Überleben.",
+          "check_queries": [
+            "KI-gestützte Was-wäre-wenn-Szenarien Geschichte",
+            "Zukunfts-Simulations-App basierend auf Zeitzeugen"
+          ]
+        },
+        {
+          "id": "C9",
+          "idea": "Eine 'Friedens-Stigmergie-Plattform'. Menschen können kleine, dezentrale Aktionen für Frieden oder Freiheit in ihrer Umgebung (Brandenburg) initiieren und dokumentieren. Diese Aktionen werden als 'Spuren' sichtbar. Wenn andere ähnliche Aktionen durchführen oder sich anschließen, verstärkt sich die 'Spur', was ein aktuelles, lebendiges Bild des Friedensengagements ergibt, das sich dynamisch anpasst.",
+          "typical_probability": 0.06,
+          "friction_point": "A konserviert Vergangenes für die Zukunft. B ist reaktiv und optimiert gegenwärtige Prozesse für das unmittelbare Überleben.",
+          "check_queries": [
+            "Plattform für lokale Friedensaktionen Spuren",
+            "Stigmergie-basierte Koordination soziale Aktionen"
+          ]
+        },
+        {
+          "id": "C10",
+          "idea": "Eine 'Mikro-Storytelling-App' für Zeitzeugen oder deren Nachfahren. Statt langer Interviews können Nutzer kurze, fokussierte 'Erinnerungssplitter' (Audio, Text, Foto mit Caption) hochladen. Eine KI identifiziert Muster und verknüpft ähnliche Splitter automatisch, ohne dass ein Experte jeden einzeln analysieren muss.",
+          "typical_probability": 0.05,
+          "friction_point": "A erfordert geschultes Personal für Interviews und Kuratierung. B funktioniert durch die Wiederholung einfacher Aktionen vieler einfacher Individuen.",
+          "check_queries": [
+            "Mikro-Storytelling App historische Erinnerungen",
+            "KI-Verknüpfung kurzer Zeitzeugenfragmente"
+          ]
+        },
+        {
+          "id": "C11",
+          "idea": "Ein 'Citizen Curator'-System: Laien können mithilfe einfacher KI-Tools (z.B. Spracherkennung, Entitäts-Erkennung) dabei helfen, unstrukturierte Zeitzeugenberichte zu 'tags' oder 'Themenclustern' zu verarbeiten. Die Qualität wird durch mehrfache unabhängige 'Tags' verstärkt, während fehlerhafte Tags verblassen.",
+          "typical_probability": 0.08,
+          "friction_point": "A erfordert geschultes Personal für Interviews und Kuratierung. B funktioniert durch die Wiederholung einfacher Aktionen vieler einfacher Individuen.",
+          "check_queries": [
+            "Crowdsourcing Zeitzeugen Transkription KI",
+            "Citizen Science für historische Dokumentenanalyse"
+          ]
+        },
+        {
+          "id": "C12",
+          "idea": "Ein 'Erinnerungs-Baum-Modell': Jeder Zeitzeuge ist ein 'Wurzelknoten'. Andere Nutzer können 'Äste' (Verbindungen zu anderen Berichten, Kontextinformationen) oder 'Blätter' (kurze Kommentare, Fragen) hinzufügen. Der Baum wächst durch kollektive, einfache Beiträge, ohne zentrale redaktionelle Steuerung.",
+          "typical_probability": 0.07,
+          "friction_point": "A erfordert geschultes Personal für Interviews und Kuratierung. B funktioniert durch die Wiederholung einfacher Aktionen vieler einfacher Individuen.",
+          "check_queries": [
+            "Kollaborativer Wissensbaum historische Berichte",
+            "Visualisierung Zeitzeugennetzwerke als Baum"
+          ]
+        },
+        {
+          "id": "C13",
+          "idea": "Eine App, die es Nutzern ermöglicht, auf sehr einfache Weise (z.B. per Sprachmemo) persönliche 'Friedensimpulse' oder 'Freiheitsgedanken' an einem Ort in Brandenburg zu 'hinterlassen'. Eine KI aggregiert diese Impulse und visualisiert die Dichte und Art der Gedanken an verschiedenen Orten, um ein kollektives Stimmungsbild zu erzeugen, das sich leicht skalieren lässt.",
+          "typical_probability": 0.06,
+          "friction_point": "A ist aufwändig pro Zeitzeugenbericht. B skaliert durch die Anzahl der Agenten und die Einfachheit ihrer Regeln.",
+          "check_queries": [
+            "Sprachmemo Friedensgedanken Geotagging",
+            "KI-Visualisierung kollektiver Gedanken Orte"
+          ]
+        },
+        {
+          "id": "C14",
+          "idea": " 'Story-Splitting-Agenten': Eine KI teilt einen langen Zeitzeugenbericht in viele kleine, thematisch zusammenhängende 'Mini-Stories' auf. Diese Mini-Stories können von einer großen Zahl von Nutzern in kurzer Zeit gelesen, kommentiert oder mit weiteren Informationen angereichert werden, wodurch der Aufwand pro Beitragseinheit sinkt und die Skalierbarkeit steigt.",
+          "typical_probability": 0.07,
+          "friction_point": "A ist aufwändig pro Zeitzeugenbericht. B skaliert durch die Anzahl der Agenten und die Einfachheit ihrer Regeln.",
+          "check_queries": [
+            "KI-basierte Zerlegung Zeitzeugenberichte in Mini-Stories",
+            "Crowdsourcing-Anreicherung von Geschichtsfragmenten"
+          ]
+        },
+        {
+          "id": "C15",
+          "idea": "Ein 'Generationen-Verbindungsspiel': Ein vereinfachtes Spielprinzip, bei dem Nutzer (z.B. Enkel) kurze Zitate oder Fragmente von Zeitzeugenberichten zuordnen oder mit eigenen Erfahrungen in Verbindung bringen. Jede erfolgreiche Verbindung erzeugt einen 'Punkt' oder eine 'Verstärkung' für diesen Bericht, wodurch seine Sichtbarkeit erhöht wird.",
+          "typical_probability": 0.09,
+          "friction_point": "A ist aufwändig pro Zeitzeugenbericht. B skaliert durch die Anzahl der Agenten und die Einfachheit ihrer Regeln.",
+          "check_queries": [
+            "Spiel Generationen verbinden historische Zitate",
+            "Gamifizierte Zeitzeugenbericht-Zuordnung"
+          ]
+        }
+      ],
+      "shortlist": [
+        "C1",
+        "C2",
+        "C6",
+        "C7",
+        "C10",
+        "C13"
+      ]
+    },
+    "result": {
+      "survivors": [
+        {
+          "candidate_id": "C1",
+          "rank": 1,
+          "idea": "Eine App, die 'Erinnerungs-Spuren' an bestimmten geografischen Orten hinterlässt. Diese Spuren sind kurze Audio- oder Textfragmente von Zeitzeugen. Sie 'zerfallen' digital, es sei denn, andere Nutzer besuchen den Ort und 'bestätigen' die Spur durch Zuhören oder eigene Ergänzungen, die sich thematisch verbinden.",
+          "gap": "Die Relevanz und Sichtbarkeit historischer Erinnerungen an bestimmten Orten wird nicht organisch durch kollektive Aufmerksamkeit und Nutzung bestimmt, sondern statisch archiviert.",
+          "gap_stands_alone": true,
+          "boden_type": "exploratory",
+          "removed_assumption": "Die Annahme, dass historische Erinnerungen einmal gesammelt und dann für immer statisch erhalten bleiben müssen.",
+          "who_has_problem": "Historiker, Kultureinrichtungen und interessierte Bürger in Brandenburg, die eine dynamische, partizipative Form der Erinnerungserhaltung suchen.",
+          "why_now": "Fortschritte in der Geolokalisierung und mobilen Audiotechnologien sind vorhanden, aber die KI-gesteuerte dynamische Anpassung und der 'Zerfall' sind erst mit moderner, leicht zugänglicher Rechenleistung für dezentrale Systeme praktikabel geworden.",
+          "buildable": "Ja, mobile Apps mit Geo-Features und Audio-Wiedergabe sind Standard; die 'Zerfalls'-Logik ist implementierbar und erfordert keine unlösbaren technischen Herausforderungen.",
+          "evidence_urls": [
+            "https://zeitzeugen.brandenburg.de/zeitzeugen/",
+            "https://evernote.com/de-de/note-taking/reminder-app-with-location-based-alerts"
+          ],
+          "collider_mechanism": "Die Idee nutzt das Prinzip der Stigmergie, bei der Spuren in der Umgebung hinterlassen werden, die andere Agenten wahrnehmen und darauf reagieren können, sowie das Prinzip des Pheromon-Zerfalls, bei dem Spuren ohne Verstärkung verblassen."
+        },
+        {
+          "candidate_id": "C2",
+          "rank": 2,
+          "idea": "Ein KI-basiertes System, das Zeitzeugenberichte in 'thematische Pheromone' umwandelt. Diese 'Pheromone' verknüpfen Berichte über gemeinsame Themen oder Orte. Je häufiger ein Thema in neuen Berichten auftaucht, desto stärker wird die 'Spur', die es sichtbar macht. Ungenutzte Spuren verblassen, was die dynamische Relevanz anzeigt.",
+          "gap": "Die Relevanz und Vernetzung von Themen in großen Sammlungen von Zeitzeugenberichten bleibt statisch oder erfordert manuellen Aufwand, um dynamische Entwicklungen und kollektives Interesse widerzuspiegeln.",
+          "gap_stands_alone": true,
+          "boden_type": "exploratory",
+          "removed_assumption": "Die Annahme, dass die Relevanz eines historischen Themas statisch ist oder nur durch Experten bewertet werden kann.",
+          "who_has_problem": "Historiker, Archivare und Bildungseinrichtungen, die große Mengen an Zeitzeugenberichten effizient erschließen und deren dynamische Relevanz abbilden wollen.",
+          "why_now": "Fortschritte in NLP und KI-basierter Textanalyse ermöglichen die automatische Extraktion und Verknüpfung von Themen aus unstrukturierten Texten und deren dynamische Anpassung über 'thematische Pheromone'.",
+          "buildable": "Ja, NLP-Modelle können Themen identifizieren und ein Graph-basiertes System könnte die 'Pheromone' und deren dynamische Stärke verwalten.",
+          "evidence_urls": [
+            "https://www.bpb.de/lernen/digitale-bildung/werkstatt/517178/kuenstliche-intelligenz-trifft-zeitzeugeninterviews/",
+            "https://www.hdg.de/presse/pressemitteilung-2020-12-11-erzaehlte-geschichte-trifft-kuenstliche-intelligenz"
+          ],
+          "collider_mechanism": "Das System imitiert die Art und Weise, wie Ameisen durch Pheromone dynamisch relevante Pfade markieren und verstärken, basierend auf der kollektiven Aktivität und dem 'Verblassen' von nicht genutzten Spuren."
+        },
+        {
+          "candidate_id": "C6",
+          "rank": 3,
+          "idea": "Eine 'Narrativ-Temperaturkarte' von Brandenburg. Nutzer (Zeitzeugen, Nachkommen, Interessierte) können zu bestimmten Orten oder Ereignissen ihre 'gefühlte Temperatur' (z.B. Trauer, Hoffnung, Wut) hinterlassen. Eine KI aggregiert diese Daten zu einer dynamischen Karte, die 'Hotspots' emotionaler Resonanz anzeigt, ohne die einzelnen Beiträge zu bewerten.",
+          "gap": "Es gibt keine einfache Methode für eine breite Öffentlichkeit, ihre emotionalen Reaktionen auf historische Orte oder Ereignisse zu teilen und daraus ein dynamisches, kollektives Stimmungsbild zu generieren, das nicht von einer zentralen Instanz kuratiert wird.",
+          "gap_stands_alone": true,
+          "boden_type": "exploratory",
+          "removed_assumption": "Die Annahme, dass die emotionale Bedeutung historischer Orte nur durch Experten oder durch statische Ausstellungen vermittelt werden kann.",
+          "who_has_problem": "Museen, Gedenkstätten, Geschichtsvereine und Bürger, die ein kollektives, emotionales Stimmungsbild zu historischen Orten und Ereignissen erfassen und visualisieren möchten.",
+          "why_now": "Fortschritte in der KI für Stimmungsanalyse (Sentiment Analysis) und die breite Verfügbarkeit von Mapping-Tools mit Echtzeit-Datenaggregation ermöglichen die Erstellung dynamischer emotionaler Karten.",
+          "buildable": "Ja, mobile Apps zur Dateneingabe, KI zur Aggregation und eine Web-Karte zur Visualisierung sind umsetzbar.",
+          "evidence_urls": [
+            "https://solidlight-inc.com/legacy-magazine/",
+            "https://news.stanford.edu/stories/2017/03/mapping-emotions-london"
+          ],
+          "collider_mechanism": "Die Idee nutzt das Prinzip, dass komplexe Muster (hier: emotionale Hotspots) aus der Summe vieler einfacher, dezentraler Aktionen (das Hinterlassen einer 'Temperatur') ohne zentrale Kontrolle entstehen und dynamisch an die 'Umgebung' (die Beiträge) angepasst werden."
+        },
+        {
+          "candidate_id": "C13",
+          "rank": 4,
+          "idea": "Eine App, die es Nutzern ermöglicht, auf sehr einfache Weise (z.B. per Sprachmemo) persönliche 'Friedensimpulse' oder 'Freiheitsgedanken' an einem Ort in Brandenburg zu 'hinterlassen'. Eine KI aggregiert diese Impulse und visualisiert die Dichte und Art der Gedanken an verschiedenen Orten, um ein kollektives Stimmungsbild zu erzeugen, das sich leicht skalieren lässt.",
+          "gap": "Es gibt keine einfache, niederschwellige Möglichkeit für Bürger, ihre individuellen Gedanken und Gefühle zu Frieden und Freiheit an einem Ort auszudrücken und diese spontanen Äußerungen zu einem dynamischen, aggregierten Stimmungsbild zu verdichten.",
+          "gap_stands_alone": true,
+          "boden_type": "exploratory",
+          "removed_assumption": "Die Annahme, dass tiefgreifende Gedanken zu komplexen Themen nur in strukturierten Interviews oder schriftlichen Beiträgen geäußert werden können.",
+          "who_has_problem": "Bürger in Brandenburg, die ihre Gedanken und Gefühle zu Frieden und Freiheit teilen und ein kollektives Stimmungsbild zu diesen Themen visualisieren möchten, sowie lokale Initiativen oder die Landesregierung.",
+          "why_now": "Fortschritte in der Spracherkennung, Sentiment-Analyse per KI und Geotagging über Smartphones ermöglichen die einfache Erfassung und Aggregation von Sprachmemos zu einem kollektiven Stimmungsbild.",
+          "buildable": "Ja, eine App mit Sprachaufnahme, Geotagging, KI-Analyse und einer Kartenvisualisierung ist umsetzbar.",
+          "evidence_urls": [
+            "https://zeitzeugen.brandenburg.de/zeitzeugen/",
+            "https://www.bpb.de/lernen/digitale-bildung/werkstatt/517178/kuenstliche-intelligenz-trifft-zeitzeugeninterviews/"
+          ],
+          "collider_mechanism": "Die Idee nutzt das Prinzip, dass sich komplexe kollektive Informationen (Stimmungsbild) aus einer großen Anzahl von sehr einfachen, unkoordinierten Einzelbeiträgen (Sprachmemos) zusammensetzen und durch das 'Hinterlassen von Spuren' ohne zentrale Kontrolle entstehen."
+        },
+        {
+          "candidate_id": "C7",
+          "rank": 5,
+          "idea": "Eine App, die historische Zeitzeugenberichte mit aktuellen Nachrichten und sozialen Medien verbindet. Wenn ein aktuelles Ereignis (z.B. ein Konflikt, eine Freiheitsbewegung) in den Nachrichten auftaucht, schlägt die App relevante Passagen aus historischen Berichten vor, um Kontext und Perspektive zu bieten, und ermutigt zu einer 'Antwort' aus der Gegenwart.",
+          "gap": "Aktuellen Ereignissen fehlt oft ein sofortiger historischer Kontext, und es gibt keine einfache Möglichkeit, historische Lehren direkt mit der Gegenwart zu verbinden und darauf zu reagieren.",
+          "gap_stands_alone": false,
+          "boden_type": "combinational",
+          "removed_assumption": "Die Annahme, dass historische Berichte und aktuelle Nachrichten in getrennten Silos existieren und ihre Verbindung nur durch Experten manuell hergestellt werden kann.",
+          "who_has_problem": "Journalisten, Bildungseinrichtungen und politisch interessierte Bürger, die historische Perspektiven auf aktuelle Ereignisse suchen und zum aktiven Diskurs anregen wollen.",
+          "why_now": "Fortschritte in der KI für Echtzeit-Nachrichtenanalyse und Text-Matching ermöglichen die automatische Verknüpfung von aktuellen Ereignissen mit relevanten historischen Berichten.",
+          "buildable": "Ja, die Integration von Nachrichtenfeeds mit einer Datenbank von Zeitzeugenberichten und einer Matching-KI ist technisch machbar.",
+          "evidence_urls": [
+            "https://www.bpb.de/lernen/digitale-bildung/werkstatt/517178/kuenstliche-intelligenz-trifft-zeitzeugeninterviews/",
+            "https://www.hdg.de/presse/pressemitteilung-2020-12-11-erzaehlte-geschichte-trifft-kuenstliche-intelligenz"
+          ],
+          "collider_mechanism": "Das System imitiert das Prinzip reaktiver, unkoordinierter Aktionen (wie Ameisen auf eine Störung reagieren), bei denen ein externes Ereignis (aktuelle Nachrichten) eine Reaktion (Vorschlag historischer Berichte und Anregung zur Antwort) auslöst, die auf Überleben (Relevanz des historischen Wissens) optimiert ist."
+        }
+      ],
+      "kills": [
+        {
+          "candidate_id": "C10",
+          "reason": "Die Idee ist zu nah an bereits existierenden oder in Entwicklung befindlichen Lösungen zur KI-gestützten Analyse und Verknüpfung von Zeitzeugenberichten, die 'Mikro-Storytelling' oder die Verarbeitung kurzer Fragmente beinhalten.",
+          "failed_checks": [
+            "in_mode_or_dense"
+          ]
+        }
+      ],
+      "log_row": {
+        "anchor": "Zeitzeugenportal Brandenburg (Manuelle Erfassung)",
+        "collider": "Ameisen-Stigmergie",
+        "distance": 5,
+        "candidates": 15,
+        "survivors": 5,
+        "best_gap": "Die Relevanz und Sichtbarkeit historischer Erinnerungen an bestimmten Orten wird nicht organisch durch kollektive Aufmerksamkeit und Nutzung bestimmt, sondern statisch archiviert."
+      },
+      "retro": {
+        "learned": "Die Kollision von 'permanentem Archiv' mit 'vergänglichen, stigmergischen Spuren' führte zu einigen vielversprechenden Ideen für eine dynamische, crowdsourced Erfassung und Vermittlung historischer Bedeutungen. Die vorherige Kunst deckt oft Teile ab (KI für Interviews, Geo-Apps), aber die Kombination aus Verfall/Verstärkung oder kollektiver Stimmungserfassung ist oft eine echte Lücke.",
+        "mistake": "Bei der letzten Iteration wurden URLs verwendet, die nicht explizit in den 'pages'-Listen der Suchergebnisse enthalten waren.",
+        "next_time": "Jede URL in 'evidence_urls' muss sorgfältig gegen die von den Suchdiensten bereitgestellten 'pages'-Listen abgeglichen werden, um sicherzustellen, dass sie aus den tatsächlichen Suchergebnissen stammen."
+      }
+    },
+    "tool_calls": [
+      {
+        "call_id": "lacunar-20260930T210642-66f73d-t01",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "antikrie"
+      },
+      {
+        "call_id": "lacunar-20260930T210642-66f73d-t02",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "freiheit"
+      },
+      {
+        "call_id": "lacunar-20260930T210642-66f73d-t03",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "mutter"
+      },
+      {
+        "call_id": "lacunar-20260930T210642-66f73d-t04",
+        "tool": "search",
+        "status": "ok",
+        "summary": "Manuelle Erfassung von Zeitzeugenberichten über Kriegserfahrungen in Brandenburg"
+      },
+      {
+        "call_id": "lacunar-20260930T210642-66f73d-t05",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "bestimmt, bestätig"
+      },
+      {
+        "call_id": "lacunar-20260930T210642-66f73d-t06",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "bestimmt"
+      },
+      {
+        "call_id": "lacunar-20260930T210642-66f73d-t07",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "auftauch, basierte"
+      },
+      {
+        "call_id": "lacunar-20260930T210642-66f73d-t08",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "auftauch"
+      },
+      {
+        "call_id": "lacunar-20260930T210642-66f73d-t09",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "aggregie, beiträge"
+      },
+      {
+        "call_id": "lacunar-20260930T210642-66f73d-t10",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "aggregie"
+      },
+      {
+        "call_id": "lacunar-20260930T210642-66f73d-t11",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "aktuelle, auftauch"
+      },
+      {
+        "call_id": "lacunar-20260930T210642-66f73d-t12",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "aktuelle"
+      },
+      {
+        "call_id": "lacunar-20260930T210642-66f73d-t13",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "hochlade, intervie"
+      },
+      {
+        "call_id": "lacunar-20260930T210642-66f73d-t14",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "hochlade"
+      },
+      {
+        "call_id": "lacunar-20260930T210642-66f73d-t15",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "aggregie, einfache"
+      },
+      {
+        "call_id": "lacunar-20260930T210642-66f73d-t16",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "aggregie"
+      },
+      {
+        "call_id": "lacunar-20260930T210642-66f73d-t17",
+        "tool": "search",
+        "status": "ok",
+        "summary": "Geolocation-basierte Audio-Erinnerungen App"
+      },
+      {
+        "call_id": "lacunar-20260930T210642-66f73d-t18",
+        "tool": "search",
+        "status": "ok",
+        "summary": "KI-Themen-Netzwerk aus Zeitzeugeninterviews"
+      },
+      {
+        "call_id": "lacunar-20260930T210642-66f73d-t19",
+        "tool": "search",
+        "status": "ok",
+        "summary": "Emotionale Karten historischer Orte"
+      }
+    ],
+    "accounting": {
+      "model_calls": 7,
+      "search_calls": 4,
+      "search_queries": 12,
+      "cost_usd": 0.098935
+    },
+    "log_entry": "<!-- proposed by the Lab's Lacunar agent, run lacunar-20260930T210642-66f73d; nothing was written to Amélie -->\n| 30.09.2026 | Zeitzeugenportal Brandenburg (Manuelle Erfassung) | Ameisen-Stigmergie | 5 | 15 | 5: 1. Eine App, die 'Erinnerungs-Spuren' an bestimmten geografischen Orten hinterlässt. Diese Spuren sind kurze Audio- oder Textfragmente von Zeitzeugen. Sie 'zerfallen' digital, es sei denn, andere Nutzer besuchen den Ort und 'bestätigen' die Spur durch Zuhören oder eigene Ergänzungen, die sich thematisch verbinden. (exploratory); 2. Ein KI-basiertes System, das Zeitzeugenberichte in 'thematische Pheromone' umwandelt. Diese 'Pheromone' verknüpfen Berichte über gemeinsame Themen oder Orte. Je häufiger ein Thema in neuen Berichten auftaucht, desto stärker wird die 'Spur', die es sichtbar macht. Ungenutzte Spuren verblassen, was die dynamische Relevanz anzeigt. (exploratory); 3. Eine 'Narrativ-Temperaturkarte' von Brandenburg. Nutzer (Zeitzeugen, Nachkommen, Interessierte) können zu bestimmten Orten oder Ereignissen ihre 'gefühlte Temperatur' (z.B. Trauer, Hoffnung, Wut) hinterlassen. Eine KI aggregiert diese Daten zu einer dynamischen Karte, die 'Hotspots' emotionaler Resonanz anzeigt, ohne die einzelnen Beiträge zu bewerten. (exploratory); 4. Eine App, die es Nutzern ermöglicht, auf sehr einfache Weise (z.B. per Sprachmemo) persönliche 'Friedensimpulse' oder 'Freiheitsgedanken' an einem Ort in Brandenburg zu 'hinterlassen'. Eine KI aggregiert diese Impulse und visualisiert die Dichte und Art der Gedanken an verschiedenen Orten, um ein kollektives Stimmungsbild zu erzeugen, das sich leicht skalieren lässt. (exploratory); 5. Eine App, die historische Zeitzeugenberichte mit aktuellen Nachrichten und sozialen Medien verbindet. Wenn ein aktuelles Ereignis (z.B. ein Konflikt, eine Freiheitsbewegung) in den Nachrichten auftaucht, schlägt die App relevante Passagen aus historischen Berichten vor, um Kontext und Perspektive zu bieten, und ermutigt zu einer 'Antwort' aus der Gegenwart. (combinational) | Die Relevanz und Sichtbarkeit historischer Erinnerungen an bestimmten Orten wird nicht organisch durch kollektive Aufmerksamkeit und Nutzung bestimmt, sondern statisch archiviert. | — (not checked yet) |\n\n### Lacunar run lacunar-20260930T210642-66f73d — 30.09.2026 (intent: Antikrieg, mutter, brandemburg, freiheit)\n- **Learned:** Die Kollision von 'permanentem Archiv' mit 'vergänglichen, stigmergischen Spuren' führte zu einigen vielversprechenden Ideen für eine dynamische, crowdsourced Erfassung und Vermittlung historischer Bedeutungen. Die vorherige Kunst deckt oft Teile ab (KI für Interviews, Geo-Apps), aber die Kombination aus Verfall/Verstärkung oder kollektiver Stimmungserfassung ist oft eine echte Lücke.\n- **Mistake:** Bei der letzten Iteration wurden URLs verwendet, die nicht explizit in den 'pages'-Listen der Suchergebnisse enthalten waren.\n- **Next time:** Jede URL in 'evidence_urls' muss sorgfältig gegen die von den Suchdiensten bereitgestellten 'pages'-Listen abgeglichen werden, um sicherzustellen, dass sie aus den tatsächlichen Suchergebnissen stammen.\n- **Prior-art leads (automatic search, for the existence check; not a verdict):**\n  - C1 (ok): Geolocation-basierte Audio-Erinnerungen App -> https://evernote.com/de-de/note-taking/reminder-app-with-location-based-alerts, https://play.google.com/store/apps/details?id=com.technomadapps.gpsalarm&hl=gsw, https://play.google.com/store/apps/details?id=com.technomadapps.gpsalarm, https://www.otozen.com/pages/location-based-reminder\n  - C2 (ok): KI-Themen-Netzwerk aus Zeitzeugeninterviews -> https://www.bpb.de/lernen/digitale-bildung/werkstatt/517178/kuenstliche-intelligenz-trifft-zeitzeugeninterviews/, https://www.hdg.de/presse/pressemitteilung-2020-12-11-erzaehlte-geschichte-trifft-kuenstliche-intelligenz, https://www.schulministerium.nrw/08012026-holo-voices-ki-projekt-mit-zeitzeuginnen-und-zeitzeugen, https://zweitzeugen.de/holo-voices\n  - C6 (ok): Emotionale Karten historischer Orte -> https://solidlight-inc.com/legacy-magazine/, https://www.smithsonianmag.com/innovation/stanford-researchers-map-feelings-associated-with-different-parts-london-180962753/, https://news.stanford.edu/stories/2017/03/mapping-emotions-london, https://www.blb-karlsruhe.de/aktuelles/ausstellungen/fakten-oder-fantasie-karten-erzaehlen-geschichten/fantasiekarten\n",
+    "prior_art": [
+      {
+        "candidate_id": "C1",
+        "question": "Geolocation-basierte Audio-Erinnerungen App",
+        "status": "ok",
+        "answer": "Eine Geolocation-basierte Audio-Erinnerungen App ist eine Anwendung, die Nutzer benachrichtigt, wenn sie einen bestimmten geografischen Ort erreichen oder verlassen, und diese Benachrichtigungen in Form von Audio ausgibt. Diese Apps nutzen GPS-Daten, um standortbasierte Erinnerungen auszulösen.\n\nBeispiele für solche Apps und ihre Funktionen umfassen:\n\n*   **GPS Alarm - Location Reminder** ist eine standortbasierte Erinnerungs-App, die Benutzer benachrichtigt, wenn sie einen Ort erreichen oder verlassen. Sie funktioniert offline und bietet anpassbare Töne, Vibration und Text-to-Speech (TTS)-Sprachausgabe. Die App ermöglicht es, Erinnerungen für das Erreichen eines Geschäfts, eines Kunden oder einer Arbeitsstelle einzustellen und kann auch für Reiseziele oder Wanderwegpunkte genutzt werden. Benutzer können den Radius für die Erinnerung festlegen und wählen, ob die Erinnerung beim Betreten, Verlassen oder beidem ausgelöst werden soll.\n*   **OtoZen** ermöglicht es, Erinnerungen für besuchte Orte einzustellen, die über das Telefon oder die Autolautsprecher abgespielt werden, wenn man sich in der Nähe befindet oder den Ort verlässt. Die App kann auch Kalenderbenachrichtigungen und andere Freisprech-Fahrerinnerungen abspielen.\n*   **GeoReminder** benachrichtigt Benutzer, wenn sie bestimmte Orte wie das Büro, Fitnessstudio oder den Supermarkt erreichen oder verlassen. Die App bietet anpassbare Radien (50m–500m) für präzise Erinnerungen und optionale Zeitfenster. Notizen können zu den Erinnerungen hinzugefügt werden, und es gibt Wiederholungsregeln für einmalige, immerwährende oder an ausgewählten Wochentagen gültige Erinnerungen.\n*   **Google Notizen (Google Keep)** ist eine beliebte Notiz-App, die auch standortbasierte Erinnerungen ermöglicht. Benutzer können Erinnerungen für einen bestimmten Ort festlegen, um benachrichtigt zu werden.\n*   **Naplarm** ist eine GPS-Alarm-App, die es ermöglicht, Alarme oder Erinnerungen auf einer Weltkarte mit Titel und Beschreibung zu erstellen. Die Erinnerung kann ausgelöst werden, wenn man einen festgelegten Bereich betritt oder verlässt.\n*   **Tasks.org** ist ein Aufgabenmanager, der standortbasierte Erinnerungen unterstützt.\n*   **TickTick** ist eine To-Do-Listen-App, die sowohl zeit- als auch standortbasierte Erinnerungen bietet.\n*   **Remindio** ermöglicht das Einrichten von standortbasierten Erinnerungen mit einem ausgewählten Ort, Radius und Auslöser (beim Betreten oder Verlassen).\n*   **Evernote** bietet ebenfalls standor",
+        "pages": [
+          "https://evernote.com/de-de/note-taking/reminder-app-with-location-based-alerts",
+          "https://play.google.com/store/apps/details?id=com.technomadapps.gpsalarm&hl=gsw",
+          "https://play.google.com/store/apps/details?id=com.technomadapps.gpsalarm",
+          "https://www.otozen.com/pages/location-based-reminder",
+          "https://apps.apple.com/us/app/georeminder-location-reminder/id6751503939",
+          "https://www.makeuseof.com/top-location-based-reminder-apps/",
+          "https://www.hosteurope.de/blog/die-besten-erinnerungs-apps/",
+          "https://www.reddit.com/r/androidapps/comments/1t1kqgp/any_apps_for_locationbased_reminders/?tl=de",
+          "https://www.yougot.ai/blog/reminders/location-reminders/location-based-reminder-app-that-actually-works"
+        ]
+      },
+      {
+        "candidate_id": "C2",
+        "question": "KI-Themen-Netzwerk aus Zeitzeugeninterviews",
+        "status": "ok",
+        "answer": "Several projects and initiatives are utilizing Artificial Intelligence (AI) to process, analyze, and make accessible contemporary witness interviews, often referred to as \"Zeitzeugeninterviews\" in German. These efforts aim to preserve historical testimonies, enhance their discoverability, and create new educational opportunities.\n\nOne such initiative is the \"Multimodales Mining von Zeitzeugeninterviews zur Erschließung von audiovisuellem Kulturgut\" (Multimodal Mining of Contemporary Witness Interviews for the Development of Audiovisual Cultural Heritage) project, a collaboration between the Fraunhofer Institute for Intelligent Analysis and Information Systems (IAIS) and the Stiftung Haus der Geschichte (House of History Foundation). This project, which ran from October 2020 to September 2022, focused on improving the accessibility of interviews from the Haus der Geschichte by using machine learning to identify emotions and transcribe spoken content. The goal was to enable filtering interviews by emotions on the Zeitzeugenportal (Contemporary Witness Portal) of the Haus der Geschichte.\n\nAnother significant project is HOLO-VOICES, initiated by the Ministry for Culture and Science of North Rhine-Westphalia in cooperation with the Technical University of Dortmund. This project, set to open on January 27, 2026, at the UNESCO World Heritage Zollverein, uses AI-supported digital projections to create interactive experiences with Holocaust survivors' testimonies. Visitors will be able to ask questions and receive original video responses from the contemporary witnesses through Natural Language Processing (NLP) technology, fostering a virtual dialogue.\n\nThe LediZ (Lernen mit Digitalen Zeugnissen - Learning with Digital Testimonies) project, led by Anja Ballis at the Ludwig-Maximilians-Universität München, also employs AI-powered chatbots and 3D video recordings to facilitate virtual dialogues with Holocaust survivors. This initiative aims to keep the impact of the Holocaust in memory as the number of living survivors declines.\n\nFurthermore, the Freie Universität Berlin is involved in the \"Künstliche Intelligenz für die Oral History (KI.OH)\" (Artificial Intelligence for Oral History) project, in collaboration with the FernUniversität Hagen, Technische Informationsbibliothek Hannover, Universität zu Köln, and Technische Universität Darmstadt. Running from January 2027 to December 2029, this project focuses on developing AI tools for archiving, indexing, and providing",
+        "pages": [
+          "https://www.bpb.de/lernen/digitale-bildung/werkstatt/517178/kuenstliche-intelligenz-trifft-zeitzeugeninterviews/",
+          "https://www.hdg.de/presse/pressemitteilung-2020-12-11-erzaehlte-geschichte-trifft-kuenstliche-intelligenz",
+          "https://www.schulministerium.nrw/08012026-holo-voices-ki-projekt-mit-zeitzeuginnen-und-zeitzeugen",
+          "https://zweitzeugen.de/holo-voices",
+          "https://damals.de/artikel/ki-gibt-zeitzeugen-des-holocausts-eine-stimme",
+          "https://www.fu-berlin.de/sites/ub/forschen/interviewsammlungen/forschung/kioh/index.html",
+          "https://braincity.berlin/stories/story/neue-plattform-fuer-zeitzeugen-interviews"
+        ]
+      },
+      {
+        "candidate_id": "C6",
+        "question": "Emotionale Karten historischer Orte",
+        "status": "ok",
+        "answer": "\"Emotionale Karten historischer Orte\" (Emotional Maps of Historical Places) refer to various ways in which emotions, feelings, and subjective experiences are associated with or represented on maps of historical locations. This concept can manifest in several forms:\n\nOne approach involves designing museum exhibits and historical sites to evoke specific emotional responses in visitors. For instance, the American Civil War Museum uses \"Emotional Mapping\" to create environments that generate visceral, emotional connections to historical experiences through sensory input and spatial perception, aiming for richer and more lasting memories for visitors.\n\nAnother perspective comes from literary and cultural studies, where researchers analyze how historical places are imbued with emotional significance in narratives. Stanford University researchers, for example, mapped emotions associated with different parts of London in 18th and 19th-century British novels. They found that the West End was often linked to happiness, while the East End was associated with fear, reflecting the societal perceptions and emotional valences attributed to these historical areas by contemporary readers.\n\nHistorically, the \"mapping of emotional areas\" was a method used in the 17th and 18th centuries to visually represent feelings and interpersonal relationships. These allegorical or fantasy maps, such as the satirical depictions of \"Schlaraffenland\" (Cockaigne) or \"Reich der Liebe\" (Realm of Love), charted human vices, virtues, or aspects of love as geographical features. Odissey Travel Magazine notes that this \"emotional cartography\" aimed to represent internal states like fears, desires, and collective imaginaries, rather than just physical territory, with examples like historical maps featuring monsters or the 17th-century \"Carte du Tendre\" (Map of Tenderness). These maps did not merely describe places but actively constructed them through narrative and emotion.\n\nFurthermore, historical maps themselves can evoke strong emotions in individuals, connecting them to their \"Heimat\" (homeland), identity, and memories, making them more than just geographical representations.",
+        "pages": [
+          "https://solidlight-inc.com/legacy-magazine/",
+          "https://www.smithsonianmag.com/innovation/stanford-researchers-map-feelings-associated-with-different-parts-london-180962753/",
+          "https://news.stanford.edu/stories/2017/03/mapping-emotions-london",
+          "https://www.blb-karlsruhe.de/aktuelles/ausstellungen/fakten-oder-fantasie-karten-erzaehlen-geschichten/fantasiekarten",
+          "https://hyperallergic.com/historical-maps-to-the-heart-help-you-chart-your-way-to-love/",
+          "https://www.odisseymag.com/odissey/travel-storytelling/",
+          "https://kartenhandlung.de/blogs/heimatliebe",
+          "https://kartenhandlung.de/"
+        ]
+      }
+    ],
+    "topic_check": [
+      {
+        "term": "antikrie",
+        "hits": []
+      },
+      {
+        "term": "freiheit",
+        "hits": [
+          "[protokoll, score 1] Wheelmap: Eingangsfoto → Barrierefreiheit — besetzt",
+          "[protokoll, score 1] **EzB-Register** (`ezb-register`) — Erklärungen zur Barrierefreiheit aller öffentlichen Stellen crawlen, Status A–E (NL-Vorbild) — verengt",
+          "[protokoll, score 1] **BFSG-Erklärungsprüfer (Shops)** — Pflichtinformationen nach Anlage 3 BFSG bei Online-Shops sammeln und prüfen — besetzt",
+          "[protokoll, score 1] **BFSG-Barrierefreiheitserklärungen** — besetzt",
+          "[grab, score 1] Wheelmap: Eingangsfoto → Barrierefreiheit"
+        ]
+      },
+      {
+        "term": "mutter",
+        "hits": [
+          "[dose, score 1] ChemGefahr-Stopp / MischStop (ChemHazard Stop)",
+          "[kandidat, score 1] PillSafe Vision: Medication Organizer Verifier for Exhausted Family Caregivers",
+          "[log, score 1] amelie-classification-log.md"
+        ]
+      }
+    ],
+    "contract_version": "1.2.0"
+  },
+  "existence_check": false,
+  "contract_version": "1.0.0"
+}
