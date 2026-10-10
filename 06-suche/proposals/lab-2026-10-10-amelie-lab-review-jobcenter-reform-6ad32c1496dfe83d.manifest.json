@@ -1,0 +1,24 @@
+{
+  "manifest_version": 1,
+  "run_id": "amelie-lab-review-jobcenter-reform-6ad32c1496dfe83d",
+  "plan_id": "lab-2026-10-10-amelie-lab-review-jobcenter-reform-6ad32c1496dfe83d",
+  "engine": "review",
+  "model": "not recorded",
+  "existence_check": false,
+  "survivors": {
+    "count": 0,
+    "status": "keine"
+  },
+  "files": [
+    "06-suche/proposals/lab-2026-10-10-amelie-lab-review-jobcenter-reform-6ad32c1496dfe83d.md",
+    "06-suche/proposals/lab-2026-10-10-amelie-lab-review-jobcenter-reform-6ad32c1496dfe83d.inbox.json",
+    "06-suche/proposals/lab-2026-10-10-amelie-lab-review-jobcenter-reform-6ad32c1496dfe83d.manifest.json"
+  ],
+  "source_ops": [],
+  "grave_proposals": 0,
+  "touches_memory": false,
+  "contracts": {
+    "review-record": "not recorded"
+  },
+  "contract_version": "1.0.0"
+}
