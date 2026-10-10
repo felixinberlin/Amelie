@@ -1,0 +1,560 @@
+# Proposals from plan lab-2026-10-10-amelie-lab-lacunar-lacunar-20261001T163628-ee76cb-96a4d974382afcfc
+
+Packet: amelie-lab-lacunar-lacunar-20261001T163628-ee76cb-96a4d974382afcfc · Candidate: amelie-lab-lacunar-lacunar-20261001T163628-ee76cb-96a4d974382afcfc
+Not applied. A human decides.
+
+- [06-suche/amelie-lab-protokoll.md] lacunar: amelie-lab-lacunar-lacunar-20261001T163628-ee76cb-96a4d974382afcfc. Absicht: DO it yourself, Kunst, Brandemburg, KI Agents, Handy, Natur, Fish. Modell: gemini-2.5-flash. Existenzprüfung: nein. Alle Ideen ungeprüft. Die folgenden Angaben sind gespeicherte Modellausgaben, keine bestätigten Tatsachen. Nur grounded=true ist Evidenz; Score-Änderungen benötigen zusätzlich quote_status=verified. Quellen, fact_checks und fehlende Felder bleiben wie im Original; keine neuen Prüfungen durchgeführt.
+- [06-suche/amelie-lab-protokoll.md] Frontend-Handoff: 3 ungeprüfte Ideen aus lacunar. Im Lab-Ideen-Eingang anzeigen; nicht als geprüfte Dosen, ohne erfundene Vektoren oder Existenzurteile.
+- [06-suche/amelie-lab-protokoll.md] Originalfeld run_id, Teil 1 (laut gespeicherter Datei):
+"lacunar-20261001T163628-ee76cb"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld intent, Teil 1 (laut gespeicherter Datei):
+"DO it yourself, Kunst, Brandemburg, KI Agents, Handy, Natur, Fish"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld model, Teil 1 (laut gespeicherter Datei):
+"gemini-2.5-flash"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld created_at, Teil 1 (laut gespeicherter Datei):
+"2026-10-01T16:43:51Z"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld state_missing, Teil 1 (laut gespeicherter Datei):
+[]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld plan, Teil 1 (laut gespeicherter Datei):
+{
+  "area": "AI-powered smartphone apps for amateur nature observation and art, focused on fish in Brandenburg",
+  "mode_list": [
+    "AI app for fish species identification from photos or videos captured by smartphone.",
+    "AI app that identifies common fish diseases or parasites from visual cues in smartphone images.",
+    "AI app for anglers to log fish catches (species, size, weight, location) with automatic recognition and data entry.",
+    "AI app to analyze water quality parameters (e.g., color, turbidity, algae presence) from smartphone camera input for fish habitat assessment.",
+    "AI app that generates artistic interpretations, stylized images, or generative art based on user-submitted photos of fish or aquatic scenes.",
+    "AI agent that suggests optimal fishing spots or times in Brandenburg based on environmental data, weather, and predicted fish behavior.",
+    "AI app to monitor and identify aquatic invasive species in Brandenburg waters using smartphone camera.",
+    "AI app that creates interactive augmented reality (AR) field guides for Brandenburg fish species, showing information overlaid on the real environment.",
+    "AI app for acoustic identification of fish (e.g., spawning calls, movement sounds) using the phone microphone.",
+    "AI app that helps users create digital art installations inspired by local Brandenburg fish species and their specific habitats.",
+    "AI app to analyze and visualize fish population trends from aggregated citizen science data across Brandenburg, identifying changes over time."
+  ],
+  "anchor_queries": [
+    "Brandenburg fisheries department fish identification guide manual",
+    "Citizen science fish monitoring projects Germany data validation protocol",
+    "Manual assessment criteria for ecological status of Brandenburg rivers fish"
+  ]
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld frames, Teil 1 (laut gespeicherter Datei):
+{
+  "frame_a": {
+    "name": "Graphical Key for the Identification of German Freshwater Fishes",
+    "source_url": "https://www.ichthyologie.de/wp-content/uploads/2025/03/Stahl_etal_2025_Graphical_key_German_freshwater_fishes-Bull_Fish_Biol-20_87-122.pdf",
+    "source_label": "Typ A: scheme without software",
+    "friction": "The manual application of a complex graphical key for fish identification, requiring specific knowledge of morphological features and leading to potential errors or frustration for lay users.",
+    "slots": {
+      "materials": "Printed dichotomous key, fish specimen (or high-quality image), ruler, magnifying glass, reference illustrations, paper, pen for notes.",
+      "mechanics": "Step-by-step observation of morphological features (e.g., fin rays, lateral line, mouth position), comparison to descriptions/drawings, sequential elimination process based on choices.",
+      "goals": "Accurately identify fish species, fulfill angler's examination requirements, scientific documentation, species monitoring.",
+      "emotions": "Curiosity, satisfaction upon correct identification, frustration with ambiguity, diligence, pressure to be accurate, sense of accomplishment.",
+      "constraints": "Need for intact specimen or clear view, specific expertise/training, sufficient time, good lighting, physical presence of the fish, potential for human error in observation.",
+      "rituals_timing": "Sequential steps, often performed post-catch, in a lab, or during an examination; can be time-consuming, iterative process."
+    }
+  },
+  "frame_b": {
+    "name": "Video-to-3D Reconstruction",
+    "domain": "Recent AI capability",
+    "slots": {
+      "materials": "Video footage (from smartphone, drone, specialized camera), computing power, 3D modeling software/algorithms, GPUs, storage.",
+      "mechanics": "Feature extraction from multiple video frames, Structure from Motion (SfM) to determine camera positions, Multi-View Stereo (MVS) for dense reconstruction, meshing, texture mapping, rendering.",
+      "goals": "Create a digital 3D model, preserve spatial information, virtual representation, analysis of object's form/volume, digital archiving, simulation inputs.",
+      "emotions": "Awe at digital creation, precision, satisfaction with detailed model, technical challenge, wonder at capturing reality.",
+      "constraints": "Quality of video (lighting, movement, occlusions), processing time, computational resources, object needs to be observable from multiple angles, potential for artifacts.",
+      "rituals_timing": "Capture video (often continuous), process data (can be offline, batch, or near real-time), rendering, iterative refinement, often automated."
+    }
+  },
+  "distance": 4,
+  "friction_points": [
+    "Frame A relies on 2D abstractions (key, drawings); Frame B creates a full 3D digital reality.",
+    "Frame A requires manual, interpretive human effort; Frame B automates data interpretation and model generation.",
+    "Frame A needs physical interaction or clear static images; Frame B uses dynamic, continuous visual data.",
+    "Frame A's output is a species name; Frame B's output is a digital, measurable 3D model.",
+    "Frame A's accuracy depends on human observation skill; Frame B's accuracy depends on computational algorithms and data quality.",
+    "Frame A is slow and sequential; Frame B can be fast and parallel after initial data capture.",
+    "Frame A has limited data retention (just the identified name); Frame B captures rich spatial and temporal data.",
+    "Frame A works best with a dead or stunned specimen for detailed examination; Frame B works with live, moving subjects in their environment."
+  ],
+  "personas": [
+    {
+      "who": "Old Fisherman Karl-Heinz, who has identified thousands of fish by hand over decades.",
+      "would_do": "He would be skeptical but curious if a 3D model generated by an app could confirm his decades of experience, especially for tricky look-alikes or to settle debates with his fishing buddies about a specific catch's identity and exact size."
+    },
+    {
+      "who": "Teenage Angler Lisa, who is easily frustrated by complex manuals and expects technology to simplify tasks.",
+      "would_do": "She would eagerly use an app that automates fish identification with a short video, provides cool interactive 3D visuals of her catch, and perhaps suggests conservation facts about its habitat, which she can then share instantly on social media."
+    },
+    {
+      "who": "Conservation Biologist Dr. Schmidt, who needs accurate, consistent, and quantifiable data for fish population studies.",
+      "would_do": "She would appreciate a system that rapidly and consistently identifies fish in their natural habitat from underwater video, provides precise biometric measurements from 3D models, and tracks individual fish over time without invasive tagging, significantly improving her research efficiency and data quality."
+    }
+  ],
+  "candidates": [
+    {
+      "id": "C1",
+      "idea": "An app that generates a detailed 3D model of a fish from a short video, then automatically overlays identification features (fin counts, lateral line pores) directly onto the model for interactive user verification, rather than just returning a name.",
+      "typical_probability": 0.08,
+      "friction_point": "Frame A relies on 2D abstractions (key, drawings); Frame B creates a full 3D digital reality.",
+      "check_queries": [
+        "3D fish modeling automatic feature overlay for identification",
+        "interactive 3D fish morphology app"
+      ]
+    },
+    {
+      "id": "C2",
+      "idea": "A smartphone app that uses continuous video capture of a swimming fish in its natural environment to build a dynamic 3D model, then predicts its species and estimated size *without* any physical contact or removal from water.",
+      "typical_probability": 0.07,
+      "friction_point": "Frame A needs physical interaction or clear static images; Frame B uses dynamic, continuous visual data.",
+      "check_queries": [
+        "live fish 3D model identification non-invasive",
+        "underwater fish sizing video AI"
+      ]
+    },
+    {
+      "id": "C3",
+      "idea": "An app that, after identifying a fish from a 3D reconstructed model, allows users to simulate its swimming mechanics or predicted growth over time within a virtual Brandenburg river environment based on user-input environmental conditions.",
+      "typical_probability": 0.05,
+      "friction_point": "Frame A's output is a species name; Frame B's output is a digital, measurable 3D model.",
+      "check_queries": [
+        "fish biomechanics simulation from 3D model",
+        "AI fish growth prediction environmental simulation"
+      ]
+    },
+    {
+      "id": "C4",
+      "idea": "A system where multiple smartphone videos of the same fish (from different angles by different users) are stitched together to create a highly accurate, crowd-sourced 3D model, which then gets automatically identified by an AI, reducing individual observation error.",
+      "typical_probability": 0.06,
+      "friction_point": "Frame A's accuracy depends on human observation skill; Frame B's accuracy depends on computational algorithms and data quality.",
+      "check_queries": [
+        "crowdsourced 3D fish reconstruction identification",
+        "multi-view video fish ID AI accuracy"
+      ]
+    },
+    {
+      "id": "C5",
+      "idea": "An app designed for catch-and-release fishing that, while a fish is briefly held, captures rapid multi-angle video, creates a 3D model, identifies it, and simultaneously generates a 'virtual tag' with estimated length and unique scale patterns for re-identification if recaptured, streamlining data collection.",
+      "typical_probability": 0.04,
+      "friction_point": "Frame A is slow and sequential; Frame B can be fast and parallel after initial data capture.",
+      "check_queries": [
+        "virtual fish tagging 3D model recapture",
+        "rapid fish identification catch and release AI"
+      ]
+    },
+    {
+      "id": "C6",
+      "idea": "An app that builds a personal '3D Fish Compendium' from user-submitted videos, creating a unique 3D model for *each specific fish* encountered, allowing users to revisit their catches virtually and compare specific features or growth over time.",
+      "typical_probability": 0.08,
+      "friction_point": "Frame A has limited data retention (just the identified name); Frame B captures rich spatial and temporal data.",
+      "check_queries": [
+        "personal 3D fish encyclopedia app",
+        "user-generated 3D fish collection"
+      ]
+    },
+    {
+      "id": "C7",
+      "idea": "An AI system that tracks the unique patterns of a living fish (e.g., scale patterns, fin tears) from underwater video, builds a persistent 3D identity for that specific individual, and monitors its movement or changes over time in a natural habitat, without any physical tagging.",
+      "typical_probability": 0.03,
+      "friction_point": "Frame A works best with a dead or stunned specimen for detailed examination; Frame B works with live, moving subjects in their environment.",
+      "check_queries": [
+        "individual fish tracking underwater 3D recognition",
+        "persistent fish identity natural habitat AI"
+      ]
+    },
+    {
+      "id": "C8",
+      "idea": "An educational app that projects a high-fidelity 3D model of a Brandenburg fish species onto a table via Augmented Reality (AR), allowing students to interactively 'dissect' and examine its morphology, comparing it to 2D key features in real-time.",
+      "typical_probability": 0.07,
+      "friction_point": "Frame A relies on 2D abstractions (key, drawings); Frame B creates a full 3D digital reality.",
+      "check_queries": [
+        "AR 3D fish dissection educational app",
+        "interactive fish morphology augmented reality"
+      ]
+    },
+    {
+      "id": "C9",
+      "idea": "An app for fisheries managers that automates the generation of 3D population density maps of fish species in a specific Brandenburg water body by analyzing continuous underwater video footage, identifying individual fish, and estimating their volume and biomass without manual counting.",
+      "typical_probability": 0.05,
+      "friction_point": "Frame A is slow and sequential; Frame B can be fast and parallel after initial data capture.",
+      "check_queries": [
+        "3D fish population density mapping underwater video",
+        "automated fish biomass estimation AI"
+      ]
+    },
+    {
+      "id": "C10",
+      "idea": "A gamified app where users compete to accurately identify fish from short interactive 3D video clips generated by AI (from reference models), with the system providing instant feedback on which specific morphological features were correctly or incorrectly interpreted in 3D.",
+      "typical_probability": 0.09,
+      "friction_point": "Frame A's accuracy depends on human observation skill; Frame B's accuracy depends on computational algorithms and data quality.",
+      "check_queries": [
+        "gamified 3D fish identification training app",
+        "AI feedback fish morphology learning game"
+      ]
+    },
+    {
+      "id": "C11",
+      "idea": "An app that uses 3D reconstruction of fish from videos to detect subtle physiological stress signs (e.g., changes in swimming posture, gill movement patterns, body shape deviations) not easily visible to the human eye or in traditional 2D images.",
+      "typical_probability": 0.04,
+      "friction_point": "Frame A's accuracy depends on human observation skill; Frame B's accuracy depends on computational algorithms and data quality.",
+      "check_queries": [
+        "fish stress detection 3D video analysis",
+        "AI fish health monitoring body posture changes"
+      ]
+    },
+    {
+      "id": "C12",
+      "idea": "A tool for artists to create realistic or stylized 3D models of Brandenburg fish from minimal video input, focusing on artistic interpretation and customization of form and texture after the initial 3D capture, rather than scientific identification.",
+      "typical_probability": 0.06,
+      "friction_point": "Frame A's output is a species name; Frame B's output is a digital, measurable 3D model.",
+      "check_queries": [
+        "3D fish artistic model generation video input",
+        "AI for stylized fish 3D art from video"
+      ]
+    },
+    {
+      "id": "C13",
+      "idea": "An app that uses 3D models of identified fish to predict how they would interact with specific underwater structures (e.g., artificial habitats, river restoration elements) by simulating fluid dynamics around their reconstructed forms.",
+      "typical_probability": 0.03,
+      "friction_point": "Frame A relies on 2D abstractions (key, drawings); Frame B creates a full 3D digital reality.",
+      "check_queries": [
+        "fish fluid dynamics simulation 3D models",
+        "AI fish habitat interaction simulation"
+      ]
+    },
+    {
+      "id": "C14",
+      "idea": "A smartphone app that helps reconstruct a fish's original full shape from a damaged or partial specimen by using AI to 'fill in' missing anatomical parts based on a 3D database of complete specimens, useful for archaeological or forensic ichthyology.",
+      "typical_probability": 0.05,
+      "friction_point": "Frame A needs physical interaction or clear static images; Frame B uses dynamic, continuous visual data.",
+      "check_queries": [
+        "3D fish reconstruction partial remains AI",
+        "forensic ichthyology 3D modeling app"
+      ]
+    },
+    {
+      "id": "C15",
+      "idea": "An app that generates a 'virtual twin' 3D model of a specific Brandenburg fishing spot (e.g., a river bend or lake shore) from drone and underwater video, then populates it with 3D fish models identified and continuously tracked by the app, creating a living digital replica for monitoring or angling strategy.",
+      "typical_probability": 0.04,
+      "friction_point": "Frame A has limited data retention (just the identified name); Frame B captures rich spatial and temporal data.",
+      "check_queries": [
+        "digital twin fishing spot 3D model",
+        "AI live fish tracking virtual replica"
+      ]
+    }
+  ],
+  "shortlist": [
+    "C5",
+    "C7",
+    "C9",
+    "C3",
+    "C11",
+    "C15"
+  ]
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld result, Teil 1 (laut gespeicherter Datei):
+{
+  "survivors": [
+    {
+      "candidate_id": "C7",
+      "rank": 1,
+      "idea": "An AI system that tracks the unique patterns of a living fish (e.g., scale patterns, fin tears) from underwater video, builds a persistent 3D identity for that specific individual, and monitors its movement or changes over time in a natural habitat, without any physical tagging.",
+      "gap": "Researchers and conservationists lack a fully automated, non-invasive method to establish and maintain a persistent, individual identity for fish in their natural environment and track their unique changes over time.",
+      "gap_stands_alone": true,
+      "boden_type": "exploratory",
+      "removed_assumption": "The assumption that long-term individual tracking of fish in natural environments requires physical tagging or highly controlled conditions.",
+      "who_has_problem": "Fisheries biologists and conservationists need to monitor individual fish in their natural habitats without disturbing them or using physical tags. (Evidence: https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2025.1628213/full, https://www.innovasea.com/announcements/innovasea-unveils-tagless-fish-detection-technology/)",
+      "why_now": "Advances in high-resolution underwater video cameras, robust AI computer vision models capable of identifying subtle individual-specific patterns, and 3D reconstruction from monocular or stereo video in challenging underwater conditions. (Evidence: https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2025.1628213/full)",
+      "buildable": "Yes, foundational technologies like stereo-video systems, AI object detection (YOLOv8n), and multi-camera 3D tracking are discussed in search results. (Evidence: https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2025.1628213/full, https://www.noaa.gov/interagency-ocean-policy/2022-sost-opportunities-and-actions-roundtable/fishsense-3d-imaging-for-fish-detection-measurement-and-assessment)",
+      "evidence_urls": [
+        "https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2025.1628213/full",
+        "https://www.innovasea.com/announcements/innovasea-unveils-tagless-fish-detection-technology/",
+        "https://www.noaa.gov/interagency-ocean-policy/2022-sost-opportunities-and-actions-roundtable/fishsense-3d-imaging-for-fish-detection-measurement-and-assessment"
+      ],
+      "collider_mechanism": "The collider frame 'Video-to-3D Reconstruction' provides the ability to extract precise, three-dimensional geometric and textural information from dynamic video streams, which allows for the recognition and persistent tracking of subtle individual phenotypic markers."
+    },
+    {
+      "candidate_id": "C11",
+      "rank": 2,
+      "idea": "An app that uses 3D reconstruction of fish from videos to detect subtle physiological stress signs (e.g., changes in swimming posture, gill movement patterns, body shape deviations) not easily visible to the human eye or in traditional 2D images.",
+      "gap": "There is no readily available tool to objectively and non-invasively detect subtle, early-stage physiological stress in fish through quantitative analysis of their 3D morphology and movement patterns.",
+      "gap_stands_alone": true,
+      "boden_type": "exploratory",
+      "removed_assumption": "The assumption that early detection of fish stress or health issues relies primarily on macroscopic visual cues, biochemical analysis, or invasive procedures.",
+      "who_has_problem": "Aquaculturists, animal welfare researchers, and environmental monitoring agencies need objective, early detection of fish stress or health issues. (Evidence: https://www.noaa.gov/interagency-ocean-policy/2022-sost-opportunities-and-actions-roundtable/fishsense-3d-imaging-for-fish-detection-measurement-and-assessment mentions 'health' assessment for modernization of stock assessments.)",
+      "why_now": "High-resolution video capture combined with advanced 3D reconstruction techniques can provide precise measurements of body shape and micro-movements, which AI models can analyze for subtle changes. (Evidence: https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2025.1628213/full, https://www.noaa.gov/interagency-ocean-policy/2022-sost-opportunities-and-actions-roundtable/fishsense-3d-imaging-for-fish-detection-measurement-and-assessment)",
+      "buildable": "Yes, FishSense already aims to calculate 'health' using 3D imaging from underwater video. (Evidence: https://www.noaa.gov/interagency-ocean-policy/2022-sost-opportunities-and-actions-roundtable/fishsense-3d-imaging-for-fish-detection-measurement-and-assessment)",
+      "evidence_urls": [
+        "https://www.noaa.gov/interagency-ocean-policy/2022-sost-opportunities-and-actions-roundtable/fishsense-3d-imaging-for-fish-detection-measurement-and-assessment",
+        "https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2025.1628213/full"
+      ],
+      "collider_mechanism": "The collider frame 'Video-to-3D Reconstruction' allows for the precise measurement of dynamic three-dimensional geometric properties and subtle deformations of the fish's form and movement, which can then be algorithmically analyzed to identify deviations from normal physiological states."
+    },
+    {
+      "candidate_id": "C5",
+      "rank": 3,
+      "idea": "An app designed for catch-and-release fishing that, while a fish is briefly held, captures rapid multi-angle video, creates a 3D model, identifies it, and simultaneously generates a 'virtual tag' with estimated length and unique scale patterns for re-identification if recaptured, streamlining data collection.",
+      "gap": "Anglers and researchers currently lack a fast, non-invasive method to reliably re-identify individual fish over time without physically tagging them.",
+      "gap_stands_alone": true,
+      "boden_type": "combinational",
+      "removed_assumption": "The assumption that individual fish re-identification in catch-and-release or mark-recapture studies requires physical tagging or invasive handling.",
+      "who_has_problem": "Anglers practicing catch-and-release, fisheries researchers, and citizen science programs need streamlined data collection for individual fish re-identification without physical tagging. (Evidence: https://www.homeofbob.com/math/dataProb/captrRecpFsh.html, https://www.innovasea.com/fish-tracking/v3d-predation-tag/)",
+      "why_now": "Rapid multi-angle video capture on smartphones, coupled with advanced AI for 3D model reconstruction and pattern recognition, has become highly accessible and computationally efficient. (Evidence: https://telemetry.fish/, https://www.sintef.no/en/publications/publication/0198cc776cc3-23961e4d-a7a1-40e7-a150-65beb47bf5ac/)",
+      "buildable": "Yes, components like smartphone video capture, 3D reconstruction (SfM/NeRF), and AI pattern recognition are known. (Evidence: https://sketchfab.com/tags/fish, https://www.sintef.no/en/publications/publication/0198cc776cc3-23961e4d-a7a1-40e7-a150-65beb47bf5ac/)",
+      "evidence_urls": [
+        "https://www.homeofbob.com/math/dataProb/captrRecpFsh.html",
+        "https://www.innovasea.com/fish-tracking/v3d-predation-tag/",
+        "https://telemetry.fish/",
+        "https://www.sintef.no/en/publications/publication/0198cc776cc3-23961e4d-a7a1-40e7-a150-65beb47bf5ac/",
+        "https://sketchfab.com/tags/fish"
+      ],
+      "collider_mechanism": "The collider frame 'Video-to-3D Reconstruction' provides the real-time spatial data capture and reconstruction capability, transforming transient video frames into a persistent, measurable 3D object that can then be analyzed for unique features."
+    }
+  ],
+  "kills": [
+    {
+      "candidate_id": "C9",
+      "reason": "The core idea of automated 3D population density mapping and biomass estimation from underwater video is already an established and actively developed field with existing research projects and emerging technologies, making it a crowded area.",
+      "failed_checks": [
+        "in_mode_or_dense"
+      ]
+    },
+    {
+      "candidate_id": "C3",
+      "reason": "There is no explicit evidence from the provided search results that specific user roles have a problem related to simulating fish swimming mechanics or growth within a virtual environment based on 3D reconstructed models.",
+      "failed_checks": [
+        "problem_evidence"
+      ]
+    },
+    {
+      "candidate_id": "C15",
+      "reason": "The search results do not provide explicit evidence that there is a defined problem or need among specific user roles for a 'virtual twin' 3D model of a fishing spot populated with continuously tracked 3D fish models.",
+      "failed_checks": [
+        "problem_evidence"
+      ]
+    }
+  ],
+  "log_row": {
+    "anchor": "'Graphical Key for the Identification of German Freshwater Fishes'",
+    "collider": "'Video-to-3D Reconstruction'",
+    "distance": 4,
+    "candidates": 15,
+    "survivors": 3,
+    "best_gap": "Researchers and conservationists lack a fully automated, non-invasive method to establish and maintain a persistent, individual identity for fish in their natural environment and track their unique changes over time."
+  },
+  "retro": {
+    "learned": "It's crucial to explicitly find evidence for 'WHO has this problem' within the provided search results, not just infer plausible users. Even if the technology seems possible and the idea innovative, an ungrounded problem leads to a kill.",
+    "mistake": "I initially assumed that if the technology for an advanced application (like simulation or digital twins) was mentioned, the problem it solves would be implicitly understood or easily attributed to relevant roles. This led to C3 and C15 being initially considered as survivors without direct evidence of the problem.",
+    "next_time": "For each candidate, before assessing buildability or crowdedness, explicitly extract and verify the 'WHO has this problem' and associated evidence from the search results. If no specific problem evidence is found, consider it a first check failure."
+  }
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld tool_calls, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "call_id": "lacunar-20261001T163628-ee76cb-t01",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "smartpho"
+  },
+  {
+    "call_id": "lacunar-20261001T163628-ee76cb-t02",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "yourself"
+  },
+  {
+    "call_id": "lacunar-20261001T163628-ee76cb-t03",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "amateur"
+  },
+  {
+    "call_id": "lacunar-20261001T163628-ee76cb-t04",
+    "tool": "search",
+    "status": "ok",
+    "summary": "Brandenburg fisheries department fish identification guide manual"
+  },
+  {
+    "call_id": "lacunar-20261001T163628-ee76cb-t05",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "captures, collecti"
+  },
+  {
+    "call_id": "lacunar-20261001T163628-ee76cb-t06",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "captures"
+  },
+  {
+    "call_id": "lacunar-20261001T163628-ee76cb-t07",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "identity, individu"
+  },
+  {
+    "call_id": "lacunar-20261001T163628-ee76cb-t08",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "identity"
+  },
+  {
+    "call_id": "lacunar-20261001T163628-ee76cb-t09",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "analyzin, automate"
+  },
+  {
+    "call_id": "lacunar-20261001T163628-ee76cb-t10",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "analyzin"
+  },
+  {
+    "call_id": "lacunar-20261001T163628-ee76cb-t11",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "conditio, mechanic"
+  },
+  {
+    "call_id": "lacunar-20261001T163628-ee76cb-t12",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "conditio"
+  },
+  {
+    "call_id": "lacunar-20261001T163628-ee76cb-t13",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "deviatio, movement"
+  },
+  {
+    "call_id": "lacunar-20261001T163628-ee76cb-t14",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "deviatio"
+  },
+  {
+    "call_id": "lacunar-20261001T163628-ee76cb-t15",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "creating, generate"
+  },
+  {
+    "call_id": "lacunar-20261001T163628-ee76cb-t16",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "creating"
+  },
+  {
+    "call_id": "lacunar-20261001T163628-ee76cb-t17",
+    "tool": "search",
+    "status": "ok",
+    "summary": "virtual fish tagging 3D model recapture"
+  },
+  {
+    "call_id": "lacunar-20261001T163628-ee76cb-t18",
+    "tool": "search",
+    "status": "ok",
+    "summary": "individual fish tracking underwater 3D recognition"
+  },
+  {
+    "call_id": "lacunar-20261001T163628-ee76cb-t19",
+    "tool": "search",
+    "status": "ok",
+    "summary": "3D fish population density mapping underwater video"
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld accounting, Teil 1 (laut gespeicherter Datei):
+{
+  "model_calls": 6,
+  "search_calls": 4,
+  "search_queries": 18,
+  "cost_usd": 0.074285
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld log_entry, Teil 1 (laut gespeicherter Datei):
+"<!-- proposed by the Lab's Lacunar agent, run lacunar-20261001T163628-ee76cb; nothing was written to Amélie -->\n| 01.10.2026 | 'Graphical Key for the Identification of German Freshwater Fishes' | 'Video-to-3D Reconstruction' | 4 | 15 | 3: 1. An AI system that tracks the unique patterns of a living fish (e.g., scale patterns, fin tears) from underwater video, builds a persistent 3D identity for that specific individual, and monitors its movement or changes over time in a natural habitat, without any physical tagging. (exploratory); 2. An app that uses 3D reconstruction of fish from videos to detect subtle physiological stress signs (e.g., changes in swimming posture, gill movement patterns, body shape deviations) not easily visible to the human eye or in traditional 2D images. (exploratory); 3. An app designed for catch-and-release fishing that, while a fish is briefly held, captures rapid multi-angle video, creates a 3D model, identifies it, and simultaneously generates a 'virtual tag' with estimated length and unique scale patterns for re-identification if recaptured, streamlining data collection. (combinational) | Researchers and conservationists lack a fully automated, non-invasive method to establish and maintain a persistent, individual identity for fish in their natural environment and track their unique changes over time. | — (not checked yet) |\n\n### Lacunar run lacunar-20261001T163628-ee76cb — 01.10.2026 (intent: DO it yourself, Kunst, Brandemburg, KI Agents, Handy, Natur, Fish)\n- **Learned:** It's crucial to explicitly find evidence for 'WHO has this problem' within the provided search results, not just infer plausible users. Even if the technology seems possible and the idea innovative, an ungrounded problem leads to a kill.\n- **Mistake:** I initially assumed that if the technology for an advanced application (like simulation or digital twins) was mentioned, the problem it solves would be implicitly understood or easily attributed to relevant roles. This led to C3 and C15 being initially considered as survivors without direct evidence of the problem.\n- **Next time:** For each candidate, before assessing buildability or crowdedness, explicitly extract and verify the 'WHO has this problem' and associated evidence from the search results. If no specific problem evidence is found, consider it a first check failure.\n- **Prior-art leads (automatic search, for the existence check; not a verdict):**\n  - C5 (ok): virtual fish tagging 3D model recapture -> https://telemetry.fish/, https://www.homeofbob.com/math/dataProb/captrRecpFsh.html, https://critfc.org/fish-and-watersheds/fishery-science/data-resources/mrmix/, https://www.usgs.gov/centers/western-fisheries-research-center/news/new-directions-mark-recapture-models-putting-models\n  - C7 (ok): individual fish tracking underwater 3D recognition -> https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2025.1628213/full, https://pmc.ncbi.nlm.nih.gov/articles/PMC12575977/, https://vision.kuee.kyoto-u.ac.jp/happyou/pdf/rodrigo%20Oceans2017.pdf, https://www.innovasea.com/announcements/innovasea-unveils-tagless-fish-detection-technology/\n  - C9 (ok): 3D fish population density mapping underwater video -> https://www.jove.com/v/56635/development-new-methods-for-quantifying-fish-density-using-underwater, https://pmc.ncbi.nlm.nih.gov/articles/PMC5755459/, https://orbit.dtu.dk/en/publications/an-inexpensive-3d-camera-system-based-on-a-completely-synchronize/, https://www.usgs.gov/publications/measuring-fish-and-their-physical-habitats-versatile-2d-and-3d-video-techniques-user\n"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld prior_art, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "candidate_id": "C5",
+    "question": "virtual fish tagging 3D model recapture",
+    "status": "ok",
+    "answer": "While the search results do not explicitly describe a system for \"virtual fish tagging 3D model recapture\" that simulates the entire mark-recapture process using 3D models of fish in a virtual environment for population estimation, they do provide information on related concepts.\n\nHigh-resolution 3D fish telemetry involves real-time tracking of physically tagged fish in their natural habitats, with their positions and movements visualized in 2D and 3D. This technology is used by groups such as the Norwegian Institute for Nature Research (NINA) and the Technical University of Denmark (DTU) to study fish behavior, and they have developed open-source software like YAPS for this purpose.\n\nTraditional mark-recapture studies are a method used by scientists to estimate fish populations, mortality, immigration, and emigration. In these studies, a sample of fish is captured, marked or tagged, released, and then attempts are made to recapture or detect those same individuals to make inferences about the larger population. Models like the Mark-Recapture Full Likelihood Model (MRmix) have been developed to process mark-recapture data, accounting for factors such as tag loss and uncertainty in population estimates. Some educational resources describe physical simulations of catch and release using objects like cubes or beans to represent fish and markers to simulate tagging and recapture.\n\nSpecialized acoustic tags, such as V3D predation tags, exist that can change their identification number when consumed by a predator, allowing researchers to track the predator instead of the original tagged fish.\n\nAdditionally, numerous 3D models of fish are available for download and use in various applications, including visualization, games, and 3D printing. One academic abstract mentions \"Grasping virtual fish\" in the context of deep learning from demonstration in virtual reality, which involves interacting with 3D models but is not directly related to virtual tagging and recapture simulations for population studies. Online forms are also available for reporting the recapture of physically tagged fish.",
+    "pages": [
+      "https://telemetry.fish/",
+      "https://www.homeofbob.com/math/dataProb/captrRecpFsh.html",
+      "https://critfc.org/fish-and-watersheds/fishery-science/data-resources/mrmix/",
+      "https://www.usgs.gov/centers/western-fisheries-research-center/news/new-directions-mark-recapture-models-putting-models",
+      "https://fishbio.com/predation-alert-assessing-the-v3d-acoustic-tag/",
+      "https://www.innovasea.com/fish-tracking/v3d-predation-tag/",
+      "https://sketchfab.com/tags/fish",
+      "https://www.meshy.ai/tags/fish",
+      "https://www.cadnav.com/3d/fish.html",
+      "https://elements.envato.com/3d/fish",
+      "https://free3d.com/3d-models/fish",
+      "https://www.sintef.no/en/publications/publication/0198cc776cc3-23961e4d-a7a1-40e7-a150-65beb47bf5ac/",
+      "https://www.youtube.com/watch?v=O5Q_L_s-YyY",
+      "https://www.oritag.org.za/Recapture"
+    ]
+  },
+  {
+    "candidate_id": "C7",
+    "question": "individual fish tracking underwater 3D recognition",
+    "status": "ok",
+    "answer": "Individual fish tracking and 3D recognition underwater involve various technological approaches, often leveraging artificial intelligence, computer vision, and specialized camera systems to overcome the challenges of the aquatic environment.\n\nSeveral methods utilize stereo-video pipelines to estimate the 3D positions of individual fish. These pipelines, such as SuperGlue, DepthAnything, SegmentDepth, and BBoxDepth, have demonstrated potential for real-time tracking. For instance, SegmentDepth and BBoxDepth have shown better detection rates compared to SuperGlue in identifying objects of interest. However, challenges can arise in environments with high fish density, where individual recognition becomes more difficult, and with accurately mapping distant backgrounds.\n\nCore to these systems are modules like \"FishDetector\" and \"FishTracker.\" FishDetector is often configured with models such as YOLOv8n, trained to identify specific features like caudal fins and generate bounding boxes around individual fish. Each detected fish is then assigned a unique ID for consistent tracking throughout the process.\n\nMulti-camera systems are also employed for precise 3D tracking. One such system uses calibrated multiple cameras to detect and track each fish's location and pose in 3D, even accounting for light refraction through flat surfaces. This approach aims to facilitate the analysis of fish school behavior.\n\nInnovations in tagless fish detection technology combine imaging sonar, optical cameras, and artificial intelligence to detect, count, and classify fish in real-time. Early trials of such technology have shown high accuracy in counting and identifying wild fish.\n\nDespite these advancements, underwater environments present significant hurdles for computer vision systems, including turbidity, occlusion, dynamic lighting, light absorption, scattering, color distortion, low contrast, and motion blur. These factors can reduce the accuracy of fish detection and behavioral interpretation.\n\nTo address these challenges and enhance monitoring capabilities, deep learning and computer vision technologies are increasingly adopted for automated underwater surveillance. Projects like FishSense, for example, utilize an underwater imaging device that captures both depth and color images using an Intel RealSense 3D camera and an nVidia embedded GPU. This platform enables the calculation of fish length, biomass, and health, aiming to modernize fish stock assessments.\n\nCommercial appli",
+    "pages": [
+      "https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2025.1628213/full",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12575977/",
+      "https://vision.kuee.kyoto-u.ac.jp/happyou/pdf/rodrigo%20Oceans2017.pdf",
+      "https://www.innovasea.com/announcements/innovasea-unveils-tagless-fish-detection-technology/",
+      "https://pdfs.semanticscholar.org/3f5f/5224346f19f46f70bf7af72ea7becfb5801a.pdf",
+      "https://aasrresearch.com/index.php/NJSFAI/article/download/589/1150",
+      "https://kastner.ucsd.edu/wp-content/uploads/2021/08/admin/oceans21fishsense.pdf",
+      "https://www.noaa.gov/interagency-ocean-policy/2022-sost-opportunities-and-actions-roundtable/fishsense-3d-imaging-for-fish-detection-measurement-and-assessment",
+      "https://www.einnews.com/pr_news/946323299/from-detection-to-visual-confirmation-chasing-canfish-f2-combines-sonar-underwater-vision-and-ai"
+    ]
+  },
+  {
+    "candidate_id": "C9",
+    "question": "3D fish population density mapping underwater video",
+    "status": "ok",
+    "answer": "3D fish population density mapping using underwater video is an increasingly utilized and effective method for assessing fish populations, offering advantages over traditional, more invasive techniques. This approach leverages various camera technologies and analytical methods to provide accurate and non-extractive estimations of fish abundance and distribution.\n\nSeveral key technologies and methodologies are employed in 3D fish population density mapping:\n\n*   **Stereo-video camera systems** are a prominent tool, enabling precise measurements of fish size, position, and their distance from the camera. Rotating stereo-video systems are particularly effective as they maximize sampling effort by covering a full 360 degrees. Calibration of these systems is crucial for ensuring the accuracy of measurements.\n*   **RGBD cameras (3D depth cameras)**, such as those used in the FishSense project by NOAA and UC San Diego, integrate with machine learning software to collect underwater video and analyze data for fish health and population assessments.\n*   **Simple underwater video cameras** can also be used to derive density estimates, especially in complex habitats that are difficult to sample with traditional gear.\n\nThe process involves several analytical steps to convert video footage into density estimates:\n\n*   **MaxN** is a common metric used to estimate relative abundance, often modified for rotating camera systems to more accurately reflect true abundance.\n*   **Density estimates** are derived by calculating the area of the camera's field of view and converting fish counts into densities.\n*   **Species-specific detectability** is accounted for by considering the distance of fish from the camera (often using the 95% Z distance), which helps to establish species-specific surveyed areas and improve the accuracy of abundance estimates.\n*   The methods generate quantitative variables such as 3D length, density, and MaxN, allowing for statistical comparisons across different conditions.\n\nThe adoption of underwater video for fish population mapping offers numerous benefits:\n\n*   It is a **non-invasive and non-extractive** method, meaning it does not harm fish, unlike traditional techniques that involve catching them.\n*   These techniques are particularly **effective in complex habitats** like those with dense aquatic vegetation or man-made infrastructure, where traditional sampling methods are challenging or impossible.\n*   Underwater video systems can be **cost-effe",
+    "pages": [
+      "https://www.jove.com/v/56635/development-new-methods-for-quantifying-fish-density-using-underwater",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC5755459/",
+      "https://orbit.dtu.dk/en/publications/an-inexpensive-3d-camera-system-based-on-a-completely-synchronize/",
+      "https://www.usgs.gov/publications/measuring-fish-and-their-physical-habitats-versatile-2d-and-3d-video-techniques-user",
+      "https://www.noaa.gov/interagency-ocean-policy/2022-sost-opportunities-and-actions-roundtable/fishsense-3d-imaging-for-fish-detection-measurement-and-assessment",
+      "https://www.mdpi.com/1424-2818/14/1/50",
+      "https://units.fisheries.org/habitat/assessing-fish-abundance-using-underwater-video/",
+      "https://globalwetlandsproject.org/automated-analysis-of-aquatic-videos-accessible-machine-learning-tools-for-ecologists/",
+      "https://www.fishsens.com/one-fish-two-fish-underwater-video-works-for-fish-population-counts/"
+    ]
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld topic_check, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "term": "smartpho",
+    "hits": [
+      "[dose, score 0.8] KlangStethoskop — Available",
+      "[dose, score 0.8] ChemGefahr-Stopp / MischStop (ChemHazard Stop) — Available",
+      "[dose, score 0.8] Fugenduell: Asphaltritzen-Arena — Available",
+      "[dose, score 0.8] Bleifrei-Lotse — Available"
+    ]
+  },
+  {
+    "term": "yourself",
+    "hits": []
+  },
+  {
+    "term": "amateur",
+    "hits": [
+      "[kandidat, score 1] Ham Radio Emergency Frequency & Repeater Compass",
+      "[log, score 1] amelie-bisoziation-log.md",
+      "[log, score 1] amelie-inversions-log.md"
+    ]
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld contract_version, Teil 1 (laut gespeicherter Datei):
+"1.2.0"
