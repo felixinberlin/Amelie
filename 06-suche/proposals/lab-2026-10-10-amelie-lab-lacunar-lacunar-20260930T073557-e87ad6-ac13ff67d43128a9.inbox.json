@@ -1,0 +1,497 @@
+{
+  "batch_id": "amelie-lab-lacunar-lacunar-20260930T073557-e87ad6-ac13ff67d43128a9",
+  "lab_id": "amelie-lab",
+  "engine": "lacunar",
+  "run_id": "lacunar-20260930T073557-e87ad6",
+  "revision": "ac13ff67d43128a9788040a2a1bce04267452257ceed12e404c1a9aeb4edcb8d",
+  "created_at": "2026-09-30T07:41:10Z",
+  "model": "gemini-2.5-flash",
+  "intent": "Ideen für Schmetterlinge",
+  "ideas": [
+    {
+      "local_id": "C11",
+      "record": {
+        "candidate_id": "C11",
+        "rank": 1,
+        "idea": "Schmetterlings-Bewegungsvektor-Analyse im 3D-Raum: Eine App, die aus Videodaten nicht nur die 3D-Position eines Schmetterlings rekonstruiert, sondern auch seinen Bewegungsvektor (Geschwindigkeit, Richtung, Flugmuster) im Raum analysiert. Dies könnte zur Unterscheidung von Arten oder zur Einschätzung der Habitatnutzung dienen, jenseits der reinen Anwesenheit.",
+        "gap": "Forscher können fliegende Schmetterlinge im Feld nicht zuverlässig nach Art unterscheiden oder ihre spezifische Habitatnutzung jenseits der Anwesenheit bewerten, wenn visuelle Merkmale nicht ausreichen.",
+        "gap_stands_alone": true,
+        "boden_type": "transformational",
+        "removed_assumption": "Die Annahme, dass die Artbestimmung von Schmetterlingen im Flug primär auf 2D-visuellen Merkmalen oder statischen Proben basieren muss.",
+        "who_has_problem": "Ökologen und Schmetterlingsforscher, die präzisere Artidentifikation und Habitatnutzungsanalyse für schwer unterscheidbare Arten im Feld benötigen, wie im Suchergebnis für 'Schmetterling Bewegungsvektor 3D-Analyse Artbestimmung' angedeutet wird.",
+        "why_now": "Fortschritte in der KI-gestützten Videoanalyse und 3D-Rekonstruktion ermöglichen die präzise Verfolgung und Analyse komplexer kinematischer Daten von kleinen, sich schnell bewegenden Objekten wie Schmetterlingen in Echtzeit.",
+        "buildable": "Ja, die Technologie für 3D-Bewegungsanalyse und -rekonstruktion ist bekannt und Gegenstand aktiver Forschung, wie die Studien der Universität Lund zur Aerodynamik von Schmetterlingen zeigen.",
+        "evidence_urls": [
+          "https://www.youtube.com/watch?v=Z9iQ6CyQHGg",
+          "https://www.mathworks.com/company/mathworks-stories/decoding-butterfly-flight-with-fluid-dynamics.html",
+          "https://www.smithsonianmag.com/smart-news/study-reveals-secrets-butterfly-flight-180976808/",
+          "https://www.mdpi.com/2076-3417/11/6/2620",
+          "https://peercommunityjournal.org/articles/10.24072/pcjournal.566/",
+          "https://www.uni-jena.de/397595/schmetterlinge-automatisch-analysiert"
+        ],
+        "collider_mechanism": "Die präzise dreidimensionale Rekonstruktion und Verfolgung dynamischer Objekte im Raum, um nicht nur ihre Position, sondern auch ihre Bewegungsparameter wie Flugbahn, Geschwindigkeit und Beschleunigung zu erfassen und zu analysieren."
+      }
+    },
+    {
+      "local_id": "C3",
+      "record": {
+        "candidate_id": "C3",
+        "rank": 2,
+        "idea": "\"Versteckt-Potential\"-Karte basierend auf 3D-Habitat: Eine App, die aus Videodaten ein 3D-Modell der Vegetationsstruktur erzeugt und Bereiche berechnet, die als \"Versteck-Hotspots\" für Schmetterlinge dienen könnten, aber vom Transekt aus schwer einsehbar sind. Dies visualisiert potenzielle Fehlzählungen aufgrund von Verdeckung.",
+        "gap": "Schmetterlingszähler können die genaue Anzahl der Schmetterlinge nicht bestimmen, da ein Teil der Tiere in für Menschen schwer einsehbaren Bereichen des Habitats verborgen bleibt.",
+        "gap_stands_alone": true,
+        "boden_type": "combinational",
+        "removed_assumption": "Die Annahme, dass alle Schmetterlinge in einem Beobachtungsbereich gleich gut sichtbar sind und ihre Anzahl durch direkte Beobachtung vollständig erfasst wird.",
+        "who_has_problem": "Schmetterlings-Monitorer und Naturschutzorganisationen, die genaue Populationsschätzungen benötigen, da die 'Variable Nachweisbarkeit' die Zuverlässigkeit der Transektergebnisse beeinflusst.",
+        "why_now": "Neuere KI-Algorithmen für die Video-zu-3D-Rekonstruktion ermöglichen die automatisierte und detaillierte Erfassung komplexer Vegetationsstrukturen, was früher nur mit hohem manuellem Aufwand möglich war.",
+        "buildable": "Ja, die Basistechnologie der 3D-Rekonstruktion aus Videos ist vorhanden; die Herausforderung liegt in der biologischen Modellierung zur Identifikation relevanter 'Versteck-Hotspots'.",
+        "evidence_urls": [
+          "https://butterfly-monitoring.net/sites/default/files/Pdf/Manual/Butterfly%20Transect%20Counts-Manual%20v2_2023.pdf",
+          "https://www.wwf.de/junior/tiere/tieren-helfen/schmetterlingen-helfen"
+        ],
+        "collider_mechanism": "Die Fähigkeit der Video-zu-3D-Rekonstruktion, eine vollständige und detaillierte geometrische Erfassung der komplexen Vegetationsstruktur zu erstellen, die über die menschliche Beobachtung hinausgeht und so verborgene Bereiche für eine Analyse zugänglich macht."
+      }
+    },
+    {
+      "local_id": "C2",
+      "record": {
+        "candidate_id": "C2",
+        "rank": 3,
+        "idea": "Habitat-Reflexions-Mapping für Schmetterlings-Sichtbarkeit: Eine App, die Videoaufnahmen des Transekts analysiert und ein 3D-Modell der Lichtreflexionseigenschaften von Blättern und Blüten erstellt. Dies hilft, Zählbereiche zu identifizieren, in denen Schmetterlinge aufgrund von Blendung oder Schattenwurf schwer zu sehen sind, und korrigiert die Nachweisbarkeit.",
+        "gap": "Schmetterlingszähler können die Nachweisbarkeit von Schmetterlingen in einem Habitat nicht objektiv quantifizieren, da Lichtreflexionen und Schattenwürfe die Sichtbarkeit stark beeinflussen.",
+        "gap_stands_alone": true,
+        "boden_type": "combinational",
+        "removed_assumption": "Die Annahme, dass die Lichtverhältnisse im Habitat bei der Zählung eine konstante oder vernachlässigbare Rolle für die Schmetterlingssichtbarkeit spielen.",
+        "who_has_problem": "Schmetterlings-Monitorer, da die 'Variable Nachweisbarkeit' aufgrund von Habitatmerkmalen und Wetterbedingungen die Ergebnisse beeinflusst und Korrekturen erfordert.",
+        "why_now": "Moderne KI-gestützte Videoanalyse kann neben der Geometrie auch photometrische Eigenschaften aus Videos extrahieren und in 3D-Modellen abbilden, was mit traditionellen Methoden nicht möglich war.",
+        "buildable": "Ja, die Erstellung von 3D-Modellen mit textuellen und Beleuchtungsinformationen ist mit fortschrittlicher Photogrammetrie und Computer Vision möglich, wenngleich die Verknüpfung mit der Schmetterlingssichtbarkeit spezifische Modellierung erfordert.",
+        "evidence_urls": [
+          "https://butterfly-monitoring.net/sites/default/files/Pdf/Manual/Butterfly%20Transect%20Counts-Manual%20v2_2023.pdf"
+        ],
+        "collider_mechanism": "Die Fähigkeit der Video-zu-3D-Rekonstruktion, nicht nur die geometrische Form, sondern auch die spezifischen optischen Eigenschaften (wie Reflexion und Absorption von Licht) der Oberflächen im Habitat zu erfassen und in einem dreidimensionalen Modell darzustellen."
+      }
+    }
+  ],
+  "record": {
+    "run_id": "lacunar-20260930T073557-e87ad6",
+    "intent": "Ideen für Schmetterlinge",
+    "model": "gemini-2.5-flash",
+    "created_at": "2026-09-30T07:41:10Z",
+    "state_missing": [],
+    "plan": {
+      "area": "Schmetterlinge",
+      "mode_list": [
+        "Schmetterlingsarten per Foto erkennen",
+        "Schmetterlinge im Garten/auf dem Balkon zählen und melden (Citizen Science)",
+        "Pflanzen für schmetterlingsfreundliche Gärten finden",
+        "Informationen zu heimischen Schmetterlingsarten (Steckbriefe)",
+        "Den Lebenszyklus eines Schmetterlings (Ei, Raupe, Puppe, Falter) verfolgen",
+        "Wanderrouten von Schmetterlingen kartieren",
+        "Bedrohte Schmetterlingsarten erkennen und Schutzmaßnahmen melden",
+        "Ein virtuelles Bestimmungsbuch für Schmetterlinge",
+        "Spiele oder Lern-Apps für Kinder über Schmetterlinge",
+        "Eigene Schmetterlingssichtungen in einer persönlichen Datenbank verwalten"
+      ],
+      "anchor_queries": [
+        "Fehlerquellen und Schwierigkeiten bei Schmetterlingszählungen nach der Transect-Methode",
+        "Herausforderungen bei der manuellen Bestimmung von Schmetterlingsraupen im Feld"
+      ]
+    },
+    "frames": {
+      "frame_a": {
+        "name": "Schmetterlingszählungen nach der Transect-Methode",
+        "source_url": "https://butterfly-monitoring.net/sites/default/files/Pdf/Manual/Butterfly%20Transect%20Counts-Manual%20v2_2023.pdf",
+        "source_label": "Typ A: scheme without software",
+        "friction": "Die Transect-Methode zur Schmetterlingszählung weist verschiedene Fehlerquellen und Schwierigkeiten auf, darunter die Nichterfüllung grundlegender Annahmen (z.B. sichere Entdeckung), starke Abhängigkeit von Wetterbedingungen, Schwankungen in der Beobachtererfahrung und -effizienz, variable Nachweisbarkeit der Schmetterlinge durch Habitatmerkmale sowie Schwierigkeiten bei der Erfassung baumbewohnender oder seltener Arten.",
+        "slots": {
+          "materials": "Schmetterlinge (in verschiedenen Stadien), Habitat (Pflanzen, Gelände), menschlicher Beobachter, festgelegter Zählpfad (Transektlinie), Erfassungsbogen oder digitale App, Uhr, Messgeräte für Wetterbedingungen, Bestimmungshilfen (Bücher, Apps).",
+          "mechanics": "Gehen entlang eines festgelegten Transekts, visuelles Erfassen und Zählen von Schmetterlingen innerhalb einer bestimmten Breite und Höhe, manuelle Identifikation der Art, Notieren der Beobachtungen, Einhaltung spezifischer Wetter- und Zeitvorgaben, Anwendung von Annahmen über Nachweisbarkeit und Verhalten.",
+          "goals": "Monitoring von Schmetterlingspopulationen, Bewertung von Umweltveränderungen, Erfassung der Artenvielfalt und deren Trends über die Zeit, Bereitstellung von Daten für Naturschutzmaßnahmen.",
+          "emotions": "Engagement der Freiwilligen, Frustration bei schwieriger Bestimmung oder geringer Sichtung, Verantwortungsgefühl, Freude bei seltenen Entdeckungen, Unsicherheit bezüglich der korrekten Artidentifikation oder der Vollständigkeit der Zählung.",
+          "constraints": "Starke Abhängigkeit von spezifischen Wetterbedingungen und Tageszeiten, hohe Anforderungen an die Erfahrung und Effizienz des Beobachters, variable Nachweisbarkeit der Tiere durch Habitatmerkmale, Schwierigkeiten bei der Erfassung bestimmter Arten, begrenzte Zeitressourcen für Zählungen, die Notwendigkeit, methodische Annahmen einzuhalten.",
+          "rituals_timing": "Regelmäßiges Begehen der Transekte (z.B. wöchentlich oder zweiwöchentlich) während der gesamten Flugzeit der Schmetterlinge, zu bestimmten Tageszeiten (oft mittags), über mehrere Jahre oder Jahrzehnte hinweg zur Langzeitüberwachung."
+        }
+      },
+      "frame_b": {
+        "name": "Video-to-3D Reconstruction (AI)",
+        "domain": "Recent AI capabilities",
+        "slots": {
+          "materials": "2D-Videomaterial (Sequenzen von Bildern), dedizierte Rechenleistung (GPUs/CPUs), spezialisierte Algorithmen (z.B. Structure from Motion, Multi-View Stereo, Neural Radiance Fields), Kalibrierungsdaten der Kamera, 3D-Modellierungssoftware, Texturdaten.",
+          "mechanics": "Analyse von 2D-Bildsequenzen zur Identifikation von Korrespondenzpunkten über mehrere Frames hinweg, Triangulation dieser Punkte zur Schätzung von 3D-Koordinaten, Berechnung der Kamera-Posen, Dichteschätzung des 3D-Raums, Textur-Mapping auf die Oberfläche, iterative Optimierung des gesamten 3D-Modells.",
+          "goals": "Erstellung eines hochdetaillierten und maßstabsgetreuen 3D-Modells der realen Welt (Objekte, Szenen, Umgebungen), präzise Erfassung von Form, Geometrie und Textur, Lokalisierung von Objekten im dreidimensionalen Raum, Generierung neuer Ansichten oder virtueller Rundgänge.",
+          "emotions": "Faszination über die technische Möglichkeit, Streben nach höchster Präzision und Detailtreue, Bewusstsein für die Komplexität der zugrundeliegenden Algorithmen, Potenzialerkundung für vielfältige Anwendungen, Herausforderung bei schwierigen Aufnahmesituationen (schlechte Qualität, Beleuchtung, Reflexionen).",
+          "constraints": "Hohe Anforderungen an die Qualität und Auflösung des Videomaterials, erhebliche Rechenzeit und -leistung erforderlich, Anfälligkeit für Bewegungsartefakte oder schlechte Lichtverhältnisse, Schwierigkeiten bei Objekten mit wenig Textur oder starken Reflexionen, Verdeckungen und fehlende Bildüberlappung können die Rekonstruktion behindern.",
+          "rituals_timing": "Die Aufnahme der Daten (Videoaufzeichnung) kann einmalig oder kontinuierlich erfolgen; der Rechenprozess zur Rekonstruktion ist oft zeitintensiv und kann iterative Verfeinerungsschritte erfordern; Kalibrierung der Kameras vor der Aufnahme ist entscheidend für Genauigkeit."
+        }
+      },
+      "distance": 5,
+      "friction_points": [
+        "A nimmt Schmetterlinge als flüchtige, schnell bewegliche 2D-Objekte wahr, deren Präsenz gezählt wird; B interpretiert die Welt als statische oder langsam veränderliche 3D-Geometrie, deren Form rekonstruiert wird.",
+        "Die Zählgenauigkeit und Artidentifikation in A hängt stark von der subjektiven menschlichen Beobachtererfahrung ab; die Präzision in B hängt von der algorithmischen Robustheit und der Qualität der Kamera ab.",
+        "A hat eine intrinsische, schwer quantifizierbare Annahme über die 'Nachweisbarkeit' der Tiere im Habitat; B strebt eine vollständige geometrische Erfassung an, bei der alles Sichtbare rekonstruiert wird.",
+        "Wetterbedingungen diktieren in A, wann eine Zählung überhaupt stattfinden kann; in B sind die einmal erfassten Daten wetterunabhängig und können nachträglich verarbeitet werden.",
+        "Das Ergebnis in A ist eine diskrete Zahl von Individuen einer bestimmten Art; in B ist es ein kontinuierliches 3D-Modell der Umgebung und der darin enthaltenen Objekte.",
+        "A's primäres Ziel ist die Beobachtung von Populationsdynamik und Trends über die Zeit basierend auf Zähldaten; B's Ziel ist die detaillierte räumliche Rekonstruktion eines momentanen oder kurzzeitigen Zustands.",
+        "In A ist der Mensch die primäre 'Sensorik' und 'Verarbeitungseinheit' zur Datenerhebung; in B ist der Mensch eher der 'Datensammler' und 'Modellinterpret', während die Verarbeitung maschinell erfolgt.",
+        "A erfordert menschliche Präsenz vor Ort und die direkte Interaktion mit der Zählsituation; B ermöglicht eine spätere, ortsunabhängige und potenziell objektivere Analyse der aufgezeichneten Daten."
+      ],
+      "personas": [
+        {
+          "who": "Ein ehrenamtlicher Schmetterlingszähler im Ruhestand, Herr Müller, der seit 20 Jahren denselben Transekt betreut.",
+          "would_do": "Er würde eine App nutzen, die ihm hilft, die feine Struktur des Habitats (Vegetationsdichte, Blühpflanzenstandorte) in 3D zu erfassen. Dies würde ihm ermöglichen, die 'Versteckt-Potentiale' für Schmetterlinge besser zu verstehen und seine Zählungen genauer zu interpretieren, indem er weiß, wo er möglicherweise Tiere übersehen hat."
+        },
+        {
+          "who": "Eine Biologiestudentin, Lena, die eine Bachelorarbeit über den Einfluss der Habitatstruktur auf die Schmetterlingsdichte in unterschiedlichen Transekten schreibt.",
+          "would_do": "Sie würde ein Tool nutzen, das aus ihren Videoaufnahmen detaillierte 3D-Modelle der Vegetationsstruktur entlang ihrer Transekte erstellt. Damit könnte sie präzise Metriken wie Deckungsgrad, Vegetationshöhe oder die Anzahl von Verstecknischen extrahieren und diese mit ihren Zähldaten korrelieren, um den Einfluss von Mikrohabitat-Veränderungen zu analysieren."
+        },
+        {
+          "who": "Ein Naturschutzprojektmanager, Dr. Schmidt, der die Wirksamkeit von Pflege- und Entwicklungsmaßnahmen in einem Biotop für Schmetterlinge bewerten muss.",
+          "would_do": "Er würde ein System einsetzen, das über die Jahre hinweg 3D-Modelle des Habitats generiert und diese automatisch auf subtile Veränderungen in der Vegetationsstruktur (z.B. Zunahme von Sukzession, Änderung der Blühpflanzenverteilung) vergleicht. Dies würde ihm eine objektive Grundlage bieten, um den Erfolg seiner Managementmaßnahmen im Kontext der Schmetterlingspopulationen zu belegen."
+        }
+      ],
+      "candidates": [
+        {
+          "id": "C1",
+          "idea": "Schmetterlings-Schattenwurf-Scanner: Eine App, die durch Videoanalyse die Schattenwürfe von fliegenden Schmetterlingen auf dem Boden oder Pflanzen in 3D rekonstruiert, um Flugbahnen und Größenprofile zu schätzen, die für die Bestimmung und Schätzung der Flugdichte genutzt werden, ohne den Falter direkt identifizieren zu müssen.",
+          "typical_probability": 0.02,
+          "friction_point": "A nimmt Schmetterlinge als flüchtige, schnell bewegliche 2D-Objekte wahr; B interpretiert die Welt als statische oder langsam veränderliche 3D-Geometrie.",
+          "check_queries": [
+            "3D Rekonstruktion Schatten Flugbahn Insekten",
+            "Größenprofil Schmetterling ohne direkte Sichtung"
+          ]
+        },
+        {
+          "id": "C2",
+          "idea": "Habitat-Reflexions-Mapping für Schmetterlings-Sichtbarkeit: Eine App, die Videoaufnahmen des Transekts analysiert und ein 3D-Modell der Lichtreflexionseigenschaften von Blättern und Blüten erstellt. Dies hilft, Zählbereiche zu identifizieren, in denen Schmetterlinge aufgrund von Blendung oder Schattenwurf schwer zu sehen sind, und korrigiert die Nachweisbarkeit.",
+          "typical_probability": 0.03,
+          "friction_point": "A hat eine intrinsische, schwer quantifizierbare Annahme über die 'Nachweisbarkeit' der Tiere im Habitat; B strebt eine vollständige geometrische Erfassung an, bei der alles Sichtbare rekonstruiert wird.",
+          "check_queries": [
+            "Lichtreflexion Pflanzen 3D Schmetterlingsmonitoring",
+            "Nachweisbarkeitskorrektur Schmetterlinge Habitat Helligkeit"
+          ]
+        },
+        {
+          "id": "C3",
+          "idea": "\"Versteckt-Potential\"-Karte basierend auf 3D-Habitat: Eine App, die aus Videodaten ein 3D-Modell der Vegetationsstruktur erzeugt und Bereiche berechnet, die als \"Versteck-Hotspots\" für Schmetterlinge dienen könnten, aber vom Transekt aus schwer einsehbar sind. Dies visualisiert potenzielle Fehlzählungen aufgrund von Verdeckung.",
+          "typical_probability": 0.04,
+          "friction_point": "A hat eine intrinsische, schwer quantifizierbare Annahme über die 'Nachweisbarkeit' der Tiere im Habitat; B strebt eine vollständige geometrische Erfassung an, bei der alles Sichtbare rekonstruiert wird.",
+          "check_queries": [
+            "3D Vegetationsstruktur Schmetterlingsverstecke",
+            "Fehlzählungen Verdeckung Habitat 3D-Modellierung"
+          ]
+        },
+        {
+          "id": "C4",
+          "idea": "Schmetterlings-Volumen-Tracking für Art-Proxy: Eine App, die aus Videosequenzen die dynamische 3D-Form und das Volumen eines fliegenden Insekts rekonstruiert und dies als Proxy für die Bestimmung von Gattung/Größenklasse verwendet, wenn eine direkte Artidentifikation nicht möglich ist, um die \"schwer erfassbaren Arten\" ansatzweise zu klassifizieren.",
+          "typical_probability": 0.02,
+          "friction_point": "A nimmt Schmetterlinge als flüchtige, schnell bewegliche 2D-Objekte wahr; B interpretiert die Welt als statische oder langsam veränderliche 3D-Geometrie.",
+          "check_queries": [
+            "Insekten Volumen Tracking Flug 3D Identifikation",
+            "Größenklassifizierung Schmetterling Videoanalyse"
+          ]
+        },
+        {
+          "id": "C5",
+          "idea": "Wetter-adaptive Sichtfeld-Optimierung (3D): Eine App, die das aktuelle Wetter (Wind, Sonne) mit einem 3D-Modell des Transekts (Vegetationshöhe, Exposition) kombiniert, um den optimalen Beobachtungswinkel und die ideale Gehgeschwindigkeit für den Beobachter in Echtzeit vorzuschlagen, um die Sichtbarkeit der Schmetterlinge zu maximieren.",
+          "typical_probability": 0.05,
+          "friction_point": "Wetterbedingungen diktieren in A, wann eine Zählung überhaupt stattfinden kann; in B sind die einmal erfassten Daten wetterunabhängig und können nachträglich verarbeitet werden.",
+          "check_queries": [
+            "Wetteroptimierung Schmetterlingszählung 3D-Habitat",
+            "Sichtfeldplanung Insektenmonitoring Wind Sonne"
+          ]
+        },
+        {
+          "id": "C6",
+          "idea": "Mikro-Habitat-Struktur-Analyse für Raupen-Nische: Eine App, die aus extrem hochauflösenden Videosequenzen oder Fotos im Transekt ein detailliertes 3D-Modell der Pflanzenblätter und -stängel erstellt, um potenzielle Eiablageplätze oder Raupenfrassspuren in ihrer räumlichen Verteilung zu kartieren, um die Raupensuche zu optimieren.",
+          "typical_probability": 0.03,
+          "friction_point": "Das Ergebnis in A ist eine diskrete Zahl von Individuen einer bestimmten Art; in B ist es ein kontinuierliches 3D-Modell der Umgebung und der darin enthaltenen Objekte.",
+          "check_queries": [
+            "3D Pflanzenstruktur Raupenablageplatz Kartierung",
+            "Mikrohabitat Schmetterlingsraupen hochauflösend"
+          ]
+        },
+        {
+          "id": "C7",
+          "idea": "\"Beobachter-Verschleierungs\"-Bewertung (3D): Eine App, die aus der Perspektive des menschlichen Beobachters ein dynamisches 3D-Modell der Deckung und Verdeckung durch Vegetation entlang des Transekts generiert, um objektiv zu quantifizieren, wie stark die Beobachtung durch das Habitat selbst erschwert wird, unabhängig von der Schmetterlingsdichte.",
+          "typical_probability": 0.04,
+          "friction_point": "A hat eine intrinsische, schwer quantifizierbare Annahme über die 'Nachweisbarkeit' der Tiere im Habitat; B strebt eine vollständige geometrische Erfassung an, bei der alles Sichtbare rekonstruiert wird.",
+          "check_queries": [
+            "Beobachterperspektive 3D-Vegetationsdichte Schmetterlinge",
+            "Deckungsanalyse Habitat Schmetterlingsmonitoring"
+          ]
+        },
+        {
+          "id": "C8",
+          "idea": "Virtueller Schmetterlings-Reiseführer (3D-Habitat): Eine App, die auf Basis von 3D-rekonstruierten Habitatmodellen und historischen Zähldaten virtuelle \"optimale Routen\" für Schmetterlinge vorschlägt, um zu zeigen, wo sie sich wahrscheinlich aufhalten würden und welche Bereiche aktuell unbesetzt sind, um die Suche zu lenken.",
+          "typical_probability": 0.06,
+          "friction_point": "A's primäres Ziel ist die Beobachtung von Populationsdynamik und Trends über die Zeit basierend auf Zähldaten; B's Ziel ist die detaillierte räumliche Rekonstruktion eines momentanen oder kurzzeitigen Zustands.",
+          "check_queries": [
+            "Virtuelle Schmetterlingsrouten 3D-Habitatdaten",
+            "Schmetterlingsbewegung Modellierung 3D-Umgebung"
+          ]
+        },
+        {
+          "id": "C9",
+          "idea": "Dynamische 3D-Transekts-Anpassung: Eine App, die kontinuierlich 3D-Daten des Transekts aufnimmt und basierend auf der aktuellen Vegetationsstruktur, Sonneneinstrahlung und Windrichtung den optimalen Verlauf des Transekts dynamisch anpasst, um die Stichprobenqualität zu maximieren.",
+          "typical_probability": 0.05,
+          "friction_point": "A's primäres Ziel ist die Beobachtung von Populationsdynamik und Trends über die Zeit basierend auf Zähldaten; B's Ziel ist die detaillierte räumliche Rekonstruktion eines momentanen oder kurzzeitigen Zustands.",
+          "check_queries": [
+            "Dynamisches Transektdesign 3D-Umgebung Schmetterlinge",
+            "Optimale Transektführung Wetter Vegetation"
+          ]
+        },
+        {
+          "id": "C10",
+          "idea": "Schmetterlings-Sichtbarkeits-Hotspots (3D-Projektion): Eine App, die ein 3D-Modell des Habitats erstellt und darauf Schmetterlingssichtungen projiziert, um zu visualisieren, an welchen Orten (unter Berücksichtigung von Schatten, Windschutz, Blühpflanzen) Schmetterlinge am häufigsten und zuverlässigsten beobachtet werden können.",
+          "typical_probability": 0.03,
+          "friction_point": "A hat eine intrinsische, schwer quantifizierbare Annahme über die 'Nachweisbarkeit' der Tiere im Habitat; B strebt eine vollständige geometrische Erfassung an, bei der alles Sichtbare rekonstruiert wird.",
+          "check_queries": [
+            "3D-Habitat Schmetterlings-Hotspots Sichtbarkeit",
+            "Schmetterlingsvorkommen Projektion 3D-Modell"
+          ]
+        },
+        {
+          "id": "C11",
+          "idea": "Schmetterlings-Bewegungsvektor-Analyse im 3D-Raum: Eine App, die aus Videodaten nicht nur die 3D-Position eines Schmetterlings rekonstruiert, sondern auch seinen Bewegungsvektor (Geschwindigkeit, Richtung, Flugmuster) im Raum analysiert. Dies könnte zur Unterscheidung von Arten oder zur Einschätzung der Habitatnutzung dienen, jenseits der reinen Anwesenheit.",
+          "typical_probability": 0.02,
+          "friction_point": "A nimmt Schmetterlinge als flüchtige, schnell bewegliche 2D-Objekte wahr; B interpretiert die Welt als statische oder langsam veränderliche 3D-Geometrie.",
+          "check_queries": [
+            "Schmetterling Bewegungsvektor 3D-Analyse Artbestimmung",
+            "Flugmuster Insekten 3D-Rekonstruktion Habitatnutzung"
+          ]
+        },
+        {
+          "id": "C12",
+          "idea": "Habitat-Veränderungs-Detektor (3D-Zeitreihe): Eine App, die über die Jahre hinweg aufgenommene Videodaten eines Transekts in 3D-Modelle des Habitats umwandelt und diese Modelle vergleicht, um subtile Veränderungen in der Vegetationsstruktur (z.B. Zunahme von Sträuchern, Änderung der Grashöhe) automatisch zu identifizieren, die Schmetterlingspopulationen beeinflussen könnten.",
+          "typical_probability": 0.04,
+          "friction_point": "A's primäres Ziel ist die Beobachtung von Populationsdynamik und Trends über die Zeit basierend auf Zähldaten; B's Ziel ist die detaillierte räumliche Rekonstruktion eines momentanen oder kurzzeitigen Zustands.",
+          "check_queries": [
+            "3D-Habitat Zeitreihenanalyse Vegetationsveränderung",
+            "Schmetterlingsmonitoring Habitatstrukturänderung 3D"
+          ]
+        }
+      ],
+      "shortlist": [
+        "C3",
+        "C11",
+        "C12",
+        "C2"
+      ]
+    },
+    "result": {
+      "survivors": [
+        {
+          "candidate_id": "C11",
+          "rank": 1,
+          "idea": "Schmetterlings-Bewegungsvektor-Analyse im 3D-Raum: Eine App, die aus Videodaten nicht nur die 3D-Position eines Schmetterlings rekonstruiert, sondern auch seinen Bewegungsvektor (Geschwindigkeit, Richtung, Flugmuster) im Raum analysiert. Dies könnte zur Unterscheidung von Arten oder zur Einschätzung der Habitatnutzung dienen, jenseits der reinen Anwesenheit.",
+          "gap": "Forscher können fliegende Schmetterlinge im Feld nicht zuverlässig nach Art unterscheiden oder ihre spezifische Habitatnutzung jenseits der Anwesenheit bewerten, wenn visuelle Merkmale nicht ausreichen.",
+          "gap_stands_alone": true,
+          "boden_type": "transformational",
+          "removed_assumption": "Die Annahme, dass die Artbestimmung von Schmetterlingen im Flug primär auf 2D-visuellen Merkmalen oder statischen Proben basieren muss.",
+          "who_has_problem": "Ökologen und Schmetterlingsforscher, die präzisere Artidentifikation und Habitatnutzungsanalyse für schwer unterscheidbare Arten im Feld benötigen, wie im Suchergebnis für 'Schmetterling Bewegungsvektor 3D-Analyse Artbestimmung' angedeutet wird.",
+          "why_now": "Fortschritte in der KI-gestützten Videoanalyse und 3D-Rekonstruktion ermöglichen die präzise Verfolgung und Analyse komplexer kinematischer Daten von kleinen, sich schnell bewegenden Objekten wie Schmetterlingen in Echtzeit.",
+          "buildable": "Ja, die Technologie für 3D-Bewegungsanalyse und -rekonstruktion ist bekannt und Gegenstand aktiver Forschung, wie die Studien der Universität Lund zur Aerodynamik von Schmetterlingen zeigen.",
+          "evidence_urls": [
+            "https://www.youtube.com/watch?v=Z9iQ6CyQHGg",
+            "https://www.mathworks.com/company/mathworks-stories/decoding-butterfly-flight-with-fluid-dynamics.html",
+            "https://www.smithsonianmag.com/smart-news/study-reveals-secrets-butterfly-flight-180976808/",
+            "https://www.mdpi.com/2076-3417/11/6/2620",
+            "https://peercommunityjournal.org/articles/10.24072/pcjournal.566/",
+            "https://www.uni-jena.de/397595/schmetterlinge-automatisch-analysiert"
+          ],
+          "collider_mechanism": "Die präzise dreidimensionale Rekonstruktion und Verfolgung dynamischer Objekte im Raum, um nicht nur ihre Position, sondern auch ihre Bewegungsparameter wie Flugbahn, Geschwindigkeit und Beschleunigung zu erfassen und zu analysieren."
+        },
+        {
+          "candidate_id": "C3",
+          "rank": 2,
+          "idea": "\"Versteckt-Potential\"-Karte basierend auf 3D-Habitat: Eine App, die aus Videodaten ein 3D-Modell der Vegetationsstruktur erzeugt und Bereiche berechnet, die als \"Versteck-Hotspots\" für Schmetterlinge dienen könnten, aber vom Transekt aus schwer einsehbar sind. Dies visualisiert potenzielle Fehlzählungen aufgrund von Verdeckung.",
+          "gap": "Schmetterlingszähler können die genaue Anzahl der Schmetterlinge nicht bestimmen, da ein Teil der Tiere in für Menschen schwer einsehbaren Bereichen des Habitats verborgen bleibt.",
+          "gap_stands_alone": true,
+          "boden_type": "combinational",
+          "removed_assumption": "Die Annahme, dass alle Schmetterlinge in einem Beobachtungsbereich gleich gut sichtbar sind und ihre Anzahl durch direkte Beobachtung vollständig erfasst wird.",
+          "who_has_problem": "Schmetterlings-Monitorer und Naturschutzorganisationen, die genaue Populationsschätzungen benötigen, da die 'Variable Nachweisbarkeit' die Zuverlässigkeit der Transektergebnisse beeinflusst.",
+          "why_now": "Neuere KI-Algorithmen für die Video-zu-3D-Rekonstruktion ermöglichen die automatisierte und detaillierte Erfassung komplexer Vegetationsstrukturen, was früher nur mit hohem manuellem Aufwand möglich war.",
+          "buildable": "Ja, die Basistechnologie der 3D-Rekonstruktion aus Videos ist vorhanden; die Herausforderung liegt in der biologischen Modellierung zur Identifikation relevanter 'Versteck-Hotspots'.",
+          "evidence_urls": [
+            "https://butterfly-monitoring.net/sites/default/files/Pdf/Manual/Butterfly%20Transect%20Counts-Manual%20v2_2023.pdf",
+            "https://www.wwf.de/junior/tiere/tieren-helfen/schmetterlingen-helfen"
+          ],
+          "collider_mechanism": "Die Fähigkeit der Video-zu-3D-Rekonstruktion, eine vollständige und detaillierte geometrische Erfassung der komplexen Vegetationsstruktur zu erstellen, die über die menschliche Beobachtung hinausgeht und so verborgene Bereiche für eine Analyse zugänglich macht."
+        },
+        {
+          "candidate_id": "C2",
+          "rank": 3,
+          "idea": "Habitat-Reflexions-Mapping für Schmetterlings-Sichtbarkeit: Eine App, die Videoaufnahmen des Transekts analysiert und ein 3D-Modell der Lichtreflexionseigenschaften von Blättern und Blüten erstellt. Dies hilft, Zählbereiche zu identifizieren, in denen Schmetterlinge aufgrund von Blendung oder Schattenwurf schwer zu sehen sind, und korrigiert die Nachweisbarkeit.",
+          "gap": "Schmetterlingszähler können die Nachweisbarkeit von Schmetterlingen in einem Habitat nicht objektiv quantifizieren, da Lichtreflexionen und Schattenwürfe die Sichtbarkeit stark beeinflussen.",
+          "gap_stands_alone": true,
+          "boden_type": "combinational",
+          "removed_assumption": "Die Annahme, dass die Lichtverhältnisse im Habitat bei der Zählung eine konstante oder vernachlässigbare Rolle für die Schmetterlingssichtbarkeit spielen.",
+          "who_has_problem": "Schmetterlings-Monitorer, da die 'Variable Nachweisbarkeit' aufgrund von Habitatmerkmalen und Wetterbedingungen die Ergebnisse beeinflusst und Korrekturen erfordert.",
+          "why_now": "Moderne KI-gestützte Videoanalyse kann neben der Geometrie auch photometrische Eigenschaften aus Videos extrahieren und in 3D-Modellen abbilden, was mit traditionellen Methoden nicht möglich war.",
+          "buildable": "Ja, die Erstellung von 3D-Modellen mit textuellen und Beleuchtungsinformationen ist mit fortschrittlicher Photogrammetrie und Computer Vision möglich, wenngleich die Verknüpfung mit der Schmetterlingssichtbarkeit spezifische Modellierung erfordert.",
+          "evidence_urls": [
+            "https://butterfly-monitoring.net/sites/default/files/Pdf/Manual/Butterfly%20Transect%20Counts-Manual%20v2_2023.pdf"
+          ],
+          "collider_mechanism": "Die Fähigkeit der Video-zu-3D-Rekonstruktion, nicht nur die geometrische Form, sondern auch die spezifischen optischen Eigenschaften (wie Reflexion und Absorption von Licht) der Oberflächen im Habitat zu erfassen und in einem dreidimensionalen Modell darzustellen."
+        }
+      ],
+      "kills": [
+        {
+          "candidate_id": "C12",
+          "reason": "Die Kernidee der 3D-Habitatveränderungsdetektion über Zeitreihenanalyse ist ein aktives und etabliertes Forschungsfeld, wie die Suchergebnisse zu '3D-Habitat Zeitreihenanalyse Vegetationsveränderung' zeigen.",
+          "failed_checks": [
+            "in_mode_or_dense"
+          ]
+        }
+      ],
+      "log_row": {
+        "anchor": "Schmetterlingszählungen nach der Transect-Methode",
+        "collider": "Video-to-3D Reconstruction (AI)",
+        "distance": 5,
+        "candidates": 12,
+        "survivors": 3,
+        "best_gap": "Forscher können fliegende Schmetterlinge im Feld nicht zuverlässig nach Art unterscheiden oder ihre spezifische Habitatnutzung jenseits der Anwesenheit bewerten, wenn visuelle Merkmale nicht ausreichen."
+      },
+      "retro": {
+        "learned": "Die Kollision eines Beobachtungsverfahrens mit einer umfassenden Rekonstruktionsmethode kann Lücken in der Erfassung von unsichtbaren oder schwer quantifizierbaren Aspekten des Beobachtungsgegenstandes aufzeigen.",
+        "mistake": "Ich habe zunächst die Gesamtzahl der Kandidaten für 'log_row.candidates' nicht korrekt gesetzt und musste dies korrigieren.",
+        "next_time": "Ich werde sicherstellen, dass die 'candidates'-Zahl in 'log_row' immer die ursprüngliche Gesamtanzahl der generierten Ideen widerspiegelt, bevor ich mit der Bewertung beginne."
+      }
+    },
+    "tool_calls": [
+      {
+        "call_id": "lacunar-20260930T073557-e87ad6-t01",
+        "tool": "search",
+        "status": "ok",
+        "summary": "Fehlerquellen und Schwierigkeiten bei Schmetterlingszählungen nach der Transect-Methode"
+      },
+      {
+        "call_id": "lacunar-20260930T073557-e87ad6-t02",
+        "tool": "search",
+        "status": "ok",
+        "summary": "Herausforderungen bei der manuellen Bestimmung von Schmetterlingsraupen im Feld"
+      },
+      {
+        "call_id": "lacunar-20260930T073557-e87ad6-t03",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "aufgrund, basieren"
+      },
+      {
+        "call_id": "lacunar-20260930T073557-e87ad6-t04",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "aufgrund"
+      },
+      {
+        "call_id": "lacunar-20260930T073557-e87ad6-t05",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "analysie, flugmust"
+      },
+      {
+        "call_id": "lacunar-20260930T073557-e87ad6-t06",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "analysie"
+      },
+      {
+        "call_id": "lacunar-20260930T073557-e87ad6-t07",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "detektor, grashöhe"
+      },
+      {
+        "call_id": "lacunar-20260930T073557-e87ad6-t08",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "detektor"
+      },
+      {
+        "call_id": "lacunar-20260930T073557-e87ad6-t09",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "analysie, aufgrund"
+      },
+      {
+        "call_id": "lacunar-20260930T073557-e87ad6-t10",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "analysie"
+      },
+      {
+        "call_id": "lacunar-20260930T073557-e87ad6-t11",
+        "tool": "search",
+        "status": "ok",
+        "summary": "3D Vegetationsstruktur Schmetterlingsverstecke"
+      },
+      {
+        "call_id": "lacunar-20260930T073557-e87ad6-t12",
+        "tool": "search",
+        "status": "ok",
+        "summary": "Schmetterling Bewegungsvektor 3D-Analyse Artbestimmung"
+      },
+      {
+        "call_id": "lacunar-20260930T073557-e87ad6-t13",
+        "tool": "search",
+        "status": "ok",
+        "summary": "3D-Habitat Zeitreihenanalyse Vegetationsveränderung"
+      }
+    ],
+    "accounting": {
+      "model_calls": 7,
+      "search_calls": 5,
+      "search_queries": 18,
+      "cost_usd": 0.096256
+    },
+    "log_entry": "<!-- proposed by the Lab's Lacunar agent, run lacunar-20260930T073557-e87ad6; nothing was written to Amélie -->\n| 30.09.2026 | Schmetterlingszählungen nach der Transect-Methode | Video-to-3D Reconstruction (AI) | 5 | 12 | 3: 1. Schmetterlings-Bewegungsvektor-Analyse im 3D-Raum: Eine App, die aus Videodaten nicht nur die 3D-Position eines Schmetterlings rekonstruiert, sondern auch seinen Bewegungsvektor (Geschwindigkeit, Richtung, Flugmuster) im Raum analysiert. Dies könnte zur Unterscheidung von Arten oder zur Einschätzung der Habitatnutzung dienen, jenseits der reinen Anwesenheit. (transformational); 2. \"Versteckt-Potential\"-Karte basierend auf 3D-Habitat: Eine App, die aus Videodaten ein 3D-Modell der Vegetationsstruktur erzeugt und Bereiche berechnet, die als \"Versteck-Hotspots\" für Schmetterlinge dienen könnten, aber vom Transekt aus schwer einsehbar sind. Dies visualisiert potenzielle Fehlzählungen aufgrund von Verdeckung. (combinational); 3. Habitat-Reflexions-Mapping für Schmetterlings-Sichtbarkeit: Eine App, die Videoaufnahmen des Transekts analysiert und ein 3D-Modell der Lichtreflexionseigenschaften von Blättern und Blüten erstellt. Dies hilft, Zählbereiche zu identifizieren, in denen Schmetterlinge aufgrund von Blendung oder Schattenwurf schwer zu sehen sind, und korrigiert die Nachweisbarkeit. (combinational) | Forscher können fliegende Schmetterlinge im Feld nicht zuverlässig nach Art unterscheiden oder ihre spezifische Habitatnutzung jenseits der Anwesenheit bewerten, wenn visuelle Merkmale nicht ausreichen. | — (not checked yet) |\n\n### Lacunar run lacunar-20260930T073557-e87ad6 — 30.09.2026 (intent: Ideen für Schmetterlinge)\n- **Learned:** Die Kollision eines Beobachtungsverfahrens mit einer umfassenden Rekonstruktionsmethode kann Lücken in der Erfassung von unsichtbaren oder schwer quantifizierbaren Aspekten des Beobachtungsgegenstandes aufzeigen.\n- **Mistake:** Ich habe zunächst die Gesamtzahl der Kandidaten für 'log_row.candidates' nicht korrekt gesetzt und musste dies korrigieren.\n- **Next time:** Ich werde sicherstellen, dass die 'candidates'-Zahl in 'log_row' immer die ursprüngliche Gesamtanzahl der generierten Ideen widerspiegelt, bevor ich mit der Bewertung beginne.\n- **Prior-art leads (automatic search, for the existence check; not a verdict):**\n  - C3 (ok): 3D Vegetationsstruktur Schmetterlingsverstecke -> https://www.wwf.de/junior/tiere/tieren-helfen/schmetterlingen-helfen, https://www.bund-naturschutz.de/oekologisch-leben/naturgarten/schmetterlingsgarten, https://www.nabu.de/umwelt-und-ressourcen/oekologisch-leben/balkon-und-garten/tiere/insekten/01446.html, https://nrw.nabu.de/tiere-und-pflanzen/aktionen-und-projekte/tagfaltermonitoring/schmetterlingsschutz/index.html\n  - C11 (ok): Schmetterling Bewegungsvektor 3D-Analyse Artbestimmung -> https://www.youtube.com/watch?v=Z9iQ6CyQHGg, https://www.mathworks.com/company/mathworks-stories/decoding-butterfly-flight-with-fluid-dynamics.html, https://www.smithsonianmag.com/smart-news/study-reveals-secrets-butterfly-flight-180976808/, https://www.mdpi.com/2076-3417/11/6/2620\n  - C12 (ok): 3D-Habitat Zeitreihenanalyse Vegetationsveränderung -> https://www.mdpi.com/2073-445X/11/6/883, https://www.spatialsource.com.au/tern-webinar-why-lidar-time-series-matter/, https://pmc.ncbi.nlm.nih.gov/articles/PMC10212945/, https://www.youtube.com/watch?v=KjitCX71l0c\n",
+    "prior_art": [
+      {
+        "candidate_id": "C3",
+        "question": "3D Vegetationsstruktur Schmetterlingsverstecke",
+        "status": "ok",
+        "answer": "Die bereitgestellten Suchergebnisse beschreiben verschiedene Aspekte des Schutzes von Schmetterlingen und der Gestaltung ihrer Lebensräume, wobei die Bedeutung einer vielfältigen Vegetationsstruktur für Verstecke und Schutz hervorgehoben wird.\n\nLaut WWF Deutschland fühlen sich Schmetterlinge an Orten wohl, an denen sie sich ernähren, wärmen und verstecken können. Sie bevorzugen \"unordentliche\" Bereiche wie kleine Steinmauern, wilde Hecken, Tümpel und Komposthaufen. Der WWF empfiehlt, Gärten oder Balkone \"wilder\" zu gestalten und Futterpflanzen wie Salbei, Minze, Majoran, Oregano, Thymian, Clematis, Veilchen, Sommerflieder, Flockenblumen, Zitronenmelisse, Natternkopf und Nachtkerze anzupflanzen. Auch Brennnesseln sollten nicht entfernt werden, da sie Raupen als Futterpflanze dienen.\n\nDer Bund Naturschutz in Bayern weist darauf hin, dass auch kleine \"Schmuddelecken\" mit wildem Bewuchs und Reisighaufen zum Wohlbefinden und Schutz von Schmetterlingen beitragen können.\n\nDer NABU betont, dass eine vielfältige Vegetation Nahrung, Rastplätze sowie Schutz vor Regen, Wind und Kälte bietet. Als Beispiele für Raupenfutterpflanzen werden Kreuzdorn oder Faulbaum für den Zitronenfalter, Apfel, Schlehe oder Weißdorn für den Baumweißling und Grauweide für den Großen Schillerfalter genannt. Exotische Pflanzen sind für Raupen oft ungenießbar. Für den Schmetterlingsschutz im Garten ist es auch wichtig, Überwinterungsplätze bereitzuhalten und beispielsweise Puppen an Zweigen oder Blättern nicht zu entfernen. Der NABU hebt hervor, dass ein naturnaher, vielfältiger Garten, der nicht nur aus Rasenflächen besteht, Schmetterlingen hilft.\n\nDer BUND Niedersachsen gibt ebenfalls Tipps zur schmetterlingsfreundlichen Gartengestaltung und betont die Bedeutung spezifischer Pflanzen für Raupen, damit diese sich zu Schmetterlingen entwickeln können.\n\nZusammenfassend lässt sich sagen, dass die Suchergebnisse die Bedeutung einer komplexen und vielfältigen Vegetationsstruktur für Schmetterlingsverstecke und ihren Schutz unterstreichen, auch wenn der spezifische Begriff \"3D Vegetationsstruktur\" nicht explizit in einem wissenschaftlichen Kontext verwendet wird. Die beschriebenen Elemente wie Hecken, Steinmauern, Reisighaufen und vielfältige Bepflanzung tragen jedoch zu einer solchen dreidimensionalen Struktur bei.",
+        "pages": [
+          "https://www.wwf.de/junior/tiere/tieren-helfen/schmetterlingen-helfen",
+          "https://www.bund-naturschutz.de/oekologisch-leben/naturgarten/schmetterlingsgarten",
+          "https://www.nabu.de/umwelt-und-ressourcen/oekologisch-leben/balkon-und-garten/tiere/insekten/01446.html",
+          "https://nrw.nabu.de/tiere-und-pflanzen/aktionen-und-projekte/tagfaltermonitoring/schmetterlingsschutz/index.html",
+          "https://www.bund-niedersachsen.de/themen/tiere-pflanzen/schmetterlinge/aktiv-werden/schmetterlinge-schuetzen/"
+        ]
+      },
+      {
+        "candidate_id": "C11",
+        "question": "Schmetterling Bewegungsvektor 3D-Analyse Artbestimmung",
+        "status": "ok",
+        "answer": "Forschung zur 3D-Analyse von Bewegungsvektoren bei Schmetterlingen konzentriert sich hauptsächlich auf das Verständnis der Flugmechanik und Aerodynamik, wobei die direkte Anwendung zur Artbestimmung noch nicht als primäres Ergebnis genannt wird. Es gibt jedoch Hinweise auf das Potenzial solcher Analysen für die Artidentifikation.\n\nWissenschaftler der Universität Lund haben beispielsweise die Aerodynamik des Schmetterlingsflugs mithilfe von Hochgeschwindigkeitskameras, Bildverarbeitung und 3D-Algorithmen untersucht. Sie analysierten die Kinematik der Schmetterlinge, indem sie die Bewegung verschiedener morphologischer Marker aus Hochgeschwindigkeitsvideos verfolgten und Zeitreihen von Vektorfeldern zur Berechnung aerodynamischer Kräfte nutzten. Ziel dieser Forschung war es, die Flugmechanismen zu verstehen, nicht direkt die Artbestimmung.\n\nEine weitere Studie untersuchte die Kinematik und Aerodynamik des Schmetterlings im freien Vorwärtsflug. Dabei wurden Hochgeschwindigkeitskameras und ein 3D-Mehrkörpermodell des Schmetterlings verwendet, um die Flugstabilität und aerodynamische Kräfte zu analysieren. Auch hier lag der Fokus auf dem Verständnis des Flugverhaltens, wobei detaillierte kinematische Parameter erfasst wurden.\n\nDie Verfolgung des Schmetterlingsflugs im Feld mittels unbemannter Luftfahrzeuge (UAVs) und bildbasierter Verfolgung ermöglicht die Rekonstruktion von 2D-Flugbahnen. Diese Methode kann hochauflösende Flugbewegungsmuster wie Pfadkrümmung und transversale Oszillationen messen, die möglicherweise zum Verständnis perzeptueller und lokomotorischer Mechanismen beitragen könnten. Eine Einschränkung dieser Methode ist jedoch die Schwierigkeit, visuell ähnliche Arten wie *Pieris brassicae* und *Pieris rapae* zu unterscheiden, was darauf hindeutet, dass die 2D-Fluganalyse allein derzeit nicht für eine eindeutige Artbestimmung ausreicht.\n\nAndere Ansätze zur Schmetterlingsartbestimmung umfassen die automatisierte Merkmalsextraktion aus standardisierten Bildern (z.B. die Software \"LEPY\" der Universität Jena, die Größe und Färbungsmuster analysiert), DNA-Barcoding und die 3D-Digitalisierung statischer Exemplare mittels 3D-Scannern zur morphologischen Forschung. Diese Methoden konzentrieren sich auf statische Merkmale oder genetische Informationen und nicht auf die Analyse von Bewegungsvektoren.",
+        "pages": [
+          "https://www.youtube.com/watch?v=Z9iQ6CyQHGg",
+          "https://www.mathworks.com/company/mathworks-stories/decoding-butterfly-flight-with-fluid-dynamics.html",
+          "https://www.smithsonianmag.com/smart-news/study-reveals-secrets-butterfly-flight-180976808/",
+          "https://www.mdpi.com/2076-3417/11/6/2620",
+          "https://peercommunityjournal.org/articles/10.24072/pcjournal.566/",
+          "https://www.uni-jena.de/397595/schmetterlinge-automatisch-analysiert",
+          "https://www.dna-analytik.de/artenbestimmung-barcoding.html",
+          "https://beckman.illinois.edu/news/article/2015/04/15/162399ce-44cc-48cf-a0a4-0ef9d32dba0d",
+          "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGC8-bjbrQUldir4-edUHVCYyDuivcDY0J5S1RJxOMWJxcn0s2qrWxkCzo-Okt12wL7qEjUxiIMoSq89uP1SgkH0i7-s88VHbWE1tojqr8vMzBKa9VqgWqGU0aN5susr3vCuHBxNpnAG2qs"
+        ]
+      },
+      {
+        "candidate_id": "C12",
+        "question": "3D-Habitat Zeitreihenanalyse Vegetationsveränderung",
+        "status": "ok",
+        "answer": "Several sources discuss the application of time series analysis to understand 3D vegetation changes, often referred to as 3D habitat analysis.\n\nAn article from MDPI, published in June 2022, details a study on \"Monitoring 3D Changes in Urban Forests Using Landscape Metrics Analyses Based on Multi-Temporal Remote Sensing Data.\" This research aimed to measure the horizontal (2D) and vertical (3D) spatial distribution of green infrastructure and estimate its volume. The study investigated vegetation changes in time and space (3D) at different landscape levels by utilizing multi-temporal and multi-source spatial data, specifically airborne laser scanning (ALS) point clouds and very high-resolution (VHR) satellite imagery acquired over Krakow, Poland, in 2006, 2012, and 2017. The findings indicated a decrease in low vegetation areas, while medium and high vegetation increased in the city during the observed period. The article highlights that a lack of information on the vertical features of vegetation (2D greenery analysis) can lead to an overestimation of landscape connectivity.\n\nA Spatial Source article from September 2026 announced a TERN (Terrestrial Ecosystem Research Network) webinar titled \"Why LiDAR time series matter,\" which would outline how time series LiDAR can provide clearer evidence of vegetation change. The webinar was set to feature experts like Professor Kim Calders, who specializes in 3D measurements for monitoring vegetation dynamics, particularly with terrestrial laser scanning, and Dr. William Woodgate, an expert in remote sensing technologies for environmental monitoring. The article emphasizes that monitoring vegetation structure is crucial for assessing ecosystem health, including carbon storage, habitat availability, and resilience to events like fire or drought. It also notes that single snapshot surveys are insufficient, and repeated, time series monitoring, from individual trees to larger plots, is essential for a complete understanding.\n\nOther research also touches upon time-series analysis for vegetation change, though often with a focus on 2D aspects. For instance, a May 2023 study on \"Time-series analysis of satellite imagery for detecting vegetation cover changes in Indonesia\" used the Normalized Difference Vegetation Index (NDVI) from Moderate Resolution Imaging Spectroradiometer (MODIS) data to analyze vegetation changes over 20 years. This study, however, primarily focused on overall vegetation density rather than explicit 3",
+        "pages": [
+          "https://www.mdpi.com/2073-445X/11/6/883",
+          "https://www.spatialsource.com.au/tern-webinar-why-lidar-time-series-matter/",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC10212945/",
+          "https://www.youtube.com/watch?v=KjitCX71l0c",
+          "https://www.youtube.com/watch?v=KitbOq7ARNQ"
+        ]
+      }
+    ],
+    "contract_version": "1.1.0"
+  },
+  "existence_check": false,
+  "contract_version": "1.0.0"
+}
