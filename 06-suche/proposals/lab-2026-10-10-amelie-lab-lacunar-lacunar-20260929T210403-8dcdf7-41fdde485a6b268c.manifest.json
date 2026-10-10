@@ -1,0 +1,24 @@
+{
+  "manifest_version": 1,
+  "run_id": "amelie-lab-lacunar-lacunar-20260929T210403-8dcdf7-41fdde485a6b268c",
+  "plan_id": "lab-2026-10-10-amelie-lab-lacunar-lacunar-20260929T210403-8dcdf7-41fdde485a6b268c",
+  "engine": "review",
+  "model": "gemini-2.5-flash",
+  "existence_check": false,
+  "survivors": {
+    "count": 5,
+    "status": "ungeprueft"
+  },
+  "files": [
+    "06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20260929T210403-8dcdf7-41fdde485a6b268c.md",
+    "06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20260929T210403-8dcdf7-41fdde485a6b268c.inbox.json",
+    "06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20260929T210403-8dcdf7-41fdde485a6b268c.manifest.json"
+  ],
+  "source_ops": [],
+  "grave_proposals": 1,
+  "touches_memory": false,
+  "contracts": {
+    "lacunar-record": "1.0.0"
+  },
+  "contract_version": "1.0.0"
+}
