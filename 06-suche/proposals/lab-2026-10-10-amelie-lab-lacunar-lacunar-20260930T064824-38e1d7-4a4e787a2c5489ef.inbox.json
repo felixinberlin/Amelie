@@ -1,0 +1,604 @@
+{
+  "batch_id": "amelie-lab-lacunar-lacunar-20260930T064824-38e1d7-4a4e787a2c5489ef",
+  "lab_id": "amelie-lab",
+  "engine": "lacunar",
+  "run_id": "lacunar-20260930T064824-38e1d7",
+  "revision": "4a4e787a2c5489ef46a012097024bd70843d09b9050d7abe7ec605131f17868a",
+  "created_at": "2026-09-30T06:52:55Z",
+  "model": "gemini-2.5-flash",
+  "intent": "Ideen für Schmetterlinge",
+  "ideas": [
+    {
+      "local_id": "C18",
+      "record": {
+        "candidate_id": "C18",
+        "rank": 1,
+        "idea": "A system that uses a combination of visual and auditory AI (detecting wingbeats or subtle plant vibrations) to identify 'ghost butterflies' – those likely present but unseen due to camouflage or swift flight. It then visually 'paints' them onto the AR view for the observer, making the unseen visible, mirroring how cuttlefish perceive their environment in ways humans cannot.",
+        "gap": "Observers often miss camouflaged or fast-moving butterflies, leading to incomplete or inaccurate population data in transect counts.",
+        "gap_stands_alone": true,
+        "boden_type": "transformational",
+        "removed_assumption": "The assumption that the human eye is the ultimate arbiter of butterfly presence, and that unseen or camouflaged individuals cannot be detected in real-time.",
+        "who_has_problem": "Citizen scientists and researchers conducting butterfly transect counts.",
+        "why_now": "Advances in multimodal AI (visual and acoustic insect detection) combined with real-time mobile augmented reality allow for the detection and visualization of otherwise unobservable insects.",
+        "buildable": "Yes, combining insect acoustic/vibration detection with visual AI and AR overlay is technologically feasible.",
+        "evidence_urls": [
+          "https://butterfly-monitoring.net/de/bms-methods",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC8850605/",
+          "https://nawi-werft.de/bausteine/ir-sensor/"
+        ]
+      }
+    },
+    {
+      "local_id": "C3",
+      "record": {
+        "candidate_id": "C3",
+        "rank": 2,
+        "idea": "An AI that analyzes the 'mood' or 'activity level' of butterflies based on their flight patterns and interaction distances, similar to how cuttlefish communicate intent. The app then provides real-time feedback to the observer, suggesting when to pause, move slowly, or when conditions are ideal for observation, making the human observer's rhythm adaptive.",
+        "gap": "Current butterfly observation methods do not dynamically adapt to the real-time activity levels of butterflies, leading to suboptimal data collection or missed opportunities.",
+        "gap_stands_alone": true,
+        "boden_type": "exploratory",
+        "removed_assumption": "The assumption that butterfly observation is a purely human-driven, fixed-pace activity, independent of the observed animal's immediate state.",
+        "who_has_problem": "Citizen scientists and researchers following fixed transect methods.",
+        "why_now": "Advanced deep learning models can track and analyze intricate butterfly flight patterns, providing the raw data for AI to infer activity levels.",
+        "buildable": "Yes, flight pattern analysis using deep learning is established, and animal behavior recording apps exist, providing a platform for such feedback.",
+        "evidence_urls": [
+          "https://butterfly-monitoring.net/de/bms-methods",
+          "https://www.aip.org/aipp/butterflies-hover-differently-from-other-flying-organisms-thanks-to-body-pitch",
+          "https://www.behayve.com/"
+        ]
+      }
+    },
+    {
+      "local_id": "C8",
+      "record": {
+        "candidate_id": "C8",
+        "rank": 3,
+        "idea": "A 'mimicry detector' that analyzes the visual features of a butterfly against its immediate background. It not only identifies the species but also scores its 'camouflage effectiveness' in that specific microhabitat. This gives observers immediate, personalized feedback on the subtle interactions between the butterfly and its environment, making the observation feel more like a dynamic interaction than a static count.",
+        "gap": "Current butterfly identification tools do not provide insight into how effectively a butterfly's patterns allow it to blend with its specific microhabitat, hindering a deeper understanding of ecological adaptation.",
+        "gap_stands_alone": true,
+        "boden_type": "exploratory",
+        "removed_assumption": "The assumption that visual observation is merely about identifying a species, rather than understanding its dynamic interaction with its environment through camouflage.",
+        "who_has_problem": "Citizen scientists and nature enthusiasts seeking deeper ecological insights beyond species identification.",
+        "why_now": "Advanced computer vision and deep learning models can analyze visual features in complex scenes, enabling not just identification but also contextual comparison of an organism against its immediate background.",
+        "buildable": "Yes, building on existing AI image recognition, this involves more sophisticated contextual analysis.",
+        "evidence_urls": [
+          "https://butterfly-monitoring.net/de/bms-methods"
+        ]
+      }
+    },
+    {
+      "local_id": "C2",
+      "record": {
+        "candidate_id": "C2",
+        "rank": 4,
+        "idea": "A system that uses an array of micro-sensors (sound, IR, small visual spectrum changes) along a transect that 'mimic' the cuttlefish's distributed sensory system. It 'feels' the presence and movement of butterflies by subtle environmental shifts (like air current changes from wings, or micro-shadows) and then triggers a focused visual capture, reducing reliance on direct human visual contact.",
+        "gap": "Human-centric butterfly monitoring methods rely on direct visual contact and are prone to missing individuals or disturbing the habitat.",
+        "gap_stands_alone": true,
+        "boden_type": "combinational",
+        "removed_assumption": "The assumption that human visual observation is the primary or sole means of detecting and counting butterflies along a transect.",
+        "who_has_problem": "Citizen scientists and researchers performing butterfly transect counts.",
+        "why_now": "Miniaturized, low-power environmental sensors (especially near-infrared modulation signatures) and AI for real-time sensor data processing can detect subtle insect movements without direct human observation.",
+        "buildable": "Yes, distributed wireless sensor networks and insect-specific IR/NIR sensors are described.",
+        "evidence_urls": [
+          "https://butterfly-monitoring.net/de/bms-methods",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC8850605/",
+          "https://nawi-werft.de/bausteine/ir-sensor/"
+        ]
+      }
+    },
+    {
+      "local_id": "C11",
+      "record": {
+        "candidate_id": "C11",
+        "rank": 5,
+        "idea": "An app that uses predictive modeling to identify the optimal *next* step an observer should take on a transect, based on observed butterfly behavior, micro-weather patterns, and terrain, to maximize the chance of a significant sighting. This is like the cuttlefish's immediate tactical decision-making for hunting or hiding.",
+        "gap": "Butterfly observation on fixed transects often fails to adapt to dynamic environmental conditions and real-time butterfly behavior, leading to inefficient surveying.",
+        "gap_stands_alone": true,
+        "boden_type": "combinational",
+        "removed_assumption": "The assumption that butterfly transect paths must be fixed and predetermined, rather than dynamically optimized based on real-time conditions.",
+        "who_has_problem": "Citizen scientists and researchers performing butterfly transect counts.",
+        "why_now": "Predictive modeling can integrate real-time micro-weather data, terrain information, and observed butterfly behavior to dynamically suggest optimal observation paths.",
+        "buildable": "Yes, predictive modeling and dynamic pathfinding with multiple data inputs are established in other domains.",
+        "evidence_urls": [
+          "https://butterfly-monitoring.net/de/bms-methods"
+        ]
+      }
+    }
+  ],
+  "record": {
+    "run_id": "lacunar-20260930T064824-38e1d7",
+    "intent": "Ideen für Schmetterlinge",
+    "model": "gemini-2.5-flash",
+    "created_at": "2026-09-30T06:52:55Z",
+    "state_missing": [],
+    "plan": {
+      "area": "Schmetterlinge",
+      "mode_list": [
+        "Schmetterlingsarten anhand von Fotos bestimmen",
+        "Raupenarten per Bilderkennung identifizieren",
+        "Erfassung von Schmetterlingssichtungen für Citizen-Science-Projekte",
+        "Anzeige von Verbreitungskarten und Flugzeiten von Schmetterlingen",
+        "Informationen zu Lebenszyklus und Nahrungspflanzen der Arten abrufen",
+        "Gartenplanung mit schmetterlingsfreundlichen Pflanzenvorschlägen",
+        "Meldung seltener oder gefährdeter Arten an Behörden/Organisationen",
+        "Spielerisches Lernen von Schmetterlingsarten durch Quiz oder AR",
+        "Vorhersage von Wanderrouten oder Populationsentwicklungen",
+        "Bestimmung von Eiern und Puppen von Schmetterlingen",
+        "Verfolgung der Phänologie von Schmetterlingen (z.B. erster Flug)",
+        "Monitoring der Habitatqualität für Schmetterlinge"
+      ],
+      "anchor_queries": [
+        "Schmetterlingszählung methoden fehlerquellen",
+        "Schmetterlingskartierung manuelle identifikation schwierigkeiten",
+        "Monitoring seltener Schmetterlingsarten Herausforderungen"
+      ]
+    },
+    "frames": {
+      "frame_a": {
+        "name": "Schmetterlings-Transektzählung (BMS-Methoden)",
+        "source_url": "https://butterfly-monitoring.net/de/bms-methods",
+        "source_label": "Typ A: scheme without software",
+        "friction": "Fehlerquellen wie Witterungsbedingungen und Beobachterfehler/Artbestimmung machen die manuelle Zählung ungenau und anfällig für Ermüdung und Frustration.",
+        "slots": {
+          "materials": "Zählbogen (Papier/digital), Stift, Fernglas, Uhr, Wetterdaten (Temperatur, Bewölkung, Wind), Karte des Transektwegs, Schmetterlinge, definierte Landschaft/Transekt.",
+          "mechanics": "Gehen einer festgelegten Strecke (Transekt), Zählen von Schmetterlingen in einem definierten Korridor (2,5m seitlich, 5m nach vorne/oben), Identifizierung der Arten, Notieren der Anzahl pro Art und Transektabschnitt, Erfassung von Umweltparametern (Wetter, Zeit).",
+          "goals": "Erfassung von Populationsdaten, Monitoring der Entwicklung von Schmetterlingspopulationen, Frühwarnsystem für Artenschwund, Beitrag zur Biodiversitätsforschung.",
+          "emotions": "Genauigkeit, Verantwortung, Frustration bei Unsicherheit (Artbestimmung, Wetter), Freude an der Naturbeobachtung, Pflichtgefühl, Geduld.",
+          "constraints": "Zeitfenster (Uhrzeit, Saison), Wetterbedingungen (Temperatur, Wind, Bewölkung), Beobachterfähigkeiten (Artkenntnis, Konzentration), physische Anforderungen (Gehen), Sichtbarkeit der Schmetterlinge.",
+          "rituals_timing": "Wöchentliche Begehungen (April-September/Oktober), feste Uhrzeiten (10-17 Uhr), langsames, gleichmäßiges Tempo, 5 Minuten pro 50 Meter."
+        }
+      },
+      "frame_b": {
+        "name": "Tintenfisch-Tarnung (Cuttlefish Camouflage)",
+        "domain": "Biologie (Tierverhalten)",
+        "slots": {
+          "materials": "Chromatophoren (Pigmentzellen), Iridophoren (reflektierende Zellen), Leukophoren (weiße Zellen), Hautmuskeln zur Texturveränderung, Nervenverbindungen, Licht, Umgebung (Substrat, Wasserströmung, Beute/Fressfeinde), Tintenfisch selbst.",
+          "mechanics": "Schnelle neuronale Steuerung der Chromatophoren (Ausdehnung/Kontraktion), Anpassung an visuelle Reize der Umgebung (Farbe, Muster, Textur), Mimikry (Nachahmung von Objekten), Signalgebung (Kommunikation mit Artgenossen, Drohung). Dynamische Echtzeit-Anpassung.",
+          "goals": "Tarnung vor Fressfeinden, Tarnung zur Jagd auf Beute, Kommunikation (sexuelle Signale, Warnsignale), Selbstschutz.",
+          "emotions": "Überlebenstrieb, Tarnung (Feind), Aggression (Beute/Feind), Anlockung (Partner).",
+          "constraints": "Reaktionszeit des Nervensystems, Auflösung der Chromatophoren (begrenzte Detailtiefe), Energiekosten der ständigen Anpassung, Lichtverhältnisse, physikalische Grenzen der Hautstrukturen.",
+          "rituals_timing": "Kontinuierliche, blitzschnelle Anpassung (Millisekunden), situationsabhängig, oft in Zyklen von Musterwechseln bei Kommunikation. Keine festen Rituale, eher reaktives Verhalten."
+        }
+      },
+      "distance": 5,
+      "friction_points": [
+        "Frame A relies on discrete external recording tools, Frame B uses integrated, dynamic biological components for real-time adaptation.",
+        "Frame A is sequential, human-paced, and relies on conscious observation and recording; Frame B is parallel, unconscious, biological, and instantaneous adaptation.",
+        "Frame A aims for abstract, aggregate, long-term scientific understanding; Frame B aims for immediate, individual survival and interaction.",
+        "Frame A involves human-specific cognitive and emotional states related to data collection rigor; Frame B involves primal, survival-driven biological responses.",
+        "Frame A's constraints are largely external and human-centric; Frame B's constraints are internal, physiological, and biophysical.",
+        "Frame A follows rigid, human-defined schedules and rhythms; Frame B operates on continuous, real-time, reactive biological rhythms."
+      ],
+      "personas": [
+        {
+          "who": "Werner, der ehrenamtliche Schmetterlingszähler (68)",
+          "would_do": "Er würde eine Technologie nutzen, die ihm direkt im Feld bei der Bestimmung hilft und die Zählung vereinfacht, sodass er sich mehr auf die Beobachtung der Schmetterlinge an sich und weniger auf die Bürokratie konzentrieren kann. Er wünscht sich, dass das System seine Unsicherheit (z.B. bei der Art) erkennt und ihm hilft, seine Beobachtungen zu verfeinern oder zu bestätigen, ohne dass er sich als 'Fehlerquelle' fühlt."
+        },
+        {
+          "who": "Dr. Lena Schmidt, Biodiversitätsforscherin (35)",
+          "would_do": "Sie würde eine App begrüßen, die die Datenerfassung standardisiert, die Fehleranfälligkeit reduziert und konsistentere Daten liefert, idealerweise mit einer integrierten Qualitätskontrolle oder Plausibilitätsprüfung schon im Feld. Sie würde sich auch wünschen, dass das System die 'Unsicherheiten' der Zähler erfasst, um diese in der Analyse berücksichtigen zu können."
+        },
+        {
+          "who": "Mia, die junge Naturfreundin (12)",
+          "would_do": "Sie würde eine spielerische, interaktive App nutzen, die ihr hilft, Schmetterlinge zu entdecken und zu identifizieren, ohne dass es sich wie 'Arbeit' anfühlt. Eine App, die ihre Neugier weckt und ihr direktes Feedback gibt, wie ein Spiel. Sie möchte auch sehen, dass ihre Beiträge wirklich einen Unterschied machen."
+        }
+      ],
+      "candidates": [
+        {
+          "id": "C1",
+          "idea": "An app that uses 'dynamic camouflage' logic. Instead of just identifying, it suggests optimal observation positions or angles to blend with the environment, allowing the user to get closer or observe longer without disturbing, effectively 'camouflaging' the observer within the data collection process.",
+          "typical_probability": 0.01,
+          "friction_point": "Frame A aims for abstract, aggregate, long-term scientific understanding; Frame B aims for immediate, individual survival and interaction.",
+          "check_queries": [
+            "Schmetterlingsbeobachtung Annäherung Tarnung App",
+            "Optimaler Beobachtungswinkel Wildtiere KI"
+          ]
+        },
+        {
+          "id": "C2",
+          "idea": "A system that uses an array of micro-sensors (sound, IR, small visual spectrum changes) along a transect that 'mimic' the cuttlefish's distributed sensory system. It 'feels' the presence and movement of butterflies by subtle environmental shifts (like air current changes from wings, or micro-shadows) and then triggers a focused visual capture, reducing reliance on direct human visual contact.",
+          "typical_probability": 0.005,
+          "friction_point": "Frame A relies on discrete external recording tools, Frame B uses integrated, dynamic biological components for real-time adaptation.",
+          "check_queries": [
+            "Schmetterling Bewegungssensor Nahfeld",
+            "Infrarot Sensor Insektenflug Erkennung"
+          ]
+        },
+        {
+          "id": "C3",
+          "idea": "An AI that analyzes the 'mood' or 'activity level' of butterflies based on their flight patterns and interaction distances, similar to how cuttlefish communicate intent. The app then provides real-time feedback to the observer, suggesting when to pause, move slowly, or when conditions are ideal for observation, making the human observer's rhythm adaptive.",
+          "typical_probability": 0.02,
+          "friction_point": "Frame A follows rigid, human-defined schedules and rhythms; Frame B operates on continuous, real-time, reactive biological rhythms.",
+          "check_queries": [
+            "Schmetterling Flugmuster Stimmungsanalyse",
+            "Tierverhalten basierte Beobachtungsempfehlung App"
+          ]
+        },
+        {
+          "id": "C4",
+          "idea": "A 'swarm intelligence' app for citizen scientists. Instead of individuals counting on fixed transects, the app dynamically assigns observation zones and timings based on real-time environmental data (weather, bloom cycles) and past butterfly sightings. The individual citizen scientist acts like a single chromatophore, contributing to a larger, adaptive pattern of data collection across a region, maximizing coverage and reducing 'blind spots'.",
+          "typical_probability": 0.03,
+          "friction_point": "Frame A follows rigid, human-defined schedules and rhythms; Frame B operates on continuous, real-time, reactive biological rhythms.",
+          "check_queries": [
+            "Schwarmintelligenz Citizen Science Monitoring",
+            "Dynamische Transekte Schmetterlingszählung"
+          ]
+        },
+        {
+          "id": "C5",
+          "idea": "An augmented reality overlay that, when pointed at a butterfly, not only identifies it but also projects its likely 'aura' or 'influence zone' – where it feeds, mates, or rests. This helps the observer understand the butterfly's immediate 'intent' or ecological role, similar to how cuttlefish signals are immediately understood, transforming abstract data into immediate spatial awareness.",
+          "typical_probability": 0.04,
+          "friction_point": "Frame A aims for abstract, aggregate, long-term scientific understanding; Frame B aims for immediate, individual survival and interaction.",
+          "check_queries": [
+            "AR Schmetterling Verhaltenszone",
+            "Ökologisches Einflussfeld AR Tiere"
+          ]
+        },
+        {
+          "id": "C6",
+          "idea": "A 'bio-feedback' system for the observer. When the observer enters the transect, sensors on their body (e.g., heart rate, galvanic skin response) detect their stress levels or excitement. The app then subtly adjusts the display of information or the suggested pace, mirroring how a cuttlefish's internal state affects its external pattern, optimizing the human's 'performance' for observation rigor.",
+          "typical_probability": 0.008,
+          "friction_point": "Frame A involves human-specific cognitive and emotional states related to data collection rigor; Frame B involves primal, survival-driven biological responses.",
+          "check_queries": [
+            "Biofeedback Citizen Science Beobachtung",
+            "Stressreduktion Naturbeobachtung App"
+          ]
+        },
+        {
+          "id": "C7",
+          "idea": "An application that generates 'synthetic transects' or observation paths based on predicted butterfly activity hotspots, derived from complex ecological models. Instead of a fixed human path, the system suggests a 'fluid' path that morphs over the season, like a cuttlefish changing its pattern to match a dynamic environment, guiding observers to areas where their effort has maximum impact.",
+          "typical_probability": 0.02,
+          "friction_point": "Frame A follows rigid, human-defined schedules and rhythms; Frame B operates on continuous, real-time, reactive biological rhythms.",
+          "check_queries": [
+            "Dynamische Beobachtungspfade Schmetterlinge",
+            "KI Vorhersage Schmetterlingshotspots"
+          ]
+        },
+        {
+          "id": "C8",
+          "idea": "A 'mimicry detector' that analyzes the visual features of a butterfly against its immediate background. It not only identifies the species but also scores its 'camouflage effectiveness' in that specific microhabitat. This gives observers immediate, personalized feedback on the subtle interactions between the butterfly and its environment, making the observation feel more like a dynamic interaction than a static count.",
+          "typical_probability": 0.015,
+          "friction_point": "Frame A aims for abstract, aggregate, long-term scientific understanding; Frame B aims for immediate, individual survival and interaction.",
+          "check_queries": [
+            "Schmetterling Tarnung Effektivität KI",
+            "Mikrohabitat Anpassung Schmetterling"
+          ]
+        },
+        {
+          "id": "C9",
+          "idea": "An 'emotional resonance' assistant. When a human observes a butterfly, the app uses AI to generate short, poetic descriptions or facts related to the butterfly's life cycle or ecological role that evoke a sense of connection or wonder, similar to how cuttlefish patterns can evoke specific responses in others. This aims to reinforce the intrinsic motivation of the observer, transforming the 'rigor' into an emotional reward.",
+          "typical_probability": 0.06,
+          "friction_point": "Frame A involves human-specific cognitive and emotional states related to data collection rigor; Frame B involves primal, survival-driven biological responses.",
+          "check_queries": [
+            "KI poetische Beschreibung Schmetterling",
+            "Emotionale Verstärkung Citizen Science"
+          ]
+        },
+        {
+          "id": "C10",
+          "idea": "A 'real-time pattern matching' system. As an observer moves, a continuous video stream is analyzed by AI. Instead of discrete counts, the system builds up a 'pattern map' of butterfly presence and density across the transect, updating continuously, much like a cuttlefish's skin patterns shift and flow. It highlights areas of high activity or rare species automatically.",
+          "typical_probability": 0.009,
+          "friction_point": "Frame A is sequential, human-paced, and relies on conscious observation and recording; Frame B is parallel, unconscious, biological, and instantaneous adaptation.",
+          "check_queries": [
+            "Kontinuierliche Videoanalyse Schmetterlingsdichte",
+            "KI Echtzeit Insektenmustererkennung"
+          ]
+        },
+        {
+          "id": "C11",
+          "idea": "An app that uses predictive modeling to identify the optimal *next* step an observer should take on a transect, based on observed butterfly behavior, micro-weather patterns, and terrain, to maximize the chance of a significant sighting. This is like the cuttlefish's immediate tactical decision-making for hunting or hiding.",
+          "typical_probability": 0.01,
+          "friction_point": "Frame A's constraints are largely external and human-centric; Frame B's constraints are internal, physiological, and biophysical.",
+          "check_queries": [
+            "KI Optimierung Beobachtungspfad Schmetterlinge",
+            "Dynamische Routenführung Naturbeobachtung"
+          ]
+        },
+        {
+          "id": "C12",
+          "idea": "A 'butterfly-centric' view where the app simulates the visual perception of a butterfly in its environment, allowing the human observer to understand *why* certain camouflage patterns are effective or why a butterfly chooses a certain spot. This shifts the human perspective to the 'survival' goal of the butterfly, making observation more empathetic and insightful.",
+          "typical_probability": 0.03,
+          "friction_point": "Frame A aims for abstract, aggregate, long-term scientific understanding; Frame B aims for immediate, individual survival and interaction.",
+          "check_queries": [
+            "Schmetterlingsperspektive Simulation App",
+            "Tierisches Sehvermögen AR"
+          ]
+        },
+        {
+          "id": "C13",
+          "idea": "A decentralized 'knowledge mesh' where every observed butterfly is immediately cross-referenced not just with a database, but with current micro-environmental data (local temperature, wind, light) and observations from *nearby* citizen scientists in real-time. This creates a 'collective sensory network' akin to a large cuttlefish shoal communicating through pattern changes.",
+          "typical_probability": 0.007,
+          "friction_point": "Frame A relies on discrete external recording tools, Frame B uses integrated, dynamic biological components for real-time adaptation.",
+          "check_queries": [
+            "Dezentrales Schmetterlingsmonitoring Netzwerk",
+            "Echtzeit Mikrodaten Citizen Science"
+          ]
+        },
+        {
+          "id": "C14",
+          "idea": "An 'environmental pattern generator' for the transect. Based on previous observations and ecological models, the app generates a 'target pattern' of expected butterfly distribution for the current conditions. The observer then walks the transect trying to 'match' this pattern, like a cuttlefish matching its skin to the environment. Deviations highlight anomalies.",
+          "typical_probability": 0.006,
+          "friction_point": "Frame A is sequential, human-paced, and relies on conscious observation and recording; Frame B is parallel, unconscious, biological, and instantaneous adaptation.",
+          "check_queries": [
+            "Schmetterlingsverteilung Vorhersage Muster",
+            "Citizen Science Abweichungsmeldung Mustervergleich"
+          ]
+        },
+        {
+          "id": "C15",
+          "idea": "A system that uses an external device (e.g., a small drone or fixed camera) to continuously monitor the transect. The human observer's role shifts from primary data collector to 'pattern interruptor' – they are alerted only when the AI detects an anomaly (e.g., a rare species, unusual behavior, or a significant change in density), reducing human cognitive load and making their attention highly targeted, like a predator reacting to a sudden pattern break.",
+          "typical_probability": 0.004,
+          "friction_point": "Frame A is sequential, human-paced, and relies on conscious observation and recording; Frame B is parallel, unconscious, biological, and instantaneous adaptation.",
+          "check_queries": [
+            "Drohnenmonitoring Schmetterlingsanomalien",
+            "KI gesteuerte Aufmerksamkeit Citizen Science"
+          ]
+        },
+        {
+          "id": "C16",
+          "idea": "A 'habitat health interpreter' that translates complex ecological data (soil, plant, microclimate) along the transect into simple, color-coded 'health maps' dynamically changing with conditions, like a cuttlefish's mood ring. This provides immediate, intuitive understanding of the environment's quality for butterflies, transforming abstract data into visual, actionable insight.",
+          "typical_probability": 0.02,
+          "friction_point": "Frame A aims for abstract, aggregate, long-term scientific understanding; Frame B aims for immediate, individual survival and interaction.",
+          "check_queries": [
+            "Dynamische Habitatgesundheitskarte Schmetterlinge",
+            "Mikroklima Schmetterling Visualisierung App"
+          ]
+        },
+        {
+          "id": "C17",
+          "idea": "An app that gamifies 'adaptive observation'. It gives the observer a 'camouflage score' based on how little their presence seems to disturb the butterflies, measured by their flight patterns or proximity. This leverages the cuttlefish's core mechanic (blending) to improve human observation quality.",
+          "typical_probability": 0.01,
+          "friction_point": "Frame A's constraints are largely external and human-centric; Frame B's constraints are internal, physiological, and biophysical.",
+          "check_queries": [
+            "Gamified Beobachtung Schmetterlinge",
+            "Einfluss auf Schmetterlingsverhalten messen"
+          ]
+        },
+        {
+          "id": "C18",
+          "idea": "A system that uses a combination of visual and auditory AI (detecting wingbeats or subtle plant vibrations) to identify 'ghost butterflies' – those likely present but unseen due to camouflage or swift flight. It then visually 'paints' them onto the AR view for the observer, making the unseen visible, mirroring how cuttlefish perceive their environment in ways humans cannot.",
+          "typical_probability": 0.003,
+          "friction_point": "Frame A relies on discrete external recording tools, Frame B uses integrated, dynamic biological components for real-time adaptation.",
+          "check_queries": [
+            "Akustische Schmetterlingserkennung App",
+            "AR Visualisierung unsichtbarer Insekten"
+          ]
+        },
+        {
+          "id": "C19",
+          "idea": "An AI that learns the individual 'observational bias' of each citizen scientist over time (e.g., tendency to overestimate certain species, miss others) by comparing their reports to a gold standard or other observers. It then provides personalized, adaptive training exercises or subtle in-app prompts to correct these biases, making human observation more like a trained cuttlefish adapting its pattern perfectly.",
+          "typical_probability": 0.005,
+          "friction_point": "Frame A's constraints are largely external and human-centric; Frame B's constraints are internal, physiological, and biophysical.",
+          "check_queries": [
+            "KI Beobachtungsfehler Korrektur Citizen Science",
+            "Personalisiertes Training Schmetterlingszählung"
+          ]
+        },
+        {
+          "id": "C20",
+          "idea": "An 'ecological storytelling' app. Instead of just numbers, it continuously generates a narrative of the transect's ecosystem based on real-time data, interweaving butterfly sightings with plant phenology, weather changes, and micro-interactions. This narrative adapts in real-time, like a cuttlefish's communication, making the abstract data immediately meaningful and emotionally engaging.",
+          "typical_probability": 0.08,
+          "friction_point": "Frame A aims for abstract, aggregate, long-term scientific understanding; Frame B aims for immediate, individual survival and interaction.",
+          "check_queries": [
+            "KI Ökosystem Storytelling Echtzeit",
+            "Narrative Datenvisualisierung Naturbeobachtung"
+          ]
+        }
+      ],
+      "shortlist": [
+        "C2",
+        "C3",
+        "C8",
+        "C11",
+        "C18"
+      ]
+    },
+    "result": {
+      "survivors": [
+        {
+          "candidate_id": "C18",
+          "rank": 1,
+          "idea": "A system that uses a combination of visual and auditory AI (detecting wingbeats or subtle plant vibrations) to identify 'ghost butterflies' – those likely present but unseen due to camouflage or swift flight. It then visually 'paints' them onto the AR view for the observer, making the unseen visible, mirroring how cuttlefish perceive their environment in ways humans cannot.",
+          "gap": "Observers often miss camouflaged or fast-moving butterflies, leading to incomplete or inaccurate population data in transect counts.",
+          "gap_stands_alone": true,
+          "boden_type": "transformational",
+          "removed_assumption": "The assumption that the human eye is the ultimate arbiter of butterfly presence, and that unseen or camouflaged individuals cannot be detected in real-time.",
+          "who_has_problem": "Citizen scientists and researchers conducting butterfly transect counts.",
+          "why_now": "Advances in multimodal AI (visual and acoustic insect detection) combined with real-time mobile augmented reality allow for the detection and visualization of otherwise unobservable insects.",
+          "buildable": "Yes, combining insect acoustic/vibration detection with visual AI and AR overlay is technologically feasible.",
+          "evidence_urls": [
+            "https://butterfly-monitoring.net/de/bms-methods",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8850605/",
+            "https://nawi-werft.de/bausteine/ir-sensor/"
+          ]
+        },
+        {
+          "candidate_id": "C3",
+          "rank": 2,
+          "idea": "An AI that analyzes the 'mood' or 'activity level' of butterflies based on their flight patterns and interaction distances, similar to how cuttlefish communicate intent. The app then provides real-time feedback to the observer, suggesting when to pause, move slowly, or when conditions are ideal for observation, making the human observer's rhythm adaptive.",
+          "gap": "Current butterfly observation methods do not dynamically adapt to the real-time activity levels of butterflies, leading to suboptimal data collection or missed opportunities.",
+          "gap_stands_alone": true,
+          "boden_type": "exploratory",
+          "removed_assumption": "The assumption that butterfly observation is a purely human-driven, fixed-pace activity, independent of the observed animal's immediate state.",
+          "who_has_problem": "Citizen scientists and researchers following fixed transect methods.",
+          "why_now": "Advanced deep learning models can track and analyze intricate butterfly flight patterns, providing the raw data for AI to infer activity levels.",
+          "buildable": "Yes, flight pattern analysis using deep learning is established, and animal behavior recording apps exist, providing a platform for such feedback.",
+          "evidence_urls": [
+            "https://butterfly-monitoring.net/de/bms-methods",
+            "https://www.aip.org/aipp/butterflies-hover-differently-from-other-flying-organisms-thanks-to-body-pitch",
+            "https://www.behayve.com/"
+          ]
+        },
+        {
+          "candidate_id": "C8",
+          "rank": 3,
+          "idea": "A 'mimicry detector' that analyzes the visual features of a butterfly against its immediate background. It not only identifies the species but also scores its 'camouflage effectiveness' in that specific microhabitat. This gives observers immediate, personalized feedback on the subtle interactions between the butterfly and its environment, making the observation feel more like a dynamic interaction than a static count.",
+          "gap": "Current butterfly identification tools do not provide insight into how effectively a butterfly's patterns allow it to blend with its specific microhabitat, hindering a deeper understanding of ecological adaptation.",
+          "gap_stands_alone": true,
+          "boden_type": "exploratory",
+          "removed_assumption": "The assumption that visual observation is merely about identifying a species, rather than understanding its dynamic interaction with its environment through camouflage.",
+          "who_has_problem": "Citizen scientists and nature enthusiasts seeking deeper ecological insights beyond species identification.",
+          "why_now": "Advanced computer vision and deep learning models can analyze visual features in complex scenes, enabling not just identification but also contextual comparison of an organism against its immediate background.",
+          "buildable": "Yes, building on existing AI image recognition, this involves more sophisticated contextual analysis.",
+          "evidence_urls": [
+            "https://butterfly-monitoring.net/de/bms-methods"
+          ]
+        },
+        {
+          "candidate_id": "C2",
+          "rank": 4,
+          "idea": "A system that uses an array of micro-sensors (sound, IR, small visual spectrum changes) along a transect that 'mimic' the cuttlefish's distributed sensory system. It 'feels' the presence and movement of butterflies by subtle environmental shifts (like air current changes from wings, or micro-shadows) and then triggers a focused visual capture, reducing reliance on direct human visual contact.",
+          "gap": "Human-centric butterfly monitoring methods rely on direct visual contact and are prone to missing individuals or disturbing the habitat.",
+          "gap_stands_alone": true,
+          "boden_type": "combinational",
+          "removed_assumption": "The assumption that human visual observation is the primary or sole means of detecting and counting butterflies along a transect.",
+          "who_has_problem": "Citizen scientists and researchers performing butterfly transect counts.",
+          "why_now": "Miniaturized, low-power environmental sensors (especially near-infrared modulation signatures) and AI for real-time sensor data processing can detect subtle insect movements without direct human observation.",
+          "buildable": "Yes, distributed wireless sensor networks and insect-specific IR/NIR sensors are described.",
+          "evidence_urls": [
+            "https://butterfly-monitoring.net/de/bms-methods",
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC8850605/",
+            "https://nawi-werft.de/bausteine/ir-sensor/"
+          ]
+        },
+        {
+          "candidate_id": "C11",
+          "rank": 5,
+          "idea": "An app that uses predictive modeling to identify the optimal *next* step an observer should take on a transect, based on observed butterfly behavior, micro-weather patterns, and terrain, to maximize the chance of a significant sighting. This is like the cuttlefish's immediate tactical decision-making for hunting or hiding.",
+          "gap": "Butterfly observation on fixed transects often fails to adapt to dynamic environmental conditions and real-time butterfly behavior, leading to inefficient surveying.",
+          "gap_stands_alone": true,
+          "boden_type": "combinational",
+          "removed_assumption": "The assumption that butterfly transect paths must be fixed and predetermined, rather than dynamically optimized based on real-time conditions.",
+          "who_has_problem": "Citizen scientists and researchers performing butterfly transect counts.",
+          "why_now": "Predictive modeling can integrate real-time micro-weather data, terrain information, and observed butterfly behavior to dynamically suggest optimal observation paths.",
+          "buildable": "Yes, predictive modeling and dynamic pathfinding with multiple data inputs are established in other domains.",
+          "evidence_urls": [
+            "https://butterfly-monitoring.net/de/bms-methods"
+          ]
+        }
+      ],
+      "kills": [],
+      "log_row": {
+        "anchor": "Schmetterlings-Transektzählung (BMS-Methoden)",
+        "collider": "Tintenfisch-Tarnung (Cuttlefish Camouflage)",
+        "distance": 5,
+        "candidates": 20,
+        "survivors": 5,
+        "best_gap": "Observers often miss camouflaged or fast-moving butterflies, leading to incomplete or inaccurate population data in transect counts."
+      },
+      "retro": {
+        "learned": "The searches for specific sensor capabilities (NIR modulation signatures for insects, deep learning for flight patterns) provided good evidence for the 'why now' and 'buildable' criteria, even if the direct application (e.g., mood analysis) is still nascent. Also, the memory checks about existing apps for general animal behavior recording helped delimit but not kill.",
+        "mistake": "I initially underestimated how specific the 'dicht' list needed to be to trigger a kill. The specific nuances of the ideas (e.g., 'scoring camouflage effectiveness' vs. 'identifying species') often create enough distinction.",
+        "next_time": "When evaluating 'why now' for AI-driven insights (like 'mood' or 'camouflage effectiveness'), focus on whether the underlying data capture and pattern recognition capabilities are new, even if the specific high-level inference is still a research challenge."
+      }
+    },
+    "tool_calls": [
+      {
+        "call_id": "lacunar-20260930T064824-38e1d7-t01",
+        "tool": "search",
+        "status": "ok",
+        "summary": "methoden und fehlerquellen bei der schmetterlingszählung"
+      },
+      {
+        "call_id": "lacunar-20260930T064824-38e1d7-t02",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "cuttlefi, movement"
+      },
+      {
+        "call_id": "lacunar-20260930T064824-38e1d7-t03",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "cuttlefi"
+      },
+      {
+        "call_id": "lacunar-20260930T064824-38e1d7-t04",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "activity, adaptive"
+      },
+      {
+        "call_id": "lacunar-20260930T064824-38e1d7-t05",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "activity"
+      },
+      {
+        "call_id": "lacunar-20260930T064824-38e1d7-t06",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "analyzes, backgrou"
+      },
+      {
+        "call_id": "lacunar-20260930T064824-38e1d7-t07",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "analyzes"
+      },
+      {
+        "call_id": "lacunar-20260930T064824-38e1d7-t08",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "behavior, butterfl"
+      },
+      {
+        "call_id": "lacunar-20260930T064824-38e1d7-t09",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "behavior"
+      },
+      {
+        "call_id": "lacunar-20260930T064824-38e1d7-t10",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "auditory, camoufla"
+      },
+      {
+        "call_id": "lacunar-20260930T064824-38e1d7-t11",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "auditory"
+      },
+      {
+        "call_id": "lacunar-20260930T064824-38e1d7-t12",
+        "tool": "search",
+        "status": "ok",
+        "summary": "Sensoren zur Erkennung von Schmetterlingsbewegung und Nahfeld-Erfassung; Infrarot-Sensoren für Insektenflug"
+      },
+      {
+        "call_id": "lacunar-20260930T064824-38e1d7-t13",
+        "tool": "search",
+        "status": "ok",
+        "summary": "KI-Analyse von Schmetterlingsflugmustern zur Bestimmung von Stimmung oder Aktivitätslevel; App-Empfehlungen für Tierverhaltensbeobachtung"
+      },
+      {
+        "call_id": "lacunar-20260930T064824-38e1d7-t14",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "Schmetterling Tarnung Effektivität KI, Mikrohabitat Anpassung Schmetterling"
+      },
+      {
+        "call_id": "lacunar-20260930T064824-38e1d7-t15",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "KI Optimierung Beobachtungspfad Schmetterlinge, Dynamische Routenführung Naturbeobachtung"
+      },
+      {
+        "call_id": "lacunar-20260930T064824-38e1d7-t16",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "Akustische Schmetterlingserkennung App, AR Visualisierung unsichtbarer Insekten"
+      }
+    ],
+    "accounting": {
+      "model_calls": 8,
+      "search_calls": 3,
+      "search_queries": 10,
+      "cost_usd": 0.097647
+    },
+    "log_entry": "<!-- proposed by the Lab's Lacunar agent, run lacunar-20260930T064824-38e1d7; nothing was written to Amélie -->\n| 30.09.2026 | Schmetterlings-Transektzählung (BMS-Methoden) | Tintenfisch-Tarnung (Cuttlefish Camouflage) | 5 | 20 | 5: 1. A system that uses a combination of visual and auditory AI (detecting wingbeats or subtle plant vibrations) to identify 'ghost butterflies' – those likely present but unseen due to camouflage or swift flight. It then visually 'paints' them onto the AR view for the observer, making the unseen visible, mirroring how cuttlefish perceive their environment in ways humans cannot. (transformational); 2. An AI that analyzes the 'mood' or 'activity level' of butterflies based on their flight patterns and interaction distances, similar to how cuttlefish communicate intent. The app then provides real-time feedback to the observer, suggesting when to pause, move slowly, or when conditions are ideal for observation, making the human observer's rhythm adaptive. (exploratory); 3. A 'mimicry detector' that analyzes the visual features of a butterfly against its immediate background. It not only identifies the species but also scores its 'camouflage effectiveness' in that specific microhabitat. This gives observers immediate, personalized feedback on the subtle interactions between the butterfly and its environment, making the observation feel more like a dynamic interaction than a static count. (exploratory); 4. A system that uses an array of micro-sensors (sound, IR, small visual spectrum changes) along a transect that 'mimic' the cuttlefish's distributed sensory system. It 'feels' the presence and movement of butterflies by subtle environmental shifts (like air current changes from wings, or micro-shadows) and then triggers a focused visual capture, reducing reliance on direct human visual contact. (combinational); 5. An app that uses predictive modeling to identify the optimal *next* step an observer should take on a transect, based on observed butterfly behavior, micro-weather patterns, and terrain, to maximize the chance of a significant sighting. This is like the cuttlefish's immediate tactical decision-making for hunting or hiding. (combinational) | Observers often miss camouflaged or fast-moving butterflies, leading to incomplete or inaccurate population data in transect counts. | — (not checked yet) |\n\n### Lacunar run lacunar-20260930T064824-38e1d7 — 30.09.2026 (intent: Ideen für Schmetterlinge)\n- **Learned:** The searches for specific sensor capabilities (NIR modulation signatures for insects, deep learning for flight patterns) provided good evidence for the 'why now' and 'buildable' criteria, even if the direct application (e.g., mood analysis) is still nascent. Also, the memory checks about existing apps for general animal behavior recording helped delimit but not kill.\n- **Mistake:** I initially underestimated how specific the 'dicht' list needed to be to trigger a kill. The specific nuances of the ideas (e.g., 'scoring camouflage effectiveness' vs. 'identifying species') often create enough distinction.\n- **Next time:** When evaluating 'why now' for AI-driven insights (like 'mood' or 'camouflage effectiveness'), focus on whether the underlying data capture and pattern recognition capabilities are new, even if the specific high-level inference is still a research challenge.\n",
+    "contract_version": "1.0.0"
+  },
+  "existence_check": false,
+  "contract_version": "1.0.0"
+}
