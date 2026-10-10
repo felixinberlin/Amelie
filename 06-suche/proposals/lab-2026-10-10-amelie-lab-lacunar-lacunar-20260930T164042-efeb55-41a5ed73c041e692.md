@@ -1,0 +1,532 @@
+# Proposals from plan lab-2026-10-10-amelie-lab-lacunar-lacunar-20260930T164042-efeb55-41a5ed73c041e692
+
+Packet: amelie-lab-lacunar-lacunar-20260930T164042-efeb55-41a5ed73c041e692 · Candidate: amelie-lab-lacunar-lacunar-20260930T164042-efeb55-41a5ed73c041e692
+Not applied. A human decides.
+
+- [06-suche/amelie-lab-protokoll.md] lacunar: amelie-lab-lacunar-lacunar-20260930T164042-efeb55-41a5ed73c041e692. Absicht: timber, PTR (rectangular/square steel tubing), corrugated sheets, and steel coils. spain based. Modell: gemini-2.5-flash. Existenzprüfung: nein. Alle Ideen ungeprüft. Die folgenden Angaben sind gespeicherte Modellausgaben, keine bestätigten Tatsachen. Nur grounded=true ist Evidenz; Score-Änderungen benötigen zusätzlich quote_status=verified. Quellen, fact_checks und fehlende Felder bleiben wie im Original; keine neuen Prüfungen durchgeführt.
+- [06-suche/amelie-lab-protokoll.md] Originalfeld run_id, Teil 1 (laut gespeicherter Datei):
+"lacunar-20260930T164042-efeb55"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld intent, Teil 1 (laut gespeicherter Datei):
+"timber, PTR (rectangular/square steel tubing), corrugated sheets, and steel coils. spain based"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld model, Teil 1 (laut gespeicherter Datei):
+"gemini-2.5-flash"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld created_at, Teil 1 (laut gespeicherter Datei):
+"2026-09-30T16:48:02Z"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld state_missing, Teil 1 (laut gespeicherter Datei):
+[]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld plan, Teil 1 (laut gespeicherter Datei):
+{
+  "area": "Timber, PTR (rectangular/square steel tubing), corrugated sheets, and steel coils supply chain in Spain",
+  "mode_list": [
+    "Real-time market price tracking for timber and steel in Spain",
+    "Supplier directory and contact management for construction materials in Spain",
+    "Inventory management system for industrial metals and timber products",
+    "Order placement and tracking platform for bulk material purchases",
+    "Basic quality control checklist app for incoming material deliveries",
+    "Logistics planning and route optimization for heavy material transport",
+    "Waste material management and recycling connection service",
+    "Material quantity estimation and calculation tools for construction projects",
+    "Regulatory compliance checker for Spanish building materials standards",
+    "Demand forecasting tool for specific construction materials",
+    "Online marketplace for surplus or second-hand building materials"
+  ],
+  "anchor_queries": [
+    "Manual audit procedure for timber chain of custody certification Spain",
+    "Manual quality inspection protocol rectangular steel tubing Spain",
+    "Spain construction material acceptance criteria manual verification steps"
+  ]
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld frames, Teil 1 (laut gespeicherter Datei):
+{
+  "frame_a": {
+    "name": "FSC Timber Chain of Custody Certification Audit",
+    "source_url": "https://ecochain.com/blog/fsc-timber-certification/",
+    "source_label": "Typ A: scheme without software",
+    "friction": "The manual, document-heavy, and on-site nature of the audit makes it slow, labor-intensive, and prone to human error or oversight in tracking complex supply chains.",
+    "slots": {
+      "materials": "Timber products, supply chain documents (invoices, delivery notes, certificates, internal audit records), physical forest products.",
+      "mechanics": "Systematic evaluation, document inspection, on-site verification, interviews, traceability checks, independent third-party assessment.",
+      "goals": "Ensure timber comes from sustainably managed forests, prevent illegal logging, provide transparency, build consumer trust, maintain certification status.",
+      "emotions": "Compliance pressure, trust (or lack thereof), diligence, anxiety (for audited companies), satisfaction (for certified companies/consumers), skepticism (if not rigorous).",
+      "constraints": "High cost of audits, time-consuming, requires trained auditors, relies on manual record-keeping, susceptible to fraud or data gaps, complex supply chains.",
+      "rituals_timing": "Periodic (annual/bi-annual) audits, initial assessment, corrective action follow-ups, regular internal audits."
+    }
+  },
+  "frame_b": {
+    "name": "Cuttlefish Camouflage",
+    "domain": "Biology / Animal Behavior",
+    "slots": {
+      "materials": "Chromatophores, iridophores, leucophores (pigment-containing cells in skin), light, surrounding environment (substrate, light conditions).",
+      "mechanics": "Rapid, dynamic changes in skin texture and color via neural control of specialized cells; perception of ambient light/patterns; visual feedback loop.",
+      "goals": "Blend into surroundings, hide from predators, ambush prey, communicate with other cuttlefish, deceive.",
+      "emotions": "Survival instinct, predatory drive, territoriality (implied by communication).",
+      "constraints": "Limited by biological capabilities, immediate environment, need for speed, energy expenditure.",
+      "rituals_timing": "Continuous, real-time adaptation; instantaneous response to environmental changes; no fixed schedule, purely reactive."
+    }
+  },
+  "distance": 5,
+  "friction_points": [
+    "Frame A's information is static and retrospective; Frame B's is dynamic and real-time.",
+    "Frame A relies on periodic, human-led verification; Frame B on continuous, self-regulating adaptation.",
+    "Frame A aims for long-term ethical compliance; Frame B for immediate, instinctual survival.",
+    "Frame A is constrained by human process and bureaucracy; Frame B by biological limits and energy.",
+    "Frame A involves discrete, scheduled interventions; Frame B is a continuous, reactive process."
+  ],
+  "personas": [
+    {
+      "who": "Elena, a small sawmill owner in Galicia",
+      "would_do": "She would use a system that simplifies compliance with FSC rules, makes the audit process less opaque and burdensome, and reduces the need for meticulous manual paperwork for every timber batch, especially when dealing with multiple small suppliers."
+    },
+    {
+      "who": "Javier, an independent FSC auditor",
+      "would_do": "He would use tools that make his audit more efficient and reliable, reducing the time spent traveling, manually reviewing documents, and cross-referencing data, so he can focus on high-risk areas."
+    },
+    {
+      "who": "Maria, a furniture designer in Barcelona",
+      "would_do": "She would use an app that provides more granular, verifiable information about the timber's journey and ethical sourcing, allowing her to understand and trust the certification beyond a simple label."
+    }
+  ],
+  "candidates": [
+    {
+      "id": "C1",
+      "idea": "An AI-powered \"environmental skin\" for timber batches that continuously monitors micro-environmental conditions (humidity, temperature, light exposure) and traces geo-location in real-time, flagging deviations from expected supply chain paths or storage conditions.",
+      "typical_probability": 0.005,
+      "friction_point": "Frame A's information is static and retrospective; Frame B's is dynamic and real-time.",
+      "check_queries": [
+        "Real-time environmental monitoring timber supply chain",
+        "AI deviation detection logistics wood"
+      ]
+    },
+    {
+      "id": "C2",
+      "idea": "A system that projects a \"risk heatmap\" onto physical timber stacks or logs, dynamically changing color based on the real-time probability of non-compliance issues (e.g., origin mismatches, missing documentation, unauthorized movement) derived from continuous data feeds.",
+      "typical_probability": 0.01,
+      "friction_point": "Frame A's information is static and retrospective; Frame B's is dynamic and real-time.",
+      "check_queries": [
+        "Dynamic risk visualization timber yard",
+        "AI supply chain compliance heatmap physical objects"
+      ]
+    },
+    {
+      "id": "C3",
+      "idea": "A \"sentient logbook\" AI that automatically integrates all digital and scanned physical documents related to a timber batch, cross-referencing information in real-time and highlighting discrepancies or missing links as they arise, rather than waiting for an audit.",
+      "typical_probability": 0.02,
+      "friction_point": "Frame A's information is static and retrospective; Frame B's is dynamic and real-time.",
+      "check_queries": [
+        "AI document cross-referencing timber traceability",
+        "Automated discrepancy detection supply chain documents"
+      ]
+    },
+    {
+      "id": "C4",
+      "idea": "An \"adaptive audit agent\" that uses sensor data and historical compliance patterns to dynamically adjust the frequency and focus of physical audits, sending auditors to high-risk points only when predictive models indicate an elevated probability of non-compliance.",
+      "typical_probability": 0.008,
+      "friction_point": "Frame A relies on periodic, human-led verification; Frame B on continuous, self-regulating adaptation.",
+      "check_queries": [
+        "Predictive analytics audit scheduling supply chain",
+        "AI risk-based timber audit optimization"
+      ]
+    },
+    {
+      "id": "C5",
+      "idea": "A \"supply chain mimicry engine\" that simulates the ideal flow of certified timber, then uses real-time location and sensor data to continuously compare against the ideal, highlighting any \"deviations\" that require human intervention, much like a cuttlefish adapts to its environment.",
+      "typical_probability": 0.015,
+      "friction_point": "Frame A relies on periodic, human-led verification; Frame B on continuous, self-regulating adaptation.",
+      "check_queries": [
+        "Digital twin timber supply chain compliance",
+        "AI supply chain deviation detection simulation"
+      ]
+    },
+    {
+      "id": "C6",
+      "idea": "A \"biosignature scanner\" for timber that uses advanced material analysis (e.g., isotope ratios, DNA barcoding) to instantaneously verify the geographic origin and species, bypassing reliance on paper trails for initial verification, akin to an instinctual recognition.",
+      "typical_probability": 0.003,
+      "friction_point": "Frame A aims for long-term ethical compliance; Frame B for immediate, instinctual survival.",
+      "check_queries": [
+        "Timber origin verification isotope analysis AI",
+        "DNA barcoding wood traceability real-time"
+      ]
+    },
+    {
+      "id": "C7",
+      "idea": "A \"proactive integrity alarm\" that learns typical patterns of compliant timber movement and documentation, and immediately flags any \"unnatural\" or suspicious activity (e.g., sudden route changes, unusual batch sizes, abnormal documentation upload times) as an instinctual threat response.",
+      "typical_probability": 0.007,
+      "friction_point": "Frame A aims for long-term ethical compliance; Frame B for immediate, instinctual survival.",
+      "check_queries": [
+        "AI anomaly detection timber logistics",
+        "Proactive fraud detection wood supply chain"
+      ]
+    },
+    {
+      "id": "C8",
+      "idea": "A \"digital twin of auditor cognition\" that leverages a large language model trained on audit protocols and past findings to automatically pre-process all documentation and generate a preliminary audit report, highlighting key areas for human review and reducing bureaucratic load.",
+      "typical_probability": 0.025,
+      "friction_point": "Frame A is constrained by human process and bureaucracy; Frame B by biological limits and energy.",
+      "check_queries": [
+        "AI audit report generation timber certification",
+        "LLM document analysis supply chain compliance"
+      ]
+    },
+    {
+      "id": "C9",
+      "idea": "A \"dynamic compliance ledger\" that automatically adjusts the level of required documentation and verification steps based on the real-time risk profile of a supplier or timber batch, minimizing unnecessary bureaucratic overhead when risk is low.",
+      "typical_probability": 0.012,
+      "friction_point": "Frame A is constrained by human process and bureaucracy; Frame B by biological limits and energy.",
+      "check_queries": [
+        "Adaptive compliance system timber supply chain",
+        "Real-time risk assessment reduced documentation"
+      ]
+    },
+    {
+      "id": "C10",
+      "idea": "A \"continuous certification feedback loop\" that uses blockchain for immutable record-keeping and AI for real-time analysis of all supply chain events, allowing for \"always-on\" compliance status rather than periodic audits, instantly updating the certification status as events unfold.",
+      "typical_probability": 0.009,
+      "friction_point": "Frame A involves discrete, scheduled interventions; Frame B is a continuous, reactive process.",
+      "check_queries": [
+        "Continuous timber certification blockchain AI",
+        "Real-time compliance status supply chain"
+      ]
+    },
+    {
+      "id": "C11",
+      "idea": "An \"environmental chameleon\" for timber, where each log or batch carries a unique digital tag that, when scanned, instantly displays its full environmental footprint and compliance status, dynamically updating from a central AI, making the audit process distributed and real-time.",
+      "typical_probability": 0.004,
+      "friction_point": "Frame A involves discrete, scheduled interventions; Frame B is a continuous, reactive process.",
+      "check_queries": [
+        "Digital tag timber environmental footprint",
+        "Real-time wood sustainability display scanner"
+      ]
+    },
+    {
+      "id": "C12",
+      "idea": "An \"event-triggered audit assistant\" that doesn't wait for scheduled audits but automatically flags and initiates micro-audits or requests for specific documentation whenever unusual supply chain events (e.g., sudden changes in transport, unexpected storage locations) are detected by AI.",
+      "typical_probability": 0.018,
+      "friction_point": "Frame A involves discrete, scheduled interventions; Frame B is a continuous, reactive process.",
+      "check_queries": [
+        "AI triggered micro-audits supply chain",
+        "Anomaly detection event-based compliance check"
+      ]
+    }
+  ],
+  "shortlist": [
+    "C1",
+    "C4",
+    "C6",
+    "C10",
+    "C11"
+  ]
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld result, Teil 1 (laut gespeicherter Datei):
+{
+  "survivors": [
+    {
+      "candidate_id": "C11",
+      "rank": 1,
+      "idea": "An \"environmental chameleon\" for timber, where each log or batch carries a unique digital tag that, when scanned, instantly displays its full environmental footprint and compliance status, dynamically updating from a central AI, making the audit process distributed and real-time.",
+      "gap": "The current system lacks a ubiquitous, scannable digital identity for each timber unit that dynamically displays its complete, up-to-date environmental footprint and compliance status.",
+      "gap_stands_alone": true,
+      "boden_type": "transformational",
+      "removed_assumption": "That environmental footprint and compliance information for timber is static, fragmented across documents, or only accessible via central, non-distributed audit processes.",
+      "who_has_problem": "Regulators, auditors, and consumers who need immediate, on-site, and up-to-date verification of a timber product's environmental footprint and compliance status.",
+      "why_now": "Ubiquitous digital tagging technologies (e.g., QR, NFC) are mature, AI is capable of dynamically aggregating and interpreting complex data, and widespread smartphone access enables instant scanning and display.",
+      "buildable": "Yes, digital tags and central AI systems for data aggregation are feasible, building upon existing digital traceability platforms.",
+      "evidence_urls": [
+        "https://tracextech.com/timber-traceability-systems/",
+        "https://www.toptaglio.com/en/2025/01/10/compliance-of-building-materials-obligations-and-standards/"
+      ],
+      "collider_mechanism": "A cuttlefish's chromatophores allow it to instantly change its skin pattern and color to match its surroundings, dynamically displaying its state or intent in real-time to external observers."
+    },
+    {
+      "candidate_id": "C1",
+      "rank": 2,
+      "idea": "An AI-powered \"environmental skin\" for timber batches that continuously monitors micro-environmental conditions (humidity, temperature, light exposure) and traces geo-location in real-time, flagging deviations from expected supply chain paths or storage conditions.",
+      "gap": "The current system lacks continuous, real-time monitoring of timber batch conditions and location against expected parameters, leading to delayed detection of compliance or quality issues.",
+      "gap_stands_alone": true,
+      "boden_type": "combinational",
+      "removed_assumption": "That timber compliance and quality checks are discrete, manual, or batch-based processes.",
+      "who_has_problem": "Timber companies and supply chain managers needing to ensure product quality and regulatory compliance (e.g., EUDR) by continuously tracking conditions.",
+      "why_now": "Advancements in compact, affordable environmental sensors, real-time geo-location tracking, and AI for predictive deviation detection and alerting are now widely available.",
+      "buildable": "Yes, through the integration of existing technologies such as IoT sensors, GPS, and AI-driven analytics platforms for supply chain monitoring.",
+      "evidence_urls": [
+        "https://www.lombardodier.com/insights/2024/october/tracking-timber-scientific-and.html",
+        "https://www.scionresearch.com/news-and-events/news/2025-news-and-media-releases/next-generation-sensors-could-transform-how-we-monitor-forest-health",
+        "https://tracextech.com/timber-traceability-systems/"
+      ],
+      "collider_mechanism": "The cuttlefish's ability to instantly and continuously adapt its appearance to its environment, reflecting dynamic changes in its surroundings."
+    }
+  ],
+  "kills": [
+    {
+      "candidate_id": "C4",
+      "reason": "The application of predictive analytics for optimizing audit scheduling in supply chains is an established and actively developed field, as evidenced by multiple search results.",
+      "failed_checks": [
+        "in_mode_or_dense"
+      ]
+    },
+    {
+      "candidate_id": "C6",
+      "reason": "Timber origin verification using isotope analysis combined with AI is an existing and commercially offered solution, indicating a crowded problem space.",
+      "failed_checks": [
+        "in_mode_or_dense"
+      ]
+    },
+    {
+      "candidate_id": "C10",
+      "reason": "The concept of a continuous certification feedback loop using blockchain and AI for real-time, 'always-on' compliance status is a direct description of current developments in timber traceability systems.",
+      "failed_checks": [
+        "in_mode_or_dense"
+      ]
+    }
+  ],
+  "log_row": {
+    "anchor": "FSC Timber Chain of Custody Certification Audit",
+    "collider": "Cuttlefish Camouflage",
+    "distance": 5,
+    "candidates": 12,
+    "survivors": 2,
+    "best_gap": "The current system lacks a ubiquitous, scannable digital identity for each timber unit that dynamically displays its complete, up-to-date environmental footprint and compliance status."
+  },
+  "retro": {
+    "learned": "The search results provided good clarity on what technologies are already being applied to timber supply chains, which helped in identifying crowded fields.",
+    "mistake": "Initially underestimated how mature some of the AI+blockchain/isotope applications were in this domain.",
+    "next_time": "Be more aggressive in killing ideas that directly match descriptions from search results, even if the phrasing is slightly different."
+  }
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld tool_calls, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "call_id": "lacunar-20260930T164042-efeb55-t01",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "corrugat"
+  },
+  {
+    "call_id": "lacunar-20260930T164042-efeb55-t02",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "sheets"
+  },
+  {
+    "call_id": "lacunar-20260930T164042-efeb55-t03",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "square"
+  },
+  {
+    "call_id": "lacunar-20260930T164042-efeb55-t04",
+    "tool": "search",
+    "status": "ok",
+    "summary": "manual audit procedure timber chain of custody certification Spain"
+  },
+  {
+    "call_id": "lacunar-20260930T164042-efeb55-t05",
+    "tool": "search",
+    "status": "ok",
+    "summary": "manual quality inspection protocol rectangular steel tubing Spain"
+  },
+  {
+    "call_id": "lacunar-20260930T164042-efeb55-t06",
+    "tool": "search",
+    "status": "ok",
+    "summary": "Spain construction material acceptance criteria manual verification steps"
+  },
+  {
+    "call_id": "lacunar-20260930T164042-efeb55-t07",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "conditio, deviatio"
+  },
+  {
+    "call_id": "lacunar-20260930T164042-efeb55-t08",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "conditio"
+  },
+  {
+    "call_id": "lacunar-20260930T164042-efeb55-t09",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "adaptive, auditors"
+  },
+  {
+    "call_id": "lacunar-20260930T164042-efeb55-t10",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "adaptive"
+  },
+  {
+    "call_id": "lacunar-20260930T164042-efeb55-t11",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "advanced, analysis"
+  },
+  {
+    "call_id": "lacunar-20260930T164042-efeb55-t12",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "advanced"
+  },
+  {
+    "call_id": "lacunar-20260930T164042-efeb55-t13",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "allowing, analysis"
+  },
+  {
+    "call_id": "lacunar-20260930T164042-efeb55-t14",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "allowing"
+  },
+  {
+    "call_id": "lacunar-20260930T164042-efeb55-t15",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "chameleo, complian"
+  },
+  {
+    "call_id": "lacunar-20260930T164042-efeb55-t16",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "chameleo"
+  },
+  {
+    "call_id": "lacunar-20260930T164042-efeb55-t17",
+    "tool": "search",
+    "status": "ok",
+    "summary": "Real-time environmental monitoring timber supply chain"
+  },
+  {
+    "call_id": "lacunar-20260930T164042-efeb55-t18",
+    "tool": "search",
+    "status": "ok",
+    "summary": "Predictive analytics audit scheduling supply chain"
+  },
+  {
+    "call_id": "lacunar-20260930T164042-efeb55-t19",
+    "tool": "search",
+    "status": "ok",
+    "summary": "Timber origin verification isotope analysis AI"
+  },
+  {
+    "call_id": "lacunar-20260930T164042-efeb55-t20",
+    "tool": "search",
+    "status": "budget_exhausted",
+    "summary": "AI for real-time timber supply chain monitoring and deviation detection"
+  },
+  {
+    "call_id": "lacunar-20260930T164042-efeb55-t21",
+    "tool": "search",
+    "status": "budget_exhausted",
+    "summary": "AI for predictive audit scheduling in supply chains"
+  },
+  {
+    "call_id": "lacunar-20260930T164042-efeb55-t22",
+    "tool": "search",
+    "status": "budget_exhausted",
+    "summary": "AI for timber origin verification using isotope analysis"
+  },
+  {
+    "call_id": "lacunar-20260930T164042-efeb55-t23",
+    "tool": "search",
+    "status": "budget_exhausted",
+    "summary": "real-time timber compliance status tracking blockchain AI"
+  },
+  {
+    "call_id": "lacunar-20260930T164042-efeb55-t24",
+    "tool": "search",
+    "status": "budget_exhausted",
+    "summary": "digital tag for timber environmental footprint and real-time sustainability display"
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld accounting, Teil 1 (laut gespeicherter Datei):
+{
+  "model_calls": 10,
+  "search_calls": 6,
+  "search_queries": 21,
+  "cost_usd": 0.083396
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld log_entry, Teil 1 (laut gespeicherter Datei):
+"<!-- proposed by the Lab's Lacunar agent, run lacunar-20260930T164042-efeb55; nothing was written to Amélie -->\n| 30.09.2026 | FSC Timber Chain of Custody Certification Audit | Cuttlefish Camouflage | 5 | 12 | 2: 1. An \"environmental chameleon\" for timber, where each log or batch carries a unique digital tag that, when scanned, instantly displays its full environmental footprint and compliance status, dynamically updating from a central AI, making the audit process distributed and real-time. (transformational); 2. An AI-powered \"environmental skin\" for timber batches that continuously monitors micro-environmental conditions (humidity, temperature, light exposure) and traces geo-location in real-time, flagging deviations from expected supply chain paths or storage conditions. (combinational) | The current system lacks a ubiquitous, scannable digital identity for each timber unit that dynamically displays its complete, up-to-date environmental footprint and compliance status. | — (not checked yet) |\n\n### Lacunar run lacunar-20260930T164042-efeb55 — 30.09.2026 (intent: timber, PTR (rectangular/square steel tubing), corrugated sheets, and steel coils. spain based)\n- **Learned:** The search results provided good clarity on what technologies are already being applied to timber supply chains, which helped in identifying crowded fields.\n- **Mistake:** Initially underestimated how mature some of the AI+blockchain/isotope applications were in this domain.\n- **Next time:** Be more aggressive in killing ideas that directly match descriptions from search results, even if the phrasing is slightly different.\n- **Prior-art leads (automatic search, for the existence check; not a verdict):**\n  - C1 (ok): Real-time environmental monitoring timber supply chain -> https://www.lombardodier.com/insights/2024/october/tracking-timber-scientific-and.html, https://tracextech.com/timber-traceability-systems/, https://www.koltiva.com/post/koltiva-closes-the-gap-toward-eudr-ready-supply-chains, https://fineeng.eu/timbeter-digital-supply-chain-management-for-timber/\n  - C4 (ok): Predictive analytics audit scheduling supply chain -> https://aurorafinancials.com/using-predictive-analytics-in-risk-based-audits/, https://www.supplywisdom.com/resources/how-predictive-analytics-enhances-supply-chain-resilience-risk-management, https://www.achilles.com/industry-insights/how-to-spot-hidden-risks-in-your-supply-chain-with-predictive-analysis/, https://speya.ai/blog/predictive-analytics-for-supplier-risk-assessment\n  - C6 (ok): Timber origin verification isotope analysis AI -> https://worldforestid.org/insights/nature-plants-peer-reviewed-papera-framework-for-tracing-timber-following-the-ukraine-invasion, https://www.iaea.org/projects/crp/f22089, https://news.mongabay.com/2024/11/brazil-researchers-boost-timber-traceability-with-new-chemical-analysis/, https://teses.usp.br/teses/disponiveis/64/64135/tde-12092025-081803/\n"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld prior_art, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "candidate_id": "C1",
+    "question": "Real-time environmental monitoring timber supply chain",
+    "status": "ok",
+    "answer": "Real-time environmental monitoring in the timber supply chain leverages various technologies to enhance transparency, ensure legality, and promote sustainability from forest to final product. This monitoring is crucial for combating illegal logging and deforestation, driven by increasing regulatory pressures such as the EU Deforestation Regulation (EUDR).\n\nKey technologies and approaches used for real-time environmental monitoring in the timber supply chain include:\n\n*   **Blockchain Technology** Blockchain-based systems, like Timber Chain and the Forest Stewardship Council's beta version, provide tamper-proof, real-time records of timber provenance. These systems track timber from its origin, recording each change of hands, geo-location, and sustainability certifications, making the full history available to subsequent buyers.\n*   **Digital Traceability Platforms** Companies are implementing digital platforms to achieve end-to-end visibility in the timber supply chain. These platforms capture structured data at each stage—from harvest to processing, manufacturing, and distribution—to ensure the origin, legality, and movement of timber are transparent and verifiable. They also generate compliance-ready documentation in real-time.\n*   **Artificial Intelligence (AI) and Computer Vision** AI-powered solutions, such as Timbeter, utilize computer vision technology to measure timber volume, count logs, and detect log diameters from photos taken with smart devices. This technology automates timber identification, reduces errors, and provides real-time data for supply chain management.\n*   **Geographic Information Systems (GIS) and GPS/GNSS-RF** GIS allows forestry technicians to visualize and analyze spatial data, creating detailed maps and tracking forest changes. GPS and Global Navigation Satellite Systems (GNSS-RF) provide precise location data for logs and truck routes, aiding in traceability, inventory management, and verifying timber legality.\n*   **Remote Sensing and Satellite Monitoring** Technologies like satellites, drones, LiDAR (Light Detection and Ranging), and Structure for Motion (SfM) photogrammetry are used for near real-time monitoring of forest health and disturbances. These tools detect changes in forest cover, such as illegal logging, clear-cutting, and fires, enabling prompt action.\n*   **Environmental Sensors** Biodegradable electronic sensors can be embedded into trees to track nutrients and provide foresters with real-time information abo",
+    "pages": [
+      "https://www.lombardodier.com/insights/2024/october/tracking-timber-scientific-and.html",
+      "https://tracextech.com/timber-traceability-systems/",
+      "https://www.koltiva.com/post/koltiva-closes-the-gap-toward-eudr-ready-supply-chains",
+      "https://fineeng.eu/timbeter-digital-supply-chain-management-for-timber/",
+      "https://www.pixoanalytics.com/use-cases/timber-tracking-throughout-the-supply-chain",
+      "https://eskuad.com/blog/technology-in-forestry-how-forestry-technicians-use-advanced-tools-for-forest-management/",
+      "https://www.mdpi.com/1999-4907/14/7/1503",
+      "https://www.un-redd.org/post/near-real-time-monitoring-crucial-tool-tackle-deforestation",
+      "https://www.scionresearch.com/news-and-events/news/2025-news-and-media-releases/next-generation-sensors-could-transform-how-we-monitor-forest-health",
+      "https://www.groundcontrol.com/markets/forestry/",
+      "https://www.mdpi.com/1999-4907/17/2/279"
+    ]
+  },
+  {
+    "candidate_id": "C4",
+    "question": "Predictive analytics audit scheduling supply chain",
+    "status": "ok",
+    "answer": "Predictive analytics plays a crucial role in optimizing audit scheduling within supply chains by enabling a shift from reactive to proactive risk management. By analyzing historical and real-time data, predictive analytics can identify potential risks and vulnerabilities, thereby informing and prioritizing audit activities.\n\nKey ways predictive analytics contributes to supply chain audit scheduling include:\n\n*   **Risk Identification and Prioritization** Predictive analytics uses historical data, statistical algorithms, and machine learning to forecast potential outcomes and identify trends that may indicate fraud, errors, or control weaknesses. This allows organizations to highlight high-risk transactions, accounts, or suppliers before issues escalate. For example, predictive models can assess supplier financial stability, operational performance, and compliance records to identify high-risk suppliers. This capability helps in prioritizing audit resources by focusing on areas with the greatest potential impact.\n*   **Proactive Risk Management** Instead of waiting for problems to occur, predictive analytics provides early warning signals on potential disruptions, allowing for timely intervention. This proactive approach helps in developing contingency plans and allocating resources effectively to mitigate potential disruptions.\n*   **Optimizing Audit Planning** By identifying patterns and forecasting potential threats, predictive analytics helps optimize audit planning. This ensures that audit activities are targeted towards areas with the highest likelihood of issues, making the audit process more efficient and impactful.\n*   **Enhanced Decision-Making** Predictive analytics transforms auditing from a retrospective exercise into a strategic tool that enhances compliance, governance, and operational decision-making. It allows businesses to make smarter, faster, and more strategic supply chain decisions by providing insights into potential risks and demand changes.\n\nOverall, predictive analytics empowers supply chain managers to anticipate future events, manage risks, and streamline operations, leading to more efficient and effective audit scheduling.",
+    "pages": [
+      "https://aurorafinancials.com/using-predictive-analytics-in-risk-based-audits/",
+      "https://www.supplywisdom.com/resources/how-predictive-analytics-enhances-supply-chain-resilience-risk-management",
+      "https://www.achilles.com/industry-insights/how-to-spot-hidden-risks-in-your-supply-chain-with-predictive-analysis/",
+      "https://speya.ai/blog/predictive-analytics-for-supplier-risk-assessment",
+      "https://icttm.org/the-role-of-predictive-analytics-in-supply-chain-risk-management/",
+      "https://www.e2open.com/blog/predictive-vs-prescriptive-analytics-supply-chain",
+      "https://medium.com/@zhonghong9998/supply-chain-optimization-improving-efficiency-with-predictive-analytics-a7a8f5673701"
+    ]
+  },
+  {
+    "candidate_id": "C6",
+    "question": "Timber origin verification isotope analysis AI",
+    "status": "ok",
+    "answer": "Timber origin verification using isotope analysis is increasingly being combined with artificial intelligence (AI) and advanced statistical modeling to enhance accuracy and combat illegal logging. This interdisciplinary approach leverages the unique chemical signatures found in wood to pinpoint its geographical source.\n\nSeveral organizations and research initiatives are at the forefront of this development:\n\n*   **World Forest ID** has introduced a framework that integrates stable isotope ratio analysis (SIRA) and trace element analysis (TEA) with AI and probabilistic modeling. This framework aims to create detailed and reliable databases of timber characteristics, enabling the precise identification of geographic origin. The statistical models developed can verify timber samples against claimed origins, helping to distinguish legitimate claims from fraudulent ones. This method can predict harvest locations within 180 to 230 kilometers of the true origin.\n*   The **International Atomic Energy Agency (IAEA)** is working on a project to establish a global database of timber stable isotope ratio data. This database will serve as a foundation for developing statistical models, such as \"isoscapes,\" which are maps of isotope distributions, to predict timber origins across different regions worldwide. The goal is to empower stable isotope laboratories globally to verify and determine the harvest locations of commercial timber products, supporting due diligence and enforcement of regulations like the European Deforestation Regulation.\n*   Researchers in **Brazil**, including those from the University of São Paulo (CENA-USP), are developing tools that utilize isotopes (forms of a chemical element with different masses) to narrow down the harvest area of wood. They are creating maps of isotope distribution in Amazonian trees, which law enforcement can use to compare with seized timber. This method is considered tamper-proof and aims to provide a robust way to combat illegal timber trade in the Amazon.\n*   Companies like **Source Certain** offer wood origin verification services that utilize SIRA and TEA, combined with expert interpretation, to verify the claimed origin of timber and wood products. This scientific approach provides defensible results to support deforestation-free claims and regulatory reporting. Similarly, **Oritain** provides forensic testing services for timber origin verification, partnering with World Forest ID to ensure responsible sourcing and ",
+    "pages": [
+      "https://worldforestid.org/insights/nature-plants-peer-reviewed-papera-framework-for-tracing-timber-following-the-ukraine-invasion",
+      "https://www.iaea.org/projects/crp/f22089",
+      "https://news.mongabay.com/2024/11/brazil-researchers-boost-timber-traceability-with-new-chemical-analysis/",
+      "https://teses.usp.br/teses/disponiveis/64/64135/tde-12092025-081803/",
+      "https://www.eurekalert.org/news-releases/1138286",
+      "https://www.sourcecertain.com/wood-and-timber-testing/",
+      "https://oritain.com/industries/timber",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11747954/",
+      "https://www.mdpi.com/1420-3049/31/7/1135",
+      "https://literatur.thuenen.de/digbib_extern/dn065203.pdf"
+    ]
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld topic_check, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "term": "corrugat",
+    "hits": []
+  },
+  {
+    "term": "sheets",
+    "hits": [
+      "[protokoll, score 0.6] **Phänologischer Knospen-Countdown** — Beobachter werden vor dem erwarteten Eintritt einer Phase benachrichtigt, damit keine Datenlücke entsteht (Gemini) — verengt",
+      "[protokoll, score 0.6] Doppelte Ausgabe „Norm-Ergebnis vs. realer Verbrauch\" (Prebound sichtbar machen) — None",
+      "[dose, score 1] ChemGefahr-Stopp / MischStop (ChemHazard Stop)",
+      "[kandidat, score 0.6] Sheet Metal Bend Allowance & K-Factor Flat Pattern Unfolder",
+      "[kandidat, score 0.6] Custom Cursive & Print Handwriting Worksheet Generator"
+    ]
+  },
+  {
+    "term": "square",
+    "hits": [
+      "[protokoll, score 1] Wet Ink — frei",
+      "[dose, score 1] Wet Ink",
+      "[log, score 1] amelie-suchplaybook.md"
+    ]
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld contract_version, Teil 1 (laut gespeicherter Datei):
+"1.2.0"
