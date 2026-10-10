@@ -1,0 +1,24 @@
+{
+  "manifest_version": 1,
+  "run_id": "amelie-lab-inversion-inversion-20261001T125634-715072-9fa80b5ab9bef391",
+  "plan_id": "lab-2026-10-10-amelie-lab-inversion-inversion-20261001T125634-715072-9fa80b5ab9bef391",
+  "engine": "review",
+  "model": "deepseek/deepseek-chat",
+  "existence_check": false,
+  "survivors": {
+    "count": 2,
+    "status": "ungeprueft"
+  },
+  "files": [
+    "06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20261001T125634-715072-9fa80b5ab9bef391.md",
+    "06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20261001T125634-715072-9fa80b5ab9bef391.inbox.json",
+    "06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20261001T125634-715072-9fa80b5ab9bef391.manifest.json"
+  ],
+  "source_ops": [],
+  "grave_proposals": 2,
+  "touches_memory": false,
+  "contracts": {
+    "inversion-record": "1.0.0"
+  },
+  "contract_version": "1.0.0"
+}
