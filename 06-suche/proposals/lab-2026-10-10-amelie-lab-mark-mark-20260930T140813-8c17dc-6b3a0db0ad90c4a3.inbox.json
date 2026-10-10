@@ -1,0 +1,634 @@
+{
+  "batch_id": "amelie-lab-mark-mark-20260930T140813-8c17dc-6b3a0db0ad90c4a3",
+  "lab_id": "amelie-lab",
+  "engine": "mark",
+  "run_id": "mark-20260930T140813-8c17dc",
+  "revision": "6b3a0db0ad90c4a3c695436ded1bb6f94c8e35b5747a7ba222771f7083b23fc1",
+  "created_at": "2026-09-30T14:12:50Z",
+  "model": "gemini-2.5-flash",
+  "intent": "Bernd will mit dem Fällen von Robinien in Brandenburg Geld verdienen",
+  "ideas": [
+    {
+      "local_id": "V2",
+      "record": {
+        "candidate_id": "V2",
+        "title": "B2B-Marktplatz für Robinienholz und Fällaufträge",
+        "tagline": "Effizienter Handel mit Robinienholz und Vergabe von Fällaufträgen in Brandenburg.",
+        "offering_kind": "b2b_saas",
+        "target_customer": "Waldbesitzer, Forstunternehmen, Sägewerke und Holzverarbeiter in Brandenburg, die mit Robinienholz handeln oder Fällaufträge vergeben/annehmen.",
+        "pain_and_compliance": "Der Marktplatz adressiert den Schmerzpunkt der mangelnden Transparenz bei Robinienholzpreisen (inferred from user intent), der aufwändigen Suche nach Anbietern und Abnehmern (inferred from user intent) sowie der komplexen Koordination von Logistik für Fällaufträge und Holzabtransport (inferred from user intent). Er ermöglicht Zeit- und Kostenersparnisse durch effizientere Prozesse. Obwohl Robinienholz als wertvoll gilt (https://www.thuenen.de/de/fachinstitute/holzforschung/service/detail-aktuelles/herkunftsbedingte-unterschiede-der-dauerhaftigkeit-von-robinienholz), ist die Robinie in Brandenburg als invasive Art eingestuft (https://brandenburg.nabu.de/umwelt-und-ressourcen/gesellschaft-politik/18524.html), was die Notwendigkeit von Fällungen als Managementmaßnahme (inferred from https://lfu.brandenburg.de/lfu/de/aufgaben/natur/artenschutz/invasive-arten/unionsliste/) verstärkt und somit ein konstantes Angebot generiert.",
+        "mvp_specification": "Ein webbasierter Marktplatz mit Kernfunktionalitäten: 1. Profile für Anbieter (Waldbesitzer, Forstunternehmen) und Abnehmer (Sägewerke, Holzverarbeiter). 2. Erstellung von detaillierten Angeboten für Robinienholz (Menge, Qualität, Dimensionen) und Ausschreibungen für Fällaufträge (Standort, Umfang, spezifische Anforderungen). 3. Such- und Filterfunktionen. 4. Integriertes Nachrichtensystem zur direkten Kommunikation. 5. Einfache Transaktionsanbahnung (z.B. Angebotsanfrage, Vertragsgenerierung). Technologiestack: Python/Django oder Node.js/Express für das Backend, React/Vue.js für das Frontend, PostgreSQL-Datenbank, Cloud-Hosting (z.B. AWS). Der Build-Ansatz konzentriert sich auf eine agile Entwicklung des Kern-Matchmaking-Algorithmus und der Kommunikationsfunktionen.",
+        "pricing_and_economics": "Das Pricing-Modell basiert auf einer transaktionsbasierten Gebühr (z.B. 2-5% des Transaktionswerts) für erfolgreich vermitteltes Robinienholz oder Fällaufträge. Zusätzlich könnten Premium-Funktionen (z.B. erweiterte Analysen, Prioritätslisten) als Abonnement angeboten werden. Die Rohmarge für ein solches SaaS-Produkt wird auf 70-80% geschätzt. Angestrebtes Initialumsatzziel: 5.000€ pro Monat innerhalb der ersten 12 Monate, basierend auf der Vermittlung von mindestens 5-10 größeren Aufträgen oder Holzlieferungen (inferred from average wood prices like 60€/FM for firewood, 2199€/m³ for Stammware, and typical project sizes).",
+        "distribution_strategy": "Direktvertrieb an Forstverwaltungen, private Waldbesitzerverbände, Sägewerke und größere Holzverarbeitungsbetriebe in Brandenburg. Online-Marketingkampagnen (SEA/SEO) für relevante Keywords wie 'Robinienholz kaufen', 'Fällaufträge Brandenburg'. Partnerschaften mit regionalen Forstämtern und Branchenverbänden zur Steigerung der Bekanntheit. Pilotprogramme mit ausgewählten Großkunden zur Generierung von Referenzen und zur Validierung des Mehrwerts.",
+        "moat_and_defensibility": "Der Marktplatz schafft einen Netzwerkeffekt: Mehr Anbieter ziehen mehr Abnehmer an und umgekehrt, was den Wert für alle Teilnehmer erhöht. Die Spezialisierung auf Robinienholz und Fällaufträge in der Region Brandenburg ermöglicht maßgeschneiderte Funktionen, die allgemeine Holzmarktplätze nicht bieten. Die Akkumulation von Preisdaten und Verfügbarkeitsinformationen für Robinienholz schafft einen Wissensvorsprung und eine hohe Markteintrittsbarriere für potenzielle Wettbewerber. Hohe Wechselkosten für Nutzer, die ihren gesamten Handel über die Plattform abwickeln.",
+        "kill_criteria": [
+          "Weniger als 5 Großkunden (Sägewerke, Forstbetriebe, große Waldbesitzer) nutzen den Marktplatz innerhalb von 12 Monaten aktiv.",
+          "Das kumulierte Transaktionsvolumen erreicht nach 18 Monaten nicht mindestens 20.000€ pro Monat.",
+          "Dominante, bestehende Holzmarktplätze integrieren spezifische Robinienholz-Funktionen und absorbieren den Markt.",
+          "Die Logistik und Abwicklung von Fällaufträgen erweist sich als zu komplex, um rein über die Plattform koordiniert zu werden und erfordert zu viel manuelle Intervention."
+        ],
+        "evidence_grade": {
+          "facts": [
+            "Die Robinie (Robinia pseudoacacia) gewinnt in Deutschland, insbesondere in Brandenburg, zunehmend an Bedeutung (https://www.thuenen.de/de/fachinstitute/holzforschung/service/detail-aktuelles/herkunftsbedingte-unterschiede-der-dauerhaftigkeit-von-robinienholz).",
+            "Brandenburg weist die größte inventarisierte Robinienfläche in Deutschland auf, mit 10.800 Hektar (https://forst.brandenburg.de/sixcms/media.php/9/Empfehlungen%20zur%20Bewirtschaftung%20der%20Robinie%20Engel%20J.pdf).",
+            "Robinienholz zeichnet sich durch hervorragende Eigenschaften wie hohe Rohdichte und biologische Dauerhaftigkeit aus (https://www.thuenen.de/de/fachinstitute/holzforschung/service/detail-aktuelles/herkunftsbedingte-unterschiede-der-dauerhaftigkeit-von-robinienholz).",
+            "Nutzungsmöglichkeiten von Robinienholz sind vielfältig: Sägeholz, Brennholz, GaLa-Bau (https://land-innovation-lausitz.de/robi/).",
+            "Robinie gilt in Brandenburg als invasive Art (https://brandenburg.nabu.de/umwelt-und-ressourcen/gesellschaft-politik/18524.html).",
+            "Preise für Robinienpfähle lagen 2012 bei 7,00 € netto pro Stück (https://forst.brandenburg.de/sixcms/media.php/9/Holzprodukte_Juli_2025.pdf).",
+            "Trockenes Brennholz aus Robinie kostet 90 € pro Schüttraummeter oder 85 € (https://www.kleinanzeigen.de/s-brandenburg/robinienholz/k0l7711).",
+            "Robinien-Brennholz (100 cm, frisch) für 60 € pro Festmeter (FM) (https://www.waldundwild.com/holz/preisliste-holz).",
+            "Robinien-Stammware (52 mm stark, ungedämpft, kammergetrocknet) kostet 2.199,00 € pro Kubikmeter (https://www.possling.de/preisliste/Bau-_und_Tischlerholz_rau%7Cgehobelt/Tischlerholz/Laubh%C3%B6lzer_europ.,_Stammware/Robinie,_Stammware/katalog/530301/galerie/1/artikel.php)."
+          ],
+          "inferences": [
+            "Die Notwendigkeit von Fällungen als Managementmaßnahme für Robinien ist aufgrund ihrer Einstufung als invasive Art gegeben (from https://lfu.brandenburg.de/lfu/de/aufgaben/natur/artenschutz/invasive-arten/unionsliste/).",
+            "Ein spezialisierter Marktplatz kann die Transparenz bei Robinienholzpreisen und die Effizienz der Handelsprozesse verbessern (from user intent pain points).",
+            "Das angestrebte Initialumsatzziel von 5.000€ pro Monat ist basierend auf den gefundenen Holzpreisen und der Annahme von 5-10 größeren Aufträgen realistisch (from https://www.waldundwild.com/holz/preisliste-holz, https://www.possling.de/preisliste/Bau-_und_Tischlerholz_rau%7Cgehobelt/Tischlerholz/Laubh%C3%B6lzer_europ.,_Stammware/Robinie,_Stammware/katalog/530301/galerie/1/artikel.php)."
+          ],
+          "open_questions": [
+            "Gibt es bereits B2B-Holzmarktplätze in Deutschland, die Transaktionsgebühren für spezifische Holzarten oder Fällaufträge erheben, und welche Höhe haben diese?",
+            "Wie hoch sind die durchschnittlichen Kosten für Fällarbeiten und Holzabtransport von Robinien in Brandenburg?",
+            "Wie groß ist das jährliche Handelsvolumen für Robinienholz in Brandenburg?"
+          ]
+        },
+        "evidence_urls": [
+          "https://www.thuenen.de/de/fachinstitute/holzforschung/service/detail-aktuelles/herkunftsbedingte-unterschiede-der-dauerhaftigkeit-von-robinienholz",
+          "https://forst.brandenburg.de/sixcms/media.php/9/Empfehlungen%20zur%20Bewirtschaftung%20der%20Robinie%20Engel%20J.pdf",
+          "https://land-innovation-lausitz.de/robi/",
+          "https://brandenburg.nabu.de/umwelt-und-ressourcen/gesellschaft-politik/18524.html",
+          "https://lfu.brandenburg.de/lfu/de/aufgaben/natur/artenschutz/invasive-arten/unionsliste/",
+          "https://forst.brandenburg.de/sixcms/media.php/9/Holzprodukte_Juli_2025.pdf",
+          "https://www.kleinanzeigen.de/s-brandenburg/robinienholz/k0l7711",
+          "https://www.waldundwild.com/holz/preisliste-holz",
+          "https://www.possling.de/preisliste/Bau-_und_Tischlerholz_rau%7Cgehobelt/Tischlerholz/Laubh%C3%B6lzer_europ.,_Stammware/Robinie,_Stammware/katalog/530301/galerie/1/artikel.php"
+        ]
+      }
+    },
+    {
+      "local_id": "V3",
+      "record": {
+        "candidate_id": "V3",
+        "title": "Software-Tool zur Planung und Compliance für invasive Robinien-Entfernung",
+        "tagline": "Rechtskonforme Planung, Dokumentation und Berichterstattung für die Bekämpfung invasiver Robinien.",
+        "offering_kind": "compliance_toolkit",
+        "target_customer": "Kommunen, Landkreise, Landesumweltämter und Naturschutzorganisationen in Brandenburg, die für das Management invasiver Arten zuständig sind.",
+        "pain_and_compliance": "Das Tool löst den Schmerzpunkt des hohen administrativen Aufwands und der Komplexität bei der Einhaltung der rechtlichen Anforderungen der EU-Verordnung über invasive gebietsfremde Arten (Verordnung Nr. 1143/2014) und des Bundesnaturschutzgesetzes (BNatSchG, § 40) (https://brandenburg.nabu.de/umwelt-und-ressourcen/gesellschaft-politik/18524.html, https://lfu.brandenburg.de/lfu/de/aufgaben/natur/artenschutz/invasive-arten/unionsliste/). Die Robinie ist in Brandenburg als invasive Art eingestuft (https://brandenburg.nabu.de/umwelt-und-ressourcen/gesellschaft-politik/18524.html), was Managementmaßnahmen erforderlich macht. Das Tool minimiert das Risiko von Non-Compliance und erleichtert den Zugang zu Fördermitteln durch standardisierte Dokumentation und Berichterstattung, was zu finanziellen Einsparungen und Einnahmen führt (inferred).",
+        "mvp_specification": "Ein webbasiertes Compliance-Toolkit mit folgenden Kernfunktionen: 1. Interaktive Checklisten basierend auf EU-Verordnung und BNatSchG, speziell für Robinienmanagement in Brandenburg. 2. Modul zur Projektplanung und -verwaltung (Standortzuweisung via GIS-Integration, Zeitpläne, Ressourcenzuordnung). 3. Upload-Funktion für Genehmigungen, Fotos und andere Nachweise. 4. Generierung von standardisierten Berichten für Behörden und Fördermittelgeber. 5. Benutzerverwaltung mit Rollen und Berechtigungen. Technologiestack: Ruby on Rails oder .NET Core für das Backend, Angular/Vue.js für das Frontend, PostGIS-Datenbank für räumliche Daten, Cloud-Hosting. Der Build-Ansatz fokussiert auf die schnelle Implementierung der Kern-Compliance-Logik für Brandenburg und Robinien.",
+        "pricing_and_economics": "Das Pricing-Modell ist ein abonnementbasiertes SaaS-Modell, gestaffelt nach der Anzahl der Nutzer, der verwalteten Projekte oder der Größe der verwalteten Fläche. Angesichts öffentlicher Budgets für Compliance-Software wird ein Preis von 500-2.000€ pro Monat und Kunde als realistisch erachtet (inferred from venture memory for compliance tools). Bei 5-10 initialen Kunden in Brandenburg wird ein Initialumsatz von 2.500€ - 20.000€ pro Monat angestrebt. Die Rohmarge für ein solches SaaS-Produkt wird auf 70-85% geschätzt.",
+        "distribution_strategy": "Direktvertrieb an die Umweltämter der Kommunen und Landkreise, Landesumweltämter (z.B. LfU Brandenburg) und Naturschutzorganisationen in Brandenburg. Aktive Teilnahme an Ausschreibungen des öffentlichen Sektors. Durchführung von Workshops und Webinaren zur Sensibilisierung und Produktdemonstration. Aufbau von Pilotprojekten mit ausgewählten Gemeinden oder Naturschutzgebieten zur Generierung von Erfolgsgeschichten und Referenzen.",
+        "moat_and_defensibility": "Die tiefe Spezialisierung auf die spezifischen rechtlichen und ökologischen Anforderungen des Robinienmanagements in Brandenburg schafft eine hohe Expertisebarriere. Die Integration mit den spezifischen Berichtsstandards und Prozessen der deutschen öffentlichen Verwaltung führt zu hohen Wechselkosten. Potenzielle Netzwerkeffekte durch die Aggregation anonymisierter Daten zu Managementerfolgen und Verbreitungsmustern von Robinien. Die Komplexität des deutschen Verwaltungsrechts und der Fördermittellandschaft ist ein starkes Hindernis für Nachahmer.",
+        "kill_criteria": [
+          "Die Beschaffungsprozesse im öffentlichen Sektor erweisen sich als zu langwierig (über 18 Monate für den ersten zahlenden Kunden) oder zu komplex.",
+          "Existierende, kostenlose oder Open-Source-Lösungen werden von der Zielgruppe als ausreichend angesehen.",
+          "Es wird kein ausreichendes Budget für spezialisierte Compliance-Software in den Zielorganisationen bereitgestellt.",
+          "Erhebliche Änderungen im rechtlichen Rahmen für invasive Arten erfordern eine komplette Neuentwicklung des Tools."
+        ],
+        "evidence_grade": {
+          "facts": [
+            "Die rechtlichen Grundlagen für den Umgang mit invasiven Arten basieren auf der EU-Verordnung über invasive gebietsfremde Arten, die durch das 'Gesetz über die Prävention und das Management invasiver gebietsfremder Arten' in deutsches Recht überführt wurde (https://brandenburg.nabu.de/umwelt-und-ressourcen/gesellschaft-politik/18524.html).",
+            "Diese ergänzt Regelungen im Bundesnaturschutzgesetz (BNatSchG) (§ 40 'Nichtheimische, gebietsfremde und invasive Arten') (https://brandenburg.nabu.de/umwelt-und-ressourcen/gesellschaft-politik/18524.html).",
+            "Die Robinie wird in Brandenburg als eine Art eingeschätzt, die die heimische Biodiversität gefährdet (https://brandenburg.nabu.de/umwelt-und-ressourcen/gesellschaft-politik/18524.html).",
+            "Die EU-Verordnung Nr. 1143/2014 führt eine 'Unionsliste' von invasiven Arten, die Beschränkungen unterliegen (https://lfu.brandenburg.de/lfu/de/aufgaben/natur/artenschutz/invasive-arten/unionsliste/).",
+            "Management- und Maßnahmenblätter für diese Arten liegen in der Verantwortung der Bundesländer (https://lfu.brandenburg.de/lfu/de/aufgaben/natur/artenschutz/invasive-arten/unionsliste/).",
+            "Es gab Förderprojekte zum Invasivitätspotenzial der Robinie in Brandenburg (InvaRo) (https://www.hu-berlin.de/forschung-lehre/forschungsinformationssystem/projekt-details/bewertung-des-invasivitaetspotenzials-der-robinie-robinia-pseudoacacia-in-brandenburg-invaro)."
+          ],
+          "inferences": [
+            "Die Komplexität der rechtlichen Anforderungen und die Notwendigkeit von Managementmaßnahmen für Robinien erzeugen einen starken Bedarf an Compliance-Tools im öffentlichen Sektor (from https://brandenburg.nabu.de/umwelt-und-ressourcen/gesellschaft-politik/18524.html, https://lfu.brandenburg.de/lfu/de/aufgaben/natur/artenschutz/invasive-arten/unionsliste/).",
+            "Die Erleichterung des Zugangs zu Fördermitteln durch standardisierte Dokumentation bietet einen finanziellen Anreiz für die Nutzung des Tools (from user intent pain points).",
+            "Ein Initialumsatz von 2.500€ - 20.000€ pro Monat ist im öffentlichen Sektor für Compliance-Software bei 5-10 Kunden realistisch (from venture memory)."
+          ],
+          "open_questions": [
+            "Welche spezifischen Budgets sind bei Kommunen, Landkreisen und Landesumweltämtern in Brandenburg für Compliance-Software im Bereich Naturschutz/invasive Arten vorhanden?",
+            "Gibt es bereits vergleichbare Compliance-Software-Lösungen für invasive Arten in Deutschland, und wie sind deren Preismodelle?",
+            "Wie lang sind die durchschnittlichen Beschaffungszyklen für Software im öffentlichen Sektor Brandenburgs?"
+          ]
+        },
+        "evidence_urls": [
+          "https://brandenburg.nabu.de/umwelt-und-ressourcen/gesellschaft-politik/18524.html",
+          "https://lfu.brandenburg.de/lfu/de/aufgaben/natur/artenschutz/invasive-arten/unionsliste/",
+          "https://www.hu-berlin.de/forschung-lehre/forschungsinformationssystem/projekt-details/bewertung-des-invasivitaetspotenzials-der-robinie-robinia-pseudoacacia-in-brandenburg-invaro"
+        ]
+      }
+    }
+  ],
+  "record": {
+    "run_id": "mark-20260930T140813-8c17dc",
+    "intent": "Bernd will mit dem Fällen von Robinien in Brandenburg Geld verdienen",
+    "model": "gemini-2.5-flash",
+    "created_at": "2026-09-30T14:12:50Z",
+    "state_missing": [],
+    "plan": {
+      "theme": "Kommerzielle Verwertung von Robinienholz und Management invasiver Arten in Brandenburg",
+      "candidate_seeds": [
+        {
+          "id": "robinien-faellung-service",
+          "origin": "intent",
+          "title": "Spezialisierter Robinien-Fäll- und Verwertungsservice in Brandenburg",
+          "why_commercial": "Direkte Generierung von Einnahmen durch Dienstleistungen zur Entfernung invasiver Arten und den Verkauf des hochwertigen Holzes an gewerbliche Abnehmer."
+        },
+        {
+          "id": "robinienholz-marktplatz",
+          "origin": "intent",
+          "title": "B2B-Marktplatz für Robinienholz und Fällaufträge",
+          "why_commercial": "Schafft Effizienz in der Lieferkette, indem er Anbieter (wie Bernd) mit Abnehmern von Robinienholz und Auftraggebern für Fällungen verbindet, und ermöglicht Transaktionsgebühren oder Abonnements."
+        },
+        {
+          "id": "invasive-arten-management-toolkit",
+          "origin": "intent",
+          "title": "Software-Tool zur Planung und Compliance für invasive Robinien-Entfernung",
+          "why_commercial": "Adressiert den Schmerzpunkt der komplexen Planung, Genehmigung und Dokumentation für Waldbesitzer, Kommunen und Dienstleister, was ein SaaS-Modell ermöglicht."
+        }
+      ],
+      "commercial_angles": [
+        "Productized Service",
+        "B2B SaaS",
+        "Compliance Toolkit",
+        "Data Product"
+      ],
+      "market_queries": [
+        "Marktgröße und Wertschöpfungskette für Robinienholz in Deutschland oder Brandenburg",
+        "Fördermittel und rechtliche Rahmenbedingungen für die Bekämpfung invasiver Robinien in Brandenburg",
+        "Anbieter und Preise für die Entfernung invasiver Arten oder Robinien in Brandenburg"
+      ],
+      "operators": [
+        "decompose",
+        "relate",
+        "gap",
+        "hypothesis",
+        "build_project",
+        "next_action"
+      ],
+      "entities": [
+        {
+          "name": "Robinie",
+          "kind": "concept",
+          "source_hint": "user intent"
+        },
+        {
+          "name": "Invasive Arten",
+          "kind": "concept",
+          "source_hint": "problem decomposition"
+        },
+        {
+          "name": "Brandenburg",
+          "kind": "place",
+          "source_hint": "user intent"
+        },
+        {
+          "name": "Waldbesitzer",
+          "kind": "role",
+          "source_hint": "problem decomposition"
+        },
+        {
+          "name": "Kommunen",
+          "kind": "role",
+          "source_hint": "problem decomposition"
+        },
+        {
+          "name": "Naturschutzbehörden",
+          "kind": "role",
+          "source_hint": "problem decomposition"
+        },
+        {
+          "name": "Forstunternehmen",
+          "kind": "company",
+          "source_hint": "problem decomposition"
+        },
+        {
+          "name": "Sägewerke",
+          "kind": "company",
+          "source_hint": "problem decomposition"
+        },
+        {
+          "name": "Holzverarbeiter",
+          "kind": "company",
+          "source_hint": "problem decomposition"
+        },
+        {
+          "name": "Bundesnaturschutzgesetz",
+          "kind": "regulation",
+          "source_hint": "problem decomposition"
+        },
+        {
+          "name": "Landesnaturschutzgesetze Brandenburg",
+          "kind": "regulation",
+          "source_hint": "problem decomposition"
+        },
+        {
+          "name": "GIS (Geographic Information System)",
+          "kind": "technology",
+          "source_hint": "commercial angle (Data Product)"
+        }
+      ]
+    },
+    "audit": {
+      "candidates": [
+        {
+          "id": "V1",
+          "title": "Spezialisierter Robinien-Fäll- und Verwertungsservice in Brandenburg",
+          "offering_kind": "productized_service",
+          "vector_pain_wtp": "Waldbesitzer, Kommunen und Naturschutzorganisationen zahlen, um invasive Robinien gesetzeskonform zu entfernen (Vermeidung von Bußgeldern, Zugang zu Fördermitteln) und gleichzeitig das gewonnene Holz wirtschaftlich zu verwerten. Der Service löst die Probleme der schwierigen Fällung, der Verhinderung von Stockausschlag und der Vermarktung des Holzes.",
+          "vector_time_to_ship": "Moderat. Erfordert den Aufbau eines Teams mit spezialisierten Fähigkeiten (Fällung, Stubbenfräsen) und die Anschaffung oder Anmietung von Spezialgeräten. Logistik für Holztransport und potenzielle Vorverarbeitung muss etabliert werden.",
+          "vector_distribution": "Direktansprache von Forstämtern, Kommunen, Naturschutzorganisationen und privaten Waldbesitzern. Positionierung als qualifizierter Dienstleister für geförderte Maßnahmen. Online-Präsenz und lokale Suchmaschinenoptimierung für 'Robinienentfernung Brandenburg'.",
+          "vector_monetization": "Projektbasierte Pauschalpreise für Fäll- und Rodungsarbeiten, eventuell kombiniert mit einer Umsatzbeteiligung am verwerteten Holz oder Stundensätzen für spezielle Leistungen.",
+          "vector_defensibility": "Spezialisiertes Fachwissen im Umgang mit Robinien (Fälltechniken, Verhinderung von Stockausschlag), lokale Reputation und Netzwerk in Brandenburg, integrierter Service von Fällung bis Verwertung schafft Workflow-Integration.",
+          "market_size_signal": "In Brandenburg gibt es 10.800 Hektar inventarisierte Robinienfläche, wovon 8.953 Hektar den Oberbestand bilden (2009-2018). Etwa zwei Drittel der Anbaufläche in Deutschland entfallen auf Brandenburg. Viele dieser Bestände sind überaltert und pflegebedürftig. Die Robinie gilt als invasive Art, deren Bekämpfung in Brandenburg durch die EU-Verordnung 1143/2014 und das BNatSchG geregelt ist und durch Fördermittel unterstützt wird.",
+          "market_size_tag": "fact",
+          "market_size_source_url": "https://forst.brandenburg.de/sixcms/media.php/9/Empfehlungen%20zur%20Bewirtschaftung%20der%20Robinie%20Engel%20J.pdf",
+          "competitors": [
+            "Baumpflegeunternehmen | incumbent | https://www.baumpflegeportal.de/baumrecht/fragen_baumfaellung_berlin_brandenburg/",
+            "Spezialisierte Dienstleister für Stubbenfräsen wie \"Baumgestalten\" | direct | https://www.baumgestalten-stubbenfraesen.de/",
+            "Lokale Forstbetriebe / allgemeine Holzfällerdienste | incumbent"
+          ],
+          "moat_network_effects": "weak",
+          "moat_switching_costs": "moderate",
+          "moat_scale_economies": "moderate",
+          "moat_intangible_assets": "moderate",
+          "check_queries": [
+            "Preise für Robinienfällung und Stubbenfräsen in Brandenburg",
+            "Konditionen und Anforderungen für Fördermittel zur invasiven Artenbekämpfung Brandenburg"
+          ]
+        },
+        {
+          "id": "V2",
+          "title": "B2B-Marktplatz für Robinienholz und Fällaufträge",
+          "offering_kind": "b2b_saas",
+          "vector_pain_wtp": "Waldbesitzer, Forstunternehmen, Sägewerke und Holzverarbeiter zahlen für den effizienten Handel mit Robinienholz und die Vergabe/Akquise von Fällaufträgen. Der Marktplatz löst die Schmerzpunkte der mangelnden Transparenz bei Preisen, der aufwändigen Suche nach Anbietern/Abnehmern und der Koordination von Logistik, wodurch Zeit und Kosten gespart werden.",
+          "vector_time_to_ship": "Moderat bis hoch. Erfordert die Entwicklung einer Plattform mit Matching-Algorithmen, Transaktionsabwicklung und potenzieller Logistikintegration. Der Aufbau von Liquidität auf beiden Marktseiten (Anbieter und Nachfrager) ist zeitintensiv.",
+          "vector_distribution": "Direktansprache von Forstgenossenschaften, Sägewerken, Holzverarbeitern, GaLa-Bau-Unternehmen und Bio-Raffinerien. Präsenz auf Fachmessen und Branchenveranstaltungen. Suchmaschinenoptimierung für 'Robinienholz kaufen' oder 'Fällaufträge Brandenburg'.",
+          "vector_monetization": "Transaktionsbasierte Gebühren (Prozentsatz des Verkaufspreises) oder Abonnementmodelle für Premium-Funktionen (z.B. erweiterte Analysen, bevorzugte Listungen, Lead-Generierung für Fällservices).",
+          "vector_defensibility": "Starke Netzwerkeffekte (mehr Käufer ziehen mehr Verkäufer an und umgekehrt), proprietäre Daten zu Angebot und Nachfrage von Robinienholz, potenzielle Workflow-Integration in Beschaffungs- und Vertriebsprozesse der Nutzer.",
+          "market_size_signal": "Brandenburg verfügt über 10.800 Hektar Robinienflächen (2009-2018). Robinienholz hat eine hohe Rohdichte (ca. 780 kg/m³) und Dauerhaftigkeit und findet Absatz als Sägeholz, Brennholz und im GaLa-Bau. Das Projekt \"Robi\" erforscht zudem die industrielle Nutzung von Extraktstoffen. Der Holz- und Holzprodukte-Markt ist global signifikant, mit relevanten Branchen wie Herstellung von Holzwerkstoffen und Großhandel mit Holz.",
+          "market_size_tag": "fact",
+          "market_size_source_url": "https://forst.brandenburg.de/sixcms/media.php/9/Empfehlungen%20zur%20Bewirtschaftung%20der%20Robinie%20Engel%20J.pdf",
+          "competitors": [
+            "Bestehende allgemeine Holzmarktplätze (z.B. TimberOnline, lokale Forstgenossenschaften) | adjacent",
+            "Direkte Verkaufswege zwischen Waldbesitzern und Holzkäufern | incumbent",
+            "Lokale Kleinanzeigen / informelle Netzwerke | incumbent"
+          ],
+          "moat_network_effects": "strong",
+          "moat_switching_costs": "moderate",
+          "moat_scale_economies": "strong",
+          "moat_intangible_assets": "moderate",
+          "check_queries": [
+            "Preise und Transaktionsgebühren auf B2B-Holzmarktplätzen in Deutschland"
+          ]
+        },
+        {
+          "id": "V3",
+          "title": "Software-Tool zur Planung und Compliance für invasive Robinien-Entfernung",
+          "offering_kind": "compliance_toolkit",
+          "vector_pain_wtp": "Kommunen, Landkreise, Landesumweltämter und Naturschutzorganisationen zahlen, um die komplexen rechtlichen Anforderungen der EU-Verordnung zu invasiven Arten und des BNatSchG zu erfüllen. Das Tool reduziert den administrativen Aufwand, minimiert das Risiko von Non-Compliance und erleichtert den Zugang zu Fördermitteln durch standardisierte Dokumentation und Berichterstattung.",
+          "vector_time_to_ship": "Moderat. Erfordert ein tiefes Verständnis der rechtlichen Rahmenbedingungen und behördlichen Prozesse. Ein MVP kann als Dokumentations- und Berichtstool schnell entwickelt werden, erweiterte Planungs- und Ressourcenmanagementfunktionen erhöhen die Komplexität.",
+          "vector_distribution": "Direktvertrieb an öffentliche Verwaltungen (Kommunen, Landkreise, Landesbehörden) und Naturschutzorganisationen. Partnerschaften mit Umweltberatungsunternehmen. Teilnahme an relevanten Fachkonferenzen und Workshops für den öffentlichen Sektor.",
+          "vector_monetization": "SaaS-Abonnementmodell, gestaffelt nach Anzahl der Nutzer, verwalteter Fläche oder Projekte. Potenzielle Zusatzmodule für spezifische Berichtsstandards oder erweiterte Funktionen.",
+          "vector_defensibility": "Tiefe Integration in die administrativen Workflows des öffentlichen Sektors, proprietäres Wissen über komplexe rechtliche und ökologische Anforderungen, die in der Software abgebildet sind (deterministische Logik), potenzielle Standardisierung für den Datenaustausch zwischen Behörden.",
+          "market_size_signal": "Die Bekämpfung invasiver Arten, darunter die Robinie, ist durch die EU-Verordnung 1143/2014 und das deutsche Bundesnaturschutzgesetz (§ 40) verpflichtend. In Brandenburg ist die Robinie als invasive Art eingestuft. Dies betrifft alle Kommunen, Landkreise und Landesbehörden, die mit Naturschutz und Forstwirtschaft befasst sind. Fördermittel unterstützen diese Maßnahmen.",
+          "market_size_tag": "fact",
+          "market_size_source_url": "https://eur-lex.europa.eu/DE/legal-content/summary/combating-invasive-species.html",
+          "competitors": [
+            "iMapInvasives | direct | https://www.natureserve.org/products/imapinvasives",
+            "Manuelle Prozesse (Tabellenkalkulationen, Papierformulare) | incumbent",
+            "Generische Projektmanagement-Software (z.B. Jira, Asana) | adjacent"
+          ],
+          "moat_network_effects": "moderate",
+          "moat_switching_costs": "strong",
+          "moat_scale_economies": "weak",
+          "moat_intangible_assets": "strong",
+          "check_queries": [
+            "Kosten für Compliance-Software im öffentlichen Sektor Deutschland"
+          ]
+        }
+      ],
+      "shortlist": [
+        "V2",
+        "V3"
+      ],
+      "kills": [
+        {
+          "candidate_id": "V1",
+          "reason": "Die Idee eines spezialisierten Fäll- und Verwertungsservice erfordert erhebliche physische Infrastruktur, Personal und Logistik, was das Investitionsrisiko und die Komplexität für ein Venture Lab stark erhöht. Dies widerspricht früheren Erkenntnissen aus 'Commercial Graves' bezüglich ähnlicher physischer Dienstleistungsmodelle.",
+          "failed_vectors": [
+            "time_to_ship",
+            "defensibility"
+          ]
+        }
+      ]
+    },
+    "result": {
+      "opportunities": [
+        {
+          "candidate_id": "V2",
+          "title": "B2B-Marktplatz für Robinienholz und Fällaufträge",
+          "tagline": "Effizienter Handel mit Robinienholz und Vergabe von Fällaufträgen in Brandenburg.",
+          "offering_kind": "b2b_saas",
+          "target_customer": "Waldbesitzer, Forstunternehmen, Sägewerke und Holzverarbeiter in Brandenburg, die mit Robinienholz handeln oder Fällaufträge vergeben/annehmen.",
+          "pain_and_compliance": "Der Marktplatz adressiert den Schmerzpunkt der mangelnden Transparenz bei Robinienholzpreisen (inferred from user intent), der aufwändigen Suche nach Anbietern und Abnehmern (inferred from user intent) sowie der komplexen Koordination von Logistik für Fällaufträge und Holzabtransport (inferred from user intent). Er ermöglicht Zeit- und Kostenersparnisse durch effizientere Prozesse. Obwohl Robinienholz als wertvoll gilt (https://www.thuenen.de/de/fachinstitute/holzforschung/service/detail-aktuelles/herkunftsbedingte-unterschiede-der-dauerhaftigkeit-von-robinienholz), ist die Robinie in Brandenburg als invasive Art eingestuft (https://brandenburg.nabu.de/umwelt-und-ressourcen/gesellschaft-politik/18524.html), was die Notwendigkeit von Fällungen als Managementmaßnahme (inferred from https://lfu.brandenburg.de/lfu/de/aufgaben/natur/artenschutz/invasive-arten/unionsliste/) verstärkt und somit ein konstantes Angebot generiert.",
+          "mvp_specification": "Ein webbasierter Marktplatz mit Kernfunktionalitäten: 1. Profile für Anbieter (Waldbesitzer, Forstunternehmen) und Abnehmer (Sägewerke, Holzverarbeiter). 2. Erstellung von detaillierten Angeboten für Robinienholz (Menge, Qualität, Dimensionen) und Ausschreibungen für Fällaufträge (Standort, Umfang, spezifische Anforderungen). 3. Such- und Filterfunktionen. 4. Integriertes Nachrichtensystem zur direkten Kommunikation. 5. Einfache Transaktionsanbahnung (z.B. Angebotsanfrage, Vertragsgenerierung). Technologiestack: Python/Django oder Node.js/Express für das Backend, React/Vue.js für das Frontend, PostgreSQL-Datenbank, Cloud-Hosting (z.B. AWS). Der Build-Ansatz konzentriert sich auf eine agile Entwicklung des Kern-Matchmaking-Algorithmus und der Kommunikationsfunktionen.",
+          "pricing_and_economics": "Das Pricing-Modell basiert auf einer transaktionsbasierten Gebühr (z.B. 2-5% des Transaktionswerts) für erfolgreich vermitteltes Robinienholz oder Fällaufträge. Zusätzlich könnten Premium-Funktionen (z.B. erweiterte Analysen, Prioritätslisten) als Abonnement angeboten werden. Die Rohmarge für ein solches SaaS-Produkt wird auf 70-80% geschätzt. Angestrebtes Initialumsatzziel: 5.000€ pro Monat innerhalb der ersten 12 Monate, basierend auf der Vermittlung von mindestens 5-10 größeren Aufträgen oder Holzlieferungen (inferred from average wood prices like 60€/FM for firewood, 2199€/m³ for Stammware, and typical project sizes).",
+          "distribution_strategy": "Direktvertrieb an Forstverwaltungen, private Waldbesitzerverbände, Sägewerke und größere Holzverarbeitungsbetriebe in Brandenburg. Online-Marketingkampagnen (SEA/SEO) für relevante Keywords wie 'Robinienholz kaufen', 'Fällaufträge Brandenburg'. Partnerschaften mit regionalen Forstämtern und Branchenverbänden zur Steigerung der Bekanntheit. Pilotprogramme mit ausgewählten Großkunden zur Generierung von Referenzen und zur Validierung des Mehrwerts.",
+          "moat_and_defensibility": "Der Marktplatz schafft einen Netzwerkeffekt: Mehr Anbieter ziehen mehr Abnehmer an und umgekehrt, was den Wert für alle Teilnehmer erhöht. Die Spezialisierung auf Robinienholz und Fällaufträge in der Region Brandenburg ermöglicht maßgeschneiderte Funktionen, die allgemeine Holzmarktplätze nicht bieten. Die Akkumulation von Preisdaten und Verfügbarkeitsinformationen für Robinienholz schafft einen Wissensvorsprung und eine hohe Markteintrittsbarriere für potenzielle Wettbewerber. Hohe Wechselkosten für Nutzer, die ihren gesamten Handel über die Plattform abwickeln.",
+          "kill_criteria": [
+            "Weniger als 5 Großkunden (Sägewerke, Forstbetriebe, große Waldbesitzer) nutzen den Marktplatz innerhalb von 12 Monaten aktiv.",
+            "Das kumulierte Transaktionsvolumen erreicht nach 18 Monaten nicht mindestens 20.000€ pro Monat.",
+            "Dominante, bestehende Holzmarktplätze integrieren spezifische Robinienholz-Funktionen und absorbieren den Markt.",
+            "Die Logistik und Abwicklung von Fällaufträgen erweist sich als zu komplex, um rein über die Plattform koordiniert zu werden und erfordert zu viel manuelle Intervention."
+          ],
+          "evidence_grade": {
+            "facts": [
+              "Die Robinie (Robinia pseudoacacia) gewinnt in Deutschland, insbesondere in Brandenburg, zunehmend an Bedeutung (https://www.thuenen.de/de/fachinstitute/holzforschung/service/detail-aktuelles/herkunftsbedingte-unterschiede-der-dauerhaftigkeit-von-robinienholz).",
+              "Brandenburg weist die größte inventarisierte Robinienfläche in Deutschland auf, mit 10.800 Hektar (https://forst.brandenburg.de/sixcms/media.php/9/Empfehlungen%20zur%20Bewirtschaftung%20der%20Robinie%20Engel%20J.pdf).",
+              "Robinienholz zeichnet sich durch hervorragende Eigenschaften wie hohe Rohdichte und biologische Dauerhaftigkeit aus (https://www.thuenen.de/de/fachinstitute/holzforschung/service/detail-aktuelles/herkunftsbedingte-unterschiede-der-dauerhaftigkeit-von-robinienholz).",
+              "Nutzungsmöglichkeiten von Robinienholz sind vielfältig: Sägeholz, Brennholz, GaLa-Bau (https://land-innovation-lausitz.de/robi/).",
+              "Robinie gilt in Brandenburg als invasive Art (https://brandenburg.nabu.de/umwelt-und-ressourcen/gesellschaft-politik/18524.html).",
+              "Preise für Robinienpfähle lagen 2012 bei 7,00 € netto pro Stück (https://forst.brandenburg.de/sixcms/media.php/9/Holzprodukte_Juli_2025.pdf).",
+              "Trockenes Brennholz aus Robinie kostet 90 € pro Schüttraummeter oder 85 € (https://www.kleinanzeigen.de/s-brandenburg/robinienholz/k0l7711).",
+              "Robinien-Brennholz (100 cm, frisch) für 60 € pro Festmeter (FM) (https://www.waldundwild.com/holz/preisliste-holz).",
+              "Robinien-Stammware (52 mm stark, ungedämpft, kammergetrocknet) kostet 2.199,00 € pro Kubikmeter (https://www.possling.de/preisliste/Bau-_und_Tischlerholz_rau%7Cgehobelt/Tischlerholz/Laubh%C3%B6lzer_europ.,_Stammware/Robinie,_Stammware/katalog/530301/galerie/1/artikel.php)."
+            ],
+            "inferences": [
+              "Die Notwendigkeit von Fällungen als Managementmaßnahme für Robinien ist aufgrund ihrer Einstufung als invasive Art gegeben (from https://lfu.brandenburg.de/lfu/de/aufgaben/natur/artenschutz/invasive-arten/unionsliste/).",
+              "Ein spezialisierter Marktplatz kann die Transparenz bei Robinienholzpreisen und die Effizienz der Handelsprozesse verbessern (from user intent pain points).",
+              "Das angestrebte Initialumsatzziel von 5.000€ pro Monat ist basierend auf den gefundenen Holzpreisen und der Annahme von 5-10 größeren Aufträgen realistisch (from https://www.waldundwild.com/holz/preisliste-holz, https://www.possling.de/preisliste/Bau-_und_Tischlerholz_rau%7Cgehobelt/Tischlerholz/Laubh%C3%B6lzer_europ.,_Stammware/Robinie,_Stammware/katalog/530301/galerie/1/artikel.php)."
+            ],
+            "open_questions": [
+              "Gibt es bereits B2B-Holzmarktplätze in Deutschland, die Transaktionsgebühren für spezifische Holzarten oder Fällaufträge erheben, und welche Höhe haben diese?",
+              "Wie hoch sind die durchschnittlichen Kosten für Fällarbeiten und Holzabtransport von Robinien in Brandenburg?",
+              "Wie groß ist das jährliche Handelsvolumen für Robinienholz in Brandenburg?"
+            ]
+          },
+          "evidence_urls": [
+            "https://www.thuenen.de/de/fachinstitute/holzforschung/service/detail-aktuelles/herkunftsbedingte-unterschiede-der-dauerhaftigkeit-von-robinienholz",
+            "https://forst.brandenburg.de/sixcms/media.php/9/Empfehlungen%20zur%20Bewirtschaftung%20der%20Robinie%20Engel%20J.pdf",
+            "https://land-innovation-lausitz.de/robi/",
+            "https://brandenburg.nabu.de/umwelt-und-ressourcen/gesellschaft-politik/18524.html",
+            "https://lfu.brandenburg.de/lfu/de/aufgaben/natur/artenschutz/invasive-arten/unionsliste/",
+            "https://forst.brandenburg.de/sixcms/media.php/9/Holzprodukte_Juli_2025.pdf",
+            "https://www.kleinanzeigen.de/s-brandenburg/robinienholz/k0l7711",
+            "https://www.waldundwild.com/holz/preisliste-holz",
+            "https://www.possling.de/preisliste/Bau-_und_Tischlerholz_rau%7Cgehobelt/Tischlerholz/Laubh%C3%B6lzer_europ.,_Stammware/Robinie,_Stammware/katalog/530301/galerie/1/artikel.php"
+          ]
+        },
+        {
+          "candidate_id": "V3",
+          "title": "Software-Tool zur Planung und Compliance für invasive Robinien-Entfernung",
+          "tagline": "Rechtskonforme Planung, Dokumentation und Berichterstattung für die Bekämpfung invasiver Robinien.",
+          "offering_kind": "compliance_toolkit",
+          "target_customer": "Kommunen, Landkreise, Landesumweltämter und Naturschutzorganisationen in Brandenburg, die für das Management invasiver Arten zuständig sind.",
+          "pain_and_compliance": "Das Tool löst den Schmerzpunkt des hohen administrativen Aufwands und der Komplexität bei der Einhaltung der rechtlichen Anforderungen der EU-Verordnung über invasive gebietsfremde Arten (Verordnung Nr. 1143/2014) und des Bundesnaturschutzgesetzes (BNatSchG, § 40) (https://brandenburg.nabu.de/umwelt-und-ressourcen/gesellschaft-politik/18524.html, https://lfu.brandenburg.de/lfu/de/aufgaben/natur/artenschutz/invasive-arten/unionsliste/). Die Robinie ist in Brandenburg als invasive Art eingestuft (https://brandenburg.nabu.de/umwelt-und-ressourcen/gesellschaft-politik/18524.html), was Managementmaßnahmen erforderlich macht. Das Tool minimiert das Risiko von Non-Compliance und erleichtert den Zugang zu Fördermitteln durch standardisierte Dokumentation und Berichterstattung, was zu finanziellen Einsparungen und Einnahmen führt (inferred).",
+          "mvp_specification": "Ein webbasiertes Compliance-Toolkit mit folgenden Kernfunktionen: 1. Interaktive Checklisten basierend auf EU-Verordnung und BNatSchG, speziell für Robinienmanagement in Brandenburg. 2. Modul zur Projektplanung und -verwaltung (Standortzuweisung via GIS-Integration, Zeitpläne, Ressourcenzuordnung). 3. Upload-Funktion für Genehmigungen, Fotos und andere Nachweise. 4. Generierung von standardisierten Berichten für Behörden und Fördermittelgeber. 5. Benutzerverwaltung mit Rollen und Berechtigungen. Technologiestack: Ruby on Rails oder .NET Core für das Backend, Angular/Vue.js für das Frontend, PostGIS-Datenbank für räumliche Daten, Cloud-Hosting. Der Build-Ansatz fokussiert auf die schnelle Implementierung der Kern-Compliance-Logik für Brandenburg und Robinien.",
+          "pricing_and_economics": "Das Pricing-Modell ist ein abonnementbasiertes SaaS-Modell, gestaffelt nach der Anzahl der Nutzer, der verwalteten Projekte oder der Größe der verwalteten Fläche. Angesichts öffentlicher Budgets für Compliance-Software wird ein Preis von 500-2.000€ pro Monat und Kunde als realistisch erachtet (inferred from venture memory for compliance tools). Bei 5-10 initialen Kunden in Brandenburg wird ein Initialumsatz von 2.500€ - 20.000€ pro Monat angestrebt. Die Rohmarge für ein solches SaaS-Produkt wird auf 70-85% geschätzt.",
+          "distribution_strategy": "Direktvertrieb an die Umweltämter der Kommunen und Landkreise, Landesumweltämter (z.B. LfU Brandenburg) und Naturschutzorganisationen in Brandenburg. Aktive Teilnahme an Ausschreibungen des öffentlichen Sektors. Durchführung von Workshops und Webinaren zur Sensibilisierung und Produktdemonstration. Aufbau von Pilotprojekten mit ausgewählten Gemeinden oder Naturschutzgebieten zur Generierung von Erfolgsgeschichten und Referenzen.",
+          "moat_and_defensibility": "Die tiefe Spezialisierung auf die spezifischen rechtlichen und ökologischen Anforderungen des Robinienmanagements in Brandenburg schafft eine hohe Expertisebarriere. Die Integration mit den spezifischen Berichtsstandards und Prozessen der deutschen öffentlichen Verwaltung führt zu hohen Wechselkosten. Potenzielle Netzwerkeffekte durch die Aggregation anonymisierter Daten zu Managementerfolgen und Verbreitungsmustern von Robinien. Die Komplexität des deutschen Verwaltungsrechts und der Fördermittellandschaft ist ein starkes Hindernis für Nachahmer.",
+          "kill_criteria": [
+            "Die Beschaffungsprozesse im öffentlichen Sektor erweisen sich als zu langwierig (über 18 Monate für den ersten zahlenden Kunden) oder zu komplex.",
+            "Existierende, kostenlose oder Open-Source-Lösungen werden von der Zielgruppe als ausreichend angesehen.",
+            "Es wird kein ausreichendes Budget für spezialisierte Compliance-Software in den Zielorganisationen bereitgestellt.",
+            "Erhebliche Änderungen im rechtlichen Rahmen für invasive Arten erfordern eine komplette Neuentwicklung des Tools."
+          ],
+          "evidence_grade": {
+            "facts": [
+              "Die rechtlichen Grundlagen für den Umgang mit invasiven Arten basieren auf der EU-Verordnung über invasive gebietsfremde Arten, die durch das 'Gesetz über die Prävention und das Management invasiver gebietsfremder Arten' in deutsches Recht überführt wurde (https://brandenburg.nabu.de/umwelt-und-ressourcen/gesellschaft-politik/18524.html).",
+              "Diese ergänzt Regelungen im Bundesnaturschutzgesetz (BNatSchG) (§ 40 'Nichtheimische, gebietsfremde und invasive Arten') (https://brandenburg.nabu.de/umwelt-und-ressourcen/gesellschaft-politik/18524.html).",
+              "Die Robinie wird in Brandenburg als eine Art eingeschätzt, die die heimische Biodiversität gefährdet (https://brandenburg.nabu.de/umwelt-und-ressourcen/gesellschaft-politik/18524.html).",
+              "Die EU-Verordnung Nr. 1143/2014 führt eine 'Unionsliste' von invasiven Arten, die Beschränkungen unterliegen (https://lfu.brandenburg.de/lfu/de/aufgaben/natur/artenschutz/invasive-arten/unionsliste/).",
+              "Management- und Maßnahmenblätter für diese Arten liegen in der Verantwortung der Bundesländer (https://lfu.brandenburg.de/lfu/de/aufgaben/natur/artenschutz/invasive-arten/unionsliste/).",
+              "Es gab Förderprojekte zum Invasivitätspotenzial der Robinie in Brandenburg (InvaRo) (https://www.hu-berlin.de/forschung-lehre/forschungsinformationssystem/projekt-details/bewertung-des-invasivitaetspotenzials-der-robinie-robinia-pseudoacacia-in-brandenburg-invaro)."
+            ],
+            "inferences": [
+              "Die Komplexität der rechtlichen Anforderungen und die Notwendigkeit von Managementmaßnahmen für Robinien erzeugen einen starken Bedarf an Compliance-Tools im öffentlichen Sektor (from https://brandenburg.nabu.de/umwelt-und-ressourcen/gesellschaft-politik/18524.html, https://lfu.brandenburg.de/lfu/de/aufgaben/natur/artenschutz/invasive-arten/unionsliste/).",
+              "Die Erleichterung des Zugangs zu Fördermitteln durch standardisierte Dokumentation bietet einen finanziellen Anreiz für die Nutzung des Tools (from user intent pain points).",
+              "Ein Initialumsatz von 2.500€ - 20.000€ pro Monat ist im öffentlichen Sektor für Compliance-Software bei 5-10 Kunden realistisch (from venture memory)."
+            ],
+            "open_questions": [
+              "Welche spezifischen Budgets sind bei Kommunen, Landkreisen und Landesumweltämtern in Brandenburg für Compliance-Software im Bereich Naturschutz/invasive Arten vorhanden?",
+              "Gibt es bereits vergleichbare Compliance-Software-Lösungen für invasive Arten in Deutschland, und wie sind deren Preismodelle?",
+              "Wie lang sind die durchschnittlichen Beschaffungszyklen für Software im öffentlichen Sektor Brandenburgs?"
+            ]
+          },
+          "evidence_urls": [
+            "https://brandenburg.nabu.de/umwelt-und-ressourcen/gesellschaft-politik/18524.html",
+            "https://lfu.brandenburg.de/lfu/de/aufgaben/natur/artenschutz/invasive-arten/unionsliste/",
+            "https://www.hu-berlin.de/forschung-lehre/forschungsinformationssystem/projekt-details/bewertung-des-invasivitaetspotenzials-der-robinie-robinia-pseudoacacia-in-brandenburg-invaro"
+          ]
+        }
+      ],
+      "retro": {
+        "learned": "Die Robinie bietet aufgrund ihrer zwiespältigen Rolle als wertvolles Holz und invasive Art interessante, aber unterschiedliche kommerzielle Potenziale. Der Bedarf an Compliance-Tools im öffentlichen Sektor für das Management invasiver Arten ist ein starker Schmerzpunkt. Für Nischenmärkte wie Robinienholzhandel oder spezifische Compliance-Software sind direkte Markt- und Preisdaten oft schwer zu finden.",
+        "mistake": "Ich habe nicht ausreichend spezifische Suchanfragen für Transaktionsgebühren auf B2B-Holzmarktplätzen oder für die Kosten von Compliance-Software im öffentlichen Sektor in Deutschland gestellt. Dies führte zu mehreren offenen Fragen im Bereich Pricing & Economics, die mit zusätzlichen Suchanfragen hätten präzisiert werden können.",
+        "next_time": "Bei der Bewertung von Nischen-Software-Ideen, für die keine direkten Markt- oder Preisdaten existieren, sollte ich proaktiver nach verwandten Branchen oder spezifischen Anwendungsfällen suchen, die ähnliche Schmerzpunkte und Budgets aufweisen, um realistischere Preisannahmen zu treffen. Zudem sollte ich bei der Recherche der 'Checks' die direktesten und spezifischsten Suchanfragen zuerst priorisieren, auch wenn dies möglicherweise mehr Suchtokens verbraucht, um die Anzahl der 'open_questions' zu minimieren. Ich werde den Operator 'market_pricing_benchmark' einführen, der spezifisch nach Preisdaten für Nischenprodukte in verwandten Märkten sucht."
+      }
+    },
+    "tool_calls": [
+      {
+        "call_id": "mark-20260930T140813-8c17dc-t01",
+        "tool": "search",
+        "status": "ok",
+        "summary": "Marktgröße und Wertschöpfungskette für Robinienholz in Deutschland oder Brandenburg"
+      },
+      {
+        "call_id": "mark-20260930T140813-8c17dc-t02",
+        "tool": "search",
+        "status": "ok",
+        "summary": "Fördermittel und rechtliche Rahmenbedingungen für die Bekämpfung invasiver Robinien in Brandenburg"
+      },
+      {
+        "call_id": "mark-20260930T140813-8c17dc-t03",
+        "tool": "search",
+        "status": "ok",
+        "summary": "Anbieter und Preise für die Entfernung invasiver Arten oder Robinien in Brandenburg"
+      },
+      {
+        "call_id": "mark-20260930T140813-8c17dc-t04",
+        "tool": "lab_results",
+        "status": "ok",
+        "summary": "mark, robinie, brandenburg"
+      },
+      {
+        "call_id": "mark-20260930T140813-8c17dc-t05",
+        "tool": "search",
+        "status": "ok",
+        "summary": "Preise für Robinienholz in Brandenburg"
+      },
+      {
+        "call_id": "mark-20260930T140813-8c17dc-t06",
+        "tool": "search",
+        "status": "budget_exhausted",
+        "summary": "Preise für Fällarbeiten und Holzabtransport in Brandenburg"
+      },
+      {
+        "call_id": "mark-20260930T140813-8c17dc-t07",
+        "tool": "verify_quote",
+        "status": "ok",
+        "summary": "https://forst.brandenburg.de/sixcms/media.php/9/Empfehlungen%20zur%20Bewirtschaftung%20der%20Robinie%20Engel%20J.pdf"
+      },
+      {
+        "call_id": "mark-20260930T140813-8c17dc-t08",
+        "tool": "verify_quote",
+        "status": "ok",
+        "summary": "https://www.baumpflegeportal.de/baumrecht/fragen_baumfaellung_berlin_brandenburg/"
+      },
+      {
+        "call_id": "mark-20260930T140813-8c17dc-t09",
+        "tool": "verify_quote",
+        "status": "ok",
+        "summary": "https://lfu.brandenburg.de/lfu/de/aufgaben/natur/artenschutz/invasive-arten/steckbriefe/"
+      },
+      {
+        "call_id": "mark-20260930T140813-8c17dc-t10",
+        "tool": "verify_quote",
+        "status": "ok",
+        "summary": "https://www.gartenjournal.net/robinie-wurzel-entfernen"
+      }
+    ],
+    "research_log": [
+      {
+        "call_id": "mark-20260930T140813-8c17dc-t01",
+        "tool": "search",
+        "status": "ok",
+        "at": "2026-09-30T14:09:24Z",
+        "what": "Marktgröße und Wertschöpfungskette für Robinienholz in Deutschland oder Brandenburg",
+        "pages": [
+          "https://www.thuenen.de/de/fachinstitute/holzforschung/service/detail-aktuelles/herkunftsbedingte-unterschiede-der-dauerhaftigkeit-von-robinienholz",
+          "https://www.lwf.bayern.de/waldbau-bergwald/waldbau/265972/index.php",
+          "https://forst.brandenburg.de/sixcms/media.php/9/Empfehlungen%20zur%20Bewirtschaftung%20der%20Robinie%20Engel%20J.pdf",
+          "https://land-innovation-lausitz.de/robi/",
+          "https://forst.brandenburg.de/lfb/de/ueber-uns/landeskompetenzzentrum-lfe/lfe-drittmittelprojekt-robinie/",
+          "https://www.hu-berlin.de/forschung-lehre/forschungsinformationssystem/projekt-details/bewertung-des-invasivitaetspotenzials-der-robinie-robinia-pseudoacacia-in-brandenburg-invaro",
+          "https://www.fortunebusinessinsights.com/de/markt-f-r-holz-und-holzprodukte-112334",
+          "https://www.ibisworld.com/de/branchenreporte/herstellung-holzwerkstoffen/1347/",
+          "https://www.ibisworld.com/de/branchenreporte/grosshandel-mit-holz-baustoffen-sanitaerkeramik/559/"
+        ],
+        "queries_used": 3
+      },
+      {
+        "call_id": "mark-20260930T140813-8c17dc-t02",
+        "tool": "search",
+        "status": "ok",
+        "at": "2026-09-30T14:09:52Z",
+        "what": "Fördermittel und rechtliche Rahmenbedingungen für die Bekämpfung invasiver Robinien in Brandenburg",
+        "pages": [
+          "https://brandenburg.nabu.de/umwelt-und-ressourcen/gesellschaft-politik/18524.html",
+          "https://www.berlin.de/sen/uvk/natur-und-gruen/naturschutz/artenschutz/invasive-arten/beschraenkungen-und-genehmigungen/",
+          "https://lfu.brandenburg.de/lfu/de/aufgaben/natur/artenschutz/invasive-arten/unionsliste/",
+          "https://www.hu-berlin.de/forschung-lehre/forschungsinformationssystem/projekt-details/bewertung-des-invasivitaetspotenzials-der-robinie-robinia-pseudoacacia-in-brandenburg-invaro",
+          "https://forst.brandenburg.de/lfb/de/ueber-uns/landeskompetenzzentrum-lfe/lfe-drittmittelprojekt-robinie/",
+          "https://www.fnr.de/presse/pressemitteilungen/aktuelle-mitteilungen/aktuelle-nachricht/baum-des-jahres-mit-zwei-gesichtern",
+          "https://land-innovation-lausitz.de/robi/"
+        ],
+        "queries_used": 2
+      },
+      {
+        "call_id": "mark-20260930T140813-8c17dc-t03",
+        "tool": "search",
+        "status": "ok",
+        "at": "2026-09-30T14:10:18Z",
+        "what": "Anbieter und Preise für die Entfernung invasiver Arten oder Robinien in Brandenburg",
+        "pages": [
+          "https://www.baumpflegeportal.de/baumrecht/fragen_baumfaellung_berlin_brandenburg/",
+          "https://www.baumgestalten-stubbenfraesen.de/",
+          "https://lfu.brandenburg.de/lfu/de/aufgaben/natur/artenschutz/invasive-arten/steckbriefe/",
+          "https://lfu.brandenburg.de/lfu/de/aufgaben/natur/artenschutz/invasive-arten/management-und-massnahmenblaetter/",
+          "https://www.havelland.de/umwelt-landwirtschaft/umwelt/untere-naturschutzbehoerde/invasive-arten/",
+          "https://brandenburg.nabu.de/umwelt-und-ressourcen/gesellschaft-politik/18524.html",
+          "https://www.naturschutzfonds.de/",
+          "https://www.miss-minze.de/robinien-bekaempfen/",
+          "https://www.gartenjournal.net/robinie-wurzel-entfernen",
+          "https://www.landtreff.de/robinien-wie-entfernen-t124626.html"
+        ],
+        "queries_used": 3
+      },
+      {
+        "call_id": "mark-20260930T140813-8c17dc-t04",
+        "tool": "lab_results",
+        "status": "ok",
+        "at": "2026-09-30T14:10:20Z",
+        "what": "mark, robinie, brandenburg",
+        "pages": [
+          "https://www.senckenberg.de/de/pressemeldungen/invasive-arten-in-europa-kostensteigerung-um-ueber-500-prozent/",
+          "https://eur-lex.europa.eu/DE/legal-content/summary/combating-invasive-species.html",
+          "https://www.bfn.de/invasive-arten-europa",
+          "https://www.natureserve.org/products/imapinvasives",
+          "https://executesg.com/resources/blog/esg-software-pricing-2026",
+          "https://eur-lex.europa.eu/legal-content/DE/TXT/PDF/?uri=CELEX:32014R1143",
+          "https://www.bfn.de/invasive-arten-europa",
+          "https://www.lfu.bayern.de/natur/neobiota/invasive_arten/index.htm",
+          "https://executesg.com/resources/blog/esg-software-pricing-2026",
+          "https://www.robinio.de/blog/ist-robinie-eine-invasive-art",
+          "https://www.tomburg-forschung.de/wie-die-invasive-robinie-bekaempft-werden-kann-ein-spezialfall/",
+          "https://neobiota.naturschutzinformationen.nrw.de/neobiota/de/arten/pflanzen/3527/massnahmen",
+          "https://www.planta.de/blog/beste-projektmanagement-software/",
+          "https://integri.de/projektmanagement-tools-vergleichstest-praxis-kosten/",
+          "https://www.gartenmoebel-klassiker.de/robinienholz/",
+          "https://www.aresso.de/warum-ist-robinienholz-die-perfekte-wahl-fuer-gartenmoebel/",
+          "https://www.robinie-shop.de/pages/de/start.php",
+          "https://robinia24.de/pages/robinienholz",
+          "https://www.meingartenversand.de/robinienholz"
+        ]
+      },
+      {
+        "call_id": "mark-20260930T140813-8c17dc-t05",
+        "tool": "search",
+        "status": "ok",
+        "at": "2026-09-30T14:11:42Z",
+        "what": "Preise für Robinienholz in Brandenburg",
+        "pages": [
+          "https://forst.brandenburg.de/sixcms/media.php/9/Holzprodukte_Juli_2025.pdf",
+          "https://www.kleinanzeigen.de/s-brandenburg/robinienholz/k0l7711",
+          "https://www.kleinanzeigen.de/s-brandenburg/robinie-stamm/k0l7711",
+          "https://www.kleinanzeigen.de/s-brandenburg/robinien-bretter/k0l7711",
+          "https://www.waldundwild.com/holz/preisliste-holz",
+          "https://wildholzspiel.de/holzverkauf/",
+          "https://www.holzfachzentrumpotsdam.de/de/gartenholz/robinie-naturstaemme-rubric-9004.html",
+          "https://www.possling.de/preisliste/Bau-_und_Tischlerholz_rau%7Cgehobelt/Tischlerholz/Laubh%C3%B6lzer_europ.,_Stammware/Robinie,_Stammware/katalog/530301/galerie/1/artikel.php",
+          "https://www.possling.de/preisliste/Bau-_und_Tischlerholz_rau%7Cgehobelt/Tischlerholz/Laubh%C3%B6lzer_europ.%2C_Stammware/Robinie%2C_Stammware/katalog/530301/galerie/1/artikel.php"
+        ],
+        "queries_used": 3
+      },
+      {
+        "call_id": "mark-20260930T140813-8c17dc-t06",
+        "tool": "search",
+        "status": "budget_exhausted",
+        "at": "2026-09-30T14:11:47Z",
+        "what": "Preise für Fällarbeiten und Holzabtransport in Brandenburg"
+      },
+      {
+        "call_id": "mark-20260930T140813-8c17dc-t07",
+        "tool": "verify_quote",
+        "status": "ok",
+        "at": "2026-09-30T14:11:53Z",
+        "what": "https://forst.brandenburg.de/sixcms/media.php/9/Empfehlungen%20zur%20Bewirtschaftung%20der%20Robinie%20Engel%20J.pdf"
+      },
+      {
+        "call_id": "mark-20260930T140813-8c17dc-t08",
+        "tool": "verify_quote",
+        "status": "ok",
+        "at": "2026-09-30T14:11:58Z",
+        "what": "https://www.baumpflegeportal.de/baumrecht/fragen_baumfaellung_berlin_brandenburg/"
+      },
+      {
+        "call_id": "mark-20260930T140813-8c17dc-t09",
+        "tool": "verify_quote",
+        "status": "ok",
+        "at": "2026-09-30T14:12:03Z",
+        "what": "https://lfu.brandenburg.de/lfu/de/aufgaben/natur/artenschutz/invasive-arten/steckbriefe/"
+      },
+      {
+        "call_id": "mark-20260930T140813-8c17dc-t10",
+        "tool": "verify_quote",
+        "status": "ok",
+        "at": "2026-09-30T14:12:07Z",
+        "what": "https://www.gartenjournal.net/robinie-wurzel-entfernen"
+      }
+    ],
+    "accounting": {
+      "model_calls": 12,
+      "search_calls": 4,
+      "search_queries": 11,
+      "cost_usd": 0.07433
+    },
+    "opportunity_dossier": "# Commercial Opportunity: B2B-Marktplatz für Robinienholz und Fällaufträge\n\n**ID:** `V2`  \n**Run ID:** `mark-20260930T140813-8c17dc`  \n**Category:** `b2b_saas`  \n**Target Buyer:** Waldbesitzer, Forstunternehmen, Sägewerke und Holzverarbeiter in Brandenburg, die mit Robinienholz handeln oder Fällaufträge vergeben/annehmen.  \n**Intent / Origin:** Bernd will mit dem Fällen von Robinien in Brandenburg Geld verdienen  \n\n---\n\n## 1. Value Proposition & Problem\nEffizienter Handel mit Robinienholz und Vergabe von Fällaufträgen in Brandenburg.\n\n### Pain & Compliance Basis\nDer Marktplatz adressiert den Schmerzpunkt der mangelnden Transparenz bei Robinienholzpreisen (inferred from user intent), der aufwändigen Suche nach Anbietern und Abnehmern (inferred from user intent) sowie der komplexen Koordination von Logistik für Fällaufträge und Holzabtransport (inferred from user intent). Er ermöglicht Zeit- und Kostenersparnisse durch effizientere Prozesse. Obwohl Robinienholz als wertvoll gilt (https://www.thuenen.de/de/fachinstitute/holzforschung/service/detail-aktuelles/herkunftsbedingte-unterschiede-der-dauerhaftigkeit-von-robinienholz), ist die Robinie in Brandenburg als invasive Art eingestuft (https://brandenburg.nabu.de/umwelt-und-ressourcen/gesellschaft-politik/18524.html), was die Notwendigkeit von Fällungen als Managementmaßnahme (inferred from https://lfu.brandenburg.de/lfu/de/aufgaben/natur/artenschutz/invasive-arten/unionsliste/) verstärkt und somit ein konstantes Angebot generiert.\n\n---\n\n## 2. Minimum Viable Product (MVP) Scope\nEin webbasierter Marktplatz mit Kernfunktionalitäten: 1. Profile für Anbieter (Waldbesitzer, Forstunternehmen) und Abnehmer (Sägewerke, Holzverarbeiter). 2. Erstellung von detaillierten Angeboten für Robinienholz (Menge, Qualität, Dimensionen) und Ausschreibungen für Fällaufträge (Standort, Umfang, spezifische Anforderungen). 3. Such- und Filterfunktionen. 4. Integriertes Nachrichtensystem zur direkten Kommunikation. 5. Einfache Transaktionsanbahnung (z.B. Angebotsanfrage, Vertragsgenerierung). Technologiestack: Python/Django oder Node.js/Express für das Backend, React/Vue.js für das Frontend, PostgreSQL-Datenbank, Cloud-Hosting (z.B. AWS). Der Build-Ansatz konzentriert sich auf eine agile Entwicklung des Kern-Matchmaking-Algorithmus und der Kommunikationsfunktionen.\n\n---\n\n## 3. Commercial Mechanics\n\n### Pricing & Economics\nDas Pricing-Modell basiert auf einer transaktionsbasierten Gebühr (z.B. 2-5% des Transaktionswerts) für erfolgreich vermitteltes Robinienholz oder Fällaufträge. Zusätzlich könnten Premium-Funktionen (z.B. erweiterte Analysen, Prioritätslisten) als Abonnement angeboten werden. Die Rohmarge für ein solches SaaS-Produkt wird auf 70-80% geschätzt. Angestrebtes Initialumsatzziel: 5.000€ pro Monat innerhalb der ersten 12 Monate, basierend auf der Vermittlung von mindestens 5-10 größeren Aufträgen oder Holzlieferungen (inferred from average wood prices like 60€/FM for firewood, 2199€/m³ for Stammware, and typical project sizes).\n\n### Distribution & Acquisition Strategy\nDirektvertrieb an Forstverwaltungen, private Waldbesitzerverbände, Sägewerke und größere Holzverarbeitungsbetriebe in Brandenburg. Online-Marketingkampagnen (SEA/SEO) für relevante Keywords wie 'Robinienholz kaufen', 'Fällaufträge Brandenburg'. Partnerschaften mit regionalen Forstämtern und Branchenverbänden zur Steigerung der Bekanntheit. Pilotprogramme mit ausgewählten Großkunden zur Generierung von Referenzen und zur Validierung des Mehrwerts.\n\n### Defensibility & Moat\nDer Marktplatz schafft einen Netzwerkeffekt: Mehr Anbieter ziehen mehr Abnehmer an und umgekehrt, was den Wert für alle Teilnehmer erhöht. Die Spezialisierung auf Robinienholz und Fällaufträge in der Region Brandenburg ermöglicht maßgeschneiderte Funktionen, die allgemeine Holzmarktplätze nicht bieten. Die Akkumulation von Preisdaten und Verfügbarkeitsinformationen für Robinienholz schafft einen Wissensvorsprung und eine hohe Markteintrittsbarriere für potenzielle Wettbewerber. Hohe Wechselkosten für Nutzer, die ihren gesamten Handel über die Plattform abwickeln.\n\n---\n\n## 4. Kill Criteria\n- Weniger als 5 Großkunden (Sägewerke, Forstbetriebe, große Waldbesitzer) nutzen den Marktplatz innerhalb von 12 Monaten aktiv.\n- Das kumulierte Transaktionsvolumen erreicht nach 18 Monaten nicht mindestens 20.000€ pro Monat.\n- Dominante, bestehende Holzmarktplätze integrieren spezifische Robinienholz-Funktionen und absorbieren den Markt.\n- Die Logistik und Abwicklung von Fällaufträgen erweist sich als zu komplex, um rein über die Plattform koordiniert zu werden und erfordert zu viel manuelle Intervention.\n\n---\n\n## 5. Evidence Grade\n### Facts (retrieved sources)\n- Die Robinie (Robinia pseudoacacia) gewinnt in Deutschland, insbesondere in Brandenburg, zunehmend an Bedeutung (https://www.thuenen.de/de/fachinstitute/holzforschung/service/detail-aktuelles/herkunftsbedingte-unterschiede-der-dauerhaftigkeit-von-robinienholz).\n- Brandenburg weist die größte inventarisierte Robinienfläche in Deutschland auf, mit 10.800 Hektar (https://forst.brandenburg.de/sixcms/media.php/9/Empfehlungen%20zur%20Bewirtschaftung%20der%20Robinie%20Engel%20J.pdf).\n- Robinienholz zeichnet sich durch hervorragende Eigenschaften wie hohe Rohdichte und biologische Dauerhaftigkeit aus (https://www.thuenen.de/de/fachinstitute/holzforschung/service/detail-aktuelles/herkunftsbedingte-unterschiede-der-dauerhaftigkeit-von-robinienholz).\n- Nutzungsmöglichkeiten von Robinienholz sind vielfältig: Sägeholz, Brennholz, GaLa-Bau (https://land-innovation-lausitz.de/robi/).\n- Robinie gilt in Brandenburg als invasive Art (https://brandenburg.nabu.de/umwelt-und-ressourcen/gesellschaft-politik/18524.html).\n- Preise für Robinienpfähle lagen 2012 bei 7,00 € netto pro Stück (https://forst.brandenburg.de/sixcms/media.php/9/Holzprodukte_Juli_2025.pdf).\n- Trockenes Brennholz aus Robinie kostet 90 € pro Schüttraummeter oder 85 € (https://www.kleinanzeigen.de/s-brandenburg/robinienholz/k0l7711).\n- Robinien-Brennholz (100 cm, frisch) für 60 € pro Festmeter (FM) (https://www.waldundwild.com/holz/preisliste-holz).\n- Robinien-Stammware (52 mm stark, ungedämpft, kammergetrocknet) kostet 2.199,00 € pro Kubikmeter (https://www.possling.de/preisliste/Bau-_und_Tischlerholz_rau%7Cgehobelt/Tischlerholz/Laubh%C3%B6lzer_europ.,_Stammware/Robinie,_Stammware/katalog/530301/galerie/1/artikel.php).\n\n### Inferences\n- Die Notwendigkeit von Fällungen als Managementmaßnahme für Robinien ist aufgrund ihrer Einstufung als invasive Art gegeben (from https://lfu.brandenburg.de/lfu/de/aufgaben/natur/artenschutz/invasive-arten/unionsliste/).\n- Ein spezialisierter Marktplatz kann die Transparenz bei Robinienholzpreisen und die Effizienz der Handelsprozesse verbessern (from user intent pain points).\n- Das angestrebte Initialumsatzziel von 5.000€ pro Monat ist basierend auf den gefundenen Holzpreisen und der Annahme von 5-10 größeren Aufträgen realistisch (from https://www.waldundwild.com/holz/preisliste-holz, https://www.possling.de/preisliste/Bau-_und_Tischlerholz_rau%7Cgehobelt/Tischlerholz/Laubh%C3%B6lzer_europ.,_Stammware/Robinie,_Stammware/katalog/530301/galerie/1/artikel.php).\n\n### Open questions\n- Gibt es bereits B2B-Holzmarktplätze in Deutschland, die Transaktionsgebühren für spezifische Holzarten oder Fällaufträge erheben, und welche Höhe haben diese?\n- Wie hoch sind die durchschnittlichen Kosten für Fällarbeiten und Holzabtransport von Robinien in Brandenburg?\n- Wie groß ist das jährliche Handelsvolumen für Robinienholz in Brandenburg?\n\n---\n\n## 6. Grounded Evidence & Sources\n- https://www.thuenen.de/de/fachinstitute/holzforschung/service/detail-aktuelles/herkunftsbedingte-unterschiede-der-dauerhaftigkeit-von-robinienholz\n- https://forst.brandenburg.de/sixcms/media.php/9/Empfehlungen%20zur%20Bewirtschaftung%20der%20Robinie%20Engel%20J.pdf\n- https://land-innovation-lausitz.de/robi/\n- https://brandenburg.nabu.de/umwelt-und-ressourcen/gesellschaft-politik/18524.html\n- https://lfu.brandenburg.de/lfu/de/aufgaben/natur/artenschutz/invasive-arten/unionsliste/\n- https://forst.brandenburg.de/sixcms/media.php/9/Holzprodukte_Juli_2025.pdf\n- https://www.kleinanzeigen.de/s-brandenburg/robinienholz/k0l7711\n- https://www.waldundwild.com/holz/preisliste-holz\n- https://www.possling.de/preisliste/Bau-_und_Tischlerholz_rau%7Cgehobelt/Tischlerholz/Laubh%C3%B6lzer_europ.,_Stammware/Robinie,_Stammware/katalog/530301/galerie/1/artikel.php\n",
+    "contract_version": "1.3.0"
+  },
+  "existence_check": false,
+  "contract_version": "1.0.0"
+}
