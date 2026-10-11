@@ -44,3 +44,4 @@ npx vitest run wet-ink
 - [x] **[Ticket #2: Taktile Reibungs-Akustik & Multi-Iso SVG-Export](ticket-02-akustik-und-svg-vektorisierung.md)** (Abgeschlossen & verifiziert)
 - [x] **[Ticket #3: Chinesische Kalligrafie, Mao-Bi-Haardynamik, Xuan-Papiere & Zhuanke-Siegelkunst](ticket-03-chinesische-kalligrafie-und-siegelkunst.md)** (Abgeschlossen & verifiziert)
 - [x] **[Ticket #4: Farbwissenschaft, Perkolationsfraktale & Papier-Chromatographie](ticket-04-farbwissenschaft-fraktale-und-chromatographie.md)** (Abgeschlossen & verifiziert)
+- [x] **[Ticket #5: Nicht-Newtonsche Rheologie, DLVO-Kolloidstabilität, Deegan-Kaffeering & Benetzungsregime](ticket-05-rheologie-dlvo-und-benetzung.md)** (Abgeschlossen & verifiziert)

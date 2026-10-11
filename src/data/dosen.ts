@@ -1122,12 +1122,12 @@ Dual-licensed under MIT (code & schema structure) and CC BY 4.0 (interpretive te
     sketchDe: 'Drei gekoppelte Texturschichten: Papierfasern (Höhe, Richtung, Kapazität), Oberflächenwasser (Geschwindigkeit, Pigment), Faserschicht (Deponiertes Pigment). Sieben Shader-Pässe mit Kapillarschwelle, Web Audio Haptik und Marching Squares Vektorexport.',
     sketchEn: 'Three linked simulation textures: paper substrate (roughness, grain vector, moisture capacity), water layer (velocity, suspended pigment), and stained fiber layer. 7 sequential shader passes, Web Audio acoustics, and Marching Squares vectorizer.',
     firstStepDe: {
-      ticket: 'Ticket #1, #2, #3 & #4: @wet-ink/core Headless-Kernel, Kalligrafie (Xuan & Mao-Bi), Siegelkunst & Farbwissenschaft/Chromatographie.',
-      criteria: 'Framework-freie TS-Engine mit 7-Pass-Simulation, Kapillarschwelle ε_min, Xuan-Papieren, Mao-Bi Haardynamik, Siegelstempeln, Saunderson-Fresnel-Optik, CIEDE2000 ΔE00, Box-Counting Fraktaldimension D_f und Washburn-Papier-Chromatographie (352 Tests grün in 28 Suiten).'
+      ticket: 'Ticket #1–#5: @wet-ink/core Headless-Kernel, Kalligrafie, Siegelkunst, Farbwissenschaft & Rheologie/DLVO.',
+      criteria: 'Framework-freie TS-Engine mit 7-Pass-Simulation, Kapillarschwelle ε_min, Xuan-Papieren, Mao-Bi-Haardynamik, Siegeln, Saunderson-Optik, CIEDE2000, Washburn-Chromatographie, Cross/Carreau-Rheologie, DLVO-Kolloidstabilität und Wenzel/Cassie-Benetzung (401 Tests grün in 32 Suiten).'
     },
     firstStepEn: {
-      ticket: 'Ticket #1, #2, #3 & #4: @wet-ink/core Headless Kernel, Calligraphy (Xuan & Mao-Bi), Seal Art & Color Science/Chromatography.',
-      criteria: 'Zero-dependency TS engine with 7-pass simulation, capillary threshold ε_min, Xuan papers, Mao-Bi hair dynamics, seal carving, Saunderson Fresnel optics, CIEDE2000 ΔE00, box-counting fractal dimension D_f, and Washburn paper chromatography (352 tests passing across 28 suites).'
+      ticket: 'Ticket #1–#5: @wet-ink/core Headless Kernel, Calligraphy, Seal Art, Color Science & Rheology/DLVO.',
+      criteria: 'Zero-dependency TS engine with 7-pass simulation, capillary threshold ε_min, Xuan papers, Mao-Bi hair dynamics, seals, Saunderson optics, CIEDE2000, Washburn chromatography, Cross/Carreau rheology, DLVO colloid stability, and Wenzel/Cassie wetting (401 tests passing across 32 suites).'
     },
     failureModeDe: 'Rauch statt Tinte: Ohne strikte Kapillarschwelle diffundiert das Pigment wolkig wie Rauch. Gelöst durch Kapillarschwelle vor der fluiden Advektion und Ruhezustands-Wächter gegen GPU-Last.',
     failureModeEn: 'The smoke bug: Without a strict capillary threshold, ink bleeds like soft smoke. Enforces capillary threshold before fluid advection, with idle sleep monitoring against GPU drain.',

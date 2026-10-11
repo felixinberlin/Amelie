@@ -1,13 +1,13 @@
 # Amélie Status
 
-Generated: 2026-10-11T19:24:11.553Z
+Generated: 2026-10-11T19:39:52.787Z
 
 ## System
 
 * Dosen: 46
 * Gräber: 149
 * Demos: 13
-* Books: 52
+* Books: 53
 * Research entries: 36
 * Candidate ideas: 20
 
@@ -67,5 +67,5 @@ None.
 ## Generated from
 
 * Audit version: 1
-* Commit: d2f99ae0
-* Branch: HEAD
+* Commit: d95e2d6b
+* Branch: main

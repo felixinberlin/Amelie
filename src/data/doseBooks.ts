@@ -234,6 +234,16 @@ export const DOSE_BOOKS: Record<string, BookChapter[]> = {
       date: '11.10.2026',
       kind: 'md',
     },
+    {
+      slug: 'ticket-05-rheology-dlvo',
+      path: '07-demos/wet-ink/ticket-05-rheologie-dlvo-und-benetzung.md',
+      titleDe: 'Ticket #5: Rheologie, DLVO & Benetzung',
+      titleEn: 'Ticket #5: Rheology, DLVO & Wetting',
+      noteDe: 'Cross & Carreau-Yasuda Strukturviskosität, Thixotropie, DLVO-Kolloidstabilität, Deegan-Kaffeering und Wenzel/Cassie-Baxter-Topografie.',
+      noteEn: 'Cross & Carreau-Yasuda shear-thinning, thixotropy, DLVO colloid stability, Deegan coffee-ring, and Wenzel/Cassie-Baxter paper wetting.',
+      date: '11.10.2026',
+      kind: 'md',
+    },
   ],
   'fugenduell-asphalt-arena': [
     {
