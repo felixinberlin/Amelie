@@ -122,3 +122,13 @@ export interface WetInkControllerOptions {
   onStrokeEnd?: (stroke: WetInkStroke) => void;
   onSave?: (payload: WetInkSavePayload) => void;
 }
+
+export type {
+  StainMetrics,
+  FractalAnalysis
+} from '../../../src/engine/wet-ink/metrics';
+export type {
+  PigmentParticleProperties,
+  ChromatographyComponent,
+  RadialChromatographyResult
+} from '../../../src/engine/wet-ink/chromatography';

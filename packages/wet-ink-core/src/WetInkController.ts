@@ -8,7 +8,11 @@ import {
   WET_INK_DT,
   WetInkPaperConfig,
   WetInkPigmentConfig,
-  WetInkSimParams
+  WetInkSimParams,
+  measureStain,
+  calculateFractalDimension,
+  StainMetrics,
+  FractalAnalysis
 } from '../../../src/engine/wet-ink/index';
 import {
   WetInkControllerOptions,
@@ -681,6 +685,21 @@ export class WetInkController {
     bar.appendChild(clearBtn);
 
     return bar;
+  }
+
+  /**
+   * Evaluates scientific stain morphology metrics on the current deposited pigment layer.
+   * Includes boundary box-counting fractal dimension (D_f), anisotropy, roughness, hairs, and centroid.
+   */
+  public getMetrics(threshold: number = 0.01): StainMetrics {
+    return measureStain(this.sim.pigmentDeposited, this.canvas.width, this.canvas.height, threshold);
+  }
+
+  /**
+   * Directly computes multi-scale box-counting fractal dimension analysis on the stain boundary.
+   */
+  public getFractalAnalysis(threshold: number = 0.01, epsilons?: number[]): FractalAnalysis {
+    return calculateFractalDimension(this.sim.pigmentDeposited, this.canvas.width, this.canvas.height, threshold, epsilons);
   }
 
   public destroy(): void {

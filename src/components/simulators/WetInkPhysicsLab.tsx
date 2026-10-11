@@ -29,6 +29,10 @@ import {
   calculateKMReflectance,
   evaluatePigmentMixture,
   naiveRgbBlend,
+  PAPER_REFLECTANCE,
+  srgbDeltaE,
+  simulateRadialChromatography,
+  PIGMENT_PARTICLE_CATALOG,
   GLSL_KUBELKA_MUNK_SNIPPET,
   FRAGMENT_SHADER_ADVECT,
   FRAGMENT_SHADER_CAPILLARY,
@@ -46,7 +50,7 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
   const animFrameRef = useRef<number | null>(null);
   const isDrawingRef = useRef<boolean>(false);
 
-  const [activeTab, setActiveTab] = useState<'simulation' | 'kubelka-munk' | 'coffee-ring' | 'fiber-anisotropy' | 'shaders'>('simulation');
+  const [activeTab, setActiveTab] = useState<'simulation' | 'kubelka-munk' | 'chromatography' | 'coffee-ring' | 'fiber-anisotropy' | 'shaders'>('simulation');
   const [activeSlot, setActiveSlot] = useState<1 | 2>(1);
   const [brushRadius, setBrushRadius] = useState<number>(14);
   const [selectedPaper, setSelectedPaper] = useState<WetInkPaperConfig>(PAPER_PRESETS[0]);
@@ -59,6 +63,14 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
   const [activeLayer, setActiveLayer] = useState<SimulationLayer>('composite');
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
   const [activeShaderTab, setActiveShaderTab] = useState<'advect' | 'capillary' | 'coffee' | 'km'>('km');
+
+  // Scientific Optics: Saunderson (1942) Fresnel Boundary
+  const [applySaunderson, setApplySaunderson] = useState<boolean>(true);
+
+  // Radial Chromatography Simulation Parameters
+  const [chromaDropletR, setChromaDropletR] = useState<number>(3.0);
+  const [chromaDuration, setChromaDuration] = useState<number>(1.2);
+  const [chromaPoreUm, setChromaPoreUm] = useState<number>(10.0);
 
   // Simulation Parameters
   const [params, setParams] = useState<WetInkSimParams>({
@@ -238,13 +250,15 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
     handlePigment2Change(custom);
   };
 
-  // Evaluate interactive Kubelka-Munk vs RGB blend
+  // Evaluate interactive Kubelka-Munk with optional Saunderson (1942) Fresnel correction
   const kmResult = evaluatePigmentMixture(
     [
       { km: selectedPigment1.km, concentration: ratioP1 },
       { km: selectedPigment2.km, concentration: 1 - ratioP1 },
     ],
-    kmThickness
+    kmThickness,
+    PAPER_REFLECTANCE,
+    applySaunderson
   );
 
   const rgbBlendResult = naiveRgbBlend(
@@ -253,6 +267,36 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
     [selectedPigment2.r, selectedPigment2.g, selectedPigment2.b],
     1 - ratioP1
   );
+
+  // ISO/CIE CIEDE2000 (ΔE₀₀) perceptual divergence between physical optics and naive blending
+  const deltaEKmVsRgb = srgbDeltaE(
+    [Math.round(kmResult[0] * 255), Math.round(kmResult[1] * 255), Math.round(kmResult[2] * 255)],
+    [rgbBlendResult[0], rgbBlendResult[1], rgbBlendResult[2]]
+  );
+
+  // Radial Paper Chromatography Simulation
+  const chromaResult = React.useMemo(() => {
+    const p1Part = PIGMENT_PARTICLE_CATALOG[selectedPigment1.id] || {
+      radiusNm: 100,
+      retardationFactor: 0.85,
+      strainingRate: 0.15,
+    };
+    const p2Part = PIGMENT_PARTICLE_CATALOG[selectedPigment2.id] || {
+      radiusNm: 100,
+      retardationFactor: 0.85,
+      strainingRate: 0.15,
+    };
+    return simulateRadialChromatography(
+      [
+        { pigment: selectedPigment1, initialFraction: ratioP1, particle: p1Part },
+        { pigment: selectedPigment2, initialFraction: 1 - ratioP1, particle: p2Part },
+      ],
+      chromaDropletR,
+      chromaDuration,
+      90,
+      chromaPoreUm
+    );
+  }, [selectedPigment1, selectedPigment2, ratioP1, chromaDropletR, chromaDuration, chromaPoreUm]);
 
   return (
     <div id="wet-ink-physics-lab" className="flex flex-col gap-6 w-full max-w-6xl mx-auto text-stone-800">
@@ -298,9 +342,10 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
           {[
             { id: 'simulation', label: lang === 'de' ? '1. GPU-Simulation' : lang === 'es' ? '1. Simulación en GPU' : '1. GPU Simulation', icon: Zap },
             { id: 'kubelka-munk', label: lang === 'de' ? '2. Kubelka-Munk Farbmischung' : lang === 'es' ? '2. Laboratorio de color Kubelka-Munk' : '2. Kubelka-Munk Color Lab', icon: Sparkles },
-            { id: 'coffee-ring', label: lang === 'de' ? '3. Deegan-Kaffeering-Effekt' : lang === 'es' ? '3. Anillo de café de Deegan' : '3. Deegan Coffee-Ring', icon: Droplets },
-            { id: 'fiber-anisotropy', label: lang === 'de' ? '4. Faser-Anisotropie & fBm' : lang === 'es' ? '4. Anisotropía de fibra y fBm' : '4. Fiber Anisotropy & fBm', icon: Wind },
-            { id: 'shaders', label: lang === 'de' ? '5. GLSL-Shader-Code' : lang === 'es' ? '5. Código de los shaders GLSL' : '5. GLSL Shader Source', icon: Code2 },
+            { id: 'chromatography', label: lang === 'de' ? '3. Papier-Chromatographie' : lang === 'es' ? '3. Cromatografía en papel' : '3. Paper Chromatography', icon: Layers },
+            { id: 'coffee-ring', label: lang === 'de' ? '4. Deegan-Kaffeering-Effekt' : lang === 'es' ? '4. Anillo de café de Deegan' : '4. Deegan Coffee-Ring', icon: Droplets },
+            { id: 'fiber-anisotropy', label: lang === 'de' ? '5. Faser-Anisotropie & fBm' : lang === 'es' ? '5. Anisotropía de fibra y fBm' : '5. Fiber Anisotropy & fBm', icon: Wind },
+            { id: 'shaders', label: lang === 'de' ? '6. GLSL-Shader-Code' : lang === 'es' ? '6. Código de los shaders GLSL' : '6. GLSL Shader Source', icon: Code2 },
           ].map((tab) => {
             const Icon = tab.icon;
             const isSel = activeTab === tab.id;
@@ -685,6 +730,30 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
               </div>
             </div>
 
+            {/* ISO/CIE CIEDE2000 Perceptual Difference Metric */}
+            <div className="bg-stone-50 border border-stone-200 rounded-xl p-3 flex items-center justify-between">
+              <div>
+                <div className="text-xs font-semibold text-stone-900 flex items-center gap-2">
+                  <span>ISO/CIE 11664-6 CIEDE2000:</span>
+                  <span className={`font-mono px-2 py-0.5 rounded text-xs font-bold ${
+                    deltaEKmVsRgb > 15 ? 'bg-rose-100 text-rose-800 border border-rose-300' :
+                    deltaEKmVsRgb > 5 ? 'bg-amber-100 text-amber-800 border border-amber-300' :
+                    'bg-emerald-100 text-emerald-800 border border-emerald-300'
+                  }`}>
+                    ΔE₀₀ = {deltaEKmVsRgb.toFixed(2)}
+                  </span>
+                </div>
+                <div className="text-[11px] text-stone-500 mt-0.5">
+                  {deltaEKmVsRgb > 15
+                    ? (lang === 'de' ? 'Massiver wahrnehmbarer Fehler durch naive digitale Farb-Mittelung (ΔE > 15)' : 'Massive perceptual error from naive digital RGB averaging (ΔE > 15)')
+                    : deltaEKmVsRgb > 5
+                    ? (lang === 'de' ? 'Deutlich sichtbare Farbverschiebung für das menschliche Auge (ΔE > 5)' : 'Clearly noticeable color shift to the human eye (ΔE > 5)')
+                    : (lang === 'de' ? 'Subtiler Unterschied (ΔE < 5)' : 'Subtle difference (ΔE < 5)')}
+                </div>
+              </div>
+              <span className="text-[10px] font-mono text-stone-400 hidden sm:inline">Sharma et al. (2005)</span>
+            </div>
+
             {/* Interactive Sliders */}
             <div className="space-y-4 pt-3 border-t border-stone-200">
               <div className="space-y-1.5">
@@ -719,6 +788,24 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
                   value={kmThickness}
                   onChange={(e) => setKmThickness(parseFloat(e.target.value))}
                   className="w-full accent-stone-700"
+                />
+              </div>
+
+              {/* Saunderson (1942) Fresnel Correction Toggle */}
+              <div className="pt-2 border-t border-stone-100 flex items-center justify-between">
+                <div>
+                  <div className="text-xs font-semibold text-stone-900">
+                    {lang === 'de' ? 'Saunderson (1942) Fresnel-Korrektur' : 'Saunderson (1942) Fresnel Boundary'}
+                  </div>
+                  <div className="text-[11px] text-stone-500">
+                    {lang === 'de' ? 'Interne diffuse Rückstreuung (k₁=0.04, k₂=0.60) zwischen Luft und Pigmentsubstrat' : 'Internal diffuse back-scattering (k₁=0.04, k₂=0.60) at air-substrate boundary'}
+                  </div>
+                </div>
+                <input
+                  type="checkbox"
+                  checked={applySaunderson}
+                  onChange={(e) => setApplySaunderson(e.target.checked)}
+                  className="w-4 h-4 accent-amber-600 rounded"
                 />
               </div>
             </div>
@@ -763,7 +850,179 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
         </div>
       )}
 
-      {/* Tab 3: Robert Deegan (1997) Coffee-Ring Effect */}
+      {/* Tab 3: Radial Paper Chromatography & Multi-Pigment Separation */}
+      {activeTab === 'chromatography' && (
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 bg-white p-6 rounded-2xl border border-stone-200 shadow-sm">
+          <div className="lg:col-span-7 space-y-5">
+            <div className="space-y-1">
+              <span className="text-xs font-mono font-bold text-amber-700 uppercase tracking-wider">
+                Lucas (1918) &bull; Washburn (1921) &bull; Consden et al. (1944)
+              </span>
+              <h3 className="text-xl font-serif font-bold text-stone-900">
+                {lang === 'de' ? 'Radiale Papier-Chromatographie & Pigment-Separation' : lang === 'es' ? 'Cromatografía radial en papel y separación de pigmentos' : 'Radial Paper Chromatography & Pigment Separation'}
+              </h3>
+              <p className="text-xs text-stone-600 leading-relaxed">
+                {lang === 'de'
+                  ? 'Werden Pigmente mit unterschiedlichen Partikelgrößen (z. B. feine Kiefernharz-Ruß-Nanopartikel mit 35 nm und grobe Zinnober-Mineralkristalle mit 2400 nm) auf ungeleimtes Xuan/Washi aufgetragen, wandert das Wasser kapillar nach dem Washburn-Gesetz. Die feinen Partikel eilen mit der Wasserfront voraus (hoher Rf-Wert), während grobe Kristalle im Zellulose-Porenfilter zurückgehalten werden (Fen-Mo-Effekt / Pigment-Splitting).'
+                  : 'When pigments with distinct hydrodynamic particle sizes (e.g., 35 nm pine soot nanoparticles vs. 2400 nm coarse cinnabar mineral crystals) diffuse into unsized paper, the solvent front advances via the Lucas-Washburn law. Ultrafine particles wick forward with the front (high Rf), while coarse grains suffer steric pore-throat filtration, creating an authentic chromatic halo.'}
+              </p>
+            </div>
+
+            {/* Chromatography Metrics Summary */}
+            <div className="grid grid-cols-3 gap-3 p-3 bg-stone-50 rounded-xl border border-stone-200 text-center font-mono">
+              <div className="space-y-0.5">
+                <span className="text-[10px] text-stone-500 uppercase tracking-wider">Front Radius R(t)</span>
+                <div className="text-sm font-bold text-stone-900">{chromaResult.solventFrontRadius.toFixed(1)} mm</div>
+              </div>
+              <div className="space-y-0.5">
+                <span className="text-[10px] text-stone-500 uppercase tracking-wider">IUPAC Resol. Rs</span>
+                <div className="text-sm font-bold text-emerald-700">
+                  {chromaResult.resolutions[0] !== undefined ? chromaResult.resolutions[0].toFixed(2) : '1.00'}
+                </div>
+              </div>
+              <div className="space-y-0.5">
+                <span className="text-[10px] text-stone-500 uppercase tracking-wider">Max ΔE₀₀ Shift</span>
+                <div className="text-sm font-bold text-amber-700">
+                  {Math.max(...Array.from(chromaResult.deltaEProfile)).toFixed(1)}
+                </div>
+              </div>
+            </div>
+
+            {/* Radial Color Gradient Cross-Section Strip */}
+            <div className="space-y-2">
+              <div className="flex justify-between items-center text-xs">
+                <span className="font-semibold text-stone-800">
+                  {lang === 'de' ? 'Spektraler Farbverlauf (Zentrum → Kapillarfront):' : 'Radial Spectral Gradient (Center → Front):'}
+                </span>
+                <span className="font-mono text-[11px] text-stone-500">
+                  dr = {(chromaResult.solventFrontRadius / chromaResult.srgbProfile.length).toFixed(2)} mm / cell
+                </span>
+              </div>
+              <div
+                className="h-12 w-full rounded-xl border border-stone-300 shadow-inner flex overflow-hidden"
+                style={{
+                  background: `linear-gradient(to right, ${chromaResult.srgbProfile
+                    .filter((_, idx) => idx % 3 === 0)
+                    .map((rgb, idx, arr) => `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]}) ${(idx / (arr.length - 1)) * 100}%`)
+                    .join(', ')})`,
+                }}
+              />
+              <div className="flex justify-between text-[10px] font-mono text-stone-500 px-1">
+                <span>r = 0 mm (Kern-Mischung)</span>
+                <span>r = {(chromaResult.solventFrontRadius * 0.5).toFixed(1)} mm</span>
+                <span>r = {chromaResult.solventFrontRadius.toFixed(1)} mm (Kapillarsaum)</span>
+              </div>
+            </div>
+
+            {/* Retention Factors & Particle Specs */}
+            <div className="grid grid-cols-2 gap-3 pt-2">
+              <div className="p-3 bg-stone-50 rounded-xl border border-stone-200 space-y-1">
+                <div className="text-xs font-bold text-stone-800 flex justify-between">
+                  <span>{selectedPigment1.nameDe.split(' ')[0]}</span>
+                  <span className="font-mono text-amber-800">Rf = {chromaResult.retentionFactors[0]?.toFixed(2) || '0.70'}</span>
+                </div>
+                <div className="text-[11px] text-stone-600 font-mono">
+                  Partikel-Radius: {PIGMENT_PARTICLE_CATALOG[selectedPigment1.id]?.radiusNm || 100} nm
+                </div>
+              </div>
+              <div className="p-3 bg-stone-50 rounded-xl border border-stone-200 space-y-1">
+                <div className="text-xs font-bold text-stone-800 flex justify-between">
+                  <span>{selectedPigment2.nameDe.split(' ')[0]}</span>
+                  <span className="font-mono text-blue-800">Rf = {chromaResult.retentionFactors[1]?.toFixed(2) || '0.90'}</span>
+                </div>
+                <div className="text-[11px] text-stone-600 font-mono">
+                  Partikel-Radius: {PIGMENT_PARTICLE_CATALOG[selectedPigment2.id]?.radiusNm || 100} nm
+                </div>
+              </div>
+            </div>
+
+            {/* Interactive Chromatography Controls */}
+            <div className="space-y-3 pt-3 border-t border-stone-200 text-xs">
+              <div className="space-y-1">
+                <div className="flex justify-between">
+                  <span className="text-stone-700 font-medium">{lang === 'de' ? 'Tropfen-Startradius R₀:' : 'Initial Droplet Radius R₀:'}</span>
+                  <span className="font-mono font-bold text-stone-900">{chromaDropletR.toFixed(1)} mm</span>
+                </div>
+                <input
+                  type="range"
+                  min="1.0"
+                  max="6.0"
+                  step="0.2"
+                  value={chromaDropletR}
+                  onChange={(e) => setChromaDropletR(parseFloat(e.target.value))}
+                  className="w-full accent-amber-600"
+                />
+              </div>
+
+              <div className="space-y-1">
+                <div className="flex justify-between">
+                  <span className="text-stone-700 font-medium">{lang === 'de' ? 'Diffusionszeit t:' : 'Diffusion Time t:'}</span>
+                  <span className="font-mono font-bold text-stone-900">{chromaDuration.toFixed(2)} s</span>
+                </div>
+                <input
+                  type="range"
+                  min="0.2"
+                  max="3.0"
+                  step="0.1"
+                  value={chromaDuration}
+                  onChange={(e) => setChromaDuration(parseFloat(e.target.value))}
+                  className="w-full accent-amber-600"
+                />
+              </div>
+
+              <div className="space-y-1">
+                <div className="flex justify-between">
+                  <span className="text-stone-700 font-medium">{lang === 'de' ? 'Papier-Porenradius r_pore:' : 'Paper Pore Radius r_pore:'}</span>
+                  <span className="font-mono font-bold text-stone-900">{chromaPoreUm.toFixed(0)} µm</span>
+                </div>
+                <input
+                  type="range"
+                  min="3"
+                  max="25"
+                  step="1"
+                  value={chromaPoreUm}
+                  onChange={(e) => setChromaPoreUm(parseFloat(e.target.value))}
+                  className="w-full accent-stone-700"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Mathematical Foundations Panel */}
+          <div className="lg:col-span-5 bg-stone-900 text-stone-100 p-5 rounded-xl flex flex-col justify-between space-y-4">
+            <div className="space-y-3">
+              <span className="text-xs font-mono font-bold text-amber-400">Lucas-Washburn Capillary Kinetics</span>
+              <div className="bg-stone-950 p-3 rounded-lg font-mono text-[11px] text-stone-300 leading-relaxed border border-stone-800 space-y-1.5">
+                <p className="text-amber-300">// Lucas-Washburn front radius:</p>
+                <p>R(t) = sqrt(R₀² + (γ · r_pore · cos θ / 2η) · t)</p>
+                <p className="mt-2 text-stone-400">// Stokes-Einstein dispersion:</p>
+                <p>D_k = k_B · T / (6πη · r_p,k)</p>
+                <p className="mt-2 text-stone-400">// Darcy pore straining loss:</p>
+                <p className="text-emerald-400">λ_k ∝ (r_p,k / r_pore)²</p>
+              </div>
+
+              <div className="text-[11px] text-stone-400 space-y-2">
+                <p>
+                  <strong className="text-stone-200">IUPAC Separation Resolution:</strong>
+                  <span className="block font-mono text-stone-300 mt-0.5">Rs = 2 |r₂ - r₁| / (w₁ + w₂)</span>
+                  {lang === 'de'
+                    ? 'Ab Rs ≥ 1.0 gilt die Trennung beider Pigmentzonen in der analytischen Chromatographie als optisch aufgelöst.'
+                    : 'At Rs ≥ 1.0, the separation of both pigment zones is considered chromatographically resolved.'}
+                </p>
+                <p>
+                  <strong className="text-stone-200">Fen-Mo (分墨):</strong> {lang === 'de' ? 'Klassischer Farbaufspaltungseffekt in der chinesischen Tuschmalerei bei Mischungen aus Rußtusche und mineralischen Erdpigmenten.' : 'Classical pigment split effect in East Asian ink wash when blending pine soot with mineral pigments.'}
+                </p>
+              </div>
+            </div>
+
+            <div className="pt-3 border-t border-stone-800 text-[10px] font-mono text-stone-400">
+              Ettre (1993) IUPAC Recommendations &bull; ISO/CIE 11664-6:2014
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Tab 4: Robert Deegan (1997) Coffee-Ring Effect */}
       {activeTab === 'coffee-ring' && (
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 bg-white p-6 rounded-2xl border border-stone-200 shadow-sm">
           <div className="lg:col-span-7 space-y-4">
