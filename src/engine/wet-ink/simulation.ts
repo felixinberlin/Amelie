@@ -124,7 +124,8 @@ export function computeBrushFootprint(
   dy: number,
   radius: number,
   tipShape: BrushTipShape = 'round',
-  angle: number = 0
+  angle: number = 0,
+  bristleSplitting: number = 0
 ): number {
   if (radius <= 0) return 0;
 
@@ -133,6 +134,8 @@ export function computeBrushFootprint(
   const sinA = Math.sin(angle);
   const u = dx * cosA + dy * sinA;
   const v = -dx * sinA + dy * cosA;
+
+  let baseFalloff = 0;
 
   if (tipShape === 'flat') {
     // Chisel / Ribbon brush (Paibi 排笔): wide aspect ratio (1 : 0.35)
@@ -143,10 +146,8 @@ export function computeBrushFootprint(
     if (absU > w || absV > h) return 0;
     const falloffU = 1 - (absU / w) * (absU / w);
     const falloffV = 1 - (absV / h) * (absV / h);
-    return Math.max(0, falloffU * falloffV);
-  }
-
-  if (tipShape === 'slanted') {
+    baseFalloff = Math.max(0, falloffU * falloffV);
+  } else if (tipShape === 'slanted') {
     // Asymmetric slanted chisel (Cefeng 侧锋): sharp cutting edge with softer feathering flank
     const ru = radius;
     const rv = radius * 0.55;
@@ -155,10 +156,8 @@ export function computeBrushFootprint(
     const dNorm = Math.sqrt(dNormSq);
     // Asymmetric heel-to-toe pressure gradient along u-axis
     const asym = Math.max(0.2, 0.5 + 0.5 * (u / ru));
-    return Math.max(0, (1 - dNorm) * asym);
-  }
-
-  if (tipShape === 'fan') {
+    baseFalloff = Math.max(0, (1 - dNorm) * asym);
+  } else if (tipShape === 'fan') {
     // Multi-tuft split bristles (Kuabi 散笔 / 抓笔): 4 distinct hair bundles
     const tuftCount = 4;
     const tuftR = radius * 0.28;
@@ -175,10 +174,8 @@ export function computeBrushFootprint(
         if (falloff > maxFalloff) maxFalloff = falloff;
       }
     }
-    return maxFalloff;
-  }
-
-  if (tipShape === 'dagger') {
+    baseFalloff = maxFalloff;
+  } else if (tipShape === 'dagger') {
     // Tapered leaf / rigger brush: aerodynamic teardrop
     if (u < -radius || u > radius) return 0;
     const t = (u + radius) / (2 * radius); // 0 at tail, 1 at tip
@@ -187,14 +184,26 @@ export function computeBrushFootprint(
     if (absV > halfWidth || halfWidth <= 0) return 0;
     const falloffV = 1 - absV / halfWidth;
     const falloffU = Math.sin(t * Math.PI);
-    return Math.max(0, falloffV * falloffU);
+    baseFalloff = Math.max(0, falloffV * falloffU);
+  } else {
+    // Default: 'round' (isotropic radial disc)
+    const dSq = u * u + v * v;
+    const rSq = radius * radius;
+    if (dSq > rSq) return 0;
+    baseFalloff = Math.max(0, 1 - Math.sqrt(dSq) / radius);
   }
 
-  // Default: 'round' (isotropic radial disc)
-  const dSq = u * u + v * v;
-  const rSq = radius * radius;
-  if (dSq > rSq) return 0;
-  return Math.max(0, 1 - Math.sqrt(dSq) / radius);
+  if (baseFalloff <= 0) return 0;
+
+  // Material micro-grooves & split bristle hair fluting:
+  // Stiff coarse materials (hog, horse) produce longitudinal micro-striations
+  if (bristleSplitting > 0.15) {
+    const hairCoord = tipShape === 'flat' || tipShape === 'fan' ? u : v;
+    const groove = 1.0 - bristleSplitting * 0.35 * Math.abs(Math.sin(hairCoord * 1.5));
+    return Math.max(0, baseFalloff * groove);
+  }
+
+  return baseFalloff;
 }
 
 export class WetInkSimulation {
@@ -663,7 +672,8 @@ export class WetInkSimulation {
     dryBrushFilter: boolean = false,
     config: WetInkPigmentConfig = this.pigmentConfig,
     tipShape: BrushTipShape = 'round',
-    angle: number = 0
+    angle: number = 0,
+    bristleSplitting: number = 0
   ) {
     // Keep the stamp one cell away from the border: border cells are never simulated.
     const minX = Math.max(1, Math.floor(centerX - radius));
@@ -679,7 +689,7 @@ export class WetInkSimulation {
       const dy = y - centerY;
       for (let x = minX; x <= maxX; x++) {
         const dx = x - centerX;
-        const falloff = computeBrushFootprint(dx, dy, radius, tipShape, angle);
+        const falloff = computeBrushFootprint(dx, dy, radius, tipShape, angle, bristleSplitting);
         if (falloff <= 0) continue;
 
         const idx = y * this.width + x;

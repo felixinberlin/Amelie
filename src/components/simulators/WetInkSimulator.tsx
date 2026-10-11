@@ -31,6 +31,8 @@ import {
   SealShape,
   SealGlyph,
   BrushTipShape,
+  BrushMaterial,
+  BRUSH_MATERIAL_PRESETS,
 } from '../../engine/wet-ink/types';
 import { PAPER_PRESETS, PIGMENT_PRESETS, createPigmentFromHex } from '../../engine/wet-ink';
 import { WetInkSimulation } from '../../engine/wet-ink/simulation';
@@ -135,6 +137,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
   const [currentTool, setCurrentTool] = useState<BrushToolType>('sumi-brush');
   const [brushRadius, setBrushRadius] = useState<number>(6);
   const [brushTipShape, setBrushTipShape] = useState<BrushTipShape>('round');
+  const [brushMaterial, setBrushMaterial] = useState<BrushMaterial>('mixed');
 
   // Calligraphy Grid & Didactics (米字格, 九宫格, 永字八法)
   const [calligraphyGrid, setCalligraphyGrid] = useState<'none' | 'mizige' | 'jiugongge' | 'yongzi'>('none');
@@ -527,7 +530,8 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
       setCanRedo(false);
     }
     lastPointerRef.current = { x, y, time: performance.now() };
-    audioSynthRef.current?.startStroke(selectedPaper.roughness);
+    const matConfig = BRUSH_MATERIAL_PRESETS.find((m) => m.id === brushMaterial);
+    audioSynthRef.current?.startStroke(selectedPaper.roughness * (matConfig?.frictionSound ?? 1.0));
 
     if (simRef.current) {
       const isCalligraphyBrush =
@@ -547,6 +551,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
           waterRatio: currentTool === 'water-drop' ? 2.5 : inkDilution,
           dryBrush: isCalligraphyBrush,
           tipShape: brushTipShape,
+          material: brushMaterial,
         },
         true,
         e.timeStamp || performance.now(),
@@ -584,6 +589,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
         waterRatio: currentTool === 'water-drop' ? 2.5 : inkDilution,
         dryBrush: isCalligraphyBrush,
         tipShape: brushTipShape,
+        material: brushMaterial,
       },
       false,
       now,
@@ -1104,62 +1110,49 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
               1. {lang === 'de' ? 'Werkzeug & Pinsel' : lang === 'es' ? 'Herramienta' : 'Tool & Brush'}
             </label>
             <span className="text-[10px] text-amber-800 font-serif italic">
-              {currentTool === 'langhao'
-                ? '狼毫 (Wiesel)'
-                : currentTool === 'yanghao'
-                ? '羊毫 (Ziege)'
-                : currentTool === 'jianhao'
-                ? '兼毫 (Misch)'
-                : currentTool === 'seal-stamp'
+              {currentTool === 'seal-stamp'
                 ? '朱砂印章'
-                : ''}
+                : currentTool === 'water-drop'
+                ? '清水 (Wasser)'
+                : currentTool === 'fountain-pen'
+                ? '钢笔 (Feder)'
+                : `${BRUSH_MATERIAL_PRESETS.find((m) => m.id === brushMaterial)?.zh} · ${BRUSH_TIP_SHAPES.find((s) => s.id === brushTipShape)?.zh}`}
             </span>
           </div>
 
-          {/* Traditional Mao-Bi Hair Selection */}
+          {/* Brush Bristle Material (Borsten-Material / 毛料) */}
           <div className="space-y-1">
-            <span className="text-[10px] text-stone-500 font-mono uppercase font-bold">
-              {lang === 'de' ? 'Mao-Bi Haartypen (毛笔)' : 'Mao-Bi Brush Hair Types'}
-            </span>
-            <div className="grid grid-cols-3 gap-1.5">
-              <button
-                onClick={() => setCurrentTool('langhao')}
-                className={`p-2 rounded-xl border text-center transition-all cursor-pointer ${
-                  currentTool === 'langhao'
-                    ? 'border-amber-900 bg-amber-900 text-white font-bold shadow-xs'
-                    : 'border-stone-200 hover:bg-stone-50 text-stone-700'
-                }`}
-                title={lang === 'de' ? 'Langhao: Wieselhaar, hohe Rückfederung (Tanxing), spitze Linien' : 'Langhao: Weasel hair, high elasticity, sharp lines'}
-              >
-                <div className="font-bold text-[11px]">狼毫</div>
-                <div className="text-[9px] opacity-90">{lang === 'de' ? 'Wiesel' : 'Weasel'}</div>
-              </button>
-
-              <button
-                onClick={() => setCurrentTool('yanghao')}
-                className={`p-2 rounded-xl border text-center transition-all cursor-pointer ${
-                  currentTool === 'yanghao'
-                    ? 'border-amber-900 bg-amber-900 text-white font-bold shadow-xs'
-                    : 'border-stone-200 hover:bg-stone-50 text-stone-700'
-                }`}
-                title={lang === 'de' ? 'Yanghao: Ziegenhaar, sehr weich, hohes Tintenreservoir, sattes Fließen' : 'Yanghao: Goat hair, very soft, rich ink reservoir'}
-              >
-                <div className="font-bold text-[11px]">羊毫</div>
-                <div className="text-[9px] opacity-90">{lang === 'de' ? 'Ziege' : 'Goat'}</div>
-              </button>
-
-              <button
-                onClick={() => setCurrentTool('jianhao')}
-                className={`p-2 rounded-xl border text-center transition-all cursor-pointer ${
-                  currentTool === 'jianhao'
-                    ? 'border-amber-900 bg-amber-900 text-white font-bold shadow-xs'
-                    : 'border-stone-200 hover:bg-stone-50 text-stone-700'
-                }`}
-                title={lang === 'de' ? 'Jianhao: Mischhaar, Wieselkern in Ziegenmantel, der ausgewogene Allrounder' : 'Jianhao: Hybrid hair, balanced all-rounder'}
-              >
-                <div className="font-bold text-[11px]">兼毫</div>
-                <div className="text-[9px] opacity-90">{lang === 'de' ? 'Misch' : 'Hybrid'}</div>
-              </button>
+            <div className="flex items-center justify-between">
+              <span className="text-[10px] text-stone-500 font-mono uppercase font-bold">
+                {lang === 'de' ? 'Borsten-Material (毛料)' : 'Bristle Material'}
+              </span>
+              <span className="text-[10px] font-mono text-amber-800 font-serif italic">
+                {BRUSH_MATERIAL_PRESETS.find((m) => m.id === brushMaterial)?.zh}
+              </span>
+            </div>
+            <div className="grid grid-cols-5 gap-1">
+              {BRUSH_MATERIAL_PRESETS.map((mat) => (
+                <button
+                  key={mat.id}
+                  onClick={() => {
+                    setBrushMaterial(mat.id);
+                    if (currentTool === 'fountain-pen' || currentTool === 'water-drop' || currentTool === 'seal-stamp') {
+                      setCurrentTool('sumi-brush');
+                    }
+                  }}
+                  className={`p-1.5 rounded-lg border text-center transition-all cursor-pointer flex flex-col items-center justify-center ${
+                    brushMaterial === mat.id && (currentTool === 'sumi-brush' || currentTool === 'langhao' || currentTool === 'yanghao' || currentTool === 'jianhao')
+                      ? 'border-amber-900 bg-amber-900 text-white font-bold shadow-xs'
+                      : 'border-stone-200 bg-white hover:bg-stone-50 text-stone-700'
+                  }`}
+                  title={`${lang === 'de' ? mat.nameDe : mat.nameEn}: ${lang === 'de' ? mat.descDe : mat.descEn}`}
+                >
+                  <span className="text-[11px] font-serif font-bold leading-none mb-0.5">{mat.zh}</span>
+                  <span className="text-[9px] font-mono leading-none opacity-90">
+                    {lang === 'de' ? mat.nameDe.split(' ')[0] : mat.nameEn.split(' ')[0]}
+                  </span>
+                </button>
+              ))}
             </div>
           </div>
 

@@ -5,7 +5,7 @@ import { WetInkBrushManager, BrushState } from './brush';
 import { WetInkSimulation, computeBrushFootprint } from './simulation';
 import { WET_INK_DT } from './simulation';
 import { REFERENCE_PARAMS } from './scenarios';
-import { SealOptions, SealStyle, SealShape, SealGlyph, BrushTipShape } from './types';
+import { SealOptions, SealStyle, SealShape, SealGlyph, BrushTipShape, BrushMaterial, BRUSH_MATERIAL_PRESETS } from './types';
 
 describe('Chinese Calligraphy & Seal Art Engine (书法与篆刻)', () => {
   const getPaper = (id: string) => {
@@ -450,6 +450,97 @@ describe('Chinese Calligraphy & Seal Art Engine (书法与篆刻)', () => {
       const rep = sim.massReport();
       expect(rep.waterInjected).toBe(0);
       expect(rep.waterPresent).toBe(0);
+    });
+  });
+
+  // ---------------------------------------------------------------------------
+  // Ticket C8: Brush Bristle Materials (Borsten-Materialien & Haardynamik)
+  // ---------------------------------------------------------------------------
+  describe('Ticket C8: Brush Bristle Materials (Borsten-Materialien & Haardynamik)', () => {
+    it('defines the 5 authentic historical bristle materials with physical properties', () => {
+      expect(BRUSH_MATERIAL_PRESETS).toHaveLength(5);
+      const ids = BRUSH_MATERIAL_PRESETS.map((m) => m.id);
+      expect(ids).toEqual(['weasel', 'goat', 'mixed', 'horse', 'sable']);
+
+      for (const mat of BRUSH_MATERIAL_PRESETS) {
+        expect(mat.stiffness).toBeGreaterThan(0);
+        expect(mat.reservoir).toBeGreaterThan(0);
+        expect(mat.flowRate).toBeGreaterThan(0);
+        expect(mat.frictionSound).toBeGreaterThan(0);
+      }
+    });
+
+    it('goat hair deposits more fluid volume than springy weasel hair for identical stroke geometry', () => {
+      const simWeasel = freshSim('ban-shu-xuan', 'sumi', 64, 64);
+      const simGoat = freshSim('ban-shu-xuan', 'sumi', 64, 64);
+      const mgr = new WetInkBrushManager();
+
+      const weaselState: BrushState = { tool: 'sumi-brush', baseRadius: 8, waterRatio: 1.0, dryBrush: false, material: 'weasel' };
+      const goatState: BrushState = { tool: 'sumi-brush', baseRadius: 8, waterRatio: 1.0, dryBrush: false, material: 'goat' };
+
+      mgr.stroke(simWeasel, 15, 32, 0.5, weaselState, true, 0);
+      mgr.stroke(simWeasel, 45, 32, 0.5, weaselState, false, 50);
+
+      mgr.stroke(simGoat, 15, 32, 0.5, goatState, true, 0);
+      mgr.stroke(simGoat, 45, 32, 0.5, goatState, false, 50);
+
+      const repWeasel = simWeasel.massReport();
+      const repGoat = simGoat.massReport();
+
+      expect(repGoat.waterInjected).toBeGreaterThan(repWeasel.waterInjected);
+      expect(repGoat.pigmentInjected).toBeGreaterThan(0);
+      expect(repWeasel.pigmentInjected).toBeGreaterThan(0);
+    });
+
+    it('coarse horse/bristle hair triggers dry brush (Fei Bai 飞白) earlier than thirsty goat hair', () => {
+      const simHorse = freshSim('ban-shu-xuan', 'sumi', 64, 64);
+      const simGoat = freshSim('ban-shu-xuan', 'sumi', 64, 64);
+      const mgr = new WetInkBrushManager();
+
+      // Moderate speed and pressure where horse triggers dry-brush skipping but goat continues flowing
+      const horseState: BrushState = { tool: 'sumi-brush', baseRadius: 8, waterRatio: 1.0, dryBrush: true, material: 'horse' };
+      const goatState: BrushState = { tool: 'sumi-brush', baseRadius: 8, waterRatio: 1.0, dryBrush: true, material: 'goat' };
+
+      // Fast stroke: 30 px in 35 ms -> speed ~ 0.86 px/ms
+      mgr.stroke(simHorse, 15, 32, 0.35, horseState, true, 0);
+      mgr.stroke(simHorse, 45, 32, 0.35, horseState, false, 35);
+
+      mgr.stroke(simGoat, 15, 32, 0.35, goatState, true, 0);
+      mgr.stroke(simGoat, 45, 32, 0.35, goatState, false, 35);
+
+      const repHorse = simHorse.massReport();
+      const repGoat = simGoat.massReport();
+
+      // Horse skips paper crevices, depositing significantly less water
+      expect(repHorse.waterInjected).toBeLessThan(repGoat.waterInjected);
+    });
+
+    it('bristle splitting fluting produces authentic hair striations for coarse materials', () => {
+      const radius = 10;
+      // Without splitting (silky sable)
+      const smooth = computeBrushFootprint(0, 2, radius, 'round', 0, 0);
+      // With splitting (coarse horse/hog bristle)
+      const striated = computeBrushFootprint(0, 2, radius, 'round', 0, 0.65);
+
+      expect(smooth).toBeGreaterThan(0);
+      expect(striated).toBeGreaterThan(0);
+      expect(striated).toBeLessThan(smooth);
+    });
+
+    it('all 5 materials preserve fluid and pigment mass strictly', () => {
+      const materials: BrushMaterial[] = ['weasel', 'goat', 'mixed', 'horse', 'sable'];
+      for (const mat of materials) {
+        const sim = freshSim('ban-shu-xuan', 'sumi', 48, 48);
+        const mgr = new WetInkBrushManager();
+        mgr.stroke(sim, 24, 24, 0.6, { tool: 'sumi-brush', baseRadius: 6, waterRatio: 1.0, dryBrush: true, material: mat }, true, 0);
+        mgr.stroke(sim, 34, 24, 0.6, { tool: 'sumi-brush', baseRadius: 6, waterRatio: 1.0, dryBrush: true, material: mat }, false, 20);
+
+        const rep = sim.massReport();
+        expect(rep.waterInjected).toBeGreaterThan(0);
+        expect(rep.pigmentInjected).toBeGreaterThan(0);
+        expect(rep.waterError).toBeLessThan(1e-3);
+        expect(rep.pigmentError).toBeLessThan(1e-3);
+      }
     });
   });
 });
