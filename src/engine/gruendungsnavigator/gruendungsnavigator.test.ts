@@ -420,3 +420,39 @@ describe('Zahlen-Wächter: Texte nennen die Zahlen der ausgelieferten Seiten', (
     expect(treffer, `${pfad} nennt keine Zahl – Muster prüfen`).toBeGreaterThan(0);
   });
 });
+
+// ------------------------------------------------------------------ Offline (PWA)
+
+describe('Offline: Manifest, Symbol und Service Worker', () => {
+  const DIR = resolve(ROOT, 'public/gruendungsnavigator');
+  const manifest = JSON.parse(readFileSync(resolve(DIR, 'manifest.webmanifest'), 'utf8'));
+  const sw = readFileSync(resolve(DIR, 'sw.js'), 'utf8');
+
+  it('Manifest ist installierbar: Name, Start, Anzeige, Symbol vorhanden', () => {
+    expect(manifest.name).toBeTruthy();
+    expect(manifest.start_url).toBe('./');
+    expect(manifest.display).toBe('standalone');
+    for (const i of manifest.icons) expect(readFileSync(resolve(DIR, i.src), 'utf8')).toContain('<svg');
+  });
+
+  it('der Service Worker speichert genau Dateien, die es gibt, und beide Seiten', () => {
+    const liste = JSON.parse(sw.match(/const DATEIEN = (\[[^\]]*\])/)![1].replace(/'/g, '"')) as string[];
+    expect(liste).toEqual(expect.arrayContaining(['./index.html', './fall-landkarte.html', './manifest.webmanifest', './icon.svg']));
+    for (const f of liste.filter((x) => x !== './')) expect(readFileSync(resolve(DIR, f)).length, f).toBeGreaterThan(0);
+  });
+
+  it('der Service Worker fasst nur eigene Anfragen an und speichert keine Eingaben', () => {
+    expect(sw).toContain("new URL(req.url).origin !== self.location.origin");
+    const code = sw.split('\n').filter((z) => !z.trim().startsWith('//')).join('\n');
+    expect(code).not.toMatch(/localStorage|POST/);
+  });
+
+  it('beide Seiten binden Manifest und Registrierung ein (nur über http, nicht file://)', () => {
+    for (const html of [NAV, KARTE]) {
+      expect(html).toContain('<link rel="manifest" href="manifest.webmanifest">');
+      expect(html).toContain('navigator.serviceWorker.register("sw.js")');
+      expect(html).toContain('location.protocol.startsWith("http")');
+      expect(html).toContain('id="offline-status"');
+    }
+  });
+});

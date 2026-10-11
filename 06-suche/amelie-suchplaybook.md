@@ -846,3 +846,10 @@ Félix fragte, ob alles in der Dose steckt, und dann: „repair all so we dont h
 *Regel:* Jeder neue Prüfer bekommt eine Gegenprobe mit einem absichtlich falschen Eingang, bevor sein Grün etwas zählt.
 
 **Kanal-Notiz:** Reddit ist aus der Cloud-Umgebung nicht erreichbar (about.json leer, Suche ohne Reddit-Treffer). Subreddit-Regeln vor einem Post von Hand prüfen.
+
+#### Nachtrag 11.10.2026 nachts: `npm test` endlich grün, Navigator offline
+
+- **Ursache des Dauerrots:** `test:lab-inbox` rief `node --test --test-isolation=none`. Den Schalter gibt es erst ab Node 23; Node 22 (Cloud) kennt ihn nur als `--experimental-test-isolation`. Dazu nahm `npx vitest run` das `node:test`-Skript mit, weil der Ausschluss nur im npm-Skript stand. Repariert: `scripts/run-node-test.mjs` wählt den Schalter nach Node-Version, der Ausschluss steht in `vitest.config.ts`. *Regel:* Ausschlüsse gehören in die Konfiguration, nicht in die Kommandozeile, sonst gilt jeder direkte Aufruf als rot.
+- **Wackelnder Test:** Ein Lauf nach `export:data` + `lint` hatte einen Fehlschlag, 8 gezielte Läufe mit JSON-Reporter hatten keinen. Nicht reproduzierbar; beim nächsten Auftreten den Namen aus `--reporter=json` festhalten statt nur die Zahl.
+- **Offline (PWA):** Manifest, SVG-Symbol, Service Worker (Netz zuerst, Speicher als Rückfall, nur eigene GET-Anfragen, keine Eingaben). Getestet mit Playwright bei abgeschaltetem Netz. Ein Vitest-Wächter hält die Dateiliste gegen den Ordner; Gegenprobe mit absichtlich fehlender Datei schlug an.
+- **Testzahlen aus der Prosa entfernt** (nur noch „Vitest“), wie in Packer-Schritt 6b verlangt.

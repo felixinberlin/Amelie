@@ -51,6 +51,10 @@ Ein gescheiterter Abruf zählt nicht als Abweichung; der Befehl meldet ihn getre
 
 Prüfbefehl: `npm run check:mobile` (Skript `scripts/check-mobile.mjs`, braucht Chromium). Er lädt jede Seite unter `public/` über HTTP bei 360 und 390 px und prüft waagrechtes Scrollen, JS-Fehler, fehlgeschlagene Ladevorgänge und den Viewport-Meta. Stand 11.10.2026: beide Seiten in Ordnung.
 
+## 4a. Offline
+
+Manifest, Symbol und Service Worker (`public/gruendungsnavigator/`). Playwright-Test 11.10.2026: Status „✓ Offline verfügbar“, Netz aus, beide Seiten laden, Telefonbaum bedienbar. Dauerhaft im Test „Offline: Manifest, Symbol und Service Worker“; Gegenprobe mit einer absichtlich fehlenden Datei in der Liste schlug an.
+
 ## 5. Bedingungen vor Versand
 
 | Bedingung (Reviewer) | Stand |

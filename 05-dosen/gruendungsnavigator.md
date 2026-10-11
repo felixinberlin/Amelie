@@ -38,8 +38,8 @@ Wer aus dem Grundsicherungsgeld gründen will, braucht das Jobcenter. Aber **Ein
 ## Warum das jetzt geht
 
 1. **Die neue Rechtslage steht fest und ist im Wortlaut abrufbar.** Ein Werkzeug kann sie zitieren statt sie zu erraten. Alle wörtlichen Zitate des Prototyps wurden am 11.10.2026 **maschinell gegen gesetze-im-internet.de** geprüft. Dabei fanden sich vier Abweichungen (z. B. „selbständig“ statt „selbstständig“ in § 10, „daß“ in § 16 SGB I), die korrigiert sind.
-2. **Ein Browser reicht:** einzelne HTML-Dateien, kein Server, kein Konto, kein Tracking, Eingaben nur im `localStorage`. Die Seiten sind fürs Handy gebaut (Leiste unten, große Tippflächen, kein waagrechtes Scrollen bei 375 px) und laufen im Wartebereich des Jobcenters.
-3. **Deterministisch zuerst:** Fristen, Freibetrag und Normverweise kommen aus einem getesteten Kern (61 Vitest-Fälle), nicht aus einem Sprachmodell.
+2. **Ein Browser reicht:** einzelne HTML-Dateien, kein Server, kein Konto, kein Tracking, Eingaben nur im `localStorage`. Die Seiten sind fürs Handy gebaut (Leiste unten, große Tippflächen, kein waagrechtes Scrollen bei 375 px) und laufen im Wartebereich des Jobcenters, **auch ohne Netz**: Ein Service Worker hält beide Seiten vor, und man kann sie auf den Startbildschirm legen wie eine App.
+3. **Deterministisch zuerst:** Fristen, Freibetrag und Normverweise kommen aus einem getesteten Kern (Vitest), nicht aus einem Sprachmodell.
 
 ## Skizze
 
@@ -124,7 +124,7 @@ Wer Ticket 01 finanzieren könnte: **Prototype Fund** (Vereinbarkeit CC0 mit der
 ## Vorarbeit
 
 - Prototyp: `public/gruendungsnavigator/` (Kapitel `07-demos/gruendungsnavigator/README.md`), Konzept `02-recherche/gruendungsnavigator-konzept-2026-10-11.md`, Übergabe `06-suche/scout-an-bibliothekar-2026-10-11-gruendungsnavigator.md`.
-- Kern und Tests: `src/engine/gruendungsnavigator/` (61 Tests, inklusive Drift-Wächter über beide HTML-Seiten).
+- Kern und Tests: `src/engine/gruendungsnavigator/` (Vitest, inklusive Drift-, Zahlen- und Offline-Wächter über beide HTML-Seiten).
 - Normtexte: SGB II i. d. F. vom 16.04.2026 (BGBl. I Nr. 107), in Kraft 01.07.2026; §§ 14, 16, 17, 39, 60 SGB I; §§ 9, 13, 25, 33, 35, 44 SGB X; §§ 66, 84, 87, 88, 183 SGG; § 14 GewO; § 138 AO; § 19 UStG. Gelesen auf dejure.org und gesetze-im-internet.de (11.10.2026).
 - Quellen im Register: LSG NRW / LTO, gegen-hartz.de, BürgerChat, Sozialrat, Münchner Gründungsbüro, Gründerplattform, jobcenter.guru, dejure.org (`06-suche/amelie-quellen.md`).
 - Nebenbefund **Paragrafen-Prüfer** (G2, `verengt`): Das Normregister mit Fassung und Zitat-Abgleich ist dessen Kern.

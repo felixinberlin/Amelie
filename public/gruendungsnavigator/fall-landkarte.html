@@ -119,6 +119,9 @@ footer{border-top:1px solid var(--line);color:var(--ink-2);font-size:13px;paddin
   .card{box-shadow:none}
 }
 </style>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
 </head>
 <body>
 <header class="top"><div class="wrap">
@@ -158,7 +161,7 @@ footer{border-top:1px solid var(--line);color:var(--ink-2);font-size:13px;paddin
   <div class="laws" id="lawlist"></div>
 </main>
 
-<footer><div class="wrap">Persönliche Arbeitshilfe, keine Rechtsberatung. Für Streitfälle: Sozialberatung (z. B. ver.di Erwerbslosenberatung, Tacheles e.V.) oder Fachanwalt für Sozialrecht; das Verfahren vor dem Sozialgericht ist für Leistungsempfänger kostenfrei (§ 183 SGG). Beispielzahlen einer Gründung als Webentwickler, Stand Oktober 2026.</div></footer>
+<footer><div class="wrap">Persönliche Arbeitshilfe, keine Rechtsberatung. Für Streitfälle: Sozialberatung (z. B. ver.di Erwerbslosenberatung, Tacheles e.V.) oder Fachanwalt für Sozialrecht; das Verfahren vor dem Sozialgericht ist für Leistungsempfänger kostenfrei (§ 183 SGG). Beispielzahlen einer Gründung als Webentwickler, Stand Oktober 2026. <span id="offline-status"></span></div></footer>
 
 <script>
 (() => {
@@ -524,6 +527,14 @@ document.addEventListener("click", e => {
 document.addEventListener("keydown", e => { if ((e.key === "Enter" || e.key === " ") && e.target.classList && e.target.classList.contains("node")) { e.preventDefault(); e.target.dispatchEvent(new MouseEvent("click", {bubbles:true})); } });
 window.addEventListener("beforeprint", () => document.querySelectorAll("details.ans").forEach(d => d.open = true));
 })();
+</script>
+<script>
+/* Offline: Service Worker nur über http(s), nicht bei file:// */
+if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+  navigator.serviceWorker.register("sw.js").then(() => navigator.serviceWorker.ready).then(() => {
+    const el = document.getElementById("offline-status"); if (el) el.textContent = "✓ Offline verfügbar";
+  }).catch(() => {});
+}
 </script>
 </body>
 </html>

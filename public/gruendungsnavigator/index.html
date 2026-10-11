@@ -232,6 +232,9 @@ nav.tabs .ico,nav.tabs .short{display:none}
   section.view{display:block!important}
 }
 </style>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
 </head>
 <body>
 <header class="top">
@@ -362,7 +365,7 @@ nav.tabs .ico,nav.tabs .short{display:none}
 <footer>
   <div class="wrap">
     Persönliche Gesprächshilfe, keine Rechtsberatung. Gesetzestexte verlinkt auf <a href="https://www.gesetze-im-internet.de/" rel="noopener" target="_blank">gesetze-im-internet.de</a>; „Kurzfassung“ markiert sinngemäße Wiedergaben, alles andere ist wörtlich zitiert. Rechtsstand: SGB II in der Fassung des Dreizehnten Änderungsgesetzes vom 16.04.2026 (BGBl. I Nr. 107), in Kraft seit 1. Juli 2026; geprüft am 11.10.2026.
-    <span class="noprint"> · <a href="#" id="theme">Hell/Dunkel</a></span><span class="noprint tactic"> · Tastatur im Telefonat: <kbd>1</kbd>–<kbd>4</kbd> Antwort, <kbd>Enter</kbd> weiter, <kbd>←</kbd> zurück.</span>
+    <span class="noprint"> · <a href="#" id="theme">Hell/Dunkel</a></span><span class="noprint"> · <span id="offline-status"></span></span><span class="noprint tactic"> · Tastatur im Telefonat: <kbd>1</kbd>–<kbd>4</kbd> Antwort, <kbd>Enter</kbd> weiter, <kbd>←</kbd> zurück.</span>
   </div>
 </footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -966,6 +969,14 @@ $("#present").textContent = presentLabel(!!S.present);
 if (!S.present && MOBIL.matches) $("#brand-t").textContent = "Gründungsnavigator";
 MOBIL.addEventListener("change", () => { $("#present").textContent = presentLabel(!!S.present); });
 })();
+</script>
+<script>
+/* Offline: Service Worker nur über http(s), nicht bei file:// */
+if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+  navigator.serviceWorker.register("sw.js").then(() => navigator.serviceWorker.ready).then(() => {
+    const el = document.getElementById("offline-status"); if (el) el.textContent = "✓ Offline verfügbar";
+  }).catch(() => {});
+}
 </script>
 </body>
 </html>

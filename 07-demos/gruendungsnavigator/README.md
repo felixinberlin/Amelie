@@ -21,9 +21,13 @@ Beide Seiten sind fürs Handy gebaut. Prüfbefehl `npm run check:mobile` (360 un
 - Gesprächsnavigator: App-Leiste unten (Start · Anruf · Fragen · Rechte · Mail), kompakter Kopf, Fortschrittsbalken im Telefonat, die gewählte Antwort scrollt ins Bild, Weiter/Zurück bleiben über der Leiste, Tippflächen ab 44 px, Safe-Area für iPhones, Präsentationsmodus als „👁 Zeigen“.
 - Fall-Landkarte: Stationen als wischbare Leiste unter dem Kopf, Überblick und Zeitstrahl seitlich wischbar in lesbarer Größe, je Frage farbige Antwortkarten statt des Desktop-Baums, Fristentabelle als Karten.
 
+## Offline und als App
+
+`manifest.webmanifest`, `icon.svg` und `sw.js` machen beide Seiten installierbar („Zum Startbildschirm“) und offline nutzbar. Der Service Worker lädt Seiten zuerst aus dem Netz (Korrekturen an Normtexten kommen sofort an) und fällt ohne Netz auf den Speicher zurück. Eingaben bleiben im `localStorage`, nie im Service Worker. Bei `file://` wird nichts registriert. Im Fuß steht „✓ Offline verfügbar“, sobald der Speicher bereit ist. Geprüft am 11.10.2026 mit Playwright: Netz aus, beide Seiten laden, Telefonbaum bedienbar. Ein Test hält Manifest, Symbol und Dateiliste des Service Workers gegen die Dateien im Ordner.
+
 ## Kern und Tests
 
-`src/engine/gruendungsnavigator/` rechnet, was man nicht raten soll: Monatsfristen mit Werktag-Verschiebung (Widerspruch, Klage, Untätigkeit, Finanzamt, Einstiegsgeld-Höchstdauer, Jahresprüfung § 10), Reihenfolge Antrag/Start (§ 37 Abs. 2, sonst „unbekannt“), Freibetrag § 11b. Die Tests lesen `LAW`, `STEPS`, `QA`, `RIGHTS`, `L` und `FRISTEN` direkt aus den HTML-Seiten: Umfang, Baumstruktur, jeder Normverweis, Wortlaut-oder-Kurzfassung, keine Versprechenswörter, gleiche Zitate auf beiden Seiten. `npx vitest run src/engine/gruendungsnavigator` (61 Tests). Im Amélie-Frontend als Simulator „Gründungsnavigator & Fristenrechner“.
+`src/engine/gruendungsnavigator/` rechnet, was man nicht raten soll: Monatsfristen mit Werktag-Verschiebung (Widerspruch, Klage, Untätigkeit, Finanzamt, Einstiegsgeld-Höchstdauer, Jahresprüfung § 10), Reihenfolge Antrag/Start (§ 37 Abs. 2, sonst „unbekannt“), Freibetrag § 11b. Die Tests lesen `LAW`, `STEPS`, `QA`, `RIGHTS`, `L` und `FRISTEN` direkt aus den HTML-Seiten: Umfang, Baumstruktur, jeder Normverweis, Wortlaut-oder-Kurzfassung, keine Versprechenswörter, gleiche Zitate auf beiden Seiten. `npx vitest run src/engine/gruendungsnavigator` (Vitest). Im Amélie-Frontend als Simulator „Gründungsnavigator & Fristenrechner“.
 
 ## Rechtsstand
 

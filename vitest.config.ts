@@ -6,7 +6,8 @@ export default defineConfig({
   plugins: [sitePages()],
   test: {
     globals: true,
-    exclude: ['tests/browser/**', '**/node_modules/**', '**/dist/**'],
+    // scripts/*.test.mjs mit node:test laufen über `npm run test:lab-inbox`, nicht über Vitest
+    exclude: ['tests/browser/**', '**/node_modules/**', '**/dist/**', 'scripts/lab-inbox.test.mjs'],
     environment: 'node',
   },
 });

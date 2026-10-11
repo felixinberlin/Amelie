@@ -33,8 +33,8 @@ export const DOSE_BOOKS: Record<string, BookChapter[]> = {
     {
       slug: 'demo', path: '07-demos/gruendungsnavigator/README.md',
       titleDe: 'Demo: Gesprächsnavigator und Fall-Landkarte', titleEn: 'Demo: conversation navigator and case map',
-      noteDe: 'Zwei Handy-taugliche HTML-Seiten ohne Server; Kern mit 61 Tests, der die Demo-Daten direkt aus dem HTML prüft.',
-      noteEn: 'Two phone-friendly HTML pages without a server; kernel with 61 tests that checks the demo data straight from the HTML.',
+      noteDe: 'Zwei Handy-taugliche, offline-fähige HTML-Seiten ohne Server; getesteter Kern, der die Demo-Daten direkt aus dem HTML prüft.',
+      noteEn: 'Two phone-friendly, offline-capable HTML pages without a server; tested kernel that checks the demo data straight from the HTML.',
       date: '11.10.2026', kind: 'md',
     },
     {

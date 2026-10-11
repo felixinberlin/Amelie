@@ -57,7 +57,7 @@ try {
 
 // Über HTTP ausliefern statt file://, sonst scheitern fetch()-Aufrufe der Seiten an CORS.
 const pub = resolve(root, 'public');
-const TYPEN = { '.html': 'text/html; charset=utf-8', '.json': 'application/json', '.js': 'text/javascript', '.css': 'text/css', '.svg': 'image/svg+xml', '.png': 'image/png', '.webp': 'image/webp', '.jpg': 'image/jpeg' };
+const TYPEN = { '.html': 'text/html; charset=utf-8', '.json': 'application/json', '.js': 'text/javascript', '.css': 'text/css', '.svg': 'image/svg+xml', '.webmanifest': 'application/manifest+json', '.png': 'image/png', '.webp': 'image/webp', '.jpg': 'image/jpeg' };
 const server = createServer((req, res) => {
   const pfad = resolve(pub, '.' + decodeURIComponent(new URL(req.url, 'http://x').pathname));
   const ziel = pfad.endsWith('/') || (existsSync(pfad) && statSync(pfad).isDirectory()) ? join(pfad, 'index.html') : pfad;
