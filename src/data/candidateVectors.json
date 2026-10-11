@@ -2590,5 +2590,22 @@
     "funDe": "Historische Kriminalfälle allein durch reale physikalische Spuren zu lösen ist fesselnde, unbestechliche Detektivarbeit.",
     "funEn": "Solving authentic historical crime cases strictly via physical clues provides gripping, unbribable deduction.",
     "note": "Recherche fernöstlicher Spielwünsche (1247 AD Gerichtsmedizin)"
+  },
+  "yuanye-garden-builder": {
+    "v": [
+      4,
+      3,
+      4,
+      4,
+      4,
+      3,
+      4
+    ],
+    "fun": 5,
+    "funSource": "sensory",
+    "funDe": "Mondtore und Gitterfenster zu platzieren und zu sehen, wie sich Landschaft, Schattenwurf und Regenklang organisch einpassen, ist pures Zen.",
+    "funEn": "Placing moon gates and lattice windows to watch landscape vistas, shadow play, and rain acoustics harmoniously align is pure Zen.",
+    "note": "Recherche fernöstlicher Spielwünsche (1631 AD Gartenphilosophie 计成《园冶》)"
   }
 }
+

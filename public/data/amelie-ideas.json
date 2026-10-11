@@ -1,13 +1,13 @@
 {
   "$schema": "https://raw.githubusercontent.com/felixinberlin/amelie/main/public/data/amelie-schema.json",
   "version": "1.0.0",
-  "generatedAt": "2026-10-11T17:35:41.804Z",
+  "generatedAt": "2026-10-11T17:40:17.947Z",
   "license": "CC0-1.0 (Public Domain / Kula-Ring)",
   "storageProvider": "github_pages",
   "repository": "https://github.com/felixinberlin/amelie",
   "stats": {
     "totalDosen": 45,
-    "totalUnpacked": 170,
+    "totalUnpacked": 171,
     "totalDiscarded": 149
   },
   "dosen": [
@@ -5247,6 +5247,45 @@
         "China",
         "Kulturgut",
         "Deduktion"
+      ]
+    },
+    {
+      "id": "yuanye-garden-builder",
+      "title": "Yuanye-Gartenmeister: Die Kunst des Ausborgens (1631)",
+      "titleEn": "Yuanye Garden Craftsman: The Art of Borrowed Scenery (1631)",
+      "round": "Katalog 2026",
+      "date": "11.10.2026",
+      "conceptDe": "Organisches Gartenbau- und Meditationsspiel nach Ji Chengs „Yuanye“ (园冶, 1631): Spieler gestalten einen klassischen Gelehrtengarten ohne starres Kachelraster, sondern durch die Kunst des Ausborgens (借景 - Jiejing), das Platzieren von Gitterfenstern (花窗) und Mondtoren zur Rahmung entfernter Bergkonturen sowie Taihu-Kalksteinen zur akustischen Leitung von Regenwasser.",
+      "conceptEn": "An organic landscape garden meditation game based on Ji Cheng’s \"Yuanye\" (园冶, 1631 AD): players design a Ming-era scholar garden without rigid grid tiles, mastering the art of borrowed scenery (借景 - Jiejing), placing lattice windows and moon gates framing distant mountain vistas, and limestone rockeries tuned for the acoustic resonance of falling rain.",
+      "status": "ungeprüft",
+      "suggestedVerdict": "gift",
+      "recipientDe": "Museum für Ostasiatische Kunst Köln · Lehrstühle für Landschaftsarchitektur (TU München, Leibniz Univ. Hannover) · Chinese Academy of Cultural Heritage",
+      "recipientEn": "Museum of East Asian Art Cologne · Chairs of Landscape Architecture (TUM, Hannover) · Chinese Academy of Cultural Heritage",
+      "sourceType": "Education & History",
+      "sourceDe": "Ji Cheng: Yuanye (园冶, 1631 n. Chr., ältestes Werk über Landschaftsgärtnerei); chinesische Spieler-Wunschlisten (Zhihu/Bilibili)",
+      "sourceEn": "Ji Cheng: Yuanye (The Craft of Gardens, 1631 AD); Chinese player design wishlist discussions on Zhihu/Bilibili",
+      "evidenceDe": "Bestehende Stadt- und Gartenbauspiele (wie Jiangnan Baijingtu) sind Raster-Klicker mit Paywalls; kein freies Werkzeug vermittelt Ji Chengs organische Sichtachsen- und Phänologie-Regeln deterministisch.",
+      "evidenceEn": "Existing period builders (e.g. Jiangnan Hundred Scenes) rely on isometric tile grids with microtransactions; zero free tools simulate Ji Cheng’s organic scenic framing and phenological rules.",
+      "reviewDate": "03/2027",
+      "problemDe": "Klassische ostasiatische Landschaftsarchitektur wird in Spielen auf dekorative Raster-Objekte reduziert; die zugrundeliegenden Natur- und Raumphilosophien („雖由人作，宛自天開“) bleiben unzugänglich.",
+      "problemEn": "Classical landscape architecture is reduced to decorative grid sprites in games; the profound spatial philosophies of borrowed views and seasonal resonance remain untaught.",
+      "whyNowDe": [
+        "HTML5-Canvas und Web-Audio erlauben organische Vektorsichtachsen, prozeduralen Bambuswind und Regenwasserklänge ohne schwere 3D-Engines."
+      ],
+      "whyNowEn": [
+        "HTML5 canvas and Web Audio enable organic vector sightlines, procedural bamboo wind, and rain acoustic resonance without heavy 3D game engines."
+      ],
+      "firstStepTicketDe": "Ticket #1: 2D-Sichtachsen-Engine mit Mondtor-Rahmung und 3 Felsformationen mit Regenwasser-Akustik",
+      "firstStepTicketEn": "Ticket #1: 2D sightline framing engine with moon gate vistas and 3 limestone formations with rain acoustics",
+      "firstStepCriteriaDe": "Deterministischer Sichtlinien-Check: Rahmen eines fernen Gipfels erzeugt visuelle Harmoniepunkte und schaltet Gedichtzitate aus dem Yuanye frei.",
+      "firstStepCriteriaEn": "Deterministic sightline raycast: successfully framing a distant mountain crest scores harmony rating and reveals authentic Yuanye verses.",
+      "tags": [
+        "Games",
+        "Gartenbau",
+        "Architektur",
+        "China",
+        "Kulturgut",
+        "Zen"
       ]
     },
     {

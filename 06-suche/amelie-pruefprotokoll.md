@@ -1235,4 +1235,6 @@ Empirische Recherche fernöstlicher und globaler Gaming-Wünsche (Heybox, Zhihu,
 | # | Idee | Methode | Urteil (Merge → nach Review) | Beleg (kurz) | Evidenz | Geprüft | Prüfen ab |
 |---|---|---|---|---|---|---|---|
 | G1 | **Song-Ci-Kriminalakten 1247** (`song-ci-forensics-1247`) — Historisch-physikalische Gerichtsmedizin nach 宋慈 *Xǐ Yuān Jí Lù* (1247 AD) | [method: ideenrunde] | `frei` | Keine Paywalls, keine Detektiv-Magie, keine leuchtenden Markierungen: Fälle der Weltliteratur (Sichelprobe/Fliegen-Schwarmverhalten, Roter Papierschirm/Polarisation von Knochenhämatomen, Ruß in der Luftröhre/Vitalreaktion) werden deterministisch anhand von Physik, Chemie und Insektenbiologie gelöst. Zero-Cloud Web Audio & Canvas Scaffolding. | [Seite] | 11.10.2026 | 10/2027 |
+| G2 | **Yuanye-Gartenmeister 1631** (`yuanye-garden-builder`) — Organische Landschaftsarchitektur & Kunst des Ausborgens nach 计成《园冶》 | [method: ideenrunde] | `ungeprüft` | Ming-zeitliche Gartenbau-Prinzipien (虽由人作宛自天开, 巧于因借): Ausrichten von Mondtoren und Gitterfenstern (花窗) auf entfernte Bergketten und Wasserflächen, Taihu-Kalksteine mit Regenwasser-Resonanz. Anti-Grid-Bauweise als freies Kultur- und Meditationswerkzeug. | [Seite] | 11.10.2026 | 03/2027 |
+
 
