@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { aggregateMonths, dayLength, energyFor, fetchNasaPowerYear, fromFixture, monthCards, WeatherYearData, WeatherYearFixture } from './weatherYear';
-import { parseFlowering, playableSpecies, runWatch, speciesProfile, strategyCycle, strategyPoints } from './watchMode';
+import { parseFlowering, placeFit, playableSpecies, runWatch, speciesProfile, strategyCycle, strategyPoints, trampleLoss } from './watchMode';
+import { CITY_PLACES, placeById } from '../../data/fugenduellPlaces';
 import berlinRaw from '../../data/fugenduellWeather/berlin-2025.json';
 import madridRaw from '../../data/fugenduellWeather/madrid-2025.json';
 
@@ -130,5 +131,53 @@ describe('watch mode', () => {
     expect(() => runWatch([['taraxacum-officinale', 'plantago-major', 'poa-annua'], heatTeam], cards(berlin), 52)).toThrow();
     expect(() => runWatch([['ailanthus-altissima', 'plantago-major', 'poa-annua'], heatTeam], cards(berlin), 52)).toThrow();
     expect(() => runWatch([['poa-annua', 'poa-annua', 'plantago-major'], heatTeam], cards(berlin), 52)).toThrow();
+  });
+});
+
+describe('places in the city', () => {
+  const pavement = placeById('gehwegfuge');
+  const wasteland = placeById('brache');
+  const wall = placeById('mauerfuge');
+
+  it('flat plants escape trampling, tall upright plants suffer twice', () => {
+    expect(speciesProfile('plantago-major')!.rosette).toBe(true); // RHS: low leaf rosette
+    expect(trampleLoss(speciesProfile('plantago-major')!, placeById('platzpflaster'))).toBe(0);
+    expect(trampleLoss(speciesProfile('sagina-procumbens')!, placeById('platzpflaster'))).toBe(0); // height class 1
+    expect(trampleLoss(speciesProfile('poa-annua')!, placeById('platzpflaster'))).toBe(2);
+    expect(trampleLoss(speciesProfile('chelidonium-majus')!, placeById('platzpflaster'))).toBe(4);
+    expect(trampleLoss(speciesProfile('chelidonium-majus')!, wall)).toBe(0);
+  });
+
+  it('fits plants to places from indicator values and the wall habitat', () => {
+    expect(placeFit(speciesProfile('cymbalaria-muralis')!, wall).bonus).toBe(2); // fit + wall dweller
+    expect(placeFit(speciesProfile('cochlearia-danica')!, wall)).toEqual({ fits: 0, known: 0, bonus: 0 }); // missing = neutral
+  });
+
+  it('street cleaning removes woody shoots, seeds stay', () => {
+    const r = runWatch([['buddleja-davidii', 'poa-annua', 'plantago-major'], ['chelidonium-majus', 'cymbalaria-muralis', 'sagina-procumbens']], cards(berlin), berlin.lat, 'en', pavement);
+    const april = r.months[1];
+    expect(april.lines.some(l => l.startsWith('Butterfly Bush: cleaning removes'))).toBe(true);
+    expect(april.shoots[0][0]).toBe(0);
+  });
+
+  it('the place decides: butterfly bush thrives on the wasteland and collapses in the pavement crack', () => {
+    const shrubTeam = ['buddleja-davidii', 'chelidonium-majus', 'cymbalaria-muralis'];
+    const trampleTeam = ['plantago-major', 'poa-annua', 'cymbalaria-muralis'];
+    for (const d of [berlin, madrid]) {
+      const open = runWatch([shrubTeam, trampleTeam], cards(d), d.lat, 'en', wasteland);
+      const crack = runWatch([shrubTeam, trampleTeam], cards(d), d.lat, 'en', pavement);
+      expect(open.winner).toBe(0);
+      expect(crack.score[0]).toBeLessThan(open.score[0] * 0.2);
+    }
+    expect(runWatch([shrubTeam, trampleTeam], cards(berlin), berlin.lat, 'en', pavement).winner).toBe(1);
+  });
+
+  it('stays within each place capacity and keeps mirror matches drawn', () => {
+    for (const place of CITY_PLACES) for (const d of [berlin, madrid]) {
+      const team = ['buddleja-davidii', 'poa-annua', 'plantago-major'];
+      const r = runWatch([team, team], cards(d), d.lat, 'en', place);
+      expect(r.winner).toBe('draw');
+      r.months.forEach(m => expect(m.sideShoots[0] + m.sideShoots[1]).toBeLessThanOrEqual(place.capacity));
+    }
   });
 });
