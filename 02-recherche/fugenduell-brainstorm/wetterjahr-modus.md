@@ -141,7 +141,14 @@ The same three species win in one city and lose in the other — without anyone 
 
 ---
 
-## 8. Open questions for Félix
+## 7a. Decided (11.10.2026)
+
+* **Watch mode first** — implemented in `src/engine/fugenduell/watchMode.ts`, tests in `weatherYear.test.ts`.
+* **Same city for both players.**
+* **Relative thresholds:** *which* months count as rain, warm, heat, drought or cold months is relative to the city (the top or bottom third of its 12 months). *How hard* they hit stays absolute: heat = hot days ≥ 30 °C ÷ 10 (rounded up), drought = longest dry run ÷ 7, frost = frost days ÷ 10. A cool city has heat months, but they cost nothing if there are no hot days. Day length stays astronomy.
+* The first test games and their findings: `testspiel-2026-10-11.md`.
+
+## 8. Open questions for Félix (status before the decisions)
 
 1. **Interactive or auto battle?** (a) Players play cards each month (rulebook), or (b) you only choose city, year and 3 species, then watch the year play out (12 months, with the math shown like the Balatro scoring). (b) is quick and great for teaching; (a) is the game. Proposal: (b) as the entry point, (a) as the duel.
 2. **One city for both, or each their own?** Same weather for both is fair (current proposal). "My Berlin against your Madrid" would be a different game: who chose the better plants *for their own city*?
