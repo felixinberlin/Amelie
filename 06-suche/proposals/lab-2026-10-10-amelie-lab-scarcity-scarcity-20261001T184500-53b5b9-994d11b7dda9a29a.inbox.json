@@ -1,0 +1,348 @@
+{
+  "batch_id": "amelie-lab-scarcity-scarcity-20261001T184500-53b5b9-994d11b7dda9a29a",
+  "lab_id": "amelie-lab",
+  "engine": "scarcity",
+  "run_id": "scarcity-20261001T184500-53b5b9",
+  "revision": "994d11b7dda9a29a958cb959afae5a244d04939ae43275b0b215240f0712483b",
+  "created_at": "2026-10-01T18:49:33Z",
+  "model": "deepseek/deepseek-chat",
+  "intent": "Kommunale Baumkontrollen in Brandenburg: Zeitbudget pro Baum und fehlende Kronendiagnostik ohne Hubwagen",
+  "ideas": [
+    {
+      "local_id": "C1",
+      "record": {
+        "candidate_id": "C1",
+        "rank": 1,
+        "idea": "Ein KI-gestütztes System zur Baumdiagnose, das durch Smartphone-Fotos und GPS-Daten die Baumgesundheit automatisch bewertet.",
+        "gap": "Kommunale Baumkontrolleure haben kein explizites Zeitbudget pro Baum und benötigen eine effiziente Methode, um die Baumgesundheit schnell und zuverlässig zu bewerten.",
+        "gap_stands_alone": true,
+        "forced_by_constraint": "Ohne die gesetzliche Verpflichtung, Baumkontrollen durchzuführen, besteht keine Notwendigkeit für eine automatisierte Lösung, die Zeit spart.",
+        "who_has_problem": "Kommunale Baumkontrolleure in Brandenburg.",
+        "why_now": "Fortschritte in der Bilderkennung und geringere Kosten für KI-Technologie ermöglichen erst jetzt eine effiziente Baumdiagnose per Smartphone.",
+        "buildable": "Existierende Apps wie Arbora.app zeigen, dass Baumdiagnose per Smartphone technisch machbar ist.",
+        "recipient": "Brandenburger Kommunen",
+        "recipient_kind": "institution",
+        "evidence_urls": [
+          "https://arbora.app/",
+          "https://www.arboristik.de/baumpflege/einestadt-eine-app-digitalisiert-baumpflege-und-co.html",
+          "https://www.einestadt.com/baumkontrolle"
+        ]
+      }
+    },
+    {
+      "local_id": "C3",
+      "record": {
+        "candidate_id": "C3",
+        "rank": 2,
+        "idea": "Ein Algorithmus, der Prioritäten für Baumkontrollen basierend auf Standort und Baumalter setzt.",
+        "gap": "Kommunen müssen Baumkontrollen effizient priorisieren, aber es fehlt ein systematischer Ansatz, um Risiken basierend auf Standort und Baumalter zu bewerten.",
+        "gap_stands_alone": true,
+        "forced_by_constraint": "Ohne die gesetzliche Verpflichtung zur Baumkontrolle besteht keine Notwendigkeit für eine risikobasierte Priorisierung.",
+        "who_has_problem": "Kommunale Baumkontrolleure in Brandenburg.",
+        "why_now": "Die Verfügbarkeit von Standortdaten und KI-gestützter Priorisierungsalgorithmen macht dies jetzt möglich.",
+        "buildable": "Die FLL-Baumkontrollrichtlinien zeigen, dass Priorisierung bereits etabliert ist, KI-gestützte Algorithmen könnten dies optimieren.",
+        "recipient": "Brandenburger Kommunen",
+        "recipient_kind": "institution",
+        "evidence_urls": [
+          "https://baumkontrolle-kuther.de/fll-kontrollrichtlinie.htm",
+          "https://baum-gut-achten.de/2025/02/07/baumkontrolle-und-baumgutachten-2025-gesetzliche-vorgaben-fll-richtlinien-verkehrssicherungspflicht/"
+        ]
+      }
+    }
+  ],
+  "record": {
+    "run_id": "scarcity-20261001T184500-53b5b9",
+    "intent": "Kommunale Baumkontrollen in Brandenburg: Zeitbudget pro Baum und fehlende Kronendiagnostik ohne Hubwagen",
+    "model": "deepseek/deepseek-chat",
+    "created_at": "2026-10-01T18:49:33Z",
+    "state_missing": [],
+    "constraint": {
+      "constraint": {
+        "statement": "Kommunen sind gesetzlich verpflichtet, regelmäßige Baumkontrollen durchzuführen, ohne dass ein explizites Zeitbudget pro Baum definiert ist.",
+        "source_url": "https://service.stadt-brandenburg.de/dienstleistungen/-/egov-bis-detail/dienstleistung/9939/show",
+        "source_label": "Satzung",
+        "constraint_class": "institutional_legal",
+        "evidence_quote": "Baumbesitzer, darunter Kommunen, sind verpflichtet, regelmäßige Baumkontrollen durchzuführen, um ihre Verkehrssicherungspflicht zu erfüllen.",
+        "why_binding_now": "Die gesetzliche Verpflichtung ist unverhandelbar und muss erfüllt werden, um die öffentliche Sicherheit zu gewährleisten.",
+        "who_bears_it": "Kommunen in Brandenburg",
+        "closed_workaround": "Die rechtliche Pflicht schließt die Möglichkeit aus, Baumkontrollen aufgrund fehlender Ressourcen zu vernachlässigen."
+      },
+      "rejected_soft": [
+        "Die Wunschvorstellung, dass Baumkontrollen schnell und kostengünstig durchgeführt werden können.",
+        "Die Annahme, dass moderne Technologien wie KI die Notwendigkeit menschlicher Kontrollen vollständig ersetzen können.",
+        "Die Vorstellung, dass Kommunen zusätzliche Ressourcen für Baumkontrollen einfach bereitstellen können.",
+        "Die Annahme, dass Baumkontrollen ohne spezielle Ausbildung oder Geräte durchgeführt werden können.",
+        "Die Erwartung, dass Baumkontrollen ohne rechtliche Konsequenzen vernachlässigt werden können."
+      ]
+    },
+    "invention": {
+      "thesis": "Effiziente Baumkontrollen müssen ohne Hubwagen und mit begrenztem Zeitbudget durchgeführt werden.",
+      "candidates": [
+        {
+          "id": "C1",
+          "idea": "Ein KI-gestütztes System zur Baumdiagnose, das durch Smartphone-Fotos und GPS-Daten die Baumgesundheit automatisch bewertet.",
+          "without_constraint": "Ein Standardbaumkataster ohne spezielle Effizienzanforderungen.",
+          "why_now": "Fortschritte in der Bilderkennung und geringere Kosten für KI-Technologie.",
+          "recipient": "Brandenburger Kommunen",
+          "recipient_kind": "institution",
+          "check_queries": [
+            "Baumkontrolle durch Smartphone-Fotos",
+            "KI-gestützte Baumdiagnose"
+          ]
+        },
+        {
+          "id": "C2",
+          "idea": "Eine App, die Bürger dazu anleitet, Baumfotos zu machen und Daten zur Baumgesundheit zu sammeln (Citizen Science).",
+          "without_constraint": "Ein einfaches Baumfotoprojekt ohne rechtliche Verpflichtung.",
+          "why_now": "Verbreitung von Smartphones und steigendes Interesse an Bürgerwissenschaften.",
+          "recipient": "Naturschutzverbände",
+          "recipient_kind": "association",
+          "check_queries": [
+            "Citizen Science Baumgesundheit",
+            "App für Baumfotos"
+          ]
+        },
+        {
+          "id": "C3",
+          "idea": "Ein Algorithmus, der Prioritäten für Baumkontrollen basierend auf Standort und Baumalter setzt.",
+          "without_constraint": "Eine einfache Liste von Bäumen ohne Priorisierung.",
+          "why_now": "Verfügbarkeit von Standortdaten und KI-gestützter Priorisierungsalgorithmen.",
+          "recipient": "Brandenburger Kommunen",
+          "recipient_kind": "institution",
+          "check_queries": [
+            "Priorisierung Baumkontrollen",
+            "Algorithmus für Baumprioritäten"
+          ]
+        },
+        {
+          "id": "C4",
+          "idea": "Ein mobiles Gerät, das durch Klopfgeräusche Baumstabilität prüft.",
+          "without_constraint": "Ein Standardbaumkataster ohne spezielle Geräte.",
+          "why_now": "Kostengünstige Sensoren und KI-gestützte Klassifikatoren.",
+          "recipient": "Brandenburger Kommunen",
+          "recipient_kind": "institution",
+          "check_queries": [
+            "Baumstabilität durch Klopfgeräusche",
+            "Mobiles Gerät für Baumdiagnose"
+          ]
+        },
+        {
+          "id": "C5",
+          "idea": "Eine Plattform, die Baumdaten aus verschiedenen Quellen kombiniert und visualisiert.",
+          "without_constraint": "Ein einfacher Baumkataster ohne Datenvisualisierung.",
+          "why_now": "Fortschritte in der Datenvisualisierung und Cloud-Technologie.",
+          "recipient": "Brandenburger Kommunen",
+          "recipient_kind": "institution",
+          "check_queries": [
+            "Baumdatenvisualisierung",
+            "Plattform für Baumdaten"
+          ]
+        },
+        {
+          "id": "C6",
+          "idea": "Ein Schulungsprogramm für Bürger, um Baumkontrollen selbst durchzuführen.",
+          "without_constraint": "Ein einfacher Baumkataster ohne Bürgerbeteiligung.",
+          "why_now": "Steigendes Interesse an Bürgerbeteiligung und digitale Schulungsmethoden.",
+          "recipient": "Naturschutzverbände",
+          "recipient_kind": "association",
+          "check_queries": [
+            "Bürgerschulungen für Baumkontrollen",
+            "Baumkontrolle durch Bürger"
+          ]
+        }
+      ],
+      "shortlist": [
+        "C1",
+        "C2",
+        "C3"
+      ]
+    },
+    "result": {
+      "survivors": [
+        {
+          "candidate_id": "C1",
+          "rank": 1,
+          "idea": "Ein KI-gestütztes System zur Baumdiagnose, das durch Smartphone-Fotos und GPS-Daten die Baumgesundheit automatisch bewertet.",
+          "gap": "Kommunale Baumkontrolleure haben kein explizites Zeitbudget pro Baum und benötigen eine effiziente Methode, um die Baumgesundheit schnell und zuverlässig zu bewerten.",
+          "gap_stands_alone": true,
+          "forced_by_constraint": "Ohne die gesetzliche Verpflichtung, Baumkontrollen durchzuführen, besteht keine Notwendigkeit für eine automatisierte Lösung, die Zeit spart.",
+          "who_has_problem": "Kommunale Baumkontrolleure in Brandenburg.",
+          "why_now": "Fortschritte in der Bilderkennung und geringere Kosten für KI-Technologie ermöglichen erst jetzt eine effiziente Baumdiagnose per Smartphone.",
+          "buildable": "Existierende Apps wie Arbora.app zeigen, dass Baumdiagnose per Smartphone technisch machbar ist.",
+          "recipient": "Brandenburger Kommunen",
+          "recipient_kind": "institution",
+          "evidence_urls": [
+            "https://arbora.app/",
+            "https://www.arboristik.de/baumpflege/einestadt-eine-app-digitalisiert-baumpflege-und-co.html",
+            "https://www.einestadt.com/baumkontrolle"
+          ]
+        },
+        {
+          "candidate_id": "C3",
+          "rank": 2,
+          "idea": "Ein Algorithmus, der Prioritäten für Baumkontrollen basierend auf Standort und Baumalter setzt.",
+          "gap": "Kommunen müssen Baumkontrollen effizient priorisieren, aber es fehlt ein systematischer Ansatz, um Risiken basierend auf Standort und Baumalter zu bewerten.",
+          "gap_stands_alone": true,
+          "forced_by_constraint": "Ohne die gesetzliche Verpflichtung zur Baumkontrolle besteht keine Notwendigkeit für eine risikobasierte Priorisierung.",
+          "who_has_problem": "Kommunale Baumkontrolleure in Brandenburg.",
+          "why_now": "Die Verfügbarkeit von Standortdaten und KI-gestützter Priorisierungsalgorithmen macht dies jetzt möglich.",
+          "buildable": "Die FLL-Baumkontrollrichtlinien zeigen, dass Priorisierung bereits etabliert ist, KI-gestützte Algorithmen könnten dies optimieren.",
+          "recipient": "Brandenburger Kommunen",
+          "recipient_kind": "institution",
+          "evidence_urls": [
+            "https://baumkontrolle-kuther.de/fll-kontrollrichtlinie.htm",
+            "https://baum-gut-achten.de/2025/02/07/baumkontrolle-und-baumgutachten-2025-gesetzliche-vorgaben-fll-richtlinien-verkehrssicherungspflicht/"
+          ]
+        }
+      ],
+      "kills": [
+        {
+          "candidate_id": "C2",
+          "reason": "Citizen-Science-Apps zur Baumgesundheit existieren bereits, wie die 'Mein Baum'-App. Die Idee wäre ohne die gesetzliche Verpflichtung trivial.",
+          "failed_checks": [
+            "already_in_memory",
+            "not_forced"
+          ]
+        }
+      ],
+      "log_row": {
+        "constraint": "Kommunen sind gesetzlich verpflichtet, regelmäßige Baumkontrollen durchzuführen, ohne dass ein explizites Zeitbudget pro Baum definiert ist.",
+        "constraint_class": "institutional_legal",
+        "candidates": 6,
+        "survivors": 2,
+        "best_gap": "Kommunale Baumkontrolleure haben kein explizites Zeitbudget pro Baum und benötigen eine effiziente Methode, um die Baumgesundheit schnell und zuverlässig zu bewerten."
+      },
+      "retro": {
+        "learned": "Die gesetzliche Verpflichtung ist ein starker Treiber für die Entwicklung technischer Lösungen zur Effizienzsteigerung.",
+        "mistake": "Citizen-Science-Ansätze zur Baumgesundheit wurden bereits umgesetzt und waren daher kein geeignetes Feld für neue Ideen.",
+        "next_time": "Vor der Ideengenerierung gezielter prüfen, welche Lösungen bereits existieren und auf welche Weise sie weiter differenziert werden könnten."
+      }
+    },
+    "tool_calls": [
+      {
+        "call_id": "scarcity-20261001T184500-53b5b9-t01",
+        "tool": "search",
+        "status": "ok",
+        "summary": "Kommunale Baumkontrollen Brandenburg Vorschriften Zeitbudget"
+      },
+      {
+        "call_id": "scarcity-20261001T184500-53b5b9-t02",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "bewertet, gestützt"
+      },
+      {
+        "call_id": "scarcity-20261001T184500-53b5b9-t03",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "bewertet"
+      },
+      {
+        "call_id": "scarcity-20261001T184500-53b5b9-t04",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "anleitet, baumfoto"
+      },
+      {
+        "call_id": "scarcity-20261001T184500-53b5b9-t05",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "anleitet"
+      },
+      {
+        "call_id": "scarcity-20261001T184500-53b5b9-t06",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "basieren, baumalte"
+      },
+      {
+        "call_id": "scarcity-20261001T184500-53b5b9-t07",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "basieren"
+      },
+      {
+        "call_id": "scarcity-20261001T184500-53b5b9-t08",
+        "tool": "search",
+        "status": "ok",
+        "summary": "Baumkontrolle durch Smartphone-Fotos"
+      },
+      {
+        "call_id": "scarcity-20261001T184500-53b5b9-t09",
+        "tool": "search",
+        "status": "ok",
+        "summary": "Citizen Science Baumgesundheit"
+      },
+      {
+        "call_id": "scarcity-20261001T184500-53b5b9-t10",
+        "tool": "search",
+        "status": "ok",
+        "summary": "Priorisierung Baumkontrollen"
+      }
+    ],
+    "accounting": {
+      "model_calls": 6,
+      "search_calls": 4,
+      "search_queries": 12,
+      "cost_usd": 0.060239
+    },
+    "log_entry": "<!-- proposed by the Lab's Scarcity agent, run scarcity-20261001T184500-53b5b9; nothing was written to Amélie -->\n| 2026-10-01 | Lab | Kommunen sind gesetzlich verpflichtet, regelmäßige Baumkontrollen durchzuführen, ohne dass ein explizites Zeitbudget pro Baum definiert ist. (institutional_legal) | 6 | 2 (ungeprüft): 1. Ein KI-gestütztes System zur Baumdiagnose, das durch Smartphone-Fotos und GPS-Daten die Baumgesundheit automatisch bewertet. (→ Brandenburger Kommunen); 2. Ein Algorithmus, der Prioritäten für Baumkontrollen basierend auf Standort und Baumalter setzt. (→ Brandenburger Kommunen) | Kommunale Baumkontrolleure haben kein explizites Zeitbudget pro Baum und benötigen eine effiziente Methode, um die Baumgesundheit schnell und zuverlässig zu bewerten. |\n\n### Scarcity run scarcity-20261001T184500-53b5b9 — 2026-10-01 (intent: Kommunale Baumkontrollen in Brandenburg: Zeitbudget pro Baum und fehlende Kronendiagnostik ohne Hubwagen)\n- **Learned:** Die gesetzliche Verpflichtung ist ein starker Treiber für die Entwicklung technischer Lösungen zur Effizienzsteigerung.\n- **Mistake:** Citizen-Science-Ansätze zur Baumgesundheit wurden bereits umgesetzt und waren daher kein geeignetes Feld für neue Ideen.\n- **Next time:** Vor der Ideengenerierung gezielter prüfen, welche Lösungen bereits existieren und auf welche Weise sie weiter differenziert werden könnten.\n- **Prior-art leads (automatic search, for the existence check; not a verdict):**\n  - C1 (ok): Baumkontrolle durch Smartphone-Fotos -> https://arbora.app/, https://www.arboristik.de/baumpflege/einestadt-eine-app-digitalisiert-baumpflege-und-co.html, https://www.einestadt.com/baumkontrolle, https://www.bundeswehr.de/de/organisation/infrastruktur-umweltschutz-und-dienstleistungen/aktuelles/gruene-infrastruktur-wird-digital-5734562\n  - C2 (ok): Citizen Science Baumgesundheit -> https://starnberg.bund-naturschutz.de/aktuelle-meldungen/artikel/neues-citizen-science-projekt-stadtbaeume-erfassen-und-schuetzen, https://www.mitforschen.org/projekt/mein-baum, https://www.spotteron.net/de/citizen-science-apps/regionale-community-science-projekte/mein-baum-baeume-schuetzen-1403, https://www.wissenschaftsjahr.de/2020-21/aktuelles-aus-der-biooekonomie/koepfe-des-wandels/treechecker-ein-citizen-science-projekt.html\n  - C3 (ok): Priorisierung Baumkontrollen -> https://de.wikipedia.org/wiki/Baumkontrolle, https://baum-gut-achten.de/2025/02/07/baumkontrolle-und-baumgutachten-2025-gesetzliche-vorgaben-fll-richtlinien-verkehrssicherungspflicht/, https://galk.de/startseite/fll-baumkontrollrichtlinien-2020/, https://treelax.de/blogs/baumpflege-wissen/baumkontrollrichtlinien\n",
+    "prior_art": [
+      {
+        "candidate_id": "C1",
+        "question": "Baumkontrolle durch Smartphone-Fotos",
+        "status": "ok",
+        "answer": "Smartphone photos are a key component in modern tree inspection, primarily through the use of specialized mobile applications and digital tree registers (Baumkataster). These digital tools enable efficient and legally compliant documentation of tree conditions.\n\nSeveral platforms and apps facilitate this process:\n*   **Arbora.app** allows users to upload photos directly from their smartphone and assign them to a specific tree. This helps in documenting damages and changes in condition, ensuring complete evidence. The app integrates these photos with other tree attributes, such as species, trunk circumference, crown condition, vitality, and traffic safety status, all in accordance with FLL standards.\n*   The app **\"EineStadt\"** digitizes tree care by allowing photos to be stored directly online as part of the documentation for each tree or green space. It also uses NFC chips attached to trees, which can be scanned with a smartphone or tablet to access and update tree information, including adding photos. This system aims to make documentation up to five times faster than traditional paper methods.\n*   The **Bundeswehr's \"Baumkontroll-App\"** enables the capture of trunk and condition data, as well as necessary actions and their urgency, directly on a tablet. This data, including photos, serves for legally secure documentation and helps optimize work assignments.\n*   **Netwake's mobile application POI** allows inspectors to have all relevant information, including past records and photos, for a tree during inspection. It also supports offline work, with data synchronizing once a network connection is available.\n*   **treeSPOT** is an online tree register that allows tree inspectors to take photos at any point during or after an inspection and associate them with the specific control record. This ensures reliable, legally sound, and intuitive documentation.\n*   The **BaumManager App** facilitates mobile tree inspections on tablets and smartphones, enabling the effective recording of tree populations, inspection results, and maintenance measures. Users can store various documents, notes, and photos for each tree.\n\nIn essence, smartphone photos are used to visually document the condition of trees, record damages, and track changes over time. These photos are integrated into digital tree management systems, providing a comprehensive and legally secure record for tree owners and inspectors, often adhering to guidelines like those from the FLL (Forschungsgesellscha",
+        "pages": [
+          "https://arbora.app/",
+          "https://www.arboristik.de/baumpflege/einestadt-eine-app-digitalisiert-baumpflege-und-co.html",
+          "https://www.einestadt.com/baumkontrolle",
+          "https://www.bundeswehr.de/de/organisation/infrastruktur-umweltschutz-und-dienstleistungen/aktuelles/gruene-infrastruktur-wird-digital-5734562",
+          "https://www.netwakevision.com/einsatzbereiche/baumkontrolle/",
+          "https://www.treespot.de/die-app/",
+          "https://www.baummanager.info/"
+        ]
+      },
+      {
+        "candidate_id": "C2",
+        "question": "Citizen Science Baumgesundheit",
+        "status": "ok",
+        "answer": "Citizen Science projects focused on tree health (\"Baumgesundheit\") involve volunteers in collecting data to monitor and protect trees, especially in urban areas. These initiatives aim to understand the impact of climate change, diseases, and pests on tree populations and inform sustainable urban planning.\n\nSeveral projects and organizations are active in this field:\n\n*   **\"Mein Baum\" (My Tree) App** The BUND Naturschutz (BN), in collaboration with the Technical University of Munich (TUM) and Weihenstephan-Triesdorf University of Applied Sciences (HSWT), launched the \"Mein Baum\" Citizen Science project. This project, which started in April 2025, encourages citizens to use a smartphone app to record data on urban trees, including their location, species, environment, root area, trunk, crown, and any observed animals or fungi. The collected data helps analyze trends, develop protective measures, answer scientific questions, and support sustainable urban planning. The app also allows users to connect with other tree enthusiasts and share observations. The \"Mein Baum\" app helps users care for and protect trees in their communities by tracking their condition and sharing observations. It aims to create a detailed map of trees in urban areas, particularly in Bavarian cities, to help organize tree care efforts and prevent unnecessary felling.\n*   **TreeChecker** The Schulbiologiezentrum Hannover initiated \"TreeChecker\" as a Citizen Science project. This project, highlighted during the \"Wissenschaftsjahr 2020\" (Science Year 2020), focuses on urban trees, which are crucial for cooling cities and mitigating climate change effects. Volunteers contribute by reporting observations and conducting measurements to assess tree health, especially given the increasing number of diseased trees in cities due to factors like drought, heat, and pests.\n*   **Tree-Quest Project** This Austrian Citizen Science project aims to develop a data component to bridge the in-situ data gap for more reliable forest mapping using Copernicus satellite data. Participants use the free Geo-Quest app's Tree-Quest module to measure trees in their neighborhood, determine their carbon storage, and understand their role in combating climate change. The collected data assists scientists in creating better maps of carbon stored in forests using satellite imagery.\n*   **Observatree** In the UK, Observatree is an early warning system for tree health based on citizen science. It involves a network of train",
+        "pages": [
+          "https://starnberg.bund-naturschutz.de/aktuelle-meldungen/artikel/neues-citizen-science-projekt-stadtbaeume-erfassen-und-schuetzen",
+          "https://www.mitforschen.org/projekt/mein-baum",
+          "https://www.spotteron.net/de/citizen-science-apps/regionale-community-science-projekte/mein-baum-baeume-schuetzen-1403",
+          "https://www.wissenschaftsjahr.de/2020-21/aktuelles-aus-der-biooekonomie/koepfe-des-wandels/treechecker-ein-citizen-science-projekt.html",
+          "https://www.citizen-science.at/projekte/tree-quest",
+          "https://planthealthaction.org/citizen-science",
+          "https://boku.ac.at/citizen-science/projekte",
+          "https://www.fs.usda.gov/working-with-us/citizen-science",
+          "https://www.researchgate.net/publication/329245393_Citizen_Science_and_Tree_Health_Assessment_How_Useful_Are_the_Data"
+        ]
+      },
+      {
+        "candidate_id": "C3",
+        "question": "Priorisierung Baumkontrollen",
+        "status": "ok",
+        "answer": "The prioritization of tree inspections, known as \"Baumkontrollen,\" is primarily guided by the duty to maintain safety (\"Verkehrssicherungspflicht\") and is influenced by several key factors, particularly in Germany and Austria. The FLL-Baumkontrollrichtlinien (FLL Tree Inspection Guidelines) serve as a standard framework for these inspections.\n\nAccording to baumkontrolle-kuther.de, the type and frequency of tree inspections, as well as necessary safety measures, are determined by the following criteria: the tree's condition, its location, the type of traffic, the safety expectations of that traffic, the reasonableness of the required measures, and the status of the party responsible for maintaining safety. This approach is supported by a ruling from the German Federal Court of Justice (Bundesgerichtshof) from July 2, 2004.\n\nKey criteria and considerations for prioritization include:\n\n*   **Tree Condition (Zustand des Baumes)**: The health and structural integrity of the tree are paramount. Damages that impair traffic safety can often be identified by specific symptoms before tree failure. Significant static-relevant damage symptoms, such as fungal fruiting bodies of wood-decaying species, are particularly important. Trees with severe defects or statics-relevant damage that could pose a traffic hazard require clarification through in-depth investigations.\n*   **Location of the Tree (Standort des Baumes)**: Trees in areas with public traffic, such as roads, paths, squares, parks, playgrounds, schools, and kindergartens, require regular inspections. The higher the potential risk associated with the location, the more frequently inspections should occur.\n*   **Type and Frequency of Traffic (Art des Verkehrs und Sicherheitserwartung des Verkehrs)**: Areas with higher foot traffic or vehicle traffic, such as busy streets, paths, and public spaces, lead to higher safety expectations and thus a greater need for frequent inspections.\n*   **Age of the Tree (Alter des Baumes)**: The FLL-Baumkontrollrichtlinien consider the age of the tree. Young trees generally do not require special controls beyond regular care. Trees in their mature phase (typically 15 to 50 or 80 years) rarely pose traffic hazards due to natural damage. However, trees in the aging phase (starting from approximately 50 or 80 years) increasingly develop biologically induced damage that can affect traffic safety, necessitating more frequent inspections and maintenance.\n*   **Risk Assessment (Risikoans",
+        "pages": [
+          "https://de.wikipedia.org/wiki/Baumkontrolle",
+          "https://baum-gut-achten.de/2025/02/07/baumkontrolle-und-baumgutachten-2025-gesetzliche-vorgaben-fll-richtlinien-verkehrssicherungspflicht/",
+          "https://galk.de/startseite/fll-baumkontrollrichtlinien-2020/",
+          "https://treelax.de/blogs/baumpflege-wissen/baumkontrollrichtlinien",
+          "https://baumkontrolle-kuther.de/fll-kontrollrichtlinie.htm",
+          "https://baumkontrolle-kuther.de/kontrollintervall.htm",
+          "https://www.baumstatik.de/wp-content/uploads/191_Die-acht-wichtigsten-Kriterien-bei-der-Baumkontrolle_Vortrag-Wien2002.pdf",
+          "https://www.baumpflegeportal.de/baumrecht/regelmasige-baumkontrollen-pflicht-was-heisst-das-genau/",
+          "https://treeteam.at/2025/06/17/wie-oft-sollte-eine-baumkontrolle-durchgefuehrt-werden-und-warum-ist-sie-wichtig/",
+          "https://baumkonvention.at/wp-content/uploads/2021/03/2103-SV-Informativ-Risiko-Nikodem.pdf",
+          "https://naturschutz-und-denkmalpflege.projekte.tu-berlin.de/pages/recht/verkehrssicherung/haeufige-fragestellungen/prioritaeten-bei-der-baumkontrolle.php",
+          "https://www.baum-management.de/baumkontrollen.html"
+        ]
+      }
+    ],
+    "contract_version": "1.0.0"
+  },
+  "existence_check": false,
+  "contract_version": "1.0.0"
+}

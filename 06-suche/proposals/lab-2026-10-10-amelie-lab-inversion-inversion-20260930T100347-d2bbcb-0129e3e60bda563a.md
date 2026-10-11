@@ -1,0 +1,411 @@
+# Proposals from plan lab-2026-10-10-amelie-lab-inversion-inversion-20260930T100347-d2bbcb-0129e3e60bda563a
+
+Packet: amelie-lab-inversion-inversion-20260930T100347-d2bbcb-0129e3e60bda563a · Candidate: amelie-lab-inversion-inversion-20260930T100347-d2bbcb-0129e3e60bda563a
+Not applied. A human decides.
+
+- [06-suche/amelie-lab-protokoll.md] inversion: amelie-lab-inversion-inversion-20260930T100347-d2bbcb-0129e3e60bda563a. Absicht: Tortilla de Patatas. Modell: gemini-2.5-flash. Existenzprüfung: nein. Alle Ideen ungeprüft. Die folgenden Angaben sind gespeicherte Modellausgaben, keine bestätigten Tatsachen. Nur grounded=true ist Evidenz; Score-Änderungen benötigen zusätzlich quote_status=verified. Quellen, fact_checks und fehlende Felder bleiben wie im Original; keine neuen Prüfungen durchgeführt.
+- [06-suche/amelie-lab-protokoll.md] Frontend-Handoff: 4 ungeprüfte Ideen aus inversion. Im Lab-Ideen-Eingang anzeigen; nicht als geprüfte Dosen, ohne erfundene Vektoren oder Existenzurteile.
+- [06-suche/amelie-lab-protokoll.md] Originalfeld run_id, Teil 1 (laut gespeicherter Datei):
+"inversion-20260930T100347-d2bbcb"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld intent, Teil 1 (laut gespeicherter Datei):
+"Tortilla de Patatas"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld model, Teil 1 (laut gespeicherter Datei):
+"gemini-2.5-flash"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld created_at, Teil 1 (laut gespeicherter Datei):
+"2026-09-30T10:08:26Z"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld state_missing, Teil 1 (laut gespeicherter Datei):
+[]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld plan, Teil 1 (laut gespeicherter Datei):
+{
+  "area": "Tortilla de Patatas",
+  "mode_list": [
+    "Generate personalized Tortilla de Patatas recipes based on available ingredients and dietary preferences.",
+    "Identify ingredients for Tortilla de Patatas from a photo and suggest a shopping list.",
+    "Provide real-time cooking guidance for making Tortilla de Patatas, offering visual and auditory cues for each step.",
+    "Assess the doneness and quality of a cooked Tortilla de Patatas using image analysis (e.g., browning, texture).",
+    "Calculate the nutritional value of a homemade Tortilla de Patatas based on ingredients and quantities.",
+    "Troubleshoot common issues during Tortilla de Patatas preparation, such as sticking or breaking.",
+    "Suggest regional variations and historical facts about Tortilla de Patatas.",
+    "Find local restaurants or delis serving highly-rated Tortilla de Patatas.",
+    "Optimize ingredient quantities for different pan sizes or desired serving portions.",
+    "Manage a home pantry inventory for Tortilla de Patatas ingredients.",
+    "Translate classic Spanish Tortilla de Patatas recipes into simplified, easy-to-follow instructions.",
+    "Estimate the cost of making a Tortilla de Patatas based on current ingredient prices."
+  ],
+  "target_queries": [
+    "EU-Verordnung geschützte geografische Angabe Tortilla de Patatas",
+    "Spanische Lebensmittelhygiene-Verordnung kommerzielle Zubereitung Eierspeisen"
+  ],
+  "class_hint": "A"
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld target, Teil 1 (laut gespeicherter Datei):
+{
+  "target": {
+    "name": "Spanische Lebensmittelhygiene-Verordnung für kommerzielle Zubereitung von Eierspeisen (basiert auf EU-Verordnungen (EG) Nr. 852/2004 und 853/2004)",
+    "source_url": "https://www.aesan.gob.es/en/seguridad-alimentaria/higiene-alimentos/huevos-ovoproductos",
+    "source_label": "Klasse A: Regelung",
+    "anchor_class": "A",
+    "who_pays": "Kommerzielle Lebensmittelbetriebe (Restaurants, Bars, Catering) zahlen für die Einhaltung der Vorschriften, einschließlich Schulungen, Ausrüstung und ggf. Bußgeldern bei Nichteinhaltung. Die Öffentlichkeit zahlt indirekt über die Preise für sichere Lebensmittel.",
+    "who_carries_burden": "Kleine und mittelständische Gastronomiebetriebe und deren Personal tragen die Hauptlast der täglichen, detailreichen Compliance. Sie müssen Temperaturen, Lagerzeiten und Prozesse akribisch überwachen, oft ohne spezialisierte digitale Tools oder dediziertes Hygiene-Management-Personal, und sind dem Risiko von Strafen oder Betriebsschließungen ausgesetzt.",
+    "where_data_stops": "Hygiene-Compliance-Daten werden oft in Papierprotokollen, internen Schulungsunterlagen oder in proprietären Auditberichten erfasst. Diese sind selten öffentlich zugänglich, digital durchsuchbar oder aggregierbar, was die Identifizierung systemischer Probleme erschwert.",
+    "blind_spot": "Die täglichen, praktischen Herausforderungen und Unsicherheiten, denen sich das Personal in kleinen Lebensmittelbetrieben bei der Umsetzung komplexer Hygienevorschriften gegenübersieht, insbesondere bei hohem Personalwechsel und Sprachbarrieren. Der Fokus liegt oft auf reaktiver Kontrolle statt auf proaktiver, zugänglicher Unterstützung."
+  },
+  "operator": "OP-2",
+  "thesis": "Die komplexen Lebensmittelhygiene-Standards für Eierspeisen können in ein zugängliches, evidenzbasiertes Selbstprüf- und Anleitungswerkzeug für kleine Gastronomiebetriebe umgewandelt werden, um proaktive Einhaltung statt reaktiver Inspektionsabhängigkeit zu fördern.",
+  "candidates": [
+    {
+      "id": "C1",
+      "idea": "Eine mobile App, die Gastronomiepersonal durch tägliche Hygiene-Checks für die Eierverarbeitung führt (z.B. Temperatur, Lagerung, Kreuzkontaminationsrisiken), indem sie komplexe Verordnungen in einfache, bebilderte Arbeitsschritte umwandelt und die Einhaltung digital dokumentiert.",
+      "why_now": "On-device multimodal AI ermöglicht die Echtzeit-Erkennung von Küchengeräten und Zutaten (z.B. Thermometer, Eierkartons) sowie die Bereitstellung sprachgestützter Anweisungen. LLMs können regulatorische Texte in einfache Checklisten übersetzen, die lokal ohne Cloud-Anbindung funktionieren.",
+      "recipient": "Nationale oder regionale Lebensmittelüberwachungsbehörde (z.B. AESAN in Spanien oder ein kommunales Gesundheitsamt).",
+      "recipient_kind": "agency",
+      "check_queries": [
+        "App Lebensmittelhygiene kleine Betriebe Eier",
+        "HACCP mobile Anwendung Gastronomie Spanien"
+      ]
+    },
+    {
+      "id": "C2",
+      "idea": "Ein intelligentes System, das per Kameraeinspeisung gängige Zubereitungsschritte von Eierspeisen erkennt und kritische Parameter (z.B. Kochzeiten, Öltemperatur für Kartoffeln, Abkühlzeiten für Tortillas) automatisch protokolliert, mit sofortigem Feedback bei Abweichungen von den Vorschriften.",
+      "why_now": "Fortschrittliche Computer Vision mit Wenig-Schuss-Lernen zur Erkennung spezifischer Küchenprozesse und Zutatenzustände, kombiniert mit Sensorfusion (z.B. thermische Kamera des Smartphones oder Bluetooth-Temperatursonden) zur automatischen Datenerfassung ohne manuelle Eingabe.",
+      "recipient": "Gastronomie-Berufsverband (z.B. Federación Española de Hostelería - FEHR) oder ein Forschungsinstitut für Lebensmitteltechnologie.",
+      "recipient_kind": "association",
+      "check_queries": [
+        "KI-gestützte Küchenüberwachung Eierspeisen",
+        "Automatisierte Temperaturerfassung Gastronomie"
+      ]
+    },
+    {
+      "id": "C3",
+      "idea": "Ein spezialisierter Chatbot, trainiert auf die EU-Lebensmittelhygienevorschriften (852/2004, 853/2004) und deren spanische Adaptionen, der spezifische 'Was-wäre-wenn'-Fragen des Küchenpersonals beantwortet und bei der Interpretation komplexer Gesetzestexte hilft.",
+      "why_now": "Große Sprachmodelle (LLMs), die auf juristische Texte und spezifische Fachterminologie feinabgestimmt sind, um präzise und kontextbezogene Antworten zu liefern. Dies ermöglicht kleinen Betrieben den sofortigen Zugang zu rechtlichen Auskünften ohne teure Berater.",
+      "recipient": "Handelskammer (z.B. Cámara de Comercio de España) oder eine juristische Beratungsstelle für kleine Unternehmen.",
+      "recipient_kind": "institution",
+      "check_queries": [
+        "Chatbot Lebensmittelrecht Gastronomie",
+        "KI-Assistent Hygienevorschriften Spanien"
+      ]
+    },
+    {
+      "id": "C4",
+      "idea": "Eine anonyme, Crowdsourcing-Plattform, auf der Gastronomiebetriebe praktische Herausforderungen bei der Umsetzung von Hygienevorschriften melden können. Eine KI aggregiert und analysiert diese Daten, um Muster und Schwachstellen zu identifizieren und Empfehlungen für Regulierungsbehörden oder Schulungsbedarf zu generieren.",
+      "why_now": "Sichere, datenschutzkonforme Datenaggregationstechniken in Verbindung mit Natural Language Processing (NLP) zur thematischen Analyse qualitativer Rückmeldungen. Dies deckt systemische Probleme auf, die bei traditionellen Inspektionen unentdeckt bleiben könnten.",
+      "recipient": "Ein öffentliches Gesundheitsforschungsinstitut oder eine Verbraucherschutzorganisation.",
+      "recipient_kind": "agency",
+      "check_queries": [
+        "Feedbacksystem Lebensmittelhygiene Kleinbetriebe",
+        "KI-Analyse Herausforderungen Gastronomie Vorschriften"
+      ]
+    },
+    {
+      "id": "C5",
+      "idea": "Ein virtuelles Trainingsmodul, das realistische Lebensmittelhygiene-Szenarien (z.B. Kühlausfall, falsche Eierlagerung, Kreuzkontamination) simuliert und die Reaktionen des Personals gemäß Vorschriften bewertet. Es bietet personalisierte Lernpfade und Sprachoptionen.",
+      "why_now": "Immersive VR/AR-Umgebungen mit KI-gestützter Szenariogenerierung und Echtzeit-Feedback auf Benutzeraktionen. Dies ermöglicht effektive und ansprechende Compliance-Schulungen für Personal mit unterschiedlichen Sprachkenntnissen und Bildungsniveaus.",
+      "recipient": "Berufsbildungszentrum für Gastronomie oder ein nationaler Hotel- und Gaststättenverband.",
+      "recipient_kind": "association",
+      "check_queries": [
+        "VR Training Lebensmittelhygiene",
+        "Gamified Food Safety Education Spain"
+      ]
+    },
+    {
+      "id": "C6",
+      "idea": "Ein System, das bei Wareneingang 'Patata de Galicia' mittels Bilderkennung identifiziert und Lieferantenzertifikate (z.B. QR-Codes auf Etiketten) automatisch scannt und verifiziert, um die Einhaltung geschützter geografischer Angaben sicherzustellen.",
+      "why_now": "Fortschrittliche Computer Vision zur Unterscheidung spezifischer Kartoffelsorten und OCR zum Auslesen von Zertifizierungsetiketten, kombiniert mit Blockchain- oder sicheren digitalen Registerabfragen zur Authentizitätsprüfung.",
+      "recipient": "Regulierungsbehörde für geschützte Ursprungsbezeichnungen (z.B. Ministerio de Agricultura, Pesca y Alimentación) oder eine regionale Lebensmittelqualitätskontrolle.",
+      "recipient_kind": "agency",
+      "check_queries": [
+        "KI Patata de Galicia Echtheitsprüfung",
+        "Herkunftsverifikation Agrarprodukte Bilderkennung"
+      ]
+    },
+    {
+      "id": "C7",
+      "idea": "Ein System, das lokale Wettervorhersagen und saisonale Daten analysiert, um das Salmonellenrisiko für Eierspeisen proaktiv vorherzusagen. Es sendet standortspezifische Warnungen und verstärkte Hygieneempfehlungen an Restaurants in Risikogebieten während kritischer Perioden.",
+      "why_now": "Prädiktive KI-Modelle, die meteorologische Daten, epidemiologische Muster und Lebensmittelhygienevorschriften integrieren, um orts- und zeitspezifische Risikoanalysen und umsetzbare Ratschläge zu generieren.",
+      "recipient": "Öffentliche Gesundheitsbehörde oder ein meteorologischer Dienst in Zusammenarbeit mit Lebensmittelsicherheitsexperten.",
+      "recipient_kind": "agency",
+      "check_queries": [
+        "Salmonellen Risikoprognose Eier KI",
+        "Wetterbasierte Lebensmittelwarnungen"
+      ]
+    }
+  ],
+  "shortlist": [
+    "C1",
+    "C3",
+    "C6",
+    "C7"
+  ]
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld result, Teil 1 (laut gespeicherter Datei):
+{
+  "survivors": [
+    {
+      "candidate_id": "C3",
+      "rank": 1,
+      "idea": "Ein spezialisierter Chatbot, trainiert auf die EU-Lebensmittelhygienevorschriften (852/2004, 853/2004) und deren spanische Adaptionen, der spezifische 'Was-wäre-wenn'-Fragen des Küchenpersonals beantwortet und bei der Interpretation komplexer Gesetzestexte hilft.",
+      "gap": "Küchenpersonal in kleinen Gastronomiebetrieben kann komplexe Lebensmittelhygienevorschriften nicht ohne Weiteres interpretieren und benötigt schnelle, verlässliche Antworten auf spezifische Fragen.",
+      "gap_stands_alone": true,
+      "who_has_problem": "Küchenpersonal in kleinen Gastronomiebetrieben, das sofortige, verlässliche Antworten auf spezifische 'Was-wäre-wenn'-Fragen zu komplexen Lebensmittelhygienevorschriften benötigt, ohne teure Beratung, wie in der These beschrieben.",
+      "why_now": "Große Sprachmodelle (LLMs), die auf juristische Texte und Fachterminologie feinabgestimmt sind, liefern präzise, kontextbezogene Antworten und ermöglichen sofortigen Zugang zu Rechtsauskünften ohne teure Berater.",
+      "buildable": "Ja, mit der aktuellen Fähigkeit von LLMs, die auf spezifische juristische Texte und Fachterminologie feinabgestimmt werden können.",
+      "recipient": "Handelskammer (z.B. Cámara de Comercio de España) oder eine juristische Beratungsstelle für kleine Unternehmen, um ihre Mitglieder und Klienten bei der Einhaltung der Vorschriften zu unterstützen.",
+      "recipient_kind": "institution",
+      "evidence_urls": [
+        "https://www.aesan.gob.es/en/seguridad-alimentaria/higiene-alimentos/huevos-ovoproductos",
+        "https://www.dish.co/DE/de/blog/kuenstliche-intelligenz-in-der-gastronomie-so-kann-die-technologie-helfen/",
+        "https://content.behrs-online.de/wissen/module-view/behrs-ki"
+      ]
+    },
+    {
+      "candidate_id": "C1",
+      "rank": 2,
+      "idea": "Eine mobile App, die Gastronomiepersonal durch tägliche Hygiene-Checks für die Eierverarbeitung führt (z.B. Temperatur, Lagerung, Kreuzkontaminationsrisiken), indem sie komplexe Verordnungen in einfache, bebilderte Arbeitsschritte umwandelt und die Einhaltung digital dokumentiert.",
+      "gap": "Gastronomiepersonal in kleinen Betrieben hat Schwierigkeiten, komplexe Lebensmittelhygienevorschriften für Eier in einfache, bebilderte Arbeitsschritte umzusetzen und digital zu dokumentieren.",
+      "gap_stands_alone": true,
+      "who_has_problem": "Kleine und mittelständische Gastronomiebetriebe und deren Personal, die Schwierigkeiten haben, komplexe Lebensmittelhygienevorschriften für Eier in die tägliche Praxis umzusetzen, insbesondere bei Personalwechsel und Sprachbarrieren.",
+      "why_now": "On-device multimodale KI ermöglicht die Echtzeit-Erkennung von Küchengeräten und Zutaten sowie sprachgestützte Anweisungen. LLMs können regulatorische Texte in einfache, bebilderte Checklisten übersetzen, die lokal funktionieren.",
+      "buildable": "Ja, mit existierenden multimodal-AI- und LLM-Technologien zur Vereinfachung, auch wenn allgemeine HACCP-Apps bereits existieren.",
+      "recipient": "Nationale oder regionale Lebensmittelüberwachungsbehörde (z.B. AESAN in Spanien oder ein kommunales Gesundheitsamt), um die Compliance in kleinen Betrieben zu erhöhen und den Inspektionsaufwand zu reduzieren.",
+      "recipient_kind": "agency",
+      "evidence_urls": [
+        "https://www.aesan.gob.es/en/seguridad-alimentaria/higiene-alimentos/huevos-ovoproductos",
+        "https://www.upkeepr.de/haccp-app-jetzt-kostenlos-testen/",
+        "https://diehaccpapp.de/",
+        "https://www.firstaudit.de/haccp-checkliste-hygiene-app/"
+      ]
+    },
+    {
+      "candidate_id": "C7",
+      "rank": 3,
+      "idea": "Ein System, das lokale Wettervorhersagen und saisonale Daten analysiert, um das Salmonellenrisiko für Eierspeisen proaktiv vorherzusagen. Es sendet standortspezifische Warnungen und verstärkte Hygieneempfehlungen an Restaurants in Risikogebieten während kritischer Perioden.",
+      "gap": "Es fehlt ein System, das das Salmonellenrisiko für Eierspeisen proaktiv basierend auf lokalen Wetter- und saisonalen Daten vorhersagt, um gezielte Hygieneempfehlungen zu geben.",
+      "gap_stands_alone": true,
+      "who_has_problem": "Öffentliche Gesundheitsbehörden und Restaurants, die proaktive, standortspezifische Warnungen und Hygieneempfehlungen zum Salmonellenrisiko in Eierspeisen benötigen, insbesondere bei wechselnden Umweltbedingungen.",
+      "why_now": "Prädiktive KI-Modelle können meteorologische Daten, epidemiologische Muster und Hygienevorschriften integrieren, um orts- und zeitspezifische Risikoanalysen und umsetzbare Ratschläge zu generieren.",
+      "buildable": "Ja, prädiktive KI-Modelle, die diverse Datenquellen nutzen, sind mit heutigen Technologien umsetzbar.",
+      "recipient": "Öffentliche Gesundheitsbehörde oder ein meteorologischer Dienst in Zusammenarbeit mit Lebensmittelsicherheitsexperten, um proaktiv die Verbreitung lebensmittelbedingter Krankheiten zu verhindern.",
+      "recipient_kind": "agency",
+      "evidence_urls": [
+        "https://www.aesan.gob.es/en/seguridad-alimentaria/higiene-alimentos/huevos-ovoproductos",
+        "https://spanienpress.com/sommerhitze-und-eier-so-schuetzen-sie-sich-vor-salmonelleninfektionen/"
+      ]
+    },
+    {
+      "candidate_id": "C6",
+      "rank": 4,
+      "idea": "Ein System, das bei Wareneingang 'Patata de Galicia' mittels Bilderkennung identifiziert und Lieferantenzertifikate (z.B. QR-Codes auf Etiketten) automatisch scannt und verifiziert, um die Einhaltung geschützter geografischer Angaben sicherzustellen.",
+      "gap": "Es fehlt ein automatisiertes System zur effizienten und schnellen Echtheitsprüfung von geschützten geografischen Agrarprodukten anhand visueller Merkmale und digitaler Zertifikate.",
+      "gap_stands_alone": true,
+      "who_has_problem": "Regulierungsbehörden für geschützte Ursprungsbezeichnungen, die eine effiziente und automatisierte Methode zur Echtheitsprüfung von Agrarprodukten wie 'Patata de Galicia' benötigen, um Herkunftsbetrug zu verhindern.",
+      "why_now": "Fortschrittliche Computer Vision und OCR ermöglichen die automatische Erkennung von Kartoffelsorten und das Auslesen von Zertifizierungsetiketten, kombiniert mit sicheren digitalen Registerabfragen.",
+      "buildable": "Ja, Computer Vision, OCR und die Integration mit Blockchain oder digitalen Registern sind bekannte Technologien.",
+      "recipient": "Regulierungsbehörde für geschützte Ursprungsbezeichnungen (z.B. Ministerio de Agricultura, Pesca y Alimentación) oder eine regionale Lebensmittelqualitätskontrolle, um die Integrität geschützter Produkte zu wahren und Betrug vorzubeugen.",
+      "recipient_kind": "agency",
+      "evidence_urls": [
+        "https://patatasbesada.es/igp_pataca_gallega",
+        "https://patacadegalicia.es/es/a-nosa-pataca/",
+        "https://origenespana.es/socios/patata-galicia",
+        "https://www.foodswinesfromspain.com/en/food/products/fruits---vegetables/patata-de-galicia-pgi"
+      ]
+    }
+  ],
+  "kills": [],
+  "log_row": {
+    "target": "Spanische Lebensmittelhygiene-Verordnung für kommerzielle Zubereitung von Eierspeisen",
+    "anchor_class": "A",
+    "operator": "OP-2",
+    "candidates": 7,
+    "survivors": 4,
+    "best_gap": "Küchenpersonal in kleinen Gastronomiebetrieben kann komplexe Lebensmittelhygienevorschriften nicht ohne Weiteres interpretieren und benötigt schnelle, verlässliche Antworten auf spezifische Fragen."
+  },
+  "retro": {
+    "learned": "All four candidates survived the reality and recipient checks, indicating a strong fit with the problem space and current AI capabilities. The prior-art search was effective in confirming the novelty of the specific AI applications.",
+    "mistake": "Initially, I considered some candidates might be too close to existing solutions, but closer inspection of their unique AI-driven aspects (multimodal AI, fine-tuned legal LLM, predictive modeling, advanced computer vision for specific PGI) confirmed their distinctiveness.",
+    "next_time": "Ensure to clearly articulate the unique AI element of each candidate early in the evaluation process to differentiate it from general existing tools."
+  }
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld tool_calls, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "call_id": "inversion-20260930T100347-d2bbcb-t01",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "tortilla"
+  },
+  {
+    "call_id": "inversion-20260930T100347-d2bbcb-t02",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "patatas"
+  },
+  {
+    "call_id": "inversion-20260930T100347-d2bbcb-t03",
+    "tool": "search",
+    "status": "ok",
+    "summary": "EU-Verordnung geschützte geografische Angabe Tortilla de Patatas"
+  },
+  {
+    "call_id": "inversion-20260930T100347-d2bbcb-t04",
+    "tool": "search",
+    "status": "ok",
+    "summary": "Spanische Lebensmittelhygiene-Verordnung kommerzielle Zubereitung Eierspeisen"
+  },
+  {
+    "call_id": "inversion-20260930T100347-d2bbcb-t05",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "tortilla, patatas"
+  },
+  {
+    "call_id": "inversion-20260930T100347-d2bbcb-t06",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "bebilder, einfache"
+  },
+  {
+    "call_id": "inversion-20260930T100347-d2bbcb-t07",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "bebilder"
+  },
+  {
+    "call_id": "inversion-20260930T100347-d2bbcb-t08",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "adaption, komplexe"
+  },
+  {
+    "call_id": "inversion-20260930T100347-d2bbcb-t09",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "adaption"
+  },
+  {
+    "call_id": "inversion-20260930T100347-d2bbcb-t10",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "einhaltu, etikette"
+  },
+  {
+    "call_id": "inversion-20260930T100347-d2bbcb-t11",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "einhaltu"
+  },
+  {
+    "call_id": "inversion-20260930T100347-d2bbcb-t12",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "analysie, kritisch"
+  },
+  {
+    "call_id": "inversion-20260930T100347-d2bbcb-t13",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "analysie"
+  },
+  {
+    "call_id": "inversion-20260930T100347-d2bbcb-t14",
+    "tool": "search",
+    "status": "ok",
+    "summary": "App Lebensmittelhygiene kleine Betriebe Eier"
+  },
+  {
+    "call_id": "inversion-20260930T100347-d2bbcb-t15",
+    "tool": "search",
+    "status": "ok",
+    "summary": "Chatbot Lebensmittelrecht Gastronomie"
+  },
+  {
+    "call_id": "inversion-20260930T100347-d2bbcb-t16",
+    "tool": "search",
+    "status": "ok",
+    "summary": "KI Patata de Galicia Echtheitsprüfung"
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld accounting, Teil 1 (laut gespeicherter Datei):
+{
+  "model_calls": 9,
+  "search_calls": 5,
+  "search_queries": 17,
+  "cost_usd": 0.072113
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld log_entry, Teil 1 (laut gespeicherter Datei):
+"<!-- proposed by the Lab's Inversion agent, run inversion-20260930T100347-d2bbcb; nothing was written to Amélie -->\n| 2026-09-30 | Lab | Spanische Lebensmittelhygiene-Verordnung für kommerzielle Zubereitung von Eierspeisen (Klasse A) | OP-2 | 7 | 4 (ungeprüft): 1. Ein spezialisierter Chatbot, trainiert auf die EU-Lebensmittelhygienevorschriften (852/2004, 853/2004) und deren spanische Adaptionen, der spezifische 'Was-wäre-wenn'-Fragen des Küchenpersonals beantwortet und bei der Interpretation komplexer Gesetzestexte hilft. (→ Handelskammer (z.B. Cámara de Comercio de España) oder eine juristische Beratungsstelle für kleine Unternehmen, um ihre Mitglieder und Klienten bei der Einhaltung der Vorschriften zu unterstützen.); 2. Eine mobile App, die Gastronomiepersonal durch tägliche Hygiene-Checks für die Eierverarbeitung führt (z.B. Temperatur, Lagerung, Kreuzkontaminationsrisiken), indem sie komplexe Verordnungen in einfache, bebilderte Arbeitsschritte umwandelt und die Einhaltung digital dokumentiert. (→ Nationale oder regionale Lebensmittelüberwachungsbehörde (z.B. AESAN in Spanien oder ein kommunales Gesundheitsamt), um die Compliance in kleinen Betrieben zu erhöhen und den Inspektionsaufwand zu reduzieren.); 3. Ein System, das lokale Wettervorhersagen und saisonale Daten analysiert, um das Salmonellenrisiko für Eierspeisen proaktiv vorherzusagen. Es sendet standortspezifische Warnungen und verstärkte Hygieneempfehlungen an Restaurants in Risikogebieten während kritischer Perioden. (→ Öffentliche Gesundheitsbehörde oder ein meteorologischer Dienst in Zusammenarbeit mit Lebensmittelsicherheitsexperten, um proaktiv die Verbreitung lebensmittelbedingter Krankheiten zu verhindern.); 4. Ein System, das bei Wareneingang 'Patata de Galicia' mittels Bilderkennung identifiziert und Lieferantenzertifikate (z.B. QR-Codes auf Etiketten) automatisch scannt und verifiziert, um die Einhaltung geschützter geografischer Angaben sicherzustellen. (→ Regulierungsbehörde für geschützte Ursprungsbezeichnungen (z.B. Ministerio de Agricultura, Pesca y Alimentación) oder eine regionale Lebensmittelqualitätskontrolle, um die Integrität geschützter Produkte zu wahren und Betrug vorzubeugen.) | Küchenpersonal in kleinen Gastronomiebetrieben kann komplexe Lebensmittelhygienevorschriften nicht ohne Weiteres interpretieren und benötigt schnelle, verlässliche Antworten auf spezifische Fragen. |\n\n### Inversion run inversion-20260930T100347-d2bbcb — 2026-09-30 (intent: Tortilla de Patatas)\n- **Learned:** All four candidates survived the reality and recipient checks, indicating a strong fit with the problem space and current AI capabilities. The prior-art search was effective in confirming the novelty of the specific AI applications.\n- **Mistake:** Initially, I considered some candidates might be too close to existing solutions, but closer inspection of their unique AI-driven aspects (multimodal AI, fine-tuned legal LLM, predictive modeling, advanced computer vision for specific PGI) confirmed their distinctiveness.\n- **Next time:** Ensure to clearly articulate the unique AI element of each candidate early in the evaluation process to differentiate it from general existing tools.\n- **Prior-art leads (automatic search, for the existence check; not a verdict):**\n  - C1 (ok): App Lebensmittelhygiene kleine Betriebe Eier -> https://www.upkeepr.de/haccp-app-jetzt-kostenlos-testen/, https://diehaccpapp.de/, https://www.firstaudit.de/haccp-checkliste-hygiene-app/, https://www.firstaudit.de/hygiene-app/\n  - C3 (ok): Chatbot Lebensmittelrecht Gastronomie -> https://www.dish.co/DE/de/blog/kuenstliche-intelligenz-in-der-gastronomie-so-kann-die-technologie-helfen/, https://www.foodnotify.com/de/blog/chatgpt-restaurants, https://botpress.com/de/blog/chatbot-for-restaurants, https://foodvisions.de/10-moeglichkeiten-chat-gpt-in-der-gastronomie-zu-nutzen-die-chat-gpt-einem-nicht-gleich-verraet-wenn-man-es-danach-fragt/\n  - C6 (ok): KI Patata de Galicia Echtheitsprüfung -> https://patatasbesada.es/igp_pataca_gallega, https://patacadegalicia.es/es/a-nosa-pataca/, https://origenespana.es/socios/patata-galicia, https://www.foodswinesfromspain.com/en/food/products/fruits---vegetables/patata-de-galicia-pgi\n"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld prior_art, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "candidate_id": "C1",
+    "question": "App Lebensmittelhygiene kleine Betriebe Eier",
+    "status": "ok",
+    "answer": "Several apps are available to assist small businesses with food hygiene, particularly concerning eggs, primarily through digital HACCP (Hazard Analysis and Critical Control Points) documentation.\n\n**HACCP and Hygiene Management Apps:**\n\n*   **upkeepr** offers an HACCP app and software designed for food businesses of all types and sizes, including small operations. It helps with documenting cleaning, temperature checks, pest control, and other protocols, aiming to save time and reduce bureaucracy. The app provides features like automatic reminders, quick data entry, and cloud archiving.\n*   **DIE HACCP APP** provides digital quality assurance with automatic temperature monitoring and HACCP checklists, allowing for quick, flexible, and secure documentation.\n*   **firstaudit** offers a hygiene app that enables digital HACCP checklists, photo documentation, and automatic evaluations. It helps businesses meet HACCP requirements efficiently and paperlessly, with the app acting as an on-site tool for recording data and the software managing templates and evaluations.\n*   **HACCP Nachweis App** focuses on digital self-monitoring for food businesses, offering checklists, temperature control, cleaning plans, and PDF export. It can be used offline and emphasizes data privacy.\n*   **eEAT HACCP** provides a comprehensive hygiene package in a single app, including a digital HACCP folder, MHD labeling module, and networked temperature sensors, designed to be 100% compliant.\n*   **HACCP Control** is a hygiene management app that consolidates all hygiene obligations, such as temperature control, cleaning and disinfection plans, goods receipt, and hygiene training, into one application. It ensures that HACCP evidence is readily available with automatic timestamps and PDF export.\n*   **NOA Software** offers a process management tool to digitalize HACCP concepts, providing HACCP checklists, complete documentation of food safety, real-time monitoring, and step-by-step instructions for employees.\n*   **CHEFS VALUE CheckPro** integrates hygiene management, HACCP documentation, and quality controls into one app. It uses QR codes for specific control points, allowing for direct documentation of temperature measurements, cleaning records, and checklists on-site via smartphone or tablet.\n\nThese general HACCP apps are suitable for small businesses handling eggs as they cover the essential hygiene documentation required by law, such as temperature control during storage and handling, ",
+    "pages": [
+      "https://www.upkeepr.de/haccp-app-jetzt-kostenlos-testen/",
+      "https://diehaccpapp.de/",
+      "https://www.firstaudit.de/haccp-checkliste-hygiene-app/",
+      "https://www.firstaudit.de/hygiene-app/",
+      "https://www.haccp-nachweis.de/",
+      "https://eeat-haccp.io/de-ch/haccp-funktionen/application-haccp-de",
+      "https://haccp-control.com/hygienemanagement-app",
+      "https://noa.online/ratgeber/hygiene/haccp/digitalisierung/",
+      "https://www.jomosoft.de/Hygiene-App-CheckPro-3813.htm",
+      "https://www.nutztierhaltung.de/gefluegel/legehennen/management/digitale-anwendungen-in-der-legehennenhaltung/",
+      "https://www.was-steht-auf-dem-ei.de/de/kat-verein/kat-tool.php",
+      "https://www.android-user.de/faules-ei-der-eier-checker-zum-aktuellen-skandal-der-eier-checker-fuer-deinen-heimischen-kuehlschrank-mit-einem-langen-titel/",
+      "https://www.openpr.de/news/622573/App-barcoo-erkennt-kaefig-ei-freie-Lebensmittel.html",
+      "https://www.eggsunlimited.com/de/glossary/educational-guides-on-food-safety-in-egg-handling-essential-insights-for-businesses/"
+    ]
+  },
+  {
+    "candidate_id": "C3",
+    "question": "Chatbot Lebensmittelrecht Gastronomie",
+    "status": "ok",
+    "answer": "Im Bereich der Gastronomie gibt es keine einzelne, allgemein bekannte Chatbot-Anwendung, die spezifisch als \"Chatbot Lebensmittelrecht Gastronomie\" bezeichnet wird. Jedoch werden Künstliche Intelligenz (KI) und Chatbots in der Gastronomie auf verschiedene Weisen eingesetzt, die auch Aspekte des Lebensmittelrechts und der Compliance berühren.\n\n**Anwendungen von KI und Chatbots in der Gastronomie:**\n\n*   **Effizienzsteigerung und Kundeninteraktion:** KI-gestützte Chatbots können in Restaurants eingesetzt werden, um Reservierungen zu automatisieren, Bestellungen entgegenzunehmen, Fragen zur Speisekarte zu beantworten und Informationen zum Lieferstatus bereitzustellen. Sie können auch interne Abläufe wie die Personalplanung und das Bestandsmanagement unterstützen.\n*   **Allergenmanagement und Transparenz:** Einige Plattformen nutzen KI, um Restaurants bei der Einhaltung von Allergenvorschriften zu unterstützen. Diese \"Menü-Intelligenz-Plattformen\" helfen, die neun wichtigsten Allergene für jedes Standardmenüelement offenzulegen, was besonders in Regionen mit strengen Gesetzen relevant ist. Chatbots können auch so konfiguriert werden, dass sie Gästen basierend auf ihren Ernährungsbedürfnissen oder Allergien sichere Menüoptionen anzeigen.\n*   **Lebensmittelrechtliche Recherche und Qualitätsmanagement:** Es gibt spezialisierte KI-Tools, die bei der Recherche im Lebensmittelrecht, im Qualitätsmanagement und in der Qualitätssicherung unterstützen. Ein Beispiel ist BEHR'S…KI PLUS, das unbegrenzten Zugang zu Recherchen in abonnierten Werken zu Themen wie Lebensmittelrecht, Hygiene und Kosmetikrecht bietet. Diese Tools können präzise Antworten liefern und bei fundierten Entscheidungen helfen.\n*   **Risikomanagement und Compliance:** KI kann auch dazu beitragen, die Einhaltung von Arbeitsgesetzen zu gewährleisten, indem sie beispielsweise die Personalplanung optimiert und Überstunden verfolgt. Im weiteren Sinne kann KI in der Lebensmittelbranche zur Erkennung von Risiken und zur Verbesserung der Datenqualität im Bereich der Lebensmittelsicherheit eingesetzt werden.\n\n**Herausforderungen und rechtliche Aspekte:**\n\n*   **\"Halluzinationen\" und Genauigkeit:** KI-Systeme können unvollständige, irreführende oder sogar erfundene Informationen generieren, sogenannte \"Halluzinationen\". Daher ist es wichtig, die Ergebnisse kritisch zu überprüfen und menschliches Urteilsvermögen einzusetzen.\n*   **Datenschutz und Systemwahl:** Bei der Nutzung von KI, insbesondere bei offenen Model",
+    "pages": [
+      "https://www.dish.co/DE/de/blog/kuenstliche-intelligenz-in-der-gastronomie-so-kann-die-technologie-helfen/",
+      "https://www.foodnotify.com/de/blog/chatgpt-restaurants",
+      "https://botpress.com/de/blog/chatbot-for-restaurants",
+      "https://foodvisions.de/10-moeglichkeiten-chat-gpt-in-der-gastronomie-zu-nutzen-die-chat-gpt-einem-nicht-gleich-verraet-wenn-man-es-danach-fragt/",
+      "https://chatonbo.com/industries/restaurants",
+      "https://www.lina.de/lina-ai/",
+      "https://foodondemand.com/04012026/why-food-allergen-laws-are-pushing-restaurants-to-ai/",
+      "https://content.behrs-online.de/wissen/module-view/behrs-ki",
+      "https://www.businesslawgroup.us/how-ai-is-revolutionizing-the-restaurant-industry/",
+      "https://www.ift.org/trends-and-learning/research-and-publications/ai-and-food-safety/",
+      "https://behrs.libsyn.com/195-ki-fr-antworten-im-lebensmittelrecht-sowie-qm-qs-erfolgreich-nutzen",
+      "https://about.ebsco.com/de-de/blogs/ebscopost/wie-kuenstliche-intelligenz-die-zukunft-der-ernaehrung-veraendert",
+      "https://www.foley.com/insights/publications/2024/02/harnessing-ai-in-the-food-beverage-world-requires-keeping-legal-risks-in-mind/",
+      "https://bitesstudio.com/blog/the-ai-act-from-august-2026-and-food-content-what-does-it-really-change-for-bran/"
+    ]
+  },
+  {
+    "candidate_id": "C6",
+    "question": "KI Patata de Galicia Echtheitsprüfung",
+    "status": "ok",
+    "answer": "To perform an authenticity check for \"KI Patata de Galicia,\" which refers to the Protected Geographical Indication (PGI) \"Patata de Galicia\" or \"Pataca de Galicia,\" several key indicators must be present on the product and its packaging. The PGI ensures the quality and origin of potatoes grown and packaged in specific areas of Galicia, Spain.\n\nKey elements for an authenticity check include:\n\n*   **Labeling and Certification:**\n    *   Authentic \"Patata de Galicia\" products must carry the official seal of the PGI (IGP) and a numbered counter-label issued by the Regulatory Council (Consejo Regulador).\n    *   The packaging should clearly state \"Indicación Geográfica Protegida Pataca de Galicia\" or \"Patata de Galicia.\" Both names hold the same official value.\n    *   The logo of the Regulatory Council must be visible on at least one-third of the main face of the packaging.\n    *   The presence of the PGI seal and counter-label guarantees the origin, variety, and process of the potatoes. Without this official seal, terms like \"patata gallega\" or \"patata de Galicia\" do not guarantee authenticity, as any potato grown in Galicia could use such a generic description.\n\n*   **Varieties:**\n    *   The PGI \"Patata de Galicia\" covers specific varieties: Kennebec, Agria, and Fina de Carballo (also referred to as Roble Fino).\n    *   If the packaging specifies a variety, such as \"Kennebec IGP,\" it guarantees that the package contains only that variety, without mixtures or substitutions.\n\n*   **Physical and Analytical Characteristics:**\n    *   The potatoes should have a smooth and fine-looking skin, a firm texture to the touch, and be creamy when cooked, with a consistent texture in the mouth.\n    *   They are known for their excellent consumption quality, high dry matter content, and ability to retain color, aroma, and flavor after cooking.\n    *   Analytical characteristics require a dry matter content greater than 18% and a reducing sugar content less than 0.4%.\n    *   The minimum diameter for the potatoes is 35 millimeters, though smaller potatoes (18 mm to 35 mm) can be sold under a specific designation like \"patata pequeña fuera de calibre\".\n\n*   **Traceability and Control:**\n    *   The Regulatory Council of the PGI, based in Xinzo de Limia (Ourense), audits the plots, warehouses, packaging, and labeling of the potatoes.\n    *   Each bag of PGI \"Patata de Galicia\" can be traced back to the specific plot and farmer through the numbered counter-label.\n    *   The p",
+    "pages": [
+      "https://patatasbesada.es/igp_pataca_gallega",
+      "https://patacadegalicia.es/es/a-nosa-pataca/",
+      "https://origenespana.es/socios/patata-galicia",
+      "https://www.foodswinesfromspain.com/en/food/products/fruits---vegetables/patata-de-galicia-pgi",
+      "https://patacadegalicia.es/es/laboratorio/",
+      "https://www.directoalpaladar.com/otros/la-patata-de-galicia-entra-en-el-registro-de-dop-e-igp-que-emite-la-union-europea",
+      "https://www.mapa.gob.es/es/alimentacion/temas/calidad-diferenciada/dop-igp/detalle/hortalizas/igp_patatagalicia"
+    ]
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld topic_check, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "term": "tortilla",
+    "hits": []
+  },
+  {
+    "term": "patatas",
+    "hits": []
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld contract_version, Teil 1 (laut gespeicherter Datei):
+"1.0.0"

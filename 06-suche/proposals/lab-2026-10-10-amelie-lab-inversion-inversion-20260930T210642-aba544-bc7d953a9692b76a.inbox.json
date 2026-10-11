@@ -1,0 +1,500 @@
+{
+  "batch_id": "amelie-lab-inversion-inversion-20260930T210642-aba544-bc7d953a9692b76a",
+  "lab_id": "amelie-lab",
+  "engine": "inversion",
+  "run_id": "inversion-20260930T210642-aba544",
+  "revision": "bc7d953a9692b76a195c112f271593135a7b20f0478d681908c2f43a19d0d95f",
+  "created_at": "2026-09-30T21:11:21Z",
+  "model": "gemini-2.5-flash",
+  "intent": "Antikrieg, mutter, brandemburg, freiheit",
+  "ideas": [
+    {
+      "local_id": "C2",
+      "record": {
+        "candidate_id": "C2",
+        "rank": 1,
+        "idea": "Ein KI-Tool, das lokalen Gemeindegruppen oder Familienmitgliedern hilft, mündliche Überlieferungen oder schriftliche Berichte über Repression von Personen zu verarbeiten und zu kontextualisieren, die nicht von zentralen Gedenkprojekten abgedeckt werden. Es könnte Schlüsselthemen, Namen, Daten und Orte aus Rohtext/Audio identifizieren und Verknüpfungen zu bestehenden historischen Aufzeichnungen oder anderen Zeugnissen vorschlagen, ohne sensible persönliche Daten zentral zu speichern.",
+        "gap": "Lokale Gruppen und Familien haben Schwierigkeiten, nicht-zentrale mündliche und schriftliche Berichte über Repression zu verarbeiten und mit umfassenderen historischen Aufzeichnungen zu verknüpfen.",
+        "gap_stands_alone": true,
+        "who_has_problem": "Lokale Gemeindegruppen oder Familienmitglieder, die mündliche Überlieferungen oder schriftliche Berichte über Repression von Personen verwalten, welche nicht von zentralen Gedenkprojekten abgedeckt werden.",
+        "why_now": "Lokal-first Large Language Models (LLMs) und fortschrittliche Spracherkennung mit Entitätserkennung ermöglichen eine datenschutzfreundliche Analyse persönlicher Erzählungen, wobei Muster und Verbindungen identifiziert werden können, ohne ein Hochladen in die Cloud zu erfordern.",
+        "buildable": "Die KI-gestützte Analyse von Zeitzeugenberichten ist ein aktives Forschungsfeld, das Mustererkennung und Zusammenhangsidentifizierung in großen Datenmengen ermöglicht, wie durch das KI-Trainingszentrum und Projekte des Fraunhofer IAIS belegt ist.",
+        "recipient": "Regionale Vereine für Opfer politischer Gewalt oder lokale Gemeindezentren",
+        "recipient_kind": "association",
+        "evidence_urls": [
+          "https://ki-trainingszentrum.com/zeitzeugenberichte-bildquellen-und-ereignisvernetzung/",
+          "https://www.geschichte-abitur.de/kuenstliche-intelligenz-datenanalyse-geschichte",
+          "https://www.hdg.de/presse/pressemitteilung-2020-12-11-erzaehlte-geschichte-trifft-kuenstliche-intelligenz"
+        ]
+      }
+    },
+    {
+      "local_id": "C5",
+      "record": {
+        "candidate_id": "C5",
+        "rank": 2,
+        "idea": "Ein KI-System, das kurze, von Nutzern eingereichte historische Anekdoten oder Familiengeschichten über Repression (z.B. 'mein Großvater wurde 19XX in X festgehalten') aufnimmt und potenzielle Verbindungen zu größeren historischen Ereignissen, bekannten Stätten oder anderen verwandten Erzählungen vorschlägt. Ziel ist es, kontextuelle Links bereitzustellen, ohne definitive historische Wahrheit zu beanspruchen.",
+        "gap": "Es fehlt eine Möglichkeit für Einzelpersonen, die Bedeutung ihrer persönlichen historischen Anekdoten über Repression im Kontext größerer historischer Ereignisse oder bekannter Stätten zu verstehen.",
+        "gap_stands_alone": true,
+        "who_has_problem": "Nutzer, die kurze, persönliche historische Anekdoten oder Familiengeschichten über Repression besitzen und deren Verbindungen zu größeren historischen Kontexten nicht kennen.",
+        "why_now": "Ausgeklügelte semantische Such- und Knowledge-Graph-Technologien, angetrieben durch Embeddings von Fundamentmodellen, können subtile thematische und faktische Verbindungen zwischen kurzen, informellen Erzählungen und strukturierten historischen Daten identifizieren, eine Aufgabe, die mit Stichwortsuchen unmöglich war.",
+        "buildable": "AI wird bereits aktiv in der historischen Forschung zur Analyse großer Datenmengen, Mustererkennung und Verknüpfung von Informationen eingesetzt, was die technische Machbarkeit von semantischen Such- und Knowledge-Graph-Technologien für historische Erzählungen bestätigt.",
+        "recipient": "Brandenburgische Landeszentrale für politische Bildung",
+        "recipient_kind": "agency",
+        "evidence_urls": [
+          "https://www.geschichte-abitur.de/kuenstliche-intelligenz-datenanalyse-geschichte",
+          "https://archivalia.hypotheses.org/172934",
+          "https://www.uni-leipzig.de/newsdetail/artikel/ki-in-der-geschichtsdidaktik-2025-07-16",
+          "https://www.storyfile.com/"
+        ]
+      }
+    },
+    {
+      "local_id": "C1",
+      "record": {
+        "candidate_id": "C1",
+        "rank": 3,
+        "idea": "Eine App, die es Bürgern ermöglicht, Fotos von potenziellen historischen Stätten der Repression (z.B. Gebäude, ehemalige Lager, Orte von Zwangsarbeit) hochzuladen und KI nutzt, um architektonische Stile, historische Kartenüberlagerungen und lokale historische Datenbanken abzugleichen, um eine potenzielle historische Bedeutung im Zusammenhang mit Repression vorzuschlagen, was eine weitere Untersuchung durch lokale Geschichtsvereine anregt.",
+        "gap": "Bürger und lokale Geschichtsvereine haben keine einfache Möglichkeit, potenzielle historische Stätten der Repression durch das Abgleichen von Fotos mit historischen Daten zu identifizieren.",
+        "gap_stands_alone": true,
+        "who_has_problem": "Bürger, die potenzielle historische Stätten der Repression vermuten und lokale Geschichtsvereine, die Hinweise zur weiteren Untersuchung benötigen.",
+        "why_now": "Fortschrittliche multimodale Fundamentmodelle können Bilder von architektonischen Merkmalen analysieren und diese mit georeferenzierten historischen Datenebenen kontextualisieren, um potenzielle historische Bedeutung vorzuschlagen, weit über einfache Objekterkennung hinaus.",
+        "buildable": "KI-gestützte Erkennung historischer Architekturmerkmale mittels Deep Learning und Computer Vision ist ein etabliertes und wachsendes Feld, das in der Denkmalpflege und architektonischen Forschung angewendet wird.",
+        "recipient": "Lokale Geschichtsvereine oder Kommunalarchive",
+        "recipient_kind": "association",
+        "evidence_urls": [
+          "https://www.ultralytics.com/de/blog/ai-in-archaeology-paves-the-way-for-new-discoveries",
+          "https://www.sachsen-denkmal.de/handbuch/handbuch-denkmalpraxis/zukunft-transformation/digitalisierung-neue-arbeitstechniken-in-der-denkmalpflege/",
+          "https://www.baumeister.de/interpretative-ki-architekturgeschichte/"
+        ]
+      }
+    },
+    {
+      "local_id": "C7",
+      "record": {
+        "candidate_id": "C7",
+        "rank": 4,
+        "idea": "Ein Tool für lokale Gemeinschaften zur Überprüfung der faktischen Richtigkeit vorgeschlagener Gedenktafeln für Opfer von Repression. Es nutzt KI, um Namen, Daten und Ereignisse, die auf einer Tafel eingraviert sind, mit etablierten historischen Datenbanken und Archiven abzugleichen und Diskrepanzen zur menschlichen Überprüfung durch lokale Historiker zu markieren.",
+        "gap": "Lokale Gemeinschaften haben Schwierigkeiten, die faktische Richtigkeit vorgeschlagener Gedenktafeln mit etablierten historischen Daten effizient abzugleichen, um Fehler zu identifizieren.",
+        "gap_stands_alone": true,
+        "who_has_problem": "Lokale Gemeinschaften, die die faktische Richtigkeit vorgeschlagener Gedenktafeln für Opfer von Repression überprüfen müssen.",
+        "why_now": "Robuste OCR in Kombination mit Knowledge-Graph-Lookups und Fuzzy-Matching-Algorithmen kann Text aus Bildern semi-automatisch mit strukturierten historischen Datensätzen vergleichen, was die Geschwindigkeit und Genauigkeit historischer Verifizierungsprozesse erheblich verbessert.",
+        "buildable": "OCR, Knowledge-Graph-Lookups und Fuzzy-Matching-Algorithmen sind ausgereifte Technologien, die kombiniert werden können, um Text von Bildern mit historischen Datensätzen abzugleichen.",
+        "recipient": "Lokale Geschichtsvereine oder kommunale Kulturämter",
+        "recipient_kind": "association",
+        "evidence_urls": [
+          "https://www.ultralytics.com/de/blog/ai-in-archaeology-paves-the-way-for-new-discoveries",
+          "https://www.sachsen-denkmal.de/handbuch/handbuch-denkmalpraxis/zukunft-transformation/digitalisierung-neue-arbeitstechniken-in-der-denkmalpflege/"
+        ]
+      }
+    }
+  ],
+  "record": {
+    "run_id": "inversion-20260930T210642-aba544",
+    "intent": "Antikrieg, mutter, brandemburg, freiheit",
+    "model": "gemini-2.5-flash",
+    "created_at": "2026-09-30T21:11:21Z",
+    "state_missing": [],
+    "plan": {
+      "area": "Erinnerungskultur zu Kriegsverbrechen und Repression in Brandenburg",
+      "mode_list": [
+        "Digitale Archive von Zeitzeugenberichten",
+        "Interaktive Karten von Gedenkorten",
+        "KI-gestützte Recherche von historischen Dokumenten",
+        "Virtuelle Rundgänge durch Gedenkstätten",
+        "Erstellung von Lernmaterialien für Schulen",
+        "Sprachanalyse von Interviews zur Emotionserkennung",
+        "Personalisierte Empfehlungen für Gedenk-Routen",
+        "Crowdsourcing von Fotos und Dokumenten",
+        "Chatbot für Fragen zu historischen Ereignissen",
+        "Generierung von 3D-Modellen zerstörter Orte",
+        "Augmented Reality zur Visualisierung von Geschichte vor Ort",
+        "Automatische Transkription und Übersetzung alter Dokumente"
+      ],
+      "target_queries": [
+        "Gesetz über die Gedenkstätten des Landes Brandenburg",
+        "Richtlinien zur Förderung der Erinnerungsarbeit in Brandenburg",
+        "Dokumentationsstandards für Gedenkstätten und historische Archive in Deutschland"
+      ],
+      "class_hint": "A"
+    },
+    "target": {
+      "target": {
+        "name": "Verordnung über die Errichtung der rechtsfähigen Stiftung öffentlichen Rechts „Brandenburgische Gedenkstätten“ (SBG-Errichtungsverordnung - SBGV)",
+        "source_url": "https://bravors.brandenburg.de/verordnungen/sbgv",
+        "source_label": "Verordnung",
+        "anchor_class": "A",
+        "who_pays": "Die öffentliche Hand (Steuerzahler) finanziert die Stiftung und den Betrieb der Gedenkstätten. Die Gesellschaft profitiert vom Erhalt der Erinnerung, der Bildung und der Prävention zukünftiger Gewaltherrschaft.",
+        "who_carries_burden": "Angehörige von Opfern, Überlebende und ehrenamtliche Initiativen tragen oft die emotionale Last der Erinnerungsarbeit und des Teilens von Zeugnissen, manchmal ohne umfassende Unterstützung der offiziellen Institutionen. Lokale Gemeinschaften sind belastet durch das Verwalten kleinerer, weniger anerkannter Gedenkorte.",
+        "where_data_stops": "Informationen sind oft in physischen Archiven, akademischen Publikationen oder spezialisierten Museumsdatenbanken gespeichert, die für die breite Öffentlichkeit oder kleinere lokale Initiativen nicht leicht zugänglich oder miteinander verknüpfbar sind. Persönliche Zeugnisse, obwohl digitalisiert, können in isolierten Silos verbleiben.",
+        "blind_spot": "Der stark institutionalisierte Ansatz der Erinnerungsarbeit kann weniger formelle, zivilgesellschaftliche oder individuelle Gedenkpraktiken übersehen, insbesondere für Ereignisse oder Opfer, die nicht zentral von der Stiftung dokumentiert oder gedenkt werden. Es fällt schwer, aufkommende Formen von Repression oder historischen Ungerechtigkeiten zu erfassen, die nicht in bestehende Kategorien passen."
+      },
+      "operator": "OP-4",
+      "thesis": "Statt dass die Stiftung Brandenburgische Gedenkstätten ausschließlich zentrale Gedenkstätten verwaltet, werden Bürger und lokale Gemeinschaften befähigt, vergessene oder marginalisierte Fälle von Repression und deren Opfer zu identifizieren, zu dokumentieren und in den historischen Kontext zu stellen, wo die institutionelle Kapazität überfordert ist.",
+      "candidates": [
+        {
+          "id": "C1",
+          "idea": "Eine App, die es Bürgern ermöglicht, Fotos von potenziellen historischen Stätten der Repression (z.B. Gebäude, ehemalige Lager, Orte von Zwangsarbeit) hochzuladen und KI nutzt, um architektonische Stile, historische Kartenüberlagerungen und lokale historische Datenbanken abzugleichen, um eine potenzielle historische Bedeutung im Zusammenhang mit Repression vorzuschlagen, was eine weitere Untersuchung durch lokale Geschichtsvereine anregt.",
+          "why_now": "Fortschrittliche multimodale Fundamentmodelle können Bilder von architektonischen Merkmalen analysieren und diese mit georeferenzierten historischen Datenebenen kontextualisieren, um potenzielle historische Bedeutung vorzuschlagen, weit über einfache Objekterkennung hinaus.",
+          "recipient": "Lokale Geschichtsvereine oder Kommunalarchive",
+          "recipient_kind": "association",
+          "check_queries": [
+            "KI-gestützte Erkennung historischer Architekturmerkmale",
+            "Crowdsourcing historischer Stätten App"
+          ]
+        },
+        {
+          "id": "C2",
+          "idea": "Ein KI-Tool, das lokalen Gemeindegruppen oder Familienmitgliedern hilft, mündliche Überlieferungen oder schriftliche Berichte über Repression von Personen zu verarbeiten und zu kontextualisieren, die nicht von zentralen Gedenkprojekten abgedeckt werden. Es könnte Schlüsselthemen, Namen, Daten und Orte aus Rohtext/Audio identifizieren und Verknüpfungen zu bestehenden historischen Aufzeichnungen oder anderen Zeugnissen vorschlagen, ohne sensible persönliche Daten zentral zu speichern.",
+          "why_now": "Lokal-first Large Language Models (LLMs) und fortschrittliche Spracherkennung mit Entitätserkennung ermöglichen eine datenschutzfreundliche Analyse persönlicher Erzählungen, wobei Muster und Verbindungen identifiziert werden können, ohne ein Hochladen in die Cloud zu erfordern.",
+          "recipient": "Regionale Vereine für Opfer politischer Gewalt oder lokale Gemeindezentren",
+          "recipient_kind": "association",
+          "check_queries": [
+            "KI-gestützte Analyse von Zeitzeugenberichten",
+            "Datenschutzfreundliche Oral History Tools"
+          ]
+        },
+        {
+          "id": "C3",
+          "idea": "Ein System für lokale Initiativen oder Familien, um Objekte (z.B. persönliche Gegenstände, kleine Gedenktafeln, selbstgefertigte Denkmäler) im Zusammenhang mit Opfern von Repression zu dokumentieren. Mittels Bilderkennung für den Objekttyp und OCR für Inschriften, kombiniert mit strukturierter Metadateneingabe, wird ein dezentrales, datenschutzfreundliches Register erstellt, auf das lokale Museen oder die Stiftung (mit Zustimmung) zur umfassenderen Kontextualisierung zugreifen können.",
+          "why_now": "On-Device Bilderkennung und OCR, kombiniert mit robusten Local-First-Datenspeicherlösungen (z.B. WebAssembly-basierte Datenbanken), ermöglichen eine detaillierte Objektkatalogisierung ohne sofortige zentrale Serverabhängigkeit und erlauben eine spätere, konsensbasierte Aggregation.",
+          "recipient": "Lokale Museen oder Kultureinrichtungen",
+          "recipient_kind": "institution",
+          "check_queries": [
+            "KI-gestützte Objektdokumentation für lokale Sammlungen",
+            "Dezentrales Register für Gedenkobjekte"
+          ]
+        },
+        {
+          "id": "C4",
+          "idea": "Ein KI-gestütztes Tool, das, ausgehend von einem historischen Ereignis (z.B. Datum einer Verhaftungswelle in der NS-Zeit, ein politischer Prozess in der DDR), potenzielle Orte in Brandenburg vorschlägt, indem es digitalisierte historische Aufzeichnungen (Zeitungen, Gerichtsakten, Polizeiberichte) mit aktuellen und historischen Geodaten abgleicht. Dies hilft Forschern oder lokalen Gruppen, Orte für eine genauere Untersuchung im Kontext der Erinnerung zu identifizieren.",
+          "why_now": "Fortschrittliche Named Entity Recognition (NER) und Georeferenzierungsfähigkeiten innerhalb von LLMs können räumliche und zeitliche Informationen aus unstrukturierten historischen Texten extrahieren und mit historischen GIS-Layern integrieren, eine Aufgabe, die zuvor umfangreiche manuelle Forschung erforderte.",
+          "recipient": "Universitäre Geschichtslehrstühle oder Forschungsinstitute für Zeitgeschichte",
+          "recipient_kind": "institution",
+          "check_queries": [
+            "KI-gestützte Kartierung historischer Ereignisse",
+            "Extraktion von Ortsbezügen aus historischen Texten"
+          ]
+        },
+        {
+          "id": "C5",
+          "idea": "Ein KI-System, das kurze, von Nutzern eingereichte historische Anekdoten oder Familiengeschichten über Repression (z.B. 'mein Großvater wurde 19XX in X festgehalten') aufnimmt und potenzielle Verbindungen zu größeren historischen Ereignissen, bekannten Stätten oder anderen verwandten Erzählungen vorschlägt. Ziel ist es, kontextuelle Links bereitzustellen, ohne definitive historische Wahrheit zu beanspruchen.",
+          "why_now": "Ausgeklügelte semantische Such- und Knowledge-Graph-Technologien, angetrieben durch Embeddings von Fundamentmodellen, können subtile thematische und faktische Verbindungen zwischen kurzen, informellen Erzählungen und strukturierten historischen Daten identifizieren, eine Aufgabe, die mit Stichwortsuchen unmöglich war.",
+          "recipient": "Brandenburgische Landeszentrale für politische Bildung",
+          "recipient_kind": "agency",
+          "check_queries": [
+            "KI-gestützte Verbindung historischer Kurzgeschichten",
+            "Semantische Suche für Zeitzeugenberichte"
+          ]
+        },
+        {
+          "id": "C6",
+          "idea": "Eine KI, die aktuelle und historische Ortsnamen (Straßennamen, Stadtteilnamen, Gebäudenamen) in Brandenburg nach potenziellen Verbindungen zu Personen oder Ereignissen im Zusammenhang mit Repression durchsucht, die nicht weithin bekannt oder kritisch aufgearbeitet sind. Sie markiert Namen für lokale historische Überprüfungsausschüsse.",
+          "why_now": "Large Language Models mit umfangreichen historischen Wissensbasen, kombiniert mit effizienten Textvergleichs- und Anomalieerkennungsalgorithmen, können systematisch potenziell problematische Ortsnamen weitaus umfassender identifizieren als manuelle Überprüfung.",
+          "recipient": "Kommunale Namenskommissionen oder Kulturerbeabteilungen",
+          "recipient_kind": "agency",
+          "check_queries": [
+            "KI-gestützte Analyse von Straßennamen auf historische Bezüge",
+            "Automatische Erkennung problematischer Ortsnamen"
+          ]
+        },
+        {
+          "id": "C7",
+          "idea": "Ein Tool für lokale Gemeinschaften zur Überprüfung der faktischen Richtigkeit vorgeschlagener Gedenktafeln für Opfer von Repression. Es nutzt KI, um Namen, Daten und Ereignisse, die auf einer Tafel eingraviert sind, mit etablierten historischen Datenbanken und Archiven abzugleichen und Diskrepanzen zur menschlichen Überprüfung durch lokale Historiker zu markieren.",
+          "why_now": "Robuste OCR in Kombination mit Knowledge-Graph-Lookups und Fuzzy-Matching-Algorithmen kann Text aus Bildern semi-automatisch mit strukturierten historischen Datensätzen vergleichen, was die Geschwindigkeit und Genauigkeit historischer Verifizierungsprozesse erheblich verbessert.",
+          "recipient": "Lokale Geschichtsvereine oder kommunale Kulturämter",
+          "recipient_kind": "association",
+          "check_queries": [
+            "KI-gestützte Faktenprüfung für Gedenktafeln",
+            "Historische Datenabgleichung für lokale Denkmäler"
+          ]
+        },
+        {
+          "id": "C8",
+          "idea": "Ein KI-System, das Luftbilder (historisch und aktuell) und lokale Überlieferungsarchive verarbeitet, um potenzielle unmarkierte oder vergessene Grabstätten zu identifizieren, die mit Opfern von Repressionen (z.B. Massengräber aus dem Zweiten Weltkrieg, Opfer von Nachkriegsgewalt) verbunden sind. Es hebt Bereiche für Bodenradar- oder archäologische Untersuchungen hervor.",
+          "why_now": "Satellitenbildanalyse in Kombination mit fortschrittlicher Mustererkennung und der Fähigkeit von LLMs, unstrukturierte historische Texte (z.B. lokale Legenden, alte Aufzeichnungen) zu verarbeiten und zu kontextualisieren, kann Standorte für weitere Untersuchungen vorschlagen, was eine komplexe multimodale Aufgabe ist.",
+          "recipient": "Landesarchäologische Ämter oder Opferhilfsorganisationen",
+          "recipient_kind": "agency",
+          "check_queries": [
+            "KI-gestützte Erkennung unmarkierter Grabstätten",
+            "Analyse historischer Luftbilder für Archäologie"
+          ]
+        }
+      ],
+      "shortlist": [
+        "C1",
+        "C2",
+        "C5",
+        "C7"
+      ]
+    },
+    "result": {
+      "survivors": [
+        {
+          "candidate_id": "C2",
+          "rank": 1,
+          "idea": "Ein KI-Tool, das lokalen Gemeindegruppen oder Familienmitgliedern hilft, mündliche Überlieferungen oder schriftliche Berichte über Repression von Personen zu verarbeiten und zu kontextualisieren, die nicht von zentralen Gedenkprojekten abgedeckt werden. Es könnte Schlüsselthemen, Namen, Daten und Orte aus Rohtext/Audio identifizieren und Verknüpfungen zu bestehenden historischen Aufzeichnungen oder anderen Zeugnissen vorschlagen, ohne sensible persönliche Daten zentral zu speichern.",
+          "gap": "Lokale Gruppen und Familien haben Schwierigkeiten, nicht-zentrale mündliche und schriftliche Berichte über Repression zu verarbeiten und mit umfassenderen historischen Aufzeichnungen zu verknüpfen.",
+          "gap_stands_alone": true,
+          "who_has_problem": "Lokale Gemeindegruppen oder Familienmitglieder, die mündliche Überlieferungen oder schriftliche Berichte über Repression von Personen verwalten, welche nicht von zentralen Gedenkprojekten abgedeckt werden.",
+          "why_now": "Lokal-first Large Language Models (LLMs) und fortschrittliche Spracherkennung mit Entitätserkennung ermöglichen eine datenschutzfreundliche Analyse persönlicher Erzählungen, wobei Muster und Verbindungen identifiziert werden können, ohne ein Hochladen in die Cloud zu erfordern.",
+          "buildable": "Die KI-gestützte Analyse von Zeitzeugenberichten ist ein aktives Forschungsfeld, das Mustererkennung und Zusammenhangsidentifizierung in großen Datenmengen ermöglicht, wie durch das KI-Trainingszentrum und Projekte des Fraunhofer IAIS belegt ist.",
+          "recipient": "Regionale Vereine für Opfer politischer Gewalt oder lokale Gemeindezentren",
+          "recipient_kind": "association",
+          "evidence_urls": [
+            "https://ki-trainingszentrum.com/zeitzeugenberichte-bildquellen-und-ereignisvernetzung/",
+            "https://www.geschichte-abitur.de/kuenstliche-intelligenz-datenanalyse-geschichte",
+            "https://www.hdg.de/presse/pressemitteilung-2020-12-11-erzaehlte-geschichte-trifft-kuenstliche-intelligenz"
+          ]
+        },
+        {
+          "candidate_id": "C5",
+          "rank": 2,
+          "idea": "Ein KI-System, das kurze, von Nutzern eingereichte historische Anekdoten oder Familiengeschichten über Repression (z.B. 'mein Großvater wurde 19XX in X festgehalten') aufnimmt und potenzielle Verbindungen zu größeren historischen Ereignissen, bekannten Stätten oder anderen verwandten Erzählungen vorschlägt. Ziel ist es, kontextuelle Links bereitzustellen, ohne definitive historische Wahrheit zu beanspruchen.",
+          "gap": "Es fehlt eine Möglichkeit für Einzelpersonen, die Bedeutung ihrer persönlichen historischen Anekdoten über Repression im Kontext größerer historischer Ereignisse oder bekannter Stätten zu verstehen.",
+          "gap_stands_alone": true,
+          "who_has_problem": "Nutzer, die kurze, persönliche historische Anekdoten oder Familiengeschichten über Repression besitzen und deren Verbindungen zu größeren historischen Kontexten nicht kennen.",
+          "why_now": "Ausgeklügelte semantische Such- und Knowledge-Graph-Technologien, angetrieben durch Embeddings von Fundamentmodellen, können subtile thematische und faktische Verbindungen zwischen kurzen, informellen Erzählungen und strukturierten historischen Daten identifizieren, eine Aufgabe, die mit Stichwortsuchen unmöglich war.",
+          "buildable": "AI wird bereits aktiv in der historischen Forschung zur Analyse großer Datenmengen, Mustererkennung und Verknüpfung von Informationen eingesetzt, was die technische Machbarkeit von semantischen Such- und Knowledge-Graph-Technologien für historische Erzählungen bestätigt.",
+          "recipient": "Brandenburgische Landeszentrale für politische Bildung",
+          "recipient_kind": "agency",
+          "evidence_urls": [
+            "https://www.geschichte-abitur.de/kuenstliche-intelligenz-datenanalyse-geschichte",
+            "https://archivalia.hypotheses.org/172934",
+            "https://www.uni-leipzig.de/newsdetail/artikel/ki-in-der-geschichtsdidaktik-2025-07-16",
+            "https://www.storyfile.com/"
+          ]
+        },
+        {
+          "candidate_id": "C1",
+          "rank": 3,
+          "idea": "Eine App, die es Bürgern ermöglicht, Fotos von potenziellen historischen Stätten der Repression (z.B. Gebäude, ehemalige Lager, Orte von Zwangsarbeit) hochzuladen und KI nutzt, um architektonische Stile, historische Kartenüberlagerungen und lokale historische Datenbanken abzugleichen, um eine potenzielle historische Bedeutung im Zusammenhang mit Repression vorzuschlagen, was eine weitere Untersuchung durch lokale Geschichtsvereine anregt.",
+          "gap": "Bürger und lokale Geschichtsvereine haben keine einfache Möglichkeit, potenzielle historische Stätten der Repression durch das Abgleichen von Fotos mit historischen Daten zu identifizieren.",
+          "gap_stands_alone": true,
+          "who_has_problem": "Bürger, die potenzielle historische Stätten der Repression vermuten und lokale Geschichtsvereine, die Hinweise zur weiteren Untersuchung benötigen.",
+          "why_now": "Fortschrittliche multimodale Fundamentmodelle können Bilder von architektonischen Merkmalen analysieren und diese mit georeferenzierten historischen Datenebenen kontextualisieren, um potenzielle historische Bedeutung vorzuschlagen, weit über einfache Objekterkennung hinaus.",
+          "buildable": "KI-gestützte Erkennung historischer Architekturmerkmale mittels Deep Learning und Computer Vision ist ein etabliertes und wachsendes Feld, das in der Denkmalpflege und architektonischen Forschung angewendet wird.",
+          "recipient": "Lokale Geschichtsvereine oder Kommunalarchive",
+          "recipient_kind": "association",
+          "evidence_urls": [
+            "https://www.ultralytics.com/de/blog/ai-in-archaeology-paves-the-way-for-new-discoveries",
+            "https://www.sachsen-denkmal.de/handbuch/handbuch-denkmalpraxis/zukunft-transformation/digitalisierung-neue-arbeitstechniken-in-der-denkmalpflege/",
+            "https://www.baumeister.de/interpretative-ki-architekturgeschichte/"
+          ]
+        },
+        {
+          "candidate_id": "C7",
+          "rank": 4,
+          "idea": "Ein Tool für lokale Gemeinschaften zur Überprüfung der faktischen Richtigkeit vorgeschlagener Gedenktafeln für Opfer von Repression. Es nutzt KI, um Namen, Daten und Ereignisse, die auf einer Tafel eingraviert sind, mit etablierten historischen Datenbanken und Archiven abzugleichen und Diskrepanzen zur menschlichen Überprüfung durch lokale Historiker zu markieren.",
+          "gap": "Lokale Gemeinschaften haben Schwierigkeiten, die faktische Richtigkeit vorgeschlagener Gedenktafeln mit etablierten historischen Daten effizient abzugleichen, um Fehler zu identifizieren.",
+          "gap_stands_alone": true,
+          "who_has_problem": "Lokale Gemeinschaften, die die faktische Richtigkeit vorgeschlagener Gedenktafeln für Opfer von Repression überprüfen müssen.",
+          "why_now": "Robuste OCR in Kombination mit Knowledge-Graph-Lookups und Fuzzy-Matching-Algorithmen kann Text aus Bildern semi-automatisch mit strukturierten historischen Datensätzen vergleichen, was die Geschwindigkeit und Genauigkeit historischer Verifizierungsprozesse erheblich verbessert.",
+          "buildable": "OCR, Knowledge-Graph-Lookups und Fuzzy-Matching-Algorithmen sind ausgereifte Technologien, die kombiniert werden können, um Text von Bildern mit historischen Datensätzen abzugleichen.",
+          "recipient": "Lokale Geschichtsvereine oder kommunale Kulturämter",
+          "recipient_kind": "association",
+          "evidence_urls": [
+            "https://www.ultralytics.com/de/blog/ai-in-archaeology-paves-the-way-for-new-discoveries",
+            "https://www.sachsen-denkmal.de/handbuch/handbuch-denkmalpraxis/zukunft-transformation/digitalisierung-neue-arbeitstechniken-in-der-denkmalpflege/"
+          ]
+        }
+      ],
+      "kills": [],
+      "log_row": {
+        "target": "Verordnung über die Errichtung der rechtsfähigen Stiftung öffentlichen Rechts „Brandenburgische Gedenkstätten“ (SBG-Errichtungsverordnung - SBGV)",
+        "anchor_class": "A",
+        "operator": "OP-4",
+        "candidates": 8,
+        "survivors": 4,
+        "best_gap": "Lokale Gruppen und Familien haben Schwierigkeiten, nicht-zentrale mündliche und schriftliche Berichte über Repression zu verarbeiten und mit umfassenderen historischen Aufzeichnungen zu verknüpfen."
+      },
+      "retro": {
+        "learned": "The search results provided good evidence for the 'why now' and 'buildable' aspects, confirming that the underlying AI technologies are mature and applicable to the proposed ideas. The 'local-first LLMs' for privacy-sensitive data are a powerful enabler.",
+        "mistake": "I initially forgot to explicitly check the 'BANNED MODE' list, but upon review, none of the survivors are in it.",
+        "next_time": "Ensure to explicitly list and check each survivor against the 'BANNED MODE' to avoid overlooking potential conflicts, even if it feels obvious."
+      }
+    },
+    "tool_calls": [
+      {
+        "call_id": "inversion-20260930T210642-aba544-t01",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "antikrie"
+      },
+      {
+        "call_id": "inversion-20260930T210642-aba544-t02",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "freiheit"
+      },
+      {
+        "call_id": "inversion-20260930T210642-aba544-t03",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "repressi"
+      },
+      {
+        "call_id": "inversion-20260930T210642-aba544-t04",
+        "tool": "search",
+        "status": "ok",
+        "summary": "Gesetz über die Gedenkstätten des Landes Brandenburg"
+      },
+      {
+        "call_id": "inversion-20260930T210642-aba544-t05",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "bedeutun, ehemalig"
+      },
+      {
+        "call_id": "inversion-20260930T210642-aba544-t06",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "bedeutun"
+      },
+      {
+        "call_id": "inversion-20260930T210642-aba544-t07",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "abgedeck, berichte"
+      },
+      {
+        "call_id": "inversion-20260930T210642-aba544-t08",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "abgedeck"
+      },
+      {
+        "call_id": "inversion-20260930T210642-aba544-t09",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "anekdote, aufnimmt"
+      },
+      {
+        "call_id": "inversion-20260930T210642-aba544-t10",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "anekdote"
+      },
+      {
+        "call_id": "inversion-20260930T210642-aba544-t11",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "archiven, ereignis"
+      },
+      {
+        "call_id": "inversion-20260930T210642-aba544-t12",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "archiven"
+      },
+      {
+        "call_id": "inversion-20260930T210642-aba544-t13",
+        "tool": "search",
+        "status": "ok",
+        "summary": "KI-gestützte Erkennung historischer Architekturmerkmale"
+      },
+      {
+        "call_id": "inversion-20260930T210642-aba544-t14",
+        "tool": "search",
+        "status": "ok",
+        "summary": "KI-gestützte Analyse von Zeitzeugenberichten"
+      },
+      {
+        "call_id": "inversion-20260930T210642-aba544-t15",
+        "tool": "search",
+        "status": "ok",
+        "summary": "KI-gestützte Verbindung historischer Kurzgeschichten"
+      }
+    ],
+    "accounting": {
+      "model_calls": 7,
+      "search_calls": 4,
+      "search_queries": 12,
+      "cost_usd": 0.069006
+    },
+    "log_entry": "<!-- proposed by the Lab's Inversion agent, run inversion-20260930T210642-aba544; nothing was written to Amélie -->\n| 2026-09-30 | Lab | Verordnung über die Errichtung der rechtsfähigen Stiftung öffentlichen Rechts „Brandenburgische Gedenkstätten“ (SBG-Errichtungsverordnung - SBGV) (Klasse A) | OP-4 | 8 | 4 (ungeprüft): 1. Ein KI-Tool, das lokalen Gemeindegruppen oder Familienmitgliedern hilft, mündliche Überlieferungen oder schriftliche Berichte über Repression von Personen zu verarbeiten und zu kontextualisieren, die nicht von zentralen Gedenkprojekten abgedeckt werden. Es könnte Schlüsselthemen, Namen, Daten und Orte aus Rohtext/Audio identifizieren und Verknüpfungen zu bestehenden historischen Aufzeichnungen oder anderen Zeugnissen vorschlagen, ohne sensible persönliche Daten zentral zu speichern. (→ Regionale Vereine für Opfer politischer Gewalt oder lokale Gemeindezentren); 2. Ein KI-System, das kurze, von Nutzern eingereichte historische Anekdoten oder Familiengeschichten über Repression (z.B. 'mein Großvater wurde 19XX in X festgehalten') aufnimmt und potenzielle Verbindungen zu größeren historischen Ereignissen, bekannten Stätten oder anderen verwandten Erzählungen vorschlägt. Ziel ist es, kontextuelle Links bereitzustellen, ohne definitive historische Wahrheit zu beanspruchen. (→ Brandenburgische Landeszentrale für politische Bildung); 3. Eine App, die es Bürgern ermöglicht, Fotos von potenziellen historischen Stätten der Repression (z.B. Gebäude, ehemalige Lager, Orte von Zwangsarbeit) hochzuladen und KI nutzt, um architektonische Stile, historische Kartenüberlagerungen und lokale historische Datenbanken abzugleichen, um eine potenzielle historische Bedeutung im Zusammenhang mit Repression vorzuschlagen, was eine weitere Untersuchung durch lokale Geschichtsvereine anregt. (→ Lokale Geschichtsvereine oder Kommunalarchive); 4. Ein Tool für lokale Gemeinschaften zur Überprüfung der faktischen Richtigkeit vorgeschlagener Gedenktafeln für Opfer von Repression. Es nutzt KI, um Namen, Daten und Ereignisse, die auf einer Tafel eingraviert sind, mit etablierten historischen Datenbanken und Archiven abzugleichen und Diskrepanzen zur menschlichen Überprüfung durch lokale Historiker zu markieren. (→ Lokale Geschichtsvereine oder kommunale Kulturämter) | Lokale Gruppen und Familien haben Schwierigkeiten, nicht-zentrale mündliche und schriftliche Berichte über Repression zu verarbeiten und mit umfassenderen historischen Aufzeichnungen zu verknüpfen. |\n\n### Inversion run inversion-20260930T210642-aba544 — 2026-09-30 (intent: Antikrieg, mutter, brandemburg, freiheit)\n- **Learned:** The search results provided good evidence for the 'why now' and 'buildable' aspects, confirming that the underlying AI technologies are mature and applicable to the proposed ideas. The 'local-first LLMs' for privacy-sensitive data are a powerful enabler.\n- **Mistake:** I initially forgot to explicitly check the 'BANNED MODE' list, but upon review, none of the survivors are in it.\n- **Next time:** Ensure to explicitly list and check each survivor against the 'BANNED MODE' to avoid overlooking potential conflicts, even if it feels obvious.\n- **Prior-art leads (automatic search, for the existence check; not a verdict):**\n  - C1 (ok): KI-gestützte Erkennung historischer Architekturmerkmale -> https://developer.ibm.com/articles/cc-machine-learning-deep-learning-architectures/, https://de.wikipedia.org/wiki/Deep_Learning, https://ch.mathworks.com/de/discovery/deep-learning.html, https://www.ultralytics.com/de/blog/ai-in-archaeology-paves-the-way-for-new-discoveries\n  - C2 (ok): KI-gestützte Analyse von Zeitzeugenberichten -> https://ki-trainingszentrum.com/zeitzeugenberichte-bildquellen-und-ereignisvernetzung/, https://www.geschichte-abitur.de/kuenstliche-intelligenz-datenanalyse-geschichte, https://www.ghwk.de/de/mediathek/dokumentation/schreibt-ki-geschichte, https://www.hdg.de/presse/pressemitteilung-2020-12-11-erzaehlte-geschichte-trifft-kuenstliche-intelligenz\n  - C5 (ok): KI-gestützte Verbindung historischer Kurzgeschichten -> https://www.geschichte-abitur.de/kuenstliche-intelligenz-datenanalyse-geschichte, https://archivalia.hypotheses.org/172934, https://www.uni-leipzig.de/newsdetail/artikel/ki-in-der-geschichtsdidaktik-2025-07-16, https://www.njamemorial.org/storyfile\n",
+    "prior_art": [
+      {
+        "candidate_id": "C1",
+        "question": "KI-gestützte Erkennung historischer Architekturmerkmale",
+        "status": "ok",
+        "answer": "KI-gestützte Erkennung historischer Architekturmerkmale ist ein wachsendes Feld, das Deep Learning und Computer Vision nutzt, um historische Gebäude und Artefakte zu analysieren, zu klassifizieren und zu rekonstruieren. Diese Technologien bieten neue Möglichkeiten für die Denkmalpflege, die architektonische Forschung und die Visualisierung verlorener Baukunst.\n\n**Methoden und Technologien:**\n\n*   **Deep Learning und Neuronale Netze:** Deep Learning, ein Teilbereich des maschinellen Lernens, verwendet künstliche neuronale Netze mit zahlreichen Zwischenschichten, um komplexe Datenmuster zu verarbeiten und abstrakte Merkmale zu extrahieren. Convolutional Neural Networks (CNNs) und Recurrent Neural Networks (RNNs) sind dabei häufig eingesetzte Architekturen. CNNs und Long Short-Term Memory (LSTM) sind zwei der ältesten und am häufigsten verwendeten Ansätze in verschiedenen Anwendungen des Deep Learning.\n*   **Computer Vision:** Diese Technologie ermöglicht es, Bilder zu analysieren, Artefakte zu erkennen und antike Stätten präzise zu kartieren. Sie kann auch verborgene Muster in Landschaften aufdecken oder zerbrochene Artefakte wieder zusammensetzen.\n*   **Fernerkundung:** Die Nutzung von Luft- und Satellitenbildern in Kombination mit KI-Methoden ermöglicht die automatische Klassifizierung historischer und nicht-historischer Gebäude. Ein Projekt nutzte beispielsweise CNNs, um historische Hofhäuser im Iran anhand von Luftbildern mit einer Genauigkeit von etwa 98 % zu erkennen.\n*   **Interpretative KI:** Diese Form der KI geht über die bloße Digitalisierung hinaus und analysiert sowie versteht historische Architekturdaten, um Mustererkennung, semantische Analyse, automatisierte Stilkritik und synthetische Rekonstruktion zu ermöglichen.\n*   **3D-Scanning und virtuelle Restaurierung:** Digitale Technologien wie 3D-Scanning, KI und virtuelle Restaurierung eröffnen neue Perspektiven für die Denkmalpflege, indem sie präzise Bestandsaufnahmen und optimierte Restaurierungsplanung ermöglichen.\n\n**Anwendungsbereiche und Projekte:**\n\n*   **Klassifizierung und Erkennung:** KI-Systeme können historische Gebäude und deren Merkmale automatisch klassifizieren. Ein Forschungsprojekt klassifizierte beispielsweise historische und nicht-historische Gebäude in Yazd, Iran, unter Verwendung von luft- und satellitengestützten Bildern und einem CNN-Modell.\n*   **Analyse historischer visueller Quellen:** Deep Learning und Computer Vision werden eingesetzt, um historische visuelle Quelle",
+        "pages": [
+          "https://developer.ibm.com/articles/cc-machine-learning-deep-learning-architectures/",
+          "https://de.wikipedia.org/wiki/Deep_Learning",
+          "https://ch.mathworks.com/de/discovery/deep-learning.html",
+          "https://www.ultralytics.com/de/blog/ai-in-archaeology-paves-the-way-for-new-discoveries",
+          "https://www.mdpi.com/2571-9408/5/4/159",
+          "https://www.baumeister.de/interpretative-ki-architekturgeschichte/",
+          "https://www.sachsen-denkmal.de/handbuch/handbuch-denkmalpraxis/zukunft-transformation/digitalisierung-neue-arbeitstechniken-in-der-denkmalpflege/",
+          "https://www.springerprofessional.de/en/deep-learning-from-history/20021606",
+          "https://www.db-bauzeitung.de/allgemein/kuenstliche-intelligenz-trifft-denkmalpflege-workshop-auf-der-denkmal-leipzig/",
+          "https://www.icomos.de/data/pdf/cfp-2026-workshop-ki-und-denkmalpflege-0617-1051-22.pdf",
+          "https://www.zeilenabstand.net/ki-visualisierungen-fuer-die-rekonstruktion-historischer-stadtbilder/",
+          "https://ethz.ch/de/news-und-veranstaltungen/eth-news/news/2025/11/ki-und-erweiterte-realitaet-helfen-bei-der-erhaltung-des-gebauten-kulturerbes.html",
+          "https://www.baumeister.de/digitaler-historismus-architektur/"
+        ]
+      },
+      {
+        "candidate_id": "C2",
+        "question": "KI-gestützte Analyse von Zeitzeugenberichten",
+        "status": "ok",
+        "answer": "KI-gestützte Analyse von Zeitzeugenberichten wird in verschiedenen Kontexten erforscht und angewendet, insbesondere in der Geschichtsforschung und im Rechtswesen.\n\nIm Bereich der Geschichtsforschung ermöglicht KI die Analyse großer Mengen historischer Daten, einschließlich Zeitzeugenberichten, um Muster und Zusammenhänge zu erkennen, die menschlichen Forschern möglicherweise entgehen würden. Das KI-Trainingszentrum hebt hervor, dass KI-Technologien neue Wege für Stadtteilchroniken eröffnen, indem sie die automatisierte Datenanalyse großer Dokumentenbestände, die Erkennung verborgener historischer Zusammenhänge und die schnelle Verarbeitung multipler Informationsquellen ermöglichen. Algorithmen können Muster in Dokumenten erkennen, die Menschen nicht sehen, und Historikern helfen, präzisere Geschichtsnarrative zu schreiben. Die Einbeziehung von Zeitzeugenberichten ist dabei ein wichtiger Aspekt.\n\nDie Gedenk- und Bildungsstätte Haus der Wannsee-Konferenz beschäftigt sich kritisch mit KI für Forschungs- und Bildungszwecke, insbesondere in Bezug auf den Holocaust und den Nationalsozialismus. Seit über einem Jahrzehnt wird digitale Holocaustforschung betrieben, die KI-gestützte Verfahren zur Analyse, Erschließung und Visualisierung digitalisierter Quellenbestände erprobt. Interaktionen mit holografierten Überlebenden-Biografien basieren bereits auf KI-gestützter Spracherkennung.\n\nEin konkretes Projekt, das vom Fraunhofer-Institut für Intelligente Analyse- und Informationssysteme IAIS und der Stiftung Haus der Geschichte gestartet wurde, konzentriert sich auf das \"Multimodale Mining von Zeitzeugeninterviews zur Erschließung von audiovisuellem Kulturgut\". Ziel ist es, menschliche Emotionen in audiovisuellen Zeitzeugeninterviews zu erkennen, um eine gezielte Suche nach solchen Fragen auf dem Zeitzeugenportal zu ermöglichen. Hierfür werden computergestützt gesprochenes Wort, Transkript, Stimmlage, Sprechgeschwindigkeit und Mimik analysiert, wobei Technologien der Spracherkennung, Bilderkennung und Texterkennung zum Einsatz kommen. Die Ergebnisse der KI werden dabei mit menschlichen Beurteilungen abgeglichen, um das Modell stetig zu verbessern.\n\nIm Rechtswesen wird KI zur Analyse von Zeugenaussagen eingesetzt, um die Zuverlässigkeit und Genauigkeit zu verbessern und menschliche Voreingenommenheit zu mindern. Ein System, das natürliche Sprachverarbeitung nutzt, kann die Sprache von Zeugen aus einer neutralen Perspektive bewerten und numerische Werte für die Wahrschei",
+        "pages": [
+          "https://ki-trainingszentrum.com/zeitzeugenberichte-bildquellen-und-ereignisvernetzung/",
+          "https://www.geschichte-abitur.de/kuenstliche-intelligenz-datenanalyse-geschichte",
+          "https://www.ghwk.de/de/mediathek/dokumentation/schreibt-ki-geschichte",
+          "https://www.hdg.de/presse/pressemitteilung-2020-12-11-erzaehlte-geschichte-trifft-kuenstliche-intelligenz",
+          "https://www.colorado.edu/today/2024/11/07/how-ai-can-enhance-accuracy-eyewitness-identification",
+          "https://em360tech.com/tech-articles/new-ai-model-helps-law-enforcement-eliminate-human-bias",
+          "https://www.ijfmr.com/papers/2025/5/58657.pdf",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC12130855/",
+          "https://www.hiig.de/warum-ki-derzeit-vor-allem-vergangenheit-vorhersagt/"
+        ]
+      },
+      {
+        "candidate_id": "C5",
+        "question": "KI-gestützte Verbindung historischer Kurzgeschichten",
+        "status": "ok",
+        "answer": "Although there is no specific project identified by the exact name \"KI-gestützte Verbindung historischer Kurzgeschichten\" (AI-supported connection of historical short stories), various initiatives and research areas demonstrate how artificial intelligence is being used to link and create historical narratives.\n\nSeveral sources highlight the application of AI in historical research and analysis. AI can help historians access and analyze large amounts of historical data, decipher old texts, identify patterns and trends, and even virtually reconstruct past environments. This technology simplifies data analysis and helps overcome language barriers in historical research. For instance, AI-driven analysis tools can quickly scan, structure, and interpret large datasets, enabling historians to search specific sources, recognize important patterns, and develop new hypotheses.\n\nIn the realm of historical storytelling and education, AI is being utilized to create interactive experiences. The \"Interactive StoryFile Project,\" for example, employs AI to enable users to engage in conversational dialogue with historical figures, making narratives accessible across generations and geographies. This project aims to bring history to life by allowing students and museum visitors to have meaningful conversations with individuals who lived through significant historical events. Similarly, AI-powered chatbots are being developed to act as \"historical persons\" for educational purposes in museums and games. AI can also generate instructional materials such as historical diary entries, speeches, newspaper articles, and stories in the style of famous authors, helping students connect with historical events.\n\nFurthermore, AI's capacity as an author is being explored, with studies indicating that AI can generate short stories that are sometimes preferred by readers due to their simplicity and accessibility. One individual even recounted writing and publishing a historical fiction short novel with the assistance of AI, using it for brainstorming and research.\n\nHowever, the integration of AI into historical contexts also prompts critical discussions, particularly concerning the potential for AI-generated content to create \"fake history\" and the importance of critical engagement with AI for research and educational purposes.",
+        "pages": [
+          "https://www.geschichte-abitur.de/kuenstliche-intelligenz-datenanalyse-geschichte",
+          "https://archivalia.hypotheses.org/172934",
+          "https://www.uni-leipzig.de/newsdetail/artikel/ki-in-der-geschichtsdidaktik-2025-07-16",
+          "https://www.njamemorial.org/storyfile",
+          "https://www.storyfile.com/",
+          "https://elibrary.utb.de/doi/pdf/10.5555/gwu-3%2B4-2025_01?download=true",
+          "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEzSpYyLXTkHMTpIBQO7hi_BV8gc1AhX6FtklafzpDzIfbBV0D5gaueDPnUiEge-qW18SwHC1OslRoD406OTnaVLSrghlk2KqpKyhzdf0p5_dHmH341DVHbkJX-fLyF6QM-qVHataQQxUS0h0NhHwwNJdsVjBrbgGfzcasVMzAbnC0rkP5to3VcA_h_lQPF3h0=",
+          "https://www.faz.net/aktuell/feuilleton/debatten/ki-als-autor-maschinen-schreiben-die-beliebteren-kurzgeschichten-accg-201091320.html",
+          "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKBjaPZ8UFNpJVeLeJ72YXaOUldjRivVkAiIC5TScS0XRrrfVH4K7pNn6Q-fCckFDOLyo-pGMUGQxINrSdhqLWrUHP1erS1tvs8TOEVHOLwR5QWn2yzqysdW-RAtoos3IODzuSZLWFSBhGyBcjnsDv2YnW05ca0jCvmewneMsbnqT944tH3583vTXlgtpEiqpYoivPUeq6n4g3RhZIvjAd4YMW2q_6",
+          "https://www.team-bhp.com/forum/shifting-gears/307407-wrote-published-historical-fiction-short-novel-help-ai.html",
+          "https://awriterofhistory.com/2025/08/18/ai-historical-fiction/",
+          "https://www.ghwk.de/de/mediathek/dokumentation/schreibt-ki-geschichte"
+        ]
+      }
+    ],
+    "topic_check": [
+      {
+        "term": "antikrie",
+        "hits": []
+      },
+      {
+        "term": "freiheit",
+        "hits": [
+          "[protokoll, score 1] Wheelmap: Eingangsfoto → Barrierefreiheit — besetzt",
+          "[protokoll, score 1] **EzB-Register** (`ezb-register`) — Erklärungen zur Barrierefreiheit aller öffentlichen Stellen crawlen, Status A–E (NL-Vorbild) — verengt",
+          "[protokoll, score 1] **BFSG-Erklärungsprüfer (Shops)** — Pflichtinformationen nach Anlage 3 BFSG bei Online-Shops sammeln und prüfen — besetzt",
+          "[protokoll, score 1] **BFSG-Barrierefreiheitserklärungen** — besetzt",
+          "[grab, score 1] Wheelmap: Eingangsfoto → Barrierefreiheit"
+        ]
+      },
+      {
+        "term": "repressi",
+        "hits": []
+      }
+    ],
+    "contract_version": "1.0.0"
+  },
+  "existence_check": false,
+  "contract_version": "1.0.0"
+}

@@ -1,0 +1,24 @@
+{
+  "manifest_version": 1,
+  "run_id": "amelie-lab-scarcity-scarcity-20261010T162000-jobcenter-28c4901745e136ac",
+  "plan_id": "lab-2026-10-10-amelie-lab-scarcity-scarcity-20261010T162000-jobcenter-28c4901745e136ac",
+  "engine": "review",
+  "model": "deepseek/deepseek-chat",
+  "existence_check": false,
+  "survivors": {
+    "count": 2,
+    "status": "ungeprueft"
+  },
+  "files": [
+    "06-suche/proposals/lab-2026-10-10-amelie-lab-scarcity-scarcity-20261010T162000-jobcenter-28c4901745e136ac.md",
+    "06-suche/proposals/lab-2026-10-10-amelie-lab-scarcity-scarcity-20261010T162000-jobcenter-28c4901745e136ac.inbox.json",
+    "06-suche/proposals/lab-2026-10-10-amelie-lab-scarcity-scarcity-20261010T162000-jobcenter-28c4901745e136ac.manifest.json"
+  ],
+  "source_ops": [],
+  "grave_proposals": 0,
+  "touches_memory": false,
+  "contracts": {
+    "scarcity-record": "1.0.0"
+  },
+  "contract_version": "1.0.0"
+}

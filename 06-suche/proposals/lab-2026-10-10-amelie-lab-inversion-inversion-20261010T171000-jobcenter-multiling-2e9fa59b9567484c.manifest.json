@@ -1,0 +1,24 @@
+{
+  "manifest_version": 1,
+  "run_id": "amelie-lab-inversion-inversion-20261010T171000-jobcenter-multiling-2e9fa59b9567484c",
+  "plan_id": "lab-2026-10-10-amelie-lab-inversion-inversion-20261010T171000-jobcenter-multiling-2e9fa59b9567484c",
+  "engine": "review",
+  "model": "deepseek/deepseek-chat",
+  "existence_check": false,
+  "survivors": {
+    "count": 1,
+    "status": "ungeprueft"
+  },
+  "files": [
+    "06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20261010T171000-jobcenter-multiling-2e9fa59b9567484c.md",
+    "06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20261010T171000-jobcenter-multiling-2e9fa59b9567484c.inbox.json",
+    "06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20261010T171000-jobcenter-multiling-2e9fa59b9567484c.manifest.json"
+  ],
+  "source_ops": [],
+  "grave_proposals": 1,
+  "touches_memory": false,
+  "contracts": {
+    "inversion-record": "1.2.0"
+  },
+  "contract_version": "1.0.0"
+}

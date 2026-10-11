@@ -1,0 +1,517 @@
+{
+  "batch_id": "amelie-lab-mark-mark-20261001T132732-dce381-1878b2cb923b2bc8",
+  "lab_id": "amelie-lab",
+  "engine": "mark",
+  "run_id": "mark-20261001T132732-dce381",
+  "revision": "1878b2cb923b2bc8e6231094cea2e3c3e3d1cce9b694f154e1911048cd2b5619",
+  "created_at": "2026-10-01T13:34:24Z",
+  "model": "gemini-2.5-flash",
+  "intent": "Kleine Wasserwerke und Mühlenstaue in Brandenburg: Stilllegungsdruck durch Wasserrahmenrichtlinie, Fischtreppen-Pflicht, Mühlenbesitzer ohne Gutachter-Budget — wer prüft was, und welche Rechte schlummern in alten Wasserbüchern?",
+  "ideas": [
+    {
+      "local_id": "V1",
+      "record": {
+        "candidate_id": "V1",
+        "title": "Spezialisierte wasserrechtliche Beratung für Mühlenbesitzer und kleine Wasserwerke",
+        "tagline": "Navigation durch Wasserrahmenrichtlinie und Fischtreppen-Pflicht in Brandenburg",
+        "offering_kind": "productized_service",
+        "target_customer": "Mühlenbesitzer und Betreiber kleiner Wasserkraftanlagen in Brandenburg",
+        "pain_and_compliance": "Mühlenbesitzer und kleine Wasserwerke in Brandenburg sehen sich mit Stilllegungsdruck durch die Wasserrahmenrichtlinie (WRRL) und der Pflicht zum Bau von Fischtreppen konfrontiert. Das Brandenburgische Wassergesetz (BbgWG) und das Wasserhaushaltsgesetz (WHG) regeln die Wassernutzung und Anlagen in Gewässern (Fakt: https://www.muehlen-in-brandenburg.de/wasserkraftnutzung/). Das Brandenburgische Fischereigesetz (BbgFischG) und die Fischereiverordnung (BbgFischO) fordern Maßnahmen zum Schutz der Fische bei Wasserkraftnutzung (Fakt: https://www.muehlen-in-brandenburg.de/wasserkraftnutzung/). Die Umsetzung der WRRL in Brandenburg erfolgt durch das Landesamt für Umwelt (LfU) (Fakt: https://mleuv.brandenburg.de/mleuv/de/umwelt/wasser/gewaesserschutz-und-entwicklung/europaeische-wasserrahmenrichtlinie-im-ueberblick/). Sie benötigen spezialisierte Expertise, um Bußgelder und Betriebseinstellungen zu vermeiden und Fördermittel zu beantragen. Es gibt Fördermittel für Aquakultur und Binnenfischerei (EMFAF) und naturnahe Gewässerentwicklung (ELER, GAK) in Brandenburg, die auch den Fischtreppenbau umfassen (Fakt: https://lelf.brandenburg.de/lelf/de/service/foerderung/aquakultur-und-binnenfischerei/, Fakt: https://www.foerderdatenbank.de/FDB/Content/DE/Foerderprogramm/Land/Brandenburg/naturnahe-gewaesserentwicklung-und-staerkung-der.html). Diese Fördermittel können bis zu 90% der förderfähigen Kosten betragen (Fakt: https://www.foerderdatenbank.de/FDB/Content/DE/Foerderprogramm/Land/Brandenburg/naturnahe-gewaesserentwicklung-und-staerkung-der.html). Die Kosten für Fischtreppen können erheblich sein (z.B. 6 Mio. EUR in Berlin, über 925.000 EUR in Mecklenburg-Vorpommern für ein Projekt) (Fakt: https://www.berliner-kurier.de/article/kein-scherz-fuer-6-millionen-euro-baut-berlin-eine-treppe-fuer-welse-10008558, Fakt: https://www.schwarzbuch.de/aufgedeckt/steuergeldverschwendung-alle-faelle/details/um-jeden-preis-eine-fischtreppe-sorgt-fuer-aerger). Die Zahlungsbereitschaft ergibt sich aus der Notwendigkeit, den Betrieb aufrechtzuerhalten und hohe Folgekosten durch Stilllegung oder Fehlinvestitionen zu vermeiden.",
+        "mvp_specification": "Das MVP bietet eine initiale Bestandsaufnahme und Risikoanalyse der wasserrechtlichen Situation des Kunden. Dies umfasst die Analyse bestehender Genehmigungen und Auflagen, die Prüfung der Relevanz der WRRL und Fischtreppen-Pflicht für den spezifischen Standort sowie die Identifikation potenzieller Konflikte und Handlungsbedarfe. Anschließend wird ein erster Maßnahmenkatalog erstellt. Ein separates Modul bietet Fördermittelberatung, einschließlich der Identifikation relevanter Förderprogramme (MLUK, ILB, Naturschutzfonds Brandenburg) und Unterstützung bei der Vorbereitung von Förderanträgen. Optional kann ein Service zur Digitalisierung und Strukturierung alter Wasserbücher angeboten werden, um schlummernde Rechte zu identifizieren. Der Build-Ansatz ist eine manuelle, persönliche Beratung vor Ort und remote, unterstützt durch Standard-Office-Software für Dokumentation und Berichtserstellung sowie eine interne Wissensdatenbank. Der Core Stack beinhaltet rechtliche Expertise im Wasserrecht Brandenburgs und Kenntnisse der Förderlandschaft, ergänzt durch ein CRM zur Kundenverwaltung und ein Dokumentenverwaltungssystem.",
+        "pricing_and_economics": "Das Pricing-Modell umfasst ein Basispaket 'Ersteinschätzung & Orientierung' als Pauschale (z.B. 1.500 - 3.000 EUR) für die initiale Bestandsaufnahme. Ein Modul 'Fördermittel-Scouting & Antragsvorbereitung' wird entweder als erfolgsorientierte Pauschale (z.B. 10-15% der potenziellen Fördersumme) oder auf Stundenbasis angeboten. Ein weiteres Modul 'Begleitung & Compliance-Management' könnte als monatliche Pauschale für laufende Beratung konzipiert werden. Die geschätzte Bruttomarge für eine expertisebasierte Dienstleistung liegt bei 70-80%. Ein Zielumsatz von 10.000 - 30.000 EUR im ersten Jahr durch 5-10 Kunden soll die Anfangsinvestitionen decken und die Machbarkeit demonstrieren.",
+        "distribution_strategy": "Die Distribution erfolgt primär über Direktvertrieb durch proaktive Ansprache von Mühlenbesitzern und Betreibern kleiner Wasserwerke in Brandenburg (z.B. über Adresslisten von Verbänden). Die Teilnahme an regionalen Messen, Fachtagungen und Treffen von Mühlenvereinen oder Wasserkraftverbänden in Brandenburg ist ebenfalls vorgesehen. Content Marketing über eine Webseite mit Blogbeiträgen zu WRRL, Fischtreppenpflicht und Fördermöglichkeiten soll die Sichtbarkeit erhöhen. Partnerschaften mit lokalen Rechtsanwaltskanzleien, Ingenieurbüros und regionalen Banken, die keine eigene Spezialexpertise haben, sowie Mühlenvereinen und Verbänden, werden angestrebt. Empfehlungsmarketing durch zufriedene Kunden ist ein wichtiger Baustein.",
+        "moat_and_defensibility": "Der Moat basiert auf spezialisiertem Fachwissen im komplexen Wasserrecht Brandenburgs und den spezifischen Anforderungen für kleine Wasserkraftanlagen und Mühlen. Das Fehlen expliziter Beratungsangebote für diese spezifische Zielgruppe (Fakt: https://mleuv.brandenburg.de/mleuv/de/umwelt/wasser/gewaesserschutz-und-entwicklung/europaeische-wasserrahmenrichtlinie-im-ueberblick/) deutet auf eine Nische hin. Die regionale Expertise, insbesondere die Kenntnis lokaler Behörden und Ansprechpartner, sowie die Fähigkeit, historische Dokumente wie Wasserbücher zu interpretieren, schaffen eine zusätzliche Barriere für Wettbewerber. Der Aufbau von Vertrauen und eines Netzwerks in einer traditionell geprägten Branche erhöht die Defensibilität.",
+        "kill_criteria": [
+          "Die Zielgruppe (Mühlenbesitzer, kleine Wasserwerke) zeigt selbst bei Aussicht auf Fördermittel keine ausreichende Zahlungsbereitschaft für externe Beratungsleistungen, um den Betrieb wirtschaftlich zu gestalten.",
+          "Behörden oder bestehende Verbände in Brandenburg bieten bereits vergleichbare, kostenlose oder sehr kostengünstige Beratungsleistungen an, die den Bedarf der Zielgruppe vollständig abdecken.",
+          "Die rechtlichen Rahmenbedingungen ändern sich grundlegend, sodass der Stilllegungsdruck für kleine Anlagen entfällt oder die Fischtreppenpflicht obsolet wird und somit der Beratungsbedarf verschwindet.",
+          "Der Zugang zu den Zielkunden erweist sich als extrem schwierig und kostenintensiv (z.B. überproportional hohe Akquisitionskosten), sodass eine wirtschaftliche Kundenakquise nicht möglich ist."
+        ],
+        "evidence_grade": {
+          "facts": [
+            "Brandenburgisches Wassergesetz (BbgWG) und Wasserhaushaltsgesetz (WHG) regeln die Wassernutzung und Anlagen in Gewässern (https://www.muehlen-in-brandenburg.de/wasserkraftnutzung/)",
+            "Brandenburgisches Fischereigesetz (BbgFischG) und Fischereiverordnung (BbgFischO) fordern Maßnahmen zum Schutz der Fische bei Wasserkraftnutzung (https://www.muehlen-in-brandenburg.de/wasserkraftnutzung/)",
+            "Die Umsetzung der Europäischen Wasserrahmenrichtlinie (WRRL) in Brandenburg erfolgt durch das Landesamt für Umwelt (LfU) (https://mleuv.brandenburg.de/mleuv/de/umwelt/wasser/gewaesserschutz-und-entwicklung/europaeische-wasserrahmenrichtlinie-im-ueberblick/)",
+            "Es gibt Fördermittel für Aquakultur und Binnenfischerei (EMFAF) und naturnahe Gewässerentwicklung (ELER, GAK) in Brandenburg, die auch Fischtreppenbau umfassen (https://lelf.brandenburg.de/lelf/de/service/foerderung/aquakultur-und-binnenfischerei/)",
+            "Fördermittel können bis zu 90% der förderfähigen Kosten betragen (https://www.foerderdatenbank.de/FDB/Content/DE/Foerderprogramm/Land/Brandenburg/naturnahe-gewaesserentwicklung-und-staerkung-der.html)",
+            "Kosten für Fischtreppen können erheblich sein (6 Mio. EUR in Berlin, >925.000 EUR in MV für ein Projekt) (https://www.berliner-kurier.de/article/kein-scherz-fuer-6-millionen-euro-baut-berlin-eine-treppe-fuer-welse-10008558)",
+            "Ein Fischtreppenprojekt in MV führte zu Widerstand aufgrund hoher Kosten (>925.000 EUR) und späterer Trockenlegung des Mühlenteichs (https://www.schwarzbuch.de/aufgedeckt/steuergeldverschwendung-alle-faelle/details/um-jeden-preis-eine-fischtreppe-sorgt-fuer-aerger)",
+            "Spezifische Beratungsangebote für Betreiber kleiner Wasserwerke und Mühlen bezüglich WRRL wurden in den Suchergebnissen nicht explizit gefunden (https://mleuv.brandenburg.de/mleuv/de/umwelt/wasser/gewaesserschutz-und-entwicklung/europaeische-wasserrahmenrichtlinie-im-ueberblick/)",
+            "Behördliche Gebühren für 'Gutachten, Untersuchungsbericht' sind 25 EUR pro Seite, mind. 50 EUR, oder 51-358 EUR für 'umfangreiche wissenschaftliche Gutachten' (https://bravors.brandenburg.de/verordnungen/gebomugv/15)"
+          ],
+          "inferences": [
+            "Der Stilllegungsdruck und die Pflicht zum Bau von Fischtreppen erzeugen einen akuten Beratungsbedarf bei Mühlenbesitzern und kleinen Wasserwerken, um Bußgelder und Betriebseinstellungen zu vermeiden und hohe Folgekosten zu umgehen (abgeleitet aus: https://www.muehlen-in-brandenburg.de/wasserkraftnutzung/, https://www.berliner-kurier.de/article/kein-scherz-fuer-6-millionen-euro-baut-berlin-eine-treppe-fuer-welse-10008558, https://www.schwarzbuch.de/aufgedeckt/steuergeldverschwendung-alle-faelle/details/um-jeden-preis-eine-fischtreppe-sorgt-fuer-aerger).",
+            "Die Verfügbarkeit von Fördermitteln erhöht die Zahlungsbereitschaft für Beratungsleistungen, da diese die Eigeninvestition der Betreiber reduzieren (abgeleitet aus: 'Fördermittel können bis zu 90% der förderfähigen Kosten betragen (https://www.foerderdatenbank.de/FDB/Content/DE/Foerderprogramm/Land/Brandenburg/naturnahe-gewaesserentwicklung-und-staerkung-der.html)').",
+            "Das Fehlen expliziter Beratungsangebote für diese spezifische Zielgruppe deutet auf eine Marktlücke für spezialisierte Dienstleistungen hin (abgeleitet aus: 'Spezifische Beratungsangebote für Betreiber kleiner Wasserwerke und Mühlen bezüglich WRRL wurden in den Suchergebnissen nicht explizit gefunden (https://mleuv.brandenburg.de/mleuv/de/umwelt/wasser/gewaesserschutz-und-entwicklung/europaeische-wasserrahmenrichtlinie-im-ueberblick/)').",
+            "Die Interpretation alter Wasserbücher kann einen Mehrwert für die Kunden darstellen, da sie potenziell ungenutzte Rechte aufdecken kann (abgeleitet aus: User Intent, der auf die Frage 'welche Rechte schlummern in alten Wasserbüchern?' hinweist, in Kombination mit der Notwendigkeit, rechtliche Grundlagen zu verstehen)."
+          ],
+          "open_questions": [
+            "Wie hoch ist die genaue Anzahl der Mühlenbesitzer und kleinen Wasserwerke in Brandenburg, die von diesen Regelungen betroffen sind und potenziell Beratungsbedarf haben?",
+            "Wie hoch ist die tatsächliche Zahlungsbereitschaft der Zielgruppe für spezialisierte Beratungsleistungen, insbesondere angesichts des oft knappen Budgets?",
+            "Gibt es informelle Beratungsangebote (z.B. durch Verbände oder lokale Initiativen), die den Bedarf bereits abdecken und in den Suchergebnissen nicht explizit genannt wurden?",
+            "Welche konkreten Erfahrungen haben Mühlenbesitzer in Brandenburg mit den Kosten und dem Nutzen von Fischtreppenprojekten gemacht?"
+          ]
+        },
+        "evidence_urls": [
+          "https://www.muehlen-in-brandenburg.de/wasserkraftnutzung/",
+          "https://mleuv.brandenburg.de/mleuv/de/umwelt/wasser/gewaesserschutz-und-entwicklung/europaeische-wasserrahmenrichtlinie-im-ueberblick/",
+          "https://lelf.brandenburg.de/lelf/de/service/foerderung/aquakultur-und-binnenfischerei/",
+          "https://www.foerderdatenbank.de/FDB/Content/DE/Foerderprogramm/Land/Brandenburg/naturnahe-gewaesserentwicklung-und-staerkung-der.html",
+          "https://www.berliner-kurier.de/article/kein-scherz-fuer-6-millionen-euro-baut-berlin-eine-treppe-fuer-welse-10008558",
+          "https://www.schwarzbuch.de/aufgedeckt/steuergeldverschwendung-alle-faelle/details/um-jeden-preis-eine-fischtreppe-sorgt-fuer-aerger",
+          "https://bravors.brandenburg.de/verordnungen/gebomugv/15"
+        ]
+      }
+    }
+  ],
+  "record": {
+    "run_id": "mark-20261001T132732-dce381",
+    "intent": "Kleine Wasserwerke und Mühlenstaue in Brandenburg: Stilllegungsdruck durch Wasserrahmenrichtlinie, Fischtreppen-Pflicht, Mühlenbesitzer ohne Gutachter-Budget — wer prüft was, und welche Rechte schlummern in alten Wasserbüchern?",
+    "model": "gemini-2.5-flash",
+    "created_at": "2026-10-01T13:34:24Z",
+    "state_missing": [],
+    "plan": {
+      "theme": "Regulierungsdruck und Erhalt kleiner Wasserwerke und Mühlenstaue in Brandenburg",
+      "candidate_seeds": [
+        {
+          "id": "brandenburg-wasserkraft",
+          "origin": "intent",
+          "title": "Kleine Wasserwerke und Mühlenstaue in Brandenburg",
+          "why_commercial": "Mühlenbesitzer und Betreiber kleiner Wasserwerke stehen unter erheblichem finanziellen und regulatorischen Druck durch die Wasserrahmenrichtlinie und die Pflicht zur Errichtung von Fischtreppen, haben aber kein Budget für teure Gutachten. Es besteht ein klarer Bedarf an kostengünstigen Lösungen zur Compliance, Rechtsklärung und Planung."
+        }
+      ],
+      "commercial_angles": [
+        "Productized Service: Bietet spezialisierte Beratungsdienstleistungen für Mühlenbesitzer und kleine Wasserwerke an, die sich auf die Einhaltung der Wasserrahmenrichtlinie, die Planung von Fischtreppen und die Analyse historischer Wasserrechte konzentrieren.",
+        "Compliance Toolkit (B2B SaaS): Eine Software-as-a-Service-Lösung, die Mühlenbesitzer und kleine Wasserwerke bei der Selbstverwaltung ihrer wasserrechtlichen Verpflichtungen, der Dokumentation von Altrechten und der Vorbereitung von Genehmigungsanträgen unterstützt.",
+        "Data Product: Ein Datenprodukt, das historische Wasserrechtsinformationen, relevante Rechtsgrundlagen und Best-Practice-Beispiele für Wasserkraftanlagen in Brandenburg aggregiert und aufbereitet, zugänglich für Gutachter, Behörden und Interessensverbände."
+      ],
+      "market_queries": [
+        "Kosten und Fördermittel für Fischtreppen in Brandenburg",
+        "Auswirkungen der Wasserrahmenrichtlinie auf kleine Wasserkraftanlagen in Brandenburg",
+        "Anbieter für wasserrechtliche Beratungsleistungen und Gutachten in Brandenburg"
+      ],
+      "operators": [
+        "decompose",
+        "gap",
+        "hypothesis",
+        "relate",
+        "feasibility",
+        "next_action"
+      ],
+      "entities": [
+        {
+          "name": "Wasserrahmenrichtlinie (WRRL)",
+          "kind": "regulation",
+          "source_hint": "user intent"
+        },
+        {
+          "name": "Fischtreppen",
+          "kind": "concept",
+          "source_hint": "user intent"
+        },
+        {
+          "name": "Mühlenbesitzer",
+          "kind": "role",
+          "source_hint": "user intent"
+        },
+        {
+          "name": "Brandenburg",
+          "kind": "place",
+          "source_hint": "user intent"
+        },
+        {
+          "name": "Wasserbücher",
+          "kind": "concept",
+          "source_hint": "user intent"
+        },
+        {
+          "name": "Gutachter",
+          "kind": "role",
+          "source_hint": "user intent"
+        },
+        {
+          "name": "Kleine Wasserwerke",
+          "kind": "concept",
+          "source_hint": "user intent"
+        },
+        {
+          "name": "Wasserrecht",
+          "kind": "concept",
+          "source_hint": "user intent"
+        }
+      ]
+    },
+    "audit": {
+      "candidates": [
+        {
+          "id": "V1",
+          "title": "Spezialisierte wasserrechtliche Beratung für Mühlenbesitzer und kleine Wasserwerke",
+          "offering_kind": "productized_service",
+          "who_operates": "actor",
+          "vector_pain_wtp": "Mühlenbesitzer und kleine Wasserwerke in Brandenburg sehen sich mit Stilllegungsdruck durch die Wasserrahmenrichtlinie und der Pflicht zum Bau von Fischtreppen konfrontiert. Sie benötigen spezialisierte Expertise, um Bußgelder und Betriebseinstellungen zu vermeiden und Fördermittel zu beantragen, haben aber oft kein Budget für teure Gutachter. Die Zahlungsbereitschaft ergibt sich aus der Notwendigkeit, den Betrieb aufrechtzuerhalten und hohe Folgekosten zu vermeiden.",
+          "vector_time_to_ship": "1-3 Monate zum ersten bezahlten Auftrag (basierend auf vorhandenem Fachwissen).",
+          "vector_distribution": "Direktansprache über lokale Verbände (z.B. Mühlenvereine), Empfehlungen durch Behörden (da diese keine eigenen spezifischen Beratungsangebote haben), Fachmessen und -veranstaltungen in Brandenburg, hoch-intent Suche für spezifische Rechtsfragen.",
+          "vector_monetization": "Produktisierte Pauschalgebühren für spezifische Leistungspakete (z.B. \"WRRL-Compliance-Check\", \"Fischtreppen-Fördermittelantrag-Support\", \"Altwasserrecht-Analyse\").",
+          "vector_defensibility": "Spezialisiertes Fachwissen im Wasserrecht Brandenburgs, lokale Netzwerke zu Behörden und Mühlenbesitzern, etablierte Reputation durch erfolgreiche Projekte, Zertifizierungen/Qualifikationen im Wasserbau/-recht.",
+          "market_size_signal": "Die Zielgruppe der kleinen Wasserwerke und Mühlenstaue in Brandenburg steht unter hohem Regulierungsdruck durch die Wasserrahmenrichtlinie und die Fischtreppen-Pflicht, verfügt aber oft nicht über das Budget für umfassende Gutachten. Es gibt keine spezifischen Beratungsangebote für diese Nische.",
+          "market_size_tag": "hypothesis",
+          "competitors": [
+            "Allgemeine Umweltberatungsstellen / Ingenieurbüros | adjacent |"
+          ],
+          "moat_network_effects": "weak",
+          "moat_switching_costs": "moderate",
+          "moat_scale_economies": "weak",
+          "moat_intangible_assets": "strong",
+          "economics": "time: 1-3 Monate bis zum ersten Umsatz | investment: 1.000-5.000 EUR für Marketingmaterial und initialen Netzwerkaufbau | running costs: 500-1.000 EUR/Monat (Büro, Software, Reise) | ROI: 6-12 Monate (Annahme: Bei geschätzten Einnahmen von 3.000-5.000 EUR pro Auftrag und 1-2 Aufträgen pro Monat, decken die Einnahmen nach wenigen Monaten die initialen Investitionen und laufenden Kosten)",
+          "check_queries": [
+            "Preise für wasserrechtliche Gutachten und Beratungen in Brandenburg",
+            "Erfahrungsberichte Mühlenbesitzer Fischtreppe Kosten"
+          ]
+        },
+        {
+          "id": "V2",
+          "title": "Compliance-Toolkit für wasserrechtliche Pflichten",
+          "offering_kind": "compliance_toolkit",
+          "who_operates": "third_party",
+          "vector_pain_wtp": "Betreiber kleiner Wasserwerke und Mühlen leiden unter dem hohen administrativen Aufwand und der Komplexität der Einhaltung wasserrechtlicher Vorschriften. Sie zahlen, um Zeit zu sparen, Fehler zu vermeiden, Compliance zu gewährleisten und den Betrieb ihrer Anlagen abzusichern.",
+          "vector_time_to_ship": "6-12 Monate bis zum MVP (erste Version mit Kernfunktionen).",
+          "vector_distribution": "Nischen-Online-Marketing (Foren, Fachblogs), Partnerschaften mit Ingenieurbüros oder Rechtsberatungen, Präsenz auf Fachveranstaltungen, Empfehlungen über Branchenverbände.",
+          "vector_monetization": "SaaS-Abonnementmodell, gestaffelt nach Funktionsumfang oder Anzahl der verwalteten Anlagen/Nutzer (z.B. monatliche/jährliche Gebühr).",
+          "vector_defensibility": "Spezifische Anpassung an das Brandenburgische Wasserrecht, proprietärer Workflow zur Dokumentation und Antragsgenerierung, potenzielle Integration historischer Wasserrechtsdaten, technischer Vorsprung.",
+          "market_size_signal": "Es gibt eine Zielgruppe von Betreibern kleiner Wasserwerke und Mühlen in Brandenburg, die Unterstützung bei der Verwaltung ihrer wasserrechtlichen Pflichten, Dokumentation von Altrechten und Antragstellung benötigen. Die Komplexität der Gesetzgebung (BbgWG, WHG, BbgFischG) treibt den Bedarf.",
+          "market_size_tag": "hypothesis",
+          "competitors": [],
+          "moat_network_effects": "weak",
+          "moat_switching_costs": "moderate",
+          "moat_scale_economies": "moderate",
+          "moat_intangible_assets": "strong",
+          "economics": "time: 6-12 Monate bis zum MVP | investment: 50.000-150.000 EUR (Entwicklung, Design, Hosting) | running costs: 2.000-5.000 EUR/Monat (Wartung, Support, Marketing) | ROI: 2-3 Jahre (Annahme: Bei einem durchschnittlichen SaaS-Preis von 50-150 EUR/Monat pro Kunde und einer angenommenen Kundenbasis von 100-200 Kunden im ersten Jahr, decken die kumulierten Einnahmen die Entwicklungskosten und laufenden Ausgaben)",
+          "check_queries": [
+            "Kosten für Compliance-Software kleine Unternehmen Deutschland",
+            "SaaS-Lösungen für Umweltauflagen und Genehmigungen"
+          ]
+        },
+        {
+          "id": "V3",
+          "title": "Datenprodukt: Historische Wasserrechte & WRRL-Informationen Brandenburg",
+          "offering_kind": "data_product",
+          "who_operates": "third_party",
+          "vector_pain_wtp": "Gutachter und Behörden verbringen viel Zeit mit der Recherche und Aufbereitung von verstreuten Informationen zu historischen Wasserrechten und WRRL-Vorgaben. Sie zahlen für Zeitersparnis, höhere Datenqualität und die Möglichkeit, fundiertere Analysen und Entscheidungen zu treffen.",
+          "vector_time_to_ship": "12-24 Monate bis zum ersten nutzbaren Datensatz (Datensammlung, -strukturierung, -validierung).",
+          "vector_distribution": "Direkter Vertrieb an Behörden (LfU, Wasserbehörden), Ingenieurbüros, Rechtsanwaltskanzleien, Hochschulen, Fachverbände; Präsentation auf Fachtagungen.",
+          "vector_monetization": "Einmalige Lizenzgebühr für den Datensatz, Abonnement für Updates und Erweiterungen, nutzungsbasierte Zugangsmodelle (API-Zugriff).",
+          "vector_defensibility": "Einzigartigkeit und Vollständigkeit des Datensatzes, Qualität der Datenaufbereitung und -validierung, tiefgreifendes Fachwissen in der Interpretation historischer Dokumente und rechtlicher Texte.",
+          "market_size_signal": "Gutachter, Behörden und Interessensverbände haben einen Bedarf an konsolidierten, aufbereiteten Informationen zu historischen Wasserrechten und der Umsetzung der WRRL in Brandenburg, um ihre Arbeit effizienter zu gestalten und fundierte Entscheidungen zu treffen.",
+          "market_size_tag": "hypothesis",
+          "competitors": [],
+          "moat_network_effects": "weak",
+          "moat_switching_costs": "weak",
+          "moat_scale_economies": "moderate",
+          "moat_intangible_assets": "strong",
+          "economics": "time: 12-24 Monate bis zum ersten Umsatz | investment: 100.000-300.000 EUR (Datensammlung, -aufbereitung, Plattform) | running costs: 3.000-8.000 EUR/Monat (Datenpflege, Server, Support) | ROI: 3-5 Jahre (Annahme: Bei einer jährlichen Lizenzgebühr von 5.000-15.000 EUR pro Kunde und einer angenommenen Kundenbasis von 10-20 Kunden, dauert es mehrere Jahre, um die hohen initialen Investitionen zu amortisieren)",
+          "check_queries": [
+            "Preise für spezialisierte Rechtsdatenbanken Deutschland",
+            "Marktstudie Umweltinformationssysteme Behörden"
+          ]
+        }
+      ],
+      "shortlist": [
+        "V1"
+      ],
+      "kills": [
+        {
+          "candidate_id": "V2",
+          "reason": "Die Zielgruppe der \"Mühlenbesitzer ohne Gutachter-Budget\" hat möglicherweise nicht die Zahlungsbereitschaft für eine umfassende SaaS-Lösung. Der hohe Investitions- und Entwicklungsaufwand für ein Drittanbieter-Produkt steht im Widerspruch zum direkteren und risikoärmeren Ansatz eines spezialisierten Dienstleistungsangebots, das besser auf die finanziellen Einschränkungen der Zielgruppe zugeschnitten ist.",
+          "failed_vectors": [
+            "pain_wtp",
+            "time_to_ship"
+          ]
+        },
+        {
+          "candidate_id": "V3",
+          "reason": "Der Investitions- und Zeitaufwand für den Aufbau eines umfassenden Datenprodukts zu historischen Wasserrechten ist extrem hoch und birgt ein erhebliches Risiko. Die primäre Schmerzpunktbeschreibung der Nutzerintention (\"Mühlenbesitzer ohne Gutachter-Budget\") wird von einem Datenprodukt für Gutachter und Behörden nicht direkt adressiert, was die Relevanz und kommerzielle Attraktivität für die ursprüngliche Zielgruppe mindert.",
+          "failed_vectors": [
+            "time_to_ship",
+            "pain_wtp"
+          ]
+        }
+      ]
+    },
+    "result": {
+      "opportunities": [
+        {
+          "candidate_id": "V1",
+          "title": "Spezialisierte wasserrechtliche Beratung für Mühlenbesitzer und kleine Wasserwerke",
+          "tagline": "Navigation durch Wasserrahmenrichtlinie und Fischtreppen-Pflicht in Brandenburg",
+          "offering_kind": "productized_service",
+          "target_customer": "Mühlenbesitzer und Betreiber kleiner Wasserkraftanlagen in Brandenburg",
+          "pain_and_compliance": "Mühlenbesitzer und kleine Wasserwerke in Brandenburg sehen sich mit Stilllegungsdruck durch die Wasserrahmenrichtlinie (WRRL) und der Pflicht zum Bau von Fischtreppen konfrontiert. Das Brandenburgische Wassergesetz (BbgWG) und das Wasserhaushaltsgesetz (WHG) regeln die Wassernutzung und Anlagen in Gewässern (Fakt: https://www.muehlen-in-brandenburg.de/wasserkraftnutzung/). Das Brandenburgische Fischereigesetz (BbgFischG) und die Fischereiverordnung (BbgFischO) fordern Maßnahmen zum Schutz der Fische bei Wasserkraftnutzung (Fakt: https://www.muehlen-in-brandenburg.de/wasserkraftnutzung/). Die Umsetzung der WRRL in Brandenburg erfolgt durch das Landesamt für Umwelt (LfU) (Fakt: https://mleuv.brandenburg.de/mleuv/de/umwelt/wasser/gewaesserschutz-und-entwicklung/europaeische-wasserrahmenrichtlinie-im-ueberblick/). Sie benötigen spezialisierte Expertise, um Bußgelder und Betriebseinstellungen zu vermeiden und Fördermittel zu beantragen. Es gibt Fördermittel für Aquakultur und Binnenfischerei (EMFAF) und naturnahe Gewässerentwicklung (ELER, GAK) in Brandenburg, die auch den Fischtreppenbau umfassen (Fakt: https://lelf.brandenburg.de/lelf/de/service/foerderung/aquakultur-und-binnenfischerei/, Fakt: https://www.foerderdatenbank.de/FDB/Content/DE/Foerderprogramm/Land/Brandenburg/naturnahe-gewaesserentwicklung-und-staerkung-der.html). Diese Fördermittel können bis zu 90% der förderfähigen Kosten betragen (Fakt: https://www.foerderdatenbank.de/FDB/Content/DE/Foerderprogramm/Land/Brandenburg/naturnahe-gewaesserentwicklung-und-staerkung-der.html). Die Kosten für Fischtreppen können erheblich sein (z.B. 6 Mio. EUR in Berlin, über 925.000 EUR in Mecklenburg-Vorpommern für ein Projekt) (Fakt: https://www.berliner-kurier.de/article/kein-scherz-fuer-6-millionen-euro-baut-berlin-eine-treppe-fuer-welse-10008558, Fakt: https://www.schwarzbuch.de/aufgedeckt/steuergeldverschwendung-alle-faelle/details/um-jeden-preis-eine-fischtreppe-sorgt-fuer-aerger). Die Zahlungsbereitschaft ergibt sich aus der Notwendigkeit, den Betrieb aufrechtzuerhalten und hohe Folgekosten durch Stilllegung oder Fehlinvestitionen zu vermeiden.",
+          "mvp_specification": "Das MVP bietet eine initiale Bestandsaufnahme und Risikoanalyse der wasserrechtlichen Situation des Kunden. Dies umfasst die Analyse bestehender Genehmigungen und Auflagen, die Prüfung der Relevanz der WRRL und Fischtreppen-Pflicht für den spezifischen Standort sowie die Identifikation potenzieller Konflikte und Handlungsbedarfe. Anschließend wird ein erster Maßnahmenkatalog erstellt. Ein separates Modul bietet Fördermittelberatung, einschließlich der Identifikation relevanter Förderprogramme (MLUK, ILB, Naturschutzfonds Brandenburg) und Unterstützung bei der Vorbereitung von Förderanträgen. Optional kann ein Service zur Digitalisierung und Strukturierung alter Wasserbücher angeboten werden, um schlummernde Rechte zu identifizieren. Der Build-Ansatz ist eine manuelle, persönliche Beratung vor Ort und remote, unterstützt durch Standard-Office-Software für Dokumentation und Berichtserstellung sowie eine interne Wissensdatenbank. Der Core Stack beinhaltet rechtliche Expertise im Wasserrecht Brandenburgs und Kenntnisse der Förderlandschaft, ergänzt durch ein CRM zur Kundenverwaltung und ein Dokumentenverwaltungssystem.",
+          "pricing_and_economics": "Das Pricing-Modell umfasst ein Basispaket 'Ersteinschätzung & Orientierung' als Pauschale (z.B. 1.500 - 3.000 EUR) für die initiale Bestandsaufnahme. Ein Modul 'Fördermittel-Scouting & Antragsvorbereitung' wird entweder als erfolgsorientierte Pauschale (z.B. 10-15% der potenziellen Fördersumme) oder auf Stundenbasis angeboten. Ein weiteres Modul 'Begleitung & Compliance-Management' könnte als monatliche Pauschale für laufende Beratung konzipiert werden. Die geschätzte Bruttomarge für eine expertisebasierte Dienstleistung liegt bei 70-80%. Ein Zielumsatz von 10.000 - 30.000 EUR im ersten Jahr durch 5-10 Kunden soll die Anfangsinvestitionen decken und die Machbarkeit demonstrieren.",
+          "distribution_strategy": "Die Distribution erfolgt primär über Direktvertrieb durch proaktive Ansprache von Mühlenbesitzern und Betreibern kleiner Wasserwerke in Brandenburg (z.B. über Adresslisten von Verbänden). Die Teilnahme an regionalen Messen, Fachtagungen und Treffen von Mühlenvereinen oder Wasserkraftverbänden in Brandenburg ist ebenfalls vorgesehen. Content Marketing über eine Webseite mit Blogbeiträgen zu WRRL, Fischtreppenpflicht und Fördermöglichkeiten soll die Sichtbarkeit erhöhen. Partnerschaften mit lokalen Rechtsanwaltskanzleien, Ingenieurbüros und regionalen Banken, die keine eigene Spezialexpertise haben, sowie Mühlenvereinen und Verbänden, werden angestrebt. Empfehlungsmarketing durch zufriedene Kunden ist ein wichtiger Baustein.",
+          "moat_and_defensibility": "Der Moat basiert auf spezialisiertem Fachwissen im komplexen Wasserrecht Brandenburgs und den spezifischen Anforderungen für kleine Wasserkraftanlagen und Mühlen. Das Fehlen expliziter Beratungsangebote für diese spezifische Zielgruppe (Fakt: https://mleuv.brandenburg.de/mleuv/de/umwelt/wasser/gewaesserschutz-und-entwicklung/europaeische-wasserrahmenrichtlinie-im-ueberblick/) deutet auf eine Nische hin. Die regionale Expertise, insbesondere die Kenntnis lokaler Behörden und Ansprechpartner, sowie die Fähigkeit, historische Dokumente wie Wasserbücher zu interpretieren, schaffen eine zusätzliche Barriere für Wettbewerber. Der Aufbau von Vertrauen und eines Netzwerks in einer traditionell geprägten Branche erhöht die Defensibilität.",
+          "kill_criteria": [
+            "Die Zielgruppe (Mühlenbesitzer, kleine Wasserwerke) zeigt selbst bei Aussicht auf Fördermittel keine ausreichende Zahlungsbereitschaft für externe Beratungsleistungen, um den Betrieb wirtschaftlich zu gestalten.",
+            "Behörden oder bestehende Verbände in Brandenburg bieten bereits vergleichbare, kostenlose oder sehr kostengünstige Beratungsleistungen an, die den Bedarf der Zielgruppe vollständig abdecken.",
+            "Die rechtlichen Rahmenbedingungen ändern sich grundlegend, sodass der Stilllegungsdruck für kleine Anlagen entfällt oder die Fischtreppenpflicht obsolet wird und somit der Beratungsbedarf verschwindet.",
+            "Der Zugang zu den Zielkunden erweist sich als extrem schwierig und kostenintensiv (z.B. überproportional hohe Akquisitionskosten), sodass eine wirtschaftliche Kundenakquise nicht möglich ist."
+          ],
+          "evidence_grade": {
+            "facts": [
+              "Brandenburgisches Wassergesetz (BbgWG) und Wasserhaushaltsgesetz (WHG) regeln die Wassernutzung und Anlagen in Gewässern (https://www.muehlen-in-brandenburg.de/wasserkraftnutzung/)",
+              "Brandenburgisches Fischereigesetz (BbgFischG) und Fischereiverordnung (BbgFischO) fordern Maßnahmen zum Schutz der Fische bei Wasserkraftnutzung (https://www.muehlen-in-brandenburg.de/wasserkraftnutzung/)",
+              "Die Umsetzung der Europäischen Wasserrahmenrichtlinie (WRRL) in Brandenburg erfolgt durch das Landesamt für Umwelt (LfU) (https://mleuv.brandenburg.de/mleuv/de/umwelt/wasser/gewaesserschutz-und-entwicklung/europaeische-wasserrahmenrichtlinie-im-ueberblick/)",
+              "Es gibt Fördermittel für Aquakultur und Binnenfischerei (EMFAF) und naturnahe Gewässerentwicklung (ELER, GAK) in Brandenburg, die auch Fischtreppenbau umfassen (https://lelf.brandenburg.de/lelf/de/service/foerderung/aquakultur-und-binnenfischerei/)",
+              "Fördermittel können bis zu 90% der förderfähigen Kosten betragen (https://www.foerderdatenbank.de/FDB/Content/DE/Foerderprogramm/Land/Brandenburg/naturnahe-gewaesserentwicklung-und-staerkung-der.html)",
+              "Kosten für Fischtreppen können erheblich sein (6 Mio. EUR in Berlin, >925.000 EUR in MV für ein Projekt) (https://www.berliner-kurier.de/article/kein-scherz-fuer-6-millionen-euro-baut-berlin-eine-treppe-fuer-welse-10008558)",
+              "Ein Fischtreppenprojekt in MV führte zu Widerstand aufgrund hoher Kosten (>925.000 EUR) und späterer Trockenlegung des Mühlenteichs (https://www.schwarzbuch.de/aufgedeckt/steuergeldverschwendung-alle-faelle/details/um-jeden-preis-eine-fischtreppe-sorgt-fuer-aerger)",
+              "Spezifische Beratungsangebote für Betreiber kleiner Wasserwerke und Mühlen bezüglich WRRL wurden in den Suchergebnissen nicht explizit gefunden (https://mleuv.brandenburg.de/mleuv/de/umwelt/wasser/gewaesserschutz-und-entwicklung/europaeische-wasserrahmenrichtlinie-im-ueberblick/)",
+              "Behördliche Gebühren für 'Gutachten, Untersuchungsbericht' sind 25 EUR pro Seite, mind. 50 EUR, oder 51-358 EUR für 'umfangreiche wissenschaftliche Gutachten' (https://bravors.brandenburg.de/verordnungen/gebomugv/15)"
+            ],
+            "inferences": [
+              "Der Stilllegungsdruck und die Pflicht zum Bau von Fischtreppen erzeugen einen akuten Beratungsbedarf bei Mühlenbesitzern und kleinen Wasserwerken, um Bußgelder und Betriebseinstellungen zu vermeiden und hohe Folgekosten zu umgehen (abgeleitet aus: https://www.muehlen-in-brandenburg.de/wasserkraftnutzung/, https://www.berliner-kurier.de/article/kein-scherz-fuer-6-millionen-euro-baut-berlin-eine-treppe-fuer-welse-10008558, https://www.schwarzbuch.de/aufgedeckt/steuergeldverschwendung-alle-faelle/details/um-jeden-preis-eine-fischtreppe-sorgt-fuer-aerger).",
+              "Die Verfügbarkeit von Fördermitteln erhöht die Zahlungsbereitschaft für Beratungsleistungen, da diese die Eigeninvestition der Betreiber reduzieren (abgeleitet aus: 'Fördermittel können bis zu 90% der förderfähigen Kosten betragen (https://www.foerderdatenbank.de/FDB/Content/DE/Foerderprogramm/Land/Brandenburg/naturnahe-gewaesserentwicklung-und-staerkung-der.html)').",
+              "Das Fehlen expliziter Beratungsangebote für diese spezifische Zielgruppe deutet auf eine Marktlücke für spezialisierte Dienstleistungen hin (abgeleitet aus: 'Spezifische Beratungsangebote für Betreiber kleiner Wasserwerke und Mühlen bezüglich WRRL wurden in den Suchergebnissen nicht explizit gefunden (https://mleuv.brandenburg.de/mleuv/de/umwelt/wasser/gewaesserschutz-und-entwicklung/europaeische-wasserrahmenrichtlinie-im-ueberblick/)').",
+              "Die Interpretation alter Wasserbücher kann einen Mehrwert für die Kunden darstellen, da sie potenziell ungenutzte Rechte aufdecken kann (abgeleitet aus: User Intent, der auf die Frage 'welche Rechte schlummern in alten Wasserbüchern?' hinweist, in Kombination mit der Notwendigkeit, rechtliche Grundlagen zu verstehen)."
+            ],
+            "open_questions": [
+              "Wie hoch ist die genaue Anzahl der Mühlenbesitzer und kleinen Wasserwerke in Brandenburg, die von diesen Regelungen betroffen sind und potenziell Beratungsbedarf haben?",
+              "Wie hoch ist die tatsächliche Zahlungsbereitschaft der Zielgruppe für spezialisierte Beratungsleistungen, insbesondere angesichts des oft knappen Budgets?",
+              "Gibt es informelle Beratungsangebote (z.B. durch Verbände oder lokale Initiativen), die den Bedarf bereits abdecken und in den Suchergebnissen nicht explizit genannt wurden?",
+              "Welche konkreten Erfahrungen haben Mühlenbesitzer in Brandenburg mit den Kosten und dem Nutzen von Fischtreppenprojekten gemacht?"
+            ]
+          },
+          "evidence_urls": [
+            "https://www.muehlen-in-brandenburg.de/wasserkraftnutzung/",
+            "https://mleuv.brandenburg.de/mleuv/de/umwelt/wasser/gewaesserschutz-und-entwicklung/europaeische-wasserrahmenrichtlinie-im-ueberblick/",
+            "https://lelf.brandenburg.de/lelf/de/service/foerderung/aquakultur-und-binnenfischerei/",
+            "https://www.foerderdatenbank.de/FDB/Content/DE/Foerderprogramm/Land/Brandenburg/naturnahe-gewaesserentwicklung-und-staerkung-der.html",
+            "https://www.berliner-kurier.de/article/kein-scherz-fuer-6-millionen-euro-baut-berlin-eine-treppe-fuer-welse-10008558",
+            "https://www.schwarzbuch.de/aufgedeckt/steuergeldverschwendung-alle-faelle/details/um-jeden-preis-eine-fischtreppe-sorgt-fuer-aerger",
+            "https://bravors.brandenburg.de/verordnungen/gebomugv/15"
+          ]
+        }
+      ],
+      "kills": [],
+      "retro": {
+        "learned": "Die Suchergebnisse bestätigen die rechtliche Grundlage für den durch die Wasserrahmenrichtlinie und die Fischtreppenpflicht entstehenden Druck auf Mühlenbesitzer und kleine Wasserwerke in Brandenburg. Es existieren erhebliche Fördermöglichkeiten, die den Bau von Fischtreppen und naturnahe Gewässerentwicklung unterstützen, was die Zahlungsbereitschaft für Beratungsleistungen zur Beantragung dieser Mittel erhöhen sollte. Die hohen Kosten von Fischtreppenprojekten verdeutlichen den Wert einer frühzeitigen und korrekten Beratung, um Fehlinvestitionen oder Stilllegungen zu vermeiden. Für die spezifische Zielgruppe der kleinen Wasserwerke und Mühlenbesitzer in Brandenburg konnten keine expliziten spezialisierten Beratungsangebote gefunden werden, was auf eine Marktlücke hindeutet.",
+        "mistake": "Ich habe nicht explizit nach Informationen zu 'Rechten, die in alten Wasserbüchern schlummern' in den Suchanfragen gefragt. Obwohl dieser Aspekt in die MVP-Spezifikation und den Moat integriert wurde, konnte er nicht direkt durch Fakten aus den Suchergebnissen untermauert werden. Zudem wurde bei der Herleitung einer Inferenz fälschlicherweise auf den User Intent verwiesen, anstatt ausschließlich auf Fakten aus den Suchergebnissen.",
+        "next_time": "Ich werde bei komplexen Nutzeranfragen, die mehrere spezifische Aspekte enthalten (wie 'alte Wasserbücher'), explizit separate Suchanfragen für jeden dieser Aspekte formulieren, um sicherzustellen, dass alle Teile des Nutzerbedarfs durch Fakten untermauert oder als offene Fragen identifiziert werden. Vorschlag: Wenn ein Aspekt der Nutzeranfrage nicht direkt durch die Suchergebnisse beantwortet werden kann, aber als potenzieller Mehrwert für das Angebot erscheint, werde ich den Operator 'value_hypothesis' verwenden, um diesen Aspekt als Hypothese zu kennzeichnen und einen Vorschlag zur Validierung zu machen."
+      }
+    },
+    "tool_calls": [
+      {
+        "call_id": "mark-20261001T132732-dce381-t01",
+        "tool": "lab_results",
+        "status": "ok",
+        "summary": "research, wasserwerke, mühlenstaue, brandenburg"
+      },
+      {
+        "call_id": "mark-20261001T132732-dce381-t02",
+        "tool": "lab_results",
+        "status": "ok",
+        "summary": "comparator, wasserwerke, mühlenstaue, brandenburg"
+      },
+      {
+        "call_id": "mark-20261001T132732-dce381-t03",
+        "tool": "search",
+        "status": "ok",
+        "summary": "Rechtliche Grundlagen für kleine Wasserkraftanlagen und Mühlen in Brandenburg"
+      },
+      {
+        "call_id": "mark-20261001T132732-dce381-t04",
+        "tool": "search",
+        "status": "ok",
+        "summary": "Kosten und Fördermittel für Fischtreppenbau in Brandenburg"
+      },
+      {
+        "call_id": "mark-20261001T132732-dce381-t05",
+        "tool": "search",
+        "status": "ok",
+        "summary": "Beratungsangebote für Betreiber kleiner Wasserwerke und Mühlen in Brandenburg bezüglich Wasserrahmenrichtlinie"
+      },
+      {
+        "call_id": "mark-20261001T132732-dce381-t06",
+        "tool": "search",
+        "status": "ok",
+        "summary": "Preise für wasserrechtliche Gutachten und Beratungen für kleine Wasserkraftanlagen und Mühlen in Brandenburg"
+      },
+      {
+        "call_id": "mark-20261001T132732-dce381-t07",
+        "tool": "search",
+        "status": "ok",
+        "summary": "Erfahrungsberichte Mühlenbesitzer Fischtreppe Kosten Brandenburg"
+      }
+    ],
+    "research_log": [
+      {
+        "call_id": "mark-20261001T132732-dce381-t01",
+        "tool": "lab_results",
+        "status": "ok",
+        "at": "2026-10-01T13:28:09Z",
+        "what": "research, wasserwerke, mühlenstaue, brandenburg"
+      },
+      {
+        "call_id": "mark-20261001T132732-dce381-t02",
+        "tool": "lab_results",
+        "status": "ok",
+        "at": "2026-10-01T13:28:09Z",
+        "what": "comparator, wasserwerke, mühlenstaue, brandenburg"
+      },
+      {
+        "call_id": "mark-20261001T132732-dce381-t03",
+        "tool": "search",
+        "status": "ok",
+        "at": "2026-10-01T13:28:45Z",
+        "what": "Rechtliche Grundlagen für kleine Wasserkraftanlagen und Mühlen in Brandenburg",
+        "pages": [
+          "https://www.muehlen-in-brandenburg.de/wasserkraftnutzung/",
+          "https://mleuv.brandenburg.de/mleuv/de/service/rechtsvorschriften/wasser/",
+          "https://bravors.brandenburg.de/gesetze/bbgwg",
+          "https://service.stadt-brandenburg.de/dienstleistungen/-/egov-bis-detail/dienstleistung/5051/show",
+          "https://fischundfang.de/gruener-strom-aus-wasserkraft-ist-rot/",
+          "https://www.umweltbundesamt.de/themen/klima-energie/erneuerbare-energien/nutzung-der-wasserkraft",
+          "https://mleuv.brandenburg.de/mleuv/de/umwelt/immissionsschutz/genehmigungsverfahren/",
+          "https://bravors.brandenburg.de/verwaltungsvorschriften/erneuerbare_energien_2025",
+          "https://www.deutsche-muehlen.de/ueber-uns/landes-regionalverbaende/berlin",
+          "https://www.lee-bb.de/themen/wasserkraft/"
+        ],
+        "queries_used": 3
+      },
+      {
+        "call_id": "mark-20261001T132732-dce381-t04",
+        "tool": "search",
+        "status": "ok",
+        "at": "2026-10-01T13:29:41Z",
+        "what": "Kosten und Fördermittel für Fischtreppenbau in Brandenburg",
+        "pages": [
+          "https://lelf.brandenburg.de/lelf/de/service/foerderung/aquakultur-und-binnenfischerei/",
+          "https://mleuv.brandenburg.de/mleuv/de/service/foerderung/fischerei/foerderung-der-aquakultur-und-binnenfischerei/",
+          "https://mleuv.brandenburg.de/mleuv/de/aktuelles/presseinformationen/detail/~18-06-2024-neue-richtlinie-fischerei",
+          "https://www.foerderdatenbank.de/FDB/Content/DE/Foerderprogramm/Land/Brandenburg/naturnahe-gewaesserentwicklung-und-staerkung-der.html",
+          "https://www.ilb.de/de/infrastruktur/alle-infrastruktur-foerderprogramme/naturnahe-gewaesserentwicklung-foerderung-fuer-landeseinrichtungen/",
+          "https://www.naturschutzfonds.de/was-wir-foerdern",
+          "https://www.berliner-kurier.de/article/kein-scherz-fuer-6-millionen-euro-baut-berlin-eine-treppe-fuer-welse-10008558",
+          "https://www.schwarzbuch.de/aufgedeckt/steuergeldverschwendung-alle-faelle/details/um-jeden-preis-eine-fischtreppe-sorgt-fuer-aerger",
+          "https://www.oberberg-aktuell.de/lokalmix/fischtreppenbau-balanceakt-zwischen-artenschutz-und-stromproduktion-a-38287"
+        ],
+        "queries_used": 3
+      },
+      {
+        "call_id": "mark-20261001T132732-dce381-t05",
+        "tool": "search",
+        "status": "ok",
+        "at": "2026-10-01T13:30:09Z",
+        "what": "Beratungsangebote für Betreiber kleiner Wasserwerke und Mühlen in Brandenburg bezüglich Wasserrahmenrichtlinie",
+        "pages": [
+          "https://lfu.brandenburg.de/lfu/de/aufgaben/wasser/grundwasser/umsetzung-wasserrahmenrichtlinie-grundwasser/",
+          "https://wbv-welse.de/wp-content/uploads/2020/01/Gewaesserunterhaltungsrichtlinie.pdf",
+          "https://mleuv.brandenburg.de/mleuv/de/umwelt/wasser/gewaesserschutz-und-entwicklung/europaeische-wasserrahmenrichtlinie-im-ueberblick/",
+          "https://www.ilb.de/de/infrastruktur/alle-infrastruktur-foerderprogramme/abwasser-wasserrahmenrichtlinie-2024/",
+          "https://brandenburg.nabu.de/imperia/md/content/brandenburg2/2021-08-09-wrrl-forderungskatalog_berlin-brandenburg.pdf",
+          "https://brandenburg.nabu.de/natur-und-landschaft/gewaesser/30369.html"
+        ],
+        "queries_used": 3
+      },
+      {
+        "call_id": "mark-20261001T132732-dce381-t06",
+        "tool": "search",
+        "status": "ok",
+        "at": "2026-10-01T13:31:47Z",
+        "what": "Preise für wasserrechtliche Gutachten und Beratungen für kleine Wasserkraftanlagen und Mühlen in Brandenburg",
+        "pages": [
+          "https://lfu.brandenburg.de/lfu/de/aufgaben/wasser/genehmigungen-abgaben-foerderung/wassernutzungsentgelt/",
+          "https://lfu.brandenburg.de/lfu/de/aufgaben/wasser/genehmigungen-abgaben-foerderung/",
+          "https://bravors.brandenburg.de/verordnungen/gebomugv/15",
+          "https://mleuv.brandenburg.de/mleuv/de/umwelt/wasser/fragen-und-antworten/faq-wasser-recht-zustaendigkeiten/"
+        ],
+        "queries_used": 3
+      },
+      {
+        "call_id": "mark-20261001T132732-dce381-t07",
+        "tool": "search",
+        "status": "ok",
+        "at": "2026-10-01T13:32:28Z",
+        "what": "Erfahrungsberichte Mühlenbesitzer Fischtreppe Kosten Brandenburg",
+        "pages": [
+          "https://mleuv.brandenburg.de/mleuv/de/umwelt/wasser/gewaesser-und-anlagenunterhaltung/kostenbeteiligung-gewaesserunterhaltung-ii-ordnung/",
+          "https://lfu.brandenburg.de/lfu/de/aufgaben/wasser/anlagen-und-gewaesserunterhaltung/gewaesserunterhaltung/",
+          "https://www.schwarzbuch.de/aufgedeckt/steuergeldverschwendung-alle-faelle/details/um-jeden-preis-eine-fischtreppe-sorgt-fuer-aerger",
+          "https://www.facebook.com/ZDFheute/videos/sinnlose-fischtreppe/10154661045275680/"
+        ],
+        "queries_used": 6
+      }
+    ],
+    "fact_checks": [
+      {
+        "candidate_id": "V1",
+        "index": 0,
+        "url": "https://www.muehlen-in-brandenburg.de/wasserkraftnutzung/",
+        "quote_status": "supported",
+        "passage": "Wasserkraftnutzung Die Region Berlin-Brandenburg ist mit seinen Gewässereinzugsgebieten der Flüsse Oder, Spree und Havel sehr wasserreich, so dass die Nutzung der Wasserkraft über viele Jahrhunderte eine wesentliche Rolle spielte."
+      },
+      {
+        "candidate_id": "V1",
+        "index": 1,
+        "url": "https://www.muehlen-in-brandenburg.de/wasserkraftnutzung/",
+        "quote_status": "unchecked"
+      },
+      {
+        "candidate_id": "V1",
+        "index": 2,
+        "url": "https://mleuv.brandenburg.de/mleuv/de/umwelt/wasser/gewaesserschutz-und-entwicklung/europaeische-wasserrahmenrichtlinie-im-ueberblick/",
+        "quote_status": "supported",
+        "passage": "Dieses Ziel soll auf der Grundlage von Mit Märkisch Blau zu neuen Ufern - Die Umsetzung der Europäischen Wasserrahmenrichtlinie in Brandenburg © Landesamt für Umwelt Ansehen Bestandsaufnahmen und Überwachungen mit Hilfe von Maßnahmenprogrammen und Bewirtschaftungsplänen innerhalb von drei Bewirtschaftungszeiträumen (BWZ) bis 2027 erreicht werden."
+      },
+      {
+        "candidate_id": "V1",
+        "index": 3,
+        "url": "https://lelf.brandenburg.de/lelf/de/service/foerderung/aquakultur-und-binnenfischerei/",
+        "quote_status": "supported",
+        "passage": "Nutzen Sie dafür bitte folgende E-Mail-Adresse: frederik.buhrke@lelf.brandenburg.de Weiterführende Informationen Weiterführende Informationen Client Downloads Externe Links Client Startseite Internetantragstellung Projektförderung Downloads Förderrichtlinie und Allgemeine Nebenbestimmungen Förderrichtlinie und Allgemeine Nebenbestimmungen Richtlinie Förderung Aquakultur Binnenfischerei 2024 Allgem"
+      },
+      {
+        "candidate_id": "V1",
+        "index": 4,
+        "url": "https://www.foerderdatenbank.de/FDB/Content/DE/Foerderprogramm/Land/Brandenburg/naturnahe-gewaesserentwicklung-und-staerkung-der.html",
+        "quote_status": "unsupported"
+      },
+      {
+        "candidate_id": "V1",
+        "index": 5,
+        "url": "https://www.berliner-kurier.de/article/kein-scherz-fuer-6-millionen-euro-baut-berlin-eine-treppe-fuer-welse-10008558",
+        "quote_status": "partial",
+        "passage": "Kein Scherz: Für 6 Millionen Euro baut Berlin eine Treppe für Welse!"
+      },
+      {
+        "candidate_id": "V1",
+        "index": 6,
+        "url": "https://www.schwarzbuch.de/aufgedeckt/steuergeldverschwendung-alle-faelle/details/um-jeden-preis-eine-fischtreppe-sorgt-fuer-aerger",
+        "quote_status": "unsupported"
+      },
+      {
+        "candidate_id": "V1",
+        "index": 7,
+        "url": "https://mleuv.brandenburg.de/mleuv/de/umwelt/wasser/gewaesserschutz-und-entwicklung/europaeische-wasserrahmenrichtlinie-im-ueberblick/",
+        "quote_status": "unsupported"
+      },
+      {
+        "candidate_id": "V1",
+        "index": 8,
+        "url": "https://bravors.brandenburg.de/verordnungen/gebomugv/15",
+        "quote_status": "supported",
+        "passage": "9.1.2.15 Wiederholungsprüfungen 100 bis 450 9.1.2.16 Anerkennung der Gleichstellung oder Feststellung der Gleichwertigkeit des Abschlusses als Hufbeschlagschmied/Hufbeschlagschmiedin einschließlich Ausstellung einer Anerkennungsurkunde nach § 3 HufBeschlAnerkennV 50 Anerkennung der Gleichstellung oder Feststellung der Gleichwertigkeit des Abschlusses als Hufbeschlaglehrschmied/Hufbeschlaglehrschmi"
+      }
+    ],
+    "accounting": {
+      "model_calls": 11,
+      "search_calls": 5,
+      "search_queries": 18,
+      "cost_usd": 0.125087
+    },
+    "opportunity_dossier": "# Commercial Opportunity: Spezialisierte wasserrechtliche Beratung für Mühlenbesitzer und kleine Wasserwerke\n\n**ID:** `V1`  \n**Run ID:** `mark-20261001T132732-dce381`  \n**Category:** `productized_service`  \n**Target Buyer:** Mühlenbesitzer und Betreiber kleiner Wasserkraftanlagen in Brandenburg  \n**Intent / Origin:** Kleine Wasserwerke und Mühlenstaue in Brandenburg: Stilllegungsdruck durch Wasserrahmenrichtlinie, Fischtreppen-Pflicht, Mühlenbesitzer ohne Gutachter-Budget — wer prüft was, und welche Rechte schlumm  \n\n---\n\n## 1. Value Proposition & Problem\nNavigation durch Wasserrahmenrichtlinie und Fischtreppen-Pflicht in Brandenburg\n\n### Pain & Compliance Basis\nMühlenbesitzer und kleine Wasserwerke in Brandenburg sehen sich mit Stilllegungsdruck durch die Wasserrahmenrichtlinie (WRRL) und der Pflicht zum Bau von Fischtreppen konfrontiert. Das Brandenburgische Wassergesetz (BbgWG) und das Wasserhaushaltsgesetz (WHG) regeln die Wassernutzung und Anlagen in Gewässern (Fakt: https://www.muehlen-in-brandenburg.de/wasserkraftnutzung/). Das Brandenburgische Fischereigesetz (BbgFischG) und die Fischereiverordnung (BbgFischO) fordern Maßnahmen zum Schutz der Fische bei Wasserkraftnutzung (Fakt: https://www.muehlen-in-brandenburg.de/wasserkraftnutzung/). Die Umsetzung der WRRL in Brandenburg erfolgt durch das Landesamt für Umwelt (LfU) (Fakt: https://mleuv.brandenburg.de/mleuv/de/umwelt/wasser/gewaesserschutz-und-entwicklung/europaeische-wasserrahmenrichtlinie-im-ueberblick/). Sie benötigen spezialisierte Expertise, um Bußgelder und Betriebseinstellungen zu vermeiden und Fördermittel zu beantragen. Es gibt Fördermittel für Aquakultur und Binnenfischerei (EMFAF) und naturnahe Gewässerentwicklung (ELER, GAK) in Brandenburg, die auch den Fischtreppenbau umfassen (Fakt: https://lelf.brandenburg.de/lelf/de/service/foerderung/aquakultur-und-binnenfischerei/, Fakt: https://www.foerderdatenbank.de/FDB/Content/DE/Foerderprogramm/Land/Brandenburg/naturnahe-gewaesserentwicklung-und-staerkung-der.html). Diese Fördermittel können bis zu 90% der förderfähigen Kosten betragen (Fakt: https://www.foerderdatenbank.de/FDB/Content/DE/Foerderprogramm/Land/Brandenburg/naturnahe-gewaesserentwicklung-und-staerkung-der.html). Die Kosten für Fischtreppen können erheblich sein (z.B. 6 Mio. EUR in Berlin, über 925.000 EUR in Mecklenburg-Vorpommern für ein Projekt) (Fakt: https://www.berliner-kurier.de/article/kein-scherz-fuer-6-millionen-euro-baut-berlin-eine-treppe-fuer-welse-10008558, Fakt: https://www.schwarzbuch.de/aufgedeckt/steuergeldverschwendung-alle-faelle/details/um-jeden-preis-eine-fischtreppe-sorgt-fuer-aerger). Die Zahlungsbereitschaft ergibt sich aus der Notwendigkeit, den Betrieb aufrechtzuerhalten und hohe Folgekosten durch Stilllegung oder Fehlinvestitionen zu vermeiden.\n\n---\n\n## 2. Minimum Viable Product (MVP) Scope\nDas MVP bietet eine initiale Bestandsaufnahme und Risikoanalyse der wasserrechtlichen Situation des Kunden. Dies umfasst die Analyse bestehender Genehmigungen und Auflagen, die Prüfung der Relevanz der WRRL und Fischtreppen-Pflicht für den spezifischen Standort sowie die Identifikation potenzieller Konflikte und Handlungsbedarfe. Anschließend wird ein erster Maßnahmenkatalog erstellt. Ein separates Modul bietet Fördermittelberatung, einschließlich der Identifikation relevanter Förderprogramme (MLUK, ILB, Naturschutzfonds Brandenburg) und Unterstützung bei der Vorbereitung von Förderanträgen. Optional kann ein Service zur Digitalisierung und Strukturierung alter Wasserbücher angeboten werden, um schlummernde Rechte zu identifizieren. Der Build-Ansatz ist eine manuelle, persönliche Beratung vor Ort und remote, unterstützt durch Standard-Office-Software für Dokumentation und Berichtserstellung sowie eine interne Wissensdatenbank. Der Core Stack beinhaltet rechtliche Expertise im Wasserrecht Brandenburgs und Kenntnisse der Förderlandschaft, ergänzt durch ein CRM zur Kundenverwaltung und ein Dokumentenverwaltungssystem.\n\n---\n\n## 3. Commercial Mechanics\n\n### Pricing & Economics\nDas Pricing-Modell umfasst ein Basispaket 'Ersteinschätzung & Orientierung' als Pauschale (z.B. 1.500 - 3.000 EUR) für die initiale Bestandsaufnahme. Ein Modul 'Fördermittel-Scouting & Antragsvorbereitung' wird entweder als erfolgsorientierte Pauschale (z.B. 10-15% der potenziellen Fördersumme) oder auf Stundenbasis angeboten. Ein weiteres Modul 'Begleitung & Compliance-Management' könnte als monatliche Pauschale für laufende Beratung konzipiert werden. Die geschätzte Bruttomarge für eine expertisebasierte Dienstleistung liegt bei 70-80%. Ein Zielumsatz von 10.000 - 30.000 EUR im ersten Jahr durch 5-10 Kunden soll die Anfangsinvestitionen decken und die Machbarkeit demonstrieren.\n\n### Distribution & Acquisition Strategy\nDie Distribution erfolgt primär über Direktvertrieb durch proaktive Ansprache von Mühlenbesitzern und Betreibern kleiner Wasserwerke in Brandenburg (z.B. über Adresslisten von Verbänden). Die Teilnahme an regionalen Messen, Fachtagungen und Treffen von Mühlenvereinen oder Wasserkraftverbänden in Brandenburg ist ebenfalls vorgesehen. Content Marketing über eine Webseite mit Blogbeiträgen zu WRRL, Fischtreppenpflicht und Fördermöglichkeiten soll die Sichtbarkeit erhöhen. Partnerschaften mit lokalen Rechtsanwaltskanzleien, Ingenieurbüros und regionalen Banken, die keine eigene Spezialexpertise haben, sowie Mühlenvereinen und Verbänden, werden angestrebt. Empfehlungsmarketing durch zufriedene Kunden ist ein wichtiger Baustein.\n\n### Defensibility & Moat\nDer Moat basiert auf spezialisiertem Fachwissen im komplexen Wasserrecht Brandenburgs und den spezifischen Anforderungen für kleine Wasserkraftanlagen und Mühlen. Das Fehlen expliziter Beratungsangebote für diese spezifische Zielgruppe (Fakt: https://mleuv.brandenburg.de/mleuv/de/umwelt/wasser/gewaesserschutz-und-entwicklung/europaeische-wasserrahmenrichtlinie-im-ueberblick/) deutet auf eine Nische hin. Die regionale Expertise, insbesondere die Kenntnis lokaler Behörden und Ansprechpartner, sowie die Fähigkeit, historische Dokumente wie Wasserbücher zu interpretieren, schaffen eine zusätzliche Barriere für Wettbewerber. Der Aufbau von Vertrauen und eines Netzwerks in einer traditionell geprägten Branche erhöht die Defensibilität.\n\n---\n\n## 4. Kill Criteria\n- Die Zielgruppe (Mühlenbesitzer, kleine Wasserwerke) zeigt selbst bei Aussicht auf Fördermittel keine ausreichende Zahlungsbereitschaft für externe Beratungsleistungen, um den Betrieb wirtschaftlich zu gestalten.\n- Behörden oder bestehende Verbände in Brandenburg bieten bereits vergleichbare, kostenlose oder sehr kostengünstige Beratungsleistungen an, die den Bedarf der Zielgruppe vollständig abdecken.\n- Die rechtlichen Rahmenbedingungen ändern sich grundlegend, sodass der Stilllegungsdruck für kleine Anlagen entfällt oder die Fischtreppenpflicht obsolet wird und somit der Beratungsbedarf verschwindet.\n- Der Zugang zu den Zielkunden erweist sich als extrem schwierig und kostenintensiv (z.B. überproportional hohe Akquisitionskosten), sodass eine wirtschaftliche Kundenakquise nicht möglich ist.\n\n---\n\n## 5. Evidence Grade\n### Facts (retrieved sources)\n- Brandenburgisches Wassergesetz (BbgWG) und Wasserhaushaltsgesetz (WHG) regeln die Wassernutzung und Anlagen in Gewässern (https://www.muehlen-in-brandenburg.de/wasserkraftnutzung/)\n- Brandenburgisches Fischereigesetz (BbgFischG) und Fischereiverordnung (BbgFischO) fordern Maßnahmen zum Schutz der Fische bei Wasserkraftnutzung (https://www.muehlen-in-brandenburg.de/wasserkraftnutzung/)\n- Die Umsetzung der Europäischen Wasserrahmenrichtlinie (WRRL) in Brandenburg erfolgt durch das Landesamt für Umwelt (LfU) (https://mleuv.brandenburg.de/mleuv/de/umwelt/wasser/gewaesserschutz-und-entwicklung/europaeische-wasserrahmenrichtlinie-im-ueberblick/)\n- Es gibt Fördermittel für Aquakultur und Binnenfischerei (EMFAF) und naturnahe Gewässerentwicklung (ELER, GAK) in Brandenburg, die auch Fischtreppenbau umfassen (https://lelf.brandenburg.de/lelf/de/service/foerderung/aquakultur-und-binnenfischerei/)\n- Fördermittel können bis zu 90% der förderfähigen Kosten betragen (https://www.foerderdatenbank.de/FDB/Content/DE/Foerderprogramm/Land/Brandenburg/naturnahe-gewaesserentwicklung-und-staerkung-der.html)\n- Kosten für Fischtreppen können erheblich sein (6 Mio. EUR in Berlin, >925.000 EUR in MV für ein Projekt) (https://www.berliner-kurier.de/article/kein-scherz-fuer-6-millionen-euro-baut-berlin-eine-treppe-fuer-welse-10008558)\n- Ein Fischtreppenprojekt in MV führte zu Widerstand aufgrund hoher Kosten (>925.000 EUR) und späterer Trockenlegung des Mühlenteichs (https://www.schwarzbuch.de/aufgedeckt/steuergeldverschwendung-alle-faelle/details/um-jeden-preis-eine-fischtreppe-sorgt-fuer-aerger)\n- Spezifische Beratungsangebote für Betreiber kleiner Wasserwerke und Mühlen bezüglich WRRL wurden in den Suchergebnissen nicht explizit gefunden (https://mleuv.brandenburg.de/mleuv/de/umwelt/wasser/gewaesserschutz-und-entwicklung/europaeische-wasserrahmenrichtlinie-im-ueberblick/)\n- Behördliche Gebühren für 'Gutachten, Untersuchungsbericht' sind 25 EUR pro Seite, mind. 50 EUR, oder 51-358 EUR für 'umfangreiche wissenschaftliche Gutachten' (https://bravors.brandenburg.de/verordnungen/gebomugv/15)\n\n### Inferences\n- Der Stilllegungsdruck und die Pflicht zum Bau von Fischtreppen erzeugen einen akuten Beratungsbedarf bei Mühlenbesitzern und kleinen Wasserwerken, um Bußgelder und Betriebseinstellungen zu vermeiden und hohe Folgekosten zu umgehen (abgeleitet aus: https://www.muehlen-in-brandenburg.de/wasserkraftnutzung/, https://www.berliner-kurier.de/article/kein-scherz-fuer-6-millionen-euro-baut-berlin-eine-treppe-fuer-welse-10008558, https://www.schwarzbuch.de/aufgedeckt/steuergeldverschwendung-alle-faelle/details/um-jeden-preis-eine-fischtreppe-sorgt-fuer-aerger).\n- Die Verfügbarkeit von Fördermitteln erhöht die Zahlungsbereitschaft für Beratungsleistungen, da diese die Eigeninvestition der Betreiber reduzieren (abgeleitet aus: 'Fördermittel können bis zu 90% der förderfähigen Kosten betragen (https://www.foerderdatenbank.de/FDB/Content/DE/Foerderprogramm/Land/Brandenburg/naturnahe-gewaesserentwicklung-und-staerkung-der.html)').\n- Das Fehlen expliziter Beratungsangebote für diese spezifische Zielgruppe deutet auf eine Marktlücke für spezialisierte Dienstleistungen hin (abgeleitet aus: 'Spezifische Beratungsangebote für Betreiber kleiner Wasserwerke und Mühlen bezüglich WRRL wurden in den Suchergebnissen nicht explizit gefunden (https://mleuv.brandenburg.de/mleuv/de/umwelt/wasser/gewaesserschutz-und-entwicklung/europaeische-wasserrahmenrichtlinie-im-ueberblick/)').\n- Die Interpretation alter Wasserbücher kann einen Mehrwert für die Kunden darstellen, da sie potenziell ungenutzte Rechte aufdecken kann (abgeleitet aus: User Intent, der auf die Frage 'welche Rechte schlummern in alten Wasserbüchern?' hinweist, in Kombination mit der Notwendigkeit, rechtliche Grundlagen zu verstehen).\n\n### Open questions\n- Wie hoch ist die genaue Anzahl der Mühlenbesitzer und kleinen Wasserwerke in Brandenburg, die von diesen Regelungen betroffen sind und potenziell Beratungsbedarf haben?\n- Wie hoch ist die tatsächliche Zahlungsbereitschaft der Zielgruppe für spezialisierte Beratungsleistungen, insbesondere angesichts des oft knappen Budgets?\n- Gibt es informelle Beratungsangebote (z.B. durch Verbände oder lokale Initiativen), die den Bedarf bereits abdecken und in den Suchergebnissen nicht explizit genannt wurden?\n- Welche konkreten Erfahrungen haben Mühlenbesitzer in Brandenburg mit den Kosten und dem Nutzen von Fischtreppenprojekten gemacht?\n\n---\n\n## 6. Grounded Evidence & Sources\n- https://www.muehlen-in-brandenburg.de/wasserkraftnutzung/\n- https://mleuv.brandenburg.de/mleuv/de/umwelt/wasser/gewaesserschutz-und-entwicklung/europaeische-wasserrahmenrichtlinie-im-ueberblick/\n- https://lelf.brandenburg.de/lelf/de/service/foerderung/aquakultur-und-binnenfischerei/\n- https://www.foerderdatenbank.de/FDB/Content/DE/Foerderprogramm/Land/Brandenburg/naturnahe-gewaesserentwicklung-und-staerkung-der.html\n- https://www.berliner-kurier.de/article/kein-scherz-fuer-6-millionen-euro-baut-berlin-eine-treppe-fuer-welse-10008558\n- https://www.schwarzbuch.de/aufgedeckt/steuergeldverschwendung-alle-faelle/details/um-jeden-preis-eine-fischtreppe-sorgt-fuer-aerger\n- https://bravors.brandenburg.de/verordnungen/gebomugv/15\n",
+    "contract_version": "1.5.0"
+  },
+  "existence_check": false,
+  "contract_version": "1.0.0"
+}

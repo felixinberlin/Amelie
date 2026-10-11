@@ -1,0 +1,494 @@
+{
+  "batch_id": "amelie-lab-lacunar-lacunar-20260929T210403-8dcdf7-41fdde485a6b268c",
+  "lab_id": "amelie-lab",
+  "engine": "lacunar",
+  "run_id": "lacunar-20260929T210403-8dcdf7",
+  "revision": "41fdde485a6b268cf38ea808ad2e71423203ce3d19022c9929e3f8615a50f7b7",
+  "created_at": "2026-09-29T21:06:48Z",
+  "model": "gemini-2.5-flash",
+  "intent": "Tortilla de patatas",
+  "ideas": [
+    {
+      "local_id": "C1",
+      "record": {
+        "candidate_id": "C1",
+        "rank": 1,
+        "idea": "An AI vision system that, using a smartphone camera, analyzes raw potato slices (shape, thickness, starch content approximation via translucency) and suggests optimal oil temperature and cooking time *before* frying.",
+        "gap": "Cooks struggle to consistently prepare raw potatoes for optimal frying, leading to guesswork about oil temperature and cooking time.",
+        "gap_stands_alone": true,
+        "boden_type": "combinational",
+        "removed_assumption": "Assumes a cook can accurately judge raw potato characteristics and translate them into optimal cooking parameters.",
+        "who_has_problem": "Home cooks and professional chefs who aim for consistent tortilla quality. \"Potato preparation: Potatoes should be cut into thin slices (around 1/8 inch thick) to cook thoroughly. A major mistake is not cooking the potatoes properly; they need to be confited gently at around 130°C, rather than seared, to ensure they are soft inside without being raw. Using too little oil during this stage is a common error, as potatoes need to be cooked in abundant oil to confit and fry correctly.\" (https://tortilladepatatas.org/en/guides/classic-tortilla-masterclass/)",
+        "why_now": "Advances in AI vision combined with smartphone camera capabilities allow for real-time analysis of food properties and complex parameter estimation.",
+        "buildable": "Yes, AI vision for object recognition (shape, thickness) is mature. Starch approximation via translucency would require specific research and data but is plausible with current AI capabilities and specialized imaging techniques.",
+        "evidence_urls": [
+          "https://tortilladepatatas.org/en/guides/classic-tortilla-masterclass/"
+        ]
+      }
+    },
+    {
+      "local_id": "C4",
+      "record": {
+        "candidate_id": "C4",
+        "rank": 2,
+        "idea": "A haptic feedback system for the \"flip\". It uses a weighted pan simulator and force sensors to teach the precise wrist flick required, with AI analyzing the force curve and giving real-time corrective feedback.",
+        "gap": "Many aspiring tortilla makers find the crucial pan flip too challenging to master consistently, often resulting in failed attempts.",
+        "gap_stands_alone": true,
+        "boden_type": "combinational",
+        "removed_assumption": "Assumes that mastering the tortilla flip is primarily about intuitive feel rather than learnable, precise mechanics.",
+        "who_has_problem": "Aspiring home cooks and culinary students struggling with the delicate \"physics of the flip\". \"The 'physics of the flip' is a critical technique\" (https://magefesausa.com/how-to-prepare-the-perfect-spanish-omelette/)",
+        "why_now": "Maturation of haptic feedback technologies, advanced force sensors, and AI-driven movement analysis (e.g., in sports or rehabilitation training).",
+        "buildable": "Yes, combining existing haptic feedback devices, force sensors, and AI movement analysis models is feasible.",
+        "evidence_urls": [
+          "https://magefesausa.com/how-to-prepare-the-perfect-spanish-omelette/"
+        ]
+      }
+    },
+    {
+      "local_id": "C6",
+      "record": {
+        "candidate_id": "C6",
+        "rank": 3,
+        "idea": "A \"Structural Integrity\" score for the tortilla during the cooking process. Based on real-time visual analysis (e.g., bubble formation, edge setting), it predicts the likelihood of the tortilla breaking during the flip or cutting, like a wall's stability.",
+        "gap": "Cooks lack real-time objective information on the internal stability of the tortilla to confidently execute critical steps like flipping or cutting without breakage.",
+        "gap_stands_alone": true,
+        "boden_type": "combinational",
+        "removed_assumption": "Assumes cooks must rely on intuition or experience to judge the tortilla's readiness for handling without breaking.",
+        "who_has_problem": "Cooks who are unsure when their tortilla is structurally stable enough to handle without breaking. \"If the pan is too cold or too hot, it can lead to issues like a tough, rubbery tortilla or one that doesn't hold its shape.\" (https://tortilladepatatas.org/en/guides/classic-tortilla-masterclass/)",
+        "why_now": "Advances in real-time AI vision for cooking processes and predictive analytics from visual cues.",
+        "buildable": "Yes, with a dataset of tortillas at various stages of structural integrity, AI models can be trained to recognize visual cues.",
+        "evidence_urls": [
+          "https://tortilladepatatas.org/en/guides/classic-tortilla-masterclass/"
+        ]
+      }
+    },
+    {
+      "local_id": "C8",
+      "record": {
+        "candidate_id": "C8",
+        "rank": 4,
+        "idea": "A \"Tortilla Heritage\" app that, after you finish cooking, uses your sensory feedback (sweetness, texture, doneness) to map your tortilla's characteristics onto a historical spectrum of regional tortilla styles, identifying its \"lineage\".",
+        "gap": "Cooks cannot easily place their homemade tortilla within the diverse historical and regional spectrum of Spanish tortilla styles based on their sensory experience.",
+        "gap_stands_alone": true,
+        "boden_type": "combinational",
+        "removed_assumption": "Assumes understanding regional tortilla styles is an abstract, expert domain rather than a comparative, experiential one.",
+        "who_has_problem": "Home cooks and enthusiasts who want to understand the cultural context and stylistic characteristics of their tortilla. \"Consistency of the tortilla is also a point of debate, with some preferring a firm omelette and others a runnier, 'oozy' one, such as the 'Betanzos' style...\" (https://www.theguardian.com/world/2018/oct/12/tortilla-town-betanzos-no-onionists-spanish-omelette-recipe-rivalry)",
+        "why_now": "AI capabilities for classifying subjective sensory feedback and the availability of cultural/historical data that can be digitized and structured.",
+        "buildable": "Yes, through collecting and categorizing data on regional tortilla characteristics and training AI models to map sensory inputs to these categories.",
+        "evidence_urls": [
+          "https://www.theguardian.com/world/2018/oct/12/tortilla-town-betanzos-no-onionists-spanish-omelette-recipe-rivalry"
+        ]
+      }
+    },
+    {
+      "local_id": "C12",
+      "record": {
+        "candidate_id": "C12",
+        "rank": 5,
+        "idea": "A \"Post-Mortem Analysis\" tool for failed tortillas. You upload photos/videos of a tortilla that didn't turn out well, and the AI suggests specific \"structural\" weaknesses (e.g., undercooked potato core, poor egg distribution) and how to reinforce them next time.",
+        "gap": "Cooks lack a specific, visual-based diagnosis for why their tortilla failed, hindering their ability to learn and improve.",
+        "gap_stands_alone": true,
+        "boden_type": "combinational",
+        "removed_assumption": "Assumes cooks must guess the reasons for their tortilla failures or consult generic troubleshooting guides.",
+        "who_has_problem": "Home cooks frequently encountering common pitfalls in tortilla preparation who need specific feedback for improvement. \"Traditional tortilla de patatas... presents several challenges and common pitfalls in its preparation... A major mistake is not cooking the potatoes properly... If the pan is too cold or too hot, it can lead to issues like a tough, rubbery tortilla or one that doesn't hold its shape.\" (https://tortilladepatatas.org/en/guides/classic-tortilla-masterclass/, https://foodiekake.substack.com/p/tortilla-de-patatas-101-a-guide-to)",
+        "why_now": "Advances in AI vision for defect detection and failure analysis, applied to complex visual patterns in food.",
+        "buildable": "Yes, by compiling a dataset of failed tortillas with known causes and training AI models for visual diagnosis and prescriptive recommendations.",
+        "evidence_urls": [
+          "https://tortilladepatatas.org/en/guides/classic-tortilla-masterclass/",
+          "https://foodiekake.substack.com/p/tortilla-de-patatas-101-a-guide-to"
+        ]
+      }
+    }
+  ],
+  "record": {
+    "run_id": "lacunar-20260929T210403-8dcdf7",
+    "intent": "Tortilla de patatas",
+    "model": "gemini-2.5-flash",
+    "created_at": "2026-09-29T21:06:48Z",
+    "state_missing": [],
+    "plan": {
+      "area": "Tortilla de patatas",
+      "mode_list": [
+        "Interactive recipe guide for tortilla de patatas with step-by-step instructions.",
+        "App to find and review restaurants serving tortilla de patatas.",
+        "Personalized ingredient list and shopping assistant for making tortilla.",
+        "Video tutorial for mastering the technique of flipping a tortilla.",
+        "Troubleshooting guide for common tortilla-making mistakes (e.g., raw inside, sticking).",
+        "Community platform for sharing, rating, and discussing homemade tortilla recipes.",
+        "Customizable recipe generator based on user preferences (e.g., with/without onion, doneness).",
+        "Timer app specifically designed for the different cooking stages of tortilla (frying potatoes, setting eggs).",
+        "Tool to calculate ingredient proportions for varying pan sizes or number of servings.",
+        "Information hub on historical facts, regional variations, and cultural significance of tortilla de patatas."
+      ],
+      "anchor_queries": [
+        "Tortilla de patatas competition judging criteria",
+        "Manual evaluation methods for Spanish omelette quality and consistency",
+        "Challenges and common pitfalls in traditional tortilla de patatas preparation"
+      ]
+    },
+    "frames": {
+      "frame_a": {
+        "name": "Traditional Tortilla de Patatas Preparation and Evaluation",
+        "source_url": "https://tortilladepatatas.org/en/guides/classic-tortilla-masterclass/",
+        "source_label": "Type A: scheme without software",
+        "friction": "Achieving specific sensory attributes (texture, doneness, taste) requires precise, often intuitive, control over ingredient quality, ratios, and cooking techniques, which are difficult to quantify and teach. The \"physics of the flip\" is a critical, manual technique.",
+        "slots": {
+          "materials": "Eggs (fresh, specific type), potatoes (floury vs. waxy, specific cut), olive oil (EVOO, low acidity), salt, optional onions.",
+          "mechanics": "Gentle confiting of potatoes (around 130°C), draining oil, mixing with beaten eggs, resting mixture, pan heating (low-medium), slow setting of egg, the \"physics of the flip\", achieving specific internal doneness (moist/runny vs. firm).",
+          "goals": "A perfect tortilla with specific sensory attributes (taste, texture, appearance), balanced ingredients, proper internal doneness, structural integrity (holds shape, but not dry).",
+          "emotions": "Pride in mastery, frustration with failure, satisfaction from perfect execution, culinary passion, debate/rivalry (e.g., onion vs. no onion, runny vs. firm).",
+          "constraints": "Limited ingredients, specific temperature control, time sensitivity (potatoes must not burn, eggs not overcooked), pan choice (non-stick), \"physics of the flip\" skill requirement.",
+          "rituals_timing": "Resting the potato-egg mixture (10+ minutes), cooking potatoes gently, specific cooking order, quick flipping technique."
+        }
+      },
+      "frame_b": {
+        "name": "Dry-stone Walling",
+        "domain": "Craft / Construction",
+        "slots": {
+          "materials": "Unmortared stones of various shapes and sizes, often local.",
+          "mechanics": "Selecting stones (fitting shape, size, weight), lifting, placing without mortar, creating a stable interlocking structure, batter (slope) for stability, through-stones, hearting (filling gaps).",
+          "goals": "A stable, durable, visually pleasing wall, boundary, or structure that withstands weather and time, often without a foundation.",
+          "emotions": "Patience, satisfaction from creating something lasting, physical exertion, pride in craftsmanship, connection to tradition/landscape.",
+          "constraints": "Irregular stone shapes, gravity, weather, physical strength, no mortar (reliance on friction and weight distribution), understanding of load-bearing.",
+          "rituals_timing": "Slow, iterative process; careful selection and placement of each stone; often seasonal work; knowledge passed down through apprenticeship."
+        }
+      },
+      "distance": 4,
+      "friction_points": [
+        "Tortilla materials are perishable and undergo chemical transformation; dry-stone materials are durable and are physically arranged.",
+        "Tortilla mechanics involve precise temperature control and a single, critical fast action; dry-stone mechanics involve slow, iterative placement and structural interlocking.",
+        "Tortilla goals are ephemeral and sensory; dry-stone goals are permanent and structural.",
+        "Tortilla outcomes are judged immediately; dry-stone outcomes are judged for long-term stability and aesthetics.",
+        "Tortilla constraints involve delicate ingredient balance and heat management; dry-stone constraints involve irregular material shapes and reliance on gravity for stability.",
+        "Tortilla processes involve specific resting periods and quick, critical techniques; dry-stone processes involve continuous, cumulative placement over extended periods."
+      ],
+      "personas": [
+        {
+          "who": "María, a home cook who has made countless tortillas for her family, but occasionally struggles with the \"perfect flip\" or inconsistent texture, despite following recipes diligently.",
+          "would_do": "She would want to understand why her tortillas sometimes fail, in a way that goes beyond \"add more egg\" or \"cook longer,\" and learn to predict the outcome before it's too late."
+        },
+        {
+          "who": "Javier, a young chef trying to perfect a traditional Spanish menu for his new restaurant, focusing on authentic tortilla de patatas. He needs to consistently produce high-quality tortillas under time pressure, and train new staff to do the same, often without a highly experienced mentor present.",
+          "would_do": "He would use the collision to standardize the non-standardizable aspects of tortilla making, ensuring consistency and quality across his kitchen staff without losing the \"art\" of it."
+        },
+        {
+          "who": "Elena, an amateur food blogger and photographer, who wants to document the \"science\" behind traditional Spanish cooking. She's fascinated by the physics and chemistry of food but finds traditional recipes too vague for her analytical approach.",
+          "would_do": "She would use the collision to create a visual and data-driven guide that translates intuitive cooking knowledge into observable, repeatable metrics for home cooks and fellow enthusiasts."
+        }
+      ],
+      "candidates": [
+        {
+          "id": "C1",
+          "idea": "An AI vision system that, using a smartphone camera, analyzes raw potato slices (shape, thickness, starch content approximation via translucency) and suggests optimal oil temperature and cooking time *before* frying.",
+          "typical_probability": 0.03,
+          "friction_point": "Tortilla materials are perishable and undergo chemical transformation; dry-stone materials are durable and are physically arranged.",
+          "check_queries": [
+            "potato starch content measurement non-destructive",
+            "AI vision for food ingredient analysis"
+          ]
+        },
+        {
+          "id": "C2",
+          "idea": "A \"material fatigue\" predictor for tortilla. Based on initial egg and potato properties, it simulates how many minutes the finished tortilla can retain its \"ideal moistness\" before drying out or becoming too firm, suggesting an optimal eating window.",
+          "typical_probability": 0.05,
+          "friction_point": "Tortilla materials are perishable and undergo chemical transformation; dry-stone materials are durable and are physically arranged.",
+          "check_queries": [
+            "food shelf life prediction AI",
+            "moisture retention in cooked egg potato dishes"
+          ]
+        },
+        {
+          "id": "C3",
+          "idea": "A \"Stone Selection\" AI for tortilla: Given images of available potatoes and eggs, it suggests combinations that will \"interlock\" best for a specific desired texture (e.g., very firm for travel, very runny for immediate consumption), as if building a structure.",
+          "typical_probability": 0.07,
+          "friction_point": "Tortilla materials are perishable and undergo chemical transformation; dry-stone materials are durable and are physically arranged.",
+          "check_queries": [
+            "AI food ingredient pairing for texture",
+            "optimizing food texture based on raw ingredient analysis"
+          ]
+        },
+        {
+          "id": "C4",
+          "idea": "A haptic feedback system for the \"flip\". It uses a weighted pan simulator and force sensors to teach the precise wrist flick required, with AI analyzing the force curve and giving real-time corrective feedback.",
+          "typical_probability": 0.04,
+          "friction_point": "Tortilla mechanics involve precise temperature control and a single, critical fast action; dry-stone mechanics involve slow, iterative placement and structural interlocking.",
+          "check_queries": [
+            "haptic feedback cooking training",
+            "AI analysis of human movement for cooking"
+          ]
+        },
+        {
+          "id": "C5",
+          "idea": "A \"Thermal Map\" AR overlay for the frying pan. Using a thermal camera (e.g., phone add-on), it displays an augmented reality view of heat distribution, guiding where to move potatoes or when to adjust heat to avoid hotspots, like constructing a perfectly insulated wall.",
+          "typical_probability": 0.06,
+          "friction_point": "Tortilla mechanics involve precise temperature control and a single, critical fast action; dry-stone mechanics involve slow, iterative placement and structural interlocking.",
+          "check_queries": [
+            "AR thermal cooking guide",
+            "smartphone thermal camera cooking applications"
+          ]
+        },
+        {
+          "id": "C6",
+          "idea": "A \"Structural Integrity\" score for the tortilla during the cooking process. Based on real-time visual analysis (e.g., bubble formation, edge setting), it predicts the likelihood of the tortilla breaking during the flip or cutting, like a wall's stability.",
+          "typical_probability": 0.08,
+          "friction_point": "Tortilla mechanics involve precise temperature control and a single, critical fast action; dry-stone mechanics involve slow, iterative placement and structural interlocking.",
+          "check_queries": [
+            "AI food structural integrity prediction",
+            "real-time omelette cooking analysis"
+          ]
+        },
+        {
+          "id": "C7",
+          "idea": "An AI-powered \"Flavor Archive\" that analyzes a picture of a tortilla and its ingredients, then suggests similar flavor profiles from historical recipes or regional variations, treating taste as a legacy to be preserved, not just consumed.",
+          "typical_probability": 0.03,
+          "friction_point": "Tortilla goals are ephemeral and sensory; dry-stone goals are permanent and structural.",
+          "check_queries": [
+            "AI food flavor profile analysis from image",
+            "historical recipe reconstruction AI"
+          ]
+        },
+        {
+          "id": "C8",
+          "idea": "A \"Tortilla Heritage\" app that, after you finish cooking, uses your sensory feedback (sweetness, texture, doneness) to map your tortilla's characteristics onto a historical spectrum of regional tortilla styles, identifying its \"lineage\".",
+          "typical_probability": 0.05,
+          "friction_point": "Tortilla goals are ephemeral and sensory; dry-stone goals are permanent and structural.",
+          "check_queries": [
+            "AI sensory feedback food classification",
+            "regional tortilla de patatas styles database"
+          ]
+        },
+        {
+          "id": "C9",
+          "idea": "A \"Durability Test\" simulator: Based on the cooked tortilla's visual properties, it predicts how well it would survive being packed for a picnic, treating its structural integrity like a mini-architectural design challenge.",
+          "typical_probability": 0.07,
+          "friction_point": "Tortilla goals are ephemeral and sensory; dry-stone goals are permanent and structural.",
+          "check_queries": [
+            "food packing stability simulation AI",
+            "omelette structural integrity for transport"
+          ]
+        },
+        {
+          "id": "C10",
+          "idea": "A \"Tortilla Time Capsule\" feature. Users record their cooking process and final product; an AI then tracks these over time, identifying subtle changes in technique or ingredient sourcing that correlate with their subjective satisfaction, building a personal \"mastery archive.\"",
+          "typical_probability": 0.04,
+          "friction_point": "Tortilla outcomes are judged immediately; dry-stone outcomes are judged for long-term stability and aesthetics.",
+          "check_queries": [
+            "AI tracking cooking process over time",
+            "personal cooking mastery analysis AI"
+          ]
+        },
+        {
+          "id": "C11",
+          "idea": "An AI that analyzes photos of your finished tortilla and provides an \"estimated competition score\" based on public judging criteria, giving instant, objective-like feedback.",
+          "typical_probability": 0.06,
+          "friction_point": "Tortilla outcomes are judged immediately; dry-stone outcomes are judged for long-term stability and aesthetics.",
+          "check_queries": [
+            "AI food competition judging simulation",
+            "automatic scoring of cooked dishes from image"
+          ]
+        },
+        {
+          "id": "C12",
+          "idea": "A \"Post-Mortem Analysis\" tool for failed tortillas. You upload photos/videos of a tortilla that didn't turn out well, and the AI suggests specific \"structural\" weaknesses (e.g., undercooked potato core, poor egg distribution) and how to reinforce them next time.",
+          "typical_probability": 0.08,
+          "friction_point": "Tortilla outcomes are judged immediately; dry-stone outcomes are judged for long-term stability and aesthetics.",
+          "check_queries": [
+            "AI failure analysis cooking",
+            "diagnosing cooking errors from visual data"
+          ]
+        },
+        {
+          "id": "C13",
+          "idea": "An AI that generates a personalized \"ingredient substitution plan\" for tortilla based on what's available and desired outcome, like a stone waller adapting to available local stones. (e.g., different potato varieties, egg sizes, oils).",
+          "typical_probability": 0.03,
+          "friction_point": "Tortilla constraints involve delicate ingredient balance and heat management; dry-stone constraints involve irregular material shapes and reliance on gravity for stability.",
+          "check_queries": [
+            "AI ingredient substitution for specific cooking outcomes",
+            "personalized cooking ingredient adaptation"
+          ]
+        },
+        {
+          "id": "C14",
+          "idea": "A \"Gravity-Fed Flipping Aid\" concept: An AI analyzes the tortilla's weight distribution and suggests the precise tilt angle and speed for your pan to achieve a perfect flip, accounting for imperfections, like a dry-stone wall's natural lean.",
+          "typical_probability": 0.05,
+          "friction_point": "Tortilla constraints involve delicate ingredient balance and heat management; dry-stone constraints involve irregular material shapes and reliance on gravity for stability.",
+          "check_queries": [
+            "AI guided pan flipping technique",
+            "weight distribution analysis for cooking"
+          ]
+        },
+        {
+          "id": "C15",
+          "idea": "A \"Narrative Cook-Along\" AI that verbally guides you through the tortilla-making process, adapting its pace and detail based on your detected actions (via mic/camera), like a master stone waller narrating their slow, deliberate work.",
+          "typical_probability": 0.04,
+          "friction_point": "Tortilla processes involve specific resting periods and quick, critical techniques; dry-stone processes involve continuous, cumulative placement over extended periods.",
+          "check_queries": [
+            "AI adaptive cooking instructions",
+            "voice guided cooking based on user actions"
+          ]
+        },
+        {
+          "id": "C16",
+          "idea": "A \"Micro-Ritual Timer\" that uses on-device vision to detect the stage of your potato cooking (e.g., confiting, browning) and triggers specific, short, guided mindful pauses or checks, transforming the quick cooking into a series of small, deliberate acts.",
+          "typical_probability": 0.06,
+          "friction_point": "Tortilla processes involve specific resting periods and quick, critical techniques; dry-stone processes involve continuous, cumulative placement over extended periods.",
+          "check_queries": [
+            "AI cooking stage detection vision",
+            "mindful cooking app guided pauses"
+          ]
+        },
+        {
+          "id": "C17",
+          "idea": "An app that simulates the long-term \"settling\" of a tortilla after cooking, visually showing how its internal structure and moisture content would change over hours, analogous to a dry-stone wall settling over years.",
+          "typical_probability": 0.08,
+          "friction_point": "Tortilla processes involve specific resting periods and quick, critical techniques; dry-stone processes involve continuous, cumulative placement over extended periods.",
+          "check_queries": [
+            "food moisture migration simulation AI",
+            "cooked food structural changes over time visualization"
+          ]
+        }
+      ],
+      "shortlist": [
+        "C1",
+        "C4",
+        "C6",
+        "C8",
+        "C12",
+        "C17"
+      ]
+    },
+    "result": {
+      "survivors": [
+        {
+          "candidate_id": "C1",
+          "rank": 1,
+          "idea": "An AI vision system that, using a smartphone camera, analyzes raw potato slices (shape, thickness, starch content approximation via translucency) and suggests optimal oil temperature and cooking time *before* frying.",
+          "gap": "Cooks struggle to consistently prepare raw potatoes for optimal frying, leading to guesswork about oil temperature and cooking time.",
+          "gap_stands_alone": true,
+          "boden_type": "combinational",
+          "removed_assumption": "Assumes a cook can accurately judge raw potato characteristics and translate them into optimal cooking parameters.",
+          "who_has_problem": "Home cooks and professional chefs who aim for consistent tortilla quality. \"Potato preparation: Potatoes should be cut into thin slices (around 1/8 inch thick) to cook thoroughly. A major mistake is not cooking the potatoes properly; they need to be confited gently at around 130°C, rather than seared, to ensure they are soft inside without being raw. Using too little oil during this stage is a common error, as potatoes need to be cooked in abundant oil to confit and fry correctly.\" (https://tortilladepatatas.org/en/guides/classic-tortilla-masterclass/)",
+          "why_now": "Advances in AI vision combined with smartphone camera capabilities allow for real-time analysis of food properties and complex parameter estimation.",
+          "buildable": "Yes, AI vision for object recognition (shape, thickness) is mature. Starch approximation via translucency would require specific research and data but is plausible with current AI capabilities and specialized imaging techniques.",
+          "evidence_urls": [
+            "https://tortilladepatatas.org/en/guides/classic-tortilla-masterclass/"
+          ]
+        },
+        {
+          "candidate_id": "C4",
+          "rank": 2,
+          "idea": "A haptic feedback system for the \"flip\". It uses a weighted pan simulator and force sensors to teach the precise wrist flick required, with AI analyzing the force curve and giving real-time corrective feedback.",
+          "gap": "Many aspiring tortilla makers find the crucial pan flip too challenging to master consistently, often resulting in failed attempts.",
+          "gap_stands_alone": true,
+          "boden_type": "combinational",
+          "removed_assumption": "Assumes that mastering the tortilla flip is primarily about intuitive feel rather than learnable, precise mechanics.",
+          "who_has_problem": "Aspiring home cooks and culinary students struggling with the delicate \"physics of the flip\". \"The 'physics of the flip' is a critical technique\" (https://magefesausa.com/how-to-prepare-the-perfect-spanish-omelette/)",
+          "why_now": "Maturation of haptic feedback technologies, advanced force sensors, and AI-driven movement analysis (e.g., in sports or rehabilitation training).",
+          "buildable": "Yes, combining existing haptic feedback devices, force sensors, and AI movement analysis models is feasible.",
+          "evidence_urls": [
+            "https://magefesausa.com/how-to-prepare-the-perfect-spanish-omelette/"
+          ]
+        },
+        {
+          "candidate_id": "C6",
+          "rank": 3,
+          "idea": "A \"Structural Integrity\" score for the tortilla during the cooking process. Based on real-time visual analysis (e.g., bubble formation, edge setting), it predicts the likelihood of the tortilla breaking during the flip or cutting, like a wall's stability.",
+          "gap": "Cooks lack real-time objective information on the internal stability of the tortilla to confidently execute critical steps like flipping or cutting without breakage.",
+          "gap_stands_alone": true,
+          "boden_type": "combinational",
+          "removed_assumption": "Assumes cooks must rely on intuition or experience to judge the tortilla's readiness for handling without breaking.",
+          "who_has_problem": "Cooks who are unsure when their tortilla is structurally stable enough to handle without breaking. \"If the pan is too cold or too hot, it can lead to issues like a tough, rubbery tortilla or one that doesn't hold its shape.\" (https://tortilladepatatas.org/en/guides/classic-tortilla-masterclass/)",
+          "why_now": "Advances in real-time AI vision for cooking processes and predictive analytics from visual cues.",
+          "buildable": "Yes, with a dataset of tortillas at various stages of structural integrity, AI models can be trained to recognize visual cues.",
+          "evidence_urls": [
+            "https://tortilladepatatas.org/en/guides/classic-tortilla-masterclass/"
+          ]
+        },
+        {
+          "candidate_id": "C8",
+          "rank": 4,
+          "idea": "A \"Tortilla Heritage\" app that, after you finish cooking, uses your sensory feedback (sweetness, texture, doneness) to map your tortilla's characteristics onto a historical spectrum of regional tortilla styles, identifying its \"lineage\".",
+          "gap": "Cooks cannot easily place their homemade tortilla within the diverse historical and regional spectrum of Spanish tortilla styles based on their sensory experience.",
+          "gap_stands_alone": true,
+          "boden_type": "combinational",
+          "removed_assumption": "Assumes understanding regional tortilla styles is an abstract, expert domain rather than a comparative, experiential one.",
+          "who_has_problem": "Home cooks and enthusiasts who want to understand the cultural context and stylistic characteristics of their tortilla. \"Consistency of the tortilla is also a point of debate, with some preferring a firm omelette and others a runnier, 'oozy' one, such as the 'Betanzos' style...\" (https://www.theguardian.com/world/2018/oct/12/tortilla-town-betanzos-no-onionists-spanish-omelette-recipe-rivalry)",
+          "why_now": "AI capabilities for classifying subjective sensory feedback and the availability of cultural/historical data that can be digitized and structured.",
+          "buildable": "Yes, through collecting and categorizing data on regional tortilla characteristics and training AI models to map sensory inputs to these categories.",
+          "evidence_urls": [
+            "https://www.theguardian.com/world/2018/oct/12/tortilla-town-betanzos-no-onionists-spanish-omelette-recipe-rivalry"
+          ]
+        },
+        {
+          "candidate_id": "C12",
+          "rank": 5,
+          "idea": "A \"Post-Mortem Analysis\" tool for failed tortillas. You upload photos/videos of a tortilla that didn't turn out well, and the AI suggests specific \"structural\" weaknesses (e.g., undercooked potato core, poor egg distribution) and how to reinforce them next time.",
+          "gap": "Cooks lack a specific, visual-based diagnosis for why their tortilla failed, hindering their ability to learn and improve.",
+          "gap_stands_alone": true,
+          "boden_type": "combinational",
+          "removed_assumption": "Assumes cooks must guess the reasons for their tortilla failures or consult generic troubleshooting guides.",
+          "who_has_problem": "Home cooks frequently encountering common pitfalls in tortilla preparation who need specific feedback for improvement. \"Traditional tortilla de patatas... presents several challenges and common pitfalls in its preparation... A major mistake is not cooking the potatoes properly... If the pan is too cold or too hot, it can lead to issues like a tough, rubbery tortilla or one that doesn't hold its shape.\" (https://tortilladepatatas.org/en/guides/classic-tortilla-masterclass/, https://foodiekake.substack.com/p/tortilla-de-patatas-101-a-guide-to)",
+          "why_now": "Advances in AI vision for defect detection and failure analysis, applied to complex visual patterns in food.",
+          "buildable": "Yes, by compiling a dataset of failed tortillas with known causes and training AI models for visual diagnosis and prescriptive recommendations.",
+          "evidence_urls": [
+            "https://tortilladepatatas.org/en/guides/classic-tortilla-masterclass/",
+            "https://foodiekake.substack.com/p/tortilla-de-patatas-101-a-guide-to"
+          ]
+        }
+      ],
+      "kills": [
+        {
+          "candidate_id": "C17",
+          "reason": "The problem addressed (general curiosity about long-term changes) is not a critical pain point for most cooks, and the technical complexity of accurately simulating and visualizing internal food structure and moisture changes with 'known means' for a consumer app is extremely high, making it difficult to build with current accessible technologies.",
+          "failed_checks": [
+            "problem_evidence",
+            "buildable"
+          ]
+        }
+      ],
+      "log_row": {
+        "anchor": "Traditional Tortilla de Patatas Preparation and Evaluation",
+        "collider": "Dry-stone Walling",
+        "distance": 4,
+        "candidates": 17,
+        "survivors": 5,
+        "best_gap": "Cooks lack real-time objective information on the internal stability of the tortilla to confidently execute critical steps like flipping or cutting without breakage."
+      },
+      "retro": {
+        "learned": "The distinction between an \"information hub\" or \"troubleshooting guide\" and an AI-powered diagnostic/classification tool is subtle but crucial for avoiding the banned list. The core functionality and how AI is used matters. Additionally, a problem needs to be a genuine pain point, not just a niche interest, to be considered strong problem evidence.",
+        "mistake": "Initially underestimated the \"buildable\" difficulty for C17, and did not critically assess the strength of the \"who has this problem\" for C17 as a widespread problem rather than a niche interest, leading to a misjudgment on its viability.",
+        "next_time": "When evaluating \"buildable\", particularly for complex simulations or scientific applications, consider the feasibility for a typical app development team rather than just theoretical research existence. Also, for \"who has problem\", ensure it's a genuine, widespread problem, not just an interesting fact or niche curiosity, and verify that the provided evidence directly supports this widespread nature."
+      }
+    },
+    "tool_calls": [
+      {
+        "call_id": "lacunar-20260929T210403-8dcdf7-t01",
+        "tool": "search",
+        "status": "ok",
+        "summary": "Tortilla de patatas competition judging criteria"
+      },
+      {
+        "call_id": "lacunar-20260929T210403-8dcdf7-t02",
+        "tool": "search",
+        "status": "ok",
+        "summary": "Manual evaluation methods for Spanish omelette quality and consistency"
+      },
+      {
+        "call_id": "lacunar-20260929T210403-8dcdf7-t03",
+        "tool": "search",
+        "status": "ok",
+        "summary": "Challenges and common pitfalls in traditional tortilla de patatas preparation"
+      }
+    ],
+    "accounting": {
+      "model_calls": 9,
+      "search_calls": 3,
+      "search_queries": 9,
+      "cost_usd": 0.067764
+    },
+    "log_entry": "<!-- proposed by the Lab's Lacunar agent, run lacunar-20260929T210403-8dcdf7; nothing was written to Amélie -->\n| 29.09.2026 | Traditional Tortilla de Patatas Preparation and Evaluation | Dry-stone Walling | 4 | 17 | 5: 1. An AI vision system that, using a smartphone camera, analyzes raw potato slices (shape, thickness, starch content approximation via translucency) and suggests optimal oil temperature and cooking time *before* frying. (combinational); 2. A haptic feedback system for the \"flip\". It uses a weighted pan simulator and force sensors to teach the precise wrist flick required, with AI analyzing the force curve and giving real-time corrective feedback. (combinational); 3. A \"Structural Integrity\" score for the tortilla during the cooking process. Based on real-time visual analysis (e.g., bubble formation, edge setting), it predicts the likelihood of the tortilla breaking during the flip or cutting, like a wall's stability. (combinational); 4. A \"Tortilla Heritage\" app that, after you finish cooking, uses your sensory feedback (sweetness, texture, doneness) to map your tortilla's characteristics onto a historical spectrum of regional tortilla styles, identifying its \"lineage\". (combinational); 5. A \"Post-Mortem Analysis\" tool for failed tortillas. You upload photos/videos of a tortilla that didn't turn out well, and the AI suggests specific \"structural\" weaknesses (e.g., undercooked potato core, poor egg distribution) and how to reinforce them next time. (combinational) | Cooks lack real-time objective information on the internal stability of the tortilla to confidently execute critical steps like flipping or cutting without breakage. | — (not checked yet) |\n\n### Lacunar run lacunar-20260929T210403-8dcdf7 — 29.09.2026 (intent: Tortilla de patatas)\n- **Learned:** The distinction between an \"information hub\" or \"troubleshooting guide\" and an AI-powered diagnostic/classification tool is subtle but crucial for avoiding the banned list. The core functionality and how AI is used matters. Additionally, a problem needs to be a genuine pain point, not just a niche interest, to be considered strong problem evidence.\n- **Mistake:** Initially underestimated the \"buildable\" difficulty for C17, and did not critically assess the strength of the \"who has this problem\" for C17 as a widespread problem rather than a niche interest, leading to a misjudgment on its viability.\n- **Next time:** When evaluating \"buildable\", particularly for complex simulations or scientific applications, consider the feasibility for a typical app development team rather than just theoretical research existence. Also, for \"who has problem\", ensure it's a genuine, widespread problem, not just an interesting fact or niche curiosity, and verify that the provided evidence directly supports this widespread nature.\n",
+    "contract_version": "1.0.0"
+  },
+  "existence_check": false,
+  "contract_version": "1.0.0"
+}

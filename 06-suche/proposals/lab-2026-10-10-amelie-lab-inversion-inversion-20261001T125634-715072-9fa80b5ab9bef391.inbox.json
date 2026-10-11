@@ -1,0 +1,421 @@
+{
+  "batch_id": "amelie-lab-inversion-inversion-20261001T125634-715072-9fa80b5ab9bef391",
+  "lab_id": "amelie-lab",
+  "engine": "inversion",
+  "run_id": "inversion-20261001T125634-715072",
+  "revision": "9fa80b5ab9bef3915ba93dccb3e33f5b5bcf2c40f8b959fa3d13f741eaa060a0",
+  "created_at": "2026-10-01T13:00:28Z",
+  "model": "deepseek/deepseek-chat",
+  "intent": "Kleine Wasserwerke und Mühlenstaue in Brandenburg: Stilllegungsdruck durch Wasserrahmenrichtlinie, Fischtreppen-Pflicht, Mühlenbesitzer ohne Gutachter-Budget — wer prüft was, und welche Rechte schlummern in alten Wasserbüchern?",
+  "ideas": [
+    {
+      "local_id": "C5",
+      "record": {
+        "candidate_id": "C5",
+        "rank": 1,
+        "idea": "Eine Kamera-App, die die Wassergeschwindigkeit und -tiefe an kritischen Stellen (z.B. vor dem Rechen, am Auslass der Fischtreppe) mittels optischer Strömungsanalyse (Optical Flow) misst und direkt auf dem Smartphone eine erste Einschätzung der Einhaltung von Grenzwerten gibt.",
+        "gap": "Betreiber kleiner Wasserbauwerke benötigen eine einfache Methode zur Messung von Wassergeschwindigkeit und -tiefe an ihren Anlagen, um die Einhaltung von Grenzwerten zu überprüfen.",
+        "gap_stands_alone": true,
+        "who_has_problem": "Mühlenbesitzer und Betreiber kleiner Wasserkraftanlagen, die die Wassergeschwindigkeit und -tiefe an kritischen Stellen messen müssen, um Grenzwerte einzuhalten, aber keine teure Messtechnik besitzen.",
+        "why_now": "Fortgeschrittene on-device videobasierte Strömungsanalyse (Optical Flow) und Machine Learning zur Kalibrierung und Berechnung physikalischer Parameter (Geschwindigkeit, Turbulenz) in der offenen Wasserfläche, die ohne spezielle Sensorik auskommt und bisher teure Messtechnik erforderte.",
+        "buildable": "Ja, die Technologie des Optical Flow ist etabliert, und die Anwendung auf on-device Videodaten zur Strömungsmessung ist mit aktuellen Smartphone-Kameras und Rechenleistungen umsetzbar.",
+        "recipient": "Technische Hochschule Brandenburg (Forschungsgruppe Wasserbau)",
+        "recipient_kind": "institution",
+        "evidence_urls": [
+          "https://crowdwater.ch/de/crowdwaterapp-de/",
+          "https://lfu.brandenburg.de/lfu/de/aufgaben/wasser/anlagen-und-gewaesserunterhaltung/betrieb-und-unterhaltung-der-wasserwirtschaftlichen-anlagen/"
+        ]
+      }
+    },
+    {
+      "local_id": "C6",
+      "record": {
+        "candidate_id": "C6",
+        "rank": 2,
+        "idea": "Ein interaktives Tool, das die Anforderungen der Fischereiordnung (z.B. bezüglich Stababstand, Anströmgeschwindigkeit, Umgehungsgewässer) in verständliche Checklisten und visuelle Beispiele übersetzt und eine einfache Selbstbewertung der eigenen Anlage ermöglicht.",
+        "gap": "Mühlenbesitzer haben Schwierigkeiten, die komplexen und oft technisch formulierten Anforderungen der Fischereiordnung in Bezug auf ihre Anlagen zu verstehen und umzusetzen.",
+        "gap_stands_alone": true,
+        "who_has_problem": "Mühlenbesitzer, die die komplexen Anforderungen der Fischereiordnung verstehen und die Einhaltung selbst bewerten müssen, aber Schwierigkeiten mit juristischen Texten haben.",
+        "why_now": "Fortschritte in der multimodalen generativen KI, die komplexe regulatorische Texte in leicht verständliche, anlagenspezifische Prüfanweisungen und visuelle Beispiele (mittels Text-zu-Bild-Generierung) umwandeln und interaktiv anpassen kann.",
+        "buildable": "Ja, die Umwandlung von Text in Checklisten und die Generierung visueller Beispiele mittels KI sind mit den heutigen Sprachmodellen und Bildgeneratoren machbar.",
+        "recipient": "Landesfischereiverband Brandenburg e.V.",
+        "recipient_kind": "association",
+        "evidence_urls": [
+          "https://bravors.brandenburg.de/verordnungen/bbgfischo",
+          "https://mleuv.brandenburg.de/mleuv/en/agriculture/fishing-and-angling/"
+        ]
+      }
+    }
+  ],
+  "record": {
+    "run_id": "inversion-20261001T125634-715072",
+    "intent": "Kleine Wasserwerke und Mühlenstaue in Brandenburg: Stilllegungsdruck durch Wasserrahmenrichtlinie, Fischtreppen-Pflicht, Mühlenbesitzer ohne Gutachter-Budget — wer prüft was, und welche Rechte schlummern in alten Wasserbüchern?",
+    "model": "deepseek/deepseek-chat",
+    "created_at": "2026-10-01T13:00:28Z",
+    "state_missing": [],
+    "plan": {
+      "area": "Kleine Wasserwerke und Mühlenstaue in Brandenburg: Stilllegungsdruck durch Wasserrahmenrichtlinie, Fischtreppen-Pflicht, Mühlenbesitzer ohne Gutachter-Budget — wer prüft was, und welche Rechte schlummern in alten Wasserbüchern?",
+      "mode_list": [
+        "Digitale Erfassung des Zustands kleiner Wehre und Mühlenstaue per Smartphone-App.",
+        "KI-gestützte Erkennung von Schäden an Wehranlagen aus Fotos.",
+        "Automatisierte Prüfung der Fischdurchgängigkeit mittels Kameras oder Sensoren.",
+        "Plattform für Mühlenbesitzer zum Austausch von Best Practices und Dokumenten.",
+        "Rechner zur Abschätzung der Kosten für Fischtreppenbau und Sanierung.",
+        "Analyse alter Wasserbücher per OCR und KI zur Extraktion relevanter Rechte und Pflichten.",
+        "Vereinfachte Einreichung von Genehmigungsanträgen für Fischtreppen oder Sanierungen.",
+        "Monitoring des Wasserstandes und der Durchflussmenge an Mühlen per IoT-Sensorik.",
+        "Crowdsourcing von Daten zur Gewässerökologie rund um kleine Wasserwerke.",
+        "Vorhersage des Einflusses von Klimawandel auf Wasserverfügbarkeit für Mühlen.",
+        "Generierung von Standardgutachten oder -berichten für Mühlenbesitzer mit begrenztem Budget.",
+        "Interaktive Karte kleiner Wasserwerke mit Status, Auflagen und Kontaktdaten."
+      ],
+      "target_queries": [
+        "Verordnung Fischaufstiegsanlagen Deutschland Brandenburg",
+        "Zuständigkeit Gewässeraufsicht kleine Wasserkraftanlagen Brandenburg",
+        "Inhalt und Führung der Wasserbücher in Brandenburg"
+      ],
+      "class_hint": "A"
+    },
+    "target": {
+      "target": {
+        "name": "Pflicht zur Fischdurchgängigkeit an Wasserbauwerken in Brandenburg (Fischereigesetz, Fischereiordnung und Wasserrecht)",
+        "source_url": "https://bravors.brandenburg.de/verordnungen/bbgfischo",
+        "source_label": "Klasse A: Verordnung",
+        "anchor_class": "A",
+        "who_pays": "Betreiber kleiner Wasserwerke und Mühlenstaue (oft Privatpersonen oder kleine Betriebe) tragen die Kosten für Gutachten, Planung, Bau und Unterhalt von Fischaufstiegsanlagen und Fischschutzvorrichtungen.",
+        "who_carries_burden": "Mühlenbesitzer und Betreiber kleiner Wasserkraftanlagen, die oft über geringe finanzielle und personelle Ressourcen verfügen, müssen komplexe wasserrechtliche Vorgaben erfüllen und teure Gutachten beauftragen, um Stilllegungen zu vermeiden.",
+        "where_data_stops": "Informationen über den Zustand von Anlagen, notwendige Maßnahmen und genehmigungsrelevante Daten liegen oft in den Händen von spezialisierten Gutachtern und Behörden, gebunden in nicht-standardisierten Berichten, Genehmigungsunterlagen oder internen Datenbanken.",
+        "blind_spot": "Der Zustand und die Compliance-Herausforderungen der Vielzahl kleinerer, historischer Wasserbauwerke werden aufgrund fehlender Kapazitäten für umfassende Erhebungen und der Schwierigkeit, wirtschaftlich tragfähige Lösungen für diese Anlagen zu entwickeln, übersehen."
+      },
+      "operator": "OP-2",
+      "thesis": "Die komplexen Bewertungsmodelle und Compliance-Standards der Wasserbehörden zur Fischdurchgängigkeit und zum Fischschutz werden in ein einfaches, bürgernahes Werkzeug zur Selbstverifizierung und Beweissammlung für Betreiber kleiner Wasserbauwerke umgewandelt.",
+      "candidates": [
+        {
+          "id": "C1",
+          "idea": "Eine App, die Mühlenbesitzern durch geführte Foto- und Videosequenzen hilft, den Zustand ihrer Fischschutzrechen zu dokumentieren und potenzielle Mängel (z.B. zu großer Stababstand, Beschädigungen) automatisiert zu erkennen.",
+          "why_now": "On-device Computer Vision für Objekterkennung (z.B. Rechenstäbe, Beschädigungen) und Mängelerfassung in Echtzeit, kombiniert mit geführter Bildaufnahme, die spezifische Messparameter (z.B. Stababstand per Referenzobjekt) erfassen kann.",
+          "recipient": "Landesamt für Umwelt Brandenburg (LFU)",
+          "recipient_kind": "agency",
+          "check_queries": [
+            "App Fischschutzrechen Zustandserfassung",
+            "computer vision Stababstand Fischrechen"
+          ]
+        },
+        {
+          "id": "C2",
+          "idea": "Ein mobiles Tool, das akustische Signaturen von Wasserturbinen oder Wehren aufzeichnet und mittels KI analysiert, um auf Unregelmäßigkeiten im Betrieb hinzuweisen, die die Fischpassage beeinträchtigen könnten (z.B. Kavitation, ungewöhnliche Strömungsgeräusche).",
+          "why_now": "Zero-shot audio classification und Anomalieerkennung auf mobilen Geräten, die spezifische Frequenzmuster im Wasserfluss erkennen und Abweichungen von Referenzdaten identifizieren kann.",
+          "recipient": "Technische Universität Berlin (Lehrstuhl für Wasserbau und Wasserwirtschaft)",
+          "recipient_kind": "institution",
+          "check_queries": [
+            "Geräuschanalyse Wasserturbine Fischschutz",
+            "acoustic anomaly detection water flow fish migration"
+          ]
+        },
+        {
+          "id": "C3",
+          "idea": "Eine Webanwendung, die auf Basis von öffentlich zugänglichen Geodaten (Fließgewässer, Höhenmodelle) und einfachen Nutzereingaben (Wehrhöhe, Durchflussvolumen) eine Vorabschätzung der Notwendigkeit und Art einer Fischaufstiegsanlage ermöglicht, inklusive möglicher Standardlösungen.",
+          "why_now": "Verfügbarkeit hochauflösender, offener Geodaten (DGM, DLM) und WebGIS-Frameworks, kombiniert mit regelbasierten Systemen zur Auslegung hydraulischer Strukturen, die bisher teuren Ingenieurgutachten vorbehalten waren.",
+          "recipient": "Ministerium für Landwirtschaft, Umwelt und Klimaschutz Brandenburg (MLUK)",
+          "recipient_kind": "agency",
+          "check_queries": [
+            "WebGIS Fischaufstiegsanlage Planungshilfe",
+            "open geodata fish pass design"
+          ]
+        },
+        {
+          "id": "C4",
+          "idea": "Ein Assistenzsystem für Mühlenbesitzer, das aus Fotos von Bestandsplänen und alten Wasserbüchern relevante Parameter (z.B. historische Wasserrechte, ursprüngliche Bauweise des Wehres) mittels OCR und NLP extrahiert und für die wasserrechtliche Prüfung aufbereitet.",
+          "why_now": "Fortschritte in der OCR für historische und handschriftliche Dokumente und Natural Language Processing (NLP) zur präzisen Extraktion spezifischer Informationen (z.B. Rechte, Pflichten, Maße) aus unstrukturierten Texten, die bisher manuelle Recherche durch Spezialisten erforderte.",
+          "recipient": "Brandenburgisches Landesarchiv",
+          "recipient_kind": "agency",
+          "check_queries": [
+            "OCR alte Wasserbücher extraktion",
+            "NLP historical water rights documents"
+          ]
+        },
+        {
+          "id": "C5",
+          "idea": "Eine Kamera-App, die die Wassergeschwindigkeit und -tiefe an kritischen Stellen (z.B. vor dem Rechen, am Auslass der Fischtreppe) mittels optischer Strömungsanalyse (Optical Flow) misst und direkt auf dem Smartphone eine erste Einschätzung der Einhaltung von Grenzwerten gibt.",
+          "why_now": "Fortschrittliche on-device videobasierte Strömungsanalyse (Optical Flow) und Machine Learning zur Kalibrierung und Berechnung physikalischer Parameter (Geschwindigkeit, Turbulenz) in der offenen Wasserfläche, die ohne spezielle Sensorik auskommt und bisher teure Messtechnik erforderte.",
+          "recipient": "Technische Hochschule Brandenburg (Forschungsgruppe Wasserbau)",
+          "recipient_kind": "institution",
+          "check_queries": [
+            "App Wasserströmung messen Smartphone",
+            "optical flow water velocity measurement phone"
+          ]
+        },
+        {
+          "id": "C6",
+          "idea": "Ein interaktives Tool, das die Anforderungen der Fischereiordnung (z.B. bezüglich Stababstand, Anströmgeschwindigkeit, Umgehungsgewässer) in verständliche Checklisten und visuelle Beispiele übersetzt und eine einfache Selbstbewertung der eigenen Anlage ermöglicht.",
+          "why_now": "Fortschritte in der multimodalen generativen KI, die komplexe regulatorische Texte in leicht verständliche, anlagenspezifische Prüfanweisungen und visuelle Beispiele (mittels Text-zu-Bild-Generierung) umwandeln und interaktiv anpassen kann.",
+          "recipient": "Landesfischereiverband Brandenburg e.V.",
+          "recipient_kind": "association",
+          "check_queries": [
+            "Fischereiordnung Brandenburg Checkliste",
+            "regulatory compliance checklist water structures"
+          ]
+        },
+        {
+          "id": "C7",
+          "idea": "Eine Plattform, die den Austausch von anonymisierten Daten über typische Probleme und Lösungen bei kleinen Wasserbauwerken ermöglicht und so Mühlenbesitzern eine Wissensbasis für die Einhaltung der Fischdurchgängigkeit bietet, ohne teure Einzelgutachten.",
+          "why_now": "Dezentrale Datenanalyse und föderiertes Lernen ermöglichen den Austausch von Erfahrungswerten und Mustererkennung über viele kleine Anlagen hinweg, ohne sensible Einzeldaten preiszugeben.",
+          "recipient": "Deutsche Gesellschaft für Mühlenkunde und Mühlenerhaltung e.V.",
+          "recipient_kind": "association",
+          "check_queries": [
+            "Wissensdatenbank Fischdurchgängigkeit Mühlen",
+            "community knowledge sharing fish pass solutions"
+          ]
+        }
+      ],
+      "shortlist": [
+        "C1",
+        "C4",
+        "C5",
+        "C6"
+      ]
+    },
+    "result": {
+      "survivors": [
+        {
+          "candidate_id": "C5",
+          "rank": 1,
+          "idea": "Eine Kamera-App, die die Wassergeschwindigkeit und -tiefe an kritischen Stellen (z.B. vor dem Rechen, am Auslass der Fischtreppe) mittels optischer Strömungsanalyse (Optical Flow) misst und direkt auf dem Smartphone eine erste Einschätzung der Einhaltung von Grenzwerten gibt.",
+          "gap": "Betreiber kleiner Wasserbauwerke benötigen eine einfache Methode zur Messung von Wassergeschwindigkeit und -tiefe an ihren Anlagen, um die Einhaltung von Grenzwerten zu überprüfen.",
+          "gap_stands_alone": true,
+          "who_has_problem": "Mühlenbesitzer und Betreiber kleiner Wasserkraftanlagen, die die Wassergeschwindigkeit und -tiefe an kritischen Stellen messen müssen, um Grenzwerte einzuhalten, aber keine teure Messtechnik besitzen.",
+          "why_now": "Fortgeschrittene on-device videobasierte Strömungsanalyse (Optical Flow) und Machine Learning zur Kalibrierung und Berechnung physikalischer Parameter (Geschwindigkeit, Turbulenz) in der offenen Wasserfläche, die ohne spezielle Sensorik auskommt und bisher teure Messtechnik erforderte.",
+          "buildable": "Ja, die Technologie des Optical Flow ist etabliert, und die Anwendung auf on-device Videodaten zur Strömungsmessung ist mit aktuellen Smartphone-Kameras und Rechenleistungen umsetzbar.",
+          "recipient": "Technische Hochschule Brandenburg (Forschungsgruppe Wasserbau)",
+          "recipient_kind": "institution",
+          "evidence_urls": [
+            "https://crowdwater.ch/de/crowdwaterapp-de/",
+            "https://lfu.brandenburg.de/lfu/de/aufgaben/wasser/anlagen-und-gewaesserunterhaltung/betrieb-und-unterhaltung-der-wasserwirtschaftlichen-anlagen/"
+          ]
+        },
+        {
+          "candidate_id": "C6",
+          "rank": 2,
+          "idea": "Ein interaktives Tool, das die Anforderungen der Fischereiordnung (z.B. bezüglich Stababstand, Anströmgeschwindigkeit, Umgehungsgewässer) in verständliche Checklisten und visuelle Beispiele übersetzt und eine einfache Selbstbewertung der eigenen Anlage ermöglicht.",
+          "gap": "Mühlenbesitzer haben Schwierigkeiten, die komplexen und oft technisch formulierten Anforderungen der Fischereiordnung in Bezug auf ihre Anlagen zu verstehen und umzusetzen.",
+          "gap_stands_alone": true,
+          "who_has_problem": "Mühlenbesitzer, die die komplexen Anforderungen der Fischereiordnung verstehen und die Einhaltung selbst bewerten müssen, aber Schwierigkeiten mit juristischen Texten haben.",
+          "why_now": "Fortschritte in der multimodalen generativen KI, die komplexe regulatorische Texte in leicht verständliche, anlagenspezifische Prüfanweisungen und visuelle Beispiele (mittels Text-zu-Bild-Generierung) umwandeln und interaktiv anpassen kann.",
+          "buildable": "Ja, die Umwandlung von Text in Checklisten und die Generierung visueller Beispiele mittels KI sind mit den heutigen Sprachmodellen und Bildgeneratoren machbar.",
+          "recipient": "Landesfischereiverband Brandenburg e.V.",
+          "recipient_kind": "association",
+          "evidence_urls": [
+            "https://bravors.brandenburg.de/verordnungen/bbgfischo",
+            "https://mleuv.brandenburg.de/mleuv/en/agriculture/fishing-and-angling/"
+          ]
+        }
+      ],
+      "kills": [
+        {
+          "candidate_id": "C1",
+          "reason": "Die Idee fällt direkt unter zwei Punkte in der 'THE BANNED MODE' Liste: 'Digitale Erfassung des Zustands kleiner Wehre und Mühlenstaue per Smartphone-App' und 'KI-gestützte Erkennung von Schäden an Wehranlagen aus Fotos'.",
+          "failed_checks": [
+            "in_mode_or_dense"
+          ]
+        },
+        {
+          "candidate_id": "C4",
+          "reason": "Die Idee ist direkt in der 'THE BANNED MODE' Liste als 'Analyse alter Wasserbücher per OCR und KI zur Extraktion relevanter Rechte und Pflichten' aufgeführt.",
+          "failed_checks": [
+            "in_mode_or_dense"
+          ]
+        }
+      ],
+      "log_row": {
+        "target": "Pflicht zur Fischdurchgängigkeit an Wasserbauwerken in Brandenburg (Fischereigesetz, Fischereiordnung und Wasserrecht)",
+        "anchor_class": "A",
+        "operator": "OP-2",
+        "candidates": 7,
+        "survivors": 2,
+        "best_gap": "Betreiber kleiner Wasserbauwerke benötigen eine einfache Methode zur Messung von Wassergeschwindigkeit und -tiefe an ihren Anlagen, um die Einhaltung von Grenzwerten zu überprüfen."
+      },
+      "retro": {
+        "learned": "Es ist entscheidend, die Kandidaten streng gegen die 'THE BANNED MODE' Liste zu prüfen, auch wenn sie initial als vielversprechend erscheinen.",
+        "mistake": "Ich habe es versäumt, Kandidaten C1 und C4 als direkte Übereinstimmungen mit Einträgen in der 'THE BANNED MODE' Liste während der ersten Beurteilung der Shortlist zu identifizieren.",
+        "next_time": "Vor detaillierten Prüfungen führe ich einen expliziten, zeilenweisen Abgleich jedes Kandidaten der Shortlist mit der 'THE BANNED MODE' Liste durch und eliminiere direkte Treffer sofort."
+      }
+    },
+    "tool_calls": [
+      {
+        "call_id": "inversion-20261001T125634-715072-t01",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "gutachte"
+      },
+      {
+        "call_id": "inversion-20261001T125634-715072-t02",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "schlumme"
+      },
+      {
+        "call_id": "inversion-20261001T125634-715072-t03",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "pflicht"
+      },
+      {
+        "call_id": "inversion-20261001T125634-715072-t04",
+        "tool": "search",
+        "status": "ok",
+        "summary": "Verordnung Fischaufstiegsanlagen Brandenburg"
+      },
+      {
+        "call_id": "inversion-20261001T125634-715072-t05",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "erkennen, geführte"
+      },
+      {
+        "call_id": "inversion-20261001T125634-715072-t06",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "erkennen"
+      },
+      {
+        "call_id": "inversion-20261001T125634-715072-t07",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "bauweise, extrahie"
+      },
+      {
+        "call_id": "inversion-20261001T125634-715072-t08",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "bauweise"
+      },
+      {
+        "call_id": "inversion-20261001T125634-715072-t09",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "einhaltu, kritisch"
+      },
+      {
+        "call_id": "inversion-20261001T125634-715072-t10",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "einhaltu"
+      },
+      {
+        "call_id": "inversion-20261001T125634-715072-t11",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "beispiel, bezüglic"
+      },
+      {
+        "call_id": "inversion-20261001T125634-715072-t12",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "beispiel"
+      },
+      {
+        "call_id": "inversion-20261001T125634-715072-t13",
+        "tool": "search",
+        "status": "ok",
+        "summary": "App Fischschutzrechen Zustandserfassung"
+      },
+      {
+        "call_id": "inversion-20261001T125634-715072-t14",
+        "tool": "search",
+        "status": "ok",
+        "summary": "OCR alte Wasserbücher extraktion"
+      },
+      {
+        "call_id": "inversion-20261001T125634-715072-t15",
+        "tool": "search",
+        "status": "ok",
+        "summary": "App Wasserströmung messen Smartphone"
+      }
+    ],
+    "accounting": {
+      "model_calls": 6,
+      "search_calls": 4,
+      "search_queries": 12,
+      "cost_usd": 0.17346
+    },
+    "log_entry": "<!-- proposed by the Lab's Inversion agent, run inversion-20261001T125634-715072; nothing was written to Amélie -->\n| 2026-10-01 | Lab | Pflicht zur Fischdurchgängigkeit an Wasserbauwerken in Brandenburg (Fischereigesetz, Fischereiordnung und Wasserrecht) (Klasse A) | OP-2 | 7 | 2 (ungeprüft): 1. Eine Kamera-App, die die Wassergeschwindigkeit und -tiefe an kritischen Stellen (z.B. vor dem Rechen, am Auslass der Fischtreppe) mittels optischer Strömungsanalyse (Optical Flow) misst und direkt auf dem Smartphone eine erste Einschätzung der Einhaltung von Grenzwerten gibt. (→ Technische Hochschule Brandenburg (Forschungsgruppe Wasserbau)); 2. Ein interaktives Tool, das die Anforderungen der Fischereiordnung (z.B. bezüglich Stababstand, Anströmgeschwindigkeit, Umgehungsgewässer) in verständliche Checklisten und visuelle Beispiele übersetzt und eine einfache Selbstbewertung der eigenen Anlage ermöglicht. (→ Landesfischereiverband Brandenburg e.V.) | Betreiber kleiner Wasserbauwerke benötigen eine einfache Methode zur Messung von Wassergeschwindigkeit und -tiefe an ihren Anlagen, um die Einhaltung von Grenzwerten zu überprüfen. |\n\n### Inversion run inversion-20261001T125634-715072 — 2026-10-01 (intent: Kleine Wasserwerke und Mühlenstaue in Brandenburg: Stilllegungsdruck durch Wasserrahmenrichtlinie, Fischtreppen-Pflicht, Mühlenbesitzer ohne Gutachter-Budget — wer prüft was, und welche Rechte schlumm)\n- **Learned:** Es ist entscheidend, die Kandidaten streng gegen die 'THE BANNED MODE' Liste zu prüfen, auch wenn sie initial als vielversprechend erscheinen.\n- **Mistake:** Ich habe es versäumt, Kandidaten C1 und C4 als direkte Übereinstimmungen mit Einträgen in der 'THE BANNED MODE' Liste während der ersten Beurteilung der Shortlist zu identifizieren.\n- **Next time:** Vor detaillierten Prüfungen führe ich einen expliziten, zeilenweisen Abgleich jedes Kandidaten der Shortlist mit der 'THE BANNED MODE' Liste durch und eliminiere direkte Treffer sofort.\n- **Prior-art leads (automatic search, for the existence check; not a verdict):**\n  - C1 (ok): App Fischschutzrechen Zustandserfassung -> https://www.reddit.com/r/Aquariums/comments/ob8e1n/fishtanks_app_tankaquarium_upkeep_tracking_app/, https://forum.aquariumcoop.com/topic/51116-fish-keeping-apps/, https://play.google.com/store/apps/details?id=com.fishtrack.android, https://play.google.com/store/apps/details?id=com.fishtrack.android&hl=en_US\n  - C4 (ok): OCR alte Wasserbücher extraktion -> https://www.archive-it.de/digitalisierung/buchern, https://www.repro-online.de/de/buecher-digitalisieren, https://www.klassik-stiftung.de/digital/digitalisierung-von-kulturgut/, https://www.ironmountain.com/de-at/services/document-scanning-and-digital-storage/historical-scanning\n  - C5 (ok): App Wasserströmung messen Smartphone -> https://crowdwater.ch/de/crowdwaterapp-de/, https://axonator.com/app/water-meter-reader-app/, https://axonator.com/app/android-water-meter-reading-app/, https://play.google.com/store/apps/details?id=com.nic.swmr\n",
+    "prior_art": [
+      {
+        "candidate_id": "C1",
+        "question": "App Fischschutzrechen Zustandserfassung",
+        "status": "ok",
+        "answer": "The search for an \"App Fischschutzrechen Zustandserfassung\" (App for fish protection screen condition assessment) did not yield any direct results for a dedicated mobile application. The search results primarily focused on apps for general fish keeping, aquarium maintenance, and saltwater fishing.\n\nFor example, one Reddit post from July 2021 discusses a \"Fishtanks app\" for tracking activities, tank status, and fish/plant keeping in aquariums. Similarly, a forum discussion from October 2025 mentions various \"fish keeping apps\" like \"Aquarium Log,\" \"Fish Keeper,\" and \"Fishi\" for tracking parameters, livestock, and equipment in aquariums. Another app, \"FishTrack,\" available on Google Play, is designed for saltwater anglers, providing features like sea surface temperature charts, satellite imagery, and marine weather forecasts to help locate fish.\n\nNone of the retrieved information describes an app specifically for the condition assessment of fish protection screens, which are technical installations.",
+        "pages": [
+          "https://www.reddit.com/r/Aquariums/comments/ob8e1n/fishtanks_app_tankaquarium_upkeep_tracking_app/",
+          "https://forum.aquariumcoop.com/topic/51116-fish-keeping-apps/",
+          "https://play.google.com/store/apps/details?id=com.fishtrack.android",
+          "https://play.google.com/store/apps/details?id=com.fishtrack.android&hl=en_US"
+        ]
+      },
+      {
+        "candidate_id": "C4",
+        "question": "OCR alte Wasserbücher extraktion",
+        "status": "ok",
+        "answer": "Die Extraktion von Informationen aus alten Wasserbüchern mittels Optical Character Recognition (OCR) ist ein Prozess, der die Digitalisierung der physischen Bücher und die anschließende Texterkennung umfasst, um die Inhalte durchsuchbar und maschinenlesbar zu machen.\n\n**Digitalisierung alter Bücher**\nDas Digitalisieren alter Bücher, wie Wasserbücher, wird zunehmend beliebter, da es die Zugänglichkeit verbessert und die Dokumente vor physischen Schäden schützt. Dienstleister wie archive-it.de und REPRO ONLINE bieten professionelle Buchscans an, die oft nicht-destruktive Methoden verwenden, um die Originale zu schonen. Diese Scans können als hochauflösende Bilder oder PDFs ausgegeben werden. Die Klassik Stiftung Weimar digitalisiert ebenfalls umfangreiche Bestände, um sie zu erschließen, zu erforschen und einem breiteren Publikum zugänglich zu machen. Iron Mountain bietet spezialisierte Dienstleistungen für die Digitalisierung und sichere Archivierung historischer Dokumente an, einschließlich Maßnahmen zum Schutz vor Wasser und zur Klimakontrolle.\n\n**Herausforderungen und Lösungen bei der OCR historischer Dokumente**\nDie Anwendung von OCR auf historische Dokumente, einschließlich alter Wasserbücher, stellt besondere Herausforderungen dar:\n*   **Schriftarten und -stile:** Moderne OCR-Software hat Schwierigkeiten mit historischen Druckschriften, die sich stark von heutigen Standardschriften unterscheiden können, sowie mit alten Zeichenformen, Ligaturen und mehrsprachigen Texten.\n*   **Handschrift:** Handschriftliche Einträge, verblasste Tinte oder beschädigtes Papier können die Genauigkeit der Texterkennung erheblich beeinträchtigen.\n\nUm diese Herausforderungen zu bewältigen, gibt es spezialisierte OCR-Tools und -Dienste:\n*   **OCR4all:** Ein von der Julius-Maximilians-Universität Würzburg entwickeltes Open-Source-Programm, das speziell für die Texterkennung historischer Druckschriften konzipiert wurde und keine Programmierkenntnisse erfordert. Es ermöglicht das Training von Modellen für spezifische Schrifttypen.\n*   **Transkribus:** Dieses Tool ist auf die Erkennung von Handschriften (HTR) spezialisiert und kann alte deutsche Schriften wie Kurrent, Sütterlin und Fraktur verarbeiten, selbst wenn sie in einem Dokument gemischt sind. Es nutzt spezialisierte neuronale Netze, die auf Millionen von Wörtern aus historischen deutschen Dokumenten trainiert wurden, und bietet Funktionen wie Felderkennung, Tabellenerkennung und Informationsextraktion. Transkribus ist in",
+        "pages": [
+          "https://www.archive-it.de/digitalisierung/buchern",
+          "https://www.repro-online.de/de/buecher-digitalisieren",
+          "https://www.klassik-stiftung.de/digital/digitalisierung-von-kulturgut/",
+          "https://www.ironmountain.com/de-at/services/document-scanning-and-digital-storage/historical-scanning",
+          "https://www.med.uni-wuerzburg.de/aktuelles/meldungen/single/news/historische-schriften-digital-erkennen/",
+          "https://globalnet-strategies.com/blog/finebooks-ocr-historische-dokumente-unternehmen",
+          "https://www.transkribus.org/de/altdeutsche-schrift-uebersetzen",
+          "https://www.transkribus.org/de",
+          "https://planet-ai.com/de/loesungen/historische-archive/",
+          "https://update.lib.berkeley.edu/2024/12/03/exploring-ocr-tools-with-two-19th-century-documents/",
+          "https://www.dbu.de/nd-blog/digitalisierung-und-wasser-einfuehrung/"
+        ]
+      },
+      {
+        "candidate_id": "C5",
+        "question": "App Wasserströmung messen Smartphone",
+        "status": "ok",
+        "answer": "Es gibt Apps, die es ermöglichen, die Wasserströmung mit einem Smartphone zu messen, wobei die Methode oft auf manuellen Beobachtungen und der Nutzung der Smartphone-Funktionen basiert.\n\nDie **CrowdWater App** ist ein Beispiel für eine Anwendung, die zur Messung der Fließgeschwindigkeit von Wasser in natürlichen Umgebungen wie Flüssen verwendet werden kann. Die App leitet Benutzer an, einen schwimmenden Gegenstand (z.B. einen Ast oder ein Blatt) in die Mitte des Flusses zu werfen und die Zeit zu stoppen, die dieser benötigt, um eine markierte Strecke zurückzulegen. Die Stoppuhrfunktion des Smartphones wird dabei genutzt, um die Fließgeschwindigkeit zu bestimmen. Um die Genauigkeit zu erhöhen, kann dieser Schritt wiederholt werden. Zusätzlich können Nutzer Fotos vom Messort machen und verschiedene Fragen zum Gewässer beantworten, wie dessen Größe, Sauberkeit, den Materialtyp des Bachbetts und die Wasserfarbe.\n\nAndere Apps, die in den Suchergebnissen auftauchen, konzentrieren sich auf andere Aspekte der Wassermessung:\n*   **Water Meter Reader App** von Axonator und **Smart Water Meter Reader** nutzen optische Zeichenerkennung (OCR) oder mobile Formulare, um Wasserzählerstände zu erfassen und den Wasserverbrauch zu überwachen, oft in Verbindung mit intelligenten Zählsystemen.\n*   **WaterWellCheck** und **Aqvify** sind Apps, die für Brunnenbesitzer entwickelt wurden, um den Wasserstand und die Fördermenge von Brunnen zu überwachen. Sie nutzen oft externe Sensoren, um Daten zu sammeln und bieten Funktionen wie die Berechnung der Fördermenge durch Eingabe von Behältervolumen und Füllzeit oder die Überwachung von Wasserständen in Echtzeit.\n*   **Mainlink** bietet eine mobile App zur Überwachung des Wasserverbrauchs in Wohngebäuden, die Daten von intelligenten Zählsystemen direkt auf das Smartphone der Bewohner liefert und auch Leckagealarme senden kann.\n*   **Strömungsatlas Europa** ist eine App, die Informationen zu Gezeiten und Strömungen liefert, jedoch nicht zur direkten Messung der Wasserströmung mit dem Smartphone dient.\n*   **HydroColor** ist eine App zur Messung der Wasserqualität, die die Kamera des Smartphones nutzt, um die Trübung und die Konzentration von Schwebstoffen zu bestimmen.\n*   Die **Water Resistance Tester** App prüft die Wasserdichtigkeit des Smartphones selbst mithilfe des eingebauten Barometers.",
+        "pages": [
+          "https://crowdwater.ch/de/crowdwaterapp-de/",
+          "https://axonator.com/app/water-meter-reader-app/",
+          "https://axonator.com/app/android-water-meter-reading-app/",
+          "https://play.google.com/store/apps/details?id=com.nic.swmr",
+          "https://play.google.com/store/apps/details?id=brisinua.welllevelmeter&hl=en_US",
+          "https://aqvify.com/app/",
+          "https://play.google.com/store/apps/details?id=brisinua.welllevelmeter",
+          "https://mainlink.net/products-smart-metering-service/residential-mobile-app/",
+          "https://apps.apple.com/de/app/str%C3%B6mungsatlas-europa/id1494565311",
+          "https://play.google.com/store/apps/details?id=com.h2optics.hydrocolor",
+          "https://www.gizchina.com/android/water-resistance-tester-app-will-test-your-smartphones-water-resistance-without-using-water"
+        ]
+      }
+    ],
+    "topic_check": [
+      {
+        "term": "gutachte",
+        "hits": [
+          "[dose, score 0.8] Biotoptyp-Assistent — Available",
+          "[dose, score 0.8] Bruchlesen — Available",
+          "[dose, score 0.8] Altbau Thermal — Available"
+        ]
+      },
+      {
+        "term": "schlumme",
+        "hits": []
+      },
+      {
+        "term": "pflicht",
+        "hits": [
+          "[dose, score 1] Vernichtungs-Offenlegungsregister — Available",
+          "[dose, score 1] Umsetzungsplan-Register — Available",
+          "[dose, score 1] Bugs → Spaced Repetition — Available",
+          "[dose, score 1] Wärmesignatur — Available"
+        ]
+      }
+    ],
+    "contract_version": "1.0.0"
+  },
+  "existence_check": false,
+  "contract_version": "1.0.0"
+}

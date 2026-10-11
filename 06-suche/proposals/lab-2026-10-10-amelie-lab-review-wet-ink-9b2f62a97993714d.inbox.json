@@ -1,0 +1,1108 @@
+{
+  "batch_id": "amelie-lab-review-wet-ink-9b2f62a97993714d",
+  "lab_id": "amelie-lab",
+  "engine": "review",
+  "run_id": "wet-ink",
+  "revision": "9b2f62a97993714d3717be508235f124db50e73cda09b2465707c5c3d8b51874",
+  "created_at": "",
+  "model": "not recorded",
+  "intent": "What is the current state of the art, existing implementations, and competing solutions for 'Wet Ink'? Are there known open-source tools, commercial products, or standard frameworks operating under alternative terminology?",
+  "ideas": [],
+  "record": {
+    "packet_id": "wet-ink",
+    "theme": "wet-ink",
+    "question": "What is the current state of the art, existing implementations, and competing solutions for 'Wet Ink'? Are there known open-source tools, commercial products, or standard frameworks operating under alternative terminology?",
+    "runs_executed": 2,
+    "findings": [
+      {
+        "claim": "Marching Squares is a well-established computer graphics algorithm used for extracting iso-contours (lines of constant value) from a 2D scalar field, which can be applied for vector export in simulations.",
+        "source": "https://mysimulator.uk",
+        "source_type": "academic_resource",
+        "retrieved_at": "2026-09-29T14:00:00Z",
+        "quote": "Marching Squares is a computer graphics algorithm for extracting iso-contours (lines of constant value) from a 2D scalar field sampled on a regular grid. Each 2×2 square of grid cells has four corner values; thresholding each corner against an isovalue produces a 4-bit index (0–15), giving 16 possible configurations. A lookup table maps each configuration to one or two line segments that approximate where the contour crosses the cell, and linear interpolation on the edge gives sub-cell accuracy.",
+        "reused_from_amelie": false,
+        "seen_in_runs": [
+          1
+        ],
+        "id": "F1"
+      },
+      {
+        "claim": "Marching Squares can generate contour lines from a 2D heightmap, and algorithms exist to merge these segments into continuous contour lines for applications like pen plotters.",
+        "source": "https://observablehq.com",
+        "source_type": "community_resource",
+        "retrieved_at": "2026-09-29T14:00:00Z",
+        "quote": "Say you want to generate contour lines from a 2D heightmap. The marching squares algorithm is a good fit for that. It will compute 0, 1 or 2 line segments for each 4 value-square in your heightmap. But if you want to send the result to a pen plotter, you'll probably prefer the segments to be merged to form the actual contour lines, to avoid too many pen ups and downs.",
+        "reused_from_amelie": false,
+        "seen_in_runs": [
+          1
+        ],
+        "id": "F2"
+      },
+      {
+        "claim": "Many WebGL2 fluid simulations exist that run entirely on the GPU using fragment shaders and floating-point textures, often achieving 60 FPS performance on various devices.",
+        "source": "https://runcell.dev",
+        "source_type": "product_documentation",
+        "retrieved_at": "2026-09-29T14:00:00Z",
+        "quote": "The Navier-Stokes solver runs entirely on your GPU via WebGL fragment shaders, delivering smooth 60 fps fluid dynamics without taxing the CPU. Desktop & Mobile. Full mouse and multi-touch support. Paint fluid on your phone, tablet, or desktop — the simulation adapts to any screen size automatically.",
+        "reused_from_amelie": false,
+        "seen_in_runs": [
+          1
+        ],
+        "id": "F3"
+      },
+      {
+        "claim": "These WebGL fluid simulations commonly use a 'ping-pong' technique with framebuffers to manage evolving simulation states, passing data from one frame to the next.",
+        "source": "https://ostefani.dev",
+        "source_type": "blog_post",
+        "retrieved_at": "2026-09-29T14:00:00Z",
+        "quote": "The previous article introduced the ping-pong technique, a critical pattern for creating iterative, stateful simulations on the GPU. It showed how to feed the result of one frame back into the next.",
+        "reused_from_amelie": false,
+        "seen_in_runs": [
+          1
+        ],
+        "id": "F4"
+      },
+      {
+        "claim": "Advection is a fundamental component of fluid simulation, describing how a velocity field moves quantities like dye or ink, and is often implemented using semi-Lagrangian methods in fragment shaders.",
+        "source": "https://ostefani.dev",
+        "source_type": "blog_post",
+        "retrieved_at": "2026-09-29T14:00:00Z",
+        "quote": "Advection is the process of moving a substance by a flow. A crucial component in understanding how the process works is a velocity field — a mathematical function that assigns a 2D velocity vector to each point in the simulation area, describing local flow direction and speed. In fluid simulation, advection describes how a velocity field moves quantities such as density, temperature, or dye around. Imagine dropping a spot of ink into a river; the current of the river (the velocity field) carries the ink (the quantity) downstream. The process of the ink moving with the water is advection.",
+        "reused_from_amelie": false,
+        "seen_in_runs": [
+          1
+        ],
+        "id": "F5"
+      },
+      {
+        "claim": "The 'Inkwash' project is an open-source WebGL2 simulation that explicitly replicates ink-on-paper phenomena like edge darkening and granulation, and also mentions 'capillary creep'.",
+        "source": "https://github.io",
+        "source_type": "open_source_repository",
+        "retrieved_at": "2026-09-29T14:00:00Z",
+        "quote": "Granulation. A third noise field modulates ink density — but only where pigment is. That's the speckle real pigments leave as particles settle into the paper's valleys. Edge darkening. The shader measures the local gradient of density and multiplies absorption by 1 + 1.35·|∇| . In real watercolor, pigment migrates to a drying wash's boundary and leaves a dark rim — the single most recognizable watercolor signature. Here it's a cheap screen-space fake of that, and it's doing an enormous amount of the look. Wet sheen.",
+        "reused_from_amelie": false,
+        "seen_in_runs": [
+          1
+        ],
+        "id": "F6"
+      },
+      {
+        "claim": "Inkwash uses WebGL2 and requires renderable half-float textures (EXT_color_buffer_float) for its simulation pipeline, which runs at 60 fps even on mobile devices.",
+        "source": "https://github.io",
+        "source_type": "open_source_repository",
+        "retrieved_at": "2026-09-29T14:00:00Z",
+        "quote": "Inkwash is a single HTML file — under a thousand lines, no dependencies, no build step. It needs WebGL2 and renderable half-float textures ( EXT_color_buffer_float ), which is everything from roughly 2021 onward. The full pipeline — twelve shader passes including the 22 Jacobi iterations — runs comfortably at 60 fps on a phone, mostly because the expensive solve happens on the coarse grid.",
+        "reused_from_amelie": false,
+        "seen_in_runs": [
+          1
+        ],
+        "id": "F7"
+      },
+      {
+        "claim": "Inkwash simulates capillary creep by blurring the 'wet' field into its neighbors and decaying exponentially, and controls pigment mobility based on the 'wet' state of the paper.",
+        "source": "https://github.io",
+        "source_type": "open_source_repository",
+        "retrieved_at": "2026-09-29T14:00:00Z",
+        "quote": "Damp paper lets ink creep; soaked paper lets it run. Bone-dry paper is a museum — the shader returns the old value untouched and the pixel costs almost nothing. Water itself moves reluctantly. The wet field is advected at only 0.6× the flow speed, blurred a little into its neighbors each frame (capillary creep — a puddle's edge slowly widens), and decays exponentially.",
+        "reused_from_amelie": false,
+        "seen_in_runs": [
+          1
+        ],
+        "id": "F8"
+      },
+      {
+        "claim": "Academic research has focused on simulating ink diffusion, considering factors like ink density, water quantity, paper fibers, viscosity, and vorticity, often highlighting the complexity of accurately reproducing these phenomena.",
+        "source": "https://gatech.edu",
+        "source_type": "academic_paper",
+        "retrieved_at": "2026-09-29T14:00:00Z",
+        "quote": "Computer graphics researchers at Georgia Tech have introduced a novel method for accurately simulating ink diffusion within water. Calculating and visualizing a realistic trajectory of ink spreading through water has been a longstanding and enormous challenge for computer graphics and physics researchers. When a drop of ink hits the water, it typically sinks forward, creating a tail before various ink streams branch off in different directions. The motion of the ink's molecules upon mixing with water is seemingly random. This is because the motion is determined by the interaction of the water's viscosity (thickness) and vorticity (how much it rotates at a given point).",
+        "reused_from_amelie": false,
+        "seen_in_runs": [
+          1
+        ],
+        "id": "F9"
+      },
+      {
+        "claim": "Granulation in watercolor occurs when heavy or large pigment particles clump together and settle into the valleys of paper texture, creating a mottled or speckled effect, with rougher papers enhancing this effect.",
+        "source": "https://akvarellskiss.se",
+        "source_type": "commercial_product",
+        "retrieved_at": "2026-09-29T14:00:00Z",
+        "quote": "Granulation occurs when pigment particles are heavy or large. Instead of settling evenly on the paper, these particles clump together (flocculate) and settle into the valleys of the paper texture, creating a beautiful mottled or ”speckled” effect. Does paper texture affect granulation? Yes, significantly. Rough and Cold Press papers have deeper ”toothy” textures that catch granulating pigments more effectively. On Hot Press (smooth) paper, granulation is much more subtle because there are fewer valleys for the pigment to settle into.",
+        "reused_from_amelie": false,
+        "seen_in_runs": [
+          1
+        ],
+        "id": "F10"
+      },
+      {
+        "claim": "Some WebGL fluid simulations, such as those based on Navier-Stokes equations, are designed for creative coding and generative art, allowing users to interactively paint fluid patterns and adjust physics parameters.",
+        "source": "https://teamzlab.com",
+        "source_type": "commercial_product",
+        "retrieved_at": "2026-09-29T14:00:00Z",
+        "quote": "Interactive fluid simulations have become a popular tool for creative coding, generative art, and interactive web design. Designers use fluid effects as dynamic backgrounds, loading animations, and interactive hero sections on websites. Artists create mesmerizing abstract compositions by layering colors and adjusting physical parameters. The combination of mathematical precision and organic beauty makes fluid simulation one of the most visually captivating applications of GPU computing in the browser.",
+        "reused_from_amelie": false,
+        "seen_in_runs": [
+          1
+        ],
+        "id": "F11"
+      },
+      {
+        "claim": "The 'Paint' project on GitHub is a WebGL simulation of dynamic painting on the GPU, where paint strokes move along an invisible vector field, but it may have limitations on devices supporting only low precision floats.",
+        "source": "https://github.io",
+        "source_type": "open_source_repository",
+        "retrieved_at": "2026-09-29T14:00:00Z",
+        "quote": "This project is a WebGL simulation of a dynamic painting running entirely on GPU. Each paint stroke is moving along an invisible vector field. You can interact with it using the left mouse button. More on GitHub Explanations. You need to enable Javascript to run this experiment. Your device only supports low precision float in fragment shader. The simulation will not run.",
+        "reused_from_amelie": false,
+        "seen_in_runs": [
+          1
+        ],
+        "id": "F12"
+      },
+      {
+        "claim": "Inkwash is an open-source, web-based fluid-simulation drawing application implemented in a single HTML file using WebGL2 and renderable half-float textures.",
+        "source": "https://johnowhitaker.github.io/inkwash/",
+        "source_type": "open-source repository",
+        "retrieved_at": "2026-09-29T14:51:52Z",
+        "quote": "Pen-and-ink with living water — a fluid-simulation drawing app in a single HTML file. Draw: https://johnowhitaker.github.io/inkwash/. About (WIP): https://johnowhitaker.github.io/inkwash/. Demo video of a quick sketch here (Thread contains more examples). The pen lays down dark ink; pressure and speed shape the line. The brush (hold the pen's barrel button, or press b ) lays down water instead — ink … Pen-and-ink with living water — a fluid-simulation drawing app in a single HTML file. … The pen lays down dark ink; pressure and speed shape the line. The brush (hold the pen's barrel button, or press b ) lays down water instead — ink flows, bleeds and blends only where the paper is wet, then gradually dries in place. On iPad, the Apple Pencil draws and your finger is the water brush. Works on phones and tablets without a stylus too — the controls stay on screen. Keys: b pen/brush · w white ink · d fix the drawing into the paper · f fullscreen · c clear · s save PNG. Sliders appear at the bottom edge. No dependencies, no build — just open index.html.",
+        "reused_from_amelie": false,
+        "seen_in_runs": [
+          1
+        ],
+        "id": "F13"
+      },
+      {
+        "claim": "Inkwash simulates color bleeding and chromatography by storing pigment as per-channel optical density and applying different bleed rates per channel, but does not explicitly mention Kubelka-Munk optics.",
+        "source": "https://johnowhitaker.github.io/inkwash/about",
+        "source_type": "technical documentation",
+        "retrieved_at": "2026-09-29T14:51:52Z",
+        "quote": "06black that isn't black. Here is the trick the whole app was built around. Put a drop of water on a line of cheap black ink and watch the edge: the black stays close, but a blue-violet ghost walks out ahead of it. Black inks are dye cocktails, and on wet paper they chromatograph — each dye travels at its own speed. Inkwash gets this almost for free because of a decision from section 02: pigment is stored as per-channel optical density, and the bleed step — which each frame nudges ink toward the average of its neighbors, where wet — runs at a different rate per channel",
+        "reused_from_amelie": false,
+        "seen_in_runs": [
+          1
+        ],
+        "id": "F14"
+      },
+      {
+        "claim": "The `amandaghassaei/FluidSimulation` project is a WebGL shader for mixed grid-particle fluid simulation that supports exporting vector paths as SVG, allowing control over parameters like minimum segment length.",
+        "source": "https://github.com/amandaghassaei/FluidSimulation",
+        "source_type": "open-source repository",
+        "retrieved_at": "2026-09-29T14:51:52Z",
+        "quote": "WebGL shader for mixed grid-particle fluid simulation. Live demo at https://apps.amandaghassaei.com/FluidSimulation. This simulation solves the Navier-Stokes equations for incompressible fluids in a GPU fragment shader. ... This app also supports exporting vector paths as SVG or G-Code for pen plotting (among other things). To start, press the spacebar to freeze the simulation and enter the vector export workflow: ... Additionally you can control some parameters for SVG export: Min Segment Length sets the target minimum segment length in your resulting svg file.",
+        "reused_from_amelie": false,
+        "seen_in_runs": [
+          1
+        ],
+        "id": "F15"
+      },
+      {
+        "claim": "Spectral.js is a lightweight JavaScript library that simulates realistic color mixing based on the Kubelka-Munk theory, offering GLSL shader support for GPU-based real-time color mixing in WebGL projects.",
+        "source": "https://css-script.com/realistic-color-mixing-library-kubelka-munk-theory-spectral-js/",
+        "source_type": "technical publication",
+        "retrieved_at": "2026-09-29T14:51:52Z",
+        "quote": "Spectral.js is a lightweight JavaScript library that simulates realistic color mixing based on the Kubelka-Munk theory. It models how physical pigments interact with light, rather than relying on standard RGB or HSL color blending. ... GLSL shader support: Includes spectral.glsl for GPU-based real-time color mixing in WebGL projects.",
+        "reused_from_amelie": false,
+        "seen_in_runs": [
+          1
+        ],
+        "id": "F16"
+      },
+      {
+        "claim": "The `open-km` GitHub repository provides a working implementation of Kubelka-Munk theory in GLSL for educational purposes, demonstrating pigment mixing with fake K/S data.",
+        "source": "https://github.com/lwander/open-km",
+        "source_type": "open-source repository",
+        "retrieved_at": "2026-09-29T14:51:53",
+        "quote": "Kubelka-Munk in GLSL. This repository contains a working implementation of Kubelka-Munk theory, but with fake K/S data. This being released as an educational guide, and to help those interested in developing their own imaginary pigments.",
+        "reused_from_amelie": false,
+        "seen_in_runs": [
+          1
+        ],
+        "id": "F17"
+      },
+      {
+        "claim": "Mixbox is a library that provides paint-like color mixing based on the Kubelka-Munk theory, treating colors as pigments, and is available with GLSL support.",
+        "source": "https://www.secretweapons.com/mixbox/",
+        "source_type": "product documentation",
+        "retrieved_at": "2026-09-29T14:51:52Z",
+        "quote": "Mixbox is a practical library for paint-like color mixing. Treats colors as pigments using Kubelka & Munk; Packed in a simple RGB-in, RGB-out interface; Available in C++, Python, GLSL and more.",
+        "reused_from_amelie": false,
+        "seen_in_runs": [
+          1
+        ],
+        "id": "F18"
+      },
+      {
+        "claim": "Tiptap is an open-source, headless editor framework with a modular extension system that supports various JavaScript frameworks (React, Vue, Svelte) and allows for custom extensions and UI components.",
+        "source": "https://tiptap.dev/",
+        "source_type": "product documentation",
+        "retrieved_at": "2026-09-29T14:51:52Z",
+        "quote": "Tiptap is the headless and open source editor framework. Integrate over 100+ extensions and paid features like collaboration and AI agents to create the UX you want.",
+        "reused_from_amelie": false,
+        "seen_in_runs": [
+          1
+        ],
+        "id": "F19"
+      },
+      {
+        "claim": "Obsidian Ink is an Obsidian plugin that allows users to insert drawing embeds directly into their notes, demonstrating a framework-specific integration for drawing functionality.",
+        "source": "https://www.youtube.com/watch?v=s0l10aG_21o",
+        "source_type": "video",
+        "retrieved_at": "2026-09-29T14:51:52Z",
+        "quote": "hi let's have a look at what INC is and the changes to it in release 0.5. ink is an Obsidian plugin that allows you to insert embeds directly into your notes. so I'm going to go here and insert a writing embed. and I can pull down from the top and type in new handwriting or I can see it. there um but I've set it up as a shortcut in my toolbar. so I'm going to click this button here and it inserts a writing embed. and as I add new lines. it drops down. and you can see it's pushing down the text around it and let me add a drawing embed here. and I'll draw maybe I'll make this a bit bigger. and I'll draw a house.",
+        "reused_from_amelie": false,
+        "seen_in_runs": [
+          1
+        ],
+        "id": "F20"
+      },
+      {
+        "claim": "The `inkField` project, while not open-source, describes its ink diffusion process using a feedback shader that simulates physical diffusion and uses a force map to push ink along vectors, mimicking natural ink flow.",
+        "source": "https://ileivoivm.github.io/inkField/tech-doc.html",
+        "source_type": "technical documentation",
+        "retrieved_at": "2026-09-29T14:51:52Z",
+        "quote": "Each frame, the feedback shader simulates physical diffusion on newBufferBlack. It reads a force map that defines direction and magnitude per pixel, pushing ink along those vectors to simulate natural ink flow on paper. ... After releasing the mouse, ink continues diffusing briefly (force decays to zero), simulating real ink's lingering spread.",
+        "reused_from_amelie": false,
+        "seen_in_runs": [
+          1
+        ],
+        "id": "F21"
+      },
+      {
+        "claim": "The ink diffusion phenomenon, crucial in calligraphy and digital art, involves ink spreading on paper, influenced by ink particles, water, and paper fibers. Water molecules diffuse faster than larger ink particles, leading to varying ink density in diffused areas.",
+        "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGecXYIOjrKiSPMXE01BVEZh9QCIbKuvaDsAEZ5rgzRnIp4P6T145ZBcG90WCafJzrqY41HQYssWzoX1w4aY7gxxVyeX4BqN5Kiead14TSMODYAfSEYN1Sq3d0trX0MmYPa2IHU0_JUX3gRf_6GYfS96e71DiZZexc-49EFuQmwQqu-wuaIdGQgbZy7TM9Pxr8psbte-zwwBo8=",
+        "source_type": "academic",
+        "retrieved_at": "2026-09-29T15:00:00Z",
+        "quote": "In this paper, the ink diffusion phenomenon which is one of the important features in calligraphy is researched. The ink diffusion phenomenon is the phenomenon of ink spreading on the paper. This phenomenon occurs mainly when a stroke is written with the brush contain- ing a large amount of ink or the brush moves slowly. Ink is made of ink particles and water, and when the brush is filled with ink and it is applied to the paper, ink flows to the paper and the water of the ink diffuses with the ink particles. The molecule of water is small, so it dif- fuses between the fibers of paper faster than ink particles. ... The ink particle is large and heavy in comparison with the molecules of water, so particles that are larger than the space between the fibers of paper cannot pass through, and remain there. The ink particles that are smaller than the space between the fibers of paper flow outside from the initial area. Therefore, in the ink diffusion area, the ink density of the outside is thinner than that of the in- side. So the density of ink influences the ink diffusion phenomenon. Generally, thin ink diffuses well, on the other hand, the thicker ink is the more the range of ink diffusion decreases.",
+        "reused_from_amelie": false,
+        "seen_in_runs": [
+          2
+        ],
+        "id": "F22"
+      },
+      {
+        "claim": "The dynamics of writing with ink, including linewidth, depend on pen speed and the physicochemical properties of both ink and paper, driven by capillary forces and resistance within the porous substrate.",
+        "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHeo2lvry1RNXIZuBbukr40OZkPGb5q116VDhqfY3yYKKz5Z2ZY9NFXcrz42V4So7tf1ufVskwrXFfQOYOyeUfH-RQEaF4P125tz8fbAThHwyyeSppZmhXMdfVfmDPns_aDcOUz_OFJDo_GUbgYVBQOu69WCvf4wTzVtwSzBS3Y57KWQg==",
+        "source_type": "academic",
+        "retrieved_at": "2026-09-29T15:00:00Z",
+        "quote": "Writing with ink involves the supply of liquid from a pen onto a porous hydrophilic solid surface, paper. The resulting linewidth depends on the pen speed and the physicochemical properties of the ink and paper. Here we quantify the dynamics of this process using a combination of experiment and theory. Our experiments are carried out using a minimal pen, a long narrow tube that serves as a reservoir of liquid, which can write on a model of paper, a hydrophilic micropillar array. A minimal theory for the rate of wicking or spreading of the liquid is given by balancing the capillary force that drives the liquid flow and the resistance associated with flow through the porous substrate.",
+        "reused_from_amelie": false,
+        "seen_in_runs": [
+          2
+        ],
+        "id": "F23"
+      },
+      {
+        "claim": "Digital watercolor simulation often employs a shallow-water fluid simulation for paint flow and the Kubelka-Munk model for optical compositing of pigmented layers, enabling effects like edge-darkening, granulation, and backruns.",
+        "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEujhzyYL04G7TBGdxy7Hd_w2RIYuFoRYRy9DNKRy9LR5gvJsyfna4aS9n5B0ZnXmuXaACpe3bENZNomba3TWAt2K5-_S3oLv66XESre0d_XDLS_6j0C5wj4mfAqUup_JYYL2A8cqgy_gbVV455A684WsS_Z6l8rGo8KesRJ5k=",
+        "source_type": "academic",
+        "retrieved_at": "2026-09-29T15:00:00Z",
+        "quote": "This paper describes the various artistic effects of watercolor and shows how they can be simulated automatically. Our watercolor model is based on an ordered set of translucent glazes, which are created independently using a shallow-water fluid simulation. We use a Kubelka-Munk compositing model for simulating the optical effect of the superimposed glazes. ... The combination of these improvements enables our system to create many additional watercolor effects such as edge-darkening, granulation, backruns, separation of pigments, and glazing, as described in Section 2.",
+        "reused_from_amelie": false,
+        "seen_in_runs": [
+          2
+        ],
+        "id": "F24"
+      },
+      {
+        "claim": "Rebelle is a commercial software known for simulating realistic watercolor flow, including wet-into-wet blooms and dry brush textures, and is used by artists to test palettes digitally.",
+        "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGa0YkmqruMTJ6WjtbMwWlP1BwgAEHf8tO61_1NwMv4HsEalDIPhnVdEsE3cXbHqLqntbeZDc_U_QYlXW7fG8ky0nvfjB91RXS_GYEjwshdxAeTfcr3UT2UEGeMMQB9VwQJ-c6XXpHa9HvKF3gXXRlRwD3t54wOCGT7RwfANb3d1IiE2q8qc-Gbg-Mcf0rifQjpnoqyd10RVvaAuBEz0Q==",
+        "source_type": "commercial",
+        "retrieved_at": "2026-09-29T15:00:00Z",
+        "quote": "If you want to see how your chosen palette will behave in action, you could use a program called Rebelle. It simulates watercolour flow in a realistic way - from wet-into-wet blooms to dry brush textures.",
+        "reused_from_amelie": false,
+        "seen_in_runs": [
+          2
+        ],
+        "id": "F25"
+      },
+      {
+        "claim": "Krita is a free and open-source digital painting program that offers professional-grade tools, a serious brush engine, and natural-media emulation, making it suitable for realistic painting effects.",
+        "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpCEk393nWsAPMbtggj-5CHrNdl3y5vcmf_Oqy6pJQCTujCwkWoVgyiqiJtQSm75EJZGxEc-kRx55UAezDmJSHUB6XlxF193QQcRWEXh1L3N3aRlfmja20X_pVNCS2hpmfJpVLwn4NlZQofl87CJJn2y8J",
+        "source_type": "opensource",
+        "retrieved_at": "2026-09-29T15:00:00Z",
+        "quote": "Krita is free and open source digital painting and 2D animation software, and it is the pick for anyone who wants professional-grade tools without a subscription. ... If your goal is realistic painting that behaves like oil, watercolor, chalk, or ink on a physical surface, this is the tool built for it. The brush depth and texture handling are the deepest on this list, which is why traditional painters and realism-focused illustrators keep evaluating it against everything else.",
+        "reused_from_amelie": false,
+        "seen_in_runs": [
+          2
+        ],
+        "id": "F26"
+      },
+      {
+        "claim": "The 'coffee ring effect' is caused by faster evaporation at the edges of a liquid droplet, leading to an outward capillary flow that transports suspended particles to the edge, forming a dark ring.",
+        "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEA6SaNDUgttBjZar4BsGQLsp2URP7ova2_m3lRJIDLpCc_LfYsqkmBC3MNe7TPlfqLrTicTGK0ChTL64_NJPWSekIjL1FrgVKjEqXuserYZ8aaZOdMpVMsR8iebUNNIDWkGCt7FHGCDaij2g==",
+        "source_type": "academic",
+        "retrieved_at": "2026-09-29T15:00:00Z",
+        "quote": "The mechanism behind the formation of these and similar rings is known as the coffee ring effect or in some instances, the coffee stain effect, or simply ring stain. It originates from the capillary flow directed from the interior to the edge of the puddle as it evaporates. Stains produced by the evaporation of ... The coffee-ring pattern originates from the capillary flow induced by the evaporation of the drop: liquid evaporating from the edge is replenished by liquid from the interior. The resulting current can carry nearly all the dispersed material to the edge.",
+        "reused_from_amelie": false,
+        "seen_in_runs": [
+          2
+        ],
+        "id": "F27"
+      },
+      {
+        "claim": "Backruns, also known as blooms or cauliflowers, occur in watercolor when fresh water or paint is applied to a still-damp wash, causing the liquid to push pigment outwards due to surface tension and concentration differences.",
+        "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvzXAMkO-8UtkXZVNXum_lW_iz-DK9MfsQjDzj-bPSsOnCphjJcIRZJ1TTNPD6BUx19yekR9KBakkKikC9qo_HMYu6Kdy1i_Y9u-ZncxBFAubeTnq1x9VSHAleuIH3zvLCSDhJ8ws=",
+        "source_type": "commercial",
+        "retrieved_at": "2026-09-29T15:00:00Z",
+        "quote": "have you ever painted something and then once it dries you get these weird watery bursts almost like cauliflower. that's called a background and it happens when water isn't evenly mixed with the paint. so it pushes the pigment around a lot of the time it's seen as a mistake but what if we use that effect intentionally.",
+        "reused_from_amelie": false,
+        "seen_in_runs": [
+          2
+        ],
+        "id": "F28"
+      },
+      {
+        "claim": "The Kubelka-Munk model provides a physically-based method for color mixing in paints, inks, and dyes by considering light absorption (K) and scattering (S), leading to more realistic subtractive color mixing than standard RGB blending.",
+        "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-2DF1lQ_UV5B4MUDO-uVX4X8VhHfPuCQzc17aNz_LbZ_f4fRie3xF6NmCNzYbN2xJIokU7Man00AMtUP_avJqy0wmVE-6gJe0wJY0rVFmkupuDO11gAsNdGktABXWBgjj_n48pWrC8KMPNb-xByWRdQ==",
+        "source_type": "academic",
+        "retrieved_at": "2026-09-29T15:00:00Z",
+        "quote": "The Kubelka-Munk (KM) model provides a physically based method for color mixing, particularly useful for rendering paints, and translucent materials. ... In real-world pigment mixing (e.g., paint, ink, or dyes), colors interact based on absorption and scattering rather than simple averaging. The Kubelka-Munk model provides a more accurate representation by considering: Absorption (K) – The amount of light absorbed by the material. Scattering (S) – The amount of light scattered or reflected within the material. This leads to more realistic pigment mixing, where combining yellow and blue, for example, produces a natural green instead of the desaturated result seen in RGB blending.",
+        "reused_from_amelie": false,
+        "seen_in_runs": [
+          2
+        ],
+        "id": "F29"
+      },
+      {
+        "claim": "WebGL2 with Float32 textures is used in real-time GPU-accelerated watercolor simulations, often based on fluid dynamics models, to achieve interactive and high-precision rendering of wet ink effects in web browsers.",
+        "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9IOGVsTBs4iV0hX0SuqkO7s9tcuMHN7JJzoCxI5TRCOqQC_Kq-FL3mvR6lyGqSa0q3jDcTJ0l-2wSDwF3sIbRoQ859UKpqRJNV_IB_aNDp9SFvoAdoyUHTQ==",
+        "source_type": "opensource",
+        "retrieved_at": "2026-09-29T15:00:00Z",
+        "quote": "The fluid model is Curtis, Anderson, Seims, Fleischer & Salesin, Computer-Generated Watercolor (SIGGRAPH 1997), as WebGL2 fragment shaders. The source is on GitHub. ... This tool needs JavaScript and WebGL2.",
+        "reused_from_amelie": false,
+        "seen_in_runs": [
+          2
+        ],
+        "id": "F30"
+      },
+      {
+        "claim": "Capillary action is a fundamental principle explaining how ink flows in pens and spreads on paper, involving adhesion (ink to surface) and cohesion (ink molecules to each other) through narrow channels or paper fibers.",
+        "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvjGmKb8Nso46lZe4CPLjn9PAlEl3u725Mtuz4Bqgel-eaUr0lRYCIokm8_PBtniZVfc5G31GBSTQgiuBtgAzL6x11BdRWWNXdAvzs7K2lL7OfK6xgA-FivjBQaFFu1PYu2nsgHZY=",
+        "source_type": "commercial",
+        "retrieved_at": "2026-09-29T15:00:00Z",
+        "quote": "it all starts with two main forces adhesion and cohesion adhesion is the attraction between ink molecules. and the inside surfaces of the pen's ink feed which are usually made of plastic or metal cohesion is the attraction among the ink molecules. themselves these forces work together to pull ink through very narrow channels or fins inside the pen.",
+        "reused_from_amelie": false,
+        "seen_in_runs": [
+          2
+        ],
+        "id": "F31"
+      },
+      {
+        "claim": "Feathering and bleeding of ink on paper occur when ink seeps into the paper's fibers via capillary action, with some inks and papers being more prone to this effect than others.",
+        "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHo55WNPNKMGxk4R3R17wRomUuAMK26uG9x8OVOkZmvc4gZthBZjYQGU7y84I-LS3QgzNE43uzv9qQYITAvf5FOTWI5T5x7P3vQtzAmH7NpXmtDjyzc4a2-Ue5xNa9jedKjvcIZH9Qo6JBxvSJyiH7mddzEidC1ASXdAwiuTtnHmmxEaRWsLZb",
+        "source_type": "commercial",
+        "retrieved_at": "2026-09-29T15:00:00Z",
+        "quote": "Feathering and bleeding happens when an ink seeps into the fibers of the paper by capillary action. The wicking of ink off the applied stroke can ruin the linework. Some inks and some papers are more prone to it than others.",
+        "reused_from_amelie": false,
+        "seen_in_runs": [
+          2
+        ],
+        "id": "F32"
+      }
+    ],
+    "contradictions": [
+      "The assumption that simple RGB alpha-blending is sufficient for realistic color mixing in digital paints and inks is contradicted by evidence showing that physical models like Kubelka-Munk are necessary for accurate subtractive color mixing, producing vibrant rather than muddy results."
+    ],
+    "gaps": [
+      "A universally recognized 'capillary threshold' (εmin) as a decisive algorithmic breakthrough for precisely stopping ink spread is not explicitly named or detailed in the search results, though the concept of controlling or limiting capillary action through thresholds is present in various simulation models.",
+      "While anisotropic feathering along fiber direction on specific papers like Washi is mentioned in the premise, detailed verification of this specific anisotropic behavior in simulation literature was not explicitly found, though the general principle of ink spreading along fibers is supported.",
+      "Despite its known benefits for realistic color mixing, the Kubelka-Munk model is not universally adopted in commercial digital painting software due to the increased complexity of tracking multiple pigment channels instead of just RGB values.",
+      "Achieving a truly comprehensive, real-time physical simulation of all complex 'wet ink' phenomena (e.g., detailed paper fiber interactions, multi-component ink dynamics, and drying at various scales) remains a computational challenge, often requiring simplified models or empirical approximations for interactivity."
+    ],
+    "terminology": [
+      "Advection: The process of moving a substance (like ink or dye) by a flow, a core component of fluid simulations.",
+      "Backruns/Blooms/Cauliflowers",
+      "Capillary Action",
+      "Capillary flow/creep: The movement of fluid in narrow spaces due to surface tension, relevant to how ink spreads on paper.",
+      "Capillary threshold algorithm: An algorithm that would control ink spread based on a specific threshold related to capillary action, which is the ability of a liquid to flow in narrow spaces against gravity.",
+      "Digital Watercolor/Painting",
+      "Edge Darkening (Coffee Ring Effect)",
+      "Edge darkening (coffee ring effect): A phenomenon in ink/watercolor where pigment migrates to the drying boundary, creating a dark rim.",
+      "Feathering/Bleeding",
+      "Float32 Textures",
+      "Float32 textures (Half-float textures): Textures that store floating-point values with 32-bit (or 16-bit for half-float) precision, crucial for accurate physics simulations on the GPU.",
+      "Fluid Simulation: The computational modeling of fluid behavior, often using equations like Navier-Stokes, to simulate phenomena like flow, diffusion, and turbulence.",
+      "Granulation: The effect in watercolor/ink where pigment particles clump and settle into the texture of the paper, creating a mottled appearance.",
+      "Kubelka-Munk Model",
+      "Kubelka-Munk optics: A theory modeling the appearance of paint films by considering absorption (K) and scattering (S) coefficients of pigments, leading to more realistic subtractive color mixing than RGB interpolation.",
+      "Marching Squares: A computer graphics algorithm for extracting iso-contours (lines of constant value) from a 2D scalar field, used for vectorization.",
+      "Marching Squares: An algorithm used in computer graphics to generate contours from a 2D scalar field, often used for vectorizing implicit surfaces or fluid simulations.",
+      "Modular SDK architecture: A software development kit designed with independent, interchangeable components that can be combined or integrated into different applications or frameworks.",
+      "Navier-Stokes equations: A set of partial differential equations that describe the motion of viscous fluid substances, often solved in GPU-based fluid simulations.",
+      "Non-Photorealistic Rendering (NPR)",
+      "Ping-pong technique: A GPU programming pattern for iterative simulations where results from one frame are fed as input to the next, using multiple framebuffers.",
+      "Shallow-Water Fluid Simulation",
+      "Web Audio Haptics: The use of the Web Audio API to generate tactile feedback or vibrations, typically for enhancing user experience through touch sensations.",
+      "WebGL2: A JavaScript API for rendering interactive 2D and 3D graphics within any compatible web browser, providing access to GPU hardware acceleration.",
+      "WebGL2: The second major version of the Web Graphics Library, a JavaScript API for rendering interactive 2D and 3D graphics within any compatible web browser, offering enhanced features over WebGL1.",
+      "Wet Ink Simulation"
+    ],
+    "confidence": 0.9,
+    "queries": [],
+    "quellen_used": [
+      "https://29a.ch",
+      "https://akvarellskiss.se",
+      "https://brewser.io",
+      "https://creativebloq.com",
+      "https://css-script.com/realistic-color-mixing-library-kubelka-munk-theory-spectral-js/",
+      "https://daily.dev",
+      "https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API",
+      "https://en.wikipedia.org/wiki/Kubelka%E2%80%93Munk_theory",
+      "https://evergine.com",
+      "https://flow3d.com",
+      "https://fujipress.jp",
+      "https://gatech.edu",
+      "https://gist.github.com/dmnsgn/7608827",
+      "https://gist.github.com/dmnsgn/7608827?permalink_comment_id=4842186#gistcomment-4842186",
+      "https://github.com/Jayanth0124/3D-gesture-control",
+      "https://github.com/VexoaXYZ/InkWash",
+      "https://github.com/VexoaXYZ/InkWash/blob/master/LICENSE",
+      "https://github.com/amandaghassaei/FluidSimulation",
+      "https://github.com/deftio/ColorMix",
+      "https://github.com/ileivoivm/inkField",
+      "https://github.com/ink-lang/ink/wiki/Open-source-Ink-projects",
+      "https://github.com/loicmagne/webgl2_fluidsim",
+      "https://github.com/lwander/open-km",
+      "https://github.com/webgl-operate/webgl-operate",
+      "https://github.io",
+      "https://ibiblio.org",
+      "https://icolorpalette.com/color-mixer",
+      "https://ileivoivm.github.io/inkField/tech-doc.html",
+      "https://jamie-wong.com",
+      "https://johnowhitaker.dev/inkwash-personal-software/",
+      "https://johnowhitaker.github.io/inkwash/",
+      "https://johnowhitaker.github.io/inkwash/about",
+      "https://medevel.com/17-free-open-source-webgl-libraries-with-webgpu-support/",
+      "https://medium.com",
+      "https://mysimulator.uk",
+      "https://news.ycombinator.com/item?id=40707797",
+      "https://nih.gov",
+      "https://observablehq.com",
+      "https://olhastefanishyna.medium.com/fluid-simulation-in-webgl-the-advection-step-d8721345155f",
+      "https://ostefani.dev",
+      "https://projectchrono.org",
+      "https://readthedocs.io",
+      "https://researchgate.net",
+      "https://runcell.dev",
+      "https://sagvyn.com",
+      "https://teamzlab.com",
+      "https://teamzlab.com/tools/webgl-fluid-simulation/",
+      "https://tiptap.dev/",
+      "https://tiptap.dev/docs/editor/guide/components",
+      "https://tiptap.dev/editor",
+      "https://tiptap.dev/templates/simple-editor",
+      "https://unice.fr",
+      "https://unicorn.studio/blog/webgl-for-designers",
+      "https://uw.app/webgl-fluid-simulation-demo",
+      "https://vanityibex.com/kubelka-munk-color-mixing-in-vex/",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE17Hb_n97sfI35fQYxn1JIZyzJDTeCNss3JD-XlpuDpzf6wqul9Zl1-SdCyC17vdx1imCr-ZaTiSh-ILv_2idgox6BLiee15YEQTlXla8bX99olLC31DpeHFk2d5KhzDvbxftbiQSr5VJil7NUgvU=",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4G7Rh30hxN0QuzmjKGTxUSlgI8qTThYnMpCF5o6gTFOQWUp28lmcTtS2881SYfenpKjwR-vKMk1ibx6KQ7IUZBqXGoBuxDGufnB6Tx8gucRUmqmiM-L2P7VV6AsEPX5v5dguZpzowwQK6Gg2R78d2WCIQYAUs16hX8ogv",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9IOGVsTBs4iV0hX0SuqkO7s9tcuMHN7JJzoCxI5TRCOqQC_Kq-FL3mvR6lyGqSa0q3jDcTJ0l-2wSDwF3sIbRoQ859UKpqRJNV_IB_aNDp9SFvoAdoyUHTQ==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEA6SaNDUgttBjZar4BsGQLsp2URP7ova2_m3lRJIDLpCc_LfYsqkmBC3MNe7TPlfqLrTicTGK0ChTL64_NJPWSekIjL1FrgVKjEqXuserYZ8aaZOdMpVMsR8iebUNNIDWkGCt7FHGCDaij2g==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBxcZZISt0zuc5_TEm6ybhFTRxvJPRIVQoIUGnNgJmmgT8RDIyJPj1tfRtGJFFIfN7jzxp28jUbqakI-_M4NnC_rbljwrNAXua8DVAIN4r_EQzXSmnMqcvrKfwFm-EmqSxQIvugH38r9BoOh27HnelQJbrDW9D3vSKBTq3HghYXjzcsQ-norzsNUNDe4S_rGMG7J8M-5dwKMGuTw==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQED2I7TYVlzATubYqFGZf9hs9g-fRqx1XnbF-rm4JRdplCzbH7fZbaRxs_sU-3xhM9L0FGYgAB_QBY0f0H8dbYNR8D2_JYzUJ3Oi08ZVOB6hw==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDgmjjroTkT2rHkVJQE7E4mvtOywYtvZlh6cLGpQ-DQnTJTu-NgWkhULlopj9w05f_FEjePXaKSt-fephZvu1AkI1PqcXzyepUlZdhMOTb-2gTh4agUncREJJBQU9vdOlFv5l7ND4V-n0jE_LHT7vgHXszmcPNLnBNC6bi9W9bTPRuBeI=",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHo55WNPNKMGxk4R3R17wRomUuAMK26uG9x8OVOkZmvc4gZthBZjYQGU7y84I-LS3QgzNE43uzv9qQYITAvf5FOTWI5T5x7P3vQtzAmH7NpXmtDjyzc4a2-Ue5xNa9jedKjvcIZH9Qo6JBxvSJyiH7mddzEidC1ASXdAwiuTtnHmmxEaRWsLZb",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJaO1NUDkwhS-9WI_nOprUQ7wJmsyW2X7zLZ8L9BoLS9jXJDxNCPgfcdr_iS3tYZnO_LwQx5ulqH-ZI5OerXVH7bTQA68IBUmjCewqhFEnNEJs2IOjOtJ5xRVE8mvRpx4TWL4MqkAz4AqvB7rb1kLWMnlkPQxEOdFgkQnx9DOUmHlAOYP-cCe5lKIPCbJsnyejr_ux-onCWjR0Y1xcOvDeuS0LqVGYs19Mm6L91d9rH5cIA6-Ll3x2Wqa17ve1oMKAnsKluJA==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKFa3Dl5X7MiFuOAP-GvpdaAVdEh1iKDTIRKRU8DlTGECxnAoqUUnkwwGBCJ73kCHi3-hftX_vKpsnOhxNSn6NmevB1CJN1hmYdZQ8daieOgZ79ktP13tCUlNHPAfCrmPXEPxHQslIIPpA7QRW4FTNbf_vuwOeDLWXFQOmBfXF6bg_90hMtxZQGkr-jvxJPeUC8QU-1DlHoFYA7VazirUudB_oqnyPaQC8CHHvoiVGQ_tpwA7YF8O5UniPelQxEIbEcdsR7sKq5ptmzsKAyBOrhRJiWk-1Sx4TExn83RhG",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_7Vlkzsj0xbUl8O6OvsDT7MY4lzpbadGzVd0zcoIJh5LQXe3DQPMfhu6KgTos8fYngU98kLEitmbdEWudBtq26H-UCPvG0196DIABXv86AxxFawbGf-CTbgnPQChLUqEOvw==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEexQgV8v-HaGcFlcZuumsJPWa_NV7vKQtbHzNUOnWQqIarxm0EhrgPaxqS0wOrjQVini0EqJfvhKkKuWQlc6_WgEo2ysd5wE4JpA6H9uMymCTq6oY77ZV3_UtZWa3ObQKEF-rjXoRqK59omnFZsMb-Fg6enavt2B697bAfGlJPpg==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEirnOSKn55VjBudEetw0SrxfXUd0nC90Nw4YMy-jJsWS5eXyhI80mjbH5UhwZ8keSHk-W1YTWf_Z9nynTb5KPzSkM6nQKHWvEyplMA3UlUgIHjJFOUfSPZL7c=",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmhHIs5Yj_30HUtRRAOdzhg085ayXyMpugtKJV6cgR5SMSR5gUaKEd-LS3ATZT89OgVZpdRD1sgLMijTUB3KQ6E9unDQJI6t2gsPBEMPtsEQcmCN4cZjEy9f0=",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEujhzyYL04G7TBGdxy7Hd_w2RIYuFoRYRy9DNKRy9LR5gvJsyfna4aS9n5B0ZnXmuXaACpe3bENZNomba3TWAt2K5-_S3oLv66XESre0d_XDLS_6j0C5wj4mfAqUup_JYYL2A8cqgy_gbVV455A684WsS_Z6l8rGo8KesRJ5k=",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvjGmKb8Nso46lZe4CPLjn9PAlEl3u725Mtuz4Bqgel-eaUr0lRYCIokm8_PBtniZVfc5G31GBSTQgiuBtgAzL6x11BdRWWNXdAvzs7K2lL7OfK6xgA-FivjBQaFFu1PYu2nsgHZY=",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvzXAMkO-8UtkXZVNXum_lW_iz-DK9MfsQjDzj-bPSsOnCphjJcIRZJ1TTNPD6BUx19yekR9KBakkKikC9qo_HMYu6Kdy1i_Y9u-ZncxBFAubeTnq1x9VSHAleuIH3zvLCSDhJ8ws=",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5L53V6vN1bup8dIRV8CP1gaW2wKFxFB9O8YfErvX4dclNH4DiE2mH2k8MMfwKGcuT5Di9DVCLI3Hlo7gVpiWhJ5IS2I7l4PfTLfVd9jmzzfSpCBGBoIb41JCO8LI6501w660EfjOJvichraVRtDf_db5cxiUWz3ApeqeDPer3dCUTM2jKIgAca5pJ5OqqY6-6p52vFzzt6gZBvbAb94=",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFManj0WMCz0Fxt22C67wy29zvH29BUFOlJGSTlCacqbw1HAInHCWcE39IgiaklcIcpC_FDoa-GeUyLGAMqK3b5WYrZgYgqjaHwZV-pQ-aSMZD1BA8hsQkKAr9c3wkAnYn8h6OrjPo=",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZ09_cfCV8KoU7XX6uWrYoz7nl5sC9QyU_i0RezTLQDZJ9C1oUdCWcCHaKncGxQ-KnNJqglGoiIC1uWn1O9fA6TWnqk3W3KjwQ4K50SMhoRZ2cofpyzBs98tJz0kRY1V6i4kOxQGGm_FjmE=",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmvKIjzcFIKfrg_BFXcBsiSMyHe-9dLUJBrnBNnyX350SIYlBXc3zXGFnIn3rUTjFzoQ_Qql_KUmRV503y1tmo0FTkuBExIoQGfCXhneYaDe7AAJEdrwP63JhA_MTfeI5QM6nb",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6vIDhj2XqmQMn3IvV-dNGZL_q0l_geqvPPs3-konRx7ubu1X732l7Dz3tzxn1hPLYX3B5FU5xCH6PxVg3iGUHedXwxNu5jZfkCiDnZNVf_FT2_WkQPI2SSS_SU540CmWVewBWY3KuCYfaNDvtM-tUnKjdFByIBQwz1JHa8wXErOjzY3gSThBLGZLdap5f-ccTvkr2MT3RC6-cjYRJpgeqTTxI4Ph7M5dQgjlyZft65qNGAYZuIA==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGH-6Ymw45EnOe-2eeGYNE3-WOr49r1S5jeCi3DlQx7MxvMHJTD_CYaDkNo-TAYG-v95i-NRzDWnh8kxSf0w_8a-XKQrTuvd5GhymoVpLHH6voXope46t93Eemov3aByBaRcCMWj-BVevj_cnaXF8dPr_kEBvKZl2dhthOFo2KEtnoS8_0qaVHS35IU4D8qBYoZdIfL87ZbK2QAO4ByMyEW2zT6HjS35gzpVXRCAA_7fE5T_erPN5gm9",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKjUjxsEqw8DvYUE8iuG_QdMdGxfLwJChjmw6E3sR_me80ZvCbws8_1lZAe-YjTcifAcamfvOfheCybE3PaY63lGG204mTlfYDG9KUrfs8Qar00a2uO38_bpo9mUb89ZZSzKo40zOUiRXkHGG3L9jqNOneI4h2DcBuRzvndiGOOjb_RjV8xSMh1DNm5GyTejiiffMbPlAMK_ZFlmRAFFer6-nkNBlwq_37l_xggMHWCU8ySKVDExpFxYD32M2phQlcAA==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGTnTqpvMQMhjUS2LdjG_4TVutqbGgnC7dg8sh807x0wO3knXPwgCT38dUt0RYoSN3EzC-7O198kTmjGiLbuMVMXm7ebIm2F56SKIQwNbE_dZ3YUypwycwxHqWPI_vsT_omuIZEW7bLvGX7iZ6cy_N6",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWJ8o2f4Mb3mfTdYJTKFVSK2AO4Sr_xsC_Q3okNzVqs-UGo457tBhPfUFLeW7i6rb4eio3pk3s2sZUGsxR42WOw-FtG2UGh9JgE-OZTPH5qZGkZGTGkPy6UE0kSqdN4T9V1ktwkOyYcf5umpaiElTLFZELLGBR960LvFdXUQ==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGa0YkmqruMTJ6WjtbMwWlP1BwgAEHf8tO61_1NwMv4HsEalDIPhnVdEsE3cXbHqLqntbeZDc_U_QYlXW7fG8ky0nvfjB91RXS_GYEjwshdxAeTfcr3UT2UEGeMMQB9VwQJ-c6XXpHa9HvKF3gXXRlRwD3t54wOCGT7RwfANb13tCUlNHPAfCrmPXEPxHQslIIPpA7QRW4FTNbf_vuwOeDLWXFQOmBfXF6bg_90hMtxZQGkr-jvxJPeUC8QU-1DlHoFYA7VazirUudB_oqnyPaQC8CHHvoiVGQ_tpwA7YF8O5UniPelQxEIbEcdsR7sKq5ptmzsKAyBOrhRJiWk-1Sx4TExn83RhG",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGeaKAzzGhLxJMiyPvh7G3BKFTLU06OdqlW4geIVwCB6FkBzFCTynGLMdchn66CjKLfLmN4cnS_BM-fXQ1-NZ2CctXOgRHv_NTtWDFO2W3sV9-gAai3FhCazA==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGecXYIOjrKiSPMXE01BVEZh9QCIbKuvaDsAEZ5rgzRnIp4P6T145ZBcG90WCafJzrqY41HQYssWzoX1w4aY7gxxVyeX4BqN5Kiead14TSMODYAfSEYN1Sq3d0trX0MmYPa2IHU0_JUX3gRf_6GYfS96e71DiZZexc-49EFuQmwQqu-wuaIdGQgbZy7TM9Pxr8psbte-zwwBo8=",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGiCUkFavWxWPSql9sqPODKjARcmIAyVQBvqA_FMuS_bcJx8PymAoSXPN89rp--CJ-fi2xsnKXzvJEyqbW8qrBLrdKiYt8NTVyfwpFtJKeo__oj9bCTrQVP5sQZOIFELraFE4Vxv6FEjlTUtvO1",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpwnzcxeyiPLZXbkUgPk6oqnPt6HvCDAOW-y_P0wU2e3Q6QVw_CBek1Qi9VBp1NFDMUkg-Xf9R6SHbn8bxubjU7KMMYRfPGUE1Lw6XPlXKBeh0uWIetmNh7zbHnBqcJHuK1pCg35A26fLC8bkSLuObLRw6vOP60nj4DkszNz-pWdhuuPlqIJe8jDmc4rlhYs8py1E3PSY=",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrLYVq6j-bWOqIeiwpfiSrmPs_DGNzadWzc9qoHfOfYUq-U8XcKyELlbbjCkarTW64POIbIRYWoHKZvNYkmAGJ6efvyGmf5YhXRFtbrWfn_HY=",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-2DF1lQ_UV5B4MUDO-uVX4X8VhHfPuCQzc17aNz_LbZ_f4fRie3xF6NmCNzYbN2xJIokU7Man00AMtUP_avJqy0wmVE-6gJe0wJY0rVFmkupuDO11gAsNdGktABXWBgjj_n48pWrC8KMPNb-xByWRdQ==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-m8ay21n3Ln_AV4R0oimblBulF8eIhsPk3siTlF1JoQQS0vJss9UWALuIx5cRaJBQwpswd-IAHZGgeSDkyhH2xllU9nEBsi1LMOJ46ZmSZ409SAAXve0U95lyZa5ZkmflLplA6ba4D9fn82IGt0C46rJIgtgbwILM6PVJSeRfxHfP8t8fa4arZGGA38j9fQ==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2ef1RpjIy7zoFXh_xsiWKVW9gaclB1sPI9uflh1C466TcKbdUEoZpq0Sr2ZXwBmQe0LJrflVzqsZWRu4IkJPlltdNWqUwlqQXGky0CgVqm_5UGnAosn0MXQhSy0qyVQJFgt9fuGTjqEwBOCINYZwc1Jht-Ecgdiq5X1i-JJc5ijYr7uVNNN-r6O1TgQkaz0C46rJIgtgbwILM6PVJSeRfxHfP8t8fa4arZGGA38j9fQ==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9aeuPfThm7S0_4yu6YpRj3y4O8qWjDeYlms20yECBq-Y55LFbx-N8rNill8NUBULOKohKjPZ2WHJJHOnsPqFF7L88FPa-jr6th3Q330_8tj8w_hW70eqak_saAV4VXUkPcVmVYUVBAFF69hBHmk9szduAAnFoGK09iM0cQ4f7AvMNRRoD-Lk=",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHC5Dys4qLw_SyO1LQeIKZcVb7WCsbgMr3-4rp8jRGjARyzBTHTjuRdinVUDdTuFvuYTIHWF1lCe-IybiyPOW2fWjOf3RMsrptVup1YKXpl78ahvP4QwfolsxP3yQZXfdBq4Ho=",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGkRpy5bIisfxmKXky9MHKxWpxPxaN0mlshD-kKhSbgHldYFDZtEaOXr15aadIPf5i8OMfYEdslEP8Al2NHOJDiDNXpqxp2S4Nqlajh2bu8lw2GidSJtQLzSGuXsVXz1_RGcF-RTJf7Rji4OcopWgDYevEfw21szYEHz3Om2DPqJEcHaBRLNqyFoetiSWJQGokFdzdNBwf",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHeo2lvry1RNXIZuBbukr40OZkPGb5q116VDhqfY3yYKKz5Z2ZY9NFXcrz42V4So7tf1ufVskwrXFfQOYOyeUfH-RQEaF4P125tz8fbAThHwyyeSppZmhXMdfVfmDPns_aDcOUz_OFJDo_GUbgYVBQOu69WCvf4wTzVtwSzBS3Y57KWQg==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlTRCoYG_eFKelh5uY-FiNRy1mHyB1Nw9EXEv2PdcO1zOyJcplJbqZOEXGCTrsVoAvt4vKX7jEgxr_ikD7E50F8hpzYJ0iZAz33dXJc7lp3Bkp2mpH_cK8THXwID37VfXSOk20N5OHz-Vk7OqdTLEm-r",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnxxaXTb4ZDgDNr-NpsdvIOinNwNBS2NoWLimF283cBPRrquGnwtALsjLH6Rj9fK1OVRW7mmrnQRFC2ESMUPQcsG242x5HwMcg60HM8FrkN6WXt4KRwgalh7tcPN7eq7WrXM92V2Z8c26rJiEumYHZTsLB70dyLEkzPHXLsDbzFbQoo4xv8jIR5Q4Ximb8sUPZa3z_7aDwQeuM99hHdcpiDRcJIr3n0N4iDk4=",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpCEk393nWsAPMbtggj-5CHrNdl3y5vcmf_Oqy6pJQCTujCwkWoVgyiqiJtQSm75EJZGxEc-kRx55UAezDmJSHUB6XlxF193QQcRWEXh1L3N3aRlfmja20X_pVNCS2hpmfJpVLwn4NlZQofl87CJJn2y8J",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHuMge0-XmRQ6X1BiIYOG0gK5mIOx8wfonjCHSF-kNQtpw6mvvDetvP-lml9dRu0hkQtmko1v36BMeq7_WUEsqKfUrSsDYQVOK4iYTW8bkwFjN9XGLI10mo92VLhgbna42i8lkngAM=",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvKxUJLP100BPuNNS3Ed_wl9ncdrjxWOSsVH4CmxEzJzw5V9if8tjuhWuDzEORnE3QIzFxRtCYm9pd0fuvqfE7w0Hb8uZ4JgroTDRQp4XDh7js6Oh_fsKyCBfd26WjsjjuH2C0NNQ=",
+      "https://web.archive.org/web/20210820130830/https://code.tutsplus.com/tutorials/8-best-free-and-open-source-drawing-libraries-in-javascript--cms-37409",
+      "https://webgl2fundamentals.org",
+      "https://webglfluid.com/",
+      "https://webgpu.com",
+      "https://www.babylonjs.com/community/blogs/using-webgl-and-pwa-to-build-an-adaptive-game-for-touch-mouse-and-vr-devices/",
+      "https://www.fluidmechanics.info/capillary-rise-simulator/",
+      "https://www.greensock.com/docs/v3/Plugins/GSDevTools",
+      "https://www.mdpi.com/2571-5577/6/3/102",
+      "https://www.mdpi.com/2571-5577/8/2/57",
+      "https://www.reddit.com/r/javascript/comments/10vj901/5kb_webgl2_fluid_simulation_implementation_of_the/",
+      "https://www.reddit.com/r/stylus/comments/1c0211o/i_built_a_webgl_pigment_mixing_palette_with/",
+      "https://www.reddit.com/r/webgl/comments/1c9447p/looking_for_help_recreating_a_fluid_webgl/",
+      "https://www.researchgate.net/publication/220677443_The_Kubelka-Munk_Theory_for_Color_Image_Invariant_Properties",
+      "https://www.researchgate.net/publication/260027788_Numerical_Simulations_of_Capillary-Driven_Flows_in_Nonuniform_Cross-Sectional_Capillaries",
+      "https://www.secretweapons.com/mixbox/",
+      "https://www.stevenabbott.co.uk/practical-coatings/kubelka-munk.html",
+      "https://www.youtube.com/watch?v=s0l10aG_21o",
+      "https://youtube.com",
+      "https://zeontools.com",
+      "https://zeontools.com/webgl-fluid-simulation/"
+    ],
+    "search_accounting": {
+      "month": "2026-09",
+      "queries_in_run": 14,
+      "month_total_queries": 61,
+      "free_allowance_remaining": 4939,
+      "overage_queries": 0,
+      "overage_cost_usd": 0.0,
+      "is_within_free_allowance": true
+    },
+    "blind_review": null,
+    "trend": [
+      {
+        "run": 1,
+        "timestamp": null,
+        "label": "legacy",
+        "status": "ok"
+      },
+      {
+        "run": 2,
+        "timestamp": "2026-09-29T16:23:10.513060+00:00",
+        "label": "blind packet (migrated)",
+        "status": "ok",
+        "model": "gemini-2.5-flash",
+        "question": null,
+        "findings": 11,
+        "new_findings": 11,
+        "grounded": 0,
+        "grounded_ratio": 0.0,
+        "quotes_verified": 0,
+        "quotes_not_found": 0,
+        "specific_urls": 11,
+        "queries": 14,
+        "confidence": 0.9,
+        "gaps": 4,
+        "cost_usd": null,
+        "review_supported": null,
+        "review_unsupported": null,
+        "review_hypotheses": null
+      }
+    ],
+    "runs": [
+      {
+        "run": 1,
+        "timestamp": null,
+        "label": "legacy",
+        "metrics": {},
+        "result": {
+          "packet_id": "wet-ink",
+          "topic": "Physical Ink Simulation WebGL",
+          "question": "Initial: What open-source, web-based, physics-driven ink simulation engines or libraries exist that replicate phenomena like capillary flow, edge darkening, and granulation using WebGL2 and offer vector export, and how do their architectural approaches, performance, and feature sets compare to Wet Ink's modular SDK? | Follow-up: Beyond 'Inkwash', what open-source, web-based WebGL2 ink simulation engines or libraries explicitly integrate Kubelka-Munk optics, a capillary threshold algorithm, Marching Squares vector export, Web Audio haptics, or a modular SDK architecture with framework-specific integrations (e.g., TipTap, Obsidian), and how do their implementations compare to Wet Ink's claims?",
+          "rounds_executed": 2,
+          "round1_summary": {
+            "findings_count": 12,
+            "gaps_identified": [
+              "No open-source, web-based, physics-driven ink simulation engine or library was found that explicitly combines all the specified phenomena (capillary flow, edge darkening, granulation) with WebGL2 and offers vector export, and also provides a detailed architectural comparison to Wet Ink's modular SDK.",
+              "Specific implementations or discussions of the Kubelka-Munk model for physical light absorption and scattering within WebGL2 ink simulations were not found in the search results.",
+              "Details on the implementation of a 'capillary threshold algorithm' to control ink spread, as described in the Wet Ink context, were not found in other projects.",
+              "Integration of Web Audio for haptic feedback in open-source WebGL ink simulations was not identified.",
+              "While some projects are open-source, a modular SDK architecture comparable to Wet Ink's (core simulation controller, procedural Web Audio synthesizer, vector SVG exporter, framework integrations) was not explicitly detailed for other existing solutions."
+            ]
+          },
+          "findings": [
+            {
+              "claim": "Marching Squares is a well-established computer graphics algorithm used for extracting iso-contours (lines of constant value) from a 2D scalar field, which can be applied for vector export in simulations.",
+              "source": "https://mysimulator.uk",
+              "source_type": "academic_resource",
+              "retrieved_at": "2026-09-29T14:00:00Z",
+              "quote": "Marching Squares is a computer graphics algorithm for extracting iso-contours (lines of constant value) from a 2D scalar field sampled on a regular grid. Each 2×2 square of grid cells has four corner values; thresholding each corner against an isovalue produces a 4-bit index (0–15), giving 16 possible configurations. A lookup table maps each configuration to one or two line segments that approximate where the contour crosses the cell, and linear interpolation on the edge gives sub-cell accuracy.",
+              "reused_from_amelie": false
+            },
+            {
+              "claim": "Marching Squares can generate contour lines from a 2D heightmap, and algorithms exist to merge these segments into continuous contour lines for applications like pen plotters.",
+              "source": "https://observablehq.com",
+              "source_type": "community_resource",
+              "retrieved_at": "2026-09-29T14:00:00Z",
+              "quote": "Say you want to generate contour lines from a 2D heightmap. The marching squares algorithm is a good fit for that. It will compute 0, 1 or 2 line segments for each 4 value-square in your heightmap. But if you want to send the result to a pen plotter, you'll probably prefer the segments to be merged to form the actual contour lines, to avoid too many pen ups and downs.",
+              "reused_from_amelie": false
+            },
+            {
+              "claim": "Many WebGL2 fluid simulations exist that run entirely on the GPU using fragment shaders and floating-point textures, often achieving 60 FPS performance on various devices.",
+              "source": "https://runcell.dev",
+              "source_type": "product_documentation",
+              "retrieved_at": "2026-09-29T14:00:00Z",
+              "quote": "The Navier-Stokes solver runs entirely on your GPU via WebGL fragment shaders, delivering smooth 60 fps fluid dynamics without taxing the CPU. Desktop & Mobile. Full mouse and multi-touch support. Paint fluid on your phone, tablet, or desktop — the simulation adapts to any screen size automatically.",
+              "reused_from_amelie": false
+            },
+            {
+              "claim": "These WebGL fluid simulations commonly use a 'ping-pong' technique with framebuffers to manage evolving simulation states, passing data from one frame to the next.",
+              "source": "https://ostefani.dev",
+              "source_type": "blog_post",
+              "retrieved_at": "2026-09-29T14:00:00Z",
+              "quote": "The previous article introduced the ping-pong technique, a critical pattern for creating iterative, stateful simulations on the GPU. It showed how to feed the result of one frame back into the next.",
+              "reused_from_amelie": false
+            },
+            {
+              "claim": "Advection is a fundamental component of fluid simulation, describing how a velocity field moves quantities like dye or ink, and is often implemented using semi-Lagrangian methods in fragment shaders.",
+              "source": "https://ostefani.dev",
+              "source_type": "blog_post",
+              "retrieved_at": "2026-09-29T14:00:00Z",
+              "quote": "Advection is the process of moving a substance by a flow. A crucial component in understanding how the process works is a velocity field — a mathematical function that assigns a 2D velocity vector to each point in the simulation area, describing local flow direction and speed. In fluid simulation, advection describes how a velocity field moves quantities such as density, temperature, or dye around. Imagine dropping a spot of ink into a river; the current of the river (the velocity field) carries the ink (the quantity) downstream. The process of the ink moving with the water is advection.",
+              "reused_from_amelie": false
+            },
+            {
+              "claim": "The 'Inkwash' project is an open-source WebGL2 simulation that explicitly replicates ink-on-paper phenomena like edge darkening and granulation, and also mentions 'capillary creep'.",
+              "source": "https://github.io",
+              "source_type": "open_source_repository",
+              "retrieved_at": "2026-09-29T14:00:00Z",
+              "quote": "Granulation. A third noise field modulates ink density — but only where pigment is. That's the speckle real pigments leave as particles settle into the paper's valleys. Edge darkening. The shader measures the local gradient of density and multiplies absorption by 1 + 1.35·|∇| . In real watercolor, pigment migrates to a drying wash's boundary and leaves a dark rim — the single most recognizable watercolor signature. Here it's a cheap screen-space fake of that, and it's doing an enormous amount of the look. Wet sheen.",
+              "reused_from_amelie": false
+            },
+            {
+              "claim": "Inkwash uses WebGL2 and requires renderable half-float textures (EXT_color_buffer_float) for its simulation pipeline, which runs at 60 fps even on mobile devices.",
+              "source": "https://github.io",
+              "source_type": "open_source_repository",
+              "retrieved_at": "2026-09-29T14:00:00Z",
+              "quote": "Inkwash is a single HTML file — under a thousand lines, no dependencies, no build step. It needs WebGL2 and renderable half-float textures ( EXT_color_buffer_float ), which is everything from roughly 2021 onward. The full pipeline — twelve shader passes including the 22 Jacobi iterations — runs comfortably at 60 fps on a phone, mostly because the expensive solve happens on the coarse grid.",
+              "reused_from_amelie": false
+            },
+            {
+              "claim": "Inkwash simulates capillary creep by blurring the 'wet' field into its neighbors and decaying exponentially, and controls pigment mobility based on the 'wet' state of the paper.",
+              "source": "https://github.io",
+              "source_type": "open_source_repository",
+              "retrieved_at": "2026-09-29T14:00:00Z",
+              "quote": "Damp paper lets ink creep; soaked paper lets it run. Bone-dry paper is a museum — the shader returns the old value untouched and the pixel costs almost nothing. Water itself moves reluctantly. The wet field is advected at only 0.6× the flow speed, blurred a little into its neighbors each frame (capillary creep — a puddle's edge slowly widens), and decays exponentially.",
+              "reused_from_amelie": false
+            },
+            {
+              "claim": "Academic research has focused on simulating ink diffusion, considering factors like ink density, water quantity, paper fibers, viscosity, and vorticity, often highlighting the complexity of accurately reproducing these phenomena.",
+              "source": "https://gatech.edu",
+              "source_type": "academic_paper",
+              "retrieved_at": "2026-09-29T14:00:00Z",
+              "quote": "Computer graphics researchers at Georgia Tech have introduced a novel method for accurately simulating ink diffusion within water. Calculating and visualizing a realistic trajectory of ink spreading through water has been a longstanding and enormous challenge for computer graphics and physics researchers. When a drop of ink hits the water, it typically sinks forward, creating a tail before various ink streams branch off in different directions. The motion of the ink's molecules upon mixing with water is seemingly random. This is because the motion is determined by the interaction of the water's viscosity (thickness) and vorticity (how much it rotates at a given point).",
+              "reused_from_amelie": false
+            },
+            {
+              "claim": "Granulation in watercolor occurs when heavy or large pigment particles clump together and settle into the valleys of paper texture, creating a mottled or speckled effect, with rougher papers enhancing this effect.",
+              "source": "https://akvarellskiss.se",
+              "source_type": "commercial_product",
+              "retrieved_at": "2026-09-29T14:00:00Z",
+              "quote": "Granulation occurs when pigment particles are heavy or large. Instead of settling evenly on the paper, these particles clump together (flocculate) and settle into the valleys of the paper texture, creating a beautiful mottled or ”speckled” effect. Does paper texture affect granulation? Yes, significantly. Rough and Cold Press papers have deeper ”toothy” textures that catch granulating pigments more effectively. On Hot Press (smooth) paper, granulation is much more subtle because there are fewer valleys for the pigment to settle into.",
+              "reused_from_amelie": false
+            },
+            {
+              "claim": "Some WebGL fluid simulations, such as those based on Navier-Stokes equations, are designed for creative coding and generative art, allowing users to interactively paint fluid patterns and adjust physics parameters.",
+              "source": "https://teamzlab.com",
+              "source_type": "commercial_product",
+              "retrieved_at": "2026-09-29T14:00:00Z",
+              "quote": "Interactive fluid simulations have become a popular tool for creative coding, generative art, and interactive web design. Designers use fluid effects as dynamic backgrounds, loading animations, and interactive hero sections on websites. Artists create mesmerizing abstract compositions by layering colors and adjusting physical parameters. The combination of mathematical precision and organic beauty makes fluid simulation one of the most visually captivating applications of GPU computing in the browser.",
+              "reused_from_amelie": false
+            },
+            {
+              "claim": "The 'Paint' project on GitHub is a WebGL simulation of dynamic painting on the GPU, where paint strokes move along an invisible vector field, but it may have limitations on devices supporting only low precision floats.",
+              "source": "https://github.io",
+              "source_type": "open_source_repository",
+              "retrieved_at": "2026-09-29T14:00:00Z",
+              "quote": "This project is a WebGL simulation of a dynamic painting running entirely on GPU. Each paint stroke is moving along an invisible vector field. You can interact with it using the left mouse button. More on GitHub Explanations. You need to enable Javascript to run this experiment. Your device only supports low precision float in fragment shader. The simulation will not run.",
+              "reused_from_amelie": false
+            },
+            {
+              "claim": "Inkwash is an open-source, web-based fluid-simulation drawing application implemented in a single HTML file using WebGL2 and renderable half-float textures.",
+              "source": "https://johnowhitaker.github.io/inkwash/",
+              "source_type": "open-source repository",
+              "retrieved_at": "2026-09-29T14:51:52Z",
+              "quote": "Pen-and-ink with living water — a fluid-simulation drawing app in a single HTML file. Draw: https://johnowhitaker.github.io/inkwash/. About (WIP): https://johnowhitaker.github.io/inkwash/. Demo video of a quick sketch here (Thread contains more examples). The pen lays down dark ink; pressure and speed shape the line. The brush (hold the pen's barrel button, or press b ) lays down water instead — ink … Pen-and-ink with living water — a fluid-simulation drawing app in a single HTML file. … The pen lays down dark ink; pressure and speed shape the line. The brush (hold the pen's barrel button, or press b ) lays down water instead — ink flows, bleeds and blends only where the paper is wet, then gradually dries in place. On iPad, the Apple Pencil draws and your finger is the water brush. Works on phones and tablets without a stylus too — the controls stay on screen. Keys: b pen/brush · w white ink · d fix the drawing into the paper · f fullscreen · c clear · s save PNG. Sliders appear at the bottom edge. No dependencies, no build — just open index.html.",
+              "reused_from_amelie": false
+            },
+            {
+              "claim": "Inkwash simulates color bleeding and chromatography by storing pigment as per-channel optical density and applying different bleed rates per channel, but does not explicitly mention Kubelka-Munk optics.",
+              "source": "https://johnowhitaker.github.io/inkwash/about",
+              "source_type": "technical documentation",
+              "retrieved_at": "2026-09-29T14:51:52Z",
+              "quote": "06black that isn't black. Here is the trick the whole app was built around. Put a drop of water on a line of cheap black ink and watch the edge: the black stays close, but a blue-violet ghost walks out ahead of it. Black inks are dye cocktails, and on wet paper they chromatograph — each dye travels at its own speed. Inkwash gets this almost for free because of a decision from section 02: pigment is stored as per-channel optical density, and the bleed step — which each frame nudges ink toward the average of its neighbors, where wet — runs at a different rate per channel",
+              "reused_from_amelie": false
+            },
+            {
+              "claim": "The `amandaghassaei/FluidSimulation` project is a WebGL shader for mixed grid-particle fluid simulation that supports exporting vector paths as SVG, allowing control over parameters like minimum segment length.",
+              "source": "https://github.com/amandaghassaei/FluidSimulation",
+              "source_type": "open-source repository",
+              "retrieved_at": "2026-09-29T14:51:52Z",
+              "quote": "WebGL shader for mixed grid-particle fluid simulation. Live demo at https://apps.amandaghassaei.com/FluidSimulation. This simulation solves the Navier-Stokes equations for incompressible fluids in a GPU fragment shader. ... This app also supports exporting vector paths as SVG or G-Code for pen plotting (among other things). To start, press the spacebar to freeze the simulation and enter the vector export workflow: ... Additionally you can control some parameters for SVG export: Min Segment Length sets the target minimum segment length in your resulting svg file.",
+              "reused_from_amelie": false
+            },
+            {
+              "claim": "Spectral.js is a lightweight JavaScript library that simulates realistic color mixing based on the Kubelka-Munk theory, offering GLSL shader support for GPU-based real-time color mixing in WebGL projects.",
+              "source": "https://css-script.com/realistic-color-mixing-library-kubelka-munk-theory-spectral-js/",
+              "source_type": "technical publication",
+              "retrieved_at": "2026-09-29T14:51:52Z",
+              "quote": "Spectral.js is a lightweight JavaScript library that simulates realistic color mixing based on the Kubelka-Munk theory. It models how physical pigments interact with light, rather than relying on standard RGB or HSL color blending. ... GLSL shader support: Includes spectral.glsl for GPU-based real-time color mixing in WebGL projects.",
+              "reused_from_amelie": false
+            },
+            {
+              "claim": "The `open-km` GitHub repository provides a working implementation of Kubelka-Munk theory in GLSL for educational purposes, demonstrating pigment mixing with fake K/S data.",
+              "source": "https://github.com/lwander/open-km",
+              "source_type": "open-source repository",
+              "retrieved_at": "2026-09-29T14:51:53",
+              "quote": "Kubelka-Munk in GLSL. This repository contains a working implementation of Kubelka-Munk theory, but with fake K/S data. This being released as an educational guide, and to help those interested in developing their own imaginary pigments.",
+              "reused_from_amelie": false
+            },
+            {
+              "claim": "Mixbox is a library that provides paint-like color mixing based on the Kubelka-Munk theory, treating colors as pigments, and is available with GLSL support.",
+              "source": "https://www.secretweapons.com/mixbox/",
+              "source_type": "product documentation",
+              "retrieved_at": "2026-09-29T14:51:52Z",
+              "quote": "Mixbox is a practical library for paint-like color mixing. Treats colors as pigments using Kubelka & Munk; Packed in a simple RGB-in, RGB-out interface; Available in C++, Python, GLSL and more.",
+              "reused_from_amelie": false
+            },
+            {
+              "claim": "Tiptap is an open-source, headless editor framework with a modular extension system that supports various JavaScript frameworks (React, Vue, Svelte) and allows for custom extensions and UI components.",
+              "source": "https://tiptap.dev/",
+              "source_type": "product documentation",
+              "retrieved_at": "2026-09-29T14:51:52Z",
+              "quote": "Tiptap is the headless and open source editor framework. Integrate over 100+ extensions and paid features like collaboration and AI agents to create the UX you want.",
+              "reused_from_amelie": false
+            },
+            {
+              "claim": "Obsidian Ink is an Obsidian plugin that allows users to insert drawing embeds directly into their notes, demonstrating a framework-specific integration for drawing functionality.",
+              "source": "https://www.youtube.com/watch?v=s0l10aG_21o",
+              "source_type": "video",
+              "retrieved_at": "2026-09-29T14:51:52Z",
+              "quote": "hi let's have a look at what INC is and the changes to it in release 0.5. ink is an Obsidian plugin that allows you to insert embeds directly into your notes. so I'm going to go here and insert a writing embed. and I can pull down from the top and type in new handwriting or I can see it. there um but I've set it up as a shortcut in my toolbar. so I'm going to click this button here and it inserts a writing embed. and as I add new lines. it drops down. and you can see it's pushing down the text around it and let me add a drawing embed here. and I'll draw maybe I'll make this a bit bigger. and I'll draw a house.",
+              "reused_from_amelie": false
+            },
+            {
+              "claim": "The `inkField` project, while not open-source, describes its ink diffusion process using a feedback shader that simulates physical diffusion and uses a force map to push ink along vectors, mimicking natural ink flow.",
+              "source": "https://ileivoivm.github.io/inkField/tech-doc.html",
+              "source_type": "technical documentation",
+              "retrieved_at": "2026-09-29T14:51:52Z",
+              "quote": "Each frame, the feedback shader simulates physical diffusion on newBufferBlack. It reads a force map that defines direction and magnitude per pixel, pushing ink along those vectors to simulate natural ink flow on paper. ... After releasing the mouse, ink continues diffusing briefly (force decays to zero), simulating real ink's lingering spread.",
+              "reused_from_amelie": false
+            }
+          ],
+          "contradictions": [],
+          "gaps": [
+            "No open-source, web-based WebGL2 ink simulation engine or library was found that explicitly integrates a 'capillary threshold algorithm' by name. While ink spread and diffusion are simulated in various projects (e.g., Inkwash, inkField), the specific algorithmic terminology is not present.",
+            "No open-source, web-based WebGL2 ink simulation engine or library was found that explicitly integrates Web Audio for haptic feedback. While Web Audio is capable of 3D spatial audio and haptic feedback is discussed in general computing contexts, its application to open-source WebGL ink simulations is not evident.",
+            "While libraries like Spectral.js and Mixbox implement Kubelka-Munk optics for color mixing with GLSL support, a comprehensive open-source WebGL2 ink simulation *engine* that combines this with fluid dynamics and other ink simulation phenomena (like Inkwash does for fluid dynamics) was not explicitly found.",
+            "A modular SDK architecture specifically for an *ink simulation engine* (as opposed to a general text editor like Tiptap or a drawing plugin like Obsidian Ink) that offers framework-specific integrations was not identified. Inkwash, for instance, is a self-contained application rather than a modular SDK."
+          ],
+          "terminology": [
+            "Edge darkening (coffee ring effect): A phenomenon in ink/watercolor where pigment migrates to the drying boundary, creating a dark rim.",
+            "WebGL2: A JavaScript API for rendering interactive 2D and 3D graphics within any compatible web browser, providing access to GPU hardware acceleration.",
+            "Ping-pong technique: A GPU programming pattern for iterative simulations where results from one frame are fed as input to the next, using multiple framebuffers.",
+            "Marching Squares: An algorithm used in computer graphics to generate contours from a 2D scalar field, often used for vectorizing implicit surfaces or fluid simulations.",
+            "Capillary threshold algorithm: An algorithm that would control ink spread based on a specific threshold related to capillary action, which is the ability of a liquid to flow in narrow spaces against gravity.",
+            "Capillary flow/creep: The movement of fluid in narrow spaces due to surface tension, relevant to how ink spreads on paper.",
+            "Advection: The process of moving a substance (like ink or dye) by a flow, a core component of fluid simulations.",
+            "Granulation: The effect in watercolor/ink where pigment particles clump and settle into the texture of the paper, creating a mottled appearance.",
+            "Float32 textures (Half-float textures): Textures that store floating-point values with 32-bit (or 16-bit for half-float) precision, crucial for accurate physics simulations on the GPU.",
+            "Kubelka-Munk optics: A theory modeling the appearance of paint films by considering absorption (K) and scattering (S) coefficients of pigments, leading to more realistic subtractive color mixing than RGB interpolation.",
+            "Web Audio Haptics: The use of the Web Audio API to generate tactile feedback or vibrations, typically for enhancing user experience through touch sensations.",
+            "Modular SDK architecture: A software development kit designed with independent, interchangeable components that can be combined or integrated into different applications or frameworks.",
+            "Fluid Simulation: The computational modeling of fluid behavior, often using equations like Navier-Stokes, to simulate phenomena like flow, diffusion, and turbulence.",
+            "Marching Squares: A computer graphics algorithm for extracting iso-contours (lines of constant value) from a 2D scalar field, used for vectorization.",
+            "Navier-Stokes equations: A set of partial differential equations that describe the motion of viscous fluid substances, often solved in GPU-based fluid simulations.",
+            "WebGL2: The second major version of the Web Graphics Library, a JavaScript API for rendering interactive 2D and 3D graphics within any compatible web browser, offering enhanced features over WebGL1."
+          ],
+          "confidence": 0.75,
+          "quellen_used": [
+            "https://www.researchgate.net/publication/260027788_Numerical_Simulations_of_Capillary-Driven_Flows_in_Nonuniform_Cross-Sectional_Capillaries",
+            "https://news.ycombinator.com/item?id=40707797",
+            "https://johnowhitaker.dev/inkwash-personal-software/",
+            "https://sagvyn.com",
+            "https://www.mdpi.com/2571-5577/6/3/102",
+            "https://web.archive.org/web/20210820130830/https://code.tutsplus.com/tutorials/8-best-free-and-open-source-drawing-libraries-in-javascript--cms-37409",
+            "https://github.com/Jayanth0124/3D-gesture-control",
+            "https://medium.com",
+            "https://johnowhitaker.github.io/inkwash/",
+            "https://github.com/ileivoivm/inkField",
+            "https://www.fluidmechanics.info/capillary-rise-simulator/",
+            "https://www.secretweapons.com/mixbox/",
+            "https://icolorpalette.com/color-mixer",
+            "https://tiptap.dev/editor",
+            "https://www.reddit.com/r/stylus/comments/1c0211o/i_built_a_webgl_pigment_mixing_palette_with/",
+            "https://unicorn.studio/blog/webgl-for-designers",
+            "https://en.wikipedia.org/wiki/Kubelka%E2%80%93Munk_theory",
+            "https://github.com/deftio/ColorMix",
+            "https://olhastefanishyna.medium.com/fluid-simulation-in-webgl-the-advection-step-d8721345155f",
+            "https://gist.github.com/dmnsgn/7608827",
+            "https://ibiblio.org",
+            "https://www.reddit.com/r/javascript/comments/10vj901/5kb_webgl2_fluid_simulation_implementation_of_the/",
+            "https://webgpu.com",
+            "https://github.com/VexoaXYZ/InkWash/blob/master/LICENSE",
+            "https://www.greensock.com/docs/v3/Plugins/GSDevTools",
+            "https://mysimulator.uk",
+            "https://observablehq.com",
+            "https://runcell.dev",
+            "https://github.com/amandaghassaei/FluidSimulation",
+            "https://teamzlab.com/tools/webgl-fluid-simulation/",
+            "https://www.youtube.com/watch?v=s0l10aG_21o",
+            "https://vanityibex.com/kubelka-munk-color-mixing-in-vex/",
+            "https://akvarellskiss.se",
+            "https://zeontools.com/webgl-fluid-simulation/",
+            "https://fujipress.jp",
+            "https://johnowhitaker.github.io/inkwash/about",
+            "https://www.reddit.com/r/webgl/comments/1c9447p/looking_for_help_recreating_a_fluid_webgl/",
+            "https://webglfluid.com/",
+            "https://creativebloq.com",
+            "https://github.com/lwander/open-km",
+            "https://researchgate.net",
+            "https://nih.gov",
+            "https://www.stevenabbott.co.uk/practical-coatings/kubelka-munk.html",
+            "https://projectchrono.org",
+            "https://ileivoivm.github.io/inkField/tech-doc.html",
+            "https://github.com/loicmagne/webgl2_fluidsim",
+            "https://github.com/webgl-operate/webgl-operate",
+            "https://unice.fr",
+            "https://github.com/VexoaXYZ/InkWash",
+            "https://www.researchgate.net/publication/220677443_The_Kubelka-Munk_Theory_for_Color_Image_Invariant_Properties",
+            "https://github.com/ink-lang/ink/wiki/Open-source-Ink-projects",
+            "https://tiptap.dev/templates/simple-editor",
+            "https://ostefani.dev",
+            "https://youtube.com",
+            "https://webgl2fundamentals.org",
+            "https://uw.app/webgl-fluid-simulation-demo",
+            "https://readthedocs.io",
+            "https://tiptap.dev/",
+            "https://github.io",
+            "https://teamzlab.com",
+            "https://daily.dev",
+            "https://evergine.com",
+            "https://medevel.com/17-free-open-source-webgl-libraries-with-webgpu-support/",
+            "https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API",
+            "https://www.babylonjs.com/community/blogs/using-webgl-and-pwa-to-build-an-adaptive-game-for-touch-mouse-and-vr-devices/",
+            "https://tiptap.dev/docs/editor/guide/components",
+            "https://gatech.edu",
+            "https://flow3d.com",
+            "https://zeontools.com",
+            "https://29a.ch",
+            "https://jamie-wong.com",
+            "https://gist.github.com/dmnsgn/7608827?permalink_comment_id=4842186#gistcomment-4842186",
+            "https://brewser.io",
+            "https://css-script.com/realistic-color-mixing-library-kubelka-munk-theory-spectral-js/",
+            "https://www.mdpi.com/2571-5577/8/2/57"
+          ],
+          "search_accounting": {
+            "month": "2026-09",
+            "queries_in_run": 0,
+            "month_total_queries": 37,
+            "free_allowance_remaining": 4963,
+            "overage_queries": 0,
+            "overage_cost_usd": 0.0,
+            "is_within_free_allowance": true
+          }
+        }
+      },
+      {
+        "run": 2,
+        "timestamp": "2026-09-29T16:23:10.513060+00:00",
+        "packet_id": "amelie-review-wet-ink",
+        "label": "blind packet (migrated)",
+        "status": "ok",
+        "metrics": {
+          "model": "gemini-2.5-flash",
+          "question": null,
+          "findings": 11,
+          "new_findings": 11,
+          "grounded": 0,
+          "grounded_ratio": 0.0,
+          "quotes_verified": 0,
+          "quotes_not_found": 0,
+          "specific_urls": 11,
+          "queries": 14,
+          "confidence": 0.9,
+          "gaps": 4,
+          "cost_usd": null,
+          "review_supported": null,
+          "review_unsupported": null,
+          "review_hypotheses": null
+        },
+        "result": {
+          "packet_id": "amelie-review-wet-ink",
+          "question": "What is the current state of the art, existing implementations, and competing solutions for 'Wet Ink'? Are there known open-source tools, commercial products, or standard frameworks operating under alternative terminology?",
+          "findings": [
+            {
+              "claim": "The ink diffusion phenomenon, crucial in calligraphy and digital art, involves ink spreading on paper, influenced by ink particles, water, and paper fibers. Water molecules diffuse faster than larger ink particles, leading to varying ink density in diffused areas.",
+              "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGecXYIOjrKiSPMXE01BVEZh9QCIbKuvaDsAEZ5rgzRnIp4P6T145ZBcG90WCafJzrqY41HQYssWzoX1w4aY7gxxVyeX4BqN5Kiead14TSMODYAfSEYN1Sq3d0trX0MmYPa2IHU0_JUX3gRf_6GYfS96e71DiZZexc-49EFuQmwQqu-wuaIdGQgbZy7TM9Pxr8psbte-zwwBo8=",
+              "source_type": "academic",
+              "retrieved_at": "2026-09-29T15:00:00Z",
+              "quote": "In this paper, the ink diffusion phenomenon which is one of the important features in calligraphy is researched. The ink diffusion phenomenon is the phenomenon of ink spreading on the paper. This phenomenon occurs mainly when a stroke is written with the brush contain- ing a large amount of ink or the brush moves slowly. Ink is made of ink particles and water, and when the brush is filled with ink and it is applied to the paper, ink flows to the paper and the water of the ink diffuses with the ink particles. The molecule of water is small, so it dif- fuses between the fibers of paper faster than ink particles. ... The ink particle is large and heavy in comparison with the molecules of water, so particles that are larger than the space between the fibers of paper cannot pass through, and remain there. The ink particles that are smaller than the space between the fibers of paper flow outside from the initial area. Therefore, in the ink diffusion area, the ink density of the outside is thinner than that of the in- side. So the density of ink influences the ink diffusion phenomenon. Generally, thin ink diffuses well, on the other hand, the thicker ink is the more the range of ink diffusion decreases.",
+              "reused_from_amelie": false
+            },
+            {
+              "claim": "The dynamics of writing with ink, including linewidth, depend on pen speed and the physicochemical properties of both ink and paper, driven by capillary forces and resistance within the porous substrate.",
+              "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHeo2lvry1RNXIZuBbukr40OZkPGb5q116VDhqfY3yYKKz5Z2ZY9NFXcrz42V4So7tf1ufVskwrXFfQOYOyeUfH-RQEaF4P125tz8fbAThHwyyeSppZmhXMdfVfmDPns_aDcOUz_OFJDo_GUbgYVBQOu69WCvf4wTzVtwSzBS3Y57KWQg==",
+              "source_type": "academic",
+              "retrieved_at": "2026-09-29T15:00:00Z",
+              "quote": "Writing with ink involves the supply of liquid from a pen onto a porous hydrophilic solid surface, paper. The resulting linewidth depends on the pen speed and the physicochemical properties of the ink and paper. Here we quantify the dynamics of this process using a combination of experiment and theory. Our experiments are carried out using a minimal pen, a long narrow tube that serves as a reservoir of liquid, which can write on a model of paper, a hydrophilic micropillar array. A minimal theory for the rate of wicking or spreading of the liquid is given by balancing the capillary force that drives the liquid flow and the resistance associated with flow through the porous substrate.",
+              "reused_from_amelie": false
+            },
+            {
+              "claim": "Digital watercolor simulation often employs a shallow-water fluid simulation for paint flow and the Kubelka-Munk model for optical compositing of pigmented layers, enabling effects like edge-darkening, granulation, and backruns.",
+              "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEujhzyYL04G7TBGdxy7Hd_w2RIYuFoRYRy9DNKRy9LR5gvJsyfna4aS9n5B0ZnXmuXaACpe3bENZNomba3TWAt2K5-_S3oLv66XESre0d_XDLS_6j0C5wj4mfAqUup_JYYL2A8cqgy_gbVV455A684WsS_Z6l8rGo8KesRJ5k=",
+              "source_type": "academic",
+              "retrieved_at": "2026-09-29T15:00:00Z",
+              "quote": "This paper describes the various artistic effects of watercolor and shows how they can be simulated automatically. Our watercolor model is based on an ordered set of translucent glazes, which are created independently using a shallow-water fluid simulation. We use a Kubelka-Munk compositing model for simulating the optical effect of the superimposed glazes. ... The combination of these improvements enables our system to create many additional watercolor effects such as edge-darkening, granulation, backruns, separation of pigments, and glazing, as described in Section 2.",
+              "reused_from_amelie": false
+            },
+            {
+              "claim": "Rebelle is a commercial software known for simulating realistic watercolor flow, including wet-into-wet blooms and dry brush textures, and is used by artists to test palettes digitally.",
+              "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGa0YkmqruMTJ6WjtbMwWlP1BwgAEHf8tO61_1NwMv4HsEalDIPhnVdEsE3cXbHqLqntbeZDc_U_QYlXW7fG8ky0nvfjB91RXS_GYEjwshdxAeTfcr3UT2UEGeMMQB9VwQJ-c6XXpHa9HvKF3gXXRlRwD3t54wOCGT7RwfANb3d1IiE2q8qc-Gbg-Mcf0rifQjpnoqyd10RVvaAuBEz0Q==",
+              "source_type": "commercial",
+              "retrieved_at": "2026-09-29T15:00:00Z",
+              "quote": "If you want to see how your chosen palette will behave in action, you could use a program called Rebelle. It simulates watercolour flow in a realistic way - from wet-into-wet blooms to dry brush textures.",
+              "reused_from_amelie": false
+            },
+            {
+              "claim": "Krita is a free and open-source digital painting program that offers professional-grade tools, a serious brush engine, and natural-media emulation, making it suitable for realistic painting effects.",
+              "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpCEk393nWsAPMbtggj-5CHrNdl3y5vcmf_Oqy6pJQCTujCwkWoVgyiqiJtQSm75EJZGxEc-kRx55UAezDmJSHUB6XlxF193QQcRWEXh1L3N3aRlfmja20X_pVNCS2hpmfJpVLwn4NlZQofl87CJJn2y8J",
+              "source_type": "opensource",
+              "retrieved_at": "2026-09-29T15:00:00Z",
+              "quote": "Krita is free and open source digital painting and 2D animation software, and it is the pick for anyone who wants professional-grade tools without a subscription. ... If your goal is realistic painting that behaves like oil, watercolor, chalk, or ink on a physical surface, this is the tool built for it. The brush depth and texture handling are the deepest on this list, which is why traditional painters and realism-focused illustrators keep evaluating it against everything else.",
+              "reused_from_amelie": false
+            },
+            {
+              "claim": "The 'coffee ring effect' is caused by faster evaporation at the edges of a liquid droplet, leading to an outward capillary flow that transports suspended particles to the edge, forming a dark ring.",
+              "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEA6SaNDUgttBjZar4BsGQLsp2URP7ova2_m3lRJIDLpCc_LfYsqkmBC3MNe7TPlfqLrTicTGK0ChTL64_NJPWSekIjL1FrgVKjEqXuserYZ8aaZOdMpVMsR8iebUNNIDWkGCt7FHGCDaij2g==",
+              "source_type": "academic",
+              "retrieved_at": "2026-09-29T15:00:00Z",
+              "quote": "The mechanism behind the formation of these and similar rings is known as the coffee ring effect or in some instances, the coffee stain effect, or simply ring stain. It originates from the capillary flow directed from the interior to the edge of the puddle as it evaporates. Stains produced by the evaporation of ... The coffee-ring pattern originates from the capillary flow induced by the evaporation of the drop: liquid evaporating from the edge is replenished by liquid from the interior. The resulting current can carry nearly all the dispersed material to the edge.",
+              "reused_from_amelie": false
+            },
+            {
+              "claim": "Backruns, also known as blooms or cauliflowers, occur in watercolor when fresh water or paint is applied to a still-damp wash, causing the liquid to push pigment outwards due to surface tension and concentration differences.",
+              "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvzXAMkO-8UtkXZVNXum_lW_iz-DK9MfsQjDzj-bPSsOnCphjJcIRZJ1TTNPD6BUx19yekR9KBakkKikC9qo_HMYu6Kdy1i_Y9u-ZncxBFAubeTnq1x9VSHAleuIH3zvLCSDhJ8ws=",
+              "source_type": "commercial",
+              "retrieved_at": "2026-09-29T15:00:00Z",
+              "quote": "have you ever painted something and then once it dries you get these weird watery bursts almost like cauliflower. that's called a background and it happens when water isn't evenly mixed with the paint. so it pushes the pigment around a lot of the time it's seen as a mistake but what if we use that effect intentionally.",
+              "reused_from_amelie": false
+            },
+            {
+              "claim": "The Kubelka-Munk model provides a physically-based method for color mixing in paints, inks, and dyes by considering light absorption (K) and scattering (S), leading to more realistic subtractive color mixing than standard RGB blending.",
+              "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-2DF1lQ_UV5B4MUDO-uVX4X8VhHfPuCQzc17aNz_LbZ_f4fRie3xF6NmCNzYbN2xJIokU7Man00AMtUP_avJqy0wmVE-6gJe0wJY0rVFmkupuDO11gAsNdGktABXWBgjj_n48pWrC8KMPNb-xByWRdQ==",
+              "source_type": "academic",
+              "retrieved_at": "2026-09-29T15:00:00Z",
+              "quote": "The Kubelka-Munk (KM) model provides a physically based method for color mixing, particularly useful for rendering paints, and translucent materials. ... In real-world pigment mixing (e.g., paint, ink, or dyes), colors interact based on absorption and scattering rather than simple averaging. The Kubelka-Munk model provides a more accurate representation by considering: Absorption (K) – The amount of light absorbed by the material. Scattering (S) – The amount of light scattered or reflected within the material. This leads to more realistic pigment mixing, where combining yellow and blue, for example, produces a natural green instead of the desaturated result seen in RGB blending.",
+              "reused_from_amelie": false
+            },
+            {
+              "claim": "WebGL2 with Float32 textures is used in real-time GPU-accelerated watercolor simulations, often based on fluid dynamics models, to achieve interactive and high-precision rendering of wet ink effects in web browsers.",
+              "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9IOGVsTBs4iV0hX0SuqkO7s9tcuMHN7JJzoCxI5TRCOqQC_Kq-FL3mvR6lyGqSa0q3jDcTJ0l-2wSDwF3sIbRoQ859UKpqRJNV_IB_aNDp9SFvoAdoyUHTQ==",
+              "source_type": "opensource",
+              "retrieved_at": "2026-09-29T15:00:00Z",
+              "quote": "The fluid model is Curtis, Anderson, Seims, Fleischer & Salesin, Computer-Generated Watercolor (SIGGRAPH 1997), as WebGL2 fragment shaders. The source is on GitHub. ... This tool needs JavaScript and WebGL2.",
+              "reused_from_amelie": false
+            },
+            {
+              "claim": "Capillary action is a fundamental principle explaining how ink flows in pens and spreads on paper, involving adhesion (ink to surface) and cohesion (ink molecules to each other) through narrow channels or paper fibers.",
+              "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvjGmKb8Nso46lZe4CPLjn9PAlEl3u725Mtuz4Bqgel-eaUr0lRYCIokm8_PBtniZVfc5G31GBSTQgiuBtgAzL6x11BdRWWNXdAvzs7K2lL7OfK6xgA-FivjBQaFFu1PYu2nsgHZY=",
+              "source_type": "commercial",
+              "retrieved_at": "2026-09-29T15:00:00Z",
+              "quote": "it all starts with two main forces adhesion and cohesion adhesion is the attraction between ink molecules. and the inside surfaces of the pen's ink feed which are usually made of plastic or metal cohesion is the attraction among the ink molecules. themselves these forces work together to pull ink through very narrow channels or fins inside the pen.",
+              "reused_from_amelie": false
+            },
+            {
+              "claim": "Feathering and bleeding of ink on paper occur when ink seeps into the paper's fibers via capillary action, with some inks and papers being more prone to this effect than others.",
+              "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHo55WNPNKMGxk4R3R17wRomUuAMK26uG9x8OVOkZmvc4gZthBZjYQGU7y84I-LS3QgzNE43uzv9qQYITAvf5FOTWI5T5x7P3vQtzAmH7NpXmtDjyzc4a2-Ue5xNa9jedKjvcIZH9Qo6JBxvSJyiH7mddzEidC1ASXdAwiuTtnHmmxEaRWsLZb",
+              "source_type": "commercial",
+              "retrieved_at": "2026-09-29T15:00:00Z",
+              "quote": "Feathering and bleeding happens when an ink seeps into the fibers of the paper by capillary action. The wicking of ink off the applied stroke can ruin the linework. Some inks and some papers are more prone to it than others.",
+              "reused_from_amelie": false
+            }
+          ],
+          "contradictions": [
+            "The assumption that simple RGB alpha-blending is sufficient for realistic color mixing in digital paints and inks is contradicted by evidence showing that physical models like Kubelka-Munk are necessary for accurate subtractive color mixing, producing vibrant rather than muddy results."
+          ],
+          "gaps": [
+            "A universally recognized 'capillary threshold' (εmin) as a decisive algorithmic breakthrough for precisely stopping ink spread is not explicitly named or detailed in the search results, though the concept of controlling or limiting capillary action through thresholds is present in various simulation models.",
+            "While anisotropic feathering along fiber direction on specific papers like Washi is mentioned in the premise, detailed verification of this specific anisotropic behavior in simulation literature was not explicitly found, though the general principle of ink spreading along fibers is supported.",
+            "Despite its known benefits for realistic color mixing, the Kubelka-Munk model is not universally adopted in commercial digital painting software due to the increased complexity of tracking multiple pigment channels instead of just RGB values.",
+            "Achieving a truly comprehensive, real-time physical simulation of all complex 'wet ink' phenomena (e.g., detailed paper fiber interactions, multi-component ink dynamics, and drying at various scales) remains a computational challenge, often requiring simplified models or empirical approximations for interactivity."
+          ],
+          "terminology": [
+            "Wet Ink Simulation",
+            "Digital Watercolor/Painting",
+            "Non-Photorealistic Rendering (NPR)",
+            "Capillary Action",
+            "Feathering/Bleeding",
+            "Edge Darkening (Coffee Ring Effect)",
+            "Backruns/Blooms/Cauliflowers",
+            "Kubelka-Munk Model",
+            "Shallow-Water Fluid Simulation",
+            "Float32 Textures"
+          ],
+          "confidence": 0.9,
+          "quellen_used": [
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGecXYIOjrKiSPMXE01BVEZh9QCIbKuvaDsAEZ5rgzRnIp4P6T145ZBcG90WCafJzrqY41HQYssWzoX1w4aY7gxxVyeX4BqN5Kiead14TSMODYAfSEYN1Sq3d0trX0MmYPa2IHU0_JUX3gRf_6GYfS96e71DiZZexc-49EFuQmwQqu-wuaIdGQgbZy7TM9Pxr8psbte-zwwBo8=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHeo2lvry1RNXIZuBbukr40OZkPGb5q116VDhqfY3yYKKz5Z2ZY9NFXcrz42V4So7tf1ufVskwrXFfQOYOyeUfH-RQEaF4P125tz8fbAThHwyyeSppZmhXMdfVfmDPns_aDcOUz_OFJDo_GUbgYVBQOu69WCvf4wTzVtwSzBS3Y57KWQg==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpwnzcxeyiPLZXbkUgPk6oqnPt6HvCDAOW-y_P0wU2e3Q6QVw_CBek1Qi9VBp1NFDMUkg-Xf9R6SHbn8bxubjU7KMMYRfPGUE1Lw6XPlXKBeh0uWIetmNh7zbHnBqcJHuK1pCg35A26fLC8bkSLuObLRw6vOP60nj4DkszNz-pWdhuuPlqIJe8jDmc4rlhYs8py1E3PSY=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHuMge0-XmRQ6X1BiIYOG0gK5mIOx8wfonjCHSF-kNQtpw6mvvDetvP-lml9dRu0hkQtmko1v36BMeq7_WUEsqKfUrSsDYQVOK4iYTW8bkwFjN9XGLI10mo92VLhgbna42i8lkngAM=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlTRCoYG_eFKelh5uY-FiNRy1mHyB1Nw9EXEv2PdcO1zOyJcplJbqZOEXGCTrsVoAvt4vKX7jEgxr_ikD7E50F8hpzYJ0iZAz33dXJc7lp3Bkp2mpH_cK8THXwID37VfXSOk20N5OHz-Vk7OqdTLEm-r",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDgmjjroTkT2rHkVJQE7E4mvtOywYtvZlh6cLGpQ-DQnTJTu-NgWkhULlopj9w05f_FEjePXaKSt-fephZvu1AkI1PqcXzyepUlZdhMOTb-2gTh4agUncREJJBQU9vdOlFv5l7ND4V-n0jE_LHT7vgHXszmcPNLnBNC6bi9W9bTPRuBeI=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJaO1NUDkwhS-9WI_nOprUQ7wJmsyW2X7zLZ8L9BoLS9jXJDxNCPgfcdr_iS3tYZnO_LwQx5ulqH-ZI5OerXVH7bTQA68IBUmjCewqhFEnNEJs2IOjOtJ5xRVE8mvRpx4TWL4MqkAz4AqvB7rb1kLWMnlkPQxEOdFgkQnx9DOUmHlAOYP-cCe5lKIPCbJsnyejr_ux-onCWjR0Y1xcOvDeuS0LqVGYs19Mm6L91d9rH5cIA6-Ll3x2Wqa17ve1oMKAnsKluJA==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKFa3Dl5X7MiFuOAP-GvpdaAVdEh1iKDTIRKRU8DlTGECxnAoqUUnkwwGBCJ73kCHi3-hftX_vKpsnOhxNSn6NmevB1CJN1hmYdZQ8daieOgZ79ktP13tCUlNHPAfCrmPXEPxHQslIIPpA7QRW4FTNbf_vuwOeDLWXFQOmBfXF6bg_90hMtxZQGkr-jvxJPeUC8QU-1DlHoFYA7VazirUudB_oqnyPaQC8CHHvoiVGQ_tpwA7YF8O5UniPelQxEIbEcdsR7sKq5ptmzsKAyBOrhRJiWk-1Sx4TExn83RhG",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmvKIjzcFIKfrg_BFXcBsiSMyHe-9dLUJBrnBNnyX350SIYlBXc3zXGFnIn3rUTjFzoQ_Qql_KUmRV503y1tmo0FTkuBExIoQGfCXhneYaDe7AAJEdrwP63JhA_MTfeI5QM6nb",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEujhzyYL04G7TBGdxy7Hd_w2RIYuFoRYRy9DNKRy9LR5gvJsyfna4aS9n5B0ZnXmuXaACpe3bENZNomba3TWAt2K5-_S3oLv66XESre0d_XDLS_6j0C5wj4mfAqUup_JYYL2A8cqgy_gbVV455A684WsS_Z6l8rGo8KesRJ5k=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9IOGVsTBs4iV0hX0SuqkO7s9tcuMHN7JJzoCxI5TRCOqQC_Kq-FL3mvR6lyGqSa0q3jDcTJ0l-2wSDwF3sIbRoQ859UKpqRJNV_IB_aNDp9SFvoAdoyUHTQ==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGH-6Ymw45EnOe-2eeGYNE3-WOr49r1S5jeCi3DlQx7MxvMHJTD_CYaDkNo-TAYG-v95i-NRzDWnh8kxSf0w_8a-XKQrTuvd5GhymoVpLHH6voXope46t93Eemov3aByBaRcCMWj-BVevj_cnaXF8dPr_kEBvKZl2dhthOFo2KEtnoS8_0qaVHS35IU4D8qBYoZdIfL87ZbK2QAO4ByMyEW2zT6HjS35gzpVXRCAA_7fE5T_erPN5gm9",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvzXAMkO-8UtkXZVNXum_lW_iz-DK9MfsQjDzj-bPSsOnCphjJcIRZJ1TTNPD6BUx19yekR9KBakkKikC9qo_HMYu6Kdy1i_Y9u-ZncxBFAubeTnq1x9VSHAleuIH3zvLCSDhJ8ws=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFManj0WMCz0Fxt22C67wy29zvH29BUFOlJGSTlCacqbw1HAInHCWcE39IgiaklcIcpC_FDoa-GeUyLGAMqK3b5WYrZgYgqjaHwZV-pQ-aSMZD1BA8hsQkKAr9c3wkAnYn8h6OrjPo=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEexQgV8v-HaGcFlcZuumsJPWa_NV7vKQtbHzNUOnWQqIarxm0EhrgPaxqS0wOrjQVini0EqJfvhKkKuWQlc6_WgEo2ysd5wE4JpA6H9uMymCTq6oY77ZV3_UtZWa3ObQKEF-rjXoRqK59omnFZsMb-Fg6enavt2B697bAfGlJPpg==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvKxUJLP100BPuNNS3Ed_wl9ncdrjxWOSsVH4CmxEzJzw5V9if8tjuhWuDzEORnE3QIzFxRtCYm9pd0fuvqfE7w0Hb8uZ4JgroTDRQp4XDh7js6Oh_fsKyCBfd26WjsjjuH2C0NNQ=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGa0YkmqruMTJ6WjtbMwWlP1BwgAEHf8tO61_1NwMv4HsEalDIPhnVdEsE3cXbHqLqntbeZDc_U_QYlXW7fG8ky0nvfjB91RXS_GYEjwshdxAeTfcr3UT2UEGeMMQB9VwQJ-c6XXpHa9HvKF3gXXRlRwD3t54wOCGT7RwfANb13tCUlNHPAfCrmPXEPxHQslIIPpA7QRW4FTNbf_vuwOeDLWXFQOmBfXF6bg_90hMtxZQGkr-jvxJPeUC8QU-1DlHoFYA7VazirUudB_oqnyPaQC8CHHvoiVGQ_tpwA7YF8O5UniPelQxEIbEcdsR7sKq5ptmzsKAyBOrhRJiWk-1Sx4TExn83RhG",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGkRpy5bIisfxmKXky9MHKxWpxPxaN0mlshD-kKhSbgHldYFDZtEaOXr15aadIPf5i8OMfYEdslEP8Al2NHOJDiDNXpqxp2S4Nqlajh2bu8lw2GidSJtQLzSGuXsVXz1_RGcF-RTJf7Rji4OcopWgDYevEfw21szYEHz3Om2DPqJEcHaBRLNqyFoetiSWJQGokFdzdNBwf",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_7Vlkzsj0xbUl8O6OvsDT7MY4lzpbadGzVd0zcoIJh5LQXe3DQPMfhu6KgTos8fYngU98kLEitmbdEWudBtq26H-UCPvG0196DIABXv86AxxFawbGf-CTbgnPQChLUqEOvw==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGiCUkFavWxWPSql9sqPODKjARcmIAyVQBvqA_FMuS_bcJx8PymAoSXPN89rp--CJ-fi2xsnKXzvJEyqbW8qrBLrdKiYt8NTVyfwpFtJKeo__oj9bCTrQVP5sQZOIFELraFE4Vxv6FEjlTUtvO1",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5L53V6vN1bup8dIRV8CP1gaW2wKFxFB9O8YfErvX4dclNH4DiE2mH2k8MMfwKGcuT5Di9DVCLI3Hlo7gVpiWhJ5IS2I7l4PfTLfVd9jmzzfSpCBGBoIb41JCO8LI6501w660EfjOJvichraVRtDf_db5cxiUWz3ApeqeDPer3dCUTM2jKIgAca5pJ5OqqY6-6p52vFzzt6gZBvbAb94=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHC5Dys4qLw_SyO1LQeIKZcVb7WCsbgMr3-4rp8jRGjARyzBTHTjuRdinVUDdTuFvuYTIHWF1lCe-IybiyPOW2fWjOf3RMsrptVup1YKXpl78ahvP4QwfolsxP3yQZXfdBq4Ho=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGTnTqpvMQMhjUS2LdjG_4TVutqbGgnC7dg8sh807x0wO3knXPwgCT38dUt0RYoSN3EzC-7O198kTmjGiLbuMVMXm7ebIm2F56SKIQwNbE_dZ3YUypwycwxHqWPI_vsT_omuIZEW7bLvGX7iZ6cy_N6",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpCEk393nWsAPMbtggj-5CHrNdl3y5vcmf_Oqy6pJQCTujCwkWoVgyiqiJtQSm75EJZGxEc-kRx55UAezDmJSHUB6XlxF193QQcRWEXh1L3N3aRlfmja20X_pVNCS2hpmfJpVLwn4NlZQofl87CJJn2y8J",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4G7Rh30hxN0QuzmjKGTxUSlgI8qTThYnMpCF5o6gTFOQWUp28lmcTtS2881SYfenpKjwR-vKMk1ibx6KQ7IUZBqXGoBuxDGufnB6Tx8gucRUmqmiM-L2P7VV6AsEPX5v5dguZpzowwQK6Gg2R78d2WCIQYAUs16hX8ogv",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQED2I7TYVlzATubYqFGZf9hs9g-fRqx1XnbF-rm4JRdplCzbH7fZbaRxs_sU-3xhM9L0FGYgAB_QBY0f0H8dbYNR8D2_JYzUJ3Oi08ZVOB6hw==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6vIDhj2XqmQMn3IvV-dNGZL_q0l_geqvPPs3-konRx7ubu1X732l7Dz3tzxn1hPLYX3B5FU5xCH6PxVg3iGUHedXwxNu5jZfkCiDnZNVf_FT2_WkQPI2SSS_SU540CmWVewBWY3KuCYfaNDvtM-tUnKjdFByIBQwz1JHa8wXErOjzY3gSThBLGZLdap5f-ccTvkr2MT3RC6-cjYRJpgeqTTxI4Ph7M5dQgjlyZft65qNGAYZuIA==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGeaKAzzGhLxJMiyPvh7G3BKFTLU06OdqlW4geIVwCB6FkBzFCTynGLMdchn66CjKLfLmN4cnS_BM-fXQ1-NZ2CctXOgRHv_NTtWDFO2W3sV9-gAai3FhCazA==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWJ8o2f4Mb3mfTdYJTKFVSK2AO4Sr_xsC_Q3okNzVqs-UGo457tBhPfUFLeW7i6rb4eio3pk3s2sZUGsxR42WOw-FtG2UGh9JgE-OZTPH5qZGkZGTGkPy6UE0kSqdN4T9V1ktwkOyYcf5umpaiElTLFZELLGBR960LvFdXUQ==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEirnOSKn55VjBudEetw0SrxfXUd0nC90Nw4YMy-jJsWS5eXyhI80mjbH5UhwZ8keSHk-W1YTWf_Z9nynTb5KPzSkM6nQKHWvEyplMA3UlUgIHjJFOUfSPZL7c=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKjUjxsEqw8DvYUE8iuG_QdMdGxfLwJChjmw6E3sR_me80ZvCbws8_1lZAe-YjTcifAcamfvOfheCybE3PaY63lGG204mTlfYDG9KUrfs8Qar00a2uO38_bpo9mUb89ZZSzKo40zOUiRXkHGG3L9jqNOneI4h2DcBuRzvndiGOOjb_RjV8xSMh1DNm5GyTejiiffMbPlAMK_ZFlmRAFFer6-nkNBlwq_37l_xggMHWCU8ySKVDExpFxYD32M2phQlcAA==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZ09_cfCV8KoU7XX6uWrYoz7nl5sC9QyU_i0RezTLQDZJ9C1oUdCWcCHaKncGxQ-KnNJqglGoiIC1uWn1O9fA6TWnqk3W3KjwQ4K50SMhoRZ2cofpyzBs98tJz0kRY1V6i4kOxQGGm_FjmE=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBxcZZISt0zuc5_TEm6ybhFTRxvJPRIVQoIUGnNgJmmgT8RDIyJPj1tfRtGJFFIfN7jzxp28jUbqakI-_M4NnC_rbljwrNAXua8DVAIN4r_EQzXSmnMqcvrKfwFm-EmqSxQIvugH38r9BoOh27HnelQJbrDW9D3vSKBTq3HghYXjzcsQ-norzsNUNDe4S_rGMG7J8M-5dwKMGuTw==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9aeuPfThm7S0_4yu6YpRj3y4O8qWjDeYlms20yECBq-Y55LFbx-N8rNill8NUBULOKohKjPZ2WHJJHOnsPqFF7L88FPa-jr6th3Q330_8tj8w_hW70eqak_saAV4VXUkPcVmVYUVBAFF69hBHmk9szduAAnFoGK09iM0cQ4f7AvMNRRoD-Lk=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEA6SaNDUgttBjZar4BsGQLsp2URP7ova2_m3lRJIDLpCc_LfYsqkmBC3MNe7TPlfqLrTicTGK0ChTL64_NJPWSekIjL1FrgVKjEqXuserYZ8aaZOdMpVMsR8iebUNNIDWkGCt7FHGCDaij2g==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2ef1RpjIy7zoFXh_xsiWKVW9gaclB1sPI9uflh1C466TcKbdUEoZpq0Sr2ZXwBmQe0LJrflVzqsZWRu4IkJPlltdNWqUwlqQXGky0CgVqm_5UGnAosn0MXQhSy0qyVQJFgt9fuGTjqEwBOCINYZwc1Jht-Ecgdiq5X1i-JJc5ijYr7uVNNN-r6O1TgQkaz0C46rJIgtgbwILM6PVJSeRfxHfP8t8fa4arZGGA38j9fQ==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHo55WNPNKMGxk4R3R17wRomUuAMK26uG9x8OVOkZmvc4gZthBZjYQGU7y84I-LS3QgzNE43uzv9qQYITAvf5FOTWI5T5x7P3vQtzAmH7NpXmtDjyzc4a2-Ue5xNa9jedKjvcIZH9Qo6JBxvSJyiH7mddzEidC1ASXdAwiuTtnHmmxEaRWsLZb",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvjGmKb8Nso46lZe4CPLjn9PAlEl3u725Mtuz4Bqgel-eaUr0lRYCIokm8_PBtniZVfc5G31GBSTQgiuBtgAzL6x11BdRWWNXdAvzs7K2lL7OfK6xgA-FivjBQaFFu1PYu2nsgHZY=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE17Hb_n97sfI35fQYxn1JIZyzJDTeCNss3JD-XlpuDpzf6wqul9Zl1-SdCyC17vdx1imCr-ZaTiSh-ILv_2idgox6BLiee15YEQTlXla8bX99olLC31DpeHFk2d5KhzDvbxftbiQSr5VJil7NUgvU=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-m8ay21n3Ln_AV4R0oimblBulF8eIhsPk3siTlF1JoQQS0vJss9UWALuIx5cRaJBQwpswd-IAHZGgeSDkyhH2xllU9nEBsi1LMOJ46ZmSZ409SAAXve0U95lyZa5ZkmflLplA6ba4D9fn82IGt0C46rJIgtgbwILM6PVJSeRfxHfP8t8fa4arZGGA38j9fQ==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmhHIs5Yj_30HUtRRAOdzhg085ayXyMpugtKJV6cgR5SMSR5gUaKEd-LS3ATZT89OgVZpdRD1sgLMijTUB3KQ6E9unDQJI6t2gsPBEMPtsEQcmCN4cZjEy9f0=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnxxaXTb4ZDgDNr-NpsdvIOinNwNBS2NoWLimF283cBPRrquGnwtALsjLH6Rj9fK1OVRW7mmrnQRFC2ESMUPQcsG242x5HwMcg60HM8FrkN6WXt4KRwgalh7tcPN7eq7WrXM92V2Z8c26rJiEumYHZTsLB70dyLEkzPHXLsDbzFbQoo4xv8jIR5Q4Ximb8sUPZa3z_7aDwQeuM99hHdcpiDRcJIr3n0N4iDk4=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrLYVq6j-bWOqIeiwpfiSrmPs_DGNzadWzc9qoHfOfYUq-U8XcKyELlbbjCkarTW64POIbIRYWoHKZvNYkmAGJ6efvyGmf5YhXRFtbrWfn_HY=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-2DF1lQ_UV5B4MUDO-uVX4X8VhHfPuCQzc17aNz_LbZ_f4fRie3xF6NmCNzYbN2xJIokU7Man00AMtUP_avJqy0wmVE-6gJe0wJY0rVFmkupuDO11gAsNdGktABXWBgjj_n48pWrC8KMPNb-xByWRdQ=="
+          ],
+          "search_accounting": {
+            "month": "2026-09",
+            "queries_in_run": 14,
+            "month_total_queries": 61,
+            "free_allowance_remaining": 4939,
+            "overage_queries": 0,
+            "overage_cost_usd": 0.0,
+            "is_within_free_allowance": true
+          }
+        },
+        "blind_review": null
+      }
+    ]
+  },
+  "existence_check": false,
+  "contract_version": "1.0.0"
+}
