@@ -1,0 +1,8 @@
+{
+  "batch_id": "amelie-lab-review-wet-ink-9b2f62a97993714d",
+  "state": "needs_research",
+  "worker": "",
+  "lease_until": "",
+  "note": "Wet Ink: zwei verschachtelte Runs erhalten; tatsächliches Inkwash-Repository als Primärartefakt gelesen (WebGL2, wet bleed/dry, MIT), keine Ausführung oder Quellcodebenchmark. Nackte github.io-Verweise reichen nicht zur Abgrenzung. Benötigt konkrete Code-/Commitstellen und verblindeten Vergleich Kapillarität/Anisotropie/Epsilon; keine Neubewertung der vorhandenen Dose ohne diesen Test. Audit: 06-suche/lab-intake-review-20261011.md#batch-67",
+  "updated_at": "2026-10-11T11:14:24.615Z"
+}

@@ -18,7 +18,7 @@ Unternehmen oberhalb einer Verbrauchsschwelle müssen nach dem Energieaudit eine
 ## 2. Der Sicherheitsnachweis (Safety Case)
 
 > [!CAUTION]
-> **Das Register ist kein Pranger und keine Vertriebsliste. Es sagt nie „säumig", „Verstoß", „violation" oder „fehlt". Die Pflicht ist bedingt: Die Verbrauchsschwelle ist nicht öffentlich, Unternehmen mit EnMS/UMS können anders berichten, Geschäftsgeheimnisse dürfen gewahrt werden, und die Frist läuft ab einem Audit, dessen Datum niemand kennt. „Kein Plan gefunden" beweist nichts.**
+> **Das Register ist kein Pranger und keine Vertriebsliste. Es sagt nie „säumig", „Verstoß", „violation" oder „fehlt". Die Pflicht ist bedingt: Die Verbrauchsschwelle ist nicht öffentlich, EnMS/UMS sind nach geltendem § 9 keine pauschale Ausnahme, Geschäftsgeheimnisse dürfen gewahrt werden, und die Frist läuft ab einem Audit, dessen Datum niemand kennt. „Kein Plan gefunden" beweist nichts.**
 > *The register never says "violation". The duty is conditional; "no plan found" proves nothing.*
 
 Harte Invarianten (jede durch einen Test abgesichert):
@@ -134,3 +134,7 @@ Die beiden veröffentlichten Pläne haben also **keine einzige Maßnahme mit dem
 
 ---
 Lizenz: CC0 1.0 Public Domain.
+
+## Nachprüfung 11.10.2026
+
+BAFA-Merkblatt 16.09.2026 direkt geladen: gleicher SHA-256 wie in der Schemaquelle, fünf Angaben bestätigt. Veröffentlichung auch im Unternehmensregister möglich (S. 14). Geltender § 9: >2,5 GWh, drei Jahre, Drittbestätigung; Entwurf BT-Drs. 21/8027 nicht als geltendes Recht verwenden. `n. F.` bleibt reserviert bis zur nachgewiesenen Verkündung. Befunde und Quellen: [Intake-Review](../../06-suche/lab-intake-review-20261011.md).

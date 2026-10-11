@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "stand": "2026-10-09",
+  "stand": "2026-10-11",
   "katalog": {
     "status": [
       {
@@ -10981,15 +10981,15 @@
       ],
       "zugang": {
         "art": "web",
-        "erreichbar": "unbekannt",
+        "erreichbar": "ja",
         "wie": ""
       },
       "enthaelt": "Deutsches Tagfalter-Monitoring auf Transektbasis mit ehrenamtlichen Zählenden; Programm, Auswertung und Kontakt beim UFZ.",
       "fokus": "",
       "status": "angekratzt",
       "statusNotiz": "",
-      "evidenz": "schnipsel",
-      "zuletzt": "2026-09-30",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-11",
       "ertrag": {
         "dosen": [],
         "graeber": [],
@@ -11015,6 +11015,13 @@
           "notiz": "Fundstelle der Anker-Suche des Lab-Laufs lacunar-20260930T064824-38e1d7; die Seite wurde nicht gelesen. Möglicher Empfänger- und Besetzt-Test-Kontext.",
           "status": "angekratzt",
           "planId": "lab-2026-09-30-lacunar-schmetterlinge-offen"
+        },
+        {
+          "datum": "2026-10-11",
+          "agent": "amelie-intake-20261011",
+          "runde": "Shared Lab intake 11.10.2026",
+          "notiz": "Festes Transekt, 50m-Abschnitt ungefähr fünf Minuten, standardisierte Bedingungen; adaptive Wege würden Vergleichbarkeit verändern.",
+          "planId": "lab-intake-review-20261011"
         }
       ]
     },
@@ -16037,6 +16044,890 @@
           "runde": "Glasanflug-Sitzung 2026-10-09",
           "notiz": "Metadatenseite durch Sitzungs-Orchestrator gelesen: Aktualisierung 09.04.2026, dl-de-zero-2.0. Live-Abfrage HTTP200 GeoJSON und CORS * bestätigt. WFS-BBox EPSG4326 Breite/Länge, GeoJSON Länge/Breite; Layer strassenbaeume und anlagenbaeume. Fehlender Eintrag ist keine Abwesenheit von Gehölzen.",
           "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "intake-20261011-enefg-9",
+      "name": "§9 EnEfG",
+      "typ": "L",
+      "kategorie": "norm",
+      "rollen": [
+        "evidenz",
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.gesetze-im-internet.de/enefg/__9.html"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "Primärseite oder Primär-PDF direkt lesen; konkrete Stelle im Intake-Review dokumentiert."
+      },
+      "enthaelt": "Geltende abgerufene Fassung: >2,5 GWh, drei Jahre, Drittbestätigung und Ausnahmen; keine EnMS-Pauschalausnahme. Direkter Download; SHA256 3d54c2246bf88e7eb51d6962d042f8897d392f38359eb1caea882ef13a647db5.",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-11",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-11"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-11",
+          "agent": "amelie-intake-20261011",
+          "runde": "Shared Lab intake 11.10.2026",
+          "notiz": "Shared Lab intake 11.10.2026: Geltende abgerufene Fassung: >2,5 GWh, drei Jahre, Drittbestätigung und Ausnahmen; keine EnMS-Pauschalausnahme. Direkter Download; SHA256 3d54c2246bf88e7eb51d6962d042f8897d392f38359eb1caea882ef13a647db5.",
+          "status": "durchsucht",
+          "planId": "lab-intake-review-20261011"
+        }
+      ]
+    },
+    {
+      "id": "intake-20261011-bafa-enefg",
+      "name": "BAFA Merkblatt EnEfG 16.09.2026",
+      "typ": "L",
+      "kategorie": "norm",
+      "rollen": [
+        "evidenz",
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.bafa.de/SharedDocs/Downloads/DE/Energie/ea_merkblatt_energieefffizienzgesetz.pdf?__blob=publicationFile"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "Primärseite oder Primär-PDF direkt lesen; konkrete Stelle im Intake-Review dokumentiert."
+      },
+      "enthaelt": "Abschnitt5 S12–15: fünf Felder, Audit-/Rezertifizierungszyklus, Jahresabschluss im Unternehmensregister oder Website. SHA256 1a62fa7dac0253e007eca19a32b9c12395d3d272e600b7f839d869dbc435d529; entspricht Schemaquelle.",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-11",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-11"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-11",
+          "agent": "amelie-intake-20261011",
+          "runde": "Shared Lab intake 11.10.2026",
+          "notiz": "Shared Lab intake 11.10.2026: Abschnitt5 S12–15: fünf Felder, Audit-/Rezertifizierungszyklus, Jahresabschluss im Unternehmensregister oder Website. SHA256 1a62fa7dac0253e007eca19a32b9c12395d3d272e600b7f839d869dbc435d529; entspricht Schemaquelle.",
+          "status": "durchsucht",
+          "planId": "lab-intake-review-20261011"
+        }
+      ]
+    },
+    {
+      "id": "intake-20261011-bt-218027",
+      "name": "Regierungsentwurf BT-Drs.21/8027",
+      "typ": "L",
+      "kategorie": "norm",
+      "rollen": [
+        "evidenz",
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [
+        "https://dserver.bundestag.de/btd/21/080/2108027.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "Primärseite oder Primär-PDF direkt lesen; konkrete Stelle im Intake-Review dokumentiert."
+      },
+      "enthaelt": "S15: 2,77 bis <23,6 GWh, drei Monate, jährliche Aktualisierung und EnMS-Ausnahme sind Entwurf, nicht geltende Fassung.",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-11",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-11"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-11",
+          "agent": "amelie-intake-20261011",
+          "runde": "Shared Lab intake 11.10.2026",
+          "notiz": "Shared Lab intake 11.10.2026: S15: 2,77 bis <23,6 GWh, drei Monate, jährliche Aktualisierung und EnMS-Ausnahme sind Entwurf, nicht geltende Fassung.",
+          "status": "durchsucht",
+          "planId": "lab-intake-review-20261011"
+        }
+      ]
+    },
+    {
+      "id": "intake-20261011-eed-2023",
+      "name": "EED (EU)2023/1791 Art11",
+      "typ": "L",
+      "kategorie": "norm",
+      "rollen": [
+        "evidenz",
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [
+        "https://eur-lex.europa.eu/eli/dir/2023/1791/oj/eng"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "Primärseite oder Primär-PDF direkt lesen; konkrete Stelle im Intake-Review dokumentiert."
+      },
+      "enthaelt": "Art11(2): >10TJ ohne EnMS, Audit und publizierter Aktionsplan; Abs10/11 Ausnahmen. Keine pauschale Bewertung nationaler Entwurfsrechtmäßigkeit. Abs3 Plattform optional für Verbrauchsdaten.",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-11",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-11"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-11",
+          "agent": "amelie-intake-20261011",
+          "runde": "Shared Lab intake 11.10.2026",
+          "notiz": "Shared Lab intake 11.10.2026: Art11(2): >10TJ ohne EnMS, Audit und publizierter Aktionsplan; Abs10/11 Ausnahmen. Keine pauschale Bewertung nationaler Entwurfsrechtmäßigkeit. Abs3 Plattform optional für Verbrauchsdaten.",
+          "status": "durchsucht",
+          "planId": "lab-intake-review-20261011"
+        }
+      ]
+    },
+    {
+      "id": "intake-20261011-sgbx-13",
+      "name": "§13 SGB X",
+      "typ": "L",
+      "kategorie": "norm",
+      "rollen": [
+        "evidenz",
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.gesetze-im-internet.de/sgb_10/__13.html"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "Primärseite oder Primär-PDF direkt lesen; konkrete Stelle im Intake-Review dokumentiert."
+      },
+      "enthaelt": "Abs4 Beistand, Abs5 RDG-Widerspruch und Abs6 Ungeeignetheit. Kein Anspruch auf GPS-verfügbare Begleitperson.",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-11",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-11"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-11",
+          "agent": "amelie-intake-20261011",
+          "runde": "Shared Lab intake 11.10.2026",
+          "notiz": "Shared Lab intake 11.10.2026: Abs4 Beistand, Abs5 RDG-Widerspruch und Abs6 Ungeeignetheit. Kein Anspruch auf GPS-verfügbare Begleitperson.",
+          "status": "durchsucht",
+          "planId": "lab-intake-review-20261011"
+        }
+      ]
+    },
+    {
+      "id": "intake-20261011-sgbii-16a",
+      "name": "§16a SGB II",
+      "typ": "L",
+      "kategorie": "norm",
+      "rollen": [
+        "evidenz",
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.gesetze-im-internet.de/sgb_2/__16a.html"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "Primärseite oder Primär-PDF direkt lesen; konkrete Stelle im Intake-Review dokumentiert."
+      },
+      "enthaelt": "Kann-Leistungen bei Erforderlichkeit für Eingliederung; keine allgemeine unbedingte psychosoziale Leistungszusage.",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-11",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-11"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-11",
+          "agent": "amelie-intake-20261011",
+          "runde": "Shared Lab intake 11.10.2026",
+          "notiz": "Shared Lab intake 11.10.2026: Kann-Leistungen bei Erforderlichkeit für Eingliederung; keine allgemeine unbedingte psychosoziale Leistungszusage.",
+          "status": "durchsucht",
+          "planId": "lab-intake-review-20261011"
+        }
+      ]
+    },
+    {
+      "id": "intake-20261011-sgbii-22",
+      "name": "§22 SGB II",
+      "typ": "L",
+      "kategorie": "norm",
+      "rollen": [
+        "evidenz",
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.gesetze-im-internet.de/sgb_2/__22.html"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "Primärseite oder Primär-PDF direkt lesen; konkrete Stelle im Intake-Review dokumentiert."
+      },
+      "enthaelt": "Unterkunftsanerkennung hat Bedingungen und Ausnahmen. Abrufversion vor konkreter Implementierung mit historischem Rechtsstand abgleichen; keine universelle volle Mietzahlung abgeleitet.",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-11",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-11"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-11",
+          "agent": "amelie-intake-20261011",
+          "runde": "Shared Lab intake 11.10.2026",
+          "notiz": "Shared Lab intake 11.10.2026: Unterkunftsanerkennung hat Bedingungen und Ausnahmen. Abrufversion vor konkreter Implementierung mit historischem Rechtsstand abgleichen; keine universelle volle Mietzahlung abgeleitet.",
+          "status": "durchsucht",
+          "planId": "lab-intake-review-20261011"
+        }
+      ]
+    },
+    {
+      "id": "intake-20261011-iab-psych",
+      "name": "IAB psychisch Kranke im SGB II",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "evidenz",
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [
+        "https://iab-forum.de/das-iab-projekt-psychisch-kranke-im-sgb-ii-situation-und-betreuung/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "Primärseite oder Primär-PDF direkt lesen; konkrete Stelle im Intake-Review dokumentiert."
+      },
+      "enthaelt": "Qualitatives Projekt 2017; bestätigt keine eingereichten Effektprozente. Kein Ersatzbeleg für die gesuchten Studien.",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-11",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-11"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-11",
+          "agent": "amelie-intake-20261011",
+          "runde": "Shared Lab intake 11.10.2026",
+          "notiz": "Shared Lab intake 11.10.2026: Qualitatives Projekt 2017; bestätigt keine eingereichten Effektprozente. Kein Ersatzbeleg für die gesuchten Studien.",
+          "status": "durchsucht",
+          "planId": "lab-intake-review-20261011"
+        }
+      ]
+    },
+    {
+      "id": "intake-20261011-jobcenter-guru",
+      "name": "Jobcenter.guru Anbieter",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "evidenz",
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [
+        "https://jobcenter.guru/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "Primärseite oder Primär-PDF direkt lesen; konkrete Stelle im Intake-Review dokumentiert."
+      },
+      "enthaelt": "Bewirbt Fotobrief, Erklärung, Fristen, Widerspruch und mehrsprachiges Audio; funktioneller Nachbar, keine getestete Genauigkeit. Nicht pauschal gratis oder rechtsgeprüft genannt.",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-11",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-11"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-11",
+          "agent": "amelie-intake-20261011",
+          "runde": "Shared Lab intake 11.10.2026",
+          "notiz": "Shared Lab intake 11.10.2026: Bewirbt Fotobrief, Erklärung, Fristen, Widerspruch und mehrsprachiges Audio; funktioneller Nachbar, keine getestete Genauigkeit. Nicht pauschal gratis oder rechtsgeprüft genannt.",
+          "status": "durchsucht",
+          "planId": "lab-intake-review-20261011"
+        }
+      ]
+    },
+    {
+      "id": "intake-20261011-typo3-cowriter",
+      "name": "TYPO3 Cowriter Dokumentation",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "evidenz",
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [
+        "https://docs.typo3.org/p/netresearch/t3-cowriter/3.4/en-us/Introduction/Index.html"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "Primärseite oder Primär-PDF direkt lesen; konkrete Stelle im Intake-Review dokumentiert."
+      },
+      "enthaelt": "Kontext, Textaufgaben, Übersetzung und eigene Prompts vorhanden; kein Beleg für multimodales Gesamtarchiv oder automatisierte Agenturkontrolle.",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-11",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-11"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-11",
+          "agent": "amelie-intake-20261011",
+          "runde": "Shared Lab intake 11.10.2026",
+          "notiz": "Shared Lab intake 11.10.2026: Kontext, Textaufgaben, Übersetzung und eigene Prompts vorhanden; kein Beleg für multimodales Gesamtarchiv oder automatisierte Agenturkontrolle.",
+          "status": "durchsucht",
+          "planId": "lab-intake-review-20261011"
+        }
+      ]
+    },
+    {
+      "id": "intake-20261011-owasp-dependency",
+      "name": "OWASP Dependency-Check",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "evidenz",
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [
+        "https://owasp.org/projects/Dependency-Check"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "Primärseite oder Primär-PDF direkt lesen; konkrete Stelle im Intake-Review dokumentiert."
+      },
+      "enthaelt": "Projektabhängigkeiten/SCA; öffentliche Website-Fingerprints beweisen keine vollständige SBOM.",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-11",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-11"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-11",
+          "agent": "amelie-intake-20261011",
+          "runde": "Shared Lab intake 11.10.2026",
+          "notiz": "Shared Lab intake 11.10.2026: Projektabhängigkeiten/SCA; öffentliche Website-Fingerprints beweisen keine vollständige SBOM.",
+          "status": "durchsucht",
+          "planId": "lab-intake-review-20261011"
+        }
+      ]
+    },
+    {
+      "id": "intake-20261011-lfu-wasserbuch",
+      "name": "LfU Brandenburg Wasserbuch",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "evidenz",
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [
+        "https://lfu.brandenburg.de/lfu/de/aufgaben/wasser/genehmigungen-abgaben-foerderung/wasserbuch/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "Primärseite oder Primär-PDF direkt lesen; konkrete Stelle im Intake-Review dokumentiert."
+      },
+      "enthaelt": "Amtliche zentrale Datenbank seit2019; Übersicht öffentlich, Details bei berechtigtem Interesse; Eintrag nicht rechtsbegründend. Institution und Zuständigkeit offiziell gelesen, keine Kontaktaufnahme.",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-11",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-11"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-11",
+          "agent": "amelie-intake-20261011",
+          "runde": "Shared Lab intake 11.10.2026",
+          "notiz": "Shared Lab intake 11.10.2026: Amtliche zentrale Datenbank seit2019; Übersicht öffentlich, Details bei berechtigtem Interesse; Eintrag nicht rechtsbegründend. Institution und Zuständigkeit offiziell gelesen, keine Kontaktaufnahme.",
+          "status": "durchsucht",
+          "planId": "lab-intake-review-20261011"
+        }
+      ]
+    },
+    {
+      "id": "intake-20261011-lfu-fischpass",
+      "name": "LfU Brandenburg Durchgängigkeit",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "evidenz",
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [
+        "https://lfu.brandenburg.de/lfu/de/aufgaben/wasser/fliessgewaesser-und-seen/gewaesserbelastungen/durchgaengigkeit/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "Primärseite oder Primär-PDF direkt lesen; konkrete Stelle im Intake-Review dokumentiert."
+      },
+      "enthaelt": "Fachliche Durchgängigkeit/Anlagenplanung, keine allgemeine ab2027 geltende 24/7-Videopflicht auf der Seite nachgewiesen. Konkrete Auflage bleibt offen.",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-11",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-11"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-11",
+          "agent": "amelie-intake-20261011",
+          "runde": "Shared Lab intake 11.10.2026",
+          "notiz": "Shared Lab intake 11.10.2026: Fachliche Durchgängigkeit/Anlagenplanung, keine allgemeine ab2027 geltende 24/7-Videopflicht auf der Seite nachgewiesen. Konkrete Auflage bleibt offen.",
+          "status": "durchsucht",
+          "planId": "lab-intake-review-20261011"
+        }
+      ]
+    },
+    {
+      "id": "intake-20261011-bfr-pathogen",
+      "name": "BfR Fragen zu Geflügelfleisch",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "evidenz",
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.bfr.bund.de/fragen-und-antworten/thema/ausgewaehlte-fragen-und-antworten-zu-gefluegelfleisch/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "Primärseite oder Primär-PDF direkt lesen; konkrete Stelle im Intake-Review dokumentiert."
+      },
+      "enthaelt": "Krankheitserreger grundsätzlich nicht an Aussehen/Geruch/Geschmack erkennen. Geflügelkontext, keine Quark- oder Fermentationsvalidierung.",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-11",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-11"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-11",
+          "agent": "amelie-intake-20261011",
+          "runde": "Shared Lab intake 11.10.2026",
+          "notiz": "Shared Lab intake 11.10.2026: Krankheitserreger grundsätzlich nicht an Aussehen/Geruch/Geschmack erkennen. Geflügelkontext, keine Quark- oder Fermentationsvalidierung.",
+          "status": "durchsucht",
+          "planId": "lab-intake-review-20261011"
+        }
+      ]
+    },
+    {
+      "id": "intake-20261011-seed-doe",
+      "name": "DOE SEED Plattform",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "evidenz",
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.energy.gov/cmei/buildings/standard-energy-efficiency-data-seed-platform"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "Primärseite oder Primär-PDF direkt lesen; konkrete Stelle im Intake-Review dokumentiert."
+      },
+      "enthaelt": "Gebäudedatenplattform, kein Nachweis für Existenz oder Abwesenheit eines deutschen Unternehmens-Planaggregators.",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-11",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-11"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-11",
+          "agent": "amelie-intake-20261011",
+          "runde": "Shared Lab intake 11.10.2026",
+          "notiz": "Shared Lab intake 11.10.2026: Gebäudedatenplattform, kein Nachweis für Existenz oder Abwesenheit eines deutschen Unternehmens-Planaggregators.",
+          "status": "durchsucht",
+          "planId": "lab-intake-review-20261011"
+        }
+      ]
+    },
+    {
+      "id": "intake-20261011-inkwash",
+      "name": "Inkwash Originalrepository",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "evidenz",
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [
+        "https://github.com/johnowhitaker/inkwash"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "Primärseite oder Primär-PDF direkt lesen; konkrete Stelle im Intake-Review dokumentiert."
+      },
+      "enthaelt": "README gelesen: WebGL2, wet bleed/dry, MIT. Quellcode- und Benchmarkvergleich weiterhin erforderlich.",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-11",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-11"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-11",
+          "agent": "amelie-intake-20261011",
+          "runde": "Shared Lab intake 11.10.2026",
+          "notiz": "Shared Lab intake 11.10.2026: README gelesen: WebGL2, wet bleed/dry, MIT. Quellcode- und Benchmarkvergleich weiterhin erforderlich.",
+          "status": "durchsucht",
+          "planId": "lab-intake-review-20261011"
+        }
+      ]
+    },
+    {
+      "id": "intake-20261011-niaid-peanut",
+      "name": "NIAID Präventionsleitlinie",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "evidenz",
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.niaid.nih.gov/sites/default/files/peanut-allergy-prevention-guidelines-clinician-summary.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "teilweise",
+        "wie": "Primärseite oder Primär-PDF direkt lesen; konkrete Stelle im Intake-Review dokumentiert."
+      },
+      "enthaelt": "Suchergebnis verfügbar, PDF-Abruf fehlgeschlagen. Kein gelesener Volltext, keine Therapie-/Diagnosefreigabe.",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-11",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-11"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-11",
+          "agent": "amelie-intake-20261011",
+          "runde": "Shared Lab intake 11.10.2026",
+          "notiz": "Shared Lab intake 11.10.2026: Suchergebnis verfügbar, PDF-Abruf fehlgeschlagen. Kein gelesener Volltext, keine Therapie-/Diagnosefreigabe.",
+          "status": "angekratzt",
+          "planId": "lab-intake-review-20261011"
         }
       ]
     }

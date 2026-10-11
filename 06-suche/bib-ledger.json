@@ -710,6 +710,445 @@
         "src/data/candidateVectors.json": "sha256:b1584659a91b5625577433fc6f05ed9bcb300e95b215f12029d6b79d136a239c",
         "src/data/vectorChanges.json": "sha256:7713e34a6b9cd539c2d581109bc53f40f97495968d6358ce51d8995bd4405b79"
       }
+    },
+    "lab-intake-review-20261011": {
+      "plan_id": "lab-intake-review-20261011",
+      "actor": "bibliothekar",
+      "agent": "amelie-intake-20261011",
+      "runde": "Shared Lab intake 11.10.2026",
+      "at": "2026-10-11T11:13:47.506Z",
+      "ops": [
+        {
+          "index": 0,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-08-c5"
+        },
+        {
+          "index": 1,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-08-c2"
+        },
+        {
+          "index": 2,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-08-c11"
+        },
+        {
+          "index": 3,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-09-c5"
+        },
+        {
+          "index": 4,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-09-c6"
+        },
+        {
+          "index": 5,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-10-c1"
+        },
+        {
+          "index": 6,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-10-c3"
+        },
+        {
+          "index": 7,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-10-c5"
+        },
+        {
+          "index": 8,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-11-c4"
+        },
+        {
+          "index": 9,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-12-c1"
+        },
+        {
+          "index": 10,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-12-c3"
+        },
+        {
+          "index": 11,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-13-inv-1"
+        },
+        {
+          "index": 12,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-14-c1"
+        },
+        {
+          "index": 13,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-14-c2"
+        },
+        {
+          "index": 14,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-15-c1"
+        },
+        {
+          "index": 15,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-19-c11"
+        },
+        {
+          "index": 16,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-19-c3"
+        },
+        {
+          "index": 17,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-19-c2"
+        },
+        {
+          "index": 18,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-26-c9"
+        },
+        {
+          "index": 19,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-26-c6"
+        },
+        {
+          "index": 20,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-26-c12"
+        },
+        {
+          "index": 21,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-26-c1"
+        },
+        {
+          "index": 22,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-27-c10"
+        },
+        {
+          "index": 23,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-27-c1"
+        },
+        {
+          "index": 24,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-27-c5"
+        },
+        {
+          "index": 25,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-28-c18"
+        },
+        {
+          "index": 26,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-28-c3"
+        },
+        {
+          "index": 27,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-28-c1"
+        },
+        {
+          "index": 28,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-29-c5"
+        },
+        {
+          "index": 29,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-29-c9"
+        },
+        {
+          "index": 30,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-29-c1"
+        },
+        {
+          "index": 31,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-29-c3"
+        },
+        {
+          "index": 32,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-30-c4"
+        },
+        {
+          "index": 33,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-30-c1"
+        },
+        {
+          "index": 34,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-30-c9"
+        },
+        {
+          "index": 35,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-31-c5"
+        },
+        {
+          "index": 36,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-31-c11"
+        },
+        {
+          "index": 37,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-31-c2"
+        },
+        {
+          "index": 38,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-31-c4"
+        },
+        {
+          "index": 39,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-31-c3"
+        },
+        {
+          "index": 40,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-32-c7"
+        },
+        {
+          "index": 41,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-32-c11"
+        },
+        {
+          "index": 42,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-32-c5"
+        },
+        {
+          "index": 43,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-33-c10"
+        },
+        {
+          "index": 44,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-33-c12"
+        },
+        {
+          "index": 45,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-33-c1"
+        },
+        {
+          "index": 46,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-33-c2"
+        },
+        {
+          "index": 47,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-33-c3"
+        },
+        {
+          "index": 48,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-34-c8"
+        },
+        {
+          "index": 49,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-34-c12"
+        },
+        {
+          "index": 50,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-34-c2"
+        },
+        {
+          "index": 51,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-35-c1"
+        },
+        {
+          "index": 52,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-35-c2"
+        },
+        {
+          "index": 53,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-36-c1"
+        },
+        {
+          "index": 54,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-36-c3"
+        },
+        {
+          "index": 55,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-37-c1"
+        },
+        {
+          "index": 56,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-68-c1"
+        },
+        {
+          "index": 57,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-68-c3"
+        },
+        {
+          "index": 58,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-69-c1"
+        },
+        {
+          "index": 59,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-69-c2"
+        },
+        {
+          "index": 60,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-70-c1"
+        },
+        {
+          "index": 61,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-70-c2"
+        },
+        {
+          "index": 62,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-71-c1"
+        },
+        {
+          "index": 63,
+          "op": "protokoll.add",
+          "target": "lab-review-20261011-71-c2"
+        },
+        {
+          "index": 64,
+          "op": "protokoll.add",
+          "target": "umsetzungsplan-register"
+        },
+        {
+          "index": 65,
+          "op": "source.add",
+          "target": "intake-20261011-enefg-9"
+        },
+        {
+          "index": 66,
+          "op": "source.add",
+          "target": "intake-20261011-bafa-enefg"
+        },
+        {
+          "index": 67,
+          "op": "source.add",
+          "target": "intake-20261011-bt-218027"
+        },
+        {
+          "index": 68,
+          "op": "source.add",
+          "target": "intake-20261011-eed-2023"
+        },
+        {
+          "index": 69,
+          "op": "source.add",
+          "target": "intake-20261011-sgbx-13"
+        },
+        {
+          "index": 70,
+          "op": "source.add",
+          "target": "intake-20261011-sgbii-16a"
+        },
+        {
+          "index": 71,
+          "op": "source.add",
+          "target": "intake-20261011-sgbii-22"
+        },
+        {
+          "index": 72,
+          "op": "source.add",
+          "target": "intake-20261011-iab-psych"
+        },
+        {
+          "index": 73,
+          "op": "source.add",
+          "target": "intake-20261011-jobcenter-guru"
+        },
+        {
+          "index": 74,
+          "op": "source.add",
+          "target": "intake-20261011-typo3-cowriter"
+        },
+        {
+          "index": 75,
+          "op": "source.add",
+          "target": "intake-20261011-owasp-dependency"
+        },
+        {
+          "index": 76,
+          "op": "source.add",
+          "target": "intake-20261011-lfu-wasserbuch"
+        },
+        {
+          "index": 77,
+          "op": "source.add",
+          "target": "intake-20261011-lfu-fischpass"
+        },
+        {
+          "index": 78,
+          "op": "source.log",
+          "target": "ufz-tagfalter-monitoring-deutschland"
+        },
+        {
+          "index": 79,
+          "op": "source.add",
+          "target": "intake-20261011-bfr-pathogen"
+        },
+        {
+          "index": 80,
+          "op": "source.add",
+          "target": "intake-20261011-seed-doe"
+        },
+        {
+          "index": 81,
+          "op": "source.add",
+          "target": "intake-20261011-inkwash"
+        },
+        {
+          "index": 82,
+          "op": "source.add",
+          "target": "intake-20261011-niaid-peanut"
+        }
+      ],
+      "files": [
+        "06-suche/amelie-pruefprotokoll.md",
+        "06-suche/amelie-quellen.md",
+        "src/data/quellen.json"
+      ],
+      "hashes": {
+        "src/data/quellen.json": "sha256:f35cf5777e44df89995f6ba3af4b186448481080e164d6b8252435f2226ef1a5",
+        "src/data/graeber.json": "sha256:47a32526eeeea0e09586f3c7f2a6fcb490c5996bb58951799cdf9592617ade9d",
+        "06-suche/amelie-pruefprotokoll.md": "sha256:99c607ffa12ced766ed67e02c343134b42a483f1a9dd605d4e287f92197ca7d2",
+        "06-suche/terminology-map.md": "absent",
+        "06-suche/open-questions.md": "absent",
+        "src/data/doseVectors.json": "sha256:5e0eaa48ebb76025821c6437e915db3e68c5be5a7408fd2503fb0faa56fd057a",
+        "src/data/candidateVectors.json": "sha256:b1584659a91b5625577433fc6f05ed9bcb300e95b215f12029d6b79d136a239c",
+        "src/data/vectorChanges.json": "sha256:7713e34a6b9cd539c2d581109bc53f40f97495968d6358ce51d8995bd4405b79"
+      }
     }
   }
 }

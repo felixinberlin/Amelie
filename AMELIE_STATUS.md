@@ -1,6 +1,6 @@
 # Amélie Status
 
-Generated: 2026-10-08T21:51:05.312Z
+Generated: 2026-10-11T11:27:57.299Z
 
 ## System
 
@@ -33,16 +33,21 @@ Generated: 2026-10-08T21:51:05.312Z
 
 | Check | Status |
 |---|---|
-| check:dosen | PASS |
-| check:books | PASS |
-| check:idea-frontmatter | PASS |
-| check:protokoll | PASS |
-| check:friedhof | PASS |
+| check:dosen | FAIL |
+| check:books | FAIL |
+| check:idea-frontmatter | FAIL |
+| check:protokoll | FAIL |
+| check:friedhof | FAIL |
 
 ## Findings
 
 ### Errors
 
+* **[CHECK-FAIL-books]** Validation check "check:books" failed: spawnSync /bin/sh EPERM
+* **[CHECK-FAIL-dosen]** Validation check "check:dosen" failed: spawnSync /bin/sh EPERM
+* **[CHECK-FAIL-friedhof]** Validation check "check:friedhof" failed: spawnSync /bin/sh EPERM
+* **[CHECK-FAIL-ideaFrontmatter]** Validation check "check:idea-frontmatter" failed: spawnSync /bin/sh EPERM
+* **[CHECK-FAIL-protokoll]** Validation check "check:protokoll" failed: spawnSync /bin/sh EPERM
 * **[MD-BROKEN-LINK-vernichtungs-offenlegungsregister-../../07-demos/vernichtungs-offenlegungsregister/data/README.md]** Markdown file 05-dosen/vernichtungs-offenlegungsregister.md contains broken link to "../../07-demos/vernichtungs-offenlegungsregister/data/README.md". (05-dosen/vernichtungs-offenlegungsregister.md)
 * **[MD-BROKEN-LINK-vernichtungs-offenlegungsregister-../../07-demos/vernichtungs-offenlegungsregister/normtext-abgleich-2026-10-08.md]** Markdown file 05-dosen/vernichtungs-offenlegungsregister.md contains broken link to "../../07-demos/vernichtungs-offenlegungsregister/normtext-abgleich-2026-10-08.md". (05-dosen/vernichtungs-offenlegungsregister.md)
 * **[MD-BROKEN-LINK-vernichtungs-offenlegungsregister-../../07-demos/vernichtungs-offenlegungsregister/ticket-02-normtext-und-realfixture.md]** Markdown file 05-dosen/vernichtungs-offenlegungsregister.md contains broken link to "../../07-demos/vernichtungs-offenlegungsregister/ticket-02-normtext-und-realfixture.md". (05-dosen/vernichtungs-offenlegungsregister.md)
@@ -67,5 +72,5 @@ None.
 ## Generated from
 
 * Audit version: 1
-* Commit: 14685297
-* Branch: main
+* Commit: unknown
+* Branch: unknown

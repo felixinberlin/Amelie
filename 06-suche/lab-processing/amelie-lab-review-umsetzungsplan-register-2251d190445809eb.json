@@ -1,8 +1,8 @@
 {
   "batch_id": "amelie-lab-review-umsetzungsplan-register-2251d190445809eb",
-  "state": "needs_research",
+  "state": "processed",
   "worker": "",
   "lease_until": "",
-  "note": "Bestandsabgleich 11.10.2026: bib find findet bereits Dose 05-dosen/umsetzungsplan-register.md und bestehendes Prüfprotokoll; als Nachprüfung behandeln, keine neue Dose anlegen. F1/F2 stammen aus kommerziellem Kommentar zu einem Gesetzentwurf, F7 quote_status=not_found; Blind Review nennt fehlende Primärbelege. Nächster Schritt: geltenden §9 EnEfG und aktuellen BAFA-Leitfaden direkt lesen, Entwurf/Fassung trennen, bestehendes Dossier gegen konkrete Änderungen prüfen und Registersuche belegen. Lab-Quote-Status ist keine Amélie-Freigabe; bisheriges Urteil bleibt unverändert.",
-  "updated_at": "2026-10-11T07:53:44.418Z"
+  "note": "Bestehendes Needs-Research umsetzungsplan-register aufgelöst als belegte Dosenkorrektur: aktueller §9 (>2,5 GWh, drei Jahre, Drittbestätigung) vs Entwurf BT21/8027; BAFA 16.09.2026 mit identischem SHA256, fünf Felder und Unternehmensregister-/Website-Publikation. EED Art11(2) mit eigenem Personenkreis und Ausnahmen. Suchfehlen ist kein Beweis der Abwesenheit eines Aggregators. Restlücken Archiv-Snapshots, alte Merkblattfassung und Statuszuordnung bleiben im Ticket; keine neue Freigabe historischer Novelty. Audit: 06-suche/lab-intake-review-20261011.md#batch-65",
+  "updated_at": "2026-10-11T11:14:24.036Z"
 }

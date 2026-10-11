@@ -9,7 +9,7 @@
 
 ## 1. Problemstellung & Ziel
 
-Umsetzungspläne nach § 9 EnEfG erscheinen verstreut als PDF, niemand zählt sie. Ein reiner TypeScript-Kern `pruefeUmsetzungsplan(plan)` soll einen übertragenen Plan gegen die Angaben des BAFA-Merkblatts prüfen, jede Auffälligkeit als **Frage** melden und Statusverteilung sowie Investitionsvolumen der offenen Maßnahmen ausgeben. Das Register daneben kennt nur **„gefunden"** und **„kein Plan gefunden (Stand, Suchweg)"** und nutzt den Registerkern der Schwester-Dose `vernichtungs-offenlegungsregister`.
+Umsetzungspläne nach § 9 EnEfG erscheinen verstreut als PDF; in den dokumentierten Suchen wurde kein fachliches Planaggregat gefunden. Ein reiner TypeScript-Kern `pruefeUmsetzungsplan(plan)` soll einen übertragenen Plan gegen die Angaben des BAFA-Merkblatts prüfen, jede Auffälligkeit als **Frage** melden und Statusverteilung sowie Investitionsvolumen der offenen Maßnahmen ausgeben. Das Register daneben kennt nur **„gefunden"** und **„kein Plan gefunden (Stand, Suchweg)"** und nutzt den Registerkern der Schwester-Dose `vernichtungs-offenlegungsregister`.
 
 ---
 
@@ -74,3 +74,7 @@ Spiegelt „Fertig, wenn" der Dose; Stand 28.09.2026.
 
 ---
 Lizenz: CC0 1.0 Public Domain.
+
+## Primärquellen-Nachprüfung 11.10.2026
+
+Task 0 erneut direkt geprüft: BAFA-Fassung und SHA256 unverändert. Unternehmensregister/Jahresabschluss ist ebenfalls zulässiger Fundort. Geltender §9 und Entwurf BT21/8027 sind getrennt; `n. F.` erst nach Verkündung. Die fünf Schemafelder und Tests bleiben unverändert. Tasks5–7 weiterhin offen; kein künstlicher Ticketabschluss. Siehe [Intake-Review](../../06-suche/lab-intake-review-20261011.md#batch-65).

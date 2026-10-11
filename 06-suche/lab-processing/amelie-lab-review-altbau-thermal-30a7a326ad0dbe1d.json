@@ -1,0 +1,8 @@
+{
+  "batch_id": "amelie-lab-review-altbau-thermal-30a7a326ad0dbe1d",
+  "state": "needs_research",
+  "worker": "",
+  "lease_until": "",
+  "note": "Altbau-Thermal: bestehende Dose ist Nachbar, kein neuer Kandidat. 2D-Oberflächen-/Wärmebrückenrechnung belegt keine vollständige Wohnungs- oder Gebäudebewertung. Benötigt konkrete primäre Norm-/Methodenstellen, materialisierte Randbedingungen und unabhängigen Zahlenbenchmark. Kein Score aus Lab-Zitaten übernommen. Audit: 06-suche/lab-intake-review-20261011.md#batch-57",
+  "updated_at": "2026-10-11T11:14:21.599Z"
+}
