@@ -4,6 +4,7 @@ import { CITY_PLACES, CityPlace, placeById } from '../../data/fugenduellPlaces';
 import { FEATURED_CITIES, NAMED_PLACES, NamedPlace } from '../../data/fugenduellCities';
 import { aggregateMonths, fetchNasaPowerYear, fromFixture, MonthCard, monthCards, WeatherYearData } from '../../engine/fugenduell/weatherYear';
 import { placeFit, playableSpecies, runWatch, SpeciesProfile, trampleLoss, WatchResult } from '../../engine/fugenduell/watchMode';
+import { detectComboHands, getCrackState, ComboHand, CrackState } from '../../engine/fugenduell/combos';
 
 /** A named place of a featured city, or a generic place type (for custom coordinates). */
 const resolvePlace = (id: string): CityPlace | NamedPlace => NAMED_PLACES.find(p => p.id === id) ?? placeById(id);
@@ -12,7 +13,7 @@ const LAST_YEAR = 2025; // plant year March 2025 – February 2026 is the latest
 const YEARS = Array.from({ length: LAST_YEAR - 1981 + 1 }, (_, i) => LAST_YEAR - i);
 const TEAM_COLOURS = [['#166534', '#22c55e', '#86efac'], ['#9f1239', '#f43f5e', '#fda4af']];
 
-interface Game { data: WeatherYearData; cards: MonthCard[]; result: WatchResult; teams: [string[], string[]]; placeId: string }
+interface Game { data: WeatherYearData; cards: MonthCard[]; result: WatchResult; teams: [string[], string[]]; placeId: string; crackLevel: 1 | 2 | 3 }
 
 export function FugenduellWeatherWatch({ lang }: { lang: Language }) {
   const de = lang === 'de';
@@ -26,6 +27,7 @@ export function FugenduellWeatherWatch({ lang }: { lang: Language }) {
   const [custom, setCustom] = useState({ lat: '52.52', lon: '13.41' });
   const [year, setYear] = useState(LAST_YEAR);
   const [placeId, setPlaceId] = useState('berlin-kastanienallee');
+  const [crackLevel, setCrackLevel] = useState<1 | 2 | 3>(1);
   const [teamA, setTeamA] = useState(['plantago-major', 'poa-annua', 'sagina-procumbens']);
   const [teamB, setTeamB] = useState(['buddleja-davidii', 'chelidonium-majus', 'portulaca-oleracea']);
   const [status, setStatus] = useState<'idle' | 'loading' | 'error'>('idle');
@@ -33,6 +35,12 @@ export function FugenduellWeatherWatch({ lang }: { lang: Language }) {
   const [game, setGame] = useState<Game | null>(null);
   const [step, setStep] = useState(0); // 0 = start, k = after month k
   const [playing, setPlaying] = useState(false);
+
+  const teamAProfiles = useMemo(() => teamA.map(id => species.find(s => s.id === id)).filter((p): p is SpeciesProfile => Boolean(p)), [teamA, species]);
+  const teamBProfiles = useMemo(() => teamB.map(id => species.find(s => s.id === id)).filter((p): p is SpeciesProfile => Boolean(p)), [teamB, species]);
+  const chosenPlace = resolvePlace(placeId);
+  const combosA = useMemo(() => detectComboHands(teamAProfiles, chosenPlace), [teamAProfiles, chosenPlace]);
+  const combosB = useMemo(() => detectComboHands(teamBProfiles, chosenPlace), [teamBProfiles, chosenPlace]);
 
   useEffect(() => {
     if (!playing || !game) return;
@@ -54,8 +62,8 @@ export function FugenduellWeatherWatch({ lang }: { lang: Language }) {
       if (months.filter(m => m.missing).length > 2) throw new Error('too many missing months');
       const cards = monthCards(months);
       const teams: [string[], string[]] = [teamA, teamB];
-      const result = runWatch(teams, cards, data.lat, engineLang, resolvePlace(placeId));
-      setGame({ data, cards, result, teams, placeId }); setStep(0); setStatus('idle');
+      const result = runWatch(teams, cards, data.lat, engineLang, resolvePlace(placeId), crackLevel);
+      setGame({ data, cards, result, teams, placeId, crackLevel }); setStep(0); setStatus('idle');
     } catch {
       setStatus('error');
       setError(t('Das Wetterjahr konnte nicht geladen werden (Netz, Koordinaten oder Jahr). Für 2025 funktionieren alle sechs Städte auch offline.', 'Could not load the weather year (network, coordinates or year). For 2025 all six cities also work offline.'));
@@ -114,7 +122,7 @@ export function FugenduellWeatherWatch({ lang }: { lang: Language }) {
       </header>
 
       <div className="rounded-xl border bg-white p-4 space-y-4">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
           <label className="block text-sm">{t('Stadt', 'City')}
             <select className="mt-1 w-full min-h-11 rounded-lg border p-2 text-base" value={cityId} onChange={e => { const id = e.target.value; setCityId(id); setPlaceId((FEATURED_CITIES.find(c => c.id === id)?.places ?? CITY_PLACES)[0].id); }}>
               {FEATURED_CITIES.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
@@ -131,6 +139,13 @@ export function FugenduellWeatherWatch({ lang }: { lang: Language }) {
               {cityPlaces.map(p => <option key={p.id} value={p.id}>{label(p)}</option>)}
             </select>
           </label>
+          <label className="block text-sm">{t('Fugen-Bodenstufe (Evolution)', 'Crack Soil (Evolution)')}
+            <select className="mt-1 w-full min-h-11 rounded-lg border p-2 text-base" value={crackLevel} onChange={e => setCrackLevel(Number(e.target.value) as 1 | 2 | 3)}>
+              <option value={1}>{t('Stufe 1: Mineralischer Splitt', 'Level 1: Mineral Sand')}</option>
+              <option value={2}>{t('Stufe 2: Moos-Humus (+436% C)', 'Level 2: Moss-Humus (+436% SOC)')}</option>
+              <option value={3}>{t('Stufe 3: Aufgesprengter Asphalt', 'Level 3: Fractured Asphalt')}</option>
+            </select>
+          </label>
         </div>
         {cityId === 'custom' && <div className="grid grid-cols-2 gap-3">
           <label className="block text-sm">{t('Breite', 'Latitude')}<input inputMode="decimal" className="mt-1 w-full min-h-11 rounded-lg border p-2 text-base" value={custom.lat} onChange={e => setCustom({ ...custom, lat: e.target.value })} /></label>
@@ -142,9 +157,47 @@ export function FugenduellWeatherWatch({ lang }: { lang: Language }) {
           <p className="text-stone-600">{t('Platz', 'Space')} {chosen.capacity} · {t('Tritt', 'trampling')} {chosen.trample} · {t('Reinigung', 'cleaning')} {chosen.maintenanceMonths.length ? chosen.maintenanceMonths.map(m => monthName(m)).join(', ') : t('nie', 'never')} · {t('Hitze', 'heat')} {chosen.heatShift > 0 ? '+' : ''}{chosen.heatShift} · {t('Dürre', 'drought')} {chosen.droughtShift > 0 ? '+' : ''}{chosen.droughtShift}{chosen.winterSalt ? ` · ${t('Streusalz im Winter', 'road salt in winter')}` : ''}{chosen.saltSpray ? ` · ${t('Salzgischt ganzjährig', 'salt spray all year')}` : ''}{chosen.wallJoint ? ` · ${t('Mauer', 'wall')}` : ''} · L{chosen.profile.L} F{chosen.profile.F} R{chosen.profile.R} N{chosen.profile.N} S{chosen.profile.S}</p>
           {isNamed(chosen) && <p className="text-xs text-stone-500">📍 <a className="underline" href={`https://www.openstreetmap.org/?mlat=${chosen.lat}&mlon=${chosen.lon}#map=17/${chosen.lat}/${chosen.lon}`} target="_blank" rel="noopener noreferrer">{chosen.lat.toFixed(4)}, {chosen.lon.toFixed(4)}</a> · {t('Ortswerte sind Spielannahmen. Noch zu prüfen', 'Place values are game assumptions. Still to verify')}: {chosen.verify.join('; ')}</p>}
         </div>
+        <div className="rounded-lg bg-emerald-50 border border-emerald-200 p-3 text-xs text-emerald-950 space-y-1">
+          <p className="font-bold">🔬 {t('Urbane Bodenentwicklung (UCS / Manu et al. 2025):', 'Urban Crevice Soils (Manu et al. 2025):')}</p>
+          <p>
+            {crackLevel === 1 && t('Stufe 1 (Pionierfuge): Reiner mineralischer Sand/Splitt. Geringe Wasserspeicherung, Kapazitätsbonus 0.', 'Stage 1 (Pioneer): Pure mineral sand/grit. Low water storage, capacity bonus 0.')}
+            {crackLevel === 2 && t('Stufe 2 (Reife Fuge): Moos- und Wurzelzerfall reichern organischen Kohlenstoff um +436% an. Fungiert als Schwamm gegen Sommertrockenheit (Dürreschaden −1, Kapazität +15).', 'Stage 2 (Mature): Moss and root decay enrich organic carbon by +436%. Functions as a sponge against summer drought (drought loss −1, capacity +15).')}
+            {crackLevel === 3 && t('Stufe 3 (Spaltbildung): Frost- und Wurzelsprengung öffnen Tiefenräume im Asphalt. Größter Wurzelraum für Gehölzpioniere (Kapazität +30, Dürreschaden −2), lockt aber Straßenreinigung an.', 'Stage 3 (Fracture): Frost and root wedging open deep spaces in asphalt. Maximum root space for woody pioneers (capacity +30, drought loss −2), but attracts street sweepers.')}
+          </p>
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <fieldset className="space-y-2"><legend className="font-bold text-emerald-800">{t('Team Grün', 'Team green')}</legend>{select(teamA, setTeamA, 0)}</fieldset>
-          <fieldset className="space-y-2"><legend className="font-bold text-rose-800">{t('Team Rot', 'Team red')}</legend>{select(teamB, setTeamB, 1)}</fieldset>
+          <fieldset className="space-y-2">
+            <legend className="font-bold text-emerald-800">{t('Team Grün', 'Team green')}</legend>
+            {select(teamA, setTeamA, 0)}
+            {combosA.length > 0 && (
+              <div className="mt-2 space-y-1">
+                <p className="text-xs font-semibold text-emerald-900">{t('Erkannte Combos (Balatro-Synergie):', 'Detected Combos (Balatro Synergy):')}</p>
+                <div className="flex flex-wrap gap-1.5">
+                  {combosA.map(c => (
+                    <span key={c.id} className="inline-flex items-center rounded-full bg-emerald-100 border border-emerald-300 px-2.5 py-0.5 text-xs font-bold text-emerald-900 shadow-sm" title={`${de ? c.taglineDe : c.taglineEn}: ${de ? c.descriptionDe : c.descriptionEn}\n\nÖkologie: ${de ? c.ecologyDe : c.ecologyEn}`}>
+                      💥 {de ? c.nameDe : c.nameEn}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+          </fieldset>
+          <fieldset className="space-y-2">
+            <legend className="font-bold text-rose-800">{t('Team Rot', 'Team red')}</legend>
+            {select(teamB, setTeamB, 1)}
+            {combosB.length > 0 && (
+              <div className="mt-2 space-y-1">
+                <p className="text-xs font-semibold text-rose-900">{t('Erkannte Combos (Balatro-Synergie):', 'Detected Combos (Balatro Synergy):')}</p>
+                <div className="flex flex-wrap gap-1.5">
+                  {combosB.map(c => (
+                    <span key={c.id} className="inline-flex items-center rounded-full bg-rose-100 border border-rose-300 px-2.5 py-0.5 text-xs font-bold text-rose-900 shadow-sm" title={`${de ? c.taglineDe : c.taglineEn}: ${de ? c.descriptionDe : c.descriptionEn}\n\nÖkologie: ${de ? c.ecologyDe : c.ecologyEn}`}>
+                      💥 {de ? c.nameDe : c.nameEn}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+          </fieldset>
         </div>
         <button onClick={start} disabled={status === 'loading'} className="min-h-11 rounded-lg bg-emerald-800 px-4 text-white font-bold disabled:opacity-50">
           {status === 'loading' ? t('Lade Wetterjahr …', 'Loading weather year …') : t('Jahr laden und zuschauen', 'Load the year and watch')}
@@ -179,7 +232,40 @@ export function FugenduellWeatherWatch({ lang }: { lang: Language }) {
         </div>
 
         <div className="rounded-xl border bg-white p-4 space-y-3" aria-live="polite">
-          <h3 className="font-bold">{step === 0 ? t('Start: je 2 Triebe und 2 Samen', 'Start: 2 shoots and 2 seeds each') : `${monthName(game.cards[step - 1].month)} ${game.cards[step - 1].year}`}</h3>
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <h3 className="font-bold text-lg">{step === 0 ? t('Start: je 2 Triebe und 2 Samen', 'Start: 2 shoots and 2 seeds each') : `${monthName(game.cards[step - 1].month)} ${game.cards[step - 1].year}`}</h3>
+            {game.result.crackState && (
+              <span className="inline-flex items-center rounded-full bg-emerald-50 border border-emerald-300 px-3 py-1 text-xs font-semibold text-emerald-900 shadow-sm">
+                🌱 {de ? game.result.crackState.nameDe : game.result.crackState.nameEn} (Kap. +{game.result.crackState.capacityBonus})
+              </span>
+            )}
+          </div>
+
+          {month && (() => {
+            const specials = month.lines.filter(l =>
+              l.includes('SPEZIAL:') ||
+              l.includes('KETTENREAKTION:') ||
+              l.includes('COMBO:') ||
+              l.includes('Ameisenstraße') ||
+              l.includes('Sukzessionskette') ||
+              l.includes('Monsun')
+            );
+            if (!specials.length) return null;
+            return (
+              <div className="rounded-xl border-2 border-amber-400 bg-gradient-to-r from-amber-50 to-orange-50 p-3 shadow-md space-y-1">
+                <div className="flex items-center gap-1.5 text-amber-900 font-extrabold text-xs uppercase tracking-wide">
+                  <span className="animate-bounce">⚡</span>
+                  <span>{t('Fugen-Highlight dieses Monats!', 'Crack Highlight This Month!')}</span>
+                </div>
+                {specials.map((s, idx) => (
+                  <p key={idx} className="text-xs sm:text-sm font-bold text-amber-950">
+                    {s}
+                  </p>
+                ))}
+              </div>
+            );
+          })()}
+
           <div className="flex h-8 rounded-lg overflow-hidden bg-stone-200" role="img" aria-label={t(`Grün ${total(0)}, Rot ${total(1)}, Platz ${place.capacity}`, `Green ${total(0)}, red ${total(1)}, space ${place.capacity}`)}>
             {([0, 1] as const).flatMap(side => [0, 1, 2].map(i => (
               <div key={`${side}-${i}`} style={{ width: `${(shootsAt(side, i) / place.capacity) * 100}%`, background: TEAM_COLOURS[side][i], transition: 'width 0.6s' }} />
@@ -193,9 +279,11 @@ export function FugenduellWeatherWatch({ lang }: { lang: Language }) {
                   const p = species.find(s => s.id === id) as SpeciesProfile;
                   const fit = placeFit(p, place);
                   const st = statusAt(side, i);
-                  return <li key={id} className={`rounded-lg border p-2 text-sm ${st === 'dead' ? 'bg-stone-100 opacity-70' : ''}`}>
+                  const isSpecialActive = month && month.lines.some(l => l.includes(nameOf(id)) && (l.includes('SPEZIAL:') || l.includes('Monsun') || l.includes('Sukzessionskette')));
+                  return <li key={id} className={`rounded-lg border p-2 text-sm ${st === 'dead' ? 'bg-stone-100 opacity-70' : isSpecialActive ? 'border-amber-400 bg-amber-50/50 ring-1 ring-amber-300' : ''}`}>
                     <span className="inline-block w-3 h-3 rounded-full mr-1 align-middle" style={{ background: TEAM_COLOURS[side][i] }} aria-hidden="true" />
                     <strong>{nameOf(id)}</strong> {st === 'dead' ? `☠ ${t('ausgestorben', 'died out')}` : st === 'wilted' ? `🥀 ${t('verwelkt, Samen im Boden', 'wilted, seeds in the soil')}` : ''}
+                    {isSpecialActive && <span className="ml-1.5 inline-block rounded bg-amber-200 border border-amber-400 px-1.5 py-0.2 text-[10px] font-extrabold text-amber-900 animate-pulse">⚡ SPEZIAL!</span>}
                     <span className="mt-1 flex h-2 rounded bg-stone-200 overflow-hidden" role="img" aria-label={`HP ${shootsAt(side, i)}/${p.maxHp}`}><span style={{ width: `${(shootsAt(side, i) / p.maxHp) * 100}%`, background: TEAM_COLOURS[side][i], transition: 'width 0.6s' }} /></span>
                     <span className="block">HP {shootsAt(side, i)}/{p.maxHp} {t('Triebe', 'shoots')} · 🛡 {hardAt(side, i)} · {seedsAt(side, i)} {t('Samen', 'seeds')}</span>
                     <span className="block text-xs" title={t('Resistenzen: Hitze, Dürre, Frost, Salz, Tritt, Schatten, Wiederaustrieb', 'Resistances: heat, drought, frost, salt, trampling, shade, regrowth')}>{resistText(p)}</span>
