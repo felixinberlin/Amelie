@@ -772,3 +772,21 @@ Bestehende Forschung zuerst wiederverwenden: ein fehlgeschlagener Rohdaten-Pilot
   2. **Architektur-Drift verhindern:** PRs dürfen Gräber nicht direkt in `src/data/dosen.ts` patchen. `src/data/graeber.json` via `npm run bib -- grab add` ist die kanonische Quelle der Wahrheit.
 - **Nächstes Mal:** PRs zeitnah nach Erstellung prüfen, damit Git-Mergebarkeit erhalten bleibt und keine Drift gegen `main` entsteht.
 
+### Retro: Globale & fernöstliche Spielsehnsüchte als Entdeckungs-Kompass — 11.10.2026
+
+- **Anlass & Gegenstand:** Systematische Untersuchung von Spielwünschen und unbedienten Gameplay-Bedürfnissen auf chinesischen Communities (Heybox/小黑盒, Zhihu/知乎, Bilibili, TapTap) und westlichen Diskussionsforen (Reddit *r/truegaming*, *r/gamedesign*, *r/CozyGamers*).
+- **Die 6 chinesischen Kern-Sehnsüchte:**
+  1. **Das Ackerbau-Gen (中国人骨子里的种田基因 & 告别内卷):** Tiefes psychologisches Bedürfnis nach Selbstversorgung, Vorratshaltung und Verbundenheit mit dem Boden als Zufluchtsort vor städtischem 996-Druck und Konkurrenzüberhitzung (Neijuan). Gesucht werden keine Stardew-Klone, sondern tiefgreifende historische Agrarzyklen (die 24 Sonnenknoten / *Ershisi Jieqi*), phänologische Bewässerung und organische Dorfgemeinschaften.
+  2. **Song-Dynastie-Alltag & Markttreiben (市井生活 & 烟火气):** Überdruss an allmächtigen Kriegern und Göttern; Sehnsucht nach „Yānhuǒqì“ (dem Duft von Rauch und Feuer des täglichen Lebens) auf dem belebten Marktplatz (Qingming-Rollenbild). Als kleiner Garkoch, Teeverkäufer oder Bote im Regen den Klängen des Wirtshauses lauschen (*客栈听雨*), mit autonomen NPCs, die ihr eigenes Leben führen.
+  3. **Historische Forensik & Richter Bao (宋慈 · 洗冤集录 & 县令断案):** Song Cis „Washing Away of Wrongs“ (1247) – das älteste Gerichtsmedizin-Lehrbuch der Menschheit. Reines Kombinieren von Spuren, Zeugen und Reagenzien (Essigdampf, Prüfnadeln, Insekten) ohne übernatürliche Magie oder leuchtenden „Detektiv-Modus“.
+  4. **Immaterielles Kulturerbe als taktile 3D-Mechanik (非遗):** 榫卯 (*Sunmao* / Zapfen- und Nutverbindungen ohne Nägel in historischer Holzarchitektur), 锔瓷 (*Juci* / Kintsugi-Porzellanklammerung), Restaurierung alter Schriftrollen. Handwerk als taktile Physik-Rätsel begreifen, statt es nur im Museumsvideo anzuschauen.
+  5. **Anti-996 & Alltags-Realismus (打工生活 & 躺平):** Melancholisch-humorvolle Arbeits- und Stadtsimulationen (*Chinese Parents*, *Nobody - The Turnaround*), die den Druck moderner Städte mit Empathie abbilden.
+  6. **Buy-to-Play & Respekt vor Lebenszeit (买断制 · 纯单机 · 不逼肝不逼氪):** Radikale Ablehnung von Gacha, FOMO, Daily-Checkins und künstlicher Verlängerung. Der weltweite Wunsch nach in sich geschlossenen, ehrlichen Softwarewerken.
+- **Die westlichen Parallelen:**
+  - *The Joy of Repair / Taktiles Instandsetzen:* Psychologischer Balsam, Chaos in Ordnung zu verwandeln und mechanische Integrität wiederherzustellen (*Unpacking*, *Hardspace*, *A Little to the Left*).
+  - *Nicht-lineare Deduktion ohne Hilfslinien:* Selbst Notizen anheften und Hypothesen formulieren (*Return of the Obra Dinn*, *Chants of Sennaar*).
+  - *Atmospheric Transit:* Die langsame Reise im Regen (*Pacific Drive*, *Jalopy*).
+- **Die Lehre für Amélie & Vektor V8 (Fun):**
+  - Vektor V8 darf kein oberflächliches Gamification-Gimmick (Abzeichen, Highscore-Popups) sein. Wahre Spielfreude im Gemeinwohl entsteht dort, wo Software eine **taktile Erdung**, **Ruhe vor Reizüberflutung**, **handwerklichen Stolz** und **transparente Ehrlichkeit (CC0, Zero-Cloud, kein Tracking)** stiftet.
+  - Diese Erkenntnisse fließen ab sofort als Leitplanken in Amélies Ideengenerierung und Prototyp-Scaffoldings ein.
+

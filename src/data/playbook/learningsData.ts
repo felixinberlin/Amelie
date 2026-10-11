@@ -65,6 +65,25 @@ export interface CoreHeuristic {
   tag: string;
 }
 
+export interface GlobalGamingDesire {
+  id: string;
+  category: 'china' | 'west' | 'cross_cultural';
+  titleDe: string;
+  titleEn: string;
+  titleEs: string;
+  originalTerm?: string;
+  culturalRootDe: string;
+  culturalRootEn: string;
+  culturalRootEs: string;
+  unmetNeedDe: string;
+  unmetNeedEn: string;
+  unmetNeedEs: string;
+  amelieConnectionDe: string;
+  amelieConnectionEn: string;
+  amelieConnectionEs: string;
+  icon: string;
+}
+
 /**
  * 1. Das Architektur-Trilemma im Gemeinwohl-Sektor (aus amelie-reviewer-learning-log.md)
  */
@@ -332,3 +351,119 @@ export const ROUND_RETROSPECTIVES: RoundRetrospective[] = [
     gravesCount: 8,
   },
 ];
+
+/**
+ * 5. Globale & Fernöstliche Spielsehnsüchte (Menschlicher Kompass für Vektor V8 & Gameplay)
+ * Erforscht im Oktober 2026 auf Heybox, Zhihu, Bilibili, TapTap und Reddit (r/truegaming).
+ */
+export const GLOBAL_GAMING_DESIRES: GlobalGamingDesire[] = [
+  {
+    id: 'china-farming-gene',
+    category: 'china',
+    titleDe: 'Das genetische Ackerbau-Gen & Anti-Involution',
+    titleEn: 'The Farming Gene & Anti-Involution Refuge',
+    titleEs: 'El gen agrícola ancestral y refugio anti-estrés',
+    originalTerm: '中国人骨子里的种田基因 · 告别内卷',
+    culturalRootDe: 'Tiefes psychologisches Bedürfnis nach Selbstversorgung, Vorratshaltung und Verbundenheit mit dem Boden als Zufluchtsort vor städtischem 996-Druck und Konkurrenzüberhitzung (Neijuan).',
+    culturalRootEn: 'Deep cultural and psychological drive toward self-sufficiency, food security, and soil connection as an escape from urban 996 hyper-competition (Neijuan).',
+    culturalRootEs: 'Profunda necesidad psicológica de autosuficiencia y conexión con la tierra como escape del estrés laboral urbano extremo.',
+    unmetNeedDe: 'Keine oberflächlichen Stardew-Klone, sondern tiefgreifende historische Agrarzyklen (die 24 Sonnenknoten / Ershisi Jieqi), phänologische Bewässerung und organische Dorfgemeinschaften.',
+    unmetNeedEn: 'Not generic farming clones, but rigorous historical agrarian cycles (the 24 solar terms / Ershisi Jieqi), phenological hydrology, and living village ecosystems.',
+    unmetNeedEs: 'No copias superficiales, sino ciclos agrícolas históricos auténticos (los 24 términos solares), hidrología y vida rural orgánica.',
+    amelieConnectionDe: 'Erdet Natur- und Ökologiewerkzeuge in echten physischen Zyklen (Boden, Wetter, phänologische Messungen wie DWD-Singularitäten oder Pegel-Wetten).',
+    amelieConnectionEn: 'Grounds ecological tools in tangible physical cycles (soil physics, phenological singularities like DWD weather rules, river telemetry).',
+    amelieConnectionEs: 'Conecta herramientas ecológicas con ciclos físicos tangibles (física del suelo, reglas meteorológicas reales).',
+    icon: '🌾',
+  },
+  {
+    id: 'china-street-life-song',
+    category: 'china',
+    titleDe: 'Song-Dynastie-Alltag & Markttreiben (Yānhuǒqì)',
+    titleEn: 'Living Song Dynasty Street Life (Yānhuǒqì)',
+    titleEs: 'Vida cotidiana de la dinastía Song (Yānhuǒqì)',
+    originalTerm: '市井生活 & 烟火气 · 清明上河图式模拟',
+    culturalRootDe: 'Überdruss an allmächtigen Kriegern und Göttern; Sehnsucht nach „Yānhuǒqì“ (dem Duft von Rauch und Feuer des täglichen Lebens) auf dem belebten Marktplatz (Qingming-Rollenbild).',
+    culturalRootEn: 'Fatigue with godlike heroes and immortal emperors; yearning for "Yānhuǒqì" (the warm smoke-and-fire aroma of daily living) as an ordinary citizen on the bustling Qingming scroll.',
+    culturalRootEs: 'Cansancio de héroes todopoderosos; anhelo del bullicio cálido de la vida cotidiana en mercados históricos.',
+    unmetNeedDe: 'Als kleiner Garkoch, Teeverkäufer oder Bote im Regen den Klängen des Wirtshauses lauschen (客栈听雨), mit autonomen NPCs, die ihr eigenes Leben führen.',
+    unmetNeedEn: 'Playing a humble street cook, tea vendor, or mule driver listening to tavern rain (客栈听雨), with living autonomous NPCs that maintain their own schedules.',
+    unmetNeedEs: 'Poder ser un modesto cocinero o vendedor de té escuchando la lluvia en la taberna, con aldeanos que tienen vidas propias.',
+    amelieConnectionDe: 'Entspricht Amélies Fokus auf Alltagsberufe und kleine Gesten statt heroischem Technosolutionismus.',
+    amelieConnectionEn: 'Directly mirrors Amélie’s focus on everyday vocational dignity and micro-utilities rather than heroic techno-solutionism.',
+    amelieConnectionEs: 'Refleja la filosofía de Amélie de dignidad laboral cotidiana y pequeñas herramientas útiles.',
+    icon: '🏮',
+  },
+  {
+    id: 'china-forensic-court',
+    category: 'china',
+    titleDe: 'Historische Forensik & Kreisrichter Song Ci',
+    titleEn: 'Historical Forensic Deduction & Magistrate Song Ci',
+    titleEs: 'Deducción forense histórica y juez Song Ci',
+    originalTerm: '宋慈 · 洗冤集录 & 县令断案',
+    culturalRootDe: 'Song Cis „Washing Away of Wrongs“ (1247) – das älteste Gerichtsmedizin-Lehrbuch der Menschheit. Reines Kombinieren von Spuren, Zeugen und Reagenzien.',
+    culturalRootEn: 'Song Ci’s "Washing Away of Wrongs" (1247) — the world’s earliest forensic medicine treatise. Pure physical clue synthesis without magical hand-holding.',
+    culturalRootEs: 'El tratado de medicina forense más antiguo del mundo (1247). Deducción basada en evidencias físicas reales.',
+    unmetNeedDe: 'Detektivspiele ohne übernatürliche Magie oder leuchtenden „Detektiv-Modus“; Urteile fällen auf Basis von Tatortinspektion, Silberprüfnadeln und menschlichen Motiven.',
+    unmetNeedEn: 'Deductive legal games without glowing objective markers or psychic vision; evaluating evidence using silver needles, vinegar vapors, and human observation.',
+    unmetNeedEs: 'Juegos detectivescos sin rayos X mágicos; juzgar casos mediante inspección física de pruebas y testimonios.',
+    amelieConnectionDe: 'Perfekte Blaupause für deterministische Prüfwerkzeuge (wie DWD-Bürokratiestempel, Katasterprüfungen oder offene Register).',
+    amelieConnectionEn: 'The archetypal blueprint for Amélie’s deterministic audit tools (DWD weather stamps, cadastral verification, open disclosure registers).',
+    amelieConnectionEs: 'El modelo perfecto para las herramientas de auditoría determinista de Amélie.',
+    icon: '📜',
+  },
+  {
+    id: 'china-intangible-crafts',
+    category: 'china',
+    titleDe: 'Immaterielles Kulturerbe & Nagellose Holzbaukunst',
+    titleEn: 'Intangible Cultural Crafts & Mortise-and-Tenon (Sunmao)',
+    titleEs: 'Artesanías intangibles y ensambles de madera Sunmao',
+    originalTerm: '非遗 · 榫卯 (Sunmao) · 锔瓷 (Porzellanklammerung)',
+    culturalRootDe: 'Bewahrung uralter handwerklicher Tugenden – 3D-Holzverbindungen ohne Nägel (榫卯), geklammertes Porzellan (锔瓷/Kintsugi), Restaurierung antiker Reispapiere.',
+    culturalRootEn: 'Preserving ancestral tactile mastercrafts — nail-less 3D interlocking timber joinery (Sunmao), staple-mended ceramics (Juci/Kintsugi), paper scroll restoration.',
+    culturalRootEs: 'Preservación de oficios ancestrales: ensambles de madera sin clavos (Sunmao), restauración de porcelana y papel antiguo.',
+    unmetNeedDe: 'Traditionelles Handwerk als taktile Physik-Rätsel begreifen, statt es nur distanziert im Museumsvideo anzuschauen.',
+    unmetNeedEn: 'Experiencing master crafts as tactile, tactile-satisfying physics puzzles rather than passive museum video exhibits.',
+    unmetNeedEs: 'Vivir la artesanía como puzles táctiles de física y montaje, no como simples vídeos de museo.',
+    amelieConnectionDe: 'Direkte Parallele zu Amélies Holz-Dose abbundzeichen-fundbuch und den taktilen Zen-Spielen (Crème-Brûlée-Kruste, Steinehüpfen).',
+    amelieConnectionEn: 'Direct parallel to Amélie’s timber assembly Dose (abbundzeichen-fundbuch) and tactile Zen games (crème brûlée caramel fractures, stone skipping).',
+    amelieConnectionEs: 'Paralelo directo con la lata de carpintería tradicional y los juegos táctiles de Amélie.',
+    icon: '🪵',
+  },
+  {
+    id: 'china-anti-gacha-respect',
+    category: 'cross_cultural',
+    titleDe: 'Kauf-einmal & Respekt vor der Lebenszeit',
+    titleEn: 'Buy-Once & Respect for Human Attention',
+    titleEs: 'Pago único y respeto al tiempo del jugador',
+    originalTerm: '买断制 · 纯单机 · 不逼肝不逼氪',
+    culturalRootDe: 'Globaler Gegentrend gegen psychologische Manipulation, Login-Strichlisten, Banner-Pity und künstliche Streckung im Gaming.',
+    culturalRootEn: 'Worldwide rebellion against predatory retention loops, battle passes, gacha banner pity counters, and artificial grind mechanics.',
+    culturalRootEs: 'Rebelión global contra la manipulación psicológica, pases de batalla y micropagos abusivos.',
+    unmetNeedDe: 'Abgeschlossene, ehrliche Softwarewerke, die man in eigenem Tempo genießen und nach dem Durchspielen zufrieden ins Regal stellen kann.',
+    unmetNeedEn: 'Complete, self-contained software works that can be experienced at one’s own pace and shelved with satisfaction upon completion.',
+    unmetNeedEs: 'Obras de software completas y honestas para disfrutar al propio ritmo sin trampas de retención.',
+    amelieConnectionDe: 'Kern-DNA von Amélie: 100 % CC0 Public Domain, keine Accounts, kein Tracking, kein Abofallen-Bitrot.',
+    amelieConnectionEn: 'Core DNA of Amélie: 100% CC0 Public Domain, zero accounts, zero telemetry, immune to recurring subscription bitrot.',
+    amelieConnectionEs: 'El ADN central de Amélie: 100% dominio público CC0, sin cuentas ni suscripciones.',
+    icon: '💎',
+  },
+  {
+    id: 'west-joy-of-repair',
+    category: 'west',
+    titleDe: 'Die Freude am Instandsetzen (The Joy of Repair)',
+    titleEn: 'The Tactile Joy of Repair & Order Restoration',
+    titleEs: 'El placer táctil de reparar y restaurar orden',
+    originalTerm: 'r/truegaming · r/CozyGamers · Right to Repair',
+    culturalRootDe: 'Der psychologische Balsam, Chaos in Ordnung zu verwandeln, zerbrochene Dinge zu reparieren und mechanische Integrität wiederherzustellen.',
+    culturalRootEn: 'The psychological solace of turning chaos into order, repairing fractured machinery, and restoring functional integrity with one’s own hands.',
+    culturalRootEs: 'El consuelo psicológico de transformar el caos en orden, reparar cosas rotas y restaurar la funcionalidad.',
+    unmetNeedDe: 'Spiele und Werkzeuge, die das Gefühl vermitteln, mit eigenen Händen physische Werte zu bewahren (wie Hardspace, Unpacking oder Reparatur-Werkbänke).',
+    unmetNeedEn: 'Experiences delivering the deep tactile fulfillment of craftsmanship and salvage (like Hardspace, Unpacking, or workbench diagnostics).',
+    unmetNeedEs: 'Juegos y utilidades que transmiten la satisfacción de preservar objetos físicos con las propias manos.',
+    amelieConnectionDe: 'Fundament aller Amélie-Dosen zu Kreislaufwirtschaft, ESPR-Vernichtungsstopp, Schadstofferkennung und Abbundzeichen.',
+    amelieConnectionEn: 'Foundation of Amélie Doses across circular economy, ESPR waste disclosure, hazardous material detection, and historic timber marks.',
+    amelieConnectionEs: 'Fundamento de las latas de Amélie sobre economía circular y derecho a reparar.',
+    icon: '🔧',
+  },
+];
+

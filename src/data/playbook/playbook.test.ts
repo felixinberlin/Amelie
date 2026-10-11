@@ -9,7 +9,8 @@ import {
   ARCHITECTURE_TIERS,
   ACHILLES_HEELS,
   CORE_HEURISTICS,
-  ROUND_RETROSPECTIVES
+  ROUND_RETROSPECTIVES,
+  GLOBAL_GAMING_DESIRES
 } from './index';
 
 describe('Search Playbook & Saturation Atlas Data', () => {
@@ -93,5 +94,21 @@ describe('Search Playbook & Saturation Atlas Data', () => {
 
     expect(CORE_HEURISTICS.length).toBeGreaterThanOrEqual(4);
     expect(ROUND_RETROSPECTIVES.length).toBeGreaterThanOrEqual(4);
+  });
+
+  it('contains researched global and Chinese gaming desires for Vector V8', () => {
+    expect(GLOBAL_GAMING_DESIRES.length).toBeGreaterThanOrEqual(6);
+    const chinaDesires = GLOBAL_GAMING_DESIRES.filter((d) => d.category === 'china');
+    expect(chinaDesires.length).toBeGreaterThanOrEqual(4);
+
+    for (const desire of GLOBAL_GAMING_DESIRES) {
+      expect(desire.id).toBeTruthy();
+      expect(desire.titleDe).toBeTruthy();
+      expect(desire.culturalRootDe).toBeTruthy();
+      expect(desire.unmetNeedDe).toBeTruthy();
+      expect(desire.amelieConnectionDe).toBeTruthy();
+      expect(desire.icon).toBeTruthy();
+      expect(['china', 'west', 'cross_cultural']).toContain(desire.category);
+    }
   });
 });

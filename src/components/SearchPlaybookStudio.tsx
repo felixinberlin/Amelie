@@ -41,7 +41,8 @@ import {
   ARCHITECTURE_TIERS,
   ACHILLES_HEELS,
   CORE_HEURISTICS,
-  ROUND_RETROSPECTIVES
+  ROUND_RETROSPECTIVES,
+  GLOBAL_GAMING_DESIRES
 } from '../data/playbook';
 
 interface SearchPlaybookStudioProps {
@@ -1195,6 +1196,99 @@ export const SearchPlaybookStudio: React.FC<SearchPlaybookStudioProps> = ({
                         {isDe ? 'Erkenntnis & Bilanz:' : 'Key Finding & Outcome:'}
                       </strong>
                       {isDe ? round.keyLessonDe : isEs ? round.keyLessonEs : round.keyLessonEn}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Section 5: Globale & fernöstliche Spielsehnsüchte */}
+          <div className="space-y-4 pt-2">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+              <h3 className="text-sm font-bold font-mono-code uppercase tracking-wider text-stone-700 flex items-center gap-2">
+                <span>🌏</span>
+                <span>
+                  {lang === 'de'
+                    ? '5. Globale & fernöstliche Spielsehnsüchte (Menschlicher Kompass für V8 & Gameplay)'
+                    : lang === 'es'
+                    ? '5. Deseos de juego globales y de Asia oriental (Brújula humana para V8)'
+                    : '5. Global & East Asian Gaming Desires (Human Compass for V8 & Gameplay)'}
+                </span>
+              </h3>
+              <span className="text-[11px] font-mono-code text-stone-500">
+                Heybox · Zhihu · Bilibili · r/truegaming
+              </span>
+            </div>
+
+            <p className="text-xs text-stone-600 leading-relaxed bg-amber-50/70 p-3 rounded-xl border border-amber-200">
+              {lang === 'de'
+                ? 'Erforscht aus chinesischen Kern-Gaming-Communities und westlichen Spieldesign-Foren: Wahre Spielfreude im Gemeinwohl entsteht dort, wo Software eine taktile Erdung, Ruhe vor Reizüberflutung, handwerklichen Stolz und transparente Ehrlichkeit (CC0, Zero-Cloud, kein Tracking) stiftet, statt künstliche Gacha- und FOMO-Zyklen zu bedienen.'
+                : lang === 'es'
+                ? 'Destilado de comunidades de juegos chinas y foros occidentales de diseño: la verdadera alegría cívica surge cuando el software ofrece calma frente a la sobreestimulación, satisfacción artesanal y honestidad transparente (CC0, sin nube), en lugar de mecánicas gacha y FOMO.'
+                : 'Distilled from core Chinese gaming hubs and Western game design discourse: authentic civic play emerges where software provides tactile grounding, quiet respite from sensory overload, craft satisfaction, and transparent honesty (CC0, zero-cloud, no tracking), rather than manipulative gacha and FOMO cycles.'}
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {GLOBAL_GAMING_DESIRES.map((desire) => {
+                const isDe = lang === 'de';
+                const isEs = lang === 'es';
+                return (
+                  <div
+                    key={desire.id}
+                    className="p-4 rounded-xl bg-white border border-stone-200 shadow-xs flex flex-col justify-between space-y-3"
+                  >
+                    <div className="space-y-2">
+                      <div className="flex items-start justify-between gap-2">
+                        <div className="flex items-center gap-2">
+                          <span className="text-xl">{desire.icon}</span>
+                          <h4 className="text-xs sm:text-sm font-bold text-stone-900 font-serif leading-snug">
+                            {isDe ? desire.titleDe : isEs ? desire.titleEs : desire.titleEn}
+                          </h4>
+                        </div>
+                        <span
+                          className={`text-[9px] font-mono-code px-1.5 py-0.5 rounded font-bold uppercase shrink-0 ${
+                            desire.category === 'china'
+                              ? 'bg-rose-50 text-rose-800 border border-rose-200'
+                              : desire.category === 'west'
+                              ? 'bg-blue-50 text-blue-800 border border-blue-200'
+                              : 'bg-emerald-50 text-emerald-800 border border-emerald-200'
+                          }`}
+                        >
+                          {desire.category === 'china'
+                            ? '🇨🇳 China'
+                            : desire.category === 'west'
+                            ? '🌍 West'
+                            : '✨ Global'}
+                        </span>
+                      </div>
+
+                      {desire.originalTerm && (
+                        <div className="text-[10px] font-mono-code text-amber-900 bg-amber-50 px-2 py-0.5 rounded border border-amber-200/70 inline-block">
+                          {desire.originalTerm}
+                        </div>
+                      )}
+
+                      <p className="text-xs text-stone-600 leading-relaxed">
+                        <strong className="text-stone-800 block text-[11px]">
+                          {isDe ? 'Kulturelle Wurzel:' : isEs ? 'Raíz cultural:' : 'Cultural Root:'}
+                        </strong>
+                        {isDe ? desire.culturalRootDe : isEs ? desire.culturalRootEs : desire.culturalRootEn}
+                      </p>
+
+                      <div className="text-xs text-stone-700 bg-stone-50 p-2.5 rounded-lg border border-stone-200/60 leading-relaxed">
+                        <strong className="text-stone-900 block text-[10px] uppercase font-mono-code mb-0.5">
+                          {isDe ? 'Unerfüllte Marktlücke:' : isEs ? 'Vacío en el mercado:' : 'Unmet Player Need:'}
+                        </strong>
+                        {isDe ? desire.unmetNeedDe : isEs ? desire.unmetNeedEs : desire.unmetNeedEn}
+                      </div>
+                    </div>
+
+                    <div className="p-2.5 rounded-lg bg-emerald-50/70 border border-emerald-200/80 text-emerald-950 text-[11px] leading-relaxed">
+                      <strong className="text-emerald-900 block font-semibold text-[10px] uppercase font-mono-code mb-0.5">
+                        {isDe ? 'Amélie-Andockstelle:' : isEs ? 'Conexión con Amélie:' : 'Amélie Connection:'}
+                      </strong>
+                      {isDe ? desire.amelieConnectionDe : isEs ? desire.amelieConnectionEs : desire.amelieConnectionEn}
                     </div>
                   </div>
                 );
