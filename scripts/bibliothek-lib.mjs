@@ -62,24 +62,34 @@ export function stemOf(t) {
  * (Stamm und Endstück nur mit stamm=true; das Endstück hat mindestens 7 Zeichen, damit `fallgeraeusche` das `geraeusch` findet).
  * Alle Begriffe müssen treffen (mit any: mindestens einer); die Stärke ist der Mittelwert über alle Begriffe.
  */
-export function matchScore(text, terms, { any = false, wort = false, stamm = false } = {}) {
-  const t = norm(text);
+export function matchScore(text, terms, opts = {}) {
+  return compileTerms(terms, opts)(norm(text));
+}
+
+/**
+ * Bereitet die Suchbegriffe einmal vor und liefert eine Bewertungsfunktion für bereits normalisierten Text
+ * (gleiche Regeln wie matchScore). Spart bei vielen Texten das wiederholte Normalisieren und Regex-Bauen.
+ */
+export function compileTerms(terms, { any = false, wort = false, stamm = false } = {}) {
   const ts = terms.map(norm).filter(Boolean);
-  if (!ts.length) return 0;
-  const exact = wort
-    ? (x) => new RegExp(`(^|[^a-z0-9])${x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}([^a-z0-9]|$)`).test(t)
-    : (x) => t.includes(x);
-  const one = (x) => {
-    if (exact(x)) return 1;
-    if (!stamm) return 0;
-    const st = stemOf(x);
-    if (st !== x && t.includes(st)) return 0.6;
-    for (let i = 1; st.length - i >= 7; i++) if (t.includes(st.slice(i))) return 0.3;
-    return 0;
+  if (!ts.length) return () => 0;
+  const compiled = ts.map((x) => ({
+    x,
+    re: wort ? new RegExp(`(^|[^a-z0-9])${x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}([^a-z0-9]|$)`) : null,
+    st: stemOf(x),
+  }));
+  return (t) => {
+    const one = ({ x, re, st }) => {
+      if (re ? re.test(t) : t.includes(x)) return 1;
+      if (!stamm) return 0;
+      if (st !== x && t.includes(st)) return 0.6;
+      for (let i = 1; st.length - i >= 7; i++) if (t.includes(st.slice(i))) return 0.3;
+      return 0;
+    };
+    const w = compiled.map(one);
+    if (any ? !w.some((v) => v > 0) : !w.every((v) => v > 0)) return 0;
+    return Math.round((w.reduce((a, b) => a + b, 0) / ts.length) * 100) / 100;
   };
-  const w = ts.map(one);
-  if (any ? !w.some((x) => x > 0) : !w.every((x) => x > 0)) return 0;
-  return Math.round((w.reduce((a, b) => a + b, 0) / ts.length) * 100) / 100;
 }
 
 export function snippet(text, terms, width = 160) {
@@ -247,12 +257,14 @@ const LOG_FILES = [
   '08-friedhof/nachrufe.md',
 ];
 
-/** Durchsucht das gesamte Gedächtnis. `kind` „bindend“ heißt: Treffer sind ein „schon da“-Signal. */
-export function findAll(terms, { any = false, wort = false, stamm = false, root = repoRoot, quellen = [] } = {}) {
-  const hits = [];
+/**
+ * Liest das gesamte Gedächtnis einmal ein und normalisiert es. Für viele Suchen hintereinander (z. B. die
+ * Auswertung eines Modellvergleichs) an findAll als `corpus` übergeben; die Treffer sind dieselben.
+ */
+export function memoryCorpus({ root = repoRoot, quellen = [] } = {}) {
+  const docs = [];
   const add = (kind, bindend, id, title, text, where, extra = {}) => {
-    const score = matchScore(`${id} ${title} ${text}`, terms, { any, wort, stamm });
-    if (score > 0) hits.push({ kind, bindend, id, title, where, score, ...extra, snippet: snippet(text || title, terms.map((x) => (stamm ? stemOf(norm(x)) : x))) });
+    docs.push({ kind, bindend, id, title, text, where, extra, normed: norm(`${id} ${title} ${text}`) });
   };
   const protokoll = readFileSync(PROTOKOLL, 'utf8');
   for (const r of parseProtokoll(protokoll)) add('protokoll', true, '', r.idee, r.text, `06-suche/amelie-pruefprotokoll.md:${r.line} [${r.urteil ?? '?'}]`, { file: '06-suche/amelie-pruefprotokoll.md', line: r.line, verdict: r.urteil, section: r.section });
@@ -276,6 +288,22 @@ export function findAll(terms, { any = false, wort = false, stamm = false, root 
           readFileSync(join(proposals, name), 'utf8'), `${file} [ungeprüft]`,
           { file, status: 'ungeprueft', origin: 'lab-proposal' });
     }
+  }
+  return docs;
+}
+
+/**
+ * Durchsucht das gesamte Gedächtnis. `kind` „bindend“ heißt: Treffer sind ein „schon da“-Signal.
+ * Mit `corpus` (aus memoryCorpus) wird nichts neu gelesen; `root` und `quellen` gelten dann nicht.
+ */
+export function findAll(terms, { any = false, wort = false, stamm = false, root = repoRoot, quellen = [], corpus } = {}) {
+  const docs = corpus ?? memoryCorpus({ root, quellen });
+  const score = compileTerms(terms, { any, wort, stamm });
+  const snippetTerms = terms.map((x) => (stamm ? stemOf(norm(x)) : x));
+  const hits = [];
+  for (const d of docs) {
+    const s = score(d.normed);
+    if (s > 0) hits.push({ kind: d.kind, bindend: d.bindend, id: d.id, title: d.title, where: d.where, score: s, ...d.extra, snippet: snippet(d.text || d.title, snippetTerms) });
   }
   return hits;
 }
