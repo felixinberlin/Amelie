@@ -15,9 +15,12 @@ import {
   VolumeX,
   Stamp,
   Grid,
+  ChevronDown,
+  Palette,
 } from 'lucide-react';
 import { Language } from '../../types';
 import { WetInkPhysicsLab } from './WetInkPhysicsLab';
+import { WetInkColorSelector } from './WetInkColorSelector';
 import {
   SimulationLayer,
   WetInkPaperConfig,
@@ -104,6 +107,16 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
   const [paperCategory, setPaperCategory] = useState<'xuan' | 'classic'>('xuan');
   const [selectedPaper, setSelectedPaper] = useState<WetInkPaperConfig>(XUAN_PAPERS[0] || ESSENTIAL_PAPERS[0]);
   const [selectedPigment, setSelectedPigment] = useState<WetInkPigmentConfig>(PALETTE_PIGMENTS[0]);
+  const [previousPigment, setPreviousPigment] = useState<WetInkPigmentConfig | null>(null);
+  const [recentPigments, setRecentPigments] = useState<WetInkPigmentConfig[]>([
+    PIGMENT_PRESETS[0], // Sumi
+    PIGMENT_PRESETS[3], // Preußischblau
+    PIGMENT_PRESETS[2], // Kadmiumgelb
+    PIGMENT_PRESETS[6], // Zinnoberrot
+    PIGMENT_PRESETS[5], // Krapplack
+    PIGMENT_PRESETS[7], // Viridian
+  ]);
+  const [isColorPickerOpen, setIsColorPickerOpen] = useState<boolean>(false);
   const [customColorHex, setCustomColorHex] = useState<string>('#0c356a');
 
   // Physics: View mode, capillary bleed speed, board tilt
@@ -175,6 +188,13 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
 
   // Handle Pigment change: changes the ink formula without wiping artwork
   const handlePigmentChange = (pigment: WetInkPigmentConfig) => {
+    if (pigment.id !== selectedPigment.id || pigment.colorHex !== selectedPigment.colorHex) {
+      setPreviousPigment(selectedPigment);
+      setRecentPigments((prev) => {
+        const filtered = prev.filter((p) => p.id !== pigment.id && p.colorHex !== pigment.colorHex);
+        return [pigment, ...filtered].slice(0, 8);
+      });
+    }
     setSelectedPigment(pigment);
     if (pigment.colorHex) setCustomColorHex(pigment.colorHex);
     if (simRef.current) {
@@ -182,14 +202,16 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
     }
   };
 
-  // Handle custom color selection via native color input
+  // Handle custom color selection via native color input or HSL
   const handleCustomColorChange = (hex: string) => {
     setCustomColorHex(hex);
-    const customPig = createPigmentFromHex(hex, 'custom', 'Eigene Tinte', 'Custom Ink');
-    setSelectedPigment(customPig);
-    if (simRef.current) {
-      simRef.current.setPigment(customPig);
-    }
+    const customPig = createPigmentFromHex(
+      hex,
+      'custom',
+      lang === 'de' ? `Eigene Tinte (${hex})` : `Custom Ink (${hex})`,
+      lang === 'de' ? `Eigene Tinte (${hex})` : `Custom Ink (${hex})`
+    );
+    handlePigmentChange(customPig);
   };
 
   // Handle Bleed Speed (Capillary diffusion rate)
@@ -579,6 +601,42 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
 
         {/* Primary Action Buttons */}
         <div className="flex flex-wrap items-center gap-1.5 self-end sm:self-auto">
+          {/* Active Ink Well / Palette Popover Trigger */}
+          <div className="relative">
+            <button
+              onClick={() => setIsColorPickerOpen(!isColorPickerOpen)}
+              className="px-2.5 py-1.5 rounded-xl border text-xs transition-all cursor-pointer flex items-center gap-2 bg-stone-800 hover:bg-stone-700 text-stone-200 border-stone-700 shadow-sm"
+              title={lang === 'de' ? 'Farbwähler öffnen' : 'Open Color Palette'}
+            >
+              <span
+                className="w-3.5 h-3.5 rounded-full border border-black/30 shadow-xs shrink-0 ring-1 ring-white/20"
+                style={{ backgroundColor: selectedPigment.colorHex || '#1c1b18' }}
+              />
+              <span className="font-mono text-[11px] font-bold">
+                {selectedPigment.colorHex ? selectedPigment.colorHex.toUpperCase() : '#1C1B18'}
+              </span>
+              <ChevronDown className={`w-3.5 h-3.5 text-stone-400 transition-transform ${isColorPickerOpen ? 'rotate-180' : ''}`} />
+            </button>
+
+            {/* Popover Color Selector Dropdown */}
+            {isColorPickerOpen && (
+              <div className="absolute right-0 top-full mt-2 z-50">
+                <WetInkColorSelector
+                  selectedPigment={selectedPigment}
+                  onSelectPigment={(pig) => {
+                    handlePigmentChange(pig);
+                  }}
+                  lang={lang}
+                  recentPigments={recentPigments}
+                  previousPigment={previousPigment}
+                  variant="popover"
+                  isOpen={isColorPickerOpen}
+                  onClose={() => setIsColorPickerOpen(false)}
+                />
+              </div>
+            )}
+          </div>
+
           <button
             onClick={toggleSound}
             className={`p-2 rounded-xl border text-xs transition-colors cursor-pointer ${
@@ -877,6 +935,45 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
             </div>
           </div>
         )}
+
+        {/* Quick Color Swatch Ribbon below Canvas */}
+        <div className="mt-3 pt-3 border-t border-stone-300/80 flex flex-wrap items-center justify-between gap-2 text-xs">
+          <div className="flex items-center gap-1.5 overflow-x-auto py-0.5 max-w-full">
+            <span className="text-[10px] uppercase font-bold text-stone-500 font-mono tracking-wider shrink-0 flex items-center gap-1 mr-1">
+              <Palette className="w-3.5 h-3.5 text-amber-800" />
+              {lang === 'de' ? 'Farbe:' : 'Ink:'}
+            </span>
+            {recentPigments.slice(0, 8).map((pig) => {
+              const isSelected = selectedPigment.id === pig.id || selectedPigment.colorHex === pig.colorHex;
+              return (
+                <button
+                  key={`ribbon-${pig.id}-${pig.colorHex}`}
+                  onClick={() => handlePigmentChange(pig)}
+                  className={`w-6 h-6 rounded-lg border transition-all cursor-pointer relative shrink-0 flex items-center justify-center ${
+                    isSelected
+                      ? 'border-stone-900 ring-2 ring-stone-900 scale-110 shadow-xs'
+                      : 'border-stone-300 hover:scale-105 hover:border-stone-400'
+                  }`}
+                  style={{ backgroundColor: pig.colorHex || '#111' }}
+                  title={`${lang === 'de' ? pig.nameDe : pig.nameEn} (${pig.colorHex})`}
+                >
+                  {isSelected && (
+                    <span className="w-1.5 h-1.5 rounded-full bg-white shadow-xs" />
+                  )}
+                </button>
+              );
+            })}
+          </div>
+
+          <button
+            onClick={() => setIsColorPickerOpen((prev) => !prev)}
+            className="px-2 py-1 rounded-lg border border-stone-300 bg-white hover:bg-stone-50 text-stone-700 font-mono text-[10px] font-bold flex items-center gap-1 shadow-2xs transition-colors cursor-pointer shrink-0"
+            title={lang === 'de' ? 'Farbpalette & Mischer öffnen' : 'Open Palette & Color Mixer'}
+          >
+            <Palette className="w-3 h-3 text-stone-600" />
+            <span>{lang === 'de' ? 'Farbmischer' : 'Color Mixer'}</span>
+          </button>
+        </div>
       </div>
 
       {/* Essential Working Controls (Grid layout) */}
@@ -1140,67 +1237,14 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
           </label>
 
           {/* Historical Pigments & Interactive Color Selector */}
-          <div className="space-y-2">
-            <div className="flex items-center justify-between">
-              <span className="text-[10px] uppercase font-bold text-stone-500 font-mono">
-                {lang === 'de' ? 'Pigment-Rezeptur' : lang === 'es' ? 'Fórmula del pigmento' : 'Pigment Formula'}
-              </span>
-              <label className="flex items-center gap-1.5 bg-stone-100 hover:bg-stone-200/80 px-2 py-0.5 rounded-lg border border-stone-200 cursor-pointer transition-colors" title={lang === 'de' ? 'Farbe frei wählen' : 'Choose custom color'}>
-                <input
-                  type="color"
-                  value={selectedPigment.colorHex || customColorHex}
-                  onChange={(e) => handleCustomColorChange(e.target.value)}
-                  className="w-4 h-4 rounded border-0 p-0 cursor-pointer bg-transparent"
-                />
-                <span className="font-mono text-[10px] text-stone-600 font-bold uppercase">
-                  {selectedPigment.colorHex || customColorHex}
-                </span>
-              </label>
-            </div>
-
-            {/* Quick Palette Chips */}
-            <div className="grid grid-cols-5 sm:grid-cols-9 gap-1.5">
-              {PALETTE_PIGMENTS.map((pig) => {
-                const isSelected = selectedPigment.id === pig.id || selectedPigment.colorHex === pig.colorHex;
-                return (
-                  <button
-                    key={pig.id}
-                    onClick={() => handlePigmentChange(pig)}
-                    className={`p-1.5 rounded-xl border flex flex-col items-center gap-1 transition-all cursor-pointer ${
-                      isSelected
-                        ? 'border-stone-900 bg-stone-100 font-bold ring-2 ring-stone-900 shadow-xs scale-105'
-                        : 'border-stone-200 hover:bg-stone-50 hover:border-stone-300'
-                    }`}
-                    title={lang === 'de' ? pig.nameDe : pig.nameEn}
-                  >
-                    <span
-                      className="w-4 h-4 rounded-full border border-black/25 shadow-2xs shrink-0"
-                      style={{ backgroundColor: pig.colorHex }}
-                    />
-                    <span className="text-[9px] text-stone-700 truncate w-full text-center leading-tight">
-                      {pig.id === 'sumi'
-                        ? 'Sumi'
-                        : pig.id === 'preussischblau'
-                        ? 'Preußisch'
-                        : pig.id === 'koenigsblau'
-                        ? 'Königsb.'
-                        : pig.id === 'indigo'
-                        ? 'Indigo'
-                        : pig.id === 'sepia'
-                        ? 'Sepia'
-                        : pig.id === 'zinnober'
-                        ? 'Zinnober'
-                        : pig.id === 'krapplack'
-                        ? 'Krapp'
-                        : pig.id === 'kadmiumgelb'
-                        ? 'Gelb'
-                        : 'Viridian'}
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
+          <WetInkColorSelector
+            selectedPigment={selectedPigment}
+            onSelectPigment={handlePigmentChange}
+            lang={lang}
+            recentPigments={recentPigments}
+            previousPigment={previousPigment}
+            variant="inline"
+          />
 
           {/* Substrate Category Selector: Xuan vs Classic */}
           <div className="space-y-1.5">
