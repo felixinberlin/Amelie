@@ -9,6 +9,7 @@ import { FUGENDUELL_STARTER_ROSTER } from '../../data/fugenduellData';
 import { BOTANY } from '../../data/fugenduellBotany';
 import { CityPlace } from '../../data/fugenduellPlaces';
 import { MonthCard } from './weatherYear';
+import { ComboHand, detectComboHands, CrackState, getCrackState } from './combos';
 
 export type Strategy = 'C' | 'S' | 'R';
 export type LifeForm = 'therophyte' | 'hemicryptophyte' | 'phanerophyte' | null;
@@ -180,9 +181,29 @@ export function localFlowering(p: SpeciesProfile, lat: number): number[] {
 
 export type PlantStatus = 'alive' | 'wilted' | 'dead';
 /** alive: has shoots · wilted: no shoots but seeds, can sprout again · dead: no shoots and no seeds, out for the rest of the year. */
-export interface PlantState { id: string; side: 0 | 1; shoots: number; seeds: number; hardening: number; next: number; shootMonths: number; status: PlantStatus; diedIn: number | null }
+export interface PlantState {
+  id: string;
+  side: 0 | 1;
+  shoots: number;
+  seeds: number;
+  hardening: number;
+  next: number;
+  shootMonths: number;
+  status: PlantStatus;
+  diedIn: number | null;
+  undergroundSeeds?: number;
+  ultimateUsed?: boolean;
+}
 export interface MonthLog { card: MonthCard; lines: string[]; shoots: number[][]; seeds: number[][]; hardening: number[][]; status: PlantStatus[][]; sideShoots: [number, number] }
-export interface WatchResult { months: MonthLog[]; plants: PlantState[]; score: [number, number]; seeds: [number, number]; winner: 0 | 1 | 'draw' }
+export interface WatchResult {
+  months: MonthLog[];
+  plants: PlantState[];
+  score: [number, number];
+  seeds: [number, number];
+  winner: 0 | 1 | 'draw';
+  comboHands?: [ComboHand[], ComboHand[]];
+  crackState?: CrackState;
+}
 
 /** Fit of a species to a place: indicator values within ±1 (or broad "x") count. Fewer than 3 known values = neutral. */
 export function placeFit(p: SpeciesProfile, place: CityPlace): { fits: number; known: number; bonus: number } {
@@ -208,32 +229,100 @@ const name = (p: SpeciesProfile, lang: 'de' | 'en') => lang === 'de' ? p.nameDe 
 const warmBonus = (p: SpeciesProfile, card: MonthCard) => card.warm && p.T && !p.T.broad && p.T.value >= 7 ? 1 : 0;
 const rainBonus = (p: SpeciesProfile, card: MonthCard) => card.rain && p.F && !p.F.broad && p.F.value >= 6 ? 1 : 0;
 
-export function runWatch(sides: [string[], string[]], cards: MonthCard[], lat: number, lang: 'de' | 'en' = 'en', place?: CityPlace): WatchResult {
+export function runWatch(sides: [string[], string[]], cards: MonthCard[], lat: number, lang: 'de' | 'en' = 'en', place?: CityPlace, crackLevel: 1 | 2 | 3 = 1): WatchResult {
   if (cards.length !== 12) throw new Error('Need 12 month cards');
   const profiles = sides.map(ids => {
     if (ids.length !== 3 || new Set(ids).size !== 3) throw new Error('Each side needs three distinct species');
     return ids.map(id => { const p = speciesProfile(id); if (!p) throw new Error(`Species not playable: ${id}`); return p; });
   });
   const R = WATCH_RULES;
-  const plants: PlantState[] = profiles.flatMap((ps, side) => ps.map(p => ({ id: p.id, side: side as 0 | 1, shoots: R.startShoots, seeds: R.startSeeds, hardening: 0, next: 0, shootMonths: 0, status: 'alive' as PlantStatus, diedIn: null })));
+  const crackState = getCrackState(crackLevel);
+  const comboHands: [ComboHand[], ComboHand[]] = [
+    detectComboHands(profiles[0], place),
+    detectComboHands(profiles[1], place),
+  ];
+  const plants: PlantState[] = profiles.flatMap((ps, side) => ps.map(p => ({
+    id: p.id, side: side as 0 | 1, shoots: R.startShoots, seeds: R.startSeeds, hardening: 0, next: 0,
+    shootMonths: 0, status: 'alive' as PlantStatus, diedIn: null, undergroundSeeds: 0, ultimateUsed: false,
+  })));
   const prof = (s: PlantState) => profiles[s.side][plants.filter(x => x.side === s.side).indexOf(s)];
-  const capacity = place?.capacity ?? R.capacity;
-  const fitBonus = (p: SpeciesProfile) => place ? placeFit(p, place).bonus : 0;
+  const capacity = (place?.capacity ?? R.capacity) + crackState.capacityBonus;
+  const fitBonus = (p: SpeciesProfile, side: 0 | 1) => {
+    let b = place ? placeFit(p, place).bonus : 0;
+    if (place?.wallJoint && comboHands[side].some(h => h.id === 'mauer-clan') && p.wallDweller) b += 1;
+    return b;
+  };
   const months: MonthLog[] = [];
 
-  for (const card of cards) {
+  for (let cardIdx = 0; cardIdx < cards.length; cardIdx++) {
+    const card = cards[cardIdx];
+    const prevCard = cardIdx > 0 ? cards[cardIdx - 1] : null;
     const lines: string[] = [];
+
+    // Announce combos and crack state at start of year
+    if (cardIdx === 0) {
+      if (crackState.level > 1) {
+        lines.push(lang === 'de' ? `Bodenstufe: ${crackState.nameDe} (Kapazität +${crackState.capacityBonus})` : `Soil Level: ${crackState.nameEn} (Capacity +${crackState.capacityBonus})`);
+      }
+      for (const side of [0, 1] as const) {
+        for (const h of comboHands[side]) {
+          lines.push(`${side === 0 ? (lang === 'de' ? 'Team Grün' : 'Team Green') : (lang === 'de' ? 'Team Rot' : 'Team Red')}: 💥 COMBO: ${lang === 'de' ? h.nameDe : h.nameEn} — ${lang === 'de' ? h.taglineDe : h.taglineEn}!`);
+        }
+      }
+    }
+
+    // Chain Reaction: Monsunbombe (rain month right after drought month)
+    if (prevCard && prevCard.drought > 0 && card.rain) {
+      lines.push(lang === 'de' ? '🌧️ KETTENREAKTION: Monsunbombe! Regen nach Dürre löst Massenkeimung aus!' : '🌧️ CHAIN REACTION: Monsoon Bomb! Rain after drought triggers mass germination!');
+      for (const s of plants) {
+        if (s.seeds > 0 && s.status !== 'dead') {
+          const p = prof(s);
+          const sprout = Math.min(s.seeds, 2);
+          s.seeds -= sprout;
+          s.shoots = Math.min(p.maxHp, s.shoots + sprout);
+          lines.push(`${name(p, lang)}: Monsun-Keimung +${sprout} Triebe`);
+        }
+      }
+    }
+
     // 1. Bloom: in the flowering window, existing shoots set seed.
     for (const s of plants) {
       const p = prof(s);
       if (s.shoots > 0 && localFlowering(p, lat).includes(card.month)) {
         const n = Math.min(R.bloomMaxSeeds, s.shoots); s.seeds += n;
         lines.push(`${name(p, lang)}: bloom +${n} seed`);
+        // Special: Chelidonium Ameisen-Express
+        if (p.id === 'chelidonium-majus' && !s.ultimateUsed && s.status !== 'dead') {
+          s.ultimateUsed = true;
+          s.seeds += 3;
+          lines.push(`${name(p, lang)}: ⚡ SPEZIAL: Ameisen-Express (+3 Samen sicher im unterirdischen Nest!)`);
+          if (comboHands[s.side].some(h => h.id === 'ameisenstrasse')) {
+            const ally = plants.find(other => other.side === s.side && other !== s && other.status !== 'dead');
+            if (ally) {
+              ally.seeds += 1;
+              lines.push(`${name(prof(ally), lang)}: Ameisenstraße (+1 Samen von Ameisen ins sichere Nest getragen!)`);
+            }
+          }
+        }
+        // Special: Buddleja Schmetterlingssturm
+        if (p.id === 'buddleja-davidii' && !s.ultimateUsed && s.status !== 'dead') {
+          s.ultimateUsed = true;
+          s.shoots = Math.min(p.maxHp, s.shoots + 2);
+          s.seeds += 3;
+          lines.push(`${name(p, lang)}: ⚡ SPEZIAL: Schmetterlingssturm (Sommerblüte lockt Schwärme von Bestäubern an: +2 Triebe, +3 Samen!)`);
+        }
       }
     }
-    // 2. Strategy cards, paid with day-length energy.
+    // 2. Strategy cards, paid with day-length energy (+ Staffellauf combo bonus).
     for (const s of plants) {
-      const p = prof(s); let energy = card.energy; const played: string[] = [];
+      const p = prof(s);
+      let energy = card.energy;
+      // Staffellauf bonus: +1 energy if at least one plant on side blooms this month
+      if (comboHands[s.side].some(h => h.id === 'staffellauf')) {
+        const anyBlooms = profiles[s.side].some(ally => localFlowering(ally, lat).includes(card.month));
+        if (anyBlooms) energy += 1;
+      }
+      const played: string[] = [];
       if (s.status === 'dead') continue;
       let skipped = 0;
       while (skipped < p.cycle.length && R.cost[p.cycle[s.next % p.cycle.length]] <= energy) {
@@ -241,7 +330,7 @@ export function runWatch(sides: [string[], string[]], cards: MonthCard[], lat: n
         // A card that cannot do anything is skipped at no cost (no shoot to spread or harden / no seed).
         if (((t === 'C' || t === 'S') && s.shoots === 0) || (t === 'R' && s.seeds === 0)) { s.next++; skipped++; continue; }
         skipped = 0; energy -= R.cost[t]; s.next++;
-        const bonus = warmBonus(p, card) + rainBonus(p, card) + fitBonus(p);
+        const bonus = warmBonus(p, card) + rainBonus(p, card) + fitBonus(p, s.side);
         if (t === 'C') {
           let add = Math.max(0, 2 + bonus); if (card.cold) add = Math.min(add, 1);
           s.shoots += add; played.push(`Spread+${add}`);
@@ -259,23 +348,36 @@ export function runWatch(sides: [string[], string[]], cards: MonthCard[], lat: n
     let total = plants.reduce((x, s) => x + s.shoots, 0);
     const shaded = new Map<PlantState, number>();
     while (total > capacity) {
-      // Lowest height first, then most shoots. Exact ties all lose one shoot at once, so the result never depends
-      // on the order of the players (mirror matches stay drawn; the crack may end up one or two under capacity).
+      // Lowest height first, then most shoots. Exact ties all lose one shoot at once.
       const alive = plants.filter(s => s.shoots > 0);
       const minH = Math.min(...alive.map(s => prof(s).heightClass));
       let tier = alive.filter(s => prof(s).heightClass === minH);
       if (tier.some(s => !prof(s).resist.shade)) tier = tier.filter(s => !prof(s).resist.shade); // shade-tolerant plants last
       const most = Math.max(...tier.map(s => s.shoots));
-      for (const victim of tier.filter(s => s.shoots === most)) { victim.shoots--; total--; shaded.set(victim, (shaded.get(victim) ?? 0) + 1); }
+      for (const victim of tier.filter(s => s.shoots === most)) {
+        victim.shoots--; total--; shaded.set(victim, (shaded.get(victim) ?? 0) + 1);
+        // Special: Cardamine Schotenmörser triggered when shaded
+        if (prof(victim).id === 'cardamine-hirsuta' && !victim.ultimateUsed && victim.status !== 'dead') {
+          victim.ultimateUsed = true;
+          victim.seeds += 2;
+          lines.push(`${name(prof(victim), lang)}: ⚡ SPEZIAL: Schotenmörser (feuert 2 Mörsersamen bei Beschattung!)`);
+        }
+      }
     }
     for (const [s, n] of shaded) lines.push(`${name(prof(s), lang)}: shaded −${n}`);
+
     // 4. The place: trampling every month, cleaning in maintenance months (seeds are never removed).
     if (place) {
       const cleaning = place.maintenanceMonths.includes(localMonth(card.month, lat));
+      let trampleVictims = 0;
       for (const s of plants) {
         const p = prof(s);
         const trampled = Math.min(s.shoots, trampleLoss(p, place));
-        if (trampled) { s.shoots -= trampled; lines.push(`${name(p, lang)}: trampled −${trampled}`); }
+        if (trampled) {
+          s.shoots -= trampled;
+          trampleVictims += trampled;
+          lines.push(`${name(p, lang)}: trampled −${trampled}`);
+        }
         if (cleaning && s.shoots) {
           const removed = p.lifeForm === 'phanerophyte' ? s.shoots : (p.heightClass <= 1 || p.rosette) ? Math.floor(s.shoots / 2) : Math.ceil(s.shoots / 2);
           if (removed) {
@@ -285,23 +387,61 @@ export function runWatch(sides: [string[], string[]], cards: MonthCard[], lat: n
           }
         }
       }
+      // Combo: Pflaster-Panzer trigger in trampling months
+      if (trampleVictims > 0) {
+        for (const side of [0, 1] as const) {
+          if (comboHands[side].some(h => h.id === 'pflaster-panzer')) {
+            for (const s of plants.filter(x => x.side === side && (x.id === 'plantago-major' || x.id === 'sagina-procumbens'))) {
+              if (s.shoots > 0 && s.shoots < prof(s).maxHp && s.status !== 'dead') {
+                s.shoots += 1;
+                lines.push(`${name(prof(s), lang)}: 🛡️ Pflaster-Panzer besiedelt Trittlücke (+1 Trieb)`);
+              }
+            }
+          }
+        }
+      }
     }
     // 5. Weather events, changed by the place, absorbed by hardening.
     const heatBase = place ? (card.heat > 0 ? Math.max(0, card.heat + place.heatShift) : card.warm && place.heatShift > 0 ? place.heatShift : 0) : card.heat;
-    const droughtBase = place && card.drought > 0 ? Math.max(0, card.drought + place.droughtShift) : card.drought;
+    const rawDrought = place && card.drought > 0 ? Math.max(0, card.drought + place.droughtShift) : card.drought;
+    const droughtBase = Math.max(0, rawDrought - crackState.droughtShield);
+    if (crackState.droughtShield > 0 && rawDrought > 0) {
+      lines.push(lang === 'de' ? `Bodenstufe ${crackState.level}: Moos-Humus absorbiert ${crackState.droughtShield} Dürreschaden` : `Soil level ${crackState.level}: Moss-humus absorbs ${crackState.droughtShield} drought loss`);
+    }
     const salt = (place?.winterSalt && card.cold) || place?.saltSpray ? 1 : 0;
     if (heatBase || droughtBase || card.frost || salt) {
       for (const s of plants) {
         const p = prof(s);
-        const heat = Math.max(0, heatBase - p.resist.heat);
+        // Special: Portulaca Hitzerausch
+        if (p.id === 'portulaca-oleracea' && (card.heat > 0 || (card.warm && place?.heatShift)) && !s.ultimateUsed && s.status !== 'dead') {
+          s.ultimateUsed = true;
+          s.shoots = Math.min(p.maxHp, s.shoots + 2);
+          lines.push(`${name(p, lang)}: ⚡ SPEZIAL: Hitzerausch (C4-Nitro macht Hitze zur Nahrung: +2 Triebe!)`);
+        }
+        // Special: Cochlearia Salzstraßen-Sprint
+        if (p.id === 'cochlearia-danica' && salt > 0 && !s.ultimateUsed && s.status !== 'dead') {
+          s.ultimateUsed = true;
+          s.shoots = Math.min(p.maxHp, s.shoots + 3);
+          s.seeds += 2;
+          lines.push(`${name(p, lang)}: ⚡ SPEZIAL: Salzstraßen-Sprint (+3 Triebe entlang der Salzstraße!)`);
+        }
+        let heat = Math.max(0, heatBase - p.resist.heat);
+        if (p.lifeForm === 'therophyte' && comboHands[s.side].some(h => h.id === 'kinderstube') && heat > 0) {
+          heat = Math.max(0, heat - 1);
+        }
         const drought = Math.max(0, droughtBase - p.resist.drought);
         const frost = Math.max(0, card.frost - p.resist.frost);
-        const saltLoss = salt && p.resist.salt === false ? 1 : 0; // unknown salt value: no penalty
+        let saltLoss = salt && p.resist.salt === false ? 1 : 0; // unknown salt value: no penalty
+        // Combo: Salzwall makes salt hit enemies without salt tolerance harder
+        const enemySide = s.side === 0 ? 1 : 0;
+        if (saltLoss > 0 && comboHands[enemySide].some(h => h.id === 'salzwall')) {
+          saltLoss += 1;
+        }
         const loss = heat + drought + frost + saltLoss;
         if (!loss || !s.shoots) continue;
         const absorbed = Math.min(s.hardening, loss); s.hardening -= absorbed;
         const lost = Math.min(s.shoots, loss - absorbed); s.shoots -= lost;
-        lines.push(`${name(p, lang)}: weather −${loss} (heat ${heat}, drought ${drought}, frost ${frost}${saltLoss ? ', salt 1' : ''}); hardening absorbs ${absorbed} → −${lost}`);
+        lines.push(`${name(p, lang)}: weather −${loss} (heat ${heat}, drought ${drought}, frost ${frost}${saltLoss ? `, salt ${saltLoss}` : ''}); hardening absorbs ${absorbed} → −${lost}`);
       }
     }
     // 6. Annuals complete their cycle after the last flowering month: shoots → seeds.
@@ -310,6 +450,16 @@ export function runWatch(sides: [string[], string[]], cards: MonthCard[], lat: n
       if (p.lifeForm === 'therophyte' && fl.length && fl[fl.length - 1] === card.month && s.shoots > 0) {
         lines.push(`${name(p, lang)}: annual fruits and dies, ${s.shoots} shoots → seeds`);
         s.seeds += s.shoots; s.shoots = 0;
+        // Combo: Sukzessionskette gives biomass / humus boost to perennial ally
+        if (comboHands[s.side].some(h => h.id === 'sukzessionskette')) {
+          for (const ally of plants.filter(other => other.side === s.side && other !== s && other.status !== 'dead')) {
+            const allyProf = prof(ally);
+            if (allyProf.lifeForm === 'hemicryptophyte' && ally.shoots < allyProf.maxHp) {
+              ally.shoots = Math.min(allyProf.maxHp, ally.shoots + 1);
+              lines.push(`${name(allyProf, lang)}: Sukzessionskette (Humus aus abgestorbener Einjähriger nährt Trieb: +1 HP!)`);
+            }
+          }
+        }
       }
       if (s.status !== 'dead') {
         const next: PlantStatus = s.shoots > 0 ? 'alive' : s.seeds > 0 ? 'wilted' : 'dead';
@@ -327,5 +477,5 @@ export function runWatch(sides: [string[], string[]], cards: MonthCard[], lat: n
   const score: [number, number] = [sum(0, s => s.shootMonths), sum(1, s => s.shootMonths)];
   const seeds: [number, number] = [sum(0, s => s.seeds), sum(1, s => s.seeds)];
   const winner = score[0] !== score[1] ? (score[0] > score[1] ? 0 : 1) : seeds[0] !== seeds[1] ? (seeds[0] > seeds[1] ? 0 : 1) : 'draw';
-  return { months, plants, score, seeds, winner };
+  return { months, plants, score, seeds, winner, comboHands, crackState };
 }
