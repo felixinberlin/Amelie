@@ -37,7 +37,7 @@ Import: PR-mode manifest validation passes for all 72 new manifests, including t
 
 After changing processing state, regenerate the inbox and validate before committing. Continue via `docs/lab-intake.md`, the Bibliothekar role and existing review workflow. Do not start Vertex calls while the recorded credit restriction remains in force.
 
-Inventory follow-up: all 72 batch sections and 159 idea rows, relative file links and deterministic regeneration were checked; lint passes. Repeated full-test runs hit existing timing limits in the model-comparison mock (5 seconds) and, intermittently, the implementation-plan performance assertion (500 ms). A serial run also hit these limits. Test limits and implementation were not changed; repeat the ordinary checks on a stable runner before merging.
+Inventory follow-up: all 72 batch sections and 159 idea rows, relative file links and deterministic regeneration were checked; lint passes. Repeated full-test runs hit existing timing limits in the model-comparison mock (5 seconds) and, intermittently, the implementation-plan performance assertion (500 ms). A serial run also hit these limits. Test limits and implementation were not changed. GitHub’s stable runner subsequently passed the full verify workflow (lint, tests, build and browser checks) for import PR #192.
 
 ## Quellenmeldung
 
@@ -47,9 +47,9 @@ IAB primary page read for the Jobcenter evidence check: https://iab-forum.de/das
 
 Both complete branches are committed and pushed to GitHub:
 
-- [PR #192: immutable receipt import](https://github.com/felixinberlin/Amelie/pull/192), branch `lab/import-studio-intake-20261011`, complete import head `83d599bd8c09cfe80c8e00b036f3e88456c75f4f`.
-- [PR #193: processing notes, inventory and handoff](https://github.com/felixinberlin/Amelie/pull/193), branch `lab/triage-studio-intake-20261011`, stacked on the import branch.
+- [PR #192: immutable receipt import](https://github.com/felixinberlin/Amelie/pull/192), branch `lab/import-studio-intake-20261011`, complete import head `83d599bd8c09cfe80c8e00b036f3e88456c75f4f`; merged into `main` as `43d5bf03` after green GitHub CI.
+- [PR #193: processing notes, inventory and handoff](https://github.com/felixinberlin/Amelie/pull/193), branch `lab/triage-studio-intake-20261011`, now targets `main`; its diff contains only the two processing files, documentation and inventory generator.
 
-Publication resumed after the connection recovered; the earlier partial 20-commit upload is now replaced by the full import. Check current PR state and CI before merging. Merge #192 first, then retarget #193 to `main`, validate its final diff and merge it. Do not recreate these PRs or the producer round. Processing after import remains incomplete: two batches need research and 70 are received.
+Publication resumed after the connection recovered; the earlier partial 20-commit upload is now replaced by the full import. The immutable import is already merged. Check current state and CI for #193 before merging the remaining processing/inventory changes. Do not recreate these PRs or the producer round. Processing after import remains incomplete: two batches need research and 70 are received.
 
 See `docs/lab-github-transfer.md` for the proposed GitHub-hosted transfer workflow.
