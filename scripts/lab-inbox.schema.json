@@ -1,0 +1,92 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LabInbox",
+  "description": "Immutable receipt of one producer-scoped run revision. This is input, never an acceptance or existence verdict.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_version",
+    "batch_id",
+    "lab_id",
+    "engine",
+    "run_id",
+    "revision",
+    "created_at",
+    "model",
+    "intent",
+    "ideas",
+    "record",
+    "existence_check"
+  ],
+  "properties": {
+    "contract_version": {
+      "type": "string",
+      "const": "1.0.0",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+      "maxLength": 20,
+      "minLength": 5
+    },
+    "batch_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]*$",
+      "maxLength": 128
+    },
+    "lab_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]{0,31}$"
+    },
+    "engine": {
+      "enum": [
+        "lacunar",
+        "inversion",
+        "scarcity",
+        "mark",
+        "review"
+      ]
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "revision": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string",
+      "minLength": 1
+    },
+    "intent": {
+      "type": "string"
+    },
+    "ideas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "local_id",
+          "record"
+        ],
+        "properties": {
+          "local_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "record": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "record": {
+      "type": "object"
+    },
+    "existence_check": {
+      "const": false
+    }
+  }
+}

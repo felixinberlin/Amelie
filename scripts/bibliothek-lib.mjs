@@ -267,6 +267,16 @@ export function findAll(terms, { any = false, wort = false, stamm = false, root 
     if (!existsSync(p)) continue;
     readFileSync(p, 'utf8').split('\n').forEach((line, i) => add('log', false, '', f.split('/').pop(), line, `${f}:${i + 1}`, { file: f, line: i + 1 }));
   }
+  // Lab proposal inbox: searchable leads, never binding verdicts.
+  const proposals = join(root, '06-suche/proposals');
+  if (existsSync(proposals)) {
+    for (const name of readdirSync(proposals).filter((f) => /^[A-Za-z0-9][A-Za-z0-9._-]*\.md$/.test(f)).sort()) {
+      const file = `06-suche/proposals/${name}`;
+      add('log', false, name.slice(0, -3), `Lab-Vorschlag (ungeprüft): ${name}`,
+          readFileSync(join(proposals, name), 'utf8'), `${file} [ungeprüft]`,
+          { file, status: 'ungeprueft', origin: 'lab-proposal' });
+    }
+  }
   return hits;
 }
 
