@@ -53,3 +53,6 @@ Both complete branches are committed and pushed to GitHub:
 Publication resumed after the connection recovered; the earlier partial 20-commit upload is now replaced by the full import. The immutable import is already merged. Check current state and CI for #193 before merging the remaining processing/inventory changes. Do not recreate these PRs or the producer round. Processing after import remains incomplete: two batches need research and 70 are received.
 
 See `docs/lab-github-transfer.md` for the proposed GitHub-hosted transfer workflow.
+
+## Maps cost restriction (2026-10-11)
+Google Maps Platform APIs (Places, JavaScript, Static and Embed) are disabled at Félix’s request because of cost. Do not use or re-enable them, even with existing keys or budget overrides. Verify institutions and addresses via official websites; existing coordinates and OpenStreetMap links remain usable. Re-enabling requires Félix’s explicit authorization.

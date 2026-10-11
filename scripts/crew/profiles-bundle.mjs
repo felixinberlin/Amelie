@@ -182,7 +182,7 @@ Liefere Bericht + JSON-Block (Vertrag „Paket“).`;
 ${rev ? `\nREVIEW: ${JSON.stringify(rev)}\n` : ''}
 Arbeitsreihenfolge:
 1. Doppelprüfung: run_cli bib find ${id}; read_file ventures/market-leads.json (gibt es den Lead schon?), ventures/funding-and-angels.md, Abschnitt E/G von 06-suche/amelie-foerderlandschaft.md.
-2. Die 5 Vektoren schonungslos bewerten (Pain & WTP, Time-to-Ship, Channel, Monetization, Defensibility, je 1–5). Frage zuerst: Wer zahlt, und gibt es eine Gratis-Konkurrenz oder ein Formular der Behörde? (Erfahrung: Firmenseiten-Zwillinge sind meist Kills.) Belege holen (web_search, web_fetch), Schnipsel nicht als Seite ausgeben. Mitbewerber, Kunden und Pilotstellen vor Ort mit places_find prüfen (Maps-Seite und Website sind hier zitierfähig; höchstens 8 Aufrufe).
+2. Die 5 Vektoren schonungslos bewerten (Pain & WTP, Time-to-Ship, Channel, Monetization, Defensibility, je 1–5). Frage zuerst: Wer zahlt, und gibt es eine Gratis-Konkurrenz oder ein Formular der Behörde? (Erfahrung: Firmenseiten-Zwillinge sind meist Kills.) Belege holen (web_search, web_fetch), Schnipsel nicht als Seite ausgeben. Mitbewerber, Kunden und Pilotstellen anhand offizieller Webseiten mit web_fetch prüfen. Google Maps/Places ist wegen Kosten gesperrt.
 3. Entscheide „lead“ oder „kill“. Bei kill: nur Begründung, kein Dossier.
 4. Bei lead: Dossier ventures/opportunities/${id}.md (Problem, 5 Vektoren, Zielgruppe, MVP-Scoping, Preis, Kanal, passender Geldgeber/Pilot) und ein Eintrag für ventures/market-leads.json. Nichts Kommerzielles in Amélies Verzeichnisse.
 5. bundle_check bis „sauber“.
@@ -192,7 +192,6 @@ Liefere Bericht + JSON-Block (Vertrag „Paket“).`;
   const venture = {
     role: 'Venture-Analyst: bewertet kommerzielle Zwillinge (5 Vektoren), schreibt Dossier und Lead; nur auf feat/venture-*, Schranke export:market.',
     contract: 'bundle-venture-analyst',
-    kitOptions: { citePlaces: true, budgets: { places_find: 8 } }, // Mitbewerber und Kunden vor Ort; Orte sind hier zitierfähig (wie Mark im Lab)
     extraTools: ['bundle_check'],
     toolDefs: { bundle_check: CHECK_TOOL() },
     handlers: ({ root }) => ({ bundle_check: (a) => bundleToolText({ agent: 'venture-analyst', root, draft: a?.draft }) }),

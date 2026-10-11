@@ -80,7 +80,7 @@ Arbeitsreihenfolge:
 1. Pflichtlektüre laut deiner Definition (letzte Retro und Besetzungsatlas in 06-suche/amelie-suchplaybook.md, Skill amelie-ideenrunde).
 2. Eine offene Quelle passend zum Thema wählen (run_cli quellen next; quellen show <id>).
 3. 4–6 Ideen aus der Quelle ableiten, jede mit run_cli bib find --stamm <Wortstämme> gegen den Bestand halten.
-4. Je Idee höchstens 4 Suchen, Empfänger zuerst; Prämisse vor Urteil. Ob es den Empfänger als Stelle wirklich gibt und wo er sitzt, prüft places_find (Information, nicht zitierfähig; Beleg per web_fetch).
+4. Je Idee höchstens 4 Suchen, Empfänger zuerst; Prämisse vor Urteil. Ob es den Empfänger als Stelle wirklich gibt und wo er sitzt, prüft web_fetch auf offiziellen Webseiten (Google Maps/Places ist wegen Kosten gesperrt).
 Liefere Bericht + JSON-Block (Vertrag „candidates“).`;
 };
 
