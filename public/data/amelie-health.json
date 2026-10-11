@@ -1,8 +1,8 @@
 {
   "auditVersion": 1,
-  "generatedAt": "2026-10-11T18:01:23.796Z",
+  "generatedAt": "2026-10-11T18:03:09.096Z",
   "repository": {
-    "commit": "b3872d3",
+    "commit": "8bbd3ca",
     "branch": "feature/gruendungsnavigator-befund-2026-10-11"
   },
   "inventory": {
@@ -11,7 +11,7 @@
     "demos": 12,
     "researchEntries": 36,
     "candidateIdeas": 20,
-    "books": 43
+    "books": 44
   },
   "distributions": {
     "doseStatus": {

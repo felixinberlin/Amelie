@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { Gamepad2, Gift, Search, Sparkles, ArrowRight, Puzzle, Play, Lightbulb, Map, CloudSun, MapPin } from 'lucide-react';
+import { Gamepad2, Gift, Search, Sparkles, ArrowRight, Puzzle, Play, Lightbulb, Map, CloudSun, MapPin, Scroll } from 'lucide-react';
 import { CandidateIdea, DoseItem, Language } from '../types';
 import { GAME_IDEAS } from '../data/ideas/games';
 import { GAME_DOSE_IDS } from '../data/pipeline';
@@ -13,6 +13,7 @@ import { CanalSaintMartinGame } from './CanalSaintMartinGame';
 import { FlurnamenGameModal } from './FlurnamenGameModal';
 import { BauernregelnGameModal } from './BauernregelnGameModal';
 import { OrtsnecknamenGameModal } from './OrtsnecknamenGameModal';
+import { SongCiGameModal } from './SongCiGameModal';
 
 interface GamesViewProps {
   lang: Language;
@@ -47,6 +48,7 @@ export const GamesView: React.FC<GamesViewProps> = ({ lang, dosen, onOpenDose })
   const [showFlurnamenModal, setShowFlurnamenModal] = useState(false);
   const [showBauernregelnModal, setShowBauernregelnModal] = useState(false);
   const [showOrtsnecknamenModal, setShowOrtsnecknamenModal] = useState(false);
+  const [showSongCiModal, setShowSongCiModal] = useState(false);
   const [activePlayable, setActivePlayable] = useState<PlayableId | null>(() => {
     if (typeof window !== 'undefined') {
       const match = window.location.hash.toLowerCase().match(/#game=([a-z0-9_-]+)/);
@@ -288,6 +290,20 @@ export const GamesView: React.FC<GamesViewProps> = ({ lang, dosen, onOpenDose })
                       )}
                     </button>
                   )}
+                  {i.id === 'song-ci-forensics-1247' && (
+                    <button
+                      onClick={() => setShowSongCiModal(true)}
+                      className="mt-auto pt-2 self-start inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-stone-900 hover:bg-stone-800 text-amber-200 border border-amber-600/50 text-xs font-semibold shadow-2xs transition-all"
+                    >
+                      <Scroll className="w-3.5 h-3.5 text-amber-400" />
+                      {pick(
+                        lang,
+                        '📜 Prototyp testen (Song-Ci-Kriminalakten 1247)',
+                        '📜 Test Prototype (Song Ci Casebook 1247)',
+                        '📜 Probar prototipo (Expedientes Song Ci 1247)'
+                      )}
+                    </button>
+                  )}
                 </article>
               );
             })}
@@ -309,6 +325,10 @@ export const GamesView: React.FC<GamesViewProps> = ({ lang, dosen, onOpenDose })
 
       {showOrtsnecknamenModal && (
         <OrtsnecknamenGameModal lang={lang} onClose={() => setShowOrtsnecknamenModal(false)} />
+      )}
+
+      {showSongCiModal && (
+        <SongCiGameModal lang={lang} onClose={() => setShowSongCiModal(false)} />
       )}
     </div>
   );

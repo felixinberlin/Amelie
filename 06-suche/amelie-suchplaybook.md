@@ -794,3 +794,23 @@ Bestehende Forschung zuerst wiederverwenden: ein fehlgeschlagener Rohdaten-Pilot
   2. Österreich und Schweiz in einer Suche kombiniert; die Schweiz ist damit ungeprüft.
 - **Nächstes Mal:** (1) In jeder Sitzung, die das Repo hat, zuerst `npm run bib -- vorflug` und `bib find`, nie die Skill-Assets als Zustand nehmen; den Hinweis in `skills/amelie-ideenrunde` nachziehen. (2) G4 getrennt nach Ländern prüfen, Empfänger zuerst. (3) Vor jedem Packen von G1 den Prototyp neutralisieren (Ticket 01) und L14-C2/L15-C1 im selben Recheck klären.
 
+### Retro: Globale & fernöstliche Spielsehnsüchte als Entdeckungs-Kompass — 11.10.2026
+
+- **Anlass & Gegenstand:** Systematische Untersuchung von Spielwünschen und unbedienten Gameplay-Bedürfnissen auf chinesischen Communities (Heybox/小黑盒, Zhihu/知乎, Bilibili, TapTap) und westlichen Diskussionsforen (Reddit *r/truegaming*, *r/gamedesign*, *r/CozyGamers*).
+- **Die 6 chinesischen Kern-Sehnsüchte:**
+  1. **Das Ackerbau-Gen (中国人骨子里的种田基因 & 告别内卷):** Tiefes psychologisches Bedürfnis nach Selbstversorgung, Vorratshaltung und Verbundenheit mit dem Boden als Zufluchtsort vor städtischem 996-Druck und Konkurrenzüberhitzung (Neijuan). Gesucht werden keine Stardew-Klone, sondern tiefgreifende historische Agrarzyklen (die 24 Sonnenknoten / *Ershisi Jieqi*), phänologische Bewässerung und organische Dorfgemeinschaften.
+  2. **Song-Dynastie-Alltag & Markttreiben (市井生活 & 烟火气):** Überdruss an allmächtigen Kriegern und Göttern; Sehnsucht nach „Yānhuǒqì“ (dem Duft von Rauch und Feuer des täglichen Lebens) auf dem belebten Marktplatz (Qingming-Rollenbild). Als kleiner Garkoch, Teeverkäufer oder Bote im Regen den Klängen des Wirtshauses lauschen (*客栈听雨*), mit autonomen NPCs, die ihr eigenes Leben führen.
+  3. **Historische Forensik & Richter Bao (宋慈 · 洗冤集录 & 县令断案):** Song Cis „Washing Away of Wrongs“ (1247) – das älteste Gerichtsmedizin-Lehrbuch der Menschheit. Reines Kombinieren von Spuren, Zeugen und Reagenzien (Essigdampf, Prüfnadeln, Insekten) ohne übernatürliche Magie oder leuchtenden „Detektiv-Modus“.
+  4. **Immaterielles Kulturerbe als taktile 3D-Mechanik (非遗):** 榫卯 (*Sunmao* / Zapfen- und Nutverbindungen ohne Nägel in historischer Holzarchitektur), 锔瓷 (*Juci* / Kintsugi-Porzellanklammerung), Restaurierung alter Schriftrollen. Handwerk als taktile Physik-Rätsel begreifen, statt es nur im Museumsvideo anzuschauen.
+  5. **Anti-996 & Alltags-Realismus (打工生活 & 躺平):** Melancholisch-humorvolle Arbeits- und Stadtsimulationen (*Chinese Parents*, *Nobody - The Turnaround*), die den Druck moderner Städte mit Empathie abbilden.
+  6. **Klassische Gartenarchitektur & Die Kunst des Leihens (计成《园冶》1631):** Überdruss an starren Kachel-Gittern. Sehnsucht nach organischer Landschaftsgestaltung: *„虽由人作，宛自天开“* (Obgleich von Menschenhand geschaffen, wirkt es wie von der Natur gefügt) und *„巧于因借“* (Meisterschaft im Ausborgen von Bergen, Mondlicht und Wasser über Gitterfenster und Mondtore).
+  7. **Subtile Alltags-Suspense & Spurensuche ohne Jumpscares (中式悬疑 · 细思极恐):** Ablehnung von krawalligen Jump Scares („跳脸“ für Streamer-Klicks). Sehnsucht nach echtem psychologischem Gruseln und Kriminalistik durch „Xì Sī Jí Kǒng“ (Schaudern beim Nachdenken über menschliche Tragödien, historische Tabus und Akten).
+  8. **Buy-to-Play & Respekt vor Lebenszeit (买断制 · 纯单机 · 不逼肝不逼氪):** Radikale Ablehnung von Gacha, FOMO, Daily-Checkins und künstlicher Verlängerung. Der weltweite Wunsch nach in sich geschlossenen, ehrlichen Softwarewerken.
+- **Die westlichen Parallelen:**
+  - *The Joy of Repair / Taktiles Instandsetzen:* Psychologischer Balsam, Chaos in Ordnung zu verwandeln und mechanische Integrität wiederherzustellen (*Unpacking*, *Hardspace*, *A Little to the Left*).
+  - *Nicht-lineare Deduktion ohne Hilfslinien:* Selbst Notizen anheften und Hypothesen formulieren (*Return of the Obra Dinn*, *Chants of Sennaar*).
+  - *Atmospheric Transit:* Die langsame Reise im Regen (*Pacific Drive*, *Jalopy*).
+- **Die Lehre für Amélie & Vektor V8 (Fun):**
+  - Vektor V8 darf kein oberflächliches Gamification-Gimmick (Abzeichen, Highscore-Popups) sein. Wahre Spielfreude im Gemeinwohl entsteht dort, wo Software eine **taktile Erdung**, **Ruhe vor Reizüberflutung**, **handwerklichen Stolz** und **transparente Ehrlichkeit (CC0, Zero-Cloud, kein Tracking)** stiftet.
+  - Diese Erkenntnisse fließen ab sofort als Leitplanken in Amélies Ideengenerierung und Prototyp-Scaffoldings ein.
+
