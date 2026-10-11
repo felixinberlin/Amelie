@@ -190,8 +190,8 @@ export function runWatch(sides: [string[], string[]], cards: MonthCard[], lat: n
       let skipped = 0;
       while (skipped < p.cycle.length && R.cost[p.cycle[s.next % p.cycle.length]] <= energy) {
         const t = p.cycle[s.next % p.cycle.length];
-        // A card that cannot do anything is skipped at no cost (no parent shoot / no seed).
-        if ((t === 'C' && s.shoots === 0) || (t === 'R' && s.seeds === 0)) { s.next++; skipped++; continue; }
+        // A card that cannot do anything is skipped at no cost (no shoot to spread or harden / no seed).
+        if (((t === 'C' || t === 'S') && s.shoots === 0) || (t === 'R' && s.seeds === 0)) { s.next++; skipped++; continue; }
         skipped = 0; energy -= R.cost[t]; s.next++;
         const bonus = warmBonus(p, card) + rainBonus(p, card) + fitBonus(p);
         if (t === 'C') {

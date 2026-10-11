@@ -148,6 +148,25 @@ The same three species win in one city and lose in the other — without anyone 
 * **Relative thresholds:** *which* months count as rain, warm, heat, drought or cold months is relative to the city (the top or bottom third of its 12 months). *How hard* they hit stays absolute: heat = hot days ≥ 30 °C ÷ 10 (rounded up), drought = longest dry run ÷ 7, frost = frost days ÷ 10. A cool city has heat months, but they cost nothing if there are no hot days. Day length stays astronomy.
 * The first test games and their findings: `testspiel-2026-10-11.md`.
 
+## 7b. Places in the city (11.10.2026)
+
+Every city has the same six places; the weather is the city's, the place changes the rules (`src/data/fugenduellPlaces.ts`). Capacity, trampling, cleaning months, microclimate and salt are **scenario assumptions**. The fit uses the Pladias indicator values; *rosette* (plantain) and *wall dweller* (toadflax, wall-rue) come from the RHS fact sheets.
+
+| Place | Space | Trampling | Cleaning | Microclimate |
+|---|---|---|---|---|
+| Pavement crack (asphalt) | 40 | 1 | Apr, Jul, Oct | heat +1 |
+| Cobbles on a square | 50 | 2 | May, Sep | – |
+| Old wall joint | 25 | 0 | – | drought +1, wall dwellers +1 |
+| Tree pit | 60 | 1 | Jun | heat −1 (shade), nutrient-rich |
+| Kerb on a main road | 35 | 0 | 5× a year (sweeper) | heat +1, salt in cold months (only plants with salt indicator 0) |
+| Railway gravel / wasteland | 80 | 0 | – | heat +1, drought +1 |
+
+Rules: **trampling** costs upright plants shoots every month (height class 2: 1, height ≥ 3: 2); flat plants (height class 1 or rosette) escape. **Cleaning** removes all woody shoots, half of the others (flat plants round down), never seeds. **Shading** is now independent of player order: exact ties lose at the same time.
+
+Round robin of all 120 teams against each other per place (Berlin and Madrid 2025): the place decides. Trampled places → plantain + meadow grass; wall joint and wasteland → butterfly bush + celandine; tree pit → celandine + toadflax + meadow grass; kerb → plantain, meadow grass, wall-rue. Gaps: Danish scurvygrass has no indicator values (so no salt advantage), purslane starts too slowly from only 2 seeds.
+
+**Watch view in the app:** Fugenduell simulator → "Weather year · watch". 18 cities + custom coordinates, year 1981–2025, six places, two teams of three. Berlin and Madrid 2025 offline from the fixtures, everything else live from NASA POWER (in the browser, no key).
+
 ## 8. Open questions for Félix (status before the decisions)
 
 1. **Interactive or auto battle?** (a) Players play cards each month (rulebook), or (b) you only choose city, year and 3 species, then watch the year play out (12 months, with the math shown like the Balatro scoring). (b) is quick and great for teaching; (a) is the game. Proposal: (b) as the entry point, (a) as the duel.
