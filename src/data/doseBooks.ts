@@ -224,6 +224,16 @@ export const DOSE_BOOKS: Record<string, BookChapter[]> = {
       date: '11.10.2026',
       kind: 'md',
     },
+    {
+      slug: 'ticket-04-color-science',
+      path: '07-demos/wet-ink/ticket-04-farbwissenschaft-fraktale-und-chromatographie.md',
+      titleDe: 'Ticket #4: Farbwissenschaft & Chromatographie',
+      titleEn: 'Ticket #4: Color Science & Chromatography',
+      noteDe: 'Saunderson-Fresnel-Korrektur, ISO/CIE CIEDE2000, Box-Counting Fraktaldimension und Papier-Chromatographie.',
+      noteEn: 'Saunderson Fresnel correction, ISO/CIE CIEDE2000, box-counting fractal dimension, and paper chromatography.',
+      date: '11.10.2026',
+      kind: 'md',
+    },
   ],
   'fugenduell-asphalt-arena': [
     {

@@ -1,9 +1,9 @@
 {
   "auditVersion": 1,
-  "generatedAt": "2026-10-11T19:08:03.486Z",
+  "generatedAt": "2026-10-11T19:24:11.553Z",
   "repository": {
-    "commit": "0e1181b",
-    "branch": "claude/nifty-ride-xtktbm"
+    "commit": "d2f99ae0",
+    "branch": "HEAD"
   },
   "inventory": {
     "doses": 46,
@@ -11,7 +11,7 @@
     "demos": 13,
     "researchEntries": 36,
     "candidateIdeas": 20,
-    "books": 51
+    "books": 52
   },
   "distributions": {
     "doseStatus": {

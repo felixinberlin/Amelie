@@ -92,7 +92,9 @@ $$\text{Input (Stylus/Pressure)} \longrightarrow \text{Velocity} \longrightarrow
   * *Status:* **Completed & verified.** Integrated into `@wet-ink/core` and Amélie's interactive simulator (`WetInkSimulator.tsx`).
 * **Ticket #3: Chinese Calligraphy & Seal Art (书法与篆刻).**
   * *Status:* **Completed & verified.** Three Xuan paper maturation grades (`sheng-xuan`, `ban-shu-xuan`, `shu-xuan`), specialized Mao-Bi hair dynamics for `langhao` (weasel), `yanghao` (goat), and `jianhao` (hybrid), interactive practice grids (Mi Zi Ge, Jiu Gong Ge, Yongzi Bafa with 8 fundamental strokes), and authentic cinnabar seal impressions (Zhuwen & Baiwen with chipped antique stone edges).
-* **Test Suite:** 25 test suites with 327 tests passing with zero errors (`calligraphy.test.ts`, `simulation.test.ts`, `kubelka-munk.test.ts`, `WetInkController.test.ts`, `WetInkExtension.test.ts`, `WetInkReact.test.ts`, `WetInkObsidian.test.ts`).
+* **Ticket #4: Color Science, Percolation Fractals & Paper Chromatography.**
+  * *Status:* **Completed & verified.** Saunderson (1942) Fresnel boundary formulation for air-substrate optical interfaces, ISO/CIE 11664-6 CIEDE2000 ($\Delta E_{00}$) color difference engine validated against Sharma (2005) ground truth, box-counting fractal dimension ($D_f$) of capillary boundaries distinguishing invasion percolation on raw Xuan ($D_f \ge 1.25$) from sized paper ($D_f \approx 1.00$), and radial paper chromatography following Lucas (1918) & Washburn (1921) with size-exclusion Darcy pore filtration (*Fen-Mo* 分墨 pigment splitting).
+* **Test Suite:** 28 test suites with 352 tests passing with zero errors (`color-science.test.ts`, `chromatography.test.ts`, `metrics.test.ts`, `calligraphy.test.ts`, `simulation.test.ts`, `kubelka-munk.test.ts`, `WetInkController.test.ts`, `WetInkExtension.test.ts`, `WetInkReact.test.ts`, `WetInkObsidian.test.ts`).
 
 ---
 

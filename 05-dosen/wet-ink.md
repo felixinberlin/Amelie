@@ -92,7 +92,9 @@ $$\text{Input (Stylus/Druck)} \longrightarrow \text{Velocity} \longrightarrow \t
   * *Status:* **Abgeschlossen & verifiziert.** Integriert in `@wet-ink/core` und den interaktiven Amélie-Simulator (`WetInkSimulator.tsx`).
 * **Ticket #3: Chinesische Kalligrafie & Siegelkunst (书法与篆刻).**
   * *Status:* **Abgeschlossen & verifiziert.** Drei Reifegrade traditionellen Xuan-Papiers (`sheng-xuan`, `ban-shu-xuan`, `shu-xuan`), Haartyp-spezifische Pinselphysik für `langhao` (Wiesel), `yanghao` (Ziege) und `jianhao` (Mischhaar), interaktive Übungsgitter (Mi Zi Ge, Jiu Gong Ge, Yongzi Bafa mit 8 Ur-Strichen) und authentische Zinnober-Siegelstempel (Zhuwen & Baiwen mit Canbian-Bruchkanten).
-* **Testabdeckung:** 25 Test-Suiten mit 327 Tests laufen im Gesamtrepository zu 100 % fehlerfrei durch (`calligraphy.test.ts`, `simulation.test.ts`, `kubelka-munk.test.ts`, `WetInkController.test.ts`, `WetInkExtension.test.ts`, `WetInkReact.test.ts`, `WetInkObsidian.test.ts`).
+* **Ticket #4: Farbwissenschaft, Perkolationsfraktale & Papier-Chromatographie.**
+  * *Status:* **Abgeschlossen & verifiziert.** Saunderson (1942) Fresnel-Grenzflächenkorrektur für reale Substratlinsen, ISO/CIE 11664-6 CIEDE2000 ($\Delta E_{00}$) Farbdifferenzmetrik (Sharma et al. 2005 Referenz-Benchmark), Box-Counting Fraktaldimension ($D_f$) der Kapillarsaumlinie zur quantitativen Unterscheidung von Invasionsperkolation auf rohem Xuan ($D_f \ge 1{,}25$) vs. geleimtem Papier ($D_f \approx 1{,}00$) sowie radiale Papier-Chromatographie nach Lucas (1918) und Washburn (1921) mit Darcy-Porenfiltration (*Fen-Mo* 分墨 Pigmenttrennung).
+* **Testabdeckung:** 28 Test-Suiten mit 352 Tests laufen im Gesamtrepository zu 100 % fehlerfrei durch (`color-science.test.ts`, `chromatography.test.ts`, `metrics.test.ts`, `calligraphy.test.ts`, `simulation.test.ts`, `kubelka-munk.test.ts`, `WetInkController.test.ts`, `WetInkExtension.test.ts`, `WetInkReact.test.ts`, `WetInkObsidian.test.ts`).
 
 ---
 
