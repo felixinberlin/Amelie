@@ -36,8 +36,8 @@ export const KNOWN_COMBO_HANDS: ComboHand[] = [
     nameEn: 'Paving Armour',
     taglineDe: 'Trittfeste Flachhelden',
     taglineEn: 'Trample-proof flat champions',
-    descriptionDe: 'Beide Pflanzen wachsen extrem flach: In Trittmonaten erhalten beide +1 Trieb für jeden Trieb, den der Fußtritt anderen raubt.',
-    descriptionEn: 'Both plants grow extremely flat: in trampling months, both gain +1 shoot for each shoot trampling removes from others.',
+    descriptionDe: 'Beide Pflanzen wachsen extrem flach: In Trittmonaten erhalten beide +1 Trieb wenn der Fußtritt mindestens einen anderen Trieb raubt.',
+    descriptionEn: 'Both plants grow extremely flat: in trampling months, both gain +1 shoot when trampling removes at least one other shoot.',
     ecologyDe: 'Tritttolerante Rosetten- und Polsterpflanzen verdrängen auf Wegen empfindliche Arten (Pladias/RHS).',
     ecologyEn: 'Trampling-tolerant rosette and cushion plants replace sensitive species on walkways (Pladias/RHS).',
     tier: 'duo',
@@ -62,8 +62,8 @@ export const KNOWN_COMBO_HANDS: ComboHand[] = [
     nameEn: 'Umbrella & Shade',
     taglineDe: 'Großer Schirm, geschützter Unterwuchs',
     taglineEn: 'Tall canopy, sheltered understory',
-    descriptionDe: 'Ein hoher Strauch beschattet nur den Gegner; der schattentolerante Verbündete gedeiht ungestört darunter.',
-    descriptionEn: 'A tall shrub shades out only enemy shoots; the shade-tolerant ally thrives undisturbed underneath.',
+    descriptionDe: 'Solange eine hohe Pflanze lebt, verliert ihr schattentoleranter Verbündeter erst nach ungeschützten Pflanzen Triebe durch Platzmangel.',
+    descriptionEn: 'While a tall plant survives, its shade-tolerant ally loses shoots to crowding only after unprotected plants.',
     ecologyDe: 'Sukzessionale Schichtung: Schattentolerante Arten wachsen unter lichten Kronen (L-Zeigerwert ≤ 6).',
     ecologyEn: 'Stratification: shade-tolerant species thrive under open canopies (Light indicator ≤ 6).',
     tier: 'duo',
@@ -75,8 +75,8 @@ export const KNOWN_COMBO_HANDS: ComboHand[] = [
     nameEn: 'Wall Clan',
     taglineDe: 'Vertikale Mörtel-Spezialisten',
     taglineEn: 'Vertical mortar specialists',
-    descriptionDe: 'In einer Mauerfuge addieren sich beide Mauer-Boni (+2 Passung für jeden), und der Clan kann von Bodenpflanzen nicht beschattet werden.',
-    descriptionEn: 'In a wall joint, both wall bonuses stack (+2 fit bonus each), and the clan cannot be shaded by ground plants.',
+    descriptionDe: 'In einer Mauerfuge addieren sich beide Mauer-Boni (+1 zusätzliche Passung für jeden), und der Clan verliert bei Platzmangel erst nach ungeschützten Pflanzen Triebe.',
+    descriptionEn: 'In a wall joint, both wall bonuses stack (+1 additional fit bonus each), and the clan loses shoots to crowding only after unprotected plants.',
     ecologyDe: 'Lithophyten in vertikalen Fugen entgehen bodengebundenem Tritt und Beschattung (RHS/BBS).',
     ecologyEn: 'Lithophytes in vertical crevices escape ground-level trampling and shading (RHS/BBS).',
     tier: 'duo',
@@ -175,7 +175,7 @@ export function detectComboHands(team: SpeciesProfile[], place?: CityPlace): Com
   }
 
   // 4. Mauer-Clan
-  if (ids.has('asplenium-ruta-muraria') && ids.has('cymbalaria-muralis')) {
+  if (place?.wallJoint && ids.has('asplenium-ruta-muraria') && ids.has('cymbalaria-muralis')) {
     hands.push(KNOWN_COMBO_HANDS.find(h => h.id === 'mauer-clan')!);
   }
 
@@ -185,7 +185,7 @@ export function detectComboHands(team: SpeciesProfile[], place?: CityPlace): Com
   }
 
   // 6. Hitzewelle-Gang (Trio)
-  if (team.every(p => p.resist.heat >= 1)) {
+  if (team.length === 3 && ids.size === 3 && team.every(p => p.resist.heat >= 1)) {
     hands.push(KNOWN_COMBO_HANDS.find(h => h.id === 'hitzewelle-gang')!);
   }
 

@@ -196,6 +196,7 @@ export interface PlantState {
 }
 export interface MonthLog { card: MonthCard; lines: string[]; shoots: number[][]; seeds: number[][]; hardening: number[][]; status: PlantStatus[][]; sideShoots: [number, number] }
 export interface WatchResult {
+  capacity: number;
   months: MonthLog[];
   plants: PlantState[];
   score: [number, number];
@@ -345,30 +346,39 @@ export function runWatch(sides: [string[], string[]], cards: MonthCard[], lat: n
       if (played.length) lines.push(`${name(p, lang)}: ${played.join(', ')}`);
     }
     // 3. Shading: over capacity, the lowest plants lose first.
-    let total = plants.reduce((x, s) => x + s.shoots, 0);
-    const shaded = new Map<PlantState, number>();
-    while (total > capacity) {
-      // Lowest height first, then most shoots. Exact ties all lose one shoot at once.
-      const alive = plants.filter(s => s.shoots > 0);
-      const minH = Math.min(...alive.map(s => prof(s).heightClass));
-      let tier = alive.filter(s => prof(s).heightClass === minH);
-      if (tier.some(s => !prof(s).resist.shade)) tier = tier.filter(s => !prof(s).resist.shade); // shade-tolerant plants last
-      const most = Math.max(...tier.map(s => s.shoots));
-      for (const victim of tier.filter(s => s.shoots === most)) {
-        victim.shoots--; total--; shaded.set(victim, (shaded.get(victim) ?? 0) + 1);
-        // Special: Cardamine Schotenmörser triggered when shaded
-        if (prof(victim).id === 'cardamine-hirsuta' && !victim.ultimateUsed && victim.status !== 'dead') {
-          victim.ultimateUsed = true;
-          victim.seeds += 2;
-          lines.push(`${name(prof(victim), lang)}: ⚡ SPEZIAL: Schotenmörser (feuert 2 Mörsersamen bei Beschattung!)`);
+    const resolveCrowding = () => {
+      let total = plants.reduce((x, s) => x + s.shoots, 0);
+      const shaded = new Map<PlantState, number>();
+      while (total > capacity) {
+        // Lowest height first, then most shoots. Exact ties all lose one shoot at once.
+        const protectedByCanopy = (s: PlantState) => comboHands[s.side].some(h => h.id === 'schirm-schatten') && prof(s).resist.shade && plants.some(ally => ally.side === s.side && ally !== s && ally.shoots > 0 && prof(ally).heightClass >= 3);
+        const protectedByWall = (s: PlantState) => place?.wallJoint && prof(s).wallDweller && comboHands[s.side].some(h => h.id === 'mauer-clan');
+        const allAlive = plants.filter(s => s.shoots > 0);
+        // Protection changes priority, never removes the capacity limit.
+        const exposed = allAlive.filter(s => !protectedByCanopy(s) && !protectedByWall(s));
+        const alive = exposed.length ? exposed : allAlive;
+        const minH = Math.min(...alive.map(s => prof(s).heightClass));
+        let tier = alive.filter(s => prof(s).heightClass === minH);
+        if (tier.some(s => !prof(s).resist.shade)) tier = tier.filter(s => !prof(s).resist.shade); // shade-tolerant plants last
+        const most = Math.max(...tier.map(s => s.shoots));
+        for (const victim of tier.filter(s => s.shoots === most)) {
+          victim.shoots--; total--; shaded.set(victim, (shaded.get(victim) ?? 0) + 1);
+          // Special: Cardamine Schotenmörser triggered when shaded
+          if (prof(victim).id === 'cardamine-hirsuta' && !victim.ultimateUsed && victim.status !== 'dead') {
+            victim.ultimateUsed = true;
+            victim.seeds += 2;
+            lines.push(`${name(prof(victim), lang)}: ⚡ SPEZIAL: Schotenmörser (feuert 2 Mörsersamen bei Beschattung!)`);
+          }
         }
       }
-    }
-    for (const [s, n] of shaded) lines.push(`${name(prof(s), lang)}: shaded −${n}`);
+      for (const [s, n] of shaded) lines.push(`${name(prof(s), lang)}: shaded −${n}`);
+    };
+    resolveCrowding();
 
     // 4. The place: trampling every month, cleaning in maintenance months (seeds are never removed).
     if (place) {
-      const cleaning = place.maintenanceMonths.includes(localMonth(card.month, lat));
+      const cleaning = place.maintenanceMonths.includes(localMonth(card.month, lat)) || (crackState.extraCleaning && localMonth(card.month, lat) === 8);
+      if (crackState.extraCleaning && localMonth(card.month, lat) === 8) lines.push(lang === 'de' ? 'Tief-Spalt: zusätzliche Reinigung im August' : 'Deep crevice: extra cleaning in August');
       let trampleVictims = 0;
       for (const s of plants) {
         const p = prof(s);
@@ -409,6 +419,27 @@ export function runWatch(sides: [string[], string[]], cards: MonthCard[], lat: n
       lines.push(lang === 'de' ? `Bodenstufe ${crackState.level}: Moos-Humus absorbiert ${crackState.droughtShield} Dürreschaden` : `Soil level ${crackState.level}: Moss-humus absorbs ${crackState.droughtShield} drought loss`);
     }
     const salt = (place?.winterSalt && card.cold) || place?.saltSpray ? 1 : 0;
+    const sharedHeat = new Map<PlantState, number>();
+    for (const side of [0, 1] as const) {
+      if (!comboHands[side].some(h => h.id === 'hitzewelle-gang') || !heatBase) continue;
+      const members = plants.filter(s => s.side === side && s.shoots > 0).sort((a, b) => a.id.localeCompare(b.id));
+      // Spend the shared pool one point per member per pass; team ordering cannot decide protection.
+      let pool = members.reduce((sum, s) => sum + s.hardening, 0);
+      let spent = 0;
+      while (pool > 0) {
+        let progress = false;
+        for (const s of members) {
+          const need = Math.max(0, heatBase - prof(s).resist.heat);
+          if (pool && (sharedHeat.get(s) ?? 0) < need) {
+            sharedHeat.set(s, (sharedHeat.get(s) ?? 0) + 1); pool--; spent++; progress = true;
+          }
+        }
+        if (!progress) break;
+      }
+      let debit = spent;
+      while (debit > 0) for (const s of members) if (debit && s.hardening > 0) { s.hardening--; debit--; }
+      if (spent) lines.push(lang === 'de' ? `COMBO: Hitzewelle-Gang teilt Härtung: ${spent} Hitzeschaden abgefangen` : `COMBO: Heatwave Gang shares hardening: ${spent} heat damage absorbed`);
+    }
     if (heatBase || droughtBase || card.frost || salt) {
       for (const s of plants) {
         const p = prof(s);
@@ -425,7 +456,7 @@ export function runWatch(sides: [string[], string[]], cards: MonthCard[], lat: n
           s.seeds += 2;
           lines.push(`${name(p, lang)}: ⚡ SPEZIAL: Salzstraßen-Sprint (+3 Triebe entlang der Salzstraße!)`);
         }
-        let heat = Math.max(0, heatBase - p.resist.heat);
+        let heat = Math.max(0, heatBase - p.resist.heat - (sharedHeat.get(s) ?? 0));
         if (p.lifeForm === 'therophyte' && comboHands[s.side].some(h => h.id === 'kinderstube') && heat > 0) {
           heat = Math.max(0, heat - 1);
         }
@@ -461,6 +492,11 @@ export function runWatch(sides: [string[], string[]], cards: MonthCard[], lat: n
           }
         }
       }
+    }
+    // Combos and specials may add shoots after the first capacity check.
+    resolveCrowding();
+    for (const s of plants) {
+      const p = prof(s);
       if (s.status !== 'dead') {
         const next: PlantStatus = s.shoots > 0 ? 'alive' : s.seeds > 0 ? 'wilted' : 'dead';
         if (next !== s.status) lines.push(`${name(p, lang)}: ${next === 'alive' ? 'grows again' : next === 'wilted' ? 'wilted (seeds remain)' : 'DIES OUT — no shoots, no seeds'}`);
@@ -477,5 +513,5 @@ export function runWatch(sides: [string[], string[]], cards: MonthCard[], lat: n
   const score: [number, number] = [sum(0, s => s.shootMonths), sum(1, s => s.shootMonths)];
   const seeds: [number, number] = [sum(0, s => s.seeds), sum(1, s => s.seeds)];
   const winner = score[0] !== score[1] ? (score[0] > score[1] ? 0 : 1) : seeds[0] !== seeds[1] ? (seeds[0] > seeds[1] ? 0 : 1) : 'draw';
-  return { months, plants, score, seeds, winner, comboHands, crackState };
+  return { capacity, months, plants, score, seeds, winner, comboHands, crackState };
 }

@@ -12,5 +12,5 @@ export const FugenduellArena: React.FC<FugenduellArenaProps> = (props) => {
     <button className="min-h-11 rounded-lg border px-4" aria-pressed={mode === 'community'} onClick={() => setMode('community')}>{de ? 'Gemeinschaft · 3 Pflanzen + Aktionsdeck' : 'Community · 3 plants + action deck'}</button>
     <button className="min-h-11 rounded-lg border px-4" aria-pressed={mode === 'watch'} onClick={() => setMode('watch')}>{de ? 'Wetterjahr · zuschauen' : 'Weather year · watch'}</button>
   <button className="min-h-11 rounded-lg border px-4" aria-pressed={mode === 'plant'} onClick={() => setMode('plant')}>{de ? 'Pflanze ansehen · echte Botanik' : 'View plant · real botany'}</button>
-  </div><div hidden={mode !== 'plant'}><FugenduellPlantView lang={props.lang} /></div><div hidden={mode !== 'community'}><FugenduellCommunity lang={props.lang} /></div><div hidden={mode !== 'watch'}><FugenduellWeatherWatch lang={props.lang} /></div></div>;
+  </div><div hidden={mode !== 'plant'}><FugenduellPlantView lang={props.lang} /></div><div hidden={mode !== 'community'}><FugenduellCommunity lang={props.lang} /></div><div hidden={mode !== 'watch'}><FugenduellWeatherWatch lang={props.lang} active={mode === 'watch'} /></div></div>;
 };

@@ -1,6 +1,9 @@
 import { describe, it, expect } from 'vitest';
-import { detectComboHands, getCrackState, KNOWN_COMBO_HANDS } from './combos';
-import { speciesProfile } from './watchMode';
+import { detectComboHands, getCrackState } from './combos';
+import { placeById, CITY_PLACES } from '../../data/fugenduellPlaces';
+import { aggregateMonths, monthCards, fromFixture, WeatherYearFixture } from './weatherYear';
+import berlin from '../../data/fugenduellWeather/berlin-2025.json';
+import { runWatch, speciesProfile } from './watchMode';
 
 describe('combo hands (Balatro meets botany)', () => {
   it('detects Pflaster-Panzer for Plantago + Sagina', () => {
@@ -29,7 +32,9 @@ describe('combo hands (Balatro meets botany)', () => {
 
   it('detects Mauer-Clan for wall specialists', () => {
     const team = ['asplenium-ruta-muraria', 'cymbalaria-muralis', 'plantago-major'].map(id => speciesProfile(id)!);
-    const hands = detectComboHands(team);
+    const wall = CITY_PLACES.find(p => p.wallJoint)!;
+    expect(detectComboHands(team).map(h => h.id)).not.toContain('mauer-clan');
+    const hands = detectComboHands(team, wall);
     expect(hands.map(h => h.id)).toContain('mauer-clan');
   });
 
@@ -77,5 +82,55 @@ describe('crack evolution (Manu et al. 2025)', () => {
     const l3 = getCrackState(3);
     expect(l3.capacityBonus).toBe(30);
     expect(l3.extraCleaning).toBe(true);
+  });
+});
+
+
+describe('combo resolution and arena invariants', () => {
+  const cards = monthCards(aggregateMonths(fromFixture(berlin as WeatherYearFixture)));
+  const teams: [string[], string[]] = [
+    ['portulaca-oleracea', 'buddleja-davidii', 'cymbalaria-muralis'],
+    ['plantago-major', 'sagina-procumbens', 'poa-annua'],
+  ];
+  it('keeps every monthly arena within evolved capacity and species HP', () => {
+    for (const place of CITY_PLACES) for (const level of [1, 2, 3] as const) {
+      const result = runWatch(teams, cards, 52.52, 'en', place, level);
+      expect(result.capacity).toBe(place.capacity + getCrackState(level).capacityBonus);
+      for (const month of result.months) {
+        expect(month.sideShoots[0] + month.sideShoots[1]).toBeLessThanOrEqual(result.capacity);
+        month.shoots.forEach((shoots, side) => shoots.forEach((n, i) => {
+          expect(n).toBeGreaterThanOrEqual(0);
+          expect(n).toBeLessThanOrEqual(speciesProfile(teams[side][i])!.maxHp);
+        }));
+      }
+    }
+  });
+  it('gives the same scores when the team sides are exchanged', () => {
+    for (const place of CITY_PLACES) {
+      const a = runWatch(teams, cards, 52.52, 'en', place, 3);
+      const b = runWatch([teams[1], teams[0]], cards, 52.52, 'en', place, 3);
+      expect(a.score).toEqual([...b.score].reverse());
+      expect(a.seeds).toEqual([...b.seeds].reverse());
+    }
+  });
+  it('shares and spends heat hardening, and activates the deep-crevice cleaning cost', () => {
+    const hot = cards.map(c => ({ ...c, heat: 3, cold: false, frost: 0, drought: 0 }));
+    const result = runWatch(teams, hot, 52.52, 'en', placeById('gehwegfuge'), 3);
+    expect(result.months.flatMap(m => m.lines).some(l => l.includes('shares hardening'))).toBe(true);
+    expect(result.months.find(m => m.card.month === 8)!.lines).toContain('Deep crevice: extra cleaning in August');
+  });
+  it('keeps heat-sharing results stable when plants are reordered', () => {
+    const hot = cards.map(c => ({ ...c, heat: 3, cold: false, frost: 0, drought: 0 }));
+    const a = runWatch(teams, hot, 52.52, 'en', placeById('brache'));
+    const b = runWatch([[...teams[0]].reverse(), teams[1]], hot, 52.52, 'en', placeById('brache'));
+    expect(a.score).toEqual(b.score);
+    expect(a.seeds).toEqual(b.seeds);
+    for (const plant of a.plants) {
+      expect(b.plants.find(p => p.side === plant.side && p.id === plant.id)).toEqual(plant);
+    }
+  });
+  it('does not detect trio bonuses for empty or incomplete teams', () => {
+    expect(detectComboHands([])).toEqual([]);
+    expect(detectComboHands([speciesProfile('portulaca-oleracea')!]).map(h => h.id)).not.toContain('hitzewelle-gang');
   });
 });

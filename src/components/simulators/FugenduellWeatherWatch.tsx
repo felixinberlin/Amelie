@@ -4,7 +4,7 @@ import { CITY_PLACES, CityPlace, placeById } from '../../data/fugenduellPlaces';
 import { FEATURED_CITIES, NAMED_PLACES, NamedPlace } from '../../data/fugenduellCities';
 import { aggregateMonths, fetchNasaPowerYear, fromFixture, MonthCard, monthCards, WeatherYearData } from '../../engine/fugenduell/weatherYear';
 import { placeFit, playableSpecies, runWatch, SpeciesProfile, trampleLoss, WatchResult } from '../../engine/fugenduell/watchMode';
-import { detectComboHands, getCrackState, ComboHand, CrackState } from '../../engine/fugenduell/combos';
+import { detectComboHands, getCrackState } from '../../engine/fugenduell/combos';
 
 /** A named place of a featured city, or a generic place type (for custom coordinates). */
 const resolvePlace = (id: string): CityPlace | NamedPlace => NAMED_PLACES.find(p => p.id === id) ?? placeById(id);
@@ -15,7 +15,7 @@ const TEAM_COLOURS = [['#166534', '#22c55e', '#86efac'], ['#9f1239', '#f43f5e', 
 
 interface Game { data: WeatherYearData; cards: MonthCard[]; result: WatchResult; teams: [string[], string[]]; placeId: string; crackLevel: 1 | 2 | 3 }
 
-export function FugenduellWeatherWatch({ lang }: { lang: Language }) {
+export function FugenduellWeatherWatch({ lang, active = true }: { lang: Language; active?: boolean }) {
   const de = lang === 'de';
   const t = (d: string, e: string) => (de ? d : e);
   const engineLang = de ? 'de' : 'en';
@@ -35,6 +35,9 @@ export function FugenduellWeatherWatch({ lang }: { lang: Language }) {
   const [game, setGame] = useState<Game | null>(null);
   const [step, setStep] = useState(0); // 0 = start, k = after month k
   const [playing, setPlaying] = useState(false);
+  const [speed, setSpeed] = useState(1300);
+
+  useEffect(() => { if (!active) setPlaying(false); }, [active]);
 
   const teamAProfiles = useMemo(() => teamA.map(id => species.find(s => s.id === id)).filter((p): p is SpeciesProfile => Boolean(p)), [teamA, species]);
   const teamBProfiles = useMemo(() => teamB.map(id => species.find(s => s.id === id)).filter((p): p is SpeciesProfile => Boolean(p)), [teamB, species]);
@@ -43,11 +46,11 @@ export function FugenduellWeatherWatch({ lang }: { lang: Language }) {
   const combosB = useMemo(() => detectComboHands(teamBProfiles, chosenPlace), [teamBProfiles, chosenPlace]);
 
   useEffect(() => {
-    if (!playing || !game) return;
+    if (!playing || !game || !active) return;
     if (step >= 12) { setPlaying(false); return; }
-    const timer = window.setTimeout(() => setStep(s => s + 1), 1300);
+    const timer = window.setTimeout(() => setStep(s => Math.min(12, s + 1)), speed);
     return () => window.clearTimeout(timer);
-  }, [playing, step, game]);
+  }, [playing, step, game, speed, active]);
 
   const teamValid = (team: string[]) => new Set(team).size === 3;
   const start = async () => {
@@ -75,13 +78,14 @@ export function FugenduellWeatherWatch({ lang }: { lang: Language }) {
       <span className="inline-block w-3 h-3 rounded-full mr-1 align-middle" style={{ background: TEAM_COLOURS[side][i] }} aria-hidden="true" />
       {t('Pflanze', 'Plant')} {i + 1}
       <select className="mt-1 w-full min-h-11 rounded-lg border p-2 text-base" value={id} onChange={e => setTeam(team.map((old, j) => (j === i ? e.target.value : old)))}>
-        {species.map(p => <option key={p.id} value={p.id}>{de ? p.nameDe : p.nameEn}</option>)}
+        {species.map(p => <option key={p.id} value={p.id} disabled={team.includes(p.id) && p.id !== id}>{de ? p.nameDe : p.nameEn}</option>)}
       </select>
     </label>
   ));
 
   const place = resolvePlace(game?.placeId ?? placeId);
   const chosen = resolvePlace(placeId);
+  const capacity = game?.result.capacity ?? chosen.capacity;
   const cityPlaces: (CityPlace | NamedPlace)[] = FEATURED_CITIES.find(c => c.id === cityId)?.places ?? CITY_PLACES;
   const label = (p: CityPlace) => de ? p.labelDe : lang === 'es' ? p.labelEs : p.labelEn;
   const month = game && step > 0 ? game.result.months[step - 1] : null;
@@ -119,6 +123,7 @@ export function FugenduellWeatherWatch({ lang }: { lang: Language }) {
         <h2 className="text-2xl font-bold">{t('Wetterjahr: Stadt wählen, Ort wählen, zuschauen.', 'Weather year: pick a city, pick a place, watch.')}</h2>
         <p className="mt-2 text-sm">{t('Zwei Gemeinschaften aus je drei Arten leben ein echtes Wetterjahr lang (März bis Februar) an einem Ort in der Stadt. Niemand greift ein: Wetter, Ort und die gemessenen Pflanzendaten entscheiden.', 'Two communities of three species each live through a real weather year (March to February) at one place in the city. Nobody intervenes: weather, place and the measured plant data decide.')}</p>
         <p className="mt-2 text-sm text-amber-200">{t('Pflanzenwerte: Pladias, UNDERPLOT, RHS. Wetter: NASA POWER (Raster ca. 50 km, ohne städtische Wärmeinsel). Ortswerte (Tritt, Reinigung, Platz) sind Spielannahmen. HP = höchstens so viele Triebe (Lebensform + Knospenbank); Resistenzen aus je einem Datenfeld. Eine Pflanze welkt ohne Triebe und stirbt aus, wenn auch keine Samen mehr da sind. Regeln: watch-v2, wetter-v1.', 'Plant values: Pladias, UNDERPLOT, RHS. Weather: NASA POWER (grid about 50 km, no urban heat island). Place values (trampling, cleaning, space) are game assumptions. HP = most shoots a plant can hold (life form + bud bank); each resistance from one data field. A plant wilts without shoots and dies out when no seeds are left either. Rules: watch-v2, wetter-v1.')}</p>
+        <p className="mt-2 text-sm text-emerald-200">{t('Combos, Spezialangriffe und Bodenstufen sind Spielregeln, keine ökologischen Vorhersagen. Gewonnen wird über die Trieb-Monate; bei Gleichstand entscheiden die übrigen Samen.', 'Combos, special attacks and soil levels are game rules, not ecological predictions. Shoot-months decide the winner; remaining seeds break a tie.')}</p>
       </header>
 
       <div className="rounded-xl border bg-white p-4 space-y-4">
@@ -154,7 +159,7 @@ export function FugenduellWeatherWatch({ lang }: { lang: Language }) {
         <div className="rounded-lg bg-stone-50 p-3 text-sm space-y-1">
           {isNamed(chosen) && <p className="font-bold">{chosen.nameLocal} · <span className="font-normal">{de ? chosen.ecosystemDe : chosen.ecosystemEn}</span></p>}
           <p>{de ? chosen.descriptionDe : chosen.descriptionEn}</p>
-          <p className="text-stone-600">{t('Platz', 'Space')} {chosen.capacity} · {t('Tritt', 'trampling')} {chosen.trample} · {t('Reinigung', 'cleaning')} {chosen.maintenanceMonths.length ? chosen.maintenanceMonths.map(m => monthName(m)).join(', ') : t('nie', 'never')} · {t('Hitze', 'heat')} {chosen.heatShift > 0 ? '+' : ''}{chosen.heatShift} · {t('Dürre', 'drought')} {chosen.droughtShift > 0 ? '+' : ''}{chosen.droughtShift}{chosen.winterSalt ? ` · ${t('Streusalz im Winter', 'road salt in winter')}` : ''}{chosen.saltSpray ? ` · ${t('Salzgischt ganzjährig', 'salt spray all year')}` : ''}{chosen.wallJoint ? ` · ${t('Mauer', 'wall')}` : ''} · L{chosen.profile.L} F{chosen.profile.F} R{chosen.profile.R} N{chosen.profile.N} S{chosen.profile.S}</p>
+          <p className="text-stone-600">{t('Platz', 'Space')} {chosen.capacity + getCrackState(crackLevel).capacityBonus} · {t('Tritt', 'trampling')} {chosen.trample} · {t('Reinigung', 'cleaning')} {chosen.maintenanceMonths.length ? chosen.maintenanceMonths.map(m => monthName(m)).join(', ') : t('nie', 'never')}{crackLevel === 3 ? t(' + August (Südhalbkugel: Februar)', ' + August (Southern hemisphere: February)') : ''} · {t('Hitze', 'heat')} {chosen.heatShift > 0 ? '+' : ''}{chosen.heatShift} · {t('Dürre', 'drought')} {chosen.droughtShift > 0 ? '+' : ''}{chosen.droughtShift}{chosen.winterSalt ? ` · ${t('Streusalz im Winter', 'road salt in winter')}` : ''}{chosen.saltSpray ? ` · ${t('Salzgischt ganzjährig', 'salt spray all year')}` : ''}{chosen.wallJoint ? ` · ${t('Mauer', 'wall')}` : ''} · L{chosen.profile.L} F{chosen.profile.F} R{chosen.profile.R} N{chosen.profile.N} S{chosen.profile.S}</p>
           {isNamed(chosen) && <p className="text-xs text-stone-500">📍 <a className="underline" href={`https://www.openstreetmap.org/?mlat=${chosen.lat}&mlon=${chosen.lon}#map=17/${chosen.lat}/${chosen.lon}`} target="_blank" rel="noopener noreferrer">{chosen.lat.toFixed(4)}, {chosen.lon.toFixed(4)}</a> · {t('Ortswerte sind Spielannahmen. Noch zu prüfen', 'Place values are game assumptions. Still to verify')}: {chosen.verify.join('; ')}</p>}
         </div>
         <div className="rounded-lg bg-emerald-50 border border-emerald-200 p-3 text-xs text-emerald-950 space-y-1">
@@ -165,6 +170,17 @@ export function FugenduellWeatherWatch({ lang }: { lang: Language }) {
             {crackLevel === 3 && t('Stufe 3 (Spaltbildung): Frost- und Wurzelsprengung öffnen Tiefenräume im Asphalt. Größter Wurzelraum für Gehölzpioniere (Kapazität +30, Dürreschaden −2), lockt aber Straßenreinigung an.', 'Stage 3 (Fracture): Frost and root wedging open deep spaces in asphalt. Maximum root space for woody pioneers (capacity +30, drought loss −2), but attracts street sweepers.')}
           </p>
         </div>
+        <div className="rounded-lg border border-stone-200 p-3 space-y-2">
+          <p className="text-sm font-bold">{t('Schnellstart: eine Strategie ausprobieren', 'Quick start: try a strategy')}</p>
+          <div className="flex flex-wrap gap-2">
+            {[
+              { de: 'Trittfeste Crew', en: 'Paving armour', ids: ['plantago-major', 'sagina-procumbens', 'poa-annua'] },
+              { de: 'Blüh-Staffel', en: 'Flowering relay', ids: ['cardamine-hirsuta', 'portulaca-oleracea', 'poa-annua'] },
+              { de: 'Hitzewelle-Gang', en: 'Heatwave gang', ids: ['portulaca-oleracea', 'buddleja-davidii', 'cymbalaria-muralis'] },
+            ].map(preset => <button key={preset.en} className="min-h-11 rounded-lg border bg-stone-50 px-3 text-sm" onClick={() => setTeamA(preset.ids)}>{de ? preset.de : preset.en}</button>)}
+          </div>
+          <p className="text-xs text-stone-600">{t('Setzt Team Grün. Ort und Gegner bleiben wählbar. Änderungen gelten für das nächste geladene Jahr.', 'Sets team green. Choose the place and opponent freely. Setup changes apply to the next loaded year.')}</p>
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <fieldset className="space-y-2">
             <legend className="font-bold text-emerald-800">{t('Team Grün', 'Team green')}</legend>
@@ -174,9 +190,10 @@ export function FugenduellWeatherWatch({ lang }: { lang: Language }) {
                 <p className="text-xs font-semibold text-emerald-900">{t('Erkannte Combos (Balatro-Synergie):', 'Detected Combos (Balatro Synergy):')}</p>
                 <div className="flex flex-wrap gap-1.5">
                   {combosA.map(c => (
-                    <span key={c.id} className="inline-flex items-center rounded-full bg-emerald-100 border border-emerald-300 px-2.5 py-0.5 text-xs font-bold text-emerald-900 shadow-sm" title={`${de ? c.taglineDe : c.taglineEn}: ${de ? c.descriptionDe : c.descriptionEn}\n\nÖkologie: ${de ? c.ecologyDe : c.ecologyEn}`}>
-                      💥 {de ? c.nameDe : c.nameEn}
-                    </span>
+                    <details key={c.id} className="min-w-0 max-w-full rounded-xl bg-emerald-100 border border-emerald-300 px-2.5 py-0.5 text-xs font-bold text-emerald-900 shadow-sm" title={`${de ? c.taglineDe : c.taglineEn}: ${de ? c.descriptionDe : c.descriptionEn}\n\nÖkologie: ${de ? c.ecologyDe : c.ecologyEn}`}>
+                      <summary className="min-h-11 flex items-center cursor-pointer">💥 {de ? c.nameDe : c.nameEn}</summary>
+                      <p className="max-w-sm pb-2 font-normal">{de ? c.descriptionDe : c.descriptionEn}</p>
+                    </details>
                   ))}
                 </div>
               </div>
@@ -190,9 +207,10 @@ export function FugenduellWeatherWatch({ lang }: { lang: Language }) {
                 <p className="text-xs font-semibold text-rose-900">{t('Erkannte Combos (Balatro-Synergie):', 'Detected Combos (Balatro Synergy):')}</p>
                 <div className="flex flex-wrap gap-1.5">
                   {combosB.map(c => (
-                    <span key={c.id} className="inline-flex items-center rounded-full bg-rose-100 border border-rose-300 px-2.5 py-0.5 text-xs font-bold text-rose-900 shadow-sm" title={`${de ? c.taglineDe : c.taglineEn}: ${de ? c.descriptionDe : c.descriptionEn}\n\nÖkologie: ${de ? c.ecologyDe : c.ecologyEn}`}>
-                      💥 {de ? c.nameDe : c.nameEn}
-                    </span>
+                    <details key={c.id} className="min-w-0 max-w-full rounded-xl bg-rose-100 border border-rose-300 px-2.5 py-0.5 text-xs font-bold text-rose-900 shadow-sm" title={`${de ? c.taglineDe : c.taglineEn}: ${de ? c.descriptionDe : c.descriptionEn}\n\nÖkologie: ${de ? c.ecologyDe : c.ecologyEn}`}>
+                      <summary className="min-h-11 flex items-center cursor-pointer">💥 {de ? c.nameDe : c.nameEn}</summary>
+                      <p className="max-w-sm pb-2 font-normal">{de ? c.descriptionDe : c.descriptionEn}</p>
+                    </details>
                   ))}
                 </div>
               </div>
@@ -227,7 +245,32 @@ export function FugenduellWeatherWatch({ lang }: { lang: Language }) {
             <button className="min-h-11 rounded-lg border px-4" disabled={step === 0} onClick={() => { setPlaying(false); setStep(s => Math.max(0, s - 1)); }}>◀ {t('Zurück', 'Back')}</button>
             <button className="min-h-11 rounded-lg bg-emerald-800 px-4 text-white font-bold" onClick={() => { if (step >= 12) setStep(0); setPlaying(p => !p); }}>{playing ? `⏸ ${t('Pause', 'Pause')}` : `▶ ${t('Abspielen', 'Play')}`}</button>
             <button className="min-h-11 rounded-lg border px-4" disabled={step >= 12} onClick={() => { setPlaying(false); setStep(s => Math.min(12, s + 1)); }}>{t('Weiter', 'Next')} ▶</button>
+            <label className="flex items-center gap-2 text-sm">{t('Tempo', 'Speed')}<select aria-label={t('Abspieltempo', 'Playback speed')} className="min-h-11 rounded-lg border px-2" value={speed} onChange={e => setSpeed(Number(e.target.value))}><option value={2600}>0.5×</option><option value={1300}>1×</option><option value={650}>2×</option></select></label>
             <button className="min-h-11 rounded-lg border px-4" onClick={() => { setPlaying(false); setStep(12); }}>{t('Ende', 'End')} ⏭</button>
+          </div>
+        </div>
+
+        <div className="rounded-xl border bg-white p-4 space-y-2">
+          <h3 className="font-bold">{t('Das Rennen um die Fuge', 'The race for the crack')}</h3>
+          <p className="text-sm text-stone-600">{t('Jeder überlebende Trieb zählt jeden Monat einen Punkt. Klicke einen Monat, um den Wendepunkt zu sehen.', 'Each surviving shoot earns one point every month. Select a month to inspect the turning point.')}</p>
+          <svg viewBox="0 0 640 150" className="w-full" role="img" aria-label={t('Punkteverlauf bis zum aktuellen Monat: Grün und Rot', 'Score history up to the current month: green and red')}>
+            {[0, 1, 2].map(i => <line key={i} x1="20" x2="620" y1={20 + i * 55} y2={20 + i * 55} stroke="#e7e5e4" />)}
+            {([0, 1] as const).map(side => {
+              const max = Math.max(1, ...game.result.score);
+              let score = 0;
+              const points = ['20,130', ...game.result.months.slice(0, step).map((m, i) => {
+                score += m.sideShoots[side];
+                return `${20 + (i + 1) * 50},${130 - score / max * 110}`;
+              })].join(' ');
+              return <polyline key={side} points={points} fill="none" stroke={TEAM_COLOURS[side][0]} strokeWidth="3" strokeDasharray={side === 1 ? '7 4' : undefined} />;
+            })}
+            <line x1={20 + step * 50} x2={20 + step * 50} y1="15" y2="135" stroke="#a8a29e" strokeDasharray="3 3" />
+            {game.cards.map((card, i) => <text key={i} x={20 + (i + 1) * 50} y="148" textAnchor="middle" fontSize="10" fill="#57534e">{monthName(card.month)}</text>)}
+          </svg>
+          <div className="flex flex-wrap gap-3 text-sm font-bold">
+            <span className="text-emerald-800">● {t('Grün', 'Green')}: {runningScore(0)}</span>
+            <span className="text-rose-800">┄ {t('Rot', 'Red')}: {runningScore(1)}</span>
+            <span>{runningScore(0) === runningScore(1) ? t('Gleichauf', 'Level') : t('Vorsprung', 'Lead') + `: ${Math.abs(runningScore(0) - runningScore(1))}`}</span>
           </div>
         </div>
 
@@ -244,7 +287,7 @@ export function FugenduellWeatherWatch({ lang }: { lang: Language }) {
           {month && (() => {
             const specials = month.lines.filter(l =>
               l.includes('SPEZIAL:') ||
-              l.includes('KETTENREAKTION:') ||
+              l.includes('KETTENREAKTION:') || l.includes('CHAIN REACTION:') ||
               l.includes('COMBO:') ||
               l.includes('Ameisenstraße') ||
               l.includes('Sukzessionskette') ||
@@ -266,12 +309,12 @@ export function FugenduellWeatherWatch({ lang }: { lang: Language }) {
             );
           })()}
 
-          <div className="flex h-8 rounded-lg overflow-hidden bg-stone-200" role="img" aria-label={t(`Grün ${total(0)}, Rot ${total(1)}, Platz ${place.capacity}`, `Green ${total(0)}, red ${total(1)}, space ${place.capacity}`)}>
+          <div className="flex h-8 rounded-lg overflow-hidden bg-stone-200" role="img" aria-label={t(`Grün ${total(0)}, Rot ${total(1)}, Platz ${capacity}`, `Green ${total(0)}, red ${total(1)}, space ${capacity}`)}>
             {([0, 1] as const).flatMap(side => [0, 1, 2].map(i => (
-              <div key={`${side}-${i}`} style={{ width: `${(shootsAt(side, i) / place.capacity) * 100}%`, background: TEAM_COLOURS[side][i], transition: 'width 0.6s' }} />
+              <div key={`${side}-${i}`} style={{ width: `${(shootsAt(side, i) / capacity) * 100}%`, background: TEAM_COLOURS[side][i], transition: 'width 0.6s' }} />
             )))}
           </div>
-          <p className="text-sm">{t('Grün', 'Green')} {total(0)} · {t('Rot', 'Red')} {total(1)} · {t('frei', 'empty')} {Math.max(0, place.capacity - total(0) - total(1))} / {place.capacity} · {t('Punkte bisher (Trieb-Monate)', 'Score so far (shoot-months)')}: {runningScore(0)} : {runningScore(1)}</p>
+          <p className="text-sm">{t('Grün', 'Green')} {total(0)} · {t('Rot', 'Red')} {total(1)} · {t('frei', 'empty')} {Math.max(0, capacity - total(0) - total(1))} / {capacity} · {t('Punkte bisher (Trieb-Monate)', 'Score so far (shoot-months)')}: {runningScore(0)} : {runningScore(1)}</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             {([0, 1] as const).map(side => (
               <ul key={side} className="space-y-1">
@@ -293,7 +336,7 @@ export function FugenduellWeatherWatch({ lang }: { lang: Language }) {
               </ul>
             ))}
           </div>
-          {month && <details open className="rounded-lg bg-stone-50 p-3">
+          {month && <details className="rounded-lg bg-stone-50 p-3">
             <summary className="min-h-11 cursor-pointer font-bold">{t('Rechenweg dieses Monats', 'This month’s math')}</summary>
             <ol className="mt-2 space-y-1 text-sm font-mono">{month.lines.map((l, i) => <li key={i}>{l}</li>)}</ol>
           </details>}
