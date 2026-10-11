@@ -1,0 +1,908 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gesprächsnavigator Existenzgründung</title>
+<meta name="description" content="Gesprächsleitfaden für Telefonat und Termin im Jobcenter zur Existenzgründung: Entscheidungsbaum, vorbereitete Antworten, Rechtsgrundlagen.">
+<meta name="robots" content="noindex">
+<link rel="alternate" href="fall-landkarte.html" title="Fall-Landkarte">
+<style>
+:root{
+  --bg:#f6f6f3; --surface:#ffffff; --surface-2:#f0f0ec; --ink:#1d1d1b; --ink-2:#5c5c57; --line:#dcdcd5;
+  --accent:#1f5fbf; --accent-soft:#e7effb; --good:#1d7a4a; --good-soft:#e5f3eb; --warn:#a86500; --warn-soft:#fbf1df;
+  --crit:#b3261e; --crit-soft:#fbe9e7; --law:#4b3a8f; --law-soft:#efecf9; --shadow:0 1px 2px rgba(0,0,0,.06),0 4px 16px rgba(0,0,0,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#141413; --surface:#1d1d1b; --surface-2:#262624; --ink:#ecebe6; --ink-2:#a9a8a1; --line:#3a3a36;
+    --accent:#7fb0ff; --accent-soft:#1d2b42; --good:#6fd3a0; --good-soft:#173226; --warn:#f0b65a; --warn-soft:#3a2c14;
+    --crit:#ff8a80; --crit-soft:#3d1c1a; --law:#b6a8ff; --law-soft:#29243f; --shadow:none;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#141413; --surface:#1d1d1b; --surface-2:#262624; --ink:#ecebe6; --ink-2:#a9a8a1; --line:#3a3a36;
+  --accent:#7fb0ff; --accent-soft:#1d2b42; --good:#6fd3a0; --good-soft:#173226; --warn:#f0b65a; --warn-soft:#3a2c14;
+  --crit:#ff8a80; --crit-soft:#3d1c1a; --law:#b6a8ff; --law-soft:#29243f; --shadow:none;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+button,input,textarea,select{font:inherit;color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+header.top{background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.top .wrap{display:flex;align-items:center;gap:16px;min-height:60px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}
+.brand{font-weight:650;font-size:17px;letter-spacing:-.01em;margin-right:auto}
+.brand small{display:block;font-weight:400;color:var(--ink-2);font-size:12.5px}
+nav.tabs{display:flex;gap:4px;flex-wrap:wrap}
+nav.tabs button{border:1px solid transparent;background:none;padding:7px 12px;border-radius:8px;cursor:pointer;color:var(--ink-2);font-size:14.5px}
+nav.tabs button[aria-selected="true"]{background:var(--accent-soft);color:var(--accent);font-weight:600}
+nav.tabs button:hover{border-color:var(--line)}
+.iconbtn{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:6px 10px;cursor:pointer;font-size:14px;color:var(--ink-2)}
+main{padding:24px 0 64px}
+h1{font-size:26px;line-height:1.25;margin:0 0 6px;letter-spacing:-.02em}
+h2{font-size:19px;margin:28px 0 10px;letter-spacing:-.01em}
+h3{font-size:16px;margin:0 0 6px}
+.lead{color:var(--ink-2);margin:0 0 20px;max-width:760px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;box-shadow:var(--shadow)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field label{display:block;font-size:13px;color:var(--ink-2);margin-bottom:4px}
+.field input,.field textarea{width:100%;border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:9px 11px}
+.field textarea{min-height:88px;resize:vertical}
+.field input:focus,.field textarea:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
+.hint{font-size:13px;color:var(--ink-2);margin-top:6px}
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--accent);background:var(--accent);color:#fff;border-radius:9px;padding:10px 16px;cursor:pointer;font-weight:600}
+:root[data-theme="dark"] .btn{color:#0e1a2c}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn{color:#0e1a2c}}
+.btn.ghost{background:none;color:var(--accent)}
+.btn.small{padding:6px 11px;font-size:14px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.rules{background:var(--surface-2);border-radius:12px;padding:16px 18px;margin:0 0 20px}
+.rules ul{margin:6px 0 0;padding-left:20px}
+.rules li{margin:3px 0}
+
+/* Telefonat */
+.call{display:grid;grid-template-columns:240px 1fr;gap:20px;align-items:start}
+.steps{list-style:none;margin:0;padding:0;position:sticky;top:84px}
+footer a#theme{color:var(--ink-2)}
+.steps li{display:flex;gap:10px;align-items:center;padding:8px 10px;border-radius:8px;color:var(--ink-2);font-size:14.5px;cursor:pointer}
+.steps li .n{width:24px;height:24px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;font-size:12.5px;flex:none}
+.steps li.done .n{background:var(--good-soft);border-color:var(--good);color:var(--good)}
+.steps li.cur{background:var(--accent-soft);color:var(--ink);font-weight:600}
+.steps li.cur .n{border-color:var(--accent);color:var(--accent)}
+.qhead{display:flex;justify-content:space-between;gap:12px;align-items:baseline;flex-wrap:wrap}
+.kicker{font-size:12.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-2);font-weight:600}
+.question{font-size:22px;font-weight:650;margin:4px 0 16px;letter-spacing:-.01em}
+.answers{display:grid;gap:10px}
+.ans{display:flex;gap:12px;align-items:flex-start;text-align:left;border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:12px 14px;cursor:pointer;width:100%}
+.ans:hover{border-color:var(--accent)}
+.ans .key{flex:none;width:26px;height:26px;border-radius:6px;background:var(--surface-2);display:grid;place-items:center;font-size:13px;font-weight:600;color:var(--ink-2)}
+.ans .t{font-weight:600}
+.ans .s{display:block;font-size:13.5px;color:var(--ink-2);font-weight:400}
+.ans.sel{border-color:var(--accent);background:var(--accent-soft)}
+.ans.end .t::after{content:"Gespräch endet";margin-left:8px;font-size:11.5px;font-weight:600;color:var(--warn);background:var(--warn-soft);padding:2px 7px;border-radius:99px;vertical-align:2px}
+.resp{margin-top:18px;border-top:1px solid var(--line);padding-top:18px}
+.say{background:var(--accent-soft);border-left:4px solid var(--accent);border-radius:8px;padding:14px 16px;font-size:17px;margin:8px 0 14px}
+.say .lbl{display:block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);margin-bottom:4px}
+.dos{margin:0 0 14px;padding-left:20px}
+.dos li{margin:4px 0}
+.laws{display:grid;gap:8px;margin:10px 0 14px}
+.law{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--surface)}
+.law .h{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.chip{display:inline-block;font-size:12.5px;font-weight:700;color:var(--law);background:var(--law-soft);border-radius:6px;padding:2px 8px}
+.law .name{font-weight:600;font-size:14.5px}
+.law .src{margin-left:auto;font-size:13px}
+.law blockquote{margin:6px 0 0;font-size:14.5px;color:var(--ink);border-left:3px solid var(--law-soft);padding-left:10px}
+.law .kurz{font-size:11.5px;color:var(--ink-2);font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-right:4px}
+.example{background:var(--surface-2);border-radius:8px;padding:10px 14px;font-size:14.5px;margin:0 0 14px}
+.example b{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-2);margin-bottom:2px}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:18px;flex-wrap:wrap}
+.log{margin-top:16px;font-size:13.5px;color:var(--ink-2)}
+.log ol{margin:4px 0 0;padding-left:20px}
+
+/* Termin */
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:0 0 16px}
+.toolbar input[type=search]{flex:1;min-width:220px;border:1px solid var(--line);background:var(--surface);border-radius:9px;padding:9px 12px}
+.filters{display:flex;gap:6px;flex-wrap:wrap}
+.filters button{border:1px solid var(--line);background:var(--surface);border-radius:99px;padding:5px 12px;font-size:13.5px;cursor:pointer;color:var(--ink-2)}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.progress{font-size:13.5px;color:var(--ink-2)}
+.bar{height:6px;background:var(--surface-2);border-radius:99px;overflow:hidden;margin-top:4px;width:200px}
+.bar i{display:block;height:100%;background:var(--good);width:0}
+.qa{margin:0 0 12px;padding:0;overflow:hidden}
+.qa summary{list-style:none;cursor:pointer;padding:16px 20px;display:flex;gap:12px;align-items:flex-start}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary .cat{flex:none;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-2);background:var(--surface-2);border-radius:6px;padding:3px 8px;margin-top:3px}
+.qa summary .q{font-weight:650;font-size:16.5px;flex:1}
+.qa summary .ok{flex:none;font-size:12px;color:var(--good);font-weight:700;margin-top:4px}
+.qa[open] summary{border-bottom:1px solid var(--line)}
+.qa .body{padding:16px 20px 20px}
+.qa textarea{width:100%;min-height:110px;border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:10px 12px;resize:vertical;font-size:15.5px;line-height:1.5}
+.qa .meta{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center;margin-top:8px}
+.show{font-size:14.5px;margin:12px 0 0}
+.show b{color:var(--ink-2);font-size:12px;text-transform:uppercase;letter-spacing:.06em;margin-right:6px}
+.check{display:inline-flex;gap:8px;align-items:center;font-size:14px;cursor:pointer}
+.check input{width:17px;height:17px;accent-color:var(--good)}
+.list-check{list-style:none;padding:0;margin:0}
+.list-check li{padding:6px 0;border-bottom:1px dashed var(--line)}
+.list-check li:last-child{border-bottom:0}
+
+/* Zusammenfassung */
+pre.mail{white-space:pre-wrap;background:var(--surface-2);border-radius:10px;padding:16px;font:14.5px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;margin:10px 0}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--surface);padding:9px 16px;border-radius:9px;font-size:14px;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.on{opacity:1}
+footer{border-top:1px solid var(--line);color:var(--ink-2);font-size:13px;padding:18px 0 28px}
+.hidden{display:none!important}
+kbd{font:12px ui-monospace,monospace;border:1px solid var(--line);border-bottom-width:2px;border-radius:4px;padding:0 5px;background:var(--surface)}
+
+body.present nav.tabs,body.present .tactic{display:none!important}
+body.present{font-size:17.5px}
+body.present .qa summary .q{font-size:19px}
+body.present .answer-text{font-size:18px;line-height:1.6;margin:0}
+body.present .toolbar input[type=search]{font-size:19px;padding:13px 16px}
+.ptabs{display:none;gap:4px;flex-wrap:wrap}
+body.present .ptabs{display:flex}
+.ptabs button{border:1px solid transparent;background:none;padding:7px 12px;border-radius:8px;cursor:pointer;color:var(--ink-2);font-size:15px}
+.ptabs button[aria-selected="true"]{background:var(--accent-soft);color:var(--accent);font-weight:600}
+.rgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px;margin:0 0 20px}
+.rbtn{text-align:left;border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:12px 14px;cursor:pointer;font-weight:600;line-height:1.35}
+.rbtn small{display:block;font-weight:400;color:var(--ink-2);font-size:13px;margin-top:3px}
+.rbtn:hover{border-color:var(--accent)}
+.rbtn.sel{border-color:var(--accent);background:var(--accent-soft)}
+.rpanel{border:2px solid var(--accent);scroll-margin-top:90px}
+.rpanel .quote{font-size:14px;color:var(--ink-2);margin:0 0 4px}
+.kv{width:100%;border-collapse:collapse;font-size:15.5px}
+.kv td{padding:7px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.kv td:first-child{color:var(--ink-2);width:42%;padding-right:12px}
+.agenda{width:100%;border-collapse:collapse;font-size:15px}
+.agenda th,.agenda td{text-align:left;padding:8px 10px 8px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.agenda td:first-child{white-space:nowrap}
+.agenda th{font-size:12.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-2)}
+#present.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+@media (max-width:820px){
+  .call{grid-template-columns:1fr}
+  .steps{position:static;display:flex;overflow-x:auto;gap:4px;padding-bottom:4px}
+  .steps li{flex:none}
+  .steps li .lbl{display:none}
+  .grid2{grid-template-columns:1fr}
+  .question{font-size:19px}
+}
+@media print{
+  header.top,nav,.toolbar,.nav,.btn,.iconbtn,.toast,footer .noprint{display:none!important}
+  body{background:#fff;color:#000}
+  .card{box-shadow:none;border-color:#bbb;break-inside:avoid}
+  .qa{break-inside:avoid}
+  .qa .body{display:block!important}
+  section.view{display:block!important}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand"><span id="brand-t">Gesprächsnavigator Existenzgründung</span><small id="brand-s">Telefonat und Termin im Jobcenter · Stand Oktober 2026</small></div>
+    <nav class="tabs" role="tablist" aria-label="Bereiche">
+      <button role="tab" data-view="prep" aria-selected="true">1 · Vorbereitung</button>
+      <button role="tab" data-view="call" aria-selected="false">2 · Telefonat</button>
+      <button role="tab" data-view="meet" aria-selected="false">3 · Fragen</button>
+      <button role="tab" data-view="rights" aria-selected="false">4 · Rechte-Karten</button>
+      <button role="tab" data-view="sum" aria-selected="false">5 · Zusammenfassung</button>
+    </nav>
+    <nav class="ptabs" aria-label="Präsentation">
+      <button data-view="ov" aria-selected="false">Überblick</button>
+      <button data-view="meet" aria-selected="false">Fragen &amp; Antworten</button>
+      <button data-view="rights" aria-selected="false">Verfahren &amp; Rechtsgrundlagen</button>
+    </nav>
+    <button class="iconbtn" id="present" title="Ansicht für das Gespräch mit dem Jobcenter: ohne Taktik-Notizen">Präsentationsmodus</button>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- 1 VORBEREITUNG -->
+<section class="view" id="view-prep">
+  <h1>Vorbereitung</h1>
+  <div class="example" style="border-left:4px solid var(--accent)"><b>Beispielinhalte</b>Fragen, Antworten und Zahlen stammen aus einem Beispiel: Gründung als Webentwickler (TYPO3) aus dem Grundsicherungsgeld. Die Antworten im Bereich „Fragen“ lassen sich für die eigene Gründung überschreiben; die Rechtsgrundlagen gelten für alle. Alle Wege vom Antrag bis zum Ausstieg als Karte: <a href="fall-landkarte.html">Fall-Landkarte</a>. Keine Rechtsberatung.</div>
+  <p class="lead">Diese Angaben bleiben nur in diesem Browser gespeichert und werden in die Formulierungen und die Abschluss-Mail eingesetzt. Nichts davon wird übertragen.</p>
+  <div class="card">
+    <div class="grid2">
+      <div class="field"><label for="f-name">Ihr Name</label><input id="f-name" data-field="name" autocomplete="name" placeholder="Vorname Nachname"></div>
+      <div class="field"><label for="f-bg">BG-Nummer</label><input id="f-bg" data-field="bg" placeholder="z. B. 12345BG0012345"></div>
+      <div class="field"><label for="f-datum">Datum Ihrer schriftlichen Nachricht / Ihres Antrags</label><input id="f-datum" data-field="datum" placeholder="TT.MM.JJJJ"></div>
+      <div class="field"><label for="f-person">Ansprechperson im Jobcenter</label><input id="f-person" data-field="person" placeholder="Frau/Herr …"></div>
+      <div class="field"><label for="f-tel">Ihre Rückrufnummer</label><input id="f-tel" data-field="tel" autocomplete="tel" placeholder="0170 …"></div>
+      <div class="field"><label for="f-start">Geplanter Starttermin</label><input id="f-start" data-field="start" placeholder="TT.MM.JJJJ"></div>
+    </div>
+  </div>
+
+  <h2>Gilt in jedem Gespräch</h2>
+  <div class="rules">
+    <ul>
+      <li><b>Ruhig, sachlich, kurz.</b> Ein Gedanke pro Satz, dann zuhören.</li>
+      <li><b>Nichts am Telefon zusagen oder unterschreiben.</b> „Schicken Sie mir das bitte schriftlich, ich schaue es mir an.“</li>
+      <li><b>Alles mitschreiben:</b> Datum, Uhrzeit, Name, Zusagen. Diese Seite protokolliert Ihre Klicks automatisch.</li>
+      <li><b>Zum Termin einen Beistand mitbringen</b> (§ 13 Abs. 4 SGB X) und Akteneinsicht verlangen, wenn nötig (§ 25 SGB X).</li>
+      <li><b>Entscheidungen schriftlich verlangen.</b> Widerspruch innerhalb eines Monats nach Bekanntgabe (§ 84 SGG).</li>
+      <li><b>Nicht beginnen, bevor beantragt ist:</b> Leistungen gibt es nicht für Zeiten vor der Antragstellung (§ 37 Abs. 2 SGB II).</li>
+    </ul>
+  </div>
+
+  <h2>Mitbringen zum Termin</h2>
+  <div class="card">
+    <ul class="list-check" id="bring"></ul>
+  </div>
+
+  <div class="row" style="margin-top:20px">
+    <button class="btn" data-go="call">Telefonat starten</button>
+    <button class="btn ghost" data-go="meet">Fragen für den Termin üben</button>
+    <button class="btn ghost" id="reset">Alles zurücksetzen</button>
+  </div>
+</section>
+
+<!-- 2 TELEFONAT -->
+<section class="view hidden" id="view-call">
+  <div class="call">
+    <ol class="steps" id="steps" aria-label="Gesprächsschritte"></ol>
+    <div>
+      <div class="card" id="qcard"></div>
+      <div class="log" id="log"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 TERMIN -->
+<section class="view hidden" id="view-meet">
+  <h1 id="meet-h">Termin: alle Fragen vorbereitet</h1>
+  <p class="lead" id="meet-lead">Die wahrscheinlichsten Fragen im persönlichen Gespräch, jeweils mit vorbereiteter Antwort, dem Beleg, den Sie zeigen, und der Rechtsgrundlage. Antworten lassen sich anpassen und werden lokal gespeichert. Abhaken, was Sie geübt haben.</p>
+  <div class="toolbar">
+    <input type="search" id="search" placeholder="Frage oder Stichwort suchen, z. B. Laptop, Kredit, Bewerbung …" aria-label="Fragen durchsuchen">
+    <div class="progress tactic"><span id="prog-txt">0 von 0 geübt</span><div class="bar"><i id="prog-bar"></i></div></div>
+  </div>
+  <div class="tactic" id="ph-warn"></div>
+  <div class="filters" id="filters" style="margin-bottom:16px"></div>
+  <div id="qa-list"></div>
+  <div class="tactic"><h2>Ihre Fragen an das Jobcenter</h2>
+  <div class="card">
+    <ul class="list-check" id="own-q"></ul>
+  </div></div>
+  <div class="row" style="margin-top:16px"><button class="btn ghost small" onclick="window.print()">Als Spickzettel drucken</button></div>
+</section>
+
+<!-- ÜBERBLICK (Präsentation) -->
+<section class="view hidden" id="view-ov">
+  <h1 id="ov-h">Mein Gründungsvorhaben</h1>
+  <p class="lead">Mehrsprachige TYPO3-Websites für kleine und mittlere Unternehmen und Entwicklungsarbeit für Agenturen. Jeder Arbeitsschritt wird von mir als Fachmann geprüft und freigegeben.</p>
+  <div class="grid2">
+    <div class="card"><h3>Auf einen Blick</h3><table class="kv" id="ov-kv"></table></div>
+    <div class="card"><h3>Ablauf des Gesprächs (45 Minuten)</h3><table class="agenda" id="ov-ag"></table></div>
+  </div>
+  <div class="card" style="margin-top:16px"><h3>Beantragt</h3><ul class="dos" style="margin-bottom:0"><li>Einstiegsgeld nach § 16b SGB II</li><li>Zuschuss für Arbeitsmittel nach § 16c Abs. 1 SGB II: 2.350 € (Laptop, Bildschirm, Entwicklungssoftware)</li></ul></div>
+</section>
+
+<!-- RECHTE-KARTEN -->
+<section class="view hidden" id="view-rights">
+  <h1 id="r-h">Rechte-Karten</h1>
+  <p class="lead" id="r-lead"></p>
+  <div class="rgrid" id="rgrid"></div>
+  <div id="rpanel"></div>
+</section>
+
+<!-- 4 ZUSAMMENFASSUNG -->
+<section class="view hidden" id="view-sum">
+  <h1>Zusammenfassung</h1>
+  <p class="lead">Aus Ihren Klicks im Telefonat erstellt. Innerhalb einer Stunde über jobcenter.digital senden und die Eingangsbestätigung speichern. Was am Telefon gesagt wurde, zählt erst, wenn es schriftlich vorliegt.</p>
+  <div class="card">
+    <div class="row" style="justify-content:space-between"><h3 id="mail-subj-h">Betreff</h3><button class="btn small" id="copy-mail">Mail kopieren</button></div>
+    <pre class="mail" id="mail"></pre>
+  </div>
+  <h2>Gesprächsprotokoll</h2>
+  <div class="card"><div id="protocol"></div></div>
+  <h2>Danach</h2>
+  <div class="card"><ul class="list-check" id="after"></ul></div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    Persönliche Gesprächshilfe, keine Rechtsberatung. Gesetzestexte verlinkt auf <a href="https://www.gesetze-im-internet.de/" rel="noopener" target="_blank">gesetze-im-internet.de</a>; „Kurzfassung“ markiert sinngemäße Wiedergaben, alles andere ist wörtlich zitiert. Rechtsstand: SGB II in der Fassung des Dreizehnten Änderungsgesetzes vom 16.04.2026 (BGBl. I Nr. 107), in Kraft seit 1. Juli 2026; geprüft am 11.10.2026.
+    <span class="noprint"> · <a href="#" id="theme">Hell/Dunkel</a></span><span class="noprint tactic"> · Tastatur im Telefonat: <kbd>1</kbd>–<kbd>4</kbd> Antwort, <kbd>Enter</kbd> weiter, <kbd>←</kbd> zurück.</span>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(() => {
+"use strict";
+
+/* ---------- Gesetze ---------- */
+const G = "https://www.gesetze-im-internet.de/";
+const LAW = {
+  sgb1_14:  {t:"§ 14 SGB I", n:"Beratung", u:G+"sgb_1/__14.html", q:"Jeder hat Anspruch auf Beratung über seine Rechte und Pflichten nach diesem Gesetzbuch."},
+  sgb1_16_2:{t:"§ 16 Abs. 2 SGB I", n:"Antrag bei unzuständiger Stelle", u:G+"sgb_1/__16.html", q:"Ist die Sozialleistung von einem Antrag abhängig, gilt der Antrag als zu dem Zeitpunkt gestellt, in dem er bei einer der in Satz 1 genannten Stellen eingegangen ist."},
+  sgb1_16_3:{t:"§ 16 Abs. 3 SGB I", n:"Hinwirken auf klare Anträge", u:G+"sgb_1/__16.html", q:"Die Leistungsträger sind verpflichtet, darauf hinzuwirken, dass unverzüglich klare und sachdienliche Anträge gestellt und unvollständige Angaben ergänzt werden."},
+  sgb1_17:  {t:"§ 17 Abs. 1 SGB I", n:"Zügige Leistung", u:G+"sgb_1/__17.html", k:"Die Leistungsträger müssen darauf hinwirken, dass Berechtigte die ihnen zustehenden Leistungen umfassend und zügig erhalten."},
+  sgb1_39:  {t:"§ 39 Abs. 1 SGB I", n:"Ermessen", u:G+"sgb_1/__39.html", q:"Auf pflichtgemäße Ausübung des Ermessens besteht ein Anspruch."},
+  sgb1_60:  {t:"§ 60 Abs. 1 SGB I", n:"Mitwirkung", u:G+"sgb_1/__60.html", k:"Wer Sozialleistungen erhält, muss alle leistungserheblichen Tatsachen angeben und Änderungen unverzüglich mitteilen."},
+  sgb2_10: {t:"§ 10 Abs. 2 Nr. 5 SGB II", n:"Zumutbarkeit bei Selbständigen", u:G+"sgb_2/__10.html", q:"… bei Leistungsberechtigten, die selbständig tätig sind, wird spätestens nach einem Jahr ununterbrochenen Leistungsbezuges geprüft, ob ein Verweis auf eine Beschäftigung zumutbar ist."},
+  sgb2_11b: {t:"§ 11b Abs. 3 SGB II", n:"Erwerbstätigenfreibetrag", u:G+"sgb_2/__11b.html", k:"Vom Gewinn bleiben 100 € frei, dazu 20 % von 100–520 €, 30 % von 520–1.000 € und 10 % von 1.000–1.200 €: höchstens 348 € im Monat (ohne Kind)."},
+  sgb2_12: {t:"§ 12 Abs. 2 SGB II", n:"Vermögen", u:G+"sgb_2/__12.html", k:"Freibetrag pro Person: 5.000 € bis zum vollendeten 30. Lebensjahr, 10.000 € ab dem 31., 12.500 € ab dem 41., 20.000 € ab dem 51. Lebensjahr (Fassung seit 1. Juli 2026). Die frühere allgemeine Karenzzeit für Vermögen ist entfallen."},
+  sgb2_15: {t:"§ 15 SGB II", n:"Kooperationsplan", u:G+"sgb_2/__15.html", q:"Er hält das Eingliederungsziel und die wesentlichen Schritte zur Eingliederung fest. […] Die erwerbsfähige leistungsberechtigte Person erhält den Kooperationsplan in Textform."},
+  sgb2_16b: {t:"§ 16b SGB II", n:"Einstiegsgeld", u:G+"sgb_2/__16b.html", q:"Zur Überwindung von Hilfebedürftigkeit kann erwerbsfähigen Leistungsberechtigten bei Aufnahme einer sozialversicherungspflichtigen oder selbständigen Erwerbstätigkeit ein Einstiegsgeld erbracht werden, wenn dies zur Eingliederung in den allgemeinen Arbeitsmarkt erforderlich ist. […] für höchstens 24 Monate."},
+  sgb2_16c1:{t:"§ 16c Abs. 1 SGB II", n:"Zuschuss für Sachgüter", u:G+"sgb_2/__16c.html", q:"… können Darlehen und Zuschüsse für die Beschaffung von Sachgütern erhalten, die für die Ausübung der selbständigen Tätigkeit notwendig und angemessen sind. Zuschüsse dürfen einen Betrag von 5 000 Euro nicht übersteigen."},
+  sgb2_16c2:{t:"§ 16c Abs. 2 SGB II", n:"Beratung für Selbständige", u:G+"sgb_2/__16c.html", q:"… können durch geeignete Dritte durch Beratung oder Vermittlung von Kenntnissen und Fertigkeiten gefördert werden, wenn dies für die weitere Ausübung der selbständigen Tätigkeit erforderlich ist."},
+  sgb2_16c3:{t:"§ 16c Abs. 3 SGB II", n:"Tragfähigkeit", u:G+"sgb_2/__16c.html", q:"… nur gewährt werden, wenn zu erwarten ist, dass die selbständige Tätigkeit wirtschaftlich tragfähig ist und die Hilfebedürftigkeit … innerhalb eines angemessenen Zeitraums dauerhaft überwunden oder verringert wird. Zur Beurteilung der Tragfähigkeit … soll … die Stellungnahme einer fachkundigen Stelle verlangen."},
+  sgb2_26:  {t:"§ 26 SGB II", n:"Zuschuss zur Kranken- und Pflegeversicherung", u:G+"sgb_2/__26.html", k:"Freiwillig gesetzlich Versicherte erhalten einen Zuschuss zu den Beiträgen, soweit sie sonst hilfebedürftig wären."},
+  sgb2_32: {t:"§ 32 SGB II", n:"Meldeversäumnis", u:G+"sgb_2/__32.html", q:"Kommen Leistungsberechtigte trotz schriftlicher Belehrung über die Rechtsfolgen oder deren Kenntnis einer Aufforderung des zuständigen Trägers, sich bei ihm zu melden […] wiederholt nicht nach, mindert sich das Grundsicherungsgeld jeweils um 30 Prozent des für sie nach § 20 maßgebenden Regelbedarfs. […] Der Minderungszeitraum beträgt einen Monat."},
+  sgb2_37:  {t:"§ 37 SGB II", n:"Antragserfordernis", u:G+"sgb_2/__37.html", q:"Leistungen nach diesem Buch werden auf Antrag erbracht. […] Leistungen nach diesem Buch werden nicht für Zeiten vor der Antragstellung erbracht."},
+  sgb2_41a: {t:"§ 41a Abs. 3, 5 SGB II", n:"Vorläufige Entscheidung (Anlage EKS)", u:G+"sgb_2/__41a.html", k:"Nach Ablauf des Bewilligungszeitraums sind die nötigen Tatsachen nachzuweisen. Für Monate ohne fristgemäßen Nachweis wird festgestellt, dass kein Anspruch bestand. Nachweise, die nach Abschluss des Verwaltungsverfahrens eingehen (spätestens nach Bekanntgabe des Widerspruchsbescheides), werden nicht mehr berücksichtigt. Ohne abschließende Entscheidung innerhalb eines Jahres gelten die vorläufigen Leistungen als festgesetzt."},
+  sgb10_9:  {t:"§ 9 SGB X", n:"Nichtförmlichkeit", u:G+"sgb_10/__9.html", q:"Das Verwaltungsverfahren ist an bestimmte Formen nicht gebunden, soweit keine besonderen Rechtsvorschriften für die Form des Verfahrens bestehen."},
+  sgb10_13: {t:"§ 13 Abs. 4 SGB X", n:"Beistand", u:G+"sgb_10/__13.html", q:"Ein Beteiligter kann zu Verhandlungen und Besprechungen mit einem Beistand erscheinen."},
+  sgb10_25: {t:"§ 25 SGB X", n:"Akteneinsicht", u:G+"sgb_10/__25.html", k:"Beteiligte dürfen die Verfahrensakten einsehen, soweit das zur Wahrung ihrer rechtlichen Interessen erforderlich ist."},
+  sgb10_33: {t:"§ 33 Abs. 2 SGB X", n:"Schriftliche Bestätigung", u:G+"sgb_10/__33.html", q:"Ein mündlicher Verwaltungsakt ist schriftlich oder elektronisch zu bestätigen, wenn hieran ein berechtigtes Interesse besteht und der Betroffene dies unverzüglich verlangt."},
+  sgb10_35: {t:"§ 35 SGB X", n:"Begründung", u:G+"sgb_10/__35.html", k:"Ein schriftlicher Verwaltungsakt ist zu begründen; bei Ermessensentscheidungen müssen die leitenden Gesichtspunkte erkennbar sein."},
+  sgg84:    {t:"§ 84 Abs. 1 SGG", n:"Widerspruchsfrist", u:G+"sgg/__84.html", q:"Der Widerspruch ist binnen eines Monats, nachdem der Verwaltungsakt dem Beschwerten bekanntgegeben worden ist, … einzureichen."},
+  sgg88:    {t:"§ 88 SGG", n:"Untätigkeitsklage", u:G+"sgg/__88.html", k:"Bleibt ein Antrag ohne zureichenden Grund unbeschieden, ist Klage nach 6 Monaten möglich; bei einem Widerspruch nach 3 Monaten. Nur als letztes Mittel."},
+  gewo14:   {t:"§ 14 GewO", n:"Gewerbeanzeige", u:G+"gewo/__14.html", k:"Wer ein Gewerbe beginnt, muss dies gleichzeitig der zuständigen Behörde anzeigen."},
+  ao138:    {t:"§ 138 Abs. 1, 4 AO", n:"Anzeige beim Finanzamt", u:G+"ao_1977/__138.html", k:"Die Aufnahme einer gewerblichen oder freiberuflichen Tätigkeit ist dem Finanzamt innerhalb eines Monats mitzuteilen."},
+  ustg19:   {t:"§ 19 UStG", n:"Kleinunternehmer", u:G+"ustg_1980/__19.html", k:"Keine Umsatzsteuer, wenn der Umsatz im Vorjahr höchstens 25.000 € und im laufenden Jahr höchstens 100.000 € beträgt."}
+};
+
+/* ---------- Telefonat: Entscheidungsbaum ---------- */
+const STEPS = [
+ { id:"s1", short:"Wer geht ran?", q:"Wer nimmt den Anruf an?", answers:[
+   { k:"a", t:"Die zuständige Ansprechperson", s:"Fallmanager/in selbst",
+     say:"Guten Tag, hier ist {name}, BG-Nummer {bg}. Ich habe Ihnen am {datum} geschrieben, es geht um meine geplante Selbständigkeit. Haben Sie fünf Minuten?",
+     dos:["Langsam sprechen, Namen der Person notieren."], laws:["sgb1_14"], next:1 },
+   { k:"b", t:"Service-Center oder Hotline", s:"nicht die zuständige Person", end:true,
+     say:"Ich möchte eine Rückrufbitte hinterlassen: {name}, BG-Nummer {bg}, Thema Existenzgründung und Antrag auf Einstiegsgeld. Erreichbar unter {tel}.",
+     dos:["Fragen, ob die Nachricht als Gesprächsvermerk in der Akte landet.","Name der Mitarbeiterin/des Mitarbeiters notieren.","Nach einer Woche ohne Rückruf schriftlich nachfassen."],
+     ex:"Viele Jobcenter in Berlin leiten Anrufe über eine zentrale Servicenummer. Der Anspruch auf Beratung richtet sich aber an das Jobcenter selbst.",
+     laws:["sgb1_14"], mail:"callback" },
+   { k:"c", t:"Mailbox oder niemand erreichbar", s:"", end:true,
+     say:"Guten Tag, hier ist {name}, BG-Nummer {bg}. Ich bitte um Rückruf zu meiner geplanten Existenzgründung, unter {tel}. Ich schicke Ihnen mein Anliegen zusätzlich schriftlich. Vielen Dank.",
+     dos:["Unter 30 Sekunden bleiben.","Direkt danach dieselbe Bitte über jobcenter.digital senden."],
+     laws:["sgb1_16_2"], mail:"callback" }
+ ]},
+ { id:"s2", short:"Zeit?", q:"Hat die Person jetzt Zeit?", answers:[
+   { k:"a", t:"Ja", s:"",
+     say:"Ich bin seit über zehn Jahren TYPO3-Entwickler und habe mir eigene Werkzeuge gebaut, mit denen ich Websites in Agenturqualität schneller und günstiger erstellen kann. Mein Businessplan ist fertig. Nach meiner Rechnung decke ich ab dem zweiten Jahr meinen Lebensunterhalt vollständig selbst. Ich möchte das sauber und mit Ihnen gemeinsam angehen.",
+     dos:["Höchstens eine Minute, dann Pause.","Zahlen nur nennen, wenn gefragt: ab Monat 13 bis 15 unabhängig."], laws:[], next:2 },
+   { k:"b", t:"Nein, jetzt nicht", s:"", end:true, field:{key:"rueckruf", label:"Vereinbarter Rückruftermin", ph:"z. B. Dienstag, 14.10., 10 Uhr"},
+     say:"Kein Problem. Wann darf ich Sie erreichen, oder rufen Sie mich zurück? Ich bestätige den Termin gleich schriftlich.",
+     dos:["Konkreten Tag und Uhrzeit festmachen, nicht „irgendwann diese Woche“."], laws:["sgb1_14"], mail:"callback2" },
+   { k:"c", t:"„Dafür bin ich nicht zuständig“", s:"Verweis an eine andere Stelle", end:true,
+     say:"Danke. Können Sie mein Anliegen bitte an das Team für Selbständige weiterleiten und mir Namen und Durchwahl nennen? Mein Antrag liegt Ihnen ja seit {datum} vor.",
+     dos:["Name und Durchwahl der zuständigen Stelle notieren.","Nicht diskutieren: Ein Antrag bei einer unzuständigen Stelle gilt trotzdem ab Eingang."],
+     ex:"Das Jobcenter muss den Antrag weiterleiten; er gilt ab dem Tag, an dem er bei Ihnen eingegangen ist.",
+     laws:["sgb1_16_2","sgb1_16_3"], mail:"forward" }
+ ]},
+ { id:"s3", short:"Reaktion", q:"Wie reagiert die Person auf Ihre Kernbotschaft?", answers:[
+   { k:"a", t:"Interessiert, stellt Fragen", s:"",
+     say:"Gern. Die Einzelheiten stehen im Businessplan: Angebot, Preise, Kosten und eine Rentabilitätsvorschau für drei Jahre. Den würde ich Ihnen gern persönlich vorstellen.",
+     dos:["Kurz antworten, auf den Termin lenken."], laws:[], next:3 },
+   { k:"b", t:"„Bewerben Sie sich lieber auf feste Stellen“", s:"",
+     say:"Ich bewerbe mich gern parallel weiter, wenn wir das im Kooperationsplan festhalten. Das Gesetz sieht die Förderung einer Selbständigkeit aber ausdrücklich vor, wenn sie tragfähig ist. Das belege ich mit dem Plan und einer Stellungnahme der IHK. Ich lege Ihnen außerdem alle sechs Monate Meilensteine vor.",
+     dos:["Nicht widersprechen, Kooperation zeigen.","Argument: Der Plan zeigt mehr Einkommen als eine Anstellung in der Region."],
+     laws:["sgb2_16b","sgb2_16c3","sgb2_10","sgb2_15"], next:3 },
+   { k:"c", t:"„Haben Sie schon angefangen?“", s:"",
+     say:"Nein. Ich bereite vor: Businessplan, Angebote, Kostenvoranschläge. Ich starte erst, wenn die Förderung geklärt ist, und melde das Gewerbe dann ordnungsgemäß an.",
+     dos:["Wahrheitsgemäß antworten.","Vorbereitung (Plan schreiben, Website-Entwurf) ist kein Beginn der Tätigkeit; Rechnungen oder Aufträge wären es."],
+     laws:["sgb2_37","sgb1_60","gewo14"], next:3 },
+   { k:"d", t:"Fragen zu KI oder zu Kunden", s:"„Ist das seriös?“ · „Haben Sie Aufträge?“",
+     say:"Die Werkzeuge übernehmen Routinearbeit wie Grundgerüst und Tests. Jede Entscheidung und jede Auslieferung prüfe und gebe ich als Fachmann frei. Kontakte zu Agenturen und Interessenten habe ich; feste Aufträge nehme ich erst nach der Gewerbeanmeldung an.",
+     dos:["Fachwissen nach vorn, Technik nach hinten.","Wenn vorhanden: Absichtserklärungen erwähnen."], laws:["gewo14"], next:3 }
+ ]},
+ { id:"s4", short:"Termin", q:"Bekommen Sie einen persönlichen Termin?", answers:[
+   { k:"a", t:"Ja, Termin vereinbart", s:"", field:{key:"termin", label:"Termin (Datum, Uhrzeit, Ort)", ph:"z. B. 21.10.2026, 9:30 Uhr, Raum 2.14"},
+     say:"Vielen Dank. Ich notiere: {termin}. Ich bringe den Businessplan und meine Unterlagen mit.",
+     dos:["Termin wiederholen.","Fragen, ob ein Beistand mitkommen darf (das ist Ihr Recht)."], laws:["sgb10_13","sgb2_32"], next:4 },
+   { k:"b", t:"„Schicken Sie alles per Post“", s:"",
+     say:"Gern schicke ich den Plan vorab. Ich würde ihn aber kurz persönlich erklären, das spart Rückfragen auf beiden Seiten. Wäre ein kurzer Termin oder ein Videogespräch möglich?",
+     dos:["Wenn weiter nein: Plan über jobcenter.digital senden, Eingangsbestätigung speichern."], laws:["sgb1_14"], next:4 },
+   { k:"c", t:"Termin erst in einigen Wochen", s:"", field:{key:"termin", label:"Termin (Datum, Uhrzeit, Ort)", ph:"z. B. 18.11.2026, 11 Uhr"},
+     say:"Das passt. Ich gehe davon aus, dass mein Antrag trotzdem ab {datum} als gestellt gilt. Können Sie mir das bestätigen?",
+     dos:["Weiter zu Frage 5: Antragsdatum sichern ist jetzt das Wichtigste."], laws:["sgb2_37","sgb1_17"], next:4 }
+ ]},
+ { id:"s5", short:"Antrag", q:"Gilt Ihr Antrag ab dem Datum Ihrer Nachricht?", answers:[
+   { k:"a", t:"Ja, bestätigt", s:"",
+     say:"Danke, dann halte ich fest: Mein Antrag auf Einstiegsgeld und auf den Zuschuss für Arbeitsmittel gilt ab {datum}.",
+     dos:["Namen und Uhrzeit der Bestätigung notieren."], laws:["sgb2_37"], next:5 },
+   { k:"b", t:"„Erst mit dem offiziellen Formular“", s:"",
+     say:"Ich fülle das Formular gern aus. Bitte schicken Sie es mir zu. Meinen formlosen Antrag vom {datum} betrachte ich aber als gestellt; das Formular ergänzt ihn nur.",
+     dos:["Ruhig bleiben, nicht streiten: Die Rechtslage steht in der Abschluss-Mail."],
+     ex:"Ein Antrag ist an keine Form gebunden. Formulare dienen dazu, Angaben zu vervollständigen.",
+     laws:["sgb10_9","sgb1_16_3","sgb2_37"], next:5 },
+   { k:"c", t:"Keine klare Antwort", s:"",
+     say:"Kein Problem, ich fasse unser Gespräch gleich schriftlich zusammen. Wenn etwas nicht stimmt, geben Sie mir bitte kurz Bescheid.",
+     dos:["In der Abschluss-Mail ausdrücklich um Bestätigung bitten."], laws:["sgb1_16_3"], next:5 }
+ ]},
+ { id:"s6", short:"Förderung", q:"Was sagt die Person zur Förderung?", answers:[
+   { k:"a", t:"Wird geprüft", s:"", field:{key:"zeitraum", label:"Genannter Zeitraum für die Entscheidung", ph:"z. B. etwa 3 Wochen nach dem Termin"},
+     say:"Danke. Bis wann ungefähr kann ich mit einer Entscheidung rechnen?",
+     dos:["Zeitraum notieren.","Bei langer Wartezeit erst schriftlich erinnern; Klage wegen Untätigkeit nur als letztes Mittel und nie am Telefon erwähnen."],
+     laws:["sgb1_17","sgg88"], next:6 },
+   { k:"b", t:"Mündliche Absage", s:"„Das fördern wir nicht“",
+     say:"Ich verstehe. Bitte schicken Sie mir die Entscheidung mit Begründung schriftlich, damit ich sie nachvollziehen kann.",
+     dos:["Nicht diskutieren. Schriftliche Bestätigung sofort verlangen (unverzüglich).","Gegen den schriftlichen Bescheid: Widerspruch binnen eines Monats.","Einstiegsgeld ist eine Ermessensleistung: Kein Anspruch auf das Ergebnis, aber auf eine fehlerfreie Ermessensentscheidung."],
+     laws:["sgb10_33","sgb10_35","sgb1_39","sgg84"], next:6 },
+   { k:"c", t:"Bedingung: erst Kurs oder Maßnahme", s:"z. B. Gründungsseminar, Coaching",
+     say:"Ein Gründungscoaching nehme ich gern an. Schicken Sie mir den Vorschlag bitte schriftlich, dann schaue ich ihn mir an.",
+     dos:["Am Telefon nichts zusagen.","Ein Coaching nach § 16c Abs. 2 ist eine Förderung, keine Hürde."], laws:["sgb2_16c2","sgb2_15"], next:6 },
+   { k:"d", t:"Fragen zu Ersparnissen", s:"",
+     say:"Meine Vermögensverhältnisse haben sich nicht geändert. Die Nachweise bringe ich gern zum Termin mit.",
+     dos:["Kurz und wahrheitsgemäß antworten, nichts verschweigen.","Seit Juli 2026 keine Karenzzeit mehr beim Vermögen."], laws:["sgb2_12","sgb1_60"], next:6 }
+ ]},
+ { id:"s7", short:"Unterlagen", q:"Welche Unterlagen werden gebraucht?", answers:[
+   { k:"a", t:"Liste erhalten", s:"", field:{key:"unterlagen", label:"Genannte Unterlagen", ph:"z. B. Businessplan, Lebenslauf, Kostenvoranschläge, IHK-Stellungnahme", area:true},
+     say:"Ich wiederhole kurz: {unterlagen}. Habe ich etwas vergessen?",
+     dos:["Laut wiederholen, Lücken erfragen."], laws:["sgb1_16_3"], next:7 },
+   { k:"b", t:"Unklar oder „kommt per Post“", s:"",
+     say:"Können Sie mir die Liste und die Formulare zusätzlich über jobcenter.digital schicken? Dann bereite ich alles vollständig vor.",
+     dos:["In der Abschluss-Mail um die Liste bitten."], laws:["sgb1_16_3","sgb1_14"], next:7 },
+   { k:"c", t:"Stellungnahme zur Tragfähigkeit nötig", s:"",
+     say:"Das hatte ich erwartet. Welche Stelle akzeptieren Sie? Ich würde die IHK Berlin anfragen.",
+     dos:["Termin bei der IHK-Gründungsberatung direkt nach dem Gespräch buchen."], laws:["sgb2_16c3"], next:7 }
+ ]}
+];
+
+/* ---------- Termin: Fragenkatalog ---------- */
+const CATS = ["Alle","Neue Ansprechperson","Person","Angebot","Kunden & Markt","Zahlen","Nachfragen","Förderung & Recht","Pflichten & Ablauf"];
+const QA = [
+ {c:"Neue Ansprechperson", q:"Ich kenne Ihren Fall noch nicht. Worum geht es?",
+  a:"Kurz gesagt: Ich bin seit über zehn Jahren TYPO3-Entwickler und will mich hauptberuflich selbständig machen. Ich habe Einstiegsgeld und 2.350 € für Arbeitsmittel beantragt. Nach meinem Plan brauche ich ab Monat 13 bis 15 kein Grundsicherungsgeld mehr. Alles steht auf einer Seite in Anlage 2.",
+  show:"Anlage 2 (Auf einen Blick), Überblick im Präsentationsmodus", laws:["sgb2_16b","sgb2_16c1"]},
+ {c:"Neue Ansprechperson", q:"In der Akte steht ein Vermerk Ihres Vorgängers. Wie sehen Sie das?",
+  a:"Ich kenne den Vermerk nicht und würde ihn gern lesen. Mir ist wichtig, dass Sie sich ein eigenes Bild machen: Hier ist mein Plan, und die Tragfähigkeit lasse ich von der IHK prüfen.",
+  show:"Businessplan, IHK-Stellungnahme oder Terminbestätigung", laws:["sgb10_25","sgb2_16c3"]},
+ {c:"Neue Ansprechperson", q:"Ich muss mich erst einarbeiten.",
+  a:"Natürlich. Darf ich Ihnen die Unterlagen dalassen? Bis wann ungefähr können wir über den Antrag sprechen? Ich warte mit dem Start, bis entschieden ist.",
+  show:"Mappe mit Antrag, Anlagen 1–3, Businessplan", laws:["sgb1_17","sgb2_37"]},
+ {c:"Neue Ansprechperson", q:"Wie lange sind Sie schon im Leistungsbezug, und was haben Sie in der Zeit gemacht?",
+  a:"Seit [Datum]. In der Zeit habe ich [Bewerbungen, Weiterbildung] gemacht und die Werkzeuge entwickelt, mit denen ich jetzt gründe. Das ist die Grundlage meines Angebots.",
+  show:"Lebenslauf, Bewerbungsnachweise, Beispiel-Websites", laws:[]},
+ {c:"Neue Ansprechperson", q:"Was zeigen Sie mir da auf dem Laptop?",
+  a:"Eine Anwendung, die ich selbst gebaut habe: Sie fasst mein Vorhaben, die Zahlen und die Antworten auf Ihre Fragen zusammen. Sie ist gleichzeitig eine Arbeitsprobe: So etwas baue ich auch für Kunden.",
+  show:"Präsentationsmodus: Überblick, Fragen & Antworten, Verfahren", laws:[]},
+ {c:"Nachfragen", q:"Warum sollte es diesmal klappen?",
+  a:"Weil ich nicht bei null anfange: Die Werkzeuge sind gebaut und getestet, drei Beispiel-Websites existieren, die Kosten sind mit 220 € im Monat niedrig. Und weil ich mich an feste Kontrollpunkte binde: Monatsbericht, Frühwarnpunkt nach sechs Monaten.",
+  show:"Beispiel-Websites, Anlage 3 (Zusagen)", laws:[]},
+ {c:"Nachfragen", q:"Warum brauchen Sie Einstiegsgeld, wenn das Geschäft so gut läuft?",
+  a:"Mein Plan trägt auch ohne Einstiegsgeld; es ist darin nicht eingerechnet. Es verkürzt die Anlaufzeit: Ich kann mich voll auf Kunden konzentrieren statt auf Nebenjobs und bin dadurch schneller ganz aus dem Leistungsbezug.",
+  show:"Liquiditätsplan (ohne Einstiegsgeld)", laws:["sgb2_16b"]},
+ {c:"Nachfragen", q:"Wie viel Einstiegsgeld möchten Sie?",
+  a:"Die Höhe legen Sie fest. Ich bitte um eine Förderung für zunächst zwölf Monate, damit die Anlaufphase gedeckt ist.",
+  show:"–", laws:["sgb2_16b"]},
+ {c:"Nachfragen", q:"Können Sie davon wirklich leben?",
+  a:"Ab dem zweiten Jahr ja: geplant sind rund 3.175 € Gewinn im Monat. Davon zahle ich Miete, Lebensunterhalt, Krankenversicherung, Steuern und Altersvorsorge und behalte noch eine Rücklage. Die Rechnung steht im Businessplan.",
+  show:"Businessplan Abschnitt 8 (Deckung des Lebensunterhalts)", laws:[]},
+ {c:"Nachfragen", q:"Kann die KI das nicht bald jeder selbst?",
+  a:"Werkzeuge werden besser, aber Kunden kaufen keine Werkzeuge, sondern eine fertige, sichere Website mit jemandem, der dafür geradesteht. Die Erfahrung, was eine gute Website braucht, ersetzt kein Programm.",
+  show:"–", laws:[]},
+ {c:"Nachfragen", q:"Was, wenn Kunden nicht zahlen?",
+  a:"Ich arbeite mit Abschlägen: 30 % bei Auftrag, 40 % nach Designfreigabe, 30 % vor dem Livegang. Die Website geht erst nach der Schlusszahlung online.",
+  show:"Businessplan Abschnitt 5 (Zahlungsbedingungen)", laws:[]},
+ {c:"Nachfragen", q:"Was, wenn Sie krank werden?",
+  a:"Die Wartung läuft weitgehend automatisch weiter, Termine plane ich mit Puffer. Für längere Ausfälle bin ich krankenversichert; das Risiko steht im Plan.",
+  show:"Businessplan Abschnitt 11 (Risiken)", laws:["sgb2_26"]},
+ {c:"Nachfragen", q:"Haben Sie Schulden oder laufende Verpflichtungen?",
+  a:"[Wahrheitsgemäß, kurz.] Für das Geschäft nehme ich keinen Kredit auf; der Kapitalbedarf ist mit 3.010 € gering.",
+  show:"Businessplan Abschnitt 7", laws:["sgb1_60"]},
+ {c:"Nachfragen", q:"Brauchen Sie eine Genehmigung? Was ist mit Datenschutz bei Kunden?",
+  a:"Webentwicklung ist ein freies Gewerbe, die Anmeldung beim Bezirksamt genügt. Für Kundendaten schließe ich Auftragsverarbeitungsverträge, Hosting in Deutschland, und ich habe eine Berufshaftpflicht.",
+  show:"Businessplan Abschnitt 6 (Organisation, Versicherungen)", laws:["gewo14"]},
+ {c:"Nachfragen", q:"Warum Englisch und Spanisch?",
+  a:"Berlin hat viele internationale Betriebe. Mehrsprachige Websites sind bei Agenturen teuer; ich biete sie von Anfang an im Paket. Das unterscheidet mich vom Wettbewerb.",
+  show:"Beispiel-Website in drei Sprachen", laws:[]},
+ {c:"Nachfragen", q:"Haben Sie diese Anwendung wirklich selbst gebaut? Können Sie das für andere?",
+  a:"Ja, vollständig. Genau so etwas, Anwendungen und Websites für Betriebe und Vereine, ist mein Angebot.",
+  show:"Die Anwendung selbst", laws:[]},
+ {c:"Person", q:"Warum wollen Sie sich selbständig machen statt eine Stelle anzunehmen?",
+  a:"Ich habe über zehn Jahre Erfahrung mit TYPO3 und eigene Werkzeuge entwickelt, mit denen ich deutlich mehr Projekte bearbeiten kann als ein angestellter Entwickler. Nach meinem Plan verdiene ich ab dem zweiten Jahr mehr als in einer vergleichbaren Anstellung und bin unabhängig vom Grundsicherungsgeld. Ich bewerbe mich trotzdem parallel, wenn wir das vereinbaren.",
+  show:"Businessplan Abschnitt 1 (Zusammenfassung) und 8 (Rentabilität)", laws:["sgb2_16b"]},
+ {c:"Person", q:"Welche Qualifikation haben Sie für diese Tätigkeit?",
+  a:"[Ausbildung/Studium], über zehn Jahre Entwicklung von TYPO3-Websites und -Erweiterungen, zuletzt bei [Stationen]. Die Produktionskette für TYPO3 14.3 habe ich selbst entwickelt; sie ist mit automatischen Tests abgesichert, drei Beispiel-Websites sind damit entstanden.",
+  show:"Lebenslauf, Zeugnisse, Beispiel-Websites (Portfolio-Link)", laws:[]},
+ {c:"Person", q:"Haben Sie kaufmännische Kenntnisse?",
+  a:"[Eigene Erfahrung mit Angeboten, Rechnungen, Kundenkontakt.] Ich nutze eine Buchhaltungssoftware, die Zahlen für Finanzamt und Anlage EKS liefert, und nehme die Gründungsberatung der IHK Berlin in Anspruch. Ein Gründungscoaching nehme ich gern an.",
+  show:"Businessplan Abschnitt 6 (Organisation)", laws:["sgb2_16c2"]},
+ {c:"Angebot", q:"Was genau bieten Sie an?",
+  a:"Drei Leistungen auf TYPO3: fertige mehrsprachige Websites zum Festpreis (2.400 € oder 4.900 €), Wartung und Hosting für 79 € im Monat und Entwicklungsarbeit für TYPO3-Agenturen zu 75 € pro Stunde.",
+  show:"Businessplan Abschnitt 3 (Angebot)", laws:[]},
+ {c:"Angebot", q:"Was ist an Ihrem Angebot KI, und ist das seriös?",
+  a:"Die Werkzeuge übernehmen Routinearbeit: Grundgerüst, Tests, Übersetzungsentwürfe. Jeder Schritt wird von mir geprüft und freigegeben, bevor der Kunde etwas sieht. Fehler werden als Regeln gespeichert und wiederholen sich nicht. Datenschutz: Hosting in Deutschland, keine Schriften von Google-Servern.",
+  show:"Ablauf in Businessplan Abschnitt 3; Beispiel-Website", laws:[]},
+ {c:"Angebot", q:"Wie lange brauchen Sie für eine Website?",
+  a:"Etwa 20 Stunden eigene Arbeitszeit für eine Website „Start“ und 40 Stunden für „Business“, verteilt auf zwei bis vier Wochen, je nachdem, wie schnell der Kunde Inhalte und Freigaben liefert.",
+  show:"Businessplan Abschnitt 5 (Preislogik)", laws:[]},
+ {c:"Kunden & Markt", q:"Wer sind Ihre Kunden? Haben Sie schon Aufträge?",
+  a:"Kleine Unternehmen, Praxen und Vereine in Berlin, mittelständische Betriebe mit mehrsprachigem Bedarf und TYPO3-Agenturen, die Entwickler suchen. Ich habe Kontakte zu [Anzahl] Agenturen und Interessenten [Namen/Branchen]. Feste Aufträge nehme ich erst nach der Gewerbeanmeldung an.",
+  show:"Absichtserklärungen, falls vorhanden; Businessplan Abschnitt 4", laws:["gewo14"]},
+ {c:"Kunden & Markt", q:"Wie gewinnen Sie Kunden?",
+  a:"Über meine eigene Referenz-Website, Direktansprache von zehn TYPO3-Agenturen pro Monat, die TYPO3-Community in Berlin, mein bisheriges Netzwerk und Empfehlungen. Jeder Website-Kunde bekommt ein Wartungsangebot; das baut wiederkehrende Einnahmen auf.",
+  show:"Businessplan Abschnitt 5 (Kundengewinnung)", laws:[]},
+ {c:"Kunden & Markt", q:"Wer ist Ihre Konkurrenz, und warum sollte jemand bei Ihnen kaufen?",
+  a:"Baukästen wie Wix sind billiger, bieten aber wenig Mehrsprachigkeit und Redakteursrechte. WordPress-Freiberufler sind günstig, aber wartungsintensiv. TYPO3-Agenturen sind deutlich teurer. Ich biete TYPO3-Qualität zum Freiberuflerpreis, und Agenturen sind gleichzeitig meine Kunden.",
+  show:"Businessplan Abschnitt 4 (Wettbewerb)", laws:[]},
+ {c:"Zahlen", q:"Wie kommen Sie auf diese Umsatzzahlen?",
+  a:"Jahr 1 plant mit nur fünf Websites, fünf Wartungsverträgen und etwa fünf Agenturstunden im Monat: 23.775 € Umsatz. Websites sind erst im Monat des Livegangs eingerechnet, obwohl ich Abschläge vereinbare. Das ist bewusst vorsichtig.",
+  show:"Businessplan Abschnitt 8 (Mengenplanung) und 9 (Liquidität)", laws:[]},
+ {c:"Zahlen", q:"Was passiert, wenn die Aufträge ausbleiben?",
+  a:"Die laufenden Kosten liegen bei nur 220 € im Monat, ein Verlust entsteht kaum. Ich habe einen Frühwarnpunkt eingebaut: Liegt der Gewinn nach sechs Monaten unter 3.000 €, passe ich gemeinsam mit Ihnen an, zum Beispiel mehr Agenturstunden oder eine zusätzliche Teilzeitbeschäftigung.",
+  show:"Businessplan Abschnitt 10 (Frühwarnung) und 11 (Risiken)", laws:["sgb2_10"]},
+ {c:"Zahlen", q:"Ab wann brauchen Sie kein Grundsicherungsgeld mehr?",
+  a:"Nach Plan ab Monat 13 bis 15, wenn der Gewinn dauerhaft über etwa 2.200 € im Monat liegt. Im zweiten Jahr plane ich 3.175 € Gewinn im Monat; davon kann ich Lebensunterhalt, Krankenversicherung, Steuern und Altersvorsorge zahlen und behalte noch eine Rücklage.",
+  show:"Businessplan Abschnitt 8 (Deckung des Lebensunterhalts)", laws:["sgb2_16c3"]},
+ {c:"Zahlen", q:"Wofür brauchen Sie 2.350 €, und warum kein Kredit?",
+  a:"Für einen leistungsstarken Laptop (1.800 €), einen zweiten Bildschirm (300 €) und die Entwicklungsumgebung für ein Jahr (250 €). Das sind Arbeitsmittel, ohne die ich nicht professionell arbeiten kann. [Falls zutreffend: Meine Bank vergibt an Gründer aus dem Leistungsbezug keinen Kredit; Nachweis liegt bei.]",
+  show:"Kostenvoranschläge, ggf. Ablehnung der Bank, Businessplan Abschnitt 7", laws:["sgb2_16c1"]},
+ {c:"Zahlen", q:"Warum reicht Ihr jetziger Computer nicht?",
+  a:"Die lokale Entwicklungsumgebung (Docker mit TYPO3, Datenbank, Testbrowser) braucht mindestens 32 GB Arbeitsspeicher. Mein jetziges Gerät [Modell, Baujahr, RAM] schafft das nicht; Tests laufen dann nicht oder sehr langsam.",
+  show:"Gerätedaten des alten Laptops, Kostenvoranschlag", laws:["sgb2_16c1"]},
+ {c:"Zahlen", q:"Was kosten die KI-Dienste? Sind das echte Betriebsausgaben?",
+  a:"Etwa 30 € Grundkosten im Monat plus rund 60 € pro Website, das sind ca. 2 % des Preises. Die Kosten werden pro Projekt protokolliert, ich kann sie Ihnen in der Anlage EKS einzeln nachweisen.",
+  show:"Kostenprotokoll pro Projekt, Businessplan Abschnitt 8", laws:["sgb2_41a"]},
+ {c:"Förderung & Recht", q:"Auf Einstiegsgeld gibt es keinen Rechtsanspruch.",
+  a:"Das ist mir bewusst. Ich bitte um eine Ermessensentscheidung auf Grundlage meines Plans und um einen schriftlichen Bescheid mit Begründung.",
+  show:"–", laws:["sgb2_16b","sgb1_39","sgb10_35"]},
+ {c:"Förderung & Recht", q:"Haben Sie schon mit der Tätigkeit begonnen?",
+  a:"Nein. Ich habe vorbereitet: Businessplan, Kostenvoranschläge, Beispiel-Websites. Ich beginne erst, wenn über die Förderung entschieden ist, und melde dann das Gewerbe an.",
+  show:"–", laws:["sgb2_37","sgb1_60"]},
+ {c:"Förderung & Recht", q:"Wir brauchen eine Stellungnahme zur Tragfähigkeit.",
+  a:"Gern. Ich habe bei der IHK Berlin einen Termin [Datum] angefragt. Akzeptieren Sie die IHK, oder bevorzugen Sie eine andere fachkundige Stelle?",
+  show:"Terminbestätigung IHK", laws:["sgb2_16c3"]},
+ {c:"Förderung & Recht", q:"Sie müssen sich trotzdem weiter bewerben.",
+  a:"Einverstanden, wenn wir den Umfang im Kooperationsplan festhalten, zum Beispiel zwei Bewerbungen im Monat. Wichtig ist mir, dass genug Zeit für den Aufbau bleibt, sonst gefährden wir das Ziel, unabhängig zu werden.",
+  show:"–", laws:["sgb2_15","sgb2_10"]},
+ {c:"Förderung & Recht", q:"Wir schlagen erst ein Gründungsseminar oder Coaching vor.",
+  a:"Ein Coaching nehme ich gern an, besonders zu Vertrieb und Buchhaltung. Bitte schicken Sie mir den Vorschlag schriftlich. Den Antrag auf Einstiegsgeld bitte ich trotzdem parallel zu prüfen.",
+  show:"–", laws:["sgb2_16c2"]},
+ {c:"Förderung & Recht", q:"Haben Sie Vermögen oder Ersparnisse?",
+  a:"[Wahrheitsgemäß, kurz.] Seit dem letzten Antrag hat sich nichts geändert. Die Nachweise habe ich dabei.",
+  show:"Kontoauszüge, falls verlangt", laws:["sgb2_12","sgb1_60"]},
+ {c:"Pflichten & Ablauf", q:"Wie viele Stunden arbeiten Sie in der Selbständigkeit?",
+  a:"Hauptberuflich, 35 bis 40 Stunden pro Woche: etwa 60 % Kundenprojekte, 25 % Vertrieb und 15 % Verwaltung und Weiterbildung.",
+  show:"Businessplan Abschnitt 6", laws:["sgb2_16b"]},
+ {c:"Pflichten & Ablauf", q:"Wie wird Ihr Einkommen angerechnet?",
+  a:"Über die Anlage EKS: Vor jedem Sechs-Monats-Zeitraum eine Prognose, danach die tatsächlichen Zahlen mit Belegen. Die Belege sortiere ich pro Zeitraum, die Zahlen kommen direkt aus der Buchhaltung. Vom Gewinn bleiben mir höchstens 348 € im Monat; der Rest wird angerechnet.",
+  show:"Businessplan Abschnitt 9 (Werte je 6-Monats-Zeitraum)", laws:["sgb2_41a","sgb2_11b"]},
+ {c:"Pflichten & Ablauf", q:"Wie sind Sie krankenversichert, wenn Sie selbständig sind?",
+  a:"Ich informiere meine Krankenkasse über die Selbständigkeit. Wird die Versicherung freiwillig, beantrage ich den Zuschuss zu den Beiträgen, solange ich Leistungen beziehe. Nach dem Ausstieg zahle ich sie selbst; das ist in der Planung für Jahr 2 enthalten.",
+  show:"Businessplan Abschnitt 8 (Kranken- und Pflegeversicherung)", laws:["sgb2_26"]},
+ {c:"Pflichten & Ablauf", q:"Melden Sie ein Gewerbe an? Was ist mit dem Finanzamt?",
+  a:"Ja: Gewerbeanmeldung beim Bezirksamt vor dem ersten Auftrag, danach innerhalb eines Monats der Fragebogen zur steuerlichen Erfassung über ELSTER. Ich nutze die Kleinunternehmerregelung.",
+  show:"Businessplan Abschnitt 6", laws:["gewo14","ao138","ustg19"]},
+ {c:"Pflichten & Ablauf", q:"Was passiert, wenn es nach einem Jahr nicht läuft?",
+  a:"Dann prüfen wir das gemeinsam, so sieht es das Gesetz vor. Ich lege Ihnen jeden Monat einen einseitigen Bericht mit Umsatz, Aufträgen und Anfragen vor, damit wir früh sehen, ob ich im Plan bin. Wenn nicht, passen wir rechtzeitig an.",
+  show:"Muster Monatsbericht, Businessplan Abschnitt 10 (Meilensteine)", laws:["sgb2_10"]}
+];
+const OV_KV = [
+ ["Angebot","Websites zum Festpreis (2.400 € / 4.900 €), Wartung und Hosting (79 €/Monat), Agenturarbeit (75 €/Stunde)"],
+ ["Rechtsform","Einzelunternehmen, Gewerbe, Kleinunternehmer"],
+ ["Arbeitszeit","hauptberuflich, 35–40 Stunden pro Woche"],
+ ["Laufende Kosten","ca. 220 € pro Monat"],
+ ["Umsatz Jahr 1 / 2 / 3","23.775 € / 42.700 € / 62.300 €"],
+ ["Gewinn Jahr 1 / 2 / 3","20.505 € / 38.100 € / 55.300 €"],
+ ["Ohne Grundsicherungsgeld","voraussichtlich ab Monat 13 bis 15"],
+ ["Frühwarnpunkt","Gewinn Monate 1–6 unter 3.000 € → gemeinsame Anpassung"],
+ ["Kontrolle","monatlicher Kurzbericht, Anlage EKS, Meilensteine"]
+];
+const OV_AG = [
+ ["5 Min.","Ziel des Gesprächs","Das Vorhaben in drei Sätzen"],
+ ["10 Min.","Angebot und Arbeitsweise","Beispiel-Websites, diese Anwendung als Arbeitsprobe"],
+ ["10 Min.","Zahlen","Kapitalbedarf, Rentabilität, Liquidität"],
+ ["15 Min.","Ihre Fragen","Antworten mit Beleg im Businessplan"],
+ ["5 Min.","Nächste Schritte","Zusagen, Zeitrahmen, Kooperationsplan"]
+];
+/* Rechte-Karten: q = typische Aussage (nur privat), t = neutraler Titel, say = mein Anliegen, laws = zeigbar, pl = nur privat, next = Verfahren, tac = nur privat */
+const RIGHTS = [
+ {id:"grundsatz", q:"„Das fördern wir grundsätzlich nicht.“", t:"Förderung wird grundsätzlich abgelehnt",
+  say:"Ich verstehe. Das Gesetz sieht die Förderung einer selbständigen Tätigkeit ausdrücklich vor. Ich bitte um eine Entscheidung über meinen konkreten Antrag, schriftlich und mit Begründung.",
+  laws:["sgb2_16b","sgb1_39","sgb10_35"], next:["Schriftlicher Bescheid mit Begründung","Bei Ablehnung: Widerspruch innerhalb eines Monats"], tac:["Eine pauschale Absage ist keine Ermessensentscheidung im Einzelfall. Nicht streiten, nur die schriftliche Entscheidung verlangen."], pl:["sgg84"]},
+ {id:"budget", q:"„Dafür ist kein Geld mehr da.“", t:"Hinweis auf fehlende Mittel",
+  say:"Danke für die offene Auskunft. Bitte halten Sie die Entscheidung mit dieser Begründung schriftlich fest. Ab wann wäre eine Förderung wieder möglich?",
+  laws:["sgb10_35","sgb1_39"], next:["Schriftliche Entscheidung mit Begründung","Antrag bleibt gestellt; Termin für erneute Prüfung erfragen"], tac:["Ob Haushaltsmittel als Ermessensgrund tragen, prüft eine Beratungsstelle anhand des Bescheids. Im Gespräch nicht darüber diskutieren."], pl:[]},
+ {id:"zustaendig", q:"„Dafür bin ich nicht zuständig.“", t:"Zuständigkeit",
+  say:"Dann bitte ich Sie, meinen Antrag an die zuständige Stelle weiterzuleiten und mir Namen und Kontakt zu nennen.",
+  laws:["sgb1_16_2","sgb1_14"], next:["Antrag gilt ab Eingang als gestellt","Kontakt der zuständigen Stelle notieren"], tac:[], pl:[]},
+ {id:"bewerben", q:"„Bewerben Sie sich erst mal, dann sehen wir weiter.“", t:"Bewerbungen und Gründung parallel",
+  say:"Ich bewerbe mich gern parallel in einem vereinbarten Umfang. Über meinen Antrag bitte ich trotzdem jetzt zu entscheiden; die Überprüfung einer Selbständigkeit sieht das Gesetz nach einem Jahr vor.",
+  laws:["sgb2_16b","sgb2_10","sgb2_15"], next:["Umfang der Bewerbungen im Kooperationsplan festhalten","Entscheidung über den Antrag schriftlich"], tac:["Konkrete Zahl vorschlagen, z. B. zwei Bewerbungen im Monat."], pl:[]},
+ {id:"formular", q:"„Ohne Formular haben Sie gar keinen Antrag gestellt.“", t:"Form des Antrags",
+  say:"Ich fülle das Formular gern aus. Mein Antrag gilt aber ab meinem Schreiben vom {datum}; das Verfahren ist an keine bestimmte Form gebunden.",
+  laws:["sgb10_9","sgb1_16_3","sgb2_37"], next:["Formular aushändigen lassen","Antragsdatum im Vermerk festhalten lassen"], tac:[], pl:[]},
+ {id:"schriftlich", q:"„Das kann ich Ihnen nicht schriftlich geben.“", t:"Schriftliche Bestätigung",
+  say:"Für mich hängt viel an dieser Entscheidung. Ich bitte deshalb um eine schriftliche Bestätigung. Das Gesetz sieht sie vor, wenn man sie gleich verlangt; das tue ich hiermit.",
+  laws:["sgb10_33"], next:["Bestätigung schriftlich oder elektronisch","Eigener Gesprächsvermerk über jobcenter.digital"], tac:["Das Verlangen muss unverzüglich kommen: also jetzt im Gespräch, nicht nächste Woche."], pl:[]},
+ {id:"riskant", q:"„Selbständigkeit ist zu riskant für Sie.“", t:"Beurteilung der Tragfähigkeit",
+  say:"Die Tragfähigkeit soll eine fachkundige Stelle beurteilen. Ich lege die Stellungnahme der IHK vor, und meine Planung enthält einen Frühwarnpunkt nach sechs Monaten.",
+  laws:["sgb2_16c3"], next:["Stellungnahme der fachkundigen Stelle","Entscheidung auf dieser Grundlage"], tac:[], pl:[]},
+ {id:"melden", q:"„Wir melden uns bei Ihnen.“", t:"Bearbeitungsdauer",
+  say:"Vielen Dank. Bis wann ungefähr kann ich mit einer Entscheidung rechnen? Ich notiere mir das Datum.",
+  laws:["sgb1_17"], next:["Datum notieren","Ohne Antwort bis dahin: schriftlich erinnern"], tac:["Untätigkeitsklage nie im Gespräch erwähnen; nur als letzter Schritt nach 6 Monaten."], pl:["sgg88"]},
+ {id:"neben", q:"„Machen Sie das doch erst nebenberuflich.“", t:"Haupt- oder Nebenerwerb",
+  say:"Einstiegsgeld gibt es bei Aufnahme einer selbständigen Tätigkeit, und nur hauptberuflich erreiche ich die Umsätze aus dem Plan. Nebenberuflich bliebe ich länger auf Leistungen angewiesen.",
+  laws:["sgb2_16b","sgb2_16c3","sgb2_11b"], next:["Entscheidung über die hauptberufliche Gründung"], tac:["Die Grenze von 15 Wochenstunden steht auf der Seite der Bundesagentur zum Einstiegsgeld, nicht im Gesetz."], pl:[]},
+ {id:"vermoegen", q:"„Sie haben doch noch Ersparnisse.“", t:"Vermögen",
+  say:"Mein Vermögen liegt innerhalb der Freibeträge; die Nachweise habe ich dabei.",
+  laws:["sgb2_12"], next:["Nachweise vorlegen"], tac:["Nur sagen, wenn es stimmt. Freibetrag nach Alter vorher prüfen."], pl:[]},
+ {id:"unterschrift", q:"„Unterschreiben Sie bitte hier.“", t:"Kooperationsplan und Vereinbarungen",
+  say:"Ich lese das gern in Ruhe durch und gebe es Ihnen bis [Datum] zurück. Können Sie mir eine Kopie mitgeben?",
+  laws:["sgb2_15"], next:["Kopie mitnehmen","Offene Fragen schriftlich klären"], tac:["Nichts unterschreiben, was du nicht gelesen hast."], pl:[]},
+ {id:"beistand", q:"„Ihre Begleitung muss draußen warten.“", t:"Begleitung zum Termin",
+  say:"Ich habe das Recht, mit einem Beistand zu erscheinen. Meine Begleitung hört zu und unterstützt mich.",
+  laws:["sgb10_13"], next:["Gespräch mit Beistand fortsetzen"], tac:[], pl:[]},
+ {id:"akte", q:"„Das steht so in Ihrer Akte.“", t:"Einsicht in die Akte",
+  say:"Dann würde ich diesen Vermerk gern einsehen.",
+  laws:["sgb10_25"], next:["Termin zur Akteneinsicht vereinbaren"], tac:[], pl:[]},
+ {id:"darlehen", q:"„Wir geben das nur als Darlehen.“", t:"Darlehen statt Zuschuss",
+  say:"Das Gesetz sieht beides vor. Ein Darlehen nehme ich an, wenn die Rückzahlung tragbar ist. Bitte schicken Sie mir die Bedingungen schriftlich.",
+  laws:["sgb2_16c1"], next:["Raten und Beginn der Rückzahlung schriftlich"], tac:[], pl:[]},
+ {id:"vorgaenger", q:"„Ihr Vorgänger hat notiert …“", t:"Frühere Vermerke in der Akte",
+  say:"Den Vermerk kenne ich nicht; ich würde ihn gern einsehen. Bitte bilden Sie sich anhand meiner Unterlagen ein eigenes Bild.",
+  laws:["sgb10_25","sgb1_39"], next:["Akteneinsicht vereinbaren","Entscheidung auf Grundlage der aktuellen Unterlagen"], tac:["Den alten Konflikt nicht ansprechen. Nur Akteneinsicht verlangen, wenn der Vermerk die Entscheidung beeinflusst."], pl:[]},
+ {id:"einarbeiten", q:"„Ich muss mich erst einarbeiten.“", t:"Bearbeitung nach Zuständigkeitswechsel",
+  say:"Selbstverständlich. Bis wann ungefähr können wir über meinen Antrag vom {datum} sprechen?",
+  laws:["sgb1_17","sgb2_37"], next:["Termin oder Zeitraum notieren","Antrag gilt weiter ab {datum}"], tac:["Freundlich bleiben; die Unterlagen dalassen, damit die Einarbeitung leicht fällt."], pl:[]},
+ {id:"widerspruch", q:"„Dann legen Sie doch Widerspruch ein.“", t:"Rechtsbehelf",
+  say:"Dafür brauche ich die Entscheidung schriftlich mit Begründung. Lieber wäre mir eine Lösung heute.",
+  laws:["sgb10_35","sgg84"], next:["Schriftlicher Bescheid","Widerspruch innerhalb eines Monats"], tac:[], pl:[]}
+];
+const OWNQ = [
+ "Wie hoch wäre das Einstiegsgeld ungefähr, und für wie lange?",
+ "Bis wann entscheiden Sie über Einstiegsgeld und Zuschuss?",
+ "Welche fachkundige Stelle akzeptieren Sie für die Tragfähigkeit?",
+ "Gibt es bei Ihnen ein Team für Selbständige, und wer ist dort mein Ansprechpartner?",
+ "Bekomme ich die Entscheidung als schriftlichen Bescheid?",
+ "Was soll im Kooperationsplan zur Selbständigkeit stehen?"
+];
+const BRING = [
+ "Businessplan, zweimal ausgedruckt (eins zum Dalassen)",
+ "Lebenslauf und Zeugnisse",
+ "Kostenvoranschläge für Laptop, Bildschirm, Software",
+ "Stellungnahme der IHK zur Tragfähigkeit (oder Terminbestätigung)",
+ "Absichtserklärungen von Kunden oder Agenturen, falls vorhanden",
+ "Portfolio: Link und zwei, drei Screenshots auf Papier",
+ "Personalausweis, BG-Nummer, Kopie Ihres Antrags mit Eingangsbestätigung",
+ "Block und Stift; Beistand, falls gewünscht"
+];
+const AFTER = [
+ "Zusammenfassung über jobcenter.digital senden, Eingangsbestätigung speichern",
+ "Termin mit Erinnerung zwei Tage vorher in den Kalender",
+ "IHK-Gründungsberatung buchen und Stellungnahme zur Tragfähigkeit anfragen",
+ "Kostenvoranschläge einholen",
+ "Platzhalter im Businessplan ausfüllen",
+ "Ohne Antwort nach zwei Wochen: schriftlich freundlich erinnern"
+];
+
+/* ---------- Zustand ---------- */
+const KEY = "jc-navigator-v1";
+const blank = () => ({view:"prep", step:0, sel:{}, f:{}, log:[], qa:{}, done:{}, chk:{}});
+let S = blank();
+try { const raw = localStorage.getItem(KEY); if (raw) S = Object.assign(blank(), JSON.parse(raw)); } catch(e) {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch(e) {} };
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const val = k => (S.f[k] || "").trim();
+const fill = s => s.replace(/\{(\w+)\}/g, (_, k) => val(k) || "[" + ({name:"Name",bg:"BG-Nummer",datum:"Datum",person:"Ansprechperson",tel:"Telefonnummer",termin:"Termin",unterlagen:"Unterlagen",rueckruf:"Rückruftermin",zeitraum:"Zeitraum",start:"Start"}[k] || k) + "]");
+const now = () => new Date().toLocaleTimeString("de-DE", {hour:"2-digit", minute:"2-digit"});
+const today = () => new Date().toLocaleDateString("de-DE");
+function toast(t){ const el = $("#toast"); el.textContent = t; el.classList.add("on"); setTimeout(() => el.classList.remove("on"), 1600); }
+
+function lawHTML(ids){
+  if (!ids || !ids.length) return "";
+  return '<div class="laws">' + ids.map(id => { const L = LAW[id]; if (!L) return "";
+    return '<div class="law"><div class="h"><span class="chip">' + esc(L.t) + '</span><span class="name">' + esc(L.n) + '</span><a class="src" href="' + L.u + '" target="_blank" rel="noopener">Gesetzestext ↗</a></div>' +
+      (L.q ? '<blockquote>„' + esc(L.q) + '“</blockquote>' : '<blockquote><span class="kurz">Kurzfassung</span>' + esc(L.k) + '</blockquote>') + '</div>'; }).join("") + '</div>';
+}
+
+/* ---------- Ansichten ---------- */
+function show(view){
+  S.view = view; save();
+  document.querySelectorAll("section.view").forEach(s => s.classList.toggle("hidden", s.id !== "view-" + view));
+  document.querySelectorAll("nav.tabs button, nav.ptabs button").forEach(b => b.setAttribute("aria-selected", b.dataset.view === view ? "true" : "false"));
+  if (view === "call") renderCall();
+  if (view === "meet") renderMeet();
+  if (view === "sum") renderSum();
+  if (view === "ov") renderOv();
+  if (view === "rights") renderRights();
+  window.scrollTo({top:0});
+}
+
+/* Vorbereitung */
+function renderPrep(){
+  document.querySelectorAll("[data-field]").forEach(el => { el.value = S.f[el.dataset.field] || ""; });
+  $("#bring").innerHTML = BRING.map((t, i) => '<li><label class="check"><input type="checkbox" data-chk="b' + i + '"' + (S.chk["b" + i] ? " checked" : "") + '> ' + esc(t) + '</label></li>').join("");
+}
+
+/* Telefonat */
+function renderCall(){
+  const end = S.step >= STEPS.length;
+  $("#steps").innerHTML = STEPS.map((st, i) => {
+    const cls = i === S.step ? "cur" : (S.sel[st.id] ? "done" : "");
+    return '<li class="' + cls + '" data-step="' + i + '"><span class="n">' + (S.sel[st.id] && i !== S.step ? "✓" : i + 1) + '</span><span class="lbl">' + esc(st.short) + '</span></li>';
+  }).join("") + '<li class="' + (end ? "cur" : "") + '" data-step="' + STEPS.length + '"><span class="n">✉</span><span class="lbl">Abschluss</span></li>';
+
+  if (end) {
+    $("#qcard").innerHTML = '<div class="kicker">Abschluss</div><div class="question">Zusammenfassen und verabschieden</div>' +
+      '<div class="say"><span class="lbl">Sagen Sie</span>' + esc(fill(closingLine())) + '</div>' +
+      '<ul class="dos"><li>Danach innerhalb einer Stunde die Zusammenfassung schriftlich senden.</li></ul>' +
+      '<div class="nav"><button class="btn ghost" data-back>← Zurück</button><button class="btn" data-go="sum">Zusammenfassung öffnen →</button></div>';
+  } else {
+    const st = STEPS[S.step], chosen = S.sel[st.id], A = st.answers.find(a => a.k === chosen);
+    let h = '<div class="qhead"><span class="kicker">Frage ' + (S.step + 1) + ' von ' + STEPS.length + '</span></div><div class="question">' + esc(st.q) + '</div><div class="answers">';
+    h += st.answers.map((a, i) => '<button class="ans' + (a.k === chosen ? " sel" : "") + (a.end ? " end" : "") + '" data-ans="' + a.k + '"><span class="key">' + (i + 1) + '</span><span><span class="t">' + esc(a.t) + '</span>' + (a.s ? '<span class="s">' + esc(a.s) + '</span>' : "") + '</span></button>').join("");
+    h += '</div>';
+    if (A) {
+      h += '<div class="resp"><div class="say"><span class="lbl">Sagen Sie</span>' + esc(fill(A.say)) + '</div>';
+      if (A.field) h += '<div class="field" style="margin:0 0 14px"><label for="af">' + esc(A.field.label) + '</label>' + (A.field.area ? '<textarea id="af" data-field="' + A.field.key + '" placeholder="' + esc(A.field.ph) + '">' + esc(S.f[A.field.key] || "") + '</textarea>' : '<input id="af" data-field="' + A.field.key + '" placeholder="' + esc(A.field.ph) + '" value="' + esc(S.f[A.field.key] || "") + '">') + '</div>';
+      if (A.dos && A.dos.length) h += '<ul class="dos">' + A.dos.map(d => '<li>' + esc(d) + '</li>').join("") + '</ul>';
+      if (A.ex) h += '<div class="example"><b>Hintergrund</b>' + esc(A.ex) + '</div>';
+      h += lawHTML(A.laws);
+      h += '<div class="nav"><button class="btn ghost" data-back' + (S.step === 0 ? " disabled" : "") + '>← Zurück</button>' +
+           (A.end ? '<button class="btn" data-finish>Gespräch beenden · Mail erstellen →</button>' : '<button class="btn" data-next>Weiter zu ' + (S.step + 2 <= STEPS.length ? "Frage " + (S.step + 2) : "Abschluss") + ' →</button>') + '</div></div>';
+    } else if (S.step > 0) {
+      h += '<div class="nav"><button class="btn ghost" data-back>← Zurück</button></div>';
+    }
+    $("#qcard").innerHTML = h;
+  }
+  $("#log").innerHTML = S.log.length ? '<b>Protokoll</b><ol>' + S.log.map(l => '<li>' + esc(l.time) + ' · ' + esc(l.short) + ': ' + esc(l.t) + '</li>').join("") + '</ol>' : "";
+}
+function closingLine(){
+  return "Vielen Dank für das Gespräch. Ich fasse kurz zusammen" + (val("termin") ? ": Termin am {termin}" : "") + ". Ich schicke Ihnen das gleich noch schriftlich. Auf Wiederhören.";
+}
+function choose(k){
+  const st = STEPS[S.step]; if (!st) return;
+  const A = st.answers.find(a => a.k === k); if (!A) return;
+  S.sel[st.id] = k;
+  for (let i = S.step + 1; i < STEPS.length; i++) delete S.sel[STEPS[i].id];
+  S.log = S.log.filter(l => STEPS.findIndex(x => x.id === l.id) < S.step);
+  S.log.push({id:st.id, short:st.short, t:A.t, time:now()});
+  save(); renderCall();
+}
+function next(){ const st = STEPS[S.step]; if (!st || !S.sel[st.id]) return; const A = st.answers.find(a => a.k === S.sel[st.id]); if (A.end) { S.ended = st.id; save(); show("sum"); return; } S.ended = null; S.step = Math.min(S.step + 1, STEPS.length); save(); renderCall(); }
+function back(){ if (S.step > 0) { S.step--; save(); renderCall(); } }
+
+/* Termin */
+let catSel = "Alle";
+function renderMeet(){
+  $("#meet-h").textContent = S.present ? (val("name") ? "Existenzgründung " + val("name") + ": Ihre Fragen, vorbereitet" : "Existenzgründung: Ihre Fragen, vorbereitet") : "Termin: alle Fragen vorbereitet";
+  $("#meet-lead").textContent = S.present ? "Zu jeder Frage: meine Antwort, der Beleg im Businessplan und die Rechtsgrundlage. Suchen Sie einfach nach einem Stichwort." : "Die wahrscheinlichsten Fragen im persönlichen Gespräch, jeweils mit vorbereiteter Antwort, dem Beleg, den Sie zeigen, und der Rechtsgrundlage. Antworten lassen sich anpassen und werden lokal gespeichert. Abhaken, was Sie geübt haben.";
+  $("#search").placeholder = S.present ? "Stichwort, z. B. Kunden, Laptop, Krankenversicherung …" : "Frage oder Stichwort suchen, z. B. Laptop, Kredit, Bewerbung …";
+  $("#filters").innerHTML = CATS.map(c => '<button aria-pressed="' + (c === catSel) + '" data-cat="' + esc(c) + '">' + esc(c) + '</button>').join("");
+  const term = ($("#search").value || "").toLowerCase().trim();
+  const items = QA.map((x, i) => ({...x, i})).filter(x => (catSel === "Alle" || x.c === catSel) && (!term || (x.q + " " + (S.qa[x.i] ?? x.a) + " " + x.show).toLowerCase().includes(term)));
+  $("#qa-list").innerHTML = items.length ? items.map(x => {
+    const ans = S.qa[x.i] ?? x.a;
+    return '<details class="card qa" data-qa="' + x.i + '"><summary><span class="cat">' + esc(x.c) + '</span><span class="q">' + esc(x.q) + '</span>' + (S.done[x.i] && !S.present ? '<span class="ok">✓ geübt</span>' : "") + '</summary><div class="body">' +
+      (S.present ? '<p class="answer-text">' + esc(fill(ans)) + '</p>' :
+      '<label class="hint" for="qa-' + x.i + '" style="display:block;margin:0 0 6px">Ihre vorbereitete Antwort (anpassbar)</label><textarea id="qa-' + x.i + '" data-qa-text="' + x.i + '">' + esc(ans) + '</textarea>' +
+      '<div class="meta"><label class="check"><input type="checkbox" data-done="' + x.i + '"' + (S.done[x.i] ? " checked" : "") + '> Geübt</label>' + (S.qa[x.i] !== undefined ? '<button class="btn ghost small" data-qa-reset="' + x.i + '">Vorschlag wiederherstellen</button>' : "") + '</div>') +
+      '<p class="show"><b>' + (S.present ? "Beleg" : "Zeigen") + '</b>' + esc(x.show) + '</p>' + lawHTML(x.laws) + '</div></details>';
+  }).join("") : '<p class="lead">Keine Frage gefunden.</p>';
+  $("#own-q").innerHTML = OWNQ.map((t, i) => '<li><label class="check"><input type="checkbox" data-chk="o' + i + '"' + (S.chk["o" + i] ? " checked" : "") + '> ' + esc(t) + '</label></li>').join("");
+  updateProg();
+  const open = QA.filter((x, i) => /\[[^\]]+\]/.test(S.qa[i] ?? x.a)).length;
+  $("#ph-warn").innerHTML = open ? '<div class="example" style="border-left:4px solid var(--warn)"><b>Vor dem Termin</b>' + open + ' Antworten enthalten noch Platzhalter in eckigen Klammern. Im Präsentationsmodus wären sie sichtbar: bitte ausfüllen oder löschen.</div>' : "";
+}
+function updateProg(){ const n = Object.values(S.done).filter(Boolean).length; $("#prog-txt").textContent = n + " von " + QA.length + " geübt"; $("#prog-bar").style.width = (n / QA.length * 100) + "%"; }
+
+/* Überblick + Rechte-Karten */
+function renderOv(){
+  $("#ov-h").textContent = val("name") ? "Gründungsvorhaben " + val("name") : "Mein Gründungsvorhaben";
+  $("#ov-kv").innerHTML = OV_KV.map(r => '<tr><td>' + esc(r[0]) + '</td><td>' + esc(r[1]) + '</td></tr>').join("");
+  $("#ov-ag").innerHTML = '<tr><th>Zeit</th><th>Thema</th><th>Was ich zeige</th></tr>' + OV_AG.map(r => '<tr><td>' + esc(r[0]) + '</td><td>' + esc(r[1]) + '</td><td>' + esc(r[2]) + '</td></tr>').join("");
+}
+let rSel = null;
+function renderRights(){
+  const P = !!S.present;
+  $("#r-h").textContent = P ? "Verfahren und Rechtsgrundlagen" : "Rechte-Karten";
+  $("#r-lead").textContent = P ? "Zu den wichtigsten Verfahrensfragen: mein Anliegen, die Rechtsgrundlage im Wortlaut und der formale nächste Schritt." : "Typische Antworten im Termin. Ein Klick öffnet die Karte. Im Präsentationsmodus sieht das Gegenüber nur den neutralen Titel, Ihr Anliegen, das Gesetz und den nächsten Schritt; Zitat und Taktik bleiben verborgen.";
+  $("#rgrid").innerHTML = RIGHTS.map((r, i) => '<button class="rbtn' + (r.id === rSel ? " sel" : "") + '" data-r="' + r.id + '">' + (P ? esc(r.t) : esc(r.q) + '<small>' + esc(r.t) + '</small>') + '</button>').join("");
+  const R = RIGHTS.find(r => r.id === rSel);
+  if (!R) { $("#rpanel").innerHTML = ""; return; }
+  let h = '<div class="card rpanel" id="rcard">' + (P ? "" : '<p class="quote">' + esc(R.q) + '</p>') + '<div class="question" style="margin-bottom:8px">' + esc(R.t) + '</div>' +
+    '<div class="say"><span class="lbl">Mein Anliegen</span>' + esc(fill(R.say)) + '</div>' + lawHTML(R.laws.concat(P ? [] : R.pl)) +
+    '<h3 style="margin-top:6px">Nächster Schritt</h3><ul class="dos">' + R.next.map(n => '<li>' + esc(n) + '</li>').join("") + '</ul>';
+  if (!P && R.tac.length) h += '<div class="example" style="border-left:4px solid var(--warn)"><b>Nur für Sie</b>' + R.tac.map(esc).join(" ") + '</div>';
+  h += '</div>';
+  $("#rpanel").innerHTML = h;
+}
+function logRight(id){ const R = RIGHTS.find(r => r.id === id); if (!R) return; (S.rlog = S.rlog || []).push({time: now(), t: R.t}); save(); }
+
+/* Zusammenfassung */
+function buildMail(){
+  const a = id => S.sel[id];
+  const p = val("person") ? "Guten Tag " + val("person") + "," : "Sehr geehrte Damen und Herren,";
+  const sig = "\n\nMit freundlichen Grüßen\n" + fill("{name}\nBG-Nr. {bg}\nTel. {tel}");
+  if (S.ended === "s1") return {subj: fill("Bitte um Rückruf: Existenzgründung – BG-Nr. {bg}"),
+    body: p + "\n\n" + fill("ich habe heute versucht, Sie telefonisch zu erreichen. Es geht um meine geplante hauptberufliche Selbständigkeit und meinen formlosen Antrag vom {datum} auf Einstiegsgeld (§ 16b SGB II) und einen Zuschuss für Arbeitsmittel (§ 16c SGB II).\n\nIch bitte um einen Rückruf unter {tel} oder um einen persönlichen Termin, um Ihnen meinen Businessplan vorzustellen.") + sig};
+  if (S.ended === "s2" && a("s2") === "b") return {subj: fill("Rückruftermin: Existenzgründung – BG-Nr. {bg}"),
+    body: p + "\n\n" + fill("vielen Dank für das kurze Gespräch heute. Wie vereinbart sprechen wir am {rueckruf} über meine geplante Selbständigkeit und meinen formlosen Antrag vom {datum} auf Einstiegsgeld und Zuschuss für Arbeitsmittel.") + sig};
+  if (S.ended === "s2" && a("s2") === "c") return {subj: fill("Weiterleitung meines Antrags: Existenzgründung – BG-Nr. {bg}"),
+    body: p + "\n\n" + fill("vielen Dank für das Gespräch heute. Sie haben mich an das für Selbständige zuständige Team verwiesen. Ich bitte Sie, meinen formlosen Antrag vom {datum} auf Einstiegsgeld (§ 16b SGB II) und Zuschuss für Arbeitsmittel (§ 16c SGB II) dorthin weiterzuleiten. Nach § 16 Abs. 2 SGB I gilt der Antrag ab seinem Eingang bei Ihnen als gestellt.\n\nBitte teilen Sie mir Namen und Durchwahl der zuständigen Ansprechperson mit.") + sig};
+  const L = [];
+  if (a("s4") === "a" || a("s4") === "c") L.push(fill("Persönlicher Termin zur Vorstellung meines Businessplans: {termin}."));
+  if (a("s4") === "b") L.push("Sie baten, die Unterlagen schriftlich einzureichen. Ich sende Ihnen den Businessplan über jobcenter.digital.");
+  if (a("s5") === "a") L.push(fill("Sie haben bestätigt, dass mein formloser Antrag auf Einstiegsgeld (§ 16b SGB II) und Zuschuss für Arbeitsmittel (§ 16c SGB II) ab {datum} als gestellt gilt."));
+  if (a("s5") === "b") L.push(fill("Ich fülle das Antragsformular aus, sobald Sie es mir zusenden. Mein formloser Antrag vom {datum} bleibt maßgeblich (§ 37 SGB II, § 9 SGB X); das Formular ergänzt ihn."));
+  if (a("s5") === "c") L.push(fill("Bitte bestätigen Sie mir, dass mein formloser Antrag vom {datum} auf Einstiegsgeld und Zuschuss für Arbeitsmittel als gestellt gilt."));
+  if (a("s6") === "a") L.push(fill("Über die Förderung wird entschieden; als Zeitraum nannten Sie: {zeitraum}."));
+  if (a("s6") === "b") L.push("Sie teilten mit, dass die Förderung voraussichtlich nicht bewilligt wird. Ich bitte um eine schriftliche, begründete Entscheidung (§ 33 Abs. 2, § 35 SGB X).");
+  if (a("s6") === "c") L.push("Sie schlugen vor, zunächst ein Gründungsseminar oder Coaching zu besuchen. Bitte senden Sie mir den Vorschlag schriftlich zu. Die Prüfung meines Antrags bitte ich parallel fortzuführen.");
+  if (a("s7") === "a") L.push(fill("Ich bringe folgende Unterlagen mit: {unterlagen}."));
+  if (a("s7") === "b") L.push("Bitte senden Sie mir die Liste der benötigten Unterlagen und die Formulare über jobcenter.digital.");
+  if (a("s7") === "c") L.push("Für die Tragfähigkeit lege ich eine Stellungnahme einer fachkundigen Stelle vor (§ 16c Abs. 3 SGB II); ich frage dafür bei der IHK Berlin an.");
+  if (!L.length) L.push(fill("Mein formloser Antrag vom {datum} auf Einstiegsgeld (§ 16b SGB II) und Zuschuss für Arbeitsmittel (§ 16c SGB II) liegt Ihnen vor."));
+  return {subj: fill("Zusammenfassung unseres Telefonats vom " + today() + " – BG-Nr. {bg}"),
+    body: p + "\n\n" + "vielen Dank für das Gespräch heute. Ich fasse kurz zusammen:\n\n" + L.map(x => "– " + x).join("\n") + "\n\nFalls ich etwas falsch verstanden habe, geben Sie mir bitte kurz Bescheid." + sig};
+}
+function renderSum(){
+  const m = buildMail();
+  $("#mail-subj-h").textContent = "Betreff: " + m.subj;
+  $("#mail").textContent = m.body;
+  $("#protocol").innerHTML = S.log.length ? '<ol>' + S.log.map(l => '<li>' + esc(l.time) + ' · ' + esc(l.short) + ': ' + esc(l.t) + '</li>').join("") + '</ol>' : '<p class="hint">Noch keine Einträge. Das Protokoll entsteht im Bereich „Telefonat“.</p>';
+  if ((S.rlog || []).length) $("#protocol").innerHTML += '<h3 style="margin-top:12px">Im Termin geöffnete Rechte-Karten</h3><ol>' + S.rlog.map(l => '<li>' + esc(l.time) + ' · ' + esc(l.t) + '</li>').join("") + '</ol>';
+  $("#after").innerHTML = AFTER.map((t, i) => '<li><label class="check"><input type="checkbox" data-chk="a' + i + '"' + (S.chk["a" + i] ? " checked" : "") + '> ' + esc(t) + '</label></li>').join("");
+}
+
+function setPresent(on){
+  S.present = on; save();
+  document.body.classList.toggle("present", on);
+  const b = $("#present"); b.classList.toggle("on", on); b.textContent = on ? "Präsentation beenden" : "Präsentationsmodus";
+  catSel = "Alle"; $("#search").value = "";
+  $("#brand-t").textContent = on ? (val("name") || "Existenzgründung") : "Gesprächsnavigator Existenzgründung";
+  $("#brand-s").textContent = on ? "TYPO3-Websites · Fragen und Antworten zum Gründungsvorhaben" : "Telefonat und Termin im Jobcenter · Stand Oktober 2026";
+  rSel = null;
+  show(on ? "ov" : (["ov"].includes(S.view) ? "prep" : S.view));
+}
+/* ---------- Ereignisse ---------- */
+document.addEventListener("click", e => {
+  const t = e.target.closest("button, li[data-step], #theme"); if (!t) return;
+  if (t.id === "theme") e.preventDefault();
+  if (t.dataset.view) return show(t.dataset.view);
+  if (t.dataset.go) return show(t.dataset.go);
+  if (t.dataset.ans) return choose(t.dataset.ans);
+  if (t.hasAttribute("data-next")) return next();
+  if (t.hasAttribute("data-back")) return back();
+  if (t.hasAttribute("data-finish")) return next();
+  if (t.dataset.step !== undefined) { S.step = +t.dataset.step; save(); return renderCall(); }
+  if (t.dataset.r) { rSel = rSel === t.dataset.r ? null : t.dataset.r; if (rSel) logRight(rSel); renderRights(); const c = $("#rcard"); if (c) c.scrollIntoView({behavior:"smooth", block:"start"}); return; }
+  if (t.dataset.cat) { catSel = t.dataset.cat; return renderMeet(); }
+  if (t.dataset.qaReset !== undefined) { delete S.qa[t.dataset.qaReset]; save(); return renderMeet(); }
+  if (t.id === "copy-mail") { const m = buildMail(); const txt = "Betreff: " + m.subj + "\n\n" + m.body;
+    (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(() => toast("Mail kopiert"), () => { const r = document.createRange(); r.selectNodeContents($("#mail")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); toast("Markiert – mit Strg+C kopieren"); }); return; }
+  if (t.id === "reset") { if (confirm("Alle Eingaben, Antworten und das Protokoll löschen?")) { S = blank(); save(); renderPrep(); toast("Zurückgesetzt"); } return; }
+  if (t.id === "present") { setPresent(!S.present); return; }
+  if (t.id === "theme") { const r = document.documentElement; const dark = r.dataset.theme ? r.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches; r.dataset.theme = dark ? "light" : "dark"; try { localStorage.setItem(KEY + "-theme", r.dataset.theme); } catch(e) {} }
+});
+document.addEventListener("input", e => {
+  const el = e.target;
+  if (el.dataset.field) { S.f[el.dataset.field] = el.value; save();
+    if (S.view === "call") { const say = document.querySelector("#qcard .say"); const st = STEPS[S.step]; if (say && st) { const A = st.answers.find(a => a.k === S.sel[st.id]); if (A) say.lastChild.textContent = fill(A.say); } } }
+  if (el.dataset.qaText !== undefined) { S.qa[el.dataset.qaText] = el.value; save(); }
+  if (el.id === "search") renderMeet();
+});
+document.addEventListener("change", e => {
+  const el = e.target;
+  if (el.dataset.done !== undefined) { S.done[el.dataset.done] = el.checked; save(); updateProg(); const sum = el.closest("details").querySelector("summary"); const ok = sum.querySelector(".ok"); if (el.checked && !ok) sum.insertAdjacentHTML("beforeend", '<span class="ok">✓ geübt</span>'); if (!el.checked && ok) ok.remove(); }
+  if (el.dataset.chk) { S.chk[el.dataset.chk] = el.checked; save(); }
+});
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape" && S.present && document.activeElement.id !== "search") { setPresent(false); return; }
+  if (S.view !== "call" || /INPUT|TEXTAREA/.test(document.activeElement.tagName)) return;
+  const st = STEPS[S.step];
+  if (st && /^[1-5]$/.test(e.key)) { const a = st.answers[+e.key - 1]; if (a) choose(a.k); }
+  else if (e.key === "Enter") { if (S.step >= STEPS.length) show("sum"); else next(); }
+  else if (e.key === "ArrowLeft" || e.key === "Backspace") { e.preventDefault(); back(); }
+});
+
+try { const th = localStorage.getItem(KEY + "-theme"); if (th) document.documentElement.dataset.theme = th; } catch(e) {}
+renderPrep();
+if (S.present) setPresent(true); else show(S.view || "prep");
+})();
+</script>
+</body>
+</html>

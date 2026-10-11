@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Fall-Landkarte Gründung</title>
+<meta name="description" content="Alle Wege meiner Gründung aus dem Grundsicherungsgeld: jede mögliche Antwort des Jobcenters, meine Reaktion, Fristen und die Rechtsgrundlagen mit Links.">
+<style>
+:root{
+  --bg:#f6f6f3; --surface:#fff; --surface-2:#efefea; --ink:#1d1d1b; --ink-2:#5b5b56; --line:#d8d8d0;
+  --axis:#8a8a82; --accent:#1f5fbf; --accent-soft:#e7effb;
+  --good:#1d7a4a; --good-soft:#e4f3ea; --warn:#a86500; --warn-soft:#fbf0dc; --crit:#b3261e; --crit-soft:#fbe7e5;
+  --law:#4b3a8f; --law-soft:#eeebf9; --shadow:0 1px 2px rgba(0,0,0,.05),0 4px 14px rgba(0,0,0,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#141413; --surface:#1d1d1b; --surface-2:#262624; --ink:#ecebe6; --ink-2:#a9a8a1; --line:#3a3a36;
+    --axis:#7d7d76; --accent:#7fb0ff; --accent-soft:#1d2b42;
+    --good:#6fd3a0; --good-soft:#173226; --warn:#f0b65a; --warn-soft:#3a2c14; --crit:#ff8a80; --crit-soft:#3d1c1a;
+    --law:#b6a8ff; --law-soft:#29243f; --shadow:none;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#141413; --surface:#1d1d1b; --surface-2:#262624; --ink:#ecebe6; --ink-2:#a9a8a1; --line:#3a3a36;
+  --axis:#7d7d76; --accent:#7fb0ff; --accent-soft:#1d2b42;
+  --good:#6fd3a0; --good-soft:#173226; --warn:#f0b65a; --warn-soft:#3a2c14; --crit:#ff8a80; --crit-soft:#3d1c1a;
+  --law:#b6a8ff; --law-soft:#29243f; --shadow:none;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+header.top{background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+header.top .wrap{display:flex;gap:12px;align-items:center;min-height:56px;flex-wrap:wrap}
+.brand{font-weight:650;margin-right:auto}
+.brand small{display:block;font-weight:400;font-size:12.5px;color:var(--ink-2)}
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:6px 11px;cursor:pointer;font:inherit;font-size:14px;color:var(--ink)}
+.btn:hover{border-color:var(--accent)}
+main{padding:24px 0 60px}
+h1{font-size:28px;letter-spacing:-.02em;margin:0 0 6px;line-height:1.2}
+h2{font-size:22px;margin:44px 0 6px;letter-spacing:-.01em;scroll-margin-top:72px}
+h3{font-size:17px;margin:26px 0 8px}
+.lead{color:var(--ink-2);max-width:820px;margin:0 0 16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;box-shadow:var(--shadow)}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:14px;color:var(--ink-2);margin:10px 0 0}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px;border:2px solid var(--c);background:var(--cs)}
+svg{display:block;width:100%;height:auto}
+svg text{fill:var(--ink);font-family:inherit}
+svg .q2{fill:var(--ink-2)}
+svg .node{cursor:pointer}
+svg .node:hover rect,svg .node:focus rect{stroke-width:2.5}
+svg .node:focus{outline:none}
+svg .node.sel rect.box{stroke-width:3}
+.phase-nav{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 0}
+.phase-nav a{font-size:13.5px;text-decoration:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:4px 10px;border-radius:99px}
+.qblock{margin:18px 0 26px}
+.qtitle{font-weight:650;font-size:17px;margin:0 0 6px}
+.qtitle .n{color:var(--ink-2);font-weight:600;margin-right:6px}
+.detail{margin-top:10px}
+details.ans{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--c);border-radius:10px;margin:8px 0;scroll-margin-top:72px}
+details.ans summary{cursor:pointer;padding:10px 14px;font-weight:600;list-style:none}
+details.ans summary::-webkit-details-marker{display:none}
+details.ans summary .tag{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--c);margin-right:8px}
+details.ans[open] summary{border-bottom:1px solid var(--line)}
+details.ans .b{padding:12px 16px 14px}
+.say{background:var(--accent-soft);border-left:4px solid var(--accent);border-radius:8px;padding:10px 14px;margin:0 0 10px}
+.say b{display:block;font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);margin-bottom:2px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:4px 12px;margin:4px 0;font-size:15px}
+.row .k{color:var(--ink-2);font-size:13.5px;padding-top:1px}
+.laws{display:grid;gap:8px;margin-top:10px}
+.law{border:1px solid var(--line);border-radius:9px;padding:8px 12px;background:var(--surface)}
+.law .h{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}
+.chip{font-size:12.5px;font-weight:700;color:var(--law);background:var(--law-soft);border-radius:6px;padding:1px 8px}
+.law .nm{font-weight:600;font-size:14.5px}
+.law .lk{margin-left:auto;font-size:13px}
+.law blockquote{margin:6px 0 0;padding-left:10px;border-left:3px solid var(--law-soft);font-size:14.5px}
+.law .kurz{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-2);margin-right:4px}
+table.t{width:100%;border-collapse:collapse;font-size:15px}
+table.t th,table.t td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+table.t th{font-size:12.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-2)}
+footer{border-top:1px solid var(--line);color:var(--ink-2);font-size:13px;padding:18px 0 30px}
+@media (max-width:700px){ .row{grid-template-columns:1fr} h1{font-size:23px} table.t{font-size:13.5px} table.t th,table.t td{padding:6px 6px} }
+@media print{
+  header.top,.phase-nav,.btn{display:none!important}
+  body{background:#fff}
+  details.ans{break-inside:avoid}
+  details.ans .b{display:block!important}
+  .card{box-shadow:none}
+}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <div class="brand">Fall-Landkarte: Gründung aus dem Grundsicherungsgeld<small>TYPO3-Webentwicklung · Einstiegsgeld nach § 16b und Zuschuss 2.350 € nach § 16c SGB II · Rechtsstand 01.07.2026</small></div>
+  <button class="btn" id="all">Alle Antworten aufklappen</button>
+  <button class="btn" onclick="window.print()">Drucken</button>
+  <button class="btn" id="theme">Hell/Dunkel</button>
+</div></header>
+
+<main class="wrap">
+  <h1>Alle Wege einer Gründung aus dem Grundsicherungsgeld, jede mögliche Antwort, jede Frist</h1>
+  <p class="lead">Neun Stationen vom Antrag bis zum Ausstieg aus dem Grundsicherungsgeld. Jede Station hat Fragen, jede Frage alle realistischen Antworten des Jobcenters (oder des Verlaufs). Ein Klick auf ein Kästchen öffnet: was ich sage, was als Nächstes passiert, welche Frist läuft und das Gesetz im Wortlaut mit Link.</p>
+  <div class="card" style="border-left:5px solid var(--accent);margin:0 0 14px"><b>Beispiel:</b> Gründung als Webentwickler (TYPO3) aus dem Grundsicherungsgeld, beantragt werden Einstiegsgeld (§ 16b SGB II) und ein Zuschuss für Arbeitsmittel über 2.350 € (§ 16c SGB II). Zahlen und Formulierungen sind Beispiele; die Rechtsgrundlagen und Fristen gelten für alle. Interaktive Fassung mit Telefon-Entscheidungsbaum, Fragenkatalog und Rechte-Karten: <a href="./">Gesprächsnavigator</a>.</div>
+  <div class="legend">
+    <span style="--c:var(--good);--cs:var(--good-soft)">gut für mich</span>
+    <span style="--c:var(--axis);--cs:var(--surface)">neutral, weiter</span>
+    <span style="--c:var(--warn);--cs:var(--warn-soft)">Umweg, handeln</span>
+    <span style="--c:var(--crit);--cs:var(--crit-soft)">kritisch, Frist läuft</span>
+  </div>
+
+  <h2 id="ueberblick">Überblick</h2>
+  <p class="lead">Der Hauptweg läuft von links nach rechts. Nach unten zweigt der Rechtsweg ab, wenn ein Bescheid nicht passt. Ein Klick auf eine Station springt dorthin.</p>
+  <div class="card" id="overview"></div>
+  <div class="phase-nav" id="pnav"></div>
+
+  <div id="phases"></div>
+
+  <h2 id="fristen">Fristen auf einen Blick</h2>
+  <p class="lead">Alle Fristen, die in meinem Fall laufen können, ab dem auslösenden Ereignis. Zeitachse nicht maßstäblich.</p>
+  <div class="card" id="timeline"></div>
+  <div class="card" style="margin-top:12px;overflow-x:auto"><table class="t" id="ftable"></table></div>
+
+  <h2 id="gesetze">Alle Rechtsgrundlagen</h2>
+  <p class="lead">Wörtliches steht in Anführungszeichen; „Kurzfassung“ markiert sinngemäße Wiedergaben. SGB II in der Fassung des Dreizehnten Änderungsgesetzes vom 16.04.2026 (BGBl. I Nr. 107), in Kraft seit 01.07.2026; Normtexte geprüft am 11.10.2026 über dejure.org.</p>
+  <div class="laws" id="lawlist"></div>
+</main>
+
+<footer><div class="wrap">Persönliche Arbeitshilfe, keine Rechtsberatung. Für Streitfälle: Sozialberatung (z. B. ver.di Erwerbslosenberatung, Tacheles e.V.) oder Fachanwalt für Sozialrecht; das Verfahren vor dem Sozialgericht ist für Leistungsempfänger kostenfrei (§ 183 SGG). Beispielzahlen einer Gründung als Webentwickler, Stand Oktober 2026.</div></footer>
+
+<script>
+(() => {
+"use strict";
+const G = "https://www.gesetze-im-internet.de/", D = "https://dejure.org/gesetze/";
+const L = {
+ sgb1_14:{t:"§ 14 SGB I",n:"Beratung",u:G+"sgb_1/__14.html",d:D+"SGB_I/14.html",q:"Jeder hat Anspruch auf Beratung über seine Rechte und Pflichten nach diesem Gesetzbuch."},
+ sgb1_16:{t:"§ 16 Abs. 2, 3 SGB I",n:"Antragstellung",u:G+"sgb_1/__16.html",d:D+"SGB_I/16.html",q:"Ist die Sozialleistung von einem Antrag abhängig, gilt der Antrag als zu dem Zeitpunkt gestellt, in dem er bei einer der in Satz 1 genannten Stellen eingegangen ist. […] Die Leistungsträger sind verpflichtet, darauf hinzuwirken, dass unverzüglich klare und sachdienliche Anträge gestellt und unvollständige Angaben ergänzt werden."},
+ sgb1_17:{t:"§ 17 Abs. 1 SGB I",n:"Zügige Leistung",u:G+"sgb_1/__17.html",d:D+"SGB_I/17.html",k:"Die Leistungsträger müssen darauf hinwirken, dass Berechtigte die ihnen zustehenden Leistungen umfassend und zügig erhalten."},
+ sgb1_39:{t:"§ 39 Abs. 1 SGB I",n:"Ermessen",u:G+"sgb_1/__39.html",d:D+"SGB_I/39.html",q:"Auf pflichtgemäße Ausübung des Ermessens besteht ein Anspruch."},
+ sgb1_60:{t:"§ 60 Abs. 1 SGB I",n:"Mitwirkung",u:G+"sgb_1/__60.html",d:D+"SGB_I/60.html",k:"Wer Sozialleistungen erhält, muss alle leistungserheblichen Tatsachen angeben und Änderungen unverzüglich mitteilen."},
+ sgb2_10:{t:"§ 10 Abs. 2 Nr. 5 SGB II",n:"Zumutbarkeit bei Selbständigen",u:G+"sgb_2/__10.html",d:D+"SGB_II/10.html",q:"[Eine Arbeit ist nicht allein deshalb unzumutbar, weil] sie mit der Beendigung einer Erwerbstätigkeit verbunden ist, es sei denn, es liegen begründete Anhaltspunkte vor, dass durch die bisherige Tätigkeit künftig die Hilfebedürftigkeit beendet werden kann; bei Leistungsberechtigten, die selbstständig tätig sind, wird spätestens nach einem Jahr ununterbrochenen Leistungsbezuges geprüft, ob ein Verweis auf eine Beschäftigung zumutbar ist."},
+ sgb2_10a:{t:"§ 10 Abs. 1, Abs. 2 Nr. 1 SGB II",n:"Zumutbare Arbeit",u:G+"sgb_2/__10.html",d:D+"SGB_II/10.html",q:"[Unzumutbar ist eine Arbeit, wenn die Person] zu der bestimmten Arbeit körperlich, geistig oder seelisch nicht in der Lage ist, […] [oder] der Ausübung der Arbeit ein sonstiger wichtiger Grund entgegensteht. […] [Nicht unzumutbar ist sie allein deshalb, weil] sie nicht einer früheren beruflichen Tätigkeit entspricht, für die die erwerbsfähige leistungsberechtigte Person ausgebildet ist."},
+ sgb2_11b:{t:"§ 11b Abs. 2, 3 SGB II",n:"Freibeträge bei Erwerbseinkommen",u:G+"sgb_2/__11b.html",d:D+"SGB_II/11b.html",k:"100 € Grundabsetzungsbetrag; vom Teil über 100 bis 520 € bleiben 20 %, von 520 bis 1.000 € 30 %, von 1.000 bis 1.200 € 10 % frei (mit Kind bis 1.500 €). Höchstens 348 € im Monat ohne Kind."},
+ sgb2_12:{t:"§ 12 Abs. 2 SGB II",n:"Vermögen",u:G+"sgb_2/__12.html",d:D+"SGB_II/12.html",k:"Freibetrag pro Person: 5.000 € bis zum vollendeten 30. Lebensjahr, 10.000 € ab dem 31., 12.500 € ab dem 41., 20.000 € ab dem 51. Lebensjahr. Die frühere allgemeine Karenzzeit für Vermögen ist entfallen."},
+ sgb2_15:{t:"§ 15 SGB II",n:"Kooperationsplan",u:G+"sgb_2/__15.html",d:D+"SGB_II/15.html",q:"Er hält das Eingliederungsziel und die wesentlichen Schritte zur Eingliederung fest. […] Die erwerbsfähige leistungsberechtigte Person erhält den Kooperationsplan in Textform."},
+ sgb2_16b:{t:"§ 16b SGB II",n:"Einstiegsgeld",u:G+"sgb_2/__16b.html",d:D+"SGB_II/16b.html",q:"Zur Überwindung von Hilfebedürftigkeit kann erwerbsfähigen Leistungsberechtigten bei Aufnahme einer sozialversicherungspflichtigen oder selbständigen Erwerbstätigkeit ein Einstiegsgeld erbracht werden, wenn dies zur Eingliederung in den allgemeinen Arbeitsmarkt erforderlich ist. […] Das Einstiegsgeld wird, soweit für diesen Zeitraum eine Erwerbstätigkeit besteht, für höchstens 24 Monate erbracht."},
+ sgb2_16c1:{t:"§ 16c Abs. 1 SGB II",n:"Darlehen und Zuschüsse für Sachgüter",u:G+"sgb_2/__16c.html",d:D+"SGB_II/16c.html",q:"… können Darlehen und Zuschüsse für die Beschaffung von Sachgütern erhalten, die für die Ausübung der selbständigen Tätigkeit notwendig und angemessen sind. Zuschüsse dürfen einen Betrag von 5 000 Euro nicht übersteigen."},
+ sgb2_16c2:{t:"§ 16c Abs. 2 SGB II",n:"Beratung und Coaching",u:G+"sgb_2/__16c.html",d:D+"SGB_II/16c.html",q:"… können durch geeignete Dritte durch Beratung oder Vermittlung von Kenntnissen und Fertigkeiten gefördert werden, wenn dies für die weitere Ausübung der selbständigen Tätigkeit erforderlich ist."},
+ sgb2_16c3:{t:"§ 16c Abs. 3 SGB II",n:"Tragfähigkeit",u:G+"sgb_2/__16c.html",d:D+"SGB_II/16c.html",q:"… nur gewährt werden, wenn zu erwarten ist, dass die selbständige Tätigkeit wirtschaftlich tragfähig ist und die Hilfebedürftigkeit … innerhalb eines angemessenen Zeitraums dauerhaft überwunden oder verringert wird. Zur Beurteilung der Tragfähigkeit … soll … die Stellungnahme einer fachkundigen Stelle verlangen."},
+ sgb2_26:{t:"§ 26 SGB II",n:"Zuschuss zur Kranken- und Pflegeversicherung",u:G+"sgb_2/__26.html",d:D+"SGB_II/26.html",k:"Freiwillig gesetzlich Versicherte erhalten einen Zuschuss zu den Beiträgen, soweit sie sonst hilfebedürftig wären oder die Beiträge nicht vom Einkommen abgesetzt werden."},
+ sgb2_31:{t:"§ 31 Abs. 1 SGB II",n:"Pflichtverletzungen",u:G+"sgb_2/__31.html",d:D+"SGB_II/31.html",q:"… die von der Agentur für Arbeit geforderten Eigenbemühungen nicht nachweisen […] sich weigern, eine zumutbare Arbeit, Ausbildung oder ein nach § 16e gefördertes Arbeitsverhältnis aufzunehmen […] Dies gilt nicht, wenn erwerbsfähige Leistungsberechtigte einen wichtigen Grund für ihr Verhalten darlegen und nachweisen."},
+ sgb2_31a:{t:"§ 31a SGB II",n:"Minderung",u:G+"sgb_2/__31a.html",d:D+"SGB_II/31a.html",q:"Bei einer Pflichtverletzung nach § 31 mindert sich das Grundsicherungsgeld um 30 Prozent des nach § 20 jeweils maßgebenden Regelbedarfs. […] Minderungen sind aufzuheben, sobald erwerbsfähige Leistungsberechtigte ihre Pflichten erfüllen oder sich nachträglich ernsthaft und nachhaltig dazu bereit erklären, diesen künftig nachzukommen. […] Abweichend von Absatz 4 Satz 1 entfällt der Leistungsanspruch in Höhe des Regelbedarfes, wenn erwerbsfähige Leistungsberechtigte eine zumutbare Arbeit nicht aufnehmen."},
+ sgb2_32:{t:"§ 32 SGB II",n:"Meldeversäumnis",u:G+"sgb_2/__32.html",d:D+"SGB_II/32.html",q:"Kommen Leistungsberechtigte trotz schriftlicher Belehrung über die Rechtsfolgen oder deren Kenntnis einer Aufforderung des zuständigen Trägers, sich bei ihm zu melden […] wiederholt nicht nach, mindert sich das Grundsicherungsgeld jeweils um 30 Prozent des für sie nach § 20 maßgebenden Regelbedarfs. Dies gilt nicht, wenn Leistungsberechtigte einen wichtigen Grund für ihr Verhalten darlegen und nachweisen. […] Der Minderungszeitraum beträgt einen Monat."},
+ sgb2_37:{t:"§ 37 SGB II",n:"Antragserfordernis",u:G+"sgb_2/__37.html",d:D+"SGB_II/37.html",q:"Leistungen nach diesem Buch werden auf Antrag erbracht. […] Leistungen nach diesem Buch werden nicht für Zeiten vor der Antragstellung erbracht."},
+ sgb2_40:{t:"§ 40 Abs. 1 SGB II",n:"Überprüfung: ein Jahr statt vier",u:G+"sgb_2/__40.html",d:D+"SGB_II/40.html",q:"… anstelle des Zeitraums von vier Jahren nach Absatz 4 Satz 1 ein Zeitraum von einem Jahr tritt."},
+ sgb2_41a:{t:"§ 41a Abs. 3, 5 SGB II",n:"Vorläufige Entscheidung, Anlage EKS",u:G+"sgb_2/__41a.html",d:D+"SGB_II/41a.html",k:"Nach Ablauf des Bewilligungszeitraums sind die nötigen Tatsachen nachzuweisen. Für Monate ohne fristgemäßen Nachweis wird festgestellt, dass kein Anspruch bestand. Nachweise, die nach Abschluss des Verwaltungsverfahrens eingehen (spätestens nach Bekanntgabe des Widerspruchsbescheides), werden nicht mehr berücksichtigt. Ohne abschließende Entscheidung innerhalb eines Jahres gelten die vorläufigen Leistungen als festgesetzt."},
+ sgb10_9:{t:"§ 9 SGB X",n:"Nichtförmlichkeit",u:G+"sgb_10/__9.html",d:D+"SGB_X/9.html",q:"Das Verwaltungsverfahren ist an bestimmte Formen nicht gebunden, soweit keine besonderen Rechtsvorschriften für die Form des Verfahrens bestehen."},
+ sgb10_13:{t:"§ 13 Abs. 4 SGB X",n:"Beistand",u:G+"sgb_10/__13.html",d:D+"SGB_X/13.html",q:"Ein Beteiligter kann zu Verhandlungen und Besprechungen mit einem Beistand erscheinen. Das von dem Beistand Vorgetragene gilt als von dem Beteiligten vorgebracht, soweit dieser nicht unverzüglich widerspricht."},
+ sgb10_25:{t:"§ 25 SGB X",n:"Akteneinsicht",u:G+"sgb_10/__25.html",d:D+"SGB_X/25.html",k:"Beteiligte dürfen die Verfahrensakten einsehen, soweit das zur Wahrung ihrer rechtlichen Interessen erforderlich ist."},
+ sgb10_33:{t:"§ 33 Abs. 2 SGB X",n:"Schriftliche Bestätigung",u:G+"sgb_10/__33.html",d:D+"SGB_X/33.html",q:"Ein mündlicher Verwaltungsakt ist schriftlich oder elektronisch zu bestätigen, wenn hieran ein berechtigtes Interesse besteht und der Betroffene dies unverzüglich verlangt."},
+ sgb10_35:{t:"§ 35 SGB X",n:"Begründung",u:G+"sgb_10/__35.html",d:D+"SGB_X/35.html",k:"Ein schriftlicher Verwaltungsakt ist zu begründen; bei Ermessensentscheidungen müssen die Gesichtspunkte erkennbar sein, von denen die Behörde ausgegangen ist."},
+ sgb10_44:{t:"§ 44 SGB X",n:"Überprüfungsantrag",u:G+"sgb_10/__44.html",d:D+"SGB_X/44.html",q:"Soweit sich im Einzelfall ergibt, dass bei Erlass eines Verwaltungsaktes das Recht unrichtig angewandt … [ist er zurückzunehmen]. Im übrigen ist ein rechtswidriger nicht begünstigender Verwaltungsakt, auch nachdem er unanfechtbar geworden ist, … [zurückzunehmen]."},
+ sgg66:{t:"§ 66 SGG",n:"Fehlende Rechtsbehelfsbelehrung",u:G+"sgg/__66.html",d:D+"SGG/66.html",k:"Fehlt die Rechtsbehelfsbelehrung oder ist sie falsch, läuft statt eines Monats grundsätzlich ein Jahr ab Bekanntgabe."},
+ sgg84:{t:"§ 84 Abs. 1 SGG",n:"Widerspruchsfrist",u:G+"sgg/__84.html",d:D+"SGG/84.html",q:"Der Widerspruch ist binnen eines Monats, nachdem der Verwaltungsakt dem Beschwerten bekanntgegeben worden ist, … einzureichen."},
+ sgg86b:{t:"§ 86b Abs. 2 SGG",n:"Eilverfahren",u:G+"sgg/__86b.html",d:D+"SGG/86b.html",k:"Das Sozialgericht kann eine einstweilige Anordnung erlassen, wenn sonst wesentliche Nachteile drohen. Bei Ermessensleistungen wie dem Einstiegsgeld nur mit Beratung versuchen."},
+ sgg87:{t:"§ 87 SGG",n:"Klagefrist",u:G+"sgg/__87.html",d:D+"SGG/87.html",q:"Die Klage ist binnen eines Monats nach Bekanntgabe des Verwaltungsaktes zu erheben. […] Hat ein Vorverfahren stattgefunden, so beginnt die Frist mit der Bekanntgabe des Widerspruchsbescheids."},
+ sgg88:{t:"§ 88 SGG",n:"Untätigkeitsklage",u:G+"sgg/__88.html",d:D+"SGG/88.html",k:"Bleibt ein Antrag ohne zureichenden Grund unbeschieden, ist Klage nach sechs Monaten zulässig; bei einem nicht beschiedenen Widerspruch nach drei Monaten."},
+ sgg183:{t:"§ 183 SGG",n:"Kostenfreiheit",u:G+"sgg/__183.html",d:D+"SGG/183.html",q:"Das Verfahren vor den Gerichten der Sozialgerichtsbarkeit ist für Versicherte, Leistungsempfänger … kostenfrei, soweit sie in dieser jeweiligen Eigenschaft als Kläger oder Beklagte beteiligt sind."},
+ gewo14:{t:"§ 14 GewO",n:"Gewerbeanzeige",u:G+"gewo/__14.html",d:D+"GewO/14.html",k:"Wer ein Gewerbe beginnt, muss dies gleichzeitig der zuständigen Behörde anzeigen."},
+ ao138:{t:"§ 138 Abs. 1, 4 AO",n:"Anzeige beim Finanzamt",u:G+"ao_1977/__138.html",d:D+"AO/138.html",q:"Mitteilungen nach den Absätzen 1, 1a und 1b sind innerhalb eines Monats nach dem meldepflichtigen Ereignis zu erstatten."},
+ ustg19:{t:"§ 19 UStG",n:"Kleinunternehmer",u:G+"ustg_1980/__19.html",d:D+"UStG/19.html",k:"Keine Umsatzsteuer, wenn der Umsatz im Vorjahr höchstens 25.000 € und im laufenden Jahr höchstens 100.000 € beträgt."},
+ ustg13b:{t:"§ 13b UStG",n:"Reverse-Charge",u:G+"ustg_1980/__13b.html",d:D+"UStG/13b.html",k:"Für Leistungen ausländischer Unternehmen (z. B. Cloud- und KI-Dienste aus Irland) schuldet der deutsche Leistungsempfänger die Umsatzsteuer, auch als Kleinunternehmer."}
+};
+
+/* kind: g = gut, n = neutral, w = Umweg/handeln, k = kritisch */
+const PH = [
+{id:"p1", nr:1, t:"Antrag stellen", s:"vor allem anderen", qs:[
+ {q:"Wie stelle ich den Antrag auf Einstiegsgeld und Zuschuss?", a:[
+  {k:"g", t:"Nachricht über jobcenter.digital", s:"mit Eingangsbestätigung",
+   say:"Hiermit beantrage ich formlos Einstiegsgeld nach § 16b SGB II und einen Zuschuss für Arbeitsmittel nach § 16c Abs. 1 SGB II über 2.350 €. Mit der Tätigkeit habe ich noch nicht begonnen.",
+   next:"Eingangsbestätigung speichern. Ab diesem Tag gilt der Antrag als gestellt.", frist:"Keine; aber unbedingt vor dem ersten Auftrag.", laws:["sgb2_37","sgb10_9","sgb1_16"]},
+  {k:"g", t:"Brief persönlich abgeben", s:"Kopie mit Eingangsstempel",
+   say:"Ich gebe meinen Antrag ab. Bitte stempeln Sie mir die Kopie mit dem Eingangsdatum.",
+   next:"Kopie mit Stempel aufbewahren.", frist:"Wie oben.", laws:["sgb2_37","sgb1_16"]},
+  {k:"n", t:"E-Mail", s:"Zugang schwer nachweisbar",
+   say:"Gleicher Text wie oben, mit der Bitte um Eingangsbestätigung.",
+   next:"Ohne Antwort binnen einer Woche zusätzlich über jobcenter.digital senden.", frist:"Wie oben.", laws:["sgb2_37","sgb10_9"]},
+  {k:"k", t:"Erst gründen, später beantragen", s:"Förderung meist verloren",
+   say:"Nicht so machen.",
+   next:"Leistungen gibt es nicht für Zeiten vor der Antragstellung. Einstiegsgeld setzt voraus, dass die Tätigkeit noch nicht hauptberuflich begonnen hat.", frist:"–", laws:["sgb2_37","sgb2_16b"]}
+ ]}
+]},
+{id:"p2", nr:2, t:"Telefonat", s:"Termin, Antragsdatum sichern", qs:[
+ {q:"Wer nimmt ab?", a:[
+  {k:"g", t:"Die zuständige Ansprechperson", s:"weiter mit Zeitfrage", say:"Guten Tag, hier ist [Name], BG-Nummer [Nummer]. Ich habe Ihnen am [Datum] geschrieben, es geht um meine geplante Selbständigkeit. Haben Sie fünf Minuten?", next:"Namen der Person notieren.", frist:"–", laws:["sgb1_14"]},
+  {k:"w", t:"Service-Center / Hotline", s:"Rückrufbitte", say:"Ich bitte um Rückruf zu meiner Existenzgründung und meinem Antrag vom [Datum]; erreichbar unter [Telefon].", next:"Nach einer Woche ohne Rückruf schriftlich nachfassen.", frist:"1 Woche (eigene Regel)", laws:["sgb1_14"]},
+  {k:"w", t:"Mailbox / niemand erreichbar", s:"kurze Nachricht", say:"Name, BG-Nummer, Rückrufnummer, Thema Existenzgründung.", next:"Dieselbe Bitte sofort über jobcenter.digital senden.", frist:"–", laws:["sgb1_16"]}
+ ]},
+ {q:"Hat die Person Zeit?", a:[
+  {k:"g", t:"Ja", s:"Kernbotschaft", say:"Ich bin seit über zehn Jahren TYPO3-Entwickler, mein Businessplan ist fertig, ab dem zweiten Jahr decke ich meinen Lebensunterhalt selbst. Ich möchte das mit Ihnen gemeinsam angehen.", next:"Eine Minute reden, dann zuhören.", frist:"–", laws:[]},
+  {k:"w", t:"Nein, jetzt nicht", s:"Rückruftermin", say:"Wann darf ich Sie erreichen? Ich bestätige den Termin schriftlich.", next:"Konkreten Tag und Uhrzeit festmachen.", frist:"–", laws:["sgb1_14"]},
+  {k:"w", t:"„Dafür bin ich nicht zuständig“", s:"Weiterleitung verlangen", say:"Bitte leiten Sie meinen Antrag an die zuständige Stelle weiter und nennen Sie mir Namen und Durchwahl.", next:"Der Antrag gilt ab Eingang beim ersten Ansprechpartner als gestellt.", frist:"–", laws:["sgb1_16","sgb1_14"]}
+ ]},
+ {q:"Wie reagiert die Person auf die Kernbotschaft?", a:[
+  {k:"g", t:"Interessiert", s:"auf Termin lenken", say:"Die Einzelheiten stehen im Businessplan; ich stelle ihn gern persönlich vor.", next:"Weiter zur Terminfrage.", frist:"–", laws:[]},
+  {k:"n", t:"„Bewerben Sie sich lieber“ / „Gehen Sie Kisten packen“", s:"parallel ja, Antrag trotzdem entscheiden", say:"Ich bewerbe mich gern parallel in einem vereinbarten Umfang. Das Gesetz sieht die Förderung einer selbständigen Tätigkeit ausdrücklich vor, wenn sie tragfähig ist.", next:"Umfang später im Kooperationsplan festhalten.", frist:"–", laws:["sgb2_16b","sgb2_16c3","sgb2_15"]},
+  {k:"n", t:"„Haben Sie schon angefangen?“", s:"nein, vorbereitet", say:"Nein. Ich bereite vor und starte erst, wenn die Förderung geklärt ist.", next:"Wahrheitsgemäß bleiben; Planen ist kein Beginn, Rechnungen wären es.", frist:"–", laws:["sgb2_37","sgb1_60"]},
+  {k:"n", t:"Fragen zu KI oder Kunden", s:"Fachwissen vorn", say:"Die Werkzeuge übernehmen Routinearbeit; jede Auslieferung prüfe und gebe ich frei. Aufträge nehme ich erst nach der Gewerbeanmeldung an.", next:"Weiter zur Terminfrage.", frist:"–", laws:["gewo14"]}
+ ]},
+ {q:"Bekomme ich einen persönlichen Termin?", a:[
+  {k:"g", t:"Ja, Termin vereinbart", s:"notieren", say:"Ich notiere Datum, Uhrzeit und Ort und bringe den Businessplan mit. Darf eine Begleitung mitkommen?", next:"Termin bestätigen; Beistand ist Ihr Recht.", frist:"Termin wahrnehmen", laws:["sgb10_13","sgb2_32"]},
+  {k:"w", t:"„Schicken Sie alles per Post“", s:"kurze Vorstellung anbieten", say:"Gern schicke ich den Plan. Ein kurzer Termin oder ein Videogespräch würde Rückfragen sparen.", next:"Sonst Plan über jobcenter.digital, Eingangsbestätigung speichern.", frist:"–", laws:["sgb1_14"]},
+  {k:"n", t:"Termin erst in Wochen", s:"Antragsdatum sichern", say:"Das passt. Mein Antrag gilt trotzdem ab [Datum], richtig?", next:"Weiter zur Antragsfrage.", frist:"–", laws:["sgb2_37","sgb1_17"]}
+ ]},
+ {q:"Gilt der Antrag ab dem Datum meiner Nachricht?", a:[
+  {k:"g", t:"Ja, bestätigt", s:"notieren", say:"Danke, dann gilt mein Antrag ab [Datum].", next:"Name und Uhrzeit notieren, in die Zusammenfassung schreiben.", frist:"–", laws:["sgb2_37"]},
+  {k:"w", t:"„Erst mit Formular“", s:"Formular ergänzt nur", say:"Ich fülle das Formular gern aus. Mein formloser Antrag vom [Datum] gilt aber; das Verfahren ist an keine Form gebunden.", next:"Formular anfordern; Rechtslage steht in der Zusammenfassung.", frist:"–", laws:["sgb10_9","sgb1_16","sgb2_37"]},
+  {k:"n", t:"Keine klare Antwort", s:"schriftlich klären", say:"Ich fasse das Gespräch gleich schriftlich zusammen.", next:"In der Mail um Bestätigung bitten.", frist:"–", laws:["sgb1_16"]}
+ ]},
+ {q:"Was sagt die Person am Telefon zur Förderung?", a:[
+  {k:"g", t:"Wird geprüft", s:"Zeitraum erfragen", say:"Bis wann ungefähr kann ich mit einer Entscheidung rechnen?", next:"Zeitraum notieren.", frist:"–", laws:["sgb1_17"]},
+  {k:"k", t:"Mündliche Absage", s:"schriftlich verlangen", say:"Bitte schicken Sie mir die Entscheidung mit Begründung schriftlich.", next:"Die Bestätigung muss man sofort verlangen. Gegen den Bescheid: Widerspruch.", frist:"Bestätigung unverzüglich verlangen", laws:["sgb10_33","sgb10_35","sgb1_39"]},
+  {k:"n", t:"Erst Kurs oder Maßnahme", s:"schriftlich", say:"Ein Gründungscoaching nehme ich gern an; bitte schicken Sie mir den Vorschlag schriftlich.", next:"Nichts am Telefon zusagen.", frist:"–", laws:["sgb2_16c2","sgb2_15"]},
+  {k:"n", t:"Fragen zu Ersparnissen", s:"kurz, wahr", say:"Meine Vermögensverhältnisse haben sich nicht geändert; Nachweise bringe ich zum Termin.", next:"Freibetrag nach Alter vorher prüfen.", frist:"–", laws:["sgb2_12","sgb1_60"]}
+ ]},
+ {q:"Welche Unterlagen werden gebraucht?", a:[
+  {k:"g", t:"Liste erhalten", s:"wiederholen", say:"Ich wiederhole: [Unterlagen]. Habe ich etwas vergessen?", next:"Zusammenfassung binnen einer Stunde senden.", frist:"Mail innerhalb 1 Stunde (eigene Regel)", laws:["sgb1_16"]},
+  {k:"n", t:"Unklar / „kommt per Post“", s:"schriftlich erbitten", say:"Können Sie mir Liste und Formulare über jobcenter.digital schicken?", next:"In der Zusammenfassung erneut erbitten.", frist:"–", laws:["sgb1_16","sgb1_14"]},
+  {k:"n", t:"Tragfähigkeit nötig", s:"IHK", say:"Welche Stelle akzeptieren Sie? Ich würde die IHK Berlin anfragen.", next:"IHK-Gründungsberatung buchen.", frist:"–", laws:["sgb2_16c3"]}
+ ]}
+]},
+{id:"p3", nr:3, t:"Termin im Jobcenter", s:"Vorstellung mit Laptop, 45 Minuten", qs:[
+ {q:"Erstes Gespräch (auch nach einem Wechsel der Ansprechperson): Wie tritt sie auf?", a:[
+  {k:"g", t:"Offen, neugierig", s:"Überblick zeigen", say:"Danke, dass Sie sich Zeit nehmen. Ich zeige Ihnen mein Vorhaben auf einer Seite und dann die Zahlen.", next:"Präsentationsmodus: Überblick.", frist:"–", laws:[]},
+  {k:"n", t:"„Ich kenne Ihren Fall noch nicht“", s:"Kurzfassung", say:"Kurz gesagt: zehn Jahre TYPO3, Antrag auf Einstiegsgeld und 2.350 € für Arbeitsmittel, ab Monat 13 bis 15 ohne Grundsicherungsgeld. Alles steht in Anlage 2.", next:"Anlage 2 übergeben.", frist:"–", laws:["sgb2_16b","sgb2_16c1"]},
+  {k:"w", t:"„Ihr Vorgänger hat notiert …“", s:"eigenes Bild erbitten", say:"Den Vermerk kenne ich nicht und würde ihn gern lesen. Bitte machen Sie sich anhand meiner Unterlagen ein eigenes Bild.", next:"Akteneinsicht nur, wenn der Vermerk die Entscheidung beeinflusst. Alten Konflikt nicht ansprechen.", frist:"–", laws:["sgb10_25","sgb1_39"]},
+  {k:"n", t:"„Ich muss mich erst einarbeiten“", s:"Zeitraum erfragen", say:"Selbstverständlich. Bis wann ungefähr können wir über meinen Antrag sprechen?", next:"Unterlagen dalassen, Zeitraum notieren; Antrag gilt weiter ab dem ersten Eingang.", frist:"–", laws:["sgb1_17","sgb2_37"]}
+ ]},
+ {q:"Wie beginnt das Gespräch?", a:[
+  {k:"g", t:"Offen", s:"Ablauf vorschlagen", say:"Ich schlage 45 Minuten vor: Vorhaben, Zahlen, Ihre Fragen, nächste Schritte.", next:"Anlagen 1–3 übergeben, Präsentationsmodus öffnen.", frist:"–", laws:[]},
+  {k:"w", t:"„Machen Sie es kurz“", s:"2-Minuten-Fassung", say:"Zehn Jahre TYPO3, fertiger Plan, Antrag auf Einstiegsgeld und 2.350 € für Arbeitsmittel, ab Monat 13 bis 15 ohne Grundsicherungsgeld. Die Unterlagen lasse ich Ihnen da.", next:"Fragen, bis wann entschieden wird.", frist:"–", laws:["sgb1_17"]},
+  {k:"n", t:"„Selbständige bleiben oft im Leistungsbezug“", s:"Kontrollpunkte anbieten", say:"Deshalb biete ich monatliche Kurzberichte, einen Frühwarnpunkt nach sechs Monaten und die gesetzliche Prüfung nach einem Jahr an.", next:"Zusagen (Anlage 3) zeigen.", frist:"–", laws:["sgb2_10","sgb2_16c3"]},
+  {k:"w", t:"„Nicht zuständig, das macht das Team Selbständige“", s:"Termin dort", say:"Können wir direkt dort einen Termin vereinbaren? Mein Antrag liegt seit [Datum] vor.", next:"Kontakt notieren.", frist:"–", laws:["sgb1_16"]},
+  {k:"w", t:"„Ihre Begleitung muss draußen warten“", s:"Beistand ist erlaubt", say:"Ich habe das Recht, mit einem Beistand zu erscheinen.", next:"Ruhig bleiben, Gespräch fortsetzen.", frist:"–", laws:["sgb10_13"]}
+ ]},
+ {q:"Wie reagiert die Person auf das Vorhaben?", a:[
+  {k:"g", t:"Versteht es", s:"weiter zu den Zahlen", say:"Dann zeige ich Ihnen die Zahlen.", next:"Weiter.", frist:"–", laws:[]},
+  {k:"n", t:"„Was ist TYPO3?“", s:"einfach erklären", say:"Ein Redaktionssystem für Websites wie WordPress, verbreitet bei Mittelstand, Hochschulen und Verwaltung. Ich zeige Ihnen ein Beispiel.", next:"Beispiel-Website zeigen.", frist:"–", laws:[]},
+  {k:"n", t:"„Ersetzt die KI nicht Sie?“", s:"Werkzeug, nicht Ersatz", say:"Wie ein Tischler mit einer guten Maschine: Die Maschine sägt schneller, aber was gebaut wird und ob es hält, entscheide ich. Darum kann ich günstiger sein als eine Agentur.", next:"Keine Fachwörter; eine fertige Website zeigen.", frist:"–", laws:[]},
+  {k:"n", t:"„Davon verstehe ich nichts“", s:"muss er auch nicht", say:"Das müssen Sie auch nicht. Bewerten Sie bitte das Ergebnis: hier eine fertige Website und meine Zahlen. Ob das Vorhaben trägt, prüft die IHK als fachkundige Stelle; so sieht es das Gesetz vor.", next:"Fachliche Bewertung an die IHK geben, nicht im Gespräch erstreiten.", frist:"–", laws:["sgb2_16c3"]},
+  {k:"n", t:"Zweifel an der Eignung", s:"Erfahrung + Coaching", say:"Fachlich bringe ich über zehn Jahre Erfahrung mit; für das Kaufmännische nehme ich gern ein Coaching an.", next:"Lebenslauf zeigen.", frist:"–", laws:["sgb2_16c2"]}
+ ]},
+ {q:"Wie reagiert die Person auf die Zahlen?", a:[
+  {k:"g", t:"Nachvollziehbar", s:"weiter", say:"Danke. Dann zu meinem Antrag.", next:"Weiter.", frist:"–", laws:[]},
+  {k:"n", t:"„Zu optimistisch“", s:"vorsichtige Annahmen", say:"Nur fünf Websites im ersten Jahr, Einnahmen erst beim Livegang gebucht. Selbst mit halbem Umsatz bleibt ein Gewinn von rund 8.600 € im ersten Jahr, die Fixkosten liegen bei 220 € im Monat.", next:"Liquiditätsplan zeigen.", frist:"–", laws:[]},
+  {k:"n", t:"Stellungnahme eines Dritten nötig", s:"IHK", say:"Die Stellungnahme der IHK Berlin ist angefragt bzw. liegt bei.", next:"Nachreichen, falls noch offen.", frist:"vereinbaren", laws:["sgb2_16c3"]},
+  {k:"n", t:"Fragen zu Ausgaben (KI, Laptop)", s:"belegen", say:"KI rund 30 € im Monat plus 60 € pro Website, pro Projekt protokolliert. Der jetzige Laptop hat zu wenig Arbeitsspeicher; Kostenvoranschläge liegen bei.", next:"Belege zeigen.", frist:"–", laws:["sgb2_16c1","sgb2_41a"]}
+ ]},
+ {q:"Was sagt die Person zum Einstiegsgeld?", a:[
+  {k:"g", t:"Grundsätzlich ja", s:"Höhe, Dauer, Bescheid", say:"Danke. Wie hoch, für wie lange, und wann bekomme ich den Bescheid?", next:"Weiter zum Zuschuss.", frist:"–", laws:["sgb2_16b"]},
+  {k:"n", t:"Ja, zunächst 6 Monate", s:"Kriterien erfragen", say:"Einverstanden. Woran messen Sie nach sechs Monaten, ob es weitergeht?", next:"Kriterien in den Kooperationsplan.", frist:"Verlängerung rechtzeitig beantragen", laws:["sgb2_16b","sgb2_15"]},
+  {k:"n", t:"Erst Coaching oder Seminar", s:"parallel prüfen", say:"Gern. Bitte prüfen Sie den Antrag parallel weiter, damit ich danach ohne Lücke starten kann.", next:"Vorschlag schriftlich geben lassen.", frist:"–", laws:["sgb2_16c2","sgb2_15"]},
+  {k:"w", t:"„Fangen Sie nebenberuflich an“", s:"hauptberuflich begründen", say:"Nur hauptberuflich erreiche ich die Umsätze aus dem Plan; nebenberuflich bliebe ich länger im Leistungsbezug. Bitte entscheiden Sie über die hauptberufliche Gründung.", next:"Entscheidung schriftlich.", frist:"–", laws:["sgb2_16b","sgb2_16c3","sgb2_11b"]},
+  {k:"k", t:"„Dafür ist kein Geld da“", s:"schriftlich", say:"Bitte halten Sie die Entscheidung mit dieser Begründung schriftlich fest. Ab wann wäre es wieder möglich?", next:"Bescheid abwarten, Begründung prüfen lassen.", frist:"Widerspruch 1 Monat ab Bescheid", laws:["sgb10_35","sgb1_39","sgg84"]},
+  {k:"k", t:"Ablehnung", s:"schriftlich, begründet", say:"Ich nehme das zur Kenntnis. Bitte schicken Sie mir die Entscheidung schriftlich mit Begründung.", next:"Station 5: Rechtsweg.", frist:"Widerspruch 1 Monat ab Bescheid", laws:["sgb10_33","sgb10_35","sgb1_39","sgg84"]}
+ ]},
+ {q:"„Gehen Sie lieber Kisten packen“: Was ist es genau?", a:[
+  {k:"n", t:"Nur so dahingesagt", s:"kein Stellenangebot", say:"Ich verstehe den Gedanken. Ich habe aber einen konkreten Plan, der mich schneller ganz unabhängig macht als eine Helferstelle. Bitte entscheiden Sie zuerst über meinen Antrag; Bewerbungen parallel vereinbare ich gern.", next:"Ruhig bleiben, nicht beleidigt wirken. Antrag ist gestellt und muss entschieden werden.", frist:"–", laws:["sgb2_37","sgb1_39","sgb2_15"]},
+  {k:"k", t:"Schriftlicher Vermittlungsvorschlag mit Rechtsfolgenbelehrung", s:"bewerben, ernsthaft", say:"Ich bewerbe mich auf die Stelle. Meinen Gründungsantrag bitte ich parallel zu entscheiden.", next:"Eine Helferstelle ist nicht allein deshalb unzumutbar, weil sie nicht zur Ausbildung passt. Ordentlich bewerben; die Anbahnung nicht verhindern. Ohne wichtigen Grund abzulehnen kostet 30 %, die Weigerung, zumutbare Arbeit aufzunehmen, sogar den Regelbedarf.", frist:"Bewerbungsfrist laut Vorschlag", laws:["sgb2_10a","sgb2_31","sgb2_31a"]},
+  {k:"w", t:"Gesundheitlicher oder anderer wichtiger Grund", s:"darlegen und belegen", say:"Diese Arbeit kann ich aus folgendem Grund nicht ausüben: […]; der Nachweis liegt bei.", next:"Ärztliches Attest oder anderen Nachweis schriftlich einreichen.", frist:"sofort", laws:["sgb2_10a","sgb2_31"]},
+  {k:"w", t:"Job annehmen und parallel gründen", s:"Teilzeit möglich", say:"Ich nehme die Stelle in Teilzeit an und baue die Selbständigkeit daneben auf.", next:"Einkommen wird mit Freibeträgen angerechnet. Achtung: Einstiegsgeld verlangt, dass die Selbständigkeit der Hauptberuf ist; Stundenumfang vorher klären.", frist:"–", laws:["sgb2_11b","sgb2_16b"]},
+  {k:"g", t:"Nach der Gründung: Verweis auf eine Beschäftigung", s:"Plan als Anhaltspunkt", say:"Es gibt begründete Anhaltspunkte, dass meine Tätigkeit die Hilfebedürftigkeit beendet: Umsatzentwicklung, Aufträge, Wartungsverträge, IHK-Stellungnahme. Bitte berücksichtigen Sie das.", next:"Monatsberichte und Belege vorlegen; Prüfung spätestens nach einem Jahr.", frist:"–", laws:["sgb2_10"]}
+ ]},
+ {q:"Der Ton wird aggressiv oder herabsetzend: Was tue ich?", a:[
+  {k:"g", t:"Im Gespräch: ruhig bleiben, sachlich zurückführen", s:"nicht auf den Ton eingehen", say:"Ich möchte gern sachlich über meinen Antrag sprechen. Können wir zu meinem Businessplan zurückkommen?", next:"Nicht rechtfertigen, nicht streiten. Wird es nicht besser: höflich beenden und um schriftliche Entscheidung bitten.", frist:"–", laws:["sgb1_14"]},
+  {k:"g", t:"Direkt danach: Gedächtnisprotokoll", s:"Datum, Uhrzeit, Wortlaut", say:"Gesprächsnotiz für mich: Datum, Uhrzeit, Name, wörtliche Aussagen (z. B. „Gehen Sie Kisten packen“), Zeugen, was zum Antrag gesagt wurde.", next:"Noch am selben Tag aufschreiben und sicher ablegen; es ist der Beleg, falls es später zählt.", frist:"am selben Tag", laws:[]},
+  {k:"g", t:"Nächster Termin: mit Beistand", s:"Zeuge und Rückhalt", say:"Ich komme mit einer Begleitung als Beistand.", next:"Eine Begleitung verändert den Ton fast immer; sie darf auch für mich sprechen.", frist:"–", laws:["sgb10_13"]},
+  {k:"n", t:"Alles schriftlich führen", s:"jobcenter.digital", say:"Bitte teilen Sie mir Ihre Entscheidung über meinen Antrag vom [Datum] schriftlich mit.", next:"Mündliche Aussagen schriftlich bestätigen lassen; eigene Zusammenfassung nach jedem Kontakt.", frist:"Bestätigung unverzüglich verlangen", laws:["sgb10_33","sgb10_35"]},
+  {k:"w", t:"Beschwerde bei der Teamleitung", s:"sachlich, mit Protokoll", say:"Am [Datum] wurde mir im Gespräch zu meinem Gründungsantrag in herabsetzendem Ton gesagt, ich solle Kisten packen. Ein Stellenangebot wurde nicht gemacht, über meinen Antrag nicht gesprochen. Ich bitte um eine sachliche Bearbeitung meines Antrags.", next:"Formlos an Teamleitung oder Geschäftsführung des Jobcenters; ändert keine Entscheidung, kann aber den Ton ändern. Nur Tatsachen, keine Bewertung der Person.", frist:"keine", laws:[]},
+  {k:"w", t:"Andere Ansprechperson erbitten", s:"kein Rechtsanspruch, aber möglich", say:"Ich bitte darum, dass mein Gründungsvorhaben vom Team für Selbständige betreut wird.", next:"Sachlich begründen (Fachteam für Selbständige), nicht mit dem Streit.", frist:"–", laws:["sgb1_14"]}
+ ]},
+ {q:"Was sagt die Person zum Zuschuss über 2.350 €?", a:[
+  {k:"g", t:"Zuschuss wird bewilligt oder geprüft", s:"Bescheid", say:"Danke. Die Kostenvoranschläge haben Sie.", next:"Kaufen erst nach Bewilligung.", frist:"–", laws:["sgb2_16c1"]},
+  {k:"n", t:"Nur als Darlehen", s:"Bedingungen schriftlich", say:"Ein Darlehen nehme ich an, wenn die Rückzahlung tragbar ist. Welche Raten, ab wann?", next:"Bedingungen schriftlich.", frist:"–", laws:["sgb2_16c1"]},
+  {k:"n", t:"Erst Bank fragen", s:"Absage nachreichen", say:"Ich frage bei meiner Bank an und reiche die Antwort nach.", next:"Bankantwort schriftlich holen.", frist:"vereinbaren", laws:["sgb2_16c1"]},
+  {k:"n", t:"Günstigeres Gerät", s:"Mindestanforderung", say:"Einverstanden, wenn es mindestens 32 GB Arbeitsspeicher hat; darunter laufen Entwicklungsumgebung und Tests nicht zuverlässig.", next:"Weiteres Angebot einholen.", frist:"–", laws:["sgb2_16c1"]}
+ ]},
+ {q:"Welche Pflichten will die Person festhalten?", a:[
+  {k:"g", t:"Meine Zusagen übernehmen", s:"Kooperationsplan", say:"Gern, so kann es im Kooperationsplan stehen.", next:"Kooperationsplan in Textform mitnehmen.", frist:"Aktualisierung spätestens alle 6 Monate", laws:["sgb2_15"]},
+  {k:"n", t:"Weiter bewerben", s:"feste Zahl", say:"Einverstanden mit einer festen Zahl, zum Beispiel zwei Bewerbungen im Monat.", next:"Nachweise sammeln.", frist:"laut Plan", laws:["sgb2_15","sgb2_31"]},
+  {k:"w", t:"„Unterschreiben Sie bitte hier“", s:"in Ruhe lesen", say:"Ich lese das in Ruhe und gebe es bis [Datum] zurück. Kann ich eine Kopie mitnehmen?", next:"Fragen schriftlich klären.", frist:"selbst gesetzt", laws:["sgb2_15"]},
+  {k:"n", t:"Belehrung über Rechtsfolgen", s:"verstanden", say:"Verstanden. Bitte schicken Sie mir die Festlegung schriftlich.", next:"Pflichten ernst nehmen; Minderung 30 %.", frist:"–", laws:["sgb2_31","sgb2_31a"]},
+  {k:"n", t:"„Das steht so in Ihrer Akte“", s:"Akteneinsicht", say:"Dann würde ich den Vermerk gern einsehen.", next:"Termin zur Akteneinsicht.", frist:"–", laws:["sgb10_25"]}
+ ]}
+]},
+{id:"p4", nr:4, t:"Bescheid", s:"was per Post kommt", qs:[
+ {q:"Was steht im Bescheid?", a:[
+  {k:"g", t:"Bewilligung wie beantragt", s:"Höhe, Dauer prüfen", say:"–", next:"Station 6: Start. Dauer höchstens 24 Monate; Verlängerung rechtzeitig beantragen.", frist:"–", laws:["sgb2_16b","sgb2_16c1"]},
+  {k:"w", t:"Teilbewilligung", s:"kürzer, weniger, Darlehen", say:"–", next:"Prüfen lassen, ob die Begründung trägt; Widerspruch kann sich auf den abgelehnten Teil beschränken.", frist:"Widerspruch 1 Monat ab Bekanntgabe", laws:["sgg84","sgb10_35","sgb1_39"]},
+  {k:"k", t:"Ablehnung mit Begründung", s:"Rechtsweg", say:"–", next:"Station 5: Widerspruch, Begründung kann nachgereicht werden.", frist:"Widerspruch 1 Monat ab Bekanntgabe", laws:["sgg84","sgb10_35","sgb1_39"]},
+  {k:"k", t:"Ablehnung ohne Rechtsbehelfsbelehrung", s:"längere Frist", say:"–", next:"Trotzdem zügig Widerspruch einlegen.", frist:"grundsätzlich 1 Jahr", laws:["sgg66","sgg84"]},
+  {k:"w", t:"Lange keine Entscheidung", s:"erinnern", say:"Schriftliche Erinnerung mit Bitte um Entscheidung bis [Datum].", next:"Nach 6 Monaten ist eine Untätigkeitsklage möglich (letztes Mittel).", frist:"6 Monate ab Antrag", laws:["sgb1_17","sgg88"]}
+ ]}
+]},
+{id:"p5", nr:5, t:"Rechtsweg", s:"nur bei Ablehnung", qs:[
+ {q:"Wie geht der Widerspruch aus?", a:[
+  {k:"g", t:"Abhilfe", s:"Jobcenter ändert", say:"–", next:"Station 6: Start.", frist:"–", laws:["sgg84"]},
+  {k:"k", t:"Widerspruchsbescheid negativ", s:"Klage", say:"–", next:"Klage beim Sozialgericht Berlin; kostenfrei. Beratung oder Fachanwalt hinzuziehen.", frist:"Klage 1 Monat ab Widerspruchsbescheid", laws:["sgg87","sgg183"]},
+  {k:"w", t:"Keine Entscheidung über den Widerspruch", s:"Untätigkeit", say:"–", next:"Erinnern; nach 3 Monaten Untätigkeitsklage möglich.", frist:"3 Monate ab Widerspruch", laws:["sgg88"]},
+  {k:"k", t:"Frist verpasst", s:"Überprüfungsantrag", say:"Hiermit beantrage ich die Überprüfung des Bescheids vom [Datum] nach § 44 SGB X.", next:"Im SGB II gilt dafür ein Jahr statt vier.", frist:"1 Jahr (§ 40 SGB II)", laws:["sgb10_44","sgb2_40"]},
+  {k:"w", t:"Sehr eilig", s:"Eilantrag", say:"–", next:"Einstweilige Anordnung beim Sozialgericht; bei Ermessensleistungen nur mit Beratung.", frist:"–", laws:["sgg86b"]}
+ ]}
+]},
+{id:"p6", nr:6, t:"Start", s:"nach der Bewilligung", qs:[
+ {q:"Gewerbe", a:[
+  {k:"g", t:"Vor dem ersten Auftrag angemeldet", s:"Bezirksamt, online", say:"–", next:"Gewerbeschein dem Jobcenter schicken.", frist:"gleichzeitig mit Beginn", laws:["gewo14"]},
+  {k:"k", t:"Vergessen", s:"Bußgeld möglich", say:"–", next:"Sofort nachholen.", frist:"sofort", laws:["gewo14"]}
+ ]},
+ {q:"Finanzamt", a:[
+  {k:"g", t:"Fragebogen über ELSTER, Kleinunternehmer", s:"innerhalb 1 Monat", say:"–", next:"Steuernummer abwarten; erst dann Rechnungen.", frist:"1 Monat ab Beginn", laws:["ao138","ustg19"]},
+  {k:"w", t:"Rechnungen von Cloud/KI aus dem Ausland", s:"Reverse-Charge", say:"–", next:"Umsatzsteuer darauf selbst schulden, auch als Kleinunternehmer; beim Finanzamt klären.", frist:"mit der Voranmeldung", laws:["ustg13b"]}
+ ]},
+ {q:"Krankenversicherung", a:[
+  {k:"g", t:"Bleibt über das Jobcenter versichert", s:"Kasse informieren", say:"–", next:"Selbständigkeit der Krankenkasse melden.", frist:"–", laws:["sgb2_26"]},
+  {k:"n", t:"Wird freiwillig versichert", s:"Zuschuss beantragen", say:"Ich beantrage den Zuschuss zu den Beiträgen nach § 26 SGB II.", next:"Antrag beim Jobcenter.", frist:"sofort", laws:["sgb2_26"]}
+ ]},
+ {q:"Jobcenter informieren", a:[
+  {k:"g", t:"Beginn melden, Anlage EKS (Prognose)", s:"vorläufige Bewilligung", say:"–", next:"Vorläufige Bewilligung für 6 Monate.", frist:"unverzüglich", laws:["sgb1_60","sgb2_41a"]}
+ ]}
+]},
+{id:"p7", nr:7, t:"Laufender Bezug", s:"alle 6 Monate, jeden Monat", qs:[
+ {q:"Abschließende Anlage EKS nach jedem Zeitraum", a:[
+  {k:"g", t:"Pünktlich mit allen Belegen", s:"abschließende Entscheidung", say:"–", next:"Nachzahlung oder Erstattung nach tatsächlichem Gewinn.", frist:"Frist laut Aufforderung", laws:["sgb2_41a"]},
+  {k:"k", t:"Belege fehlen", s:"Monate auf null", say:"–", next:"Für nicht nachgewiesene Monate wird festgestellt, dass kein Anspruch bestand; Rückforderung. Bis zum Widerspruchsbescheid nachreichen.", frist:"spätestens bis Widerspruchsbescheid", laws:["sgb2_41a","sgg84"]},
+  {k:"n", t:"Jobcenter entscheidet nicht", s:"Fiktion", say:"–", next:"Ohne Entscheidung binnen eines Jahres gilt die vorläufige Bewilligung als endgültig.", frist:"1 Jahr ab Ende des Zeitraums", laws:["sgb2_41a"]}
+ ]},
+ {q:"Wie entwickelt sich der Gewinn?", a:[
+  {k:"g", t:"Wie geplant", s:"Freibetrag bis 348 €", say:"–", next:"Monatsbericht schicken.", frist:"bis 10. des Folgemonats (Zusage)", laws:["sgb2_11b"]},
+  {k:"w", t:"Weniger als geplant", s:"Frühwarnpunkt", say:"Ich liege unter Plan und schlage folgende Anpassung vor: [mehr Agenturstunden / Teilzeit].", next:"Grundsicherungsgeld steigt entsprechend; Prognose anpassen.", frist:"sofort melden", laws:["sgb1_60","sgb2_41a"]},
+  {k:"n", t:"Mehr als geplant", s:"Erstattung möglich", say:"–", next:"Prognose erhöhen, Rücklage bilden; Rückforderung nach abschließender Entscheidung.", frist:"sofort melden", laws:["sgb1_60","sgb2_41a"]}
+ ]},
+ {q:"Meldetermin", a:[
+  {k:"g", t:"Wahrgenommen", s:"–", say:"–", next:"–", frist:"–", laws:[]},
+  {k:"n", t:"Einmal verpasst", s:"keine Minderung", say:"Wichtigen Grund schriftlich mitteilen und neuen Termin erbitten.", next:"Erst wiederholtes Versäumnis mindert.", frist:"sofort", laws:["sgb2_32"]},
+  {k:"k", t:"Wiederholt verpasst", s:"30 % für 1 Monat", say:"Wichtigen Grund darlegen und nachweisen, falls vorhanden.", next:"Gegen den Minderungsbescheid Widerspruch möglich.", frist:"Widerspruch 1 Monat", laws:["sgb2_32","sgg84"]}
+ ]},
+ {q:"Pflichtverletzung vorgeworfen", a:[
+  {k:"n", t:"Wichtiger Grund vorhanden", s:"darlegen und nachweisen", say:"Ich hatte folgenden wichtigen Grund: […]; Nachweis anbei.", next:"Keine Minderung.", frist:"sofort", laws:["sgb2_31"]},
+  {k:"k", t:"Minderung 30 %", s:"endet bei Erfüllung", say:"Ich erfülle die Pflicht ab sofort bzw. erkläre mich ernsthaft dazu bereit.", next:"Minderung ist dann aufzuheben.", frist:"Widerspruch 1 Monat", laws:["sgb2_31a","sgg84"]},
+  {k:"k", t:"Zumutbare Arbeit verweigert", s:"Regelbedarf entfällt", say:"Nicht verweigern, ohne beraten zu sein.", next:"Der Anspruch in Höhe des Regelbedarfs kann entfallen.", frist:"–", laws:["sgb2_31a","sgb2_10"]}
+ ]}
+]},
+{id:"p8", nr:8, t:"Prüfung nach 12 Monaten", s:"Pflichtprüfung für Selbständige", qs:[
+ {q:"Wie fällt die Prüfung aus?", a:[
+  {k:"g", t:"Im Plan", s:"weiter selbständig", say:"Hier meine Monatsberichte und die Entwicklung der Wartungsverträge.", next:"Weiter wie bisher.", frist:"nächste Prüfung", laws:["sgb2_10"]},
+  {k:"n", t:"Unter Plan, aber Aufwärtstrend", s:"Belege vorlegen", say:"Der Umsatz steigt seit [Monat]; hier die Aufträge und Anfragen.", next:"Konkrete Ziele für die nächsten 6 Monate vereinbaren.", frist:"–", laws:["sgb2_10","sgb2_15"]},
+  {k:"k", t:"Negativ: Verweis auf Beschäftigung", s:"Arbeit zumutbar", say:"Ich prüfe die Angebote ernsthaft; die Selbständigkeit kann ich nebenher weiterführen.", next:"Zumutbare Arbeit nicht verweigern; Stellenangebote schriftlich verlangen.", frist:"–", laws:["sgb2_10","sgb2_31","sgb2_31a"]},
+  {k:"n", t:"Einstiegsgeld läuft aus", s:"höchstens 24 Monate", say:"–", next:"Plan ohne Einstiegsgeld durchrechnen.", frist:"Ende der Bewilligung", laws:["sgb2_16b"]}
+ ]}
+]},
+{id:"p9", nr:9, t:"Ausstieg", s:"Ziel: ab Monat 13 bis 15", qs:[
+ {q:"Wie steht der Gewinn?", a:[
+  {k:"g", t:"Deckt den Bedarf dauerhaft", s:"abmelden", say:"Mein Einkommen deckt meinen Bedarf; ich melde mich ab [Monat] ab.", next:"Krankenversicherung selbst zahlen, Steuer-Vorauszahlungen einplanen.", frist:"rechtzeitig melden", laws:["sgb1_60"]},
+  {k:"n", t:"Knapp darüber, Beiträge fressen es auf", s:"Zuschuss prüfen", say:"Ich beantrage den Zuschuss zu den Kranken- und Pflegeversicherungsbeiträgen.", next:"Nur die Beiträge, kein volles Grundsicherungsgeld.", frist:"–", laws:["sgb2_26"]},
+  {k:"w", t:"Später wieder darunter", s:"neuer Antrag", say:"Hiermit beantrage ich erneut Grundsicherungsgeld.", next:"Sofort beantragen; nicht für Zeiten vor dem Antrag.", frist:"sofort", laws:["sgb2_37"]}
+ ]}
+]}
+];
+
+const FRISTEN = [
+ {f:"Antrag vor Beginn", ab:"vor dem ersten Auftrag", wer:"Jobcenter", law:"sgb2_37", x:0, lbl:"Antrag"},
+ {f:"Gewerbeanzeige", ab:"gleichzeitig mit Beginn", wer:"Bezirksamt", law:"gewo14", x:1, lbl:"Gewerbe"},
+ {f:"Fragebogen Finanzamt", ab:"1 Monat ab Beginn", wer:"Finanzamt", law:"ao138", x:2, lbl:"1 Monat"},
+ {f:"Widerspruch", ab:"1 Monat ab Bekanntgabe", wer:"Jobcenter", law:"sgg84", x:2, lbl:"1 Monat"},
+ {f:"Klage", ab:"1 Monat ab Widerspruchsbescheid", wer:"Sozialgericht", law:"sgg87", x:2, lbl:"1 Monat"},
+ {f:"Untätigkeit Widerspruch", ab:"3 Monate ab Widerspruch", wer:"Sozialgericht", law:"sgg88", x:3, lbl:"3 Monate"},
+ {f:"Untätigkeit Antrag", ab:"6 Monate ab Antrag", wer:"Sozialgericht", law:"sgg88", x:4, lbl:"6 Monate"},
+ {f:"Bewilligungszeitraum, Anlage EKS", ab:"alle 6 Monate", wer:"Jobcenter", law:"sgb2_41a", x:4, lbl:"6 Monate"},
+ {f:"Kooperationsplan aktualisieren", ab:"spätestens alle 6 Monate", wer:"Jobcenter", law:"sgb2_15", x:4, lbl:"6 Monate"},
+ {f:"Prüfung der Selbständigkeit", ab:"spätestens nach 12 Monaten Bezug", wer:"Jobcenter", law:"sgb2_10", x:5, lbl:"12 Monate"},
+ {f:"Bewilligung gilt als endgültig", ab:"1 Jahr nach Ende des Zeitraums", wer:"Jobcenter", law:"sgb2_41a", x:5, lbl:"12 Monate"},
+ {f:"Widerspruch ohne Belehrung", ab:"1 Jahr ab Bekanntgabe", wer:"Jobcenter", law:"sgg66", x:5, lbl:"12 Monate"},
+ {f:"Überprüfungsantrag (SGB II)", ab:"1 Jahr", wer:"Jobcenter", law:"sgb2_40", x:5, lbl:"12 Monate"},
+ {f:"Einstiegsgeld höchstens", ab:"24 Monate", wer:"Jobcenter", law:"sgb2_16b", x:6, lbl:"24 Monate"}
+];
+
+const C = {g:["var(--good)","var(--good-soft)","gut"], n:["var(--axis)","var(--surface)","neutral"], w:["var(--warn)","var(--warn-soft)","Umweg"], k:["var(--crit)","var(--crit-soft)","kritisch"]};
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const wrap = (s, n) => { const w = String(s).split(" "), out = []; let l = ""; for (const x of w) { if ((l + " " + x).trim().length > n) { if (l) out.push(l); l = x; } else l = (l + " " + x).trim(); } if (l) out.push(l); return out; };
+const NS = "http://www.w3.org/2000/svg";
+const marker = id => `<defs><marker id="${id}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="var(--axis)"/></marker></defs>`;
+
+/* Überblick */
+function overview(){
+  const W = 1100, bw = 236, bh = 64, gx = 22, y0 = 56, main = ["p1","p2","p3","p4","p6","p7","p8","p9"];
+  const xs = i => 24 + i * (bw + gx) - (i >= 4 ? 4 * (bw + gx) : 0), ys = i => i < 4 ? y0 : y0 + 170;
+  let s = `<svg viewBox="0 0 ${W} 410" role="img" aria-label="Überblick: neun Stationen vom Antrag bis zum Ausstieg">${marker("ov-a")}`;
+  s += `<text x="24" y="28" font-size="15" font-weight="600">Hauptweg: Antrag → Telefonat → Termin → Bescheid → Start → laufender Bezug → Prüfung → Ausstieg</text>`;
+  const pos = {};
+  main.forEach((id, i) => { pos[id] = {x: xs(i), y: ys(i)}; });
+  pos.p5 = {x: pos.p4.x, y: 330};
+  const P = id => PH.find(p => p.id === id);
+  let lines = "";
+  for (let i = 0; i < main.length - 1; i++) { const a = pos[main[i]], b = pos[main[i + 1]];
+    if (i === 3) lines += `<path d="M${a.x + bw / 2} ${a.y + bh}V${a.y + bh + 26}H${b.x + bw / 2}V${b.y}" fill="none" stroke="var(--axis)" stroke-width="1.5" marker-end="url(#ov-a)"/>`;
+    else lines += `<path d="M${a.x + bw} ${a.y + bh / 2}H${b.x}" fill="none" stroke="var(--axis)" stroke-width="1.5" marker-end="url(#ov-a)"/>`; }
+  const p4 = pos.p4, p5 = pos.p5, p6 = pos.p6;
+  lines += `<path d="M${p4.x + bw} ${p4.y + bh / 2}H${W - 18}V${p5.y + bh / 2}H${p5.x + bw}" fill="none" stroke="var(--crit)" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#ov-a)"/>`;
+  lines += `<text x="${p4.x + bw + 6}" y="${p4.y + bh / 2 - 8}" font-size="12" class="q2">Ablehnung</text>`;
+  lines += `<path d="M${p5.x} ${p5.y + bh / 2}H${p6.x + bw / 2}V${p6.y + bh}" fill="none" stroke="var(--good)" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#ov-a)"/>`;
+  lines += `<text x="${p6.x + bw / 2 + 10}" y="${p5.y + bh / 2 - 8}" font-size="12" class="q2">Abhilfe oder Erfolg im Rechtsweg</text>`;
+  s += lines;
+  Object.keys(pos).forEach(id => { const p = P(id), q = pos[id], crit = id === "p5";
+    s += `<g class="node" tabindex="0" data-go="${id}"><rect class="box" x="${q.x}" y="${q.y}" width="${bw}" height="${bh}" rx="10" fill="${crit ? "var(--crit-soft)" : "var(--surface)"}" stroke="${crit ? "var(--crit)" : "var(--accent)"}" stroke-width="1.5"/>`;
+    s += `<text x="${q.x + 14}" y="${q.y + 26}" font-size="15" font-weight="650">${p.nr}. ${esc(p.t)}</text><text x="${q.x + 14}" y="${q.y + 46}" font-size="12" class="q2">${esc(p.s)}</text></g>`; });
+  s += `</svg>`;
+  document.getElementById("overview").innerHTML = s;
+  document.getElementById("pnav").innerHTML = PH.map(p => `<a href="#${p.id}">${p.nr}. ${esc(p.t)}</a>`).join("") + `<a href="#fristen">Fristen</a><a href="#gesetze">Gesetze</a>`;
+}
+
+/* Fragebaum */
+function treeSVG(ph, qi, Q){
+  const W = 1100, colW = 524, gap = 20, x0 = 24, tl = 58, sl = 66;
+  const qLines = wrap(Q.q, 110), qh = 26 + qLines.length * 20;
+  let y = 16 + qh + 44;
+  const boxes = Q.a.map((a, i) => { const tL = wrap(a.t, tl), sL = wrap(a.s, sl), lw = a.laws.map(l => L[l].t).join(" · "), lL = lw ? wrap(lw, 70) : [];
+    return {a, i, tL, sL, lL, h: 18 + tL.length * 19 + sL.length * 17 + lL.length * 16 + 12}; });
+  const rows = []; for (let i = 0; i < boxes.length; i += 2) rows.push(boxes.slice(i, i + 2));
+  let s = "", conn = "";
+  const busY = 16 + qh + 22, qcx = W / 2;
+  conn += `<path d="M${qcx} ${16 + qh}V${busY}" fill="none" stroke="var(--axis)" stroke-width="1.3"/>`;
+  const xsL = [], H0 = y;
+  rows.forEach(r => { const rh = Math.max(...r.map(b => b.h)); r.forEach((b, j) => { b.x = x0 + j * (colW + gap); b.y = y; b.rh = rh; xsL.push(b.x + colW / 2); }); y += rh + 18; });
+  const minX = Math.min(...xsL), maxX = Math.max(...xsL);
+  conn += `<path d="M${Math.min(minX, qcx)} ${busY}H${Math.max(maxX, qcx)}" fill="none" stroke="var(--axis)" stroke-width="1.3"/>`;
+  boxes.forEach(b => { const cx = b.x + colW / 2;
+    if (b.y === H0) conn += `<path d="M${cx} ${busY}V${b.y}" fill="none" stroke="var(--axis)" stroke-width="1.3" marker-end="url(#m-${ph.id}-${qi})"/>`;
+    else conn += `<path d="M${b.x - 10} ${busY}V${b.y + 20}H${b.x}" fill="none" stroke="var(--axis)" stroke-width="1.3" marker-end="url(#m-${ph.id}-${qi})"/>`;
+  });
+  const H = y + 4;
+  s += `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(Q.q)}">${marker(`m-${ph.id}-${qi}`)}${conn}`;
+  s += `<rect x="${x0}" y="16" width="${W - 2 * x0}" height="${qh}" rx="10" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>`;
+  qLines.forEach((l, k) => s += `<text x="${qcx}" y="${16 + 24 + k * 20}" font-size="16" font-weight="650" text-anchor="middle">${esc(l)}</text>`);
+  boxes.forEach(b => { const [c, cs, lbl] = C[b.a.k], id = `${ph.id}-${qi}-${b.i}`;
+    s += `<g class="node" tabindex="0" data-a="${id}" role="button" aria-label="${esc(b.a.t)}"><rect class="box" x="${b.x}" y="${b.y}" width="${colW}" height="${b.h}" rx="10" fill="${cs}" stroke="${c}" stroke-width="1.5"/><rect x="${b.x}" y="${b.y}" width="6" height="${b.h}" rx="3" fill="${c}"/>`;
+    let ty = b.y + 24;
+    b.tL.forEach(l => { s += `<text x="${b.x + 18}" y="${ty}" font-size="15" font-weight="600">${esc(l)}</text>`; ty += 19; });
+    b.sL.forEach(l => { s += `<text x="${b.x + 18}" y="${ty}" font-size="13" class="q2">${esc(l)}</text>`; ty += 17; });
+    b.lL.forEach(l => { s += `<text x="${b.x + 18}" y="${ty}" font-size="12" font-weight="600" fill="var(--law)" style="fill:var(--law)">${esc(l)}</text>`; ty += 16; });
+    s += `<text x="${b.x + colW - 12}" y="${b.y + 22}" font-size="11" font-weight="700" text-anchor="end" style="fill:${b.a.mine ? "var(--accent)" : c}">${b.a.mine ? "MEIN FALL" : lbl.toUpperCase()}</text></g>`; });
+  return s + `</svg>`;
+}
+function lawHTML(ids){ return ids.length ? `<div class="laws">` + ids.map(id => { const x = L[id]; return `<div class="law"><div class="h"><span class="chip">${esc(x.t)}</span><span class="nm">${esc(x.n)}</span><span class="lk"><a href="${x.u}" target="_blank" rel="noopener">gesetze-im-internet.de ↗</a> · <a href="${x.d}" target="_blank" rel="noopener">dejure.org ↗</a></span></div>${x.q ? `<blockquote>„${esc(x.q)}“</blockquote>` : `<blockquote><span class="kurz">Kurzfassung</span>${esc(x.k)}</blockquote>`}</div>`; }).join("") + `</div>` : ""; }
+function phases(){
+  let h = "";
+  PH.forEach(ph => {
+    h += `<h2 id="${ph.id}">${ph.nr}. ${esc(ph.t)}</h2><p class="lead">${esc(ph.s)} · ${ph.qs.length} ${ph.qs.length === 1 ? "Frage" : "Fragen"}, ${ph.qs.reduce((n, q) => n + q.a.length, 0)} mögliche Antworten</p>`;
+    ph.qs.forEach((Q, qi) => {
+      h += `<div class="qblock"><div class="card">${treeSVG(ph, qi, Q)}</div><div class="detail">`;
+      Q.a.forEach((a, i) => { const [c] = C[a.k], id = `${ph.id}-${qi}-${i}`;
+        h += `<details class="ans" id="d-${id}" style="--c:${c}"><summary><span class="tag">${C[a.k][2]}</span>${a.mine ? '<span class="tag" style="color:var(--accent)">mein Fall</span>' : ""}${esc(a.t)}</summary><div class="b">` +
+          (a.say && a.say !== "–" ? `<div class="say"><b>Ich sage / schreibe</b>${esc(a.say)}</div>` : "") +
+          `<div class="row"><span class="k">Nächster Schritt</span><span>${esc(a.next)}</span></div>` +
+          `<div class="row"><span class="k">Frist</span><span>${esc(a.frist)}</span></div>` + lawHTML(a.laws) + `</div></details>`; });
+      h += `</div></div>`;
+    });
+  });
+  document.getElementById("phases").innerHTML = h;
+}
+function timeline(){
+  const W = 1100, cols = ["vor Beginn","Beginn","1 Monat","3 Monate","6 Monate","12 Monate","24 Monate"], x = i => 98 + i * 151;
+  const byX = {}; FRISTEN.forEach(f => (byX[f.x] = byX[f.x] || []).push(f));
+  const maxN = Math.max(...Object.values(byX).map(a => a.length)), H = 110 + maxN * 46;
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Fristen-Zeitstrahl">${marker("tl-a")}`;
+  s += `<path d="M40 64H${W - 30}" stroke="var(--axis)" stroke-width="1.5" marker-end="url(#tl-a)"/>`;
+  cols.forEach((c, i) => { s += `<circle cx="${x(i)}" cy="64" r="6" fill="var(--accent)"/><text x="${x(i)}" y="44" font-size="13.5" font-weight="650" text-anchor="middle">${esc(c)}</text>`; });
+  Object.keys(byX).forEach(k => byX[k].forEach((f, j) => { const cx = x(+k), cy = 84 + j * 46, crit = ["sgg84","sgg87"].includes(f.law), ln = wrap(f.f, 22).slice(0, 2);
+    s += `<g class="node" tabindex="0" data-law="${f.law}"><rect class="box" x="${cx - 76}" y="${cy}" width="152" height="40" rx="6" fill="${crit ? "var(--crit-soft)" : "var(--surface)"}" stroke="${crit ? "var(--crit)" : "var(--line)"}"/>` + ln.map((l, i) => `<text x="${cx}" y="${cy + (ln.length === 1 ? 24 : 17 + i * 15)}" font-size="11.5" text-anchor="middle">${esc(l)}</text>`).join("") + `</g>`; }));
+  document.getElementById("timeline").innerHTML = s + `</svg>`;
+  document.getElementById("ftable").innerHTML = `<tr><th>Frist</th><th>Läuft ab</th><th>Stelle</th><th>Gesetz</th></tr>` + FRISTEN.map(f => `<tr><td>${esc(f.f)}</td><td>${esc(f.ab)}</td><td>${esc(f.wer)}</td><td><a href="${L[f.law].u}" target="_blank" rel="noopener">${esc(L[f.law].t)}</a></td></tr>`).join("");
+}
+function laws(){ document.getElementById("lawlist").innerHTML = lawHTML(Object.keys(L).sort((a, b) => L[a].t.localeCompare(L[b].t, "de"))); }
+
+overview(); phases(); timeline(); laws();
+
+function openA(id){ const d = document.getElementById("d-" + id); if (!d) return; document.querySelectorAll("svg .node.sel").forEach(n => n.classList.remove("sel")); const n = document.querySelector(`[data-a="${id}"]`); if (n) n.classList.add("sel"); d.open = true; d.scrollIntoView({behavior:"smooth", block:"center"}); }
+document.addEventListener("click", e => {
+  const n = e.target.closest(".node"); if (n) { if (n.dataset.a) openA(n.dataset.a); if (n.dataset.go) document.getElementById(n.dataset.go).scrollIntoView({behavior:"smooth"}); if (n.dataset.law) document.getElementById("gesetze").scrollIntoView({behavior:"smooth"}); }
+  if (e.target.id === "all") { const open = e.target.dataset.o !== "1"; document.querySelectorAll("details.ans").forEach(d => d.open = open); e.target.dataset.o = open ? "1" : "0"; e.target.textContent = open ? "Alle zuklappen" : "Alle Antworten aufklappen"; }
+  if (e.target.id === "theme") { const r = document.documentElement, dark = r.dataset.theme ? r.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches; r.dataset.theme = dark ? "light" : "dark"; }
+});
+document.addEventListener("keydown", e => { if ((e.key === "Enter" || e.key === " ") && e.target.classList && e.target.classList.contains("node")) { e.preventDefault(); e.target.dispatchEvent(new MouseEvent("click", {bubbles:true})); } });
+window.addEventListener("beforeprint", () => document.querySelectorAll("details.ans").forEach(d => d.open = true));
+})();
+</script>
+</body>
+</html>
