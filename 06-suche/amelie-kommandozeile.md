@@ -83,7 +83,7 @@ Code: `scripts/crew/bundle.mjs` (Rollen, Prüfung, Schreiben), `scripts/crew/pro
 
 **Bauer-Rollen** (seit 01.10.2026 auch von der Kommandozeile): `dose-packer`, `demo-builder`, `venture-analyst`. Sie schreiben nie selbst, sondern liefern ein **Paket** (neue Dateien + wenige benannte Einfügungen), das das Programm prüft und nur mit `--write` schreibt; siehe §3a.
 
-**Werkzeuge** aller Crew-Agenten (aus `scripts/agent-kit.mjs`, alle nur lesend): `read_file`, `search_repo`, `run_cli` (Lesebefehle von `bib` und `quellen`), `web_fetch`, `web_search`, `list_skills`/`load_skill`. Aus dem Schwesterprojekt kommen `web_search` (Google-Suchdienst mit Blind-Gate und Kontingent) und `places_find` (Google Places: wo sitzt ein Empfänger, Mitbewerber oder Partner wirklich; Maps-Schlüssel `GOOGLE_MAPS_API_KEY` im Lab, kein Suchkontingent). Orte sind für alle Information und nicht zitierfähig (Beleg per `web_fetch`), nur der Venture-Analyst darf Maps-Seite und Website zitieren. Obergrenzen je Lauf: 3 Ortsabfragen (Venture 8), 40 Suchen. Welche ein Agent bekommt, folgt aus dem `tools:`-Feld seiner Definition; `Edit`/`Write` entfallen immer. Der Bibliothekar hat zusätzlich `plan_check` (Trockenlauf seines Entwurfs gegen das echte Gedächtnis).
+Google Maps/Places ist seit 11.10.2026 wegen Kosten deaktiviert. `places_find` wird nicht angeboten; der Legacy-Handler bleibt auch bei Budget-Overrides gesperrt. Orte und Empfänger über offizielle Webseiten mit `web_fetch` prüfen. Keine kostenpflichtige Ersatzsuche automatisch starten.
 
 ---
 

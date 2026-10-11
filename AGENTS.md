@@ -173,3 +173,6 @@ Wenn du ein Ticket, ein Kriterium oder eine Dosen-Beschreibung änderst, musst d
 
 ## Shared Lab intake (2026-10-10)
 Independent Labs submit producer-scoped immutable `.inbox.json` proposal receipts. Build/export aggregates all Labs; the main navigation links to `lab-ideas.html`. `bib find` includes proposal markdown as nonbinding, unchecked background. `npm run bib -- lab list|show` reads receipts; `lab claim|finish|needs-research|release|archive --worker ID` coordinates work in this shared workspace using leases and existing actor rights/write lock. Labs never set processing status. Workflow state does not assign existence verdicts or scores. See `docs/lab-intake.md`; checks: `npm run test:lab-inbox`.
+
+## Maps cost restriction (2026-10-11)
+Google Maps Platform APIs (Places, JavaScript, Static and Embed) are disabled at Félix’s request because of cost. Do not use or re-enable them, even with existing keys or budget overrides. Verify institutions and addresses via official websites; existing coordinates and OpenStreetMap links remain usable. Re-enabling requires Félix’s explicit authorization.
