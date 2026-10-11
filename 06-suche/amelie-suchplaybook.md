@@ -206,6 +206,15 @@ Wo Ideen schnell sterben — vor dem Suchen als Vorfilter nutzen.
 | **Bauprodukte CE/DoP/DPP (ES/EU)** | **dicht: Herstellerseite digitalisiert** | Leistungserklärung seit UNE 41316:2020 („smart CE marking“) digital genormt [Seite revista.aenor.com/363]; CPR 2024/3110 bringt die DoPC maschinenlesbar über den DPP; offenes Wörterbuch „DPP steel“ (material-identity) führt `declarationOfPerformance` als JSON seit 30.09.2026 [Seite]. Annahme auf der Baustelle = Unterlagenprüfung; Mandatsträger COAAT/CGATE hat eine eigene App (COAAT Málaga 2020) [Seite]. Holz: CE nach EN 14081-1, Sortierung beim Hersteller, Klopf-App seit 2019 (Smart Thumper). Holz-CoC: FSC Trace beim Zertifizierer, TRACEX kommerziell. Gräber `dop-scanner-stahl`, `holz-sortierklasse-vorort`, `holz-chargen-tag-fussabdruck`, `holz-chargen-sensorhaut`, `rostgrad-kamera`, `trapezblech-verformung-scan`, `holz-audit-adaptiv`, `holz-herkunft-isotopen`. **Vorfrage: Gibt es den Inhalt schon als genormtes Maschinenformat beim Hersteller? „Übergangslücke bis DPP“ ist kein Why-Now.** |
 | **Gedenken/Repressionsdaten/Zeitzeugen-KI** | **dicht beim Empfänger** | Arolsen Archives (OCR >99 %, Person Matching, Knowledge-Graph, Auskunftsdienst) [Seite]; KI.OH (FU Berlin, DFG 2027–2029: Normdaten-NER, semantische Suche, Trust Level Engine) [Seite]; KZ-Gedenkstätte Neuengamme KI-Portal (06/2026, „Quellenauswahl, keine Interpretation“) [Seite]; SBG-Layer 111 Orte in der berlinHistory.app [Seite]; HdG/Fraunhofer IAIS Emotionsmining 8.300 Clips [Seite]; Zeitzeugenportal Brandenburg = LAkD [Seite]. Opferverzeichnisse nur Einzelsuche (Sachsenhausen), Ravensbrück offline, Gedenkbuch nicht Open Data. 9 Gräber (`repressionsberichte-ner-lokal` bis `mikro-storytelling-erinnerung`). **Gedenk-Prämissenfalle: Mechaniken, die löschen, ranken oder interpretieren, sterben auf Stufe Prämisse ohne Suche.** |
 
+### Nachtrag Gründungsnavigator (11.10.2026) — Sozialrecht: Brief gegen Gespräch
+
+| Feld | Zustand | Belege |
+|---|---|---|
+| **Jobcenter-Briefe und Widersprüche per KI** | **dicht, kommerziell** | jobcenter.guru (GuruSense UG, In-App-Käufe bis 9,99 €, App-Store 11.10.2026), Sozialrat-Generatoren (Pilot pausiert), Grab `paragraphen-dolmetscher`, KlarLokal/Zetteln |
+| **Sozialleistungs-Q&A mit amtlichen Quellen** | **besetzt (Open Source)** | BürgerChat (MIT, RAG über ~6.100 amtliche Dokumente) |
+| **Sozialrecht: Gespräch statt Brief** (Vorbereitung Jobcenter-Termin, Gründer, zeigbare Ansicht) | **verengt, als Werkzeug leer** | nur Leitfäden (Münchner Gründungsbüro) und Businessplan-Tools (Gründerplattform); G1 |
+| **Sozialrecht: Zitatprüfung für Laien** | **verengt** | Kanzlei-Recherche-KI vorhanden, kein freier Prüfer für Betroffene/Beratung; Anker LSG NRW 24.04.2026; G2 |
+
 ---
 
 ## 4. Trefferquote (Kalibrierung)
@@ -771,6 +780,19 @@ Bestehende Forschung zuerst wiederverwenden: ein fehlgeschlagener Rohdaten-Pilot
   1. **Automatische Agentenläufe:** Externe Jules-Runs vergeben häufig `frei` auf bloßen Suchschnipseln. Schnipsel genügen nie für `frei`; die Pflicht zur Primärquellenprüfung und der Advocatus-Diaboli-Gegenprüfung bleibt absolut.
   2. **Architektur-Drift verhindern:** PRs dürfen Gräber nicht direkt in `src/data/dosen.ts` patchen. `src/data/graeber.json` via `npm run bib -- grab add` ist die kanonische Quelle der Wahrheit.
 - **Nächstes Mal:** PRs zeitnah nach Erstellung prüfen, damit Git-Mergebarkeit erhalten bleibt und keine Drift gegen `main` entsteht.
+
+### Retro: Gründungsnavigator — 11.10.2026 (mitgebrachte Idee mit Prototyp, Cloud-Sitzung, method: ideenrunde)
+
+- **Erledigt:** G1–G4 im Prüfprotokoll; Konzept in `02-recherche/gruendungsnavigator-konzept-2026-10-11.md`; Übergabe mit geprüfter Quellenmeldung (`bib quellen import --dry-run`: 8 Zeilen gültig) in `06-suche/scout-an-bibliothekar-2026-10-11-gruendungsnavigator.md`. Trefferquote dieses Abschnitts: 4 geprüft, 0 frei, 2 verengt, 1 unklar, 1 besetzt.
+- **Gelernt:**
+  1. **Idee zerlegen:** Eine mitgebrachte Idee in Teilfunktionen aufteilen (Brief-KI, Q&A, Gespräch, Zitatprüfung) macht das Urteil scharf: zwei Teile fallen sofort auf bekannte Gräber und Quellen, der Rest wird zur benannten Restlücke.
+  2. **Gerichte als Typ-C-Quelle:** Jahrespressekonferenzen von Sozialgerichten benennen Schwächen von KI-Schriftsätzen wörtlich; daraus entstand G2.
+  3. **Kommerzielle Nachbarn findet nur die englische Produktsuche**; App-Store-Seiten liefern Anbieter und Preise als `seite`-Beleg.
+  4. **Normtext statt Ratgeber:** Vier Ratgeberangaben zur Reform vom 1. Juli 2026 stimmten nur ungefähr; erst der Normtext (dejure.org, Fassung 16.04.2026) gab Wortlaut und Fassung. dejure.org ist erreichbar, wenn gesetze-im-internet.de 503 meldet.
+- **Fehler:**
+  1. **Veralteter Zustand:** Die Sitzung begann mit den Zustandsdateien aus den Skill-Assets (16.09.2026) statt mit `06-suche/` im Repo. Folge: zwei längst entschiedene `unklar` erneut geprüft und jobcenter.guru „neu“ gefunden, obwohl es seit 24.09. ein Grab trägt. `bib find` hätte beides in Sekunden gezeigt.
+  2. Österreich und Schweiz in einer Suche kombiniert; die Schweiz ist damit ungeprüft.
+- **Nächstes Mal:** (1) In jeder Sitzung, die das Repo hat, zuerst `npm run bib -- vorflug` und `bib find`, nie die Skill-Assets als Zustand nehmen; den Hinweis in `skills/amelie-ideenrunde` nachziehen. (2) G4 getrennt nach Ländern prüfen, Empfänger zuerst. (3) Vor jedem Packen von G1 den Prototyp neutralisieren (Ticket 01) und L14-C2/L15-C1 im selben Recheck klären.
 
 ### Retro: Globale & fernöstliche Spielsehnsüchte als Entdeckungs-Kompass — 11.10.2026
 

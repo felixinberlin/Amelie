@@ -21,7 +21,10 @@ Claude hat zwischen Chats kein Gedächtnis. Lernen passiert nur, wenn jede Runde
 | `amelie-quellen.md` | Primärquellen mit Status (offen → erschöpft) |
 | `dosen/_entsorgt.md` | Begründungen für verworfene *gepackte* Dosen |
 
-Die Dateien liegen in `/mnt/project/` (Präfix `claude_` möglich). Fehlt eine, die Fassung aus `assets/` nehmen und das dem Nutzer in einem Satz sagen.
+**Wo der Zustand liegt, in dieser Reihenfolge:**
+1. **Im Amélie-Repo** (Claude Code, Cloud-Sitzung mit Clone): `06-suche/` ist der Zustand. Zuerst `npm run bib -- vorflug`, dann vor jedem Urteil `npm run bib -- find <Begriffe>`; Protokollzeilen mit `bib protokoll add`, Quellen nur als **Quellenmeldung** (`bib quellen import --dry-run` prüft sie).
+2. **Im Claude-Projekt:** `/mnt/project/` (Präfix `claude_` möglich).
+3. **Nur wenn beides fehlt:** die Fassung aus `assets/` nehmen und dem Nutzer in einem Satz sagen, dass sie veraltet sein kann. Die Assets sind ein Startpunkt, kein Gedächtnis: Am 11.10.2026 führten sie zu zwei überflüssigen Rechecks und einem „neuen“ Fund, der seit Wochen begraben war.
 
 ## Ablauf
 

@@ -1,9 +1,9 @@
 {
   "auditVersion": 1,
-  "generatedAt": "2026-10-11T17:55:08.661Z",
+  "generatedAt": "2026-10-11T18:03:09.096Z",
   "repository": {
-    "commit": "00bc4d27",
-    "branch": "main"
+    "commit": "8bbd3ca",
+    "branch": "feature/gruendungsnavigator-befund-2026-10-11"
   },
   "inventory": {
     "doses": 45,

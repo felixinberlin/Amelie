@@ -1,6 +1,6 @@
 # Amélie Status
 
-Generated: 2026-10-11T17:55:08.661Z
+Generated: 2026-10-11T18:03:09.096Z
 
 ## System
 
@@ -67,5 +67,5 @@ None.
 ## Generated from
 
 * Audit version: 1
-* Commit: 00bc4d27
-* Branch: main
+* Commit: 8bbd3ca
+* Branch: feature/gruendungsnavigator-befund-2026-10-11
