@@ -1397,4 +1397,3 @@ Wörtlich erwähnte Bestands-IDs: keine.
 | --- | --- |
 | C1 | HandyFoto-Amtssprach-Konverter: Lokale Smartphone-Kamera-App, die Behördenbriefe ohne Server-Upload in verständliche Audio-Instruktionen in 25 Muttersprachen transformiert. |
 | C2 | Kiez-Beistand-Radar: Hyperlokale GPS-Vernetzung von verifizierten Community-Begleitern nach § 13 Abs. 4 SGB X für spontane und terminierte Behördengänge. |
-

@@ -85,5 +85,5 @@ const lines = ['# Lab-Inbox: Arbeitsinventar', '',
   ...duplicates.flatMap(group => [`- ${cell(group[0].title)}: ${group.map(item => `\`${item.batch.batch_id}:${item.idea.local_id}\``).join(', ')}`]),
   ...(duplicates.length ? [] : ['Keine identischen normalisierten Titel gefunden.']), '',
   '## Vollständige Batch-Liste', '', ...details];
-writeFileSync(`${root}/docs/lab-inbox-inventory.md`, lines.join('\n') + '\n');
+writeFileSync(`${root}/docs/lab-inbox-inventory.md`, lines.join('\n').trimEnd() + '\n');
 console.log(`Inventar: ${index.batches.length} Batches, ${allIdeas.length} Ideen, ${duplicates.length} wiederholte Titelgruppen.`);
