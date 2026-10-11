@@ -29,11 +29,15 @@ Worker: `amelie-bib-20261011`. Both batches were shown and claimed through `bib 
 
 The remaining 70 batches are `received`, unclaimed and unreviewed. No full novelty review or scoring has been completed. Processing status files preserve the detailed next steps separately from immutable producer records.
 
+For the next review session, [the complete working inventory](lab-inbox-inventory.md) lists all 72 batches and 159 ideas, producer quote-status fields, source domains, literal references to existing Doses/graves and repeated titles. Rebuild it with `node scripts/inventory-lab-inbox.mjs` after changing receipts or processing state. Its hints are not novelty judgments or evidence approval.
+
 ## Validation
 
 Import: PR-mode manifest validation passes for all 72 new manifests, including the required `Existenzprüfung: nein` PR text. Export yields 72 batches and 159 ideas. Production build and lint pass. Full tests pass outside the filesystem sandbox: 59 Vitest files / 797 tests, 34 Python tests, and five Node intake/lease tests. Sandbox child-process checks failed without output; the unrestricted rerun passed.
 
 After changing processing state, regenerate the inbox and validate before committing. Continue via `docs/lab-intake.md`, the Bibliothekar role and existing review workflow. Do not start Vertex calls while the recorded credit restriction remains in force.
+
+Inventory follow-up: all 72 batch sections and 159 idea rows, relative file links and deterministic regeneration were checked; lint passes. Repeated full-test runs hit existing timing limits in the model-comparison mock (5 seconds) and, intermittently, the implementation-plan performance assertion (500 ms). A serial run also hit these limits. Test limits and implementation were not changed; repeat the ordinary checks on a stable runner before merging.
 
 ## Quellenmeldung
 
