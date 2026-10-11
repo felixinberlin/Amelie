@@ -38,3 +38,9 @@ After changing processing state, regenerate the inbox and validate before commit
 ## Quellenmeldung
 
 IAB primary page read for the Jobcenter evidence check: https://iab-forum.de/das-iab-projekt-psychisch-kranke-im-sgb-ii-situation-und-betreuung/ . Used only as background; it does not verify the imported percentages. No source-register write, existence verdict, Dose or grave was produced.
+
+## Publication checkpoint
+
+Both complete branches are committed locally: `lab/import-studio-intake-20261011` (all receipts) and `lab/triage-studio-intake-20261011` (two processing notes and documentation). GitHub received the first 20 original Lab commits through `4e78e6d`; subsequent publication attempts returned HTTP 408. No complete import PR has been created or merged. Do not treat the partially uploaded branch as the complete 72-record handoff. Resume by pushing the complete import branch, then create/resume its PR; publish the triage branch separately afterward.
+
+See `docs/lab-github-transfer.md` for the proposed GitHub-hosted transfer workflow.
