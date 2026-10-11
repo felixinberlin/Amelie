@@ -57,7 +57,7 @@ calls occurred. The sister Lab handoff was read, not changed.
 
 Validation checkpoint: exports and inventory account for 72/159; all receipt
 hashes, local-ID coverage, scores and cleared leases independently checked.
-Lint and production build pass. Python suites pass (34 tests); all five Node intake/lease tests pass outside the sandbox. Ordinary full Vitest: 57/59 files pass, with the two already documented time-limit failures (modelCompare 5 seconds and implementation-plan performance 500 ms). A direct serial Vitest run is in progress; no thresholds or implementation were changed. Publication/CI result follows below.
+Lint and production build pass. Python suites pass (34 tests); all five Node intake/lease tests pass outside the sandbox. Ordinary full Vitest: 57/59 files pass, with the two already documented time-limit failures (modelCompare 5 seconds and implementation-plan performance 500 ms). Direct serial Vitest passed all 59 files / 794 tests (86.75 seconds); no thresholds or implementation were changed. Together with the 34 Python and five Node tests, all npm-test components pass. Publication/CI result follows below.
 
 ## Imported records — historical import checkpoint
 
