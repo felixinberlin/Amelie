@@ -1,0 +1,3 @@
+docs: jobcenter ideenrunde closed as obsolete
+
+- Addressed review comments: the work is consolidated into the Shared Lab Intake and has been closed.
