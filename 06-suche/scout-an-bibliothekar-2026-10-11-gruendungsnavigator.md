@@ -45,3 +45,10 @@ QUELLE NEU: dejure.org SGB II nach dem 13. Änderungsgesetz | typ=L | kategorie=
 1. **Prototyp:** Er liegt privat (persönliche Zahlen). Soll eine neutralisierte Fassung als `07-demos/gruendungsnavigator/` kommen, bevor jemand G1 packt? Ticket 01 im Konzept beschreibt die Vorlage.
 2. **G2 als eigene Idee oder Modul von G1?** Der Normtext-Speicher des Prototyps ist der Kern eines Paragrafen-Prüfers.
 3. **Skill-Assets:** `skills/amelie-ideenrunde/.../assets` stehen auf 16.09.2026. Sollen Cloud-Sitzungen künftig ausdrücklich `06-suche/` im Repo als Zustand lesen (siehe Retro)?
+
+## Gebucht vom Bibliothekar (11.10.2026)
+
+- **Quellen:** alle acht Meldungen mit `npm run bib -- quellen import … --agent ideen-scout --runde "Gründungsnavigator — 11.10.2026"` gebucht; Register 316 → 324 Quellen, `06-suche/amelie-quellen.md` neu erzeugt, Audit in `bib-audit.jsonl`.
+- **Abschluss:** `npm run bib -- abschluss`: export, lint grün, Vitest 61 Dateien / 852 Tests grün. `test:lab-inbox` scheitert nur am Node-26-Schalter `--test-isolation` (Container: Node 22); ohne den Schalter 5/5 grün.
+- **Nicht geändert:** Totenschein `paragraphen-dolmetscher` (Hinweis 1 oben: „kostenlos“ stimmt nur für die Grundstufe). Die Quelle `jobcenter-guru-app-store-eintrag` ist mit dem Grab verknüpft; die Textkorrektur entscheidet Félix. Keine Vektoren gesetzt (Sache des Reviewers).
+

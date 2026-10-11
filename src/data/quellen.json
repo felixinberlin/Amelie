@@ -17135,6 +17135,427 @@
           "planId": "pr-intake-sources-20261011"
         }
       ]
+    },
+    {
+      "id": "lsg-nrw-jahrespressekonferenz-2026-lto-b",
+      "name": "LSG NRW Jahrespressekonferenz 2026 (LTO-Bericht)",
+      "typ": "C",
+      "kategorie": "ki-versuch",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.lto.de/recht/justiz/j/lsg-nrw-jahres-pressekonferenz-2026-ki-klagen-ueberlastung-sozialgerichte"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "web"
+      },
+      "enthaelt": "Gerichtspräsident benennt Schwächen von KI-Schriftsätzen (erfundene Rechtsprechung, überlange Anträge), Zahlen Eilverfahren NRW 2025",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-11",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "paragrafen-pruefer"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-11"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-11",
+          "agent": "ideen-scout",
+          "runde": "Gründungsnavigator — 11.10.2026",
+          "notiz": "Gerichte als Typ-C-Quelle: benannte Schwäche wurde zur Idee G2.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "gegen-hartz-de-ki-widersprueche-09-08-20",
+      "name": "gegen-hartz.de KI-Widersprüche (09.08.2026)",
+      "typ": "E",
+      "kategorie": "statistik",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.gegen-hartz.de/news/ki-ueberlastung-in-jobcentern-bezieher-der-grundsicherung-fluten-erfolgreich-aemter-mit-widerspruechen"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "web"
+      },
+      "enthaelt": "BA-Zahlen zu Widersprüchen 2025 und 1. Halbjahr 2026, Abhilfequote, Berichte über unpassende Gesetzesverweise",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-11",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "paragrafen-pruefer",
+          "gruendungsnavigator"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-11"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-11",
+          "agent": "ideen-scout",
+          "runde": "Gründungsnavigator — 11.10.2026",
+          "notiz": "Sekundärquelle mit BA-Zahlen; Primärstatistik der BA noch nicht gelesen.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "buergerchat-github-jeannineshiu-buergerc",
+      "name": "BürgerChat (GitHub jeannineshiu/buergerchat)",
+      "typ": "C",
+      "kategorie": "ki-versuch",
+      "rollen": [
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [
+        "https://github.com/jeannineshiu/buergerchat"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "repo"
+      },
+      "enthaelt": "Open-Source-RAG über rund 6.100 amtliche Dokumente zu Sozialleistungen, 13 Sprachen, MIT",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-11",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "sozial-qa-amtliche-quellen"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-11"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-11",
+          "agent": "ideen-scout",
+          "runde": "Gründungsnavigator — 11.10.2026",
+          "notiz": "Besetzt G3, Andockpunkt für G1.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "sozialrat-deutschland-e-v-ki-tools",
+      "name": "Sozialrat Deutschland e.V. KI-Tools",
+      "typ": "W",
+      "kategorie": "empfaenger",
+      "rollen": [
+        "empfaenger"
+      ],
+      "tags": [],
+      "urls": [
+        "https://sozialrat.org/ki-tools/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "web"
+      },
+      "enthaelt": "Behördenbrief-Generator, MDK-Gutachten-Prüfer, Widerspruch-Generator (Pilot pausiert, Relaunch in Vorbereitung)",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-11",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "gruendungsnavigator"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-11"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-11",
+          "agent": "ideen-scout",
+          "runde": "Gründungsnavigator — 11.10.2026",
+          "notiz": "Erster Empfängervorschlag für G1; keine Selbständigkeit, keine Zitatprüfung.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "muenchner-gruendungsbuero-leitfaden-grun",
+      "name": "Münchner Gründungsbüro Leitfaden Grundsicherungsgeld",
+      "typ": "W",
+      "kategorie": "empfaenger",
+      "rollen": [
+        "empfaenger"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.gruenden-muenchen.de/wissen/grundsicherungsgeld-leitfaden"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "web"
+      },
+      "enthaelt": "Leitfaden für Selbständige im Grundsicherungsgeld (Haupt- und Nebenerwerb, Unterlagenliste fürs Jobcenter)",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-11",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "gruendungsnavigator"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-11"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-11",
+          "agent": "ideen-scout",
+          "runde": "Gründungsnavigator — 11.10.2026",
+          "notiz": "Träger auf der Seite nicht genannt; vor Ansprache prüfen.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "gruenderplattform-einstiegsgeld",
+      "name": "Gründerplattform Einstiegsgeld",
+      "typ": "D",
+      "kategorie": "foerderung",
+      "rollen": [
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [
+        "https://gruenderplattform.de/unternehmen-gruenden/einstiegsgeld"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "web"
+      },
+      "enthaelt": "Businessplan-Tool und Vorlagen für Einstiegsgeld-Anträge, monatliche Online-Beratung (BusinessPilot GmbH, KfW-unterstützt)",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-11",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "gruendungsnavigator"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-11"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-11",
+          "agent": "ideen-scout",
+          "runde": "Gründungsnavigator — 11.10.2026",
+          "notiz": "Deckt den Plan ab, nicht das Gespräch.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "jobcenter-guru-app-store-eintrag",
+      "name": "jobcenter.guru App-Store-Eintrag",
+      "typ": "C",
+      "kategorie": "ki-versuch",
+      "rollen": [
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [
+        "https://apps.apple.com/de/app/jobcenter-guru-grundsicherung/id6756262992"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "app"
+      },
+      "enthaelt": "Kommerzielle KI-App für Jobcenter-Briefe und Widersprüche, Preisstufen",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-11",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "paragraphen-dolmetscher"
+        ],
+        "kandidaten": [
+          "gruendungsnavigator"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-11"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-11",
+          "agent": "ideen-scout",
+          "runde": "Gründungsnavigator — 11.10.2026",
+          "notiz": "Preisstand 11.10.2026 korrigiert das „kostenlos“ im Totenschein.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "dejure-org-sgb-ii-nach-dem-13-aenderungs",
+      "name": "dejure.org SGB II nach dem 13. Änderungsgesetz",
+      "typ": "L",
+      "kategorie": "norm",
+      "rollen": [
+        "evidenz"
+      ],
+      "tags": [],
+      "urls": [
+        "https://dejure.org/gesetze/SGB_II/10.html",
+        "https://dejure.org/gesetze/SGB_II/41a.html"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "norm"
+      },
+      "enthaelt": "Normtexte SGB II in der Fassung vom 16.04.2026 mit Fassungs- und Inkrafttretensdatum",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-11",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "gruendungsnavigator",
+          "paragrafen-pruefer"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-11"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-11",
+          "agent": "ideen-scout",
+          "runde": "Gründungsnavigator — 11.10.2026",
+          "notiz": "Erreichbar, als gesetze-im-internet.de mit 503 ausfiel.",
+          "status": "angekratzt"
+        }
+      ]
     }
   ],
   "nichtNutzen": [
