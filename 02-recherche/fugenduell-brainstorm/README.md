@@ -2,6 +2,7 @@
 
 1. [`design-vision.md`](design-vision.md): **start here.** Where we are, what the tests taught us, the shared vision (powers, power-ups, named places, evolution across years), balance gate, roadmap, open questions.
 2. [`wetterjahr-modus.md`](wetterjahr-modus.md): the core idea (real city weather, month by month) and the decided rules (watch mode, same city, relative thresholds, places).
+   - [`combos-und-spezialangriffe.md`](combos-und-spezialangriffe.md): brainstorm of special attacks, combo hands, chain reactions and counters (balance deliberately ignored).
 3. [`regelwerk-v0.1.md`](regelwerk-v0.1.md): card-game rules (hand, intents, reactions) and the measurement → card conversion.
 4. [`kartenzahl-und-beispielkarte.md`](kartenzahl-und-beispielkarte.md): deck sizes (research across 10 games) and a fully explained example card.
 5. [`testspiel-2026-10-11.md`](testspiel-2026-10-11.md): the first games between two agents and what they broke.
