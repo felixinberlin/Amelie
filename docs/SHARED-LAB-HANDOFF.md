@@ -115,3 +115,7 @@ See `docs/lab-github-transfer.md` for the proposed GitHub-hosted transfer workfl
 
 ## Maps cost restriction (2026-10-11)
 Google Maps Platform APIs (Places, JavaScript, Static and Embed) are disabled at Félix’s request because of cost. Do not use or re-enable them, even with existing keys or budget overrides. Verify institutions and addresses via official websites; existing coordinates and OpenStreetMap links remain usable. Re-enabling requires Félix’s explicit authorization.
+
+## Reviewed-intake publication
+
+Published as [PR195](https://github.com/felixinberlin/Amelie/pull/195), branch `lab/intake-review-20261011`. Review commit `d4e98e9e`, passing-validation record `eb954e4`. The PR contains the complete 72-batch disposition and the next-transfer recommendations. Local checks are green as recorded above; inspect PR195 for the final GitHub CI and merge state. The 43 `needs_research` batches remain pending evidence, not unreviewed intake. No producer artifact was modified.
