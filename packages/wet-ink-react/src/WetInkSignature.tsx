@@ -12,7 +12,8 @@ import {
   WetInkStroke,
   WetInkLifecycleState,
   SVGExportOptions,
-  WetInkSavePayload
+  WetInkSavePayload,
+  SealOptions
 } from '../../wet-ink-core/src/index';
 
 export interface WetInkSignatureProps {
@@ -21,6 +22,7 @@ export interface WetInkSignatureProps {
   paper?: WetInkPaperType;
   pigment?: WetInkPigmentType;
   tool?: WetInkToolType;
+  sealOptions?: SealOptions;
   enableAudio?: boolean;
   enableToolbar?: boolean;
   readOnly?: boolean;
@@ -42,6 +44,9 @@ export interface WetInkSignatureHandle {
   setPaper: (paper: WetInkPaperType) => void;
   setPigment: (pigment: WetInkPigmentType) => void;
   setAudioMuted: (muted: boolean) => void;
+  stampSeal: (x: number, y: number, options?: Partial<SealOptions>) => void;
+  getSealOptions: () => SealOptions | null;
+  setSealOptions: (options: Partial<SealOptions>) => void;
   getLifecycleState: () => WetInkLifecycleState;
   getController: () => WetInkController | null;
 }
@@ -58,6 +63,7 @@ export const WetInkSignature = forwardRef<WetInkSignatureHandle, WetInkSignature
       paper = 'buetten',
       pigment = 'eisengallus',
       tool = 'fountain-pen',
+      sealOptions,
       enableAudio = true,
       enableToolbar = true,
       readOnly = false,
@@ -82,6 +88,9 @@ export const WetInkSignature = forwardRef<WetInkSignatureHandle, WetInkSignature
       setPaper: (p: WetInkPaperType) => controllerRef.current?.setPaper(p),
       setPigment: (pig: WetInkPigmentType) => controllerRef.current?.setPigment(pig),
       setAudioMuted: (muted: boolean) => controllerRef.current?.setAudioMuted(muted),
+      stampSeal: (x: number, y: number, opts?: Partial<SealOptions>) => controllerRef.current?.stampSeal(x, y, opts),
+      getSealOptions: () => controllerRef.current ? controllerRef.current.getSealOptions() : null,
+      setSealOptions: (opts: Partial<SealOptions>) => controllerRef.current?.setSealOptions(opts),
       getLifecycleState: () => controllerRef.current ? controllerRef.current.getLifecycleState() : 'frozen',
       getController: () => controllerRef.current
     }));
@@ -100,6 +109,7 @@ export const WetInkSignature = forwardRef<WetInkSignatureHandle, WetInkSignature
         paper,
         pigment,
         tool,
+        sealOptions,
         enableAudio,
         showToolbar: enableToolbar,
         readOnly,

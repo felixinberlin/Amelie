@@ -20,11 +20,20 @@ import {
   WetInkStrokePoint,
   WetInkSavePayload,
   SVGExportOptions,
-  WetInkEventMap
+  WetInkEventMap,
+  SealOptions
 } from './types';
 import { WetInkEventEmitter } from './events';
 import { PenAudioSynthesizer } from './audio';
 import { WetInkSVGExporter } from './svgExport';
+
+const safeRequestAnimationFrame = typeof requestAnimationFrame !== 'undefined'
+  ? requestAnimationFrame
+  : (cb: FrameRequestCallback) => setTimeout(() => cb(Date.now()), 16) as unknown as number;
+
+const safeCancelAnimationFrame = typeof cancelAnimationFrame !== 'undefined'
+  ? cancelAnimationFrame
+  : (id: number) => clearTimeout(id as unknown as ReturnType<typeof setTimeout>);
 
 /**
  * Universal Headless Canvas Controller for Wet Ink Pro.
@@ -53,6 +62,13 @@ export class WetInkController {
   private activePigment: WetInkPigmentType = 'eisengallus';
   private activePigmentConfig: WetInkPigmentConfig;
   private readOnly: boolean = false;
+  private sealOptions: SealOptions = {
+    size: 32,
+    style: 'zhuwen',
+    shape: 'square',
+    glyph: 'classic',
+    chippedEdge: true
+  };
 
   private currentStroke: WetInkStroke | null = null;
   private strokes: WetInkStroke[] = [];
@@ -73,6 +89,9 @@ export class WetInkController {
     this.activePigmentConfig = this.resolvePigmentConfig(options.pigment ?? 'eisengallus');
     this.activePigment = this.activePigmentConfig.id;
     this.activeTool = options.tool ?? 'fountain-pen';
+    if (options.sealOptions) {
+      this.sealOptions = { ...this.sealOptions, ...options.sealOptions };
+    }
     this.readOnly = options.readOnly ?? false;
     this.strokes = options.initialStrokes ? [...options.initialStrokes] : [];
 
@@ -284,6 +303,24 @@ export class WetInkController {
     return this.readOnly;
   }
 
+  public getSealOptions(): SealOptions {
+    return { ...this.sealOptions };
+  }
+
+  public setSealOptions(options: Partial<SealOptions>): void {
+    this.sealOptions = { ...this.sealOptions, ...options };
+  }
+
+  public stampSeal(x: number, y: number, options?: Partial<SealOptions>): void {
+    const opts: SealOptions = { ...this.sealOptions, ...options };
+    this.sim.injectSeal(x, y, opts);
+    this.audioSynth.playStampThud();
+    this.setLifecycleState('settling');
+    this.settlingStartTime = performance.now();
+    this.events.emit('seal:stamp', { x, y, options: opts });
+    this.startActiveLoop();
+  }
+
   // --- Event Subscription ---
 
   public on<K extends keyof WetInkEventMap>(event: K, handler: WetInkEventMap[K]): void {
@@ -306,7 +343,12 @@ export class WetInkController {
     switch (this.activeTool) {
       case 'sumi-brush':
       case 'wash-brush':
+      case 'yanghao':
         return 5.5;
+      case 'jianhao':
+        return 4.2;
+      case 'langhao':
+        return 3.0;
       case 'dip-pen':
         return 1.4;
       case 'fountain-pen':
@@ -331,6 +373,20 @@ export class WetInkController {
     this.lastPointerY = y;
     this.lastPointerTime = now;
 
+    if (this.activeTool === 'seal-stamp') {
+      this.stampSeal(x, y);
+      const stroke: WetInkStroke = {
+        tool: 'seal-stamp',
+        startTime: now,
+        colorHex: this.getColor(),
+        points: [{ x, y, pressure, timeOffset: 0 }]
+      };
+      this.strokes.push(stroke);
+      this.events.emit('stroke:start', stroke);
+      this.events.emit('stroke:end', stroke);
+      return;
+    }
+
     this.currentStroke = {
       tool: this.activeTool,
       startTime: now,
@@ -345,6 +401,12 @@ export class WetInkController {
     const paperRoughness = this.sim.paperConfig.roughness;
     this.audioSynth.startStroke(paperRoughness);
 
+    const isCalligraphy =
+      this.activeTool === 'sumi-brush' ||
+      this.activeTool === 'langhao' ||
+      this.activeTool === 'yanghao' ||
+      this.activeTool === 'jianhao';
+
     this.brushManager.stroke(
       this.sim,
       x,
@@ -354,7 +416,7 @@ export class WetInkController {
         tool: this.activeTool === 'dip-pen' ? 'fountain-pen' : this.activeTool,
         baseRadius: this.getBrushRadius(),
         waterRatio: this.activeTool === 'dip-pen' ? 0.7 : 1.0,
-        dryBrush: false
+        dryBrush: isCalligraphy
       },
       true,
       now
@@ -364,7 +426,7 @@ export class WetInkController {
   }
 
   private onPointerMove(e: PointerEvent): void {
-    if (!this.currentStroke || this.lifecycleState !== 'wet') return;
+    if (!this.currentStroke || this.lifecycleState !== 'wet' || this.activeTool === 'seal-stamp') return;
 
     const rect = this.canvas.getBoundingClientRect();
     const scaleX = rect.width > 0 ? this.canvas.width / rect.width : 1;
@@ -392,6 +454,12 @@ export class WetInkController {
     this.currentStroke.points.push(pt);
     this.events.emit('stroke:point', pt);
 
+    const isCalligraphy =
+      this.activeTool === 'sumi-brush' ||
+      this.activeTool === 'langhao' ||
+      this.activeTool === 'yanghao' ||
+      this.activeTool === 'jianhao';
+
     this.brushManager.stroke(
       this.sim,
       x,
@@ -401,7 +469,7 @@ export class WetInkController {
         tool: this.activeTool === 'dip-pen' ? 'fountain-pen' : this.activeTool,
         baseRadius: this.getBrushRadius(),
         waterRatio: this.activeTool === 'dip-pen' ? 0.7 : 1.0,
-        dryBrush: false
+        dryBrush: isCalligraphy
       },
       false,
       now
@@ -451,15 +519,15 @@ export class WetInkController {
         }
       }
 
-      this.animationFrameId = requestAnimationFrame(loop);
+      this.animationFrameId = safeRequestAnimationFrame(loop);
     };
 
-    this.animationFrameId = requestAnimationFrame(loop);
+    this.animationFrameId = safeRequestAnimationFrame(loop);
   }
 
   private stopActiveLoop(): void {
     if (this.animationFrameId !== null) {
-      cancelAnimationFrame(this.animationFrameId);
+      safeCancelAnimationFrame(this.animationFrameId);
       this.animationFrameId = null;
     }
   }

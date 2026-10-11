@@ -8,7 +8,8 @@ import {
   WetInkToolType,
   WetInkStroke,
   SVGExportOptions,
-  WetInkSavePayload
+  WetInkSavePayload,
+  SealOptions
 } from '../../wet-ink-core/src/index';
 
 export interface UseWetInkOptions extends Omit<WetInkControllerOptions, 'target'> {
@@ -27,6 +28,9 @@ export interface UseWetInkReturn {
   setPaper: (paper: WetInkPaperType) => void;
   setPigment: (pigment: WetInkPigmentType) => void;
   setAudioMuted: (muted: boolean) => void;
+  stampSeal: (x: number, y: number, options?: Partial<SealOptions>) => void;
+  getSealOptions: () => SealOptions | null;
+  setSealOptions: (options: Partial<SealOptions>) => void;
   exportPNG: () => string;
   exportSVG: (options?: SVGExportOptions) => string;
 }
@@ -108,6 +112,18 @@ export function useWetInk(
     controllerRef.current?.setAudioMuted(muted);
   }, []);
 
+  const stampSeal = useCallback((x: number, y: number, opts?: Partial<SealOptions>) => {
+    controllerRef.current?.stampSeal(x, y, opts);
+  }, []);
+
+  const getSealOptions = useCallback(() => {
+    return controllerRef.current ? controllerRef.current.getSealOptions() : null;
+  }, []);
+
+  const setSealOptions = useCallback((opts: Partial<SealOptions>) => {
+    controllerRef.current?.setSealOptions(opts);
+  }, []);
+
   const exportPNG = useCallback(() => {
     return controllerRef.current ? controllerRef.current.exportPNG() : '';
   }, []);
@@ -127,6 +143,9 @@ export function useWetInk(
     setPaper,
     setPigment,
     setAudioMuted,
+    stampSeal,
+    getSealOptions,
+    setSealOptions,
     exportPNG,
     exportSVG
   };

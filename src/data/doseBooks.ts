@@ -167,6 +167,26 @@ export const DOSE_BOOKS: Record<string, BookChapter[]> = {
       date: '11.10.2026',
       kind: 'md',
     },
+    {
+      slug: 'scaffold',
+      path: '07-demos/wet-ink/README.md',
+      titleDe: 'Scaffolding & SDK-Architektur',
+      titleEn: 'Scaffolding & SDK architecture',
+      noteDe: 'Headless-Fluid-Kernel, Modulares SDK (@wet-ink/core, tiptap, react, obsidian) und Tickets.',
+      noteEn: 'Headless fluid kernel, modular SDK (@wet-ink/core, tiptap, react, obsidian), and tickets.',
+      date: '2026',
+      kind: 'md',
+    },
+    {
+      slug: 'ticket-03-calligraphy',
+      path: '07-demos/wet-ink/ticket-03-chinesische-kalligrafie-und-siegelkunst.md',
+      titleDe: 'Ticket #3: Chinesische Kalligrafie & Siegelkunst',
+      titleEn: 'Ticket #3: Chinese Calligraphy & Seal Art',
+      noteDe: 'Realisierte Spezifikation für Xuan-Papiere, Mao-Bi-Haardynamik, Übungsgitter und Zhuanke-Siegel.',
+      noteEn: 'Implemented specification for Xuan papers, Mao-Bi dynamics, training grids, and Zhuanke seals.',
+      date: '11.10.2026',
+      kind: 'md',
+    },
   ],
   'fugenduell-asphalt-arena': [
     {

@@ -32,6 +32,14 @@ export type WetInkToolType =
   | 'seal-stamp';
 export type WetInkLifecycleState = 'wet' | 'settling' | 'frozen';
 
+export type {
+  SealStyle,
+  SealShape,
+  SealGlyph,
+  SealOptions
+} from '../../../src/engine/wet-ink/types';
+import type { SealOptions } from '../../../src/engine/wet-ink/types';
+
 export type { WetInkPigmentConfig };
 
 export interface WetInkStrokePoint {
@@ -71,6 +79,7 @@ export interface WetInkEventMap {
   'stroke:start': (stroke: WetInkStroke) => void;
   'stroke:point': (point: WetInkStrokePoint) => void;
   'stroke:end': (stroke: WetInkStroke) => void;
+  'seal:stamp': (seal: { x: number; y: number; options: SealOptions }) => void;
   'blot': () => void;
   'clear': () => void;
   'freeze': (payload: WetInkSavePayload) => void;
@@ -90,6 +99,8 @@ export interface WetInkControllerOptions {
   pigment?: WetInkPigmentType | WetInkPigmentConfig;
   /** Drawing tool nib preset (default: 'fountain-pen') */
   tool?: WetInkToolType;
+  /** Configuration for seal stamp tool (default: classic square Zhuwen seal) */
+  sealOptions?: SealOptions;
   /** Enable real-time Web Audio nib friction acoustic synthesis (default: true) */
   enableAudio?: boolean;
   /** Initial audio mute state (default: false) */

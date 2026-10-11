@@ -84,7 +84,94 @@ describe('@wet-ink/core — Headless Architecture', () => {
       controller.blot();
       expect(blotFired).toBe(true);
 
+      // Calligraphy brushes and Xuan paper substrates
+      controller.setTool('langhao');
+      expect(controller.getTool()).toBe('langhao');
+      controller.setTool('yanghao');
+      expect(controller.getTool()).toBe('yanghao');
+      controller.setTool('jianhao');
+      expect(controller.getTool()).toBe('jianhao');
+
+      controller.setPaper('sheng-xuan');
+      expect(controller.getPaper()).toBe('sheng-xuan');
+      controller.setPaper('ban-shu-xuan');
+      expect(controller.getPaper()).toBe('ban-shu-xuan');
+      controller.setPaper('shu-xuan');
+      expect(controller.getPaper()).toBe('shu-xuan');
+
+      // Seal stamping API & events
+      let stampedSealEvent: any = null;
+      controller.on('seal:stamp', (seal) => {
+        stampedSealEvent = seal;
+      });
+
+      controller.setSealOptions({ style: 'baiwen', shape: 'round', glyph: 'amelie', size: 30 });
+      expect(controller.getSealOptions()).toMatchObject({
+        style: 'baiwen',
+        shape: 'round',
+        glyph: 'amelie',
+        size: 30
+      });
+
+      controller.stampSeal(120, 60);
+      expect(stampedSealEvent).toEqual({
+        x: 120,
+        y: 60,
+        options: expect.objectContaining({
+          style: 'baiwen',
+          shape: 'round',
+          glyph: 'amelie',
+          size: 30
+        })
+      });
+      expect(controller.getLifecycleState()).toBe('settling');
+
       // Destruction
+      controller.destroy();
+    });
+
+    it('handles seal-stamp pointerdown as single tactile stamp', () => {
+      let pointerDownListener: any = null;
+      const mockCanvas = {
+        getContext: () => ({
+          createImageData: () => ({ data: new Uint8ClampedArray(480 * 160 * 4) }),
+          putImageData: vi.fn(),
+          drawImage: vi.fn()
+        }),
+        addEventListener: vi.fn((event, handler) => {
+          if (event === 'pointerdown') pointerDownListener = handler;
+        }),
+        removeEventListener: vi.fn(),
+        getBoundingClientRect: () => ({ left: 0, top: 0, width: 480, height: 160 }),
+        setPointerCapture: vi.fn(),
+        releasePointerCapture: vi.fn(),
+        toDataURL: () => 'data:image/png;base64,mock',
+        style: {}
+      } as unknown as HTMLCanvasElement;
+
+      let strokeEndCalled = false;
+      const controller = new WetInkController({
+        target: mockCanvas,
+        tool: 'seal-stamp',
+        onStrokeEnd: (stroke) => {
+          expect(stroke.tool).toBe('seal-stamp');
+          strokeEndCalled = true;
+        }
+      });
+
+      expect(pointerDownListener).toBeDefined();
+      pointerDownListener({
+        pointerId: 1,
+        clientX: 100,
+        clientY: 50,
+        pressure: 0.8
+      });
+
+      expect(strokeEndCalled).toBe(true);
+      expect(controller.getStrokes()).toHaveLength(1);
+      expect(controller.getStrokes()[0].tool).toBe('seal-stamp');
+      expect(controller.getLifecycleState()).toBe('settling');
+
       controller.destroy();
     });
   });

@@ -1,5 +1,13 @@
 import { WetInkController } from './WetInkController';
-import { WetInkPaperType, WetInkPigmentType, WetInkToolType } from './types';
+import {
+  WetInkPaperType,
+  WetInkPigmentType,
+  WetInkToolType,
+  SealOptions,
+  SealStyle,
+  SealShape,
+  SealGlyph
+} from './types';
 
 const BaseElement: typeof HTMLElement = typeof HTMLElement !== 'undefined'
   ? HTMLElement
@@ -13,7 +21,21 @@ export class WetInkSignatureElement extends BaseElement {
   private controller: WetInkController | null = null;
 
   static get observedAttributes() {
-    return ['paper', 'pigment', 'color', 'tool', 'width', 'height', 'audio', 'readonly', 'toolbar'];
+    return [
+      'paper',
+      'pigment',
+      'color',
+      'tool',
+      'width',
+      'height',
+      'audio',
+      'readonly',
+      'toolbar',
+      'seal-style',
+      'seal-shape',
+      'seal-glyph',
+      'seal-size'
+    ];
   }
 
   connectedCallback() {
@@ -29,6 +51,15 @@ export class WetInkSignatureElement extends BaseElement {
     const readOnly = this.hasAttribute('readonly') && this.getAttribute('readonly') !== 'false';
     const showToolbar = this.getAttribute('toolbar') !== 'false';
 
+    const sealOptions: Partial<SealOptions> = {};
+    if (this.hasAttribute('seal-style')) sealOptions.style = this.getAttribute('seal-style') as SealStyle;
+    if (this.hasAttribute('seal-shape')) sealOptions.shape = this.getAttribute('seal-shape') as SealShape;
+    if (this.hasAttribute('seal-glyph')) sealOptions.glyph = this.getAttribute('seal-glyph') as SealGlyph;
+    if (this.hasAttribute('seal-size')) {
+      const s = parseInt(this.getAttribute('seal-size') || '', 10);
+      if (!isNaN(s) && s > 0) sealOptions.size = s;
+    }
+
     this.controller = new WetInkController({
       target: this as any,
       width,
@@ -36,6 +67,7 @@ export class WetInkSignatureElement extends BaseElement {
       paper,
       pigment,
       tool,
+      sealOptions,
       enableAudio,
       readOnly,
       showToolbar,
@@ -45,6 +77,10 @@ export class WetInkSignatureElement extends BaseElement {
       onStateChange: (state) => {
         this.dispatchEvent(new CustomEvent('wetink:statechange', { detail: { state }, bubbles: true }));
       }
+    });
+
+    this.controller.on('seal:stamp', (seal) => {
+      this.dispatchEvent(new CustomEvent('wetink:sealstamp', { detail: seal, bubbles: true }));
     });
   }
 
@@ -77,6 +113,20 @@ export class WetInkSignatureElement extends BaseElement {
       case 'readonly':
         this.controller.setReadOnly(newValue !== null && newValue !== 'false');
         break;
+      case 'seal-style':
+        if (newValue) this.controller.setSealOptions({ style: newValue as SealStyle });
+        break;
+      case 'seal-shape':
+        if (newValue) this.controller.setSealOptions({ shape: newValue as SealShape });
+        break;
+      case 'seal-glyph':
+        if (newValue) this.controller.setSealOptions({ glyph: newValue as SealGlyph });
+        break;
+      case 'seal-size': {
+        const s = parseInt(newValue || '', 10);
+        if (!isNaN(s) && s > 0) this.controller.setSealOptions({ size: s });
+        break;
+      }
     }
   }
 
@@ -99,6 +149,18 @@ export class WetInkSignatureElement extends BaseElement {
 
   public freeze(): void {
     this.controller?.freeze();
+  }
+
+  public stampSeal(x: number, y: number, options?: Partial<SealOptions>): void {
+    this.controller?.stampSeal(x, y, options);
+  }
+
+  public getSealOptions(): SealOptions | null {
+    return this.controller ? this.controller.getSealOptions() : null;
+  }
+
+  public setSealOptions(options: Partial<SealOptions>): void {
+    this.controller?.setSealOptions(options);
   }
 
   public getController(): WetInkController | null {
