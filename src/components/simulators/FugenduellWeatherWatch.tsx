@@ -95,6 +95,19 @@ export function FugenduellWeatherWatch({ lang }: { lang: Language }) {
   const month = game && step > 0 ? game.result.months[step - 1] : null;
   const shootsAt = (side: 0 | 1, i: number) => (month ? month.shoots[side][i] : 2);
   const seedsAt = (side: 0 | 1, i: number) => (month ? month.seeds[side][i] : 2);
+  const hardAt = (side: 0 | 1, i: number) => (month ? month.hardening[side][i] : 0);
+  const statusAt = (side: 0 | 1, i: number) => (month ? month.status[side][i] : 'alive');
+  const resistText = (p: SpeciesProfile) => {
+    const r = p.resist; const out: string[] = [];
+    if (r.heat) out.push(`🔥−${r.heat}`);
+    if (r.drought) out.push(`🏜−${r.drought}`);
+    if (r.frost) out.push(`❄−${r.frost}`);
+    out.push(r.salt === null ? `🧂?` : r.salt ? '🧂✓' : '🧂✗');
+    if (r.trample) out.push(`👣✓`);
+    if (r.shade) out.push(`🌳✓`);
+    if (r.regrowth) out.push(`🌱↺`);
+    return out.join(' ');
+  };
   const total = (side: 0 | 1) => [0, 1, 2].reduce((s, i) => s + shootsAt(side, i), 0);
   const runningScore = (side: 0 | 1) => game ? game.result.months.slice(0, step).reduce((s, m) => s + m.sideShoots[side], 0) : 0;
 
@@ -113,7 +126,7 @@ export function FugenduellWeatherWatch({ lang }: { lang: Language }) {
       <header className="rounded-2xl bg-stone-900 text-white p-4 sm:p-6">
         <h2 className="text-2xl font-bold">{t('Wetterjahr: Stadt wählen, Ort wählen, zuschauen.', 'Weather year: pick a city, pick a place, watch.')}</h2>
         <p className="mt-2 text-sm">{t('Zwei Gemeinschaften aus je drei Arten leben ein echtes Wetterjahr lang (März bis Februar) an einem Ort in der Stadt. Niemand greift ein: Wetter, Ort und die gemessenen Pflanzendaten entscheiden.', 'Two communities of three species each live through a real weather year (March to February) at one place in the city. Nobody intervenes: weather, place and the measured plant data decide.')}</p>
-        <p className="mt-2 text-sm text-amber-200">{t('Pflanzenwerte: Pladias, UNDERPLOT, RHS. Wetter: NASA POWER (Raster ca. 50 km, ohne städtische Wärmeinsel). Ortswerte (Tritt, Reinigung, Platz) sind Spielannahmen. Regeln: watch-v1, wetter-v1.', 'Plant values: Pladias, UNDERPLOT, RHS. Weather: NASA POWER (grid about 50 km, no urban heat island). Place values (trampling, cleaning, space) are game assumptions. Rules: watch-v1, wetter-v1.')}</p>
+        <p className="mt-2 text-sm text-amber-200">{t('Pflanzenwerte: Pladias, UNDERPLOT, RHS. Wetter: NASA POWER (Raster ca. 50 km, ohne städtische Wärmeinsel). Ortswerte (Tritt, Reinigung, Platz) sind Spielannahmen. HP = höchstens so viele Triebe (Lebensform + Knospenbank); Resistenzen aus je einem Datenfeld. Eine Pflanze welkt ohne Triebe und stirbt aus, wenn auch keine Samen mehr da sind. Regeln: watch-v2, wetter-v1.', 'Plant values: Pladias, UNDERPLOT, RHS. Weather: NASA POWER (grid about 50 km, no urban heat island). Place values (trampling, cleaning, space) are game assumptions. HP = most shoots a plant can hold (life form + bud bank); each resistance from one data field. A plant wilts without shoots and dies out when no seeds are left either. Rules: watch-v2, wetter-v1.')}</p>
       </header>
 
       <div className="rounded-xl border bg-white p-4 space-y-4">
@@ -190,9 +203,13 @@ export function FugenduellWeatherWatch({ lang }: { lang: Language }) {
                 {game.teams[side].map((id, i) => {
                   const p = species.find(s => s.id === id) as SpeciesProfile;
                   const fit = placeFit(p, place);
-                  return <li key={id} className="rounded-lg border p-2 text-sm">
+                  const st = statusAt(side, i);
+                  return <li key={id} className={`rounded-lg border p-2 text-sm ${st === 'dead' ? 'bg-stone-100 opacity-70' : ''}`}>
                     <span className="inline-block w-3 h-3 rounded-full mr-1 align-middle" style={{ background: TEAM_COLOURS[side][i] }} aria-hidden="true" />
-                    <strong>{nameOf(id)}</strong> · {shootsAt(side, i)} {t('Triebe', 'shoots')} · {seedsAt(side, i)} {t('Samen', 'seeds')}
+                    <strong>{nameOf(id)}</strong> {st === 'dead' ? `☠ ${t('ausgestorben', 'died out')}` : st === 'wilted' ? `🥀 ${t('verwelkt, Samen im Boden', 'wilted, seeds in the soil')}` : ''}
+                    <span className="mt-1 flex h-2 rounded bg-stone-200 overflow-hidden" role="img" aria-label={`HP ${shootsAt(side, i)}/${p.maxHp}`}><span style={{ width: `${(shootsAt(side, i) / p.maxHp) * 100}%`, background: TEAM_COLOURS[side][i], transition: 'width 0.6s' }} /></span>
+                    <span className="block">HP {shootsAt(side, i)}/{p.maxHp} {t('Triebe', 'shoots')} · 🛡 {hardAt(side, i)} · {seedsAt(side, i)} {t('Samen', 'seeds')}</span>
+                    <span className="block text-xs" title={t('Resistenzen: Hitze, Dürre, Frost, Salz, Tritt, Schatten, Wiederaustrieb', 'Resistances: heat, drought, frost, salt, trampling, shade, regrowth')}>{resistText(p)}</span>
                     <span className="block text-xs text-stone-600">C{p.points.C}/S{p.points.S}/R{p.points.R} · {t('Höhe', 'height')} {p.heightClass}{p.rosette ? ` · ${t('Rosette', 'rosette')}` : ''} · {t('Passung', 'fit')} {fit.known < 3 ? '?' : `${fit.fits}/${fit.known}`}{fit.bonus ? ` (${fit.bonus > 0 ? '+' : ''}${fit.bonus})` : ''} · {t('Tritt', 'trampling')} −{trampleLoss(p, place)}</span>
                   </li>;
                 })}

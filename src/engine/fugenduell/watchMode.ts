@@ -4,6 +4,7 @@
  * converted by the rules in 02-recherche/fugenduell-brainstorm/regelwerk-v0.1.md and wetterjahr-modus.md.
  */
 import pladiasData from '../../data/fugenduellScientificTraits.json';
+import rootData from '../../data/fugenduellRootTraits.json';
 import { FUGENDUELL_STARTER_ROSTER } from '../../data/fugenduellData';
 import { BOTANY } from '../../data/fugenduellBotany';
 import { CityPlace } from '../../data/fugenduellPlaces';
@@ -29,10 +30,24 @@ export interface SpeciesProfile {
   site: Record<'L' | 'F' | 'R' | 'N' | 'S', Indicator | null>;
   rosette: boolean; // RHS fact sheet mentions a leaf rosette (flat to the ground)
   wallDweller: boolean; // RHS / BBS habitat: walls
+  budBank: number | null; // UNDERPLOT BBsize (species mean); null = not measured
+  maxHp: number; // most shoots this plant can hold, see plantMaxHp
+  resist: Resistances;
+}
+
+/** Resistances: each comes from one data field; a missing value is neutral (never a weakness). */
+export interface Resistances {
+  heat: number; // shoots less lost per heat month: 1 if temperature indicator T ≥ 7
+  drought: number; // 1 if moisture indicator F ≤ 4, 2 if F ≤ 3
+  frost: number; // 1 for hemicryptophytes (Raunkiær: overwintering buds at the soil surface)
+  salt: boolean | null; // true = salt indicator S ≥ 1, false = S 0 (takes salt damage), null = unknown (no damage)
+  trample: boolean; // flat plant: height class 1 or rosette, no trampling loss
+  shade: boolean; // light indicator L ≤ 6: shaded only after light-demanding plants of the same height
+  regrowth: boolean; // bud bank ≥ 10: regrows 1 shoot after cleaning
 }
 
 export const WATCH_RULES = {
-  version: 'watch-v1',
+  version: 'watch-v2',
   capacity: 60,
   startShoots: 2,
   startSeeds: 2,
@@ -42,6 +57,7 @@ export const WATCH_RULES = {
 } as const;
 
 const pladias = pladiasData as Record<string, { values: Record<string, string> }>;
+const roots = (rootData as { records: Record<string, { values: Record<string, number | null> }> }).records;
 const MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
 
 function indicator(raw: string | undefined): Indicator | null {
@@ -98,6 +114,31 @@ export function strategyCycle(points: Record<Strategy, number>): Strategy[] {
   return out;
 }
 
+/**
+ * Maximum HP = the most shoots one plant can hold.
+ * Life form (Pladias, Raunkiær): annual 12, perennial herb 16, woody 20, unknown 16.
+ * Bud bank (UNDERPLOT BBsize): ≥ 20 buds +4, ≥ 10 buds +2, unknown +0.
+ */
+export function plantMaxHp(lifeForm: LifeForm, budBank: number | null): number {
+  const base = lifeForm === 'therophyte' ? 12 : lifeForm === 'phanerophyte' ? 20 : 16;
+  const bonus = budBank === null ? 0 : budBank >= 20 ? 4 : budBank >= 10 ? 2 : 0;
+  return base + bonus;
+}
+
+export function plantResistances(p: Pick<SpeciesProfile, 'T' | 'F' | 'site' | 'lifeForm' | 'heightClass' | 'rosette' | 'budBank'>): Resistances {
+  const known = (i: Indicator | null) => i && !i.broad ? i.value : null;
+  const T = known(p.T), F = known(p.F), L = known(p.site.L);
+  return {
+    heat: T !== null && T >= 7 ? 1 : 0,
+    drought: F === null ? 0 : F <= 3 ? 2 : F <= 4 ? 1 : 0,
+    frost: p.lifeForm === 'hemicryptophyte' ? 1 : 0,
+    salt: p.site.S === null ? null : p.site.S.broad || p.site.S.value >= 1,
+    trample: p.heightClass <= 1 || p.rosette,
+    shade: L !== null && L <= 6,
+    regrowth: p.budBank !== null && p.budBank >= 10,
+  };
+}
+
 /** Builds a playable species from the verified data, or null if it is locked (no CSR) or banned. */
 export function speciesProfile(id: string): SpeciesProfile | null {
   const species = FUGENDUELL_STARTER_ROSTER.find(p => p.id === id);
@@ -108,19 +149,23 @@ export function speciesProfile(id: string): SpeciesProfile | null {
   if (![c, s, r].every(Number.isFinite)) return null;
   const points = strategyPoints(c, s, r);
   const h = heightClass(v['Height [m]']);
+  const lf = lifeForm(v['Life form']);
+  const budBank = roots[id]?.values.BBsize ?? null;
+  const T = indicator(v['Temperature indicator value']), F = indicator(v['Moisture indicator value']);
+  const site = {
+    L: indicator(v['Light indicator value']), F, R: indicator(v['Reaction indicator value']),
+    N: indicator(v['Nutrient indicator value']), S: indicator(v['Salinity indicator value']),
+  };
+  const rosette = (BOTANY[id]?.facts ?? []).some(f => /rosette/i.test(f[2]) && !/erect|arising/i.test(f[2]));
+  const heightCls = h ?? 2;
   return {
     id, nameDe: species.nameCommonDe, nameEn: species.nameCommonEn, points, cycle: strategyCycle(points),
-    heightClass: h ?? 2, heightKnown: h !== null,
+    heightClass: heightCls, heightKnown: h !== null,
     floweringMonths: parseFlowering(v['Flowering period [month]']),
-    lifeForm: lifeForm(v['Life form']),
-    T: indicator(v['Temperature indicator value']),
-    F: indicator(v['Moisture indicator value']),
-    site: {
-      L: indicator(v['Light indicator value']), F: indicator(v['Moisture indicator value']), R: indicator(v['Reaction indicator value']),
-      N: indicator(v['Nutrient indicator value']), S: indicator(v['Salinity indicator value']),
-    },
-    rosette: (BOTANY[id]?.facts ?? []).some(f => /rosette/i.test(f[2]) && !/erect|arising/i.test(f[2])),
+    lifeForm: lf, T, F, site, rosette,
     wallDweller: !!BOTANY[id]?.wall,
+    budBank, maxHp: plantMaxHp(lf, budBank),
+    resist: plantResistances({ T, F, site, lifeForm: lf, heightClass: heightCls, rosette, budBank }),
   };
 }
 
@@ -133,8 +178,10 @@ export function localFlowering(p: SpeciesProfile, lat: number): number[] {
   return lat < 0 ? p.floweringMonths.map(m => ((m + 5) % 12) + 1) : p.floweringMonths;
 }
 
-export interface PlantState { id: string; side: 0 | 1; shoots: number; seeds: number; hardening: number; next: number; shootMonths: number }
-export interface MonthLog { card: MonthCard; lines: string[]; shoots: number[][]; seeds: number[][]; sideShoots: [number, number] }
+export type PlantStatus = 'alive' | 'wilted' | 'dead';
+/** alive: has shoots · wilted: no shoots but seeds, can sprout again · dead: no shoots and no seeds, out for the rest of the year. */
+export interface PlantState { id: string; side: 0 | 1; shoots: number; seeds: number; hardening: number; next: number; shootMonths: number; status: PlantStatus; diedIn: number | null }
+export interface MonthLog { card: MonthCard; lines: string[]; shoots: number[][]; seeds: number[][]; hardening: number[][]; status: PlantStatus[][]; sideShoots: [number, number] }
 export interface WatchResult { months: MonthLog[]; plants: PlantState[]; score: [number, number]; seeds: [number, number]; winner: 0 | 1 | 'draw' }
 
 /** Fit of a species to a place: indicator values within ±1 (or broad "x") count. Fewer than 3 known values = neutral. */
@@ -151,7 +198,7 @@ export function placeFit(p: SpeciesProfile, place: CityPlace): { fits: number; k
 
 /** Trampling: flat plants (height class 1 or rosette) escape, upright tall plants suffer twice. */
 export function trampleLoss(p: SpeciesProfile, place: CityPlace): number {
-  if (!place.trample || p.heightClass <= 1 || p.rosette) return 0;
+  if (!place.trample || p.resist.trample) return 0;
   return place.trample * (p.heightClass >= 3 ? 2 : 1);
 }
 
@@ -168,7 +215,7 @@ export function runWatch(sides: [string[], string[]], cards: MonthCard[], lat: n
     return ids.map(id => { const p = speciesProfile(id); if (!p) throw new Error(`Species not playable: ${id}`); return p; });
   });
   const R = WATCH_RULES;
-  const plants: PlantState[] = profiles.flatMap((ps, side) => ps.map(p => ({ id: p.id, side: side as 0 | 1, shoots: R.startShoots, seeds: R.startSeeds, hardening: 0, next: 0, shootMonths: 0 })));
+  const plants: PlantState[] = profiles.flatMap((ps, side) => ps.map(p => ({ id: p.id, side: side as 0 | 1, shoots: R.startShoots, seeds: R.startSeeds, hardening: 0, next: 0, shootMonths: 0, status: 'alive' as PlantStatus, diedIn: null })));
   const prof = (s: PlantState) => profiles[s.side][plants.filter(x => x.side === s.side).indexOf(s)];
   const capacity = place?.capacity ?? R.capacity;
   const fitBonus = (p: SpeciesProfile) => place ? placeFit(p, place).bonus : 0;
@@ -187,6 +234,7 @@ export function runWatch(sides: [string[], string[]], cards: MonthCard[], lat: n
     // 2. Strategy cards, paid with day-length energy.
     for (const s of plants) {
       const p = prof(s); let energy = card.energy; const played: string[] = [];
+      if (s.status === 'dead') continue;
       let skipped = 0;
       while (skipped < p.cycle.length && R.cost[p.cycle[s.next % p.cycle.length]] <= energy) {
         const t = p.cycle[s.next % p.cycle.length];
@@ -204,6 +252,7 @@ export function runWatch(sides: [string[], string[]], cards: MonthCard[], lat: n
           s.hardening = Math.min(R.maxHardening, s.hardening + 2); played.push('Endure+2');
         }
       }
+      if (s.shoots > p.maxHp) { played.push(`max HP ${p.maxHp} (−${s.shoots - p.maxHp} wasted)`); s.shoots = p.maxHp; }
       if (played.length) lines.push(`${name(p, lang)}: ${played.join(', ')}`);
     }
     // 3. Shading: over capacity, the lowest plants lose first.
@@ -214,7 +263,8 @@ export function runWatch(sides: [string[], string[]], cards: MonthCard[], lat: n
       // on the order of the players (mirror matches stay drawn; the crack may end up one or two under capacity).
       const alive = plants.filter(s => s.shoots > 0);
       const minH = Math.min(...alive.map(s => prof(s).heightClass));
-      const tier = alive.filter(s => prof(s).heightClass === minH);
+      let tier = alive.filter(s => prof(s).heightClass === minH);
+      if (tier.some(s => !prof(s).resist.shade)) tier = tier.filter(s => !prof(s).resist.shade); // shade-tolerant plants last
       const most = Math.max(...tier.map(s => s.shoots));
       for (const victim of tier.filter(s => s.shoots === most)) { victim.shoots--; total--; shaded.set(victim, (shaded.get(victim) ?? 0) + 1); }
     }
@@ -228,7 +278,11 @@ export function runWatch(sides: [string[], string[]], cards: MonthCard[], lat: n
         if (trampled) { s.shoots -= trampled; lines.push(`${name(p, lang)}: trampled −${trampled}`); }
         if (cleaning && s.shoots) {
           const removed = p.lifeForm === 'phanerophyte' ? s.shoots : (p.heightClass <= 1 || p.rosette) ? Math.floor(s.shoots / 2) : Math.ceil(s.shoots / 2);
-          if (removed) { s.shoots -= removed; lines.push(`${name(p, lang)}: cleaning removes ${removed}`); }
+          if (removed) {
+            s.shoots -= removed;
+            const back = p.resist.regrowth && p.lifeForm !== 'phanerophyte' ? 1 : 0; s.shoots += back;
+            lines.push(`${name(p, lang)}: cleaning removes ${removed}${back ? ', bud bank regrows 1' : ''}`);
+          }
         }
       }
     }
@@ -239,14 +293,15 @@ export function runWatch(sides: [string[], string[]], cards: MonthCard[], lat: n
     if (heatBase || droughtBase || card.frost || salt) {
       for (const s of plants) {
         const p = prof(s);
-        const heat = Math.max(0, heatBase - (p.T && !p.T.broad && p.T.value >= 7 ? 1 : 0));
-        const drought = Math.max(0, droughtBase - (p.F && !p.F.broad && p.F.value <= 4 ? 1 : 0));
-        const saltLoss = salt && p.site.S && !p.site.S.broad && p.site.S.value === 0 ? 1 : 0; // missing value: no penalty
-        const loss = heat + drought + card.frost + saltLoss;
+        const heat = Math.max(0, heatBase - p.resist.heat);
+        const drought = Math.max(0, droughtBase - p.resist.drought);
+        const frost = Math.max(0, card.frost - p.resist.frost);
+        const saltLoss = salt && p.resist.salt === false ? 1 : 0; // unknown salt value: no penalty
+        const loss = heat + drought + frost + saltLoss;
         if (!loss || !s.shoots) continue;
         const absorbed = Math.min(s.hardening, loss); s.hardening -= absorbed;
         const lost = Math.min(s.shoots, loss - absorbed); s.shoots -= lost;
-        lines.push(`${name(p, lang)}: weather −${loss} (heat ${heat}, drought ${drought}, frost ${card.frost}${saltLoss ? ', salt 1' : ''}); hardening absorbs ${absorbed} → −${lost}`);
+        lines.push(`${name(p, lang)}: weather −${loss} (heat ${heat}, drought ${drought}, frost ${frost}${saltLoss ? ', salt 1' : ''}); hardening absorbs ${absorbed} → −${lost}`);
       }
     }
     // 6. Annuals complete their cycle after the last flowering month: shoots → seeds.
@@ -256,10 +311,16 @@ export function runWatch(sides: [string[], string[]], cards: MonthCard[], lat: n
         lines.push(`${name(p, lang)}: annual fruits and dies, ${s.shoots} shoots → seeds`);
         s.seeds += s.shoots; s.shoots = 0;
       }
+      if (s.status !== 'dead') {
+        const next: PlantStatus = s.shoots > 0 ? 'alive' : s.seeds > 0 ? 'wilted' : 'dead';
+        if (next !== s.status) lines.push(`${name(p, lang)}: ${next === 'alive' ? 'grows again' : next === 'wilted' ? 'wilted (seeds remain)' : 'DIES OUT — no shoots, no seeds'}`);
+        s.status = next; if (next === 'dead') s.diedIn = card.month;
+      }
       s.shootMonths += s.shoots;
     }
-    const by = (side: number, f: (s: PlantState) => number) => plants.filter(s => s.side === side).map(f);
+    const by = <T,>(side: number, f: (s: PlantState) => T): T[] => plants.filter(s => s.side === side).map(f);
     months.push({ card, lines, shoots: [by(0, s => s.shoots), by(1, s => s.shoots)], seeds: [by(0, s => s.seeds), by(1, s => s.seeds)],
+      hardening: [by(0, s => s.hardening), by(1, s => s.hardening)], status: [by(0, s => s.status), by(1, s => s.status)],
       sideShoots: [by(0, s => s.shoots).reduce((a, b) => a + b, 0), by(1, s => s.shoots).reduce((a, b) => a + b, 0)] });
   }
   const sum = (side: number, f: (s: PlantState) => number) => plants.filter(s => s.side === side).reduce((a, s) => a + f(s), 0);

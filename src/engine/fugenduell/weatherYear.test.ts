@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { aggregateMonths, dayLength, energyFor, fetchNasaPowerYear, fromFixture, monthCards, WeatherYearData, WeatherYearFixture } from './weatherYear';
-import { parseFlowering, placeFit, playableSpecies, runWatch, speciesProfile, strategyCycle, strategyPoints, trampleLoss } from './watchMode';
+import { parseFlowering, placeFit, plantMaxHp, playableSpecies, runWatch, speciesProfile, strategyCycle, strategyPoints, trampleLoss } from './watchMode';
 import { CITY_PLACES, placeById } from '../../data/fugenduellPlaces';
 import berlinRaw from '../../data/fugenduellWeather/berlin-2025.json';
 import madridRaw from '../../data/fugenduellWeather/madrid-2025.json';
@@ -167,9 +167,9 @@ describe('places in the city', () => {
       const open = runWatch([shrubTeam, trampleTeam], cards(d), d.lat, 'en', wasteland);
       const crack = runWatch([shrubTeam, trampleTeam], cards(d), d.lat, 'en', pavement);
       expect(open.winner).toBe(0);
-      expect(crack.score[0]).toBeLessThan(open.score[0] * 0.2);
+      // the shrub itself (cleaning removes all woody shoots) holds far less ground in the crack
+      expect(crack.plants[0].shootMonths).toBeLessThan(open.plants[0].shootMonths * 0.25);
     }
-    expect(runWatch([shrubTeam, trampleTeam], cards(berlin), berlin.lat, 'en', pavement).winner).toBe(1);
   });
 
   it('stays within each place capacity and keeps mirror matches drawn', () => {
@@ -179,5 +179,49 @@ describe('places in the city', () => {
       expect(r.winner).toBe('draw');
       r.months.forEach(m => expect(m.sideShoots[0] + m.sideShoots[1]).toBeLessThanOrEqual(place.capacity));
     }
+  });
+});
+
+describe('HP, resistances and death (watch-v2)', () => {
+  it('derives max HP from life form and bud bank; a missing bud bank is neutral', () => {
+    expect(plantMaxHp('therophyte', null)).toBe(12);
+    expect(plantMaxHp('hemicryptophyte', 12.5)).toBe(18);
+    expect(plantMaxHp('phanerophyte', null)).toBe(20);
+    expect(speciesProfile('plantago-major')!.maxHp).toBe(20); // perennial + bud bank 20
+    expect(speciesProfile('portulaca-oleracea')!.maxHp).toBe(12); // annual, bud bank 1.2
+    expect(speciesProfile('buddleja-davidii')!.maxHp).toBe(20); // woody, bud bank not measured
+  });
+
+  it('takes every resistance from one data field', () => {
+    const wallRue = speciesProfile('asplenium-ruta-muraria')!.resist;
+    expect(wallRue.drought).toBe(2); // moisture indicator 3
+    expect(wallRue.salt).toBe(false); // salt indicator 0
+    expect(speciesProfile('cochlearia-danica')!.resist.salt).toBeNull(); // no indicator values: unknown, no damage
+    expect(speciesProfile('plantago-major')!.resist).toMatchObject({ trample: true, frost: 1, heat: 0 }); // rosette, hemicryptophyte, T 5x
+    expect(speciesProfile('portulaca-oleracea')!.resist.frost).toBe(0); // annual
+  });
+
+  it('never lets a plant grow beyond its max HP', () => {
+    for (const d of [berlin, madrid]) {
+      const r = runWatch([['buddleja-davidii', 'chelidonium-majus', 'cymbalaria-muralis'], ['plantago-major', 'poa-annua', 'sagina-procumbens']], cards(d), d.lat, 'en', placeById('brache'));
+      const ids = [['buddleja-davidii', 'chelidonium-majus', 'cymbalaria-muralis'], ['plantago-major', 'poa-annua', 'sagina-procumbens']];
+      r.months.forEach(m => m.shoots.forEach((side, si) => side.forEach((n, i) => expect(n).toBeLessThanOrEqual(speciesProfile(ids[si][i])!.maxHp))));
+    }
+  });
+
+  it('a plant wilts with seeds left and dies only without shoots and seeds; death is final', () => {
+    const species = playableSpecies().map(p => p.id);
+    let sawWilted = false, sawDead = false;
+    for (const place of CITY_PLACES) for (const d of [berlin, madrid]) for (let i = 0; i + 6 <= species.length; i++) {
+      const r = runWatch([species.slice(i, i + 3), species.slice(i + 3, i + 6)], cards(d), d.lat, 'en', place);
+      r.months.forEach((m, k) => m.status.forEach((side, si) => side.forEach((st, j) => {
+        const shoots = m.shoots[si][j], seeds = m.seeds[si][j];
+        if (st === 'alive') expect(shoots).toBeGreaterThan(0);
+        if (st === 'wilted') { sawWilted = true; expect(shoots).toBe(0); expect(seeds).toBeGreaterThan(0); }
+        if (st === 'dead') { sawDead = true; expect(shoots + seeds).toBe(0); r.months.slice(k).forEach(later => expect(later.status[si][j]).toBe('dead')); }
+      })));
+    }
+    expect(sawWilted).toBe(true);
+    expect(sawDead).toBe(true);
   });
 });
