@@ -408,3 +408,7 @@
 {"at":"2026-10-11T14:37:51.411Z","event":"op","plan_id":"pr-intake-sources-20261011","actor":"bibliothekar","agent":"bibliothekar","runde":"PR-Triage 11.10.2026","op":"source.add","target":"hartz4widerspruch-de","detail":"Quelle aufgenommen (durchsucht)"}
 {"at":"2026-10-11T14:37:51.411Z","event":"op","plan_id":"pr-intake-sources-20261011","actor":"bibliothekar","agent":"bibliothekar","runde":"PR-Triage 11.10.2026","op":"source.add","target":"tacheles-oertliche-richtlinien-kdu","detail":"Quelle aufgenommen (durchsucht)"}
 {"at":"2026-10-11T14:37:51.411Z","event":"apply","plan_id":"pr-intake-sources-20261011","key":"pr-intake-sources-20261011","actor":"bibliothekar","ops":10,"files":6}
+{"at":"2026-10-11T16:41:36.865Z","event":"cli","actor":"bibliothekar","runde":"Gründungsnavigator — 11.10.2026","cmd":"protokoll add","id":"gruendungsnavigator"}
+{"at":"2026-10-11T16:41:37.148Z","event":"cli","actor":"bibliothekar","runde":"Gründungsnavigator — 11.10.2026","cmd":"protokoll add","id":"paragrafen-pruefer"}
+{"at":"2026-10-11T16:41:37.418Z","event":"cli","actor":"bibliothekar","runde":"Gründungsnavigator — 11.10.2026","cmd":"protokoll add","id":"sozial-qa-amtliche-quellen"}
+{"at":"2026-10-11T16:41:37.672Z","event":"cli","actor":"bibliothekar","runde":"Gründungsnavigator — 11.10.2026","cmd":"protokoll add","id":"gruendungsgespraech-at-ch"}
