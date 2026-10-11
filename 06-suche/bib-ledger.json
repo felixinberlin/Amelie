@@ -1149,6 +1149,83 @@
         "src/data/candidateVectors.json": "sha256:b1584659a91b5625577433fc6f05ed9bcb300e95b215f12029d6b79d136a239c",
         "src/data/vectorChanges.json": "sha256:7713e34a6b9cd539c2d581109bc53f40f97495968d6358ce51d8995bd4405b79"
       }
+    },
+    "pr-intake-sources-20261011": {
+      "plan_id": "pr-intake-sources-20261011",
+      "actor": "bibliothekar",
+      "agent": "bibliothekar",
+      "runde": "PR-Triage 11.10.2026",
+      "at": "2026-10-11T14:37:50.742Z",
+      "ops": [
+        {
+          "index": 0,
+          "op": "source.log",
+          "target": "mitforschen-org"
+        },
+        {
+          "index": 1,
+          "op": "source.log",
+          "target": "uba-bmuv-potenzialstudien-weitere"
+        },
+        {
+          "index": 2,
+          "op": "source.log",
+          "target": "farmacia-hospitalaria-protokoll-bei-rotu"
+        },
+        {
+          "index": 3,
+          "op": "source.log",
+          "target": "invaro-robinien-risikoatlas-brandenburg"
+        },
+        {
+          "index": 4,
+          "op": "source.log",
+          "target": "waldwissen-net-strategien-zum-management"
+        },
+        {
+          "index": 5,
+          "op": "source.log",
+          "target": "bullinger-kampfmittelerkundung-brandenbu"
+        },
+        {
+          "index": 6,
+          "op": "source.log",
+          "target": "tierhaushalt-produkte-als-besetzt-belege"
+        },
+        {
+          "index": 7,
+          "op": "source.add",
+          "target": "fachliche-weisungen-ba-sgg-ii"
+        },
+        {
+          "index": 8,
+          "op": "source.add",
+          "target": "hartz4widerspruch-de"
+        },
+        {
+          "index": 9,
+          "op": "source.add",
+          "target": "tacheles-oertliche-richtlinien-kdu"
+        }
+      ],
+      "files": [
+        "06-suche/amelie-quellen.md",
+        "AMELIE_STATUS.md",
+        "public/data/amelie-health.json",
+        "public/data/amelie-ideas.json",
+        "public/data/quellen.json",
+        "src/data/quellen.json"
+      ],
+      "hashes": {
+        "src/data/quellen.json": "sha256:234972ddf9eed2997810f9704eece6634cc9049fbebcc5b14a7e2636580ffd69",
+        "src/data/graeber.json": "sha256:0997cab5b0739d939e8422c53b13e3a7db7cdf5a4b03628682defba732b480b6",
+        "06-suche/amelie-pruefprotokoll.md": "sha256:892acafdf07f6b56ffe3f9ae0f99cfedbc303de6229ebb1bfa9bd0eab1aa46bc",
+        "06-suche/terminology-map.md": "absent",
+        "06-suche/open-questions.md": "absent",
+        "src/data/doseVectors.json": "sha256:5e0eaa48ebb76025821c6437e915db3e68c5be5a7408fd2503fb0faa56fd057a",
+        "src/data/candidateVectors.json": "sha256:b1584659a91b5625577433fc6f05ed9bcb300e95b215f12029d6b79d136a239c",
+        "src/data/vectorChanges.json": "sha256:7713e34a6b9cd539c2d581109bc53f40f97495968d6358ce51d8995bd4405b79"
+      }
     }
   }
 }

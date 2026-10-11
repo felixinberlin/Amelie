@@ -802,10 +802,10 @@
       },
       "enthaelt": "",
       "fokus": "Projekte mit Foto-Upload und Rückmeldung „nach Auswertung\"",
-      "status": "offen",
-      "statusNotiz": "bleibt als Quelle (Entscheidung Félix 23.09.2026). Kein Empfänger, sondern Verzeichnis zum Durchsuchen. Der Vermerk „als Nächstes\" ist gestrichen — sie wird genommen, wenn eine Runde eine Typ-B-Quelle braucht, nicht als Schuld. Seite läuft über HTTPS (kanonische URL `https://www.mitforschen.org/`); aus der Sandbox nur per WebFetch erreichbar, `curl` blockt die Allowlist",
-      "evidenz": "unbekannt",
-      "zuletzt": "2026-09-23",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-11",
       "ertrag": {
         "dosen": [],
         "graeber": [],
@@ -829,6 +829,14 @@
           "agent": "migration",
           "runde": "Register-Einführung",
           "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        },
+        {
+          "datum": "2026-10-11",
+          "agent": "bibliothekar",
+          "runde": "PR-Triage 11.10.2026",
+          "notiz": "Wasser-Hitze-Zeitraffer geprüft (verengt).",
+          "status": "durchsucht",
+          "planId": "pr-intake-sources-20261011"
         }
       ]
     },
@@ -3413,13 +3421,15 @@
       },
       "enthaelt": "offen",
       "fokus": "",
-      "status": "offen",
+      "status": "angekratzt",
       "statusNotiz": "",
-      "evidenz": "unbekannt",
-      "zuletzt": null,
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-11",
       "ertrag": {
         "dosen": [],
-        "graeber": [],
+        "graeber": [
+          "elektroschrott-demontage-lotse"
+        ],
         "kandidaten": []
       },
       "vektoren": {
@@ -3440,6 +3450,14 @@
           "agent": "migration",
           "runde": "Register-Einführung",
           "notiz": "Aus amelie-quellen.md übernommen; Vektoren automatisch aus Status/Evidenz/Ertrag abgeleitet (basis: auto) — der Bibliothekar überschreibt sie mit einer Bewertung."
+        },
+        {
+          "datum": "2026-10-11",
+          "agent": "bibliothekar",
+          "runde": "PR-Triage 11.10.2026",
+          "notiz": "Elektroschrott-Demontage-Lotse geprüft; industriell besetzt (Fraunhofer iDEAR), Grab angelegt.",
+          "status": "angekratzt",
+          "planId": "pr-intake-sources-20261011"
         }
       ]
     },
@@ -9126,10 +9144,10 @@
       },
       "enthaelt": "Risikoklassen Robinie/Trockenrasen (50 m sehr hoch, 500 m Sicherheitsabstand, Samenflug 77 m); Atlas 199,8 MB PDF, CC BY 4.0, Stand 14.04.2022; kein GIS-Dienst gefunden",
       "fokus": "",
-      "status": "angekratzt",
+      "status": "gesperrt",
       "statusNotiz": "",
-      "evidenz": "seite",
-      "zuletzt": "2026-09-30",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-11",
       "ertrag": {
         "dosen": [],
         "graeber": [],
@@ -9154,6 +9172,14 @@
           "runde": "Robinien-Runde 30.09.2026 (Venture-Lauf)",
           "notiz": "Rohdatenanfrage beim FIB offen.",
           "status": "angekratzt"
+        },
+        {
+          "datum": "2026-10-11",
+          "agent": "bibliothekar",
+          "runde": "PR-Triage 11.10.2026",
+          "notiz": "Mandatsfrage negativ, Robinie keine Beseitigungspflicht.",
+          "status": "gesperrt",
+          "planId": "pr-intake-sources-20261011"
         }
       ]
     },
@@ -9228,10 +9254,10 @@
       },
       "enthaelt": "Einzelne Schnitte wirkungslos, Stockausschlag, kein generell empfohlenes Tilgungsverfahren",
       "fokus": "",
-      "status": "angekratzt",
+      "status": "gesperrt",
       "statusNotiz": "",
-      "evidenz": "seite",
-      "zuletzt": "2026-09-30",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-11",
       "ertrag": {
         "dosen": [],
         "graeber": [],
@@ -9270,6 +9296,14 @@
           "runde": "Lab-Survivors Existenzprüfung 30.09.2026",
           "notiz": "Lab-Survivors Existenzprüfung (4ab848 S1, S2): Ringeln, Nachkontrolle im 2. Jahr, Datenlücke Waldbau gemischte Bestände; keine Zahlen zu Austriebsparametern.",
           "status": "angekratzt"
+        },
+        {
+          "datum": "2026-10-11",
+          "agent": "bibliothekar",
+          "runde": "PR-Triage 11.10.2026",
+          "notiz": "Mandatsfrage negativ, Robinie keine Beseitigungspflicht.",
+          "status": "gesperrt",
+          "planId": "pr-intake-sources-20261011"
         }
       ]
     },
@@ -10111,10 +10145,10 @@
       },
       "enthaelt": "Stabilitätstabellen thermolabiler Arzneimittel bei Kettenbruch aus Fichas técnicas und Herstellerauskünften",
       "fokus": "",
-      "status": "angekratzt",
+      "status": "durchsucht",
       "statusNotiz": "",
-      "evidenz": "schnipsel",
-      "zuletzt": "2026-09-30",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-11",
       "ertrag": {
         "dosen": [],
         "graeber": [],
@@ -10141,6 +10175,14 @@
           "runde": "Farmacia-Runde 30.09.2026",
           "notiz": "Nur Suchschnipsel; Autoren (SEFH) als Empfängerkreis nicht verifiziert.",
           "status": "angekratzt"
+        },
+        {
+          "datum": "2026-10-11",
+          "agent": "bibliothekar",
+          "runde": "PR-Triage 11.10.2026",
+          "notiz": "Tabelle ist HTML, CC BY 4.0; R4 Datentest abgeschlossen.",
+          "status": "durchsucht",
+          "planId": "pr-intake-sources-20261011"
         }
       ]
     },
@@ -11705,10 +11747,10 @@
       },
       "enthaelt": "KMBD Belastungskarte, Antragsweg, Gebühr 50 bis 300 Euro, 575.000 ha Verdacht",
       "fokus": "",
-      "status": "offen",
+      "status": "gesperrt",
       "statusNotiz": "",
-      "evidenz": "seite",
-      "zuletzt": null,
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-11",
       "ertrag": {
         "dosen": [],
         "graeber": [
@@ -11735,6 +11777,14 @@
           "runde": "Lab-Survivors Existenzprüfung 30.09.2026",
           "notiz": "Lab-Survivors (797290 S2, S4). Privatfirma, nennt KMBD als Hoheitsträger.",
           "status": "offen"
+        },
+        {
+          "datum": "2026-10-11",
+          "agent": "bibliothekar",
+          "runde": "PR-Triage 11.10.2026",
+          "notiz": "Mandatsfrage negativ, Hoheit liegt beim KMBD, Feld dicht.",
+          "status": "gesperrt",
+          "planId": "pr-intake-sources-20261011"
         }
       ]
     },
@@ -11965,10 +12015,10 @@
       },
       "enthaelt": "Kommerzielle Tierübersetzer-Apps, Multi-Pet-Kameras, Mikrochip-Klappen",
       "fokus": "",
-      "status": "offen",
+      "status": "gesperrt",
       "statusNotiz": "",
       "evidenz": "schnipsel",
-      "zuletzt": null,
+      "zuletzt": "2026-10-11",
       "ertrag": {
         "dosen": [],
         "graeber": [
@@ -11995,6 +12045,14 @@
           "runde": "Lab-Survivors Existenzprüfung 30.09.2026",
           "notiz": "Lab-Survivors (f2ef4a S1-S4 (besetzt)).",
           "status": "offen"
+        },
+        {
+          "datum": "2026-10-11",
+          "agent": "bibliothekar",
+          "runde": "PR-Triage 11.10.2026",
+          "notiz": "Mandatsfrage negativ, Tierhaushalt-Gadgets ohne öffentliches Mandat.",
+          "status": "gesperrt",
+          "planId": "pr-intake-sources-20261011"
         }
       ]
     },
@@ -16926,6 +16984,153 @@
           "notiz": "Shared Lab intake 11.10.2026: Suchergebnis verfügbar, PDF-Abruf fehlgeschlagen. Kein gelesener Volltext, keine Therapie-/Diagnosefreigabe.",
           "status": "angekratzt",
           "planId": "lab-intake-review-20261011"
+        }
+      ]
+    },
+    {
+      "id": "fachliche-weisungen-ba-sgg-ii",
+      "name": "Fachliche Weisungen der Bundesagentur für Arbeit (SGB II)",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Weisungen und Auslegungshilfen für Jobcenter zur Umsetzung des SGB II",
+      "fokus": "Ermessensspielräume, KdU, Mehrbedarfe, Sanktionsgrenzen",
+      "status": "gesperrt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-11",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-11"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-11",
+          "agent": "bibliothekar",
+          "runde": "PR-Triage 11.10.2026",
+          "notiz": "Jobcenter-Recherche: WAF/Bot-Block verhindert automatisierte Abfragen.",
+          "status": "gesperrt",
+          "planId": "pr-intake-sources-20261011"
+        }
+      ]
+    },
+    {
+      "id": "hartz4widerspruch-de",
+      "name": "hartz4widerspruch.de (Rightmart GmbH)",
+      "typ": "L",
+      "kategorie": "empfaenger",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Kostenlose Bescheidprüfung, Bürgergeld-Rechner, Ratgeber",
+      "fokus": "KdU, Heizkosten, Anrechnung Einkommen",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-11",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-11"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-11",
+          "agent": "bibliothekar",
+          "runde": "PR-Triage 11.10.2026",
+          "notiz": "Bescheidprüfungs- und Ratgeberlandschaft erfasst.",
+          "status": "durchsucht",
+          "planId": "pr-intake-sources-20261011"
+        }
+      ]
+    },
+    {
+      "id": "tacheles-oertliche-richtlinien-kdu",
+      "name": "Tacheles e.V. - Örtliche Richtlinien KdU",
+      "typ": "B",
+      "kategorie": "citizen-science",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Sammlung örtlicher Richtlinien zu Kosten der Unterkunft (KdU)",
+      "fokus": "Kommunale Angemessenheitsrichtlinien Heiz- und Mietkosten",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-11",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-11"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-11",
+          "agent": "bibliothekar",
+          "runde": "PR-Triage 11.10.2026",
+          "notiz": "Kommunale KdU-Richtlinien als PDF-Sammlung erschlossen.",
+          "status": "durchsucht",
+          "planId": "pr-intake-sources-20261011"
         }
       ]
     }
