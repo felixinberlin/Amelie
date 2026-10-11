@@ -144,6 +144,8 @@ Duel deck exactly 36 = 30 strategy + 3 Bloom + 3 signature slots (max 1 copy per
 
 ## 6. The year: seasons, energy, events
 
+> **Superseded (11.10.2026):** the year now comes from a real city's weather, 12 months instead of 6 seasons; see `wetterjahr-modus.md`. The section below remains as the earlier version.
+
 ### 6.1 The six seasons
 
 | Season | Month | Energy (day length) | Typical event |
