@@ -257,6 +257,9 @@ in vec2 v_uv;
 out vec4 fragColor;
 
 float coth(float z) {
+  if (z < 0.005) {
+    return 1.0 / max(0.00001, z) + z * 0.333333;
+  }
   float ez = exp(clamp(2.0 * z, -30.0, 30.0));
   return (ez + 1.0) / max(0.00001, ez - 1.0);
 }
@@ -339,12 +342,12 @@ void main() {
   
   vec3 K_mix = u_pigment1_K * c1 + u_pigment2_K * c2;
   vec3 S_mix = u_pigment1_S * c1 + u_pigment2_S * c2;
-  float thickness = max(0.0001, c1 + c2);
+  float totalC = c1 + c2;
   
-  vec3 color = vec3(
-    kmReflectance(K_mix.r, S_mix.r, thickness, Rg.r),
-    kmReflectance(K_mix.g, S_mix.g, thickness, Rg.g),
-    kmReflectance(K_mix.b, S_mix.b, thickness, Rg.b)
+  vec3 color = totalC < 0.0001 ? Rg : vec3(
+    kmReflectance(K_mix.r, S_mix.r, 1.0, Rg.r),
+    kmReflectance(K_mix.g, S_mix.g, 1.0, Rg.g),
+    kmReflectance(K_mix.b, S_mix.b, 1.0, Rg.b)
   );
   
   // 3. Specular Sheen on Wet Ink Puddles

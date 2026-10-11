@@ -755,7 +755,7 @@ export class WebGL2WetInkEngine {
     const km2 = this.pigment2?.km || (this.pigment2 ? {
       K: [this.pigment2.r > 150 ? 0.3 : 2.5, this.pigment2.g > 150 ? 0.3 : 2.5, this.pigment2.b > 150 ? 0.3 : 2.5],
       S: [0.3, 0.3, 0.3],
-    } : { K: [3.8, 1.9, 0.25], S: [0.18, 0.28, 0.75] });
+    } : { K: [4.2, 0.42, 0.22], S: [0.15, 0.42, 0.78] });
     gl.uniform3f(this.renderLocs.pigment2_K, km2.K[0], km2.K[1], km2.K[2]);
     gl.uniform3f(this.renderLocs.pigment2_S, km2.S[0], km2.S[1], km2.S[2]);
 

@@ -250,13 +250,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
   // Blotting Paper: Absorbs surface moisture immediately while fixing settled pigment
   const handleBlot = () => {
     if (simRef.current) {
-      simRef.current.waterFilm.fill(0);
-      const dep = simRef.current.pigmentDeposited;
-      const susp = simRef.current.pigmentSuspended;
-      for (let i = 0; i < dep.length; i++) {
-        dep[i] += susp[i];
-        susp[i] = 0;
-      }
+      simRef.current.blot();
       setIsWet(false);
     }
   };
@@ -442,7 +436,9 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
           waterRatio: currentTool === 'water-drop' ? 2.0 : 1.0,
           dryBrush: isCalligraphyBrush,
         },
-        true
+        true,
+        e.timeStamp || performance.now(),
+        selectedPigment
       );
     }
   };
@@ -476,7 +472,9 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
         waterRatio: currentTool === 'water-drop' ? 2.0 : 1.0,
         dryBrush: isCalligraphyBrush,
       },
-      false
+      false,
+      now,
+      selectedPigment
     );
   };
 

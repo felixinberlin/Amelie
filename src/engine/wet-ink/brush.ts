@@ -1,4 +1,5 @@
 import { WetInkSimulation } from './simulation';
+import { WetInkPigmentConfig } from './types';
 
 export type BrushToolType =
   | 'fountain-pen'
@@ -38,7 +39,8 @@ export class WetInkBrushManager {
     isFirstPoint: boolean = false,
     // Event timestamp in ms. Pass the PointerEvent's timeStamp (or a recorded
     // one) so that replaying a stroke log reproduces the same speeds.
-    now: number = performance.now()
+    now: number = performance.now(),
+    pigmentConfig?: WetInkPigmentConfig
   ) {
     const dt = Math.max(1, now - (this.lastTime ?? now));
 
@@ -132,7 +134,7 @@ export class WetInkBrushManager {
     const perStamp = (INK_PER_RADIUS * spacing) / Math.max(1, radius);
     const firstStamp = Math.max(0.45, perStamp);
     if (isFirstPoint || this.lastX === null || this.lastY === null) {
-      sim.injectInk(x, y, radius, waterAmt * firstStamp, pigmentAmt * firstStamp, enableDryFilter);
+      sim.injectInk(x, y, radius, waterAmt * firstStamp, pigmentAmt * firstStamp, enableDryFilter, pigmentConfig);
       this.carry = 0;
     } else {
       let along = spacing - this.carry;
@@ -141,7 +143,7 @@ export class WetInkBrushManager {
         sim.injectInk(
           this.lastX + (x - this.lastX) * t,
           this.lastY + (y - this.lastY) * t,
-          radius, waterAmt * perStamp, pigmentAmt * perStamp, enableDryFilter
+          radius, waterAmt * perStamp, pigmentAmt * perStamp, enableDryFilter, pigmentConfig
         );
         along += spacing;
       }
@@ -149,7 +151,7 @@ export class WetInkBrushManager {
       // A resting pen keeps bleeding into the paper
       if (speed < 0.02) {
         const dwell = Math.min(dt, 50) * DWELL_PER_MS;
-        sim.injectInk(x, y, radius * 0.8, waterAmt * dwell, pigmentAmt * dwell, enableDryFilter);
+        sim.injectInk(x, y, radius * 0.8, waterAmt * dwell, pigmentAmt * dwell, enableDryFilter, pigmentConfig);
       }
     }
 

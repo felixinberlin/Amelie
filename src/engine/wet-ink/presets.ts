@@ -169,8 +169,8 @@ export const PIGMENT_PRESETS: WetInkPigmentConfig[] = [
     bleedSpeed: 1.05,
     edgeDarkening: 0.85,
     km: {
-      K: [3.8, 1.9, 0.25], // Strong red/green absorption, preserves deep blue
-      S: [0.18, 0.28, 0.75],
+      K: [4.2, 0.42, 0.22], // Strong red absorption, low green absorption, rich cyan-blue reflection
+      S: [0.15, 0.42, 0.78],
     },
   },
   {
@@ -187,8 +187,8 @@ export const PIGMENT_PRESETS: WetInkPigmentConfig[] = [
     bleedSpeed: 1.15,
     edgeDarkening: 0.70,
     km: {
-      K: [3.4, 1.8, 0.30],
-      S: [0.20, 0.32, 0.68],
+      K: [3.8, 0.52, 0.28], // Luminous fountain pen blue wash
+      S: [0.18, 0.40, 0.72],
     },
   },
   {
@@ -277,15 +277,16 @@ export const PIGMENT_PRESETS: WetInkPigmentConfig[] = [
     bleedSpeed: 1.05,
     edgeDarkening: 0.85,
     km: {
-      K: [3.4, 1.8, 0.35],
-      S: [0.19, 0.26, 0.70],
+      K: [3.6, 1.10, 0.32],
+      S: [0.20, 0.32, 0.68],
     },
   },
 ];
 
 /**
  * Generates an authentic physical Kubelka-Munk pigment configuration from any hex color code.
- * Subtractive absorption (K) and scattering (S) spectra are derived from normalized RGB reflectances.
+ * Subtractive absorption (K) and scattering (S) spectra are derived from normalized RGB reflectances
+ * with continuous spectral band broadening (CIE cone band overlap) to ensure physical mixing fidelity.
  */
 export function createPigmentFromHex(
   hex: string,
@@ -299,17 +300,23 @@ export function createPigmentFromHex(
   const b = parseInt(cleanHex.slice(4, 6), 16) || 20;
 
   // Normalized substrate-relative reflectances [0.02, 0.95]
-  const R_r = Math.max(0.02, Math.min(0.95, r / 255));
-  const R_g = Math.max(0.02, Math.min(0.95, g / 255));
-  const R_b = Math.max(0.02, Math.min(0.95, b / 255));
+  const R_raw_r = Math.max(0.02, Math.min(0.95, r / 255));
+  const R_raw_g = Math.max(0.02, Math.min(0.95, g / 255));
+  const R_raw_b = Math.max(0.02, Math.min(0.95, b / 255));
+
+  // Spectral broadening (CIE cone band overlap): physical pigments have continuous absorption spectra
+  // rather than narrow digital delta spikes. This prevents RGB mixtures from collapsing into black.
+  const R_r = 0.82 * R_raw_r + 0.18 * R_raw_g;
+  const R_g = 0.12 * R_raw_r + 0.76 * R_raw_g + 0.12 * R_raw_b;
+  const R_b = 0.18 * R_raw_g + 0.82 * R_raw_b;
 
   // Kubelka-Munk: K/S = (1 - R_inf)^2 / (2 * R_inf)
   const calcKS = (R: number) => ((1.0 - R) * (1.0 - R)) / (2.0 * R);
   const S_base = 0.35;
 
-  const K_r = Math.max(0.05, Math.min(6.0, calcKS(R_r) * S_base));
-  const K_g = Math.max(0.05, Math.min(6.0, calcKS(R_g) * S_base));
-  const K_b = Math.max(0.05, Math.min(6.0, calcKS(R_b) * S_base));
+  const K_r = Math.max(0.05, Math.min(5.5, calcKS(R_r) * S_base));
+  const K_g = Math.max(0.05, Math.min(5.5, calcKS(R_g) * S_base));
+  const K_b = Math.max(0.05, Math.min(5.5, calcKS(R_b) * S_base));
 
   const S_r = S_base * (0.8 + R_r * 0.4);
   const S_g = S_base * (0.8 + R_g * 0.4);

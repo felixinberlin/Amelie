@@ -49,6 +49,7 @@ export interface WetInkSimParams {
   dryBrushSensitivity: number;
   tiltX?: number; // Board tilt gravity X (-1 to 1)
   tiltY?: number; // Board tilt gravity Y (-1 to 1)
+  enableSaunderson?: boolean; // Saunderson (1942) Fresnel boundary correction
 }
 
 export interface SimulationSnapshot {
