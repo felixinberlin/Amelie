@@ -1,13 +1,13 @@
 # Amélie Status
 
-Generated: 2026-10-11T19:08:03.486Z
+Generated: 2026-10-11T21:25:04.240Z
 
 ## System
 
 * Dosen: 46
 * Gräber: 149
 * Demos: 13
-* Books: 51
+* Books: 52
 * Research entries: 36
 * Candidate ideas: 20
 
@@ -67,5 +67,5 @@ None.
 ## Generated from
 
 * Audit version: 1
-* Commit: 0e1181b
+* Commit: 68e9795
 * Branch: claude/nifty-ride-xtktbm

@@ -788,13 +788,13 @@
     "title": "ParagraphenDolmetscher",
     "originalIdeaDe": "Foto des Amtsbescheids → Beamtendeutsch in drei klaren Sätzen, Frist erkennen, Widerspruch formulieren.",
     "originalIdeaEn": "Photo of an official decision letter → plain language in three sentences, detect the deadline, draft the objection.",
-    "whyDiscardedDe": "Gibt es, kostenlos und in zehn Sprachen: jobcenter.guru (GuruSense AI) fotografiert den Bescheid, erklärt ihn per KI, erkennt die Frist und entwirft den Widerspruch (Stand der Seite 10.07.2026). Dazu amtly.app, briefgeist.de, papierfrei.app, docugov.ai. Und im eigenen Protokoll stand seit dem 18.09.2026 KlarLokal mit dem Nachbarn Zetteln — dieselbe Idee zum zweiten Mal gepackt. Der Satz der Dose „freie, bedingungslose Werkzeuge existieren nicht\" war nie gesucht worden.",
-    "whyDiscardedEn": "It exists, free and in ten languages: jobcenter.guru (GuruSense AI) photographs the letter, explains it with AI, detects the deadline and drafts the objection (page as of 10.07.2026). Also amtly.app, briefgeist.de, papierfrei.app, docugov.ai. And the own check log had listed KlarLokal with its neighbour Zetteln since 18.09.2026 — the same idea packed a second time. The Dose sentence \"no free tools exist\" had never been searched.",
+    "whyDiscardedDe": "Gibt es, in zehn Sprachen: jobcenter.guru (GuruSense UG, Mannheim) fotografiert den Bescheid, erklärt ihn per KI, erkennt die Frist und entwirft den Widerspruch (Stand der Seite 10.07.2026). Kostenlos ist nur die Grundstufe (Scan und eine KI-Frage am Tag); Widerspruch 0,99 €, Abos 3,99 € und 9,99 € (App-Store-Seite 11.10.2026). Dazu amtly.app, briefgeist.de, papierfrei.app, docugov.ai. Und im eigenen Protokoll stand seit dem 18.09.2026 KlarLokal mit dem Nachbarn Zetteln — dieselbe Idee zum zweiten Mal gepackt. Der Satz der Dose „freie, bedingungslose Werkzeuge existieren nicht\" war nie gesucht worden.",
+    "whyDiscardedEn": "It exists, in ten languages: jobcenter.guru (GuruSense UG, Mannheim) photographs the letter, explains it with AI, detects the deadline and drafts the objection (page as of 10.07.2026). Only the basic tier is free (scan and one AI question a day); objection €0.99, subscriptions €3.99 and €9.99 (App Store page 11.10.2026). Also amtly.app, briefgeist.de, papierfrei.app, docugov.ai. And the own check log had listed KlarLokal with its neighbour Zetteln since 18.09.2026 — the same idea packed a second time. The Dose sentence \"no free tools exist\" had never been searched.",
     "lessonDe": "Ein Katalogeintrag, der ohne Protokollzeile zur Dose wird, überspringt den Vorfilter — hier hätte ein Blick in den eigenen Atlas genügt. Seit 24.09.2026 verhindert scripts/check-protokoll-coverage.mjs das.",
     "lessonEn": "A catalogue entry that becomes a Dose without a check-log line skips the pre-filter — a look at the own atlas would have sufficed here. Since 24.09.2026 scripts/check-protokoll-coverage.mjs prevents this.",
     "domain": "Behörden & Alltag",
     "evidence": [
-      "jobcenter.guru (GuruSense AI) — Foto, Erklärung, Frist, Widerspruchsentwurf, kostenlos",
+      "jobcenter.guru (GuruSense UG) — Foto, Erklärung, Frist, Widerspruchsentwurf; Grundstufe kostenlos, sonst In-App-Käufe bis 9,99 € (App Store, 11.10.2026)",
       "amtly.app, briefgeist.de, papierfrei.app, docugov.ai",
       "KlarLokal / Zetteln (Prüfprotokoll, Nachtrag 18.09.2026)"
     ],
@@ -805,8 +805,8 @@
     "stage": "dose",
     "bornIn": "Katalog „AI Frontier 2026\" (Modelllauf) · als Dose gepackt",
     "diedOn": "2026-09-24",
-    "resurrectIfDe": "Wenn jobcenter.guru und die übrigen kostenlosen Angebote verschwinden — und dann zuerst KlarLokal prüfen, nicht diese Dose.",
-    "resurrectIfEn": "If jobcenter.guru and the other free offerings disappear — and then check KlarLokal first, not this Dose.",
+    "resurrectIfDe": "Wenn jobcenter.guru und die übrigen Angebote verschwinden — und dann zuerst KlarLokal prüfen, nicht diese Dose.",
+    "resurrectIfEn": "If jobcenter.guru and the other offerings disappear — and then check KlarLokal first, not this Dose.",
     "nachruf": "08-friedhof/grabbeigaben/paragraphen-dolmetscher.md"
   },
   {

@@ -53,6 +53,7 @@ const QA = demoKonstante<{ c: string; q: string; a: string; laws: string[] }[]>(
 const RIGHTS = demoKonstante<{ id: string; q: string; say: string; laws: string[]; pl?: string[] }[]>(NAV, 'RIGHTS', PRE_NAV);
 const L = demoKonstante<Record<string, Norm>>(KARTE, 'L', PRE_KARTE);
 const FRISTEN = demoKonstante<{ f: string; law: string }[]>(KARTE, 'FRISTEN', PRE_KARTE);
+const PH = demoKonstante<{ id: string; qs: { q: string; a: unknown[] }[] }[]>(KARTE, 'PH', PRE_KARTE);
 
 // ------------------------------------------------------------------ Datum
 
@@ -369,5 +370,53 @@ describe('Demo: Fall-Landkarte (fall-landkarte.html)', () => {
       }
     }
     expect(verglichen).toBeGreaterThan(5);
+  });
+});
+
+// ------------------------------------------------------------------ Zahlen in den Texten
+
+describe('Zahlen-Wächter: Texte nennen die Zahlen der ausgelieferten Seiten', () => {
+  // Anlass 11.10.2026: Konzept sagte 26 Fragen und 15 Rechte-Karten, die Seite hatte 42 und 17.
+  // Jede Zahl vor „Fragen“, „Rechte-Karten“, „Normen“ oder „Antworten“ muss eine echte Zahl der Seiten sein.
+  const kartenFragen = PH.reduce((n, p) => n + p.qs.length, 0);
+  const kartenAntworten = PH.reduce((n, p) => n + p.qs.reduce((m, q) => m + q.a.length, 0), 0);
+  const erlaubt: Record<string, Set<number>> = {
+    Fragen: new Set([STEPS.length, QA.length, kartenFragen]),
+    'Rechte-Karten': new Set([RIGHTS.length]),
+    Normen: new Set([Object.keys(L).length]),
+    Antworten: new Set([STEPS.reduce((n, s) => n + s.answers.length, 0), kartenAntworten]),
+    questions: new Set([STEPS.length, QA.length, kartenFragen]),
+    'rights cards': new Set([RIGHTS.length]),
+    statutes: new Set([Object.keys(L).length]),
+    answers: new Set([STEPS.reduce((n, s) => n + s.answers.length, 0), kartenAntworten]),
+  };
+  const DOKUMENTE = [
+    '07-demos/gruendungsnavigator/README.md',
+    '05-dosen/gruendungsnavigator.md',
+    'en/05-dosen/gruendungsnavigator.md',
+    '02-recherche/gruendungsnavigator-konzept-2026-10-11.md',
+    'src/data/dosen.ts',
+    'src/data/doseSimulators.ts',
+    'src/components/simulators/GruendungsnavigatorSimulator.tsx',
+  ];
+  // „42 Fragen“, „42 wahrscheinliche Fragen“, „17 typische Antworten“ zählt nicht als Antworten-Zahl der Seite
+  const MUSTER = /(\d+)\s+(?:(?:wahrscheinliche|mögliche|possible|likely)\s+)?(Fragen|Rechte-Karten|Normen|Antworten|questions|rights cards|statutes|answers)\b/g;
+
+  it.each(DOKUMENTE)('%s', (pfad) => {
+    let text = readFileSync(resolve(ROOT, pfad), 'utf8');
+    if (pfad === 'src/data/dosen.ts') {
+      const i = text.indexOf("id: 'gruendungsnavigator'");
+      text = text.slice(i, text.indexOf('\n  },\n', i));
+    }
+    const falsch: string[] = [];
+    let treffer = 0;
+    for (const m of text.matchAll(MUSTER)) {
+      const kontext = text.slice(Math.max(0, m.index! - 25), m.index!);
+      if (/typische|typical/.test(kontext + m[0]) && /Antworten|answers/.test(m[2])) continue; // Rechte-Karten-Umschreibung
+      treffer++;
+      if (!erlaubt[m[2]].has(Number(m[1]))) falsch.push(`${m[0]} (erlaubt: ${[...erlaubt[m[2]]].join('/')})`);
+    }
+    expect(falsch, pfad).toEqual([]);
+    expect(treffer, `${pfad} nennt keine Zahl – Muster prüfen`).toBeGreaterThan(0);
   });
 });

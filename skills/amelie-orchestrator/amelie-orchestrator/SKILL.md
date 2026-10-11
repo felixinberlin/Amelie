@@ -83,6 +83,7 @@ Der Bibliothekar bekommt: Merge-Tabelle, Reviewer-Urteile, Engine-Retros, Netzst
 
 1. `npm run bib -- abschluss` (= `export:data` → `lint` → `test`, listet offene Änderungen) — alles ✓, sonst zurück an den zuständigen Agenten.
 2. Diff lesen: Hat ein Agent außerhalb seiner Schreibrechte geschrieben? Rückgängig machen.
+   Wurde eine Demo-Seite unter `public/` gebaut oder geändert: `npm run check:mobile` (Exit 3 = nicht geprüft, nie als grün melden). Zitiert eine Dose Normen wörtlich: Zitat-Abgleich gegen die Amtsquelle (Muster `npm run check:gn-zitate`).
 3. Commit (ein Commit pro Phase ist gut lesbar), Push auf den Arbeitszweig.
 4. Bericht an den Nutzer: Zahlen (geprüft / frei / verengt / unklar / besetzt), Doppelfunde, Dosen, Gräber, offene Punkte, Evidenz-Warnung falls `[Schnipsel]`. **Keine Mail wird versendet** — Zustellung bleibt Félix' Entscheidung.
 

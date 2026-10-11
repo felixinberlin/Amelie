@@ -33,8 +33,15 @@ export const DOSE_BOOKS: Record<string, BookChapter[]> = {
     {
       slug: 'demo', path: '07-demos/gruendungsnavigator/README.md',
       titleDe: 'Demo: Gesprächsnavigator und Fall-Landkarte', titleEn: 'Demo: conversation navigator and case map',
-      noteDe: 'Zwei Handy-taugliche HTML-Seiten ohne Server; Kern mit 54 Tests, der die Demo-Daten direkt aus dem HTML prüft.',
-      noteEn: 'Two phone-friendly HTML pages without a server; kernel with 54 tests that checks the demo data straight from the HTML.',
+      noteDe: 'Zwei Handy-taugliche HTML-Seiten ohne Server; Kern mit 61 Tests, der die Demo-Daten direkt aus dem HTML prüft.',
+      noteEn: 'Two phone-friendly HTML pages without a server; kernel with 61 tests that checks the demo data straight from the HTML.',
+      date: '11.10.2026', kind: 'md',
+    },
+    {
+      slug: 'pruefakte', path: '07-demos/gruendungsnavigator/pruefakte.md',
+      titleDe: 'Prüfakte: Urteil, Zitate, Tests, Handy', titleEn: 'Audit file: verdict, quotations, tests, mobile',
+      noteDe: 'Reviewer 26/35 (GN-B 29/35), Zitat-Abgleich gegen gesetze-im-internet.de mit den 4 korrigierten Stellen, Zahlen-Wächter, Handy-Check und der Stand der vier Versand-Bedingungen.',
+      noteEn: 'Reviewer 26/35 (GN-B 29/35), quotation check against gesetze-im-internet.de with the 4 corrected passages, number guard, mobile check and the status of the four pre-sending conditions.',
       date: '11.10.2026', kind: 'md',
     },
     {

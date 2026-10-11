@@ -14,3 +14,5 @@ Regeln:
 - Kein Pitching, CC0, kein Nachfassen. Unverifizierte Kontaktpersonen ausdrücklich als „vor Versand verifizieren" markieren. **Keine Mail versenden.**
 - Vor dem Packen: `npm run bib -- find <id> <Titel>` (Exit 2 mit Treffer in Dosen/Friedhof = Wiedergänger-Alarm). Danach `npm run bib -- protokoll show <id>`, um zu prüfen, dass die Gepackt-Zeile steht; **Zeile anlegen** darf der Packer weiterhin (`bib protokoll add`, eine Zeile in der Runde), Gräber und Quellen nicht.
 - Fertig erst, wenn `npm run lint` grün ist. (Tests laufen beim Demo-Builder.)
+- Vollständig erst mit Schritt 3b der Skill: Position in `DOSEN_DATA` (= Galeriereihenfolge), `doseVectors.json` (nur den Schlüssel ergänzen, Datei nie neu sortieren), `scripts/dosen-review-metadata.json` + `sync-idea-frontmatter`, Buch-Kapitel inkl. Prüfakte, Simulator in allen fünf Stellen, falls es eine Live-Demo gibt.
+- Qualitätstore aus Schritt 6b: Zahlen aus dem ausgelieferten Artefakt zählen; „wörtlich“ maschinell prüfen; Handy prüfen (`npm run check:mobile`, Dose-Seite bei 390 px); keine Testzahlen in Prosa ohne Pflege; echte Personendaten in Demos offenlegen.

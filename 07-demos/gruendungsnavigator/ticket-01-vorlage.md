@@ -16,11 +16,11 @@ Heute ist der Gesprächsnavigator ein echter Einzelfall: Gründung als Webentwic
 ## Fertig, wenn
 
 1. „Webentwicklung“ und das leere Paket validieren gegen dasselbe Schema; der Kern enthält keine persönlichen Beträge.
-2. Jeder Registereintrag trägt Norm, Fassung, URL und die Kennzeichnung Wortlaut/Kurzfassung, und der Zitat-Abgleich gegen gesetze-im-internet.de ist grün (heute als Skript in der Sitzung gelaufen: 4 Abweichungen gefunden und behoben; als `npm run`-Befehl einbauen).
+2. Jeder Registereintrag trägt Norm, Fassung, URL und die Kennzeichnung Wortlaut/Kurzfassung, und der Zitat-Abgleich gegen gesetze-im-internet.de ist grün (**Befehl vorhanden:** `npm run check:gn-zitate`; am 11.10.2026 4 Abweichungen gefunden und behoben, jetzt 39/39). Nach dem Umzug in `data/normen.json` den Befehl auf das Register umstellen.
 3. Graphtest des Telefonbaums und Fristen-Tabellentests sind grün. **Bereits erfüllt:** `gruendungsnavigator.test.ts`.
 4. Kein Ausgabetext sagt „garantiert“, „Anspruch besteht“, „unzulässig“ oder „rechtswidrig“. **Für Kern und Telefonbaum erfüllt**; Fragen und Rechte-Karten nach dem Umzug in Daten ebenfalls prüfen.
 5. Eine zweite Person ohne Programmierkenntnis erzeugt ihre eigene Fassung in 30 Minuten (Stoppuhr, ein Protokoll).
-6. Beide Seiten sind bei 360 px Breite ohne waagrechtes Scrollen bedienbar. **Bereits erfüllt** (Playwright, 375 px, 11.10.2026).
+6. Beide Seiten sind bei 360 px Breite ohne waagrechtes Scrollen bedienbar. **Bereits erfüllt**, Prüfbefehl `npm run check:mobile` (360 und 390 px).
 
 ## Nicht in diesem Ticket
 

@@ -1,7 +1,7 @@
 # Gründungsnavigator: Konzept
 
 **Stand:** 11.10.2026 · **Urteil:** `verengt` (Prüfprotokoll, Abschnitt „Gründungsnavigator — 11.10.2026“, Zeile G1) · **Prüfen ab:** 10/2027
-**Status:** Seit 11.10.2026 **gepackt als Dose** [`gruendungsnavigator`](../05-dosen/gruendungsnavigator.md) (Reviewer 26/35). Kein Empfänger angeschrieben. Zahlen des Prototyps inzwischen: 42 Fragen, 17 Rechte-Karten (die Tabelle unten nennt den Stand der ersten Fassung).
+**Status:** Seit 11.10.2026 **gepackt als Dose** [`gruendungsnavigator`](../05-dosen/gruendungsnavigator.md) (Reviewer 26/35). Kein Empfänger angeschrieben.
 **Lizenz:** CC0 1.0 Public Domain
 
 ---
@@ -30,8 +30,8 @@ Eine kostenlose Web-App bereitet Menschen im Grundsicherungsgeld, die sich selbs
 |---|---|
 | Vorbereitung | Persönliche Angaben nur im Browser; Grundregeln; Mitbring-Liste |
 | Telefonat | Entscheidungsbaum: 7 Fragen, 23 mögliche Antworten, jeweils Formulierung, Hintergrund, zitierte Norm; Live-Protokoll; Tastatur 1–5 |
-| Fragen | 26 wahrscheinliche Fragen im Termin mit anpassbarer Antwort, Beleg und Norm; Übungsfortschritt; Druckfassung |
-| Rechte-Karten | 15 typische Antworten des Gegenübers („Das fördern wir nicht“, „Unterschreiben Sie hier“); ein Klick zeigt Anliegen, Normtext und formalen nächsten Schritt |
+| Fragen | 42 wahrscheinliche Fragen im Termin mit anpassbarer Antwort, Beleg und Norm; Übungsfortschritt; Druckfassung |
+| Rechte-Karten | 17 typische Antworten des Gegenübers („Das fördern wir nicht“, „Unterschreiben Sie hier“); ein Klick zeigt Anliegen, Normtext und formalen nächsten Schritt |
 | Präsentationsmodus | Neutrale Ansicht für das Gegenüber: Überblick, Fragen & Antworten, Verfahren & Rechtsgrundlagen; Zitate und Taktik bleiben verborgen |
 | Zusammenfassung | Mail aus den Klicks mit korrekten Normverweisen; Danach-Liste |
 

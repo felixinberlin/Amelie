@@ -822,3 +822,27 @@ Bestehende Forschung zuerst wiederverwenden: ein fehlgeschlagener Rohdaten-Pilot
 - **Lehre 2: „Wörtlich“ maschinell prüfen.** Ein Skript hat alle 39 Wortlaut-Zitate gegen gesetze-im-internet.de gehalten (Teilstücke zwischen „[…]“, HTML-Entities dekodiert, Abruf mit Wiederholung). Es fand 4 Abweichungen trotz Handprüfung am selben Tag: „daß“ (§ 16 SGB I steht noch in alter Schreibung), „Im Übrigen“ (§ 44 SGB X), „Verwaltungsakts“ (§ 87 SGG), „selbständig“ (§ 10 SGB II). Jetzt 39/39. Achtung beim Messen: Ein leerer Abruf sieht aus wie eine Abweichung. Fehlgeschlagene Abrufe getrennt zählen, sonst meldet der Prüfer 34 falsche Treffer.
 - **Lehre 3: Handy zuerst prüfen, nicht annehmen.** Bei 375 px kostete der Kopf 250 px. Die Frage-Bäume der Fall-Landkarte (1100-px-SVG) waren unlesbar, obwohl die Antworten als `<details>`-Liste daneben standen. Lösung: App-Leiste unten, Fragen als Überschrift über farbigen Antwortkarten, Überblick und Zeitstrahl seitlich wischbar, Tabelle als Karten. Prüfen mit Playwright: `scrollWidth`, Fehler-Listener, kompletter Klickweg. Nebenfund: Der Prior-Art-Absatz der Dosenseite lief bei langen URLs über; `overflow-wrap:anywhere` hilft allen Dosen.
 - **Offen (Entscheidung Félix):** Ansprechperson Tacheles e.V. verifizieren; RDG-Grenze juristisch prüfen oder GN-B; Textkorrektur „kostenlos“ im Grab `paragraphen-dolmetscher` (Scout-Hinweis 1); Ticket 01 (Branchenpakete). Keine Mail angelegt.
+
+#### Nachtrag 11.10.2026 abends: Reparatur nach der Prüfung „ist alles in der Dose?“
+
+Félix fragte, ob alles in der Dose steckt, und dann: „repair all so we dont have more mistakes in next runs“. Gefunden und an der Ursache repariert:
+
+| Fehler | Ursache | Reparatur (dauerhaft) |
+|---|---|---|
+| „31 Fragen“ in vier Texten, Seite hat 29 | aus altem README übernommen, nie nachgezählt | Zahlen-Wächter im Test liest PH/QA/RIGHTS/L/STEPS aus dem HTML und prüft jede Zahl vor Fragen/Rechte-Karten/Normen/Antworten in README, Dossiers, Konzept, `dosen.ts`, Simulator |
+| Konzept: 26 Fragen/15 Karten | erste Fassung, nie nachgezogen | Tabelle korrigiert, Konzept steht im Wächter |
+| „54 Tests“ veraltet nach einer Stunde | Testzahl in Prosa | auf 61 nachgezogen; Packer-Regel: keine Testzahlen ohne Pflege |
+| Zitat-Abgleich nur in `/tmp` | Werkzeug nicht ins Repo gebracht | `npm run check:gn-zitate` (Exit 0/1/2, gescheiterte Abrufe getrennt) |
+| Handy nie geprüft, Dosenseite lief bei langen URLs über | keine Pflicht, kein Werkzeug | `npm run check:mobile` (360/390 px, über HTTP, misst gegen die Gerätebreite, Exit 3 = nicht geprüft); Selbsttest mit absichtlich breiter Seite |
+| Reviewer-Urteil nur im Sammel-Log | Buch hatte kein Prüfkapitel | `07-demos/gruendungsnavigator/pruefakte.md` als Kapitel |
+| Grab `paragraphen-dolmetscher`: „kostenlos“ | Seite vom 10.07. ohne Preisprüfung | Totenschein und Grabbeigabe korrigiert, Nachruf mit datierter Korrektur (Geschichte bleibt lesbar) |
+| G1 ohne Gepackt-Vermerk | Packer prüft nur, dass die Zeile existiert | Vermerk ergänzt |
+| Packer-Anleitung kannte Vektoren, Metadaten, Buch, Simulator nicht | Skill älter als diese Dateien | dose-packer Schritt 3b + 6b (beide Varianten, `.skill` neu gepackt), demo-builder Pitfalls + Checkliste, Agenten-Definitionen, Orchestrator Phase 6 |
+
+**Zwei Fallen beim Bau der Prüfer selbst** (beide zuerst übersehen, dann mit Gegenprobe gefunden):
+- Ein leerer Abruf sah aus wie eine Abweichung: Der Zitat-Prüfer meldete einmal 34 Fehler, die nur Netzaussetzer waren.
+- Der Handy-Check maß gegen `innerWidth`. Chrome zoomt im Mobilmodus heraus, `innerWidth` wächst mit dem Inhalt, und ein 600-px-Element fiel nicht auf. Erst die Gegenprobe mit einer absichtlich kaputten Seite zeigte das.
+
+*Regel:* Jeder neue Prüfer bekommt eine Gegenprobe mit einem absichtlich falschen Eingang, bevor sein Grün etwas zählt.
+
+**Kanal-Notiz:** Reddit ist aus der Cloud-Umgebung nicht erreichbar (about.json leer, Suche ohne Reddit-Treffer). Subreddit-Regeln vor einem Post von Hand prüfen.

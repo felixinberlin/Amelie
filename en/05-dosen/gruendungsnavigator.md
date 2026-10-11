@@ -39,7 +39,7 @@ Anyone who wants to start a business while on basic income support (Grundsicheru
 
 1. **The new law is settled and its text is online.** A tool can quote it instead of guessing. On 11 Oct 2026 every verbatim quote in the prototype was **machine-checked against gesetze-im-internet.de**. Four deviations turned up (e.g. "selbständig" vs "selbstständig" in section 10, the old spelling "daß" in section 16 SGB I) and are now corrected.
 2. **A browser is enough:** single HTML files, no server, no account, no tracking, inputs only in `localStorage`. The pages are built for phones (bottom tab bar, large touch targets, no horizontal scrolling at 375 px), so they work in the job centre waiting area.
-3. **Deterministic first:** deadlines, allowance and statute references come from a tested kernel (54 Vitest cases), not from a language model.
+3. **Deterministic first:** deadlines, allowance and statute references come from a tested kernel (61 Vitest cases), not from a language model.
 
 ## Sketch
 
@@ -53,7 +53,7 @@ Anyone who wants to start a business while on basic income support (Grundsicheru
 
 **Case map** (`fall-landkarte.html`):
 - 9 stations from application to exit.
-- 31 questions with 107 answers, each with reaction, next step, deadline and statute text.
+- 29 questions with 107 answers, each with reaction, next step, deadline and statute text.
 - A deadline timeline.
 - 37 statutes linked to gesetze-im-internet.de and dejure.org. Verbatim text is quoted; paraphrase is marked "Kurzfassung" (summary).
 
@@ -124,7 +124,7 @@ Who could fund Ticket 01: **Prototype Fund** (whether CC0 fits its licence requi
 ## Prior art
 
 - Prototype: `public/gruendungsnavigator/` (chapter `07-demos/gruendungsnavigator/README.md`); concept `02-recherche/gruendungsnavigator-konzept-2026-10-11.md`; handover `06-suche/scout-an-bibliothekar-2026-10-11-gruendungsnavigator.md`.
-- Kernel and tests: `src/engine/gruendungsnavigator/` (54 tests, including drift guards over both HTML pages).
+- Kernel and tests: `src/engine/gruendungsnavigator/` (61 tests, including drift guards over both HTML pages).
 - Statute texts: SGB II as amended on 16 Apr 2026 (BGBl. I No. 107), in force 1 Jul 2026; sections 14, 16, 17, 39, 60 SGB I; 9, 13, 25, 33, 35, 44 SGB X; 66, 84, 87, 88, 183 SGG; 14 GewO; 138 AO; 19 UStG. Read on dejure.org and gesetze-im-internet.de (11 Oct 2026).
 - Sources in the register: LSG NRW / LTO, gegen-hartz.de, BürgerChat, Sozialrat, Münchner Gründungsbüro, Gründerplattform, jobcenter.guru, dejure.org (`06-suche/amelie-quellen.md`).
 - Side finding **section checker** (Paragrafen-Prüfer, G2, `verengt`): the statute register with version and quotation check is its core.

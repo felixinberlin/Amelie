@@ -98,6 +98,16 @@ Add a new `DoseItem` to `DOSEN_DATA` in `src/data/dosen.ts` with all required fi
 * `failureModeDe` / `failureModeEn`: string
 * `priorArtDe` / `priorArtEn`: string
 
+### Step 3b · Wire everything else the frontend reads
+
+`check:dosen` only proves that Markdown and `DOSEN_DATA` know the same ids. A Dose is not finished until these exist too (learned 11.10.2026, `gruendungsnavigator`):
+
+* **Position:** the gallery shows `DOSEN_DATA` in array order. "First in the list" means the first array entry; nothing else sorts by default.
+* **Vectors:** `src/data/doseVectors.json` entry with `v` (V1–V7), `fun`, `funSource`, `funDe`, `funEn`, `note`, copied from the reviewer's scorecard (`vectors.test.ts` fails otherwise). Add the key; **never re-sort or rewrite the whole JSON file**, which turns a 16-line diff into an 80-line one.
+* **Review metadata:** `scripts/dosen-review-metadata.json` (`review_score`, `architecture_tier`, `source_type`), then `node scripts/sync-idea-frontmatter.mjs` (otherwise `check:idea-frontmatter` fails).
+* **Book:** chapters in `src/data/doseBooks.ts` for the demo README, Ticket 01, the research files, and an **audit file** (`07-demos/<id>/pruefakte.md`: reviewer scorecard, what was checked against which source, open pre-sending conditions). The reviewer's verdict otherwise lives only inside the shared classification log.
+* **Simulator (if the Dose has a live demo):** `src/data/doseSimulators.ts` (key + map entry), `src/components/simulators/index.ts` (lazy export), the render switch in `DoseModal.tsx`, `DoseSinglePage.tsx` and `InteractiveTinSandboxes.tsx` (tab + render), and the badge in `DosenGallery.tsx`.
+
 ### Step 4 · Frontmatter & Cache Synchronization
 Execute:
 1. `npm run sync:idea-frontmatter` — updates and verifies frontmatter tags.
@@ -112,6 +122,14 @@ Run:
 npm run lint && npm test
 ```
 All drift guards (`check:dosen`, `check:books`, `check:idea-frontmatter`, `check:protokoll`, `check:friedhof`) and all test suites must pass with zero errors.
+
+### Step 6b · Quality gates that tests alone do not catch (learned 11.10.2026)
+
+1. **Numbers come from the shipped artifact, never from an earlier text.** Count questions, cards, statutes and answers in the page itself before writing them into a dossier. The concept said 26 questions and 15 cards while the page had 42 and 17, and "31 questions" for the case map was copied through four files although the page had 29. Where a demo ships data, add a test that reads the numbers from it and checks every text (see `src/engine/gruendungsnavigator/gruendungsnavigator.test.ts`, "Zahlen-Wächter").
+2. **"Verbatim" must be machine-checked.** Any quotation marked as verbatim (statute, norm, guideline) is compared against the official source by a script, not by eye. A hand check on the same day missed 4 deviations (`npm run check:gn-zitate`). A failed fetch is *not* a deviation: count it separately, or the checker reports dozens of false alarms on a flaky network.
+3. **Look at it on a phone.** `npm run check:mobile` for standalone pages in `public/`, and a 390 px screenshot of `#dose=<id>` in the built app (`npx vite build && npx vite preview`). Long URLs in monospace paragraphs overflow; desktop SVG diagrams become unreadable at phone width.
+4. **Do not hard-code test counts in prose** unless you update them in the same commit. "54 tests" was outdated within the hour.
+5. **Personal data in demos:** if a demo is built from a real person's case (amounts, profession, benefit status), say so in the dossier and in "Erster Schritt"; publishing the link under that person's name reveals it.
 
 ---
 

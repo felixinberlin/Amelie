@@ -6,7 +6,7 @@ target_maker: Tacheles e.V.
 # ParagraphenDolmetscher
 
 > ⚰️ **Grabbeigabe — gestorben am 24.09.2026, `besetzt`.**
-> jobcenter.guru macht genau das, kostenlos und in über zehn Sprachen; dazu war die Idee ein Duplikat von KlarLokal.
+> jobcenter.guru macht genau das, in über zehn Sprachen (kostenlos nur die Grundstufe, sonst In-App-Käufe bis 9,99 €, Stand 11.10.2026); dazu war die Idee ein Duplikat von KlarLokal.
 > Totenschein: App-Tab „Friedhof" · Nachruf: `08-friedhof/nachrufe.md` · Belege: `06-suche/amelie-pruefprotokoll.md`, Abdeckungs-Nachprüfung.
 > Der Text unten ist die Dose, wie sie war — inklusive des Satzes „freie, bedingungslose Werkzeuge existieren nicht", der sie getötet hat.
 

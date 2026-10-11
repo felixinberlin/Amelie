@@ -1,0 +1,66 @@
+# Prüfakte: Gründungsnavigator
+
+**Dose:** [`gruendungsnavigator`](../../05-dosen/gruendungsnavigator.md) · **Stand:** 11.10.2026 · CC0
+
+Alles, was über diese Dose geprüft wurde, an einem Ort: Urteil, Vektoren, Zitate, Handy, offene Bedingungen. Die Quellen der Einträge stehen jeweils dabei.
+
+## 1. Urteil des Reviewers
+
+Unabhängiger Review am 11.10.2026, Volltext in `06-suche/amelie-classification-log.md`, Abschnitt „Gründungsnavigator — Reviewer 11.10.2026“.
+
+| Zuschnitt | V1 | V2 | V3 | V4 | V5 | V6 | V7 | V8 | Kern /35 | Urteil |
+|---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|---|
+| GN-A, voller Prototyp (gepackt) | 3 | 5 | 4 | 3 | 3 | 4 | 4 | 2 | **26** | Dose Ready (bedingt) |
+| GN-B, nur Normregister, Fristen, Rechte-Karten mit Wortlaut | 3 | 5 | 5 | 3 | 4 | 4 | 5 | 2 | **29** | Dose Ready (empfohlen) |
+
+- **Restlücke (V1):** Gespräch statt Brief, für Gründerinnen und Gründer, mit zitiertem Wortlaut. Nachbarn: jobcenter.guru, BürgerChat, Sozialrat, Münchner Gründungsbüro, Gründerplattform (Prüfprotokoll G1).
+- **Achillesferse:** RDG-Grenze (Formulierungsvorschläge eines Nichtjuristen) und ein Empfänger ohne verifizierte Ansprechperson.
+- **Heilmittel:** Zuschnitt GN-B. Taktik bleibt ein austauschbares Beispielpaket außerhalb des geprüften Kerns.
+
+## 2. Zitat-Abgleich gegen die Amtsquelle
+
+Prüfbefehl: `npm run check:gn-zitate` (Skript `scripts/check-gruendungsnavigator-zitate.mjs`, braucht Netz). Er hält jedes als wörtlich markierte Zitat beider Seiten gegen gesetze-im-internet.de.
+
+| Lauf | Ergebnis |
+|---|---|
+| 11.10.2026, erster Lauf | 4 Abweichungen trotz Handprüfung am selben Tag |
+| 11.10.2026, nach Korrektur | 39/39 stimmen, 0 Abweichungen, 0 nicht abrufbar |
+
+Die vier korrigierten Stellen:
+
+| Norm | Stand vorher | Amtlicher Wortlaut |
+|---|---|---|
+| § 10 Abs. 2 Nr. 5 SGB II (Fall-Landkarte) | „selbstständig“ | „selbständig“ |
+| § 16 Abs. 3 SGB I (beide Seiten) | „dass unverzüglich“ | „daß unverzüglich“ (alte Schreibung im Gesetz) |
+| § 44 SGB X (Fall-Landkarte) | „Im übrigen“ | „Im Übrigen“ |
+| § 87 SGG (Fall-Landkarte) | „Verwaltungsaktes“ | „Verwaltungsakts“ |
+
+Ein gescheiterter Abruf zählt nicht als Abweichung; der Befehl meldet ihn getrennt.
+
+## 3. Tests des Kerns
+
+`npx vitest run src/engine/gruendungsnavigator`. Die Tests lesen die Daten direkt aus den ausgelieferten HTML-Seiten:
+
+- Fristen (Monatsrechnung, Schaltjahr, Werktag-Verschiebung, Feiertage), Freibetrag § 11b, Reihenfolge § 37 Abs. 2, Normstand-Wächter.
+- Telefonbaum: Umfang, keine toten Knoten, jeder Normverweis löst auf, jeder Weg endet.
+- Normregister beider Seiten: Link vorhanden, genau eins von Wortlaut oder Kurzfassung, gleiche Zitate auf beiden Seiten.
+- Sprachwächter: kein „garantiert“, „Anspruch besteht“, „unzulässig“, „rechtswidrig“.
+- **Zahlen-Wächter:** Jede Zahl vor „Fragen“, „Rechte-Karten“, „Normen“ oder „Antworten“ in README, Dossiers, Konzept, `dosen.ts` und Simulator muss eine echte Zahl der Seiten sein. Er fand beim ersten Lauf „31 Fragen“ für die Fall-Landkarte; die Seite hat 29.
+
+## 4. Handy
+
+Prüfbefehl: `npm run check:mobile` (Skript `scripts/check-mobile.mjs`, braucht Chromium). Er lädt jede Seite unter `public/` über HTTP bei 360 und 390 px und prüft waagrechtes Scrollen, JS-Fehler, fehlgeschlagene Ladevorgänge und den Viewport-Meta. Stand 11.10.2026: beide Seiten in Ordnung.
+
+## 5. Bedingungen vor Versand
+
+| Bedingung (Reviewer) | Stand |
+|---|---|
+| Normtexte an der Amtsquelle gegengelesen, nicht nur dejure.org | **erfüllt** (Abschnitt 2) |
+| Ticket 01 neutralisiert den Beispielfall (Webentwicklung, echte Beträge) | offen, [Ticket 01](ticket-01-vorlage.md) |
+| RDG-Grenze juristisch geprüft oder Zuschnitt GN-B | offen |
+| Ansprechperson beim Empfänger (Tacheles e.V.) verifiziert | offen |
+
+Nichts versendet, keine Mail angelegt.
+
+---
+Lizenz: CC0 1.0 Public Domain.
