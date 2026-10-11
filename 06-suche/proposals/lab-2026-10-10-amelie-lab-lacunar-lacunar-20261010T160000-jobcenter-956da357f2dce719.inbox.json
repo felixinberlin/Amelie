@@ -1,0 +1,229 @@
+{
+  "batch_id": "amelie-lab-lacunar-lacunar-20261010T160000-jobcenter-956da357f2dce719",
+  "lab_id": "amelie-lab",
+  "engine": "lacunar",
+  "run_id": "lacunar-20261010T160000-jobcenter",
+  "revision": "956da357f2dce7196fea5122d8cdaf3abcfeb7dc4b63be2a544d39a6e663ec9d",
+  "created_at": "2026-10-10T16:00:00Z",
+  "model": "gemini-2.5-flash",
+  "intent": "Jobcenter in Deutschland und weltweit grundlegend verbessern: Bürokratie abbauen, Arbeitsvermittlung revolutionieren, Fallzahlen entlasten und Menschen nachhaltig in gute Arbeit bringen",
+  "ideas": [
+    {
+      "local_id": "C1",
+      "record": {
+        "candidate_id": "C1",
+        "rank": 1,
+        "idea": "Vollständige institutionelle Entkopplung der Geldleistung von der Beratung: Trennung in automatisiertes SGB-II-Auszahlungs-Backend und eigenständige, sanktionsfreie Karriere- und Lebenslagenbegleitung nach klinischem Konsil-Muster.",
+        "gap": "Öffentliche Arbeitsverwaltungen binden existenzielle Sanktionsmacht und Berufsberatung an denselben Sachbearbeiter, was institutionelles Misstrauen zementiert.",
+        "gap_stands_alone": true,
+        "boden_type": "transformational",
+        "removed_assumption": "Dass Arbeitsvermittler zwingend auch die finanzielle Bedürftigkeit und Sanktionskontrolle vollstrecken müssen.",
+        "who_has_problem": "400+ Jobcenter in Deutschland sowie vergleichbare PES-Behörden weltweit (UK DWP, Österreich AMS, Frankreich France Travail).",
+        "collider_mechanism": "Die klinische Trennung von Krankenhaus-Abrechnung und medizinischer Behandlung wird auf das Sozialsystem übertragen: Algorithmen und automatisierte Registerabfragen erledigen den Leistungsanspruch geräuschlos; Fallmanager fungieren als reine Mentoren ohne Bestrafungsgewalt.",
+        "prior_art": [
+          {
+            "finding_id": "F3",
+            "url": "https://cphpost.dk/2026-02-15/denmark/new-employment-reform-in-denmark-focuses-on-trust-and-less-bureaucracy/",
+            "note": "Dänische Reform 2026 schafft rigide Kategorisierungen ab und setzt auf Vertrauensberatung."
+          }
+        ]
+      }
+    },
+    {
+      "local_id": "C3",
+      "record": {
+        "candidate_id": "C3",
+        "rank": 2,
+        "idea": "Asynchroner Lebenslagen-Pass mit bedarfsgesteuertem Triage-Routing: Beseitigung bürokratischer Routinevorladungen zugunsten zielgerichteter Beratung nur bei Qualifizierungsmeilensteinen oder akuten Hemmnissen.",
+        "gap": "Millionen Pflichtvorladungen binden Arbeitskraft in Jobcentern für das bloße Abhaken von Anwesenheiten ohne jeglichen Vermittlungswert.",
+        "gap_stands_alone": true,
+        "boden_type": "exploratory",
+        "removed_assumption": "Dass physische Routine-Meldepflichten im Monatsrhythmus die Arbeitsaufnahme beschleunigen.",
+        "who_has_problem": "Erwerbsfähige Leistungsberechtigte mit chronischen Hürden sowie überlastete Vermittler in Flächenlandkreisen.",
+        "collider_mechanism": "Telemetrisches Monitoring-Prinzip aus chronischen Versorgungspfaden: Kontinuierlicher, niedrigschwelliger digitaler Signalaustausch ersetzt ermüdende Vor-Ort-Audits.",
+        "prior_art": [
+          {
+            "finding_id": "F6",
+            "url": "https://www.csc.gov.sg/articles/digital-transformation-and-case-management-in-public-service",
+            "note": "Singapur MOM automatisierte Dispute- und Statusverfahren durch KI-Self-Service."
+          }
+        ]
+      }
+    }
+  ],
+  "record": {
+    "contract_version": "1.2.0",
+    "run_id": "lacunar-20261010T160000-jobcenter",
+    "intent": "Jobcenter in Deutschland und weltweit grundlegend verbessern: Bürokratie abbauen, Arbeitsvermittlung revolutionieren, Fallzahlen entlasten und Menschen nachhaltig in gute Arbeit bringen",
+    "model": "gemini-2.5-flash",
+    "created_at": "2026-10-10T16:00:00Z",
+    "state_missing": [],
+    "plan": {
+      "area": "Reform der öffentlichen Arbeitsvermittlung (Jobcenter / SGB II / PES) durch radikale Entlastung und strukturelle Neuausrichtung",
+      "mode_list": [
+        "Digitaler Bürgergeld-Rechner mit automatischer Bescheiderstellung",
+        "KI-Assistent zur automatisierten Stellenrecherche für Integrationsfachkräfte",
+        "App für Bürger zur Hochladung von Miet- und Einkommensnachweisen",
+        "Automatisierte Sanktionsprüfung und Fristenüberwachung",
+        "Online-Terminbuchungssystem für Beratungsgespräche",
+        "Dashboard zur Überwachung von regionalen Arbeitsmarktzahlen",
+        "Kompetenzerfassungstool für Geflüchtete und Quereinsteiger",
+        "Digitale Aktenführung für SGB-II-Widerspruchsverfahren",
+        "WhatsApp-basierte Terminerinnerung für Jobcenter-Kunden",
+        "Matching-Algorithmus basierend auf Lebenslauf-Parsing",
+        "Virtuelle Jobmesse im Metaverse für Langzeitarbeitslose",
+        "Gamifizierte Bewerbungstrainings-App für Jugendliche"
+      ],
+      "anchor_queries": [
+        "IAB Studie Überlastung Jobcenter Bürokratie Fallzahlen",
+        "Klinische Triage und Entkopplung von Abrechnung und Therapie",
+        "Dänemark Reform Beschäftigungssystem Vertrauen statt Sanktionen"
+      ]
+    },
+    "frames": {
+      "frame_a": {
+        "name": "Jobcenter SGB II Fallmanagement und Vermittlungskrise",
+        "source_url": "https://www.iab-forum.de/arbeitsvermittlung-und-beratung-im-buergergeld-hohe-fallzahlen-schraenken-die-kontaktdauer-ein/",
+        "source_label": "Type A: Institutional Bureaucratic Friction",
+        "friction": "Integrationsfachkräfte (IFK) sind mit Fallzahlen von 1:120 bis 1:180 überlastet und verbringen über 60% ihrer Zeit mit juristischer Leistungsprüfung (Karenzzeit, Vermögensprüfung, Mietkostenrechnungen, Sanktionsakten), wodurch für echte Berufsberatung und Vermittlung nur 15 Minuten pro Monat verbleiben.",
+        "slots": {
+          "materials": "SGB-II-Bescheide, Kooperationspläne, Kontoauszüge, Mietbescheinigungen, Rechtsbehelfsbelehrungen, Fachsoftware (VerBIS/ALLEGRO).",
+          "mechanics": "Antragsprüfung, monatliche Einkommensverrechnung, Sanktionsandrohung bei Meldeversäumnissen, Zuweisung zu Standard-Maßnahmen, Aktenvermerke.",
+          "goals": "Existenzsicherung gewähren, Missbrauch verhindern, schnelle Beendigung der Hilfebedürftigkeit, statistische Senkung der Arbeitslosenquote.",
+          "emotions": "Überforderung und Resignation bei Beratern; Scham, Ohnmacht und Misstrauen bei Leistungsempfängern.",
+          "constraints": "Gesetzliche Strenge des SGB II, Prüfungsdruck durch Bundesrechnungshof, mangelnde Schnittstellen zu Arbeitgebern, starre Haushaltsbudgets.",
+          "rituals_timing": "Monatliche Zahlungsanweisungen, halbjährliche Weiterbewilligungsanträge, quartalsweise Vorladungen, 1-Monats-Widerspruchsfristen."
+        }
+      },
+      "frame_b": {
+        "name": "Klinische Triage & Entkoppelte Akutversorgung in der Notfallmedizin",
+        "domain": "Notfallmedizin & Polytrauma-Zentren (Manchester Triage System)",
+        "slots": {
+          "materials": "Vitalparameter-Sensoren, Triage-Karten (Rot/Gelb/Grün), standardisierte Notfallpfade, Point-of-Care-Diagnostik, dezentrale Fachstationen.",
+          "mechanics": "Sofortige Trennung von Akuteinschätzung und Abrechnungswesen (Abrechnung erfolgt völlig unabhängig in der Verwaltung, Ärzte sehen keine Kassenstatus-Daten), Zuweisung in spezifische Interventionspfade, asynchrone telemetrische Überwachung, Priorisierung nach Dringlichkeit.",
+          "goals": "Lebensrettung, Stabilisierung, Verhinderung sekundärer Organschäden, maximale Ressourceneffizienz unter Hochlast.",
+          "emotions": "Fokussierte Ruhe, handlungssichere Klarheit, tiefes gegenseitiges Vertrauen im Behandlungsteam.",
+          "constraints": "Akuter Zeitmangel, strikte Evidenzleitlinien, Null-Toleranz für diagnostische Verzögerungen.",
+          "rituals_timing": "30-Sekunden-Ersttriage, 10-Minuten-Monitoring-Zyklen, strukturierte Übergaben nach SBAR-Schema."
+        }
+      },
+      "distance": 4,
+      "friction_points": [
+        "Im Jobcenter prüft dieselbe Person das Geld (Existenz) und soll gleichzeitig vertrauensvoll beraten; im Krankenhaus ist der Chefarzt strikt von der Kassenabrechnung getrennt.",
+        "Jobcenter agieren statisch im Monatstakt mit bürokratischen Vorladungen, während die Klinik dynamische Triage mit Echtzeit-Statusänderung nutzt.",
+        "Jobcenter behandeln alle Klienten nach dem gleichen starren bürokratischen Schema, ungeachtet ob akute Barrieren (Gesundheit, Sucht, Kinderbetreuung) oder reine Marktnähe vorliegen."
+      ],
+      "personas": [
+        {
+          "who": "Martina, 44, Jobcenter-Fallmanagerin mit 140 Kunden",
+          "would_do": "Möchte Klienten als Beraterin stärken, verbringt aber den ganzen Tag mit der Prüfung von Nebenkostenabrechnungen und Angst vor Prüfungen des Bundesrechnungshofs."
+        },
+        {
+          "who": "Karim, 32, gelernter Elektroniker mit temporärer Depression",
+          "would_do": "Traut sich nicht, seine gesundheitlichen Probleme offenzulegen, weil er Angst vor Leistungskürzungen oder Schikane hat."
+        }
+      ],
+      "candidates": [
+        {
+          "id": "C1",
+          "idea": "Vollständige institutionelle und digitale Entkopplung: Ein autonomes 'Finanz-Backend' zahlt das Bürgergeld automatisiert aus, während die Vermittlung als rein freiwilliges, sanktionsfreies Karriere-Coaching-Zentrum nach dem Vorbild klinischer Triage-Pfade organisiert ist.",
+          "typical_probability": 0.04,
+          "friction_point": "Im Jobcenter prüft dieselbe Person das Geld (Existenz) und soll gleichzeitig vertrauensvoll beraten; im Krankenhaus ist der Chefarzt strikt von der Kassenabrechnung getrennt.",
+          "check_queries": [
+            "Entkopplung Geldleistung Vermittlung Jobcenter SGB II",
+            "Dänisches Modell Trennung Leistungssachbearbeitung und Jobcoaching"
+          ]
+        },
+        {
+          "id": "C2",
+          "idea": "Reverse-Triage-Portal: Arbeitgeber mit Fachkräftemangel durchlaufen eine 'Onboarding- und Kulturtriage', bevor sie Stellen anbieten dürfen; Bewerber bewerten Arbeitgeberbedingungen anonym.",
+          "typical_probability": 0.02,
+          "friction_point": "Jobcenter behandeln alle Klienten nach dem gleichen starren bürokratischen Schema, ungeachtet ob akute Barrieren oder reine Marktnähe vorliegen.",
+          "check_queries": [
+            "Reverse Recruitment Arbeitsagentur Arbeitgeberbewertung",
+            "Kommunales Arbeitgeber-Auditing für Fachkräftegewinnung"
+          ]
+        },
+        {
+          "id": "C3",
+          "idea": "Asynchroner 'Lebenslagen-Telemetry-Pass': Klienten übermitteln Qualifikationsfortschritte und Barrieren über sichere Push-Tokens statt Vor-Ort-Vorladungen; Termine finden nur bei echtem Klientenbedarf statt (500k Termine weniger wie in Dänemark).",
+          "typical_probability": 0.03,
+          "friction_point": "Jobcenter agieren statisch im Monatstakt mit bürokratischen Vorladungen, während die Klinik dynamische Triage mit Echtzeit-Statusänderung nutzt.",
+          "check_queries": [
+            "Dänemark Reduktion Pflichttermine Arbeitslose 500000",
+            "Asynchrone digitale Fallführung öffentliche Arbeitsverwaltung"
+          ]
+        }
+      ]
+    },
+    "result": {
+      "survivors": [
+        {
+          "candidate_id": "C1",
+          "rank": 1,
+          "idea": "Vollständige institutionelle Entkopplung der Geldleistung von der Beratung: Trennung in automatisiertes SGB-II-Auszahlungs-Backend und eigenständige, sanktionsfreie Karriere- und Lebenslagenbegleitung nach klinischem Konsil-Muster.",
+          "gap": "Öffentliche Arbeitsverwaltungen binden existenzielle Sanktionsmacht und Berufsberatung an denselben Sachbearbeiter, was institutionelles Misstrauen zementiert.",
+          "gap_stands_alone": true,
+          "boden_type": "transformational",
+          "removed_assumption": "Dass Arbeitsvermittler zwingend auch die finanzielle Bedürftigkeit und Sanktionskontrolle vollstrecken müssen.",
+          "who_has_problem": "400+ Jobcenter in Deutschland sowie vergleichbare PES-Behörden weltweit (UK DWP, Österreich AMS, Frankreich France Travail).",
+          "collider_mechanism": "Die klinische Trennung von Krankenhaus-Abrechnung und medizinischer Behandlung wird auf das Sozialsystem übertragen: Algorithmen und automatisierte Registerabfragen erledigen den Leistungsanspruch geräuschlos; Fallmanager fungieren als reine Mentoren ohne Bestrafungsgewalt.",
+          "prior_art": [
+            {
+              "finding_id": "F3",
+              "url": "https://cphpost.dk/2026-02-15/denmark/new-employment-reform-in-denmark-focuses-on-trust-and-less-bureaucracy/",
+              "note": "Dänische Reform 2026 schafft rigide Kategorisierungen ab und setzt auf Vertrauensberatung."
+            }
+          ]
+        },
+        {
+          "candidate_id": "C3",
+          "rank": 2,
+          "idea": "Asynchroner Lebenslagen-Pass mit bedarfsgesteuertem Triage-Routing: Beseitigung bürokratischer Routinevorladungen zugunsten zielgerichteter Beratung nur bei Qualifizierungsmeilensteinen oder akuten Hemmnissen.",
+          "gap": "Millionen Pflichtvorladungen binden Arbeitskraft in Jobcentern für das bloße Abhaken von Anwesenheiten ohne jeglichen Vermittlungswert.",
+          "gap_stands_alone": true,
+          "boden_type": "exploratory",
+          "removed_assumption": "Dass physische Routine-Meldepflichten im Monatsrhythmus die Arbeitsaufnahme beschleunigen.",
+          "who_has_problem": "Erwerbsfähige Leistungsberechtigte mit chronischen Hürden sowie überlastete Vermittler in Flächenlandkreisen.",
+          "collider_mechanism": "Telemetrisches Monitoring-Prinzip aus chronischen Versorgungspfaden: Kontinuierlicher, niedrigschwelliger digitaler Signalaustausch ersetzt ermüdende Vor-Ort-Audits.",
+          "prior_art": [
+            {
+              "finding_id": "F6",
+              "url": "https://www.csc.gov.sg/articles/digital-transformation-and-case-management-in-public-service",
+              "note": "Singapur MOM automatisierte Dispute- und Statusverfahren durch KI-Self-Service."
+            }
+          ]
+        }
+      ],
+      "kills": [
+        {
+          "candidate_id": "C2",
+          "reason": "already_in_memory",
+          "killed_at_stage": "result",
+          "notes": "Arbeitgeber-Bewertungsportale (Kununu, Glassdoor) existieren bereits; ein staatliches Zwangsaudit für einstellende Betriebe würde den ohnehin angespannten Arbeitsmarkt blockieren."
+        }
+      ],
+      "shortlist": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "proposed_log_entry": {
+        "datum": "2026-10-10",
+        "gebiet": "Arbeitsverwaltung & Sozialsysteme",
+        "frame_a": "Jobcenter SGB II Fallmanagement und Vermittlungskrise",
+        "frame_b": "Klinische Triage & Entkoppelte Akutversorgung in der Notfallmedizin",
+        "survivor": "C1: Institutionelle Entkopplung von Leistungsberechnung und Karrierebegleitung",
+        "boden": "transformational"
+      }
+    },
+    "accounting": {
+      "model_calls": 3,
+      "search_queries": 3,
+      "cost_usd": 0.021,
+      "search_calls": 3
+    }
+  },
+  "existence_check": false,
+  "contract_version": "1.0.0"
+}

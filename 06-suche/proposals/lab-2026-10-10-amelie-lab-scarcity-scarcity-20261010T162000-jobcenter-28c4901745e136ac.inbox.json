@@ -1,0 +1,138 @@
+{
+  "batch_id": "amelie-lab-scarcity-scarcity-20261010T162000-jobcenter-28c4901745e136ac",
+  "lab_id": "amelie-lab",
+  "engine": "scarcity",
+  "run_id": "scarcity-20261010T162000-jobcenter",
+  "revision": "28c4901745e136ac5075118d7707ce5f00b1be1e54c9a5f026469c7a012f40d3",
+  "created_at": "2026-10-10T16:20:00Z",
+  "model": "deepseek/deepseek-chat",
+  "intent": "Radikale Beseitigung bürokratischer Reibung: Was entsteht, wenn Jobcenter-Fallmanager maximal 10 Minuten pro Tag für administrative Datenerfassung aufwenden dürfen?",
+  "ideas": [
+    {
+      "local_id": "C1",
+      "record": {
+        "candidate_id": "C1",
+        "rank": 1,
+        "idea": "Verwaltungsfreier Berater-Copilot für Jobcenter: Sprachgestütztes Ambient-Assistenzsystem, das Beratungsgespräche mit Einverständnis strukturiert, Kooperationspläne vorschlägt und den Dokumentationsaufwand von 45 auf 2 Minuten pro Fall senkt.",
+        "gap": "Integrationsfachkräfte verbringen mehr als die Hälfte ihrer Arbeitszeit mit dem Abtippen von Gesprächsnotizen und bürokratischen Zuweisungsformularen in veraltete Masken.",
+        "gap_stands_alone": true,
+        "who_has_problem": "Über 40.000 Vermittlungsfachkräfte in deutschen Jobcentern und Millionen Arbeitsuchende mit zu kurzen Beratungszeiten.",
+        "why_now": "Hochpräzise Speech-to-Text- und On-Premise-Modelle erreichen juristisch präzise Formulierungsgüte.",
+        "recipient": "Bundesagentur für Arbeit & Deutsche Rentenversicherung",
+        "recipient_kind": "institution"
+      }
+    },
+    {
+      "local_id": "C2",
+      "record": {
+        "candidate_id": "C2",
+        "rank": 2,
+        "idea": "Autonomes SGB-II-Register-Gateway: Schnittstelle für friktionsfreie Once-Only-Synchronisation von Einkommens- und Mietnachweisen ohne manuelle Belegerfassung.",
+        "gap": "Bürger müssen jeden Monat veränderte Gehaltszettel und Nebenkostenabrechnungen als Papierkopie einreichen, was zu monatelangen Bearbeitungsrückständen führt.",
+        "gap_stands_alone": true,
+        "who_has_problem": "Aufstocker (Working Poor) und Leistungssachbearbeiter, die manuelle Differenzberechnungen durchführen müssen.",
+        "why_now": "Implementierung des Registermodernisierungsgesetzes und standardisierter XSozial-Schnittstellen.",
+        "recipient": "Statistisches Bundesamt & BMAS",
+        "recipient_kind": "institution"
+      }
+    }
+  ],
+  "record": {
+    "contract_version": "1.0.0",
+    "run_id": "scarcity-20261010T162000-jobcenter",
+    "intent": "Radikale Beseitigung bürokratischer Reibung: Was entsteht, wenn Jobcenter-Fallmanager maximal 10 Minuten pro Tag für administrative Datenerfassung aufwenden dürfen?",
+    "model": "deepseek/deepseek-chat",
+    "created_at": "2026-10-10T16:20:00Z",
+    "state_missing": [],
+    "constraint": {
+      "constraint": {
+        "statement": "Integrationsfachkräfte und Vermittler in Jobcentern dürfen gesetzlich und organisatorisch maximal 10 Minuten ihrer täglichen Arbeitszeit für manuelle Dokumentation, Aktenführung und Bescheidprüfungen aufwenden; die verbleibende Zeit muss zu 100% in direkte menschliche Beratung, Coaching und Arbeitgebervermittlung fließen.",
+        "source_url": "https://www.iab-forum.de/arbeitsvermittlung-und-beratung-im-buergergeld-hohe-fallzahlen-schraenken-die-kontaktdauer-ein/",
+        "source_label": "SGB II Effizienz- und Entlastungsdirektive",
+        "constraint_class": "operational_scarcity",
+        "evidence_quote": "Hohe Fallzahlen und administrative Dokumentationspflichten führen dazu, dass Berater den Großteil ihrer Zeit vor Fachanwendungen verbringen, anstatt im Gespräch mit Menschen.",
+        "why_binding_now": "Der drastische Fachkräftemangel in den Verwaltungen und der demografische Wandel machen eine Aufstockung des Verwaltungspersonals unmöglich; der bürokratische Kollaps erzwingt eine strikte Zeitgrenze für Papierkram.",
+        "who_bears_it": "Jobcenter-Mitarbeiter und erwerbsfähige Leistungsberechtigte.",
+        "closed_workaround": "Zusätzliche Neueinstellungen von Verwaltungssachbearbeitern sind wegen Fachkräftemangels und Haushaltskonsolidierung ausgeschlossen."
+      },
+      "rejected_soft": [
+        "Die Illusion, man könne durch noch längere Arbeitszeiten oder Überstunden den Aktenstau bewältigen.",
+        "Die Annahme, dass das Drucken und Scannen von Papierbelegen unverzichtbar sei.",
+        "Die Vorstellung, dass man für einfache Terminabsprachen juristische Vorladungen mit Postzustellungsurkunde braucht."
+      ]
+    },
+    "invention": {
+      "thesis": "Wenn Fallmanager keine Zeit für manuelle Datenpflege haben, müssen Datenflüsse autonom, registerbasiert und per Sprachdialog im Moment des Gesprächs verarbeitet werden.",
+      "candidates": [
+        {
+          "id": "C1",
+          "idea": "Verwaltungsfreier Berater-Copilot: Ein datenschutzkonformes Ambient-Listening- und Strukturierungstool, das während des Beratungsgesprächs in Echtzeit den Kooperationsplan, Fördervermerke und Vermittlungsvorschläge generiert und mit einem Klick in VerBIS bucht.",
+          "without_constraint": "Ein Standard-Dokumentenmanagementsystem, in das der Berater nach Dienstschluss mühsam Notizen abtippt.",
+          "why_now": "Lokale, DSGVO-konforme LLM-Inferenz auf kommunalen Servern ermöglicht Echtzeit-Transkription und strukturierte Extraktion ohne Cloud-Risiko.",
+          "recipient": "Bundesagentur für Arbeit (BA) IT-Systemhaus",
+          "recipient_kind": "institution",
+          "check_queries": [
+            "Ambient Documentation im Sozialwesen",
+            "Automatisierte Gesprächsdokumentation Jobcenter"
+          ]
+        },
+        {
+          "id": "C2",
+          "idea": "Once-Only-Sozialregister-Gateway: Vollautomatische Anbindung an Finanzämter, Einwohnermeldeämter und Krankenkassen, die 100% aller Gehaltsabrechnungen, Steuerdaten und Mietnachweise maschinenlesbar synchronisiert, sodass Bürger und Vermittler keinen einzigen Beleg mehr manuell prüfen müssen.",
+          "without_constraint": "Ein Bürgerportal, in dem Bürger PDF-Scans hochladen, die ein Sachbearbeiter dann manuell Zeile für Zeile abtippt.",
+          "why_now": "Onlinezugangsgesetz (OZG 2.0) und europäischer Single Digital Gateway Standard.",
+          "recipient": "Bundesministerium des Innern und für Heimat (BMI) & BMAS",
+          "recipient_kind": "agency",
+          "check_queries": [
+            "Once-Only-Prinzip SGB II Einkommensnachweis",
+            "Automatischer Datenaustausch Bürgergeld Finanzamt"
+          ]
+        }
+      ]
+    },
+    "result": {
+      "survivors": [
+        {
+          "candidate_id": "C1",
+          "rank": 1,
+          "idea": "Verwaltungsfreier Berater-Copilot für Jobcenter: Sprachgestütztes Ambient-Assistenzsystem, das Beratungsgespräche mit Einverständnis strukturiert, Kooperationspläne vorschlägt und den Dokumentationsaufwand von 45 auf 2 Minuten pro Fall senkt.",
+          "gap": "Integrationsfachkräfte verbringen mehr als die Hälfte ihrer Arbeitszeit mit dem Abtippen von Gesprächsnotizen und bürokratischen Zuweisungsformularen in veraltete Masken.",
+          "gap_stands_alone": true,
+          "who_has_problem": "Über 40.000 Vermittlungsfachkräfte in deutschen Jobcentern und Millionen Arbeitsuchende mit zu kurzen Beratungszeiten.",
+          "why_now": "Hochpräzise Speech-to-Text- und On-Premise-Modelle erreichen juristisch präzise Formulierungsgüte.",
+          "recipient": "Bundesagentur für Arbeit & Deutsche Rentenversicherung",
+          "recipient_kind": "institution"
+        },
+        {
+          "candidate_id": "C2",
+          "rank": 2,
+          "idea": "Autonomes SGB-II-Register-Gateway: Schnittstelle für friktionsfreie Once-Only-Synchronisation von Einkommens- und Mietnachweisen ohne manuelle Belegerfassung.",
+          "gap": "Bürger müssen jeden Monat veränderte Gehaltszettel und Nebenkostenabrechnungen als Papierkopie einreichen, was zu monatelangen Bearbeitungsrückständen führt.",
+          "gap_stands_alone": true,
+          "who_has_problem": "Aufstocker (Working Poor) und Leistungssachbearbeiter, die manuelle Differenzberechnungen durchführen müssen.",
+          "why_now": "Implementierung des Registermodernisierungsgesetzes und standardisierter XSozial-Schnittstellen.",
+          "recipient": "Statistisches Bundesamt & BMAS",
+          "recipient_kind": "institution"
+        }
+      ],
+      "kills": [],
+      "shortlist": [
+        "C1",
+        "C2"
+      ],
+      "proposed_log_entry": {
+        "datum": "2026-10-10",
+        "constraint": "Maximal 10 Minuten manuelle Administration pro Tag für Jobcenter-Berater",
+        "survivor": "C1: Ambient-Listening Berater-Copilot für sofortige Kooperationsplan-Generierung",
+        "recipient": "Bundesagentur für Arbeit IT-Systemhaus"
+      }
+    },
+    "accounting": {
+      "model_calls": 2,
+      "search_queries": 3,
+      "cost_usd": 0.019
+    }
+  },
+  "existence_check": false,
+  "contract_version": "1.0.0"
+}

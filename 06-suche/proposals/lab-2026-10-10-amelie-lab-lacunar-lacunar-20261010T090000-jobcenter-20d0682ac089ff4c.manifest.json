@@ -1,0 +1,24 @@
+{
+  "manifest_version": 1,
+  "run_id": "amelie-lab-lacunar-lacunar-20261010T090000-jobcenter-20d0682ac089ff4c",
+  "plan_id": "lab-2026-10-10-amelie-lab-lacunar-lacunar-20261010T090000-jobcenter-20d0682ac089ff4c",
+  "engine": "review",
+  "model": "gemini-2.5-flash",
+  "existence_check": false,
+  "survivors": {
+    "count": 2,
+    "status": "ungeprueft"
+  },
+  "files": [
+    "06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20261010T090000-jobcenter-20d0682ac089ff4c.md",
+    "06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20261010T090000-jobcenter-20d0682ac089ff4c.inbox.json",
+    "06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20261010T090000-jobcenter-20d0682ac089ff4c.manifest.json"
+  ],
+  "source_ops": [],
+  "grave_proposals": 0,
+  "touches_memory": false,
+  "contracts": {
+    "lacunar-record": "1.2.0"
+  },
+  "contract_version": "1.0.0"
+}

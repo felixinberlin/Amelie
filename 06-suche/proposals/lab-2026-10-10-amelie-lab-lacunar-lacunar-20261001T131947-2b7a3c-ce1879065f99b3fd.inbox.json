@@ -1,0 +1,730 @@
+{
+  "batch_id": "amelie-lab-lacunar-lacunar-20261001T131947-2b7a3c-ce1879065f99b3fd",
+  "lab_id": "amelie-lab",
+  "engine": "lacunar",
+  "run_id": "lacunar-20261001T131947-2b7a3c",
+  "revision": "ce1879065f99b3fdb968596640534a66f60001718a04b089f7bc4771c69aca8f",
+  "created_at": "2026-10-01T13:27:05Z",
+  "model": "gemini-2.5-flash",
+  "intent": "Kleine Wasserwerke und Mühlenstaue in Brandenburg: Stilllegungsdruck durch Wasserrahmenrichtlinie, Fischtreppen-Pflicht, Mühlenbesitzer ohne Gutachter-Budget — wer prüft was, und welche Rechte schlummern in alten Wasserbüchern?",
+  "ideas": [
+    {
+      "local_id": "C5",
+      "record": {
+        "candidate_id": "C5",
+        "rank": 1,
+        "idea": "Eine KI-gestützte Wissensplattform, die historische Wasserbücher, aktuelle WRRL-Leitfäden und lokale Gerichtsurteile miteinander verknüpft und Konsequenzen für spezifische Anlagen prognostiziert.",
+        "gap": "Für Mühlenbesitzer und Behörden ist es extrem schwierig, die komplexen und oft widersprüchlichen Informationen aus historischen Wasserrechten, aktuellen Umweltgesetzen und lokalen Gerichtsurteilen zusammenzuführen, um die spezifischen Konsequenzen für einzelne Anlagen abzuschätzen.",
+        "gap_stands_alone": true,
+        "boden_type": "transformational",
+        "removed_assumption": "Es wird angenommen, dass die Verknüpfung und Analyse disparater Rechts- und Umweltdaten zur Prognose spezifischer Konsequenzen nur durch aufwendige und teure menschliche Rechtsgutachten möglich ist.",
+        "who_has_problem": "Mühlenbesitzer, Behörden, Umweltverbände und Planer, die die Wechselwirkungen zwischen historischen Rechten und aktueller Gesetzgebung verstehen müssen. (Evidenz: \"Mühlenbesitzer ohne Gutachter-Budget\", \"Stilllegungsdruck durch Wasserrahmenrichtlinie, Fischtreppen-Pflicht\")",
+        "why_now": "Fortgeschrittene LLMs und Wissensgraphen können unterschiedliche, komplexe und widersprüchliche Informationsquellen integrieren, um Schlussfolgerungen zu ziehen und Prognosen zu erstellen, was zuvor intensive menschliche Expertise erforderte. (Evidenz: firmadapt.com/blog/how-ai-assists-with-water-rights-and-natural-resources-regulatory-tracking über \"legal consequence analysis and regulatory tracking\" mittels KI; www.wansom.ai/blogs/how-ai-is-transforming-environmental-law- über NLP zur Analyse von Gesetzestexten und Prognosen)",
+        "buildable": "Ja, KI-Anwendungen für Rechtsfolgenanalyse und Compliance-Tracking im Umweltrecht werden bereits entwickelt und eingesetzt. (Evidenz: firmadapt.com/blog/how-ai-assists-with-water-rights-and-natural-resources-regulatory-tracking, www.weforum.org/stories/climate-action/ai-water-risk-management/)",
+        "evidence_urls": [
+          "https://firmadapt.com/blog/how-ai-assists-with-water-rights-and-natural-resources-regulatory-tracking",
+          "https://www.wansom.ai/blogs/how-ai-is-transforming-environmental-law-",
+          "https://www.weforum.org/stories/climate-action/ai-water-risk-management/",
+          "https://www.mtrlegal.com/wiki/wasserbuecher/",
+          "https://lfu.brandenburg.de/lfu/de/aufgaben/wasser/grundwasser/umsetzung-wasserrahmenrichtlinie-grundwasser/"
+        ],
+        "collider_mechanism": "Der Mechanismus des \"Long-context reading\" ermöglicht es der KI, ein tiefes Verständnis über den gesamten Korpus aus historischen Wasserbüchern, aktuellen Leitfäden und Gerichtsurteilen zu entwickeln, um kausale und kontextuelle Zusammenhänge zwischen den Dokumenten herzustellen und daraus spezifische Konsequenzen abzuleiten."
+      }
+    },
+    {
+      "local_id": "C9",
+      "record": {
+        "candidate_id": "C9",
+        "rank": 2,
+        "idea": "Ein kollaboratives KI-System, das von verschiedenen Parteien (Mühlenbesitzer, Behörde, Naturschutz) mit lokalen Informationen 'gefüttert' wird, um ein konsistentes Bild der Wasserrechtslage zu erzeugen und Diskrepanzen zur Überprüfung zu markieren.",
+        "gap": "Verschiedene Akteure (Mühlenbesitzer, Behörden, Naturschutz) verfügen über fragmentierte und oft widersprüchliche Informationen zur Wasserrechtslage, was zu Missverständnissen, Konflikten und ineffizienten Prozessen führt.",
+        "gap_stands_alone": true,
+        "boden_type": "exploratory",
+        "removed_assumption": "Es wird angenommen, dass ein konsistentes und von allen Parteien akzeptiertes Bild der komplexen Wasserrechtslage nur durch langwierige und teure Verhandlungen oder Gutachten erzielt werden kann, die oft nicht alle Perspektiven integrieren.",
+        "who_has_problem": "Mühlenbesitzer, Behörden und Naturschutzorganisationen, die ein gemeinsames, aktuelles Verständnis der komplexen Wasserrechtslage benötigen. (Evidenz: \"Mühlenbesitzer ohne Gutachter-Budget\", \"Stilllegungsdruck durch Wasserrahmenrichtlinie, Fischtreppen-Pflicht\")",
+        "why_now": "KI, insbesondere LLMs und Wissensgraphen, können widersprüchliche Informationen aus mehreren menschlichen Eingaben verarbeiten, Inkonsistenzen identifizieren und Bereiche zur Überprüfung in einem kollaborativen Umfeld vorschlagen. (Evidenz: firmadapt.com/blog/how-ai-assists-with-water-rights-and-natural-resources-regulatory-tracking über die Verarbeitung und Verfolgung von Vorschriften; spellbook.com/learn/ai-legal-document-review über die Erkennung von nicht konformen Klauseln, was eine Basis für die Diskrepanzerkennung ist)",
+        "buildable": "Ja, kollaborative KI-Systeme und Wissensgraphen existieren, die in der Lage sind, diverse Daten zu integrieren und Inkonsistenzen zu markieren. (Evidenz: firmadapt.com/blog/how-ai-assists-with-water-rights-and-natural-resources-regulatory-tracking, www.wansom.ai/blogs/how-ai-is-transforming-environmental-law-)",
+        "evidence_urls": [
+          "https://firmadapt.com/blog/how-ai-assists-with-water-rights-and-natural-resources-regulatory-tracking",
+          "https://www.wansom.ai/blogs/how-ai-is-transforming-environmental-law-",
+          "https://spellbook.com/learn/ai-legal-document-review",
+          "https://www.mtrlegal.com/wiki/wasserbuecher/",
+          "https://lfu.brandenburg.de/lfu/de/aufgaben/wasser/grundwasser/umsetzung-wasserrahmenrichtlinie-grundwasser/"
+        ],
+        "collider_mechanism": "Der Mechanismus des \"Long-context reading\" ermöglicht es der KI, sämtliche von den verschiedenen Parteien eingebrachten lokalen Informationen und Dokumente in einem kohärenten Gesamtkontext zu verarbeiten und semantische oder faktische Diskrepanzen zwischen diesen Informationen präzise zu identifizieren und zur menschlichen Klärung zu kennzeichnen."
+      }
+    },
+    {
+      "local_id": "C1",
+      "record": {
+        "candidate_id": "C1",
+        "rank": 3,
+        "idea": "Ein KI-System, das historische Wasserbücher nach spezifischen juristischen Formulierungen durchsucht und Abweichungen vom Standardwortlaut markiert, die von einem Menschen überprüft werden müssen.",
+        "gap": "Mühlenbesitzer und Behörden müssen historische Wasserrechte manuell auf juristische Abweichungen prüfen, was zeitaufwendig und fehleranfällig ist.",
+        "gap_stands_alone": true,
+        "boden_type": "combinational",
+        "removed_assumption": "Es ist angenommen, dass die Erkennung nuancierter juristischer Abweichungen in historischen Dokumenten nur durch menschliche Expertise effizient möglich ist.",
+        "who_has_problem": "Mühlenbesitzer, Behördenmitarbeiter (Wasserämter), Gutachter und Anwälte, die historische Wasserrechte prüfen müssen. (Evidenz: \"Mühlenbesitzer ohne Gutachter-Budget\", www.mtrlegal.com/wiki/wasserbuecher/ über Wasserbücher und Rechte)",
+        "why_now": "Fortschritte in NLP und LLMs ermöglichen die semantische Analyse und den Vergleich juristischer Texte, um Abweichungen über bloße Stichwortsuche hinaus zu identifizieren, was vor fünf Jahren nicht in diesem Umfang möglich war. (Evidenz: spellbook.com/learn/ai-legal-document-review über \"Risikoerkennung und Compliance\" mittels KI, \"Entwicklung über einfache Stichwortsuchen hinaus\")",
+        "buildable": "Ja, KI-Tools zur Analyse von Rechtsdokumenten und zur Abweichungserkennung sind bereits im Einsatz und werden weiterentwickelt. (Evidenz: spellbook.com/learn/ai-legal-document-review, trustpoint.one/resource/ai-driven-fraud-detection-in-alternative-legal-services/)",
+        "evidence_urls": [
+          "https://spellbook.com/learn/ai-legal-document-review",
+          "https://trustpoint.one/resource/ai-driven-fraud-detection-in-alternative-legal-services/",
+          "https://smartroom.com/blog/industries/legal/ai-risk-detection-in-legal-documents/",
+          "https://www.morganlewis.com/pubs/2026/09/ai-prompt-injection-a-new-class-of-risk-and-best-practices",
+          "https://www.mtrlegal.com/wiki/wasserbuecher/"
+        ],
+        "collider_mechanism": "Der Mechanismus des \"Long-context reading\" ermöglicht es der KI, den vollständigen Kontext und die semantischen Beziehungen innerhalb und zwischen sehr langen juristischen Dokumenten zu erfassen, um subtile Abweichungen von erwarteten Mustern zu erkennen, die über einfache syntaktische Prüfungen hinausgehen."
+      }
+    },
+    {
+      "local_id": "C3",
+      "record": {
+        "candidate_id": "C3",
+        "rank": 4,
+        "idea": "Ein 'Wasserrechts-Scanner', der Fotos oder Scans von alten Wasserbuchseiten analysiert, relevante Passagen extrahiert und diese in eine standardisierte, durchsuchbare Datenbank überführt, um die Initialrecherche zu beschleunigen.",
+        "gap": "Die manuelle Extraktion relevanter Informationen aus physischen, oft schwer lesbaren historischen Wasserbüchern ist extrem zeitaufwendig und fehleranfällig, was die Initialrecherche stark verzögert.",
+        "gap_stands_alone": true,
+        "boden_type": "combinational",
+        "removed_assumption": "Es wird angenommen, dass die Strukturierung und Digitalisierung von Informationen aus alten, teils handgeschriebenen und schlecht erhaltenen Dokumenten nur durch manuelle Datenerfassung möglich ist.",
+        "who_has_problem": "Mühlenbesitzer, Behörden, Historiker und Gutachter, die mit physischen, oft schlecht erhaltenen historischen Wasserbüchern arbeiten. (Evidenz: \"Mühlenbesitzer ohne Gutachter-Budget\", www.mtrlegal.com/wiki/wasserbuecher/ über die Existenz historischer Wasserbücher)",
+        "why_now": "Fortschritte in OCR und HTR in Verbindung mit NLP haben die zuverlässige Extraktion von Informationen aus komplexen, historischen und degradierten Dokumenten ermöglicht, was vor fünf Jahren nicht effizient möglich war. (Evidenz: www.transkribus.org/de und planet-ai.com/de/loesungen/historische-archive/ über KI-basierte OCR für historische Schriften und Handschriftenerkennung)",
+        "buildable": "Ja, spezialisierte OCR- und HTR-Lösungen für historische Dokumente existieren und werden aktiv eingesetzt. (Evidenz: www.transkribus.org/de, www.evenuplaw.com/guides/legal-ocr-software-ai/)",
+        "evidence_urls": [
+          "https://www.transkribus.org/de",
+          "https://dokuwandel.de/recht/dokumente/fraktur-ocr",
+          "https://planet-ai.com/de/loesungen/historische-archive/",
+          "https://www.evenuplaw.com/guides/legal-ocr-software-ai/",
+          "https://www.mtrlegal.com/wiki/wasserbuecher/"
+        ],
+        "collider_mechanism": "Der Mechanismus des \"Long-context reading\" ermöglicht es der KI, trotz der Variabilität historischer Schriftbilder und Dokumentenqualitäten den Textinhalt zu erkennen und semantisch relevante Passagen zu identifizieren und zu strukturieren, die für eine Datenbankextraktion notwendig sind."
+      }
+    }
+  ],
+  "record": {
+    "run_id": "lacunar-20261001T131947-2b7a3c",
+    "intent": "Kleine Wasserwerke und Mühlenstaue in Brandenburg: Stilllegungsdruck durch Wasserrahmenrichtlinie, Fischtreppen-Pflicht, Mühlenbesitzer ohne Gutachter-Budget — wer prüft was, und welche Rechte schlummern in alten Wasserbüchern?",
+    "model": "gemini-2.5-flash",
+    "created_at": "2026-10-01T13:27:05Z",
+    "state_missing": [],
+    "plan": {
+      "area": "Kleine Wasserwerke und Mühlenstaue in Brandenburg: Stilllegungsdruck durch Wasserrahmenrichtlinie, Fischtreppen-Pflicht, Mühlenbesitzer ohne Gutachter-Budget — wer prüft was, und welche Rechte schlummern in alten Wasserbüchern?",
+      "mode_list": [
+        "KI-gestützte Prüfung der WRRL-Konformität anhand von Fotos und Anlagendaten",
+        "Planungs-Tool für Fischtreppen, das standortbasierte Designs und Kostenschätzungen liefert",
+        "Digitale Erfassung und Extraktion von Wasserrechten aus gescannten historischen Wasserbüchern mittels OCR und NLP",
+        "Bürgerwissenschaftliche App zur Meldung und Dokumentation von Fischwanderungen an Fischtreppen",
+        "Vermittlungsplattform, die Mühlenbesitzer mit spezialisierten Gutachtern und Förderprogrammen verbindet",
+        "Simulations-App zur Visualisierung der ökologischen Auswirkungen von Stauanlagen und Fischtreppen",
+        "KI-basierte Erkennung von Fischarten auf Fotos oder Videos zur Erfolgskontrolle von Fischaufstiegshilfen",
+        "App zur automatisierten Erkennung von Schäden (Risse, Erosion) an Wehren und Stauanlagen mittels Kamera",
+        "Interaktive, geografische Karte, die historische und aktuelle Wasserrechte visualisiert",
+        "Genehmigungs- und Fristenmanager, der Mühlenbesitzer durch behördliche Prozesse führt",
+        "Wissensdatenbank und FAQ-Sammlung für Betreiber von Kleinwasserkraftanlagen",
+        "Öffentliche Diskussionsplattform zum Austausch von Erfahrungen und Problemen rund um Mühlen und Wasserrechte"
+      ],
+      "anchor_queries": [
+        "Leitfaden Zustandserfassung Gewässer ökologisches Potenzial Brandenburg Fischaufstiegshilfe manuelle Bewertung",
+        "Historische Wasserbücher Brandenburg Recherche Rechte Pflichten Methodik",
+        "Kleine Wasserkraftanlagen WRRL Brandenburg Herausforderungen Prüfung Begutachtung"
+      ],
+      "collider_hint": "Dezentrale, kollektive Interpretation komplexer, heterogener Dokumente"
+    },
+    "frames": {
+      "frame_a": {
+        "name": "Historische Wasserbücher Brandenburg und die Verwaltung alter Rechte",
+        "source_url": "https://www.mtrlegal.com/wiki/wasserbuecher/",
+        "source_label": "Typ A: scheme without software",
+        "friction": "Die Komplexität der historischen Rechtsdokumente und die Notwendigkeit manueller Recherche und juristischer Interpretation, oft ohne ausreichendes Budget oder Fachwissen bei den Betroffenen, führt zum Verlust von Rechten.",
+        "slots": {
+          "materials": "Physische und digitalisierte Wasserbücher, Karten, Rechtsdokumente, Akten; juristische Präzedenzfälle",
+          "mechanics": "Manuelle Sichtung, juristische Analyse, Abgleich mit Katastern, Gutachten, Fristenmanagement, Behördenkommunikation",
+          "goals": "Sicherung und Durchsetzung von Wasserrechten, Einhaltung von Pflichten, Vermeidung von Rechtsverlust, Klärung von Eigentumsverhältnissen",
+          "emotions": "Angst vor Rechtsverlust, Frustration über Bürokratie, Erleichterung bei Klärung, Hoffnung auf Bestandsschutz, Überforderung",
+          "constraints": "Hohe Kosten für Gutachter, fehlendes Spezialwissen, unübersichtliche Archivlagen, lange Bearbeitungszeiten, alternde Dokumente, fehlende Digitalisierung",
+          "rituals_timing": "Einmalige Recherche bei Bedarf, periodische Prüfung von Fristen, Rechtsberatung vor wichtigen Entscheidungen, Akteneinsicht"
+        }
+      },
+      "frame_b": {
+        "name": "Long-context reading of entire archives (AI)",
+        "domain": "Recent AI capabilities",
+        "slots": {
+          "materials": "Digitale Text-, Bild- und Metadatenarchive; Sprachmodelle, Rechenleistung",
+          "mechanics": "Kontextuelle Interpretation, Mustererkennung, Extraktion von Entitäten und Beziehungen, Zusammenfassen, Verknüpfen, Schlussfolgerungen ziehen über große Textmengen",
+          "goals": "Schnelle, umfassende Informationsgewinnung, Beantwortung komplexer Fragen, Generierung von Hypothesen, Wissensstrukturierung aus unstrukturierten Daten",
+          "emotions": "Neugier, Effizienz, Vertrauen in Automatisierung, Potenzial zur Entdeckung, Überraschung über unerwartete Zusammenhänge",
+          "constraints": "Qualität und Verfügbarkeit der Daten, Rechenleistung und Kosten, Halluzinationen des Modells, Verständnisnuancen, Datenschutz, fehlende juristische Validierung",
+          "rituals_timing": "Kontinuierliche Indizierung, On-Demand-Analyse, iteratives Verfeinern von Anfragen, Echtzeit-Feedback, Anpassung an neue Daten"
+        }
+      },
+      "distance": 4,
+      "friction_points": [
+        "Frame A: Interpretation ist menschlich, nuanciert, juristisch validiert; Frame B: Interpretation ist algorithmisch, potenziell halluzinatorisch, benötigt Validierung.",
+        "Frame A: Recherche ist teuer und langsam; Frame B: Recherche ist schnell und potenziell günstig (pro Abfrage).",
+        "Frame A: Wissen ist fragmentiert über Personen und Archive; Frame B: Wissen wird zentralisiert und verknüpft.",
+        "Frame A: Fokus auf Präzedenzfälle und historische Einordnung; Frame B: Fokus auf Mustererkennung und neue Zusammenhänge.",
+        "Frame A: Fehler sind selten, aber kostenintensiv und schwer korrigierbar; Frame B: Fehler sind häufiger (Halluzinationen), aber potenziell leichter identifizierbar und korrigierbar durch Validierungsschleifen.",
+        "Frame A: Prozess ist reaktiv (bei Bedarf); Frame B: Prozess ist proaktiv (kontinuierliche Überwachung/Analyse).",
+        "Frame A: Zugang zu Dokumenten ist physisch oder über spezialisierte Portale; Frame B: Zugang zu Daten ist über APIs und digitale Schnittstellen.",
+        "Frame A: Hauptakteur ist der Rechtsanwalt/Gutachter; Frame B: Hauptakteur ist der Prompt-Engineer/Analyst.",
+        "Frame A: Sicherheit liegt in der juristischen Expertise und Dokumentenechtheit; Frame B: Sicherheit liegt in der Datenintegrität und Modellzuverlässigkeit."
+      ],
+      "personas": [
+        {
+          "who": "Müllerin Schmidt",
+          "would_do": "Sie würde ein Tool nutzen, das ihr hilft, die Wasserrechte ihrer Mühle ohne teuren Anwalt zu verstehen und Fristen einzuhalten, um die Zukunft ihres Betriebs zu sichern."
+        },
+        {
+          "who": "Herr Weber, ehrenamtlicher Gewässerwart",
+          "would_do": "Er würde eine Plattform verwenden, die ihm Einblicke in die historischen Wasserrechte von Stauanlagen in seinem Betreuungsbereich gibt, um den ökologischen Zustand besser zu beurteilen und mit Mühlenbesitzern zu diskutieren."
+        },
+        {
+          "who": "Frau Dr. Lehmann, Referentin im Landesamt für Umwelt (Brandenburg)",
+          "would_do": "Sie würde ein KI-System einsetzen, um die Flut an historischen und aktuellen Dokumenten effizient zu analysieren und relevante Informationen für die Umsetzung der WRRL zu extrahieren und zu validieren."
+        }
+      ],
+      "candidates": [
+        {
+          "id": "C1",
+          "idea": "Ein KI-System, das historische Wasserbücher nach spezifischen juristischen Formulierungen durchsucht und Abweichungen vom Standardwortlaut markiert, die von einem Menschen überprüft werden müssen.",
+          "typical_probability": 0.03,
+          "friction_point": "Frame A: Interpretation ist menschlich, nuanciert, juristisch validiert; Frame B: Interpretation ist algorithmisch, potenziell halluzinatorisch, benötigt Validierung.",
+          "check_queries": [
+            "KI Rechtsdokumente Abweichungserkennung",
+            "NLP juristische Formulierungen historische Texte"
+          ]
+        },
+        {
+          "id": "C2",
+          "idea": "Eine Plattform, die von einer KI generierte Zusammenfassungen von Wasserrechtsdokumenten erstellt und diese mit automatisch identifizierten 'Halluzinationsrisiko-Scores' versieht, um manuelle Prüfprioritäten zu setzen.",
+          "typical_probability": 0.04,
+          "friction_point": "Frame A: Interpretation ist menschlich, nuanciert, juristisch validiert; Frame B: Interpretation ist algorithmisch, potenziell halluzinatorisch, benötigt Validierung.",
+          "check_queries": [
+            "KI Halluzinationsrisiko Rechtstexte",
+            "Automatisierte Bewertung juristischer KI-Zusammenfassungen"
+          ]
+        },
+        {
+          "id": "C3",
+          "idea": "Ein 'Wasserrechts-Scanner', der Fotos oder Scans von alten Wasserbuchseiten analysiert, relevante Passagen extrahiert und diese in eine standardisierte, durchsuchbare Datenbank überführt, um die Initialrecherche zu beschleunigen.",
+          "typical_probability": 0.02,
+          "friction_point": "Frame A: Recherche ist teuer und langsam; Frame B: Recherche ist schnell und potenziell günstig (pro Abfrage).",
+          "check_queries": [
+            "OCR historische juristische Dokumente",
+            "KI-Extraktion Rechtstexte gescannte Dokumente"
+          ]
+        },
+        {
+          "id": "C4",
+          "idea": "Ein 'Wasserbuch-Abonnement', bei dem Mühlenbesitzer monatlich eine KI-basierte Zusammenfassung der für sie relevanten Änderungen in der Rechtsprechung oder im elektronischen Wasserbuch erhalten, basierend auf ihrer spezifischen Anlage.",
+          "typical_probability": 0.05,
+          "friction_point": "Frame A: Recherche ist teuer und langsam; Frame B: Recherche ist schnell und potenziell günstig (pro Abfrage).",
+          "check_queries": [
+            "KI-Rechtsservice für Kleinunternehmen",
+            "Personalisierte Rechtsinformationsdienste Abonnements"
+          ]
+        },
+        {
+          "id": "C5",
+          "idea": "Eine KI-gestützte Wissensplattform, die historische Wasserbücher, aktuelle WRRL-Leitfäden und lokale Gerichtsurteile miteinander verknüpft und Konsequenzen für spezifische Anlagen prognostiziert.",
+          "typical_probability": 0.03,
+          "friction_point": "Frame A: Wissen ist fragmentiert über Personen und Archive; Frame B: Wissen wird zentralisiert und verknüpft.",
+          "check_queries": [
+            "KI-Plattform Rechtsfolgenanalyse Gewässer",
+            "Verknüpfung juristischer Dokumente Umweltrecht KI"
+          ]
+        },
+        {
+          "id": "C6",
+          "idea": "Ein 'Beziehungsgraph' alter Wasserrechte, erstellt von einer KI, der aufzeigt, welche Rechte an welche Gewässerabschnitte, Eigentümer und Pflichten gekoppelt sind, und wie diese über die Zeit interagieren.",
+          "typical_probability": 0.04,
+          "friction_point": "Frame A: Wissen ist fragmentiert über Personen und Archive; Frame B: Wissen wird zentralisiert und verknüpft.",
+          "check_queries": [
+            "KI-Wissensgraphen historische Dokumente",
+            "Visualisierung Rechtsbeziehungen Wasserrechte"
+          ]
+        },
+        {
+          "id": "C7",
+          "idea": "Eine KI, die aus der Analyse alter Wasserbücher und aktueller Umweltdaten 'vergessene' oder untergenutzte ökologische Potenziale von Gewässerabschnitten identifiziert, die durch kleine Umbauten aktiviert werden könnten.",
+          "typical_probability": 0.06,
+          "friction_point": "Frame A: Fokus auf Präzedenzfälle und historische Einordnung; Frame B: Fokus auf Mustererkennung und neue Zusammenhänge.",
+          "check_queries": [
+            "KI ökologisches Potenzial Flussabschnitte",
+            "Historische Wassernutzung Umweltanalyse KI"
+          ]
+        },
+        {
+          "id": "C8",
+          "idea": "Eine 'Trendanalyse'-KI für Wasserrechte, die historische Änderungen in der Gesetzgebung und Rechtsprechung analysiert, um zukünftige Entwicklungen oder Risiken für bestehende Rechte vorherzusagen.",
+          "typical_probability": 0.05,
+          "friction_point": "Frame A: Fokus auf Präzedenzfälle und historische Einordnung; Frame B: Fokus auf Mustererkennung und neue Zusammenhänge.",
+          "check_queries": [
+            "Predictive Analytics Rechtsentwicklung Umweltrecht",
+            "KI-basierte Risikobewertung juristischer Trends"
+          ]
+        },
+        {
+          "id": "C9",
+          "idea": "Ein kollaboratives KI-System, das von verschiedenen Parteien (Mühlenbesitzer, Behörde, Naturschutz) mit lokalen Informationen 'gefüttert' wird, um ein konsistentes Bild der Wasserrechtslage zu erzeugen und Diskrepanzen zur Überprüfung zu markieren.",
+          "typical_probability": 0.07,
+          "friction_point": "Frame A: Fehler sind selten, aber kostenintensiv und schwer korrigierbar; Frame B: Fehler sind häufiger (Halluzinationen), aber potenziell leichter identifizierbar und korrigierbar durch Validierungsschleifen.",
+          "check_queries": [
+            "Kollaborative KI Rechtsinformationen",
+            "Crowdsourcing juristische Daten KI"
+          ]
+        },
+        {
+          "id": "C10",
+          "idea": "Eine 'Gegen-Check'-Funktion, bei der eine zweite, unabhängige KI eine von der ersten KI getroffene Aussage zu Wasserrechten überprüft und ein Vertrauensniveau zurückgibt, ähnlich einer Peer-Review.",
+          "typical_probability": 0.08,
+          "friction_point": "Frame A: Fehler sind selten, aber kostenintensiv und schwer korrigierbar; Frame B: Fehler sind häufiger (Halluzinationen), aber potenziell leichter identifizierbar und korrigierbar durch Validierungsschleifen.",
+          "check_queries": [
+            "KI-Validierung von KI-Ergebnissen Recht",
+            "Confidence Score generative KI Rechtstexte"
+          ]
+        },
+        {
+          "id": "C11",
+          "idea": "Ein Frühwarnsystem, das Mühlenbesitzer automatisch über anstehende Fristen, Gesetzesänderungen oder relevante Gerichtsurteile informiert, die ihre Wasserrechte betreffen könnten, basierend auf einer kontinuierlichen KI-Analyse.",
+          "typical_probability": 0.04,
+          "friction_point": "Frame A: Prozess ist reaktiv (bei Bedarf); Frame B: Prozess ist proaktiv (kontinuierliche Überwachung/Analyse).",
+          "check_queries": [
+            "KI-Frühwarnsystem Rechtsänderungen",
+            "Automatischer Rechtsinformationsdienst Fristen"
+          ]
+        },
+        {
+          "id": "C12",
+          "idea": "Eine KI, die den Zustand eines Gewässerabschnitts (mittels öffentlicher Daten und optionaler Sensoren) überwacht und automatisch vorschlägt, wann eine Überprüfung der Wasserrechte oder eine Anpassung der Anlage aufgrund ökologischer Veränderungen sinnvoll wäre.",
+          "typical_probability": 0.06,
+          "friction_point": "Frame A: Prozess ist reaktiv (bei Bedarf); Frame B: Prozess ist proaktiv (kontinuierliche Überwachung/Analyse).",
+          "check_queries": [
+            "KI-Monitoring Gewässerzustand Rechtsempfehlungen",
+            "Sensordaten ökologische Veränderungen KI-Analyse"
+          ]
+        },
+        {
+          "id": "C13",
+          "idea": "Eine 'Anwalt-KI', die Mühlenbesitzern durch einen Chatbot juristische Fragen zu ihren Wasserrechten beantwortet, basierend auf den von ihr analysierten historischen Dokumenten und Gesetzen.",
+          "typical_probability": 0.03,
+          "friction_point": "Frame A: Hauptakteur ist der Rechtsanwalt/Gutachter; Frame B: Hauptakteur ist der Prompt-Engineer/Analyst.",
+          "check_queries": [
+            "KI-Rechtsberatung Chatbot Wasserrecht",
+            "Juristische Fragenbeantwortung KI historische Dokumente"
+          ]
+        },
+        {
+          "id": "C14",
+          "idea": "Ein 'Prompt-Generator' für juristische Anfragen an große Sprachmodelle, der Nutzern hilft, präzise und kontextualisierte Fragen zu historischen Wasserrechten zu formulieren, um bessere KI-Antworten zu erhalten.",
+          "typical_probability": 0.07,
+          "friction_point": "Frame A: Hauptakteur ist der Rechtsanwalt/Gutachter; Frame B: Hauptakteur ist der Prompt-Engineer/Analyst.",
+          "check_queries": [
+            "Prompt Engineering juristische Texte",
+            "KI-Tools präzise Rechtsanfragen"
+          ]
+        },
+        {
+          "id": "C15",
+          "idea": "Eine Blockchain-basierte Erfassung von Wasserrechtsänderungen und Gutachten, die von einer KI auf Konsistenz und juristische Gültigkeit geprüft wird, um die Vertrauenswürdigkeit zu erhöhen.",
+          "typical_probability": 0.09,
+          "friction_point": "Frame A: Sicherheit liegt in der juristischen Expertise und Dokumentenechtheit; Frame B: Sicherheit liegt in der Datenintegrität und Modellzuverlässigkeit.",
+          "check_queries": [
+            "Blockchain juristische Dokumente KI-Validierung",
+            "Dezentrale Konsistenzprüfung Rechtsgutachten"
+          ]
+        },
+        {
+          "id": "C16",
+          "idea": "Eine KI, die die Authentizität und Vollständigkeit gescannter historischer Dokumente überprüft, indem sie sie mit bekannten Stilen, Signaturen und Archivierungsstandards abgleicht, bevor sie zur Analyse freigegeben werden.",
+          "typical_probability": 0.08,
+          "friction_point": "Frame A: Sicherheit liegt in der juristischen Expertise und Dokumentenechtheit; Frame B: Sicherheit liegt in der Datenintegrität und Modellzuverlässigkeit.",
+          "check_queries": [
+            "KI-Authentifizierung historische Dokumente",
+            "Dokumentenanalyse maschinelles Lernen Archivstandards"
+          ]
+        }
+      ],
+      "shortlist": [
+        "C1",
+        "C3",
+        "C5",
+        "C9",
+        "C11",
+        "C13"
+      ]
+    },
+    "result": {
+      "survivors": [
+        {
+          "candidate_id": "C5",
+          "rank": 1,
+          "idea": "Eine KI-gestützte Wissensplattform, die historische Wasserbücher, aktuelle WRRL-Leitfäden und lokale Gerichtsurteile miteinander verknüpft und Konsequenzen für spezifische Anlagen prognostiziert.",
+          "gap": "Für Mühlenbesitzer und Behörden ist es extrem schwierig, die komplexen und oft widersprüchlichen Informationen aus historischen Wasserrechten, aktuellen Umweltgesetzen und lokalen Gerichtsurteilen zusammenzuführen, um die spezifischen Konsequenzen für einzelne Anlagen abzuschätzen.",
+          "gap_stands_alone": true,
+          "boden_type": "transformational",
+          "removed_assumption": "Es wird angenommen, dass die Verknüpfung und Analyse disparater Rechts- und Umweltdaten zur Prognose spezifischer Konsequenzen nur durch aufwendige und teure menschliche Rechtsgutachten möglich ist.",
+          "who_has_problem": "Mühlenbesitzer, Behörden, Umweltverbände und Planer, die die Wechselwirkungen zwischen historischen Rechten und aktueller Gesetzgebung verstehen müssen. (Evidenz: \"Mühlenbesitzer ohne Gutachter-Budget\", \"Stilllegungsdruck durch Wasserrahmenrichtlinie, Fischtreppen-Pflicht\")",
+          "why_now": "Fortgeschrittene LLMs und Wissensgraphen können unterschiedliche, komplexe und widersprüchliche Informationsquellen integrieren, um Schlussfolgerungen zu ziehen und Prognosen zu erstellen, was zuvor intensive menschliche Expertise erforderte. (Evidenz: firmadapt.com/blog/how-ai-assists-with-water-rights-and-natural-resources-regulatory-tracking über \"legal consequence analysis and regulatory tracking\" mittels KI; www.wansom.ai/blogs/how-ai-is-transforming-environmental-law- über NLP zur Analyse von Gesetzestexten und Prognosen)",
+          "buildable": "Ja, KI-Anwendungen für Rechtsfolgenanalyse und Compliance-Tracking im Umweltrecht werden bereits entwickelt und eingesetzt. (Evidenz: firmadapt.com/blog/how-ai-assists-with-water-rights-and-natural-resources-regulatory-tracking, www.weforum.org/stories/climate-action/ai-water-risk-management/)",
+          "evidence_urls": [
+            "https://firmadapt.com/blog/how-ai-assists-with-water-rights-and-natural-resources-regulatory-tracking",
+            "https://www.wansom.ai/blogs/how-ai-is-transforming-environmental-law-",
+            "https://www.weforum.org/stories/climate-action/ai-water-risk-management/",
+            "https://www.mtrlegal.com/wiki/wasserbuecher/",
+            "https://lfu.brandenburg.de/lfu/de/aufgaben/wasser/grundwasser/umsetzung-wasserrahmenrichtlinie-grundwasser/"
+          ],
+          "collider_mechanism": "Der Mechanismus des \"Long-context reading\" ermöglicht es der KI, ein tiefes Verständnis über den gesamten Korpus aus historischen Wasserbüchern, aktuellen Leitfäden und Gerichtsurteilen zu entwickeln, um kausale und kontextuelle Zusammenhänge zwischen den Dokumenten herzustellen und daraus spezifische Konsequenzen abzuleiten."
+        },
+        {
+          "candidate_id": "C9",
+          "rank": 2,
+          "idea": "Ein kollaboratives KI-System, das von verschiedenen Parteien (Mühlenbesitzer, Behörde, Naturschutz) mit lokalen Informationen 'gefüttert' wird, um ein konsistentes Bild der Wasserrechtslage zu erzeugen und Diskrepanzen zur Überprüfung zu markieren.",
+          "gap": "Verschiedene Akteure (Mühlenbesitzer, Behörden, Naturschutz) verfügen über fragmentierte und oft widersprüchliche Informationen zur Wasserrechtslage, was zu Missverständnissen, Konflikten und ineffizienten Prozessen führt.",
+          "gap_stands_alone": true,
+          "boden_type": "exploratory",
+          "removed_assumption": "Es wird angenommen, dass ein konsistentes und von allen Parteien akzeptiertes Bild der komplexen Wasserrechtslage nur durch langwierige und teure Verhandlungen oder Gutachten erzielt werden kann, die oft nicht alle Perspektiven integrieren.",
+          "who_has_problem": "Mühlenbesitzer, Behörden und Naturschutzorganisationen, die ein gemeinsames, aktuelles Verständnis der komplexen Wasserrechtslage benötigen. (Evidenz: \"Mühlenbesitzer ohne Gutachter-Budget\", \"Stilllegungsdruck durch Wasserrahmenrichtlinie, Fischtreppen-Pflicht\")",
+          "why_now": "KI, insbesondere LLMs und Wissensgraphen, können widersprüchliche Informationen aus mehreren menschlichen Eingaben verarbeiten, Inkonsistenzen identifizieren und Bereiche zur Überprüfung in einem kollaborativen Umfeld vorschlagen. (Evidenz: firmadapt.com/blog/how-ai-assists-with-water-rights-and-natural-resources-regulatory-tracking über die Verarbeitung und Verfolgung von Vorschriften; spellbook.com/learn/ai-legal-document-review über die Erkennung von nicht konformen Klauseln, was eine Basis für die Diskrepanzerkennung ist)",
+          "buildable": "Ja, kollaborative KI-Systeme und Wissensgraphen existieren, die in der Lage sind, diverse Daten zu integrieren und Inkonsistenzen zu markieren. (Evidenz: firmadapt.com/blog/how-ai-assists-with-water-rights-and-natural-resources-regulatory-tracking, www.wansom.ai/blogs/how-ai-is-transforming-environmental-law-)",
+          "evidence_urls": [
+            "https://firmadapt.com/blog/how-ai-assists-with-water-rights-and-natural-resources-regulatory-tracking",
+            "https://www.wansom.ai/blogs/how-ai-is-transforming-environmental-law-",
+            "https://spellbook.com/learn/ai-legal-document-review",
+            "https://www.mtrlegal.com/wiki/wasserbuecher/",
+            "https://lfu.brandenburg.de/lfu/de/aufgaben/wasser/grundwasser/umsetzung-wasserrahmenrichtlinie-grundwasser/"
+          ],
+          "collider_mechanism": "Der Mechanismus des \"Long-context reading\" ermöglicht es der KI, sämtliche von den verschiedenen Parteien eingebrachten lokalen Informationen und Dokumente in einem kohärenten Gesamtkontext zu verarbeiten und semantische oder faktische Diskrepanzen zwischen diesen Informationen präzise zu identifizieren und zur menschlichen Klärung zu kennzeichnen."
+        },
+        {
+          "candidate_id": "C1",
+          "rank": 3,
+          "idea": "Ein KI-System, das historische Wasserbücher nach spezifischen juristischen Formulierungen durchsucht und Abweichungen vom Standardwortlaut markiert, die von einem Menschen überprüft werden müssen.",
+          "gap": "Mühlenbesitzer und Behörden müssen historische Wasserrechte manuell auf juristische Abweichungen prüfen, was zeitaufwendig und fehleranfällig ist.",
+          "gap_stands_alone": true,
+          "boden_type": "combinational",
+          "removed_assumption": "Es ist angenommen, dass die Erkennung nuancierter juristischer Abweichungen in historischen Dokumenten nur durch menschliche Expertise effizient möglich ist.",
+          "who_has_problem": "Mühlenbesitzer, Behördenmitarbeiter (Wasserämter), Gutachter und Anwälte, die historische Wasserrechte prüfen müssen. (Evidenz: \"Mühlenbesitzer ohne Gutachter-Budget\", www.mtrlegal.com/wiki/wasserbuecher/ über Wasserbücher und Rechte)",
+          "why_now": "Fortschritte in NLP und LLMs ermöglichen die semantische Analyse und den Vergleich juristischer Texte, um Abweichungen über bloße Stichwortsuche hinaus zu identifizieren, was vor fünf Jahren nicht in diesem Umfang möglich war. (Evidenz: spellbook.com/learn/ai-legal-document-review über \"Risikoerkennung und Compliance\" mittels KI, \"Entwicklung über einfache Stichwortsuchen hinaus\")",
+          "buildable": "Ja, KI-Tools zur Analyse von Rechtsdokumenten und zur Abweichungserkennung sind bereits im Einsatz und werden weiterentwickelt. (Evidenz: spellbook.com/learn/ai-legal-document-review, trustpoint.one/resource/ai-driven-fraud-detection-in-alternative-legal-services/)",
+          "evidence_urls": [
+            "https://spellbook.com/learn/ai-legal-document-review",
+            "https://trustpoint.one/resource/ai-driven-fraud-detection-in-alternative-legal-services/",
+            "https://smartroom.com/blog/industries/legal/ai-risk-detection-in-legal-documents/",
+            "https://www.morganlewis.com/pubs/2026/09/ai-prompt-injection-a-new-class-of-risk-and-best-practices",
+            "https://www.mtrlegal.com/wiki/wasserbuecher/"
+          ],
+          "collider_mechanism": "Der Mechanismus des \"Long-context reading\" ermöglicht es der KI, den vollständigen Kontext und die semantischen Beziehungen innerhalb und zwischen sehr langen juristischen Dokumenten zu erfassen, um subtile Abweichungen von erwarteten Mustern zu erkennen, die über einfache syntaktische Prüfungen hinausgehen."
+        },
+        {
+          "candidate_id": "C3",
+          "rank": 4,
+          "idea": "Ein 'Wasserrechts-Scanner', der Fotos oder Scans von alten Wasserbuchseiten analysiert, relevante Passagen extrahiert und diese in eine standardisierte, durchsuchbare Datenbank überführt, um die Initialrecherche zu beschleunigen.",
+          "gap": "Die manuelle Extraktion relevanter Informationen aus physischen, oft schwer lesbaren historischen Wasserbüchern ist extrem zeitaufwendig und fehleranfällig, was die Initialrecherche stark verzögert.",
+          "gap_stands_alone": true,
+          "boden_type": "combinational",
+          "removed_assumption": "Es wird angenommen, dass die Strukturierung und Digitalisierung von Informationen aus alten, teils handgeschriebenen und schlecht erhaltenen Dokumenten nur durch manuelle Datenerfassung möglich ist.",
+          "who_has_problem": "Mühlenbesitzer, Behörden, Historiker und Gutachter, die mit physischen, oft schlecht erhaltenen historischen Wasserbüchern arbeiten. (Evidenz: \"Mühlenbesitzer ohne Gutachter-Budget\", www.mtrlegal.com/wiki/wasserbuecher/ über die Existenz historischer Wasserbücher)",
+          "why_now": "Fortschritte in OCR und HTR in Verbindung mit NLP haben die zuverlässige Extraktion von Informationen aus komplexen, historischen und degradierten Dokumenten ermöglicht, was vor fünf Jahren nicht effizient möglich war. (Evidenz: www.transkribus.org/de und planet-ai.com/de/loesungen/historische-archive/ über KI-basierte OCR für historische Schriften und Handschriftenerkennung)",
+          "buildable": "Ja, spezialisierte OCR- und HTR-Lösungen für historische Dokumente existieren und werden aktiv eingesetzt. (Evidenz: www.transkribus.org/de, www.evenuplaw.com/guides/legal-ocr-software-ai/)",
+          "evidence_urls": [
+            "https://www.transkribus.org/de",
+            "https://dokuwandel.de/recht/dokumente/fraktur-ocr",
+            "https://planet-ai.com/de/loesungen/historische-archive/",
+            "https://www.evenuplaw.com/guides/legal-ocr-software-ai/",
+            "https://www.mtrlegal.com/wiki/wasserbuecher/"
+          ],
+          "collider_mechanism": "Der Mechanismus des \"Long-context reading\" ermöglicht es der KI, trotz der Variabilität historischer Schriftbilder und Dokumentenqualitäten den Textinhalt zu erkennen und semantisch relevante Passagen zu identifizieren und zu strukturieren, die für eine Datenbankextraktion notwendig sind."
+        }
+      ],
+      "kills": [
+        {
+          "candidate_id": "C11",
+          "reason": "Das Konzept eines Frühwarnsystems für Rechtsänderungen und Fristen im Kontext von Wasserrechten ist bereits eine etablierte Anwendung von KI in der Rechtsfolgenanalyse und im regulatorischen Tracking. Die Suchergebnisse zeigen, dass solche Systeme bereits existieren und gezielte Benachrichtigungen bereitstellen können.",
+          "failed_checks": [
+            "in_mode_or_dense"
+          ]
+        },
+        {
+          "candidate_id": "C13",
+          "reason": "Der Einsatz von KI-Chatbots zur Beantwortung juristischer Fragen auf Basis analysierter Dokumente ist ein sehr aktives und bereits dicht besetztes Feld in der Rechts-Tech-Branche, selbst wenn die spezifische Nische des Wasserrechts in Brandenburg noch offen sein mag. Die zugrundeliegende Technologie ist breit verfügbar und angewendet.",
+          "failed_checks": [
+            "in_mode_or_dense"
+          ]
+        }
+      ],
+      "log_row": {
+        "anchor": "Historische Wasserbücher Brandenburg und die Verwaltung alter Rechte",
+        "collider": "Long-context reading of entire archives (AI)",
+        "distance": 4,
+        "candidates": 16,
+        "survivors": 4,
+        "best_gap": "Für Mühlenbesitzer und Behörden ist es extrem schwierig, die komplexen und oft widersprüchlichen Informationen aus historischen Wasserrechten, aktuellen Umweltgesetzen und lokalen Gerichtsurteilen zusammenzuführen, um die spezifischen Konsequenzen für einzelne Anlagen abzuschätzen."
+      },
+      "retro": {
+        "learned": "Die Unterscheidung zwischen allgemeinen KI-Fähigkeiten im Rechts-Tech-Bereich und spezifischen Nischenanwendungen ist entscheidend für die Bewertung des Kriteriums 'in_mode_or_dense'. Es ist wichtig, genau zu prüfen, ob die Suchergebnisse die Kernfunktionalität des Kandidaten direkt abdecken.",
+        "mistake": "Anfänglich war ich bei C11 und C13 zu nachsichtig bezüglich 'in_mode_or_dense'. Eine genauere Lektüre der Suchergebnisse zeigte, dass die grundlegenden Funktionen (regulatorisches Tracking, juristische Chatbots) bereits als existierende Anwendungen beschrieben werden, auch wenn der spezifische Kontext (Brandenburger Wasserrecht) eng ist.",
+        "next_time": "Für 'in_mode_or_dense'-Prüfungen werde ich immer kritisch hinterfragen, ob das Suchergebnis für den vorgeschlagenen Check die Kernfunktionalität des Kandidaten *direkt* beschreibt, auch wenn die Nische sehr spezifisch erscheint. Zudem werde ich noch genauer versuchen, den konkreten Wirkmechanismus des Collider-Frames zu benennen und nicht nur den Namen oder eine Metapher zu verwenden."
+      }
+    },
+    "tool_calls": [
+      {
+        "call_id": "lacunar-20261001T131947-2b7a3c-t01",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "gutachte"
+      },
+      {
+        "call_id": "lacunar-20261001T131947-2b7a3c-t02",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "schlumme"
+      },
+      {
+        "call_id": "lacunar-20261001T131947-2b7a3c-t03",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "pflicht"
+      },
+      {
+        "call_id": "lacunar-20261001T131947-2b7a3c-t04",
+        "tool": "search",
+        "status": "ok",
+        "summary": "Leitfaden Zustandserfassung Gewässer ökologisches Potenzial Brandenburg Fischaufstiegshilfe manuelle Bewertung"
+      },
+      {
+        "call_id": "lacunar-20261001T131947-2b7a3c-t05",
+        "tool": "search",
+        "status": "ok",
+        "summary": "Historische Wasserbücher Brandenburg Recherche Rechte Pflichten Methodik"
+      },
+      {
+        "call_id": "lacunar-20261001T131947-2b7a3c-t06",
+        "tool": "search",
+        "status": "ok",
+        "summary": "Kleine Wasserkraftanlagen WRRL Brandenburg Herausforderungen Prüfung Begutachtung"
+      },
+      {
+        "call_id": "lacunar-20261001T131947-2b7a3c-t07",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "Wasserrahmenrichtlinie, Brandenburg, Kleinwasserkraft"
+      },
+      {
+        "call_id": "lacunar-20261001T131947-2b7a3c-t08",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "Wasserbuch, Brandenburg, Rechte"
+      },
+      {
+        "call_id": "lacunar-20261001T131947-2b7a3c-t09",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "Fischtreppe, Planung, Brandenburg"
+      },
+      {
+        "call_id": "lacunar-20261001T131947-2b7a3c-t10",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "durchsuc, markiert"
+      },
+      {
+        "call_id": "lacunar-20261001T131947-2b7a3c-t11",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "durchsuc"
+      },
+      {
+        "call_id": "lacunar-20261001T131947-2b7a3c-t12",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "analysie, datenban"
+      },
+      {
+        "call_id": "lacunar-20261001T131947-2b7a3c-t13",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "analysie"
+      },
+      {
+        "call_id": "lacunar-20261001T131947-2b7a3c-t14",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "aktuelle, gestützt"
+      },
+      {
+        "call_id": "lacunar-20261001T131947-2b7a3c-t15",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "aktuelle"
+      },
+      {
+        "call_id": "lacunar-20261001T131947-2b7a3c-t16",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "erzeugen, gefütter"
+      },
+      {
+        "call_id": "lacunar-20261001T131947-2b7a3c-t17",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "erzeugen"
+      },
+      {
+        "call_id": "lacunar-20261001T131947-2b7a3c-t18",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "anstehen, basieren"
+      },
+      {
+        "call_id": "lacunar-20261001T131947-2b7a3c-t19",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "anstehen"
+      },
+      {
+        "call_id": "lacunar-20261001T131947-2b7a3c-t20",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "basieren, dokument"
+      },
+      {
+        "call_id": "lacunar-20261001T131947-2b7a3c-t21",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "basieren"
+      },
+      {
+        "call_id": "lacunar-20261001T131947-2b7a3c-t22",
+        "tool": "search",
+        "status": "ok",
+        "summary": "KI Rechtsdokumente Abweichungserkennung"
+      },
+      {
+        "call_id": "lacunar-20261001T131947-2b7a3c-t23",
+        "tool": "search",
+        "status": "ok",
+        "summary": "OCR historische juristische Dokumente"
+      },
+      {
+        "call_id": "lacunar-20261001T131947-2b7a3c-t24",
+        "tool": "search",
+        "status": "ok",
+        "summary": "KI-Plattform Rechtsfolgenanalyse Gewässer"
+      },
+      {
+        "call_id": "lacunar-20261001T131947-2b7a3c-t25",
+        "tool": "search",
+        "status": "budget_exhausted",
+        "summary": "KI Rechtsdokumente Abweichungserkennung Brandenburg Wasserrecht"
+      },
+      {
+        "call_id": "lacunar-20261001T131947-2b7a3c-t26",
+        "tool": "search",
+        "status": "budget_exhausted",
+        "summary": "OCR historische juristische Dokumente Brandenburg Wasserrecht"
+      },
+      {
+        "call_id": "lacunar-20261001T131947-2b7a3c-t27",
+        "tool": "search",
+        "status": "budget_exhausted",
+        "summary": "KI-Plattform Rechtsfolgenanalyse Gewässer Brandenburg Wasserrecht"
+      },
+      {
+        "call_id": "lacunar-20261001T131947-2b7a3c-t28",
+        "tool": "search",
+        "status": "budget_exhausted",
+        "summary": "Kollaborative KI Rechtsinformationen Brandenburg Wasserrecht"
+      },
+      {
+        "call_id": "lacunar-20261001T131947-2b7a3c-t29",
+        "tool": "search",
+        "status": "budget_exhausted",
+        "summary": "KI-Frühwarnsystem Rechtsänderungen Brandenburg Wasserrecht"
+      },
+      {
+        "call_id": "lacunar-20261001T131947-2b7a3c-t30",
+        "tool": "search",
+        "status": "budget_exhausted",
+        "summary": "KI-Rechtsberatung Chatbot Wasserrecht Brandenburg"
+      }
+    ],
+    "accounting": {
+      "model_calls": 8,
+      "search_calls": 6,
+      "search_queries": 20,
+      "cost_usd": 0.094396
+    },
+    "log_entry": "<!-- proposed by the Lab's Lacunar agent, run lacunar-20261001T131947-2b7a3c; nothing was written to Amélie -->\n| 01.10.2026 | Historische Wasserbücher Brandenburg und die Verwaltung alter Rechte | Long-context reading of entire archives (AI) | 4 | 16 | 4: 1. Eine KI-gestützte Wissensplattform, die historische Wasserbücher, aktuelle WRRL-Leitfäden und lokale Gerichtsurteile miteinander verknüpft und Konsequenzen für spezifische Anlagen prognostiziert. (transformational); 2. Ein kollaboratives KI-System, das von verschiedenen Parteien (Mühlenbesitzer, Behörde, Naturschutz) mit lokalen Informationen 'gefüttert' wird, um ein konsistentes Bild der Wasserrechtslage zu erzeugen und Diskrepanzen zur Überprüfung zu markieren. (exploratory); 3. Ein KI-System, das historische Wasserbücher nach spezifischen juristischen Formulierungen durchsucht und Abweichungen vom Standardwortlaut markiert, die von einem Menschen überprüft werden müssen. (combinational); 4. Ein 'Wasserrechts-Scanner', der Fotos oder Scans von alten Wasserbuchseiten analysiert, relevante Passagen extrahiert und diese in eine standardisierte, durchsuchbare Datenbank überführt, um die Initialrecherche zu beschleunigen. (combinational) | Für Mühlenbesitzer und Behörden ist es extrem schwierig, die komplexen und oft widersprüchlichen Informationen aus historischen Wasserrechten, aktuellen Umweltgesetzen und lokalen Gerichtsurteilen zusammenzuführen, um die spezifischen Konsequenzen für einzelne Anlagen abzuschätzen. | — (not checked yet) |\n\n### Lacunar run lacunar-20261001T131947-2b7a3c — 01.10.2026 (intent: Kleine Wasserwerke und Mühlenstaue in Brandenburg: Stilllegungsdruck durch Wasserrahmenrichtlinie, Fischtreppen-Pflicht, Mühlenbesitzer ohne Gutachter-Budget — wer prüft was, und welche Rechte schlumm)\n- **Learned:** Die Unterscheidung zwischen allgemeinen KI-Fähigkeiten im Rechts-Tech-Bereich und spezifischen Nischenanwendungen ist entscheidend für die Bewertung des Kriteriums 'in_mode_or_dense'. Es ist wichtig, genau zu prüfen, ob die Suchergebnisse die Kernfunktionalität des Kandidaten direkt abdecken.\n- **Mistake:** Anfänglich war ich bei C11 und C13 zu nachsichtig bezüglich 'in_mode_or_dense'. Eine genauere Lektüre der Suchergebnisse zeigte, dass die grundlegenden Funktionen (regulatorisches Tracking, juristische Chatbots) bereits als existierende Anwendungen beschrieben werden, auch wenn der spezifische Kontext (Brandenburger Wasserrecht) eng ist.\n- **Next time:** Für 'in_mode_or_dense'-Prüfungen werde ich immer kritisch hinterfragen, ob das Suchergebnis für den vorgeschlagenen Check die Kernfunktionalität des Kandidaten *direkt* beschreibt, auch wenn die Nische sehr spezifisch erscheint. Zudem werde ich noch genauer versuchen, den konkreten Wirkmechanismus des Collider-Frames zu benennen und nicht nur den Namen oder eine Metapher zu verwenden.\n- **Prior-art leads (automatic search, for the existence check; not a verdict):**\n  - C1 (ok): KI Rechtsdokumente Abweichungserkennung -> https://spellbook.com/learn/ai-legal-document-review, https://trustpoint.one/resource/ai-driven-fraud-detection-in-alternative-legal-services/, https://smartroom.com/blog/industries/legal/ai-risk-detection-in-legal-documents/, https://www.morganlewis.com/pubs/2026/09/ai-prompt-injection-a-new-class-of-risk-and-best-practices\n  - C3 (ok): OCR historische juristische Dokumente -> https://www.evenuplaw.com/guides/legal-ocr-software-ai/, https://www.docsumo.com/blog/ocr-for-contract-management, https://planet-ai.com/de/loesungen/historische-archive/, https://americanretrieval.com/blog/legal-ocr-software-to-manage-documents-for-law-firms/\n  - C5 (ok): KI-Plattform Rechtsfolgenanalyse Gewässer -> https://firmadapt.com/blog/how-ai-assists-with-water-rights-and-natural-resources-regulatory-tracking, https://www.wansom.ai/blogs/how-ai-is-transforming-environmental-law-, https://www.weforum.org/stories/climate-action/ai-water-risk-management/, https://now.fordham.edu/law/a-fordham-focus-on-ai-legal-strategies-to-preserve-water-as-data-centers-boom/\n",
+    "prior_art": [
+      {
+        "candidate_id": "C1",
+        "question": "KI Rechtsdokumente Abweichungserkennung",
+        "status": "ok",
+        "answer": "Künstliche Intelligenz (KI) wird zunehmend zur Abweichungserkennung in Rechtsdokumenten eingesetzt, um die Analyse zu automatisieren, Risiken zu identifizieren und die Einhaltung von Vorschriften zu gewährleisten. Diese Technologie nutzt maschinelles Lernen (ML) und die Verarbeitung natürlicher Sprache (NLP), um große Mengen juristischer Daten effizient zu analysieren.\n\nDie Abweichungserkennung in Rechtsdokumenten durch KI umfasst mehrere Anwendungsbereiche:\n*   **Risikoerkennung und Compliance**: KI-Tools identifizieren rechtliche und Compliance-Risiken in Verträgen, Vereinbarungen und anderen geschäftskritischen Dokumenten. Dies beinhaltet das Aufspüren von nicht konformen Klauseln, veralteten oder fehlenden Bedingungen sowie \"Red-Flag\"-Formulierungen, die auf Geldwäsche oder betrügerische Transaktionen hinweisen könnten.\n*   **Betrugserkennung**: KI-gestützte Analysen können Muster in Dokumentensätzen erkennen, die auf Betrug hindeuten könnten. Dazu gehören kodierte Sprache, inkonsistente Berichterstattung, plötzliche Änderungen, Stimmungsanalysen und Verhaltensdaten. Die KI-Modelle entwickeln sich über einfache Stichwortsuchen hinaus, um subtilere Betrugsindikatoren zu finden.\n*   **Analyse von Prozessunterlagen**: KI kann bei der Überprüfung von Prozessunterlagen, Entdeckungen und Sorgfaltsmaterialien eingesetzt werden. Dabei wird nach ungewöhnlichen Leerzeichen, kleinen oder weißen Texten, Schrift- und Farbanomalien, Off-Page-Material, Kommentaren, Anmerkungen, Metadaten, eingebetteten Objekten, versteckten Tabelleninhalten oder Texten gesucht, die nicht der angezeigten Seite entsprechen.\n*   **Vertragsanalyse**: KI-Systeme können Schlüsselklauseln identifizieren, rechtliche Auswirkungen erläutern und Anomalien in Verträgen zur weiteren Überprüfung erkennen.\n\nDie Vorteile des Einsatzes von KI zur Abweichungserkennung in Rechtsdokumenten umfassen eine höhere Geschwindigkeit und Genauigkeit bei der Überprüfung, die Reduzierung menschlicher Fehler und die Möglichkeit, große Datenmengen in kürzerer Zeit zu analysieren. KI-Workflows können nach der Implementierung eine nahezu sofortige Analyse großer Datensätze liefern. Es wird jedoch betont, dass menschliche Aufsicht und Überprüfung weiterhin entscheidend sind, um die Ergebnisse der KI zu validieren und zu interpretieren. Ein Beispiel hierfür ist ein brasilianisches Arbeitsgericht, bei dem ein KI-Tool eine verdächtige Anweisung in einem Schriftsatz erkannte und blockierte, die dann von einem menschlichen",
+        "pages": [
+          "https://spellbook.com/learn/ai-legal-document-review",
+          "https://trustpoint.one/resource/ai-driven-fraud-detection-in-alternative-legal-services/",
+          "https://smartroom.com/blog/industries/legal/ai-risk-detection-in-legal-documents/",
+          "https://www.morganlewis.com/pubs/2026/09/ai-prompt-injection-a-new-class-of-risk-and-best-practices"
+        ]
+      },
+      {
+        "candidate_id": "C3",
+        "question": "OCR historische juristische Dokumente",
+        "status": "ok",
+        "answer": "OCR (Optical Character Recognition) für historische juristische Dokumente ist ein Prozess, der darauf abzielt, gescannte Bilder von Texten in maschinenlesbaren und durchsuchbaren Text umzuwandeln. Dies ist besonders relevant für die Digitalisierung und Zugänglichmachung großer Mengen historischer Archive und juristischer Unterlagen.\n\n**Funktionsweise und Vorteile:**\nOCR-Software wandelt statische Dokumente, oft PDFs, in durchsuchbare Daten um, die analysiert und abgefragt werden können. Dies ermöglicht es, einzelne Wörter oder Sätze in einem Bruchteil der Zeit zu finden, die das manuelle Durchsuchen erfordern würde. Für die Rechtsbranche, die täglich große Mengen an Papierkram produziert, ist OCR ein wichtiges Werkzeug zur Effizienzsteigerung. Es hilft, Dokumentenabrufe zu optimieren, Fehler zu reduzieren und die Erstellung von durchsuchbaren Inhalten zu ermöglichen. Moderne KI-basierte OCR-Lösungen können verzerrte oder schiefe Scans korrigieren, medizinische Terminologie und Abkürzungen erkennen, Tabellen, Diagramme und handschriftliche Notizen interpretieren sowie Daten wie Daten, Anbieter und Rechnungsbeträge extrahieren.\n\n**Herausforderungen bei historischen juristischen Dokumenten:**\nHistorische Dokumente stellen besondere Herausforderungen für die OCR dar. Dazu gehören:\n*   **Historische Schriften:** Alte Schriften wie Fraktur, Schwabacher oder Kurrent, die vom 16. bis 20. Jahrhundert verwendet wurden, sind für herkömmliche OCR-Systeme schwer zu erkennen.\n*   **Qualität der Dokumente:** Verzerrte, qualitativ schlechte Scans, heterogene Satzspiegel und typografische Besonderheiten können die Texterkennung erschweren.\n*   **Handschrift:** Viele historische Dokumente enthalten handschriftliche Notizen oder sind vollständig handschriftlich verfasst, was eine spezielle Handschrifterkennung (HTR - Handwritten Text Recognition) erfordert.\n*   **Sprachliche Besonderheiten:** Ältere Zeichenformen, Ligaturen und Sprachen wie Latein können die Genauigkeit der Erkennung beeinflussen.\n\n**Lösungen und Technologien:**\nUm diesen Herausforderungen zu begegnen, werden spezialisierte OCR- und HTR-Lösungen eingesetzt:\n*   **KI-basierte Plattformen:** Plattformen wie Transkribus nutzen KI, um handgeschriebene und gedruckte Texte in über 100 Sprachen zu erkennen, auch bei jahrhundertealten Schriften. Sie werden beispielsweise für Kursivschrift, Ratsprotokolle und alte deutsche Schrift verwendet.\n*   **Spezialisierte Software:** Es gibt Software, die speziell für die Erke",
+        "pages": [
+          "https://www.evenuplaw.com/guides/legal-ocr-software-ai/",
+          "https://www.docsumo.com/blog/ocr-for-contract-management",
+          "https://planet-ai.com/de/loesungen/historische-archive/",
+          "https://americanretrieval.com/blog/legal-ocr-software-to-manage-documents-for-law-firms/",
+          "https://www.transkribus.org/de",
+          "https://dokuwandel.de/recht/dokumente/fraktur-ocr",
+          "https://opus4.kobv.de/opus4-bib-info/frontdoor/index/index/docId/17861",
+          "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZ9BS1XofsHYdbl9S6jvbgc2Fu5aYWJ72znEVV47Zo0fN6GOPNqztvM2pG2RroCFXaqelLrYx8A2stKonK790w5wec7b7fVQB_ISdbK-GGYTA90H-14S-Pn_a5LylgvIaAgS2bswKvmK3RkNx9EdL6ni6MLe8=",
+          "https://globalnet-strategies.com/blog/finebooks-ocr-historische-dokumente-unternehmen"
+        ]
+      },
+      {
+        "candidate_id": "C5",
+        "question": "KI-Plattform Rechtsfolgenanalyse Gewässer",
+        "status": "ok",
+        "answer": "While a specific platform named \"KI-Plattform Rechtsfolgenanalyse Gewässer\" was not identified, the provided search results indicate that artificial intelligence (AI) is increasingly being utilized for legal consequence analysis and regulatory tracking related to water bodies and environmental law.\n\nSeveral sources highlight the application of AI in this domain:\n*   AI tools are used to assist with water rights and natural resources regulatory tracking. This includes monitoring administrative hearings, tracking water allocation data against compact requirements, and flagging potential compliance issues. AI can also help in monitoring climate and drought responses and conducting due diligence for water rights by reviewing databases and historical records.\n*   The complexity of water rights regulation, which involves state-specific legal frameworks, federal regulations, and interstate compacts, makes AI particularly useful for tracking regulatory developments across multiple state and federal agencies. These systems can filter developments based on relevance to specific client interests, providing targeted alerts.\n*   AI is transforming environmental law by offering automated regulatory intelligence. Natural Language Processing (NLP) systems can continuously analyze legislative texts, regulatory updates, and enforcement actions, mapping requirements to operational jurisdictions, flagging conflicts, and providing alerts on material changes. This shifts legal teams from reactive compliance to proactive regulatory anticipation.\n*   Furthermore, AI enhances due diligence and impact assessment by processing and correlating vast amounts of technical data, including geospatial data, environmental sensor outputs, and historical compliance records.\n*   In water risk management, AI-driven systems provide real-time insights by integrating data from various sources like government reports, scientific publications, and real-time monitoring feeds. These systems undergo continuous expert validation to ensure accuracy and relevance, helping to assess physical (quantity, quality, flood), regulatory, and infrastructure risks.\n\nThe discussions also touch upon the increasing water demands of AI data centers and the regulatory challenges they present, as well as how judicial decisions can affect agency authority over water-use regulation.",
+        "pages": [
+          "https://firmadapt.com/blog/how-ai-assists-with-water-rights-and-natural-resources-regulatory-tracking",
+          "https://www.wansom.ai/blogs/how-ai-is-transforming-environmental-law-",
+          "https://www.weforum.org/stories/climate-action/ai-water-risk-management/",
+          "https://now.fordham.edu/law/a-fordham-focus-on-ai-legal-strategies-to-preserve-water-as-data-centers-boom/",
+          "https://ttu-ir.tdl.org/items/3bb26787-9659-4867-9d5b-b853333f7693"
+        ]
+      }
+    ],
+    "topic_check": [
+      {
+        "term": "gutachte",
+        "hits": [
+          "[dose, score 0.8] Biotoptyp-Assistent — Available",
+          "[dose, score 0.8] Bruchlesen — Available",
+          "[dose, score 0.8] Altbau Thermal — Available"
+        ]
+      },
+      {
+        "term": "schlumme",
+        "hits": []
+      },
+      {
+        "term": "pflicht",
+        "hits": [
+          "[dose, score 1] Vernichtungs-Offenlegungsregister — Available",
+          "[dose, score 1] Umsetzungsplan-Register — Available",
+          "[dose, score 1] Bugs → Spaced Repetition — Available",
+          "[dose, score 1] Wärmesignatur — Available"
+        ]
+      }
+    ],
+    "contract_version": "1.2.0"
+  },
+  "existence_check": false,
+  "contract_version": "1.0.0"
+}

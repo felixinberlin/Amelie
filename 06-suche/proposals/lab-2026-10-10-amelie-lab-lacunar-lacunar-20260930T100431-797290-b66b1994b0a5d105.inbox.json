@@ -1,0 +1,641 @@
+{
+  "batch_id": "amelie-lab-lacunar-lacunar-20260930T100431-797290-b66b1994b0a5d105",
+  "lab_id": "amelie-lab",
+  "engine": "lacunar",
+  "run_id": "lacunar-20260930T100431-797290",
+  "revision": "b66b1994b0a5d105996358de494bf3df2645df9a3fc97c596bfef9d475764939",
+  "created_at": "2026-09-30T10:14:32Z",
+  "model": "gemini-2.5-flash",
+  "intent": "Jamlitz, Lieberose",
+  "ideas": [
+    {
+      "local_id": "C2",
+      "record": {
+        "candidate_id": "C2",
+        "rank": 1,
+        "idea": "Eine autonome Roboterplattform mit ultra-sensitiver, nicht-invasiver Bodenscan-Technologie (z.B. angepasste Myonen-Tomographie), die die innere Struktur und Materialzusammensetzung vergrabener Objekte als 'digitalen Querschnitt' abbildet, um eine 'Entzifferung' vor jeder physischen Berührung zu ermöglichen.",
+        "gap": "Kampfmittelräumer müssen die Art und den Zustand vergrabener Objekte oft durch riskante physische Interaktion verifizieren, da ihnen detaillierte Informationen über deren innere Struktur und Materialzusammensetzung nicht-invasiv nicht zur Verfügung stehen.",
+        "gap_stands_alone": true,
+        "boden_type": "transformational",
+        "removed_assumption": "The assumption that direct physical contact or excavation is necessary to definitively characterize a subsurface object's internal nature.",
+        "who_has_problem": "Kampfmittelräumer, Sicherheitsdienste, Bauherren in munitionsbelasteten Gebieten.",
+        "why_now": "Fortschritte in der Robotik für nicht-invasive Subsurface-Bildgebung und die Entwicklung ultra-sensitiver Scantechnologien ermöglichen eine detaillierte, berührungslose Analyse der internen Objektstrukturen.",
+        "buildable": "Ja, die Kombination aus fortschrittlicher Robotik und nicht-invasiven Bildgebungsverfahren (wie z.B. Myonen-Tomographie, deren Anwendung in diesem Bereich erforscht wird) ist im Prinzip umsetzbar.",
+        "evidence_urls": [
+          "https://www.researchgate.net/publication/377803888_Subsurface_Unexploded_Ordnance_Detecting_Robot_for_the_Airfield_Damage_Repair_Mission",
+          "https://publications.ri.cmu.edu/robotic-subsurface-mapping-using-ground-penetrating-radar",
+          "https://www.mdpi.com/2504-446X/10/2/88",
+          "https://www.preprints.org/manuscript/202512.0511"
+        ],
+        "collider_mechanism": "Der Mechanismus ist die Bewahrung des ursprünglichen Zustands eines Artefakts, während dessen verborgene oder verdeckte Informationen durch fortschrittliche, zerstörungsfreie Bildgebungs- und Interpretationstechniken sichtbar gemacht werden."
+      }
+    },
+    {
+      "local_id": "C9",
+      "record": {
+        "candidate_id": "C9",
+        "rank": 2,
+        "idea": "Ein 'kontextueller Anomalie-Parser', der große Sprachmodelle (LLMs) nutzt, die auf historische Militärdokumente, geologische Gutachten und Räumungsberichte trainiert wurden, um für jede Anomalie eine probabilistische Erzählung zu erstellen, die nicht nur *was* es sein könnte, sondern *warum* es dort ist, basierend auf ihrer 'Untergrund-Geschichte', vorschlägt.",
+        "gap": "Kampfmittelräumer müssen oft die Herkunft und den Kontext von Bodenanomalien aus disparaten historischen und geologischen Dokumenten manuell und zeitaufwendig zusammensetzen, ohne eine kohärente, probabilistische 'Untergrund-Geschichte' zu erhalten, die das 'Warum' hinter einer Anomalie erklärt.",
+        "gap_stands_alone": true,
+        "boden_type": "transformational",
+        "removed_assumption": "The assumption that the historical context of subsurface objects is a fragmented collection of facts that must be manually pieced together, rather than a coherent 'underground history' that can be automatically inferred and narrated.",
+        "who_has_problem": "Kampfmittelräumer, Historiker, Planungsbehörden, Umweltämter in munitionsbelasteten Gebieten.",
+        "why_now": "Die Entwicklung großer Sprachmodelle (LLMs) ermöglicht die Analyse und Synthese großer Mengen unstrukturierter Textdaten, um komplexe kontextuelle Zusammenhänge und 'Erzählungen' zu generieren, was vor wenigen Jahren nicht möglich war.",
+        "buildable": "Ja, das Training spezialisierter LLMs auf historische und geologische Datensätze ist mit den heutigen AI-Fähigkeiten umsetzbar, wenn auch herausfordernd.",
+        "evidence_urls": [
+          "https://www.artiosglobal.com/portfolio-feeds/uxo-mapping-how-historical-data-and-gis-keeps-your-projects-safe",
+          "https://mminesweeper-munition.eu/03_news/project_news/goodpractices-report/",
+          "https://serdp-estcp.mil/projects/details/f2a17b6d-44ac-4113-a3ba-a44cb37c1152"
+        ],
+        "collider_mechanism": "Der Mechanismus ist die Rekonstruktion einer kohärenten, vielschichtigen Erzählung aus fragmentierten und oft verdeckten textlichen und kontextuellen Beweisen, wobei jede Schicht zu einem probabilistischen Verständnis des Ganzen, einschließlich der 'Begründung' für ihre Existenz, beiträgt."
+      }
+    },
+    {
+      "local_id": "C1",
+      "record": {
+        "candidate_id": "C1",
+        "rank": 3,
+        "idea": "Ein KI-System, das Bodenanomalien aus Multimeter-Sensorfusion (Magnetometer, GPR, EM) nicht nur detektiert, sondern als geschichtete 'Signaturen' interpretiert, um mit historischen Daten und geologischen Mustern die Wahrscheinlichkeit eines Kampfmittels zu bewerten, ähnlich der Entzifferung eines Palimpsests.",
+        "gap": "Kampfmittelräumer müssen Bodenanomalien oft als einzelne Signale bewerten, ohne eine tiefgreifende, kontextuelle Interpretation der überlagerten Informationen zu erhalten, die Aufschluss über die Wahrscheinlichkeit und Art eines Kampfmittels geben könnte.",
+        "gap_stands_alone": true,
+        "boden_type": "exploratory",
+        "removed_assumption": "The assumption that subsurface signals represent a singular, unambiguous object, rather than a layered history of geological and human activity.",
+        "who_has_problem": "Kampfmittelräumer, Umweltämter, Bauherren in munitionsbelasteten Gebieten.",
+        "why_now": "Aktive Forschung in KI und Multisensorfusion für die Kampfmittelklassifizierung hat zu neuen Fähigkeiten in der Interpretation komplexer, geschichteter Bodendaten geführt, die Fehlalarme reduzieren können.",
+        "buildable": "Ja, die Forschungsaktivitäten zeigen, dass die Methoden zur KI-gestützten Multi-Sensor-Fusion und zur Interpretation von Bodendaten existieren und weiterentwickelt werden.",
+        "evidence_urls": [
+          "https://serdp-estcp.mil/projects/details/f2a17b6d-44ac-4113-a3ba-a44cb37c1152",
+          "https://serdp-estcp.mil/projects/details/c9b774ce-41d0-4b11-abe0-341c57eb1458",
+          "https://digitalearth-hgf.de/results/application-cases/uxo/",
+          "https://commons.lib.jmu.edu/cgi/viewcontent.cgi?article=1170&context=cisr-journal"
+        ],
+        "collider_mechanism": "Der Mechanismus ist der systematische Prozess, mehrere, oft schwache oder verdeckte Informationsschichten (wie bei einem Palimpsest) zu unterscheiden und zu interpretieren, um eine zugrunde liegende, vollständigere Bedeutung oder Geschichte zu rekonstruieren."
+      }
+    },
+    {
+      "local_id": "C5",
+      "record": {
+        "candidate_id": "C5",
+        "rank": 4,
+        "idea": "Ein 'Probabilistischer Gefahrenatlas', der dynamisch Sensordaten, historische Informationen und KI-Mustererkennung kombiniert, um nicht nur potenzielle Kampfmittelpositionen anzuzeigen, sondern auch das *Konfidenzniveau* und den *potenziellen Gefahrenradius* jeder Anomalie, wodurch ein differenziertes 'Lesen' des Risikos über eine Fläche möglich wird.",
+        "gap": "Entscheidungsträger und Kampfmittelräumer müssen Risikobereiche oft binär oder mit unzureichenden Details bewerten, da ihnen ein dynamisches, probabilistisches Gesamtbild der Kampfmittelbelastung, inklusive Konfidenzniveaus und Gefahrenradien, zur differenzierten Planung fehlt.",
+        "gap_stands_alone": true,
+        "boden_type": "exploratory",
+        "removed_assumption": "The assumption that subsurface signals translate directly into singular, certain threats requiring a uniform response, rather than probabilities with varying degrees of certainty and impact.",
+        "who_has_problem": "Kampfmittelräumer, Bauherren, Planungsbehörden, Kommunen in munitionsbelasteten Gebieten.",
+        "why_now": "Die Kombination von AI-Mustererkennung, dynamischer Sensorfusion und fortschrittlichen GIS-Fähigkeiten ermöglicht eine kontinuierliche und probabilistische Risikobewertung in Echtzeit, die zuvor nicht praktikabel war.",
+        "buildable": "Ja, die Komponenten (KI, Sensorfusion, GIS, Risikokartierung) sind verfügbar und werden erforscht; deren dynamische Kombination in einem probabilistischen Atlas ist umsetzbar.",
+        "evidence_urls": [
+          "https://serdp-estcp.mil/projects/details/f2a17b6d-44ac-4113-a3ba-a44cb37c1152",
+          "https://digitalearth-hgf.de/results/application-cases/uxo/",
+          "https://www.artiosglobal.com/portfolio-feeds/uxo-mapping-how-historical-data-and-gis-keeps-your-projects-safe",
+          "https://www.itv-altlasten.de/fachthemen/c7-kampfmittelraeumung/"
+        ],
+        "collider_mechanism": "Der Mechanismus ist die akribische, kontextabhängige Interpretation subtiler Hinweise und Beweisschichten, um ein komplexes, probabilistisches Verständnis einer Situation zu gewinnen, vom oberflächlichen 'Lesen' zu einem tiefen, nuancierten 'Verständnis' potenzieller Auswirkungen."
+      }
+    },
+    {
+      "local_id": "C7",
+      "record": {
+        "candidate_id": "C7",
+        "rank": 5,
+        "idea": "Ein KI-gestütztes 'Signatur-Rekonstruktions'-Tool, das unvollständige oder degradierte geophysikalische Signale analysiert und basierend auf einer umfangreichen Datenbank bekannter Kampfmittel- und Störsignaturen die wahrscheinlichste 'vollständige' Signalform generiert, um anzuzeigen, wie das vergrabene Objekt aussehen *würde*, wenn es vollständig lesbar wäre.",
+        "gap": "Kampfmittelräumer müssen oft Entscheidungen auf der Grundlage von unvollständigen oder durch Umwelteinflüsse stark gestörten geophysikalischen Signalen treffen, ohne die Möglichkeit zu haben, die ideale, 'vollständige' Signatur des vergrabenen Objekts zu visualisieren.",
+        "gap_stands_alone": true,
+        "boden_type": "combinational",
+        "removed_assumption": "The assumption that the observed, often degraded, geophysical signal is the only available information for interpretation, and that its ambiguities are inherent and unresolvable.",
+        "who_has_problem": "Kampfmittelräumer, Geophysiker, Entscheidungsträger bei der Kampfmittelbeseitigung.",
+        "why_now": "Fortschritte in der KI, insbesondere bei Mustererkennung und generativen Modellen, ermöglichen die Rekonstruktion von unvollständigen oder verrauschten Daten durch Lernen aus großen Datenbanken bekannter Signaturen.",
+        "buildable": "Ja, KI-Modelle, die auf umfangreichen Datensätzen von bekannten Kampfmittel- und Störsignaturen trainiert wurden, könnten für diesen Zweck entwickelt werden.",
+        "evidence_urls": [
+          "https://serdp-estcp.mil/projects/details/f2a17b6d-44ac-4113-a3ba-a44cb37c1152",
+          "https://digitalearth-hgf.de/results/application-cases/uxo/",
+          "https://www.itv-altlasten.de/fachthemen/c7-kampfmittelraeumung/"
+        ],
+        "collider_mechanism": "Der Mechanismus ist das Inferieren und Wiederherstellen fehlender oder verdeckter Informationen aus einer degradierten Quelle, basierend auf einem umfassenden Wissensbestand typischer Formen und Kontexte, um das 'Unlesbare' wieder lesbar zu machen."
+      }
+    }
+  ],
+  "record": {
+    "run_id": "lacunar-20260930T100431-797290",
+    "intent": "Jamlitz, Lieberose",
+    "model": "gemini-2.5-flash",
+    "created_at": "2026-09-30T10:14:32Z",
+    "state_missing": [],
+    "plan": {
+      "area": "Jamlitz, Lieberose",
+      "mode_list": [
+        "KI-gestützte Erkennung von Blindgängern/Munitionsresten auf Luftbildern oder Drohnenaufnahmen.",
+        "Automatische Kartierung und Monitoring von Biotoptypen und Vegetationsentwicklung in der Lieberoser Heide mittels Fernerkundungsdaten.",
+        "App zur automatischen Bestimmung von Flora und Fauna, speziell für die Lieberoser Heide.",
+        "KI-basierte Vorhersage und Frühwarnung für Waldbrände in der Region.",
+        "Optimierung von Renaturierungsmaßnahmen durch Analyse von Umweltdaten (Wasser, Boden, Vegetation).",
+        "Sichere Routenplanung für Wanderer und Radfahrer unter Berücksichtigung von Munitionsbelastung und Schutzgebieten.",
+        "KI-gestützter Chatbot für Touristen und Interessierte mit Informationen zur Geschichte und Natur der Region.",
+        "Analyse von Wildtierbewegungen und -populationen durch Kameradaten und KI.",
+        "Erkennung und Meldung von illegalen Aktivitäten (Müll, Holzdiebstahl) im Naturschutzgebiet per Drohnenüberwachung.",
+        "Erstellung von 3D-Modellen des Geländes zur Planung von Entminungs- und Renaturierungsarbeiten.",
+        "KI-basierte Aufbereitung historischer Dokumente und Fotos zur Geschichte des Truppenübungsplatzes."
+      ],
+      "anchor_queries": [
+        "Manuelle Methoden zur Detektion und Klassifikation von Kampfmitteln im Boden",
+        "Herausforderungen bei der Kampfmittelräumung in ehemaligen Truppenübungsplätzen",
+        "Standardverfahren zur Bewertung der Munitionsbelastung von Flächen in Deutschland"
+      ],
+      "collider_hint": "Interpretation von Palimpsesten oder verwitterten Inschriften"
+    },
+    "frames": {
+      "frame_a": {
+        "name": "Manuelle Detektion und Klassifikation von Kampfmitteln im Boden",
+        "source_url": "https://www.itv-altlasten.de/wp-content/uploads/2019/11/Informationsschrift_Detektionsverfahren_in_der_Kampfmittelra%CC%88umung_C7_2016-1.pdf",
+        "source_label": "Typ D: research without a tool",
+        "friction": "Die manuelle Kampfmitteldetektion ist arbeitsintensiv, risikoreich und fehleranfällig durch Umweltbedingungen, menschliche Ermüdung und die Schwierigkeit, Kampfmittel von anderen Metallobjekten oder geologischen Anomalien zu unterscheiden. Die präzise Lokalisierung kann trotz großer Erfassungsreichweite ungenau sein.",
+        "slots": {
+          "materials": "Boden, Kampfmittel (UXO), Metallfragmente, geologische Anomalien, Handmagnetometer, geophysikalische Messgeräte (GPR, EM), Karten, historische Aufzeichnungen",
+          "mechanics": "Systematische Rasterung, manuelle Sondierung, Signalinterpretation (akustisch/visuell vom Magnetometer), Ausgrabung, Dokumentation, Risikobewertung",
+          "goals": "Kampfmittel lokalisieren und identifizieren, Sicherheit gewährleisten, Flächen zur Wiederverwendung freigeben, Schäden verhindern, Umweltauswirkungen minimieren",
+          "emotions": "Stress, Angst, Vorsicht, Sorgfalt, Verantwortung, Erleichterung (nach sicherer Entfernung), Frustration (Fehlalarme/Fehlmessungen)",
+          "constraints": "Hohes Personalrisiko, komplexes und variables Gelände, Vorhandensein anderer Metallobjekte, Bodenheterogenität, eingeschränkte Sicht, Zeitdruck (z.B. Bauprojekte), hohe Kosten, gesetzliche Vorschriften",
+          "rituals_timing": "Systematische Suchmuster (z.B. Begehung in Transekten), regelmäßige Sicherheitsunterweisungen, Einhaltung strenger Protokolle, sequentielle Phasen (historische Recherche, technische Erkundung, Räumung), oft bei spezifischen Wetterbedingungen durchgeführt"
+        }
+      },
+      "frame_b": {
+        "name": "Interpretation von Palimpsesten und verwitterten Inschriften",
+        "domain": "Archäologie, Philologie, Restaurierung",
+        "slots": {
+          "materials": "Antike Manuskripte (Pergament, Papier), geschichtete Texte, verblasste Tinten, Stein, Metall, erodierte Oberflächen, Bildgebungsgeräte (UV, Infrarot, Multispektral), epigraphische Werkzeuge, Sprachkenntnisse, historischer Kontext",
+          "mechanics": "Schichtentrennung (digitale Bildgebung), Bildverbesserung, Mustererkennung, linguistische Analyse, kontextuelle Rekonstruktion, vergleichende Studien, Hypothesentestung, mühsame manuelle Transkription",
+          "goals": "Verlorene Informationen wiederherstellen, verdeckte Botschaften entschlüsseln, historische Kontexte verstehen, kulturelles Erbe bewahren, Originaltexte rekonstruieren",
+          "emotions": "Geduld, Neugier, intellektuelle Befriedigung, Frustration (bei Unlesbarkeit), Aufregung (bei Entdeckung), Ehrfurcht (vor antiken Artefakten)",
+          "constraints": "Fragilität der Materialien, begrenzter physischer Zugang, Mehrdeutigkeit schwacher Spuren, Degradation über die Zeit, Bedarf an Spezialwissen, ethische Überlegungen (nicht-invasive Methoden), unvollständiges Quellenmaterial",
+          "rituals_timing": "Lange Perioden detaillierter Studien, iterative Analyse, Peer-Review, kontrollierte Umgebungsbedingungen (für Artefakte), langsamer, bewusster Prozess, oft einsame Arbeit"
+        }
+      },
+      "distance": 4,
+      "friction_points": [
+        "A: 'Signal' bedeutet Gefahr und erfordert sofortiges Eingreifen. vs. B: 'Signal' bedeutet Information und erfordert vorsichtiges, nicht-invasives Studium.",
+        "A: Physische Interaktion (Sondierung, Ausgrabung) ist zur Verifizierung und Entfernung notwendig. vs. B: Physische Interaktion wird minimiert, um das Originalartefakt zu bewahren.",
+        "A: Die Umgebung ist aktiv feindselig und unberechenbar (explosives Potenzial, komplexes Gelände). vs. B: Die Umgebung ist kontrolliert und stabil (Museum, Archiv).",
+        "A: Mehrdeutigkeit der Detektionssignale führt zu Fehlalarmen und zeitraubenden, riskanten Ausgrabungen. vs. B: Mehrdeutigkeit der Interpretation führt zu mehreren Hypothesen, die eine tiefere linguistische/historische Analyse erfordern.",
+        "A: Geschwindigkeit und Effizienz sind entscheidend, um Risiko und Kosten zu reduzieren. vs. B: Geduld und Akribie sind entscheidend für die genaue Entschlüsselung.",
+        "A: Die 'Botschaft' (Kampfmittel) ist ein singuläres, konkretes Objekt. vs. B: Die 'Botschaft' (Text) ist geschichtet, abstrakt und potenziell mehrfach interpretierbar."
+      ],
+      "personas": [
+        {
+          "who": "Der pensionierte Kampfmittelräumer (58 Jahre)",
+          "would_do": "Er würde Werkzeuge begrüßen, die sein Wissen über das Gelände nutzen, um Risiken zu mindern und die Belastung zu verringern, aber er wäre skeptisch gegenüber jeder Automatisierung, die seine Erfahrung oder die Gefahr vor Ort nicht respektiert."
+        },
+        {
+          "who": "Die junge Archäologie-Studentin (23 Jahre), spezialisiert auf Epigraphik",
+          "would_do": "Sie würde Methoden suchen, die ein Maximum an Informationen aus minimaler physischer Intervention extrahieren, und digitale Werkzeuge nutzen, um verborgene Schichten von 'Spuren' zu analysieren und zu visualisieren."
+        },
+        {
+          "who": "Der Projektleiter einer kommunalen Bauverwaltung (45 Jahre)",
+          "would_do": "Er würde Lösungen priorisieren, die die Kosten und den Zeitaufwand für die Kampfmittelräumung signifikant senken, indem sie Effizienz und die Sicherheit der nachfolgenden Bauarbeiten verbessern."
+        }
+      ],
+      "candidates": [
+        {
+          "id": "C1",
+          "idea": "Ein KI-System, das Bodenanomalien aus Multimeter-Sensorfusion (Magnetometer, GPR, EM) nicht nur detektiert, sondern als geschichtete 'Signaturen' interpretiert, um mit historischen Daten und geologischen Mustern die Wahrscheinlichkeit eines Kampfmittels zu bewerten, ähnlich der Entzifferung eines Palimpsests.",
+          "typical_probability": 0.03,
+          "friction_point": "A: Mehrdeutigkeit der Detektionssignale führt zu Fehlalarmen und zeitraubenden, riskanten Ausgrabungen. vs. B: Mehrdeutigkeit der Interpretation führt zu mehreren Hypothesen, die eine tiefere linguistische/historische Analyse erfordern.",
+          "check_queries": [
+            "KI multi-sensor fusion unexploded ordnance classification",
+            "machine learning interpretation subsurface geophysical anomalies"
+          ]
+        },
+        {
+          "id": "C2",
+          "idea": "Eine autonome Roboterplattform mit ultra-sensitiver, nicht-invasiver Bodenscan-Technologie (z.B. angepasste Myonen-Tomographie), die die innere Struktur und Materialzusammensetzung vergrabener Objekte als 'digitalen Querschnitt' abbildet, um eine 'Entzifferung' vor jeder physischen Berührung zu ermöglichen.",
+          "typical_probability": 0.02,
+          "friction_point": "A: Physische Interaktion (Sondierung, Ausgrabung) ist zur Verifizierung und Entfernung notwendig. vs. B: Physische Interaktion wird minimiert, um das Originalartefakt zu bewahren.",
+          "check_queries": [
+            "robotics non-invasive subsurface imaging UXO",
+            "muon tomography unexploded ordnance detection"
+          ]
+        },
+        {
+          "id": "C3",
+          "idea": "Ein interaktives 3D-Visualisierungstool, das alle detektierten Bodenanomalien (metallisch, geologisch, hydrologisch) wie Schichten eines Palimpsests darstellt, damit Kampfmittelräumer 'Rauschschichten' entfernen und die wahrscheinlichsten Kampfmittel-Signaturen durch Abgleich mit historischen Karten 'freilegen' können.",
+          "typical_probability": 0.04,
+          "friction_point": "A: Die 'Botschaft' (Kampfmittel) ist ein singuläres, konkretes Objekt. vs. B: Die 'Botschaft' (Text) ist geschichtet, abstrakt und potenziell mehrfach interpretierbar.",
+          "check_queries": [
+            "3D subsurface visualization UXO historical data overlay",
+            "geophysical data layering for anomaly interpretation"
+          ]
+        },
+        {
+          "id": "C4",
+          "idea": "Ein adaptiver KI-Agent, der die 'Leseprozesse' erfahrener Kampfmittelräumer lernt (z.B. wie sie mehrdeutige Magnetometersignale in bestimmten Bodentypen interpretieren) und in Echtzeit kontextbezogene Vorschläge für die nächsten Untersuchungsschritte macht, um den Suchpfad zu optimieren und unnötige manuelle Arbeit zu reduzieren.",
+          "typical_probability": 0.05,
+          "friction_point": "A: Geschwindigkeit und Effizienz sind entscheidend, um Risiko und Kosten zu reduzieren. vs. B: Geduld und Akribie sind entscheidend für die genaue Entschlüsselung.",
+          "check_queries": [
+            "AI expert system unexploded ordnance detection",
+            "context-aware guidance geophysical survey"
+          ]
+        },
+        {
+          "id": "C5",
+          "idea": "Ein 'Probabilistischer Gefahrenatlas', der dynamisch Sensordaten, historische Informationen und KI-Mustererkennung kombiniert, um nicht nur potenzielle Kampfmittelpositionen anzuzeigen, sondern auch das *Konfidenzniveau* und den *potenziellen Gefahrenradius* jeder Anomalie, wodurch ein differenziertes 'Lesen' des Risikos über eine Fläche möglich wird.",
+          "typical_probability": 0.03,
+          "friction_point": "A: 'Signal' bedeutet Gefahr und erfordert sofortiges Eingreifen. vs. B: 'Signal' bedeutet Information und erfordert vorsichtiges, nicht-invasives Studium.",
+          "check_queries": [
+            "probabilistic risk mapping unexploded ordnance",
+            "AI confidence scores geophysical anomaly detection"
+          ]
+        },
+        {
+          "id": "C6",
+          "idea": "Eine Mixed-Reality-Anwendung für Kampfmittelräumer, die KI-interpretierte Bodendaten direkt in deren Sichtfeld projiziert und potenzielle Ziele, sichere Zonen sowie historische Kontextmarker hervorhebt, um das Gelände in ein 'augmentiertes Manuskript' für die Interpretation zu verwandeln.",
+          "typical_probability": 0.04,
+          "friction_point": "A: Die Umgebung ist aktiv feindselig und unberechenbar (explosives Potenzial, komplexes Gelände). vs. B: Die Umgebung ist kontrolliert und stabil (Museum, Archiv).",
+          "check_queries": [
+            "mixed reality UXO detection",
+            "augmented reality subsurface data visualization"
+          ]
+        },
+        {
+          "id": "C7",
+          "idea": "Ein KI-gestütztes 'Signatur-Rekonstruktions'-Tool, das unvollständige oder degradierte geophysikalische Signale analysiert und basierend auf einer umfangreichen Datenbank bekannter Kampfmittel- und Störsignaturen die wahrscheinlichste 'vollständige' Signalform generiert, um anzuzeigen, wie das vergrabene Objekt aussehen *würde*, wenn es vollständig lesbar wäre.",
+          "typical_probability": 0.02,
+          "friction_point": "A: Mehrdeutigkeit der Detektionssignale führt zu Fehlalarmen und zeitraubenden, riskanten Ausgrabungen. vs. B: Mehrdeutigkeit der Interpretation führt zu mehreren Hypothesen, die eine tiefere linguistische/historische Analyse erfordern.",
+          "check_queries": [
+            "AI signal reconstruction geophysical survey",
+            "degraded data pattern recognition UXO"
+          ]
+        },
+        {
+          "id": "C8",
+          "idea": "Ein gamifizierter Trainingssimulator für Kampfmittelräumer, der realistische Bodendaten (einschließlich historischer Schichten und moderner Störungen) und KI-generierte 'Palimpsest-Herausforderungen' nutzt, um schnelle, präzise Interpretationsfähigkeiten und Entscheidungsfindung unter simuliertem Druck zu trainieren.",
+          "typical_probability": 0.05,
+          "friction_point": "A: Geschwindigkeit und Effizienz sind entscheidend, um Risiko und Kosten zu reduzieren. vs. B: Geduld und Akribie sind entscheidend für die genaue Entschlüsselung.",
+          "check_queries": [
+            "gamified training UXO detection",
+            "AI-driven simulation geophysical interpretation"
+          ]
+        },
+        {
+          "id": "C9",
+          "idea": "Ein 'kontextueller Anomalie-Parser', der große Sprachmodelle (LLMs) nutzt, die auf historische Militärdokumente, geologische Gutachten und Räumungsberichte trainiert wurden, um für jede Anomalie eine probabilistische Erzählung zu erstellen, die nicht nur *was* es sein könnte, sondern *warum* es dort ist, basierend auf ihrer 'Untergrund-Geschichte', vorschlägt.",
+          "typical_probability": 0.04,
+          "friction_point": "A: Die 'Botschaft' (Kampfmittel) ist ein singuläres, konkretes Objekt. vs. B: Die 'Botschaft' (Text) ist geschichtet, abstrakt und potenziell mehrfach interpretierbar.",
+          "check_queries": [
+            "LLM historical context geophysical anomalies",
+            "AI narrative generation unexploded ordnance location"
+          ]
+        },
+        {
+          "id": "C10",
+          "idea": "Ein nicht-invasives 'digitales Biopsie'-System, das akustische oder seismische Wellen (von KI zur Mustererkennung verarbeitet) nutzt, um detaillierte interne Strukturkarten vergrabener Objekte zu erstellen und Kampfmittel von inertem Schutt anhand subtiler Materialeigenschaften zu unterscheiden, was die Notwendigkeit explorativer Grabungen reduziert.",
+          "typical_probability": 0.03,
+          "friction_point": "A: Physische Interaktion (Sondierung, Ausgrabung) ist zur Verifizierung und Entfernung notwendig. vs. B: Physische Interaktion wird minimiert, um das Originalartefakt zu bewahren.",
+          "check_queries": [
+            "acoustic imaging subsurface UXO differentiation",
+            "AI seismic wave analysis buried objects"
+          ]
+        },
+        {
+          "id": "C11",
+          "idea": "Eine 'kollaborative Interpretationsplattform', auf der mehrere Kampfmittelräumer (und KI-Agenten) gleichzeitig Multi-Sensor-Daten eines Standorts 'lesen' und annotieren können, Interpretationen diskutieren, Unsicherheiten hervorheben und nächste Schritte vorschlagen, ähnlich der kollaborativen Entzifferung eines komplexen antiken Textes.",
+          "typical_probability": 0.06,
+          "friction_point": "A: 'Signal' bedeutet Gefahr und erfordert sofortiges Eingreifen. vs. B: 'Signal' bedeutet Information und erfordert vorsichtiges, nicht-invasives Studium.",
+          "check_queries": [
+            "collaborative geophysical data interpretation",
+            "multi-expert AI UXO decision support"
+          ]
+        }
+      ],
+      "shortlist": [
+        "C1",
+        "C2",
+        "C3",
+        "C5",
+        "C7",
+        "C9"
+      ]
+    },
+    "result": {
+      "survivors": [
+        {
+          "candidate_id": "C2",
+          "rank": 1,
+          "idea": "Eine autonome Roboterplattform mit ultra-sensitiver, nicht-invasiver Bodenscan-Technologie (z.B. angepasste Myonen-Tomographie), die die innere Struktur und Materialzusammensetzung vergrabener Objekte als 'digitalen Querschnitt' abbildet, um eine 'Entzifferung' vor jeder physischen Berührung zu ermöglichen.",
+          "gap": "Kampfmittelräumer müssen die Art und den Zustand vergrabener Objekte oft durch riskante physische Interaktion verifizieren, da ihnen detaillierte Informationen über deren innere Struktur und Materialzusammensetzung nicht-invasiv nicht zur Verfügung stehen.",
+          "gap_stands_alone": true,
+          "boden_type": "transformational",
+          "removed_assumption": "The assumption that direct physical contact or excavation is necessary to definitively characterize a subsurface object's internal nature.",
+          "who_has_problem": "Kampfmittelräumer, Sicherheitsdienste, Bauherren in munitionsbelasteten Gebieten.",
+          "why_now": "Fortschritte in der Robotik für nicht-invasive Subsurface-Bildgebung und die Entwicklung ultra-sensitiver Scantechnologien ermöglichen eine detaillierte, berührungslose Analyse der internen Objektstrukturen.",
+          "buildable": "Ja, die Kombination aus fortschrittlicher Robotik und nicht-invasiven Bildgebungsverfahren (wie z.B. Myonen-Tomographie, deren Anwendung in diesem Bereich erforscht wird) ist im Prinzip umsetzbar.",
+          "evidence_urls": [
+            "https://www.researchgate.net/publication/377803888_Subsurface_Unexploded_Ordnance_Detecting_Robot_for_the_Airfield_Damage_Repair_Mission",
+            "https://publications.ri.cmu.edu/robotic-subsurface-mapping-using-ground-penetrating-radar",
+            "https://www.mdpi.com/2504-446X/10/2/88",
+            "https://www.preprints.org/manuscript/202512.0511"
+          ],
+          "collider_mechanism": "Der Mechanismus ist die Bewahrung des ursprünglichen Zustands eines Artefakts, während dessen verborgene oder verdeckte Informationen durch fortschrittliche, zerstörungsfreie Bildgebungs- und Interpretationstechniken sichtbar gemacht werden."
+        },
+        {
+          "candidate_id": "C9",
+          "rank": 2,
+          "idea": "Ein 'kontextueller Anomalie-Parser', der große Sprachmodelle (LLMs) nutzt, die auf historische Militärdokumente, geologische Gutachten und Räumungsberichte trainiert wurden, um für jede Anomalie eine probabilistische Erzählung zu erstellen, die nicht nur *was* es sein könnte, sondern *warum* es dort ist, basierend auf ihrer 'Untergrund-Geschichte', vorschlägt.",
+          "gap": "Kampfmittelräumer müssen oft die Herkunft und den Kontext von Bodenanomalien aus disparaten historischen und geologischen Dokumenten manuell und zeitaufwendig zusammensetzen, ohne eine kohärente, probabilistische 'Untergrund-Geschichte' zu erhalten, die das 'Warum' hinter einer Anomalie erklärt.",
+          "gap_stands_alone": true,
+          "boden_type": "transformational",
+          "removed_assumption": "The assumption that the historical context of subsurface objects is a fragmented collection of facts that must be manually pieced together, rather than a coherent 'underground history' that can be automatically inferred and narrated.",
+          "who_has_problem": "Kampfmittelräumer, Historiker, Planungsbehörden, Umweltämter in munitionsbelasteten Gebieten.",
+          "why_now": "Die Entwicklung großer Sprachmodelle (LLMs) ermöglicht die Analyse und Synthese großer Mengen unstrukturierter Textdaten, um komplexe kontextuelle Zusammenhänge und 'Erzählungen' zu generieren, was vor wenigen Jahren nicht möglich war.",
+          "buildable": "Ja, das Training spezialisierter LLMs auf historische und geologische Datensätze ist mit den heutigen AI-Fähigkeiten umsetzbar, wenn auch herausfordernd.",
+          "evidence_urls": [
+            "https://www.artiosglobal.com/portfolio-feeds/uxo-mapping-how-historical-data-and-gis-keeps-your-projects-safe",
+            "https://mminesweeper-munition.eu/03_news/project_news/goodpractices-report/",
+            "https://serdp-estcp.mil/projects/details/f2a17b6d-44ac-4113-a3ba-a44cb37c1152"
+          ],
+          "collider_mechanism": "Der Mechanismus ist die Rekonstruktion einer kohärenten, vielschichtigen Erzählung aus fragmentierten und oft verdeckten textlichen und kontextuellen Beweisen, wobei jede Schicht zu einem probabilistischen Verständnis des Ganzen, einschließlich der 'Begründung' für ihre Existenz, beiträgt."
+        },
+        {
+          "candidate_id": "C1",
+          "rank": 3,
+          "idea": "Ein KI-System, das Bodenanomalien aus Multimeter-Sensorfusion (Magnetometer, GPR, EM) nicht nur detektiert, sondern als geschichtete 'Signaturen' interpretiert, um mit historischen Daten und geologischen Mustern die Wahrscheinlichkeit eines Kampfmittels zu bewerten, ähnlich der Entzifferung eines Palimpsests.",
+          "gap": "Kampfmittelräumer müssen Bodenanomalien oft als einzelne Signale bewerten, ohne eine tiefgreifende, kontextuelle Interpretation der überlagerten Informationen zu erhalten, die Aufschluss über die Wahrscheinlichkeit und Art eines Kampfmittels geben könnte.",
+          "gap_stands_alone": true,
+          "boden_type": "exploratory",
+          "removed_assumption": "The assumption that subsurface signals represent a singular, unambiguous object, rather than a layered history of geological and human activity.",
+          "who_has_problem": "Kampfmittelräumer, Umweltämter, Bauherren in munitionsbelasteten Gebieten.",
+          "why_now": "Aktive Forschung in KI und Multisensorfusion für die Kampfmittelklassifizierung hat zu neuen Fähigkeiten in der Interpretation komplexer, geschichteter Bodendaten geführt, die Fehlalarme reduzieren können.",
+          "buildable": "Ja, die Forschungsaktivitäten zeigen, dass die Methoden zur KI-gestützten Multi-Sensor-Fusion und zur Interpretation von Bodendaten existieren und weiterentwickelt werden.",
+          "evidence_urls": [
+            "https://serdp-estcp.mil/projects/details/f2a17b6d-44ac-4113-a3ba-a44cb37c1152",
+            "https://serdp-estcp.mil/projects/details/c9b774ce-41d0-4b11-abe0-341c57eb1458",
+            "https://digitalearth-hgf.de/results/application-cases/uxo/",
+            "https://commons.lib.jmu.edu/cgi/viewcontent.cgi?article=1170&context=cisr-journal"
+          ],
+          "collider_mechanism": "Der Mechanismus ist der systematische Prozess, mehrere, oft schwache oder verdeckte Informationsschichten (wie bei einem Palimpsest) zu unterscheiden und zu interpretieren, um eine zugrunde liegende, vollständigere Bedeutung oder Geschichte zu rekonstruieren."
+        },
+        {
+          "candidate_id": "C5",
+          "rank": 4,
+          "idea": "Ein 'Probabilistischer Gefahrenatlas', der dynamisch Sensordaten, historische Informationen und KI-Mustererkennung kombiniert, um nicht nur potenzielle Kampfmittelpositionen anzuzeigen, sondern auch das *Konfidenzniveau* und den *potenziellen Gefahrenradius* jeder Anomalie, wodurch ein differenziertes 'Lesen' des Risikos über eine Fläche möglich wird.",
+          "gap": "Entscheidungsträger und Kampfmittelräumer müssen Risikobereiche oft binär oder mit unzureichenden Details bewerten, da ihnen ein dynamisches, probabilistisches Gesamtbild der Kampfmittelbelastung, inklusive Konfidenzniveaus und Gefahrenradien, zur differenzierten Planung fehlt.",
+          "gap_stands_alone": true,
+          "boden_type": "exploratory",
+          "removed_assumption": "The assumption that subsurface signals translate directly into singular, certain threats requiring a uniform response, rather than probabilities with varying degrees of certainty and impact.",
+          "who_has_problem": "Kampfmittelräumer, Bauherren, Planungsbehörden, Kommunen in munitionsbelasteten Gebieten.",
+          "why_now": "Die Kombination von AI-Mustererkennung, dynamischer Sensorfusion und fortschrittlichen GIS-Fähigkeiten ermöglicht eine kontinuierliche und probabilistische Risikobewertung in Echtzeit, die zuvor nicht praktikabel war.",
+          "buildable": "Ja, die Komponenten (KI, Sensorfusion, GIS, Risikokartierung) sind verfügbar und werden erforscht; deren dynamische Kombination in einem probabilistischen Atlas ist umsetzbar.",
+          "evidence_urls": [
+            "https://serdp-estcp.mil/projects/details/f2a17b6d-44ac-4113-a3ba-a44cb37c1152",
+            "https://digitalearth-hgf.de/results/application-cases/uxo/",
+            "https://www.artiosglobal.com/portfolio-feeds/uxo-mapping-how-historical-data-and-gis-keeps-your-projects-safe",
+            "https://www.itv-altlasten.de/fachthemen/c7-kampfmittelraeumung/"
+          ],
+          "collider_mechanism": "Der Mechanismus ist die akribische, kontextabhängige Interpretation subtiler Hinweise und Beweisschichten, um ein komplexes, probabilistisches Verständnis einer Situation zu gewinnen, vom oberflächlichen 'Lesen' zu einem tiefen, nuancierten 'Verständnis' potenzieller Auswirkungen."
+        },
+        {
+          "candidate_id": "C7",
+          "rank": 5,
+          "idea": "Ein KI-gestütztes 'Signatur-Rekonstruktions'-Tool, das unvollständige oder degradierte geophysikalische Signale analysiert und basierend auf einer umfangreichen Datenbank bekannter Kampfmittel- und Störsignaturen die wahrscheinlichste 'vollständige' Signalform generiert, um anzuzeigen, wie das vergrabene Objekt aussehen *würde*, wenn es vollständig lesbar wäre.",
+          "gap": "Kampfmittelräumer müssen oft Entscheidungen auf der Grundlage von unvollständigen oder durch Umwelteinflüsse stark gestörten geophysikalischen Signalen treffen, ohne die Möglichkeit zu haben, die ideale, 'vollständige' Signatur des vergrabenen Objekts zu visualisieren.",
+          "gap_stands_alone": true,
+          "boden_type": "combinational",
+          "removed_assumption": "The assumption that the observed, often degraded, geophysical signal is the only available information for interpretation, and that its ambiguities are inherent and unresolvable.",
+          "who_has_problem": "Kampfmittelräumer, Geophysiker, Entscheidungsträger bei der Kampfmittelbeseitigung.",
+          "why_now": "Fortschritte in der KI, insbesondere bei Mustererkennung und generativen Modellen, ermöglichen die Rekonstruktion von unvollständigen oder verrauschten Daten durch Lernen aus großen Datenbanken bekannter Signaturen.",
+          "buildable": "Ja, KI-Modelle, die auf umfangreichen Datensätzen von bekannten Kampfmittel- und Störsignaturen trainiert wurden, könnten für diesen Zweck entwickelt werden.",
+          "evidence_urls": [
+            "https://serdp-estcp.mil/projects/details/f2a17b6d-44ac-4113-a3ba-a44cb37c1152",
+            "https://digitalearth-hgf.de/results/application-cases/uxo/",
+            "https://www.itv-altlasten.de/fachthemen/c7-kampfmittelraeumung/"
+          ],
+          "collider_mechanism": "Der Mechanismus ist das Inferieren und Wiederherstellen fehlender oder verdeckter Informationen aus einer degradierten Quelle, basierend auf einem umfassenden Wissensbestand typischer Formen und Kontexte, um das 'Unlesbare' wieder lesbar zu machen."
+        }
+      ],
+      "kills": [
+        {
+          "candidate_id": "C3",
+          "reason": "The core functionality of 3D subsurface visualization with historical data overlay and layering of geophysical data for UXO interpretation is explicitly described as an existing and standard practice in the search results.",
+          "failed_checks": [
+            "buildable",
+            "in_mode_or_dense"
+          ]
+        }
+      ],
+      "log_row": {
+        "anchor": "Manuelle Detektion und Klassifikation von Kampfmitteln im Boden",
+        "collider": "Interpretation von Palimpsesten und verwitterten Inschriften",
+        "distance": 4,
+        "candidates": 11,
+        "survivors": 5,
+        "best_gap": "Kampfmittelräumer müssen die Art und den Zustand vergrabener Objekte oft durch riskante physische Interaktion verifizieren, da ihnen detaillierte Informationen über deren innere Struktur und Materialzusammensetzung nicht-invasiv nicht zur Verfügung stehen."
+      },
+      "retro": {
+        "learned": "I learned that the distinction between 'in mode' and 'gap' can be subtle when existing solutions cover general concepts (like 3D visualization or risk assessment) but a candidate proposes a very specific, nuanced application inspired by the collider.",
+        "mistake": "Initially, I might have killed C3 too quickly if I didn't fully check if the 'layering' and 'removing noise' aspect was explicitly covered to the extent of calling it 'palimpsest-like interpretation.' However, the search results clearly stated layering and historical overlay for UXO risk zoning, confirming it's an existing practice.",
+        "next_time": "Next time, I will more explicitly differentiate between general technological applications (e.g., 'AI for UXO classification') and the specific 'lacunar twist' (e.g., 'layered interpretation like a palimpsest') to ensure the gap is truly novel and not just a re-framing of an existing solution."
+      }
+    },
+    "tool_calls": [
+      {
+        "call_id": "lacunar-20260930T100431-797290-t01",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "lieberos"
+      },
+      {
+        "call_id": "lacunar-20260930T100431-797290-t02",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "jamlitz"
+      },
+      {
+        "call_id": "lacunar-20260930T100431-797290-t03",
+        "tool": "search",
+        "status": "ok",
+        "summary": "Manuelle Methoden zur Detektion und Klassifikation von Kampfmitteln im Boden"
+      },
+      {
+        "call_id": "lacunar-20260930T100431-797290-t04",
+        "tool": "search",
+        "status": "ok",
+        "summary": "Herausforderungen bei der Kampfmittelräumung in ehemaligen Truppenübungsplätzen"
+      },
+      {
+        "call_id": "lacunar-20260930T100431-797290-t05",
+        "tool": "search",
+        "status": "ok",
+        "summary": "Standardverfahren zur Bewertung der Munitionsbelastung von Flächen in Deutschland"
+      },
+      {
+        "call_id": "lacunar-20260930T100431-797290-t06",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "bewerten, detektie"
+      },
+      {
+        "call_id": "lacunar-20260930T100431-797290-t07",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "bewerten"
+      },
+      {
+        "call_id": "lacunar-20260930T100431-797290-t08",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "abbildet, angepass"
+      },
+      {
+        "call_id": "lacunar-20260930T100431-797290-t09",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "abbildet"
+      },
+      {
+        "call_id": "lacunar-20260930T100431-797290-t10",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "abgleich, darstell"
+      },
+      {
+        "call_id": "lacunar-20260930T100431-797290-t11",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "abgleich"
+      },
+      {
+        "call_id": "lacunar-20260930T100431-797290-t12",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "anomalie, anzuzeig"
+      },
+      {
+        "call_id": "lacunar-20260930T100431-797290-t13",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "anomalie"
+      },
+      {
+        "call_id": "lacunar-20260930T100431-797290-t14",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "analysie, anzuzeig"
+      },
+      {
+        "call_id": "lacunar-20260930T100431-797290-t15",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "analysie"
+      },
+      {
+        "call_id": "lacunar-20260930T100431-797290-t16",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "anomalie, basieren"
+      },
+      {
+        "call_id": "lacunar-20260930T100431-797290-t17",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "anomalie"
+      },
+      {
+        "call_id": "lacunar-20260930T100431-797290-t18",
+        "tool": "search",
+        "status": "ok",
+        "summary": "KI multi-sensor fusion unexploded ordnance classification"
+      },
+      {
+        "call_id": "lacunar-20260930T100431-797290-t19",
+        "tool": "search",
+        "status": "ok",
+        "summary": "robotics non-invasive subsurface imaging UXO"
+      },
+      {
+        "call_id": "lacunar-20260930T100431-797290-t20",
+        "tool": "search",
+        "status": "ok",
+        "summary": "3D subsurface visualization UXO historical data overlay"
+      }
+    ],
+    "accounting": {
+      "model_calls": 10,
+      "search_calls": 6,
+      "search_queries": 18,
+      "cost_usd": 0.128254
+    },
+    "log_entry": "<!-- proposed by the Lab's Lacunar agent, run lacunar-20260930T100431-797290; nothing was written to Amélie -->\n| 30.09.2026 | Manuelle Detektion und Klassifikation von Kampfmitteln im Boden | Interpretation von Palimpsesten und verwitterten Inschriften | 4 | 11 | 5: 1. Eine autonome Roboterplattform mit ultra-sensitiver, nicht-invasiver Bodenscan-Technologie (z.B. angepasste Myonen-Tomographie), die die innere Struktur und Materialzusammensetzung vergrabener Objekte als 'digitalen Querschnitt' abbildet, um eine 'Entzifferung' vor jeder physischen Berührung zu ermöglichen. (transformational); 2. Ein 'kontextueller Anomalie-Parser', der große Sprachmodelle (LLMs) nutzt, die auf historische Militärdokumente, geologische Gutachten und Räumungsberichte trainiert wurden, um für jede Anomalie eine probabilistische Erzählung zu erstellen, die nicht nur *was* es sein könnte, sondern *warum* es dort ist, basierend auf ihrer 'Untergrund-Geschichte', vorschlägt. (transformational); 3. Ein KI-System, das Bodenanomalien aus Multimeter-Sensorfusion (Magnetometer, GPR, EM) nicht nur detektiert, sondern als geschichtete 'Signaturen' interpretiert, um mit historischen Daten und geologischen Mustern die Wahrscheinlichkeit eines Kampfmittels zu bewerten, ähnlich der Entzifferung eines Palimpsests. (exploratory); 4. Ein 'Probabilistischer Gefahrenatlas', der dynamisch Sensordaten, historische Informationen und KI-Mustererkennung kombiniert, um nicht nur potenzielle Kampfmittelpositionen anzuzeigen, sondern auch das *Konfidenzniveau* und den *potenziellen Gefahrenradius* jeder Anomalie, wodurch ein differenziertes 'Lesen' des Risikos über eine Fläche möglich wird. (exploratory); 5. Ein KI-gestütztes 'Signatur-Rekonstruktions'-Tool, das unvollständige oder degradierte geophysikalische Signale analysiert und basierend auf einer umfangreichen Datenbank bekannter Kampfmittel- und Störsignaturen die wahrscheinlichste 'vollständige' Signalform generiert, um anzuzeigen, wie das vergrabene Objekt aussehen *würde*, wenn es vollständig lesbar wäre. (combinational) | Kampfmittelräumer müssen die Art und den Zustand vergrabener Objekte oft durch riskante physische Interaktion verifizieren, da ihnen detaillierte Informationen über deren innere Struktur und Materialzusammensetzung nicht-invasiv nicht zur Verfügung stehen. | — (not checked yet) |\n\n### Lacunar run lacunar-20260930T100431-797290 — 30.09.2026 (intent: Jamlitz, Lieberose)\n- **Learned:** I learned that the distinction between 'in mode' and 'gap' can be subtle when existing solutions cover general concepts (like 3D visualization or risk assessment) but a candidate proposes a very specific, nuanced application inspired by the collider.\n- **Mistake:** Initially, I might have killed C3 too quickly if I didn't fully check if the 'layering' and 'removing noise' aspect was explicitly covered to the extent of calling it 'palimpsest-like interpretation.' However, the search results clearly stated layering and historical overlay for UXO risk zoning, confirming it's an existing practice.\n- **Next time:** Next time, I will more explicitly differentiate between general technological applications (e.g., 'AI for UXO classification') and the specific 'lacunar twist' (e.g., 'layered interpretation like a palimpsest') to ensure the gap is truly novel and not just a re-framing of an existing solution.\n- **Prior-art leads (automatic search, for the existence check; not a verdict):**\n  - C1 (ok): KI multi-sensor fusion unexploded ordnance classification -> https://serdp-estcp.mil/projects/details/f2a17b6d-44ac-4113-a3ba-a44cb37c1152, https://serdp-estcp.mil/projects/details/c9b774ce-41d0-4b11-abe0-341c57eb1458, https://digitalearth-hgf.de/results/application-cases/uxo/, https://commons.lib.jmu.edu/cgi/viewcontent.cgi?article=1170&context=cisr-journal\n  - C2 (ok): robotics non-invasive subsurface imaging UXO -> https://www.researchgate.net/publication/377803888_Subsurface_Unexploded_Ordnance_Detecting_Robot_for_the_Airfield_Damage_Repair_Mission, https://publications.ri.cmu.edu/robotic-subsurface-mapping-using-ground-penetrating-radar, https://www.mdpi.com/2504-446X/10/2/88, https://www.preprints.org/manuscript/202512.0511\n  - C3 (ok): 3D subsurface visualization UXO historical data overlay -> https://gaeatech.com/knowledge-center/subsurface-visualization/, https://www.rockware.com/beginners-guide-to-subsurface-data-visualization-for-3d-geological-modeling/, https://resources.esri.ca/getting-technical/explore-subsurface-geology-using-voxel-layers-in-three-easy-steps, https://www.goldensoftware.com/about/press/surfer-enhances-3d-visuals/\n",
+    "prior_art": [
+      {
+        "candidate_id": "C1",
+        "question": "KI multi-sensor fusion unexploded ordnance classification",
+        "status": "ok",
+        "answer": "KI (Artificial Intelligence) and multi-sensor fusion are actively being researched and applied to improve the classification of unexploded ordnance (UXO), addressing challenges such as high false alarm rates and the need for accurate identification. This approach involves combining data from multiple sensor technologies and using AI to process and interpret this complex information.\n\nKey aspects of KI multi-sensor fusion for UXO classification include:\n\n*   **Objectives and Challenges** Research in this area aims to enhance the understanding of environmental factors affecting subsurface anomaly detection and to identify promising data processing, analysis, and integration (fusion) approaches to improve UXO detection, discrimination, and classification. A significant challenge is the high false alarm rate caused by clutter, which increases remediation costs. Multi-sensor data fusion with statistical signal processing techniques is hypothesized to dramatically reduce this rate.\n*   **Sensor Technologies** A variety of sensors are employed, including magnetic and electromagnetic (EMI) systems, radar, seismic sensors, multibeam echosounders (MBES), sub-bottom profilers (SBP), cameras, and magnetometers. These sensors provide complementary data types for a more comprehensive understanding of potential UXO targets.\n*   **AI and Machine Learning Approaches** Artificial intelligence methods are central to automating large parts of the UXO detection and classification workflow.\n    *   **Neural Networks (NNs) and Convolutional Neural Networks (CNNs)** are used for tasks like object detection, classification, and environmental mapping. For instance, one workflow uses CNNs to classify UXO directly from electromagnetic data, analogous to an image segmentation problem. Another method involves turning magnetic data into a 3D map using a neural network, identifying potential targets through pattern recognition, and sharpening their exact location and signature with an advanced algorithm.\n    *   **Supervised and Unsupervised Methods** Machine learning models can be trained in a supervised fashion for detection and classification using annotated data. Unsupervised methods, such as clustering, can also be used to distinguish UXO types.\n    *   **Physics-Based Models** While AI is crucial, accurate physics-based models are also essential for forward and inverse modeling of geophysical signatures, which are key for UXO discrimination and identification. Traditionally, classi",
+        "pages": [
+          "https://serdp-estcp.mil/projects/details/f2a17b6d-44ac-4113-a3ba-a44cb37c1152",
+          "https://serdp-estcp.mil/projects/details/c9b774ce-41d0-4b11-abe0-341c57eb1458",
+          "https://digitalearth-hgf.de/results/application-cases/uxo/",
+          "https://commons.lib.jmu.edu/cgi/viewcontent.cgi?article=1170&context=cisr-journal",
+          "https://dspace.mit.edu/entities/publication/b06f7c88-53f3-43e0-83e8-03e54f8c2212",
+          "https://www.emiw.org/fileadmin/emiw2024/abstracts/1.0_machine_learning_methods_heagy_02.pdf",
+          "https://yunusemreavcii.medium.com/multi-sensor-fusion-in-multi-uav-systems-enhancing-autonomous-operations-e282be96e19a",
+          "https://cbrnecentral.com/ai-magnetic-detection-cied-uxo-threat-localization/28840/",
+          "https://arxiv.org/html/2410.16089v2"
+        ]
+      },
+      {
+        "candidate_id": "C2",
+        "question": "robotics non-invasive subsurface imaging UXO",
+        "status": "ok",
+        "answer": "Robotics are increasingly employed in conjunction with non-invasive subsurface imaging techniques for the detection of unexploded ordnance (UXO), offering enhanced safety, efficiency, and coverage compared to traditional manual methods. These robotic systems utilize various sensors to identify buried objects without direct physical contact with the ground.\n\nSeveral non-invasive subsurface imaging techniques are commonly integrated with robotic platforms for UXO detection:\n*   **Ground-Penetrating Radar (GPR)**: GPR sends electromagnetic waves into the ground and analyzes the reflected waves to create a 3D map of the subsurface, revealing buried objects. While GPR has the potential for UXO detection, it can be challenging to use effectively, especially with thick concrete, and may require expensive and sophisticated equipment for accurate detection. Robotic systems can autonomously gather and process GPR data, and robotic manipulators can follow terrain contours during GPR antenna scanning.\n*   **Magnetometry**: Magnetometers detect variations in the Earth's magnetic field caused by ferrous objects like UXO. Handheld magnetometers are a common tool, but robotic platforms, including ground robots and aerial drones, are being developed to carry sensitive magnetometers, often on extendable arms, to minimize interference from the robot's own electronics. Aerial drone-based magnetometry has shown capability in detecting small magnetic anomalies associated with buried UXO in complex environments, covering significant areas rapidly.\n*   **Electromagnetic Induction (EMI)**: EMI systems are also used to detect metallic objects in the subsurface. Like magnetometry, EMI systems can be deployed on robotic platforms to improve the efficiency and safety of surveys.\n\nRobotic platforms used for non-invasive UXO detection include:\n*   **Ground-based robots**: These robots can carry various sensors like magnetometers and GPR, allowing for automated subsurface mapping and reducing the need for human presence in hazardous areas. Research efforts are focused on developing autonomous robots that can detect, locate, log, report, and mark subsurface UXO.\n*   **Unmanned Aerial Vehicles (UAVs) or Drones**: Drones equipped with lightweight magnetometer payloads, high-resolution cameras, thermal imaging, and LiDAR can rapidly scan large areas, including rough terrain, for potential UXO indicators. AI-powered image analysis helps these drones spot anomalies and prioritize clearance zon",
+        "pages": [
+          "https://www.researchgate.net/publication/377803888_Subsurface_Unexploded_Ordnance_Detecting_Robot_for_the_Airfield_Damage_Repair_Mission",
+          "https://publications.ri.cmu.edu/robotic-subsurface-mapping-using-ground-penetrating-radar",
+          "https://www.mdpi.com/2504-446X/10/2/88",
+          "https://www.preprints.org/manuscript/202512.0511",
+          "https://www.researchgate.net/figure/Proposed-solution-for-subsurface-UXO-detection-Autonomous-robot-with-vector-magnetometer_fig3_377803888",
+          "https://www.army.mil/article/16473/u_s_army_demonstrates_robotic_technologies",
+          "https://www.securityprousa.com/blogs/news/the-future-of-uxo-detection-how-drones-robots-and-ai-are-saving-lives",
+          "https://www.mdpi.com/2072-4292/15/4/967",
+          "https://www.geobusinessshow.com/using-uavs-and-artificial-intelligence-for-uxo-detection/",
+          "https://biodrone.ai/applications/uxo-detection",
+          "https://www.unmannedsystemstechnology.com/2026/03/autonomous-uxo-detection-demonstrated-with-bayonet-350-augv/",
+          "https://www.uniquegroup.com/media-centre/blog-articles/role-of-rovs-in-uxo-detection/"
+        ]
+      },
+      {
+        "candidate_id": "C3",
+        "question": "3D subsurface visualization UXO historical data overlay",
+        "status": "ok",
+        "answer": "3D subsurface visualization with historical unexploded ordnance (UXO) data overlay involves integrating various datasets to create a comprehensive understanding of potential hazards beneath the ground. This process is crucial for risk assessment, remediation planning, and safe development in areas with a history of military activity.\n\nSeveral sources highlight the importance and methodology of this integration:\n\n*   **Subsurface Visualization Fundamentals:** Subsurface visualization techniques interpret, display, and analyze geological and geotechnical data, revealing patterns in soil layers, rock formations, and groundwater systems that are not directly observable. Tools transform raw data from borehole logs and geophysical surveys into visual models such as cross-sections, 3D geological models, and interactive maps. This aids in understanding site conditions for infrastructure development, environmental remediation, and mining exploration. Software like RockWorks and Surfer are designed for creating detailed visual outputs and handling complex datasets for subsurface modeling. ArcGIS Pro also offers capabilities for visualizing subsurface geology using voxel layers, allowing users to explore 3D models of underground structures.\n*   **Role of Historical Data in UXO Detection:** Historical data is a critical component in identifying and assessing UXO risks. This includes military mission reports, war diaries, administrative records, damage surveys, historical photographs, and strategic bombing surveys. Analyzing these records helps to pinpoint areas of potential munitions contamination on land and at sea.\n*   **Overlaying Historical Data with GIS:** Geographic Information Systems (GIS) play a pivotal role in digitizing historical UXO data and overlaying it onto modern site plans. This allows analysts to visualize risk zones and bomb density by layering multiple datasets. For example, a GIS specialist can overlay a 1940s target map onto a current topographical survey to identify areas where unexploded ordnance might be present, considering post-war land use changes. This method enables \"risk zoning,\" where different areas within a project boundary are assessed individually based on historical evidence, avoiding the treatment of an entire site as a uniform hazard.\n*   **User Experience (UX) Considerations:** While not always explicitly detailed as \"UXO historical data overlay UX,\" the user experience in subsurface visualization tools emphasizes clarity, inte",
+        "pages": [
+          "https://gaeatech.com/knowledge-center/subsurface-visualization/",
+          "https://www.rockware.com/beginners-guide-to-subsurface-data-visualization-for-3d-geological-modeling/",
+          "https://resources.esri.ca/getting-technical/explore-subsurface-geology-using-voxel-layers-in-three-easy-steps",
+          "https://www.goldensoftware.com/about/press/surfer-enhances-3d-visuals/",
+          "https://www.youtube.com/watch?v=MMq0eAhGuIY",
+          "https://www.scribd.com/doc/3982961/Digital-Mapping-and-3D-Visualization-Modelling-of-Subsurface-Geology-Using-ArcGIS-9-2-and-Well-Log-Data-INF-136",
+          "https://www.youtube.com/watch?v=_PqZtHWjRGY",
+          "https://www.artiosglobal.com/portfolio-feeds/uxo-mapping-how-historical-data-and-gis-keeps-your-projects-safe",
+          "https://mminesweeper-munition.eu/03_news/project_news/goodpractices-report/",
+          "https://www.spotfire.com/blogs/2025-07/seeing-beneath-the-surface-revolutionizing-subsurface-analysis-with-spotfire",
+          "https://www.autodesk.com/autodesk-university/fr/class/3D-Subsurface-Data-Visualization-Integration-InfraWorks-and-BIM-360-2020",
+          "https://www.seequent.com/products-solutions/unexploded-ordnance-uxo/"
+        ]
+      }
+    ],
+    "topic_check": [
+      {
+        "term": "lieberos",
+        "hits": []
+      },
+      {
+        "term": "jamlitz",
+        "hits": []
+      }
+    ],
+    "contract_version": "1.2.0"
+  },
+  "existence_check": false,
+  "contract_version": "1.0.0"
+}

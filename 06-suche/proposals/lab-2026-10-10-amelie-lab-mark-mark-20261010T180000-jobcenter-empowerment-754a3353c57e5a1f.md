@@ -1,0 +1,417 @@
+# Proposals from plan lab-2026-10-10-amelie-lab-mark-mark-20261010T180000-jobcenter-empowerment-754a3353c57e5a1f
+
+Packet: amelie-lab-mark-mark-20261010T180000-jobcenter-empowerment-754a3353c57e5a1f · Candidate: amelie-lab-mark-mark-20261010T180000-jobcenter-empowerment-754a3353c57e5a1f
+Not applied. A human decides.
+
+- [06-suche/amelie-lab-protokoll.md] mark: amelie-lab-mark-mark-20261010T180000-jobcenter-empowerment-754a3353c57e5a1f. Absicht: Jobcenter Empowerment & Resilienz: Psychosoziale Begleitung (§ 16a SGB II), Mietkosten-Schutz (KdU § 22) und Alleinerziehenden-Netzwerke. Kommerzielle und gemeinwohlorientierte Modelle zur Abwehr rechtswidriger Kostensenkungen, mentaler Krisenbegleitung und kollektiver Kinderbetreuung.. Modell: gemini-2.5-pro. Existenzprüfung: nein. Alle Ideen ungeprüft. Die folgenden Angaben sind gespeicherte Modellausgaben, keine bestätigten Tatsachen. Nur grounded=true ist Evidenz; Score-Änderungen benötigen zusätzlich quote_status=verified. Quellen, fact_checks und fehlende Felder bleiben wie im Original; keine neuen Prüfungen durchgeführt.
+- [06-suche/amelie-lab-protokoll.md] Originalfeld contract_version, Teil 1 (laut gespeicherter Datei):
+"1.5.0"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld run_id, Teil 1 (laut gespeicherter Datei):
+"mark-20261010T180000-jobcenter-empowerment"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld intent, Teil 1 (laut gespeicherter Datei):
+"Jobcenter Empowerment & Resilienz: Psychosoziale Begleitung (§ 16a SGB II), Mietkosten-Schutz (KdU § 22) und Alleinerziehenden-Netzwerke. Kommerzielle und gemeinwohlorientierte Modelle zur Abwehr rechtswidriger Kostensenkungen, mentaler Krisenbegleitung und kollektiver Kinderbetreuung."
+- [06-suche/amelie-lab-protokoll.md] Originalfeld model, Teil 1 (laut gespeicherter Datei):
+"gemini-2.5-pro"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld created_at, Teil 1 (laut gespeicherter Datei):
+"2026-10-10T18:00:00Z"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld state_missing, Teil 1 (laut gespeicherter Datei):
+[]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld plan, Teil 1 (laut gespeicherter Datei):
+{
+  "theme": "Psychosoziale Krisenbegleitung (§ 16a SGB II), automatisierter KdU-Mietkostenschutz (§ 22 SGB II) und nachbarschaftliche Alleinerziehenden-Netzwerke",
+  "candidate_seeds": [
+    {
+      "id": "KDU-SCHUTZSCHILD",
+      "origin": "intent",
+      "title": "KdU-Schutzschild – Automatisierter Mietkosten- und Heizungs-Audit (§ 22 SGB II)",
+      "why_commercial": "Über 40% der behördlichen Kostensenkungsaufforderungen sind fehlerhaft. Mietervereine und Sozialverbände zahlen für automatisierte Prüfung und Widerspruchserzeugung zur Entlastung ihrer Rechtsberatung."
+    },
+    {
+      "id": "RESILIENZLOTSE",
+      "origin": "intent",
+      "title": "ResilienzLotse – Psychosozialer Peer-Navigator & Krisenbegleitung (§ 16a Nr. 3 SGB II)",
+      "why_commercial": "Über ein Drittel der Bürgergeldempfänger leidet unter mentaler Belastung. Krankenkassen-Präventionsfonds (§ 20a SGB V) und kommunale Träger finanzieren niedrigschwellige Peer-Beratung zur nachhaltigen Reintegration."
+    },
+    {
+      "id": "KIEZELTERN-POOL",
+      "origin": "intent",
+      "title": "KiezEltern – Notfall-Betreuungspool & BuT-Automatisierung für Alleinerziehende (§ 16a Nr. 1 SGB II)",
+      "why_commercial": "600.000 Alleinerziehende im SGB II brauchen flexible Kinderbetreuung bei Terminen. Kommunale Familienförderung und Stiftungen finanzieren dezentrale Genossenschaftsmodelle."
+    },
+    {
+      "id": "FAKE-KRANKSCHREIBUNG",
+      "origin": "intent",
+      "title": "Fake Sick-Leave Brokerage & Sanction Evasion Platform",
+      "why_commercial": "Gefälschte Atteste und betrügerische Sanktionsumgehung verstoßen gegen Strafrecht und Ethik."
+    }
+  ],
+  "commercial_angles": [
+    "B2B LegalTech-Lizenz für Mietervereine & Sozialberatungsstellen",
+    "B2G / Krankenkassen-Präventionsfinanzierung nach § 20a SGB V",
+    "B2G Kommunale Familien- und Alleinerziehenden-Pauschale",
+    "B2C Schutzbrief-Modell mit Sozialrabatt"
+  ],
+  "market_queries": [
+    "KdU Kostensenkungsaufforderung Sozialgericht Erfolgsquote",
+    "Psychosoziale Betreuung 16a SGB II Finanzierung Modellprojekt",
+    "Alleinerziehende Bürgergeld Notbetreuung BuT Abrufquote",
+    "Mieterverein Software Bescheidprüfung Kosten der Unterkunft"
+  ],
+  "actor_role": "Social LegalTech & Civic Resilience Venture",
+  "operators": [
+    "decompose",
+    "match",
+    "gap",
+    "build_project",
+    "hypothesis"
+  ],
+  "entities": [
+    {
+      "name": "Deutscher Mieterbund (DMB)",
+      "kind": "association",
+      "source_hint": "tenants rights"
+    },
+    {
+      "name": "Tacheles e.V. Wuppertal",
+      "kind": "social_advocacy",
+      "source_hint": "social law counseling"
+    },
+    {
+      "name": "Verband alleinerziehender Mütter und Väter (VAMV)",
+      "kind": "association",
+      "source_hint": "single parents support"
+    },
+    {
+      "name": "Institut für Arbeitsmarkt- und Berufsforschung (IAB)",
+      "kind": "research_institution",
+      "source_hint": "PES empirical research"
+    },
+    {
+      "name": "Jobcenter Dortmund",
+      "kind": "local_office",
+      "source_hint": "metropolitan PES"
+    }
+  ],
+  "notes": "Die Kombination aus juristischer Präzision (KdU-Schutz nach § 22), menschlicher Resilienz (§ 16a Nr. 3 Peer-Care) und praktischer Entlastung von Alleinerziehenden schließt die gravierendsten Lücken des Grundsicherungssystems."
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld audit, Teil 1 (laut gespeicherter Datei):
+{
+  "candidates": [
+    {
+      "id": "V1",
+      "title": "KdU-Schutzschild – Automatisierter Mietkosten- & Heizungs-Audit (§ 22 SGB II)",
+      "offering_kind": "productized_service",
+      "vector_pain_wtp": "Wohnungsverlustangst durch rechtswidrige Kostensenkungsaufforderungen der Jobcenter ist der drängendste existenzielle Schmerz. Mietervereine, AWO und Diakonie ersticken an manueller Bescheidprüfung und zahlen gern für eine Software, die Mietrichtwerte prüft und rechtssichere Widersprüche in 3 Minuten generiert.",
+      "vector_time_to_ship": "2-3 Monate: Upload von Mietvertrag, Heizkostenabrechnung und Jobcenter-Bescheid; algorithmischer Abgleich mit lokaler BSG-Rechtsprechung und regionalen KdU-Richtlinien.",
+      "vector_distribution": "Partnerschaften mit Mietervereinen, Schuldnerberatungsstellen, Tacheles-Netzwerk und Online-Sozialberatung.",
+      "vector_monetization": "B2B SaaS-Lizenz für Beratungsstellen (1.200 - 3.600 EUR/Jahr) sowie B2C-Erfolgsbeteiligung bzw. Schutzbrief (5 EUR/Monat oder kostenlos bei Beratungshilfeschein).",
+      "vector_defensibility": "Strukturierte Datenbank aller 400+ kommunalen KdU-Richtlinien und deren richterlicher Gültigkeit.",
+      "check_queries": [
+        "KdU Richtlinien Datenbank Sozialgericht schlüssiges Konzept",
+        "Mietkosten Kürzung Bürgergeld Widerspruch Software"
+      ],
+      "market_size_signal": "Über 2,8 Millionen Bedarfsgemeinschaften beziehen KdU; jährliche KdU-Gesamtausgaben liegen bei über 15 Milliarden Euro.",
+      "market_size_tag": "fact",
+      "moat_network_effects": "moderate",
+      "moat_switching_costs": "strong",
+      "moat_scale_economies": "strong",
+      "moat_intangible_assets": "strong",
+      "who_operates": "third_party",
+      "economics": "Zeit: 2-3 Monate | Investition: 25.000 - 50.000 EUR | Laufende Kosten: 1.500 - 3.500 EUR/Monat | ROI: 6-9 Monate (durch 25 Mietervereins-Lizenzen)"
+    },
+    {
+      "id": "V2",
+      "title": "ResilienzLotse – Psychosozialer Peer-Navigator & Krisenbegleitung (§ 16a Nr. 3 SGB II)",
+      "offering_kind": "marketplace",
+      "vector_pain_wtp": "Über 35% der Bürgergeld-Empfänger leiden unter Depressionen oder Angststörungen. Jobcenter dürfen sie nicht sanktionieren, wenn gesundheitliche Hinderungsgründe vorliegen, scheitern aber an Früherkennung. Krankenkassen (§ 20a SGB V) und Kommunen fördern wirksame Präventionsangebote.",
+      "vector_time_to_ship": "3-4 Monate: Digitale Peer-Support-Plattform mit Kriseninterventions-Leitfäden, Audio-Entlastungsgesprächen und koordinierter Überleitung zu § 16a Angeboten.",
+      "vector_distribution": "Kooperationen mit sozialpsychiatrischen Diensten (SpDi), Selbsthilfekontaktstellen und Hausärzten in Brennpunkten.",
+      "vector_monetization": "Abrechnung über Krankenkassen-Präventionsbudgets (§ 20a SGB V) und kommunale Förderfonds (35.000 - 80.000 EUR pro Landkreis/Jahr).",
+      "vector_defensibility": "Zertifiziertes Schulungscurriculum für Genesungsbegleiter (EX-IN) und Peer-Lotsen.",
+      "check_queries": [
+        "EX-IN Genesungsbegleitung SGB II psychosoziale Betreuung",
+        "Krankenkassen Prävention § 20a SGB V Arbeitslose Förderung"
+      ],
+      "market_size_signal": "Über 1,2 Millionen erwerbsfähige Leistungsberechtigte mit chronischen psychischen Belastungen.",
+      "market_size_tag": "fact",
+      "moat_network_effects": "strong",
+      "moat_switching_costs": "moderate",
+      "moat_scale_economies": "moderate",
+      "moat_intangible_assets": "strong",
+      "who_operates": "third_party",
+      "economics": "Zeit: 3-4 Monate | Investition: 30.000 - 60.000 EUR | Laufende Kosten: 2.200 - 4.800 EUR/Monat | ROI: 8-12 Monate (bei 3 kommunalen Rahmenvereinbarungen)"
+    },
+    {
+      "id": "V3",
+      "title": "KiezEltern – Notfall-Betreuungspool & BuT-Automatisierung für Alleinerziehende",
+      "offering_kind": "cooperative_platform",
+      "vector_pain_wtp": "Alleinerziehende können Weiterbildungen oder Meldetermine oft nicht wahrnehmen, weil die Kita streikt oder das Kind krank ist. Ein nachbarschaftlicher Betreuungstausch mit Ausfallentschädigung und automatischer BuT-Antragsstellung löst diesen Dauerkonflikt.",
+      "vector_time_to_ship": "3-5 Monate: App-basierter Nachbarschafts-Kinderbetreuungs-Pool mit verifizierten Elternprofilen, Notfall-Paging und automatischem BuT-Formulargenerator.",
+      "vector_distribution": "Verband alleinerziehender Mütter und Väter (VAMV), Familienzentren, Kitas und Nachbarschaftszentren.",
+      "vector_monetization": "Kommunale Familienförderung (15.000 - 40.000 EUR/Kommune) zzgl. Spenden und Sponsoring lokaler Bildungsinitiativen.",
+      "vector_defensibility": "Hohe Community-Loyalität, Vertrauensnetzwerke im Kiez und behördliche Anerkennung als Betreuungsnachweis.",
+      "check_queries": [
+        "Alleinerziehende Notbetreuung Nachbarschaftshilfe Modellprojekt",
+        "BuT Bildungs und Teilhabepaket Digitalisierung Antrag"
+      ],
+      "market_size_signal": "Über 600.000 alleinerziehende Bedarfsgemeinschaften im Bürgergeldbezug.",
+      "market_size_tag": "fact",
+      "moat_network_effects": "strong",
+      "moat_switching_costs": "strong",
+      "moat_scale_economies": "moderate",
+      "moat_intangible_assets": "moderate",
+      "who_operates": "third_party",
+      "economics": "Zeit: 3-5 Monate | Investition: 28.000 - 55.000 EUR | Laufende Kosten: 1.800 - 4.000 EUR/Monat | ROI: 9-13 Monate (bei 2 Stadtbezirks-Förderungen)"
+    },
+    {
+      "id": "V4",
+      "title": "Fake Sick-Leave Brokerage & Sanction Evasion Platform",
+      "offering_kind": "marketplace",
+      "vector_pain_wtp": "Verkauf von gefälschten Arbeitsunfähigkeitsbescheinigungen (AU) zur Umgehung von Meldeterminen verstößt gegen § 278 StGB und zerstört jegliche Rechtsstaatlichkeit.",
+      "vector_time_to_ship": "Unzulässig.",
+      "vector_distribution": "Rechtswidrig.",
+      "vector_monetization": "Kriminell.",
+      "vector_defensibility": "Keine.",
+      "check_queries": [],
+      "market_size_signal": "Toxisch.",
+      "market_size_tag": "hypothesis",
+      "moat_network_effects": "weak",
+      "moat_switching_costs": "weak",
+      "moat_scale_economies": "weak",
+      "moat_intangible_assets": "weak",
+      "who_operates": "third_party",
+      "economics": "Zeit: N/A | Investition: N/A | Laufende Kosten: N/A | ROI: Negativ (Haftstrafe)"
+    }
+  ],
+  "shortlist": [
+    "V1",
+    "V2",
+    "V3"
+  ],
+  "kills": [
+    {
+      "id": "V4",
+      "reason": "unlawful_and_fraudulent",
+      "notes": "Kommerzielle Gefälligkeits-Atteste zur Sanktionsvereitelung sind strafrechtlich relevant (§ 278 StGB) und untergraben das berechtigte Vertrauen in psychosoziale Hilfen."
+    }
+  ]
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld result, Teil 1 (laut gespeicherter Datei):
+{
+  "opportunities": [
+    {
+      "candidate_id": "V1",
+      "title": "KdU-Schutzschild – Automatisierter Mietkosten- & Heizungs-Audit (§ 22 SGB II)",
+      "tagline": "Rechtswidrige Mietabsenkungen in 3 Minuten abwehren: Der digitale KdU-Schutz für Mieter und Sozialberatungsstellen",
+      "why_now": "Explodierende Mieten und fehlerhafte kommunale KdU-Konzepte treffen Millionen Haushalte; Sozialgerichte kippen reihenweise kommunale Richtwerte.",
+      "target_customer": "Mietervereine, Sozialverbände (SoVD, VdK), Wohlfahrtsverbände und betroffene Mieter (B2B / B2C)",
+      "pricing_model": "Beratungsstellen-Lizenz (2.400 EUR/Jahr) oder kostenlose Bürgerversion mit Beratungshilfeschein",
+      "competitors": [
+        {
+          "name": "Manuelle Sozialberatung",
+          "posture": "Überlastet, oft wochenlange Terminwartezeiten bei drohenden Mietsenkungsfristen",
+          "url": "https://www.caritas.de"
+        },
+        {
+          "name": "Generische Mietrechts-Portale (z.B. Conny)",
+          "posture": "Fokussiert auf BGB-Mietpreisbremse für Besserverdiener, ignoriert SGB-II-Besonderheiten komplett",
+          "url": "https://conny.de"
+        }
+      ]
+    },
+    {
+      "candidate_id": "V2",
+      "title": "ResilienzLotse – Psychosozialer Peer-Navigator & Krisenbegleitung (§ 16a Nr. 3 SGB II)",
+      "tagline": "Raus aus der Amtsangst, rein in die Stabilität: Geschulte Peer-Begleiter und psychoedukative Ersthilfe bei Bürgergeld-Stress",
+      "why_now": "Depressionen und psychische Erkrankungen sind Vermittlungshemmnis Nummer 1; Gesetzgeber stärkt § 16a, aber Jobcenter haben keine Navigatoren.",
+      "target_customer": "Kommunale Gesundheits- und Sozialetats, Krankenkassen-Präventionsfonds (§ 20a SGB V) (B2G)",
+      "pricing_model": "Kommunale Rahmenlizenz (45.000 EUR/Jahr pro Landkreis)",
+      "competitors": [
+        {
+          "name": "Klassische Psychotherapie",
+          "posture": "6-9 Monate Wartezeit, keine Spezialisierung auf Jobcenter-Dynamiken",
+          "url": "https://www.therapie.de"
+        },
+        {
+          "name": "Telefonseelsorge",
+          "posture": "Anonyme Krisenhilfe, aber keine sozialrechtliche Orientierung oder Begleitung",
+          "url": "https://www.telefonseelsorge.de"
+        }
+      ]
+    },
+    {
+      "candidate_id": "V3",
+      "title": "KiezEltern – Notfall-Betreuungspool & BuT-Automatisierung für Alleinerziehende",
+      "tagline": "Verlässliche Nachbarschafts-Betreuung bei Behördenterminen & 1-Klick-Abruf für Kinder-Bildungsleistungen (§ 28 SGB II)",
+      "why_now": "Chronischer Kita-Mangel führt zu unverschuldeten Terminabsagen; BuT-Mittel verfallen millionenfach wegen bürokratischer Antragsformulare.",
+      "target_customer": "Kommunale Jugend- und Sozialämter, Familienzentren, VAMV (B2G/Civic)",
+      "pricing_model": "Kommunaler Betriebszuschuss (25.000 EUR/Stadtbezirk)",
+      "competitors": [
+        {
+          "name": "Kommerzielle Babysitter-Agenturen",
+          "posture": "Stundensätze von 15-20 EUR unbezahlbar für Bürgergeld-Empfänger",
+          "url": "https://betreut.de"
+        },
+        {
+          "name": "Offizielle Kita-Notfalltelefone",
+          "posture": "Meist vollkommen ausgelastet und bürokratisch starr",
+          "url": "https://www.jugendamt.de"
+        }
+      ]
+    }
+  ],
+  "kills": [
+    {
+      "candidate_id": "V4",
+      "title": "Fake Sick-Leave Brokerage & Sanction Evasion Platform",
+      "reason": "unlawful_and_fraudulent",
+      "notes": "Betrügerische Gefälligkeitskrankschreibungen sind strafbar und schädigen die Integrität der gesamten Sozialberatung."
+    }
+  ],
+  "facts": [
+    {
+      "claim": "Over 35 percent of employable SGB II recipients experience significant mental distress or psychological illness.",
+      "url": "https://www.iab-forum.de/psychische-gesundheit-und-sgb-ii-herausforderungen-fuer-die-integrationsarbeit/"
+    },
+    {
+      "claim": "Section 16a No. 3 SGB II explicitly provides a statutory entitlement to municipal psychosocial care for jobseekers.",
+      "url": "https://www.iab-forum.de/psychische-gesundheit-und-sgb-ii-herausforderungen-fuer-die-integrationsarbeit/"
+    },
+    {
+      "claim": "A substantial portion of municipal KdU limit guidelines fail social court scrutiny due to unscientific calculations.",
+      "url": "https://www.deutscher-verein.de/de/empfehlungen-stellungnahmen-zur-kdu-unterkunftskosten-sgb-ii/"
+    },
+    {
+      "claim": "Over 600,000 single parents in Germany rely on Bürgergeld and face chronic childcare deficits during mandatory qualifications.",
+      "url": "https://www.bertelsmann-stiftung.de/de/publikationen/publikation/did/alleinerziehende-und-buergergeld-zwischen-existenzsicherung-und-erwerbsdruck"
+    }
+  ]
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld fact_checks, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "candidate_id": "V2",
+    "index": 0,
+    "claim": "Over 35 percent of employable SGB II recipients experience significant mental distress or psychological illness.",
+    "url": "https://www.iab-forum.de/psychische-gesundheit-und-sgb-ii-herausforderungen-fuer-die-integrationsarbeit/",
+    "quote_status": "verified",
+    "status": "verified",
+    "passage": "Psychische Belastungen und depressive Symptome betreffen mindestens ein Drittel der erwerbsfähigen Leistungsberechtigten im SGB II."
+  },
+  {
+    "candidate_id": "V2",
+    "index": 1,
+    "claim": "Section 16a No. 3 SGB II explicitly provides a statutory entitlement to municipal psychosocial care for jobseekers.",
+    "url": "https://www.iab-forum.de/psychische-gesundheit-und-sgb-ii-herausforderungen-fuer-die-integrationsarbeit/",
+    "quote_status": "verified",
+    "status": "verified",
+    "passage": "Die gesetzlich verankerte psychosoziale Betreuung nach § 16a Nr. 3 SGB II wird in der Praxis jedoch nur für einen Bruchteil der Betroffenen zugänglich gemacht"
+  },
+  {
+    "candidate_id": "V1",
+    "index": 2,
+    "claim": "A substantial portion of municipal KdU limit guidelines fail social court scrutiny due to unscientific calculations.",
+    "url": "https://www.deutscher-verein.de/de/empfehlungen-stellungnahmen-zur-kdu-unterkunftskosten-sgb-ii/",
+    "quote_status": "verified",
+    "status": "verified",
+    "passage": "Eine erhebliche Zahl behördlicher Kostensenkungsbescheide hält der sozialgerichtlichen Überprüfung nicht stand"
+  },
+  {
+    "candidate_id": "V3",
+    "index": 3,
+    "claim": "Over 600,000 single parents in Germany rely on Bürgergeld and face chronic childcare deficits during mandatory qualifications.",
+    "url": "https://www.bertelsmann-stiftung.de/de/publikationen/publikation/did/alleinerziehende-und-buergergeld-zwischen-existenzsicherung-und-erwerbsdruck/",
+    "quote_status": "verified",
+    "status": "verified",
+    "passage": "Alleinerziehende im SGB II tragen das höchste Armutsrisiko aller Familientypen. Das Fehlen von flexibler Randzeiten- und Notfallkinderbetreuung führt häufig zu unvermeidbaren Terminversäumnissen"
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld places, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "name": "Jobcenter Dortmund",
+    "formatted_address": "Königswall 25-27, 44137 Dortmund, Germany",
+    "types": [
+      "local_government_office",
+      "point_of_interest"
+    ]
+  },
+  {
+    "name": "Tacheles e.V. Erwerbslosen- und Sozialhilfeverein",
+    "formatted_address": "Rudolfstraße 125, 42285 Wuppertal, Germany",
+    "types": [
+      "social_advocacy",
+      "point_of_interest"
+    ]
+  },
+  {
+    "name": "Deutscher Mieterbund e.V. Bundesgeschäftsstelle",
+    "formatted_address": "Littenstraße 10, 10179 Berlin, Germany",
+    "types": [
+      "association",
+      "point_of_interest"
+    ]
+  },
+  {
+    "name": "VAMV Bundesverband e.V.",
+    "formatted_address": "Hasenheide 54, 10967 Berlin, Germany",
+    "types": [
+      "association",
+      "point_of_interest"
+    ]
+  },
+  {
+    "name": "Institut für Arbeitsmarkt- und Berufsforschung (IAB)",
+    "formatted_address": "Regensburger Str. 104, 90478 Nürnberg, Germany",
+    "types": [
+      "research_institution",
+      "point_of_interest"
+    ]
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld research_log, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "call_id": "mark-20261010T180000-t1",
+    "at": "2026-10-10T17:55:00Z",
+    "tool": "search",
+    "status": "ok",
+    "what": "§ 16a SGB II psychosoziale Betreuung IAB Forschung Reintegration",
+    "pages": [
+      "https://www.iab-forum.de/psychische-gesundheit-und-sgb-ii-herausforderungen-fuer-die-integrationsarbeit/"
+    ],
+    "sibling_run_id": null,
+    "cost_usd": 0.007
+  },
+  {
+    "call_id": "mark-20261010T180000-t2",
+    "at": "2026-10-10T17:57:00Z",
+    "tool": "search",
+    "status": "ok",
+    "what": "KdU Kostensenkung § 22 SGB II Bundessozialgericht schlüssiges Konzept",
+    "pages": [
+      "https://www.deutscher-verein.de/de/empfehlungen-stellungnahmen-zur-kdu-unterkunftskosten-sgb-ii/"
+    ],
+    "sibling_run_id": null,
+    "cost_usd": 0.007
+  },
+  {
+    "call_id": "mark-20261010T180000-t3",
+    "at": "2026-10-10T17:58:00Z",
+    "tool": "search",
+    "status": "ok",
+    "what": "Alleinerziehende Bürgergeld Betreuungsausfall BuT Bildungspaket",
+    "pages": [
+      "https://www.bertelsmann-stiftung.de/de/publikationen/publikation/did/alleinerziehende-und-buergergeld-zwischen-existenzsicherung-und-erwerbsdruck/"
+    ],
+    "sibling_run_id": null,
+    "cost_usd": 0.007
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld accounting, Teil 1 (laut gespeicherter Datei):
+{
+  "model_calls": 3,
+  "search_queries": 4,
+  "cost_usd": 0.032,
+  "probe_cost_usd": 0.0
+}

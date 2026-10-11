@@ -1,0 +1,516 @@
+# Proposals from plan lab-2026-10-10-amelie-lab-review-umsetzungsplan-register-2251d190445809eb
+
+Packet: amelie-lab-review-umsetzungsplan-register-2251d190445809eb · Candidate: amelie-lab-review-umsetzungsplan-register-2251d190445809eb
+Not applied. A human decides.
+
+- [06-suche/amelie-lab-protokoll.md] review: amelie-lab-review-umsetzungsplan-register-2251d190445809eb. Absicht: Are there already public registries, open datasets, or standardized digital repositories for published energy-efficiency implementation plans (e.g. EnSimiMaV / EnEfG in Germany or EU EED counterparts)?. Modell: not recorded. Existenzprüfung: nein. Alle Ideen ungeprüft. Die folgenden Angaben sind gespeicherte Modellausgaben, keine bestätigten Tatsachen. Nur grounded=true ist Evidenz; Score-Änderungen benötigen zusätzlich quote_status=verified. Quellen, fact_checks und fehlende Felder bleiben wie im Original; keine neuen Prüfungen durchgeführt.
+- [06-suche/amelie-lab-protokoll.md] Originalfeld packet_id, Teil 1 (laut gespeicherter Datei):
+"umsetzungsplan-register"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld theme, Teil 1 (laut gespeicherter Datei):
+"umsetzungsplan-register"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld question, Teil 1 (laut gespeicherter Datei):
+"Are there already public registries, open datasets, or standardized digital repositories for published energy-efficiency implementation plans (e.g. EnSimiMaV / EnEfG in Germany or EU EED counterparts)?"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld runs_executed, Teil 1 (laut gespeicherter Datei):
+1
+- [06-suche/amelie-lab-protokoll.md] Originalfeld findings, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "claim": "The German Energy Efficiency Act (EnEfG), in force since November 2023, mandates companies with an annual final energy consumption exceeding certain thresholds (e.g., 2.5 GWh or 2.77 GWh) to create, develop, and publish implementation plans for economically viable energy-saving measures.",
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9FDSJB5321v7DL14tZRaTCP2oXXFKagBPp71a-Z5eQZWGIqaabXWU7rev1NKr6YmrVBYRYakDVX1BFeAUG671iwJVnR_9UNTsCSg4_PcnVmq0Szk2uXaMZZRM0301jn2ujnXazlmKlkeTJ8_HJP-WdwfsAtCzyd0TvLJx873AtMuRXOHxjMDylZqFt0xTDjKUxpOPgLgmMxGUoXCsuuZFPNYjJbe1Yfh0e5IQj4xiED5rtlB1Rb5e",
+    "source_type": "commercial",
+    "retrieved_at": "2026-09-29T16:46:06Z",
+    "quote": "Section 9(1) EnEfG (Draft) gives businesses with an average total annual final energy consumption of more than 2.77 GWh and less than 23.6 GWh three years from completion of an energy audit to draw up and publish feasible implementation plans for all energy-saving measures identified as economically viable in an audit conducted pursuant to section 8(1), sentence 1 EDL-G.",
+    "reused_from_amelie": false,
+    "grounded": false,
+    "id": "F1",
+    "quote_status": "verified",
+    "resolved_url": "https://www.gleisslutz.com/en/aktuelles/know-how/gesetzentwurf-zur-beschleunigung-der-umsetzung-der-energieeffizienzrichtlinie",
+    "seen_in_runs": [
+      1
+    ]
+  },
+  {
+    "claim": "These implementation plans under EnEfG must be updated annually to reflect progress and formally acknowledged by company management.",
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9FDSJB5321v7DL14tZRaTCP2oXXFKagBPp71a-Z5eQZWGIqaabXWU7rev1NKr6YmrVBYRYakDVX1BFeAUG671iwJVnR_9UNTsCSg4_PcnVmq0Szk2uXaMZZRM0301jn2ujnXazlmKlkeTJ8_HJP-WdwfsAtCzyd0TvLJx873AtMuRXOHxjMDylZqFt0xTDjKUxpOPgLgmMxGUoXCsuuZFPNYjJbe1Yfh0e5IQj4xiED5rtlB1Rb5e",
+    "source_type": "commercial",
+    "retrieved_at": "2026-09-29T16:46:06Z",
+    "quote": "The implementation plans must be updated annually to reflect progress in implementing the identified measures and formally acknowledged by company management.",
+    "reused_from_amelie": false,
+    "grounded": false,
+    "id": "F2",
+    "quote_status": "verified",
+    "resolved_url": "https://www.gleisslutz.com/en/aktuelles/know-how/gesetzentwurf-zur-beschleunigung-der-umsetzung-der-energieeffizienzrichtlinie",
+    "seen_in_runs": [
+      1
+    ]
+  },
+  {
+    "claim": "Initially, the completeness and accuracy of EnEfG implementation plans had to be confirmed by a certifier, environmental verifier, or energy auditor prior to publication, but a draft amendment suggests this requirement might be removed, with plans instead being submitted to management and included in annual reports.",
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGaan6SLBQr3L9hFR2fO22g5OW6bCf_rW2r8ni7_R98xSPX3C2xBjfe-BzZvF0lcnqTpQ0QRQ6uQohTO2TExwvlAgxj6Bu0L7w88ikIT4kqcIuCjt4jecg7jmRbkfsgKBTZ423xLkWP0nXC17I4Y4LqrOVh2ItNPe_EPA==",
+    "source_type": "commercial",
+    "retrieved_at": "2026-09-29T16:46:06Z",
+    "quote": "The completeness and accuracy of the implementation plans must be confirmed by a certifier, environmental verifier or energy auditor prior to publication.",
+    "reused_from_amelie": false,
+    "grounded": false,
+    "id": "F3",
+    "quote_status": "verified",
+    "resolved_url": "https://www.arvato-systems.com/blog/enefg-obliges-to-save-energy",
+    "seen_in_runs": [
+      1
+    ]
+  },
+  {
+    "claim": "Fines of up to 50,000 Euros can be imposed for non-compliance with the EnEfG requirements regarding the creation, publication, or confirmation of implementation plans.",
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIcQKcsQdlz5_N4HFjDtzvfRSp7WjNPTkSuKKnz2DaycSDmuUsSUWLCP6VDl38oCCd_JW8111Gtj0Te2euL0-tigTjXxtOkebS7H4zDWnHZZadEHFQultZGesAEZkCfCNejxTwCp8E19IvOY8WiYQJcEHHvgPKTSOF4oTHE4TQ1Y8camnujtIUAFTPeBingeeukPCMnX8=",
+    "source_type": "commercial",
+    "retrieved_at": "2026-09-29T16:46:06Z",
+    "quote": "Für die nicht, verspätete, unvollständige oder fehlerhafte Erstellung, Bestätigung oder Veröffentlichung der Umsetzungspläne selbst drohen zudem Bußgelder von bis zu 50.000 Euro.",
+    "reused_from_amelie": false,
+    "grounded": false,
+    "id": "F4",
+    "quote_status": "unchecked",
+    "seen_in_runs": [
+      1
+    ]
+  },
+  {
+    "claim": "There is a specific 'Energy Efficiency Register for Data Centers' in Germany, where data centers with a nominal connected load of 300 kW or more must submit specific energy consumption data to federal authorities by March 31st of each year.",
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJK2Lb4dg2wUYmlsM2BpM_NGxt8Yylh3GAbc0igyIel18SfJEnlqTQT6_UeEhKsk79tmquAtPCJ28ulG3GS5ZhjDlIsBR_t9h4QW5s_zTd2q0QH5MrtVfKQptUuU2ZUnaUeEGjHfrLTtxwP6hHDLtGsELM0rUtM0d-44DrhmAhxQxxnYoryC8=",
+    "source_type": "commercial",
+    "retrieved_at": "2026-09-29T16:46:06Z",
+    "quote": "The German government is launching an Energy Efficiency Register for Data Centers. By March 31 of each year, data centers must submit their energy efficiency data to the register.",
+    "reused_from_amelie": false,
+    "grounded": false,
+    "id": "F5",
+    "quote_status": "verified",
+    "resolved_url": "https://dc-intelligence.com/dci-en/certificate/energieeffiezienzgesetz-enefg/",
+    "seen_in_runs": [
+      1
+    ]
+  },
+  {
+    "claim": "The U.S. Department of Energy developed the 'Standard Energy Efficiency Data (SEED) Platform™', an open-source enterprise data platform for managing building performance data, but this is focused on building performance rather than corporate implementation plans and is US-based.",
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwkw6pPEka9ZUYT4X9hyuoXL0dPtAkQ7KsYPUxXPAIV89xntL6Z8a8U-E2KUUVgbZU1h3Duc2jNXShX2e2wYM46XYFg4E7WUWFU33xM9iAOAah2VBNZyMAlA5xeUSvmqUDUg5XAh3l8jA79rODGnbpsqh89wfjGHdYo9nFpGLUDccOVOUZB3hrZoBVup4=",
+    "source_type": "government",
+    "retrieved_at": "2026-09-29T16:46:06Z",
+    "quote": "To address this challenge and save state and local governments from having to make duplicative, siloed investments, the U.S. Department of Energy developed the the Standard Energy Efficiency Data (SEED) Platform™. SEED is an open-source secure, enterprise data platform for managing portfolio scale building performance data from a variety of sources.",
+    "reused_from_amelie": false,
+    "grounded": false,
+    "id": "F6",
+    "quote_status": "verified",
+    "resolved_url": "https://www.energy.gov/cmei/buildings/standard-energy-efficiency-data-seed-platform",
+    "seen_in_runs": [
+      1
+    ]
+  },
+  {
+    "claim": "The European Energy Efficiency Directive (EED) sets overall energy efficiency targets and obligations for Member States, but the provided search results do not indicate a centralized EU-wide public registry for corporate energy efficiency implementation plans.",
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgr7sBjJ9i-y7XpeJUcQ07GrwohK_56SNy6z5st758xw2wWjzbUlMMLn4Ov6jvqN8l154Kumob0NK_0A--3wKiroYwo8PmYqc8x5S9rV4JKkV9I6_InkPCfnFYwt3A7fdkZxqjpRhsadYpUPX_mAZ_XBqaKTzmtFu6HkTWTVLulQVyhdSrVZgwOchnYb-3bqs9CjFBAwon9c9YZL4BVzXB8SG0l47pN-BpEN6suR10H_lytkh5yItVWEHVuQ==",
+    "source_type": "government",
+    "retrieved_at": "2026-09-29T16:46:06Z",
+    "quote": "The revised Energy Efficiency Directive (EU/2023/1791) significantly raises the EU's ambition on energy efficiency. It establishes 'energy efficiency first' as a fundamental principle of EU energy policy, giving it legal-standing for the first time.",
+    "reused_from_amelie": false,
+    "grounded": false,
+    "id": "F7",
+    "quote_status": "not_found",
+    "resolved_url": "https://energy.ec.europa.eu/topics/energy-efficiency/energy-efficiency-targets-directive-and-rules/energy-efficiency-directive_en",
+    "seen_in_runs": [
+      1
+    ]
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld contradictions, Teil 1 (laut gespeicherter Datei):
+[]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld gaps, Teil 1 (laut gespeicherter Datei):
+[
+  "While the EnEfG mandates the 'publication' of energy efficiency implementation plans, the specific mechanism or platform for this publication for general corporate plans is not clearly defined in the search results, suggesting a lack of a centralized, standardized public open-data registry for these plans.",
+  "The existence of a specialized 'Energy Efficiency Register for Data Centers' implies that a broader, centralized public open-data registry for all corporate energy efficiency implementation plans under EnEfG does not currently exist or is not widely publicized.",
+  "There is no evidence in the search results of a centralized, standardized public open-data registry at the EU level for corporate energy efficiency implementation plans, despite the overarching EU Energy Efficiency Directive."
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld terminology, Teil 1 (laut gespeicherter Datei):
+[
+  "BAFA (Bundesamt für Wirtschaft und Ausfuhrkontrolle): Federal Office for Economic Affairs and Export Control (Germany)",
+  "BfEE (Bundesstelle für Energieeffizienz): Federal Energy Efficiency Centre (Germany)",
+  "DIN EN 17463 (VALERI): Standard for cost-benefit analysis of energy efficiency measures",
+  "EED (Energy Efficiency Directive): EU Energy Efficiency Directive",
+  "EMAS (Eco-Management and Audit Scheme): A voluntary EU scheme for environmental management and environmental audits",
+  "EnEfG (Energieeffizienzgesetz): German Energy Efficiency Act",
+  "GWh: Gigawatt-hour",
+  "ISO 50001: International standard for energy management systems",
+  "PUE (Power Usage Effectiveness): A metric for data center energy efficiency",
+  "Umsetzungsplan: Implementation plan"
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld confidence, Teil 1 (laut gespeicherter Datei):
+0.9
+- [06-suche/amelie-lab-protokoll.md] Originalfeld queries, Teil 1 (laut gespeicherter Datei):
+[
+  "EU EED energy efficiency implementation plan public registry",
+  "EnEfG Umsetzungsplan register",
+  "EnEfG energy efficiency implementation plan publication mandate",
+  "Germany energy efficiency implementation plan database",
+  "public registry corporate energy efficiency plans",
+  "standardized digital repositories energy efficiency plans"
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld quellen_used, Teil 1 (laut gespeicherter Datei):
+[
+  "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4NPhBBN6TyS_DNO_7EULwZZuOCSY4ph1xVmP2PivzHMJoGoLJF0-PtYj1ojmdWRvkss-AOtCMjEzQ-OwbnFklX6-ZxQGPzQklhjYW0elTvnLC1Wo9OpmxG7ZYFiMdypNH-mmy",
+  "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEg4uoUM-kL0ZQ9PPbSzayqK1SLCMJMhTLDO0OCniNYdPXqnIfLuFLsvpfGYGaMa16vKTLefQcWdHHCxtI3ftv_6dkjwxKrQnoi2Xmm7eMyZ9r-CNPan5aVCnE_wPOkyGBsVrpiGLxLeYkxawe6_OBTvpt_LYOsuqQMz_jnq1n-sRNCYaeQGzQ6-Nth1owcymTnqS5PwX1pR0ypC61MvBeArxrHcoHjHYs2Y",
+  "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjkMFDJhtHeNxxtHGy41keHDOFT2CVB6PL7DFJ6z7mM-Hz9v8k8tCu9_rnYxFbm4q6otWe67-7nCt4JZzgOmWcGOvDrsK6LpWYfd6uNsCmLOh9CigABc31KXeUSUcSTDm8wMbkbruG5wVQ7xrCcmEfn94FwB3UPQvKfp-deWBojgtqJNQ-",
+  "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEoXueblCiA2cOo4vzJKtUD7dmFMPIbguBdqrgxcGCfTLnm4iu-yORyaYIkW3RBnkXVXyL3aqLGcYPXhNO1e7zE_pgghUGTshdkxk39kVxhpufb0Jhq4NB4T0Gbj3JllQzNX9vV9N5Ylqp7K0hFcH4rg6PzUt1wY3G6dDkiref7T1wIFlcVSpHpYAZpH1ORTjV3e-ZG03KTSSouGlML9zkp5sZDxH9ZUP1Inlgnd37xqOfjj3g0Su6VmVW01nyUVa-99zlC",
+  "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErFVJM6DwQGnbD7wNJaJqZ4Bu4WydVmlPIDh4QLvb3OFn-X0A-UHYwOkbAyTbC556uHDiRKDOXWrCOgA8yFAw69-Jxj0xFyIRdJ0Nt38COPXf4JyJ-MtRkz35JP3Sr",
+  "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-p_c64owkpmf_macACfbn8HHHnEkDSVjkTBBGtdJT14BDq1K4dY4J0OKesiBL4OlGGiqwrPvPqCVfFQbJOt85lS1Yaxrb_mOsKt3Bz37qhupDcwOEqHJ2RSl6GCx2HqCuAbYp_7vOkc_YUd7lc3Q2XoJoMpdEURiUrrlrDnTjuV6WqG-0dC6t9n3wrZzanbKKfFd0bkx7AYoq",
+  "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFkZnnjESUUlKJZCmg10WgDuapDNh7RUAHVIFswQpjAz5uXneRHtA-NrC2R-99ET_YO-ssiHVdZTSc1DP9SH71WJ0VXVBQh-lKE9wU7YS-hv4AoNxlElySU8SfnF9J18o2oEVEI__mnMzk1HN3h9AAunXB",
+  "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIcQKcsQdlz5_N4HFjDtzvfRSp7WjNPTkSuKKnz2DaycSDmuUsSUWLCP6VDl38oCCd_JW8111Gtj0Te2euL0-tigTjXxtOkebS7H4zDWnHZZadEHFQultZGesAEZkCfCNejxTwCp8E19IvOY8WiYQJcEHHvgPKTSOF4oTHE4TQ1Y8camnujtIUAFTPeBingeeukPCMnX8=",
+  "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJK2Lb4dg2wUYmlsM2BpM_NGxt8Yylh3GAbc0igyIel18SfJEnlqTQT6_UeEhKsk79tmquAtPCJ28ulG3GS5ZhjDlIsBR_t9h4QW5s_zTd2q0QH5MrtVfKQptUuU2ZUnaUeEGjHfrLTtxwP6hHDLtGsELM0rUtM0d-44DrhmAhxQxxnYoryC8=",
+  "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPSbZNLY8LYn-4rCDDjv_fYeHMA-vwNcQVWlyGtSzbiijSZpHX8NKZSzfdPoRUcemHkk8BJzFHB8O-WuNFGuwyBGH7HQPLQH9Z9dYNf1_z",
+  "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwkw6pPEka9ZUYT4X9hyuoXL0dPtAkQ7KsYPUxXPAIV89xntL6Z8a8U-E2KUUVgbZU1h3Duc2jNXShX2e2wYM46XYFg4E7WUWFU33xM9iAOAah2VBNZyMAlA5xeUSvmqUDUg5XAh3l8jA79rODGnbpsqh89wfjGHdYo9nFpGLUDccOVOUZB3hrZoBVup4=",
+  "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6Sj5U8NByDBVz5G81gT0qtHsNTMf8zyJSbGJM56pph1Ek79Rtis14Nq-hAv0F34NOg4te9ycdlbv_m5f3YX0rf9CJ-3iXU5s4sHButWP9j3pIl8dv5sJQGHZsKg33cs7aZMCcE0QJyMe3BRfh7ygboiXrIrtkB0MaCal01UxdxoruFNGllYeA",
+  "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6dNTfhnVRNScKyGCBkfas1RrgtqJ_dmwc6-OEjo8fv_nMycBfnIE2OSvw4X0s-9jlxbm3lq7aECneRi3vXg9piQEao-oTasm8O5JfeUbq8WIC_pHDSgmHEQcbs2AbES9nE3ZINhldQkyC-RQHu3TNlTsKWvyyXDMTBsuqBw==",
+  "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9FDSJB5321v7DL14tZRaTCP2oXXFKagBPp71a-Z5eQZWGIqaabXWU7rev1NKr6YmrVBYRYakDVX1BFeAUG671iwJVnR_9UNTsCSg4_PcnVmq0Szk2uXaMZZRM0301jn2ujnXazlmKlkeTJ8_HJP-WdwfsAtCzyd0TvLJx873AtMuRXOHxjMDylZqFt0xTDjKUxpOPgLgmMxGUoXCsuuZFPNYjJbe1Yfh0e5IQj4xiED5rtlB1Rb5e",
+  "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCZIqOZD5dfOeE-oE7QedSRGUpJAiQVrsZe00bknbgxrI9PMTELX24sKgpK6VJVTC7J5DP49l4QanjM3B1vPnuDHawjBjL9fsUC1CBsSW0LIMTgQ9rPSZVtASY-rvprYhOA4lf75PJczaJChqXqqXPqXtfeA5xQXWXhaqJsA==",
+  "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNwNtJdW0mJ1RXPs0uu7J72qalH8-l1XQe9qJxpTjAXa2hRjYS3gnPtIdF6zyzHxaJG5Ev0wXncopA0tXxIAevAIxk0_BogXUXffg158H9dqx8khXvm5Va_HpTaDTtIVfrCcfBoxRxVkvsyB1U9R7uMZGQgH5jd4SWdlry",
+  "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGSY7cncOMqEeVkn5ZtH6FptGl29D9kz8rGctN_053il5F4_Txwxv1His9QB-evw_UXaQJaiOrrLGPU31X9Pq4JsMtQe0p6Cr4hnMTgza5hxmrX_sYEbAmHG8-XGwgIXkNAuJh80IxFUw==",
+  "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGaR1Ug_fTHcr_RL8kSGSesnmk1Z_gFt5R33evDZ5jv-G-QdVizCXBBctMHimIimAdZTs5aLlRNhKN3Z1EPB-AHFhRrmznnj4aTFczZPEEEYlxqM8OBT4ecRz2WZso8d5vgy0m-bFHBDUui1GH5DhlG8tBWs6aDbye2KDfaLLZ0gJnid9noKfCBHFh8YWalzDpIBgi1gQQMQ2RTNq_7_Q==",
+  "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGaan6SLBQr3L9hFR2fO22g5OW6bCf_rW2r8ni7_R98xSPX3C2xBjfe-BzZvF0lcnqTpQ0QRQ6uQohTO2TExwvlAgxj6Bu0L7w88ikIT4kqcIuCjt4jecg7jmRbkfsgKBTZ423xLkWP0nXC17I4Y4LqrOVh2ItNPe_EPA==",
+  "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGiWlKkPom_gQxwoMuPRj86LKMCwuvp32y-sGslhkmL8fMHoOEigRzhBTnM4KnNIcZkrkRID3fbATgMZvRfLvkBD8rXh9y7fvLURzF7VfnVE9YoyBquvhgcBDyxtbhwFP-q1CfrbywQ_MgRqvUW-5CQ7qNQ2naw2xE7EGeA8yYQThS8LJVda-w3vzSafyp4kGfAtcTAbfSHZ8lYyjP2yKDp43APXaEJympAE5ElCix_q8ImeQhckO1VENbBAGapA-19sHQnzjkgr8ouNgc=",
+  "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsPS8a3iLmXCAM92xfOiV90oYw-x-lGkWfZhyG1ZaxDl-f_pSLchZEXeItx6IFb_BHSFSDR-EKzzK9bZ7t3nLqsCWklV0eYEsKlbq6sor_trpnbxASrKLf__qjDmbanH-oCEbaQgOh8449uEM=",
+  "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGyHG1zT7aSSPi_dmORpUXdwEji2TqKzCCkzJItPcDyThSMCnb-XRVa1F_9qmIGpKV2f7A46nHsnlp4LDBIiIDhpucHB6VFzYvKZkBsuPdJnLJj4USQ7ahZsos3e1ealnuRfg==",
+  "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJ3z1YQqq6P6gHg3izrhQ4Idm2KF3gUo4CJ5hkV8d2-Bn44Mop0LbJ0nORTSbn1d-HBqysfnYmEWa8J19cb8sJ17iH0m4Jxfcg5vXnauaPyu8KsVEApt5ZzUrHlKzcE-2QvG56OdneEACfeCKFrgg3Ozq3DJ5ISllT_eTatFXTM6XMcu9LWMQ1O-gGa3FuqRzNiXAOwKAU",
+  "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKw_hc6vBSLOdP6Bjl2cQxVLBaPvQzhXIKRJJvnMS8UxA_SpIpAOv-pjfgTI-1B0XDSlPvKktcQq91US7HLwfxvWYMGmmTxpntzTSezZfdMIUPPNLL5e4pn6HjDxGiSqbTsjF8930H_mc5tsmigjPTWH-OuJPuo_g9nDKaNHYeMw==",
+  "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUGSuleRgfEr5rIwI894yVzUZaRbbuvubqgPOK3ipYXsWIwRfpSSkY8-xgGBWqG8_sbyFB9IKu-wlnJCZhW3SCwLx7TBiGne8zs0s_rQ-1ampZ-MSQrzw8NjZ1z5Xo71mok8HtzFC99MqW9tQ=",
+  "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHX1NogEkUblMUdUgghHO8Ehl7ZZhHB7N9SElH8nIphIQ_nXcaDxfxbQA8OYGaBPzZBxh5tnkcjYqxDpGxUgDUZaxNAU1Lz6rn_NO34IwtJ1EGEXwBuBgJ7Li3GGgPZ2kpuG_kuNvS1oxXND4oU-AcN5PT8et1euvHbP_mAnmznis-LdNzxFD1AQa9cYg5FQYti8NJp2BQ1Mw7VRvbZo7eOEQi_Si_aZN1snXfSiKvB8X1fS_ur7K5W6dfQGin2JeocswYA7WzZrJ9y1JctB2QhOUfkVSE2f4zropfmjDwdOBA==",
+  "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgr7sBjJ9i-y7XpeJUcQ07GrwohK_56SNy6z5st758xw2wWjzbUlMMLn4Ov6jvqN8l154Kumob0NK_0A--3wKiroYwo8PmYqc8x5S9rV4JKkV9I6_InkPCfnFYwt3A7fdkZxqjpRhsadYpUPX_mAZ_XBqaKTzmtFu6HkTWTVLulQVyhdSrVZgwOchnYb-3bqs9CjFBAwon9c9YZL4BVzXB8SG0l47pN-BpEN6suR10H_lytkh5yItVWEHVuQ==",
+  "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHkhULFtXqAySDOFdMjI7SPwDfcJ_dvTPr89KIXQfaPTro_GYYXPHk0lt8aZ2kjuS23EdWK5ZQAa6yPzmI6KAd48ZUI7Dp0SE3gD5tkcs2Xgxguvbwimma_z0XfHQNTWIZxp8K_ed1tLGe8-IK5D205bQeYEaH42CI-CIZYACKObbbIjtXIVj8AM8xP12j88TdDRkdTqmUiGhCXtSxm9r8cfi-8fsBqITPXEodwsbL5wjal0w==",
+  "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtlqLLzRb02tU1Y4ROqoeDfGiuhPxLcj0veYos_GczipbzwDjC1lhOuStpu0-gOrGqPEeTtKLNmTF8HYkg6S7VAXzZfBYeJpcazmLEjBvhLV990oGxT3Vl-TtA9tZSrt-modb6rfhyq3CCUgCem-f2XCfS7b4aEF8g9mwmI96M5EoojF4i7f4orA==",
+  "https://www.google.com/search?q=time+in+Germany"
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld search_accounting, Teil 1 (laut gespeicherter Datei):
+{
+  "month": "2026-09",
+  "queries_in_run": 6,
+  "month_total_queries": 184,
+  "free_allowance_remaining": 4816,
+  "overage_queries": 0,
+  "overage_cost_usd": 0.0,
+  "is_within_free_allowance": true
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld blind_review, Teil 1 (laut gespeicherter Datei):
+{
+  "packet_id": "amelie-review-2026-09-29-001",
+  "supported_claims": [],
+  "unsupported_claims": [
+    {
+      "claim": "German Energy Efficiency Act (EnEfG) mandates publication of energy efficiency implementation plans.",
+      "reason": "No evidence was provided to support this claim. The packet contains no source records.",
+      "contradicting_source_id": null
+    },
+    {
+      "claim": "No centralized public open-data registry aggregates corporate implementation plans in a standardized format.",
+      "reason": "No evidence was provided to support this claim. The packet contains no source records.",
+      "contradicting_source_id": null
+    }
+  ],
+  "missing_evidence": [
+    "The full text or relevant excerpts of the German Energy Efficiency Act (EnEfG) detailing mandates for publication of energy efficiency implementation plans.",
+    "Official documentation or reports from German governmental bodies or EU institutions regarding the existence or absence of centralized public open-data registries for corporate energy efficiency implementation plans.",
+    "A comprehensive survey or analysis of existing national or international databases, registries, or reporting mechanisms for energy efficiency implementation plans, including their standardization and public accessibility."
+  ],
+  "possible_prior_art": [
+    {
+      "hypothesis": "There may be existing public registries or databases for energy efficiency implementation plans, potentially under different names or specific to certain regions or legal frameworks (e.g., related to EnSimiMaV, EnEfG in Germany, or EU EED).",
+      "terminology_hint": "EnSimiMaV, EnEfG, EU EED, Umsetzungsplan, public registry, open data, standardized digital repositories",
+      "flagged_for": "independent_researcher"
+    },
+    {
+      "hypothesis": "Existing national or EU-level reporting requirements for energy efficiency might already lead to the aggregation of corporate implementation plan data, even if not explicitly labeled as a 'centralized public open-data registry' or in a fully 'standardized format' as implied by the claim.",
+      "terminology_hint": "EU Energy Efficiency Directive (EED), national energy efficiency action plans, reporting obligations, monitoring frameworks",
+      "flagged_for": "independent_researcher"
+    }
+  ],
+  "alternative_interpretations": [
+    "The absence of a 'centralized public open-data registry' does not preclude the existence of decentralized, private, or non-open data registries, or other forms of public reporting that do not meet all criteria of the claim.",
+    "The term 'standardized format' might be interpreted differently across various jurisdictions or reporting frameworks, meaning some level of standardization could exist without being universally recognized as 'standardized' in the context of the claim."
+  ],
+  "critical_questions": [
+    "What specific articles or sections of the German Energy Efficiency Act (EnEfG) or related legislation (e.g., EnSimiMaV) explicitly mandate the 'publication' of energy efficiency implementation plans, and what are the requirements for such publication?",
+    "What are the current reporting mechanisms and data collection practices for corporate energy efficiency plans in Germany and under the EU Energy Efficiency Directive (EED)? Are these mechanisms publicly accessible, and to what extent is the data standardized?",
+    "Are there any ongoing or planned initiatives by German or EU authorities to establish a centralized public open-data registry for energy efficiency implementation plans?",
+    "What constitutes a 'standardized format' for these plans, and what are the current industry or regulatory standards, if any, for reporting such information?"
+  ],
+  "confidence": 0.5,
+  "model": "gemini-2.5-flash",
+  "validation": {
+    "notes": [
+      "confidence capped at 0.5: the packet has no source records"
+    ]
+  }
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld trend, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "run": 1,
+    "timestamp": "2026-09-29T16:47:28.527089+00:00",
+    "label": "validator wiring",
+    "status": "ok",
+    "model": "gemini-2.5-flash",
+    "question": "Are there already public registries, open datasets, or standardized digital repositories for published energy-efficiency implementation plans (e.g. EnSimiMaV / EnEfG in Germany or EU EED counterparts)?",
+    "findings": 7,
+    "new_findings": 7,
+    "grounded": 0,
+    "grounded_ratio": 0.0,
+    "quotes_verified": 5,
+    "quotes_not_found": 1,
+    "specific_urls": 7,
+    "queries": 6,
+    "confidence": 0.9,
+    "gaps": 3,
+    "cost_usd": 0.057624,
+    "review_supported": 0,
+    "review_unsupported": 2,
+    "review_hypotheses": 2
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld runs, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "run": 1,
+    "timestamp": "2026-09-29T16:47:28.527089+00:00",
+    "packet_id": "amelie-review-2026-09-29-001",
+    "label": "validator wiring",
+    "status": "ok",
+    "metrics": {
+      "model": "gemini-2.5-flash",
+      "question": "Are there already public registries, open datasets, or standardized digital repositories for published energy-efficiency implementation plans (e.g. EnSimiMaV / EnEfG in Germany or EU EED counterparts)?",
+      "findings": 7,
+      "new_findings": 7,
+      "grounded": 0,
+      "grounded_ratio": 0.0,
+      "quotes_verified": 5,
+      "quotes_not_found": 1,
+      "specific_urls": 7,
+      "queries": 6,
+      "confidence": 0.9,
+      "gaps": 3,
+      "cost_usd": 0.057624,
+      "review_supported": 0,
+      "review_unsupported": 2,
+      "review_hypotheses": 2
+    },
+    "result": {
+      "queries": [
+        "EnEfG Umsetzungsplan register",
+        "EnEfG energy efficiency implementation plan publication mandate",
+        "EU EED energy efficiency implementation plan public registry",
+        "Germany energy efficiency implementation plan database",
+        "public registry corporate energy efficiency plans",
+        "standardized digital repositories energy efficiency plans"
+      ],
+      "search_attempts": 2,
+      "packet_id": "amelie-review-2026-09-29-001",
+      "question": "Are there already public registries, open datasets, or standardized digital repositories for published energy-efficiency implementation plans (e.g. EnSimiMaV / EnEfG in Germany or EU EED counterparts)?",
+      "findings": [
+        {
+          "claim": "The German Energy Efficiency Act (EnEfG), in force since November 2023, mandates companies with an annual final energy consumption exceeding certain thresholds (e.g., 2.5 GWh or 2.77 GWh) to create, develop, and publish implementation plans for economically viable energy-saving measures.",
+          "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9FDSJB5321v7DL14tZRaTCP2oXXFKagBPp71a-Z5eQZWGIqaabXWU7rev1NKr6YmrVBYRYakDVX1BFeAUG671iwJVnR_9UNTsCSg4_PcnVmq0Szk2uXaMZZRM0301jn2ujnXazlmKlkeTJ8_HJP-WdwfsAtCzyd0TvLJx873AtMuRXOHxjMDylZqFt0xTDjKUxpOPgLgmMxGUoXCsuuZFPNYjJbe1Yfh0e5IQj4xiED5rtlB1Rb5e",
+          "source_type": "commercial",
+          "retrieved_at": "2026-09-29T16:46:06Z",
+          "quote": "Section 9(1) EnEfG (Draft) gives businesses with an average total annual final energy consumption of more than 2.77 GWh and less than 23.6 GWh three years from completion of an energy audit to draw up and publish feasible implementation plans for all energy-saving measures identified as economically viable in an audit conducted pursuant to section 8(1), sentence 1 EDL-G.",
+          "reused_from_amelie": false,
+          "grounded": false,
+          "id": "F1",
+          "quote_status": "verified",
+          "resolved_url": "https://www.gleisslutz.com/en/aktuelles/know-how/gesetzentwurf-zur-beschleunigung-der-umsetzung-der-energieeffizienzrichtlinie"
+        },
+        {
+          "claim": "These implementation plans under EnEfG must be updated annually to reflect progress and formally acknowledged by company management.",
+          "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9FDSJB5321v7DL14tZRaTCP2oXXFKagBPp71a-Z5eQZWGIqaabXWU7rev1NKr6YmrVBYRYakDVX1BFeAUG671iwJVnR_9UNTsCSg4_PcnVmq0Szk2uXaMZZRM0301jn2ujnXazlmKlkeTJ8_HJP-WdwfsAtCzyd0TvLJx873AtMuRXOHxjMDylZqFt0xTDjKUxpOPgLgmMxGUoXCsuuZFPNYjJbe1Yfh0e5IQj4xiED5rtlB1Rb5e",
+          "source_type": "commercial",
+          "retrieved_at": "2026-09-29T16:46:06Z",
+          "quote": "The implementation plans must be updated annually to reflect progress in implementing the identified measures and formally acknowledged by company management.",
+          "reused_from_amelie": false,
+          "grounded": false,
+          "id": "F2",
+          "quote_status": "verified",
+          "resolved_url": "https://www.gleisslutz.com/en/aktuelles/know-how/gesetzentwurf-zur-beschleunigung-der-umsetzung-der-energieeffizienzrichtlinie"
+        },
+        {
+          "claim": "Initially, the completeness and accuracy of EnEfG implementation plans had to be confirmed by a certifier, environmental verifier, or energy auditor prior to publication, but a draft amendment suggests this requirement might be removed, with plans instead being submitted to management and included in annual reports.",
+          "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGaan6SLBQr3L9hFR2fO22g5OW6bCf_rW2r8ni7_R98xSPX3C2xBjfe-BzZvF0lcnqTpQ0QRQ6uQohTO2TExwvlAgxj6Bu0L7w88ikIT4kqcIuCjt4jecg7jmRbkfsgKBTZ423xLkWP0nXC17I4Y4LqrOVh2ItNPe_EPA==",
+          "source_type": "commercial",
+          "retrieved_at": "2026-09-29T16:46:06Z",
+          "quote": "The completeness and accuracy of the implementation plans must be confirmed by a certifier, environmental verifier or energy auditor prior to publication.",
+          "reused_from_amelie": false,
+          "grounded": false,
+          "id": "F3",
+          "quote_status": "verified",
+          "resolved_url": "https://www.arvato-systems.com/blog/enefg-obliges-to-save-energy"
+        },
+        {
+          "claim": "Fines of up to 50,000 Euros can be imposed for non-compliance with the EnEfG requirements regarding the creation, publication, or confirmation of implementation plans.",
+          "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIcQKcsQdlz5_N4HFjDtzvfRSp7WjNPTkSuKKnz2DaycSDmuUsSUWLCP6VDl38oCCd_JW8111Gtj0Te2euL0-tigTjXxtOkebS7H4zDWnHZZadEHFQultZGesAEZkCfCNejxTwCp8E19IvOY8WiYQJcEHHvgPKTSOF4oTHE4TQ1Y8camnujtIUAFTPeBingeeukPCMnX8=",
+          "source_type": "commercial",
+          "retrieved_at": "2026-09-29T16:46:06Z",
+          "quote": "Für die nicht, verspätete, unvollständige oder fehlerhafte Erstellung, Bestätigung oder Veröffentlichung der Umsetzungspläne selbst drohen zudem Bußgelder von bis zu 50.000 Euro.",
+          "reused_from_amelie": false,
+          "grounded": false,
+          "id": "F4",
+          "quote_status": "unchecked"
+        },
+        {
+          "claim": "There is a specific 'Energy Efficiency Register for Data Centers' in Germany, where data centers with a nominal connected load of 300 kW or more must submit specific energy consumption data to federal authorities by March 31st of each year.",
+          "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJK2Lb4dg2wUYmlsM2BpM_NGxt8Yylh3GAbc0igyIel18SfJEnlqTQT6_UeEhKsk79tmquAtPCJ28ulG3GS5ZhjDlIsBR_t9h4QW5s_zTd2q0QH5MrtVfKQptUuU2ZUnaUeEGjHfrLTtxwP6hHDLtGsELM0rUtM0d-44DrhmAhxQxxnYoryC8=",
+          "source_type": "commercial",
+          "retrieved_at": "2026-09-29T16:46:06Z",
+          "quote": "The German government is launching an Energy Efficiency Register for Data Centers. By March 31 of each year, data centers must submit their energy efficiency data to the register.",
+          "reused_from_amelie": false,
+          "grounded": false,
+          "id": "F5",
+          "quote_status": "verified",
+          "resolved_url": "https://dc-intelligence.com/dci-en/certificate/energieeffiezienzgesetz-enefg/"
+        },
+        {
+          "claim": "The U.S. Department of Energy developed the 'Standard Energy Efficiency Data (SEED) Platform™', an open-source enterprise data platform for managing building performance data, but this is focused on building performance rather than corporate implementation plans and is US-based.",
+          "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwkw6pPEka9ZUYT4X9hyuoXL0dPtAkQ7KsYPUxXPAIV89xntL6Z8a8U-E2KUUVgbZU1h3Duc2jNXShX2e2wYM46XYFg4E7WUWFU33xM9iAOAah2VBNZyMAlA5xeUSvmqUDUg5XAh3l8jA79rODGnbpsqh89wfjGHdYo9nFpGLUDccOVOUZB3hrZoBVup4=",
+          "source_type": "government",
+          "retrieved_at": "2026-09-29T16:46:06Z",
+          "quote": "To address this challenge and save state and local governments from having to make duplicative, siloed investments, the U.S. Department of Energy developed the the Standard Energy Efficiency Data (SEED) Platform™. SEED is an open-source secure, enterprise data platform for managing portfolio scale building performance data from a variety of sources.",
+          "reused_from_amelie": false,
+          "grounded": false,
+          "id": "F6",
+          "quote_status": "verified",
+          "resolved_url": "https://www.energy.gov/cmei/buildings/standard-energy-efficiency-data-seed-platform"
+        },
+        {
+          "claim": "The European Energy Efficiency Directive (EED) sets overall energy efficiency targets and obligations for Member States, but the provided search results do not indicate a centralized EU-wide public registry for corporate energy efficiency implementation plans.",
+          "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgr7sBjJ9i-y7XpeJUcQ07GrwohK_56SNy6z5st758xw2wWjzbUlMMLn4Ov6jvqN8l154Kumob0NK_0A--3wKiroYwo8PmYqc8x5S9rV4JKkV9I6_InkPCfnFYwt3A7fdkZxqjpRhsadYpUPX_mAZ_XBqaKTzmtFu6HkTWTVLulQVyhdSrVZgwOchnYb-3bqs9CjFBAwon9c9YZL4BVzXB8SG0l47pN-BpEN6suR10H_lytkh5yItVWEHVuQ==",
+          "source_type": "government",
+          "retrieved_at": "2026-09-29T16:46:06Z",
+          "quote": "The revised Energy Efficiency Directive (EU/2023/1791) significantly raises the EU's ambition on energy efficiency. It establishes 'energy efficiency first' as a fundamental principle of EU energy policy, giving it legal-standing for the first time.",
+          "reused_from_amelie": false,
+          "grounded": false,
+          "id": "F7",
+          "quote_status": "not_found",
+          "resolved_url": "https://energy.ec.europa.eu/topics/energy-efficiency/energy-efficiency-targets-directive-and-rules/energy-efficiency-directive_en"
+        }
+      ],
+      "contradictions": [],
+      "gaps": [
+        "While the EnEfG mandates the 'publication' of energy efficiency implementation plans, the specific mechanism or platform for this publication for general corporate plans is not clearly defined in the search results, suggesting a lack of a centralized, standardized public open-data registry for these plans.",
+        "The existence of a specialized 'Energy Efficiency Register for Data Centers' implies that a broader, centralized public open-data registry for all corporate energy efficiency implementation plans under EnEfG does not currently exist or is not widely publicized.",
+        "There is no evidence in the search results of a centralized, standardized public open-data registry at the EU level for corporate energy efficiency implementation plans, despite the overarching EU Energy Efficiency Directive."
+      ],
+      "terminology": [
+        "EnEfG (Energieeffizienzgesetz): German Energy Efficiency Act",
+        "EED (Energy Efficiency Directive): EU Energy Efficiency Directive",
+        "Umsetzungsplan: Implementation plan",
+        "GWh: Gigawatt-hour",
+        "EMAS (Eco-Management and Audit Scheme): A voluntary EU scheme for environmental management and environmental audits",
+        "ISO 50001: International standard for energy management systems",
+        "DIN EN 17463 (VALERI): Standard for cost-benefit analysis of energy efficiency measures",
+        "BAFA (Bundesamt für Wirtschaft und Ausfuhrkontrolle): Federal Office for Economic Affairs and Export Control (Germany)",
+        "BfEE (Bundesstelle für Energieeffizienz): Federal Energy Efficiency Centre (Germany)",
+        "PUE (Power Usage Effectiveness): A metric for data center energy efficiency"
+      ],
+      "confidence": 0.9,
+      "quellen_used": [
+        "https://www.google.com/search?q=time+in+Germany",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9FDSJB5321v7DL14tZRaTCP2oXXFKagBPp71a-Z5eQZWGIqaabXWU7rev1NKr6YmrVBYRYakDVX1BFeAUG671iwJVnR_9UNTsCSg4_PcnVmq0Szk2uXaMZZRM0301jn2ujnXazlmKlkeTJ8_HJP-WdwfsAtCzyd0TvLJx873AtMuRXOHxjMDylZqFt0xTDjKUxpOPgLgmMxGUoXCsuuZFPNYjJbe1Yfh0e5IQj4xiED5rtlB1Rb5e",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6dNTfhnVRNScKyGCBkfas1RrgtqJ_dmwc6-OEjo8fv_nMycBfnIE2OSvw4X0s-9jlxbm3lq7aECneRi3vXg9piQEao-oTasm8O5JfeUbq8WIC_pHDSgmHEQcbs2AbES9nE3ZINhldQkyC-RQHu3TNlTsKWvyyXDMTBsuqBw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-p_c64owkpmf_macACfbn8HHHnEkDSVjkTBBGtdJT14BDq1K4dY4J0OKesiBL4OlGGiqwrPvPqCVfFQbJOt85lS1Yaxrb_mOsKt3Bz37qhupDcwOEqHJ2RSl6GCx2HqCuAbYp_7vOkc_YUd7lc3Q2XoJoMpdEURiUrrlrDnTjuV6WqG-0dC6t9n3wrZzanbKKfFd0bkx7AYoq",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEoXueblCiA2cOo4vzJKtUD7dmFMPIbguBdqrgxcGCfTLnm4iu-yORyaYIkW3RBnkXVXyL3aqLGcYPXhNO1e7zE_pgghUGTshdkxk39kVxhpufb0Jhq4NB4T0Gbj3JllQzNX9vV9N5Ylqp7K0hFcH4rg6PzUt1wY3G6dDkiref7T1wIFlcVSpHpYAZpH1ORTjV3e-ZG03KTSSouGlML9zkp5sZDxH9ZUP1Inlgnd37xqOfjj3g0Su6VmVW01nyUVa-99zlC",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGaan6SLBQr3L9hFR2fO22g5OW6bCf_rW2r8ni7_R98xSPX3C2xBjfe-BzZvF0lcnqTpQ0QRQ6uQohTO2TExwvlAgxj6Bu0L7w88ikIT4kqcIuCjt4jecg7jmRbkfsgKBTZ423xLkWP0nXC17I4Y4LqrOVh2ItNPe_EPA==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGiWlKkPom_gQxwoMuPRj86LKMCwuvp32y-sGslhkmL8fMHoOEigRzhBTnM4KnNIcZkrkRID3fbATgMZvRfLvkBD8rXh9y7fvLURzF7VfnVE9YoyBquvhgcBDyxtbhwFP-q1CfrbywQ_MgRqvUW-5CQ7qNQ2naw2xE7EGeA8yYQThS8LJVda-w3vzSafyp4kGfAtcTAbfSHZ8lYyjP2yKDp43APXaEJympAE5ElCix_q8ImeQhckO1VENbBAGapA-19sHQnzjkgr8ouNgc=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIcQKcsQdlz5_N4HFjDtzvfRSp7WjNPTkSuKKnz2DaycSDmuUsSUWLCP6VDl38oCCd_JW8111Gtj0Te2euL0-tigTjXxtOkebS7H4zDWnHZZadEHFQultZGesAEZkCfCNejxTwCp8E19IvOY8WiYQJcEHHvgPKTSOF4oTHE4TQ1Y8camnujtIUAFTPeBingeeukPCMnX8=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtlqLLzRb02tU1Y4ROqoeDfGiuhPxLcj0veYos_GczipbzwDjC1lhOuStpu0-gOrGqPEeTtKLNmTF8HYkg6S7VAXzZfBYeJpcazmLEjBvhLV990oGxT3Vl-TtA9tZSrt-modb6rfhyq3CCUgCem-f2XCfS7b4aEF8g9mwmI96M5EoojF4i7f4orA==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJ3z1YQqq6P6gHg3izrhQ4Idm2KF3gUo4CJ5hkV8d2-Bn44Mop0LbJ0nORTSbn1d-HBqysfnYmEWa8J19cb8sJ17iH0m4Jxfcg5vXnauaPyu8KsVEApt5ZzUrHlKzcE-2QvG56OdneEACfeCKFrgg3Ozq3DJ5ISllT_eTatFXTM6XMcu9LWMQ1O-gGa3FuqRzNiXAOwKAU",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKw_hc6vBSLOdP6Bjl2cQxVLBaPvQzhXIKRJJvnMS8UxA_SpIpAOv-pjfgTI-1B0XDSlPvKktcQq91US7HLwfxvWYMGmmTxpntzTSezZfdMIUPPNLL5e4pn6HjDxGiSqbTsjF8930H_mc5tsmigjPTWH-OuJPuo_g9nDKaNHYeMw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHkhULFtXqAySDOFdMjI7SPwDfcJ_dvTPr89KIXQfaPTro_GYYXPHk0lt8aZ2kjuS23EdWK5ZQAa6yPzmI6KAd48ZUI7Dp0SE3gD5tkcs2Xgxguvbwimma_z0XfHQNTWIZxp8K_ed1tLGe8-IK5D205bQeYEaH42CI-CIZYACKObbbIjtXIVj8AM8xP12j88TdDRkdTqmUiGhCXtSxm9r8cfi-8fsBqITPXEodwsbL5wjal0w==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGyHG1zT7aSSPi_dmORpUXdwEji2TqKzCCkzJItPcDyThSMCnb-XRVa1F_9qmIGpKV2f7A46nHsnlp4LDBIiIDhpucHB6VFzYvKZkBsuPdJnLJj4USQ7ahZsos3e1ealnuRfg==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHX1NogEkUblMUdUgghHO8Ehl7ZZhHB7N9SElH8nIphIQ_nXcaDxfxbQA8OYGaBPzZBxh5tnkcjYqxDpGxUgDUZaxNAU1Lz6rn_NO34IwtJ1EGEXwBuBgJ7Li3GGgPZ2kpuG_kuNvS1oxXND4oU-AcN5PT8et1euvHbP_mAnmznis-LdNzxFD1AQa9cYg5FQYti8NJp2BQ1Mw7VRvbZo7eOEQi_Si_aZN1snXfSiKvB8X1fS_ur7K5W6dfQGin2JeocswYA7WzZrJ9y1JctB2QhOUfkVSE2f4zropfmjDwdOBA==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwkw6pPEka9ZUYT4X9hyuoXL0dPtAkQ7KsYPUxXPAIV89xntL6Z8a8U-E2KUUVgbZU1h3Duc2jNXShX2e2wYM46XYFg4E7WUWFU33xM9iAOAah2VBNZyMAlA5xeUSvmqUDUg5XAh3l8jA79rODGnbpsqh89wfjGHdYo9nFpGLUDccOVOUZB3hrZoBVup4=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgr7sBjJ9i-y7XpeJUcQ07GrwohK_56SNy6z5st758xw2wWjzbUlMMLn4Ov6jvqN8l154Kumob0NK_0A--3wKiroYwo8PmYqc8x5S9rV4JKkV9I6_InkPCfnFYwt3A7fdkZxqjpRhsadYpUPX_mAZ_XBqaKTzmtFu6HkTWTVLulQVyhdSrVZgwOchnYb-3bqs9CjFBAwon9c9YZL4BVzXB8SG0l47pN-BpEN6suR10H_lytkh5yItVWEHVuQ==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjkMFDJhtHeNxxtHGy41keHDOFT2CVB6PL7DFJ6z7mM-Hz9v8k8tCu9_rnYxFbm4q6otWe67-7nCt4JZzgOmWcGOvDrsK6LpWYfd6uNsCmLOh9CigABc31KXeUSUcSTDm8wMbkbruG5wVQ7xrCcmEfn94FwB3UPQvKfp-deWBojgtqJNQ-",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUGSuleRgfEr5rIwI894yVzUZaRbbuvubqgPOK3ipYXsWIwRfpSSkY8-xgGBWqG8_sbyFB9IKu-wlnJCZhW3SCwLx7TBiGne8zs0s_rQ-1ampZ-MSQrzw8NjZ1z5Xo71mok8HtzFC99MqW9tQ=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6Sj5U8NByDBVz5G81gT0qtHsNTMf8zyJSbGJM56pph1Ek79Rtis14Nq-hAv0F34NOg4te9ycdlbv_m5f3YX0rf9CJ-3iXU5s4sHButWP9j3pIl8dv5sJQGHZsKg33cs7aZMCcE0QJyMe3BRfh7ygboiXrIrtkB0MaCal01UxdxoruFNGllYeA",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFkZnnjESUUlKJZCmg10WgDuapDNh7RUAHVIFswQpjAz5uXneRHtA-NrC2R-99ET_YO-ssiHVdZTSc1DP9SH71WJ0VXVBQh-lKE9wU7YS-hv4AoNxlElySU8SfnF9J18o2oEVEI__mnMzk1HN3h9AAunXB",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsPS8a3iLmXCAM92xfOiV90oYw-x-lGkWfZhyG1ZaxDl-f_pSLchZEXeItx6IFb_BHSFSDR-EKzzK9bZ7t3nLqsCWklV0eYEsKlbq6sor_trpnbxASrKLf__qjDmbanH-oCEbaQgOh8449uEM=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJK2Lb4dg2wUYmlsM2BpM_NGxt8Yylh3GAbc0igyIel18SfJEnlqTQT6_UeEhKsk79tmquAtPCJ28ulG3GS5ZhjDlIsBR_t9h4QW5s_zTd2q0QH5MrtVfKQptUuU2ZUnaUeEGjHfrLTtxwP6hHDLtGsELM0rUtM0d-44DrhmAhxQxxnYoryC8=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEg4uoUM-kL0ZQ9PPbSzayqK1SLCMJMhTLDO0OCniNYdPXqnIfLuFLsvpfGYGaMa16vKTLefQcWdHHCxtI3ftv_6dkjwxKrQnoi2Xmm7eMyZ9r-CNPan5aVCnE_wPOkyGBsVrpiGLxLeYkxawe6_OBTvpt_LYOsuqQMz_jnq1n-sRNCYaeQGzQ6-Nth1owcymTnqS5PwX1pR0ypC61MvBeArxrHcoHjHYs2Y",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNwNtJdW0mJ1RXPs0uu7J72qalH8-l1XQe9qJxpTjAXa2hRjYS3g
+- [06-suche/amelie-lab-protokoll.md] Originalfeld runs, Teil 2 (laut gespeicherter Datei):
+nPtIdF6zyzHxaJG5Ev0wXncopA0tXxIAevAIxk0_BogXUXffg158H9dqx8khXvm5Va_HpTaDTtIVfrCcfBoxRxVkvsyB1U9R7uMZGQgH5jd4SWdlry",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCZIqOZD5dfOeE-oE7QedSRGUpJAiQVrsZe00bknbgxrI9PMTELX24sKgpK6VJVTC7J5DP49l4QanjM3B1vPnuDHawjBjL9fsUC1CBsSW0LIMTgQ9rPSZVtASY-rvprYhOA4lf75PJczaJChqXqqXPqXtfeA5xQXWXhaqJsA==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4NPhBBN6TyS_DNO_7EULwZZuOCSY4ph1xVmP2PivzHMJoGoLJF0-PtYj1ojmdWRvkss-AOtCMjEzQ-OwbnFklX6-ZxQGPzQklhjYW0elTvnLC1Wo9OpmxG7ZYFiMdypNH-mmy",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGSY7cncOMqEeVkn5ZtH6FptGl29D9kz8rGctN_053il5F4_Txwxv1His9QB-evw_UXaQJaiOrrLGPU31X9Pq4JsMtQe0p6Cr4hnMTgza5hxmrX_sYEbAmHG8-XGwgIXkNAuJh80IxFUw==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGaR1Ug_fTHcr_RL8kSGSesnmk1Z_gFt5R33evDZ5jv-G-QdVizCXBBctMHimIimAdZTs5aLlRNhKN3Z1EPB-AHFhRrmznnj4aTFczZPEEEYlxqM8OBT4ecRz2WZso8d5vgy0m-bFHBDUui1GH5DhlG8tBWs6aDbye2KDfaLLZ0gJnid9noKfCBHFh8YWalzDpIBgi1gQQMQ2RTNq_7_Q==",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErFVJM6DwQGnbD7wNJaJqZ4Bu4WydVmlPIDh4QLvb3OFn-X0A-UHYwOkbAyTbC556uHDiRKDOXWrCOgA8yFAw69-Jxj0xFyIRdJ0Nt38COPXf4JyJ-MtRkz35JP3Sr",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPSbZNLY8LYn-4rCDDjv_fYeHMA-vwNcQVWlyGtSzbiijSZpHX8NKZSzfdPoRUcemHkk8BJzFHB8O-WuNFGuwyBGH7HQPLQH9Z9dYNf1_z"
+      ],
+      "grounding_sources": [],
+      "provenance_stats": {
+        "rewritten": 0,
+        "kept": 7,
+        "unmatched": 0
+      },
+      "search_accounting": {
+        "month": "2026-09",
+        "queries_in_run": 6,
+        "month_total_queries": 184,
+        "free_allowance_remaining": 4816,
+        "overage_queries": 0,
+        "overage_cost_usd": 0.0,
+        "is_within_free_allowance": true
+      }
+    },
+    "blind_review": {
+      "packet_id": "amelie-review-2026-09-29-001",
+      "supported_claims": [],
+      "unsupported_claims": [
+        {
+          "claim": "German Energy Efficiency Act (EnEfG) mandates publication of energy efficiency implementation plans.",
+          "reason": "No evidence was provided to support this claim. The packet contains no source records.",
+          "contradicting_source_id": null
+        },
+        {
+          "claim": "No centralized public open-data registry aggregates corporate implementation plans in a standardized format.",
+          "reason": "No evidence was provided to support this claim. The packet contains no source records.",
+          "contradicting_source_id": null
+        }
+      ],
+      "missing_evidence": [
+        "The full text or relevant excerpts of the German Energy Efficiency Act (EnEfG) detailing mandates for publication of energy efficiency implementation plans.",
+        "Official documentation or reports from German governmental bodies or EU institutions regarding the existence or absence of centralized public open-data registries for corporate energy efficiency implementation plans.",
+        "A comprehensive survey or analysis of existing national or international databases, registries, or reporting mechanisms for energy efficiency implementation plans, including their standardization and public accessibility."
+      ],
+      "possible_prior_art": [
+        {
+          "hypothesis": "There may be existing public registries or databases for energy efficiency implementation plans, potentially under different names or specific to certain regions or legal frameworks (e.g., related to EnSimiMaV, EnEfG in Germany, or EU EED).",
+          "terminology_hint": "EnSimiMaV, EnEfG, EU EED, Umsetzungsplan, public registry, open data, standardized digital repositories",
+          "flagged_for": "independent_researcher"
+        },
+        {
+          "hypothesis": "Existing national or EU-level reporting requirements for energy efficiency might already lead to the aggregation of corporate implementation plan data, even if not explicitly labeled as a 'centralized public open-data registry' or in a fully 'standardized format' as implied by the claim.",
+          "terminology_hint": "EU Energy Efficiency Directive (EED), national energy efficiency action plans, reporting obligations, monitoring frameworks",
+          "flagged_for": "independent_researcher"
+        }
+      ],
+      "alternative_interpretations": [
+        "The absence of a 'centralized public open-data registry' does not preclude the existence of decentralized, private, or non-open data registries, or other forms of public reporting that do not meet all criteria of the claim.",
+        "The term 'standardized format' might be interpreted differently across various jurisdictions or reporting frameworks, meaning some level of standardization could exist without being universally recognized as 'standardized' in the context of the claim."
+      ],
+      "critical_questions": [
+        "What specific articles or sections of the German Energy Efficiency Act (EnEfG) or related legislation (e.g., EnSimiMaV) explicitly mandate the 'publication' of energy efficiency implementation plans, and what are the requirements for such publication?",
+        "What are the current reporting mechanisms and data collection practices for corporate energy efficiency plans in Germany and under the EU Energy Efficiency Directive (EED)? Are these mechanisms publicly accessible, and to what extent is the data standardized?",
+        "Are there any ongoing or planned initiatives by German or EU authorities to establish a centralized public open-data registry for energy efficiency implementation plans?",
+        "What constitutes a 'standardized format' for these plans, and what are the current industry or regulatory standards, if any, for reporting such information?"
+      ],
+      "confidence": 0.5,
+      "model": "gemini-2.5-flash",
+      "validation": {
+        "notes": [
+          "confidence capped at 0.5: the packet has no source records"
+        ]
+      }
+    }
+  }
+]

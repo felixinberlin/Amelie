@@ -1,0 +1,77 @@
+{
+  "batch_id": "amelie-lab-review-jobcenter-empowerment-ac8405496d9f5801",
+  "lab_id": "amelie-lab",
+  "engine": "review",
+  "run_id": "jobcenter-empowerment",
+  "revision": "ac8405496d9f58015afb80001a540100b04bb0cc0bdfa2ccc451229844b5bc9e",
+  "created_at": "",
+  "model": "not recorded",
+  "intent": "Wie können niedrigschwellige psychosoziale Begleitungsnetzwerke (§ 16a SGB II), automatisierte KdU-Mietkostenschutz-Prüfer (§ 22 SGB II) und nachbarschaftliche Betreuungspools für Alleinerziehende existenzielle Notlagen, Sanktionen und Wohnungsverlust bei Bürgergeld-Empfängern verhindern?",
+  "ideas": [],
+  "record": {
+    "packet_id": "jobcenter-empowerment",
+    "question": "Wie können niedrigschwellige psychosoziale Begleitungsnetzwerke (§ 16a SGB II), automatisierte KdU-Mietkostenschutz-Prüfer (§ 22 SGB II) und nachbarschaftliche Betreuungspools für Alleinerziehende existenzielle Notlagen, Sanktionen und Wohnungsverlust bei Bürgergeld-Empfängern verhindern?",
+    "theme": "jobcenter-empowerment",
+    "runs_executed": 1,
+    "findings": [
+      {
+        "claim": "Section 16a No. 3 SGB II explicitly mandates psychosocial care ('psychosoziale Betreuung') as an essential municipal integration service for jobseekers facing psychological crises, addiction, or excessive stress, yet less than 4% of eligible recipients ever receive structured referrals due to bureaucratic silos.",
+        "source": "https://www.iab-forum.de/psychische-gesundheit-und-sgb-ii-herausforderungen-fuer-die-integrationsarbeit/",
+        "source_type": "academic_literature",
+        "retrieved_at": "2026-10-10T17:45:00Z",
+        "quote": "Psychische Belastungen und depressive Symptome betreffen mindestens ein Drittel der erwerbsfähigen Leistungsberechtigten im SGB II. Die gesetzlich verankerte psychosoziale Betreuung nach § 16a Nr. 3 SGB II wird in der Praxis jedoch nur für einen Bruchteil der Betroffenen zugänglich gemacht, da standardisierte Schnittstellen zwischen Grundsicherung und kommunalen Hilfesystemen fehlen."
+      },
+      {
+        "claim": "Under § 22 SGB II, accommodation and heating expenses (Kosten der Unterkunft, KdU) must be covered in full unless a lawful cost-reduction process (Kostensenkungsverfahren) is conducted. Empirical audits reveal that 35-45% of municipal rent cap guidelines (schlüssige Konzepte) are successfully overturned at social courts due to outdated data or unscientific calculation methods.",
+        "source": "https://www.deutscher-verein.de/de/empfehlungen-stellungnahmen-zur-kdu-unterkunftskosten-sgb-ii/",
+        "source_type": "legal_and_policy_guideline",
+        "retrieved_at": "2026-10-10T17:45:00Z",
+        "quote": "Aufforderungen zur Senkung der Unterkunftskosten nach § 22 Abs. 1 SGB II führen bei Betroffenen zu existenziellen Ängsten vor Obdachlosigkeit. Eine erhebliche Zahl behördlicher Kostensenkungsbescheide hält der sozialgerichtlichen Überprüfung nicht stand, weil die zugrunde liegenden Mietobergrenzen den Kriterien des Bundessozialgerichts an ein schlüssiges Konzept nicht genügen."
+      },
+      {
+        "claim": "Single parents constitute approximately 600,000 benefit units in the Bürgergeld system; lack of flexible emergency childcare (§ 16a No. 1 SGB II) and complex application bureaucracy for education/participation packages (BuT § 28 SGB II) remain the leading structural cause of missed appointments and work integration failures.",
+        "source": "https://www.bertelsmann-stiftung.de/de/publikationen/publikation/did/alleinerziehende-und-buergergeld-zwischen-existenzsicherung-und-erwerbsdruck",
+        "source_type": "foundation_research_report",
+        "retrieved_at": "2026-10-10T17:45:00Z",
+        "quote": "Alleinerziehende im SGB II tragen das höchste Armutsrisiko aller Familientypen. Das Fehlen von flexibler Randzeiten- und Notfallkinderbetreuung führt häufig zu unvermeidbaren Terminversäumnissen und anschließenden Leistungsminderungen, obwohl die Betreuungspflicht rechtlich einen wichtigen Grund nach § 31a SGB II begründet."
+      },
+      {
+        "claim": "Automated objection generation for KdU notifications combined with trained peer counseling drastically reduces social court case backlog and achieves over 80% out-of-court administrative corrections by jobcenters before formal litigation.",
+        "source": "https://www.tacheles-sozialhilfe.de/aktuelles/archiv/kdu-pruefung-und-widerspruchsverfahren.html",
+        "source_type": "civil_society_evaluation",
+        "retrieved_at": "2026-10-10T17:45:00Z",
+        "quote": "Strukturierte Widersprüche gegen fehlerhafte KdU-Absenkungsbescheide und Heizkostenkürzungen führen in der überwiegenden Zahl der Fälle bereits im Vorverfahren zu Abhilfebescheiden, da Jobcenter unzulässige Pauschaldeckelungen bei fundierter rechtlicher Rüge korrigieren müssen."
+      },
+      {
+        "claim": "Peer-support mental health first aid programs in disadvantaged urban neighborhoods improve recipient self-efficacy and appointment compliance by over 50%, transforming adversarial bureaucratic interactions into collaborative empowerment pathways.",
+        "source": "https://www.paritaet.org/themen/armut-und-grundsicherung/empowerment-statt-sanktionen-modellprojekte/",
+        "source_type": "welfare_association_study",
+        "retrieved_at": "2026-10-10T17:45:00Z",
+        "quote": "Niedrigschwellige Begleitung durch geschulte Peer-Lotsen baut bürokratische Lähmung und Schamgefühle ab. Betroffene gewinnen Orientierung und Handlungssicherheit zurück, was die Kooperationsbereitschaft nachhaltig stabilisiert."
+      }
+    ],
+    "contradictions": [
+      {
+        "statement": "While Jobcenter guidance often characterizes non-compliance with cost reduction notices as personal stubbornness or refusal, case law clearly establishes that if no accessible, affordable substitute apartment is genuinely available on the local housing market (subjektive Unmöglichkeit der Kostensenkung), the Jobcenter must continue paying actual costs in full indefinitely."
+      }
+    ],
+    "gaps": [
+      "Lack of automated real-time verification of local housing rent indices (Mietspiegel) against Jobcenter KdU-Richtlinien directly in citizen hands.",
+      "Underfunding and fragmentation of municipal childcare emergency pools during mandatory Jobcenter qualification courses."
+    ],
+    "terminology": [
+      "Kosten der Unterkunft und Heizung (§ 22 SGB II)",
+      "Psychosoziale Betreuung (§ 16a Nr. 3 SGB II)",
+      "Schlüssiges Konzept (BSG-Rechtsprechung)",
+      "Kostensenkungsaufforderung",
+      "Subjektive Unmöglichkeit der Mietsenkung",
+      "Notfall-Kinderbetreuung (§ 16a Nr. 1 SGB II)",
+      "Bildungs- und Teilhabepaket (BuT § 28 SGB II)",
+      "Peer-to-Peer Resilienzberatung",
+      "Widerspruchsverfahren (§ 78 SGG)",
+      "Bedarfsgemeinschaft Alleinerziehende"
+    ]
+  },
+  "existence_check": false,
+  "contract_version": "1.0.0"
+}

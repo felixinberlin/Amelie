@@ -1,0 +1,645 @@
+{
+  "batch_id": "amelie-lab-lacunar-lacunar-20260930T100201-4ab848-e7c0bbedd1bf9494",
+  "lab_id": "amelie-lab",
+  "engine": "lacunar",
+  "run_id": "lacunar-20260930T100201-4ab848",
+  "revision": "e7c0bbedd1bf9494aae545d4ef5cd3e447ddb69bfaf385424defb919e4b02c1b",
+  "created_at": "2026-09-30T10:07:55Z",
+  "model": "gemini-2.5-flash",
+  "intent": "Rubinien als invasive Species",
+  "ideas": [
+    {
+      "local_id": "C11",
+      "record": {
+        "candidate_id": "C11",
+        "rank": 1,
+        "idea": "Ein KI-Modell, das basierend auf Fotos des Umfelds einer Robinie (Bodenbeschaffenheit, Lichteinfall, angrenzende Vegetation) eine individuelle 'Resilienz-Prognose' für den Austrieb nach der Behandlung erstellt und vorschlägt, welche Nachkontrollstrategie an diesem spezifischen Ort am effektivsten wäre.",
+        "gap": "Es fehlt eine standortspezifische, datengestützte Empfehlung für die optimale Nachkontrollstrategie bei der Robinienbekämpfung, die nicht auf allgemeinem Fachwissen, sondern auf den spezifischen Gegebenheiten basiert.",
+        "gap_stands_alone": true,
+        "boden_type": "transformational",
+        "removed_assumption": "Die Annahme, dass die Wahl der Nachkontrollstrategie hauptsächlich auf allgemeinen Richtlinien und der Erfahrung des Anwenders beruhen muss, wird entfernt.",
+        "who_has_problem": "Freiwillige und Fachleute im Naturschutz, die unsicher sind, welche spezifische Nachkontrollstrategie an einem bestimmten Standort die größte Erfolgsaussicht hat.",
+        "why_now": "Fortschritte in der multimodalen KI (Bildanalyse kombiniert mit ökologischen Modellen) und prädiktiver Analytik ermöglichen es, komplexe Standortfaktoren aus Fotos zu extrahieren und maßgeschneiderte Empfehlungen zu generieren.",
+        "buildable": "Ja, erfordert umfangreiche Trainingsdaten, die Fotos von Robinien-Standorten mit bekannten Resilienz- und Behandlungserfolgen verknüpfen.",
+        "evidence_urls": [
+          "https://www.waldwissen.net/de/waldwirtschaft/schadensmanagement/neue-arten/management-der-invasiven-robinie",
+          "https://www.mdpi.com/2073-445X/14/7/1389"
+        ],
+        "collider_mechanism": "Der Mechanismus der \"Sauerteig-Reifephase\", der durch Beobachtung von Umgebungsfaktoren die \"richtige\" Fütterung und Pflege für einen optimalen Reifeprozess vorschlägt, wird hier angewendet. Das KI-Modell analysiert Standortfaktoren (Umgebung der Robinie) wie die \"Umwelt\" des Sauerteigs, um die \"richtige\" \"Pflege\" (Nachkontrollstrategie) für die Robinie zu \"prognostizieren\" und deren \"Reifung\" (Erschöpfung) zu optimieren."
+      }
+    },
+    {
+      "local_id": "C1",
+      "record": {
+        "candidate_id": "C1",
+        "rank": 2,
+        "idea": "Eine App, die 'virtuelle Robinien' im Smartphone-Garten anlegt, die dieselben Austriebs- und Bekämpfungsmuster wie echte Robinien simulieren. Nutzer müssen hier ihre echten Bekämpfungsstrategien virtuell anwenden und erhalten sofortiges Feedback, wie 'ihr' Robinienbestand in 3 Jahren aussehen würde, basierend auf ihrer Strategie.",
+        "gap": "Freiwillige können den langfristigen Erfolg ihrer Robinien-Bekämpfungsstrategien nicht einschätzen, ohne jahrelang auf Ergebnisse zu warten.",
+        "gap_stands_alone": true,
+        "boden_type": "transformational",
+        "removed_assumption": "Die Annahme, dass der Erfolg von Bekämpfungsmaßnahmen erst nach langer Zeit durch direkte Beobachtung festgestellt werden kann, wird entfernt.",
+        "who_has_problem": "Freiwillige, die invasive Robinien bekämpfen und unsicher sind, ob ihre Maßnahmen langfristig wirken. Kommunen und Naturschutzorganisationen, die Freiwillige schulen und motivieren wollen.",
+        "why_now": "Fortschritte in der Simulations- und Modellierungs-KI erlauben die realistische Vorhersage komplexer biologischer Prozesse über Jahre hinweg basierend auf Eingabedaten.",
+        "buildable": "Ja, erfordert jedoch eine fundierte ökologische Modellierung der Robinien-Ausbreitung und -Reaktion auf Bekämpfung, gekoppelt mit einer Simulations-Engine und einer benutzerfreundlichen Oberfläche.",
+        "evidence_urls": [
+          "https://www.mdpi.com/2073-445X/14/7/1389",
+          "https://www.waldwissen.net/de/waldwirtschaft/schadensmanagement/neue-arten/management-der-invasiven-robinie",
+          "https://www.tagesspiegel.de/planspiele-mit-aliens-wie-invasive-arten-die-okologische-zukunft-beeinflussen-konnten-10129003.html",
+          "https://www.cgiar.org/news-events/news/using-games-support-invasive-species-management"
+        ],
+        "collider_mechanism": "Die Mechanismen der \"Sauerteig-Reifephase\" – die Überführung eines langsam reifenden Prozesses in ein modellierbares System mit schneller, messbarer \"Reaktion\" und die Vorhersage zukünftiger Zustände basierend auf Anfangsbedingungen und \"Fütterungsstrategie\" – werden angewendet, um die langfristige Entwicklung der Robinienpopulation sichtbar und steuerbar zu machen."
+      }
+    },
+    {
+      "local_id": "C5",
+      "record": {
+        "candidate_id": "C5",
+        "rank": 3,
+        "idea": "Eine 'Sauerteig-Scorecard' für Robinienstandorte, die nicht nur die Präsenz, sondern auch die 'Vitalität' des Befalls nach der Behandlung anhand von standardisierten Beobachtungen (z.B. Blattfarbe, Austriebsdichte) bewertet und einen 'Gesundheits-Score' des Standorts erstellt. Dieser Score entwickelt sich über die Zeit wie eine enzymatische Kurve.",
+        "gap": "Es fehlt eine standardisierte, über die Zeit nachvollziehbare und objektiv bewertbare Metrik für den Erfolg von Robinien-Bekämpfungsmaßnahmen auf Standortebene, die die Vitalität des Befalls widerspiegelt.",
+        "gap_stands_alone": true,
+        "boden_type": "exploratory",
+        "removed_assumption": "Die Annahme, dass der Erfolg von Robinien-Bekämpfungsmaßnahmen nur durch qualitative Einschätzungen oder das vollständige Verschwinden des Befalls nach langer Zeit beurteilt werden kann, wird entfernt.",
+        "who_has_problem": "Behörden, Naturschutzorganisationen und Citizen Science Projekte, die den Erfolg von Robinien-Bekämpfungsmaßnahmen objektiv bewerten und über lange Zeiträume verfolgen müssen.",
+        "why_now": "Fortschritte in der mobilen Bildanalyse und datengesteuerten Bewertung erlauben die Standardisierung und Quantifizierung von Beobachtungen (z.B. Blattfarbe, Dichte) und die Modellierung von Zeitreihendaten.",
+        "buildable": "Ja, erfordert ein trainiertes KI-Modell zur Auswertung von Fotos (Blattfarbe, Dichte) und eine mathematische Modellierung der Score-Entwicklung.",
+        "evidence_urls": [
+          "https://www.waldwissen.net/de/waldwirtschaft/schadensmanagement/neue-arten/management-der-invasiven-robinie",
+          "https://www.mdpi.com/2073-445X/14/7/1389",
+          "https://play.google.com/store/apps/details?id=com.vitaliscore.app",
+          "https://www.appbrain.com/app/plant-health-assessment/com.pkd2989.researchapp"
+        ],
+        "collider_mechanism": "Der Mechanismus der \"enzymatischen Kurve\" als Modell für zeitliche Entwicklung und Sättigung wird angewendet, um die Dynamik der Robinien-Vitalität nach einer Bekämpfung zu quantifizieren. Ähnlich wie Enzyme Reaktionen beschleunigen und Sättigungspunkte erreichen, zeigt der Score an, wie schnell und vollständig die Bekämpfungsmaßnahme wirkt und wann ein \"Sättigungs- bzw. Erschöpfungszustand\" der Robinie erreicht ist."
+      }
+    },
+    {
+      "local_id": "C3",
+      "record": {
+        "candidate_id": "C3",
+        "rank": 4,
+        "idea": "Eine AR-Anwendung, die Nutzer beim Nachkontrollgang an zuvor markierten Robinienstandorten virtuell mit 'richtigen' und 'falschen' Austrieben überlagert, um das Auge für die korrekte Erkennung zu schulen und sofortiges Feedback zu geben.",
+        "gap": "Freiwillige haben Schwierigkeiten, die oft subtilen Unterschiede zwischen korrekten und falschen Robinien-Austrieben nach einer Behandlung im Feld zu erkennen und erhalten kein sofortiges Lernfeedback.",
+        "gap_stands_alone": true,
+        "boden_type": "combinational",
+        "removed_assumption": "Die Annahme, dass die visuelle Schulung für die Robinien-Erkennung nur durch erfahrene Experten im Feld oder wiederholte manuelle Vergleiche erfolgen kann, wird entfernt.",
+        "who_has_problem": "Unerfahrene Freiwillige und neue Mitarbeiter im Naturschutz, die lernen müssen, Robinien-Austriebe nach einer Bekämpfung sicher zu identifizieren.",
+        "why_now": "Fortschritte in AR-Technologie und mobiler Computer Vision ermöglichen die Echtzeit-Überlagerung digitaler Informationen mit der realen Umgebung und die präzise Objekterkennung auf Smartphones.",
+        "buildable": "Ja, erfordert ein trainiertes KI-Modell für Robinien-Austriebe (richtig/falsch) und eine robuste AR-Engine für die präzise Verankerung im Raum.",
+        "evidence_urls": [
+          "https://www.mdpi.com/2073-445X/14/7/1389",
+          "https://www.waldwissen.net/de/waldwirtschaft/schadensmanagement/neue-arten/management-der-invasiven-robinie",
+          "https://ideausher.com/blog/how-to-build-an-ar-app-similar-to-plantsnap/",
+          "https://www.thoughtmedia.com/what-app-identifies-plants-from-a-picture-best-ai-tools/",
+          "https://ai.plainenglish.io/build-your-first-plant-identification-ai-even-if-youre-a-complete-beginner-900e6f8183c7"
+        ],
+        "collider_mechanism": "Der Mechanismus der \"Sauerteig-Reifephase\" – die kontinuierliche Überwachung und das Feedback auf subtile Veränderungen, um den Reifegrad zu bestimmen – wird hier angewendet, indem die AR-Anwendung kontinuierlich visuelles Feedback zu den \"Reife\"-Merkmalen (richtigen oder falschen Austrieben) der Robinie gibt, um das Erkennungssystem des Nutzers zu \"schulen\" und zu \"reifen\"."
+      }
+    }
+  ],
+  "record": {
+    "run_id": "lacunar-20260930T100201-4ab848",
+    "intent": "Rubinien als invasive Species",
+    "model": "gemini-2.5-flash",
+    "created_at": "2026-09-30T10:07:55Z",
+    "state_missing": [],
+    "plan": {
+      "area": "Rubinien als invasive Species",
+      "mode_list": [
+        "Robinien-Bestimmung per Foto-Upload",
+        "Kartierung von Robinien-Vorkommen durch Citizen Science",
+        "Meldung neuer Robinien-Standorte an Naturschutzbehörden",
+        "Informationsportal über Ökologie, Verbreitung und Bekämpfung der Robinie",
+        "Anleitung zur fachgerechten Entfernung von Robinien im eigenen Garten",
+        "Plattform zur Koordination von ehrenamtlichen Bekämpfungsaktionen",
+        "Erinnerungsfunktion für Nachkontrollen und Pflegemaßnahmen",
+        "Visualisierung der Robinien-Verbreitung auf interaktiven Karten",
+        "Bilderkennung von Robinien-Jungpflanzen und Keimlingen",
+        "Prognosemodelle für die Ausbreitung der Robinie unter Klimawandel"
+      ],
+      "anchor_queries": [
+        "Kartieranleitung invasive Pflanzenarten manuell Deutschland",
+        "Leitfaden Robinie Bekämpfung Nachkontrolle Protokoll",
+        "Bürgerwissenschaft invasive Arten Datenqualität Herausforderungen"
+      ]
+    },
+    "frames": {
+      "frame_a": {
+        "name": "Nachkontrolle invasiver Robinien und Datenqualität in der Bürgerwissenschaft",
+        "source_url": "https://www.waldwissen.net/de/waldwirtschaft/schadensmanagement/neue-arten/management-der-invasiven-robinie",
+        "source_label": "Typ A: scheme without software",
+        "friction": "Langwierige, fehleranfällige und oft vernachlässigte Nachkontrolle invasiver Robinien durch Laien, die zu einer Verschlechterung statt Verbesserung der Situation führt. Unsicherheit über die korrekte Ausführung und den Erfolg der Maßnahmen.",
+        "slots": {
+          "materials": "Robinien (Pflanzen), Werkzeuge (Sägen, Spaten), Schutzbekleidung, Protokollbögen/Apps, Karten, Kamera.",
+          "mechanics": "Identifikation von Robinien, Entfernung (Ringeln, Roden), Dokumentation von Standort und Maßnahme, wiederholte Nachkontrolle über Jahre, Bewertung des Erfolgs, Schulung von Freiwilligen.",
+          "goals": "Effektive und nachhaltige Bekämpfung invasiver Robinien, Schutz der heimischen Biodiversität, Verbesserung der Datenqualität für Naturschutzbehörden.",
+          "emotions": "Frustration (wenn Robinien wieder austreiben), Hoffnung (auf erfolgreiche Bekämpfung), Verantwortung, Gemeinschaftsgefühl (bei gemeinsamen Aktionen), Unsicherheit (bei der Bestimmung/Ausführung).",
+          "constraints": "Begrenzte Zeit und Ressourcen (Geld, Personal, Freiwillige), Notwendigkeit der Langfristigkeit, fehlendes Expertenwissen bei Laien, räumliche Verzerrung der Daten, Gefahr der Fehlbehandlung.",
+          "rituals_timing": "Saisonale Bekämpfungszyklen (z.B. Ringeln im Winter und Frühsommer), mehrjährige Nachkontrollintervalle, einmalige Schulung, regelmäßige Berichtspflichten."
+        }
+      },
+      "frame_b": {
+        "name": "Sauerteig-Reifephase & enzymatische Kurven",
+        "domain": "Biologie/Handwerk",
+        "slots": {
+          "materials": "Mehl, Wasser, Starter (Sauerteigkultur), Behälter, Waage, Thermometer, Backofen.",
+          "mechanics": "Füttern des Starters in regelmäßigen Abständen, Beobachtung von Blasenbildung/Volumenzunahme/Geruch/Textur, Temperaturmanagement, Zeitmanagement für Reifephasen, Backen nach optimaler Reife.",
+          "goals": "Aktiver, stabiler und aromatischer Sauerteigstarter, gelungener Brotlaib mit spezifischer Krume und Geschmack, Beherrschung des Prozesses.",
+          "emotions": "Geduld, Stolz (auf gelungenes Brot), Frustration (bei misslungenem Sauerteig), Neugier (Verständnis des Prozesses), Verbundenheit (mit Tradition).",
+          "constraints": "Präzise Einhaltung von Temperaturen und Mengenverhältnissen, Zeitdruck bei Reifephasen, Abhängigkeit von Umgebungstemperatur, Notwendigkeit der Kontinuität (regelmäßiges Füttern).",
+          "rituals_timing": "Tägliches oder wöchentliches Füttern, Einhaltung spezifischer Reifezeiten (z.B. 4-6h bei Raumtemperatur), konstante Pflege des Starters."
+        }
+      },
+      "distance": 5,
+      "friction_points": [
+        "Frame A: Der Erfolg einer Maßnahme ist erst nach Jahren sichtbar und unsicher. Frame B: Der Erfolg (oder Misserfolg) ist innerhalb von Stunden bis Tagen sichtbar und direkt spürbar (Geruch, Textur, Volumen).",
+        "Frame A: Falsche Ausführung kann die Situation verschlimmern (stärkerer Austrieb). Frame B: Falsche Ausführung führt zu ungenießbarem Brot, aber selten zu einer 'Verschlimmerung' des Starters selbst.",
+        "Frame A: Datenqualität ist ein Problem bei der Erfassung durch Laien, was die Gesamtbewertung erschwert. Frame B: Die Bewertung des Sauerteigs ist subjektiv, aber direkt erfahrbar und für das Ergebnis entscheidend; Fehler sind Teil des Lernprozesses.",
+        "Frame A: Motivation muss über Jahre aufrechterhalten werden, oft ohne sofortige Belohnung. Frame B: Regelmäßige, oft tägliche Interaktion und direkte sensorische Rückmeldung hält die Motivation aufrecht.",
+        "Frame A: Die 'richtige' Vorgehensweise ist oft kompliziert und erfordert Fachwissen oder genaue Anleitungen. Frame B: Die 'richtige' Vorgehensweise ist erlernbar durch Wiederholung, Beobachtung und Anpassung an ein lebendiges System.",
+        "Frame A: Maßnahmen sind destruktiv (Pflanzen entfernen). Frame B: Maßnahmen sind konstruktiv und nährend (Sauerteig füttern).",
+        "Frame A: Kontext ist ein großes, komplexes Ökosystem. Frame B: Kontext ist ein kleines, kontrollierbares System."
+      ],
+      "personas": [
+        {
+          "who": "Frau Schmidt (68, Rentnerin, engagierte Gartenbesitzerin)",
+          "would_do": "Sie hat im letzten Jahr mühsam einige Robinien aus ihrem Garten und angrenzenden Feldrain entfernt. Nun ist sie unsicher, ob sie alles richtig gemacht hat und wann und wie sie nachkontrollieren muss. Sie fürchtet, dass die Bäume noch stärker zurückkommen könnten und möchte ihre Mühe nicht umsonst gewesen sein lassen. Sie würde sich wünschen, dass der Prozess der Nachkontrolle so klar und 'belohnend' ist wie das Aufgehen eines Kuchens."
+        },
+        {
+          "who": "Herr Weber (42, Förster im Nebenberuf, Naturliebhaber)",
+          "would_do": "Er betreut ehrenamtlich ein kleines Waldstück und hat dort mit anderen Freiwilligen eine Robinienbekämpfungsaktion durchgeführt. Er weiß um die Tücken der Robinie und die Wichtigkeit der Nachkontrolle, aber ihm fehlt ein einfaches, verlässliches System, um die vielen Standorte im Blick zu behalten und die Freiwilligen über Jahre hinweg bei der Stange zu halten und ihre Ergebnisse zu validieren. Er wünscht sich ein System, das so robust und selbsterklärend ist wie ein gutes Rezept."
+        },
+        {
+          "who": "Lena (23, Studentin der Landschaftsökologie, Citizen Science Enthusiastin)",
+          "would_do": "Sie beteiligt sich an verschiedenen Citizen Science Projekten und ist oft frustriert über die mangelnde Rückmeldung zur Qualität ihrer Daten. Sie versucht, akribisch zu sein, aber manchmal ist sie unsicher, ob ihre Beobachtungen korrekt sind, besonders bei jungen Pflanzen oder schwer zugänglichen Stellen. Sie möchte ein System, das ihr sofortiges, konstruktives Feedback gibt und ihr hilft, ihre Beobachtungsfähigkeiten zu verbessern, ähnlich wie ein Tutor in einem Kochkurs."
+        }
+      ],
+      "candidates": [
+        {
+          "id": "C1",
+          "idea": "Eine App, die 'virtuelle Robinien' im Smartphone-Garten anlegt, die dieselben Austriebs- und Bekämpfungsmuster wie echte Robinien simulieren. Nutzer müssen hier ihre echten Bekämpfungsstrategien virtuell anwenden und erhalten sofortiges Feedback, wie 'ihr' Robinienbestand in 3 Jahren aussehen würde, basierend auf ihrer Strategie.",
+          "typical_probability": 0.05,
+          "friction_point": "Der Erfolg einer Maßnahme ist erst nach Jahren sichtbar und unsicher.",
+          "check_queries": [
+            "Gamification invasive Arten Bekämpfung Simulation",
+            "Digitale Zwillinge Pflanzenwachstum Simulation App"
+          ]
+        },
+        {
+          "id": "C2",
+          "idea": "Ein 'Robinien-Sauerteig'-Timer, der die 'Reifephase' einer Bekämpfungsmaßnahme anzeigt. Nach dem Ringeln wird ein digitaler Timer gestartet, der über Wochen und Monate hinweg visuell darstellt, wie sich die Pflanze 'ermüdet' (z.B. durch wechselnde Farben oder Animationen), und erinnert an den nächsten Schritt oder die Nachkontrolle.",
+          "typical_probability": 0.03,
+          "friction_point": "Der Erfolg einer Maßnahme ist erst nach Jahren sichtbar und unsicher.",
+          "check_queries": [
+            "Langzeit-Monitoring-App mit Fortschrittsanzeige",
+            "Gamifizierte Erinnerung Robinienbekämpfung"
+          ]
+        },
+        {
+          "id": "C3",
+          "idea": "Eine AR-Anwendung, die Nutzer beim Nachkontrollgang an zuvor markierten Robinienstandorten virtuell mit 'richtigen' und 'falschen' Austrieben überlagert, um das Auge für die korrekte Erkennung zu schulen und sofortiges Feedback zu geben.",
+          "typical_probability": 0.08,
+          "friction_point": "Unsicherheit bei der Bestimmung/Ausführung.",
+          "check_queries": [
+            "AR App Pflanzenerkennung Training",
+            "Visuelles Feedback invasive Arten AR"
+          ]
+        },
+        {
+          "id": "C4",
+          "idea": "Ein 'Robinien-Meister'-Mentoring-System innerhalb einer App, bei dem erfahrene Bekämpfer (Meister) die Fotos und Berichte von neuen Freiwilligen (Lehrlingen) in Echtzeit bewerten und spezifisches, kontextbezogenes Feedback geben, ähnlich einer Sauerteig-Online-Community.",
+          "typical_probability": 0.07,
+          "friction_point": "Fehlendes Expertenwissen bei Laien.",
+          "check_queries": [
+            "Peer-Review Citizen Science App",
+            "Mentoring-Plattform für invasive Arten"
+          ]
+        },
+        {
+          "id": "C5",
+          "idea": "Eine 'Sauerteig-Scorecard' für Robinienstandorte, die nicht nur die Präsenz, sondern auch die 'Vitalität' des Befalls nach der Behandlung anhand von standardisierten Beobachtungen (z.B. Blattfarbe, Austriebsdichte) bewertet und einen 'Gesundheits-Score' des Standorts erstellt. Dieser Score entwickelt sich über die Zeit wie eine enzymatische Kurve.",
+          "typical_probability": 0.04,
+          "friction_point": "Bewertung des Erfolgs ist schwierig und langwierig.",
+          "check_queries": [
+            "Pflanzen-Vitalitätsscore App",
+            "Monitoring invasiver Arten mit Gesundheitsindex"
+          ]
+        },
+        {
+          "id": "C6",
+          "idea": "Eine generative KI, die aus Textbeschreibungen von Robinien-Austrieben nach Behandlung (z.B. 'wenige blasse Blätter an der Stammbasis') realistische Bilder simuliert und diese mit Vorher-Nachher-Bildern des Nutzers abgleicht, um den Erfolg oder Misserfolg der Behandlung zu visualisieren.",
+          "typical_probability": 0.02,
+          "friction_point": "Erfolg einer Maßnahme ist erst nach Jahren sichtbar und unsicher.",
+          "check_queries": [
+            "KI Vorher-Nachher Bildgenerator Pflanzen",
+            "Text-zu-Bild Simulation Pflanzenwachstum"
+          ]
+        },
+        {
+          "id": "C7",
+          "idea": "Eine 'Robinien-Ernährungsplan'-App, die für jeden bekämpften Standort einen individuellen, mehrjährigen 'Pflegeplan' mit Zeitplänen, Maßnahmen und zu erwartenden Veränderungen generiert, ähnlich einem personalisierten Diätplan.",
+          "typical_probability": 0.06,
+          "friction_point": "Motivation muss über Jahre aufrechterhalten werden.",
+          "check_queries": [
+            "Langzeit-Pflanzenpflegeplan App",
+            "Personalisierte Bekämpfungsstrategie invasive Arten"
+          ]
+        },
+        {
+          "id": "C8",
+          "idea": "Eine 'Robinien-Duftprofil'-Analyse-App, die Nutzer anleitet, Geruchsproben von behandelten Robinien zu nehmen und anhand einer Vergleichsdatenbank (Trainingsdaten von Experten) auf den 'Stresszustand' oder die 'Ermüdung' der Pflanze zu schließen, basierend auf flüchtigen organischen Verbindungen (simuliert oder mit speziellem Sensor).",
+          "typical_probability": 0.01,
+          "friction_point": "Erfolg (oder Misserfolg) ist innerhalb von Stunden bis Tagen sichtbar und direkt spürbar (Geruch, Textur, Volumen).",
+          "check_queries": [
+            "Geruchsanalyse Pflanzen App",
+            "Pflanzenstress Detektion VOC Sensor"
+          ]
+        },
+        {
+          "id": "C9",
+          "idea": "Ein 'Robinien-Lebenszyklus'-Spiel, bei dem Spieler die Rolle eines Naturschützers übernehmen und gegen die invasive Robinie antreten müssen. Jeder 'Spielzug' entspricht einer Nachkontrolle und die 'Punkte' spiegeln die Verbesserung des Ökosystems wider. Das Spiel passt sich an die realen Geodaten der Nutzer an.",
+          "typical_probability": 0.09,
+          "friction_point": "Motivation muss über Jahre aufrechterhalten werden.",
+          "check_queries": [
+            "Serious Game invasive Arten",
+            "Geobasiertes Naturschutzspiel"
+          ]
+        },
+        {
+          "id": "C10",
+          "idea": "Eine 'Echokammer'-Funktion in der App, die es Nutzern ermöglicht, anonymisierte Beobachtungen von anderen Freiwilligen in derselben Region zu sehen, die ähnliche Erfolge oder Rückschläge bei der Robinienbekämpfung hatten, um voneinander zu lernen und die Motivation zu stärken, ohne direkte Konkurrenz.",
+          "typical_probability": 0.07,
+          "friction_point": "Motivation muss über Jahre aufrechterhalten werden.",
+          "check_queries": [
+            "Community App invasive Arten Lernen",
+            "Anonymes Peer-Feedback Naturschutz"
+          ]
+        },
+        {
+          "id": "C11",
+          "idea": "Ein KI-Modell, das basierend auf Fotos des Umfelds einer Robinie (Bodenbeschaffenheit, Lichteinfall, angrenzende Vegetation) eine individuelle 'Resilienz-Prognose' für den Austrieb nach der Behandlung erstellt und vorschlägt, welche Nachkontrollstrategie an diesem spezifischen Ort am effektivsten wäre.",
+          "typical_probability": 0.04,
+          "friction_point": "Die 'richtige' Vorgehensweise ist oft kompliziert und erfordert Fachwissen.",
+          "check_queries": [
+            "KI-Prognose Pflanzenwachstum Standort",
+            "Optimale Bekämpfungsstrategie invasive Arten KI"
+          ]
+        },
+        {
+          "id": "C12",
+          "idea": "Eine 'Robinien-Stammbaum'-Visualisierung, die alle bekannten Austriebe und Wurzelverbindungen einer bekämpften Robinie in einer Region visualisiert, um die komplexen unterirdischen Strukturen und die Ausbreitungsstrategie der Pflanze besser zu verstehen und gezielter bekämpfen zu können.",
+          "typical_probability": 0.03,
+          "friction_point": "Falsche Ausführung kann die Situation verschlimmern (stärkerer Austrieb).",
+          "check_queries": [
+            "Wurzelwachstum Visualisierung App",
+            "Invasive Pflanzen Netzwerk Analyse"
+          ]
+        },
+        {
+          "id": "C13",
+          "idea": "Ein Gamification-Element, bei dem 'digitale Samen' von seltenen heimischen Pflanzenarten freigeschaltet werden, wenn Nutzer erfolgreich Robinien bekämpfen und dies in der App dokumentieren. Diese digitalen Samen können dann symbolisch in einem 'virtuellen Ökosystem' gepflanzt werden, das mit realen Geodaten verbunden ist.",
+          "typical_probability": 0.06,
+          "friction_point": "Motivation muss über Jahre aufrechterhalten werden, oft ohne sofortige Belohnung.",
+          "check_queries": [
+            "Gamified Environmental Restoration App",
+            "Digitale Belohnungen Naturschutz"
+          ]
+        },
+        {
+          "id": "C14",
+          "idea": "Eine 'Sauerteig-Audit'-Funktion, bei der eine KI die hochgeladenen Fotos und Protokolle der Nachkontrolle analysiert und eine 'Konformitätsbewertung' mit den empfohlenen Bekämpfungsprotokollen gibt, um die Datenqualität für Behörden zu verbessern.",
+          "typical_probability": 0.08,
+          "friction_point": "Datenqualität ist ein Problem bei der Erfassung durch Laien.",
+          "check_queries": [
+            "KI Datenvalidierung Citizen Science",
+            "Automatisierte Protokollprüfung Naturschutz"
+          ]
+        },
+        {
+          "id": "C15",
+          "idea": "Eine App, die 'Sauerteig-Profile' von Robinienstandorten erstellt, basierend auf dem Bodentyp, der Feuchtigkeit und der Sonneneinstrahlung. Diese Profile schlagen dann spezifische 'Fütterungspläne' (d.h. Bekämpfungsintervalle und -methoden) vor, die auf die individuellen Gegebenheiten des Standorts zugeschnitten sind.",
+          "typical_probability": 0.05,
+          "friction_point": "Die 'richtige' Vorgehensweise ist oft kompliziert und erfordert Fachwissen.",
+          "check_queries": [
+            "Standortspezifische Bekämpfung Robinie",
+            "KI-basierte Umweltanalyse Pflanzen"
+          ]
+        }
+      ],
+      "shortlist": [
+        "C1",
+        "C3",
+        "C5",
+        "C8",
+        "C11"
+      ]
+    },
+    "result": {
+      "survivors": [
+        {
+          "candidate_id": "C11",
+          "rank": 1,
+          "idea": "Ein KI-Modell, das basierend auf Fotos des Umfelds einer Robinie (Bodenbeschaffenheit, Lichteinfall, angrenzende Vegetation) eine individuelle 'Resilienz-Prognose' für den Austrieb nach der Behandlung erstellt und vorschlägt, welche Nachkontrollstrategie an diesem spezifischen Ort am effektivsten wäre.",
+          "gap": "Es fehlt eine standortspezifische, datengestützte Empfehlung für die optimale Nachkontrollstrategie bei der Robinienbekämpfung, die nicht auf allgemeinem Fachwissen, sondern auf den spezifischen Gegebenheiten basiert.",
+          "gap_stands_alone": true,
+          "boden_type": "transformational",
+          "removed_assumption": "Die Annahme, dass die Wahl der Nachkontrollstrategie hauptsächlich auf allgemeinen Richtlinien und der Erfahrung des Anwenders beruhen muss, wird entfernt.",
+          "who_has_problem": "Freiwillige und Fachleute im Naturschutz, die unsicher sind, welche spezifische Nachkontrollstrategie an einem bestimmten Standort die größte Erfolgsaussicht hat.",
+          "why_now": "Fortschritte in der multimodalen KI (Bildanalyse kombiniert mit ökologischen Modellen) und prädiktiver Analytik ermöglichen es, komplexe Standortfaktoren aus Fotos zu extrahieren und maßgeschneiderte Empfehlungen zu generieren.",
+          "buildable": "Ja, erfordert umfangreiche Trainingsdaten, die Fotos von Robinien-Standorten mit bekannten Resilienz- und Behandlungserfolgen verknüpfen.",
+          "evidence_urls": [
+            "https://www.waldwissen.net/de/waldwirtschaft/schadensmanagement/neue-arten/management-der-invasiven-robinie",
+            "https://www.mdpi.com/2073-445X/14/7/1389"
+          ],
+          "collider_mechanism": "Der Mechanismus der \"Sauerteig-Reifephase\", der durch Beobachtung von Umgebungsfaktoren die \"richtige\" Fütterung und Pflege für einen optimalen Reifeprozess vorschlägt, wird hier angewendet. Das KI-Modell analysiert Standortfaktoren (Umgebung der Robinie) wie die \"Umwelt\" des Sauerteigs, um die \"richtige\" \"Pflege\" (Nachkontrollstrategie) für die Robinie zu \"prognostizieren\" und deren \"Reifung\" (Erschöpfung) zu optimieren."
+        },
+        {
+          "candidate_id": "C1",
+          "rank": 2,
+          "idea": "Eine App, die 'virtuelle Robinien' im Smartphone-Garten anlegt, die dieselben Austriebs- und Bekämpfungsmuster wie echte Robinien simulieren. Nutzer müssen hier ihre echten Bekämpfungsstrategien virtuell anwenden und erhalten sofortiges Feedback, wie 'ihr' Robinienbestand in 3 Jahren aussehen würde, basierend auf ihrer Strategie.",
+          "gap": "Freiwillige können den langfristigen Erfolg ihrer Robinien-Bekämpfungsstrategien nicht einschätzen, ohne jahrelang auf Ergebnisse zu warten.",
+          "gap_stands_alone": true,
+          "boden_type": "transformational",
+          "removed_assumption": "Die Annahme, dass der Erfolg von Bekämpfungsmaßnahmen erst nach langer Zeit durch direkte Beobachtung festgestellt werden kann, wird entfernt.",
+          "who_has_problem": "Freiwillige, die invasive Robinien bekämpfen und unsicher sind, ob ihre Maßnahmen langfristig wirken. Kommunen und Naturschutzorganisationen, die Freiwillige schulen und motivieren wollen.",
+          "why_now": "Fortschritte in der Simulations- und Modellierungs-KI erlauben die realistische Vorhersage komplexer biologischer Prozesse über Jahre hinweg basierend auf Eingabedaten.",
+          "buildable": "Ja, erfordert jedoch eine fundierte ökologische Modellierung der Robinien-Ausbreitung und -Reaktion auf Bekämpfung, gekoppelt mit einer Simulations-Engine und einer benutzerfreundlichen Oberfläche.",
+          "evidence_urls": [
+            "https://www.mdpi.com/2073-445X/14/7/1389",
+            "https://www.waldwissen.net/de/waldwirtschaft/schadensmanagement/neue-arten/management-der-invasiven-robinie",
+            "https://www.tagesspiegel.de/planspiele-mit-aliens-wie-invasive-arten-die-okologische-zukunft-beeinflussen-konnten-10129003.html",
+            "https://www.cgiar.org/news-events/news/using-games-support-invasive-species-management"
+          ],
+          "collider_mechanism": "Die Mechanismen der \"Sauerteig-Reifephase\" – die Überführung eines langsam reifenden Prozesses in ein modellierbares System mit schneller, messbarer \"Reaktion\" und die Vorhersage zukünftiger Zustände basierend auf Anfangsbedingungen und \"Fütterungsstrategie\" – werden angewendet, um die langfristige Entwicklung der Robinienpopulation sichtbar und steuerbar zu machen."
+        },
+        {
+          "candidate_id": "C5",
+          "rank": 3,
+          "idea": "Eine 'Sauerteig-Scorecard' für Robinienstandorte, die nicht nur die Präsenz, sondern auch die 'Vitalität' des Befalls nach der Behandlung anhand von standardisierten Beobachtungen (z.B. Blattfarbe, Austriebsdichte) bewertet und einen 'Gesundheits-Score' des Standorts erstellt. Dieser Score entwickelt sich über die Zeit wie eine enzymatische Kurve.",
+          "gap": "Es fehlt eine standardisierte, über die Zeit nachvollziehbare und objektiv bewertbare Metrik für den Erfolg von Robinien-Bekämpfungsmaßnahmen auf Standortebene, die die Vitalität des Befalls widerspiegelt.",
+          "gap_stands_alone": true,
+          "boden_type": "exploratory",
+          "removed_assumption": "Die Annahme, dass der Erfolg von Robinien-Bekämpfungsmaßnahmen nur durch qualitative Einschätzungen oder das vollständige Verschwinden des Befalls nach langer Zeit beurteilt werden kann, wird entfernt.",
+          "who_has_problem": "Behörden, Naturschutzorganisationen und Citizen Science Projekte, die den Erfolg von Robinien-Bekämpfungsmaßnahmen objektiv bewerten und über lange Zeiträume verfolgen müssen.",
+          "why_now": "Fortschritte in der mobilen Bildanalyse und datengesteuerten Bewertung erlauben die Standardisierung und Quantifizierung von Beobachtungen (z.B. Blattfarbe, Dichte) und die Modellierung von Zeitreihendaten.",
+          "buildable": "Ja, erfordert ein trainiertes KI-Modell zur Auswertung von Fotos (Blattfarbe, Dichte) und eine mathematische Modellierung der Score-Entwicklung.",
+          "evidence_urls": [
+            "https://www.waldwissen.net/de/waldwirtschaft/schadensmanagement/neue-arten/management-der-invasiven-robinie",
+            "https://www.mdpi.com/2073-445X/14/7/1389",
+            "https://play.google.com/store/apps/details?id=com.vitaliscore.app",
+            "https://www.appbrain.com/app/plant-health-assessment/com.pkd2989.researchapp"
+          ],
+          "collider_mechanism": "Der Mechanismus der \"enzymatischen Kurve\" als Modell für zeitliche Entwicklung und Sättigung wird angewendet, um die Dynamik der Robinien-Vitalität nach einer Bekämpfung zu quantifizieren. Ähnlich wie Enzyme Reaktionen beschleunigen und Sättigungspunkte erreichen, zeigt der Score an, wie schnell und vollständig die Bekämpfungsmaßnahme wirkt und wann ein \"Sättigungs- bzw. Erschöpfungszustand\" der Robinie erreicht ist."
+        },
+        {
+          "candidate_id": "C3",
+          "rank": 4,
+          "idea": "Eine AR-Anwendung, die Nutzer beim Nachkontrollgang an zuvor markierten Robinienstandorten virtuell mit 'richtigen' und 'falschen' Austrieben überlagert, um das Auge für die korrekte Erkennung zu schulen und sofortiges Feedback zu geben.",
+          "gap": "Freiwillige haben Schwierigkeiten, die oft subtilen Unterschiede zwischen korrekten und falschen Robinien-Austrieben nach einer Behandlung im Feld zu erkennen und erhalten kein sofortiges Lernfeedback.",
+          "gap_stands_alone": true,
+          "boden_type": "combinational",
+          "removed_assumption": "Die Annahme, dass die visuelle Schulung für die Robinien-Erkennung nur durch erfahrene Experten im Feld oder wiederholte manuelle Vergleiche erfolgen kann, wird entfernt.",
+          "who_has_problem": "Unerfahrene Freiwillige und neue Mitarbeiter im Naturschutz, die lernen müssen, Robinien-Austriebe nach einer Bekämpfung sicher zu identifizieren.",
+          "why_now": "Fortschritte in AR-Technologie und mobiler Computer Vision ermöglichen die Echtzeit-Überlagerung digitaler Informationen mit der realen Umgebung und die präzise Objekterkennung auf Smartphones.",
+          "buildable": "Ja, erfordert ein trainiertes KI-Modell für Robinien-Austriebe (richtig/falsch) und eine robuste AR-Engine für die präzise Verankerung im Raum.",
+          "evidence_urls": [
+            "https://www.mdpi.com/2073-445X/14/7/1389",
+            "https://www.waldwissen.net/de/waldwirtschaft/schadensmanagement/neue-arten/management-der-invasiven-robinie",
+            "https://ideausher.com/blog/how-to-build-an-ar-app-similar-to-plantsnap/",
+            "https://www.thoughtmedia.com/what-app-identifies-plants-from-a-picture-best-ai-tools/",
+            "https://ai.plainenglish.io/build-your-first-plant-identification-ai-even-if-youre-a-complete-beginner-900e6f8183c7"
+          ],
+          "collider_mechanism": "Der Mechanismus der \"Sauerteig-Reifephase\" – die kontinuierliche Überwachung und das Feedback auf subtile Veränderungen, um den Reifegrad zu bestimmen – wird hier angewendet, indem die AR-Anwendung kontinuierlich visuelles Feedback zu den \"Reife\"-Merkmalen (richtigen oder falschen Austrieben) der Robinie gibt, um das Erkennungssystem des Nutzers zu \"schulen\" und zu \"reifen\"."
+        }
+      ],
+      "kills": [
+        {
+          "candidate_id": "C8",
+          "reason": "Die Idee basiert auf einem speziellen VOC-Sensor, der keine Standardkomponente von Smartphones ist und für eine breit angelegte, kostenlose Citizen-Science-App nicht realistisch \"buildable\" ist.",
+          "failed_checks": [
+            "buildable"
+          ]
+        }
+      ],
+      "log_row": {
+        "anchor": "Nachkontrolle invasiver Robinien und Datenqualität in der Bürgerwissenschaft",
+        "collider": "Sauerteig-Reifephase & enzymatische Kurven",
+        "distance": 5,
+        "candidates": 15,
+        "survivors": 4,
+        "best_gap": "Es fehlt eine standortspezifische, datengestützte Empfehlung für die optimale Nachkontrollstrategie bei der Robinienbekämpfung, die nicht auf allgemeinem Fachwissen, sondern auf den spezifischen Gegebenheiten basiert."
+      },
+      "retro": {
+        "learned": "Die Kollision mit 'Sauerteig-Reifephase' hat interessante Perspektiven für die Modellierung und Visualisierung von langwierigen ökologischen Prozessen und den Erfolg von Bekämpfungsmaßnahmen eröffnet, insbesondere im Hinblick auf zeitliche Entwicklungen und situatives Feedback.",
+        "mistake": "Bei der Bewertung von C8 wurde zunächst die Abhängigkeit von spezifischer, nicht-standardisierter Hardware nicht streng genug berücksichtigt, was die \"Buildable\"-Anforderung für eine \"give away\" App untergräbt.",
+        "next_time": "Bei Ideen, die auf spezialisierte Sensoren außerhalb der Standard-Smartphone-Hardware angewiesen sind, muss die \"Buildable\"-Anforderung strenger geprüft werden, um sicherzustellen, dass die Technologie für die Zielgruppe zugänglich und realistisch ist."
+      }
+    },
+    "tool_calls": [
+      {
+        "call_id": "lacunar-20260930T100201-4ab848-t01",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "invasive"
+      },
+      {
+        "call_id": "lacunar-20260930T100201-4ab848-t02",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "rubinien"
+      },
+      {
+        "call_id": "lacunar-20260930T100201-4ab848-t03",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "species"
+      },
+      {
+        "call_id": "lacunar-20260930T100201-4ab848-t04",
+        "tool": "search",
+        "status": "ok",
+        "summary": "Kartieranleitung invasive Pflanzenarten Deutschland"
+      },
+      {
+        "call_id": "lacunar-20260930T100201-4ab848-t05",
+        "tool": "search",
+        "status": "ok",
+        "summary": "Leitfaden Robinie Bekämpfung Nachkontrolle Protokoll"
+      },
+      {
+        "call_id": "lacunar-20260930T100201-4ab848-t06",
+        "tool": "search",
+        "status": "ok",
+        "summary": "Bürgerwissenschaft invasive Arten Datenqualität Herausforderungen"
+      },
+      {
+        "call_id": "lacunar-20260930T100201-4ab848-t07",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "anwenden, aussehen"
+      },
+      {
+        "call_id": "lacunar-20260930T100201-4ab848-t08",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "anwenden"
+      },
+      {
+        "call_id": "lacunar-20260930T100201-4ab848-t09",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "anwendun, austrieb"
+      },
+      {
+        "call_id": "lacunar-20260930T100201-4ab848-t10",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "anwendun"
+      },
+      {
+        "call_id": "lacunar-20260930T100201-4ab848-t11",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "behandlu, bewertet"
+      },
+      {
+        "call_id": "lacunar-20260930T100201-4ab848-t12",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "behandlu"
+      },
+      {
+        "call_id": "lacunar-20260930T100201-4ab848-t13",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "anleitet, basieren"
+      },
+      {
+        "call_id": "lacunar-20260930T100201-4ab848-t14",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "anleitet"
+      },
+      {
+        "call_id": "lacunar-20260930T100201-4ab848-t15",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "austrieb, basieren"
+      },
+      {
+        "call_id": "lacunar-20260930T100201-4ab848-t16",
+        "tool": "bib_find",
+        "status": "ok",
+        "summary": "austrieb"
+      },
+      {
+        "call_id": "lacunar-20260930T100201-4ab848-t17",
+        "tool": "search",
+        "status": "ok",
+        "summary": "Gamification invasive Arten Bekämpfung Simulation"
+      },
+      {
+        "call_id": "lacunar-20260930T100201-4ab848-t18",
+        "tool": "search",
+        "status": "ok",
+        "summary": "AR App Pflanzenerkennung Training"
+      },
+      {
+        "call_id": "lacunar-20260930T100201-4ab848-t19",
+        "tool": "search",
+        "status": "ok",
+        "summary": "Pflanzen-Vitalitätsscore App"
+      }
+    ],
+    "accounting": {
+      "model_calls": 9,
+      "search_calls": 6,
+      "search_queries": 18,
+      "cost_usd": 0.10198
+    },
+    "log_entry": "<!-- proposed by the Lab's Lacunar agent, run lacunar-20260930T100201-4ab848; nothing was written to Amélie -->\n| 30.09.2026 | Nachkontrolle invasiver Robinien und Datenqualität in der Bürgerwissenschaft | Sauerteig-Reifephase & enzymatische Kurven | 5 | 15 | 4: 1. Ein KI-Modell, das basierend auf Fotos des Umfelds einer Robinie (Bodenbeschaffenheit, Lichteinfall, angrenzende Vegetation) eine individuelle 'Resilienz-Prognose' für den Austrieb nach der Behandlung erstellt und vorschlägt, welche Nachkontrollstrategie an diesem spezifischen Ort am effektivsten wäre. (transformational); 2. Eine App, die 'virtuelle Robinien' im Smartphone-Garten anlegt, die dieselben Austriebs- und Bekämpfungsmuster wie echte Robinien simulieren. Nutzer müssen hier ihre echten Bekämpfungsstrategien virtuell anwenden und erhalten sofortiges Feedback, wie 'ihr' Robinienbestand in 3 Jahren aussehen würde, basierend auf ihrer Strategie. (transformational); 3. Eine 'Sauerteig-Scorecard' für Robinienstandorte, die nicht nur die Präsenz, sondern auch die 'Vitalität' des Befalls nach der Behandlung anhand von standardisierten Beobachtungen (z.B. Blattfarbe, Austriebsdichte) bewertet und einen 'Gesundheits-Score' des Standorts erstellt. Dieser Score entwickelt sich über die Zeit wie eine enzymatische Kurve. (exploratory); 4. Eine AR-Anwendung, die Nutzer beim Nachkontrollgang an zuvor markierten Robinienstandorten virtuell mit 'richtigen' und 'falschen' Austrieben überlagert, um das Auge für die korrekte Erkennung zu schulen und sofortiges Feedback zu geben. (combinational) | Es fehlt eine standortspezifische, datengestützte Empfehlung für die optimale Nachkontrollstrategie bei der Robinienbekämpfung, die nicht auf allgemeinem Fachwissen, sondern auf den spezifischen Gegebenheiten basiert. | — (not checked yet) |\n\n### Lacunar run lacunar-20260930T100201-4ab848 — 30.09.2026 (intent: Rubinien als invasive Species)\n- **Learned:** Die Kollision mit 'Sauerteig-Reifephase' hat interessante Perspektiven für die Modellierung und Visualisierung von langwierigen ökologischen Prozessen und den Erfolg von Bekämpfungsmaßnahmen eröffnet, insbesondere im Hinblick auf zeitliche Entwicklungen und situatives Feedback.\n- **Mistake:** Bei der Bewertung von C8 wurde zunächst die Abhängigkeit von spezifischer, nicht-standardisierter Hardware nicht streng genug berücksichtigt, was die \"Buildable\"-Anforderung für eine \"give away\" App untergräbt.\n- **Next time:** Bei Ideen, die auf spezialisierte Sensoren außerhalb der Standard-Smartphone-Hardware angewiesen sind, muss die \"Buildable\"-Anforderung strenger geprüft werden, um sicherzustellen, dass die Technologie für die Zielgruppe zugänglich und realistisch ist.\n- **Prior-art leads (automatic search, for the existence check; not a verdict):**\n  - C1 (ok): Gamification invasive Arten Bekämpfung Simulation -> https://www.tagesspiegel.de/planspiele-mit-aliens-wie-invasive-arten-die-okologische-zukunft-beeinflussen-konnten-10129003.html, https://www.cgiar.org/news-events/news/using-games-support-invasive-species-management, https://bcinvasives.ca/for-youth/games-activities/, https://www.theartofconservation.org/conservation-education/invasive-species-games-and-activitie\n  - C3 (ok): AR App Pflanzenerkennung Training -> https://ideausher.com/blog/how-to-build-an-ar-app-similar-to-plantsnap/, https://www.thoughtmedia.com/what-app-identifies-plants-from-a-picture-best-ai-tools/, https://ai.plainenglish.io/build-your-first-plant-identification-ai-even-if-youre-a-complete-beginner-900e6f8183c7, https://ceur-ws.org/Vol-4060/paper18.pdf\n  - C5 (ok): Pflanzen-Vitalitätsscore App -> https://play.google.com/store/apps/details?id=com.vitaliscore.app, https://www.appbrain.com/app/plant-health-assessment/com.pkd2989.researchapp, https://plantvoice.farm/de/app-fuer-gaertner-2/, https://play.google.com/store/apps/details?id=com.stromming.planta&hl=de_AT\n",
+    "prior_art": [
+      {
+        "candidate_id": "C1",
+        "question": "Gamification invasive Arten Bekämpfung Simulation",
+        "status": "ok",
+        "answer": "Several sources discuss the use of gamification and simulations in the context of invasive species.\n\nJonathan Jeschke, a professor at Freie Universität Berlin, develops scenarios for the management of neobiota (invasive species) that can be \"playfully tested\" (Planspiele). These \"Planspiele mit Aliens\" (scenario games with aliens) explore how invasive species could influence the ecological future.\n\nCGIAR and its partners utilize \"serious games\" and simulations to aid in learning, decision-making, and collective action regarding invasive species and other complex environmental issues. One example involves addressing the invasive plant *Lantana camara* in India, where games are used to help communities understand and manage the problem, including the challenges of collective action and resource decision-making. They have adapted a game to illustrate the risk of \"freeriding\" in community dam maintenance and are piloting a new game in 2026 to explore rules and their impact on decisions related to lantana maintenance.\n\nThe Invasive Species Council of British Columbia offers an interactive game called \"Invader Crusaders\" to help protect native species from invasive ones. They also provide an \"Ultimate Invasive Quiz\" to test knowledge about invasive species and their environmental impact. Similarly, Science from Scientists developed an \"Invasive Species Game\" where players aim to help four native animal species survive in a forest ecosystem.\n\nA game designed for high school and college students teaches about the global spread and economic impact of invasive species. In this game, teams representing island nations use a budget to protect their island from invasive species, with a secondary goal of minimizing negative effects globally. This game aims to provide an in-depth understanding of the complexities of invasive species management and economics by allowing students to discuss strategies and observe their outcomes. Other educational games mentioned include a board game by the University of Florida's Center for Aquatic and Invasive Plants that teaches about managing invasive species, and another board game that simulates competition between native and invasive species.\n\nGamification, in general, involves integrating game elements into non-game contexts to enhance motivation, enjoyment, and learning processes, thereby influencing human behavior. These elements can include points, levels, badges, challenges, leaderboards, storytelling, and virtual worlds. The BDE",
+        "pages": [
+          "https://www.tagesspiegel.de/planspiele-mit-aliens-wie-invasive-arten-die-okologische-zukunft-beeinflussen-konnten-10129003.html",
+          "https://www.cgiar.org/news-events/news/using-games-support-invasive-species-management",
+          "https://bcinvasives.ca/for-youth/games-activities/",
+          "https://www.theartofconservation.org/conservation-education/invasive-species-games-and-activitie",
+          "https://www.sciencefromscientists.org/game/public_html2/index.html",
+          "https://www.nsta.org/journal-college-science-teaching/journal-college-science-teaching-januaryfebruary-2023/using-game",
+          "https://www.bidt.digital/glossar/gamification/",
+          "https://www.bdew.de/online-magazin-zweitausend50/schwerpunkt-europa/gamification-spielen-fuers-umweltbewusstsein/",
+          "https://www.die-bonn.de/doks/2026-Gamification-01.pdf"
+        ]
+      },
+      {
+        "candidate_id": "C3",
+        "question": "AR App Pflanzenerkennung Training",
+        "status": "ok",
+        "answer": "Training an AR app for plant recognition primarily involves leveraging machine learning and computer vision technologies. This process typically includes several key steps, from data collection to model deployment and continuous improvement.\n\nAccording to Idea Usher, plant recognition in AR apps relies on techniques such as machine learning, computer vision, or deep learning. Models are trained using collected plant data to accurately identify plant species from user-submitted images. Similarly, Thought Media notes that AI plant-identification applications commonly use computer vision and machine learning to analyze visual characteristics like leaf shape, flowers, texture, color, and overall structure. The system then compares these patterns with previously identified images to suggest matches.\n\nA detailed guide from Lalith Herath outlines the steps to build a plant identification AI:\n1.  **Collect Plant Images:** Gather pictures of the plants intended for identification.\n2.  **Organize Images:** Structure the collected images, often into folders based on species.\n3.  **Clean Images:** Crucially, remove irrelevant or poor-quality images before training.\n4.  **Data Augmentation:** This step can boost the accuracy of the model.\n5.  **Load Data:** Utilize tools like Google Colab to load the plant images.\n6.  **Build the Model:** Construct the plant identification model, with MobileNetV2 being a suggested architecture.\n7.  **Train the Model:** Teach the computer using the prepared examples.\n8.  **Check Accuracy:** Evaluate the training accuracy, often through simple graphs.\n9.  **Test with New Images:** Verify the model's performance with previously unseen plant images.\n10. **Export for Mobile App:** Prepare the trained model for integration into a mobile application.\n\nCEUR-WS highlights that mobile plant identification applications achieve accuracy rates ranging from 71-92.6%, with Google Lens often outperforming specialized apps. These applications frequently leverage deep learning models, specifically MobileNetV3 architectures, which can enable offline functionality. Skynet Technologies also mentions implementing machine learning using web APIs for plant recognition based on uploaded images, noting that while resources like TensorFlow exist for machine learning models, only those built with native support can effectively work within apps.\n\nFor continuous improvement, Idea Usher suggests regularly updating recognition algorithms by incorporating user feedbac",
+        "pages": [
+          "https://ideausher.com/blog/how-to-build-an-ar-app-similar-to-plantsnap/",
+          "https://www.thoughtmedia.com/what-app-identifies-plants-from-a-picture-best-ai-tools/",
+          "https://ai.plainenglish.io/build-your-first-plant-identification-ai-even-if-youre-a-complete-beginner-900e6f8183c7",
+          "https://ceur-ws.org/Vol-4060/paper18.pdf",
+          "https://www.skynettechnologies.com/case-study/global-plant-identification-mobile-app-development",
+          "https://apps.apple.com/us/app/plant-ar/id1558987251",
+          "https://github.com/ajitonelsonn/plant-identifier",
+          "https://www.youtube.com/watch?v=VuKFMaVQiWg"
+        ]
+      },
+      {
+        "candidate_id": "C5",
+        "question": "Pflanzen-Vitalitätsscore App",
+        "status": "ok",
+        "answer": "Es gibt mehrere Apps, die sich mit der Vitalität und Gesundheit von Pflanzen befassen, wobei einige explizit einen \"Vitalitätsscore\" oder \"Gesundheitsscore\" anbieten.\n\nDie App **VitaliScore: Scan Score Heal** bietet einen \"0 bis 100 Scan-Score\" für Pflanzen, indem man die Kamera darauf richtet. Diese App ist für Wellness- und Informationszwecke gedacht.\n\nEine weitere App, die **Plant Health Assessment**, berechnete einen \"Gesundheitsscore in Bezug auf Chlorophyllgehalt und Chlorophyll-Carotinoid-Verhältnis\" basierend auf der Bildverarbeitung eines Ziellattes. Diese App ist jedoch nicht mehr im Google Play Store verfügbar.\n\n**PlantVoice** zielt darauf ab, ein umfassendes Bild der Pflanzengesundheit zu liefern. Sie bietet ein \"intuitives Dashboard\" zur Visualisierung der Pflanzengesundheit mit \"klaren Diagrammen und Indikatoren\" und überwacht physiologische Parameter wie Saftfluss und Salzgehalt mittels biokompatibler Sensoren.\n\nAndere Apps wie **Planta** bieten \"Smart Care Reminders\" basierend auf Pflanzenart, Standort, Wetter und Licht sowie \"Schritt-für-Schritt-Pflegeanleitungen\". Sie verfügen auch über einen \"Belichtungsmesser\" und eine \"Pflanzenidentifikation\". Ähnliche Funktionen zur Pflanzenidentifikation, Krankheitsdiagnose (oft mit KI), Pflegetipps, Gieß-Erinnerungen und Lichtmessung bieten Apps wie **Pflanzenpflege－Identifikator**, **Pflanzenpflege – Diagnose**, **Neudorff – natürlich gärtnern**, **Plantix**, **PlantScan: Pflanzen Bestimmen**, **PlantApp – Pflanzenbestimmung** und **Pflanzen bestimmen und pflege**. Diese Apps tragen zur Pflanzengesundheit bei, erwähnen aber nicht unbedingt einen einzelnen \"Vitalitätsscore\".\n\nEs gibt auch Apps wie **PlantScore - Plant Variety Log** und **Plant Points: 30 plants a week**, die sich auf die Verfolgung des Konsums verschiedener Pflanzenarten für die menschliche Darmgesundheit konzentrieren und nicht auf die Vitalität lebender Pflanzen.",
+        "pages": [
+          "https://play.google.com/store/apps/details?id=com.vitaliscore.app",
+          "https://www.appbrain.com/app/plant-health-assessment/com.pkd2989.researchapp",
+          "https://plantvoice.farm/de/app-fuer-gaertner-2/",
+          "https://play.google.com/store/apps/details?id=com.stromming.planta&hl=de_AT",
+          "https://play.google.com/store/apps/details?id=com.plantcare.gardening.blossom.android2024&hl=de_AT",
+          "https://play.google.com/store/apps/details?id=com.jg.floweridentifier&hl=de_AT",
+          "https://apps.apple.com/de/app/neudorff-nat%C3%BCrlich-g%C3%A4rtnern/id490960718",
+          "https://play.google.com/store/apps/details?id=com.peat.GartenBank&hl=de_AT",
+          "https://play.google.com/store/apps/details?id=identifyplants.treesscan.flowers.plant.ai&hl=de_CH",
+          "https://play.google.com/store/apps/details?id=com.scaleup.plantid&hl=de_CH",
+          "https://play.google.com/store/apps/details?id=com.asianmobile.plantcare&hl=de",
+          "https://play.google.com/store/apps/details?id=com.lifesyncth.plantscore",
+          "https://play.google.com/store/apps/details?id=com.everettappdevelopment.plant_points"
+        ]
+      }
+    ],
+    "topic_check": [
+      {
+        "term": "invasive",
+        "hits": [
+          "[protokoll, score 1] **Invasives-Scout / FloraScan** (florascan-invasive-webgpu) — Browser-Native Erkennung invasiver Neophyten — besetzt",
+          "[grab, score 1] FloraScan / Invasives-Scout (Browser-Native Neophyten-Erkennung)",
+          "[dose, score 1] Fugenduell: Asphaltritzen-Arena",
+          "[kandidat, score 1] Invasive Plant Species Pocket Identifier & Reporting Guide"
+        ]
+      },
+      {
+        "term": "rubinien",
+        "hits": []
+      },
+      {
+        "term": "species",
+        "hits": [
+          "[protokoll, score 0.6] EnergyMap Berlin heute + `energymap4py` — verengt",
+          "[dose, score 0.6] Dossier: Environmental Anomaly Detector for Citizen Science and Municipalities",
+          "[dose, score 0.6] ChemGefahr-Stopp / MischStop (ChemHazard Stop)",
+          "[dose, score 0.6] Umsetzungsplan-Register",
+          "[dose, score 0.6] Wet Ink"
+        ]
+      }
+    ],
+    "contract_version": "1.2.0"
+  },
+  "existence_check": false,
+  "contract_version": "1.0.0"
+}

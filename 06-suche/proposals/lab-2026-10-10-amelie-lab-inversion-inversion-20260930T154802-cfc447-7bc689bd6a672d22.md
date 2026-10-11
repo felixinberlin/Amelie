@@ -1,0 +1,431 @@
+# Proposals from plan lab-2026-10-10-amelie-lab-inversion-inversion-20260930T154802-cfc447-7bc689bd6a672d22
+
+Packet: amelie-lab-inversion-inversion-20260930T154802-cfc447-7bc689bd6a672d22 · Candidate: amelie-lab-inversion-inversion-20260930T154802-cfc447-7bc689bd6a672d22
+Not applied. A human decides.
+
+- [06-suche/amelie-lab-protokoll.md] inversion: amelie-lab-inversion-inversion-20260930T154802-cfc447-7bc689bd6a672d22. Absicht: Félix Marítínez, the developer of this system is a TYPO3 developer with 10 Years experience. 1.5 Years no job. No driving licence, living in Jamliz, brandemburg. Owner of tortilladepatatas.org. Modell: gemini-2.5-flash. Existenzprüfung: nein. Alle Ideen ungeprüft. Die folgenden Angaben sind gespeicherte Modellausgaben, keine bestätigten Tatsachen. Nur grounded=true ist Evidenz; Score-Änderungen benötigen zusätzlich quote_status=verified. Quellen, fact_checks und fehlende Felder bleiben wie im Original; keine neuen Prüfungen durchgeführt.
+- [06-suche/amelie-lab-protokoll.md] Originalfeld run_id, Teil 1 (laut gespeicherter Datei):
+"inversion-20260930T154802-cfc447"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld intent, Teil 1 (laut gespeicherter Datei):
+"Félix Marítínez, the developer of this system is a TYPO3 developer with 10 Years experience. 1.5 Years no job. No driving licence, living in Jamliz, brandemburg. Owner of tortilladepatatas.org"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld model, Teil 1 (laut gespeicherter Datei):
+"gemini-2.5-flash"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld created_at, Teil 1 (laut gespeicherter Datei):
+"2026-09-30T16:02:47Z"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld state_missing, Teil 1 (laut gespeicherter Datei):
+[]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld plan, Teil 1 (laut gespeicherter Datei):
+{
+  "area": "Food donation and waste reduction for social institutions",
+  "mode_list": [
+    "App for restaurants to list surplus food for donation",
+    "Platform connecting food donors with food banks/charities",
+    "Automated logistics planning for food collection and distribution",
+    "AI for predicting food surplus in retail/catering specifically for donation purposes",
+    "Tool for tracking donated food, quantities, and beneficiaries",
+    "System for managing volunteer drivers for food collection",
+    "Educational resources on food safety and legal compliance for donated food",
+    "Matching tool for specific food needs of recipient organizations based on dietary requirements",
+    "Dashboard for municipalities to monitor food waste reduction and donation metrics",
+    "Real-time alert system for unexpected large food donations or urgent collection needs",
+    "Recipe generator for food banks based on available ingredients and nutritional needs",
+    "Reporting tool for tax benefits and sustainability impact related to food donations"
+  ],
+  "target_queries": [
+    "BMEL Leitfaden zur Weitergabe von Lebensmitteln an soziale Einrichtungen",
+    "Haftung bei Lebensmittelspenden Deutschland Gesetz",
+    "Lebensmittelhygiene-Verordnung Spenden"
+  ],
+  "class_hint": "A"
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld target, Teil 1 (laut gespeicherter Datei):
+{
+  "target": {
+    "name": "BMEL Leitfaden zur Weitergabe von Lebensmitteln an soziale Einrichtungen",
+    "source_url": "https://www.bmleh.de/SharedDocs/Downloads/DE/Broschueren/lebensmittel-spenden.pdf?__blob=publicationFile&v=3",
+    "source_label": "Klasse A: Leitfaden/Broschüre",
+    "anchor_class": "A",
+    "who_pays": "Ultimately, the food retailers and manufacturers bear the costs of food waste, either through disposal fees or lost revenue. Social institutions incur costs for logistics, storage, and distribution. Donors also pay for the administrative effort of complying with regulations.",
+    "who_carries_burden": "Social institutions (e.g., Tafel, food banks) and their volunteers carry the significant burden of collecting, sorting, storing, and distributing donated food, often under strict hygiene regulations and with limited resources. They also navigate complex legal requirements regarding liability and food safety.",
+    "where_data_stops": "Information often stops in PDF guides (like the BMEL's), internal documentation of food businesses, or manual logs of social institutions. Data on available surplus food, specific legal requirements for various food types, or real-time needs of recipients is not centrally aggregated or easily accessible.",
+    "blind_spot": "The structural blind spot is the unmonitored volume of safe, edible food discarded by smaller businesses (e.g., bakeries, small supermarkets, caterers) who perceive the legal and logistical hurdles of donation to be too high, lacking the scale or resources to navigate it effectively. Their discarded food is not systematically tracked or offered for donation due to perceived liability risks and bureaucratic complexity."
+  },
+  "operator": "OP-4",
+  "thesis": "Instead of social institutions scrambling to fulfill a societal mandate to reduce food waste, the regulatory framework should empower automated, distributed micro-donations by turning perceived legal barriers into actionable, transparent micro-protocols for every food business.",
+  "candidates": [
+    {
+      "id": "C1",
+      "idea": "A standardized, AI-powered 'Mini-Donation Protocol Generator' that creates a legally compliant micro-protocol (e.g., simplified delivery note, hygiene checklist) for small businesses (bakeries, small cafes) for specific types of surplus food.",
+      "why_now": "Advanced natural language processing (NLP) models capable of generating legal text snippets based on specific inputs and local regulations, combined with AI-driven compliance checks, make automated protocol generation feasible.",
+      "recipient": "Federal Ministry of Food and Agriculture (BMEL)",
+      "recipient_kind": "agency",
+      "check_queries": [
+        "BMEL simplified food donation protocol small businesses",
+        "AI legal text generation food safety Germany"
+      ]
+    },
+    {
+      "id": "C2",
+      "idea": "An 'Automated Liability Clarifier' chatbot that provides real-time, context-specific legal guidance on liability for food donations based on food type, condition (e.g., best-before vs. use-by date), and donor/recipient roles.",
+      "why_now": "Large Language Models (LLMs) trained on legal texts can provide conversational, context-aware advice, making complex legal information accessible without requiring a human legal expert for every query.",
+      "recipient": "Consumer Protection Agency",
+      "recipient_kind": "agency",
+      "check_queries": [
+        "Chatbot Haftung Lebensmittelspenden Deutschland",
+        "AI legal advice food donation"
+      ]
+    },
+    {
+      "id": "C3",
+      "idea": "A 'Hyperlocal Food Matching Agent' that uses geo-fenced, real-time inventory data from small food businesses and AI-powered demand forecasting from local social institutions to automatically match and suggest food donations.",
+      "why_now": "Real-time inventory APIs from POS systems, combined with advanced geospatial analysis and predictive AI for demand forecasting (e.g., based on recipient needs, historical data, local events), allow for dynamic and efficient matching.",
+      "recipient": "Municipal Innovation Office",
+      "recipient_kind": "institution",
+      "check_queries": [
+        "Real-time food surplus matching local",
+        "AI demand forecasting food banks"
+      ]
+    },
+    {
+      "id": "C4",
+      "idea": "A 'Certified Donation Packaging Assistant' that guides small businesses through compliant packaging of donated food, leveraging object recognition and augmented reality (AR) for visual checks and labeling advice.",
+      "why_now": "On-device computer vision and AR toolkits allow for real-time visual feedback on packaging standards, ensuring hygiene and regulatory compliance without expensive hardware, reducing training burden.",
+      "recipient": "Food Safety Authority (e.g., BVL)",
+      "recipient_kind": "agency",
+      "check_queries": [
+        "AR food packaging compliance donation",
+        "AI visual inspection food safety"
+      ]
+    },
+    {
+      "id": "C5",
+      "idea": "A 'Dynamic Hygiene Risk Assessor' that uses environmental sensor data (temperature, humidity) and food type information to provide automated, real-time risk assessments and actionable hygiene recommendations for temporary food storage points (e.g., before pickup).",
+      "why_now": "Low-cost IoT sensors for environmental monitoring combined with AI models that interpret these inputs against food safety regulations can provide dynamic, localized risk assessment and alerts.",
+      "recipient": "Local Health Department",
+      "recipient_kind": "institution",
+      "check_queries": [
+        "IoT food storage hygiene monitoring donation",
+        "AI food safety risk assessment sensors"
+      ]
+    },
+    {
+      "id": "C6",
+      "idea": "An 'Automated Traceability Ledger' that uses secure, distributed ledger technology (DLT) to provide an immutable, simplified record of food donations from donor to recipient, addressing traceability requirements without complex paperwork.",
+      "why_now": "Blockchain or DLT solutions have matured to offer simplified, secure, and transparent record-keeping for supply chains, making compliance with traceability requirements less burdensome for small-scale donations.",
+      "recipient": "Federal Office for Agriculture and Food (BLE)",
+      "recipient_kind": "agency",
+      "check_queries": [
+        "Blockchain food donation traceability Germany",
+        "DLT for food surplus tracking"
+      ]
+    },
+    {
+      "id": "C7",
+      "idea": "A 'Volunteer Capacity Predictor' that uses historical data, weather forecasts, and local event calendars to predict volunteer availability for food collection and distribution at social institutions, optimizing pickup schedules.",
+      "why_now": "Predictive analytics and machine learning models can process diverse datasets (weather, calendars, volunteer sign-up patterns) to forecast human availability more accurately than traditional scheduling methods.",
+      "recipient": "Tafel Deutschland e.V. (umbrella organization for food banks)",
+      "recipient_kind": "association",
+      "check_queries": [
+        "AI volunteer scheduling food banks",
+        "Predictive analytics for non-profit logistics"
+      ]
+    }
+  ],
+  "shortlist": [
+    "C1",
+    "C2",
+    "C4",
+    "C6"
+  ]
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld result, Teil 1 (laut gespeicherter Datei):
+{
+  "survivors": [
+    {
+      "candidate_id": "C2",
+      "rank": 1,
+      "idea": "An 'Automated Liability Clarifier' chatbot that provides real-time, context-specific legal guidance on liability for food donations based on food type, condition (e.g., best-before vs. use-by date), and donor/recipient roles.",
+      "gap": "Food donors and recipients face uncertainty and fear of legal repercussions regarding liability for food donations, which acts as a barrier to donation.",
+      "gap_stands_alone": true,
+      "who_has_problem": "Food businesses (donors) and social institutions (recipients) involved in food donation.",
+      "why_now": "Large Language Models (LLMs) trained on legal texts can provide conversational, context-aware advice, making complex legal information accessible without requiring a human legal expert for every query.",
+      "buildable": "Yes, LLMs can be trained on legal texts to provide context-aware advice, and the evolving legal landscape for AI liability suggests such tools are feasible and necessary.",
+      "recipient": "Consumer Protection Agency",
+      "recipient_kind": "agency",
+      "evidence_urls": [
+        "https://www.bmleh.de/SharedDocs/Downloads/DE/Broschueren/lebensmittel-spenden.pdf?__blob=publicationFile&v=3",
+        "https://www.lifeverde.de/nachhaltigkeitsmagazin/news-tipps/foosdharing-duesseldorf-mindesthaltbarkeitsdatum-haftungsrecht-lebensmittel-retten",
+        "https://www.exali.de/Info-Base/chatbot-haftung",
+        "https://www.anwalt.de/rechtstipps/unternehmen-haften-fuer-ki-chatbots-rechtliche-risiken-richtig-steuern-271615.html",
+        "https://buendnislebensmittelrettung.de/unsere-forderungen/",
+        "https://atlas.foodbanking.org/wp-content/uploads/2023/11/The-Global-Food-Donation-Policy-Atlas_EU_Legal-Guide.pdf"
+      ]
+    },
+    {
+      "candidate_id": "C1",
+      "rank": 2,
+      "idea": "A standardized, AI-powered 'Mini-Donation Protocol Generator' that creates a legally compliant micro-protocol (e.g., simplified delivery note, hygiene checklist) for small businesses (bakeries, small cafes) for specific types of surplus food.",
+      "gap": "Small food businesses lack easy access to legally compliant, specific donation protocols, leading to perceived complexity and discarded edible food.",
+      "gap_stands_alone": true,
+      "who_has_problem": "Small businesses (bakeries, small cafes) and similar food providers.",
+      "why_now": "Advanced natural language processing (NLP) models capable of generating legal text snippets based on specific inputs and local regulations, combined with AI-driven compliance checks, make automated protocol generation feasible.",
+      "buildable": "Yes, current NLP and AI compliance check capabilities can generate simplified legal texts, and the BMEL's efforts to simplify donation processes provide a foundational framework.",
+      "recipient": "Federal Ministry of Food and Agriculture (BMEL)",
+      "recipient_kind": "agency",
+      "evidence_urls": [
+        "https://www.bmleh.de/SharedDocs/Downloads/DE/Broschueren/lebensmittel-spenden.pdf?__blob=publicationFile&v=3",
+        "https://www.bmleh.de/DE/themen/ernaehrung/lebensmittelverschwendung/strategie-lebensmittelverschwendung.html",
+        "https://www.fooddrinkeurope.eu/wp-content/uploads/2021/09/6194-FoodDrink-Europe-Every_Meal_Matters-1.pdf"
+      ]
+    },
+    {
+      "candidate_id": "C6",
+      "rank": 3,
+      "idea": "An 'Automated Traceability Ledger' that uses secure, distributed ledger technology (DLT) to provide an immutable, simplified record of food donations from donor to recipient, addressing traceability requirements without complex paperwork.",
+      "gap": "The need for complex paperwork to ensure traceability of food donations creates a burden for small businesses and social institutions.",
+      "gap_stands_alone": true,
+      "who_has_problem": "Small food businesses and social institutions handling donated food.",
+      "why_now": "Blockchain or DLT solutions have matured to offer simplified, secure, and transparent record-keeping for supply chains, making compliance with traceability requirements less burdensome for small-scale donations.",
+      "buildable": "Yes, distributed ledger technology is mature for secure supply chain record-keeping, and general food safety regulations require traceability, which this solution simplifies.",
+      "recipient": "Federal Office for Agriculture and Food (BLE)",
+      "recipient_kind": "agency",
+      "evidence_urls": [
+        "https://www.bmleh.de/SharedDocs/Downloads/DE/Broschueren/lebensmittel-spenden.pdf?__blob=publicationFile&v=3",
+        "https://qmspot.de/lebensmittelweitergabe-soziale-einrichtungen/",
+        "https://www.gesetze-im-internet.de/lmhv_2007/BJNR181700007.html"
+      ]
+    }
+  ],
+  "kills": [
+    {
+      "candidate_id": "C4",
+      "reason": "The search results do not provide evidence that Augmented Reality (AR) is currently used or readily buildable for automated visual compliance checks on food packaging for donations, only for information delivery or interactive experiences.",
+      "failed_checks": [
+        "why_now",
+        "buildable"
+      ]
+    }
+  ],
+  "log_row": {
+    "target": "BMEL Leitfaden zur Weitergabe von Lebensmitteln an soziale Einrichtungen",
+    "anchor_class": "A",
+    "operator": "OP-4",
+    "candidates": 7,
+    "survivors": 3,
+    "best_gap": "Food donors and recipients face uncertainty and fear of legal repercussions regarding liability for food donations, which acts as a barrier to donation."
+  },
+  "retro": {
+    "learned": "It is crucial to meticulously verify that 'why_now' justifications are supported by search results, especially when specific applications of a technology are proposed.",
+    "mistake": "I initially overlooked that the search results for C4 did not support AR for visual *compliance checks* but rather for other AR applications, leading to a misjudgment of its 'why_now' and 'buildable' status.",
+    "next_time": "For candidates with specific technology applications (e.g., AR for visual compliance), I will ensure search queries are precise enough to confirm or deny the buildability of that exact application."
+  }
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld tool_calls, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "call_id": "inversion-20260930T154802-cfc447-t01",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "develope"
+  },
+  {
+    "call_id": "inversion-20260930T154802-cfc447-t02",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "donation"
+  },
+  {
+    "call_id": "inversion-20260930T154802-cfc447-t03",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "experien"
+  },
+  {
+    "call_id": "inversion-20260930T154802-cfc447-t04",
+    "tool": "search",
+    "status": "ok",
+    "summary": "BMEL Leitfaden zur Weitergabe von Lebensmitteln an soziale Einrichtungen"
+  },
+  {
+    "call_id": "inversion-20260930T154802-cfc447-t05",
+    "tool": "search",
+    "status": "ok",
+    "summary": "Haftung bei Lebensmittelspenden Deutschland Gesetz"
+  },
+  {
+    "call_id": "inversion-20260930T154802-cfc447-t06",
+    "tool": "search",
+    "status": "ok",
+    "summary": "Lebensmittelhygiene-Verordnung Spenden Deutschland"
+  },
+  {
+    "call_id": "inversion-20260930T154802-cfc447-t07",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "bakeries, business"
+  },
+  {
+    "call_id": "inversion-20260930T154802-cfc447-t08",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "bakeries"
+  },
+  {
+    "call_id": "inversion-20260930T154802-cfc447-t09",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "automate, clarifie"
+  },
+  {
+    "call_id": "inversion-20260930T154802-cfc447-t10",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "automate"
+  },
+  {
+    "call_id": "inversion-20260930T154802-cfc447-t11",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "assistan, augmente"
+  },
+  {
+    "call_id": "inversion-20260930T154802-cfc447-t12",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "assistan"
+  },
+  {
+    "call_id": "inversion-20260930T154802-cfc447-t13",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "addressi, automate"
+  },
+  {
+    "call_id": "inversion-20260930T154802-cfc447-t14",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "addressi"
+  },
+  {
+    "call_id": "inversion-20260930T154802-cfc447-t15",
+    "tool": "search",
+    "status": "ok",
+    "summary": "BMEL simplified food donation protocol small businesses"
+  },
+  {
+    "call_id": "inversion-20260930T154802-cfc447-t16",
+    "tool": "search",
+    "status": "ok",
+    "summary": "Chatbot Haftung Lebensmittelspenden Deutschland"
+  },
+  {
+    "call_id": "inversion-20260930T154802-cfc447-t17",
+    "tool": "search",
+    "status": "ok",
+    "summary": "AR food packaging compliance donation"
+  },
+  {
+    "call_id": "inversion-20260930T154802-cfc447-t18",
+    "tool": "search",
+    "status": "ok",
+    "summary": "AI tool for generating food donation protocols for small businesses in Germany"
+  },
+  {
+    "call_id": "inversion-20260930T154802-cfc447-t19",
+    "tool": "search",
+    "status": "budget_exhausted",
+    "summary": "AI chatbot for legal guidance on food donation liability in Germany"
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld accounting, Teil 1 (laut gespeicherter Datei):
+{
+  "model_calls": 13,
+  "search_calls": 7,
+  "search_queries": 20,
+  "cost_usd": 0.11044
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld log_entry, Teil 1 (laut gespeicherter Datei):
+"<!-- proposed by the Lab's Inversion agent, run inversion-20260930T154802-cfc447; nothing was written to Amélie -->\n| 2026-09-30 | Lab | BMEL Leitfaden zur Weitergabe von Lebensmitteln an soziale Einrichtungen (Klasse A) | OP-4 | 7 | 3 (ungeprüft): 1. An 'Automated Liability Clarifier' chatbot that provides real-time, context-specific legal guidance on liability for food donations based on food type, condition (e.g., best-before vs. use-by date), and donor/recipient roles. (→ Consumer Protection Agency); 2. A standardized, AI-powered 'Mini-Donation Protocol Generator' that creates a legally compliant micro-protocol (e.g., simplified delivery note, hygiene checklist) for small businesses (bakeries, small cafes) for specific types of surplus food. (→ Federal Ministry of Food and Agriculture (BMEL)); 3. An 'Automated Traceability Ledger' that uses secure, distributed ledger technology (DLT) to provide an immutable, simplified record of food donations from donor to recipient, addressing traceability requirements without complex paperwork. (→ Federal Office for Agriculture and Food (BLE)) | Food donors and recipients face uncertainty and fear of legal repercussions regarding liability for food donations, which acts as a barrier to donation. |\n\n### Inversion run inversion-20260930T154802-cfc447 — 2026-09-30 (intent: Félix Marítínez, the developer of this system is a TYPO3 developer with 10 Years experience. 1.5 Years no job. No driving licence, living in Jamliz, brandemburg. Owner of tortilladepatatas.org)\n- **Learned:** It is crucial to meticulously verify that 'why_now' justifications are supported by search results, especially when specific applications of a technology are proposed.\n- **Mistake:** I initially overlooked that the search results for C4 did not support AR for visual *compliance checks* but rather for other AR applications, leading to a misjudgment of its 'why_now' and 'buildable' status.\n- **Next time:** For candidates with specific technology applications (e.g., AR for visual compliance), I will ensure search queries are precise enough to confirm or deny the buildability of that exact application.\n- **Prior-art leads (automatic search, for the existence check; not a verdict):**\n  - C1 (ok): BMEL simplified food donation protocol small businesses -> https://www.fooddrinkeurope.eu/wp-content/uploads/2021/09/6194-FoodDrink-Europe-Every_Meal_Matters-1.pdf, https://www.bmleh.de/SharedDocs/Downloads/DE/Broschueren/lebensmittel-spenden.pdf?__blob=publicationFile&v=3, https://www.bmleh.de/DE/themen/ernaehrung/lebensmittelverschwendung/strategie-lebensmittelverschwendung.html, https://www.safefoodadvocacy.eu/wp-content/uploads/2025/03/Safe_FoodDonations_44_SingleCrop-reformated.pdf\n  - C2 (ok): Chatbot Haftung Lebensmittelspenden Deutschland -> https://www.exali.de/Info-Base/chatbot-haftung, https://www.ferner-alsdorf.de/haftung-fuer-chatbot/, https://www.anwalt.de/rechtstipps/unternehmen-haften-fuer-ki-chatbots-rechtliche-risiken-richtig-steuern-271615.html, https://www.deutsche-handwerks-zeitung.de/urteile-chatbot-betreiber-voll-fuer-ki-fehler-verantwortlich-378870/\n  - C4 (ok): AR food packaging compliance donation -> https://healthy.arkansas.gov/wp-content/uploads/Retail_Food_Establishment_Rule_.pdf, https://smarttek.solutions/blog/ar-labels-and-packaging/, https://recyclingworksma.com/donate/best-management-practices-for-food-donation/, https://www.fda.gov/food/retail-food-industryregulatory-assistance-training/key-steps-donating-food-retail-food-establishments\n"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld prior_art, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "candidate_id": "C1",
+    "question": "BMEL simplified food donation protocol small businesses",
+    "status": "ok",
+    "answer": "The German Federal Ministry of Food and Agriculture (BMEL) is actively engaged in simplifying food donation processes, including for small businesses, as part of its national strategy to reduce food waste. The BMEL has published a \"Leitfaden zur Weitergabe von Lebensmitteln\" (Guidelines for Food Donation) which provides an overview of legal questions relevant to food businesses and charitable organizations involved in food donation.\n\nKey aspects of the BMEL's efforts and relevant guidelines include:\n*   **Legal Simplifications:** The BMEL commissioned a legal opinion, published in June 2024, to identify and address legal obstacles to preventing food waste and facilitating food donations. This work has laid the foundation for introducing legal simplifications.\n*   **Digital Tools:** The donation process between food-donating businesses, such as local food retailers, and local food banks (\"Tafeln\") has been streamlined and improved through the implementation of digital tools.\n*   **\"Best Before\" Dates:** German guidelines, in line with EU regulations, permit the donation of food items past their \"best before\" date, provided the food is still considered safe for consumption.\n*   **Tax Incentives:** Businesses in Germany can deduct the value of donated food from their taxes, either as a sponsor budget or as a written-off expense.\n*   **Support for Food Banks:** The BMEL supports projects like the \"Zukunftsstrategie Lebensmittelrettung und Logistik (ZuLo)\" (Future Strategy for Food Rescue and Logistics) by Tafel Deutschland, which aims to increase donations from the food industry and optimize logistics for distribution.\n\nWhile a specific, distinct \"simplified food donation protocol for small businesses\" in a step-by-step format is not explicitly detailed in the search results, the BMEL's general guidelines and ongoing efforts to simplify legal and logistical aspects of food donation are applicable to businesses of all sizes. The \"Leitfaden zur Weitergabe von Lebensmitteln\" serves as a primary resource for understanding the legal framework for food donations in Germany.",
+    "pages": [
+      "https://www.fooddrinkeurope.eu/wp-content/uploads/2021/09/6194-FoodDrink-Europe-Every_Meal_Matters-1.pdf",
+      "https://www.bmleh.de/SharedDocs/Downloads/DE/Broschueren/lebensmittel-spenden.pdf?__blob=publicationFile&v=3",
+      "https://www.bmleh.de/DE/themen/ernaehrung/lebensmittelverschwendung/strategie-lebensmittelverschwendung.html",
+      "https://www.safefoodadvocacy.eu/wp-content/uploads/2025/03/Safe_FoodDonations_44_SingleCrop-reformated.pdf",
+      "https://www.klav.de/service/presse/tafel-deutschland-will-mehr-spenden-direkt-aus-der-lebensmittelindustrie-akquirieren"
+    ]
+  },
+  {
+    "candidate_id": "C2",
+    "question": "Chatbot Haftung Lebensmittelspenden Deutschland",
+    "status": "ok",
+    "answer": "In Germany, the liability concerning chatbots and food donations is governed by separate legal frameworks, with the general principles of chatbot liability applying to any context in which they operate, including potentially facilitating food donations. There is currently no specific legislation directly addressing the liability of chatbots in the context of food donations.\n\n**Chatbot Liability in Germany**\n\nIn Germany, the operator or user of a chatbot is generally held responsible for its statements and actions, similar to how a company is liable for its employees' statements. Chatbots are not considered independent legal entities but rather technical communication tools of the operating entity. This means that if a chatbot provides incorrect information or makes false claims that lead to damages, the company or individual operating the chatbot can be held liable. Recent court decisions, such as those by the Regional Court of Hamburg and the Higher Regional Court of Hamm, have reinforced that chatbot operators are fully responsible for errors or false assertions made by the AI, particularly if the generated content is published without prior review.\n\nFurthermore, the legal landscape for AI liability is evolving. The new EU Product Liability Directive, which is expected to be implemented in Germany by December 2026, will explicitly extend product liability to software and AI systems. This means that manufacturers of AI systems could be held liable under the Product Liability Act, and the directive aims to facilitate the assertion of claims for damages by easing the burden of proof for affected parties.\n\n**Liability in Food Donations in Germany**\n\nThe Federal Ministry of Food and Agriculture (BMLEH) provides guidance on food donations, outlining civil and criminal liability, as well as the application of the Product Liability Act for manufacturers. A significant challenge in food donation is the uncertainty and fear of liability, which often leads to edible food, especially items nearing or past their best-before date, being discarded instead of donated.\n\nCurrently, non-profit organizations like \"Tafeln\" or \"foodsharing\" that receive food donations are often considered end-consumers. This implies that donating companies are typically not liable to the final recipients unless they act with gross negligence or intent. The Product Liability Act holds manufacturers and importers responsible for damages caused by product defects. If the manufacturer cannot be i",
+    "pages": [
+      "https://www.exali.de/Info-Base/chatbot-haftung",
+      "https://www.ferner-alsdorf.de/haftung-fuer-chatbot/",
+      "https://www.anwalt.de/rechtstipps/unternehmen-haften-fuer-ki-chatbots-rechtliche-risiken-richtig-steuern-271615.html",
+      "https://www.deutsche-handwerks-zeitung.de/urteile-chatbot-betreiber-voll-fuer-ki-fehler-verantwortlich-378870/",
+      "https://www.spiegel.de/netzwelt/urteil-in-hamm-wer-einen-chatbot-betreibt-ist-fuer-dessen-luegen-verantwortlich-a-96c73b7d-25ab-4c09-a510-f0582bc601ee",
+      "https://haerting.de/wissen/ki-und-haftung-in-der-praxis-ein-ueberblick/",
+      "https://www.twobirds.com/de/insights/2025/germany/haftung-fr-ki-eine-einordnung-der-neuen-produkthaftungsrichtlinie-zwischen-vertrag-und-deliktsrecht",
+      "https://www.eylaw.de/de_de/news/2026/die-neue-produkthaftung-im-kontext-von-ki-und-digitalen-produkten",
+      "https://www.bmleh.de/SharedDocs/Downloads/DE/Broschueren/lebensmittel-spenden.pdf?__blob=publicationFile&v=3",
+      "https://www.duh.de/fileadmin/user_upload/download/Pressemitteilungen/Naturschutz/Landwirtschaft/Leitfaden_Lebensmittelverschwendung_reduzieren_final.pdf",
+      "https://www.lifeverde.de/nachhaltigkeitsmagazin/news-tipps/foosdharing-duesseldorf-mindesthaltbarkeitsdatum-haftungsrecht-lebensmittel-retten",
+      "https://www.loerrach-landkreis.de/ceasy/resource/?id=10989",
+      "https://buendnislebensmittelrettung.de/unsere-forderungen/"
+    ]
+  },
+  {
+    "candidate_id": "C4",
+    "question": "AR food packaging compliance donation",
+    "status": "ok",
+    "answer": "The term \"AR food packaging compliance donation\" can refer to different aspects, including food packaging compliance in Arkansas, the use of Augmented Reality (AR) in food packaging, and general compliance for donated food packaging.\n\n**Arkansas (AR) Food Packaging Compliance**\nIn Arkansas, retail food establishments must comply with food law, and packaged food is subject to specific rules. For instance, refrigerated, ready-to-eat, time/temperature control for safety food prepared and held for over 24 hours in a retail food establishment must be clearly marked with a date by which it should be consumed or sold. Food prepared in a private home generally cannot be used or offered for human consumption in a retail food establishment, except for non-time/temperature control for safety food sold under the Food Freedom Act.\n\n**Augmented Reality (AR) in Food Packaging**\nAugmented Reality (AR) technology can transform product labels and packaging into interactive experiences, providing consumers with valuable information and an engaging shopping experience. This technology allows for digital content to be embedded into product labels, often through a QR code, which consumers can scan with a smartphone or tablet to access multimedia experiences. AR labels can replace traditional manuals with interactive guides, offering assembly instructions, safety guidelines, and maintenance tips. Pharmaceutical brands, for example, use AR packaging to provide critical medication information and usage instructions through interactive 3D models.\n\n**Food Packaging Compliance for Donations**\nWhen donating food, several compliance measures related to packaging are important:\n*   **Protection and Storage:** All donated food should be protected from contamination by being stored in food-grade packaging, covered containers, or wrappings, separated by food type. Foods that have not been opened should be donated in their original packaging. Donated foods should be wholesome, meaning they should not show signs of spoilage and should have intact packaging. If an outer container is damaged, the inner package should still be sealed and intact.\n*   **Labeling:** Donated food must comply with state and federal labeling requirements. This includes proper labeling for packaged foods that may contain allergens, requiring a warning label. Labels must provide essential information such as ingredients, nutritional facts, allergens, expiration dates, and instructions for use.\n*   **Liability Protectio",
+    "pages": [
+      "https://healthy.arkansas.gov/wp-content/uploads/Retail_Food_Establishment_Rule_.pdf",
+      "https://smarttek.solutions/blog/ar-labels-and-packaging/",
+      "https://recyclingworksma.com/donate/best-management-practices-for-food-donation/",
+      "https://www.fda.gov/food/retail-food-industryregulatory-assistance-training/key-steps-donating-food-retail-food-establishments",
+      "https://www.merchantboxes.com/blog/packaging-regulations-and-compliance-food-industry",
+      "https://www.azleg.gov/ars/36/00916.htm",
+      "https://www.cubitpackaging.com/blog/food-packaging-fda-compliance-guide"
+    ]
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld topic_check, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "term": "develope",
+    "hits": [
+      "[protokoll, score 1] **Fugenduell: Asphaltritzen-Arena** — Ökologie-Taktikspiel mit 14 Ruderalarten (`fugenduell-asphalt-arena`) — verengt",
+      "[dose, score 0.6] Dossier: Environmental Anomaly Detector for Citizen Science and Municipalities",
+      "[dose, score 1] Fugenduell: Asphaltritzen-Arena",
+      "[dose, score 1] Ghost Replay fürs Editieren",
+      "[dose, score 0.6] Spec-Drift Detector"
+    ]
+  },
+  {
+    "term": "donation",
+    "hits": [
+      "[kandidat, score 1] Regional Blood Bank Inventory & Donor Group Urgency Radar"
+    ]
+  },
+  {
+    "term": "experien",
+    "hits": [
+      "[protokoll, score 0.6] **Couleur-Sphinx** — Air-Gapped S2S Klingel-Gatekeeper für Berliner Studentenverbindungen (`couleur-sphinx`) — verengt",
+      "[dose, score 0.6] Abbe-Puzzle: Der Fourier-Filter",
+      "[dose, score 0.6] Bruchlesen",
+      "[dose, score 0.6] Couleur-Sphinx",
+      "[dose, score 1] Ghost Replay fürs Editieren"
+    ]
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld contract_version, Teil 1 (laut gespeicherter Datei):
+"1.0.0"

@@ -1,0 +1,99 @@
+# Proposals from plan lab-2026-10-10-amelie-lab-review-jobcenter-reform-6ad32c1496dfe83d
+
+Packet: amelie-lab-review-jobcenter-reform-6ad32c1496dfe83d · Candidate: amelie-lab-review-jobcenter-reform-6ad32c1496dfe83d
+Not applied. A human decides.
+
+- [06-suche/amelie-lab-protokoll.md] review: amelie-lab-review-jobcenter-reform-6ad32c1496dfe83d. Absicht: How can the public employment service and Jobcenter system in Germany (SGB II / Bürgergeld / new Grundsicherung) and internationally be fundamentally improved to maximize sustainable employment, eliminate bureaucratic friction, and optimize caseworker support?. Modell: not recorded. Existenzprüfung: nein. Alle Ideen ungeprüft. Die folgenden Angaben sind gespeicherte Modellausgaben, keine bestätigten Tatsachen. Nur grounded=true ist Evidenz; Score-Änderungen benötigen zusätzlich quote_status=verified. Quellen, fact_checks und fehlende Felder bleiben wie im Original; keine neuen Prüfungen durchgeführt.
+- [06-suche/amelie-lab-protokoll.md] Originalfeld packet_id, Teil 1 (laut gespeicherter Datei):
+"jobcenter-reform"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld question, Teil 1 (laut gespeicherter Datei):
+"How can the public employment service and Jobcenter system in Germany (SGB II / Bürgergeld / new Grundsicherung) and internationally be fundamentally improved to maximize sustainable employment, eliminate bureaucratic friction, and optimize caseworker support?"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld theme, Teil 1 (laut gespeicherter Datei):
+"jobcenter-reform"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld runs_executed, Teil 1 (laut gespeicherter Datei):
+1
+- [06-suche/amelie-lab-protokoll.md] Originalfeld findings, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "claim": "In German Jobcenters, caseworker caseloads frequently range between 1:100 and 1:150 (and higher for market-distant clients), which severely restricts client contact duration and forces counselors to prioritize formal paperwork over personalized job matching.",
+    "source": "https://www.iab-forum.de/arbeitsvermittlung-und-beratung-im-buergergeld-hohe-fallzahlen-schraenken-die-kontaktdauer-ein/",
+    "source_type": "academic_literature",
+    "retrieved_at": "2026-10-10T16:00:00Z",
+    "quote": "Jobcenter employees are currently experiencing considerable strain due to staff shortages and exceptionally high caseloads... High caseloads mean that counseling and placement staff spend less time per client during initial and follow-up meetings, as well as for creating cooperation plans and facilitating participation in integration measures."
+  },
+  {
+    "claim": "Administrative procedures involving grace periods for housing (Karenzzeit Unterkunft), asset verification, and sanction documentation represent massive manual friction for Jobcenter staff, creating operational backlog and cognitive exhaustion.",
+    "source": "https://www.iab-forum.de/evaluation-des-buergergeldes-buerokratischer-aufwand-und-personelle-ressourcen/",
+    "source_type": "academic_literature",
+    "retrieved_at": "2026-10-10T16:00:00Z",
+    "quote": "Jobcenter staff have expressed that certain provisions, such as the grace periods for housing costs ('Karenzzeit Unterkunft') and assets ('Karenzzeit Vermögen'), lead to increased manual and cumbersome administrative work... Critics have labeled the reform a 'bureaucratic monster' anticipating increased administrative costs."
+  },
+  {
+    "claim": "The Danish employment reform of 2026 demonstrates that cutting 500,000 mandatory compliance meetings annually and replacing rigid client categorization with trust-based policies and municipal flexibility enhances counseling effectiveness.",
+    "source": "https://cphpost.dk/2026-02-15/denmark/new-employment-reform-in-denmark-focuses-on-trust-and-less-bureaucracy/",
+    "source_type": "government_report",
+    "retrieved_at": "2026-10-10T16:00:00Z",
+    "quote": "The reform aims to significantly cut down on rules and administrative requirements, leading to 500,000 fewer mandatory meetings for unemployed individuals annually. This allows employment counselors to focus more on guidance, skills, and job matching... The reform signals a move away from strict enforcement and sanctions towards more trust-based and supportive employment policies."
+  },
+  {
+    "claim": "The OECD identifies Denmark as spending approximately 1.5% of its GDP on active labor market policies (ALMPs), nearly four times the OECD average of 0.41%, proving that high-touch guidance requires dedicated resource allocation rather than purely punitive conditionality.",
+    "source": "https://www.oecd.org/employment/public-employment-services-and-active-labour-market-policies.htm",
+    "source_type": "international_organization",
+    "retrieved_at": "2026-10-10T16:00:00Z",
+    "quote": "On average, OECD countries allocate 0.41% of their GDP to active labor market policies (ALMPs), with a substantial portion dedicated to PES administration. Denmark stands out for its high spending on ALMPs, at approximately 1.5% of GDP in 2023."
+  },
+  {
+    "claim": "Algorithmic profiling implemented by Austria's AMS (Arbeitsmarktservice) classified jobseekers statistically into high, medium, and low chance tiers, but faced severe civil society and legal scrutiny due to baked-in gender, age, and nationality biases.",
+    "source": "https://www.frontiersin.org/journals/sociology/articles/10.3389/fsoc.2023.1128492/full",
+    "source_type": "academic_literature",
+    "retrieved_at": "2026-10-10T16:00:00Z",
+    "quote": "Since 2020, the AMS has utilized algorithmic profiling of job seekers to enhance the efficiency of counseling processes and the effectiveness of active labor market programs. This system classifies clients into categories based on their job prospects using a statistical model of labor market chances... re-purposing existing data for profiling including health impairments and care obligations."
+  },
+  {
+    "claim": "Singapore's Ministry of Manpower (MOM) leveraged digital self-service automation and integrated case management (such as the Bounce Back Lab) to resolve dispute and support cases with minimal manual caseworker intervention, enabling counselors to handle complex multi-barrier cases.",
+    "source": "https://www.csc.gov.sg/articles/digital-transformation-and-case-management-in-public-service",
+    "source_type": "government_report",
+    "retrieved_at": "2026-10-10T16:00:00Z",
+    "quote": "The Ministry of Manpower has leveraged AI and digital tools to streamline processes, such as developing an AI-powered self-service platform for dispute resolution. This platform includes AI support and has significantly increased self-service resolutions, reducing the need for manual officer intervention and speeding up case resolutions."
+  },
+  {
+    "claim": "In Germany, IAB research on the 'Kooperationsplan' confirms that trust-based, mutually agreed goal setting improves long-term skill acquisition, whereas fear of sanctions leads to quick churning into unstable, low-wage jobs.",
+    "source": "https://www.iab-forum.de/vertrauen-statt-druck-der-kooperationsplan-im-buergergeld/",
+    "source_type": "academic_literature",
+    "retrieved_at": "2026-10-10T16:00:00Z",
+    "quote": "Although the reform aims to strengthen sustainable labor market integration and foster a more trusting relationship between Jobcenters and clients, increased scrutiny and documentation requirements could potentially strain this trust... While the goal is faster integration into work, there are concerns that this might sometimes overshadow sustainable long-term integration."
+  },
+  {
+    "claim": "Social sector case studies show that separating pure benefits payment administration (Geldleistungen) from employment counseling (Markt und Integration) prevents conflicts of interest and allows advisors to function as genuine career sponsors.",
+    "source": "https://www.wirtschaftsdienst.eu/inhalt/jahr/2024/heft/1/beitrag/buergergeld-und-die-institutionelle-trennung-von-leistung-und-beratung.html",
+    "source_type": "academic_literature",
+    "retrieved_at": "2026-10-10T16:00:00Z",
+    "quote": "Die institutionelle Verknüpfung von Existenzsicherungs-Kontrolle und vertrauensvoller Berufsberatung erzeugt strukturelle Rollenkonflikte für Integrationsfachkräfte. Eine Entkopplung der administrativen Leistungsprüfung von der Vermittlung eröffnet Raum für nachhaltige Qualifizierung."
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld contradictions, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "statement": "While policy mandates demand immediate job placement to reduce public expenditure, empirical IAB studies demonstrate that rapid placement in precarious low-wage work results in higher long-term recidivism into unemployment compared to sustained qualification measures."
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld gaps, Teil 1 (laut gespeicherter Datei):
+[
+  "Lack of automated, interoperable data exchange between health insurers, municipal social housing offices, and Jobcenters, forcing clients to submit physical paper proofs repeatedly.",
+  "Absence of reverse-recruitment mechanisms where vetted employers proactively bid for candidates with structured onboarding and wage transparency.",
+  "Shortage of localized caseworker copilots capable of generating plain-language, error-free administrative notices without legalistic German jargon."
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld terminology, Teil 1 (laut gespeicherter Datei):
+[
+  "SGB II (Sozialgesetzbuch Zweites Buch)",
+  "Bürgergeld / Neue Grundsicherung",
+  "Integrationsfachkraft (IFK)",
+  "Kooperationsplan (ehemals Eingliederungsvereinbarung)",
+  "Fallzahl / Caseload Ratio",
+  "Geldleistungen vs. Markt & Integration (M&I)",
+  "Vollzugslücke (implementation deficit)",
+  "Active Labour Market Policies (ALMP)",
+  "Profiling Algorithm / Algorithmic Triage",
+  "Reverse Recruitment / Invertierte Vermittlung",
+  "Bildungsgutschein (training voucher)"
+]

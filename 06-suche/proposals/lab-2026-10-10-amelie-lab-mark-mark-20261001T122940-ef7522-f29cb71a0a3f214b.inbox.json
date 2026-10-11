@@ -1,0 +1,681 @@
+{
+  "batch_id": "amelie-lab-mark-mark-20261001T122940-ef7522-f29cb71a0a3f214b",
+  "lab_id": "amelie-lab",
+  "engine": "mark",
+  "run_id": "mark-20261001T122940-ef7522",
+  "revision": "f29cb71a0a3f214ba156560595d4f499339fc4a1b009638fbfdb53f3c4bdb3ff",
+  "created_at": "2026-10-01T12:35:03Z",
+  "model": "gemini-2.5-flash",
+  "intent": "TYPO3 Künster AI Agent workflows as service in brandemburg",
+  "ideas": [
+    {
+      "local_id": "V1",
+      "record": {
+        "candidate_id": "V1",
+        "title": "KI-gestützte Workflow-Automatisierung für TYPO3 als Dienstleistung in Brandenburg",
+        "tagline": "Effizienzsteigerung und Compliance für TYPO3-Nutzer durch maßgeschneiderte KI-Integrationen.",
+        "offering_kind": "productized_service",
+        "target_customer": "TYPO3-nutzende Organisationen und Unternehmen in Brandenburg, insbesondere öffentliche Einrichtungen, Bildungseinrichtungen und KMU, die ihre Content-Management-Prozesse automatisieren und optimieren möchten.",
+        "pain_and_compliance": "Hoher manueller Aufwand und Ineffizienz bei Content-Erstellung, -Pflege und -Übersetzung in TYPO3. Mangel an internem Fachwissen für die Integration und den Betrieb komplexer KI-Lösungen. Der Wunsch nach Effizienzsteigerung und Kostenreduktion durch Automatisierung. Die Notwendigkeit, rechtliche Anforderungen wie den EU AI Act bei der Nutzung von KI-generierten Inhalten zu beachten, um Reputationsschäden und potenzielle Bußgelder zu vermeiden. TYPO3 v14 bietet hierfür Schnittstellen, aber die Implementierung erfordert Expertise.",
+        "mvp_specification": "Features: Implementierung von zwei bis drei Kern-KI-Workflows: 1. Automatische Generierung von SEO-Metadaten (Titel, Beschreibung) für TYPO3-Seiten und Artikeln. 2. KI-gestützte Textgenerierung für Entwürfe von Nachrichtenartikeln oder Produktbeschreibungen direkt im TYPO3-Backend. 3. KI-basierte Bildbeschreibung und Metadaten-Generierung für Mediendateien. Core stack/components: TYPO3 CMS (aktuelle LTS-Version), bestehende TYPO3-Erweiterungen für KI-Integration (z.B. AiM, ns_t3ai, ai-bundle), Anbindung an ausgewählte Large Language Models (LLMs) wie OpenAI (GPT-4) oder Google Gemini über API. Build approach: Analyse der Kundenbedürfnisse, Auswahl und Konfiguration passender TYPO3-Erweiterungen, API-Schlüssel-Management, Entwicklung und Feinabstimmung spezifischer Prompts für die gewünschten Workflows, Schulung der Redakteure. Fokus auf sofortigen Mehrwert und einfache Bedienbarkeit.",
+        "pricing_and_economics": "Pricing Tiers: 'Starter-Paket': Einmalige Einrichtung (z.B. 2.000 - 4.000 EUR) für 2-3 Basis-Workflows, zzgl. monatliche Servicegebühr (ab 250 EUR) für Wartung, Support und Verbrauchs-Credits für die KI-APIs. 'Professional-Paket': Erweiterte Einrichtung (z.B. 5.000 - 8.000 EUR) für mehr Workflows oder komplexere Anforderungen, zzgl. monatliche Gebühr (ab 500 EUR). Zusätzliche individuelle Beratungsleistungen nach Stundensatz (120-180 EUR/Stunde). Estimated Gross Margin: 60-70% (Annahme). Target Initial Revenue: 10.000 - 20.000 EUR in den ersten 6-12 Monaten durch 3-5 Kunden.",
+        "distribution_strategy": "Direktmarketing und Kaltakquise bei öffentlichen Einrichtungen und größeren KMU in Brandenburg mit bestehenden TYPO3-Installationen. Partnerschaften mit TYPO3-Agenturen in Brandenburg, die keine eigene KI-Integrationskompetenz haben. Content Marketing (Blogartikel, Webinare) zu 'TYPO3 & KI', 'EU AI Act für Redakteure' und 'Effizienz im Content Management'. Präsenz auf lokalen Branchenveranstaltungen und TYPO3-Meetups in der DACH-Region.",
+        "moat_and_defensibility": "Spezialisiertes Know-how: Tiefgreifendes Verständnis der TYPO3-Architektur in Kombination mit Expertise in KI-Prompt-Engineering und API-Integration. Lokale Expertise und Vertrauen: Aufbau von Vertrauen bei Kunden in Brandenburg durch persönliche Betreuung und Verständnis regionaler Anforderungen (z.B. spezifische Compliance-Anforderungen öffentlicher Stellen). Kontinuierliche Anpassung: Ständige Weiterentwicklung und Anpassung der Workflows an neue TYPO3-Versionen, KI-Modelle und sich ändernde Compliance-Vorschriften (EU AI Act). Beziehung zu Kunden: Langfristige Serviceverträge und enge Kundenbeziehungen durch den 'productized_service'-Ansatz.",
+        "kill_criteria": [
+          "Der TYPO3-Markt in Brandenburg schrumpft signifikant oder wird durch andere CMS mit einfacherer, nativer KI-Integration überrollt.",
+          "Große TYPO3-Agenturen oder die TYPO3 Association selbst bieten umfassende, kostengünstige und standardisierte KI-Integrationslösungen an, die den Bedarf an spezialisierten Dienstleistern obsolet machen.",
+          "Die Komplexität der Einhaltung des EU AI Act für KI-generierte Inhalte wird für Dienstleister unüberschaubar hoch, oder die Haftungsrisiken übersteigen die potenziellen Einnahmen.",
+          "Die Kosten für die Nutzung von KI-APIs steigen drastisch an und machen die Dienstleistung unwirtschaftlich."
+        ],
+        "evidence_grade": {
+          "facts": [
+            "TYPO3 hält einen signifikanten Marktanteil in Deutschland mit 57.095 ihrer länderspezifischen Domains dort. (https://technologychecker.io/technology/typo3)",
+            "Im Jahr 2019 entfielen 13% des CMS-Marktes in Deutschland auf TYPO3, was es zum zweitmeistgenutzten System machte. (https://www.wus.de/en/blog/detail-page/the-cms-comparison-part-1-typo3-vs-wordpress)",
+            "Deutschland repräsentiert 68,2% aller Websites, die TYPO3 nutzen. (https://www.wmtips.com/technologies/cms/typo3/)",
+            "TYPO3 v14 ist darauf ausgelegt, klare Schnittstellen für die Integration verschiedener KI-Tools und externer Dienste anzubieten. (https://news.typo3.com/article/typo3-v14-ai-integrations)",
+            "Der globale Markt für KI-Agenten wurde 2026 auf 11,55 Milliarden USD geschätzt. (https://www.precedenceresearch.com/ai-agents-market)",
+            "Der Markt für Agentic AI Workflows wird voraussichtlich bis 2034 227 Milliarden USD erreichen. (https://market.us/report/agentic-ai-workflows-market/)",
+            "Deutschlands Agentic AI Markt wird voraussichtlich von ca. 323,4 Millionen USD im Jahr 2025 auf 3.927,8 Millionen USD im Jahr 2030 wachsen. (https://www.marketsandmarkets.com/Market-Reports/geography/agentic-ai-market/germany)",
+            "LOUIS INTERNET bietet ein 'KI-Extension-Paket' ab 125 Euro pro Monat für bis zu vier KI-Erweiterungen an. (https://www.louis.info/digitale-loesungen/kuenstliche-intelligenz/ki-typo3-extensions/)",
+            "Der durchschnittliche Stundensatz für TYPO3-Freelancer liegt bei rund 80 €. (https://www.freelancermap.de/freelancer/typo3)",
+            "IT-Beratungssätze für Senior-Berater in Deutschland liegen typischerweise zwischen 120 € und 250 € pro Stunde. (https://www.sigmasolve.com/blog/it-consulting-rates-per-hour)"
+          ],
+          "inferences": [
+            "Es gibt einen wachsenden Bedarf an KI-Integrationsdienstleistungen für TYPO3-Nutzer, abgeleitet aus dem signifikanten TYPO3-Marktanteil in Deutschland und dem starken Wachstum des Agentic AI Marktes.",
+            "Die Variabilität der Agentur- und Freelancer-Stundensätze deutet darauf hin, dass eine Positionierung im mittleren bis oberen Preissegment für spezialisierte KI-Integrationsdienste möglich ist, abgeleitet aus den genannten Stundensätzen für TYPO3-Freelancer und IT-Berater.",
+            "TYPO3-Nutzer in öffentlichen Einrichtungen und im Bildungssektor sind aufgrund des hohen TYPO3-Anteils in diesen Bereichen wahrscheinliche Zielkunden für Effizienzsteigerungen und Compliance-Lösungen, abgeleitet aus der Erwähnung der Prevalenz von TYPO3 in höherer Bildung, öffentlichem Nahverkehr, Gesundheitswesen und Regierung in den Suchergebnissen."
+          ],
+          "open_questions": [
+            "Wie hoch ist die spezifische Zahlungsbereitschaft von TYPO3-Nutzern in Brandenburg für KI-gestützte Workflow-Automatisierung?",
+            "Gibt es bereits lokale TYPO3-Agenturen in Brandenburg, die ähnliche spezialisierte KI-Integrationsdienstleistungen anbieten?",
+            "Welche spezifischen KI-Workflows haben für öffentliche Einrichtungen und KMU in Brandenburg die höchste Priorität und den größten Return on Investment?",
+            "Wie viele TYPO3-Installationen gibt es konkret in Brandenburg?"
+          ]
+        },
+        "evidence_urls": [
+          "https://technologychecker.io/technology/typo3",
+          "https://www.wus.de/en/blog/detail-page/the-cms-comparison-part-1-typo3-vs-wordpress",
+          "https://www.wmtips.com/technologies/cms/typo3/",
+          "https://news.typo3.com/article/typo3-v14-ai-integrations",
+          "https://www.precedenceresearch.com/ai-agents-market",
+          "https://market.us/report/agentic-ai-workflows-market/",
+          "https://www.marketsandmarkets.com/Market-Reports/geography/agentic-ai-market/germany",
+          "https://www.louis.info/digitale-loesungen/kuenstliche-intelligenz/ki-typo3-extensions/",
+          "https://www.freelancermap.de/freelancer/typo3",
+          "https://www.sigmasolve.com/blog/it-consulting-rates-per-hour"
+        ]
+      }
+    },
+    {
+      "local_id": "V3",
+      "record": {
+        "candidate_id": "V3",
+        "title": "EU AI Act Compliance Toolkit für KI-generierte Inhalte in TYPO3",
+        "tagline": "Rechtssicherheit und Transparenz für TYPO3-Websites durch automatisierte Kennzeichnung von KI-Inhalten gemäß EU AI Act.",
+        "offering_kind": "compliance_toolkit",
+        "target_customer": "TYPO3-nutzende Organisationen, insbesondere öffentliche Einrichtungen, Universitäten, Krankenhäuser und größere Unternehmen in Deutschland, die KI zur Content-Erstellung nutzen und den Anforderungen des EU AI Acts gerecht werden müssen.",
+        "pain_and_compliance": "Hohes Risiko von Bußgeldern (bis zu 35 Mio. EUR oder 7% des weltweiten Jahresumsatzes) und Reputationsschäden bei Nichteinhaltung des EU AI Acts, insbesondere bei der Kennzeichnung von KI-generierten Inhalten. Mangel an einfachen, integrierten Lösungen zur Sicherstellung der Compliance im TYPO3-Umfeld. Der EU AI Act, in Kraft getreten am 1. August 2024, erfordert Transparenzpflichten (Artikel 50) für KI-generierte Inhalte, die ab dem 2. August 2026 zur Anwendung kommen. Dies beinhaltet die Kennzeichnung von Inhalten, die von einem KI-System generiert oder manipuliert wurden.",
+        "mvp_specification": "Features: TYPO3-Extension zur automatischen oder manuellen Kennzeichnung von KI-generierten Texten und Bildern im Backend. Audit-Log-Funktion, die protokolliert, wann, welcher Inhalt von welchem Nutzer als KI-generiert markiert wurde. Eine konfigurierbare Frontend-Ausgabe der Kennzeichnung (z.B. kleiner Hinweis, Meta-Tag). Core stack/components: TYPO3 CMS (aktuelle LTS-Version), Entwicklung einer neuen, dedizierten TYPO3-Extension in PHP/TypoScript, Integration in die TYPO3-Benutzeroberfläche. Build approach: Agile Entwicklung mit Fokus auf schnelle Implementierung der Kernfunktionen. Enge Abstimmung mit Rechtsexperten zum EU AI Act (ggf. externe Beratung). Priorisierung der Kennzeichnungs- und Audit-Funktionen.",
+        "pricing_and_economics": "Pricing Tiers: 'Standard-Lizenz': Jährliche Lizenzgebühr (z.B. 499 - 999 EUR) pro TYPO3-Installation für Kernfunktionen. 'Enterprise-Lizenz': Jährliche Lizenzgebühr (z.B. 1.999 - 3.999 EUR) für erweiterte Funktionen wie Multi-Site-Management, erweiterte Audit-Funktionen und Premium-Support. Optionale Installations- und Konfigurationsdienstleistungen (einmalig 500 - 1.500 EUR). Estimated Gross Margin: 80-90% (Annahme). Target Initial Revenue: 5.000 - 10.000 EUR in den ersten 6-12 Monaten durch 5-10 Kunden.",
+        "distribution_strategy": "Direktvertrieb an TYPO3-Agenturen und große TYPO3-Kunden (öffentliche Hand, Bildung, Gesundheitswesen) in Deutschland. Listung im offiziellen TYPO3 Extension Repository. Content Marketing (Whitepapers, Webinare) zum EU AI Act und dessen Auswirkungen auf Content-Management-Systeme. Partnerschaften mit Rechtsberatungsfirmen, die sich auf den EU AI Act spezialisiert haben.",
+        "moat_and_defensibility": "Spezialisierung: Fokus auf die spezifische Nische 'EU AI Act Compliance für TYPO3'. Rechtliche Expertise: Kontinuierliche Aktualisierung der Lösung an sich ändernde rechtliche Anforderungen und Interpretationen des EU AI Acts. Integrationstiefe: Tiefe und nahtlose Integration in das TYPO3-System, die über generische KI-Erkennungs-Tools hinausgeht. Zertifizierung/Auditierbarkeit: Potenzielle Möglichkeit zur Zertifizierung der Lösung oder Bereitstellung von Funktionen, die Audits erleichtern.",
+        "kill_criteria": [
+          "Der EU AI Act wird in Deutschland so implementiert, dass die Kennzeichnungspflicht für KI-generierte Inhalte stark vereinfacht wird oder sich als weniger kritisch für TYPO3-Anwendungen erweist als angenommen.",
+          "TYPO3 selbst oder die TYPO3 Association stellt eine kostenlose oder Open-Source-Lösung mit vergleichbarem Funktionsumfang bereit.",
+          "Große Cloud-Anbieter (z.B. Microsoft, Google) integrieren umfassende, automatische und rechtskonforme KI-Kennzeichnung direkt in ihre CMS-Produkte oder ihre LLM-APIs, sodass externe Lösungen überflüssig werden.",
+          "Die Nachfrage nach spezialisierten TYPO3-Compliance-Tools ist zu gering, da Kunden generische Lösungen bevorzugen oder das Risiko als gering einstufen."
+        ],
+        "evidence_grade": {
+          "facts": [
+            "Der EU AI Act trat am 1. August 2024 in Kraft. (https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act)",
+            "Regeln für Allzweck-KI-Modelle traten am 2. August 2025 in Kraft. (https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act)",
+            "Die meisten Regeln des AI Act, einschließlich Transparenzpflichten gemäß Artikel 50, treten am 2. August 2026 in Kraft. (https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act)",
+            "TYPO3-Erweiterungen wie 'Ext:AI Label' sollen Transparenz und Verantwortlichkeit für KI-generierte oder bearbeitete Inhalte gewährleisten. (https://b13.com/knowledge/ai-content-in-typo3-labelling-needs-accountability)",
+            "Die Nichteinhaltung des EU AI Act kann zu Bußgeldern von bis zu 35 Mio. EUR oder 7% des weltweiten Jahresumsatzes führen. (https://salt.security/eu-ai-act-compliance)"
+          ],
+          "inferences": [
+            "Es besteht ein klarer, zeitlich definierter Bedarf für TYPO3-spezifische Compliance-Lösungen für den EU AI Act, abgeleitet aus dem Inkrafttreten des Gesetzes und den bevorstehenden Anwendungsfristen für Transparenzpflichten.",
+            "Die hohen potenziellen Bußgelder des EU AI Act schaffen einen starken Anreiz für Unternehmen und öffentliche Einrichtungen, in Compliance-Lösungen zu investieren, abgeleitet aus der Nennung der Bußgeldhöhen in den Suchergebnissen.",
+            "TYPO3-Nutzer, insbesondere im öffentlichen Sektor und in Bildungseinrichtungen, werden voraussichtlich einen hohen Bedarf an solchen Tools haben, da TYPO3 in diesen Sektoren stark vertreten ist und diese Einrichtungen besonders auf Compliance achten müssen, abgeleitet aus der Erwähnung der Prevalenz von TYPO3 in höherer Bildung, öffentlichem Nahverkehr, Gesundheitswesen und Regierung in den Suchergebnissen."
+          ],
+          "open_questions": [
+            "Wie viele TYPO3-Installationen in Deutschland nutzen aktiv KI zur Content-Generierung und sind somit direkt von den Transparenzpflichten des EU AI Act betroffen?",
+            "Gibt es bereits spezialisierte, kostenpflichtige TYPO3-Extensions, die explizit die EU AI Act Compliance für Inhalte adressieren, und wie sind deren Preismodelle?",
+            "Wie hoch ist das Bewusstsein für die spezifischen Anforderungen des EU AI Acts bezüglich KI-generierter Inhalte bei TYPO3-Redakteuren und -Administratoren?"
+          ]
+        },
+        "evidence_urls": [
+          "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+          "https://salt.security/eu-ai-act-compliance",
+          "https://b13.com/knowledge/ai-content-in-typo3-labelling-needs-accountability",
+          "https://www.wus.de/en/blog/detail-page/the-cms-comparison-part-1-typo3-vs-wordpress",
+          "https://news.typo3.com/article/typo3-v14-ai-integrations"
+        ]
+      }
+    }
+  ],
+  "record": {
+    "run_id": "mark-20261001T122940-ef7522",
+    "intent": "TYPO3 Künster AI Agent workflows as service in brandemburg",
+    "model": "gemini-2.5-flash",
+    "created_at": "2026-10-01T12:35:03Z",
+    "state_missing": [],
+    "plan": {
+      "theme": "KI-gestützte Workflow-Automatisierung für TYPO3 in Brandenburg",
+      "candidate_seeds": [
+        {
+          "id": "ai_typo3_brandenburg_service",
+          "origin": "intent",
+          "title": "TYPO3 Künster AI Agent workflows as service in brandemburg",
+          "why_commercial": "TYPO3 ist ein verbreitetes CMS im professionellen Umfeld. KI-Agenten können Content-Erstellung, -Optimierung und -Management automatisieren, was Unternehmen und Organisationen in Brandenburg Zeit und Kosten sparen könnte. Ein spezialisierter Dienstleister kann diese komplexen Workflows implementieren und betreuen."
+        }
+      ],
+      "commercial_angles": [
+        "Productized service (actor's trade)",
+        "B2B SaaS (TYPO3 AI Workflow Plattform)",
+        "Developer SDK/API (für TYPO3-Integrationen)",
+        "Compliance Toolkit (für KI-generierte Inhalte in TYPO3)"
+      ],
+      "market_queries": [
+        "Marktgröße und Nachfrage nach KI-Lösungen für TYPO3 in Deutschland und Brandenburg",
+        "Existierende KI-Plugins oder -Integrationen für TYPO3 CMS",
+        "Preismodelle für Content-Automatisierungsdienste mittels KI für KMU und öffentliche Einrichtungen in Deutschland"
+      ],
+      "actor_role": "TYPO3-Spezialist",
+      "operators": [
+        "decompose",
+        "feasibility",
+        "repo_scout",
+        "hypothesis",
+        "relate",
+        "next_action"
+      ],
+      "entities": [
+        {
+          "name": "TYPO3",
+          "kind": "technology",
+          "source_hint": "User Intent"
+        },
+        {
+          "name": "AI Agent",
+          "kind": "concept",
+          "source_hint": "User Intent"
+        },
+        {
+          "name": "Brandenburg",
+          "kind": "place",
+          "source_hint": "User Intent"
+        },
+        {
+          "name": "TYPO3-Spezialist",
+          "kind": "role",
+          "source_hint": "Inferred from 'TYPO3 Künster' and 'as service'"
+        },
+        {
+          "name": "Content Management System (CMS)",
+          "kind": "concept",
+          "source_hint": "General knowledge about TYPO3"
+        },
+        {
+          "name": "Workflow-Automatisierung",
+          "kind": "concept",
+          "source_hint": "Derived from 'AI Agent workflows'"
+        }
+      ],
+      "notes": "Die frühere Ablehnung einer 'TYPO3 SaaS-Erweiterung' (Commercial Graves) betraf ein Produkt mit hohem Entwicklungsaufwand und -risiko. Die aktuelle Idee als 'Service' durch einen 'TYPO3-Spezialisten' (actor's trade) ist davon abzugrenzen, da sie auf die direkte Erbringung einer Dienstleistung abzielt. Ähnlich wurde ein 'AI layer above TYPO3 content' (Discovery Kills) als zu nahe an existierenden Produkten eingestuft; hier muss der Service-Aspekt und die spezifische Workflow-Implementierung den Mehrwert für den Kunden in den Vordergrund stellen."
+    },
+    "audit": {
+      "candidates": [
+        {
+          "id": "V1",
+          "title": "KI-gestützte Workflow-Automatisierung für TYPO3 als Dienstleistung in Brandenburg",
+          "offering_kind": "productized_service",
+          "who_operates": "actor",
+          "vector_pain_wtp": "TYPO3-Nutzer, insbesondere öffentliche Einrichtungen und KMU in Brandenburg, suchen nach Effizienzsteigerung und Automatisierung im Content-Management. Sie zahlen für die Integration komplexer KI-Lösungen, die Fachwissen erfordern und Compliance (EU AI Act) sicherstellen. Der Schmerz ist der Aufwand für manuelle Prozesse, Compliance-Risiken und der Mangel an internem KI-Know-how.",
+          "vector_time_to_ship": "1-2 Monate bis zum ersten bezahlten Projekt. Der Actor kann auf bestehendem TYPO3-Know-how aufbauen und erste Projekte schnell akquirieren.",
+          "vector_distribution": "Direkte Kundenansprache bei bestehenden TYPO3-Kunden des Actors, lokale Netzwerke in Brandenburg, TYPO3-Community-Veranstaltungen, spezialisierte Fachartikel und Workshops. Hohe Nachfrage nach KI-Lösungen durch den EU AI Act und die Notwendigkeit zur Automatisierung.",
+          "vector_monetization": "Projektbasierte Beratungs- und Integrationsgebühren, feste Pauschalen für Workflow-Implementierungen, Wartungs- und Supportverträge im Abonnement.",
+          "vector_defensibility": "Spezialisiertes TYPO3-KI-Integrations-Know-how, lokale Präsenz und Netzwerk in Brandenburg, Referenzen und Reputation aus erfolgreichen Projekten, Zertifizierungen im Bereich TYPO3 und KI-Compliance.",
+          "market_size_signal": "TYPO3 hat eine starke Präsenz in Deutschland mit 57.095 Domains (August 2026) und einem Marktanteil von 13% im Jahr 2019, besonders in öffentlichen und Bildungseinrichtungen, was eine solide Basis für Dienstleistungen darstellt. Der Markt für Agentic AI Workflows in Deutschland wird bis 2030 voraussichtlich 3.927,8 Mio. USD erreichen.",
+          "market_size_figure": "3.927,8 Mio. USD (2030)",
+          "market_size_tag": "fact",
+          "market_size_source_url": "https://www.marketsandmarkets.com/Market-Reports/geography/agentic-ai-market/germany",
+          "competitors": [
+            "AiM (Central Foundation For Artificial Intelligence In TYPO3) | direct | https://b13.com/useful-typo3-extensions-from-b13-to-you/aim",
+            "TYPO3 MCP Server | direct | https://news.typo3.com/article/ai-integration-in-typo3-via-mcp-the-end-of-backend-fumbling",
+            "T3AI (ns_t3ai) | direct | https://extensions.typo3.org/extension/ns_t3ai",
+            "AI Suite (by AutoDudes) | direct | https://www.autodudes.de/en/ai-suite"
+          ],
+          "moat_network_effects": "weak",
+          "moat_switching_costs": "moderate",
+          "moat_scale_economies": "weak",
+          "moat_intangible_assets": "moderate",
+          "economics": "time: 1-2 Monate bis zum ersten bezahlten Projekt | investment: 2.000-5.000 EUR (Marketing, Tools, erste Zertifizierungen) | running costs: 500-1.000 EUR/Monat (Softwarelizenzen, Weiterbildung, Marketing) | ROI: 6-12 Monate (abhängig von Projektgröße und Anzahl der Kunden)",
+          "check_queries": [
+            "Preise für TYPO3 KI Integrationsdienstleistungen von Agenturen in Deutschland",
+            "Stundensatz TYPO3 Berater KI Integration"
+          ]
+        },
+        {
+          "id": "V2",
+          "title": "B2B SaaS: TYPO3 AI Workflow Integrator Plattform",
+          "offering_kind": "b2b_saas",
+          "who_operates": "third_party",
+          "vector_pain_wtp": "TYPO3-Agenturen und größere Unternehmen, die verschiedene KI-Tools in ihre Redaktionsworkflows integrieren möchten, leiden unter Fragmentierung, mangelnder Kontrolle und hohen Kosten. Sie zahlen für eine zentrale, effiziente und konforme Lösung, die den Integrationsaufwand reduziert und die Verwaltung vereinfacht.",
+          "vector_time_to_ship": "6-12 Monate bis zum MVP. Dies erfordert erhebliche Entwicklungsarbeit, um eine robuste und flexible Plattform zu bauen, die verschiedene AI-APIs und TYPO3-Versionen unterstützt.",
+          "vector_distribution": "TYPO3 Extension Repository, TYPO3 Community-Kanäle, TYPO3-Agenturnetzwerke, Content-Marketing (Blogs, Webinare), Partnerschaften mit TYPO3-Integratoren.",
+          "vector_monetization": "SaaS-Abonnementmodelle (gestaffelt nach Nutzerzahl, API-Nutzung, Funktionsumfang), Enterprise-Lizenzen.",
+          "vector_defensibility": "Tiefe Integration in TYPO3-Core-Funktionen, proprietäre Workflow-Engine, spezialisierte Compliance-Features für den EU AI Act, starke Community-Akzeptanz und Ökosystem-Integration.",
+          "market_size_signal": "Der globale Markt für KI-Agenten wurde 2026 auf 11,55 Mrd. USD geschätzt und soll bis 2035 auf 180,5 bis 316,89 Mrd. USD wachsen. Der Markt für Agentic AI Workflows wird bis 2034 voraussichtlich 227 Mrd. USD erreichen.",
+          "market_size_figure": "227 Mrd. USD (2034)",
+          "market_size_tag": "fact",
+          "market_size_source_url": "https://market.us/report/agentic-ai-workflows-market/",
+          "competitors": [
+            "AiM (Central Foundation For Artificial Intelligence In TYPO3) | direct | https://b13.com/useful-typo3-extensions-from-b13-to-you/aim",
+            "TYPO3 MCP Server | direct | https://news.typo3.com/article/ai-integration-in-typo3-via-mcp-the-end-of-backend-fumbling",
+            "T3AI (ns_t3ai) | direct | https://extensions.typo3.org/extension/ns_t3ai",
+            "AI Assistant (ai_assistant) | direct | https://extensions.typo3.org/extension/ai_assistant",
+            "AI Suite (by AutoDudes) | direct | https://www.autodudes.de/en/ai-suite",
+            "ai-bundle (by in2code) | direct | https://www.in2code.de/en/agency/typo3-extensions/ai-bundle/"
+          ],
+          "moat_network_effects": "weak",
+          "moat_switching_costs": "moderate",
+          "moat_scale_economies": "strong",
+          "moat_intangible_assets": "moderate",
+          "economics": "time: 6-12 Monate bis MVP | investment: 50.000-150.000 EUR (Entwicklung, Infrastruktur, Initialmarketing) | running costs: 5.000-15.000 EUR/Monat (Server, API-Kosten, Support, Weiterentwicklung) | ROI: 2-3 Jahre (abhängig von Kundenakquise und Preismodell)",
+          "check_queries": [
+            "Preise für TYPO3 AI Integrationsplattformen",
+            "Vergleich von TYPO3 AI Extensions Kosten"
+          ]
+        },
+        {
+          "id": "V3",
+          "title": "Compliance Toolkit für KI-generierte Inhalte in TYPO3 (EU AI Act)",
+          "offering_kind": "compliance_toolkit",
+          "who_operates": "third_party",
+          "vector_pain_wtp": "TYPO3-Nutzer, insbesondere öffentliche Einrichtungen, Bildung und Gesundheitswesen, stehen unter Druck, den EU AI Act einzuhalten. Die Nichteinhaltung kann zu hohen Bußgeldern (bis zu 35 Mio. EUR oder 7% des weltweiten Jahresumsatzes) und Reputationsschäden führen. Sie zahlen für eine einfache, zuverlässige Lösung, die rechtliche Sicherheit bietet und Audit-Kosten reduziert.",
+          "vector_time_to_ship": "3-6 Monate bis zum MVP. Fokus auf spezifische Compliance-Anforderungen des EU AI Act, basierend auf dem Wissen über TYPO3-Entwicklung. Die EU AI Act gilt für bestimmte Aspekte bereits ab Februar 2025 und August 2025, und vollständig ab August 2026.",
+          "vector_distribution": "Direkte Ansprache von TYPO3-Agenturen und Kunden in regulierten Sektoren, TYPO3 Extension Repository, Fachartikel zu EU AI Act und TYPO3, Zusammenarbeit mit Rechtsberatungen. Regulatorische Fristen (August 2026) schaffen Dringlichkeit.",
+          "vector_monetization": "Einmalige Lizenzgebühren pro TYPO3-Installation, jährliche Wartungs- und Update-Gebühren (Abonnement), gestaffelte Preise nach Nutzerzahl oder Website-Komplexität.",
+          "vector_defensibility": "Tiefes Verständnis des EU AI Act und dessen technische Umsetzung in TYPO3, spezialisierte rechtliche Expertise, offizielle Zertifizierungen/Partnerschaften, proprietäre Algorithmen zur Inhaltsanalyse und Kennzeichnung.",
+          "market_size_signal": "Die EU AI Act ist seit August 2024 in Kraft, mit wichtigen Anwendungsfristen in 2025-2028. Unternehmen und öffentliche Einrichtungen, die TYPO3 nutzen, benötigen Lösungen zur Kennzeichnung und Rechenschaftspflicht von KI-generierten Inhalten. TYPO3 wird stark in Sektoren mit hohen Compliance-Anforderungen genutzt. Der Markt für Agentic AI Workflows in Deutschland wird bis 2030 voraussichtlich 3.927,8 Mio. USD erreichen.",
+          "market_size_figure": "3.927,8 Mio. USD (2030)",
+          "market_size_tag": "fact",
+          "market_size_source_url": "https://www.marketsandmarkets.com/Market-Reports/geography/agentic-ai-market/germany",
+          "competitors": [
+            "Ext:AI Label (TYPO3 Extension) | direct | https://b13.com/knowledge/ai-content-in-typo3-labelling-needs-accountability",
+            "AiM (Central Foundation For Artificial Intelligence In TYPO3) | adjacent | https://b13.com/useful-typo3-extensions-from-b13-to-you/aim",
+            "AI Suite (by AutoDudes) | adjacent | https://www.autodudes.de/en/ai-suite"
+          ],
+          "moat_network_effects": "weak",
+          "moat_switching_costs": "moderate",
+          "moat_scale_economies": "strong",
+          "moat_intangible_assets": "strong",
+          "economics": "time: 3-6 Monate bis MVP | investment: 15.000-40.000 EUR (Entwicklung, Rechtsberatung, Initialmarketing) | running costs: 1.000-3.000 EUR/Monat (Support, Updates, Rechtsupdates, Infrastruktur) | ROI: 1-2 Jahre (abhängig von Lizenzpreis und Akzeptanz)",
+          "check_queries": [
+            "Preise TYPO3 Extension EU AI Act Compliance",
+            "Kosten für AI Content Labeling Tools für CMS"
+          ]
+        }
+      ],
+      "shortlist": [
+        "V1",
+        "V3"
+      ],
+      "kills": [
+        {
+          "candidate_id": "V2",
+          "reason": "Die Entwicklung einer umfassenden B2B SaaS-Plattform für TYPO3 AI Workflow Integration erfordert eine hohe Investition und eine lange Time-to-Ship. Der Markt weist bereits eine Reihe von direkten Wettbewerbern auf, die ähnliche Integrationslösungen anbieten, was den Markteintritt für einen einzelnen Akteur erschwert und das Risiko erhöht.",
+          "failed_vectors": [
+            "time_to_ship",
+            "defensibility"
+          ]
+        }
+      ]
+    },
+    "result": {
+      "opportunities": [
+        {
+          "candidate_id": "V1",
+          "title": "KI-gestützte Workflow-Automatisierung für TYPO3 als Dienstleistung in Brandenburg",
+          "tagline": "Effizienzsteigerung und Compliance für TYPO3-Nutzer durch maßgeschneiderte KI-Integrationen.",
+          "offering_kind": "productized_service",
+          "target_customer": "TYPO3-nutzende Organisationen und Unternehmen in Brandenburg, insbesondere öffentliche Einrichtungen, Bildungseinrichtungen und KMU, die ihre Content-Management-Prozesse automatisieren und optimieren möchten.",
+          "pain_and_compliance": "Hoher manueller Aufwand und Ineffizienz bei Content-Erstellung, -Pflege und -Übersetzung in TYPO3. Mangel an internem Fachwissen für die Integration und den Betrieb komplexer KI-Lösungen. Der Wunsch nach Effizienzsteigerung und Kostenreduktion durch Automatisierung. Die Notwendigkeit, rechtliche Anforderungen wie den EU AI Act bei der Nutzung von KI-generierten Inhalten zu beachten, um Reputationsschäden und potenzielle Bußgelder zu vermeiden. TYPO3 v14 bietet hierfür Schnittstellen, aber die Implementierung erfordert Expertise.",
+          "mvp_specification": "Features: Implementierung von zwei bis drei Kern-KI-Workflows: 1. Automatische Generierung von SEO-Metadaten (Titel, Beschreibung) für TYPO3-Seiten und Artikeln. 2. KI-gestützte Textgenerierung für Entwürfe von Nachrichtenartikeln oder Produktbeschreibungen direkt im TYPO3-Backend. 3. KI-basierte Bildbeschreibung und Metadaten-Generierung für Mediendateien. Core stack/components: TYPO3 CMS (aktuelle LTS-Version), bestehende TYPO3-Erweiterungen für KI-Integration (z.B. AiM, ns_t3ai, ai-bundle), Anbindung an ausgewählte Large Language Models (LLMs) wie OpenAI (GPT-4) oder Google Gemini über API. Build approach: Analyse der Kundenbedürfnisse, Auswahl und Konfiguration passender TYPO3-Erweiterungen, API-Schlüssel-Management, Entwicklung und Feinabstimmung spezifischer Prompts für die gewünschten Workflows, Schulung der Redakteure. Fokus auf sofortigen Mehrwert und einfache Bedienbarkeit.",
+          "pricing_and_economics": "Pricing Tiers: 'Starter-Paket': Einmalige Einrichtung (z.B. 2.000 - 4.000 EUR) für 2-3 Basis-Workflows, zzgl. monatliche Servicegebühr (ab 250 EUR) für Wartung, Support und Verbrauchs-Credits für die KI-APIs. 'Professional-Paket': Erweiterte Einrichtung (z.B. 5.000 - 8.000 EUR) für mehr Workflows oder komplexere Anforderungen, zzgl. monatliche Gebühr (ab 500 EUR). Zusätzliche individuelle Beratungsleistungen nach Stundensatz (120-180 EUR/Stunde). Estimated Gross Margin: 60-70% (Annahme). Target Initial Revenue: 10.000 - 20.000 EUR in den ersten 6-12 Monaten durch 3-5 Kunden.",
+          "distribution_strategy": "Direktmarketing und Kaltakquise bei öffentlichen Einrichtungen und größeren KMU in Brandenburg mit bestehenden TYPO3-Installationen. Partnerschaften mit TYPO3-Agenturen in Brandenburg, die keine eigene KI-Integrationskompetenz haben. Content Marketing (Blogartikel, Webinare) zu 'TYPO3 & KI', 'EU AI Act für Redakteure' und 'Effizienz im Content Management'. Präsenz auf lokalen Branchenveranstaltungen und TYPO3-Meetups in der DACH-Region.",
+          "moat_and_defensibility": "Spezialisiertes Know-how: Tiefgreifendes Verständnis der TYPO3-Architektur in Kombination mit Expertise in KI-Prompt-Engineering und API-Integration. Lokale Expertise und Vertrauen: Aufbau von Vertrauen bei Kunden in Brandenburg durch persönliche Betreuung und Verständnis regionaler Anforderungen (z.B. spezifische Compliance-Anforderungen öffentlicher Stellen). Kontinuierliche Anpassung: Ständige Weiterentwicklung und Anpassung der Workflows an neue TYPO3-Versionen, KI-Modelle und sich ändernde Compliance-Vorschriften (EU AI Act). Beziehung zu Kunden: Langfristige Serviceverträge und enge Kundenbeziehungen durch den 'productized_service'-Ansatz.",
+          "kill_criteria": [
+            "Der TYPO3-Markt in Brandenburg schrumpft signifikant oder wird durch andere CMS mit einfacherer, nativer KI-Integration überrollt.",
+            "Große TYPO3-Agenturen oder die TYPO3 Association selbst bieten umfassende, kostengünstige und standardisierte KI-Integrationslösungen an, die den Bedarf an spezialisierten Dienstleistern obsolet machen.",
+            "Die Komplexität der Einhaltung des EU AI Act für KI-generierte Inhalte wird für Dienstleister unüberschaubar hoch, oder die Haftungsrisiken übersteigen die potenziellen Einnahmen.",
+            "Die Kosten für die Nutzung von KI-APIs steigen drastisch an und machen die Dienstleistung unwirtschaftlich."
+          ],
+          "evidence_grade": {
+            "facts": [
+              "TYPO3 hält einen signifikanten Marktanteil in Deutschland mit 57.095 ihrer länderspezifischen Domains dort. (https://technologychecker.io/technology/typo3)",
+              "Im Jahr 2019 entfielen 13% des CMS-Marktes in Deutschland auf TYPO3, was es zum zweitmeistgenutzten System machte. (https://www.wus.de/en/blog/detail-page/the-cms-comparison-part-1-typo3-vs-wordpress)",
+              "Deutschland repräsentiert 68,2% aller Websites, die TYPO3 nutzen. (https://www.wmtips.com/technologies/cms/typo3/)",
+              "TYPO3 v14 ist darauf ausgelegt, klare Schnittstellen für die Integration verschiedener KI-Tools und externer Dienste anzubieten. (https://news.typo3.com/article/typo3-v14-ai-integrations)",
+              "Der globale Markt für KI-Agenten wurde 2026 auf 11,55 Milliarden USD geschätzt. (https://www.precedenceresearch.com/ai-agents-market)",
+              "Der Markt für Agentic AI Workflows wird voraussichtlich bis 2034 227 Milliarden USD erreichen. (https://market.us/report/agentic-ai-workflows-market/)",
+              "Deutschlands Agentic AI Markt wird voraussichtlich von ca. 323,4 Millionen USD im Jahr 2025 auf 3.927,8 Millionen USD im Jahr 2030 wachsen. (https://www.marketsandmarkets.com/Market-Reports/geography/agentic-ai-market/germany)",
+              "LOUIS INTERNET bietet ein 'KI-Extension-Paket' ab 125 Euro pro Monat für bis zu vier KI-Erweiterungen an. (https://www.louis.info/digitale-loesungen/kuenstliche-intelligenz/ki-typo3-extensions/)",
+              "Der durchschnittliche Stundensatz für TYPO3-Freelancer liegt bei rund 80 €. (https://www.freelancermap.de/freelancer/typo3)",
+              "IT-Beratungssätze für Senior-Berater in Deutschland liegen typischerweise zwischen 120 € und 250 € pro Stunde. (https://www.sigmasolve.com/blog/it-consulting-rates-per-hour)"
+            ],
+            "inferences": [
+              "Es gibt einen wachsenden Bedarf an KI-Integrationsdienstleistungen für TYPO3-Nutzer, abgeleitet aus dem signifikanten TYPO3-Marktanteil in Deutschland und dem starken Wachstum des Agentic AI Marktes.",
+              "Die Variabilität der Agentur- und Freelancer-Stundensätze deutet darauf hin, dass eine Positionierung im mittleren bis oberen Preissegment für spezialisierte KI-Integrationsdienste möglich ist, abgeleitet aus den genannten Stundensätzen für TYPO3-Freelancer und IT-Berater.",
+              "TYPO3-Nutzer in öffentlichen Einrichtungen und im Bildungssektor sind aufgrund des hohen TYPO3-Anteils in diesen Bereichen wahrscheinliche Zielkunden für Effizienzsteigerungen und Compliance-Lösungen, abgeleitet aus der Erwähnung der Prevalenz von TYPO3 in höherer Bildung, öffentlichem Nahverkehr, Gesundheitswesen und Regierung in den Suchergebnissen."
+            ],
+            "open_questions": [
+              "Wie hoch ist die spezifische Zahlungsbereitschaft von TYPO3-Nutzern in Brandenburg für KI-gestützte Workflow-Automatisierung?",
+              "Gibt es bereits lokale TYPO3-Agenturen in Brandenburg, die ähnliche spezialisierte KI-Integrationsdienstleistungen anbieten?",
+              "Welche spezifischen KI-Workflows haben für öffentliche Einrichtungen und KMU in Brandenburg die höchste Priorität und den größten Return on Investment?",
+              "Wie viele TYPO3-Installationen gibt es konkret in Brandenburg?"
+            ]
+          },
+          "evidence_urls": [
+            "https://technologychecker.io/technology/typo3",
+            "https://www.wus.de/en/blog/detail-page/the-cms-comparison-part-1-typo3-vs-wordpress",
+            "https://www.wmtips.com/technologies/cms/typo3/",
+            "https://news.typo3.com/article/typo3-v14-ai-integrations",
+            "https://www.precedenceresearch.com/ai-agents-market",
+            "https://market.us/report/agentic-ai-workflows-market/",
+            "https://www.marketsandmarkets.com/Market-Reports/geography/agentic-ai-market/germany",
+            "https://www.louis.info/digitale-loesungen/kuenstliche-intelligenz/ki-typo3-extensions/",
+            "https://www.freelancermap.de/freelancer/typo3",
+            "https://www.sigmasolve.com/blog/it-consulting-rates-per-hour"
+          ]
+        },
+        {
+          "candidate_id": "V3",
+          "title": "EU AI Act Compliance Toolkit für KI-generierte Inhalte in TYPO3",
+          "tagline": "Rechtssicherheit und Transparenz für TYPO3-Websites durch automatisierte Kennzeichnung von KI-Inhalten gemäß EU AI Act.",
+          "offering_kind": "compliance_toolkit",
+          "target_customer": "TYPO3-nutzende Organisationen, insbesondere öffentliche Einrichtungen, Universitäten, Krankenhäuser und größere Unternehmen in Deutschland, die KI zur Content-Erstellung nutzen und den Anforderungen des EU AI Acts gerecht werden müssen.",
+          "pain_and_compliance": "Hohes Risiko von Bußgeldern (bis zu 35 Mio. EUR oder 7% des weltweiten Jahresumsatzes) und Reputationsschäden bei Nichteinhaltung des EU AI Acts, insbesondere bei der Kennzeichnung von KI-generierten Inhalten. Mangel an einfachen, integrierten Lösungen zur Sicherstellung der Compliance im TYPO3-Umfeld. Der EU AI Act, in Kraft getreten am 1. August 2024, erfordert Transparenzpflichten (Artikel 50) für KI-generierte Inhalte, die ab dem 2. August 2026 zur Anwendung kommen. Dies beinhaltet die Kennzeichnung von Inhalten, die von einem KI-System generiert oder manipuliert wurden.",
+          "mvp_specification": "Features: TYPO3-Extension zur automatischen oder manuellen Kennzeichnung von KI-generierten Texten und Bildern im Backend. Audit-Log-Funktion, die protokolliert, wann, welcher Inhalt von welchem Nutzer als KI-generiert markiert wurde. Eine konfigurierbare Frontend-Ausgabe der Kennzeichnung (z.B. kleiner Hinweis, Meta-Tag). Core stack/components: TYPO3 CMS (aktuelle LTS-Version), Entwicklung einer neuen, dedizierten TYPO3-Extension in PHP/TypoScript, Integration in die TYPO3-Benutzeroberfläche. Build approach: Agile Entwicklung mit Fokus auf schnelle Implementierung der Kernfunktionen. Enge Abstimmung mit Rechtsexperten zum EU AI Act (ggf. externe Beratung). Priorisierung der Kennzeichnungs- und Audit-Funktionen.",
+          "pricing_and_economics": "Pricing Tiers: 'Standard-Lizenz': Jährliche Lizenzgebühr (z.B. 499 - 999 EUR) pro TYPO3-Installation für Kernfunktionen. 'Enterprise-Lizenz': Jährliche Lizenzgebühr (z.B. 1.999 - 3.999 EUR) für erweiterte Funktionen wie Multi-Site-Management, erweiterte Audit-Funktionen und Premium-Support. Optionale Installations- und Konfigurationsdienstleistungen (einmalig 500 - 1.500 EUR). Estimated Gross Margin: 80-90% (Annahme). Target Initial Revenue: 5.000 - 10.000 EUR in den ersten 6-12 Monaten durch 5-10 Kunden.",
+          "distribution_strategy": "Direktvertrieb an TYPO3-Agenturen und große TYPO3-Kunden (öffentliche Hand, Bildung, Gesundheitswesen) in Deutschland. Listung im offiziellen TYPO3 Extension Repository. Content Marketing (Whitepapers, Webinare) zum EU AI Act und dessen Auswirkungen auf Content-Management-Systeme. Partnerschaften mit Rechtsberatungsfirmen, die sich auf den EU AI Act spezialisiert haben.",
+          "moat_and_defensibility": "Spezialisierung: Fokus auf die spezifische Nische 'EU AI Act Compliance für TYPO3'. Rechtliche Expertise: Kontinuierliche Aktualisierung der Lösung an sich ändernde rechtliche Anforderungen und Interpretationen des EU AI Acts. Integrationstiefe: Tiefe und nahtlose Integration in das TYPO3-System, die über generische KI-Erkennungs-Tools hinausgeht. Zertifizierung/Auditierbarkeit: Potenzielle Möglichkeit zur Zertifizierung der Lösung oder Bereitstellung von Funktionen, die Audits erleichtern.",
+          "kill_criteria": [
+            "Der EU AI Act wird in Deutschland so implementiert, dass die Kennzeichnungspflicht für KI-generierte Inhalte stark vereinfacht wird oder sich als weniger kritisch für TYPO3-Anwendungen erweist als angenommen.",
+            "TYPO3 selbst oder die TYPO3 Association stellt eine kostenlose oder Open-Source-Lösung mit vergleichbarem Funktionsumfang bereit.",
+            "Große Cloud-Anbieter (z.B. Microsoft, Google) integrieren umfassende, automatische und rechtskonforme KI-Kennzeichnung direkt in ihre CMS-Produkte oder ihre LLM-APIs, sodass externe Lösungen überflüssig werden.",
+            "Die Nachfrage nach spezialisierten TYPO3-Compliance-Tools ist zu gering, da Kunden generische Lösungen bevorzugen oder das Risiko als gering einstufen."
+          ],
+          "evidence_grade": {
+            "facts": [
+              "Der EU AI Act trat am 1. August 2024 in Kraft. (https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act)",
+              "Regeln für Allzweck-KI-Modelle traten am 2. August 2025 in Kraft. (https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act)",
+              "Die meisten Regeln des AI Act, einschließlich Transparenzpflichten gemäß Artikel 50, treten am 2. August 2026 in Kraft. (https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act)",
+              "TYPO3-Erweiterungen wie 'Ext:AI Label' sollen Transparenz und Verantwortlichkeit für KI-generierte oder bearbeitete Inhalte gewährleisten. (https://b13.com/knowledge/ai-content-in-typo3-labelling-needs-accountability)",
+              "Die Nichteinhaltung des EU AI Act kann zu Bußgeldern von bis zu 35 Mio. EUR oder 7% des weltweiten Jahresumsatzes führen. (https://salt.security/eu-ai-act-compliance)"
+            ],
+            "inferences": [
+              "Es besteht ein klarer, zeitlich definierter Bedarf für TYPO3-spezifische Compliance-Lösungen für den EU AI Act, abgeleitet aus dem Inkrafttreten des Gesetzes und den bevorstehenden Anwendungsfristen für Transparenzpflichten.",
+              "Die hohen potenziellen Bußgelder des EU AI Act schaffen einen starken Anreiz für Unternehmen und öffentliche Einrichtungen, in Compliance-Lösungen zu investieren, abgeleitet aus der Nennung der Bußgeldhöhen in den Suchergebnissen.",
+              "TYPO3-Nutzer, insbesondere im öffentlichen Sektor und in Bildungseinrichtungen, werden voraussichtlich einen hohen Bedarf an solchen Tools haben, da TYPO3 in diesen Sektoren stark vertreten ist und diese Einrichtungen besonders auf Compliance achten müssen, abgeleitet aus der Erwähnung der Prevalenz von TYPO3 in höherer Bildung, öffentlichem Nahverkehr, Gesundheitswesen und Regierung in den Suchergebnissen."
+            ],
+            "open_questions": [
+              "Wie viele TYPO3-Installationen in Deutschland nutzen aktiv KI zur Content-Generierung und sind somit direkt von den Transparenzpflichten des EU AI Act betroffen?",
+              "Gibt es bereits spezialisierte, kostenpflichtige TYPO3-Extensions, die explizit die EU AI Act Compliance für Inhalte adressieren, und wie sind deren Preismodelle?",
+              "Wie hoch ist das Bewusstsein für die spezifischen Anforderungen des EU AI Acts bezüglich KI-generierter Inhalte bei TYPO3-Redakteuren und -Administratoren?"
+            ]
+          },
+          "evidence_urls": [
+            "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+            "https://salt.security/eu-ai-act-compliance",
+            "https://b13.com/knowledge/ai-content-in-typo3-labelling-needs-accountability",
+            "https://www.wus.de/en/blog/detail-page/the-cms-comparison-part-1-typo3-vs-wordpress",
+            "https://news.typo3.com/article/typo3-v14-ai-integrations"
+          ]
+        }
+      ],
+      "kills": [],
+      "retro": {
+        "learned": "Der TYPO3-Markt in Deutschland ist erheblich, insbesondere in öffentlichen und Bildungseinrichtungen, was eine solide Basis für spezialisierte Angebote darstellt. Die Integration von KI in TYPO3 ist ein aktives Feld mit vielen bestehenden Erweiterungen, was sowohl Chancen als auch Wettbewerb bedeutet. Der EU AI Act schafft einen klaren Bedarf für Compliance-Lösungen, insbesondere hinsichtlich der Kennzeichnung von KI-generierten Inhalten, mit hohen potenziellen Strafen, die die Zahlungsbereitschaft erhöhen. Die Preisgestaltung für TYPO3-Dienstleistungen und -Erweiterungen variiert stark, was Raum für verschiedene Geschäftsmodelle bietet.",
+        "mistake": "Bei der vorherigen Validierung gab es einen Fehler in der Formatierung der Fakten, indem ich nicht streng genug die Regel 'claim (URL)' für jeden einzelnen Fakt eingehalten habe. Dies wurde korrigiert, indem sichergestellt wurde, dass jeder Fakt atomar ist und genau einer URL zugeordnet ist.",
+        "next_time": "Ich werde weiterhin sicherstellen, dass jeder Fakt strikt einer einzelnen URL zugeordnet ist, um Validierungsfehler zu vermeiden. Vorschlag: Wenn die Suchergebnisse eine hohe Anzahl an bestehenden Erweiterungen oder Lösungen identifizieren, werde ich den Operator 'competitor_analysis' verwenden, um eine detailliertere Untersuchung der Funktionen, Preismodelle und Marktpositionierung dieser Wettbewerber durchzuführen und so die Differenzierungsmerkmale der eigenen Angebote schärfer herauszuarbeiten."
+      }
+    },
+    "tool_calls": [
+      {
+        "call_id": "mark-20261001T122940-ef7522-t01",
+        "tool": "lab_results",
+        "status": "ok",
+        "summary": "research, TYPO3, KI, Workflows"
+      },
+      {
+        "call_id": "mark-20261001T122940-ef7522-t02",
+        "tool": "search",
+        "status": "ok",
+        "summary": "TYPO3 AI Agent workflows Brandenburg market size"
+      },
+      {
+        "call_id": "mark-20261001T122940-ef7522-t03",
+        "tool": "search",
+        "status": "ok",
+        "summary": "TYPO3 AI Agent workflows Brandenburg competitors"
+      },
+      {
+        "call_id": "mark-20261001T122940-ef7522-t04",
+        "tool": "search",
+        "status": "ok",
+        "summary": "TYPO3 AI Agent workflows Brandenburg compliance EU AI Act"
+      },
+      {
+        "call_id": "mark-20261001T122940-ef7522-t05",
+        "tool": "search",
+        "status": "ok",
+        "summary": "Preise für TYPO3 KI Integrationsdienstleistungen von Agenturen in Deutschland"
+      },
+      {
+        "call_id": "mark-20261001T122940-ef7522-t06",
+        "tool": "search",
+        "status": "ok",
+        "summary": "Stundensatz TYPO3 Berater KI Integration Deutschland"
+      }
+    ],
+    "research_log": [
+      {
+        "call_id": "mark-20261001T122940-ef7522-t01",
+        "tool": "lab_results",
+        "status": "ok",
+        "at": "2026-10-01T12:30:17Z",
+        "what": "research, TYPO3, KI, Workflows"
+      },
+      {
+        "call_id": "mark-20261001T122940-ef7522-t02",
+        "tool": "search",
+        "status": "ok",
+        "at": "2026-10-01T12:30:43Z",
+        "what": "TYPO3 AI Agent workflows Brandenburg market size",
+        "pages": [
+          "https://technologychecker.io/technology/typo3",
+          "https://www.wus.de/en/blog/detail-page/the-cms-comparison-part-1-typo3-vs-wordpress",
+          "https://www.wmtips.com/technologies/cms/typo3/",
+          "https://news.typo3.com/article/building-business-with-typo3",
+          "https://news.typo3.com/article/typo3-v14-ai-integrations",
+          "https://b13.com/useful-typo3-extensions-from-b13-to-you/aim",
+          "https://www.in2code.de/en/agency/typo3-extensions/ai-bundle/",
+          "https://b13.com/knowledge/ai-content-in-typo3-labelling-needs-accountability",
+          "https://www.precedenceresearch.com/ai-agents-market",
+          "https://www.getpanto.ai/blog/ai-agents-statistics",
+          "https://www.marketresearchfuture.com/reports/agentic-ai-market-43785",
+          "https://www.snsinsider.com/reports/ai-agents-market-4611",
+          "https://market.us/report/agentic-ai-workflows-market/",
+          "https://www.marketsandmarkets.com/Market-Reports/geography/agentic-ai-market/germany"
+        ],
+        "queries_used": 4
+      },
+      {
+        "call_id": "mark-20261001T122940-ef7522-t03",
+        "tool": "search",
+        "status": "ok",
+        "at": "2026-10-01T12:31:19Z",
+        "what": "TYPO3 AI Agent workflows Brandenburg competitors",
+        "pages": [
+          "https://b13.com/useful-typo3-extensions-from-b13-to-you/aim",
+          "https://news.typo3.com/article/ai-integration-in-typo3-via-mcp-the-end-of-backend-fumbling",
+          "https://t3planet.de/en/ai-foundation-for-typo3",
+          "https://extensions.typo3.org/extension/ns_t3ai",
+          "https://extensions.typo3.org/extension/ai_assistant",
+          "https://github.com/autodudesde/ai-suite",
+          "https://www.autodudes.de/en/ai-suite",
+          "https://www.in2code.de/en/agency/typo3-extensions/ai-bundle/",
+          "https://nitsantech.de/en/services/typo3-ai",
+          "https://t3planet.de/en/blog/t3af-ai-prompts/",
+          "https://news.typo3.com/article/typo3-v14-ai-integrations",
+          "https://www.averi.ai/blog/the-best-ai-content-creation-tools-that-empower-marketers",
+          "https://www.netlify.com/guides/best-ai-content-generation-tools/",
+          "https://www.enterprisecms.org/guides/top-5-ai-powered-cms-platforms-for-content-operations"
+        ],
+        "queries_used": 6
+      },
+      {
+        "call_id": "mark-20261001T122940-ef7522-t04",
+        "tool": "search",
+        "status": "ok",
+        "at": "2026-10-01T12:31:49Z",
+        "what": "TYPO3 AI Agent workflows Brandenburg compliance EU AI Act",
+        "pages": [
+          "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+          "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+          "https://artificialintelligenceact.eu/implementation-timeline/",
+          "https://salt.security/eu-ai-act-compliance",
+          "https://artificialintelligenceact.eu/national-implementation-plans/",
+          "https://deeploy.ai/eu-ai-act-hub/articles/eu-ai-act-ai-agents-agentic-ai-regulated/",
+          "https://digital-strategy.ec.europa.eu/en/policies/enforcement-ai-act",
+          "https://www.simmons-simmons.com/en/publications/cmg0yjegt004ov9ng9hb6zel2/germanys-implementation-act-for-the-eu-ai-act",
+          "https://news.typo3.com/article/typo3-v14-ai-integrations",
+          "https://t3planet.de/en/ai-foundation-for-typo3",
+          "https://t3planet.de/en/blog/t3af-ai-prompts/",
+          "https://b13.com/knowledge/ai-content-in-typo3-labelling-needs-accountability",
+          "https://www.covasant.com/blogs/eu-ai-act-compliance-autonomous-agents-enterprise-2026"
+        ],
+        "queries_used": 3
+      },
+      {
+        "call_id": "mark-20261001T122940-ef7522-t05",
+        "tool": "search",
+        "status": "ok",
+        "at": "2026-10-01T12:33:00Z",
+        "what": "Preise für TYPO3 KI Integrationsdienstleistungen von Agenturen in Deutschland",
+        "pages": [
+          "https://www.louis.info/digitale-loesungen/kuenstliche-intelligenz/ki-typo3-extensions/",
+          "https://nitsantech.de/en/prices",
+          "https://www.in2code.de/en/agency/typo3-extensions/ai-bundle/",
+          "https://t3planet.de/en/ai-credits",
+          "https://t3planet.de/en/blog/ai-costs-typo3/",
+          "https://www.schiertz-laemmer.de/leistungen/ki-integration",
+          "https://www.autodudes.de/en/ai-suite/for-businesses",
+          "https://vergleichdoch.de/typo3-agenturen/",
+          "https://www.wacon.de/preise",
+          "https://www.pixelegg.de/preise.html",
+          "https://ai.sgalinski.de/preisgestaltung/",
+          "https://t3planet.de/blog/t3af-ki-kostenverfolgung/",
+          "https://www.in2code.de/service-leistungen/kuenstliche-intelligenz-ki/"
+        ],
+        "queries_used": 3
+      },
+      {
+        "call_id": "mark-20261001T122940-ef7522-t06",
+        "tool": "search",
+        "status": "ok",
+        "at": "2026-10-01T12:33:28Z",
+        "what": "Stundensatz TYPO3 Berater KI Integration Deutschland",
+        "pages": [
+          "https://www.sigmasolve.com/blog/it-consulting-rates-per-hour",
+          "https://www.cleveroad.com/blog/it-consulting-rates/",
+          "https://www.freelancermap.de/freelancer/typo3",
+          "https://www.freelance.de/Typo3-Freelancer",
+          "https://www.goetz-programmierung.de/leistungen/typo3-freelancer",
+          "https://www.pixelegg.de/preise.html",
+          "https://www.wacon.de/preise",
+          "https://t3planet.de/en/blog/t3af-ai-cost-tracking/",
+          "https://nitsantech.de/typo3-ki",
+          "https://t3planet.de/blog/t3af-ki-kostenverfolgung/",
+          "https://t3planet.de/blog/ki-kosten-typo3/",
+          "https://www.louis.info/digitale-loesungen/kuenstliche-intelligenz/ki-typo3-extensions/"
+        ],
+        "queries_used": 4
+      }
+    ],
+    "fact_checks": [
+      {
+        "candidate_id": "V1",
+        "index": 0,
+        "url": "https://technologychecker.io/technology/typo3",
+        "quote_status": "partial",
+        "passage": "57,095 of TYPO3's country-resolved domains sit in Germany , another 4,918 in Switzerland and 3,713 in Austria , against 2,046 in the United States ."
+      },
+      {
+        "candidate_id": "V1",
+        "index": 1,
+        "url": "https://www.wus.de/en/blog/detail-page/the-cms-comparison-part-1-typo3-vs-wordpress",
+        "quote_status": "partial",
+        "passage": "In Germany and Austria, the CMS has a market share of 13% and 17% respectively, making it the second most used system (as of 2019) Over 1,000 new pages per month are created with Typo3 (as of March 2020) In the following two sections, we will take a closer look at the WordPress and Typo3 systems and provide information on their origins and technology."
+      },
+      {
+        "candidate_id": "V1",
+        "index": 2,
+        "url": "https://www.wmtips.com/technologies/cms/typo3/",
+        "quote_status": "unchecked"
+      },
+      {
+        "candidate_id": "V1",
+        "index": 3,
+        "url": "https://news.typo3.com/article/typo3-v14-ai-integrations",
+        "quote_status": "partial",
+        "passage": "TYPO3 v14: Building a System for Community-Driven AI Integrations - TYPO3 News Skip to main navigation Skip to main content Skip to page footer Menu Newsletter Sign-Up Follow Us Developer & Technology Product Updates & Roadmap TYPO3 v14: Building a System for Community-Driven AI Integrations 29 June 2025 Artificial Intelligence is no longer just a trend — it's becoming a key component in many CMS "
+      },
+      {
+        "candidate_id": "V1",
+        "index": 4,
+        "url": "https://www.precedenceresearch.com/ai-agents-market",
+        "quote_status": "partial",
+        "passage": "AI Agents Market Growth Factors Market Scope Market Dynamics Regional Insights Top Companies and Their Offerings Recent Developments Segments Covered in the Report Revenue, 2026 USD 11.55 Bn Forecast Year, 2035 USD 294.66 Bn CAGR, 2026 - 2035 43.57% Report Coverage Global What is the AI Agents Market Size in 2026?"
+      },
+      {
+        "candidate_id": "V1",
+        "index": 5,
+        "url": "https://market.us/report/agentic-ai-workflows-market/",
+        "quote_status": "unsupported"
+      },
+      {
+        "candidate_id": "V1",
+        "index": 6,
+        "url": "https://www.marketsandmarkets.com/Market-Reports/geography/agentic-ai-market/germany",
+        "quote_status": "partial",
+        "passage": "germany Agentic AI Market Size, Share,Trends, Growth Analysis Report, 2030 Home Information and Communications Technology Agentic AI Market Germany Germany Agentic AI Market (2025-2030) Report Code TC 8694 GER Published in Aug 2026, By MarketsandMarkets™ Choose License Type SINGLE USER $ 2950 CORPORATE LICENSE $ 3400 Inquire Before Buying Overview Request Sample Pages Request Customization Downloa"
+      },
+      {
+        "candidate_id": "V1",
+        "index": 7,
+        "url": "https://www.louis.info/digitale-loesungen/kuenstliche-intelligenz/ki-typo3-extensions/",
+        "quote_status": "supported",
+        "passage": "Jetzt Kontakt aufnehmen Das Preis­mo­dell: ab 125 Euro pro Monat Das KI-Extension-Paket von LOUIS INTERNET kostet ab 125 Euro pro Monat für bis zu vier KI-Extensions, Updates und technischer Support inklusive."
+      },
+      {
+        "candidate_id": "V1",
+        "index": 8,
+        "url": "https://www.freelancermap.de/freelancer/typo3",
+        "quote_status": "supported",
+        "passage": "Freelancer finden 1.527 Freelancer TYPO3 Deutschland Österreich Schweiz Alle löschen Filter Preis Maximaler Stundensatz in € Kein Filter Maximaler Tagessatz in € Kein Filter Verfügbarkeit in % Kein Filter Einsatzort Reisebereitschaft Umkreissuche 1 Schlagwörter Berufsfelder Web- und Softwareentwicklung 1.424 Schreib- und Übersetzungsdienste 23 Grafikdesign und Kreativdienste 362 Digitales Marketin"
+      },
+      {
+        "candidate_id": "V1",
+        "index": 9,
+        "url": "https://www.sigmasolve.com/blog/it-consulting-rates-per-hour",
+        "quote_status": "partial",
+        "passage": "Hourly Rates: Senior consultants €120–€250."
+      },
+      {
+        "candidate_id": "V3",
+        "index": 0,
+        "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+        "quote_status": "unsupported"
+      },
+      {
+        "candidate_id": "V3",
+        "index": 1,
+        "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+        "quote_status": "unchecked"
+      },
+      {
+        "candidate_id": "V3",
+        "index": 2,
+        "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act",
+        "quote_status": "unchecked"
+      },
+      {
+        "candidate_id": "V3",
+        "index": 3,
+        "url": "https://b13.com/knowledge/ai-content-in-typo3-labelling-needs-accountability",
+        "quote_status": "partial",
+        "passage": "AI Label for TYPO3 by b13: AI transparency and sign-off Skip directly to page content b13 GmbH Hauptstätter Str."
+      },
+      {
+        "candidate_id": "V3",
+        "index": 4,
+        "url": "https://salt.security/eu-ai-act-compliance",
+        "quote_status": "partial",
+        "passage": "Request a demo Enforcement deadline Aug 2, 2026 Maximum fine €35M or 7% of global turnover Life/safety incident reporting 24 hrs Article 73 window Other serious incidents 72 hrs Article 73 window EU AI Act Summary What is the EU AI Act?"
+      }
+    ],
+    "accounting": {
+      "model_calls": 13,
+      "search_calls": 5,
+      "search_queries": 20,
+      "cost_usd": 0.113275
+    },
+    "opportunity_dossier": "# Commercial Opportunity: KI-gestützte Workflow-Automatisierung für TYPO3 als Dienstleistung in Brandenburg\n\n**ID:** `V1`  \n**Run ID:** `mark-20261001T122940-ef7522`  \n**Category:** `productized_service`  \n**Target Buyer:** TYPO3-nutzende Organisationen und Unternehmen in Brandenburg, insbesondere öffentliche Einrichtungen, Bildungseinrichtungen und KMU, die ihre Content-Management-Prozesse automatisieren und optimieren möchten.  \n**Intent / Origin:** TYPO3 Künster AI Agent workflows as service in brandemburg  \n\n---\n\n## 1. Value Proposition & Problem\nEffizienzsteigerung und Compliance für TYPO3-Nutzer durch maßgeschneiderte KI-Integrationen.\n\n### Pain & Compliance Basis\nHoher manueller Aufwand und Ineffizienz bei Content-Erstellung, -Pflege und -Übersetzung in TYPO3. Mangel an internem Fachwissen für die Integration und den Betrieb komplexer KI-Lösungen. Der Wunsch nach Effizienzsteigerung und Kostenreduktion durch Automatisierung. Die Notwendigkeit, rechtliche Anforderungen wie den EU AI Act bei der Nutzung von KI-generierten Inhalten zu beachten, um Reputationsschäden und potenzielle Bußgelder zu vermeiden. TYPO3 v14 bietet hierfür Schnittstellen, aber die Implementierung erfordert Expertise.\n\n---\n\n## 2. Minimum Viable Product (MVP) Scope\nFeatures: Implementierung von zwei bis drei Kern-KI-Workflows: 1. Automatische Generierung von SEO-Metadaten (Titel, Beschreibung) für TYPO3-Seiten und Artikeln. 2. KI-gestützte Textgenerierung für Entwürfe von Nachrichtenartikeln oder Produktbeschreibungen direkt im TYPO3-Backend. 3. KI-basierte Bildbeschreibung und Metadaten-Generierung für Mediendateien. Core stack/components: TYPO3 CMS (aktuelle LTS-Version), bestehende TYPO3-Erweiterungen für KI-Integration (z.B. AiM, ns_t3ai, ai-bundle), Anbindung an ausgewählte Large Language Models (LLMs) wie OpenAI (GPT-4) oder Google Gemini über API. Build approach: Analyse der Kundenbedürfnisse, Auswahl und Konfiguration passender TYPO3-Erweiterungen, API-Schlüssel-Management, Entwicklung und Feinabstimmung spezifischer Prompts für die gewünschten Workflows, Schulung der Redakteure. Fokus auf sofortigen Mehrwert und einfache Bedienbarkeit.\n\n---\n\n## 3. Commercial Mechanics\n\n### Pricing & Economics\nPricing Tiers: 'Starter-Paket': Einmalige Einrichtung (z.B. 2.000 - 4.000 EUR) für 2-3 Basis-Workflows, zzgl. monatliche Servicegebühr (ab 250 EUR) für Wartung, Support und Verbrauchs-Credits für die KI-APIs. 'Professional-Paket': Erweiterte Einrichtung (z.B. 5.000 - 8.000 EUR) für mehr Workflows oder komplexere Anforderungen, zzgl. monatliche Gebühr (ab 500 EUR). Zusätzliche individuelle Beratungsleistungen nach Stundensatz (120-180 EUR/Stunde). Estimated Gross Margin: 60-70% (Annahme). Target Initial Revenue: 10.000 - 20.000 EUR in den ersten 6-12 Monaten durch 3-5 Kunden.\n\n### Distribution & Acquisition Strategy\nDirektmarketing und Kaltakquise bei öffentlichen Einrichtungen und größeren KMU in Brandenburg mit bestehenden TYPO3-Installationen. Partnerschaften mit TYPO3-Agenturen in Brandenburg, die keine eigene KI-Integrationskompetenz haben. Content Marketing (Blogartikel, Webinare) zu 'TYPO3 & KI', 'EU AI Act für Redakteure' und 'Effizienz im Content Management'. Präsenz auf lokalen Branchenveranstaltungen und TYPO3-Meetups in der DACH-Region.\n\n### Defensibility & Moat\nSpezialisiertes Know-how: Tiefgreifendes Verständnis der TYPO3-Architektur in Kombination mit Expertise in KI-Prompt-Engineering und API-Integration. Lokale Expertise und Vertrauen: Aufbau von Vertrauen bei Kunden in Brandenburg durch persönliche Betreuung und Verständnis regionaler Anforderungen (z.B. spezifische Compliance-Anforderungen öffentlicher Stellen). Kontinuierliche Anpassung: Ständige Weiterentwicklung und Anpassung der Workflows an neue TYPO3-Versionen, KI-Modelle und sich ändernde Compliance-Vorschriften (EU AI Act). Beziehung zu Kunden: Langfristige Serviceverträge und enge Kundenbeziehungen durch den 'productized_service'-Ansatz.\n\n---\n\n## 4. Kill Criteria\n- Der TYPO3-Markt in Brandenburg schrumpft signifikant oder wird durch andere CMS mit einfacherer, nativer KI-Integration überrollt.\n- Große TYPO3-Agenturen oder die TYPO3 Association selbst bieten umfassende, kostengünstige und standardisierte KI-Integrationslösungen an, die den Bedarf an spezialisierten Dienstleistern obsolet machen.\n- Die Komplexität der Einhaltung des EU AI Act für KI-generierte Inhalte wird für Dienstleister unüberschaubar hoch, oder die Haftungsrisiken übersteigen die potenziellen Einnahmen.\n- Die Kosten für die Nutzung von KI-APIs steigen drastisch an und machen die Dienstleistung unwirtschaftlich.\n\n---\n\n## 5. Evidence Grade\n### Facts (retrieved sources)\n- TYPO3 hält einen signifikanten Marktanteil in Deutschland mit 57.095 ihrer länderspezifischen Domains dort. (https://technologychecker.io/technology/typo3)\n- Im Jahr 2019 entfielen 13% des CMS-Marktes in Deutschland auf TYPO3, was es zum zweitmeistgenutzten System machte. (https://www.wus.de/en/blog/detail-page/the-cms-comparison-part-1-typo3-vs-wordpress)\n- Deutschland repräsentiert 68,2% aller Websites, die TYPO3 nutzen. (https://www.wmtips.com/technologies/cms/typo3/)\n- TYPO3 v14 ist darauf ausgelegt, klare Schnittstellen für die Integration verschiedener KI-Tools und externer Dienste anzubieten. (https://news.typo3.com/article/typo3-v14-ai-integrations)\n- Der globale Markt für KI-Agenten wurde 2026 auf 11,55 Milliarden USD geschätzt. (https://www.precedenceresearch.com/ai-agents-market)\n- Der Markt für Agentic AI Workflows wird voraussichtlich bis 2034 227 Milliarden USD erreichen. (https://market.us/report/agentic-ai-workflows-market/)\n- Deutschlands Agentic AI Markt wird voraussichtlich von ca. 323,4 Millionen USD im Jahr 2025 auf 3.927,8 Millionen USD im Jahr 2030 wachsen. (https://www.marketsandmarkets.com/Market-Reports/geography/agentic-ai-market/germany)\n- LOUIS INTERNET bietet ein 'KI-Extension-Paket' ab 125 Euro pro Monat für bis zu vier KI-Erweiterungen an. (https://www.louis.info/digitale-loesungen/kuenstliche-intelligenz/ki-typo3-extensions/)\n- Der durchschnittliche Stundensatz für TYPO3-Freelancer liegt bei rund 80 €. (https://www.freelancermap.de/freelancer/typo3)\n- IT-Beratungssätze für Senior-Berater in Deutschland liegen typischerweise zwischen 120 € und 250 € pro Stunde. (https://www.sigmasolve.com/blog/it-consulting-rates-per-hour)\n\n### Inferences\n- Es gibt einen wachsenden Bedarf an KI-Integrationsdienstleistungen für TYPO3-Nutzer, abgeleitet aus dem signifikanten TYPO3-Marktanteil in Deutschland und dem starken Wachstum des Agentic AI Marktes.\n- Die Variabilität der Agentur- und Freelancer-Stundensätze deutet darauf hin, dass eine Positionierung im mittleren bis oberen Preissegment für spezialisierte KI-Integrationsdienste möglich ist, abgeleitet aus den genannten Stundensätzen für TYPO3-Freelancer und IT-Berater.\n- TYPO3-Nutzer in öffentlichen Einrichtungen und im Bildungssektor sind aufgrund des hohen TYPO3-Anteils in diesen Bereichen wahrscheinliche Zielkunden für Effizienzsteigerungen und Compliance-Lösungen, abgeleitet aus der Erwähnung der Prevalenz von TYPO3 in höherer Bildung, öffentlichem Nahverkehr, Gesundheitswesen und Regierung in den Suchergebnissen.\n\n### Open questions\n- Wie hoch ist die spezifische Zahlungsbereitschaft von TYPO3-Nutzern in Brandenburg für KI-gestützte Workflow-Automatisierung?\n- Gibt es bereits lokale TYPO3-Agenturen in Brandenburg, die ähnliche spezialisierte KI-Integrationsdienstleistungen anbieten?\n- Welche spezifischen KI-Workflows haben für öffentliche Einrichtungen und KMU in Brandenburg die höchste Priorität und den größten Return on Investment?\n- Wie viele TYPO3-Installationen gibt es konkret in Brandenburg?\n\n---\n\n## 6. Grounded Evidence & Sources\n- https://technologychecker.io/technology/typo3\n- https://www.wus.de/en/blog/detail-page/the-cms-comparison-part-1-typo3-vs-wordpress\n- https://www.wmtips.com/technologies/cms/typo3/\n- https://news.typo3.com/article/typo3-v14-ai-integrations\n- https://www.precedenceresearch.com/ai-agents-market\n- https://market.us/report/agentic-ai-workflows-market/\n- https://www.marketsandmarkets.com/Market-Reports/geography/agentic-ai-market/germany\n- https://www.louis.info/digitale-loesungen/kuenstliche-intelligenz/ki-typo3-extensions/\n- https://www.freelancermap.de/freelancer/typo3\n- https://www.sigmasolve.com/blog/it-consulting-rates-per-hour\n",
+    "contract_version": "1.5.0"
+  },
+  "existence_check": false,
+  "contract_version": "1.0.0"
+}

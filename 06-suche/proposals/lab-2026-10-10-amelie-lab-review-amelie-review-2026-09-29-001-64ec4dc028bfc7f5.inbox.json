@@ -1,0 +1,170 @@
+{
+  "batch_id": "amelie-lab-review-amelie-review-2026-09-29-001-64ec4dc028bfc7f5",
+  "lab_id": "amelie-lab",
+  "engine": "review",
+  "run_id": "amelie-review-2026-09-29-001",
+  "revision": "64ec4dc028bfc7f5192433add27fb40997cdc8bdef209cbcc286f120ca5dddf9",
+  "created_at": "",
+  "model": "not recorded",
+  "intent": "Are there already public registries, open datasets, or standardized digital repositories for published energy-efficiency implementation plans (e.g. EnSimiMaV / EnEfG in Germany or EU EED counterparts)?",
+  "ideas": [],
+  "record": {
+    "packet_id": "amelie-review-2026-09-29-001",
+    "question": "Are there already public registries, open datasets, or standardized digital repositories for published energy-efficiency implementation plans (e.g. EnSimiMaV / EnEfG in Germany or EU EED counterparts)?",
+    "findings": [
+      {
+        "claim": "In Germany, companies with an annual final energy consumption exceeding 2.5 GWh (with proposed changes to 2.77 GWh) are legally required under the Energy Efficiency Act (EnEfG) to create and publish implementation plans for economically viable energy-saving measures.",
+        "source": "https://www.vattenfall.de/infowelt-energie/energieeffizienzgesetz-enefg",
+        "source_type": "industry documentation",
+        "retrieved_at": "2026-09-29T14:00:00Z",
+        "quote": "Unternehmen mit einem durchschnittlichen Jahresverbrauch zwischen 2,5 und 7,5 GWh sind nach § 9 EnEfG verpflichtet, konkrete Umsetzungspläne für wirtschaftliche Energieeffizienzmaßnahmen zu erstellen und zu veröffentlichen. Als wirtschaftlich gilt eine Maßnahme, wenn sie sich laut DIN EN 17463 (VALERI) schon in der ersten Hälfte ihrer Lebensdauer finanziell trägt. Der Referentenentwurf zur Gesetzesreform sieht vor, die Schwelle für Umsetzungspläne von 2,5 GWh auf ca. 2,77 GWh anzuheben, um sie mit den EU-Vorgaben der Energieeffizienzrichtlinie zu harmonisieren.",
+        "reused_from_amelie": false
+      },
+      {
+        "claim": "These implementation plans must be submitted to the Federal Office for Economic Affairs and Export Control (BAFA) via an online portal, and BAFA is tasked with conducting random audits to ensure compliance.",
+        "source": "https://www.vattenfall.de/infowelt-energie/energieeffizienzgesetz-enefg",
+        "source_type": "industry documentation",
+        "retrieved_at": "2026-09-29T14:00:00Z",
+        "quote": "Meldung Übermittlung über das BAFA-Online-Portal.",
+        "reused_from_amelie": false
+      },
+      {
+        "claim": "For data centers in Germany, specific reporting requirements and efficiency standards apply under the EnEfG. A German data center register exists, but it has been identified as incomplete and having data quality issues, and operators are not mandated to use it as their primary publication route.",
+        "source": "https://www.data-central.co.uk/news/german-data-centre-register-incomplete-and-unreliable-says-uba/",
+        "source_type": "industry documentation",
+        "retrieved_at": "2026-09-29T14:00:00Z",
+        "quote": "Germany's Umweltbundesamt has published its first analysis of the country's statutory data centre register, finding that many reported facilities already meet future efficiency requirements while warning that the public dataset remains incomplete and contains significant quality problems. The register currently publishes records for 319 data centres. Operators of facilities with at least 300kW of non-redundant electrical connection capacity are subject to reporting requirements under Germany's Energy Efficiency Act, although operators do not have to use the public register itself as their publication route.",
+        "reused_from_amelie": false
+      },
+      {
+        "claim": "A draft bill for the German EnEfG includes provisions for an 'energy consumption register' specifically for public bodies to enhance transparency regarding their energy use.",
+        "source": "https://www.gfbu-consult.de/blog/referentenentwurf-enefg-abschwaechung-oder-praxistauglichkeit",
+        "source_type": "industry documentation",
+        "retrieved_at": "2026-09-29T14:00:00Z",
+        "quote": "Neu §6a: Energieverbrauchsregister für öffentliche Einrichtungen. Ein Energieverbrauchsregister soll künftig Transparenz schaffen und möglicherweise indirekt Effizienzsteigerungen fördern.",
+        "reused_from_amelie": false
+      },
+      {
+        "claim": "The EU Energy Efficiency Directive (EED) mandates large enterprises to conduct regular energy audits and requires Member States to disseminate information on available energy efficiency mechanisms and frameworks.",
+        "source": "https://miteco.gob.es/es/energia/documentos/interpretative_notes_art8_eed_en_tcm30-170761.pdf",
+        "source_type": "government",
+        "retrieved_at": "2026-09-29T14:00:00Z",
+        "quote": "Under Article 8(1) of the EED, Member States must promote the availability to all final customers of high quality energy audits which are cost effective and (a) carried out in an independent manner by qualified and/or accredited experts according to qualification criteria; or (b) implemented and supervised by independent authorities under national legislation.",
+        "reused_from_amelie": false
+      },
+      {
+        "claim": "EU Member States are required to submit National Energy and Climate Plans (NECPs), which are high-level documents detailing their climate targets and actions, including energy efficiency. These plans are publicly available, and several databases compile data from them.",
+        "source": "https://ember-energy.org/data/national-energy-and-climate-plans/",
+        "source_type": "academic repository",
+        "retrieved_at": "2026-09-29T14:00:00Z",
+        "quote": "National Energy and Climate Plans (NECPs) are the principal documents produced by EU Member States to detail their key climate targets and actions for the next decade and beyond. This dataset contains the stated targets of Member States in these NECP documents covering greenhouse gas emissions, final energy demand, electricity generation and installed electricity generation capacity.",
+        "reused_from_amelie": false
+      },
+      {
+        "claim": "The European Environment Agency (EEA) maintains a database on integrated national climate and energy policies and measures (PaMs) in Europe, which includes information on energy efficiency policies implemented or planned by European countries.",
+        "source": "https://www.europa.eu/climate/eu-action/monitoring-reporting-and-verification-climate-action/eea-database-integrated-national-climate-and-energy-policies-and-measures-europe_en",
+        "source_type": "government",
+        "retrieved_at": "2026-09-29T14:00:00Z",
+        "quote": "This database contains policies and measures (PaMs) implemented, adopted or planned by European countries to achieve climate change mitigation and energy targets, such as reducing greenhouse gas (GHG) emissions, producing additional renewable energy, or reducing overall energy consumption. These PaMs contribute to meeting the objectives of the integrated national energy and climate plans (NECPs).",
+        "reused_from_amelie": false
+      },
+      {
+        "claim": "The MURE (Mesures d'Utilisation Rationnelle de l'Energie) database provides information on energy efficiency policies and measures implemented across Europe, allowing users to search by sector, country, and measure type.",
+        "source": "https://www.odyssee-mure.eu/mure.html",
+        "source_type": "academic repository",
+        "retrieved_at": "2026-09-29T14:00:00Z",
+        "quote": "MURE (Mesures d'Utilisation Rationnelle de l'Energie) provides information on energy efficiency policies and measures that have been carried out in the Member States of the European Union. The information is accessible by query in the database.",
+        "reused_from_amelie": false
+      },
+      {
+        "claim": "The EU Building Stock Observatory (BSO) is a web tool that monitors the energy performance of buildings across Europe, providing data on building stock, energy consumption, and related aspects.",
+        "source": "https://www.europa.eu/energy/eu-building-stock-observatory_en",
+        "source_type": "government",
+        "retrieved_at": "2026-09-29T14:00:00Z",
+        "quote": "The EU Building Stock Observatory (BSO) web tool monitors the energy performance of buildings across Europe ... This supports the monitoring of current EU energy policies and measures and will contribute to future policy making. The BSO covers a broad range of energy-related topics and provides data on buildings-related areas: building stock, energy consumption, building elements and technical building systems installed, energy performance certificates, nearly zero-energy buildings and renovation rates, but also energy poverty and financing aspects.",
+        "reused_from_amelie": false
+      },
+      {
+        "claim": "The US Department of Energy (DOE) supports open data initiatives, including the National Residential Efficiency Measures Database, which collects data on residential retrofit measures and costs, and the Standard Energy Efficiency Data (SEED) Platform, an open-source platform for managing building performance data.",
+        "source": "https://www.energy.gov/eere/buildings/national-residential-efficiency-measures-database",
+        "source_type": "government",
+        "retrieved_at": "2026-09-29T14:00:00Z",
+        "quote": "The National Residential Efficiency Measures Database is a centralized resource of residential building retrofit measures and associated estimated costs for the U.S. building industry. Using this database, software developers and researchers can analyze the trade-offs associated with using various energy-efficiency measures.",
+        "reused_from_amelie": false
+      }
+    ],
+    "contradictions": [],
+    "gaps": [
+      "While German companies are required to 'publish' energy-efficiency implementation plans and submit them to BAFA, there is no evidence of a centralized, publicly accessible, machine-readable registry that aggregates these individual company-specific implementation plans. The term 'publish' appears to imply making them available, but not necessarily in a structured, searchable public database for broad analysis.",
+      "Existing EU-level databases (NECPs, EEA PaMs, MURE) focus on national policies and measures or aggregated data, rather than granular, company-specific implementation plans. Sector-specific databases (e.g., for data centers or buildings) exist, but a comprehensive, cross-sectoral public registry for individual company implementation plans is not apparent.",
+      "The machine-readability and standardization of individual company implementation plans, even if publicly available in some form, is not consistently ensured, making large-scale aggregation and analysis challenging."
+    ],
+    "terminology": [
+      "Implementation Plans (Umsetzungspläne): Specific plans detailing economically viable energy-saving measures identified by companies, as required by the German Energy Efficiency Act (EnEfG).",
+      "Energy Audit (Energieaudit): A systematic procedure used to identify, quantify, and report existing energy consumption profiles and energy saving opportunities.",
+      "Energy Management System (EnMS) / Environmental Management System (UMS): Systems, such as those certified under ISO 50001 or EMAS, that help organizations manage their energy use and environmental impact.",
+      "National Energy and Climate Plans (NECPs): High-level national strategies submitted by EU Member States outlining their climate and energy targets and actions for a ten-year period.",
+      "Policies and Measures (PaMs): A general term referring to policies and measures related to climate and energy, often used in EU databases to describe national actions.",
+      "Energy Efficiency Directive (EED): A European Union directive that establishes a common framework of measures to promote energy efficiency within the EU.",
+      "Energy Efficiency Act (EnEfG): German national legislation that transposes and expands upon the requirements of the EU Energy Efficiency Directive, setting specific energy efficiency obligations for companies and public bodies in Germany."
+    ],
+    "confidence": 0.9,
+    "quellen_used": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHumjZ5cAn0jrZkzfwfTJCtc8NSrGaw-Ff5lpwGaCud9fZpzvj9mf9FQFDgpW3gnLkxbPL4T-XQfGUmpd0PuGyyvz3rXRfzYVxgKQGNhPZDcANRPAVoIQq1PCq5QxPFop42TpYIKglqgF4KdLw15KeFDA7oJilB2QrnWRtFWWQvscXWqppFqoell-qkmMTESDbHAZyRNdJblkai3MimP7b7_t2wGAMfWVtZMAMOs-8ATYPxcbbu1d3pMcdbxOCw9HbvwPhmCTGzU-KacdMH",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELfaZHkqpCjRfuMBr8AaEykdw6J5jCZ2fCZcOgtWOP9UUWZURzvLDE-Q0k4NmvzArQP7kV5elsFQSYwTKRMej-EadduqPlkar_3XplQxBPf3DowVTYNZrIJiccbgl5bqYXm3qo8J2MDVbAHrqhcw3WWNnNaBV6lXG1dlLkJx4ycIAhygtjVXqS-ztN8RP3SAVNTzYkAx4Dsu1gp6OB4jtfqqAxOjSq2aZyF28hW_KiqeNo3_ef8LVFK8xSzDYvWkAOftTwrdiZhY9sgKhiBjUPmT849lwjtQP5WdNYGeqE-6NtDLp_cvUXQpXSqNOKwuk3tsY=",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHyAjmyidVoDG7g_WoaPGkXm7P3JFNs7CZYa02JwNxVanBXvDl8ZZzS4Z2yaZdyyfbR6PHHASZ3tmMk1zJWsBwiu9JOLCMrDmSxBaq3vIRC5pICs-XBIVpc6zV1XQaIu7VkdKmGkH8ESb1_BcE_6s1jgTGj5tqwPsvkOEzIevGIbYlCnVwXxgZvMEhZ6JQUFOckFJz_1LAYLykGjd8fxu4G3Cmb-OfZmrN_Hd_yFHddimselVPP1Mzcny-jeTe6iL_M-gfzx2puiIoE5k4yPFMhBXyrMphh4J5k8kMs99cMeBSj",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWfXP35g-eQPgmr61nLIwQNC5jCiKPIqGnUL75g37cWxKbV7V_QZm_L1i3Lank6DlgVEKkyjC2nZFXWOPbloLcmAbqyZE53FXUpt8yDqe-wzvXE2QRrabtZAKBJNMlnd1AZUrdXGBsdr4IUxp_LAPNm2I0dPOWGLmR7363cUTB-ogxbpQQo_LS4ljFUeVJ8MkzZj45Zxi8bdSWZ-6rimfGIebdvbEiWZXhLquBOxucCaIbi4pmeTrbIwECLg==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDwwR7wbt3B1sP5xDz250wS85hq6z6BAYDfRQzzrMZFWmxnqjbtp1pbfyLIExXSU_nxtTBA1Q3ZmxVulF-ZrZu576uu0Gyxpf97biZNgQHS66AfyIBEsqUoKM=",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH80lPU5zU_NF1XvosRAitgkrLt2desHowDGWPJ_xfA-vXaEJsZa-QBq1MeKrmC4w_qe6Ho_G4kskneluzdWhpStqnyaMQ-S7BFLUS3eLgx8dE9XAxmMVV3CJBfGv52y1hul4GiQtyurJiH8PoV0gnZwmsL_0MAFfeiQ9Yz7qHsFx9uMHoVGAZHYg==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMTM2UPBmyyZ-9VCkzF2dHJObeukUXqqalkXvSAuQ11NX2eXwPYA4GE6AQv362KTe9p5MkNz_6zTkiqEK-fh17ihTevMnaYW6FsZMBFpMRJLyEVubzdW7VDUD6BKSLSDSE8x5dVrlK8YS0NF8s46LMDOGm--G4ND9AiR19m1tbSKCqSG_AgUe5rdJbObQ==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHj-dGZF9itBMMUxJX-Z81He-MLsp0cFLAD3d9PyLaVNPXH0qKdWQVdXWVLwSn46IB4ur9hGYNU7jSGH3P0K4EtSXm3VtykA6rtfMvyLn-W4SLjHa092y7-COA3CkSjup5sPmIaUMm4Mn9tlJxaXdKV",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGu0tSJpUbefY52dQ1zMCdhT8SMyzScvLGByioBM67bBE6yAn-rweA07LsiM3WKtPEMzqut4fuPxo67LUR0Z990_eJF0TfsACz8M_NoyOstv4xzv5u9_OvPj6DgW3lZrqIHvl9-xgvoXuAnaiZX8iRkwwVPsUB6SBO_NlSyG4kxdAyPjf6SuyxcS8Ni5jKEJsBc",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEx8fYnudKQnWSoDj-e65-lKEBtjAUUbfE54IgHNf1VSlfFy7fFWXD2SuUvVoMOvALAdkroOAuS_lG1MYWgFzh6Z9aiv_1t-jliBVSQO_0Nqx3pGQHvJEgjGrBrvS62myYS6BgUiAe5xcxb6mOy_sL_8-JbUGTrxckq4CctO27eNCfx7zT4tQ1J",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFx73k49Ks9Fv3UND5noD2cJ-3nwddNFag7iV96sfkmwfTPwWbGsZFVElyGkZ2BsX1Nk52iQekEq2hNn08GNHVCzrkZM8oYGz1RNNFOyr1p36BtxMmDEBfnBbrCR1hEnlSFPeFB8pVe2xnZB9VF13FO",
+      "https://vertexaisearch.cloud.google.google.com/grounding-api-redirect/AUZIYQFoSW78onc1r13Jf5HMzOi7i4WfTmZuvfoVb6D_Z-ybRmyaxk6HD3TqOMUXvFfWehoNkaFR9AoG0iYW6nUL7qryuw95kF8uThmMo4xyJvoM6q9rd0mGPMc07g8_cUVmqPOSiMPZCKkpn_ZOD375MtbsN6ZnE-IqgbzuePw_pCu9vtQlnqigahXP",
+      "https://www.google.com/search?q=time+in+Germany",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFk5QjsotDR_UHqrehoS9OfyjtCmvvnOgDl6yPTX_NV4xWCy7vtlX6Zlxh2IoF_vW7Ks-tZfBg-UD0eTUs7fcD3OCn7sWtQ995VKZZN5rFZtetexLZ0U_vMcc6ATUqSgus=",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFyZch0CZae1LypAtob6t5QkcxZdSNhpIGAU1aoGvVRsstSMGmfZHDihsW3RX3hLQcpf0nHXTpyfm_yzN-IOyvLHgkjWO2p98zhmI__OuteyYDLMYlpHun4Z15dTKCtls2TPLOHHhZ7mhF-RLAn4AoCQX25DtovH1XxPF7CLApBCNTt8lOmdAK",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEeOPhjiB-CSb1JEOvru7SW556ws5jqq1OFDNYbbbOseg-J36o7HJwEcoPq9WkVOYs6gUhBTF-viq4Sp2R94iz-oUFx0FBTef205cWLInUX1ML2gnSBT8Ct7iwntTh1nukYI4ByL2Wcw56QcHzd2k4Qx4tDgKMbpHN49s_P4mPv3dLF-VA47wH-dj57gDGPcZoqPJWTbXKvvYa4Ody6kymDjwwAxuk-BTvS2I7mYNZrHU6llKSa08HmPfWLQy0",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKQxb1m_YClJWaCC1dUUJw1x2puPF_d9hTlK9X9ruNBmuNcQtouSrn-TVXeJqpcoqq2DT_WQ3eq3usKk8LgmvDlDJNOxPCC9L8Pi90ZsNY-yvxKb61iAemsw9U6KZAETV4AAHUDnpEL-5rPO0I0nChi9AU_cOyxOfZqdTPkzMdMWUx-D482OSBvA==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFf3bOEdCAKOHQLRlMt03Jh6e_kLCW718ZxYVFgL-vis8HEO_l57uH1bH8PTWjW2sDwVzp97czyQyXgA3CsknGMPu27OJi-Ps8mTsbOyMIPOi9IJ9gs6PDYHQTigZ6Q0iGWVVP4pYQmyfpi3sHgAS5IBHHEbBRsQG5xxG6CAVwkrmLzHgHvPAy0w2kUsbRUxOSYO3n0knfXetfWGhCsmw1BiMWcLIMIQQ_ediD0JmA==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGARRGeV98wrO9kn8XNa6M_32JkBqkAwH9Dh1afYp0H-amWyX0rRrSM8H743ZbnM2Gmhd5fvpB_1KQ4F1vhpK2dBEhn2m0iLoVn7xkju0Lha6VkpaBrTqhRk5fGNtA3KiWGUz-MhbswhpocRRYLaFS8u-6N08R35in-yWsqQGQr87jo6HZc2btFJC8N-3w5CtY=",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESfDQkS8KOM6cO6H9SZ6f9ivEyVFbrouxAp1JzAUv4na9WV0bw7wCTdBP3z5D93Kufy82Cz-pqIgLjrElWNFtpjb-Y0oXoOpg3gNUlAqsiPt-dOVn530kb0OHsKpWbOV3Lm9JkwK9SwmPPj_vIwcp4DvrVy09Z",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGa_QL7MovvbkYY_LY0Q5NqtBdTz0eB9lWeb-QdLQlmBqLiPKGYZshhHTRyEldqWBP5EPoLuWVTU0OSKJnlENpXpECsOB6gVVRHwPqxIPRoS7n8rWuVtNzVO-uzcd3kBp5HNUnqdBT4ZV2oguBh6KkmBqcCIv1QTiA=",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMSE-MYdDfYkcherjs1PDkBUaE0WLn6EGwC8ZRG-ySSvEhp_H4va53_l4L8hin_qE8kjiKFiVIJ_ZV4GKwRkHZJ0g0hyQcb64kHBe2PBRMLHjMP1nMMrfFmqanLl6kEySz2ocEtA8nKp_23KXs1hOHe0rNZ8kt__hWztM4XMo8CY8A4vY88oS2cN_KVvGqO1ZbZ2rSpXR8d3BSOY9MZUOLazl3HvOz",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHizF-1n0Hl-I2svm5vb_K6UVNsKqts4dm2O69brJzPNkhSw17_GdogqWLFIoiY5gJqHRL3TBceCFljgkHclKCW5pzF81K0TVN9-zgPh2U7Fl6cz5W78rikWJLo9rVO5UxedJr64eKfpjk7-ZppajbuJ2M-q_gfLUNY6CLKLJvxQFxlPznGghYgbYyiGJI2SRzCtmfKKvPNGaiD_cpSIu0AOJSLdMSHJJc_Jot6cEsCaVPoHNYkO73ONw==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFehLXZ7TqwMPRyPOvCCUzO_PrQHafAI5mfw-WszWq1FXpYpIeG1XAV8ysfOhX3O27cqWWMCOKL8dDyTK5VwwZBmfYCfPuYAGZHFcgGlDbWjnLiH95BMBUCr3HJamWpVz3IrTUJV0ygKtfrNqR5stDVcG6O52MWPxPTTi0AMrNCjyUIk5geAgfpWzt93D9W-55Pxw==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEv6HDuqKKqJSGoRUTP9lzkdPNnjlFyepWAxy1qMfTjUJrXO077SLaoMwjYaRIL_XEOORRpgH9uJq1pj03KRCmwaxgioqZmFrOhNVMOkPIH1ei1eDYT1co=",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFaoUn2a38isOQtTYVufNh_GrUpECuaDtAEwfaEpBdHTAv2fSwEV52DWvtgKKcTYKtF86-ruCg6WazreUROoyXU456DBskhv0q4bnVHr1Yu-c_zuemZ_gPyU-FGMVLUGw==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPwkI6ZnR5kTh89H_0TqtuE-6fHzsSP07__MbBak-qYS2Uio3IS75i6N4QYT9Nmxsl6AMKBJM0mPnJ3jyQwrja8P7Wa8cSu_pXL9UE1HQq5Ce8hCmC00tWgQFTXu-3sOtXLnOOGzHj",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEX5AMCy0Brd6XLUBpowIuzj-Dibp07lyQDpOTyC5fq-j25W0KPElJhiFtJ7zW6wjpHgckttY38XAC1KC-yZGt0JIb0IjsiEvl5UPfjvDuPhmtGxBJIMRJ2Bu-_6rtt4rC4zA==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjav3F1G_pvdj867MDf_AZHsH_O8ioKmNs-cCjWg_MQnsyamSRkni9aYG3QistUaxNmuFKafH30CoTITohkT4OVftKB-i5YMghLnhhRhlOOJrjbXY7o7FIr46ib0aTGQ1-RO2h-XzrGQ3cGP_m-_74pv2WYxtVVLCxHIfo5LTXlo3q69kyZiJh3kX9XcN7BXZU3ocFvzIcwMmvtnEIJ7U7QeTgYxIbljJyAm2j03Fb3BQkoIU=",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpX5JlkWoZtCHvKF-1333ufglnkzJbLK8xcoAZD4a4LKvQ0rmH7Y0IdkbRjbqy6M3JTvXiKfb7tTXmojTUGOKgHO9J7OLvH4V8V9iNFnV_XT4TC0HbJg6jAVDf_Lcfv0nonQucce6OJof0GPXQjlnTe9NYauPLXMnvISJ3-LPYqRyqt8K9fg-WTOflvftf",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHJuJhcy5wLnvnMjTvgOWr1HEdWYmwRsNOG253EwG4_U2PgdMlrwdiDY-eYDTIaGVucNKuw2P8m5essoIkbgfMvRNshtw2rjVgb2oye2V_XZ_74A==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEw61TvCHmgPUtTnt64goZyontISrD9O6zVSp49jpyQfex6AssDMRcRGTbQXbUZyN518Tv40pkM68D89pVgoKfxYXA6zV_UkDl_sD2XPlsN1fGDWVmqY6BAmD4CZFoB3G-UfC0=",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtYGzwRaHi6qLNAyGKJBnFHTwPJkGdN-jdNV5Y94oCVTvNhR5yB86fnV8ytL-OJjKlz4Lb8iQ218jtQSfmeR571xd3V3JukZRFX8sQtHy1DxipgAVSCLRS7YUd2do9hTtgJFAPIGfSTGGgobj9D4pfHg0mkpDAL0u-iCvLGSO4p9gb2pe9A3qNHJ_1k7rzHRZjUTaEB45_lGXzNUXaTKMEAja3e74jyiGSrhiJzKtk40kYCkAqlUY5FA==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2XYGkNqNXitEhYRxZArmS_i5tZUITI5367W_W1CXm-75ZsCUGX-dqGzsXhXAxOW7a_gBnCFC_Wc_gXzSRcWo74ZTIjBhKVDqxowQnrOIE3IM58EfAisw4z1UzsOWTpSSFgmxIM0EDPn4ubc8CRDLIqUGKsGSnKirQdOlut6IQZc0gsIP0szvV0ffrlW1cTRjYV5HfohNH1X07uw==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4whcHvlHWVejsLCw4vqo-sNNdiM7C8nrNt26ZI0MfyEet87QiZNLWmgJhsyqe212W_cmt2t6OZQriMrN3GLlbb1xAsIcDYC3LbzELzpO5sINzBAbcLMMkX56daNXdNHZVrGrjUCM2yxMqL11d_4sH0wJEdA==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgL6ron2zUJlTIxziE45aZsrdLW3NeAD4C1Bzff1-m3x814GyoAv0C_zY8dN5oUtNbMv3OTcKMp7PSKQfHSZJ_kq3ydOQ3APxO88JNwTNH3aFv2xbhnh9OEhOGpGjVpYzWIg8-iFvoTuQj4iorCDrQfPlbgB3JMdtxJnvgRLQ==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHuYjeyRaxjHFaphISrbqkdp4ERuwUrvApyGhikYSLSLhVlS7XMYrMGNWTCoIl0mUJtR091nAv0VdIiacumfsHvT_w3Bi3pj_c99-XvDeuj9Ok3J0IvCE3txfS5YKfxPdBkZAyBjoSBL0gDo6do2-Oj3-PGAzLA-yyEBvf_DOgSE4u-6Hzb7SnqL-6MYOgRtbcu7evtnKk=",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUlG5AlVA2v9mu-667G76J2bwACf6JjxY7mbGGzzjkuQklFdGG5DpDWIs_OLJxeCLhcl2SnTs7HLcZLOR1D0Tzl_U713jn9KTiUPtxEFBxJ0ZrMfXE2yJUA-4iHfgp-kLB_hPwRPAImCC5CNOhDD6LOUiFtCYcqBbMD1jAg8b2QroDm-pAVobl",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlysObVzHasw3TcprrUbf2lnbZEcupimA3fVk6ybVs7Yu_8Z6sSKhkgGHQpuTAIcMazQTCT0ya4nvlE8XPOjP0lULmlZxCMvqaVUGXhmNUZC0vBh_zwwJhLjyMbjZzDxhPW6_PWmt8PoCvC3sOKcfZkPY=",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbbhc9ZE4LPvZUQc38yTEl5Zlwb2oOOX4f3UkctoSulj9MDq7ztSiKYObn5qsLn6N19Ze35sziukjcGb2z9p5WmsjAvnit1i9L1hzS06Nt_y6rO1fXPo53R3mc3XVOmkVFBmGe6msEXIdrS_lAJqaqGP4IPOPuvWKPxStwBwfTUmd7V0HSMrZvQwc6faZ8Xq5ZNA==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFv4L_hXhUalsDb8caF8ijRXd61LXbhRekofn6GxE4HfJZrrRByISUPPK6qEzFW-B28jyUXjqaeMARNU5aGfIHN-mKwgvUnwLp_VnQBAcinkcjUw2WW0Jy21wo1a6avkEFWJLna4lJNa6Q5MiC1hBWGyH1KpYIEhLvy_69vOQAQGEooyrrDm3SWrtNQpkdmOdZ67OyeL2mIhg-9WTy0YdZQeGuA==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzQznETu_YVHlX-otE76vOiiS2_BIEFoZvBIcYNfmAXGk0dHpJWq0FfiQ41GG86qsrHXXdcQI9LArfB0vo8QcotpfNAEAnrkVKZuqH__R7pz4PAEmsmj_HhXTHheF8VaZXIKrHW9ZkcSDgEneAhaDTaCA-qc8WDcGUXQwXKhE3GBKmBKNKraqQv4bvnRKlNDge-qyNNGzZptarJtGNmNr0ATuWZffgI47V2SC-ssk6Kby3aCFegjIC1B0==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBfx4vMyeWQBWaJFMjfog6thXJ9cc1LlRVoqTE-hoOeL6cc2QVi5lgc3XqBvMCGd8z9CRNBwaF96nQnGzsw2zaTw73MfBFDflTllzfz7lxt6-JYwCwY8-mu6C6_TVyi51l1D-xp2VhWVIlrp9qAna28g==",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFE2OZvXHfsOQyMgZOrQouLSzxweuIacISrRa4IpmRhm2f6No-KSHHC4gbKnIqaIsr-_QwSJMfglTondWz-rG0CclSKKpAb3kTt0xofpwQCCcmOCgOJumodeRlOTxj-zUjEWyNcYQ=="
+    ],
+    "search_accounting": {
+      "month": "2026-09",
+      "queries_in_run": 15,
+      "month_total_queries": 15,
+      "free_allowance_remaining": 4985,
+      "overage_queries": 0,
+      "overage_cost_usd": 0.0,
+      "is_within_free_allowance": true
+    }
+  },
+  "existence_check": false,
+  "contract_version": "1.0.0"
+}

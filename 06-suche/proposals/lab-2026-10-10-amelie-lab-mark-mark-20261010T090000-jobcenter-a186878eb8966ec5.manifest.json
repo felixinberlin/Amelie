@@ -1,0 +1,24 @@
+{
+  "manifest_version": 1,
+  "run_id": "amelie-lab-mark-mark-20261010T090000-jobcenter-a186878eb8966ec5",
+  "plan_id": "lab-2026-10-10-amelie-lab-mark-mark-20261010T090000-jobcenter-a186878eb8966ec5",
+  "engine": "review",
+  "model": "gemini-2.5-pro",
+  "existence_check": false,
+  "survivors": {
+    "count": 4,
+    "status": "ungeprueft"
+  },
+  "files": [
+    "06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20261010T090000-jobcenter-a186878eb8966ec5.md",
+    "06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20261010T090000-jobcenter-a186878eb8966ec5.inbox.json",
+    "06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20261010T090000-jobcenter-a186878eb8966ec5.manifest.json"
+  ],
+  "source_ops": [],
+  "grave_proposals": 1,
+  "touches_memory": false,
+  "contracts": {
+    "mark-record": "1.5.0"
+  },
+  "contract_version": "1.0.0"
+}

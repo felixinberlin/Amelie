@@ -1,0 +1,159 @@
+# Proposals from plan lab-2026-10-10-amelie-lab-lacunar-lacunar-20261010T170000-jobcenter-multilingua-e4d8e0516cfea765
+
+Packet: amelie-lab-lacunar-lacunar-20261010T170000-jobcenter-multilingua-e4d8e0516cfea765 · Candidate: amelie-lab-lacunar-lacunar-20261010T170000-jobcenter-multilingua-e4d8e0516cfea765
+Not applied. A human decides.
+
+- [06-suche/amelie-lab-protokoll.md] lacunar: amelie-lab-lacunar-lacunar-20261010T170000-jobcenter-multilingua-e4d8e0516cfea765. Absicht: Jobcenter Sprachbarrieren mit Handy-Kamera-OCR, GPS-Matching, Übersetzungsmodellen und Sprach-Communities als ehrenamtliche Beistände nach § 13 SGB X lösen. Modell: gemini-2.5-flash. Existenzprüfung: nein. Alle Ideen ungeprüft. Die folgenden Angaben sind gespeicherte Modellausgaben, keine bestätigten Tatsachen. Nur grounded=true ist Evidenz; Score-Änderungen benötigen zusätzlich quote_status=verified. Quellen, fact_checks und fehlende Felder bleiben wie im Original; keine neuen Prüfungen durchgeführt.
+- [06-suche/amelie-lab-protokoll.md] Frontend-Handoff: 1 ungeprüfte Ideen aus lacunar. Im Lab-Ideen-Eingang anzeigen; nicht als geprüfte Dosen, ohne erfundene Vektoren oder Existenzurteile.
+- [06-suche/amelie-lab-protokoll.md] Originalfeld contract_version, Teil 1 (laut gespeicherter Datei):
+"1.2.0"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld run_id, Teil 1 (laut gespeicherter Datei):
+"lacunar-20261010T170000-jobcenter-multilingual"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld intent, Teil 1 (laut gespeicherter Datei):
+"Jobcenter Sprachbarrieren mit Handy-Kamera-OCR, GPS-Matching, Übersetzungsmodellen und Sprach-Communities als ehrenamtliche Beistände nach § 13 SGB X lösen"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld model, Teil 1 (laut gespeicherter Datei):
+"gemini-2.5-flash"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld created_at, Teil 1 (laut gespeicherter Datei):
+"2026-10-10T17:00:00Z"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld state_missing, Teil 1 (laut gespeicherter Datei):
+[]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld plan, Teil 1 (laut gespeicherter Datei):
+{
+  "area": "Überwindung von Sprach- und Behördenbarrieren im Jobcenter durch mobile Bilderkennung, GPS-Begleiternetzwerke und dezentrale Community-Lotsen",
+  "mode_list": [
+    "Smartphone-App zur automatischen Foto-Übersetzung von Jobcenter-Bescheiden",
+    "GPS-basiertes Freiwilligen-Matching für Behördentermine im Kiez",
+    "Sprach-Chatbot für einfache Bürgergeld-Erklärungen",
+    "WhatsApp-Hotline mit ehrenamtlichen Übersetzern",
+    "Videodolmetscher-Terminal im Jobcenter-Eingangsbereich",
+    "Community-Sprachcafé mit Vor-Ort-Hilfe beim Ausfüllen von Formularen",
+    "Automatische Terminerinnerung mit Sprachsynthese in 25 Sprachen",
+    "Geofenced Notfall-Button bei unverständlichen Anhörungsschreiben"
+  ],
+  "anchor_queries": [
+    "§ 13 Abs 4 SGB X Beistand Jobcenter Recht",
+    "Katretter GPS Ersthelfer Alarmierung Funktionsweise",
+    "Multimodale Dokumentenübersetzung Leichte Sprache Smartphone"
+  ]
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld frames, Teil 1 (laut gespeicherter Datei):
+{
+  "frame_a": {
+    "name": "Sprachbarrieren & Bescheid-Lähmung im Jobcenter (§ 13 / § 19 SGB X)",
+    "source_url": "https://www.ggua-projekt.de/arbeitsmarktzugang-fuer-fluechtlinge/sprachbarrieren-und-dolmetscherkosten-im-sgb-ii/",
+    "source_label": "Type A: Institutional Language & Legal Barrier",
+    "friction": "Über 1,5 Millionen Menschen im SGB-II-Bezug sprechen nicht fließend Deutsch. Behördenbriefe kommen auf Amtsdeutsch per Post. Die Behörde stellt oft keine Dolmetscher, verhängt aber Sanktionen bei Fristversäumnissen. Betroffene haben nach § 13 Abs. 4 SGB X das Recht auf Beistand, kennen dieses Recht aber nicht oder finden im Akutfall niemanden, der mitgeht.",
+    "slots": {
+      "materials": "Amtliche gelbe Briefe, Rechtsfolgebelehrungen, Mitwirkungsaufforderungen, Smartphone (oft das einzige digitale Werkzeug der Familie), Sprachnachrichten in WhatsApp.",
+      "mechanics": "Brief kommt per Post, Angst vor Kürzung, Herumfragen in der Community, versäumte 4-Wochen-Widerspruchsfristen, panische Suche nach Begleitern am Termintag.",
+      "goals": "Existenzsicherung behalten, Sanktionen vermeiden, Termin verstehen, Arbeit finden.",
+      "emotions": "Sprachlosigkeit, Scham, Angst vor Behördenwillkür, Ohnmacht.",
+      "constraints": "Amtssprache Deutsch (§ 19 SGB X), fehlendes Geld für vereidigte Dolmetscher, Termindruck.",
+      "rituals_timing": "Frist von einem Monat für Widerspruch, 3-Tage-Frist für Krankmeldung, pünktliche Vorladungen."
+    }
+  },
+  "frame_b": {
+    "name": "Katretter & Geocaching: Standortbasierte Ersthelfer-Alarmierung",
+    "domain": "Notfallrettung & Crowdsourced First Response (Katretter / First Responder GPS)",
+    "slots": {
+      "materials": "GPS-Positionsdaten, Push-Notifikationen, Geofences (500m - 2km Radius), qualifizierte Ersthelfer-Profile, Notfallkarte.",
+      "mechanics": "Bei Notruf alarmiert die Leitstelle automatisch alle registrierten qualifizierten Ersthelfer im unmittelbaren Umkreis; wer Zeit hat, drückt 'Ich übernehme' und wird per GPS direkt zum Einsatzort gelotst.",
+      "goals": "Therapiefreies Intervall minimieren, Leben retten, bürgerschaftliche Hilfsbereitschaft in Sekunden mobilisieren.",
+      "emotions": "Solidarität, Adrenalin, Gemeinschaftsgefühl, Wirksamkeit.",
+      "constraints": "Reaktionszeit unter 5 Minuten, strenge Qualifikationsprüfung der Helfer, Datenschutz bei Standortübermittlung.",
+      "rituals_timing": "Sekundenschnelle Alarmierung, Statusmeldung 'am Einsatzort eingetroffen', strukturierte Übergabe."
+    }
+  },
+  "distance": 4,
+  "friction_points": [
+    "Jobcenter-Kunden suchen tagelang verzweifelt nach Sprachhelfern über informelle Kanäle, während Ersthelfer-Apps passende Helfer in Minuten per GPS orten.",
+    "Behördenschreiben sind statisches Papier; Notfallsysteme sind interaktive digitale Signale mit klaren Handlungsanweisungen.",
+    "Das Recht auf Beistand (§ 13 Abs. 4 SGB X) verpufft, weil Hilfesuchende isoliert sind, während Geofencing-Netzwerke lokale Nachbarschaftshilfe in Echtzeit bündeln."
+  ],
+  "personas": [
+    {
+      "who": "Fatima, 36, geflüchtete Mutter aus Aleppo, wohnt in Berlin-Neukölln",
+      "would_do": "Erhält einen 4-seitigen Brief vom Jobcenter, versteht kein Wort und hat Angst, die Miete nicht mehr bezahlen zu können."
+    },
+    {
+      "who": "Taras, 27, zweisprachiger Student (Ukrainisch/Deutsch) in Hamburg",
+      "would_do": "Möchte Landsleuten helfen, hat aber keine Lust auf starre Vereinsstrukturen, sondern würde spontan Termine im Kiez begleiten."
+    }
+  ],
+  "candidates": [
+    {
+      "id": "C1",
+      "idea": "HandyFoto-KiezBeistand: Die App scannt den Brief per Handy-Kamera, fasst Inhalt und Frist sofort als Audionachricht in der Muttersprache zusammen und aktiviert bei Vorladungen per GPS verifizierte Sprachhelfer im 2-km-Umkreis, die als rechtlicher 'Beistand nach § 13 SGB X' mit zum Jobcenter gehen.",
+      "typical_probability": 0.03,
+      "friction_point": "Jobcenter-Kunden suchen tagelang verzweifelt nach Sprachhelfern, während Ersthelfer-Apps passende Helfer in Minuten per GPS orten.",
+      "check_queries": [
+        "GPS Begleitung Jobcenter Beistand App",
+        "Kamera Scan Behördenbriefe Übersetzung Muttersprache"
+      ]
+    },
+    {
+      "id": "C2",
+      "idea": "Sprach-Community-Bounty-Board: Diaspora-Vereine erhalten automatisierte, anonymisierte Dokumenten-Anfragen und können für bestätigte Terminbegleitungen Aufwandsentschädigungen aus kommunalen Integrationsbudgets abrechnen.",
+      "typical_probability": 0.02,
+      "friction_point": "Das Recht auf Beistand verpufft, weil Hilfesuchende isoliert sind.",
+      "check_queries": [
+        "Kommunale Aufwandsentschädigung Sprachmittler Ehrenamt",
+        "Integrationslotsen Vergütung SGB II"
+      ]
+    }
+  ]
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld result, Teil 1 (laut gespeicherter Datei):
+{
+  "survivors": [
+    {
+      "candidate_id": "C1",
+      "rank": 1,
+      "idea": "HandyFoto-KiezBeistand (Multimodaler Foto-Übersetzer mit GPS-Beistand-Dispatch): Smartphone-Kamera scannt Bescheid $\to$ On-Device-Übersetzung in Muttersprache mit Audio-Vorlesefunktion $\to$ GPS-Alarmierung vetted bilingualer Kiez-Beistände nach § 13 Abs. 4 SGB X zur physischen Terminbegleitung.",
+      "gap": "Bestehende Übersetzungs-Apps übersetzen unverständliche Behördenbegriffe oft falsch und lassen den Bürger am Termintag im Jobcenter allein mit der Sprachbarriere.",
+      "gap_stands_alone": true,
+      "boden_type": "transformational",
+      "removed_assumption": "Dass Übersetzung bei Behördengängen ein reines Textproblem ist, anstatt einer kombinierten Herausforderung aus Entschlüsselung, Fristwahrung und physischer Zeugenschaft/Beistand.",
+      "who_has_problem": "Über 1,5 Millionen nicht-muttersprachliche Bürgergeld-Empfänger und 400 Jobcenter mit Terminausfällen und Kommunikationskonflikten.",
+      "collider_mechanism": "Die Logik der geolokalisierten Ersthelfer-Alarmierung (Katretter) wird auf das Sozialrecht übertragen: Anstatt Menschen isoliert in Angst zu lassen, wird das gesetzliche Beistandsrecht (§ 13 Abs. 4 SGB X) durch eine hyperlokale GPS-Community-Infrastruktur aktiviert.",
+      "prior_art": [
+        {
+          "finding_id": "F1",
+          "url": "https://www.arbeitsagentur.de/datei/weisung-sgb-x-13_ba015243.pdf",
+          "note": "Weisung der BA garantiert Recht auf Beistand ohne Begründungspflicht."
+        },
+        {
+          "finding_id": "F4",
+          "url": "https://www.buergerstiftung-berlin.de/projekte/kiezlotsen-und-beistand-im-amt/",
+          "note": "Kiezlotsen-Projekte belegen hohe Wirksamkeit lokaler Begleitstrukturen."
+        }
+      ]
+    }
+  ],
+  "kills": [
+    {
+      "candidate_id": "C2",
+      "reason": "already_in_memory",
+      "killed_at_stage": "result",
+      "notes": "Reine Vereinsförderprogramme existieren bereits regional, scheitern aber an Trägheit und fehlender mobiler Technologie für Bürger."
+    }
+  ],
+  "shortlist": [
+    "C1"
+  ],
+  "proposed_log_entry": {
+    "datum": "2026-10-10",
+    "gebiet": "Sozialrecht & Mobile Bürger-Technologie",
+    "frame_a": "Sprachbarrieren & Bescheid-Lähmung im Jobcenter (§ 13 / § 19 SGB X)",
+    "frame_b": "Katretter & Geocaching: Standortbasierte Ersthelfer-Alarmierung",
+    "survivor": "C1: HandyFoto-KiezBeistand mit multimodaler Übersetzung und GPS-Beistand-Dispatch",
+    "boden": "transformational"
+  }
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld accounting, Teil 1 (laut gespeicherter Datei):
+{
+  "model_calls": 3,
+  "search_queries": 3,
+  "cost_usd": 0.022,
+  "search_calls": 3
+}

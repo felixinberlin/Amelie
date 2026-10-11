@@ -1,0 +1,365 @@
+# Proposals from plan lab-2026-10-10-amelie-lab-inversion-inversion-20260930T082921-129ac0-12de2ea223b84af1
+
+Packet: amelie-lab-inversion-inversion-20260930T082921-129ac0-12de2ea223b84af1 · Candidate: amelie-lab-inversion-inversion-20260930T082921-129ac0-12de2ea223b84af1
+Not applied. A human decides.
+
+- [06-suche/amelie-lab-protokoll.md] inversion: amelie-lab-inversion-inversion-20260930T082921-129ac0-12de2ea223b84af1. Absicht: Ideen rund um kommunale Baumschutzsatzungen und Fällgenehmigungen. Modell: gemini-2.5-flash. Existenzprüfung: nein. Alle Ideen ungeprüft. Die folgenden Angaben sind gespeicherte Modellausgaben, keine bestätigten Tatsachen. Nur grounded=true ist Evidenz; Score-Änderungen benötigen zusätzlich quote_status=verified. Quellen, fact_checks und fehlende Felder bleiben wie im Original; keine neuen Prüfungen durchgeführt.
+- [06-suche/amelie-lab-protokoll.md] Frontend-Handoff: 0 ungeprüfte Ideen aus inversion. Im Lab-Ideen-Eingang anzeigen; nicht als geprüfte Dosen, ohne erfundene Vektoren oder Existenzurteile.
+- [06-suche/amelie-lab-protokoll.md] Originalfeld run_id, Teil 1 (laut gespeicherter Datei):
+"inversion-20260930T082921-129ac0"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld intent, Teil 1 (laut gespeicherter Datei):
+"Ideen rund um kommunale Baumschutzsatzungen und Fällgenehmigungen"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld model, Teil 1 (laut gespeicherter Datei):
+"gemini-2.5-flash"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld created_at, Teil 1 (laut gespeicherter Datei):
+"2026-09-30T08:34:58Z"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld state_missing, Teil 1 (laut gespeicherter Datei):
+[]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld plan, Teil 1 (laut gespeicherter Datei):
+{
+  "area": "Kommunale Baumschutzsatzungen und Fällgenehmigungen",
+  "mode_list": [
+    "KI-gestützte Prüfung von Fällanträgen auf Vollständigkeit",
+    "Chatbot für Bürgerfragen zu Baumschutzsatzungen und Fällgenehmigungen",
+    "Automatische Erkennung von Baumarten und Stammumfang auf Fotos zur Antragsvorbereitung",
+    "Digitale Karte geschützter Bäume und Baumstandorte mit zugehörigen Daten",
+    "Vorhersage von Baumkrankheiten oder -schäden basierend auf Umweltdaten und Bildanalyse",
+    "Bürgerportal zur Meldung von Schäden an Bäumen oder illegalen Fällungen",
+    "Berechnung von Ausgleichszahlungen für Baumfällungen mittels KI",
+    "Generierung von Fällgenehmigungsdokumenten basierend auf Eingabedaten",
+    "Automatische Überwachung von Baustellen auf Einhaltung des Baumschutzes (z.B. per Drohne)",
+    "Empfehlungen für standortgerechte Neupflanzungen nach Fällungen",
+    "Augmented Reality (AR) App zur Visualisierung von Baumschutzbereichen vor Ort",
+    "Analyse von Baumkatasterdaten zur Identifizierung von Pflegemaßnahmenbedarfen"
+  ],
+  "target_queries": [
+    "Muster Baumschutzsatzung Kommune",
+    "Antragsformular Fällgenehmigung öffentlich",
+    "Berechnung Ausgleichszahlung Baumfällung Vorschrift"
+  ],
+  "class_hint": "C"
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld target, Teil 1 (laut gespeicherter Datei):
+{
+  "target": {
+    "name": "Kommunale Baumschutzsatzungen und Fällgenehmigungen",
+    "source_url": "https://www.stadt-muenster.de/fileadmin/user_upload/stadt-muenster/67_gruen/pics/Stadtgruen/pdf/Baumschutzsatzung_MS_18.4.2023.pdf",
+    "source_label": "Klasse A: Satzung",
+    "anchor_class": "C",
+    "who_pays": "Grundstückseigentümer zahlen für Fällgenehmigungen, Ersatzpflanzungen oder Ausgleichszahlungen. Dienstleister (Baumpfleger, Baumschulen, Gutachter, Softwareanbieter für Wertermittlung) profitieren von den Leistungen.",
+    "who_carries_burden": "Grundstückseigentümer tragen die Last der komplexen Antragstellung (Verständnis der Satzung, Messungen, Formulare ausfüllen, ggf. Gutachten einholen, Gebühren zahlen). Kommunales Personal trägt die Last der Antragsprüfung, Vor-Ort-Kontrolle, Datenverifikation und Berechnung von Ausgleichszahlungen.",
+    "where_data_stops": "Daten stecken in PDF-Dokumenten (Satzungen, Antragsformulare, Gutachten), proprietären kommunalen Portalen und den Berichten von Sachverständigen, die spezifische Software (z.B. ARBOTAX™ für Methode Koch) verwenden. Die Informationen sind oft nicht maschinenlesbar oder interoperabel.",
+    "blind_spot": "Der detaillierte, feingranulare Zustand *aller* schützenswerten Bäume (nicht nur derer, für die ein Antrag gestellt wird oder die zur Routinekontrolle anstehen). Die umfassenden ökologischen und klimatischen Leistungen einzelner Bäume sind schwer zu quantifizieren und finanziell zu erfassen, was ihre Berücksichtigung im Verwaltungsprozess erschwert. Auch der langfristige Erfolg von Ersatzpflanzungen wird selten systematisch und flächendeckend nachverfolgt."
+  },
+  "operator": "OP-3",
+  "thesis": "Statt sich auf die komplexe Berechnung der Baumwerte oder die Antragsformulare zu konzentrieren, werden die wesentlichen, oft abschreckenden Eingabeparameter (Stammumfang, Höhe, Art, Vitalität) durch bürgerfreundliche, KI-gestützte Mess- und Erkennungstools automatisiert erhoben, um den Zugang zur Baumschutzsatzung zu erleichtern.",
+  "candidates": [
+    {
+      "id": "C1",
+      "idea": "Eine Smartphone-App, die mittels Kamera und integriertem LiDAR/Tiefensensor den Stammumfang eines Baumes (automatisch auf 1,3 m Höhe projiziert) und dessen Gesamthöhe präzise misst und protokoliert, um die Antragstellung zu vereinfachen.",
+      "why_now": "Fortschrittliche on-device Computer Vision Algorithmen, präzise Tiefenkameras und LiDAR-Sensoren in modernen Smartphones ermöglichen genaue 3D-Messungen von Objekten in Echtzeit, die noch vor wenigen Jahren teure Spezialhardware erforderten.",
+      "recipient": "Kommunales Umweltamt / Grünflächenamt",
+      "recipient_kind": "institution",
+      "check_queries": [
+        "Smartphone App Baum Stammumfang messen",
+        "Tree height measurement app LiDAR"
+      ]
+    },
+    {
+      "id": "C2",
+      "idea": "Eine App, die anhand von Fotos von Rinde, Blättern und dem Gesamthabitus eines Baumes dessen Art identifiziert und erste visuelle Anzeichen von Vitalitätsminderung (z.B. Totholzanteil, starker Pilzbefall, auffällige Verfärbungen) erkennt und dokumentiert.",
+      "why_now": "Große vortrainierte Vision Models (LVMs) und spezialisierte Zero-Shot-Klassifikationsmodelle ermöglichen die genaue Erkennung von Baumarten und die Anomalie-Erkennung visueller Merkmale direkt auf dem Gerät, ohne Cloud-Anbindung.",
+      "recipient": "Naturschutzverbände / Botanische Gärten",
+      "recipient_kind": "association",
+      "check_queries": [
+        "Baumartenbestimmung App KI Vitalität",
+        "Tree species identification app disease detection"
+      ]
+    },
+    {
+      "id": "C3",
+      "idea": "Eine App, die durch eine kurze Videoaufnahme oder eine Serie von Fotos um den Baum herum den Kronendurchmesser und die durch die Krone auf den Boden projizierte Fläche (relevant für Abstandsflächen und Schutzbereiche) schätzt und visualisiert.",
+      "why_now": "Real-time 3D-Rekonstruktion aus multiplen Kamerabildern (Structure from Motion, NeRF-light) und fortschrittliche Segmentierungsmodelle auf mobilen Geräten ermöglichen die genaue Erfassung komplexer Baumstrukturen und deren Volumenprojektion.",
+      "recipient": "Kommunale Bauämter / Grünflächenämter",
+      "recipient_kind": "institution",
+      "check_queries": [
+        "Kronendurchmesser messen App",
+        "Tree crown diameter estimation software"
+      ]
+    },
+    {
+      "id": "C4",
+      "idea": "Ein KI-Modul, das auf Basis der erfassten Baumdaten (von C1-C3) und der hinterlegten lokalen Baumschutzsatzung automatisch prüft, ob eine Fällgenehmigung notwendig ist, welche Gründe akzeptiert werden könnten, und Vorschläge für Art und Umfang von Ersatzpflanzungen unterbreitet oder die voraussichtliche Ausgleichszahlung berechnet.",
+      "why_now": "Große Sprachmodelle (LLMs) können komplexe Rechtstexte (Baumschutzsatzungen) interpretieren und mit strukturierten Daten (Baum-Messwerte) verknüpfen, um spezifische Handlungsempfehlungen und Berechnungen zu liefern, was zuvor nur durch manuelle Prüfung durch Fachexperten möglich war.",
+      "recipient": "Kommunale Rechtsämter / Umweltämter",
+      "recipient_kind": "institution",
+      "check_queries": [
+        "KI Ausgleichszahlung Baumfällung berechnen",
+        "Tree removal permit AI assistant"
+      ]
+    },
+    {
+      "id": "C5",
+      "idea": "Eine App, die es Bürgern und Gutachtern ermöglicht, Teilschäden an Bäumen (z.B. Rindenverletzungen, Astabbrüche durch Dritte) mit präzisen Fotos, Videos und Messungen zu dokumentieren. Eine integrierte KI gibt eine erste Einschätzung des Schadensausmaßes und des voraussichtlichen Wertverlustes nach anerkannten Methoden (z.B. adaptierte Methode Koch für Teilschäden), als Grundlage für eine spätere Begutachtung oder Regulierung.",
+      "why_now": "On-device Computer Vision zur Erkennung spezifischer Schadensbilder, in Kombination mit LLMs zur Interpretation von Schadensbeschreibungen und zur Anwendung hinterlegter Bewertungsrichtlinien (wie die FLL Gehölzwerte 2002) auf den erfassten Daten.",
+      "recipient": "Baumsachverständigenverbände / Kommunale Versicherungsabteilungen",
+      "recipient_kind": "association",
+      "check_queries": [
+        "Baumschaden Dokumentation App",
+        "Tree damage assessment AI tool"
+      ]
+    },
+    {
+      "id": "C6",
+      "idea": "Ein System, das Bürger motiviert, periodisch Fotos von neu gepflanzten Ersatzbäumen (mit Geotag und Referenzpunkt) hochzuladen. Eine KI analysiert diese Fotos über die Zeit, um das Anwachsen, die Vitalität und das Wachstum des Baumes zu verfolgen und automatisch Abweichungen oder Pflegebedarf zu identifizieren.",
+      "why_now": "Fortschrittliche Bilderkennung und Zeitreihenanalyse visueller Daten zur Wachstums- und Vitalitätsüberwachung. Zero-cloud/Edge AI ermöglicht Datenschutz und Skalierbarkeit für große Mengen von Bürger-Fotos.",
+      "recipient": "Kommunales Umweltamt / Lokale Baumpatenschaftsinitiativen",
+      "recipient_kind": "institution",
+      "check_queries": [
+        "Ersatzpflanzung Monitoring App KI",
+        "Tree replacement tracking citizen science"
+      ]
+    }
+  ],
+  "shortlist": [
+    "C1",
+    "C2",
+    "C4",
+    "C6"
+  ]
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld result, Teil 1 (laut gespeicherter Datei):
+{
+  "survivors": [],
+  "kills": [
+    {
+      "candidate_id": "C1",
+      "reason": "Die Idee ist bereits in einem überfüllten Feld von existierenden Anwendungen zur Baumvermessung, die LiDAR und AR nutzen.",
+      "failed_checks": [
+        "in_mode_or_dense"
+      ]
+    },
+    {
+      "candidate_id": "C2",
+      "reason": "Die Baumartenbestimmung und Vitalitätserkennung per KI-App ist ein dicht besetztes Feld mit zahlreichen existierenden Lösungen.",
+      "failed_checks": [
+        "in_mode_or_dense"
+      ]
+    },
+    {
+      "candidate_id": "C4",
+      "reason": "Die automatische Prüfung und Berechnung von Fällgenehmigungen und Ausgleichszahlungen mittels KI steht auf der Liste der verbotenen Modi ('Berechnung von Ausgleichszahlungen für Baumfällungen mittels KI').",
+      "failed_checks": [
+        "in_mode_or_dense"
+      ]
+    },
+    {
+      "candidate_id": "C6",
+      "reason": "Das Monitoring von einzelnen Pflanzen über Fotos und Zeitreihenanalyse zur Wachstums- und Vitalitätsüberwachung fällt in das dicht besetzte Feld 'Longitudinalbeobachtung derselben Einzelpflanze'.",
+      "failed_checks": [
+        "in_mode_or_dense"
+      ]
+    }
+  ],
+  "log_row": {
+    "target": "Kommunale Baumschutzsatzungen und Fällgenehmigungen",
+    "anchor_class": "C",
+    "operator": "OP-3",
+    "candidates": 6,
+    "survivors": 0
+  },
+  "retro": {
+    "learned": "Alle initialen Kandidaten zur Automatisierung von Baumschutzsatzungen wurden entweder als existierende Lösungen oder als auf der verbotenen Liste stehend identifiziert. Das Problemfeld der digitalen Baumbeurteilung und Regulierung ist stark erforscht und besetzt.",
+    "mistake": "Ich habe die 'in_mode_or_dense'-Prüfung nicht konsequent genug als erste Hürde angewendet, obwohl die Memory-Check-Einträge und initialen Suchergebnisse bereits starke Hinweise auf besetzte Felder gaben.",
+    "next_time": "Bei der Bewertung von Kandidaten gegen die 'in_mode_or_dense'-Prüfung werde ich die Ergebnisse des Memory-Checks und der Prior-Art-Suche noch früher und schärfer berücksichtigen, um schnell festzustellen, ob ein Feld bereits überfüllt ist."
+  }
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld tool_calls, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "call_id": "inversion-20260930T082921-129ac0-t01",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "kommunal"
+  },
+  {
+    "call_id": "inversion-20260930T082921-129ac0-t02",
+    "tool": "search",
+    "status": "ok",
+    "summary": "Muster Baumschutzsatzung Kommune"
+  },
+  {
+    "call_id": "inversion-20260930T082921-129ac0-t03",
+    "tool": "search",
+    "status": "ok",
+    "summary": "Antragsformular Fällgenehmigung Baum Kommune UND Berechnung Ausgleichszahlung Baumfällung Vorschrift"
+  },
+  {
+    "call_id": "inversion-20260930T082921-129ac0-t04",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "Baumschutzsatzung, Fällgenehmigung, Ausgleichszahlung, KI"
+  },
+  {
+    "call_id": "inversion-20260930T082921-129ac0-t05",
+    "tool": "search",
+    "status": "ok",
+    "summary": "Berechnungsmethoden Gehölzwert Baum AND Software Baumwertermittlung"
+  },
+  {
+    "call_id": "inversion-20260930T082921-129ac0-t06",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "Baumwertermittlung, KI, Ausgleichszahlung, Fällgenehmigung"
+  },
+  {
+    "call_id": "inversion-20260930T082921-129ac0-t07",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "gesamthö, projizie"
+  },
+  {
+    "call_id": "inversion-20260930T082921-129ac0-t08",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "gesamthö"
+  },
+  {
+    "call_id": "inversion-20260930T082921-129ac0-t09",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "anzeiche, auffälli"
+  },
+  {
+    "call_id": "inversion-20260930T082921-129ac0-t10",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "anzeiche"
+  },
+  {
+    "call_id": "inversion-20260930T082921-129ac0-t11",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "akzeptie, baumdate"
+  },
+  {
+    "call_id": "inversion-20260930T082921-129ac0-t12",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "akzeptie"
+  },
+  {
+    "call_id": "inversion-20260930T082921-129ac0-t13",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "analysie, anwachse"
+  },
+  {
+    "call_id": "inversion-20260930T082921-129ac0-t14",
+    "tool": "bib_find",
+    "status": "ok",
+    "summary": "analysie"
+  },
+  {
+    "call_id": "inversion-20260930T082921-129ac0-t15",
+    "tool": "search",
+    "status": "ok",
+    "summary": "Smartphone App Baum Stammumfang messen"
+  },
+  {
+    "call_id": "inversion-20260930T082921-129ac0-t16",
+    "tool": "search",
+    "status": "ok",
+    "summary": "Baumartenbestimmung App KI Vitalität"
+  },
+  {
+    "call_id": "inversion-20260930T082921-129ac0-t17",
+    "tool": "search",
+    "status": "ok",
+    "summary": "KI Ausgleichszahlung Baumfällung berechnen"
+  },
+  {
+    "call_id": "inversion-20260930T082921-129ac0-t18",
+    "tool": "search",
+    "status": "ok",
+    "summary": "Baumschutzsatzung und Fällgenehmigungen in Deutschland"
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld accounting, Teil 1 (laut gespeicherter Datei):
+{
+  "model_calls": 12,
+  "search_calls": 7,
+  "search_queries": 19,
+  "cost_usd": 0.089366
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld log_entry, Teil 1 (laut gespeicherter Datei):
+"<!-- proposed by the Lab's Inversion agent, run inversion-20260930T082921-129ac0; nothing was written to Amélie -->\n| 2026-09-30 | Lab | Kommunale Baumschutzsatzungen und Fällgenehmigungen (Klasse C) | OP-3 | 6 | 0 (ungeprüft): none | — |\n\n### Inversion run inversion-20260930T082921-129ac0 — 2026-09-30 (intent: Ideen rund um kommunale Baumschutzsatzungen und Fällgenehmigungen)\n- **Learned:** Alle initialen Kandidaten zur Automatisierung von Baumschutzsatzungen wurden entweder als existierende Lösungen oder als auf der verbotenen Liste stehend identifiziert. Das Problemfeld der digitalen Baumbeurteilung und Regulierung ist stark erforscht und besetzt.\n- **Mistake:** Ich habe die 'in_mode_or_dense'-Prüfung nicht konsequent genug als erste Hürde angewendet, obwohl die Memory-Check-Einträge und initialen Suchergebnisse bereits starke Hinweise auf besetzte Felder gaben.\n- **Next time:** Bei der Bewertung von Kandidaten gegen die 'in_mode_or_dense'-Prüfung werde ich die Ergebnisse des Memory-Checks und der Prior-Art-Suche noch früher und schärfer berücksichtigen, um schnell festzustellen, ob ein Feld bereits überfüllt ist.\n- **Prior-art leads (automatic search, for the existence check; not a verdict):**\n  - C1 (ok): Smartphone App Baum Stammumfang messen -> https://apps.apple.com/us/app/arboreal-tree/id1444138299, https://play.google.com/store/apps/details?id=se.arboreal.height, https://www.youtube.com/watch?v=QSFgU9bfg94, https://play.google.com/store/apps/details?id=se.arboreal.height&hl=en_US\n  - C2 (ok): Baumartenbestimmung App KI Vitalität -> https://www.identifytree.com/, https://treeidentifier.app/, https://floraincognita.de/flora-incognita/, https://www.garden-shop.at/ki-im-garten/pflanzenerkennung-ki/\n  - C4 (ok): KI Ausgleichszahlung Baumfällung berechnen -> https://www.agrarwelt.com/baumfaellung-ersatzpflanzung-oder-ausgleichszahlung-laut-gesetz/, https://baumbuettner.de/blog/baumfaellung/reglungen-bei-baumfaellung-und-baumschnitt/, https://rechtsanwalt-kumpf.de/verwaltungsrecht/naturschutzrecht/ersatzpflanzung-ausgleichszahlung/, https://www.berlin.de/ba-treptow-koepenick/politik-und-verwaltung/aemter/umwelt-und-naturschutzamt/naturschutz/artikel.1306868.php\n"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld prior_art, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "candidate_id": "C1",
+    "question": "Smartphone App Baum Stammumfang messen",
+    "status": "ok",
+    "answer": "Several smartphone applications offer functionalities to measure tree trunk circumference or diameter, often utilizing augmented reality (AR) and a device's camera.\n\nThe **Arboreal Tree** app, available on both the App Store and Google Play, uses augmented reality and the phone's camera to measure various tree parameters, including trunk diameter. For diameter measurement, it requires devices supporting Google ARCore on Android and can leverage LiDAR on iPhones for enhanced accuracy, though it can still measure diameter without LiDAR. For large trees, the app features a circumference measurement method where a user places a marker on the bark, walks around the tree, and the app then fits a circle to the contact points.\n\n**MusTerra**, found on the App Store, enables users to measure tree diameter and height using their phone's camera.\n\n**TreeMeasure Pro**, also on the App Store, is a professional forestry measurement app that employs augmented reality and LiDAR technology. It can measure tree diameters, heights, volumes, and circumference for large trees. Similar to Arboreal Tree, its circumference measurement involves placing a marker and walking around the tree, with the app fitting a circle to the bark contact points. This app functions on any iPhone, with LiDAR providing improved precision but not being a strict requirement.\n\nThe **GLOBE Observer** app includes an optional feature for measuring the circumference of a tree.\n\nThe **Mein Baum App** (My Tree App) allows users to record and document trees. A user review indicates that while the app is good, measuring trunk circumference with a physical measuring tape might be simpler than using the app's diameter measurement, suggesting the app either calculates diameter from circumference or has a less direct method for diameter. The review also requests an option to choose between measuring circumference or diameter.\n\nWithin the **Forest Monitoring Tools**, there is a specific \"Bole Diameter Measurement Application\" designed for measuring the diameter of inaccessible tree trunk sections. This tool requires the user to input the distance to the object and then adjust on-screen lines to determine the diameter.",
+    "pages": [
+      "https://apps.apple.com/us/app/arboreal-tree/id1444138299",
+      "https://play.google.com/store/apps/details?id=se.arboreal.height",
+      "https://www.youtube.com/watch?v=QSFgU9bfg94",
+      "https://play.google.com/store/apps/details?id=se.arboreal.height&hl=en_US",
+      "https://play.google.com/store/apps/details?id=se.arboreal.height&hl=de",
+      "https://apps.apple.com/de/app/arboreal-tree/id1444138299?l=en-GB",
+      "https://apps.apple.com/de/app/arboreal-baum/id1444138299",
+      "https://apps.apple.com/us/app/musterra/id6742859340",
+      "https://apps.apple.com/sk/app/treemeasure-pro/id6760644907",
+      "https://observer.globe.gov/do-globe-observer/trees",
+      "https://apps.apple.com/de/app/mein-baum-app/id6738705605",
+      "https://sites.google.com/view/forestmonitoringtools/home"
+    ]
+  },
+  {
+    "candidate_id": "C2",
+    "question": "Baumartenbestimmung App KI Vitalität",
+    "status": "ok",
+    "answer": "Several mobile applications utilize Artificial Intelligence (AI) for tree species identification and vitality assessment. These apps generally allow users to identify trees by taking or uploading photos and often provide additional information and care recommendations.\n\nSome notable apps include:\n\n*   **Tree Identifier - AI-Powered Tree Species Recognition & Identification App** This application uses advanced AI to instantly identify tree species, offering details on leaf characteristics, bark, growing information, and hardiness zones.\n*   **Tree Identifier App - AI Tree & Wood Recognition** This app can identify trees, leaves, or wood types using AI, providing detailed species information and the ability to download data for offline use.\n*   **Flora Incognita** Developed as part of a research project, Flora Incognita employs deep learning artificial neural networks to identify plants from photos of flowers or leaves. It provides species names and further information and has been available on Google Play, Apple AppStore, and Huawei AppGallery since early 2018. The app's data also contributes to research on biodiversity.\n*   **KI-Pflanzenbestimmung** This app identifies plants and helps detect potential plant problems and unusual signs from a single photo. It also offers personalized care recommendations, including advice on watering, fertilizing, and general plant care reminders. It can recognize a wide range of plant species, such as flowers, trees, shrubs, succulents, herbs, grasses, and fungi.\n*   **ePlant – KI-pflanzen erkennen & Pflanzen Scanner** This app uses advanced AI to identify plants, flowers, trees, leaves, fruits, and vegetables from a photo, providing common and scientific names, detailed information, and additional images. It also functions as a plant finder to explore different species and identify fungi.\n*   **AI Plant Identifier** This app uses AI to identify tree species quickly and accurately. Users can upload a photo or describe features like leaf shape, bark color, and fruit type. It recognizes a wide variety of trees and provides fast, accurate predictions. This app also offers expert tips on watering, sunlight, pruning, and diagnoses problems like yellow leaves, pests, or overwatering, suggesting solutions.\n*   **Tree Identifier AI: ID Trees** Available on the Apple App Store, this app uses AI for tree species identification, tree health diagnosis, and personalized care guides, including advice on watering, sunlight, and pruning. ",
+    "pages": [
+      "https://www.identifytree.com/",
+      "https://treeidentifier.app/",
+      "https://floraincognita.de/flora-incognita/",
+      "https://www.garden-shop.at/ki-im-garten/pflanzenerkennung-ki/",
+      "https://play.google.com/store/apps/details?id=com.identiferplantapp&hl=de",
+      "https://play.google.com/store/apps/details?id=com.plantidentifier.ai.plantscanner.plantdetector.identifyplants&hl=de_AT",
+      "https://play.google.com/store/apps/details?id=com.fullstack.aitreeidentifier&hl=gsw",
+      "https://play.google.com/store/apps/details?id=com.ai.plant.indentifier.plant.encyclopedia&hl=de_AT",
+      "https://apps.apple.com/us/app/tree-identifier-ai-id-trees/id6670395270"
+    ]
+  },
+  {
+    "candidate_id": "C4",
+    "question": "KI Ausgleichszahlung Baumfällung berechnen",
+    "status": "ok",
+    "answer": "In Germany, the calculation of compensation payments (\"Ausgleichszahlung\") for tree felling is not based on a single, nationwide formula, but rather on a combination of federal, state, and municipal regulations. Property owners are generally obligated to either undertake replacement plantings or make financial compensation payments when felling trees. These requirements are stipulated by the Federal Nature Conservation Act (BNatSchG), state nature conservation laws, and local tree protection ordinances. The specific methods and amounts can vary significantly depending on the federal state, city, or municipality.\n\nIf replacement planting is not feasible or reasonable, a financial compensation can be required. The amount of this compensation is often determined by the \"Gehölzwert\" (woodland value) of the felled tree. Several approaches to calculating this value and the subsequent compensation exist:\n\n*   **Berlin's approach** The compensation amount is based on the \"Gehölzwert\" of the felled tree, which is then doubled.\n*   **Munich's approach** The approval for tree felling may include conditions for an appropriate replacement planting or financial compensation if planting is not possible. The extent of planting or payment is determined by a point scheme outlined in \"Anlage B – Gehölzbewertung, Ersatzpflanzungen und Ausgleichszahlungen\" (Appendix B - Woodland Valuation, Replacement Plantings and Compensation Payments). This scheme assesses trees based on their characteristics and condition using a point system.\n*   **Hamburg's BUE calculation** This is a standardized method for balancing compensation for trees. It involves a simplified \"Gehölzwertberechnung\" (woodland value calculation) that evaluates trees based on their master data and condition using a point system. This calculation helps determine the number of necessary replacement plantings or the sum of the compensation payment if there is insufficient space for replanting. The total score from the individual parameters of a tree is categorized into a value group (0-8), which then dictates the number of replacement tree plantings or the compensation sum.\n*   **General considerations** The number and size of trees to be planted as compensation depend on the condition of the felled tree and are determined by the responsible authority. Factors such as the tree's growth potential (\"Wüchsigkeit\"), achievable lifespan (\"erreichbaren Lebensdauer\"), and ecological value (\"ökologische Wertigkeit\") are taken i",
+    "pages": [
+      "https://www.agrarwelt.com/baumfaellung-ersatzpflanzung-oder-ausgleichszahlung-laut-gesetz/",
+      "https://baumbuettner.de/blog/baumfaellung/reglungen-bei-baumfaellung-und-baumschnitt/",
+      "https://rechtsanwalt-kumpf.de/verwaltungsrecht/naturschutzrecht/ersatzpflanzung-ausgleichszahlung/",
+      "https://www.berlin.de/ba-treptow-koepenick/politik-und-verwaltung/aemter/umwelt-und-naturschutzamt/naturschutz/artikel.1306868.php",
+      "https://arboranalyst.com/bue-berechnung",
+      "https://www.juraforum.de/forum/t/baumschutzsatzung-hoehe-der-ausgleichzahlung-widerspruch.741819/"
+    ]
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld topic_check, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "term": "kommunal",
+    "hits": [
+      "[protokoll, score 1] **Umwelt-Anomalie-Detektor (`amelie-umwelt-anomalie`)** — Statistische Anomalie-Erkennung für Bürgerwissenschaften & Kommunen — frei",
+      "[protokoll, score 1] **Phäno-Kalender-Sync** — DWD CDC Phänologie-FTP Transformatations-API & lokales Phasen-Radar — verengt",
+      "[protokoll, score 1] **Starkregen-Foto-Assistent** — On-Device EXIF/GPS Extrahierer + Gefahrenkarten-Abgleich für Bürger-Starkregenmeldungen — verengt",
+      "[protokoll, score 1] **Sperrmüll-Radar** (Neubewertung, war `frei` in Runde 1) — verengt",
+      "[protokoll, score 1] Sperrmüll-Radar — verengt"
+    ]
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld contract_version, Teil 1 (laut gespeicherter Datei):
+"1.0.0"
