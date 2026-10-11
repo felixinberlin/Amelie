@@ -90,7 +90,9 @@ $$\text{Input (Stylus/Pressure)} \longrightarrow \text{Velocity} \longrightarrow
   * *Status:* **Completed & verified.** 7-pass simulation, capillary thresholding, 3-phase lifecycle, and ProseMirror integration.
 * **Ticket #2: Tactile Acoustics, Blotting Action & Vector SVG Export.**
   * *Status:* **Completed & verified.** Integrated into `@wet-ink/core` and Amélie's interactive simulator (`WetInkSimulator.tsx`).
-* **Test Suite:** 24 test suites with 315 tests passing with zero errors (`simulation.test.ts`, `kubelka-munk.test.ts`, `WetInkController.test.ts`, `WetInkExtension.test.ts`, `WetInkReact.test.ts`, `WetInkObsidian.test.ts`).
+* **Ticket #3: Chinese Calligraphy & Seal Art (书法与篆刻).**
+  * *Status:* **Completed & verified.** Three Xuan paper maturation grades (`sheng-xuan`, `ban-shu-xuan`, `shu-xuan`), specialized Mao-Bi hair dynamics for `langhao` (weasel), `yanghao` (goat), and `jianhao` (hybrid), interactive practice grids (Mi Zi Ge, Jiu Gong Ge, Yongzi Bafa with 8 fundamental strokes), and authentic cinnabar seal impressions (Zhuwen & Baiwen with chipped antique stone edges).
+* **Test Suite:** 25 test suites with 327 tests passing with zero errors (`calligraphy.test.ts`, `simulation.test.ts`, `kubelka-munk.test.ts`, `WetInkController.test.ts`, `WetInkExtension.test.ts`, `WetInkReact.test.ts`, `WetInkObsidian.test.ts`).
 
 ---
 

@@ -13,6 +13,8 @@ import {
   Cpu,
   Volume2,
   VolumeX,
+  Stamp,
+  Grid,
 } from 'lucide-react';
 import { Language } from '../../types';
 import { WetInkPhysicsLab } from './WetInkPhysicsLab';
@@ -21,6 +23,9 @@ import {
   WetInkPaperConfig,
   WetInkPigmentConfig,
   WetInkSimParams,
+  SealStyle,
+  SealShape,
+  SealGlyph,
 } from '../../engine/wet-ink/types';
 import { PAPER_PRESETS, PIGMENT_PRESETS, createPigmentFromHex } from '../../engine/wet-ink';
 import { WetInkSimulation } from '../../engine/wet-ink/simulation';
@@ -51,10 +56,24 @@ const PALETTE_PIGMENTS: WetInkPigmentConfig[] = [
   PIGMENT_PRESETS.find((p: WetInkPigmentConfig) => p.id === 'viridian') || PIGMENT_PRESETS[7],
 ];
 
-// 2 Key distinct paper substrates: absorbent Washi vs crisp Sized
-const ESSENTIAL_PAPERS: WetInkPaperConfig[] = [
+// Xuan Calligraphy Substrates (宣纸三品)
+const XUAN_PAPERS: WetInkPaperConfig[] = [
+  PAPER_PRESETS.find((p: WetInkPaperConfig) => p.id === 'sheng-xuan') || PAPER_PRESETS[0],
+  PAPER_PRESETS.find((p: WetInkPaperConfig) => p.id === 'ban-shu-xuan') || PAPER_PRESETS[0],
+  PAPER_PRESETS.find((p: WetInkPaperConfig) => p.id === 'shu-xuan') || PAPER_PRESETS[0],
+];
+
+// Classical Papers
+const CLASSIC_PAPERS: WetInkPaperConfig[] = [
   PAPER_PRESETS.find((p: WetInkPaperConfig) => p.id === 'washi') || PAPER_PRESETS[0],
+  PAPER_PRESETS.find((p: WetInkPaperConfig) => p.id === 'buetten') || PAPER_PRESETS[2],
+  PAPER_PRESETS.find((p: WetInkPaperConfig) => p.id === 'aquarell-rau') || PAPER_PRESETS[1],
   PAPER_PRESETS.find((p: WetInkPaperConfig) => p.id === 'kopierpapier') || PAPER_PRESETS[3],
+];
+
+const ESSENTIAL_PAPERS: WetInkPaperConfig[] = [
+  ...XUAN_PAPERS,
+  ...CLASSIC_PAPERS,
 ];
 
 export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
@@ -68,12 +87,22 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
   const autoStrokeTimerRef = useRef<number | null>(null);
   const isDrawingRef = useRef<boolean>(false);
 
-  // Core Tools: Brush (medium wet), Pen (fine crisp), Water (dilution & backruns)
+  // Core Tools: Brush (medium wet), Pen (fine crisp), Water (dilution & backruns), Calligraphy, Seal
   const [currentTool, setCurrentTool] = useState<BrushToolType>('sumi-brush');
   const [brushRadius, setBrushRadius] = useState<number>(6);
 
+  // Calligraphy Grid & Didactics (米字格, 九宫格, 永字八法)
+  const [calligraphyGrid, setCalligraphyGrid] = useState<'none' | 'mizige' | 'jiugongge' | 'yongzi'>('none');
+
+  // Seal Stamp Settings (朱砂篆刻印章)
+  const [sealStyle, setSealStyle] = useState<SealStyle>('zhuwen');
+  const [sealShape, setSealShape] = useState<SealShape>('square');
+  const [sealGlyph, setSealGlyph] = useState<SealGlyph>('amelie');
+  const [sealSize, setSealSize] = useState<number>(32);
+
   // Substrate & Pigment
-  const [selectedPaper, setSelectedPaper] = useState<WetInkPaperConfig>(ESSENTIAL_PAPERS[0]);
+  const [paperCategory, setPaperCategory] = useState<'xuan' | 'classic'>('xuan');
+  const [selectedPaper, setSelectedPaper] = useState<WetInkPaperConfig>(XUAN_PAPERS[0] || ESSENTIAL_PAPERS[0]);
   const [selectedPigment, setSelectedPigment] = useState<WetInkPigmentConfig>(PALETTE_PIGMENTS[0]);
   const [customColorHex, setCustomColorHex] = useState<string>('#0c356a');
 
@@ -365,6 +394,26 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
 
   const handlePointerDown = (e: React.PointerEvent<HTMLCanvasElement>) => {
     e.currentTarget.setPointerCapture(e.pointerId);
+    const { x, y, pressure } = getCanvasCoords(e);
+
+    // Stamping Mode: single tactile seal impression
+    if (currentTool === 'seal-stamp') {
+      if (simRef.current) {
+        simRef.current.pushSnapshot();
+        setCanUndo(true);
+        setIsWet(true);
+        simRef.current.injectSeal(x, y, {
+          size: sealSize,
+          style: sealStyle,
+          shape: sealShape,
+          glyph: sealGlyph,
+          chippedEdge: true,
+        });
+        audioSynthRef.current?.playStampThud();
+      }
+      return;
+    }
+
     isDrawingRef.current = true;
     setIsDrawing(true);
     setIsWet(true);
@@ -372,11 +421,16 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
       simRef.current.pushSnapshot();
       setCanUndo(true);
     }
-    const { x, y, pressure } = getCanvasCoords(e);
     lastPointerRef.current = { x, y, time: performance.now() };
     audioSynthRef.current?.startStroke(selectedPaper.roughness);
 
     if (simRef.current) {
+      const isCalligraphyBrush =
+        currentTool === 'sumi-brush' ||
+        currentTool === 'langhao' ||
+        currentTool === 'yanghao' ||
+        currentTool === 'jianhao';
+
       brushManagerRef.current.stroke(
         simRef.current,
         x,
@@ -386,7 +440,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
           tool: currentTool,
           baseRadius: brushRadius,
           waterRatio: currentTool === 'water-drop' ? 2.0 : 1.0,
-          dryBrush: currentTool === 'sumi-brush',
+          dryBrush: isCalligraphyBrush,
         },
         true
       );
@@ -394,7 +448,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
   };
 
   const handlePointerMove = (e: React.PointerEvent<HTMLCanvasElement>) => {
-    if (!isDrawingRef.current || !simRef.current) return;
+    if (!isDrawingRef.current || !simRef.current || currentTool === 'seal-stamp') return;
     const { x, y, pressure } = getCanvasCoords(e);
     const now = performance.now();
     const dt = Math.max(1, now - lastPointerRef.current.time);
@@ -405,6 +459,12 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
 
     audioSynthRef.current?.updateMotion(velocity, pressure);
 
+    const isCalligraphyBrush =
+      currentTool === 'sumi-brush' ||
+      currentTool === 'langhao' ||
+      currentTool === 'yanghao' ||
+      currentTool === 'jianhao';
+
     brushManagerRef.current.stroke(
       simRef.current,
       x,
@@ -414,7 +474,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
         tool: currentTool,
         baseRadius: brushRadius,
         waterRatio: currentTool === 'water-drop' ? 2.0 : 1.0,
-        dryBrush: currentTool === 'sumi-brush',
+        dryBrush: isCalligraphyBrush,
       },
       false
     );
@@ -619,93 +679,460 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
             className="w-full h-auto block cursor-crosshair touch-none select-none"
           />
 
-          {/* View toggle badge in corner */}
-          <div className="absolute top-2.5 right-2.5 flex items-center gap-1 bg-stone-900/80 backdrop-blur-xs p-1 rounded-lg border border-stone-700/60 shadow-xs">
-            <button
-              onClick={() => setViewMode('composite')}
-              className={`px-2 py-0.5 rounded text-[10px] font-medium transition-colors cursor-pointer ${
-                viewMode === 'composite'
-                  ? 'bg-amber-600 text-white font-bold'
-                  : 'text-stone-300 hover:text-white'
-              }`}
+          {/* Calligraphy Training Grids (米字格, 九宫格, 永字八法) */}
+          {calligraphyGrid !== 'none' && (
+            <svg
+              viewBox="0 0 384 256"
+              className="absolute inset-0 pointer-events-none w-full h-full select-none"
             >
-              {lang === 'de' ? 'Tinte & Papier' : lang === 'es' ? 'Tinta y papel' : 'Ink & Paper'}
-            </button>
-            <button
-              onClick={() => setViewMode('moisture')}
-              className={`px-2 py-0.5 rounded text-[10px] font-medium transition-colors cursor-pointer flex items-center gap-1 ${
-                viewMode === 'moisture'
-                  ? 'bg-blue-600 text-white font-bold'
-                  : 'text-stone-300 hover:text-white'
-              }`}
-            >
-              <Droplets className="w-3 h-3 text-blue-300" />
-              <span>{lang === 'de' ? 'Wasserfront' : lang === 'es' ? 'Frente de agua' : 'Water Front'}</span>
-            </button>
+              {calligraphyGrid === 'mizige' && (
+                <g stroke="#b92c18">
+                  {/* Outer border */}
+                  <rect x="84" y="20" width="216" height="216" fill="none" strokeWidth="1.2" strokeOpacity="0.40" />
+                  {/* Cardinal axes */}
+                  <line x1="84" y1="128" x2="300" y2="128" strokeWidth="0.8" strokeDasharray="4 3" strokeOpacity="0.32" />
+                  <line x1="192" y1="20" x2="192" y2="236" strokeWidth="0.8" strokeDasharray="4 3" strokeOpacity="0.32" />
+                  {/* Diagonals */}
+                  <line x1="84" y1="20" x2="300" y2="236" strokeWidth="0.8" strokeDasharray="4 3" strokeOpacity="0.25" />
+                  <line x1="84" y1="236" x2="300" y2="20" strokeWidth="0.8" strokeDasharray="4 3" strokeOpacity="0.25" />
+                </g>
+              )}
+              {calligraphyGrid === 'jiugongge' && (
+                <g stroke="#b92c18">
+                  <rect x="84" y="20" width="216" height="216" fill="none" strokeWidth="1.2" strokeOpacity="0.40" />
+                  <line x1="156" y1="20" x2="156" y2="236" strokeWidth="0.8" strokeDasharray="4 3" strokeOpacity="0.32" />
+                  <line x1="228" y1="20" x2="228" y2="236" strokeWidth="0.8" strokeDasharray="4 3" strokeOpacity="0.32" />
+                  <line x1="84" y1="92" x2="300" y2="92" strokeWidth="0.8" strokeDasharray="4 3" strokeOpacity="0.32" />
+                  <line x1="84" y1="164" x2="300" y2="164" strokeWidth="0.8" strokeDasharray="4 3" strokeOpacity="0.32" />
+                  {/* Center Zhonggong emphasis */}
+                  <rect x="156" y="92" width="72" height="72" fill="#b92c18" fillOpacity="0.03" stroke="none" />
+                </g>
+              )}
+              {calligraphyGrid === 'yongzi' && (
+                <g stroke="#b92c18">
+                  {/* Mi Zi Ge background */}
+                  <rect x="84" y="20" width="216" height="216" fill="none" strokeWidth="1.2" strokeOpacity="0.40" />
+                  <line x1="84" y1="128" x2="300" y2="128" strokeWidth="0.8" strokeDasharray="4 3" strokeOpacity="0.28" />
+                  <line x1="192" y1="20" x2="192" y2="236" strokeWidth="0.8" strokeDasharray="4 3" strokeOpacity="0.28" />
+                  <line x1="84" y1="20" x2="300" y2="236" strokeWidth="0.8" strokeDasharray="4 3" strokeOpacity="0.20" />
+                  <line x1="84" y1="236" x2="300" y2="20" strokeWidth="0.8" strokeDasharray="4 3" strokeOpacity="0.20" />
+
+                  {/* Classical watermark template of 永 (Yong) */}
+                  <text
+                    x="192"
+                    y="178"
+                    textAnchor="middle"
+                    fontSize="148"
+                    fontFamily="'Kaiti', 'STKaiti', 'KaiTi', 'Noto Serif SC', serif"
+                    fill="#b92c18"
+                    fillOpacity="0.14"
+                    stroke="none"
+                  >
+                    永
+                  </text>
+
+                  {/* 8 Principles Indicators */}
+                  <g fontSize="9" fontFamily="monospace" fontWeight="bold" fill="#b92c18">
+                    <circle cx="192" cy="50" r="6" fill="#fef2f2" stroke="#b92c18" strokeWidth="1" />
+                    <text x="192" y="53" textAnchor="middle">1</text>
+
+                    <circle cx="145" cy="88" r="6" fill="#fef2f2" stroke="#b92c18" strokeWidth="1" />
+                    <text x="145" y="91" textAnchor="middle">2</text>
+
+                    <circle cx="192" cy="120" r="6" fill="#fef2f2" stroke="#b92c18" strokeWidth="1" />
+                    <text x="192" y="123" textAnchor="middle">3</text>
+
+                    <circle cx="180" cy="188" r="6" fill="#fef2f2" stroke="#b92c18" strokeWidth="1" />
+                    <text x="180" y="191" textAnchor="middle">4</text>
+
+                    <circle cx="140" cy="128" r="6" fill="#fef2f2" stroke="#b92c18" strokeWidth="1" />
+                    <text x="140" y="131" textAnchor="middle">5</text>
+
+                    <circle cx="118" cy="180" r="6" fill="#fef2f2" stroke="#b92c18" strokeWidth="1" />
+                    <text x="118" y="183" textAnchor="middle">6</text>
+
+                    <circle cx="218" cy="118" r="6" fill="#fef2f2" stroke="#b92c18" strokeWidth="1" />
+                    <text x="218" y="121" textAnchor="middle">7</text>
+
+                    <circle cx="258" cy="192" r="6" fill="#fef2f2" stroke="#b92c18" strokeWidth="1" />
+                    <text x="258" y="195" textAnchor="middle">8</text>
+                  </g>
+                </g>
+              )}
+            </svg>
+          )}
+
+          {/* View & Calligraphy Grid Toggles */}
+          <div className="absolute top-2.5 right-2.5 flex flex-wrap items-center gap-1.5 bg-stone-900/85 backdrop-blur-xs p-1 rounded-xl border border-stone-700/60 shadow-xs">
+            <div className="flex items-center gap-1 border-r border-stone-700/80 pr-1.5 mr-0.5">
+              <button
+                onClick={() => setViewMode('composite')}
+                className={`px-2 py-0.5 rounded text-[10px] font-medium transition-colors cursor-pointer ${
+                  viewMode === 'composite'
+                    ? 'bg-amber-600 text-white font-bold'
+                    : 'text-stone-300 hover:text-white'
+                }`}
+              >
+                {lang === 'de' ? 'Tinte & Papier' : lang === 'es' ? 'Tinta y papel' : 'Ink & Paper'}
+              </button>
+              <button
+                onClick={() => setViewMode('moisture')}
+                className={`px-2 py-0.5 rounded text-[10px] font-medium transition-colors cursor-pointer flex items-center gap-1 ${
+                  viewMode === 'moisture'
+                    ? 'bg-blue-600 text-white font-bold'
+                    : 'text-stone-300 hover:text-white'
+                }`}
+              >
+                <Droplets className="w-3 h-3 text-blue-300" />
+                <span>{lang === 'de' ? 'Wasserfront' : lang === 'es' ? 'Frente de agua' : 'Water Front'}</span>
+              </button>
+            </div>
+
+            {/* Grid overlay pills */}
+            <div className="flex items-center gap-1">
+              <span className="text-[10px] text-stone-400 font-mono px-1 flex items-center gap-1">
+                <Grid className="w-3 h-3 text-amber-400" />
+                <span className="hidden sm:inline">{lang === 'de' ? 'Gitter:' : 'Grid:'}</span>
+              </span>
+              <button
+                onClick={() => setCalligraphyGrid('none')}
+                className={`px-1.5 py-0.5 rounded text-[10px] transition-colors cursor-pointer ${
+                  calligraphyGrid === 'none' ? 'bg-stone-700 text-white font-bold' : 'text-stone-400 hover:text-stone-200'
+                }`}
+              >
+                {lang === 'de' ? 'Aus' : 'Off'}
+              </button>
+              <button
+                onClick={() => setCalligraphyGrid('mizige')}
+                className={`px-1.5 py-0.5 rounded text-[10px] transition-colors cursor-pointer ${
+                  calligraphyGrid === 'mizige' ? 'bg-red-700 text-white font-bold' : 'text-stone-300 hover:text-white'
+                }`}
+                title={lang === 'de' ? 'Mi Zi Ge (8-Stern-Gitter)' : 'Mi Zi Ge (8-Star Grid)'}
+              >
+                米字格
+              </button>
+              <button
+                onClick={() => setCalligraphyGrid('jiugongge')}
+                className={`px-1.5 py-0.5 rounded text-[10px] transition-colors cursor-pointer ${
+                  calligraphyGrid === 'jiugongge' ? 'bg-red-700 text-white font-bold' : 'text-stone-300 hover:text-white'
+                }`}
+                title={lang === 'de' ? 'Jiu Gong Ge (9-Felder-Gitter)' : 'Jiu Gong Ge (Nine Palaces)'}
+              >
+                九宫格
+              </button>
+              <button
+                onClick={() => setCalligraphyGrid('yongzi')}
+                className={`px-1.5 py-0.5 rounded text-[10px] transition-colors cursor-pointer ${
+                  calligraphyGrid === 'yongzi' ? 'bg-red-700 text-white font-bold' : 'text-stone-300 hover:text-white'
+                }`}
+                title={lang === 'de' ? 'Yongzi Bafa (8 Ur-Striche)' : 'Eight Principles of Yong'}
+              >
+                永字八法
+              </button>
+            </div>
           </div>
         </div>
+
+        {/* Yongzi Bafa Didactic Guide */}
+        {calligraphyGrid === 'yongzi' && (
+          <div className="mt-3 bg-red-950/15 border border-red-900/30 rounded-xl p-3 text-xs text-stone-800">
+            <div className="flex items-center justify-between font-bold text-red-950 mb-1.5 font-serif">
+              <span className="flex items-center gap-2">
+                <span className="font-mono text-xs bg-red-800 text-white w-5 h-5 rounded-full inline-flex items-center justify-center">永</span>
+                <span>{lang === 'de' ? 'Yongzi Bafa (永字八法) — Die 8 Ur-Striche der Kalligrafie' : 'Eight Principles of Yong (永字八法)'}</span>
+              </span>
+              <span className="text-[10px] font-mono text-red-800/80 font-normal">Wang Xizhi (王羲之)</span>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-[11px] text-stone-700">
+              <div className="bg-white/85 p-1.5 rounded-lg border border-red-200 shadow-2xs">
+                <span className="font-bold text-red-950 mr-1">1. 侧 (Cè)</span>
+                <span className="text-stone-600">{lang === 'de' ? 'Punkt (Fels)' : 'Dot (rock)'}</span>
+              </div>
+              <div className="bg-white/85 p-1.5 rounded-lg border border-red-200 shadow-2xs">
+                <span className="font-bold text-red-950 mr-1">2. 勒 (Lè)</span>
+                <span className="text-stone-600">{lang === 'de' ? 'Querstrich (Zügel)' : 'Horizontal (rein)'}</span>
+              </div>
+              <div className="bg-white/85 p-1.5 rounded-lg border border-red-200 shadow-2xs">
+                <span className="font-bold text-red-950 mr-1">3. 努 (Nǔ)</span>
+                <span className="text-stone-600">{lang === 'de' ? 'Längsstrich (Armbrust)' : 'Vertical (bow)'}</span>
+              </div>
+              <div className="bg-white/85 p-1.5 rounded-lg border border-red-200 shadow-2xs">
+                <span className="font-bold text-red-950 mr-1">4. 趯 (Tī)</span>
+                <span className="text-stone-600">{lang === 'de' ? 'Haken (Sprungkraft)' : 'Hook (spring)'}</span>
+              </div>
+              <div className="bg-white/85 p-1.5 rounded-lg border border-red-200 shadow-2xs">
+                <span className="font-bold text-red-950 mr-1">5. 策 (Cè)</span>
+                <span className="text-stone-600">{lang === 'de' ? 'Anstrich (Peitsche)' : 'Up-flick (whip)'}</span>
+              </div>
+              <div className="bg-white/85 p-1.5 rounded-lg border border-red-200 shadow-2xs">
+                <span className="font-bold text-red-950 mr-1">6. 掠 (Lüè)</span>
+                <span className="text-stone-600">{lang === 'de' ? 'Langer Abstrich (Kamm)' : 'Left sweep (comb)'}</span>
+              </div>
+              <div className="bg-white/85 p-1.5 rounded-lg border border-red-200 shadow-2xs">
+                <span className="font-bold text-red-950 mr-1">7. 啄 (Zhuó)</span>
+                <span className="text-stone-600">{lang === 'de' ? 'Kurzer Abstrich (Picken)' : 'Short peck (beak)'}</span>
+              </div>
+              <div className="bg-white/85 p-1.5 rounded-lg border border-red-200 shadow-2xs">
+                <span className="font-bold text-red-950 mr-1">8. 磔 (Zhé)</span>
+                <span className="text-stone-600">{lang === 'de' ? 'Rechtsabstrich (Schnittfuß)' : 'Right sweep (foot)'}</span>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Essential Working Controls (Grid layout) */}
       <div className="bg-white rounded-2xl border border-stone-200 p-4 sm:p-5 shadow-xs grid grid-cols-1 md:grid-cols-3 gap-5 text-xs">
         {/* 1. Drawing Tool & Size */}
         <div className="space-y-3">
-          <label className="block font-bold text-stone-700 uppercase tracking-wider text-[11px] font-mono">
-            1. {lang === 'de' ? 'Werkzeug' : lang === 'es' ? 'Herramienta' : 'Tool'}
-          </label>
-          <div className="grid grid-cols-3 gap-1.5">
+          <div className="flex items-center justify-between">
+            <label className="block font-bold text-stone-700 uppercase tracking-wider text-[11px] font-mono">
+              1. {lang === 'de' ? 'Werkzeug & Pinsel' : lang === 'es' ? 'Herramienta' : 'Tool & Brush'}
+            </label>
+            <span className="text-[10px] text-amber-800 font-serif italic">
+              {currentTool === 'langhao'
+                ? '狼毫 (Wiesel)'
+                : currentTool === 'yanghao'
+                ? '羊毫 (Ziege)'
+                : currentTool === 'jianhao'
+                ? '兼毫 (Misch)'
+                : currentTool === 'seal-stamp'
+                ? '朱砂印章'
+                : ''}
+            </span>
+          </div>
+
+          {/* Traditional Mao-Bi Hair Selection */}
+          <div className="space-y-1">
+            <span className="text-[10px] text-stone-500 font-mono uppercase font-bold">
+              {lang === 'de' ? 'Mao-Bi Haartypen (毛笔)' : 'Mao-Bi Brush Hair Types'}
+            </span>
+            <div className="grid grid-cols-3 gap-1.5">
+              <button
+                onClick={() => setCurrentTool('langhao')}
+                className={`p-2 rounded-xl border text-center transition-all cursor-pointer ${
+                  currentTool === 'langhao'
+                    ? 'border-amber-900 bg-amber-900 text-white font-bold shadow-xs'
+                    : 'border-stone-200 hover:bg-stone-50 text-stone-700'
+                }`}
+                title={lang === 'de' ? 'Langhao: Wieselhaar, hohe Rückfederung (Tanxing), spitze Linien' : 'Langhao: Weasel hair, high elasticity, sharp lines'}
+              >
+                <div className="font-bold text-[11px]">狼毫</div>
+                <div className="text-[9px] opacity-90">{lang === 'de' ? 'Wiesel' : 'Weasel'}</div>
+              </button>
+
+              <button
+                onClick={() => setCurrentTool('yanghao')}
+                className={`p-2 rounded-xl border text-center transition-all cursor-pointer ${
+                  currentTool === 'yanghao'
+                    ? 'border-amber-900 bg-amber-900 text-white font-bold shadow-xs'
+                    : 'border-stone-200 hover:bg-stone-50 text-stone-700'
+                }`}
+                title={lang === 'de' ? 'Yanghao: Ziegenhaar, sehr weich, hohes Tintenreservoir, sattes Fließen' : 'Yanghao: Goat hair, very soft, rich ink reservoir'}
+              >
+                <div className="font-bold text-[11px]">羊毫</div>
+                <div className="text-[9px] opacity-90">{lang === 'de' ? 'Ziege' : 'Goat'}</div>
+              </button>
+
+              <button
+                onClick={() => setCurrentTool('jianhao')}
+                className={`p-2 rounded-xl border text-center transition-all cursor-pointer ${
+                  currentTool === 'jianhao'
+                    ? 'border-amber-900 bg-amber-900 text-white font-bold shadow-xs'
+                    : 'border-stone-200 hover:bg-stone-50 text-stone-700'
+                }`}
+                title={lang === 'de' ? 'Jianhao: Mischhaar, Wieselkern in Ziegenmantel, der ausgewogene Allrounder' : 'Jianhao: Hybrid hair, balanced all-rounder'}
+              >
+                <div className="font-bold text-[11px]">兼毫</div>
+                <div className="text-[9px] opacity-90">{lang === 'de' ? 'Misch' : 'Hybrid'}</div>
+              </button>
+            </div>
+          </div>
+
+          {/* Classical & Seal Tools */}
+          <div className="grid grid-cols-4 gap-1.5">
             <button
               onClick={() => setCurrentTool('sumi-brush')}
-              className={`p-2.5 rounded-xl border text-center transition-all cursor-pointer ${
+              className={`p-1.5 rounded-xl border text-center transition-all cursor-pointer ${
                 currentTool === 'sumi-brush'
                   ? 'border-stone-900 bg-stone-900 text-white font-bold shadow-xs'
                   : 'border-stone-200 hover:bg-stone-50 text-stone-700'
               }`}
             >
-              <Brush className="w-4 h-4 mx-auto mb-1" />
-              <span>{lang === 'de' ? 'Pinsel' : lang === 'es' ? 'Pincel' : 'Brush'}</span>
+              <Brush className="w-3.5 h-3.5 mx-auto mb-0.5" />
+              <span className="text-[10px]">{lang === 'de' ? 'Tusche' : 'Ink'}</span>
             </button>
 
             <button
               onClick={() => setCurrentTool('fountain-pen')}
-              className={`p-2.5 rounded-xl border text-center transition-all cursor-pointer ${
+              className={`p-1.5 rounded-xl border text-center transition-all cursor-pointer ${
                 currentTool === 'fountain-pen'
                   ? 'border-stone-900 bg-stone-900 text-white font-bold shadow-xs'
                   : 'border-stone-200 hover:bg-stone-50 text-stone-700'
               }`}
             >
-              <PenTool className="w-4 h-4 mx-auto mb-1" />
-              <span>{lang === 'de' ? 'Feder' : lang === 'es' ? 'Plumilla' : 'Fine Pen'}</span>
+              <PenTool className="w-3.5 h-3.5 mx-auto mb-0.5" />
+              <span className="text-[10px]">{lang === 'de' ? 'Feder' : 'Pen'}</span>
             </button>
 
             <button
               onClick={() => setCurrentTool('water-drop')}
-              className={`p-2.5 rounded-xl border text-center transition-all cursor-pointer ${
+              className={`p-1.5 rounded-xl border text-center transition-all cursor-pointer ${
                 currentTool === 'water-drop'
                   ? 'border-blue-700 bg-blue-700 text-white font-bold shadow-xs'
                   : 'border-blue-200 bg-blue-50/50 hover:bg-blue-100 text-blue-900'
               }`}
             >
-              <Droplets className="w-4 h-4 mx-auto mb-1 text-blue-500" />
-              <span>{lang === 'de' ? 'Wasser' : lang === 'es' ? 'Agua' : 'Water'}</span>
+              <Droplets className="w-3.5 h-3.5 mx-auto mb-0.5 text-blue-500" />
+              <span className="text-[10px]">{lang === 'de' ? 'Wasser' : 'Water'}</span>
+            </button>
+
+            <button
+              onClick={() => setCurrentTool('seal-stamp')}
+              className={`p-1.5 rounded-xl border text-center transition-all cursor-pointer ${
+                currentTool === 'seal-stamp'
+                  ? 'border-red-800 bg-red-800 text-white font-bold shadow-xs'
+                  : 'border-red-200 bg-red-50/50 hover:bg-red-100 text-red-900'
+              }`}
+              title={lang === 'de' ? 'Zinnober-Siegelstempel (Zhuanke / 印章)' : 'Cinnabar Seal Stamp (Zhuanke)'}
+            >
+              <Stamp className="w-3.5 h-3.5 mx-auto mb-0.5 text-red-600" />
+              <span className="text-[10px]">{lang === 'de' ? 'Siegel' : 'Seal'}</span>
             </button>
           </div>
 
-          <div>
-            <div className="flex justify-between text-stone-600 mb-1">
-              <span>{lang === 'de' ? 'Größe' : lang === 'es' ? 'Tamaño del pincel' : 'Brush Size'}:</span>
-              <span className="font-mono font-bold">{brushRadius} px</span>
+          {/* Dynamic Tool Sub-Panel */}
+          {currentTool !== 'seal-stamp' ? (
+            <div>
+              <div className="flex justify-between text-stone-600 mb-1">
+                <span>{lang === 'de' ? 'Pinsel-Größe' : 'Brush Size'}:</span>
+                <span className="font-mono font-bold">{brushRadius} px</span>
+              </div>
+              <input
+                type="range"
+                min="2"
+                max="20"
+                step="1"
+                value={brushRadius}
+                onChange={(e) => setBrushRadius(parseInt(e.target.value, 10))}
+                className="w-full accent-amber-700 cursor-pointer"
+              />
             </div>
-            <input
-              type="range"
-              min="2"
-              max="18"
-              step="1"
-              value={brushRadius}
-              onChange={(e) => setBrushRadius(parseInt(e.target.value, 10))}
-              className="w-full accent-amber-700 cursor-pointer"
-            />
-          </div>
+          ) : (
+            /* Seal Stamp Configuration Sub-Panel */
+            <div className="bg-red-50/70 border border-red-200 rounded-xl p-2.5 space-y-2">
+              <div className="flex items-center justify-between text-[10px] font-bold text-red-950 uppercase font-mono">
+                <span>{lang === 'de' ? 'Siegel-Gravur (篆刻)' : 'Seal Carving'}</span>
+                <button
+                  onClick={() => {
+                    const zinnober = PIGMENT_PRESETS.find((p) => p.id === 'zinnober');
+                    if (zinnober) handlePigmentChange(zinnober);
+                  }}
+                  className="text-[9px] bg-red-800 text-white px-2 py-0.5 rounded cursor-pointer hover:bg-red-700 font-sans"
+                >
+                  {lang === 'de' ? 'Zinnoberrot' : 'Cinnabar'}
+                </button>
+              </div>
+
+              {/* Style & Shape */}
+              <div className="grid grid-cols-2 gap-1 text-[10px]">
+                <div className="flex gap-1">
+                  <button
+                    onClick={() => setSealStyle('zhuwen')}
+                    className={`flex-1 py-1 rounded border text-center cursor-pointer ${
+                      sealStyle === 'zhuwen'
+                        ? 'bg-red-800 text-white border-red-800 font-bold'
+                        : 'border-red-200 bg-white text-stone-700'
+                    }`}
+                    title={lang === 'de' ? 'Zhuwen: Rote Linien auf weißem Grund' : 'Zhuwen: Red characters'}
+                  >
+                    朱文 (Rot)
+                  </button>
+                  <button
+                    onClick={() => setSealStyle('baiwen')}
+                    className={`flex-1 py-1 rounded border text-center cursor-pointer ${
+                      sealStyle === 'baiwen'
+                        ? 'bg-red-800 text-white border-red-800 font-bold'
+                        : 'border-red-200 bg-white text-stone-700'
+                    }`}
+                    title={lang === 'de' ? 'Baiwen: Weißes Zeichen in rotem Block' : 'Baiwen: White characters'}
+                  >
+                    白文 (Weiß)
+                  </button>
+                </div>
+
+                <div className="flex gap-1">
+                  <button
+                    onClick={() => setSealShape('square')}
+                    className={`flex-1 py-1 rounded border text-center cursor-pointer ${
+                      sealShape === 'square'
+                        ? 'bg-red-800 text-white border-red-800 font-bold'
+                        : 'border-red-200 bg-white text-stone-700'
+                    }`}
+                  >
+                    方印 (Quad.)
+                  </button>
+                  <button
+                    onClick={() => setSealShape('round')}
+                    className={`flex-1 py-1 rounded border text-center cursor-pointer ${
+                      sealShape === 'round'
+                        ? 'bg-red-800 text-white border-red-800 font-bold'
+                        : 'border-red-200 bg-white text-stone-700'
+                    }`}
+                  >
+                    圆印 (Rund)
+                  </button>
+                </div>
+              </div>
+
+              {/* Glyph selection */}
+              <div>
+                <span className="text-[10px] text-stone-600 block mb-1">
+                  {lang === 'de' ? 'Zeichen / Text:' : 'Glyph / Inscription:'}
+                </span>
+                <div className="grid grid-cols-6 gap-1">
+                  {(['amelie', 'mo', 'he', 'ji', 'yong', 'classic'] as SealGlyph[]).map((g) => (
+                    <button
+                      key={g}
+                      onClick={() => setSealGlyph(g)}
+                      className={`py-1 rounded border text-[11px] font-serif cursor-pointer ${
+                        sealGlyph === g
+                          ? 'bg-red-800 text-white border-red-800 font-bold'
+                          : 'border-red-200 bg-white text-stone-700 hover:bg-red-50'
+                      }`}
+                    >
+                      {g === 'amelie'
+                        ? '阿梅莉'
+                        : g === 'mo'
+                        ? '墨'
+                        : g === 'he'
+                        ? '和'
+                        : g === 'ji'
+                        ? '吉'
+                        : g === 'yong'
+                        ? '永'
+                        : '印'}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Seal Size */}
+              <div className="flex items-center justify-between text-[10px] text-stone-600 pt-1">
+                <span>{lang === 'de' ? 'Stempelgröße' : 'Seal Size'}:</span>
+                <span className="font-mono font-bold text-red-950">{sealSize} px</span>
+                <input
+                  type="range"
+                  min="20"
+                  max="48"
+                  step="2"
+                  value={sealSize}
+                  onChange={(e) => setSealSize(parseInt(e.target.value, 10))}
+                  className="w-24 accent-red-700 cursor-pointer"
+                />
+              </div>
+            </div>
+          )}
         </div>
 
         {/* 2. Ink & Paper Substrate */}
@@ -777,41 +1204,80 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
             </div>
           </div>
 
-          {/* 2 Essential Papers: Absorbent Washi vs Sized Smooth */}
-          <div className="grid grid-cols-2 gap-2">
-            {ESSENTIAL_PAPERS.map((paper) => {
-              const isSelected = selectedPaper.id === paper.id;
-              return (
+          {/* Substrate Category Selector: Xuan vs Classic */}
+          <div className="space-y-1.5">
+            <div className="flex items-center justify-between">
+              <span className="text-[10px] uppercase font-bold text-stone-500 font-mono">
+                {lang === 'de' ? 'Papiersubstrat' : 'Substrate'}
+              </span>
+              <div className="flex gap-1">
                 <button
-                  key={paper.id}
-                  onClick={() => handlePaperChange(paper)}
-                  className={`p-2 rounded-xl border text-left transition-all cursor-pointer ${
-                    isSelected
-                      ? 'border-amber-900 bg-amber-50 font-bold text-amber-950 ring-1 ring-amber-900 shadow-xs'
-                      : 'border-stone-200 hover:bg-stone-50 text-stone-700'
+                  onClick={() => setPaperCategory('xuan')}
+                  className={`px-2 py-0.5 rounded text-[10px] font-bold transition-colors cursor-pointer ${
+                    paperCategory === 'xuan'
+                      ? 'bg-amber-900 text-white'
+                      : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
                   }`}
                 >
-                  <div className="font-semibold text-xs">
-                    {paper.id === 'washi'
-                      ? lang === 'de'
-                        ? 'Washi (Saugfähig)'
-                        : lang === 'es' ? 'Washi (mucho sangrado)' : 'Washi (High Bleed)'
-                      : lang === 'de'
-                      ? 'Geleimt (Glatt)'
-                      : lang === 'es' ? 'Encolado (poco sangrado)' : 'Sized (Low Bleed)'}
-                  </div>
-                  <div className="text-[10px] text-stone-500 mt-0.5">
-                    {paper.id === 'washi'
-                      ? lang === 'de'
-                        ? 'Starker Kapillar-Wick'
-                        : lang === 'es' ? 'Fuerte absorción por la fibra' : 'Strong fiber wicking'
-                      : lang === 'de'
-                      ? 'Scharfe Ränder'
-                      : lang === 'es' ? 'Bordes nítidos' : 'Sharp crisp edges'}
-                  </div>
+                  宣纸 (Xuan)
                 </button>
-              );
-            })}
+                <button
+                  onClick={() => setPaperCategory('classic')}
+                  className={`px-2 py-0.5 rounded text-[10px] font-bold transition-colors cursor-pointer ${
+                    paperCategory === 'classic'
+                      ? 'bg-amber-900 text-white'
+                      : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
+                  }`}
+                >
+                  {lang === 'de' ? 'Klassisch' : 'Classic'}
+                </button>
+              </div>
+            </div>
+
+            {/* Substrates in active category */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-1.5">
+              {(paperCategory === 'xuan' ? XUAN_PAPERS : CLASSIC_PAPERS).map((paper) => {
+                const isSelected = selectedPaper.id === paper.id;
+                return (
+                  <button
+                    key={paper.id}
+                    onClick={() => handlePaperChange(paper)}
+                    className={`p-2 rounded-xl border text-left transition-all cursor-pointer ${
+                      isSelected
+                        ? 'border-amber-900 bg-amber-50 font-bold text-amber-950 ring-1 ring-amber-900 shadow-xs'
+                        : 'border-stone-200 hover:bg-stone-50 text-stone-700'
+                    }`}
+                  >
+                    <div className="font-semibold text-xs leading-tight">
+                      {paper.id === 'sheng-xuan'
+                        ? '生宣 (Roh)'
+                        : paper.id === 'ban-shu-xuan'
+                        ? '半熟宣 (Halb)'
+                        : paper.id === 'shu-xuan'
+                        ? '熟宣 (Reif)'
+                        : paper.id === 'washi'
+                        ? 'Washi'
+                        : paper.id === 'kopierpapier'
+                        ? 'Geleimt'
+                        : paper.id === 'buetten'
+                        ? 'Bütten'
+                        : 'Aquarell'}
+                    </div>
+                    <div className="text-[9px] text-stone-500 mt-0.5 line-clamp-1">
+                      {paper.id === 'sheng-xuan'
+                        ? (lang === 'de' ? 'Max. Ausbluten (Xieyi)' : 'Max. Bleed (Xieyi)')
+                        : paper.id === 'ban-shu-xuan'
+                        ? (lang === 'de' ? 'Standfest (Kaishu)' : 'Stable (Kaishu)')
+                        : paper.id === 'shu-xuan'
+                        ? (lang === 'de' ? 'Scharf (Gongbi)' : 'Sharp (Gongbi)')
+                        : paper.id === 'washi'
+                        ? (lang === 'de' ? 'Faser-Wick' : 'Fiber Wick')
+                        : (lang === 'de' ? 'Geringe Saugleistung' : 'Low Bleed')}
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </div>
 

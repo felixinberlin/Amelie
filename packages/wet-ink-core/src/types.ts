@@ -1,6 +1,13 @@
 import type { WetInkPigmentConfig } from '../../../src/engine/wet-ink/presets';
 
-export type WetInkPaperType = 'buetten' | 'washi' | 'aquarell-rau' | 'kopierpapier';
+export type WetInkPaperType =
+  | 'buetten'
+  | 'washi'
+  | 'aquarell-rau'
+  | 'kopierpapier'
+  | 'sheng-xuan'
+  | 'ban-shu-xuan'
+  | 'shu-xuan';
 export type WetInkPigmentPresetId =
   | 'sumi'
   | 'sepia'
@@ -14,7 +21,15 @@ export type WetInkPigmentPresetId =
   | 'indigo'
   | 'aquarell-rot';
 export type WetInkPigmentType = WetInkPigmentPresetId | string;
-export type WetInkToolType = 'fountain-pen' | 'sumi-brush' | 'wash-brush' | 'dip-pen';
+export type WetInkToolType =
+  | 'fountain-pen'
+  | 'sumi-brush'
+  | 'wash-brush'
+  | 'dip-pen'
+  | 'langhao'
+  | 'yanghao'
+  | 'jianhao'
+  | 'seal-stamp';
 export type WetInkLifecycleState = 'wet' | 'settling' | 'frozen';
 
 export type { WetInkPigmentConfig };

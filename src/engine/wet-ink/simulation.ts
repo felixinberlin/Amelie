@@ -1,5 +1,14 @@
 import { PaperMaps } from './paper';
-import { WetInkPaperConfig, WetInkPigmentConfig, WetInkSimParams, SimulationLayer } from './types';
+import {
+  WetInkPaperConfig,
+  WetInkPigmentConfig,
+  WetInkSimParams,
+  SimulationLayer,
+  SealOptions,
+  SealStyle,
+  SealShape,
+  SealGlyph,
+} from './types';
 import { KubelkaMunkLUT } from './kubelka-munk';
 
 /**
@@ -448,30 +457,151 @@ export class WetInkSimulation {
     }
   }
 
-  // Stamped Vermilion / Hanko Seal
-  injectSeal(centerX: number, centerY: number, size: number = 32) {
+  // Stamped Vermilion / Chinese Calligraphy Seal (Zhuanke / Hanko / 印章)
+  injectSeal(centerX: number, centerY: number, optionsOrSize: number | SealOptions = 32) {
+    const opts: SealOptions = typeof optionsOrSize === 'number' ? { size: optionsOrSize } : optionsOrSize;
+    const size = opts.size ?? 32;
+    const style: SealStyle = opts.style ?? 'zhuwen';
+    const shape: SealShape = opts.shape ?? 'square';
+    const glyph: SealGlyph = opts.glyph ?? 'classic';
+    const chippedEdge: boolean = opts.chippedEdge ?? true;
+
     const half = Math.floor(size / 2);
     const minX = Math.max(1, Math.floor(centerX - half));
     const maxX = Math.min(this.width - 2, Math.ceil(centerX + half));
     const minY = Math.max(1, Math.floor(centerY - half));
     const maxY = Math.min(this.height - 2, Math.ceil(centerY + half));
-    if (minX > maxX || minY > maxY) return;
+    if (minX > maxX || minY > maxY || size <= 0) return;
 
     this.growActiveBox(minX, minY, maxX, maxY);
 
+    const innerHalf = Math.max(1, half - 3.5);
+
     for (let y = minY; y <= maxY; y++) {
+      const dy = y - centerY;
+      const absDy = Math.abs(dy);
+
       for (let x = minX; x <= maxX; x++) {
-        const dx = Math.abs(x - centerX);
-        const dy = Math.abs(y - centerY);
+        const dx = x - centerX;
+        const absDx = Math.abs(dx);
 
-        // Square border (2-3px frame)
-        const isBorder = (dx >= half - 3 && dx <= half && dy <= half) || (dy >= half - 3 && dy <= half && dx <= half);
-        // Stylized character lines
-        const isInnerCross = (dx <= 2 && dy <= half - 6) || (dy <= 2 && dx <= half - 6);
-        const isInnerDot = (dx >= 5 && dx <= 8 && dy >= 5 && dy <= 8);
+        let isInside = false;
+        let isBorder = false;
 
-        if (isBorder || isInnerCross || isInnerDot) {
-          this.deposit(y * this.width + x, 0.9, 1.8, 2.2);
+        if (shape === 'square') {
+          isInside = absDx <= half && absDy <= half;
+          isBorder = isInside && (absDx >= half - 3 || absDy >= half - 3);
+        } else {
+          const dist = Math.hypot(dx, dy);
+          isInside = dist <= half;
+          isBorder = isInside && dist >= half - 3;
+        }
+
+        if (!isInside) continue;
+
+        // Normalized relative coordinates for glyph interior [-1, 1]
+        const u = dx / innerHalf;
+        const v = dy / innerHalf;
+        const absU = Math.abs(u);
+        const absV = Math.abs(v);
+
+        let isGlyphStroke = false;
+
+        if (glyph === 'classic') {
+          // Traditional Hanko cross + four corner dots
+          const isInnerCross = (absDx <= 2 && absDy <= half - 6) || (absDy <= 2 && absDx <= half - 6);
+          const isInnerDot = absDx >= 5 && absDx <= 8 && absDy >= 5 && absDy <= 8;
+          isGlyphStroke = isInnerCross || isInnerDot;
+        } else if (glyph === 'amelie') {
+          // Four-quadrant Tian Zi Ge seal: "阿梅莉印" (Amélie Yin)
+          const isPartition = (absDx <= 1 && absDy <= half - 4) || (absDy <= 1 && absDx <= half - 4);
+          // Top-Left (u < 0, v < 0): "阿"
+          const qTL = u < -0.12 && v < -0.12 && (
+            (Math.abs(u + 0.7) <= 0.12 && v >= -0.85 && v <= -0.15) ||
+            (Math.abs(v + 0.75) <= 0.12 && u >= -0.75 && u <= -0.2) ||
+            (Math.abs(v + 0.45) <= 0.12 && u >= -0.75 && u <= -0.2) ||
+            (Math.abs(u + 0.22) <= 0.12 && v >= -0.75 && v <= -0.45)
+          );
+          // Top-Right (u > 0, v < 0): "梅"
+          const qTR = u > 0.12 && v < -0.12 && (
+            (Math.abs(u - 0.45) <= 0.12 && v >= -0.85 && v <= -0.15) ||
+            (Math.abs(v + 0.6) <= 0.12 && u >= 0.2 && u <= 0.85) ||
+            (Math.abs(u - 0.72) <= 0.12 && v >= -0.55 && v <= -0.2)
+          );
+          // Bottom-Left (u < 0, v > 0): "印"
+          const qBL = u < -0.12 && v > 0.12 && (
+            (Math.abs(u + 0.45) <= 0.12 && v >= 0.2 && v <= 0.85) ||
+            (Math.abs(v - 0.3) <= 0.12 && u >= -0.75 && u <= -0.2) ||
+            (Math.abs(u + 0.7) <= 0.12 && v >= 0.3 && v <= 0.75)
+          );
+          // Bottom-Right (u > 0, v > 0): "莉"
+          const qBR = u > 0.12 && v > 0.12 && (
+            (Math.abs(v - 0.3) <= 0.12 && u >= 0.2 && u <= 0.85) ||
+            (Math.abs(u - 0.4) <= 0.12 && v >= 0.2 && v <= 0.85) ||
+            (Math.abs(u - 0.72) <= 0.12 && v >= 0.35 && v <= 0.85)
+          );
+          isGlyphStroke = isPartition || qTL || qTR || qBL || qBR;
+        } else if (glyph === 'mo') {
+          // 墨 (Tusche / Ink): top 黑 (soot), bottom 土 (earth)
+          const topBar = Math.abs(v + 0.7) <= 0.12 && absU <= 0.65;
+          const midBoxH = (Math.abs(v + 0.45) <= 0.10 || Math.abs(v + 0.2) <= 0.10) && absU <= 0.55;
+          const midBoxV = (Math.abs(absU - 0.5) <= 0.10 || Math.abs(u) <= 0.10) && v >= -0.45 && v <= -0.2;
+          const dots = Math.abs(v + 0.05) <= 0.10 && (Math.abs(absU - 0.4) <= 0.12 || Math.abs(absU - 0.15) <= 0.12);
+          const earthStem = absU <= 0.12 && v >= 0.1 && v <= 0.75;
+          const earthMid = Math.abs(v - 0.4) <= 0.10 && absU <= 0.45;
+          const earthBase = Math.abs(v - 0.75) <= 0.12 && absU <= 0.75;
+          isGlyphStroke = topBar || midBoxH || midBoxV || dots || earthStem || earthMid || earthBase;
+        } else if (glyph === 'he') {
+          // 和 (Harmonie): left 禾, right 口
+          const leftSlash = u < -0.15 && Math.abs((v + 0.6) - 0.5 * (u + 0.55)) <= 0.12 && absU <= 0.85;
+          const leftBar = Math.abs(v + 0.25) <= 0.10 && u >= -0.85 && u <= -0.2;
+          const leftStem = Math.abs(u + 0.5) <= 0.12 && v >= -0.4 && v <= 0.8;
+          const leftLegL = u <= -0.5 && v >= 0.1 && Math.abs((v - 0.1) - (-1.2 * (u + 0.5))) <= 0.15 && v <= 0.75;
+          const leftLegR = u >= -0.5 && u <= -0.15 && v >= 0.1 && Math.abs((v - 0.1) - (1.2 * (u + 0.5))) <= 0.15 && v <= 0.75;
+          const rightBoxH = (Math.abs(v + 0.15) <= 0.12 || Math.abs(v - 0.55) <= 0.12) && u >= 0.15 && u <= 0.8;
+          const rightBoxV = (Math.abs(u - 0.15) <= 0.12 || Math.abs(u - 0.8) <= 0.12) && v >= -0.15 && v <= 0.55;
+          isGlyphStroke = leftSlash || leftBar || leftStem || leftLegL || leftLegR || rightBoxH || rightBoxV;
+        } else if (glyph === 'ji') {
+          // 吉 (Glück / Segen): top 士, bottom 口
+          const topLong = Math.abs(v + 0.65) <= 0.12 && absU <= 0.75;
+          const stem = absU <= 0.12 && v >= -0.65 && v <= -0.05;
+          const topShort = Math.abs(v + 0.1) <= 0.12 && absU <= 0.5;
+          const boxH = (Math.abs(v - 0.3) <= 0.12 || Math.abs(v - 0.75) <= 0.12) && absU <= 0.55;
+          const boxV = Math.abs(absU - 0.55) <= 0.12 && v >= 0.3 && v <= 0.75;
+          isGlyphStroke = topLong || stem || topShort || boxH || boxV;
+        } else if (glyph === 'yong') {
+          // 永 (Ewigkeit): classic 8-principles glyph
+          const dot = absU <= 0.15 && v >= -0.8 && v <= -0.55;
+          const horiz = Math.abs(v + 0.35) <= 0.12 && u >= -0.7 && u <= 0.7;
+          const vert = absU <= 0.12 && v >= -0.35 && v <= 0.7;
+          const hook = u <= 0 && u >= -0.35 && v >= 0.55 && Math.abs((v - 0.7) - 0.8 * (u + 0.35)) <= 0.15;
+          const leftSlash = u <= -0.1 && v >= -0.1 && v <= 0.65 && Math.abs((v - 0.1) - (-1.0 * (u + 0.2))) <= 0.15;
+          const rightSweep = u >= 0.1 && v >= 0.0 && v <= 0.75 && Math.abs((v - 0.1) - (1.0 * (u - 0.2))) <= 0.15;
+          isGlyphStroke = dot || horiz || vert || hook || leftSlash || rightSweep;
+        }
+
+        let isInk = false;
+        if (style === 'zhuwen') {
+          // 朱文: Red border & glyph lines, blank background
+          isInk = isBorder || isGlyphStroke;
+        } else {
+          // 白文: Solid red background, white chiseled glyph channels
+          isInk = isInside && !isGlyphStroke;
+        }
+
+        // Chipped stone edge simulation (Canbian)
+        if (chippedEdge && isBorder) {
+          const hash = Math.sin(x * 12.9898 + y * 78.233) * 43758.5453;
+          const fracture = hash - Math.floor(hash);
+          if (fracture > 0.88) {
+            isInk = false;
+          }
+        }
+
+        if (isInk) {
+          const idx = y * this.width + x;
+          const borderBoost = isBorder ? 1.15 : 1.0;
+          this.deposit(idx, 0.75 * borderBoost, 1.85 * borderBoost, 2.4);
         }
       }
     }

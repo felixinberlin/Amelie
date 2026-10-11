@@ -1,14 +1,14 @@
 {
   "auditVersion": 1,
-  "generatedAt": "2026-10-11T18:03:09.096Z",
+  "generatedAt": "2026-10-11T18:21:09.838Z",
   "repository": {
-    "commit": "8bbd3ca",
-    "branch": "feature/gruendungsnavigator-befund-2026-10-11"
+    "commit": "c01faac8",
+    "branch": "HEAD"
   },
   "inventory": {
     "doses": 45,
     "graves": 149,
-    "demos": 12,
+    "demos": 13,
     "researchEntries": 36,
     "candidateIdeas": 20,
     "books": 44
@@ -121,6 +121,14 @@
       "message": "Demo folder \"07-demos/europe-bird-migration\" does not correspond to any active Dose or Grave ID.",
       "file": "07-demos/europe-bird-migration",
       "relatedId": "europe-bird-migration"
+    },
+    {
+      "id": "DEMO-UNLINKED-gruendungsnavigator",
+      "severity": "warning",
+      "category": "demo",
+      "message": "Demo folder \"07-demos/gruendungsnavigator\" does not correspond to any active Dose or Grave ID.",
+      "file": "07-demos/gruendungsnavigator",
+      "relatedId": "gruendungsnavigator"
     },
     {
       "id": "DRIFT-AGENTS.md-Dosen-44",

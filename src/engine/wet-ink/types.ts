@@ -61,3 +61,15 @@ export interface SimulationSnapshot {
   totalWater: number;
   totalDepositedPigment: number;
 }
+
+export type SealStyle = 'zhuwen' | 'baiwen';
+export type SealShape = 'square' | 'round';
+export type SealGlyph = 'amelie' | 'mo' | 'ji' | 'he' | 'yong' | 'classic';
+
+export interface SealOptions {
+  size?: number;
+  style?: SealStyle;
+  shape?: SealShape;
+  glyph?: SealGlyph;
+  chippedEdge?: boolean;
+}

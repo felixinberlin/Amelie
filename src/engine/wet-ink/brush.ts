@@ -1,6 +1,15 @@
 import { WetInkSimulation } from './simulation';
 
-export type BrushToolType = 'fountain-pen' | 'sumi-brush' | 'wash-brush' | 'dropper' | 'water-drop';
+export type BrushToolType =
+  | 'fountain-pen'
+  | 'sumi-brush'
+  | 'wash-brush'
+  | 'dropper'
+  | 'water-drop'
+  | 'langhao'
+  | 'yanghao'
+  | 'jianhao'
+  | 'seal-stamp';
 
 export interface BrushState {
   tool: BrushToolType;
@@ -65,6 +74,44 @@ export class WetInkBrushManager {
         enableDryFilter = true;
         waterAmt *= 0.5;
       }
+    } else if (state.tool === 'langhao') {
+      // Wieselhaar / Wolf hair: high elasticity (Tanxing), sharp tip, highly responsive to pressure & flicks
+      const speedThinning = Math.max(0.35, 1 / (1 + speed * 1.25));
+      radius = state.baseRadius * (0.45 + pressure * 1.15) * speedThinning;
+      waterAmt = 0.55 * state.waterRatio * speedThinning;
+      pigmentAmt = 0.95;
+
+      if (state.dryBrush && (speed > 0.75 || pressure < 0.32)) {
+        enableDryFilter = true;
+        waterAmt *= 0.5;
+      }
+    } else if (state.tool === 'yanghao') {
+      // Ziegenhaar / Goat hair: soft, deep deflection, high water and ink reservoir, fleshy expressive strokes
+      const speedThinning = Math.max(0.55, 1 / (1 + speed * 0.6));
+      radius = state.baseRadius * (0.75 + pressure * 1.45) * speedThinning;
+      waterAmt = 1.05 * state.waterRatio * speedThinning;
+      pigmentAmt = 0.84;
+
+      if (state.dryBrush && (speed > 1.1 || pressure < 0.22)) {
+        enableDryFilter = true;
+        waterAmt *= 0.6;
+      }
+    } else if (state.tool === 'jianhao') {
+      // Mischhaar / Hybrid hair: firm weasel core wrapped in soft goat hair; the balanced classical all-rounder
+      const speedThinning = Math.max(0.45, 1 / (1 + speed * 0.9));
+      radius = state.baseRadius * (0.58 + pressure * 1.28) * speedThinning;
+      waterAmt = 0.78 * state.waterRatio * speedThinning;
+      pigmentAmt = 0.90;
+
+      if (state.dryBrush && (speed > 0.85 || pressure < 0.28)) {
+        enableDryFilter = true;
+        waterAmt *= 0.52;
+      }
+    } else if (state.tool === 'seal-stamp') {
+      // Seal stamp mode: single crisp impression with rich cinnabar paste
+      radius = state.baseRadius * 1.6;
+      waterAmt = 0.45;
+      pigmentAmt = 1.6;
     } else if (state.tool === 'wash-brush') {
       radius = state.baseRadius * 2.2;
       waterAmt = 1.6 * state.waterRatio;

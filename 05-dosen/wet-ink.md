@@ -90,7 +90,9 @@ $$\text{Input (Stylus/Druck)} \longrightarrow \text{Velocity} \longrightarrow \t
   * *Status:* **Abgeschlossen & verifiziert.** 7-Pass-Simulation, Kapillarschwelle, 3-Phasen-Lifecycle und TipTap-Adapter laufen stabil.
 * **Ticket #2: Taktile Reibungs-Akustik, Löschpapier-Aktion & Vektor-SVG-Export.**
   * *Status:* **Abgeschlossen & verifiziert.** Integriert in `@wet-ink/core` und den interaktiven Amélie-Simulator (`WetInkSimulator.tsx`).
-* **Testabdeckung:** 24 Test-Suiten mit 315 Tests laufen im Gesamtrepository zu 100 % fehlerfrei durch (`simulation.test.ts`, `kubelka-munk.test.ts`, `WetInkController.test.ts`, `WetInkExtension.test.ts`, `WetInkReact.test.ts`, `WetInkObsidian.test.ts`).
+* **Ticket #3: Chinesische Kalligrafie & Siegelkunst (书法与篆刻).**
+  * *Status:* **Abgeschlossen & verifiziert.** Drei Reifegrade traditionellen Xuan-Papiers (`sheng-xuan`, `ban-shu-xuan`, `shu-xuan`), Haartyp-spezifische Pinselphysik für `langhao` (Wiesel), `yanghao` (Ziege) und `jianhao` (Mischhaar), interaktive Übungsgitter (Mi Zi Ge, Jiu Gong Ge, Yongzi Bafa mit 8 Ur-Strichen) und authentische Zinnober-Siegelstempel (Zhuwen & Baiwen mit Canbian-Bruchkanten).
+* **Testabdeckung:** 25 Test-Suiten mit 327 Tests laufen im Gesamtrepository zu 100 % fehlerfrei durch (`calligraphy.test.ts`, `simulation.test.ts`, `kubelka-munk.test.ts`, `WetInkController.test.ts`, `WetInkExtension.test.ts`, `WetInkReact.test.ts`, `WetInkObsidian.test.ts`).
 
 ---
 

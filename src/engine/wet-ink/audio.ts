@@ -117,6 +117,62 @@ export class PenAudioSynthesizer {
     this.gainNode.gain.setTargetAtTime(0, this.ctx.currentTime, 0.03);
   }
 
+  /**
+   * Procedural acoustic impulse for Chinese seal stamp impact (Zhuanke / Hanko).
+   * Generates a deep resonant low-frequency stone/wood thud with paper fiber friction.
+   */
+  public playStampThud(): void {
+    if (this.isMuted) return;
+    this.initAudio();
+    if (!this.ctx) return;
+
+    if (this.ctx.state === 'suspended') {
+      this.ctx.resume();
+    }
+
+    try {
+      const now = this.ctx.currentTime;
+      const osc = this.ctx.createOscillator();
+      const gain = this.ctx.createGain();
+
+      // Deep resonant wood/stone stamp impact thud: 155 Hz dropping to 42 Hz
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(155, now);
+      osc.frequency.exponentialRampToValueAtTime(42, now + 0.12);
+
+      gain.gain.setValueAtTime(0.32, now);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.15);
+
+      osc.connect(gain);
+      gain.connect(this.ctx.destination);
+
+      osc.start(now);
+      osc.stop(now + 0.16);
+
+      // Add a subtle paper-press friction burst
+      if (this.noiseBuffer) {
+        const noiseSource = this.ctx.createBufferSource();
+        noiseSource.buffer = this.noiseBuffer;
+        const noiseFilter = this.ctx.createBiquadFilter();
+        noiseFilter.type = 'lowpass';
+        noiseFilter.frequency.setValueAtTime(1200, now);
+
+        const noiseGain = this.ctx.createGain();
+        noiseGain.gain.setValueAtTime(0.18, now);
+        noiseGain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
+
+        noiseSource.connect(noiseFilter);
+        noiseFilter.connect(noiseGain);
+        noiseGain.connect(this.ctx.destination);
+
+        noiseSource.start(now);
+        noiseSource.stop(now + 0.09);
+      }
+    } catch {
+      // AudioContext unavailable or error
+    }
+  }
+
   public destroy(): void {
     if (this.sourceNode) {
       try {

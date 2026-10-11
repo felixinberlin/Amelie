@@ -93,17 +93,17 @@ Kein chinesisches Schriftwerk ist ohne das rote Namens- oder Stimmungssiegel (*Y
 
 ---
 
-## 3. Tickets für die nächste Sitzung
+## 3. Umgesetzte Tickets & Verifikation
 
-- [ ] **Ticket C1 (Substrate):** Hinzufügen der Presets `sheng-xuan`, `ban-shu-xuan` und `shu-xuan` in `src/engine/wet-ink/presets.ts`.
-- [ ] **Ticket C2 (Pinsel):** Spezifische Pinsel-Parameter für `langhao`, `yanghao`, `jianhao` in `src/engine/wet-ink/brush.ts`.
-- [ ] **Ticket C3 (Gitter-Overlay):** Toggle-Schalter für `Mi Zi Ge` und `Jiu Gong Ge` im `WetInkSimulator.tsx`.
-- [ ] **Ticket C4 (Siegel-Stempel):** Stempel-Modus im Simulator mit traditioneller Cinnabar-Pasten-Haptik.
-- [ ] **Ticket C5 (Validierung):** Test-Suite in `src/engine/wet-ink/calligraphy.test.ts` und Export-Aktualisierung (`npm run export:data`).
+- [x] **Ticket C1 (Substrate):** Hinzufügen der Presets `sheng-xuan`, `ban-shu-xuan` und `shu-xuan` in `src/engine/wet-ink/presets.ts`. Alle drei Reifegrade mit physikalischer Faseranisotropie, Kapazitäts- und Verdunstungsparametern implementiert.
+- [x] **Ticket C2 (Pinsel):** Spezifische Pinsel-Parameter für `langhao` (狼毫 - Wieselhaar, elastisch mit spitzer Führung), `yanghao` (羊毫 - Ziegenhaar, weich mit hohem Tintenreservoir) und `jianhao` (兼毫 - Mischhaar, ausgewogener Allrounder) in `src/engine/wet-ink/brush.ts` implementiert.
+- [x] **Ticket C3 (Gitter-Overlay):** Zuschaltbare interaktive Vektor-Overlays für `Mi Zi Ge` (米字格 - 8-Stern-Gitter), `Jiu Gong Ge` (九宫格 - Tang-zeitliches 3×3-Gitter) und `Yongzi Bafa` (永字八法 mit klassischem Wasserzeichen und 8 markierten Ur-Strichen) im `WetInkSimulator.tsx`.
+- [x] **Ticket C4 (Siegel-Stempel):** Vollwertiger Zhuanke-Stempelmodus (篆刻印章) im Simulator mit Baiwen- (白文 - Weißschrift) und Zhuwen-Stil (朱文 - Rotschrift), quadratischen und runden Siegeln, traditionellen Siegelglyphen (`阿梅莉`, `墨`, `和`, `吉`, `永`, `经典`), antiken Canbian-Bruchkanten (残边) sowie taktil-akustischer Web-Audio-Stempelresonanz (`playStampThud()`).
+- [x] **Ticket C5 (Validierung):** Test-Suite in `src/engine/wet-ink/calligraphy.test.ts` (12 Tests grün, 301 ms) und vollständige Verifikation über die gesamte Suite (`npm test`: 62 Suiten, 871 Tests grün; `npm run lint`: 0 Fehler).
 
 ---
 
-## 4. Bereitstellung
+## 4. Bereitstellung & Status
 
-Alles bleibt zu 100 % **Zero-Cloud, CC0 Public Domain** und läuft lokal im Browser ohne Backend.
-Mit diesem Fahrplan können wir in der nächsten Sitzung direkt und ohne Vorlauf in die Umsetzung einsteigen!
+Alles ist zu 100 % **Zero-Cloud, CC0 Public Domain** und läuft lokal im Browser ohne Backend oder externe Assets.
+Die chinesische Kalligrafie- und Siegelkunsterweiterung ist nahtlos in den Simulator und die `@wet-ink/*`-Engine integriert.
