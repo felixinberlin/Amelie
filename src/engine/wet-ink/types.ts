@@ -74,3 +74,11 @@ export interface SealOptions {
   glyph?: SealGlyph;
   chippedEdge?: boolean;
 }
+
+// Brush Tip Footprint Geometries (Pinsel-Formen / 毛笔与画笔形制)
+export type BrushTipShape =
+  | 'round'       // Classical round / pointed tip (Zhongfeng 中锋)
+  | 'flat'        // Chisel / Flat ribbon brush (Hake / Paibi 排笔)
+  | 'slanted'     // Slanted / Cefeng side-cutting chisel (Cefeng 侧锋)
+  | 'fan'         // Multi-bristle split fan tufts (Kuabi 散笔 / 抓笔)
+  | 'dagger';     // Tapered rigger / sword leaf brush (Bambusblatt / 剑笔)

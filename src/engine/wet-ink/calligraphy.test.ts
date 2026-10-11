@@ -2,10 +2,10 @@ import { describe, it, expect } from 'vitest';
 import { PAPER_PRESETS, PIGMENT_PRESETS } from './presets';
 import { generatePaperMaps } from './paper';
 import { WetInkBrushManager, BrushState } from './brush';
-import { WetInkSimulation } from './simulation';
+import { WetInkSimulation, computeBrushFootprint } from './simulation';
 import { WET_INK_DT } from './simulation';
 import { REFERENCE_PARAMS } from './scenarios';
-import { SealOptions, SealStyle, SealShape, SealGlyph } from './types';
+import { SealOptions, SealStyle, SealShape, SealGlyph, BrushTipShape } from './types';
 
 describe('Chinese Calligraphy & Seal Art Engine (书法与篆刻)', () => {
   const getPaper = (id: string) => {
@@ -328,6 +328,128 @@ describe('Chinese Calligraphy & Seal Art Engine (书法与篆刻)', () => {
       expect(rep.waterInjected).toBeGreaterThan(0);
       expect(rep.pigmentInjected).toBe(0);
       expect(rep.waterError).toBeLessThan(1e-3);
+    });
+  });
+
+  // ---------------------------------------------------------------------------
+  // Ticket C6: Brush Tip Footprint Geometries (Pinsel-Formen / 毛笔与画笔形制)
+  // ---------------------------------------------------------------------------
+  describe('Ticket C6: Brush Tip Footprint Geometries (毛笔形制与笔锋几何)', () => {
+    it('computes valid normalized falloffs bounded within [-radius, radius] for all 5 tip shapes', () => {
+      const shapes: BrushTipShape[] = ['round', 'flat', 'slanted', 'fan', 'dagger'];
+      const radius = 10;
+
+      for (const shape of shapes) {
+        // Center cell should have strong positive falloff
+        const centerFalloff = computeBrushFootprint(0, 0, radius, shape, 0);
+        expect(centerFalloff).toBeGreaterThan(0);
+        expect(centerFalloff).toBeLessThanOrEqual(1.0);
+
+        // Outside bounding disc must strictly be zero
+        expect(computeBrushFootprint(radius + 2, 0, radius, shape, 0)).toBe(0);
+        expect(computeBrushFootprint(0, radius + 2, radius, shape, 0)).toBe(0);
+        expect(computeBrushFootprint(-radius - 2, 0, radius, shape, 0)).toBe(0);
+        expect(computeBrushFootprint(0, -radius - 2, radius, shape, 0)).toBe(0);
+      }
+    });
+
+    it('flat chisel brush (Paibi 排笔) exhibits calligraphic ribbon aspect ratio & rotates with angle', () => {
+      const radius = 10;
+      // Along u-axis at v=0, flat brush is wide (dx=6, dy=0 is inside w=10)
+      const uInside = computeBrushFootprint(6, 0, radius, 'flat', 0);
+      expect(uInside).toBeGreaterThan(0);
+
+      // Along v-axis at u=0, flat brush is thin (h = radius * 0.35 = 3.5, so dy=5 is outside)
+      const vOutside = computeBrushFootprint(0, 5, radius, 'flat', 0);
+      expect(vOutside).toBe(0);
+
+      // Rotated by 90 degrees (Math.PI / 2), the wide and thin axes swap
+      const rotU = computeBrushFootprint(6, 0, radius, 'flat', Math.PI / 2);
+      const rotV = computeBrushFootprint(0, 6, radius, 'flat', Math.PI / 2);
+      expect(rotU).toBe(0);
+      expect(rotV).toBeGreaterThan(0);
+    });
+
+    it('fan brush (Kuabi 散笔) produces distinct multi-tuft bristle striations', () => {
+      const radius = 12;
+      // Center of tuft 0 is at u = -0.75 * 12 = -9, center of tuft 1 is at u = -0.25 * 12 = -3
+      const tuft0 = computeBrushFootprint(-9, 0, radius, 'fan', 0);
+      const between = computeBrushFootprint(-6, 0, radius, 'fan', 0); // trough between tufts
+      const tuft1 = computeBrushFootprint(-3, 0, radius, 'fan', 0);
+
+      expect(tuft0).toBeGreaterThan(0.5);
+      expect(tuft1).toBeGreaterThan(0.5);
+      expect(between).toBeLessThan(tuft0);
+    });
+
+    it('dagger brush (Bambusblatt / 剑笔) exhibits asymmetric leaf taper', () => {
+      const radius = 10;
+      // Near wide belly (t = 0.5 -> u = 0), leaf is wide (halfWidth = 6.5, so v=3 is inside)
+      const belly = computeBrushFootprint(0, 3, radius, 'dagger', 0);
+      expect(belly).toBeGreaterThan(0);
+
+      // Near tip (u = 8), leaf is narrow (halfWidth = 2.0, so v=3 is outside)
+      const tipFlank = computeBrushFootprint(8, 3, radius, 'dagger', 0);
+      expect(tipFlank).toBe(0);
+    });
+
+    it('injectInk with any tip shape strictly conserves water and pigment mass', () => {
+      const shapes: BrushTipShape[] = ['round', 'flat', 'slanted', 'fan', 'dagger'];
+      for (const shape of shapes) {
+        const sim = freshSim('ban-shu-xuan', 'sumi', 48, 48);
+        sim.injectInk(24, 24, 8, 1.2, 0.8, false, sim.pigmentConfig, shape, 0.45);
+
+        const rep = sim.massReport();
+        expect(rep.waterInjected).toBeGreaterThan(0);
+        expect(rep.pigmentInjected).toBeGreaterThan(0);
+        expect(rep.waterError).toBeLessThan(1e-3);
+        expect(rep.pigmentError).toBeLessThan(1e-3);
+      }
+    });
+  });
+
+  // ---------------------------------------------------------------------------
+  // Ticket C7: Expressive Capillary Bleeding (Yunran 晕染 & Po Mo 破墨)
+  // ---------------------------------------------------------------------------
+  describe('Ticket C7: Expressive Capillary Bleeding (晕染与破墨)', () => {
+    it('pulseBleed() accelerates fiber wicking across cellulose without breaking mass conservation', () => {
+      const sim = freshSim('sheng-xuan', 'sumi', 48, 48);
+      // Place a concentrated ink drop in the center
+      sim.injectInk(24, 24, 6, 2.0, 1.5);
+
+      // Count damp fibers before pulse
+      let dampBefore = 0;
+      for (let i = 0; i < sim.size; i++) {
+        if (sim.fiberMoisture[i] > 0.02) dampBefore++;
+      }
+
+      // Execute expressive capillary bleed pulse
+      sim.pulseBleed(2.5);
+
+      let dampAfter = 0;
+      for (let i = 0; i < sim.size; i++) {
+        if (sim.fiberMoisture[i] > 0.02) dampAfter++;
+      }
+
+      // Wetted fiber footprint must expand noticeably
+      expect(dampAfter).toBeGreaterThan(dampBefore);
+
+      // Strict mass conservation invariant check
+      const rep = sim.massReport();
+      expect(rep.waterError).toBeLessThan(1e-3);
+      expect(rep.pigmentError).toBeLessThan(1e-3);
+    });
+
+    it('pulseBleed() on completely dry paper is a safe no-op', () => {
+      const sim = freshSim('sheng-xuan', 'sumi', 48, 48);
+      expect(sim.isActive).toBe(false);
+
+      sim.pulseBleed(2.0);
+
+      expect(sim.isActive).toBe(false);
+      const rep = sim.massReport();
+      expect(rep.waterInjected).toBe(0);
+      expect(rep.waterPresent).toBe(0);
     });
   });
 });

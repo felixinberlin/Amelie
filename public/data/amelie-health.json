@@ -1,9 +1,9 @@
 {
   "auditVersion": 1,
-  "generatedAt": "2026-10-11T21:53:22.868Z",
+  "generatedAt": "2026-10-11T21:59:40.422Z",
   "repository": {
-    "commit": "ea5d810",
-    "branch": "claude/nifty-ride-xtktbm"
+    "commit": "48028c81",
+    "branch": "HEAD"
   },
   "inventory": {
     "doses": 46,

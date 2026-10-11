@@ -1,5 +1,5 @@
 import { WetInkSimulation } from './simulation';
-import { WetInkPigmentConfig } from './types';
+import { WetInkPigmentConfig, BrushTipShape } from './types';
 
 export type BrushToolType =
   | 'fountain-pen'
@@ -17,6 +17,8 @@ export interface BrushState {
   baseRadius: number;
   waterRatio: number;   // water-to-pigment balance (0.2 = dry ink, 2.0 = wet wash)
   dryBrush: boolean;    // whether skipping over paper hills is active
+  tipShape?: BrushTipShape; // footprint geometry ('round', 'flat', 'slanted', 'fan', 'dagger')
+  angle?: number;       // custom brush orientation angle (radians)
 }
 
 // Ink per stamp when stamps are one radius apart (scaled down for closer spacing)
@@ -140,12 +142,29 @@ export class WetInkBrushManager {
       pigmentAmt = 0.0;
     }
 
+    // Brush footprint geometry & orientation angle
+    const tipShape: BrushTipShape = state.tipShape ?? 'round';
+    let strokeAngle = state.angle ?? 0;
+    if (state.angle === undefined) {
+      if (tipShape === 'flat') {
+        // Classical italic/chisel nib angle: fixed 45°
+        strokeAngle = Math.PI * 0.25;
+      } else if (!isFirstPoint && this.lastX !== null && this.lastY !== null && dist > 0.5) {
+        const moveAngle = Math.atan2(y - this.lastY, x - this.lastX);
+        if (tipShape === 'slanted' || tipShape === 'fan') {
+          strokeAngle = moveAngle + Math.PI * 0.5;
+        } else if (tipShape === 'dagger') {
+          strokeAngle = moveAngle;
+        }
+      }
+    }
+
     // Ink is laid down per unit of path with tight continuous spacing so lines never break
     const spacing = Math.max(1.0, radius * 0.28);
     const perStamp = (INK_PER_RADIUS * spacing) / Math.max(1, radius);
     const firstStamp = Math.max(0.45, perStamp);
     if (isFirstPoint || this.lastX === null || this.lastY === null) {
-      sim.injectInk(x, y, radius, waterAmt * firstStamp, pigmentAmt * firstStamp, enableDryFilter, pigmentConfig);
+      sim.injectInk(x, y, radius, waterAmt * firstStamp, pigmentAmt * firstStamp, enableDryFilter, pigmentConfig, tipShape, strokeAngle);
       this.carry = 0;
     } else {
       let along = spacing - this.carry;
@@ -154,7 +173,7 @@ export class WetInkBrushManager {
         sim.injectInk(
           this.lastX + (x - this.lastX) * t,
           this.lastY + (y - this.lastY) * t,
-          radius, waterAmt * perStamp, pigmentAmt * perStamp, enableDryFilter, pigmentConfig
+          radius, waterAmt * perStamp, pigmentAmt * perStamp, enableDryFilter, pigmentConfig, tipShape, strokeAngle
         );
         along += spacing;
       }
@@ -162,7 +181,7 @@ export class WetInkBrushManager {
       // A resting pen keeps bleeding into the paper
       if (speed < 0.02) {
         const dwell = Math.min(dt, 50) * DWELL_PER_MS;
-        sim.injectInk(x, y, radius * 0.8, waterAmt * dwell, pigmentAmt * dwell, enableDryFilter, pigmentConfig);
+        sim.injectInk(x, y, radius * 0.8, waterAmt * dwell, pigmentAmt * dwell, enableDryFilter, pigmentConfig, tipShape, strokeAngle);
       }
     }
 

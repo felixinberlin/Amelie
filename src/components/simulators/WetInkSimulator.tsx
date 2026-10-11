@@ -30,6 +30,7 @@ import {
   SealStyle,
   SealShape,
   SealGlyph,
+  BrushTipShape,
 } from '../../engine/wet-ink/types';
 import { PAPER_PRESETS, PIGMENT_PRESETS, createPigmentFromHex } from '../../engine/wet-ink';
 import { WetInkSimulation } from '../../engine/wet-ink/simulation';
@@ -100,6 +101,25 @@ const FIVE_SHADES_OF_INK: InkShade[] = [
   { id: 'qing', nameZh: '清', nameDe: 'Flüchtig (Qīng)', nameEn: 'Whisper (Qīng)', descDe: 'Zarter Nebelhauch, Wasserreflex', descEn: 'Faint mist wash, subtle reflection', ratio: 2.8, previewColor: '#bebebe' },
 ];
 
+// Brush Tip Footprint Presets (Pinsel-Formen / 毛笔与画笔形制)
+interface TipShapePreset {
+  id: BrushTipShape;
+  icon: string;
+  nameDe: string;
+  nameEn: string;
+  zh: string;
+  descDe: string;
+  descEn: string;
+}
+
+const BRUSH_TIP_SHAPES: TipShapePreset[] = [
+  { id: 'round', icon: '●', nameDe: 'Rund', nameEn: 'Round', zh: '中锋', descDe: 'Zentrierte Spitze, allseitig weicher Meniskus (Zhongfeng)', descEn: 'Centered pointed tip, isotropic soft meniscus' },
+  { id: 'flat', icon: '▬', nameDe: 'Flach', nameEn: 'Flat', zh: '排笔', descDe: 'Breiter Flachpinsel, 45°-Kalligrafieband (Paibi)', descEn: 'Wide chisel ribbon, 45° calligraphic modulation' },
+  { id: 'slanted', icon: '▰', nameDe: 'Schräg', nameEn: 'Chisel', zh: '侧锋', descDe: 'Asymmetrische Schneidkante mit weicher Flanke (Cefeng)', descEn: 'Asymmetric cutting edge with feathered flank' },
+  { id: 'fan', icon: '彡', nameDe: 'Fächer', nameEn: 'Fan', zh: '散笔', descDe: 'Geteilte Borstenbündel, natürliche Maserung (Kuabi)', descEn: 'Split bristle clusters, natural hair/grain striations' },
+  { id: 'dagger', icon: '🗡', nameDe: 'Schwert', nameEn: 'Dagger', zh: '竹叶', descDe: 'Tropfenförmige Klinge für Bambusblätter und Farne', descEn: 'Tapered aerodynamic leaf tip for bamboo & botanicals' },
+];
+
 export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
   lang,
 }) => {
@@ -114,6 +134,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
   // Core Tools: Brush (medium wet), Pen (fine crisp), Water (dilution & backruns), Calligraphy, Seal
   const [currentTool, setCurrentTool] = useState<BrushToolType>('sumi-brush');
   const [brushRadius, setBrushRadius] = useState<number>(6);
+  const [brushTipShape, setBrushTipShape] = useState<BrushTipShape>('round');
 
   // Calligraphy Grid & Didactics (米字格, 九宫格, 永字八法)
   const [calligraphyGrid, setCalligraphyGrid] = useState<'none' | 'mizige' | 'jiugongge' | 'yongzi'>('none');
@@ -334,6 +355,14 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
     }
   };
 
+  // Expressive Capillary Bleeding (Yunran 晕染 / Po Mo 破墨): Instant blooming along cellulose fibers
+  const handleBleedNow = () => {
+    if (simRef.current) {
+      simRef.current.pulseBleed(2.2);
+      setIsWet(true);
+    }
+  };
+
   // Auto-stroke Demo (Ensō)
   const handleAutoDemo = () => {
     if (!simRef.current) return;
@@ -517,6 +546,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
           baseRadius: brushRadius,
           waterRatio: currentTool === 'water-drop' ? 2.5 : inkDilution,
           dryBrush: isCalligraphyBrush,
+          tipShape: brushTipShape,
         },
         true,
         e.timeStamp || performance.now(),
@@ -553,6 +583,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
         baseRadius: brushRadius,
         waterRatio: currentTool === 'water-drop' ? 2.5 : inkDilution,
         dryBrush: isCalligraphyBrush,
+        tipShape: brushTipShape,
       },
       false,
       now,
@@ -742,6 +773,21 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
           >
             <span>🧻</span>
             <span>{lang === 'de' ? 'Löschpapier' : lang === 'es' ? 'Papel secante' : 'Blot'}</span>
+          </button>
+
+          <button
+            onClick={handleBleedNow}
+            className="px-3 py-1.5 rounded-xl bg-blue-950/60 hover:bg-blue-900/80 text-blue-200 border border-blue-700/60 text-xs font-medium transition-colors cursor-pointer inline-flex items-center gap-1.5 shadow-2xs"
+            title={
+              lang === 'de'
+                ? 'Ausbluten lassen: Löst expressive Kapillarblüte (Yunran 晕染) entlang der Fasern aus'
+                : lang === 'es'
+                ? 'Dejar sangrar: desencadena floración capilar expresiva (Yunran)'
+                : 'Let the ink bleed: Triggers expressive capillary blooming (Yunran) along paper fibers'
+            }
+          >
+            <Droplets className="w-3.5 h-3.5 text-blue-400" />
+            <span>{lang === 'de' ? 'Bluten' : lang === 'es' ? 'Sangrar' : 'Bleed'}</span>
           </button>
 
           <button
@@ -1188,6 +1234,36 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
                 />
               </div>
 
+              {/* Brush Tip Shape Footprints (Pinsel-Formen / 毛笔形制) */}
+              <div className="pt-2 border-t border-stone-100 space-y-1">
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] uppercase font-bold text-stone-600 font-mono">
+                    {lang === 'de' ? 'Pinsel-Form (Spitze)' : 'Brush Tip Shape'}
+                  </span>
+                  <span className="text-[10px] font-mono text-stone-500 font-serif">
+                    {BRUSH_TIP_SHAPES.find((s) => s.id === brushTipShape)?.zh}
+                  </span>
+                </div>
+                <div className="grid grid-cols-5 gap-1">
+                  {BRUSH_TIP_SHAPES.map((shape) => (
+                    <button
+                      key={shape.id}
+                      onClick={() => setBrushTipShape(shape.id)}
+                      className={`p-1.5 rounded-lg border text-center transition-all cursor-pointer flex flex-col items-center justify-center ${
+                        brushTipShape === shape.id
+                          ? 'border-amber-900 bg-amber-900 text-white font-bold shadow-xs'
+                          : 'border-stone-200 bg-white hover:bg-stone-50 text-stone-700'
+                      }`}
+                      title={`${lang === 'de' ? shape.nameDe : shape.nameEn} (${shape.zh}): ${lang === 'de' ? shape.descDe : shape.descEn}`}
+                    >
+                      <span className="text-xs leading-none mb-0.5">{shape.icon}</span>
+                      <span className="text-[10px] font-bold leading-none">{lang === 'de' ? shape.nameDe : shape.nameEn}</span>
+                      <span className="text-[8px] opacity-75 font-serif mt-0.5">{shape.zh}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
               {/* Mo Fen Wu Se: Five Shades of Ink & Wash Dilution (墨分五色) */}
               <div className="pt-2 border-t border-stone-100 space-y-1.5">
                 <div className="flex items-center justify-between">
@@ -1472,17 +1548,38 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
           <div>
             <div className="flex justify-between text-stone-600 mb-1">
               <span>{lang === 'de' ? 'Kapillares Ausbluten' : lang === 'es' ? 'Sangrado capilar' : 'Capillary Bleed'}:</span>
-              <span className="font-mono font-bold">{bleedSpeed.toFixed(1)}x</span>
+              <span className="font-mono font-bold text-amber-800">{bleedSpeed.toFixed(1)}x</span>
             </div>
             <input
               type="range"
               min="0.4"
-              max="2.4"
+              max="4.0"
               step="0.1"
               value={bleedSpeed}
               onChange={(e) => handleBleedSpeedChange(parseFloat(e.target.value))}
               className="w-full accent-amber-700 cursor-pointer"
             />
+            {/* Quick Bleed Presets */}
+            <div className="grid grid-cols-4 gap-1 mt-1.5">
+              {[
+                { speed: 0.8, labelDe: 'Zahm', labelEn: 'Tame' },
+                { speed: 1.2, labelDe: 'Standard', labelEn: 'Normal' },
+                { speed: 2.2, labelDe: 'Xuan-Sog', labelEn: 'Xuan' },
+                { speed: 3.6, labelDe: 'Explosiv', labelEn: 'Explosive' },
+              ].map((preset) => (
+                <button
+                  key={preset.speed}
+                  onClick={() => handleBleedSpeedChange(preset.speed)}
+                  className={`py-0.5 px-1 rounded text-[9px] font-mono border transition-colors cursor-pointer text-center ${
+                    Math.abs(bleedSpeed - preset.speed) < 0.15
+                      ? 'bg-amber-900 text-white border-amber-900 font-bold'
+                      : 'border-stone-200 bg-stone-50 hover:bg-stone-100 text-stone-600'
+                  }`}
+                >
+                  {lang === 'de' ? preset.labelDe : preset.labelEn}
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Board Gravity Tilt */}
