@@ -274,4 +274,60 @@ describe('Chinese Calligraphy & Seal Art Engine (书法与篆刻)', () => {
       expect(rep.waterError).toBeLessThan(1e-3);
     });
   });
+
+  // ---------------------------------------------------------------------------
+  // Ticket C5: Mo Fen Wu Se (墨分五色 - The Five Shades of Ink) Dilution
+  // ---------------------------------------------------------------------------
+  describe('Ticket C5: Mo Fen Wu Se (墨分五色) Wash Dilution Physics', () => {
+    it('dilution monotonically modulates deposited pigment: Jiāo > Nóng > Zhòng > Dàn > Qīng', () => {
+      const mgr = new WetInkBrushManager();
+
+      // Test identical strokes across the 5 traditional Chinese ink dilutions
+      const dilutions = [
+        { name: 'jiao', ratio: 0.35 },
+        { name: 'nong', ratio: 0.65 },
+        { name: 'zhong', ratio: 1.0 },
+        { name: 'dan', ratio: 1.8 },
+        { name: 'qing', ratio: 2.8 },
+      ];
+
+      const pigmentAmounts: number[] = [];
+
+      for (const d of dilutions) {
+        const sim = freshSim('ban-shu-xuan', 'sumi', 64, 64);
+        const state: BrushState = { tool: 'sumi-brush', baseRadius: 6, waterRatio: d.ratio, dryBrush: false };
+
+        mgr.stroke(sim, 16, 32, 0.5, state, true, 0);
+        mgr.stroke(sim, 48, 32, 0.5, state, false, 100);
+        mgr.endStroke();
+
+        const rep = sim.massReport();
+        pigmentAmounts.push(rep.pigmentInjected);
+
+        expect(rep.waterInjected).toBeGreaterThan(0);
+        expect(rep.pigmentInjected).toBeGreaterThan(0);
+        expect(rep.waterError).toBeLessThan(1e-3);
+      }
+
+      // Verify strict monotonic decrease in deposited pigment mass as water dilution increases
+      expect(pigmentAmounts[0]).toBeGreaterThan(pigmentAmounts[1]); // 焦 > 浓
+      expect(pigmentAmounts[1]).toBeGreaterThan(pigmentAmounts[2]); // 浓 > 重
+      expect(pigmentAmounts[2]).toBeGreaterThan(pigmentAmounts[3]); // 重 > 淡
+      expect(pigmentAmounts[3]).toBeGreaterThan(pigmentAmounts[4]); // 淡 > 清
+    });
+
+    it('water-drop tool deposits fluid without pigment for clean dilution & backruns', () => {
+      const sim = freshSim('sheng-xuan', 'sumi', 64, 64);
+      const mgr = new WetInkBrushManager();
+      const state: BrushState = { tool: 'water-drop', baseRadius: 6, waterRatio: 2.5, dryBrush: false };
+
+      mgr.stroke(sim, 32, 32, 0.6, state, true, 0);
+      mgr.endStroke();
+
+      const rep = sim.massReport();
+      expect(rep.waterInjected).toBeGreaterThan(0);
+      expect(rep.pigmentInjected).toBe(0);
+      expect(rep.waterError).toBeLessThan(1e-3);
+    });
+  });
 });
