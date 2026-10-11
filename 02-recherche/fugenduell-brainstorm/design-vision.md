@@ -37,6 +37,44 @@ Félix's brief: *fun, fun, fun, deep strategic content, cool extra powers and po
 4. **Shoot-month scoring creates garbage time.** By August the result is usually fixed.
 5. **The place really matters** (the strongest finding). Different places produce different winners. That's the core of the strategy and must stay.
 
+### 1b. Six cities, 24 named places: balance measurement (watch-v2, 11.10.2026)
+
+Featured cities with four famous places each (`src/data/fugenduellCities.ts`): **Berlin** (Wall at Bernauer Straße, tram tracks on Kastanienallee, Tempelhofer Feld, Südgelände), **Frankfurt am Main** (Römerberg, Main quay wall, track field at the Hauptbahnhof, tree pits on the Zeil), **Madrid** (Plaza Mayor, Muralla árabe, Madrid Río, kerb of the Castellana), **Tokyo** (Shibuya Crossing, Edo Castle walls, Odaiba seafront with year-round salt spray, Yamanote line ballast), **Shanghai** (the Bund, Yu Garden, Tianzifang lanes, plane-tree pits on Wukang Road), **Ciudad de México** (Zócalo, Xochimilco chinampas, Paseo de la Reforma, Pedregal lava field). Real 2025/26 weather for all six cities is bundled offline. Place values are labelled scenario assumptions, and each place lists the facts still to verify.
+
+Round robin of all 120 teams against each other at every place (345,600 games): best team, its win rate, and how many of the 10 best teams contain each species.
+
+| City | Place | Best team | Win rate | Species in the 10 best teams |
+|---|---|---|---|---|
+| Berlin | Berlin Wall (Bernauer Straße) | Bittercr + Celandine + ButterflyB | 98% | ButterflyB 10, Celandine 8, Toadflax 3, Bittercr 2 |
+| Berlin | Tram tracks, Kastanienallee | Toadflax + Celandine + ButterflyB | 99% | Celandine 10, Toadflax 7, ButterflyB 4, Bittercr 2 |
+| Berlin | Runway, Tempelhofer Feld | Toadflax + Celandine + ButterflyB | 99% | Toadflax 10, ButterflyB 8, Celandine 3, MeadowGr 2 |
+| Berlin | Südgelände nature park (old rail yard) | Toadflax + Celandine + ButterflyB | 99% | Celandine 8, Toadflax 7, ButterflyB 6, Bittercr 3 |
+| Frankfurt am Main | Cobbles of the Römerberg | Plantain + Toadflax + ButterflyB | 98% | Toadflax 10, Plantain 7, ButterflyB 4, MeadowGr 2 |
+| Frankfurt am Main | Main river quay wall | Bittercr + Celandine + ButterflyB | 98% | ButterflyB 10, Celandine 8, Toadflax 3, Bittercr 2 |
+| Frankfurt am Main | Track field, Hauptbahnhof | MeadowGr + Toadflax + Celandine | 99% | Toadflax 8, MeadowGr 6, Celandine 6, WallRue 4 |
+| Frankfurt am Main | Tree pits on the Zeil | Toadflax + Celandine + ButterflyB | 99% | Celandine 10, Toadflax 8, Bittercr 3, ButterflyB 2 |
+| Madrid | Cobbles of the Plaza Mayor | Plantain + MeadowGr + Toadflax | 99% | Toadflax 10, Plantain 6, MeadowGr 4, WallRue 3 |
+| Madrid | Arab city wall | MeadowGr + Celandine + ButterflyB | 96% | ButterflyB 10, Celandine 8, Bittercr 3, MeadowGr 2 |
+| Madrid | Madrid Río riverside path | Plantain + Celandine + ButterflyB | 99% | Celandine 10, ButterflyB 6, Toadflax 5, Plantain 2 |
+| Madrid | Kerb of the Castellana | Toadflax + Celandine + Scurvygr | 99% | Toadflax 10, Celandine 5, Plantain 4, Bittercr 4 |
+| Tokyo · 東京 | Shibuya Crossing | Bittercr + Toadflax + Celandine | 99% | Toadflax 10, Bittercr 7, Celandine 4, Plantain 2 |
+| Tokyo · 東京 | Edo Castle stone walls | Bittercr + Celandine + ButterflyB | 98% | Celandine 9, ButterflyB 9, Bittercr 3, Toadflax 3 |
+| Tokyo · 東京 | Odaiba seafront | Plantain + Toadflax + ButterflyB | 98% | Toadflax 9, ButterflyB 6, MeadowGr 5, Plantain 3 |
+| Tokyo · 東京 | Yamanote line ballast | Bittercr + Toadflax + Celandine | 99% | Toadflax 10, Celandine 7, WallRue 3, Plantain 3 |
+| Shanghai · 上海 | The Bund promenade | Plantain + MeadowGr + Toadflax | 98% | Plantain 9, Toadflax 8, MeadowGr 4, Scurvygr 3 |
+| Shanghai · 上海 | Walls and rocks of the Yu Garden | Toadflax + Celandine + ButterflyB | 99% | Celandine 10, ButterflyB 8, Toadflax 3, Bittercr 2 |
+| Shanghai · 上海 | Shikumen lanes of Tianzifang | Bittercr + Toadflax + Celandine | 99% | Toadflax 8, Celandine 8, Plantain 4, Bittercr 3 |
+| Shanghai · 上海 | Plane-tree pits, Wukang Road | Bittercr + Celandine + ButterflyB | 98% | Celandine 10, Toadflax 8, Bittercr 3, ButterflyB 2 |
+| Ciudad de México | Paving of the Zócalo | Plantain + Toadflax + WallRue | 99% | Plantain 9, Toadflax 9, WallRue 3, Pearlwort 3 |
+| Ciudad de México | Canal edges of the Xochimilco chinampas | Toadflax + Celandine + ButterflyB | 99% | Celandine 9, ButterflyB 9, Toadflax 3, Bittercr 3 |
+| Ciudad de México | Tree pits on the Paseo de la Reforma | Bittercr + Toadflax + Celandine | 99% | Celandine 10, Toadflax 8, Bittercr 3, MeadowGr 2 |
+| Ciudad de México | Pedregal lava field (UNAM) | Toadflax + Celandine + ButterflyB | 99% | Celandine 9, ButterflyB 9, Toadflax 3, Bittercr 3 |
+
+- IN BEST TEAM (of 24 places): Celandine 19, Toadflax 18, ButterflyB 15, Bittercr 8, Plantain 6, MeadowGr 4, Scurvygr 1, WallRue 1
+- STRONG (>=5 of top-10 teams) at N places: Celandine 17, Toadflax 17, ButterflyB 11, Plantain 4, MeadowGr 2, Bittercr 1
+
+**Reading:** the places *do* change the winner (plantain on the cobbles of the Römerberg, Plaza Mayor, the Bund and the Zócalo; butterfly bush on every wall; wall-rue at the Zócalo; Danish scurvygrass on the Castellana kerb). But **greater celandine and ivy-leaved toadflax are strong almost everywhere** (17 of 24 places each), and the best team wins 96–99 % of its matches. Purslane and procumbent pearlwort never make a best team. Causes: celandine combines HP 20 (bud bank 20), height 3 (rarely shaded), shade tolerance, regrowth and 5 Spread cards; toadflax collects five free resistances plus the wall bonus. → Phase 1 of the roadmap (§6.1 Grime tax, §9 scoring, §10 balance gate) is now the most important next step; the target is no species strong at more than 2/3 of the places.
+
 ---
 
 ## 2. The design problem in one sentence

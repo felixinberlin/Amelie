@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { aggregateMonths, dayLength, energyFor, fetchNasaPowerYear, fromFixture, monthCards, WeatherYearData, WeatherYearFixture } from './weatherYear';
 import { parseFlowering, placeFit, plantMaxHp, playableSpecies, runWatch, speciesProfile, strategyCycle, strategyPoints, trampleLoss } from './watchMode';
 import { CITY_PLACES, placeById } from '../../data/fugenduellPlaces';
+import { FEATURED_CITIES, NAMED_PLACES } from '../../data/fugenduellCities';
 import berlinRaw from '../../data/fugenduellWeather/berlin-2025.json';
 import madridRaw from '../../data/fugenduellWeather/madrid-2025.json';
 
@@ -223,5 +224,49 @@ describe('HP, resistances and death (watch-v2)', () => {
     }
     expect(sawWilted).toBe(true);
     expect(sawDead).toBe(true);
+  });
+});
+
+describe('featured cities and named places', () => {
+  it('has six cities with four distinct named places each, near the city and within valid ranges', () => {
+    expect(FEATURED_CITIES.map(c => c.id)).toEqual(['berlin', 'frankfurt', 'madrid', 'tokyo', 'shanghai', 'mexico']);
+    expect(new Set(NAMED_PLACES.map(p => p.id)).size).toBe(24);
+    for (const city of FEATURED_CITIES) {
+      expect(city.places).toHaveLength(4);
+      const signature = (p: typeof city.places[number]) => JSON.stringify([p.capacity, p.trample, p.heatShift, p.droughtShift, p.wallJoint, !!p.saltSpray, p.profile]);
+      expect(new Set(city.places.map(signature)).size).toBe(4); // four different ecosystems
+      for (const p of city.places) {
+        expect(p.cityId).toBe(city.id);
+        expect(Math.hypot(p.lat - city.lat, p.lon - city.lon)).toBeLessThan(0.3); // same weather grid region
+        expect(p.capacity).toBeGreaterThan(0);
+        Object.values(p.profile).forEach(v => { expect(v).toBeGreaterThanOrEqual(0); expect(v).toBeLessThanOrEqual(9); });
+        expect(CITY_PLACES.map(x => x.id)).toContain(p.baseType);
+        expect(p.verify.length).toBeGreaterThan(0);
+      }
+    }
+  });
+
+  it('every city has a complete offline weather year and every place plays fair', () => {
+    const team = ['plantago-major', 'cymbalaria-muralis', 'buddleja-davidii'];
+    for (const city of FEATURED_CITIES) {
+      const data = fromFixture(city.fixtures[2025]);
+      expect(data.days).toHaveLength(365);
+      const c = monthCards(aggregateMonths(data));
+      expect(c.filter(x => x.weather.missing)).toHaveLength(0);
+      for (const place of city.places) {
+        const r = runWatch([team, team], c, data.lat, 'en', place);
+        expect(r.winner).toBe('draw');
+        r.months.forEach(m => expect(m.sideShoots[0] + m.sideShoots[1]).toBeLessThanOrEqual(place.capacity));
+      }
+    }
+  });
+
+  it('sea spray salts in every month, not only in winter', () => {
+    const odaiba = NAMED_PLACES.find(p => p.id === 'tyo-odaiba')!;
+    const tokyo = FEATURED_CITIES.find(c => c.id === 'tokyo')!;
+    const data = fromFixture(tokyo.fixtures[2025]);
+    const r = runWatch([['asplenium-ruta-muraria', 'plantago-major', 'poa-annua'], ['cardamine-hirsuta', 'sagina-procumbens', 'portulaca-oleracea']], monthCards(aggregateMonths(data)), data.lat, 'en', odaiba);
+    const saltedMonths = r.months.filter(m => m.lines.some(l => l.startsWith('Wall-Rue Fern: weather') && l.includes('salt 1'))).length;
+    expect(saltedMonths).toBeGreaterThan(4);
   });
 });

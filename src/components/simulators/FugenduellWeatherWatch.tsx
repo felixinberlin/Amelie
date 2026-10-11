@@ -1,32 +1,13 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { Language } from '../../types';
-import { CITY_PLACES, placeById } from '../../data/fugenduellPlaces';
-import { aggregateMonths, fetchNasaPowerYear, fromFixture, MonthCard, monthCards, WeatherYearData, WeatherYearFixture } from '../../engine/fugenduell/weatherYear';
+import { CITY_PLACES, CityPlace, placeById } from '../../data/fugenduellPlaces';
+import { FEATURED_CITIES, NAMED_PLACES, NamedPlace } from '../../data/fugenduellCities';
+import { aggregateMonths, fetchNasaPowerYear, fromFixture, MonthCard, monthCards, WeatherYearData } from '../../engine/fugenduell/weatherYear';
 import { placeFit, playableSpecies, runWatch, SpeciesProfile, trampleLoss, WatchResult } from '../../engine/fugenduell/watchMode';
-import berlin2025 from '../../data/fugenduellWeather/berlin-2025.json';
-import madrid2025 from '../../data/fugenduellWeather/madrid-2025.json';
 
-const CITIES = [
-  { id: 'berlin', name: 'Berlin', lat: 52.52, lon: 13.41 },
-  { id: 'madrid', name: 'Madrid', lat: 40.42, lon: -3.70 },
-  { id: 'sevilla', name: 'Sevilla', lat: 37.39, lon: -5.98 },
-  { id: 'barcelona', name: 'Barcelona', lat: 41.39, lon: 2.17 },
-  { id: 'paris', name: 'Paris', lat: 48.86, lon: 2.35 },
-  { id: 'london', name: 'London', lat: 51.51, lon: -0.13 },
-  { id: 'wien', name: 'Wien / Vienna', lat: 48.21, lon: 16.37 },
-  { id: 'roma', name: 'Roma', lat: 41.9, lon: 12.5 },
-  { id: 'stockholm', name: 'Stockholm', lat: 59.33, lon: 18.07 },
-  { id: 'reykjavik', name: 'Reykjavík', lat: 64.15, lon: -21.94 },
-  { id: 'cairo', name: 'Cairo', lat: 30.04, lon: 31.24 },
-  { id: 'delhi', name: 'Delhi', lat: 28.61, lon: 77.21 },
-  { id: 'tokyo', name: 'Tokyo', lat: 35.68, lon: 139.69 },
-  { id: 'singapore', name: 'Singapore', lat: 1.35, lon: 103.82 },
-  { id: 'newyork', name: 'New York', lat: 40.71, lon: -74.01 },
-  { id: 'mexico', name: 'Ciudad de México', lat: 19.43, lon: -99.13 },
-  { id: 'buenosaires', name: 'Buenos Aires', lat: -34.6, lon: -58.38 },
-  { id: 'sydney', name: 'Sydney', lat: -33.87, lon: 151.21 },
-];
-const FIXTURES: Record<string, WeatherYearFixture> = { 'berlin-2025': berlin2025 as WeatherYearFixture, 'madrid-2025': madrid2025 as WeatherYearFixture };
+/** A named place of a featured city, or a generic place type (for custom coordinates). */
+const resolvePlace = (id: string): CityPlace | NamedPlace => NAMED_PLACES.find(p => p.id === id) ?? placeById(id);
+const isNamed = (p: CityPlace | NamedPlace): p is NamedPlace => 'cityId' in p;
 const LAST_YEAR = 2025; // plant year March 2025 – February 2026 is the latest complete one
 const YEARS = Array.from({ length: LAST_YEAR - 1981 + 1 }, (_, i) => LAST_YEAR - i);
 const TEAM_COLOURS = [['#166534', '#22c55e', '#86efac'], ['#9f1239', '#f43f5e', '#fda4af']];
@@ -44,7 +25,7 @@ export function FugenduellWeatherWatch({ lang }: { lang: Language }) {
   const [cityId, setCityId] = useState('berlin');
   const [custom, setCustom] = useState({ lat: '52.52', lon: '13.41' });
   const [year, setYear] = useState(LAST_YEAR);
-  const [placeId, setPlaceId] = useState('gehwegfuge');
+  const [placeId, setPlaceId] = useState('berlin-kastanienallee');
   const [teamA, setTeamA] = useState(['plantago-major', 'poa-annua', 'sagina-procumbens']);
   const [teamB, setTeamB] = useState(['buddleja-davidii', 'chelidonium-majus', 'portulaca-oleracea']);
   const [status, setStatus] = useState<'idle' | 'loading' | 'error'>('idle');
@@ -63,21 +44,21 @@ export function FugenduellWeatherWatch({ lang }: { lang: Language }) {
   const teamValid = (team: string[]) => new Set(team).size === 3;
   const start = async () => {
     if (!teamValid(teamA) || !teamValid(teamB)) { setError(t('Jedes Team braucht drei verschiedene Arten.', 'Each team needs three different species.')); setStatus('error'); return; }
-    const preset = CITIES.find(c => c.id === cityId);
-    const city = preset ?? { id: 'custom', name: `${custom.lat}, ${custom.lon}`, lat: Number(custom.lat), lon: Number(custom.lon) };
+    const preset = FEATURED_CITIES.find(c => c.id === cityId);
+    const city = preset ? { id: preset.id, name: preset.name, lat: preset.lat, lon: preset.lon } : { id: 'custom', name: `${custom.lat}, ${custom.lon}`, lat: Number(custom.lat), lon: Number(custom.lon) };
     setStatus('loading'); setError(''); setPlaying(false);
     try {
-      const fixture = FIXTURES[`${city.id}-${year}`];
+      const fixture = preset?.fixtures[year];
       const data = fixture ? fromFixture(fixture) : await fetchNasaPowerYear(city, year);
       const months = aggregateMonths(data);
       if (months.filter(m => m.missing).length > 2) throw new Error('too many missing months');
       const cards = monthCards(months);
       const teams: [string[], string[]] = [teamA, teamB];
-      const result = runWatch(teams, cards, data.lat, engineLang, placeById(placeId));
+      const result = runWatch(teams, cards, data.lat, engineLang, resolvePlace(placeId));
       setGame({ data, cards, result, teams, placeId }); setStep(0); setStatus('idle');
     } catch {
       setStatus('error');
-      setError(t('Das Wetterjahr konnte nicht geladen werden (Netz, Koordinaten oder Jahr). Berlin und Madrid 2025 funktionieren auch offline.', 'Could not load the weather year (network, coordinates or year). Berlin and Madrid 2025 also work offline.'));
+      setError(t('Das Wetterjahr konnte nicht geladen werden (Netz, Koordinaten oder Jahr). Für 2025 funktionieren alle sechs Städte auch offline.', 'Could not load the weather year (network, coordinates or year). For 2025 all six cities also work offline.'));
     }
   };
 
@@ -91,7 +72,10 @@ export function FugenduellWeatherWatch({ lang }: { lang: Language }) {
     </label>
   ));
 
-  const place = placeById(game?.placeId ?? placeId);
+  const place = resolvePlace(game?.placeId ?? placeId);
+  const chosen = resolvePlace(placeId);
+  const cityPlaces: (CityPlace | NamedPlace)[] = FEATURED_CITIES.find(c => c.id === cityId)?.places ?? CITY_PLACES;
+  const label = (p: CityPlace) => de ? p.labelDe : lang === 'es' ? p.labelEs : p.labelEn;
   const month = game && step > 0 ? game.result.months[step - 1] : null;
   const shootsAt = (side: 0 | 1, i: number) => (month ? month.shoots[side][i] : 2);
   const seedsAt = (side: 0 | 1, i: number) => (month ? month.seeds[side][i] : 2);
@@ -132,8 +116,8 @@ export function FugenduellWeatherWatch({ lang }: { lang: Language }) {
       <div className="rounded-xl border bg-white p-4 space-y-4">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           <label className="block text-sm">{t('Stadt', 'City')}
-            <select className="mt-1 w-full min-h-11 rounded-lg border p-2 text-base" value={cityId} onChange={e => setCityId(e.target.value)}>
-              {CITIES.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
+            <select className="mt-1 w-full min-h-11 rounded-lg border p-2 text-base" value={cityId} onChange={e => { const id = e.target.value; setCityId(id); setPlaceId((FEATURED_CITIES.find(c => c.id === id)?.places ?? CITY_PLACES)[0].id); }}>
+              {FEATURED_CITIES.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
               <option value="custom">{t('Eigene Koordinaten …', 'Custom coordinates …')}</option>
             </select>
           </label>
@@ -144,7 +128,7 @@ export function FugenduellWeatherWatch({ lang }: { lang: Language }) {
           </label>
           <label className="block text-sm">{t('Ort in der Stadt', 'Place in the city')}
             <select className="mt-1 w-full min-h-11 rounded-lg border p-2 text-base" value={placeId} onChange={e => setPlaceId(e.target.value)}>
-              {CITY_PLACES.map(p => <option key={p.id} value={p.id}>{de ? p.labelDe : lang === 'es' ? p.labelEs : p.labelEn}</option>)}
+              {cityPlaces.map(p => <option key={p.id} value={p.id}>{label(p)}</option>)}
             </select>
           </label>
         </div>
@@ -152,7 +136,12 @@ export function FugenduellWeatherWatch({ lang }: { lang: Language }) {
           <label className="block text-sm">{t('Breite', 'Latitude')}<input inputMode="decimal" className="mt-1 w-full min-h-11 rounded-lg border p-2 text-base" value={custom.lat} onChange={e => setCustom({ ...custom, lat: e.target.value })} /></label>
           <label className="block text-sm">{t('Länge', 'Longitude')}<input inputMode="decimal" className="mt-1 w-full min-h-11 rounded-lg border p-2 text-base" value={custom.lon} onChange={e => setCustom({ ...custom, lon: e.target.value })} /></label>
         </div>}
-        <p className="text-sm text-stone-600">{de ? placeById(placeId).descriptionDe : placeById(placeId).descriptionEn} {t('Platz', 'Space')}: {placeById(placeId).capacity}.</p>
+        <div className="rounded-lg bg-stone-50 p-3 text-sm space-y-1">
+          {isNamed(chosen) && <p className="font-bold">{chosen.nameLocal} · <span className="font-normal">{de ? chosen.ecosystemDe : chosen.ecosystemEn}</span></p>}
+          <p>{de ? chosen.descriptionDe : chosen.descriptionEn}</p>
+          <p className="text-stone-600">{t('Platz', 'Space')} {chosen.capacity} · {t('Tritt', 'trampling')} {chosen.trample} · {t('Reinigung', 'cleaning')} {chosen.maintenanceMonths.length ? chosen.maintenanceMonths.map(m => monthName(m)).join(', ') : t('nie', 'never')} · {t('Hitze', 'heat')} {chosen.heatShift > 0 ? '+' : ''}{chosen.heatShift} · {t('Dürre', 'drought')} {chosen.droughtShift > 0 ? '+' : ''}{chosen.droughtShift}{chosen.winterSalt ? ` · ${t('Streusalz im Winter', 'road salt in winter')}` : ''}{chosen.saltSpray ? ` · ${t('Salzgischt ganzjährig', 'salt spray all year')}` : ''}{chosen.wallJoint ? ` · ${t('Mauer', 'wall')}` : ''} · L{chosen.profile.L} F{chosen.profile.F} R{chosen.profile.R} N{chosen.profile.N} S{chosen.profile.S}</p>
+          {isNamed(chosen) && <p className="text-xs text-stone-500">📍 <a className="underline" href={`https://www.openstreetmap.org/?mlat=${chosen.lat}&mlon=${chosen.lon}#map=17/${chosen.lat}/${chosen.lon}`} target="_blank" rel="noopener noreferrer">{chosen.lat.toFixed(4)}, {chosen.lon.toFixed(4)}</a> · {t('Ortswerte sind Spielannahmen. Noch zu prüfen', 'Place values are game assumptions. Still to verify')}: {chosen.verify.join('; ')}</p>}
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <fieldset className="space-y-2"><legend className="font-bold text-emerald-800">{t('Team Grün', 'Team green')}</legend>{select(teamA, setTeamA, 0)}</fieldset>
           <fieldset className="space-y-2"><legend className="font-bold text-rose-800">{t('Team Rot', 'Team red')}</legend>{select(teamB, setTeamB, 1)}</fieldset>

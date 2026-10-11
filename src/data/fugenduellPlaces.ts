@@ -17,6 +17,7 @@ export interface CityPlace {
   heatShift: number; // +1 dark asphalt or gravel, −1 shade
   droughtShift: number; // +1 little soil
   winterSalt: boolean; // de-icing salt in cold months
+  saltSpray?: boolean; // sea spray: salt in every month (coastal places)
   wallJoint: boolean;
   profile: { L: number; F: number; R: number; N: number; S: number };
 }

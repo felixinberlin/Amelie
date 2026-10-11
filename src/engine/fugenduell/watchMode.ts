@@ -289,7 +289,7 @@ export function runWatch(sides: [string[], string[]], cards: MonthCard[], lat: n
     // 5. Weather events, changed by the place, absorbed by hardening.
     const heatBase = place ? (card.heat > 0 ? Math.max(0, card.heat + place.heatShift) : card.warm && place.heatShift > 0 ? place.heatShift : 0) : card.heat;
     const droughtBase = place && card.drought > 0 ? Math.max(0, card.drought + place.droughtShift) : card.drought;
-    const salt = place?.winterSalt && card.cold ? 1 : 0;
+    const salt = (place?.winterSalt && card.cold) || place?.saltSpray ? 1 : 0;
     if (heatBase || droughtBase || card.frost || salt) {
       for (const s of plants) {
         const p = prof(s);
