@@ -8,6 +8,7 @@ import {
   SealStyle,
   SealShape,
   SealGlyph,
+  BrushTipShape,
 } from './types';
 import { KubelkaMunkLUT, calculateKMReflectance } from './kubelka-munk';
 
@@ -107,6 +108,102 @@ function sum(a: Float32Array): number {
   let t = 0;
   for (let i = 0; i < a.length; i++) t += a[i];
   return t;
+}
+
+// ---------------------------------------------------------------------------
+// Brush Tip Footprint Geometries (Pinsel-Formen / 毛笔与画笔形制)
+// ---------------------------------------------------------------------------
+
+/**
+ * Computes the normalized radial/shape falloff [0, 1] for a brush tip footprint.
+ * Supports round, flat chisel (Paibi 排笔), slanted chisel (Cefeng 侧锋),
+ * multi-bristle split fan (Kuabi 散笔), and tapered sword/leaf (Bambusblatt).
+ */
+export function computeBrushFootprint(
+  dx: number,
+  dy: number,
+  radius: number,
+  tipShape: BrushTipShape = 'round',
+  angle: number = 0,
+  bristleSplitting: number = 0
+): number {
+  if (radius <= 0) return 0;
+
+  // Rotate relative coordinates into brush local coordinate space
+  const cosA = Math.cos(angle);
+  const sinA = Math.sin(angle);
+  const u = dx * cosA + dy * sinA;
+  const v = -dx * sinA + dy * cosA;
+
+  let baseFalloff = 0;
+
+  if (tipShape === 'flat') {
+    // Chisel / Ribbon brush (Paibi 排笔): wide aspect ratio (1 : 0.35)
+    const w = radius;
+    const h = radius * 0.35;
+    const absU = Math.abs(u);
+    const absV = Math.abs(v);
+    if (absU > w || absV > h) return 0;
+    const falloffU = 1 - (absU / w) * (absU / w);
+    const falloffV = 1 - (absV / h) * (absV / h);
+    baseFalloff = Math.max(0, falloffU * falloffV);
+  } else if (tipShape === 'slanted') {
+    // Asymmetric slanted chisel (Cefeng 侧锋): sharp cutting edge with softer feathering flank
+    const ru = radius;
+    const rv = radius * 0.55;
+    const dNormSq = (u * u) / (ru * ru) + (v * v) / (rv * rv);
+    if (dNormSq > 1.0) return 0;
+    const dNorm = Math.sqrt(dNormSq);
+    // Asymmetric heel-to-toe pressure gradient along u-axis
+    const asym = Math.max(0.2, 0.5 + 0.5 * (u / ru));
+    baseFalloff = Math.max(0, (1 - dNorm) * asym);
+  } else if (tipShape === 'fan') {
+    // Multi-tuft split bristles (Kuabi 散笔 / 抓笔): 4 distinct hair bundles
+    const tuftCount = 4;
+    const tuftR = radius * 0.28;
+    const tuftRSq = tuftR * tuftR;
+    let maxFalloff = 0;
+
+    for (let k = 0; k < tuftCount; k++) {
+      const uCenter = radius * (-0.75 + 0.5 * k);
+      const du = u - uCenter;
+      const dv = v * 1.35;
+      const distSq = du * du + dv * dv;
+      if (distSq < tuftRSq) {
+        const falloff = 1 - Math.sqrt(distSq) / tuftR;
+        if (falloff > maxFalloff) maxFalloff = falloff;
+      }
+    }
+    baseFalloff = maxFalloff;
+  } else if (tipShape === 'dagger') {
+    // Tapered leaf / rigger brush: aerodynamic teardrop
+    if (u < -radius || u > radius) return 0;
+    const t = (u + radius) / (2 * radius); // 0 at tail, 1 at tip
+    const halfWidth = radius * 0.65 * Math.sin(t * Math.PI);
+    const absV = Math.abs(v);
+    if (absV > halfWidth || halfWidth <= 0) return 0;
+    const falloffV = 1 - absV / halfWidth;
+    const falloffU = Math.sin(t * Math.PI);
+    baseFalloff = Math.max(0, falloffV * falloffU);
+  } else {
+    // Default: 'round' (isotropic radial disc)
+    const dSq = u * u + v * v;
+    const rSq = radius * radius;
+    if (dSq > rSq) return 0;
+    baseFalloff = Math.max(0, 1 - Math.sqrt(dSq) / radius);
+  }
+
+  if (baseFalloff <= 0) return 0;
+
+  // Material micro-grooves & split bristle hair fluting:
+  // Stiff coarse materials (hog, horse) produce longitudinal micro-striations
+  if (bristleSplitting > 0.15) {
+    const hairCoord = tipShape === 'flat' || tipShape === 'fan' ? u : v;
+    const groove = 1.0 - bristleSplitting * 0.35 * Math.abs(Math.sin(hairCoord * 1.5));
+    return Math.max(0, baseFalloff * groove);
+  }
+
+  return baseFalloff;
 }
 
 export class WetInkSimulation {
@@ -335,6 +432,56 @@ export class WetInkSimulation {
     this.totalDepositedPigment = sum(this.pigmentDeposited);
   }
 
+  /**
+   * Expressive capillary bleed action (Yunran 晕染 / Po Mo 破墨):
+   * Relaxes the capillary threshold across damp cellulose fibers, accelerating
+   * outward blooming tentacles along paper grain.
+   */
+  pulseBleed(strength: number = 1.8) {
+    const curWater = sum(this.waterFilm) + sum(this.fiberMoisture);
+    if (!this.isActive && curWater === 0) return;
+
+    // 1. Soak surface water film into cellulose fibers to feed capillary blooming
+    const cap = this.fiberCapacity;
+    const sieve = WET_INK_PHYSICS.pigmentSieve * (1 - this.pigmentConfig.granulationFactor * 0.5);
+    for (let i = 0; i < this.size; i++) {
+      const hi = this.waterFilm[i];
+      if (hi <= DRY_EPS) continue;
+      const room = cap[i] - this.fiberMoisture[i];
+      if (room <= 0) continue;
+      const q = Math.min(hi, room * 0.85);
+      const frac = q / hi;
+      const pq = this.pigmentSuspended[i] * frac * sieve;
+      this.waterFilm[i] -= q;
+      this.fiberMoisture[i] += q;
+      this.pigmentSuspended[i] -= pq;
+      this.pigmentFiber[i] += pq;
+      const i3 = i * 3;
+      const optFrac = frac * sieve;
+      for (let c = 0; c < 3; c++) {
+        const dK = this.pigmentSuspendedK[i3 + c] * optFrac;
+        const dS = this.pigmentSuspendedS[i3 + c] * optFrac;
+        this.pigmentSuspendedK[i3 + c] -= dK;
+        this.pigmentSuspendedS[i3 + c] -= dS;
+        this.pigmentFiberK[i3 + c] += dK;
+        this.pigmentFiberS[i3 + c] += dS;
+      }
+    }
+
+    this.rebuildTiles();
+    this.dilateTiles();
+
+    const threshold = Math.max(0.015, (this.params.capillaryThreshold ?? 0.14) * 0.25);
+    const kappa = WET_INK_PHYSICS.kappaScale * (this.params.capillarySpeed ?? 1.2) * strength;
+    const iters = 6;
+    for (let it = 0; it < iters; it++) {
+      this.capillaryPass(1, 1, this.width - 2, this.height - 2, kappa, threshold, (it & 1) === 1);
+      this.dilateTiles();
+    }
+    this.totalWater = sum(this.waterFilm) + sum(this.fiberMoisture);
+    this.isActive = this.totalWater > 0;
+  }
+
   /** Conservation check: how far the pools drift from what went in. */
   massReport(): WetInkMassReport {
     const waterPresent = sum(this.waterFilm) + sum(this.fiberMoisture);
@@ -523,7 +670,10 @@ export class WetInkSimulation {
     waterAmount: number,
     pigmentAmount: number,
     dryBrushFilter: boolean = false,
-    config: WetInkPigmentConfig = this.pigmentConfig
+    config: WetInkPigmentConfig = this.pigmentConfig,
+    tipShape: BrushTipShape = 'round',
+    angle: number = 0,
+    bristleSplitting: number = 0
   ) {
     // Keep the stamp one cell away from the border: border cells are never simulated.
     const minX = Math.max(1, Math.floor(centerX - radius));
@@ -533,17 +683,16 @@ export class WetInkSimulation {
     if (minX > maxX || minY > maxY || radius <= 0) return;
 
     this.growActiveBox(minX, minY, maxX, maxY);
-    const rSq = radius * radius;
     const density = config.density;
 
     for (let y = minY; y <= maxY; y++) {
       const dy = y - centerY;
       for (let x = minX; x <= maxX; x++) {
         const dx = x - centerX;
-        const dSq = dx * dx + dy * dy;
-        if (dSq > rSq) continue;
+        const falloff = computeBrushFootprint(dx, dy, radius, tipShape, angle, bristleSplitting);
+        if (falloff <= 0) continue;
+
         const idx = y * this.width + x;
-        const falloff = Math.max(0, 1 - Math.sqrt(dSq) / radius);
 
         // Dry brush: bristles skip over paper peaks
         if (dryBrushFilter && this.paper.heightMap[idx] > 0.62) continue;
@@ -961,7 +1110,10 @@ export class WetInkSimulation {
     const threshold = params.enableCapillaryThreshold ? params.capillaryThreshold : 0.0;
     const kappa = P.kappaScale * params.capillarySpeed * pigment.bleedSpeed * k;
     this.dilateTiles();
-    for (let it = 0; it < P.capillaryIterations; it++) {
+    // Allow higher bleed speeds to perform additional capillary wicking sweeps
+    const extraIters = Math.min(4, Math.max(0, Math.floor((params.capillarySpeed - 1.2) * 1.5)));
+    const iters = P.capillaryIterations + extraIters;
+    for (let it = 0; it < iters; it++) {
       this.capillaryPass(x0, y0, x1, y1, kappa, threshold, (it & 1) === 1);
     }
 
