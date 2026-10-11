@@ -1,0 +1,8 @@
+{
+  "batch_id": "amelie-lab-review-umsetzungsplan-register-2251d190445809eb",
+  "state": "needs_research",
+  "worker": "",
+  "lease_until": "",
+  "note": "Bestandsabgleich 11.10.2026: bib find findet bereits Dose 05-dosen/umsetzungsplan-register.md und bestehendes Prüfprotokoll; als Nachprüfung behandeln, keine neue Dose anlegen. F1/F2 stammen aus kommerziellem Kommentar zu einem Gesetzentwurf, F7 quote_status=not_found; Blind Review nennt fehlende Primärbelege. Nächster Schritt: geltenden §9 EnEfG und aktuellen BAFA-Leitfaden direkt lesen, Entwurf/Fassung trennen, bestehendes Dossier gegen konkrete Änderungen prüfen und Registersuche belegen. Lab-Quote-Status ist keine Amélie-Freigabe; bisheriges Urteil bleibt unverändert.",
+  "updated_at": "2026-10-11T07:53:44.418Z"
+}
