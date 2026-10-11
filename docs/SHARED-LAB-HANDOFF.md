@@ -45,6 +45,11 @@ IAB primary page read for the Jobcenter evidence check: https://iab-forum.de/das
 
 ## Publication checkpoint
 
-Both complete branches are committed locally: `lab/import-studio-intake-20261011` (all receipts) and `lab/triage-studio-intake-20261011` (two processing notes and documentation). GitHub received the first 20 original Lab commits through `4e78e6d`; subsequent publication attempts returned HTTP 408. No complete import PR has been created or merged. Do not treat the partially uploaded branch as the complete 72-record handoff. Resume by pushing the complete import branch, then create/resume its PR; publish the triage branch separately afterward.
+Both complete branches are committed and pushed to GitHub:
+
+- [PR #192: immutable receipt import](https://github.com/felixinberlin/Amelie/pull/192), branch `lab/import-studio-intake-20261011`, complete import head `83d599bd8c09cfe80c8e00b036f3e88456c75f4f`.
+- [PR #193: processing notes, inventory and handoff](https://github.com/felixinberlin/Amelie/pull/193), branch `lab/triage-studio-intake-20261011`, stacked on the import branch.
+
+Publication resumed after the connection recovered; the earlier partial 20-commit upload is now replaced by the full import. Check current PR state and CI before merging. Merge #192 first, then retarget #193 to `main`, validate its final diff and merge it. Do not recreate these PRs or the producer round. Processing after import remains incomplete: two batches need research and 70 are received.
 
 See `docs/lab-github-transfer.md` for the proposed GitHub-hosted transfer workflow.
