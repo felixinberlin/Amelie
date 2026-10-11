@@ -3253,6 +3253,86 @@
       "funDe": "Bekämpfungsstrategien spielen und den Bestand in drei Jahren wachsen sehen.",
       "funEn": "Play control strategies and watch the stand grow over three years.",
       "note": "Reviewer-Scorecard 30.09.2026"
+    },
+    "flurnamen-verortungsspiel": {
+      "v": [
+        3,
+        4,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "fun": 4,
+      "funSource": "exploration",
+      "funDe": "Historische Kiez- und Flurnamen auf alten Karten zu suchen fühlt sich wie eine Schatzsuche im Heimatort an.",
+      "funEn": "Hunting old field names on vintage maps feels like an archaeological treasure hunt in one's home turf.",
+      "note": "Heimatgedächtnis-Runde (Needs Research 22/35)"
+    },
+    "ortsneckname": {
+      "v": [
+        3,
+        4,
+        3,
+        3,
+        3,
+        2,
+        3
+      ],
+      "fun": 4,
+      "funSource": "humor",
+      "funDe": "Die skurrilen Spottnamen von Nachbardörfern zu erraten stiftet sofort Gesprächsstoff und Lacher in Runden.",
+      "funEn": "Guessing the absurd nicknames of rival towns sparks instant conversation and laughter in groups.",
+      "note": "Heimatgedächtnis-Runde (Needs Research 21/35)"
+    },
+    "abzaehlreim": {
+      "v": [
+        3,
+        4,
+        3,
+        3,
+        3,
+        2,
+        3
+      ],
+      "fun": 4,
+      "funSource": "nostalgia",
+      "funDe": "Kindheitsreime zu vergleichen weckt Nostalgie und zeigt überraschende Dialektgrenzen auf dem Schulhof.",
+      "funEn": "Comparing childhood counting rhymes triggers nostalgia and reveals surprising dialect borders.",
+      "note": "Heimatgedächtnis-Runde (Needs Research 21/35)"
+    },
+    "wetterregel-liga": {
+      "v": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        2,
+        2
+      ],
+      "fun": 4,
+      "funSource": "competition",
+      "funDe": "Wetterregeln gegen echte DWD-Daten antreten zu lassen ist eine packende Fantasy-Liga gegen den Zufall.",
+      "funEn": "Pitting folk weather rules against real DWD stations creates a gripping fantasy league against randomness.",
+      "note": "Heimatgedächtnis-Runde (Needs Research 19/35)"
+    },
+    "pegel-wette": {
+      "v": [
+        3,
+        3,
+        2,
+        3,
+        3,
+        2,
+        2
+      ],
+      "fun": 4,
+      "funSource": "stakes",
+      "funDe": "Den Scheitelpegel eines Hochwassers vorherzusagen erzeugt echten Nervenkitzel mit Live-Daten.",
+      "funEn": "Predicting crest levels during a flood crest creates genuine excitement with live open hydrological data.",
+      "note": "Heimatgedächtnis-Runde (Needs Research 18/35)"
     }
   }
 }

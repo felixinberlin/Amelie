@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { Gamepad2, Gift, Search, Sparkles, ArrowRight, Puzzle, Play, Lightbulb } from 'lucide-react';
+import { Gamepad2, Gift, Search, Sparkles, ArrowRight, Puzzle, Play, Lightbulb, Map, CloudSun, MapPin } from 'lucide-react';
 import { CandidateIdea, DoseItem, Language } from '../types';
 import { GAME_IDEAS } from '../data/ideas/games';
 import { GAME_DOSE_IDS } from '../data/pipeline';
@@ -9,6 +9,10 @@ import { TravelingGnomeGame } from './TravelingGnomeGame';
 import { PhotoboothAlbumGame } from './PhotoboothAlbumGame';
 import { HofLichterGame } from './HofLichterGame';
 import { CremeBruleeGame } from './CremeBruleeGame';
+import { CanalSaintMartinGame } from './CanalSaintMartinGame';
+import { FlurnamenGameModal } from './FlurnamenGameModal';
+import { BauernregelnGameModal } from './BauernregelnGameModal';
+import { OrtsnecknamenGameModal } from './OrtsnecknamenGameModal';
 
 interface GamesViewProps {
   lang: Language;
@@ -16,7 +20,7 @@ interface GamesViewProps {
   onOpenDose: (doseId: string) => void;
 }
 
-type PlayableId = 'hof' | 'grain' | 'gnome' | 'photobooth' | 'cremebrulee';
+type PlayableId = 'canal' | 'hof' | 'grain' | 'gnome' | 'photobooth' | 'cremebrulee';
 
 const PLAYABLES: Array<{
   id: PlayableId;
@@ -26,6 +30,7 @@ const PLAYABLES: Array<{
   es: string;
   Component: React.FC<{ lang: Language }>;
 }> = [
+  { id: 'canal', emoji: '🌊', de: 'Steinehüpfen auf dem Canal Saint-Martin', en: 'Stone Skipping on the Canal Saint-Martin', es: 'Rebotar piedras en el Canal Saint-Martin', Component: CanalSaintMartinGame },
   { id: 'hof', emoji: '🏮', de: 'Lichter im Hof', en: 'Lights in the Courtyard', es: 'Luces en el patio', Component: HofLichterGame },
   { id: 'cremebrulee', emoji: '🍮', de: 'Die perfekte Zuckerkruste (Crème Brûlée)', en: 'The Perfect Caramelized Crust (Crème Brûlée)', es: 'La costra de azúcar perfecta (Crème Brûlée)', Component: CremeBruleeGame },
   { id: 'grain', emoji: '🌾', de: 'Hand im Getreidesack', en: 'Hand in the Grain Sack', es: 'Mano en el saco de grano', Component: GrainSackZenGame },
@@ -39,7 +44,31 @@ export { PLAYABLE_GAME_COUNT } from '../data/playableGames';
 
 export const GamesView: React.FC<GamesViewProps> = ({ lang, dosen, onOpenDose }) => {
   const [query, setQuery] = useState('');
-  const [activePlayable, setActivePlayable] = useState<PlayableId | null>('hof');
+  const [showFlurnamenModal, setShowFlurnamenModal] = useState(false);
+  const [showBauernregelnModal, setShowBauernregelnModal] = useState(false);
+  const [showOrtsnecknamenModal, setShowOrtsnecknamenModal] = useState(false);
+  const [activePlayable, setActivePlayable] = useState<PlayableId | null>(() => {
+    if (typeof window !== 'undefined') {
+      const match = window.location.hash.toLowerCase().match(/#game=([a-z0-9_-]+)/);
+      if (match && PLAYABLES.some((p) => p.id === match[1])) {
+        return match[1] as PlayableId;
+      }
+    }
+    return 'canal';
+  });
+
+  const handleSelectPlayable = (id: PlayableId) => {
+    const next = activePlayable === id ? null : id;
+    setActivePlayable(next);
+    if (typeof window !== 'undefined') {
+      if (next) {
+        window.history.replaceState(null, '', `#game=${next}`);
+      } else {
+        window.history.replaceState(null, '', window.location.pathname + window.location.search);
+      }
+    }
+  };
+
   const q = query.trim().toLowerCase();
 
   const gameDosen = useMemo(
@@ -114,7 +143,7 @@ export const GamesView: React.FC<GamesViewProps> = ({ lang, dosen, onOpenDose })
             {shownPlayables.map((p) => (
               <button
                 key={p.id}
-                onClick={() => setActivePlayable(activePlayable === p.id ? null : p.id)}
+                onClick={() => handleSelectPlayable(p.id)}
                 className={`px-3.5 py-2 rounded-xl text-sm font-medium border transition-all ${
                   activePlayable === p.id
                     ? 'bg-[var(--m-accent)] text-white border-[var(--m-accent-strong)] shadow-xs'
@@ -166,10 +195,20 @@ export const GamesView: React.FC<GamesViewProps> = ({ lang, dosen, onOpenDose })
 
       {shownIdeas.length > 0 && (
         <section className="space-y-3" aria-labelledby="games-ideas-heading">
-          <h2 id="games-ideas-heading" className="flex items-center gap-2 text-lg font-serif font-bold text-stone-900">
-            <Lightbulb className="w-4 h-4 text-[var(--m-accent)]" />
-            {pick(lang, 'Spielideen', 'Game ideas', 'Ideas de juego')} ({shownIdeas.length})
-          </h2>
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <h2 id="games-ideas-heading" className="flex items-center gap-2 text-lg font-serif font-bold text-stone-900">
+              <Lightbulb className="w-4 h-4 text-[var(--m-accent)]" />
+              {pick(lang, 'Spielideen', 'Game ideas', 'Ideas de juego')} ({shownIdeas.length})
+            </h2>
+          </div>
+          <div className="p-3.5 rounded-xl bg-amber-50/70 border border-amber-200/80 text-xs text-stone-700 leading-relaxed">
+            {pick(
+              lang,
+              '💡 Für freie Spiele-Brainstorms gibt es etablierte Foren und Communities (r/gameideas, itch.io). Amélie konzentriert sich auf CC0 Gemeinwohl-, Natur-, Mundart- und Bildungs-Mechaniken mit verifizierter offener Datenbasis (z. B. DWD, PEGELONLINE, Kataster).',
+              '💡 For general video game brainstorming, vibrant communities already exist (r/gameideas, itch.io). Amélie focuses on CC0 civic, nature, dialect, and educational mechanics grounded in verified open data (e.g. DWD, PEGELONLINE, open cadastre).',
+              '💡 Para lluvia de ideas de videojuegos existen comunidades consolidadas (r/gameideas, itch.io). Amélie se centra en mecánicas de bien común, naturaleza y educación basadas en datos abiertos verificados.'
+            )}
+          </div>
           <div className="grid gap-4 md:grid-cols-2">
             {shownIdeas.map((i) => {
               const t = ideaText(i);
@@ -207,6 +246,48 @@ export const GamesView: React.FC<GamesViewProps> = ({ lang, dosen, onOpenDose })
                       {pick(lang, 'Dose öffnen', 'Open Tin', 'Abrir lata')}
                     </button>
                   )}
+                  {i.id === 'flurnamen-verortungsspiel' && (
+                    <button
+                      onClick={() => setShowFlurnamenModal(true)}
+                      className="mt-auto pt-2 self-start inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-100/90 hover:bg-amber-200 text-amber-900 border border-amber-300 text-xs font-semibold shadow-2xs transition-all"
+                    >
+                      <Map className="w-3.5 h-3.5 text-amber-700" />
+                      {pick(
+                        lang,
+                        '🗺️ Prototyp testen (5 Flurnamen verorten)',
+                        '🗺️ Test Prototype (Locate 5 parcels)',
+                        '🗺️ Probar prototipo (Ubicar 5 parcelas)'
+                      )}
+                    </button>
+                  )}
+                  {i.id === 'wetterregel-liga' && (
+                    <button
+                      onClick={() => setShowBauernregelnModal(true)}
+                      className="mt-auto pt-2 self-start inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-sky-100/90 hover:bg-sky-200 text-sky-900 border border-sky-300 text-xs font-semibold shadow-2xs transition-all"
+                    >
+                      <CloudSun className="w-3.5 h-3.5 text-sky-700" />
+                      {pick(
+                        lang,
+                        '🌦️ Prototyp testen (Bauernregeln vs. DWD)',
+                        '🌦️ Test Prototype (Folk Rules vs. DWD)',
+                        '🌦️ Probar prototipo (Refranes vs. DWD)'
+                      )}
+                    </button>
+                  )}
+                  {i.id === 'ortsneckname' && (
+                    <button
+                      onClick={() => setShowOrtsnecknamenModal(true)}
+                      className="mt-auto pt-2 self-start inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-100/90 hover:bg-amber-200 text-amber-950 border border-amber-400 text-xs font-semibold shadow-2xs transition-all"
+                    >
+                      <MapPin className="w-3.5 h-3.5 text-amber-800" />
+                      {pick(
+                        lang,
+                        '🎭 Prototyp testen (Dorf-Spottnamen & Subkultur-Duell)',
+                        '🎭 Test Prototype (Village Mockery Feud)',
+                        '🎭 Probar prototipo (Duelo de motes populares)'
+                      )}
+                    </button>
+                  )}
                 </article>
               );
             })}
@@ -216,6 +297,18 @@ export const GamesView: React.FC<GamesViewProps> = ({ lang, dosen, onOpenDose })
 
       {q && shownPlayables.length + shownDosen.length + shownIdeas.length === 0 && (
         <p className="text-sm text-stone-500">{pick(lang, 'Keine Treffer.', 'No matches.', 'Sin resultados.')}</p>
+      )}
+
+      {showFlurnamenModal && (
+        <FlurnamenGameModal lang={lang} onClose={() => setShowFlurnamenModal(false)} />
+      )}
+
+      {showBauernregelnModal && (
+        <BauernregelnGameModal lang={lang} onClose={() => setShowBauernregelnModal(false)} />
+      )}
+
+      {showOrtsnecknamenModal && (
+        <OrtsnecknamenGameModal lang={lang} onClose={() => setShowOrtsnecknamenModal(false)} />
       )}
     </div>
   );

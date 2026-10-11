@@ -2111,6 +2111,198 @@
     ]
   },
   {
+    "id": "flurnamen-verortungsspiel",
+    "title": "Flurnamen-Verortungsspiel",
+    "titleEn": "Field-Name Geolocation Puzzle",
+    "round": "Heimatgedächtnis-Runde",
+    "date": "29.09.2026",
+    "conceptDe": "Geografisches Nebel-des-Krieges-Ratespiel: Spieler verorten historische Flurnamen („Hexenacker\", „Galgenberg\", „Wolfskuhle\") auf historischen Urkatasterkarten und helfen Citizen-Science-Initiativen, nicht verortete Archivbestände spielerisch zu kartieren.",
+    "conceptEn": "A fog-of-war micro-toponym puzzle game: players locate historic parcel names (\"Witches Acre\", \"Gallows Hill\", \"Wolf Hole\") onto historical open cadastral maps, helping citizen science projects geolocate unassigned archive records.",
+    "status": "verengt",
+    "suggestedVerdict": "build_first",
+    "recipientDe": "Ortschroniken MV (Rostock) · Heimatbund Thüringen · LAGIS Hessen",
+    "recipientEn": "Local History Society MV (Rostock) · Thuringian Heritage League · Hessian State Information System (LAGIS)",
+    "sourceType": "Civic & Ecology",
+    "sourceDe": "mitforschen.org (Thüringen 400+ Freiwillige) & ortschroniken-mv.de (Rostock 23k transkribiert, ~8k unverortet)",
+    "sourceEn": "mitforschen.org (Thuringia 400+ volunteers) & ortschroniken-mv.de (Rostock 23k transcribed, ~8k unlocated)",
+    "evidenceDe": "Rostock hat 23.000 Flurnamen transkribiert, ~8.000 lassen sich von Hand nicht verorten. Bestehende Apps (Südtirol) sind rein lokale Quizze ohne Verortungs-Mechanik.",
+    "evidenceEn": "Rostock transcribed 23,000 field names, ~8,000 remain unlocatable manually. Existing regional quiz apps lack cadastral map matching mechanics.",
+    "reviewDate": "12/2026",
+    "problemDe": "Jahrhunderte altes lokales Landschaftswissen geht verloren; tausende transkribierte Flurnamen verstauben in Tabellen, weil die manuelle Georeferenzierung Jahre dauert.",
+    "problemEn": "Centuries of hyper-local spatial heritage are dying; thousands of transcribed field names sit in spreadsheets because manual GIS georeferencing is bottlenecked.",
+    "whyNowDe": [
+      "Historische Messtischblätter und Katasterkarten liegen heute als offene WMS/Tile-Layer vor.",
+      "Canvas-basierte Fog-of-War-Karten laufen ohne WebGL-Überbau flüssig auf Mobilgeräten."
+    ],
+    "whyNowEn": [
+      "Historical cadastral sheets and open basemaps are now accessible via zero-cost open WMS/tile layers.",
+      "Lightweight HTML5 canvas fog-of-war renderers run natively on mobile browsers with zero backend overhead."
+    ],
+    "firstStepTicketDe": "Ticket #1: 100 Flurnamen aus dem Rostocker Korpus auf WMS-Katasterkarte mit Trefferradius-Wertung",
+    "firstStepTicketEn": "Ticket #1: 100 field names from the Rostock corpus onto open cadastral WMS with hit-radius scoring",
+    "firstStepCriteriaDe": "Spieler raten Flurstandort per Klick; Feedback zeigt Abweichung in Metern und historische Namensbedeutung.",
+    "firstStepCriteriaEn": "Player guesses parcel location by tap; instant feedback reveals distance error in meters and etymological background.",
+    "tags": [
+      "Games",
+      "Flurnamen",
+      "Citizen Science",
+      "Geodaten",
+      "Heimatforschung"
+    ]
+  },
+  {
+    "id": "ortsneckname",
+    "title": "Ortsneckname: Spottnamen-Ratespiel",
+    "titleEn": "Village Nickname & Mockery Trivia",
+    "round": "Heimatgedächtnis-Runde",
+    "date": "29.09.2026",
+    "conceptDe": "Dialekt- und Ortsspottnamen-Ratespiel: Welches Nachbardorf sind die „Mondspritzer\", „Krummbeeren\" oder „Sandhasen\"? Karte und Quiz zu traditionellen Dorf-Spottnamen und deren historischen Ursprüngen.",
+    "conceptEn": "A dialect and village mockery name trivia game: which neighboring village is dubbed the \"Moon Splashers\" or \"Sand Hares\"? Map and quiz deciphering historical mockery names and folklore origins.",
+    "status": "unklar",
+    "suggestedVerdict": "gift",
+    "recipientDe": "Unterfränkisches Dialektinstitut (UDI Würzburg) · LVR-Institut für Landeskunde",
+    "recipientEn": "Lower Franconian Dialect Institute · Regional Heritage Associations",
+    "sourceType": "Education & Family",
+    "sourceDe": "UDI Würzburg Datenbank (1.503 Einträge, Quiz „Wässd du dos?\")",
+    "sourceEn": "UDI Würzburg dialect database (1,503 entries, regional quiz \"Wässd du dos?\")",
+    "evidenceDe": "In Franken besetzt (UDI-Quiz), außerhalb Frankens gibt es Sammlungen nur als Buch oder PDF; kein bundesweiter oder überregionaler interaktiver Atlas vorhanden.",
+    "evidenceEn": "Saturated in Franconia (UDI quiz), but outside Franconia mockery lore only exists in printed pamphlets or regional PDFs; zero nationwide web maps.",
+    "reviewDate": "12/2026",
+    "problemDe": "Traditionelle Ortsspottnamen sterben mit den ältesten Einwohnern aus; die humorvolle Mundart-Rivalität benachbarter Dörfer gerät in Vergessenheit.",
+    "problemEn": "Traditional village mockery names are vanishing with older generations; the humorous folk rivalries between adjacent rural towns are lost to generic culture.",
+    "whyNowDe": [
+      "Kurze Multiple-Choice-Runden mit Karten-Aufdeckung funktionieren viral im Browser ohne App-Download."
+    ],
+    "whyNowEn": [
+      "Short multiple-choice rounds with progressive map reveals work virally on mobile web without app store friction."
+    ],
+    "firstStepTicketDe": "Ticket #1: Interaktives Ratespiel mit 50 Ortsnecknamen und Kartenausschnitt-Aufdeckung",
+    "firstStepTicketEn": "Ticket #1: Interactive trivia game with 50 village nicknames and progressive map unmasking",
+    "firstStepCriteriaDe": "Deterministischer Quiz-Loop im Browser mit 10 Runden, Soundeffekt und Erklärtext zur Legende.",
+    "firstStepCriteriaEn": "Deterministic client-side quiz loop with 10 rounds, sound cues, and historical lore explanations.",
+    "tags": [
+      "Games",
+      "Dialekt",
+      "Volkskunde",
+      "Quiz",
+      "Heimatgedächtnis"
+    ]
+  },
+  {
+    "id": "abzaehlreim",
+    "title": "Abzählreim-Stammbaum & Mundart-Rätsel",
+    "titleEn": "Counting Rhyme Lineage & Dialect Puzzle",
+    "round": "Heimatgedächtnis-Runde",
+    "date": "29.09.2026",
+    "conceptDe": "Stammbaum- und Zuordnungsspiel für historische Kinder- und Abzählreime: Spieler ordnen Reimvarianten („Eene meene Miste\", „Anger bingel\") Dialektregionen zu und entdecken Sprachdrift über Generationen.",
+    "conceptEn": "A dialect genealogy and matching game for historical children's counting rhymes: players attribute rhyme variants to geographic dialect zones and track phonetic drift across generations.",
+    "status": "unklar",
+    "suggestedVerdict": "gift",
+    "recipientDe": "Deutsches Volksliedarchiv (ZPKM Freiburg) · Institut für Deutsche Sprache (IDS)",
+    "recipientEn": "German Folk Song Archive (ZPKM Freiburg) · Institute for German Language (IDS Mannheim)",
+    "sourceType": "Education & Family",
+    "sourceDe": "Volksliederarchiv (~1.300 Kinderreime, ~200 Abzählreime)",
+    "sourceEn": "German Folk Song Archive (~1,300 children's rhymes, ~200 counting rhymes)",
+    "evidenceDe": "Reime liegen als Textarchiv vor, aber ohne interaktive geografische Stammbäume oder spielerische Erkennungstests.",
+    "evidenceEn": "Rhymes exist in static text archives, but lack interactive geographical lineages or playful auditory-linguistic challenges.",
+    "reviewDate": "12/2026",
+    "problemDe": "Kinderreime und Schulhof-Verse waren das am weitesten verbreitete orale Kulturgut, standardisieren sich heute aber durch Medienkonsum bundesweit einheitlich.",
+    "problemEn": "Schoolyard counting rhymes were the most widespread oral folklore, but are flattening into a single homogeneous media-driven dialect.",
+    "whyNowDe": [
+      "Textähnlichkeitsbäume (Levenshtein/Kölner Phonetik) lassen sich komplett clientseitig in Millisekunden berechnen."
+    ],
+    "whyNowEn": [
+      "Phonetic similarity trees (Cologne phonetics / Levenshtein) can be generated in real-time in the browser client."
+    ],
+    "firstStepTicketDe": "Ticket #1: Stammbaum-Knoten-Puzzle für 30 Reime mit Drag-and-Drop auf Bundesländer-Silhouette",
+    "firstStepTicketEn": "Ticket #1: Tree node puzzle for 30 rhymes with drag-and-drop onto regional state silhouettes",
+    "firstStepCriteriaDe": "Korrekte Zuordnung schaltet Audio-Aussprache und sprachgeschichtliche Notiz frei.",
+    "firstStepCriteriaEn": "Correct matching unlocks regional phonetic audio and linguistic provenance notes.",
+    "tags": [
+      "Games",
+      "Linguistik",
+      "Reime",
+      "Kulturgut",
+      "Kinder"
+    ]
+  },
+  {
+    "id": "wetterregel-liga",
+    "title": "Wetterregel-Liga: Bauernregeln vs. DWD",
+    "titleEn": "Folk Weather Rule League: Farmers vs. DWD",
+    "round": "Heimatgedächtnis-Runde",
+    "date": "29.09.2026",
+    "conceptDe": "Tipp- und Forecast-Liga: Spieler treten an, indem sie historische Bauernregeln („Ist der Siebenschläfer nass...\") gegen offizielle DWD-Stationsmesswerte setzen. Ein deterministischer Brier-Score ermittelt, welche Regeln echte Signale tragen.",
+    "conceptEn": "A prediction fantasy league: players test regional folklore weather rules (\"St Swithun's day if thou dost rain...\") against official weather station observations, scored via a deterministic Brier skill score.",
+    "status": "unklar",
+    "suggestedVerdict": "gift",
+    "recipientDe": "Deutscher Wetterdienst (DWD Bürgerklima) · Agrarmeteorologie",
+    "recipientEn": "German Meteorological Service (DWD) · Agrometeorological Advisory Services",
+    "sourceType": "Civic & Ecology",
+    "sourceDe": "LWL-Blog (Malberg Berlin-Dahlem Untersuchung 60–90 % Trefferquote)",
+    "sourceEn": "LWL regional blog (Malberg Berlin-Dahlem study showing 60-90% historical accuracy for specific rules)",
+    "evidenceDe": "Wetterturniere tippen numerische Vorhersagen (wetterturnier.de); kein öffentlicher Dienst testet phänologische Bauernregeln kontinuierlich per Brier-Score.",
+    "evidenceEn": "Weather tournaments forecast raw numerical weather models; zero public tools continuously benchmark phenological folklore rules using rigorous skill scores.",
+    "reviewDate": "12/2026",
+    "problemDe": "Bauernregeln gelten entweder als veralteter Aberglaube oder ungeprüfte Weisheit; niemand differenziert datenbasiert zwischen regionalen meteorologischen Singularitäten und reinem Reim.",
+    "problemEn": "Folk weather rules are either dismissed as superstition or accepted uncritically; lack of data-driven distinction between genuine singularities and random rhymes.",
+    "whyNowDe": [
+      "DWD Open Data stellt historische und 10-Tages-Stationendaten ohne Registrierung per CDC-Schnittstelle bereit."
+    ],
+    "whyNowEn": [
+      "DWD Open Data provides historical and 10-day weather station series freely via CDC open data endpoints."
+    ],
+    "firstStepTicketDe": "Ticket #1: Brier-Scoring-Engine für die 12 bekanntesten Singularitätsregeln gegen 5 DWD-Stationen",
+    "firstStepTicketEn": "Ticket #1: Brier scoring engine evaluating 12 iconic meteorological singularity rules against 5 weather stations",
+    "firstStepCriteriaDe": "Berechnet den Brier-Skill-Score im Browser gegen die 30-Jahre-Klimanorm ohne Backend.",
+    "firstStepCriteriaEn": "Computes Brier skill score client-side against 30-year climate baselines without backend servers.",
+    "tags": [
+      "Games",
+      "Wetter",
+      "DWD",
+      "Statistik",
+      "Open Data"
+    ]
+  },
+  {
+    "id": "pegel-wette",
+    "title": "Pegel-Wette: Hydrologische Vorhersage-Challenge",
+    "titleEn": "River Gauge Prediction Challenge",
+    "round": "Heimatgedächtnis-Runde",
+    "date": "29.09.2026",
+    "conceptDe": "Spielerische Prognose-Challenge an echten Flusspegeln: Bei Starkregen oder Schmelzwasser tippen Gruppen den Scheitelwasserstand an PEGELONLINE-Stationen gegen ein physikalisches Persistenzmodell.",
+    "conceptEn": "A hydrological prediction challenge on live rivers: during heavy rain or snowmelt, teams forecast river crest heights at real PEGELONLINE stations benchmarked against a physical persistence baseline.",
+    "status": "verengt",
+    "suggestedVerdict": "gift",
+    "recipientDe": "Wasserstraßen- und Schifffahrtsverwaltung des Bundes (WSV / PEGELONLINE) · DWA",
+    "recipientEn": "Federal Waterways & Shipping Administration (PEGELONLINE) · Flood Action Communities",
+    "sourceType": "Civic & Ecology",
+    "sourceDe": "PEGELONLINE REST-API & Hochwasservorhersagezentralen der Bundesländer",
+    "sourceEn": "PEGELONLINE REST API & State Flood Forecasting Centers",
+    "evidenceDe": "Entscheidungsspiele existieren nur für Katastrophenstäbe (HQ50 Sachsen); keine Bürger-Forecast-Liga mit automatischem Skill-Scoring.",
+    "evidenceEn": "Serious games exist exclusively for emergency taskforces (HQ50 Saxony); no citizen science forecast league with automated skill scoring exists.",
+    "reviewDate": "03/2027",
+    "problemDe": "Hochwasserrisiko wird erst wahrgenommen, wenn der Keller vollsteht; das Verständnis von Wellenlaufzeiten und Scheitelwerten fehlt in der breiten Bevölkerung.",
+    "problemEn": "Flood risk is only acknowledged when basements are flooded; public intuition for wave transit times and discharge dynamics is lacking.",
+    "whyNowDe": [
+      "PEGELONLINE liefert 15-Minuten-Echtzeitdaten über offene JSON-Schnittstellen ohne Authentifizierung."
+    ],
+    "whyNowEn": [
+      "PEGELONLINE provides 15-minute real-time telemetry over open REST endpoints without authentication keys."
+    ],
+    "firstStepTicketDe": "Ticket #1: 3-Tage-Tippspiel für Rhein- und Elbe-Pegel mit automatischem Vergleich gegen Persistenz-Kurve",
+    "firstStepTicketEn": "Ticket #1: 3-day forecasting dashboard for Rhine and Elbe gauges benchmarked against persistence curve",
+    "firstStepCriteriaDe": "Deterministische RMSE- und Skill-Score-Auswertung direkt im Browser.",
+    "firstStepCriteriaEn": "Deterministic RMSE and skill-score evaluation running entirely client-side in browser.",
+    "tags": [
+      "Games",
+      "Wasser",
+      "Hochwasser",
+      "PEGELONLINE",
+      "Simulation"
+    ]
+  },
+  {
     "id": "kuehlketten-steckbrief",
     "title": "Kühlketten-Steckbrief",
     "titleEn": "Cold-chain excursion sheet",

@@ -37,7 +37,11 @@ import {
   ANCHOR_FRAMES,
   COLLIDER_FRAMES,
   AnchorFrame,
-  ColliderFrame
+  ColliderFrame,
+  ARCHITECTURE_TIERS,
+  ACHILLES_HEELS,
+  CORE_HEURISTICS,
+  ROUND_RETROSPECTIVES
 } from '../data/playbook';
 
 interface SearchPlaybookStudioProps {
@@ -51,7 +55,15 @@ export const SearchPlaybookStudio: React.FC<SearchPlaybookStudioProps> = ({
   onSendToPipeline,
   onNavigateToDose,
 }) => {
-  const [activeSubTab, setActiveSubTab] = useState<'atlas' | 'search_gen' | 'recipes' | 'bisociation'>('atlas');
+  const [activeSubTab, setActiveSubTab] = useState<'atlas' | 'search_gen' | 'recipes' | 'bisociation' | 'learnings'>(() => {
+    try {
+      const sub = new URLSearchParams(window.location.search).get('sub');
+      if (sub === 'learnings' || sub === 'search_gen' || sub === 'recipes' || sub === 'bisociation') {
+        return sub;
+      }
+    } catch { /* use default */ }
+    return 'atlas';
+  });
   const [copiedQuery, setCopiedQuery] = useState<string | null>(null);
 
   // Saturation Atlas Filter State
@@ -258,6 +270,14 @@ export const SearchPlaybookStudio: React.FC<SearchPlaybookStudioProps> = ({
               }`}
             >
               ⚡ {lang === 'de' ? 'Bisoziations-Studio' : lang === 'es' ? 'Estudio de bisociación' : 'Bisociation Studio'}
+            </button>
+            <button
+              onClick={() => setActiveSubTab('learnings')}
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all cursor-pointer ${
+                activeSubTab === 'learnings' ? 'bg-white text-stone-900 shadow-xs font-bold' : 'text-stone-600 hover:text-stone-900'
+              }`}
+            >
+              💡 {lang === 'de' ? 'Erkenntnisse & Lehren' : lang === 'es' ? 'Lecciones y arquitectura' : 'Learnings & Architecture'}
             </button>
           </div>
         </div>
@@ -943,6 +963,242 @@ export const SearchPlaybookStudio: React.FC<SearchPlaybookStudioProps> = ({
                   </button>
                 )}
               </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ------------------------------------------------------------------ */}
+      {/* SUBTAB 5: ERKENNTNISSE, ARCHITEKTUR & RETROSPEKTIVEN */}
+      {/* ------------------------------------------------------------------ */}
+      {activeSubTab === 'learnings' && (
+        <div className="space-y-8">
+          {/* Top Banner */}
+          <div className="p-6 rounded-2xl bg-gradient-to-br from-amber-50 to-orange-50/50 border border-amber-200 text-stone-900 space-y-3">
+            <div className="flex items-center gap-2">
+              <span className="text-xl">💡</span>
+              <h2 className="text-lg sm:text-xl font-bold font-serif text-amber-950">
+                {lang === 'de'
+                  ? 'Das Architektur-Trilemma & die Achillesfersen des Gemeinwohls'
+                  : lang === 'es'
+                  ? 'El trilema de arquitectura y el talón de Aquiles del bien común'
+                  : 'The Architecture Trilemma & Achilles\' Heels of Public Goods'}
+              </h2>
+            </div>
+            <p className="text-xs sm:text-sm text-stone-700 leading-relaxed max-w-4xl">
+              {lang === 'de'
+                ? 'Empirische Auswertung aus dem portfolioweiten Audit aller verpackten Amélie-Dosen, 81 Friedhofs-Obduktionen und dutzenden Reallabor-Suchrunden. Gemeinnützige Geschenke scheitern fast nie am Algorithmus – sie scheitern an Bitrot, Haftungsangst, Sensorrauschen oder Behördenblockaden.'
+                : lang === 'es'
+                ? 'Evaluación empírica de la auditoría de todas las latas de Amélie, 81 autopsias del cementerio y decenas de rondas de búsqueda. Las herramientas cívicas rara vez fracasan por el algoritmo: fracasan por bitrot, miedo a responsabilidad o desgaste ciudadano.'
+                : 'Empirical retrospectives distilled from the portfolio-wide audit of all packed Amélie Doses, 81 graveyard autopsies, and real-world search rounds. Public software gifts rarely fail on algorithmic complexity — they perish from bitrot, liability fear, sensor noise, or bureaucratic inertia.'}
+            </p>
+          </div>
+
+          {/* Section 1: Das Architektur-Trilemma */}
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <h3 className="text-sm font-bold font-mono-code uppercase tracking-wider text-stone-700 flex items-center gap-2">
+                <span>🏗️</span>
+                <span>{lang === 'de' ? '1. Das Architektur-Trilemma (Wartungshalbwertszeit)' : lang === 'es' ? '1. El trilema de arquitectura (Vida media)' : '1. The Architecture Trilemma (Survival Half-Life)'}</span>
+              </h3>
+              <span className="text-xs text-stone-500 font-mono-code">Amélie Regel #4</span>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {ARCHITECTURE_TIERS.map((tier) => {
+                const isDe = lang === 'de';
+                const isEs = lang === 'es';
+                return (
+                  <div
+                    key={tier.id}
+                    className={`p-4 rounded-xl border flex flex-col justify-between space-y-3 ${
+                      tier.id === 'tier-1'
+                        ? 'bg-emerald-50/70 border-emerald-200 text-emerald-950'
+                        : tier.id === 'tier-2'
+                        ? 'bg-blue-50/70 border-blue-200 text-blue-950'
+                        : tier.id === 'tier-3'
+                        ? 'bg-amber-50/70 border-amber-200 text-amber-950'
+                        : 'bg-stone-50 border-stone-200 text-stone-600 opacity-75'
+                    }`}
+                  >
+                    <div>
+                      <div className="flex items-center justify-between gap-1 mb-1">
+                        <span className="text-xs font-bold font-mono-code">
+                          {isDe ? tier.nameDe : isEs ? tier.nameEs : tier.nameEn}
+                        </span>
+                        <span className="text-xs font-bold font-mono-code px-1.5 py-0.5 rounded bg-white/80 border border-current">
+                          {tier.sharePercent}%
+                        </span>
+                      </div>
+                      <p className="text-xs leading-relaxed text-stone-700 mt-2">
+                        {isDe ? tier.descriptionDe : isEs ? tier.descriptionEs : tier.descriptionEn}
+                      </p>
+                    </div>
+
+                    <div className="space-y-2 pt-2 border-t border-stone-200/60 text-[11px]">
+                      <div>
+                        <strong className="block text-[10px] uppercase font-mono-code text-stone-500">
+                          {isDe ? 'Technologie-Stack' : 'Tech Stack'}:
+                        </strong>
+                        <div className="flex flex-wrap gap-1 mt-1">
+                          {tier.techStack.map((tech) => (
+                            <span key={tech} className="px-1.5 py-0.5 rounded bg-white/90 border border-stone-200 text-stone-700 font-mono-code text-[10px]">
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <strong className="block text-[10px] uppercase font-mono-code text-stone-500">
+                          {isDe ? 'Halbwertszeit' : 'Half-Life'}:
+                        </strong>
+                        <span className="font-semibold text-stone-800">
+                          {isDe ? tier.halflifeDe : isEs ? tier.halflifeEs : tier.halflifeEn}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Section 2: Die 4 Achillesfersen öffentlicher Geschenke */}
+          <div className="space-y-4">
+            <h3 className="text-sm font-bold font-mono-code uppercase tracking-wider text-stone-700 flex items-center gap-2">
+              <span>🎯</span>
+              <span>{lang === 'de' ? '2. Die vier Achillesfersen (Bruchstellen im Vollzug)' : lang === 'es' ? '2. Los cuatro talones de Aquiles' : '2. The Four Achilles\' Heels (Failure Archetypes)'}</span>
+            </h3>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {ACHILLES_HEELS.map((heel) => {
+                const isDe = lang === 'de';
+                const isEs = lang === 'es';
+                return (
+                  <div key={heel.id} className="p-4 rounded-xl bg-white border border-stone-200 shadow-xs space-y-3 flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center gap-2 mb-1.5">
+                        <span className="text-lg">{heel.icon}</span>
+                        <h4 className="text-xs sm:text-sm font-bold text-stone-900 font-serif">
+                          {isDe ? heel.titleDe : isEs ? heel.titleEs : heel.titleEn}
+                        </h4>
+                      </div>
+                      <p className="text-xs text-stone-600 leading-relaxed">
+                        <strong className="text-rose-900">{isDe ? 'Gefahr: ' : isEs ? 'Riesgo: ' : 'Risk: '}</strong>
+                        {isDe ? heel.dangerDe : isEs ? heel.dangerEs : heel.dangerEn}
+                      </p>
+                    </div>
+
+                    <div className="space-y-2 pt-2 border-t border-stone-100 text-xs">
+                      <div className="p-2.5 rounded-lg bg-emerald-50/70 border border-emerald-200/80 text-emerald-950 text-[11px] leading-relaxed">
+                        <strong className="text-emerald-900 block font-semibold mb-0.5">
+                          {isDe ? 'Gegenmaßnahme & Lernregel:' : isEs ? 'Contramedida y regla:' : 'Countermeasure & Learned Rule:'}
+                        </strong>
+                        {isDe ? heel.countermeasureDe : isEs ? heel.countermeasureEs : heel.countermeasureEn}
+                      </div>
+
+                      <div className="flex flex-wrap items-center gap-1.5 pt-1">
+                        <span className="text-[10px] uppercase font-mono-code text-stone-400">
+                          {isDe ? 'Betroffene Dosen:' : 'Affected Doses:'}
+                        </span>
+                        {heel.affectedDosen.map((doseId) => (
+                          <button
+                            key={doseId}
+                            onClick={() => onNavigateToDose?.(doseId)}
+                            className="px-2 py-0.5 rounded-md bg-stone-100 hover:bg-stone-200 border border-stone-200 text-stone-700 text-[10px] font-mono-code transition-colors cursor-pointer"
+                          >
+                            {doseId}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Section 3: Kern-Heuristiken & Stoppregeln */}
+          <div className="space-y-4">
+            <h3 className="text-sm font-bold font-mono-code uppercase tracking-wider text-stone-700 flex items-center gap-2">
+              <span>🧭</span>
+              <span>{lang === 'de' ? '3. Kern-Heuristiken & Stoppregeln' : lang === 'es' ? '3. Heurísticas y reglas de parada' : '3. Core Heuristics & Stopping Rules'}</span>
+            </h3>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {CORE_HEURISTICS.map((h) => {
+                const isDe = lang === 'de';
+                const isEs = lang === 'es';
+                return (
+                  <div key={h.id} className="p-4 rounded-xl bg-stone-50/80 border border-stone-200 text-xs space-y-2">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <span className="w-5 h-5 rounded-full bg-amber-200 text-amber-900 font-bold font-mono-code text-[11px] flex items-center justify-center">
+                          {h.number}
+                        </span>
+                        <span className="font-bold text-stone-900">
+                          {isDe ? h.titleDe : isEs ? h.titleEs : h.titleEn}
+                        </span>
+                      </div>
+                      <span className="text-[10px] px-2 py-0.5 rounded bg-white border border-stone-200 text-stone-600 font-mono-code">
+                        {h.tag}
+                      </span>
+                    </div>
+                    <div className="font-semibold text-stone-800 text-[11px] bg-white p-2 rounded-lg border border-stone-200/70 font-mono-code">
+                      {isDe ? h.summaryDe : isEs ? h.summaryEs : h.summaryEn}
+                    </div>
+                    <p className="text-stone-600 text-[11px] leading-relaxed">
+                      {isDe ? h.detailDe : isEs ? h.detailEs : h.detailEn}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Section 4: Runden-Retrospektiven */}
+          <div className="space-y-4">
+            <h3 className="text-sm font-bold font-mono-code uppercase tracking-wider text-stone-700 flex items-center gap-2">
+              <span>🔬</span>
+              <span>{lang === 'de' ? '4. Reallabor-Retrospektiven (Letzte Suchrunden)' : lang === 'es' ? '4. Retrospectivas de rondas de búsqueda' : '4. Real-World Round Retrospectives'}</span>
+            </h3>
+
+            <div className="space-y-3">
+              {ROUND_RETROSPECTIVES.map((round) => {
+                const isDe = lang === 'de';
+                const isEs = lang === 'es';
+                return (
+                  <div key={round.id} className="p-4 rounded-xl bg-white border border-stone-200 shadow-xs space-y-2">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                      <div className="flex items-center gap-2">
+                        <span className="font-bold text-sm text-stone-900 font-serif">
+                          {isDe ? round.roundNameDe : isEs ? round.roundNameEs : round.roundNameEn}
+                        </span>
+                        <span className="text-[10px] text-stone-400 font-mono-code">
+                          {round.date}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-[11px] font-mono-code px-2 py-0.5 rounded bg-amber-50 border border-amber-200 text-amber-900">
+                          🎁 Dose: {round.dosePackaged}
+                        </span>
+                        <span className="text-[11px] font-mono-code px-2 py-0.5 rounded bg-rose-50 border border-rose-200 text-rose-800">
+                          🪦 +{round.gravesCount} Gräber
+                        </span>
+                      </div>
+                    </div>
+                    <p className="text-xs text-stone-500 italic">
+                      {isDe ? round.topicDe : isEs ? round.topicEs : round.topicEn}
+                    </p>
+                    <div className="p-3 rounded-lg bg-stone-50 border border-stone-200/80 text-xs text-stone-800 leading-relaxed">
+                      <strong className="text-amber-950 block text-[11px] uppercase font-mono-code mb-0.5">
+                        {isDe ? 'Erkenntnis & Bilanz:' : 'Key Finding & Outcome:'}
+                      </strong>
+                      {isDe ? round.keyLessonDe : isEs ? round.keyLessonEs : round.keyLessonEn}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

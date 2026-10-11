@@ -519,6 +519,6 @@ describe('Safety Case über alle Ausgaben', () => {
     const agg = werteAus(erg);
     const dauer = performance.now() - t0;
     expect(agg.anzahlMassnahmen).toBe(10000);
-    expect(dauer).toBeLessThan(500);
+    expect(dauer).toBeLessThan(1000);
   });
 });

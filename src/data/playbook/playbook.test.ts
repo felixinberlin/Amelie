@@ -5,7 +5,11 @@ import {
   SEARCH_THEME_PRESETS,
   PLAYBOOK_RECIPES,
   ANCHOR_FRAMES,
-  COLLIDER_FRAMES
+  COLLIDER_FRAMES,
+  ARCHITECTURE_TIERS,
+  ACHILLES_HEELS,
+  CORE_HEURISTICS,
+  ROUND_RETROSPECTIVES
 } from './index';
 
 describe('Search Playbook & Saturation Atlas Data', () => {
@@ -70,5 +74,24 @@ describe('Search Playbook & Saturation Atlas Data', () => {
       expect(collider.techDe).toBeTruthy();
       expect(collider.whyZeroCostDe).toBeTruthy();
     }
+  });
+
+  it('contains architectural trilemma and failure archetypes from reviewer logs', () => {
+    expect(ARCHITECTURE_TIERS).toHaveLength(4);
+    const tier1 = ARCHITECTURE_TIERS.find((t) => t.id === 'tier-1');
+    expect(tier1).toBeDefined();
+    expect(tier1?.sharePercent).toBeGreaterThan(50);
+
+    expect(ACHILLES_HEELS).toHaveLength(4);
+    for (const heel of ACHILLES_HEELS) {
+      expect(heel.id).toBeTruthy();
+      expect(heel.titleDe).toBeTruthy();
+      expect(heel.dangerDe).toBeTruthy();
+      expect(heel.countermeasureDe).toBeTruthy();
+      expect(heel.affectedDosen.length).toBeGreaterThan(0);
+    }
+
+    expect(CORE_HEURISTICS.length).toBeGreaterThanOrEqual(4);
+    expect(ROUND_RETROSPECTIVES.length).toBeGreaterThanOrEqual(4);
   });
 });
