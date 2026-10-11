@@ -209,7 +209,7 @@ Perennial plants really do get bigger year by year: the root system and the bud 
 ### 7.2 Adaptation (populations): urban evolution is real and fast
 
 Documented examples to verify against the primary sources (leads):
-- *Crepis sancta* in Marseille tree pits: **less seed dispersal within ~12 generations** (Cheptou et al. 2008, PNAS). Exactly our setting: plants in small urban patches.
+- *Crepis sancta* on sidewalk tree-pit patches in **Montpellier**: urban populations produce more non-dispersing seeds; dispersing seeds had a 55 % lower chance of settling in their patch; the model suggests ≈ 5–12 generations of selection (Cheptou et al. 2008, PNAS 105: 3796–3799; abstract checked 11.10.2026). Exactly our setting: plants in small urban patches.
 - White clover adapts to cities worldwide (Global Urban Evolution Project, Santangelo et al. 2022, Science).
 - Overview: Johnson & Munshi-South 2017, Science, "Evolution of life in urban environments".
 - *Conyza/Erigeron canadensis*: glyphosate-resistant populations (since about 2000; horseweed is in our roster, locked).
@@ -290,6 +290,23 @@ The round robin (120 teams × 6 places × 2 cities) runs on every rule PR and re
 | 3 | Signature powers ✓ (§6.2) + Kiez objects (§6.3) | Every plant described in one sentence by playtesters |
 | 4 | Lineage campaign (§7): carry-over, adaptation draft, Berlin 2016–2025 | "One more year" feeling; losers catch up |
 | 5 | Named places with home advantage from GBIF/iNaturalist (§6.4), lanes in one crack, Ultimate animations, ecotype cards | Players visit a real place to record a plant |
+
+## 13b. Source check of Félix's research comment (11.10.2026)
+
+The PR comment "Real Science for Roguelite Mechanics" cites eight studies. Checked against abstracts and primary listings (not full texts):
+
+| Claim | Status | What holds |
+|---|---|---|
+| Urban crevice soils, SOC up to +436 % (Manu et al.) | ✓ exists, **misread** | Nashville (USA), *Int. J. Sust. Dev. World Ecol.* 32(6). 436 % is the **maximum**; crevice soils were also **warmer, more alkaline, more conductive and drier** than roadside soils. → A "moss sponge absorbs drought" level contradicts the study; a crack that gets **richer (N +1) but not wetter** over the years fits it |
+| *Crepis sancta* rapid evolution (Cheptou 2008) | ✓ | Montpellier, 5–12 generations (abstract); the "99 % mortality" figure is not in the abstract |
+| *Cardamine hirsuta* explosive pods (Hofhuis 2016, *Cell* 166: 222–233) | ✓ paper | Mechanism confirmed (turgid fruit, asymmetric lignin in endocarp b); **10 m/s not confirmed** in the abstract |
+| *Cochlearia danica* spreading along salted roads | ✓ phenomenon | Confirmed by *Preslia* 2018 (8 continental countries, ≈ 62–65 km/year) and *Gorteria* 1996 (Dutch motorways, central reservations). "Scott & Davison 1985" **not found**. → Scurvygrass can get **salt resistance ✓** with the Preslia source: this closes its data gap |
+| *Chelidonium majus* seeds carried by ants (elaiosomes) | ✓ | Elaiosomes documented; ants retrieve them (Servigne & Detrain 2008/2010, *Myrmica rubra*). "Gorb & Gorb 2003" is a book, not a celandine study; *Lasius niger* in pavement not confirmed. → "Ant bread: seeds hidden from cleaning" can be ✓ trait, game effect labelled |
+| Root growth pressure 0.5–1.5 MPa (Misra et al. 1986) | ✗ overstated | Measured ≈ 0.24–0.50 MPa axial, in **pea, cotton and sunflower**, not dandelion. "10-bar dandelion" stays without a source (and dandelion is locked) |
+| *Bryum argenteum* hyaline hair points, desiccation tolerance | not checked | Silver moss is locked (no CSR data) |
+| Succession stages (Sukopp, Kowarik) | not checked | Plausible; check the primary texts before using them as level rules |
+
+**Consequence for the design:** the **3-year succession campaign** (the crack itself develops: fresh crack → humus crack → widened crack) fits §7, with two corrections: humus brings nutrients, not water (Manu et al.); widening comes from woody roots and frost, not from "10 bar dandelion pressure". Perks are allowed only with a ✓ source (§11).
 
 ## 14. Open questions for Félix
 
