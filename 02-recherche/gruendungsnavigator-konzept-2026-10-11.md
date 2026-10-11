@@ -1,7 +1,7 @@
-# Gründungsnavigator: Konzept (Kandidat, nicht gepackt)
+# Gründungsnavigator: Konzept
 
 **Stand:** 11.10.2026 · **Urteil:** `verengt` (Prüfprotokoll, Abschnitt „Gründungsnavigator — 11.10.2026“, Zeile G1) · **Prüfen ab:** 10/2027
-**Status:** Kandidat mit lauffähigem Prototyp (eine HTML-Datei, kein Server). Keine Dose, kein Empfänger angeschrieben.
+**Status:** Seit 11.10.2026 **gepackt als Dose** [`gruendungsnavigator`](../05-dosen/gruendungsnavigator.md) (Reviewer 26/35). Kein Empfänger angeschrieben. Zahlen des Prototyps inzwischen: 42 Fragen, 17 Rechte-Karten (die Tabelle unten nennt den Stand der ersten Fassung).
 **Lizenz:** CC0 1.0 Public Domain
 
 ---

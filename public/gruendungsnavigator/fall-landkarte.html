@@ -2,7 +2,8 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f5fbf">
 <meta name="robots" content="noindex">
 <title>Fall-Landkarte Gründung</title>
 <meta name="description" content="Alle Wege meiner Gründung aus dem Grundsicherungsgeld: jede mögliche Antwort des Jobcenters, meine Reaktion, Fristen und die Rechtsgrundlagen mit Links.">
@@ -82,6 +83,34 @@ table.t th,table.t td{text-align:left;padding:8px 10px;border-bottom:1px solid v
 table.t th{font-size:12.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-2)}
 footer{border-top:1px solid var(--line);color:var(--ink-2);font-size:13px;padding:18px 0 30px}
 @media (max-width:700px){ .row{grid-template-columns:1fr} h1{font-size:23px} table.t{font-size:13.5px} table.t th,table.t td{padding:6px 6px} }
+/* Handy */
+.qtitle{display:none}
+.swipe{display:none}
+@media (max-width:700px){
+  header.top .wrap{min-height:48px;gap:6px;flex-wrap:nowrap;padding-top:6px;padding-bottom:6px}
+  .brand{font-size:14.5px;line-height:1.25;min-width:0}
+  .brand small,.brand .long{display:none}
+  header.top .btn{padding:6px 9px;font-size:12.5px;white-space:nowrap;min-height:36px}
+  header.top .btn[onclick]{display:none}
+  main{padding-top:16px}
+  h2{font-size:20px;margin-top:32px;scroll-margin-top:110px}
+  .phase-nav{position:sticky;top:49px;z-index:4;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;background:var(--bg);margin:10px -16px 0;padding:8px 16px;border-bottom:1px solid var(--line)}
+  .phase-nav::-webkit-scrollbar{display:none}
+  .phase-nav a{flex:none;padding:7px 12px;font-size:13.5px}
+  #overview,#timeline{overflow-x:auto;-webkit-overflow-scrolling:touch;padding:10px}
+  #overview svg{min-width:780px}
+  #timeline svg{min-width:900px}
+  .swipe{display:block;font-size:12.5px;color:var(--ink-2);margin:6px 2px 0}
+  .card.tree{display:none}
+  .qtitle{display:block;font-size:17px;line-height:1.35;margin:18px 0 8px;padding:10px 12px;border-radius:10px;background:var(--accent-soft);border-left:4px solid var(--accent)}
+  details.ans summary{min-height:44px;padding-top:11px;padding-bottom:11px}
+  table.t,table.t tbody,table.t tr,table.t td{display:block;width:100%}
+  table.t tr:first-child{display:none}
+  table.t tr{border-bottom:1px solid var(--line);padding:8px 0}
+  table.t td{border:0!important;padding:2px 0!important}
+  table.t td[data-l]::before{content:attr(data-l) ": ";color:var(--ink-2);font-size:12px;font-weight:600}
+  table.t td:first-child{font-weight:650}
+}
 @media print{
   header.top,.phase-nav,.btn{display:none!important}
   body{background:#fff}
@@ -93,7 +122,7 @@ footer{border-top:1px solid var(--line);color:var(--ink-2);font-size:13px;paddin
 </head>
 <body>
 <header class="top"><div class="wrap">
-  <div class="brand">Fall-Landkarte: Gründung aus dem Grundsicherungsgeld<small>TYPO3-Webentwicklung · Einstiegsgeld nach § 16b und Zuschuss 2.350 € nach § 16c SGB II · Rechtsstand 01.07.2026</small></div>
+  <div class="brand">Fall-Landkarte<span class="long">: Gründung aus dem Grundsicherungsgeld</span><small>TYPO3-Webentwicklung · Einstiegsgeld nach § 16b und Zuschuss 2.350 € nach § 16c SGB II · Rechtsstand 01.07.2026</small></div>
   <button class="btn" id="all">Alle Antworten aufklappen</button>
   <button class="btn" onclick="window.print()">Drucken</button>
   <button class="btn" id="theme">Hell/Dunkel</button>
@@ -113,6 +142,7 @@ footer{border-top:1px solid var(--line);color:var(--ink-2);font-size:13px;paddin
   <h2 id="ueberblick">Überblick</h2>
   <p class="lead">Der Hauptweg läuft von links nach rechts. Nach unten zweigt der Rechtsweg ab, wenn ein Bescheid nicht passt. Ein Klick auf eine Station springt dorthin.</p>
   <div class="card" id="overview"></div>
+  <p class="swipe" aria-hidden="true">← Karte seitlich wischen →</p>
   <div class="phase-nav" id="pnav"></div>
 
   <div id="phases"></div>
@@ -120,6 +150,7 @@ footer{border-top:1px solid var(--line);color:var(--ink-2);font-size:13px;paddin
   <h2 id="fristen">Fristen auf einen Blick</h2>
   <p class="lead">Alle Fristen, die in meinem Fall laufen können, ab dem auslösenden Ereignis. Zeitachse nicht maßstäblich.</p>
   <div class="card" id="timeline"></div>
+  <p class="swipe" aria-hidden="true">← Zeitstrahl seitlich wischen →</p>
   <div class="card" style="margin-top:12px;overflow-x:auto"><table class="t" id="ftable"></table></div>
 
   <h2 id="gesetze">Alle Rechtsgrundlagen</h2>
@@ -135,11 +166,11 @@ footer{border-top:1px solid var(--line);color:var(--ink-2);font-size:13px;paddin
 const G = "https://www.gesetze-im-internet.de/", D = "https://dejure.org/gesetze/";
 const L = {
  sgb1_14:{t:"§ 14 SGB I",n:"Beratung",u:G+"sgb_1/__14.html",d:D+"SGB_I/14.html",q:"Jeder hat Anspruch auf Beratung über seine Rechte und Pflichten nach diesem Gesetzbuch."},
- sgb1_16:{t:"§ 16 Abs. 2, 3 SGB I",n:"Antragstellung",u:G+"sgb_1/__16.html",d:D+"SGB_I/16.html",q:"Ist die Sozialleistung von einem Antrag abhängig, gilt der Antrag als zu dem Zeitpunkt gestellt, in dem er bei einer der in Satz 1 genannten Stellen eingegangen ist. […] Die Leistungsträger sind verpflichtet, darauf hinzuwirken, dass unverzüglich klare und sachdienliche Anträge gestellt und unvollständige Angaben ergänzt werden."},
+ sgb1_16:{t:"§ 16 Abs. 2, 3 SGB I",n:"Antragstellung",u:G+"sgb_1/__16.html",d:D+"SGB_I/16.html",q:"Ist die Sozialleistung von einem Antrag abhängig, gilt der Antrag als zu dem Zeitpunkt gestellt, in dem er bei einer der in Satz 1 genannten Stellen eingegangen ist. […] Die Leistungsträger sind verpflichtet, darauf hinzuwirken, daß unverzüglich klare und sachdienliche Anträge gestellt und unvollständige Angaben ergänzt werden."},
  sgb1_17:{t:"§ 17 Abs. 1 SGB I",n:"Zügige Leistung",u:G+"sgb_1/__17.html",d:D+"SGB_I/17.html",k:"Die Leistungsträger müssen darauf hinwirken, dass Berechtigte die ihnen zustehenden Leistungen umfassend und zügig erhalten."},
  sgb1_39:{t:"§ 39 Abs. 1 SGB I",n:"Ermessen",u:G+"sgb_1/__39.html",d:D+"SGB_I/39.html",q:"Auf pflichtgemäße Ausübung des Ermessens besteht ein Anspruch."},
  sgb1_60:{t:"§ 60 Abs. 1 SGB I",n:"Mitwirkung",u:G+"sgb_1/__60.html",d:D+"SGB_I/60.html",k:"Wer Sozialleistungen erhält, muss alle leistungserheblichen Tatsachen angeben und Änderungen unverzüglich mitteilen."},
- sgb2_10:{t:"§ 10 Abs. 2 Nr. 5 SGB II",n:"Zumutbarkeit bei Selbständigen",u:G+"sgb_2/__10.html",d:D+"SGB_II/10.html",q:"[Eine Arbeit ist nicht allein deshalb unzumutbar, weil] sie mit der Beendigung einer Erwerbstätigkeit verbunden ist, es sei denn, es liegen begründete Anhaltspunkte vor, dass durch die bisherige Tätigkeit künftig die Hilfebedürftigkeit beendet werden kann; bei Leistungsberechtigten, die selbstständig tätig sind, wird spätestens nach einem Jahr ununterbrochenen Leistungsbezuges geprüft, ob ein Verweis auf eine Beschäftigung zumutbar ist."},
+ sgb2_10:{t:"§ 10 Abs. 2 Nr. 5 SGB II",n:"Zumutbarkeit bei Selbständigen",u:G+"sgb_2/__10.html",d:D+"SGB_II/10.html",q:"[Eine Arbeit ist nicht allein deshalb unzumutbar, weil] sie mit der Beendigung einer Erwerbstätigkeit verbunden ist, es sei denn, es liegen begründete Anhaltspunkte vor, dass durch die bisherige Tätigkeit künftig die Hilfebedürftigkeit beendet werden kann; bei Leistungsberechtigten, die selbständig tätig sind, wird spätestens nach einem Jahr ununterbrochenen Leistungsbezuges geprüft, ob ein Verweis auf eine Beschäftigung zumutbar ist."},
  sgb2_10a:{t:"§ 10 Abs. 1, Abs. 2 Nr. 1 SGB II",n:"Zumutbare Arbeit",u:G+"sgb_2/__10.html",d:D+"SGB_II/10.html",q:"[Unzumutbar ist eine Arbeit, wenn die Person] zu der bestimmten Arbeit körperlich, geistig oder seelisch nicht in der Lage ist, […] [oder] der Ausübung der Arbeit ein sonstiger wichtiger Grund entgegensteht. […] [Nicht unzumutbar ist sie allein deshalb, weil] sie nicht einer früheren beruflichen Tätigkeit entspricht, für die die erwerbsfähige leistungsberechtigte Person ausgebildet ist."},
  sgb2_11b:{t:"§ 11b Abs. 2, 3 SGB II",n:"Freibeträge bei Erwerbseinkommen",u:G+"sgb_2/__11b.html",d:D+"SGB_II/11b.html",k:"100 € Grundabsetzungsbetrag; vom Teil über 100 bis 520 € bleiben 20 %, von 520 bis 1.000 € 30 %, von 1.000 bis 1.200 € 10 % frei (mit Kind bis 1.500 €). Höchstens 348 € im Monat ohne Kind."},
  sgb2_12:{t:"§ 12 Abs. 2 SGB II",n:"Vermögen",u:G+"sgb_2/__12.html",d:D+"SGB_II/12.html",k:"Freibetrag pro Person: 5.000 € bis zum vollendeten 30. Lebensjahr, 10.000 € ab dem 31., 12.500 € ab dem 41., 20.000 € ab dem 51. Lebensjahr. Die frühere allgemeine Karenzzeit für Vermögen ist entfallen."},
@@ -160,11 +191,11 @@ const L = {
  sgb10_25:{t:"§ 25 SGB X",n:"Akteneinsicht",u:G+"sgb_10/__25.html",d:D+"SGB_X/25.html",k:"Beteiligte dürfen die Verfahrensakten einsehen, soweit das zur Wahrung ihrer rechtlichen Interessen erforderlich ist."},
  sgb10_33:{t:"§ 33 Abs. 2 SGB X",n:"Schriftliche Bestätigung",u:G+"sgb_10/__33.html",d:D+"SGB_X/33.html",q:"Ein mündlicher Verwaltungsakt ist schriftlich oder elektronisch zu bestätigen, wenn hieran ein berechtigtes Interesse besteht und der Betroffene dies unverzüglich verlangt."},
  sgb10_35:{t:"§ 35 SGB X",n:"Begründung",u:G+"sgb_10/__35.html",d:D+"SGB_X/35.html",k:"Ein schriftlicher Verwaltungsakt ist zu begründen; bei Ermessensentscheidungen müssen die Gesichtspunkte erkennbar sein, von denen die Behörde ausgegangen ist."},
- sgb10_44:{t:"§ 44 SGB X",n:"Überprüfungsantrag",u:G+"sgb_10/__44.html",d:D+"SGB_X/44.html",q:"Soweit sich im Einzelfall ergibt, dass bei Erlass eines Verwaltungsaktes das Recht unrichtig angewandt … [ist er zurückzunehmen]. Im übrigen ist ein rechtswidriger nicht begünstigender Verwaltungsakt, auch nachdem er unanfechtbar geworden ist, … [zurückzunehmen]."},
+ sgb10_44:{t:"§ 44 SGB X",n:"Überprüfungsantrag",u:G+"sgb_10/__44.html",d:D+"SGB_X/44.html",q:"Soweit sich im Einzelfall ergibt, dass bei Erlass eines Verwaltungsaktes das Recht unrichtig angewandt … [ist er zurückzunehmen]. Im Übrigen ist ein rechtswidriger nicht begünstigender Verwaltungsakt, auch nachdem er unanfechtbar geworden ist, … [zurückzunehmen]."},
  sgg66:{t:"§ 66 SGG",n:"Fehlende Rechtsbehelfsbelehrung",u:G+"sgg/__66.html",d:D+"SGG/66.html",k:"Fehlt die Rechtsbehelfsbelehrung oder ist sie falsch, läuft statt eines Monats grundsätzlich ein Jahr ab Bekanntgabe."},
  sgg84:{t:"§ 84 Abs. 1 SGG",n:"Widerspruchsfrist",u:G+"sgg/__84.html",d:D+"SGG/84.html",q:"Der Widerspruch ist binnen eines Monats, nachdem der Verwaltungsakt dem Beschwerten bekanntgegeben worden ist, … einzureichen."},
  sgg86b:{t:"§ 86b Abs. 2 SGG",n:"Eilverfahren",u:G+"sgg/__86b.html",d:D+"SGG/86b.html",k:"Das Sozialgericht kann eine einstweilige Anordnung erlassen, wenn sonst wesentliche Nachteile drohen. Bei Ermessensleistungen wie dem Einstiegsgeld nur mit Beratung versuchen."},
- sgg87:{t:"§ 87 SGG",n:"Klagefrist",u:G+"sgg/__87.html",d:D+"SGG/87.html",q:"Die Klage ist binnen eines Monats nach Bekanntgabe des Verwaltungsaktes zu erheben. […] Hat ein Vorverfahren stattgefunden, so beginnt die Frist mit der Bekanntgabe des Widerspruchsbescheids."},
+ sgg87:{t:"§ 87 SGG",n:"Klagefrist",u:G+"sgg/__87.html",d:D+"SGG/87.html",q:"Die Klage ist binnen eines Monats nach Bekanntgabe des Verwaltungsakts zu erheben. […] Hat ein Vorverfahren stattgefunden, so beginnt die Frist mit der Bekanntgabe des Widerspruchsbescheids."},
  sgg88:{t:"§ 88 SGG",n:"Untätigkeitsklage",u:G+"sgg/__88.html",d:D+"SGG/88.html",k:"Bleibt ein Antrag ohne zureichenden Grund unbeschieden, ist Klage nach sechs Monaten zulässig; bei einem nicht beschiedenen Widerspruch nach drei Monaten."},
  sgg183:{t:"§ 183 SGG",n:"Kostenfreiheit",u:G+"sgg/__183.html",d:D+"SGG/183.html",q:"Das Verfahren vor den Gerichten der Sozialgerichtsbarkeit ist für Versicherte, Leistungsempfänger … kostenfrei, soweit sie in dieser jeweiligen Eigenschaft als Kläger oder Beklagte beteiligt sind."},
  gewo14:{t:"§ 14 GewO",n:"Gewerbeanzeige",u:G+"gewo/__14.html",d:D+"GewO/14.html",k:"Wer ein Gewerbe beginnt, muss dies gleichzeitig der zuständigen Behörde anzeigen."},
@@ -457,7 +488,7 @@ function phases(){
   PH.forEach(ph => {
     h += `<h2 id="${ph.id}">${ph.nr}. ${esc(ph.t)}</h2><p class="lead">${esc(ph.s)} · ${ph.qs.length} ${ph.qs.length === 1 ? "Frage" : "Fragen"}, ${ph.qs.reduce((n, q) => n + q.a.length, 0)} mögliche Antworten</p>`;
     ph.qs.forEach((Q, qi) => {
-      h += `<div class="qblock"><div class="card">${treeSVG(ph, qi, Q)}</div><div class="detail">`;
+      h += `<div class="qblock"><h3 class="qtitle">${esc(Q.q)}</h3><div class="card tree">${treeSVG(ph, qi, Q)}</div><div class="detail">`;
       Q.a.forEach((a, i) => { const [c] = C[a.k], id = `${ph.id}-${qi}-${i}`;
         h += `<details class="ans" id="d-${id}" style="--c:${c}"><summary><span class="tag">${C[a.k][2]}</span>${a.mine ? '<span class="tag" style="color:var(--accent)">mein Fall</span>' : ""}${esc(a.t)}</summary><div class="b">` +
           (a.say && a.say !== "–" ? `<div class="say"><b>Ich sage / schreibe</b>${esc(a.say)}</div>` : "") +
@@ -478,7 +509,7 @@ function timeline(){
   Object.keys(byX).forEach(k => byX[k].forEach((f, j) => { const cx = x(+k), cy = 84 + j * 46, crit = ["sgg84","sgg87"].includes(f.law), ln = wrap(f.f, 22).slice(0, 2);
     s += `<g class="node" tabindex="0" data-law="${f.law}"><rect class="box" x="${cx - 76}" y="${cy}" width="152" height="40" rx="6" fill="${crit ? "var(--crit-soft)" : "var(--surface)"}" stroke="${crit ? "var(--crit)" : "var(--line)"}"/>` + ln.map((l, i) => `<text x="${cx}" y="${cy + (ln.length === 1 ? 24 : 17 + i * 15)}" font-size="11.5" text-anchor="middle">${esc(l)}</text>`).join("") + `</g>`; }));
   document.getElementById("timeline").innerHTML = s + `</svg>`;
-  document.getElementById("ftable").innerHTML = `<tr><th>Frist</th><th>Läuft ab</th><th>Stelle</th><th>Gesetz</th></tr>` + FRISTEN.map(f => `<tr><td>${esc(f.f)}</td><td>${esc(f.ab)}</td><td>${esc(f.wer)}</td><td><a href="${L[f.law].u}" target="_blank" rel="noopener">${esc(L[f.law].t)}</a></td></tr>`).join("");
+  document.getElementById("ftable").innerHTML = `<tr><th>Frist</th><th>Läuft ab</th><th>Stelle</th><th>Gesetz</th></tr>` + FRISTEN.map(f => `<tr><td data-l="Frist">${esc(f.f)}</td><td data-l="Läuft ab">${esc(f.ab)}</td><td data-l="Stelle">${esc(f.wer)}</td><td><a href="${L[f.law].u}" target="_blank" rel="noopener">${esc(L[f.law].t)}</a></td></tr>`).join("");
 }
 function laws(){ document.getElementById("lawlist").innerHTML = lawHTML(Object.keys(L).sort((a, b) => L[a].t.localeCompare(L[b].t, "de"))); }
 

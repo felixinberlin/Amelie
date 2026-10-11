@@ -29,6 +29,43 @@ export interface BookChapter {
 }
 
 export const DOSE_BOOKS: Record<string, BookChapter[]> = {
+  'gruendungsnavigator': [
+    {
+      slug: 'demo', path: '07-demos/gruendungsnavigator/README.md',
+      titleDe: 'Demo: Gesprächsnavigator und Fall-Landkarte', titleEn: 'Demo: conversation navigator and case map',
+      noteDe: 'Zwei Handy-taugliche HTML-Seiten ohne Server; Kern mit 54 Tests, der die Demo-Daten direkt aus dem HTML prüft.',
+      noteEn: 'Two phone-friendly HTML pages without a server; kernel with 54 tests that checks the demo data straight from the HTML.',
+      date: '11.10.2026', kind: 'md',
+    },
+    {
+      slug: 'ticket-01', path: '07-demos/gruendungsnavigator/ticket-01-vorlage.md',
+      titleDe: 'Ticket 01: Die Seite wird Vorlage', titleEn: 'Ticket 01: the page becomes a template',
+      noteDe: 'Persönliches in ein Branchenpaket, Normregister und Telefonbaum als Daten; sechs prüfbare Fertig-Kriterien, zwei davon schon erfüllt.',
+      noteEn: 'Personal content into a sector pack, statute register and phone tree as data; six checkable done criteria, two already met.',
+      date: '11.10.2026', kind: 'md',
+    },
+    {
+      slug: 'konzept', path: '02-recherche/gruendungsnavigator-konzept-2026-10-11.md',
+      titleDe: 'Konzept und Besetzt-Prüfung', titleEn: 'Concept and occupancy check',
+      noteDe: 'Problem, Rechtslage seit 01.07.2026, Nachbarn (jobcenter.guru, BürgerChat, Sozialrat), Empfängervorschläge, Nebenbefund Paragrafen-Prüfer.',
+      noteEn: 'Problem, legal situation since 1 Jul 2026, neighbours (jobcenter.guru, BürgerChat, Sozialrat), recipient proposals, side finding section checker.',
+      date: '11.10.2026', kind: 'md',
+    },
+    {
+      slug: 'scout', path: '06-suche/scout-an-bibliothekar-2026-10-11-gruendungsnavigator.md',
+      titleDe: 'Scout-Übergabe: Urteile G1–G4 und Quellen', titleEn: 'Scout handover: verdicts G1–G4 and sources',
+      noteDe: 'Welche Normtexte am 11.10.2026 gelesen wurden, acht gebuchte Quellen, Hinweise zu bestehenden Gräbern.',
+      noteEn: 'Which statute texts were read on 11 Oct 2026, eight booked sources, notes on existing graves.',
+      date: '11.10.2026', kind: 'md',
+    },
+    {
+      slug: 'lab-jobcenter', path: '06-suche/lab-intake-review-20261011.md',
+      titleDe: 'Lab-Intake: der Jobcenter-Cluster', titleEn: 'Lab intake: the job-centre cluster',
+      noteDe: 'Batches 13–15, 35–37, 70–71: alle Jobcenter-Ideen des Labs blieben Needs Research (13–19/35); warum der Navigator der zustellbare Kern ist.',
+      noteEn: 'Batches 13–15, 35–37, 70–71: all Lab job-centre ideas stayed Needs Research (13–19/35); why the navigator is the deliverable kernel.',
+      date: '11.10.2026', kind: 'md',
+    },
+  ],
   'eurobirdcast': [
     {
       slug: 'movement-map', path: '07-demos/eurobirdcast/map/README.md',

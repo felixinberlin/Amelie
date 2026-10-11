@@ -63,6 +63,7 @@ import {
   TischSchiedsrichterSimulator,
   KristallwachstumSimulator,
   ChemHazardSimulator,
+  GruendungsnavigatorSimulator,
 } from './simulators';
 
 interface DoseSinglePageProps {
@@ -639,6 +640,7 @@ ${bookChapters
               {simInfo.key === 'schiedsrichter' && <TischSchiedsrichterSimulator lang={lang} isEmbedded />}
               {simInfo.key === 'kristall' && <KristallwachstumSimulator lang={lang} />}
               {simInfo.key === 'chemhazard' && <ChemHazardSimulator lang={lang} isEmbedded />}
+              {simInfo.key === 'gruendungsnavigator' && <GruendungsnavigatorSimulator lang={lang} isEmbedded />}
             </div>
           )}
         </section>
@@ -790,7 +792,7 @@ ${bookChapters
               {isDe ? 'Wer es schon versucht hat (Prior Art)' : isEs ? 'Intentos previos (Prior Art)' : 'Prior Art & Unoccupied Gap'}
             </h2>
           </div>
-          <p className="text-xs sm:text-sm text-[var(--m-ink-2)] font-mono-code leading-relaxed whitespace-pre-wrap">
+          <p className="text-xs sm:text-sm text-[var(--m-ink-2)] font-mono-code leading-relaxed whitespace-pre-wrap [overflow-wrap:anywhere]">
             {isDe ? dose.priorArtDe : (isEs && dose.priorArtEs) || dose.priorArtEn}
           </p>
         </section>

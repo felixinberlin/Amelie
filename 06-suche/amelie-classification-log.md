@@ -1473,3 +1473,67 @@ Explizite Wiederaufnahme durch Félix, mit geänderter Forschungsfrage. V1–V7:
 | 70/C2 | Once-Only SGB-II Register-Gateway | 2 | 1 | 2 | 4 | 2 | 3 | 1 | 1 | 15 | 16 | Needs Research |
 | 71/C1 | HandyFoto Amtssprach-Konverter | 1 | 4 | 3 | 4 | 2 | 3 | 2 | 2 | 19 | 21 | Needs Research |
 | 71/C2 | Kiez-Beistand-Radar | 2 | 1 | 3 | 4 | 2 | 3 | 2 | 2 | 17 | 19 | Needs Research |
+
+## Gründungsnavigator — Reviewer 11.10.2026
+
+Unabhängiger Review von `gruendungsnavigator` (Protokollzeile G1 `verengt`, Prüfen ab 10/2027). Gelesen: Konzept, Scout-Übergabe, README, Prototyp (`public/gruendungsnavigator/`, 908 Zeilen), Nachbarn im Lab-Intake (Batches 13–15, 35–37, 70, 71), Grab `paragraphen-dolmetscher`, `bib find gruendung jobcenter einstiegsgeld --stamm` (kein Treffer im Bestand). Vier Gegensuchen am 11.10.2026, alle [Schnipsel]: (1) „Einstiegsgeld Gespräch Jobcenter vorbereiten Tool“: nur Ratgebertext (Gründerplattform, IHK, existenzgruendungsportal), kein Gesprächswerkzeug; (2) Tacheles + Selbständige/Einstiegsgeld: kein Leitfaden zu Selbständigen gefunden; (3) „Jobcenter Termin Vorbereitung App Beistand Open Source“: nur offizielle Jobcenter-App der BA (Dokumente, Termine) und Rechte-Broschüren (IG Metall Berlin), keine Gesprächsvorbereitung; (4) ver.di/mediafon Selbständigenberatung: keine Fundstelle. Das stützt die Restlücke aus G1, ist aber Negativbefund aus Schnipseln.
+
+| Nr | Kandidat | V1 | V2 | V3 | V4 | V5 | V6 | V7 | V8 | Kern /35 | Gesamt /40 | Urteil |
+|---|---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|---|
+| GN-A | `gruendungsnavigator` (voller Prototyp: Telefonbaum, Fragen, Rechte-Karten, Präsentationsmodus, Mail) | 3 | 5 | 4 | 3 | 3 | 4 | 4 | 2 | **26** | 28 | Dose Ready (bedingt) |
+| GN-B | Verengte Fassung `gruendungsnavigator` = Normregister + Reihenfolge-/Fristenprüfer (§ 37 Abs. 2, § 16b/c, § 10 Abs. 2 Nr. 5 SGB II) + Rechte-Karten mit Wortlaut, ohne Taktik-/Formulierungsvorschläge | 3 | 5 | 5 | 3 | 4 | 4 | 5 | 2 | **29** | 31 | Dose Ready (empfohlener Zuschnitt) |
+
+### Begründung GN-A (eine Zeile je Vektor)
+- **V1 = 3.** Lücke ohne Technik formulierbar: „Niemand bereitet Gründer auf das Ermessensgespräch vor.“ Aber Briefe/Widerspruch (jobcenter.guru, Sozialrat), Q&A (BürgerChat), Leitfäden (Münchner Gründungsbüro, Gründerplattform) und Rechte-Broschüren sind dicht daneben; Gespräch + Gründer + zitierter Wortlaut ist eine schmale, aber echte Restlücke (verengt, nicht frei). Kein Abzug (jobcenter.guru ist eine UG ohne VC-Beleg), keine 4: kein Regelraum-Wechsel.
+- **V2 = 5.** Tier 1: einzelne HTML-Dateien, localStorage, keine Abhängigkeit, kein Konto.
+- **V3 = 4.** Normtexte und Fristen sind deterministisch und wörtlich belegbar (keine Halluzination). Abzug von 5: Telefonbaum und Antwortvorschläge sind redaktionelle Wertung eines Nichtjuristen, Grenze zur Einzelfallberatung (RDG) ungeprüft.
+- **V3-Why-now:** 13. SGB-II-Änderungsgesetz, in Kraft 01.07.2026, ist ein echter Stichtag.
+- **V4 = 3.** Nationales Recht, aber SGB II wurde 2023 und 2026 umgebaut; Halbwertszeit eher 2 bis 3 Jahre, jede Novelle macht Texte falsch. Kein Wartungsträger bisher.
+- **V5 = 3.** S: CC0, keine PII, sofort nutzbar. W: Aktualitätspflege, RDG-Grenze, Ton (Rechte-Karten wie „Unterschreiben Sie hier“ können als Konfrontation wirken). O: Beratungsstellen, Prototype Fund/Civic Coding. T: Fachkraft-/Amtsablehnung, Kommerz-Klone (jobcenter.guru) mit SEO-Vorsprung.
+- **V6 = 4.** Level 2 auf Level-0-Primitiven (Normtexte); Level-3-Hebel (Beratungsstellen nutzen ihn) plausibel, aber noch nicht gezeigt.
+- **V7 = 4.** Norm = Typ A (BGBl. I Nr. 107, gelesen auf dejure.org; gesetze-im-internet.de war am 11.10. 503, also Fassung nicht an der Amtsquelle gegengelesen). Bedarfsprämisse („Gespräch ist ungleich“) nur Sekundärquelle (gegen-hartz.de, LTO) und ein IAB-Titel „Selbständig statt leistungsberechtigt“ [Schnipsel], nicht gelesen. Daher 4, nicht 5.
+- **V8 = 2.** Belastendes Thema, nützlich, klar, Tastaturbedienung und Präsentationsmodus sind nett; Fun-Quelle: `none`. Kompensiert nichts.
+
+### Befunde und Konsistenz
+- **Zahlen widersprechen sich:** Konzept (26 Fragen, 15 Rechte-Karten) gegen README (42 Fragen, 17 Rechte-Karten, 37 Normen, 107 Antworten). Vor dem Packen eine Zahl festlegen, sonst fällt `check:dosen`-Prosa auseinander.
+- **Kein Wiedergänger von `paragraphen-dolmetscher`:** Das Grab (gebaut/kommerziell) betrifft Bescheid-Erklärung per Foto, nicht Gesprächsvorbereitung. Aber die Lehre gilt: Der Satz „freie Werkzeuge existieren nicht“ muss belegt bleiben. Hier belegt er sich nur als Negativbefund aus Schnipseln plus G1 [Seite].
+- **Lab-Nachbarn** (35/C1 14, 36/C1 14, 37/C1 18, 70/C1 17, 70/C2 16, 71/C1 21, 71/C2 19; BürgerRechte-Copilot und CivicBeistand je 13–19): alle Needs Research, generische Empfänger, Technik als Why-now. GN unterscheidet sich durch Norm als Anker, Stichtag und lauffähigen Prototyp. Es ist kein Baustein einer bestehenden Dose (`bib find` ohne Treffer). Beistand (§ 13 Abs. 4 SGB X) ist als Rechte-Karte enthalten, kein Dispatch: Bausteinrichtung bleibt die Gründer-Teilmenge, nicht umgekehrt.
+- Keine zwei Dosen pro Empfängergruppe-Konflikt; kein `[Schnipsel]`-nur-Problem, weil G1 [Seite] trägt, die vier Gegensuchen sind nur Zweitprobe.
+
+### Achillesferse und Heilmittel
+**Achillesferse (Archetyp 1 + 4 des Lernlogs):** juristische Haftungs-/Falschberatungsangst (RDG) und Empfänger ohne verifizierte Ansprechperson. Beides sitzt in V3/V5, nicht in der Technik. Der Vollzuschnitt GN-A liefert Taktik („was sage ich“), also genau das, wofür ein Nichtjurist haftet.
+**Heilmittel (eine Änderung):** Zuschnitt auf GN-B. Das Geschenk ist ein Normregister mit Fassung und Link, ein Reihenfolge-/Fristenprüfer („Wurde vor Antragstellung gegründet?“, „Jahresfrist § 10 Abs. 2 Nr. 5“) und Rechte-Karten mit Wortlaut. Es sagt nie „Sie haben Anspruch“, nur „Die Norm lautet … Fassung …“ und „Frist läuft ab …“. Taktik-Formulierungen bleiben als Beispielpaket (Branche Webentwicklung) und werden nicht Teil der geprüften Engine. V3 4 auf 5, V5 3 auf 4, V7 4 auf 5 (nach Gegenlesen an der Amtsquelle), Kern 29/35.
+
+### Urteil
+**Dose Ready (bedingt):** Kern 26/35 (Gate 24), Rand nur 2. Bedingungen vor Versand, nicht vor dem Packen: (1) Ticket 01 neutralisiert den Webentwickler-Fall; (2) Normtexte einmal gegen gesetze-im-internet.de/BGBl. gegengelesen (nicht nur dejure.org); (3) RDG-Grenze juristisch geprüft oder Zuschnitt GN-B; (4) Empfänger-Person verifiziert. Fällt (2) oder (4) nicht aus, bleibt es Dose ohne Mail (Rule 2 wird erst mit Person erfüllt).
+
+### Empfänger
+1. **Tacheles e.V. (Wuppertal)** [Schnipsel]: reale Organisation mit Mandat (Sozialberatung, Jobcenter-Praxis), sie zählt im Gegenmaterial nicht zu Selbständigen-Leitfäden; Rolle: fachliche Prüfung der Normtexte und Aufnahme in die Materialsammlung. Ansprechperson **nicht verifiziert**.
+2. **Sozialrat Deutschland e.V.** [Seite laut Scout 18.06.2026]: Relaunch, hat keine Selbständigen, Mandat da, Ansprechperson offen.
+3. Münchner Gründungsbüro: Träger auf der Seite nicht genannt, nicht ansprechbar bis geklärt. ver.di/mediafon: meine Suche fand keine Selbständigenberatung zur Grundsicherung, daher nicht empfehlbar. BürgerChat nur als Andockpunkt (MIT, GitHub), kein Empfänger mit Mandat.
+**Empfehlung:** Tacheles e.V., nach Verifikation der Ansprechperson auf tacheles-sozialhilfe.de. Keine Mail angelegt.
+
+### Ticket 01 (für deterministischen Kern in `src/engine/gruendungsnavigator/`)
+**Erster Schritt:** Normregister und Entscheidungslogik aus dem Prototyp in eine getestete Engine ziehen, Inhalte als Datendatei.
+**Fertig, wenn:**
+1. Normregister als Daten: je Eintrag `norm`, `absatz`, `fassung` (Datum, BGBl.), `inKraftSeit`, `wortlaut` oder `kurzfassung` (Pflichtfeld Kennzeichnung), `url`, `geprueftAm`; Test: kein Eintrag ohne Fassung und Link; Wörtliches nie als Kurzfassung markiert (Flag-Test).
+2. Entscheidungsbaum als Daten (Knoten, Antworten, Folgeknoten, Normverweise); Test: alle Verweise lösen im Register auf, keine toten Knoten, jeder Pfad endet in einem Endknoten (Graphtest).
+3. Reihenfolge-Prüfer rein funktional: Eingabe Daten (Antrag, Gründungsbeginn, Gespräch) gibt Ausgabe „vor/nach Antragstellung“ mit Normverweis § 37 Abs. 2; Randfälle getestet (gleicher Tag, fehlende Daten gibt `unbekannt`, nie ein Rechtsurteil).
+4. Jahresfrist § 10 Abs. 2 Nr. 5 (seit 01.07.2026): Tabellen-Tests, Monatsarithmetik, Schaltjahr.
+5. Ausgaben enthalten nie die Wörter „Anspruch besteht“, „unzulässig“, „rechtswidrig“ (Negativ-Lint-Test über alle Ausgabetexte).
+6. Personenbezug: Engine pur, keine Netz-/Speicherzugriffe (Test, dass sie ohne DOM läuft); Daten bleiben im Browser.
+7. Branchen-Paket „Webentwicklung“ und leeres Paket validieren gegen dasselbe Schema; Test, dass der Beispielfall keinen persönlichen Betrag im Kern trägt.
+8. Normdrift-Guard: Skript vergleicht `geprueftAm` mit Heute und meldet Einträge älter als 12 Monate; Fixture dazu.
+9. Aus 3 bis 4: eine Zahl für Fragen/Karten/Normen im README und Dossier.
+Nicht deterministisch prüfbar (bleibt Mensch): Gegenlesen der Wortlaute an der Amtsquelle, RDG-Bewertung, zweite Person erzeugt Fassung in 30 Minuten.
+
+### Fun (V8 = 2, Quelle `none`)
+- funDe: Ein ruhiges Gesprächs-Probespiel: Du klickst durch das Telefonat, und zu jeder Antwort des Gegenübers leuchtet der Paragraf auf, der dahintersteht.
+- funEn: A calm rehearsal for the call: click through the conversation and, for every reply on the other end, the paragraph behind it lights up.
+(V8 trägt nicht, Fun kompensiert nie.)
+
+### Förderbrücke (Hinweis, kein Pitching)
+Wer könnte Ticket 01 finanzieren? Prototype Fund (Civic-Tech, offene Lizenz-Vereinbarkeit mit CC0 noch offen laut Projektstand), Civic Coding, mFUND nur falls Datenbezug. Nur Schnipsel, vor Nennung Frist und Zulässigkeit auf der Primärseite prüfen; keine Fördertipp-Mail bis zur Entscheidung.
+
+### Lehre für das Lernlog
+Wenn Haftungsgrenze (RDG) und Empfänger zusammen offen sind, ist der Zuschnitt auf das Prüfbare der Hebel, nicht die Zahl der Module: Norm + Frist zählt 29, Norm + Frist + Taktik zählt 26. Prototype-Zahlen müssen in Konzept und README gleich sein, bevor gepackt wird.

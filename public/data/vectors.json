@@ -755,6 +755,22 @@
       "funDe": "Nächtliche Zugpulse entdecken; Forschungswerkzeug ohne Spielschleife.",
       "funEn": "Discover nocturnal migration pulses; a research tool without a game loop.",
       "note": "Neubewertung 08.10.2026: 22/35, unter Dose-Ready-Gate; explizite Wiederaufnahme durch Nutzer, build_first, Bedarf unklar. Kein Fortschreiben der alten 30/35."
+    },
+    "gruendungsnavigator": {
+      "v": [
+        3,
+        5,
+        4,
+        3,
+        3,
+        4,
+        4
+      ],
+      "fun": 2,
+      "funSource": "none",
+      "funDe": "Ein ruhiges Gesprächs-Probespiel: Du klickst durch das Telefonat, und zu jeder Antwort des Gegenübers leuchtet der Paragraf auf, der dahintersteht.",
+      "funEn": "A calm rehearsal for the call: click through the conversation and, for every reply on the other end, the paragraph behind it lights up.",
+      "note": "Reviewer 11.10.2026 in classification-log (Gründungsnavigator): voller Prototyp GN-A 26/35; Zuschnitt GN-B (Normregister, Fristen-/Reihenfolgeprüfer, Rechte-Karten mit Wortlaut im Kern, Taktik nur als Beispielpaket) 29/35. V1 schmale Restlücke (Gespräch statt Brief), V4 SGB-II-Halbwertszeit 2–3 Jahre, V7 Normtext Typ A, Bedarf nur Sekundärquellen. Zitat-Abgleich gegen gesetze-im-internet.de 11.10.2026: 4 Abweichungen korrigiert."
     }
   },
   "candidates": {

@@ -13,4 +13,5 @@ export const KiezLaermSimulator = lazy(() => import('./KiezLaermSimulator').then
 export const FugenduellArena = lazy(() => import('./FugenduellArena').then(m => ({ default: m.FugenduellArena })));
 export const TischSchiedsrichterSimulator = lazy(() => import('./TischSchiedsrichterSimulator').then(m => ({ default: m.TischSchiedsrichterSimulator })));
 export const KristallwachstumSimulator = lazy(() => import('./KristallwachstumSimulator').then(m => ({ default: m.KristallwachstumSimulator })));
+export const GruendungsnavigatorSimulator = lazy(() => import('./GruendungsnavigatorSimulator').then(m => ({ default: m.GruendungsnavigatorSimulator })));
 export const ChemHazardSimulator = lazy(() => import('./ChemHazardSimulator').then(m => ({ default: m.ChemHazardSimulator })));

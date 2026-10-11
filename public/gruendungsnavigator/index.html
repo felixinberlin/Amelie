@@ -2,7 +2,11 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f5fbf">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Gründung">
 <title>Gesprächsnavigator Existenzgründung</title>
 <meta name="description" content="Gesprächsleitfaden für Telefonat und Termin im Jobcenter zur Existenzgründung: Entscheidungsbaum, vorbereitete Antworten, Rechtsgrundlagen.">
 <meta name="robots" content="noindex">
@@ -168,6 +172,57 @@ body.present .ptabs{display:flex}
   .grid2{grid-template-columns:1fr}
   .question{font-size:19px}
 }
+/* Handy: App-Leiste unten, kompakter Kopf, große Tippflächen */
+nav.tabs .ico,nav.tabs .short{display:none}
+.callbar{height:4px;background:var(--surface-2);border-radius:99px;overflow:hidden;margin:0 0 14px}
+.callbar i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--good));transition:width .35s ease}
+.ans,.rbtn,.btn,.filters button,.iconbtn{min-height:44px}
+.ans{transition:transform .08s ease,border-color .15s,background .15s}
+.ans:active,.rbtn:active,.btn:active{transform:scale(.985)}
+@media (prefers-reduced-motion: reduce){.ans,.callbar i{transition:none}.ans:active,.rbtn:active,.btn:active{transform:none}}
+@media (max-width:820px){
+  body{font-size:16.5px;padding-bottom:calc(72px + env(safe-area-inset-bottom))}
+  .top .wrap{min-height:52px;padding-top:6px;padding-bottom:6px;gap:8px;flex-wrap:nowrap}
+  .brand{font-size:15.5px;line-height:1.25;min-width:0}
+  .brand small{display:none}
+  #present{padding:6px 10px;font-size:13px;white-space:nowrap;min-height:38px}
+  #present::before{content:"👁 "}
+  nav.tabs{position:fixed;left:0;right:0;bottom:0;z-index:20;display:grid;grid-template-columns:repeat(5,1fr);gap:0;
+    background:color-mix(in srgb,var(--surface) 92%,transparent);backdrop-filter:saturate(1.6) blur(12px);-webkit-backdrop-filter:saturate(1.6) blur(12px);
+    border-top:1px solid var(--line);padding:6px 4px calc(6px + env(safe-area-inset-bottom))}
+  nav.tabs button{display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 2px;border-radius:12px;font-size:11.5px;min-height:52px}
+  nav.tabs button:hover{border-color:transparent}
+  nav.tabs .full{display:none}
+  nav.tabs .ico,nav.tabs .short{display:block}
+  nav.tabs .ico{font-size:20px;line-height:1;transition:transform .2s}
+  nav.tabs button[aria-selected="true"] .ico{transform:translateY(-1px) scale(1.12)}
+  body.present{padding-bottom:16px}
+  body.present .top .wrap{flex-wrap:wrap}
+  body.present .ptabs{width:100%;overflow-x:auto;flex-wrap:nowrap}
+  body.present .ptabs button{white-space:nowrap}
+  main{padding-top:16px}
+  h1{font-size:23px}
+  .card{padding:16px;border-radius:14px}
+  .say{font-size:17.5px}
+  .nav{position:sticky;bottom:calc(72px + env(safe-area-inset-bottom));background:linear-gradient(transparent,var(--surface) 30%);padding-top:14px;margin-left:-16px;margin-right:-16px;padding-left:16px;padding-right:16px;padding-bottom:4px}
+  .nav .btn{flex:1;justify-content:center}
+  .row .btn{flex:1 1 100%;justify-content:center}
+  .toolbar input[type=search]{min-width:0;width:100%;font-size:16px;padding:12px 14px}
+  .filters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-left:-16px;margin-right:-16px;padding:0 16px}
+  .filters::-webkit-scrollbar{display:none}
+  .filters button{flex:none}
+  .bar{width:140px}
+  .qa summary{padding:14px 16px}
+  .qa summary .cat{display:none}
+  .qa .body{padding:14px 16px 16px}
+  .rgrid{grid-template-columns:1fr}
+  .law .src{margin-left:0;width:100%}
+  .toast{bottom:calc(84px + env(safe-area-inset-bottom))}
+  footer{padding-bottom:12px}
+  .field input,.field textarea{font-size:16px;padding:11px 12px}
+  .agenda td:first-child{white-space:normal}
+  .kv td:first-child{width:46%}
+}
 @media print{
   header.top,nav,.toolbar,.nav,.btn,.iconbtn,.toast,footer .noprint{display:none!important}
   body{background:#fff;color:#000}
@@ -183,11 +238,11 @@ body.present .ptabs{display:flex}
   <div class="wrap">
     <div class="brand"><span id="brand-t">Gesprächsnavigator Existenzgründung</span><small id="brand-s">Telefonat und Termin im Jobcenter · Stand Oktober 2026</small></div>
     <nav class="tabs" role="tablist" aria-label="Bereiche">
-      <button role="tab" data-view="prep" aria-selected="true">1 · Vorbereitung</button>
-      <button role="tab" data-view="call" aria-selected="false">2 · Telefonat</button>
-      <button role="tab" data-view="meet" aria-selected="false">3 · Fragen</button>
-      <button role="tab" data-view="rights" aria-selected="false">4 · Rechte-Karten</button>
-      <button role="tab" data-view="sum" aria-selected="false">5 · Zusammenfassung</button>
+      <button role="tab" data-view="prep" aria-selected="true"><span class="ico" aria-hidden="true">📋</span><span class="full">1 · Vorbereitung</span><span class="short">Start</span></button>
+      <button role="tab" data-view="call" aria-selected="false"><span class="ico" aria-hidden="true">📞</span><span class="full">2 · Telefonat</span><span class="short">Anruf</span></button>
+      <button role="tab" data-view="meet" aria-selected="false"><span class="ico" aria-hidden="true">💬</span><span class="full">3 · Fragen</span><span class="short">Fragen</span></button>
+      <button role="tab" data-view="rights" aria-selected="false"><span class="ico" aria-hidden="true">⚖️</span><span class="full">4 · Rechte-Karten</span><span class="short">Rechte</span></button>
+      <button role="tab" data-view="sum" aria-selected="false"><span class="ico" aria-hidden="true">✉️</span><span class="full">5 · Zusammenfassung</span><span class="short">Mail</span></button>
     </nav>
     <nav class="ptabs" aria-label="Präsentation">
       <button data-view="ov" aria-selected="false">Überblick</button>
@@ -321,7 +376,7 @@ const G = "https://www.gesetze-im-internet.de/";
 const LAW = {
   sgb1_14:  {t:"§ 14 SGB I", n:"Beratung", u:G+"sgb_1/__14.html", q:"Jeder hat Anspruch auf Beratung über seine Rechte und Pflichten nach diesem Gesetzbuch."},
   sgb1_16_2:{t:"§ 16 Abs. 2 SGB I", n:"Antrag bei unzuständiger Stelle", u:G+"sgb_1/__16.html", q:"Ist die Sozialleistung von einem Antrag abhängig, gilt der Antrag als zu dem Zeitpunkt gestellt, in dem er bei einer der in Satz 1 genannten Stellen eingegangen ist."},
-  sgb1_16_3:{t:"§ 16 Abs. 3 SGB I", n:"Hinwirken auf klare Anträge", u:G+"sgb_1/__16.html", q:"Die Leistungsträger sind verpflichtet, darauf hinzuwirken, dass unverzüglich klare und sachdienliche Anträge gestellt und unvollständige Angaben ergänzt werden."},
+  sgb1_16_3:{t:"§ 16 Abs. 3 SGB I", n:"Hinwirken auf klare Anträge", u:G+"sgb_1/__16.html", q:"Die Leistungsträger sind verpflichtet, darauf hinzuwirken, daß unverzüglich klare und sachdienliche Anträge gestellt und unvollständige Angaben ergänzt werden."},
   sgb1_17:  {t:"§ 17 Abs. 1 SGB I", n:"Zügige Leistung", u:G+"sgb_1/__17.html", k:"Die Leistungsträger müssen darauf hinwirken, dass Berechtigte die ihnen zustehenden Leistungen umfassend und zügig erhalten."},
   sgb1_39:  {t:"§ 39 Abs. 1 SGB I", n:"Ermessen", u:G+"sgb_1/__39.html", q:"Auf pflichtgemäße Ausübung des Ermessens besteht ein Anspruch."},
   sgb1_60:  {t:"§ 60 Abs. 1 SGB I", n:"Mitwirkung", u:G+"sgb_1/__60.html", k:"Wer Sozialleistungen erhält, muss alle leistungserheblichen Tatsachen angeben und Änderungen unverzüglich mitteilen."},
@@ -726,13 +781,13 @@ function renderCall(){
   }).join("") + '<li class="' + (end ? "cur" : "") + '" data-step="' + STEPS.length + '"><span class="n">✉</span><span class="lbl">Abschluss</span></li>';
 
   if (end) {
-    $("#qcard").innerHTML = '<div class="kicker">Abschluss</div><div class="question">Zusammenfassen und verabschieden</div>' +
+    $("#qcard").innerHTML = '<div class="callbar" aria-hidden="true"><i style="width:100%"></i></div><div class="kicker">Abschluss</div><div class="question">Zusammenfassen und verabschieden</div>' +
       '<div class="say"><span class="lbl">Sagen Sie</span>' + esc(fill(closingLine())) + '</div>' +
       '<ul class="dos"><li>Danach innerhalb einer Stunde die Zusammenfassung schriftlich senden.</li></ul>' +
       '<div class="nav"><button class="btn ghost" data-back>← Zurück</button><button class="btn" data-go="sum">Zusammenfassung öffnen →</button></div>';
   } else {
     const st = STEPS[S.step], chosen = S.sel[st.id], A = st.answers.find(a => a.k === chosen);
-    let h = '<div class="qhead"><span class="kicker">Frage ' + (S.step + 1) + ' von ' + STEPS.length + '</span></div><div class="question">' + esc(st.q) + '</div><div class="answers">';
+    let h = '<div class="callbar" aria-hidden="true"><i style="width:' + Math.round(S.step / STEPS.length * 100) + '%"></i></div><div class="qhead"><span class="kicker">Frage ' + (S.step + 1) + ' von ' + STEPS.length + '</span></div><div class="question">' + esc(st.q) + '</div><div class="answers">';
     h += st.answers.map((a, i) => '<button class="ans' + (a.k === chosen ? " sel" : "") + (a.end ? " end" : "") + '" data-ans="' + a.k + '"><span class="key">' + (i + 1) + '</span><span><span class="t">' + esc(a.t) + '</span>' + (a.s ? '<span class="s">' + esc(a.s) + '</span>' : "") + '</span></button>').join("");
     h += '</div>';
     if (A) {
@@ -761,9 +816,12 @@ function choose(k){
   S.log = S.log.filter(l => STEPS.findIndex(x => x.id === l.id) < S.step);
   S.log.push({id:st.id, short:st.short, t:A.t, time:now()});
   save(); renderCall();
+  // Auf dem Handy die Antwort ins Bild holen, statt sie unter der Falz zu lassen
+  if (window.matchMedia("(max-width:820px)").matches) { const r = document.querySelector("#qcard .resp"); if (r) r.scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block:"start"}); }
 }
-function next(){ const st = STEPS[S.step]; if (!st || !S.sel[st.id]) return; const A = st.answers.find(a => a.k === S.sel[st.id]); if (A.end) { S.ended = st.id; save(); show("sum"); return; } S.ended = null; S.step = Math.min(S.step + 1, STEPS.length); save(); renderCall(); }
-function back(){ if (S.step > 0) { S.step--; save(); renderCall(); } }
+function topOfCall(){ if (window.matchMedia("(max-width:820px)").matches) window.scrollTo({top:0}); }
+function next(){ const st = STEPS[S.step]; if (!st || !S.sel[st.id]) return; const A = st.answers.find(a => a.k === S.sel[st.id]); if (A.end) { S.ended = st.id; save(); show("sum"); return; } S.ended = null; S.step = Math.min(S.step + 1, STEPS.length); save(); renderCall(); topOfCall(); }
+function back(){ if (S.step > 0) { S.step--; save(); renderCall(); topOfCall(); } }
 
 /* Termin */
 let catSel = "Alle";
@@ -848,12 +906,14 @@ function renderSum(){
   $("#after").innerHTML = AFTER.map((t, i) => '<li><label class="check"><input type="checkbox" data-chk="a' + i + '"' + (S.chk["a" + i] ? " checked" : "") + '> ' + esc(t) + '</label></li>').join("");
 }
 
+const MOBIL = window.matchMedia("(max-width:820px)");
+function presentLabel(on){ return MOBIL.matches ? (on ? "Beenden" : "Zeigen") : (on ? "Präsentation beenden" : "Präsentationsmodus"); }
 function setPresent(on){
   S.present = on; save();
   document.body.classList.toggle("present", on);
-  const b = $("#present"); b.classList.toggle("on", on); b.textContent = on ? "Präsentation beenden" : "Präsentationsmodus";
+  const b = $("#present"); b.classList.toggle("on", on); b.textContent = presentLabel(on);
   catSel = "Alle"; $("#search").value = "";
-  $("#brand-t").textContent = on ? (val("name") || "Existenzgründung") : "Gesprächsnavigator Existenzgründung";
+  $("#brand-t").textContent = on ? (val("name") || "Existenzgründung") : (MOBIL.matches ? "Gründungsnavigator" : "Gesprächsnavigator Existenzgründung");
   $("#brand-s").textContent = on ? "TYPO3-Websites · Fragen und Antworten zum Gründungsvorhaben" : "Telefonat und Termin im Jobcenter · Stand Oktober 2026";
   rSel = null;
   show(on ? "ov" : (["ov"].includes(S.view) ? "prep" : S.view));
@@ -902,6 +962,9 @@ document.addEventListener("keydown", e => {
 try { const th = localStorage.getItem(KEY + "-theme"); if (th) document.documentElement.dataset.theme = th; } catch(e) {}
 renderPrep();
 if (S.present) setPresent(true); else show(S.view || "prep");
+$("#present").textContent = presentLabel(!!S.present);
+if (!S.present && MOBIL.matches) $("#brand-t").textContent = "Gründungsnavigator";
+MOBIL.addEventListener("change", () => { $("#present").textContent = presentLabel(!!S.present); });
 })();
 </script>
 </body>

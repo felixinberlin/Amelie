@@ -1,31 +1,31 @@
 {
   "auditVersion": 1,
-  "generatedAt": "2026-10-11T18:34:37.634Z",
+  "generatedAt": "2026-10-11T19:08:03.486Z",
   "repository": {
-    "commit": "ec0f9b53",
-    "branch": "main"
+    "commit": "0e1181b",
+    "branch": "claude/nifty-ride-xtktbm"
   },
   "inventory": {
-    "doses": 45,
+    "doses": 46,
     "graves": 149,
     "demos": 13,
     "researchEntries": 36,
     "candidateIdeas": 20,
-    "books": 46
+    "books": 51
   },
   "distributions": {
     "doseStatus": {
-      "gepackt": 40,
+      "gepackt": 41,
       "zugestellt": 5
     },
     "doseVerdict": {
+      "gift": 36,
       "build_first": 9,
-      "gift": 35,
       "keep": 1
     },
     "doseDomain": {
+      "civic": 21,
       "physics": 9,
-      "civic": 20,
       "git": 5,
       "creative": 4,
       "knowledge": 3,
@@ -123,22 +123,14 @@
       "relatedId": "europe-bird-migration"
     },
     {
-      "id": "DEMO-UNLINKED-gruendungsnavigator",
-      "severity": "warning",
-      "category": "demo",
-      "message": "Demo folder \"07-demos/gruendungsnavigator\" does not correspond to any active Dose or Grave ID.",
-      "file": "07-demos/gruendungsnavigator",
-      "relatedId": "gruendungsnavigator"
-    },
-    {
       "id": "DRIFT-AGENTS.md-Dosen-44",
       "severity": "warning",
       "category": "documentation",
-      "message": "AGENTS.md claims 44 Dosen, but deterministic source scanner finds 45.",
+      "message": "AGENTS.md claims 44 Dosen, but deterministic source scanner finds 46.",
       "file": "AGENTS.md",
       "details": {
         "claim": "44 Dosen",
-        "actual": 45,
+        "actual": 46,
         "type": "stale_count"
       }
     },
@@ -146,11 +138,11 @@
       "id": "DRIFT-AGENTS.md-Dosen-6",
       "severity": "warning",
       "category": "documentation",
-      "message": "AGENTS.md claims 6 Dosen, but deterministic source scanner finds 45.",
+      "message": "AGENTS.md claims 6 Dosen, but deterministic source scanner finds 46.",
       "file": "AGENTS.md",
       "details": {
         "claim": "6 Dosen",
-        "actual": 45,
+        "actual": 46,
         "type": "stale_count"
       }
     },
@@ -182,11 +174,11 @@
       "id": "DRIFT-en/README.md-Dosen-15",
       "severity": "warning",
       "category": "documentation",
-      "message": "en/README.md claims 15 Dosen, but deterministic source scanner finds 45.",
+      "message": "en/README.md claims 15 Dosen, but deterministic source scanner finds 46.",
       "file": "en/README.md",
       "details": {
         "claim": "15 tins",
-        "actual": 45,
+        "actual": 46,
         "type": "stale_count"
       }
     },
@@ -194,11 +186,11 @@
       "id": "DRIFT-README.de.md-Dosen-15",
       "severity": "warning",
       "category": "documentation",
-      "message": "README.de.md claims 15 Dosen, but deterministic source scanner finds 45.",
+      "message": "README.de.md claims 15 Dosen, but deterministic source scanner finds 46.",
       "file": "README.de.md",
       "details": {
         "claim": "15 Dosen",
-        "actual": 45,
+        "actual": 46,
         "type": "stale_count"
       }
     },
@@ -206,11 +198,11 @@
       "id": "DRIFT-README.md-Dosen-15",
       "severity": "warning",
       "category": "documentation",
-      "message": "README.md claims 15 Dosen, but deterministic source scanner finds 45.",
+      "message": "README.md claims 15 Dosen, but deterministic source scanner finds 46.",
       "file": "README.md",
       "details": {
         "claim": "15 tins",
-        "actual": 45,
+        "actual": 46,
         "type": "stale_count"
       }
     }

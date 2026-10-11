@@ -64,6 +64,14 @@ const SIMULATOR_BADGES: Record<string, SimulatorBadgeConfig> = {
     colorClasses: 'bg-[var(--m-copper)]/15 hover:bg-[var(--m-copper)]/25 text-[#78350f] border-[var(--m-copper)]/30',
     iconColor: 'text-[var(--m-copper)]',
   },
+  'gruendungsnavigator': {
+    simKey: 'gruendungsnavigator',
+    labelDe: '🧭 Live-Demo & Fristenrechner',
+    labelEn: '🧭 Live demo & deadline calculator',
+    labelEs: '🧭 Demo y calculadora de plazos',
+    colorClasses: 'bg-[var(--m-accent)]/15 hover:bg-[var(--m-accent)]/25 text-[var(--m-accent)] border-[var(--m-accent)]/30',
+    iconColor: 'text-[var(--m-accent)]',
+  },
   'klarlokal': {
     simKey: 'klarlokal',
     labelDe: '🛡️ Live-Brecheisen Simulator',
