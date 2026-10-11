@@ -269,4 +269,158 @@ describe('Wet Ink acceptance — the five effects', { timeout: SLOW }, () => {
       }
     }
   });
+
+  describe('multi-pigment Kubelka-Munk mixing & repeated application physics', () => {
+    it('overlapping Cadmium Yellow and Prussian Blue produces optical green in composite render', () => {
+      const sim = freshSim('kopierpapier', 'kadmiumgelb');
+      const yellow = pigment('kadmiumgelb');
+      const blue = pigment('preussischblau');
+
+      // Inject yellow circle on the left
+      sim.injectInk(50, 64, 16, 1.0, 1.2, false, yellow);
+      // Inject blue circle overlapping on the right
+      sim.injectInk(64, 64, 16, 1.0, 1.2, false, blue);
+
+      const pixels = new Uint8ClampedArray(SIZE * SIZE * 4);
+      const imgData = { data: pixels, width: SIZE, height: SIZE } as ImageData;
+      sim.renderToImageData(imgData, 'composite');
+
+      // Sample pure yellow spot (x = 42, y = 64)
+      const yIdx = (64 * SIZE + 42) * 4;
+      const yr = pixels[yIdx];
+      const yg = pixels[yIdx + 1];
+      const yb = pixels[yIdx + 2];
+      expect(yr).toBeGreaterThan(160);
+      expect(yg).toBeGreaterThan(120);
+      expect(yb).toBeLessThan(80); // Yellow absorbs blue strongly
+
+      // Sample pure blue spot (x = 72, y = 64)
+      const bIdx = (64 * SIZE + 72) * 4;
+      const br = pixels[bIdx];
+      const bg = pixels[bIdx + 1];
+      const bb = pixels[bIdx + 2];
+      expect(bb).toBeGreaterThan(br); // Blue reflects more blue than red
+
+      // Sample the overlap intersection (x = 57, y = 64)
+      // Subtractive Kubelka-Munk mixture: Green must dominate over both Red and Blue!
+      const mIdx = (64 * SIZE + 57) * 4;
+      const mr = pixels[mIdx];
+      const mg = pixels[mIdx + 1];
+      const mb = pixels[mIdx + 2];
+
+      expect(mg).toBeGreaterThan(mr); // Green > Red
+      expect(mg).toBeGreaterThan(mb); // Green > Blue
+    });
+
+    it('switching active pigment does not recolor previously deposited strokes', () => {
+      const sim = freshSim('kopierpapier', 'kadmiumgelb');
+      const yellow = pigment('kadmiumgelb');
+      const blue = pigment('preussischblau');
+
+      sim.injectInk(40, 64, 14, 1.0, 1.2, false, yellow);
+      sim.forceDry();
+
+      const pixels1 = new Uint8ClampedArray(SIZE * SIZE * 4);
+      sim.renderToImageData({ data: pixels1, width: SIZE, height: SIZE } as ImageData, 'composite');
+      const idx = (64 * SIZE + 40) * 4;
+      const r1 = pixels1[idx];
+      const g1 = pixels1[idx + 1];
+      const b1 = pixels1[idx + 2];
+
+      // Switch active pigment to blue
+      sim.setPigment(blue);
+
+      const pixels2 = new Uint8ClampedArray(SIZE * SIZE * 4);
+      sim.renderToImageData({ data: pixels2, width: SIZE, height: SIZE } as ImageData, 'composite');
+      const r2 = pixels2[idx];
+      const g2 = pixels2[idx + 1];
+      const b2 = pixels2[idx + 2];
+
+      // Previous stroke must remain identical yellow, NOT turn into blue!
+      expect(r2).toBe(r1);
+      expect(g2).toBe(g1);
+      expect(b2).toBe(b1);
+    });
+
+    it('repeated application in the same spot deepens puddle and accumulates pigment past old hard clamp', () => {
+      const sim = freshSim('aquarell-rau', 'sumi');
+      const centerIdx = 64 * SIZE + 64;
+
+      // Stroke 1
+      sim.injectInk(64, 64, 8, 1.0, 1.0);
+      const h1 = sim.waterFilm[centerIdx];
+      const p1 = sim.pigmentSuspended[centerIdx];
+
+      // Stroke 2
+      sim.injectInk(64, 64, 8, 1.0, 1.0);
+      const h2 = sim.waterFilm[centerIdx];
+      const p2 = sim.pigmentSuspended[centerIdx];
+
+      expect(h2).toBeGreaterThan(h1);
+      expect(p2).toBeGreaterThan(p1);
+
+      // Stroke 3, 4, 5: continues to accumulate smoothly past 3.0
+      sim.injectInk(64, 64, 8, 1.5, 1.5);
+      sim.injectInk(64, 64, 8, 1.5, 1.5);
+      sim.injectInk(64, 64, 8, 1.5, 1.5);
+
+      const pFinal = sim.pigmentSuspended[centerIdx];
+      expect(pFinal).toBeGreaterThan(3.0); // Verifies removal of premature 3.0 hard clamp
+    });
+
+    it('cake filtration pore clogging: heavily pigmented paper absorbs fresh liquid slower', () => {
+      const simClogged = freshSim('buetten', 'sumi');
+      const simClean = freshSim('buetten', 'sumi');
+      const idx = 64 * SIZE + 64;
+
+      // Cell in simClogged has heavy dried cake deposit; simClean is virgin paper
+      simClogged.pigmentDeposited[idx] = 3.5;
+      simClean.pigmentDeposited[idx] = 0.0;
+
+      // Add equal surface water film to both
+      simClogged.waterFilm[idx] = 1.0;
+      simClean.waterFilm[idx] = 1.0;
+      simClogged.isActive = true;
+      simClogged.minActiveX = 1;
+      simClogged.maxActiveX = SIZE - 2;
+      simClogged.minActiveY = 1;
+      simClogged.maxActiveY = SIZE - 2;
+
+      simClean.isActive = true;
+      simClean.minActiveX = 1;
+      simClean.maxActiveX = SIZE - 2;
+      simClean.minActiveY = 1;
+      simClean.maxActiveY = SIZE - 2;
+
+      // Advance one step
+      simClogged.step(WET_INK_DT);
+      simClean.step(WET_INK_DT);
+
+      // In virgin paper, water absorbs faster into fibers than in cake-clogged paper
+      expect(simClean.fiberMoisture[idx]).toBeGreaterThan(simClogged.fiberMoisture[idx]);
+    });
+
+    it('re-wetting deposited pigment lifts off particles into surface liquid film (backrun mechanics)', () => {
+      const sim = freshSim('kopierpapier', 'sumi');
+      sim.injectInk(64, 64, 10, 0.8, 1.5);
+      sim.forceDry();
+
+      const idx = 64 * SIZE + 64;
+      const initialDeposited = sim.pigmentDeposited[idx];
+      expect(initialDeposited).toBeGreaterThan(0.5);
+      expect(sim.pigmentSuspended[idx]).toBe(0);
+
+      // Apply clear water on top of the dried stroke
+      sim.injectInk(64, 64, 10, 1.8, 0.0);
+      expect(sim.waterFilm[idx]).toBeGreaterThan(0.5);
+
+      // Step simulation: standing water should re-suspend bound pigment
+      sim.step(WET_INK_DT);
+      sim.step(WET_INK_DT);
+
+      // Suspended pigment is now non-zero (lifted off!)
+      expect(sim.pigmentSuspended[idx]).toBeGreaterThan(0);
+      expect(sim.pigmentDeposited[idx]).toBeLessThan(initialDeposited);
+    });
+  });
 });

@@ -126,6 +126,15 @@ describe('@wet-ink/core — Headless Architecture', () => {
       });
       expect(controller.getLifecycleState()).toBe('settling');
 
+      // Scientific morphology metrics & fractal dimension
+      const metrics = controller.getMetrics();
+      expect(metrics).toBeDefined();
+      expect(metrics.fractalDimension).toBeDefined();
+      expect(metrics.anisotropy).toBeDefined();
+
+      const fractal = controller.getFractalAnalysis();
+      expect(fractal.fractalDimension).toBeDefined();
+
       // Destruction
       controller.destroy();
     });

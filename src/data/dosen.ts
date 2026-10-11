@@ -1122,12 +1122,12 @@ Dual-licensed under MIT (code & schema structure) and CC BY 4.0 (interpretive te
     sketchDe: 'Drei gekoppelte Texturschichten: Papierfasern (Höhe, Richtung, Kapazität), Oberflächenwasser (Geschwindigkeit, Pigment), Faserschicht (Deponiertes Pigment). Sieben Shader-Pässe mit Kapillarschwelle, Web Audio Haptik und Marching Squares Vektorexport.',
     sketchEn: 'Three linked simulation textures: paper substrate (roughness, grain vector, moisture capacity), water layer (velocity, suspended pigment), and stained fiber layer. 7 sequential shader passes, Web Audio acoustics, and Marching Squares vectorizer.',
     firstStepDe: {
-      ticket: 'Ticket #1, #2 & #3: @wet-ink/core Headless-Kernel, Kalligrafie-Erweiterung (Xuan & Mao-Bi) & Zinnober-Siegel.',
-      criteria: 'Framework-freie TS-Engine mit 7-Pass-Simulation, Kapillarschwelle ε_min, Xuan-Papieren (Sheng, Ban Shu, Shu Xuan), Mao-Bi Haartypen (Langhao, Yanghao, Jianhao), Übungsgittern (Mi Zi Ge, Jiu Gong Ge, Yongzi Bafa) und Zinnober-Siegeln (327 Tests grün).'
+      ticket: 'Ticket #1–#6: @wet-ink/core Headless-Kernel, Kalligrafie, Farbwissenschaft, Rheologie/DLVO & Kontinuum-Kubelka-Munk Glasurmechanik.',
+      criteria: 'Framework-freie TS-Engine mit 7-Pass-Simulation, Kapillarschwelle ε_min, Xuan-Papieren, Mao-Bi-Haardynamik, Siegeln, Saunderson-Optik, CIEDE2000, Washburn-Chromatographie, Cross/Carreau-Rheologie, DLVO-Kolloidstabilität, Kontinuum-Kubelka-Munk Spektralfeldern, Laplace-Young Meniskustransfer und Kuchenfiltrations-Porenblockade (406 Tests grün in 32 Suiten).'
     },
     firstStepEn: {
-      ticket: 'Ticket #1, #2 & #3: @wet-ink/core Headless Kernel, Calligraphy Extension (Xuan & Mao-Bi) & Cinnabar Seal Art.',
-      criteria: 'Zero-dependency TS engine with 7-pass simulation, capillary threshold ε_min, Xuan papers (Sheng, Ban Shu, Shu Xuan), Mao-Bi hair dynamics (Langhao, Yanghao, Jianhao), practice grids (Mi Zi Ge, Jiu Gong Ge, Yongzi Bafa), and cinnabar seals (327 tests passing).'
+      ticket: 'Ticket #1–#6: @wet-ink/core Headless Kernel, Calligraphy, Color Science, Rheology/DLVO & Continuum Kubelka-Munk Glazing Mechanics.',
+      criteria: 'Zero-dependency TS engine with 7-pass simulation, capillary threshold ε_min, Xuan papers, Mao-Bi hair dynamics, seals, Saunderson optics, CIEDE2000, Washburn chromatography, Cross/Carreau rheology, DLVO colloid stability, continuum Kubelka-Munk spectral fields, Laplace-Young meniscal transfer, and cake pore clogging (406 tests passing across 32 suites).'
     },
     failureModeDe: 'Rauch statt Tinte: Ohne strikte Kapillarschwelle diffundiert das Pigment wolkig wie Rauch. Gelöst durch Kapillarschwelle vor der fluiden Advektion und Ruhezustands-Wächter gegen GPU-Last.',
     failureModeEn: 'The smoke bug: Without a strict capillary threshold, ink bleeds like soft smoke. Enforces capillary threshold before fluid advection, with idle sleep monitoring against GPU drain.',

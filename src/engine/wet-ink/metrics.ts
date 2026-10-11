@@ -25,6 +25,8 @@ export interface StainMetrics {
   roughness: number;
   hairs: number;
   totalPigment: number;
+  /** Box-counting fractal dimension D_f of the capillary contact line (1.0 = smooth Euclidean, >1.2 = capillary fingering) */
+  fractalDimension: number;
 }
 
 export function measureStain(
@@ -45,7 +47,7 @@ export function measureStain(
     }
   }
   if (area === 0) {
-    return { area: 0, cx: 0, cy: 0, anisotropy: 1, majorAngle: 0, roughness: 0, hairs: 0, totalPigment: 0 };
+    return { area: 0, cx: 0, cy: 0, anisotropy: 1, majorAngle: 0, roughness: 0, hairs: 0, totalPigment: 0, fractalDimension: 1.0 };
   }
   const cx = mx / m;
   const cy = my / m;
@@ -79,6 +81,8 @@ export function measureStain(
   const majorAngle = 0.5 * Math.atan2(2 * cxy, cxx - cyy);
   const radius = Math.sqrt(area / Math.PI);
 
+  const fractal = calculateFractalDimension(pigment, width, height, threshold);
+
   return {
     area,
     cx,
@@ -88,7 +92,137 @@ export function measureStain(
     roughness: perimeter / (2 * Math.PI * radius),
     hairs: thin / area,
     totalPigment: m,
+    fractalDimension: fractal.fractalDimension,
   };
+}
+
+export interface FractalAnalysis {
+  /** Box-counting fractal dimension D_f of boundary (typically 1.0 <= D_f <= 2.0) */
+  fractalDimension: number;
+  /** R^2 goodness-of-fit for log N(ε) vs log(1/ε) linear scaling */
+  rSquared: number;
+  /** Box counts for each scale ε */
+  scales: Array<{ epsilon: number; count: number }>;
+}
+
+/**
+ * Calculates the box-counting fractal dimension (D_f) of the capillary stain
+ * contact line (boundary), grounded in invasion percolation and wetting physics
+ * (Mandelbrot 1982; Family & Vicsek 1991; Buldyrev et al. 1992).
+ *
+ * Physical significance:
+ *   - Euclidean circle / smooth droplet: D_f ≈ 1.00
+ *   - Sized paper (Shu Xuan) with suppressed feathering: D_f ≈ 1.05 - 1.15
+ *   - Raw unsized paper (Sheng Xuan / Washi) with capillary fingering along fibers: D_f >= 1.20
+ *
+ * @param pigment Float32Array grid of deposited pigment
+ * @param width Grid width in cells
+ * @param height Grid height in cells
+ * @param threshold Density threshold defining stained cells (default 0.01)
+ * @param epsilons Box sizes to probe (default [2, 4, 8, 16, 32])
+ */
+export function calculateFractalDimension(
+  pigment: Float32Array,
+  width: number,
+  height: number,
+  threshold: number = 0.01,
+  epsilons: number[] = [2, 4, 8, 16, 32]
+): FractalAnalysis {
+  const edgeX: number[] = [];
+  const edgeY: number[] = [];
+
+  for (let y = 0; y < height; y++) {
+    for (let x = 0; x < width; x++) {
+      const i = y * width + x;
+      if (pigment[i] <= threshold) continue;
+
+      const isBoundary =
+        x === 0 || y === 0 || x === width - 1 || y === height - 1 ||
+        pigment[i - 1] <= threshold ||
+        pigment[i + 1] <= threshold ||
+        pigment[i - width] <= threshold ||
+        pigment[i + width] <= threshold;
+
+      if (isBoundary) {
+        edgeX.push(x);
+        edgeY.push(y);
+      }
+    }
+  }
+
+  if (edgeX.length === 0) {
+    return { fractalDimension: 1.0, rSquared: 1.0, scales: [] };
+  }
+
+  const maxDimension = Math.min(width, height);
+  const validEpsilons = epsilons.filter(eps => eps >= 1 && eps <= maxDimension / 2);
+  if (validEpsilons.length < 2) {
+    return { fractalDimension: 1.0, rSquared: 1.0, scales: [] };
+  }
+
+  const scales: Array<{ epsilon: number; count: number }> = [];
+
+  for (const eps of validEpsilons) {
+    const nx = Math.ceil(width / eps);
+    const ny = Math.ceil(height / eps);
+    const occupied = new Uint8Array(nx * ny);
+    let count = 0;
+
+    for (let k = 0; k < edgeX.length; k++) {
+      const bx = Math.floor(edgeX[k] / eps);
+      const by = Math.floor(edgeY[k] / eps);
+      const idx = by * nx + bx;
+      if (occupied[idx] === 0) {
+        occupied[idx] = 1;
+        count++;
+      }
+    }
+
+    if (count > 0) {
+      scales.push({ epsilon: eps, count });
+    }
+  }
+
+  if (scales.length < 2) {
+    return { fractalDimension: 1.0, rSquared: 1.0, scales };
+  }
+
+  // OLS Linear Regression on: x_k = ln(1 / eps) = -ln(eps), y_k = ln(count)
+  let sumX = 0, sumY = 0;
+  const n = scales.length;
+  const xs: number[] = [];
+  const ys: number[] = [];
+
+  for (let i = 0; i < n; i++) {
+    const xVal = -Math.log(scales[i].epsilon);
+    const yVal = Math.log(scales[i].count);
+    xs.push(xVal);
+    ys.push(yVal);
+    sumX += xVal;
+    sumY += yVal;
+  }
+
+  const meanX = sumX / n;
+  const meanY = sumY / n;
+
+  let sxx = 0, syy = 0, sxy = 0;
+  for (let i = 0; i < n; i++) {
+    const dx = xs[i] - meanX;
+    const dy = ys[i] - meanY;
+    sxx += dx * dx;
+    syy += dy * dy;
+    sxy += dx * dy;
+  }
+
+  if (sxx < 1e-12) {
+    return { fractalDimension: 1.0, rSquared: 1.0, scales };
+  }
+
+  const slope = sxy / sxx;
+  const rSquared = syy > 1e-12 ? Math.max(0.0, Math.min(1.0, (sxy * sxy) / (sxx * syy))) : 1.0;
+  const fractalDimension = Math.round(Math.max(0.5, Math.min(2.0, slope)) * 10000) / 10000;
+
+  return { fractalDimension, rSquared, scales };
 }
 
 /**

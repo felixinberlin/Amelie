@@ -4,6 +4,9 @@ import {
   evaluatePigmentMixture,
   naiveRgbBlend,
   PAPER_REFLECTANCE,
+  saundersonCorrection,
+  inverseSaunderson,
+  KubelkaMunkLUT,
 } from './kubelka-munk';
 import { PIGMENT_PRESETS } from './presets';
 
@@ -74,5 +77,39 @@ describe('Kubelka-Munk Optical Engine', () => {
     expect(naive[0]).toBe(130);
     expect(naive[1]).toBe(125);
     expect(naive[2]).toBe(105);
+  });
+
+  describe('Saunderson (1942) Fresnel Boundary Formulation', () => {
+    it('satisfies physical boundary limits at zero and full reflectance', () => {
+      // Perfect absorber still has 4% external Fresnel reflection (k1)
+      const R_zero = saundersonCorrection(0.0);
+      expect(R_zero).toBeCloseTo(0.04, 5);
+
+      // Perfect reflector conserves 100% light
+      const R_one = saundersonCorrection(1.0);
+      expect(R_one).toBeCloseTo(1.0, 5);
+    });
+
+    it('proves exact mathematical invertibility: inverseSaunderson(saunderson(R)) == R', () => {
+      const testValues = [0.0, 0.05, 0.1, 0.25, 0.5, 0.75, 0.9, 0.99, 1.0];
+      for (const r of testValues) {
+        const obs = saundersonCorrection(r);
+        const recovered = inverseSaunderson(obs);
+        expect(recovered).toBeCloseTo(r, 5);
+      }
+    });
+
+    it('applies Saunderson correction within KubelkaMunkLUT', () => {
+      const sumi = PIGMENT_PRESETS.find(p => p.id === 'sumi')!;
+      const lutStandard = new KubelkaMunkLUT(sumi.km, PAPER_REFLECTANCE, 64, 3.5, false);
+      const lutSaunderson = new KubelkaMunkLUT(sumi.km, PAPER_REFLECTANCE, 64, 3.5, true);
+
+      expect(lutSaunderson.saunderson).toBe(true);
+      // For heavy concentration (index 63), raw R approaches near 0, but Saunderson includes k1 (~0.04)
+      const rawHeavyR = lutStandard.tableR[63];
+      const saundersonHeavyR = lutSaunderson.tableR[63];
+      expect(saundersonHeavyR).toBeCloseTo(saundersonCorrection(rawHeavyR), 5);
+      expect(saundersonHeavyR).toBeGreaterThanOrEqual(0.04);
+    });
   });
 });

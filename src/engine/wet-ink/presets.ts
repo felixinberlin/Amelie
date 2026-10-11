@@ -169,8 +169,8 @@ export const PIGMENT_PRESETS: WetInkPigmentConfig[] = [
     bleedSpeed: 1.05,
     edgeDarkening: 0.85,
     km: {
-      K: [3.8, 1.9, 0.25], // Strong red/green absorption, preserves deep blue
-      S: [0.18, 0.28, 0.75],
+      K: [4.2, 0.42, 0.22], // Strong red absorption, low green absorption, rich cyan-blue reflection
+      S: [0.15, 0.42, 0.78],
     },
   },
   {
@@ -187,8 +187,8 @@ export const PIGMENT_PRESETS: WetInkPigmentConfig[] = [
     bleedSpeed: 1.15,
     edgeDarkening: 0.70,
     km: {
-      K: [3.4, 1.8, 0.30],
-      S: [0.20, 0.32, 0.68],
+      K: [3.8, 0.52, 0.28], // Luminous fountain pen blue wash
+      S: [0.18, 0.40, 0.72],
     },
   },
   {
@@ -277,15 +277,173 @@ export const PIGMENT_PRESETS: WetInkPigmentConfig[] = [
     bleedSpeed: 1.05,
     edgeDarkening: 0.85,
     km: {
-      K: [3.4, 1.8, 0.35],
-      S: [0.19, 0.26, 0.70],
+      K: [3.6, 1.10, 0.32],
+      S: [0.20, 0.32, 0.68],
+    },
+  },
+  {
+    id: 'ultramarin',
+    nameDe: 'Ultramarinblau (Lapislazuli PB29)',
+    nameEn: 'French Ultramarine (PB29)',
+    nameEs: 'Azul ultramar francés',
+    colorHex: '#183e8f',
+    r: 24,
+    g: 62,
+    b: 143,
+    density: 0.82,
+    granulationFactor: 0.55,
+    bleedSpeed: 1.10,
+    edgeDarkening: 0.80,
+    km: {
+      K: [3.5, 2.2, 0.28], // Intense warm reddish blue with strong blue scattering
+      S: [0.18, 0.24, 0.82],
+    },
+  },
+  {
+    id: 'siena',
+    nameDe: 'Gebrannte Siena (PBr7)',
+    nameEn: 'Burnt Sienna Earth (PBr7)',
+    nameEs: 'Tierra de Siena tostada',
+    colorHex: '#8a3b1a',
+    r: 138,
+    g: 59,
+    b: 26,
+    density: 0.86,
+    granulationFactor: 0.65,
+    bleedSpeed: 0.95,
+    edgeDarkening: 0.85,
+    km: {
+      K: [0.85, 2.8, 3.8], // Rich glowing reddish earth
+      S: [0.45, 0.22, 0.14],
+    },
+  },
+  {
+    id: 'chinacridon',
+    nameDe: 'Chinacridon Magenta (PR122)',
+    nameEn: 'Quinacridone Magenta (PR122)',
+    nameEs: 'Magenta de quinacridona',
+    colorHex: '#b81d58',
+    r: 184,
+    g: 29,
+    b: 88,
+    density: 0.78,
+    granulationFactor: 0.25,
+    bleedSpeed: 1.15,
+    edgeDarkening: 0.75,
+    km: {
+      K: [0.22, 3.8, 1.8], // High green absorption, radiant red/blue transmission
+      S: [0.65, 0.18, 0.38],
+    },
+  },
+  {
+    id: 'umbra',
+    nameDe: 'Umbra Natur (Zypriotisch)',
+    nameEn: 'Raw Umber Earth (Cypriot)',
+    nameEs: 'Sombra natural de Chipre',
+    colorHex: '#483c32',
+    r: 72,
+    g: 60,
+    b: 50,
+    density: 0.90,
+    granulationFactor: 0.70,
+    bleedSpeed: 0.90,
+    edgeDarkening: 0.90,
+    km: {
+      K: [2.2, 2.4, 2.8], // Neutral dark earth tone
+      S: [0.20, 0.18, 0.15],
+    },
+  },
+  {
+    id: 'titanweiss',
+    nameDe: 'Deckweiß Lasur (Titan PW6)',
+    nameEn: 'Titanium White Wash (PW6)',
+    nameEs: 'Blanco de titanio transparente',
+    colorHex: '#f2efe6',
+    r: 242,
+    g: 239,
+    b: 230,
+    density: 0.90,
+    granulationFactor: 0.40,
+    bleedSpeed: 0.85,
+    edgeDarkening: 0.50,
+    km: {
+      K: [0.02, 0.02, 0.04], // Low absorption, massive scattering (opaque body)
+      S: [2.8, 2.8, 2.7],
     },
   },
 ];
 
 /**
+ * Standard RGB to HSL color space conversion.
+ * @returns [h (0..360), s (0..100), l (0..100)]
+ */
+export function rgbToHsl(r: number, g: number, b: number): [number, number, number] {
+  const rNorm = r / 255;
+  const gNorm = g / 255;
+  const bNorm = b / 255;
+  const max = Math.max(rNorm, gNorm, bNorm);
+  const min = Math.min(rNorm, gNorm, bNorm);
+  let h = 0;
+  let s = 0;
+  const l = (max + min) / 2;
+
+  if (max !== min) {
+    const d = max - min;
+    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+    switch (max) {
+      case rNorm: h = ((gNorm - bNorm) / d + (gNorm < bNorm ? 6 : 0)) / 6; break;
+      case gNorm: h = ((bNorm - rNorm) / d + 2) / 6; break;
+      case bNorm: h = ((rNorm - gNorm) / d + 4) / 6; break;
+    }
+  }
+  return [Math.round(h * 360), Math.round(s * 100), Math.round(l * 100)];
+}
+
+/**
+ * Standard HSL to RGB color space conversion.
+ * @param h Hue [0..360]
+ * @param s Saturation [0..100]
+ * @param l Lightness [0..100]
+ * @returns [r (0..255), g (0..255), b (0..255)]
+ */
+export function hslToRgb(h: number, s: number, l: number): [number, number, number] {
+  const hNorm = (h % 360) / 360;
+  const sNorm = Math.max(0, Math.min(100, s)) / 100;
+  const lNorm = Math.max(0, Math.min(100, l)) / 100;
+
+  if (sNorm === 0) {
+    const v = Math.round(lNorm * 255);
+    return [v, v, v];
+  }
+
+  const hue2rgb = (p: number, q: number, t: number) => {
+    let tMod = t;
+    if (tMod < 0) tMod += 1;
+    if (tMod > 1) tMod -= 1;
+    if (tMod < 1 / 6) return p + (q - p) * 6 * tMod;
+    if (tMod < 1 / 2) return q;
+    if (tMod < 2 / 3) return p + (q - p) * (2 / 3 - tMod) * 6;
+    return p;
+  };
+
+  const q = lNorm < 0.5 ? lNorm * (1 + sNorm) : lNorm + sNorm - lNorm * sNorm;
+  const p = 2 * lNorm - q;
+  const r = Math.round(hue2rgb(p, q, hNorm + 1 / 3) * 255);
+  const g = Math.round(hue2rgb(p, q, hNorm) * 255);
+  const b = Math.round(hue2rgb(p, q, hNorm - 1 / 3) * 255);
+  return [r, g, b];
+}
+
+/** Converts RGB [0..255] components into a clean uppercase Hex string. */
+export function rgbToHex(r: number, g: number, b: number): string {
+  const toHex = (n: number) => Math.max(0, Math.min(255, Math.round(n))).toString(16).padStart(2, '0');
+  return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
+}
+
+/**
  * Generates an authentic physical Kubelka-Munk pigment configuration from any hex color code.
- * Subtractive absorption (K) and scattering (S) spectra are derived from normalized RGB reflectances.
+ * Subtractive absorption (K) and scattering (S) spectra are derived from normalized RGB reflectances
+ * with continuous spectral band broadening (CIE cone band overlap) to ensure physical mixing fidelity.
  */
 export function createPigmentFromHex(
   hex: string,
@@ -299,21 +457,28 @@ export function createPigmentFromHex(
   const b = parseInt(cleanHex.slice(4, 6), 16) || 20;
 
   // Normalized substrate-relative reflectances [0.02, 0.95]
-  const R_r = Math.max(0.02, Math.min(0.95, r / 255));
-  const R_g = Math.max(0.02, Math.min(0.95, g / 255));
-  const R_b = Math.max(0.02, Math.min(0.95, b / 255));
+  const R_raw_r = Math.max(0.02, Math.min(0.95, r / 255));
+  const R_raw_g = Math.max(0.02, Math.min(0.95, g / 255));
+  const R_raw_b = Math.max(0.02, Math.min(0.95, b / 255));
+
+  // Spectral broadening (CIE cone band overlap): physical pigments have continuous absorption spectra
+  // rather than narrow digital delta spikes. Red and Green have slight overlap (~8%), Green and Blue (~4%),
+  // while Blue is tightly isolated so yellow pigments strongly extinguish blue wavelengths.
+  const R_r = 0.92 * R_raw_r + 0.08 * R_raw_g;
+  const R_g = 0.05 * R_raw_r + 0.90 * R_raw_g + 0.05 * R_raw_b;
+  const R_b = 0.04 * R_raw_g + 0.96 * R_raw_b;
 
   // Kubelka-Munk: K/S = (1 - R_inf)^2 / (2 * R_inf)
   const calcKS = (R: number) => ((1.0 - R) * (1.0 - R)) / (2.0 * R);
-  const S_base = 0.35;
+  const S_base = 0.65;
 
-  const K_r = Math.max(0.05, Math.min(6.0, calcKS(R_r) * S_base));
-  const K_g = Math.max(0.05, Math.min(6.0, calcKS(R_g) * S_base));
-  const K_b = Math.max(0.05, Math.min(6.0, calcKS(R_b) * S_base));
+  const K_r = Math.max(0.04, Math.min(8.5, calcKS(R_r) * S_base));
+  const K_g = Math.max(0.04, Math.min(8.5, calcKS(R_g) * S_base));
+  const K_b = Math.max(0.04, Math.min(8.5, calcKS(R_b) * S_base));
 
-  const S_r = S_base * (0.8 + R_r * 0.4);
-  const S_g = S_base * (0.8 + R_g * 0.4);
-  const S_b = S_base * (0.8 + R_b * 0.4);
+  const S_r = S_base * (0.85 + R_r * 0.3);
+  const S_g = S_base * (0.85 + R_g * 0.3);
+  const S_b = S_base * (0.85 + R_b * 0.3);
 
   // Density based on darkness
   const brightness = (r * 0.299 + g * 0.587 + b * 0.114) / 255;

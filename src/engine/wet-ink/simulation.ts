@@ -9,7 +9,7 @@ import {
   SealShape,
   SealGlyph,
 } from './types';
-import { KubelkaMunkLUT } from './kubelka-munk';
+import { KubelkaMunkLUT, calculateKMReflectance } from './kubelka-munk';
 
 /**
  * CPU reference simulation of ink on paper.
@@ -19,7 +19,11 @@ import { KubelkaMunkLUT } from './kubelka-munk';
  *   fibers   — s (water wicked into cellulose), f (pigment carried in fiber water)
  *   fixed    — d (pigment bound to fibers — what stays on the page)
  *
- * Every pass moves mass between pools as an explicit flux, so the invariants
+ * In addition to scalar mass conservation (Σp + Σf + Σd), each pool tracks
+ * continuum spectral absorption K and scattering S across RGB channels, enabling
+ * authentic subtractive multi-pigment mixing (Duncan 1940 / Kubelka-Munk 1931).
+ *
+ * Every pass moves mass and optical spectra between pools as an explicit flux, so the invariants
  *   waterInjected  == Σh + Σs + waterEvaporated
  *   pigmentInjected == Σp + Σf + Σd
  * hold to float precision. Tests rely on that; so should any tuning.
@@ -74,6 +78,12 @@ interface SimSnapshot {
   fiberMoisture: Float32Array;
   pigmentFiber: Float32Array;
   pigmentDeposited: Float32Array;
+  pigmentSuspendedK: Float32Array;
+  pigmentSuspendedS: Float32Array;
+  pigmentFiberK: Float32Array;
+  pigmentFiberS: Float32Array;
+  pigmentDepositedK: Float32Array;
+  pigmentDepositedS: Float32Array;
   waterInjected: number;
   waterEvaporated: number;
   pigmentInjected: number;
@@ -108,15 +118,25 @@ export class WetInkSimulation {
   waterFilm: Float32Array;       // h: surface water depth
   velX: Float32Array;            // u: surface velocity X (cells / step)
   velY: Float32Array;            // v: surface velocity Y
-  pigmentSuspended: Float32Array;// p: pigment floating in the film
+  pigmentSuspended: Float32Array;// p: pigment floating in the film (scalar mass)
   fiberMoisture: Float32Array;   // s: water wicked into fibers (0..capacity)
-  pigmentFiber: Float32Array;    // f: pigment travelling with fiber water
-  pigmentDeposited: Float32Array;// d: pigment bound to fibers (what you see once dry)
+  pigmentFiber: Float32Array;    // f: pigment travelling with fiber water (scalar mass)
+  pigmentDeposited: Float32Array;// d: pigment bound to fibers (scalar mass)
+
+  // Multi-species optical fields (spectral absorption K and scattering S per RGB channel)
+  pigmentSuspendedK: Float32Array;
+  pigmentSuspendedS: Float32Array;
+  pigmentFiberK: Float32Array;
+  pigmentFiberS: Float32Array;
+  pigmentDepositedK: Float32Array;
+  pigmentDepositedS: Float32Array;
 
   // Scratch buffers for flux passes
   private waterTemp: Float32Array;
   private pigmentTemp: Float32Array;
   private pigmentFiberTemp: Float32Array;
+  private tempSuspendedK: Float32Array;
+  private tempSuspendedS: Float32Array;
   private edgeMask: Uint8Array;
   /** Water the fibers of each cell can hold: paper sizing × fiber volume. */
   fiberCapacity: Float32Array;
@@ -180,6 +200,16 @@ export class WetInkSimulation {
     this.fiberMoisture = new Float32Array(this.size);
     this.pigmentFiber = new Float32Array(this.size);
     this.pigmentDeposited = new Float32Array(this.size);
+
+    const specSize = this.size * 3;
+    this.pigmentSuspendedK = new Float32Array(specSize);
+    this.pigmentSuspendedS = new Float32Array(specSize);
+    this.pigmentFiberK = new Float32Array(specSize);
+    this.pigmentFiberS = new Float32Array(specSize);
+    this.pigmentDepositedK = new Float32Array(specSize);
+    this.pigmentDepositedS = new Float32Array(specSize);
+    this.tempSuspendedK = new Float32Array(specSize);
+    this.tempSuspendedS = new Float32Array(specSize);
 
     this.waterTemp = new Float32Array(this.size);
     this.pigmentTemp = new Float32Array(this.size);
@@ -265,6 +295,12 @@ export class WetInkSimulation {
     this.fiberMoisture.fill(0);
     this.pigmentFiber.fill(0);
     this.pigmentDeposited.fill(0);
+    this.pigmentSuspendedK.fill(0);
+    this.pigmentSuspendedS.fill(0);
+    this.pigmentFiberK.fill(0);
+    this.pigmentFiberS.fill(0);
+    this.pigmentDepositedK.fill(0);
+    this.pigmentDepositedS.fill(0);
     this.stepCount = 0;
     this.totalWater = 0;
     this.totalDepositedPigment = 0;
@@ -279,6 +315,24 @@ export class WetInkSimulation {
     this.minActiveY = 0;
     this.maxActiveX = 0;
     this.maxActiveY = 0;
+  }
+
+  /** Blotting paper: instantly absorbs surface moisture and fixes suspended pigment into fiber bed. */
+  blot() {
+    this.waterFilm.fill(0);
+    for (let i = 0; i < this.size; i++) {
+      this.pigmentDeposited[i] += this.pigmentSuspended[i];
+      this.pigmentSuspended[i] = 0;
+      const i3 = i * 3;
+      for (let c = 0; c < 3; c++) {
+        this.pigmentDepositedK[i3 + c] += this.pigmentSuspendedK[i3 + c];
+        this.pigmentDepositedS[i3 + c] += this.pigmentSuspendedS[i3 + c];
+        this.pigmentSuspendedK[i3 + c] = 0;
+        this.pigmentSuspendedS[i3 + c] = 0;
+      }
+    }
+    this.totalWater = sum(this.fiberMoisture);
+    this.totalDepositedPigment = sum(this.pigmentDeposited);
   }
 
   /** Conservation check: how far the pools drift from what went in. */
@@ -314,6 +368,12 @@ export class WetInkSimulation {
       fiberMoisture: new Float32Array(this.fiberMoisture),
       pigmentFiber: new Float32Array(this.pigmentFiber),
       pigmentDeposited: new Float32Array(this.pigmentDeposited),
+      pigmentSuspendedK: new Float32Array(this.pigmentSuspendedK),
+      pigmentSuspendedS: new Float32Array(this.pigmentSuspendedS),
+      pigmentFiberK: new Float32Array(this.pigmentFiberK),
+      pigmentFiberS: new Float32Array(this.pigmentFiberS),
+      pigmentDepositedK: new Float32Array(this.pigmentDepositedK),
+      pigmentDepositedS: new Float32Array(this.pigmentDepositedS),
       waterInjected: this.waterInjected,
       waterEvaporated: this.waterEvaporated,
       pigmentInjected: this.pigmentInjected,
@@ -330,6 +390,14 @@ export class WetInkSimulation {
     this.fiberMoisture.set(snap.fiberMoisture);
     this.pigmentFiber.set(snap.pigmentFiber);
     this.pigmentDeposited.set(snap.pigmentDeposited);
+    if (snap.pigmentSuspendedK) {
+      this.pigmentSuspendedK.set(snap.pigmentSuspendedK);
+      this.pigmentSuspendedS.set(snap.pigmentSuspendedS);
+      this.pigmentFiberK.set(snap.pigmentFiberK);
+      this.pigmentFiberS.set(snap.pigmentFiberS);
+      this.pigmentDepositedK.set(snap.pigmentDepositedK);
+      this.pigmentDepositedS.set(snap.pigmentDepositedS);
+    }
     this.waterInjected = snap.waterInjected;
     this.waterEvaporated = snap.waterEvaporated;
     this.pigmentInjected = snap.pigmentInjected;
@@ -403,20 +471,47 @@ export class WetInkSimulation {
     }
   }
 
-  /** Adds water and pigment to one cell, clamped, and books exactly what was added. */
-  private deposit(idx: number, water: number, pigment: number, maxWater: number) {
+  /** Adds water and pigment to one cell with dynamic meniscal transfer and spectral KM tracking. */
+  private deposit(
+    idx: number,
+    water: number,
+    pigment: number,
+    maxWater: number = 6.0,
+    config: WetInkPigmentConfig = this.pigmentConfig
+  ) {
     this.tileWet[((((idx / this.width) | 0) >> TILE_SHIFT) * this.tilesX) + ((idx % this.width) >> TILE_SHIFT)] = 1;
     const h0 = this.waterFilm[idx];
-    const h1 = Math.min(maxWater, h0 + water);
-    if (h1 > h0) {
+    // Dynamic transfer efficiency: avoids sudden hard clamping, allows natural puddle accumulation
+    // up to maxWater, beyond which the brush cannot deliver more liquid to an existing puddle.
+    const effH = Math.max(0.0, 1.0 - h0 / maxWater);
+    const addedWater = water * effH;
+    const h1 = h0 + addedWater;
+    if (addedWater > 0) {
       this.waterFilm[idx] = h1;
-      this.waterInjected += h1 - h0;
+      this.waterInjected += addedWater;
     }
+
     const p0 = this.pigmentSuspended[idx];
-    const p1 = Math.min(3.0, p0 + pigment);
-    if (p1 > p0) {
-      this.pigmentSuspended[idx] = p1;
-      this.pigmentInjected += p1 - p0;
+    const d0 = this.pigmentDeposited[idx];
+    // Colloidal packing limit (Krieger-Dougherty): prevents unnatural runaway buildup
+    // when scrubbing repeatedly over the same wet or dried strokes.
+    // The layer saturates smoothly as it approaches colloidal cake packing (pEff ~ 7.5).
+    const pEffTotal = p0 + 0.60 * d0;
+    const maxEffP = 7.5;
+    const effP = Math.max(0.0, Math.min(1.0, 1.0 - pEffTotal / maxEffP));
+    const addedPigment = pigment * effP;
+    if (addedPigment > 0) {
+      this.pigmentSuspended[idx] = p0 + addedPigment;
+      this.pigmentInjected += addedPigment;
+
+      const km = config.km || this.kmFor(config);
+      const base3 = idx * 3;
+      this.pigmentSuspendedK[base3]     += addedPigment * km.K[0];
+      this.pigmentSuspendedK[base3 + 1] += addedPigment * km.K[1];
+      this.pigmentSuspendedK[base3 + 2] += addedPigment * km.K[2];
+      this.pigmentSuspendedS[base3]     += addedPigment * km.S[0];
+      this.pigmentSuspendedS[base3 + 1] += addedPigment * km.S[1];
+      this.pigmentSuspendedS[base3 + 2] += addedPigment * km.S[2];
     }
   }
 
@@ -427,7 +522,8 @@ export class WetInkSimulation {
     radius: number,
     waterAmount: number,
     pigmentAmount: number,
-    dryBrushFilter: boolean = false
+    dryBrushFilter: boolean = false,
+    config: WetInkPigmentConfig = this.pigmentConfig
   ) {
     // Keep the stamp one cell away from the border: border cells are never simulated.
     const minX = Math.max(1, Math.floor(centerX - radius));
@@ -438,7 +534,7 @@ export class WetInkSimulation {
 
     this.growActiveBox(minX, minY, maxX, maxY);
     const rSq = radius * radius;
-    const density = this.pigmentConfig.density;
+    const density = config.density;
 
     for (let y = minY; y <= maxY; y++) {
       const dy = y - centerY;
@@ -452,7 +548,7 @@ export class WetInkSimulation {
         // Dry brush: bristles skip over paper peaks
         if (dryBrushFilter && this.paper.heightMap[idx] > 0.62) continue;
 
-        this.deposit(idx, waterAmount * falloff, pigmentAmount * falloff * density, 2.5);
+        this.deposit(idx, waterAmount * falloff, pigmentAmount * falloff * density, 6.0, config);
       }
     }
   }
@@ -629,6 +725,16 @@ export class WetInkSimulation {
     this.pigmentDeposited[i] += this.pigmentSuspended[i] + this.pigmentFiber[i];
     this.pigmentSuspended[i] = 0;
     this.pigmentFiber[i] = 0;
+
+    const i3 = i * 3;
+    for (let c = 0; c < 3; c++) {
+      this.pigmentDepositedK[i3 + c] += this.pigmentSuspendedK[i3 + c] + this.pigmentFiberK[i3 + c];
+      this.pigmentDepositedS[i3 + c] += this.pigmentSuspendedS[i3 + c] + this.pigmentFiberS[i3 + c];
+      this.pigmentSuspendedK[i3 + c] = 0;
+      this.pigmentSuspendedS[i3 + c] = 0;
+      this.pigmentFiberK[i3 + c] = 0;
+      this.pigmentFiberS[i3 + c] = 0;
+    }
   }
 
   // ---------------------------------------------------------------------------
@@ -728,11 +834,22 @@ export class WetInkSimulation {
     // capped at FACE_CFL, so no cell can be drained below zero.
     const hN = this.waterTemp;
     const pN = this.pigmentTemp;
+    const kpN = this.tempSuspendedK;
+    const spN = this.tempSuspendedS;
+
     for (let y = y0 - 1; y <= y1 + 1; y++) {
       const row = y * w;
       for (let x = x0 - 1; x <= x1 + 1; x++) {
-        hN[row + x] = h[row + x];
-        pN[row + x] = p[row + x];
+        const idx = row + x;
+        hN[idx] = h[idx];
+        pN[idx] = p[idx];
+        const idx3 = idx * 3;
+        kpN[idx3]     = this.pigmentSuspendedK[idx3];
+        kpN[idx3 + 1] = this.pigmentSuspendedK[idx3 + 1];
+        kpN[idx3 + 2] = this.pigmentSuspendedK[idx3 + 2];
+        spN[idx3]     = this.pigmentSuspendedS[idx3];
+        spN[idx3 + 1] = this.pigmentSuspendedS[idx3 + 1];
+        spN[idx3 + 2] = this.pigmentSuspendedS[idx3 + 2];
       }
     }
     for (let y = y0 - 1; y <= y1; y++) {
@@ -744,11 +861,23 @@ export class WetInkSimulation {
           const dst = fu > 0 ? i + 1 : i;
           const m = h[src] * Math.abs(fu);
           if (m > 0) {
-            const pm = (p[src] / h[src]) * m;
+            const frac = m / h[src];
+            const pm = p[src] * frac;
             hN[src] -= m;
             hN[dst] += m;
             pN[src] -= pm;
             pN[dst] += pm;
+
+            const src3 = src * 3;
+            const dst3 = dst * 3;
+            for (let c = 0; c < 3; c++) {
+              const kmFlux = this.pigmentSuspendedK[src3 + c] * frac;
+              const smFlux = this.pigmentSuspendedS[src3 + c] * frac;
+              kpN[src3 + c] -= kmFlux;
+              kpN[dst3 + c] += kmFlux;
+              spN[src3 + c] -= smFlux;
+              spN[dst3 + c] += smFlux;
+            }
           }
         }
         const fv = v[i] * k;
@@ -757,11 +886,23 @@ export class WetInkSimulation {
           const dst = fv > 0 ? i + w : i;
           const m = h[src] * Math.abs(fv);
           if (m > 0) {
-            const pm = (p[src] / h[src]) * m;
+            const frac = m / h[src];
+            const pm = p[src] * frac;
             hN[src] -= m;
             hN[dst] += m;
             pN[src] -= pm;
             pN[dst] += pm;
+
+            const src3 = src * 3;
+            const dst3 = dst * 3;
+            for (let c = 0; c < 3; c++) {
+              const kmFlux = this.pigmentSuspendedK[src3 + c] * frac;
+              const smFlux = this.pigmentSuspendedS[src3 + c] * frac;
+              kpN[src3 + c] -= kmFlux;
+              kpN[dst3 + c] += kmFlux;
+              spN[src3 + c] -= smFlux;
+              spN[dst3 + c] += smFlux;
+            }
           }
         }
       }
@@ -772,6 +913,13 @@ export class WetInkSimulation {
         const i = row + x;
         h[i] = hN[i] > 0 ? hN[i] : 0;
         p[i] = pN[i] > 0 ? pN[i] : 0;
+        const i3 = i * 3;
+        this.pigmentSuspendedK[i3]     = kpN[i3] > 0 ? kpN[i3] : 0;
+        this.pigmentSuspendedK[i3 + 1] = kpN[i3 + 1] > 0 ? kpN[i3 + 1] : 0;
+        this.pigmentSuspendedK[i3 + 2] = kpN[i3 + 2] > 0 ? kpN[i3 + 2] : 0;
+        this.pigmentSuspendedS[i3]     = spN[i3] > 0 ? spN[i3] : 0;
+        this.pigmentSuspendedS[i3 + 1] = spN[i3 + 1] > 0 ? spN[i3 + 1] : 0;
+        this.pigmentSuspendedS[i3 + 2] = spN[i3 + 2] > 0 ? spN[i3 + 2] : 0;
       }
     }
 
@@ -785,13 +933,27 @@ export class WetInkSimulation {
         const hi = h[i];
         const room = cap[i] - s[i];
         if (hi <= DRY_EPS || room <= 0) continue;
-        // Soak rate falls as the fibers saturate
-        const q = Math.min(hi, absorb * (room / cap[i]) * (0.35 + 0.65 * net[i]), room);
-        const pq = (p[i] * q / hi) * sieve;
+        // Cake filtration pore clogging: deposited pigment restricts pore throat permeability
+        const cakeResistance = 1.0 / (1.0 + 0.45 * d[i]);
+        // Soak rate falls as the fibers saturate and pores clog
+        const q = Math.min(hi, absorb * (room / cap[i]) * (0.35 + 0.65 * net[i]) * cakeResistance, room);
+        const frac = q / hi;
+        const pq = p[i] * frac * sieve;
         h[i] -= q;
         s[i] += q;
         p[i] -= pq;
         f[i] += pq;
+
+        const i3 = i * 3;
+        const optFrac = frac * sieve;
+        for (let c = 0; c < 3; c++) {
+          const dK = this.pigmentSuspendedK[i3 + c] * optFrac;
+          const dS = this.pigmentSuspendedS[i3 + c] * optFrac;
+          this.pigmentSuspendedK[i3 + c] -= dK;
+          this.pigmentFiberK[i3 + c]     += dK;
+          this.pigmentSuspendedS[i3 + c] -= dS;
+          this.pigmentFiberS[i3 + c]     += dS;
+        }
       }
     }
 
@@ -810,23 +972,51 @@ export class WetInkSimulation {
     for (let y = y0; y <= y1; y++) {
       for (let x = x0; x <= x1; x++) {
         const i = y * w + x;
+        const i3 = i * 3;
         if (p[i] > 0) {
           // Pigment settles into paper valleys
           const valley = 0.35 + (1 - paperH[i]) * 1.6 * pigment.granulationFactor;
           const q = Math.min(p[i], p[i] * depSurface * valley);
+          const frac = p[i] > 1e-6 ? q / p[i] : 0;
           p[i] -= q;
           d[i] += q;
+          for (let c = 0; c < 3; c++) {
+            const dK = this.pigmentSuspendedK[i3 + c] * frac;
+            const dS = this.pigmentSuspendedS[i3 + c] * frac;
+            this.pigmentSuspendedK[i3 + c] -= dK;
+            this.pigmentDepositedK[i3 + c] += dK;
+            this.pigmentSuspendedS[i3 + c] -= dS;
+            this.pigmentDepositedS[i3 + c] += dS;
+          }
         }
         if (f[i] > 0) {
           const q = Math.min(f[i], f[i] * depFiber);
+          const frac = f[i] > 1e-6 ? q / f[i] : 0;
           f[i] -= q;
           d[i] += q;
+          for (let c = 0; c < 3; c++) {
+            const dK = this.pigmentFiberK[i3 + c] * frac;
+            const dS = this.pigmentFiberS[i3 + c] * frac;
+            this.pigmentFiberK[i3 + c] -= dK;
+            this.pigmentDepositedK[i3 + c] += dK;
+            this.pigmentFiberS[i3 + c] -= dS;
+            this.pigmentDepositedS[i3 + c] += dS;
+          }
         }
         // Standing water re-suspends some bound pigment (backruns, blooms)
-        if (h[i] > 0.15 && d[i] > 0) {
-          const q = d[i] * lift * Math.min(1, h[i]);
+        if (h[i] > 0.12 && d[i] > 0) {
+          const q = d[i] * lift * Math.min(1.0, h[i]);
+          const frac = d[i] > 1e-6 ? q / d[i] : 0;
           d[i] -= q;
           p[i] += q;
+          for (let c = 0; c < 3; c++) {
+            const dK = this.pigmentDepositedK[i3 + c] * frac;
+            const dS = this.pigmentDepositedS[i3 + c] * frac;
+            this.pigmentDepositedK[i3 + c] -= dK;
+            this.pigmentSuspendedK[i3 + c] += dK;
+            this.pigmentDepositedS[i3 + c] -= dS;
+            this.pigmentSuspendedS[i3 + c] += dS;
+          }
         }
       }
     }
@@ -874,6 +1064,13 @@ export class WetInkSimulation {
           if (h[i] === 0 && p[i] > 0) {
             d[i] += p[i];
             p[i] = 0;
+            const i3 = i * 3;
+            for (let c = 0; c < 3; c++) {
+              this.pigmentDepositedK[i3 + c] += this.pigmentSuspendedK[i3 + c];
+              this.pigmentDepositedS[i3 + c] += this.pigmentSuspendedS[i3 + c];
+              this.pigmentSuspendedK[i3 + c] = 0;
+              this.pigmentSuspendedS[i3 + c] = 0;
+            }
           }
           if (s[i] <= DRY_EPS && s[i] > 0) {
             this.waterEvaporated += s[i];
@@ -882,6 +1079,13 @@ export class WetInkSimulation {
           if (s[i] === 0 && h[i] === 0 && f[i] > 0) {
             d[i] += f[i];
             f[i] = 0;
+            const i3 = i * 3;
+            for (let c = 0; c < 3; c++) {
+              this.pigmentDepositedK[i3 + c] += this.pigmentFiberK[i3 + c];
+              this.pigmentDepositedS[i3 + c] += this.pigmentFiberS[i3 + c];
+              this.pigmentFiberK[i3 + c] = 0;
+              this.pigmentFiberS[i3 + c] = 0;
+            }
           }
         }
         const water = h[i] + s[i];
@@ -1030,11 +1234,23 @@ export class WetInkSimulation {
       // Fraction θ of the transfer that would equalise both saturations
       const q = theta * (ra - rb) * ((capA * capB) / (capA + capB));
       if (q <= 0) return;
-      const fq = (f[a] / sa) * q * chroma;
+      const frac = (q / sa) * chroma;
+      const fq = f[a] * frac;
       s[a] = sa - q;
       s[b] += q;
       f[a] -= fq;
       f[b] += fq;
+
+      const a3 = a * 3;
+      const b3 = b * 3;
+      for (let c = 0; c < 3; c++) {
+        const dK = this.pigmentFiberK[a3 + c] * frac;
+        const dS = this.pigmentFiberS[a3 + c] * frac;
+        this.pigmentFiberK[a3 + c] -= dK;
+        this.pigmentFiberK[b3 + c] += dK;
+        this.pigmentFiberS[a3 + c] -= dS;
+        this.pigmentFiberS[b3 + c] += dS;
+      }
     };
 
     // Pairs never touch the border ring: border cells are not simulated, so
@@ -1173,20 +1389,18 @@ export class WetInkSimulation {
       return;
     }
 
-    // --- COMPOSITE INK (O(1) Kubelka-Munk LUT + Precomputed Paper Relief) ---
-    const lut = this.kmLUT;
-    const lutScale = lut.scale;
-    const maxIdx = lut.resolution - 1;
-    const lutR = lut.tableR;
-    const lutG = lut.tableG;
-    const lutB = lut.tableB;
+    // --- COMPOSITE INK (Continuum Kubelka-Munk Spectral Optics + Precomputed Paper Relief) ---
     const baseR = this.paperReliefR;
     const baseG = this.paperReliefG;
     const baseB = this.paperReliefB;
-    const pigmentDeposited = this.pigmentDeposited;
-    const pigmentFiber = this.pigmentFiber;
-    const pigmentSuspended = this.pigmentSuspended;
     const waterFilm = this.waterFilm;
+    const depK = this.pigmentDepositedK;
+    const depS = this.pigmentDepositedS;
+    const fibK = this.pigmentFiberK;
+    const fibS = this.pigmentFiberS;
+    const susK = this.pigmentSuspendedK;
+    const susS = this.pigmentSuspendedS;
+    const saunderson = this.params.enableSaunderson ?? false;
 
     for (let i = 0; i < this.size; i++) {
       const pIdx = i * 4;
@@ -1194,18 +1408,28 @@ export class WetInkSimulation {
       const bG = baseG[i];
       const bB = baseB[i];
 
-      const totalPigment = pigmentDeposited[i] * 1.1 + pigmentFiber[i] + pigmentSuspended[i] * 0.85;
+      const i3 = i * 3;
+      const totK_R = depK[i3]     * 1.1 + fibK[i3]     + susK[i3]     * 0.85;
+      const totK_G = depK[i3 + 1] * 1.1 + fibK[i3 + 1] + susK[i3 + 1] * 0.85;
+      const totK_B = depK[i3 + 2] * 1.1 + fibK[i3 + 2] + susK[i3 + 2] * 0.85;
+
+      const totS_R = depS[i3]     * 1.1 + fibS[i3]     + susS[i3]     * 0.85;
+      const totS_G = depS[i3 + 1] * 1.1 + fibS[i3 + 1] + susS[i3 + 1] * 0.85;
+      const totS_B = depS[i3 + 2] * 1.1 + fibS[i3 + 2] + susS[i3 + 2] * 0.85;
 
       let r = bR * 255;
       let g = bG * 255;
       let b = bB * 255;
 
-      if (totalPigment > 0.0005) {
-        const lutIdx = Math.min(maxIdx, (totalPigment * lutScale) | 0);
-        // Optical modulation over paper tooth relief
-        r = lutR[lutIdx] * 255 * (bR * 1.031); // 1.031 ≈ 1 / 0.970
-        g = lutG[lutIdx] * 255 * (bG * 1.047); // 1.047 ≈ 1 / 0.955
-        b = lutB[lutIdx] * 255 * (bB * 1.087); // 1.087 ≈ 1 / 0.920
+      if (totK_R + totK_G + totK_B + totS_R + totS_G + totS_B > 0.0005) {
+        // Physical multi-pigment Kubelka-Munk reflectance per channel over textured paper substrate
+        const rRef = calculateKMReflectance(totK_R, totS_R, 1.0, bR, saunderson);
+        const gRef = calculateKMReflectance(totK_G, totS_G, 1.0, bG, saunderson);
+        const bRef = calculateKMReflectance(totK_B, totS_B, 1.0, bB, saunderson);
+
+        r = rRef * 255;
+        g = gRef * 255;
+        b = bRef * 255;
       }
 
       // Wet surface specular sheen (when active surface water film is present)
@@ -1217,9 +1441,9 @@ export class WetInkSimulation {
         b += wetGlint;
       }
 
-      pixels[pIdx] = (r + 0.5) | 0;
-      pixels[pIdx + 1] = (g + 0.5) | 0;
-      pixels[pIdx + 2] = (b + 0.5) | 0;
+      pixels[pIdx]     = Math.max(0, Math.min(255, (r + 0.5) | 0));
+      pixels[pIdx + 1] = Math.max(0, Math.min(255, (g + 0.5) | 0));
+      pixels[pIdx + 2] = Math.max(0, Math.min(255, (b + 0.5) | 0));
       pixels[pIdx + 3] = 255;
     }
   }
