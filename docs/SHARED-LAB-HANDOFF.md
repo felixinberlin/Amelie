@@ -57,7 +57,7 @@ calls occurred. The sister Lab handoff was read, not changed.
 
 Validation checkpoint: exports and inventory account for 72/159; all receipt
 hashes, local-ID coverage, scores and cleared leases independently checked.
-Lint and production build pass. Python suites pass (34 tests); all five Node intake/lease tests pass outside the sandbox. Ordinary full Vitest: 57/59 files pass, with the two already documented time-limit failures (modelCompare 5 seconds and implementation-plan performance 500 ms). Direct serial Vitest passed all 59 files / 794 tests (86.75 seconds); no thresholds or implementation were changed. Together with the 34 Python and five Node tests, all npm-test components pass. Publication/CI result follows below.
+Lint and production build pass. Python suites pass (34 tests); all five Node intake/lease tests pass outside the sandbox. Ordinary full Vitest: 57/59 files pass, with the two already documented time-limit failures (modelCompare 5 seconds and implementation-plan performance 500 ms). Direct serial Vitest passed all 59 files / 794 tests (86.75 seconds); no thresholds or implementation were changed. Together with the 34 Python and five Node tests, all npm-test components pass. GitHub verification also passed in PR195, including ordinary npm test and browser checks; merge confirmed below.
 
 ## Imported records — historical import checkpoint
 
@@ -118,4 +118,4 @@ Google Maps Platform APIs (Places, JavaScript, Static and Embed) are disabled at
 
 ## Reviewed-intake publication
 
-Published as [PR195](https://github.com/felixinberlin/Amelie/pull/195), branch `lab/intake-review-20261011`. Review commit `d4e98e9e`, passing-validation record `eb954e4`. The PR contains the complete 72-batch disposition and the next-transfer recommendations. Local checks are green as recorded above; inspect PR195 for the final GitHub CI and merge state. The 43 `needs_research` batches remain pending evidence, not unreviewed intake. No producer artifact was modified.
+Published as [PR195](https://github.com/felixinberlin/Amelie/pull/195), branch `lab/intake-review-20261011`. Review commit `d4e98e9e`, passing-validation record `eb954e4`. The PR contains the complete 72-batch disposition and the next-transfer recommendations. It merged into main on 11 October 2026 at 11:32:57 UTC as `d9bc83d4be9fb1a8340cfcff885d9e506843baff`. [GitHub verify](https://github.com/felixinberlin/Amelie/actions/runs/38135791705/job/114459260724) passed lint, ordinary full tests, build and browser checks in 2m11s. Local checks are green as recorded above. The 43 `needs_research` batches remain pending evidence, not unreviewed intake. No producer artifact was modified.
