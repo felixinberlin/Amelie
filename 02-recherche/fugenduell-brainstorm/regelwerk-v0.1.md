@@ -88,7 +88,7 @@ These numbers hold surprises. In Pierce's leaf-trait method the plantain is a **
 ## 4. Components
 
 * **Species card** (3 per player, face up): all the values from §3.1 plus the facts with their sources.
-* **Deck** (30 to 34 cards): built automatically from your community (§5).
+* **Deck** (exactly 36 cards in the duel, starting with 12 in solo mode): built automatically from your community (§5). Numbers and a full example card: `kartenzahl-und-beispielkarte.md`.
 * **Shoots** (tokens in your colour): one shoot holds one field.
 * **Seed bank** (one per section, in your colour): seeds lying in the ground. This is the Yu-Gi-Oh graveyard turned into ecology.
 * **Event deck**: 6 season stacks (§6).
@@ -138,7 +138,7 @@ The effect is game design. The evidence only says that the trait exists. Every c
 
 ### 5.5 Deck limits
 
-At most 3 copies of a signature card. At most **one species with a height class ≥ 4** per community.
+Duel deck exactly 36 = 30 strategy + 3 Bloom + 3 signature slots (max 1 copy per keyword per species). At most **one species with a height class ≥ 4** per community.
 
 ---
 
