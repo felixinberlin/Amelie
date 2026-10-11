@@ -157,6 +157,16 @@ export const DOSE_BOOKS: Record<string, BookChapter[]> = {
       date: '2026',
       kind: 'md',
     },
+    {
+      slug: 'calligraphy-roadmap',
+      path: '02-recherche/wet-ink-chinese-calligraphy-roadmap.md',
+      titleDe: 'Roadmap: Chinesische Kalligrafie & Siegelkunst',
+      titleEn: 'Roadmap: Chinese Calligraphy & Seal Art',
+      noteDe: 'Fahrplan für Xuan-Papiere, Mao-Bi-Pinselmodelle, Mi-Zi-Ge-Übungsgitter und Cinnabar-Siegel.',
+      noteEn: 'Blueprint for Xuan paper substrates, Mao-Bi brush dynamics, Mi Zi Ge grids, and Cinnabar seals.',
+      date: '11.10.2026',
+      kind: 'md',
+    },
   ],
   'fugenduell-asphalt-arena': [
     {
