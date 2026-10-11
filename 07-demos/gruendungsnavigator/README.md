@@ -11,7 +11,7 @@ Quelle der ausgelieferten Dateien: `public/gruendungsnavigator/` (Vite kopiert `
 
 | Seite | Inhalt |
 |---|---|
-| Gesprächsnavigator | Vorbereitung, Telefon-Entscheidungsbaum (7 Fragen, 23 Antworten), Fragenkatalog (42 Fragen mit anpassbaren Beispielantworten), Rechte-Karten (17 typische Antworten des Gegenübers), Zusammenfassungs-Mail, Präsentationsmodus ohne Taktik-Notizen |
+| Gesprächsnavigator | Vorbereitung, Telefon-Entscheidungsbaum (7 Fragen, 23 Antworten), Fragenkatalog (42 Fragen mit anpassbaren Beispielantworten), Rechte-Karten (30 typische Antworten des Gegenübers), Zusammenfassungs-Mail, Präsentationsmodus ohne Taktik-Notizen |
 | Fall-Landkarte | 9 Stationen vom Antrag bis zum Ausstieg als SVG, 29 Fragen, 107 Antworten mit Reaktion, nächstem Schritt, Frist und Normtext; Fristen-Zeitstrahl; 37 Normen |
 
 ## Auf dem Handy
@@ -35,6 +35,6 @@ SGB II in der Fassung des Dreizehnten Änderungsgesetzes vom 16.04.2026 (BGBl. I
 
 ## Beispielinhalte
 
-Fragen, Antworten und Zahlen stammen aus einem Beispiel (Gründung als Webentwickler, TYPO3, Einstiegsgeld und 2.350 € Zuschuss für Arbeitsmittel). Ticket 01 im Konzept: Beispielinhalte in eine Datendatei ziehen, damit die Seite zur Vorlage für jede Branche wird.
+Fragen, Antworten und Zahlen stammen aus einem **erfundenen** Beispiel (Gründung als Webentwickler, Einstiegsgeld und 2.000 € Zuschuss für Arbeitsmittel); Person, Preise und Planzahlen sind ausgedacht. Ticket 01 im Konzept: Beispielinhalte in eine Datendatei ziehen, damit die Seite zur Vorlage für jede Branche wird.
 
 Keine Rechtsberatung. CC0 / Public Domain.

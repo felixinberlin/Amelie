@@ -125,7 +125,7 @@ footer{border-top:1px solid var(--line);color:var(--ink-2);font-size:13px;paddin
 </head>
 <body>
 <header class="top"><div class="wrap">
-  <div class="brand">Fall-Landkarte<span class="long">: Gründung aus dem Grundsicherungsgeld</span><small>TYPO3-Webentwicklung · Einstiegsgeld nach § 16b und Zuschuss 2.350 € nach § 16c SGB II · Rechtsstand 01.07.2026</small></div>
+  <div class="brand">Fall-Landkarte<span class="long">: Gründung aus dem Grundsicherungsgeld</span><small>Beispielfall Webentwicklung · Einstiegsgeld nach § 16b und Zuschuss 2.000 € nach § 16c SGB II · Rechtsstand 01.07.2026</small></div>
   <button class="btn" id="all">Alle Antworten aufklappen</button>
   <button class="btn" onclick="window.print()">Drucken</button>
   <button class="btn" id="theme">Hell/Dunkel</button>
@@ -134,7 +134,7 @@ footer{border-top:1px solid var(--line);color:var(--ink-2);font-size:13px;paddin
 <main class="wrap">
   <h1>Alle Wege einer Gründung aus dem Grundsicherungsgeld, jede mögliche Antwort, jede Frist</h1>
   <p class="lead">Neun Stationen vom Antrag bis zum Ausstieg aus dem Grundsicherungsgeld. Jede Station hat Fragen, jede Frage alle realistischen Antworten des Jobcenters (oder des Verlaufs). Ein Klick auf ein Kästchen öffnet: was ich sage, was als Nächstes passiert, welche Frist läuft und das Gesetz im Wortlaut mit Link.</p>
-  <div class="card" style="border-left:5px solid var(--accent);margin:0 0 14px"><b>Beispiel:</b> Gründung als Webentwickler (TYPO3) aus dem Grundsicherungsgeld, beantragt werden Einstiegsgeld (§ 16b SGB II) und ein Zuschuss für Arbeitsmittel über 2.350 € (§ 16c SGB II). Zahlen und Formulierungen sind Beispiele; die Rechtsgrundlagen und Fristen gelten für alle. Interaktive Fassung mit Telefon-Entscheidungsbaum, Fragenkatalog und Rechte-Karten: <a href="./">Gesprächsnavigator</a>.</div>
+  <div class="card" style="border-left:5px solid var(--accent);margin:0 0 14px"><b>Beispiel:</b> Gründung als Webentwickler aus dem Grundsicherungsgeld, beantragt werden Einstiegsgeld (§ 16b SGB II) und ein Zuschuss für Arbeitsmittel über 2.000 € (§ 16c SGB II). Person, Zahlen und Formulierungen sind erfunden; die Rechtsgrundlagen und Fristen gelten für alle. Interaktive Fassung mit Telefon-Entscheidungsbaum, Fragenkatalog und Rechte-Karten: <a href="./">Gesprächsnavigator</a>.</div>
   <div class="legend">
     <span style="--c:var(--good);--cs:var(--good-soft)">gut für mich</span>
     <span style="--c:var(--axis);--cs:var(--surface)">neutral, weiter</span>
@@ -161,7 +161,7 @@ footer{border-top:1px solid var(--line);color:var(--ink-2);font-size:13px;paddin
   <div class="laws" id="lawlist"></div>
 </main>
 
-<footer><div class="wrap">Persönliche Arbeitshilfe, keine Rechtsberatung. Für Streitfälle: Sozialberatung (z. B. ver.di Erwerbslosenberatung, Tacheles e.V.) oder Fachanwalt für Sozialrecht; das Verfahren vor dem Sozialgericht ist für Leistungsempfänger kostenfrei (§ 183 SGG). Beispielzahlen einer Gründung als Webentwickler, Stand Oktober 2026. <span id="offline-status"></span></div></footer>
+<footer><div class="wrap">Persönliche Arbeitshilfe, keine Rechtsberatung. Für Streitfälle: Sozialberatung (z. B. ver.di Erwerbslosenberatung, Tacheles e.V.) oder Fachanwalt für Sozialrecht; das Verfahren vor dem Sozialgericht ist für Leistungsempfänger kostenfrei (§ 183 SGG). Beispielzahlen einer erfundenen Gründung als Webentwickler, Stand Oktober 2026. <span id="offline-status"></span></div></footer>
 
 <script>
 (() => {
@@ -212,7 +212,7 @@ const PH = [
 {id:"p1", nr:1, t:"Antrag stellen", s:"vor allem anderen", qs:[
  {q:"Wie stelle ich den Antrag auf Einstiegsgeld und Zuschuss?", a:[
   {k:"g", t:"Nachricht über jobcenter.digital", s:"mit Eingangsbestätigung",
-   say:"Hiermit beantrage ich formlos Einstiegsgeld nach § 16b SGB II und einen Zuschuss für Arbeitsmittel nach § 16c Abs. 1 SGB II über 2.350 €. Mit der Tätigkeit habe ich noch nicht begonnen.",
+   say:"Hiermit beantrage ich formlos Einstiegsgeld nach § 16b SGB II und einen Zuschuss für Arbeitsmittel nach § 16c Abs. 1 SGB II über 2.000 €. Mit der Tätigkeit habe ich noch nicht begonnen.",
    next:"Eingangsbestätigung speichern. Ab diesem Tag gilt der Antrag als gestellt.", frist:"Keine; aber unbedingt vor dem ersten Auftrag.", laws:["sgb2_37","sgb10_9","sgb1_16"]},
   {k:"g", t:"Brief persönlich abgeben", s:"Kopie mit Eingangsstempel",
    say:"Ich gebe meinen Antrag ab. Bitte stempeln Sie mir die Kopie mit dem Eingangsdatum.",
@@ -232,7 +232,7 @@ const PH = [
   {k:"w", t:"Mailbox / niemand erreichbar", s:"kurze Nachricht", say:"Name, BG-Nummer, Rückrufnummer, Thema Existenzgründung.", next:"Dieselbe Bitte sofort über jobcenter.digital senden.", frist:"–", laws:["sgb1_16"]}
  ]},
  {q:"Hat die Person Zeit?", a:[
-  {k:"g", t:"Ja", s:"Kernbotschaft", say:"Ich bin seit über zehn Jahren TYPO3-Entwickler, mein Businessplan ist fertig, ab dem zweiten Jahr decke ich meinen Lebensunterhalt selbst. Ich möchte das mit Ihnen gemeinsam angehen.", next:"Eine Minute reden, dann zuhören.", frist:"–", laws:[]},
+  {k:"g", t:"Ja", s:"Kernbotschaft", say:"Ich bin seit vielen Jahren Webentwickler, mein Businessplan ist fertig, ab dem zweiten Jahr decke ich meinen Lebensunterhalt selbst. Ich möchte das mit Ihnen gemeinsam angehen.", next:"Eine Minute reden, dann zuhören.", frist:"–", laws:[]},
   {k:"w", t:"Nein, jetzt nicht", s:"Rückruftermin", say:"Wann darf ich Sie erreichen? Ich bestätige den Termin schriftlich.", next:"Konkreten Tag und Uhrzeit festmachen.", frist:"–", laws:["sgb1_14"]},
   {k:"w", t:"„Dafür bin ich nicht zuständig“", s:"Weiterleitung verlangen", say:"Bitte leiten Sie meinen Antrag an die zuständige Stelle weiter und nennen Sie mir Namen und Durchwahl.", next:"Der Antrag gilt ab Eingang beim ersten Ansprechpartner als gestellt.", frist:"–", laws:["sgb1_16","sgb1_14"]}
  ]},
@@ -261,34 +261,34 @@ const PH = [
  {q:"Welche Unterlagen werden gebraucht?", a:[
   {k:"g", t:"Liste erhalten", s:"wiederholen", say:"Ich wiederhole: [Unterlagen]. Habe ich etwas vergessen?", next:"Zusammenfassung binnen einer Stunde senden.", frist:"Mail innerhalb 1 Stunde (eigene Regel)", laws:["sgb1_16"]},
   {k:"n", t:"Unklar / „kommt per Post“", s:"schriftlich erbitten", say:"Können Sie mir Liste und Formulare über jobcenter.digital schicken?", next:"In der Zusammenfassung erneut erbitten.", frist:"–", laws:["sgb1_16","sgb1_14"]},
-  {k:"n", t:"Tragfähigkeit nötig", s:"IHK", say:"Welche Stelle akzeptieren Sie? Ich würde die IHK Berlin anfragen.", next:"IHK-Gründungsberatung buchen.", frist:"–", laws:["sgb2_16c3"]}
+  {k:"n", t:"Tragfähigkeit nötig", s:"IHK", say:"Welche Stelle akzeptieren Sie? Ich würde die IHK anfragen.", next:"IHK-Gründungsberatung buchen.", frist:"–", laws:["sgb2_16c3"]}
  ]}
 ]},
 {id:"p3", nr:3, t:"Termin im Jobcenter", s:"Vorstellung mit Laptop, 45 Minuten", qs:[
  {q:"Erstes Gespräch (auch nach einem Wechsel der Ansprechperson): Wie tritt sie auf?", a:[
   {k:"g", t:"Offen, neugierig", s:"Überblick zeigen", say:"Danke, dass Sie sich Zeit nehmen. Ich zeige Ihnen mein Vorhaben auf einer Seite und dann die Zahlen.", next:"Präsentationsmodus: Überblick.", frist:"–", laws:[]},
-  {k:"n", t:"„Ich kenne Ihren Fall noch nicht“", s:"Kurzfassung", say:"Kurz gesagt: zehn Jahre TYPO3, Antrag auf Einstiegsgeld und 2.350 € für Arbeitsmittel, ab Monat 13 bis 15 ohne Grundsicherungsgeld. Alles steht in Anlage 2.", next:"Anlage 2 übergeben.", frist:"–", laws:["sgb2_16b","sgb2_16c1"]},
+  {k:"n", t:"„Ich kenne Ihren Fall noch nicht“", s:"Kurzfassung", say:"Kurz gesagt: langjährige Webentwicklung, Antrag auf Einstiegsgeld und 2.000 € für Arbeitsmittel, ab Monat 14 bis 16 ohne Grundsicherungsgeld. Alles steht in Anlage 2.", next:"Anlage 2 übergeben.", frist:"–", laws:["sgb2_16b","sgb2_16c1"]},
   {k:"w", t:"„Ihr Vorgänger hat notiert …“", s:"eigenes Bild erbitten", say:"Den Vermerk kenne ich nicht und würde ihn gern lesen. Bitte machen Sie sich anhand meiner Unterlagen ein eigenes Bild.", next:"Akteneinsicht nur, wenn der Vermerk die Entscheidung beeinflusst. Alten Konflikt nicht ansprechen.", frist:"–", laws:["sgb10_25","sgb1_39"]},
   {k:"n", t:"„Ich muss mich erst einarbeiten“", s:"Zeitraum erfragen", say:"Selbstverständlich. Bis wann ungefähr können wir über meinen Antrag sprechen?", next:"Unterlagen dalassen, Zeitraum notieren; Antrag gilt weiter ab dem ersten Eingang.", frist:"–", laws:["sgb1_17","sgb2_37"]}
  ]},
  {q:"Wie beginnt das Gespräch?", a:[
   {k:"g", t:"Offen", s:"Ablauf vorschlagen", say:"Ich schlage 45 Minuten vor: Vorhaben, Zahlen, Ihre Fragen, nächste Schritte.", next:"Anlagen 1–3 übergeben, Präsentationsmodus öffnen.", frist:"–", laws:[]},
-  {k:"w", t:"„Machen Sie es kurz“", s:"2-Minuten-Fassung", say:"Zehn Jahre TYPO3, fertiger Plan, Antrag auf Einstiegsgeld und 2.350 € für Arbeitsmittel, ab Monat 13 bis 15 ohne Grundsicherungsgeld. Die Unterlagen lasse ich Ihnen da.", next:"Fragen, bis wann entschieden wird.", frist:"–", laws:["sgb1_17"]},
+  {k:"w", t:"„Machen Sie es kurz“", s:"2-Minuten-Fassung", say:"Langjährige Webentwicklung, fertiger Plan, Antrag auf Einstiegsgeld und 2.000 € für Arbeitsmittel, ab Monat 14 bis 16 ohne Grundsicherungsgeld. Die Unterlagen lasse ich Ihnen da.", next:"Fragen, bis wann entschieden wird.", frist:"–", laws:["sgb1_17"]},
   {k:"n", t:"„Selbständige bleiben oft im Leistungsbezug“", s:"Kontrollpunkte anbieten", say:"Deshalb biete ich monatliche Kurzberichte, einen Frühwarnpunkt nach sechs Monaten und die gesetzliche Prüfung nach einem Jahr an.", next:"Zusagen (Anlage 3) zeigen.", frist:"–", laws:["sgb2_10","sgb2_16c3"]},
   {k:"w", t:"„Nicht zuständig, das macht das Team Selbständige“", s:"Termin dort", say:"Können wir direkt dort einen Termin vereinbaren? Mein Antrag liegt seit [Datum] vor.", next:"Kontakt notieren.", frist:"–", laws:["sgb1_16"]},
   {k:"w", t:"„Ihre Begleitung muss draußen warten“", s:"Beistand ist erlaubt", say:"Ich habe das Recht, mit einem Beistand zu erscheinen.", next:"Ruhig bleiben, Gespräch fortsetzen.", frist:"–", laws:["sgb10_13"]}
  ]},
  {q:"Wie reagiert die Person auf das Vorhaben?", a:[
   {k:"g", t:"Versteht es", s:"weiter zu den Zahlen", say:"Dann zeige ich Ihnen die Zahlen.", next:"Weiter.", frist:"–", laws:[]},
-  {k:"n", t:"„Was ist TYPO3?“", s:"einfach erklären", say:"Ein Redaktionssystem für Websites wie WordPress, verbreitet bei Mittelstand, Hochschulen und Verwaltung. Ich zeige Ihnen ein Beispiel.", next:"Beispiel-Website zeigen.", frist:"–", laws:[]},
+  {k:"n", t:"„Was ist ein Redaktionssystem?“", s:"einfach erklären", say:"Ein Programm, mit dem Betriebe ihre Website selbst pflegen, etwa WordPress; verbreitet bei Mittelstand, Hochschulen und Verwaltung. Ich zeige Ihnen ein Beispiel.", next:"Beispiel-Website zeigen.", frist:"–", laws:[]},
   {k:"n", t:"„Ersetzt die KI nicht Sie?“", s:"Werkzeug, nicht Ersatz", say:"Wie ein Tischler mit einer guten Maschine: Die Maschine sägt schneller, aber was gebaut wird und ob es hält, entscheide ich. Darum kann ich günstiger sein als eine Agentur.", next:"Keine Fachwörter; eine fertige Website zeigen.", frist:"–", laws:[]},
   {k:"n", t:"„Davon verstehe ich nichts“", s:"muss er auch nicht", say:"Das müssen Sie auch nicht. Bewerten Sie bitte das Ergebnis: hier eine fertige Website und meine Zahlen. Ob das Vorhaben trägt, prüft die IHK als fachkundige Stelle; so sieht es das Gesetz vor.", next:"Fachliche Bewertung an die IHK geben, nicht im Gespräch erstreiten.", frist:"–", laws:["sgb2_16c3"]},
-  {k:"n", t:"Zweifel an der Eignung", s:"Erfahrung + Coaching", say:"Fachlich bringe ich über zehn Jahre Erfahrung mit; für das Kaufmännische nehme ich gern ein Coaching an.", next:"Lebenslauf zeigen.", frist:"–", laws:["sgb2_16c2"]}
+  {k:"n", t:"Zweifel an der Eignung", s:"Erfahrung + Coaching", say:"Fachlich bringe ich langjährige Erfahrung mit; für das Kaufmännische nehme ich gern ein Coaching an.", next:"Lebenslauf zeigen.", frist:"–", laws:["sgb2_16c2"]}
  ]},
  {q:"Wie reagiert die Person auf die Zahlen?", a:[
   {k:"g", t:"Nachvollziehbar", s:"weiter", say:"Danke. Dann zu meinem Antrag.", next:"Weiter.", frist:"–", laws:[]},
-  {k:"n", t:"„Zu optimistisch“", s:"vorsichtige Annahmen", say:"Nur fünf Websites im ersten Jahr, Einnahmen erst beim Livegang gebucht. Selbst mit halbem Umsatz bleibt ein Gewinn von rund 8.600 € im ersten Jahr, die Fixkosten liegen bei 220 € im Monat.", next:"Liquiditätsplan zeigen.", frist:"–", laws:[]},
-  {k:"n", t:"Stellungnahme eines Dritten nötig", s:"IHK", say:"Die Stellungnahme der IHK Berlin ist angefragt bzw. liegt bei.", next:"Nachreichen, falls noch offen.", frist:"vereinbaren", laws:["sgb2_16c3"]},
+  {k:"n", t:"„Zu optimistisch“", s:"vorsichtige Annahmen", say:"Nur fünf Websites im ersten Jahr, Einnahmen erst beim Livegang gebucht. Selbst mit halbem Umsatz bleibt ein Gewinn von rund 7.500 € im ersten Jahr, die Fixkosten liegen bei 180 € im Monat.", next:"Liquiditätsplan zeigen.", frist:"–", laws:[]},
+  {k:"n", t:"Stellungnahme eines Dritten nötig", s:"IHK", say:"Die Stellungnahme der IHK ist angefragt bzw. liegt bei.", next:"Nachreichen, falls noch offen.", frist:"vereinbaren", laws:["sgb2_16c3"]},
   {k:"n", t:"Fragen zu Ausgaben (KI, Laptop)", s:"belegen", say:"KI rund 30 € im Monat plus 60 € pro Website, pro Projekt protokolliert. Der jetzige Laptop hat zu wenig Arbeitsspeicher; Kostenvoranschläge liegen bei.", next:"Belege zeigen.", frist:"–", laws:["sgb2_16c1","sgb2_41a"]}
  ]},
  {q:"Was sagt die Person zum Einstiegsgeld?", a:[
@@ -314,7 +314,7 @@ const PH = [
   {k:"w", t:"Beschwerde bei der Teamleitung", s:"sachlich, mit Protokoll", say:"Am [Datum] wurde mir im Gespräch zu meinem Gründungsantrag in herabsetzendem Ton gesagt, ich solle Kisten packen. Ein Stellenangebot wurde nicht gemacht, über meinen Antrag nicht gesprochen. Ich bitte um eine sachliche Bearbeitung meines Antrags.", next:"Formlos an Teamleitung oder Geschäftsführung des Jobcenters; ändert keine Entscheidung, kann aber den Ton ändern. Nur Tatsachen, keine Bewertung der Person.", frist:"keine", laws:[]},
   {k:"w", t:"Andere Ansprechperson erbitten", s:"kein Rechtsanspruch, aber möglich", say:"Ich bitte darum, dass mein Gründungsvorhaben vom Team für Selbständige betreut wird.", next:"Sachlich begründen (Fachteam für Selbständige), nicht mit dem Streit.", frist:"–", laws:["sgb1_14"]}
  ]},
- {q:"Was sagt die Person zum Zuschuss über 2.350 €?", a:[
+ {q:"Was sagt die Person zum Zuschuss über 2.000 €?", a:[
   {k:"g", t:"Zuschuss wird bewilligt oder geprüft", s:"Bescheid", say:"Danke. Die Kostenvoranschläge haben Sie.", next:"Kaufen erst nach Bewilligung.", frist:"–", laws:["sgb2_16c1"]},
   {k:"n", t:"Nur als Darlehen", s:"Bedingungen schriftlich", say:"Ein Darlehen nehme ich an, wenn die Rückzahlung tragbar ist. Welche Raten, ab wann?", next:"Bedingungen schriftlich.", frist:"–", laws:["sgb2_16c1"]},
   {k:"n", t:"Erst Bank fragen", s:"Absage nachreichen", say:"Ich frage bei meiner Bank an und reiche die Antwort nach.", next:"Bankantwort schriftlich holen.", frist:"vereinbaren", laws:["sgb2_16c1"]},
@@ -340,7 +340,7 @@ const PH = [
 {id:"p5", nr:5, t:"Rechtsweg", s:"nur bei Ablehnung", qs:[
  {q:"Wie geht der Widerspruch aus?", a:[
   {k:"g", t:"Abhilfe", s:"Jobcenter ändert", say:"–", next:"Station 6: Start.", frist:"–", laws:["sgg84"]},
-  {k:"k", t:"Widerspruchsbescheid negativ", s:"Klage", say:"–", next:"Klage beim Sozialgericht Berlin; kostenfrei. Beratung oder Fachanwalt hinzuziehen.", frist:"Klage 1 Monat ab Widerspruchsbescheid", laws:["sgg87","sgg183"]},
+  {k:"k", t:"Widerspruchsbescheid negativ", s:"Klage", say:"–", next:"Klage beim zuständigen Sozialgericht; kostenfrei. Beratung oder Fachanwalt hinzuziehen.", frist:"Klage 1 Monat ab Widerspruchsbescheid", laws:["sgg87","sgg183"]},
   {k:"w", t:"Keine Entscheidung über den Widerspruch", s:"Untätigkeit", say:"–", next:"Erinnern; nach 3 Monaten Untätigkeitsklage möglich.", frist:"3 Monate ab Widerspruch", laws:["sgg88"]},
   {k:"k", t:"Frist verpasst", s:"Überprüfungsantrag", say:"Hiermit beantrage ich die Überprüfung des Bescheids vom [Datum] nach § 44 SGB X.", next:"Im SGB II gilt dafür ein Jahr statt vier.", frist:"1 Jahr (§ 40 SGB II)", laws:["sgb10_44","sgb2_40"]},
   {k:"w", t:"Sehr eilig", s:"Eilantrag", say:"–", next:"Einstweilige Anordnung beim Sozialgericht; bei Ermessensleistungen nur mit Beratung.", frist:"–", laws:["sgg86b"]}
@@ -393,7 +393,7 @@ const PH = [
   {k:"n", t:"Einstiegsgeld läuft aus", s:"höchstens 24 Monate", say:"–", next:"Plan ohne Einstiegsgeld durchrechnen.", frist:"Ende der Bewilligung", laws:["sgb2_16b"]}
  ]}
 ]},
-{id:"p9", nr:9, t:"Ausstieg", s:"Ziel: ab Monat 13 bis 15", qs:[
+{id:"p9", nr:9, t:"Ausstieg", s:"Ziel: ab Monat 14 bis 16", qs:[
  {q:"Wie steht der Gewinn?", a:[
   {k:"g", t:"Deckt den Bedarf dauerhaft", s:"abmelden", say:"Mein Einkommen deckt meinen Bedarf; ich melde mich ab [Monat] ab.", next:"Krankenversicherung selbst zahlen, Steuer-Vorauszahlungen einplanen.", frist:"rechtzeitig melden", laws:["sgb1_60"]},
   {k:"n", t:"Knapp darüber, Beiträge fressen es auf", s:"Zuschuss prüfen", say:"Ich beantrage den Zuschuss zu den Kranken- und Pflegeversicherungsbeiträgen.", next:"Nur die Beiträge, kein volles Grundsicherungsgeld.", frist:"–", laws:["sgb2_26"]},
@@ -482,7 +482,7 @@ function treeSVG(ph, qi, Q){
     b.tL.forEach(l => { s += `<text x="${b.x + 18}" y="${ty}" font-size="15" font-weight="600">${esc(l)}</text>`; ty += 19; });
     b.sL.forEach(l => { s += `<text x="${b.x + 18}" y="${ty}" font-size="13" class="q2">${esc(l)}</text>`; ty += 17; });
     b.lL.forEach(l => { s += `<text x="${b.x + 18}" y="${ty}" font-size="12" font-weight="600" fill="var(--law)" style="fill:var(--law)">${esc(l)}</text>`; ty += 16; });
-    s += `<text x="${b.x + colW - 12}" y="${b.y + 22}" font-size="11" font-weight="700" text-anchor="end" style="fill:${b.a.mine ? "var(--accent)" : c}">${b.a.mine ? "MEIN FALL" : lbl.toUpperCase()}</text></g>`; });
+    s += `<text x="${b.x + colW - 12}" y="${b.y + 22}" font-size="11" font-weight="700" text-anchor="end" style="fill:${b.a.mine ? "var(--accent)" : c}">${b.a.mine ? "BEISPIEL" : lbl.toUpperCase()}</text></g>`; });
   return s + `</svg>`;
 }
 function lawHTML(ids){ return ids.length ? `<div class="laws">` + ids.map(id => { const x = L[id]; return `<div class="law"><div class="h"><span class="chip">${esc(x.t)}</span><span class="nm">${esc(x.n)}</span><span class="lk"><a href="${x.u}" target="_blank" rel="noopener">gesetze-im-internet.de ↗</a> · <a href="${x.d}" target="_blank" rel="noopener">dejure.org ↗</a></span></div>${x.q ? `<blockquote>„${esc(x.q)}“</blockquote>` : `<blockquote><span class="kurz">Kurzfassung</span>${esc(x.k)}</blockquote>`}</div>`; }).join("") + `</div>` : ""; }
@@ -493,7 +493,7 @@ function phases(){
     ph.qs.forEach((Q, qi) => {
       h += `<div class="qblock"><h3 class="qtitle">${esc(Q.q)}</h3><div class="card tree">${treeSVG(ph, qi, Q)}</div><div class="detail">`;
       Q.a.forEach((a, i) => { const [c] = C[a.k], id = `${ph.id}-${qi}-${i}`;
-        h += `<details class="ans" id="d-${id}" style="--c:${c}"><summary><span class="tag">${C[a.k][2]}</span>${a.mine ? '<span class="tag" style="color:var(--accent)">mein Fall</span>' : ""}${esc(a.t)}</summary><div class="b">` +
+        h += `<details class="ans" id="d-${id}" style="--c:${c}"><summary><span class="tag">${C[a.k][2]}</span>${a.mine ? '<span class="tag" style="color:var(--accent)">Beispiel</span>' : ""}${esc(a.t)}</summary><div class="b">` +
           (a.say && a.say !== "–" ? `<div class="say"><b>Ich sage / schreibe</b>${esc(a.say)}</div>` : "") +
           `<div class="row"><span class="k">Nächster Schritt</span><span>${esc(a.next)}</span></div>` +
           `<div class="row"><span class="k">Frist</span><span>${esc(a.frist)}</span></div>` + lawHTML(a.laws) + `</div></details>`; });

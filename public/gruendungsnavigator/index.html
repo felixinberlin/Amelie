@@ -261,7 +261,7 @@ nav.tabs .ico,nav.tabs .short{display:none}
 <!-- 1 VORBEREITUNG -->
 <section class="view" id="view-prep">
   <h1>Vorbereitung</h1>
-  <div class="example" style="border-left:4px solid var(--accent)"><b>Beispielinhalte</b>Fragen, Antworten und Zahlen stammen aus einem Beispiel: Gründung als Webentwickler (TYPO3) aus dem Grundsicherungsgeld. Die Antworten im Bereich „Fragen“ lassen sich für die eigene Gründung überschreiben; die Rechtsgrundlagen gelten für alle. Alle Wege vom Antrag bis zum Ausstieg als Karte: <a href="fall-landkarte.html">Fall-Landkarte</a>. Keine Rechtsberatung.</div>
+  <div class="example" style="border-left:4px solid var(--accent)"><b>Beispielinhalte</b>Fragen, Antworten und Zahlen stammen aus einem erfundenen Beispiel: Gründung als Webentwickler aus dem Grundsicherungsgeld. Person und Zahlen sind ausgedacht. Die Antworten im Bereich „Fragen“ lassen sich für die eigene Gründung überschreiben; die Rechtsgrundlagen gelten für alle. Alle Wege vom Antrag bis zum Ausstieg als Karte: <a href="fall-landkarte.html">Fall-Landkarte</a>. Keine Rechtsberatung.</div>
   <p class="lead">Diese Angaben bleiben nur in diesem Browser gespeichert und werden in die Formulierungen und die Abschluss-Mail eingesetzt. Nichts davon wird übertragen.</p>
   <div class="card">
     <div class="grid2">
@@ -330,18 +330,19 @@ nav.tabs .ico,nav.tabs .short{display:none}
 <!-- ÜBERBLICK (Präsentation) -->
 <section class="view hidden" id="view-ov">
   <h1 id="ov-h">Mein Gründungsvorhaben</h1>
-  <p class="lead">Mehrsprachige TYPO3-Websites für kleine und mittlere Unternehmen und Entwicklungsarbeit für Agenturen. Jeder Arbeitsschritt wird von mir als Fachmann geprüft und freigegeben.</p>
+  <p class="lead">Mehrsprachige Websites für kleine und mittlere Unternehmen und Entwicklungsarbeit für Agenturen. Jeder Arbeitsschritt wird von mir als Fachmann geprüft und freigegeben.</p>
   <div class="grid2">
     <div class="card"><h3>Auf einen Blick</h3><table class="kv" id="ov-kv"></table></div>
     <div class="card"><h3>Ablauf des Gesprächs (45 Minuten)</h3><table class="agenda" id="ov-ag"></table></div>
   </div>
-  <div class="card" style="margin-top:16px"><h3>Beantragt</h3><ul class="dos" style="margin-bottom:0"><li>Einstiegsgeld nach § 16b SGB II</li><li>Zuschuss für Arbeitsmittel nach § 16c Abs. 1 SGB II: 2.350 € (Laptop, Bildschirm, Entwicklungssoftware)</li></ul></div>
+  <div class="card" style="margin-top:16px"><h3>Beantragt</h3><ul class="dos" style="margin-bottom:0"><li>Einstiegsgeld nach § 16b SGB II</li><li>Zuschuss für Arbeitsmittel nach § 16c Abs. 1 SGB II: 2.000 € (Laptop, Bildschirm, Entwicklungssoftware)</li></ul></div>
 </section>
 
 <!-- RECHTE-KARTEN -->
 <section class="view hidden" id="view-rights">
   <h1 id="r-h">Rechte-Karten</h1>
   <p class="lead" id="r-lead"></p>
+  <div class="filters" id="rfilters" style="margin-bottom:12px"></div>
   <div class="rgrid" id="rgrid"></div>
   <div id="rpanel"></div>
 </section>
@@ -380,7 +381,12 @@ const LAW = {
   sgb1_14:  {t:"§ 14 SGB I", n:"Beratung", u:G+"sgb_1/__14.html", q:"Jeder hat Anspruch auf Beratung über seine Rechte und Pflichten nach diesem Gesetzbuch."},
   sgb1_16_2:{t:"§ 16 Abs. 2 SGB I", n:"Antrag bei unzuständiger Stelle", u:G+"sgb_1/__16.html", q:"Ist die Sozialleistung von einem Antrag abhängig, gilt der Antrag als zu dem Zeitpunkt gestellt, in dem er bei einer der in Satz 1 genannten Stellen eingegangen ist."},
   sgb1_16_3:{t:"§ 16 Abs. 3 SGB I", n:"Hinwirken auf klare Anträge", u:G+"sgb_1/__16.html", q:"Die Leistungsträger sind verpflichtet, darauf hinzuwirken, daß unverzüglich klare und sachdienliche Anträge gestellt und unvollständige Angaben ergänzt werden."},
-  sgb1_17:  {t:"§ 17 Abs. 1 SGB I", n:"Zügige Leistung", u:G+"sgb_1/__17.html", k:"Die Leistungsträger müssen darauf hinwirken, dass Berechtigte die ihnen zustehenden Leistungen umfassend und zügig erhalten."},
+  sgb1_17:  {t:"§ 17 Abs. 1 SGB I", n:"Zügige Leistung, einfacher Zugang", u:G+"sgb_1/__17.html", q:"Die Leistungsträger sind verpflichtet, darauf hinzuwirken, daß 1. jeder Berechtigte die ihm zustehenden Sozialleistungen in zeitgemäßer Weise, umfassend und zügig erhält, […] 3. der Zugang zu den Sozialleistungen möglichst einfach gestaltet wird"},
+  sgb1_2:   {t:"§ 2 Abs. 2 SGB I", n:"Soziale Rechte verwirklichen", u:G+"sgb_1/__2.html", q:"Die nachfolgenden sozialen Rechte sind bei der Auslegung der Vorschriften dieses Gesetzbuchs und bei der Ausübung von Ermessen zu beachten; dabei ist sicherzustellen, daß die sozialen Rechte möglichst weitgehend verwirklicht werden."},
+  sgb1_14_2:{t:"§ 14 Satz 2 SGB I", n:"Wer beraten muss", u:G+"sgb_1/__14.html", q:"Zuständig für die Beratung sind die Leistungsträger, denen gegenüber die Rechte geltend zu machen oder die Pflichten zu erfüllen sind."},
+  sgb1_16_2w:{t:"§ 16 Abs. 2 Satz 1 SGB I", n:"Pflicht zur Weiterleitung", u:G+"sgb_1/__16.html", q:"Anträge, die bei einem unzuständigen Leistungsträger, bei einer für die Sozialleistung nicht zuständigen Gemeinde oder bei einer amtlichen Vertretung der Bundesrepublik Deutschland im Ausland gestellt werden, sind unverzüglich an den zuständigen Leistungsträger weiterzuleiten."},
+  sgb10_20: {t:"§ 20 Abs. 1, 3 SGB X", n:"Ermittlung von Amts wegen, Annahme von Anträgen", u:G+"sgb_10/__20.html", q:"Die Behörde ermittelt den Sachverhalt von Amts wegen. […] Die Behörde darf die Entgegennahme von Erklärungen oder Anträgen, die in ihren Zuständigkeitsbereich fallen, nicht deshalb verweigern, weil sie die Erklärung oder den Antrag in der Sache für unzulässig oder unbegründet hält."},
+  sgb2_44b: {t:"§ 44b Abs. 1 SGB II", n:"Das Jobcenter erledigt die Aufgaben", u:G+"sgb_2/__44b.html", q:"Die gemeinsame Einrichtung nimmt die Aufgaben der Träger nach diesem Buch wahr; […] Die gemeinsame Einrichtung ist befugt, Verwaltungsakte und Widerspruchsbescheide zu erlassen."},
   sgb1_39:  {t:"§ 39 Abs. 1 SGB I", n:"Ermessen", u:G+"sgb_1/__39.html", q:"Auf pflichtgemäße Ausübung des Ermessens besteht ein Anspruch."},
   sgb1_60:  {t:"§ 60 Abs. 1 SGB I", n:"Mitwirkung", u:G+"sgb_1/__60.html", k:"Wer Sozialleistungen erhält, muss alle leistungserheblichen Tatsachen angeben und Änderungen unverzüglich mitteilen."},
   sgb2_10: {t:"§ 10 Abs. 2 Nr. 5 SGB II", n:"Zumutbarkeit bei Selbständigen", u:G+"sgb_2/__10.html", q:"… bei Leistungsberechtigten, die selbständig tätig sind, wird spätestens nach einem Jahr ununterbrochenen Leistungsbezuges geprüft, ob ein Verweis auf eine Beschäftigung zumutbar ist."},
@@ -416,7 +422,7 @@ const STEPS = [
    { k:"b", t:"Service-Center oder Hotline", s:"nicht die zuständige Person", end:true,
      say:"Ich möchte eine Rückrufbitte hinterlassen: {name}, BG-Nummer {bg}, Thema Existenzgründung und Antrag auf Einstiegsgeld. Erreichbar unter {tel}.",
      dos:["Fragen, ob die Nachricht als Gesprächsvermerk in der Akte landet.","Name der Mitarbeiterin/des Mitarbeiters notieren.","Nach einer Woche ohne Rückruf schriftlich nachfassen."],
-     ex:"Viele Jobcenter in Berlin leiten Anrufe über eine zentrale Servicenummer. Der Anspruch auf Beratung richtet sich aber an das Jobcenter selbst.",
+     ex:"Viele Jobcenter leiten Anrufe über eine zentrale Servicenummer. Der Anspruch auf Beratung richtet sich aber an das Jobcenter selbst.",
      laws:["sgb1_14"], mail:"callback" },
    { k:"c", t:"Mailbox oder niemand erreichbar", s:"", end:true,
      say:"Guten Tag, hier ist {name}, BG-Nummer {bg}. Ich bitte um Rückruf zu meiner geplanten Existenzgründung, unter {tel}. Ich schicke Ihnen mein Anliegen zusätzlich schriftlich. Vielen Dank.",
@@ -425,8 +431,8 @@ const STEPS = [
  ]},
  { id:"s2", short:"Zeit?", q:"Hat die Person jetzt Zeit?", answers:[
    { k:"a", t:"Ja", s:"",
-     say:"Ich bin seit über zehn Jahren TYPO3-Entwickler und habe mir eigene Werkzeuge gebaut, mit denen ich Websites in Agenturqualität schneller und günstiger erstellen kann. Mein Businessplan ist fertig. Nach meiner Rechnung decke ich ab dem zweiten Jahr meinen Lebensunterhalt vollständig selbst. Ich möchte das sauber und mit Ihnen gemeinsam angehen.",
-     dos:["Höchstens eine Minute, dann Pause.","Zahlen nur nennen, wenn gefragt: ab Monat 13 bis 15 unabhängig."], laws:[], next:2 },
+     say:"Ich bin seit vielen Jahren Webentwickler und habe mir eigene Werkzeuge gebaut, mit denen ich Websites in Agenturqualität schneller und günstiger erstellen kann. Mein Businessplan ist fertig. Nach meiner Rechnung decke ich ab dem zweiten Jahr meinen Lebensunterhalt vollständig selbst. Ich möchte das sauber und mit Ihnen gemeinsam angehen.",
+     dos:["Höchstens eine Minute, dann Pause.","Zahlen nur nennen, wenn gefragt: ab Monat 14 bis 16 unabhängig."], laws:[], next:2 },
    { k:"b", t:"Nein, jetzt nicht", s:"", end:true, field:{key:"rueckruf", label:"Vereinbarter Rückruftermin", ph:"z. B. Dienstag, 14.10., 10 Uhr"},
      say:"Kein Problem. Wann darf ich Sie erreichen, oder rufen Sie mich zurück? Ich bestätige den Termin gleich schriftlich.",
      dos:["Konkreten Tag und Uhrzeit festmachen, nicht „irgendwann diese Woche“."], laws:["sgb1_14"], mail:"callback2" },
@@ -434,7 +440,7 @@ const STEPS = [
      say:"Danke. Können Sie mein Anliegen bitte an das Team für Selbständige weiterleiten und mir Namen und Durchwahl nennen? Mein Antrag liegt Ihnen ja seit {datum} vor.",
      dos:["Name und Durchwahl der zuständigen Stelle notieren.","Nicht diskutieren: Ein Antrag bei einer unzuständigen Stelle gilt trotzdem ab Eingang."],
      ex:"Das Jobcenter muss den Antrag weiterleiten; er gilt ab dem Tag, an dem er bei Ihnen eingegangen ist.",
-     laws:["sgb1_16_2","sgb1_16_3"], mail:"forward" }
+     laws:["sgb1_16_2w","sgb1_16_2","sgb1_16_3"], mail:"forward" }
  ]},
  { id:"s3", short:"Reaktion", q:"Wie reagiert die Person auf Ihre Kernbotschaft?", answers:[
    { k:"a", t:"Interessiert, stellt Fragen", s:"",
@@ -500,7 +506,7 @@ const STEPS = [
      say:"Können Sie mir die Liste und die Formulare zusätzlich über jobcenter.digital schicken? Dann bereite ich alles vollständig vor.",
      dos:["In der Abschluss-Mail um die Liste bitten."], laws:["sgb1_16_3","sgb1_14"], next:7 },
    { k:"c", t:"Stellungnahme zur Tragfähigkeit nötig", s:"",
-     say:"Das hatte ich erwartet. Welche Stelle akzeptieren Sie? Ich würde die IHK Berlin anfragen.",
+     say:"Das hatte ich erwartet. Welche Stelle akzeptieren Sie? Ich würde die IHK anfragen.",
      dos:["Termin bei der IHK-Gründungsberatung direkt nach dem Gespräch buchen."], laws:["sgb2_16c3"], next:7 }
  ]}
 ];
@@ -509,7 +515,7 @@ const STEPS = [
 const CATS = ["Alle","Neue Ansprechperson","Person","Angebot","Kunden & Markt","Zahlen","Nachfragen","Förderung & Recht","Pflichten & Ablauf"];
 const QA = [
  {c:"Neue Ansprechperson", q:"Ich kenne Ihren Fall noch nicht. Worum geht es?",
-  a:"Kurz gesagt: Ich bin seit über zehn Jahren TYPO3-Entwickler und will mich hauptberuflich selbständig machen. Ich habe Einstiegsgeld und 2.350 € für Arbeitsmittel beantragt. Nach meinem Plan brauche ich ab Monat 13 bis 15 kein Grundsicherungsgeld mehr. Alles steht auf einer Seite in Anlage 2.",
+  a:"Kurz gesagt: Ich bin seit vielen Jahren Webentwickler und will mich hauptberuflich selbständig machen. Ich habe Einstiegsgeld und 2.000 € für Arbeitsmittel beantragt. Nach meinem Plan brauche ich ab Monat 14 bis 16 kein Grundsicherungsgeld mehr. Alles steht auf einer Seite in Anlage 2.",
   show:"Anlage 2 (Auf einen Blick), Überblick im Präsentationsmodus", laws:["sgb2_16b","sgb2_16c1"]},
  {c:"Neue Ansprechperson", q:"In der Akte steht ein Vermerk Ihres Vorgängers. Wie sehen Sie das?",
   a:"Ich kenne den Vermerk nicht und würde ihn gern lesen. Mir ist wichtig, dass Sie sich ein eigenes Bild machen: Hier ist mein Plan, und die Tragfähigkeit lasse ich von der IHK prüfen.",
@@ -524,7 +530,7 @@ const QA = [
   a:"Eine Anwendung, die ich selbst gebaut habe: Sie fasst mein Vorhaben, die Zahlen und die Antworten auf Ihre Fragen zusammen. Sie ist gleichzeitig eine Arbeitsprobe: So etwas baue ich auch für Kunden.",
   show:"Präsentationsmodus: Überblick, Fragen & Antworten, Verfahren", laws:[]},
  {c:"Nachfragen", q:"Warum sollte es diesmal klappen?",
-  a:"Weil ich nicht bei null anfange: Die Werkzeuge sind gebaut und getestet, drei Beispiel-Websites existieren, die Kosten sind mit 220 € im Monat niedrig. Und weil ich mich an feste Kontrollpunkte binde: Monatsbericht, Frühwarnpunkt nach sechs Monaten.",
+  a:"Weil ich nicht bei null anfange: Die Werkzeuge sind gebaut und getestet, drei Beispiel-Websites existieren, die Kosten sind mit 180 € im Monat niedrig. Und weil ich mich an feste Kontrollpunkte binde: Monatsbericht, Frühwarnpunkt nach sechs Monaten.",
   show:"Beispiel-Websites, Anlage 3 (Zusagen)", laws:[]},
  {c:"Nachfragen", q:"Warum brauchen Sie Einstiegsgeld, wenn das Geschäft so gut läuft?",
   a:"Mein Plan trägt auch ohne Einstiegsgeld; es ist darin nicht eingerechnet. Es verkürzt die Anlaufzeit: Ich kann mich voll auf Kunden konzentrieren statt auf Nebenjobs und bin dadurch schneller ganz aus dem Leistungsbezug.",
@@ -533,7 +539,7 @@ const QA = [
   a:"Die Höhe legen Sie fest. Ich bitte um eine Förderung für zunächst zwölf Monate, damit die Anlaufphase gedeckt ist.",
   show:"–", laws:["sgb2_16b"]},
  {c:"Nachfragen", q:"Können Sie davon wirklich leben?",
-  a:"Ab dem zweiten Jahr ja: geplant sind rund 3.175 € Gewinn im Monat. Davon zahle ich Miete, Lebensunterhalt, Krankenversicherung, Steuern und Altersvorsorge und behalte noch eine Rücklage. Die Rechnung steht im Businessplan.",
+  a:"Ab dem zweiten Jahr ja: geplant sind rund 2.800 € Gewinn im Monat. Davon zahle ich Miete, Lebensunterhalt, Krankenversicherung, Steuern und Altersvorsorge und behalte noch eine Rücklage. Die Rechnung steht im Businessplan.",
   show:"Businessplan Abschnitt 8 (Deckung des Lebensunterhalts)", laws:[]},
  {c:"Nachfragen", q:"Kann die KI das nicht bald jeder selbst?",
   a:"Werkzeuge werden besser, aber Kunden kaufen keine Werkzeuge, sondern eine fertige, sichere Website mit jemandem, der dafür geradesteht. Die Erfahrung, was eine gute Website braucht, ersetzt kein Programm.",
@@ -545,28 +551,28 @@ const QA = [
   a:"Die Wartung läuft weitgehend automatisch weiter, Termine plane ich mit Puffer. Für längere Ausfälle bin ich krankenversichert; das Risiko steht im Plan.",
   show:"Businessplan Abschnitt 11 (Risiken)", laws:["sgb2_26"]},
  {c:"Nachfragen", q:"Haben Sie Schulden oder laufende Verpflichtungen?",
-  a:"[Wahrheitsgemäß, kurz.] Für das Geschäft nehme ich keinen Kredit auf; der Kapitalbedarf ist mit 3.010 € gering.",
+  a:"[Wahrheitsgemäß, kurz.] Für das Geschäft nehme ich keinen Kredit auf; der Kapitalbedarf ist mit 2.600 € gering.",
   show:"Businessplan Abschnitt 7", laws:["sgb1_60"]},
  {c:"Nachfragen", q:"Brauchen Sie eine Genehmigung? Was ist mit Datenschutz bei Kunden?",
   a:"Webentwicklung ist ein freies Gewerbe, die Anmeldung beim Bezirksamt genügt. Für Kundendaten schließe ich Auftragsverarbeitungsverträge, Hosting in Deutschland, und ich habe eine Berufshaftpflicht.",
   show:"Businessplan Abschnitt 6 (Organisation, Versicherungen)", laws:["gewo14"]},
  {c:"Nachfragen", q:"Warum Englisch und Spanisch?",
-  a:"Berlin hat viele internationale Betriebe. Mehrsprachige Websites sind bei Agenturen teuer; ich biete sie von Anfang an im Paket. Das unterscheidet mich vom Wettbewerb.",
+  a:"Die Region hat viele internationale Betriebe. Mehrsprachige Websites sind bei Agenturen teuer; ich biete sie von Anfang an im Paket. Das unterscheidet mich vom Wettbewerb.",
   show:"Beispiel-Website in drei Sprachen", laws:[]},
  {c:"Nachfragen", q:"Haben Sie diese Anwendung wirklich selbst gebaut? Können Sie das für andere?",
   a:"Ja, vollständig. Genau so etwas, Anwendungen und Websites für Betriebe und Vereine, ist mein Angebot.",
   show:"Die Anwendung selbst", laws:[]},
  {c:"Person", q:"Warum wollen Sie sich selbständig machen statt eine Stelle anzunehmen?",
-  a:"Ich habe über zehn Jahre Erfahrung mit TYPO3 und eigene Werkzeuge entwickelt, mit denen ich deutlich mehr Projekte bearbeiten kann als ein angestellter Entwickler. Nach meinem Plan verdiene ich ab dem zweiten Jahr mehr als in einer vergleichbaren Anstellung und bin unabhängig vom Grundsicherungsgeld. Ich bewerbe mich trotzdem parallel, wenn wir das vereinbaren.",
+  a:"Ich habe langjährige Erfahrung in der Webentwicklung und eigene Werkzeuge entwickelt, mit denen ich deutlich mehr Projekte bearbeiten kann als ein angestellter Entwickler. Nach meinem Plan verdiene ich ab dem zweiten Jahr mehr als in einer vergleichbaren Anstellung und bin unabhängig vom Grundsicherungsgeld. Ich bewerbe mich trotzdem parallel, wenn wir das vereinbaren.",
   show:"Businessplan Abschnitt 1 (Zusammenfassung) und 8 (Rentabilität)", laws:["sgb2_16b"]},
  {c:"Person", q:"Welche Qualifikation haben Sie für diese Tätigkeit?",
-  a:"[Ausbildung/Studium], über zehn Jahre Entwicklung von TYPO3-Websites und -Erweiterungen, zuletzt bei [Stationen]. Die Produktionskette für TYPO3 14.3 habe ich selbst entwickelt; sie ist mit automatischen Tests abgesichert, drei Beispiel-Websites sind damit entstanden.",
+  a:"[Ausbildung/Studium], langjährige Entwicklung von Websites und Erweiterungen für ein verbreitetes Redaktionssystem, zuletzt bei [Stationen]. Meine Produktionskette habe ich selbst entwickelt; sie ist mit automatischen Tests abgesichert, drei Beispiel-Websites sind damit entstanden.",
   show:"Lebenslauf, Zeugnisse, Beispiel-Websites (Portfolio-Link)", laws:[]},
  {c:"Person", q:"Haben Sie kaufmännische Kenntnisse?",
-  a:"[Eigene Erfahrung mit Angeboten, Rechnungen, Kundenkontakt.] Ich nutze eine Buchhaltungssoftware, die Zahlen für Finanzamt und Anlage EKS liefert, und nehme die Gründungsberatung der IHK Berlin in Anspruch. Ein Gründungscoaching nehme ich gern an.",
+  a:"[Eigene Erfahrung mit Angeboten, Rechnungen, Kundenkontakt.] Ich nutze eine Buchhaltungssoftware, die Zahlen für Finanzamt und Anlage EKS liefert, und nehme die Gründungsberatung der IHK in Anspruch. Ein Gründungscoaching nehme ich gern an.",
   show:"Businessplan Abschnitt 6 (Organisation)", laws:["sgb2_16c2"]},
  {c:"Angebot", q:"Was genau bieten Sie an?",
-  a:"Drei Leistungen auf TYPO3: fertige mehrsprachige Websites zum Festpreis (2.400 € oder 4.900 €), Wartung und Hosting für 79 € im Monat und Entwicklungsarbeit für TYPO3-Agenturen zu 75 € pro Stunde.",
+  a:"Drei Leistungen: fertige mehrsprachige Websites zum Festpreis (1.900 € oder 3.900 €), Wartung und Hosting für 49 € im Monat und Entwicklungsarbeit für Webagenturen zu 70 € pro Stunde.",
   show:"Businessplan Abschnitt 3 (Angebot)", laws:[]},
  {c:"Angebot", q:"Was ist an Ihrem Angebot KI, und ist das seriös?",
   a:"Die Werkzeuge übernehmen Routinearbeit: Grundgerüst, Tests, Übersetzungsentwürfe. Jeder Schritt wird von mir geprüft und freigegeben, bevor der Kunde etwas sieht. Fehler werden als Regeln gespeichert und wiederholen sich nicht. Datenschutz: Hosting in Deutschland, keine Schriften von Google-Servern.",
@@ -575,31 +581,31 @@ const QA = [
   a:"Etwa 20 Stunden eigene Arbeitszeit für eine Website „Start“ und 40 Stunden für „Business“, verteilt auf zwei bis vier Wochen, je nachdem, wie schnell der Kunde Inhalte und Freigaben liefert.",
   show:"Businessplan Abschnitt 5 (Preislogik)", laws:[]},
  {c:"Kunden & Markt", q:"Wer sind Ihre Kunden? Haben Sie schon Aufträge?",
-  a:"Kleine Unternehmen, Praxen und Vereine in Berlin, mittelständische Betriebe mit mehrsprachigem Bedarf und TYPO3-Agenturen, die Entwickler suchen. Ich habe Kontakte zu [Anzahl] Agenturen und Interessenten [Namen/Branchen]. Feste Aufträge nehme ich erst nach der Gewerbeanmeldung an.",
+  a:"Kleine Unternehmen, Praxen und Vereine in der Region, mittelständische Betriebe mit mehrsprachigem Bedarf und Webagenturen, die Entwickler suchen. Ich habe Kontakte zu [Anzahl] Agenturen und Interessenten [Namen/Branchen]. Feste Aufträge nehme ich erst nach der Gewerbeanmeldung an.",
   show:"Absichtserklärungen, falls vorhanden; Businessplan Abschnitt 4", laws:["gewo14"]},
  {c:"Kunden & Markt", q:"Wie gewinnen Sie Kunden?",
-  a:"Über meine eigene Referenz-Website, Direktansprache von zehn TYPO3-Agenturen pro Monat, die TYPO3-Community in Berlin, mein bisheriges Netzwerk und Empfehlungen. Jeder Website-Kunde bekommt ein Wartungsangebot; das baut wiederkehrende Einnahmen auf.",
+  a:"Über meine eigene Referenz-Website, Direktansprache von zehn Webagenturen pro Monat, die Entwickler-Community vor Ort, mein bisheriges Netzwerk und Empfehlungen. Jeder Website-Kunde bekommt ein Wartungsangebot; das baut wiederkehrende Einnahmen auf.",
   show:"Businessplan Abschnitt 5 (Kundengewinnung)", laws:[]},
  {c:"Kunden & Markt", q:"Wer ist Ihre Konkurrenz, und warum sollte jemand bei Ihnen kaufen?",
-  a:"Baukästen wie Wix sind billiger, bieten aber wenig Mehrsprachigkeit und Redakteursrechte. WordPress-Freiberufler sind günstig, aber wartungsintensiv. TYPO3-Agenturen sind deutlich teurer. Ich biete TYPO3-Qualität zum Freiberuflerpreis, und Agenturen sind gleichzeitig meine Kunden.",
+  a:"Baukästen wie Wix sind billiger, bieten aber wenig Mehrsprachigkeit und Redakteursrechte. WordPress-Freiberufler sind günstig, aber wartungsintensiv. Agenturen sind deutlich teurer. Ich biete Agenturqualität zum Freiberuflerpreis, und Agenturen sind gleichzeitig meine Kunden.",
   show:"Businessplan Abschnitt 4 (Wettbewerb)", laws:[]},
  {c:"Zahlen", q:"Wie kommen Sie auf diese Umsatzzahlen?",
-  a:"Jahr 1 plant mit nur fünf Websites, fünf Wartungsverträgen und etwa fünf Agenturstunden im Monat: 23.775 € Umsatz. Websites sind erst im Monat des Livegangs eingerechnet, obwohl ich Abschläge vereinbare. Das ist bewusst vorsichtig.",
+  a:"Jahr 1 plant mit nur fünf Websites, fünf Wartungsverträgen und etwa fünf Agenturstunden im Monat: 21.000 € Umsatz. Websites sind erst im Monat des Livegangs eingerechnet, obwohl ich Abschläge vereinbare. Das ist bewusst vorsichtig.",
   show:"Businessplan Abschnitt 8 (Mengenplanung) und 9 (Liquidität)", laws:[]},
  {c:"Zahlen", q:"Was passiert, wenn die Aufträge ausbleiben?",
-  a:"Die laufenden Kosten liegen bei nur 220 € im Monat, ein Verlust entsteht kaum. Ich habe einen Frühwarnpunkt eingebaut: Liegt der Gewinn nach sechs Monaten unter 3.000 €, passe ich gemeinsam mit Ihnen an, zum Beispiel mehr Agenturstunden oder eine zusätzliche Teilzeitbeschäftigung.",
+  a:"Die laufenden Kosten liegen bei nur 180 € im Monat, ein Verlust entsteht kaum. Ich habe einen Frühwarnpunkt eingebaut: Liegt der Gewinn nach sechs Monaten unter 2.500 €, passe ich gemeinsam mit Ihnen an, zum Beispiel mehr Agenturstunden oder eine zusätzliche Teilzeitbeschäftigung.",
   show:"Businessplan Abschnitt 10 (Frühwarnung) und 11 (Risiken)", laws:["sgb2_10"]},
  {c:"Zahlen", q:"Ab wann brauchen Sie kein Grundsicherungsgeld mehr?",
-  a:"Nach Plan ab Monat 13 bis 15, wenn der Gewinn dauerhaft über etwa 2.200 € im Monat liegt. Im zweiten Jahr plane ich 3.175 € Gewinn im Monat; davon kann ich Lebensunterhalt, Krankenversicherung, Steuern und Altersvorsorge zahlen und behalte noch eine Rücklage.",
+  a:"Nach Plan ab Monat 14 bis 16, wenn der Gewinn dauerhaft über etwa 2.100 € im Monat liegt. Im zweiten Jahr plane ich 2.800 € Gewinn im Monat; davon kann ich Lebensunterhalt, Krankenversicherung, Steuern und Altersvorsorge zahlen und behalte noch eine Rücklage.",
   show:"Businessplan Abschnitt 8 (Deckung des Lebensunterhalts)", laws:["sgb2_16c3"]},
- {c:"Zahlen", q:"Wofür brauchen Sie 2.350 €, und warum kein Kredit?",
-  a:"Für einen leistungsstarken Laptop (1.800 €), einen zweiten Bildschirm (300 €) und die Entwicklungsumgebung für ein Jahr (250 €). Das sind Arbeitsmittel, ohne die ich nicht professionell arbeiten kann. [Falls zutreffend: Meine Bank vergibt an Gründer aus dem Leistungsbezug keinen Kredit; Nachweis liegt bei.]",
+ {c:"Zahlen", q:"Wofür brauchen Sie 2.000 €, und warum kein Kredit?",
+  a:"Für einen leistungsstarken Laptop (1.500 €), einen zweiten Bildschirm (250 €) und die Entwicklungsumgebung für ein Jahr (250 €). Das sind Arbeitsmittel, ohne die ich nicht professionell arbeiten kann. [Falls zutreffend: Meine Bank vergibt an Gründer aus dem Leistungsbezug keinen Kredit; Nachweis liegt bei.]",
   show:"Kostenvoranschläge, ggf. Ablehnung der Bank, Businessplan Abschnitt 7", laws:["sgb2_16c1"]},
  {c:"Zahlen", q:"Warum reicht Ihr jetziger Computer nicht?",
-  a:"Die lokale Entwicklungsumgebung (Docker mit TYPO3, Datenbank, Testbrowser) braucht mindestens 32 GB Arbeitsspeicher. Mein jetziges Gerät [Modell, Baujahr, RAM] schafft das nicht; Tests laufen dann nicht oder sehr langsam.",
+  a:"Die lokale Entwicklungsumgebung (Docker mit Redaktionssystem, Datenbank, Testbrowser) braucht mindestens 32 GB Arbeitsspeicher. Mein jetziges Gerät [Modell, Baujahr, RAM] schafft das nicht; Tests laufen dann nicht oder sehr langsam.",
   show:"Gerätedaten des alten Laptops, Kostenvoranschlag", laws:["sgb2_16c1"]},
  {c:"Zahlen", q:"Was kosten die KI-Dienste? Sind das echte Betriebsausgaben?",
-  a:"Etwa 30 € Grundkosten im Monat plus rund 60 € pro Website, das sind ca. 2 % des Preises. Die Kosten werden pro Projekt protokolliert, ich kann sie Ihnen in der Anlage EKS einzeln nachweisen.",
+  a:"Etwa 25 € Grundkosten im Monat plus rund 50 € pro Website, das sind ca. 2 % des Preises. Die Kosten werden pro Projekt protokolliert, ich kann sie Ihnen in der Anlage EKS einzeln nachweisen.",
   show:"Kostenprotokoll pro Projekt, Businessplan Abschnitt 8", laws:["sgb2_41a"]},
  {c:"Förderung & Recht", q:"Auf Einstiegsgeld gibt es keinen Rechtsanspruch.",
   a:"Das ist mir bewusst. Ich bitte um eine Ermessensentscheidung auf Grundlage meines Plans und um einen schriftlichen Bescheid mit Begründung.",
@@ -608,7 +614,7 @@ const QA = [
   a:"Nein. Ich habe vorbereitet: Businessplan, Kostenvoranschläge, Beispiel-Websites. Ich beginne erst, wenn über die Förderung entschieden ist, und melde dann das Gewerbe an.",
   show:"–", laws:["sgb2_37","sgb1_60"]},
  {c:"Förderung & Recht", q:"Wir brauchen eine Stellungnahme zur Tragfähigkeit.",
-  a:"Gern. Ich habe bei der IHK Berlin einen Termin [Datum] angefragt. Akzeptieren Sie die IHK, oder bevorzugen Sie eine andere fachkundige Stelle?",
+  a:"Gern. Ich habe bei der IHK einen Termin [Datum] angefragt. Akzeptieren Sie die IHK, oder bevorzugen Sie eine andere fachkundige Stelle?",
   show:"Terminbestätigung IHK", laws:["sgb2_16c3"]},
  {c:"Förderung & Recht", q:"Sie müssen sich trotzdem weiter bewerben.",
   a:"Einverstanden, wenn wir den Umfang im Kooperationsplan festhalten, zum Beispiel zwei Bewerbungen im Monat. Wichtig ist mir, dass genug Zeit für den Aufbau bleibt, sonst gefährden wir das Ziel, unabhängig zu werden.",
@@ -636,14 +642,14 @@ const QA = [
   show:"Muster Monatsbericht, Businessplan Abschnitt 10 (Meilensteine)", laws:["sgb2_10"]}
 ];
 const OV_KV = [
- ["Angebot","Websites zum Festpreis (2.400 € / 4.900 €), Wartung und Hosting (79 €/Monat), Agenturarbeit (75 €/Stunde)"],
+ ["Angebot","Websites zum Festpreis (1.900 € / 3.900 €), Wartung und Hosting (49 €/Monat), Agenturarbeit (70 €/Stunde)"],
  ["Rechtsform","Einzelunternehmen, Gewerbe, Kleinunternehmer"],
  ["Arbeitszeit","hauptberuflich, 35–40 Stunden pro Woche"],
- ["Laufende Kosten","ca. 220 € pro Monat"],
- ["Umsatz Jahr 1 / 2 / 3","23.775 € / 42.700 € / 62.300 €"],
- ["Gewinn Jahr 1 / 2 / 3","20.505 € / 38.100 € / 55.300 €"],
- ["Ohne Grundsicherungsgeld","voraussichtlich ab Monat 13 bis 15"],
- ["Frühwarnpunkt","Gewinn Monate 1–6 unter 3.000 € → gemeinsame Anpassung"],
+ ["Laufende Kosten","ca. 180 € pro Monat"],
+ ["Umsatz Jahr 1 / 2 / 3","21.000 € / 38.000 € / 55.000 €"],
+ ["Gewinn Jahr 1 / 2 / 3","18.000 € / 33.500 € / 49.000 €"],
+ ["Ohne Grundsicherungsgeld","voraussichtlich ab Monat 14 bis 16"],
+ ["Frühwarnpunkt","Gewinn Monate 1–6 unter 2.500 € → gemeinsame Anpassung"],
  ["Kontrolle","monatlicher Kurzbericht, Anlage EKS, Meilensteine"]
 ];
 const OV_AG = [
@@ -663,7 +669,7 @@ const RIGHTS = [
   laws:["sgb10_35","sgb1_39"], next:["Schriftliche Entscheidung mit Begründung","Antrag bleibt gestellt; Termin für erneute Prüfung erfragen"], tac:["Ob Haushaltsmittel als Ermessensgrund tragen, prüft eine Beratungsstelle anhand des Bescheids. Im Gespräch nicht darüber diskutieren."], pl:[]},
  {id:"zustaendig", q:"„Dafür bin ich nicht zuständig.“", t:"Zuständigkeit",
   say:"Dann bitte ich Sie, meinen Antrag an die zuständige Stelle weiterzuleiten und mir Namen und Kontakt zu nennen.",
-  laws:["sgb1_16_2","sgb1_14"], next:["Antrag gilt ab Eingang als gestellt","Kontakt der zuständigen Stelle notieren"], tac:[], pl:[]},
+  laws:["sgb1_16_2w","sgb1_16_2","sgb1_14_2"], next:["Antrag gilt ab Eingang als gestellt","Kontakt der zuständigen Stelle notieren"], tac:["Auch wenn die Person wirklich nicht zuständig ist: Weiterleiten muss sie trotzdem, und zwar unverzüglich."], pl:[]},
  {id:"bewerben", q:"„Bewerben Sie sich erst mal, dann sehen wir weiter.“", t:"Bewerbungen und Gründung parallel",
   say:"Ich bewerbe mich gern parallel in einem vereinbarten Umfang. Über meinen Antrag bitte ich trotzdem jetzt zu entscheiden; die Überprüfung einer Selbständigkeit sieht das Gesetz nach einem Jahr vor.",
   laws:["sgb2_16b","sgb2_10","sgb2_15"], next:["Umfang der Bewerbungen im Kooperationsplan festhalten","Entscheidung über den Antrag schriftlich"], tac:["Konkrete Zahl vorschlagen, z. B. zwei Bewerbungen im Monat."], pl:[]},
@@ -703,10 +709,54 @@ const RIGHTS = [
  {id:"einarbeiten", q:"„Ich muss mich erst einarbeiten.“", t:"Bearbeitung nach Zuständigkeitswechsel",
   say:"Selbstverständlich. Bis wann ungefähr können wir über meinen Antrag vom {datum} sprechen?",
   laws:["sgb1_17","sgb2_37"], next:["Termin oder Zeitraum notieren","Antrag gilt weiter ab {datum}"], tac:["Freundlich bleiben; die Unterlagen dalassen, damit die Einarbeitung leicht fällt."], pl:[]},
+ {id:"agentur", g:"z", q:"„Da müssen Sie zur Agentur für Arbeit.“", t:"Zuständigkeit Jobcenter oder Agentur",
+  say:"Ich beziehe Grundsicherungsgeld. Für Einstiegsgeld und Zuschüsse nach dem SGB II ist deshalb das Jobcenter zuständig, nicht die Agentur für Arbeit. Bitte nehmen Sie meinen Antrag hier auf.",
+  laws:["sgb2_44b","sgb2_16b","sgb1_16_2w"], next:["Antrag hier aufnehmen lassen","Falls doch verwiesen: Weiterleitung und Eingangsdatum schriftlich bestätigen lassen"], tac:["Gründungszuschuss (Arbeitslosengeld I) ist Sache der Agentur, Einstiegsgeld (Grundsicherungsgeld) Sache des Jobcenters. In Optionskommunen heißt das Jobcenter manchmal anders, zuständig ist es trotzdem."], pl:[]},
+ {id:"abteilung", g:"z", q:"„Dafür ist eine andere Abteilung zuständig.“", t:"Interne Zuständigkeit",
+  say:"Dann bitte ich Sie, mein Anliegen intern weiterzugeben und mir zu sagen, wer es bearbeitet und wie ich die Person erreiche. Mein Antrag liegt dem Jobcenter seit {datum} vor.",
+  laws:["sgb1_16_2w","sgb1_16_2","sgb1_17"], next:["Name, Abteilung und Durchwahl notieren","Eingangsdatum bleibt das Datum des ersten Kontakts"], tac:["Für Sie ist das Jobcenter eine Behörde. Wie es intern verteilt, ist nicht Ihr Problem; das Datum des ersten Eingangs zählt."], pl:[]},
+ {id:"beratung", g:"z", q:"„Beraten darf ich Sie dazu nicht.“", t:"Anspruch auf Beratung",
+  say:"Ich möchte keine Rechtsauskunft zu meinem Einzelfall, sondern Beratung zu meinen Rechten und Pflichten bei einer Gründung aus dem Leistungsbezug. Dafür ist das Jobcenter zuständig, weil ich die Leistung hier beantrage.",
+  laws:["sgb1_14","sgb1_14_2"], next:["Beratungstermin vereinbaren","Fragen vorab schriftlich schicken"], tac:["Fragen offen und konkret stellen: „Welche Unterlagen brauchen Sie für die Entscheidung?“ statt „Bekomme ich das?“"], pl:[]},
+ {id:"annehmen", g:"z", q:"„Das nehme ich so nicht an.“", t:"Entgegennahme des Antrags",
+  say:"Bitte nehmen Sie meinen Antrag trotzdem entgegen und bestätigen Sie mir das Eingangsdatum. Ob er Erfolg hat, entscheiden Sie danach; fehlende Angaben reiche ich nach.",
+  laws:["sgb10_20","sgb1_16_3","sgb10_9"], next:["Eingangsstempel auf der Kopie oder Eingangsbestätigung","Liste der fehlenden Unterlagen erbitten"], tac:["Immer eine Kopie mitbringen und stempeln lassen. Online: über jobcenter.digital senden und die Bestätigung speichern."], pl:[]},
+ {id:"hotline", g:"z", q:"„Rufen Sie die Hotline an.“ / „Machen Sie das online.“", t:"Weg der Antragstellung",
+  say:"Das mache ich gern zusätzlich. Ich bin aber jetzt hier und möchte mein Anliegen auch jetzt abgeben. Können Sie es aufnehmen und mir den Eingang bestätigen?",
+  laws:["sgb10_9","sgb10_20","sgb1_17"], next:["Eingang bestätigen lassen","Zusätzlich über jobcenter.digital senden"], tac:["Der Antrag ist an keine Form gebunden. Ein zweiter Weg schadet nicht, ein fehlender Nachweis schon."], pl:[]},
+ {id:"urlaub", g:"z", q:"„Ihre Ansprechperson ist nicht da.“", t:"Vertretung",
+  say:"Wer vertritt die Person? Mein Anliegen hat eine Frist, weil ich erst nach der Entscheidung beginnen kann. Bitte nehmen Sie es auf oder geben Sie es an die Vertretung.",
+  laws:["sgb1_17","sgb2_37"], next:["Namen der Vertretung notieren","Anliegen schriftlich nachreichen, Eingang bestätigen lassen"], tac:["Nicht auf die Rückkehr warten. Vertretungsregeln gibt es in jedem Jobcenter."], pl:[]},
+ {id:"weiterleiten", g:"z", q:"„Ich leite das weiter.“", t:"Weiterleitung nachvollziehbar machen",
+  say:"Danke. An wen genau, und bis wann kann ich mit einer Rückmeldung rechnen? Ich notiere mir das.",
+  laws:["sgb1_16_2w","sgb1_17"], next:["Empfänger und Datum der Weiterleitung notieren","Ohne Rückmeldung bis zum genannten Datum: schriftlich nachfragen"], tac:["Weiterleiten ohne Namen und Datum heißt oft: liegt irgendwo. Freundlich nach beidem fragen."], pl:["sgg88"]},
+ {id:"angekommen", g:"u", q:"„Ihre Unterlagen sind bei uns nicht angekommen.“", t:"Eingang von Unterlagen",
+  say:"Ich habe sie am [Datum] über [Weg] geschickt; hier ist die Bestätigung. Ich gebe Ihnen gern sofort eine Kopie und bitte um eine Eingangsbestätigung.",
+  laws:["sgb1_16_2","sgb1_60"], next:["Kopie übergeben, Eingang bestätigen lassen","Ursprüngliches Sendedatum festhalten lassen"], tac:["Deshalb immer mit Nachweis senden: jobcenter.digital mit Bestätigung, Einwurf mit Zeugin oder persönlich mit Stempel."], pl:[]},
+ {id:"intern", g:"f", q:"„Das ist bei uns intern so geregelt.“", t:"Interne Weisung und Ermessen",
+  say:"Das verstehe ich. Über meinen Antrag muss trotzdem im Einzelfall entschieden werden. Bitte entscheiden Sie schriftlich und nennen Sie die Gründe.",
+  laws:["sgb1_39","sgb1_2","sgb10_35"], next:["Schriftlicher Bescheid mit Begründung"], tac:["Eine Weisung ersetzt keine Ermessensentscheidung im Einzelfall. Das prüft später die Beratungsstelle anhand des Bescheids."], pl:["sgg84"]},
+ {id:"system", g:"f", q:"„Das lässt das System nicht zu.“", t:"Entscheidung statt Software",
+  say:"Dann bitte ich um eine schriftliche Entscheidung, damit ich nachvollziehen kann, woran es liegt.",
+  laws:["sgb10_35","sgb10_33"], next:["Schriftliche Entscheidung mit Begründung"], tac:["Software entscheidet nicht, Menschen tun es. Nicht streiten, nur die Entscheidung schriftlich verlangen."], pl:[]},
+ {id:"kunden", g:"f", q:"„Kommen Sie wieder, wenn Sie Kunden haben.“", t:"Reihenfolge Antrag und Start",
+  say:"Feste Kunden darf ich erst nach der Gewerbeanmeldung annehmen, und die Förderung gibt es nicht für Zeiten vor dem Antrag. Deshalb beantrage ich jetzt und lege Ihnen Interessenten und Absichtserklärungen vor.",
+  laws:["sgb2_37","sgb2_16b","gewo14"], next:["Absichtserklärungen oder Anfragen vorlegen","Entscheidung über den Antrag vor dem Start"], tac:["Nie zuerst starten und dann fragen: Das kann die Förderung kosten."], pl:[]},
+ {id:"termin", g:"t", q:"„Ohne Termin kann ich nichts für Sie tun.“", t:"Anliegen ohne Termin",
+  say:"Dann lasse ich mein Schreiben hier und bitte um einen Eingangsstempel auf meiner Kopie. Einen Termin nehme ich gern, wann ist der nächste frei?",
+  laws:["sgb10_9","sgb10_20","sgb1_16_2"], next:["Eingangsstempel auf der Kopie","Termin notieren"], tac:["Das Abgeben eines Antrags braucht keinen Termin."], pl:[]},
+ {id:"wiederkommen", g:"t", q:"„Da müssen Sie nochmal wiederkommen.“", t:"Fehlende Unterlagen",
+  say:"Gern. Was genau fehlt noch? Bitte geben Sie mir die Liste schriftlich, dann bringe ich beim nächsten Mal alles vollständig mit.",
+  laws:["sgb1_16_3","sgb10_20"], next:["Schriftliche Liste der fehlenden Unterlagen","Antrag gilt weiter ab dem ersten Eingang"], tac:["Ohne Liste kommt man oft dreimal. Die Liste ist der wichtigste Zettel des Tages."], pl:[]},
  {id:"widerspruch", q:"„Dann legen Sie doch Widerspruch ein.“", t:"Rechtsbehelf",
   say:"Dafür brauche ich die Entscheidung schriftlich mit Begründung. Lieber wäre mir eine Lösung heute.",
   laws:["sgb10_35","sgg84"], next:["Schriftlicher Bescheid","Widerspruch innerhalb eines Monats"], tac:[], pl:[]}
 ];
+/* Gruppen der Rechte-Karten: z = Zuständigkeit & Abwimmeln, f = Förderung & Entscheidung, u = Unterlagen & Form, t = Termin & Gespräch */
+const RGRUPPEN = [["alle","Alle"],["z","Zuständigkeit & Abwimmeln"],["f","Förderung & Entscheidung"],["u","Unterlagen & Form"],["t","Termin & Gespräch"]];
+const RG_ALT = {grundsatz:"f", budget:"f", zustaendig:"z", bewerben:"f", formular:"u", schriftlich:"u", riskant:"f", melden:"t", neben:"f", vermoegen:"f", unterschrift:"u", beistand:"t", akte:"u", darlehen:"f", vorgaenger:"t", einarbeiten:"z", widerspruch:"f"};
+const rGruppe = r => r.g || RG_ALT[r.id] || "f";
+let rFilter = "alle";
 const OWNQ = [
  "Wie hoch wäre das Einstiegsgeld ungefähr, und für wie lange?",
  "Bis wann entscheiden Sie über Einstiegsgeld und Zuschuss?",
@@ -860,8 +910,9 @@ let rSel = null;
 function renderRights(){
   const P = !!S.present;
   $("#r-h").textContent = P ? "Verfahren und Rechtsgrundlagen" : "Rechte-Karten";
-  $("#r-lead").textContent = P ? "Zu den wichtigsten Verfahrensfragen: mein Anliegen, die Rechtsgrundlage im Wortlaut und der formale nächste Schritt." : "Typische Antworten im Termin. Ein Klick öffnet die Karte. Im Präsentationsmodus sieht das Gegenüber nur den neutralen Titel, Ihr Anliegen, das Gesetz und den nächsten Schritt; Zitat und Taktik bleiben verborgen.";
-  $("#rgrid").innerHTML = RIGHTS.map((r, i) => '<button class="rbtn' + (r.id === rSel ? " sel" : "") + '" data-r="' + r.id + '">' + (P ? esc(r.t) : esc(r.q) + '<small>' + esc(r.t) + '</small>') + '</button>').join("");
+  $("#r-lead").textContent = P ? "Zu den wichtigsten Verfahrensfragen: mein Anliegen, die Rechtsgrundlage im Wortlaut und der formale nächste Schritt." : "Typische Antworten im Termin und am Telefon, nach Gruppen. Für „Dafür bin ich nicht zuständig“ und ähnliche Sätze: Gruppe „Zuständigkeit & Abwimmeln“. Ein Klick öffnet die Karte. Im Präsentationsmodus sieht das Gegenüber nur den neutralen Titel, Ihr Anliegen, das Gesetz und den nächsten Schritt; Zitat und Taktik bleiben verborgen.";
+  $("#rfilters").innerHTML = RGRUPPEN.map(([k, l]) => '<button data-rf="' + k + '" aria-pressed="' + (k === rFilter) + '">' + esc(l) + ' <small>' + (k === "alle" ? RIGHTS.length : RIGHTS.filter(r => rGruppe(r) === k).length) + '</small></button>').join("");
+  $("#rgrid").innerHTML = RIGHTS.filter(r => rFilter === "alle" || rGruppe(r) === rFilter).map((r, i) => '<button class="rbtn' + (r.id === rSel ? " sel" : "") + '" data-r="' + r.id + '">' + (P ? esc(r.t) : esc(r.q) + '<small>' + esc(r.t) + '</small>') + '</button>').join("");
   const R = RIGHTS.find(r => r.id === rSel);
   if (!R) { $("#rpanel").innerHTML = ""; return; }
   let h = '<div class="card rpanel" id="rcard">' + (P ? "" : '<p class="quote">' + esc(R.q) + '</p>') + '<div class="question" style="margin-bottom:8px">' + esc(R.t) + '</div>' +
@@ -895,7 +946,7 @@ function buildMail(){
   if (a("s6") === "c") L.push("Sie schlugen vor, zunächst ein Gründungsseminar oder Coaching zu besuchen. Bitte senden Sie mir den Vorschlag schriftlich zu. Die Prüfung meines Antrags bitte ich parallel fortzuführen.");
   if (a("s7") === "a") L.push(fill("Ich bringe folgende Unterlagen mit: {unterlagen}."));
   if (a("s7") === "b") L.push("Bitte senden Sie mir die Liste der benötigten Unterlagen und die Formulare über jobcenter.digital.");
-  if (a("s7") === "c") L.push("Für die Tragfähigkeit lege ich eine Stellungnahme einer fachkundigen Stelle vor (§ 16c Abs. 3 SGB II); ich frage dafür bei der IHK Berlin an.");
+  if (a("s7") === "c") L.push("Für die Tragfähigkeit lege ich eine Stellungnahme einer fachkundigen Stelle vor (§ 16c Abs. 3 SGB II); ich frage dafür bei der IHK an.");
   if (!L.length) L.push(fill("Mein formloser Antrag vom {datum} auf Einstiegsgeld (§ 16b SGB II) und Zuschuss für Arbeitsmittel (§ 16c SGB II) liegt Ihnen vor."));
   return {subj: fill("Zusammenfassung unseres Telefonats vom " + today() + " – BG-Nr. {bg}"),
     body: p + "\n\n" + "vielen Dank für das Gespräch heute. Ich fasse kurz zusammen:\n\n" + L.map(x => "– " + x).join("\n") + "\n\nFalls ich etwas falsch verstanden habe, geben Sie mir bitte kurz Bescheid." + sig};
@@ -917,7 +968,7 @@ function setPresent(on){
   const b = $("#present"); b.classList.toggle("on", on); b.textContent = presentLabel(on);
   catSel = "Alle"; $("#search").value = "";
   $("#brand-t").textContent = on ? (val("name") || "Existenzgründung") : (MOBIL.matches ? "Gründungsnavigator" : "Gesprächsnavigator Existenzgründung");
-  $("#brand-s").textContent = on ? "TYPO3-Websites · Fragen und Antworten zum Gründungsvorhaben" : "Telefonat und Termin im Jobcenter · Stand Oktober 2026";
+  $("#brand-s").textContent = on ? "Websites für kleine Betriebe · Fragen und Antworten zum Gründungsvorhaben" : "Telefonat und Termin im Jobcenter · Stand Oktober 2026";
   rSel = null;
   show(on ? "ov" : (["ov"].includes(S.view) ? "prep" : S.view));
 }
@@ -934,6 +985,7 @@ document.addEventListener("click", e => {
   if (t.dataset.step !== undefined) { S.step = +t.dataset.step; save(); return renderCall(); }
   if (t.dataset.r) { rSel = rSel === t.dataset.r ? null : t.dataset.r; if (rSel) logRight(rSel); renderRights(); const c = $("#rcard"); if (c) c.scrollIntoView({behavior:"smooth", block:"start"}); return; }
   if (t.dataset.cat) { catSel = t.dataset.cat; return renderMeet(); }
+  if (t.dataset.rf) { rFilter = t.dataset.rf; rSel = null; return renderRights(); }
   if (t.dataset.qaReset !== undefined) { delete S.qa[t.dataset.qaReset]; save(); return renderMeet(); }
   if (t.id === "copy-mail") { const m = buildMail(); const txt = "Betreff: " + m.subj + "\n\n" + m.body;
     (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(() => toast("Mail kopiert"), () => { const r = document.createRange(); r.selectNodeContents($("#mail")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); toast("Markiert – mit Strg+C kopieren"); }); return; }

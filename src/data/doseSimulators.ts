@@ -32,9 +32,9 @@ export const DOSE_SIMULATOR_MAP: Record<string, DoseSimulatorInfo> = {
     titleDe: 'Gründungsnavigator & Fristenrechner',
     titleEn: 'Start-up Navigator & Deadline Calculator',
     titleEs: 'Navegador de creación de empresa y calculadora de plazos',
-    descriptionDe: 'Jobcenter-Gespräch vorbereiten: Telefonbaum, 42 Fragen, 17 Rechte-Karten, Fall-Landkarte mit 37 Normen; dazu ein getesteter Fristenrechner (SGG, SGB II) und der Freibetrag nach § 11b SGB II. Alles bleibt im Browser.',
-    descriptionEn: 'Prepare the job-centre conversation: phone tree, 42 questions, 17 rights cards, case map with 37 statutes; plus a tested deadline calculator (SGG, SGB II) and the allowance under section 11b SGB II. Everything stays in the browser.',
-    descriptionEs: 'Preparar la conversación con el Jobcenter: árbol telefónico, 42 preguntas, 17 tarjetas de derechos, mapa del caso con 37 normas; además una calculadora de plazos probada. Todo queda en el navegador.',
+    descriptionDe: 'Jobcenter-Gespräch vorbereiten: Telefonbaum, 42 Fragen, 30 Rechte-Karten, Fall-Landkarte mit 37 Normen; dazu ein getesteter Fristenrechner (SGG, SGB II) und der Freibetrag nach § 11b SGB II. Alles bleibt im Browser.',
+    descriptionEn: 'Prepare the job-centre conversation: phone tree, 42 questions, 30 rights cards, case map with 37 statutes; plus a tested deadline calculator (SGG, SGB II) and the allowance under section 11b SGB II. Everything stays in the browser.',
+    descriptionEs: 'Preparar la conversación con el Jobcenter: árbol telefónico, 42 preguntas, 30 tarjetas de derechos, mapa del caso con 37 normas; además una calculadora de plazos probada. Todo queda en el navegador.',
     icon: '🧭',
   },
   'altbau-thermal': {

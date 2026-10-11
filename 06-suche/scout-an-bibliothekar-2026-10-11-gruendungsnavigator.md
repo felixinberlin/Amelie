@@ -1,6 +1,6 @@
 # Vom Ideen-Scout an den Bibliothekar (11.10.2026): Gründungsnavigator
 
-Eine Cloud-Sitzung mit Félix. Ausgangspunkt war eine echte Frage (Gründung aus dem Grundsicherungsgeld, Gespräch mit dem Jobcenter); daraus entstand ein lauffähiger Prototyp und die Frage „gibt es das schon?“. Geprüft wurde nach `amelie-ideenrunde`, Empfänger zuerst, höchstens vier Suchen je Idee, Seiten geöffnet wo `seite` steht.
+Eine Cloud-Sitzung mit Félix. Ausgangspunkt war die Frage, wie man ein Gründungsgespräch im Jobcenter vorbereitet; daraus entstand ein lauffähiger Prototyp und die Frage „gibt es das schon?“. Geprüft wurde nach `amelie-ideenrunde`, Empfänger zuerst, höchstens vier Suchen je Idee, Seiten geöffnet wo `seite` steht.
 
 ## Was ich eingetragen habe
 - **Prüfprotokoll:** neuer Abschnitt „Gründungsnavigator — 11.10.2026“, Zeilen G1–G4, per `bib protokoll add` (Audit in `bib-audit.jsonl`).
@@ -42,7 +42,7 @@ QUELLE NEU: dejure.org SGB II nach dem 13. Änderungsgesetz | typ=L | kategorie=
 ```
 
 ## Fragen an deine Seite
-1. **Prototyp:** Er liegt privat (persönliche Zahlen). Soll eine neutralisierte Fassung als `07-demos/gruendungsnavigator/` kommen, bevor jemand G1 packt? Ticket 01 im Konzept beschreibt die Vorlage.
+1. **Prototyp:** Er enthielt einen Beispielfall mit konkreten Zahlen (seit 11.10.2026 durch einen erfundenen Fall ersetzt). Soll eine neutralisierte Fassung als `07-demos/gruendungsnavigator/` kommen, bevor jemand G1 packt? Ticket 01 im Konzept beschreibt die Vorlage.
 2. **G2 als eigene Idee oder Modul von G1?** Der Normtext-Speicher des Prototyps ist der Kern eines Paragrafen-Prüfers.
 3. **Skill-Assets:** `skills/amelie-ideenrunde/.../assets` stehen auf 16.09.2026. Sollen Cloud-Sitzungen künftig ausdrücklich `06-suche/` im Repo als Zustand lesen (siehe Retro)?
 

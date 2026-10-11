@@ -254,11 +254,12 @@ describe('Sprachwächter', () => {
 // ------------------------------------------------------------------ Demo-Drift
 
 describe('Demo: Gesprächsnavigator (index.html)', () => {
-  it('Umfang wie im README: 7 Fragen, 23 Antworten, 42 Fragen, 17 Rechte-Karten', () => {
+  it('Umfang: 7 Fragen, 23 Antworten, 42 Fragen, 30 Rechte-Karten, davon 9 zu Zuständigkeit', () => {
     expect(STEPS.length).toBe(7);
     expect(STEPS.reduce((n, s) => n + s.answers.length, 0)).toBe(23);
     expect(QA.length).toBe(42);
-    expect(RIGHTS.length).toBe(17);
+    expect(RIGHTS.length).toBe(30);
+    expect(RIGHTS.filter((r) => (r as { g?: string }).g === 'z' || ['zustaendig', 'einarbeiten'].includes(r.id)).length).toBe(9);
   });
 
   it('der Telefonbaum ist strukturell gesund', () => {
@@ -389,6 +390,7 @@ describe('Zahlen-Wächter: Texte nennen die Zahlen der ausgelieferten Seiten', (
     'rights cards': new Set([RIGHTS.length]),
     statutes: new Set([Object.keys(L).length]),
     answers: new Set([STEPS.reduce((n, s) => n + s.answers.length, 0), kartenAntworten]),
+    replies: new Set([RIGHTS.length]),
   };
   const DOKUMENTE = [
     '07-demos/gruendungsnavigator/README.md',
@@ -400,7 +402,7 @@ describe('Zahlen-Wächter: Texte nennen die Zahlen der ausgelieferten Seiten', (
     'src/components/simulators/GruendungsnavigatorSimulator.tsx',
   ];
   // „42 Fragen“, „42 wahrscheinliche Fragen“, „17 typische Antworten“ zählt nicht als Antworten-Zahl der Seite
-  const MUSTER = /(\d+)\s+(?:(?:wahrscheinliche|mögliche|possible|likely)\s+)?(Fragen|Rechte-Karten|Normen|Antworten|questions|rights cards|statutes|answers)\b/g;
+  const MUSTER = /(\d+)\s+(?:(?:wahrscheinliche|mögliche|possible|likely|typische|typical)\s+)?(Fragen|Rechte-Karten|Normen|Antworten|questions|rights cards|statutes|answers|replies)\b/g;
 
   it.each(DOKUMENTE)('%s', (pfad) => {
     let text = readFileSync(resolve(ROOT, pfad), 'utf8');
@@ -411,10 +413,10 @@ describe('Zahlen-Wächter: Texte nennen die Zahlen der ausgelieferten Seiten', (
     const falsch: string[] = [];
     let treffer = 0;
     for (const m of text.matchAll(MUSTER)) {
-      const kontext = text.slice(Math.max(0, m.index! - 25), m.index!);
-      if (/typische|typical/.test(kontext + m[0]) && /Antworten|answers/.test(m[2])) continue; // Rechte-Karten-Umschreibung
-      treffer++;
-      if (!erlaubt[m[2]].has(Number(m[1]))) falsch.push(`${m[0]} (erlaubt: ${[...erlaubt[m[2]]].join('/')})`);
+        treffer++;
+      // „N typische Antworten des Gegenübers“ umschreibt die Rechte-Karten (Anlass: blieb bei 17 stehen, als es 30 waren)
+      const art = /typische|typical/.test(m[0]) ? 'Rechte-Karten' : m[2];
+      if (!erlaubt[art].has(Number(m[1]))) falsch.push(`${m[0]} (erlaubt: ${[...erlaubt[art]].join('/')})`);
     }
     expect(falsch, pfad).toEqual([]);
     expect(treffer, `${pfad} nennt keine Zahl – Muster prüfen`).toBeGreaterThan(0);
@@ -454,5 +456,41 @@ describe('Offline: Manifest, Symbol und Service Worker', () => {
       expect(html).toContain('location.protocol.startsWith("http")');
       expect(html).toContain('id="offline-status"');
     }
+  });
+});
+
+// ------------------------------------------------------------------ Datenschutz
+
+describe('Datenschutz-Wächter: der Beispielfall ist erfunden', () => {
+  // Anlass 11.10.2026: Die Demo beruhte auf einem echten Fall (Beruf, Planzahlen,
+  // Zuschussbetrag). Er wurde durch einen erfundenen ersetzt. Die alten Werte
+  // stehen hier nur als SHA-256-Präfixe, damit der Test sie nicht selbst
+  // veröffentlicht. Kommt einer zurück, schlägt der Test an.
+  const VERBOTEN = new Set([
+    '6d58162ed755c893', 'f593d1b8d42661d1', 'a7e981697c68949e', 'a2e751720d7659f0', '65c9cec9520fdaa8', 'a01c2add3950c7e0',
+    '0644cda50ad91c53', 'aab9f13a69a586b3', '02778bbd29d11f49', '4c6d34f0ca31c5df', 'ae4d9f9df23d0c7b',
+  ]);
+  const DATEIEN = [
+    'public/gruendungsnavigator/index.html',
+    'public/gruendungsnavigator/fall-landkarte.html',
+    '05-dosen/gruendungsnavigator.md',
+    'en/05-dosen/gruendungsnavigator.md',
+    '07-demos/gruendungsnavigator/README.md',
+    '07-demos/gruendungsnavigator/ticket-01-vorlage.md',
+    '07-demos/gruendungsnavigator/pruefakte.md',
+    '02-recherche/gruendungsnavigator-konzept-2026-10-11.md',
+  ];
+
+  it.each(DATEIEN)('%s enthält keinen Wert des Ursprungsfalls', async (pfad) => {
+    const { createHash } = await import('node:crypto');
+    const text = readFileSync(resolve(ROOT, pfad), 'utf8').toLowerCase();
+    const treffer = [...new Set(text.match(/[a-z0-9äöüß]+(?:\.[0-9]+)*/g) ?? [])]
+      .filter((t) => VERBOTEN.has(createHash('sha256').update(t).digest('hex').slice(0, 16)));
+    expect(treffer, pfad).toEqual([]);
+  });
+
+  it('beide Seiten sagen ausdrücklich, dass der Fall erfunden ist', () => {
+    expect(NAV).toContain('erfundenen Beispiel');
+    expect(KARTE).toContain('erfunden');
   });
 });

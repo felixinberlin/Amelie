@@ -47,7 +47,7 @@ Wer aus dem Grundsicherungsgeld gründen will, braucht das Jobcenter. Aber **Ein
 - **Vorbereitung:** Angaben nur im Browser, Grundregeln, Mitbring-Liste.
 - **Telefonat:** Entscheidungsbaum mit 7 Fragen und 23 möglichen Antworten. Jede Antwort hat Formulierung, Hintergrund und zitierte Norm. Dazu Fortschrittsbalken und Live-Protokoll.
 - **Termin:** 42 wahrscheinliche Fragen mit anpassbaren Beispielantworten, Beleg und Norm. Übungsfortschritt und Druckfassung.
-- **Rechte-Karten:** 17 typische Antworten des Gegenübers („Das fördern wir nicht“, „Unterschreiben Sie hier“). Ein Tipp zeigt Anliegen, Normtext und formalen nächsten Schritt.
+- **Rechte-Karten:** 30 typische Antworten des Gegenübers („Das fördern wir nicht“, „Unterschreiben Sie hier“). Ein Tipp zeigt Anliegen, Normtext und formalen nächsten Schritt. Vier Gruppen zum Filtern; allein 9 Karten gegen das Abwimmeln: „Dafür bin ich nicht zuständig“, „Da müssen Sie zur Agentur für Arbeit“, „Das nehme ich so nicht an“, „Rufen Sie die Hotline an“, „Ihre Ansprechperson ist nicht da“, „Ich leite das weiter“ und weitere, jeweils mit der Pflicht zur Weiterleitung (§ 16 Abs. 2 SGB I) oder zur Annahme (§ 20 Abs. 3 SGB X) im Wortlaut.
 - **Präsentationsmodus:** Das Gegenüber sieht nur die kooperative Fassung. Taktik bleibt verborgen.
 - **Zusammenfassungs-Mail:** wird aus den Klicks gebaut, mit korrekten Normverweisen.
 
@@ -73,10 +73,10 @@ Wer aus dem Grundsicherungsgeld gründen will, braucht das Jobcenter. Aber **Ein
 
 ## Erster Schritt
 
-**Ticket 01: Die Seite wird Vorlage.** Alles Persönliche (Branche, Beträge, Beispielantworten des Webentwickler-Falls) wandert aus `index.html` in ein Branchenpaket (JSON), daneben ein leeres Paket. Normregister und Telefonbaum werden zu Daten, die der getestete Kern lädt.
+**Ticket 01: Die Seite wird Vorlage.** Alle Beispielinhalte (Branche, Beträge, Beispielantworten des erfundenen Webentwickler-Falls) wandert aus `index.html` in ein Branchenpaket (JSON), daneben ein leeres Paket. Normregister und Telefonbaum werden zu Daten, die der getestete Kern lädt.
 
 **Fertig, wenn:**
-1. „Webentwicklung“ und ein leeres Paket gegen dasselbe Schema validieren und der Kern keine persönlichen Beträge enthält.
+1. „Webentwicklung“ und ein leeres Paket gegen dasselbe Schema validieren und der Kern keine Beispielbeträge enthält.
 2. Jeder Registereintrag Norm, Fassung, URL und die Kennzeichnung Wortlaut/Kurzfassung trägt und der Zitat-Abgleich gegen gesetze-im-internet.de grün ist.
 3. Der Graphtest des Telefonbaums (keine toten Knoten, alle Normverweise lösen auf) und die Fristen-Tabellentests grün sind. Diese Tests stehen schon.
 4. Kein Ausgabetext „garantiert“, „Anspruch besteht“, „unzulässig“ oder „rechtswidrig“ sagt.

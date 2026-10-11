@@ -25,6 +25,7 @@ Prüfbefehl: `npm run check:gn-zitate` (Skript `scripts/check-gruendungsnavigato
 |---|---|
 | 11.10.2026, erster Lauf | 4 Abweichungen trotz Handprüfung am selben Tag |
 | 11.10.2026, nach Korrektur | 39/39 stimmen, 0 Abweichungen, 0 nicht abrufbar |
+| 11.10.2026, nach 5 neuen Normen (§ 2 Abs. 2, § 14 S. 2, § 16 Abs. 2 S. 1 SGB I; § 20 SGB X; § 44b SGB II) und § 17 Abs. 1 SGB I neu im Wortlaut | 45/45 stimmen, 0 Abweichungen, 0 nicht abrufbar |
 
 Die vier korrigierten Stellen:
 
@@ -55,12 +56,16 @@ Prüfbefehl: `npm run check:mobile` (Skript `scripts/check-mobile.mjs`, braucht 
 
 Manifest, Symbol und Service Worker (`public/gruendungsnavigator/`). Playwright-Test 11.10.2026: Status „✓ Offline verfügbar“, Netz aus, beide Seiten laden, Telefonbaum bedienbar. Dauerhaft im Test „Offline: Manifest, Symbol und Service Worker“; Gegenprobe mit einer absichtlich fehlenden Datei in der Liste schlug an.
 
+## 4b. Datenschutz
+
+Der Beispielfall beruhte ursprünglich auf einem echten Fall. Seit 11.10.2026 ist er erfunden: neutraler Beruf (Webentwicklung ohne Produktname), andere Preise und Planzahlen, keine Ortsangaben des Netzwerks, „Beispiel“ statt „mein Fall“. Beide Seiten sagen das ausdrücklich. Der Test „Datenschutz-Wächter“ kennt die alten Werte nur als SHA-256-Präfixe und schlägt an, wenn einer zurückkommt (Gegenprobe ok). Hinweis: Ältere Fassungen stehen weiter in der Git-Geschichte.
+
 ## 5. Bedingungen vor Versand
 
 | Bedingung (Reviewer) | Stand |
 |---|---|
 | Normtexte an der Amtsquelle gegengelesen, nicht nur dejure.org | **erfüllt** (Abschnitt 2) |
-| Ticket 01 neutralisiert den Beispielfall (Webentwicklung, echte Beträge) | offen, [Ticket 01](ticket-01-vorlage.md) |
+| Beispielfall ohne persönliche Daten | **erfüllt** (Abschnitt 4b); Branchenpakete bleiben [Ticket 01](ticket-01-vorlage.md) |
 | RDG-Grenze juristisch geprüft oder Zuschnitt GN-B | offen |
 | Ansprechperson beim Empfänger (Tacheles e.V.) verifiziert | offen |
 

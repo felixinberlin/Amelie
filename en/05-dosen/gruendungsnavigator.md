@@ -47,7 +47,7 @@ Anyone who wants to start a business while on basic income support (Grundsicheru
 - **Preparation:** personal details stay in the browser; ground rules; a checklist of what to bring.
 - **Phone call:** a decision tree with 7 questions and 23 possible answers. Each answer has wording, background and the quoted statute, plus a progress bar and a live log.
 - **Appointment:** 42 likely questions with editable sample answers, evidence and statute; practice progress and a print version.
-- **Rights cards:** 17 typical replies from the other side ("We don't fund that", "Sign here"). One tap shows the request, the statute text and the formal next step.
+- **Rights cards:** 30 typical replies from the other side ("We don't fund that", "Sign here"). One tap shows the request, the statute text and the formal next step. Four groups to filter by; 9 cards alone against being brushed off: "That's not my department", "You have to go to the employment agency", "I can't accept that like this", "Call the hotline", "Your caseworker is away", "I'll pass it on" and more, each with the duty to forward (section 16(2) SGB I) or to accept (section 20(3) SGB X) quoted verbatim.
 - **Presentation mode:** the other side sees only the cooperative version; tactics stay hidden.
 - **Summary mail:** built from the clicks, with correct statute references.
 
@@ -73,10 +73,10 @@ Anyone who wants to start a business while on basic income support (Grundsicheru
 
 ## First step
 
-**Ticket 01: turn the page into a template.** Move everything personal (trade, amounts, sample answers of the web-developer case) from `index.html` into a sector pack (JSON), next to an empty pack. The statute register and phone tree become data that the tested kernel loads.
+**Ticket 01: turn the page into a template.** Move all sample content (trade, amounts, sample answers of the fictional web-developer case) from `index.html` into a sector pack (JSON), next to an empty pack. The statute register and phone tree become data that the tested kernel loads.
 
 **Done when:**
-1. "Web development" and an empty pack validate against the same schema, and the kernel holds no personal amounts.
+1. "Web development" and an empty pack validate against the same schema, and the kernel holds no sample amounts.
 2. Every register entry carries statute, version, URL and the verbatim/summary flag, and the quotation check against gesetze-im-internet.de is green.
 3. The phone-tree graph test (no dead nodes, all statute references resolve) and the deadline table tests are green. These tests already exist.
 4. No output text says "guaranteed", "entitlement exists", "inadmissible" or "unlawful".
