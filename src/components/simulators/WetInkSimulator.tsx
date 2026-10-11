@@ -4,6 +4,7 @@ import {
   PenTool,
   Droplets,
   RotateCcw,
+  RotateCw,
   Trash2,
   Download,
   Play,
@@ -79,6 +80,26 @@ const ESSENTIAL_PAPERS: WetInkPaperConfig[] = [
   ...CLASSIC_PAPERS,
 ];
 
+// Classical Ink Dilution Shades (墨分五色 - The Five Shades of Ink)
+interface InkShade {
+  id: string;
+  nameZh: string;
+  nameDe: string;
+  nameEn: string;
+  descDe: string;
+  descEn: string;
+  ratio: number;
+  previewColor: string;
+}
+
+const FIVE_SHADES_OF_INK: InkShade[] = [
+  { id: 'jiao', nameZh: '焦', nameDe: 'Tiefschwarz (Jiāo)', nameEn: 'Scorched (Jiāo)', descDe: 'Trocken, pechschwarz, Feibai-Riss', descEn: 'Dry, pitch-black, Feibai dry brush', ratio: 0.35, previewColor: '#0c0c0c' },
+  { id: 'nong', nameZh: '浓', nameDe: 'Sattdunkel (Nóng)', nameEn: 'Dense (Nóng)', descDe: 'Dicht, intensiv, Hauptstrich', descEn: 'Thick, saturated dark, main stroke', ratio: 0.65, previewColor: '#222222' },
+  { id: 'zhong', nameZh: '重', nameDe: 'Standard (Zhòng)', nameEn: 'Balanced (Zhòng)', descDe: 'Klassisch, fließend, ausgewogen', descEn: 'Classic, balanced everyday ink', ratio: 1.0, previewColor: '#454545' },
+  { id: 'dan', nameZh: '淡', nameDe: 'Lasierend (Dàn)', nameEn: 'Light Wash (Dàn)', descDe: 'Hell, transparent, Ferne Berge', descEn: 'Translucent wash, distant hills', ratio: 1.8, previewColor: '#828282' },
+  { id: 'qing', nameZh: '清', nameDe: 'Flüchtig (Qīng)', nameEn: 'Whisper (Qīng)', descDe: 'Zarter Nebelhauch, Wasserreflex', descEn: 'Faint mist wash, subtle reflection', ratio: 2.8, previewColor: '#bebebe' },
+];
+
 export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
   lang,
 }) => {
@@ -127,7 +148,9 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
   // Status & Drawing State
   const [isDrawing, setIsDrawing] = useState<boolean>(false);
   const [canUndo, setCanUndo] = useState<boolean>(false);
+  const [canRedo, setCanRedo] = useState<boolean>(false);
   const [isWet, setIsWet] = useState<boolean>(false);
+  const [inkDilution, setInkDilution] = useState<number>(1.0);
 
   // Simulation Parameters
   const [params, setParams] = useState<WetInkSimParams>({
@@ -175,6 +198,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
     );
     simRef.current = sim;
     setCanUndo(sim.canUndo());
+    setCanRedo(sim.canRedo());
   }, []);
 
   // Handle Paper Substrate change
@@ -241,12 +265,44 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
   };
 
   // Undo Stroke
-  const handleUndo = () => {
+  const handleUndo = useCallback(() => {
     if (simRef.current && simRef.current.canUndo()) {
       simRef.current.undo();
       setCanUndo(simRef.current.canUndo());
+      setCanRedo(simRef.current.canRedo());
     }
-  };
+  }, []);
+
+  // Redo Stroke
+  const handleRedo = useCallback(() => {
+    if (simRef.current && simRef.current.canRedo()) {
+      simRef.current.redo();
+      setCanUndo(simRef.current.canUndo());
+      setCanRedo(simRef.current.canRedo());
+    }
+  }, []);
+
+  // Keyboard Shortcuts for Undo & Redo (Ctrl+Z / Ctrl+Y / Cmd+Shift+Z)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const activeTag = (document.activeElement?.tagName || '').toLowerCase();
+      if (activeTag === 'input' || activeTag === 'textarea' || activeTag === 'select') return;
+
+      if ((e.ctrlKey || e.metaKey) && !e.shiftKey && e.key.toLowerCase() === 'z') {
+        e.preventDefault();
+        handleUndo();
+      } else if (
+        (e.ctrlKey || e.metaKey) &&
+        ((e.shiftKey && e.key.toLowerCase() === 'z') || e.key.toLowerCase() === 'y')
+      ) {
+        e.preventDefault();
+        handleRedo();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [handleUndo, handleRedo]);
 
   // Clear Paper Canvas
   const handleClear = () => {
@@ -257,6 +313,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
     if (simRef.current) {
       simRef.current.clear();
       setCanUndo(simRef.current.canUndo());
+      setCanRedo(simRef.current.canRedo());
       setIsWet(false);
     }
   };
@@ -282,6 +339,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
     if (!simRef.current) return;
     simRef.current.pushSnapshot();
     setCanUndo(true);
+    setCanRedo(false);
     setIsWet(true);
     audioSynthRef.current?.startStroke(selectedPaper.roughness);
 
@@ -417,6 +475,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
       if (simRef.current) {
         simRef.current.pushSnapshot();
         setCanUndo(true);
+        setCanRedo(false);
         setIsWet(true);
         simRef.current.injectSeal(x, y, {
           size: sealSize,
@@ -436,6 +495,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
     if (simRef.current) {
       simRef.current.pushSnapshot();
       setCanUndo(true);
+      setCanRedo(false);
     }
     lastPointerRef.current = { x, y, time: performance.now() };
     audioSynthRef.current?.startStroke(selectedPaper.roughness);
@@ -455,7 +515,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
         {
           tool: currentTool,
           baseRadius: brushRadius,
-          waterRatio: currentTool === 'water-drop' ? 2.0 : 1.0,
+          waterRatio: currentTool === 'water-drop' ? 2.5 : inkDilution,
           dryBrush: isCalligraphyBrush,
         },
         true,
@@ -491,7 +551,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
       {
         tool: currentTool,
         baseRadius: brushRadius,
-        waterRatio: currentTool === 'water-drop' ? 2.0 : 1.0,
+        waterRatio: currentTool === 'water-drop' ? 2.5 : inkDilution,
         dryBrush: isCalligraphyBrush,
       },
       false,
@@ -657,9 +717,22 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
                 ? 'bg-stone-800 hover:bg-stone-700 text-stone-200 border-stone-700 cursor-pointer'
                 : 'bg-stone-900/50 text-stone-600 border-stone-800 cursor-not-allowed'
             }`}
-            title={lang === 'de' ? 'Rückgängig' : lang === 'es' ? 'Deshacer' : 'Undo'}
+            title={lang === 'de' ? 'Rückgängig (Strg+Z)' : lang === 'es' ? 'Deshacer (Ctrl+Z)' : 'Undo (Ctrl+Z)'}
           >
             <RotateCcw className="w-4 h-4 text-amber-400" />
+          </button>
+
+          <button
+            onClick={handleRedo}
+            disabled={!canRedo}
+            className={`p-2 rounded-xl border text-xs transition-colors ${
+              canRedo
+                ? 'bg-stone-800 hover:bg-stone-700 text-stone-200 border-stone-700 cursor-pointer'
+                : 'bg-stone-900/50 text-stone-600 border-stone-800 cursor-not-allowed'
+            }`}
+            title={lang === 'de' ? 'Wiederholen (Strg+Y)' : lang === 'es' ? 'Rehacer (Ctrl+Y)' : 'Redo (Ctrl+Y)'}
+          >
+            <RotateCw className="w-4 h-4 text-amber-400" />
           </button>
 
           <button
@@ -1098,20 +1171,86 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
 
           {/* Dynamic Tool Sub-Panel */}
           {currentTool !== 'seal-stamp' ? (
-            <div>
-              <div className="flex justify-between text-stone-600 mb-1">
-                <span>{lang === 'de' ? 'Pinsel-Größe' : 'Brush Size'}:</span>
-                <span className="font-mono font-bold">{brushRadius} px</span>
+            <div className="space-y-3">
+              <div>
+                <div className="flex justify-between text-stone-600 mb-1">
+                  <span>{lang === 'de' ? 'Pinsel-Größe' : 'Brush Size'}:</span>
+                  <span className="font-mono font-bold">{brushRadius} px</span>
+                </div>
+                <input
+                  type="range"
+                  min="2"
+                  max="20"
+                  step="1"
+                  value={brushRadius}
+                  onChange={(e) => setBrushRadius(parseInt(e.target.value, 10))}
+                  className="w-full accent-amber-700 cursor-pointer"
+                />
               </div>
-              <input
-                type="range"
-                min="2"
-                max="20"
-                step="1"
-                value={brushRadius}
-                onChange={(e) => setBrushRadius(parseInt(e.target.value, 10))}
-                className="w-full accent-amber-700 cursor-pointer"
-              />
+
+              {/* Mo Fen Wu Se: Five Shades of Ink & Wash Dilution (墨分五色) */}
+              <div className="pt-2 border-t border-stone-100 space-y-1.5">
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] uppercase font-bold text-stone-600 font-mono">
+                    {lang === 'de' ? '墨分五色 (Tintenstufen)' : 'Mo Fen Wu Se (Ink Wash)'}
+                  </span>
+                  <span className="text-[10px] font-mono text-stone-500 font-serif">
+                    {inkDilution <= 0.45
+                      ? '焦 (Jiāo)'
+                      : inkDilution <= 0.8
+                      ? '浓 (Nóng)'
+                      : inkDilution <= 1.3
+                      ? '重 (Zhòng)'
+                      : inkDilution <= 2.2
+                      ? '淡 (Dàn)'
+                      : '清 (Qīng)'}
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-5 gap-1">
+                  {FIVE_SHADES_OF_INK.map((shade) => {
+                    const isActive = Math.abs(inkDilution - shade.ratio) < 0.15;
+                    return (
+                      <button
+                        key={shade.id}
+                        onClick={() => setInkDilution(shade.ratio)}
+                        className={`p-1.5 rounded-lg border text-center transition-all cursor-pointer flex flex-col items-center justify-center ${
+                          isActive
+                            ? 'border-stone-900 bg-stone-900 text-white font-bold shadow-xs'
+                            : 'border-stone-200 bg-white hover:bg-stone-50 text-stone-700'
+                        }`}
+                        title={`${lang === 'de' ? shade.nameDe : shade.nameEn}: ${lang === 'de' ? shade.descDe : shade.descEn}`}
+                      >
+                        <div
+                          className="w-3 h-3 rounded-full border border-stone-400 mb-0.5 shadow-2xs"
+                          style={{ backgroundColor: shade.previewColor }}
+                        />
+                        <div className="text-[11px] font-serif font-bold leading-none">{shade.nameZh}</div>
+                        <div className="text-[8px] opacity-80 mt-0.5 leading-none font-mono">
+                          {shade.id === 'jiao' ? '0.3x' : shade.id === 'nong' ? '0.7x' : shade.id === 'zhong' ? '1.0x' : shade.id === 'dan' ? '1.8x' : '2.8x'}
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {/* Fine Dilution Slider */}
+                <div className="pt-1">
+                  <div className="flex justify-between text-[10px] text-stone-500 mb-0.5">
+                    <span>{lang === 'de' ? 'Verdünnung (Wasser)' : 'Dilution (Water Ratio)'}:</span>
+                    <span className="font-mono font-bold text-stone-700">{inkDilution.toFixed(2)}x</span>
+                  </div>
+                  <input
+                    type="range"
+                    min="0.30"
+                    max="2.80"
+                    step="0.05"
+                    value={inkDilution}
+                    onChange={(e) => setInkDilution(parseFloat(e.target.value))}
+                    className="w-full accent-stone-700 cursor-pointer"
+                  />
+                </div>
+              </div>
             </div>
           ) : (
             /* Seal Stamp Configuration Sub-Panel */

@@ -60,16 +60,27 @@ export class WetInkBrushManager {
     let pigmentAmt = 0.8;
     let enableDryFilter = false;
 
+    // Wash dilution concentration factor (墨分五色 - The Five Shades of Ink):
+    // Concentrated/dry ink (waterRatio < 1) yields higher pigment density (up to 1.35x),
+    // while dilute washes (waterRatio > 1) scale down pigment concentration so pale washes
+    // render with translucent luminosity rather than thick floods.
+    const conc =
+      state.tool === 'water-drop'
+        ? 0.0
+        : state.tool === 'seal-stamp'
+        ? 1.0
+        : Math.min(1.35, Math.max(0.2, Math.pow(1.0 / Math.max(0.25, state.waterRatio), 0.65)));
+
     if (state.tool === 'fountain-pen') {
       radius = state.baseRadius * (0.7 + pressure * 0.8);
       waterAmt = 0.45 * state.waterRatio;
-      pigmentAmt = 0.92;
+      pigmentAmt = 0.92 * conc;
     } else if (state.tool === 'sumi-brush') {
       // Fast stroke = thinner, drier (authentic calligraphy behavior)
       const speedThinning = Math.max(0.40, 1 / (1 + speed * 1.0));
       radius = state.baseRadius * (0.6 + pressure * 1.2) * speedThinning;
       waterAmt = 0.7 * state.waterRatio * speedThinning;
-      pigmentAmt = 0.88;
+      pigmentAmt = 0.88 * conc;
 
       // Dry brush trigger on fast flick or light pressure
       if (state.dryBrush && (speed > 0.8 || pressure < 0.35)) {
@@ -81,7 +92,7 @@ export class WetInkBrushManager {
       const speedThinning = Math.max(0.35, 1 / (1 + speed * 1.25));
       radius = state.baseRadius * (0.45 + pressure * 1.15) * speedThinning;
       waterAmt = 0.55 * state.waterRatio * speedThinning;
-      pigmentAmt = 0.95;
+      pigmentAmt = 0.95 * conc;
 
       if (state.dryBrush && (speed > 0.75 || pressure < 0.32)) {
         enableDryFilter = true;
@@ -92,7 +103,7 @@ export class WetInkBrushManager {
       const speedThinning = Math.max(0.55, 1 / (1 + speed * 0.6));
       radius = state.baseRadius * (0.75 + pressure * 1.45) * speedThinning;
       waterAmt = 1.05 * state.waterRatio * speedThinning;
-      pigmentAmt = 0.84;
+      pigmentAmt = 0.84 * conc;
 
       if (state.dryBrush && (speed > 1.1 || pressure < 0.22)) {
         enableDryFilter = true;
@@ -103,7 +114,7 @@ export class WetInkBrushManager {
       const speedThinning = Math.max(0.45, 1 / (1 + speed * 0.9));
       radius = state.baseRadius * (0.58 + pressure * 1.28) * speedThinning;
       waterAmt = 0.78 * state.waterRatio * speedThinning;
-      pigmentAmt = 0.90;
+      pigmentAmt = 0.90 * conc;
 
       if (state.dryBrush && (speed > 0.85 || pressure < 0.28)) {
         enableDryFilter = true;
@@ -117,11 +128,11 @@ export class WetInkBrushManager {
     } else if (state.tool === 'wash-brush') {
       radius = state.baseRadius * 2.2;
       waterAmt = 1.6 * state.waterRatio;
-      pigmentAmt = 0.45; // diluted wash
+      pigmentAmt = 0.45 * conc; // diluted wash
     } else if (state.tool === 'dropper') {
       radius = state.baseRadius * 2.8;
       waterAmt = 2.4 * state.waterRatio;
-      pigmentAmt = 1.2;
+      pigmentAmt = 1.2 * conc;
     } else if (state.tool === 'water-drop') {
       // Pure clear water (0 pigment) to trigger backruns, dilution & edge lifting
       radius = state.baseRadius * 2.2;
