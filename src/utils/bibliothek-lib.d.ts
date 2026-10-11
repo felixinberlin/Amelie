@@ -20,7 +20,10 @@ declare module '*bibliothek-lib.mjs' {
   export function insertProtokollRow(text: string, a: { runde: string; felder: ProtokollFelder; neuerAbschnitt?: string }): { text: string; row: string };
   export function readCandidates(root?: string): { id: string; title: string; status: string; concept: string; packedDoseId: string | null; file: string }[];
   export function readDosen(): { id: string; title: string; text: string; file: string }[];
-  export function findAll(terms: string[], o?: { any?: boolean; wort?: boolean; root?: string; quellen?: any[] }): { kind: string; bindend: boolean; id: string; title: string; where: string; snippet: string }[];
+  export interface MemoryDoc { kind: string; bindend: boolean; id: string; title: string; text: string; where: string; extra: Record<string, unknown>; normed: string }
+  export function memoryCorpus(o?: { root?: string; quellen?: any[] }): MemoryDoc[];
+  export function compileTerms(terms: string[], o?: { any?: boolean; wort?: boolean; stamm?: boolean }): (normalizedText: string) => number;
+  export function findAll(terms: string[], o?: { any?: boolean; wort?: boolean; stamm?: boolean; root?: string; quellen?: any[]; corpus?: MemoryDoc[] }): { kind: string; bindend: boolean; id: string; title: string; where: string; snippet: string }[];
   export function readEnum(typeName: string, typesFile?: string): string[];
   export function validateGrab(g: Record<string, unknown>, o?: { graeber?: { id: string }[]; doseIds?: string[]; root?: string; enums?: Record<string, string[]> }): string[];
   export function orderGrab(g: Record<string, unknown>): Record<string, unknown>;

@@ -4,7 +4,7 @@
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { createHash } from 'node:crypto';
-import { findAll, norm } from '../bibliothek-lib.mjs';
+import { findAll, memoryCorpus, norm } from '../bibliothek-lib.mjs';
 import { repoRoot } from '../dosen-lib.mjs';
 import { ENGINES, buildPrompts } from './prompts.mjs';
 import { TOOL_DEFS, createHandlers } from './tools.mjs';
@@ -109,7 +109,8 @@ export function scoreRunDir({ root = repoRoot, run, write = true, runsDir, beric
   const { dir, meta, perModel } = loadRun(root, run, runsDir);
   const q = loadQuellen(root);
   const quellenCtx = { quellen: q.quellen, katalog: q.katalog, typen: q.typen.map((t) => t.id), doseIds: new Set(), graveIds: new Set() };
-  const findFn = (terms) => findAll(terms, { root, quellen: q.quellen });
+  const corpus = memoryCorpus({ root, quellen: q.quellen }); // einmal lesen, für alle Kandidaten wiederverwenden
+  const findFn = (terms) => findAll(terms, { corpus });
   const graeber = readJson(join(root, 'src/data/graeber.json'));
   for (const g of graeber) quellenCtx.graveIds.add(g.id);
   const doseDir = join(root, '05-dosen');
