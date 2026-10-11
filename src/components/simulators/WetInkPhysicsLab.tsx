@@ -33,6 +33,17 @@ import {
   srgbDeltaE,
   simulateRadialChromatography,
   PIGMENT_PARTICLE_CATALOG,
+  calculateCrossViscosity,
+  calculateCarreauYasudaViscosity,
+  calculateHerschelBulkley,
+  calculateSteadyStateThixotropy,
+  INK_RHEOLOGY_CATALOG,
+  simulateEvaporativeDlvo,
+  COLLOID_PIGMENT_CATALOG,
+  analyzeDropletEvaporation,
+  calculateSingularityExponent,
+  analyzePaperWettingRegime,
+  PAPER_TOPOGRAPHY_CATALOG,
   GLSL_KUBELKA_MUNK_SNIPPET,
   FRAGMENT_SHADER_ADVECT,
   FRAGMENT_SHADER_CAPILLARY,
@@ -50,7 +61,7 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
   const animFrameRef = useRef<number | null>(null);
   const isDrawingRef = useRef<boolean>(false);
 
-  const [activeTab, setActiveTab] = useState<'simulation' | 'kubelka-munk' | 'chromatography' | 'coffee-ring' | 'fiber-anisotropy' | 'shaders'>('simulation');
+  const [activeTab, setActiveTab] = useState<'simulation' | 'kubelka-munk' | 'chromatography' | 'rheology' | 'dlvo-wetting' | 'coffee-ring' | 'fiber-anisotropy' | 'shaders'>('simulation');
   const [activeSlot, setActiveSlot] = useState<1 | 2>(1);
   const [brushRadius, setBrushRadius] = useState<number>(14);
   const [selectedPaper, setSelectedPaper] = useState<WetInkPaperConfig>(PAPER_PRESETS[0]);
@@ -71,6 +82,22 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
   const [chromaDropletR, setChromaDropletR] = useState<number>(3.0);
   const [chromaDuration, setChromaDuration] = useState<number>(1.2);
   const [chromaPoreUm, setChromaPoreUm] = useState<number>(10.0);
+
+  // 4. Ink Rheology & Thixotropy State
+  const [selectedRheologyKey, setSelectedRheologyKey] = useState<string>('pineSootGelatin');
+  const [rheoShearRate, setRheoShearRate] = useState<number>(50); // s^-1
+  const [rheoTipSpeedMmS, setRheoTipSpeedMmS] = useState<number>(100); // mm/s
+  const [rheoFilmThicknessUm, setRheoFilmThicknessUm] = useState<number>(20); // μm
+
+  // 5. DLVO Colloid Stability & Paper Wetting State
+  const [selectedColloidKey, setSelectedColloidKey] = useState<string>('carbonBlackGelatin');
+  const [dlvoWaterFraction, setDlvoWaterFraction] = useState<number>(0.50); // 50% evaporated
+  const [selectedTopographyKey, setSelectedTopographyKey] = useState<string>('shengXuan');
+
+  // 6. Deegan Coffee-Ring Parameters
+  const [deeganContactAngleDeg, setDeeganContactAngleDeg] = useState<number>(30);
+  const [deeganDropRadiusMm, setDeeganDropRadiusMm] = useState<number>(4.0);
+  const [deeganBaseFluxG, setDeeganBaseFluxG] = useState<number>(0.2); // 0.2 g/(m^2·s)
 
   // Simulation Parameters
   const [params, setParams] = useState<WetInkSimParams>({
@@ -298,6 +325,33 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
     );
   }, [selectedPigment1, selectedPigment2, ratioP1, chromaDropletR, chromaDuration, chromaPoreUm]);
 
+  // 4. Ink Rheology Calculations
+  const selectedRheology = INK_RHEOLOGY_CATALOG[selectedRheologyKey] || INK_RHEOLOGY_CATALOG.pineSootGelatin;
+  const crossViscosityPaS = calculateCrossViscosity(rheoShearRate, selectedRheology.cross);
+  const carreauViscosityPaS = calculateCarreauYasudaViscosity(rheoShearRate, selectedRheology.carreau);
+  const hbResult = calculateHerschelBulkley(rheoShearRate, selectedRheology.yieldStress);
+  const thixotropicSS = calculateSteadyStateThixotropy(rheoShearRate, selectedRheology.thixotropy);
+
+  // 5. DLVO Colloid Stability & Wetting Calculations
+  const selectedColloid = COLLOID_PIGMENT_CATALOG[selectedColloidKey] || COLLOID_PIGMENT_CATALOG.carbonBlackGelatin;
+  const dlvoResult = React.useMemo(() => {
+    return simulateEvaporativeDlvo(selectedColloid.particle, selectedColloid.defaultSolution, dlvoWaterFraction);
+  }, [selectedColloid, dlvoWaterFraction]);
+
+  const selectedTopography = PAPER_TOPOGRAPHY_CATALOG[selectedTopographyKey] || PAPER_TOPOGRAPHY_CATALOG.shengXuan;
+  const wettingReport = React.useMemo(() => {
+    return analyzePaperWettingRegime(selectedTopography);
+  }, [selectedTopography]);
+
+  // 6. Deegan Evaporation & Coffee-Ring Analysis
+  const deeganResult = React.useMemo(() => {
+    return analyzeDropletEvaporation({
+      contactAngle: (deeganContactAngleDeg * Math.PI) / 180,
+      dropRadius: deeganDropRadiusMm * 1e-3,
+      baseEvaporativeFlux: deeganBaseFluxG * 1e-3,
+    });
+  }, [deeganContactAngleDeg, deeganDropRadiusMm, deeganBaseFluxG]);
+
   return (
     <div id="wet-ink-physics-lab" className="flex flex-col gap-6 w-full max-w-6xl mx-auto text-stone-800">
       {/* Header Banner */}
@@ -343,9 +397,11 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
             { id: 'simulation', label: lang === 'de' ? '1. GPU-Simulation' : lang === 'es' ? '1. Simulación en GPU' : '1. GPU Simulation', icon: Zap },
             { id: 'kubelka-munk', label: lang === 'de' ? '2. Kubelka-Munk Farbmischung' : lang === 'es' ? '2. Laboratorio de color Kubelka-Munk' : '2. Kubelka-Munk Color Lab', icon: Sparkles },
             { id: 'chromatography', label: lang === 'de' ? '3. Papier-Chromatographie' : lang === 'es' ? '3. Cromatografía en papel' : '3. Paper Chromatography', icon: Layers },
-            { id: 'coffee-ring', label: lang === 'de' ? '4. Deegan-Kaffeering-Effekt' : lang === 'es' ? '4. Anillo de café de Deegan' : '4. Deegan Coffee-Ring', icon: Droplets },
-            { id: 'fiber-anisotropy', label: lang === 'de' ? '5. Faser-Anisotropie & fBm' : lang === 'es' ? '5. Anisotropía de fibra y fBm' : '5. Fiber Anisotropy & fBm', icon: Wind },
-            { id: 'shaders', label: lang === 'de' ? '6. GLSL-Shader-Code' : lang === 'es' ? '6. Código de los shaders GLSL' : '6. GLSL Shader Source', icon: Code2 },
+            { id: 'rheology', label: lang === 'de' ? '4. Tinten-Rheologie & Thixotropie' : lang === 'es' ? '4. Reología y tixotropía' : '4. Ink Rheology & Thixotropy', icon: Activity },
+            { id: 'dlvo-wetting', label: lang === 'de' ? '5. Kolloid-Stabilität & Benetzung' : lang === 'es' ? '5. Estabilidad coloidal (DLVO)' : '5. Colloid Stability & Wetting', icon: Droplets },
+            { id: 'coffee-ring', label: lang === 'de' ? '6. Deegan-Kaffeering-Effekt' : lang === 'es' ? '6. Anillo de café de Deegan' : '6. Deegan Coffee-Ring', icon: RefreshCw },
+            { id: 'fiber-anisotropy', label: lang === 'de' ? '7. Faser-Anisotropie & fBm' : lang === 'es' ? '7. Anisotropía de fibra y fBm' : '7. Fiber Anisotropy & fBm', icon: Wind },
+            { id: 'shaders', label: lang === 'de' ? '8. GLSL-Shader-Code' : lang === 'es' ? '8. Código de los shaders GLSL' : '8. GLSL Shader Source', icon: Code2 },
           ].map((tab) => {
             const Icon = tab.icon;
             const isSel = activeTab === tab.id;
@@ -1022,81 +1078,433 @@ export const WetInkPhysicsLab: React.FC<WetInkPhysicsLabProps> = ({ lang }) => {
         </div>
       )}
 
-      {/* Tab 4: Robert Deegan (1997) Coffee-Ring Effect */}
-      {activeTab === 'coffee-ring' && (
+      {/* Tab 4: Non-Newtonian Ink Rheology & Thixotropy */}
+      {activeTab === 'rheology' && (
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 bg-white p-6 rounded-2xl border border-stone-200 shadow-sm">
-          <div className="lg:col-span-7 space-y-4">
+          <div className="lg:col-span-7 space-y-5">
             <div className="space-y-1">
               <span className="text-xs font-mono font-bold text-amber-700 uppercase tracking-wider">
-                Robert Deegan et al. (Nature 1997)
+                Cross (1965) &bull; Carreau-Yasuda (1972) &bull; Herschel-Bulkley (1926)
+              </span>
+              <h3 className="text-xl font-serif font-bold text-stone-900">
+                {lang === 'de' ? 'Nicht-Newtonsche Tinten-Rheologie & Thixotropie' : lang === 'es' ? 'Reología no newtoniana y tixotropía de tinta' : 'Non-Newtonian Ink Rheology & Thixotropy'}
+              </h3>
+              <p className="text-xs text-stone-600 leading-relaxed">
+                {lang === 'de'
+                  ? 'Echte Tusche und Tinten (Ruß mit Knochenleim, Zinnober, Eisengallus) verhalten sich strukturviskos (scherverdünnend): In Ruhe schützt eine hohe Viskosität η₀ und Fließgrenze τ_y vor unkontrolliertem Zerfließen. Unter der Scherbeanspruchung der Pinselspitze fällt die Viskosität um Größenordnungen auf η_∞ ab, gefolgt von thixotroper Rückgelierung.'
+                  : lang === 'es' ? 'Las tintas auténticas (hollín con gelatina animal, cinabrio, agalla de hierro) son pseudoplásticas y tixotrópicas: en reposo, una alta viscosidad η₀ y límite elástico τ_y evitan derrames. Bajo el esfuerzo cortante de la punta del pincel, la viscosidad cae varios órdenes de magnitud hacia η_∞.' : 'Authentic calligraphy and fountain inks (carbon soot with animal glue, cinnabar, iron gall) are shear-thinning and thixotropic: at rest, high zero-shear viscosity η₀ and yield stress τ_y prevent sagging. Under stylus shear stress, viscosity drops orders of magnitude to η_∞, followed by thixotropic gel recovery.'}
+              </p>
+            </div>
+
+            {/* Ink Formulation Selector */}
+            <div className="space-y-2">
+              <span className="text-xs font-semibold text-stone-700">{lang === 'de' ? 'Rezeptur / Tinten-Profil:' : 'Ink Formulation / Profile:'}</span>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                {Object.entries(INK_RHEOLOGY_CATALOG).slice(0, 3).map(([key, prof]) => (
+                  <button
+                    key={key}
+                    onClick={() => setSelectedRheologyKey(key)}
+                    className={`p-2.5 rounded-xl border text-left text-xs transition-all ${
+                      selectedRheologyKey === key
+                        ? 'border-amber-600 bg-amber-50/70 font-semibold text-amber-950 shadow-sm'
+                        : 'border-stone-200 bg-stone-50/50 hover:bg-stone-100 text-stone-700'
+                    }`}
+                  >
+                    <div className="truncate">{prof.nameDe.split('(')[0].trim()}</div>
+                    <div className="text-[10px] text-stone-500 font-mono mt-0.5">
+                      η₀ = {prof.cross.eta0 < 0.1 ? prof.cross.eta0.toFixed(3) : prof.cross.eta0.toFixed(1)} Pa·s
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Rheology Telemetry Grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 p-3 bg-stone-50 rounded-xl border border-stone-200 text-center font-mono">
+              <div className="space-y-0.5">
+                <span className="text-[10px] text-stone-500 uppercase tracking-wider">Cross η(γ̇)</span>
+                <div className="text-sm font-bold text-amber-800">
+                  {(crossViscosityPaS * 1000).toFixed(crossViscosityPaS < 0.01 ? 1 : 0)} mPa·s
+                </div>
+                <span className="text-[9px] text-stone-400">
+                  {((crossViscosityPaS / selectedRheology.cross.eta0) * 100).toFixed(1)}% von η₀
+                </span>
+              </div>
+              <div className="space-y-0.5">
+                <span className="text-[10px] text-stone-500 uppercase tracking-wider">Carreau-Yasuda</span>
+                <div className="text-sm font-bold text-stone-900">
+                  {(carreauViscosityPaS * 1000).toFixed(carreauViscosityPaS < 0.01 ? 1 : 0)} mPa·s
+                </div>
+                <span className="text-[9px] text-stone-400">λ={selectedRheology.carreau.lambda}s</span>
+              </div>
+              <div className="space-y-0.5">
+                <span className="text-[10px] text-stone-500 uppercase tracking-wider">Fließgrenze τ</span>
+                <div className="text-sm font-bold text-stone-900">
+                  {hbResult.shearStress.toFixed(2)} Pa
+                </div>
+                <span className={`text-[9px] font-bold ${hbResult.isYielded ? 'text-emerald-600' : 'text-amber-600'}`}>
+                  {hbResult.isYielded ? 'Fließend' : 'Ruhe-Gel'}
+                </span>
+              </div>
+              <div className="space-y-0.5">
+                <span className="text-[10px] text-stone-500 uppercase tracking-wider">Thixotropie λ_ss</span>
+                <div className="text-sm font-bold text-purple-700">
+                  {thixotropicSS.toFixed(2)}
+                </div>
+                <span className="text-[9px] text-stone-400">
+                  τ_rec={selectedRheology.thixotropy.recoveryTime}s
+                </span>
+              </div>
+            </div>
+
+            {/* Interactive Shear Rate Slider */}
+            <div className="space-y-3 p-4 bg-stone-50/70 rounded-xl border border-stone-200">
+              <div className="flex justify-between items-center text-xs">
+                <span className="font-semibold text-stone-800">
+                  {lang === 'de' ? 'Schergeschwindigkeit γ̇ (Shear Rate):' : 'Shear Rate γ̇:'}
+                </span>
+                <span className="font-mono font-bold text-stone-900 bg-white px-2 py-0.5 rounded border border-stone-300">
+                  {rheoShearRate.toFixed(0)} s⁻¹
+                </span>
+              </div>
+              <input
+                type="range"
+                min="0.5"
+                max="1000"
+                step="5"
+                value={rheoShearRate}
+                onChange={(e) => setRheoShearRate(parseFloat(e.target.value))}
+                className="w-full accent-amber-600"
+              />
+              <div className="flex justify-between text-[10px] font-mono text-stone-500">
+                <span>0.5 s⁻¹ (Ruhe / Stillstand)</span>
+                <span>50 s⁻¹ (Pinselstrich)</span>
+                <span>1000 s⁻¹ (Schnelle Feder)</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Mathematical Rheology Panel */}
+          <div className="lg:col-span-5 bg-stone-900 text-stone-100 p-5 rounded-xl flex flex-col justify-between space-y-4">
+            <div className="space-y-3">
+              <span className="text-xs font-mono font-bold text-amber-400">Cross & Carreau-Yasuda Rheology</span>
+              <div className="bg-stone-950 p-3 rounded-lg font-mono text-[11px] text-stone-300 leading-relaxed border border-stone-800 space-y-1.5">
+                <p className="text-amber-300">// Cross (1965) Viscosity:</p>
+                <p>η(γ̇) = η_∞ + (η₀ - η_∞) / [1 + (K · γ̇)^m]</p>
+                <p className="mt-2 text-stone-400">// Herschel-Bulkley Yield Stress:</p>
+                <p>τ(γ̇) = τ_y + K · (γ̇)^n</p>
+                <p className="mt-2 text-stone-400">// Thixotropic Network Recovery:</p>
+                <p className="text-purple-300">dλ/dt = (1 - λ)/τ_rec - k_break · γ̇ · λ</p>
+              </div>
+
+              <div className="text-[11px] text-stone-300 leading-relaxed space-y-1">
+                <p className="text-amber-200 font-semibold">{selectedRheology.nameDe}:</p>
+                <p className="text-stone-400 text-[11px]">{selectedRheology.descriptionDe}</p>
+              </div>
+            </div>
+
+            <div className="pt-3 border-t border-stone-800 text-[10px] font-mono text-stone-400">
+              Cross (1965) J. Colloid Sci. &bull; Mewis & Wagner (2009) Adv. Colloid Interface Sci.
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Tab 5: DLVO Colloid Stability & Wetting Regimes */}
+      {activeTab === 'dlvo-wetting' && (
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 bg-white p-6 rounded-2xl border border-stone-200 shadow-sm">
+          <div className="lg:col-span-7 space-y-5">
+            <div className="space-y-1">
+              <span className="text-xs font-mono font-bold text-amber-700 uppercase tracking-wider">
+                Derjaguin-Landau-Verwey-Overbeek (1941/1948) &bull; Wenzel (1936) &bull; Cassie-Baxter (1944)
+              </span>
+              <h3 className="text-xl font-serif font-bold text-stone-900">
+                {lang === 'de' ? 'DLVO-Kolloidstabilität & Papierbenetzung' : lang === 'es' ? 'Estabilidad coloidal DLVO y mojado de papel' : 'DLVO Colloid Stability & Paper Wetting'}
+              </h3>
+              <p className="text-xs text-stone-600 leading-relaxed">
+                {lang === 'de'
+                  ? 'Pigmentgranulierung und Flockung werden durch die DLVO-Energiebarriere V_max gesteuert. Verdunstet das Wasser, steigt die Ionenstärke I(t), die Debye-Abschirmlänge λ_D bricht ein und Partikel stürzen in das primäre Energieminimum (irreversible Granulierung). Zugleich bestimmt die Faserrelief-Topografie (Wenzel r_w vs. Cassie f_s), ob Tinte kapillar einsaugt oder auf Lufteinschlüssen steht.'
+                  : lang === 'es' ? 'La floculación y granulación de pigmentos se rigen por la barrera energética DLVO V_max. A medida que el agua se evapora, la fuerza iónica aumenta, la longitud de Debye λ_D se comprime y la barrera colapsa. Al mismo tiempo, la topografía del papel (Wenzel vs Cassie) rige la transición de mojado.' : 'Pigment granulation and flocculation are governed by the DLVO energy barrier V_max. As water evaporates, ionic strength rises, Debye screening length λ_D compresses, and the barrier collapses. Concurrently, paper fiber topography (Wenzel vs Cassie) dictates capillary imbibition.'}
+              </p>
+            </div>
+
+            {/* Colloid Pigment & Topography Selectors */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="space-y-1">
+                <span className="text-xs font-semibold text-stone-700">{lang === 'de' ? 'Kolloid-Pigment:' : 'Colloid Pigment:'}</span>
+                <select
+                  value={selectedColloidKey}
+                  onChange={(e) => setSelectedColloidKey(e.target.value)}
+                  className="w-full text-xs p-2 rounded-xl border border-stone-300 bg-stone-50 font-mono"
+                >
+                  {Object.entries(COLLOID_PIGMENT_CATALOG).map(([k, c]) => (
+                    <option key={k} value={k}>{c.name}</option>
+                  ))}
+                </select>
+              </div>
+              <div className="space-y-1">
+                <span className="text-xs font-semibold text-stone-700">{lang === 'de' ? 'Papier-Topografie:' : 'Paper Substrate:'}</span>
+                <select
+                  value={selectedTopographyKey}
+                  onChange={(e) => setSelectedTopographyKey(e.target.value)}
+                  className="w-full text-xs p-2 rounded-xl border border-stone-300 bg-stone-50 font-mono"
+                >
+                  {Object.entries(PAPER_TOPOGRAPHY_CATALOG).map(([k, p]) => (
+                    <option key={k} value={k}>{p.nameDe}</option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            {/* DLVO Evaporative Telemetry */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 p-3 bg-stone-50 rounded-xl border border-stone-200 text-center font-mono">
+              <div className="space-y-0.5">
+                <span className="text-[10px] text-stone-500 uppercase tracking-wider">Ionenstärke I</span>
+                <div className="text-sm font-bold text-stone-900">
+                  {(dlvoResult.currentIonicStrength * 1000).toFixed(1)} mM
+                </div>
+                <span className="text-[9px] text-stone-400">λ_D = {(dlvoResult.profile.debyeLength * 1e9).toFixed(1)} nm</span>
+              </div>
+              <div className="space-y-0.5">
+                <span className="text-[10px] text-stone-500 uppercase tracking-wider">DLVO-Barriere V_max</span>
+                <div className="text-sm font-bold text-amber-800">
+                  {dlvoResult.profile.barrierKBT.toFixed(1)} k_B·T
+                </div>
+                <span className={`text-[9px] font-bold ${
+                  dlvoResult.profile.stability === 'stable'
+                    ? 'text-emerald-700'
+                    : dlvoResult.profile.stability === 'slow_flocculation'
+                    ? 'text-amber-600'
+                    : 'text-red-600'
+                }`}>
+                  {dlvoResult.profile.stability === 'stable' ? 'Stabil (Sol)' : dlvoResult.profile.stability === 'slow_flocculation' ? 'Trübung' : 'Granuliert!'}
+                </span>
+              </div>
+              <div className="space-y-0.5">
+                <span className="text-[10px] text-stone-500 uppercase tracking-wider">Wenzel-Winkel θ_W</span>
+                <div className="text-sm font-bold text-blue-700">
+                  {wettingReport.wenzelAngleDeg.toFixed(1)}°
+                </div>
+                <span className="text-[9px] text-stone-400">θ_Y = {wettingReport.youngAngleDeg.toFixed(0)}°</span>
+              </div>
+              <div className="space-y-0.5">
+                <span className="text-[10px] text-stone-500 uppercase tracking-wider">Laplace-Druck ΔP</span>
+                <div className="text-sm font-bold text-stone-900">
+                  {(wettingReport.laplaceBreakthroughPressurePa / 1000).toFixed(1)} kPa
+                </div>
+                <span className="text-[9px] text-emerald-600 font-semibold">
+                  {wettingReport.stableRegime === 'complete_wetting' ? 'Vollbenetzung' : wettingReport.stableRegime}
+                </span>
+              </div>
+            </div>
+
+            {/* Evaporation Progress Slider */}
+            <div className="space-y-3 p-4 bg-stone-50/70 rounded-xl border border-stone-200">
+              <div className="flex justify-between items-center text-xs">
+                <span className="font-semibold text-stone-800">
+                  {lang === 'de' ? 'Verdunstungsfortschritt (Verbliebener Wasseranteil):' : 'Evaporative Progress (Water Fraction):'}
+                </span>
+                <span className="font-mono font-bold text-stone-900 bg-white px-2 py-0.5 rounded border border-stone-300">
+                  {(dlvoWaterFraction * 100).toFixed(0)}% Wasser
+                </span>
+              </div>
+              <input
+                type="range"
+                min="0.02"
+                max="1.0"
+                step="0.02"
+                value={dlvoWaterFraction}
+                onChange={(e) => setDlvoWaterFraction(parseFloat(e.target.value))}
+                className="w-full accent-blue-600"
+              />
+              <div className="flex justify-between text-[10px] font-mono text-stone-500">
+                <span>100% (Frisch aufgetragen, Sol stabil)</span>
+                <span>50% (Ionen konzentrieren)</span>
+                <span>2% (Trocknung, Flockung vollendet)</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Mathematical DLVO & Wetting Panel */}
+          <div className="lg:col-span-5 bg-stone-900 text-stone-100 p-5 rounded-xl flex flex-col justify-between space-y-4">
+            <div className="space-y-3">
+              <span className="text-xs font-mono font-bold text-amber-400">DLVO & Wetting Equations</span>
+              <div className="bg-stone-950 p-3 rounded-lg font-mono text-[11px] text-stone-300 leading-relaxed border border-stone-800 space-y-1.5">
+                <p className="text-amber-300">// Total DLVO Potential:</p>
+                <p>V_tot(H) = V_A(H) + V_R(H)</p>
+                <p className="mt-2 text-stone-400">// Debye Screening Length:</p>
+                <p>κ = sqrt(2e² N_A I / (ε_r ε₀ k_B T))</p>
+                <p className="mt-2 text-stone-400">// Wenzel Roughness Wetting:</p>
+                <p className="text-blue-300">cos θ_W = r_w · cos θ_Y</p>
+                <p className="mt-2 text-stone-400">// Cassie-Baxter Air Cushion:</p>
+                <p className="text-emerald-300">cos θ_CB = f_s (cos θ_Y + 1) - 1</p>
+              </div>
+
+              <div className="text-[11px] text-stone-300 leading-relaxed space-y-1">
+                <p className="text-amber-200 font-semibold">{selectedTopography.nameDe}:</p>
+                <p className="text-stone-400 text-[11px]">{selectedTopography.descriptionDe}</p>
+              </div>
+            </div>
+
+            <div className="pt-3 border-t border-stone-800 text-[10px] font-mono text-stone-400">
+              Verwey & Overbeek (1948) &bull; Wenzel (1936) Ind. Eng. Chem.
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Tab 6: Robert Deegan (1997) Coffee-Ring Effect */}
+      {activeTab === 'coffee-ring' && (
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 bg-white p-6 rounded-2xl border border-stone-200 shadow-sm">
+          <div className="lg:col-span-7 space-y-5">
+            <div className="space-y-1">
+              <span className="text-xs font-mono font-bold text-amber-700 uppercase tracking-wider">
+                Robert Deegan et al. (Nature 1997) &bull; Hu & Larson (2002)
               </span>
               <h3 className="text-xl font-serif font-bold text-stone-900">
                 {lang === 'de' ? 'Der physikalische Kaffeering-Effekt (Edge Darkening)' : lang === 'es' ? 'El efecto anillo de café (oscurecimiento del borde)' : 'The Physical Coffee-Ring Effect (Edge Darkening)'}
               </h3>
               <p className="text-xs text-stone-600 leading-relaxed">
                 {lang === 'de'
-                  ? 'Wenn ein Tinten- oder Kaffeetropfen auf Papier trocknet, ist seine Kontaktlinie am Papier befestigt (Contact Line Pinning). Da der Rand viel dünner ist, verdunstet Wasser dort exponentiell schneller als im Zentrum. Um diese Wasserlücke zu füllen, strömt Flüssigkeit kontinuierlich von innen nach außen und transportiert schwebende Pigmentpartikel an den Rand.'
-                  : lang === 'es' ? 'Cuando una gota de tinta se seca sobre el papel, su perímetro queda anclado por la rugosidad de la superficie. Como el menisco es más delgado en el borde, el agua se evapora exponencialmente más rápido en el perímetro que en el centro. La continuidad del fluido fuerza un flujo capilar del centro hacia el borde que arrastra las partículas de pigmento y deposita un perímetro denso y oscuro.' : 'When an ink droplet dries on paper, its perimeter is pinned by surface roughness. Because the meniscus is thinnest at the boundary, water evaporates exponentially faster at the rim than at the center. Fluid continuity forces an outward capillary rush of liquid from center to edge, carrying suspended pigment particles and depositing a dense dark perimeter.'}
+                  ? 'Wenn ein Tinten- oder Kaffeetropfen auf Papier trocknet, ist seine Kontaktlinie am Papier befestigt (Contact Line Pinning). Da der Meniskus am Rand dünner ist, divergiert der Verdunstungsfluss J(r) nach Deegan mit Exponent λ. Kontinuität pumpt Flüssigkeit von innen nach außen und transportiert Pigmentpartikel an den Rand.'
+                  : lang === 'es' ? 'Cuando una gota de tinta se seca sobre el papel, su perímetro queda anclado. Como el menisco es más delgado en el borde, el flujo de evaporación J(r) diverge según el exponente λ de Deegan. La continuidad del fluido bombea líquido hacia el perímetro arrastrando pigmentos.' : 'When an ink droplet dries on paper, its contact line is pinned. Because the meniscus is thinnest at the boundary, evaporative flux J(r) diverges following Deegan’s exponent λ. Fluid continuity pumps liquid outward, carrying pigment particles to the rim.'}
               </p>
             </div>
 
-            {/* Evaporation Cross-Section Diagram */}
+            {/* Deegan Metrics Summary */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 p-3 bg-stone-50 rounded-xl border border-stone-200 text-center font-mono">
+              <div className="space-y-0.5">
+                <span className="text-[10px] text-stone-500 uppercase tracking-wider">Singularität λ</span>
+                <div className="text-sm font-bold text-amber-800">
+                  {deeganResult.singularityExponent.toFixed(3)}
+                </div>
+                <span className="text-[9px] text-stone-400">θ_c = {deeganContactAngleDeg}°</span>
+              </div>
+              <div className="space-y-0.5">
+                <span className="text-[10px] text-stone-500 uppercase tracking-wider">Kaffeering-Verhältnis</span>
+                <div className="text-sm font-bold text-stone-900">
+                  {deeganResult.coffeeRingRatio.toFixed(1)} ×
+                </div>
+                <span className="text-[9px] text-stone-400">Rim / Zentrum</span>
+              </div>
+              <div className="space-y-0.5">
+                <span className="text-[10px] text-stone-500 uppercase tracking-wider">Peclet Pe</span>
+                <div className="text-sm font-bold text-blue-700">
+                  {deeganResult.pecletNumber > 1000 ? '> 1000' : deeganResult.pecletNumber.toFixed(0)}
+                </div>
+                <span className="text-[9px] text-stone-400">Advektion dominiert</span>
+              </div>
+              <div className="space-y-0.5">
+                <span className="text-[10px] text-stone-500 uppercase tracking-wider">Trocknungszeit</span>
+                <div className="text-sm font-bold text-stone-900">
+                  {(deeganResult.dryingTimeSeconds / 60).toFixed(1)} min
+                </div>
+                <span className="text-[9px] text-stone-400">{deeganResult.dryingTimeSeconds.toFixed(0)} s</span>
+              </div>
+            </div>
+
+            {/* Evaporation Cross-Section SVG Diagram */}
             <div className="p-4 bg-stone-50 rounded-xl border border-stone-200 space-y-3">
-              <span className="text-xs font-mono font-bold text-stone-700 uppercase">
-                {lang === 'de' ? 'Querschnitt: Verdunstungsfluss J(r) & Randablagerung' : lang === 'es' ? 'Sección transversal: flujo de evaporación J(r) y depósito en el borde' : 'Cross-Section: Evaporative Flux J(r) & Rim Deposition'}
-              </span>
+              <div className="flex justify-between items-center text-xs font-mono">
+                <span className="font-bold text-stone-700 uppercase">
+                  {lang === 'de' ? 'Berechnetes Meniskusprofil h(r) & Verdunstung J(r)' : 'Calculated Meniscus Profile h(r) & Flux J(r)'}
+                </span>
+                <span className="text-amber-800">R = {deeganDropRadiusMm.toFixed(1)} mm</span>
+              </div>
               <div className="h-32 w-full bg-white rounded-lg border border-stone-300 relative overflow-hidden flex items-end px-4 py-2">
-                {/* Droplet curve */}
                 <svg className="w-full h-full" viewBox="0 0 400 100" preserveAspectRatio="none">
                   {/* Paper plane */}
                   <line x1="0" y1="90" x2="400" y2="90" stroke="#d6d3d1" strokeWidth="3" />
-                  {/* Droplet Meniscus */}
+                  {/* Dynamic Droplet Meniscus calculated from contact angle */}
                   <path
-                    d="M 50 90 Q 200 15 350 90"
+                    d={`M 40 90 Q 200 ${Math.max(15, 90 - deeganContactAngleDeg * 1.5)} 360 90`}
                     fill="rgba(59, 130, 246, 0.15)"
                     stroke="#3b82f6"
                     strokeWidth="2.5"
                   />
-                  {/* Evaporation vectors at contact lines */}
-                  <line x1="60" y1="85" x2="60" y2="35" stroke="#ef4444" strokeWidth="2.5" strokeDasharray="3 3" />
-                  <line x1="340" y1="85" x2="340" y2="35" stroke="#ef4444" strokeWidth="2.5" strokeDasharray="3 3" />
-                  <line x1="200" y1="52" x2="200" y2="35" stroke="#ef4444" strokeWidth="1" strokeDasharray="2 2" />
+                  {/* Evaporative flux vectors at rim */}
+                  <line x1="55" y1="85" x2="55" y2="30" stroke="#ef4444" strokeWidth="3" strokeDasharray="3 3" />
+                  <line x1="345" y1="85" x2="345" y2="30" stroke="#ef4444" strokeWidth="3" strokeDasharray="3 3" />
+                  <line x1="200" y1="55" x2="200" y2="40" stroke="#ef4444" strokeWidth="1" strokeDasharray="2 2" />
                   {/* Pigment accumulation at rims */}
-                  <circle cx="58" cy="88" r="5" fill="#78350f" />
-                  <circle cx="342" cy="88" r="5" fill="#78350f" />
-                  {/* Inward-to-outward arrows */}
-                  <path d="M 170 82 L 80 85" stroke="#1d4ed8" strokeWidth="2" markerEnd="url(#arrow)" />
-                  <path d="M 230 82 L 320 85" stroke="#1d4ed8" strokeWidth="2" markerEnd="url(#arrow)" />
+                  <circle cx="50" cy="88" r="6" fill="#78350f" />
+                  <circle cx="350" cy="88" r="6" fill="#78350f" />
+                  {/* Fluid flow arrows from center to rim */}
+                  <path d="M 170 82 L 75 86" stroke="#1d4ed8" strokeWidth="2" markerEnd="url(#arrow)" />
+                  <path d="M 230 82 L 325 86" stroke="#1d4ed8" strokeWidth="2" markerEnd="url(#arrow)" />
                 </svg>
               </div>
               <div className="flex justify-between text-[11px] text-stone-500 font-mono">
-                <span>Randschwärzung (Pinned Rim)</span>
+                <span>Pinned Rim (J divergiert)</span>
                 <span>Zentrum (Flüssigkeitsreservoir)</span>
-                <span>Randschwärzung (Pinned Rim)</span>
+                <span>Pinned Rim (J divergiert)</span>
+              </div>
+            </div>
+
+            {/* Interactive Deegan Sliders */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 p-4 bg-stone-50/70 rounded-xl border border-stone-200 text-xs">
+              <div className="space-y-1">
+                <div className="flex justify-between">
+                  <span className="text-stone-700 font-medium">{lang === 'de' ? 'Kontaktwinkel θ_c:' : 'Contact Angle θ_c:'}</span>
+                  <span className="font-mono font-bold text-stone-900">{deeganContactAngleDeg}°</span>
+                </div>
+                <input
+                  type="range"
+                  min="10"
+                  max="80"
+                  step="5"
+                  value={deeganContactAngleDeg}
+                  onChange={(e) => setDeeganContactAngleDeg(parseFloat(e.target.value))}
+                  className="w-full accent-amber-600"
+                />
+              </div>
+              <div className="space-y-1">
+                <div className="flex justify-between">
+                  <span className="text-stone-700 font-medium">{lang === 'de' ? 'Tropfenradius R:' : 'Droplet Radius R:'}</span>
+                  <span className="font-mono font-bold text-stone-900">{deeganDropRadiusMm.toFixed(1)} mm</span>
+                </div>
+                <input
+                  type="range"
+                  min="1.0"
+                  max="8.0"
+                  step="0.5"
+                  value={deeganDropRadiusMm}
+                  onChange={(e) => setDeeganDropRadiusMm(parseFloat(e.target.value))}
+                  className="w-full accent-blue-600"
+                />
               </div>
             </div>
           </div>
 
-          <div className="lg:col-span-5 bg-stone-900 text-stone-100 p-5 rounded-xl space-y-4">
-            <h4 className="font-mono font-bold text-amber-400 text-xs">
-              Shader-Approximation: Pigment-Gradient ∇ρ
-            </h4>
-            <p className="text-xs text-stone-300 leading-relaxed">
-              {lang === 'de'
-                ? 'Die exakte thermische Strömungsgleichung ist in Echtzeit-WebGL2 zu rechenintensiv. Unser Fragment-Shader berechnet den lokalen Dichtegradienten |∇ρ| der Feuchtigkeitsgrenze. Die Pigmentabsorptionsrate wird mit (1 + c · |∇ρ|) multipliziert:'
-                : lang === 'es' ? 'Calcular la transferencia de calor conjugada completa en WebGL2 es prohibitivo. Nuestro fragment shader evalúa el gradiente espacial |∇ρ| de la línea de contacto. El depósito de pigmento se multiplica por (1 + c · |∇ρ|), lo que impone el oscurecimiento del borde allí donde se detiene el frente del fluido.' : 'Evaluating full conjugate heat transfer in WebGL2 is computationally prohibitive. Our fragment shader evaluates the spatial gradient |∇ρ| of the contact line. Pigment deposition is multiplied by (1 + c · |∇ρ|), enforcing rim darkening wherever expanding fluid boundaries halt.'}
-            </p>
-            <div className="bg-stone-950 p-3 rounded-lg font-mono text-[11px] text-stone-300 border border-stone-800 space-y-1">
-              <p className="text-stone-500">// Coffee-Ring Contact Line Rim Darkening</p>
-              <p>vec2 grad = vec2(wR - wL, wU - wD);</p>
-              <p>float gradMag = length(grad);</p>
-              <p className="text-amber-300">float rimDeposit = susp * (0.04 * factor * (1.0 + 3.0 * gradMag));</p>
-              <p>susp -= rimDeposit;</p>
-              <p>dep += rimDeposit * 1.5;</p>
+          <div className="lg:col-span-5 bg-stone-900 text-stone-100 p-5 rounded-xl flex flex-col justify-between space-y-4">
+            <div className="space-y-3">
+              <h4 className="font-mono font-bold text-amber-400 text-xs">
+                Deegan (1997) & Hu-Larson (2002) Continuum Equations
+              </h4>
+              <div className="bg-stone-950 p-3 rounded-lg font-mono text-[11px] text-stone-300 leading-relaxed border border-stone-800 space-y-1.5">
+                <p className="text-amber-300">// Diverging Evaporative Flux:</p>
+                <p>J(r) = J₀ · (1 - r²/R²)^(-λ)</p>
+                <p className="text-stone-400">λ(θ_c) = (π - 2θ_c) / (2π - 2θ_c)</p>
+                <p className="mt-2 text-stone-400">// Outward Convective Velocity:</p>
+                <p>v_r(r) = (1/ρrh) · ∫₀ʳ r' J(r') dr'</p>
+                <p className="mt-2 text-stone-400">// Edge Deposition Mass Profile:</p>
+                <p className="text-emerald-300">M_ring(r) ∝ (1 - r²/R²)^(-μ)</p>
+              </div>
+
+              <p className="text-xs text-stone-300 leading-relaxed">
+                {lang === 'de'
+                  ? 'In unserem WebGL2-Fragment-Shader wird die kontinuierliche Strömung durch den räumlichen Feuchtigkeitsgradienten |∇ρ| approximiert: Randzellen erfahren eine (1 + c · |∇ρ|)-fache Pigmentablagerungsrate.'
+                  : 'In our WebGL2 fragment shader, this continuous flow is approximated via the spatial moisture gradient |∇ρ|: rim cells receive a (1 + c · |∇ρ|)-boosted pigment deposition rate.'}
+              </p>
+            </div>
+
+            <div className="pt-3 border-t border-stone-800 text-[10px] font-mono text-stone-400">
+              Deegan et al. (1997) Nature 389, 827 &bull; Hu & Larson (2002) J. Phys. Chem. B
             </div>
           </div>
         </div>
       )}
+
 
       {/* Tab 4: Paper Fiber Anisotropy & Fractional Brownian Motion */}
       {activeTab === 'fiber-anisotropy' && (

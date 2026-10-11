@@ -35,3 +35,36 @@ export {
   rimRatio,
   granulationRatio,
 } from '../../../src/engine/wet-ink/metrics';
+export {
+  calculateCrossViscosity,
+  calculateCarreauYasudaViscosity,
+  calculateHerschelBulkley,
+  calculateSteadyStateThixotropy,
+  evolveThixotropy,
+  estimateShearRate,
+  INK_RHEOLOGY_CATALOG,
+} from '../../../src/engine/wet-ink/rheology';
+export {
+  calculateDebyeProperties,
+  calculateVanDerWaalsEnergy,
+  calculateElectrostaticRepulsion,
+  calculateTotalDlvoEnergy,
+  analyzeDlvoStability,
+  simulateEvaporativeDlvo,
+  COLLOID_PIGMENT_CATALOG,
+} from '../../../src/engine/wet-ink/dlvo';
+export {
+  calculateSingularityExponent,
+  calculateEvaporativeFlux,
+  calculateDropletHeight,
+  calculateRadialVelocity,
+  analyzeDropletEvaporation,
+} from '../../../src/engine/wet-ink/evaporation-deegan';
+export {
+  calculateWenzelAngle,
+  calculateCassieBaxterAngle,
+  calculateCriticalTransitionAngle,
+  calculateLaplaceBreakthroughPressure,
+  analyzePaperWettingRegime,
+  PAPER_TOPOGRAPHY_CATALOG,
+} from '../../../src/engine/wet-ink/wetting-regimes';

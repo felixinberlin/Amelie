@@ -12,3 +12,7 @@ export * from './audio';
 export * from './svgExport';
 export * from './color-science';
 export * from './chromatography';
+export * from './rheology';
+export * from './dlvo';
+export * from './evaporation-deegan';
+export * from './wetting-regimes';
