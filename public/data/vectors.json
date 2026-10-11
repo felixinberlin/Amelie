@@ -3333,6 +3333,22 @@
       "funDe": "Den Scheitelpegel eines Hochwassers vorherzusagen erzeugt echten Nervenkitzel mit Live-Daten.",
       "funEn": "Predicting crest levels during a flood crest creates genuine excitement with live open hydrological data.",
       "note": "Heimatgedächtnis-Runde (Needs Research 18/35)"
+    },
+    "song-ci-forensics-1247": {
+      "v": [
+        4,
+        2,
+        4,
+        4,
+        4,
+        3,
+        4
+      ],
+      "fun": 4,
+      "funSource": "discovery",
+      "funDe": "Historische Kriminalfälle allein durch reale physikalische Spuren zu lösen ist fesselnde, unbestechliche Detektivarbeit.",
+      "funEn": "Solving authentic historical crime cases strictly via physical clues provides gripping, unbribable deduction.",
+      "note": "Recherche fernöstlicher Spielwünsche (1247 AD Gerichtsmedizin)"
     }
   }
 }

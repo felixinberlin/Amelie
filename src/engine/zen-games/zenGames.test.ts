@@ -50,6 +50,10 @@ import {
   evaluatePlayerMockeryGuess,
   calculateVillageFeudTitle,
 } from './ortsnecknamenEngine';
+import {
+  SONG_CI_CASES_CORPUS,
+  evaluateSongCiDeduction,
+} from './songCiEngine';
 
 describe('Amélie Zen Games Modular Engines', () => {
   describe('Photobooth Puzzle Engine', () => {
@@ -478,6 +482,48 @@ describe('Amélie Zen Games Modular Engines', () => {
       const lowFeud = calculateVillageFeudTitle(120);
       expect(lowFeud.titleDe).toContain('Zugezogener Großstadt-Akademiker');
       expect(lowFeud.verdictDe).toContain('Bratwürste');
+    });
+  });
+
+  describe('Song Ci Medieval Forensic Deduction Engine (1247 AD)', () => {
+    it('contains authentic historical cases with rigorous physical clues and original quotations', () => {
+      expect(SONG_CI_CASES_CORPUS.length).toBeGreaterThanOrEqual(3);
+
+      for (const c of SONG_CI_CASES_CORPUS) {
+        expect(c.id).toBeTruthy();
+        expect(c.titleDe).toBeTruthy();
+        expect(c.titleZh).toBeTruthy();
+        expect(c.scenarioDe).toBeTruthy();
+        expect(c.clues.length).toBeGreaterThanOrEqual(3);
+        expect(c.choices.length).toBeGreaterThanOrEqual(3);
+        expect(c.choices.filter((ch) => ch.isCorrect)).toHaveLength(1); // exactly one correct deduction
+        expect(c.originalQuoteZh).toBeTruthy();
+        expect(c.originalQuoteTranslationDe).toBeTruthy();
+        expect(c.modernScienceValidationDe).toBeTruthy();
+      }
+    });
+
+    it('verifies the scientific principles of the first three famous cases', () => {
+      const case1 = SONG_CI_CASES_CORPUS.find((c) => c.id === 'case-sickle-flies')!;
+      expect(case1.choices.find((ch) => ch.isCorrect)?.id).toBe('opt-fly-olfaction');
+
+      const case2 = SONG_CI_CASES_CORPUS.find((c) => c.id === 'case-red-umbrella-bones')!;
+      expect(case2.choices.find((ch) => ch.isCorrect)?.id).toBe('opt-optical-filter');
+
+      const case3 = SONG_CI_CASES_CORPUS.find((c) => c.id === 'case-vital-fire-smoke')!;
+      expect(case3.choices.find((ch) => ch.isCorrect)?.id).toBe('opt-vital-reaction');
+    });
+
+    it('evaluates player deduction ranking accurately based on score', () => {
+      const topRank = evaluateSongCiDeduction(300);
+      expect(topRank.rankTitleZh).toContain('提刑按察使');
+      expect(topRank.solvedCount).toBe(3);
+
+      const midRank = evaluateSongCiDeduction(200);
+      expect(midRank.rankTitleZh).toContain('知县');
+
+      const lowRank = evaluateSongCiDeduction(80);
+      expect(lowRank.rankTitleZh).toContain('书吏');
     });
   });
 

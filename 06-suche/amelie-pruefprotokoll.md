@@ -1225,3 +1225,14 @@ Thema aus der Offenlegungs-Runde: Muster Offenlegungspflicht ohne Register auf H
 | # | Idee | Methode | Urteil (Merge → nach Review) | Beleg (kurz) | Evidenz | Geprüft | Prüfen ab |
 |---|---|---|---|---|---|---|---|
 | N1 | **Hinweisgeber-Triage-Stratigrafie** (`hinweisgeber-triage-stratigrafie`) — Lokales On-Device-Tool für Meldestellen, das eingehende Meldungen in Dringlichkeit und Stichhaltigkeit sortiert (NLP). | [method: bisoziation] | `verengt` | Kommerzielle Hinweisgebersysteme (BKMS, Hinweisgebersystem24) bieten Fallmanagement, sind aber teuer (SaaS). Lokale Triage für klamme Kommunen bleibt Lücke. Machbarkeit On-Device NLP für hochsensible Meldungen offen (Needs Research 19/35). | [Schnipsel] | 11.10.2026 | 03/2027 |
+
+---
+
+## Fernöstliche Spielsehnsüchte & Historische Forensik — 11.10.2026
+
+Empirische Recherche fernöstlicher und globaler Gaming-Wünsche (Heybox, Zhihu, Bilibili, TapTap, r/truegaming, r/CozyGamers): Verlangen nach unbestechlicher Deduktion ohne leuchtende Markierungen, handwerklichen Reparatur-Mechaniken und anti-involutionärem Tiefgang.
+
+| # | Idee | Methode | Urteil (Merge → nach Review) | Beleg (kurz) | Evidenz | Geprüft | Prüfen ab |
+|---|---|---|---|---|---|---|---|
+| G1 | **Song-Ci-Kriminalakten 1247** (`song-ci-forensics-1247`) — Historisch-physikalische Gerichtsmedizin nach 宋慈 *Xǐ Yuān Jí Lù* (1247 AD) | [method: ideenrunde] | `frei` | Keine Paywalls, keine Detektiv-Magie, keine leuchtenden Markierungen: Fälle der Weltliteratur (Sichelprobe/Fliegen-Schwarmverhalten, Roter Papierschirm/Polarisation von Knochenhämatomen, Ruß in der Luftröhre/Vitalreaktion) werden deterministisch anhand von Physik, Chemie und Insektenbiologie gelöst. Zero-Cloud Web Audio & Canvas Scaffolding. | [Seite] | 11.10.2026 | 10/2027 |
+

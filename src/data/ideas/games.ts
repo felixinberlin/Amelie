@@ -278,5 +278,33 @@ export const GAME_IDEAS: CandidateIdea[] = [
     firstStepCriteriaDe: 'Deterministische RMSE- und Skill-Score-Auswertung direkt im Browser.',
     firstStepCriteriaEn: 'Deterministic RMSE and skill-score evaluation running entirely client-side in browser.',
     tags: ['Games', 'Wasser', 'Hochwasser', 'PEGELONLINE', 'Simulation']
+  },
+  {
+    id: 'song-ci-forensics-1247',
+    title: 'Song-Ci-Kriminalakten 1247: Historische Forensik ohne Röntgenblick',
+    titleEn: 'Song Ci Forensic Casebook 1247: Physical Deduction',
+    round: 'Katalog 2026',
+    date: '11.10.2026',
+    conceptDe: 'Deduktives historisches Rekonstruktionsspiel basierend auf Song Cis „Washing Away of Wrongs“ (洗冤集录, 1247): Spieler lösen reale Kriminalfälle der Song-Dynastie rein durch physikalische Befunde (Fliegenanlockung an Sicheln, Knochenhämatome unter rotem Ölpapierschirm, Tracheal-Ruß bei Bränden, Silber-Sulfidproben) ohne übernatürliche Magie oder leuchtenden Detektiv-Modus.',
+    conceptEn: 'A deductive historical reconstruction game based on Song Ci’s "Washing Away of Wrongs" (洗冤集录, 1247 AD): players solve authentic 13th-century murder investigations strictly using physical evidence (insect succession on sickles, bone hematomas filtered by red oil-paper umbrellas, tracheal soot vital reactions, silver needle reagents) without magical glowing detective markers.',
+    status: 'ungeprüft',
+    suggestedVerdict: 'gift',
+    recipientDe: 'Needham Research Institute (Cambridge) · Lehrstühle für Rechtsgeschichte & Sinologie · Association for Asian Studies (AAS)',
+    recipientEn: 'Needham Research Institute (Cambridge) · Chairs of Legal History & Sinology · Association for Asian Studies (AAS)',
+    sourceType: 'Education & History',
+    sourceDe: 'Song Ci: Xi Yuan Ji Lu (洗冤集录, 1247 n. Chr., ältestes Gerichtsmedizin-Werk der Menschheit); globale Gamer-Wunschlisten (Heybox/Zhihu/Reddit)',
+    sourceEn: 'Song Ci: Xi Yuan Ji Lu (1247 AD, world’s earliest forensic treatise); global gamer wishlists on Heybox/Zhihu/Reddit',
+    evidenceDe: 'Bestehende Spiele (wie „Young Song Ci“) sind kommerzielle Mobile-Gachas mit Energieleisten; kein freies, offenes Werkzeug rekonstruiert Song Cis wissenschaftliche Methodik deterministisch im Browser.',
+    evidenceEn: 'Existing adaptations are commercial mobile gacha titles with energy timers; zero open educational web tools reconstruct Song Ci’s empirical methods deterministically.',
+    reviewDate: '03/2027',
+    problemDe: 'Geschichte der Kriminalistik und Naturwissenschaften wird oft eurozentrisch gelehrt; das erste forensische Lehrbuch der Welt (1247) ist außerhalb von Fachkreisen kaum interaktiv erfahrbar.',
+    problemEn: 'Forensic science history is taught eurocentrically; the world’s earliest forensic treatise (1247 AD) lacks an accessible interactive learning medium.',
+    whyNowDe: ['Reine HTML5-Parchment-Canvas- und Web-Audio-Engines laufen ohne Server und machen historische Tatakten interaktiv begreifbar.'],
+    whyNowEn: ['Lightweight HTML5 parchment canvas and procedural audio engines run zero-cloud in any mobile browser.'],
+    firstStepTicketDe: 'Ticket #1: 3 historische Originalfälle aus dem Xi Yuan Ji Lu mit interaktiver Indizien-Prüfung und Original-Zitaten',
+    firstStepTicketEn: 'Ticket #1: 3 authentic cases from Xi Yuan Ji Lu with interactive physical clue evaluation and source quotations',
+    firstStepCriteriaDe: 'Deterministische Fallauflösung mit Auswertung gegen moderne Kriminalistik und Kaiserlichem Ernennungsdekret.',
+    firstStepCriteriaEn: 'Deterministic case deduction with modern forensic scientific validation and Imperial court appointment decree.',
+    tags: ['Games', 'Forensik', 'Geschichte', 'China', 'Kulturgut', 'Deduktion']
   }
 ];
