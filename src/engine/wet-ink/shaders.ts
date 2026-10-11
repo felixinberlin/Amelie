@@ -195,8 +195,10 @@ void main() {
   
   float water = fluid.z;
   float moisture = fluid.w;
-  float susp = pigment.r;
-  float dep = pigment.g;
+  float susp1 = pigment.r;
+  float dep1 = pigment.g;
+  float susp2 = pigment.b;
+  float dep2 = pigment.a;
   
   // Calculate local gradient of pigment / water boundary |grad(rho)|
   float wL = texture(u_fluidState, v_uv - vec2(u_texelSize.x, 0.0)).z;
@@ -214,20 +216,42 @@ void main() {
   moisture = max(0.0, moisture - evap * 0.001 * u_dt * 60.0);
   
   // Coffee-Ring pigment deposition: multiplier proportional to (1 + c * |grad(rho)|)
-  if (isContactLine && susp > 0.005) {
-    float ringDeposit = susp * (0.04 * u_edgeDarkening * (1.0 + 3.0 * gradMag));
-    susp -= ringDeposit;
-    dep += ringDeposit * 1.5;
+  if (isContactLine) {
+    if (susp1 > 0.005) {
+      float ringDeposit1 = susp1 * (0.04 * u_edgeDarkening * (1.0 + 3.0 * gradMag));
+      susp1 -= ringDeposit1;
+      dep1 += ringDeposit1 * 1.5;
+    }
+    if (susp2 > 0.005) {
+      float ringDeposit2 = susp2 * (0.04 * u_edgeDarkening * (1.0 + 3.0 * gradMag));
+      susp2 -= ringDeposit2;
+      dep2 += ringDeposit2 * 1.5;
+    }
   }
   
   // Paper tooth granulation: pigment settles into paper valleys (1.0 - height)
   float paperToothValley = 1.0 - paper.r;
-  float valleyDep = susp * 0.015 * u_granulationStrength * (0.5 + paperToothValley * 1.5);
-  susp = max(0.0, susp - valleyDep);
-  dep += valleyDep;
+  float granRate = 0.015 * u_granulationStrength * (0.5 + paperToothValley * 1.5);
+  
+  float valleyDep1 = susp1 * granRate;
+  susp1 = max(0.0, susp1 - valleyDep1);
+  dep1 += valleyDep1;
+  
+  float valleyDep2 = susp2 * granRate;
+  susp2 = max(0.0, susp2 - valleyDep2);
+  dep2 += valleyDep2;
+  
+  // Colloidal packing saturation limit (Krieger-Dougherty): prevents astronomical buildup when scrubbing in place
+  float maxDensity = 7.5;
+  if (susp1 + dep1 > maxDensity) {
+    susp1 = max(0.0, maxDensity - dep1);
+  }
+  if (susp2 + dep2 > maxDensity) {
+    susp2 = max(0.0, maxDensity - dep2);
+  }
   
   outFluid = vec4(fluid.xy, water, moisture);
-  outPigment = vec4(susp, dep, pigment.b, pigment.a);
+  outPigment = vec4(susp1, dep1, susp2, dep2);
 }
 `;
 
@@ -337,8 +361,8 @@ void main() {
   vec3 Rg = vec3(0.97, 0.955, 0.92) * relief;
   
   // 2. Kubelka-Munk Spectral Combination of Pigment 1 & Pigment 2
-  float c1 = p1_dep * 1.1 + p1_susp * 0.85;
-  float c2 = p2_dep * 1.1 + p2_susp * 0.85;
+  float c1 = min(7.5, p1_dep * 1.1 + p1_susp * 0.85);
+  float c2 = min(7.5, p2_dep * 1.1 + p2_susp * 0.85);
   
   vec3 K_mix = u_pigment1_K * c1 + u_pigment2_K * c2;
   vec3 S_mix = u_pigment1_S * c1 + u_pigment2_S * c2;

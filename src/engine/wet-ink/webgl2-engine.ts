@@ -495,8 +495,8 @@ export class WebGL2WetInkEngine {
 
     // Per-stamp fluid & pigment scaled by path spacing relative to radius
     const stampScale = (spacing / Math.max(1, radius)) / steps;
-    const perStampWater = dist === 0 ? waterAmount : Math.max(0.01, waterAmount * stampScale);
-    const perStampPigment = dist === 0 ? pigmentAmount : Math.max(0.02, pigmentAmount * stampScale);
+    const perStampWater = dist === 0 ? Math.min(0.25, waterAmount * 0.25) : Math.max(0.01, waterAmount * stampScale);
+    const perStampPigment = dist === 0 ? Math.min(0.35, pigmentAmount * 0.35) : Math.max(0.02, pigmentAmount * stampScale);
 
     gl.viewport(0, 0, this.width, this.height);
     gl.bindFramebuffer(gl.FRAMEBUFFER, this.fboA.framebuffer);

@@ -482,7 +482,8 @@ export class WetInkSimulation {
     this.tileWet[((((idx / this.width) | 0) >> TILE_SHIFT) * this.tilesX) + ((idx % this.width) >> TILE_SHIFT)] = 1;
     const h0 = this.waterFilm[idx];
     // Dynamic transfer efficiency: avoids sudden hard clamping, allows natural puddle accumulation
-    const effH = Math.max(0.04, 1.0 - h0 / maxWater);
+    // up to maxWater, beyond which the brush cannot deliver more liquid to an existing puddle.
+    const effH = Math.max(0.0, 1.0 - h0 / maxWater);
     const addedWater = water * effH;
     const h1 = h0 + addedWater;
     if (addedWater > 0) {
@@ -494,8 +495,10 @@ export class WetInkSimulation {
     const d0 = this.pigmentDeposited[idx];
     // Colloidal packing limit (Krieger-Dougherty): prevents unnatural runaway buildup
     // when scrubbing repeatedly over the same wet or dried strokes.
+    // The layer saturates smoothly as it approaches colloidal cake packing (pEff ~ 7.5).
     const pEffTotal = p0 + 0.60 * d0;
-    const effP = Math.max(0.04, Math.min(1.0, 1.0 - pEffTotal / 8.5));
+    const maxEffP = 7.5;
+    const effP = Math.max(0.0, Math.min(1.0, 1.0 - pEffTotal / maxEffP));
     const addedPigment = pigment * effP;
     if (addedPigment > 0) {
       this.pigmentSuspended[idx] = p0 + addedPigment;

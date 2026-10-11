@@ -462,22 +462,23 @@ export function createPigmentFromHex(
   const R_raw_b = Math.max(0.02, Math.min(0.95, b / 255));
 
   // Spectral broadening (CIE cone band overlap): physical pigments have continuous absorption spectra
-  // rather than narrow digital delta spikes. This prevents RGB mixtures from collapsing into black.
-  const R_r = 0.82 * R_raw_r + 0.18 * R_raw_g;
-  const R_g = 0.12 * R_raw_r + 0.76 * R_raw_g + 0.12 * R_raw_b;
-  const R_b = 0.18 * R_raw_g + 0.82 * R_raw_b;
+  // rather than narrow digital delta spikes. Red and Green have slight overlap (~8%), Green and Blue (~4%),
+  // while Blue is tightly isolated so yellow pigments strongly extinguish blue wavelengths.
+  const R_r = 0.92 * R_raw_r + 0.08 * R_raw_g;
+  const R_g = 0.05 * R_raw_r + 0.90 * R_raw_g + 0.05 * R_raw_b;
+  const R_b = 0.04 * R_raw_g + 0.96 * R_raw_b;
 
   // Kubelka-Munk: K/S = (1 - R_inf)^2 / (2 * R_inf)
   const calcKS = (R: number) => ((1.0 - R) * (1.0 - R)) / (2.0 * R);
-  const S_base = 0.35;
+  const S_base = 0.65;
 
-  const K_r = Math.max(0.05, Math.min(5.5, calcKS(R_r) * S_base));
-  const K_g = Math.max(0.05, Math.min(5.5, calcKS(R_g) * S_base));
-  const K_b = Math.max(0.05, Math.min(5.5, calcKS(R_b) * S_base));
+  const K_r = Math.max(0.04, Math.min(8.5, calcKS(R_r) * S_base));
+  const K_g = Math.max(0.04, Math.min(8.5, calcKS(R_g) * S_base));
+  const K_b = Math.max(0.04, Math.min(8.5, calcKS(R_b) * S_base));
 
-  const S_r = S_base * (0.8 + R_r * 0.4);
-  const S_g = S_base * (0.8 + R_g * 0.4);
-  const S_b = S_base * (0.8 + R_b * 0.4);
+  const S_r = S_base * (0.85 + R_r * 0.3);
+  const S_g = S_base * (0.85 + R_g * 0.3);
+  const S_b = S_base * (0.85 + R_b * 0.3);
 
   // Density based on darkness
   const brightness = (r * 0.299 + g * 0.587 + b * 0.114) / 255;
