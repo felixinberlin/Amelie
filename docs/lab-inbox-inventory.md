@@ -4,7 +4,7 @@ Erzeugt mit `node scripts/inventory-lab-inbox.mjs` aus den validierten immutable
 
 Domains umfassen alle parsebaren URL-Felder, auch Konkurrentenlinks und Hintergrundquellen. Quote-Status stammt unverändert vom Lab; wiederholte identische Findings werden einmal gezählt. Fehlende Felder beweisen keine fehlende Recherche. Wörtliche Bestands-ID-Erwähnungen sind Hinweise zum Nachlesen; ausbleibende Treffer schließen Überschneidungen nicht aus.
 
-Gesamt: **72 Batches / 159 Ideen**. Status: needs_research: 2; received: 70.
+Gesamt: **72 Batches / 159 Ideen**. Status: archived: 19; needs_research: 43; processed: 10.
 
 | Engine | Batches | Ideen |
 | --- | ---: | ---: |
@@ -25,7 +25,7 @@ Nur normalisierte wörtliche Titelgleichheit; ähnliche Ideen müssen zusätzlic
 
 ### amelie-lab-inversion-inversion-20260930T082921-129ac0-12de2ea223b84af1
 
-Engine: inversion; Status: received; Ideen: 0.
+Engine: inversion; Status: processed; Ideen: 0.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20260930T082921-129ac0-12de2ea223b84af1.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20260930T082921-129ac0-12de2ea223b84af1.md)
 
@@ -37,11 +37,13 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: [Dose: amelie-umwelt-anomalie](../05-dosen/amelie-umwelt-anomalie.md).
 
+Verarbeitungsnotiz: Null-Survivor-Lauf 129ac0: vier ursprüngliche Kills im Receipt erhalten; vorhandene Gräber baumumfang-lidar-app, baumart-vitalitaet-ki, faellgenehmigung-ki-pruefer, ersatzbaum-foto-monitoring. Keine neue Beerdigung. Audit: 06-suche/lab-intake-review-20261011.md#batch-00
+
 Batch ohne Survivor-Ideen: vollständige Findings, verworfene Ansätze und Historie im Originalbeleg lesen.
 
 ### amelie-lab-inversion-inversion-20260930T083759-1c9c25-29c174dc27859fca
 
-Engine: inversion; Status: received; Ideen: 3.
+Engine: inversion; Status: processed; Ideen: 3.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20260930T083759-1c9c25-29c174dc27859fca.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20260930T083759-1c9c25-29c174dc27859fca.md)
 
@@ -53,6 +55,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: [Grab: florascan-invasive-webgpu](../src/data/graeber.json).
 
+Verarbeitungsnotiz: Lab-Survivors 30.09, E1–E3; Robinienplattform, Entfernungsdokumentation und Kleinmengenbörse bereits besetzt. Bestehende Prüfungen übernommen, keine neue Wertung. Audit: 06-suche/lab-intake-review-20261011.md#batch-01
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C1 | Eine temporäre, georeferenzierte Plattform, die Waldbesitzer, die Robinienholz fällen müssen, mit potenziellen Abnehmern für spezifische Produkte (z.B. Zaunpfähle, Gartenmöbel, Holzschnitzel für die Landschaftsgestaltung) zusammenbringt, mit automatischer Preisfindung basierend auf Holzqualität und Transportentfernung. |
@@ -61,7 +65,7 @@ Wörtlich erwähnte Bestands-IDs: [Grab: florascan-invasive-webgpu](../src/data/
 
 ### amelie-lab-inversion-inversion-20260930T100201-458e61-cedbcd3c54e6aec1
 
-Engine: inversion; Status: received; Ideen: 2.
+Engine: inversion; Status: needs_research; Ideen: 2.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20260930T100201-458e61-cedbcd3c54e6aec1.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20260930T100201-458e61-cedbcd3c54e6aec1.md)
 
@@ -73,6 +77,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: [Dose: umsetzungsplan-register](../05-dosen/umsetzungsplan-register.md), [Grab: florascan-invasive-webgpu](../src/data/graeber.json).
 
+Verarbeitungsnotiz: Lab-Survivors E4/E5: Priorisierung unklar, Fauna-Impact besetzt. Für E4 datierte Standort-/Wiederaufwuchsdaten und Fachmandat fehlen weiterhin. Audit: 06-suche/lab-intake-review-20261011.md#batch-02
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C2 | Ein Planungs- und Priorisierungstool, das basierend auf den identifizierten Risikoflächen (C1) und naturschutzfachlichen Bewertungskriterien (z.B. Schutzstatus der angrenzenden Biotope, Vorkommen seltener Arten) konkrete, priorisierte Bekämpfungszonen vorschlägt und den zu erwartenden 'Return on Investment' der Maßnahmen (z.B. in erhaltener Biodiversität, Kostenreduktion) schätzt. |
@@ -80,7 +86,7 @@ Wörtlich erwähnte Bestands-IDs: [Dose: umsetzungsplan-register](../05-dosen/um
 
 ### amelie-lab-inversion-inversion-20260930T100347-d2bbcb-0129e3e60bda563a
 
-Engine: inversion; Status: received; Ideen: 4.
+Engine: inversion; Status: needs_research; Ideen: 4.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20260930T100347-d2bbcb-0129e3e60bda563a.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20260930T100347-d2bbcb-0129e3e60bda563a.md)
 
@@ -92,6 +98,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Lab-Survivors E6–E9: Chatbot/HACCP besetzt, IGP-Wareneingang bestehendes Grab; Wetter-Salmonellenprognose bleibt Needs Research 17/35. Regionale Zeitreihen und kausale Validierung offen. Audit: 06-suche/lab-intake-review-20261011.md#batch-03
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C3 | Ein spezialisierter Chatbot, trainiert auf die EU-Lebensmittelhygienevorschriften (852/2004, 853/2004) und deren spanische Adaptionen, der spezifische 'Was-wäre-wenn'-Fragen des Küchenpersonals beantwortet und bei der Interpretation komplexer Gesetzestexte hilft. |
@@ -101,7 +109,7 @@ Wörtlich erwähnte Bestands-IDs: keine.
 
 ### amelie-lab-inversion-inversion-20260930T100431-0c956a-e97a4dfff64d876e
 
-Engine: inversion; Status: received; Ideen: 3.
+Engine: inversion; Status: needs_research; Ideen: 3.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20260930T100431-0c956a-e97a4dfff64d876e.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20260930T100431-0c956a-e97a4dfff64d876e.md)
 
@@ -113,6 +121,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Lab-Survivors E10–E12: Kompensations-Bürgerschicht bleibt 22/35. Vorhandener EKIS-Datentest hat Geometrie, aber keine Frist/Kontrollstatus. Amtlicher Meldeweg und tatsächliches Mandat fehlen. 360°-Begehung unklar; Ökokonto besetzt. Audit: 06-suche/lab-intake-review-20261011.md#batch-04
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C3 | Eine offene Plattform, die alle in Brandenburg genehmigten Kompensationsflächen und -maßnahmen (anonymisiert) kartiert, deren Status anzeigt und die Möglichkeit zur Eingabe von Mängelmeldungen durch die Öffentlichkeit bietet, die direkt an die zuständigen Behörden weitergeleitet werden. |
@@ -121,7 +131,7 @@ Wörtlich erwähnte Bestands-IDs: keine.
 
 ### amelie-lab-inversion-inversion-20260930T154802-cfc447-7bc689bd6a672d22
 
-Engine: inversion; Status: received; Ideen: 3.
+Engine: inversion; Status: processed; Ideen: 3.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20260930T154802-cfc447-7bc689bd6a672d22.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20260930T154802-cfc447-7bc689bd6a672d22.md)
 
@@ -133,6 +143,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: [Dose: couleur-sphinx](../05-dosen/couleur-sphinx.md), [Dose: fugenduell-asphalt-arena](../05-dosen/fugenduell-asphalt-arena.md).
 
+Verarbeitungsnotiz: Lab-Survivors E13–E15: Haftungsbot, Mini-Protokoll und Traceability bereits besetzt; bestehende Spendenprüfungen, keine neue Dose. Audit: 06-suche/lab-intake-review-20261011.md#batch-05
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C2 | An 'Automated Liability Clarifier' chatbot that provides real-time, context-specific legal guidance on liability for food donations based on food type, condition (e.g., best-before vs. use-by date), and donor/recipient roles. |
@@ -141,7 +153,7 @@ Wörtlich erwähnte Bestands-IDs: [Dose: couleur-sphinx](../05-dosen/couleur-sph
 
 ### amelie-lab-inversion-inversion-20260930T181151-f9650e-d36303df10a75bb4
 
-Engine: inversion; Status: received; Ideen: 2.
+Engine: inversion; Status: processed; Ideen: 2.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20260930T181151-f9650e-d36303df10a75bb4.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20260930T181151-f9650e-d36303df10a75bb4.md)
 
@@ -153,6 +165,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Lab-Nachlieferung 01.10 L1/L2: Holzsortierklasse und DoP-Stahlscanner bereits reviewed/begraben; kein neues Grab. Audit: 06-suche/lab-intake-review-20261011.md#batch-06
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C1 | An app that uses image recognition (knots, grain, defects) and acoustic analysis (tap test) to provide a preliminary, on-site indication of whether a timber piece matches a declared structural grade (e.g., C24), helping non-experts verify incoming materials. |
@@ -160,7 +174,7 @@ Wörtlich erwähnte Bestands-IDs: keine.
 
 ### amelie-lab-inversion-inversion-20260930T210642-aba544-bc7d953a9692b76a
 
-Engine: inversion; Status: received; Ideen: 4.
+Engine: inversion; Status: processed; Ideen: 4.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20260930T210642-aba544-bc7d953a9692b76a.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20260930T210642-aba544-bc7d953a9692b76a.md)
 
@@ -172,6 +186,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: [Grab: ezb-register](../src/data/graeber.json).
 
+Verarbeitungsnotiz: Lab-Nachlieferung L5–L8: lokale NER, Familienverknüpfung, Repressionsortfoto, Gedenktafelcheck bereits reviewed/begraben; L8 17/35, unverändert. Audit: 06-suche/lab-intake-review-20261011.md#batch-07
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C2 | Ein KI-Tool, das lokalen Gemeindegruppen oder Familienmitgliedern hilft, mündliche Überlieferungen oder schriftliche Berichte über Repression von Personen zu verarbeiten und zu kontextualisieren, die nicht von zentralen Gedenkprojekten abgedeckt werden. Es könnte Schlüsselthemen, Namen, Daten und Orte aus Rohtext/Audio identifizieren und Verknüpfungen zu bestehenden historischen Aufzeichnungen oder anderen Zeugnissen vorschlagen, ohne sensible persönliche Daten zentral zu speichern. |
@@ -181,7 +197,7 @@ Wörtlich erwähnte Bestands-IDs: [Grab: ezb-register](../src/data/graeber.json)
 
 ### amelie-lab-inversion-inversion-20261001T122442-b701c9-a7d0e8be6a4cf85d
 
-Engine: inversion; Status: received; Ideen: 3.
+Engine: inversion; Status: needs_research; Ideen: 3.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20261001T122442-b701c9-a7d0e8be6a4cf85d.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20261001T122442-b701c9-a7d0e8be6a4cf85d.md)
 
@@ -193,6 +209,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Daten- oder Mandatslücken siehe Karten. Audit: 06-suche/lab-intake-review-20261011.md#batch-08
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C5 | A 'dependency health' scanner for TYPO3 municipal sites that maps the use of third-party extensions and external services (CDNs, tracking), flagging agencies that frequently introduce high-risk or non-compliant dependencies into public sector projects. |
@@ -201,7 +219,7 @@ Wörtlich erwähnte Bestands-IDs: keine.
 
 ### amelie-lab-inversion-inversion-20261001T125634-715072-9fa80b5ab9bef391
 
-Engine: inversion; Status: received; Ideen: 2.
+Engine: inversion; Status: needs_research; Ideen: 2.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20261001T125634-715072-9fa80b5ab9bef391.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20261001T125634-715072-9fa80b5ab9bef391.md)
 
@@ -213,6 +231,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: [Dose: biotoptyp-assistent](../05-dosen/biotoptyp-assistent.md), [Dose: umsetzungsplan-register](../05-dosen/umsetzungsplan-register.md), [Dose: vernichtungs-offenlegungsregister](../05-dosen/vernichtungs-offenlegungsregister.md).
 
+Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Daten- oder Mandatslücken siehe Karten. Audit: 06-suche/lab-intake-review-20261011.md#batch-09
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C5 | Eine Kamera-App, die die Wassergeschwindigkeit und -tiefe an kritischen Stellen (z.B. vor dem Rechen, am Auslass der Fischtreppe) mittels optischer Strömungsanalyse (Optical Flow) misst und direkt auf dem Smartphone eine erste Einschätzung der Einhaltung von Grenzwerten gibt. |
@@ -220,7 +240,7 @@ Wörtlich erwähnte Bestands-IDs: [Dose: biotoptyp-assistent](../05-dosen/biotop
 
 ### amelie-lab-inversion-inversion-20261001T153054-8519a7-14a3fc2144744a9f
 
-Engine: inversion; Status: received; Ideen: 3.
+Engine: inversion; Status: needs_research; Ideen: 3.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20261001T153054-8519a7-14a3fc2144744a9f.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20261001T153054-8519a7-14a3fc2144744a9f.md)
 
@@ -232,6 +252,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: [Grab: scheitholz-trocknungsuhr](../src/data/graeber.json).
 
+Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Daten- oder Mandatslücken siehe Karten. Audit: 06-suche/lab-intake-review-20261011.md#batch-10
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C1 | Ein 'Regionalitäts-Scanner' der landwirtschaftliche Produkte vor Ort auf ihre Eignung für regionale Qualitätssiegel oder Herkunftsnachweise (z.B. geschützte geografische Angabe) prüft und die notwendigen Nachweise digital erfasst. |
@@ -240,7 +262,7 @@ Wörtlich erwähnte Bestands-IDs: [Grab: scheitholz-trocknungsuhr](../src/data/g
 
 ### amelie-lab-inversion-inversion-20261001T161905-4c5547-4e2eb6d9ad4d961e
 
-Engine: inversion; Status: received; Ideen: 1.
+Engine: inversion; Status: needs_research; Ideen: 1.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20261001T161905-4c5547-4e2eb6d9ad4d961e.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20261001T161905-4c5547-4e2eb6d9ad4d961e.md)
 
@@ -252,13 +274,15 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: [Dose: bleifrei-lotse](../05-dosen/bleifrei-lotse.md).
 
+Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Daten- oder Mandatslücken siehe Karten. Audit: 06-suche/lab-intake-review-20261011.md#batch-11
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C4 | Bürger nehmen mit dem Smartphone Geräusche in sensiblen Bereichen auf. Eine Zero-Shot-Audio-Klassifikation auf dem Gerät identifiziert Störgeräusche (z.B. nicht autorisierte Fahrzeuge, Baulärm außerhalb von Zeiten) oder das Vorhandensein geschützter Arten (z.B. spezifische Vogelrufe), die im PEP relevant sind. |
 
 ### amelie-lab-inversion-inversion-20261001T175927-2b8a90-3c5ba5d26bb1744f
 
-Engine: inversion; Status: received; Ideen: 2.
+Engine: inversion; Status: needs_research; Ideen: 2.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20261001T175927-2b8a90-3c5ba5d26bb1744f.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20261001T175927-2b8a90-3c5ba5d26bb1744f.md)
 
@@ -270,6 +294,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Daten- oder Mandatslücken siehe Karten. Audit: 06-suche/lab-intake-review-20261011.md#batch-12
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C1 | QuarkSelfCheck app: Enables small producers to verify compliance with EU dairy safety standards using commodity sensors and AI. |
@@ -277,7 +303,7 @@ Wörtlich erwähnte Bestands-IDs: keine.
 
 ### amelie-lab-inversion-inversion-20261010T090000-jobcenter-8ba695046a370bdd
 
-Engine: inversion; Status: received; Ideen: 1.
+Engine: inversion; Status: needs_research; Ideen: 1.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20261010T090000-jobcenter-8ba695046a370bdd.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20261010T090000-jobcenter-8ba695046a370bdd.md)
 
@@ -289,13 +315,15 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Daten- oder Mandatslücken siehe Karten. Audit: 06-suche/lab-intake-review-20261011.md#batch-13
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | INV-1 | Verwaltungs-Inversion: Trust-First Bürgergeld & Pauschalierte KdU |
 
 ### amelie-lab-inversion-inversion-20261010T161000-jobcenter-80e438f8004763eb
 
-Engine: inversion; Status: received; Ideen: 2.
+Engine: inversion; Status: needs_research; Ideen: 2.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20261010T161000-jobcenter-80e438f8004763eb.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20261010T161000-jobcenter-80e438f8004763eb.md)
 
@@ -307,6 +335,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Daten- oder Mandatslücken siehe Karten. Audit: 06-suche/lab-intake-review-20261011.md#batch-14
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C1 | Reverse-Jobcenter-Plattform: Öffentliche, würdezentrierte Plattform, auf der Unternehmen sich mit tarifkonformen Arbeitsplätzen, flexiblen Arbeitszeiten und Qualifizierungszuschüssen bei erwerbslosen Bürgerinnen und Bürgern bewerben müssen. |
@@ -314,7 +344,7 @@ Wörtlich erwähnte Bestands-IDs: keine.
 
 ### amelie-lab-inversion-inversion-20261010T171000-jobcenter-multiling-2e9fa59b9567484c
 
-Engine: inversion; Status: received; Ideen: 1.
+Engine: inversion; Status: needs_research; Ideen: 1.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20261010T171000-jobcenter-multiling-2e9fa59b9567484c.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20261010T171000-jobcenter-multiling-2e9fa59b9567484c.md)
 
@@ -326,13 +356,15 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Daten- oder Mandatslücken siehe Karten. Audit: 06-suche/lab-intake-review-20261011.md#batch-15
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C1 | CivicBeistand-Netzwerk: Digitale Community-Plattform zur Organisation rechtssicherer Behördenbegleitung (§ 13 Abs. 4 SGB X) mit mobiler Termin-Vorbereitung, GPS-Lotsen-Routing und digitalem Gedächtnisprotokoll. |
 
 ### amelie-lab-lacunar-lacunar-20260929T203438-f693a3-31d72a38da35a809
 
-Engine: lacunar; Status: received; Ideen: 2.
+Engine: lacunar; Status: needs_research; Ideen: 2.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20260929T203438-f693a3-31d72a38da35a809.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20260929T203438-f693a3-31d72a38da35a809.md)
 
@@ -344,6 +376,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Lab-Walnuss N1 ist besetzt; Duell E17 nur Baustein/unklar. Keine Walnuss-Handy-Novelty aus fehlendem Treffer ableiten. Klinische Behauptung des Forschungsreceipts separat ungeprüft; Trainingsdaten und Referenzqualität fehlen. Audit: 06-suche/lab-intake-review-20261011.md#batch-16
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C1 | Eine App, die das Geräusch einer auf eine harte Oberfläche fallenden Walnuss mit dem Mikrofon aufnimmt. Ein KI-Modell, trainiert auf tausende Fallgeräusche, klassifiziert den Kern als 'voll', 'geschrumpft' oder 'leer/schimmlig'. |
@@ -351,7 +385,7 @@ Wörtlich erwähnte Bestands-IDs: keine.
 
 ### amelie-lab-lacunar-lacunar-20260929T210403-8dcdf7-41fdde485a6b268c
 
-Engine: lacunar; Status: received; Ideen: 5.
+Engine: lacunar; Status: needs_research; Ideen: 5.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20260929T210403-8dcdf7-41fdde485a6b268c.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20260929T210403-8dcdf7-41fdde485a6b268c.md)
 
@@ -363,6 +397,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Lab-Survivors E18–E22: Scheibenbild, Wendehaptik, Bruchrisiko unklar, Heritage vorhandenes Grab 15/35, Post-mortem besetzt. Referenzmessungen/Empfänger für Restfunktionen fehlen. Audit: 06-suche/lab-intake-review-20261011.md#batch-17
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C1 | An AI vision system that, using a smartphone camera, analyzes raw potato slices (shape, thickness, starch content approximation via translucency) and suggests optimal oil temperature and cooking time *before* frying. |
@@ -373,7 +409,7 @@ Wörtlich erwähnte Bestands-IDs: keine.
 
 ### amelie-lab-lacunar-lacunar-20260930T064824-38e1d7-4a4e787a2c5489ef
 
-Engine: lacunar; Status: received; Ideen: 5.
+Engine: lacunar; Status: needs_research; Ideen: 5.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20260930T064824-38e1d7-4a4e787a2c5489ef.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20260930T064824-38e1d7-4a4e787a2c5489ef.md)
 
@@ -385,6 +421,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Schmetterlingslauf S1–S5 und Neubewertung B4: Mimikry und Sensorfeld vorhandene Gräber, übrige Behauptungen unklar. UFZ-Primärprotokoll bestätigt feste Sichttransekte; adaptive Schritte sind keine protokolltreue Verbesserung. Eigene Akustik-/Trackingreferenz fehlt. Audit: 06-suche/lab-intake-review-20261011.md#batch-18
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C18 | A system that uses a combination of visual and auditory AI (detecting wingbeats or subtle plant vibrations) to identify 'ghost butterflies' – those likely present but unseen due to camouflage or swift flight. It then visually 'paints' them onto the AR view for the observer, making the unseen visible, mirroring how cuttlefish perceive their environment in ways humans cannot. |
@@ -395,7 +433,7 @@ Wörtlich erwähnte Bestands-IDs: keine.
 
 ### amelie-lab-lacunar-lacunar-20260930T073557-e87ad6-ac13ff67d43128a9
 
-Engine: lacunar; Status: received; Ideen: 3.
+Engine: lacunar; Status: needs_research; Ideen: 3.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20260930T073557-e87ad6-ac13ff67d43128a9.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20260930T073557-e87ad6-ac13ff67d43128a9.md)
 
@@ -407,6 +445,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Daten- oder Mandatslücken siehe Karten. Audit: 06-suche/lab-intake-review-20261011.md#batch-19
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C11 | Schmetterlings-Bewegungsvektor-Analyse im 3D-Raum: Eine App, die aus Videodaten nicht nur die 3D-Position eines Schmetterlings rekonstruiert, sondern auch seinen Bewegungsvektor (Geschwindigkeit, Richtung, Flugmuster) im Raum analysiert. Dies könnte zur Unterscheidung von Arten oder zur Einschätzung der Habitatnutzung dienen, jenseits der reinen Anwesenheit. |
@@ -415,7 +455,7 @@ Wörtlich erwähnte Bestands-IDs: keine.
 
 ### amelie-lab-lacunar-lacunar-20260930T100201-4ab848-e7c0bbedd1bf9494
 
-Engine: lacunar; Status: received; Ideen: 4.
+Engine: lacunar; Status: needs_research; Ideen: 4.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20260930T100201-4ab848-e7c0bbedd1bf9494.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20260930T100201-4ab848-e7c0bbedd1bf9494.md)
 
@@ -427,6 +467,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: [Dose: umsetzungsplan-register](../05-dosen/umsetzungsplan-register.md), [Grab: florascan-invasive-webgpu](../src/data/graeber.json), [Grab: robinien-duftprofil](../src/data/graeber.json).
 
+Verarbeitungsnotiz: Lab-Survivors E23–E26: Austrieb 17/35 und virtuelles Robinien-Spiel 16/35 bleiben Needs Research; Scorecard 18/35 Baustein der Nachsorge-Beweisakte; AR besetzt. LFE-Referenzparameter und Empfänger fehlen. Audit: 06-suche/lab-intake-review-20261011.md#batch-20
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C11 | Ein KI-Modell, das basierend auf Fotos des Umfelds einer Robinie (Bodenbeschaffenheit, Lichteinfall, angrenzende Vegetation) eine individuelle 'Resilienz-Prognose' für den Austrieb nach der Behandlung erstellt und vorschlägt, welche Nachkontrollstrategie an diesem spezifischen Ort am effektivsten wäre. |
@@ -436,7 +478,7 @@ Wörtlich erwähnte Bestands-IDs: [Dose: umsetzungsplan-register](../05-dosen/um
 
 ### amelie-lab-lacunar-lacunar-20260930T100431-797290-b66b1994b0a5d105
 
-Engine: lacunar; Status: received; Ideen: 5.
+Engine: lacunar; Status: needs_research; Ideen: 5.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20260930T100431-797290-b66b1994b0a5d105.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20260930T100431-797290-b66b1994b0a5d105.md)
 
@@ -448,6 +490,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Lab-Survivors E27–E31: Roboter, Sensorfusion, Atlas und Signaturen besetzt; Kontextparser unklar. Datenrechte, behördlicher Bedarf und sicherheitsgeeignete Referenzen fehlen; keine Einsatzfreigabe. Audit: 06-suche/lab-intake-review-20261011.md#batch-21
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C2 | Eine autonome Roboterplattform mit ultra-sensitiver, nicht-invasiver Bodenscan-Technologie (z.B. angepasste Myonen-Tomographie), die die innere Struktur und Materialzusammensetzung vergrabener Objekte als 'digitalen Querschnitt' abbildet, um eine 'Entzifferung' vor jeder physischen Berührung zu ermöglichen. |
@@ -458,7 +502,7 @@ Wörtlich erwähnte Bestands-IDs: keine.
 
 ### amelie-lab-lacunar-lacunar-20260930T113750-f2ef4a-23c0ddef087f2e09
 
-Engine: lacunar; Status: received; Ideen: 5.
+Engine: lacunar; Status: needs_research; Ideen: 5.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20260930T113750-f2ef4a-23c0ddef087f2e09.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20260930T113750-f2ef4a-23c0ddef087f2e09.md)
 
@@ -470,6 +514,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Lab-Survivors E32–E36: Tierübersetzer und Umgebung besetzt; Raumumbau/-teilung gemeinsames vorhandenes Grab 12/35; Musterzone unklar. Offene tierwohlgerechte Referenzprüfung und Empfänger fehlen. Audit: 06-suche/lab-intake-review-20261011.md#batch-22
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C8 | A "species-agnostic communication translator" that processes the raw bio-signals (e.g., shifts in vocalization frequency, subtle changes in posture detected by radar or thermal sensors) of one animal and generates an equivalent, understandable, non-verbal signal (e.g., a specific light pulse, a patterned vibration) that the other species is more naturally attuned to perceive, bridging the communication gap. |
@@ -480,7 +526,7 @@ Wörtlich erwähnte Bestands-IDs: keine.
 
 ### amelie-lab-lacunar-lacunar-20260930T154802-051b08-d9034ba2f2deb6b3
 
-Engine: lacunar; Status: received; Ideen: 1.
+Engine: lacunar; Status: processed; Ideen: 1.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20260930T154802-051b08-d9034ba2f2deb6b3.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20260930T154802-051b08-d9034ba2f2deb6b3.md)
 
@@ -492,13 +538,15 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: [Dose: couleur-sphinx](../05-dosen/couleur-sphinx.md), [Dose: dose-nurse-shift-guardian](../05-dosen/dose-nurse-shift-guardian.md), [Dose: fugenduell-asphalt-arena](../05-dosen/fugenduell-asphalt-arena.md), [Grab: baum-stigmergie](../src/data/graeber.json), [Grab: kirchen-baubegehung](../src/data/graeber.json).
 
+Verarbeitungsnotiz: Lab-Survivors E16: Cuttlefish-Stille-Edits bereits besetzt geprüft; vorhandene SEO-/Editor-Nachbarn, kein neuer Kandidat. Audit: 06-suche/lab-intake-review-20261011.md#batch-23
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C10 | An AI that makes minor, grammatically correct, SEO-friendly, and readability-improving edits to content in the background, continuously and subtly, without requiring explicit human approval for every change, like a cuttlefish's unconscious adaptive changes. |
 
 ### amelie-lab-lacunar-lacunar-20260930T164042-efeb55-41a5ed73c041e692
 
-Engine: lacunar; Status: received; Ideen: 2.
+Engine: lacunar; Status: processed; Ideen: 2.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20260930T164042-efeb55-41a5ed73c041e692.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20260930T164042-efeb55-41a5ed73c041e692.md)
 
@@ -510,6 +558,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Lab-Nachlieferung L3/L4: Chargen-Fußabdruck und Sensorhaut vorhandene Gräber. Keine Duplikate angelegt. Audit: 06-suche/lab-intake-review-20261011.md#batch-24
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C11 | An "environmental chameleon" for timber, where each log or batch carries a unique digital tag that, when scanned, instantly displays its full environmental footprint and compliance status, dynamically updating from a central AI, making the audit process distributed and real-time. |
@@ -517,7 +567,7 @@ Wörtlich erwähnte Bestands-IDs: keine.
 
 ### amelie-lab-lacunar-lacunar-20260930T210642-66f73d-b4454272a612cb2b
 
-Engine: lacunar; Status: received; Ideen: 5.
+Engine: lacunar; Status: processed; Ideen: 5.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20260930T210642-66f73d-b4454272a612cb2b.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20260930T210642-66f73d-b4454272a612cb2b.md)
 
@@ -529,6 +579,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: [Grab: ezb-register](../src/data/graeber.json).
 
+Verarbeitungsnotiz: Lab-Nachlieferung L9–L12: Erinnerungsspuren, Themenpheromone, Emotionskarte und Nachrichtenbrücke reviewed/begraben; letzte 14/35. Keine neue Erinnerungsdose. Audit: 06-suche/lab-intake-review-20261011.md#batch-25
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C1 | Eine App, die 'Erinnerungs-Spuren' an bestimmten geografischen Orten hinterlässt. Diese Spuren sind kurze Audio- oder Textfragmente von Zeitzeugen. Sie 'zerfallen' digital, es sei denn, andere Nutzer besuchen den Ort und 'bestätigen' die Spur durch Zuhören oder eigene Ergänzungen, die sich thematisch verbinden. |
@@ -539,7 +591,7 @@ Wörtlich erwähnte Bestands-IDs: [Grab: ezb-register](../src/data/graeber.json)
 
 ### amelie-lab-lacunar-lacunar-20261001T113429-d8c3d3-c76ecd4324c4c9a3
 
-Engine: lacunar; Status: received; Ideen: 4.
+Engine: lacunar; Status: needs_research; Ideen: 4.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20261001T113429-d8c3d3-c76ecd4324c4c9a3.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20261001T113429-d8c3d3-c76ecd4324c4c9a3.md)
 
@@ -551,6 +603,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: [Dose: agent-postmortem-recorder](../05-dosen/agent-postmortem-recorder.md), [Dose: bugs-spaced-repetition](../05-dosen/bugs-spaced-repetition.md), [Dose: ghost-replay](../05-dosen/ghost-replay.md), [Dose: spec-drift-detector](../05-dosen/spec-drift-detector.md).
 
+Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Daten- oder Mandatslücken siehe Karten. Audit: 06-suche/lab-intake-review-20261011.md#batch-26
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C9 | Ein "Sprachlicher Stil-Anpasser", der einen Künstlertypus (z.B. minimalistisch, expressionistisch, konzeptuell) aus dem Werk extrahiert und dann alle neuen Texteingaben des Künstlers oder der Redaktion automatisch an diesen konsistenten Stil anpasst, um eine einheitliche Markenstimme zu gewährleisten. |
@@ -560,7 +614,7 @@ Wörtlich erwähnte Bestands-IDs: [Dose: agent-postmortem-recorder](../05-dosen/
 
 ### amelie-lab-lacunar-lacunar-20261001T115223-57fb6f-ad0e2ae5312ddcc6
 
-Engine: lacunar; Status: received; Ideen: 3.
+Engine: lacunar; Status: needs_research; Ideen: 3.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20261001T115223-57fb6f-ad0e2ae5312ddcc6.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20261001T115223-57fb6f-ad0e2ae5312ddcc6.md)
 
@@ -572,6 +626,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Daten- oder Mandatslücken siehe Karten. Audit: 06-suche/lab-intake-review-20261011.md#batch-27
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C10 | Narrador de la Tradición Latente: Una IA que, a partir de grabaciones de audio y video del día a día del artesano (conversaciones, sonidos del obrador, manipulación del producto), construye una 'narrativa inmersiva' del método tradicional, identificando los 'rituales invisibles' y el conocimiento tácito que no se capturan en documentos formales, y lo presenta como evidencia viva de la autenticidad para el expediente IGP. |
@@ -580,7 +636,7 @@ Wörtlich erwähnte Bestands-IDs: keine.
 
 ### amelie-lab-lacunar-lacunar-20261001T122442-6750db-d2b538919c7e46fa
 
-Engine: lacunar; Status: received; Ideen: 3.
+Engine: lacunar; Status: needs_research; Ideen: 3.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20261001T122442-6750db-d2b538919c7e46fa.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20261001T122442-6750db-d2b538919c7e46fa.md)
 
@@ -592,6 +648,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: [Dose: feuerkugel-sofortnetz](../05-dosen/feuerkugel-sofortnetz.md), [Dose: lichtplan-check](../05-dosen/lichtplan-check.md).
 
+Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Daten- oder Mandatslücken siehe Karten. Audit: 06-suche/lab-intake-review-20261011.md#batch-28
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C18 | A "Thematic Interconnection Visualizer" for an artist's TYPO3 portfolio. It analyzes all uploaded content (images, texts, tags) and generates an interactive, Llull-wheel-like visualization showing the combinatorial relationships between themes, techniques, and concepts across their entire body of work, offering visitors a dynamic way to explore connections. |
@@ -600,7 +658,7 @@ Wörtlich erwähnte Bestands-IDs: [Dose: feuerkugel-sofortnetz](../05-dosen/feue
 
 ### amelie-lab-lacunar-lacunar-20261001T131947-2b7a3c-ce1879065f99b3fd
 
-Engine: lacunar; Status: received; Ideen: 4.
+Engine: lacunar; Status: needs_research; Ideen: 4.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20261001T131947-2b7a3c-ce1879065f99b3fd.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20261001T131947-2b7a3c-ce1879065f99b3fd.md)
 
@@ -612,6 +670,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: [Dose: biotoptyp-assistent](../05-dosen/biotoptyp-assistent.md), [Dose: umsetzungsplan-register](../05-dosen/umsetzungsplan-register.md), [Dose: vernichtungs-offenlegungsregister](../05-dosen/vernichtungs-offenlegungsregister.md).
 
+Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Daten- oder Mandatslücken siehe Karten. Audit: 06-suche/lab-intake-review-20261011.md#batch-29
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C5 | Eine KI-gestützte Wissensplattform, die historische Wasserbücher, aktuelle WRRL-Leitfäden und lokale Gerichtsurteile miteinander verknüpft und Konsequenzen für spezifische Anlagen prognostiziert. |
@@ -621,7 +681,7 @@ Wörtlich erwähnte Bestands-IDs: [Dose: biotoptyp-assistent](../05-dosen/biotop
 
 ### amelie-lab-lacunar-lacunar-20261001T153054-cca9b8-d12f2f1539032c4f
 
-Engine: lacunar; Status: received; Ideen: 3.
+Engine: lacunar; Status: needs_research; Ideen: 3.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20261001T153054-cca9b8-d12f2f1539032c4f.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20261001T153054-cca9b8-d12f2f1539032c4f.md)
 
@@ -633,6 +693,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: [Grab: scheitholz-trocknungsuhr](../src/data/graeber.json).
 
+Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Daten- oder Mandatslücken siehe Karten. Audit: 06-suche/lab-intake-review-20261011.md#batch-30
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C4 | Ein "Verfalls-Pheromon"-Sensor für saisonale Produkte, der den Reifegrad oder beginnenden Verderb kontinuierlich misst (z.B. über Geruchssignaturen oder Farbanalyse per Kamera) und eine "digitale Verdunstung" simuliert, die den Restwert des Produkts bis zum Verderb visuell darstellt. |
@@ -641,7 +703,7 @@ Wörtlich erwähnte Bestands-IDs: [Grab: scheitholz-trocknungsuhr](../src/data/g
 
 ### amelie-lab-lacunar-lacunar-20261001T161905-5bef5e-99de58c9b665c778
 
-Engine: lacunar; Status: received; Ideen: 5.
+Engine: lacunar; Status: needs_research; Ideen: 5.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20261001T161905-5bef5e-99de58c9b665c778.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20261001T161905-5bef5e-99de58c9b665c778.md)
 
@@ -653,6 +715,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: [Dose: bleifrei-lotse](../05-dosen/bleifrei-lotse.md), [Dose: denkmal-verlaufsblick](../05-dosen/denkmal-verlaufsblick.md).
 
+Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Daten- oder Mandatslücken siehe Karten. Audit: 06-suche/lab-intake-review-20261011.md#batch-31
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C5 | Ein Schwarm kleiner, autonomer Boden- oder Flugroboter, die in einem Schutzgebiet kontinuierlich Daten (z.B. Vegetationshöhe, Bodenfeuchte, Geräuschkulisse) sammeln. Anstatt die Daten an eine zentrale Stelle zu senden, tauschen die Roboter ihre lokalen Beobachtungen untereinander aus und 'lernen' emergent über Muster und Abweichungen im Gebiet. Nur signifikante Abweichungen oder neu entdeckte Muster werden aggregiert und einem menschlichen Ranger gemeldet, reduziert also den Datenstrom. |
@@ -663,7 +727,7 @@ Wörtlich erwähnte Bestands-IDs: [Dose: bleifrei-lotse](../05-dosen/bleifrei-lo
 
 ### amelie-lab-lacunar-lacunar-20261001T163628-ee76cb-96a4d974382afcfc
 
-Engine: lacunar; Status: received; Ideen: 3.
+Engine: lacunar; Status: needs_research; Ideen: 3.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20261001T163628-ee76cb-96a4d974382afcfc.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20261001T163628-ee76cb-96a4d974382afcfc.md)
 
@@ -675,6 +739,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: [Dose: bleifrei-lotse](../05-dosen/bleifrei-lotse.md).
 
+Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Daten- oder Mandatslücken siehe Karten. Audit: 06-suche/lab-intake-review-20261011.md#batch-32
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C7 | An AI system that tracks the unique patterns of a living fish (e.g., scale patterns, fin tears) from underwater video, builds a persistent 3D identity for that specific individual, and monitors its movement or changes over time in a natural habitat, without any physical tagging. |
@@ -683,7 +749,7 @@ Wörtlich erwähnte Bestands-IDs: [Dose: bleifrei-lotse](../05-dosen/bleifrei-lo
 
 ### amelie-lab-lacunar-lacunar-20261001T175927-61a1a9-89416e60fe483256
 
-Engine: lacunar; Status: received; Ideen: 5.
+Engine: lacunar; Status: needs_research; Ideen: 5.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20261001T175927-61a1a9-89416e60fe483256.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20261001T175927-61a1a9-89416e60fe483256.md)
 
@@ -695,6 +761,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Daten- oder Mandatslücken siehe Karten. Audit: 06-suche/lab-intake-review-20261011.md#batch-33
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C10 | Ein 'Mikrotextur-Analysator' für Lebensmittel. Mittels einer Smartphone-Kamera mit einem einfachen aufsteckbaren Makroobjektiv analysiert eine KI die Oberflächen- und interne Mikrotextur von Lebensmitteln (z.B. die Krume von Brot, die Quarkstruktur von Käse, die Porosität von Kuchen). Sie quantifiziert Attribute wie 'Fluffigkeit', 'Grobheit', 'Homogenität' in einer Weise, die mit DLG's 'Konsistenz'-Slot korreliert, und bietet eine semi-objektive, leicht wiederholbare Messung, die für Heimanwender oder kleine Produzenten zugänglich ist. |
@@ -705,7 +773,7 @@ Wörtlich erwähnte Bestands-IDs: keine.
 
 ### amelie-lab-lacunar-lacunar-20261001T181715-593185-2806235a6d79ac87
 
-Engine: lacunar; Status: received; Ideen: 3.
+Engine: lacunar; Status: needs_research; Ideen: 3.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20261001T181715-593185-2806235a6d79ac87.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20261001T181715-593185-2806235a6d79ac87.md)
 
@@ -717,6 +785,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: [Dose: denkmal-verlaufsblick](../05-dosen/denkmal-verlaufsblick.md).
 
+Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Daten- oder Mandatslücken siehe Karten. Audit: 06-suche/lab-intake-review-20261011.md#batch-34
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C8 | Ein 'Baumstamm-Logbuch' als NFT für jede Fischaufstiegsanlage, das manipulationssicher alle Eingriffe, Erfolge und Mängel über Jahrzehnte festhält und so eine unveränderliche Historie des ökologischen Wertes schafft. |
@@ -725,7 +795,7 @@ Wörtlich erwähnte Bestands-IDs: [Dose: denkmal-verlaufsblick](../05-dosen/denk
 
 ### amelie-lab-lacunar-lacunar-20261010T090000-jobcenter-20d0682ac089ff4c
 
-Engine: lacunar; Status: received; Ideen: 2.
+Engine: lacunar; Status: needs_research; Ideen: 2.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20261010T090000-jobcenter-20d0682ac089ff4c.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20261010T090000-jobcenter-20d0682ac089ff4c.md)
 
@@ -737,6 +807,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Daten- oder Mandatslücken siehe Karten. Audit: 06-suche/lab-intake-review-20261011.md#batch-35
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C1 | Job Diagnostic Triage (JDT) & Multidisziplinäre Übergabeboards |
@@ -744,7 +816,7 @@ Wörtlich erwähnte Bestands-IDs: keine.
 
 ### amelie-lab-lacunar-lacunar-20261010T160000-jobcenter-956da357f2dce719
 
-Engine: lacunar; Status: received; Ideen: 2.
+Engine: lacunar; Status: needs_research; Ideen: 2.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20261010T160000-jobcenter-956da357f2dce719.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20261010T160000-jobcenter-956da357f2dce719.md)
 
@@ -756,6 +828,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Daten- oder Mandatslücken siehe Karten. Audit: 06-suche/lab-intake-review-20261011.md#batch-36
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C1 | Vollständige institutionelle Entkopplung der Geldleistung von der Beratung: Trennung in automatisiertes SGB-II-Auszahlungs-Backend und eigenständige, sanktionsfreie Karriere- und Lebenslagenbegleitung nach klinischem Konsil-Muster. |
@@ -763,7 +837,7 @@ Wörtlich erwähnte Bestands-IDs: keine.
 
 ### amelie-lab-lacunar-lacunar-20261010T170000-jobcenter-multilingua-e4d8e0516cfea765
 
-Engine: lacunar; Status: received; Ideen: 1.
+Engine: lacunar; Status: needs_research; Ideen: 1.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20261010T170000-jobcenter-multilingua-e4d8e0516cfea765.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20261010T170000-jobcenter-multilingua-e4d8e0516cfea765.md)
 
@@ -775,13 +849,15 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Daten- oder Mandatslücken siehe Karten. Audit: 06-suche/lab-intake-review-20261011.md#batch-37
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C1 | HandyFoto-KiezBeistand (Multimodaler Foto-Übersetzer mit GPS-Beistand-Dispatch): Smartphone-Kamera scannt Bescheid $ o$ On-Device-Übersetzung in Muttersprache mit Audio-Vorlesefunktion $ o$ GPS-Alarmierung vetted bilingualer Kiez-Beistände nach § 13 Abs. 4 SGB X zur physischen Terminbegleitung. |
 
 ### amelie-lab-mark-mark-20260930T140813-8c17dc-6b3a0db0ad90c4a3
 
-Engine: mark; Status: received; Ideen: 2.
+Engine: mark; Status: archived; Ideen: 2.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20260930T140813-8c17dc-6b3a0db0ad90c4a3.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20260930T140813-8c17dc-6b3a0db0ad90c4a3.md)
 
@@ -793,6 +869,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Kommerzieller Mark-Lauf: Lizenz/Service/Gebühr oder B2B/B2G-Geschäftsmodell statt bedingungsloser CC0-Gabe. Außerhalb main-Mandat archiviert; keine kommerzielle Freigabe und keine Marktprüfung. Jobcenter-Kerne mit Civic-Batches 13–15,35–37,70–71 zusammenführen. Audit: 06-suche/lab-intake-review-20261011.md#batch-38
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | V2 | B2B-Marktplatz für Robinienholz und Fällaufträge |
@@ -800,7 +878,7 @@ Wörtlich erwähnte Bestands-IDs: keine.
 
 ### amelie-lab-mark-mark-20260930T144720-a8c5ef-dcd532f1b46ba665
 
-Engine: mark; Status: received; Ideen: 2.
+Engine: mark; Status: archived; Ideen: 2.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20260930T144720-a8c5ef-dcd532f1b46ba665.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20260930T144720-a8c5ef-dcd532f1b46ba665.md)
 
@@ -812,6 +890,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): partial: 1; supported: 1;
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Kommerzieller Mark-Lauf: Lizenz/Service/Gebühr oder B2B/B2G-Geschäftsmodell statt bedingungsloser CC0-Gabe. Außerhalb main-Mandat archiviert; keine kommerzielle Freigabe und keine Marktprüfung. Jobcenter-Kerne mit Civic-Batches 13–15,35–37,70–71 zusammenführen. Audit: 06-suche/lab-intake-review-20261011.md#batch-39
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | V1 | Pharmacy Acquisition & Sales Intermediation in Spain |
@@ -819,7 +899,7 @@ Wörtlich erwähnte Bestands-IDs: keine.
 
 ### amelie-lab-mark-mark-20260930T160255-20da1f-fe3a4547cf9f4e57
 
-Engine: mark; Status: received; Ideen: 2.
+Engine: mark; Status: archived; Ideen: 2.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20260930T160255-20da1f-fe3a4547cf9f4e57.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20260930T160255-20da1f-fe3a4547cf9f4e57.md)
 
@@ -831,6 +911,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): partial: 1; supported: 1;
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Kommerzieller Mark-Lauf: Lizenz/Service/Gebühr oder B2B/B2G-Geschäftsmodell statt bedingungsloser CC0-Gabe. Außerhalb main-Mandat archiviert; keine kommerzielle Freigabe und keine Marktprüfung. Jobcenter-Kerne mit Civic-Batches 13–15,35–37,70–71 zusammenführen. Audit: 06-suche/lab-intake-review-20261011.md#batch-40
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | V1 | TYPO3 Freelance Development & Consulting |
@@ -838,7 +920,7 @@ Wörtlich erwähnte Bestands-IDs: keine.
 
 ### amelie-lab-mark-mark-20260930T211146-d5b2c7-5e3473d90e116e20
 
-Engine: mark; Status: received; Ideen: 2.
+Engine: mark; Status: archived; Ideen: 2.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20260930T211146-d5b2c7-5e3473d90e116e20.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20260930T211146-d5b2c7-5e3473d90e116e20.md)
 
@@ -850,6 +932,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): supported: 1; unchecked: 
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Kommerzieller Mark-Lauf: Lizenz/Service/Gebühr oder B2B/B2G-Geschäftsmodell statt bedingungsloser CC0-Gabe. Außerhalb main-Mandat archiviert; keine kommerzielle Freigabe und keine Marktprüfung. Jobcenter-Kerne mit Civic-Batches 13–15,35–37,70–71 zusammenführen. Audit: 06-suche/lab-intake-review-20261011.md#batch-41
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | V2 | Bildungsressourcen für Friedenspädagogik und Zeitgeschichte für Familien in Brandenburg |
@@ -857,7 +941,7 @@ Wörtlich erwähnte Bestands-IDs: keine.
 
 ### amelie-lab-mark-mark-20261001T122940-ef7522-f29cb71a0a3f214b
 
-Engine: mark; Status: received; Ideen: 2.
+Engine: mark; Status: archived; Ideen: 2.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20261001T122940-ef7522-f29cb71a0a3f214b.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20261001T122940-ef7522-f29cb71a0a3f214b.md)
 
@@ -869,6 +953,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): partial: 1; supported: 1;
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Kommerzieller Mark-Lauf: Lizenz/Service/Gebühr oder B2B/B2G-Geschäftsmodell statt bedingungsloser CC0-Gabe. Außerhalb main-Mandat archiviert; keine kommerzielle Freigabe und keine Marktprüfung. Jobcenter-Kerne mit Civic-Batches 13–15,35–37,70–71 zusammenführen. Audit: 06-suche/lab-intake-review-20261011.md#batch-42
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | V1 | KI-gestützte Workflow-Automatisierung für TYPO3 als Dienstleistung in Brandenburg |
@@ -876,7 +962,7 @@ Wörtlich erwähnte Bestands-IDs: keine.
 
 ### amelie-lab-mark-mark-20261001T132732-dce381-1878b2cb923b2bc8
 
-Engine: mark; Status: received; Ideen: 1.
+Engine: mark; Status: archived; Ideen: 1.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20261001T132732-dce381-1878b2cb923b2bc8.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20261001T132732-dce381-1878b2cb923b2bc8.md)
 
@@ -888,13 +974,15 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): partial: 1; supported: 1;
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Kommerzieller Mark-Lauf: Lizenz/Service/Gebühr oder B2B/B2G-Geschäftsmodell statt bedingungsloser CC0-Gabe. Außerhalb main-Mandat archiviert; keine kommerzielle Freigabe und keine Marktprüfung. Jobcenter-Kerne mit Civic-Batches 13–15,35–37,70–71 zusammenführen. Audit: 06-suche/lab-intake-review-20261011.md#batch-43
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | V1 | Spezialisierte wasserrechtliche Beratung für Mühlenbesitzer und kleine Wasserwerke |
 
 ### amelie-lab-mark-mark-20261001T135027-76773d-44b2dbc908abbc94
 
-Engine: mark; Status: received; Ideen: 2.
+Engine: mark; Status: archived; Ideen: 2.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20261001T135027-76773d-44b2dbc908abbc94.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20261001T135027-76773d-44b2dbc908abbc94.md)
 
@@ -906,6 +994,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): partial: 1; supported: 1;
 
 Wörtlich erwähnte Bestands-IDs: [Grab: seo-headline-ki-typo3](../src/data/graeber.json).
 
+Verarbeitungsnotiz: Kommerzieller Mark-Lauf: Lizenz/Service/Gebühr oder B2B/B2G-Geschäftsmodell statt bedingungsloser CC0-Gabe. Außerhalb main-Mandat archiviert; keine kommerzielle Freigabe und keine Marktprüfung. Jobcenter-Kerne mit Civic-Batches 13–15,35–37,70–71 zusammenführen. Audit: 06-suche/lab-intake-review-20261011.md#batch-44
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | V1 | TYPO3 Freelance Development & Consulting: KI-Agenten-Orchestrierung |
@@ -913,7 +1003,7 @@ Wörtlich erwähnte Bestands-IDs: [Grab: seo-headline-ki-typo3](../src/data/grae
 
 ### amelie-lab-mark-mark-20261001T140818-da99ad-303c957765a76952
 
-Engine: mark; Status: received; Ideen: 2.
+Engine: mark; Status: archived; Ideen: 2.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20261001T140818-da99ad-303c957765a76952.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20261001T140818-da99ad-303c957765a76952.md)
 
@@ -925,6 +1015,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): supported: 1; unchecked: 
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Kommerzieller Mark-Lauf: Lizenz/Service/Gebühr oder B2B/B2G-Geschäftsmodell statt bedingungsloser CC0-Gabe. Außerhalb main-Mandat archiviert; keine kommerzielle Freigabe und keine Marktprüfung. Jobcenter-Kerne mit Civic-Batches 13–15,35–37,70–71 zusammenführen. Audit: 06-suche/lab-intake-review-20261011.md#batch-45
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | V1 | TYPO3 Freelance Development & Consulting: KI-Agenten-Orchestrierung |
@@ -932,7 +1024,7 @@ Wörtlich erwähnte Bestands-IDs: keine.
 
 ### amelie-lab-mark-mark-20261001T153639-3e31fe-8902e1869423b38d
 
-Engine: mark; Status: received; Ideen: 1.
+Engine: mark; Status: archived; Ideen: 1.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20261001T153639-3e31fe-8902e1869423b38d.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20261001T153639-3e31fe-8902e1869423b38d.md)
 
@@ -944,13 +1036,15 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): supported: 1; unchecked: 
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Kommerzieller Mark-Lauf: Lizenz/Service/Gebühr oder B2B/B2G-Geschäftsmodell statt bedingungsloser CC0-Gabe. Außerhalb main-Mandat archiviert; keine kommerzielle Freigabe und keine Marktprüfung. Jobcenter-Kerne mit Civic-Batches 13–15,35–37,70–71 zusammenführen. Audit: 06-suche/lab-intake-review-20261011.md#batch-46
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | V3 | Optimierungsdienst für Lieferrouten von Abo-Kisten und Hofladen-Lieferungen in der Lausitz |
 
 ### amelie-lab-mark-mark-20261001T162501-405366-590b28ae77dfad34
 
-Engine: mark; Status: received; Ideen: 1.
+Engine: mark; Status: archived; Ideen: 1.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20261001T162501-405366-590b28ae77dfad34.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20261001T162501-405366-590b28ae77dfad34.md)
 
@@ -962,13 +1056,15 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): supported: 1; unchecked: 
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Kommerzieller Mark-Lauf: Lizenz/Service/Gebühr oder B2B/B2G-Geschäftsmodell statt bedingungsloser CC0-Gabe. Außerhalb main-Mandat archiviert; keine kommerzielle Freigabe und keine Marktprüfung. Jobcenter-Kerne mit Civic-Batches 13–15,35–37,70–71 zusammenführen. Audit: 06-suche/lab-intake-review-20261011.md#batch-47
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | V2 | KI-Agent zur Unterstützung von Naturführern |
 
 ### amelie-lab-mark-mark-20261001T180903-80ae1d-1d0872dbe9175541
 
-Engine: mark; Status: received; Ideen: 2.
+Engine: mark; Status: archived; Ideen: 2.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20261001T180903-80ae1d-1d0872dbe9175541.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20261001T180903-80ae1d-1d0872dbe9175541.md)
 
@@ -980,6 +1076,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): partial: 1; supported: 1;
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Kommerzieller Mark-Lauf: Lizenz/Service/Gebühr oder B2B/B2G-Geschäftsmodell statt bedingungsloser CC0-Gabe. Außerhalb main-Mandat archiviert; keine kommerzielle Freigabe und keine Marktprüfung. Jobcenter-Kerne mit Civic-Batches 13–15,35–37,70–71 zusammenführen. Audit: 06-suche/lab-intake-review-20261011.md#batch-48
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | V1 | B2B SaaS für granulare Datenanalyse und -management |
@@ -987,7 +1085,7 @@ Wörtlich erwähnte Bestands-IDs: keine.
 
 ### amelie-lab-mark-mark-20261001T182738-628aa8-7c7d577ac21e1f9d
 
-Engine: mark; Status: received; Ideen: 2.
+Engine: mark; Status: archived; Ideen: 2.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20261001T182738-628aa8-7c7d577ac21e1f9d.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20261001T182738-628aa8-7c7d577ac21e1f9d.md)
 
@@ -999,6 +1097,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): supported: 1; unchecked: 
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Kommerzieller Mark-Lauf: Lizenz/Service/Gebühr oder B2B/B2G-Geschäftsmodell statt bedingungsloser CC0-Gabe. Außerhalb main-Mandat archiviert; keine kommerzielle Freigabe und keine Marktprüfung. Jobcenter-Kerne mit Civic-Batches 13–15,35–37,70–71 zusammenführen. Audit: 06-suche/lab-intake-review-20261011.md#batch-49
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | V1 | Vor-Ort-Monitoring und WRRL-Konformitätsberichte für Fischaufstiegsanlagen |
@@ -1006,7 +1106,7 @@ Wörtlich erwähnte Bestands-IDs: keine.
 
 ### amelie-lab-mark-mark-20261001T190025-d00534-6c215d62365550d1
 
-Engine: mark; Status: received; Ideen: 2.
+Engine: mark; Status: archived; Ideen: 2.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20261001T190025-d00534-6c215d62365550d1.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20261001T190025-d00534-6c215d62365550d1.md)
 
@@ -1018,6 +1118,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): partial: 1; supported: 1;
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Kommerzieller Mark-Lauf: Lizenz/Service/Gebühr oder B2B/B2G-Geschäftsmodell statt bedingungsloser CC0-Gabe. Außerhalb main-Mandat archiviert; keine kommerzielle Freigabe und keine Marktprüfung. Jobcenter-Kerne mit Civic-Batches 13–15,35–37,70–71 zusammenführen. Audit: 06-suche/lab-intake-review-20261011.md#batch-50
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | V1 | Drohnen-gestützte Baumdiagnostik für Kommunen |
@@ -1025,7 +1127,7 @@ Wörtlich erwähnte Bestands-IDs: keine.
 
 ### amelie-lab-mark-mark-20261004T115348-34b56a-2465eb580f52e5ae
 
-Engine: mark; Status: received; Ideen: 2.
+Engine: mark; Status: archived; Ideen: 2.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20261004T115348-34b56a-2465eb580f52e5ae.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20261004T115348-34b56a-2465eb580f52e5ae.md)
 
@@ -1037,6 +1139,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): partial: 1; supported: 1;
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Kommerzieller Mark-Lauf: Lizenz/Service/Gebühr oder B2B/B2G-Geschäftsmodell statt bedingungsloser CC0-Gabe. Außerhalb main-Mandat archiviert; keine kommerzielle Freigabe und keine Marktprüfung. Jobcenter-Kerne mit Civic-Batches 13–15,35–37,70–71 zusammenführen. Audit: 06-suche/lab-intake-review-20261011.md#batch-51
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | V1 | Fällung und stoffliche Verwertung invasiver Robinien in Brandenburg |
@@ -1044,7 +1148,7 @@ Wörtlich erwähnte Bestands-IDs: keine.
 
 ### amelie-lab-mark-mark-20261005T114901-a2aa32-1b3eda7334cd805f
 
-Engine: mark; Status: received; Ideen: 2.
+Engine: mark; Status: archived; Ideen: 2.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20261005T114901-a2aa32-1b3eda7334cd805f.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20261005T114901-a2aa32-1b3eda7334cd805f.md)
 
@@ -1056,6 +1160,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): partial: 1; supported: 1;
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Kommerzieller Mark-Lauf: Lizenz/Service/Gebühr oder B2B/B2G-Geschäftsmodell statt bedingungsloser CC0-Gabe. Außerhalb main-Mandat archiviert; keine kommerzielle Freigabe und keine Marktprüfung. Jobcenter-Kerne mit Civic-Batches 13–15,35–37,70–71 zusammenführen. Audit: 06-suche/lab-intake-review-20261011.md#batch-52
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | V1 | Automatisierter TYPO3-Wartungsservice mit Multi-Agenten-Orchestrierung |
@@ -1063,7 +1169,7 @@ Wörtlich erwähnte Bestands-IDs: keine.
 
 ### amelie-lab-mark-mark-20261010T090000-jobcenter-a186878eb8966ec5
 
-Engine: mark; Status: received; Ideen: 4.
+Engine: mark; Status: archived; Ideen: 4.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20261010T090000-jobcenter-a186878eb8966ec5.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20261010T090000-jobcenter-a186878eb8966ec5.md)
 
@@ -1075,6 +1181,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): verified: 4.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Kommerzieller Mark-Lauf: Lizenz/Service/Gebühr oder B2B/B2G-Geschäftsmodell statt bedingungsloser CC0-Gabe. Außerhalb main-Mandat archiviert; keine kommerzielle Freigabe und keine Marktprüfung. Jobcenter-Kerne mit Civic-Batches 13–15,35–37,70–71 zusammenführen. Audit: 06-suche/lab-intake-review-20261011.md#batch-53
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | V1 | GovTech SGB-II Verwaltungs-Kopilot (Bürokratie-Befreier für Fallmanager) |
@@ -1084,7 +1192,7 @@ Wörtlich erwähnte Bestands-IDs: keine.
 
 ### amelie-lab-mark-mark-20261010T163000-jobcenter-4614587d890f062f
 
-Engine: mark; Status: received; Ideen: 3.
+Engine: mark; Status: archived; Ideen: 3.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20261010T163000-jobcenter-4614587d890f062f.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20261010T163000-jobcenter-4614587d890f062f.md)
 
@@ -1096,6 +1204,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Kommerzieller Mark-Lauf: Lizenz/Service/Gebühr oder B2B/B2G-Geschäftsmodell statt bedingungsloser CC0-Gabe. Außerhalb main-Mandat archiviert; keine kommerzielle Freigabe und keine Marktprüfung. Jobcenter-Kerne mit Civic-Batches 13–15,35–37,70–71 zusammenführen. Audit: 06-suche/lab-intake-review-20261011.md#batch-54
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | V1 | Jobcenter Copilot & SGB II Bureaucracy Decoupler |
@@ -1104,7 +1214,7 @@ Wörtlich erwähnte Bestands-IDs: keine.
 
 ### amelie-lab-mark-mark-20261010T173000-jobcenter-multilingual-fbd79450c086c2fa
 
-Engine: mark; Status: received; Ideen: 3.
+Engine: mark; Status: archived; Ideen: 3.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20261010T173000-jobcenter-multilingual-fbd79450c086c2fa.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20261010T173000-jobcenter-multilingual-fbd79450c086c2fa.md)
 
@@ -1116,6 +1226,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Kommerzieller Mark-Lauf: Lizenz/Service/Gebühr oder B2B/B2G-Geschäftsmodell statt bedingungsloser CC0-Gabe. Außerhalb main-Mandat archiviert; keine kommerzielle Freigabe und keine Marktprüfung. Jobcenter-Kerne mit Civic-Batches 13–15,35–37,70–71 zusammenführen. Audit: 06-suche/lab-intake-review-20261011.md#batch-55
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | V1 | Handylotse SGB II – Smartphone Camera OCR & Plain-Language Audio Translator |
@@ -1124,7 +1236,7 @@ Wörtlich erwähnte Bestands-IDs: keine.
 
 ### amelie-lab-mark-mark-20261010T180000-jobcenter-empowerment-754a3353c57e5a1f
 
-Engine: mark; Status: received; Ideen: 3.
+Engine: mark; Status: archived; Ideen: 3.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20261010T180000-jobcenter-empowerment-754a3353c57e5a1f.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-mark-mark-20261010T180000-jobcenter-empowerment-754a3353c57e5a1f.md)
 
@@ -1136,6 +1248,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): verified: 4.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Kommerzieller Mark-Lauf: Lizenz/Service/Gebühr oder B2B/B2G-Geschäftsmodell statt bedingungsloser CC0-Gabe. Außerhalb main-Mandat archiviert; keine kommerzielle Freigabe und keine Marktprüfung. Jobcenter-Kerne mit Civic-Batches 13–15,35–37,70–71 zusammenführen. Audit: 06-suche/lab-intake-review-20261011.md#batch-56
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | V1 | KdU-Schutzschild – Automatisierter Mietkosten- & Heizungs-Audit (§ 22 SGB II) |
@@ -1144,7 +1258,7 @@ Wörtlich erwähnte Bestands-IDs: keine.
 
 ### amelie-lab-review-altbau-thermal-30a7a326ad0dbe1d
 
-Engine: review; Status: received; Ideen: 0.
+Engine: review; Status: needs_research; Ideen: 0.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-review-altbau-thermal-30a7a326ad0dbe1d.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-review-altbau-thermal-30a7a326ad0dbe1d.md)
 
@@ -1156,11 +1270,13 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: [Dose: altbau-thermal](../05-dosen/altbau-thermal.md).
 
+Verarbeitungsnotiz: Altbau-Thermal: bestehende Dose ist Nachbar, kein neuer Kandidat. 2D-Oberflächen-/Wärmebrückenrechnung belegt keine vollständige Wohnungs- oder Gebäudebewertung. Benötigt konkrete primäre Norm-/Methodenstellen, materialisierte Randbedingungen und unabhängigen Zahlenbenchmark. Kein Score aus Lab-Zitaten übernommen. Audit: 06-suche/lab-intake-review-20261011.md#batch-57
+
 Batch ohne Survivor-Ideen: vollständige Findings, verworfene Ansätze und Historie im Originalbeleg lesen.
 
 ### amelie-lab-review-amelie-review-2026-09-29-001-64ec4dc028bfc7f5
 
-Engine: review; Status: received; Ideen: 0.
+Engine: review; Status: processed; Ideen: 0.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-review-amelie-review-2026-09-29-001-64ec4dc028bfc7f5.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-review-amelie-review-2026-09-29-001-64ec4dc028bfc7f5.md)
 
@@ -1172,11 +1288,13 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: EnEfG-Erstpaket: dieselbe bestehende Dose wie Paket umsetzungsplan-register, aber eigenes Receipt mit zehn Findings erhalten. §9, BAFA und EED primär gelesen. Unternehmensregister als Veröffentlichungsort bestätigt; absolute Kein-Register-Behauptung verworfen. Übrige Lab-Zitate erhalten, aber nicht freigegeben. Zuständigkeit/Datenlücken siehe Dose und Gegenprüfung; keine zweite Dose. Audit: 06-suche/lab-intake-review-20261011.md#batch-58
+
 Batch ohne Survivor-Ideen: vollständige Findings, verworfene Ansätze und Historie im Originalbeleg lesen.
 
 ### amelie-lab-review-amelie-review-jobcenter-better-1a2c176b5d0493ef
 
-Engine: review; Status: received; Ideen: 0.
+Engine: review; Status: needs_research; Ideen: 0.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-review-amelie-review-jobcenter-better-1a2c176b5d0493ef.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-review-amelie-review-jobcenter-better-1a2c176b5d0493ef.md)
 
@@ -1188,11 +1306,13 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): verified: 8.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Jobcenter-Better: internationale Wirkungsquoten und Vergleichbarkeit sind nicht mit publizierter Stichprobe/Zeitraum/Outcome belegt. Primärstudien für Marienthal, Dänemark, PMSMP und SkillsFuture mit Vergleichsgruppe erforderlich; Mark-Zahlungsannahmen nicht als Fakten übernehmen. Audit: 06-suche/lab-intake-review-20261011.md#batch-59
+
 Batch ohne Survivor-Ideen: vollständige Findings, verworfene Ansätze und Historie im Originalbeleg lesen.
 
 ### amelie-lab-review-glasanflug-ampel-af5e7b6ea79522fc
 
-Engine: review; Status: received; Ideen: 0.
+Engine: review; Status: needs_research; Ideen: 0.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-review-glasanflug-ampel-af5e7b6ea79522fc.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-review-glasanflug-ampel-af5e7b6ea79522fc.md)
 
@@ -1203,6 +1323,8 @@ URL-Domains im Originalrecord: abcbirds.org, americanornithology.org, arxiv.org,
 Quote-Status des Produzenten (keine Amélie-Prüfung): fuzzy_match: 4; not_found: 34; unchecked: 17; verified: 15.
 
 Wörtlich erwähnte Bestands-IDs: [Dose: glasanflug-ampel](../05-dosen/glasanflug-ampel.md).
+
+Verarbeitungsnotiz: Glasanflug: fünf verschachtelte Runs bleiben vollständig erhalten, vorhandene Dose/Markierungs-Nachweisabgleich sind Nachbarn. Quote-Checks enthalten fuzzy/not_found; kein pauschales Refereed. Benötigt WUA-Tabellenrechte, konkrete getestete Produkte/Geltungsbereiche und unabhängigen Bild-/Reflexionsbenchmark. Historischen Dose-Score nicht ändern. Audit: 06-suche/lab-intake-review-20261011.md#batch-60
 
 Batch ohne Survivor-Ideen: vollständige Findings, verworfene Ansätze und Historie im Originalbeleg lesen.
 
@@ -1220,13 +1342,13 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
-Verarbeitungsnotiz: Quellenprüfung 11.10.2026: angegebene IAB- und Tacheles-URLs nicht abrufbar; Zahlen <4%, 35–45%, >80% und >50% sowie Originalzitate nicht bestätigt. Gelesene alternative IAB-Primärseite https://iab-forum.de/das-iab-projekt-psychisch-kranke-im-sgb-ii-situation-und-betreuung/ beschreibt qualitative Fallstudien und belegt diese Wirkungszahlen nicht. Vor Übernahme genaue Originalpublikationen, Stichproben und Fundstellen für jede Zahl/Zitat nachweisen; aktuelles Recht und bestehende Beratungsangebote separat prüfen. Keine Existenzurteile oder Scores vergeben.
+Verarbeitungsnotiz: Bestehendes Needs-Research Jobcenter-Empowerment: §16a ist Kann-Leistung bei erforderlicher Integration, §22 bedingt Unterkunftsanerkennung; keine pauschalen Ansprüche ableiten. Geöffnete IAB-Seite ist qualitative Studie und belegt <4%, 35–45%, 600.000, >80% oder >50% nicht. Originalstudie, Seitenstelle, Jahr, Nenner und Population je Zahl erforderlich. Zugangsfehler beweist keine Nichtexistenz. PR187 überlappt KdU; nicht parallel packen. Audit: 06-suche/lab-intake-review-20261011.md#batch-61
 
 Batch ohne Survivor-Ideen: vollständige Findings, verworfene Ansätze und Historie im Originalbeleg lesen.
 
 ### amelie-lab-review-jobcenter-multilingual-a85c219090592d42
 
-Engine: review; Status: received; Ideen: 0.
+Engine: review; Status: needs_research; Ideen: 0.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-review-jobcenter-multilingual-a85c219090592d42.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-review-jobcenter-multilingual-a85c219090592d42.md)
 
@@ -1238,11 +1360,13 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Jobcenter-Multilingual: §13(4) bestätigt Beistand, Abs.5/6 begrenzen; keine garantierte rechtswirksame Begleitung. 95%-Smartphonebasis, 25 Sprachen, Spar-/Erfolgswerte benötigen Primärstatistik und Referenzbriefe. Vorhandenes jobcenter.guru überlappt Foto/Erklärung/Audio; GPS-Angebot benötigt reale Begleitstruktur. Audit: 06-suche/lab-intake-review-20261011.md#batch-62
+
 Batch ohne Survivor-Ideen: vollständige Findings, verworfene Ansätze und Historie im Originalbeleg lesen.
 
 ### amelie-lab-review-jobcenter-reform-6ad32c1496dfe83d
 
-Engine: review; Status: received; Ideen: 0.
+Engine: review; Status: needs_research; Ideen: 0.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-review-jobcenter-reform-6ad32c1496dfe83d.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-review-jobcenter-reform-6ad32c1496dfe83d.md)
 
@@ -1254,11 +1378,13 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Jobcenter-Reform: eigenes Acht-Findings-Paket trotz inhaltlicher Wiederholung erhalten. Länderquoten nicht durch Normtext bestätigt; Transfer auf SGB II benötigt primäre Wirkungsstudien und rechtlich zulässigen Pilotauftrag. Vollständige Entkopplung ist institutionelle Reform, keine vorhandene Softwarebefugnis. Audit: 06-suche/lab-intake-review-20261011.md#batch-63
+
 Batch ohne Survivor-Ideen: vollständige Findings, verworfene Ansätze und Historie im Originalbeleg lesen.
 
 ### amelie-lab-review-peanuts-0a28ab7bb98f18e1
 
-Engine: review; Status: received; Ideen: 0.
+Engine: review; Status: needs_research; Ideen: 0.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-review-peanuts-0a28ab7bb98f18e1.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-review-peanuts-0a28ab7bb98f18e1.md)
 
@@ -1270,11 +1396,13 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): fuzzy_match: 1; not_found
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Peanuts: drei verschachtelte Runs erhalten; Prävention, Diagnostik und Therapie strikt getrennt. NIAID-Leitlinie im Suchergebnis, PDF-Abruf nicht erfolgreich: kein gelesener Primärvolltext und keine Freigabe. Zulassungs-/Erfolgsbehauptungen und Datensatzlizenzen primär mit konkreter Population/Endpunkt prüfen; keine individuelle medizinische Empfehlung. Audit: 06-suche/lab-intake-review-20261011.md#batch-64
+
 Batch ohne Survivor-Ideen: vollständige Findings, verworfene Ansätze und Historie im Originalbeleg lesen.
 
 ### amelie-lab-review-umsetzungsplan-register-2251d190445809eb
 
-Engine: review; Status: needs_research; Ideen: 0.
+Engine: review; Status: processed; Ideen: 0.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-review-umsetzungsplan-register-2251d190445809eb.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-review-umsetzungsplan-register-2251d190445809eb.md)
 
@@ -1286,13 +1414,13 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): not_found: 1; unchecked: 
 
 Wörtlich erwähnte Bestands-IDs: [Dose: umsetzungsplan-register](../05-dosen/umsetzungsplan-register.md).
 
-Verarbeitungsnotiz: Bestandsabgleich 11.10.2026: bib find findet bereits Dose 05-dosen/umsetzungsplan-register.md und bestehendes Prüfprotokoll; als Nachprüfung behandeln, keine neue Dose anlegen. F1/F2 stammen aus kommerziellem Kommentar zu einem Gesetzentwurf, F7 quote_status=not_found; Blind Review nennt fehlende Primärbelege. Nächster Schritt: geltenden §9 EnEfG und aktuellen BAFA-Leitfaden direkt lesen, Entwurf/Fassung trennen, bestehendes Dossier gegen konkrete Änderungen prüfen und Registersuche belegen. Lab-Quote-Status ist keine Amélie-Freigabe; bisheriges Urteil bleibt unverändert.
+Verarbeitungsnotiz: Bestehendes Needs-Research umsetzungsplan-register aufgelöst als belegte Dosenkorrektur: aktueller §9 (>2,5 GWh, drei Jahre, Drittbestätigung) vs Entwurf BT21/8027; BAFA 16.09.2026 mit identischem SHA256, fünf Felder und Unternehmensregister-/Website-Publikation. EED Art11(2) mit eigenem Personenkreis und Ausnahmen. Suchfehlen ist kein Beweis der Abwesenheit eines Aggregators. Restlücken Archiv-Snapshots, alte Merkblattfassung und Statuszuordnung bleiben im Ticket; keine neue Freigabe historischer Novelty. Audit: 06-suche/lab-intake-review-20261011.md#batch-65
 
 Batch ohne Survivor-Ideen: vollständige Findings, verworfene Ansätze und Historie im Originalbeleg lesen.
 
 ### amelie-lab-review-walnuesse-ab1a53c76c39062c
 
-Engine: review; Status: received; Ideen: 0.
+Engine: review; Status: needs_research; Ideen: 0.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-review-walnuesse-ab1a53c76c39062c.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-review-walnuesse-ab1a53c76c39062c.md)
 
@@ -1304,11 +1432,13 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): verified: 1.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Walnüsse: ein Finding ist kein Vollreview. Klinischer 55%-Zusammenhang benötigt Originalfallserie und Definition; kein Beweis für lebensmitteltechnischen Handy-Klopftest. Bestandsprüfung N1/E17 erbt besetzt/unklar, kein positiver Score aus Labor-/Industriesortierung. Audit: 06-suche/lab-intake-review-20261011.md#batch-66
+
 Batch ohne Survivor-Ideen: vollständige Findings, verworfene Ansätze und Historie im Originalbeleg lesen.
 
 ### amelie-lab-review-wet-ink-9b2f62a97993714d
 
-Engine: review; Status: received; Ideen: 0.
+Engine: review; Status: needs_research; Ideen: 0.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-review-wet-ink-9b2f62a97993714d.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-review-wet-ink-9b2f62a97993714d.md)
 
@@ -1320,11 +1450,13 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: [Dose: wet-ink](../05-dosen/wet-ink.md).
 
+Verarbeitungsnotiz: Wet Ink: zwei verschachtelte Runs erhalten; tatsächliches Inkwash-Repository als Primärartefakt gelesen (WebGL2, wet bleed/dry, MIT), keine Ausführung oder Quellcodebenchmark. Nackte github.io-Verweise reichen nicht zur Abgrenzung. Benötigt konkrete Code-/Commitstellen und verblindeten Vergleich Kapillarität/Anisotropie/Epsilon; keine Neubewertung der vorhandenen Dose ohne diesen Test. Audit: 06-suche/lab-intake-review-20261011.md#batch-67
+
 Batch ohne Survivor-Ideen: vollständige Findings, verworfene Ansätze und Historie im Originalbeleg lesen.
 
 ### amelie-lab-scarcity-scarcity-20261001T184500-53b5b9-994d11b7dda9a29a
 
-Engine: scarcity; Status: received; Ideen: 2.
+Engine: scarcity; Status: needs_research; Ideen: 2.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-scarcity-scarcity-20261001T184500-53b5b9-994d11b7dda9a29a.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-scarcity-scarcity-20261001T184500-53b5b9-994d11b7dda9a29a.md)
 
@@ -1336,6 +1468,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Daten- oder Mandatslücken siehe Karten. Audit: 06-suche/lab-intake-review-20261011.md#batch-68
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C1 | Ein KI-gestütztes System zur Baumdiagnose, das durch Smartphone-Fotos und GPS-Daten die Baumgesundheit automatisch bewertet. |
@@ -1343,7 +1477,7 @@ Wörtlich erwähnte Bestands-IDs: keine.
 
 ### amelie-lab-scarcity-scarcity-20261001T193028-62ed20-a75d44b2e7743e0c
 
-Engine: scarcity; Status: received; Ideen: 2.
+Engine: scarcity; Status: needs_research; Ideen: 2.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-scarcity-scarcity-20261001T193028-62ed20-a75d44b2e7743e0c.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-scarcity-scarcity-20261001T193028-62ed20-a75d44b2e7743e0c.md)
 
@@ -1355,6 +1489,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Daten- oder Mandatslücken siehe Karten. Audit: 06-suche/lab-intake-review-20261011.md#batch-69
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C1 | Ein autonomes System zur Überwachung der Fischdurchgängigkeit mittels KI-gestützter Unterwasserkameras, das kontinuierlich Daten sammelt und analysiert. |
@@ -1362,7 +1498,7 @@ Wörtlich erwähnte Bestands-IDs: keine.
 
 ### amelie-lab-scarcity-scarcity-20261010T162000-jobcenter-28c4901745e136ac
 
-Engine: scarcity; Status: received; Ideen: 2.
+Engine: scarcity; Status: needs_research; Ideen: 2.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-scarcity-scarcity-20261010T162000-jobcenter-28c4901745e136ac.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-scarcity-scarcity-20261010T162000-jobcenter-28c4901745e136ac.md)
 
@@ -1374,6 +1510,8 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
+Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Daten- oder Mandatslücken siehe Karten. Audit: 06-suche/lab-intake-review-20261011.md#batch-70
+
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C1 | Verwaltungsfreier Berater-Copilot für Jobcenter: Sprachgestütztes Ambient-Assistenzsystem, das Beratungsgespräche mit Einverständnis strukturiert, Kooperationspläne vorschlägt und den Dokumentationsaufwand von 45 auf 2 Minuten pro Fall senkt. |
@@ -1381,7 +1519,7 @@ Wörtlich erwähnte Bestands-IDs: keine.
 
 ### amelie-lab-scarcity-scarcity-20261010T172000-jobcenter-multilingu-774f0ff97dee828a
 
-Engine: scarcity; Status: received; Ideen: 2.
+Engine: scarcity; Status: needs_research; Ideen: 2.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-scarcity-scarcity-20261010T172000-jobcenter-multilingu-774f0ff97dee828a.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-scarcity-scarcity-20261010T172000-jobcenter-multilingu-774f0ff97dee828a.md)
 
@@ -1392,6 +1530,8 @@ URL-Domains im Originalrecord: www.ggua-projekt.de. Vertex-Redirect-URLs: 0.
 Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
+
+Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Daten- oder Mandatslücken siehe Karten. Audit: 06-suche/lab-intake-review-20261011.md#batch-71
 
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |

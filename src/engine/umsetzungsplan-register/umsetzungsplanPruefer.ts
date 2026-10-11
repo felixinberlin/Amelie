@@ -47,7 +47,7 @@ import {
 // Fassungen und Vokabular
 // ---------------------------------------------------------------------------
 
-/** `a. F.` = § 9 EnEfG vor der Novelle, `n. F.` = nach der Novelle (BT-Drs. 21/8027). */
+/** `a. F.` = geprüfte geltende Fassung; `n. F.` erst nach belegter Verkündung, nicht für BT-Drs. 21/8027 als Entwurf. */
 export type Rechtsstand = 'a. F.' | 'n. F.';
 export const RECHTSSTAENDE: readonly Rechtsstand[] = ['a. F.', 'n. F.'] as const;
 

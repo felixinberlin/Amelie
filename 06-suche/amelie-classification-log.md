@@ -1401,3 +1401,75 @@ Ground Truth ist belastbarer, aber nicht automatisch höhere Neuheit: ESPR Art. 
 ## EuroBirdCast — Re-Review 08.10.2026
 
 Explizite Wiederaufnahme durch Félix, mit geänderter Forschungsfrage. V1–V7: **2/3/3/4/4/3/3 = 22/35**, V8 = 3 (discovery). Unter dem Gate von 24/35; **kein Dose Ready**. `build_first` dokumentiert den Nutzerauftrag und den vorhandenen Kern, keine validierte Markt- oder Bedarfslücke. Neuartigkeit schwach (Aloft, BIRDSAFE); lokale Validierung und Empfängerbedarf fehlen. Alte 30/35 sind historisch und werden nicht übernommen. Kill: vorhandener identischer Export oder negative Partnerbewertung; kein erneutes Nachfassen beim BfN.
+
+
+## Shared Lab intake — Reviewer/Packer 11.10.2026
+
+[72 vollständige Batchkarten einschließlich Bestandszuordnung, Primärquellen, Civic-SWOT, Tech-Tree-Tests und Packerentscheid](lab-intake-review-20261011.md). 159 Ideen: Mark wird außerhalb des CC0-Mandats archiviert, frühere Reviews werden nicht dupliziert. Frische Vorschläge einzeln nach Acht-Vektoren-Rubrik reviewed; alle Needs Research. V2 ist Fitness, Fun kompensiert nie. Scores beziehen sich auf den vorgelegten Leistungsanspruch, nicht auf einen erfundenen validierten Datensatz. Kein Dose Ready, keine neue Dose oder Grab; umsetzungsplan-register primärbelegt korrigiert, 25/35 + V8=1 unverändert.
+
+| Karte | Idee | V1 | V2 | V3 | V4 | V5 | V6 | V7 | V8 | Kern /35 | Gesamt /40 | Ergebnis |
+|---|---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|---|
+| 08/C5 | Dependency-Health TYPO3 | 2 | 3 | 2 | 3 | 2 | 3 | 2 | 1 | 17 | 18 | Needs Research |
+| 08/C2 | TYPO3 Patchgeschwindigkeit | 2 | 2 | 2 | 3 | 2 | 3 | 1 | 1 | 15 | 16 | Needs Research |
+| 08/C11 | Public-Code-Verifier | 2 | 4 | 3 | 3 | 3 | 3 | 2 | 1 | 20 | 21 | Needs Research |
+| 09/C5 | Optical-Flow Wassergeschwindigkeit und Tiefe | 3 | 4 | 2 | 4 | 2 | 3 | 1 | 3 | 19 | 22 | Needs Research |
+| 09/C6 | Fischereiordnungs-Checkliste | 2 | 5 | 3 | 4 | 3 | 3 | 2 | 2 | 22 | 24 | Needs Research |
+| 10/C1 | Regionalitäts-Scanner | 2 | 4 | 2 | 3 | 2 | 3 | 1 | 2 | 17 | 19 | Needs Research |
+| 10/C3 | Qualitäts-Nachweis-Assistent | 2 | 5 | 3 | 3 | 3 | 3 | 2 | 2 | 21 | 23 | Needs Research |
+| 10/C5 | AbsLE-Förderantrags-Prechecker | 2 | 5 | 3 | 2 | 3 | 3 | 1 | 1 | 19 | 20 | Needs Research |
+| 11/C4 | Zero-Shot Schutzgebiets-Audioklassifikation | 2 | 4 | 2 | 3 | 2 | 3 | 1 | 3 | 17 | 20 | Needs Research |
+| 12/C1 | QuarkSelfCheck | 2 | 4 | 2 | 4 | 2 | 3 | 1 | 2 | 18 | 20 | Needs Research |
+| 12/C3 | QuarkHygieneGuide | 2 | 5 | 3 | 4 | 3 | 3 | 2 | 2 | 22 | 24 | Needs Research |
+| 13/INV-1 | Trust-First und pauschalierte KdU | 2 | 1 | 2 | 3 | 2 | 2 | 1 | 1 | 13 | 14 | Needs Research |
+| 14/C1 | Reverse-Jobcenter-Plattform | 2 | 1 | 3 | 3 | 2 | 3 | 1 | 2 | 15 | 17 | Needs Research |
+| 14/C2 | BürgerRechte-Copilot | 1 | 4 | 2 | 4 | 2 | 3 | 2 | 1 | 18 | 19 | Needs Research |
+| 15/C1 | CivicBeistand-Netzwerk | 2 | 1 | 3 | 4 | 2 | 3 | 2 | 2 | 17 | 19 | Needs Research |
+| 19/C11 | 3D-Flugvektor-Artbestimmung | 3 | 4 | 2 | 3 | 2 | 3 | 1 | 3 | 18 | 21 | Needs Research |
+| 19/C3 | 3D-Versteckpotential-Karte | 2 | 4 | 2 | 3 | 2 | 3 | 1 | 3 | 17 | 20 | Needs Research |
+| 19/C2 | Habitat-Reflexions-Mapping | 3 | 4 | 2 | 3 | 2 | 3 | 1 | 3 | 18 | 21 | Needs Research |
+| 26/C9 | Künstlerischer Stil-Anpasser | 2 | 4 | 3 | 3 | 2 | 3 | 2 | 3 | 19 | 22 | Needs Research |
+| 26/C6 | Kuratorische Archivassistenz | 2 | 3 | 3 | 3 | 3 | 3 | 1 | 3 | 18 | 21 | Needs Research |
+| 26/C12 | Material-Historie-KI | 3 | 4 | 2 | 3 | 2 | 3 | 1 | 3 | 18 | 21 | Needs Research |
+| 26/C1 | Werk-Gedächtnis-Agent | 2 | 2 | 3 | 3 | 2 | 3 | 1 | 3 | 16 | 19 | Needs Research |
+| 27/C10 | Narrador de la Tradición Latente | 3 | 4 | 2 | 3 | 3 | 3 | 1 | 3 | 19 | 22 | Needs Research |
+| 27/C1 | Cultivo de Conformidad Digital | 2 | 2 | 2 | 4 | 2 | 3 | 1 | 2 | 16 | 18 | Needs Research |
+| 27/C5 | Semáforo de Vitalidad de Proceso | 2 | 4 | 2 | 4 | 2 | 3 | 1 | 3 | 18 | 21 | Needs Research |
+| 28/C18 | Thematic Interconnection Visualizer | 2 | 4 | 3 | 3 | 3 | 3 | 1 | 4 | 19 | 23 | Needs Research |
+| 28/C3 | Ephemeral Work Archiver | 3 | 3 | 2 | 3 | 3 | 3 | 1 | 3 | 18 | 21 | Needs Research |
+| 28/C1 | Conceptual Mixer TYPO3 | 2 | 4 | 3 | 3 | 2 | 3 | 2 | 3 | 19 | 22 | Needs Research |
+| 29/C5 | Wasserrechts-Konsequenzplattform | 2 | 2 | 2 | 4 | 2 | 3 | 2 | 1 | 17 | 18 | Needs Research |
+| 29/C9 | Kollaborativer Wasserrechtsabgleich | 2 | 1 | 3 | 4 | 2 | 3 | 2 | 2 | 17 | 19 | Needs Research |
+| 29/C1 | Wasserbuch-Formulierungsanomalien | 3 | 4 | 3 | 4 | 3 | 3 | 2 | 2 | 22 | 24 | Needs Research |
+| 29/C3 | Wasserrechts-OCR-Scanner | 2 | 4 | 3 | 4 | 3 | 3 | 2 | 2 | 21 | 23 | Needs Research |
+| 30/C4 | Verfalls-Pheromon-Sensor | 2 | 2 | 2 | 3 | 2 | 3 | 1 | 3 | 15 | 18 | Needs Research |
+| 30/C1 | WLAN-Kunden-Heatmap | 1 | 2 | 3 | 3 | 1 | 3 | 1 | 2 | 14 | 16 | Needs Research |
+| 30/C9 | Hofladen-Überbestandsnetz | 2 | 1 | 3 | 3 | 3 | 3 | 1 | 2 | 16 | 18 | Needs Research |
+| 31/C5 | Schutzgebiets-Roboterschwarm | 2 | 1 | 2 | 3 | 2 | 2 | 1 | 3 | 13 | 16 | Needs Research |
+| 31/C11 | Digitales Moos Sensormesh | 2 | 1 | 2 | 3 | 2 | 2 | 1 | 3 | 13 | 16 | Needs Research |
+| 31/C2 | Verteilte Schutzgebiets-Audioanomalien | 2 | 2 | 3 | 3 | 2 | 3 | 1 | 3 | 16 | 19 | Needs Research |
+| 31/C4 | Ephemere AR-Feldmarkierungen | 2 | 4 | 3 | 3 | 3 | 3 | 1 | 3 | 19 | 22 | Needs Research |
+| 31/C3 | Kartierer-Abweichungsplattform | 3 | 3 | 3 | 3 | 3 | 3 | 1 | 3 | 19 | 22 | Needs Research |
+| 32/C7 | Fisch-3D-Reidentifikation | 3 | 4 | 2 | 3 | 3 | 3 | 1 | 3 | 19 | 22 | Needs Research |
+| 32/C11 | Fischstress aus 3D-Pose | 3 | 4 | 2 | 3 | 2 | 3 | 1 | 3 | 18 | 21 | Needs Research |
+| 32/C5 | Catch-and-Release Virtual Tag | 2 | 4 | 2 | 3 | 2 | 3 | 1 | 3 | 17 | 20 | Needs Research |
+| 33/C10 | Mikrotextur-Sensorik | 3 | 4 | 2 | 3 | 3 | 3 | 1 | 3 | 19 | 22 | Needs Research |
+| 33/C12 | Koch-Klanglandschaft | 3 | 4 | 2 | 3 | 3 | 3 | 1 | 3 | 19 | 22 | Needs Research |
+| 33/C1 | Fermentations-Fotoripeness | 2 | 4 | 2 | 3 | 2 | 3 | 1 | 3 | 17 | 20 | Needs Research |
+| 33/C2 | Gaumen-Trainer-KI | 2 | 4 | 3 | 3 | 3 | 3 | 1 | 4 | 19 | 23 | Needs Research |
+| 33/C3 | Dynamischer Maillard-Guide | 2 | 4 | 2 | 3 | 2 | 3 | 1 | 3 | 17 | 20 | Needs Research |
+| 34/C8 | NFT-Fischpass-Logbuch | 1 | 2 | 3 | 4 | 2 | 3 | 1 | 2 | 16 | 18 | Needs Research |
+| 34/C12 | Predictive Fischpass Maintenance | 3 | 3 | 2 | 4 | 3 | 3 | 1 | 2 | 19 | 21 | Needs Research |
+| 34/C2 | Fischzähl-Wartungsuhr | 2 | 2 | 2 | 4 | 2 | 3 | 1 | 3 | 16 | 19 | Needs Research |
+| 35/C1 | Job Diagnostic Triage | 2 | 1 | 2 | 3 | 2 | 2 | 1 | 1 | 13 | 14 | Needs Research |
+| 35/C2 | Kompetenz-Biomarker Mikrovoucher | 2 | 2 | 2 | 3 | 2 | 3 | 1 | 2 | 15 | 17 | Needs Research |
+| 36/C1 | Leistung-Beratung Entkopplung | 2 | 1 | 2 | 3 | 2 | 2 | 1 | 1 | 13 | 14 | Needs Research |
+| 36/C3 | Asynchroner Lebenslagen-Pass | 2 | 2 | 2 | 3 | 2 | 3 | 1 | 2 | 15 | 17 | Needs Research |
+| 37/C1 | HandyFoto-KiezBeistand | 2 | 1 | 2 | 4 | 2 | 3 | 2 | 2 | 16 | 18 | Needs Research |
+| 68/C1 | Baumgesundheit Foto-KI | 1 | 4 | 2 | 3 | 2 | 3 | 1 | 2 | 16 | 18 | Needs Research |
+| 68/C3 | Baumkontroll-Priorisierung | 2 | 4 | 3 | 3 | 3 | 3 | 1 | 2 | 19 | 21 | Needs Research |
+| 69/C1 | KI-Unterwasserkamera-Durchgängigkeit | 2 | 2 | 3 | 4 | 3 | 3 | 1 | 3 | 18 | 21 | Needs Research |
+| 69/C2 | Citizen Fischwanderungs-Meldung | 2 | 3 | 3 | 4 | 3 | 3 | 1 | 3 | 19 | 22 | Needs Research |
+| 70/C1 | Ambient Jobcenter-Berater-Copilot | 2 | 2 | 3 | 3 | 2 | 3 | 1 | 1 | 16 | 17 | Needs Research |
+| 70/C2 | Once-Only SGB-II Register-Gateway | 2 | 1 | 2 | 4 | 2 | 3 | 1 | 1 | 15 | 16 | Needs Research |
+| 71/C1 | HandyFoto Amtssprach-Konverter | 1 | 4 | 3 | 4 | 2 | 3 | 2 | 2 | 19 | 21 | Needs Research |
+| 71/C2 | Kiez-Beistand-Radar | 2 | 1 | 3 | 4 | 2 | 3 | 2 | 2 | 17 | 19 | Needs Research |

@@ -32,3 +32,7 @@ A PR created with the default workflow token may not trigger ordinary PR workflo
 - Amélie: manually triggered workflow that validates and opens/resumes the PR. Automatic discovery follows only after the manual path is proven.
 
 No model run is required for transfer. No Vertex calls, existence judgments, scoring, Packer operations or email delivery belong in this workflow.
+
+## Review-session feedback
+
+See [lessons and wishes from the completed 72-batch intake disposition](lab-transfer-next-round.md). These improve evidence and reconciliation inputs; they do not authorize automatic Lab verdicts or replace the immutable receipt contract.
