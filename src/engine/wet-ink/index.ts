@@ -11,3 +11,4 @@ export * from './scenarios';
 export * from './audio';
 export * from './svgExport';
 export * from './color-science';
+export * from './chromatography';
