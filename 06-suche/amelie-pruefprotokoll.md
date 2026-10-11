@@ -1195,3 +1195,33 @@ Intake 72 Batches/159 Ideen: Bestandszuordnung und alle Research-/Null-Survivor-
 | L71-C1 | **HandyFoto Amtssprach-Konverter** (`lab-review-20261011-71-c1`) | [method: scarcity] | `unklar` | amelie-lab-scarcity-scarcity-20261010T172000-jobcenter-multilingu-774f0ff97dee828a/C1; Reviewer V1–V8 1,4,3,4,2,3,2,2, Kern 19/35. jobcenter.guru bewirbt Fotobrief, Erklärung und mehrsprachiges Audio. 25 Sprachen, 95% Smartphone und 100% Datenschutz sind unbelegte Zusätze. Test: offline Referenzbriefe auf Fristen und Fehler je Sprache; generischen Kern nicht neu packen. Vollkarte: 06-suche/lab-intake-review-20261011.md#batch-71. | [Seite] | 11.10.2026 | 04/2027 |
 | L71-C2 | **Kiez-Beistand-Radar** (`lab-review-20261011-71-c2`) | [method: scarcity] | `unklar` | amelie-lab-scarcity-scarcity-20261010T172000-jobcenter-multilingu-774f0ff97dee828a/C2; Reviewer V1–V8 2,1,3,4,2,3,2,2, Kern 17/35. Selber Kern wie CivicBeistand und Mark-KiezBegleiter. §13 bestätigt Beistand mit Einschränkungen, nicht Einsatzbereitschaft. Test: reale Begleitorganisation mit Rollen, Erreichbarkeit, Eignungsprüfung und datensparsamem Ablauf. Vollkarte: 06-suche/lab-intake-review-20261011.md#batch-71. | [Seite] | 11.10.2026 | 04/2027 |
 | 64 | **Umsetzungsplan-Register — Primärquellen-Nachprüfung** (`umsetzungsplan-register`) | [method: review] | `verengt` | Bestehende Dose, keine Neupackung: §9 EnEfG aktuell >2,5 GWh/drei Jahre/Drittbestätigung; BAFA 16.09.2026 SHA256 bestätigt fünf Felder und Unternehmensregister/Website als Publikationsorte. BT21/8027 ist Entwurf. EED eigener Personenkreis/Ausnahmen; Abwesenheit Aggregator nicht bewiesen. DE/EN/Frontend/Schema korrigiert, Vektoren unverändert25/35 V8=1. Audit: 06-suche/lab-intake-review-20261011.md#batch-65; Archiv-Snapshots/Altfassung/Statuszuordnung offen. | [Seite] | 11.10.2026 | 04/2027 |
+
+---
+
+## Runde 17 / Wasser-Hitze-Zeitraffer — 01.10.2026
+
+Einzelidee aus Typ-B-Quelle mitforschen.org (PR #185).
+
+| # | Idee | Methode | Urteil (Merge → nach Review) | Beleg (kurz) | Evidenz | Geprüft | Prüfen ab |
+|---|---|---|---|---|---|---|---|
+| N1 | **Wasser-Hitze-Zeitraffer** (`wasser-hitze-zeitraffer`) — Automatische Überlagerung von Bürgerfotos mit offenen DWD-Dürredaten zur Erstellung von auswertbaren Zeitreihen für die Verwaltung | [method: ideenrunde] | `verengt` | Typ-B-Quelle mitforschen.org / changing-natures.org sammelt qualitative Bürgerfotos zu Wasser/Dürre, überlagert diese aber nicht automatisch mit DWD-Daten. Projekt urban-tree-watering-radar nutzt DWD, aber ohne Foto-Zeitraffer. Atlas 'Longitudinalbeobachtung derselben Einzelpflanze' ist mit GrowApp dicht. Restlücke: DWD-Datenanreicherung von Bürgerfotos speziell für Dürre/Gewässer und Verwaltungs-Policies (SenUVK). | [Seite] | 11.10.2026 | 03/2027 |
+
+---
+
+## Nachprüfung PR #188 / Elektroschrott — 11.10.2026
+
+Nachprüfung des Jules-Laufs PR #188 (Elektroschrott-Demontage-Lotse, ursprünglich voreilig frei auf Schnipselbasis).
+
+| # | Idee | Methode | Urteil (Merge → nach Review) | Beleg (kurz) | Evidenz | Geprüft | Prüfen ab |
+|---|---|---|---|---|---|---|---|
+| N1 | **Elektroschrott-Demontage-Lotse** (`elektroschrott-demontage-lotse`) — KI-Kamera erkennt auf Platinen werthaltige Bauteile vor dem Schreddern. | [method: ideenrunde] | `besetzt` | Projekt iDEAR des Fraunhofer IFF und Fraunhofer IWKS erforschen und betreiben bereits automatisierte KI-Kamera-Befundung und Roboter-Demontage von Leiterplatten. Repair-Cafés haben kein Mandat und keine Prozesstiefe für Edelmetall-Demontage. Voreiliges frei abgewiesen, Grab elektroschrott-demontage-lotse angelegt. | [Seite] | 11.10.2026 | 10/2027 |
+
+---
+
+## HinSchG & Verpackungs-Runde — 29.09.2026
+
+Thema aus der Offenlegungs-Runde: Muster Offenlegungspflicht ohne Register auf Hinweisgeberschutz (HinSchG) und Verpackung (PPWR) übertragen. 9 Ideen, 8 Gräber, 1 Needs Research (PR #189).
+
+| # | Idee | Methode | Urteil (Merge → nach Review) | Beleg (kurz) | Evidenz | Geprüft | Prüfen ab |
+|---|---|---|---|---|---|---|---|
+| N1 | **Hinweisgeber-Triage-Stratigrafie** (`hinweisgeber-triage-stratigrafie`) — Lokales On-Device-Tool für Meldestellen, das eingehende Meldungen in Dringlichkeit und Stichhaltigkeit sortiert (NLP). | [method: bisoziation] | `verengt` | Kommerzielle Hinweisgebersysteme (BKMS, Hinweisgebersystem24) bieten Fallmanagement, sind aber teuer (SaaS). Lokale Triage für klamme Kommunen bleibt Lücke. Machbarkeit On-Device NLP für hochsensible Meldungen offen (Needs Research 19/35). | [Schnipsel] | 11.10.2026 | 03/2027 |

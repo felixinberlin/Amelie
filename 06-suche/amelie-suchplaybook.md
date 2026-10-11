@@ -759,3 +759,16 @@ das offene Register gegenüber der vorgesehenen Kommissionskonsolidierung bietet
 Bestehende Forschung zuerst wiederverwenden: ein fehlgeschlagener Rohdaten-Pilot ist kein Beleg gegen eine Datenfamilie. Unabhängige Methoden- und Datenprüfung fanden eine Variablenverwechslung (Geschwindigkeits-Gap versus Dichte), fehlende biologische Schwellenprüfung und echte Fünfminutenscans statt vermeintlicher Versionen. QC pro Zielgröße definieren; unbekannte Vogeldiskriminierung weder als Null noch als sichere Vogeldichte ausgeben. Prepared benchmark mit publiziertem Preprocessing ist die nächste Stufe vor eigener kontinentaler Pipeline. Kontakte anhand konkreter Daten-/Validierungsfragen wählen; sechs Namen sind kein Outreach-Erfolg. Keine neue Dose erzwingen, bestehende Bewertung nicht aufblasen, Gegenbefunde erhalten.
 
 **Startpunkt für weitere EuroBirdCast-Runden:** [Lehren und überprüfbare nächste Schritte](eurobirdcast-next-rounds.md). Zuerst das vorhandene beobachtungsbasierte Frontend nutzen; pro Runde einen begrenzten Nutzen liefern. Variablenspezifische QC, reale Scan-Zeitstempel, Nacht-/Fehlwertmasken und historische-versus-operative Information sind Pflichtprüfungen. Bestehende Forschung wiederverwenden, auch wenn die Neuheit gering ist. Stand nach Main-Integration:760 Vitest +23 Python +15 Browser bestanden; keine Zustellung.
+
+### Retro: GitHub PR-Triage & Jules-Läufe — 11.10.2026
+
+- **Erledigt:** Vier offene Jules-PRs (#185, #187, #188, #189) unabhängig über Idea Reviewer und Bibliothekar auditiert.
+  1. **PR #185 (`wasser-hitze-zeitraffer`):** Urteil `verengt` bestätigt (23/35, Needs Research). Ins Prüfprotokoll übernommen.
+  2. **PR #187 (Jobcenter-Cluster):** Voreilige `frei`-Urteile abgewiesen; bereits im Shared Lab Intake 11.10. als `needs_research` konsolidiert.
+  3. **PR #188 (`elektroschrott-demontage-lotse`):** `frei` abgewiesen; besetzt durch Fraunhofer IFF Projekt iDEAR und Fraunhofer IWKS. Als 149. Grab beerdigt und im Prüfprotokoll erfasst.
+  4. **PR #189 (HinSchG & Verpackung):** Alle 8 Kills sauber in `src/data/graeber.json` eingepflegt (148 Gräber); 1 Needs Research (`hinweisgeber-triage-stratigrafie`, 19/35) im Prüfprotokoll dokumentiert.
+- **Gelernt:**
+  1. **Automatische Agentenläufe:** Externe Jules-Runs vergeben häufig `frei` auf bloßen Suchschnipseln. Schnipsel genügen nie für `frei`; die Pflicht zur Primärquellenprüfung und der Advocatus-Diaboli-Gegenprüfung bleibt absolut.
+  2. **Architektur-Drift verhindern:** PRs dürfen Gräber nicht direkt in `src/data/dosen.ts` patchen. `src/data/graeber.json` via `npm run bib -- grab add` ist die kanonische Quelle der Wahrheit.
+- **Nächstes Mal:** PRs zeitnah nach Erstellung prüfen, damit Git-Mergebarkeit erhalten bleibt und keine Drift gegen `main` entsteht.
+

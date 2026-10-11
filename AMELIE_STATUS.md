@@ -1,11 +1,11 @@
 # Amélie Status
 
-Generated: 2026-10-11T11:27:57.299Z
+Generated: 2026-10-11T14:30:53.474Z
 
 ## System
 
 * Dosen: 45
-* Gräber: 140
+* Gräber: 149
 * Demos: 12
 * Books: 43
 * Research entries: 36
@@ -24,30 +24,25 @@ Generated: 2026-10-11T11:27:57.299Z
 |---|---:|
 | beim-empfaenger | 29 |
 | duplikat | 2 |
-| gebaut | 68 |
+| gebaut | 74 |
 | mode | 8 |
-| praemisse | 15 |
+| praemisse | 18 |
 | reality-check | 18 |
 
 ## Validation
 
 | Check | Status |
 |---|---|
-| check:dosen | FAIL |
-| check:books | FAIL |
-| check:idea-frontmatter | FAIL |
-| check:protokoll | FAIL |
-| check:friedhof | FAIL |
+| check:dosen | PASS |
+| check:books | PASS |
+| check:idea-frontmatter | PASS |
+| check:protokoll | PASS |
+| check:friedhof | PASS |
 
 ## Findings
 
 ### Errors
 
-* **[CHECK-FAIL-books]** Validation check "check:books" failed: spawnSync /bin/sh EPERM
-* **[CHECK-FAIL-dosen]** Validation check "check:dosen" failed: spawnSync /bin/sh EPERM
-* **[CHECK-FAIL-friedhof]** Validation check "check:friedhof" failed: spawnSync /bin/sh EPERM
-* **[CHECK-FAIL-ideaFrontmatter]** Validation check "check:idea-frontmatter" failed: spawnSync /bin/sh EPERM
-* **[CHECK-FAIL-protokoll]** Validation check "check:protokoll" failed: spawnSync /bin/sh EPERM
 * **[MD-BROKEN-LINK-vernichtungs-offenlegungsregister-../../07-demos/vernichtungs-offenlegungsregister/data/README.md]** Markdown file 05-dosen/vernichtungs-offenlegungsregister.md contains broken link to "../../07-demos/vernichtungs-offenlegungsregister/data/README.md". (05-dosen/vernichtungs-offenlegungsregister.md)
 * **[MD-BROKEN-LINK-vernichtungs-offenlegungsregister-../../07-demos/vernichtungs-offenlegungsregister/normtext-abgleich-2026-10-08.md]** Markdown file 05-dosen/vernichtungs-offenlegungsregister.md contains broken link to "../../07-demos/vernichtungs-offenlegungsregister/normtext-abgleich-2026-10-08.md". (05-dosen/vernichtungs-offenlegungsregister.md)
 * **[MD-BROKEN-LINK-vernichtungs-offenlegungsregister-../../07-demos/vernichtungs-offenlegungsregister/ticket-02-normtext-und-realfixture.md]** Markdown file 05-dosen/vernichtungs-offenlegungsregister.md contains broken link to "../../07-demos/vernichtungs-offenlegungsregister/ticket-02-normtext-und-realfixture.md". (05-dosen/vernichtungs-offenlegungsregister.md)
@@ -59,8 +54,8 @@ Generated: 2026-10-11T11:27:57.299Z
 * **[DEMO-UNLINKED-europe-bird-migration]** Demo folder "07-demos/europe-bird-migration" does not correspond to any active Dose or Grave ID. (07-demos/europe-bird-migration)
 * **[DRIFT-AGENTS.md-Dosen-44]** AGENTS.md claims 44 Dosen, but deterministic source scanner finds 45. (AGENTS.md)
 * **[DRIFT-AGENTS.md-Dosen-6]** AGENTS.md claims 6 Dosen, but deterministic source scanner finds 45. (AGENTS.md)
-* **[DRIFT-AGENTS.md-Gräber-58]** AGENTS.md claims 58 Gräber, but deterministic source scanner finds 140. (AGENTS.md)
-* **[DRIFT-AGENTS.md-Gräber-9]** AGENTS.md claims 9 Gräber, but deterministic source scanner finds 140. (AGENTS.md)
+* **[DRIFT-AGENTS.md-Gräber-58]** AGENTS.md claims 58 Gräber, but deterministic source scanner finds 149. (AGENTS.md)
+* **[DRIFT-AGENTS.md-Gräber-9]** AGENTS.md claims 9 Gräber, but deterministic source scanner finds 149. (AGENTS.md)
 * **[DRIFT-en/README.md-Dosen-15]** en/README.md claims 15 Dosen, but deterministic source scanner finds 45. (en/README.md)
 * **[DRIFT-README.de.md-Dosen-15]** README.de.md claims 15 Dosen, but deterministic source scanner finds 45. (README.de.md)
 * **[DRIFT-README.md-Dosen-15]** README.md claims 15 Dosen, but deterministic source scanner finds 45. (README.md)
@@ -72,5 +67,5 @@ None.
 ## Generated from
 
 * Audit version: 1
-* Commit: unknown
-* Branch: unknown
+* Commit: fa4dafae
+* Branch: main
