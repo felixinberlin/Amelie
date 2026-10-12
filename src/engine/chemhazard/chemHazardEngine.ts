@@ -42,7 +42,7 @@ export interface ProductRecord {
   chemicalGroups: ChemicalGroup[];
   hazardStatements: string[];
   casNumbers?: string[];
-  ph?: { min?: number; max?: number };
+  ph?: { min?: number; max?: number; concentrationPercent?: number };
   hazardsConfirmed: boolean;
   completenessReviewed: boolean;
   currentVersionChecked: boolean;

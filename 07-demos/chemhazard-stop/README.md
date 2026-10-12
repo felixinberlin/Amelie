@@ -6,7 +6,6 @@
 ---
 
 
-Kataloghärtung 12.10.2026: GISCODE dient nur der Anzeige. GTINs sind kanonisch 14-stellig; GTIN/UFI müssen genau einen Datensatz treffen, jede GTIN-Zuordnung braucht einen belegten Bestätigungsstatus. hazardsConfirmed, completenessReviewed und currentVersionChecked sind getrennt und benötigen datierte Review-Metadaten mit Grundlage. Belegte STOP-Regeln laufen vor Vollständigkeits-/Aktualitätsprüfungen; unbekannte Identität bleibt UNVERIFIED. Grau setzt alle drei Prüfungen voraus und ist niemals eine Freigabe. Keine erkannte Gefahrengruppe bedeutet unknown, nicht neutral. 20 quellenbelegte Produkte plus zwei synthetische Beispiele bleiben erhalten; 51 GTIN-Zuordnungen, davon 50 aus bestehenden Herstellerbelegen übernommen und Dan Klorix unbestätigt. Alle 22 Vollständigkeits- und Aktualitätsprüfungen bleiben mangels dokumentierter Reviews ausstehend, insbesondere die drei Händlerkopien und Mellerud. Leere H-Satzlisten bedeuten nicht dokumentiert, keine dokumentierte Abwesenheit. Tests belegen Software-Invarianten, keine chemische Sicherheitsfreigabe.
 
 ## 1. Problem & Lücke
 
@@ -56,10 +55,11 @@ Jeder belegte Eintrag in `data/products.json` stammt aus einem Dokument des Hers
 
 | Quelle | Produkte | Was sie liefert |
 |---|---|---|
-| Kiehl, Produktseiten und SDB (`kiehl-group.com`) | 12 | SDB, UFI, GISCODE und **alle EAN je Gebindegröße** |
+| Kiehl, Produktseiten und SDB (`kiehl-group.com`) | 12 | SDB-Hashes und veröffentlichte EAN erneut geprüft |
 | Buzil, SDB über das Download-Formular der Produktseite | 3 | SDB, UFI, GISCODE; keine EAN veröffentlicht |
-| DR.SCHNELL, SDB-Download und Hersteller-Shop | 1 | SDB; EAN je Gebinde veröffentlicht, vier MILIZID-EAN separat als noch ungeprüfte Recherche |
-| Diversey (Domestos Professional), CP GABA (Dan Klorix), Meffert (Salmiakgeist) | 3 | SDB des Herstellers, abgerufen als Kopie bei einem Händler |
+| DR.SCHNELL, SDB-Download und Hersteller-Shop | 22 | Deutsche SDB und veröffentlichte EAN-Zuordnungen geprüft |
+| Diversey (Domestos Professional), CP GABA (Dan Klorix) | 2 | Historische Händlerkopien; aktueller Stand offen |
+| Meffert (Salmiakgeist 9,5 %) | 1 | Hersteller-SDB von 2025, Materialnummer und UFI geprüft |
 | Mellerud, Datenblatt über Inhaltsstoffe (Detergenzien-VO Anhang VII D) | 1 | nur INCI-Namen; H-Sätze und pH fehlen |
 
 Regeln für neue Einträge:
@@ -75,13 +75,19 @@ Regeln für neue Einträge:
 
 **QR-Codes:** In den öffentlichen Unterlagen der Hersteller (SDB, Produktinformation, Betriebsanweisung, Produktbild) ist kein QR-Code enthalten; was auf dem Gebinde gedruckt ist, lässt sich nur am Gebinde auslesen. Die Engine versteht bereits den GS1 Digital Link (`https://id.gs1.org/01/<GTIN>`), den ein GS1-QR-Code trägt, und den UFI vom Etikett.
 
-**Offen:** Die drei Händlerkopien durch Fassungen direkt vom Hersteller ersetzen (Dan Klorix ist von 2020); EAN für Buzil, Domestos und Salmiakgeist am Gebinde erfassen; veröffentlichte DR.SCHNELL-EAN je Gebinde/SDB gegenprüfen; H-Sätze für Mellerud vom Etikett nachtragen.
+**Offen:** Die verbleibenden zwei Händlerkopien durch abrufbare Fassungen direkt vom Hersteller ersetzen (Dan Klorix ist von 2020); EAN für Buzil, Domestos und Salmiakgeist am Gebinde erfassen; veröffentlichte DR.SCHNELL-EAN je Gebinde/SDB gegenprüfen; H-Sätze für Mellerud vom Etikett nachtragen.
 
 ---
 
-## 3b. Weitere Produktidentitäten (Recherche, keine Laufzeitdaten)
+## 3b. Quellenprüfung und aktueller Bestand
 
-Die [Recherche vom 12.10.2026](product-research-2026-10-12.md) dokumentiert 13 zusätzliche DR.SCHNELL-Produkte mit 22 Hersteller-EAN sowie vier EAN für das bestehende MILIZID. Der separate Bestand `data/product-candidates.json` enthält keine geprüften Gefahrendaten und wird nicht vom Simulator eingelesen. Alle SDB- und Gebindezuordnungen sind noch zu prüfen. Zwei EAN leerer ECOLUTION-Sprühflaschen sind ausdrücklich vom Produktimport ausgeschlossen.
+Die [Quellenprüfung vom 12.10.2026](product-review-2026-10-12.md) erweitert den Bestand auf **41 reale Produkte plus zwei synthetische Beispiele**, mit **92 GTINs (91 bestätigte Zuordnungen)**. 21 zusätzliche DR.SCHNELL-Produkte sind über Hersteller-SDB und Hersteller-EAN belegt. Mefferts Hersteller-SDB von 2025 ersetzt die alte Händlerkopie. Aktueller Quellenstand ist für 36 Produkte dokumentiert; chemische Vollständigkeit bleibt überall ausstehend. Fünf neue Produkte bleiben in der Gruppe `unknown`.
+
+Die Messkonzentration des pH steht in `ph.concentrationPercent`. Bei DESIFOR-QUICK und ECOLUTION FOROL STICKS gilt sie für 1%ige Lösungen; daraus wird keine pH-Gruppe des Konzentrats abgeleitet. `data/source-review-2026-10-12.json` protokolliert Quellen, Hashes und offene Punkte. `source-audit-manifest.json` und `scripts/chemhazard-source-audit.mjs` erlauben einen erneuten Abruf, ohne Produktdaten automatisch zu ändern.
+
+## Erste Identitätsrecherche (historischer Stand vor der Quellenprüfung)
+
+Die [Recherche vom 12.10.2026](product-research-2026-10-12.md) dokumentiert 13 zusätzliche DR.SCHNELL-Produkte mit 22 Hersteller-EAN sowie vier EAN für das bestehende MILIZID. Der separate Recherchebestand `data/product-candidates.json` enthält nun den Quellenprüfstatus und verweist auf die übernommenen Laufzeitprodukte. Er wird nicht vom Simulator eingelesen. Chemische Vollständigkeit und physischer Gebindeabgleich bleiben offen. Zwei EAN leerer ECOLUTION-Sprühflaschen sind ausdrücklich vom Produktimport ausgeschlossen.
 
 ## 4. Repository-Struktur
 
@@ -93,8 +99,8 @@ Die [Recherche vom 12.10.2026](product-research-2026-10-12.md) dokumentiert 13 z
 │   ├── product.schema.json             # JSON-Schema für Reinigungsmittel
 │   └── rule.schema.json                # JSON-Schema für Inkompatibilitätsregeln
 └── data/
-    ├── products.json                   # 20 belegte Referenzprodukte + 2 erfundene UNVERIFIED-Beispiele
-    ├── barcodes/<gtin>.svg             # EAN-13-Strichcode je GTIN (erzeugt, 51 Dateien + Übersicht README.md)
+    ├── products.json                   # 41 belegte Produkte + 2 erfundene UNVERIFIED-Beispiele
+    ├── barcodes/<gtin>.svg             # EAN-13-Strichcode je GTIN (erzeugt, 92 Dateien + Übersicht README.md)
     └── rules.json                      # Inkompatibilitäts-Matrix (Säure+Chlor, etc.)
 ```
 

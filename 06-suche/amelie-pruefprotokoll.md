@@ -9,6 +9,12 @@ Ergänzt `05-dosen/_entsorgt.md`: dort steht die Begründung für gepackte, dann
 
 ---
 
+## Quellenprüfung ChemGefahr-Stopp — 12.10.2026 (method: engine-build)
+
+| Idee / Änderung | Urteil | Beleg (kurz) | Prüfen ab |
+|---|---|---|---|
+| **ChemGefahr-Stopp: Hersteller-SDB geprüft, 21 Produkte ergänzt** (`dose-cleaner-chemical-safety`) | **`verengt`** (unverändert) | Alle 41 realen Produktquellen bzw. Abrufversuche protokolliert: zwölf Kiehl-Hashes reproduziert; 21 zusätzliche DR.SCHNELL-Produkte und vier MILIZID-EAN aus Hersteller-SDB/Shop übernommen. Meffert: Hersteller-SDB 28.01.2025 ersetzt Händlerkopie. Bestand: 41 reale Produkte + zwei synthetische Beispiele; 92 GTINs, 91 bestätigt; 36 aktuelle Quellenstände dokumentiert; 0 chemische Vollständigkeitsreviews. Fünf neue Gruppen unknown, keine Neutralitätsannahme. pH-Messkonzentration erhalten (zwei SDB mit 1% Lösung). Buzil-PDF-Abruf, Domestos-Aktualität, Dan-Klorix-Zuordnung und vollständiges Mellerud-SDB bleiben offen. Belege/Quellenmeldung: `07-demos/chemhazard-stop/product-review-2026-10-12.md`. | 03/2027 |
+
 ## Produktidentitäts-Recherche ChemGefahr-Stopp — 12.10.2026 (method: engine-build)
 
 | Idee / Änderung | Urteil | Beleg (kurz) | Prüfen ab |

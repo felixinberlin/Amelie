@@ -104,6 +104,7 @@ export function deriveChemicalGroups({ casNumbers = [], hazardStatements = [], p
   const stm = new Set(hazardStatements);
   const groups = [];
   const reasons = {};
+  const phAppliesToProduct = ph?.concentrationPercent === undefined || ph.concentrationPercent === 100;
   const add = (g, why) => {
     if (!groups.includes(g)) groups.push(g);
     (reasons[g] ||= []).push(why);
@@ -111,8 +112,8 @@ export function deriveChemicalGroups({ casNumbers = [], hazardStatements = [], p
   for (const [group, rule] of Object.entries(GROUP_RULES)) {
     for (const c of rule.cas || []) if (cas.has(c)) add(group, `CAS ${c}`);
     for (const s of rule.statements || []) if (stm.has(s)) add(group, s);
-    if (rule.phMax !== undefined && ph && typeof ph.max === 'number' && ph.max <= rule.phMax) add(group, `pH ≤ ${rule.phMax}`);
-    if (rule.phMin !== undefined && ph && typeof ph.min === 'number' && ph.min >= rule.phMin) add(group, `pH ≥ ${rule.phMin}`);
+    if (rule.phMax !== undefined && phAppliesToProduct && ph && typeof ph.max === 'number' && ph.max <= rule.phMax) add(group, `pH ≤ ${rule.phMax}`);
+    if (rule.phMin !== undefined && phAppliesToProduct && ph && typeof ph.min === 'number' && ph.min >= rule.phMin) add(group, `pH ≥ ${rule.phMin}`);
   }
   if (groups.includes('hypochlorite') || groups.includes('peroxide') || ['H271', 'H272'].some((s) => stm.has(s))) {
     add('oxidizer', groups.includes('hypochlorite') ? 'Aktivchlor' : groups.includes('peroxide') ? 'Peroxid' : 'H271/H272');
@@ -177,6 +178,9 @@ export function parseSdsText(text) {
     else if (/^[<≤]/.test(first)) ph = { max: a };
     else if (/^[>≥]/.test(first)) ph = { min: a };
     else ph = { min: a, max: a };
+    const concentration = line.match(/(?:Lösung|solution)\s*:\s*(\d{1,3}(?:[.,]\d+)?)\s*(?:%|Gew\.-%)/i);
+    if (concentration && num(concentration[1]) <= 100) ph.concentrationPercent = num(concentration[1]);
+    else if (/\b(?:Konzentrat|Pur)\b/i.test(line)) ph.concentrationPercent = 100;
     break;
   }
 

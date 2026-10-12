@@ -4,6 +4,7 @@ on:
     paths:
       - '07-demos/chemhazard-stop/data/source-audit-manifest.json'
       - 'scripts/chemhazard-source-audit.mjs'
+      - 'scripts/chemhazard-sds.mjs'
       - '.github/workflows/chemhazard-source-audit.yml'
   workflow_dispatch:
 permissions:
@@ -19,6 +20,10 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
+      - run: npm run export:data
+      - run: npm run check:chemhazard
+      - run: npm run chemhazard:barcodes
+      - run: git diff --exit-code -- 07-demos/chemhazard-stop/data/barcodes
       - run: sudo apt-get update && sudo apt-get install -y poppler-utils
       - run: node scripts/chemhazard-source-audit.mjs "$RUNNER_TEMP/chemhazard-review.json"
       - uses: actions/upload-artifact@v4

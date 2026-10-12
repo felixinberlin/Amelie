@@ -91,7 +91,7 @@ describe('ChemHazard Stop / MischStop Rule Engine', () => {
       }
     });
 
-    it('never lets any verified acid + hypochlorite pair through (0 % false negatives)', () => {
+    it('warns for every sourced acid + hypochlorite pair in this catalogue', () => {
       const acids = products.filter((p) => p.hazardsConfirmed && p.chemicalGroups.includes('acid'));
       const bleaches = products.filter((p) => p.hazardsConfirmed && p.chemicalGroups.includes('hypochlorite'));
       expect(acids.length).toBeGreaterThanOrEqual(5);
@@ -246,9 +246,9 @@ describe('ChemHazard seed data guard', () => {
   });
 
   it('counts what the README and roadmap claim', () => {
-    expect(products.filter((p) => p.hazardsConfirmed).length).toBe(20);
-    expect(products.filter((p) => p.sourceType === 'sds').length).toBe(19);
-    expect(products.flatMap((p) => p.gtins ?? []).length).toBe(51);
+    expect(products.filter((p) => p.hazardsConfirmed).length).toBe(41);
+    expect(products.filter((p) => p.sourceType === 'sds').length).toBe(40);
+    expect(products.flatMap((p) => p.gtins ?? []).length).toBe(92);
   });
 
   // Counter-probes: the guard must reject deliberately wrong input.
@@ -342,7 +342,7 @@ describe('EAN-13 barcode modules', () => {
   it('keeps one current SVG per catalog GTIN in data/barcodes, encoded like the engine does', () => {
     const dir = '07-demos/chemhazard-stop/data/barcodes';
     const want = barcodeFiles(products) as Record<string, string>;
-    expect(Object.keys(want)).toHaveLength(51);
+    expect(Object.keys(want)).toHaveLength(92);
     for (const [name, svg] of Object.entries(want)) {
       expect(existsSync(`${dir}/${name}`), name).toBe(true);
       expect(readFileSync(`${dir}/${name}`, 'utf8')).toBe(svg);
@@ -412,5 +412,58 @@ describe('Catalogue hardening regressions', () => {
       expect(ab.isClearance).toBe(false);
       expect(ab.color).not.toBe('green');
     }
+  });
+});
+
+describe('Manufacturer SDS review and expanded product coverage', () => {
+  it('identifies new manufacturer codes without conflating MILIZID variants', () => {
+    expect(lookupProductByIdentifier('4008439001045', products)?.id).toBe('dr-schnell-milizid');
+    expect(lookupProductByIdentifier('4008439009928', products)?.id).toBe('dr-schnell-milizid-eco');
+    expect(lookupProductByIdentifier('4008439001069', products)?.id).toBe('dr-schnell-milizid-kalkreiniger');
+    expect(evaluatePairByIdentifiers('4008439044103', '4031255046754', products, rules).state).toBe('STOP');
+    expect(evaluatePairByIdentifiers('4008439006156', '4031255046754', products, rules).state).toBe('STOP');
+    expect(byId('dr-schnell-perocid').chemicalGroups).toContain('acid');
+    expect(byId('dr-schnell-perocid').chemicalGroups).not.toContain('peroxide');
+  });
+
+  it('keeps source review distinct from completeness for every added product', () => {
+    const expanded = products.filter((p) => p.id.startsWith('dr-schnell-'));
+    expect(expanded).toHaveLength(22);
+    expect(expanded.every((p) => p.currentVersionChecked && !p.completenessReviewed)).toBe(true);
+    expect(evaluatePairByIdentifiers('4008439205931', '4008439036283', products, rules).state).toBe('UNVERIFIED');
+    for (const id of ['dr-schnell-onemue-2000', 'dr-schnell-easy-quick-n', 'dr-schnell-ecolution-forol-sticks', 'dr-schnell-desifor-one', 'dr-schnell-desifor-plexifee']) {
+      expect(byId(id).chemicalGroups).toContain('unknown');
+    }
+  });
+
+  it('distinguishes documented absence of H/EUH statements from missing evidence', () => {
+    expect(byId('dr-schnell-easy-quick-n').hazardStatementsEvidence).toBe('documented_absence');
+    expect(byId('dr-schnell-desifor-plexifee').hazardStatementsEvidence).toBe('documented_absence');
+    expect(byId('mellerud-schimmel-vernichter').hazardStatementsEvidence).toBe('undocumented');
+  });
+
+  it('uses the newer Meffert manufacturer sheet while retaining unresolved retailer sources', () => {
+    const p = byId('meffert-salmiakgeist-9-5');
+    expect(p.provenance.sourceHost).toBe('manufacturer');
+    expect(p.provenance.revisionDate).toBe('2025-01-28');
+    expect(p.ufi).toBe('3A84-40DS-200D-6F0Q');
+    expect(p.hazardStatements).not.toContain('H412');
+    expect(byId('domestos-professional-original').currentVersionChecked).toBe(false);
+    expect(lookupProductByIdentifier('4011200652902', products)).toBeNull();
+  });
+
+  it('retains dilution when parsing pH and does not classify concentrate from diluted pH', () => {
+    const text = [
+      'ABSCHNITT 2: Mögliche Gefahren', 'H319',
+      'ABSCHNITT 3: Zusammensetzung', 'ABSCHNITT 4: Erste Hilfe',
+      'ABSCHNITT 9: Physikalische Eigenschaften', 'pH-Wert 13 (in wässriger Lösung: 1 % (w/w))',
+      'ABSCHNITT 10: Stabilität', 'ABSCHNITT 11: Toxikologie'
+    ].join('\n');
+    expect(parseSdsText(text).ph).toEqual({ min: 13, max: 13, concentrationPercent: 1 });
+    expect(parseSdsText(text).chemicalGroups).toEqual(['unknown']);
+    expect(deriveChemicalGroups({ ph: { min: 13, max: 13, concentrationPercent: 100 } }).groups).toContain('caustic_lye');
+    expect(deriveChemicalGroups({ ph: { min: 0, max: 0, concentrationPercent: 1 } }).groups).toEqual(['unknown']);
+    expect(byId('dr-schnell-desifor-quick').ph?.concentrationPercent).toBe(1);
+    expect(byId('dr-schnell-ecolution-forol-sticks').ph?.concentrationPercent).toBe(1);
   });
 });

@@ -1,7 +1,7 @@
 {
   "checkedAt": "2026-10-12",
-  "status": "pending_sds_review",
-  "note": "Manufacturer-published identity leads; no SDS/formulation review completed. Not imported by the simulator or mixing engine.",
+  "status": "source_reviewed_completeness_pending",
+  "note": "All 22 DR.SCHNELL entries (21 new products plus existing MILIZID) have source-reviewed SDS facts and manufacturer-listed EAN associations in the runtime catalogue. Independent chemical completeness and physical package review remain pending.",
   "products": [
     {
       "name": "ONEMÜ 2000",
@@ -11,9 +11,12 @@
         "4008439001236"
       ],
       "existingProductId": null,
-      "hazardReviewCompleted": false,
-      "status": "pending_sds_review",
-      "packageMappingReviewed": false
+      "hazardReviewCompleted": true,
+      "status": "source_reviewed",
+      "packageMappingReviewed": false,
+      "runtimeProductId": "dr-schnell-onemue-2000",
+      "sdsSourceUrl": "https://shop.dr-schnell.com/Datasheets/download/ONEM%C3%9C%202000/SDB/de_DE/pdf/DE",
+      "sourceReviewDate": "2026-10-12"
     },
     {
       "name": "EASY QUICK A",
@@ -23,9 +26,12 @@
         "4008439036863"
       ],
       "existingProductId": null,
-      "hazardReviewCompleted": false,
-      "status": "pending_sds_review",
-      "packageMappingReviewed": false
+      "hazardReviewCompleted": true,
+      "status": "source_reviewed",
+      "packageMappingReviewed": false,
+      "runtimeProductId": "dr-schnell-easy-quick-a",
+      "sdsSourceUrl": "https://shop.dr-schnell.com/Datasheets/download/EASY%20QUICK%20A/SDB/de_DE/pdf/DE",
+      "sourceReviewDate": "2026-10-12"
     },
     {
       "name": "EASY QUICK N",
@@ -35,9 +41,12 @@
         "4008439036283"
       ],
       "existingProductId": null,
-      "hazardReviewCompleted": false,
-      "status": "pending_sds_review",
-      "packageMappingReviewed": false
+      "hazardReviewCompleted": true,
+      "status": "source_reviewed",
+      "packageMappingReviewed": false,
+      "runtimeProductId": "dr-schnell-easy-quick-n",
+      "sdsSourceUrl": "https://shop.dr-schnell.com/Datasheets/download/EASY%20QUICK%20N/SDB/de_DE/pdf/DE",
+      "sourceReviewDate": "2026-10-12"
     },
     {
       "name": "GLASFEE",
@@ -49,9 +58,12 @@
         "4008439001427"
       ],
       "existingProductId": null,
-      "hazardReviewCompleted": false,
-      "status": "pending_sds_review",
-      "packageMappingReviewed": false
+      "hazardReviewCompleted": true,
+      "status": "source_reviewed",
+      "packageMappingReviewed": false,
+      "runtimeProductId": "dr-schnell-glasfee",
+      "sdsSourceUrl": "https://shop.dr-schnell.com/Datasheets/download/GLASFEE/SDB/de_DE/pdf/DE",
+      "sourceReviewDate": "2026-10-12"
     },
     {
       "name": "MILIZID ECO",
@@ -62,9 +74,12 @@
         "4008439309974"
       ],
       "existingProductId": null,
-      "hazardReviewCompleted": false,
-      "status": "pending_sds_review",
-      "packageMappingReviewed": false
+      "hazardReviewCompleted": true,
+      "status": "source_reviewed",
+      "packageMappingReviewed": false,
+      "runtimeProductId": "dr-schnell-milizid-eco",
+      "sdsSourceUrl": "https://shop.dr-schnell.com/Datasheets/download/MILIZID%20ECO/SDB/de_DE/pdf/DE",
+      "sourceReviewDate": "2026-10-12"
     },
     {
       "name": "RAPIDO SPRÜH-EX",
@@ -74,9 +89,12 @@
         "4008439001953"
       ],
       "existingProductId": null,
-      "hazardReviewCompleted": false,
-      "status": "pending_sds_review",
-      "packageMappingReviewed": false
+      "hazardReviewCompleted": true,
+      "status": "source_reviewed",
+      "packageMappingReviewed": false,
+      "runtimeProductId": "dr-schnell-rapido-sprueh-ex",
+      "sdsSourceUrl": "https://shop.dr-schnell.com/Datasheets/download/DR.SCHNELL%C2%B4S%20RAPIDO%20SPR%C3%9CH-EX/SDB/de_DE/pdf/DE",
+      "sourceReviewDate": "2026-10-12"
     },
     {
       "name": "MILIZID KALKREINIGER",
@@ -87,9 +105,12 @@
         "4008439300056"
       ],
       "existingProductId": null,
-      "hazardReviewCompleted": false,
-      "status": "pending_sds_review",
-      "packageMappingReviewed": false
+      "hazardReviewCompleted": true,
+      "status": "source_reviewed",
+      "packageMappingReviewed": false,
+      "runtimeProductId": "dr-schnell-milizid-kalkreiniger",
+      "sdsSourceUrl": "https://shop.dr-schnell.com/Datasheets/download/MILIZID%20KALKREINIGER/SDB/de_DE/pdf/DE",
+      "sourceReviewDate": "2026-10-12"
     },
     {
       "name": "ECOLUTION FOROL ULTRAHOCHKONZENTRAT",
@@ -99,9 +120,12 @@
         "4008439312127"
       ],
       "existingProductId": null,
-      "hazardReviewCompleted": false,
-      "status": "pending_sds_review",
-      "packageMappingReviewed": false
+      "hazardReviewCompleted": true,
+      "status": "source_reviewed",
+      "packageMappingReviewed": false,
+      "runtimeProductId": "dr-schnell-ecolution-forol-ultrahochkonzentrat",
+      "sdsSourceUrl": "https://shop.dr-schnell.com/Datasheets/download/ECOLUTION%20FOROL%20ULTRAHOCHKONZENTRAT/SDB/de_DE/pdf/DE",
+      "sourceReviewDate": "2026-10-12"
     },
     {
       "name": "LEVANTE ECO",
@@ -111,9 +135,12 @@
         "4008439035828"
       ],
       "existingProductId": null,
-      "hazardReviewCompleted": false,
-      "status": "pending_sds_review",
-      "packageMappingReviewed": false
+      "hazardReviewCompleted": true,
+      "status": "source_reviewed",
+      "packageMappingReviewed": false,
+      "runtimeProductId": "dr-schnell-levante-eco",
+      "sdsSourceUrl": "https://shop.dr-schnell.com/Datasheets/download/LEVANTE%20ECO/SDB/de_DE/pdf/DE",
+      "sourceReviewDate": "2026-10-12"
     },
     {
       "name": "SCHIROCCO CLEAN",
@@ -125,9 +152,12 @@
         "4008439307222"
       ],
       "existingProductId": null,
-      "hazardReviewCompleted": false,
-      "status": "pending_sds_review",
-      "packageMappingReviewed": false
+      "hazardReviewCompleted": true,
+      "status": "source_reviewed",
+      "packageMappingReviewed": false,
+      "runtimeProductId": "dr-schnell-schirocco-clean",
+      "sdsSourceUrl": "https://shop.dr-schnell.com/Datasheets/download/SCHIROCCO%20CLEAN/SDB/de_DE/pdf/DE",
+      "sourceReviewDate": "2026-10-12"
     },
     {
       "name": "EASY QUICK S",
@@ -138,9 +168,12 @@
         "4008439044141"
       ],
       "existingProductId": null,
-      "hazardReviewCompleted": false,
-      "status": "pending_sds_review",
-      "packageMappingReviewed": false
+      "hazardReviewCompleted": true,
+      "status": "source_reviewed",
+      "packageMappingReviewed": false,
+      "runtimeProductId": "dr-schnell-easy-quick-s",
+      "sdsSourceUrl": "https://shop.dr-schnell.com/Datasheets/download/EASY%20QUICK%20S/SDB/de_DE/pdf/DE",
+      "sourceReviewDate": "2026-10-12"
     },
     {
       "name": "DESIFOR-QUICK",
@@ -152,9 +185,12 @@
         "4008439045315"
       ],
       "existingProductId": null,
-      "hazardReviewCompleted": false,
-      "status": "pending_sds_review",
-      "packageMappingReviewed": false
+      "hazardReviewCompleted": true,
+      "status": "source_reviewed",
+      "packageMappingReviewed": false,
+      "runtimeProductId": "dr-schnell-desifor-quick",
+      "sdsSourceUrl": "https://shop.dr-schnell.com/Datasheets/download/DESIFOR-QUICK/SDB/de_DE/pdf/DE",
+      "sourceReviewDate": "2026-10-12"
     },
     {
       "name": "ECOLUTION FOROL STICKS",
@@ -164,9 +200,12 @@
         "4008439312028"
       ],
       "existingProductId": null,
-      "hazardReviewCompleted": false,
-      "status": "pending_sds_review",
-      "packageMappingReviewed": false
+      "hazardReviewCompleted": true,
+      "status": "source_reviewed",
+      "packageMappingReviewed": false,
+      "runtimeProductId": "dr-schnell-ecolution-forol-sticks",
+      "sdsSourceUrl": "https://shop.dr-schnell.com/Datasheets/download/ECOLUTION%20FOROL%20STICKS/SDB/de_DE/pdf/DE",
+      "sourceReviewDate": "2026-10-12"
     },
     {
       "name": "MILIZID",
@@ -179,9 +218,139 @@
         "4008439001038"
       ],
       "existingProductId": "dr-schnell-milizid",
-      "hazardReviewCompleted": false,
-      "status": "pending_sds_review",
-      "packageMappingReviewed": false
+      "hazardReviewCompleted": true,
+      "status": "source_reviewed",
+      "packageMappingReviewed": false,
+      "runtimeProductId": "dr-schnell-milizid",
+      "sdsSourceUrl": "https://shop.dr-schnell.com/Datasheets/download/MILIZID/SDB/de_DE/pdf/DE",
+      "sourceReviewDate": "2026-10-12"
+    },
+    {
+      "name": "GASTRO PUR",
+      "brand": "DR.SCHNELL",
+      "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/kuechen-und-lebensmittelhygiene/oel-und-fettloeser-fuer-oberflaechen/1391/gastro-pur",
+      "gtins": [
+        "4008439001472"
+      ],
+      "existingProductId": null,
+      "status": "source_reviewed",
+      "hazardReviewCompleted": true,
+      "packageMappingReviewed": false,
+      "runtimeProductId": "dr-schnell-gastro-pur",
+      "sdsSourceUrl": "https://shop.dr-schnell.com/Datasheets/download/GASTRO%20PUR/SDB/de_DE/pdf/DE",
+      "sourceReviewDate": "2026-10-12"
+    },
+    {
+      "name": "FOROL",
+      "brand": "DR.SCHNELL",
+      "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1376/forol",
+      "gtins": [
+        "4008439001144",
+        "4008439300179",
+        "4008439300186",
+        "4008439001113"
+      ],
+      "existingProductId": null,
+      "status": "source_reviewed",
+      "hazardReviewCompleted": true,
+      "packageMappingReviewed": false,
+      "runtimeProductId": "dr-schnell-forol",
+      "sdsSourceUrl": "https://shop.dr-schnell.com/Datasheets/download/FOROL/SDB/de_DE/pdf/DE",
+      "sourceReviewDate": "2026-10-12"
+    },
+    {
+      "name": "DESIFOR-SD",
+      "brand": "DR.SCHNELL",
+      "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/desinfektion/flaechendesinfektion/1671/desifor-sd",
+      "gtins": [
+        "4008439204651"
+      ],
+      "existingProductId": null,
+      "status": "source_reviewed",
+      "hazardReviewCompleted": true,
+      "packageMappingReviewed": false,
+      "runtimeProductId": "dr-schnell-desifor-sd",
+      "sdsSourceUrl": "https://shop.dr-schnell.com/Datasheets/download/DESIFOR-SD/SDB/de_DE/pdf/DE",
+      "sourceReviewDate": "2026-10-12"
+    },
+    {
+      "name": "DESIFOR-ONE",
+      "brand": "DR.SCHNELL",
+      "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/desinfektion/flaechendesinfektion/1496/desifor-one",
+      "gtins": [
+        "4008439205580"
+      ],
+      "existingProductId": null,
+      "status": "source_reviewed",
+      "hazardReviewCompleted": true,
+      "packageMappingReviewed": false,
+      "runtimeProductId": "dr-schnell-desifor-one",
+      "sdsSourceUrl": "https://shop.dr-schnell.com/Datasheets/download/DESIFOR-ONE/SDB/de_DE/pdf/DE",
+      "sourceReviewDate": "2026-10-12"
+    },
+    {
+      "name": "DESIFOR-PLEXIFEE",
+      "brand": "DR.SCHNELL",
+      "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/desinfektion/flaechendesinfektion/1672/desifor-plexifee",
+      "gtins": [
+        "4008439205931",
+        "4008439205948"
+      ],
+      "existingProductId": null,
+      "status": "source_reviewed",
+      "hazardReviewCompleted": true,
+      "packageMappingReviewed": false,
+      "runtimeProductId": "dr-schnell-desifor-plexifee",
+      "sdsSourceUrl": "https://shop.dr-schnell.com/Datasheets/download/DESIFOR-PLEXIFEE/SDB/de_DE/pdf/DE",
+      "sourceReviewDate": "2026-10-12"
+    },
+    {
+      "name": "FOROL SENSITIVE",
+      "brand": "DR.SCHNELL",
+      "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1477/forol-sensitive",
+      "gtins": [
+        "4008439009744"
+      ],
+      "existingProductId": null,
+      "status": "source_reviewed",
+      "hazardReviewCompleted": true,
+      "packageMappingReviewed": false,
+      "runtimeProductId": "dr-schnell-forol-sensitive",
+      "sdsSourceUrl": "https://shop.dr-schnell.com/Datasheets/download/FOROL%20SENSITIVE/SDB/de_DE/pdf/DE",
+      "sourceReviewDate": "2026-10-12"
+    },
+    {
+      "name": "DESIFOR-ONE V",
+      "brand": "DR.SCHNELL",
+      "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/desinfektion/flaechendesinfektion/1678/desifor-one-v",
+      "gtins": [
+        "4008439204859"
+      ],
+      "existingProductId": null,
+      "status": "source_reviewed",
+      "hazardReviewCompleted": true,
+      "packageMappingReviewed": false,
+      "runtimeProductId": "dr-schnell-desifor-one-v",
+      "sdsSourceUrl": "https://shop.dr-schnell.com/Datasheets/download/DESIFOR-ONE%20V/SDB/de_DE/pdf/DE",
+      "sourceReviewDate": "2026-10-12"
+    },
+    {
+      "name": "PEROCID",
+      "brand": "DR.SCHNELL",
+      "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/kuechen-und-lebensmittelhygiene/kalkloeser-fuer-oberflaechen/1399/perocid",
+      "gtins": [
+        "4008439006156",
+        "4008439363174",
+        "4008439360173",
+        "4008439360166"
+      ],
+      "existingProductId": null,
+      "status": "source_reviewed",
+      "hazardReviewCompleted": true,
+      "packageMappingReviewed": false,
+      "runtimeProductId": "dr-schnell-perocid",
+      "sdsSourceUrl": "https://shop.dr-schnell.com/Datasheets/download/PEROCID/SDB/de_DE/pdf/DE",
+      "sourceReviewDate": "2026-10-12"
     }
   ],
   "excludedContainerGtins": [
@@ -195,5 +364,5 @@
     }
   ],
   "exclusionSourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/zubehoer/dosierhilfen/handsprueher/1329/handsprueher-ecolution",
-  "sourceAccess": "Publicly indexed manufacturer shop pages read through web search; physical containers and SDS/formulation matches not checked."
+  "sourceAccess": "Manufacturer PDFs and product pages reacquired in GitHub Actions, plus manual web review of SDS facts; hashes retained in source review receipts."
 }
