@@ -12,7 +12,8 @@ export type SimulatorKey =
   | 'schiedsrichter'
   | 'kristall'
   | 'chemhazard'
-  | 'gruendungsnavigator';
+  | 'gruendungsnavigator'
+  | 'legioklar';
 
 
 export interface DoseSimulatorInfo {
@@ -27,6 +28,16 @@ export interface DoseSimulatorInfo {
 }
 
 export const DOSE_SIMULATOR_MAP: Record<string, DoseSimulatorInfo> = {
+  'legio-klar': {
+    key: 'legioklar',
+    titleDe: 'LegioKlar: Aushang-Decoder',
+    titleEn: 'LegioKlar: Notice Board Decoder',
+    titleEs: 'LegioKlar: Decodificador de avisos',
+    descriptionDe: 'Treppenhausaushänge und Laborprüfberichte (TrinkwV § 31/52) interaktiv auswerten: UBA-Ampelmatrix, DVGW W 551 Temperatur-Audit und automatische BGB § 536c Mängelanzeige.',
+    descriptionEn: 'Interactive decoder for notice board Legionella lab reports (TrinkwV): UBA risk matrix, DVGW W 551 temperature checks and instant tenant defect notices under § 536c BGB.',
+    descriptionEs: 'Decodificador interactivo de informes de laboratorio de Legionella en avisos de escalera: matriz de riesgo UBA y notificación de defectos para inquilinos.',
+    icon: '🚰',
+  },
   'gruendungsnavigator': {
     key: 'gruendungsnavigator',
     titleDe: 'Gründungsnavigator & Fristenrechner',

@@ -18,6 +18,7 @@ import {
   KristallwachstumSimulator,
   ChemHazardSimulator,
   GruendungsnavigatorSimulator,
+  LegioKlarSimulator,
 } from './simulators';
 
 export type SandboxKey = import('../data/doseSimulators').SimulatorKey;
@@ -196,6 +197,16 @@ export const InteractiveTinSandboxes: React.FC<InteractiveTinSandboxesProps> = (
             >
               ☣️ {lang === 'de' ? 'ChemHazard Stop' : lang === 'es' ? 'ChemHazard Stop' : 'ChemHazard Stop'}
             </Link>
+            <Link
+              to={withPreferences(simulatorPath('legioklar'), location.search)}
+              className={`px-3 py-1.5 rounded-lg text-xs font-typewriter font-medium transition-colors ${
+                activeTab === 'legioklar'
+                  ? 'bg-blue-600 text-white shadow-xs'
+                  : 'text-stone-600 hover:text-stone-900 hover:bg-stone-200/60'
+              }`}
+            >
+              🚰 {lang === 'de' ? 'LegioKlar' : lang === 'es' ? 'LegioKlar' : 'LegioKlar'}
+            </Link>
           </div>
         </div>
       </div>
@@ -242,6 +253,9 @@ export const InteractiveTinSandboxes: React.FC<InteractiveTinSandboxesProps> = (
       )}
       {activeTab === 'gruendungsnavigator' && (
         <GruendungsnavigatorSimulator lang={lang} />
+      )}
+      {activeTab === 'legioklar' && (
+        <LegioKlarSimulator lang={lang} />
       )}
     </div>
   );

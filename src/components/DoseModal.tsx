@@ -52,6 +52,7 @@ import {
   KristallwachstumSimulator,
   ChemHazardSimulator,
   GruendungsnavigatorSimulator,
+  LegioKlarSimulator,
 } from './simulators';
 
 interface DoseModalProps {
@@ -670,6 +671,7 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
                   {matchedSimulator.key === 'kristall' && <KristallwachstumSimulator lang={lang} />}
                   {matchedSimulator.key === 'chemhazard' && <ChemHazardSimulator lang={lang} isEmbedded={true} />}
                   {matchedSimulator.key === 'gruendungsnavigator' && <GruendungsnavigatorSimulator lang={lang} isEmbedded />}
+                  {matchedSimulator.key === 'legioklar' && <LegioKlarSimulator lang={lang} isEmbedded={true} />}
                 </div>
               )}
             </div>

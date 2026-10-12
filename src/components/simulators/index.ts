@@ -15,3 +15,4 @@ export const TischSchiedsrichterSimulator = lazy(() => import('./TischSchiedsric
 export const KristallwachstumSimulator = lazy(() => import('./KristallwachstumSimulator').then(m => ({ default: m.KristallwachstumSimulator })));
 export const GruendungsnavigatorSimulator = lazy(() => import('./GruendungsnavigatorSimulator').then(m => ({ default: m.GruendungsnavigatorSimulator })));
 export const ChemHazardSimulator = lazy(() => import('./ChemHazardSimulator').then(m => ({ default: m.ChemHazardSimulator })));
+export const LegioKlarSimulator = lazy(() => import('./LegioKlarSimulator').then(m => ({ default: m.LegioKlarSimulator })));

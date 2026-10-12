@@ -64,6 +64,7 @@ import {
   KristallwachstumSimulator,
   ChemHazardSimulator,
   GruendungsnavigatorSimulator,
+  LegioKlarSimulator,
 } from './simulators';
 
 interface DoseSinglePageProps {
@@ -641,6 +642,7 @@ ${bookChapters
               {simInfo.key === 'kristall' && <KristallwachstumSimulator lang={lang} />}
               {simInfo.key === 'chemhazard' && <ChemHazardSimulator lang={lang} isEmbedded />}
               {simInfo.key === 'gruendungsnavigator' && <GruendungsnavigatorSimulator lang={lang} isEmbedded />}
+              {simInfo.key === 'legioklar' && <LegioKlarSimulator lang={lang} isEmbedded />}
             </div>
           )}
         </section>
