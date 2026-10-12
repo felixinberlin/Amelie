@@ -1,0 +1,243 @@
+# Proposals from plan lab-2026-10-12-amelie-lab-scarcity-scarcity-20261012T162800-brandenburg-bfcf0383978716ba
+
+Packet: amelie-lab-scarcity-scarcity-20261012T162800-brandenburg-bfcf0383978716ba · Candidate: amelie-lab-scarcity-scarcity-20261012T162800-brandenburg-bfcf0383978716ba
+Not applied. A human decides.
+
+- [06-suche/amelie-lab-protokoll.md] scarcity: amelie-lab-scarcity-scarcity-20261012T162800-brandenburg-bfcf0383978716ba. Absicht: Ubiquitous cheap solar-powered 24/7 internet-connected cameras + Edge AI (TinyML/VLM). Radically low-cost autonomous persistent vision nodes in Brandenburg (Bauer, Handwerker, Dach, Sonnenblumen, Funkloch, Brand-/Denkmalschutz, DIY-Kits).. Modell: deepseek/deepseek-chat. Existenzprüfung: nein. Alle Ideen ungeprüft. Die folgenden Angaben sind gespeicherte Modellausgaben, keine bestätigten Tatsachen. Nur grounded=true ist Evidenz; Score-Änderungen benötigen zusätzlich quote_status=verified. Quellen, fact_checks und fehlende Felder bleiben wie im Original; keine neuen Prüfungen durchgeführt.
+- [06-suche/amelie-lab-protokoll.md] Frontend-Handoff: 3 ungeprüfte Ideen aus scarcity. Im Lab-Ideen-Eingang anzeigen; nicht als geprüfte Dosen, ohne erfundene Vektoren oder Existenzurteile.
+- [06-suche/amelie-lab-protokoll.md] Originalfeld accounting, Teil 1 (laut gespeicherter Datei):
+{
+  "cost_usd": 0.08,
+  "model_calls": 3,
+  "search_calls": 3,
+  "search_queries": 3
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld constraint, Teil 1 (laut gespeicherter Datei):
+{
+  "constraint": {
+    "closed_workaround": "Das Verlegen gewöhnlicher 230V-Kabel oder der Einsatz handelsüblicher 4G-Kameras mit entflammbaren Lithium-Akkus.",
+    "constraint_class": "material_energetic",
+    "evidence_quote": "Die Errichtung von elektrischen Anlagen und Leitungsführungen in Baudenkmalen sowie auf brennbaren Dachflächen wie Reet unterliegt strengen Genehmigungsvorbehalten zur Brandvermeidung.",
+    "source_label": "Landesbauordnung & Denkmalschutzrichtlinie",
+    "source_url": "https://bldam-brandenburg.de",
+    "statement": "In brandenburgischen Reetdächern, Scheunen und waldnahen Außenbereichen verbieten Brand- und Denkmalschutzauflagen (BbgBO § 32 Abs. 5, VdS 2000) sowie § 23 LWaldG 230V-Leitungen und zündfähige Akkus, während Funklöcher kontinuierliches Video unmöglich machen.",
+    "who_bears_it": "Brandenburger Landwirte, Handwerker und historische Gebäudeeigentümer.",
+    "why_binding_now": "Rechtliche Unausweichlichkeit: Nach § 32 BbgBO und Denkmalschutzrecht haften Eigentümer persönlich für Brandschäden, während Versicherer (VdS 2000) nicht-zertifizierte Installationen ausschließen."
+  },
+  "rejected_soft": [
+    "Der Wunsch nach baldiger 5G-Vollabdeckung aller märkischen Ackerflächen.",
+    "Die Annahme, Landwirte würden 15 Euro monatliche SIM-Abos für Dutzende Kameras zahlen.",
+    "Die Vorstellung, dass Drohnenbefliegungen eine permanente 24/7-Überwachung ersetzen.",
+    "Die Erwartung, dass Denkmalschutzämter sichtbare Kabelkanäle auf Reetdächern tolerieren.",
+    "Die Hoffnung, dass Consumer-Kameras ohne ATEX-Schutz in Getreidelagern zugelassen werden."
+  ]
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld contract_version, Teil 1 (laut gespeicherter Datei):
+"1.0.0"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld created_at, Teil 1 (laut gespeicherter Datei):
+"2026-10-12T16:28:00Z"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld intent, Teil 1 (laut gespeicherter Datei):
+"Ubiquitous cheap solar-powered 24/7 internet-connected cameras + Edge AI (TinyML/VLM). Radically low-cost autonomous persistent vision nodes in Brandenburg (Bauer, Handwerker, Dach, Sonnenblumen, Funkloch, Brand-/Denkmalschutz, DIY-Kits)."
+- [06-suche/amelie-lab-protokoll.md] Originalfeld invention, Teil 1 (laut gespeicherter Datei):
+{
+  "candidates": [
+    {
+      "check_queries": [
+        "LoRaWAN Wildkamera Schwarzwild Brandenburg",
+        "TinyML Kamerasensor Landwirtschaft"
+      ],
+      "id": "C1",
+      "idea": "FeldWacht-DIY (SchwarzwildSchneise): Eigensicherer €38 DIY-Vision-Bausatz im IP67-Spelsberg-Gehäuse auf DIN-Hutschiene mit 32700-LiFePO4-Zelle und 5W-Solarpanel zur Erkennung von Schwarzwild im Funkloch via 12-Byte LoRaWAN.",
+      "recipient": "Landesbauernverband Brandenburg e.V.",
+      "recipient_kind": "association",
+      "why_now": "Sub-Watt TinyML-Chips (ESP32-S3/K230 lite) mit On-Device INT8-Objekterkennung und flächendeckende offene LoRaWAN-Gateways.",
+      "without_constraint": "Eine gewöhnliche 4G-Wildkamera mit 1080p Cloud-Live-Stream und kostenpflichtigem Monatsabo."
+    },
+    {
+      "check_queries": [
+        "Dachbalken Verformung optischer Sensor Denkmalschutz",
+        "Brandfrüherkennung Reetdach Scheune"
+      ],
+      "id": "C2",
+      "idea": "ReetWacht / BalkenAuge: Eigensicherer €52 Denkmalschutz- & ATEX-Bausatz mit Niedrigstlux-DSSC-Solarzellen und 50F-Superkondensatoren zur optischen Überwachung von Dachbalkendurchbiegung und Glimmnestern.",
+      "recipient": "Baugewerbe-Verband Brandenburg",
+      "recipient_kind": "association",
+      "why_now": "Sub-Milliwatt Vision-Sensoren (Himax WiseEye2) und serientaugliche Farbstoff-Solarzellen für Innenräume.",
+      "without_constraint": "Eine herkömmliche festverdrahtete 230V PTZ-Überwachungskamera mit Infrarotstrahler."
+    },
+    {
+      "check_queries": [
+        "Bodenfeuer Früherkennung Kiefernwald",
+        "Waldbrand Sensor Baumstamm LoRaWAN"
+      ],
+      "id": "C3",
+      "idea": "GlutHorizont: Forsttauglicher €44 Baumstamm-Mikrosensor-Bausatz mit vertikalem bifazialem 75°-Solarband und LTO-Zellen zur Erkennung bodennaher Glimmrauch-Vektoren unter der Kiefernkrone bei Waldbrandstufe 5.",
+      "recipient": "Waldbesitzerverband Brandenburg e.V.",
+      "recipient_kind": "association",
+      "why_now": "Unbrennbare LTO-Akkuzellen mit 20.000 Zyklen und ultrakompakte thermisch-optische Dual-Sensoren.",
+      "without_constraint": "Ein 40 Meter hoher Gittermast mit motorisierter optischer Großkamera über dem Kronendach."
+    },
+    {
+      "check_queries": [
+        "4G Solar Überwachungskamera Acker"
+      ],
+      "id": "C4",
+      "idea": "AckerStream-4G: Kommerzielles Kamerasystem mit permanentem LTE-Video-Uplink und 100W-Solarpanel.",
+      "recipient": "Landwirtschaftskammer",
+      "recipient_kind": "institution",
+      "why_now": "LTE-Ausbau im ländlichen Raum.",
+      "without_constraint": "Wäre ohne Funkloch und Kostenbarrieren das Standardprodukt."
+    },
+    {
+      "check_queries": [
+        "Drohnengarage Landwirtschaft"
+      ],
+      "id": "C5",
+      "idea": "DrohnenDock-Mobil: Vollautomatische Drohnen-Ladestation mit Verbrennungsmotor-Generator für 100ha-Schläge.",
+      "recipient": "Maschinenring",
+      "recipient_kind": "association",
+      "why_now": "Automatisierte Drohnenhangars.",
+      "without_constraint": "Standard-Industriedrohne."
+    },
+    {
+      "check_queries": [
+        "Körperschall Wildschutzzaun"
+      ],
+      "id": "C6",
+      "idea": "PiezoSchrot-Zaun: Passiver Körperschall-Drahtsensor ohne optische Klassifikation.",
+      "recipient": "Landesjagdverband",
+      "recipient_kind": "association",
+      "why_now": "Kostengünstige Piezofasern.",
+      "without_constraint": "Einfacher Einbruchmeldedraht."
+    }
+  ],
+  "shortlist": [
+    "C1",
+    "C2",
+    "C3"
+  ],
+  "thesis": "Unter striktem Brand- und Denkmalschutz, Staubexplosionsgefahr und Funklöchern existiert autonome visuelle Feldbeobachtung nur als eigensicherer, mikrowatt-optimierter DIY-Bausatz mit Sub-Kilobyte-LoRaWAN-Telemetrie."
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld log_entry, Teil 1 (laut gespeicherter Datei):
+"| 2026-10-12 | Lab | Brand- und Denkmalschutz Brandenburg (material_energetic) | 6 | 3 (ungeprüft): 1. FeldWacht-DIY; 2. ReetWacht; 3. GlutHorizont | Landwirte im Funkloch haben keine Rottenfrüherkennung |"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld model, Teil 1 (laut gespeicherter Datei):
+"deepseek/deepseek-chat"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld result, Teil 1 (laut gespeicherter Datei):
+{
+  "kills": [
+    {
+      "candidate_id": "C4",
+      "failed_checks": [
+        "buildable",
+        "not_forced"
+      ],
+      "reason": "Scheitert am totalen Funkloch (keine Bandbreite für Videostreams) sowie an untragbaren OPEX (€15/Monat) und Diebstahlrisiko auf Freiflächen."
+    },
+    {
+      "candidate_id": "C5",
+      "failed_checks": [
+        "buildable",
+        "recipient_rule"
+      ],
+      "reason": "Scheitert an forst- und naturschutzrechtlichen Betriebsbeschränkungen (LWaldG § 23 Brandrisiko durch Verbrenner) sowie extremen Anschaffungskosten."
+    },
+    {
+      "candidate_id": "C6",
+      "failed_checks": [
+        "problem_evidence",
+        "not_forced"
+      ],
+      "reason": "Reine Körperschallsensoren erzeugen massive Fehlalarme durch Windböen und Traktoren; ohne optische Klassifikation unbrauchbar."
+    }
+  ],
+  "log_row": {
+    "best_gap": "Landwirte mit 100-Hektar-Schlägen in Funklöchern haben keine Möglichkeit, Wildschweinrotten vor dem Einfall in Bestände ohne zeitintensive Kontrollfahrten zu lokalisieren.",
+    "candidates": 6,
+    "constraint": "In brandenburgischen Reetdächern, Scheunen und Waldrändern verbieten Brand-/Denkmalschutz 230V-Kabel und zündfähige Akkus, während Funklöcher Video unmöglich machen.",
+    "constraint_class": "material_energetic",
+    "survivors": 3
+  },
+  "retro": {
+    "learned": "Die Kombination aus absolutem Funkloch und striktem Brand- und Denkmalschutz schließt 99% aller kommerziellen Kamerasysteme aus und erzwingt zwingend Sub-Watt TinyML und DIY-Eigensicherheit.",
+    "mistake": "Anfänglich wurden Consumer-Wildkameras als Benchmark betrachtet, die jedoch weder die nötige Batterielebensdauer noch die Brand- und Ex-Schutz-Vorgaben erfüllen.",
+    "next_time": "Die bauteilgenaue DIY-Bausatz-BOM mit Hutschiene und verpolungssicheren M12-Steckern bereits im ersten Schritt als primäre Randbedingung einplanen."
+  },
+  "survivors": [
+    {
+      "buildable": "Realisierbar mit serienmäßigen Spelsberg Abox-Gehäusen, ESP32-S3 Cam und verpolungssicheren M12-Steckverbindern.",
+      "candidate_id": "C1",
+      "evidence_urls": [
+        "https://brandenburger-bauern.de",
+        "https://mluk.brandenburg.de"
+      ],
+      "forced_by_constraint": "Ohne das Funkloch und die Verweigerung teurer Abo-Blackboxen würde man gewöhnliche 4G-Livecams nutzen; die 12-Byte-LoRa-Vektorisierung und der €38-Bausatz entstehen nur durch diese Schranken.",
+      "gap": "Landwirte mit 100-Hektar-Schlägen in Funklöchern haben keine Möglichkeit, Wildschweinrotten vor dem Einfall in Bestände ohne zeitintensive Kontrollfahrten zu lokalisieren.",
+      "gap_stands_alone": true,
+      "idea": "FeldWacht-DIY (SchwarzwildSchneise): Eigensicherer €38 DIY-Vision-Bausatz im IP67-Spelsberg-Gehäuse auf DIN-Hutschiene mit 32700-LiFePO4-Zelle und 5W-Solarpanel zur Erkennung von Schwarzwild im Funkloch via 12-Byte LoRaWAN.",
+      "rank": 1,
+      "recipient": "Landesbauernverband Brandenburg e.V.",
+      "recipient_kind": "association",
+      "who_has_problem": "Brandenburger Landwirte und Agrargenossenschaften (Uckermark, Prignitz, Oderbruch).",
+      "why_now": "Sub-Watt TinyML-Chips mit INT8-Quantisierung und flächendeckende kommunale LoRaWAN-Gateways."
+    },
+    {
+      "buildable": "Basiert auf klemmbaren Balkenadaptern, optischen Passermarken und eigensicherer Supercap-Pufferung.",
+      "candidate_id": "C2",
+      "evidence_urls": [
+        "https://bldam-brandenburg.de",
+        "https://vds.de"
+      ],
+      "forced_by_constraint": "Ohne das Verbot von 230V-Leitungen und zündfähigen Lithium-Akkus in Reet und Scheunen gäbe es Standard-CCTV; die eigensichere Supercap-Architektur wird durch Brandschutz erzwungen.",
+      "gap": "Eigentümer historischer Reet- und Fachwerkscheunen haben kein zulässiges, brand- und denkmalschutzkonformes Messverfahren zur Früherkennung statischer Dachüberlastung ohne 230V-Kabel.",
+      "gap_stands_alone": true,
+      "idea": "ReetWacht / BalkenAuge: Eigensicherer €52 Denkmalschutz- & ATEX-Bausatz mit Niedrigstlux-DSSC-Solarzellen und 50F-Superkondensatoren zur optischen Überwachung von Dachbalkendurchbiegung und Glimmnestern.",
+      "rank": 2,
+      "recipient": "Baugewerbe-Verband Brandenburg",
+      "recipient_kind": "association",
+      "who_has_problem": "Zimmerer, Dachdecker und Denkmaleigentümer historischer Scheunen und Reetdächer in Brandenburg.",
+      "why_now": "Sub-Milliwatt Vision-Chips (Himax WiseEye2) und serientaugliche Innenraum-DSSC-Solarzellen."
+    },
+    {
+      "buildable": "Montage per forstlichem Baumspanngurt, vertikaler Nadelabweiser am Panel, IP67-Silikondichtung.",
+      "candidate_id": "C3",
+      "evidence_urls": [
+        "https://mluk.brandenburg.de",
+        "https://berliner-zeitung.de"
+      ],
+      "forced_by_constraint": "Ohne die Kronenverdeckung und das strenge Zündquellenverbot nach LWaldG § 23 würden 40m-Stahlmasten genügen; der stammbasierte Mikroknoten wird durch die Bodengeometrie erzwungen.",
+      "gap": "Forstbetriebe im märkischen Kiefernforst haben kein System, um bodennahe Glimmbrände unterhalb des dichten Kronendachs bei Waldbrandstufe 5 vor dem Ausbruch eines Vollfeuers zu detektieren.",
+      "gap_stands_alone": true,
+      "idea": "GlutHorizont: Forsttauglicher €44 Baumstamm-Mikrosensor-Bausatz mit vertikalem bifazialem 75°-Solarband und LTO-Zellen zur Erkennung bodennaher Glimmrauch-Vektoren unter der Kiefernkrone bei Waldbrandstufe 5.",
+      "rank": 3,
+      "recipient": "Waldbesitzerverband Brandenburg e.V.",
+      "recipient_kind": "association",
+      "who_has_problem": "Waldbesitzerverbände und private Forstwirte in Brandenburg.",
+      "why_now": "Nicht brennbare Lithium-Titanat-Zellen und ultrakompakte thermisch-optische Dual-Sensoren."
+    }
+  ]
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld run_id, Teil 1 (laut gespeicherter Datei):
+"scarcity-20261012T162800-brandenburg"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld state_missing, Teil 1 (laut gespeicherter Datei):
+[]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld tool_calls, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "call_id": "scarcity-brandenburg-t01",
+    "status": "ok",
+    "summary": "Brandenburg Reetdach Brandschutz Denkmalschutz Solaranlagen",
+    "tool": "search"
+  },
+  {
+    "call_id": "scarcity-brandenburg-t02",
+    "status": "ok",
+    "summary": "Landeswaldgesetz Brandenburg Waldbrandgefahrenstufe Kiefern",
+    "tool": "search"
+  },
+  {
+    "call_id": "scarcity-brandenburg-t03",
+    "status": "ok",
+    "summary": "VdS 2000 Getreidelager Staubexplosion Brandgefahr Landwirtschaft",
+    "tool": "search"
+  }
+]
