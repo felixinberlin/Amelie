@@ -13,7 +13,7 @@ const output = process.argv[2];
 const permitted = new Set([
   'www.kiehl-group.com', 'app.kiehl-group.com', 'www.buzil.com', 'shop.dr-schnell.com',
   'static.vikingdirekt.at', 'www.otto-office.com', 'media.hornbach.de', 'mellerud.de',
-  'sdslibrary.solenis.com', 'sds.diversey.com'
+  'sdslibrary.solenis.com', 'sds.diversey.com', 'www.meffert.com'
 ]);
 const hash = (bytes) => createHash('sha256').update(bytes).digest('hex');
 async function get(url) {
@@ -61,7 +61,7 @@ try {
         const { bytes, finalUrl } = await get(p.productPage);
         const html = bytes.toString('utf8');
         result.identityPage = { sourceUrl: p.productPage, finalUrl, sha256: hash(bytes),
-          codesPresent: Object.fromEntries((p.gtins || []).map((g) => [g, html.includes(g) || html.includes(g.replace(/^0(?=\\d{13}$)/, ''))])) };
+          codesPresent: Object.fromEntries((p.gtins || []).map((g) => [g, html.includes(g) || html.includes((g.length === 14 && g.startsWith('0') ? g.slice(1) : g))])) };
       } catch (error) { result.identityPage = { sourceUrl: p.productPage, error: error.message }; }
     }
     results.push(result);

@@ -235,8 +235,13 @@
       "documentUrls": [
         "https://shop.dr-schnell.com/Datasheets/download/MILIZID/SDB/de_DE/pdf/DE"
       ],
-      "productPage": null,
-      "gtins": [],
+      "productPage": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/sanitaerreiniger/1373/milizid",
+      "gtins": [
+        "4008439001045",
+        "4008439300070",
+        "4008439300001",
+        "4008439001038"
+      ],
       "previousSha256": "3b0ba49c7e108782bdc106e75f70e255a029842882d3f2e72f85f56f1df8295e"
     },
     {
@@ -244,6 +249,8 @@
       "name": "Domestos Professional Original",
       "sourceHost": "retailer",
       "documentUrls": [
+        "https://sds.diversey.com/DirectDocumentDownloader/Document?prd=MS1005408~~PDF~~MTR~~DE02~~DE~~EMA",
+        "https://sds.diversey.com/DirectDocumentDownloader/Document?prd=MS1005408~~PDF~~MTR~~AT02~~AT~~EMA",
         "https://sdslibrary.solenis.com/BlobDownload/FetchFiles?filename=SDS/000000000009308879-DE-DE.PDF",
         "https://static.vikingdirekt.at/is/content/odeu13/PDF/MSDS_1178013_DE_21-10-2022.pdf"
       ],
@@ -266,9 +273,10 @@
     },
     {
       "id": "meffert-salmiakgeist-9-5",
-      "name": "NEUTRAL Salmiakgeist 9,5 %",
+      "name": "Salmiakgeist 9,5 %",
       "sourceHost": "retailer",
       "documentUrls": [
+        "https://www.meffert.com/datenblaetter/Sicherheits-Datenblaetter/SDB__Meffert-Marken_und_Toechter/Sdb-neutral_%2B_Diverse/SDB_Meffert_Salmiakgeist.pdf",
         "https://media.hornbach.de/hb/msds/as.87226194.pdf"
       ],
       "productPage": null,
