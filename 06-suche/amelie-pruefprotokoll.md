@@ -9,6 +9,12 @@ Ergänzt `05-dosen/_entsorgt.md`: dort steht die Begründung für gepackte, dann
 
 ---
 
+## Datenprüfung ChemGefahr-Stopp — 12.10.2026 (Referenzdaten neu belegt, method: engine-build)
+
+| Idee / Änderung | Urteil | Beleg (kurz) | Prüfen ab |
+|---|---|---|---|
+| **ChemGefahr-Stopp: Referenzprodukte aus Herstellerdokumenten** (`dose-cleaner-chemical-safety`) — Seed-Daten der Demo ersetzt, Chlorgas-Regel korrigiert | **`verengt`** (unverändert) | **Befund:** 20 von 22 GTINs der alten Seed-Datei hatten eine falsche Prüfziffer, mehrere Einträge falsche Inhaltsstoffe (z. B. Kiehl Powerfix-Gel) oder falsche Namen (Buzil G 460 ist „Bucalex“). **Neu:** 20 Produkte mit Herstellerdokument (19 SDB, 1 Inhaltsstoff-Datenblatt; Kiehl, Buzil, DR.SCHNELL, Diversey, CP GABA, Meffert, Mellerud), 51 EAN mit gültiger Prüfziffer (Kiehl-Produktseiten). **Sicherheitsfehler behoben:** Regel Säure + Hypochlorit verlangte `EUH031`; Dan Klorix trägt `EUH206`, Domestos Professional keinen der Sätze. **Kein nachnutzbarer Datenbestand gefunden:** Open Products Facts 4 Treffer in „cleaning-products“, WINGIS ohne Export und nur mit BG-BAU-Zustimmung. Kein QR-Code in öffentlichen Herstellerunterlagen. Werkzeug `scripts/chemhazard-sds.mjs`, Herkunft in `07-demos/chemhazard-stop/README.md` Abschnitt 3a. Strichcodes aller 51 EAN als SVG in `07-demos/chemhazard-stop/data/barcodes/`. Dossier-Wortlaut zu `EUH031` in beiden Sprachen, in `dosen.ts` und in der noch nicht versendeten Mail 12 berichtigt; die versendeten Mails 11 bleiben unverändert. **Offen:** drei SDB nur als Händlerkopie (Dan Klorix von 2020). | 03/2027 |
+
 ## Inversion Run 3 — 27.09.2026 (method: inversion, Zweiter Gebührenwerk-Anker / Bewohnerparken)
 
 Systemanker: Kommunale Gebührenordnungen / Bewohnerparkausweise. Inversionsoperator: OP-4 (Vollzugslücke / Asymmetrie des Risikos).

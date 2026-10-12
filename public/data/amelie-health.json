@@ -1,9 +1,9 @@
 {
   "auditVersion": 1,
-  "generatedAt": "2026-10-12T15:14:32.357Z",
+  "generatedAt": "2026-10-12T17:02:48.946Z",
   "repository": {
-    "commit": "1207ba99",
-    "branch": "main"
+    "commit": "e6634294",
+    "branch": "HEAD"
   },
   "inventory": {
     "doses": 47,

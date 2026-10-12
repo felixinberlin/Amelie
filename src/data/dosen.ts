@@ -1419,12 +1419,12 @@ Dual-licensed under MIT (code & schema structure) and CC BY 4.0 (interpretive te
     whyNowDe: [
       '100% Offline-Edge-Inferenz: Schnelle Barcode- (GTIN/GS1), GISCODE- und Etiketten-Erkennung auf Standard-Smartphones ohne Server-Latenz.',
       'Mehrsprachige Audio-Sofort-Warnung in über 20 Sprachen (Ukrainisch, Polnisch, Türkisch, Arabisch etc.) überwindet Sprachbarrieren ohne Textlese-Zwang.',
-      'Drei-Spuren-Datenmodell trennt gemeinfreies EU-CLP-Recht (EUH031) von optional lizenzierten WINGIS/GISCODE-Daten und offenen SDS.'
+      'Drei-Spuren-Datenmodell trennt öffentliche Tatsachen aus CLP-Kennzeichnung und Sicherheitsdatenblatt (Gefahrensätze, CAS-Nummern) von optional lizenzierten WINGIS/GISCODE-Daten und Community-Meldungen.'
     ],
     whyNowEn: [
       '100% Offline edge inference: Real-time GTIN/GS1 barcode, GISCODE, and container scanning on commodity smartphones with zero cloud latency.',
       'Instant polyglot spoken audio alerts across 20+ languages remove the burden of reading technical German safety manuals.',
-      'Three-lane data architecture separates public-domain EU CLP statements (EUH031) from optional licensed WINGIS/GISCODE data and open SDS.'
+      'Three-lane data architecture separates public facts from CLP labelling and safety data sheets (hazard statements, CAS numbers) from optional licensed WINGIS/GISCODE data and community reports.'
     ],
     sketchDe: 'Kamera scannt zwei Flaschen (Barcode, GISCODE oder OCR). Lokale Matrix berechnet: combined = hazards(A) | hazards(B). Bei Treffer (z.B. Säure + Hypochlorit) feuern 4 Kanäle: Roter Bildschirm, schriller Alarm, laute Muttersprachen-Stimme, repetitive Vibration. Bei Unbekannt: Bernsteinfarbenes UNVERIFIED. Bei neutraler Paarung: Grauer Info-Screen (niemals grün!) mit Pflicht-Hinweis: „Keine bekannte Gefahr in der DB — keine Sicherheitsfreigabe! Nur mischen, wenn vom Arbeitgeber angewiesen.“',
     sketchEn: 'Camera scans two bottles (barcode, GISCODE, or label). Local rule engine calculates combined hazard set. On danger trigger, 4 channels fire simultaneously: Flashing red screen, loud multilingual voice alert, shrill alarm tone, repeating haptics. On unknown: Amber UNVERIFIED. On neutral pair: Grey screen (never green!) with disclaimer: "No known dangerous combination in DB — not a safety clearance. Do not mix unless instructed by employer."',
@@ -1542,7 +1542,7 @@ Key Capabilities of ChemHazard Stop:
 4. Formal Safety Case (Never Emits "Safe"): The system strictly rejects false reassurance. It never displays a green "safe" clearance. It either halts the worker on verified danger (STOP) or transparently flags incomplete data as UNVERIFIED.
 
 Compliance & European Data Architecture:
-The core engine runs on public-domain EU CLP statements (specifically EUH031: "Contact with acids liberates toxic gas"). It operates with zero tracking, zero cloud data transfer, and complete offline sovereignty.
+The core engine runs on public facts from EU CLP labelling and manufacturers' safety data sheets: a product counts as chlorine bleach by its ingredient (sodium hypochlorite, CAS 7681-52-9), whether or not its label carries EUH031 ("Contact with acids liberates toxic gas"). It operates with zero tracking, zero cloud data transfer, and complete offline sovereignty.
 
 Everything is turnkey, tested, and published under CC0 / Public Domain:
 • Interactive Web Simulator & Live Demo: https://felixinberlin.github.io/Amelie/#dose=dose-cleaner-chemical-safety

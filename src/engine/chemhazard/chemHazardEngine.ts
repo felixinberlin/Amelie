@@ -21,20 +21,33 @@ export type ChemicalGroup =
 
 export type DataSourceLane = 'public_law' | 'licensed_wingis' | 'open_community';
 
+export type ProductSourceType = 'sds' | 'ingredient_datasheet' | 'none';
+
 export interface ProductRecord {
   id: string;
   name: string;
   brand: string;
-  gtin?: string;
+  /** Alle Gebindegrößen; jede GTIN besteht die GS1-Prüfziffer. */
+  gtins?: string[];
+  /** Unique Formula Identifier vom Etikett. */
+  ufi?: string;
   giscode?: string;
   chemicalGroups: ChemicalGroup[];
   hazardStatements: string[];
+  casNumbers?: string[];
   ph?: { min?: number; max?: number };
   verified: boolean;
   dataLane: DataSourceLane;
+  sourceType: ProductSourceType;
   provenance: {
     sourceDocument: string;
+    sourceUrl?: string;
+    sourceHost?: 'manufacturer' | 'retailer';
+    revisionDate?: string;
+    sha256?: string;
     verificationDate: string;
+    gtinSource?: string;
+    note?: string;
   };
   activeIngredients?: string;
   descriptionDe?: string;
@@ -112,8 +125,36 @@ export function assertSafetyInvariants(result: InterlockEvaluationResult): void 
   }
 }
 
+/** GS1 check digit for GTIN-8/12/13/14. */
+export function isValidGtin(gtin: string): boolean {
+  if (!/^(\d{8}|\d{12,14})$/.test(gtin)) return false;
+  const digits = gtin.split('').map(Number);
+  const check = digits.pop() as number;
+  const sum = digits.reverse().reduce((acc, d, i) => acc + d * (i % 2 === 0 ? 3 : 1), 0);
+  return (10 - (sum % 10)) % 10 === check;
+}
+
 /**
- * Finds a product in the catalog by ID, GTIN, or GISCODE.
+ * Reads the GTIN out of whatever a scanner returns: a bare EAN/GTIN, or a
+ * GS1 Digital Link URI such as https://id.gs1.org/01/04031255000121.
+ * Leading zeros are dropped so a GTIN-14 from a QR code matches the EAN-13 in the catalog.
+ */
+export function gtinFromScan(scan: string): string | null {
+  const text = scan.trim();
+  const link = text.match(/\/01\/(\d{8,14})(?:[/?#]|$)/);
+  const digits = link ? link[1] : /^\d{8,14}$/.test(text) ? text : null;
+  if (!digits || !isValidGtin(digits)) return null;
+  return digits.replace(/^0+(?=\d{8,})/, '');
+}
+
+/** GS1 Digital Link URI for a GTIN (the payload of a GS1 QR code). */
+export function gs1DigitalLink(gtin: string): string {
+  return `https://id.gs1.org/01/${gtin.padStart(14, '0')}`;
+}
+
+/**
+ * Finds a product in the catalog by ID, GTIN (bare or as GS1 Digital Link), UFI, or GISCODE.
+ * A GISCODE names a product group, so it only resolves when exactly one catalog entry carries it.
  */
 export function lookupProductByIdentifier(
   identifier: string,
@@ -121,15 +162,19 @@ export function lookupProductByIdentifier(
 ): ProductRecord | null {
   if (!identifier || typeof identifier !== 'string') return null;
   const clean = identifier.trim().toLowerCase();
-  
-  return (
-    catalog.find(
-      (p) =>
-        p.id.toLowerCase() === clean ||
-        (p.gtin && p.gtin.toLowerCase() === clean) ||
-        (p.giscode && p.giscode.toLowerCase() === clean)
-    ) || null
+  const scanned = gtinFromScan(identifier);
+  const sameGtin = (g: string) => g.replace(/^0+(?=\d{8,})/, '') === scanned;
+
+  const direct = catalog.find(
+    (p) =>
+      p.id.toLowerCase() === clean ||
+      (scanned !== null && (p.gtins ?? []).some(sameGtin)) ||
+      (p.ufi && p.ufi.toLowerCase() === clean)
   );
+  if (direct) return direct;
+
+  const group = catalog.filter((p) => p.giscode && p.giscode.toLowerCase() === clean.replace(/\s/g, ''));
+  return group.length === 1 ? group[0] : null;
 }
 
 /**
@@ -265,7 +310,7 @@ export function evaluateMixingInterlock(
 }
 
 /**
- * End-to-end evaluation using string identifiers (IDs, GTINs, or GISCODEs).
+ * End-to-end evaluation using string identifiers (IDs, GTINs, UFIs, or GISCODEs).
  */
 export function evaluatePairByIdentifiers(
   idOrCodeA: string,

@@ -12,7 +12,7 @@ Das Projekt ist in drei strikte, deterministisch prüfbare Meilensteine untertei
 ```
 [ M0: Standalone Kernel & Interlock-Prototyp ]
   ├── 100% Offline Regel-Kernel (sub-1ms)
-  ├── 20 kuratierte Referenzprodukte (Seed DB)
+  ├── 20 belegte Referenzprodukte (Seed DB, Herstellerdokumente)
   ├── 4-Kanal-Alarmsystem (Audio, Blitz, Haptik, Text)
   └── 100% False-Negative-Regressionstest
                      │
@@ -36,12 +36,14 @@ Das Projekt ist in drei strikte, deterministisch prüfbare Meilensteine untertei
 * **Ergebnis:**
   * Regel-Kernel in `src/engine/chemhazard/chemHazardEngine.ts`.
   * Schemas für Produkte und Regeln (`schemas/`).
-  * 20 Referenzprodukte mit CLP- und GISCODE-Merkmalen.
+  * 20 Referenzprodukte, jedes mit Herstellerdokument belegt (19 Sicherheitsdatenblätter, 1 Inhaltsstoff-Datenblatt), 51 EAN mit geprüfter Prüfziffer. Herkunft und Regeln: README Abschnitt 3a.
+  * `scripts/chemhazard-sds.mjs` zieht die Tatsachen aus einem SDB und prüft den Bestand.
   * Vitest-Suite mit 100 % Erfolgsquote über alle Invarianten.
 
 ### Meilenstein M1 · Betreuter Feldpilot (3 bis 6 Monate)
 * **Ziel:** Praxis-Validierung mit echten Reinigungskräften in gewerblichen Objekten.
 * **Umfang:** 100 bis 200 professionelle Reinigungsprodukte der Marktführer (Kiehl, Buzil, Ecolab, Dr. Schnell, Tana Chemie).
+* **Datenweg:** Es gibt keine nachnutzbare Datenbank dafür. Die Produktliste kommt aus dem Gefahrstoffverzeichnis des Pilotbetriebs, die Tatsachen aus den Sicherheitsdatenblättern der Hersteller (`scripts/chemhazard-sds.mjs extract`), die Strichcodes vom Gebinde, wo der Hersteller keine EAN veröffentlicht. Jeder Eintrag mit Chlor, Säure oder Ammoniak wird von einer zweiten Person gegengelesen.
 * **Bedingung:** Begleitung durch einen Sicherheitsbeauftragten; keine Freigabe als Alleinarbeits-Tool.
 * **Erfolgsmetriken:**
   * Zeit vom Kamerastart bis zum Warnsignal: $< 1{,}5\text{ Sekunden}$.

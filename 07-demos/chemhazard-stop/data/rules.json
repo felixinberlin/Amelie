@@ -2,7 +2,6 @@
   {
     "id": "acid-plus-hypochlorite-chlorine-gas",
     "requiredHazards": ["acid", "hypochlorite"],
-    "requiredStatements": ["EUH031"],
     "severity": "LETHAL_GAS",
     "resultingHazardDe": "Tödliches Chlorgas (Cl2) und Lungenödem",
     "resultingHazardEn": "Lethal chlorine gas (Cl2) and acute pulmonary edema",

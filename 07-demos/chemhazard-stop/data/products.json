@@ -1,497 +1,897 @@
 [
   {
-    "id": "danklorix-hygiene-reiniger",
-    "name": "DanKlorix Hygiene-Reiniger Original",
-    "brand": "CP GABA",
-    "gtin": "4013200000100",
-    "giscode": "GD10",
-    "chemicalGroups": ["hypochlorite", "oxidizer", "caustic_lye"],
-    "hazardStatements": ["EUH031", "H314", "H400", "H411"],
-    "ph": { "min": 12.5, "max": 13.0 },
-    "verified": true,
-    "dataLane": "public_law",
-    "provenance": {
-      "sourceDocument": "CLP SDS CP GABA DanKlorix (EG Nr. 1272/2008 & REACH 2020/878)",
-      "verificationDate": "2026-09-20"
-    },
-    "activeIngredients": "Natriumhypochlorit (2,8 g Aktivchlor pro 100 g, CAS 7681-52-9), Natriumhydroxid (CAS 1310-73-2)",
-    "descriptionDe": "Klassischer Haushalts- & Gewerbe-Chlorbleichreiniger mit hohem Aktivchlor-Anteil und stark alkalischem pH.",
-    "descriptionEn": "Classic domestic and commercial bleach cleaner with high active chlorine concentration and alkaline pH.",
-    "typicalUseDe": "Bleich- & Desinfektionsreiniger gegen Keime, Pilze und Verfärbungen im Sanitär- & Küchenbereich",
-    "typicalUseEn": "Chlorine bleach disinfectant cleaner for sanitary and kitchen sanitization"
-  },
-  {
-    "id": "buzil-bucasan-g460",
-    "name": "Bucasan Trendy G 460 Sanitär-Unterhaltsreiniger",
-    "brand": "Buzil",
-    "gtin": "4025104100201",
-    "giscode": "GS20",
-    "chemicalGroups": ["acid"],
-    "hazardStatements": ["H314", "H318"],
-    "ph": { "min": 0.5, "max": 1.0 },
-    "verified": true,
-    "dataLane": "public_law",
-    "provenance": {
-      "sourceDocument": "Buzil Sicherheitsdatenblatt G460 Bucasan Trendy",
-      "verificationDate": "2026-09-18"
-    },
-    "activeIngredients": "Sulfamidsäure / Amidosulfonsäure (CAS 5329-14-6, 5-15%), Zitronensäure (CAS 77-92-9)",
-    "descriptionDe": "Professioneller Sanitär-Unterhaltsreiniger auf Amidosulfonsäurebasis für Großobjekte.",
-    "descriptionEn": "Professional amidosulfonic acid sanitary maintenance cleaner for commercial cleaning.",
-    "typicalUseDe": "Professioneller saurer Sanitär-Unterhaltsreiniger zur schnellen Kalklösung auf säurebeständigen Oberflächen",
-    "typicalUseEn": "Professional acidic sanitary maintenance cleaner for rapid lime removal on acid-resistant surfaces"
-  },
-  {
-    "id": "dr-schnell-milizid",
-    "name": "Milizid Sanitärreiniger & Kalklöser",
-    "brand": "DR.SCHNELL",
-    "gtin": "4004990001002",
-    "giscode": "GS50",
-    "chemicalGroups": ["acid"],
-    "hazardStatements": ["H314", "H318", "H290"],
-    "ph": { "min": 0.5, "max": 0.8 },
-    "verified": true,
-    "dataLane": "public_law",
-    "provenance": {
-      "sourceDocument": "DR.SCHNELL SDS Milizid Art.-Nr. 00100",
-      "verificationDate": "2026-09-19"
-    },
-    "activeIngredients": "Amidosulfonsäure (CAS 5329-14-6), Phosphorsäure (CAS 7664-38-2, 1-5%)",
-    "descriptionDe": "Klassiker der gewerblichen Gebäudereinigung mit integriertem Ablauf- und Glanzeffekt.",
-    "descriptionEn": "Benchmark commercial facility descaler with built-in run-off and gloss enhancers.",
-    "typicalUseDe": "Konzentrierter Sanitärreiniger & Kalklöser mit Korrosionsinhibitoren für Nasszellen in Gewerbeobjekten",
-    "typicalUseEn": "Concentrated sanitary cleaner and descaler for commercial wet areas with corrosion inhibitors"
-  },
-  {
-    "id": "kiehl-sanikal",
-    "name": "Sanikal Säurefreier Sanitärreiniger",
+    "id": "kiehl-arenas-bleach",
+    "name": "ARENAS-bleach",
     "brand": "Kiehl",
-    "gtin": "4031255000302",
-    "giscode": "GS10",
-    "chemicalGroups": ["neutral"],
-    "hazardStatements": ["H319"],
-    "ph": { "min": 8.0, "max": 9.0 },
-    "verified": true,
-    "dataLane": "open_community",
-    "provenance": {
-      "sourceDocument": "Kiehl Technisches Datenblatt Sanikal Art. j4001",
-      "verificationDate": "2026-09-15"
+    "gtins": [
+      "4031255046754"
+    ],
+    "ufi": "GG70-60TK-J00T-D5M1",
+    "chemicalGroups": [
+      "hypochlorite",
+      "caustic_lye",
+      "oxidizer"
+    ],
+    "hazardStatements": [
+      "EUH031",
+      "H314",
+      "H400"
+    ],
+    "casNumbers": [
+      "7681-52-9"
+    ],
+    "ph": {
+      "min": 13,
+      "max": 13
     },
-    "activeIngredients": "Alkoholethoxylate, Komplexbildner (vollständig säure- und chlorfrei)",
-    "descriptionDe": "Spezialreiniger für säureempfindliche Sanitärflächen ohne Chlorgas-Reaktionsrisiko.",
-    "descriptionEn": "Specialty sanitary cleaner formulated for acid-sensitive bathroom materials without chlorine gas risk.",
-    "typicalUseDe": "Schonender Sanitärreiniger für kalkempfindliche Oberflächen wie Marmor, Terrazzo und Emaille",
-    "typicalUseEn": "Acid-free gentle sanitary cleaner safe for acid-sensitive surfaces like marble and enamel"
+    "verified": true,
+    "dataLane": "public_law",
+    "sourceType": "sds",
+    "provenance": {
+      "sourceDocument": "Johannes Kiehl KG, Sicherheitsdatenblatt ARENAS-bleach",
+      "sourceUrl": "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j6532_sd_ARENAS-bleach_de.pdf",
+      "sourceHost": "manufacturer",
+      "revisionDate": "2022-12-12",
+      "sha256": "6bfb2520281e650a896c94023c6ab91125e68f9bafe7b6c3abbe31a2f5b3d69e",
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Textilwaesche/Bleiche/ARENAS-bleach"
+    },
+    "activeIngredients": "Natriumhypochloritlösung 12 % Aktivchlor (CAS 7681-52-9)",
+    "descriptionDe": "Flüssiges Bleich-Konzentrat auf Chlorbasis für die gewerbliche Textilwäsche.",
+    "descriptionEn": "Liquid chlorine bleach concentrate for commercial laundry.",
+    "typicalUseDe": "Bleiche in der gewerblichen Wäscherei",
+    "typicalUseEn": "Bleach in commercial laundry"
   },
   {
     "id": "kiehl-powerfix-gel",
-    "name": "Powerfix-Gel WC-Grundreiniger stark sauer",
+    "name": "Powerfix-Gel",
     "brand": "Kiehl",
-    "gtin": "4031255000500",
+    "gtins": [
+      "4031255000121",
+      "4031255045931",
+      "4031255045870",
+      "4031255045924",
+      "4031255035802"
+    ],
+    "ufi": "3U20-V0J5-1002-NR4J",
     "giscode": "GS80",
-    "chemicalGroups": ["acid"],
-    "hazardStatements": ["H314", "H335", "H290"],
-    "ph": { "min": 0.2, "max": 0.6 },
+    "chemicalGroups": [
+      "acid"
+    ],
+    "hazardStatements": [
+      "H314",
+      "H412"
+    ],
+    "casNumbers": [
+      "7664-38-2",
+      "25307-17-9"
+    ],
+    "ph": {
+      "min": 0.5,
+      "max": 0.5
+    },
     "verified": true,
     "dataLane": "public_law",
+    "sourceType": "sds",
     "provenance": {
-      "sourceDocument": "Johannes KIEHL KG SDS Powerfix-Gel Art. j4005",
-      "verificationDate": "2026-09-22"
+      "sourceDocument": "Johannes Kiehl KG, Sicherheitsdatenblatt Powerfix-Gel",
+      "sourceUrl": "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j4006_sd_Powerfix-Gel_de.pdf",
+      "sourceHost": "manufacturer",
+      "revisionDate": "2022-12-12",
+      "sha256": "19be7664135955b120db98e1580837a4950e475e8a2a2312d5a8fdd98d663d99",
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Powerfix-Gel"
     },
-    "activeIngredients": "Phosphorsäure (CAS 7664-38-2, 15-25%), Salzsäure (CAS 7647-01-0, 5-10%)",
-    "descriptionDe": "Hochkonzentrierter Mineralsäure-Grundreiniger mit Salzsäure. Extrem reaktiv bei Kontakt mit Hypochlorit.",
-    "descriptionEn": "Highly concentrated mineral acid toilet cleaner with hydrochloric acid. Extremely reactive with hypochlorite.",
-    "typicalUseDe": "Stark saurer WC-Grundreiniger zur Beseitigung hartnäckigster Kalk- und Urinstein-Verkrustungen",
-    "typicalUseEn": "Heavy-duty strongly acidic toilet descaler for severe uric and limescale encrustations"
+    "activeIngredients": "Phosphorsäure 15 – < 20 % (CAS 7664-38-2), Oleylamin, ethoxyliert 1 – < 5 % (CAS 25307-17-9)",
+    "descriptionDe": "WC-Kraftreiniger auf Phosphorsäurebasis, gelförmig.",
+    "descriptionEn": "Phosphoric-acid toilet power cleaner, gel.",
+    "typicalUseDe": "WC-Becken und Urinale, gegen Kalk und Urinstein",
+    "typicalUseEn": "Toilet bowls and urinals, against limescale and urine scale"
   },
   {
-    "id": "domestos-aktiv-kraft-wc-gel",
-    "name": "Domestos Aktiv Kraft WC Gel Bleiche",
-    "brand": "Unilever",
-    "gtin": "8717163000505",
-    "giscode": "GD20",
-    "chemicalGroups": ["hypochlorite", "oxidizer", "caustic_lye"],
-    "hazardStatements": ["EUH031", "H314", "H412"],
-    "ph": { "min": 12.0, "max": 13.5 },
+    "id": "kiehl-powerfix",
+    "name": "Powerfix",
+    "brand": "Kiehl",
+    "gtins": [
+      "4031255032184",
+      "4031255036526",
+      "4031255002569",
+      "4031255012148"
+    ],
+    "ufi": "XS20-C0UR-Q00K-0DJG",
+    "giscode": "GS60",
+    "chemicalGroups": [
+      "acid"
+    ],
+    "hazardStatements": [
+      "H315",
+      "H318"
+    ],
+    "casNumbers": [
+      "7664-38-2",
+      "7647-01-0",
+      "69011-36-5"
+    ],
+    "ph": {
+      "min": 0.5,
+      "max": 0.5
+    },
     "verified": true,
     "dataLane": "public_law",
+    "sourceType": "sds",
     "provenance": {
-      "sourceDocument": "Unilever CLP SDS Domestos Aktiv Kraft WC Gel",
-      "verificationDate": "2026-09-22"
+      "sourceDocument": "Johannes Kiehl KG, Sicherheitsdatenblatt Powerfix",
+      "sourceUrl": "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j4005_sd_Powerfix_de.pdf",
+      "sourceHost": "manufacturer",
+      "revisionDate": "2022-12-12",
+      "sha256": "ff65f5eaabe8c4811f2e475f42c43e75b77a9860d85cb649e420e4bd5016416f",
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Powerfix"
     },
-    "activeIngredients": "Natriumhypochlorit (CAS 7681-52-9, ca. 4,5 g / 100 g), Natriumhydroxid (CAS 1310-73-2)",
-    "descriptionDe": "Zähflüssiges WC-Bleichmittelgel mit aktiver Chlorverbindung zur Schmutzentfärbung.",
-    "descriptionEn": "Viscous toilet bleach gel with active chlorine compound for stain eradication.",
-    "typicalUseDe": "Dickflüssiges chlorhaltiges WC-Reinigungsgel zur Keimtötung und Entfärbung",
-    "typicalUseEn": "Viscous chlorine toilet gel for sanitizing and stain bleaching"
+    "activeIngredients": "Phosphorsäure 15 – < 20 % (CAS 7664-38-2), Salzsäure 1 – < 5 % (CAS 7647-01-0)",
+    "descriptionDe": "Hochaktiver saurer Grundreiniger für den Sanitärbereich.",
+    "descriptionEn": "Highly active acidic deep cleaner for sanitary areas.",
+    "typicalUseDe": "Saure Grundreinigung im Sanitärbereich",
+    "typicalUseEn": "Acidic deep cleaning in sanitary areas"
   },
   {
-    "id": "bref-power-wc-kraft-gel",
-    "name": "Bref Power WC Kraft-Gel gegen Kalk & Urinstein",
-    "brand": "Henkel",
-    "gtin": "4015000000808",
-    "giscode": "GS50",
-    "chemicalGroups": ["acid"],
-    "hazardStatements": ["H314", "H290", "H335"],
-    "ph": { "min": 0.5, "max": 1.2 },
+    "id": "kiehl-santex",
+    "name": "Santex",
+    "brand": "Kiehl",
+    "gtins": [
+      "4031255003238",
+      "4031255003245",
+      "4031255032894"
+    ],
+    "ufi": "A030-V0WX-N002-YE9P",
+    "giscode": "GS35",
+    "chemicalGroups": [
+      "acid",
+      "organic_solvent"
+    ],
+    "hazardStatements": [
+      "H315",
+      "H319"
+    ],
+    "casNumbers": [
+      "7664-38-2",
+      "5329-14-6",
+      "69011-36-5",
+      "67-63-0"
+    ],
+    "ph": {
+      "min": 1,
+      "max": 1
+    },
     "verified": true,
     "dataLane": "public_law",
+    "sourceType": "sds",
     "provenance": {
-      "sourceDocument": "Henkel SDS Bref Power WC Kraft-Gel",
-      "verificationDate": "2026-09-21"
+      "sourceDocument": "Johannes Kiehl KG, Sicherheitsdatenblatt Santex",
+      "sourceUrl": "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j4010_sd_Santex_de.pdf",
+      "sourceHost": "manufacturer",
+      "revisionDate": "2022-12-12",
+      "sha256": "a6c66307f1427892f4f7bec70d5ed0b45a6518512fe0a4f14150406a202fa691",
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Santex"
     },
-    "activeIngredients": "Salzsäure (CAS 7647-01-0, 5-10%), Amidosulfonsäure (CAS 5329-14-6)",
-    "descriptionDe": "Aggressives Sauergel mit anorganischer Salzsäure für den sanitären Endverbraucher- & Profibereich.",
-    "descriptionEn": "Aggressive acidic gel with inorganic hydrochloric acid for consumer and professional bathrooms.",
-    "typicalUseDe": "Hochwirksames Sauergel gegen tiefsitzenden Urinstein und extremen Rost- & Kalkansatz",
-    "typicalUseEn": "Strongly acidic toilet gel targeting stubborn limescale and uric encrustations"
+    "activeIngredients": "Phosphorsäure 5 – < 10 % (CAS 7664-38-2), Sulfamidsäure 1 – < 5 % (CAS 5329-14-6)",
+    "descriptionDe": "Saurer Intensiv-Sanitärreiniger.",
+    "descriptionEn": "Acidic intensive sanitary cleaner.",
+    "typicalUseDe": "Tägliche saure Sanitärreinigung",
+    "typicalUseEn": "Daily acidic sanitary cleaning"
   },
   {
-    "id": "bref-power-bakterien-schimmel",
-    "name": "Bref Power Bakterien & Schimmel Spray",
-    "brand": "Henkel",
-    "gtin": "4015000966449",
-    "giscode": "GD20",
-    "chemicalGroups": ["hypochlorite", "oxidizer", "caustic_lye"],
-    "hazardStatements": ["EUH031", "H315", "H319", "H412"],
-    "ph": { "min": 12.0, "max": 12.8 },
+    "id": "kiehl-calinex",
+    "name": "Calinex",
+    "brand": "Kiehl",
+    "gtins": [
+      "4031255055367",
+      "4031255055817",
+      "4031255055350"
+    ],
+    "ufi": "7140-Y06Q-A000-WH9F",
+    "giscode": "GS80",
+    "chemicalGroups": [
+      "acid",
+      "organic_solvent"
+    ],
+    "hazardStatements": [
+      "H314"
+    ],
+    "casNumbers": [
+      "7664-38-2",
+      "111905-53-4",
+      "67-63-0",
+      "112-34-5"
+    ],
+    "ph": {
+      "max": 0.5
+    },
     "verified": true,
     "dataLane": "public_law",
+    "sourceType": "sds",
     "provenance": {
-      "sourceDocument": "Henkel SDS Bref Power Bakterien & Schimmel Spray",
-      "verificationDate": "2026-09-23"
+      "sourceDocument": "Johannes Kiehl KG, Sicherheitsdatenblatt Calinex",
+      "sourceUrl": "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j4038_sd_Calinex_de.pdf",
+      "sourceHost": "manufacturer",
+      "revisionDate": "2022-12-12",
+      "sha256": "70278848e6bb0dc1e99ef85b78387e29b102d795a5ea6ecfd4900bb1120ad60a",
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Calinex"
     },
-    "activeIngredients": "Natriumhypochlorit (CAS 7681-52-9, ca. 2.5 g / 100 g Aktivchlor)",
-    "descriptionDe": "Sprühreiniger mit Aktivchlor für Fliesenspiegel und Duschkabinen.",
-    "descriptionEn": "Active chlorine trigger spray for tiled walls and shower recesses.",
-    "typicalUseDe": "Desinfizierendes Aktiv-Chlorspray gegen Schwarzschimmel und Stockflecken in Silikonfugen",
-    "typicalUseEn": "Active chlorine spray against black mold and mildew on silicone sealant joints"
+    "activeIngredients": "Phosphorsäure 25 – < 35 % (CAS 7664-38-2)",
+    "descriptionDe": "Kalk- und Fettentferner auf Phosphorsäurebasis.",
+    "descriptionEn": "Phosphoric-acid limescale and grease remover.",
+    "typicalUseDe": "Entkalken in Sanitär- und Lebensmittelbereichen",
+    "typicalUseEn": "Descaling in sanitary and food areas"
   },
   {
-    "id": "mellerud-schimmel-vernichter",
-    "name": "Mellerud Schimmel Vernichter Chlorhaltig",
-    "brand": "Mellerud",
-    "gtin": "4004666010012",
-    "giscode": "GD20",
-    "chemicalGroups": ["hypochlorite", "oxidizer", "caustic_lye"],
-    "hazardStatements": ["EUH031", "H314", "H400", "H411"],
-    "ph": { "min": 12.5, "max": 13.2 },
+    "id": "kiehl-oxycal",
+    "name": "Oxycal",
+    "brand": "Kiehl",
+    "gtins": [
+      "4031255042503",
+      "4031255042510"
+    ],
+    "ufi": "7M30-E0RQ-S00H-MTD4",
+    "giscode": "GS35",
+    "chemicalGroups": [
+      "acid",
+      "peroxide",
+      "oxidizer"
+    ],
+    "hazardStatements": [
+      "H315",
+      "H319"
+    ],
+    "casNumbers": [
+      "7722-84-1",
+      "75-75-2"
+    ],
+    "ph": {
+      "min": 1.5,
+      "max": 1.5
+    },
     "verified": true,
     "dataLane": "public_law",
+    "sourceType": "sds",
     "provenance": {
-      "sourceDocument": "Mellerud Chemie GmbH SDS Art. 2001001001",
-      "verificationDate": "2026-09-20"
+      "sourceDocument": "Johannes Kiehl KG, Sicherheitsdatenblatt Oxycal",
+      "sourceUrl": "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j4030_sd_Oxycal_de.pdf",
+      "sourceHost": "manufacturer",
+      "revisionDate": "2026-06-02",
+      "sha256": "b817120b056d5edda9b4a0181f9bdbbfa8c11ff8b60edf3903d0481f4caee671",
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Oxycal"
     },
-    "activeIngredients": "Natriumhypochlorit (CAS 7681-52-9, ca. 3.2% Aktivchlor), Natriumhydroxid",
-    "descriptionDe": "Starkes Chlor-Biozidprodukt zur Sofort-Vernichtung von Schimmelpilzen.",
-    "descriptionEn": "Potent chlorine biocide formulation for instant black mold eradication.",
-    "typicalUseDe": "Bleichender Schimmelentferner mit sofortiger Desinfektions- und Entfärbewirkung auf Fliesen und Mauerwerk",
-    "typicalUseEn": "Chlorine mold destroyer with instantaneous bleaching and sanitizing action"
+    "activeIngredients": "Wasserstoffperoxid 35 % zu 10 – < 15 % (CAS 7722-84-1), Methansulfonsäure < 3 % (CAS 75-75-2)",
+    "descriptionDe": "Saurer Sanitärreiniger mit Bleichmittel auf Sauerstoffbasis.",
+    "descriptionEn": "Acidic sanitary cleaner with oxygen-based bleach.",
+    "typicalUseDe": "Sanitärreinigung mit Sauerstoffbleiche",
+    "typicalUseEn": "Sanitary cleaning with oxygen bleach"
+  },
+  {
+    "id": "kiehl-fumex",
+    "name": "Fumex",
+    "brand": "Kiehl",
+    "gtins": [
+      "4031255008349",
+      "4031255008325",
+      "4031255008332",
+      "4031255048888"
+    ],
+    "ufi": "MN40-H01G-F00F-JWCW",
+    "chemicalGroups": [
+      "caustic_lye"
+    ],
+    "hazardStatements": [
+      "H314"
+    ],
+    "casNumbers": [
+      "1310-73-2"
+    ],
+    "ph": {
+      "min": 13.5
+    },
+    "verified": true,
+    "dataLane": "public_law",
+    "sourceType": "sds",
+    "provenance": {
+      "sourceDocument": "Johannes Kiehl KG, Sicherheitsdatenblatt Fumex",
+      "sourceUrl": "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j5511_sd_Fumex_de.pdf",
+      "sourceHost": "manufacturer",
+      "revisionDate": "2022-12-12",
+      "sha256": "213c2cedaa7178c592d7180dda97f31f9a2b43b25f4380e6b794df5d83ca58a9",
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Kuechen-und-Lebensmittelindustrie/Kuechenreinigung-und-Lebensmittelhygiene/Fumex"
+    },
+    "activeIngredients": "Natriumhydroxid 20 – < 25 % (CAS 1310-73-2)",
+    "descriptionDe": "Stark alkalischer Rauchharzentferner für Küche und Lebensmittelbetrieb.",
+    "descriptionEn": "Strongly alkaline smoke-resin remover for kitchens and food plants.",
+    "typicalUseDe": "Räucherkammern, Grills, Backöfen",
+    "typicalUseEn": "Smoke chambers, grills, ovens"
+  },
+  {
+    "id": "kiehl-li-ex",
+    "name": "Li-Ex",
+    "brand": "Kiehl",
+    "gtins": [
+      "4031255013107",
+      "4031255032351",
+      "4031255013114",
+      "4031255035727",
+      "4031255000435",
+      "4031255002613"
+    ],
+    "ufi": "1UM0-306R-P002-NAHA",
+    "giscode": "GG50",
+    "chemicalGroups": [
+      "organic_solvent"
+    ],
+    "hazardStatements": [
+      "H315",
+      "H319"
+    ],
+    "casNumbers": [
+      "112-34-5",
+      "5131-66-8",
+      "122-99-6",
+      "68439-51-0",
+      "141-43-5"
+    ],
+    "ph": {
+      "min": 9.5,
+      "max": 9.5
+    },
+    "verified": true,
+    "dataLane": "public_law",
+    "sourceType": "sds",
+    "provenance": {
+      "sourceDocument": "Johannes Kiehl KG, Sicherheitsdatenblatt Li-Ex",
+      "sourceUrl": "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j1502_sd_Li-Ex_de.pdf",
+      "sourceHost": "manufacturer",
+      "revisionDate": "2026-06-02",
+      "sha256": "0ac4d1de645c8533e75801d1c5077c4ac3890f5622e866e3bc8122472593190e",
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Grundreinigung/Li-Ex"
+    },
+    "activeIngredients": "2-(2-Butoxyethoxy)ethanol 10 – < 15 % (CAS 112-34-5), 2-Aminoethanol 1 – < 5 % (CAS 141-43-5)",
+    "descriptionDe": "Spezial-Grundreiniger auf Lösemittelbasis, schwach alkalisch.",
+    "descriptionEn": "Solvent-based special stripper, mildly alkaline.",
+    "typicalUseDe": "Grundreinigung von Linoleum und elastischen Belägen",
+    "typicalUseEn": "Stripping linoleum and resilient floors"
+  },
+  {
+    "id": "kiehl-sanikal",
+    "name": "Sanikal",
+    "brand": "Kiehl",
+    "gtins": [
+      "4031255000183",
+      "4031255000954",
+      "4031255000176"
+    ],
+    "giscode": "GU50",
+    "chemicalGroups": [
+      "organic_solvent"
+    ],
+    "hazardStatements": [],
+    "casNumbers": [
+      "67-63-0",
+      "68891-38-3"
+    ],
+    "ph": {
+      "min": 9,
+      "max": 9
+    },
+    "verified": true,
+    "dataLane": "public_law",
+    "sourceType": "sds",
+    "provenance": {
+      "sourceDocument": "Johannes Kiehl KG, Sicherheitsdatenblatt Sanikal",
+      "sourceUrl": "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j4002_sd_Sanikal_de.pdf",
+      "sourceHost": "manufacturer",
+      "revisionDate": "2026-06-02",
+      "sha256": "3059b2bcd2c0287e6195dadcf612763d25eb3bc7096a570d1780e229d4b48dde",
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Sanikal"
+    },
+    "activeIngredients": "Propan-2-ol 1 – < 5 % (CAS 67-63-0), Fettalkoholethersulfat 1 – < 5 % (CAS 68891-38-3); säure- und chlorfrei",
+    "descriptionDe": "Säurefreier Sanitär-Unterhaltsreiniger.",
+    "descriptionEn": "Acid-free sanitary maintenance cleaner.",
+    "typicalUseDe": "Tägliche Sanitärraum-Hygiene",
+    "typicalUseEn": "Daily washroom hygiene"
+  },
+  {
+    "id": "kiehl-profloor-konzentrat",
+    "name": "Profloor-Konzentrat",
+    "brand": "Kiehl",
+    "gtins": [
+      "4031255001845",
+      "4031255003139",
+      "4031255003320",
+      "4031255003559",
+      "4031255001302"
+    ],
+    "giscode": "GU50",
+    "chemicalGroups": [
+      "organic_solvent"
+    ],
+    "hazardStatements": [],
+    "casNumbers": [
+      "112-34-5",
+      "69011-36-5"
+    ],
+    "ph": {
+      "min": 8.5,
+      "max": 8.5
+    },
+    "verified": true,
+    "dataLane": "public_law",
+    "sourceType": "sds",
+    "provenance": {
+      "sourceDocument": "Johannes Kiehl KG, Sicherheitsdatenblatt Profloor-Konzentrat",
+      "sourceUrl": "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j3007_sd_Profloor-Konzentrat_de.pdf",
+      "sourceHost": "manufacturer",
+      "revisionDate": "2022-12-12",
+      "sha256": "b55001ccca6c960de950515c7420510bba301ee1d05ceb828f76c0900e037029",
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Wischpflege-Unterhalt/Profloor-Konzentrat"
+    },
+    "activeIngredients": "2-(2-Butoxyethoxy)ethanol 5 – < 10 % (CAS 112-34-5), nichtionische Tenside",
+    "descriptionDe": "Wischpflege-Konzentrat für die einstufige Bodenpflege.",
+    "descriptionEn": "Mop-care concentrate for one-step floor care.",
+    "typicalUseDe": "Wischpflege wasserbeständiger Böden",
+    "typicalUseEn": "Mop care for water-resistant floors"
+  },
+  {
+    "id": "kiehl-torvan-konzentrat",
+    "name": "Torvan-Konzentrat",
+    "brand": "Kiehl",
+    "gtins": [
+      "4031255000169",
+      "4031255057682",
+      "4031255013398",
+      "4031255015989",
+      "4031255013404",
+      "4031255000152",
+      "4031255057675",
+      "4031255003528",
+      "4031255000633",
+      "4031255018935"
+    ],
+    "giscode": "GU50",
+    "chemicalGroups": [
+      "organic_solvent"
+    ],
+    "hazardStatements": [],
+    "casNumbers": [
+      "112-34-5",
+      "69011-36-5"
+    ],
+    "ph": {
+      "min": 9.5,
+      "max": 9.5
+    },
+    "verified": true,
+    "dataLane": "public_law",
+    "sourceType": "sds",
+    "provenance": {
+      "sourceDocument": "Johannes Kiehl KG, Sicherheitsdatenblatt Torvan-Konzentrat",
+      "sourceUrl": "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j2507_sd_Torvan-Konzentrat_de.pdf",
+      "sourceHost": "manufacturer",
+      "revisionDate": "2022-12-12",
+      "sha256": "ea0e4f121fb560d6457df912e3747347d9a1e22635b72d21e9c94e381bc564c1",
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Torvan-Konzentrat"
+    },
+    "activeIngredients": "2-(2-Butoxyethoxy)ethanol 1 – < 5 % (CAS 112-34-5), nichtionische Tenside",
+    "descriptionDe": "Aktivreiniger-Konzentrat für die Unterhaltsreinigung.",
+    "descriptionEn": "Active cleaner concentrate for routine cleaning.",
+    "typicalUseDe": "Unterhaltsreinigung von Böden und Oberflächen",
+    "typicalUseEn": "Routine cleaning of floors and surfaces"
+  },
+  {
+    "id": "kiehl-clean-oxy",
+    "name": "Clean@oxy",
+    "brand": "Kiehl",
+    "gtins": [
+      "4031255057910",
+      "4031255057958",
+      "4031255058580"
+    ],
+    "giscode": "GU50",
+    "chemicalGroups": [
+      "organic_solvent"
+    ],
+    "hazardStatements": [],
+    "casNumbers": [
+      "67-63-0",
+      "69011-36-5",
+      "112-34-5"
+    ],
+    "ph": {
+      "min": 7,
+      "max": 7
+    },
+    "verified": true,
+    "dataLane": "public_law",
+    "sourceType": "sds",
+    "provenance": {
+      "sourceDocument": "Johannes Kiehl KG, Sicherheitsdatenblatt Clean@oxy",
+      "sourceUrl": "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j2535_sd_Cleanoxy_de.pdf",
+      "sourceHost": "manufacturer",
+      "revisionDate": "2026-05-28",
+      "sha256": "78e82badca1a61e32208a446b008b0497873b7610074332cab9bfd866a273a35",
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Cleanoxy"
+    },
+    "activeIngredients": "Propan-2-ol 5 – < 10 % (CAS 67-63-0), 2-(2-Butoxyethoxy)ethanol 1 – < 5 % (CAS 112-34-5)",
+    "descriptionDe": "Neutrales Reinigungsadditiv für die Unterhaltsreinigung.",
+    "descriptionEn": "Neutral cleaning additive for routine cleaning.",
+    "typicalUseDe": "Unterhaltsreinigung, Zusatz zur Reinigungsflotte",
+    "typicalUseEn": "Routine cleaning, additive to the cleaning solution"
+  },
+  {
+    "id": "buzil-bucalex-g460",
+    "name": "Bucalex G 460",
+    "brand": "Buzil",
+    "ufi": "DH30-X03V-800J-XR01",
+    "giscode": "GS80",
+    "chemicalGroups": [
+      "acid"
+    ],
+    "hazardStatements": [
+      "H290",
+      "H314",
+      "H318",
+      "H412"
+    ],
+    "casNumbers": [
+      "7664-38-2",
+      "68439-50-9",
+      "25307-17-9"
+    ],
+    "ph": {
+      "min": 0.2,
+      "max": 1
+    },
+    "verified": true,
+    "dataLane": "public_law",
+    "sourceType": "sds",
+    "provenance": {
+      "sourceDocument": "BUZIL-WERK Wagner, Sicherheitsdatenblatt Bucalex G 460 (Download-Formular der Produktseite)",
+      "sourceUrl": "https://www.buzil.com/products/sanitary/bucalex-g-460",
+      "sourceHost": "manufacturer",
+      "revisionDate": "2026-07-02",
+      "sha256": "cfbbef724bb8dd72cb80a46fdf38ec43815274bf6ae992b1b03097199a086456",
+      "verificationDate": "2026-10-12"
+    },
+    "activeIngredients": "Phosphorsäure 20 – < 25 % (CAS 7664-38-2)",
+    "descriptionDe": "Viskoser Sanitär-Grundreiniger auf Phosphorsäurebasis.",
+    "descriptionEn": "Viscous sanitary deep cleaner based on phosphoric acid.",
+    "typicalUseDe": "Sanitär-Grundreinigung, gegen Kalk und Urinstein",
+    "typicalUseEn": "Sanitary deep cleaning, against limescale and urine scale"
+  },
+  {
+    "id": "buzil-bucasan-trendy-t464",
+    "name": "Bucasan Trendy T 464",
+    "brand": "Buzil",
+    "ufi": "9CC0-Y0X0-400K-4T0W",
+    "giscode": "GS80",
+    "chemicalGroups": [
+      "acid",
+      "organic_solvent"
+    ],
+    "hazardStatements": [
+      "H290",
+      "H314",
+      "H318"
+    ],
+    "casNumbers": [
+      "5329-14-6",
+      "26183-52-8",
+      "34590-94-8"
+    ],
+    "ph": {
+      "min": 0,
+      "max": 1
+    },
+    "verified": true,
+    "dataLane": "public_law",
+    "sourceType": "sds",
+    "provenance": {
+      "sourceDocument": "BUZIL-WERK Wagner, Sicherheitsdatenblatt Bucasan Trendy T 464 (Download-Formular der Produktseite)",
+      "sourceUrl": "https://www.buzil.com/products/sanitary/bucasan-trendy-t-464",
+      "sourceHost": "manufacturer",
+      "revisionDate": "2026-07-02",
+      "sha256": "52d25aa1c6b37f0f4b29db1b1710e5e018d21343b12ab8503bca2a33b0669ccc",
+      "verificationDate": "2026-10-12"
+    },
+    "activeIngredients": "Amidosulfonsäure 10 – < 15 % (CAS 5329-14-6)",
+    "descriptionDe": "Sanitär-Unterhaltsreiniger auf Amidosulfonsäurebasis.",
+    "descriptionEn": "Sanitary maintenance cleaner based on sulfamic acid.",
+    "typicalUseDe": "Tägliche Sanitärreinigung",
+    "typicalUseEn": "Daily sanitary cleaning"
   },
   {
     "id": "buzil-erol-g490",
-    "name": "Erol G 490 Feinsteinzeug-Grundreiniger alkalisch",
+    "name": "Erol G 490",
     "brand": "Buzil",
-    "gtin": "4025104100490",
-    "giscode": "GG80",
-    "chemicalGroups": ["caustic_lye"],
-    "hazardStatements": ["H314", "H290"],
-    "ph": { "min": 12.5, "max": 13.5 },
+    "ufi": "7J40-00DM-X00G-WTYT",
+    "giscode": "GG70",
+    "chemicalGroups": [
+      "caustic_lye",
+      "organic_solvent"
+    ],
+    "hazardStatements": [
+      "H290",
+      "H314",
+      "H318"
+    ],
+    "casNumbers": [
+      "112-34-5",
+      "122-99-6",
+      "141-43-5",
+      "15763-76-5",
+      "1310-58-3"
+    ],
+    "ph": {
+      "min": 13,
+      "max": 14
+    },
     "verified": true,
     "dataLane": "public_law",
+    "sourceType": "sds",
     "provenance": {
-      "sourceDocument": "Buzil SDS Erol G490",
-      "verificationDate": "2026-09-19"
+      "sourceDocument": "BUZIL-WERK Wagner, Sicherheitsdatenblatt Erol G 490 (Download-Formular der Produktseite)",
+      "sourceUrl": "https://www.buzil.com/products/special/erol-g-490",
+      "sourceHost": "manufacturer",
+      "revisionDate": "2026-10-01",
+      "sha256": "f12fb3c0661783f35b8e8cf394a85d15c9af6bc6894993d2cdfda1f77f6a349b",
+      "verificationDate": "2026-10-12"
     },
-    "activeIngredients": "Kaliumhydroxid (CAS 1310-58-3, 5-15%), Fettalkoholethoxylate",
-    "descriptionDe": "Hochalkalischer Intensivreiniger für mikroporöse Bodenfliesen in Werkstätten und Hallen.",
-    "descriptionEn": "Highly alkaline intensive cleaner for microporous floor tiles in workshops and sports halls.",
-    "typicalUseDe": "Stark alkalischer Spezial-Grundreiniger zur Entfettung mikroporöser Feinsteinzeugfliesen",
-    "typicalUseEn": "Strongly alkaline deep cleaner for pore-deep degreasing of porcelain stoneware tiles"
+    "activeIngredients": "Kaliumhydroxid 0,5 – < 2 % (CAS 1310-58-3), 2-(2-Butoxyethoxy)ethanol 5 – < 10 % (CAS 112-34-5)",
+    "descriptionDe": "Alkalischer Feinsteinzeug-Grundreiniger.",
+    "descriptionEn": "Alkaline deep cleaner for porcelain stoneware.",
+    "typicalUseDe": "Grundreinigung von Feinsteinzeug",
+    "typicalUseEn": "Deep cleaning of porcelain stoneware"
   },
   {
-    "id": "dr-becher-backofen-grill-reiniger",
-    "name": "Dr. Becher Backofen & Grill Reiniger",
-    "brand": "Dr. Becher",
-    "gtin": "4004990001507",
-    "giscode": "GG90",
-    "chemicalGroups": ["caustic_lye"],
-    "hazardStatements": ["H314", "H290"],
-    "ph": { "min": 13.5, "max": 14.0 },
+    "id": "dr-schnell-milizid",
+    "name": "MILIZID",
+    "brand": "DR.SCHNELL",
+    "chemicalGroups": [
+      "acid"
+    ],
+    "hazardStatements": [
+      "H315",
+      "H319"
+    ],
+    "casNumbers": [
+      "5329-14-6",
+      "69011-36-5"
+    ],
+    "ph": {
+      "min": 0.5,
+      "max": 0.5
+    },
     "verified": true,
     "dataLane": "public_law",
+    "sourceType": "sds",
     "provenance": {
-      "sourceDocument": "Dr. Becher GmbH SDS Backofen & Grill Reiniger Art. 150",
-      "verificationDate": "2026-09-18"
+      "sourceDocument": "DR.SCHNELL, Sicherheitsdatenblatt MILIZID (Fassung GHS 1.0)",
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/MILIZID/SDB/de_DE/pdf/DE",
+      "sourceHost": "manufacturer",
+      "revisionDate": "2025-09-16",
+      "sha256": "3b0ba49c7e108782bdc106e75f70e255a029842882d3f2e72f85f56f1df8295e",
+      "verificationDate": "2026-10-12"
     },
-    "activeIngredients": "Kaliumhydroxid (CAS 1310-58-3, 5-10%), Natriumhydroxid (CAS 1310-73-2, 1-5%)",
-    "descriptionDe": "Konzentrierte Lauge zur Kalt- und Heißentfettung in Großküchen und Bäckereien.",
-    "descriptionEn": "Concentrated lye solution for hot and cold oven degreasing in catering kitchens.",
-    "typicalUseDe": "Hochalkalischer Kalt- & Warmreiniger zur Verseifung eingebrannter Fette in Konvektomaten und Grills",
-    "typicalUseEn": "High-alkaline professional oven and grill degreaser saponifying baked-on fats"
+    "activeIngredients": "Sulfamidsäure 10 – < 25 % (CAS 5329-14-6)",
+    "descriptionDe": "Saurer Sanitärreiniger und Kalklöser für die gewerbliche Verwendung.",
+    "descriptionEn": "Acidic sanitary cleaner and descaler for professional use.",
+    "typicalUseDe": "Sanitärreinigung, Kalk- und Urinsteinentfernung",
+    "typicalUseEn": "Sanitary cleaning, limescale and urine-scale removal"
   },
   {
-    "id": "dr-becher-kalkloeser-superkonzentrat",
-    "name": "Dr. Becher Kalklöser Superkonzentrat",
-    "brand": "Dr. Becher",
-    "gtin": "4004990005000",
-    "giscode": "GS80",
-    "chemicalGroups": ["acid"],
-    "hazardStatements": ["H314", "H290"],
-    "ph": { "min": 0.2, "max": 0.8 },
+    "id": "domestos-professional-original",
+    "name": "Domestos Professional Original",
+    "brand": "Diversey (Lizenz Unilever)",
+    "ufi": "0MAH-P18Y-800E-5WKM",
+    "chemicalGroups": [
+      "hypochlorite",
+      "caustic_lye",
+      "oxidizer"
+    ],
+    "hazardStatements": [
+      "H290",
+      "H314",
+      "H318",
+      "H400",
+      "H410",
+      "H411"
+    ],
+    "casNumbers": [
+      "7681-52-9",
+      "68955-55-5",
+      "1310-73-2"
+    ],
+    "ph": {
+      "min": 11.5
+    },
     "verified": true,
     "dataLane": "public_law",
+    "sourceType": "sds",
     "provenance": {
-      "sourceDocument": "Dr. Becher SDS Kalklöser Superkonzentrat Art. 500",
-      "verificationDate": "2026-09-17"
+      "sourceDocument": "Diversey, Sicherheitsdatenblatt Domestos Professional Original (SDB-Code MS1005408, Version 1.1)",
+      "sourceUrl": "https://static.vikingdirekt.at/is/content/odeu13/PDF/MSDS_1178013_DE_21-10-2022.pdf",
+      "sourceHost": "retailer",
+      "revisionDate": "2022-10-24",
+      "sha256": "f79cf65e32e2c7ed21e4edc08a372d4bebac15a0efb97155668175f1e57011ee",
+      "verificationDate": "2026-10-12",
+      "note": "Etikett laut SDB Abschnitt 2 ohne EUH031 und ohne EUH206; die Gruppe hypochlorite folgt allein aus CAS 7681-52-9."
     },
-    "activeIngredients": "Orthophosphorsäure (CAS 7664-38-2, > 25%)",
-    "descriptionDe": "Industrie-Kalklöser für Heißwassergeräte, Gewerbespülmaschinen und Rohrleitungen.",
-    "descriptionEn": "Industrial limescale remover for commercial dishwashers and hot water appliances.",
-    "typicalUseDe": "Hochkonzentrierter Entkalker für gewerbliche Spülmaschinen, Bain-Maries und Heißwassergeräte",
-    "typicalUseEn": "Highly concentrated professional descaler for commercial dishwashers and bain-maries"
+    "activeIngredients": "Natriumhypochlorit (Aktivchlor) 3 – 10 % (CAS 7681-52-9), Natriumhydroxid 0,1 – 1 % (CAS 1310-73-2)",
+    "descriptionDe": "Chlorhaltiger WC- und Badreiniger mit Desinfektionswirkung für die gewerbliche Verwendung.",
+    "descriptionEn": "Chlorine-based toilet and bathroom cleaner with disinfecting action for professional use.",
+    "typicalUseDe": "WC- und Badezimmerreinigung, Flächendesinfektion",
+    "typicalUseEn": "Toilet and bathroom cleaning, surface disinfection"
   },
   {
-    "id": "drano-power-gel",
-    "name": "Mr Muscle Drano Power-Gel Rohrfrei",
-    "brand": "SC Johnson",
-    "gtin": "5000204735108",
-    "giscode": "GG90",
-    "chemicalGroups": ["caustic_lye", "hypochlorite", "oxidizer"],
-    "hazardStatements": ["EUH031", "H314", "H412", "H290"],
-    "ph": { "min": 13.0, "max": 13.8 },
+    "id": "danklorix-hygiene-reiniger",
+    "name": "Dan Klorix Hygienereiniger",
+    "brand": "CP GABA",
+    "gtins": [
+      "4011200652902"
+    ],
+    "chemicalGroups": [
+      "hypochlorite",
+      "caustic_lye",
+      "oxidizer"
+    ],
+    "hazardStatements": [
+      "EUH206",
+      "H290",
+      "H314",
+      "H400",
+      "H411"
+    ],
+    "casNumbers": [
+      "497-19-8",
+      "7681-52-9"
+    ],
+    "ph": {
+      "min": 12.95,
+      "max": 12.95
+    },
     "verified": true,
     "dataLane": "public_law",
+    "sourceType": "sds",
     "provenance": {
-      "sourceDocument": "SC Johnson SDS Mr Muscle Drano Power-Gel",
-      "verificationDate": "2026-09-22"
+      "sourceDocument": "CP GABA, Sicherheitsdatenblatt Dan Klorix Hygienereiniger (SDB-Nummer 660000003600, Version 4.8)",
+      "sourceUrl": "https://www.otto-office.com/de/app/download/document/item?mid=14490",
+      "sourceHost": "retailer",
+      "revisionDate": "2020-02-20",
+      "sha256": "db8924b93528ff7cd26b517e3345e5d75f1608dd89a01cdb2980932e08cb5d43",
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://www.rossmann.de/de/haushalt-dan-klorix-original-hygiene-reiniger/p/4011200652902",
+      "note": "SDB von 2020, über einen Händler abgerufen; neuere Fassung beim Hersteller anfragen. Die GTIN stammt aus einer Händlerseite (1,5-l-Flasche „Original“) und ist am Gebinde gegenzuprüfen. Etikett trägt EUH206, nicht EUH031."
     },
-    "activeIngredients": "Natriumhydroxid (CAS 1310-73-2, 2.5-5%), Natriumhypochlorit (CAS 7681-52-9, 1-2.5%)",
-    "descriptionDe": "Schweres alkalisches Rohrreinigergel mit Natronlauge und Natriumhypochlorit.",
-    "descriptionEn": "Dense alkaline drain gel containing caustic soda and sodium hypochlorite.",
-    "typicalUseDe": "Schweres Abfluss-Gel zur Zersetzung organischer Haare und Fette in Siphons und Abflüssen",
-    "typicalUseEn": "Dense alkaline drain gel dissolving hair, grease and organic blockages"
+    "activeIngredients": "Natriumhypochlorit ≥ 2,5 – < 3 % (CAS 7681-52-9), Natriumcarbonat ≥ 1 – < 10 % (CAS 497-19-8)",
+    "descriptionDe": "Chlorbleiche-Hygienereiniger für den Haushalt.",
+    "descriptionEn": "Household chlorine bleach hygiene cleaner.",
+    "typicalUseDe": "Bleichen und Reinigen in Bad, WC und Küche",
+    "typicalUseEn": "Bleaching and cleaning in bathroom, toilet and kitchen"
   },
   {
-    "id": "salmiakgeist-ammoniakloesung-9",
-    "name": "Salmiakgeist 9.9% Technische Ammoniaklösung",
-    "brand": "Kluthe",
-    "gtin": "4003445000901",
-    "giscode": "GG20",
-    "chemicalGroups": ["ammonia", "caustic_lye"],
-    "hazardStatements": ["H314", "H335", "H400"],
-    "ph": { "min": 11.5, "max": 12.5 },
+    "id": "meffert-salmiakgeist-9-5",
+    "name": "NEUTRAL Salmiakgeist 9,5 %",
+    "brand": "Meffert",
+    "chemicalGroups": [
+      "ammonia"
+    ],
+    "hazardStatements": [
+      "H314",
+      "H318",
+      "H335",
+      "H412"
+    ],
+    "casNumbers": [
+      "1336-21-6"
+    ],
+    "ph": {
+      "min": 9
+    },
     "verified": true,
     "dataLane": "public_law",
+    "sourceType": "sds",
     "provenance": {
-      "sourceDocument": "Kluthe Sicherheitsdatenblatt Salmiakgeist Art. 00344500",
-      "verificationDate": "2026-09-14"
+      "sourceDocument": "Meffert AG Farbwerke, Sicherheitsdatenblatt NEUTRAL Salmiakgeist 9,5 % (Materialnummer 78307576800000)",
+      "sourceUrl": "https://media.hornbach.de/hb/msds/as.87226194.pdf",
+      "sourceHost": "retailer",
+      "revisionDate": "2022-02-03",
+      "sha256": "055f1c74ba027d32954df5c76a57b87617c914e1a57616c8d4889f14edc5f3a9",
+      "verificationDate": "2026-10-12"
     },
-    "activeIngredients": "Ammoniaklösung / Ammoniumhydroxid (CAS 1336-21-6, 9.9% w/w NH3)",
-    "descriptionDe": "Reines wässriges Ammoniak für Reinigungs-, Abbeiz- und Entfettungsarbeiten.",
-    "descriptionEn": "Pure aqueous ammonia solution for cleaning, stripping and pre-paint degreasing.",
-    "typicalUseDe": "Klassisches Laugungsmittel zur Entfettung vor Anstrichen, Zinkwäsche und Geruchsneutralisation",
-    "typicalUseEn": "Technical ammonia solution for heavy degreasing before painting and zinc washing"
+    "activeIngredients": "Ammoniaklösung 5 – < 10 % (CAS 1336-21-6)",
+    "descriptionDe": "Wässrige Ammoniaklösung als Reiniger.",
+    "descriptionEn": "Aqueous ammonia solution sold as a cleaner.",
+    "typicalUseDe": "Entfetten, Anlaugen, Fensterreinigung",
+    "typicalUseEn": "Degreasing, pre-paint cleaning, window cleaning"
   },
   {
-    "id": "kiehl-clorina",
-    "name": "Clorina Desinfektions- & Bleichreiniger",
-    "brand": "Kiehl",
-    "gtin": "4031255000708",
-    "giscode": "GD30",
-    "chemicalGroups": ["hypochlorite", "oxidizer", "caustic_lye"],
-    "hazardStatements": ["EUH031", "H314", "H400", "H411"],
-    "ph": { "min": 12.0, "max": 13.0 },
-    "verified": true,
-    "dataLane": "public_law",
-    "provenance": {
-      "sourceDocument": "Kiehl SDS Clorina Art. j4007 (EUH031 Flagged)",
-      "verificationDate": "2026-09-18"
-    },
-    "activeIngredients": "Natriumhypochlorit (CAS 7681-52-9, 3-5% Aktivchlor), Natriumhydroxid (CAS 1310-73-2)",
-    "descriptionDe": "Gewerblicher Aktivchlor-Desinfektionsreiniger für Nassbereiche und Großküchen.",
-    "descriptionEn": "Commercial active chlorine disinfectant for sanitary zones and commercial food facilities.",
-    "typicalUseDe": "Alkalisch-chlorhaltiger Desinfektionsreiniger für Großküchen, Schwimmbäder und Lebensmittelbetriebe",
-    "typicalUseEn": "Alkaline chlorine disinfectant cleaner for commercial kitchens and swimming pools"
-  },
-  {
-    "id": "cillit-bang-kalk-und-schmutz",
-    "name": "Cillit Bang Kraftreiniger Kalk & Schmutz",
-    "brand": "Reckitt Benckiser",
-    "gtin": "4002448000403",
-    "giscode": "GS30",
-    "chemicalGroups": ["acid"],
-    "hazardStatements": ["H319", "H315"],
-    "ph": { "min": 1.5, "max": 2.2 },
-    "verified": true,
-    "dataLane": "open_community",
-    "provenance": {
-      "sourceDocument": "Reckitt Benckiser SDS Cillit Bang Kalk & Schmutz",
-      "verificationDate": "2026-09-20"
-    },
-    "activeIngredients": "Sulfamidsäure / Amidosulfonsäure (CAS 5329-14-6, 5-10%), Ameisensäure (CAS 64-18-6)",
-    "descriptionDe": "Verbreiteter Haushalts-Sprühreiniger zur schnellen Kalkentfernung.",
-    "descriptionEn": "Widespread domestic trigger spray for fast bathroom limescale removal.",
-    "typicalUseDe": "Konsumenten-Kraftreiniger zur Entfernung von Seifenresten und Kalkablagerungen auf Armaturen",
-    "typicalUseEn": "Consumer spray cleaner targeting limescale and soap scum on sanitary fittings"
-  },
-  {
-    "id": "wasserstoffperoxid-3-prozent",
-    "name": "Wasserstoffperoxid-Lösung 3%",
-    "brand": "Caelo",
-    "gtin": "4020100000305",
-    "chemicalGroups": ["peroxide", "oxidizer"],
-    "hazardStatements": ["H318"],
-    "ph": { "min": 3.0, "max": 4.5 },
-    "verified": true,
-    "dataLane": "public_law",
-    "provenance": {
-      "sourceDocument": "Caelo Sicherheitsdatenblatt H2O2 3% Art. 1205",
-      "verificationDate": "2026-09-11"
-    },
-    "activeIngredients": "Hydrogen peroxide (CAS 7722-84-1, 30 g/l stabilisiert)",
-    "descriptionDe": "Rückstandsfreie oxidative Wischdesinfektion für Oberflächen und Geräte.",
-    "descriptionEn": "Residue-free oxidative surface wipe disinfection for medical and studio equipment.",
-    "typicalUseDe": "Bleich- & Oxidationsmittel zur rückstandsfreien Oberflächendesinfektion in Praxen",
-    "typicalUseEn": "Bleaching and oxidising disinfectant solution leaving no chemical residue"
-  },
-  {
-    "id": "buzil-optima-g445",
-    "name": "Optima G 445 Oberflächen- und Glasreiniger",
-    "brand": "Buzil",
-    "gtin": "4025104100445",
-    "giscode": "GU40",
-    "chemicalGroups": ["neutral"],
+    "id": "mellerud-schimmel-vernichter",
+    "name": "Schimmel Vernichter",
+    "brand": "Mellerud",
+    "gtins": [
+      "4004666004675"
+    ],
+    "chemicalGroups": [
+      "hypochlorite",
+      "caustic_lye",
+      "oxidizer"
+    ],
     "hazardStatements": [],
-    "ph": { "min": 7.0, "max": 7.5 },
+    "casNumbers": [
+      "7681-52-9",
+      "497-19-8",
+      "1310-73-2"
+    ],
     "verified": true,
     "dataLane": "open_community",
+    "sourceType": "ingredient_datasheet",
     "provenance": {
-      "sourceDocument": "Buzil SDS Optima G445 Art. G445",
-      "verificationDate": "2026-09-15"
+      "sourceDocument": "MELLERUD CHEMIE, Datenblatt über Inhaltsstoffe nach VO (EG) 648/2004 Anhang VII D, Schimmel Vernichter (P028)",
+      "sourceUrl": "https://mellerud.de/media/export/pdf/Endverbraucherdatenbl%C3%A4tter/EDB_P028_de-DE_V26-01_DE%20Schimmel%20Vernichter.pdf",
+      "sourceHost": "manufacturer",
+      "revisionDate": "2026-07-03",
+      "sha256": "1648a67744752868dba89163381a79c7fc704e55e5d54c7a57eead906687235b",
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://mellerud.de/schimmel/schimmel-vernichter",
+      "note": "Kein SDB öffentlich: Das Datenblatt nennt nur INCI-Namen (Sodium Hypochlorite, Sodium Carbonate, Sodium Hydroxide). CAS von Hand zugeordnet; H-Sätze und pH fehlen und sind am Etikett nachzutragen. GTIN der 0,5-l-Flasche aus dem Bildtitel der Herstellerseite."
     },
-    "activeIngredients": "Ethanol, 2-Propanol (unterhalb Flammpunktgrenze), nichtionische Tenside",
-    "descriptionDe": "Alkoholischer Schnellreiniger zur streifenfreien Reinigung empfindlicher Oberflächen.",
-    "descriptionEn": "Alcohol-based rapid cleaner for streak-free maintenance of delicate surfaces.",
-    "typicalUseDe": "Streifenfreier Glas- und Oberflächen-Unterhaltsreiniger für Glas, Kunststoffe und Spiegel",
-    "typicalUseEn": "Streak-free surface and glass maintenance cleaner for mirrors and glossy furniture"
-  },
-  {
-    "id": "ecolab-assert-clean",
-    "name": "Assert Clean Neutralreiniger",
-    "brand": "Ecolab",
-    "gtin": "4028162000109",
-    "giscode": "GU50",
-    "chemicalGroups": ["neutral"],
-    "hazardStatements": [],
-    "ph": { "min": 6.8, "max": 7.5 },
-    "verified": true,
-    "dataLane": "open_community",
-    "provenance": {
-      "sourceDocument": "Ecolab Product Datasheet Assert Clean Art. 100109",
-      "verificationDate": "2026-09-12"
-    },
-    "activeIngredients": "Fettalkoholethoxylate, Alkylpolyglucoside (biologisch abbaubare Neutralkomplexe)",
-    "descriptionDe": "Konzentrierter neutraler Bodenwischreiniger für PVC, Kautschuk und versiegeltes Parkett.",
-    "descriptionEn": "Concentrated neutral floor detergent suitable for PVC, rubber, and sealed timber.",
-    "typicalUseDe": "Konzentrierter Allzweck-Neutralreiniger für wasserbeständige Böden, Fliesen und Beschichtungen",
-    "typicalUseEn": "Concentrated universal neutral floor and surface detergent for water-resistant flooring"
-  },
-  {
-    "id": "frosch-neutral-reiniger",
-    "name": "Frosch Neutral Reiniger Allzweck",
-    "brand": "Werner & Mertz",
-    "gtin": "4009175110101",
-    "giscode": "GU20",
-    "chemicalGroups": ["neutral"],
-    "hazardStatements": [],
-    "ph": { "min": 6.0, "max": 7.0 },
-    "verified": true,
-    "dataLane": "open_community",
-    "provenance": {
-      "sourceDocument": "Werner & Mertz Datenblatt Frosch Neutral Reiniger",
-      "verificationDate": "2026-09-10"
-    },
-    "activeIngredients": "Pflanzliche Tenside, Konservierungsstoffe",
-    "descriptionDe": "Milder Allzweckreiniger auf Basis pflanzlicher Tenside ohne reizende Inhaltsstoffe.",
-    "descriptionEn": "Mild universal cleaner based on plant surfactants without corrosive or acidic additives.",
-    "typicalUseDe": "pH-neutraler Schonreiniger für empfindliche Böden (Holz, Kork, Linoleum) und Küchenoberflächen",
-    "typicalUseEn": "pH-neutral gentle cleaner for sensitive flooring including timber, cork and linoleum"
-  },
-  {
-    "id": "sidolin-streifenfrei-citrus",
-    "name": "Sidolin Streifenfrei Citrus Glasreiniger",
-    "brand": "Henkel",
-    "gtin": "4015000000907",
-    "giscode": "GU40",
-    "chemicalGroups": ["neutral"],
-    "hazardStatements": [],
-    "ph": { "min": 9.0, "max": 10.0 },
-    "verified": true,
-    "dataLane": "open_community",
-    "provenance": {
-      "sourceDocument": "Henkel SDS Sidolin Streifenfrei Citrus",
-      "verificationDate": "2026-09-12"
-    },
-    "activeIngredients": "Spiritus / Ethanol, milde Duft- und Tensidkomponenten",
-    "descriptionDe": "Flüssiger Glas- und Fenstersprühreiniger mit Bio-Alkohol für streifenfreien Glanz.",
-    "descriptionEn": "Liquid window and glass spray cleaner formulated with bio-alcohol for streak-free shine.",
-    "typicalUseDe": "Schnelltrocknender Glasreiniger mit Bio-Alkohol für Fenster und glatte Scheiben",
-    "typicalUseEn": "Fast-drying glass cleaner with alcohol for windows and polished glass surfaces"
-  },
-  {
-    "id": "sagrotan-wc-reiniger-chlor",
-    "name": "Sagrotan WC-Reiniger Tiefen-Sauber mit Chlor",
-    "brand": "Reckitt Benckiser",
-    "gtin": "4002448000700",
-    "giscode": "GD20",
-    "chemicalGroups": ["hypochlorite", "oxidizer", "caustic_lye"],
-    "hazardStatements": ["EUH031", "H314", "H412"],
-    "ph": { "min": 12.0, "max": 13.0 },
-    "verified": true,
-    "dataLane": "public_law",
-    "provenance": {
-      "sourceDocument": "Reckitt SDS Sagrotan WC Reiniger mit Aktiv-Chlor",
-      "verificationDate": "2026-09-19"
-    },
-    "activeIngredients": "Natriumhypochlorit (CAS 7681-52-9, ca. 2.6 g / 100 g), Amphotere Tenside",
-    "descriptionDe": "Desinfizierendes WC-Chlor-Gel mit stark bleichender Wirkung gegen Flecken und Bakterien.",
-    "descriptionEn": "Disinfecting toilet chlorine gel with strong bleaching action against stains and germs.",
-    "typicalUseDe": "Chlorhaltiges WC-Desinfektionsgel zur Beseitigung von Verfärbungen unter dem Spülrand",
-    "typicalUseEn": "Chlorine-based toilet disinfectant gel clearing severe staining under the toilet rim"
+    "activeIngredients": "Sodium Hypochlorite (CAS 7681-52-9), Sodium Carbonate (CAS 497-19-8), Sodium Hydroxide (CAS 1310-73-2); Anteile nicht veröffentlicht",
+    "descriptionDe": "Chlorhaltiger Schimmelentferner für den Haushalt.",
+    "descriptionEn": "Household chlorine-based mould remover.",
+    "typicalUseDe": "Schimmel und Stockflecken in Bad und Fugen",
+    "typicalUseEn": "Mould and mildew stains in bathrooms and grout"
   },
   {
     "id": "unverifiziertes-musterprodukt",
     "name": "Unbekannter Sanitärreiniger aus Kleinstabfüllung",
     "brand": "Unbekannt",
-    "chemicalGroups": ["acid"],
+    "chemicalGroups": [
+      "neutral"
+    ],
     "hazardStatements": [],
     "verified": false,
     "dataLane": "open_community",
+    "sourceType": "none",
     "provenance": {
-      "sourceDocument": "Unbestätigtes Community-Foto ohne Sicherheitsdatenblatt",
-      "verificationDate": "2026-09-01"
+      "sourceDocument": "Erfundenes Beispiel: Foto ohne Sicherheitsdatenblatt",
+      "verificationDate": "2026-10-12",
+      "note": "Kein reales Produkt. Zeigt den Zustand UNVERIFIED."
     },
-    "descriptionDe": "Abgefülltes Gebinde oder Sprühflasche ohne vorschriftsmäßiges GHS-Kennzeichnungsetikett.",
-    "descriptionEn": "Repackaged canister or trigger bottle lacking mandatory GHS/CLP regulatory label.",
-    "typicalUseDe": "Nicht nachvollziehbare Eigenmischung oder abgefüllte Sprühflasche ohne Originaletikett",
-    "typicalUseEn": "Unverified repackaged spray bottle without certified manufacturer label"
+    "descriptionDe": "Erfundener Platzhalter für ein Gebinde ohne belegte Daten.",
+    "descriptionEn": "Invented placeholder for a container without documented data."
   },
   {
     "id": "gesperrtes-altes-produkt",
-    "name": "Altes Markenprodukt (Datenbasis veraltet)",
-    "brand": "Altchemie",
-    "chemicalGroups": ["hypochlorite"],
-    "hazardStatements": ["EUH031"],
+    "name": "Umgefülltes Gebinde ohne Etikett",
+    "brand": "Unbekannt",
+    "chemicalGroups": [
+      "neutral"
+    ],
+    "hazardStatements": [],
     "verified": false,
     "dataLane": "open_community",
+    "sourceType": "none",
     "provenance": {
-      "sourceDocument": "Veraltetes Datenblatt aus dem Jahr 2018 (Prüffrist überschritten)",
-      "verificationDate": "2018-05-01"
+      "sourceDocument": "Erfundenes Beispiel: umgefüllte Flasche ohne Originaletikett",
+      "verificationDate": "2026-10-12",
+      "note": "Kein reales Produkt. Zeigt den Zustand UNVERIFIED."
     },
-    "descriptionDe": "Produkt mit abgelaufenem Verifizierungszeitraum. Interlock schaltet sicherheitshalber auf UNVERIFIED.",
-    "descriptionEn": "Product record past regulatory freshness threshold. Interlock safely falls back to UNVERIFIED.",
-    "typicalUseDe": "Historisches Reinigungsprodukt mit abgelaufener Sicherheitsfreigabe",
-    "typicalUseEn": "Legacy product with expired safety datasheet beyond audit validity"
+    "descriptionDe": "Erfundener Platzhalter für ein umgefülltes Gebinde.",
+    "descriptionEn": "Invented placeholder for a decanted container."
   }
 ]

@@ -4,26 +4,34 @@ import {
   lookupProductByIdentifier,
   evaluatePairByIdentifiers,
   assertSafetyInvariants,
+  isValidGtin,
+  gtinFromScan,
+  gs1DigitalLink,
   ProductRecord,
   IncompatibilityRule
 } from './chemHazardEngine';
+import { ean13Modules, decodeEan13Modules } from './ean13';
+// @ts-expect-error plain ESM script without type declarations
+import { barcodeFiles, checkProducts, deriveChemicalGroups, parseSdsText } from '../../../scripts/chemhazard-sds.mjs';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 
 import productsData from '../../../07-demos/chemhazard-stop/data/products.json';
 import rulesData from '../../../07-demos/chemhazard-stop/data/rules.json';
 
 const products = productsData as unknown as ProductRecord[];
 const rules = rulesData as unknown as IncompatibilityRule[];
+const byId = (id: string) => products.find((p) => p.id === id) as ProductRecord;
 
 describe('ChemHazard Stop / MischStop Rule Engine', () => {
   describe('P0 Incompatibility Verification: Acid + Hypochlorite (Chlorine Gas)', () => {
-    it('triggers STOP on DanKlorix (Bleach) + Buzil Bucasan (Acid Descaler)', () => {
+    it('triggers STOP on Dan Klorix (bleach) + Buzil Bucalex (phosphoric acid)', () => {
       const danklorix = lookupProductByIdentifier('danklorix-hygiene-reiniger', products);
-      const bucasan = lookupProductByIdentifier('buzil-bucasan-g460', products);
+      const bucalex = lookupProductByIdentifier('buzil-bucalex-g460', products);
 
-      expect(danklorix).toBeDefined();
-      expect(bucasan).toBeDefined();
+      expect(danklorix).not.toBeNull();
+      expect(bucalex).not.toBeNull();
 
-      const result = evaluateMixingInterlock(danklorix, bucasan, rules, 'de');
+      const result = evaluateMixingInterlock(danklorix, bucalex, rules, 'de');
 
       expect(result.state).toBe('STOP');
       expect(result.color).toBe('red');
@@ -34,9 +42,8 @@ describe('ChemHazard Stop / MischStop Rule Engine', () => {
       expect(result.hapticPattern).toEqual([300, 100, 300, 100, 500]);
     });
 
-    it('triggers STOP using GTIN barcodes (Domestos Bleach + Dr. Schnell Milizid Descaler)', () => {
-      // Domestos GTIN: 8717163000505, Milizid GTIN: 4004990001002
-      const result = evaluatePairByIdentifiers('8717163000505', '4004990001002', products, rules, 'en');
+    it('triggers STOP using real GTIN barcodes (Kiehl ARENAS-bleach + Kiehl Powerfix-Gel)', () => {
+      const result = evaluatePairByIdentifiers('4031255046754', '4031255000121', products, rules, 'en');
 
       expect(result.state).toBe('STOP');
       expect(result.color).toBe('red');
@@ -44,18 +51,56 @@ describe('ChemHazard Stop / MischStop Rule Engine', () => {
       expect(result.audioAlert?.text).toBe('STOP! Do not mix! Deadly chlorine gas hazard!');
     });
 
-    it('triggers STOP using GISCODEs (GD10 Chlorine Bleach + GS50 Acid Descaler)', () => {
-      const result = evaluatePairByIdentifiers('GD10', 'GS50', products, rules, 'pl');
+    it('resolves every container size of a product to the same record', () => {
+      const powerfixGel = byId('kiehl-powerfix-gel');
+      expect((powerfixGel.gtins ?? []).length).toBeGreaterThan(1);
+      for (const gtin of powerfixGel.gtins ?? []) {
+        expect(lookupProductByIdentifier(gtin, products)?.id).toBe('kiehl-powerfix-gel');
+      }
+    });
+
+    it('triggers STOP from a GS1 Digital Link QR payload and from a UFI', () => {
+      const qr = gs1DigitalLink('4031255046754');
+      expect(qr).toBe('https://id.gs1.org/01/04031255046754');
+      const result = evaluatePairByIdentifiers(qr, '3U20-V0J5-1002-NR4J', products, rules, 'pl');
 
       expect(result.state).toBe('STOP');
-      expect(result.color).toBe('red');
       expect(result.audioAlert?.text).toBe('STOP! Nie mieszać! Śmiertelne niebezpieczeństwo chloru!');
+    });
+
+    // Regression: the rule used to demand EUH031 on one of the two labels. Real bleach
+    // labels often carry EUH206 instead, or neither phrase, and the pair slipped through.
+    it('triggers STOP for bleach whose label lacks EUH031', () => {
+      const withoutEuh031 = products.filter(
+        (p) => p.verified && p.chemicalGroups.includes('hypochlorite') && !p.hazardStatements.includes('EUH031')
+      );
+      expect(withoutEuh031.map((p) => p.id)).toEqual(
+        expect.arrayContaining(['danklorix-hygiene-reiniger', 'domestos-professional-original'])
+      );
+      for (const bleach of withoutEuh031) {
+        const result = evaluateMixingInterlock(bleach, byId('dr-schnell-milizid'), rules);
+        expect(result.state).toBe('STOP');
+        expect(result.triggeredRule?.id).toBe('acid-plus-hypochlorite-chlorine-gas');
+      }
+    });
+
+    it('never lets any verified acid + hypochlorite pair through (0 % false negatives)', () => {
+      const acids = products.filter((p) => p.verified && p.chemicalGroups.includes('acid'));
+      const bleaches = products.filter((p) => p.verified && p.chemicalGroups.includes('hypochlorite'));
+      expect(acids.length).toBeGreaterThanOrEqual(5);
+      expect(bleaches.length).toBeGreaterThanOrEqual(3);
+      for (const acid of acids) {
+        for (const bleach of bleaches) {
+          expect(evaluateMixingInterlock(acid, bleach, rules).state).toBe('STOP');
+          expect(evaluateMixingInterlock(bleach, acid, rules).state).toBe('STOP');
+        }
+      }
     });
   });
 
   describe('Secondary Incompatibilities: Ammonia & Peroxide', () => {
-    it('triggers STOP on Acid + Ammonia (Bref Power + Salmiakgeist)', () => {
-      const result = evaluatePairByIdentifiers('bref-power-wc-kraft-gel', 'salmiakgeist-ammoniakloesung-9', products, rules, 'tr');
+    it('triggers STOP on Acid + Ammonia (Kiehl Calinex + Salmiakgeist)', () => {
+      const result = evaluatePairByIdentifiers('kiehl-calinex', 'meffert-salmiakgeist-9-5', products, rules, 'tr');
 
       expect(result.state).toBe('STOP');
       expect(result.color).toBe('red');
@@ -63,8 +108,8 @@ describe('ChemHazard Stop / MischStop Rule Engine', () => {
       expect(result.audioAlert?.text).toContain('reaksiyon');
     });
 
-    it('triggers STOP on Hypochlorite + Ammonia (DanKlorix + Salmiakgeist)', () => {
-      const result = evaluatePairByIdentifiers('danklorix-hygiene-reiniger', 'salmiakgeist-ammoniakloesung-9', products, rules, 'uk');
+    it('triggers STOP on Hypochlorite + Ammonia (Dan Klorix + Salmiakgeist)', () => {
+      const result = evaluatePairByIdentifiers('danklorix-hygiene-reiniger', 'meffert-salmiakgeist-9-5', products, rules, 'uk');
 
       expect(result.state).toBe('STOP');
       expect(result.color).toBe('red');
@@ -72,8 +117,8 @@ describe('ChemHazard Stop / MischStop Rule Engine', () => {
       expect(result.audioAlert?.text).toBe('СТОП! Не змішувати! Отруйні хлорамінові гази!');
     });
 
-    it('triggers STOP on Peroxide + Caustic Bleach (H2O2 + DanKlorix)', () => {
-      const result = evaluatePairByIdentifiers('wasserstoffperoxid-3-prozent', 'danklorix-hygiene-reiniger', products, rules, 'de');
+    it('triggers STOP on Peroxide + Caustic Lye (Kiehl Oxycal + Kiehl Fumex)', () => {
+      const result = evaluatePairByIdentifiers('kiehl-oxycal', 'kiehl-fumex', products, rules, 'de');
 
       expect(result.state).toBe('STOP');
       expect(result.color).toBe('red');
@@ -100,11 +145,29 @@ describe('ChemHazard Stop / MischStop Rule Engine', () => {
       expect(result.isClearance).toBe(false);
       expect(result.messageDe).toContain('Datenbasis unvollständig');
     });
+
+    it('returns UNVERIFIED for a barcode with a wrong check digit', () => {
+      expect(gtinFromScan('4031255000120')).toBeNull();
+      const result = evaluatePairByIdentifiers('4031255000120', 'danklorix-hygiene-reiniger', products, rules);
+      expect(result.state).toBe('UNVERIFIED');
+    });
+
+    it('does not guess a product from a GISCODE that several products share', () => {
+      const shared = products.filter((p) => p.giscode === 'GS80');
+      expect(shared.length).toBeGreaterThan(1);
+      expect(lookupProductByIdentifier('GS80', products)).toBeNull();
+      expect(evaluatePairByIdentifiers('GS80', 'danklorix-hygiene-reiniger', products, rules).state).toBe('UNVERIFIED');
+    });
+
+    it('resolves a GISCODE that exactly one product carries', () => {
+      expect(lookupProductByIdentifier('GG70', products)?.id).toBe('buzil-erol-g490');
+      expect(lookupProductByIdentifier('gg 70', products)?.id).toBe('buzil-erol-g490');
+    });
   });
 
-  describe('NO_KNOWN_INCOMPATIBILITY on Compatible Neutral Products', () => {
-    it('returns grey screen with mandatory disclaimer for two neutral cleaners (NEVER green)', () => {
-      const result = evaluatePairByIdentifiers('frosch-neutral-reiniger', 'ecolab-assert-clean', products, rules);
+  describe('NO_KNOWN_INCOMPATIBILITY on Compatible Products', () => {
+    it('returns grey screen with mandatory disclaimer for two maintenance cleaners (NEVER green)', () => {
+      const result = evaluatePairByIdentifiers('kiehl-sanikal', 'kiehl-torvan-konzentrat', products, rules);
 
       expect(result.state).toBe('NO_KNOWN_INCOMPATIBILITY');
       expect(result.color).toBe('grey');
@@ -130,7 +193,7 @@ describe('ChemHazard Stop / MischStop Rule Engine', () => {
           expect(['red', 'amber', 'grey']).toContain(result.color);
           expect(result.disclaimerDe).toBeTruthy();
           expect(result.disclaimerEn).toBeTruthy();
-          
+
           expect(() => assertSafetyInvariants(result)).not.toThrow();
         }
       }
@@ -157,14 +220,132 @@ describe('ChemHazard Stop / MischStop Rule Engine', () => {
   describe('Performance Benchmark (<50ms DoD criterion)', () => {
     it('evaluates chemical pair in under 1ms', () => {
       const danklorix = lookupProductByIdentifier('danklorix-hygiene-reiniger', products);
-      const bucasan = lookupProductByIdentifier('buzil-bucasan-g460', products);
+      const bucalex = lookupProductByIdentifier('buzil-bucalex-g460', products);
 
       const start = performance.now();
-      const result = evaluateMixingInterlock(danklorix, bucasan, rules);
+      const result = evaluateMixingInterlock(danklorix, bucalex, rules);
       const duration = performance.now() - start;
 
       expect(duration).toBeLessThan(10); // Well below 50ms requirement
       expect(result.state).toBe('STOP');
     });
+  });
+});
+
+describe('ChemHazard seed data guard', () => {
+  it('passes the provenance, GTIN and derivation checks', () => {
+    expect(checkProducts(products)).toEqual([]);
+  });
+
+  it('counts what the README and roadmap claim', () => {
+    expect(products.filter((p) => p.verified).length).toBe(20);
+    expect(products.filter((p) => p.sourceType === 'sds').length).toBe(19);
+    expect(products.flatMap((p) => p.gtins ?? []).length).toBe(51);
+  });
+
+  // Counter-probes: the guard must reject deliberately wrong input.
+  it('rejects a GTIN with a wrong check digit', () => {
+    const bad = [{ ...byId('kiehl-sanikal'), gtins: ['4031255000100'] }];
+    expect(checkProducts(bad).join('\n')).toContain('falsche Prüfziffer');
+    expect(isValidGtin('4031255000183')).toBe(true);
+    expect(isValidGtin('4031255000100')).toBe(false);
+  });
+
+  it('rejects a verified record without source URL, hash or revision date', () => {
+    const p = byId('kiehl-sanikal');
+    const bad = [{ ...p, provenance: { sourceDocument: 'SDB', verificationDate: '2026-10-12' } }];
+    const found = checkProducts(bad).join('\n');
+    expect(found).toContain('ohne sourceUrl');
+    expect(found).toContain('ohne SHA-256');
+    expect(found).toContain('ohne Überarbeitungsdatum');
+  });
+
+  it('rejects hand-edited chemical groups that contradict the CAS numbers', () => {
+    const bad = [{ ...byId('kiehl-arenas-bleach'), chemicalGroups: ['neutral'] }];
+    expect(checkProducts(bad).join('\n')).toContain('weichen von der Ableitung');
+  });
+
+  it('rejects the same GTIN on two products', () => {
+    const a = byId('kiehl-sanikal');
+    const b = { ...byId('kiehl-santex'), gtins: [a.gtins![0]] };
+    expect(checkProducts([a, b]).join('\n')).toContain('steht auch bei kiehl-sanikal');
+  });
+
+  it('derives hypochlorite from the CAS number alone, without any EUH phrase', () => {
+    expect(deriveChemicalGroups({ casNumbers: ['7681-52-9'], hazardStatements: ['H314'] }).groups).toEqual(
+      expect.arrayContaining(['hypochlorite', 'oxidizer'])
+    );
+    expect(deriveChemicalGroups({ casNumbers: [], hazardStatements: ['EUH206'] }).groups).toContain('hypochlorite');
+    expect(deriveChemicalGroups({ casNumbers: ['69011-36-5'], hazardStatements: [] }).groups).toEqual(['neutral']);
+  });
+
+  it('parses a safety data sheet text into facts', () => {
+    const text = [
+      'Überarbeitet am: 12.12.2022 Materialnummer: x',
+      'ABSCHNITT 1: Bezeichnung',
+      'UFI: 3U20-V0J5-1002-NR4J',
+      'ABSCHNITT 2: Mögliche Gefahren',
+      'Skin Corr. 1B; H314',
+      'Signalwort:',
+      'Gefahr',
+      'EUH031 Entwickelt bei Berührung mit Säure giftige Gase.',
+      'ABSCHNITT 3: Zusammensetzung',
+      '5 - < 10 % 7681-52-9 Natriumhypochlorit 231-668-3 017-011-00-1 H290 H400',
+      'ABSCHNITT 4: Erste Hilfe',
+      'GS80 GISCODE/Produkt-Code:',
+      'ABSCHNITT 9: Physikalische Eigenschaften',
+      'pH-Wert (bei 20 °C): > 12,5 K-QP1012C',
+      'ABSCHNITT 10: Stabilität',
+      'ABSCHNITT 11: Toxikologie'
+    ].join('\n');
+    const facts = parseSdsText(text);
+    expect(facts.revisionDate).toBe('2022-12-12');
+    expect(facts.ufi).toBe('3U20-V0J5-1002-NR4J');
+    expect(facts.giscode).toBe('GS80');
+    expect(facts.signalWord).toBe('Gefahr');
+    // Section 3 lists the statements of single substances; they are not the label of the mixture.
+    expect(facts.hazardStatements).toEqual(['EUH031', 'H314']);
+    // The index number 017-011-00-1 must not be read as a CAS number.
+    expect(facts.casNumbers).toEqual(['7681-52-9']);
+    expect(facts.ph).toEqual({ min: 12.5 });
+    expect(facts.chemicalGroups).toEqual(expect.arrayContaining(['hypochlorite', 'caustic_lye', 'oxidizer']));
+  });
+});
+
+describe('EAN-13 barcode modules', () => {
+  it('encodes every catalog EAN-13 so that it decodes back to the same number', () => {
+    const gtins = products.flatMap((p) => p.gtins ?? []).filter((g) => g.length === 13);
+    expect(gtins.length).toBeGreaterThan(40);
+    for (const gtin of gtins) {
+      const modules = ean13Modules(gtin);
+      expect(modules).toHaveLength(95);
+      expect(decodeEan13Modules(modules as string)).toBe(gtin);
+    }
+  });
+
+  // Worked by hand from the GS1 tables: first digit 4 selects the parity LGLLGG.
+  it('matches the hand-derived pattern for 4006381333931', () => {
+    expect(ean13Modules('4006381333931')).toBe(
+      '101' + '0001101' + '0100111' + '0101111' + '0111101' + '0001001' + '0110011' + '01010' +
+        '1000010' + '1000010' + '1000010' + '1110100' + '1000010' + '1100110' + '101'
+    );
+  });
+
+  it('keeps one current SVG per catalog GTIN in data/barcodes, encoded like the engine does', () => {
+    const dir = '07-demos/chemhazard-stop/data/barcodes';
+    const want = barcodeFiles(products) as Record<string, string>;
+    expect(Object.keys(want)).toHaveLength(51);
+    for (const [name, svg] of Object.entries(want)) {
+      expect(existsSync(`${dir}/${name}`), name).toBe(true);
+      expect(readFileSync(`${dir}/${name}`, 'utf8')).toBe(svg);
+      const gtin = name.replace('.svg', '');
+      expect(svg).toContain(`data-modules="${ean13Modules(gtin)}"`);
+    }
+    expect(readdirSync(dir).filter((f) => f.endsWith('.svg')).sort()).toEqual(Object.keys(want).sort());
+  });
+
+  it('refuses a number with a wrong check digit', () => {
+    expect(ean13Modules('4031255000120')).toBeNull();
+    expect(ean13Modules('123')).toBeNull();
   });
 });

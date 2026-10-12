@@ -40,7 +40,9 @@
     "export:lab-inbox": "node scripts/export-lab-inbox.mjs",
     "test:lab-inbox": "node scripts/run-node-test.mjs scripts/lab-inbox.test.mjs",
     "check:gn-zitate": "node scripts/check-gruendungsnavigator-zitate.mjs",
-    "check:mobile": "node scripts/check-mobile.mjs"
+    "check:mobile": "node scripts/check-mobile.mjs",
+    "check:chemhazard": "node scripts/chemhazard-sds.mjs check",
+    "chemhazard:barcodes": "node scripts/chemhazard-sds.mjs barcodes"
   },
   "dependencies": {
     "@types/canvas-confetti": "^1.9.0",

@@ -11,6 +11,7 @@
     "hazardStatements",
     "verified",
     "dataLane",
+    "sourceType",
     "provenance"
   ],
   "properties": {
@@ -24,15 +25,24 @@
     "brand": {
       "type": "string"
     },
-    "gtin": {
+    "gtins": {
+      "description": "Alle Gebindegrößen. Jede GTIN muss die GS1-Prüfziffer bestehen und in provenance.gtinSource belegt sein.",
+      "type": "array",
+      "items": { "type": "string", "pattern": "^([0-9]{8}|[0-9]{12,14})$" },
+      "uniqueItems": true
+    },
+    "ufi": {
+      "description": "Unique Formula Identifier vom Etikett (CLP Anhang VIII), wie im SDB Abschnitt 1.1 genannt.",
       "type": "string",
-      "pattern": "^[0-9]{8,14}$"
+      "pattern": "^[0-9A-Z]{4}-[0-9A-Z]{4}-[0-9A-Z]{4}-[0-9A-Z]{4}$"
     },
     "giscode": {
+      "description": "Nur wie im SDB des Herstellers genannt, nie aus WINGIS übernommen.",
       "type": "string",
-      "pattern": "^[A-Z]{2}[0-9]{1,3}$"
+      "pattern": "^[A-Z]{1,3}[0-9]{1,3}$"
     },
     "chemicalGroups": {
+      "description": "Aus casNumbers, hazardStatements und ph abgeleitet (scripts/chemhazard-sds.mjs, GROUP_RULES), nie von Hand gesetzt.",
       "type": "array",
       "items": {
         "type": "string",
@@ -51,17 +61,25 @@
       "uniqueItems": true
     },
     "hazardStatements": {
+      "description": "H- und EUH-Sätze des Gemischs aus SDB Abschnitt 2.",
       "type": "array",
-      "items": {
-        "type": "string"
-      }
+      "items": { "type": "string", "pattern": "^(EUH[0-9]{3}A?|H[234][0-9]{2}[A-Za-z]{0,2})$" }
+    },
+    "casNumbers": {
+      "description": "CAS-Nummern aus SDB Abschnitt 3.",
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[0-9]{2,7}-[0-9]{2}-[0-9]$" },
+      "uniqueItems": true
     },
     "ph": {
+      "description": "pH des Konzentrats aus SDB Abschnitt 9. Nur min oder nur max bei Angaben wie „> 13,5“.",
       "type": "object",
       "properties": {
-        "min": { "type": "number" },
-        "max": { "type": "number" }
-      }
+        "min": { "type": "number", "minimum": 0, "maximum": 14 },
+        "max": { "type": "number", "minimum": 0, "maximum": 14 }
+      },
+      "minProperties": 1,
+      "additionalProperties": false
     },
     "verified": {
       "type": "boolean"
@@ -70,13 +88,25 @@
       "type": "string",
       "enum": ["public_law", "licensed_wingis", "open_community"]
     },
+    "sourceType": {
+      "description": "sds = Sicherheitsdatenblatt (REACH Art. 31); ingredient_datasheet = Datenblatt nach Detergenzien-VO Anhang VII D; none = unbelegt.",
+      "type": "string",
+      "enum": ["sds", "ingredient_datasheet", "none"]
+    },
     "provenance": {
       "type": "object",
       "required": ["sourceDocument", "verificationDate"],
       "properties": {
         "sourceDocument": { "type": "string" },
-        "verificationDate": { "type": "string" }
-      }
+        "sourceUrl": { "type": "string", "pattern": "^https://" },
+        "sourceHost": { "type": "string", "enum": ["manufacturer", "retailer"] },
+        "revisionDate": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "verificationDate": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+        "gtinSource": { "type": "string", "pattern": "^https://" },
+        "note": { "type": "string" }
+      },
+      "additionalProperties": false
     },
     "activeIngredients": {
       "type": "string"

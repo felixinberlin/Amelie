@@ -7,6 +7,7 @@ import {
   IncompatibilityRule,
   InterlockEvaluationResult
 } from '../../engine/chemhazard/chemHazardEngine';
+import { ean13Modules } from '../../engine/chemhazard/ean13';
 
 import productsData from '../../../07-demos/chemhazard-stop/data/products.json';
 import rulesData from '../../../07-demos/chemhazard-stop/data/rules.json';
@@ -32,6 +33,81 @@ import { doseImageSrc, doseImageSrcSet } from '../../utils/doseImage';
 
 const products = productsData as unknown as ProductRecord[];
 const rules = rulesData as unknown as IncompatibilityRule[];
+const verifiedCount = products.filter((p) => p.verified).length;
+const pairCount = (products.length * (products.length + 1)) / 2;
+
+const formatPh = (ph: ProductRecord['ph'], de: boolean): string => {
+  if (!ph || (ph.min === undefined && ph.max === undefined)) return de ? 'Unbekannt' : 'Unknown';
+  const n = (v: number) => (de ? String(v).replace('.', ',') : String(v));
+  if (ph.min === undefined) return `< ${n(ph.max as number)}`;
+  if (ph.max === undefined) return `> ${n(ph.min)}`;
+  return ph.min === ph.max ? `ca. ${n(ph.min)}` : `${n(ph.min)} – ${n(ph.max)}`;
+};
+
+/** The EAN-13 barcode as printed on the container, drawn from the catalog GTIN. */
+const Ean13Barcode: React.FC<{ gtin: string }> = ({ gtin }) => {
+  const modules = ean13Modules(gtin);
+  if (!modules) return null;
+  const quiet = 11;
+  return (
+    <svg
+      viewBox={`0 0 ${modules.length + quiet * 2} 44`}
+      className="w-full max-w-[220px] h-auto bg-white rounded-sm"
+      role="img"
+      aria-label={`EAN-13 ${gtin}`}
+    >
+      {modules.split('').map((bit, i) =>
+        bit === '1' ? <rect key={i} x={quiet + i} y={3} width={1} height={31} fill="#000" /> : null
+      )}
+      <text x={(modules.length + quiet * 2) / 2} y={42} textAnchor="middle" fontSize={7} fontFamily="monospace" fill="#000">
+        {gtin}
+      </text>
+    </svg>
+  );
+};
+
+/** Identifiers and provenance of one catalog product: barcode, UFI, source document. */
+const ProductIdentifiers: React.FC<{ product: ProductRecord; de: boolean }> = ({ product, de }) => {
+  const gtins = product.gtins ?? [];
+  const pr = product.provenance;
+  return (
+    <div className="pt-1.5 space-y-1.5 border-t border-stone-800/80">
+      {gtins.length > 0 && (
+        <div className="space-y-1">
+          <Ean13Barcode gtin={gtins[0]} />
+          <div className="text-[10px] text-stone-500 font-sans">
+            {gtins.length > 1
+              ? de
+                ? `Strichcode eines Gebindes; ${gtins.length} Gebindegrößen im Bestand.`
+                : `Barcode of one container size; ${gtins.length} sizes in the catalog.`
+              : de
+                ? 'Strichcode des Gebindes.'
+                : 'Barcode of the container.'}
+          </div>
+        </div>
+      )}
+      {product.ufi && (
+        <div className="flex justify-between text-stone-300">
+          <span className="text-stone-500">UFI:</span>
+          <span className="text-stone-200">{product.ufi}</span>
+        </div>
+      )}
+      <div className="text-[10px] text-stone-500 font-sans leading-snug">
+        {de ? 'Quelle: ' : 'Source: '}
+        {pr.sourceUrl ? (
+          <a href={pr.sourceUrl} target="_blank" rel="noopener noreferrer" className="underline text-stone-400 hover:text-stone-200">
+            {pr.sourceDocument}
+          </a>
+        ) : (
+          pr.sourceDocument
+        )}
+        {pr.revisionDate && (de ? ` · Stand ${pr.revisionDate}` : ` · revised ${pr.revisionDate}`)}
+        {pr.sourceHost === 'retailer' && (de ? ' · Kopie bei einem Händler' : ' · copy hosted by a retailer')}
+      </div>
+      {pr.note && <div className="text-[10px] text-amber-300/80 font-sans leading-snug">{pr.note}</div>}
+    </div>
+  );
+};
 
 interface ChemHazardSimulatorProps {
   lang: Language;
@@ -46,7 +122,7 @@ export const ChemHazardSimulator: React.FC<ChemHazardSimulatorProps> = ({
 }) => {
   const de = lang === 'de';
 
-  const [productAId, setProductAId] = useState<string>('buzil-bucasan-g460');
+  const [productAId, setProductAId] = useState<string>('buzil-bucalex-g460');
   const [productBId, setProductBId] = useState<string>('danklorix-hygiene-reiniger');
   const [spokenLang, setSpokenLang] = useState<string>(de ? 'de' : 'en');
   const [isAlarmPlaying, setIsAlarmPlaying] = useState<boolean>(false);
@@ -236,11 +312,11 @@ export const ChemHazardSimulator: React.FC<ChemHazardSimulatorProps> = ({
         </span>
         <button
           type="button"
-          onClick={() => selectPreset('buzil-bucasan-g460', 'danklorix-hygiene-reiniger')}
+          onClick={() => selectPreset('buzil-bucalex-g460', 'danklorix-hygiene-reiniger')}
           className="px-2.5 py-1.5 rounded-lg bg-red-950/60 hover:bg-red-900/60 border border-red-500/40 text-red-200 transition-colors flex items-center gap-1.5"
         >
           <Flame className="w-3.5 h-3.5 text-red-400" />
-          {de ? 'Buzil Bucasan + DanKlorix (Chlorgas)' : 'Buzil Bucasan + DanKlorix (Chlorine Gas)'}
+          {de ? 'Buzil Bucalex + Dan Klorix (Chlorgas)' : 'Buzil Bucalex + Dan Klorix (Chlorine Gas)'}
         </button>
         <button
           type="button"
@@ -248,35 +324,43 @@ export const ChemHazardSimulator: React.FC<ChemHazardSimulatorProps> = ({
           className="px-2.5 py-1.5 rounded-lg bg-red-950/60 hover:bg-red-900/60 border border-red-500/40 text-red-200 transition-colors flex items-center gap-1.5"
         >
           <Flame className="w-3.5 h-3.5 text-red-400" />
-          {de ? 'Kiehl Salzsäure + Mellerud Schimmel (Chlorgas-Blitz)' : 'Kiehl HCl + Mellerud Bleach (Severe Cl2)'}
+          {de ? 'Kiehl Powerfix-Gel + Mellerud Schimmel Vernichter (Chlorgas)' : 'Kiehl Powerfix-Gel + Mellerud Mould Remover (Chlorine Gas)'}
         </button>
         <button
           type="button"
-          onClick={() => selectPreset('danklorix-hygiene-reiniger', 'salmiakgeist-ammoniakloesung-9')}
-          className="px-2.5 py-1.5 rounded-lg bg-orange-950/60 hover:bg-orange-900/60 border border-orange-500/40 text-orange-200 transition-colors flex items-center gap-1.5"
-        >
-          <AlertTriangle className="w-3.5 h-3.5 text-orange-400" />
-          {de ? 'DanKlorix + Salmiakgeist (Chloramine)' : 'DanKlorix + Ammonia (Chloramines)'}
-        </button>
-        <button
-          type="button"
-          onClick={() => selectPreset('drano-power-gel', 'bref-power-wc-kraft-gel')}
+          onClick={() => selectPreset('dr-schnell-milizid', 'domestos-professional-original')}
           className="px-2.5 py-1.5 rounded-lg bg-red-950/60 hover:bg-red-900/60 border border-red-500/40 text-red-200 transition-colors flex items-center gap-1.5"
         >
           <Flame className="w-3.5 h-3.5 text-red-400" />
-          {de ? 'Drano Rohrfrei + Bref Salzsäure (Chlorgas & Lauge)' : 'Drano Drain Lye + Bref Acid (Cl2 & Boil)'}
+          {de ? 'Milizid + Domestos Professional (Chlorgas, Etikett ohne EUH031)' : 'Milizid + Domestos Professional (Chlorine Gas, label without EUH031)'}
         </button>
         <button
           type="button"
-          onClick={() => selectPreset('kiehl-sanikal', 'buzil-optima-g445')}
+          onClick={() => selectPreset('danklorix-hygiene-reiniger', 'meffert-salmiakgeist-9-5')}
+          className="px-2.5 py-1.5 rounded-lg bg-orange-950/60 hover:bg-orange-900/60 border border-orange-500/40 text-orange-200 transition-colors flex items-center gap-1.5"
+        >
+          <AlertTriangle className="w-3.5 h-3.5 text-orange-400" />
+          {de ? 'Dan Klorix + Salmiakgeist (Chloramine)' : 'Dan Klorix + Ammonia (Chloramines)'}
+        </button>
+        <button
+          type="button"
+          onClick={() => selectPreset('kiehl-oxycal', 'kiehl-fumex')}
+          className="px-2.5 py-1.5 rounded-lg bg-orange-950/60 hover:bg-orange-900/60 border border-orange-500/40 text-orange-200 transition-colors flex items-center gap-1.5"
+        >
+          <AlertTriangle className="w-3.5 h-3.5 text-orange-400" />
+          {de ? 'Kiehl Oxycal + Fumex (Peroxid + Lauge)' : 'Kiehl Oxycal + Fumex (Peroxide + Lye)'}
+        </button>
+        <button
+          type="button"
+          onClick={() => selectPreset('kiehl-sanikal', 'kiehl-torvan-konzentrat')}
           className="px-2.5 py-1.5 rounded-lg bg-stone-800 hover:bg-stone-700 border border-stone-600 text-stone-300 transition-colors flex items-center gap-1.5"
         >
           <Info className="w-3.5 h-3.5 text-stone-400" />
-          {de ? 'Kiehl Sanikal + Buzil Optima (Neutral / Grau)' : 'Sanikal + Optima Glass (Neutral / Grey)'}
+          {de ? 'Kiehl Sanikal + Torvan (Grau, keine Freigabe)' : 'Kiehl Sanikal + Torvan (Grey, no clearance)'}
         </button>
         <button
           type="button"
-          onClick={() => selectPreset('buzil-bucasan-g460', 'unverifiziertes-musterprodukt')}
+          onClick={() => selectPreset('buzil-bucalex-g460', 'unverifiziertes-musterprodukt')}
           className="px-2.5 py-1.5 rounded-lg bg-amber-950/60 hover:bg-amber-900/60 border border-amber-500/40 text-amber-200 transition-colors flex items-center gap-1.5"
         >
           <HelpCircle className="w-3.5 h-3.5 text-amber-400" />
@@ -383,9 +467,9 @@ export const ChemHazardSimulator: React.FC<ChemHazardSimulatorProps> = ({
                   GISCODE: {productA.giscode}
                 </span>
               )}
-              {productA?.gtin && (
+              {productA?.gtins?.[0] && (
                 <span className="px-2 py-0.5 rounded-md bg-stone-900 text-stone-300 text-[11px] font-mono-code border border-stone-700">
-                  EAN: {productA.gtin}
+                  EAN: {productA.gtins[0]}
                 </span>
               )}
             </div>
@@ -408,7 +492,7 @@ export const ChemHazardSimulator: React.FC<ChemHazardSimulatorProps> = ({
               {productA.activeIngredients && (
                 <div className="text-stone-300 border-b border-stone-800/80 pb-1.5">
                   <span className="text-stone-500 block text-[10px] uppercase font-sans font-bold">
-                    {de ? 'Recherchierte Wirkstoffe / CAS:' : 'Active Ingredients / CAS:'}
+                    {de ? 'Inhaltsstoffe laut Datenblatt / CAS:' : 'Ingredients per data sheet / CAS:'}
                   </span>
                   <span className="text-amber-200/90 text-[11px] leading-tight block">
                     {productA.activeIngredients}
@@ -421,14 +505,14 @@ export const ChemHazardSimulator: React.FC<ChemHazardSimulatorProps> = ({
               </div>
               <div className="flex justify-between text-stone-300">
                 <span className="text-stone-500">CLP / EUH:</span>
-                <span className={productA.hazardStatements.includes('EUH031') ? 'text-red-400 font-bold' : 'text-stone-300'}>
+                <span className={productA.hazardStatements.some((s) => s === 'EUH031' || s === 'EUH206') ? 'text-red-400 font-bold' : 'text-stone-300'}>
                   {productA.hazardStatements.length > 0 ? productA.hazardStatements.join(', ') : (de ? 'Keine' : 'None')}
                 </span>
               </div>
               <div className="flex justify-between text-stone-300">
                 <span className="text-stone-500">{de ? 'pH-Wert:' : 'pH Value:'}</span>
                 <span className="text-stone-200">
-                  {productA.ph ? `${productA.ph.min} – ${productA.ph.max}` : (de ? 'Unbekannt' : 'Unknown')}
+                  {formatPh(productA.ph, de)}
                 </span>
               </div>
               {(productA.typicalUseDe || productA.typicalUseEn) && (
@@ -436,9 +520,7 @@ export const ChemHazardSimulator: React.FC<ChemHazardSimulatorProps> = ({
                   {de ? productA.typicalUseDe : productA.typicalUseEn}
                 </div>
               )}
-              <div className="pt-1 text-[10px] text-stone-500 font-mono-code truncate">
-                Quelle: {productA.provenance.sourceDocument}
-              </div>
+              <ProductIdentifiers product={productA} de={de} />
             </div>
           )}
         </div>
@@ -456,9 +538,9 @@ export const ChemHazardSimulator: React.FC<ChemHazardSimulatorProps> = ({
                   GISCODE: {productB.giscode}
                 </span>
               )}
-              {productB?.gtin && (
+              {productB?.gtins?.[0] && (
                 <span className="px-2 py-0.5 rounded-md bg-stone-900 text-stone-300 text-[11px] font-mono-code border border-stone-700">
-                  EAN: {productB.gtin}
+                  EAN: {productB.gtins[0]}
                 </span>
               )}
             </div>
@@ -481,7 +563,7 @@ export const ChemHazardSimulator: React.FC<ChemHazardSimulatorProps> = ({
               {productB.activeIngredients && (
                 <div className="text-stone-300 border-b border-stone-800/80 pb-1.5">
                   <span className="text-stone-500 block text-[10px] uppercase font-sans font-bold">
-                    {de ? 'Recherchierte Wirkstoffe / CAS:' : 'Active Ingredients / CAS:'}
+                    {de ? 'Inhaltsstoffe laut Datenblatt / CAS:' : 'Ingredients per data sheet / CAS:'}
                   </span>
                   <span className="text-amber-200/90 text-[11px] leading-tight block">
                     {productB.activeIngredients}
@@ -494,14 +576,14 @@ export const ChemHazardSimulator: React.FC<ChemHazardSimulatorProps> = ({
               </div>
               <div className="flex justify-between text-stone-300">
                 <span className="text-stone-500">CLP / EUH:</span>
-                <span className={productB.hazardStatements.includes('EUH031') ? 'text-red-400 font-bold' : 'text-stone-300'}>
+                <span className={productB.hazardStatements.some((s) => s === 'EUH031' || s === 'EUH206') ? 'text-red-400 font-bold' : 'text-stone-300'}>
                   {productB.hazardStatements.length > 0 ? productB.hazardStatements.join(', ') : (de ? 'Keine' : 'None')}
                 </span>
               </div>
               <div className="flex justify-between text-stone-300">
                 <span className="text-stone-500">{de ? 'pH-Wert:' : 'pH Value:'}</span>
                 <span className="text-stone-200">
-                  {productB.ph ? `${productB.ph.min} – ${productB.ph.max}` : (de ? 'Unbekannt' : 'Unknown')}
+                  {formatPh(productB.ph, de)}
                 </span>
               </div>
               {(productB.typicalUseDe || productB.typicalUseEn) && (
@@ -509,9 +591,7 @@ export const ChemHazardSimulator: React.FC<ChemHazardSimulatorProps> = ({
                   {de ? productB.typicalUseDe : productB.typicalUseEn}
                 </div>
               )}
-              <div className="pt-1 text-[10px] text-stone-500 font-mono-code truncate">
-                Quelle: {productB.provenance.sourceDocument}
-              </div>
+              <ProductIdentifiers product={productB} de={de} />
             </div>
           )}
         </div>
@@ -687,7 +767,7 @@ export const ChemHazardSimulator: React.FC<ChemHazardSimulatorProps> = ({
         >
           {showMatrixInspection
             ? (de ? 'Katalog-Matrix verbergen' : 'Hide Catalog Matrix')
-            : (de ? 'Sicherheits-Beweis einblenden (20x20 Matrix prüfen)' : 'Show Safety Proof (Inspect 20x20 Matrix)')}
+            : (de ? 'Sicherheits-Beweis einblenden (Matrix prüfen)' : 'Show Safety Proof (Inspect Matrix)')}
         </button>
 
         <span className="text-stone-500 font-mono-code">
@@ -706,8 +786,8 @@ export const ChemHazardSimulator: React.FC<ChemHazardSimulatorProps> = ({
           </div>
           <p className="text-stone-400 leading-relaxed">
             {de
-              ? 'Die Vitest-Suite hat alle 210 möglichen Kombinationen der 20 kuratierten Reinigungsmittel getestet. Keine einzige Paarung ergibt jemals „SAFE“ oder die Farbe Grün. Alle Ausgänge sind deterministisch entweder STOP, UNVERIFIED oder NO_KNOWN_INCOMPATIBILITY mit Disclaimer.'
-              : 'The Vitest suite verifies all 210 pairwise combinations across our curated product catalog. Exactly zero combinations yield a SAFE state or green color. Every execution strictly maps to STOP, UNVERIFIED, or NO_KNOWN_INCOMPATIBILITY.'}
+              ? `Die Vitest-Suite prüft alle ${pairCount} Paarungen der ${products.length} Katalogeinträge (${verifiedCount} davon mit Herstellerdokument belegt). Keine einzige Paarung ergibt jemals „SAFE“ oder die Farbe Grün. Alle Ausgänge sind deterministisch entweder STOP, UNVERIFIED oder NO_KNOWN_INCOMPATIBILITY mit Disclaimer.`
+              : `The Vitest suite verifies all ${pairCount} pairings of the ${products.length} catalog entries (${verifiedCount} of them backed by a manufacturer document). Exactly zero combinations yield a SAFE state or green color. Every execution strictly maps to STOP, UNVERIFIED, or NO_KNOWN_INCOMPATIBILITY.`}
           </p>
         </div>
       )}

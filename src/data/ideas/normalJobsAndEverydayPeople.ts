@@ -310,12 +310,12 @@ Amélie Initiative`
     whyNowDe: [
       '100% Offline-Edge-Inferenz: Schnelle Barcode- (GTIN/GS1), GISCODE- und Etiketten-Erkennung auf Standard-Smartphones ohne Server-Latenz.',
       'Mehrsprachige Audio-Sofort-Warnung in über 20 Sprachen (Ukrainisch, Polnisch, Türkisch, Arabisch etc.) überwindet Sprachbarrieren ohne Textlese-Zwang.',
-      'Drei-Spuren-Datenmodell trennt gemeinfreies EU-CLP-Recht (EUH031) von optional lizenzierten WINGIS/GISCODE-Daten und offenen SDS.'
+      'Drei-Spuren-Datenmodell trennt öffentliche Tatsachen aus CLP-Kennzeichnung und Sicherheitsdatenblatt (Gefahrensätze, CAS-Nummern) von optional lizenzierten WINGIS/GISCODE-Daten und Community-Meldungen.'
     ],
     whyNowEn: [
       '100% Offline edge inference: Real-time GTIN/GS1 barcode, GISCODE, and container scanning on commodity smartphones with zero cloud latency.',
       'Instant polyglot spoken audio alerts across 20+ languages remove the burden of reading technical German safety manuals.',
-      'Three-lane data architecture separates public-domain EU CLP statements (EUH031) from optional licensed WINGIS/GISCODE data and open SDS.'
+      'Three-lane data architecture separates public facts from CLP labelling and safety data sheets (hazard statements, CAS numbers) from optional licensed WINGIS/GISCODE data and community reports.'
     ],
     firstStepTicketDe: 'P0: Standalone Offline-Regel-Kernel & Zwei-Barcode/GISCODE-Prüfinterlock mit 4-Kanal-Alarm.',
     firstStepTicketEn: 'P0: Standalone offline rule engine and dual-input interlock with 4-channel alert.',

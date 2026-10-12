@@ -53,11 +53,11 @@ This is not a UX preference; it is the fundamental safety case. A false "all cle
 
 - **100% Offline Edge Inference:** Ultra-fast scanning of GTIN/GS1 barcodes, GISCODEs, or container labels directly on the device with zero cloud dependency.
 - **Instant Spoken Polyglot Alerts:** Pre-recorded and synthesized warning shouts across 20+ languages (Ukrainian, Polish, Turkish, Arabic, Romanian, Bulgarian, etc.) eliminate the burden of reading technical German.
-- **Robust Three-Lane Data Architecture:** Strict legal segregation between public CLP statements (EUH031), optional licensed GISCODE datasets, and open safety data sheets.
+- **Robust Three-Lane Data Architecture:** Strict legal segregation between public facts from CLP labelling and safety data sheets (hazard statements, CAS numbers), optional licensed GISCODE datasets, and community reports.
 
 ## Data Strategy: Three Legally Separated Lanes
 
-1. **Public-Law Lane (Always shippable):** CLP hazard and EUH statements. Specifically, `EUH031` (*"Contact with acids liberates toxic gas"*) serves as the deterministic primary trigger for hypochlorite. Public domain, redistributable.
+1. **Public-Law Lane (Always shippable):** CLP hazard and EUH statements plus the ingredients (CAS numbers) from the manufacturer's safety data sheet. The deterministic trigger for hypochlorite is the ingredient itself (sodium hypochlorite, CAS `7681-52-9`). `EUH031` (*"Contact with acids liberates toxic gas"*) and `EUH206` are additional label cues, not a condition: many chlorine cleaners carry only `EUH206` or neither phrase (checked against the reference products, 12 Oct 2026). Facts, free to redistribute.
 2. **Licensed Lane (Optional, written permission required):** WINGIS / GISBAU data, including official GISCODE mappings. Packaged only with explicit written authorization from BG BAU. The app operates independently without it. **Hard rule: WINGIS/GESTIS must never be scraped or redistributed without permission.**
 3. **Open & Community Lane:** Manufacturer SDS where licensing allows, GS1 Digital Link / GTIN identifiers, and curated contributions from cleaning contractors and unions submitted via GitHub pull requests.
 
@@ -160,7 +160,7 @@ Key Capabilities of ChemHazard Stop:
 4. Formal Safety Case (Never Emits "Safe"): The system strictly rejects false reassurance. It never displays a green "safe" clearance. It either halts the worker on verified danger (STOP) or transparently flags incomplete data as UNVERIFIED.
 
 Compliance & European Data Architecture:
-The core engine runs on public-domain EU CLP statements (specifically EUH031: "Contact with acids liberates toxic gas"). It operates with zero tracking, zero cloud data transfer, and complete offline sovereignty.
+The core engine runs on public facts from EU CLP labelling and manufacturers' safety data sheets: a product counts as chlorine bleach by its ingredient (sodium hypochlorite, CAS 7681-52-9), whether or not its label carries EUH031 ("Contact with acids liberates toxic gas"). It operates with zero tracking, zero cloud data transfer, and complete offline sovereignty.
 
 Everything is turnkey, tested, and published under CC0 / Public Domain:
 • Interactive Web Simulator & Live Demo: https://felixinberlin.github.io/Amelie/#dose=dose-cleaner-chemical-safety
