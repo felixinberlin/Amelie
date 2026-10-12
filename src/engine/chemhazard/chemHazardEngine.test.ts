@@ -248,7 +248,7 @@ describe('ChemHazard seed data guard', () => {
   it('counts what the README and roadmap claim', () => {
     expect(products.filter((p) => p.hazardsConfirmed).length).toBe(41);
     expect(products.filter((p) => p.sourceType === 'sds').length).toBe(40);
-    expect(products.flatMap((p) => p.gtins ?? []).length).toBe(92);
+    expect(products.flatMap((p) => p.gtins ?? []).length).toBe(96);
   });
 
   // Counter-probes: the guard must reject deliberately wrong input.
@@ -342,7 +342,7 @@ describe('EAN-13 barcode modules', () => {
   it('keeps one current SVG per catalog GTIN in data/barcodes, encoded like the engine does', () => {
     const dir = '07-demos/chemhazard-stop/data/barcodes';
     const want = barcodeFiles(products) as Record<string, string>;
-    expect(Object.keys(want)).toHaveLength(92);
+    expect(Object.keys(want)).toHaveLength(96);
     for (const [name, svg] of Object.entries(want)) {
       expect(existsSync(`${dir}/${name}`), name).toBe(true);
       expect(readFileSync(`${dir}/${name}`, 'utf8')).toBe(svg);
@@ -427,8 +427,8 @@ describe('Manufacturer SDS review and expanded product coverage', () => {
     expect(byId('dr-schnell-perocid').chemicalGroups).not.toContain('peroxide');
   });
 
-  it('keeps source review distinct from completeness for every added product', () => {
-    const expanded = products.filter((p) => p.id.startsWith('dr-schnell-'));
+  it('keeps source review distinct from completeness for every source-reviewed added product', () => {
+    const expanded = products.filter((p) => p.id.startsWith('dr-schnell-') && p.hazardsConfirmed);
     expect(expanded).toHaveLength(22);
     expect(expanded.every((p) => p.currentVersionChecked && !p.completenessReviewed)).toBe(true);
     expect(evaluatePairByIdentifiers('4008439205931', '4008439036283', products, rules).state).toBe('UNVERIFIED');

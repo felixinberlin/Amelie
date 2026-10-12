@@ -7,6 +7,9 @@
 
 
 
+
+Ergänzung nach PR #202: Vier weitere Herstellerprodukte (PEROTEX INTENSIV, GASTRO PUR ECO, MILIFEE, PEROCID ECO) sind mit unbekannten Gefahren und unbestätigten GTIN-Zuordnungen auswählbar. Die 43 Datensätze aus der Quellenprüfung bleiben unverändert. Aktueller Bestand: 45 reale Produkte (41 mit belegten Gefahren, vier ungeprüft) plus zwei synthetische Beispiele; 96 GTIN-Zuordnungen (91 bestätigt). Die neuen Einträge bleiben UNVERIFIED. [Recherchebelege](additional-product-research-2026-10-12.md).
+
 ## 1. Problem & Lücke
 
 Im gewerblichen Reinigungshandwerk arbeiten Beschäftigte unter massivem Zeitdruck und oft über Sprachbarrieren hinweg. Das versehentliche Mischen eines sauren Entkalkers (z. B. WC-Reiniger mit Phosphorsäure) mit einer Chlorbleiche (Natriumhypochlorit) setzt in engen Sanitärräumen schlagartig tödliches Chlorgas frei ($2\text{H}^+ + \text{OCl}^- + \text{Cl}^- \to \text{Cl}_2 \uparrow + \text{H}_2\text{O}$).
@@ -99,8 +102,8 @@ Die [Recherche vom 12.10.2026](product-research-2026-10-12.md) dokumentiert 13 z
 │   ├── product.schema.json             # JSON-Schema für Reinigungsmittel
 │   └── rule.schema.json                # JSON-Schema für Inkompatibilitätsregeln
 └── data/
-    ├── products.json                   # 41 belegte Produkte + 2 erfundene UNVERIFIED-Beispiele
-    ├── barcodes/<gtin>.svg             # EAN-13-Strichcode je GTIN (erzeugt, 92 Dateien + Übersicht README.md)
+    ├── products.json                   # 41 belegte + 4 ungeprüfte Produkte + 2 synthetische Beispiele
+    ├── barcodes/<gtin>.svg             # EAN-13-Strichcode je GTIN (erzeugt, 96 Dateien + Übersicht README.md)
     └── rules.json                      # Inkompatibilitäts-Matrix (Säure+Chlor, etc.)
 ```
 

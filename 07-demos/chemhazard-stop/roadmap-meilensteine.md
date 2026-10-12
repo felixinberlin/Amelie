@@ -7,6 +7,9 @@
 
 
 
+
+Ergänzung nach PR #202: Vier weitere Herstellerprodukte (PEROTEX INTENSIV, GASTRO PUR ECO, MILIFEE, PEROCID ECO) sind mit unbekannten Gefahren und unbestätigten GTIN-Zuordnungen auswählbar. Die 43 Datensätze aus der Quellenprüfung bleiben unverändert. Aktueller Bestand: 45 reale Produkte (41 mit belegten Gefahren, vier ungeprüft) plus zwei synthetische Beispiele; 96 GTIN-Zuordnungen (91 bestätigt). Die neuen Einträge bleiben UNVERIFIED. [Recherchebelege](additional-product-research-2026-10-12.md).
+
 ## 1. Meilensteinplan (Roadmap)
 
 Das Projekt ist in drei strikte, deterministisch prüfbare Meilensteine unterteilt:

@@ -3167,5 +3167,141 @@
     },
     "descriptionDe": "PEROCID: Hersteller-SDB geprüft; Vollständigkeitsprüfung noch ausstehend.",
     "descriptionEn": "PEROCID: manufacturer SDS reviewed; chemical-completeness review pending."
+  },
+  {
+    "id": "dr-schnell-perotex-intensiv",
+    "name": "PEROTEX INTENSIV",
+    "brand": "DR.SCHNELL",
+    "gtins": [
+      "04008439360203"
+    ],
+    "gtinMappings": {
+      "04008439360203": {
+        "confirmed": false
+      }
+    },
+    "chemicalGroups": [
+      "unknown"
+    ],
+    "hazardStatements": [],
+    "hazardStatementsEvidence": "undocumented",
+    "hazardsConfirmed": false,
+    "completenessReviewed": false,
+    "currentVersionChecked": false,
+    "reviewMetadata": {},
+    "dataLane": "open_community",
+    "sourceType": "none",
+    "provenance": {
+      "sourceDocument": "DR.SCHNELL manufacturer product page; SDS review pending",
+      "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/kuechen-und-lebensmittelhygiene/geschirrreiniger-fuer-gewerbliche-spuelmaschinen/1531/perotex-intensiv",
+      "sourceHost": "manufacturer",
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/kuechen-und-lebensmittelhygiene/geschirrreiniger-fuer-gewerbliche-spuelmaschinen/1531/perotex-intensiv",
+      "note": "Manufacturer page read on 2026-10-12: product header names article 36020 and EAN 4008439360203. Identity lead only; SDS, package/formulation match, completeness and current-version reviews remain pending."
+    },
+    "descriptionDe": "Herstellerprodukt aus der Recherche; Sicherheitsdatenblatt und Gebindezuordnung noch ungeprüft.",
+    "descriptionEn": "Manufacturer product from the research queue; SDS and package mapping reviews pending."
+  },
+  {
+    "id": "dr-schnell-gastro-pur-eco",
+    "name": "GASTRO PUR ECO",
+    "brand": "DR.SCHNELL",
+    "gtins": [
+      "04008439369046"
+    ],
+    "gtinMappings": {
+      "04008439369046": {
+        "confirmed": false
+      }
+    },
+    "chemicalGroups": [
+      "unknown"
+    ],
+    "hazardStatements": [],
+    "hazardStatementsEvidence": "undocumented",
+    "hazardsConfirmed": false,
+    "completenessReviewed": false,
+    "currentVersionChecked": false,
+    "reviewMetadata": {},
+    "dataLane": "open_community",
+    "sourceType": "none",
+    "provenance": {
+      "sourceDocument": "DR.SCHNELL manufacturer product page; SDS review pending",
+      "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/kuechen-und-lebensmittelhygiene/oel-und-fettloeser-fuer-oberflaechen/1572/gastro-pur-eco",
+      "sourceHost": "manufacturer",
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/kuechen-und-lebensmittelhygiene/oel-und-fettloeser-fuer-oberflaechen/1572/gastro-pur-eco",
+      "note": "Manufacturer page read on 2026-10-12: product header names article 36904 and EAN 4008439369046. Identity lead only; SDS, package/formulation match, completeness and current-version reviews remain pending."
+    },
+    "descriptionDe": "Herstellerprodukt aus der Recherche; Sicherheitsdatenblatt und Gebindezuordnung noch ungeprüft.",
+    "descriptionEn": "Manufacturer product from the research queue; SDS and package mapping reviews pending."
+  },
+  {
+    "id": "dr-schnell-milifee",
+    "name": "MILIFEE",
+    "brand": "DR.SCHNELL",
+    "gtins": [
+      "04008439303545"
+    ],
+    "gtinMappings": {
+      "04008439303545": {
+        "confirmed": false
+      }
+    },
+    "chemicalGroups": [
+      "unknown"
+    ],
+    "hazardStatements": [],
+    "hazardStatementsEvidence": "undocumented",
+    "hazardsConfirmed": false,
+    "completenessReviewed": false,
+    "currentVersionChecked": false,
+    "reviewMetadata": {},
+    "dataLane": "open_community",
+    "sourceType": "none",
+    "provenance": {
+      "sourceDocument": "DR.SCHNELL manufacturer product page; SDS review pending",
+      "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/sanitaerreiniger/1508/milifee",
+      "sourceHost": "manufacturer",
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/sanitaerreiniger/1508/milifee",
+      "note": "Manufacturer page read on 2026-10-12: product header names article 30354 and EAN 4008439303545. Identity lead only; SDS, package/formulation match, completeness and current-version reviews remain pending."
+    },
+    "descriptionDe": "Herstellerprodukt aus der Recherche; Sicherheitsdatenblatt und Gebindezuordnung noch ungeprüft.",
+    "descriptionEn": "Manufacturer product from the research queue; SDS and package mapping reviews pending."
+  },
+  {
+    "id": "dr-schnell-perocid-eco",
+    "name": "PEROCID ECO",
+    "brand": "DR.SCHNELL",
+    "gtins": [
+      "04008439369145"
+    ],
+    "gtinMappings": {
+      "04008439369145": {
+        "confirmed": false
+      }
+    },
+    "chemicalGroups": [
+      "unknown"
+    ],
+    "hazardStatements": [],
+    "hazardStatementsEvidence": "undocumented",
+    "hazardsConfirmed": false,
+    "completenessReviewed": false,
+    "currentVersionChecked": false,
+    "reviewMetadata": {},
+    "dataLane": "open_community",
+    "sourceType": "none",
+    "provenance": {
+      "sourceDocument": "DR.SCHNELL manufacturer product page; SDS review pending",
+      "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/kuechen-und-lebensmittelhygiene/kalkloeser-fuer-oberflaechen/1569/perocid-eco",
+      "sourceHost": "manufacturer",
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/kuechen-und-lebensmittelhygiene/kalkloeser-fuer-oberflaechen/1569/perocid-eco",
+      "note": "Manufacturer page read on 2026-10-12: product header names article 36914 and EAN 4008439369145. Identity lead only; SDS, package/formulation match, completeness and current-version reviews remain pending."
+    },
+    "descriptionDe": "Herstellerprodukt aus der Recherche; Sicherheitsdatenblatt und Gebindezuordnung noch ungeprüft.",
+    "descriptionEn": "Manufacturer product from the research queue; SDS and package mapping reviews pending."
   }
 ]

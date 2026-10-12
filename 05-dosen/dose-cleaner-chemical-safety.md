@@ -26,6 +26,9 @@ source_type: Type A
 
 Quellenprüfung 12.10.2026: 41 reale Produkte plus zwei synthetische Beispiele, 92 GTIN-Zuordnungen (91 bestätigt), 36 dokumentierte aktuelle Hersteller-Quellenstände. 21 zusätzliche DR.SCHNELL-Produkte mit Hersteller-SDB und EAN aufgenommen; Meffert-SDB von 2025 ersetzt die Händlerkopie. GTIN/UFI müssen eindeutig sein, GISCODE bleibt Anzeige. Alle chemischen Vollständigkeitsprüfungen bleiben ausstehend; fünf neue Produkte behalten unknown. Dan Klorix bleibt per Barcode unbestätigt, Buzil und Domestos haben offene Quellenstände. Mellerud bleibt ein Inhaltsstoffblatt ohne vollständiges SDB. pH bei 1% Lösung wird nicht als Konzentrat-pH behandelt. Belege und offene Punkte: `07-demos/chemhazard-stop/product-review-2026-10-12.md`. Tests belegen Software-Invarianten, keine chemische Sicherheitsfreigabe.
 
+
+Ergänzung nach PR #202: Vier weitere Herstellerprodukte (PEROTEX INTENSIV, GASTRO PUR ECO, MILIFEE, PEROCID ECO) sind mit unbekannten Gefahren und unbestätigten GTIN-Zuordnungen auswählbar. Die 43 Datensätze aus der Quellenprüfung bleiben unverändert. Aktueller Bestand: 45 reale Produkte (41 mit belegten Gefahren, vier ungeprüft) plus zwei synthetische Beispiele; 96 GTIN-Zuordnungen (91 bestätigt). Die neuen Einträge bleiben UNVERIFIED.
+
 ## Das Problem
 
 Reinigungskräfte im gewerblichen Bereich arbeiten unter extremem Zeitdruck und häufig über erhebliche Sprachbarrieren hinweg. Das versehentliche Mischen eines sauren Sanitär-Entkalkers mit einer hypochlorithaltigen Chlorbleiche setzt in engen, fensterlosen Waschräumen und Putzkammern sofort toxisches Chlorgas frei. 

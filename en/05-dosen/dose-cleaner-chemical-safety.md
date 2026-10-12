@@ -27,6 +27,9 @@ source_type: Type A
 
 Source review 12 October 2026: 41 real products plus two synthetic examples, 92 GTIN mappings (91 confirmed), and 36 documented current manufacturer source versions. Added 21 DR.SCHNELL products with manufacturer SDS and EAN evidence; the 2025 Meffert SDS replaces its retailer copy. GTIN/UFI must identify exactly one record; GISCODE is display-only. All chemical-completeness reviews remain pending; five new records retain unknown groups. Dan Klorix remains unconfirmed for barcode lookup, and Buzil/Domestos current sources remain unresolved. Mellerud remains an ingredient datasheet without a complete SDS. pH measured at 1% dilution is not treated as concentrate pH. Receipts and remaining work: `07-demos/chemhazard-stop/product-review-2026-10-12.md`. Tests establish software invariants, not chemical safety certification.
 
+
+Addition after PR #202: Four further manufacturer products (PEROTEX INTENSIV, GASTRO PUR ECO, MILIFEE, PEROCID ECO) are selectable with unknown hazards and unconfirmed GTIN mappings. All 43 source-review records remain unchanged. Current catalogue: 45 real products (41 with sourced hazards, four unreviewed) plus two synthetic examples; 96 GTIN mappings (91 confirmed). New entries remain UNVERIFIED.
+
 ## The problem
 
 Commercial cleaners work under extreme speed pressure, frequently navigating severe language barriers. Accidental mixing of an acidic descaler with a hypochlorite bleach releases deadly chlorine gas into confined, poorly ventilated restrooms and custodial closets.
