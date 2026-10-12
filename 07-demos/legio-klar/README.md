@@ -54,6 +54,7 @@ erzeugeMieterSchreibenEntwurf()  --> BGB § 536c / TrinkwV § 51 Aufforderung
 | `src/engine/legio-klar/legioKlarEngine.test.ts` | Vitest-Testsuite (10 Tests) |
 | `07-demos/legio-klar/laborbefund-schema.json` | JSON Schema für strukturierte Befunde |
 | `07-demos/legio-klar/data/synthetischer-aushang-befund.json` | Synthetisches Testfixture (Mehrfamilienhaus 24 WE) |
+| `07-demos/legio-klar/data/beispiel-aushang-treppenhaus.jpg` | Referenzfoto eines typischen DIN EN ISO 11731 Laboraushangs im Treppenhaus |
 | `07-demos/legio-klar/ticket-01-aushang-decoder.md` | Entwicklungsvertrag für Ticket 01 |
 
 ---
