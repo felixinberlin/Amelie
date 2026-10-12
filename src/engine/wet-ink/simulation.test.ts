@@ -422,5 +422,63 @@ describe('Wet Ink acceptance — the five effects', { timeout: SLOW }, () => {
       expect(sim.pigmentSuspended[idx]).toBeGreaterThan(0);
       expect(sim.pigmentDeposited[idx]).toBeLessThan(initialDeposited);
     });
+
+    it('hydrodynamic dispersion softly blends adjacent suspended pigments in standing wet film', () => {
+      const sim = freshSim('kopierpapier', 'sumi');
+      sim.setParams({ ...REFERENCE_PARAMS, dispersionRate: 1.5 });
+
+      // Place two adjacent cells with surface water
+      const idxA = 64 * SIZE + 64;
+      const idxB = 64 * SIZE + 65;
+      sim.waterFilm[idxA] = 1.0;
+      sim.waterFilm[idxB] = 1.0;
+      sim.pigmentSuspended[idxA] = 2.0; // High concentration in A
+      sim.pigmentSuspended[idxB] = 0.0; // Clean water in B
+
+      sim.isActive = true;
+      sim.minActiveX = 63;
+      sim.maxActiveX = 66;
+      sim.minActiveY = 63;
+      sim.maxActiveY = 66;
+
+      sim.step(WET_INK_DT);
+
+      // Pigment should diffuse from cell A into cell B
+      expect(sim.pigmentSuspended[idxB]).toBeGreaterThan(0);
+      expect(sim.pigmentSuspended[idxA]).toBeLessThan(2.0);
+      // Strictly conserved mass
+      const rep = sim.massReport();
+      expect(rep.pigmentError).toBeLessThan(1e-3);
+    });
+
+    it('Marangoni surface tension gradient accelerates fluid flow away from solute concentration', () => {
+      const simMarangoni = freshSim('kopierpapier', 'sumi');
+      const simStandard = freshSim('kopierpapier', 'sumi');
+
+      simMarangoni.setParams({ ...REFERENCE_PARAMS, marangoniStrength: 1.5 });
+      simStandard.setParams({ ...REFERENCE_PARAMS, marangoniStrength: 0.0 });
+
+      // In A: concentrated pigment. In B: pure water.
+      const idxA = 64 * SIZE + 64;
+      const idxB = 64 * SIZE + 65;
+
+      for (const sim of [simMarangoni, simStandard]) {
+        sim.waterFilm[idxA] = 0.8;
+        sim.waterFilm[idxB] = 0.8;
+        sim.pigmentSuspended[idxA] = 2.5;
+        sim.pigmentSuspended[idxB] = 0.0;
+        sim.isActive = true;
+        sim.minActiveX = 63;
+        sim.maxActiveX = 66;
+        sim.minActiveY = 63;
+        sim.maxActiveY = 66;
+      }
+
+      simMarangoni.step(WET_INK_DT);
+      simStandard.step(WET_INK_DT);
+
+      // Face velocity u between idxA and idxB should be higher under Marangoni stress
+      expect(simMarangoni.velX[idxA]).toBeGreaterThan(simStandard.velX[idxA]);
+    });
   });
 });

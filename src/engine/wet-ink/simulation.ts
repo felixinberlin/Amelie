@@ -69,6 +69,8 @@ export const WET_INK_PHYSICS = {
   edgeEvaporation: 5.0,      // extra evaporation at the contact line (× edgeDarkening); the
                              // pressure gradient it creates pulls pigment outward — the coffee ring
   fiberEvaporation: 0.0002,  // fiber water evaporation once the film is gone
+  dispersion: 0.08,          // hydrodynamic dispersion / Brownian mixing rate in wet films
+  marangoni: 0.12,           // surface tension gradient driving backruns & wet-in-wet blooms
 };
 
 interface SimSnapshot {
@@ -958,7 +960,10 @@ export class WetInkSimulation {
         const i = y * w + x;
         // Horizontal face (i | i+1), both cells interior
         if (y >= 1 && x >= 1 && x + 1 <= w - 2 && (h[i] > WET_H || h[i + 1] > WET_H) && isWet(i) && isWet(i + 1)) {
-          const drop = (h[i] + paperH[i] * slope) - (h[i + 1] + paperH[i + 1] * slope);
+          const ci = h[i] > DRY_EPS ? p[i] / h[i] : 0;
+          const cNext = h[i + 1] > DRY_EPS ? p[i + 1] / h[i + 1] : 0;
+          const marangoni = (ci - cNext) * (P.marangoni ?? 0.12) * (params.marangoniStrength ?? 0);
+          const drop = (h[i] + paperH[i] * slope) - (h[i + 1] + paperH[i + 1] * slope) + marangoni;
           const damp = Math.pow(P.damping * (1 - (paperH[i] + paperH[i + 1]) * 0.5 * P.roughnessDrag), k);
           const vx = (u[i] + (drop * P.pressure + gx) * k) * damp;
           u[i] = vx > lim ? lim : vx < -lim ? -lim : vx;
@@ -968,7 +973,10 @@ export class WetInkSimulation {
         // Vertical face (i | i+w)
         const j = i + w;
         if (x >= 1 && y >= 1 && y + 1 <= this.height - 2 && (h[i] > WET_H || h[j] > WET_H) && isWet(i) && isWet(j)) {
-          const drop = (h[i] + paperH[i] * slope) - (h[j] + paperH[j] * slope);
+          const ci = h[i] > DRY_EPS ? p[i] / h[i] : 0;
+          const cNext = h[j] > DRY_EPS ? p[j] / h[j] : 0;
+          const marangoni = (ci - cNext) * (P.marangoni ?? 0.12) * (params.marangoniStrength ?? 0);
+          const drop = (h[i] + paperH[i] * slope) - (h[j] + paperH[j] * slope) + marangoni;
           const damp = Math.pow(P.damping * (1 - (paperH[i] + paperH[j]) * 0.5 * P.roughnessDrag), k);
           const vy = (v[i] + (drop * P.pressure + gy) * k) * damp;
           v[i] = vy > lim ? lim : vy < -lim ? -lim : vy;
@@ -1069,6 +1077,96 @@ export class WetInkSimulation {
         this.pigmentSuspendedS[i3]     = spN[i3] > 0 ? spN[i3] : 0;
         this.pigmentSuspendedS[i3 + 1] = spN[i3 + 1] > 0 ? spN[i3 + 1] : 0;
         this.pigmentSuspendedS[i3 + 2] = spN[i3 + 2] > 0 ? spN[i3 + 2] : 0;
+      }
+    }
+
+    // --- Pass 4b: hydrodynamic dispersion & wet-in-wet inter-mixing -----------
+    // In continuous surface water films (h > WET_H), suspended pigment particles
+    // undergo colloidal Brownian diffusion and shear dispersion. This allows
+    // overlapping or adjacent wet strokes of different pigments (e.g. Prussian
+    // Blue and Cadmium Yellow) to softly intermix at their liquid boundary into
+    // seamless blended washes (Duncan 1940 / Kubelka-Munk 1931).
+    const dispRate = (P.dispersion ?? 0.08) * (params.dispersionRate ?? 0) * k;
+    if (dispRate > 0) {
+      for (let y = y0; y <= y1; y++) {
+        for (let x = x0; x <= x1; x++) {
+          const i = y * w + x;
+          const hi = h[i];
+          if (hi <= WET_H) continue;
+          const ci = p[i] / hi;
+
+          // Horizontal neighbor (i | i+1)
+          if (x + 1 <= x1) {
+            const j = i + 1;
+            const hj = h[j];
+            if (hj > WET_H) {
+              const cj = p[j] / hj;
+              const dc = ci - cj;
+              if (Math.abs(dc) > 1e-5) {
+                const minH = Math.min(hi, hj);
+                const maxTransfer = dc > 0 ? p[i] * 0.20 : p[j] * 0.20;
+                const flux = Math.max(-maxTransfer, Math.min(maxTransfer, dc * dispRate * minH));
+                if (flux !== 0) {
+                  p[i] -= flux;
+                  p[j] += flux;
+                  const srcIdx = flux > 0 ? i : j;
+                  const dstIdx = flux > 0 ? j : i;
+                  const src3 = srcIdx * 3;
+                  const dst3 = dstIdx * 3;
+                  const pSrc = flux > 0 ? (p[i] + flux) : (p[j] - flux);
+                  if (pSrc > 1e-6) {
+                    const absFlux = Math.abs(flux);
+                    const optFrac = absFlux / pSrc;
+                    for (let c = 0; c < 3; c++) {
+                      const dK = this.pigmentSuspendedK[src3 + c] * optFrac;
+                      const dS = this.pigmentSuspendedS[src3 + c] * optFrac;
+                      this.pigmentSuspendedK[src3 + c] -= dK;
+                      this.pigmentSuspendedK[dst3 + c] += dK;
+                      this.pigmentSuspendedS[src3 + c] -= dS;
+                      this.pigmentSuspendedS[dst3 + c] += dS;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          // Vertical neighbor (i | i+w)
+          if (y + 1 <= y1) {
+            const j = i + w;
+            const hj = h[j];
+            if (hj > WET_H) {
+              const cj = p[j] / hj;
+              const dc = ci - cj;
+              if (Math.abs(dc) > 1e-5) {
+                const minH = Math.min(hi, hj);
+                const maxTransfer = dc > 0 ? p[i] * 0.20 : p[j] * 0.20;
+                const flux = Math.max(-maxTransfer, Math.min(maxTransfer, dc * dispRate * minH));
+                if (flux !== 0) {
+                  p[i] -= flux;
+                  p[j] += flux;
+                  const srcIdx = flux > 0 ? i : j;
+                  const dstIdx = flux > 0 ? j : i;
+                  const src3 = srcIdx * 3;
+                  const dst3 = dstIdx * 3;
+                  const pSrc = flux > 0 ? (p[i] + flux) : (p[j] - flux);
+                  if (pSrc > 1e-6) {
+                    const absFlux = Math.abs(flux);
+                    const optFrac = absFlux / pSrc;
+                    for (let c = 0; c < 3; c++) {
+                      const dK = this.pigmentSuspendedK[src3 + c] * optFrac;
+                      const dS = this.pigmentSuspendedS[src3 + c] * optFrac;
+                      this.pigmentSuspendedK[src3 + c] -= dK;
+                      this.pigmentSuspendedK[dst3 + c] += dK;
+                      this.pigmentSuspendedS[src3 + c] -= dS;
+                      this.pigmentSuspendedS[dst3 + c] += dS;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
 

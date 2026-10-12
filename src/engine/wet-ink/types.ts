@@ -50,6 +50,8 @@ export interface WetInkSimParams {
   tiltX?: number; // Board tilt gravity X (-1 to 1)
   tiltY?: number; // Board tilt gravity Y (-1 to 1)
   enableSaunderson?: boolean; // Saunderson (1942) Fresnel boundary correction
+  dispersionRate?: number; // Rate of colloidal/Brownian wet-in-wet pigment mixing (0..2)
+  marangoniStrength?: number; // Surface tension gradient driving backruns (0..2)
 }
 
 export interface SimulationSnapshot {

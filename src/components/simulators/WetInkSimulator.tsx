@@ -17,7 +17,9 @@ import {
   Stamp,
   Grid,
   ChevronDown,
+  ChevronUp,
   Palette,
+  Sliders,
 } from 'lucide-react';
 import { Language } from '../../types';
 import { WetInkPhysicsLab } from './WetInkPhysicsLab';
@@ -83,6 +85,16 @@ const ESSENTIAL_PAPERS: WetInkPaperConfig[] = [
   ...CLASSIC_PAPERS,
 ];
 
+// 6 Master Substrates (宣纸与经典纸张)
+const MASTER_PAPERS: WetInkPaperConfig[] = [
+  PAPER_PRESETS.find((p: WetInkPaperConfig) => p.id === 'sheng-xuan') || PAPER_PRESETS[0],
+  PAPER_PRESETS.find((p: WetInkPaperConfig) => p.id === 'ban-shu-xuan') || PAPER_PRESETS[0],
+  PAPER_PRESETS.find((p: WetInkPaperConfig) => p.id === 'shu-xuan') || PAPER_PRESETS[0],
+  PAPER_PRESETS.find((p: WetInkPaperConfig) => p.id === 'washi') || PAPER_PRESETS[0],
+  PAPER_PRESETS.find((p: WetInkPaperConfig) => p.id === 'buetten') || PAPER_PRESETS[2],
+  PAPER_PRESETS.find((p: WetInkPaperConfig) => p.id === 'aquarell-rau') || PAPER_PRESETS[1],
+];
+
 // Classical Ink Dilution Shades (墨分五色 - The Five Shades of Ink)
 interface InkShade {
   id: string;
@@ -125,7 +137,7 @@ const BRUSH_TIP_SHAPES: TipShapePreset[] = [
 export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
   lang,
 }) => {
-  const [activeEngineMode, setActiveEngineMode] = useState<'webgl-lab' | 'atelier'>('webgl-lab');
+  const [activeEngineMode, setActiveEngineMode] = useState<'webgl-lab' | 'atelier'>('atelier');
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const simRef = useRef<WetInkSimulation | null>(null);
   const brushManagerRef = useRef<WetInkBrushManager>(new WetInkBrushManager());
@@ -150,7 +162,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
 
   // Substrate & Pigment
   const [paperCategory, setPaperCategory] = useState<'xuan' | 'classic'>('xuan');
-  const [selectedPaper, setSelectedPaper] = useState<WetInkPaperConfig>(XUAN_PAPERS[0] || ESSENTIAL_PAPERS[0]);
+  const [selectedPaper, setSelectedPaper] = useState<WetInkPaperConfig>(MASTER_PAPERS[0] || XUAN_PAPERS[0]);
   const [selectedPigment, setSelectedPigment] = useState<WetInkPigmentConfig>(PALETTE_PIGMENTS[0]);
   const [previousPigment, setPreviousPigment] = useState<WetInkPigmentConfig | null>(null);
   const [recentPigments, setRecentPigments] = useState<WetInkPigmentConfig[]>([
@@ -164,10 +176,11 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
   const [isColorPickerOpen, setIsColorPickerOpen] = useState<boolean>(false);
   const [customColorHex, setCustomColorHex] = useState<string>('#0c356a');
 
-  // Physics: View mode, capillary bleed speed, board tilt
+  // Physics: View mode, capillary bleed speed, board tilt, physics drawer
   const [viewMode, setViewMode] = useState<SimulationLayer>('composite');
   const [bleedSpeed, setBleedSpeed] = useState<number>(1.2);
   const [gravityTilt, setGravityTilt] = useState<'flat' | 'down' | 'left' | 'right'>('flat');
+  const [showPhysicsDrawer, setShowPhysicsDrawer] = useState<boolean>(false);
 
   // Status & Drawing State
   const [isDrawing, setIsDrawing] = useState<boolean>(false);
@@ -186,6 +199,8 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
     granulationStrength: 1.1,
     backrunStrength: 1.0,
     dryBrushSensitivity: 1.0,
+    dispersionRate: 1.0,
+    marangoniStrength: 1.2,
     tiltX: 0,
     tiltY: 0,
   });
@@ -267,6 +282,24 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
     setBleedSpeed(speed);
     setParams((prev) => {
       const next = { ...prev, capillarySpeed: speed };
+      if (simRef.current) simRef.current.setParams(next);
+      return next;
+    });
+  };
+
+  // Handle Hydrodynamic Dispersion (Wet-in-Wet Mixing)
+  const handleDispersionChange = (disp: number) => {
+    setParams((prev) => {
+      const next = { ...prev, dispersionRate: disp };
+      if (simRef.current) simRef.current.setParams(next);
+      return next;
+    });
+  };
+
+  // Handle Marangoni Surface Tension Stress (Flower / Bloom Effect)
+  const handleMarangoniChange = (strength: number) => {
+    setParams((prev) => {
+      const next = { ...prev, marangoniStrength: strength };
       if (simRef.current) simRef.current.setParams(next);
       return next;
     });
@@ -1101,17 +1134,17 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
         </div>
       </div>
 
-      {/* Essential Working Controls (Grid layout) */}
-      <div className="bg-white rounded-2xl border border-stone-200 p-4 sm:p-5 shadow-xs grid grid-cols-1 md:grid-cols-3 gap-5 text-xs">
-        {/* 1. Drawing Tool & Size */}
-        <div className="space-y-3">
-          <div className="flex items-center justify-between">
-            <label className="block font-bold text-stone-700 uppercase tracking-wider text-[11px] font-mono">
-              1. {lang === 'de' ? 'Werkzeug & Pinsel' : lang === 'es' ? 'Herramienta' : 'Tool & Brush'}
+      {/* Streamlined Working Controls (2-Column Studio Layout) */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 text-xs">
+        {/* 1. Drawing Tool & Brush Panel */}
+        <div className="bg-white rounded-2xl border border-stone-200 p-4 sm:p-5 shadow-xs space-y-3">
+          <div className="flex items-center justify-between pb-2 border-b border-stone-100">
+            <label className="block font-bold text-stone-800 uppercase tracking-wider text-[11px] font-mono">
+              1. {lang === 'de' ? 'Pinsel & Strich' : lang === 'es' ? 'Pincel y Trazo' : 'Brush & Stroke'}
             </label>
-            <span className="text-[10px] text-amber-800 font-serif italic">
+            <span className="text-[10px] text-amber-900 bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200 font-serif italic">
               {currentTool === 'seal-stamp'
-                ? '朱砂印章'
+                ? '朱砂印章 (Siegel)'
                 : currentTool === 'water-drop'
                 ? '清水 (Wasser)'
                 : currentTool === 'fountain-pen'
@@ -1120,121 +1153,101 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
             </span>
           </div>
 
-          {/* Brush Bristle Material (Borsten-Material / 毛料) */}
-          <div className="space-y-1">
-            <div className="flex items-center justify-between">
-              <span className="text-[10px] text-stone-500 font-mono uppercase font-bold">
-                {lang === 'de' ? 'Borsten-Material (毛料)' : 'Bristle Material'}
-              </span>
-              <span className="text-[10px] font-mono text-amber-800 font-serif italic">
-                {BRUSH_MATERIAL_PRESETS.find((m) => m.id === brushMaterial)?.zh}
-              </span>
-            </div>
-            <div className="grid grid-cols-5 gap-1">
-              {BRUSH_MATERIAL_PRESETS.map((mat) => (
-                <button
-                  key={mat.id}
-                  onClick={() => {
-                    setBrushMaterial(mat.id);
-                    if (currentTool === 'fountain-pen' || currentTool === 'water-drop' || currentTool === 'seal-stamp') {
-                      setCurrentTool('sumi-brush');
-                    }
-                  }}
-                  className={`p-1.5 rounded-lg border text-center transition-all cursor-pointer flex flex-col items-center justify-center ${
-                    brushMaterial === mat.id && (currentTool === 'sumi-brush' || currentTool === 'langhao' || currentTool === 'yanghao' || currentTool === 'jianhao')
-                      ? 'border-amber-900 bg-amber-900 text-white font-bold shadow-xs'
-                      : 'border-stone-200 bg-white hover:bg-stone-50 text-stone-700'
-                  }`}
-                  title={`${lang === 'de' ? mat.nameDe : mat.nameEn}: ${lang === 'de' ? mat.descDe : mat.descEn}`}
-                >
-                  <span className="text-[11px] font-serif font-bold leading-none mb-0.5">{mat.zh}</span>
-                  <span className="text-[9px] font-mono leading-none opacity-90">
-                    {lang === 'de' ? mat.nameDe.split(' ')[0] : mat.nameEn.split(' ')[0]}
-                  </span>
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Classical & Seal Tools */}
+          {/* Primary Tool Picker */}
           <div className="grid grid-cols-4 gap-1.5">
             <button
               onClick={() => setCurrentTool('sumi-brush')}
-              className={`p-1.5 rounded-xl border text-center transition-all cursor-pointer ${
+              className={`p-2 rounded-xl border text-center transition-all cursor-pointer ${
                 currentTool === 'sumi-brush'
                   ? 'border-stone-900 bg-stone-900 text-white font-bold shadow-xs'
                   : 'border-stone-200 hover:bg-stone-50 text-stone-700'
               }`}
             >
-              <Brush className="w-3.5 h-3.5 mx-auto mb-0.5" />
-              <span className="text-[10px]">{lang === 'de' ? 'Tusche' : 'Ink'}</span>
+              <Brush className="w-4 h-4 mx-auto mb-1" />
+              <span className="text-[11px]">{lang === 'de' ? 'Tusche' : 'Ink'}</span>
             </button>
 
             <button
               onClick={() => setCurrentTool('fountain-pen')}
-              className={`p-1.5 rounded-xl border text-center transition-all cursor-pointer ${
+              className={`p-2 rounded-xl border text-center transition-all cursor-pointer ${
                 currentTool === 'fountain-pen'
                   ? 'border-stone-900 bg-stone-900 text-white font-bold shadow-xs'
                   : 'border-stone-200 hover:bg-stone-50 text-stone-700'
               }`}
             >
-              <PenTool className="w-3.5 h-3.5 mx-auto mb-0.5" />
-              <span className="text-[10px]">{lang === 'de' ? 'Feder' : 'Pen'}</span>
+              <PenTool className="w-4 h-4 mx-auto mb-1" />
+              <span className="text-[11px]">{lang === 'de' ? 'Feder' : 'Pen'}</span>
             </button>
 
             <button
               onClick={() => setCurrentTool('water-drop')}
-              className={`p-1.5 rounded-xl border text-center transition-all cursor-pointer ${
+              className={`p-2 rounded-xl border text-center transition-all cursor-pointer ${
                 currentTool === 'water-drop'
                   ? 'border-blue-700 bg-blue-700 text-white font-bold shadow-xs'
                   : 'border-blue-200 bg-blue-50/50 hover:bg-blue-100 text-blue-900'
               }`}
+              title={lang === 'de' ? 'Klares Wasser (Verdünnt & erzeugt Marangoni-Blüten)' : 'Clear Water (Dilutes & triggers blooms)'}
             >
-              <Droplets className="w-3.5 h-3.5 mx-auto mb-0.5 text-blue-500" />
-              <span className="text-[10px]">{lang === 'de' ? 'Wasser' : 'Water'}</span>
+              <Droplets className="w-4 h-4 mx-auto mb-1 text-blue-400" />
+              <span className="text-[11px]">{lang === 'de' ? 'Wasser' : 'Water'}</span>
             </button>
 
             <button
               onClick={() => setCurrentTool('seal-stamp')}
-              className={`p-1.5 rounded-xl border text-center transition-all cursor-pointer ${
+              className={`p-2 rounded-xl border text-center transition-all cursor-pointer ${
                 currentTool === 'seal-stamp'
                   ? 'border-red-800 bg-red-800 text-white font-bold shadow-xs'
                   : 'border-red-200 bg-red-50/50 hover:bg-red-100 text-red-900'
               }`}
               title={lang === 'de' ? 'Zinnober-Siegelstempel (Zhuanke / 印章)' : 'Cinnabar Seal Stamp (Zhuanke)'}
             >
-              <Stamp className="w-3.5 h-3.5 mx-auto mb-0.5 text-red-600" />
-              <span className="text-[10px]">{lang === 'de' ? 'Siegel' : 'Seal'}</span>
+              <Stamp className="w-4 h-4 mx-auto mb-1 text-red-500" />
+              <span className="text-[11px]">{lang === 'de' ? 'Siegel' : 'Seal'}</span>
             </button>
           </div>
 
-          {/* Dynamic Tool Sub-Panel */}
           {currentTool !== 'seal-stamp' ? (
-            <div className="space-y-3">
-              <div>
-                <div className="flex justify-between text-stone-600 mb-1">
-                  <span>{lang === 'de' ? 'Pinsel-Größe' : 'Brush Size'}:</span>
-                  <span className="font-mono font-bold">{brushRadius} px</span>
+            <div className="space-y-3 pt-1">
+              {/* Brush Bristle Material (Borsten-Material / 毛料) */}
+              <div className="space-y-1">
+                <div className="flex items-center justify-between text-[10px] text-stone-500 font-mono">
+                  <span className="uppercase font-bold">{lang === 'de' ? 'Borsten-Material (毛料)' : 'Bristle Material'}</span>
+                  <span className="text-amber-900 font-serif italic">
+                    {BRUSH_MATERIAL_PRESETS.find((m) => m.id === brushMaterial)?.nameDe}
+                  </span>
                 </div>
-                <input
-                  type="range"
-                  min="2"
-                  max="20"
-                  step="1"
-                  value={brushRadius}
-                  onChange={(e) => setBrushRadius(parseInt(e.target.value, 10))}
-                  className="w-full accent-amber-700 cursor-pointer"
-                />
+                <div className="grid grid-cols-5 gap-1">
+                  {BRUSH_MATERIAL_PRESETS.map((mat) => (
+                    <button
+                      key={mat.id}
+                      onClick={() => {
+                        setBrushMaterial(mat.id);
+                        if (currentTool === 'fountain-pen' || currentTool === 'water-drop') {
+                          setCurrentTool('sumi-brush');
+                        }
+                      }}
+                      className={`p-1.5 rounded-xl border text-center transition-all cursor-pointer flex flex-col items-center justify-center ${
+                        brushMaterial === mat.id && (currentTool === 'sumi-brush' || currentTool === 'langhao' || currentTool === 'yanghao' || currentTool === 'jianhao')
+                          ? 'border-amber-900 bg-amber-900 text-white font-bold shadow-xs'
+                          : 'border-stone-200 bg-white hover:bg-stone-50 text-stone-700'
+                      }`}
+                      title={`${lang === 'de' ? mat.nameDe : mat.nameEn}: ${lang === 'de' ? mat.descDe : mat.descEn}`}
+                    >
+                      <span className="text-[12px] font-serif font-bold leading-none mb-0.5">{mat.zh}</span>
+                      <span className="text-[9px] font-mono leading-none opacity-90">
+                        {lang === 'de' ? mat.nameDe.split(' ')[0] : mat.nameEn.split(' ')[0]}
+                      </span>
+                    </button>
+                  ))}
+                </div>
               </div>
 
               {/* Brush Tip Shape Footprints (Pinsel-Formen / 毛笔形制) */}
-              <div className="pt-2 border-t border-stone-100 space-y-1">
-                <div className="flex items-center justify-between">
-                  <span className="text-[10px] uppercase font-bold text-stone-600 font-mono">
-                    {lang === 'de' ? 'Pinsel-Form (Spitze)' : 'Brush Tip Shape'}
-                  </span>
-                  <span className="text-[10px] font-mono text-stone-500 font-serif">
-                    {BRUSH_TIP_SHAPES.find((s) => s.id === brushTipShape)?.zh}
+              <div className="space-y-1">
+                <div className="flex items-center justify-between text-[10px] text-stone-500 font-mono">
+                  <span className="uppercase font-bold">{lang === 'de' ? 'Pinsel-Spitze (Form)' : 'Tip Shape'}</span>
+                  <span className="text-stone-600 font-serif">
+                    {BRUSH_TIP_SHAPES.find((s) => s.id === brushTipShape)?.zh} · {BRUSH_TIP_SHAPES.find((s) => s.id === brushTipShape)?.nameDe}
                   </span>
                 </div>
                 <div className="grid grid-cols-5 gap-1">
@@ -1242,7 +1255,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
                     <button
                       key={shape.id}
                       onClick={() => setBrushTipShape(shape.id)}
-                      className={`p-1.5 rounded-lg border text-center transition-all cursor-pointer flex flex-col items-center justify-center ${
+                      className={`p-1.5 rounded-xl border text-center transition-all cursor-pointer flex flex-col items-center justify-center ${
                         brushTipShape === shape.id
                           ? 'border-amber-900 bg-amber-900 text-white font-bold shadow-xs'
                           : 'border-stone-200 bg-white hover:bg-stone-50 text-stone-700'
@@ -1257,56 +1270,68 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
                 </div>
               </div>
 
-              {/* Mo Fen Wu Se: Five Shades of Ink & Wash Dilution (墨分五色) */}
-              <div className="pt-2 border-t border-stone-100 space-y-1.5">
-                <div className="flex items-center justify-between">
-                  <span className="text-[10px] uppercase font-bold text-stone-600 font-mono">
-                    {lang === 'de' ? '墨分五色 (Tintenstufen)' : 'Mo Fen Wu Se (Ink Wash)'}
-                  </span>
-                  <span className="text-[10px] font-mono text-stone-500 font-serif">
-                    {inkDilution <= 0.45
-                      ? '焦 (Jiāo)'
-                      : inkDilution <= 0.8
-                      ? '浓 (Nóng)'
-                      : inkDilution <= 1.3
-                      ? '重 (Zhòng)'
-                      : inkDilution <= 2.2
-                      ? '淡 (Dàn)'
-                      : '清 (Qīng)'}
-                  </span>
+              {/* Size & Dilution (Side by side) */}
+              <div className="pt-2 border-t border-stone-100 space-y-2.5">
+                <div>
+                  <div className="flex justify-between text-stone-600 mb-1">
+                    <span className="font-medium">{lang === 'de' ? 'Pinsel-Größe' : 'Brush Size'}:</span>
+                    <span className="font-mono font-bold text-stone-800">{brushRadius} px</span>
+                  </div>
+                  <input
+                    type="range"
+                    min="2"
+                    max="20"
+                    step="1"
+                    value={brushRadius}
+                    onChange={(e) => setBrushRadius(parseInt(e.target.value, 10))}
+                    className="w-full accent-amber-700 cursor-pointer"
+                  />
                 </div>
 
-                <div className="grid grid-cols-5 gap-1">
-                  {FIVE_SHADES_OF_INK.map((shade) => {
-                    const isActive = Math.abs(inkDilution - shade.ratio) < 0.15;
-                    return (
-                      <button
-                        key={shade.id}
-                        onClick={() => setInkDilution(shade.ratio)}
-                        className={`p-1.5 rounded-lg border text-center transition-all cursor-pointer flex flex-col items-center justify-center ${
-                          isActive
-                            ? 'border-stone-900 bg-stone-900 text-white font-bold shadow-xs'
-                            : 'border-stone-200 bg-white hover:bg-stone-50 text-stone-700'
-                        }`}
-                        title={`${lang === 'de' ? shade.nameDe : shade.nameEn}: ${lang === 'de' ? shade.descDe : shade.descEn}`}
-                      >
-                        <div
-                          className="w-3 h-3 rounded-full border border-stone-400 mb-0.5 shadow-2xs"
-                          style={{ backgroundColor: shade.previewColor }}
-                        />
-                        <div className="text-[11px] font-serif font-bold leading-none">{shade.nameZh}</div>
-                        <div className="text-[8px] opacity-80 mt-0.5 leading-none font-mono">
-                          {shade.id === 'jiao' ? '0.3x' : shade.id === 'nong' ? '0.7x' : shade.id === 'zhong' ? '1.0x' : shade.id === 'dan' ? '1.8x' : '2.8x'}
-                        </div>
-                      </button>
-                    );
-                  })}
-                </div>
-
-                {/* Fine Dilution Slider */}
-                <div className="pt-1">
-                  <div className="flex justify-between text-[10px] text-stone-500 mb-0.5">
-                    <span>{lang === 'de' ? 'Verdünnung (Wasser)' : 'Dilution (Water Ratio)'}:</span>
+                {/* Mo Fen Wu Se: Five Shades of Ink (墨分五色) */}
+                <div className="space-y-1.5">
+                  <div className="flex items-center justify-between text-[10px] text-stone-500 font-mono">
+                    <span className="uppercase font-bold">{lang === 'de' ? '墨分五色 (Tintenstufen)' : 'Mo Fen Wu Se (Wash)'}</span>
+                    <span className="text-stone-700 font-serif font-bold">
+                      {inkDilution <= 0.45
+                        ? '焦 (Jiāo · 0.35x)'
+                        : inkDilution <= 0.8
+                        ? '浓 (Nóng · 0.65x)'
+                        : inkDilution <= 1.3
+                        ? '重 (Zhòng · 1.0x)'
+                        : inkDilution <= 2.2
+                        ? '淡 (Dàn · 1.8x)'
+                        : '清 (Qīng · 2.8x)'}
+                    </span>
+                  </div>
+                  <div className="grid grid-cols-5 gap-1">
+                    {FIVE_SHADES_OF_INK.map((shade) => {
+                      const isActive = Math.abs(inkDilution - shade.ratio) < 0.15;
+                      return (
+                        <button
+                          key={shade.id}
+                          onClick={() => setInkDilution(shade.ratio)}
+                          className={`p-1.5 rounded-xl border text-center transition-all cursor-pointer flex flex-col items-center justify-center ${
+                            isActive
+                              ? 'border-stone-900 bg-stone-900 text-white font-bold shadow-xs'
+                              : 'border-stone-200 bg-white hover:bg-stone-50 text-stone-700'
+                          }`}
+                          title={`${lang === 'de' ? shade.nameDe : shade.nameEn}: ${lang === 'de' ? shade.descDe : shade.descEn}`}
+                        >
+                          <div
+                            className="w-3.5 h-3.5 rounded-full border border-stone-400 mb-0.5 shadow-2xs"
+                            style={{ backgroundColor: shade.previewColor }}
+                          />
+                          <div className="text-[11px] font-serif font-bold leading-none">{shade.nameZh}</div>
+                          <div className="text-[8px] opacity-80 mt-0.5 leading-none font-mono">
+                            {shade.id === 'jiao' ? '0.35x' : shade.id === 'nong' ? '0.65x' : shade.id === 'zhong' ? '1.0x' : shade.id === 'dan' ? '1.8x' : '2.8x'}
+                          </div>
+                        </button>
+                      );
+                    })}
+                  </div>
+                  <div className="flex justify-between items-center text-[10px] text-stone-500 pt-0.5">
+                    <span>{lang === 'de' ? 'Feinabstimmung Wasseranteil' : 'Fine Dilution'}:</span>
                     <span className="font-mono font-bold text-stone-700">{inkDilution.toFixed(2)}x</span>
                   </div>
                   <input
@@ -1323,7 +1348,7 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
             </div>
           ) : (
             /* Seal Stamp Configuration Sub-Panel */
-            <div className="bg-red-50/70 border border-red-200 rounded-xl p-2.5 space-y-2">
+            <div className="bg-red-50/70 border border-red-200 rounded-xl p-3 space-y-2.5">
               <div className="flex items-center justify-between text-[10px] font-bold text-red-950 uppercase font-mono">
                 <span>{lang === 'de' ? 'Siegel-Gravur (篆刻)' : 'Seal Carving'}</span>
                 <button
@@ -1438,55 +1463,34 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
           )}
         </div>
 
-        {/* 2. Ink & Paper Substrate */}
-        <div className="space-y-3">
-          <label className="block font-bold text-stone-700 uppercase tracking-wider text-[11px] font-mono">
-            2. {lang === 'de' ? 'Farbe & Papier' : lang === 'es' ? 'Tinta y papel' : 'Ink & Paper'}
-          </label>
+        {/* 2. Paper & Color Palette Panel */}
+        <div className="bg-white rounded-2xl border border-stone-200 p-4 sm:p-5 shadow-xs space-y-3">
+          <div className="flex items-center justify-between pb-2 border-b border-stone-100">
+            <label className="block font-bold text-stone-800 uppercase tracking-wider text-[11px] font-mono">
+              2. {lang === 'de' ? 'Papier & Farbpalette' : lang === 'es' ? 'Papel y Paleta' : 'Paper & Palette'}
+            </label>
+            <div className="flex items-center gap-1.5 text-[10px] font-mono text-stone-600">
+              <span
+                className="w-2.5 h-2.5 rounded-full border border-black/20 shrink-0"
+                style={{ backgroundColor: selectedPigment.colorHex || '#111' }}
+              />
+              <span className="font-bold text-stone-800">{lang === 'de' ? selectedPigment.nameDe : selectedPigment.nameEn}</span>
+              <span className="text-stone-400">·</span>
+              <span className="text-amber-900 font-serif">{selectedPaper.nameDe}</span>
+            </div>
+          </div>
 
-          {/* Historical Pigments & Interactive Color Selector */}
-          <WetInkColorSelector
-            selectedPigment={selectedPigment}
-            onSelectPigment={handlePigmentChange}
-            lang={lang}
-            recentPigments={recentPigments}
-            previousPigment={previousPigment}
-            variant="inline"
-          />
-
-          {/* Substrate Category Selector: Xuan vs Classic */}
+          {/* Master Substrates (6 Master Papers) */}
           <div className="space-y-1.5">
-            <div className="flex items-center justify-between">
-              <span className="text-[10px] uppercase font-bold text-stone-500 font-mono">
-                {lang === 'de' ? 'Papiersubstrat' : 'Substrate'}
+            <div className="flex items-center justify-between text-[10px] text-stone-500 font-mono">
+              <span className="uppercase font-bold">{lang === 'de' ? 'Papiersubstrat (6 Meisterpapiere)' : 'Substrate (6 Master Papers)'}</span>
+              <span className="text-amber-800 font-serif italic">
+                {selectedPaper.id === 'sheng-xuan' ? '生宣 · Max. Saugleistung' : selectedPaper.id === 'ban-shu-xuan' ? '半熟宣 · Standfest' : selectedPaper.id === 'shu-xuan' ? '熟宣 · Gongbi Scharf' : selectedPaper.nameDe}
               </span>
-              <div className="flex gap-1">
-                <button
-                  onClick={() => setPaperCategory('xuan')}
-                  className={`px-2 py-0.5 rounded text-[10px] font-bold transition-colors cursor-pointer ${
-                    paperCategory === 'xuan'
-                      ? 'bg-amber-900 text-white'
-                      : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
-                  }`}
-                >
-                  宣纸 (Xuan)
-                </button>
-                <button
-                  onClick={() => setPaperCategory('classic')}
-                  className={`px-2 py-0.5 rounded text-[10px] font-bold transition-colors cursor-pointer ${
-                    paperCategory === 'classic'
-                      ? 'bg-amber-900 text-white'
-                      : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
-                  }`}
-                >
-                  {lang === 'de' ? 'Klassisch' : 'Classic'}
-                </button>
-              </div>
             </div>
 
-            {/* Substrates in active category */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-1.5">
-              {(paperCategory === 'xuan' ? XUAN_PAPERS : CLASSIC_PAPERS).map((paper) => {
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-1.5">
+              {MASTER_PAPERS.map((paper) => {
                 const isSelected = selectedPaper.id === paper.id;
                 return (
                   <button
@@ -1500,18 +1504,16 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
                   >
                     <div className="font-semibold text-xs leading-tight">
                       {paper.id === 'sheng-xuan'
-                        ? '生宣 (Roh)'
+                        ? '生宣 (Roh-Xuan)'
                         : paper.id === 'ban-shu-xuan'
                         ? '半熟宣 (Halb)'
                         : paper.id === 'shu-xuan'
                         ? '熟宣 (Reif)'
                         : paper.id === 'washi'
-                        ? 'Washi'
-                        : paper.id === 'kopierpapier'
-                        ? 'Geleimt'
+                        ? '和纸 (Washi)'
                         : paper.id === 'buetten'
-                        ? 'Bütten'
-                        : 'Aquarell'}
+                        ? 'Büttenpapier'
+                        : 'Aquarell (Rau)'}
                     </div>
                     <div className="text-[9px] text-stone-500 mt-0.5 line-clamp-1">
                       {paper.id === 'sheng-xuan'
@@ -1522,113 +1524,236 @@ export const WetInkSimulator: React.FC<WetInkSimulatorProps> = ({
                         ? (lang === 'de' ? 'Scharf (Gongbi)' : 'Sharp (Gongbi)')
                         : paper.id === 'washi'
                         ? (lang === 'de' ? 'Faser-Wick' : 'Fiber Wick')
-                        : (lang === 'de' ? 'Geringe Saugleistung' : 'Low Bleed')}
+                        : paper.id === 'buetten'
+                        ? (lang === 'de' ? 'Baumwoll-Korn' : 'Cotton rag')
+                        : (lang === 'de' ? 'Granulierend' : 'Granulating')}
                     </div>
                   </button>
                 );
               })}
             </div>
           </div>
-        </div>
 
-        {/* 3. Real Physics Simulation Controls */}
-        <div className="space-y-3">
-          <label className="block font-bold text-stone-700 uppercase tracking-wider text-[11px] font-mono">
-            3. {lang === 'de' ? 'Physik-Parameter' : lang === 'es' ? 'Simulación física' : 'Physics Simulation'}
-          </label>
-
-          {/* Capillary Bleed Rate */}
-          <div>
-            <div className="flex justify-between text-stone-600 mb-1">
-              <span>{lang === 'de' ? 'Kapillares Ausbluten' : lang === 'es' ? 'Sangrado capilar' : 'Capillary Bleed'}:</span>
-              <span className="font-mono font-bold text-amber-800">{bleedSpeed.toFixed(1)}x</span>
+          {/* Historical Pigment Swatches & Interactive Color Mixer */}
+          <div className="pt-2 border-t border-stone-100 space-y-2">
+            <div className="flex items-center justify-between text-[10px] text-stone-500 font-mono">
+              <span className="uppercase font-bold">{lang === 'de' ? 'Historische Mineral- & Pflanzentinte' : 'Historical Pigments'}</span>
+              <button
+                onClick={() => setIsColorPickerOpen((prev) => !prev)}
+                className="text-stone-700 hover:text-amber-900 font-bold flex items-center gap-1 cursor-pointer"
+              >
+                <Palette className="w-3 h-3 text-amber-800" />
+                <span>{isColorPickerOpen ? (lang === 'de' ? 'Mischer schließen' : 'Close Mixer') : (lang === 'de' ? 'Farbmischer & HSL' : 'Color Mixer & HSL')}</span>
+              </button>
             </div>
-            <input
-              type="range"
-              min="0.4"
-              max="4.0"
-              step="0.1"
-              value={bleedSpeed}
-              onChange={(e) => handleBleedSpeedChange(parseFloat(e.target.value))}
-              className="w-full accent-amber-700 cursor-pointer"
-            />
-            {/* Quick Bleed Presets */}
-            <div className="grid grid-cols-4 gap-1 mt-1.5">
-              {[
-                { speed: 0.8, labelDe: 'Zahm', labelEn: 'Tame' },
-                { speed: 1.2, labelDe: 'Standard', labelEn: 'Normal' },
-                { speed: 2.2, labelDe: 'Xuan-Sog', labelEn: 'Xuan' },
-                { speed: 3.6, labelDe: 'Explosiv', labelEn: 'Explosive' },
-              ].map((preset) => (
+
+            {/* 8 Curated Master Pigment Swatches */}
+            <div className="grid grid-cols-4 sm:grid-cols-8 gap-1.5">
+              {PALETTE_PIGMENTS.slice(0, 8).map((pig) => {
+                const isSelected = selectedPigment.id === pig.id || selectedPigment.colorHex === pig.colorHex;
+                return (
+                  <button
+                    key={`palette-${pig.id}-${pig.colorHex}`}
+                    onClick={() => handlePigmentChange(pig)}
+                    className={`p-1.5 rounded-xl border text-center transition-all cursor-pointer flex flex-col items-center justify-center ${
+                      isSelected
+                        ? 'border-stone-900 ring-2 ring-stone-900 bg-stone-50 shadow-xs'
+                        : 'border-stone-200 bg-white hover:bg-stone-50'
+                    }`}
+                    title={`${lang === 'de' ? pig.nameDe : pig.nameEn} (${pig.colorHex})`}
+                  >
+                    <div
+                      className="w-4 h-4 rounded-full border border-black/20 mb-1 shadow-2xs"
+                      style={{ backgroundColor: pig.colorHex || '#111' }}
+                    />
+                    <span className="text-[9px] font-mono leading-none truncate max-w-full text-stone-700">
+                      {lang === 'de' ? pig.nameDe.split(' ')[0] : pig.nameEn.split(' ')[0]}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Optional Embedded Color Selector Drawer */}
+            {isColorPickerOpen && (
+              <div className="pt-2 border-t border-stone-100">
+                <WetInkColorSelector
+                  selectedPigment={selectedPigment}
+                  onSelectPigment={handlePigmentChange}
+                  lang={lang}
+                  recentPigments={recentPigments}
+                  previousPigment={previousPigment}
+                  variant="inline"
+                />
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* 3. Collapsible Physics & Flow Tuning Drawer */}
+      <div className="bg-white rounded-2xl border border-stone-200 p-4 shadow-xs text-xs space-y-3">
+        <button
+          onClick={() => setShowPhysicsDrawer((prev) => !prev)}
+          className="w-full flex items-center justify-between text-left cursor-pointer group"
+        >
+          <div className="flex items-center gap-2">
+            <div className="w-7 h-7 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-800">
+              <Sliders className="w-4 h-4" />
+            </div>
+            <div>
+              <div className="font-bold text-stone-800 flex items-center gap-2 text-xs">
+                <span>3. {lang === 'de' ? 'Fluss- & Physik-Feinabstimmung' : 'Flow & Physics Tuning'}</span>
+                <span className="text-[10px] font-mono font-normal text-stone-500 bg-stone-100 px-2 py-0.5 rounded-full">
+                  Bleed: {bleedSpeed.toFixed(1)}x · Disp: {(params.dispersionRate ?? 1.0).toFixed(1)}x · Marangoni: {(params.marangoniStrength ?? 1.2).toFixed(1)}x
+                </span>
+              </div>
+              <p className="text-[10px] text-stone-500">
+                {lang === 'de'
+                  ? 'Kapillares Ausbluten, Nass-in-Nass Pigmentdiffusion, Marangoni-Blüte & Neigung'
+                  : 'Capillary bleeding, wet-in-wet colloidal dispersion, Marangoni blooms & board tilt'}
+              </p>
+            </div>
+          </div>
+          <div className="p-1 rounded-lg border border-stone-200 bg-stone-50 text-stone-600 group-hover:bg-stone-100 transition-colors">
+            {showPhysicsDrawer ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+          </div>
+        </button>
+
+        {showPhysicsDrawer && (
+          <div className="pt-3 border-t border-stone-100 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {/* 1. Capillary Bleed Rate */}
+            <div className="space-y-1.5">
+              <div className="flex justify-between text-stone-600 font-mono text-[10px]">
+                <span className="font-bold uppercase">{lang === 'de' ? 'Ausbluten (Kapillare)' : 'Bleed Speed'}:</span>
+                <span className="font-bold text-amber-800">{bleedSpeed.toFixed(1)}x</span>
+              </div>
+              <input
+                type="range"
+                min="0.4"
+                max="4.0"
+                step="0.1"
+                value={bleedSpeed}
+                onChange={(e) => handleBleedSpeedChange(parseFloat(e.target.value))}
+                className="w-full accent-amber-700 cursor-pointer"
+              />
+              <div className="grid grid-cols-4 gap-1">
+                {[
+                  { speed: 0.8, labelDe: 'Zahm', labelEn: 'Tame' },
+                  { speed: 1.2, labelDe: 'Norm', labelEn: 'Norm' },
+                  { speed: 2.2, labelDe: 'Xuan', labelEn: 'Xuan' },
+                  { speed: 3.6, labelDe: 'Expl.', labelEn: 'Expl.' },
+                ].map((preset) => (
+                  <button
+                    key={preset.speed}
+                    onClick={() => handleBleedSpeedChange(preset.speed)}
+                    className={`py-0.5 px-1 rounded text-[9px] font-mono border transition-colors cursor-pointer text-center ${
+                      Math.abs(bleedSpeed - preset.speed) < 0.15
+                        ? 'bg-amber-900 text-white border-amber-900 font-bold'
+                        : 'border-stone-200 bg-stone-50 hover:bg-stone-100 text-stone-600'
+                    }`}
+                  >
+                    {lang === 'de' ? preset.labelDe : preset.labelEn}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* 2. Hydrodynamic Wet-in-Wet Dispersion */}
+            <div className="space-y-1.5">
+              <div className="flex justify-between text-stone-600 font-mono text-[10px]">
+                <span className="font-bold uppercase">{lang === 'de' ? 'Nass-in-Nass Dispersion' : 'Colloidal Dispersion'}:</span>
+                <span className="font-bold text-amber-800">{(params.dispersionRate ?? 1.0).toFixed(1)}x</span>
+              </div>
+              <input
+                type="range"
+                min="0.0"
+                max="2.5"
+                step="0.1"
+                value={params.dispersionRate ?? 1.0}
+                onChange={(e) => handleDispersionChange(parseFloat(e.target.value))}
+                className="w-full accent-amber-700 cursor-pointer"
+              />
+              <p className="text-[9px] text-stone-500 leading-tight">
+                {lang === 'de' ? 'Hydrodynamische Durchmischung überlappender nasser Farbschichten.' : 'Hydrodynamic intermixing of adjacent wet washes.'}
+              </p>
+            </div>
+
+            {/* 3. Marangoni Surface Tension Stress */}
+            <div className="space-y-1.5">
+              <div className="flex justify-between text-stone-600 font-mono text-[10px]">
+                <span className="font-bold uppercase">{lang === 'de' ? 'Marangoni-Blüte' : 'Marangoni Bloom'}:</span>
+                <span className="font-bold text-amber-800">{(params.marangoniStrength ?? 1.2).toFixed(1)}x</span>
+              </div>
+              <input
+                type="range"
+                min="0.0"
+                max="2.5"
+                step="0.1"
+                value={params.marangoniStrength ?? 1.2}
+                onChange={(e) => handleMarangoniChange(parseFloat(e.target.value))}
+                className="w-full accent-amber-700 cursor-pointer"
+              />
+              <p className="text-[9px] text-stone-500 leading-tight">
+                {lang === 'de' ? 'Konzentrationsgradient drängt Pigmente bei Wasserzugabe nach außen.' : 'Solute gradient stress causing authentic cauliflower edges.'}
+              </p>
+            </div>
+
+            {/* 4. Board Gravity Tilt */}
+            <div className="space-y-1.5">
+              <div className="text-stone-600 font-mono text-[10px] flex justify-between">
+                <span className="font-bold uppercase">{lang === 'de' ? 'Schwerkraft-Neigung' : 'Gravity Tilt'}:</span>
+                <span className="font-bold capitalize text-stone-800">{gravityTilt}</span>
+              </div>
+              <div className="grid grid-cols-4 gap-1">
                 <button
-                  key={preset.speed}
-                  onClick={() => handleBleedSpeedChange(preset.speed)}
-                  className={`py-0.5 px-1 rounded text-[9px] font-mono border transition-colors cursor-pointer text-center ${
-                    Math.abs(bleedSpeed - preset.speed) < 0.15
-                      ? 'bg-amber-900 text-white border-amber-900 font-bold'
-                      : 'border-stone-200 bg-stone-50 hover:bg-stone-100 text-stone-600'
+                  onClick={() => handleTiltChange('flat')}
+                  className={`py-1 px-1 rounded-lg border text-center transition-colors cursor-pointer ${
+                    gravityTilt === 'flat'
+                      ? 'bg-stone-900 text-white border-stone-900 font-bold'
+                      : 'border-stone-200 hover:bg-stone-50 text-stone-600'
                   }`}
+                  title={lang === 'de' ? 'Flach (0°)' : 'Flat'}
                 >
-                  {lang === 'de' ? preset.labelDe : preset.labelEn}
+                  0°
                 </button>
-              ))}
+                <button
+                  onClick={() => handleTiltChange('down')}
+                  className={`py-1 px-1 rounded-lg border text-center transition-colors cursor-pointer ${
+                    gravityTilt === 'down'
+                      ? 'bg-stone-900 text-white border-stone-900 font-bold'
+                      : 'border-stone-200 hover:bg-stone-50 text-stone-600'
+                  }`}
+                  title={lang === 'de' ? 'Nach unten fließen' : 'Tilt downward'}
+                >
+                  ↓
+                </button>
+                <button
+                  onClick={() => handleTiltChange('left')}
+                  className={`py-1 px-1 rounded-lg border text-center transition-colors cursor-pointer ${
+                    gravityTilt === 'left'
+                      ? 'bg-stone-900 text-white border-stone-900 font-bold'
+                      : 'border-stone-200 hover:bg-stone-50 text-stone-600'
+                  }`}
+                  title={lang === 'de' ? 'Nach links fließen' : 'Tilt left'}
+                >
+                  ←
+                </button>
+                <button
+                  onClick={() => handleTiltChange('right')}
+                  className={`py-1 px-1 rounded-lg border text-center transition-colors cursor-pointer ${
+                    gravityTilt === 'right'
+                      ? 'bg-stone-900 text-white border-stone-900 font-bold'
+                      : 'border-stone-200 hover:bg-stone-50 text-stone-600'
+                  }`}
+                  title={lang === 'de' ? 'Nach rechts fließen' : 'Tilt right'}
+                >
+                  →
+                </button>
+              </div>
             </div>
           </div>
-
-          {/* Board Gravity Tilt */}
-          <div>
-            <div className="text-stone-600 mb-1.5 flex justify-between">
-              <span>{lang === 'de' ? 'Schwerkraft-Neigung' : lang === 'es' ? 'Inclinación del tablero' : 'Board Gravity Tilt'}:</span>
-              <span className="font-mono text-stone-500 font-bold capitalize">{gravityTilt}</span>
-            </div>
-            <div className="grid grid-cols-4 gap-1">
-              <button
-                onClick={() => handleTiltChange('flat')}
-                className={`py-1 px-1 rounded-lg border text-center transition-colors cursor-pointer ${
-                  gravityTilt === 'flat'
-                    ? 'bg-stone-900 text-white border-stone-900 font-bold'
-                    : 'border-stone-200 hover:bg-stone-50 text-stone-600'
-                }`}
-                title={lang === 'de' ? 'Flach (keine Schwerkraft)' : lang === 'es' ? 'Plano (sin gravedad)' : 'Flat (no gravity)'}
-              >
-                0°
-              </button>
-              <button
-                onClick={() => handleTiltChange('down')}
-                className={`py-1 px-1 rounded-lg border text-center transition-colors cursor-pointer ${
-                  gravityTilt === 'down'
-                    ? 'bg-stone-900 text-white border-stone-900 font-bold'
-                    : 'border-stone-200 hover:bg-stone-50 text-stone-600'
-                }`}
-                title={lang === 'de' ? 'Nach unten fließen' : lang === 'es' ? 'Inclinar hacia abajo' : 'Tilt downward'}
-              >
-                ↓
-              </button>
-              <button
-                onClick={() => handleTiltChange('left')}
-                className={`py-1 px-1 rounded-lg border text-center transition-colors cursor-pointer ${
-                  gravityTilt === 'left'
-                    ? 'bg-stone-900 text-white border-stone-900 font-bold'
-                    : 'border-stone-200 hover:bg-stone-50 text-stone-600'
-                }`}
-                title={lang === 'de' ? 'Nach links fließen' : lang === 'es' ? 'Inclinar a la izquierda' : 'Tilt left'}
-              >
-                ←
-              </button>
-              <button
-                onClick={() => handleTiltChange('right')}
-                className={`py-1 px-1 rounded-lg border text-center transition-colors cursor-pointer ${
-                  gravityTilt === 'right'
-                    ? 'bg-stone-900 text-white border-stone-900 font-bold'
-                    : 'border-stone-200 hover:bg-stone-50 text-stone-600'
-                }`}
-                title={lang === 'de' ? 'Nach rechts fließen' : lang === 'es' ? 'Inclinar a la derecha' : 'Tilt right'}
-              >
-                →
-              </button>
-            </div>
-          </div>
-        </div>
+        )}
       </div>
 
       {/* Subtle Craftsmanship & Extended Architecture Footer */}
