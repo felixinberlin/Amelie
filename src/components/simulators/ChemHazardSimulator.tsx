@@ -38,12 +38,16 @@ const confirmedHazardsCount = products.filter((p) => p.hazardsConfirmed).length;
 const completeCount = products.filter(isEvidenceComplete).length;
 const pairCount = (products.length * (products.length + 1)) / 2;
 
-const formatPh = (ph: ProductRecord['ph'], de: boolean): string => {
+export const formatPh = (ph: ProductRecord['ph'], de: boolean): string => {
   if (!ph || (ph.min === undefined && ph.max === undefined)) return de ? 'Unbekannt' : 'Unknown';
   const n = (v: number) => (de ? String(v).replace('.', ',') : String(v));
-  if (ph.min === undefined) return `< ${n(ph.max as number)}`;
-  if (ph.max === undefined) return `> ${n(ph.min)}`;
-  return ph.min === ph.max ? `ca. ${n(ph.min)}` : `${n(ph.min)} – ${n(ph.max)}`;
+  const value = ph.min === undefined ? `≤ ${n(ph.max as number)}`
+    : ph.max === undefined ? `≥ ${n(ph.min)}`
+    : ph.min === ph.max ? `ca. ${n(ph.min)}` : `${n(ph.min)} – ${n(ph.max)}`;
+  const basis = ph.concentrationPercent === undefined ? (de ? 'Messbasis nicht erfasst' : 'measurement basis not recorded')
+    : ph.concentrationPercent === 100 ? (de ? 'Konzentrat' : 'concentrate')
+    : `${n(ph.concentrationPercent)}% ${de ? 'Lösung' : 'solution'}`;
+  return `${value} (${basis})`;
 };
 
 /** The EAN-13 barcode as printed on the container, drawn from the catalog GTIN. */

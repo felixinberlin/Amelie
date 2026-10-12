@@ -1,0 +1,2565 @@
+{
+  "date": "2026-10-12",
+  "reviewer": "Codex document/source audit",
+  "scope": "Source identity, H/EUH codes, disclosed CAS identifiers, pH conditions, document hashes and manufacturer-listed EAN associations. Not an independent professional validation of the reaction matrix or inspection of physical containers.",
+  "sourceWorkflowRun": "https://github.com/felixinberlin/Amelie/actions/runs/38290119351",
+  "counts": {
+    "realProducts": 41,
+    "syntheticExamples": 2,
+    "gtins": 92,
+    "confirmedGtinMappings": 91,
+    "currentSourceChecks": 36,
+    "chemicalCompletenessReviews": 0
+  },
+  "results": [
+    {
+      "id": "kiehl-arenas-bleach",
+      "expectedName": "ARENAS-bleach",
+      "accessedAt": "2026-10-12",
+      "attempts": [],
+      "sourceUrl": "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j6532_sd_ARENAS-bleach_de.pdf",
+      "finalUrl": "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j6532_sd_ARENAS-bleach_de.pdf",
+      "sha256": "6bfb2520281e650a896c94023c6ab91125e68f9bafe7b6c3abbe31a2f5b3d69e",
+      "matchesPreviousHash": true,
+      "productNamePresent": true,
+      "facts": {
+        "revisionDate": "2022-12-12",
+        "ufi": "GG70-60TK-J00T-D5M1",
+        "giscode": null,
+        "signalWord": "Gefahr",
+        "hazardStatements": [
+          "EUH031",
+          "H314",
+          "H400"
+        ],
+        "casNumbers": [
+          "7681-52-9"
+        ],
+        "ph": {
+          "min": 13,
+          "max": 13
+        },
+        "chemicalGroups": [
+          "hypochlorite",
+          "caustic_lye",
+          "oxidizer"
+        ],
+        "groupReasons": {
+          "hypochlorite": [
+            "CAS 7681-52-9",
+            "EUH031"
+          ],
+          "caustic_lye": [
+            "pH ≥ 12.5"
+          ],
+          "oxidizer": [
+            "Aktivchlor"
+          ]
+        },
+        "sectionsFound": {
+          "2": true,
+          "3": true,
+          "9": true,
+          "10": true
+        }
+      },
+      "incompatibilityKeywords": [
+        "säure"
+      ],
+      "status": "retrieved_requires_review",
+      "identityPage": {
+        "sourceUrl": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Textilwaesche/Bleiche/ARENAS-bleach",
+        "finalUrl": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Textilwaesche/Bleiche/ARENAS-bleach",
+        "sha256": "6ab3aac5ae55b0429b5ff9c6614728ef99923ee22416c0dd2300535eec9ac404",
+        "codesPresent": {
+          "04031255046754": true
+        }
+      },
+      "reviewDecision": "source_facts_reviewed_completeness_pending",
+      "reviewedPh": {
+        "min": 13,
+        "max": 13
+      }
+    },
+    {
+      "id": "kiehl-powerfix-gel",
+      "expectedName": "Powerfix-Gel",
+      "accessedAt": "2026-10-12",
+      "attempts": [],
+      "sourceUrl": "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j4006_sd_Powerfix-Gel_de.pdf",
+      "finalUrl": "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j4006_sd_Powerfix-Gel_de.pdf",
+      "sha256": "19be7664135955b120db98e1580837a4950e475e8a2a2312d5a8fdd98d663d99",
+      "matchesPreviousHash": true,
+      "productNamePresent": true,
+      "facts": {
+        "revisionDate": "2022-12-12",
+        "ufi": "3U20-V0J5-1002-NR4J",
+        "giscode": "GS80",
+        "signalWord": "Gefahr",
+        "hazardStatements": [
+          "H314",
+          "H412"
+        ],
+        "casNumbers": [
+          "7664-38-2",
+          "25307-17-9"
+        ],
+        "ph": {
+          "min": 0.5,
+          "max": 0.5
+        },
+        "chemicalGroups": [
+          "acid"
+        ],
+        "groupReasons": {
+          "acid": [
+            "CAS 7664-38-2",
+            "pH ≤ 5"
+          ]
+        },
+        "sectionsFound": {
+          "2": true,
+          "3": true,
+          "9": true,
+          "10": true
+        }
+      },
+      "incompatibilityKeywords": [
+        "laugen",
+        "alkalien",
+        "alkali"
+      ],
+      "status": "retrieved_requires_review",
+      "identityPage": {
+        "sourceUrl": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Powerfix-Gel",
+        "finalUrl": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Powerfix-Gel",
+        "sha256": "5cb288d4a40aeb3c6b0657f1e9207958696fb5eeffc90dc5bc36531389348f92",
+        "codesPresent": {
+          "04031255000121": true,
+          "04031255045931": true,
+          "04031255045870": true,
+          "04031255045924": true,
+          "04031255035802": true
+        }
+      },
+      "reviewDecision": "source_facts_reviewed_completeness_pending",
+      "reviewedPh": {
+        "min": 0.5,
+        "max": 0.5
+      }
+    },
+    {
+      "id": "kiehl-powerfix",
+      "expectedName": "Powerfix",
+      "accessedAt": "2026-10-12",
+      "attempts": [],
+      "sourceUrl": "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j4005_sd_Powerfix_de.pdf",
+      "finalUrl": "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j4005_sd_Powerfix_de.pdf",
+      "sha256": "ff65f5eaabe8c4811f2e475f42c43e75b77a9860d85cb649e420e4bd5016416f",
+      "matchesPreviousHash": true,
+      "productNamePresent": true,
+      "facts": {
+        "revisionDate": "2022-12-12",
+        "ufi": "XS20-C0UR-Q00K-0DJG",
+        "giscode": "GS60",
+        "signalWord": "Gefahr",
+        "hazardStatements": [
+          "H315",
+          "H318"
+        ],
+        "casNumbers": [
+          "7664-38-2",
+          "7647-01-0",
+          "69011-36-5"
+        ],
+        "ph": {
+          "min": 0.5,
+          "max": 0.5
+        },
+        "chemicalGroups": [
+          "acid"
+        ],
+        "groupReasons": {
+          "acid": [
+            "CAS 7664-38-2",
+            "CAS 7647-01-0",
+            "pH ≤ 5"
+          ]
+        },
+        "sectionsFound": {
+          "2": true,
+          "3": true,
+          "9": true,
+          "10": true
+        }
+      },
+      "incompatibilityKeywords": [
+        "alkalien",
+        "alkali"
+      ],
+      "status": "retrieved_requires_review",
+      "identityPage": {
+        "sourceUrl": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Powerfix",
+        "finalUrl": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Powerfix",
+        "sha256": "04c4af4cd320e20103c71d7e508b96d4b179c3ce9b6ce4b7b3b0e9ccba7ebcd7",
+        "codesPresent": {
+          "04031255032184": true,
+          "04031255036526": true,
+          "04031255002569": true,
+          "04031255012148": true
+        }
+      },
+      "reviewDecision": "source_facts_reviewed_completeness_pending",
+      "reviewedPh": {
+        "min": 0.5,
+        "max": 0.5
+      }
+    },
+    {
+      "id": "kiehl-santex",
+      "expectedName": "Santex",
+      "accessedAt": "2026-10-12",
+      "attempts": [],
+      "sourceUrl": "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j4010_sd_Santex_de.pdf",
+      "finalUrl": "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j4010_sd_Santex_de.pdf",
+      "sha256": "a6c66307f1427892f4f7bec70d5ed0b45a6518512fe0a4f14150406a202fa691",
+      "matchesPreviousHash": true,
+      "productNamePresent": true,
+      "facts": {
+        "revisionDate": "2022-12-12",
+        "ufi": "A030-V0WX-N002-YE9P",
+        "giscode": "GS35",
+        "signalWord": "Achtung",
+        "hazardStatements": [
+          "H315",
+          "H319"
+        ],
+        "casNumbers": [
+          "7664-38-2",
+          "5329-14-6",
+          "69011-36-5",
+          "67-63-0"
+        ],
+        "ph": {
+          "min": 1,
+          "max": 1
+        },
+        "chemicalGroups": [
+          "acid",
+          "organic_solvent"
+        ],
+        "groupReasons": {
+          "acid": [
+            "CAS 7664-38-2",
+            "CAS 5329-14-6",
+            "pH ≤ 5"
+          ],
+          "organic_solvent": [
+            "CAS 67-63-0"
+          ]
+        },
+        "sectionsFound": {
+          "2": true,
+          "3": true,
+          "9": true,
+          "10": true
+        }
+      },
+      "incompatibilityKeywords": [],
+      "status": "retrieved_requires_review",
+      "identityPage": {
+        "sourceUrl": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Santex",
+        "finalUrl": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Santex",
+        "sha256": "f10b7e1310433793db8dffecbf95678058c490096b2359da77499a5c69185cea",
+        "codesPresent": {
+          "04031255003238": true,
+          "04031255003245": true,
+          "04031255032894": true
+        }
+      },
+      "reviewDecision": "source_facts_reviewed_completeness_pending",
+      "reviewedPh": {
+        "min": 1,
+        "max": 1
+      }
+    },
+    {
+      "id": "kiehl-calinex",
+      "expectedName": "Calinex",
+      "accessedAt": "2026-10-12",
+      "attempts": [],
+      "sourceUrl": "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j4038_sd_Calinex_de.pdf",
+      "finalUrl": "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j4038_sd_Calinex_de.pdf",
+      "sha256": "70278848e6bb0dc1e99ef85b78387e29b102d795a5ea6ecfd4900bb1120ad60a",
+      "matchesPreviousHash": true,
+      "productNamePresent": true,
+      "facts": {
+        "revisionDate": "2022-12-12",
+        "ufi": "7140-Y06Q-A000-WH9F",
+        "giscode": "GS80",
+        "signalWord": "Gefahr",
+        "hazardStatements": [
+          "H314"
+        ],
+        "casNumbers": [
+          "7664-38-2",
+          "111905-53-4",
+          "67-63-0",
+          "112-34-5"
+        ],
+        "ph": {
+          "max": 0.5
+        },
+        "chemicalGroups": [
+          "acid",
+          "organic_solvent"
+        ],
+        "groupReasons": {
+          "acid": [
+            "CAS 7664-38-2",
+            "pH ≤ 5"
+          ],
+          "organic_solvent": [
+            "CAS 67-63-0",
+            "CAS 112-34-5"
+          ]
+        },
+        "sectionsFound": {
+          "2": true,
+          "3": true,
+          "9": true,
+          "10": true
+        }
+      },
+      "incompatibilityKeywords": [
+        "alkalien",
+        "alkali"
+      ],
+      "status": "retrieved_requires_review",
+      "identityPage": {
+        "sourceUrl": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Calinex",
+        "finalUrl": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Calinex",
+        "sha256": "27bb5a3812a83ea1387db95689d66953c81b35acad69ab79f0ddb04db99e8815",
+        "codesPresent": {
+          "04031255055367": true,
+          "04031255055817": true,
+          "04031255055350": true
+        }
+      },
+      "reviewDecision": "source_facts_reviewed_completeness_pending",
+      "reviewedPh": {
+        "max": 0.5
+      }
+    },
+    {
+      "id": "kiehl-oxycal",
+      "expectedName": "Oxycal",
+      "accessedAt": "2026-10-12",
+      "attempts": [],
+      "sourceUrl": "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j4030_sd_Oxycal_de.pdf",
+      "finalUrl": "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j4030_sd_Oxycal_de.pdf",
+      "sha256": "b817120b056d5edda9b4a0181f9bdbbfa8c11ff8b60edf3903d0481f4caee671",
+      "matchesPreviousHash": true,
+      "productNamePresent": true,
+      "facts": {
+        "revisionDate": "2026-06-02",
+        "ufi": "7M30-E0RQ-S00H-MTD4",
+        "giscode": "GS35",
+        "signalWord": "Achtung",
+        "hazardStatements": [
+          "H315",
+          "H319"
+        ],
+        "casNumbers": [
+          "7722-84-1",
+          "75-75-2"
+        ],
+        "ph": {
+          "min": 1.5,
+          "max": 1.5
+        },
+        "chemicalGroups": [
+          "acid",
+          "peroxide",
+          "oxidizer"
+        ],
+        "groupReasons": {
+          "acid": [
+            "CAS 75-75-2",
+            "pH ≤ 5"
+          ],
+          "peroxide": [
+            "CAS 7722-84-1"
+          ],
+          "oxidizer": [
+            "Peroxid"
+          ]
+        },
+        "sectionsFound": {
+          "2": true,
+          "3": true,
+          "9": true,
+          "10": true
+        }
+      },
+      "incompatibilityKeywords": [],
+      "status": "retrieved_requires_review",
+      "identityPage": {
+        "sourceUrl": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Oxycal",
+        "finalUrl": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Oxycal",
+        "sha256": "3b0903fe62379da2c46d80c9b1be3f4f7dca865ab242318835278afc8da17c34",
+        "codesPresent": {
+          "04031255042503": true,
+          "04031255042510": true
+        }
+      },
+      "reviewDecision": "source_facts_reviewed_completeness_pending",
+      "reviewedPh": {
+        "min": 1.5,
+        "max": 1.5
+      }
+    },
+    {
+      "id": "kiehl-fumex",
+      "expectedName": "Fumex",
+      "accessedAt": "2026-10-12",
+      "attempts": [],
+      "sourceUrl": "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j5511_sd_Fumex_de.pdf",
+      "finalUrl": "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j5511_sd_Fumex_de.pdf",
+      "sha256": "213c2cedaa7178c592d7180dda97f31f9a2b43b25f4380e6b794df5d83ca58a9",
+      "matchesPreviousHash": true,
+      "productNamePresent": true,
+      "facts": {
+        "revisionDate": "2022-12-12",
+        "ufi": "MN40-H01G-F00F-JWCW",
+        "giscode": null,
+        "signalWord": "Gefahr",
+        "hazardStatements": [
+          "H314"
+        ],
+        "casNumbers": [
+          "1310-73-2"
+        ],
+        "ph": {
+          "min": 13.5
+        },
+        "chemicalGroups": [
+          "caustic_lye"
+        ],
+        "groupReasons": {
+          "caustic_lye": [
+            "CAS 1310-73-2",
+            "pH ≥ 12.5"
+          ]
+        },
+        "sectionsFound": {
+          "2": true,
+          "3": true,
+          "9": true,
+          "10": true
+        }
+      },
+      "incompatibilityKeywords": [
+        "säure"
+      ],
+      "status": "retrieved_requires_review",
+      "identityPage": {
+        "sourceUrl": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Kuechen-und-Lebensmittelindustrie/Kuechenreinigung-und-Lebensmittelhygiene/Fumex",
+        "finalUrl": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Kuechen-und-Lebensmittelindustrie/Kuechenreinigung-und-Lebensmittelhygiene/Fumex",
+        "sha256": "4a26a22119090d3a767a623dabb280557328f5d73b384d7602dc4a7b47a50652",
+        "codesPresent": {
+          "04031255008349": true,
+          "04031255008325": true,
+          "04031255008332": true,
+          "04031255048888": true
+        }
+      },
+      "reviewDecision": "source_facts_reviewed_completeness_pending",
+      "reviewedPh": {
+        "min": 13.5
+      }
+    },
+    {
+      "id": "kiehl-li-ex",
+      "expectedName": "Li-Ex",
+      "accessedAt": "2026-10-12",
+      "attempts": [],
+      "sourceUrl": "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j1502_sd_Li-Ex_de.pdf",
+      "finalUrl": "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j1502_sd_Li-Ex_de.pdf",
+      "sha256": "0ac4d1de645c8533e75801d1c5077c4ac3890f5622e866e3bc8122472593190e",
+      "matchesPreviousHash": true,
+      "productNamePresent": true,
+      "facts": {
+        "revisionDate": "2026-06-02",
+        "ufi": "1UM0-306R-P002-NAHA",
+        "giscode": "GG50",
+        "signalWord": "Achtung",
+        "hazardStatements": [
+          "H315",
+          "H319"
+        ],
+        "casNumbers": [
+          "112-34-5",
+          "5131-66-8",
+          "122-99-6",
+          "68439-51-0",
+          "141-43-5"
+        ],
+        "ph": {
+          "min": 9.5,
+          "max": 9.5
+        },
+        "chemicalGroups": [
+          "organic_solvent"
+        ],
+        "groupReasons": {
+          "organic_solvent": [
+            "CAS 112-34-5",
+            "CAS 5131-66-8"
+          ]
+        },
+        "sectionsFound": {
+          "2": true,
+          "3": true,
+          "9": true,
+          "10": true
+        }
+      },
+      "incompatibilityKeywords": [],
+      "status": "retrieved_requires_review",
+      "identityPage": {
+        "sourceUrl": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Grundreinigung/Li-Ex",
+        "finalUrl": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Grundreinigung/Li-Ex",
+        "sha256": "bb309daa74f183f8f2eed441e242fe26993b6e6195d10bd01ca09d29082df841",
+        "codesPresent": {
+          "04031255013107": true,
+          "04031255032351": true,
+          "04031255013114": true,
+          "04031255035727": true,
+          "04031255000435": true,
+          "04031255002613": true
+        }
+      },
+      "reviewDecision": "source_facts_reviewed_completeness_pending",
+      "reviewedPh": {
+        "min": 9.5,
+        "max": 9.5
+      }
+    },
+    {
+      "id": "kiehl-sanikal",
+      "expectedName": "Sanikal",
+      "accessedAt": "2026-10-12",
+      "attempts": [],
+      "sourceUrl": "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j4002_sd_Sanikal_de.pdf",
+      "finalUrl": "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j4002_sd_Sanikal_de.pdf",
+      "sha256": "3059b2bcd2c0287e6195dadcf612763d25eb3bc7096a570d1780e229d4b48dde",
+      "matchesPreviousHash": true,
+      "productNamePresent": true,
+      "facts": {
+        "revisionDate": "2026-06-02",
+        "ufi": null,
+        "giscode": "GU50",
+        "signalWord": null,
+        "hazardStatements": [],
+        "casNumbers": [
+          "67-63-0",
+          "68891-38-3"
+        ],
+        "ph": {
+          "min": 9,
+          "max": 9
+        },
+        "chemicalGroups": [
+          "organic_solvent"
+        ],
+        "groupReasons": {
+          "organic_solvent": [
+            "CAS 67-63-0"
+          ]
+        },
+        "sectionsFound": {
+          "2": true,
+          "3": true,
+          "9": true,
+          "10": true
+        }
+      },
+      "incompatibilityKeywords": [],
+      "status": "retrieved_requires_review",
+      "identityPage": {
+        "sourceUrl": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Sanikal",
+        "finalUrl": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Sanikal",
+        "sha256": "936b4a35dd5cb6ec258e8533f61dc6560e1464c40ea2816afc91bce9f5925354",
+        "codesPresent": {
+          "04031255000183": true,
+          "04031255000954": true,
+          "04031255000176": true
+        }
+      },
+      "reviewDecision": "source_facts_reviewed_completeness_pending",
+      "reviewedPh": {
+        "min": 9,
+        "max": 9
+      }
+    },
+    {
+      "id": "kiehl-profloor-konzentrat",
+      "expectedName": "Profloor-Konzentrat",
+      "accessedAt": "2026-10-12",
+      "attempts": [],
+      "sourceUrl": "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j3007_sd_Profloor-Konzentrat_de.pdf",
+      "finalUrl": "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j3007_sd_Profloor-Konzentrat_de.pdf",
+      "sha256": "b55001ccca6c960de950515c7420510bba301ee1d05ceb828f76c0900e037029",
+      "matchesPreviousHash": true,
+      "productNamePresent": true,
+      "facts": {
+        "revisionDate": "2022-12-12",
+        "ufi": null,
+        "giscode": "GU50",
+        "signalWord": null,
+        "hazardStatements": [],
+        "casNumbers": [
+          "112-34-5",
+          "69011-36-5"
+        ],
+        "ph": {
+          "min": 8.5,
+          "max": 8.5
+        },
+        "chemicalGroups": [
+          "organic_solvent"
+        ],
+        "groupReasons": {
+          "organic_solvent": [
+            "CAS 112-34-5"
+          ]
+        },
+        "sectionsFound": {
+          "2": true,
+          "3": true,
+          "9": true,
+          "10": true
+        }
+      },
+      "incompatibilityKeywords": [],
+      "status": "retrieved_requires_review",
+      "identityPage": {
+        "sourceUrl": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Wischpflege-Unterhalt/Profloor-Konzentrat",
+        "finalUrl": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Wischpflege-Unterhalt/Profloor-Konzentrat",
+        "sha256": "619210e04181d5f2d6eb671b0493df431cbc7e6c1d87372ec99251391e88b5ad",
+        "codesPresent": {
+          "04031255001845": true,
+          "04031255003139": true,
+          "04031255003320": true,
+          "04031255003559": true,
+          "04031255001302": true
+        }
+      },
+      "reviewDecision": "source_facts_reviewed_completeness_pending",
+      "reviewedPh": {
+        "min": 8.5,
+        "max": 8.5
+      }
+    },
+    {
+      "id": "kiehl-torvan-konzentrat",
+      "expectedName": "Torvan-Konzentrat",
+      "accessedAt": "2026-10-12",
+      "attempts": [],
+      "sourceUrl": "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j2507_sd_Torvan-Konzentrat_de.pdf",
+      "finalUrl": "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j2507_sd_Torvan-Konzentrat_de.pdf",
+      "sha256": "ea0e4f121fb560d6457df912e3747347d9a1e22635b72d21e9c94e381bc564c1",
+      "matchesPreviousHash": true,
+      "productNamePresent": true,
+      "facts": {
+        "revisionDate": "2022-12-12",
+        "ufi": null,
+        "giscode": "GU50",
+        "signalWord": null,
+        "hazardStatements": [],
+        "casNumbers": [
+          "112-34-5",
+          "69011-36-5"
+        ],
+        "ph": {
+          "min": 9.5,
+          "max": 9.5
+        },
+        "chemicalGroups": [
+          "organic_solvent"
+        ],
+        "groupReasons": {
+          "organic_solvent": [
+            "CAS 112-34-5"
+          ]
+        },
+        "sectionsFound": {
+          "2": true,
+          "3": true,
+          "9": true,
+          "10": true
+        }
+      },
+      "incompatibilityKeywords": [],
+      "status": "retrieved_requires_review",
+      "identityPage": {
+        "sourceUrl": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Torvan-Konzentrat",
+        "finalUrl": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Torvan-Konzentrat",
+        "sha256": "b0c2ccdf73c371591c396c92b8caf652e15e750498df8d5e94d31f8f54cd2c9d",
+        "codesPresent": {
+          "04031255000169": true,
+          "04031255057682": true,
+          "04031255013398": true,
+          "04031255015989": true,
+          "04031255013404": true,
+          "04031255000152": true,
+          "04031255057675": true,
+          "04031255003528": true,
+          "04031255000633": true,
+          "04031255018935": true
+        }
+      },
+      "reviewDecision": "source_facts_reviewed_completeness_pending",
+      "reviewedPh": {
+        "min": 9.5,
+        "max": 9.5
+      }
+    },
+    {
+      "id": "kiehl-clean-oxy",
+      "expectedName": "Clean@oxy",
+      "accessedAt": "2026-10-12",
+      "attempts": [],
+      "sourceUrl": "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j2535_sd_Cleanoxy_de.pdf",
+      "finalUrl": "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j2535_sd_Cleanoxy_de.pdf",
+      "sha256": "78e82badca1a61e32208a446b008b0497873b7610074332cab9bfd866a273a35",
+      "matchesPreviousHash": true,
+      "productNamePresent": true,
+      "facts": {
+        "revisionDate": "2026-05-28",
+        "ufi": null,
+        "giscode": "GU50",
+        "signalWord": null,
+        "hazardStatements": [],
+        "casNumbers": [
+          "67-63-0",
+          "69011-36-5",
+          "112-34-5"
+        ],
+        "ph": {
+          "min": 7,
+          "max": 7
+        },
+        "chemicalGroups": [
+          "organic_solvent"
+        ],
+        "groupReasons": {
+          "organic_solvent": [
+            "CAS 67-63-0",
+            "CAS 112-34-5"
+          ]
+        },
+        "sectionsFound": {
+          "2": true,
+          "3": true,
+          "9": true,
+          "10": true
+        }
+      },
+      "incompatibilityKeywords": [],
+      "status": "retrieved_requires_review",
+      "identityPage": {
+        "sourceUrl": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Cleanoxy",
+        "finalUrl": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Cleanoxy",
+        "sha256": "dd75af42bc51d03982ec44bb57814ab868cb6e29ea820f02b06bcd4c339b0969",
+        "codesPresent": {
+          "04031255057910": true,
+          "04031255057958": true,
+          "04031255058580": true
+        }
+      },
+      "reviewDecision": "source_facts_reviewed_completeness_pending",
+      "reviewedPh": {
+        "min": 7,
+        "max": 7
+      }
+    },
+    {
+      "id": "buzil-bucalex-g460",
+      "expectedName": "Bucalex G 460",
+      "accessedAt": "2026-10-12",
+      "attempts": [
+        {
+          "url": "https://www.buzil.com/products/sanitary/bucalex-g-460",
+          "error": "Not PDF"
+        }
+      ],
+      "status": "unavailable",
+      "reviewDecision": "retain_previous_evidence_currentness_pending",
+      "reviewedPh": {
+        "min": 0.2,
+        "max": 1
+      }
+    },
+    {
+      "id": "buzil-bucasan-trendy-t464",
+      "expectedName": "Bucasan Trendy T 464",
+      "accessedAt": "2026-10-12",
+      "attempts": [
+        {
+          "url": "https://www.buzil.com/products/sanitary/bucasan-trendy-t-464",
+          "error": "Not PDF"
+        }
+      ],
+      "status": "unavailable",
+      "reviewDecision": "retain_previous_evidence_currentness_pending",
+      "reviewedPh": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    {
+      "id": "buzil-erol-g490",
+      "expectedName": "Erol G 490",
+      "accessedAt": "2026-10-12",
+      "attempts": [
+        {
+          "url": "https://www.buzil.com/products/special/erol-g-490",
+          "error": "Not PDF"
+        }
+      ],
+      "status": "unavailable",
+      "reviewDecision": "retain_previous_evidence_currentness_pending",
+      "reviewedPh": {
+        "min": 13,
+        "max": 14
+      }
+    },
+    {
+      "id": "dr-schnell-milizid",
+      "expectedName": "MILIZID",
+      "accessedAt": "2026-10-12",
+      "attempts": [],
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/MILIZID/SDB/de_DE/pdf/DE",
+      "finalUrl": "https://shop.dr-schnell.com/Datasheets/download/MILIZID/SDB/de_DE/pdf/DE",
+      "sha256": "3b0ba49c7e108782bdc106e75f70e255a029842882d3f2e72f85f56f1df8295e",
+      "matchesPreviousHash": true,
+      "productNamePresent": true,
+      "facts": {
+        "revisionDate": "2025-09-16",
+        "ufi": null,
+        "giscode": null,
+        "signalWord": "Achtung",
+        "hazardStatements": [
+          "H315",
+          "H319"
+        ],
+        "casNumbers": [
+          "5329-14-6",
+          "69011-36-5"
+        ],
+        "ph": {
+          "min": 0.5,
+          "max": 0.5
+        },
+        "chemicalGroups": [
+          "acid"
+        ],
+        "groupReasons": {
+          "acid": [
+            "CAS 5329-14-6",
+            "pH ≤ 5"
+          ]
+        },
+        "sectionsFound": {
+          "2": true,
+          "3": true,
+          "9": true,
+          "10": true
+        }
+      },
+      "incompatibilityKeywords": [
+        "metall",
+        "alkali"
+      ],
+      "status": "retrieved_requires_review",
+      "identityPage": {
+        "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/sanitaerreiniger/1373/milizid",
+        "finalUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/sanitaerreiniger/1373/milizid",
+        "sha256": "cca26555bb788091bf16216d4b61147918c68b2238e362f060dacdf325b84554",
+        "codesPresent": {
+          "4008439001045": true,
+          "4008439300070": true,
+          "4008439300001": true,
+          "4008439001038": true
+        }
+      },
+      "reviewDecision": "source_facts_reviewed_completeness_pending",
+      "reviewedPh": {
+        "min": 0.5,
+        "max": 0.5,
+        "concentrationPercent": 100
+      }
+    },
+    {
+      "id": "domestos-professional-original",
+      "expectedName": "Domestos Professional Original",
+      "accessedAt": "2026-10-12",
+      "attempts": [
+        {
+          "url": "https://sds.diversey.com/DirectDocumentDownloader/Document?prd=MS1005408~~PDF~~MTR~~DE02~~DE~~EMA",
+          "error": "HTTP 403"
+        },
+        {
+          "url": "https://sds.diversey.com/DirectDocumentDownloader/Document?prd=MS1005408~~PDF~~MTR~~AT02~~AT~~EMA",
+          "error": "HTTP 403"
+        },
+        {
+          "url": "https://sdslibrary.solenis.com/BlobDownload/FetchFiles?filename=SDS/000000000009308879-DE-DE.PDF",
+          "error": "Not PDF"
+        }
+      ],
+      "sourceUrl": "https://static.vikingdirekt.at/is/content/odeu13/PDF/MSDS_1178013_DE_21-10-2022.pdf",
+      "finalUrl": "https://static.vikingdirekt.at/is/content/odeu13/PDF/MSDS_1178013_DE_21-10-2022.pdf",
+      "sha256": "f79cf65e32e2c7ed21e4edc08a372d4bebac15a0efb97155668175f1e57011ee",
+      "matchesPreviousHash": true,
+      "productNamePresent": true,
+      "facts": {
+        "revisionDate": "2022-10-24",
+        "ufi": "0MAH-P18Y-800E-5WKM",
+        "giscode": null,
+        "signalWord": "Gefahr",
+        "hazardStatements": [
+          "H290",
+          "H314",
+          "H318",
+          "H400",
+          "H410",
+          "H411"
+        ],
+        "casNumbers": [
+          "7681-52-9",
+          "68955-55-5",
+          "1310-73-2"
+        ],
+        "ph": {
+          "min": 11.5
+        },
+        "chemicalGroups": [
+          "hypochlorite",
+          "caustic_lye",
+          "oxidizer"
+        ],
+        "groupReasons": {
+          "hypochlorite": [
+            "CAS 7681-52-9"
+          ],
+          "caustic_lye": [
+            "CAS 1310-73-2"
+          ],
+          "oxidizer": [
+            "Aktivchlor"
+          ]
+        },
+        "sectionsFound": {
+          "2": true,
+          "3": true,
+          "9": true,
+          "10": true
+        }
+      },
+      "incompatibilityKeywords": [
+        "säure",
+        "metall"
+      ],
+      "status": "retrieved_requires_review",
+      "reviewDecision": "historical_retailer_copy_currentness_pending",
+      "reviewedPh": {
+        "min": 11.5
+      }
+    },
+    {
+      "id": "danklorix-hygiene-reiniger",
+      "expectedName": "Dan Klorix Hygienereiniger",
+      "accessedAt": "2026-10-12",
+      "attempts": [],
+      "sourceUrl": "https://www.otto-office.com/de/app/download/document/item?mid=14490",
+      "finalUrl": "https://www.otto-office.com/de/app/download/document/item?mid=14490",
+      "sha256": "db8924b93528ff7cd26b517e3345e5d75f1608dd89a01cdb2980932e08cb5d43",
+      "matchesPreviousHash": true,
+      "productNamePresent": true,
+      "facts": {
+        "revisionDate": null,
+        "ufi": null,
+        "giscode": null,
+        "signalWord": "Gefahr",
+        "hazardStatements": [
+          "EUH206",
+          "H290",
+          "H314",
+          "H400",
+          "H411"
+        ],
+        "casNumbers": [
+          "497-19-8",
+          "7681-52-9"
+        ],
+        "ph": {
+          "min": 12.95,
+          "max": 12.95
+        },
+        "chemicalGroups": [
+          "hypochlorite",
+          "caustic_lye",
+          "oxidizer"
+        ],
+        "groupReasons": {
+          "hypochlorite": [
+            "CAS 7681-52-9",
+            "EUH206"
+          ],
+          "caustic_lye": [
+            "pH ≥ 12.5"
+          ],
+          "oxidizer": [
+            "Aktivchlor"
+          ]
+        },
+        "sectionsFound": {
+          "2": true,
+          "3": true,
+          "9": true,
+          "10": true
+        }
+      },
+      "incompatibilityKeywords": [
+        "säure",
+        "metall"
+      ],
+      "status": "retrieved_requires_review",
+      "reviewDecision": "historical_retailer_copy_currentness_pending",
+      "reviewedPh": {
+        "min": 12.95,
+        "max": 12.95
+      }
+    },
+    {
+      "id": "meffert-salmiakgeist-9-5",
+      "expectedName": "Salmiakgeist 9,5 %",
+      "accessedAt": "2026-10-12",
+      "attempts": [],
+      "sourceUrl": "https://www.meffert.com/datenblaetter/Sicherheits-Datenblaetter/SDB__Meffert-Marken_und_Toechter/Sdb-neutral_%2B_Diverse/SDB_Meffert_Salmiakgeist.pdf",
+      "finalUrl": "https://www.meffert.com/datenblaetter/Sicherheits-Datenblaetter/SDB__Meffert-Marken_und_Toechter/Sdb-neutral_%2B_Diverse/SDB_Meffert_Salmiakgeist.pdf",
+      "sha256": "569b51084363c4e957622bb209b0dd66ce1bef8a841877cb5385b4f142a90e30",
+      "matchesPreviousHash": false,
+      "productNamePresent": true,
+      "facts": {
+        "revisionDate": "2025-01-28",
+        "ufi": "3A84-40DS-200D-6F0Q",
+        "giscode": null,
+        "signalWord": "Gefahr",
+        "hazardStatements": [
+          "H314",
+          "H318",
+          "H335"
+        ],
+        "casNumbers": [
+          "1336-21-6"
+        ],
+        "ph": {
+          "min": 9
+        },
+        "chemicalGroups": [
+          "ammonia"
+        ],
+        "groupReasons": {
+          "ammonia": [
+            "CAS 1336-21-6"
+          ]
+        },
+        "sectionsFound": {
+          "2": true,
+          "3": true,
+          "9": true,
+          "10": true
+        }
+      },
+      "incompatibilityKeywords": [
+        "säure",
+        "laugen",
+        "oxidationsmittel",
+        "ammoniak",
+        "metall",
+        "alkalien",
+        "alkali"
+      ],
+      "status": "retrieved_requires_review",
+      "reviewDecision": "source_facts_reviewed_completeness_pending",
+      "reviewedPh": {
+        "min": 9
+      }
+    },
+    {
+      "id": "mellerud-schimmel-vernichter",
+      "expectedName": "Schimmel Vernichter",
+      "accessedAt": "2026-10-12",
+      "attempts": [],
+      "sourceUrl": "https://mellerud.de/media/export/pdf/Endverbraucherdatenbl%C3%A4tter/EDB_P028_de-DE_V26-01_DE%20Schimmel%20Vernichter.pdf",
+      "finalUrl": "https://mellerud.de/media/export/pdf/Endverbraucherdatenbl%C3%A4tter/EDB_P028_de-DE_V26-01_DE%20Schimmel%20Vernichter.pdf",
+      "sha256": "1648a67744752868dba89163381a79c7fc704e55e5d54c7a57eead906687235b",
+      "matchesPreviousHash": true,
+      "productNamePresent": true,
+      "facts": {
+        "revisionDate": null,
+        "ufi": null,
+        "giscode": null,
+        "signalWord": null,
+        "hazardStatements": [],
+        "casNumbers": [],
+        "ph": null,
+        "chemicalGroups": [
+          "unknown"
+        ],
+        "groupReasons": {
+          "unknown": [
+            "keine erkannte Gefahrengruppe; keine Neutralitätsaussage"
+          ]
+        },
+        "sectionsFound": {
+          "2": false,
+          "3": false,
+          "9": false,
+          "10": false
+        }
+      },
+      "incompatibilityKeywords": [],
+      "status": "retrieved_requires_review",
+      "identityPage": {
+        "sourceUrl": "https://mellerud.de/schimmel/schimmel-vernichter",
+        "finalUrl": "https://mellerud.de/schimmel/schimmel-vernichter",
+        "sha256": "245293992725e7c8f4d0cc3042d545e1ea7d4a56d8c2b99edfff03dc8a8b930b",
+        "codesPresent": {
+          "04004666004675": true
+        }
+      },
+      "reviewDecision": "ingredient_evidence_only_keep_completeness_pending",
+      "reviewedPh": null
+    },
+    {
+      "id": "dr-schnell-onemue-2000",
+      "expectedName": "ONEMÜ 2000",
+      "accessedAt": "2026-10-12",
+      "attempts": [],
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/ONEM%C3%9C%202000/SDB/de_DE/pdf/DE",
+      "finalUrl": "https://shop.dr-schnell.com/Datasheets/download/ONEM%C3%9C%202000/SDB/de_DE/pdf/DE",
+      "sha256": "46b2a47aefb5938860dbf5b12e06b012c74d6dd4e70d1068b142f77bae41a811",
+      "matchesPreviousHash": null,
+      "productNamePresent": true,
+      "facts": {
+        "revisionDate": "2025-11-19",
+        "ufi": null,
+        "giscode": null,
+        "signalWord": "Achtung",
+        "hazardStatements": [
+          "H315",
+          "H319"
+        ],
+        "casNumbers": [
+          "68891-38-3",
+          "147170-44-3"
+        ],
+        "ph": {
+          "min": 5.5,
+          "max": 5.5
+        },
+        "chemicalGroups": [
+          "unknown"
+        ],
+        "groupReasons": {
+          "unknown": [
+            "keine erkannte Gefahrengruppe; keine Neutralitätsaussage"
+          ]
+        },
+        "sectionsFound": {
+          "2": true,
+          "3": true,
+          "9": true,
+          "10": true
+        }
+      },
+      "incompatibilityKeywords": [
+        "oxidationsmittel"
+      ],
+      "status": "retrieved_requires_review",
+      "identityPage": {
+        "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/kuechen-und-lebensmittelhygiene/handspuelmittel/1381/onemue-2000",
+        "finalUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/kuechen-und-lebensmittelhygiene/handspuelmittel/1381/onemue-2000",
+        "sha256": "53844818673259265b178992785badeea3ed73786c8c56b544f52dca0c6de376",
+        "codesPresent": {
+          "4008439001236": true
+        }
+      },
+      "reviewDecision": "source_facts_reviewed_completeness_pending",
+      "reviewedPh": {
+        "min": 5.5,
+        "max": 5.5,
+        "concentrationPercent": 100
+      }
+    },
+    {
+      "id": "dr-schnell-easy-quick-a",
+      "expectedName": "EASY QUICK A",
+      "accessedAt": "2026-10-12",
+      "attempts": [],
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/EASY%20QUICK%20A/SDB/de_DE/pdf/DE",
+      "finalUrl": "https://shop.dr-schnell.com/Datasheets/download/EASY%20QUICK%20A/SDB/de_DE/pdf/DE",
+      "sha256": "5d3896d5938b0c380908ccb569e950660f75436020a149e85b2b777c5d496351",
+      "matchesPreviousHash": null,
+      "productNamePresent": true,
+      "facts": {
+        "revisionDate": "2025-09-25",
+        "ufi": null,
+        "giscode": null,
+        "signalWord": "Gefahr",
+        "hazardStatements": [
+          "H290",
+          "H314",
+          "H318"
+        ],
+        "casNumbers": [
+          "112-34-5",
+          "1310-58-3",
+          "110-97-4",
+          "15763-76-5"
+        ],
+        "ph": {
+          "min": 13.7,
+          "max": 13.7
+        },
+        "chemicalGroups": [
+          "caustic_lye",
+          "organic_solvent"
+        ],
+        "groupReasons": {
+          "caustic_lye": [
+            "CAS 1310-58-3",
+            "pH ≥ 12.5"
+          ],
+          "organic_solvent": [
+            "CAS 112-34-5"
+          ]
+        },
+        "sectionsFound": {
+          "2": true,
+          "3": true,
+          "9": true,
+          "10": true
+        }
+      },
+      "incompatibilityKeywords": [
+        "oxidationsmittel",
+        "metall",
+        "alkali"
+      ],
+      "status": "retrieved_requires_review",
+      "identityPage": {
+        "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/boeden/1939/easy-quick-a",
+        "finalUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/boeden/1939/easy-quick-a",
+        "sha256": "20be465f3d5ac866bfc8000f43e8dde423ec3c25b3ead0bfd415526ed91db95f",
+        "codesPresent": {
+          "4008439036863": true
+        }
+      },
+      "reviewDecision": "source_facts_reviewed_completeness_pending",
+      "reviewedPh": {
+        "min": 13.7,
+        "max": 13.7,
+        "concentrationPercent": 100
+      }
+    },
+    {
+      "id": "dr-schnell-easy-quick-n",
+      "expectedName": "EASY QUICK N",
+      "accessedAt": "2026-10-12",
+      "attempts": [],
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/EASY%20QUICK%20N/SDB/de_DE/pdf/DE",
+      "finalUrl": "https://shop.dr-schnell.com/Datasheets/download/EASY%20QUICK%20N/SDB/de_DE/pdf/DE",
+      "sha256": "927da3e6a9200a9ac2434ed6b1242bd92de3ae19550197ccfa14128524c6d4e0",
+      "matchesPreviousHash": null,
+      "productNamePresent": true,
+      "facts": {
+        "revisionDate": "2025-07-08",
+        "ufi": null,
+        "giscode": null,
+        "signalWord": null,
+        "hazardStatements": [],
+        "casNumbers": [],
+        "ph": {
+          "min": 9,
+          "max": 9
+        },
+        "chemicalGroups": [
+          "unknown"
+        ],
+        "groupReasons": {
+          "unknown": [
+            "keine erkannte Gefahrengruppe; keine Neutralitätsaussage"
+          ]
+        },
+        "sectionsFound": {
+          "2": true,
+          "3": true,
+          "9": true,
+          "10": true
+        }
+      },
+      "incompatibilityKeywords": [
+        "oxidationsmittel"
+      ],
+      "status": "retrieved_requires_review",
+      "identityPage": {
+        "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1921/easy-quick-n",
+        "finalUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1921/easy-quick-n",
+        "sha256": "c7ef6a94ef6e118a584cdad88d2b81c0389b709acb149133c9c5dd0a967b988d",
+        "codesPresent": {
+          "4008439036283": true
+        }
+      },
+      "reviewDecision": "source_facts_reviewed_completeness_pending",
+      "reviewedPh": {
+        "min": 9,
+        "max": 9,
+        "concentrationPercent": 100
+      }
+    },
+    {
+      "id": "dr-schnell-glasfee",
+      "expectedName": "GLASFEE",
+      "accessedAt": "2026-10-12",
+      "attempts": [],
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/GLASFEE/SDB/de_DE/pdf/DE",
+      "finalUrl": "https://shop.dr-schnell.com/Datasheets/download/GLASFEE/SDB/de_DE/pdf/DE",
+      "sha256": "b8e0559a66b4a4fe8ba0817d8b2e4a1deeeb8b82e1a4758adf7c0b5cf8d8252a",
+      "matchesPreviousHash": null,
+      "productNamePresent": true,
+      "facts": {
+        "revisionDate": "2025-08-07",
+        "ufi": null,
+        "giscode": null,
+        "signalWord": null,
+        "hazardStatements": [
+          "EUH210"
+        ],
+        "casNumbers": [
+          "67-63-0",
+          "5131-66-8"
+        ],
+        "ph": {
+          "min": 10,
+          "max": 10
+        },
+        "chemicalGroups": [
+          "organic_solvent"
+        ],
+        "groupReasons": {
+          "organic_solvent": [
+            "CAS 67-63-0",
+            "CAS 5131-66-8"
+          ]
+        },
+        "sectionsFound": {
+          "2": true,
+          "3": true,
+          "9": true,
+          "10": true
+        }
+      },
+      "incompatibilityKeywords": [
+        "oxidationsmittel"
+      ],
+      "status": "retrieved_requires_review",
+      "identityPage": {
+        "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1388/glasfee",
+        "finalUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1388/glasfee",
+        "sha256": "d3c4662d94cf35b6cac42dbf038f299dd2388c3773ef7cf5f7b4d1e9e24639aa",
+        "codesPresent": {
+          "4008439001564": true,
+          "4008439001373": true,
+          "4008439001427": true
+        }
+      },
+      "reviewDecision": "source_facts_reviewed_completeness_pending",
+      "reviewedPh": {
+        "min": 10,
+        "max": 10,
+        "concentrationPercent": 100
+      }
+    },
+    {
+      "id": "dr-schnell-milizid-eco",
+      "expectedName": "MILIZID ECO",
+      "accessedAt": "2026-10-12",
+      "attempts": [],
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/MILIZID%20ECO/SDB/de_DE/pdf/DE",
+      "finalUrl": "https://shop.dr-schnell.com/Datasheets/download/MILIZID%20ECO/SDB/de_DE/pdf/DE",
+      "sha256": "22b616d401cab6cfaccd661fd5d1a9d961bd8437e0b2053516dedc7015c45af0",
+      "matchesPreviousHash": null,
+      "productNamePresent": true,
+      "facts": {
+        "revisionDate": "2025-09-16",
+        "ufi": null,
+        "giscode": null,
+        "signalWord": "Gefahr",
+        "hazardStatements": [
+          "H314",
+          "H318"
+        ],
+        "casNumbers": [
+          "75-75-2",
+          "77-92-9",
+          "69011-36-5"
+        ],
+        "ph": {
+          "min": 0.3,
+          "max": 0.3
+        },
+        "chemicalGroups": [
+          "acid"
+        ],
+        "groupReasons": {
+          "acid": [
+            "CAS 77-92-9",
+            "CAS 75-75-2",
+            "pH ≤ 5"
+          ]
+        },
+        "sectionsFound": {
+          "2": true,
+          "3": true,
+          "9": true,
+          "10": true
+        }
+      },
+      "incompatibilityKeywords": [
+        "oxidationsmittel",
+        "metall",
+        "alkali"
+      ],
+      "status": "retrieved_requires_review",
+      "identityPage": {
+        "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/sanitaerreiniger/1481/milizid-eco",
+        "finalUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/sanitaerreiniger/1481/milizid-eco",
+        "sha256": "23e496d46ad1caec0be5b4b7044f5fb461e25322ba0a0bb817f93a8b76a00fa4",
+        "codesPresent": {
+          "4008439009928": true,
+          "4008439309974": true
+        }
+      },
+      "reviewDecision": "source_facts_reviewed_completeness_pending",
+      "reviewedPh": {
+        "min": 0.3,
+        "max": 0.3,
+        "concentrationPercent": 100
+      }
+    },
+    {
+      "id": "dr-schnell-rapido-sprueh-ex",
+      "expectedName": "RAPIDO SPRÜH-EX",
+      "accessedAt": "2026-10-12",
+      "attempts": [
+        {
+          "url": "https://shop.dr-schnell.com/Datasheets/download/RAPIDO%20SPR%C3%9CH-EX/SDB/de_DE/pdf/DE",
+          "error": "HTTP 404"
+        },
+        {
+          "url": "https://shop.dr-schnell.com/Datasheets/download/DR.SCHNELL'S%20RAPIDO%20SPR%C3%9CH-EX/SDB/de_DE/pdf/DE",
+          "error": "HTTP 404"
+        }
+      ],
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/DR.SCHNELL%C2%B4S%20RAPIDO%20SPR%C3%9CH-EX/SDB/de_DE/pdf/DE",
+      "finalUrl": "https://shop.dr-schnell.com/Datasheets/download/DR.SCHNELL%C2%B4S%20RAPIDO%20SPR%C3%9CH-EX/SDB/de_DE/pdf/DE",
+      "sha256": "fc49ce61928845c2b99646a14e7e9a897ad68f22f24b39c2c4885dd16066a615",
+      "matchesPreviousHash": null,
+      "productNamePresent": true,
+      "facts": {
+        "revisionDate": "2025-05-21",
+        "ufi": null,
+        "giscode": null,
+        "signalWord": null,
+        "hazardStatements": [
+          "EUH210"
+        ],
+        "casNumbers": [
+          "64-17-5",
+          "126-92-1"
+        ],
+        "ph": {
+          "min": 11.1,
+          "max": 11.1
+        },
+        "chemicalGroups": [
+          "organic_solvent"
+        ],
+        "groupReasons": {
+          "organic_solvent": [
+            "CAS 64-17-5"
+          ]
+        },
+        "sectionsFound": {
+          "2": true,
+          "3": true,
+          "9": true,
+          "10": true
+        }
+      },
+      "incompatibilityKeywords": [
+        "oxidationsmittel"
+      ],
+      "status": "retrieved_requires_review",
+      "identityPage": {
+        "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/textile-bodenbelaege-polster/1405/dr.schnell-s-rapido-sprueh-ex",
+        "finalUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/textile-bodenbelaege-polster/1405/dr.schnell-s-rapido-sprueh-ex",
+        "sha256": "c3d1dff66ade8fdce0e51cbcae7c1c8981bb7204fc2d1d8a1b76c3cb2ffb02b1",
+        "codesPresent": {
+          "4008439001953": true
+        }
+      },
+      "reviewDecision": "source_facts_reviewed_completeness_pending",
+      "reviewedPh": {
+        "min": 11.1,
+        "max": 11.1,
+        "concentrationPercent": 100
+      }
+    },
+    {
+      "id": "dr-schnell-milizid-kalkreiniger",
+      "expectedName": "MILIZID KALKREINIGER",
+      "accessedAt": "2026-10-12",
+      "attempts": [],
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/MILIZID%20KALKREINIGER/SDB/de_DE/pdf/DE",
+      "finalUrl": "https://shop.dr-schnell.com/Datasheets/download/MILIZID%20KALKREINIGER/SDB/de_DE/pdf/DE",
+      "sha256": "84e0daa34a95cd203f14155f5df3879a84aea06da99448862c698b0eda067950",
+      "matchesPreviousHash": null,
+      "productNamePresent": true,
+      "facts": {
+        "revisionDate": "2025-01-13",
+        "ufi": null,
+        "giscode": null,
+        "signalWord": "Achtung",
+        "hazardStatements": [
+          "H315",
+          "H319"
+        ],
+        "casNumbers": [
+          "5329-14-6",
+          "69011-36-5"
+        ],
+        "ph": {
+          "min": 0.5,
+          "max": 0.5
+        },
+        "chemicalGroups": [
+          "acid"
+        ],
+        "groupReasons": {
+          "acid": [
+            "CAS 5329-14-6",
+            "pH ≤ 5"
+          ]
+        },
+        "sectionsFound": {
+          "2": true,
+          "3": true,
+          "9": true,
+          "10": true
+        }
+      },
+      "incompatibilityKeywords": [
+        "metall",
+        "alkali"
+      ],
+      "status": "retrieved_requires_review",
+      "identityPage": {
+        "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/sanitaerreiniger/1374/milizid-kalkreiniger",
+        "finalUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/sanitaerreiniger/1374/milizid-kalkreiniger",
+        "sha256": "f84729e0299722afb9e0e30440d13e436d77f16a6587eb90cb4db2b035056d50",
+        "codesPresent": {
+          "4008439001069": true,
+          "4008439300056": true
+        }
+      },
+      "reviewDecision": "source_facts_reviewed_completeness_pending",
+      "reviewedPh": {
+        "min": 0.5,
+        "max": 0.5,
+        "concentrationPercent": 100
+      }
+    },
+    {
+      "id": "dr-schnell-ecolution-forol-ultrahochkonzentrat",
+      "expectedName": "ECOLUTION FOROL ULTRAHOCHKONZENTRAT",
+      "accessedAt": "2026-10-12",
+      "attempts": [
+        {
+          "url": "https://shop.dr-schnell.com/Datasheets/download/ECOLUTION%20FOROL/SDB/de_DE/pdf/DE",
+          "error": "HTTP 404"
+        }
+      ],
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/ECOLUTION%20FOROL%20ULTRAHOCHKONZENTRAT/SDB/de_DE/pdf/DE",
+      "finalUrl": "https://shop.dr-schnell.com/Datasheets/download/ECOLUTION%20FOROL%20ULTRAHOCHKONZENTRAT/SDB/de_DE/pdf/DE",
+      "sha256": "895889ae392eb896cf81c56c143fb18ea3b4610514d7733188ce5bf833f7e970",
+      "matchesPreviousHash": null,
+      "productNamePresent": true,
+      "facts": {
+        "revisionDate": "2025-08-06",
+        "ufi": null,
+        "giscode": null,
+        "signalWord": "Gefahr",
+        "hazardStatements": [
+          "H318"
+        ],
+        "casNumbers": [
+          "160875-66-1",
+          "105-95-3",
+          "112-34-5"
+        ],
+        "ph": {
+          "min": 10.6,
+          "max": 10.6
+        },
+        "chemicalGroups": [
+          "organic_solvent"
+        ],
+        "groupReasons": {
+          "organic_solvent": [
+            "CAS 112-34-5"
+          ]
+        },
+        "sectionsFound": {
+          "2": true,
+          "3": true,
+          "9": true,
+          "10": true
+        }
+      },
+      "incompatibilityKeywords": [
+        "oxidationsmittel"
+      ],
+      "status": "retrieved_requires_review",
+      "identityPage": {
+        "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1326/ecolution-forol-ultrahochkonzentrat",
+        "finalUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1326/ecolution-forol-ultrahochkonzentrat",
+        "sha256": "46abfe6db2a6d1bc7b50e6af4c5843783d2812e446eca18ad7cc3d5656223816",
+        "codesPresent": {
+          "4008439312127": true
+        }
+      },
+      "reviewDecision": "source_facts_reviewed_completeness_pending",
+      "reviewedPh": {
+        "min": 10.6,
+        "max": 10.6,
+        "concentrationPercent": 100
+      }
+    },
+    {
+      "id": "dr-schnell-levante-eco",
+      "expectedName": "LEVANTE ECO",
+      "accessedAt": "2026-10-12",
+      "attempts": [],
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/LEVANTE%20ECO/SDB/de_DE/pdf/DE",
+      "finalUrl": "https://shop.dr-schnell.com/Datasheets/download/LEVANTE%20ECO/SDB/de_DE/pdf/DE",
+      "sha256": "761e602d588e46ff940f19de8a0030138894777a10adf01f6f62b5f0476daef7",
+      "matchesPreviousHash": null,
+      "productNamePresent": true,
+      "facts": {
+        "revisionDate": "2026-02-18",
+        "ufi": null,
+        "giscode": null,
+        "signalWord": null,
+        "hazardStatements": [
+          "EUH210"
+        ],
+        "casNumbers": [
+          "64-17-5",
+          "68154-97-2",
+          "68439-46-3",
+          "160901-09-7"
+        ],
+        "ph": {
+          "min": 7.2,
+          "max": 7.2
+        },
+        "chemicalGroups": [
+          "organic_solvent"
+        ],
+        "groupReasons": {
+          "organic_solvent": [
+            "CAS 64-17-5"
+          ]
+        },
+        "sectionsFound": {
+          "2": true,
+          "3": true,
+          "9": true,
+          "10": true
+        }
+      },
+      "incompatibilityKeywords": [
+        "oxidationsmittel"
+      ],
+      "status": "retrieved_requires_review",
+      "identityPage": {
+        "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1766/levante-eco",
+        "finalUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1766/levante-eco",
+        "sha256": "a5e091384bdee6186570b2f2be706b866ea2ba80c3ff611c28fb6829ee1bc77d",
+        "codesPresent": {
+          "4008439035828": true
+        }
+      },
+      "reviewDecision": "source_facts_reviewed_completeness_pending",
+      "reviewedPh": {
+        "min": 7.2,
+        "max": 7.2,
+        "concentrationPercent": 100
+      }
+    },
+    {
+      "id": "dr-schnell-schirocco-clean",
+      "expectedName": "SCHIROCCO CLEAN",
+      "accessedAt": "2026-10-12",
+      "attempts": [],
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/SCHIROCCO%20CLEAN/SDB/de_DE/pdf/DE",
+      "finalUrl": "https://shop.dr-schnell.com/Datasheets/download/SCHIROCCO%20CLEAN/SDB/de_DE/pdf/DE",
+      "sha256": "b8e11d4292c11075d67cfb3cf0c670d300036cf19ab4eaba74742074bd4ece69",
+      "matchesPreviousHash": null,
+      "productNamePresent": true,
+      "facts": {
+        "revisionDate": "2025-07-22",
+        "ufi": null,
+        "giscode": null,
+        "signalWord": null,
+        "hazardStatements": [
+          "EUH210"
+        ],
+        "casNumbers": [
+          "5131-66-8",
+          "34590-94-8",
+          "64-17-5",
+          "112-34-5"
+        ],
+        "ph": {
+          "min": 7.2,
+          "max": 7.2
+        },
+        "chemicalGroups": [
+          "organic_solvent"
+        ],
+        "groupReasons": {
+          "organic_solvent": [
+            "CAS 64-17-5",
+            "CAS 34590-94-8",
+            "CAS 112-34-5",
+            "CAS 5131-66-8"
+          ]
+        },
+        "sectionsFound": {
+          "2": true,
+          "3": true,
+          "9": true,
+          "10": true
+        }
+      },
+      "incompatibilityKeywords": [
+        "oxidationsmittel"
+      ],
+      "status": "retrieved_requires_review",
+      "identityPage": {
+        "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/boeden/1469/schirocco-clean",
+        "finalUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/boeden/1469/schirocco-clean",
+        "sha256": "395f1eb6699f672cf453e246b25bf5321a1f24cdae2377775cda3ea0cb9d142d",
+        "codesPresent": {
+          "4008439007245": true,
+          "4008439307260": true,
+          "4008439307222": true
+        }
+      },
+      "reviewDecision": "source_facts_reviewed_completeness_pending",
+      "reviewedPh": {
+        "min": 7.2,
+        "max": 7.2,
+        "concentrationPercent": 100
+      }
+    },
+    {
+      "id": "dr-schnell-easy-quick-s",
+      "expectedName": "EASY QUICK S",
+      "accessedAt": "2026-10-12",
+      "attempts": [],
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/EASY%20QUICK%20S/SDB/de_DE/pdf/DE",
+      "finalUrl": "https://shop.dr-schnell.com/Datasheets/download/EASY%20QUICK%20S/SDB/de_DE/pdf/DE",
+      "sha256": "1cd64ac4a3640a3cf162dd75ec2d3c4ab0c7af0955757e055760ef1254b5fcd3",
+      "matchesPreviousHash": null,
+      "productNamePresent": true,
+      "facts": {
+        "revisionDate": "2025-05-30",
+        "ufi": null,
+        "giscode": null,
+        "signalWord": "Gefahr",
+        "hazardStatements": [
+          "H290",
+          "H314",
+          "H318",
+          "H335"
+        ],
+        "casNumbers": [
+          "75-75-2",
+          "77-92-9"
+        ],
+        "ph": {
+          "min": 0,
+          "max": 0
+        },
+        "chemicalGroups": [
+          "acid"
+        ],
+        "groupReasons": {
+          "acid": [
+            "CAS 77-92-9",
+            "CAS 75-75-2",
+            "pH ≤ 5"
+          ]
+        },
+        "sectionsFound": {
+          "2": true,
+          "3": true,
+          "9": true,
+          "10": true
+        }
+      },
+      "incompatibilityKeywords": [
+        "oxidationsmittel",
+        "metall",
+        "alkali"
+      ],
+      "status": "retrieved_requires_review",
+      "identityPage": {
+        "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/boeden/1976/easy-quick-s",
+        "finalUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/boeden/1976/easy-quick-s",
+        "sha256": "444ff61d12c6168f43a9c6a61ccac13237fe1b69c2d7f461a37ed3011c1af80a",
+        "codesPresent": {
+          "4008439044103": true,
+          "4008439044141": true
+        }
+      },
+      "reviewDecision": "source_facts_reviewed_completeness_pending",
+      "reviewedPh": {
+        "min": 0,
+        "max": 0,
+        "concentrationPercent": 100
+      }
+    },
+    {
+      "id": "dr-schnell-desifor-quick",
+      "expectedName": "DESIFOR-QUICK",
+      "accessedAt": "2026-10-12",
+      "attempts": [],
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/DESIFOR-QUICK/SDB/de_DE/pdf/DE",
+      "finalUrl": "https://shop.dr-schnell.com/Datasheets/download/DESIFOR-QUICK/SDB/de_DE/pdf/DE",
+      "sha256": "689fb7947343443b0f600f8cf832658130e7c6aecf9e49bbdbbc9978dce16d03",
+      "matchesPreviousHash": null,
+      "productNamePresent": true,
+      "facts": {
+        "revisionDate": "2025-09-16",
+        "ufi": null,
+        "giscode": null,
+        "signalWord": "Gefahr",
+        "hazardStatements": [
+          "H225",
+          "H319",
+          "H336"
+        ],
+        "casNumbers": [
+          "67-63-0",
+          "64-17-5"
+        ],
+        "ph": {
+          "min": 6.3,
+          "max": 6.3
+        },
+        "chemicalGroups": [
+          "organic_solvent",
+          "flammable"
+        ],
+        "groupReasons": {
+          "organic_solvent": [
+            "CAS 64-17-5",
+            "CAS 67-63-0"
+          ],
+          "flammable": [
+            "H225"
+          ]
+        },
+        "sectionsFound": {
+          "2": true,
+          "3": true,
+          "9": true,
+          "10": true
+        }
+      },
+      "incompatibilityKeywords": [
+        "oxidationsmittel"
+      ],
+      "status": "retrieved_requires_review",
+      "identityPage": {
+        "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/desinfektion/flaechendesinfektion/1453/desifor-quick",
+        "finalUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/desinfektion/flaechendesinfektion/1453/desifor-quick",
+        "sha256": "f4e520fdbbb5fc8c46a02fb45e1cfc2b3109d9ea30ec4619190d1b72659a456a",
+        "codesPresent": {
+          "4008439205221": true,
+          "4008439204514": true,
+          "4008439045315": true
+        }
+      },
+      "reviewDecision": "source_facts_reviewed_completeness_pending",
+      "reviewedPh": {
+        "min": 6.3,
+        "max": 6.3,
+        "concentrationPercent": 1
+      }
+    },
+    {
+      "id": "dr-schnell-ecolution-forol-sticks",
+      "expectedName": "ECOLUTION FOROL STICKS",
+      "accessedAt": "2026-10-12",
+      "attempts": [],
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/ECOLUTION%20FOROL%20STICKS/SDB/de_DE/pdf/DE",
+      "finalUrl": "https://shop.dr-schnell.com/Datasheets/download/ECOLUTION%20FOROL%20STICKS/SDB/de_DE/pdf/DE",
+      "sha256": "707ee172e5227815d3372a4e86d4abbcd4b1c211be6b1720fc23e5cf65ebe901",
+      "matchesPreviousHash": null,
+      "productNamePresent": true,
+      "facts": {
+        "revisionDate": "2025-11-20",
+        "ufi": null,
+        "giscode": null,
+        "signalWord": "Achtung",
+        "hazardStatements": [
+          "H315",
+          "H319"
+        ],
+        "casNumbers": [
+          "68439-57-6",
+          "584-08-7"
+        ],
+        "ph": {
+          "min": 11,
+          "max": 11
+        },
+        "chemicalGroups": [
+          "unknown"
+        ],
+        "groupReasons": {
+          "unknown": [
+            "keine erkannte Gefahrengruppe; keine Neutralitätsaussage"
+          ]
+        },
+        "sectionsFound": {
+          "2": true,
+          "3": true,
+          "9": true,
+          "10": true
+        }
+      },
+      "incompatibilityKeywords": [
+        "oxidationsmittel"
+      ],
+      "status": "retrieved_requires_review",
+      "identityPage": {
+        "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1328/ecolution-forol-sticks",
+        "finalUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1328/ecolution-forol-sticks",
+        "sha256": "08cc2e3745d6bda53129f8446cc316694f39a77f5a305bbb0b1b03560a80cfdd",
+        "codesPresent": {
+          "4008439312028": true
+        }
+      },
+      "reviewDecision": "source_facts_reviewed_completeness_pending",
+      "reviewedPh": {
+        "min": 11,
+        "max": 11,
+        "concentrationPercent": 1
+      }
+    },
+    {
+      "id": "dr-schnell-gastro-pur",
+      "expectedName": "GASTRO PUR",
+      "accessedAt": "2026-10-12",
+      "attempts": [],
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/GASTRO%20PUR/SDB/de_DE/pdf/DE",
+      "finalUrl": "https://shop.dr-schnell.com/Datasheets/download/GASTRO%20PUR/SDB/de_DE/pdf/DE",
+      "sha256": "3630a11ae714084d808c129cc0912f7d57fa6096e9bbadf35a9c94ce67c24dd1",
+      "matchesPreviousHash": null,
+      "productNamePresent": true,
+      "facts": {
+        "revisionDate": "2025-10-30",
+        "ufi": null,
+        "giscode": null,
+        "signalWord": "Gefahr",
+        "hazardStatements": [
+          "H314",
+          "H318"
+        ],
+        "casNumbers": [
+          "112-34-5",
+          "97489-15-1",
+          "69011-36-5",
+          "15763-76-5",
+          "1310-58-3",
+          "1344-09-8"
+        ],
+        "ph": {
+          "min": 13.4,
+          "max": 13.4
+        },
+        "chemicalGroups": [
+          "caustic_lye",
+          "organic_solvent"
+        ],
+        "groupReasons": {
+          "caustic_lye": [
+            "CAS 1310-58-3",
+            "pH ≥ 12.5"
+          ],
+          "organic_solvent": [
+            "CAS 112-34-5"
+          ]
+        },
+        "sectionsFound": {
+          "2": true,
+          "3": true,
+          "9": true,
+          "10": true
+        }
+      },
+      "incompatibilityKeywords": [
+        "oxidationsmittel",
+        "metall",
+        "alkali"
+      ],
+      "status": "retrieved_requires_review",
+      "identityPage": {
+        "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/kuechen-und-lebensmittelhygiene/oel-und-fettloeser-fuer-oberflaechen/1391/gastro-pur",
+        "finalUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/kuechen-und-lebensmittelhygiene/oel-und-fettloeser-fuer-oberflaechen/1391/gastro-pur",
+        "sha256": "71ee2e1332303794c79ef082fbf96d04001be30cf54ea58c601aefc4b62f358d",
+        "codesPresent": {
+          "4008439001472": true
+        }
+      },
+      "reviewDecision": "source_facts_reviewed_completeness_pending",
+      "reviewedPh": {
+        "min": 13.4,
+        "max": 13.4,
+        "concentrationPercent": 100
+      }
+    },
+    {
+      "id": "dr-schnell-forol",
+      "expectedName": "FOROL",
+      "accessedAt": "2026-10-12",
+      "attempts": [],
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/FOROL/SDB/de_DE/pdf/DE",
+      "finalUrl": "https://shop.dr-schnell.com/Datasheets/download/FOROL/SDB/de_DE/pdf/DE",
+      "sha256": "508f4585c70b146e70165b4d3e7d711252f41b3f0b6929566a5d04dca026afe6",
+      "matchesPreviousHash": null,
+      "productNamePresent": true,
+      "facts": {
+        "revisionDate": "2025-08-06",
+        "ufi": null,
+        "giscode": null,
+        "signalWord": null,
+        "hazardStatements": [
+          "EUH210"
+        ],
+        "casNumbers": [
+          "5131-66-8",
+          "68154-97-2",
+          "68439-46-3",
+          "160901-09-7"
+        ],
+        "ph": {
+          "min": 10.6,
+          "max": 10.6
+        },
+        "chemicalGroups": [
+          "organic_solvent"
+        ],
+        "groupReasons": {
+          "organic_solvent": [
+            "CAS 5131-66-8"
+          ]
+        },
+        "sectionsFound": {
+          "2": true,
+          "3": true,
+          "9": true,
+          "10": true
+        }
+      },
+      "incompatibilityKeywords": [
+        "oxidationsmittel"
+      ],
+      "status": "retrieved_requires_review",
+      "identityPage": {
+        "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1376/forol",
+        "finalUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1376/forol",
+        "sha256": "d417a8d66402e7beefc08c8809d2eb5bc474b151979f40e55808c1301562ded4",
+        "codesPresent": {
+          "4008439001144": true,
+          "4008439300179": true,
+          "4008439300186": true,
+          "4008439001113": true
+        }
+      },
+      "reviewDecision": "source_facts_reviewed_completeness_pending",
+      "reviewedPh": {
+        "min": 10.6,
+        "max": 10.6,
+        "concentrationPercent": 100
+      }
+    },
+    {
+      "id": "dr-schnell-desifor-sd",
+      "expectedName": "DESIFOR-SD",
+      "accessedAt": "2026-10-12",
+      "attempts": [],
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/DESIFOR-SD/SDB/de_DE/pdf/DE",
+      "finalUrl": "https://shop.dr-schnell.com/Datasheets/download/DESIFOR-SD/SDB/de_DE/pdf/DE",
+      "sha256": "fcf671735481418947b261ae8712fb17fafd71461607ce2c5407f29d73b6adc1",
+      "matchesPreviousHash": null,
+      "productNamePresent": true,
+      "facts": {
+        "revisionDate": "2026-01-14",
+        "ufi": null,
+        "giscode": null,
+        "signalWord": null,
+        "hazardStatements": [
+          "EUH210"
+        ],
+        "casNumbers": [
+          "64-17-5",
+          "617-48-1"
+        ],
+        "ph": {
+          "min": 2.2,
+          "max": 2.2
+        },
+        "chemicalGroups": [
+          "acid",
+          "organic_solvent"
+        ],
+        "groupReasons": {
+          "acid": [
+            "pH ≤ 5"
+          ],
+          "organic_solvent": [
+            "CAS 64-17-5"
+          ]
+        },
+        "sectionsFound": {
+          "2": true,
+          "3": true,
+          "9": true,
+          "10": true
+        }
+      },
+      "incompatibilityKeywords": [
+        "oxidationsmittel"
+      ],
+      "status": "retrieved_requires_review",
+      "identityPage": {
+        "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/desinfektion/flaechendesinfektion/1671/desifor-sd",
+        "finalUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/desinfektion/flaechendesinfektion/1671/desifor-sd",
+        "sha256": "bfd5f5d05bdd8d8c3f85cb039fdab6837f7bab8ffa2952699a6a2f23c0d19c61",
+        "codesPresent": {
+          "4008439204651": true
+        }
+      },
+      "reviewDecision": "source_facts_reviewed_completeness_pending",
+      "reviewedPh": {
+        "min": 2.2,
+        "max": 2.2,
+        "concentrationPercent": 100
+      }
+    },
+    {
+      "id": "dr-schnell-desifor-one",
+      "expectedName": "DESIFOR-ONE",
+      "accessedAt": "2026-10-12",
+      "attempts": [],
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/DESIFOR-ONE/SDB/de_DE/pdf/DE",
+      "finalUrl": "https://shop.dr-schnell.com/Datasheets/download/DESIFOR-ONE/SDB/de_DE/pdf/DE",
+      "sha256": "1eb6a6225493996de486c96fd2bb7647010a520bda9066257ac750888acddf38",
+      "matchesPreviousHash": null,
+      "productNamePresent": true,
+      "facts": {
+        "revisionDate": "2025-12-01",
+        "ufi": null,
+        "giscode": null,
+        "signalWord": "Gefahr",
+        "hazardStatements": [
+          "H302",
+          "H314",
+          "H318",
+          "H400",
+          "H410",
+          "H411"
+        ],
+        "casNumbers": [
+          "68424-85-1",
+          "122-99-6",
+          "2372-82-9",
+          "160875-66-1",
+          "110615-47-9",
+          "68515-73-1",
+          "141-43-5",
+          "5538-95-4",
+          "124-22-1"
+        ],
+        "ph": {
+          "min": 11.7,
+          "max": 11.7
+        },
+        "chemicalGroups": [
+          "unknown"
+        ],
+        "groupReasons": {
+          "unknown": [
+            "keine erkannte Gefahrengruppe; keine Neutralitätsaussage"
+          ]
+        },
+        "sectionsFound": {
+          "2": true,
+          "3": true,
+          "9": true,
+          "10": true
+        }
+      },
+      "incompatibilityKeywords": [
+        "oxidationsmittel",
+        "metall",
+        "alkali"
+      ],
+      "status": "retrieved_requires_review",
+      "identityPage": {
+        "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/desinfektion/flaechendesinfektion/1496/desifor-one",
+        "finalUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/desinfektion/flaechendesinfektion/1496/desifor-one",
+        "sha256": "41632b4f30367614c8a96b520c6f4e082b484161d6f553cc59c8f68b79703a38",
+        "codesPresent": {
+          "4008439205580": true
+        }
+      },
+      "reviewDecision": "source_facts_reviewed_completeness_pending",
+      "reviewedPh": {
+        "min": 11.7,
+        "max": 11.7,
+        "concentrationPercent": 100
+      }
+    },
+    {
+      "id": "dr-schnell-desifor-plexifee",
+      "expectedName": "DESIFOR-PLEXIFEE",
+      "accessedAt": "2026-10-12",
+      "attempts": [],
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/DESIFOR-PLEXIFEE/SDB/de_DE/pdf/DE",
+      "finalUrl": "https://shop.dr-schnell.com/Datasheets/download/DESIFOR-PLEXIFEE/SDB/de_DE/pdf/DE",
+      "sha256": "c96a19392d738e0ba15c068f718b8379c86c86b172b9efefc6ed01e0b50eb1c2",
+      "matchesPreviousHash": null,
+      "productNamePresent": true,
+      "facts": {
+        "revisionDate": "2025-09-09",
+        "ufi": null,
+        "giscode": null,
+        "signalWord": null,
+        "hazardStatements": [],
+        "casNumbers": [],
+        "ph": {
+          "min": 10.8,
+          "max": 10.8
+        },
+        "chemicalGroups": [
+          "unknown"
+        ],
+        "groupReasons": {
+          "unknown": [
+            "keine erkannte Gefahrengruppe; keine Neutralitätsaussage"
+          ]
+        },
+        "sectionsFound": {
+          "2": true,
+          "3": true,
+          "9": true,
+          "10": true
+        }
+      },
+      "incompatibilityKeywords": [],
+      "status": "retrieved_requires_review",
+      "identityPage": {
+        "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/desinfektion/flaechendesinfektion/1672/desifor-plexifee",
+        "finalUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/desinfektion/flaechendesinfektion/1672/desifor-plexifee",
+        "sha256": "032281eba309876262ac26fcf5c288d3c8204988e4d442a705a01837d53eece3",
+        "codesPresent": {
+          "4008439205931": true,
+          "4008439205948": true
+        }
+      },
+      "reviewDecision": "source_facts_reviewed_completeness_pending",
+      "reviewedPh": {
+        "min": 10.8,
+        "max": 10.8,
+        "concentrationPercent": 100
+      }
+    },
+    {
+      "id": "dr-schnell-forol-sensitive",
+      "expectedName": "FOROL SENSITIVE",
+      "accessedAt": "2026-10-12",
+      "attempts": [],
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/FOROL%20SENSITIVE/SDB/de_DE/pdf/DE",
+      "finalUrl": "https://shop.dr-schnell.com/Datasheets/download/FOROL%20SENSITIVE/SDB/de_DE/pdf/DE",
+      "sha256": "1ca52e7694c1c112d05609a0d56b3517e7748187e82815108ba4151d28d0583c",
+      "matchesPreviousHash": null,
+      "productNamePresent": true,
+      "facts": {
+        "revisionDate": "2025-08-08",
+        "ufi": null,
+        "giscode": null,
+        "signalWord": null,
+        "hazardStatements": [
+          "EUH210"
+        ],
+        "casNumbers": [
+          "5131-66-8",
+          "68154-97-2",
+          "68439-46-3",
+          "160901-09-7",
+          "126-92-1"
+        ],
+        "ph": {
+          "min": 10.7,
+          "max": 10.7
+        },
+        "chemicalGroups": [
+          "organic_solvent"
+        ],
+        "groupReasons": {
+          "organic_solvent": [
+            "CAS 5131-66-8"
+          ]
+        },
+        "sectionsFound": {
+          "2": true,
+          "3": true,
+          "9": true,
+          "10": true
+        }
+      },
+      "incompatibilityKeywords": [
+        "oxidationsmittel"
+      ],
+      "status": "retrieved_requires_review",
+      "identityPage": {
+        "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1477/forol-sensitive",
+        "finalUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1477/forol-sensitive",
+        "sha256": "429201a3fb9f99b6f392b815b306b19865ece0cb3069b91d863653cc9770bb6e",
+        "codesPresent": {
+          "4008439009744": true
+        }
+      },
+      "reviewDecision": "source_facts_reviewed_completeness_pending",
+      "reviewedPh": {
+        "min": 10.7,
+        "max": 10.7,
+        "concentrationPercent": 100
+      }
+    },
+    {
+      "id": "dr-schnell-desifor-one-v",
+      "expectedName": "DESIFOR-ONE V",
+      "accessedAt": "2026-10-12",
+      "attempts": [],
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/DESIFOR-ONE%20V/SDB/de_DE/pdf/DE",
+      "finalUrl": "https://shop.dr-schnell.com/Datasheets/download/DESIFOR-ONE%20V/SDB/de_DE/pdf/DE",
+      "sha256": "cd7a7a92b0cca06def42be1d5bc0ddbc78cd6472c891ee715ebb74aecf0452d3",
+      "matchesPreviousHash": null,
+      "productNamePresent": true,
+      "facts": {
+        "revisionDate": "2025-09-25",
+        "ufi": null,
+        "giscode": null,
+        "signalWord": "Gefahr",
+        "hazardStatements": [
+          "H314",
+          "H318",
+          "H400",
+          "H410",
+          "H411"
+        ],
+        "casNumbers": [
+          "68424-85-1",
+          "122-99-6",
+          "69011-36-5",
+          "67-63-0"
+        ],
+        "ph": {
+          "min": 11.8,
+          "max": 11.8
+        },
+        "chemicalGroups": [
+          "organic_solvent"
+        ],
+        "groupReasons": {
+          "organic_solvent": [
+            "CAS 67-63-0"
+          ]
+        },
+        "sectionsFound": {
+          "2": true,
+          "3": true,
+          "9": true,
+          "10": true
+        }
+      },
+      "incompatibilityKeywords": [
+        "oxidationsmittel",
+        "metall",
+        "alkali"
+      ],
+      "status": "retrieved_requires_review",
+      "identityPage": {
+        "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/desinfektion/flaechendesinfektion/1678/desifor-one-v",
+        "finalUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/desinfektion/flaechendesinfektion/1678/desifor-one-v",
+        "sha256": "1d712407a156055fd96f601eee1633e8b8f14e654012804432980b725523837d",
+        "codesPresent": {
+          "4008439204859": true
+        }
+      },
+      "reviewDecision": "source_facts_reviewed_completeness_pending",
+      "reviewedPh": {
+        "min": 11.8,
+        "max": 11.8,
+        "concentrationPercent": 100
+      }
+    },
+    {
+      "id": "dr-schnell-perocid",
+      "expectedName": "PEROCID",
+      "accessedAt": "2026-10-12",
+      "attempts": [],
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/PEROCID/SDB/de_DE/pdf/DE",
+      "finalUrl": "https://shop.dr-schnell.com/Datasheets/download/PEROCID/SDB/de_DE/pdf/DE",
+      "sha256": "7152d3e0e46e76469bae991ba69a5858b2da47d7d23c8d3cb99092f506f10f23",
+      "matchesPreviousHash": null,
+      "productNamePresent": true,
+      "facts": {
+        "revisionDate": "2025-09-19",
+        "ufi": null,
+        "giscode": null,
+        "signalWord": "Achtung",
+        "hazardStatements": [
+          "H315",
+          "H319"
+        ],
+        "casNumbers": [
+          "5329-14-6"
+        ],
+        "ph": {
+          "min": 0.5,
+          "max": 0.5
+        },
+        "chemicalGroups": [
+          "acid"
+        ],
+        "groupReasons": {
+          "acid": [
+            "CAS 5329-14-6",
+            "pH ≤ 5"
+          ]
+        },
+        "sectionsFound": {
+          "2": true,
+          "3": true,
+          "9": true,
+          "10": true
+        }
+      },
+      "incompatibilityKeywords": [
+        "metall",
+        "alkali"
+      ],
+      "status": "retrieved_requires_review",
+      "identityPage": {
+        "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/kuechen-und-lebensmittelhygiene/kalkloeser-fuer-oberflaechen/1399/perocid",
+        "finalUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/kuechen-und-lebensmittelhygiene/kalkloeser-fuer-oberflaechen/1399/perocid",
+        "sha256": "04b3c10178264a40b44267080e7115214114842780c977f37678c4e0a3b5eb19",
+        "codesPresent": {
+          "4008439006156": true,
+          "4008439363174": true,
+          "4008439360173": true,
+          "4008439360166": true
+        }
+      },
+      "reviewDecision": "source_facts_reviewed_completeness_pending",
+      "reviewedPh": {
+        "min": 0.5,
+        "max": 0.5,
+        "concentrationPercent": 100
+      }
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "domestos-professional-original",
+      "reason": "Newer manufacturer-hosted German-language Austrian SDS dated 2024-12-03 with matching UFI observed via web reader; direct retrieval returned 403, German Solenis endpoint not PDF. Retain hashed 2022 copy and pending current-version flag.",
+      "sourceUrl": "https://sds.diversey.com/DirectDocumentDownloader/Document?prd=MS1005408~~PDF~~MTR~~AT02~~AT~~EMA"
+    },
+    {
+      "id": "danklorix-hygiene-reiniger",
+      "reason": "Hash of 2020 retailer copy reproduced; manufacturer site product link currently unavailable. Current formulation and GTIN association remain pending."
+    },
+    {
+      "id": "mellerud-schimmel-vernichter",
+      "reason": "Ingredient datasheet and EAN reacquired; no current complete SDS. Historical 2021 SDS has a different package/product code, so it was not merged into the current record."
+    },
+    {
+      "id": "buzil-bucalex-g460",
+      "reason": "Manufacturer page exposes a download form rather than PDF bytes; existing source evidence retained, current-version check pending."
+    },
+    {
+      "id": "buzil-bucasan-trendy-t464",
+      "reason": "Manufacturer page exposes a download form rather than PDF bytes; existing source evidence retained, current-version check pending."
+    },
+    {
+      "id": "buzil-erol-g490",
+      "reason": "Manufacturer page exposes a download form rather than PDF bytes; existing source evidence retained, current-version check pending."
+    },
+    {
+      "id": "dr-schnell-onemue-2000",
+      "reason": "Source facts captured, but no supported hazard group follows from current deterministic table. Keep unknown and UNVERIFIED; never infer neutral."
+    },
+    {
+      "id": "dr-schnell-easy-quick-n",
+      "reason": "Source facts captured, but no supported hazard group follows from current deterministic table. Keep unknown and UNVERIFIED; never infer neutral."
+    },
+    {
+      "id": "dr-schnell-ecolution-forol-sticks",
+      "reason": "Source facts captured, but no supported hazard group follows from current deterministic table. Keep unknown and UNVERIFIED; never infer neutral."
+    },
+    {
+      "id": "dr-schnell-desifor-one",
+      "reason": "Source facts captured, but no supported hazard group follows from current deterministic table. Keep unknown and UNVERIFIED; never infer neutral."
+    },
+    {
+      "id": "dr-schnell-desifor-plexifee",
+      "reason": "Source facts captured, but no supported hazard group follows from current deterministic table. Keep unknown and UNVERIFIED; never infer neutral."
+    }
+  ]
+}

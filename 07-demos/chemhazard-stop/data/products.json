@@ -42,11 +42,17 @@
     "typicalUseEn": "Bleach in commercial laundry",
     "hazardsConfirmed": true,
     "completenessReviewed": false,
-    "currentVersionChecked": false,
+    "currentVersionChecked": true,
     "reviewMetadata": {
       "hazardsConfirmed": {
         "date": "2026-10-12",
-        "basis": "Inherited sourced hazard facts from commit 1f38cd9; Johannes Kiehl KG, Sicherheitsdatenblatt ARENAS-bleach"
+        "reviewer": "Codex document/source audit",
+        "basis": "SDS identity and section 2/3/9 facts compared to the existing record; https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j6532_sd_ARENAS-bleach_de.pdf; SHA-256 6bfb2520281e650a896c94023c6ab91125e68f9bafe7b6c3abbe31a2f5b3d69e. No independent chemical-completeness or physical-container review asserted."
+      },
+      "currentVersionChecked": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "Manufacturer-served document reacquired on review date; https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j6532_sd_ARENAS-bleach_de.pdf; SHA-256 6bfb2520281e650a896c94023c6ab91125e68f9bafe7b6c3abbe31a2f5b3d69e. No independent chemical-completeness or physical-container review asserted."
       }
     },
     "hazardStatementsEvidence": "documented",
@@ -55,7 +61,8 @@
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Textilwaesche/Bleiche/ARENAS-bleach"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Textilwaesche/Bleiche/ARENAS-bleach; SHA-256 6ab3aac5ae55b0429b5ff9c6614728ef99923ee22416c0dd2300535eec9ac404. No independent chemical-completeness or physical-container review asserted."
         }
       }
     }
@@ -106,11 +113,17 @@
     "typicalUseEn": "Toilet bowls and urinals, against limescale and urine scale",
     "hazardsConfirmed": true,
     "completenessReviewed": false,
-    "currentVersionChecked": false,
+    "currentVersionChecked": true,
     "reviewMetadata": {
       "hazardsConfirmed": {
         "date": "2026-10-12",
-        "basis": "Inherited sourced hazard facts from commit 1f38cd9; Johannes Kiehl KG, Sicherheitsdatenblatt Powerfix-Gel"
+        "reviewer": "Codex document/source audit",
+        "basis": "SDS identity and section 2/3/9 facts compared to the existing record; https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j4006_sd_Powerfix-Gel_de.pdf; SHA-256 19be7664135955b120db98e1580837a4950e475e8a2a2312d5a8fdd98d663d99. No independent chemical-completeness or physical-container review asserted."
+      },
+      "currentVersionChecked": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "Manufacturer-served document reacquired on review date; https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j4006_sd_Powerfix-Gel_de.pdf; SHA-256 19be7664135955b120db98e1580837a4950e475e8a2a2312d5a8fdd98d663d99. No independent chemical-completeness or physical-container review asserted."
       }
     },
     "hazardStatementsEvidence": "documented",
@@ -119,35 +132,40 @@
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Powerfix-Gel"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Powerfix-Gel; SHA-256 5cb288d4a40aeb3c6b0657f1e9207958696fb5eeffc90dc5bc36531389348f92. No independent chemical-completeness or physical-container review asserted."
         }
       },
       "04031255045931": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Powerfix-Gel"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Powerfix-Gel; SHA-256 5cb288d4a40aeb3c6b0657f1e9207958696fb5eeffc90dc5bc36531389348f92. No independent chemical-completeness or physical-container review asserted."
         }
       },
       "04031255045870": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Powerfix-Gel"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Powerfix-Gel; SHA-256 5cb288d4a40aeb3c6b0657f1e9207958696fb5eeffc90dc5bc36531389348f92. No independent chemical-completeness or physical-container review asserted."
         }
       },
       "04031255045924": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Powerfix-Gel"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Powerfix-Gel; SHA-256 5cb288d4a40aeb3c6b0657f1e9207958696fb5eeffc90dc5bc36531389348f92. No independent chemical-completeness or physical-container review asserted."
         }
       },
       "04031255035802": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Powerfix-Gel"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Powerfix-Gel; SHA-256 5cb288d4a40aeb3c6b0657f1e9207958696fb5eeffc90dc5bc36531389348f92. No independent chemical-completeness or physical-container review asserted."
         }
       }
     }
@@ -198,11 +216,17 @@
     "typicalUseEn": "Acidic deep cleaning in sanitary areas",
     "hazardsConfirmed": true,
     "completenessReviewed": false,
-    "currentVersionChecked": false,
+    "currentVersionChecked": true,
     "reviewMetadata": {
       "hazardsConfirmed": {
         "date": "2026-10-12",
-        "basis": "Inherited sourced hazard facts from commit 1f38cd9; Johannes Kiehl KG, Sicherheitsdatenblatt Powerfix"
+        "reviewer": "Codex document/source audit",
+        "basis": "SDS identity and section 2/3/9 facts compared to the existing record; https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j4005_sd_Powerfix_de.pdf; SHA-256 ff65f5eaabe8c4811f2e475f42c43e75b77a9860d85cb649e420e4bd5016416f. No independent chemical-completeness or physical-container review asserted."
+      },
+      "currentVersionChecked": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "Manufacturer-served document reacquired on review date; https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j4005_sd_Powerfix_de.pdf; SHA-256 ff65f5eaabe8c4811f2e475f42c43e75b77a9860d85cb649e420e4bd5016416f. No independent chemical-completeness or physical-container review asserted."
       }
     },
     "hazardStatementsEvidence": "documented",
@@ -211,28 +235,32 @@
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Powerfix"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Powerfix; SHA-256 04c4af4cd320e20103c71d7e508b96d4b179c3ce9b6ce4b7b3b0e9ccba7ebcd7. No independent chemical-completeness or physical-container review asserted."
         }
       },
       "04031255036526": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Powerfix"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Powerfix; SHA-256 04c4af4cd320e20103c71d7e508b96d4b179c3ce9b6ce4b7b3b0e9ccba7ebcd7. No independent chemical-completeness or physical-container review asserted."
         }
       },
       "04031255002569": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Powerfix"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Powerfix; SHA-256 04c4af4cd320e20103c71d7e508b96d4b179c3ce9b6ce4b7b3b0e9ccba7ebcd7. No independent chemical-completeness or physical-container review asserted."
         }
       },
       "04031255012148": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Powerfix"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Powerfix; SHA-256 04c4af4cd320e20103c71d7e508b96d4b179c3ce9b6ce4b7b3b0e9ccba7ebcd7. No independent chemical-completeness or physical-container review asserted."
         }
       }
     }
@@ -284,11 +312,17 @@
     "typicalUseEn": "Daily acidic sanitary cleaning",
     "hazardsConfirmed": true,
     "completenessReviewed": false,
-    "currentVersionChecked": false,
+    "currentVersionChecked": true,
     "reviewMetadata": {
       "hazardsConfirmed": {
         "date": "2026-10-12",
-        "basis": "Inherited sourced hazard facts from commit 1f38cd9; Johannes Kiehl KG, Sicherheitsdatenblatt Santex"
+        "reviewer": "Codex document/source audit",
+        "basis": "SDS identity and section 2/3/9 facts compared to the existing record; https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j4010_sd_Santex_de.pdf; SHA-256 a6c66307f1427892f4f7bec70d5ed0b45a6518512fe0a4f14150406a202fa691. No independent chemical-completeness or physical-container review asserted."
+      },
+      "currentVersionChecked": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "Manufacturer-served document reacquired on review date; https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j4010_sd_Santex_de.pdf; SHA-256 a6c66307f1427892f4f7bec70d5ed0b45a6518512fe0a4f14150406a202fa691. No independent chemical-completeness or physical-container review asserted."
       }
     },
     "hazardStatementsEvidence": "documented",
@@ -297,21 +331,24 @@
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Santex"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Santex; SHA-256 f10b7e1310433793db8dffecbf95678058c490096b2359da77499a5c69185cea. No independent chemical-completeness or physical-container review asserted."
         }
       },
       "04031255003245": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Santex"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Santex; SHA-256 f10b7e1310433793db8dffecbf95678058c490096b2359da77499a5c69185cea. No independent chemical-completeness or physical-container review asserted."
         }
       },
       "04031255032894": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Santex"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Santex; SHA-256 f10b7e1310433793db8dffecbf95678058c490096b2359da77499a5c69185cea. No independent chemical-completeness or physical-container review asserted."
         }
       }
     }
@@ -361,11 +398,17 @@
     "typicalUseEn": "Descaling in sanitary and food areas",
     "hazardsConfirmed": true,
     "completenessReviewed": false,
-    "currentVersionChecked": false,
+    "currentVersionChecked": true,
     "reviewMetadata": {
       "hazardsConfirmed": {
         "date": "2026-10-12",
-        "basis": "Inherited sourced hazard facts from commit 1f38cd9; Johannes Kiehl KG, Sicherheitsdatenblatt Calinex"
+        "reviewer": "Codex document/source audit",
+        "basis": "SDS identity and section 2/3/9 facts compared to the existing record; https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j4038_sd_Calinex_de.pdf; SHA-256 70278848e6bb0dc1e99ef85b78387e29b102d795a5ea6ecfd4900bb1120ad60a. No independent chemical-completeness or physical-container review asserted."
+      },
+      "currentVersionChecked": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "Manufacturer-served document reacquired on review date; https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j4038_sd_Calinex_de.pdf; SHA-256 70278848e6bb0dc1e99ef85b78387e29b102d795a5ea6ecfd4900bb1120ad60a. No independent chemical-completeness or physical-container review asserted."
       }
     },
     "hazardStatementsEvidence": "documented",
@@ -374,21 +417,24 @@
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Calinex"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Calinex; SHA-256 27bb5a3812a83ea1387db95689d66953c81b35acad69ab79f0ddb04db99e8815. No independent chemical-completeness or physical-container review asserted."
         }
       },
       "04031255055817": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Calinex"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Calinex; SHA-256 27bb5a3812a83ea1387db95689d66953c81b35acad69ab79f0ddb04db99e8815. No independent chemical-completeness or physical-container review asserted."
         }
       },
       "04031255055350": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Calinex"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Calinex; SHA-256 27bb5a3812a83ea1387db95689d66953c81b35acad69ab79f0ddb04db99e8815. No independent chemical-completeness or physical-container review asserted."
         }
       }
     }
@@ -438,11 +484,17 @@
     "typicalUseEn": "Sanitary cleaning with oxygen bleach",
     "hazardsConfirmed": true,
     "completenessReviewed": false,
-    "currentVersionChecked": false,
+    "currentVersionChecked": true,
     "reviewMetadata": {
       "hazardsConfirmed": {
         "date": "2026-10-12",
-        "basis": "Inherited sourced hazard facts from commit 1f38cd9; Johannes Kiehl KG, Sicherheitsdatenblatt Oxycal"
+        "reviewer": "Codex document/source audit",
+        "basis": "SDS identity and section 2/3/9 facts compared to the existing record; https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j4030_sd_Oxycal_de.pdf; SHA-256 b817120b056d5edda9b4a0181f9bdbbfa8c11ff8b60edf3903d0481f4caee671. No independent chemical-completeness or physical-container review asserted."
+      },
+      "currentVersionChecked": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "Manufacturer-served document reacquired on review date; https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j4030_sd_Oxycal_de.pdf; SHA-256 b817120b056d5edda9b4a0181f9bdbbfa8c11ff8b60edf3903d0481f4caee671. No independent chemical-completeness or physical-container review asserted."
       }
     },
     "hazardStatementsEvidence": "documented",
@@ -451,14 +503,16 @@
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Oxycal"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Oxycal; SHA-256 3b0903fe62379da2c46d80c9b1be3f4f7dca865ab242318835278afc8da17c34. No independent chemical-completeness or physical-container review asserted."
         }
       },
       "04031255042510": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Oxycal"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Oxycal; SHA-256 3b0903fe62379da2c46d80c9b1be3f4f7dca865ab242318835278afc8da17c34. No independent chemical-completeness or physical-container review asserted."
         }
       }
     }
@@ -504,11 +558,17 @@
     "typicalUseEn": "Smoke chambers, grills, ovens",
     "hazardsConfirmed": true,
     "completenessReviewed": false,
-    "currentVersionChecked": false,
+    "currentVersionChecked": true,
     "reviewMetadata": {
       "hazardsConfirmed": {
         "date": "2026-10-12",
-        "basis": "Inherited sourced hazard facts from commit 1f38cd9; Johannes Kiehl KG, Sicherheitsdatenblatt Fumex"
+        "reviewer": "Codex document/source audit",
+        "basis": "SDS identity and section 2/3/9 facts compared to the existing record; https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j5511_sd_Fumex_de.pdf; SHA-256 213c2cedaa7178c592d7180dda97f31f9a2b43b25f4380e6b794df5d83ca58a9. No independent chemical-completeness or physical-container review asserted."
+      },
+      "currentVersionChecked": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "Manufacturer-served document reacquired on review date; https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j5511_sd_Fumex_de.pdf; SHA-256 213c2cedaa7178c592d7180dda97f31f9a2b43b25f4380e6b794df5d83ca58a9. No independent chemical-completeness or physical-container review asserted."
       }
     },
     "hazardStatementsEvidence": "documented",
@@ -517,28 +577,32 @@
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Kuechen-und-Lebensmittelindustrie/Kuechenreinigung-und-Lebensmittelhygiene/Fumex"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Kuechen-und-Lebensmittelindustrie/Kuechenreinigung-und-Lebensmittelhygiene/Fumex; SHA-256 4a26a22119090d3a767a623dabb280557328f5d73b384d7602dc4a7b47a50652. No independent chemical-completeness or physical-container review asserted."
         }
       },
       "04031255008325": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Kuechen-und-Lebensmittelindustrie/Kuechenreinigung-und-Lebensmittelhygiene/Fumex"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Kuechen-und-Lebensmittelindustrie/Kuechenreinigung-und-Lebensmittelhygiene/Fumex; SHA-256 4a26a22119090d3a767a623dabb280557328f5d73b384d7602dc4a7b47a50652. No independent chemical-completeness or physical-container review asserted."
         }
       },
       "04031255008332": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Kuechen-und-Lebensmittelindustrie/Kuechenreinigung-und-Lebensmittelhygiene/Fumex"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Kuechen-und-Lebensmittelindustrie/Kuechenreinigung-und-Lebensmittelhygiene/Fumex; SHA-256 4a26a22119090d3a767a623dabb280557328f5d73b384d7602dc4a7b47a50652. No independent chemical-completeness or physical-container review asserted."
         }
       },
       "04031255048888": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Kuechen-und-Lebensmittelindustrie/Kuechenreinigung-und-Lebensmittelhygiene/Fumex"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Kuechen-und-Lebensmittelindustrie/Kuechenreinigung-und-Lebensmittelhygiene/Fumex; SHA-256 4a26a22119090d3a767a623dabb280557328f5d73b384d7602dc4a7b47a50652. No independent chemical-completeness or physical-container review asserted."
         }
       }
     }
@@ -593,11 +657,17 @@
     "typicalUseEn": "Stripping linoleum and resilient floors",
     "hazardsConfirmed": true,
     "completenessReviewed": false,
-    "currentVersionChecked": false,
+    "currentVersionChecked": true,
     "reviewMetadata": {
       "hazardsConfirmed": {
         "date": "2026-10-12",
-        "basis": "Inherited sourced hazard facts from commit 1f38cd9; Johannes Kiehl KG, Sicherheitsdatenblatt Li-Ex"
+        "reviewer": "Codex document/source audit",
+        "basis": "SDS identity and section 2/3/9 facts compared to the existing record; https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j1502_sd_Li-Ex_de.pdf; SHA-256 0ac4d1de645c8533e75801d1c5077c4ac3890f5622e866e3bc8122472593190e. No independent chemical-completeness or physical-container review asserted."
+      },
+      "currentVersionChecked": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "Manufacturer-served document reacquired on review date; https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j1502_sd_Li-Ex_de.pdf; SHA-256 0ac4d1de645c8533e75801d1c5077c4ac3890f5622e866e3bc8122472593190e. No independent chemical-completeness or physical-container review asserted."
       }
     },
     "hazardStatementsEvidence": "documented",
@@ -606,42 +676,48 @@
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Grundreinigung/Li-Ex"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Grundreinigung/Li-Ex; SHA-256 bb309daa74f183f8f2eed441e242fe26993b6e6195d10bd01ca09d29082df841. No independent chemical-completeness or physical-container review asserted."
         }
       },
       "04031255032351": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Grundreinigung/Li-Ex"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Grundreinigung/Li-Ex; SHA-256 bb309daa74f183f8f2eed441e242fe26993b6e6195d10bd01ca09d29082df841. No independent chemical-completeness or physical-container review asserted."
         }
       },
       "04031255013114": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Grundreinigung/Li-Ex"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Grundreinigung/Li-Ex; SHA-256 bb309daa74f183f8f2eed441e242fe26993b6e6195d10bd01ca09d29082df841. No independent chemical-completeness or physical-container review asserted."
         }
       },
       "04031255035727": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Grundreinigung/Li-Ex"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Grundreinigung/Li-Ex; SHA-256 bb309daa74f183f8f2eed441e242fe26993b6e6195d10bd01ca09d29082df841. No independent chemical-completeness or physical-container review asserted."
         }
       },
       "04031255000435": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Grundreinigung/Li-Ex"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Grundreinigung/Li-Ex; SHA-256 bb309daa74f183f8f2eed441e242fe26993b6e6195d10bd01ca09d29082df841. No independent chemical-completeness or physical-container review asserted."
         }
       },
       "04031255002613": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Grundreinigung/Li-Ex"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Grundreinigung/Li-Ex; SHA-256 bb309daa74f183f8f2eed441e242fe26993b6e6195d10bd01ca09d29082df841. No independent chemical-completeness or physical-container review asserted."
         }
       }
     }
@@ -686,34 +762,43 @@
     "typicalUseEn": "Daily washroom hygiene",
     "hazardsConfirmed": true,
     "completenessReviewed": false,
-    "currentVersionChecked": false,
+    "currentVersionChecked": true,
     "reviewMetadata": {
       "hazardsConfirmed": {
         "date": "2026-10-12",
-        "basis": "Inherited sourced hazard facts from commit 1f38cd9; Johannes Kiehl KG, Sicherheitsdatenblatt Sanikal"
+        "reviewer": "Codex document/source audit",
+        "basis": "SDS identity and section 2/3/9 facts compared to the existing record; https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j4002_sd_Sanikal_de.pdf; SHA-256 3059b2bcd2c0287e6195dadcf612763d25eb3bc7096a570d1780e229d4b48dde. No independent chemical-completeness or physical-container review asserted."
+      },
+      "currentVersionChecked": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "Manufacturer-served document reacquired on review date; https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j4002_sd_Sanikal_de.pdf; SHA-256 3059b2bcd2c0287e6195dadcf612763d25eb3bc7096a570d1780e229d4b48dde. No independent chemical-completeness or physical-container review asserted."
       }
     },
-    "hazardStatementsEvidence": "undocumented",
+    "hazardStatementsEvidence": "documented_absence",
     "gtinMappings": {
       "04031255000183": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Sanikal"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Sanikal; SHA-256 936b4a35dd5cb6ec258e8533f61dc6560e1464c40ea2816afc91bce9f5925354. No independent chemical-completeness or physical-container review asserted."
         }
       },
       "04031255000954": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Sanikal"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Sanikal; SHA-256 936b4a35dd5cb6ec258e8533f61dc6560e1464c40ea2816afc91bce9f5925354. No independent chemical-completeness or physical-container review asserted."
         }
       },
       "04031255000176": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Sanikal"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Sanikal; SHA-256 936b4a35dd5cb6ec258e8533f61dc6560e1464c40ea2816afc91bce9f5925354. No independent chemical-completeness or physical-container review asserted."
         }
       }
     }
@@ -760,48 +845,59 @@
     "typicalUseEn": "Mop care for water-resistant floors",
     "hazardsConfirmed": true,
     "completenessReviewed": false,
-    "currentVersionChecked": false,
+    "currentVersionChecked": true,
     "reviewMetadata": {
       "hazardsConfirmed": {
         "date": "2026-10-12",
-        "basis": "Inherited sourced hazard facts from commit 1f38cd9; Johannes Kiehl KG, Sicherheitsdatenblatt Profloor-Konzentrat"
+        "reviewer": "Codex document/source audit",
+        "basis": "SDS identity and section 2/3/9 facts compared to the existing record; https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j3007_sd_Profloor-Konzentrat_de.pdf; SHA-256 b55001ccca6c960de950515c7420510bba301ee1d05ceb828f76c0900e037029. No independent chemical-completeness or physical-container review asserted."
+      },
+      "currentVersionChecked": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "Manufacturer-served document reacquired on review date; https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j3007_sd_Profloor-Konzentrat_de.pdf; SHA-256 b55001ccca6c960de950515c7420510bba301ee1d05ceb828f76c0900e037029. No independent chemical-completeness or physical-container review asserted."
       }
     },
-    "hazardStatementsEvidence": "undocumented",
+    "hazardStatementsEvidence": "documented_absence",
     "gtinMappings": {
       "04031255001845": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Wischpflege-Unterhalt/Profloor-Konzentrat"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Wischpflege-Unterhalt/Profloor-Konzentrat; SHA-256 619210e04181d5f2d6eb671b0493df431cbc7e6c1d87372ec99251391e88b5ad. No independent chemical-completeness or physical-container review asserted."
         }
       },
       "04031255003139": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Wischpflege-Unterhalt/Profloor-Konzentrat"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Wischpflege-Unterhalt/Profloor-Konzentrat; SHA-256 619210e04181d5f2d6eb671b0493df431cbc7e6c1d87372ec99251391e88b5ad. No independent chemical-completeness or physical-container review asserted."
         }
       },
       "04031255003320": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Wischpflege-Unterhalt/Profloor-Konzentrat"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Wischpflege-Unterhalt/Profloor-Konzentrat; SHA-256 619210e04181d5f2d6eb671b0493df431cbc7e6c1d87372ec99251391e88b5ad. No independent chemical-completeness or physical-container review asserted."
         }
       },
       "04031255003559": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Wischpflege-Unterhalt/Profloor-Konzentrat"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Wischpflege-Unterhalt/Profloor-Konzentrat; SHA-256 619210e04181d5f2d6eb671b0493df431cbc7e6c1d87372ec99251391e88b5ad. No independent chemical-completeness or physical-container review asserted."
         }
       },
       "04031255001302": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Wischpflege-Unterhalt/Profloor-Konzentrat"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Wischpflege-Unterhalt/Profloor-Konzentrat; SHA-256 619210e04181d5f2d6eb671b0493df431cbc7e6c1d87372ec99251391e88b5ad. No independent chemical-completeness or physical-container review asserted."
         }
       }
     }
@@ -853,83 +949,99 @@
     "typicalUseEn": "Routine cleaning of floors and surfaces",
     "hazardsConfirmed": true,
     "completenessReviewed": false,
-    "currentVersionChecked": false,
+    "currentVersionChecked": true,
     "reviewMetadata": {
       "hazardsConfirmed": {
         "date": "2026-10-12",
-        "basis": "Inherited sourced hazard facts from commit 1f38cd9; Johannes Kiehl KG, Sicherheitsdatenblatt Torvan-Konzentrat"
+        "reviewer": "Codex document/source audit",
+        "basis": "SDS identity and section 2/3/9 facts compared to the existing record; https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j2507_sd_Torvan-Konzentrat_de.pdf; SHA-256 ea0e4f121fb560d6457df912e3747347d9a1e22635b72d21e9c94e381bc564c1. No independent chemical-completeness or physical-container review asserted."
+      },
+      "currentVersionChecked": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "Manufacturer-served document reacquired on review date; https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j2507_sd_Torvan-Konzentrat_de.pdf; SHA-256 ea0e4f121fb560d6457df912e3747347d9a1e22635b72d21e9c94e381bc564c1. No independent chemical-completeness or physical-container review asserted."
       }
     },
-    "hazardStatementsEvidence": "undocumented",
+    "hazardStatementsEvidence": "documented_absence",
     "gtinMappings": {
       "04031255000169": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Torvan-Konzentrat"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Torvan-Konzentrat; SHA-256 b0c2ccdf73c371591c396c92b8caf652e15e750498df8d5e94d31f8f54cd2c9d. No independent chemical-completeness or physical-container review asserted."
         }
       },
       "04031255057682": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Torvan-Konzentrat"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Torvan-Konzentrat; SHA-256 b0c2ccdf73c371591c396c92b8caf652e15e750498df8d5e94d31f8f54cd2c9d. No independent chemical-completeness or physical-container review asserted."
         }
       },
       "04031255013398": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Torvan-Konzentrat"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Torvan-Konzentrat; SHA-256 b0c2ccdf73c371591c396c92b8caf652e15e750498df8d5e94d31f8f54cd2c9d. No independent chemical-completeness or physical-container review asserted."
         }
       },
       "04031255015989": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Torvan-Konzentrat"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Torvan-Konzentrat; SHA-256 b0c2ccdf73c371591c396c92b8caf652e15e750498df8d5e94d31f8f54cd2c9d. No independent chemical-completeness or physical-container review asserted."
         }
       },
       "04031255013404": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Torvan-Konzentrat"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Torvan-Konzentrat; SHA-256 b0c2ccdf73c371591c396c92b8caf652e15e750498df8d5e94d31f8f54cd2c9d. No independent chemical-completeness or physical-container review asserted."
         }
       },
       "04031255000152": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Torvan-Konzentrat"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Torvan-Konzentrat; SHA-256 b0c2ccdf73c371591c396c92b8caf652e15e750498df8d5e94d31f8f54cd2c9d. No independent chemical-completeness or physical-container review asserted."
         }
       },
       "04031255057675": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Torvan-Konzentrat"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Torvan-Konzentrat; SHA-256 b0c2ccdf73c371591c396c92b8caf652e15e750498df8d5e94d31f8f54cd2c9d. No independent chemical-completeness or physical-container review asserted."
         }
       },
       "04031255003528": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Torvan-Konzentrat"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Torvan-Konzentrat; SHA-256 b0c2ccdf73c371591c396c92b8caf652e15e750498df8d5e94d31f8f54cd2c9d. No independent chemical-completeness or physical-container review asserted."
         }
       },
       "04031255000633": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Torvan-Konzentrat"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Torvan-Konzentrat; SHA-256 b0c2ccdf73c371591c396c92b8caf652e15e750498df8d5e94d31f8f54cd2c9d. No independent chemical-completeness or physical-container review asserted."
         }
       },
       "04031255018935": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Torvan-Konzentrat"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Torvan-Konzentrat; SHA-256 b0c2ccdf73c371591c396c92b8caf652e15e750498df8d5e94d31f8f54cd2c9d. No independent chemical-completeness or physical-container review asserted."
         }
       }
     }
@@ -975,34 +1087,43 @@
     "typicalUseEn": "Routine cleaning, additive to the cleaning solution",
     "hazardsConfirmed": true,
     "completenessReviewed": false,
-    "currentVersionChecked": false,
+    "currentVersionChecked": true,
     "reviewMetadata": {
       "hazardsConfirmed": {
         "date": "2026-10-12",
-        "basis": "Inherited sourced hazard facts from commit 1f38cd9; Johannes Kiehl KG, Sicherheitsdatenblatt Clean@oxy"
+        "reviewer": "Codex document/source audit",
+        "basis": "SDS identity and section 2/3/9 facts compared to the existing record; https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j2535_sd_Cleanoxy_de.pdf; SHA-256 78e82badca1a61e32208a446b008b0497873b7610074332cab9bfd866a273a35. No independent chemical-completeness or physical-container review asserted."
+      },
+      "currentVersionChecked": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "Manufacturer-served document reacquired on review date; https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j2535_sd_Cleanoxy_de.pdf; SHA-256 78e82badca1a61e32208a446b008b0497873b7610074332cab9bfd866a273a35. No independent chemical-completeness or physical-container review asserted."
       }
     },
-    "hazardStatementsEvidence": "undocumented",
+    "hazardStatementsEvidence": "documented_absence",
     "gtinMappings": {
       "04031255057910": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Cleanoxy"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Cleanoxy; SHA-256 dd75af42bc51d03982ec44bb57814ab868cb6e29ea820f02b06bcd4c339b0969. No independent chemical-completeness or physical-container review asserted."
         }
       },
       "04031255057958": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Cleanoxy"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Cleanoxy; SHA-256 dd75af42bc51d03982ec44bb57814ab868cb6e29ea820f02b06bcd4c339b0969. No independent chemical-completeness or physical-container review asserted."
         }
       },
       "04031255058580": {
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Cleanoxy"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Cleanoxy; SHA-256 dd75af42bc51d03982ec44bb57814ab868cb6e29ea820f02b06bcd4c339b0969. No independent chemical-completeness or physical-container review asserted."
         }
       }
     }
@@ -1182,7 +1303,8 @@
     ],
     "ph": {
       "min": 0.5,
-      "max": 0.5
+      "max": 0.5,
+      "concentrationPercent": 100
     },
     "dataLane": "public_law",
     "sourceType": "sds",
@@ -1192,7 +1314,8 @@
       "sourceHost": "manufacturer",
       "revisionDate": "2025-09-16",
       "sha256": "3b0ba49c7e108782bdc106e75f70e255a029842882d3f2e72f85f56f1df8295e",
-      "verificationDate": "2026-10-12"
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/sanitaerreiniger/1373/milizid"
     },
     "activeIngredients": "Sulfamidsäure 10 – < 25 % (CAS 5329-14-6)",
     "descriptionDe": "Saurer Sanitärreiniger und Kalklöser für die gewerbliche Verwendung.",
@@ -1201,16 +1324,60 @@
     "typicalUseEn": "Sanitary cleaning, limescale and urine-scale removal",
     "hazardsConfirmed": true,
     "completenessReviewed": false,
-    "currentVersionChecked": false,
+    "currentVersionChecked": true,
     "reviewMetadata": {
       "hazardsConfirmed": {
         "date": "2026-10-12",
-        "basis": "Inherited sourced hazard facts from commit 1f38cd9; DR.SCHNELL, Sicherheitsdatenblatt MILIZID (Fassung GHS 1.0)"
+        "reviewer": "Codex document/source audit",
+        "basis": "SDS identity and section 2/3/9 facts compared to the existing record; https://shop.dr-schnell.com/Datasheets/download/MILIZID/SDB/de_DE/pdf/DE; SHA-256 3b0ba49c7e108782bdc106e75f70e255a029842882d3f2e72f85f56f1df8295e. No independent chemical-completeness or physical-container review asserted."
+      },
+      "currentVersionChecked": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "Manufacturer-served document reacquired on review date; https://shop.dr-schnell.com/Datasheets/download/MILIZID/SDB/de_DE/pdf/DE; SHA-256 3b0ba49c7e108782bdc106e75f70e255a029842882d3f2e72f85f56f1df8295e. No independent chemical-completeness or physical-container review asserted."
       }
     },
     "hazardStatementsEvidence": "documented",
-    "gtins": [],
-    "gtinMappings": {}
+    "gtins": [
+      "04008439001045",
+      "04008439300070",
+      "04008439300001",
+      "04008439001038"
+    ],
+    "gtinMappings": {
+      "04008439001045": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/sanitaerreiniger/1373/milizid; SHA-256 cca26555bb788091bf16216d4b61147918c68b2238e362f060dacdf325b84554. No independent chemical-completeness or physical-container review asserted."
+        }
+      },
+      "04008439300070": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/sanitaerreiniger/1373/milizid; SHA-256 cca26555bb788091bf16216d4b61147918c68b2238e362f060dacdf325b84554. No independent chemical-completeness or physical-container review asserted."
+        }
+      },
+      "04008439300001": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/sanitaerreiniger/1373/milizid; SHA-256 cca26555bb788091bf16216d4b61147918c68b2238e362f060dacdf325b84554. No independent chemical-completeness or physical-container review asserted."
+        }
+      },
+      "04008439001038": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/sanitaerreiniger/1373/milizid; SHA-256 cca26555bb788091bf16216d4b61147918c68b2238e362f060dacdf325b84554. No independent chemical-completeness or physical-container review asserted."
+        }
+      }
+    }
   },
   {
     "id": "domestos-professional-original",
@@ -1260,7 +1427,8 @@
     "reviewMetadata": {
       "hazardsConfirmed": {
         "date": "2026-10-12",
-        "basis": "Inherited sourced hazard facts from commit 1f38cd9; Diversey, Sicherheitsdatenblatt Domestos Professional Original (SDB-Code MS1005408, Version 1.1)"
+        "reviewer": "Codex document/source audit",
+        "basis": "SDS identity and section 2/3/9 facts compared to the existing record; https://static.vikingdirekt.at/is/content/odeu13/PDF/MSDS_1178013_DE_21-10-2022.pdf; SHA-256 f79cf65e32e2c7ed21e4edc08a372d4bebac15a0efb97155668175f1e57011ee. No independent chemical-completeness or physical-container review asserted."
       }
     },
     "hazardStatementsEvidence": "documented",
@@ -1329,7 +1497,7 @@
   },
   {
     "id": "meffert-salmiakgeist-9-5",
-    "name": "NEUTRAL Salmiakgeist 9,5 %",
+    "name": "Salmiakgeist 9,5 %",
     "brand": "Meffert",
     "chemicalGroups": [
       "ammonia"
@@ -1337,8 +1505,7 @@
     "hazardStatements": [
       "H314",
       "H318",
-      "H335",
-      "H412"
+      "H335"
     ],
     "casNumbers": [
       "1336-21-6"
@@ -1349,12 +1516,13 @@
     "dataLane": "public_law",
     "sourceType": "sds",
     "provenance": {
-      "sourceDocument": "Meffert AG Farbwerke, Sicherheitsdatenblatt NEUTRAL Salmiakgeist 9,5 % (Materialnummer 78307576800000)",
-      "sourceUrl": "https://media.hornbach.de/hb/msds/as.87226194.pdf",
-      "sourceHost": "retailer",
-      "revisionDate": "2022-02-03",
-      "sha256": "055f1c74ba027d32954df5c76a57b87617c914e1a57616c8d4889f14edc5f3a9",
-      "verificationDate": "2026-10-12"
+      "sourceDocument": "Meffert AG Farbwerke, Sicherheitsdatenblatt Salmiakgeist 9,5 %, Materialnummer 78307576800000",
+      "sourceUrl": "https://www.meffert.com/datenblaetter/Sicherheits-Datenblaetter/SDB__Meffert-Marken_und_Toechter/Sdb-neutral_%2B_Diverse/SDB_Meffert_Salmiakgeist.pdf",
+      "sourceHost": "manufacturer",
+      "revisionDate": "2025-01-28",
+      "sha256": "569b51084363c4e957622bb209b0dd66ce1bef8a841877cb5385b4f142a90e30",
+      "verificationDate": "2026-10-12",
+      "note": "Manufacturer SDS revision 2025-01-28 replaces the 2022 retailer copy; UFI 3A84-40DS-200D-6F0Q. Chemical completeness remains pending."
     },
     "activeIngredients": "Ammoniaklösung 5 – < 10 % (CAS 1336-21-6)",
     "descriptionDe": "Wässrige Ammoniaklösung als Reiniger.",
@@ -1363,16 +1531,23 @@
     "typicalUseEn": "Degreasing, pre-paint cleaning, window cleaning",
     "hazardsConfirmed": true,
     "completenessReviewed": false,
-    "currentVersionChecked": false,
+    "currentVersionChecked": true,
     "reviewMetadata": {
       "hazardsConfirmed": {
         "date": "2026-10-12",
-        "basis": "Inherited sourced hazard facts from commit 1f38cd9; Meffert AG Farbwerke, Sicherheitsdatenblatt NEUTRAL Salmiakgeist 9,5 % (Materialnummer 78307576800000)"
+        "reviewer": "Codex document/source audit",
+        "basis": "SDS identity and section 2/3/9 facts compared to the existing record; https://www.meffert.com/datenblaetter/Sicherheits-Datenblaetter/SDB__Meffert-Marken_und_Toechter/Sdb-neutral_%2B_Diverse/SDB_Meffert_Salmiakgeist.pdf; SHA-256 569b51084363c4e957622bb209b0dd66ce1bef8a841877cb5385b4f142a90e30. No independent chemical-completeness or physical-container review asserted."
+      },
+      "currentVersionChecked": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "Manufacturer-served document reacquired on review date; https://www.meffert.com/datenblaetter/Sicherheits-Datenblaetter/SDB__Meffert-Marken_und_Toechter/Sdb-neutral_%2B_Diverse/SDB_Meffert_Salmiakgeist.pdf; SHA-256 569b51084363c4e957622bb209b0dd66ce1bef8a841877cb5385b4f142a90e30. No independent chemical-completeness or physical-container review asserted."
       }
     },
     "hazardStatementsEvidence": "documented",
     "gtins": [],
-    "gtinMappings": {}
+    "gtinMappings": {},
+    "ufi": "3A84-40DS-200D-6F0Q"
   },
   {
     "id": "mellerud-schimmel-vernichter",
@@ -1411,11 +1586,16 @@
     "typicalUseEn": "Mould and mildew stains in bathrooms and grout",
     "hazardsConfirmed": true,
     "completenessReviewed": false,
-    "currentVersionChecked": false,
+    "currentVersionChecked": true,
     "reviewMetadata": {
       "hazardsConfirmed": {
         "date": "2026-10-12",
         "basis": "Inherited sourced hazard facts from commit 1f38cd9; MELLERUD CHEMIE, Datenblatt über Inhaltsstoffe nach VO (EG) 648/2004 Anhang VII D, Schimmel Vernichter (P028)"
+      },
+      "currentVersionChecked": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "Manufacturer ingredient sheet reacquired; not a full SDS; https://mellerud.de/media/export/pdf/Endverbraucherdatenbl%C3%A4tter/EDB_P028_de-DE_V26-01_DE%20Schimmel%20Vernichter.pdf; SHA-256 1648a67744752868dba89163381a79c7fc704e55e5d54c7a57eead906687235b. No independent chemical-completeness or physical-container review asserted."
       }
     },
     "hazardStatementsEvidence": "undocumented",
@@ -1424,7 +1604,8 @@
         "confirmed": true,
         "review": {
           "date": "2026-10-12",
-          "basis": "Existing manufacturer product-page mapping: https://mellerud.de/schimmel/schimmel-vernichter"
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN association rechecked; https://mellerud.de/schimmel/schimmel-vernichter; SHA-256 245293992725e7c8f4d0cc3042d545e1ea7d4a56d8c2b99edfff03dc8a8b930b. No independent chemical-completeness or physical-container review asserted."
         }
       }
     }
@@ -1478,5 +1659,1513 @@
     "hazardStatementsEvidence": "undocumented",
     "gtins": [],
     "gtinMappings": {}
+  },
+  {
+    "id": "dr-schnell-onemue-2000",
+    "name": "ONEMÜ 2000",
+    "brand": "DR.SCHNELL",
+    "gtins": [
+      "04008439001236"
+    ],
+    "chemicalGroups": [
+      "unknown"
+    ],
+    "hazardStatements": [
+      "H315",
+      "H319"
+    ],
+    "casNumbers": [
+      "68891-38-3",
+      "147170-44-3"
+    ],
+    "ph": {
+      "min": 5.5,
+      "max": 5.5,
+      "concentrationPercent": 100
+    },
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": true,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "SDS identity and sections 2/3/9 checked; unsupported hazard groups remain unknown; https://shop.dr-schnell.com/Datasheets/download/ONEM%C3%9C%202000/SDB/de_DE/pdf/DE; SHA-256 46b2a47aefb5938860dbf5b12e06b012c74d6dd4e70d1068b142f77bae41a811. No independent chemical-completeness or physical-container review asserted."
+      },
+      "currentVersionChecked": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "Current manufacturer-served German SDS acquired on review date; https://shop.dr-schnell.com/Datasheets/download/ONEM%C3%9C%202000/SDB/de_DE/pdf/DE; SHA-256 46b2a47aefb5938860dbf5b12e06b012c74d6dd4e70d1068b142f77bae41a811. No independent chemical-completeness or physical-container review asserted."
+      }
+    },
+    "gtinMappings": {
+      "04008439001236": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/kuechen-und-lebensmittelhygiene/handspuelmittel/1381/onemue-2000; SHA-256 53844818673259265b178992785badeea3ed73786c8c56b544f52dca0c6de376. No independent chemical-completeness or physical-container review asserted."
+        }
+      }
+    },
+    "hazardStatementsEvidence": "documented",
+    "dataLane": "public_law",
+    "sourceType": "sds",
+    "provenance": {
+      "sourceDocument": "DR.SCHNELL, deutsches Sicherheitsdatenblatt ONEMÜ 2000",
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/ONEM%C3%9C%202000/SDB/de_DE/pdf/DE",
+      "sourceHost": "manufacturer",
+      "revisionDate": "2025-11-19",
+      "sha256": "46b2a47aefb5938860dbf5b12e06b012c74d6dd4e70d1068b142f77bae41a811",
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/kuechen-und-lebensmittelhygiene/handspuelmittel/1381/onemue-2000",
+      "note": "Manufacturer SDS and published EAN association reviewed. Chemical-completeness review remains pending. Unknown hazard groups never mean neutral."
+    },
+    "descriptionDe": "ONEMÜ 2000: Hersteller-SDB geprüft; Vollständigkeitsprüfung noch ausstehend.",
+    "descriptionEn": "ONEMÜ 2000: manufacturer SDS reviewed; chemical-completeness review pending."
+  },
+  {
+    "id": "dr-schnell-easy-quick-a",
+    "name": "EASY QUICK A",
+    "brand": "DR.SCHNELL",
+    "gtins": [
+      "04008439036863"
+    ],
+    "chemicalGroups": [
+      "caustic_lye",
+      "organic_solvent"
+    ],
+    "hazardStatements": [
+      "H290",
+      "H314",
+      "H318"
+    ],
+    "casNumbers": [
+      "112-34-5",
+      "1310-58-3",
+      "110-97-4",
+      "15763-76-5"
+    ],
+    "ph": {
+      "min": 13.7,
+      "max": 13.7,
+      "concentrationPercent": 100
+    },
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": true,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "SDS identity and sections 2/3/9 checked; unsupported hazard groups remain unknown; https://shop.dr-schnell.com/Datasheets/download/EASY%20QUICK%20A/SDB/de_DE/pdf/DE; SHA-256 5d3896d5938b0c380908ccb569e950660f75436020a149e85b2b777c5d496351. No independent chemical-completeness or physical-container review asserted."
+      },
+      "currentVersionChecked": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "Current manufacturer-served German SDS acquired on review date; https://shop.dr-schnell.com/Datasheets/download/EASY%20QUICK%20A/SDB/de_DE/pdf/DE; SHA-256 5d3896d5938b0c380908ccb569e950660f75436020a149e85b2b777c5d496351. No independent chemical-completeness or physical-container review asserted."
+      }
+    },
+    "gtinMappings": {
+      "04008439036863": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/boeden/1939/easy-quick-a; SHA-256 20be465f3d5ac866bfc8000f43e8dde423ec3c25b3ead0bfd415526ed91db95f. No independent chemical-completeness or physical-container review asserted."
+        }
+      }
+    },
+    "hazardStatementsEvidence": "documented",
+    "dataLane": "public_law",
+    "sourceType": "sds",
+    "provenance": {
+      "sourceDocument": "DR.SCHNELL, deutsches Sicherheitsdatenblatt EASY QUICK A",
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/EASY%20QUICK%20A/SDB/de_DE/pdf/DE",
+      "sourceHost": "manufacturer",
+      "revisionDate": "2025-09-25",
+      "sha256": "5d3896d5938b0c380908ccb569e950660f75436020a149e85b2b777c5d496351",
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/boeden/1939/easy-quick-a",
+      "note": "Manufacturer SDS and published EAN association reviewed. Chemical-completeness review remains pending. Unknown hazard groups never mean neutral."
+    },
+    "descriptionDe": "EASY QUICK A: Hersteller-SDB geprüft; Vollständigkeitsprüfung noch ausstehend.",
+    "descriptionEn": "EASY QUICK A: manufacturer SDS reviewed; chemical-completeness review pending."
+  },
+  {
+    "id": "dr-schnell-easy-quick-n",
+    "name": "EASY QUICK N",
+    "brand": "DR.SCHNELL",
+    "gtins": [
+      "04008439036283"
+    ],
+    "chemicalGroups": [
+      "unknown"
+    ],
+    "hazardStatements": [],
+    "casNumbers": [],
+    "ph": {
+      "min": 9,
+      "max": 9,
+      "concentrationPercent": 100
+    },
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": true,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "SDS identity and sections 2/3/9 checked; unsupported hazard groups remain unknown; https://shop.dr-schnell.com/Datasheets/download/EASY%20QUICK%20N/SDB/de_DE/pdf/DE; SHA-256 927da3e6a9200a9ac2434ed6b1242bd92de3ae19550197ccfa14128524c6d4e0. No independent chemical-completeness or physical-container review asserted."
+      },
+      "currentVersionChecked": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "Current manufacturer-served German SDS acquired on review date; https://shop.dr-schnell.com/Datasheets/download/EASY%20QUICK%20N/SDB/de_DE/pdf/DE; SHA-256 927da3e6a9200a9ac2434ed6b1242bd92de3ae19550197ccfa14128524c6d4e0. No independent chemical-completeness or physical-container review asserted."
+      }
+    },
+    "gtinMappings": {
+      "04008439036283": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1921/easy-quick-n; SHA-256 c7ef6a94ef6e118a584cdad88d2b81c0389b709acb149133c9c5dd0a967b988d. No independent chemical-completeness or physical-container review asserted."
+        }
+      }
+    },
+    "hazardStatementsEvidence": "documented_absence",
+    "dataLane": "public_law",
+    "sourceType": "sds",
+    "provenance": {
+      "sourceDocument": "DR.SCHNELL, deutsches Sicherheitsdatenblatt EASY QUICK N",
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/EASY%20QUICK%20N/SDB/de_DE/pdf/DE",
+      "sourceHost": "manufacturer",
+      "revisionDate": "2025-07-08",
+      "sha256": "927da3e6a9200a9ac2434ed6b1242bd92de3ae19550197ccfa14128524c6d4e0",
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1921/easy-quick-n",
+      "note": "Manufacturer SDS and published EAN association reviewed. Chemical-completeness review remains pending. Unknown hazard groups never mean neutral."
+    },
+    "descriptionDe": "EASY QUICK N: Hersteller-SDB geprüft; Vollständigkeitsprüfung noch ausstehend.",
+    "descriptionEn": "EASY QUICK N: manufacturer SDS reviewed; chemical-completeness review pending."
+  },
+  {
+    "id": "dr-schnell-glasfee",
+    "name": "GLASFEE",
+    "brand": "DR.SCHNELL",
+    "gtins": [
+      "04008439001564",
+      "04008439001373",
+      "04008439001427"
+    ],
+    "chemicalGroups": [
+      "organic_solvent"
+    ],
+    "hazardStatements": [
+      "EUH210"
+    ],
+    "casNumbers": [
+      "67-63-0",
+      "5131-66-8"
+    ],
+    "ph": {
+      "min": 10,
+      "max": 10,
+      "concentrationPercent": 100
+    },
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": true,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "SDS identity and sections 2/3/9 checked; unsupported hazard groups remain unknown; https://shop.dr-schnell.com/Datasheets/download/GLASFEE/SDB/de_DE/pdf/DE; SHA-256 b8e0559a66b4a4fe8ba0817d8b2e4a1deeeb8b82e1a4758adf7c0b5cf8d8252a. No independent chemical-completeness or physical-container review asserted."
+      },
+      "currentVersionChecked": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "Current manufacturer-served German SDS acquired on review date; https://shop.dr-schnell.com/Datasheets/download/GLASFEE/SDB/de_DE/pdf/DE; SHA-256 b8e0559a66b4a4fe8ba0817d8b2e4a1deeeb8b82e1a4758adf7c0b5cf8d8252a. No independent chemical-completeness or physical-container review asserted."
+      }
+    },
+    "gtinMappings": {
+      "04008439001564": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1388/glasfee; SHA-256 d3c4662d94cf35b6cac42dbf038f299dd2388c3773ef7cf5f7b4d1e9e24639aa. No independent chemical-completeness or physical-container review asserted."
+        }
+      },
+      "04008439001373": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1388/glasfee; SHA-256 d3c4662d94cf35b6cac42dbf038f299dd2388c3773ef7cf5f7b4d1e9e24639aa. No independent chemical-completeness or physical-container review asserted."
+        }
+      },
+      "04008439001427": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1388/glasfee; SHA-256 d3c4662d94cf35b6cac42dbf038f299dd2388c3773ef7cf5f7b4d1e9e24639aa. No independent chemical-completeness or physical-container review asserted."
+        }
+      }
+    },
+    "hazardStatementsEvidence": "documented",
+    "dataLane": "public_law",
+    "sourceType": "sds",
+    "provenance": {
+      "sourceDocument": "DR.SCHNELL, deutsches Sicherheitsdatenblatt GLASFEE",
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/GLASFEE/SDB/de_DE/pdf/DE",
+      "sourceHost": "manufacturer",
+      "revisionDate": "2025-08-07",
+      "sha256": "b8e0559a66b4a4fe8ba0817d8b2e4a1deeeb8b82e1a4758adf7c0b5cf8d8252a",
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1388/glasfee",
+      "note": "Manufacturer SDS and published EAN association reviewed. Chemical-completeness review remains pending. Unknown hazard groups never mean neutral."
+    },
+    "descriptionDe": "GLASFEE: Hersteller-SDB geprüft; Vollständigkeitsprüfung noch ausstehend.",
+    "descriptionEn": "GLASFEE: manufacturer SDS reviewed; chemical-completeness review pending."
+  },
+  {
+    "id": "dr-schnell-milizid-eco",
+    "name": "MILIZID ECO",
+    "brand": "DR.SCHNELL",
+    "gtins": [
+      "04008439009928",
+      "04008439309974"
+    ],
+    "chemicalGroups": [
+      "acid"
+    ],
+    "hazardStatements": [
+      "H314",
+      "H318"
+    ],
+    "casNumbers": [
+      "75-75-2",
+      "77-92-9",
+      "69011-36-5"
+    ],
+    "ph": {
+      "min": 0.3,
+      "max": 0.3,
+      "concentrationPercent": 100
+    },
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": true,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "SDS identity and sections 2/3/9 checked; unsupported hazard groups remain unknown; https://shop.dr-schnell.com/Datasheets/download/MILIZID%20ECO/SDB/de_DE/pdf/DE; SHA-256 22b616d401cab6cfaccd661fd5d1a9d961bd8437e0b2053516dedc7015c45af0. No independent chemical-completeness or physical-container review asserted."
+      },
+      "currentVersionChecked": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "Current manufacturer-served German SDS acquired on review date; https://shop.dr-schnell.com/Datasheets/download/MILIZID%20ECO/SDB/de_DE/pdf/DE; SHA-256 22b616d401cab6cfaccd661fd5d1a9d961bd8437e0b2053516dedc7015c45af0. No independent chemical-completeness or physical-container review asserted."
+      }
+    },
+    "gtinMappings": {
+      "04008439009928": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/sanitaerreiniger/1481/milizid-eco; SHA-256 23e496d46ad1caec0be5b4b7044f5fb461e25322ba0a0bb817f93a8b76a00fa4. No independent chemical-completeness or physical-container review asserted."
+        }
+      },
+      "04008439309974": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/sanitaerreiniger/1481/milizid-eco; SHA-256 23e496d46ad1caec0be5b4b7044f5fb461e25322ba0a0bb817f93a8b76a00fa4. No independent chemical-completeness or physical-container review asserted."
+        }
+      }
+    },
+    "hazardStatementsEvidence": "documented",
+    "dataLane": "public_law",
+    "sourceType": "sds",
+    "provenance": {
+      "sourceDocument": "DR.SCHNELL, deutsches Sicherheitsdatenblatt MILIZID ECO",
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/MILIZID%20ECO/SDB/de_DE/pdf/DE",
+      "sourceHost": "manufacturer",
+      "revisionDate": "2025-09-16",
+      "sha256": "22b616d401cab6cfaccd661fd5d1a9d961bd8437e0b2053516dedc7015c45af0",
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/sanitaerreiniger/1481/milizid-eco",
+      "note": "Manufacturer SDS and published EAN association reviewed. Chemical-completeness review remains pending. Unknown hazard groups never mean neutral."
+    },
+    "descriptionDe": "MILIZID ECO: Hersteller-SDB geprüft; Vollständigkeitsprüfung noch ausstehend.",
+    "descriptionEn": "MILIZID ECO: manufacturer SDS reviewed; chemical-completeness review pending."
+  },
+  {
+    "id": "dr-schnell-rapido-sprueh-ex",
+    "name": "RAPIDO SPRÜH-EX",
+    "brand": "DR.SCHNELL",
+    "gtins": [
+      "04008439001953"
+    ],
+    "chemicalGroups": [
+      "organic_solvent"
+    ],
+    "hazardStatements": [
+      "EUH210"
+    ],
+    "casNumbers": [
+      "64-17-5",
+      "126-92-1"
+    ],
+    "ph": {
+      "min": 11.1,
+      "max": 11.1,
+      "concentrationPercent": 100
+    },
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": true,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "SDS identity and sections 2/3/9 checked; unsupported hazard groups remain unknown; https://shop.dr-schnell.com/Datasheets/download/DR.SCHNELL%C2%B4S%20RAPIDO%20SPR%C3%9CH-EX/SDB/de_DE/pdf/DE; SHA-256 fc49ce61928845c2b99646a14e7e9a897ad68f22f24b39c2c4885dd16066a615. No independent chemical-completeness or physical-container review asserted."
+      },
+      "currentVersionChecked": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "Current manufacturer-served German SDS acquired on review date; https://shop.dr-schnell.com/Datasheets/download/DR.SCHNELL%C2%B4S%20RAPIDO%20SPR%C3%9CH-EX/SDB/de_DE/pdf/DE; SHA-256 fc49ce61928845c2b99646a14e7e9a897ad68f22f24b39c2c4885dd16066a615. No independent chemical-completeness or physical-container review asserted."
+      }
+    },
+    "gtinMappings": {
+      "04008439001953": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/textile-bodenbelaege-polster/1405/dr.schnell-s-rapido-sprueh-ex; SHA-256 c3d1dff66ade8fdce0e51cbcae7c1c8981bb7204fc2d1d8a1b76c3cb2ffb02b1. No independent chemical-completeness or physical-container review asserted."
+        }
+      }
+    },
+    "hazardStatementsEvidence": "documented",
+    "dataLane": "public_law",
+    "sourceType": "sds",
+    "provenance": {
+      "sourceDocument": "DR.SCHNELL, deutsches Sicherheitsdatenblatt RAPIDO SPRÜH-EX",
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/DR.SCHNELL%C2%B4S%20RAPIDO%20SPR%C3%9CH-EX/SDB/de_DE/pdf/DE",
+      "sourceHost": "manufacturer",
+      "revisionDate": "2025-05-21",
+      "sha256": "fc49ce61928845c2b99646a14e7e9a897ad68f22f24b39c2c4885dd16066a615",
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/textile-bodenbelaege-polster/1405/dr.schnell-s-rapido-sprueh-ex",
+      "note": "Manufacturer SDS and published EAN association reviewed. Chemical-completeness review remains pending. Unknown hazard groups never mean neutral."
+    },
+    "descriptionDe": "RAPIDO SPRÜH-EX: Hersteller-SDB geprüft; Vollständigkeitsprüfung noch ausstehend.",
+    "descriptionEn": "RAPIDO SPRÜH-EX: manufacturer SDS reviewed; chemical-completeness review pending."
+  },
+  {
+    "id": "dr-schnell-milizid-kalkreiniger",
+    "name": "MILIZID KALKREINIGER",
+    "brand": "DR.SCHNELL",
+    "gtins": [
+      "04008439001069",
+      "04008439300056"
+    ],
+    "chemicalGroups": [
+      "acid"
+    ],
+    "hazardStatements": [
+      "H315",
+      "H319"
+    ],
+    "casNumbers": [
+      "5329-14-6",
+      "69011-36-5"
+    ],
+    "ph": {
+      "min": 0.5,
+      "max": 0.5,
+      "concentrationPercent": 100
+    },
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": true,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "SDS identity and sections 2/3/9 checked; unsupported hazard groups remain unknown; https://shop.dr-schnell.com/Datasheets/download/MILIZID%20KALKREINIGER/SDB/de_DE/pdf/DE; SHA-256 84e0daa34a95cd203f14155f5df3879a84aea06da99448862c698b0eda067950. No independent chemical-completeness or physical-container review asserted."
+      },
+      "currentVersionChecked": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "Current manufacturer-served German SDS acquired on review date; https://shop.dr-schnell.com/Datasheets/download/MILIZID%20KALKREINIGER/SDB/de_DE/pdf/DE; SHA-256 84e0daa34a95cd203f14155f5df3879a84aea06da99448862c698b0eda067950. No independent chemical-completeness or physical-container review asserted."
+      }
+    },
+    "gtinMappings": {
+      "04008439001069": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/sanitaerreiniger/1374/milizid-kalkreiniger; SHA-256 f84729e0299722afb9e0e30440d13e436d77f16a6587eb90cb4db2b035056d50. No independent chemical-completeness or physical-container review asserted."
+        }
+      },
+      "04008439300056": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/sanitaerreiniger/1374/milizid-kalkreiniger; SHA-256 f84729e0299722afb9e0e30440d13e436d77f16a6587eb90cb4db2b035056d50. No independent chemical-completeness or physical-container review asserted."
+        }
+      }
+    },
+    "hazardStatementsEvidence": "documented",
+    "dataLane": "public_law",
+    "sourceType": "sds",
+    "provenance": {
+      "sourceDocument": "DR.SCHNELL, deutsches Sicherheitsdatenblatt MILIZID KALKREINIGER",
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/MILIZID%20KALKREINIGER/SDB/de_DE/pdf/DE",
+      "sourceHost": "manufacturer",
+      "revisionDate": "2025-01-13",
+      "sha256": "84e0daa34a95cd203f14155f5df3879a84aea06da99448862c698b0eda067950",
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/sanitaerreiniger/1374/milizid-kalkreiniger",
+      "note": "Manufacturer SDS and published EAN association reviewed. Chemical-completeness review remains pending. Unknown hazard groups never mean neutral."
+    },
+    "descriptionDe": "MILIZID KALKREINIGER: Hersteller-SDB geprüft; Vollständigkeitsprüfung noch ausstehend.",
+    "descriptionEn": "MILIZID KALKREINIGER: manufacturer SDS reviewed; chemical-completeness review pending."
+  },
+  {
+    "id": "dr-schnell-ecolution-forol-ultrahochkonzentrat",
+    "name": "ECOLUTION FOROL ULTRAHOCHKONZENTRAT",
+    "brand": "DR.SCHNELL",
+    "gtins": [
+      "04008439312127"
+    ],
+    "chemicalGroups": [
+      "organic_solvent"
+    ],
+    "hazardStatements": [
+      "H318"
+    ],
+    "casNumbers": [
+      "160875-66-1",
+      "105-95-3",
+      "112-34-5"
+    ],
+    "ph": {
+      "min": 10.6,
+      "max": 10.6,
+      "concentrationPercent": 100
+    },
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": true,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "SDS identity and sections 2/3/9 checked; unsupported hazard groups remain unknown; https://shop.dr-schnell.com/Datasheets/download/ECOLUTION%20FOROL%20ULTRAHOCHKONZENTRAT/SDB/de_DE/pdf/DE; SHA-256 895889ae392eb896cf81c56c143fb18ea3b4610514d7733188ce5bf833f7e970. No independent chemical-completeness or physical-container review asserted."
+      },
+      "currentVersionChecked": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "Current manufacturer-served German SDS acquired on review date; https://shop.dr-schnell.com/Datasheets/download/ECOLUTION%20FOROL%20ULTRAHOCHKONZENTRAT/SDB/de_DE/pdf/DE; SHA-256 895889ae392eb896cf81c56c143fb18ea3b4610514d7733188ce5bf833f7e970. No independent chemical-completeness or physical-container review asserted."
+      }
+    },
+    "gtinMappings": {
+      "04008439312127": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1326/ecolution-forol-ultrahochkonzentrat; SHA-256 46abfe6db2a6d1bc7b50e6af4c5843783d2812e446eca18ad7cc3d5656223816. No independent chemical-completeness or physical-container review asserted."
+        }
+      }
+    },
+    "hazardStatementsEvidence": "documented",
+    "dataLane": "public_law",
+    "sourceType": "sds",
+    "provenance": {
+      "sourceDocument": "DR.SCHNELL, deutsches Sicherheitsdatenblatt ECOLUTION FOROL ULTRAHOCHKONZENTRAT",
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/ECOLUTION%20FOROL%20ULTRAHOCHKONZENTRAT/SDB/de_DE/pdf/DE",
+      "sourceHost": "manufacturer",
+      "revisionDate": "2025-08-06",
+      "sha256": "895889ae392eb896cf81c56c143fb18ea3b4610514d7733188ce5bf833f7e970",
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1326/ecolution-forol-ultrahochkonzentrat",
+      "note": "Manufacturer SDS and published EAN association reviewed. Chemical-completeness review remains pending. Unknown hazard groups never mean neutral."
+    },
+    "descriptionDe": "ECOLUTION FOROL ULTRAHOCHKONZENTRAT: Hersteller-SDB geprüft; Vollständigkeitsprüfung noch ausstehend.",
+    "descriptionEn": "ECOLUTION FOROL ULTRAHOCHKONZENTRAT: manufacturer SDS reviewed; chemical-completeness review pending."
+  },
+  {
+    "id": "dr-schnell-levante-eco",
+    "name": "LEVANTE ECO",
+    "brand": "DR.SCHNELL",
+    "gtins": [
+      "04008439035828"
+    ],
+    "chemicalGroups": [
+      "organic_solvent"
+    ],
+    "hazardStatements": [
+      "EUH210"
+    ],
+    "casNumbers": [
+      "64-17-5",
+      "68154-97-2",
+      "68439-46-3",
+      "160901-09-7"
+    ],
+    "ph": {
+      "min": 7.2,
+      "max": 7.2,
+      "concentrationPercent": 100
+    },
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": true,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "SDS identity and sections 2/3/9 checked; unsupported hazard groups remain unknown; https://shop.dr-schnell.com/Datasheets/download/LEVANTE%20ECO/SDB/de_DE/pdf/DE; SHA-256 761e602d588e46ff940f19de8a0030138894777a10adf01f6f62b5f0476daef7. No independent chemical-completeness or physical-container review asserted."
+      },
+      "currentVersionChecked": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "Current manufacturer-served German SDS acquired on review date; https://shop.dr-schnell.com/Datasheets/download/LEVANTE%20ECO/SDB/de_DE/pdf/DE; SHA-256 761e602d588e46ff940f19de8a0030138894777a10adf01f6f62b5f0476daef7. No independent chemical-completeness or physical-container review asserted."
+      }
+    },
+    "gtinMappings": {
+      "04008439035828": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1766/levante-eco; SHA-256 a5e091384bdee6186570b2f2be706b866ea2ba80c3ff611c28fb6829ee1bc77d. No independent chemical-completeness or physical-container review asserted."
+        }
+      }
+    },
+    "hazardStatementsEvidence": "documented",
+    "dataLane": "public_law",
+    "sourceType": "sds",
+    "provenance": {
+      "sourceDocument": "DR.SCHNELL, deutsches Sicherheitsdatenblatt LEVANTE ECO",
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/LEVANTE%20ECO/SDB/de_DE/pdf/DE",
+      "sourceHost": "manufacturer",
+      "revisionDate": "2026-02-18",
+      "sha256": "761e602d588e46ff940f19de8a0030138894777a10adf01f6f62b5f0476daef7",
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1766/levante-eco",
+      "note": "Manufacturer SDS and published EAN association reviewed. Chemical-completeness review remains pending. Unknown hazard groups never mean neutral."
+    },
+    "descriptionDe": "LEVANTE ECO: Hersteller-SDB geprüft; Vollständigkeitsprüfung noch ausstehend.",
+    "descriptionEn": "LEVANTE ECO: manufacturer SDS reviewed; chemical-completeness review pending."
+  },
+  {
+    "id": "dr-schnell-schirocco-clean",
+    "name": "SCHIROCCO CLEAN",
+    "brand": "DR.SCHNELL",
+    "gtins": [
+      "04008439007245",
+      "04008439307260",
+      "04008439307222"
+    ],
+    "chemicalGroups": [
+      "organic_solvent"
+    ],
+    "hazardStatements": [
+      "EUH210"
+    ],
+    "casNumbers": [
+      "5131-66-8",
+      "34590-94-8",
+      "64-17-5",
+      "112-34-5"
+    ],
+    "ph": {
+      "min": 7.2,
+      "max": 7.2,
+      "concentrationPercent": 100
+    },
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": true,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "SDS identity and sections 2/3/9 checked; unsupported hazard groups remain unknown; https://shop.dr-schnell.com/Datasheets/download/SCHIROCCO%20CLEAN/SDB/de_DE/pdf/DE; SHA-256 b8e11d4292c11075d67cfb3cf0c670d300036cf19ab4eaba74742074bd4ece69. No independent chemical-completeness or physical-container review asserted."
+      },
+      "currentVersionChecked": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "Current manufacturer-served German SDS acquired on review date; https://shop.dr-schnell.com/Datasheets/download/SCHIROCCO%20CLEAN/SDB/de_DE/pdf/DE; SHA-256 b8e11d4292c11075d67cfb3cf0c670d300036cf19ab4eaba74742074bd4ece69. No independent chemical-completeness or physical-container review asserted."
+      }
+    },
+    "gtinMappings": {
+      "04008439007245": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/boeden/1469/schirocco-clean; SHA-256 395f1eb6699f672cf453e246b25bf5321a1f24cdae2377775cda3ea0cb9d142d. No independent chemical-completeness or physical-container review asserted."
+        }
+      },
+      "04008439307260": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/boeden/1469/schirocco-clean; SHA-256 395f1eb6699f672cf453e246b25bf5321a1f24cdae2377775cda3ea0cb9d142d. No independent chemical-completeness or physical-container review asserted."
+        }
+      },
+      "04008439307222": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/boeden/1469/schirocco-clean; SHA-256 395f1eb6699f672cf453e246b25bf5321a1f24cdae2377775cda3ea0cb9d142d. No independent chemical-completeness or physical-container review asserted."
+        }
+      }
+    },
+    "hazardStatementsEvidence": "documented",
+    "dataLane": "public_law",
+    "sourceType": "sds",
+    "provenance": {
+      "sourceDocument": "DR.SCHNELL, deutsches Sicherheitsdatenblatt SCHIROCCO CLEAN",
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/SCHIROCCO%20CLEAN/SDB/de_DE/pdf/DE",
+      "sourceHost": "manufacturer",
+      "revisionDate": "2025-07-22",
+      "sha256": "b8e11d4292c11075d67cfb3cf0c670d300036cf19ab4eaba74742074bd4ece69",
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/boeden/1469/schirocco-clean",
+      "note": "Manufacturer SDS and published EAN association reviewed. Chemical-completeness review remains pending. Unknown hazard groups never mean neutral."
+    },
+    "descriptionDe": "SCHIROCCO CLEAN: Hersteller-SDB geprüft; Vollständigkeitsprüfung noch ausstehend.",
+    "descriptionEn": "SCHIROCCO CLEAN: manufacturer SDS reviewed; chemical-completeness review pending."
+  },
+  {
+    "id": "dr-schnell-easy-quick-s",
+    "name": "EASY QUICK S",
+    "brand": "DR.SCHNELL",
+    "gtins": [
+      "04008439044103",
+      "04008439044141"
+    ],
+    "chemicalGroups": [
+      "acid"
+    ],
+    "hazardStatements": [
+      "H290",
+      "H314",
+      "H318",
+      "H335"
+    ],
+    "casNumbers": [
+      "75-75-2",
+      "77-92-9"
+    ],
+    "ph": {
+      "min": 0,
+      "max": 0,
+      "concentrationPercent": 100
+    },
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": true,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "SDS identity and sections 2/3/9 checked; unsupported hazard groups remain unknown; https://shop.dr-schnell.com/Datasheets/download/EASY%20QUICK%20S/SDB/de_DE/pdf/DE; SHA-256 1cd64ac4a3640a3cf162dd75ec2d3c4ab0c7af0955757e055760ef1254b5fcd3. No independent chemical-completeness or physical-container review asserted."
+      },
+      "currentVersionChecked": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "Current manufacturer-served German SDS acquired on review date; https://shop.dr-schnell.com/Datasheets/download/EASY%20QUICK%20S/SDB/de_DE/pdf/DE; SHA-256 1cd64ac4a3640a3cf162dd75ec2d3c4ab0c7af0955757e055760ef1254b5fcd3. No independent chemical-completeness or physical-container review asserted."
+      }
+    },
+    "gtinMappings": {
+      "04008439044103": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/boeden/1976/easy-quick-s; SHA-256 444ff61d12c6168f43a9c6a61ccac13237fe1b69c2d7f461a37ed3011c1af80a. No independent chemical-completeness or physical-container review asserted."
+        }
+      },
+      "04008439044141": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/boeden/1976/easy-quick-s; SHA-256 444ff61d12c6168f43a9c6a61ccac13237fe1b69c2d7f461a37ed3011c1af80a. No independent chemical-completeness or physical-container review asserted."
+        }
+      }
+    },
+    "hazardStatementsEvidence": "documented",
+    "dataLane": "public_law",
+    "sourceType": "sds",
+    "provenance": {
+      "sourceDocument": "DR.SCHNELL, deutsches Sicherheitsdatenblatt EASY QUICK S",
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/EASY%20QUICK%20S/SDB/de_DE/pdf/DE",
+      "sourceHost": "manufacturer",
+      "revisionDate": "2025-05-30",
+      "sha256": "1cd64ac4a3640a3cf162dd75ec2d3c4ab0c7af0955757e055760ef1254b5fcd3",
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/boeden/1976/easy-quick-s",
+      "note": "Manufacturer SDS and published EAN association reviewed. Chemical-completeness review remains pending. Unknown hazard groups never mean neutral."
+    },
+    "descriptionDe": "EASY QUICK S: Hersteller-SDB geprüft; Vollständigkeitsprüfung noch ausstehend.",
+    "descriptionEn": "EASY QUICK S: manufacturer SDS reviewed; chemical-completeness review pending."
+  },
+  {
+    "id": "dr-schnell-desifor-quick",
+    "name": "DESIFOR-QUICK",
+    "brand": "DR.SCHNELL",
+    "gtins": [
+      "04008439205221",
+      "04008439204514",
+      "04008439045315"
+    ],
+    "chemicalGroups": [
+      "organic_solvent",
+      "flammable"
+    ],
+    "hazardStatements": [
+      "H225",
+      "H319",
+      "H336"
+    ],
+    "casNumbers": [
+      "67-63-0",
+      "64-17-5"
+    ],
+    "ph": {
+      "min": 6.3,
+      "max": 6.3,
+      "concentrationPercent": 1
+    },
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": true,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "SDS identity and sections 2/3/9 checked; unsupported hazard groups remain unknown; https://shop.dr-schnell.com/Datasheets/download/DESIFOR-QUICK/SDB/de_DE/pdf/DE; SHA-256 689fb7947343443b0f600f8cf832658130e7c6aecf9e49bbdbbc9978dce16d03. No independent chemical-completeness or physical-container review asserted."
+      },
+      "currentVersionChecked": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "Current manufacturer-served German SDS acquired on review date; https://shop.dr-schnell.com/Datasheets/download/DESIFOR-QUICK/SDB/de_DE/pdf/DE; SHA-256 689fb7947343443b0f600f8cf832658130e7c6aecf9e49bbdbbc9978dce16d03. No independent chemical-completeness or physical-container review asserted."
+      }
+    },
+    "gtinMappings": {
+      "04008439205221": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/desinfektion/flaechendesinfektion/1453/desifor-quick; SHA-256 f4e520fdbbb5fc8c46a02fb45e1cfc2b3109d9ea30ec4619190d1b72659a456a. No independent chemical-completeness or physical-container review asserted."
+        }
+      },
+      "04008439204514": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/desinfektion/flaechendesinfektion/1453/desifor-quick; SHA-256 f4e520fdbbb5fc8c46a02fb45e1cfc2b3109d9ea30ec4619190d1b72659a456a. No independent chemical-completeness or physical-container review asserted."
+        }
+      },
+      "04008439045315": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/desinfektion/flaechendesinfektion/1453/desifor-quick; SHA-256 f4e520fdbbb5fc8c46a02fb45e1cfc2b3109d9ea30ec4619190d1b72659a456a. No independent chemical-completeness or physical-container review asserted."
+        }
+      }
+    },
+    "hazardStatementsEvidence": "documented",
+    "dataLane": "public_law",
+    "sourceType": "sds",
+    "provenance": {
+      "sourceDocument": "DR.SCHNELL, deutsches Sicherheitsdatenblatt DESIFOR-QUICK",
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/DESIFOR-QUICK/SDB/de_DE/pdf/DE",
+      "sourceHost": "manufacturer",
+      "revisionDate": "2025-09-16",
+      "sha256": "689fb7947343443b0f600f8cf832658130e7c6aecf9e49bbdbbc9978dce16d03",
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/desinfektion/flaechendesinfektion/1453/desifor-quick",
+      "note": "Manufacturer SDS and published EAN association reviewed. Chemical-completeness review remains pending. Unknown hazard groups never mean neutral."
+    },
+    "descriptionDe": "DESIFOR-QUICK: Hersteller-SDB geprüft; Vollständigkeitsprüfung noch ausstehend.",
+    "descriptionEn": "DESIFOR-QUICK: manufacturer SDS reviewed; chemical-completeness review pending."
+  },
+  {
+    "id": "dr-schnell-ecolution-forol-sticks",
+    "name": "ECOLUTION FOROL STICKS",
+    "brand": "DR.SCHNELL",
+    "gtins": [
+      "04008439312028"
+    ],
+    "chemicalGroups": [
+      "unknown"
+    ],
+    "hazardStatements": [
+      "H315",
+      "H319"
+    ],
+    "casNumbers": [
+      "68439-57-6",
+      "584-08-7"
+    ],
+    "ph": {
+      "min": 11,
+      "max": 11,
+      "concentrationPercent": 1
+    },
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": true,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "SDS identity and sections 2/3/9 checked; unsupported hazard groups remain unknown; https://shop.dr-schnell.com/Datasheets/download/ECOLUTION%20FOROL%20STICKS/SDB/de_DE/pdf/DE; SHA-256 707ee172e5227815d3372a4e86d4abbcd4b1c211be6b1720fc23e5cf65ebe901. No independent chemical-completeness or physical-container review asserted."
+      },
+      "currentVersionChecked": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "Current manufacturer-served German SDS acquired on review date; https://shop.dr-schnell.com/Datasheets/download/ECOLUTION%20FOROL%20STICKS/SDB/de_DE/pdf/DE; SHA-256 707ee172e5227815d3372a4e86d4abbcd4b1c211be6b1720fc23e5cf65ebe901. No independent chemical-completeness or physical-container review asserted."
+      }
+    },
+    "gtinMappings": {
+      "04008439312028": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1328/ecolution-forol-sticks; SHA-256 08cc2e3745d6bda53129f8446cc316694f39a77f5a305bbb0b1b03560a80cfdd. No independent chemical-completeness or physical-container review asserted."
+        }
+      }
+    },
+    "hazardStatementsEvidence": "documented",
+    "dataLane": "public_law",
+    "sourceType": "sds",
+    "provenance": {
+      "sourceDocument": "DR.SCHNELL, deutsches Sicherheitsdatenblatt ECOLUTION FOROL STICKS",
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/ECOLUTION%20FOROL%20STICKS/SDB/de_DE/pdf/DE",
+      "sourceHost": "manufacturer",
+      "revisionDate": "2025-11-20",
+      "sha256": "707ee172e5227815d3372a4e86d4abbcd4b1c211be6b1720fc23e5cf65ebe901",
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1328/ecolution-forol-sticks",
+      "note": "Manufacturer SDS and published EAN association reviewed. Chemical-completeness review remains pending. Unknown hazard groups never mean neutral."
+    },
+    "descriptionDe": "ECOLUTION FOROL STICKS: Hersteller-SDB geprüft; Vollständigkeitsprüfung noch ausstehend.",
+    "descriptionEn": "ECOLUTION FOROL STICKS: manufacturer SDS reviewed; chemical-completeness review pending."
+  },
+  {
+    "id": "dr-schnell-gastro-pur",
+    "name": "GASTRO PUR",
+    "brand": "DR.SCHNELL",
+    "gtins": [
+      "04008439001472"
+    ],
+    "chemicalGroups": [
+      "caustic_lye",
+      "organic_solvent"
+    ],
+    "hazardStatements": [
+      "H314",
+      "H318"
+    ],
+    "casNumbers": [
+      "112-34-5",
+      "97489-15-1",
+      "69011-36-5",
+      "15763-76-5",
+      "1310-58-3",
+      "1344-09-8"
+    ],
+    "ph": {
+      "min": 13.4,
+      "max": 13.4,
+      "concentrationPercent": 100
+    },
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": true,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "SDS identity and sections 2/3/9 checked; unsupported hazard groups remain unknown; https://shop.dr-schnell.com/Datasheets/download/GASTRO%20PUR/SDB/de_DE/pdf/DE; SHA-256 3630a11ae714084d808c129cc0912f7d57fa6096e9bbadf35a9c94ce67c24dd1. No independent chemical-completeness or physical-container review asserted."
+      },
+      "currentVersionChecked": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "Current manufacturer-served German SDS acquired on review date; https://shop.dr-schnell.com/Datasheets/download/GASTRO%20PUR/SDB/de_DE/pdf/DE; SHA-256 3630a11ae714084d808c129cc0912f7d57fa6096e9bbadf35a9c94ce67c24dd1. No independent chemical-completeness or physical-container review asserted."
+      }
+    },
+    "gtinMappings": {
+      "04008439001472": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/kuechen-und-lebensmittelhygiene/oel-und-fettloeser-fuer-oberflaechen/1391/gastro-pur; SHA-256 71ee2e1332303794c79ef082fbf96d04001be30cf54ea58c601aefc4b62f358d. No independent chemical-completeness or physical-container review asserted."
+        }
+      }
+    },
+    "hazardStatementsEvidence": "documented",
+    "dataLane": "public_law",
+    "sourceType": "sds",
+    "provenance": {
+      "sourceDocument": "DR.SCHNELL, deutsches Sicherheitsdatenblatt GASTRO PUR",
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/GASTRO%20PUR/SDB/de_DE/pdf/DE",
+      "sourceHost": "manufacturer",
+      "revisionDate": "2025-10-30",
+      "sha256": "3630a11ae714084d808c129cc0912f7d57fa6096e9bbadf35a9c94ce67c24dd1",
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/kuechen-und-lebensmittelhygiene/oel-und-fettloeser-fuer-oberflaechen/1391/gastro-pur",
+      "note": "Manufacturer SDS and published EAN association reviewed. Chemical-completeness review remains pending. Unknown hazard groups never mean neutral."
+    },
+    "descriptionDe": "GASTRO PUR: Hersteller-SDB geprüft; Vollständigkeitsprüfung noch ausstehend.",
+    "descriptionEn": "GASTRO PUR: manufacturer SDS reviewed; chemical-completeness review pending."
+  },
+  {
+    "id": "dr-schnell-forol",
+    "name": "FOROL",
+    "brand": "DR.SCHNELL",
+    "gtins": [
+      "04008439001144",
+      "04008439300179",
+      "04008439300186",
+      "04008439001113"
+    ],
+    "chemicalGroups": [
+      "organic_solvent"
+    ],
+    "hazardStatements": [
+      "EUH210"
+    ],
+    "casNumbers": [
+      "5131-66-8",
+      "68154-97-2",
+      "68439-46-3",
+      "160901-09-7"
+    ],
+    "ph": {
+      "min": 10.6,
+      "max": 10.6,
+      "concentrationPercent": 100
+    },
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": true,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "SDS identity and sections 2/3/9 checked; unsupported hazard groups remain unknown; https://shop.dr-schnell.com/Datasheets/download/FOROL/SDB/de_DE/pdf/DE; SHA-256 508f4585c70b146e70165b4d3e7d711252f41b3f0b6929566a5d04dca026afe6. No independent chemical-completeness or physical-container review asserted."
+      },
+      "currentVersionChecked": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "Current manufacturer-served German SDS acquired on review date; https://shop.dr-schnell.com/Datasheets/download/FOROL/SDB/de_DE/pdf/DE; SHA-256 508f4585c70b146e70165b4d3e7d711252f41b3f0b6929566a5d04dca026afe6. No independent chemical-completeness or physical-container review asserted."
+      }
+    },
+    "gtinMappings": {
+      "04008439001144": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1376/forol; SHA-256 d417a8d66402e7beefc08c8809d2eb5bc474b151979f40e55808c1301562ded4. No independent chemical-completeness or physical-container review asserted."
+        }
+      },
+      "04008439300179": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1376/forol; SHA-256 d417a8d66402e7beefc08c8809d2eb5bc474b151979f40e55808c1301562ded4. No independent chemical-completeness or physical-container review asserted."
+        }
+      },
+      "04008439300186": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1376/forol; SHA-256 d417a8d66402e7beefc08c8809d2eb5bc474b151979f40e55808c1301562ded4. No independent chemical-completeness or physical-container review asserted."
+        }
+      },
+      "04008439001113": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1376/forol; SHA-256 d417a8d66402e7beefc08c8809d2eb5bc474b151979f40e55808c1301562ded4. No independent chemical-completeness or physical-container review asserted."
+        }
+      }
+    },
+    "hazardStatementsEvidence": "documented",
+    "dataLane": "public_law",
+    "sourceType": "sds",
+    "provenance": {
+      "sourceDocument": "DR.SCHNELL, deutsches Sicherheitsdatenblatt FOROL",
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/FOROL/SDB/de_DE/pdf/DE",
+      "sourceHost": "manufacturer",
+      "revisionDate": "2025-08-06",
+      "sha256": "508f4585c70b146e70165b4d3e7d711252f41b3f0b6929566a5d04dca026afe6",
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1376/forol",
+      "note": "Manufacturer SDS and published EAN association reviewed. Chemical-completeness review remains pending. Unknown hazard groups never mean neutral."
+    },
+    "descriptionDe": "FOROL: Hersteller-SDB geprüft; Vollständigkeitsprüfung noch ausstehend.",
+    "descriptionEn": "FOROL: manufacturer SDS reviewed; chemical-completeness review pending."
+  },
+  {
+    "id": "dr-schnell-desifor-sd",
+    "name": "DESIFOR-SD",
+    "brand": "DR.SCHNELL",
+    "gtins": [
+      "04008439204651"
+    ],
+    "chemicalGroups": [
+      "acid",
+      "organic_solvent"
+    ],
+    "hazardStatements": [
+      "EUH210"
+    ],
+    "casNumbers": [
+      "64-17-5",
+      "617-48-1"
+    ],
+    "ph": {
+      "min": 2.2,
+      "max": 2.2,
+      "concentrationPercent": 100
+    },
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": true,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "SDS identity and sections 2/3/9 checked; unsupported hazard groups remain unknown; https://shop.dr-schnell.com/Datasheets/download/DESIFOR-SD/SDB/de_DE/pdf/DE; SHA-256 fcf671735481418947b261ae8712fb17fafd71461607ce2c5407f29d73b6adc1. No independent chemical-completeness or physical-container review asserted."
+      },
+      "currentVersionChecked": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "Current manufacturer-served German SDS acquired on review date; https://shop.dr-schnell.com/Datasheets/download/DESIFOR-SD/SDB/de_DE/pdf/DE; SHA-256 fcf671735481418947b261ae8712fb17fafd71461607ce2c5407f29d73b6adc1. No independent chemical-completeness or physical-container review asserted."
+      }
+    },
+    "gtinMappings": {
+      "04008439204651": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/desinfektion/flaechendesinfektion/1671/desifor-sd; SHA-256 bfd5f5d05bdd8d8c3f85cb039fdab6837f7bab8ffa2952699a6a2f23c0d19c61. No independent chemical-completeness or physical-container review asserted."
+        }
+      }
+    },
+    "hazardStatementsEvidence": "documented",
+    "dataLane": "public_law",
+    "sourceType": "sds",
+    "provenance": {
+      "sourceDocument": "DR.SCHNELL, deutsches Sicherheitsdatenblatt DESIFOR-SD",
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/DESIFOR-SD/SDB/de_DE/pdf/DE",
+      "sourceHost": "manufacturer",
+      "revisionDate": "2026-01-14",
+      "sha256": "fcf671735481418947b261ae8712fb17fafd71461607ce2c5407f29d73b6adc1",
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/desinfektion/flaechendesinfektion/1671/desifor-sd",
+      "note": "Manufacturer SDS and published EAN association reviewed. Chemical-completeness review remains pending. Unknown hazard groups never mean neutral."
+    },
+    "descriptionDe": "DESIFOR-SD: Hersteller-SDB geprüft; Vollständigkeitsprüfung noch ausstehend.",
+    "descriptionEn": "DESIFOR-SD: manufacturer SDS reviewed; chemical-completeness review pending."
+  },
+  {
+    "id": "dr-schnell-desifor-one",
+    "name": "DESIFOR-ONE",
+    "brand": "DR.SCHNELL",
+    "gtins": [
+      "04008439205580"
+    ],
+    "chemicalGroups": [
+      "unknown"
+    ],
+    "hazardStatements": [
+      "H302",
+      "H314",
+      "H318",
+      "H400",
+      "H410",
+      "H411"
+    ],
+    "casNumbers": [
+      "68424-85-1",
+      "122-99-6",
+      "2372-82-9",
+      "160875-66-1",
+      "110615-47-9",
+      "68515-73-1",
+      "141-43-5",
+      "5538-95-4",
+      "124-22-1"
+    ],
+    "ph": {
+      "min": 11.7,
+      "max": 11.7,
+      "concentrationPercent": 100
+    },
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": true,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "SDS identity and sections 2/3/9 checked; unsupported hazard groups remain unknown; https://shop.dr-schnell.com/Datasheets/download/DESIFOR-ONE/SDB/de_DE/pdf/DE; SHA-256 1eb6a6225493996de486c96fd2bb7647010a520bda9066257ac750888acddf38. No independent chemical-completeness or physical-container review asserted."
+      },
+      "currentVersionChecked": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "Current manufacturer-served German SDS acquired on review date; https://shop.dr-schnell.com/Datasheets/download/DESIFOR-ONE/SDB/de_DE/pdf/DE; SHA-256 1eb6a6225493996de486c96fd2bb7647010a520bda9066257ac750888acddf38. No independent chemical-completeness or physical-container review asserted."
+      }
+    },
+    "gtinMappings": {
+      "04008439205580": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/desinfektion/flaechendesinfektion/1496/desifor-one; SHA-256 41632b4f30367614c8a96b520c6f4e082b484161d6f553cc59c8f68b79703a38. No independent chemical-completeness or physical-container review asserted."
+        }
+      }
+    },
+    "hazardStatementsEvidence": "documented",
+    "dataLane": "public_law",
+    "sourceType": "sds",
+    "provenance": {
+      "sourceDocument": "DR.SCHNELL, deutsches Sicherheitsdatenblatt DESIFOR-ONE",
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/DESIFOR-ONE/SDB/de_DE/pdf/DE",
+      "sourceHost": "manufacturer",
+      "revisionDate": "2025-12-01",
+      "sha256": "1eb6a6225493996de486c96fd2bb7647010a520bda9066257ac750888acddf38",
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/desinfektion/flaechendesinfektion/1496/desifor-one",
+      "note": "Manufacturer SDS and published EAN association reviewed. Chemical-completeness review remains pending. Unknown hazard groups never mean neutral."
+    },
+    "descriptionDe": "DESIFOR-ONE: Hersteller-SDB geprüft; Vollständigkeitsprüfung noch ausstehend.",
+    "descriptionEn": "DESIFOR-ONE: manufacturer SDS reviewed; chemical-completeness review pending."
+  },
+  {
+    "id": "dr-schnell-desifor-plexifee",
+    "name": "DESIFOR-PLEXIFEE",
+    "brand": "DR.SCHNELL",
+    "gtins": [
+      "04008439205931",
+      "04008439205948"
+    ],
+    "chemicalGroups": [
+      "unknown"
+    ],
+    "hazardStatements": [],
+    "casNumbers": [],
+    "ph": {
+      "min": 10.8,
+      "max": 10.8,
+      "concentrationPercent": 100
+    },
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": true,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "SDS identity and sections 2/3/9 checked; unsupported hazard groups remain unknown; https://shop.dr-schnell.com/Datasheets/download/DESIFOR-PLEXIFEE/SDB/de_DE/pdf/DE; SHA-256 c96a19392d738e0ba15c068f718b8379c86c86b172b9efefc6ed01e0b50eb1c2. No independent chemical-completeness or physical-container review asserted."
+      },
+      "currentVersionChecked": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "Current manufacturer-served German SDS acquired on review date; https://shop.dr-schnell.com/Datasheets/download/DESIFOR-PLEXIFEE/SDB/de_DE/pdf/DE; SHA-256 c96a19392d738e0ba15c068f718b8379c86c86b172b9efefc6ed01e0b50eb1c2. No independent chemical-completeness or physical-container review asserted."
+      }
+    },
+    "gtinMappings": {
+      "04008439205931": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/desinfektion/flaechendesinfektion/1672/desifor-plexifee; SHA-256 032281eba309876262ac26fcf5c288d3c8204988e4d442a705a01837d53eece3. No independent chemical-completeness or physical-container review asserted."
+        }
+      },
+      "04008439205948": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/desinfektion/flaechendesinfektion/1672/desifor-plexifee; SHA-256 032281eba309876262ac26fcf5c288d3c8204988e4d442a705a01837d53eece3. No independent chemical-completeness or physical-container review asserted."
+        }
+      }
+    },
+    "hazardStatementsEvidence": "documented_absence",
+    "dataLane": "public_law",
+    "sourceType": "sds",
+    "provenance": {
+      "sourceDocument": "DR.SCHNELL, deutsches Sicherheitsdatenblatt DESIFOR-PLEXIFEE",
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/DESIFOR-PLEXIFEE/SDB/de_DE/pdf/DE",
+      "sourceHost": "manufacturer",
+      "revisionDate": "2025-09-09",
+      "sha256": "c96a19392d738e0ba15c068f718b8379c86c86b172b9efefc6ed01e0b50eb1c2",
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/desinfektion/flaechendesinfektion/1672/desifor-plexifee",
+      "note": "Manufacturer SDS and published EAN association reviewed. Chemical-completeness review remains pending. Unknown hazard groups never mean neutral."
+    },
+    "descriptionDe": "DESIFOR-PLEXIFEE: Hersteller-SDB geprüft; Vollständigkeitsprüfung noch ausstehend.",
+    "descriptionEn": "DESIFOR-PLEXIFEE: manufacturer SDS reviewed; chemical-completeness review pending."
+  },
+  {
+    "id": "dr-schnell-forol-sensitive",
+    "name": "FOROL SENSITIVE",
+    "brand": "DR.SCHNELL",
+    "gtins": [
+      "04008439009744"
+    ],
+    "chemicalGroups": [
+      "organic_solvent"
+    ],
+    "hazardStatements": [
+      "EUH210"
+    ],
+    "casNumbers": [
+      "5131-66-8",
+      "68154-97-2",
+      "68439-46-3",
+      "160901-09-7",
+      "126-92-1"
+    ],
+    "ph": {
+      "min": 10.7,
+      "max": 10.7,
+      "concentrationPercent": 100
+    },
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": true,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "SDS identity and sections 2/3/9 checked; unsupported hazard groups remain unknown; https://shop.dr-schnell.com/Datasheets/download/FOROL%20SENSITIVE/SDB/de_DE/pdf/DE; SHA-256 1ca52e7694c1c112d05609a0d56b3517e7748187e82815108ba4151d28d0583c. No independent chemical-completeness or physical-container review asserted."
+      },
+      "currentVersionChecked": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "Current manufacturer-served German SDS acquired on review date; https://shop.dr-schnell.com/Datasheets/download/FOROL%20SENSITIVE/SDB/de_DE/pdf/DE; SHA-256 1ca52e7694c1c112d05609a0d56b3517e7748187e82815108ba4151d28d0583c. No independent chemical-completeness or physical-container review asserted."
+      }
+    },
+    "gtinMappings": {
+      "04008439009744": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1477/forol-sensitive; SHA-256 429201a3fb9f99b6f392b815b306b19865ece0cb3069b91d863653cc9770bb6e. No independent chemical-completeness or physical-container review asserted."
+        }
+      }
+    },
+    "hazardStatementsEvidence": "documented",
+    "dataLane": "public_law",
+    "sourceType": "sds",
+    "provenance": {
+      "sourceDocument": "DR.SCHNELL, deutsches Sicherheitsdatenblatt FOROL SENSITIVE",
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/FOROL%20SENSITIVE/SDB/de_DE/pdf/DE",
+      "sourceHost": "manufacturer",
+      "revisionDate": "2025-08-08",
+      "sha256": "1ca52e7694c1c112d05609a0d56b3517e7748187e82815108ba4151d28d0583c",
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1477/forol-sensitive",
+      "note": "Manufacturer SDS and published EAN association reviewed. Chemical-completeness review remains pending. Unknown hazard groups never mean neutral."
+    },
+    "descriptionDe": "FOROL SENSITIVE: Hersteller-SDB geprüft; Vollständigkeitsprüfung noch ausstehend.",
+    "descriptionEn": "FOROL SENSITIVE: manufacturer SDS reviewed; chemical-completeness review pending."
+  },
+  {
+    "id": "dr-schnell-desifor-one-v",
+    "name": "DESIFOR-ONE V",
+    "brand": "DR.SCHNELL",
+    "gtins": [
+      "04008439204859"
+    ],
+    "chemicalGroups": [
+      "organic_solvent"
+    ],
+    "hazardStatements": [
+      "H314",
+      "H318",
+      "H400",
+      "H410",
+      "H411"
+    ],
+    "casNumbers": [
+      "68424-85-1",
+      "122-99-6",
+      "69011-36-5",
+      "67-63-0"
+    ],
+    "ph": {
+      "min": 11.8,
+      "max": 11.8,
+      "concentrationPercent": 100
+    },
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": true,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "SDS identity and sections 2/3/9 checked; unsupported hazard groups remain unknown; https://shop.dr-schnell.com/Datasheets/download/DESIFOR-ONE%20V/SDB/de_DE/pdf/DE; SHA-256 cd7a7a92b0cca06def42be1d5bc0ddbc78cd6472c891ee715ebb74aecf0452d3. No independent chemical-completeness or physical-container review asserted."
+      },
+      "currentVersionChecked": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "Current manufacturer-served German SDS acquired on review date; https://shop.dr-schnell.com/Datasheets/download/DESIFOR-ONE%20V/SDB/de_DE/pdf/DE; SHA-256 cd7a7a92b0cca06def42be1d5bc0ddbc78cd6472c891ee715ebb74aecf0452d3. No independent chemical-completeness or physical-container review asserted."
+      }
+    },
+    "gtinMappings": {
+      "04008439204859": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/desinfektion/flaechendesinfektion/1678/desifor-one-v; SHA-256 1d712407a156055fd96f601eee1633e8b8f14e654012804432980b725523837d. No independent chemical-completeness or physical-container review asserted."
+        }
+      }
+    },
+    "hazardStatementsEvidence": "documented",
+    "dataLane": "public_law",
+    "sourceType": "sds",
+    "provenance": {
+      "sourceDocument": "DR.SCHNELL, deutsches Sicherheitsdatenblatt DESIFOR-ONE V",
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/DESIFOR-ONE%20V/SDB/de_DE/pdf/DE",
+      "sourceHost": "manufacturer",
+      "revisionDate": "2025-09-25",
+      "sha256": "cd7a7a92b0cca06def42be1d5bc0ddbc78cd6472c891ee715ebb74aecf0452d3",
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/desinfektion/flaechendesinfektion/1678/desifor-one-v",
+      "note": "Manufacturer SDS and published EAN association reviewed. Chemical-completeness review remains pending. Unknown hazard groups never mean neutral."
+    },
+    "descriptionDe": "DESIFOR-ONE V: Hersteller-SDB geprüft; Vollständigkeitsprüfung noch ausstehend.",
+    "descriptionEn": "DESIFOR-ONE V: manufacturer SDS reviewed; chemical-completeness review pending."
+  },
+  {
+    "id": "dr-schnell-perocid",
+    "name": "PEROCID",
+    "brand": "DR.SCHNELL",
+    "gtins": [
+      "04008439006156",
+      "04008439363174",
+      "04008439360173",
+      "04008439360166"
+    ],
+    "chemicalGroups": [
+      "acid"
+    ],
+    "hazardStatements": [
+      "H315",
+      "H319"
+    ],
+    "casNumbers": [
+      "5329-14-6"
+    ],
+    "ph": {
+      "min": 0.5,
+      "max": 0.5,
+      "concentrationPercent": 100
+    },
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": true,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "SDS identity and sections 2/3/9 checked; unsupported hazard groups remain unknown; https://shop.dr-schnell.com/Datasheets/download/PEROCID/SDB/de_DE/pdf/DE; SHA-256 7152d3e0e46e76469bae991ba69a5858b2da47d7d23c8d3cb99092f506f10f23. No independent chemical-completeness or physical-container review asserted."
+      },
+      "currentVersionChecked": {
+        "date": "2026-10-12",
+        "reviewer": "Codex document/source audit",
+        "basis": "Current manufacturer-served German SDS acquired on review date; https://shop.dr-schnell.com/Datasheets/download/PEROCID/SDB/de_DE/pdf/DE; SHA-256 7152d3e0e46e76469bae991ba69a5858b2da47d7d23c8d3cb99092f506f10f23. No independent chemical-completeness or physical-container review asserted."
+      }
+    },
+    "gtinMappings": {
+      "04008439006156": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/kuechen-und-lebensmittelhygiene/kalkloeser-fuer-oberflaechen/1399/perocid; SHA-256 04b3c10178264a40b44267080e7115214114842780c977f37678c4e0a3b5eb19. No independent chemical-completeness or physical-container review asserted."
+        }
+      },
+      "04008439363174": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/kuechen-und-lebensmittelhygiene/kalkloeser-fuer-oberflaechen/1399/perocid; SHA-256 04b3c10178264a40b44267080e7115214114842780c977f37678c4e0a3b5eb19. No independent chemical-completeness or physical-container review asserted."
+        }
+      },
+      "04008439360173": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/kuechen-und-lebensmittelhygiene/kalkloeser-fuer-oberflaechen/1399/perocid; SHA-256 04b3c10178264a40b44267080e7115214114842780c977f37678c4e0a3b5eb19. No independent chemical-completeness or physical-container review asserted."
+        }
+      },
+      "04008439360166": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "reviewer": "Codex document/source audit",
+          "basis": "Manufacturer-listed EAN matched to named product and German SDS; https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/kuechen-und-lebensmittelhygiene/kalkloeser-fuer-oberflaechen/1399/perocid; SHA-256 04b3c10178264a40b44267080e7115214114842780c977f37678c4e0a3b5eb19. No independent chemical-completeness or physical-container review asserted."
+        }
+      }
+    },
+    "hazardStatementsEvidence": "documented",
+    "dataLane": "public_law",
+    "sourceType": "sds",
+    "provenance": {
+      "sourceDocument": "DR.SCHNELL, deutsches Sicherheitsdatenblatt PEROCID",
+      "sourceUrl": "https://shop.dr-schnell.com/Datasheets/download/PEROCID/SDB/de_DE/pdf/DE",
+      "sourceHost": "manufacturer",
+      "revisionDate": "2025-09-19",
+      "sha256": "7152d3e0e46e76469bae991ba69a5858b2da47d7d23c8d3cb99092f506f10f23",
+      "verificationDate": "2026-10-12",
+      "gtinSource": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/kuechen-und-lebensmittelhygiene/kalkloeser-fuer-oberflaechen/1399/perocid",
+      "note": "Manufacturer SDS and published EAN association reviewed. Chemical-completeness review remains pending. Unknown hazard groups never mean neutral."
+    },
+    "descriptionDe": "PEROCID: Hersteller-SDB geprüft; Vollständigkeitsprüfung noch ausstehend.",
+    "descriptionEn": "PEROCID: manufacturer SDS reviewed; chemical-completeness review pending."
   }
 ]

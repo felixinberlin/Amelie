@@ -6,7 +6,6 @@
 ---
 
 
-Kataloghärtung 12.10.2026: GISCODE dient nur der Anzeige. GTINs sind kanonisch 14-stellig; GTIN/UFI müssen genau einen Datensatz treffen, jede GTIN-Zuordnung braucht einen belegten Bestätigungsstatus. hazardsConfirmed, completenessReviewed und currentVersionChecked sind getrennt und benötigen datierte Review-Metadaten mit Grundlage. Belegte STOP-Regeln laufen vor Vollständigkeits-/Aktualitätsprüfungen; unbekannte Identität bleibt UNVERIFIED. Grau setzt alle drei Prüfungen voraus und ist niemals eine Freigabe. Keine erkannte Gefahrengruppe bedeutet unknown, nicht neutral. 20 quellenbelegte Produkte plus zwei synthetische Beispiele bleiben erhalten; 51 GTIN-Zuordnungen, davon 50 aus bestehenden Herstellerbelegen übernommen und Dan Klorix unbestätigt. Alle 22 Vollständigkeits- und Aktualitätsprüfungen bleiben mangels dokumentierter Reviews ausstehend, insbesondere die drei Händlerkopien und Mellerud. Leere H-Satzlisten bedeuten nicht dokumentiert, keine dokumentierte Abwesenheit. Tests belegen Software-Invarianten, keine chemische Sicherheitsfreigabe.
 
 ## 1. Meilensteinplan (Roadmap)
 
@@ -58,6 +57,10 @@ Das Projekt ist in drei strikte, deterministisch prüfbare Meilensteine untertei
 * **Infrastruktur:** Kryptografisch signierte JSON-Releases über GitHub Releases; kein automatisches Background-Sync während des Dienstes.
 
 ---
+
+## Quellenprüfung und Bestand (12.10.2026)
+
+41 reale Produkte plus zwei synthetische Beispiele; 92 GTIN-Zuordnungen, davon 91 bestätigt. 21 zusätzliche DR.SCHNELL-Produkte mit aktuellen Hersteller-SDB und veröffentlichten EAN übernommen. Für 36 Produkte ist der aktuelle Quellenstand dokumentiert; chemische Vollständigkeitsprüfung bleibt bei allen ausstehend. Fünf neue Produkte behalten die Gruppe `unknown`; pH-Messungen bei 1% Lösung werden nicht auf das Konzentrat übertragen. Details und offene Quellen: [Prüfbericht](product-review-2026-10-12.md).
 
 ## 2. Der 4-Wochen-Trainings- & Schulungsplan
 

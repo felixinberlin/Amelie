@@ -1,4 +1,6 @@
-# ChemHazard: Produkt- und Barcode-Recherche vom 12.10.2026
+# ChemHazard: Erste Produkt- und Barcode-Recherche vom 12.10.2026
+
+**Fortgeschrieben:** Die [anschließende Quellenprüfung](product-review-2026-10-12.md) hat die hier gefundenen Produkte plus acht weitere mit Hersteller-SDB abgeglichen und übernommen. Die folgende Liste dokumentiert den ursprünglichen Recherchestand; chemische Vollständigkeitsprüfung und physischer Gebindeabgleich bleiben offen.
 
 **Ergebnis:** 13 zusätzliche Produktnamen/Formulierungskandidaten mit 22 veröffentlichten EAN sowie vier EAN für das bereits erfasste MILIZID. Alle 26 Nummern bestehen die GS1-Prüfziffer. Quelle sind öffentlich indexierte Produktseiten des Hersteller-Shops DR.SCHNELL; SDB-Zuordnung und physisches Gebinde wurden noch nicht geprüft.
 

@@ -1,0 +1,593 @@
+{
+  "date": "2026-10-12",
+  "purpose": "Read-only source reacquisition; no automatic promotion of review flags",
+  "products": [
+    {
+      "id": "kiehl-arenas-bleach",
+      "name": "ARENAS-bleach",
+      "sourceHost": "manufacturer",
+      "documentUrls": [
+        "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j6532_sd_ARENAS-bleach_de.pdf"
+      ],
+      "productPage": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Textilwaesche/Bleiche/ARENAS-bleach",
+      "gtins": [
+        "04031255046754"
+      ],
+      "previousSha256": "6bfb2520281e650a896c94023c6ab91125e68f9bafe7b6c3abbe31a2f5b3d69e"
+    },
+    {
+      "id": "kiehl-powerfix-gel",
+      "name": "Powerfix-Gel",
+      "sourceHost": "manufacturer",
+      "documentUrls": [
+        "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j4006_sd_Powerfix-Gel_de.pdf"
+      ],
+      "productPage": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Powerfix-Gel",
+      "gtins": [
+        "04031255000121",
+        "04031255045931",
+        "04031255045870",
+        "04031255045924",
+        "04031255035802"
+      ],
+      "previousSha256": "19be7664135955b120db98e1580837a4950e475e8a2a2312d5a8fdd98d663d99"
+    },
+    {
+      "id": "kiehl-powerfix",
+      "name": "Powerfix",
+      "sourceHost": "manufacturer",
+      "documentUrls": [
+        "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j4005_sd_Powerfix_de.pdf"
+      ],
+      "productPage": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Powerfix",
+      "gtins": [
+        "04031255032184",
+        "04031255036526",
+        "04031255002569",
+        "04031255012148"
+      ],
+      "previousSha256": "ff65f5eaabe8c4811f2e475f42c43e75b77a9860d85cb649e420e4bd5016416f"
+    },
+    {
+      "id": "kiehl-santex",
+      "name": "Santex",
+      "sourceHost": "manufacturer",
+      "documentUrls": [
+        "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j4010_sd_Santex_de.pdf"
+      ],
+      "productPage": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Santex",
+      "gtins": [
+        "04031255003238",
+        "04031255003245",
+        "04031255032894"
+      ],
+      "previousSha256": "a6c66307f1427892f4f7bec70d5ed0b45a6518512fe0a4f14150406a202fa691"
+    },
+    {
+      "id": "kiehl-calinex",
+      "name": "Calinex",
+      "sourceHost": "manufacturer",
+      "documentUrls": [
+        "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j4038_sd_Calinex_de.pdf"
+      ],
+      "productPage": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Calinex",
+      "gtins": [
+        "04031255055367",
+        "04031255055817",
+        "04031255055350"
+      ],
+      "previousSha256": "70278848e6bb0dc1e99ef85b78387e29b102d795a5ea6ecfd4900bb1120ad60a"
+    },
+    {
+      "id": "kiehl-oxycal",
+      "name": "Oxycal",
+      "sourceHost": "manufacturer",
+      "documentUrls": [
+        "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j4030_sd_Oxycal_de.pdf"
+      ],
+      "productPage": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Oxycal",
+      "gtins": [
+        "04031255042503",
+        "04031255042510"
+      ],
+      "previousSha256": "b817120b056d5edda9b4a0181f9bdbbfa8c11ff8b60edf3903d0481f4caee671"
+    },
+    {
+      "id": "kiehl-fumex",
+      "name": "Fumex",
+      "sourceHost": "manufacturer",
+      "documentUrls": [
+        "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j5511_sd_Fumex_de.pdf"
+      ],
+      "productPage": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Kuechen-und-Lebensmittelindustrie/Kuechenreinigung-und-Lebensmittelhygiene/Fumex",
+      "gtins": [
+        "04031255008349",
+        "04031255008325",
+        "04031255008332",
+        "04031255048888"
+      ],
+      "previousSha256": "213c2cedaa7178c592d7180dda97f31f9a2b43b25f4380e6b794df5d83ca58a9"
+    },
+    {
+      "id": "kiehl-li-ex",
+      "name": "Li-Ex",
+      "sourceHost": "manufacturer",
+      "documentUrls": [
+        "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j1502_sd_Li-Ex_de.pdf"
+      ],
+      "productPage": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Grundreinigung/Li-Ex",
+      "gtins": [
+        "04031255013107",
+        "04031255032351",
+        "04031255013114",
+        "04031255035727",
+        "04031255000435",
+        "04031255002613"
+      ],
+      "previousSha256": "0ac4d1de645c8533e75801d1c5077c4ac3890f5622e866e3bc8122472593190e"
+    },
+    {
+      "id": "kiehl-sanikal",
+      "name": "Sanikal",
+      "sourceHost": "manufacturer",
+      "documentUrls": [
+        "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j4002_sd_Sanikal_de.pdf"
+      ],
+      "productPage": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Sanikal",
+      "gtins": [
+        "04031255000183",
+        "04031255000954",
+        "04031255000176"
+      ],
+      "previousSha256": "3059b2bcd2c0287e6195dadcf612763d25eb3bc7096a570d1780e229d4b48dde"
+    },
+    {
+      "id": "kiehl-profloor-konzentrat",
+      "name": "Profloor-Konzentrat",
+      "sourceHost": "manufacturer",
+      "documentUrls": [
+        "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j3007_sd_Profloor-Konzentrat_de.pdf"
+      ],
+      "productPage": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Wischpflege-Unterhalt/Profloor-Konzentrat",
+      "gtins": [
+        "04031255001845",
+        "04031255003139",
+        "04031255003320",
+        "04031255003559",
+        "04031255001302"
+      ],
+      "previousSha256": "b55001ccca6c960de950515c7420510bba301ee1d05ceb828f76c0900e037029"
+    },
+    {
+      "id": "kiehl-torvan-konzentrat",
+      "name": "Torvan-Konzentrat",
+      "sourceHost": "manufacturer",
+      "documentUrls": [
+        "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j2507_sd_Torvan-Konzentrat_de.pdf"
+      ],
+      "productPage": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Torvan-Konzentrat",
+      "gtins": [
+        "04031255000169",
+        "04031255057682",
+        "04031255013398",
+        "04031255015989",
+        "04031255013404",
+        "04031255000152",
+        "04031255057675",
+        "04031255003528",
+        "04031255000633",
+        "04031255018935"
+      ],
+      "previousSha256": "ea0e4f121fb560d6457df912e3747347d9a1e22635b72d21e9c94e381bc564c1"
+    },
+    {
+      "id": "kiehl-clean-oxy",
+      "name": "Clean@oxy",
+      "sourceHost": "manufacturer",
+      "documentUrls": [
+        "https://www.kiehl-group.com/ix_pim_assets/doc/doc_Sicherheitsdatenblatt/j2535_sd_Cleanoxy_de.pdf"
+      ],
+      "productPage": "https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Cleanoxy",
+      "gtins": [
+        "04031255057910",
+        "04031255057958",
+        "04031255058580"
+      ],
+      "previousSha256": "78e82badca1a61e32208a446b008b0497873b7610074332cab9bfd866a273a35"
+    },
+    {
+      "id": "buzil-bucalex-g460",
+      "name": "Bucalex G 460",
+      "sourceHost": "manufacturer",
+      "documentUrls": [
+        "https://www.buzil.com/products/sanitary/bucalex-g-460"
+      ],
+      "productPage": null,
+      "gtins": [],
+      "previousSha256": "cfbbef724bb8dd72cb80a46fdf38ec43815274bf6ae992b1b03097199a086456"
+    },
+    {
+      "id": "buzil-bucasan-trendy-t464",
+      "name": "Bucasan Trendy T 464",
+      "sourceHost": "manufacturer",
+      "documentUrls": [
+        "https://www.buzil.com/products/sanitary/bucasan-trendy-t-464"
+      ],
+      "productPage": null,
+      "gtins": [],
+      "previousSha256": "52d25aa1c6b37f0f4b29db1b1710e5e018d21343b12ab8503bca2a33b0669ccc"
+    },
+    {
+      "id": "buzil-erol-g490",
+      "name": "Erol G 490",
+      "sourceHost": "manufacturer",
+      "documentUrls": [
+        "https://www.buzil.com/products/special/erol-g-490"
+      ],
+      "productPage": null,
+      "gtins": [],
+      "previousSha256": "f12fb3c0661783f35b8e8cf394a85d15c9af6bc6894993d2cdfda1f77f6a349b"
+    },
+    {
+      "id": "dr-schnell-milizid",
+      "name": "MILIZID",
+      "sourceHost": "manufacturer",
+      "documentUrls": [
+        "https://shop.dr-schnell.com/Datasheets/download/MILIZID/SDB/de_DE/pdf/DE"
+      ],
+      "productPage": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/sanitaerreiniger/1373/milizid",
+      "gtins": [
+        "4008439001045",
+        "4008439300070",
+        "4008439300001",
+        "4008439001038"
+      ],
+      "previousSha256": "3b0ba49c7e108782bdc106e75f70e255a029842882d3f2e72f85f56f1df8295e"
+    },
+    {
+      "id": "domestos-professional-original",
+      "name": "Domestos Professional Original",
+      "sourceHost": "retailer",
+      "documentUrls": [
+        "https://sds.diversey.com/DirectDocumentDownloader/Document?prd=MS1005408~~PDF~~MTR~~DE02~~DE~~EMA",
+        "https://sds.diversey.com/DirectDocumentDownloader/Document?prd=MS1005408~~PDF~~MTR~~AT02~~AT~~EMA",
+        "https://sdslibrary.solenis.com/BlobDownload/FetchFiles?filename=SDS/000000000009308879-DE-DE.PDF",
+        "https://static.vikingdirekt.at/is/content/odeu13/PDF/MSDS_1178013_DE_21-10-2022.pdf"
+      ],
+      "productPage": null,
+      "gtins": [],
+      "previousSha256": "f79cf65e32e2c7ed21e4edc08a372d4bebac15a0efb97155668175f1e57011ee"
+    },
+    {
+      "id": "danklorix-hygiene-reiniger",
+      "name": "Dan Klorix Hygienereiniger",
+      "sourceHost": "retailer",
+      "documentUrls": [
+        "https://www.otto-office.com/de/app/download/document/item?mid=14490"
+      ],
+      "productPage": "https://www.rossmann.de/de/haushalt-dan-klorix-original-hygiene-reiniger/p/4011200652902",
+      "gtins": [
+        "04011200652902"
+      ],
+      "previousSha256": "db8924b93528ff7cd26b517e3345e5d75f1608dd89a01cdb2980932e08cb5d43"
+    },
+    {
+      "id": "meffert-salmiakgeist-9-5",
+      "name": "Salmiakgeist 9,5 %",
+      "sourceHost": "retailer",
+      "documentUrls": [
+        "https://www.meffert.com/datenblaetter/Sicherheits-Datenblaetter/SDB__Meffert-Marken_und_Toechter/Sdb-neutral_%2B_Diverse/SDB_Meffert_Salmiakgeist.pdf",
+        "https://media.hornbach.de/hb/msds/as.87226194.pdf"
+      ],
+      "productPage": null,
+      "gtins": [],
+      "previousSha256": "055f1c74ba027d32954df5c76a57b87617c914e1a57616c8d4889f14edc5f3a9"
+    },
+    {
+      "id": "mellerud-schimmel-vernichter",
+      "name": "Schimmel Vernichter",
+      "sourceHost": "manufacturer",
+      "documentUrls": [
+        "https://mellerud.de/media/export/pdf/Endverbraucherdatenbl%C3%A4tter/EDB_P028_de-DE_V26-01_DE%20Schimmel%20Vernichter.pdf"
+      ],
+      "productPage": "https://mellerud.de/schimmel/schimmel-vernichter",
+      "gtins": [
+        "04004666004675"
+      ],
+      "previousSha256": "1648a67744752868dba89163381a79c7fc704e55e5d54c7a57eead906687235b"
+    },
+    {
+      "id": "dr-schnell-onemue-2000",
+      "name": "ONEMÜ 2000",
+      "sourceHost": "manufacturer",
+      "documentUrls": [
+        "https://shop.dr-schnell.com/Datasheets/download/ONEM%C3%9C%202000/SDB/de_DE/pdf/DE"
+      ],
+      "productPage": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/kuechen-und-lebensmittelhygiene/handspuelmittel/1381/onemue-2000",
+      "gtins": [
+        "4008439001236"
+      ],
+      "previousSha256": null
+    },
+    {
+      "id": "dr-schnell-easy-quick-a",
+      "name": "EASY QUICK A",
+      "sourceHost": "manufacturer",
+      "documentUrls": [
+        "https://shop.dr-schnell.com/Datasheets/download/EASY%20QUICK%20A/SDB/de_DE/pdf/DE"
+      ],
+      "productPage": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/boeden/1939/easy-quick-a",
+      "gtins": [
+        "4008439036863"
+      ],
+      "previousSha256": null
+    },
+    {
+      "id": "dr-schnell-easy-quick-n",
+      "name": "EASY QUICK N",
+      "sourceHost": "manufacturer",
+      "documentUrls": [
+        "https://shop.dr-schnell.com/Datasheets/download/EASY%20QUICK%20N/SDB/de_DE/pdf/DE"
+      ],
+      "productPage": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1921/easy-quick-n",
+      "gtins": [
+        "4008439036283"
+      ],
+      "previousSha256": null
+    },
+    {
+      "id": "dr-schnell-glasfee",
+      "name": "GLASFEE",
+      "sourceHost": "manufacturer",
+      "documentUrls": [
+        "https://shop.dr-schnell.com/Datasheets/download/GLASFEE/SDB/de_DE/pdf/DE"
+      ],
+      "productPage": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1388/glasfee",
+      "gtins": [
+        "4008439001564",
+        "4008439001373",
+        "4008439001427"
+      ],
+      "previousSha256": null
+    },
+    {
+      "id": "dr-schnell-milizid-eco",
+      "name": "MILIZID ECO",
+      "sourceHost": "manufacturer",
+      "documentUrls": [
+        "https://shop.dr-schnell.com/Datasheets/download/MILIZID%20ECO/SDB/de_DE/pdf/DE"
+      ],
+      "productPage": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/sanitaerreiniger/1481/milizid-eco",
+      "gtins": [
+        "4008439009928",
+        "4008439309974"
+      ],
+      "previousSha256": null
+    },
+    {
+      "id": "dr-schnell-rapido-sprueh-ex",
+      "name": "RAPIDO SPRÜH-EX",
+      "sourceHost": "manufacturer",
+      "documentUrls": [
+        "https://shop.dr-schnell.com/Datasheets/download/RAPIDO%20SPR%C3%9CH-EX/SDB/de_DE/pdf/DE",
+        "https://shop.dr-schnell.com/Datasheets/download/DR.SCHNELL'S%20RAPIDO%20SPR%C3%9CH-EX/SDB/de_DE/pdf/DE",
+        "https://shop.dr-schnell.com/Datasheets/download/DR.SCHNELL%C2%B4S%20RAPIDO%20SPR%C3%9CH-EX/SDB/de_DE/pdf/DE",
+        "https://shop.dr-schnell.com/Datasheets/download/RAPIDO%20SPRUEH-EX/SDB/de_DE/pdf/DE"
+      ],
+      "productPage": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/textile-bodenbelaege-polster/1405/dr.schnell-s-rapido-sprueh-ex",
+      "gtins": [
+        "4008439001953"
+      ],
+      "previousSha256": null
+    },
+    {
+      "id": "dr-schnell-milizid-kalkreiniger",
+      "name": "MILIZID KALKREINIGER",
+      "sourceHost": "manufacturer",
+      "documentUrls": [
+        "https://shop.dr-schnell.com/Datasheets/download/MILIZID%20KALKREINIGER/SDB/de_DE/pdf/DE"
+      ],
+      "productPage": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/sanitaerreiniger/1374/milizid-kalkreiniger",
+      "gtins": [
+        "4008439001069",
+        "4008439300056"
+      ],
+      "previousSha256": null
+    },
+    {
+      "id": "dr-schnell-ecolution-forol-ultrahochkonzentrat",
+      "name": "ECOLUTION FOROL ULTRAHOCHKONZENTRAT",
+      "sourceHost": "manufacturer",
+      "documentUrls": [
+        "https://shop.dr-schnell.com/Datasheets/download/ECOLUTION%20FOROL/SDB/de_DE/pdf/DE",
+        "https://shop.dr-schnell.com/Datasheets/download/ECOLUTION%20FOROL%20ULTRAHOCHKONZENTRAT/SDB/de_DE/pdf/DE"
+      ],
+      "productPage": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1326/ecolution-forol-ultrahochkonzentrat",
+      "gtins": [
+        "4008439312127"
+      ],
+      "previousSha256": null
+    },
+    {
+      "id": "dr-schnell-levante-eco",
+      "name": "LEVANTE ECO",
+      "sourceHost": "manufacturer",
+      "documentUrls": [
+        "https://shop.dr-schnell.com/Datasheets/download/LEVANTE%20ECO/SDB/de_DE/pdf/DE"
+      ],
+      "productPage": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1766/levante-eco",
+      "gtins": [
+        "4008439035828"
+      ],
+      "previousSha256": null
+    },
+    {
+      "id": "dr-schnell-schirocco-clean",
+      "name": "SCHIROCCO CLEAN",
+      "sourceHost": "manufacturer",
+      "documentUrls": [
+        "https://shop.dr-schnell.com/Datasheets/download/SCHIROCCO%20CLEAN/SDB/de_DE/pdf/DE"
+      ],
+      "productPage": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/boeden/1469/schirocco-clean",
+      "gtins": [
+        "4008439007245",
+        "4008439307260",
+        "4008439307222"
+      ],
+      "previousSha256": null
+    },
+    {
+      "id": "dr-schnell-easy-quick-s",
+      "name": "EASY QUICK S",
+      "sourceHost": "manufacturer",
+      "documentUrls": [
+        "https://shop.dr-schnell.com/Datasheets/download/EASY%20QUICK%20S/SDB/de_DE/pdf/DE"
+      ],
+      "productPage": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/boeden/1976/easy-quick-s",
+      "gtins": [
+        "4008439044103",
+        "4008439044141"
+      ],
+      "previousSha256": null
+    },
+    {
+      "id": "dr-schnell-desifor-quick",
+      "name": "DESIFOR-QUICK",
+      "sourceHost": "manufacturer",
+      "documentUrls": [
+        "https://shop.dr-schnell.com/Datasheets/download/DESIFOR-QUICK/SDB/de_DE/pdf/DE"
+      ],
+      "productPage": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/desinfektion/flaechendesinfektion/1453/desifor-quick",
+      "gtins": [
+        "4008439205221",
+        "4008439204514",
+        "4008439045315"
+      ],
+      "previousSha256": null
+    },
+    {
+      "id": "dr-schnell-ecolution-forol-sticks",
+      "name": "ECOLUTION FOROL STICKS",
+      "sourceHost": "manufacturer",
+      "documentUrls": [
+        "https://shop.dr-schnell.com/Datasheets/download/ECOLUTION%20FOROL%20STICKS/SDB/de_DE/pdf/DE"
+      ],
+      "productPage": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1328/ecolution-forol-sticks",
+      "gtins": [
+        "4008439312028"
+      ],
+      "previousSha256": null
+    },
+    {
+      "id": "dr-schnell-gastro-pur",
+      "name": "GASTRO PUR",
+      "sourceHost": "manufacturer",
+      "documentUrls": [
+        "https://shop.dr-schnell.com/Datasheets/download/GASTRO%20PUR/SDB/de_DE/pdf/DE"
+      ],
+      "productPage": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/kuechen-und-lebensmittelhygiene/oel-und-fettloeser-fuer-oberflaechen/1391/gastro-pur",
+      "gtins": [
+        "4008439001472"
+      ],
+      "previousSha256": null
+    },
+    {
+      "id": "dr-schnell-forol",
+      "name": "FOROL",
+      "sourceHost": "manufacturer",
+      "documentUrls": [
+        "https://shop.dr-schnell.com/Datasheets/download/FOROL/SDB/de_DE/pdf/DE"
+      ],
+      "productPage": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1376/forol",
+      "gtins": [
+        "4008439001144",
+        "4008439300179",
+        "4008439300186",
+        "4008439001113"
+      ],
+      "previousSha256": null
+    },
+    {
+      "id": "dr-schnell-desifor-sd",
+      "name": "DESIFOR-SD",
+      "sourceHost": "manufacturer",
+      "documentUrls": [
+        "https://shop.dr-schnell.com/Datasheets/download/DESIFOR-SD/SDB/de_DE/pdf/DE"
+      ],
+      "productPage": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/desinfektion/flaechendesinfektion/1671/desifor-sd",
+      "gtins": [
+        "4008439204651"
+      ],
+      "previousSha256": null
+    },
+    {
+      "id": "dr-schnell-desifor-one",
+      "name": "DESIFOR-ONE",
+      "sourceHost": "manufacturer",
+      "documentUrls": [
+        "https://shop.dr-schnell.com/Datasheets/download/DESIFOR-ONE/SDB/de_DE/pdf/DE"
+      ],
+      "productPage": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/desinfektion/flaechendesinfektion/1496/desifor-one",
+      "gtins": [
+        "4008439205580"
+      ],
+      "previousSha256": null
+    },
+    {
+      "id": "dr-schnell-desifor-plexifee",
+      "name": "DESIFOR-PLEXIFEE",
+      "sourceHost": "manufacturer",
+      "documentUrls": [
+        "https://shop.dr-schnell.com/Datasheets/download/DESIFOR-PLEXIFEE/SDB/de_DE/pdf/DE"
+      ],
+      "productPage": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/desinfektion/flaechendesinfektion/1672/desifor-plexifee",
+      "gtins": [
+        "4008439205931",
+        "4008439205948"
+      ],
+      "previousSha256": null
+    },
+    {
+      "id": "dr-schnell-forol-sensitive",
+      "name": "FOROL SENSITIVE",
+      "sourceHost": "manufacturer",
+      "documentUrls": [
+        "https://shop.dr-schnell.com/Datasheets/download/FOROL%20SENSITIVE/SDB/de_DE/pdf/DE"
+      ],
+      "productPage": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1477/forol-sensitive",
+      "gtins": [
+        "4008439009744"
+      ],
+      "previousSha256": null
+    },
+    {
+      "id": "dr-schnell-desifor-one-v",
+      "name": "DESIFOR-ONE V",
+      "sourceHost": "manufacturer",
+      "documentUrls": [
+        "https://shop.dr-schnell.com/Datasheets/download/DESIFOR-ONE%20V/SDB/de_DE/pdf/DE"
+      ],
+      "productPage": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/desinfektion/flaechendesinfektion/1678/desifor-one-v",
+      "gtins": [
+        "4008439204859"
+      ],
+      "previousSha256": null
+    },
+    {
+      "id": "dr-schnell-perocid",
+      "name": "PEROCID",
+      "sourceHost": "manufacturer",
+      "documentUrls": [
+        "https://shop.dr-schnell.com/Datasheets/download/PEROCID/SDB/de_DE/pdf/DE"
+      ],
+      "productPage": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/kuechen-und-lebensmittelhygiene/kalkloeser-fuer-oberflaechen/1399/perocid",
+      "gtins": [
+        "4008439006156",
+        "4008439363174",
+        "4008439360173",
+        "4008439360166"
+      ],
+      "previousSha256": null
+    }
+  ]
+}
