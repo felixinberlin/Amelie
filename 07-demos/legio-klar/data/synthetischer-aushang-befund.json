@@ -1,0 +1,56 @@
+{
+  "synthetisch": true,
+  "fallId": "muster-mehrfamilienhaus-berlin-01",
+  "laborName": "MusterAnalytik Wasserhygiene GmbH",
+  "akkreditierungsNummer": "DAkkS D-PL-00000-01-00",
+  "befundNummer": "WA-2026-98124",
+  "probeDatum": "2026-09-15",
+  "eingangDatum": "2026-09-16",
+  "ausgabeDatum": "2026-09-24",
+  "anlage": {
+    "gebaeudeTyp": "Mehrfamilienhaus 24 WE",
+    "speicherVolumenLiter": 750,
+    "rohrleitungsVolumenLiter": 120,
+    "zirkulationVorhanden": true,
+    "speicherTemperaturC": 58.5,
+    "zirkulationRuecklaufC": 51.2
+  },
+  "proben": [
+    {
+      "id": "P01",
+      "entnahmestelle": "TWW-Speicheraustritt Keller",
+      "entnahmeTyp": "speicheraustritt",
+      "kbePro100ml": 0,
+      "temperaturC": 58.5,
+      "nachweisgrenze": 1,
+      "spezies": "Legionella spp."
+    },
+    {
+      "id": "P02",
+      "entnahmestelle": "Zirkulationssammler vor Speicher",
+      "entnahmeTyp": "zirkulationsruecklauf",
+      "kbePro100ml": 240,
+      "temperaturC": 51.2,
+      "nachweisgrenze": 1,
+      "spezies": "Legionella spp."
+    },
+    {
+      "id": "P03",
+      "entnahmestelle": "Steigstrang B (4. OG, Wohnung rechts, Dusche)",
+      "entnahmeTyp": "steigstrang",
+      "kbePro100ml": 1800,
+      "temperaturC": 47.0,
+      "nachweisgrenze": 1,
+      "spezies": "Legionella pneumophila Sg 1"
+    },
+    {
+      "id": "P04",
+      "entnahmestelle": "Steigstrang A (EG, Leerstand Zapfstelle)",
+      "entnahmeTyp": "steigstrang",
+      "kbePro100ml": 12500,
+      "temperaturC": 23.5,
+      "nachweisgrenze": 1,
+      "spezies": "Legionella pneumophila Sg 1"
+    }
+  ]
+}

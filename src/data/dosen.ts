@@ -2606,6 +2606,47 @@ Amélie Initiative (Félix, Berlin)`
     failureModeEn: 'Gate only just reached (24/35): offices may already check internally (ALKIS specialist schemas, address management); nothing was found, but it is not ruled out. Then at most a second opinion for small municipalities remains. Second, a flood of false alarms from phonetics. Remedy: hints only, ranking by rule strength, adjustable thresholds, Cologne phonetics never alone. Disclosed: recipient person not identified (verify before sending), fun low (2, lookup).',
     priorArtDe: 'Unklar bis frei (29.09.2026, Suchschnipsel und Richtlinien-Ausschnitte): Ämter (Münster, Hildesheim, Düsseldorf, Tübingen, Bamberg, Städtetag) prüfen manuell; zwei Gegen-Suchen (Tool/Software für Ähnlichkeitsprüfung, OSM-Forum „Doppelte Straßennamen finden") fanden kein Werkzeug. Besetzt ist die Nachbarfrage Herkunftserklärung (OSM name:etymology:wikidata, Schilder in Koblenz, Leipzig, Braunschweig, Hannover). ALKIS-interne Prüfung nicht ausgeschlossen. Förderbrücke (nur Hinweis, Fristen aus Katalog-Schnipsel, vor Nennung prüfen): Prototype Fund Klasse 03 (01.10.–30.11.2026; Wohnsitz DE, Teams bis 4, volle Open-Source-Lizenz, Behörden und Vereine ausgeschlossen), nachrangig mFUND. Dose: https://felixinberlin.github.io/Amelie/#dose=strassennamen-pruefer',
     priorArtEn: 'Unclear to free (29 Sep 2026, search snippets and guideline excerpts): offices (Münster, Hildesheim, Düsseldorf, Tübingen, Bamberg, Städtetag) check manually; two counter-searches (tool/software for similarity checks, OSM forum "find duplicate street names") found no tool. The neighbouring question of explaining name origins is occupied (OSM name:etymology:wikidata, signs in Koblenz, Leipzig, Braunschweig, Hannover). ALKIS-internal checks not ruled out. Funding bridge (hint only, deadlines from catalogue snippet, verify before mentioning): Prototype Fund class 03 (1 Oct–30 Nov 2026; residence in Germany, teams up to 4, full open-source licence, public bodies and associations excluded), secondarily mFUND. Tin: https://felixinberlin.github.io/Amelie/#dose=strassennamen-pruefer'
+  },
+  {
+    id: 'legio-klar',
+    title: 'LegioKlar',
+    titleEn: 'LegioKlar: Notice Board Legionella Decoder',
+    oneLinerDe: 'Liest abfotografierte Laborprüfberichte aus dem Treppenhausaushang ein, übersetzt KBE/100ml und Speichertemperaturen in die amtliche UBA-Risikomatrix und erzeugt sofort das rechtssichere Auskunftsersuchen zur Gefährdungsanalyse sowie die Mängelanzeige nach § 536c BGB.',
+    oneLinerEn: 'Decodes photographed laboratory drinking water reports from apartment notice boards, maps CFU/100ml counts and hot water temperatures against the official UBA risk matrix, and instantly generates statutory disclosure requests and tenant defect notices under § 536c BGB.',
+    date: '12. Oktober 2026',
+    reviewAfter: 'September 2027',
+    recipientsDe: 'Berliner Mieterverein e.V. · Verbraucherzentrale NRW (Bereich Wohnen)',
+    recipientsEn: 'Berlin Tenants Association · Consumer Advice Center NRW (Housing)',
+    domain: 'civic',
+    verdict: 'gift',
+    status: 'gepackt',
+    tags: ['Trinkwasser', 'Legionellen', 'TrinkwV', 'Mieterrechte', 'UBA-Matrix', 'Gesundheitsschutz', 'Offline'],
+    problemDe: 'In Mehrfamilienhäusern müssen Großanlagen zur Trinkwassererwärmung alle drei Jahre auf Legionellen beprobt werden. Bei Erreichen des technischen Maßnahmenwerts (100 KBE/100 ml) hängt die Hausverwaltung oft nur für wenige Tage einen unverständlichen Laborbericht im Flur aus. Mieter verstehen KBE-Werte, DIN-Entnahmestellen und Warmwassertemperaturen nicht und verpassen rechtzeitige Schutzmaßnahmen (wie Sterilfilter oder Mietminderungen nach § 536 BGB).',
+    problemEn: 'In apartment buildings with central domestic hot water heating, landlords must test for Legionella every three years. When the technical action limit of 100 CFU/100 ml is reached, property managers often post complex laboratory reports in the stairwell for only a few days. Tenants do not understand the technical terminology (CFU, DVGW W 551, sampling points, circulation temperatures) and miss out on timely protective measures.',
+    whyNowDe: [
+      'Die TrinkwV 2023 und das Umweltbundesamt (UBA) definieren eine klare, vierstufige Risikomatrix mit verbindlichen Pflichten für Betreiber.',
+      'Ein reiner Client-Kern läuft offline im Browser: keine privaten Adressen oder Mietdaten verlassen das Smartphone.',
+      'Temperaturprüfungen gegen DVGW W 551 (Speicher ≥ 60 °C, Zirkulation ≥ 55 °C) lassen sich deterministisch auswerten und direkt in ein formelles Schreiben überführen.'
+    ],
+    whyNowEn: [
+      'The revised Drinking Water Ordinance (TrinkwV 2023) and UBA define a clear four-tier risk matrix with mandatory operator duties.',
+      'A client-only engine runs offline in the browser: no private address or tenancy data leaves the phone.',
+      'Temperature audits against DVGW W 551 (storage ≥ 60 °C, circulation ≥ 55 °C) evaluate deterministically and feed directly into formal notice drafts.'
+    ],
+    sketchDe: 'Eingabe: Foto oder Werte des Laborberichts vom Schwarzen Brett. Logik: KBE/100ml je Entnahmestelle auswerten, UBA-Ampel berechnen (<100 grün, 100–999 gelb, 1.000–9.999 orange, ≥10.000 rot), Speichertemperaturen gegen DVGW W 551 abgleichen. Ausgabe: Klare Handlungsempfehlungen für Mieter und ein vorformuliertes Mängelanzeigen- und Auskunftsersuchen-Schreiben gem. § 51 TrinkwV und § 536c BGB.',
+    sketchEn: 'Input: Photo or metrics from the hallway notice board report. Logic: Parse CFU/100ml per sampling point, calculate UBA traffic light (<100 green, 100–999 yellow, 1,000–9,999 orange, ≥10,000 red), audit storage temperatures against DVGW W 551. Output: Clear tenant precautions and pre-drafted defect and disclosure requests under § 51 TrinkwV and § 536c BGB.',
+    firstStepDe: {
+      ticket: 'Ticket 01 abgeschlossen am 12.10.2026: Reiner TypeScript-Kern analysiereLaborbefund(befund) mit UBA-Matrix, DVGW W 551 Temperaturprüfung, Schreiben-Generator und 10 Vitest-Tests. Synthetische Fixtures unter 07-demos/legio-klar/data/.',
+      criteria: 'Fertig, wenn alle 10 Vitest-Tests grün sind, das UBA-Ampelsystem exakt abgebildet wird, Temperaturen unter 60°C Speicher / 55°C Zirkulation beanstandet werden und ein sauberes Schreiben ohne Cloud-Abhängigkeit generiert wird.'
+    },
+    firstStepEn: {
+      ticket: 'Ticket 01 completed on 12 Oct 2026: Pure TypeScript engine analysiereLaborbefund(befund) with UBA risk matrix, DVGW W 551 temperature audit, notice generator, and 10 Vitest tests. Synthetic fixtures under 07-demos/legio-klar/data/.',
+      criteria: 'Done when all 10 Vitest tests are green, the UBA traffic light system is mapped precisely, temperatures below 60°C storage / 55°C circulation are flagged, and a clean notice draft is generated with zero cloud dependencies.'
+    },
+    failureModeDe: 'Rechtsdienstleistungsgesetz (RDG): Das Tool darf keine individuelle Rechtsberatung erteilen. Es liefert eine neutrale technische Einstufung nach amtlichen UBA-Kriterien und Musterschreiben, die der Nutzer eigenverantwortlich anpasst.',
+    failureModeEn: 'Legal Services Act (RDG): The tool must not provide individual legal counsel. It delivers objective technical classification per official UBA criteria and template notices adapted by the user.',
+    priorArtDe: 'Verengt (Prüfprotokoll 25.09.2026 / 12.10.2026): Gewerbliche Legionellen-Apps (Trinkwasser-App, Hydrosense) und WEKA-Vorlagen richten sich an Anlagenbetreiber und Hausverwaltungen; Bürgerportale (legionellen-was-tun.de) verlangen manuelle Zahleneingabe. Ein datensparsamer On-Device-Decoder für Treppenhaus-Aushänge mit automatischer Extraktion und Mängelanzeige existiert nicht. Dose: https://felixinberlin.github.io/Amelie/#dose=legio-klar',
+    priorArtEn: 'Narrowed (audit protocol 25 Sep 2026 / 12 Oct 2026): Commercial Legionella tools target facility managers. Consumer portals require manual numerical entry. A privacy-preserving on-device stairwell notice decoder with automated defect notice generation did not exist. Tin: https://felixinberlin.github.io/Amelie/#dose=legio-klar'
   }
 ];
 

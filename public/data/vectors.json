@@ -771,6 +771,22 @@
       "funDe": "Ein ruhiges Gesprächs-Probespiel: Du klickst durch das Telefonat, und zu jeder Antwort des Gegenübers leuchtet der Paragraf auf, der dahintersteht.",
       "funEn": "A calm rehearsal for the call: click through the conversation and, for every reply on the other end, the paragraph behind it lights up.",
       "note": "Reviewer 11.10.2026 in classification-log (Gründungsnavigator): voller Prototyp GN-A 26/35; Zuschnitt GN-B (Normregister, Fristen-/Reihenfolgeprüfer, Rechte-Karten mit Wortlaut im Kern, Taktik nur als Beispielpaket) 29/35. V1 schmale Restlücke (Gespräch statt Brief), V4 SGB-II-Halbwertszeit 2–3 Jahre, V7 Normtext Typ A, Bedarf nur Sekundärquellen. Zitat-Abgleich gegen gesetze-im-internet.de 11.10.2026: 4 Abweichungen korrigiert."
+    },
+    "legio-klar": {
+      "v": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        5
+      ],
+      "fun": 3,
+      "funSource": "discovery",
+      "funDe": "Ein Aushang wird sofort in klare Ampelsprache übersetzt.",
+      "funEn": "A notice board report is instantly translated into a clear traffic light.",
+      "note": "Klassifikation 12.10.2026: 29/35, Tier 1, V8 Fun 3. Deterministischer UBA- und DVGW W 551 Prüfkern mit Mängelanzeigen-Generator."
     }
   },
   "candidates": {

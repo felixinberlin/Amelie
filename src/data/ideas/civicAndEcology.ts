@@ -179,6 +179,7 @@ export const CIVIC_AND_ECOLOGY_IDEAS: CandidateIdea[] = [
   },
   {
     id: 'legio-klar',
+    packedDoseId: 'legio-klar',
     title: 'LegioKlar: TrinkwV § 31/52 Legionellen-Aushang-Decoder',
     round: 'Inversion Run 2',
     date: '25.09.2026',

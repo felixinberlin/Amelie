@@ -1537,3 +1537,32 @@ Wer könnte Ticket 01 finanzieren? Prototype Fund (Civic-Tech, offene Lizenz-Ver
 
 ### Lehre für das Lernlog
 Wenn Haftungsgrenze (RDG) und Empfänger zusammen offen sind, ist der Zuschnitt auf das Prüfbare der Hebel, nicht die Zahl der Module: Norm + Frist zählt 29, Norm + Frist + Taktik zählt 26. Prototype-Zahlen müssen in Konzept und README gleich sein, bevor gepackt wird.
+
+
+---
+
+## LegioKlar — Packaging & Review Dossier (12.10.2026)
+
+* **Review Date:** 12.10.2026
+* **Idea ID:** `legio-klar`
+* **Title:** LegioKlar (TrinkwV § 31/52 Legionellen-Aushang-Decoder)
+* **Domain:** civic / health
+* **Status:** Dose Ready (Gepackt am 12.10.2026)
+
+### Vector Assessment (Rubrik V1–V8)
+
+| Vector | Name | Score | Begründung |
+|---|---|:---:|---|
+| **V1** | Novelty & Distance | **4/5** | Klare Lücke: Portale für Mieter erfordern manuelle Eingaben; kommerzielle Software richtet sich an Verwalter. Lokaler On-Device-Decoder für Treppenhausaushänge mit automatischer Mängelanzeige existiert nicht. |
+| **V2** | Complexity & Realism | **4/5** | Deterministische Abbildung der UBA-Matrix und DVGW W 551 Temperaturstufen. Keine Cloud-Abhängigkeit, volle Offline-Fähigkeit. |
+| **V3** | Possibility & Feasibility | **4/5** | Berechnungslogik, Schwellenwerte und Musterschreiben sind vollständig in TypeScript umgesetzt (10 Tests grün). |
+| **V4** | Longevity & Maintenance | **4/5** | TrinkwV 2023 und UBA-Empfehlungen bieten stabile mehrjährige Rechtsgrundlagen. |
+| **V5** | Civic SWOT | **4/5** | Hoher Bürgernutzen für Mieter bei akuten Keimbelastungen; Schutz vor unbemerkter Gesundheitsgefährdung (Legionellose). |
+| **V6** | Tech Tree Position | **4/5** | Schließt an TrinkwV-Vollzug und Open-Source-Mieterassistenz an. |
+| **V7** | Ground Truth | **5/5** | Gesetzliche Primärnormen (TrinkwV §§ 31, 51, 52, BGB § 536c) und UBA-Maßnahmenmatrix im Volltext belegt. |
+| **Summe (V1–V7)** | **Kernscore** | **29/35** | **Dose Ready (Tier 1)** |
+| **V8** | Fun / Engagement | **3/5** | *Discovery*: Unleserlicher Laboraushang wird sofort in eine klare Ampelsprache übersetzt. |
+
+### Zusammenfassung
+Gepackt als Dose 47. Scaffolding unter `07-demos/legio-klar/`, Kern unter `src/engine/legio-klar/` (10 Vitest-Tests).
+

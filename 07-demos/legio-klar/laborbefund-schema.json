@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegioKlarLaborbefund",
+  "description": "Strukturiertes Datenmodell für mikrobiologische Trinkwasseruntersuchungen (Legionellen nach TrinkwV / DVGW W 551)",
+  "type": "object",
+  "required": ["probeDatum", "proben", "anlage"],
+  "properties": {
+    "laborName": { "type": "string" },
+    "akkreditierungsNummer": { "type": "string" },
+    "befundNummer": { "type": "string" },
+    "probeDatum": { "type": "string", "format": "date" },
+    "eingangDatum": { "type": "string", "format": "date" },
+    "ausgabeDatum": { "type": "string", "format": "date" },
+    "anlage": {
+      "type": "object",
+      "required": ["gebaeudeTyp"],
+      "properties": {
+        "gebaeudeTyp": { "type": "string" },
+        "speicherVolumenLiter": { "type": "number" },
+        "rohrleitungsVolumenLiter": { "type": "number" },
+        "zirkulationVorhanden": { "type": "boolean" },
+        "speicherTemperaturC": { "type": "number" },
+        "zirkulationRuecklaufC": { "type": "number" }
+      }
+    },
+    "proben": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["entnahmestelle", "entnahmeTyp", "kbePro100ml"],
+        "properties": {
+          "id": { "type": "string" },
+          "entnahmestelle": { "type": "string" },
+          "entnahmeTyp": {
+            "type": "string",
+            "enum": ["speicheraustritt", "zirkulationsruecklauf", "steigstrang", "peripherie_wohnung", "sonstige"]
+          },
+          "kbePro100ml": { "type": "number", "minimum": 0 },
+          "temperaturC": { "type": "number" },
+          "nachweisgrenze": { "type": "number", "default": 1 },
+          "spezies": { "type": "string", "default": "Legionella spp." }
+        }
+      }
+    }
+  }
+}
