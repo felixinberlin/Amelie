@@ -403,8 +403,9 @@ describe('Catalogue hardening regressions', () => {
     expect(evaluateMixingInterlock({ ...a, hazardStatementsEvidence: 'undocumented' }, b, rules).state).toBe('UNVERIFIED');
     expect(deriveChemicalGroups({}).groups).toEqual(['unknown']);
   });
-  it('keeps the conservative migration and all pair outcomes symmetric', () => {
-    expect(products.filter((p) => p.completenessReviewed || p.currentVersionChecked)).toEqual([]);
+  it('keeps completeness pending after source review and all pair outcomes symmetric', () => {
+    expect(products.filter((p) => p.completenessReviewed)).toEqual([]);
+    expect(products.filter((p) => p.currentVersionChecked)).toHaveLength(36);
     for (const a of products) for (const b of products) {
       const ab = evaluateMixingInterlock(a, b, rules);
       const ba = evaluateMixingInterlock(b, a, rules);
