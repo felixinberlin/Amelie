@@ -46,15 +46,21 @@ Ein grünes Signal würde eine behördliche oder laborexakte Unbedenklichkeitser
                                  NEIN           JA
                                   │              │
                                   ▼              ▼
-                          🟠 UNVERIFIED   [ Regel-Auswertung ]
-                          (Bernstein)            /        \
-                                        Regel trifft?    Kein Treffer
-                                            /                  \
-                                           JA                  NEIN
-                                           │                    │
-                                           ▼                    ▼
-                                        🔴 STOP        ⚪ NO_KNOWN_INCOMPATIBILITY
-                                        (Rot)          (Grau — Pflicht-Disclaimer)
+                          🟠 UNVERIFIED   [ Regel-Auswertung (bestätigte Gefahren) ]
+                          (Bernstein)            /                 \
+                                        Regel belegt?          Kein Treffer
+                                            /                       \
+                                           JA                       NEIN
+                                           │                         │
+                                           ▼                         ▼
+                                        🔴 STOP            [ Alle 3 Evidenzprüfungen
+                                        (Rot)                dokumentiert & belegt? ]
+                                                                 /             \
+                                                               NEIN            JA
+                                                                │               │
+                                                                ▼               ▼
+                                                        🟠 UNVERIFIED    ⚪ NO_KNOWN_INCOMPATIBILITY
+                                                        (Bernstein)      (Grau — Pflicht-Disclaimer)
 ```
 
 ### 2.1 Zustand 1: 🔴 STOP
@@ -71,7 +77,7 @@ Ein grünes Signal würde eine behördliche oder laborexakte Unbedenklichkeitser
 * **Hinweis:** *„Prüfung unvollständig. Produkt nicht in der Sicherheitsdatenbank. Keine Prüfung möglich. Niemals auf Verdacht mischen!“*
 
 ### 2.3 Zustand 3: ⚪ NO_KNOWN_INCOMPATIBILITY
-* **Bedingung:** Beide Produkte vollständig verifiziert und keine bekannte Regel aus $\mathcal{R}$ ausgelöst.
+* **Bedingung:** Beide Produkte eindeutig identifiziert, alle drei Evidenzprüfungen (Gefahren, Vollständigkeit, aktuelle Fassung) dokumentiert und belegt, und keine bekannte Regel aus $\mathcal{R}$ ausgelöst.
 * **UI-Darstellung:** Neutrales Steingrau (`#4B5563` / `#E5E7EB`), **strikt kein Grün**.
 * **Haptik:** Ein einzelner dezenter Bestätigungsklick `[50ms]`.
 * **Unübersehbarer Pflicht-Disclaimer:**

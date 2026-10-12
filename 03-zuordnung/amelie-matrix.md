@@ -389,7 +389,7 @@ Zu jeder Idee aus `ideas-neue-projekte.md`: wer davon profitiert, warum ausgerec
 | EuroBirdCast (Arbeitstitel) | 🔨 | Joep Breuer, TNO / BIRDSAFE; Bedarf unbestätigt | **wiederaufgenommen** 08.10.2026 als Forschungswerkbank; alter BfN-Kill bleibt gültig, kein erneuter Versand |
 | PillSafe Vision | 🎁 | Pflegestützpunkte · BAGSO | **gepackt** (aus dem Katalog), `verengt` seit Prüfung 24.09.2026 — Kipprisiko Medizinprodukt vor Zustellung klären |
 | KlangStethoskop | 🎁 | Netzwerk Reparatur-Initiativen | **gepackt** (aus dem Katalog), `verengt` seit 24.09.2026 — Lücke ist der fehlende Datensatz, nicht die App |
-| ChemGefahr-Stopp | 🎁 | BG BAU · IG BAU | **gepackt** (aus dem Katalog), `verengt` seit 24.09.2026 — BG BAU hat WINGIS/GISCODE; Kipprisiko falsches „passt" |
+| ChemGefahr-Stopp | 🎁 | BIV · BG BAU · EU-OSHA | **gesendet** (Mail 11 an BIV am 27.09.2026; Mail 12 an EU-OSHA bereit); `verengt` — WINGIS/GISCODE getrennt; Kipprisiko falsches „passt“ durch 3-Zustände-Modell (nie grün) gelöst |
 | DienstplanWächter (Pflege) | 🎁 | ver.di Gesundheit · DBfK | **gepackt** (aus dem Katalog), `verengt` (dünn) seit 24.09.2026 — Foto → Dienstplan und Zuschlagsrechner existieren |
 | BedenkenBlitz | 🎁 | Fachverband Fliesen und Naturstein · ZDB | **gepackt** (aus dem Katalog), `verengt` (dünn) seit 24.09.2026 — Muster und KI aus dem LV existieren |
 | Fugenduell: Asphaltritzen-Arena | 🔨 | Dose nennt „Indie Game Developers" — keine Adresse | **gepackt**, `verengt` seit 24.09.2026 (Spiel über echte Arten besetzt, Gebiet neu); Empfänger fehlt |

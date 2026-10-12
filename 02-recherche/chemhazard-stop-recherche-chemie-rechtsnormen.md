@@ -50,9 +50,10 @@ Neben der Chlorgasreaktion identifiziert das ChemHazard-Regelwerk drei weitere l
 
 ### 3.1 Die europäische CLP-Verordnung (EG Nr. 1272/2008)
 
-Der deterministische Hebel der öffentlich-rechtlichen Spur von ChemHazard Stop ist die EU-CLP-Einstufung:
-* **`EUH031`:** *„Entwickelt bei Berührung mit Säure giftige Gase."*  
-  Dieser Satz ist für Hypochlorit-Zubereitungen gesetzlich vorgeschrieben. Findet die App diesen Satz auf einem Produkt (per Barcode-Lookup oder Etiketten-OCR), wird das Produkt deterministisch als Gefahrengruppe `hypochlorite` eingestuft.
+Der deterministische Hebel der öffentlich-rechtlichen Spur von ChemHazard Stop basiert auf den chemischen Inhaltsstoffen (CAS-Nummern) aus Abschnitt 3 des Sicherheitsdatenblatts sowie der CLP-Kennzeichnung:
+* **Inhaltsstoff Natriumhypochlorit (CAS `7681-52-9`):** Ist der primäre deterministische Auslöser für die Einstufung in die Gefahrengruppe `hypochlorite`.
+* **`EUH031`:** *„Entwickelt bei Berührung mit Säure giftige Gase."* bzw. **`EUH206`:** *„Achtung! Nicht zusammen mit anderen Produkten verwenden, da gefährliche Gase (Chlor) freigesetzt werden können."*  
+  Reale Herstellerdaten (geprüft am 12.10.2026) belegen: Viele Chlorreiniger tragen in der Praxis nur `EUH206` (z. B. Dan Klorix) oder keinen der beiden Sätze (z. B. Domestos Professional Original). Die Chlorgas-Regel hängt daher deterministisch an der Stoffgruppe selbst; EUH-Sätze dienen als zusätzliche Etiketten-Hinweise.
 * **`H314`:** *„Verursacht schwere Verätzungen der Haut und schwere Augenschäden."* (Typisch für starke Säuren und Laugen mit $\text{pH} \le 2$ oder $\text{pH} \ge 11{,}5$).
 * **`H318`:** *„Verursacht schwere Augenschäden."*
 

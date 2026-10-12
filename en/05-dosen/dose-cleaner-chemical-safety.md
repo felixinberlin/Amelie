@@ -1,7 +1,7 @@
 ---
-status: Available
+status: Delivered
 delivery_method: E-Mail
-target_maker: Service Employees International Union · IG BAU · European Cleaning and Facility Services Industry
+target_maker: BIV
 review_score: 34/35
 architecture_tier: Tier 1
 source_type: Type A
@@ -207,7 +207,7 @@ What the Tool Does:
 4. Formal Safety Invariant: The system never emits a dangerous green "safe" clearance. It strictly triggers STOP on danger, or defaults to UNVERIFIED on incomplete data.
 
 Respecting Authority Data & Architecture:
-We perform zero unauthorized scraping of WINGIS or GESTIS. The engine triggers deterministically on public-domain EU CLP statements (especially EUH031). The architecture separates public data from licensed GISCODE datasets, ready to connect directly with official BG BAU WINGIS catalogs should BG BAU choose to adopt or host it.
+We perform zero unauthorized scraping of WINGIS or GESTIS. The core engine triggers deterministically on public-domain EU CLP statements and chemical ingredients from safety data sheets (e.g. sodium hypochlorite, even when the label lacks EUH031). The architecture separates public data from licensed GISCODE datasets, ready to connect directly with official BG BAU WINGIS catalogs should BG BAU choose to adopt or host it.
 
 The complete project is turnkey, tested, and released unconditionally into the public domain (CC0):
 • Interactive Web Simulator & Live Demo: https://felixinberlin.github.io/Amelie/#dose=dose-cleaner-chemical-safety
