@@ -1,0 +1,199 @@
+{
+  "checkedAt": "2026-10-12",
+  "status": "pending_sds_review",
+  "note": "Manufacturer-published identity leads; no SDS/formulation review completed. Not imported by the simulator or mixing engine.",
+  "products": [
+    {
+      "name": "ONEMÜ 2000",
+      "brand": "DR.SCHNELL",
+      "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/kuechen-und-lebensmittelhygiene/handspuelmittel/1381/onemue-2000",
+      "gtins": [
+        "4008439001236"
+      ],
+      "existingProductId": null,
+      "hazardReviewCompleted": false,
+      "status": "pending_sds_review",
+      "packageMappingReviewed": false
+    },
+    {
+      "name": "EASY QUICK A",
+      "brand": "DR.SCHNELL",
+      "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/boeden/1939/easy-quick-a",
+      "gtins": [
+        "4008439036863"
+      ],
+      "existingProductId": null,
+      "hazardReviewCompleted": false,
+      "status": "pending_sds_review",
+      "packageMappingReviewed": false
+    },
+    {
+      "name": "EASY QUICK N",
+      "brand": "DR.SCHNELL",
+      "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1921/easy-quick-n",
+      "gtins": [
+        "4008439036283"
+      ],
+      "existingProductId": null,
+      "hazardReviewCompleted": false,
+      "status": "pending_sds_review",
+      "packageMappingReviewed": false
+    },
+    {
+      "name": "GLASFEE",
+      "brand": "DR.SCHNELL",
+      "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1388/glasfee",
+      "gtins": [
+        "4008439001564",
+        "4008439001373",
+        "4008439001427"
+      ],
+      "existingProductId": null,
+      "hazardReviewCompleted": false,
+      "status": "pending_sds_review",
+      "packageMappingReviewed": false
+    },
+    {
+      "name": "MILIZID ECO",
+      "brand": "DR.SCHNELL",
+      "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/sanitaerreiniger/1481/milizid-eco",
+      "gtins": [
+        "4008439009928",
+        "4008439309974"
+      ],
+      "existingProductId": null,
+      "hazardReviewCompleted": false,
+      "status": "pending_sds_review",
+      "packageMappingReviewed": false
+    },
+    {
+      "name": "RAPIDO SPRÜH-EX",
+      "brand": "DR.SCHNELL",
+      "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/textile-bodenbelaege-polster/1405/dr.schnell-s-rapido-sprueh-ex",
+      "gtins": [
+        "4008439001953"
+      ],
+      "existingProductId": null,
+      "hazardReviewCompleted": false,
+      "status": "pending_sds_review",
+      "packageMappingReviewed": false
+    },
+    {
+      "name": "MILIZID KALKREINIGER",
+      "brand": "DR.SCHNELL",
+      "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/sanitaerreiniger/1374/milizid-kalkreiniger",
+      "gtins": [
+        "4008439001069",
+        "4008439300056"
+      ],
+      "existingProductId": null,
+      "hazardReviewCompleted": false,
+      "status": "pending_sds_review",
+      "packageMappingReviewed": false
+    },
+    {
+      "name": "ECOLUTION FOROL ULTRAHOCHKONZENTRAT",
+      "brand": "DR.SCHNELL",
+      "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1326/ecolution-forol-ultrahochkonzentrat",
+      "gtins": [
+        "4008439312127"
+      ],
+      "existingProductId": null,
+      "hazardReviewCompleted": false,
+      "status": "pending_sds_review",
+      "packageMappingReviewed": false
+    },
+    {
+      "name": "LEVANTE ECO",
+      "brand": "DR.SCHNELL",
+      "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1766/levante-eco",
+      "gtins": [
+        "4008439035828"
+      ],
+      "existingProductId": null,
+      "hazardReviewCompleted": false,
+      "status": "pending_sds_review",
+      "packageMappingReviewed": false
+    },
+    {
+      "name": "SCHIROCCO CLEAN",
+      "brand": "DR.SCHNELL",
+      "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/boeden/1469/schirocco-clean",
+      "gtins": [
+        "4008439007245",
+        "4008439307260",
+        "4008439307222"
+      ],
+      "existingProductId": null,
+      "hazardReviewCompleted": false,
+      "status": "pending_sds_review",
+      "packageMappingReviewed": false
+    },
+    {
+      "name": "EASY QUICK S",
+      "brand": "DR.SCHNELL",
+      "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/boeden/1976/easy-quick-s",
+      "gtins": [
+        "4008439044103",
+        "4008439044141"
+      ],
+      "existingProductId": null,
+      "hazardReviewCompleted": false,
+      "status": "pending_sds_review",
+      "packageMappingReviewed": false
+    },
+    {
+      "name": "DESIFOR-QUICK",
+      "brand": "DR.SCHNELL",
+      "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/desinfektion/flaechendesinfektion/1453/desifor-quick",
+      "gtins": [
+        "4008439205221",
+        "4008439204514",
+        "4008439045315"
+      ],
+      "existingProductId": null,
+      "hazardReviewCompleted": false,
+      "status": "pending_sds_review",
+      "packageMappingReviewed": false
+    },
+    {
+      "name": "ECOLUTION FOROL STICKS",
+      "brand": "DR.SCHNELL",
+      "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/oberflaechen/1328/ecolution-forol-sticks",
+      "gtins": [
+        "4008439312028"
+      ],
+      "existingProductId": null,
+      "hazardReviewCompleted": false,
+      "status": "pending_sds_review",
+      "packageMappingReviewed": false
+    },
+    {
+      "name": "MILIZID",
+      "brand": "DR.SCHNELL",
+      "sourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/gebaeudereinigung/sanitaerreiniger/1373/milizid",
+      "gtins": [
+        "4008439001045",
+        "4008439300070",
+        "4008439300001",
+        "4008439001038"
+      ],
+      "existingProductId": "dr-schnell-milizid",
+      "hazardReviewCompleted": false,
+      "status": "pending_sds_review",
+      "packageMappingReviewed": false
+    }
+  ],
+  "excludedContainerGtins": [
+    {
+      "gtin": "4008439312073",
+      "reason": "Empty ECOLUTION FOROL refill bottle; barcode does not identify contents."
+    },
+    {
+      "gtin": "4008439312059",
+      "reason": "Empty ECOLUTION MILIZID refill bottle; barcode does not identify contents."
+    }
+  ],
+  "exclusionSourceUrl": "https://shop.dr-schnell.com/shop/kategorien-in-der-uebersicht/zubehoer/dosierhilfen/handsprueher/1329/handsprueher-ecolution",
+  "sourceAccess": "Publicly indexed manufacturer shop pages read through web search; physical containers and SDS/formulation matches not checked."
+}

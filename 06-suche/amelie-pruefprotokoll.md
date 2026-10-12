@@ -9,6 +9,12 @@ Ergänzt `05-dosen/_entsorgt.md`: dort steht die Begründung für gepackte, dann
 
 ---
 
+## Produktidentitäts-Recherche ChemGefahr-Stopp — 12.10.2026 (method: engine-build)
+
+| Idee / Änderung | Urteil | Beleg (kurz) | Prüfen ab |
+|---|---|---|---|
+| **ChemGefahr-Stopp: zusätzliche Hersteller-Barcodes als Recherchebestand** (`dose-cleaner-chemical-safety`) | **`verengt`** (unverändert) | DR.SCHNELL veröffentlicht EAN im eigenen Shop: 13 zusätzliche Produktkandidaten mit 22 EAN plus vier EAN für bestehendes MILIZID. Prüfziffern stimmen; SDB-, Formulierungs- und Gebindeabgleich noch offen. Zwei EAN leerer ECOLUTION-Sprühflaschen ausdrücklich ausgeschlossen. Separat in `data/product-candidates.json`; keine Änderung der Laufzeitprodukte oder ihrer Evidenzflags. Fundstellen und Quellenmeldung: `07-demos/chemhazard-stop/product-research-2026-10-12.md`. | 03/2027 |
+
 ## Datenprüfung ChemGefahr-Stopp — 12.10.2026 (Referenzdaten neu belegt, method: engine-build)
 
 | Idee / Änderung | Urteil | Beleg (kurz) | Prüfen ab |
