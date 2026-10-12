@@ -14,7 +14,10 @@ Anwendung empfohlen. Tab. 3 (Kriterien) und Tab. 4 (Risikostufen).
 |---|---|
 | `schema-lagvsw-21-01.yaml` | Die vier Kriterien mit Punktwerten 1–4, im Wortlaut des Beschlusses, dazu die Risikostufen, die acht Anwendungsgrundsätze und die Schwellenwerte der drei Gebäudekategorien. |
 | `ampel.py` | Eine reine Funktion `bewerte(...)`: Punkte rein, Risikostufe mit Begründung raus. Dazu `signifikanzschwelle(...)` für Monitoringergebnisse und `als_blatt(...)` für die lesbare Ausgabe. |
+| `models.py` | Datenmodelle für Gebäude- und Fassadenaufnahmen (`GebaeudeBewertung`), konvertierbar zu Dictionary und RFC 7946 GeoJSON Feature für den NABU Vogelschlagmelder. |
+| `schema-gebaeude-bewertung.json` | Offizielles JSON Schema (Draft 2020-12) für API-Validierung und Datenbank-Payloads. |
 | `test_ampel.py` | Alle elf durchgerechneten Beispiele aus dem Anhang des Beschlusses, plus die Münchner Felddaten für die Schwellenwerte, beide Vorrangregeln und der vom Beschluss ungeregelte Regelkonflikt. |
+| `test_models.py` | Unittests für die Gebäude- und Fassaden-Datenstrukturen und GeoJSON-Exporte. |
 
 Keine Bilderkennung, keine Geodaten, keine Datenbank, kein Webserver. Das ist der Punkt:
 Bevor irgendetwas geschätzt wird, muss das Schema korrekt rechnen.

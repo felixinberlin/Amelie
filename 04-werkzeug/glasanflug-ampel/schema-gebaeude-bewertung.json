@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://felixinberlin.github.io/Amelie/schemas/gebaeude-bewertung.json",
+  "title": "GebaeudeBewertung",
+  "description": "Standardisiertes Datenschema für Gebäude- und Fassadenbewertungen von Vogelschlagrisiken an Glas nach LAG VSW 21/01 zur Integration in den NABU Vogelschlagmelder.",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "gebaeudeId",
+    "erfasstAm",
+    "erfasserTyp",
+    "fassaden",
+    "umfeld",
+    "lagVswBewertung",
+    "disclaimer"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "enum": ["1.0.0"]
+    },
+    "gebaeudeId": {
+      "type": "string",
+      "description": "Eindeutiger Bezeichner des bewerteten Gebäudes bzw. Datensatzes."
+    },
+    "erfasstAm": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Erfassungszeitpunkt (ISO 8601 UTC)."
+    },
+    "erfasserTyp": {
+      "type": "string",
+      "enum": ["ehrenamtlich", "sachverstaendig", "buergerin"]
+    },
+    "erfasserNotiz": {
+      "type": "string"
+    },
+    "adresse": {
+      "type": "object",
+      "required": ["text"],
+      "properties": {
+        "text": { "type": "string" },
+        "strasse": { "type": "string" },
+        "hausnummer": { "type": "string" },
+        "postleitzahl": { "type": "string" },
+        "stadt": { "type": "string" }
+      }
+    },
+    "geokoordinaten": {
+      "type": "object",
+      "required": ["latitude", "longitude"],
+      "properties": {
+        "latitude": { "type": "number", "minimum": -90, "maximum": 90 },
+        "longitude": { "type": "number", "minimum": -180, "maximum": 180 }
+      }
+    },
+    "fassaden": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id"],
+        "properties": {
+          "id": { "type": "string" },
+          "bezeichnung": { "type": "string" },
+          "ausrichtung": { "type": "string" },
+          "flaecheM2": { "type": "number", "minimum": 0 },
+          "hoeheM": { "type": "number", "minimum": 0 },
+          "breiteM": { "type": "number", "minimum": 0 },
+          "glasanteilProzent": { "type": "number", "minimum": 0, "maximum": 100 },
+          "glasanteilStufe": { "type": "integer", "enum": [1, 2, 3, 4] },
+          "fassadengestaltungStufe": { "type": "integer", "enum": [1, 2, 3, 4] },
+          "maximaleScheibengroesseM2": { "type": "number", "minimum": 0 },
+          "markierungVorhanden": { "type": "boolean" },
+          "markierungsMusterNr": { "type": "string" },
+          "markierungsKategorie": { "type": "string", "enum": ["A", "B", "C", "D"] },
+          "markierungsTestart": { "type": "string", "enum": ["spiegelung", "durchsicht"] },
+          "fotos": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    },
+    "umfeld": {
+      "type": "object",
+      "properties": {
+        "umgebungStufe": { "type": "integer", "enum": [1, 2, 3, 4] },
+        "gehoelzabstandStufe": { "type": "integer", "enum": [1, 2, 3, 4] },
+        "gehoelzabstandMetres": { "type": "number", "minimum": 0 },
+        "gehoelzQuelle": { "type": "string", "enum": ["osm", "baumkataster_berlin", "messung_vor_ort", "unbestimmt"] },
+        "vegetationObservationsCount": { "type": "integer", "minimum": 0 },
+        "naechsteBeobachtung": {
+          "type": "object",
+          "required": ["distanzMetres", "art"],
+          "properties": {
+            "distanzMetres": { "type": "number" },
+            "art": { "type": "string" }
+          }
+        }
+      }
+    },
+    "lagVswBewertung": {
+      "type": "object",
+      "required": ["vollstaendig", "summe", "stufe", "vorrangregel", "regelkonflikt", "unbestimmteKriterien"],
+      "properties": {
+        "vollstaendig": { "type": "boolean" },
+        "summe": { "type": ["integer", "null"], "minimum": 4, "maximum": 16 },
+        "stufe": { "type": ["string", "null"], "enum": ["gering", "mittel", "hoch", null] },
+        "vorrangregel": { "type": ["string", "null"] },
+        "regelkonflikt": { "type": "boolean" },
+        "unbestimmteKriterien": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "monitoring": {
+      "type": "object",
+      "properties": {
+        "fundeProJahr": { "type": ["number", "null"], "minimum": 0 },
+        "fassadenlaengeM": { "type": ["number", "null"], "exclusiveMinimum": 0 },
+        "signifikantErhoeht": { "type": ["boolean", "null"] }
+      }
+    },
+    "disclaimer": {
+      "type": "string"
+    }
+  }
+}

@@ -22,6 +22,8 @@ import { GlasanflugVisualizer } from './GlasanflugVisualizer';
 import { lookupVegetation, VegetationSurvey } from '../../engine/glasanflug/geodata';
 import { lookupBerlinTrees } from '../../engine/glasanflug/berlinTrees';
 import { geocodeAddress, GeocodedCandidate } from '../../engine/glasanflug/geocode';
+import { erstelleGebaeudeBewertung, toGeoJsonFeature } from '../../engine/glasanflug/gebaeudeSchema';
+import { lookupGebaeudeGeometrie, GebaeudeGeometrie } from '../../engine/glasanflug/buildingGeometry';
 
 interface GlasanflugSimulatorProps {
   lang: Language;
@@ -138,6 +140,56 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
     URL.revokeObjectURL(url);
   };
 
+  const getBuildingAssessment = () => {
+    const lat = Number(latitude);
+    const lon = Number(longitude);
+    return erstelleGebaeudeBewertung({
+      adresseText: address.trim() || undefined,
+      latitude: Number.isFinite(lat) ? lat : undefined,
+      longitude: Number.isFinite(lon) ? lon : undefined,
+      eingabe,
+      ergebnis,
+      survey,
+      markierung: {
+        musterNr,
+        kategorie: markierung.kategorie,
+        testart,
+      },
+      buildingGeometrie: building,
+      monitoring: {
+        fundeProJahr: kollisionen.trim() === '' ? null : Number(kollisionen),
+        fassadenlaengeM: fassadenlaenge.trim() === '' ? null : Number(fassadenlaenge),
+        signifikantErhoeht: monitoring?.signifikantErhoeht ?? null,
+      },
+      erfasserTyp: 'ehrenamtlich',
+    });
+  };
+
+  const exportMelderJson = () => {
+    const bld = getBuildingAssessment();
+    const url = URL.createObjectURL(new Blob([JSON.stringify(bld, null, 2)], { type: 'application/json' }));
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `vogelschlagmelder-bewertung-${bld.gebaeudeId}.json`;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(url);
+  };
+
+  const exportGeoJson = () => {
+    const bld = getBuildingAssessment();
+    const feature = toGeoJsonFeature(bld);
+    const url = URL.createObjectURL(new Blob([JSON.stringify(feature, null, 2)], { type: 'application/geo+json' }));
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `vogelschlagmelder-feature-${bld.gebaeudeId}.geojson`;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(url);
+  };
+
   const [address, setAddress] = useState('');
   const [candidates, setCandidates] = useState<GeocodedCandidate[]>([]);
   const [geocodeLoading, setGeocodeLoading] = useState(false);
@@ -162,19 +214,35 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
   const [survey, setSurvey] = useState<VegetationSurvey | null>(null);
   const [surveyError, setSurveyError] = useState('');
   const [surveyLoading, setSurveyLoading] = useState(false);
+  const [building, setBuilding] = useState<GebaeudeGeometrie | null>(null);
+  const [buildingLoading, setBuildingLoading] = useState(false);
+
   const queryVegetation = async () => {
     const lat = Number(latitude);
     const lon = Number(longitude);
     setSurvey(null);
+    setBuilding(null);
     setSurveyError('');
     if (!latitude.trim() || !longitude.trim() || !Number.isFinite(lat) || !Number.isFinite(lon) || Math.abs(lat) > 90 || Math.abs(lon) > 180) {
       setSurveyError(de ? 'Gültige Koordinaten eingeben.' : 'Enter valid coordinates.');
       return;
     }
     setSurveyLoading(true);
-    try { setSurvey(await (surveySource === 'berlin' ? lookupBerlinTrees : lookupVegetation)(lat, lon, AbortSignal.timeout(30000))); }
-    catch (error) { setSurveyError(error instanceof Error ? error.message : String(error)); }
-    finally { setSurveyLoading(false); }
+    setBuildingLoading(true);
+    try {
+      const [vRes, bRes] = await Promise.allSettled([
+        (surveySource === 'berlin' ? lookupBerlinTrees : lookupVegetation)(lat, lon, AbortSignal.timeout(30000)),
+        lookupGebaeudeGeometrie(lat, lon, AbortSignal.timeout(30000)),
+      ]);
+      if (vRes.status === 'fulfilled') setSurvey(vRes.value);
+      else setSurveyError(vRes.reason instanceof Error ? vRes.reason.message : String(vRes.reason));
+      if (bRes.status === 'fulfilled') setBuilding(bRes.value);
+    } catch (error) {
+      setSurveyError(error instanceof Error ? error.message : String(error));
+    } finally {
+      setSurveyLoading(false);
+      setBuildingLoading(false);
+    }
   };
   const glasVoll = eingabe.glasanteil.punkte === 4;
 
@@ -409,12 +477,20 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
           )}
 
           <div className="flex flex-wrap items-center gap-2 mb-4">
-            <button type="button" onClick={exportAssessment}
-              className="rounded-lg border border-amber-500/70 px-3 py-2 text-xs font-semibold text-amber-100 hover:bg-stone-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400">
-              {de ? 'Bewertung als JSON exportieren' : 'Export assessment as JSON'}
+            <button type="button" onClick={exportMelderJson}
+              className="rounded-lg bg-emerald-700/80 hover:bg-emerald-600 border border-emerald-500/70 px-3 py-2 text-xs font-semibold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400">
+              {de ? 'NABU Melder-Schema (JSON)' : 'NABU Reporter Schema (JSON)'}
             </button>
-            <span className="text-[11px] text-stone-400">
-              {de ? 'Lokal erstellt · auch unvollständige Bewertungen' : 'Created locally · incomplete assessments included'}
+            <button type="button" onClick={exportGeoJson}
+              className="rounded-lg border border-sky-500/70 hover:bg-sky-950/60 px-3 py-2 text-xs font-semibold text-sky-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-400">
+              {de ? 'GeoJSON Feature' : 'GeoJSON Feature'}
+            </button>
+            <button type="button" onClick={exportAssessment}
+              className="rounded-lg border border-stone-600 px-3 py-2 text-xs font-semibold text-stone-300 hover:bg-stone-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-400">
+              {de ? 'Vollständiges Prüf-JSON' : 'Full Audit JSON'}
+            </button>
+            <span className="text-[11px] text-stone-400 block w-full mt-1">
+              {de ? 'Exportiert lokal zur Übergabe an vogelschlagmelder.de oder QGIS · keine Datenübertragung' : 'Exported locally for vogelschlagmelder.de or QGIS · zero telemetry'}
             </span>
           </div>
 
@@ -513,6 +589,37 @@ export const GlasanflugSimulator: React.FC<GlasanflugSimulatorProps> = ({
             <p className="text-amber-800">{de ? 'Nicht gefunden ≠ nicht vorhanden. Keine Aussage über Versiegelung oder den Glas-Gehölz-Abstand.' : 'Not mapped ≠ absent. No conclusion about sealing or glass-to-vegetation distance.'}</p>
             <a className="underline text-sky-800" href={survey.sourceUrl ?? "https://www.openstreetmap.org/copyright"} target="_blank" rel="noopener noreferrer">{survey.license ?? "© OpenStreetMap contributors"}</a>
           </div>}
+
+          {building && (
+            <div className="pt-3 border-t border-stone-200 text-xs text-stone-800 space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="font-bold text-stone-900">
+                  {de ? 'Gebäudeumriss aus OpenStreetMap' : 'Building footprint from OpenStreetMap'}
+                </span>
+                <span className="font-mono-code text-[11px] bg-stone-100 px-1.5 py-0.5 rounded text-stone-600">
+                  {building.osmId}
+                </span>
+              </div>
+              <p className="text-[11px] text-stone-600">
+                {de ? `Typ: ${building.gebaeudeTyp} · Umfang: ca. ${building.umfangMetres} m` : `Type: ${building.gebaeudeTyp} · Perimeter: approx. ${building.umfangMetres} m`}
+                {building.stockwerke && (de ? ` · ${building.stockwerke} Stockwerke` : ` · ${building.stockwerke} levels`)}
+                {building.hoeheMetres && (de ? ` · Höhe ca. ${building.hoeheMetres} m` : ` · Height approx. ${building.hoeheMetres} m`)}
+              </p>
+              <div className="space-y-1">
+                <span className="font-semibold block text-[11px]">
+                  {de ? `Extrahierte Fassadensegmente (${building.segmente.length}):` : `Extracted façade segments (${building.segmente.length}):`}
+                </span>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 text-[11px]">
+                  {building.segmente.slice(0, 8).map((seg) => (
+                    <div key={seg.segmentIndex} className="p-1.5 rounded bg-stone-50 border border-stone-200">
+                      <span className="font-bold text-emerald-800">#{seg.segmentIndex} {seg.himmelsrichtung}</span>
+                      <span className="text-stone-500 block">{seg.laengeMetres} m ({seg.azimutGrad}°)</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
         </section>
 
         {/* Schwellenwerte aus dem Monitoring */}

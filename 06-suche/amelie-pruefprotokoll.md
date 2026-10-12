@@ -1041,8 +1041,7 @@ Nachprüfung der bestehenden Dose, keine Ideensuche und kein erneuter Neuheitsre
 Glasanflug Neubewertung 06.10.2026 (Librarian consolidation): refreshed prior art, frontend-linked source records and a conditional maintenance follow-on.
 
 | # | Idee | Methode | Urteil (Merge → nach Review) | Beleg (kurz) | Evidenz | Geprüft | Prüfen ab |
-|---|---|---|---|---|---|---|---|
-| N1 | **Glasanflug-Ampel — Neubewertung** (`glasanflug-ampel`) — LAG-VSW-Rechner; Bildauswertung bleibt Forschung | [method: review] | `verengt` | FLAP BirdSafe DIY asks façade-risk questions and USGBC 2026 describes photo/rendering-assisted questionnaires; Berlin guidance makes the planning context clearer. Residual claim is the transparent German LAG-VSW calculation layer; no evidence of demand for automated photo scoring. | [Seite] | 06.10.2026 | 03/2027 |
+| N1 | **Glasanflug-Ampel — Neubewertung** (`glasanflug-ampel`) — LAG-VSW-Rechner; Bildauswertung bleibt Forschung | [method: review] | `verengt` | FLAP BirdSafe DIY asks façade-risk questions and USGBC 2026 describes photo/rendering-assisted questionnaires; Berlin guidance makes the planning context clearer. Residual claim is the transparent German LAG-VSW calculation layer; no evidence of demand for automated photo scoring. Antwort NABU Jena (12.10.2026, M. Schätz): Plattformbetreiber sieht Gebäudevermessung durch Ehrenamtliche als denkbare Erweiterung des reinen Monitorings (Roadmap offen). | [Seite] | 06.10.2026 (Update 12.10.2026) | 03/2027 |
 | N2 | **Installierte Vogelschutzmuster — Zustandsnachweis** (`glasanflug-muster-wartungsnachweis`) — Wiederholte Sichtprüfung der Vollständigkeit und Anordnung vorhandener Muster | [method: bisoziation] | `unklar` | Bisoziation mit Straßenmarkierungswartung ergibt eine mögliche wiederkehrende Zustandsprüfung. ASTM E1710 ist nur ein Analogon; Vorhandensein, Nutzerbedarf und vorhandene Produkte für Vogelschutzmuster sind nicht belegt. | [Seite] | 06.10.2026 | 10/2027 |
 
 

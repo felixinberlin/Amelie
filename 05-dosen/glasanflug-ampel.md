@@ -59,13 +59,19 @@ Und der Bedarf ist gerade sprunghaft gestiegen:
 
 **Nicht dabei:** keine Produktempfehlungen, kein Zertifikat, kein automatisches § 44-Urteil, keine Prognose toter Vögel, keine flächendeckende Bewertung fremder Gebäude aus Straßenbildern, keine öffentliche Karte „gefährlicher Häuser".
 
-## Erster Schritt
+## Erster Schritt & Ticket 02
 
-**Ticket: Erledigt am 22.09.2026 — das Schema ausführbar machen, ohne eine Zeile Bilderkennung.**
-
+**Ticket 01 (Erledigt am 22.09.2026): Das LAG-VSW-Schema ausführbar machen, ohne Bilderkennung.**
 - **Code:** Liegt in `04-werkzeug/glasanflug-ampel/` (Python) und `src/engine/glasanflug/` (TypeScript).
 - **Interaktiver Simulator im Browser:** [Simulator öffnen](#dose=glasanflug-ampel) oder [Vollbild-Sandkasten](#sim=glasanflug).
 - **Umfang:** Regeldatei mit den Wortlauten des Beschlusses (Stand 2023), reine Bewertungsfunktion mit Herkunftsangabe je Eingabewert (`bewerte(...)`), `signifikanzschwelle(...)` für Monitoringdaten, 26 automatisierte Tests grün — darunter alle elf durchgerechneten Beispiele aus dem Anhang des Beschlusses, die Münchner Felddaten, beide Vorrangregeln und der Regelkonflikt. CC0, damit im GPLv3-Melder direkt verwendbar.
+
+**Ticket 02 (Erledigt am 12.10.2026): Gebäude- und Fassaden-Bewertungsschema & Melder-Schnittstelle (Resonanz NABU Jena).**
+- **Anlass:** Rückmeldung von Maximilian Schätz (NABU Jena, Maintainer Vogelschlagmelder): Melder dient derzeit dem Monitoring; Erweiterung zur Gebäudevermessung durch Ehrenamtliche ist vorstellbar (Roadmap offen).
+- **Umsetzung:**
+  - Standardisiertes Datenmodell `GebaeudeBewertung` (`src/engine/glasanflug/gebaeudeSchema.ts`, `04-werkzeug/glasanflug-ampel/models.py`).
+  - Offizielles JSON Schema Draft 2020-12 (`04-werkzeug/glasanflug-ampel/schema-gebaeude-bewertung.json`) zur direkten Integration in FastAPI / Django / QGIS.
+  - Export im Browser-Simulator: Valides Melder-JSON und RFC 7946 GeoJSON Feature mit Geokoordinaten und Bewertungs-Properties für QGIS/Karten.
 - **Nächstes Ticket:** Kriterium 1 (Anteil frei sichtbarer Glasfläche ohne Markierung) aus einem gemeldeten Fassadenfoto schätzen. Fertig, wenn für dreißig handbestimmte Fassaden die geschätzte Stufe in vier von fünf Fällen stimmt und jede Abweichung mit dem Bild daneben erklärbar ist.
 
 ## Wo es kippt
@@ -104,14 +110,14 @@ Und der Bedarf ist gerade sprunghaft gestiegen:
 
 Quellen: [NABU-Jena-Melder](https://vogelschlag.nabu-jena.de/), [Berliner SenMVKU](https://www.berlin.de/sen/uvk/presse/pressemitteilungen/2026/pressemitteilung.1679571.php), [FLAP BirdSafe](https://www.flapapp.ca/), [USGBC-Schulung 2026](https://www.usgbc.org/sites/default/files/2026-05/Save%20the%20Birds%20course_1.pdf), [Lawson et al. 2026](https://academic.oup.com/condor/article/128/3/1/8677179), [Ottawa-Preprint](https://ecoevorxiv.org/repository/view/12042/), [Google Maps-Bedingungen](https://cloud.google.com/maps-platform/terms), [Mapillary-Lizenz](https://help.mapillary.com/hc/en-us/articles/115001770409-CC-BY-SA-license-for-open-data), [Berliner Orthophotos](https://www.berlin.de/sen/stadt/stadtdaten/geoinformation/landesvermessung/geotopographie-atkis/dop-digitale-orthophotos/), [Berliner 3D-Stadtmodell](https://daten.berlin.de/artikel/berlin-3d-stadtmodell-als-open-data).
 
-## Antwort und Lehre (30.09.2026)
+## Antwort und Lehre (30.09.2026 / 12.10.2026)
 
-**Eine Antwort ist eingetroffen** (NABU-Bundesgeschäftsstelle, Naturschutzkommunikation, 29.09.2026) auf die Mail vom 22.09.2026 an die Sammeladresse. Sie ist eine freundliche Auskunft ohne Bezug auf die Idee, mit Hinweis auf die Broschüre und die WUA-Übersicht und mit Spendenbitte. Kein Interesse und keine Ablehnung, kein Nachfassen.
+**Antwort 1 (29.09.2026, NABU-Bundesgeschäftsstelle):** Auf die Mail vom 22.09.2026 an die Sammeladresse traf eine freundliche Standardauskunft ohne Bezug auf die Idee ein (Broschüren- und WUA-Hinweis, Spendenbitte; kein Nachfassen). Fachliche Korrektur: Flugtunnel-Ergebnisse der WUA sind produktspezifisch und nicht gesetzlich verbindlich; das 90-mm-Raster gehört zu SEEN-Punkten.
 
-Fachlich enthält sie eine Korrektur, die wir übernehmen:
-- Die Bewertungen der Broschüre sind **Flugtunnel-Ergebnisse der WUA für bestimmte Produkte**. Anders gestaltete, auch ähnliche Markierungen können besser oder schlechter wirken; gleich wirksame Lösungen dürfen nicht von vornherein ausgeschlossen werden. Die getesteten Markierungen sind **nicht gesetzlich verbindlich**.
-- Die Mail vom 22.09.2026 sprach von „zertifizierten Punktrastern (9x9 cm) statt nutzloser Aufkleber". Das war zu stark: Das 90-mm-Raster gehört zu den SEEN-Aluminiumpunkten (9 mm Durchmesser), nicht zu einer allgemeinen Vorgabe. Die Dose selbst rechnet nur das LAG-VSW-Schema und gibt keine Produktempfehlung.
-- Empfängerlehre: Die Sammeladresse liefert Standardauskunft. Adressat der Bewertungsschicht bleibt NABU Berlin / Jena (Melder) und die LAG VSW als Eigentümerin des Schemas; **Eigentümerin der Markierungstabelle ist die WUA in Wien**, also ein anderer Empfänger.
+**Antwort 2 (12.10.2026, NABU Jena / Maintainer Vogelschlagmelder):** Maximilian Schätz (Vorstand NABU Jena) antwortet auf die Zustellung vom 09.10.2026:
+> „Guten Tag, das klingt nach einem sehr interessanten Werkzeug. Aktuell wird der Vogelschlagmelder nur für das Monitoring von Vogelschlägen an Glas genutzt, aber ich kann mir vorstellen diesen zu erweitern, sodass Ehrenamtliche später auch eine Vermessung des Gebäudes machen können. Leider kann ich aktuell noch keine Roadmap angeben, wann eine solche Funktion eingebaut wird.“
+
+Lehre: Konkrete Resonanz vom Betreiber der Plattform. Der Melder sammelt derzeit Rohdaten/Monitoring; die Idee, Ehrenamtlichen künftig eine Gebäudevermessung/Fassadenbewertung an die Hand zu geben, wird als denkbare Erweiterung bestätigt (Roadmap offen). Gemäß CC0-Geschenkprinzip besteht kein Druck und kein Nachfassen.
 
 **Demo-Baustein (Stand 30.09.2026):** `src/engine/glasanflug/markierung.ts` gleicht ein geplantes Muster mit einem Tatsachenauszug der WUA-Tabelle ab. Ein Muster, das nicht in der Tabelle steht, ergibt „nicht getestet", nie „unwirksam". Liegt die geplante Außenreflexion über dem geprüften Wert oder fehlt sie, meldet der Abgleich „außerhalb des Geltungsbereichs". Nachnutzungsrecht an der Tabelle ist **nicht geklärt**; vor einer Gabe an die WUA die Zeilen gegen wua-wien.at prüfen und die WUA fragen. Ventures-Prüfung: als eigenes Produkt ein Kill (Zahlungsbereitschaft und Verteidigbarkeit gering, Daten gehören Dritten), stimmiger als Gabe.
 

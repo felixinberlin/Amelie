@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "stand": "2026-10-11",
+  "stand": "2026-10-12",
   "katalog": {
     "status": [
       {
@@ -14616,7 +14616,7 @@
       "status": "durchsucht",
       "statusNotiz": "",
       "evidenz": "seite",
-      "zuletzt": "2026-10-09",
+      "zuletzt": "2026-10-12",
       "ertrag": {
         "dosen": [
           "glasanflug-ampel"
@@ -14649,6 +14649,12 @@
           "agent": "bibliothekar",
           "runde": "Glasanflug-Sitzung 2026-10-09",
           "notiz": "Félix bestätigt am 09.10.2026 um 13:36 Europe/Berlin den Versand der deutschen Demo-Mail an vogelschlag@nabu-jena.de. Betreff: Ein offenes Werkzeug für Ihre Vogelschlag-Arbeit: Glasanflug-Ampel. Erstkontakt Jena, getrennt vom NABU-Sammeladressversand 22.09.; keine Postfachprüfung, keine Antwort bekannt, kein automatisches Nachfassen. Archiv: 03-zuordnung/mails-q4-2026/mail-6-nabu-jena.md."
+        },
+        {
+          "datum": "2026-10-12",
+          "agent": "bibliothekar",
+          "runde": "Antwort NABU Jena 2026-10-12",
+          "notiz": "Antwort von Maximilian Schätz (Vorstand NABU Jena, 12.10.2026): Nennt die Glasanflug-Ampel ein sehr interessantes Werkzeug. Aktuell dient der Vogelschlagmelder nur dem Monitoring, er kann sich eine spätere Erweiterung für Ehrenamtliche zur Gebäudevermessung vorstellen (aktuell noch keine Roadmap). Kein Nachfassen gemäss Geschenk-Prinzip."
         }
       ]
     },

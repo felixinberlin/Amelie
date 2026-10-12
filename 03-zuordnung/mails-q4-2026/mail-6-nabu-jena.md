@@ -6,7 +6,19 @@
 **Dose:** `05-dosen/glasanflug-ampel.md`
 **Frontend-ID:** `mail-nabu-jena-2026-10-09` (nicht `mail-6`, dort steht Tessl).
 
-Dies ist der erste bestätigte Versand an NABU Jena. Die frühere Mail an eine NABU-Sammeladresse vom 22.09. und deren Antwort vom 29.09. sind ein eigener Vorgang, keine Antwort von Jena. Nicht automatisch nachfassen.
+Dies ist der erste bestätigte Versand an NABU Jena. Die frühere Mail an eine NABU-Sammeladresse vom 22.09. und deren Antwort vom 29.09. sind ein eigener Vorgang. Nicht automatisch nachfassen.
+
+**Antwort eingegangen am 12.10.2026 von Maximilian Schätz (Vorstand NABU Jena):**
+> „Guten Tag,
+> 
+> das klingt nach einem sehr interessanten Werkzeug. Aktuell wird der Vogelschlagmelder nur für das Monitoring von Vogelschlägen an Glas genutzt, aber ich kann mir vorstellen diesen zu erweitern, sodass Ehrenamtliche später auch eine Vermessung des Gebäudes machen können. Leider kann ich aktuell noch keine Roadmap angeben, wann eine solche Funktion eingebaut wird.
+> 
+> Mit freundlichen Grüßen
+> 
+> Maximilian Schätz
+> Vorstand“
+
+**Lehre / Status:** Positives Feedback; Idee / Anwendungsfall (Gebäudevermessung durch Ehrenamtliche zur Ergänzung des reinen Monitorings) wird als denkbare Erweiterung gesehen, Roadmap offen. Gemäß Geschenk-Prinzip und Druckfreiheit kein Nachfassen.
 
 ## Gesendete Fassung
 

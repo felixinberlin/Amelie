@@ -42,8 +42,8 @@ Herzliche Grüße aus Brandenburg
 Félix Martínez Resendiz`,
     bodyEn: `Sent in German; the German text is the authoritative sent version. The demo provides manual LAG-VSW assessment, explicit address lookup, OSM/Berlin tree observations, and provenance export. No automatic photograph assessment or measured glass-to-tree distance. See the German version for the complete sent email.`,
     doseLinks: ['glasanflug-ampel'],
-    scheduleDe: 'Versand durch Félix am 09.10.2026 bestätigt; eigenständiger Erstkontakt mit NABU Jena. Kein automatisches Nachfassen.',
-    scheduleEn: 'Félix confirmed sending on 9 October 2026; separate first contact with NABU Jena. No automatic follow-up.',
+    scheduleDe: 'Versand am 09.10.2026; Antwort eingegangen am 12.10.2026 (Maximilian Schätz, Vorstand NABU Jena: positives Feedback, denkbare Melder-Erweiterung für Gebäudevermessung durch Ehrenamtliche, Roadmap offen). Kein Nachfassen.',
+    scheduleEn: 'Sent on 9 Oct 2026; reply received on 12 Oct 2026 (Maximilian Schätz, NABU Jena board: positive feedback, conceivable extension for volunteer building measurements, roadmap open). No follow-up.',
     sent: true,
     sentAt: '2026-10-09'
   },

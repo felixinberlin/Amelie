@@ -49,13 +49,19 @@ And demand for it just jumped:
 
 **Not included:** no product recommendations, no certificate, no automatic § 44 verdict, no prediction of annual deaths, **no blanket scoring of other people's buildings from street imagery**, no public map of "dangerous houses".
 
-## First step
+## First step & Ticket 02
 
-**Ticket: make the scheme executable — without a single line of computer vision.**
-
-- **Code:** Done on 22 Sep 2026. Lives in `04-werkzeug/glasanflug-ampel/` (Python) and `src/engine/glasanflug/` (TypeScript).
+**Ticket 01 (Done on 22 Sep 2026): Make the LAG-VSW scheme executable — without computer vision.**
+- **Code:** Lives in `04-werkzeug/glasanflug-ampel/` (Python) and `src/engine/glasanflug/` (TypeScript).
 - **Interactive Simulator in Browser:** [Open Simulator](#dose=glasanflug-ampel) or [Fullscreen Sandbox](#sim=glasanflug).
 - **Scope:** Transcribe LAG VSW 21/01 (2023 revision) into a rule file: every factor, point value and threshold, with the original wording beside it. A pure scoring function (`bewerte(...)`) taking values with provenance tags and returning a risk class plus its justification, `signifikanzschwelle(...)` for monitoring data, and 26 automated tests green — including all eleven worked examples from the decision's annex, the Munich field data, both priority rules, and the uncodified rule conflict. CC0 public domain, directly embeddable into GPLv3 codebases.
+
+**Ticket 02 (Done on 12 Oct 2026): Building & Façade Assessment Schema & Reporting Interface (Resonance NABU Jena).**
+- **Trigger:** Feedback from Maximilian Schätz (NABU Jena, Maintainer Vogelschlagmelder): The tool currently monitors collision events; extending it so volunteers can assess/measure buildings is conceivable (roadmap open).
+- **Implementation:**
+  - Standardised data model `GebaeudeBewertung` (`src/engine/glasanflug/gebaeudeSchema.ts`, `04-werkzeug/glasanflug-ampel/models.py`).
+  - Formal JSON Schema Draft 2020-12 (`04-werkzeug/glasanflug-ampel/schema-gebaeude-bewertung.json`) for seamless integration in FastAPI / Django / QGIS.
+  - Export in the browser simulator: Valid reporter JSON and RFC 7946 GeoJSON Feature with coordinates and LAG-VSW evaluation properties for QGIS/maps.
 - **Next Ticket:** Estimate criterion 1 (share of freely visible unmarked glass) from a reported façade photo. Done when the estimated band is right for four out of five of thirty hand-measured façades and every deviation is explainable from the image.
 
 ## Where it breaks
@@ -99,14 +105,14 @@ And demand for it just jumped:
 
 Sources: [NABU Jena reporting tool](https://vogelschlag.nabu-jena.de/), [Berlin SenMVKU](https://www.berlin.de/sen/uvk/presse/pressemitteilungen/2026/pressemitteilung.1679571.php), [FLAP BirdSafe](https://www.flapapp.ca/), [USGBC 2026 training](https://www.usgbc.org/sites/default/files/2026-05/Save%20the%20Birds%20course_1.pdf), [Lawson et al. 2026](https://academic.oup.com/condor/article/128/3/1/8677179), [Ottawa preprint](https://ecoevorxiv.org/repository/view/12042/), [Google Maps terms](https://cloud.google.com/maps-platform/terms), [Mapillary license](https://help.mapillary.com/hc/en-us/articles/115001770409-CC-BY-SA-license-for-open-data), [Berlin orthophotos](https://www.berlin.de/sen/stadt/stadtdaten/geoinformation/landesvermessung/geotopographie-atkis/dop-digitale-orthophotos/), [Berlin 3D model](https://daten.berlin.de/artikel/berlin-3d-stadtmodell-als-open-data).
 
-## Reply and lesson (30 Sep 2026)
+## Reply and lesson (30 Sep 2026 / 12 Oct 2026)
 
-**A reply arrived** (NABU federal office, nature-conservation communications, 29 Sep 2026) to the 22 Sep 2026 mail sent to a shared address. It is a polite standard answer that does not address the idea, points to the brochure and the WUA overview, and asks for donations. No interest, no refusal, no follow-up.
+**Reply 1 (29 Sep 2026, NABU federal office):** A polite standard answer arrived to the 22 Sep 2026 mail to the shared address (brochure, WUA overview, donation request; no follow-up). Factual correction: WUA flight tunnel results are product-specific and not legally binding; the 90 mm grid belongs to SEEN dots.
 
-It contains a correction we adopt:
-- The brochure's ratings are **flight-tunnel results of the Vienna Environmental Advocacy (WUA) for specific products**. Differently designed, even similar markings can work better or worse; equally effective solutions must not be excluded up front. The tested markings are **not legally binding**.
-- The 22 Sep mail said "certified dot grids (9x9 cm) instead of useless stickers". That overstated it: the 90 mm grid belongs to the SEEN aluminium dots (9 mm diameter), not to a general rule. The dose itself only computes the LAG VSW scheme and gives no product recommendation.
-- Recipient lesson: the shared address yields a standard answer. The assessment layer still belongs to NABU Berlin / Jena (reporting tool) and LAG VSW as owner of the scheme; **the owner of the marking table is the WUA in Vienna**, a different recipient.
+**Reply 2 (12 Oct 2026, NABU Jena / maintainer Vogelschlagmelder):** Maximilian Schätz (board member NABU Jena) replied to the delivery from 9 Oct 2026:
+> "Guten Tag, das klingt nach einem sehr interessanten Werkzeug. Aktuell wird der Vogelschlagmelder nur für das Monitoring von Vogelschlägen an Glas genutzt, aber ich kann mir vorstellen diesen zu erweitern, sodass Ehrenamtliche später auch eine Vermessung des Gebäudes machen können. Leider kann ich aktuell noch keine Roadmap angeben, wann eine solche Funktion eingebaut wird."
+
+Lesson: Substantive resonance from the platform maintainer. The tool currently gathers raw collision monitoring; extending it to allow volunteers to assess/measure façades is acknowledged as a viable direction (roadmap open). Adhering to the CC0 gift principle, there is no pressure and no follow-up.
 
 **Demo building block (30 Sep 2026):** `src/engine/glasanflug/markierung.ts` compares a planned pattern with a factual excerpt of the WUA table. A pattern not in the table yields "not tested", never "ineffective". If the planned external reflectance exceeds the tested value or is missing, the check reports "outside tested scope". Reuse rights for the table are **not cleared**; before any gift to the WUA, check rows against wua-wien.at and ask the WUA. Ventures check: as a standalone product a kill (low willingness to pay and defensibility, data belongs to third parties), a better fit as a gift.
 
