@@ -58,7 +58,7 @@ Jeder belegte Eintrag in `data/products.json` stammt aus einem Dokument des Hers
 |---|---|---|
 | Kiehl, Produktseiten und SDB (`kiehl-group.com`) | 12 | SDB, UFI, GISCODE und **alle EAN je Gebindegröße** |
 | Buzil, SDB über das Download-Formular der Produktseite | 3 | SDB, UFI, GISCODE; keine EAN veröffentlicht |
-| DR.SCHNELL, SDB-Download | 1 | SDB; keine EAN veröffentlicht |
+| DR.SCHNELL, SDB-Download und Hersteller-Shop | 1 | SDB; EAN je Gebinde veröffentlicht, vier MILIZID-EAN separat als noch ungeprüfte Recherche |
 | Diversey (Domestos Professional), CP GABA (Dan Klorix), Meffert (Salmiakgeist) | 3 | SDB des Herstellers, abgerufen als Kopie bei einem Händler |
 | Mellerud, Datenblatt über Inhaltsstoffe (Detergenzien-VO Anhang VII D) | 1 | nur INCI-Namen; H-Sätze und pH fehlen |
 
@@ -75,9 +75,13 @@ Regeln für neue Einträge:
 
 **QR-Codes:** In den öffentlichen Unterlagen der Hersteller (SDB, Produktinformation, Betriebsanweisung, Produktbild) ist kein QR-Code enthalten; was auf dem Gebinde gedruckt ist, lässt sich nur am Gebinde auslesen. Die Engine versteht bereits den GS1 Digital Link (`https://id.gs1.org/01/<GTIN>`), den ein GS1-QR-Code trägt, und den UFI vom Etikett.
 
-**Offen:** Die drei Händlerkopien durch Fassungen direkt vom Hersteller ersetzen (Dan Klorix ist von 2020); EAN für Buzil, DR.SCHNELL, Domestos und Salmiakgeist am Gebinde erfassen; H-Sätze für Mellerud vom Etikett nachtragen.
+**Offen:** Die drei Händlerkopien durch Fassungen direkt vom Hersteller ersetzen (Dan Klorix ist von 2020); EAN für Buzil, Domestos und Salmiakgeist am Gebinde erfassen; veröffentlichte DR.SCHNELL-EAN je Gebinde/SDB gegenprüfen; H-Sätze für Mellerud vom Etikett nachtragen.
 
 ---
+
+## 3b. Weitere Produktidentitäten (Recherche, keine Laufzeitdaten)
+
+Die [Recherche vom 12.10.2026](product-research-2026-10-12.md) dokumentiert 13 zusätzliche DR.SCHNELL-Produkte mit 22 Hersteller-EAN sowie vier EAN für das bestehende MILIZID. Der separate Bestand `data/product-candidates.json` enthält keine geprüften Gefahrendaten und wird nicht vom Simulator eingelesen. Alle SDB- und Gebindezuordnungen sind noch zu prüfen. Zwei EAN leerer ECOLUTION-Sprühflaschen sind ausdrücklich vom Produktimport ausgeschlossen.
 
 ## 4. Repository-Struktur
 
