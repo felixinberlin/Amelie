@@ -4,15 +4,15 @@ Erzeugt mit `node scripts/inventory-lab-inbox.mjs` aus den validierten immutable
 
 Domains umfassen alle parsebaren URL-Felder, auch Konkurrentenlinks und Hintergrundquellen. Quote-Status stammt unverändert vom Lab; wiederholte identische Findings werden einmal gezählt. Fehlende Felder beweisen keine fehlende Recherche. Wörtliche Bestands-ID-Erwähnungen sind Hinweise zum Nachlesen; ausbleibende Treffer schließen Überschneidungen nicht aus.
 
-Gesamt: **72 Batches / 159 Ideen**. Status: archived: 19; needs_research: 43; processed: 10.
+Gesamt: **75 Batches / 168 Ideen**. Status: archived: 19; needs_research: 43; processed: 10; received: 3.
 
 | Engine | Batches | Ideen |
 | --- | ---: | ---: |
-| inversion | 16 | 36 |
-| lacunar | 22 | 75 |
+| inversion | 17 | 39 |
+| lacunar | 23 | 78 |
 | mark | 19 | 40 |
 | review | 11 | 0 |
-| scarcity | 4 | 8 |
+| scarcity | 5 | 11 |
 
 ## Wiederholte Titel
 
@@ -361,6 +361,26 @@ Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Date
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C1 | CivicBeistand-Netzwerk: Digitale Community-Plattform zur Organisation rechtssicherer Behördenbegleitung (§ 13 Abs. 4 SGB X) mit mobiler Termin-Vorbereitung, GPS-Lotsen-Routing und digitalem Gedächtnisprotokoll. |
+
+### amelie-lab-inversion-inversion-20261012T162500-brandenburg-diy-333acaf74ea82550
+
+Engine: inversion; Status: received; Ideen: 3.
+
+[Originalbeleg](../06-suche/proposals/lab-2026-10-12-amelie-lab-inversion-inversion-20261012T162500-brandenburg-diy-333acaf74ea82550.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-12-amelie-lab-inversion-inversion-20261012T162500-brandenburg-diy-333acaf74ea82550.md)
+
+Absicht: Ubiquitous cheap solar-powered 24/7 internet-connected cameras + Edge AI (TinyML/VLM). Radically low-cost autonomous persistent vision nodes in Brandenburg (Bauer, Handwerker, Dach, Sonnenblumen, DIY-Kits).
+
+URL-Domains im Originalrecord: bravors.brandenburg.de, dachdecker.org, polizei.brandenburg.de, www.bauhandwerk.de, www.gesetze-im-internet.de, www.lbv-brandenburg.de, www.ljv-brandenburg.de, www.maschinenring.de, www.vhv.de. Vertex-Redirect-URLs: 0.
+
+Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
+
+Wörtlich erwähnte Bestands-IDs: keine.
+
+| Lokale ID | Originaltitel / Idee |
+| --- | --- |
+| C1 | HofBausatz: Ein 49-Euro-Selbstbau-Kit (pre-flashed ESP32-S3, 5W-Solarzelle, LiFePO4, IP65-Schnappschelle), das Agrardieseltanks und Maschinenschuppen per On-Device-TinyML auf Kanister-, Schlauch- und Hebelwerkzeug-Trajektorien überwacht, Diebe via 12V-Stroboskop-Relais lokal verjagt und ein signiertes 800-Byte-Telegram-Event über 1-Euro-IoT-SIM meldet. |
+| C2 | HalmWacht: Autonomer Solar-Pfahl-Visorknoten für Wald-Feld-Kanten, der Einwechselungen von Schwarzwildrotten und Vegetationsknickungen in Sonnenblumen- und Maiskulturen in Echtzeit klassifiziert und manipulationssichere 1,2KB-Schadensprotokolle zur fristgerechten Beweissicherung nach BJagdG generiert. |
+| C3 | FirstWacht: Magnetisch am Gerüst oder First montierbarer Solar-Edge-Node, der Flattern und Risse temporärer Notabdichtungen sowie Sparrendurchbiegungen bei PV-Palettenlasten per lokaler Bildverarbeitung überwacht und bei drohendem Wasserschaden oder Verzug 1KB-Warnungen absetzt. |
 
 ### amelie-lab-lacunar-lacunar-20260929T203438-f693a3-31d72a38da35a809
 
@@ -854,6 +874,26 @@ Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Date
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
 | C1 | HandyFoto-KiezBeistand (Multimodaler Foto-Übersetzer mit GPS-Beistand-Dispatch): Smartphone-Kamera scannt Bescheid $ o$ On-Device-Übersetzung in Muttersprache mit Audio-Vorlesefunktion $ o$ GPS-Alarmierung vetted bilingualer Kiez-Beistände nach § 13 Abs. 4 SGB X zur physischen Terminbegleitung. |
+
+### amelie-lab-lacunar-lacunar-20261012T162600-brandenburg-vision-8b24bbe93b5be681
+
+Engine: lacunar; Status: received; Ideen: 3.
+
+[Originalbeleg](../06-suche/proposals/lab-2026-10-12-amelie-lab-lacunar-lacunar-20261012T162600-brandenburg-vision-8b24bbe93b5be681.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-12-amelie-lab-lacunar-lacunar-20261012T162600-brandenburg-vision-8b24bbe93b5be681.md)
+
+Absicht: Ubiquitous cheap solar-powered 24/7 internet-connected cameras + Edge AI (TinyML/VLM). Autonomous persistent vision nodes in Brandenburg (Bauer, Handwerker, Dach, Sonnenblumen, Beregnung, DIY-Bausatz).
+
+URL-Domains im Originalrecord: edgeimpulse.com, lelf.brandenburg.de, mikrocontroller.bplaced.net, mluk.brandenburg.de, www.dwd.de, www.hwk-potsdam.de, www.landwirtschaftskammer.de, www.zalf.de, www.zdh.de. Vertex-Redirect-URLs: 0.
+
+Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
+
+Wörtlich erwähnte Bestands-IDs: keine.
+
+| Lokale ID | Originaltitel / Idee |
+| --- | --- |
+| C1 | DachWächter: Modularer DIY-Bausatz für Handwerker (Dachdecker/Zimmermann) zur optischen Gerüst- und Notabdichtungs-Telemetrie. Erfasst sub-gradige Gerüstneigung, Flatterfrequenz sturmgefährdeter Unterspannbahnen und nächtlichen Kupferdiebstahl mit <€28 BOM. |
+| C2 | BeregnungsAuge: Autonome optische Schlauchtrommel- und Druckpegel-Telemetrie für märkische Sandböden. Misst Trommelumdrehungen, Schlauchspul-Überlappung und liest analoge Bourdon-Manometer berührungslos mit <€28 BOM aus. |
+| C3 | HelioDrop: Autonome Sonnenblumen-Heliotropismus- und Wildschwein-Korridor-Telemetrie. Erfasst Blütenteller-Neigung (Kornfüllung/Trockenstress) und nachtaktive Wildschweinrotten auf 100-Hektar-Schlägen ohne Funkloch-Probleme. |
 
 ### amelie-lab-mark-mark-20260930T140813-8c17dc-6b3a0db0ad90c4a3
 
@@ -1537,3 +1577,23 @@ Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Date
 | --- | --- |
 | C1 | HandyFoto-Amtssprach-Konverter: Lokale Smartphone-Kamera-App, die Behördenbriefe ohne Server-Upload in verständliche Audio-Instruktionen in 25 Muttersprachen transformiert. |
 | C2 | Kiez-Beistand-Radar: Hyperlokale GPS-Vernetzung von verifizierten Community-Begleitern nach § 13 Abs. 4 SGB X für spontane und terminierte Behördengänge. |
+
+### amelie-lab-scarcity-scarcity-20261012T162800-brandenburg-bfcf0383978716ba
+
+Engine: scarcity; Status: received; Ideen: 3.
+
+[Originalbeleg](../06-suche/proposals/lab-2026-10-12-amelie-lab-scarcity-scarcity-20261012T162800-brandenburg-bfcf0383978716ba.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-12-amelie-lab-scarcity-scarcity-20261012T162800-brandenburg-bfcf0383978716ba.md)
+
+Absicht: Ubiquitous cheap solar-powered 24/7 internet-connected cameras + Edge AI (TinyML/VLM). Radically low-cost autonomous persistent vision nodes in Brandenburg (Bauer, Handwerker, Dach, Sonnenblumen, Funkloch, Brand-/Denkmalschutz, DIY-Kits).
+
+URL-Domains im Originalrecord: berliner-zeitung.de, bldam-brandenburg.de, brandenburger-bauern.de, mluk.brandenburg.de, vds.de. Vertex-Redirect-URLs: 0.
+
+Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
+
+Wörtlich erwähnte Bestands-IDs: keine.
+
+| Lokale ID | Originaltitel / Idee |
+| --- | --- |
+| C1 | FeldWacht-DIY (SchwarzwildSchneise): Eigensicherer €38 DIY-Vision-Bausatz im IP67-Spelsberg-Gehäuse auf DIN-Hutschiene mit 32700-LiFePO4-Zelle und 5W-Solarpanel zur Erkennung von Schwarzwild im Funkloch via 12-Byte LoRaWAN. |
+| C2 | ReetWacht / BalkenAuge: Eigensicherer €52 Denkmalschutz- & ATEX-Bausatz mit Niedrigstlux-DSSC-Solarzellen und 50F-Superkondensatoren zur optischen Überwachung von Dachbalkendurchbiegung und Glimmnestern. |
+| C3 | GlutHorizont: Forsttauglicher €44 Baumstamm-Mikrosensor-Bausatz mit vertikalem bifazialem 75°-Solarband und LTO-Zellen zur Erkennung bodennaher Glimmrauch-Vektoren unter der Kiefernkrone bei Waldbrandstufe 5. |
