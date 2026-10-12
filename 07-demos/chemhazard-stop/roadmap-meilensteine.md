@@ -5,6 +5,9 @@
 
 ---
 
+
+Kataloghärtung 12.10.2026: GISCODE dient nur der Anzeige. GTINs sind kanonisch 14-stellig; GTIN/UFI müssen genau einen Datensatz treffen, jede GTIN-Zuordnung braucht einen belegten Bestätigungsstatus. hazardsConfirmed, completenessReviewed und currentVersionChecked sind getrennt und benötigen datierte Review-Metadaten mit Grundlage. Belegte STOP-Regeln laufen vor Vollständigkeits-/Aktualitätsprüfungen; unbekannte Identität bleibt UNVERIFIED. Grau setzt alle drei Prüfungen voraus und ist niemals eine Freigabe. Keine erkannte Gefahrengruppe bedeutet unknown, nicht neutral. 20 quellenbelegte Produkte plus zwei synthetische Beispiele bleiben erhalten; 51 GTIN-Zuordnungen, davon 50 aus bestehenden Herstellerbelegen übernommen und Dan Klorix unbestätigt. Alle 22 Vollständigkeits- und Aktualitätsprüfungen bleiben mangels dokumentierter Reviews ausstehend, insbesondere die drei Händlerkopien und Mellerud. Leere H-Satzlisten bedeuten nicht dokumentiert, keine dokumentierte Abwesenheit. Tests belegen Software-Invarianten, keine chemische Sicherheitsfreigabe.
+
 ## 1. Meilensteinplan (Roadmap)
 
 Das Projekt ist in drei strikte, deterministisch prüfbare Meilensteine unterteilt:
@@ -36,7 +39,7 @@ Das Projekt ist in drei strikte, deterministisch prüfbare Meilensteine untertei
 * **Ergebnis:**
   * Regel-Kernel in `src/engine/chemhazard/chemHazardEngine.ts`.
   * Schemas für Produkte und Regeln (`schemas/`).
-  * 20 Referenzprodukte, jedes mit Herstellerdokument belegt (19 Sicherheitsdatenblätter, 1 Inhaltsstoff-Datenblatt), 51 EAN mit geprüfter Prüfziffer. Herkunft und Regeln: README Abschnitt 3a.
+  * 20 Referenzprodukte, jedes mit Herstellerdokument belegt (19 Sicherheitsdatenblätter, 1 Inhaltsstoff-Datenblatt), 51 kanonische GTINs mit separater Zuordnungsbestätigung. Herkunft und Regeln: README Abschnitt 3a.
   * `scripts/chemhazard-sds.mjs` zieht die Tatsachen aus einem SDB und prüft den Bestand.
   * Vitest-Suite mit 100 % Erfolgsquote über alle Invarianten.
 
@@ -67,7 +70,7 @@ Für Sicherheitsfachkräfte (*SiFa*), Betriebsräte und Reinigungsteams:
 
 ### Woche 2: Die Bedienung der ChemHazard-Stop-App
 * **Schwerpunkt:** 2-Flaschen-Scan-Ablauf vor dem Putzwagen.
-* **Praxis:** Scannen von Barcodes, GISCODEs und Erkennung von unvollständigen Etiketten.
+* **Praxis:** Scannen von Barcodes und UFIs (GISCODE nur Anzeige) und Erkennung von unvollständigen Etiketten.
 * **Übung:** Was bedeutet der bernsteinfarbene Zustand `UNVERIFIED`? (Niemals auf Verdacht mischen!).
 
 ### Woche 3: Die 4 Alarmkanäle & Notfallverhalten

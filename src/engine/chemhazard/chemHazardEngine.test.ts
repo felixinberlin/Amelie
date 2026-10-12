@@ -20,6 +20,13 @@ import rulesData from '../../../07-demos/chemhazard-stop/data/rules.json';
 
 const products = productsData as unknown as ProductRecord[];
 const rules = rulesData as unknown as IncompatibilityRule[];
+const fullyReviewed = (p: ProductRecord): ProductRecord => ({ ...p,
+  completenessReviewed: true, currentVersionChecked: true,
+  hazardStatementsEvidence: p.hazardStatements.length ? 'documented' : 'documented_absence',
+  reviewMetadata: { ...p.reviewMetadata,
+    completenessReviewed: { date: '2026-10-12', basis: 'Synthetic regression review only' },
+    currentVersionChecked: { date: '2026-10-12', basis: 'Synthetic regression review only' } }
+});
 const byId = (id: string) => products.find((p) => p.id === id) as ProductRecord;
 
 describe('ChemHazard Stop / MischStop Rule Engine', () => {
@@ -72,7 +79,7 @@ describe('ChemHazard Stop / MischStop Rule Engine', () => {
     // labels often carry EUH206 instead, or neither phrase, and the pair slipped through.
     it('triggers STOP for bleach whose label lacks EUH031', () => {
       const withoutEuh031 = products.filter(
-        (p) => p.verified && p.chemicalGroups.includes('hypochlorite') && !p.hazardStatements.includes('EUH031')
+        (p) => p.hazardsConfirmed && p.chemicalGroups.includes('hypochlorite') && !p.hazardStatements.includes('EUH031')
       );
       expect(withoutEuh031.map((p) => p.id)).toEqual(
         expect.arrayContaining(['danklorix-hygiene-reiniger', 'domestos-professional-original'])
@@ -85,8 +92,8 @@ describe('ChemHazard Stop / MischStop Rule Engine', () => {
     });
 
     it('never lets any verified acid + hypochlorite pair through (0 % false negatives)', () => {
-      const acids = products.filter((p) => p.verified && p.chemicalGroups.includes('acid'));
-      const bleaches = products.filter((p) => p.verified && p.chemicalGroups.includes('hypochlorite'));
+      const acids = products.filter((p) => p.hazardsConfirmed && p.chemicalGroups.includes('acid'));
+      const bleaches = products.filter((p) => p.hazardsConfirmed && p.chemicalGroups.includes('hypochlorite'));
       expect(acids.length).toBeGreaterThanOrEqual(5);
       expect(bleaches.length).toBeGreaterThanOrEqual(3);
       for (const acid of acids) {
@@ -159,15 +166,16 @@ describe('ChemHazard Stop / MischStop Rule Engine', () => {
       expect(evaluatePairByIdentifiers('GS80', 'danklorix-hygiene-reiniger', products, rules).state).toBe('UNVERIFIED');
     });
 
-    it('resolves a GISCODE that exactly one product carries', () => {
-      expect(lookupProductByIdentifier('GG70', products)?.id).toBe('buzil-erol-g490');
-      expect(lookupProductByIdentifier('gg 70', products)?.id).toBe('buzil-erol-g490');
+    it('never resolves even a unique GISCODE', () => {
+      expect(lookupProductByIdentifier('GG70', products)).toBeNull();
+      expect(lookupProductByIdentifier('gg 70', products)).toBeNull();
     });
   });
 
   describe('NO_KNOWN_INCOMPATIBILITY on Compatible Products', () => {
     it('returns grey screen with mandatory disclaimer for two maintenance cleaners (NEVER green)', () => {
-      const result = evaluatePairByIdentifiers('kiehl-sanikal', 'kiehl-torvan-konzentrat', products, rules);
+      const reviewed = ['kiehl-sanikal', 'kiehl-torvan-konzentrat'].map((id) => fullyReviewed(byId(id)));
+      const result = evaluateMixingInterlock(reviewed[0], reviewed[1], rules);
 
       expect(result.state).toBe('NO_KNOWN_INCOMPATIBILITY');
       expect(result.color).toBe('grey');
@@ -238,7 +246,7 @@ describe('ChemHazard seed data guard', () => {
   });
 
   it('counts what the README and roadmap claim', () => {
-    expect(products.filter((p) => p.verified).length).toBe(20);
+    expect(products.filter((p) => p.hazardsConfirmed).length).toBe(20);
     expect(products.filter((p) => p.sourceType === 'sds').length).toBe(19);
     expect(products.flatMap((p) => p.gtins ?? []).length).toBe(51);
   });
@@ -276,7 +284,7 @@ describe('ChemHazard seed data guard', () => {
       expect.arrayContaining(['hypochlorite', 'oxidizer'])
     );
     expect(deriveChemicalGroups({ casNumbers: [], hazardStatements: ['EUH206'] }).groups).toContain('hypochlorite');
-    expect(deriveChemicalGroups({ casNumbers: ['69011-36-5'], hazardStatements: [] }).groups).toEqual(['neutral']);
+    expect(deriveChemicalGroups({ casNumbers: ['69011-36-5'], hazardStatements: [] }).groups).toEqual(['unknown']);
   });
 
   it('parses a safety data sheet text into facts', () => {
@@ -314,7 +322,7 @@ describe('ChemHazard seed data guard', () => {
 
 describe('EAN-13 barcode modules', () => {
   it('encodes every catalog EAN-13 so that it decodes back to the same number', () => {
-    const gtins = products.flatMap((p) => p.gtins ?? []).filter((g) => g.length === 13);
+    const gtins = products.flatMap((p) => p.gtins ?? []).map((g) => g.slice(1));
     expect(gtins.length).toBeGreaterThan(40);
     for (const gtin of gtins) {
       const modules = ean13Modules(gtin);
@@ -347,5 +355,62 @@ describe('EAN-13 barcode modules', () => {
   it('refuses a number with a wrong check digit', () => {
     expect(ean13Modules('4031255000120')).toBeNull();
     expect(ean13Modules('123')).toBeNull();
+  });
+});
+
+
+describe('Catalogue hardening regressions', () => {
+  it('canonicalizes short GTINs and Digital Links to exactly 14 digits', () => {
+    expect(gtinFromScan('4031255000121')).toBe('04031255000121');
+    expect(gtinFromScan(gs1DigitalLink('4031255000121'))).toBe('04031255000121');
+    expect(gtinFromScan('00000096385074')).toBe('00000096385074');
+  });
+  it('rejects duplicate GTIN, UFI and ID matches rather than selecting the first', () => {
+    const a = byId('kiehl-powerfix-gel');
+    const b = { ...a, id: 'duplicate' };
+    for (const identifier of [a.gtins![0], a.ufi!]) {
+      expect(lookupProductByIdentifier(identifier, [a, b])).toBeNull();
+      expect(evaluatePairByIdentifiers(identifier, a.id, [a, b], rules).state).toBe('UNVERIFIED');
+    }
+    expect(lookupProductByIdentifier(a.id, [a, a])).toBeNull();
+  });
+  it('rejects unconfirmed and undocumented barcode mappings despite valid check digits', () => {
+    const a = byId('danklorix-hygiene-reiniger');
+    expect(isValidGtin(a.gtins![0])).toBe(true);
+    expect(lookupProductByIdentifier(a.gtins![0], products)).toBeNull();
+    expect(evaluatePairByIdentifiers(a.gtins![0], 'kiehl-powerfix-gel', products, rules).state).toBe('UNVERIFIED');
+    const p = byId('kiehl-powerfix-gel');
+    expect(lookupProductByIdentifier(p.gtins![0], [{ ...p, gtinMappings: { [p.gtins![0]]: { confirmed: true } } }])).toBeNull();
+  });
+  it('preserves sourced STOP with pending completeness and old retailer copies', () => {
+    for (const id of ['danklorix-hygiene-reiniger', 'domestos-professional-original', 'mellerud-schimmel-vernichter']) {
+      expect(evaluateMixingInterlock(byId(id), byId('kiehl-powerfix-gel'), rules).state).toBe('STOP');
+    }
+    // Unconfirmed unrelated record facts cannot contribute, but cannot erase a supported trigger.
+    const both = { ...byId('kiehl-arenas-bleach'), chemicalGroups: ['acid', 'hypochlorite'] as ProductRecord['chemicalGroups'] };
+    expect(evaluateMixingInterlock(both, byId('unverifiziertes-musterprodukt'), rules).state).toBe('STOP');
+    expect(evaluateMixingInterlock(both, null, rules).state).toBe('UNVERIFIED');
+  });
+  it('requires all three documented checks for grey, never grants clearance', () => {
+    const a = fullyReviewed(byId('kiehl-sanikal'));
+    const b = fullyReviewed(byId('kiehl-torvan-konzentrat'));
+    expect(evaluateMixingInterlock(a, b, rules).state).toBe('NO_KNOWN_INCOMPATIBILITY');
+    for (const key of ['hazardsConfirmed', 'completenessReviewed', 'currentVersionChecked'] as const) {
+      expect(evaluateMixingInterlock({ ...a, [key]: false }, b, rules).state).toBe('UNVERIFIED');
+      expect(evaluateMixingInterlock({ ...a, reviewMetadata: { ...a.reviewMetadata, [key]: undefined } }, b, rules).state).toBe('UNVERIFIED');
+    }
+    expect(evaluateMixingInterlock({ ...a, chemicalGroups: ['unknown'] }, b, rules).state).toBe('UNVERIFIED');
+    expect(evaluateMixingInterlock({ ...a, hazardStatementsEvidence: 'undocumented' }, b, rules).state).toBe('UNVERIFIED');
+    expect(deriveChemicalGroups({}).groups).toEqual(['unknown']);
+  });
+  it('keeps the conservative migration and all pair outcomes symmetric', () => {
+    expect(products.filter((p) => p.completenessReviewed || p.currentVersionChecked)).toEqual([]);
+    for (const a of products) for (const b of products) {
+      const ab = evaluateMixingInterlock(a, b, rules);
+      const ba = evaluateMixingInterlock(b, a, rules);
+      expect([ab.state, ab.color, ab.triggeredRule?.id]).toEqual([ba.state, ba.color, ba.triggeredRule?.id]);
+      expect(ab.isClearance).toBe(false);
+      expect(ab.color).not.toBe('green');
+    }
   });
 });

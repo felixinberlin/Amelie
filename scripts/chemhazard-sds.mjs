@@ -66,8 +66,8 @@ export function ean13Svg(gtin, label) {
 export function barcodeFiles(products) {
   const files = {};
   for (const p of products) for (const g of p.gtins || []) {
-    const svg = ean13Svg(g, `${p.brand} ${p.name}`);
-    if (svg) files[`${g}.svg`] = svg;
+    const svg = ean13Svg(g.length === 14 && g.startsWith('0') ? g.slice(1) : g, `${p.brand} ${p.name}`);
+    if (svg) files[`${g.length === 14 && g.startsWith('0') ? g.slice(1) : g}.svg`] = svg;
   }
   return files;
 }
@@ -117,7 +117,7 @@ export function deriveChemicalGroups({ casNumbers = [], hazardStatements = [], p
   if (groups.includes('hypochlorite') || groups.includes('peroxide') || ['H271', 'H272'].some((s) => stm.has(s))) {
     add('oxidizer', groups.includes('hypochlorite') ? 'Aktivchlor' : groups.includes('peroxide') ? 'Peroxid' : 'H271/H272');
   }
-  if (groups.length === 0) add('neutral', 'keine Gefahrengruppe aus SDB ableitbar');
+  if (groups.length === 0) add('unknown', 'keine erkannte Gefahrengruppe; keine Neutralitätsaussage');
   return { groups, reasons };
 }
 
@@ -282,12 +282,24 @@ export function checkProducts(products) {
       seen.set(g, p.id);
     }
     if ((p.gtins || []).length > 0 && !p.provenance?.gtinSource) at('GTIN ohne gtinSource');
-    if (!p.verified) continue;
+    for (const key of ['hazardsConfirmed', 'completenessReviewed', 'currentVersionChecked']) {
+      const r = p.reviewMetadata?.[key];
+      if (p[key] && (!r || !/^\d{4}-\d{2}-\d{2}$/.test(r.date || '') || !r.basis?.trim())) at(`${key} ohne dokumentierte Review-Metadaten`);
+    }
+    for (const g of p.gtins || []) {
+      if (g.length !== 14) at(`GTIN ${g} nicht kanonisch (14 Stellen)`);
+      const m = p.gtinMappings?.[g];
+      if (!m || typeof m.confirmed !== 'boolean') at(`GTIN ${g} ohne Mapping-Status`);
+      if (m?.confirmed && (!/^\d{4}-\d{2}-\d{2}$/.test(m.review?.date || '') || !m.review?.basis?.trim())) at(`GTIN ${g} bestätigt ohne Review`);
+    }
+    if (p.hazardStatementsEvidence === 'documented_absence' && p.hazardStatements?.length) at('dokumentierte Abwesenheit widerspricht H-Satzliste');
+    if (p.hazardStatementsEvidence === 'documented' && !p.hazardStatements?.length) at('leere H-Satzliste ohne dokumentierte Abwesenheit');
+    if (!p.hazardsConfirmed) continue;
     const pr = p.provenance || {};
-    if (!/^https:\/\//.test(pr.sourceUrl || '')) at('verified, aber ohne sourceUrl (https)');
-    if (!/^[0-9a-f]{64}$/.test(pr.sha256 || '')) at('verified, aber ohne SHA-256 des SDB');
-    if (!/^\d{4}-\d{2}-\d{2}$/.test(pr.revisionDate || '')) at('verified, aber ohne Überarbeitungsdatum des SDB');
-    if (!/^\d{4}-\d{2}-\d{2}$/.test(pr.verificationDate || '')) at('verified, aber ohne verificationDate');
+    if (!/^https:\/\//.test(pr.sourceUrl || '')) at('hazardsConfirmed, aber ohne sourceUrl (https)');
+    if (!/^[0-9a-f]{64}$/.test(pr.sha256 || '')) at('hazardsConfirmed, aber ohne SHA-256 des SDB');
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(pr.revisionDate || '')) at('hazardsConfirmed, aber ohne Überarbeitungsdatum des SDB');
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(pr.verificationDate || '')) at('hazardsConfirmed, aber ohne verificationDate');
     const derived = deriveChemicalGroups({ casNumbers: p.casNumbers, hazardStatements: p.hazardStatements, ph: p.ph }).groups;
     const want = [...derived].sort().join(',');
     const have = [...p.chemicalGroups].sort().join(',');
@@ -303,7 +315,7 @@ async function cmdBarcodes() {
   await mkdir(dir, { recursive: true });
   for (const name of await readdir(dir)) if (name.endsWith('.svg') && !(name in want)) await rm(path.join(dir, name));
   for (const [name, svg] of Object.entries(want)) await writeFile(path.join(dir, name), svg);
-  const rows = products.filter((p) => (p.gtins || []).length).flatMap((p) => p.gtins.map((g) => `| ${p.brand} | ${p.name} | \`${g}\` | ![${g}](${g}.svg) |`));
+  const rows = products.filter((p) => (p.gtins || []).length).flatMap((p) => p.gtins.map((g) => `| ${p.brand} | ${p.name} | \`${g}\` | ![${g}](${g.length === 14 && g.startsWith('0') ? g.slice(1) : g}.svg) |`));
   await writeFile(path.join(dir, 'README.md'), `# Strichcodes der Referenzprodukte\n\nErzeugt mit \`npm run chemhazard:barcodes\` aus \`../products.json\`. Nicht von Hand ändern.\nJede Datei ist der EAN-13-Code, wie er auf dem Gebinde steht (Fundstelle der Nummer: \`provenance.gtinSource\`).\n\n| Marke | Produkt | GTIN | Strichcode |\n|---|---|---|---|\n${rows.join('\n')}\n`);
   console.log(`${Object.keys(want).length} Strichcodes nach ${path.relative(ROOT, dir)} geschrieben.`);
 }
@@ -329,9 +341,10 @@ async function cmdCheck() {
     console.error(`\n${problems.length} Befund(e) in ${products.length} Produkten.`);
     process.exit(1);
   }
-  const verified = products.filter((p) => p.verified).length;
+  const confirmedHazards = products.filter((p) => p.hazardsConfirmed).length;
+  const confirmedMappings = products.flatMap((p) => Object.values(p.gtinMappings || {})).filter((m) => m.confirmed).length;
   const gtins = products.reduce((n, p) => n + (p.gtins || []).length, 0);
-  console.log(`ChemHazard-Bestand in Ordnung: ${products.length} Produkte, ${verified} mit Herstellerdokument belegt, ${gtins} GTINs mit gültiger Prüfziffer.`);
+  console.log(`ChemHazard-Bestand in Ordnung: ${products.length} Produkte, ${confirmedHazards} mit belegten Gefahren (auch Händlerkopien); Vollständigkeit/Aktualität separat, ${gtins} GTINs mit gültiger Prüfziffer, ${confirmedMappings} bestätigte Zuordnungen.`);
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

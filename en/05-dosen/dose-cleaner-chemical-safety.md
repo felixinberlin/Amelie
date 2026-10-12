@@ -23,6 +23,9 @@ source_type: Type A
 
 > 📹 **Live Demonstration:** [Watch Point-of-Action Video on Google Drive](https://drive.google.com/file/d/1TGYV6aw7zWwe6isgin9UGvTJblDc-t8n/view?usp=drive_link) *(on-demand streaming, 0 KB initial load burden)*
 
+
+Catalogue hardening, 12 Oct 2026: GISCODE is display-only. GTINs are canonical 14-digit strings; GTIN/UFI must match exactly one record and each GTIN mapping needs documented confirmation. hazardsConfirmed, completenessReviewed and currentVersionChecked are separate checks with dated review metadata and a stated basis. Confirmed STOP rules run before completeness/current-version checks; unknown identity remains UNVERIFIED. Grey requires all three checks and never grants clearance. No recognized group means unknown, not neutral. The 20 sourced products and two synthetic examples are retained, with 51 GTIN mappings: 50 inherited manufacturer-backed mappings and the unconfirmed Dan Klorix mapping. All 22 completeness and current-version reviews remain pending because no such reviews were documented, including the three retailer copies and Mellerud. Empty hazard-statement lists mean undocumented, not documented absence. Tests establish software invariants, not chemical safety clearance.
+
 ## The problem
 
 Commercial cleaners work under extreme speed pressure, frequently navigating severe language barriers. Accidental mixing of an acidic descaler with a hypochlorite bleach releases deadly chlorine gas into confined, poorly ventilated restrooms and custodial closets.
@@ -31,13 +34,13 @@ The hazard has been documented for decades, and mixing bans are textbook knowled
 
 Germany already operates world-class reference systems: WINGIS/GISBAU (hazardous substance information, GISCODE, operating instructions), GESTIS/IFA, GSApp, CERTISCAN, and DGUV rule 101-019. However, every single one of these is lookup-based. None of them stands between a worker and two bottles at the physical moment of mixing. As of September 2026, no open-source, camera-based, dual-bottle mixing interlock exists on the market. That is the gap.
 
-## Core Principle: The Safety Case
+## Core Principle: Tested Software Invariants
 
 **The app never certifies safety. It only warns of detected danger, or admits it cannot verify.**
 
 This is not a UX preference; it is the fundamental safety case. A false "all clear" (green checkmark) is lethal and far worse than having no app at all. Every design rule strictly follows from this premise:
 1. **No green screen, ever.** There is no clearance state.
-2. **Uncertainty always defaults to warning / UNVERIFIED.**
+2. **Unknown identity yields UNVERIFIED; pending reviews must never weaken a supported STOP.**
 3. **Community or unverified data can never override a STOP.**
 4. **Assistive Warning Aid:** The app is an assistive warning aid, not certified personal protective equipment (PPE), not a compliance tool, and not a replacement for the employer's statutory risk assessment under GefStoffV and DGUV 101-019.
 
@@ -47,11 +50,11 @@ This is not a UX preference; it is the fundamental safety case. A false "all cle
 |---|---|---|
 | 🔴 **STOP** | High-contrast red screen, loud multilingual voice, repeating haptic vibration, alarm tone | Dangerous chemical combination detected in the local database (e.g., acid + hypochlorite $\to$ chlorine gas). |
 | 🟠 **UNVERIFIED** | Amber screen, distinct haptic pattern | One or both products unknown, barcode unreadable, incomplete data, or outdated dataset. |
-| ⚪ **NO_KNOWN_INCOMPATIBILITY** | Grey screen (**never green**) | Both products identified, no known rule triggered. **Explicitly not a clearance.** Copy: *"No known dangerous combination in our database. This is not a safety clearance. Do not mix unless instructed by your employer."* |
+| ⚪ **NO_KNOWN_INCOMPATIBILITY** | Grey screen (**never green**) | Unique identities, confirmed hazards, documented completeness and current-version reviews; no known rule triggered. **Explicitly not a clearance.** Copy: *"No known dangerous combination in our database. This is not a safety clearance. Do not mix unless instructed by your employer."* |
 
 ## Why now
 
-- **100% Offline Edge Inference:** Ultra-fast scanning of GTIN/GS1 barcodes, GISCODEs, or container labels directly on the device with zero cloud dependency.
+- **100% Offline Edge Inference:** Ultra-fast scanning of confirmed GTIN/GS1 barcodes or unique UFIs (GISCODE display only) directly on the device with zero cloud dependency.
 - **Instant Spoken Polyglot Alerts:** Pre-recorded and synthesized warning shouts across 20+ languages (Ukrainian, Polish, Turkish, Arabic, Romanian, Bulgarian, etc.) eliminate the burden of reading technical German.
 - **Robust Three-Lane Data Architecture:** Strict legal segregation between public facts from CLP labelling and safety data sheets (hazard statements, CAS numbers), optional licensed GISCODE datasets, and community reports.
 
@@ -65,7 +68,7 @@ This is not a UX preference; it is the fundamental safety case. A false "all cle
 
 ## Sketch
 
-**Input:** Smartphone camera scans barcodes / GISCODEs / labels of two cleaning chemical bottles sequentially or side by side.  
+**Input:** Smartphone camera scans confirmed GTIN barcodes / unique UFIs (GISCODE display only) of two cleaning chemical bottles sequentially or side by side.
 **Logic:** Local incompatibility matrix computes set union of hazard classifications:
 $$\text{combined} = \text{hazards}(A) \cup \text{hazards}(B)$$
 $$\text{if } \text{rule.required} \subseteq \text{combined} \implies \text{STOP}$$

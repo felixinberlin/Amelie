@@ -17,17 +17,24 @@ export type ChemicalGroup =
   | 'caustic_lye'
   | 'flammable'
   | 'organic_solvent'
-  | 'neutral';
+  | 'neutral'
+  | 'unknown';
 
 export type DataSourceLane = 'public_law' | 'licensed_wingis' | 'open_community';
 
 export type ProductSourceType = 'sds' | 'ingredient_datasheet' | 'none';
 
+export interface EvidenceReview {
+  date: string;
+  basis: string;
+  reviewer?: string;
+}
+
 export interface ProductRecord {
   id: string;
   name: string;
   brand: string;
-  /** Alle Gebindegrößen; jede GTIN besteht die GS1-Prüfziffer. */
+  /** Canonical GTIN-14; each mapping has separate confirmation evidence. */
   gtins?: string[];
   /** Unique Formula Identifier vom Etikett. */
   ufi?: string;
@@ -36,7 +43,12 @@ export interface ProductRecord {
   hazardStatements: string[];
   casNumbers?: string[];
   ph?: { min?: number; max?: number };
-  verified: boolean;
+  hazardsConfirmed: boolean;
+  completenessReviewed: boolean;
+  currentVersionChecked: boolean;
+  reviewMetadata: Partial<Record<'hazardsConfirmed' | 'completenessReviewed' | 'currentVersionChecked', EvidenceReview>>;
+  gtinMappings?: Record<string, { confirmed: boolean; review?: EvidenceReview }>;
+  hazardStatementsEvidence: 'documented' | 'documented_absence' | 'undocumented';
   dataLane: DataSourceLane;
   sourceType: ProductSourceType;
   provenance: {
@@ -100,10 +112,10 @@ export interface InterlockEvaluationResult {
 }
 
 const MANDATORY_DISCLAIMER_DE =
-  'Keine bekannte gefährliche Kombination in unserer Datenbank. Dies ist keine Sicherheitsfreigabe. Nicht mischen, außer ausdrücklich vom Arbeitgeber angewiesen.';
+  'Dies ist keine Sicherheitsfreigabe. Nicht mischen, außer ausdrücklich vom Arbeitgeber angewiesen.';
 
 const MANDATORY_DISCLAIMER_EN =
-  'No known dangerous combination in our database. This is not a safety clearance. Do not mix unless instructed by your employer.';
+  'This is not a safety clearance. Do not mix unless instructed by your employer.';
 
 const HAPTIC_STOP_PATTERN = [300, 100, 300, 100, 500];
 const HAPTIC_UNVERIFIED_PATTERN = [150, 150, 150];
@@ -125,6 +137,21 @@ export function assertSafetyInvariants(result: InterlockEvaluationResult): void 
   }
 }
 
+export function hasReview(review: EvidenceReview | undefined): boolean {
+  return !!review && /^\d{4}-\d{2}-\d{2}$/.test(review.date) && !!review.basis?.trim();
+}
+
+export function evidenceConfirmed(product: ProductRecord, check: keyof ProductRecord['reviewMetadata']): boolean {
+  return product[check] === true && hasReview(product.reviewMetadata?.[check]);
+}
+
+export function isEvidenceComplete(product: ProductRecord): boolean {
+  return (['hazardsConfirmed', 'completenessReviewed', 'currentVersionChecked'] as const)
+    .every((check) => evidenceConfirmed(product, check)) &&
+    product.chemicalGroups.length > 0 && !product.chemicalGroups.includes('unknown') &&
+    product.hazardStatementsEvidence !== 'undocumented';
+}
+
 /** GS1 check digit for GTIN-8/12/13/14. */
 export function isValidGtin(gtin: string): boolean {
   if (!/^(\d{8}|\d{12,14})$/.test(gtin)) return false;
@@ -137,14 +164,14 @@ export function isValidGtin(gtin: string): boolean {
 /**
  * Reads the GTIN out of whatever a scanner returns: a bare EAN/GTIN, or a
  * GS1 Digital Link URI such as https://id.gs1.org/01/04031255000121.
- * Leading zeros are dropped so a GTIN-14 from a QR code matches the EAN-13 in the catalog.
+ * All accepted GTINs are canonicalized to 14 digits; the check digit is not mapping evidence.
  */
 export function gtinFromScan(scan: string): string | null {
   const text = scan.trim();
   const link = text.match(/\/01\/(\d{8,14})(?:[/?#]|$)/);
   const digits = link ? link[1] : /^\d{8,14}$/.test(text) ? text : null;
   if (!digits || !isValidGtin(digits)) return null;
-  return digits.replace(/^0+(?=\d{8,})/, '');
+  return digits.padStart(14, '0');
 }
 
 /** GS1 Digital Link URI for a GTIN (the payload of a GS1 QR code). */
@@ -153,8 +180,8 @@ export function gs1DigitalLink(gtin: string): string {
 }
 
 /**
- * Finds a product in the catalog by ID, GTIN (bare or as GS1 Digital Link), UFI, or GISCODE.
- * A GISCODE names a product group, so it only resolves when exactly one catalog entry carries it.
+ * Finds a product in the catalog by ID, confirmed GTIN (bare or GS1 Digital Link), or unique UFI.
+ * GISCODE is display-only and never establishes product identity.
  */
 export function lookupProductByIdentifier(
   identifier: string,
@@ -163,18 +190,17 @@ export function lookupProductByIdentifier(
   if (!identifier || typeof identifier !== 'string') return null;
   const clean = identifier.trim().toLowerCase();
   const scanned = gtinFromScan(identifier);
-  const sameGtin = (g: string) => g.replace(/^0+(?=\d{8,})/, '') === scanned;
-
-  const direct = catalog.find(
-    (p) =>
-      p.id.toLowerCase() === clean ||
-      (scanned !== null && (p.gtins ?? []).some(sameGtin)) ||
-      (p.ufi && p.ufi.toLowerCase() === clean)
-  );
-  if (direct) return direct;
-
-  const group = catalog.filter((p) => p.giscode && p.giscode.toLowerCase() === clean.replace(/\s/g, ''));
-  return group.length === 1 ? group[0] : null;
+  // Count all candidate records before checking mapping evidence: ambiguity fails closed.
+  const matches = catalog.filter((p) => scanned !== null
+    ? (p.gtins ?? []).some((g) => gtinFromScan(g) === scanned)
+    : p.id.toLowerCase() === clean || p.ufi?.toLowerCase() === clean);
+  if (matches.length !== 1) return null;
+  const product = matches[0];
+  if (scanned !== null) {
+    const mapping = product.gtinMappings?.[scanned];
+    if (!mapping?.confirmed || !hasReview(mapping.review)) return null;
+  }
+  return product;
 }
 
 /**
@@ -217,44 +243,18 @@ export function evaluateMixingInterlock(
     return result;
   }
 
-  // 2. Unverified records or incomplete data -> UNVERIFIED (amber)
-  if (!productA.verified || !productB.verified) {
-    const unverifiedNames = [
-      !productA.verified ? productA.name : null,
-      !productB.verified ? productB.name : null
-    ]
-      .filter(Boolean)
-      .join(', ');
-
-    const result: InterlockEvaluationResult = {
-      state: 'UNVERIFIED',
-      color: 'amber',
-      isClearance: false,
-      hapticPattern: HAPTIC_UNVERIFIED_PATTERN,
-      alarmStreamForced: false,
-      messageDe: `Datenbasis unvollständig für: ${unverifiedNames}. Keine Prüfung möglich.`,
-      messageEn: `Data unverified for: ${unverifiedNames}. Verification impossible.`,
-      disclaimerDe: MANDATORY_DISCLAIMER_DE,
-      disclaimerEn: MANDATORY_DISCLAIMER_EN,
-      unverifiedReason: 'Product record is marked unverified in database',
-      evaluationTimeMs: performance.now() - startTime
-    };
-    assertSafetyInvariants(result);
-    return result;
-  }
-
-  // 3. Combine hazard sets and statement sets
+  // 2. Combine only confirmed hazard facts; pending unrelated reviews cannot erase STOP.
   const combinedHazards = new Set<ChemicalGroup>([
-    ...productA.chemicalGroups,
-    ...productB.chemicalGroups
+    ...(evidenceConfirmed(productA, 'hazardsConfirmed') ? productA.chemicalGroups : []),
+    ...(evidenceConfirmed(productB, 'hazardsConfirmed') ? productB.chemicalGroups : [])
   ]);
 
   const combinedStatements = new Set<string>([
-    ...productA.hazardStatements,
-    ...productB.hazardStatements
+    ...(evidenceConfirmed(productA, 'hazardsConfirmed') ? productA.hazardStatements : []),
+    ...(evidenceConfirmed(productB, 'hazardsConfirmed') ? productB.hazardStatements : [])
   ]);
 
-  // 4. Check incompatibility rules
+  // 3. Check supported danger rules before completeness/current-version checks.
   for (const rule of rules) {
     const hasAllHazards = rule.requiredHazards.every((req) => combinedHazards.has(req));
     
@@ -292,6 +292,32 @@ export function evaluateMixingInterlock(
     }
   }
 
+  // 4. With no supported STOP, require complete reviewed evidence for grey.
+  if (!isEvidenceComplete(productA) || !isEvidenceComplete(productB)) {
+    const unverifiedNames = [
+      !isEvidenceComplete(productA) ? productA.name : null,
+      !isEvidenceComplete(productB) ? productB.name : null
+    ]
+      .filter(Boolean)
+      .join(', ');
+
+    const result: InterlockEvaluationResult = {
+      state: 'UNVERIFIED',
+      color: 'amber',
+      isClearance: false,
+      hapticPattern: HAPTIC_UNVERIFIED_PATTERN,
+      alarmStreamForced: false,
+      messageDe: `Datenbasis unvollständig für: ${unverifiedNames}. Gefahren-, Vollständigkeits- oder Aktualitätsprüfung ausstehend. Nicht mischen.`,
+      messageEn: `Data unverified for: ${unverifiedNames}. Hazard, completeness or current-version review pending. Do not mix.`,
+      disclaimerDe: MANDATORY_DISCLAIMER_DE,
+      disclaimerEn: MANDATORY_DISCLAIMER_EN,
+      unverifiedReason: 'Hazard confirmation, completeness review or current-version confirmation pending',
+      evaluationTimeMs: performance.now() - startTime
+    };
+    assertSafetyInvariants(result);
+    return result;
+  }
+
   // 5. No known rule triggered -> NO_KNOWN_INCOMPATIBILITY (grey, never green!)
   const result: InterlockEvaluationResult = {
     state: 'NO_KNOWN_INCOMPATIBILITY',
@@ -310,7 +336,7 @@ export function evaluateMixingInterlock(
 }
 
 /**
- * End-to-end evaluation using string identifiers (IDs, GTINs, UFIs, or GISCODEs).
+ * End-to-end evaluation using string identifiers (IDs, confirmed GTINs, or unique UFIs).
  */
 export function evaluatePairByIdentifiers(
   idOrCodeA: string,

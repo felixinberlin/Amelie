@@ -9,10 +9,14 @@
     "brand",
     "chemicalGroups",
     "hazardStatements",
-    "verified",
     "dataLane",
     "sourceType",
-    "provenance"
+    "provenance",
+    "hazardsConfirmed",
+    "completenessReviewed",
+    "currentVersionChecked",
+    "reviewMetadata",
+    "hazardStatementsEvidence"
   ],
   "properties": {
     "id": {
@@ -26,9 +30,12 @@
       "type": "string"
     },
     "gtins": {
-      "description": "Alle Gebindegrößen. Jede GTIN muss die GS1-Prüfziffer bestehen und in provenance.gtinSource belegt sein.",
+      "description": "Canonical GTIN-14; check digit and documented per-mapping confirmation required for lookup.",
       "type": "array",
-      "items": { "type": "string", "pattern": "^([0-9]{8}|[0-9]{12,14})$" },
+      "items": {
+        "type": "string",
+        "pattern": "^[0-9]{14}$"
+      },
       "uniqueItems": true
     },
     "ufi": {
@@ -37,7 +44,7 @@
       "pattern": "^[0-9A-Z]{4}-[0-9A-Z]{4}-[0-9A-Z]{4}-[0-9A-Z]{4}$"
     },
     "giscode": {
-      "description": "Nur wie im SDB des Herstellers genannt, nie aus WINGIS übernommen.",
+      "description": "Display only; never a product lookup identifier.",
       "type": "string",
       "pattern": "^[A-Z]{1,3}[0-9]{1,3}$"
     },
@@ -55,56 +62,104 @@
           "caustic_lye",
           "flammable",
           "organic_solvent",
-          "neutral"
+          "neutral",
+          "unknown"
         ]
       },
       "uniqueItems": true
     },
     "hazardStatements": {
-      "description": "H- und EUH-Sätze des Gemischs aus SDB Abschnitt 2.",
+      "description": "H- und EUH-S\u00e4tze des Gemischs aus SDB Abschnitt 2.",
       "type": "array",
-      "items": { "type": "string", "pattern": "^(EUH[0-9]{3}A?|H[234][0-9]{2}[A-Za-z]{0,2})$" }
+      "items": {
+        "type": "string",
+        "pattern": "^(EUH[0-9]{3}A?|H[234][0-9]{2}[A-Za-z]{0,2})$"
+      }
     },
     "casNumbers": {
       "description": "CAS-Nummern aus SDB Abschnitt 3.",
       "type": "array",
-      "items": { "type": "string", "pattern": "^[0-9]{2,7}-[0-9]{2}-[0-9]$" },
+      "items": {
+        "type": "string",
+        "pattern": "^[0-9]{2,7}-[0-9]{2}-[0-9]$"
+      },
       "uniqueItems": true
     },
     "ph": {
-      "description": "pH des Konzentrats aus SDB Abschnitt 9. Nur min oder nur max bei Angaben wie „> 13,5“.",
+      "description": "pH des Konzentrats aus SDB Abschnitt 9. Nur min oder nur max bei Angaben wie \u201e> 13,5\u201c.",
       "type": "object",
       "properties": {
-        "min": { "type": "number", "minimum": 0, "maximum": 14 },
-        "max": { "type": "number", "minimum": 0, "maximum": 14 }
+        "min": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 14
+        },
+        "max": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 14
+        }
       },
       "minProperties": 1,
       "additionalProperties": false
     },
-    "verified": {
-      "type": "boolean"
-    },
     "dataLane": {
       "type": "string",
-      "enum": ["public_law", "licensed_wingis", "open_community"]
+      "enum": [
+        "public_law",
+        "licensed_wingis",
+        "open_community"
+      ]
     },
     "sourceType": {
       "description": "sds = Sicherheitsdatenblatt (REACH Art. 31); ingredient_datasheet = Datenblatt nach Detergenzien-VO Anhang VII D; none = unbelegt.",
       "type": "string",
-      "enum": ["sds", "ingredient_datasheet", "none"]
+      "enum": [
+        "sds",
+        "ingredient_datasheet",
+        "none"
+      ]
     },
     "provenance": {
       "type": "object",
-      "required": ["sourceDocument", "verificationDate"],
+      "required": [
+        "sourceDocument",
+        "verificationDate"
+      ],
       "properties": {
-        "sourceDocument": { "type": "string" },
-        "sourceUrl": { "type": "string", "pattern": "^https://" },
-        "sourceHost": { "type": "string", "enum": ["manufacturer", "retailer"] },
-        "revisionDate": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
-        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
-        "verificationDate": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
-        "gtinSource": { "type": "string", "pattern": "^https://" },
-        "note": { "type": "string" }
+        "sourceDocument": {
+          "type": "string"
+        },
+        "sourceUrl": {
+          "type": "string",
+          "pattern": "^https://"
+        },
+        "sourceHost": {
+          "type": "string",
+          "enum": [
+            "manufacturer",
+            "retailer"
+          ]
+        },
+        "revisionDate": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "verificationDate": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        "gtinSource": {
+          "type": "string",
+          "pattern": "^https://"
+        },
+        "note": {
+          "type": "string"
+        }
       },
       "additionalProperties": false
     },
@@ -122,7 +177,204 @@
     },
     "typicalUseEn": {
       "type": "string"
+    },
+    "hazardsConfirmed": {
+      "type": "boolean"
+    },
+    "completenessReviewed": {
+      "type": "boolean"
+    },
+    "currentVersionChecked": {
+      "type": "boolean"
+    },
+    "reviewMetadata": {
+      "type": "object",
+      "properties": {
+        "hazardsConfirmed": {
+          "type": "object",
+          "required": [
+            "date",
+            "basis"
+          ],
+          "properties": {
+            "date": {
+              "type": "string",
+              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+            },
+            "basis": {
+              "type": "string",
+              "minLength": 1
+            },
+            "reviewer": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "completenessReviewed": {
+          "type": "object",
+          "required": [
+            "date",
+            "basis"
+          ],
+          "properties": {
+            "date": {
+              "type": "string",
+              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+            },
+            "basis": {
+              "type": "string",
+              "minLength": 1
+            },
+            "reviewer": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "currentVersionChecked": {
+          "type": "object",
+          "required": [
+            "date",
+            "basis"
+          ],
+          "properties": {
+            "date": {
+              "type": "string",
+              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+            },
+            "basis": {
+              "type": "string",
+              "minLength": 1
+            },
+            "reviewer": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "gtinMappings": {
+      "type": "object",
+      "propertyNames": {
+        "pattern": "^[0-9]{14}$"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "confirmed"
+        ],
+        "properties": {
+          "confirmed": {
+            "type": "boolean"
+          },
+          "review": {
+            "type": "object",
+            "required": [
+              "date",
+              "basis"
+            ],
+            "properties": {
+              "date": {
+                "type": "string",
+                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+              },
+              "basis": {
+                "type": "string",
+                "minLength": 1
+              },
+              "reviewer": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false,
+        "if": {
+          "properties": {
+            "confirmed": {
+              "const": true
+            }
+          }
+        },
+        "then": {
+          "required": [
+            "review"
+          ]
+        }
+      }
+    },
+    "hazardStatementsEvidence": {
+      "type": "string",
+      "enum": [
+        "documented",
+        "documented_absence",
+        "undocumented"
+      ]
     }
   },
-  "additionalProperties": false
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "hazardsConfirmed": {
+            "const": true
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "reviewMetadata": {
+            "required": [
+              "hazardsConfirmed"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "completenessReviewed": {
+            "const": true
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "reviewMetadata": {
+            "required": [
+              "completenessReviewed"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "currentVersionChecked": {
+            "const": true
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "reviewMetadata": {
+            "required": [
+              "currentVersionChecked"
+            ]
+          }
+        }
+      }
+    }
+  ]
 }

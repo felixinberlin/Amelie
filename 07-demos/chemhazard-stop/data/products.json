@@ -4,7 +4,7 @@
     "name": "ARENAS-bleach",
     "brand": "Kiehl",
     "gtins": [
-      "4031255046754"
+      "04031255046754"
     ],
     "ufi": "GG70-60TK-J00T-D5M1",
     "chemicalGroups": [
@@ -24,7 +24,6 @@
       "min": 13,
       "max": 13
     },
-    "verified": true,
     "dataLane": "public_law",
     "sourceType": "sds",
     "provenance": {
@@ -40,18 +39,37 @@
     "descriptionDe": "Flüssiges Bleich-Konzentrat auf Chlorbasis für die gewerbliche Textilwäsche.",
     "descriptionEn": "Liquid chlorine bleach concentrate for commercial laundry.",
     "typicalUseDe": "Bleiche in der gewerblichen Wäscherei",
-    "typicalUseEn": "Bleach in commercial laundry"
+    "typicalUseEn": "Bleach in commercial laundry",
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": false,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "basis": "Inherited sourced hazard facts from commit 1f38cd9; Johannes Kiehl KG, Sicherheitsdatenblatt ARENAS-bleach"
+      }
+    },
+    "hazardStatementsEvidence": "documented",
+    "gtinMappings": {
+      "04031255046754": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Textilwaesche/Bleiche/ARENAS-bleach"
+        }
+      }
+    }
   },
   {
     "id": "kiehl-powerfix-gel",
     "name": "Powerfix-Gel",
     "brand": "Kiehl",
     "gtins": [
-      "4031255000121",
-      "4031255045931",
-      "4031255045870",
-      "4031255045924",
-      "4031255035802"
+      "04031255000121",
+      "04031255045931",
+      "04031255045870",
+      "04031255045924",
+      "04031255035802"
     ],
     "ufi": "3U20-V0J5-1002-NR4J",
     "giscode": "GS80",
@@ -70,7 +88,6 @@
       "min": 0.5,
       "max": 0.5
     },
-    "verified": true,
     "dataLane": "public_law",
     "sourceType": "sds",
     "provenance": {
@@ -86,17 +103,64 @@
     "descriptionDe": "WC-Kraftreiniger auf Phosphorsäurebasis, gelförmig.",
     "descriptionEn": "Phosphoric-acid toilet power cleaner, gel.",
     "typicalUseDe": "WC-Becken und Urinale, gegen Kalk und Urinstein",
-    "typicalUseEn": "Toilet bowls and urinals, against limescale and urine scale"
+    "typicalUseEn": "Toilet bowls and urinals, against limescale and urine scale",
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": false,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "basis": "Inherited sourced hazard facts from commit 1f38cd9; Johannes Kiehl KG, Sicherheitsdatenblatt Powerfix-Gel"
+      }
+    },
+    "hazardStatementsEvidence": "documented",
+    "gtinMappings": {
+      "04031255000121": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Powerfix-Gel"
+        }
+      },
+      "04031255045931": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Powerfix-Gel"
+        }
+      },
+      "04031255045870": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Powerfix-Gel"
+        }
+      },
+      "04031255045924": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Powerfix-Gel"
+        }
+      },
+      "04031255035802": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Powerfix-Gel"
+        }
+      }
+    }
   },
   {
     "id": "kiehl-powerfix",
     "name": "Powerfix",
     "brand": "Kiehl",
     "gtins": [
-      "4031255032184",
-      "4031255036526",
-      "4031255002569",
-      "4031255012148"
+      "04031255032184",
+      "04031255036526",
+      "04031255002569",
+      "04031255012148"
     ],
     "ufi": "XS20-C0UR-Q00K-0DJG",
     "giscode": "GS60",
@@ -116,7 +180,6 @@
       "min": 0.5,
       "max": 0.5
     },
-    "verified": true,
     "dataLane": "public_law",
     "sourceType": "sds",
     "provenance": {
@@ -132,16 +195,56 @@
     "descriptionDe": "Hochaktiver saurer Grundreiniger für den Sanitärbereich.",
     "descriptionEn": "Highly active acidic deep cleaner for sanitary areas.",
     "typicalUseDe": "Saure Grundreinigung im Sanitärbereich",
-    "typicalUseEn": "Acidic deep cleaning in sanitary areas"
+    "typicalUseEn": "Acidic deep cleaning in sanitary areas",
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": false,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "basis": "Inherited sourced hazard facts from commit 1f38cd9; Johannes Kiehl KG, Sicherheitsdatenblatt Powerfix"
+      }
+    },
+    "hazardStatementsEvidence": "documented",
+    "gtinMappings": {
+      "04031255032184": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Powerfix"
+        }
+      },
+      "04031255036526": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Powerfix"
+        }
+      },
+      "04031255002569": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Powerfix"
+        }
+      },
+      "04031255012148": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Powerfix"
+        }
+      }
+    }
   },
   {
     "id": "kiehl-santex",
     "name": "Santex",
     "brand": "Kiehl",
     "gtins": [
-      "4031255003238",
-      "4031255003245",
-      "4031255032894"
+      "04031255003238",
+      "04031255003245",
+      "04031255032894"
     ],
     "ufi": "A030-V0WX-N002-YE9P",
     "giscode": "GS35",
@@ -163,7 +266,6 @@
       "min": 1,
       "max": 1
     },
-    "verified": true,
     "dataLane": "public_law",
     "sourceType": "sds",
     "provenance": {
@@ -179,16 +281,49 @@
     "descriptionDe": "Saurer Intensiv-Sanitärreiniger.",
     "descriptionEn": "Acidic intensive sanitary cleaner.",
     "typicalUseDe": "Tägliche saure Sanitärreinigung",
-    "typicalUseEn": "Daily acidic sanitary cleaning"
+    "typicalUseEn": "Daily acidic sanitary cleaning",
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": false,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "basis": "Inherited sourced hazard facts from commit 1f38cd9; Johannes Kiehl KG, Sicherheitsdatenblatt Santex"
+      }
+    },
+    "hazardStatementsEvidence": "documented",
+    "gtinMappings": {
+      "04031255003238": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Santex"
+        }
+      },
+      "04031255003245": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Santex"
+        }
+      },
+      "04031255032894": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Santex"
+        }
+      }
+    }
   },
   {
     "id": "kiehl-calinex",
     "name": "Calinex",
     "brand": "Kiehl",
     "gtins": [
-      "4031255055367",
-      "4031255055817",
-      "4031255055350"
+      "04031255055367",
+      "04031255055817",
+      "04031255055350"
     ],
     "ufi": "7140-Y06Q-A000-WH9F",
     "giscode": "GS80",
@@ -208,7 +343,6 @@
     "ph": {
       "max": 0.5
     },
-    "verified": true,
     "dataLane": "public_law",
     "sourceType": "sds",
     "provenance": {
@@ -224,15 +358,48 @@
     "descriptionDe": "Kalk- und Fettentferner auf Phosphorsäurebasis.",
     "descriptionEn": "Phosphoric-acid limescale and grease remover.",
     "typicalUseDe": "Entkalken in Sanitär- und Lebensmittelbereichen",
-    "typicalUseEn": "Descaling in sanitary and food areas"
+    "typicalUseEn": "Descaling in sanitary and food areas",
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": false,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "basis": "Inherited sourced hazard facts from commit 1f38cd9; Johannes Kiehl KG, Sicherheitsdatenblatt Calinex"
+      }
+    },
+    "hazardStatementsEvidence": "documented",
+    "gtinMappings": {
+      "04031255055367": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Calinex"
+        }
+      },
+      "04031255055817": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Calinex"
+        }
+      },
+      "04031255055350": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Calinex"
+        }
+      }
+    }
   },
   {
     "id": "kiehl-oxycal",
     "name": "Oxycal",
     "brand": "Kiehl",
     "gtins": [
-      "4031255042503",
-      "4031255042510"
+      "04031255042503",
+      "04031255042510"
     ],
     "ufi": "7M30-E0RQ-S00H-MTD4",
     "giscode": "GS35",
@@ -253,7 +420,6 @@
       "min": 1.5,
       "max": 1.5
     },
-    "verified": true,
     "dataLane": "public_law",
     "sourceType": "sds",
     "provenance": {
@@ -269,17 +435,43 @@
     "descriptionDe": "Saurer Sanitärreiniger mit Bleichmittel auf Sauerstoffbasis.",
     "descriptionEn": "Acidic sanitary cleaner with oxygen-based bleach.",
     "typicalUseDe": "Sanitärreinigung mit Sauerstoffbleiche",
-    "typicalUseEn": "Sanitary cleaning with oxygen bleach"
+    "typicalUseEn": "Sanitary cleaning with oxygen bleach",
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": false,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "basis": "Inherited sourced hazard facts from commit 1f38cd9; Johannes Kiehl KG, Sicherheitsdatenblatt Oxycal"
+      }
+    },
+    "hazardStatementsEvidence": "documented",
+    "gtinMappings": {
+      "04031255042503": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Oxycal"
+        }
+      },
+      "04031255042510": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Oxycal"
+        }
+      }
+    }
   },
   {
     "id": "kiehl-fumex",
     "name": "Fumex",
     "brand": "Kiehl",
     "gtins": [
-      "4031255008349",
-      "4031255008325",
-      "4031255008332",
-      "4031255048888"
+      "04031255008349",
+      "04031255008325",
+      "04031255008332",
+      "04031255048888"
     ],
     "ufi": "MN40-H01G-F00F-JWCW",
     "chemicalGroups": [
@@ -294,7 +486,6 @@
     "ph": {
       "min": 13.5
     },
-    "verified": true,
     "dataLane": "public_law",
     "sourceType": "sds",
     "provenance": {
@@ -310,19 +501,59 @@
     "descriptionDe": "Stark alkalischer Rauchharzentferner für Küche und Lebensmittelbetrieb.",
     "descriptionEn": "Strongly alkaline smoke-resin remover for kitchens and food plants.",
     "typicalUseDe": "Räucherkammern, Grills, Backöfen",
-    "typicalUseEn": "Smoke chambers, grills, ovens"
+    "typicalUseEn": "Smoke chambers, grills, ovens",
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": false,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "basis": "Inherited sourced hazard facts from commit 1f38cd9; Johannes Kiehl KG, Sicherheitsdatenblatt Fumex"
+      }
+    },
+    "hazardStatementsEvidence": "documented",
+    "gtinMappings": {
+      "04031255008349": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Kuechen-und-Lebensmittelindustrie/Kuechenreinigung-und-Lebensmittelhygiene/Fumex"
+        }
+      },
+      "04031255008325": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Kuechen-und-Lebensmittelindustrie/Kuechenreinigung-und-Lebensmittelhygiene/Fumex"
+        }
+      },
+      "04031255008332": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Kuechen-und-Lebensmittelindustrie/Kuechenreinigung-und-Lebensmittelhygiene/Fumex"
+        }
+      },
+      "04031255048888": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Kuechen-und-Lebensmittelindustrie/Kuechenreinigung-und-Lebensmittelhygiene/Fumex"
+        }
+      }
+    }
   },
   {
     "id": "kiehl-li-ex",
     "name": "Li-Ex",
     "brand": "Kiehl",
     "gtins": [
-      "4031255013107",
-      "4031255032351",
-      "4031255013114",
-      "4031255035727",
-      "4031255000435",
-      "4031255002613"
+      "04031255013107",
+      "04031255032351",
+      "04031255013114",
+      "04031255035727",
+      "04031255000435",
+      "04031255002613"
     ],
     "ufi": "1UM0-306R-P002-NAHA",
     "giscode": "GG50",
@@ -344,7 +575,6 @@
       "min": 9.5,
       "max": 9.5
     },
-    "verified": true,
     "dataLane": "public_law",
     "sourceType": "sds",
     "provenance": {
@@ -360,16 +590,70 @@
     "descriptionDe": "Spezial-Grundreiniger auf Lösemittelbasis, schwach alkalisch.",
     "descriptionEn": "Solvent-based special stripper, mildly alkaline.",
     "typicalUseDe": "Grundreinigung von Linoleum und elastischen Belägen",
-    "typicalUseEn": "Stripping linoleum and resilient floors"
+    "typicalUseEn": "Stripping linoleum and resilient floors",
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": false,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "basis": "Inherited sourced hazard facts from commit 1f38cd9; Johannes Kiehl KG, Sicherheitsdatenblatt Li-Ex"
+      }
+    },
+    "hazardStatementsEvidence": "documented",
+    "gtinMappings": {
+      "04031255013107": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Grundreinigung/Li-Ex"
+        }
+      },
+      "04031255032351": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Grundreinigung/Li-Ex"
+        }
+      },
+      "04031255013114": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Grundreinigung/Li-Ex"
+        }
+      },
+      "04031255035727": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Grundreinigung/Li-Ex"
+        }
+      },
+      "04031255000435": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Grundreinigung/Li-Ex"
+        }
+      },
+      "04031255002613": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Grundreinigung/Li-Ex"
+        }
+      }
+    }
   },
   {
     "id": "kiehl-sanikal",
     "name": "Sanikal",
     "brand": "Kiehl",
     "gtins": [
-      "4031255000183",
-      "4031255000954",
-      "4031255000176"
+      "04031255000183",
+      "04031255000954",
+      "04031255000176"
     ],
     "giscode": "GU50",
     "chemicalGroups": [
@@ -384,7 +668,6 @@
       "min": 9,
       "max": 9
     },
-    "verified": true,
     "dataLane": "public_law",
     "sourceType": "sds",
     "provenance": {
@@ -400,18 +683,51 @@
     "descriptionDe": "Säurefreier Sanitär-Unterhaltsreiniger.",
     "descriptionEn": "Acid-free sanitary maintenance cleaner.",
     "typicalUseDe": "Tägliche Sanitärraum-Hygiene",
-    "typicalUseEn": "Daily washroom hygiene"
+    "typicalUseEn": "Daily washroom hygiene",
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": false,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "basis": "Inherited sourced hazard facts from commit 1f38cd9; Johannes Kiehl KG, Sicherheitsdatenblatt Sanikal"
+      }
+    },
+    "hazardStatementsEvidence": "undocumented",
+    "gtinMappings": {
+      "04031255000183": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Sanikal"
+        }
+      },
+      "04031255000954": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Sanikal"
+        }
+      },
+      "04031255000176": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Sanitaerreinigung/Sanikal"
+        }
+      }
+    }
   },
   {
     "id": "kiehl-profloor-konzentrat",
     "name": "Profloor-Konzentrat",
     "brand": "Kiehl",
     "gtins": [
-      "4031255001845",
-      "4031255003139",
-      "4031255003320",
-      "4031255003559",
-      "4031255001302"
+      "04031255001845",
+      "04031255003139",
+      "04031255003320",
+      "04031255003559",
+      "04031255001302"
     ],
     "giscode": "GU50",
     "chemicalGroups": [
@@ -426,7 +742,6 @@
       "min": 8.5,
       "max": 8.5
     },
-    "verified": true,
     "dataLane": "public_law",
     "sourceType": "sds",
     "provenance": {
@@ -442,23 +757,70 @@
     "descriptionDe": "Wischpflege-Konzentrat für die einstufige Bodenpflege.",
     "descriptionEn": "Mop-care concentrate for one-step floor care.",
     "typicalUseDe": "Wischpflege wasserbeständiger Böden",
-    "typicalUseEn": "Mop care for water-resistant floors"
+    "typicalUseEn": "Mop care for water-resistant floors",
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": false,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "basis": "Inherited sourced hazard facts from commit 1f38cd9; Johannes Kiehl KG, Sicherheitsdatenblatt Profloor-Konzentrat"
+      }
+    },
+    "hazardStatementsEvidence": "undocumented",
+    "gtinMappings": {
+      "04031255001845": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Wischpflege-Unterhalt/Profloor-Konzentrat"
+        }
+      },
+      "04031255003139": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Wischpflege-Unterhalt/Profloor-Konzentrat"
+        }
+      },
+      "04031255003320": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Wischpflege-Unterhalt/Profloor-Konzentrat"
+        }
+      },
+      "04031255003559": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Wischpflege-Unterhalt/Profloor-Konzentrat"
+        }
+      },
+      "04031255001302": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Wischpflege-Unterhalt/Profloor-Konzentrat"
+        }
+      }
+    }
   },
   {
     "id": "kiehl-torvan-konzentrat",
     "name": "Torvan-Konzentrat",
     "brand": "Kiehl",
     "gtins": [
-      "4031255000169",
-      "4031255057682",
-      "4031255013398",
-      "4031255015989",
-      "4031255013404",
-      "4031255000152",
-      "4031255057675",
-      "4031255003528",
-      "4031255000633",
-      "4031255018935"
+      "04031255000169",
+      "04031255057682",
+      "04031255013398",
+      "04031255015989",
+      "04031255013404",
+      "04031255000152",
+      "04031255057675",
+      "04031255003528",
+      "04031255000633",
+      "04031255018935"
     ],
     "giscode": "GU50",
     "chemicalGroups": [
@@ -473,7 +835,6 @@
       "min": 9.5,
       "max": 9.5
     },
-    "verified": true,
     "dataLane": "public_law",
     "sourceType": "sds",
     "provenance": {
@@ -489,16 +850,98 @@
     "descriptionDe": "Aktivreiniger-Konzentrat für die Unterhaltsreinigung.",
     "descriptionEn": "Active cleaner concentrate for routine cleaning.",
     "typicalUseDe": "Unterhaltsreinigung von Böden und Oberflächen",
-    "typicalUseEn": "Routine cleaning of floors and surfaces"
+    "typicalUseEn": "Routine cleaning of floors and surfaces",
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": false,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "basis": "Inherited sourced hazard facts from commit 1f38cd9; Johannes Kiehl KG, Sicherheitsdatenblatt Torvan-Konzentrat"
+      }
+    },
+    "hazardStatementsEvidence": "undocumented",
+    "gtinMappings": {
+      "04031255000169": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Torvan-Konzentrat"
+        }
+      },
+      "04031255057682": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Torvan-Konzentrat"
+        }
+      },
+      "04031255013398": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Torvan-Konzentrat"
+        }
+      },
+      "04031255015989": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Torvan-Konzentrat"
+        }
+      },
+      "04031255013404": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Torvan-Konzentrat"
+        }
+      },
+      "04031255000152": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Torvan-Konzentrat"
+        }
+      },
+      "04031255057675": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Torvan-Konzentrat"
+        }
+      },
+      "04031255003528": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Torvan-Konzentrat"
+        }
+      },
+      "04031255000633": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Torvan-Konzentrat"
+        }
+      },
+      "04031255018935": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Torvan-Konzentrat"
+        }
+      }
+    }
   },
   {
     "id": "kiehl-clean-oxy",
     "name": "Clean@oxy",
     "brand": "Kiehl",
     "gtins": [
-      "4031255057910",
-      "4031255057958",
-      "4031255058580"
+      "04031255057910",
+      "04031255057958",
+      "04031255058580"
     ],
     "giscode": "GU50",
     "chemicalGroups": [
@@ -514,7 +957,6 @@
       "min": 7,
       "max": 7
     },
-    "verified": true,
     "dataLane": "public_law",
     "sourceType": "sds",
     "provenance": {
@@ -530,7 +972,40 @@
     "descriptionDe": "Neutrales Reinigungsadditiv für die Unterhaltsreinigung.",
     "descriptionEn": "Neutral cleaning additive for routine cleaning.",
     "typicalUseDe": "Unterhaltsreinigung, Zusatz zur Reinigungsflotte",
-    "typicalUseEn": "Routine cleaning, additive to the cleaning solution"
+    "typicalUseEn": "Routine cleaning, additive to the cleaning solution",
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": false,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "basis": "Inherited sourced hazard facts from commit 1f38cd9; Johannes Kiehl KG, Sicherheitsdatenblatt Clean@oxy"
+      }
+    },
+    "hazardStatementsEvidence": "undocumented",
+    "gtinMappings": {
+      "04031255057910": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Cleanoxy"
+        }
+      },
+      "04031255057958": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Cleanoxy"
+        }
+      },
+      "04031255058580": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://www.kiehl-group.com/de/PM/Produkte/Produktsortiment/Gebaeude/Unterhaltsreinigung/Cleanoxy"
+        }
+      }
+    }
   },
   {
     "id": "buzil-bucalex-g460",
@@ -556,7 +1031,6 @@
       "min": 0.2,
       "max": 1
     },
-    "verified": true,
     "dataLane": "public_law",
     "sourceType": "sds",
     "provenance": {
@@ -571,7 +1045,19 @@
     "descriptionDe": "Viskoser Sanitär-Grundreiniger auf Phosphorsäurebasis.",
     "descriptionEn": "Viscous sanitary deep cleaner based on phosphoric acid.",
     "typicalUseDe": "Sanitär-Grundreinigung, gegen Kalk und Urinstein",
-    "typicalUseEn": "Sanitary deep cleaning, against limescale and urine scale"
+    "typicalUseEn": "Sanitary deep cleaning, against limescale and urine scale",
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": false,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "basis": "Inherited sourced hazard facts from commit 1f38cd9; BUZIL-WERK Wagner, Sicherheitsdatenblatt Bucalex G 460 (Download-Formular der Produktseite)"
+      }
+    },
+    "hazardStatementsEvidence": "documented",
+    "gtins": [],
+    "gtinMappings": {}
   },
   {
     "id": "buzil-bucasan-trendy-t464",
@@ -597,7 +1083,6 @@
       "min": 0,
       "max": 1
     },
-    "verified": true,
     "dataLane": "public_law",
     "sourceType": "sds",
     "provenance": {
@@ -612,7 +1097,19 @@
     "descriptionDe": "Sanitär-Unterhaltsreiniger auf Amidosulfonsäurebasis.",
     "descriptionEn": "Sanitary maintenance cleaner based on sulfamic acid.",
     "typicalUseDe": "Tägliche Sanitärreinigung",
-    "typicalUseEn": "Daily sanitary cleaning"
+    "typicalUseEn": "Daily sanitary cleaning",
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": false,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "basis": "Inherited sourced hazard facts from commit 1f38cd9; BUZIL-WERK Wagner, Sicherheitsdatenblatt Bucasan Trendy T 464 (Download-Formular der Produktseite)"
+      }
+    },
+    "hazardStatementsEvidence": "documented",
+    "gtins": [],
+    "gtinMappings": {}
   },
   {
     "id": "buzil-erol-g490",
@@ -640,7 +1137,6 @@
       "min": 13,
       "max": 14
     },
-    "verified": true,
     "dataLane": "public_law",
     "sourceType": "sds",
     "provenance": {
@@ -655,7 +1151,19 @@
     "descriptionDe": "Alkalischer Feinsteinzeug-Grundreiniger.",
     "descriptionEn": "Alkaline deep cleaner for porcelain stoneware.",
     "typicalUseDe": "Grundreinigung von Feinsteinzeug",
-    "typicalUseEn": "Deep cleaning of porcelain stoneware"
+    "typicalUseEn": "Deep cleaning of porcelain stoneware",
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": false,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "basis": "Inherited sourced hazard facts from commit 1f38cd9; BUZIL-WERK Wagner, Sicherheitsdatenblatt Erol G 490 (Download-Formular der Produktseite)"
+      }
+    },
+    "hazardStatementsEvidence": "documented",
+    "gtins": [],
+    "gtinMappings": {}
   },
   {
     "id": "dr-schnell-milizid",
@@ -676,7 +1184,6 @@
       "min": 0.5,
       "max": 0.5
     },
-    "verified": true,
     "dataLane": "public_law",
     "sourceType": "sds",
     "provenance": {
@@ -691,7 +1198,19 @@
     "descriptionDe": "Saurer Sanitärreiniger und Kalklöser für die gewerbliche Verwendung.",
     "descriptionEn": "Acidic sanitary cleaner and descaler for professional use.",
     "typicalUseDe": "Sanitärreinigung, Kalk- und Urinsteinentfernung",
-    "typicalUseEn": "Sanitary cleaning, limescale and urine-scale removal"
+    "typicalUseEn": "Sanitary cleaning, limescale and urine-scale removal",
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": false,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "basis": "Inherited sourced hazard facts from commit 1f38cd9; DR.SCHNELL, Sicherheitsdatenblatt MILIZID (Fassung GHS 1.0)"
+      }
+    },
+    "hazardStatementsEvidence": "documented",
+    "gtins": [],
+    "gtinMappings": {}
   },
   {
     "id": "domestos-professional-original",
@@ -719,7 +1238,6 @@
     "ph": {
       "min": 11.5
     },
-    "verified": true,
     "dataLane": "public_law",
     "sourceType": "sds",
     "provenance": {
@@ -735,14 +1253,26 @@
     "descriptionDe": "Chlorhaltiger WC- und Badreiniger mit Desinfektionswirkung für die gewerbliche Verwendung.",
     "descriptionEn": "Chlorine-based toilet and bathroom cleaner with disinfecting action for professional use.",
     "typicalUseDe": "WC- und Badezimmerreinigung, Flächendesinfektion",
-    "typicalUseEn": "Toilet and bathroom cleaning, surface disinfection"
+    "typicalUseEn": "Toilet and bathroom cleaning, surface disinfection",
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": false,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "basis": "Inherited sourced hazard facts from commit 1f38cd9; Diversey, Sicherheitsdatenblatt Domestos Professional Original (SDB-Code MS1005408, Version 1.1)"
+      }
+    },
+    "hazardStatementsEvidence": "documented",
+    "gtins": [],
+    "gtinMappings": {}
   },
   {
     "id": "danklorix-hygiene-reiniger",
     "name": "Dan Klorix Hygienereiniger",
     "brand": "CP GABA",
     "gtins": [
-      "4011200652902"
+      "04011200652902"
     ],
     "chemicalGroups": [
       "hypochlorite",
@@ -764,7 +1294,6 @@
       "min": 12.95,
       "max": 12.95
     },
-    "verified": true,
     "dataLane": "public_law",
     "sourceType": "sds",
     "provenance": {
@@ -781,7 +1310,22 @@
     "descriptionDe": "Chlorbleiche-Hygienereiniger für den Haushalt.",
     "descriptionEn": "Household chlorine bleach hygiene cleaner.",
     "typicalUseDe": "Bleichen und Reinigen in Bad, WC und Küche",
-    "typicalUseEn": "Bleaching and cleaning in bathroom, toilet and kitchen"
+    "typicalUseEn": "Bleaching and cleaning in bathroom, toilet and kitchen",
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": false,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "basis": "Inherited sourced hazard facts from commit 1f38cd9; CP GABA, Sicherheitsdatenblatt Dan Klorix Hygienereiniger (SDB-Nummer 660000003600, Version 4.8)"
+      }
+    },
+    "hazardStatementsEvidence": "documented",
+    "gtinMappings": {
+      "04011200652902": {
+        "confirmed": false
+      }
+    }
   },
   {
     "id": "meffert-salmiakgeist-9-5",
@@ -802,7 +1346,6 @@
     "ph": {
       "min": 9
     },
-    "verified": true,
     "dataLane": "public_law",
     "sourceType": "sds",
     "provenance": {
@@ -817,14 +1360,26 @@
     "descriptionDe": "Wässrige Ammoniaklösung als Reiniger.",
     "descriptionEn": "Aqueous ammonia solution sold as a cleaner.",
     "typicalUseDe": "Entfetten, Anlaugen, Fensterreinigung",
-    "typicalUseEn": "Degreasing, pre-paint cleaning, window cleaning"
+    "typicalUseEn": "Degreasing, pre-paint cleaning, window cleaning",
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": false,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "basis": "Inherited sourced hazard facts from commit 1f38cd9; Meffert AG Farbwerke, Sicherheitsdatenblatt NEUTRAL Salmiakgeist 9,5 % (Materialnummer 78307576800000)"
+      }
+    },
+    "hazardStatementsEvidence": "documented",
+    "gtins": [],
+    "gtinMappings": {}
   },
   {
     "id": "mellerud-schimmel-vernichter",
     "name": "Schimmel Vernichter",
     "brand": "Mellerud",
     "gtins": [
-      "4004666004675"
+      "04004666004675"
     ],
     "chemicalGroups": [
       "hypochlorite",
@@ -837,7 +1392,6 @@
       "497-19-8",
       "1310-73-2"
     ],
-    "verified": true,
     "dataLane": "open_community",
     "sourceType": "ingredient_datasheet",
     "provenance": {
@@ -854,17 +1408,35 @@
     "descriptionDe": "Chlorhaltiger Schimmelentferner für den Haushalt.",
     "descriptionEn": "Household chlorine-based mould remover.",
     "typicalUseDe": "Schimmel und Stockflecken in Bad und Fugen",
-    "typicalUseEn": "Mould and mildew stains in bathrooms and grout"
+    "typicalUseEn": "Mould and mildew stains in bathrooms and grout",
+    "hazardsConfirmed": true,
+    "completenessReviewed": false,
+    "currentVersionChecked": false,
+    "reviewMetadata": {
+      "hazardsConfirmed": {
+        "date": "2026-10-12",
+        "basis": "Inherited sourced hazard facts from commit 1f38cd9; MELLERUD CHEMIE, Datenblatt über Inhaltsstoffe nach VO (EG) 648/2004 Anhang VII D, Schimmel Vernichter (P028)"
+      }
+    },
+    "hazardStatementsEvidence": "undocumented",
+    "gtinMappings": {
+      "04004666004675": {
+        "confirmed": true,
+        "review": {
+          "date": "2026-10-12",
+          "basis": "Existing manufacturer product-page mapping: https://mellerud.de/schimmel/schimmel-vernichter"
+        }
+      }
+    }
   },
   {
     "id": "unverifiziertes-musterprodukt",
     "name": "Unbekannter Sanitärreiniger aus Kleinstabfüllung",
     "brand": "Unbekannt",
     "chemicalGroups": [
-      "neutral"
+      "unknown"
     ],
     "hazardStatements": [],
-    "verified": false,
     "dataLane": "open_community",
     "sourceType": "none",
     "provenance": {
@@ -873,17 +1445,23 @@
       "note": "Kein reales Produkt. Zeigt den Zustand UNVERIFIED."
     },
     "descriptionDe": "Erfundener Platzhalter für ein Gebinde ohne belegte Daten.",
-    "descriptionEn": "Invented placeholder for a container without documented data."
+    "descriptionEn": "Invented placeholder for a container without documented data.",
+    "hazardsConfirmed": false,
+    "completenessReviewed": false,
+    "currentVersionChecked": false,
+    "reviewMetadata": {},
+    "hazardStatementsEvidence": "undocumented",
+    "gtins": [],
+    "gtinMappings": {}
   },
   {
     "id": "gesperrtes-altes-produkt",
     "name": "Umgefülltes Gebinde ohne Etikett",
     "brand": "Unbekannt",
     "chemicalGroups": [
-      "neutral"
+      "unknown"
     ],
     "hazardStatements": [],
-    "verified": false,
     "dataLane": "open_community",
     "sourceType": "none",
     "provenance": {
@@ -892,6 +1470,13 @@
       "note": "Kein reales Produkt. Zeigt den Zustand UNVERIFIED."
     },
     "descriptionDe": "Erfundener Platzhalter für ein umgefülltes Gebinde.",
-    "descriptionEn": "Invented placeholder for a decanted container."
+    "descriptionEn": "Invented placeholder for a decanted container.",
+    "hazardsConfirmed": false,
+    "completenessReviewed": false,
+    "currentVersionChecked": false,
+    "reviewMetadata": {},
+    "hazardStatementsEvidence": "undocumented",
+    "gtins": [],
+    "gtinMappings": {}
   }
 ]

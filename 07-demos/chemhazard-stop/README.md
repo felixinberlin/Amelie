@@ -5,6 +5,9 @@
 
 ---
 
+
+Kataloghärtung 12.10.2026: GISCODE dient nur der Anzeige. GTINs sind kanonisch 14-stellig; GTIN/UFI müssen genau einen Datensatz treffen, jede GTIN-Zuordnung braucht einen belegten Bestätigungsstatus. hazardsConfirmed, completenessReviewed und currentVersionChecked sind getrennt und benötigen datierte Review-Metadaten mit Grundlage. Belegte STOP-Regeln laufen vor Vollständigkeits-/Aktualitätsprüfungen; unbekannte Identität bleibt UNVERIFIED. Grau setzt alle drei Prüfungen voraus und ist niemals eine Freigabe. Keine erkannte Gefahrengruppe bedeutet unknown, nicht neutral. 20 quellenbelegte Produkte plus zwei synthetische Beispiele bleiben erhalten; 51 GTIN-Zuordnungen, davon 50 aus bestehenden Herstellerbelegen übernommen und Dan Klorix unbestätigt. Alle 22 Vollständigkeits- und Aktualitätsprüfungen bleiben mangels dokumentierter Reviews ausstehend, insbesondere die drei Händlerkopien und Mellerud. Leere H-Satzlisten bedeuten nicht dokumentiert, keine dokumentierte Abwesenheit. Tests belegen Software-Invarianten, keine chemische Sicherheitsfreigabe.
+
 ## 1. Problem & Lücke
 
 Im gewerblichen Reinigungshandwerk arbeiten Beschäftigte unter massivem Zeitdruck und oft über Sprachbarrieren hinweg. Das versehentliche Mischen eines sauren Entkalkers (z. B. WC-Reiniger mit Phosphorsäure) mit einer Chlorbleiche (Natriumhypochlorit) setzt in engen Sanitärräumen schlagartig tödliches Chlorgas frei ($2\text{H}^+ + \text{OCl}^- + \text{Cl}^- \to \text{Cl}_2 \uparrow + \text{H}_2\text{O}$).
@@ -13,7 +16,7 @@ Bestehende Referenzsysteme (WINGIS / GISBAU, GESTIS / IFA, DGUV Regel 101-019) s
 
 ---
 
-## 2. Der fundamentale Sicherheitsnachweis (Safety Case)
+## 2. Getestete Software-Invarianten
 
 > [!CAUTION]
 > **Die App attestiert niemals Sicherheit.** Ein falsches „alles sicher" (grüner Haken) ist lebensgefährlich und weitaus schlimmer als gar keine App.
@@ -26,26 +29,13 @@ Daraus folgen vier unumstößliche Systemregeln:
 
 ### Die drei Systemzustände
 
-```
-               [ Scanne Flasche A + Flasche B ]
-                             │
-                             ▼
-         [ Beide in lokaler Datenbank verifiziert? ]
-                   /                    \
-                NEIN                    JA
-                 │                       │
-                 ▼                       ▼
-         🟠 UNVERIFIED           [ Berechne Gefahren-Mengenvereinigung ]
-    (Bernsteinfarben, Haptik)     combined = hazards(A) ∪ hazards(B)
-                                         /               \
-                          Regel ausgelöst?               Keine Inkompatibilität
-                                 /                                \
-                                JA                               NEIN
-                                │                                 │
-                                ▼                                 ▼
-                             🔴 STOP              ⚪ NO_KNOWN_INCOMPATIBILITY
-                        (Rot, 4-Kanal-Alarm)         (Grau — Niemals grün!
-                                                      Pflicht-Disclaimer)
+```text
+Identität unbekannt / mehrdeutig / GTIN-Zuordnung unbestätigt → UNVERIFIED
+Sonst: nur bestätigte Gefahren in Regeln prüfen
+  Regel belegt → STOP (unabhängig von Vollständigkeit / Aktualität)
+  Keine Regel belegt → alle drei Evidenzprüfungen dokumentiert?
+    Nein / unbekannte Gruppenableitung → UNVERIFIED
+    Ja → NO_KNOWN_INCOMPATIBILITY (grau, keine Freigabe)
 ```
 
 ---
@@ -76,7 +66,7 @@ Regeln für neue Einträge:
 
 1. `node scripts/chemhazard-sds.mjs extract <pdf|url>` liest H-/EUH-Sätze (nur Abschnitt 2), CAS-Nummern (Abschnitt 3), pH (Abschnitt 9), UFI, GISCODE und Datum. Exit 2 heißt: Abschnitte nicht erkannt, von Hand am SDB prüfen.
 2. `chemicalGroups` wird aus diesen Tatsachen abgeleitet (Tabelle `GROUP_RULES` im Skript) und nie von Hand gesetzt. Der Wächter vergleicht beides.
-3. Eine GTIN kommt nur mit Fundstelle (`gtinSource`) und gültiger GS1-Prüfziffer in den Bestand. Ein SDB enthält keine EAN; fehlt sie beim Hersteller, bleibt das Feld leer und der Strichcode wird am Gebinde erfasst.
+3. Eine GTIN kommt nur kanonisch 14-stellig mit Fundstelle (`gtinSource`), per-Mapping-Bestätigung und gültiger GS1-Prüfziffer in den Bestand. Ein SDB enthält keine EAN; fehlt sie beim Hersteller, bleibt das Feld leer und der Strichcode wird am Gebinde erfasst.
 4. Ein GISCODE wird nur übernommen, wenn der Hersteller ihn im eigenen SDB nennt. WINGIS wird nicht abgefragt.
 5. `node scripts/chemhazard-sds.mjs check` (auch als Vitest-Wächter) prüft Schema, Prüfziffern, Herkunft und Ableitung.
 6. `npm run chemhazard:barcodes` schreibt zu jeder GTIN den Strichcode als SVG nach `data/barcodes/`; `check` meldet fehlende oder veraltete Dateien.

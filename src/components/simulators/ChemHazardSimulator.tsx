@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Language } from '../../types';
 import {
   evaluateMixingInterlock,
+  isEvidenceComplete,
   lookupProductByIdentifier,
   ProductRecord,
   IncompatibilityRule,
@@ -33,7 +34,8 @@ import { doseImageSrc, doseImageSrcSet } from '../../utils/doseImage';
 
 const products = productsData as unknown as ProductRecord[];
 const rules = rulesData as unknown as IncompatibilityRule[];
-const verifiedCount = products.filter((p) => p.verified).length;
+const confirmedHazardsCount = products.filter((p) => p.hazardsConfirmed).length;
+const completeCount = products.filter(isEvidenceComplete).length;
 const pairCount = (products.length * (products.length + 1)) / 2;
 
 const formatPh = (ph: ProductRecord['ph'], de: boolean): string => {
@@ -46,7 +48,8 @@ const formatPh = (ph: ProductRecord['ph'], de: boolean): string => {
 
 /** The EAN-13 barcode as printed on the container, drawn from the catalog GTIN. */
 const Ean13Barcode: React.FC<{ gtin: string }> = ({ gtin }) => {
-  const modules = ean13Modules(gtin);
+  const ean = gtin.length === 14 && gtin.startsWith('0') ? gtin.slice(1) : gtin;
+  const modules = ean13Modules(ean);
   if (!modules) return null;
   const quiet = 11;
   return (
@@ -60,7 +63,7 @@ const Ean13Barcode: React.FC<{ gtin: string }> = ({ gtin }) => {
         bit === '1' ? <rect key={i} x={quiet + i} y={3} width={1} height={31} fill="#000" /> : null
       )}
       <text x={(modules.length + quiet * 2) / 2} y={42} textAnchor="middle" fontSize={7} fontFamily="monospace" fill="#000">
-        {gtin}
+        {ean}
       </text>
     </svg>
   );
@@ -72,6 +75,11 @@ const ProductIdentifiers: React.FC<{ product: ProductRecord; de: boolean }> = ({
   const pr = product.provenance;
   return (
     <div className="pt-1.5 space-y-1.5 border-t border-stone-800/80">
+      <div className="text-[11px] text-amber-200">
+        {de ? 'Evidenz: Gefahren / Vollständigkeit / aktuelle Fassung: ' : 'Evidence: hazards / completeness / current version: '}
+        {[product.hazardsConfirmed, product.completenessReviewed, product.currentVersionChecked].map((ok) => ok ? (de ? 'belegt' : 'confirmed') : (de ? 'ausstehend' : 'pending')).join(' / ')}
+        <div>{de ? 'GTIN-Zuordnung: ' : 'GTIN mapping: '}{gtins.length ? gtins.map((g) => `${g}: ${product.gtinMappings?.[g]?.confirmed ? (de ? 'belegt' : 'confirmed') : (de ? 'unbestätigt' : 'unconfirmed')}`).join('; ') : (de ? 'nicht dokumentiert' : 'undocumented')}</div>
+      </div>
       {gtins.length > 0 && (
         <div className="space-y-1">
           <Ean13Barcode gtin={gtins[0]} />
@@ -506,7 +514,7 @@ export const ChemHazardSimulator: React.FC<ChemHazardSimulatorProps> = ({
               <div className="flex justify-between text-stone-300">
                 <span className="text-stone-500">CLP / EUH:</span>
                 <span className={productA.hazardStatements.some((s) => s === 'EUH031' || s === 'EUH206') ? 'text-red-400 font-bold' : 'text-stone-300'}>
-                  {productA.hazardStatements.length > 0 ? productA.hazardStatements.join(', ') : (de ? 'Keine' : 'None')}
+                  {productA.hazardStatements.length > 0 ? productA.hazardStatements.join(', ') : productA.hazardStatementsEvidence === 'documented_absence' ? (de ? 'Dokumentierte Abwesenheit' : 'Documented absence') : (de ? 'Nicht dokumentiert' : 'Undocumented')}
                 </span>
               </div>
               <div className="flex justify-between text-stone-300">
@@ -577,7 +585,7 @@ export const ChemHazardSimulator: React.FC<ChemHazardSimulatorProps> = ({
               <div className="flex justify-between text-stone-300">
                 <span className="text-stone-500">CLP / EUH:</span>
                 <span className={productB.hazardStatements.some((s) => s === 'EUH031' || s === 'EUH206') ? 'text-red-400 font-bold' : 'text-stone-300'}>
-                  {productB.hazardStatements.length > 0 ? productB.hazardStatements.join(', ') : (de ? 'Keine' : 'None')}
+                  {productB.hazardStatements.length > 0 ? productB.hazardStatements.join(', ') : productB.hazardStatementsEvidence === 'documented_absence' ? (de ? 'Dokumentierte Abwesenheit' : 'Documented absence') : (de ? 'Nicht dokumentiert' : 'Undocumented')}
                 </span>
               </div>
               <div className="flex justify-between text-stone-300">
@@ -629,8 +637,8 @@ export const ChemHazardSimulator: React.FC<ChemHazardSimulatorProps> = ({
                 {result.state === 'STOP'
                   ? '🔴 STOPP! NICHT MISCHEN!'
                   : result.state === 'UNVERIFIED'
-                  ? '🟠 UNVERIFIED — UNBEKANNT'
-                  : '⚪ KEINE BEKANNTE INKOMPATIBILITÄT'}
+                  ? (de ? '🟠 UNVERIFIED — PRÜFUNG OFFEN' : '🟠 UNVERIFIED — REVIEW PENDING')
+                  : (de ? '⚪ KEINE BEKANNTE INKOMPATIBILITÄT' : '⚪ NO KNOWN INCOMPATIBILITY')}
               </h2>
             </div>
           </div>
@@ -767,7 +775,7 @@ export const ChemHazardSimulator: React.FC<ChemHazardSimulatorProps> = ({
         >
           {showMatrixInspection
             ? (de ? 'Katalog-Matrix verbergen' : 'Hide Catalog Matrix')
-            : (de ? 'Sicherheits-Beweis einblenden (Matrix prüfen)' : 'Show Safety Proof (Inspect Matrix)')}
+            : (de ? 'Getestete Software-Invarianten (Matrix prüfen)' : 'Tested Software Invariants (Inspect Matrix)')}
         </button>
 
         <span className="text-stone-500 font-mono-code">
@@ -781,13 +789,13 @@ export const ChemHazardSimulator: React.FC<ChemHazardSimulatorProps> = ({
           <div className="font-bold text-stone-200 flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-emerald-400" />
             {de
-              ? 'Verifizierte Invariante: 0% Freigaben über alle Produkt-Paare'
-              : 'Verified Invariant: 0% Clearance across all product pairs'}
+              ? 'Getestete Software-Invariante: 0% Freigaben über alle Produkt-Paare'
+              : 'Tested Software Invariant: 0% Clearance across all product pairs'}
           </div>
           <p className="text-stone-400 leading-relaxed">
             {de
-              ? `Die Vitest-Suite prüft alle ${pairCount} Paarungen der ${products.length} Katalogeinträge (${verifiedCount} davon mit Herstellerdokument belegt). Keine einzige Paarung ergibt jemals „SAFE“ oder die Farbe Grün. Alle Ausgänge sind deterministisch entweder STOP, UNVERIFIED oder NO_KNOWN_INCOMPATIBILITY mit Disclaimer.`
-              : `The Vitest suite verifies all ${pairCount} pairings of the ${products.length} catalog entries (${verifiedCount} of them backed by a manufacturer document). Exactly zero combinations yield a SAFE state or green color. Every execution strictly maps to STOP, UNVERIFIED, or NO_KNOWN_INCOMPATIBILITY.`}
+              ? `Die Vitest-Suite prüft alle ${pairCount} Paarungen der ${products.length} Katalogeinträge (${confirmedHazardsCount} mit belegten Gefahren, ${completeCount} mit allen drei Evidenzprüfungen). Keine einzige Paarung ergibt jemals „SAFE“ oder die Farbe Grün. Alle Ausgänge sind deterministisch entweder STOP, UNVERIFIED oder NO_KNOWN_INCOMPATIBILITY mit Disclaimer.`
+              : `The Vitest suite verifies all ${pairCount} pairings of the ${products.length} catalog entries (${confirmedHazardsCount} with sourced hazards, ${completeCount} with all three evidence checks). Exactly zero combinations yield a SAFE state or green color. Every execution strictly maps to STOP, UNVERIFIED, or NO_KNOWN_INCOMPATIBILITY.`}
           </p>
         </div>
       )}

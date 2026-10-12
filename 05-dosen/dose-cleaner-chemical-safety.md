@@ -23,6 +23,9 @@ source_type: Type A
 
 > 📹 **Live-Demonstration:** [Point-of-Action Video auf Google Drive ansehen](https://drive.google.com/file/d/1TGYV6aw7zWwe6isgin9UGvTJblDc-t8n/view?usp=drive_link) *(on-demand gestreamt, 0 KB Vorab-Download)*
 
+
+Kataloghärtung 12.10.2026: GISCODE dient nur der Anzeige. GTINs sind kanonisch 14-stellig; GTIN/UFI müssen genau einen Datensatz treffen, jede GTIN-Zuordnung braucht einen belegten Bestätigungsstatus. hazardsConfirmed, completenessReviewed und currentVersionChecked sind getrennt und benötigen datierte Review-Metadaten mit Grundlage. Belegte STOP-Regeln laufen vor Vollständigkeits-/Aktualitätsprüfungen; unbekannte Identität bleibt UNVERIFIED. Grau setzt alle drei Prüfungen voraus und ist niemals eine Freigabe. Keine erkannte Gefahrengruppe bedeutet unknown, nicht neutral. 20 quellenbelegte Produkte plus zwei synthetische Beispiele bleiben erhalten; 51 GTIN-Zuordnungen, davon 50 aus bestehenden Herstellerbelegen übernommen und Dan Klorix unbestätigt. Alle 22 Vollständigkeits- und Aktualitätsprüfungen bleiben mangels dokumentierter Reviews ausstehend, insbesondere die drei Händlerkopien und Mellerud. Leere H-Satzlisten bedeuten nicht dokumentiert, keine dokumentierte Abwesenheit. Tests belegen Software-Invarianten, keine chemische Sicherheitsfreigabe.
+
 ## Das Problem
 
 Reinigungskräfte im gewerblichen Bereich arbeiten unter extremem Zeitdruck und häufig über erhebliche Sprachbarrieren hinweg. Das versehentliche Mischen eines sauren Sanitär-Entkalkers mit einer hypochlorithaltigen Chlorbleiche setzt in engen, fensterlosen Waschräumen und Putzkammern sofort toxisches Chlorgas frei. 
@@ -31,13 +34,13 @@ Die Gefahr ist seit Jahrzehnten bekannt, das Mischverbot ist Lehrbuchwissen — 
 
 Deutschland besitzt exzellente Referenz-Infrastruktur: WINGIS/GISBAU (Gefahrstoff-Informationssystem, GISCODE, Betriebsanweisungen), GESTIS/IFA, GSApp, CERTISCAN und DGUV Regel 101-019. Doch alle diese Systeme sind rein abfragebasiert (*Lookup*). Kein einziges Werkzeug steht in der Sekunde des Mischens physisch zwischen der Arbeitskraft und den zwei Flaschen. Stand September 2026 existiert kein quelloffener, kamerabasierter Zwei-Flaschen-Mischschutz auf dem Markt. Das ist die Lücke.
 
-## Kernprinzip: Der Sicherheitsnachweis
+## Kernprinzip: Getestete Software-Invarianten
 
 **Die App attestiert niemals Sicherheit. Sie warnt ausschließlich vor erkannter Gefahr oder gibt transparent zu, dass sie nicht prüfen kann.**
 
 Dies ist keine Design-Entscheidung, sondern der fundamentale Sicherheitsnachweis (*Safety Case*). Ein falsch-positives „alles sicher" (grüner Haken) ist lebensgefährlich und weitaus schlimmer als gar keine App. Daraus folgen unumstößliche Systemregeln:
 1. **Niemals ein grünes Ergebnis.** Es gibt keinen „Freigabe"-Zustand.
-2. **Unsicherheit führt immer zu Warnung / UNVERIFIED.**
+2. **Unbekannte Identität führt zu UNVERIFIED; ausstehende Reviews dürfen belegtes STOP nicht abschwächen.**
 3. **Community-Daten dürfen einen STOP-Zustand niemals überschreiben.**
 4. **Reine Assistenz:** Die App ist eine warnende Hilfe, keine zertifizierte PSA, kein Compliance-Werkzeug und kein Ersatz für die gesetzliche Gefährdungsbeurteilung des Arbeitgebers nach GefStoffV und DGUV 101-019.
 
@@ -47,11 +50,11 @@ Dies ist keine Design-Entscheidung, sondern der fundamentale Sicherheitsnachweis
 |---|---|---|
 | 🔴 **STOP** | Roter Bildschirm, schriller Alarm, laute Stimme in Landessprache, pulsierende Vibration | Gefährliche chemische Kombination in der lokalen Datenbank detektiert (z. B. Säure + Hypochlorit $\to$ Chlorgas). |
 | 🟠 **UNVERIFIED** | Bernsteinfarbener Bildschirm, distinktes Haptikmuster | Mindestens ein Produkt unbekannt, Barcode unleserlich, Daten unvollständig oder Datenstand veraltet. |
-| ⚪ **NO_KNOWN_INCOMPATIBILITY** | Grauer Bildschirm (**niemals grün**) | Beide Produkte identifiziert, keine bekannte Regel ausgelöst. **Keine Freigabe.** Text: *„Keine bekannte gefährliche Kombination in unserer Datenbank. Dies ist keine Sicherheitsfreigabe. Nicht mischen, außer ausdrücklich vom Arbeitgeber angewiesen.“* |
+| ⚪ **NO_KNOWN_INCOMPATIBILITY** | Grauer Bildschirm (**niemals grün**) | Identität eindeutig, Gefahren bestätigt, Vollständigkeit geprüft und aktuelle Fassung bestätigt; keine bekannte Regel ausgelöst. **Keine Freigabe.** Text: *„Keine bekannte gefährliche Kombination in unserer Datenbank. Dies ist keine Sicherheitsfreigabe. Nicht mischen, außer ausdrücklich vom Arbeitgeber angewiesen.“* |
 
 ## Warum das jetzt geht
 
-- **100% Offline-Edge-Inferenz:** Schnelle Erkennung von GTIN-/GS1-Barcodes, GISCODEs oder Etiketten direkt auf dem Smartphone ohne Cloud-Latenz.
+- **100% Offline-Edge-Inferenz:** Schnelle Erkennung von bestätigten GTIN-/GS1-Barcodes oder eindeutigen UFIs (GISCODE nur Anzeige) direkt auf dem Smartphone ohne Cloud-Latenz.
 - **Mehrsprachige Sofort-Sprachausgabe:** Vorab aufgenommene und synthetisierte Alarmrufe in über 20 Sprachen (Ukrainisch, Polnisch, Türkisch, Arabisch, Rumänisch, Bulgarisch etc.) erreichen Arbeiter sofort ohne Textlese-Zwang.
 - **Robuste Drei-Spuren-Datenarchitektur:** Klare Trennung zwischen öffentlichen Tatsachen aus CLP-Kennzeichnung und Sicherheitsdatenblatt (Gefahrensätze, CAS-Nummern), optional lizenzierten GISCODE-Tabellen und Community-Meldungen.
 
@@ -65,20 +68,20 @@ Dies ist keine Design-Entscheidung, sondern der fundamentale Sicherheitsnachweis
 
 ## Skizze
 
-**Eingabe:** Smartphone-Kamera scannt nacheinander oder parallel die Barcodes / GISCODEs / Etiketten zweier Reinigungsmittelflaschen.  
+**Eingabe:** Smartphone-Kamera scannt nacheinander oder parallel die bestätigten GTIN-Barcodes / eindeutigen UFIs (GISCODE nur Anzeige) zweier Reinigungsmittelflaschen.
 **Logik:** Lokale Inkompatibilitäts-Matrix berechnet Mengenvereinigung der Gefahrenmerkmale:
 $$\text{combined} = \text{hazards}(A) \cup \text{hazards}(B)$$
 $$\text{if } \text{rule.required} \subseteq \text{combined} \implies \text{STOP}$$
 **Ausgabe:** 
 - Bei Gefahr: 4 parallele Kanäle (Maximal-Lautstärke-Alarm, Vollbild-Blinken Rot, hochfrequente Wiederholungs-Vibration, Klartext-Warnung in Muttersprache).
 - Bei Unbekannt: Amber-Screen (*UNVERIFIED*).
-- Bei neutraler Paarung: Grauer Info-Screen (*NO_KNOWN_INCOMPATIBILITY*, niemals grün).
+- Nach drei dokumentierten Evidenzprüfungen ohne Regel-Treffer: Grauer Info-Screen (*NO_KNOWN_INCOMPATIBILITY*, niemals grün).
 
 *Was nicht dazu gehört:* Lagerverwaltung, Entsorgungshinweise, Erste-Hilfe-Ratgeber, Erstellung von Sicherheitsdatenblättern oder Dokumentation für Audits.
 
 ## Erster Schritt
 
-**Ticket:** P0: Standalone Offline-Regel-Kernel & Zwei-Barcode/GISCODE-Prüfinterlock mit 4-Kanal-Alarm.
+**Ticket:** P0: Standalone Offline-Regel-Kernel & Zwei-GTIN/UFI-Prüfinterlock mit 4-Kanal-Alarm.
 **Fertig, wenn:**
 1. Ein 100% offline lauffähiger Engine-Kern existiert, der für 20 reale Reinigungsmittelpaare (z. B. WC-Reiniger mit Phosphorsäure + DanKlorix mit Natriumhypochlorit) innerhalb von <50 ms deterministisch `STOP` liefert.
 2. Unbekannte Produkte ausnahmslos als `UNVERIFIED` eingestuft werden.
