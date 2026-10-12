@@ -59,14 +59,28 @@ const themeOfList = (
   ...lists: CandidateIdea[][]
 ): PipelineTheme => ({ id, label: { de, en, es }, ideas: lists.flat() });
 
+const BASTELN_CANDIDATE_IDS = new Set([
+  'long-driveway-mail-notifier',
+  'amateur-radio-emergency-repeater',
+  'window-thermal-camera-leak-calibrator',
+  'well-water-colorimeter-test-reader',
+  'filament-hygroscopy-drying-oven-timer',
+  'smartphone-accelerometer-physics-lab',
+]);
+
+const withoutBasteln = (ideas: CandidateIdea[]) => ideas.filter((i) => !BASTELN_CANDIDATE_IDS.has(i.id));
+const allBasteln = (...lists: CandidateIdea[][]) => lists.flat().filter((i) => BASTELN_CANDIDATE_IDS.has(i.id));
+
 /** Themenkörbe für die Pipeline. Eine Idee gehört zu genau einem Korb; der Rest landet in „Forschungsrunden". */
 export const PIPELINE_THEMES: PipelineTheme[] = [
+  themeOfList('basteln', 'Basteln', 'Basteln (DIY & Hardware)', 'Basteln (Bricolaje)',
+    allBasteln(CRAFT_AND_MAKING_IDEAS, UTILITIES_AND_TRADES_IDEAS, COMMUNITY_AND_RURAL_IDEAS, REGIONAL_AND_RESILIENCE_IDEAS)),
   themeOfList('civic', 'Gemeinwohl & Land', 'Civic, Land & Community', 'Bien común y campo',
-    CIVIC_AND_ECOLOGY_IDEAS, CIVIC_AND_PUBLIC_GOODS_IDEAS, COMMUNITY_AND_RURAL_IDEAS, REGIONAL_AND_RESILIENCE_IDEAS),
+    withoutBasteln(CIVIC_AND_ECOLOGY_IDEAS), withoutBasteln(CIVIC_AND_PUBLIC_GOODS_IDEAS), withoutBasteln(COMMUNITY_AND_RURAL_IDEAS), withoutBasteln(REGIONAL_AND_RESILIENCE_IDEAS)),
   themeOfList('home', 'Haus, Garten & Geld', 'Home, Garden & Money', 'Hogar, jardín y dinero',
     HOME_AND_FINANCE_IDEAS, MICRO_UTILITIES_BATCH),
   themeOfList('craft', 'Werkstatt & Handwerk', 'Workshop & Trades', 'Taller y oficios',
-    CRAFT_AND_MAKING_IDEAS, UTILITIES_AND_TRADES_IDEAS),
+    withoutBasteln(CRAFT_AND_MAKING_IDEAS), withoutBasteln(UTILITIES_AND_TRADES_IDEAS)),
   themeOfList('health', 'Gesundheit & Pflege', 'Health & Care', 'Salud y cuidados', HEALTH_AND_CARE_IDEAS),
   themeOfList('education', 'Bildung & Familie', 'Education & Family', 'Educación y familia', EDUCATION_AND_FAMILY_IDEAS),
   themeOfList('privacy', 'Datenschutz & Lokal', 'Privacy & Local-First', 'Privacidad y local', PRIVACY_AND_LOCAL_IDEAS),

@@ -1,9 +1,9 @@
 {
   "auditVersion": 1,
-  "generatedAt": "2026-10-12T17:02:48.946Z",
+  "generatedAt": "2026-10-12T16:57:49.791Z",
   "repository": {
     "commit": "e6634294",
-    "branch": "HEAD"
+    "branch": "main"
   },
   "inventory": {
     "doses": 47,
@@ -25,11 +25,12 @@
     },
     "doseDomain": {
       "civic": 22,
-      "physics": 9,
+      "physics": 7,
       "git": 5,
+      "basteln": 3,
       "creative": 4,
       "knowledge": 3,
-      "tools": 3,
+      "tools": 2,
       "audio": 1
     },
     "graveCategory": {

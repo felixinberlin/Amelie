@@ -1,0 +1,8 @@
+{
+  "batch_id": "amelie-lab-scarcity-scarcity-20261012T162800-brandenburg-bfcf0383978716ba",
+  "state": "needs_research",
+  "worker": "",
+  "lease_until": "",
+  "note": "Brandenburg-Scarcity: FeldWacht (Wildschwein-LoRaWAN INT8), ReetWacht (DSSC-Supercap Balkenstatik) und GlutHorizont (LTO-Waldbrandsensor). FeldWacht benötigt Falsch-Positiv-Referenz im Mais/Dickicht; ReetWacht Denkmalschutz-/ATEX-Zulässigkeit und Passermarken-Referenz; GlutHorizont Schwellenwert-Validierung gegen Rauch/Staub unter Kronendach. Reviewer: Needs Research (keine Dose Ready). Details: 06-suche/lab-intake-review-20261012.md",
+  "updated_at": "2026-10-12T17:09:26.611Z"
+}

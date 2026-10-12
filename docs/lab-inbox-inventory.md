@@ -4,7 +4,7 @@ Erzeugt mit `node scripts/inventory-lab-inbox.mjs` aus den validierten immutable
 
 Domains umfassen alle parsebaren URL-Felder, auch Konkurrentenlinks und Hintergrundquellen. Quote-Status stammt unverändert vom Lab; wiederholte identische Findings werden einmal gezählt. Fehlende Felder beweisen keine fehlende Recherche. Wörtliche Bestands-ID-Erwähnungen sind Hinweise zum Nachlesen; ausbleibende Treffer schließen Überschneidungen nicht aus.
 
-Gesamt: **75 Batches / 168 Ideen**. Status: archived: 19; needs_research: 43; processed: 10; received: 3.
+Gesamt: **75 Batches / 168 Ideen**. Status: archived: 19; needs_research: 46; processed: 10.
 
 | Engine | Batches | Ideen |
 | --- | ---: | ---: |
@@ -364,7 +364,7 @@ Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Date
 
 ### amelie-lab-inversion-inversion-20261012T162500-brandenburg-diy-333acaf74ea82550
 
-Engine: inversion; Status: received; Ideen: 3.
+Engine: inversion; Status: needs_research; Ideen: 3.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-12-amelie-lab-inversion-inversion-20261012T162500-brandenburg-diy-333acaf74ea82550.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-12-amelie-lab-inversion-inversion-20261012T162500-brandenburg-diy-333acaf74ea82550.md)
 
@@ -375,6 +375,8 @@ URL-Domains im Originalrecord: bravors.brandenburg.de, dachdecker.org, polizei.b
 Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
+
+Verarbeitungsnotiz: Brandenburg-DIY: HofBausatz (Dieseltank/Geräte Diebstahlerkennung), HalmWacht (Wildschaden Knickung BJagdG §34) und FirstWacht (Dachnotabdichtung/Sparrendurchbiegung). HofBausatz benötigt Falschalarm-Test bei Hoftieren und rechtssichere Alarmierung; HalmWacht Beweisverwertbarkeit nach BJagdG und Vegetations-Segmentierung; FirstWacht Abgrenzung zu DachWächter und VOB/B-Haftungsregeln. Reviewer: Needs Research (keine Dose Ready). Details: 06-suche/lab-intake-review-20261012.md
 
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
@@ -877,7 +879,7 @@ Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Date
 
 ### amelie-lab-lacunar-lacunar-20261012T162600-brandenburg-vision-8b24bbe93b5be681
 
-Engine: lacunar; Status: received; Ideen: 3.
+Engine: lacunar; Status: needs_research; Ideen: 3.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-12-amelie-lab-lacunar-lacunar-20261012T162600-brandenburg-vision-8b24bbe93b5be681.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-12-amelie-lab-lacunar-lacunar-20261012T162600-brandenburg-vision-8b24bbe93b5be681.md)
 
@@ -888,6 +890,8 @@ URL-Domains im Originalrecord: edgeimpulse.com, lelf.brandenburg.de, mikrocontro
 Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
+
+Verarbeitungsnotiz: Brandenburg-Vision: DachWächter (Gerüstneigung/Planenflattern), BeregnungsAuge (Manometer/Trommelodometrie) und HelioDrop (Sonnenblumen-Heliotropismus). DachWächter benötigt Windkanal/Sturmfeldtest zur Flatterfrequenz-Korrelation und Haftungsabgrenzung; BeregnungsAuge analoge Manometer-Reflexionsfilterung und Feldkalibrierung; HelioDrop biologische Korrelation Blütenteller vs Bodenfeuchte. Reviewer: Needs Research (keine Dose Ready). Details: 06-suche/lab-intake-review-20261012.md
 
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
@@ -1580,7 +1584,7 @@ Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Date
 
 ### amelie-lab-scarcity-scarcity-20261012T162800-brandenburg-bfcf0383978716ba
 
-Engine: scarcity; Status: received; Ideen: 3.
+Engine: scarcity; Status: needs_research; Ideen: 3.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-12-amelie-lab-scarcity-scarcity-20261012T162800-brandenburg-bfcf0383978716ba.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-12-amelie-lab-scarcity-scarcity-20261012T162800-brandenburg-bfcf0383978716ba.md)
 
@@ -1591,6 +1595,8 @@ URL-Domains im Originalrecord: berliner-zeitung.de, bldam-brandenburg.de, brande
 Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
+
+Verarbeitungsnotiz: Brandenburg-Scarcity: FeldWacht (Wildschwein-LoRaWAN INT8), ReetWacht (DSSC-Supercap Balkenstatik) und GlutHorizont (LTO-Waldbrandsensor). FeldWacht benötigt Falsch-Positiv-Referenz im Mais/Dickicht; ReetWacht Denkmalschutz-/ATEX-Zulässigkeit und Passermarken-Referenz; GlutHorizont Schwellenwert-Validierung gegen Rauch/Staub unter Kronendach. Reviewer: Needs Research (keine Dose Ready). Details: 06-suche/lab-intake-review-20261012.md
 
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |

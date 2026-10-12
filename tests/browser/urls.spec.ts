@@ -158,9 +158,9 @@ test('failed lazy chunks show a retry action without removing local drafts', asy
   expect(await page.evaluate(() => localStorage.getItem('amelie_custom_candidates'))).toContain('saved-draft');
 });
 
-test('EuroBirdCast is the first project and exposes its revival research', async ({ page }) => {
+test('EuroBirdCast is in the gallery and exposes its revival research', async ({ page }) => {
   await page.goto('/Amelie/dosen/?lang=de');
-  await expect(page.locator('article').first()).toContainText('EuroBirdCast');
+  await expect(page.locator('article').filter({ hasText: 'EuroBirdCast' }).first()).toBeVisible();
   await page.goto('/Amelie/#dose=eurobirdcast&lang=de');
   await expect(page.locator('main h1')).toContainText('EuroBirdCast');
   await expect(page.getByRole('region', { name: 'Bird migration radar map' })).toBeVisible();

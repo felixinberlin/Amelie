@@ -218,6 +218,7 @@ export const DosenGallery: React.FC<DosenGalleryProps> = ({
 
   const domainOptions = [
     { id: 'all', labelDe: 'Alle Bereiche', labelEn: 'All Domains', labelEs: 'Todas las áreas' },
+    { id: 'basteln', labelDe: '🛠️ Basteln', labelEn: '🛠️ Basteln (DIY Hardware)', labelEs: '🛠️ Basteln (Bricolaje)' },
     { id: 'civic', labelDe: 'Zivilgesellschaft & Berlin', labelEn: 'Civic & Berlin', labelEs: 'Sociedad civil y Berlín' },
     { id: 'tools', labelDe: 'DevTools & MCP', labelEn: 'DevTools & MCP', labelEs: 'DevTools y MCP' },
     { id: 'physics', labelDe: 'Hardware & Physik', labelEn: 'Hardware & Physics', labelEs: 'Hardware y Física' },
