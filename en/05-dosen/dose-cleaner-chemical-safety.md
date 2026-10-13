@@ -24,6 +24,7 @@ source_type: Type A
 > **What exists today and what does not (13 Oct 2026)**
 > - **Built and tested:** rule engine with three states (STOP, UNVERIFIED, grey without clearance), 45 real products from manufacturers' safety data sheets, web demo with product picker or GTIN/UFI input. On STOP: warning tone, vibration (where the browser allows) and the warning spoken via the browser's speech synthesis in 7 languages (DE, EN, UK, PL, TR, AR, RO).
 > - **Not built:** camera scanning of containers and label OCR (ticket 02), recorded voice warnings and alarm control in a mobile app (ticket 03).
+> - **Next ticket:** [ticket 04](../../07-demos/chemhazard-stop/ticket-04-web-scanner-und-qr-etiketten.md): barcode/QR camera scan in the browser and QR labels for refill bottles, offline.
 > - **Correction:** Until 12 Oct 2026 the chlorine-gas rule required `EUH031` on a label; Dan Klorix (`EUH206`) and Domestos Professional (neither phrase) mixed with an acid gave no warning. Fixed. The emails of 27 Sep 2026 also described camera scanning, 20+ languages and a 15 Hz strobe. That was not true, and 15 Hz would be a seizure risk for people with photosensitive epilepsy (WCAG 2.3.1: at most 3 flashes per second). Correction draft: `03-zuordnung/mails-q4-2026/mail-11b-korrektur.md`.
 
 > 📹 **Video:** [watch on Google Drive](https://drive.google.com/file/d/1TGYV6aw7zWwe6isgin9UGvTJblDc-t8n/view?usp=drive_link) *(on-demand streaming, 0 KB initial load burden)*

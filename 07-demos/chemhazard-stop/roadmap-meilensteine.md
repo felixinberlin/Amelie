@@ -45,6 +45,10 @@ Das Projekt ist in drei strikte, deterministisch prüfbare Meilensteine untertei
   * `scripts/chemhazard-sds.mjs` zieht die Tatsachen aus einem SDB und prüft den Bestand.
   * Vitest-Suite mit 100 % Erfolgsquote über alle Invarianten.
 
+### Nächstes Ticket (13.10.2026)
+
+[Ticket 04](ticket-04-web-scanner-und-qr-etiketten.md): Kamera-Scan von Barcode und QR im Browser, QR-Etiketten für Umfüllflaschen, offline installierbar. Schätzung 2–3 Tage plus ein Test an einer echten Flasche. Voraussetzung für M1.
+
 ### Meilenstein M1 · Betreuter Feldpilot (3 bis 6 Monate)
 * **Ziel:** Praxis-Validierung mit echten Reinigungskräften in gewerblichen Objekten.
 * **Umfang:** 100 bis 200 professionelle Reinigungsprodukte der Marktführer (Kiehl, Buzil, Ecolab, Dr. Schnell, Tana Chemie).

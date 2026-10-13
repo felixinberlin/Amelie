@@ -24,6 +24,7 @@ source_type: Type A
 > **Was es heute gibt, was nicht (13.10.2026)**
 > - **Gebaut und getestet:** Regel-Kern mit drei Zuständen (STOP, UNVERIFIED, grau ohne Freigabe), 45 reale Produkte aus Hersteller-Sicherheitsdatenblättern, Web-Demo mit Produktauswahl oder GTIN/UFI-Eingabe. Bei STOP: Warnton, Vibration (wo der Browser es erlaubt) und Warnsatz über die Sprachausgabe des Browsers in 7 Sprachen (DE, EN, UK, PL, TR, AR, RO).
 > - **Nicht gebaut:** Kamera-Scan der Gebinde und Etiketten-OCR (Ticket 02), aufgenommene Warnrufe und Alarmsteuerung einer Handy-App (Ticket 03).
+> - **Nächstes Ticket:** [Ticket 04](../07-demos/chemhazard-stop/ticket-04-web-scanner-und-qr-etiketten.md): Kamera-Scan von Barcode/QR im Browser und QR-Etiketten für Umfüllflaschen, offline.
 > - **Korrektur:** Bis 12.10.2026 verlangte die Chlorgas-Regel `EUH031` auf dem Etikett; Dan Klorix (`EUH206`) und Domestos Professional (keiner der Sätze) blieben mit Säure ohne Warnung. Behoben. Die Mails vom 27.09.2026 beschrieben außerdem Kamera-Scan, 20+ Sprachen und ein 15-Hz-Stroboskop. Das stimmte nicht, und 15 Hz wäre ein Anfallsrisiko bei fotosensibler Epilepsie (WCAG 2.3.1: höchstens 3 Blitze pro Sekunde). Richtigstellung als Entwurf: `03-zuordnung/mails-q4-2026/mail-11b-korrektur.md`.
 
 > 📹 **Video:** [auf Google Drive ansehen](https://drive.google.com/file/d/1TGYV6aw7zWwe6isgin9UGvTJblDc-t8n/view?usp=drive_link) *(on-demand gestreamt, 0 KB Vorab-Download)*

@@ -100,6 +100,9 @@ Die [Recherche vom 12.10.2026](product-research-2026-10-12.md) dokumentiert 13 z
 07-demos/chemhazard-stop/
 ├── README.md                           # Architektur & Sicherheitsnachweis
 ├── ticket-01-offline-interlock.md      # P0 Implementierungs-Ticket (DoD)
+├── ticket-02-camera-barcode-ocr-pipeline.md   # später: native App, Etiketten-OCR
+├── ticket-03-polyglot-audio-and-4channel-alert.md  # später: App-Alarm, aufgenommene Warnrufe
+├── ticket-04-web-scanner-und-qr-etiketten.md  # NÄCHSTES: Kamera-Scan im Browser + QR-Etiketten
 ├── schemas/
 │   ├── product.schema.json             # JSON-Schema für Reinigungsmittel
 │   └── rule.schema.json                # JSON-Schema für Inkompatibilitätsregeln
