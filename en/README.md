@@ -6,7 +6,7 @@ A method for delivering app ideas you won't build yourself to the people who can
 
 As of: September 16, 2026 · Félix, Berlin · all content CC0
 
-*This is an English translation of the original German-language project. See the German originals for the canonical version.*
+> **Note (13 October 2026):** this page is the September index of the English translations and is not kept up to date. The current overview, numbers and delivery status are in the [main README](../README.md).
 
 ---
 
