@@ -868,3 +868,9 @@ Félix fragte, ob alles in der Dose steckt, und dann: „repair all so we dont h
 - **Reaktion:** Die Seite sagt jetzt selbst, wie sie entstanden ist (KI-Unterstützung, zur Laufzeit keine KI), was geprüft ist (Zitate gegen die Amtsquelle, mit Datum an jedem Zitat) und was nicht (Formulierungen, Taktik). Sie verweist vor wichtigen Terminen auf Sozialberatung. Ein Test sichert das.
 - *Regel für alle Dosen, die Betroffene direkt nutzen:* **Prüfung sichtbar machen, wo gelesen wird.** Ein Werkzeug, das Vertrauen braucht, nennt auf der Seite selbst Herkunft, Geprüftes, Ungeprüftes und den nächsten Menschen, der helfen kann. KI-Beteiligung wird offen genannt, nicht versteckt; „Slop“ entsteht dort, wo man die Prüfung nicht sieht.
 - **Nicht getan:** auf Reddit geantwortet oder gestritten (Projektregel: kein Nachfassen).
+
+#### Datenschutz in Lab-Belegen (13.10.2026)
+
+- Mark-Läufe trugen in der „Absicht“ Félix' vollen Namen, Wohnort und „kein Führerschein“. Über `public/data/lab-runs/` (aus `06-suche/proposals/` erzeugt) war das öffentlich. Auf Wunsch geschwärzt, nur in diesem Repo; das Lab-Repo ist privat und blieb unberührt.
+- *Trennen:* Ein Ort als **Ausgangspunkt einer Person** („ÖPNV von …“, „Name (Ort, …)“) ist eine Adresse und wird geschwärzt. Ein Ort als **Thema** (Lieberoser Heide, „guided tours, jamlitz“) bleibt.
+- *Regel:* Vor jedem Lab-Import Personenprofile in `intent` prüfen; `datenschutzLab.test.ts` schlägt an, wenn Name oder Wohnort-Formulierung wiederkommt. Die Git-Geschichte behält alte Fassungen.
