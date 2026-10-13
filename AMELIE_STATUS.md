@@ -1,6 +1,6 @@
 # Amélie Status
 
-Generated: 2026-10-13T08:20:24.416Z
+Generated: 2026-10-13T08:28:00.872Z
 
 ## System
 
@@ -57,8 +57,8 @@ Generated: 2026-10-13T08:20:24.416Z
 * **[DRIFT-AGENTS.md-Gräber-58]** AGENTS.md claims 58 Gräber, but deterministic source scanner finds 149. (AGENTS.md)
 * **[DRIFT-AGENTS.md-Gräber-9]** AGENTS.md claims 9 Gräber, but deterministic source scanner finds 149. (AGENTS.md)
 * **[DRIFT-en/README.md-Dosen-15]** en/README.md claims 15 Dosen, but deterministic source scanner finds 47. (en/README.md)
-* **[DRIFT-README.de.md-Dosen-15]** README.de.md claims 15 Dosen, but deterministic source scanner finds 47. (README.de.md)
-* **[DRIFT-README.md-Dosen-15]** README.md claims 15 Dosen, but deterministic source scanner finds 47. (README.md)
+* **[DRIFT-README.de.md-Dosen-14]** README.de.md claims 14 Dosen, but deterministic source scanner finds 47. (README.de.md)
+* **[DRIFT-README.md-Dosen-14]** README.md claims 14 Dosen, but deterministic source scanner finds 47. (README.md)
 
 ### Information
 
@@ -67,5 +67,5 @@ None.
 ## Generated from
 
 * Audit version: 1
-* Commit: 3e5f7dc
-* Branch: claude/keen-heisenberg-jns1fa
+* Commit: 376e01c
+* Branch: claude/readme-refresh

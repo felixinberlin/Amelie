@@ -17,9 +17,15 @@ Das Projekt ist in drei strikte, deterministisch prüfbare Meilensteine untertei
 ```
 [ M0: Standalone Kernel & Interlock-Prototyp ]
   ├── 100% Offline Regel-Kernel (sub-1ms)
-  ├── 20 belegte Referenzprodukte (Seed DB, Herstellerdokumente)
-  ├── 4-Kanal-Alarmsystem (Audio, Blitz, Haptik, Text)
+  ├── 45 reale Produkte aus Herstellerdokumenten (Stand 12.10.2026)
+  ├── Alarm in der Web-Demo (Warnton, roter Bildschirm, Vibration, Browser-Sprachausgabe in 7 Sprachen)
   └── 100% False-Negative-Regressionstest
+                     │
+                     ▼
+[ M0.5: Kamera-Scan & QR-Etiketten (Ticket 04, offen) ]
+  ├── Barcode/QR-Scan im Browser, offline installierbar
+  ├── QR-Etiketten für Umfüllflaschen
+  └── Test an einer echten Flasche (Android, iPhone)
                      │
                      ▼
 [ M1: Betreuter Feldpilot (3–6 Monate) ]
@@ -78,14 +84,16 @@ Für Sicherheitsfachkräfte (*SiFa*), Betriebsräte und Reinigungsteams:
 * **Praxis:** Anschauliche Demonstration von pH-Werten (saure Entkalker $\text{pH } 0\text{–}1$ vs. Bleiche $\text{pH } 12\text{–}13$).
 * **Erkenntnis:** Warum das Verbot absolut ist und warum man sich nicht auf den Geruchssinn verlassen kann.
 
-### Woche 2: Die Bedienung der ChemHazard-Stop-App
-* **Schwerpunkt:** 2-Flaschen-Scan-Ablauf vor dem Putzwagen.
-* **Praxis:** Scannen von Barcodes und UFIs (GISCODE nur Anzeige) und Erkennung von unvollständigen Etiketten.
+> **Stand 13.10.2026:** Woche 1 und 4 lassen sich heute schulen. Woche 2 und 3 setzen den Kamera-Scan voraus ([Ticket 04](ticket-04-web-scanner-und-qr-etiketten.md)); bis dahin wird mit der Produktauswahl der Web-Demo geübt.
+
+### Woche 2: Die Bedienung von ChemHazard Stop
+* **Schwerpunkt:** Zwei-Flaschen-Ablauf vor dem Putzwagen: Flasche A, Flasche B, Ergebnis. Der angezeigte Produktname muss zur Flasche passen.
+* **Praxis:** Heute Produktauswahl oder GTIN/UFI-Eingabe; nach Ticket 04 Scan von Barcode oder QR-Etikett. Umfüllflaschen bekommen ein QR-Etikett (GISCODE nur Anzeige).
 * **Übung:** Was bedeutet der bernsteinfarbene Zustand `UNVERIFIED`? (Niemals auf Verdacht mischen!).
 
-### Woche 3: Die 4 Alarmkanäle & Notfallverhalten
+### Woche 3: Warnsignale & Notfallverhalten
 * **Schwerpunkt:** Was tun bei rotem `STOPP`?
-* **Simulation:** Raumakustik mit lauten Staubsaugern; Wahrnehmung von Haptik und Bildschirm-Blitz trotz Kopfhörern oder Handschuhen.
+* **Simulation:** Laute Staubsauger: Warnton, Vibration und roter Bildschirm (kein schnelles Blinken). Grenze offen ansprechen: Ein stummgeschaltetes Telefon bleibt im Browser stumm; das kann erst eine App (Ticket 03).
 * **Notfallprotokoll:** Sofortige Evakuierung, Lüftung, Meldung an Vorarbeiter.
 
 ### Woche 4: Rechte der Beschäftigten & GefStoffV

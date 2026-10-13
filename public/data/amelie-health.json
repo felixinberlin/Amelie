@@ -1,9 +1,9 @@
 {
   "auditVersion": 1,
-  "generatedAt": "2026-10-13T08:20:24.416Z",
+  "generatedAt": "2026-10-13T08:28:00.872Z",
   "repository": {
-    "commit": "3e5f7dc",
-    "branch": "claude/keen-heisenberg-jns1fa"
+    "commit": "376e01c",
+    "branch": "claude/readme-refresh"
   },
   "inventory": {
     "doses": 47,
@@ -184,25 +184,25 @@
       }
     },
     {
-      "id": "DRIFT-README.de.md-Dosen-15",
+      "id": "DRIFT-README.de.md-Dosen-14",
       "severity": "warning",
       "category": "documentation",
-      "message": "README.de.md claims 15 Dosen, but deterministic source scanner finds 47.",
+      "message": "README.de.md claims 14 Dosen, but deterministic source scanner finds 47.",
       "file": "README.de.md",
       "details": {
-        "claim": "15 Dosen",
+        "claim": "14 Dosen",
         "actual": 47,
         "type": "stale_count"
       }
     },
     {
-      "id": "DRIFT-README.md-Dosen-15",
+      "id": "DRIFT-README.md-Dosen-14",
       "severity": "warning",
       "category": "documentation",
-      "message": "README.md claims 15 Dosen, but deterministic source scanner finds 47.",
+      "message": "README.md claims 14 Dosen, but deterministic source scanner finds 47.",
       "file": "README.md",
       "details": {
-        "claim": "15 tins",
+        "claim": "14 tins",
         "actual": 47,
         "type": "stale_count"
       }
