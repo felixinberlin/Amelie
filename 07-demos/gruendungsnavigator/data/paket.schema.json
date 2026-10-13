@@ -1,0 +1,335 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://felixinberlin.github.io/Amelie/gruendungsnavigator/paket.schema.json",
+ "title": "Branchenpaket für den Gründungsnavigator",
+ "description": "Ein Paket liefert die Werte und branchentypischen Texte für einen Beispielfall. Allgemeine Texte enthalten Platzhalter wie {{beruf}}; das Paket füllt sie. CC0.",
+ "type": "object",
+ "additionalProperties": false,
+ "required": [
+  "id",
+  "titel",
+  "beschreibung",
+  "erfunden",
+  "werte"
+ ],
+ "properties": {
+  "$schema": {
+   "type": "string"
+  },
+  "id": {
+   "type": "string",
+   "pattern": "^[a-z0-9-]+$"
+  },
+  "titel": {
+   "type": "string",
+   "minLength": 1
+  },
+  "beschreibung": {
+   "type": "string",
+   "description": "ein Satz, endet mit Punkt"
+  },
+  "erfunden": {
+   "type": "boolean",
+   "description": "true: Person und Zahlen sind ausgedacht"
+  },
+  "werte": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "abgrenzung",
+    "agendaZeigen",
+    "angebotKurz",
+    "anmeldung",
+    "anpassung",
+    "arbeitszeit",
+    "arbeitszeitAufteilung",
+    "ausstieg",
+    "belegEinzeln",
+    "belege",
+    "beruf",
+    "einfachErklaert",
+    "erfahrung",
+    "erfahrungKurz",
+    "fruehwarn",
+    "gewinn",
+    "kapitalbedarf",
+    "kernbotschaft",
+    "kostenMonat",
+    "rechtsform",
+    "schwelleMonat",
+    "stelle",
+    "steuer",
+    "umsatz",
+    "vorbereitet",
+    "vorbereitungBeispiel",
+    "vorhabenKurz",
+    "vorhabenText",
+    "vorsichtigeAnnahme",
+    "wiederkehrend",
+    "zuschussPosten",
+    "zuschussZweck"
+   ],
+   "properties": {
+    "beruf": {
+     "type": "string",
+     "description": "Berufsbezeichnung, so wie sie im Satz „Ich bin seit vielen Jahren …“ steht"
+    },
+    "erfahrung": {
+     "type": "string",
+     "description": "seit wann, z. B. „seit vielen Jahren“"
+    },
+    "erfahrungKurz": {
+     "type": "string",
+     "description": "Erfahrung als Stichwort, z. B. „langjährige Webentwicklung“"
+    },
+    "vorhabenKurz": {
+     "type": "string",
+     "description": "das Vorhaben in wenigen Wörtern"
+    },
+    "vorhabenText": {
+     "type": "string",
+     "description": "das Vorhaben in zwei Sätzen (Überblick im Präsentationsmodus)"
+    },
+    "kernbotschaft": {
+     "type": "string",
+     "description": "was Sie am Telefon in einer Minute sagen"
+    },
+    "stelle": {
+     "type": "string",
+     "description": "fachkundige Stelle für die Tragfähigkeit, z. B. „IHK“ oder „Handwerkskammer“ (Satz: „der …“)"
+    },
+    "zuschussZweck": {
+     "type": "string",
+     "description": "wofür der Zuschuss ist, z. B. „Arbeitsmittel“"
+    },
+    "ausstieg": {
+     "type": "string",
+     "description": "ab welchem Monat ohne Grundsicherungsgeld, Form „14 bis 16“"
+    },
+    "arbeitszeit": {
+     "type": "string",
+     "description": "z. B. „35–40 Stunden pro Woche“"
+    },
+    "arbeitszeitAufteilung": {
+     "type": "string",
+     "description": "wofür die Zeit verwendet wird"
+    },
+    "rechtsform": {
+     "type": "string",
+     "description": "z. B. „Einzelunternehmen, Gewerbe, Kleinunternehmer“"
+    },
+    "anmeldung": {
+     "type": "string",
+     "description": "wie die Tätigkeit angemeldet wird, z. B. „Gewerbeanmeldung beim Gewerbeamt“"
+    },
+    "steuer": {
+     "type": "string",
+     "description": "ein Satz zur Umsatzsteuer"
+    },
+    "angebotKurz": {
+     "type": "string",
+     "description": "Leistungen mit Preisen in einer Zeile"
+    },
+    "vorbereitet": {
+     "type": "string",
+     "description": "was schon vorbereitet ist (Aufzählung)"
+    },
+    "vorbereitungBeispiel": {
+     "type": "string",
+     "description": "ein Beispiel für Vorbereitung, die noch kein Beginn ist"
+    },
+    "belege": {
+     "type": "string",
+     "description": "was Sie zeigen können (Mehrzahl)"
+    },
+    "belegEinzeln": {
+     "type": "string",
+     "description": "ein einzelnes Beispiel, z. B. „eine fertige Website“"
+    },
+    "agendaZeigen": {
+     "type": "string",
+     "description": "was Sie im Termin zeigen"
+    },
+    "wiederkehrend": {
+     "type": "string",
+     "description": "wiederkehrende Einnahmen in der Mehrzahl, z. B. „Wartungsverträge“"
+    },
+    "anpassung": {
+     "type": "string",
+     "description": "Plan B, wenn es langsamer läuft"
+    },
+    "vorsichtigeAnnahme": {
+     "type": "string",
+     "description": "warum die Planung vorsichtig ist (ein, zwei Sätze)"
+    },
+    "einfachErklaert": {
+     "type": "string",
+     "description": "Ihr Angebot in einem Satz ohne Fachwörter"
+    },
+    "abgrenzung": {
+     "type": "string",
+     "description": "Unterschied zu anderen Anbietern"
+    },
+    "zuschussPosten": {
+     "type": "array",
+     "maxItems": 12,
+     "description": "Posten des Zuschusses nach § 16c Abs. 1 SGB II (zusammen höchstens 5.000 €)",
+     "items": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "was",
+       "kurz",
+       "betrag"
+      ],
+      "properties": {
+       "was": {
+        "type": "string",
+        "description": "wie im Satz, z. B. „einen leistungsstarken Laptop“"
+       },
+       "kurz": {
+        "type": "string",
+        "description": "Kurzwort, z. B. „Laptop“"
+       },
+       "betrag": {
+        "type": [
+         "number",
+         "null"
+        ],
+        "minimum": 0,
+        "description": "Betrag in Euro"
+       }
+      }
+     }
+    },
+    "kostenMonat": {
+     "type": [
+      "number",
+      "null"
+     ],
+     "minimum": 0,
+     "description": "laufende Kosten im Monat in Euro"
+    },
+    "umsatz": {
+     "type": "array",
+     "minItems": 3,
+     "maxItems": 3,
+     "items": {
+      "type": [
+       "number",
+       "null"
+      ],
+      "minimum": 0,
+      "description": "Umsatz in Euro"
+     },
+     "description": "Umsatz Jahr 1, 2, 3"
+    },
+    "gewinn": {
+     "type": "array",
+     "minItems": 3,
+     "maxItems": 3,
+     "items": {
+      "type": [
+       "number",
+       "null"
+      ],
+      "minimum": 0,
+      "description": "Gewinn in Euro"
+     },
+     "description": "Gewinn Jahr 1, 2, 3"
+    },
+    "schwelleMonat": {
+     "type": [
+      "number",
+      "null"
+     ],
+     "minimum": 0,
+     "description": "Monatsgewinn, ab dem kein Grundsicherungsgeld mehr nötig ist in Euro"
+    },
+    "fruehwarn": {
+     "type": [
+      "number",
+      "null"
+     ],
+     "minimum": 0,
+     "description": "Gewinn der ersten sechs Monate, unter dem gemeinsam angepasst wird in Euro"
+    },
+    "kapitalbedarf": {
+     "type": [
+      "number",
+      "null"
+     ],
+     "minimum": 0,
+     "description": "gesamter Kapitalbedarf in Euro"
+    }
+   }
+  },
+  "ueberschreiben": {
+   "type": "object",
+   "propertyNames": {
+    "pattern": "^(telefon/s[0-9]+/[a-z]|fragen/[a-z0-9-]+|rechte/[a-z0-9-]+|landkarte/p[0-9]+(/[0-9]+(/[0-9]+)?)?)$"
+   },
+   "additionalProperties": {
+    "type": "object",
+    "description": "Felder, die den allgemeinen Text ersetzen (z. B. a, q, show, laws, say, t, s, next)",
+    "minProperties": 1
+   }
+  },
+  "fragen": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "id",
+     "c",
+     "q",
+     "a",
+     "show",
+     "laws"
+    ],
+    "properties": {
+     "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+     },
+     "nach": {
+      "type": "string"
+     },
+     "c": {
+      "type": "string"
+     },
+     "q": {
+      "type": "string"
+     },
+     "a": {
+      "type": "string"
+     },
+     "show": {
+      "type": "string"
+     },
+     "laws": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     }
+    }
+   }
+  },
+  "pruefpunkte": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   },
+   "description": "Branchentypisches, das man selbst klären muss (keine Rechtsauskunft)"
+  },
+  "mitbringen": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   },
+   "description": "ersetzt die allgemeine Mitbring-Liste"
+  }
+ }
+}

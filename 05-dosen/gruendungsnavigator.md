@@ -44,9 +44,9 @@ Wer aus dem Grundsicherungsgeld gründen will, braucht das Jobcenter. Aber **Ein
 ## Skizze
 
 **Gesprächsnavigator** (`public/gruendungsnavigator/index.html`):
-- **Vorbereitung:** Angaben nur im Browser, Grundregeln, Mitbring-Liste.
+- **Vorbereitung:** Angaben nur im Browser, Grundregeln, Mitbring-Liste. **Branchenpaket** wählen (sechs erfundene Beispiele und eine leere Vorlage) oder eine eigene Fassung anlegen, herunterladen und wieder laden.
 - **Telefonat:** Entscheidungsbaum mit 7 Fragen und 23 möglichen Antworten. Jede Antwort hat Formulierung, Hintergrund und zitierte Norm. Dazu Fortschrittsbalken und Live-Protokoll.
-- **Termin:** 42 wahrscheinliche Fragen mit anpassbaren Beispielantworten, Beleg und Norm. Übungsfortschritt und Druckfassung.
+- **Termin:** 34 allgemeine Fragen plus die Zusatzfragen des Pakets (im Beispiel Webentwicklung 42) mit anpassbaren Beispielantworten, Beleg und Norm. Übungsfortschritt und Druckfassung.
 - **Rechte-Karten:** 30 typische Antworten des Gegenübers („Das fördern wir nicht“, „Unterschreiben Sie hier“). Ein Tipp zeigt Anliegen, Normtext und formalen nächsten Schritt. Vier Gruppen zum Filtern; allein 9 Karten gegen das Abwimmeln: „Dafür bin ich nicht zuständig“, „Da müssen Sie zur Agentur für Arbeit“, „Das nehme ich so nicht an“, „Rufen Sie die Hotline an“, „Ihre Ansprechperson ist nicht da“, „Ich leite das weiter“ und weitere, jeweils mit der Pflicht zur Weiterleitung (§ 16 Abs. 2 SGB I) oder zur Annahme (§ 20 Abs. 3 SGB X) im Wortlaut.
 - **Präsentationsmodus:** Das Gegenüber sieht nur die kooperative Fassung. Taktik bleibt verborgen.
 - **Zusammenfassungs-Mail:** wird aus den Klicks gebaut, mit korrekten Normverweisen.
@@ -55,7 +55,7 @@ Wer aus dem Grundsicherungsgeld gründen will, braucht das Jobcenter. Aber **Ein
 - 9 Stationen vom Antrag bis zum Ausstieg.
 - 29 Fragen mit 107 Antworten, je mit Reaktion, nächstem Schritt, Frist und Normtext.
 - Fristen-Zeitstrahl.
-- 37 Normen mit Link zu gesetze-im-internet.de und dejure.org. Wörtliches ist zitiert, Sinngemäßes als „Kurzfassung“ markiert.
+- 44 Normen (ein Register für beide Seiten) mit Link zu gesetze-im-internet.de und dejure.org. Wörtliches ist zitiert, Sinngemäßes als „Kurzfassung“ markiert.
 
 **Kern** (`src/engine/gruendungsnavigator/`):
 - Monatsfristen nach §§ 187, 188 BGB, mit Verschiebung auf den Werktag (§ 64 Abs. 3 SGG; Feiertage per Osterformel, Landesfeiertage zuschaltbar).
@@ -65,7 +65,8 @@ Wer aus dem Grundsicherungsgeld gründen will, braucht das Jobcenter. Aber **Ein
 - Freibetrag nach § 11b Abs. 2, 3.
 - Strukturprüfung des Telefonbaums und Sprachwächter („garantiert“, „Anspruch besteht“, „unzulässig“ kommen nie vor).
 - Normstand-Wächter: Ist die Prüfung älter als 12 Monate, wird neu gelesen.
-- Drift-Wächter lesen die Daten direkt aus den Demo-Seiten.
+- Paket-Kern: füllt Platzhalter aus dem Branchenpaket und prüft Pakete (Zuschuss höchstens 5.000 €, Zahlen stimmig, keine offenen Platzhalter); derselbe Code läuft gebündelt im Browser.
+- Drift-Wächter: Die in die Seiten eingebauten Daten müssen den Dateien in `data/` entsprechen.
 
 **Im Amélie-Frontend:** Simulator „Gründungsnavigator & Fristenrechner“ mit Links auf beide Seiten, eingebetteter Demo, Fristenrechner und Freibetrag.
 
@@ -73,15 +74,14 @@ Wer aus dem Grundsicherungsgeld gründen will, braucht das Jobcenter. Aber **Ein
 
 ## Erster Schritt
 
-**Ticket 01: Die Seite wird Vorlage.** Alle Beispielinhalte (Branche, Beträge, Beispielantworten des erfundenen Webentwickler-Falls) wandert aus `index.html` in ein Branchenpaket (JSON), daneben ein leeres Paket. Normregister und Telefonbaum werden zu Daten, die der getestete Kern lädt.
+**Ticket 01 ist erledigt (13.10.2026): Die Seite ist Vorlage.** Alle Beispielinhalte liegen in Branchenpaketen (JSON) unter `07-demos/gruendungsnavigator/data/pakete/`: Webentwicklung, Montage und Kleinreparaturen, Mobiler Kaffeestand, Grafikdesign, Alltagsbegleitung, Onlinehandel mit gebrauchten Büchern (alle erfunden) und ein leeres Paket. Normregister (44 Normen, eins für beide Seiten), Telefonbaum, Fragen und Fall-Landkarte sind Daten, die der getestete Kern füllt; ein Build-Schritt baut Daten und Kern in die Seiten ein, die einzelne Dateien bleiben und offline laufen. Auf der Seite: Paket wählen, eigene Fassung im Formular erstellen, als JSON herunterladen und wieder laden. Erfüllt: Schema und Paketprüfung (57 Tests mit Gegenproben), Zitat-Abgleich 31/31, Graph- und Fristentests, Sprachwächter über alle Pakete, 360 px. Offen: der Stoppuhr-Test mit einer zweiten Person. Details: `07-demos/gruendungsnavigator/ticket-01-vorlage.md`.
+
+**Ticket 02: Praxistest und Gegenlesen.** Zwei Personen ohne Programmierkenntnis erstellen mit der Seite ihre eigene Fassung (Stoppuhr, Protokoll), und eine fachkundige Stelle (Sozialberatung oder Kammer) liest ein Branchenpaket gegen.
 
 **Fertig, wenn:**
-1. „Webentwicklung“ und ein leeres Paket gegen dasselbe Schema validieren und der Kern keine Beispielbeträge enthält.
-2. Jeder Registereintrag Norm, Fassung, URL und die Kennzeichnung Wortlaut/Kurzfassung trägt und der Zitat-Abgleich gegen gesetze-im-internet.de grün ist.
-3. Der Graphtest des Telefonbaums (keine toten Knoten, alle Normverweise lösen auf) und die Fristen-Tabellentests grün sind. Diese Tests stehen schon.
-4. Kein Ausgabetext „garantiert“, „Anspruch besteht“, „unzulässig“ oder „rechtswidrig“ sagt.
-5. Eine zweite Person ohne Programmierkenntnis ihre eigene Fassung in 30 Minuten erzeugt.
-6. Beide Seiten bei 360 px Breite ohne waagrechtes Scrollen bedienbar sind. Das ist heute schon erfüllt.
+1. Zwei Protokolle in der Prüfakte stehen, beide unter 30 Minuten oder mit behobenem Hindernis.
+2. Mindestens ein Branchenpaket von einer fachkundigen Stelle gegengelesen ist und die Änderungen eingearbeitet sind.
+3. `npm run lint`, `npm test` und `npm run check:mobile` grün sind.
 
 ## Wo es kippt
 

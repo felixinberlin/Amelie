@@ -1256,6 +1256,10 @@ Mitgebrachte Idee von Félix mit lauffähigem Prototyp, in Teilideen zerlegt (me
 | G3 | **Sozialleistungs-Q&A mit amtlichen Quellen** (`sozial-qa-amtliche-quellen`) — Fragen zu Bürgergeld/Grundsicherungsgeld, Kindergeld, Wohngeld nur aus amtlichen Quellen beantworten, mit Belegen | [method: ideenrunde] | `besetzt` | BürgerChat (github.com/jeannineshiu/buergerchat, MIT): RAG über ~6.100 Dokumente von arbeitsagentur.de, gesetze-im-internet.de u. a., 13 Sprachen, sagt „weiß ich nicht“ statt zu raten; 1 Stern, Aktivität ohne Datum. Möglicher Andockpunkt für G1. | [Seite] | 11.10.2026 | – |
 | G4 | **Gründungsgespräch-Vorbereitung AT/CH** (`gruendungsgespraech-at-ch`) — Pendant zu G1 für AMS-Unternehmensgründungsprogramm (Österreich) und RAV-Planungsphase (Schweiz) | [method: ideenrunde] | `unklar` | Eine kombinierte Suche: AMS-UGP läuft über externe Beratungsfirmen (WKO Tirol, AMS Burgenland), kein Vorbereitungswerkzeug gefunden; Schweiz faktisch ungeprüft. Neu: Länder getrennt, Empfänger zuerst (WKO Gründerservice, RAV/SECO). | [Schnipsel] | 11.10.2026 | 01/2027 |
 
+### Gründungsnavigator — Ticket 01 (13.10.2026)
+
+`gruendungsnavigator`: Urteil G1 unverändert (`verengt`). Ticket 01 umgesetzt: Beispielinhalte in Branchenpakete (`07-demos/gruendungsnavigator/data/pakete/`, sechs erfundene Branchen und eine leere Vorlage), ein Normregister für beide Seiten (44 Normen), Paket-Kern `src/engine/gruendungsnavigator/paket.ts` gebündelt in die Seiten (`npm run build:gn`, `check:gn` im Lint), eigene Fassung mit Download und Upload. Zitat-Abgleich 31/31 (§ 138 AO von Hand). Die Branchenangaben und „Selbst klären“-Punkte sind nicht gegen Primärquellen geprüft und darum als Fragen ohne Paragrafen formuliert. Keine neue Idee, keine Suche; offen: Stoppuhr-Test mit einer zweiten Person (Ticket 02).
+
 ## Fernöstliche Spielsehnsüchte & Historische Forensik — 11.10.2026
 
 Empirische Recherche fernöstlicher und globaler Gaming-Wünsche (Heybox, Zhihu, Bilibili, TapTap, r/truegaming, r/CozyGamers): Verlangen nach unbestechlicher Deduktion ohne leuchtende Markierungen, handwerklichen Reparatur-Mechaniken und anti-involutionärem Tiefgang.

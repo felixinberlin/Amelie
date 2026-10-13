@@ -1,0 +1,134 @@
+{
+ "$schema": "../paket.schema.json",
+ "id": "alltagsbegleitung",
+ "titel": "Alltagsbegleitung",
+ "beschreibung": "Gründung einer Alltagsbegleitung für ältere Menschen zu Hause aus dem Grundsicherungsgeld.",
+ "erfunden": true,
+ "werte": {
+  "beruf": "Alltagsbegleiterin",
+  "erfahrung": "seit sechs Jahren",
+  "erfahrungKurz": "sechs Jahre Betreuung in einem Pflegedienst",
+  "vorhabenKurz": "Begleitung älterer Menschen im Alltag",
+  "vorhabenText": "Begleitung älterer Menschen im Alltag: Einkauf, Arztbesuche, Spaziergänge, Gesellschaft und leichte Hilfe im Haushalt. Keine Pflege; die übernimmt der Pflegedienst.",
+  "kernbotschaft": "Ich arbeite seit sechs Jahren in der Betreuung bei einem Pflegedienst. Mein Businessplan ist fertig, und ich kläre gerade die Anerkennung, damit Pflegebedürftige meine Stunden über die Pflegekasse bezahlen können. Nach meiner Rechnung decke ich ab dem zweiten Jahr meinen Lebensunterhalt selbst. Ich möchte das sauber und mit Ihnen gemeinsam angehen.",
+  "stelle": "IHK",
+  "zuschussZweck": "Ausstattung",
+  "zuschussPosten": [
+   {
+    "was": "ein gebrauchtes Pedelec für die Wege zu den Kundinnen",
+    "kurz": "Pedelec",
+    "betrag": 1400
+   },
+   {
+    "was": "einen Laptop für Abrechnung und Dokumentation",
+    "kurz": "Laptop",
+    "betrag": 600
+   },
+   {
+    "was": "ein Diensthandy",
+    "kurz": "Diensthandy",
+    "betrag": 300
+   },
+   {
+    "was": "Erste-Hilfe- und Hygieneausstattung",
+    "kurz": "Erste Hilfe",
+    "betrag": 150
+   }
+  ],
+  "kostenMonat": 260,
+  "umsatz": [
+   26000,
+   40000,
+   47000
+  ],
+  "gewinn": [
+   21000,
+   33500,
+   39000
+  ],
+  "schwelleMonat": 2300,
+  "fruehwarn": 3500,
+  "kapitalbedarf": 3000,
+  "ausstieg": "13 bis 16",
+  "arbeitszeit": "35 bis 40 Stunden pro Woche",
+  "arbeitszeitAufteilung": "etwa 70 % Einsätze bei Kundinnen und Kunden, 15 % Wege, 15 % Abrechnung und Absprachen",
+  "rechtsform": "Einzelunternehmen, Gewerbe",
+  "anmeldung": "Gewerbeanmeldung beim Gewerbeamt",
+  "steuer": "Ob meine Leistungen umsatzsteuerfrei sind, kläre ich mit dem Finanzamt; bis dahin plane ich vorsichtig mit Umsatzsteuer.",
+  "angebotKurz": "Alltagsbegleitung zum Stundensatz (34 €/Stunde), feste Wochentermine, Abrechnung über den Entlastungsbetrag, sobald die Anerkennung vorliegt",
+  "vorbereitet": "Businessplan, Antrag auf Anerkennung, Gespräche mit einem Pflegedienst und einem Seniorentreff",
+  "vorbereitungBeispiel": "Antrag auf Anerkennung",
+  "belege": "Arbeitszeugnisse und Schulungsnachweise",
+  "belegEinzeln": "den Schulungsnachweis Betreuung",
+  "agendaZeigen": "Schulungsnachweise, Wochenplan mit Beispielkundinnen",
+  "wiederkehrend": "feste Wochentermine",
+  "anpassung": "mehr Einsätze für einen Pflegedienst oder eine Teilzeitstelle in der Betreuung",
+  "vorsichtigeAnnahme": "Gerechnet sind 16 bezahlte Stunden pro Woche im ersten Jahr und erst ab Monat drei, weil die Anerkennung Zeit braucht.",
+  "einfachErklaert": "Ich begleite ältere Menschen zum Einkauf, zum Arzt und im Alltag, damit sie länger zu Hause leben können.",
+  "abgrenzung": "Pflegedienste haben für Begleitung kaum Zeit, Nachbarschaftshilfe ist ehrenamtlich und unregelmäßig. Ich biete feste Termine mit derselben Person, und Pflegebedürftige können mich über die Pflegekasse bezahlen."
+ },
+ "ueberschreiben": {
+  "fragen/kunden": {
+   "a": "Ältere Menschen, die zu Hause leben und Begleitung brauchen, und ihre Angehörigen, die oft weit weg wohnen. Viele haben einen Pflegegrad und können meine Stunden über den Entlastungsbetrag bezahlen. Ein Pflegedienst und ein Seniorentreff wollen mich empfehlen [Stand eintragen]."
+  },
+  "fragen/kundengewinnung": {
+   "a": "Über Empfehlungen von Pflegediensten, Hausarztpraxen und Pflegestützpunkten, Aushänge in Apotheken und Seniorentreffs und über Angehörige. Feste Wochentermine bauen wiederkehrende Einnahmen auf."
+  },
+  "fragen/genehmigung": {
+   "a": "Gewerbeanmeldung vor dem ersten Einsatz. Damit Pflegebedürftige mich über die Pflegekasse bezahlen können, beantrage ich die Anerkennung nach den Regeln meines Bundeslandes [Stelle und Stand eintragen]. Dafür brauche ich einen Schulungsnachweis und ein Führungszeugnis. Eine Betriebshaftpflicht schließe ich ab."
+  },
+  "fragen/zahlungsausfall": {
+   "a": "Wo die Pflegekasse es zulässt, rechne ich mit einer Abtretungserklärung direkt mit ihr ab. Selbstzahler zahlen monatlich nach Rechnung, bei neuen Kunden im Voraus."
+  },
+  "fragen/krank": {
+   "a": "Für Ausfälle habe ich eine Vertretung mit einer anderen Alltagsbegleiterin abgesprochen [Name eintragen], damit niemand ohne Hilfe bleibt. Für längere Ausfälle bin ich krankenversichert; das Risiko steht im Plan."
+  }
+ },
+ "fragen": [
+  {
+   "id": "anerkennung",
+   "nach": "genehmigung",
+   "c": "Nachfragen",
+   "q": "Was ist, wenn die Anerkennung länger dauert?",
+   "a": "Dann starte ich mit Selbstzahlern; das ist im Plan eingerechnet, weil ich die Abrechnung über die Pflegekasse erst ab Monat drei angesetzt habe. Den Stand der Anerkennung reiche ich nach.",
+   "show": "Antrag auf Anerkennung, Eingangsbestätigung",
+   "laws": []
+  },
+  {
+   "id": "pflege-abgrenzung",
+   "nach": "angebot",
+   "c": "Angebot",
+   "q": "Ist das nicht Pflege? Dürfen Sie das?",
+   "a": "Nein, ich pflege nicht: keine Körperpflege, keine Medikamente, keine Behandlungspflege. Das macht der Pflegedienst. Ich begleite, unterstütze im Haushalt und leiste Gesellschaft; die Grenze steht in jedem Vertrag.",
+   "show": "Mustervertrag mit der Abgrenzung",
+   "laws": []
+  },
+  {
+   "id": "pedelec",
+   "nach": "zuschuss",
+   "c": "Zahlen",
+   "q": "Warum ein Pedelec und kein Busticket?",
+   "a": "Ich fahre vier bis sechs Kundinnen am Tag an, oft in Ortsteilen ohne dichten Takt. Mit dem Pedelec schaffe ich zwei Einsätze mehr pro Tag; das trägt den Plan. Das Ticket ist als Ersatz bei schlechtem Wetter eingerechnet.",
+   "show": "Kostenvoranschlag, Wegeplanung",
+   "laws": [
+    "sgb2_16c1"
+   ]
+  }
+ ],
+ "pruefpunkte": [
+  "Anerkennung: Damit Pflegebedürftige den Entlastungsbetrag nutzen können, muss das Angebot nach Landesrecht anerkannt sein. Zuständige Stelle und nötige Schulung je nach Bundesland erfragen (Pflegestützpunkt).",
+  "Erweitertes Führungszeugnis und Schulungsnachweis bereithalten.",
+  "Umsatzsteuer: Ob Betreuungsleistungen steuerfrei sind, beim Finanzamt klären.",
+  "Grenze zur Pflege schriftlich festhalten und einhalten."
+ ],
+ "mitbringen": [
+  "Businessplan, zweimal ausgedruckt (eins zum Dalassen)",
+  "Lebenslauf, Arbeitszeugnisse und Schulungsnachweise",
+  "Kostenvoranschläge für Pedelec, Laptop, Diensthandy, Erste Hilfe",
+  "Stellungnahme der IHK zur Tragfähigkeit (oder Terminbestätigung)",
+  "Antrag auf Anerkennung mit Eingangsbestätigung",
+  "Mustervertrag mit der Abgrenzung zur Pflege",
+  "Personalausweis, BG-Nummer, Kopie Ihres Antrags mit Eingangsbestätigung",
+  "Block und Stift; Beistand, falls gewünscht"
+ ]
+}

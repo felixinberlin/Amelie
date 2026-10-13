@@ -1,0 +1,1443 @@
+{
+ "telefonbaum": [
+  {
+   "id": "s1",
+   "short": "Wer geht ran?",
+   "q": "Wer nimmt den Anruf an?",
+   "answers": [
+    {
+     "k": "a",
+     "t": "Die zuständige Ansprechperson",
+     "s": "Fallmanager/in selbst",
+     "say": "Guten Tag, hier ist {name}, BG-Nummer {bg}. Ich habe Ihnen am {datum} geschrieben, es geht um meine geplante Selbständigkeit. Haben Sie fünf Minuten?",
+     "dos": [
+      "Langsam sprechen, Namen der Person notieren."
+     ],
+     "laws": [
+      "sgb1_14"
+     ],
+     "next": 1
+    },
+    {
+     "k": "b",
+     "t": "Service-Center oder Hotline",
+     "s": "nicht die zuständige Person",
+     "end": true,
+     "say": "Ich möchte eine Rückrufbitte hinterlassen: {name}, BG-Nummer {bg}, Thema Existenzgründung und Antrag auf Einstiegsgeld. Erreichbar unter {tel}.",
+     "dos": [
+      "Fragen, ob die Nachricht als Gesprächsvermerk in der Akte landet.",
+      "Name der Mitarbeiterin/des Mitarbeiters notieren.",
+      "Nach einer Woche ohne Rückruf schriftlich nachfassen."
+     ],
+     "ex": "Viele Jobcenter leiten Anrufe über eine zentrale Servicenummer. Der Anspruch auf Beratung richtet sich aber an das Jobcenter selbst.",
+     "laws": [
+      "sgb1_14"
+     ],
+     "mail": "callback"
+    },
+    {
+     "k": "c",
+     "t": "Mailbox oder niemand erreichbar",
+     "s": "",
+     "end": true,
+     "say": "Guten Tag, hier ist {name}, BG-Nummer {bg}. Ich bitte um Rückruf zu meiner geplanten Existenzgründung, unter {tel}. Ich schicke Ihnen mein Anliegen zusätzlich schriftlich. Vielen Dank.",
+     "dos": [
+      "Unter 30 Sekunden bleiben.",
+      "Direkt danach dieselbe Bitte über jobcenter.digital senden."
+     ],
+     "laws": [
+      "sgb1_16_2"
+     ],
+     "mail": "callback"
+    }
+   ]
+  },
+  {
+   "id": "s2",
+   "short": "Zeit?",
+   "q": "Hat die Person jetzt Zeit?",
+   "answers": [
+    {
+     "k": "a",
+     "t": "Ja",
+     "s": "",
+     "say": "{{kernbotschaft}}",
+     "dos": [
+      "Höchstens eine Minute, dann Pause.",
+      "Zahlen nur nennen, wenn gefragt: ab Monat {{ausstieg}} unabhängig."
+     ],
+     "laws": [],
+     "next": 2
+    },
+    {
+     "k": "b",
+     "t": "Nein, jetzt nicht",
+     "s": "",
+     "end": true,
+     "field": {
+      "key": "rueckruf",
+      "label": "Vereinbarter Rückruftermin",
+      "ph": "z. B. Dienstag, 14.10., 10 Uhr"
+     },
+     "say": "Kein Problem. Wann darf ich Sie erreichen, oder rufen Sie mich zurück? Ich bestätige den Termin gleich schriftlich.",
+     "dos": [
+      "Konkreten Tag und Uhrzeit festmachen, nicht „irgendwann diese Woche“."
+     ],
+     "laws": [
+      "sgb1_14"
+     ],
+     "mail": "callback2"
+    },
+    {
+     "k": "c",
+     "t": "„Dafür bin ich nicht zuständig“",
+     "s": "Verweis an eine andere Stelle",
+     "end": true,
+     "say": "Danke. Können Sie mein Anliegen bitte an das Team für Selbständige weiterleiten und mir Namen und Durchwahl nennen? Mein Antrag liegt Ihnen ja seit {datum} vor.",
+     "dos": [
+      "Name und Durchwahl der zuständigen Stelle notieren.",
+      "Nicht diskutieren: Ein Antrag bei einer unzuständigen Stelle gilt trotzdem ab Eingang."
+     ],
+     "ex": "Das Jobcenter muss den Antrag weiterleiten; er gilt ab dem Tag, an dem er bei Ihnen eingegangen ist.",
+     "laws": [
+      "sgb1_16_2w",
+      "sgb1_16_2",
+      "sgb1_16_3"
+     ],
+     "mail": "forward"
+    }
+   ]
+  },
+  {
+   "id": "s3",
+   "short": "Reaktion",
+   "q": "Wie reagiert die Person auf Ihre Kernbotschaft?",
+   "answers": [
+    {
+     "k": "a",
+     "t": "Interessiert, stellt Fragen",
+     "s": "",
+     "say": "Gern. Die Einzelheiten stehen im Businessplan: Angebot, Preise, Kosten und eine Rentabilitätsvorschau für drei Jahre. Den würde ich Ihnen gern persönlich vorstellen.",
+     "dos": [
+      "Kurz antworten, auf den Termin lenken."
+     ],
+     "laws": [],
+     "next": 3
+    },
+    {
+     "k": "b",
+     "t": "„Bewerben Sie sich lieber auf feste Stellen“",
+     "s": "",
+     "say": "Ich bewerbe mich gern parallel weiter, wenn wir das im Kooperationsplan festhalten. Das Gesetz sieht die Förderung einer Selbständigkeit aber ausdrücklich vor, wenn sie tragfähig ist. Das belege ich mit dem Plan und einer Stellungnahme der {{stelle}}. Ich lege Ihnen außerdem alle sechs Monate Meilensteine vor.",
+     "dos": [
+      "Nicht widersprechen, Kooperation zeigen.",
+      "Argument: Der Plan zeigt mehr Einkommen als eine Anstellung in der Region."
+     ],
+     "laws": [
+      "sgb2_16b",
+      "sgb2_16c3",
+      "sgb2_10",
+      "sgb2_15"
+     ],
+     "next": 3
+    },
+    {
+     "k": "c",
+     "t": "„Haben Sie schon angefangen?“",
+     "s": "",
+     "say": "Nein. Ich bereite vor: Businessplan, Angebote, Kostenvoranschläge. Ich starte erst, wenn die Förderung geklärt ist, und melde die Tätigkeit dann ordnungsgemäß an.",
+     "dos": [
+      "Wahrheitsgemäß antworten.",
+      "Vorbereitung (Plan schreiben, {{vorbereitungBeispiel}}) ist kein Beginn der Tätigkeit; Rechnungen oder Aufträge wären es."
+     ],
+     "laws": [
+      "sgb2_37",
+      "sgb1_60",
+      "gewo14"
+     ],
+     "next": 3
+    },
+    {
+     "k": "d",
+     "t": "Fachfragen oder Fragen zu Kunden",
+     "s": "„Wie läuft das ab?“ · „Haben Sie Aufträge?“",
+     "say": "{{^einfachErklaert}} Kontakte zu Interessenten habe ich; feste Aufträge nehme ich erst nach dem Start an.",
+     "dos": [
+      "Fachwissen kurz und ohne Fachwörter.",
+      "Wenn vorhanden: Absichtserklärungen erwähnen."
+     ],
+     "laws": [
+      "gewo14"
+     ],
+     "next": 3
+    }
+   ]
+  },
+  {
+   "id": "s4",
+   "short": "Termin",
+   "q": "Bekommen Sie einen persönlichen Termin?",
+   "answers": [
+    {
+     "k": "a",
+     "t": "Ja, Termin vereinbart",
+     "s": "",
+     "field": {
+      "key": "termin",
+      "label": "Termin (Datum, Uhrzeit, Ort)",
+      "ph": "z. B. 21.10.2026, 9:30 Uhr, Raum 2.14"
+     },
+     "say": "Vielen Dank. Ich notiere: {termin}. Ich bringe den Businessplan und meine Unterlagen mit.",
+     "dos": [
+      "Termin wiederholen.",
+      "Fragen, ob ein Beistand mitkommen darf (das ist Ihr Recht)."
+     ],
+     "laws": [
+      "sgb10_13",
+      "sgb2_32"
+     ],
+     "next": 4
+    },
+    {
+     "k": "b",
+     "t": "„Schicken Sie alles per Post“",
+     "s": "",
+     "say": "Gern schicke ich den Plan vorab. Ich würde ihn aber kurz persönlich erklären, das spart Rückfragen auf beiden Seiten. Wäre ein kurzer Termin oder ein Videogespräch möglich?",
+     "dos": [
+      "Wenn weiter nein: Plan über jobcenter.digital senden, Eingangsbestätigung speichern."
+     ],
+     "laws": [
+      "sgb1_14"
+     ],
+     "next": 4
+    },
+    {
+     "k": "c",
+     "t": "Termin erst in einigen Wochen",
+     "s": "",
+     "field": {
+      "key": "termin",
+      "label": "Termin (Datum, Uhrzeit, Ort)",
+      "ph": "z. B. 18.11.2026, 11 Uhr"
+     },
+     "say": "Das passt. Ich gehe davon aus, dass mein Antrag trotzdem ab {datum} als gestellt gilt. Können Sie mir das bestätigen?",
+     "dos": [
+      "Weiter zu Frage 5: Antragsdatum sichern ist jetzt das Wichtigste."
+     ],
+     "laws": [
+      "sgb2_37",
+      "sgb1_17"
+     ],
+     "next": 4
+    }
+   ]
+  },
+  {
+   "id": "s5",
+   "short": "Antrag",
+   "q": "Gilt Ihr Antrag ab dem Datum Ihrer Nachricht?",
+   "answers": [
+    {
+     "k": "a",
+     "t": "Ja, bestätigt",
+     "s": "",
+     "say": "Danke, dann halte ich fest: Mein Antrag auf Einstiegsgeld und auf den Zuschuss für Arbeitsmittel gilt ab {datum}.",
+     "dos": [
+      "Namen und Uhrzeit der Bestätigung notieren."
+     ],
+     "laws": [
+      "sgb2_37"
+     ],
+     "next": 5
+    },
+    {
+     "k": "b",
+     "t": "„Erst mit dem offiziellen Formular“",
+     "s": "",
+     "say": "Ich fülle das Formular gern aus. Bitte schicken Sie es mir zu. Meinen formlosen Antrag vom {datum} betrachte ich aber als gestellt; das Formular ergänzt ihn nur.",
+     "dos": [
+      "Ruhig bleiben, nicht streiten: Die Rechtslage steht in der Abschluss-Mail."
+     ],
+     "ex": "Ein Antrag ist an keine Form gebunden. Formulare dienen dazu, Angaben zu vervollständigen.",
+     "laws": [
+      "sgb10_9",
+      "sgb1_16_3",
+      "sgb2_37"
+     ],
+     "next": 5
+    },
+    {
+     "k": "c",
+     "t": "Keine klare Antwort",
+     "s": "",
+     "say": "Kein Problem, ich fasse unser Gespräch gleich schriftlich zusammen. Wenn etwas nicht stimmt, geben Sie mir bitte kurz Bescheid.",
+     "dos": [
+      "In der Abschluss-Mail ausdrücklich um Bestätigung bitten."
+     ],
+     "laws": [
+      "sgb1_16_3"
+     ],
+     "next": 5
+    }
+   ]
+  },
+  {
+   "id": "s6",
+   "short": "Förderung",
+   "q": "Was sagt die Person zur Förderung?",
+   "answers": [
+    {
+     "k": "a",
+     "t": "Wird geprüft",
+     "s": "",
+     "field": {
+      "key": "zeitraum",
+      "label": "Genannter Zeitraum für die Entscheidung",
+      "ph": "z. B. etwa 3 Wochen nach dem Termin"
+     },
+     "say": "Danke. Bis wann ungefähr kann ich mit einer Entscheidung rechnen?",
+     "dos": [
+      "Zeitraum notieren.",
+      "Bei langer Wartezeit erst schriftlich erinnern; Klage wegen Untätigkeit nur als letztes Mittel und nie am Telefon erwähnen."
+     ],
+     "laws": [
+      "sgb1_17",
+      "sgg88"
+     ],
+     "next": 6
+    },
+    {
+     "k": "b",
+     "t": "Mündliche Absage",
+     "s": "„Das fördern wir nicht“",
+     "say": "Ich verstehe. Bitte schicken Sie mir die Entscheidung mit Begründung schriftlich, damit ich sie nachvollziehen kann.",
+     "dos": [
+      "Nicht diskutieren. Schriftliche Bestätigung sofort verlangen (unverzüglich).",
+      "Gegen den schriftlichen Bescheid: Widerspruch binnen eines Monats.",
+      "Einstiegsgeld ist eine Ermessensleistung: Kein Anspruch auf das Ergebnis, aber auf eine fehlerfreie Ermessensentscheidung."
+     ],
+     "laws": [
+      "sgb10_33",
+      "sgb10_35",
+      "sgb1_39",
+      "sgg84"
+     ],
+     "next": 6
+    },
+    {
+     "k": "c",
+     "t": "Bedingung: erst Kurs oder Maßnahme",
+     "s": "z. B. Gründungsseminar, Coaching",
+     "say": "Ein Gründungscoaching nehme ich gern an. Schicken Sie mir den Vorschlag bitte schriftlich, dann schaue ich ihn mir an.",
+     "dos": [
+      "Am Telefon nichts zusagen.",
+      "Ein Coaching nach § 16c Abs. 2 ist eine Förderung, keine Hürde."
+     ],
+     "laws": [
+      "sgb2_16c2",
+      "sgb2_15"
+     ],
+     "next": 6
+    },
+    {
+     "k": "d",
+     "t": "Fragen zu Ersparnissen",
+     "s": "",
+     "say": "Meine Vermögensverhältnisse haben sich nicht geändert. Die Nachweise bringe ich gern zum Termin mit.",
+     "dos": [
+      "Kurz und wahrheitsgemäß antworten, nichts verschweigen.",
+      "Seit Juli 2026 keine Karenzzeit mehr beim Vermögen."
+     ],
+     "laws": [
+      "sgb2_12",
+      "sgb1_60"
+     ],
+     "next": 6
+    }
+   ]
+  },
+  {
+   "id": "s7",
+   "short": "Unterlagen",
+   "q": "Welche Unterlagen werden gebraucht?",
+   "answers": [
+    {
+     "k": "a",
+     "t": "Liste erhalten",
+     "s": "",
+     "field": {
+      "key": "unterlagen",
+      "label": "Genannte Unterlagen",
+      "ph": "z. B. Businessplan, Lebenslauf, Kostenvoranschläge, Stellungnahme der {{stelle}}",
+      "area": true
+     },
+     "say": "Ich wiederhole kurz: {unterlagen}. Habe ich etwas vergessen?",
+     "dos": [
+      "Laut wiederholen, Lücken erfragen."
+     ],
+     "laws": [
+      "sgb1_16_3"
+     ],
+     "next": 7
+    },
+    {
+     "k": "b",
+     "t": "Unklar oder „kommt per Post“",
+     "s": "",
+     "say": "Können Sie mir die Liste und die Formulare zusätzlich über jobcenter.digital schicken? Dann bereite ich alles vollständig vor.",
+     "dos": [
+      "In der Abschluss-Mail um die Liste bitten."
+     ],
+     "laws": [
+      "sgb1_16_3",
+      "sgb1_14"
+     ],
+     "next": 7
+    },
+    {
+     "k": "c",
+     "t": "Stellungnahme zur Tragfähigkeit nötig",
+     "s": "",
+     "say": "Das hatte ich erwartet. Welche Stelle akzeptieren Sie? Ich würde die {{stelle}} anfragen.",
+     "dos": [
+      "Termin bei der Gründungsberatung der {{stelle}} direkt nach dem Gespräch buchen."
+     ],
+     "laws": [
+      "sgb2_16c3"
+     ],
+     "next": 7
+    }
+   ]
+  }
+ ],
+ "kategorien": [
+  "Alle",
+  "Neue Ansprechperson",
+  "Person",
+  "Angebot",
+  "Kunden & Markt",
+  "Zahlen",
+  "Nachfragen",
+  "Förderung & Recht",
+  "Pflichten & Ablauf"
+ ],
+ "fragen": [
+  {
+   "c": "Neue Ansprechperson",
+   "q": "Ich kenne Ihren Fall noch nicht. Worum geht es?",
+   "a": "Kurz gesagt: Ich bin {{erfahrung}} {{beruf}} und will mich hauptberuflich selbständig machen. Ich habe Einstiegsgeld und {{zuschuss}} für {{zuschussZweck}} beantragt. Nach meinem Plan brauche ich ab Monat {{ausstieg}} kein Grundsicherungsgeld mehr. Alles steht auf einer Seite in Anlage 2.",
+   "show": "Anlage 2 (Auf einen Blick), Überblick im Präsentationsmodus",
+   "laws": [
+    "sgb2_16b",
+    "sgb2_16c1"
+   ],
+   "id": "worum"
+  },
+  {
+   "c": "Neue Ansprechperson",
+   "q": "In der Akte steht ein Vermerk Ihres Vorgängers. Wie sehen Sie das?",
+   "a": "Ich kenne den Vermerk nicht und würde ihn gern lesen. Mir ist wichtig, dass Sie sich ein eigenes Bild machen: Hier ist mein Plan, und die Tragfähigkeit lasse ich von der {{stelle}} prüfen.",
+   "show": "Businessplan, Stellungnahme der {{stelle}} oder Terminbestätigung",
+   "laws": [
+    "sgb10_25",
+    "sgb2_16c3"
+   ],
+   "id": "vermerk"
+  },
+  {
+   "c": "Neue Ansprechperson",
+   "q": "Ich muss mich erst einarbeiten.",
+   "a": "Natürlich. Darf ich Ihnen die Unterlagen dalassen? Bis wann ungefähr können wir über den Antrag sprechen? Ich warte mit dem Start, bis entschieden ist.",
+   "show": "Mappe mit Antrag, Anlagen 1–3, Businessplan",
+   "laws": [
+    "sgb1_17",
+    "sgb2_37"
+   ],
+   "id": "einarbeiten"
+  },
+  {
+   "c": "Neue Ansprechperson",
+   "q": "Wie lange sind Sie schon im Leistungsbezug, und was haben Sie in der Zeit gemacht?",
+   "a": "Seit [Datum]. In der Zeit habe ich [Bewerbungen, Weiterbildung] gemacht und meine Gründung vorbereitet. Das ist die Grundlage meines Angebots.",
+   "show": "Lebenslauf, Bewerbungsnachweise, {{belege}}",
+   "laws": [],
+   "id": "leistungsbezug"
+  },
+  {
+   "c": "Nachfragen",
+   "q": "Warum sollte es diesmal klappen?",
+   "a": "Weil ich nicht bei null anfange: {{^vorbereitet}} liegen vor, die laufenden Kosten sind mit {{kostenMonat}} im Monat überschaubar. Und weil ich mich an feste Kontrollpunkte binde: Monatsbericht, Frühwarnpunkt nach sechs Monaten.",
+   "show": "{{^belege}}, Anlage 3 (Zusagen)",
+   "laws": [],
+   "id": "diesmal"
+  },
+  {
+   "c": "Nachfragen",
+   "q": "Warum brauchen Sie Einstiegsgeld, wenn das Geschäft so gut läuft?",
+   "a": "Mein Plan trägt auch ohne Einstiegsgeld; es ist darin nicht eingerechnet. Es verkürzt die Anlaufzeit: Ich kann mich voll auf Kunden konzentrieren statt auf Nebenjobs und bin dadurch schneller ganz aus dem Leistungsbezug.",
+   "show": "Liquiditätsplan (ohne Einstiegsgeld)",
+   "laws": [
+    "sgb2_16b"
+   ],
+   "id": "warum-einstiegsgeld"
+  },
+  {
+   "c": "Nachfragen",
+   "q": "Wie viel Einstiegsgeld möchten Sie?",
+   "a": "Die Höhe legen Sie fest. Ich bitte um eine Förderung für zunächst zwölf Monate, damit die Anlaufphase gedeckt ist.",
+   "show": "–",
+   "laws": [
+    "sgb2_16b"
+   ],
+   "id": "wie-viel"
+  },
+  {
+   "c": "Nachfragen",
+   "q": "Können Sie davon wirklich leben?",
+   "a": "Ab dem zweiten Jahr ja: geplant sind rund {{gewinnMonatJ2}} Gewinn im Monat. Davon zahle ich Miete, Lebensunterhalt, Krankenversicherung, Steuern und Altersvorsorge und behalte noch eine Rücklage. Die Rechnung steht im Businessplan.",
+   "show": "Businessplan Abschnitt 8 (Deckung des Lebensunterhalts)",
+   "laws": [],
+   "id": "leben"
+  },
+  {
+   "c": "Nachfragen",
+   "q": "Was, wenn Kunden nicht zahlen?",
+   "a": "Ich vereinbare Anzahlungen oder Abschläge und liefere größere Aufträge erst nach Zahlung aus. Offene Rechnungen mahne ich nach festem Ablauf.",
+   "show": "Businessplan Abschnitt 5 (Zahlungsbedingungen)",
+   "laws": [],
+   "id": "zahlungsausfall"
+  },
+  {
+   "c": "Nachfragen",
+   "q": "Was, wenn Sie krank werden?",
+   "a": "Termine plane ich mit Puffer, und für längere Ausfälle bin ich krankenversichert; das Risiko steht im Plan.",
+   "show": "Businessplan Abschnitt 11 (Risiken)",
+   "laws": [
+    "sgb2_26"
+   ],
+   "id": "krank"
+  },
+  {
+   "c": "Nachfragen",
+   "q": "Haben Sie Schulden oder laufende Verpflichtungen?",
+   "a": "[Wahrheitsgemäß, kurz.] Für das Geschäft nehme ich keinen Kredit auf; der Kapitalbedarf ist mit {{kapitalbedarf}} gering.",
+   "show": "Businessplan Abschnitt 7",
+   "laws": [
+    "sgb1_60"
+   ],
+   "id": "schulden"
+  },
+  {
+   "c": "Nachfragen",
+   "q": "Brauchen Sie eine Genehmigung oder einen Eintrag?",
+   "a": "{{^anmeldung}} vor dem ersten Auftrag. Ob für meine Tätigkeit eine Erlaubnis, ein Eintrag oder ein Nachweis nötig ist, habe ich bei der {{stelle}} geklärt [Ergebnis eintragen]. Eine Betriebshaftpflicht schließe ich ab.",
+   "show": "Businessplan Abschnitt 6 (Organisation, Versicherungen)",
+   "laws": [
+    "gewo14"
+   ],
+   "id": "genehmigung"
+  },
+  {
+   "c": "Person",
+   "q": "Warum wollen Sie sich selbständig machen statt eine Stelle anzunehmen?",
+   "a": "Ich bin {{erfahrung}} {{beruf}} und sehe eine konkrete Nachfrage: {{vorhabenKurz}}. Nach meinem Plan verdiene ich ab dem zweiten Jahr genug, um unabhängig vom Grundsicherungsgeld zu sein. Ich bewerbe mich trotzdem parallel, wenn wir das vereinbaren.",
+   "show": "Businessplan Abschnitt 1 (Zusammenfassung) und 8 (Rentabilität)",
+   "laws": [
+    "sgb2_16b"
+   ],
+   "id": "warum-selbstaendig"
+  },
+  {
+   "c": "Person",
+   "q": "Welche Qualifikation haben Sie für diese Tätigkeit?",
+   "a": "[Ausbildung/Studium], {{erfahrungKurz}}, zuletzt bei [Stationen]. Nachweise und {{belege}} habe ich dabei.",
+   "show": "Lebenslauf, Zeugnisse, {{belege}}",
+   "laws": [],
+   "id": "qualifikation"
+  },
+  {
+   "c": "Person",
+   "q": "Haben Sie kaufmännische Kenntnisse?",
+   "a": "[Eigene Erfahrung mit Angeboten, Rechnungen, Kundenkontakt.] Ich nutze eine Buchhaltungssoftware, die Zahlen für Finanzamt und Anlage EKS liefert, und nehme die Gründungsberatung der {{stelle}} in Anspruch. Ein Gründungscoaching nehme ich gern an.",
+   "show": "Businessplan Abschnitt 6 (Organisation)",
+   "laws": [
+    "sgb2_16c2"
+   ],
+   "id": "kaufmaennisch"
+  },
+  {
+   "c": "Angebot",
+   "q": "Was genau bieten Sie an?",
+   "a": "{{^angebotKurz}}.",
+   "show": "Businessplan Abschnitt 3 (Angebot)",
+   "laws": [],
+   "id": "angebot"
+  },
+  {
+   "c": "Kunden & Markt",
+   "q": "Wer sind Ihre Kunden? Haben Sie schon Aufträge?",
+   "a": "[Wer sind Ihre Kunden?] Ich habe Kontakte zu [Anzahl] Interessenten [Namen/Branchen]. Feste Aufträge nehme ich erst nach dem Start an.",
+   "show": "Absichtserklärungen, falls vorhanden; Businessplan Abschnitt 4",
+   "laws": [
+    "gewo14"
+   ],
+   "id": "kunden"
+  },
+  {
+   "c": "Kunden & Markt",
+   "q": "Wie gewinnen Sie Kunden?",
+   "a": "[Wie gewinnen Sie Kunden: Empfehlungen, Netzwerk, Direktansprache, Online?] {{^wiederkehrend}} bauen wiederkehrende Einnahmen auf.",
+   "show": "Businessplan Abschnitt 5 (Kundengewinnung)",
+   "laws": [],
+   "id": "kundengewinnung"
+  },
+  {
+   "c": "Kunden & Markt",
+   "q": "Wer ist Ihre Konkurrenz, und warum sollte jemand bei Ihnen kaufen?",
+   "a": "{{^abgrenzung}}",
+   "show": "Businessplan Abschnitt 4 (Wettbewerb)",
+   "laws": [],
+   "id": "konkurrenz"
+  },
+  {
+   "c": "Zahlen",
+   "q": "Wie kommen Sie auf diese Umsatzzahlen?",
+   "a": "{{^vorsichtigeAnnahme}} Das ergibt {{umsatzJ1}} Umsatz im ersten Jahr. Das ist bewusst vorsichtig.",
+   "show": "Businessplan Abschnitt 8 (Mengenplanung) und 9 (Liquidität)",
+   "laws": [],
+   "id": "umsatz"
+  },
+  {
+   "c": "Zahlen",
+   "q": "Was passiert, wenn die Aufträge ausbleiben?",
+   "a": "Die laufenden Kosten liegen bei nur {{kostenMonat}} im Monat, ein Verlust entsteht kaum. Ich habe einen Frühwarnpunkt eingebaut: Liegt der Gewinn nach sechs Monaten unter {{fruehwarn}}, passe ich gemeinsam mit Ihnen an, zum Beispiel {{anpassung}}.",
+   "show": "Businessplan Abschnitt 10 (Frühwarnung) und 11 (Risiken)",
+   "laws": [
+    "sgb2_10"
+   ],
+   "id": "auftraege-ausbleiben"
+  },
+  {
+   "c": "Zahlen",
+   "q": "Ab wann brauchen Sie kein Grundsicherungsgeld mehr?",
+   "a": "Nach Plan ab Monat {{ausstieg}}, wenn der Gewinn dauerhaft über etwa {{schwelleMonat}} im Monat liegt. Im zweiten Jahr plane ich {{gewinnMonatJ2}} Gewinn im Monat; davon kann ich Lebensunterhalt, Krankenversicherung, Steuern und Altersvorsorge zahlen und behalte noch eine Rücklage.",
+   "show": "Businessplan Abschnitt 8 (Deckung des Lebensunterhalts)",
+   "laws": [
+    "sgb2_16c3"
+   ],
+   "id": "ausstieg"
+  },
+  {
+   "c": "Zahlen",
+   "q": "Wofür brauchen Sie {{zuschuss}}, und warum kein Kredit?",
+   "a": "Für {{zuschussPosten}}. Das sind {{zuschussZweck}}, ohne die ich nicht professionell arbeiten kann. [Falls zutreffend: Meine Bank vergibt an Gründer aus dem Leistungsbezug keinen Kredit; Nachweis liegt bei.]",
+   "show": "Kostenvoranschläge, ggf. Ablehnung der Bank, Businessplan Abschnitt 7",
+   "laws": [
+    "sgb2_16c1"
+   ],
+   "id": "zuschuss"
+  },
+  {
+   "c": "Förderung & Recht",
+   "q": "Auf Einstiegsgeld gibt es keinen Rechtsanspruch.",
+   "a": "Das ist mir bewusst. Ich bitte um eine Ermessensentscheidung auf Grundlage meines Plans und um einen schriftlichen Bescheid mit Begründung.",
+   "show": "–",
+   "laws": [
+    "sgb2_16b",
+    "sgb1_39",
+    "sgb10_35"
+   ],
+   "id": "kein-anspruch"
+  },
+  {
+   "c": "Förderung & Recht",
+   "q": "Haben Sie schon mit der Tätigkeit begonnen?",
+   "a": "Nein. Ich habe vorbereitet: {{vorbereitet}}. Ich beginne erst, wenn über die Förderung entschieden ist, und melde mich dann ordnungsgemäß an.",
+   "show": "–",
+   "laws": [
+    "sgb2_37",
+    "sgb1_60"
+   ],
+   "id": "begonnen"
+  },
+  {
+   "c": "Förderung & Recht",
+   "q": "Wir brauchen eine Stellungnahme zur Tragfähigkeit.",
+   "a": "Gern. Ich habe bei der {{stelle}} einen Termin [Datum] angefragt. Akzeptieren Sie die {{stelle}}, oder bevorzugen Sie eine andere fachkundige Stelle?",
+   "show": "Terminbestätigung der {{stelle}}",
+   "laws": [
+    "sgb2_16c3"
+   ],
+   "id": "tragfaehigkeit"
+  },
+  {
+   "c": "Förderung & Recht",
+   "q": "Sie müssen sich trotzdem weiter bewerben.",
+   "a": "Einverstanden, wenn wir den Umfang im Kooperationsplan festhalten, zum Beispiel zwei Bewerbungen im Monat. Wichtig ist mir, dass genug Zeit für den Aufbau bleibt, sonst gefährden wir das Ziel, unabhängig zu werden.",
+   "show": "–",
+   "laws": [
+    "sgb2_15",
+    "sgb2_10"
+   ],
+   "id": "bewerben"
+  },
+  {
+   "c": "Förderung & Recht",
+   "q": "Wir schlagen erst ein Gründungsseminar oder Coaching vor.",
+   "a": "Ein Coaching nehme ich gern an, besonders zu Vertrieb und Buchhaltung. Bitte schicken Sie mir den Vorschlag schriftlich. Den Antrag auf Einstiegsgeld bitte ich trotzdem parallel zu prüfen.",
+   "show": "–",
+   "laws": [
+    "sgb2_16c2"
+   ],
+   "id": "coaching"
+  },
+  {
+   "c": "Förderung & Recht",
+   "q": "Haben Sie Vermögen oder Ersparnisse?",
+   "a": "[Wahrheitsgemäß, kurz.] Seit dem letzten Antrag hat sich nichts geändert. Die Nachweise habe ich dabei.",
+   "show": "Kontoauszüge, falls verlangt",
+   "laws": [
+    "sgb2_12",
+    "sgb1_60"
+   ],
+   "id": "vermoegen"
+  },
+  {
+   "c": "Pflichten & Ablauf",
+   "q": "Wie viele Stunden arbeiten Sie in der Selbständigkeit?",
+   "a": "Hauptberuflich, {{arbeitszeit}}: {{arbeitszeitAufteilung}}.",
+   "show": "Businessplan Abschnitt 6",
+   "laws": [
+    "sgb2_16b"
+   ],
+   "id": "stunden"
+  },
+  {
+   "c": "Pflichten & Ablauf",
+   "q": "Wie wird Ihr Einkommen angerechnet?",
+   "a": "Über die Anlage EKS: Vor jedem Sechs-Monats-Zeitraum eine Prognose, danach die tatsächlichen Zahlen mit Belegen. Die Belege sortiere ich pro Zeitraum, die Zahlen kommen direkt aus der Buchhaltung. Vom Gewinn bleiben mir höchstens 348 € im Monat; der Rest wird angerechnet.",
+   "show": "Businessplan Abschnitt 9 (Werte je 6-Monats-Zeitraum)",
+   "laws": [
+    "sgb2_41a",
+    "sgb2_11b"
+   ],
+   "id": "anrechnung"
+  },
+  {
+   "c": "Pflichten & Ablauf",
+   "q": "Wie sind Sie krankenversichert, wenn Sie selbständig sind?",
+   "a": "Ich informiere meine Krankenkasse über die Selbständigkeit. Wird die Versicherung freiwillig, beantrage ich den Zuschuss zu den Beiträgen, solange ich Leistungen beziehe. Nach dem Ausstieg zahle ich sie selbst; das ist in der Planung für Jahr 2 enthalten.",
+   "show": "Businessplan Abschnitt 8 (Kranken- und Pflegeversicherung)",
+   "laws": [
+    "sgb2_26"
+   ],
+   "id": "krankenversicherung"
+  },
+  {
+   "c": "Pflichten & Ablauf",
+   "q": "Wie melden Sie die Tätigkeit an? Was ist mit dem Finanzamt?",
+   "a": "Ja: {{anmeldung}} vor dem ersten Auftrag, danach innerhalb eines Monats der Fragebogen zur steuerlichen Erfassung über ELSTER. {{^steuer}}",
+   "show": "Businessplan Abschnitt 6",
+   "laws": [
+    "gewo14",
+    "ao138",
+    "ustg19"
+   ],
+   "id": "anmeldung"
+  },
+  {
+   "c": "Pflichten & Ablauf",
+   "q": "Was passiert, wenn es nach einem Jahr nicht läuft?",
+   "a": "Dann prüfen wir das gemeinsam, so sieht es das Gesetz vor. Ich lege Ihnen jeden Monat einen einseitigen Bericht mit Umsatz, Aufträgen und Anfragen vor, damit wir früh sehen, ob ich im Plan bin. Wenn nicht, passen wir rechtzeitig an.",
+   "show": "Muster Monatsbericht, Businessplan Abschnitt 10 (Meilensteine)",
+   "laws": [
+    "sgb2_10"
+   ],
+   "id": "nach-einem-jahr"
+  }
+ ],
+ "rechte": [
+  {
+   "id": "grundsatz",
+   "q": "„Das fördern wir grundsätzlich nicht.“",
+   "t": "Förderung wird grundsätzlich abgelehnt",
+   "say": "Ich verstehe. Das Gesetz sieht die Förderung einer selbständigen Tätigkeit ausdrücklich vor. Ich bitte um eine Entscheidung über meinen konkreten Antrag, schriftlich und mit Begründung.",
+   "laws": [
+    "sgb2_16b",
+    "sgb1_39",
+    "sgb10_35"
+   ],
+   "next": [
+    "Schriftlicher Bescheid mit Begründung",
+    "Bei Ablehnung: Widerspruch innerhalb eines Monats"
+   ],
+   "tac": [
+    "Eine pauschale Absage ist keine Ermessensentscheidung im Einzelfall. Nicht streiten, nur die schriftliche Entscheidung verlangen."
+   ],
+   "pl": [
+    "sgg84"
+   ],
+   "g": "f"
+  },
+  {
+   "id": "budget",
+   "q": "„Dafür ist kein Geld mehr da.“",
+   "t": "Hinweis auf fehlende Mittel",
+   "say": "Danke für die offene Auskunft. Bitte halten Sie die Entscheidung mit dieser Begründung schriftlich fest. Ab wann wäre eine Förderung wieder möglich?",
+   "laws": [
+    "sgb10_35",
+    "sgb1_39"
+   ],
+   "next": [
+    "Schriftliche Entscheidung mit Begründung",
+    "Antrag bleibt gestellt; Termin für erneute Prüfung erfragen"
+   ],
+   "tac": [
+    "Ob Haushaltsmittel als Ermessensgrund tragen, prüft eine Beratungsstelle anhand des Bescheids. Im Gespräch nicht darüber diskutieren."
+   ],
+   "pl": [],
+   "g": "f"
+  },
+  {
+   "id": "zustaendig",
+   "q": "„Dafür bin ich nicht zuständig.“",
+   "t": "Zuständigkeit",
+   "say": "Dann bitte ich Sie, meinen Antrag an die zuständige Stelle weiterzuleiten und mir Namen und Kontakt zu nennen.",
+   "laws": [
+    "sgb1_16_2w",
+    "sgb1_16_2",
+    "sgb1_14_2"
+   ],
+   "next": [
+    "Antrag gilt ab Eingang als gestellt",
+    "Kontakt der zuständigen Stelle notieren"
+   ],
+   "tac": [
+    "Auch wenn die Person wirklich nicht zuständig ist: Weiterleiten muss sie trotzdem, und zwar unverzüglich."
+   ],
+   "pl": [],
+   "g": "z"
+  },
+  {
+   "id": "bewerben",
+   "q": "„Bewerben Sie sich erst mal, dann sehen wir weiter.“",
+   "t": "Bewerbungen und Gründung parallel",
+   "say": "Ich bewerbe mich gern parallel in einem vereinbarten Umfang. Über meinen Antrag bitte ich trotzdem jetzt zu entscheiden; die Überprüfung einer Selbständigkeit sieht das Gesetz nach einem Jahr vor.",
+   "laws": [
+    "sgb2_16b",
+    "sgb2_10",
+    "sgb2_15"
+   ],
+   "next": [
+    "Umfang der Bewerbungen im Kooperationsplan festhalten",
+    "Entscheidung über den Antrag schriftlich"
+   ],
+   "tac": [
+    "Konkrete Zahl vorschlagen, z. B. zwei Bewerbungen im Monat."
+   ],
+   "pl": [],
+   "g": "f"
+  },
+  {
+   "id": "formular",
+   "q": "„Ohne Formular haben Sie gar keinen Antrag gestellt.“",
+   "t": "Form des Antrags",
+   "say": "Ich fülle das Formular gern aus. Mein Antrag gilt aber ab meinem Schreiben vom {datum}; das Verfahren ist an keine bestimmte Form gebunden.",
+   "laws": [
+    "sgb10_9",
+    "sgb1_16_3",
+    "sgb2_37"
+   ],
+   "next": [
+    "Formular aushändigen lassen",
+    "Antragsdatum im Vermerk festhalten lassen"
+   ],
+   "tac": [],
+   "pl": [],
+   "g": "u"
+  },
+  {
+   "id": "schriftlich",
+   "q": "„Das kann ich Ihnen nicht schriftlich geben.“",
+   "t": "Schriftliche Bestätigung",
+   "say": "Für mich hängt viel an dieser Entscheidung. Ich bitte deshalb um eine schriftliche Bestätigung. Das Gesetz sieht sie vor, wenn man sie gleich verlangt; das tue ich hiermit.",
+   "laws": [
+    "sgb10_33"
+   ],
+   "next": [
+    "Bestätigung schriftlich oder elektronisch",
+    "Eigener Gesprächsvermerk über jobcenter.digital"
+   ],
+   "tac": [
+    "Das Verlangen muss unverzüglich kommen: also jetzt im Gespräch, nicht nächste Woche."
+   ],
+   "pl": [],
+   "g": "u"
+  },
+  {
+   "id": "riskant",
+   "q": "„Selbständigkeit ist zu riskant für Sie.“",
+   "t": "Beurteilung der Tragfähigkeit",
+   "say": "Die Tragfähigkeit soll eine fachkundige Stelle beurteilen. Ich lege die Stellungnahme der {{stelle}} vor, und meine Planung enthält einen Frühwarnpunkt nach sechs Monaten.",
+   "laws": [
+    "sgb2_16c3"
+   ],
+   "next": [
+    "Stellungnahme der fachkundigen Stelle",
+    "Entscheidung auf dieser Grundlage"
+   ],
+   "tac": [],
+   "pl": [],
+   "g": "f"
+  },
+  {
+   "id": "melden",
+   "q": "„Wir melden uns bei Ihnen.“",
+   "t": "Bearbeitungsdauer",
+   "say": "Vielen Dank. Bis wann ungefähr kann ich mit einer Entscheidung rechnen? Ich notiere mir das Datum.",
+   "laws": [
+    "sgb1_17"
+   ],
+   "next": [
+    "Datum notieren",
+    "Ohne Antwort bis dahin: schriftlich erinnern"
+   ],
+   "tac": [
+    "Untätigkeitsklage nie im Gespräch erwähnen; nur als letzter Schritt nach 6 Monaten."
+   ],
+   "pl": [
+    "sgg88"
+   ],
+   "g": "t"
+  },
+  {
+   "id": "neben",
+   "q": "„Machen Sie das doch erst nebenberuflich.“",
+   "t": "Haupt- oder Nebenerwerb",
+   "say": "Einstiegsgeld gibt es bei Aufnahme einer selbständigen Tätigkeit, und nur hauptberuflich erreiche ich die Umsätze aus dem Plan. Nebenberuflich bliebe ich länger auf Leistungen angewiesen.",
+   "laws": [
+    "sgb2_16b",
+    "sgb2_16c3",
+    "sgb2_11b"
+   ],
+   "next": [
+    "Entscheidung über die hauptberufliche Gründung"
+   ],
+   "tac": [
+    "Die Grenze von 15 Wochenstunden steht auf der Seite der Bundesagentur zum Einstiegsgeld, nicht im Gesetz."
+   ],
+   "pl": [],
+   "g": "f"
+  },
+  {
+   "id": "vermoegen",
+   "q": "„Sie haben doch noch Ersparnisse.“",
+   "t": "Vermögen",
+   "say": "Mein Vermögen liegt innerhalb der Freibeträge; die Nachweise habe ich dabei.",
+   "laws": [
+    "sgb2_12"
+   ],
+   "next": [
+    "Nachweise vorlegen"
+   ],
+   "tac": [
+    "Nur sagen, wenn es stimmt. Freibetrag nach Alter vorher prüfen."
+   ],
+   "pl": [],
+   "g": "f"
+  },
+  {
+   "id": "unterschrift",
+   "q": "„Unterschreiben Sie bitte hier.“",
+   "t": "Kooperationsplan und Vereinbarungen",
+   "say": "Ich lese das gern in Ruhe durch und gebe es Ihnen bis [Datum] zurück. Können Sie mir eine Kopie mitgeben?",
+   "laws": [
+    "sgb2_15"
+   ],
+   "next": [
+    "Kopie mitnehmen",
+    "Offene Fragen schriftlich klären"
+   ],
+   "tac": [
+    "Nichts unterschreiben, was du nicht gelesen hast."
+   ],
+   "pl": [],
+   "g": "u"
+  },
+  {
+   "id": "beistand",
+   "q": "„Ihre Begleitung muss draußen warten.“",
+   "t": "Begleitung zum Termin",
+   "say": "Ich habe das Recht, mit einem Beistand zu erscheinen. Meine Begleitung hört zu und unterstützt mich.",
+   "laws": [
+    "sgb10_13"
+   ],
+   "next": [
+    "Gespräch mit Beistand fortsetzen"
+   ],
+   "tac": [],
+   "pl": [],
+   "g": "t"
+  },
+  {
+   "id": "akte",
+   "q": "„Das steht so in Ihrer Akte.“",
+   "t": "Einsicht in die Akte",
+   "say": "Dann würde ich diesen Vermerk gern einsehen.",
+   "laws": [
+    "sgb10_25"
+   ],
+   "next": [
+    "Termin zur Akteneinsicht vereinbaren"
+   ],
+   "tac": [],
+   "pl": [],
+   "g": "u"
+  },
+  {
+   "id": "darlehen",
+   "q": "„Wir geben das nur als Darlehen.“",
+   "t": "Darlehen statt Zuschuss",
+   "say": "Das Gesetz sieht beides vor. Ein Darlehen nehme ich an, wenn die Rückzahlung tragbar ist. Bitte schicken Sie mir die Bedingungen schriftlich.",
+   "laws": [
+    "sgb2_16c1"
+   ],
+   "next": [
+    "Raten und Beginn der Rückzahlung schriftlich"
+   ],
+   "tac": [],
+   "pl": [],
+   "g": "f"
+  },
+  {
+   "id": "vorgaenger",
+   "q": "„Ihr Vorgänger hat notiert …“",
+   "t": "Frühere Vermerke in der Akte",
+   "say": "Den Vermerk kenne ich nicht; ich würde ihn gern einsehen. Bitte bilden Sie sich anhand meiner Unterlagen ein eigenes Bild.",
+   "laws": [
+    "sgb10_25",
+    "sgb1_39"
+   ],
+   "next": [
+    "Akteneinsicht vereinbaren",
+    "Entscheidung auf Grundlage der aktuellen Unterlagen"
+   ],
+   "tac": [
+    "Den alten Konflikt nicht ansprechen. Nur Akteneinsicht verlangen, wenn der Vermerk die Entscheidung beeinflusst."
+   ],
+   "pl": [],
+   "g": "t"
+  },
+  {
+   "id": "einarbeiten",
+   "q": "„Ich muss mich erst einarbeiten.“",
+   "t": "Bearbeitung nach Zuständigkeitswechsel",
+   "say": "Selbstverständlich. Bis wann ungefähr können wir über meinen Antrag vom {datum} sprechen?",
+   "laws": [
+    "sgb1_17",
+    "sgb2_37"
+   ],
+   "next": [
+    "Termin oder Zeitraum notieren",
+    "Antrag gilt weiter ab {datum}"
+   ],
+   "tac": [
+    "Freundlich bleiben; die Unterlagen dalassen, damit die Einarbeitung leicht fällt."
+   ],
+   "pl": [],
+   "g": "z"
+  },
+  {
+   "id": "agentur",
+   "g": "z",
+   "q": "„Da müssen Sie zur Agentur für Arbeit.“",
+   "t": "Zuständigkeit Jobcenter oder Agentur",
+   "say": "Ich beziehe Grundsicherungsgeld. Für Einstiegsgeld und Zuschüsse nach dem SGB II ist deshalb das Jobcenter zuständig, nicht die Agentur für Arbeit. Bitte nehmen Sie meinen Antrag hier auf.",
+   "laws": [
+    "sgb2_44b",
+    "sgb2_16b",
+    "sgb1_16_2w"
+   ],
+   "next": [
+    "Antrag hier aufnehmen lassen",
+    "Falls doch verwiesen: Weiterleitung und Eingangsdatum schriftlich bestätigen lassen"
+   ],
+   "tac": [
+    "Gründungszuschuss (Arbeitslosengeld I) ist Sache der Agentur, Einstiegsgeld (Grundsicherungsgeld) Sache des Jobcenters. In Optionskommunen heißt das Jobcenter manchmal anders, zuständig ist es trotzdem."
+   ],
+   "pl": []
+  },
+  {
+   "id": "abteilung",
+   "g": "z",
+   "q": "„Dafür ist eine andere Abteilung zuständig.“",
+   "t": "Interne Zuständigkeit",
+   "say": "Dann bitte ich Sie, mein Anliegen intern weiterzugeben und mir zu sagen, wer es bearbeitet und wie ich die Person erreiche. Mein Antrag liegt dem Jobcenter seit {datum} vor.",
+   "laws": [
+    "sgb1_16_2w",
+    "sgb1_16_2",
+    "sgb1_17"
+   ],
+   "next": [
+    "Name, Abteilung und Durchwahl notieren",
+    "Eingangsdatum bleibt das Datum des ersten Kontakts"
+   ],
+   "tac": [
+    "Für Sie ist das Jobcenter eine Behörde. Wie es intern verteilt, ist nicht Ihr Problem; das Datum des ersten Eingangs zählt."
+   ],
+   "pl": []
+  },
+  {
+   "id": "beratung",
+   "g": "z",
+   "q": "„Beraten darf ich Sie dazu nicht.“",
+   "t": "Anspruch auf Beratung",
+   "say": "Ich möchte keine Rechtsauskunft zu meinem Einzelfall, sondern Beratung zu meinen Rechten und Pflichten bei einer Gründung aus dem Leistungsbezug. Dafür ist das Jobcenter zuständig, weil ich die Leistung hier beantrage.",
+   "laws": [
+    "sgb1_14",
+    "sgb1_14_2"
+   ],
+   "next": [
+    "Beratungstermin vereinbaren",
+    "Fragen vorab schriftlich schicken"
+   ],
+   "tac": [
+    "Fragen offen und konkret stellen: „Welche Unterlagen brauchen Sie für die Entscheidung?“ statt „Bekomme ich das?“"
+   ],
+   "pl": []
+  },
+  {
+   "id": "annehmen",
+   "g": "z",
+   "q": "„Das nehme ich so nicht an.“",
+   "t": "Entgegennahme des Antrags",
+   "say": "Bitte nehmen Sie meinen Antrag trotzdem entgegen und bestätigen Sie mir das Eingangsdatum. Ob er Erfolg hat, entscheiden Sie danach; fehlende Angaben reiche ich nach.",
+   "laws": [
+    "sgb10_20",
+    "sgb1_16_3",
+    "sgb10_9"
+   ],
+   "next": [
+    "Eingangsstempel auf der Kopie oder Eingangsbestätigung",
+    "Liste der fehlenden Unterlagen erbitten"
+   ],
+   "tac": [
+    "Immer eine Kopie mitbringen und stempeln lassen. Online: über jobcenter.digital senden und die Bestätigung speichern."
+   ],
+   "pl": []
+  },
+  {
+   "id": "hotline",
+   "g": "z",
+   "q": "„Rufen Sie die Hotline an.“ / „Machen Sie das online.“",
+   "t": "Weg der Antragstellung",
+   "say": "Das mache ich gern zusätzlich. Ich bin aber jetzt hier und möchte mein Anliegen auch jetzt abgeben. Können Sie es aufnehmen und mir den Eingang bestätigen?",
+   "laws": [
+    "sgb10_9",
+    "sgb10_20",
+    "sgb1_17"
+   ],
+   "next": [
+    "Eingang bestätigen lassen",
+    "Zusätzlich über jobcenter.digital senden"
+   ],
+   "tac": [
+    "Der Antrag ist an keine Form gebunden. Ein zweiter Weg schadet nicht, ein fehlender Nachweis schon."
+   ],
+   "pl": []
+  },
+  {
+   "id": "urlaub",
+   "g": "z",
+   "q": "„Ihre Ansprechperson ist nicht da.“",
+   "t": "Vertretung",
+   "say": "Wer vertritt die Person? Mein Anliegen hat eine Frist, weil ich erst nach der Entscheidung beginnen kann. Bitte nehmen Sie es auf oder geben Sie es an die Vertretung.",
+   "laws": [
+    "sgb1_17",
+    "sgb2_37"
+   ],
+   "next": [
+    "Namen der Vertretung notieren",
+    "Anliegen schriftlich nachreichen, Eingang bestätigen lassen"
+   ],
+   "tac": [
+    "Nicht auf die Rückkehr warten. Vertretungsregeln gibt es in jedem Jobcenter."
+   ],
+   "pl": []
+  },
+  {
+   "id": "weiterleiten",
+   "g": "z",
+   "q": "„Ich leite das weiter.“",
+   "t": "Weiterleitung nachvollziehbar machen",
+   "say": "Danke. An wen genau, und bis wann kann ich mit einer Rückmeldung rechnen? Ich notiere mir das.",
+   "laws": [
+    "sgb1_16_2w",
+    "sgb1_17"
+   ],
+   "next": [
+    "Empfänger und Datum der Weiterleitung notieren",
+    "Ohne Rückmeldung bis zum genannten Datum: schriftlich nachfragen"
+   ],
+   "tac": [
+    "Weiterleiten ohne Namen und Datum heißt oft: liegt irgendwo. Freundlich nach beidem fragen."
+   ],
+   "pl": [
+    "sgg88"
+   ]
+  },
+  {
+   "id": "angekommen",
+   "g": "u",
+   "q": "„Ihre Unterlagen sind bei uns nicht angekommen.“",
+   "t": "Eingang von Unterlagen",
+   "say": "Ich habe sie am [Datum] über [Weg] geschickt; hier ist die Bestätigung. Ich gebe Ihnen gern sofort eine Kopie und bitte um eine Eingangsbestätigung.",
+   "laws": [
+    "sgb1_16_2",
+    "sgb1_60"
+   ],
+   "next": [
+    "Kopie übergeben, Eingang bestätigen lassen",
+    "Ursprüngliches Sendedatum festhalten lassen"
+   ],
+   "tac": [
+    "Deshalb immer mit Nachweis senden: jobcenter.digital mit Bestätigung, Einwurf mit Zeugin oder persönlich mit Stempel."
+   ],
+   "pl": []
+  },
+  {
+   "id": "intern",
+   "g": "f",
+   "q": "„Das ist bei uns intern so geregelt.“",
+   "t": "Interne Weisung und Ermessen",
+   "say": "Das verstehe ich. Über meinen Antrag muss trotzdem im Einzelfall entschieden werden. Bitte entscheiden Sie schriftlich und nennen Sie die Gründe.",
+   "laws": [
+    "sgb1_39",
+    "sgb1_2",
+    "sgb10_35"
+   ],
+   "next": [
+    "Schriftlicher Bescheid mit Begründung"
+   ],
+   "tac": [
+    "Eine Weisung ersetzt keine Ermessensentscheidung im Einzelfall. Das prüft später die Beratungsstelle anhand des Bescheids."
+   ],
+   "pl": [
+    "sgg84"
+   ]
+  },
+  {
+   "id": "system",
+   "g": "f",
+   "q": "„Das lässt das System nicht zu.“",
+   "t": "Entscheidung statt Software",
+   "say": "Dann bitte ich um eine schriftliche Entscheidung, damit ich nachvollziehen kann, woran es liegt.",
+   "laws": [
+    "sgb10_35",
+    "sgb10_33"
+   ],
+   "next": [
+    "Schriftliche Entscheidung mit Begründung"
+   ],
+   "tac": [
+    "Software entscheidet nicht, Menschen tun es. Nicht streiten, nur die Entscheidung schriftlich verlangen."
+   ],
+   "pl": []
+  },
+  {
+   "id": "kunden",
+   "g": "f",
+   "q": "„Kommen Sie wieder, wenn Sie Kunden haben.“",
+   "t": "Reihenfolge Antrag und Start",
+   "say": "Feste Kunden darf ich erst nach der Anmeldung annehmen, und die Förderung gibt es nicht für Zeiten vor dem Antrag. Deshalb beantrage ich jetzt und lege Ihnen Interessenten und Absichtserklärungen vor.",
+   "laws": [
+    "sgb2_37",
+    "sgb2_16b",
+    "gewo14"
+   ],
+   "next": [
+    "Absichtserklärungen oder Anfragen vorlegen",
+    "Entscheidung über den Antrag vor dem Start"
+   ],
+   "tac": [
+    "Nie zuerst starten und dann fragen: Das kann die Förderung kosten."
+   ],
+   "pl": []
+  },
+  {
+   "id": "termin",
+   "g": "t",
+   "q": "„Ohne Termin kann ich nichts für Sie tun.“",
+   "t": "Anliegen ohne Termin",
+   "say": "Dann lasse ich mein Schreiben hier und bitte um einen Eingangsstempel auf meiner Kopie. Einen Termin nehme ich gern, wann ist der nächste frei?",
+   "laws": [
+    "sgb10_9",
+    "sgb10_20",
+    "sgb1_16_2"
+   ],
+   "next": [
+    "Eingangsstempel auf der Kopie",
+    "Termin notieren"
+   ],
+   "tac": [
+    "Das Abgeben eines Antrags braucht keinen Termin."
+   ],
+   "pl": []
+  },
+  {
+   "id": "wiederkommen",
+   "g": "t",
+   "q": "„Da müssen Sie nochmal wiederkommen.“",
+   "t": "Fehlende Unterlagen",
+   "say": "Gern. Was genau fehlt noch? Bitte geben Sie mir die Liste schriftlich, dann bringe ich beim nächsten Mal alles vollständig mit.",
+   "laws": [
+    "sgb1_16_3",
+    "sgb10_20"
+   ],
+   "next": [
+    "Schriftliche Liste der fehlenden Unterlagen",
+    "Antrag gilt weiter ab dem ersten Eingang"
+   ],
+   "tac": [
+    "Ohne Liste kommt man oft dreimal. Die Liste ist der wichtigste Zettel des Tages."
+   ],
+   "pl": []
+  },
+  {
+   "id": "widerspruch",
+   "q": "„Dann legen Sie doch Widerspruch ein.“",
+   "t": "Rechtsbehelf",
+   "say": "Dafür brauche ich die Entscheidung schriftlich mit Begründung. Lieber wäre mir eine Lösung heute.",
+   "laws": [
+    "sgb10_35",
+    "sgg84"
+   ],
+   "next": [
+    "Schriftlicher Bescheid",
+    "Widerspruch innerhalb eines Monats"
+   ],
+   "tac": [],
+   "pl": [],
+   "g": "f"
+  }
+ ],
+ "rechteGruppen": [
+  [
+   "alle",
+   "Alle"
+  ],
+  [
+   "z",
+   "Zuständigkeit & Abwimmeln"
+  ],
+  [
+   "f",
+   "Förderung & Entscheidung"
+  ],
+  [
+   "u",
+   "Unterlagen & Form"
+  ],
+  [
+   "t",
+   "Termin & Gespräch"
+  ]
+ ],
+ "mitbringen": [
+  "Businessplan, zweimal ausgedruckt (eins zum Dalassen)",
+  "Lebenslauf und Zeugnisse",
+  "Kostenvoranschläge für {{zuschussKurz}}",
+  "Stellungnahme der {{stelle}} zur Tragfähigkeit (oder Terminbestätigung)",
+  "Absichtserklärungen von Kunden, falls vorhanden",
+  "{{^belege}}",
+  "Personalausweis, BG-Nummer, Kopie Ihres Antrags mit Eingangsbestätigung",
+  "Block und Stift; Beistand, falls gewünscht"
+ ],
+ "eigeneFragen": [
+  "Wie hoch wäre das Einstiegsgeld ungefähr, und für wie lange?",
+  "Bis wann entscheiden Sie über Einstiegsgeld und Zuschuss?",
+  "Welche fachkundige Stelle akzeptieren Sie für die Tragfähigkeit?",
+  "Gibt es bei Ihnen ein Team für Selbständige, und wer ist dort mein Ansprechpartner?",
+  "Bekomme ich die Entscheidung als schriftlichen Bescheid?",
+  "Was soll im Kooperationsplan zur Selbständigkeit stehen?"
+ ],
+ "danach": [
+  "Zusammenfassung über jobcenter.digital senden, Eingangsbestätigung speichern",
+  "Termin mit Erinnerung zwei Tage vorher in den Kalender",
+  "Gründungsberatung der {{stelle}} buchen und Stellungnahme zur Tragfähigkeit anfragen",
+  "Kostenvoranschläge einholen",
+  "Platzhalter im Businessplan ausfüllen",
+  "Ohne Antwort nach zwei Wochen: schriftlich freundlich erinnern"
+ ],
+ "ablauf": [
+  [
+   "5 Min.",
+   "Ziel des Gesprächs",
+   "Das Vorhaben in drei Sätzen"
+  ],
+  [
+   "10 Min.",
+   "Angebot und Arbeitsweise",
+   "{{^agendaZeigen}}"
+  ],
+  [
+   "10 Min.",
+   "Zahlen",
+   "Kapitalbedarf, Rentabilität, Liquidität"
+  ],
+  [
+   "15 Min.",
+   "Ihre Fragen",
+   "Antworten mit Beleg im Businessplan"
+  ],
+  [
+   "5 Min.",
+   "Nächste Schritte",
+   "Zusagen, Zeitrahmen, Kooperationsplan"
+  ]
+ ],
+ "kennzahlen": [
+  [
+   "Angebot",
+   "{{^angebotKurz}}"
+  ],
+  [
+   "Rechtsform",
+   "{{rechtsform}}"
+  ],
+  [
+   "Arbeitszeit",
+   "hauptberuflich, {{arbeitszeit}}"
+  ],
+  [
+   "Laufende Kosten",
+   "ca. {{kostenMonat}} pro Monat"
+  ],
+  [
+   "Umsatz Jahr 1 / 2 / 3",
+   "{{umsatzReihe}}"
+  ],
+  [
+   "Gewinn Jahr 1 / 2 / 3",
+   "{{gewinnReihe}}"
+  ],
+  [
+   "Ohne Grundsicherungsgeld",
+   "voraussichtlich ab Monat {{ausstieg}}"
+  ],
+  [
+   "Frühwarnpunkt",
+   "Gewinn Monate 1–6 unter {{fruehwarn}} → gemeinsame Anpassung"
+  ],
+  [
+   "Kontrolle",
+   "monatlicher Kurzbericht, Anlage EKS, Meilensteine"
+  ]
+ ],
+ "texte": {
+  "vorhabenKurz": "{{vorhabenKurz}}",
+  "vorhabenText": "{{vorhabenText}}",
+  "beantragtZuschuss": "Zuschuss für {{zuschussZweck}} nach § 16c Abs. 1 SGB II: {{zuschuss}} ({{zuschussKurz}})",
+  "beispielHinweis": "Fragen, Antworten und Zahlen stammen aus einem erfundenen Beispiel: {{paketBeschreibung}} Person und Zahlen sind ausgedacht."
+ }
+}

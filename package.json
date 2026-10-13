@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0 --port 3000",
     "build": "node scripts/export-lab-inbox.mjs && tsc && vite build",
-    "lint": "tsc --noEmit && npm run check:dosen && npm run check:books && npm run check:idea-frontmatter && npm run check:protokoll && npm run check:friedhof && npm run check:quellen && npm run check:diagramme && npm run check:lab-pr && npm run check:verwandte",
+    "lint": "tsc --noEmit && npm run check:dosen && npm run check:books && npm run check:idea-frontmatter && npm run check:protokoll && npm run check:friedhof && npm run check:quellen && npm run check:diagramme && npm run check:lab-pr && npm run check:verwandte && npm run check:gn",
     "preview": "vite preview --port 3000",
     "check:dosen": "node scripts/check-dosen-drift.mjs",
     "test": "vitest run && npm run test:bird-forecast && npm run test:bird-benchmark && npm run test:bird-map && npm run test:lab-inbox",
@@ -40,6 +40,8 @@
     "export:lab-inbox": "node scripts/export-lab-inbox.mjs",
     "test:lab-inbox": "node scripts/run-node-test.mjs scripts/lab-inbox.test.mjs",
     "check:gn-zitate": "node scripts/check-gruendungsnavigator-zitate.mjs",
+    "build:gn": "node scripts/build-gruendungsnavigator.mjs",
+    "check:gn": "node scripts/build-gruendungsnavigator.mjs --check",
     "check:mobile": "node scripts/check-mobile.mjs",
     "check:chemhazard": "node scripts/chemhazard-sds.mjs check",
     "chemhazard:barcodes": "node scripts/chemhazard-sds.mjs barcodes"

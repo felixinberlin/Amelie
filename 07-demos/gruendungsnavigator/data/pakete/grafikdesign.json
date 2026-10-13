@@ -1,0 +1,130 @@
+{
+ "$schema": "../paket.schema.json",
+ "id": "grafikdesign",
+ "titel": "Grafikdesign",
+ "beschreibung": "Gründung als freie Grafikdesignerin für kleine Betriebe und Vereine aus dem Grundsicherungsgeld.",
+ "erfunden": true,
+ "werte": {
+  "beruf": "Grafikdesignerin",
+  "erfahrung": "seit neun Jahren",
+  "erfahrungKurz": "neun Jahre Grafikdesign in Agentur und Druckerei",
+  "vorhabenKurz": "Erscheinungsbild und Drucksachen für kleine Betriebe",
+  "vorhabenText": "Logos, Erscheinungsbild und Drucksachen für kleine Betriebe, Praxen und Vereine. Dazu feste Monatspakete für Betriebe, die regelmäßig Flyer, Plakate und Beiträge für soziale Netzwerke brauchen.",
+  "kernbotschaft": "Ich bin seit neun Jahren Grafikdesignerin und habe in einer Agentur und einer Druckerei gearbeitet. Mein Businessplan ist fertig, mein Portfolio auch. Nach meiner Rechnung decke ich ab dem zweiten Jahr meinen Lebensunterhalt selbst. Ich möchte das sauber und mit Ihnen gemeinsam angehen.",
+  "stelle": "Wirtschaftsförderung",
+  "zuschussZweck": "Arbeitsmittel",
+  "zuschussPosten": [
+   {
+    "was": "einen farbverbindlichen Monitor",
+    "kurz": "Monitor",
+    "betrag": 700
+   },
+   {
+    "was": "ein Grafiktablett",
+    "kurz": "Grafiktablett",
+    "betrag": 450
+   },
+   {
+    "was": "die Gestaltungssoftware für ein Jahr",
+    "kurz": "Software",
+    "betrag": 700
+   }
+  ],
+  "kostenMonat": 140,
+  "umsatz": [
+   19000,
+   34000,
+   46000
+  ],
+  "gewinn": [
+   16500,
+   30000,
+   41000
+  ],
+  "schwelleMonat": 2000,
+  "fruehwarn": 2500,
+  "kapitalbedarf": 2200,
+  "ausstieg": "14 bis 17",
+  "arbeitszeit": "35 bis 40 Stunden pro Woche",
+  "arbeitszeitAufteilung": "etwa 65 % Gestaltung, 20 % Akquise und Kundengespräche, 15 % Verwaltung",
+  "rechtsform": "Einzelunternehmen",
+  "anmeldung": "Anmeldung beim Finanzamt",
+  "steuer": "Ob meine Tätigkeit als freier Beruf oder als Gewerbe gilt, kläre ich mit dem Finanzamt; im ersten Jahr nutze ich die Kleinunternehmerregelung.",
+  "angebotKurz": "Logo und Erscheinungsbild als Paket (ab 1.400 €), Drucksachen nach Aufwand (60 €/Stunde), Monatspakete für Betriebe (ab 290 €/Monat)",
+  "vorbereitet": "Businessplan, Portfolio, Preisliste, Gespräche mit drei Betrieben",
+  "vorbereitungBeispiel": "Portfolio",
+  "belege": "Portfolio mit Arbeitsproben",
+  "belegEinzeln": "ein fertiges Erscheinungsbild aus dem Portfolio",
+  "agendaZeigen": "Portfolio, Preisliste",
+  "wiederkehrend": "Monatspakete für Betriebe",
+  "anpassung": "mehr Aufträge von Agenturen als freie Mitarbeiterin oder eine Teilzeitstelle",
+  "vorsichtigeAnnahme": "Gerechnet sind sechs Erscheinungsbilder und drei Monatspakete im ersten Jahr, die Monatspakete erst ab dem vierten Monat.",
+  "einfachErklaert": "Ich gestalte Logos, Flyer und Plakate für kleine Betriebe und sorge dafür, dass alles zusammenpasst.",
+  "abgrenzung": "Vorlagen aus dem Internet sind billig, sehen aber bei allen gleich aus. Agenturen sind für kleine Betriebe zu teuer. Ich biete Agenturqualität zu festen Preisen und kenne aus der Druckerei die Fehler, die beim Drucken Geld kosten."
+ },
+ "ueberschreiben": {
+  "fragen/kunden": {
+   "a": "Kleine Betriebe, Praxen und Vereine in der Region, die ein Erscheinungsbild oder regelmäßig Drucksachen brauchen, dazu Agenturen, die Arbeit abgeben. Mit drei Betrieben habe ich gesprochen [Ergebnis eintragen]; feste Aufträge nehme ich erst nach der Anmeldung an."
+  },
+  "fragen/kundengewinnung": {
+   "a": "Über mein Portfolio im Netz, Empfehlungen früherer Kunden aus der Druckerei, Netzwerktreffen der Wirtschaftsförderung und direkte Ansprache von Betrieben, deren Auftritt veraltet ist. Monatspakete für Betriebe bauen wiederkehrende Einnahmen auf."
+  },
+  "fragen/genehmigung": {
+   "a": "Eine Erlaubnis brauche ich nicht. Ich melde mich vor dem ersten Auftrag beim Finanzamt an und kläre dabei, ob die Tätigkeit als freier Beruf oder als Gewerbe gilt [Ergebnis eintragen]; bei Gewerbe melde ich es zusätzlich an. Ob die Künstlersozialkasse für mich zuständig ist, prüfe ich vorher."
+  },
+  "fragen/zahlungsausfall": {
+   "a": "Bei Erscheinungsbildern arbeite ich mit 40 % Anzahlung. Die Druckdaten gebe ich erst nach der Schlusszahlung heraus. Monatspakete werden im Voraus bezahlt."
+  },
+  "fragen/tragfaehigkeit": {
+   "a": "Gern. Ich habe bei der Gründungsberatung der Wirtschaftsförderung einen Termin [Datum] angefragt. Akzeptieren Sie diese Stelle, oder bevorzugen Sie eine andere fachkundige Stelle?",
+   "show": "Terminbestätigung der Wirtschaftsförderung"
+  }
+ },
+ "fragen": [
+  {
+   "id": "ki-bilder",
+   "nach": "konkurrenz",
+   "c": "Kunden & Markt",
+   "q": "Macht die KI Logos nicht bald umsonst?",
+   "a": "Bilder kann ein Programm erzeugen. Ein Betrieb braucht aber ein Zeichen, das zu ihm passt, in allen Größen funktioniert, druckbar ist und ihm rechtlich gehört. Diese Beratung und die Verantwortung dafür verkaufe ich.",
+   "show": "Portfolio: Beispiel mit Entwürfen und fertigem Ergebnis",
+   "laws": []
+  },
+  {
+   "id": "ksk",
+   "nach": "anmeldung",
+   "c": "Pflichten & Ablauf",
+   "q": "Sind Sie über die Künstlersozialkasse versichert?",
+   "a": "Das prüfe ich vor dem Start: Die Künstlersozialkasse entscheidet selbst, ob meine Tätigkeit darunter fällt. Das Ergebnis teile ich Ihnen und meiner Krankenkasse mit, weil es die Krankenversicherung betrifft.",
+   "show": "Antrag oder Fragebogen der Künstlersozialkasse",
+   "laws": []
+  },
+  {
+   "id": "monitor",
+   "nach": "zuschuss",
+   "c": "Zahlen",
+   "q": "Warum ein besonderer Monitor?",
+   "a": "Für Drucksachen müssen die Farben am Bildschirm stimmen. Ein farbverbindlicher Monitor verhindert Fehldrucke, die sonst ich bezahlen müsste. Mein jetziger Bildschirm [Modell] lässt sich nicht kalibrieren.",
+   "show": "Kostenvoranschlag, Gerätedaten",
+   "laws": [
+    "sgb2_16c1"
+   ]
+  }
+ ],
+ "pruefpunkte": [
+  "Freier Beruf oder Gewerbe? Das Finanzamt entscheidet; bei Gewerbe kommt die Gewerbeanmeldung dazu.",
+  "Künstlersozialkasse: Prüfen lassen, ob Sie versicherungspflichtig sind; das ändert Kranken- und Rentenversicherung.",
+  "Fachkundige Stelle: Fragen Sie das Jobcenter, welche Stelle es für die Stellungnahme zur Tragfähigkeit akzeptiert, wenn Sie nicht Mitglied einer Kammer sind.",
+  "Nutzungsrechte: Im Vertrag festhalten, welche Rechte der Kunde an Logo und Entwürfen bekommt."
+ ],
+ "mitbringen": [
+  "Businessplan, zweimal ausgedruckt (eins zum Dalassen)",
+  "Lebenslauf und Zeugnisse",
+  "Kostenvoranschläge für Monitor, Grafiktablett, Software",
+  "Stellungnahme einer fachkundigen Stelle zur Tragfähigkeit (oder Terminbestätigung)",
+  "Portfolio: Link und fünf Arbeitsproben auf Papier",
+  "Preisliste",
+  "Personalausweis, BG-Nummer, Kopie Ihres Antrags mit Eingangsbestätigung",
+  "Block und Stift; Beistand, falls gewünscht"
+ ]
+}

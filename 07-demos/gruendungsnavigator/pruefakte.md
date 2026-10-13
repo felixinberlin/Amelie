@@ -1,6 +1,6 @@
 # Prüfakte: Gründungsnavigator
 
-**Dose:** [`gruendungsnavigator`](../../05-dosen/gruendungsnavigator.md) · **Stand:** 11.10.2026 · CC0
+**Dose:** [`gruendungsnavigator`](../../05-dosen/gruendungsnavigator.md) · **Stand:** 13.10.2026 · CC0
 
 Alles, was über diese Dose geprüft wurde, an einem Ort: Urteil, Vektoren, Zitate, Handy, offene Bedingungen. Die Quellen der Einträge stehen jeweils dabei.
 
@@ -19,13 +19,14 @@ Unabhängiger Review am 11.10.2026, Volltext in `06-suche/amelie-classification-
 
 ## 2. Zitat-Abgleich gegen die Amtsquelle
 
-Prüfbefehl: `npm run check:gn-zitate` (Skript `scripts/check-gruendungsnavigator-zitate.mjs`, braucht Netz). Er hält jedes als wörtlich markierte Zitat beider Seiten gegen gesetze-im-internet.de.
+Prüfbefehl: `npm run check:gn-zitate` (Skript `scripts/check-gruendungsnavigator-zitate.mjs`, braucht Netz). Er hält jedes als wörtlich markierte Zitat gegen gesetze-im-internet.de. Seit 13.10.2026 liest er das gemeinsame Register `data/normen.json` statt der zwei Konstanten in den Seiten.
 
 | Lauf | Ergebnis |
 |---|---|
 | 11.10.2026, erster Lauf | 4 Abweichungen trotz Handprüfung am selben Tag |
 | 11.10.2026, nach Korrektur | 39/39 stimmen, 0 Abweichungen, 0 nicht abrufbar |
 | 11.10.2026, nach 5 neuen Normen (§ 2 Abs. 2, § 14 S. 2, § 16 Abs. 2 S. 1 SGB I; § 20 SGB X; § 44b SGB II) und § 17 Abs. 1 SGB I neu im Wortlaut | 45/45 stimmen, 0 Abweichungen, 0 nicht abrufbar |
+| 13.10.2026, gemeinsames Register (Ticket 01; Zitate, die auf beiden Seiten standen, zählen jetzt einmal) | 30/31 maschinell, 0 Abweichungen; § 138 AO aus Node zweimal nicht abrufbar, per `curl` geholt und von Hand verglichen: stimmt. Also 31/31 |
 
 Die vier korrigierten Stellen:
 
@@ -40,13 +41,21 @@ Ein gescheiterter Abruf zählt nicht als Abweichung; der Befehl meldet ihn getre
 
 ## 3. Tests des Kerns
 
-`npx vitest run src/engine/gruendungsnavigator`. Die Tests lesen die Daten direkt aus den ausgelieferten HTML-Seiten:
+`npx vitest run src/engine/gruendungsnavigator`. Seit Ticket 01 (13.10.2026) lesen die Tests die Dateien in `data/` und prüfen mit einem Drift-Wächter, dass die in die Seiten eingebauten Daten genau diesen Dateien entsprechen:
 
 - Fristen (Monatsrechnung, Schaltjahr, Werktag-Verschiebung, Feiertage), Freibetrag § 11b, Reihenfolge § 37 Abs. 2, Normstand-Wächter.
 - Telefonbaum: Umfang, keine toten Knoten, jeder Normverweis löst auf, jeder Weg endet.
-- Normregister beider Seiten: Link vorhanden, genau eins von Wortlaut oder Kurzfassung, gleiche Zitate auf beiden Seiten.
+- Normregister (ein Register für beide Seiten): Links vorhanden, genau eins von Wortlaut oder Kurzfassung, Fassung und Prüfdatum je Norm.
 - Sprachwächter: kein „garantiert“, „Anspruch besteht“, „unzulässig“, „rechtswidrig“.
 - **Zahlen-Wächter:** Jede Zahl vor „Fragen“, „Rechte-Karten“, „Normen“ oder „Antworten“ in README, Dossiers, Konzept, `dosen.ts` und Simulator muss eine echte Zahl der Seiten sein. Er fand beim ersten Lauf „31 Fragen“ für die Fall-Landkarte; die Seite hat 29.
+
+- **Branchenpakete** (`paket.test.ts`, 57 Tests): jedes Paket gegen das Schema (ajv) und gegen `pruefePaket` (Zuschuss höchstens 5.000 €, Gewinn nicht über Umsatz, Kosten und Schwelle stimmig, Überschreibungen treffen, Normen im Register, keine offenen Platzhalter, keine Versprechenswörter). Zu jeder Regel eine Gegenprobe mit absichtlich falschem Eingang. Die Formprüfung im Browser (`pruefeStruktur`) muss dieselben kaputten Pakete ablehnen wie das Schema.
+
+## 3a. Branchenpakete: was geprüft ist und was nicht (13.10.2026)
+
+Geprüft: Zahlen in sich stimmig (Tests oben), alle sieben Pakete im Browser bei 360 px ohne offene Platzhalter, ohne JS-Fehler und ohne waagrechtes Scrollen; Paketwechsel, eigene Fassung, Download, Upload (auch einer absichtlich kaputten Datei, die abgelehnt wird) und Übernahme alter Eingaben mit Playwright.
+
+Nicht geprüft: Die Branchenangaben (Preise, Stundensätze, Abläufe, „Selbst klären“-Punkte wie Handwerkskammer, Reisegewerbekarte, Künstlersozialkasse, Anerkennung für den Entlastungsbetrag, Verpackungsregister) stammen aus allgemeinem Wissen, nicht aus einer Primärquelle und nicht von einer Kammer oder Beratungsstelle. Sie sind darum als Fragen formuliert („klären Sie bei …“) und nennen keine Paragrafen. Vor einer Empfehlung an Betroffene sollte je Branche eine fachkundige Stelle drüberlesen.
 
 ## 4. Handy
 

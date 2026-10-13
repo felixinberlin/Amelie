@@ -1,11 +1,13 @@
 // Gründungsnavigator — Vitest-Suite. Lizenz: CC0 1.0 Public Domain.
 //
 // Zwei Teile: der reine Kern (Fristen, Freibetrag, Reihenfolge, Sprache) und
-// Drift-Wächter über die ausgelieferten Demo-Seiten in public/gruendungsnavigator/.
-// Die Demo-Daten werden aus dem HTML gelesen, damit Seite und Kern nicht
-// auseinanderlaufen.
+// Wächter über die Inhalte der Demo-Seiten. Die Inhalte stehen seit Ticket 01
+// als Daten in 07-demos/gruendungsnavigator/data/ und werden mit
+// scripts/build-gruendungsnavigator.mjs in die Seiten eingebaut; ein Wächter
+// prüft, dass die eingebauten Daten den Dateien entsprechen. Zahlen und Texte
+// gelten für das Referenzpaket Webentwicklung, die Pakete selbst prüft paket.test.ts.
 import { describe, it, expect } from 'vitest';
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 import {
   plusMonate,
@@ -27,33 +29,39 @@ import {
   RECHTSSTAND,
   type BaumSchritt,
 } from './gruendungsnavigator';
+import { materialisiereNavigator, materialisiereLandkarte, type Paket, type NavigatorDaten, type LandkartenDaten } from './paket';
 
 const ROOT = resolve(__dirname, '../../..');
 const NAV = readFileSync(resolve(ROOT, 'public/gruendungsnavigator/index.html'), 'utf8');
 const KARTE = readFileSync(resolve(ROOT, 'public/gruendungsnavigator/fall-landkarte.html'), 'utf8');
+const DATA = resolve(ROOT, '07-demos/gruendungsnavigator/data');
+const json = <T,>(datei: string): T => JSON.parse(readFileSync(resolve(DATA, datei), 'utf8')) as T;
 
-/** Liest `const NAME = …;` aus einem Script-Block der Demo, mit den davor definierten Konstanten. */
-function demoKonstante<T>(html: string, name: string, prelude: string): T {
-  const start = html.indexOf(`const ${name} = `);
-  if (start < 0) throw new Error(`Konstante ${name} fehlt in der Demo`);
-  const ab = start + `const ${name} = `.length;
-  // Ende: die erste Zeile, die mit "];" oder "};" schließt
-  const ende = html.slice(ab).search(/\n[\]}];/);
-  const literal = html.slice(ab, ab + ende + 3).replace(/;$/, '');
-  return new Function(`${prelude}; return (${literal});`)() as T;
+type Norm = { t: string; n: string; u: string; d?: string; q?: string; k?: string; fassung?: string; geprueftAm?: string };
+const NORMEN = json<Record<string, Norm>>('normen.json');
+const NAV_DATEN = json<NavigatorDaten>('navigator.json');
+const KARTE_DATEN = json<LandkartenDaten>('landkarte.json');
+const PAKET_DATEIEN = readdirSync(resolve(DATA, 'pakete')).filter((d) => d.endsWith('.json'));
+const PAKETE = PAKET_DATEIEN.map((d) => json<Paket>(`pakete/${d}`));
+const WEB = PAKETE.find((p) => p.id === 'webentwicklung')!;
+
+/** Liest die eingebauten Daten einer Seite (<script id="gn-daten">). */
+function eingebaut<T>(html: string): T {
+  const m = html.match(/<script id="gn-daten" type="application\/json">([\s\S]*?)<\/script>/);
+  if (!m) throw new Error('gn-daten fehlt in der Seite');
+  return JSON.parse(m[1]) as T;
 }
 
-type Norm = { t: string; n: string; u: string; d?: string; q?: string; k?: string };
-const PRE_NAV = 'const G = "https://www.gesetze-im-internet.de/";';
-const PRE_KARTE = 'const G = "https://www.gesetze-im-internet.de/", D = "https://dejure.org/gesetze/";';
-
-const LAW = demoKonstante<Record<string, Norm>>(NAV, 'LAW', PRE_NAV);
-const STEPS = demoKonstante<BaumSchritt[]>(NAV, 'STEPS', PRE_NAV);
-const QA = demoKonstante<{ c: string; q: string; a: string; laws: string[] }[]>(NAV, 'QA', PRE_NAV);
-const RIGHTS = demoKonstante<{ id: string; q: string; say: string; laws: string[]; pl?: string[] }[]>(NAV, 'RIGHTS', PRE_NAV);
-const L = demoKonstante<Record<string, Norm>>(KARTE, 'L', PRE_KARTE);
-const FRISTEN = demoKonstante<{ f: string; law: string }[]>(KARTE, 'FRISTEN', PRE_KARTE);
-const PH = demoKonstante<{ id: string; qs: { q: string; a: unknown[] }[] }[]>(KARTE, 'PH', PRE_KARTE);
+// Ein Register für beide Seiten; Fragen, Telefonbaum und Karte im Referenzpaket
+const LAW = NORMEN;
+const L = NORMEN;
+const NAV_WEB = materialisiereNavigator(NAV_DATEN, WEB);
+const KARTE_WEB = materialisiereLandkarte(KARTE_DATEN, WEB);
+const STEPS = NAV_WEB.telefonbaum as unknown as BaumSchritt[];
+const QA = NAV_WEB.fragen;
+const RIGHTS = NAV_WEB.rechte;
+const FRISTEN = KARTE_WEB.fristen as { f: string; law: string }[];
+const PH = KARTE_WEB.stationen;
 
 // ------------------------------------------------------------------ Datum
 
@@ -253,13 +261,15 @@ describe('Sprachwächter', () => {
 
 // ------------------------------------------------------------------ Demo-Drift
 
-describe('Demo: Gesprächsnavigator (index.html)', () => {
-  it('Umfang: 7 Fragen, 23 Antworten, 42 Fragen, 30 Rechte-Karten, davon 9 zu Zuständigkeit', () => {
+describe('Demo: Gesprächsnavigator (Daten von index.html, Referenzpaket Webentwicklung)', () => {
+  it('Umfang: 7 Fragen, 23 Antworten, 34 allgemeine und 42 Fragen im Referenzpaket, 30 Rechte-Karten, davon 9 zu Zuständigkeit', () => {
     expect(STEPS.length).toBe(7);
     expect(STEPS.reduce((n, s) => n + s.answers.length, 0)).toBe(23);
+    expect(NAV_DATEN.fragen.length).toBe(34);
     expect(QA.length).toBe(42);
     expect(RIGHTS.length).toBe(30);
-    expect(RIGHTS.filter((r) => (r as { g?: string }).g === 'z' || ['zustaendig', 'einarbeiten'].includes(r.id)).length).toBe(9);
+    expect(RIGHTS.filter((r) => r.g === 'z').length).toBe(9);
+    for (const r of RIGHTS) expect(NAV_DATEN.rechteGruppen.map(([k]) => k), r.id).toContain(r.g);
   });
 
   it('der Telefonbaum ist strukturell gesund', () => {
@@ -327,14 +337,20 @@ describe('Demo: Gesprächsnavigator (index.html)', () => {
   });
 });
 
-describe('Demo: Fall-Landkarte (fall-landkarte.html)', () => {
-  it('37 Normen, jede mit gesetze-im-internet- und dejure-Link und genau einer Kennzeichnung', () => {
-    expect(Object.keys(L).length).toBe(37);
+describe('Normregister (normen.json, beide Seiten)', () => {
+  it('44 Normen, jede mit gesetze-im-internet- und dejure-Link, Fassung, Prüfdatum und genau einer Kennzeichnung', () => {
+    expect(Object.keys(L).length).toBe(44);
     for (const [id, n] of Object.entries(L)) {
       expect(n.u, id).toMatch(/^https:\/\/www\.gesetze-im-internet\.de\//);
       expect(n.d, id).toMatch(/^https:\/\/dejure\.org\/gesetze\//);
       expect(Boolean(n.q) !== Boolean(n.k), `${id}: q xor k`).toBe(true);
+      expect(n.fassung, id).toBeTruthy();
+      expect(n.geprueftAm, id).toMatch(/^\d{4}-\d{2}-\d{2}$/);
     }
+  });
+
+  it('jede Norm der Fall-Landkarte steht im Register', () => {
+    for (const p of PH) for (const q of p.qs) for (const a of q.a) for (const l of a.laws as string[]) expect(L[l], `${p.id}: ${l}`).toBeDefined();
   });
 
   it('jede Norm-ID, die der Kern ausgibt, steht im Register der Fall-Landkarte', () => {
@@ -351,26 +367,38 @@ describe('Demo: Fall-Landkarte (fall-landkarte.html)', () => {
     for (const fr of FRISTEN) expect(L[fr.law], fr.f).toBeDefined();
   });
 
-  it('wörtliche Zitate widersprechen sich zwischen beiden Seiten nicht', () => {
-    // Die Seiten zitieren unterschiedlich lange Ausschnitte; jedes Bruchstück
-    // eines Zitats muss im Zitat der anderen Seite wörtlich vorkommen
-    // (Anlass: § 10 stand einmal als „selbständig“, einmal als „selbstständig“).
-    const stuecke = (q: string) =>
-      q.split(/\[…\]|…|\[[^\]]*\]/).map((s) => s.trim().replace(/^[,.;: ]+|[,.;: ]+$/g, '')).filter((s) => s.length > 8);
-    let verglichen = 0;
-    for (const id of Object.keys(LAW)) {
-      const a = LAW[id].q;
-      const b = L[id]?.q;
-      if (!a || !b) continue;
-      const [kurz, lang] = a.length <= b.length ? [a, b] : [b, a];
-      for (const s of stuecke(kurz)) {
-        if (lang.includes(s.slice(0, 20))) {
-          expect(lang, id).toContain(s);
-          verglichen++;
-        }
-      }
+});
+
+describe('Drift-Wächter: Die Seiten enthalten genau die Daten aus 07-demos/gruendungsnavigator/data/', () => {
+  // Seit Ticket 01 gibt es ein Register für beide Seiten; der frühere Zitat-Abgleich
+  // zwischen zwei Registern ist damit hinfällig. Stattdessen: eingebaut = Datei.
+  const ohneSchema = ({ $schema: _s, ...rest }: Paket & { $schema?: string }) => rest;
+  const sortiert = (a: { id: string }[]) => [...a].sort((x, y) => x.id.localeCompare(y.id));
+  const nav = eingebaut<{ geprueft: string; normen: unknown; navigator: unknown; pakete: Paket[] }>(NAV);
+  const karte = eingebaut<{ geprueft: string; normen: unknown; landkarte: unknown; pakete: Paket[] }>(KARTE);
+
+  it('Gesprächsnavigator: Normen, Navigator-Daten, alle Pakete', () => {
+    expect(nav.normen).toEqual(NORMEN);
+    expect(nav.navigator).toEqual(NAV_DATEN);
+    expect(sortiert(nav.pakete)).toEqual(sortiert(PAKETE.map(ohneSchema)));
+  });
+
+  it('Fall-Landkarte: Normen, Karten-Daten, alle Pakete', () => {
+    expect(karte.normen).toEqual(NORMEN);
+    expect(karte.landkarte).toEqual(KARTE_DATEN);
+    expect(sortiert(karte.pakete)).toEqual(sortiert(PAKETE.map(ohneSchema)));
+  });
+
+  it('beide Seiten enthalten den gebündelten Paket-Kern und keine alten Datenkonstanten', () => {
+    for (const html of [NAV, KARTE]) {
+      expect(html).toMatch(/<script id="gn-kern">[\s\S]*var GNKern = [\s\S]*materialisiere/);
+      expect(html).not.toMatch(/^const (LAW|STEPS|QA|RIGHTS|L|PH|FRISTEN) = [[{]/m);
     }
-    expect(verglichen).toBeGreaterThan(5);
+  });
+
+  it('das Webentwicklungs-Paket ist zuerst gewählt (der ursprüngliche Beispielfall)', () => {
+    expect(nav.pakete[0].id).toBe('webentwicklung');
+    expect(karte.pakete[0].id).toBe('webentwicklung');
   });
 });
 
@@ -380,13 +408,15 @@ describe('Zahlen-Wächter: Texte nennen die Zahlen der ausgelieferten Seiten', (
   // Anlass 11.10.2026: Konzept sagte 26 Fragen und 15 Rechte-Karten, die Seite hatte 42 und 17.
   // Jede Zahl vor „Fragen“, „Rechte-Karten“, „Normen“ oder „Antworten“ muss eine echte Zahl der Seiten sein.
   const kartenFragen = PH.reduce((n, p) => n + p.qs.length, 0);
+  // Mit Branchenpaketen hängt die Zahl der Termin-Fragen vom Paket ab (34 allgemeine + Zusatzfragen)
+  const fragenJePaket = [NAV_DATEN.fragen.length, ...PAKETE.map((p) => materialisiereNavigator(NAV_DATEN, p).fragen.length)];
   const kartenAntworten = PH.reduce((n, p) => n + p.qs.reduce((m, q) => m + q.a.length, 0), 0);
   const erlaubt: Record<string, Set<number>> = {
-    Fragen: new Set([STEPS.length, QA.length, kartenFragen]),
+    Fragen: new Set([STEPS.length, QA.length, kartenFragen, ...fragenJePaket]),
     'Rechte-Karten': new Set([RIGHTS.length]),
     Normen: new Set([Object.keys(L).length]),
     Antworten: new Set([STEPS.reduce((n, s) => n + s.answers.length, 0), kartenAntworten]),
-    questions: new Set([STEPS.length, QA.length, kartenFragen]),
+    questions: new Set([STEPS.length, QA.length, kartenFragen, ...fragenJePaket]),
     'rights cards': new Set([RIGHTS.length]),
     statutes: new Set([Object.keys(L).length]),
     answers: new Set([STEPS.reduce((n, s) => n + s.answers.length, 0), kartenAntworten]),
@@ -479,6 +509,9 @@ describe('Datenschutz-Wächter: der Beispielfall ist erfunden', () => {
     '07-demos/gruendungsnavigator/ticket-01-vorlage.md',
     '07-demos/gruendungsnavigator/pruefakte.md',
     '02-recherche/gruendungsnavigator-konzept-2026-10-11.md',
+    '07-demos/gruendungsnavigator/data/navigator.json',
+    '07-demos/gruendungsnavigator/data/landkarte.json',
+    ...PAKET_DATEIEN.map((d) => `07-demos/gruendungsnavigator/data/pakete/${d}`),
   ];
 
   it.each(DATEIEN)('%s enthält keinen Wert des Ursprungsfalls', async (pfad) => {
@@ -490,8 +523,13 @@ describe('Datenschutz-Wächter: der Beispielfall ist erfunden', () => {
   });
 
   it('beide Seiten sagen ausdrücklich, dass der Fall erfunden ist', () => {
-    expect(NAV).toContain('erfundenen Beispiel');
-    expect(KARTE).toContain('erfunden');
+    expect(NAV_WEB.texte.beispielHinweis).toContain('erfundenen Beispiel');
+    expect(NAV).toContain('Person und Zahlen sind ausgedacht');
+    expect(KARTE).toContain('Person, Zahlen und Formulierungen sind erfunden');
+  });
+
+  it('jedes ausgelieferte Beispielpaket ist als erfunden gekennzeichnet, nur die leere Vorlage nicht', () => {
+    for (const p of PAKETE) expect(p.erfunden, p.id).toBe(p.id !== 'leer');
   });
 });
 
@@ -517,8 +555,10 @@ describe('Transparenz: Die Seiten sagen, was geprüft ist und was nicht', () => 
   it('das genannte Prüfdatum ist das Datum des Normstands im Kern', () => {
     const [j, m, t] = RECHTSSTAND.geprueftAm.split('-');
     const datum = `${t}.${m}.${j}`;
-    expect(NAV).toContain(`const GEPRUEFT = "${datum}"`);
-    expect(KARTE).toContain(`geprüft am ${datum}`);
+    const juengstes = Object.values(NORMEN).map((n) => n.geprueftAm!).sort().at(-1);
+    expect(juengstes).toBe(RECHTSSTAND.geprueftAm);
+    expect(eingebaut<{ geprueft: string }>(NAV).geprueft).toBe(datum);
+    expect(eingebaut<{ geprueft: string }>(KARTE).geprueft).toBe(datum);
   });
 
   it('beide Fußzeilen nennen KI-Unterstützung und „keine Rechtsberatung“', () => {

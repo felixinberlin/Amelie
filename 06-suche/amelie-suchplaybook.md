@@ -869,6 +869,19 @@ Félix fragte, ob alles in der Dose steckt, und dann: „repair all so we dont h
 - *Regel für alle Dosen, die Betroffene direkt nutzen:* **Prüfung sichtbar machen, wo gelesen wird.** Ein Werkzeug, das Vertrauen braucht, nennt auf der Seite selbst Herkunft, Geprüftes, Ungeprüftes und den nächsten Menschen, der helfen kann. KI-Beteiligung wird offen genannt, nicht versteckt; „Slop“ entsteht dort, wo man die Prüfung nicht sieht.
 - **Nicht getan:** auf Reddit geantwortet oder gestritten (Projektregel: kein Nachfassen).
 
+#### Nachtrag 13.10.2026: Ticket 01, die Seite wird Vorlage (Branchenpakete)
+
+Auftrag Félix: „Do Ticket 01, make the sector packs.“ Ergebnis: Daten in `07-demos/gruendungsnavigator/data/`, Paket-Kern `paket.ts`, mit esbuild in die Seiten gebündelt (`npm run build:gn`, `check:gn` im Lint), sechs erfundene Branchen und eine leere Vorlage, eigene Fassung mit Download und Upload. Lehren:
+
+- **Erst Regression, dann Umbau.** Vor dem Umstellen der Seiten wurden die Inhalte aus dem HTML gezogen und das neu gefüllte Webentwicklungs-Paket Text für Text gegen das Original verglichen: 0 offene Platzhalter, 12 Abweichungen, alle gewollt (Verallgemeinerungen). Ohne diesen Vergleich wäre jede stille Textänderung unsichtbar geblieben.
+- **Platzhalter finden versteckte Beispielwerte.** Zwei Stellen standen fest im allgemeinen Text: die Frage „Wofür brauchen Sie 2.000 €?“ und „Bezirksamt“ in der Fristentabelle. Gefunden erst, als ein zweites Paket andere Werte hatte. *Regel:* Ein Test listet Beispielwerte des Referenzpakets und verlangt, dass sie in den allgemeinen Daten nicht vorkommen.
+- **Ein Register statt zwei.** Die Seiten hatten je ein Normregister; der Zitat-Abgleich zählte doppelte Zitate doppelt (45). Ein Register: 31 Zitate, jedes einmal. Der frühere Test „gleiche Zitate auf beiden Seiten“ entfällt, an seine Stelle tritt ein Drift-Wächter (eingebaute Daten = Dateien).
+- **Derselbe Code im Test und im Browser.** Der Kern wird gebündelt in die Seite geschrieben statt in JavaScript nachgebaut; die Formprüfung für hochgeladene Pakete (`pruefeStruktur`) muss dieselben kaputten Pakete ablehnen wie das JSON-Schema (Test mit acht Gegenproben).
+- **Sprachwächter trifft auch Beschriftungen:** „Zuschuss wird bewilligt oder geprüft“ war ein Antwort-Label der Fall-Landkarte, kein Versprechen, löste aber aus. Umformuliert statt Wächter aufgeweicht.
+- **Branchenwissen ohne Primärquelle als Frage formulieren.** Handwerkskammer, Reisegewerbekarte, Künstlersozialkasse, Anerkennung für den Entlastungsbetrag, Verpackungsregister: alle als „klären Sie bei …“ ohne Paragrafen; in der Prüfakte als ungeprüft ausgewiesen.
+- **Abruf aus Node kann scheitern, wo `curl` geht.** § 138 AO war über den Proxy aus Node zweimal nicht abrufbar, per `curl` sofort. Von Hand verglichen und so vermerkt; der Prüfer zählt das richtig als „nicht abrufbar“, nicht als Abweichung.
+- **Offen:** Kriterium 5 (zweite Person, Stoppuhr) braucht einen Menschen; als Ticket 02 mit Gegenlesen durch eine fachkundige Stelle in die Dose geschrieben.
+
 #### Datenschutz in Lab-Belegen (13.10.2026)
 
 - Mark-Läufe trugen in der „Absicht“ Félix' vollen Namen, Wohnort und „kein Führerschein“. Über `public/data/lab-runs/` (aus `06-suche/proposals/` erzeugt) war das öffentlich. Auf Wunsch geschwärzt, nur in diesem Repo; das Lab-Repo ist privat und blieb unberührt.

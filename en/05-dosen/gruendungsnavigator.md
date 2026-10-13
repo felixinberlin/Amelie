@@ -44,9 +44,9 @@ Anyone who wants to start a business while on basic income support (Grundsicheru
 ## Sketch
 
 **Conversation navigator** (`public/gruendungsnavigator/index.html`):
-- **Preparation:** personal details stay in the browser; ground rules; a checklist of what to bring.
+- **Preparation:** personal details stay in the browser; ground rules; a checklist of what to bring. Choose a **sector pack** (six fictional examples and an empty template) or create your own version, download it and load it again.
 - **Phone call:** a decision tree with 7 questions and 23 possible answers. Each answer has wording, background and the quoted statute, plus a progress bar and a live log.
-- **Appointment:** 42 likely questions with editable sample answers, evidence and statute; practice progress and a print version.
+- **Appointment:** 34 general questions plus the pack's extra questions (42 in the web-development example) with editable sample answers, evidence and statute; practice progress and a print version.
 - **Rights cards:** 30 typical replies from the other side ("We don't fund that", "Sign here"). One tap shows the request, the statute text and the formal next step. Four groups to filter by; 9 cards alone against being brushed off: "That's not my department", "You have to go to the employment agency", "I can't accept that like this", "Call the hotline", "Your caseworker is away", "I'll pass it on" and more, each with the duty to forward (section 16(2) SGB I) or to accept (section 20(3) SGB X) quoted verbatim.
 - **Presentation mode:** the other side sees only the cooperative version; tactics stay hidden.
 - **Summary mail:** built from the clicks, with correct statute references.
@@ -55,7 +55,7 @@ Anyone who wants to start a business while on basic income support (Grundsicheru
 - 9 stations from application to exit.
 - 29 questions with 107 answers, each with reaction, next step, deadline and statute text.
 - A deadline timeline.
-- 37 statutes linked to gesetze-im-internet.de and dejure.org. Verbatim text is quoted; paraphrase is marked "Kurzfassung" (summary).
+- 44 statutes (one register for both pages) linked to gesetze-im-internet.de and dejure.org. Verbatim text is quoted; paraphrase is marked "Kurzfassung" (summary).
 
 **Kernel** (`src/engine/gruendungsnavigator/`):
 - Month deadlines per sections 187 and 188 BGB, shifted to the next working day (section 64(3) SGG). Holidays come from the Easter formula; state holidays can be added.
@@ -65,7 +65,8 @@ Anyone who wants to start a business while on basic income support (Grundsicheru
 - The allowance under section 11b(2),(3).
 - A structural check of the phone tree and a language guard: "guaranteed", "entitlement exists" and "inadmissible" never appear.
 - A currency guard: if the last check is older than 12 months, the texts must be re-read.
-- Drift guards that read the data directly from the demo pages.
+- Pack kernel: fills placeholders from the sector pack and checks packs (grant at most €5,000, figures consistent, no open placeholders); the same code runs bundled in the browser.
+- Drift guards: the data embedded in the pages must match the files in `data/`.
 
 **In the Amélie frontend:** the simulator "Start-up Navigator & Deadline Calculator", with links to both pages, the embedded demo, the deadline calculator and the allowance.
 
@@ -73,15 +74,14 @@ Anyone who wants to start a business while on basic income support (Grundsicheru
 
 ## First step
 
-**Ticket 01: turn the page into a template.** Move all sample content (trade, amounts, sample answers of the fictional web-developer case) from `index.html` into a sector pack (JSON), next to an empty pack. The statute register and phone tree become data that the tested kernel loads.
+**Ticket 01 is done (13 Oct 2026): the page is a template.** All sample content lives in sector packs (JSON) under `07-demos/gruendungsnavigator/data/pakete/`: web development, assembly and small repairs, mobile coffee stand, graphic design, everyday companion for older people, online trade in second-hand books (all fictional) and an empty pack. The statute register (44 statutes, one for both pages), phone tree, questions and case map are data that the tested kernel fills; a build step embeds data and kernel into the pages, which stay single files and work offline. On the page: choose a pack, create your own version in a form, download it as JSON and load it again. Met: schema and pack checks (57 tests with counter-tests), quotation check 31/31, graph and deadline tests, language guard over all packs, 360 px. Open: the stopwatch test with a second person. Details: `07-demos/gruendungsnavigator/ticket-01-vorlage.md`.
+
+**Ticket 02: field test and expert reading.** Two people without programming skills create their own version with the page (stopwatch, notes), and a qualified body (welfare advice service or chamber) reads one sector pack.
 
 **Done when:**
-1. "Web development" and an empty pack validate against the same schema, and the kernel holds no sample amounts.
-2. Every register entry carries statute, version, URL and the verbatim/summary flag, and the quotation check against gesetze-im-internet.de is green.
-3. The phone-tree graph test (no dead nodes, all statute references resolve) and the deadline table tests are green. These tests already exist.
-4. No output text says "guaranteed", "entitlement exists", "inadmissible" or "unlawful".
-5. A second person without programming skills produces their own version in 30 minutes.
-6. Both pages are usable at 360 px width without horizontal scrolling. This already holds today.
+1. Two test records are in the audit file, both under 30 minutes or with the obstacle fixed.
+2. At least one sector pack has been read by a qualified body and the changes are in.
+3. `npm run lint`, `npm test` and `npm run check:mobile` are green.
 
 ## Where it breaks
 

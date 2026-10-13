@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-// Gründungsnavigator: hält jedes wörtliche Zitat (Feld `q`) beider Demo-Seiten
+// Gründungsnavigator: hält jedes wörtliche Zitat (Feld `q`) des Normregisters
+// (07-demos/gruendungsnavigator/data/normen.json, von beiden Demo-Seiten genutzt)
 // gegen den amtlichen Normtext auf gesetze-im-internet.de.
 //
 // Warum: Die Seiten versprechen „Wörtliches ist zitiert, Sinngemäßes als
@@ -13,27 +14,14 @@
 // Braucht Netz, steht deshalb nicht im Lint. Aufruf:
 //   npm run check:gn-zitate
 // Exit 0 = alle abrufbaren Zitate stimmen, 1 = Abweichung, 2 = nichts abrufbar.
+// Nach einer erfolgreichen Prüfung `geprueftAm` in normen.json nachziehen und npm run build:gn.
 
 import { readFileSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const root = resolve(dirname(fileURLToPath(import.meta.url)), '../public/gruendungsnavigator');
-const PRE = 'const G = "https://www.gesetze-im-internet.de/", D = "https://dejure.org/gesetze/";';
-
-/** Liest `const NAME = …;` aus einer Demo-Seite (gleiche Logik wie die Vitest-Suite). */
-function konstante(html, name) {
-  const start = html.indexOf(`const ${name} = `);
-  if (start < 0) throw new Error(`Konstante ${name} fehlt`);
-  const ab = start + `const ${name} = `.length;
-  const ende = html.slice(ab).search(/\n[\]}];/);
-  return new Function(`${PRE}; return (${html.slice(ab, ab + ende + 3).replace(/;$/, '')});`)();
-}
-
-const register = {
-  'index.html': konstante(readFileSync(resolve(root, 'index.html'), 'utf8'), 'LAW'),
-  'fall-landkarte.html': konstante(readFileSync(resolve(root, 'fall-landkarte.html'), 'utf8'), 'L'),
-};
+const datei = resolve(dirname(fileURLToPath(import.meta.url)), '../07-demos/gruendungsnavigator/data/normen.json');
+const register = { 'normen.json': JSON.parse(readFileSync(datei, 'utf8')) };
 
 const ENT = { auml: 'ä', ouml: 'ö', uuml: 'ü', Auml: 'Ä', Ouml: 'Ö', Uuml: 'Ü', szlig: 'ß', sect: '§', bdquo: '"', ldquo: '"', rdquo: '"', ndash: '–', quot: '"', amp: '&', hellip: '…', nbsp: ' ' };
 const glatt = (t) => t.replace(/\s+/g, ' ').replace(/[„“"]/g, '"').trim();

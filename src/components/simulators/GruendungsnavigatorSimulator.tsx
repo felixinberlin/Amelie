@@ -50,8 +50,8 @@ export const GruendungsnavigatorSimulator: React.FC<Props> = ({ lang, isEmbedded
           <span>
             <span className="block font-bold text-sm text-[var(--m-ink)]">{de ? 'Gesprächsnavigator öffnen' : 'Open conversation navigator'} <ExternalLink className="inline w-3 h-3" /></span>
             <span className="block text-xs text-[var(--m-ink-soft,#6b5b4b)] mt-1">{de
-              ? 'Telefonbaum (7 Fragen, 23 Antworten), 42 Fragen mit Beispielantworten, 30 Rechte-Karten, Präsentationsmodus, Zusammenfassungs-Mail.'
-              : 'Phone decision tree (7 questions, 23 answers), 42 questions with sample answers, 30 rights cards, presentation mode, summary mail.'}</span>
+              ? 'Telefonbaum (7 Fragen, 23 Antworten), 34 Fragen plus Zusatzfragen je Branche (Webentwicklung: 42), 30 Rechte-Karten, sechs Branchenpakete und eigene Fassung, Präsentationsmodus, Zusammenfassungs-Mail.'
+              : 'Phone decision tree (7 questions, 23 answers), 34 questions plus extra ones per sector (web development: 42), 30 rights cards, six sector packs and your own version, presentation mode, summary mail.'}</span>
           </span>
         </a>
         <a href={`${BASE}fall-landkarte.html`} target="_blank" rel="noopener noreferrer"
@@ -60,8 +60,8 @@ export const GruendungsnavigatorSimulator: React.FC<Props> = ({ lang, isEmbedded
           <span>
             <span className="block font-bold text-sm text-[var(--m-ink)]">{de ? 'Fall-Landkarte öffnen' : 'Open case map'} <ExternalLink className="inline w-3 h-3" /></span>
             <span className="block text-xs text-[var(--m-ink-soft,#6b5b4b)] mt-1">{de
-              ? '9 Stationen vom Antrag bis zum Ausstieg, 107 Antworten mit Frist und Normtext, Fristen-Zeitstrahl, 37 Normen.'
-              : '9 stations from application to exit, 107 answers with deadline and statute text, deadline timeline, 37 statutes.'}</span>
+              ? '9 Stationen vom Antrag bis zum Ausstieg, 107 Antworten mit Frist und Normtext, Fristen-Zeitstrahl, 44 Normen.'
+              : '9 stations from application to exit, 107 answers with deadline and statute text, deadline timeline, 44 statutes.'}</span>
           </span>
         </a>
       </div>
