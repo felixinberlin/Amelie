@@ -873,4 +873,5 @@ Félix fragte, ob alles in der Dose steckt, und dann: „repair all so we dont h
 
 - Mark-Läufe trugen in der „Absicht“ Félix' vollen Namen, Wohnort und „kein Führerschein“. Über `public/data/lab-runs/` (aus `06-suche/proposals/` erzeugt) war das öffentlich. Auf Wunsch geschwärzt, nur in diesem Repo; das Lab-Repo ist privat und blieb unberührt.
 - *Trennen:* Ein Ort als **Ausgangspunkt einer Person** („ÖPNV von …“, „Name (Ort, …)“) ist eine Adresse und wird geschwärzt. Ein Ort als **Thema** (Lieberoser Heide, „guided tours, jamlitz“) bleibt.
-- *Regel:* Vor jedem Lab-Import Personenprofile in `intent` prüfen; `datenschutzLab.test.ts` schlägt an, wenn Name oder Wohnort-Formulierung wiederkommt. Die Git-Geschichte behält alte Fassungen.
+- *Regel (Félix' Linie):* **Name ja, Adresse und Telefonnummer nein.** „Félix Martínez gibt es tausendfach“; eine Adresse oder Nummer identifiziert. `datenschutzLab.test.ts` prüft Profil- und Absichtsfelder der Lab-Belege auf Telefonnummer, Postleitzahl mit Straße und Wohnort als Ausgangspunkt; öffentliche Organisationsnummern in Quellenzitaten sind erlaubt. Die Git-Geschichte behält alte Fassungen.
+- *Technikfalle:* `\b` vor „Ö“ greift in JavaScript-Regex ohne `u`-Flag nicht; die Gegenprobe mit „ÖPNV von Musterdorf“ fand das.
