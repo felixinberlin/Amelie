@@ -1,38 +1,40 @@
 # Mail 12 — ChemHazard Stop (MischStop) → EU-OSHA (European Agency for Safety and Health at Work)
 
-**Status:** Versandfertig (September 2026).  
-**Recipients:** EU-OSHA (`information@osha.europa.eu`, Attn: Prevention and Research Unit / Dangerous Substances Campaign)  
+**Status:** Entwurf, neu geschrieben am 13.10.2026. **Nicht versendet.** Die alte Fassung (September 2026) versprach Kamera-Scan, Etiketten-OCR, Sprachbank in 20+ Sprachen und ein 15-Hz-Stroboskop; nichts davon ist gebaut, und 15 Hz ist ein Anfallsrisiko bei fotosensibler Epilepsie. Alte Fassung: Git-Geschichte (`370f77a`).
+
+**Recipients:** EU-OSHA (`information@osha.europa.eu`)  
 **CC:** German National Focal Point at BAuA (`eu-osha@baua.bund.de`)  
-**Subject:** Point-of-Action Chemical Safety for Migrant Cleaners: ChemHazard Stop (Open Gift to EU-OSHA)
+**Subject:** An open rule engine for chemical mixing warnings in cleaning work (ChemHazard Stop, CC0)
+
+**Vor dem Versand (Regel 2):**
+- `information@osha.europa.eu` ist ein Sammelpostfach, keine Person mit Mandat. Eine namentliche Ansprechperson für Dangerous Substances / Prevention auf osha.europa.eu suchen. Der einzige Name aus der Suche (Tim Tregenza, Project Manager, Reinigungskampagne) stammt aus einer alten, undatierten Präsentation und ist nicht bestätigt.
+- BAuA-Adresse `eu-osha@baua.bund.de` auf baua.de bestätigen.
+- EU-OSHA hat ein Praxisbeispiel „Limiting exposure to dangerous substances in the cleaning sector“ (2018, Reinigungsfirma aus Estland); es behandelt das Mischen nicht. Kein Besetzt-Signal, aber ein Anknüpfungspunkt.
+- Video-Link weggelassen, solange unklar ist, ob das Video einen Kamera-Scan zeigt, den es nicht gibt.
 
 ---
 
-Dear Dangerous Substances Prevention Team at EU-OSHA,
-Dear Colleagues at the German National Focal Point,
+```text
+Dear EU-OSHA team,
+dear colleagues at the German National Focal Point,
 
-Across the European Union, millions of commercial cleaners — a predominantly vulnerable, migrant workforce working non-standard hours — handle hazardous chemical formulations daily. 
+mixing an acidic toilet or descaling cleaner with a hypochlorite bleach releases chlorine gas. The rule is textbook knowledge and is written down in safety data sheets and in guidance such as the German DGUV Rule 101-019. What is missing is a check at the moment of mixing, in the language of the person holding the two bottles.
 
-Despite decades of regulatory efforts under REACH, CLP (Regulation EC 1272/2008), and national safety rules, severe mixing incidents continue to occur in confined spaces. The accidental mixture of acidic descalers with sodium hypochlorite bleaches instantly releases lethal chlorine gas (Cl2). The root cause is structural: 15-page Safety Data Sheets and national technical guidance remain locked in supervisors' folders and are inaccessible across language barriers at 3:00 AM.
+I have built a small open-source starting point for that and am giving it away under CC0 (public domain): ChemHazard Stop.
 
-To directly support EU-OSHA's mission of safe and healthy workplaces, we have built and open-sourced a turnkey, 100% offline point-of-action safety tool: ChemHazard Stop (MischStop).
+What exists today:
+- A rule engine that runs without a server and is covered by tests. Given two products, it answers STOP (documented hazard, for example acid + hypochlorite), UNVERIFIED (product unknown, ambiguous or data incomplete), or a grey "no known incompatibility in our data", which is explicitly not a safety clearance. It never says "safe".
+- Product data from manufacturers' safety data sheets: 45 real cleaning products (41 with sourced hazard groups, 4 still unverified), each with source URL, revision date and file hash. A product counts as chlorine bleach by its ingredient (sodium hypochlorite, CAS 7681-52-9), not by the EUH031 phrase on its label: several common bleach products do not carry EUH031, and an earlier version of the rule missed exactly those (fixed on 12 October 2026).
+- A web demo in which you pick two products or enter their GTIN. On STOP it plays a warning tone, vibrates where the browser allows, and speaks the warning via the browser's speech synthesis in German, English, Ukrainian, Polish, Turkish, Arabic or Romanian.
 
-We are gifting this entire project unconditionally to the European occupational health community (CC0 Public Domain):
+What does not exist yet: camera scanning of the containers, recorded voice warnings, a mobile app. These are written up as open tickets. The tool is a template for others to build on, not a deployable protective system, and it does not replace training or the employer's risk assessment.
 
-Key Capabilities of ChemHazard Stop:
-1. Instant Point-of-Action Verification: Cleaners aim their smartphone camera at two cleaning product containers (GTIN barcode, GISCODE, or label OCR). A deterministic local rule engine evaluates dangerous reaction risks on-device in <1 millisecond without requiring internet or cellular connectivity.
-2. Polyglot Audio Alerts: When an incompatible pair is detected, loud spoken emergency instructions immediately trigger in the cleaner's native language (Ukrainian, Polish, Turkish, Arabic, Romanian, Bulgarian, Spanish, German, English, etc.).
-3. Sensory Redundancy for Noisy Facilities: If the phone is muted or drowned out by 85 dB machinery, the handset pulses with an unmistakable emergency tactile cadence (300-100-300-100-500 ms) and flashes a high-intensity 15 Hz color optical strobe (red/white) visible even through nitrile gloves.
-4. Formal Safety Case (Never Emits "Safe"): The system strictly rejects false reassurance. It never displays a green "safe" clearance. It either halts the worker on verified danger (STOP) or transparently flags incomplete data as UNVERIFIED.
+Demo: https://felixinberlin.github.io/Amelie/#dose=dose-cleaner-chemical-safety
+Code, tests and data sources: https://github.com/felixinberlin/Amelie/tree/main/07-demos/chemhazard-stop
 
-Compliance & European Data Architecture:
-The core engine runs on public facts from EU CLP labelling and manufacturers' safety data sheets: a product counts as chlorine bleach by its ingredient (sodium hypochlorite, CAS 7681-52-9), whether or not its label carries EUH031 ("Contact with acids liberates toxic gas"). It operates with zero tracking, zero cloud data transfer, and complete offline sovereignty.
+If any part of it is useful for your work on dangerous substances or on cleaning workers, please take it. There is no obligation attached, not even a reply, and I will not follow up.
 
-Everything is turnkey, tested, and published under CC0 / Public Domain:
-• Interactive Web Simulator & Live Demo: https://felixinberlin.github.io/Amelie/#dose=dose-cleaner-chemical-safety
-• Video Demonstration (Field Demonstration): https://drive.google.com/file/d/1TGYV6aw7zWwe6isgin9UGvTJblDc-t8n/view?usp=drive_link
-• Source Code, Test Suite & Specs: https://github.com/felixinberlin/Amelie/tree/main/07-demos/chemhazard-stop
-
-"This idea belongs to no one. Take it, build it, deploy it across European workplaces — you owe me nothing, not even a reply. If you ever have an idea you won't build, give it to someone who will."
-
-In solidarity for occupational health and safety across Europe,
-Amélie Initiative (Félix, Berlin)
+Kind regards,
+Félix Martínez Resendiz
+Amélie (open project, Berlin)
+```

@@ -588,74 +588,108 @@ Amélie Initiative (Félix, Berlin)`,
     sentAt: '27. September 2026'
   },
   {
+    id: 'mail-11-vorlauf',
+    mailIndex: 15,
+    titleDe: 'Mail 11 (Vorlauf): ChemGefahr-Stopp → IG BAU, BG BAU, Gebäudedienstleister (27.09.2026)',
+    titleEn: 'Mail 11 (earlier sends): ChemHazard Stop → IG BAU, BG BAU, Gebäudedienstleister (27 Sep 2026)',
+    recipientOrg: 'IG BAU Gebäudereinigung · BG BAU (GISBAU) · Bundesinnungsverband (Sammel- und GF-Adresse)',
+    recipientTypeDe: 'Gewerkschaft · Unfallversicherung · Arbeitgeberverband',
+    recipientTypeEn: 'Trade union · statutory accident insurance · employer association',
+    contactPathDe: '14:25 gebaeudereinigung@igbau.de · 14:32 kontakt@igbau.de + gisbau@bgbau.de · info@ + gl@die-gebaeudedienstleister.de',
+    contactPathEn: '14:25 gebaeudereinigung@igbau.de · 14:32 kontakt@igbau.de + gisbau@bgbau.de · info@ + gl@die-gebaeudedienstleister.de',
+    subjectDe: 'Lebensschutz für Reinigungskräfte: ChemGefahr-Stopp (Quelloffenes Geschenk) · z. Hd. Fachgruppe Gebäudereinigung: Lebensschutz für Reinigungskräfte (ChemGefahr-Stopp)',
+    subjectEn: 'Life protection for cleaners: ChemHazard Stop (open-source gift) · Attn. building cleaning group: life protection for cleaners (ChemHazard Stop)',
+    bodyDe: `Nachgetragen am 13.10.2026. Drei Mails vom 27.09.2026 vor Mail 11 an den BIV. Der genaue Wortlaut liegt nicht im Repository; Grundlage war die damalige Vorlage „IG BAU & BG BAU“ der Dose (Git-Geschichte, Commit 370f77a, 05-dosen/dose-cleaner-chemical-safety.md). Sie enthielt dieselben überzogenen Angaben wie Mail 11 (Kamera-Scan, 20+ Sprachen, 15-Hz-Stroboskop). Richtigstellung als Entwurf: Mail 11b.`,
+    bodyEn: `Recorded on 13 Oct 2026. Three emails of 27 Sep 2026 sent before mail 11 to BIV. The exact text is not in the repository; it was based on the dose's former "IG BAU & BG BAU" template (git history, commit 370f77a). It made the same overstated claims as mail 11. Correction draft: mail 11b.`,
+    doseLinks: ['dose-cleaner-chemical-safety'],
+    scheduleDe: 'Versendet (27. September 2026), keine Antwort bis 13.10.2026. Kein Nachfassen.',
+    scheduleEn: 'Sent (27 September 2026), no reply as of 13 Oct 2026. No follow-up.',
+    sent: true,
+    sentAt: '27. September 2026'
+  },
+  {
+    id: 'mail-11b-korrektur',
+    mailIndex: 16,
+    titleDe: 'Mail 11b: Richtigstellung ChemGefahr-Stopp → die Empfänger vom 27.09.2026',
+    titleEn: 'Mail 11b: Correction ChemHazard Stop → the recipients of 27 Sep 2026',
+    recipientOrg: 'BIV · IG BAU · BG BAU (dieselben vier Sendungen wie am 27.09.2026)',
+    recipientTypeDe: 'Einmalige Richtigstellung, keine Bitte',
+    recipientTypeEn: 'One-time correction, no request',
+    contactPathDe: 'biv@die-gebaeudedienstleister.de (CC info@, gl@) · gebaeudereinigung@igbau.de · kontakt@igbau.de + gisbau@bgbau.de',
+    contactPathEn: 'biv@die-gebaeudedienstleister.de (cc info@, gl@) · gebaeudereinigung@igbau.de · kontakt@igbau.de + gisbau@bgbau.de',
+    contactCc: 'info@die-gebaeudedienstleister.de, gl@die-gebaeudedienstleister.de',
+    subjectDe: 'Korrektur zu meiner Mail vom 27. September (ChemGefahr-Stopp)',
+    subjectEn: 'Correction to my email of 27 September (ChemHazard Stop)',
+    bodyDe: `Sehr geehrte Frau Sudhop,
+
+am 27. September habe ich Ihnen das offene Werkzeug „ChemGefahr-Stopp“ geschickt. Zwei Angaben darin muss ich richtigstellen. Eine Antwort ist nicht nötig.
+
+1. Eine Lücke in der Chlorgas-Regel, inzwischen behoben (12.10.2026)
+Die Warnung „Säure + Chlorreiniger“ wurde nur ausgelöst, wenn eines der Produkte den Etikettenhinweis EUH031 trug. Gängige Chlorreiniger tragen ihn nicht: Dan Klorix laut Sicherheitsdatenblatt nur EUH206, Domestos Professional keinen der beiden Sätze. Eine Säure zusammen mit einem dieser Produkte ergab deshalb keine Warnung. Jetzt hängt die Regel am Inhaltsstoff Natriumhypochlorit (CAS 7681-52-9); ein Test prüft jede Säure im Bestand gegen jeden Chlorreiniger. Auch die Beispielprodukte der Demo waren teilweise erfunden. Sie sind durch 45 reale Produkte ersetzt, deren Angaben aus den Sicherheitsdatenblättern der Hersteller stammen (mit Fundstelle und Datum).
+
+2. Der Funktionsumfang war zu groß beschrieben
+Was es heute gibt:
+- einen Regel-Kern, der ohne Server rechnet und getestet ist. Er sagt nie „sicher“, sondern STOP (belegte Gefahr), NICHT PRÜFBAR (Produkt unbekannt oder Daten unvollständig) oder einen grauen Hinweis „keine bekannte Unverträglichkeit“, der ausdrücklich keine Freigabe ist;
+- eine Web-Demo, in der man zwei Produkte auswählt oder ihre GTIN eingibt. Bei STOP gibt es einen Warnton, Vibration (wo der Browser es erlaubt) und einen gesprochenen Warnsatz über die Sprachausgabe des Browsers; den Warnsatz gibt es auf Deutsch, Englisch, Ukrainisch, Polnisch, Türkisch, Arabisch und Rumänisch.
+
+Was noch nicht gebaut ist: der Kamera-Scan der Gebinde, aufgenommene Warnrufe, eine Handy-App mit Alarmsteuerung. Das „15-Hz-Stroboskop“ aus meiner Mail nehme ich ganz zurück: So schnelles Blinken kann bei Menschen mit fotosensibler Epilepsie Anfälle auslösen.
+
+ChemGefahr-Stopp ist damit eine offene Vorlage zum Weiterbauen, kein einsatzfertiges Schutzsystem. Es ersetzt weder Unterweisung noch Gefährdungsbeurteilung.
+
+Aktueller Stand und Liste der Änderungen:
+https://felixinberlin.github.io/Amelie/#dose=dose-cleaner-chemical-safety
+https://github.com/felixinberlin/Amelie/tree/main/07-demos/chemhazard-stop
+
+Ich melde mich danach nicht erneut. Entschuldigen Sie die zu großen Worte in der ersten Mail.
+
+Mit freundlichen Grüßen
+Félix Martínez Resendiz
+Amélie (offenes Projekt, Berlin)`,
+    bodyEn: `To be sent in German only; the German text is authoritative. Content: the chlorine-gas rule required EUH031 on a label until 12 Oct 2026 and missed common bleach products (fixed); the emails of 27 Sep overstated the scope (no camera scanning, no recorded voice bank, no app; the 15 Hz strobe is withdrawn as a seizure risk). No question, no follow-up.`,
+    doseLinks: ['dose-cleaner-chemical-safety'],
+    scheduleDe: 'Entwurf 13.10.2026 · Entscheidung Félix (Regel 3: einmalige Richtigstellung, kein Nachfassen)',
+    scheduleEn: 'Draft 13 Oct 2026 · Félix decides (rule 3: one-time correction, no follow-up)',
+    sent: false
+  },
+  {
     id: 'mail-12',
     mailIndex: 12,
     titleDe: 'Mail 12: ChemGefahr-Stopp → EU-OSHA (European Agency for Safety and Health at Work)',
     titleEn: 'Mail 12: ChemHazard Stop → EU-OSHA (European Agency for Safety and Health at Work)',
     recipientOrg: 'EU-OSHA (European Agency for Safety and Health at Work)',
-    recipientTypeDe: 'Europäische Arbeitsschutzbehörde (Bilbao / BAuA Focal Point)',
-    recipientTypeEn: 'European Occupational Health & Safety Agency (Bilbao / BAuA Focal Point)',
-    contactPathDe: 'information@osha.europa.eu (z. Hd. Prevention & Research / Dangerous Substances)',
-    contactPathEn: 'information@osha.europa.eu (Attn: Prevention & Research / Dangerous Substances)',
+    recipientTypeDe: 'Europäische Arbeitsschutzagentur (Bilbao) · CC BAuA Focal Point',
+    recipientTypeEn: 'European occupational safety and health agency (Bilbao) · cc BAuA focal point',
+    contactPathDe: 'information@osha.europa.eu (Sammelpostfach; namentliche Ansprechperson vor Versand suchen)',
+    contactPathEn: 'information@osha.europa.eu (general inbox; find a named contact before sending)',
     contactCc: 'eu-osha@baua.bund.de',
-    subjectDe: 'Punktgenauer Schutz vor Chemikalien-Mischunfällen: ChemGefahr-Stopp (Offenes Geschenk an EU-OSHA)',
-    subjectEn: 'Point-of-Action Chemical Safety for Migrant Cleaners: ChemHazard Stop (Open Gift to EU-OSHA)',
-    bodyDe: `Sehr geehrtes Team der EU-OSHA Kampagne für gefährliche Stoffe,
-sehr geehrte Kolleginnen und Kollegen am deutschen Focal Point (BAuA),
+    subjectDe: 'Ein offener Regel-Kern für Warnungen vor Chemikalien-Mischungen in der Reinigung (ChemGefahr-Stopp, CC0)',
+    subjectEn: 'An open rule engine for chemical mixing warnings in cleaning work (ChemHazard Stop, CC0)',
+    bodyDe: `Wird auf Englisch versendet; die englische Fassung gilt. Inhalt: Regel-Kern mit drei Zuständen (nie „sicher“), 45 reale Produkte aus Hersteller-Sicherheitsdatenblättern, Web-Demo mit Sprachausgabe in 7 Sprachen; Kamera-Scan, aufgenommene Warnrufe und App sind nicht gebaut. Keine Bitte, kein Nachfassen.`,
+    bodyEn: `Dear EU-OSHA team,
+dear colleagues at the German National Focal Point,
 
-in ganz Europa arbeiten Millionen von gewerblichen Reinigungskräften — eine überwiegend verletzliche, mobile Arbeitsbevölkerung — täglich mit aggressiven chemischen Formulierungen.
+mixing an acidic toilet or descaling cleaner with a hypochlorite bleach releases chlorine gas. The rule is textbook knowledge and is written down in safety data sheets and in guidance such as the German DGUV Rule 101-019. What is missing is a check at the moment of mixing, in the language of the person holding the two bottles.
 
-Trotz jahrzehntelanger Regulierungsarbeit im Rahmen von REACH und CLP (Verordnung EG 1272/2008) kommt es immer wieder zu schweren Mischunfällen. Das versehentliche Zusammenschütten von sauren Entkalkern mit natriumhypochlorithaltiger Bleiche setzt in engen Sanitärräumen schlagartig tödliches Chlorgas (Cl2) frei. Die Ursache ist strukturell: 15-seitige Sicherheitsdatenblätter und technische Leitfäden bleiben nachts im Büroordner und überwinden keine Sprachbarrieren.
+I have built a small open-source starting point for that and am giving it away under CC0 (public domain): ChemHazard Stop.
 
-Um die Mission der EU-OSHA für sichere und gesunde Arbeitsplätze direkt an der Basis zu unterstützen, haben wir ein schlüsselfertiges, 100% offline lauffähiges Point-of-Action-Sicherheitswerkzeug entwickelt: ChemGefahr-Stopp (MischStop / ChemHazard Stop).
+What exists today:
+- A rule engine that runs without a server and is covered by tests. Given two products, it answers STOP (documented hazard, for example acid + hypochlorite), UNVERIFIED (product unknown, ambiguous or data incomplete), or a grey "no known incompatibility in our data", which is explicitly not a safety clearance. It never says "safe".
+- Product data from manufacturers' safety data sheets: 45 real cleaning products (41 with sourced hazard groups, 4 still unverified), each with source URL, revision date and file hash. A product counts as chlorine bleach by its ingredient (sodium hypochlorite, CAS 7681-52-9), not by the EUH031 phrase on its label: several common bleach products do not carry EUH031, and an earlier version of the rule missed exactly those (fixed on 12 October 2026).
+- A web demo in which you pick two products or enter their GTIN. On STOP it plays a warning tone, vibrates where the browser allows, and speaks the warning via the browser's speech synthesis in German, English, Ukrainian, Polish, Turkish, Arabic or Romanian.
 
-Wir verschenken das gesamte Projekt bedingungslos an die europäische Arbeitsschutz-Gemeinschaft (CC0 Public Domain):
-1. Verifikation an der Putzkammer in unter 1 ms: Die Reinigungskraft richtet das Smartphone auf zwei Gebinde (GTIN-Barcode, GISCODE oder Etikett). Ein deterministischer lokaler Regel-Kernel prüft Gefahrenrisiken direkt auf dem Gerät ohne Cloud-Abhängigkeit.
-2. Mehrsprachige Audio-Sofortwarnung: Bei Gefahr warnt eine laute Stimme in der jeweiligen Muttersprache der Arbeitskraft (Ukrainisch, Polnisch, Türkisch, Arabisch, Rumänisch, Bulgarisch, Spanisch, Deutsch, Englisch etc.).
-3. Sensorische Redundanz für laute Umgebungen: Selbst bei Stummschaltung oder Maschinenlärm pulsiert das Gerät mit Notfall-Haptik (300-100-300-100-500 ms) und sendet ein grelles 15-Hz-Farb-Stroboskop (Rot/Weiß).
-4. Formaler Sicherheitsnachweis (Kein Grün / Niemals "Sicher"): Das System schließt falsche Sicherheit kategorisch aus. Es warnt vor STOP oder meldet UNVERIFIED.
+What does not exist yet: camera scanning of the containers, recorded voice warnings, a mobile app. These are written up as open tickets. The tool is a template for others to build on, not a deployable protective system, and it does not replace training or the employer's risk assessment.
 
-Das Projekt ist schlüsselfertig, getestet und unter CC0 veröffentlicht:
-• Web-Simulator & Live-Demo: https://felixinberlin.github.io/Amelie/#dose=dose-cleaner-chemical-safety
-• Video-Demonstration (Praxis-Feldtest): https://drive.google.com/file/d/1TGYV6aw7zWwe6isgin9UGvTJblDc-t8n/view?usp=drive_link
-• Quellcode, Testsuite & Spezifikationen: https://github.com/felixinberlin/Amelie/tree/main/07-demos/chemhazard-stop
+Demo: https://felixinberlin.github.io/Amelie/#dose=dose-cleaner-chemical-safety
+Code, tests and data sources: https://github.com/felixinberlin/Amelie/tree/main/07-demos/chemhazard-stop
 
-„Diese Idee gehört niemandem. Nimm sie, bau sie, setze sie in europäischen Betrieben ein — Sie schulden mir nichts, nicht einmal eine Antwort.“
+If any part of it is useful for your work on dangerous substances or on cleaning workers, please take it. There is no obligation attached, not even a reply, and I will not follow up.
 
-Mit europäischen Grüßen für Sicherheit und Gesundheit bei der Arbeit,
-Amélie Initiative (Félix, Berlin)`,
-    bodyEn: `Dear Dangerous Substances Prevention Team at EU-OSHA,
-Dear Colleagues at the German National Focal Point,
-
-Across the European Union, millions of commercial cleaners — a predominantly vulnerable, migrant workforce working non-standard hours — handle hazardous chemical formulations daily. 
-
-Despite decades of regulatory efforts under REACH, CLP (Regulation EC 1272/2008), and national safety rules, severe mixing incidents continue to occur in confined spaces. The accidental mixture of acidic descalers with sodium hypochlorite bleaches instantly releases lethal chlorine gas (Cl2). The root cause is structural: 15-page Safety Data Sheets and national technical guidance remain locked in supervisors' folders and are inaccessible across language barriers at 3:00 AM.
-
-To directly support EU-OSHA's mission of safe and healthy workplaces, we have built and open-sourced a turnkey, 100% offline point-of-action safety tool: ChemHazard Stop (MischStop).
-
-We are gifting this entire project unconditionally to the European occupational health community (CC0 Public Domain):
-
-Key Capabilities of ChemHazard Stop:
-1. Instant Point-of-Action Verification: Cleaners aim their smartphone camera at two cleaning product containers (GTIN barcode, GISCODE, or label OCR). A deterministic local rule engine evaluates dangerous reaction risks on-device in <1 millisecond without requiring internet or cellular connectivity.
-2. Polyglot Audio Alerts: When an incompatible pair is detected, loud spoken emergency instructions immediately trigger in the cleaner's native language (Ukrainian, Polish, Turkish, Arabic, Romanian, Bulgarian, Spanish, German, English, etc.).
-3. Sensory Redundancy for Noisy Facilities: If the phone is muted or drowned out by 85 dB machinery, the handset pulses with an unmistakable emergency tactile cadence (300-100-300-100-500 ms) and flashes a high-intensity 15 Hz color optical strobe (red/white) visible even through nitrile gloves.
-4. Formal Safety Case (Never Emits "Safe"): The system strictly rejects false reassurance. It never displays a green "safe" clearance. It either halts the worker on verified danger (STOP) or transparently flags incomplete data as UNVERIFIED.
-
-Compliance & European Data Architecture:
-The core engine runs on public facts from EU CLP labelling and manufacturers' safety data sheets: a product counts as chlorine bleach by its ingredient (sodium hypochlorite, CAS 7681-52-9), whether or not its label carries EUH031 ("Contact with acids liberates toxic gas"). It operates with zero tracking, zero cloud data transfer, and complete offline sovereignty.
-
-Everything is turnkey, tested, and published under CC0 / Public Domain:
-• Interactive Web Simulator & Live Demo: https://felixinberlin.github.io/Amelie/#dose=dose-cleaner-chemical-safety
-• Video Demonstration (Field Demonstration): https://drive.google.com/file/d/1TGYV6aw7zWwe6isgin9UGvTJblDc-t8n/view?usp=drive_link
-• Source Code, Test Suite & Specs: https://github.com/felixinberlin/Amelie/tree/main/07-demos/chemhazard-stop
-
-"This idea belongs to no one. Take it, build it, deploy it across European workplaces — you owe me nothing, not even a reply. If you ever have an idea you won't build, give it to someone who will."
-
-In solidarity for occupational health and safety across Europe,
-Amélie Initiative (Félix, Berlin)`,
+Kind regards,
+Félix Martínez Resendiz
+Amélie (open project, Berlin)`,
     doseLinks: ['dose-cleaner-chemical-safety'],
-    scheduleDe: 'Versandfertig (September 2026)',
-    scheduleEn: 'Ready for dispatch (September 2026)',
+    scheduleDe: 'Entwurf, neu geschrieben am 13.10.2026 (alte Fassung versprach Kamera-Scan, 20+ Sprachen und 15-Hz-Stroboskop). Ansprechperson und BAuA-Adresse vor Versand verifizieren.',
+    scheduleEn: 'Draft, rewritten on 13 Oct 2026 (the old version promised camera scanning, 20+ languages and a 15 Hz strobe). Verify contact and BAuA address before sending.',
     sent: false
   },
   {

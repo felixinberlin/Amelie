@@ -421,12 +421,12 @@ export const ChemHazardSimulator: React.FC<ChemHazardSimulatorProps> = ({
         <div className="space-y-2 text-xs font-mono-code text-stone-300 flex-1 w-full">
           <div className="flex items-center gap-2 text-stone-200 font-bold uppercase tracking-wider text-xs">
             <Camera className="w-4 h-4 text-sky-400" />
-            <span>{de ? 'Point-of-Action Kamera-Schutzschild (Field-of-View)' : 'Point-of-Action Camera Shield (Field-of-View)'}</span>
+            <span>{de ? 'Ziel: Kamera-Scan an der Putzkammer (noch nicht gebaut)' : 'Goal: camera scan at the cleaning cart (not built yet)'}</span>
           </div>
           <p className="font-sans text-stone-400 text-xs sm:text-sm leading-relaxed">
             {de
-              ? 'Die Kamera erfasst beide Gebinde zeitgleich oder nacheinander im Field-of-View. Bei Erkennung einer tödlichen Kombination (hier: Säure + Hypochlorit) feuert das Smartphone ein 15-Hz-Farb-Stroboskop (Rot/Weiß), eine laute Notfall-Sprachansage und haptische Vibration.'
-              : 'The camera captures both containers simultaneously or sequentially in the field of view. Upon detecting a lethal pairing (acid + hypochlorite), the handset triggers a 15 Hz visual color strobe (red/white), a loud spoken polyglot warning, and haptic vibration.'}
+              ? 'In dieser Demo wählen Sie die zwei Produkte aus der Liste oder geben GTIN/UFI ein. Der Kamera-Scan der Gebinde ist Ticket 02 und noch nicht gebaut. Bei einer belegten gefährlichen Kombination (z. B. Säure + Hypochlorit) zeigt die Demo STOP, spielt einen Warnton, spricht den Warnsatz über die Sprachausgabe des Browsers und lässt das Gerät vibrieren, wo der Browser das erlaubt.'
+              : 'In this demo you pick the two products from the list or enter a GTIN/UFI. Camera scanning of containers is ticket 02 and not built yet. On a documented dangerous pairing (e.g. acid + hypochlorite) the demo shows STOP, plays a warning tone, speaks the warning via the browser\'s speech synthesis and vibrates where the browser allows it.'}
           </p>
           <div className="flex flex-wrap gap-2 pt-1 text-[11px]">
             <span className="px-2 py-0.5 rounded-md bg-stone-800 border border-stone-700 text-stone-300">
@@ -665,18 +665,18 @@ export const ChemHazardSimulator: React.FC<ChemHazardSimulatorProps> = ({
           )}
         </div>
 
-        {/* Optical Color Strobe & Vibration Active Indicator */}
+        {/* Alarm indicator (red screen + vibration; no fast strobe, see WCAG 2.3.1) */}
         {isAlarmPlaying && (
           <div className="mt-4 p-3 rounded-xl bg-gradient-to-r from-red-600 via-amber-500 to-red-600 text-white font-mono-code text-xs font-bold flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 shadow-lg animate-pulse">
             <span className="flex items-center gap-2">
               <span className="animate-ping inline-flex h-2.5 w-2.5 rounded-full bg-white opacity-90"></span>
               {simulatedMuted
                 ? (de
-                    ? '📳 KEIN TON (STUMM): Optischer Farb-Stroboskop-Blitz (Rot/Weiß) & Haptik-Vibration aktiv!'
-                    : '📳 SILENT / MUTED: Optical Color Strobe Flash (Red/White) & Haptic Vibration Active!')
+                    ? '📳 KEIN TON (STUMM): roter Warnbildschirm & Vibration aktiv'
+                    : '📳 SILENT / MUTED: red warning screen & vibration active')
                 : (de
-                    ? '🚨 4-KANAL-ALARM AKTIV: Sirene + Farb-Stroboskop-Blitz + Haptik-Vibration + Sprachruf!'
-                    : '🚨 4-CHANNEL ALERT ACTIVE: Siren + Optical Color Strobe + Haptic Vibration + Polyglot Voice!')}
+                    ? '🚨 ALARM AKTIV: Warnton + roter Bildschirm + Vibration + Sprachausgabe'
+                    : '🚨 ALERT ACTIVE: warning tone + red screen + vibration + speech')}
             </span>
             <span className="text-[10px] bg-black/40 px-2 py-0.5 rounded font-mono-code shrink-0">
               Vibration: {result.hapticPattern.join('-')} ms
@@ -748,9 +748,9 @@ export const ChemHazardSimulator: React.FC<ChemHazardSimulatorProps> = ({
           </div>
 
           <div className="p-3 rounded-lg bg-stone-900 border border-stone-800 space-y-1">
-            <div className="text-stone-400">2. Display Strobe</div>
+            <div className="text-stone-400">2. Display</div>
             <div className={`font-bold ${result.state === 'STOP' ? 'text-red-400' : 'text-stone-500'}`}>
-              {result.state === 'STOP' ? 'ROT/WEISS (15 Hz)' : 'Inaktiv'}
+              {result.state === 'STOP' ? (de ? 'ROT (≤ 3 Blitze/s)' : 'RED (≤ 3 flashes/s)') : 'Inaktiv'}
             </div>
           </div>
 

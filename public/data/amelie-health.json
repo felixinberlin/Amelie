@@ -1,9 +1,9 @@
 {
   "auditVersion": 1,
-  "generatedAt": "2026-10-12T19:00:31.464Z",
+  "generatedAt": "2026-10-13T08:11:18.544Z",
   "repository": {
-    "commit": "4ff83f17",
-    "branch": "main"
+    "commit": "370f77a",
+    "branch": "claude/keen-heisenberg-jns1fa"
   },
   "inventory": {
     "doses": 47,

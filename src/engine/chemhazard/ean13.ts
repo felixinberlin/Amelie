@@ -2,7 +2,7 @@
  * EAN-13 as a row of 95 modules ('1' = bar, '0' = space), so the simulator can
  * draw the barcode that is printed on the real container.
  *
- * License: CC0-1.0 / AGPL-3.0
+ * License: CC0-1.0
  */
 import { isValidGtin } from './chemHazardEngine';
 

@@ -5,7 +5,7 @@
  * The engine NEVER certifies safety. It only warns of detected danger,
  * or admits it cannot verify. No green screen, ever.
  * 
- * License: CC0-1.0 / AGPL-3.0
+ * License: CC0-1.0
  */
 
 export type ChemicalGroup =

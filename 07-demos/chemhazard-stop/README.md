@@ -1,7 +1,7 @@
 # ChemHazard Stop / MischStop — Scaffolding & Offline Regel-Kernel
 
 > **Kompakter 100% Offline-Mischschutz für gewerbliche Reinigungskräfte**  
-> *Gemeinfreies Open-Source-Geschenk (CC0 / AGPL-3.0) für BIV (Gebäudereiniger-Handwerk), EU-OSHA, BG BAU, DGUV, IG BAU, SEIU und ver.di.*
+> *Gemeinfreies Open-Source-Geschenk (CC0 1.0, gemeinfrei) für BIV (Gebäudereiniger-Handwerk), EU-OSHA, BG BAU, DGUV, IG BAU, SEIU und ver.di.*
 
 ---
 
@@ -48,7 +48,9 @@ Um Urheberrechts- und Haftungsfallen auszuschließen, sind die Daten in drei rec
 
 1. **Öffentlich-rechtliche Spur (immer auslieferbar):** Tatsachen aus dem Sicherheitsdatenblatt (REACH Art. 31) und der CLP-Kennzeichnung (EG Nr. 1272/2008): H- und EUH-Sätze, CAS-Nummern, pH. Der Auslöser ist die **Gefahrengruppe**, die aus der CAS-Nummer folgt (Natriumhypochlorit `7681-52-9`). `EUH031` und `EUH206` sind zusätzliche Hinweise vom Etikett, aber keine Bedingung: Reale Chlorreiniger tragen oft nur `EUH206` oder keinen der beiden Sätze (siehe Abschnitt 3a).
 2. **Lizenzierte Spur (nur mit Genehmigung):** WINGIS / GISBAU Daten mit offiziellen GISCODE-Tabellen (nur mit schriftlicher BG-BAU-Zustimmung). Die App läuft ohne diese Spur vollständig autark. **Hard Rule: Kein Scraping von GESTIS/WINGIS.**
-3. **Offene Community-Spur:** Hersteller-Sicherheitsdatenblätter (unter freier Lizenz), GS1 Digital Link / GTINs und verifizierte PRs von Reinigungsbetrieben und Gewerkschaften.
+3. **Offene Community-Spur:** Tatsachen aus Hersteller-Sicherheitsdatenblättern und Herstellerseiten (die Dokumente selbst stehen **nicht** unter freier Lizenz und liegen nicht im Repository), GS1 Digital Link / GTINs und geprüfte PRs von Reinigungsbetrieben und Gewerkschaften.
+
+**Rechtslage der Daten (Einschätzung, keine Rechtsberatung, Stand 13.10.2026):** Gespeichert sind nur Tatsachen (H-/EUH-Sätze, CAS-Nummern, pH, UFI, GISCODE, EAN), dazu Fundstelle, Datum und Hash sowie eigene Kurzbeschreibungen. Tatsachen sind nicht urheberrechtlich geschützt; Sicherheitsdatenblätter muss der Hersteller nach REACH Art. 31 ohnehin kostenlos abgeben. CC0 verzichtet nur auf unsere eigenen Rechte, nicht auf Rechte Dritter. Restrisiko ist das Datenbankrecht des Herstellers (§ 87b UrhG, RL 96/9/EG) bei Entnahme eines *wesentlichen* Teils einer Datenbank; die Entnahmen hier sind klein (z. B. 12 Kiehl-Produkte). Deshalb: keine PDFs, keine Produktbilder, keine Texte aus dem SDB übernehmen; keine Massenentnahme aus Herstellerkatalogen; WINGIS/GESTIS nie. Wer Gewissheit will, holt eine kurze Zustimmung des Herstellers ein (Vorlage: `data/hersteller-zustimmung-vorlage.md`).
 
 ---
 

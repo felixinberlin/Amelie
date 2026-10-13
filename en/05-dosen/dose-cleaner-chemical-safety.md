@@ -10,18 +10,23 @@ source_type: Type A
 
 *(German: ChemGefahr-Stopp — Quelloffener Misch-Warn-Assistent für Reinigungskräfte)*
 
-**One sentence:** Point a phone camera at two cleaning chemical bottles: Warns audibly in the cleaner's language if the combination is dangerous — 100% offline, in under a second; admits when it cannot verify, but never says "safe."
+**One sentence:** Name two cleaning products and a rule engine that runs without a server warns about dangerous mixtures such as acid + chlorine bleach. It never says "safe", only STOP, "cannot verify" or "no known incompatibility". Camera scanning and a mobile app are not built yet.
 
-**As of:** 27.09.2026 · **Recheck by:** March 2027  
+**As of:** 27.09.2026, text revised 13.10.2026 · **Recheck by:** March 2027  
 **Recipient:** BIV (Federal Association of Contract Cleaners) · EU-OSHA · Service Employees International Union (SEIU) · IG BAU · BG BAU · DGUV · EFCI · European Cleaning and Facility Services Industry  
 **Verdict:** 🎁 **gift**  
 **Review:** 34/35 · Tier 1 · Type A (Details: [Review Dossier](../../06-suche/amelie-classification-log.md))
 
 ---
 
-![Point-of-Action Camera Detection: Smartphone scans acidic descaler and chlorine bleach](/chemhazard-stop.jpg)
+![Illustration (not the demo): smartphone warns about acidic descaler and chlorine bleach](/chemhazard-stop.jpg)
 
-> 📹 **Live Demonstration:** [Watch Point-of-Action Video on Google Drive](https://drive.google.com/file/d/1TGYV6aw7zWwe6isgin9UGvTJblDc-t8n/view?usp=drive_link) *(on-demand streaming, 0 KB initial load burden)*
+> **What exists today and what does not (13 Oct 2026)**
+> - **Built and tested:** rule engine with three states (STOP, UNVERIFIED, grey without clearance), 45 real products from manufacturers' safety data sheets, web demo with product picker or GTIN/UFI input. On STOP: warning tone, vibration (where the browser allows) and the warning spoken via the browser's speech synthesis in 7 languages (DE, EN, UK, PL, TR, AR, RO).
+> - **Not built:** camera scanning of containers and label OCR (ticket 02), recorded voice warnings and alarm control in a mobile app (ticket 03).
+> - **Correction:** Until 12 Oct 2026 the chlorine-gas rule required `EUH031` on a label; Dan Klorix (`EUH206`) and Domestos Professional (neither phrase) mixed with an acid gave no warning. Fixed. The emails of 27 Sep 2026 also described camera scanning, 20+ languages and a 15 Hz strobe. That was not true, and 15 Hz would be a seizure risk for people with photosensitive epilepsy (WCAG 2.3.1: at most 3 flashes per second). Correction draft: `03-zuordnung/mails-q4-2026/mail-11b-korrektur.md`.
+
+> 📹 **Video:** [watch on Google Drive](https://drive.google.com/file/d/1TGYV6aw7zWwe6isgin9UGvTJblDc-t8n/view?usp=drive_link) *(on-demand streaming, 0 KB initial load burden)*
 
 
 
@@ -58,8 +63,8 @@ This is not a UX preference; it is the fundamental safety case. A false "all cle
 
 ## Why now
 
-- **100% Offline Edge Inference:** Ultra-fast scanning of confirmed GTIN/GS1 barcodes or unique UFIs (GISCODE display only) directly on the device with zero cloud dependency.
-- **Instant Spoken Polyglot Alerts:** Pre-recorded and synthesized warning shouts across 20+ languages (Ukrainian, Polish, Turkish, Arabic, Romanian, Bulgarian, etc.) eliminate the burden of reading technical German.
+- **On-device barcode reading:** Phones and browsers can read GTIN/GS1 barcodes without a server; matching against confirmed GTIN mappings or unique UFIs (GISCODE display only) runs locally. Not built for ChemHazard Stop yet (ticket 02).
+- **Speech instead of reading:** The demo already speaks the warning via the browser's speech synthesis in 7 languages; recorded warnings in more languages are ticket 03.
 - **Robust Three-Lane Data Architecture:** Strict legal segregation between public facts from CLP labelling and safety data sheets (hazard statements, CAS numbers), optional licensed GISCODE datasets, and community reports.
 
 ## Data Strategy: Three Legally Separated Lanes
@@ -72,12 +77,12 @@ This is not a UX preference; it is the fundamental safety case. A false "all cle
 
 ## Sketch
 
-**Input:** Smartphone camera scans confirmed GTIN barcodes / unique UFIs (GISCODE display only) of two cleaning chemical bottles sequentially or side by side.
+**Input:** Today: pick from the product list or enter a GTIN/UFI. Goal: the phone camera reads the barcodes of two bottles one after the other (GISCODE display only).
 **Logic:** Local incompatibility matrix computes set union of hazard classifications:
 $$\text{combined} = \text{hazards}(A) \cup \text{hazards}(B)$$
 $$\text{if } \text{rule.required} \subseteq \text{combined} \implies \text{STOP}$$
 **Output:**
-- Dangerous pair detected $\to$ 4 simultaneous alarm channels (maximum-volume alarm stream, flashing red screen, repeating high-frequency haptics, voice warning in native language).
+- Dangerous pair detected $\to$ red full-screen warning (no fast flashing, at most 3 changes per second), warning tone, vibration, spoken warning in the chosen language.
 - Unknown product $\to$ Amber screen (*UNVERIFIED*).
 - Known pair with no triggered rule $\to$ Grey info screen (*NO_KNOWN_INCOMPATIBILITY*, never green).
 
@@ -95,7 +100,9 @@ $$\text{if } \text{rule.required} \subseteq \text{combined} \implies \text{STOP}
 ## Where it breaks (The Achilles Heel)
 
 **Muted phone or loud operating environment:** Muted volume, connected Bluetooth earbuds, phone inside a pocket, speaker muffled by heavy rubber gloves, or deafening industrial vacuum cleaners (85 dB).  
-*Remedy:* If there is no sound or audio is drowned out, physical and optical redundancy takes over: the phone vibrates aggressively with a distinctive emergency pulse rhythm ([300, 100, 300, 100, 500] ms) and the display emits a glaring high-frequency optical color strobe flash (pulsing red/white) visible even in peripheral vision and through thick nitrile gloves. Where OS permissions allow, audio is forced through the `STREAM_ALARM` channel at maximum volume.
+*Remedy (planned, ticket 03):* vibration in an emergency rhythm ([300, 100, 300, 100, 500] ms, already in the demo where the browser allows), a red full-screen warning without fast flashing (at most 3 changes per second, otherwise a seizure risk for photosensitive epilepsy) and, in a mobile app, the `STREAM_ALARM` audio channel. A browser cannot override silent mode; only an app can.
+
+**Second breaking point: wrong product data.** A gap in the data silently swallows a warning, see the correction above (`EUH031`). That is why every rule depends on ingredients (CAS) rather than label phrases, and every record carries source, date and hash of the manufacturer document.
 
 ## Who has already tried this
 
@@ -107,118 +114,18 @@ BG BAU provides world-leading databases in WINGIS, supported by GESTIS (IFA) and
 - **Regulation (EC) No 1272/2008 (CLP Regulation)** — Hazard statements EUH031, H314, H318.
 - **GISBAU / GISCODE classification system** for professional cleaning chemicals (Product groups GD, GG, GS, GU).
 
-## Sample Outreach Emails to Key Stakeholders
+## Delivery
 
-### 1. Outreach to Employers: BIV (Federal Association of Contract Cleaners)
+| Date | To | Status |
+|---|---|---|
+| 27 Sep 2026 14:25 | IG BAU building cleaning (`gebaeudereinigung@igbau.de`) | sent, no reply |
+| 27 Sep 2026 14:32 | IG BAU (`kontakt@igbau.de`) + BG BAU (`gisbau@bgbau.de`) | sent, no reply |
+| 27 Sep 2026 | Gebäudedienstleister (`info@`, `gl@die-gebaeudedienstleister.de`) | sent, no reply |
+| 27 Sep 2026 15:11 | BIV, Christine Sudhop (`biv@die-gebaeudedienstleister.de`) | sent, no reply; text in `03-zuordnung/mails-q4-2026/mail-11-biv.md` |
+| — | the same four: correction | **draft** `03-zuordnung/mails-q4-2026/mail-11b-korrektur.md`, Félix decides |
+| — | EU-OSHA + BAuA focal point | **draft, rewritten 13 Oct 2026** `03-zuordnung/mails-q4-2026/mail-12-eu-osha.md`; verify a named contact before sending |
 
-**Recipient:** BIV Head Office (`biv@die-gebaeudedienstleister.de`, Attn: Christine Sudhop / Managing Director Technology & Economics)  
-**Subject:** Occupational Safety & Liability Shield for Cleaning Contractors: ChemHazard Stop (Open Gift to BIV)
-
-```text
-Dear Ms. Sudhop,
-Dear Members of the Executive Board at BIV,
-
-Representing over 2,500 service enterprises employing 700,000 workers across Germany, you understand the daily operational challenges of cleaning contractors:
-Employers bear strict legal duty of care and statutory liability for occupational safety (GefStoffV, DGUV Rule 101-019). Yet on the front lines, cleaning personnel work under extreme time constraints and across significant language barriers. Accidental mixing of acidic descalers with hypochlorite bleaches (releasing toxic chlorine gas) remains a persistent operational danger — causing severe respiratory injuries, emergency facility evacuations, and liability investigations.
-
-Neither 15-page Safety Data Sheets nor static binder folders in custodial closets protect workers at the point of action. We have built an open-source, turnkey, 100% offline point-of-action safety assistant and are gifting it unconditionally to the industry (CC0 Public Domain):
-
-ChemHazard Stop (MischStop):
-1. Sub-Second Point-of-Action Verification: Cleaners aim their smartphone camera at two chemical containers (GTIN barcode, GISCODE, or label OCR). A deterministic local rule engine evaluates dangerous reaction risks on-device in <1 millisecond with zero cloud dependency.
-2. Polyglot Audio Alerts: In hazardous pairings, loud spoken emergency instructions play immediately in the cleaner's native language (Ukrainian, Polish, Turkish, Arabic, Romanian, Bulgarian, etc.).
-3. Sensory Redundancy for Noisy Facilities: If the handset is muted or drowned out by heavy vacuum equipment, the phone pulses with an unmistakable emergency tactile cadence (300-100-300-100-500 ms) and flashes a high-intensity 15 Hz optical color strobe (red/white) visible through nitrile gloves.
-4. Formal Safety Case (Never Emits "Safe"): The system strictly avoids false reassurance. It never displays a green "safe" clearance. It either halts the worker on verified danger (STOP) or transparently flags incomplete data as UNVERIFIED.
-
-Everything is turnkey, verified, and free of third-party IP restrictions:
-• Interactive Web Simulator & Live Demo: https://felixinberlin.github.io/Amelie/#dose=dose-cleaner-chemical-safety
-• Video Demonstration (Custodial Field Test): https://drive.google.com/file/d/1TGYV6aw7zWwe6isgin9UGvTJblDc-t8n/view?usp=drive_link
-• Source Code, Test Suite & Specs: https://github.com/felixinberlin/Amelie/tree/main/07-demos/chemhazard-stop
-
-"This idea belongs to no one. Take it, build it, deploy it across your member enterprises — you owe me nothing, not even a reply. If you ever have an idea you won't build, give it to someone who will."
-
-With warm regards for safe and incident-free cleaning operations,
-Amélie Initiative (Félix, Berlin)
-```
-
----
-
-### 2. Outreach to European Level: EU-OSHA (European Agency for Safety and Health at Work)
-
-**Recipients:** EU-OSHA (`information@osha.europa.eu`, Attn: Prevention and Research Unit / Dangerous Substances Campaign)  
-**CC:** German National Focal Point at BAuA (`eu-osha@baua.bund.de`)  
-**Subject:** Point-of-Action Chemical Safety for Migrant Cleaners: ChemHazard Stop (Open Gift to EU-OSHA)
-
-```text
-Dear Dangerous Substances Prevention Team at EU-OSHA,
-Dear Colleagues at the German National Focal Point,
-
-Across the European Union, millions of commercial cleaners — a predominantly vulnerable, migrant workforce working non-standard hours — handle hazardous chemical formulations daily. 
-
-Despite decades of regulatory efforts under REACH, CLP (Regulation EC 1272/2008), and national safety rules, severe mixing incidents continue to occur in confined spaces. The accidental mixture of acidic descalers with sodium hypochlorite bleaches instantly releases lethal chlorine gas (Cl2). The root cause is structural: 15-page Safety Data Sheets and national technical guidance remain locked in supervisors' folders and are inaccessible across language barriers at 3:00 AM.
-
-To directly support EU-OSHA's mission of safe and healthy workplaces, we have built and open-sourced a turnkey, 100% offline point-of-action safety tool: ChemHazard Stop (MischStop).
-
-We are gifting this entire project unconditionally to the European occupational health community (CC0 Public Domain):
-
-Key Capabilities of ChemHazard Stop:
-1. Instant Point-of-Action Verification: Cleaners aim their smartphone camera at two cleaning product containers (GTIN barcode, GISCODE, or label OCR). A deterministic local rule engine evaluates dangerous reaction risks on-device in <1 millisecond without requiring internet or cellular connectivity.
-2. Polyglot Audio Alerts: When an incompatible pair is detected, loud spoken emergency instructions immediately trigger in the cleaner's native language (Ukrainian, Polish, Turkish, Arabic, Romanian, Bulgarian, Spanish, German, English, etc.).
-3. Sensory Redundancy for Noisy Facilities: If the phone is muted or drowned out by 85 dB machinery, the handset pulses with an unmistakable emergency tactile cadence (300-100-300-100-500 ms) and flashes a high-intensity 15 Hz color optical strobe (red/white) visible even through nitrile gloves.
-4. Formal Safety Case (Never Emits "Safe"): The system strictly rejects false reassurance. It never displays a green "safe" clearance. It either halts the worker on verified danger (STOP) or transparently flags incomplete data as UNVERIFIED.
-
-Compliance & European Data Architecture:
-The core engine runs on public facts from EU CLP labelling and manufacturers' safety data sheets: a product counts as chlorine bleach by its ingredient (sodium hypochlorite, CAS 7681-52-9), whether or not its label carries EUH031 ("Contact with acids liberates toxic gas"). It operates with zero tracking, zero cloud data transfer, and complete offline sovereignty.
-
-Everything is turnkey, tested, and published under CC0 / Public Domain:
-• Interactive Web Simulator & Live Demo: https://felixinberlin.github.io/Amelie/#dose=dose-cleaner-chemical-safety
-• Video Demonstration (Field Demonstration): https://drive.google.com/file/d/1TGYV6aw7zWwe6isgin9UGvTJblDc-t8n/view?usp=drive_link
-• Source Code, Test Suite & Specs: https://github.com/felixinberlin/Amelie/tree/main/07-demos/chemhazard-stop
-
-"This idea belongs to no one. Take it, build it, deploy it across European workplaces — you owe me nothing, not even a reply. If you ever have an idea you won't build, give it to someone who will."
-
-In solidarity for occupational health and safety across Europe,
-Amélie Initiative (Félix, Berlin)
-```
-
----
-
-### 3. Outreach to Frontline Union & Statutory Insurance: IG BAU & BG BAU
-
-**Recipients:** IG BAU Building Cleaning Union / Federal Board (`kontakt@igbau.de`, Attn: Ulrike Laux)  
-**CC:** BG BAU – Statutory Accident Insurance for Construction & Cleaning (`info@bgbau.de` / `gefahrstoffe@bgbau.de`, Attn: Hazardous Substances / GISBAU)  
-**Subject:** Life Protection for Cleaners: ChemHazard Stop (Open Safety Gift to IG BAU & BG BAU)
-
-```text
-Dear Colleagues at IG BAU Building Cleaning Union (Attn: Ulrike Laux),
-Dear Hazardous Substances & GISBAU/WINGIS Prevention Team at BG BAU,
-
-We are reaching out to both of you simultaneously because frontline chemical safety requires the joint strength of workforce advocacy (union) and institutional prevention (statutory accident insurance):
-
-We have developed a turnkey, 100% offline point-of-action safety interlock: ChemHazard Stop / MischStop.
-
-The Workplace Reality:
-Commercial cleaners work under extreme speed pressure, frequently at night and across severe language barriers. Accidentally mixing acidic descalers (e.g., sulfamic, phosphoric, or hydrochloric acid) with sodium hypochlorite bleach immediately releases lethal chlorine gas (Cl2) into confined, poorly ventilated restrooms.
-Mixing prohibitions are textbook knowledge and thoroughly codified in DGUV Rule 101-019 and WINGIS — yet in the crucial second of mixing, a 15-page Safety Data Sheet filed away in a supervisor's binder provides zero protection. What was missing is a tool standing physically between the worker and two bottles at the custodial cart.
-
-What the Tool Does:
-1. Sub-Second Point-of-Action Scan: Point smartphone camera at two containers (barcode, GISCODE, or label OCR). A deterministic local rule engine evaluates reaction risks in <1 ms on-device with zero internet dependency.
-2. Polyglot Audio Alerts: In hazardous pairings, loud spoken emergency instructions play in the cleaner's native language (Ukrainian, Polish, Turkish, Arabic, Romanian, Bulgarian, German, English, etc.).
-3. Fail-Safe Without Sound: Even if the phone is silenced/muted or drowned out by 85 dB vacuum cleaners, the handset physically pulses with an unmistakable emergency cadence (300-100-300-100-500 ms) while the screen flashes a glaring 15 Hz optical color strobe (red/white) to alert workers even through heavy nitrile gloves.
-4. Formal Safety Invariant: The system never emits a dangerous green "safe" clearance. It strictly triggers STOP on danger, or defaults to UNVERIFIED on incomplete data.
-
-Respecting Authority Data & Architecture:
-We perform zero unauthorized scraping of WINGIS or GESTIS. The core engine triggers deterministically on public-domain EU CLP statements and chemical ingredients from safety data sheets (e.g. sodium hypochlorite, even when the label lacks EUH031). The architecture separates public data from licensed GISCODE datasets, ready to connect directly with official BG BAU WINGIS catalogs should BG BAU choose to adopt or host it.
-
-The complete project is turnkey, tested, and released unconditionally into the public domain (CC0):
-• Interactive Web Simulator & Live Demo: https://felixinberlin.github.io/Amelie/#dose=dose-cleaner-chemical-safety
-• Video Demonstration (Point-of-Action Field Test): https://drive.google.com/file/d/1TGYV6aw7zWwe6isgin9UGvTJblDc-t8n/view?usp=drive_link
-• Source Code, Test Suite & Scaffolding: https://github.com/felixinberlin/Amelie/tree/main/07-demos/chemhazard-stop
-
-"This idea belongs to no one. Take it, build it, sell it — you owe me nothing, not even a reply. If you ever have an idea you won't build, give it to someone who will."
-
-In solidarity for worker health and safety,
-Amélie Initiative (Félix, Berlin)
-```
+No follow-up with IG BAU (rule 3). The texts of 27 Sep stay unchanged as the record of what was sent; they are **no longer** suitable as templates for new recipients.
 
 ---
 
