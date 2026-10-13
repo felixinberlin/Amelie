@@ -60,6 +60,17 @@ Manifest, Symbol und Service Worker (`public/gruendungsnavigator/`). Playwright-
 
 Der Beispielfall beruhte ursprünglich auf einem echten Fall. Seit 11.10.2026 ist er erfunden: neutraler Beruf (Webentwicklung ohne Produktname), andere Preise und Planzahlen, keine Ortsangaben des Netzwerks, „Beispiel“ statt „mein Fall“. Beide Seiten sagen das ausdrücklich. Der Test „Datenschutz-Wächter“ kennt die alten Werte nur als SHA-256-Präfixe und schlägt an, wenn einer zurückkommt (Gegenprobe ok). Hinweis: Ältere Fassungen stehen weiter in der Git-Geschichte.
 
+## 4c. Erste Rückmeldung von Betroffenen (13.10.2026)
+
+r/Grundsicherung, Thread „Dafür bin ich nicht zuständig“, zwei Kommentare:
+
+| Kommentar | Einordnung | Reaktion |
+|---|---|---|
+| „AI Slop“ (zweimal) | Ablehnung ohne Inhalt; Signal, dass die Seite wie ungeprüfte KI-Ausgabe wirkt | Herkunft sichtbar gemacht (Transparenz-Kasten oben auf der Startseite, Fußzeilen) |
+| „Bitte hört auf, in Rechtsfragen einer KI zu vertrauen … blind vertraut … Mist“ | sachlich berechtigt; deckt sich mit der Achillesferse des Reviewers (RDG, Formulierungen eines Nichtjuristen) und mit den 4 falschen „wörtlichen“ Zitaten vom 11.10. | Kasten sagt, was geprüft ist und was nicht; Prüfvermerk an jedem Zitat; Kurzfassungen als „nicht wörtlich“; neue Grundregel „Vorher gegenlesen lassen“ |
+
+Ein Test („Transparenz“) hält das fest. Auf Reddit wurde nicht geantwortet.
+
 ## 5. Bedingungen vor Versand
 
 | Bedingung (Reviewer) | Stand |

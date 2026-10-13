@@ -96,6 +96,8 @@ Wer aus dem Grundsicherungsgeld gründen will, braucht das Jobcenter. Aber **Ein
 
 **Ton:** Ein Werkzeug, das wie eine Drohung wirkt, schadet. Der Präsentationsmodus erzwingt die kooperative Fassung.
 
+**Vertrauen (erste Rückmeldung, 13.10.2026):** Auf r/Grundsicherung kam als erste Reaktion „AI Slop“ und: „Bitte hört auf, in Rechtsfragen einer KI zu vertrauen … wenn man dem Ergebnis blind vertraut, wird es gern mal Mist.“ Der Einwand ist berechtigt. Ein Werkzeug für Betroffene muss sagen, was geprüft ist und was nicht. Gegenmaßnahme seitdem: ein Transparenz-Kasten (mit KI-Unterstützung geschrieben, zur Laufzeit keine KI, Zitate gegen die Amtsquelle geprüft, Formulierungen nicht juristisch geprüft, vorher Sozialberatung), ein Prüfvermerk an jedem Zitat, „nicht wörtlich“ an jeder Kurzfassung und ein Link zur Prüfakte.
+
 **Offen gelegt:**
 - Der Bedarf stützt sich nur auf Sekundärquellen (gegen-hartz.de, LTO); die IAB-Studie ist nicht gelesen.
 - Die Empfängerperson ist nicht verifiziert.

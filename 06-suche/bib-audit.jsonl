@@ -422,3 +422,5 @@
 {"at":"2026-10-11T18:01:14.730Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Gründungsnavigator — 11.10.2026","id":"dejure-org-sgb-ii-nach-dem-13-aenderungs"}
 {"at":"2026-10-11T18:01:14.743Z","event":"cli","actor":"bibliothekar","agent":"ideen-scout","runde":"Gründungsnavigator — 11.10.2026","cmd":"quellen import","count":8}
 {"at":"2026-10-12T13:49:52.670Z","event":"cli","cmd":"quellen log","actor":"bibliothekar","agent":"bibliothekar","runde":"Antwort NABU Jena 2026-10-12","id":"nabu-jena-vogelschlagmelder"}
+{"at":"2026-10-13T08:54:18.082Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"Gründungsnavigator — Antwort 13.10.2026","id":"r-grundsicherung-thread-dafuer-bin-ich-n"}
+{"at":"2026-10-13T08:54:18.098Z","event":"cli","actor":"bibliothekar","agent":"bibliothekar","runde":"Gründungsnavigator — Antwort 13.10.2026","cmd":"quellen import","count":1}

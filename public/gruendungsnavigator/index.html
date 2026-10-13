@@ -172,6 +172,9 @@ body.present .ptabs{display:flex}
   .grid2{grid-template-columns:1fr}
   .question{font-size:19px}
 }
+.transparenz{border:1px solid var(--line);border-left:4px solid var(--law);background:var(--law-soft);border-radius:10px;padding:12px 16px;margin:0 0 20px;font-size:14.5px}
+.transparenz ul{margin:6px 0 0;padding-left:20px}.transparenz li{margin:3px 0}
+.pruef{margin:4px 0 0;font-size:12px;color:var(--ink-2)}
 /* Handy: App-Leiste unten, kompakter Kopf, große Tippflächen */
 nav.tabs .ico,nav.tabs .short{display:none}
 .callbar{height:4px;background:var(--surface-2);border-radius:99px;overflow:hidden;margin:0 0 14px}
@@ -262,6 +265,16 @@ nav.tabs .ico,nav.tabs .short{display:none}
 <section class="view" id="view-prep">
   <h1>Vorbereitung</h1>
   <div class="example" style="border-left:4px solid var(--accent)"><b>Beispielinhalte</b>Fragen, Antworten und Zahlen stammen aus einem erfundenen Beispiel: Gründung als Webentwickler aus dem Grundsicherungsgeld. Person und Zahlen sind ausgedacht. Die Antworten im Bereich „Fragen“ lassen sich für die eigene Gründung überschreiben; die Rechtsgrundlagen gelten für alle. Alle Wege vom Antrag bis zum Ausstieg als Karte: <a href="fall-landkarte.html">Fall-Landkarte</a>. Keine Rechtsberatung.</div>
+  <div class="transparenz">
+    <b>So ist diese Seite entstanden – und was sie nicht ist</b>
+    <ul>
+      <li><b>Mit KI-Unterstützung geschrieben.</b> Beim Benutzen läuft keine KI: Die Seite rechnet und zeigt nur, was fest in ihr steht.</li>
+      <li><b>Geprüft:</b> Jedes Gesetzeszitat ist maschinell gegen den amtlichen Text auf gesetze-im-internet.de abgeglichen (zuletzt am <span class="gepr"></span>). Sinngemäßes ist als „Kurzfassung“ markiert.</li>
+      <li><b>Nicht geprüft:</b> Die Formulierungsvorschläge und Taktik-Hinweise stammen nicht von Jurist:innen. Sie sind Beispiele, keine Rechtsberatung.</li>
+      <li><b>Nicht blind vertrauen:</b> Jedes Gesetz anklicken und selbst lesen. Vor wichtigen Terminen eine Sozialberatung gegenlesen lassen (z. B. Wohlfahrtsverbände, Erwerbsloseninitiativen, Gewerkschaften).</li>
+      <li>Wie geprüft wurde, steht offen nachlesbar in der <a href="https://github.com/felixinberlin/Amelie/blob/main/07-demos/gruendungsnavigator/pruefakte.md" target="_blank" rel="noopener">Prüfakte</a>.</li>
+    </ul>
+  </div>
   <p class="lead">Diese Angaben bleiben nur in diesem Browser gespeichert und werden in die Formulierungen und die Abschluss-Mail eingesetzt. Nichts davon wird übertragen.</p>
   <div class="card">
     <div class="grid2">
@@ -278,6 +291,7 @@ nav.tabs .ico,nav.tabs .short{display:none}
   <div class="rules">
     <ul>
       <li><b>Ruhig, sachlich, kurz.</b> Ein Gedanke pro Satz, dann zuhören.</li>
+      <li><b>Vorher gegenlesen lassen.</b> Diese Seite ersetzt keine Beratung. Eine Sozialberatung prüft Ihren Fall kostenlos oder günstig.</li>
       <li><b>Nichts am Telefon zusagen oder unterschreiben.</b> „Schicken Sie mir das bitte schriftlich, ich schaue es mir an.“</li>
       <li><b>Alles mitschreiben:</b> Datum, Uhrzeit, Name, Zusagen. Diese Seite protokolliert Ihre Klicks automatisch.</li>
       <li><b>Zum Termin einen Beistand mitbringen</b> (§ 13 Abs. 4 SGB X) und Akteneinsicht verlangen, wenn nötig (§ 25 SGB X).</li>
@@ -365,7 +379,7 @@ nav.tabs .ico,nav.tabs .short{display:none}
 
 <footer>
   <div class="wrap">
-    Persönliche Gesprächshilfe, keine Rechtsberatung. Gesetzestexte verlinkt auf <a href="https://www.gesetze-im-internet.de/" rel="noopener" target="_blank">gesetze-im-internet.de</a>; „Kurzfassung“ markiert sinngemäße Wiedergaben, alles andere ist wörtlich zitiert. Rechtsstand: SGB II in der Fassung des Dreizehnten Änderungsgesetzes vom 16.04.2026 (BGBl. I Nr. 107), in Kraft seit 1. Juli 2026; geprüft am 11.10.2026.
+    Gesprächshilfe mit KI-Unterstützung geschrieben, keine Rechtsberatung; Gesetzeszitate maschinell gegen die Amtsquelle geprüft, Formulierungen nicht juristisch geprüft. Gesetzestexte verlinkt auf <a href="https://www.gesetze-im-internet.de/" rel="noopener" target="_blank">gesetze-im-internet.de</a>; „Kurzfassung“ markiert sinngemäße Wiedergaben, alles andere ist wörtlich zitiert. Rechtsstand: SGB II in der Fassung des Dreizehnten Änderungsgesetzes vom 16.04.2026 (BGBl. I Nr. 107), in Kraft seit 1. Juli 2026; geprüft am 11.10.2026.
     <span class="noprint"> · <a href="#" id="theme">Hell/Dunkel</a></span><span class="noprint"> · <span id="offline-status"></span></span><span class="noprint tactic"> · Tastatur im Telefonat: <kbd>1</kbd>–<kbd>4</kbd> Antwort, <kbd>Enter</kbd> weiter, <kbd>←</kbd> zurück.</span>
   </div>
 </footer>
@@ -377,6 +391,7 @@ nav.tabs .ico,nav.tabs .short{display:none}
 
 /* ---------- Gesetze ---------- */
 const G = "https://www.gesetze-im-internet.de/";
+const GEPRUEFT = "11.10.2026"; /* letzter Lauf von npm run check:gn-zitate */
 const LAW = {
   sgb1_14:  {t:"§ 14 SGB I", n:"Beratung", u:G+"sgb_1/__14.html", q:"Jeder hat Anspruch auf Beratung über seine Rechte und Pflichten nach diesem Gesetzbuch."},
   sgb1_16_2:{t:"§ 16 Abs. 2 SGB I", n:"Antrag bei unzuständiger Stelle", u:G+"sgb_1/__16.html", q:"Ist die Sozialleistung von einem Antrag abhängig, gilt der Antrag als zu dem Zeitpunkt gestellt, in dem er bei einer der in Satz 1 genannten Stellen eingegangen ist."},
@@ -803,7 +818,7 @@ function lawHTML(ids){
   if (!ids || !ids.length) return "";
   return '<div class="laws">' + ids.map(id => { const L = LAW[id]; if (!L) return "";
     return '<div class="law"><div class="h"><span class="chip">' + esc(L.t) + '</span><span class="name">' + esc(L.n) + '</span><a class="src" href="' + L.u + '" target="_blank" rel="noopener">Gesetzestext ↗</a></div>' +
-      (L.q ? '<blockquote>„' + esc(L.q) + '“</blockquote>' : '<blockquote><span class="kurz">Kurzfassung</span>' + esc(L.k) + '</blockquote>') + '</div>'; }).join("") + '</div>';
+      (L.q ? '<blockquote>„' + esc(L.q) + '“</blockquote><p class="pruef">Wortlaut maschinell geprüft am ' + GEPRUEFT + ' gegen gesetze-im-internet.de</p>' : '<blockquote><span class="kurz">Kurzfassung</span>' + esc(L.k) + '</blockquote><p class="pruef">Kurzfassung, nicht wörtlich: im Gesetz nachlesen</p>') + '</div>'; }).join("") + '</div>';
 }
 
 /* ---------- Ansichten ---------- */
@@ -821,6 +836,7 @@ function show(view){
 
 /* Vorbereitung */
 function renderPrep(){
+  document.querySelectorAll(".gepr").forEach(el => { el.textContent = GEPRUEFT; });
   document.querySelectorAll("[data-field]").forEach(el => { el.value = S.f[el.dataset.field] || ""; });
   $("#bring").innerHTML = BRING.map((t, i) => '<li><label class="check"><input type="checkbox" data-chk="b' + i + '"' + (S.chk["b" + i] ? " checked" : "") + '> ' + esc(t) + '</label></li>').join("");
 }

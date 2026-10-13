@@ -47,6 +47,7 @@ h3{font-size:17px;margin:26px 0 8px}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;box-shadow:var(--shadow)}
 .legend{display:flex;gap:16px;flex-wrap:wrap;font-size:14px;color:var(--ink-2);margin:10px 0 0}
 .legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px;border:2px solid var(--c);background:var(--cs)}
+.pruef{margin:4px 0 0;font-size:12px;color:var(--ink-2)}
 svg{display:block;width:100%;height:auto}
 svg text{fill:var(--ink);font-family:inherit}
 svg .q2{fill:var(--ink-2)}
@@ -134,7 +135,7 @@ footer{border-top:1px solid var(--line);color:var(--ink-2);font-size:13px;paddin
 <main class="wrap">
   <h1>Alle Wege einer Gründung aus dem Grundsicherungsgeld, jede mögliche Antwort, jede Frist</h1>
   <p class="lead">Neun Stationen vom Antrag bis zum Ausstieg aus dem Grundsicherungsgeld. Jede Station hat Fragen, jede Frage alle realistischen Antworten des Jobcenters (oder des Verlaufs). Ein Klick auf ein Kästchen öffnet: was ich sage, was als Nächstes passiert, welche Frist läuft und das Gesetz im Wortlaut mit Link.</p>
-  <div class="card" style="border-left:5px solid var(--accent);margin:0 0 14px"><b>Beispiel:</b> Gründung als Webentwickler aus dem Grundsicherungsgeld, beantragt werden Einstiegsgeld (§ 16b SGB II) und ein Zuschuss für Arbeitsmittel über 2.000 € (§ 16c SGB II). Person, Zahlen und Formulierungen sind erfunden; die Rechtsgrundlagen und Fristen gelten für alle. Interaktive Fassung mit Telefon-Entscheidungsbaum, Fragenkatalog und Rechte-Karten: <a href="./">Gesprächsnavigator</a>.</div>
+  <div class="card" style="border-left:5px solid var(--accent);margin:0 0 14px"><b>Beispiel:</b> Gründung als Webentwickler aus dem Grundsicherungsgeld, beantragt werden Einstiegsgeld (§ 16b SGB II) und ein Zuschuss für Arbeitsmittel über 2.000 € (§ 16c SGB II). Person, Zahlen und Formulierungen sind erfunden; die Rechtsgrundlagen und Fristen gelten für alle. Mit KI-Unterstützung geschrieben: Gesetzeszitate sind gegen den amtlichen Text geprüft, die Formulierungen nicht juristisch, also bitte nicht blind übernehmen. Interaktive Fassung mit Telefon-Entscheidungsbaum, Fragenkatalog und Rechte-Karten: <a href="./">Gesprächsnavigator</a>.</div>
   <div class="legend">
     <span style="--c:var(--good);--cs:var(--good-soft)">gut für mich</span>
     <span style="--c:var(--axis);--cs:var(--surface)">neutral, weiter</span>
@@ -161,7 +162,7 @@ footer{border-top:1px solid var(--line);color:var(--ink-2);font-size:13px;paddin
   <div class="laws" id="lawlist"></div>
 </main>
 
-<footer><div class="wrap">Persönliche Arbeitshilfe, keine Rechtsberatung. Für Streitfälle: Sozialberatung (z. B. ver.di Erwerbslosenberatung, Tacheles e.V.) oder Fachanwalt für Sozialrecht; das Verfahren vor dem Sozialgericht ist für Leistungsempfänger kostenfrei (§ 183 SGG). Beispielzahlen einer erfundenen Gründung als Webentwickler, Stand Oktober 2026. <span id="offline-status"></span></div></footer>
+<footer><div class="wrap">Arbeitshilfe, mit KI-Unterstützung geschrieben, keine Rechtsberatung. Gesetzeszitate maschinell gegen gesetze-im-internet.de geprüft (11.10.2026), Formulierungen nicht juristisch geprüft; jedes Gesetz selbst nachlesen und wichtige Schritte mit einer Sozialberatung absprechen. <a href="https://github.com/felixinberlin/Amelie/blob/main/07-demos/gruendungsnavigator/pruefakte.md" target="_blank" rel="noopener">Prüfakte</a>. Für Streitfälle: Sozialberatung (z. B. ver.di Erwerbslosenberatung, Tacheles e.V.) oder Fachanwalt für Sozialrecht; das Verfahren vor dem Sozialgericht ist für Leistungsempfänger kostenfrei (§ 183 SGG). Beispielzahlen einer erfundenen Gründung als Webentwickler, Stand Oktober 2026. <span id="offline-status"></span></div></footer>
 
 <script>
 (() => {
@@ -485,7 +486,7 @@ function treeSVG(ph, qi, Q){
     s += `<text x="${b.x + colW - 12}" y="${b.y + 22}" font-size="11" font-weight="700" text-anchor="end" style="fill:${b.a.mine ? "var(--accent)" : c}">${b.a.mine ? "BEISPIEL" : lbl.toUpperCase()}</text></g>`; });
   return s + `</svg>`;
 }
-function lawHTML(ids){ return ids.length ? `<div class="laws">` + ids.map(id => { const x = L[id]; return `<div class="law"><div class="h"><span class="chip">${esc(x.t)}</span><span class="nm">${esc(x.n)}</span><span class="lk"><a href="${x.u}" target="_blank" rel="noopener">gesetze-im-internet.de ↗</a> · <a href="${x.d}" target="_blank" rel="noopener">dejure.org ↗</a></span></div>${x.q ? `<blockquote>„${esc(x.q)}“</blockquote>` : `<blockquote><span class="kurz">Kurzfassung</span>${esc(x.k)}</blockquote>`}</div>`; }).join("") + `</div>` : ""; }
+function lawHTML(ids){ return ids.length ? `<div class="laws">` + ids.map(id => { const x = L[id]; return `<div class="law"><div class="h"><span class="chip">${esc(x.t)}</span><span class="nm">${esc(x.n)}</span><span class="lk"><a href="${x.u}" target="_blank" rel="noopener">gesetze-im-internet.de ↗</a> · <a href="${x.d}" target="_blank" rel="noopener">dejure.org ↗</a></span></div>${x.q ? `<blockquote>„${esc(x.q)}“</blockquote><p class="pruef">Wortlaut maschinell geprüft am 11.10.2026 gegen gesetze-im-internet.de</p>` : `<blockquote><span class="kurz">Kurzfassung</span>${esc(x.k)}</blockquote><p class="pruef">Kurzfassung, nicht wörtlich: im Gesetz nachlesen</p>`}</div>`; }).join("") + `</div>` : ""; }
 function phases(){
   let h = "";
   PH.forEach(ph => {

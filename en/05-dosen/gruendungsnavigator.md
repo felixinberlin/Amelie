@@ -96,6 +96,8 @@ Anyone who wants to start a business while on basic income support (Grundsicheru
 
 **Tone:** A tool that reads like a threat does harm. Presentation mode enforces the cooperative version.
 
+**Trust (first feedback, 13 Oct 2026):** On r/Grundsicherung the first reactions were "AI slop" and: "Please stop trusting an AI on legal questions … if you trust the result blindly, it often turns into rubbish." The objection is fair. A tool for people affected must say what has been checked and what has not. Remedy since then: a transparency box (written with AI assistance, no AI at runtime, quotations checked against the official source, wording not checked by lawyers, see a welfare advice service first), a check note on every quotation, "not verbatim" on every summary, and a link to the audit file.
+
 **Disclosed:**
 - The need rests on secondary sources only (gegen-hartz.de, LTO); the IAB study has not been read.
 - The recipient's contact person is not verified.

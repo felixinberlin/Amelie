@@ -7,7 +7,7 @@ Runde 2 hat gezeigt: Überlebende Ideen kommen aus Primärquellen, nicht aus Bra
 
 **Status:** `offen` (Nie gegraben oder nur als Anker genannt.) · `angekratzt` (Eine Suche oder ein Schnipsel; Publikationsliste nicht gelesen.) · `durchsucht` (Publikationsliste/Seite selbst gelesen.) · `erschöpft` (Anker dicht, kein weiterer Kandidat zu erwarten.) · `gesperrt` (Nicht (mehr) nutzen, z. B. Empfänger mit Nachfass-Sperre.)
 
-**Bestand:** 324 Quellen · 38 offen · 149 angekratzt · 110 durchsucht · 19 erschöpft · 8 gesperrt · Evidenz: 181 gelesen, 122 nur Schnipsel, 21 unbekannt.
+**Bestand:** 325 Quellen · 38 offen · 150 angekratzt · 110 durchsucht · 19 erschöpft · 8 gesperrt · Evidenz: 181 gelesen, 123 nur Schnipsel, 21 unbekannt.
 
 **Vektoren Q1–Q6** (1–5, Summe /30): Q1 Ergiebigkeit · Q2 Restpotenzial · Q3 Zugang · Q4 Belastbarkeit · Q5 Geländefreiheit · Q6 Anschluss. `auto` = aus Status/Evidenz/Ertrag abgeleitet, noch nicht bewertet.
 
@@ -482,6 +482,7 @@ Runde 2 hat gezeigt: Überlebende Ideen kommen aus Primärquellen, nicht aus Bra
 | **Mediately SmPC-Updates** `mediately-smpc-updates` | Kommerzielle Arzneimitteldatenbank mit Änderungsmeldungen (114.388 SmPC-Updates April 2022 bis April 2023) *[Schnipsel]* | Webseite (teilweise): app | `angekratzt` *(30.09.2026: DE/ES-Abdeckung nicht geprüft; Typ/Kategorie nächstpassend.)* | 30.09.2026 | – | 21* |
 | **Google Play Store App-Seiten** `google-play-store-app-seiten` | App-Beschreibungen (certiscan, es.coaat.conmat) | Webseite (gesperrt): app, WebFetch auf play.google.com/store/apps/details liefert eine fremde App (Ihre Heimat, QPMS); Herausgeberseite oder apkpure.com nutzen | `gesperrt` *(01.10.2026: Negativbefund Zugang; certiscan laut Reviewer-Schnipsel eine GPSR/CE-Compliance-App, kein DoP-Leser.)* | 01.10.2026 | – | 21* |
 | **Familien-Erinnerungs-Apps (FamilySearch Erinnerungen, Heritage-App, erinnerungswerk)** `familien-erinnerungs-apps-familysearch-e` | Apps zum Hochladen kurzer Erinnerungen mit Audio, Foto und Text für Familien *[Schnipsel]* | Webseite | `angekratzt` *(01.10.2026: Beleg für das Grab des Lab-Vorschlags 66f73d C10.)* | 01.10.2026 | Grab `mikro-storytelling-erinnerung` | 21* |
+| **r/Grundsicherung Thread „Dafür bin ich nicht zuständig“ (Antwort auf den Gründungsnavigator)** `r-grundsicherung-thread-dafuer-bin-ich-n` | Erste Rückmeldung von Betroffenen auf eine Dose: zweimal „AI Slop“ und der Einwand, in Rechtsfragen nicht blind einer KI zu vertrauen *[Schnipsel]* | Webseite (teilweise): web | `angekratzt` *(13.10.2026: Antwort 13.10.2026, Kommentare von Félix übermittelt (Reddit aus der Cloud gesperrt); Einwand berechtigt, Reaktion Transparenz-Kasten und Prüfvermerke, nicht auf Reddit geantwortet.)* | 13.10.2026 | Dose `gruendungsnavigator` | 21* |
 
 **Suchstring:** `site:reddit.com <Thema> "is there an app"` · `<Thema> "wish there was"` · `<Thema> Ask HN` · `<Thema> Mastodon`
 

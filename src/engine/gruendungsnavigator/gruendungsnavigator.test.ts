@@ -494,3 +494,38 @@ describe('Datenschutz-Wächter: der Beispielfall ist erfunden', () => {
     expect(KARTE).toContain('erfunden');
   });
 });
+
+// ------------------------------------------------------------------ Transparenz
+
+describe('Transparenz: Die Seiten sagen, was geprüft ist und was nicht', () => {
+  // Anlass 13.10.2026, erste Rückmeldung auf Reddit: „Bitte hört auf, in Rechtsfragen
+  // einer KI zu vertrauen … wenn man dem Ergebnis blind vertraut, wird es gern mal Mist.“
+  it('Gesprächsnavigator: Transparenz-Kasten mit KI-Hinweis, Geprüftem, Ungeprüftem, Beratung und Prüfakte', () => {
+    expect(NAV).toContain('class="transparenz"');
+    for (const satz of ['Mit KI-Unterstützung geschrieben', 'Nicht geprüft:', 'Nicht blind vertrauen', 'Sozialberatung', 'pruefakte.md']) {
+      expect(NAV, satz).toContain(satz);
+    }
+  });
+
+  it('jedes Zitat trägt einen Prüfvermerk, jede Kurzfassung den Hinweis „nicht wörtlich“', () => {
+    for (const html of [NAV, KARTE]) {
+      expect(html).toContain('Wortlaut maschinell geprüft am');
+      expect(html).toContain('Kurzfassung, nicht wörtlich: im Gesetz nachlesen');
+    }
+  });
+
+  it('das genannte Prüfdatum ist das Datum des Normstands im Kern', () => {
+    const [j, m, t] = RECHTSSTAND.geprueftAm.split('-');
+    const datum = `${t}.${m}.${j}`;
+    expect(NAV).toContain(`const GEPRUEFT = "${datum}"`);
+    expect(KARTE).toContain(`geprüft am ${datum}`);
+  });
+
+  it('beide Fußzeilen nennen KI-Unterstützung und „keine Rechtsberatung“', () => {
+    for (const html of [NAV, KARTE]) {
+      const fuss = html.slice(html.indexOf('<footer'));
+      expect(fuss).toContain('KI-Unterstützung');
+      expect(fuss).toContain('keine Rechtsberatung');
+    }
+  });
+});

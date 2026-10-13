@@ -17560,6 +17560,58 @@
           "status": "angekratzt"
         }
       ]
+    },
+    {
+      "id": "r-grundsicherung-thread-dafuer-bin-ich-n",
+      "name": "r/Grundsicherung Thread „Dafür bin ich nicht zuständig“ (Antwort auf den Gründungsnavigator)",
+      "typ": "X",
+      "kategorie": "soziale-plattform",
+      "rollen": [
+        "evidenz"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.reddit.com/r/Grundsicherung/comments/1x3wu74/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "teilweise",
+        "wie": "web"
+      },
+      "enthaelt": "Erste Rückmeldung von Betroffenen auf eine Dose: zweimal „AI Slop“ und der Einwand, in Rechtsfragen nicht blind einer KI zu vertrauen",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-13",
+      "ertrag": {
+        "dosen": [
+          "gruendungsnavigator"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-13"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-13",
+          "agent": "bibliothekar",
+          "runde": "Gründungsnavigator — Antwort 13.10.2026",
+          "notiz": "Antwort 13.10.2026, Kommentare von Félix übermittelt (Reddit aus der Cloud gesperrt); Einwand berechtigt, Reaktion Transparenz-Kasten und Prüfvermerke, nicht auf Reddit geantwortet.",
+          "status": "angekratzt"
+        }
+      ]
     }
   ]
 }
