@@ -12,7 +12,7 @@ Jede Quelle, aus der Amélie Ideen, Technik und Möglichkeiten holt (Fachgremium
 |---|---|
 | `id`, `name` | Slug (kebab-case, stabil) und Anzeigename |
 | `typ` | historischer Quellentyp A–W aus dem Playbook (Katalog `typen`) |
-| `kategorie` | gröbere Auswertungsachse: fachgremium · citizen-science · ki-versuch · foerderung · preis · kapital · kommunal · statistik · beobachtungsplattform · spiel · auslandsregulierung · messverfahren · tarif · potenzialstudie · referenzsammlung · norm · empfaenger · datensatz |
+| `kategorie` | gröbere Auswertungsachse: fachgremium · citizen-science · ki-versuch · foerderung · preis · kapital · kommunal · statistik · beobachtungsplattform · spiel · auslandsregulierung · messverfahren · tarif · potenzialstudie · referenzsammlung · bildung (Bildung & Schule: Lehrpläne, Unterrichtsmaterial, Schul-/Bildungsplattformen, Lehrkräfte-Communities) · norm · empfaenger · datensatz |
 | `rollen` | wofür die Quelle taugt: `ideenquelle` · `besetzt-test` · `evidenz` · `empfaenger` · `geldgeber` |
 | `tags` | Themenfelder (vogel, holz, abfall, eu-recht …) |
 | `urls` | kanonische Adressen |

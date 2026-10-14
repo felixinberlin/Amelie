@@ -434,3 +434,11 @@
 {"at":"2026-10-14T12:01:58.617Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Survivors Kinder-Vibecoding 14.10.2026","id":"ki-spielekoffer-sachsen-anhalt"}
 {"at":"2026-10-14T12:01:58.775Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Survivors Kinder-Vibecoding 14.10.2026","id":"qua-lis-nrw-klp-informatik-5-6"}
 {"at":"2026-10-14T12:01:58.791Z","event":"cli","actor":"bibliothekar","agent":"ideen-scout","runde":"Lab-Survivors Kinder-Vibecoding 14.10.2026","cmd":"quellen import","count":7}
+{"at":"2026-10-14T12:11:30.778Z","event":"cli","cmd":"quellen log","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Survivors Kinder-Vibecoding 14.10.2026 — Empfängersuche C2","id":"qua-lis-nrw-klp-informatik-5-6"}
+{"at":"2026-10-14T12:11:30.869Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Survivors Kinder-Vibecoding 14.10.2026 — Empfängersuche C2","id":"gi-fachgruppe-informatische-bildung-in-n"}
+{"at":"2026-10-14T12:11:30.956Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Survivors Kinder-Vibecoding 14.10.2026 — Empfängersuche C2","id":"bwinf-informatik-biber"}
+{"at":"2026-10-14T12:11:31.056Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Survivors Kinder-Vibecoding 14.10.2026 — Empfängersuche C2","id":"r-lehrerzimmer-reddit"}
+{"at":"2026-10-14T12:11:31.161Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Survivors Kinder-Vibecoding 14.10.2026 — Empfängersuche C2","id":"r-cseducation-reddit"}
+{"at":"2026-10-14T12:11:31.257Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Survivors Kinder-Vibecoding 14.10.2026 — Empfängersuche C2","id":"medienberatung-nrw-materialpool-medienko"}
+{"at":"2026-10-14T12:11:31.356Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Survivors Kinder-Vibecoding 14.10.2026 — Empfängersuche C2","id":"fwu-ais-chat-ehem-telli"}
+{"at":"2026-10-14T12:11:31.366Z","event":"cli","actor":"bibliothekar","agent":"ideen-scout","runde":"Lab-Survivors Kinder-Vibecoding 14.10.2026 — Empfängersuche C2","cmd":"quellen import","count":7}

@@ -893,5 +893,6 @@ Auftrag Félix: „Do Ticket 01, make the sector packs.“ Ergebnis: Daten in `0
 
 - **Erledigt:** Zwei Survivors (Lab-Session amelie-lab-1d) geprüft: C2 „Umgedrehtes Vibecoding“ `verengt`, C7 „Lagenweiser Rückbau“ `unklar`; 7 neue Quellen, keine Gräber.
 - **Gelernt:** Bei K-12-/Bildungsideen sitzt die Besetzung im Praxismaterial der Schule (Scratch, ScratchEd, Oak National Academy, Code.org), nicht in den arXiv-Hochschulbelegen, die das Lab zitiert hatte. Die Hochschulbelege zeigen nur, dass der Mechanismus existiert; für die Besetzt-Frage zuerst Schulmaterial suchen. Empfänger mit Mandat zuerst klären: QUA-LiS NRW ist Lehrplan- und Materialstelle, hat kein Softwaremandat und keine verifizierte Person.
-- **Fehler:** Das Register hat keine Kategorie für Bildung; `referenzsammlung` ist ein Notbehelf.
+- **Fehler:** Das Register hatte keine Kategorie für Bildung; `referenzsammlung` war ein Notbehelf (behoben 14.10.2026: Kategorie `bildung`, Quellen umgestellt).
+- **Empfängersuche C2 (14.10.2026):** Reddit über einen Redlib-Spiegel liefert Seitenleiste und Beiträge, aber nicht die Regel-Wikis (vor Post im Browser lesen); GI-Fachgruppen-Seiten nennen Ansprechrollen und Materialsammlungen, daher sind sie der beste erste Empfängerfund bei Bildungsideen.
 - **Nächstes Mal:** Vorfrage „Wer in der Schule oder Schulverwaltung hat ein Mandat für Material oder Werkzeug?“ vor jeder K-12-Idee; Rest-Lücken, die eine Lehrkraft mit einem Chatbot selbst füllt, sind keine Dose.
