@@ -83,6 +83,8 @@ Kurz, auf Deutsch, locker (Félix mischt Spanisch/Englisch, das darf zurückkomm
 
 Kein Packen von Dosen in derselben Runde, außer der Nutzer bittet darum — Format dann in `references/dose-format.md`.
 
+> **Stand-in-Lauf (Vertex gestoppt):** Läuft die Existenzprüfung über einen Claude-Subagenten statt über das Modell der Engine, Suchen über den geerdeten Suchdienst des Labs (WebSearch nur als Rückfall), im Beleg `[stand-in]` vermerken, nur gelieferte Seiten als `evidenz=seite`. Details: `06-suche/amelie-stand-in-laeufe.md`.
+
 ## Woran man merkt, dass es wirkt
 
 Die Trefferquote (`frei` + `verengt`) steigt über die Runden, Kills per Atlas nehmen zu, keine Idee taucht doppelt auf, „Nächstes Mal"-Punkte werden erledigt. Bleibt die Quote um 20 %, stimmt die Quellenwahl nicht — dann das in der Retro benennen, statt mehr Ideen zu prüfen.

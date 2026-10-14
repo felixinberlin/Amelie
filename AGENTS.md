@@ -63,6 +63,7 @@ Wenn du ein Ticket, ein Kriterium oder eine Dosen-Beschreibung änderst, musst d
 
 * **Vertex-Credits ausgeschöpft (Félix, 08.10.2026):** Keine Vertex-basierten Lab-, Vergleichs- oder Teamrunden starten, bis Félix neue Credits ausdrücklich bestätigt. Teamarbeit in dieser Sitzung läuft über die verfügbaren nativen Agenten; keine Vertex-Modellaufrufe.
 
+* **Stand-in-Läufe (14.10.2026):** Solange Vertex gestoppt ist, übernimmt ein Claude-Subagent das Denken der Engines; Suchen laufen über den geerdeten Suchdienst des Labs (WebSearch nur als Rückfall), Kennzeichnung `[stand-in]`, nie Ersatz für einen Live-Lauf, nicht für Mark/Ventures. Handbuch `06-suche/amelie-stand-in-laeufe.md`.
 * **Node.js:** Node v26 liegt unter `/home/felix/.nvm/versions/node/v26.3.1/bin/node`.  
   Falls `node` in einer Subshell nicht gefunden wird:  
   `export PATH="/home/felix/.nvm/versions/node/v26.3.1/bin:$PATH"`

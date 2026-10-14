@@ -79,6 +79,7 @@ Wenn du ein Ticket, ein Kriterium oder eine Dosen-Beschreibung änderst, musst d
 * **Prüfer außerhalb des Lints** (brauchen Netz bzw. Browser; Exit 3 = nicht geprüft, nie als grün melden):
   * `npm run check:mobile [-- <datei> …]` prüft jede Seite unter `public/` bei 360 und 390 px über HTTP: kein waagrechtes Scrollen, keine JS-Fehler, keine 404, Viewport-Meta. Pflicht vor dem Merge einer Demo-Seite.
   * `npm run check:gn-zitate` hält die wörtlichen Normzitate des Gründungsnavigators gegen gesetze-im-internet.de; Muster für jede Dose, die Normen wörtlich zitiert.
+* **Stand-in-Läufe (14.10.2026):** Solange Vertex gestoppt ist, übernimmt ein Claude-Subagent das Denken der Engines; Suchen laufen über den geerdeten Suchdienst des Labs (WebSearch nur als Rückfall), Kennzeichnung `[stand-in]`, nie Ersatz für einen Live-Lauf, nicht für Mark/Ventures. Handbuch `06-suche/amelie-stand-in-laeufe.md`.
 * **Bibliotheks-CLI:** `npm run bib -- <befehl>` (siehe §2); Rundenabschluss in einem Schritt: `npm run bib -- abschluss` (`export:data` → `lint` → `test`).
 * **Crew von der Kommandozeile (ohne Claude-Credits):** `npm run agent -- list|runs|show|merge|write|<agent>` und `npm run teamrunde -- "<Thema>" [--mock] [--write]`. Handbuch `06-suche/amelie-kommandozeile.md`, für Menschen `06-suche/amelie-agenten-fuer-menschen.md`. Packer, Demo-Bauer und Venture-Analyst laufen ebenfalls von dort (Datei-Pakete mit Schranke und Rollback, `scripts/crew/bundle.mjs`, Abschnitt 3a im Handbuch); Venture nur auf `feat/venture-*`.
 
