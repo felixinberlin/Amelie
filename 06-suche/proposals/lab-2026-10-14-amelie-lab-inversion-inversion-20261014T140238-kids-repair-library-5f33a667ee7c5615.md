@@ -1,0 +1,365 @@
+# Proposals from plan lab-2026-10-14-amelie-lab-inversion-inversion-20261014T140238-kids-repair-library-5f33a667ee7c5615
+
+Packet: amelie-lab-inversion-inversion-20261014T140238-kids-repair-library-5f33a667ee7c5615 · Candidate: amelie-lab-inversion-inversion-20261014T140238-kids-repair-library-5f33a667ee7c5615
+Not applied. A human decides.
+
+- [06-suche/amelie-lab-protokoll.md] inversion: amelie-lab-inversion-inversion-20261014T140238-kids-repair-library-5f33a667ee7c5615. Absicht: Kinder von 10–14 Jahren lernen Programmieren durch Vibecoding und eigene Spiele in einer öffentlichen Bibliothek mit Repair-Café: kaputte Spielzeuge und ungefährliche Alltagsgegenstände, Reparaturwissen älterer Ehrenamtlicher, kleine Teams mit gemeinsam genutzten Rechnern. Kinder sollen Verhalten vorhersagen, selbst verändern und mit realen Beobachtungen prüfen. Dies ist ein gewähltes Szenario, kein behaupteter lokaler Bedarf oder bestätigter Partner.. Modell: Codex subagent (stand-in; searches: WebSearch). Existenzprüfung: nein. Alle Ideen ungeprüft. Die folgenden Angaben sind gespeicherte Modellausgaben, keine bestätigten Tatsachen. Nur grounded=true ist Evidenz; Score-Änderungen benötigen zusätzlich quote_status=verified. Quellen, fact_checks und fehlende Felder bleiben wie im Original; keine neuen Prüfungen durchgeführt.
+- [06-suche/amelie-lab-protokoll.md] Originalfeld accounting, Teil 1 (laut gespeicherter Datei):
+{
+  "cost_usd": 0,
+  "model_calls": 0,
+  "search_calls": 7,
+  "search_queries": 21
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld contract_version, Teil 1 (laut gespeicherter Datei):
+"1.1.0"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld created_at, Teil 1 (laut gespeicherter Datei):
+"2026-10-14T14:02:38Z"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld intent, Teil 1 (laut gespeicherter Datei):
+"Kinder von 10–14 Jahren lernen Programmieren durch Vibecoding und eigene Spiele in einer öffentlichen Bibliothek mit Repair-Café: kaputte Spielzeuge und ungefährliche Alltagsgegenstände, Reparaturwissen älterer Ehrenamtlicher, kleine Teams mit gemeinsam genutzten Rechnern. Kinder sollen Verhalten vorhersagen, selbst verändern und mit realen Beobachtungen prüfen. Dies ist ein gewähltes Szenario, kein behaupteter lokaler Bedarf oder bestätigter Partner."
+- [06-suche/amelie-lab-protokoll.md] Originalfeld log_entry, Teil 1 (laut gespeicherter Datei):
+"<!-- proposed by the Lab's Inversion agent, run inversion-20261014T140238-kids-repair-library; nothing was written to Amélie -->\n| 2026-10-14 | Lab | Reparatur-Tischritual mit Kindergruppen: Vorführen, selbst versuchen und nach 15 Minuten wechseln (Klasse D) | OP-3 | 6 | 0 (ungeprüft): none | Ein Erklär- und Beteiligungsproblem ist beschrieben, eine neue technische Lücke für das gewählte Szenario nicht ausreichend belegt. |\n\n### Inversion run inversion-20261014T140238-kids-repair-library — 2026-10-14 (intent: Kinder von 10–14 Jahren lernen Programmieren durch Vibecoding und eigene Spiele in einer öffentlichen Bibliothek mit Repair-Café: kaputte Spielzeuge und ungefährliche Alltagsgegenstände, Reparaturwiss)\n- **Learned:** Der Bibliotheksrahmen ist realistisch: Diez betreibt ein Repair Café. Kinderreparatur, Reparatur-Informatikunterricht und gemeinsames Programmieren haben bereits Materialien; berichtete Erklärschwierigkeiten betreffen teils jüngere Kinder.\n- **Mistake:** Die Überführung mündlichen Wissens in Code wurde zunächst mit verlässlicher Extraktion kausaler Modelle verwechselt. Modellkarten belegen Medienverarbeitung, nicht mechanische Wahrheit oder Lernwirkung.\n- **Next time:** Einen sicheren mechanischen Gegenstand und genau zwei beobachtbare Zustände wählen; mit einer Bibliotheksfachkraft und einem Reparaturhelfer prüfen, ob jede Person vorhersagt und selbst einen Übergang codiert. Erst danach Aufwand gegenüber Scratch-Blättern vergleichen; Helfer, Geräte und Nachfrage sind noch unbestätigt.\n- **Prior-art leads (automatic search, for the existence check; not a verdict):**\n  - C1 (ok): Welche vorhandenen Reparaturmaterialien und KI-Hilfen bieten Repair Café International, iFixit und Scratch für beobachtete Spielzeugfunktionen; was liefert ein allgemeiner KI-Chatbot bereits? -> https://www.repaircafe.org/en/starter-kit-repair-cafe-in-the-classroom/, https://www.ifixit.com/Info/How_to_use_FixBot, https://www.ifixit.com/News/114700/introducing-fixbot, https://www.scratchfoundation.org/learn/learning-library/physical-computing-with-scratch-makey-makey\n  - C2 (ok): Welche Materialien bei Scratch, Code.org und fobizz unterstützen Vorhersagen, Rollenwechsel und Prüfen selbst gebauter Spiele; was fehlt gegenüber einem allgemeinen KI-Chatbot? -> https://forum.code.org/t/students-working-as-partners/35685, https://support.code.org/hc/en-us/articles/203524416-Do-I-need-computers-for-every-student, https://www.scratchfoundation.org/learn/learning-library/debugging, https://fobizz.com/de/gaming-projekte-mit-ki-im-unterricht/\n  - C3 (ok): Welche Materialien bei Repair Café International und Scratch regeln Tischwechsel, gemeinsame Rechner und Auswertung von Kinder-Reparaturstunden; was kann ein allgemeiner KI-Chatbot schon planen? -> https://www.repaircafe.org/en/starter-kit-repair-cafe-in-the-classroom/, https://www.raspberrypi.org/blog/repair-cafes-computing-education-hello-world-19/, https://cms.scratchfoundation.org/assets/5f4a1c34-c79c-4ec9-935d-2bce5f6fee5d\n"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld model, Teil 1 (laut gespeicherter Datei):
+"Codex subagent (stand-in; searches: WebSearch)"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld plan, Teil 1 (laut gespeicherter Datei):
+{
+  "area": "Gemeinsames Programmieren an sicheren Reparaturbeobachtungen: Bibliothek als gewählter Veranstaltungsrahmen, nicht als bestätigter Auftraggeber.",
+  "class_hint": "D",
+  "contract_version": "1.0.0",
+  "mode_list": [
+    "Ein KI-Reparaturchatbot.",
+    "Spielzeug per Foto diagnostizieren.",
+    "Ein Reparaturquiz generieren.",
+    "Eine Bibliothek veranstaltet einen Coding-Kurs.",
+    "Kinder bauen ein Reparaturspiel.",
+    "Ehrenamtliche erklären Reparaturen per Video.",
+    "Ein KI-Tutor hilft beim Programmieren.",
+    "Ein Ersatzteil wird 3D-gedruckt.",
+    "Eine KI plant die Werkstatt.",
+    "Ein Sensor erkennt defekte Geräte."
+  ],
+  "notes": "Andere Achse als zuvor: physisches Tischritual statt §11-Mitbestimmungspflicht, OP-3 statt OP-4. Letzte Retro fordert Originaltexte; Primärberichte und vorhandenes Unterrichtspaket werden deshalb zuerst untersucht. Keine Annahme, dass ältere Helfer, Räume oder Rechner tatsächlich zugesagt sind.",
+  "target_queries": [
+    "Welche dokumentierten Routinen gibt es beim Reparieren mit Kindern und wo scheitert ihre Beteiligung?",
+    "Welche Beobachtungs- und Auswertungsblätter stellt Repair Café International bereits bereit?"
+  ]
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld prior_art, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "answer": "Repair-Café-Unterricht enthält Entdecker- und Auswertungsblätter; FixBot verarbeitet Bilder, Dateien und Sprache. Diese Nachbarn belegen keine kausale Übersetzung beobachteter Spielzeugzustände in korrekten Code.",
+    "candidate_id": "C1",
+    "pages": [
+      "https://www.repaircafe.org/en/starter-kit-repair-cafe-in-the-classroom/",
+      "https://www.ifixit.com/Info/How_to_use_FixBot",
+      "https://www.ifixit.com/News/114700/introducing-fixbot",
+      "https://www.scratchfoundation.org/learn/learning-library/physical-computing-with-scratch-makey-makey"
+    ],
+    "question": "Welche vorhandenen Reparaturmaterialien und KI-Hilfen bieten Repair Café International, iFixit und Scratch für beobachtete Spielzeugfunktionen; was liefert ein allgemeiner KI-Chatbot bereits?",
+    "status": "ok"
+  },
+  {
+    "answer": "Code.org beschreibt gemeinsames Programmieren an einem Rechner; Scratch unterstützt Debugging und Reflexion; fobizz bietet KI-Gaming. Ein reiner Rollen- oder Aufgabenplan hat keinen ausreichenden technischen Sprung.",
+    "candidate_id": "C2",
+    "pages": [
+      "https://forum.code.org/t/students-working-as-partners/35685",
+      "https://support.code.org/hc/en-us/articles/203524416-Do-I-need-computers-for-every-student",
+      "https://www.scratchfoundation.org/learn/learning-library/debugging",
+      "https://fobizz.com/de/gaming-projekte-mit-ki-im-unterricht/"
+    ],
+    "question": "Welche Materialien bei Scratch, Code.org und fobizz unterstützen Vorhersagen, Rollenwechsel und Prüfen selbst gebauter Spiele; was fehlt gegenüber einem allgemeinen KI-Chatbot?",
+    "status": "ok"
+  },
+  {
+    "answer": "Das bestehende Reparaturpaket enthält bereits eine Auswertung. Raspberry Pi beschreibt Reparaturstationen im Informatikunterricht; allein die Verbindung von Reparieren und Programmieren begründet daher keine neue Lücke.",
+    "candidate_id": "C3",
+    "pages": [
+      "https://www.repaircafe.org/en/starter-kit-repair-cafe-in-the-classroom/",
+      "https://www.raspberrypi.org/blog/repair-cafes-computing-education-hello-world-19/",
+      "https://cms.scratchfoundation.org/assets/5f4a1c34-c79c-4ec9-935d-2bce5f6fee5d"
+    ],
+    "question": "Welche Materialien bei Repair Café International und Scratch regeln Tischwechsel, gemeinsame Rechner und Auswertung von Kinder-Reparaturstunden; was kann ein allgemeiner KI-Chatbot schon planen?",
+    "status": "ok"
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld result, Teil 1 (laut gespeicherter Datei):
+{
+  "contract_version": "1.1.0",
+  "kills": [
+    {
+      "candidate_id": "C1",
+      "failed_checks": [
+        "problem_evidence",
+        "buildable"
+      ],
+      "reason": "Ein pädagogisches Erklärproblem ist für jüngere Kinder belegt; die Übertragung auf Zehn- bis Vierzehnjährige bleibt unbestätigt. Modelle und FixBot können Vorschläge liefern, aber eine kausal getreue automatische Übersetzung des konkreten Spielzeugs wurde nicht demonstriert."
+    },
+    {
+      "candidate_id": "C2",
+      "failed_checks": [
+        "why_now",
+        "in_mode_or_dense"
+      ],
+      "reason": "Code.org unterstützt gemeinsames Arbeiten an einem Gerät; Scratch bietet Debugging- und Reflexionsmaterial. Rollenwechsel und Vorhersageprotokolle waren 2018 möglich; die KI-Auswertung begründet keine belegte zusätzliche Lücke."
+    },
+    {
+      "candidate_id": "C3",
+      "failed_checks": [
+        "why_now",
+        "in_mode_or_dense"
+      ],
+      "reason": "Repair Café International besitzt bereits Vorbereitungs-, Entdecker- und Auswertungsmaterial; Raspberry Pi beschreibt Reparaturstationen im Informatikunterricht. Die ergänzende Aufgabenerzeugung ist allgemeine Chatbot-Arbeit und kein ausreichend neuer technischer Mechanismus."
+    }
+  ],
+  "log_row": {
+    "anchor_class": "D",
+    "best_gap": "Ein Erklär- und Beteiligungsproblem ist beschrieben, eine neue technische Lücke für das gewählte Szenario nicht ausreichend belegt.",
+    "candidates": 6,
+    "operator": "OP-3",
+    "survivors": 0,
+    "target": "Reparatur-Tischritual mit Kindergruppen: Vorführen, selbst versuchen und nach 15 Minuten wechseln"
+  },
+  "retro": {
+    "learned": "Der Bibliotheksrahmen ist realistisch: Diez betreibt ein Repair Café. Kinderreparatur, Reparatur-Informatikunterricht und gemeinsames Programmieren haben bereits Materialien; berichtete Erklärschwierigkeiten betreffen teils jüngere Kinder.",
+    "mistake": "Die Überführung mündlichen Wissens in Code wurde zunächst mit verlässlicher Extraktion kausaler Modelle verwechselt. Modellkarten belegen Medienverarbeitung, nicht mechanische Wahrheit oder Lernwirkung.",
+    "next_time": "Einen sicheren mechanischen Gegenstand und genau zwei beobachtbare Zustände wählen; mit einer Bibliotheksfachkraft und einem Reparaturhelfer prüfen, ob jede Person vorhersagt und selbst einen Übergang codiert. Erst danach Aufwand gegenüber Scratch-Blättern vergleichen; Helfer, Geräte und Nachfrage sind noch unbestätigt."
+  },
+  "survivors": []
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld run_id, Teil 1 (laut gespeicherter Datei):
+"inversion-20261014T140238-kids-repair-library"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld state_missing, Teil 1 (laut gespeicherter Datei):
+[]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld target, Teil 1 (laut gespeicherter Datei):
+{
+  "candidates": [
+    {
+      "check_queries": [
+        "Welche vorhandenen Reparaturmaterialien und KI-Hilfen bieten Repair Café International, iFixit und Scratch für beobachtete Spielzeugfunktionen; was liefert ein allgemeiner KI-Chatbot bereits?",
+        "Was belegen Praxisberichte über verständliches Erklären und aktive Kinderbeteiligung am Reparaturtisch?"
+      ],
+      "id": "C1",
+      "idea": "Ein gesprochenes Reparaturbeispiel wird in einen editierbaren Mini-Zustandsautomaten übersetzt; Kinder setzen nur selbst beobachtete Übergänge ins eigene Spiel, nicht die behauptete Diagnose.",
+      "recipient": "Stadtbibliothek Diez, Leitung und Koordination des regelmäßigen Repair Cafés: reales Zuständigkeitsbeispiel, kein bestätigter Partner oder Auftrag.",
+      "recipient_kind": "institution",
+      "why_now": "Sprach- und Code-Modelle ab 2024 erzeugen aus freier Erklärung einen bearbeitbaren Automaten; dass dessen Kausalität dem realen Spielzeug entspricht, ist damit nicht belegt."
+    },
+    {
+      "check_queries": [
+        "Welche Materialien bei Scratch, Code.org und fobizz unterstützen Vorhersagen, Rollenwechsel und Prüfen selbst gebauter Spiele; was fehlt gegenüber einem allgemeinen KI-Chatbot?",
+        "Was belegen Praxisberichte über verständliches Erklären und aktive Kinderbeteiligung am Reparaturtisch?"
+      ],
+      "id": "C2",
+      "idea": "Die KI trennt an einem gemeinsam genutzten Rechner die Vorhersage jedes Kindes von der beobachteten Spielreaktion; Änderungen werden im Team erklärt, bevor die nächste Person übernimmt.",
+      "recipient": "Stadtbibliothek Diez, Leitung und Koordination des regelmäßigen Repair Cafés: reales Zuständigkeitsbeispiel, kein bestätigter Partner oder Auftrag.",
+      "recipient_kind": "institution",
+      "why_now": "Multimodale Modelle ab 2024/25 können Erklärung und Bildschirm auswerten; getrennte Vorhersagefelder, Rollenwechsel und Versionsprotokolle waren 2018 programmierbar."
+    },
+    {
+      "check_queries": [
+        "Welche Materialien bei Repair Café International und Scratch regeln Tischwechsel, gemeinsame Rechner und Auswertung von Kinder-Reparaturstunden; was kann ein allgemeiner KI-Chatbot schon planen?",
+        "Was belegen Praxisberichte über verständliches Erklären und aktive Kinderbeteiligung am Reparaturtisch?"
+      ],
+      "id": "C3",
+      "idea": "Eine Erklärung am Reparaturtisch wird zu drei kurzen Kinderhandlungen verdichtet, damit am nächsten Tisch alle etwas vorhersagen, verändern und beobachten statt nur zuzusehen.",
+      "recipient": "Stadtbibliothek Diez, Leitung und Koordination des regelmäßigen Repair Cafés: reales Zuständigkeitsbeispiel, kein bestätigter Partner oder Auftrag.",
+      "recipient_kind": "institution",
+      "why_now": "Lokale Gemma-3n-Modelle verarbeiten seit 2025 Bild, Ton und Text; das Erzeugen kurzer Aufgaben bietet aber keinen belegten Vorteil gegenüber allgemeinem Chatbot und bestehenden Blättern."
+    },
+    {
+      "check_queries": [
+        "Welche Materialien bei Repair Café International und Scratch regeln Tischwechsel, gemeinsame Rechner und Auswertung von Kinder-Reparaturstunden; was kann ein allgemeiner KI-Chatbot schon planen?",
+        "Was belegen Praxisberichte über verständliches Erklären und aktive Kinderbeteiligung am Reparaturtisch?"
+      ],
+      "id": "C4",
+      "idea": "Ein Helfer zeigt zwei äußerlich ähnliche mechanische Zustände; die KI schlägt Unterschiede als Eingabefelder vor und Kinder entscheiden, welche mit sicherer Beobachtung unterscheidbar sind.",
+      "recipient": "Stadtbibliothek Diez, Leitung und Koordination des regelmäßigen Repair Cafés: reales Zuständigkeitsbeispiel, kein bestätigter Partner oder Auftrag.",
+      "recipient_kind": "institution",
+      "why_now": "Multimodale Modelle können seit 2024 offene Objektbeschreibungen entwerfen; verlässliche mechanische Zustandsunterscheidung bleibt ungeprüft und darf nicht aus Fotos behauptet werden."
+    },
+    {
+      "check_queries": [
+        "Welche Materialien bei Repair Café International und Scratch regeln Tischwechsel, gemeinsame Rechner und Auswertung von Kinder-Reparaturstunden; was kann ein allgemeiner KI-Chatbot schon planen?",
+        "Was belegen Praxisberichte über verständliches Erklären und aktive Kinderbeteiligung am Reparaturtisch?"
+      ],
+      "id": "C5",
+      "idea": "Ein repariertes Spielzeug und eine harmlose Fehlfunktion liefern zwei eigene Datensätze; Kinder markieren ausdrücklich unbekannte Übergänge, statt ein Modell sämtliche Folgen erfinden zu lassen.",
+      "recipient": "Stadtbibliothek Diez, Leitung und Koordination des regelmäßigen Repair Cafés: reales Zuständigkeitsbeispiel, kein bestätigter Partner oder Auftrag.",
+      "recipient_kind": "institution",
+      "why_now": "Seit 2024 können Code-Modelle unvollständige Erklärungen in spielbare Vorlagen überführen; Tabellen bekannter und unbekannter Zustände waren schon 2018 möglich."
+    },
+    {
+      "check_queries": [
+        "Welche Materialien bei Repair Café International und Scratch regeln Tischwechsel, gemeinsame Rechner und Auswertung von Kinder-Reparaturstunden; was kann ein allgemeiner KI-Chatbot schon planen?",
+        "Was belegen Praxisberichte über verständliches Erklären und aktive Kinderbeteiligung am Reparaturtisch?"
+      ],
+      "id": "C6",
+      "idea": "Eine mündliche Handwerksregel wird zusammen mit einem eigenen Gegenbeispiel aufgenommen; Kinder entscheiden über ihre bedingte Gültigkeit und formulieren diese Bedingung im Spielcode.",
+      "recipient": "Stadtbibliothek Diez, Leitung und Koordination des regelmäßigen Repair Cafés: reales Zuständigkeitsbeispiel, kein bestätigter Partner oder Auftrag.",
+      "recipient_kind": "institution",
+      "why_now": "Sprachmodelle ab 2024 verbinden freie Prosa mit Codevorschlägen; das Finden geeigneter Gegenbeispiele und die pädagogische Wirkung sind in dieser Altersgruppe nicht geprüft."
+    }
+  ],
+  "contract_version": "1.1.0",
+  "operator": "OP-3",
+  "shortlist": [
+    "C1",
+    "C2",
+    "C3"
+  ],
+  "target": {
+    "anchor_class": "D",
+    "blind_spot": "Ein reparierter Gegenstand sagt nicht, ob jedes Kind die beobachtete Funktion erklären kann. Die Quelle beschreibt Konzentrationsverlust und fordert eine Aufgabe für jedes Kind, belegt jedoch keinen Bedarf an neuer Software.",
+    "name": "Reparatur-Tischritual mit Kindergruppen: Vorführen, selbst versuchen und nach 15 Minuten wechseln",
+    "source_label": "Repair Café International, Praxisbericht vom 03.03.2019",
+    "source_url": "https://www.repaircafe.org/en/everyone-can-learn-to-repair/",
+    "where_data_stops": "Die Erklärung geschieht am Objekt; das bestehende Unterrichtspaket enthält bereits ein Entdeckerblatt und eine Auswertung. Dass brauchbare Eingabedaten für ein Kinderspiel fehlen, ist eine zusätzliche Hypothese.",
+    "who_carries_burden": "Der Bericht aus Dordrecht nennt Schwierigkeiten, Helfer zu finden, die Kinder aktiv einbeziehen und verständlich erklären können. Das betrifft dort Sechs- bis Zehnjährige; für Zehn- bis Vierzehnjährige ist die Übertragung nur eine Hypothese.",
+    "who_pays": "Ehrenamtliche geben Zeit und Wissen; Kinder bringen defekte Gegenstände. Ein Bibliotheksrahmen ist in Diez belegt, aber kein Partner für dieses Szenario bestätigt."
+  },
+  "thesis": "Statt die Reparaturdiagnose zu automatisieren, werden die von Kindern selbst beobachteten Ausgangszustände, Handlungen und Folgen als Eingaben ihres eigenen Spiels erfasst."
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld tool_calls, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "call_id": "inversion-20261014T140238-kids-repair-library-t01",
+    "pages": [
+      "https://www.repaircafe.org/en/repairing-cuddly-toys-at-repair-cafe-kid/",
+      "https://www.repaircafe.org/en/everyone-can-learn-to-repair/",
+      "https://www.repaircafe.org/de/factsheet-repairmonitor-gibt-einblick-in-reparaturdaten-2024/",
+      "https://bibliotheksportal.de/fuer-bibliotheken/management/zielgruppen/kinder/"
+    ],
+    "status": "ok",
+    "summary": "Dokumentiertes Reparieren mit Kindern, Bibliothek und RepairMonitor.",
+    "tool": "search"
+  },
+  {
+    "call_id": "inversion-20261014T140238-kids-repair-library-t02",
+    "pages": [
+      "https://www.repaircafe.org/en/starter-kit-repair-cafe-in-the-classroom/",
+      "https://www.ifixit.com/Info/FixBot_Pro",
+      "https://www.ifixit.com/go/fixbot",
+      "https://www.repaircafe.org/en/how-can-ai-benefit-repair-cafes/"
+    ],
+    "status": "ok",
+    "summary": "Bestehendes Unterrichtspaket und KI-Reparaturhilfen.",
+    "tool": "search"
+  },
+  {
+    "call_id": "inversion-20261014T140238-kids-repair-library-t03",
+    "pages": [
+      "https://ai.google.dev/gemma/docs/gemma-3n/model_card",
+      "https://www.scratchfoundation.org/learn/learning-library/physical-computing-with-scratch-makey-makey",
+      "https://www.repaircafe.org/en/how-can-ai-benefit-repair-cafes/"
+    ],
+    "status": "ok",
+    "summary": "Erklärbedarf, physisches Computing und lokale multimodale Modelle.",
+    "tool": "search"
+  },
+  {
+    "call_id": "inversion-20261014T140238-kids-repair-library-t04",
+    "pages": [
+      "https://www.stadt-diez.de/sv_diez/Stadtbibliothek/Veranstaltungen/Repair%20Caf%C3%A9/",
+      "https://www.scratchfoundation.org/learn/learning-library/debugging",
+      "https://lbz.rlp.de/fileadmin/lbz/UEber-uns/Publikationen/bibliotheken-heute/bibliotheken-heute-2024-1-web.pdf"
+    ],
+    "status": "ok",
+    "summary": "Bibliothek als realer Ort, Zuständigkeit und bestehende Debuggingmaterialien.",
+    "tool": "search"
+  },
+  {
+    "call_id": "inversion-20261014T140238-kids-repair-library-t05",
+    "pages": [
+      "https://www.repaircafe.org/en/starter-kit-repair-cafe-in-the-classroom/",
+      "https://www.ifixit.com/Info/How_to_use_FixBot",
+      "https://www.ifixit.com/News/114700/introducing-fixbot",
+      "https://www.scratchfoundation.org/learn/learning-library/physical-computing-with-scratch-makey-makey"
+    ],
+    "status": "ok",
+    "summary": "Welche vorhandenen Reparaturmaterialien und KI-Hilfen bieten Repair Café International, iFixit und Scratch für beobachtete Spielzeugfunktionen; was liefert ein allgemeiner KI-Chatbot bereits?",
+    "tool": "search"
+  },
+  {
+    "call_id": "inversion-20261014T140238-kids-repair-library-t06",
+    "pages": [
+      "https://forum.code.org/t/students-working-as-partners/35685",
+      "https://support.code.org/hc/en-us/articles/203524416-Do-I-need-computers-for-every-student",
+      "https://www.scratchfoundation.org/learn/learning-library/debugging",
+      "https://fobizz.com/de/gaming-projekte-mit-ki-im-unterricht/"
+    ],
+    "status": "ok",
+    "summary": "Welche Materialien bei Scratch, Code.org und fobizz unterstützen Vorhersagen, Rollenwechsel und Prüfen selbst gebauter Spiele; was fehlt gegenüber einem allgemeinen KI-Chatbot?",
+    "tool": "search"
+  },
+  {
+    "call_id": "inversion-20261014T140238-kids-repair-library-t07",
+    "pages": [
+      "https://www.repaircafe.org/en/starter-kit-repair-cafe-in-the-classroom/",
+      "https://www.raspberrypi.org/blog/repair-cafes-computing-education-hello-world-19/",
+      "https://cms.scratchfoundation.org/assets/5f4a1c34-c79c-4ec9-935d-2bce5f6fee5d"
+    ],
+    "status": "ok",
+    "summary": "Welche Materialien bei Repair Café International und Scratch regeln Tischwechsel, gemeinsame Rechner und Auswertung von Kinder-Reparaturstunden; was kann ein allgemeiner KI-Chatbot schon planen?",
+    "tool": "search"
+  },
+  {
+    "call_id": "inversion-20261014T140238-kids-repair-library-bib01",
+    "status": "ok",
+    "summary": "Scratch copy bib find --stamm: Reparatur",
+    "tool": "bib_find"
+  },
+  {
+    "call_id": "inversion-20261014T140238-kids-repair-library-bib02",
+    "status": "ok",
+    "summary": "Scratch copy bib find --stamm: Bibliothek",
+    "tool": "bib_find"
+  },
+  {
+    "call_id": "inversion-20261014T140238-kids-repair-library-bib03",
+    "status": "ok",
+    "summary": "Scratch copy bib find --stamm: Spielzeug",
+    "tool": "bib_find"
+  },
+  {
+    "call_id": "inversion-20261014T140238-kids-repair-library-bib04",
+    "status": "ok",
+    "summary": "Scratch copy bib find --stamm: Reparatur Spielregeln",
+    "tool": "bib_find"
+  },
+  {
+    "call_id": "inversion-20261014T140238-kids-repair-library-bib05",
+    "status": "ok",
+    "summary": "Scratch copy bib find --stamm: Spielzeug Beobachtung",
+    "tool": "bib_find"
+  },
+  {
+    "call_id": "inversion-20261014T140238-kids-repair-library-bib06",
+    "status": "ok",
+    "summary": "Scratch copy bib find --stamm: Ehrenamt Erklären",
+    "tool": "bib_find"
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld topic_check, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "hits": [
+      "repair-cafe-diagnose",
+      "nachschraub-probe"
+    ],
+    "term": "Reparatur"
+  },
+  {
+    "hits": [
+      "community-seed-variety-archive",
+      "agent-postmortem-recorder"
+    ],
+    "term": "Bibliothek"
+  },
+  {
+    "hits": [
+      "ghost-replay",
+      "raeucher-sim"
+    ],
+    "term": "Spielzeug"
+  }
+]
