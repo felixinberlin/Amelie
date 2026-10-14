@@ -7043,7 +7043,7 @@
       "id": "vsl-verband-schweizer-ludotheken",
       "name": "Verband der Schweizer Ludotheken VSL (ludo.ch)",
       "typ": "W",
-      "kategorie": "empfaenger",
+      "kategorie": "bildung",
       "rollen": [
         "empfaenger"
       ],
@@ -7089,6 +7089,12 @@
           "runde": "Multiplayer-Runde",
           "notiz": "Sekretariat Jacqueline Pircher (nur Geschäftsstelle, keine Fachperson); Rückgabekontrolle ist Handarbeit nach Inventarliste (Benutzungsordnung Spiez).",
           "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-14",
+          "agent": "bibliothekar",
+          "runde": "Multiplayer-Runde",
+          "notiz": "Kategorie → bildung, Entscheidung Félix 14.10.2026"
         }
       ]
     },
@@ -13960,7 +13966,7 @@
       "id": "stadt-brandenburg-an-der-havel-friedensw",
       "name": "Stadt Brandenburg an der Havel Friedenswarte-Friedensbotschaften",
       "typ": "L",
-      "kategorie": "referenzsammlung",
+      "kategorie": "bildung",
       "rollen": [
         "ideenquelle"
       ],
@@ -14005,6 +14011,12 @@
           "runde": "Lab-Nachlieferung 01.10.2026",
           "notiz": "Negativbefund, kein Träger für Friedensimpulse.",
           "status": "angekratzt"
+        },
+        {
+          "datum": "2026-10-14",
+          "agent": "bibliothekar",
+          "runde": "Lab-Nachlieferung 01.10.2026",
+          "notiz": "Kategorie → bildung, Entscheidung Félix 14.10.2026"
         }
       ]
     },
@@ -14873,7 +14885,7 @@
       "id": "usgbc-save-the-birds-course-2026",
       "name": "USGBC Save the Birds course 2026",
       "typ": "I",
-      "kategorie": "referenzsammlung",
+      "kategorie": "bildung",
       "rollen": [
         "ideenquelle"
       ],
@@ -14918,6 +14930,12 @@
           "runde": "Glasanflug-Ampel Neubewertung 2026-10-06",
           "notiz": "Schulungs-PDF gelesen; belegt angrenzende Vorarbeit, nicht das deutsche Schema.",
           "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-14",
+          "agent": "bibliothekar",
+          "runde": "Glasanflug-Ampel Neubewertung 2026-10-06",
+          "notiz": "Kategorie → bildung, Entscheidung Félix 14.10.2026"
         }
       ]
     },
@@ -17848,7 +17866,7 @@
       "id": "uni-macau-kinder-vibecoding-stax",
       "name": "Uni Macau Kinder-Vibecoding (Stax)",
       "typ": "X",
-      "kategorie": "soziale-plattform",
+      "kategorie": "bildung",
       "rollen": [
         "evidenz"
       ],
@@ -17893,6 +17911,12 @@
           "runde": "Lab-Survivors Kinder-Vibecoding 14.10.2026",
           "notiz": "Nur Presseauszug, Primärstudie nicht gelesen.",
           "status": "angekratzt"
+        },
+        {
+          "datum": "2026-10-14",
+          "agent": "bibliothekar",
+          "runde": "Lab-Survivors Kinder-Vibecoding 14.10.2026",
+          "notiz": "Kategorie → bildung, Entscheidung Félix 14.10.2026"
         }
       ]
     },
