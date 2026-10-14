@@ -1,0 +1,24 @@
+{
+  "manifest_version": 1,
+  "run_id": "lacunar-20261014T090131-kids-vibecoding",
+  "plan_id": "lab-2026-10-14-lacunar-20261014T090131-kids-vibecoding",
+  "engine": "lacunar",
+  "model": "claude-subagent-manual (stand-in, Vertex unavailable)",
+  "existence_check": false,
+  "survivors": {
+    "count": 1,
+    "status": "ungeprueft"
+  },
+  "files": [
+    "06-suche/proposals/lab-2026-10-14-lacunar-20261014T090131-kids-vibecoding.md",
+    "06-suche/proposals/lab-2026-10-14-lacunar-20261014T090131-kids-vibecoding.manifest.json"
+  ],
+  "source_ops": [],
+  "grave_proposals": 0,
+  "touches_memory": false,
+  "contracts": {
+    "write-plan": "see plan",
+    "lacunar-run": "1.2.0"
+  },
+  "contract_version": "1.0.0"
+}
