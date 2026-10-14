@@ -7843,5 +7843,28 @@
   "new_doses": 0,
   "changed_doses": [
     "umsetzungsplan-register"
-  ]
+  ],
+  "evidence_warning": {
+    "date": "2026-10-14",
+    "evidence": "generated-not-evidence",
+    "note": "16 Jobcenter-Batches (batch_id enthält 'jobcenter') stammen aus einer von AI Studio generierten, nicht ausgeführten Suite (Lab-Commit ad81d86a); Lab-Archiv 2c00793e, 49e95442. Keine Evidenz.",
+    "batches": [
+      "amelie-lab-inversion-inversion-20261010T090000-jobcenter-8ba695046a370bdd",
+      "amelie-lab-inversion-inversion-20261010T161000-jobcenter-80e438f8004763eb",
+      "amelie-lab-inversion-inversion-20261010T171000-jobcenter-multiling-2e9fa59b9567484c",
+      "amelie-lab-lacunar-lacunar-20261010T090000-jobcenter-20d0682ac089ff4c",
+      "amelie-lab-lacunar-lacunar-20261010T160000-jobcenter-956da357f2dce719",
+      "amelie-lab-lacunar-lacunar-20261010T170000-jobcenter-multilingua-e4d8e0516cfea765",
+      "amelie-lab-mark-mark-20261010T090000-jobcenter-a186878eb8966ec5",
+      "amelie-lab-mark-mark-20261010T163000-jobcenter-4614587d890f062f",
+      "amelie-lab-mark-mark-20261010T173000-jobcenter-multilingual-fbd79450c086c2fa",
+      "amelie-lab-mark-mark-20261010T180000-jobcenter-empowerment-754a3353c57e5a1f",
+      "amelie-lab-review-amelie-review-jobcenter-better-1a2c176b5d0493ef",
+      "amelie-lab-review-jobcenter-empowerment-ac8405496d9f5801",
+      "amelie-lab-review-jobcenter-multilingual-a85c219090592d42",
+      "amelie-lab-review-jobcenter-reform-6ad32c1496dfe83d",
+      "amelie-lab-scarcity-scarcity-20261010T162000-jobcenter-28c4901745e136ac",
+      "amelie-lab-scarcity-scarcity-20261010T172000-jobcenter-multilingu-774f0ff97dee828a"
+    ]
+  }
 }

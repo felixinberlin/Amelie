@@ -1,5 +1,7 @@
 # Shared Lab intake — Bibliothekar, Reviewer, Packer — 11.10.2026
 
+> **⚠ WARNUNG (14.10.2026): Die 16 Jobcenter-Batches dieses Audits (13–15, 35–37, 70–71 sowie die Reviews jobcenter-reform, -better, -empowerment, -multilingual) stammen aus einer von AI Studio generierten, nicht ausgeführten „Jobcenter-Suite" (Lab-Commit ad81d86a, 10.10.2026; per Skript aus fest einprogrammierten Inhalten geschrieben, 20 von 87 zitierten URLs 404, erfundener Kosteneintrag). Das Lab hat sie als Nicht-Evidenz archiviert (Lab-Commits 2c00793e, 49e95442); hier sind sie `archived` / `evidence: generated-not-evidence`. Alle Urteile und Vollkarten zu diesen Batches sind nur aus Amélies eigenen Gegensuchen tragfähig, die zitierten Belege der Batches zählen nicht. Der Text darunter bleibt als Spur unverändert.**
+
 Worker `amelie-intake-20261011`. 72 immutable batches / 159 ideas. Alle Eingänge einschließlich elf Research-Pakete und Null-Survivor-Lauf behandelt. **0 neue Dosen, 1 korrigierte bestehende Dose, keine neuen Gräber.** Keine Lab-Rankings oder Zitatlabels als Prüfung übernommen.
 
 ## Verfahren und Grenzen

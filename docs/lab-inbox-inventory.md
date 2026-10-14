@@ -4,7 +4,7 @@ Erzeugt mit `node scripts/inventory-lab-inbox.mjs` aus den validierten immutable
 
 Domains umfassen alle parsebaren URL-Felder, auch Konkurrentenlinks und Hintergrundquellen. Quote-Status stammt unverändert vom Lab; wiederholte identische Findings werden einmal gezählt. Fehlende Felder beweisen keine fehlende Recherche. Wörtliche Bestands-ID-Erwähnungen sind Hinweise zum Nachlesen; ausbleibende Treffer schließen Überschneidungen nicht aus.
 
-Gesamt: **75 Batches / 168 Ideen**. Status: archived: 19; needs_research: 46; processed: 10.
+Gesamt: **75 Batches / 168 Ideen**. Status: archived: 34; needs_research: 31; processed: 10.
 
 | Engine | Batches | Ideen |
 | --- | ---: | ---: |
@@ -303,7 +303,7 @@ Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Date
 
 ### amelie-lab-inversion-inversion-20261010T090000-jobcenter-8ba695046a370bdd
 
-Engine: inversion; Status: needs_research; Ideen: 1.
+Engine: inversion; Status: archived; Ideen: 1.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20261010T090000-jobcenter-8ba695046a370bdd.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20261010T090000-jobcenter-8ba695046a370bdd.md)
 
@@ -315,7 +315,7 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
-Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Daten- oder Mandatslücken siehe Karten. Audit: 06-suche/lab-intake-review-20261011.md#batch-13
+Verarbeitungsnotiz: Archiviert 14.10.2026: von AI Studio generiert, nicht ausgeführt (Lab-Commit ad81d86a, 10.10.2026; 20 von 87 URLs 404, erfundener Kosteneintrag), Lab-Commits 2c00793e, 49e95442. Keine Evidenz. Vorheriger Stand: needs_research.
 
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
@@ -323,7 +323,7 @@ Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Date
 
 ### amelie-lab-inversion-inversion-20261010T161000-jobcenter-80e438f8004763eb
 
-Engine: inversion; Status: needs_research; Ideen: 2.
+Engine: inversion; Status: archived; Ideen: 2.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20261010T161000-jobcenter-80e438f8004763eb.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20261010T161000-jobcenter-80e438f8004763eb.md)
 
@@ -335,7 +335,7 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
-Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Daten- oder Mandatslücken siehe Karten. Audit: 06-suche/lab-intake-review-20261011.md#batch-14
+Verarbeitungsnotiz: Archiviert 14.10.2026: von AI Studio generiert, nicht ausgeführt (Lab-Commit ad81d86a, 10.10.2026; 20 von 87 URLs 404, erfundener Kosteneintrag), Lab-Commits 2c00793e, 49e95442. Keine Evidenz. Vorheriger Stand: needs_research.
 
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
@@ -344,7 +344,7 @@ Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Date
 
 ### amelie-lab-inversion-inversion-20261010T171000-jobcenter-multiling-2e9fa59b9567484c
 
-Engine: inversion; Status: needs_research; Ideen: 1.
+Engine: inversion; Status: archived; Ideen: 1.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20261010T171000-jobcenter-multiling-2e9fa59b9567484c.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-inversion-inversion-20261010T171000-jobcenter-multiling-2e9fa59b9567484c.md)
 
@@ -356,7 +356,7 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
-Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Daten- oder Mandatslücken siehe Karten. Audit: 06-suche/lab-intake-review-20261011.md#batch-15
+Verarbeitungsnotiz: Archiviert 14.10.2026: von AI Studio generiert, nicht ausgeführt (Lab-Commit ad81d86a, 10.10.2026; 20 von 87 URLs 404, erfundener Kosteneintrag), Lab-Commits 2c00793e, 49e95442. Keine Evidenz. Vorheriger Stand: needs_research.
 
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
@@ -364,7 +364,7 @@ Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Date
 
 ### amelie-lab-inversion-inversion-20261012T162500-brandenburg-diy-333acaf74ea82550
 
-Engine: inversion; Status: needs_research; Ideen: 3.
+Engine: inversion; Status: archived; Ideen: 3.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-12-amelie-lab-inversion-inversion-20261012T162500-brandenburg-diy-333acaf74ea82550.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-12-amelie-lab-inversion-inversion-20261012T162500-brandenburg-diy-333acaf74ea82550.md)
 
@@ -376,7 +376,7 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
-Verarbeitungsnotiz: Brandenburg-DIY: HofBausatz (Dieseltank/Geräte Diebstahlerkennung), HalmWacht (Wildschaden Knickung BJagdG §34) und FirstWacht (Dachnotabdichtung/Sparrendurchbiegung). HofBausatz benötigt Falschalarm-Test bei Hoftieren und rechtssichere Alarmierung; HalmWacht Beweisverwertbarkeit nach BJagdG und Vegetations-Segmentierung; FirstWacht Abgrenzung zu DachWächter und VOB/B-Haftungsregeln. Reviewer: Needs Research (keine Dose Ready). Details: 06-suche/lab-intake-review-20261012.md
+Verarbeitungsnotiz: Archiviert 14.10.2026: unverifizierte Brandenburg-Dateien (12.10.2026; 4 von 5 scheitern an ihren Schemata, nur Startseiten-Belege), Lab-Commits 2c00793e, 49e95442. Keine Evidenz. Vorheriger Stand: needs_research.
 
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
@@ -817,7 +817,7 @@ Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Date
 
 ### amelie-lab-lacunar-lacunar-20261010T090000-jobcenter-20d0682ac089ff4c
 
-Engine: lacunar; Status: needs_research; Ideen: 2.
+Engine: lacunar; Status: archived; Ideen: 2.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20261010T090000-jobcenter-20d0682ac089ff4c.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20261010T090000-jobcenter-20d0682ac089ff4c.md)
 
@@ -829,7 +829,7 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
-Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Daten- oder Mandatslücken siehe Karten. Audit: 06-suche/lab-intake-review-20261011.md#batch-35
+Verarbeitungsnotiz: Archiviert 14.10.2026: von AI Studio generiert, nicht ausgeführt (Lab-Commit ad81d86a, 10.10.2026; 20 von 87 URLs 404, erfundener Kosteneintrag), Lab-Commits 2c00793e, 49e95442. Keine Evidenz. Vorheriger Stand: needs_research.
 
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
@@ -838,7 +838,7 @@ Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Date
 
 ### amelie-lab-lacunar-lacunar-20261010T160000-jobcenter-956da357f2dce719
 
-Engine: lacunar; Status: needs_research; Ideen: 2.
+Engine: lacunar; Status: archived; Ideen: 2.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20261010T160000-jobcenter-956da357f2dce719.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20261010T160000-jobcenter-956da357f2dce719.md)
 
@@ -850,7 +850,7 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
-Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Daten- oder Mandatslücken siehe Karten. Audit: 06-suche/lab-intake-review-20261011.md#batch-36
+Verarbeitungsnotiz: Archiviert 14.10.2026: von AI Studio generiert, nicht ausgeführt (Lab-Commit ad81d86a, 10.10.2026; 20 von 87 URLs 404, erfundener Kosteneintrag), Lab-Commits 2c00793e, 49e95442. Keine Evidenz. Vorheriger Stand: needs_research.
 
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
@@ -859,7 +859,7 @@ Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Date
 
 ### amelie-lab-lacunar-lacunar-20261010T170000-jobcenter-multilingua-e4d8e0516cfea765
 
-Engine: lacunar; Status: needs_research; Ideen: 1.
+Engine: lacunar; Status: archived; Ideen: 1.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20261010T170000-jobcenter-multilingua-e4d8e0516cfea765.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-lacunar-lacunar-20261010T170000-jobcenter-multilingua-e4d8e0516cfea765.md)
 
@@ -871,7 +871,7 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
-Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Daten- oder Mandatslücken siehe Karten. Audit: 06-suche/lab-intake-review-20261011.md#batch-37
+Verarbeitungsnotiz: Archiviert 14.10.2026: von AI Studio generiert, nicht ausgeführt (Lab-Commit ad81d86a, 10.10.2026; 20 von 87 URLs 404, erfundener Kosteneintrag), Lab-Commits 2c00793e, 49e95442. Keine Evidenz. Vorheriger Stand: needs_research.
 
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
@@ -879,7 +879,7 @@ Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Date
 
 ### amelie-lab-lacunar-lacunar-20261012T162600-brandenburg-vision-8b24bbe93b5be681
 
-Engine: lacunar; Status: needs_research; Ideen: 3.
+Engine: lacunar; Status: archived; Ideen: 3.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-12-amelie-lab-lacunar-lacunar-20261012T162600-brandenburg-vision-8b24bbe93b5be681.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-12-amelie-lab-lacunar-lacunar-20261012T162600-brandenburg-vision-8b24bbe93b5be681.md)
 
@@ -891,7 +891,7 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
-Verarbeitungsnotiz: Brandenburg-Vision: DachWächter (Gerüstneigung/Planenflattern), BeregnungsAuge (Manometer/Trommelodometrie) und HelioDrop (Sonnenblumen-Heliotropismus). DachWächter benötigt Windkanal/Sturmfeldtest zur Flatterfrequenz-Korrelation und Haftungsabgrenzung; BeregnungsAuge analoge Manometer-Reflexionsfilterung und Feldkalibrierung; HelioDrop biologische Korrelation Blütenteller vs Bodenfeuchte. Reviewer: Needs Research (keine Dose Ready). Details: 06-suche/lab-intake-review-20261012.md
+Verarbeitungsnotiz: Archiviert 14.10.2026: unverifizierte Brandenburg-Dateien (12.10.2026; 4 von 5 scheitern an ihren Schemata, nur Startseiten-Belege), Lab-Commits 2c00793e, 49e95442. Keine Evidenz. Vorheriger Stand: needs_research.
 
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
@@ -1225,7 +1225,7 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): verified: 4.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
-Verarbeitungsnotiz: Kommerzieller Mark-Lauf: Lizenz/Service/Gebühr oder B2B/B2G-Geschäftsmodell statt bedingungsloser CC0-Gabe. Außerhalb main-Mandat archiviert; keine kommerzielle Freigabe und keine Marktprüfung. Jobcenter-Kerne mit Civic-Batches 13–15,35–37,70–71 zusammenführen. Audit: 06-suche/lab-intake-review-20261011.md#batch-53
+Verarbeitungsnotiz: Archiviert 14.10.2026: von AI Studio generiert, nicht ausgeführt (Lab-Commit ad81d86a, 10.10.2026; 20 von 87 URLs 404, erfundener Kosteneintrag), Lab-Commits 2c00793e, 49e95442. Keine Evidenz. Vorheriger Stand: archived.
 
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
@@ -1248,7 +1248,7 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
-Verarbeitungsnotiz: Kommerzieller Mark-Lauf: Lizenz/Service/Gebühr oder B2B/B2G-Geschäftsmodell statt bedingungsloser CC0-Gabe. Außerhalb main-Mandat archiviert; keine kommerzielle Freigabe und keine Marktprüfung. Jobcenter-Kerne mit Civic-Batches 13–15,35–37,70–71 zusammenführen. Audit: 06-suche/lab-intake-review-20261011.md#batch-54
+Verarbeitungsnotiz: Archiviert 14.10.2026: von AI Studio generiert, nicht ausgeführt (Lab-Commit ad81d86a, 10.10.2026; 20 von 87 URLs 404, erfundener Kosteneintrag), Lab-Commits 2c00793e, 49e95442. Keine Evidenz. Vorheriger Stand: archived.
 
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
@@ -1270,7 +1270,7 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
-Verarbeitungsnotiz: Kommerzieller Mark-Lauf: Lizenz/Service/Gebühr oder B2B/B2G-Geschäftsmodell statt bedingungsloser CC0-Gabe. Außerhalb main-Mandat archiviert; keine kommerzielle Freigabe und keine Marktprüfung. Jobcenter-Kerne mit Civic-Batches 13–15,35–37,70–71 zusammenführen. Audit: 06-suche/lab-intake-review-20261011.md#batch-55
+Verarbeitungsnotiz: Archiviert 14.10.2026: von AI Studio generiert, nicht ausgeführt (Lab-Commit ad81d86a, 10.10.2026; 20 von 87 URLs 404, erfundener Kosteneintrag), Lab-Commits 2c00793e, 49e95442. Keine Evidenz. Vorheriger Stand: archived.
 
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
@@ -1292,7 +1292,7 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): verified: 4.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
-Verarbeitungsnotiz: Kommerzieller Mark-Lauf: Lizenz/Service/Gebühr oder B2B/B2G-Geschäftsmodell statt bedingungsloser CC0-Gabe. Außerhalb main-Mandat archiviert; keine kommerzielle Freigabe und keine Marktprüfung. Jobcenter-Kerne mit Civic-Batches 13–15,35–37,70–71 zusammenführen. Audit: 06-suche/lab-intake-review-20261011.md#batch-56
+Verarbeitungsnotiz: Archiviert 14.10.2026: von AI Studio generiert, nicht ausgeführt (Lab-Commit ad81d86a, 10.10.2026; 20 von 87 URLs 404, erfundener Kosteneintrag), Lab-Commits 2c00793e, 49e95442. Keine Evidenz. Vorheriger Stand: archived.
 
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
@@ -1338,7 +1338,7 @@ Batch ohne Survivor-Ideen: vollständige Findings, verworfene Ansätze und Histo
 
 ### amelie-lab-review-amelie-review-jobcenter-better-1a2c176b5d0493ef
 
-Engine: review; Status: needs_research; Ideen: 0.
+Engine: review; Status: archived; Ideen: 0.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-review-amelie-review-jobcenter-better-1a2c176b5d0493ef.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-review-amelie-review-jobcenter-better-1a2c176b5d0493ef.md)
 
@@ -1350,7 +1350,7 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): verified: 8.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
-Verarbeitungsnotiz: Jobcenter-Better: internationale Wirkungsquoten und Vergleichbarkeit sind nicht mit publizierter Stichprobe/Zeitraum/Outcome belegt. Primärstudien für Marienthal, Dänemark, PMSMP und SkillsFuture mit Vergleichsgruppe erforderlich; Mark-Zahlungsannahmen nicht als Fakten übernehmen. Audit: 06-suche/lab-intake-review-20261011.md#batch-59
+Verarbeitungsnotiz: Archiviert 14.10.2026: von AI Studio generiert, nicht ausgeführt (Lab-Commit ad81d86a, 10.10.2026; 20 von 87 URLs 404, erfundener Kosteneintrag), Lab-Commits 2c00793e, 49e95442. Keine Evidenz. Vorheriger Stand: needs_research.
 
 Batch ohne Survivor-Ideen: vollständige Findings, verworfene Ansätze und Historie im Originalbeleg lesen.
 
@@ -1374,7 +1374,7 @@ Batch ohne Survivor-Ideen: vollständige Findings, verworfene Ansätze und Histo
 
 ### amelie-lab-review-jobcenter-empowerment-ac8405496d9f5801
 
-Engine: review; Status: needs_research; Ideen: 0.
+Engine: review; Status: archived; Ideen: 0.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-review-jobcenter-empowerment-ac8405496d9f5801.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-review-jobcenter-empowerment-ac8405496d9f5801.md)
 
@@ -1386,13 +1386,13 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
-Verarbeitungsnotiz: Bestehendes Needs-Research Jobcenter-Empowerment: §16a ist Kann-Leistung bei erforderlicher Integration, §22 bedingt Unterkunftsanerkennung; keine pauschalen Ansprüche ableiten. Geöffnete IAB-Seite ist qualitative Studie und belegt <4%, 35–45%, 600.000, >80% oder >50% nicht. Originalstudie, Seitenstelle, Jahr, Nenner und Population je Zahl erforderlich. Zugangsfehler beweist keine Nichtexistenz. PR187 überlappt KdU; nicht parallel packen. Audit: 06-suche/lab-intake-review-20261011.md#batch-61
+Verarbeitungsnotiz: Archiviert 14.10.2026: von AI Studio generiert, nicht ausgeführt (Lab-Commit ad81d86a, 10.10.2026; 20 von 87 URLs 404, erfundener Kosteneintrag), Lab-Commits 2c00793e, 49e95442. Keine Evidenz. Vorheriger Stand: needs_research.
 
 Batch ohne Survivor-Ideen: vollständige Findings, verworfene Ansätze und Historie im Originalbeleg lesen.
 
 ### amelie-lab-review-jobcenter-multilingual-a85c219090592d42
 
-Engine: review; Status: needs_research; Ideen: 0.
+Engine: review; Status: archived; Ideen: 0.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-review-jobcenter-multilingual-a85c219090592d42.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-review-jobcenter-multilingual-a85c219090592d42.md)
 
@@ -1404,13 +1404,13 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
-Verarbeitungsnotiz: Jobcenter-Multilingual: §13(4) bestätigt Beistand, Abs.5/6 begrenzen; keine garantierte rechtswirksame Begleitung. 95%-Smartphonebasis, 25 Sprachen, Spar-/Erfolgswerte benötigen Primärstatistik und Referenzbriefe. Vorhandenes jobcenter.guru überlappt Foto/Erklärung/Audio; GPS-Angebot benötigt reale Begleitstruktur. Audit: 06-suche/lab-intake-review-20261011.md#batch-62
+Verarbeitungsnotiz: Archiviert 14.10.2026: von AI Studio generiert, nicht ausgeführt (Lab-Commit ad81d86a, 10.10.2026; 20 von 87 URLs 404, erfundener Kosteneintrag), Lab-Commits 2c00793e, 49e95442. Keine Evidenz. Vorheriger Stand: needs_research.
 
 Batch ohne Survivor-Ideen: vollständige Findings, verworfene Ansätze und Historie im Originalbeleg lesen.
 
 ### amelie-lab-review-jobcenter-reform-6ad32c1496dfe83d
 
-Engine: review; Status: needs_research; Ideen: 0.
+Engine: review; Status: archived; Ideen: 0.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-review-jobcenter-reform-6ad32c1496dfe83d.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-review-jobcenter-reform-6ad32c1496dfe83d.md)
 
@@ -1422,7 +1422,7 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
-Verarbeitungsnotiz: Jobcenter-Reform: eigenes Acht-Findings-Paket trotz inhaltlicher Wiederholung erhalten. Länderquoten nicht durch Normtext bestätigt; Transfer auf SGB II benötigt primäre Wirkungsstudien und rechtlich zulässigen Pilotauftrag. Vollständige Entkopplung ist institutionelle Reform, keine vorhandene Softwarebefugnis. Audit: 06-suche/lab-intake-review-20261011.md#batch-63
+Verarbeitungsnotiz: Archiviert 14.10.2026: von AI Studio generiert, nicht ausgeführt (Lab-Commit ad81d86a, 10.10.2026; 20 von 87 URLs 404, erfundener Kosteneintrag), Lab-Commits 2c00793e, 49e95442. Keine Evidenz. Vorheriger Stand: needs_research.
 
 Batch ohne Survivor-Ideen: vollständige Findings, verworfene Ansätze und Historie im Originalbeleg lesen.
 
@@ -1542,7 +1542,7 @@ Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Date
 
 ### amelie-lab-scarcity-scarcity-20261010T162000-jobcenter-28c4901745e136ac
 
-Engine: scarcity; Status: needs_research; Ideen: 2.
+Engine: scarcity; Status: archived; Ideen: 2.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-scarcity-scarcity-20261010T162000-jobcenter-28c4901745e136ac.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-scarcity-scarcity-20261010T162000-jobcenter-28c4901745e136ac.md)
 
@@ -1554,7 +1554,7 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
-Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Daten- oder Mandatslücken siehe Karten. Audit: 06-suche/lab-intake-review-20261011.md#batch-70
+Verarbeitungsnotiz: Archiviert 14.10.2026: von AI Studio generiert, nicht ausgeführt (Lab-Commit ad81d86a, 10.10.2026; 20 von 87 URLs 404, erfundener Kosteneintrag), Lab-Commits 2c00793e, 49e95442. Keine Evidenz. Vorheriger Stand: needs_research.
 
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
@@ -1563,7 +1563,7 @@ Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Date
 
 ### amelie-lab-scarcity-scarcity-20261010T172000-jobcenter-multilingu-774f0ff97dee828a
 
-Engine: scarcity; Status: needs_research; Ideen: 2.
+Engine: scarcity; Status: archived; Ideen: 2.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-10-amelie-lab-scarcity-scarcity-20261010T172000-jobcenter-multilingu-774f0ff97dee828a.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-10-amelie-lab-scarcity-scarcity-20261010T172000-jobcenter-multilingu-774f0ff97dee828a.md)
 
@@ -1575,7 +1575,7 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
-Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Daten- oder Mandatslücken siehe Karten. Audit: 06-suche/lab-intake-review-20261011.md#batch-71
+Verarbeitungsnotiz: Archiviert 14.10.2026: von AI Studio generiert, nicht ausgeführt (Lab-Commit ad81d86a, 10.10.2026; 20 von 87 URLs 404, erfundener Kosteneintrag), Lab-Commits 2c00793e, 49e95442. Keine Evidenz. Vorheriger Stand: needs_research.
 
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |
@@ -1584,7 +1584,7 @@ Verarbeitungsnotiz: Reviewer: kein Dose Ready; individuelle Mess-, Rechts-, Date
 
 ### amelie-lab-scarcity-scarcity-20261012T162800-brandenburg-bfcf0383978716ba
 
-Engine: scarcity; Status: needs_research; Ideen: 3.
+Engine: scarcity; Status: archived; Ideen: 3.
 
 [Originalbeleg](../06-suche/proposals/lab-2026-10-12-amelie-lab-scarcity-scarcity-20261012T162800-brandenburg-bfcf0383978716ba.inbox.json) · [Proposal](../06-suche/proposals/lab-2026-10-12-amelie-lab-scarcity-scarcity-20261012T162800-brandenburg-bfcf0383978716ba.md)
 
@@ -1596,7 +1596,7 @@ Quote-Status des Produzenten (keine Amélie-Prüfung): nicht angegeben.
 
 Wörtlich erwähnte Bestands-IDs: keine.
 
-Verarbeitungsnotiz: Brandenburg-Scarcity: FeldWacht (Wildschwein-LoRaWAN INT8), ReetWacht (DSSC-Supercap Balkenstatik) und GlutHorizont (LTO-Waldbrandsensor). FeldWacht benötigt Falsch-Positiv-Referenz im Mais/Dickicht; ReetWacht Denkmalschutz-/ATEX-Zulässigkeit und Passermarken-Referenz; GlutHorizont Schwellenwert-Validierung gegen Rauch/Staub unter Kronendach. Reviewer: Needs Research (keine Dose Ready). Details: 06-suche/lab-intake-review-20261012.md
+Verarbeitungsnotiz: Archiviert 14.10.2026: unverifizierte Brandenburg-Dateien (12.10.2026; 4 von 5 scheitern an ihren Schemata, nur Startseiten-Belege), Lab-Commits 2c00793e, 49e95442. Keine Evidenz. Vorheriger Stand: needs_research.
 
 | Lokale ID | Originaltitel / Idee |
 | --- | --- |

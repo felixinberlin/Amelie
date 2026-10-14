@@ -106,7 +106,7 @@ Wer aus dem Grundsicherungsgeld gründen will, braucht das Jobcenter. Aber **Ein
 
 ## Wer es schon versucht hat
 
-Recherche 11.10.2026 (Prüfprotokoll G1–G4, Reviewer-Gegensuchen, Lab-Intake). Ergebnis: **verengt**. Nachbarn decken Teile ab, keiner das Gespräch.
+Recherche 11.10.2026 (Prüfprotokoll G1–G4, Reviewer-Gegensuchen). Ergebnis: **verengt**. Nachbarn decken Teile ab, keiner das Gespräch.
 
 - **jobcenter.guru** (GuruSense UG, Mannheim): Briefe per Foto, Widerspruch, In-App-Käufe bis 9,99 €. Das ist Brief, nicht Gespräch.
 - **BürgerChat** (github.com/jeannineshiu/buergerchat, MIT): RAG über rund 6.100 amtliche Dokumente, nichts zu Selbständigkeit. Andockpunkt (G3 `besetzt`).
@@ -114,7 +114,7 @@ Recherche 11.10.2026 (Prüfprotokoll G1–G4, Reviewer-Gegensuchen, Lab-Intake).
 - **Münchner Gründungsbüro:** Leitfaden Grundsicherungsgeld, kein Werkzeug.
 - **Gründerplattform:** Businessplan-Tool für den Antrag, nicht fürs Gespräch.
 - **Grab `paragraphen-dolmetscher`** (Bescheid per Foto erklären): eine andere Funktion, kein Wiedergänger.
-- **Lab-Jobcenter-Cluster** (10.10.2026, Batches 13–15, 35–37, 70–71): BürgerRechte-Copilot, CivicBeistand, HandyFoto-Konverter, Berater-Copilot, Once-Only-Gateway und weitere. Alle blieben Needs Research (13–19/35): Reformideen ohne Mandat, Zahlen ohne Primärquelle. Der Navigator ist der eine zustellbare Kern daraus.
+- **Lab-Jobcenter-Cluster:** Ein Lab-Jobcenter-Cluster vom 10.10.2026 stellte sich als generiert heraus (keine Evidenz, 14.10.2026 archiviert); das Urteil stützt sich nur auf G1–G4 und die Reviewer-Gegensuchen.
 - **Reviewer-Gegensuchen** (4, Schnipsel): kein Werkzeug zur Gesprächsvorbereitung gefunden, nur Ratgebertexte und die BA-App.
 
 **Restlücke:** Gespräch statt Brief, für Gründerinnen und Gründer, mit geprüften Normtexten und einer Ansicht, die man dem Gegenüber zeigen kann.

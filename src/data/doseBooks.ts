@@ -65,13 +65,6 @@ export const DOSE_BOOKS: Record<string, BookChapter[]> = {
       noteEn: 'Which statute texts were read on 11 Oct 2026, eight booked sources, notes on existing graves.',
       date: '11.10.2026', kind: 'md',
     },
-    {
-      slug: 'lab-jobcenter', path: '06-suche/lab-intake-review-20261011.md',
-      titleDe: 'Lab-Intake: der Jobcenter-Cluster', titleEn: 'Lab intake: the job-centre cluster',
-      noteDe: 'Batches 13–15, 35–37, 70–71: alle Jobcenter-Ideen des Labs blieben Needs Research (13–19/35); warum der Navigator der zustellbare Kern ist.',
-      noteEn: 'Batches 13–15, 35–37, 70–71: all Lab job-centre ideas stayed Needs Research (13–19/35); why the navigator is the deliverable kernel.',
-      date: '11.10.2026', kind: 'md',
-    },
   ],
   'eurobirdcast': [
     {

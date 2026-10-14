@@ -106,7 +106,7 @@ Anyone who wants to start a business while on basic income support (Grundsicheru
 
 ## Who has already tried this
 
-Research on 11 Oct 2026 (check protocol G1–G4, the reviewer's counter-searches, Lab intake). Verdict: **narrowed**. Neighbours cover parts; none covers the conversation.
+Research on 11 Oct 2026 (check protocol G1–G4, the reviewer's counter-searches). Verdict: **narrowed**. Neighbours cover parts; none covers the conversation.
 
 - **jobcenter.guru** (GuruSense UG, Mannheim): letters by photo, objections, in-app purchases up to €9.99. That covers letters, not the conversation.
 - **BürgerChat** (github.com/jeannineshiu/buergerchat, MIT): RAG over about 6,100 official documents, nothing on self-employment. A possible docking point (G3 `besetzt`).
@@ -114,7 +114,7 @@ Research on 11 Oct 2026 (check protocol G1–G4, the reviewer's counter-searches
 - **Munich start-up office (Münchner Gründungsbüro):** a guide on basic income support, no tool.
 - **Gründerplattform:** a business-plan tool for the application, not for the conversation.
 - **Grave `paragraphen-dolmetscher`** (explaining a notice from a photo): a different function, not a revenant.
-- **Lab job-centre cluster** (10 Oct 2026, batches 13–15, 35–37, 70–71): citizen-rights copilot, civic companion network, phone-photo converter, caseworker copilot, once-only gateway and others. All stayed Needs Research (13–19/35): reform ideas without a mandate, figures without primary sources. The navigator is the one deliverable kernel among them.
+- **Lab job-centre cluster:** A Lab job-centre cluster of 10 Oct 2026 turned out to be generated (not evidence, archived 14 Oct 2026); the verdict rests only on G1–G4 and the reviewer's counter-searches.
 - **Reviewer counter-searches** (4, snippets): no conversation-preparation tool found, only advice articles and the official BA app.
 
 **Remaining gap:** the conversation rather than the letter, for founders, with checked statute texts and a view you can show the other side.

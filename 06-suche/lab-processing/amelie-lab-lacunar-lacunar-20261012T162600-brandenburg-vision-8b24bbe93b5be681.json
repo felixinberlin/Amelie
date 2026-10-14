@@ -1,8 +1,11 @@
 {
   "batch_id": "amelie-lab-lacunar-lacunar-20261012T162600-brandenburg-vision-8b24bbe93b5be681",
-  "state": "needs_research",
+  "state": "archived",
   "worker": "",
   "lease_until": "",
-  "note": "Brandenburg-Vision: DachWächter (Gerüstneigung/Planenflattern), BeregnungsAuge (Manometer/Trommelodometrie) und HelioDrop (Sonnenblumen-Heliotropismus). DachWächter benötigt Windkanal/Sturmfeldtest zur Flatterfrequenz-Korrelation und Haftungsabgrenzung; BeregnungsAuge analoge Manometer-Reflexionsfilterung und Feldkalibrierung; HelioDrop biologische Korrelation Blütenteller vs Bodenfeuchte. Reviewer: Needs Research (keine Dose Ready). Details: 06-suche/lab-intake-review-20261012.md",
-  "updated_at": "2026-10-12T17:09:31.349Z"
+  "note": "Archiviert 14.10.2026: unverifizierte Brandenburg-Dateien (12.10.2026; 4 von 5 scheitern an ihren Schemata, nur Startseiten-Belege), Lab-Commits 2c00793e, 49e95442. Keine Evidenz. Vorheriger Stand: needs_research.",
+  "updated_at": "2026-10-14T12:43:11.646Z",
+  "previous_state": "needs_research",
+  "previous_note": "Brandenburg-Vision: DachWächter (Gerüstneigung/Planenflattern), BeregnungsAuge (Manometer/Trommelodometrie) und HelioDrop (Sonnenblumen-Heliotropismus). DachWächter benötigt Windkanal/Sturmfeldtest zur Flatterfrequenz-Korrelation und Haftungsabgrenzung; BeregnungsAuge analoge Manometer-Reflexionsfilterung und Feldkalibrierung; HelioDrop biologische Korrelation Blütenteller vs Bodenfeuchte. Reviewer: Needs Research (keine Dose Ready). Details: 06-suche/lab-intake-review-20261012.md",
+  "evidence": "generated-not-evidence"
 }

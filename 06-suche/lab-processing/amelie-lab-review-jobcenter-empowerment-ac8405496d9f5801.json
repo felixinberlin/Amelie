@@ -1,8 +1,11 @@
 {
   "batch_id": "amelie-lab-review-jobcenter-empowerment-ac8405496d9f5801",
-  "state": "needs_research",
+  "state": "archived",
   "worker": "",
   "lease_until": "",
-  "note": "Bestehendes Needs-Research Jobcenter-Empowerment: §16a ist Kann-Leistung bei erforderlicher Integration, §22 bedingt Unterkunftsanerkennung; keine pauschalen Ansprüche ableiten. Geöffnete IAB-Seite ist qualitative Studie und belegt <4%, 35–45%, 600.000, >80% oder >50% nicht. Originalstudie, Seitenstelle, Jahr, Nenner und Population je Zahl erforderlich. Zugangsfehler beweist keine Nichtexistenz. PR187 überlappt KdU; nicht parallel packen. Audit: 06-suche/lab-intake-review-20261011.md#batch-61",
-  "updated_at": "2026-10-11T11:14:22.795Z"
+  "note": "Archiviert 14.10.2026: von AI Studio generiert, nicht ausgeführt (Lab-Commit ad81d86a, 10.10.2026; 20 von 87 URLs 404, erfundener Kosteneintrag), Lab-Commits 2c00793e, 49e95442. Keine Evidenz. Vorheriger Stand: needs_research.",
+  "updated_at": "2026-10-14T12:43:11.650Z",
+  "previous_state": "needs_research",
+  "previous_note": "Bestehendes Needs-Research Jobcenter-Empowerment: §16a ist Kann-Leistung bei erforderlicher Integration, §22 bedingt Unterkunftsanerkennung; keine pauschalen Ansprüche ableiten. Geöffnete IAB-Seite ist qualitative Studie und belegt <4%, 35–45%, 600.000, >80% oder >50% nicht. Originalstudie, Seitenstelle, Jahr, Nenner und Population je Zahl erforderlich. Zugangsfehler beweist keine Nichtexistenz. PR187 überlappt KdU; nicht parallel packen. Audit: 06-suche/lab-intake-review-20261011.md#batch-61",
+  "evidence": "generated-not-evidence"
 }

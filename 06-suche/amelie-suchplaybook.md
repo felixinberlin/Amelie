@@ -896,3 +896,10 @@ Auftrag Félix: „Do Ticket 01, make the sector packs.“ Ergebnis: Daten in `0
 - **Fehler:** Das Register hatte keine Kategorie für Bildung; `referenzsammlung` war ein Notbehelf (behoben 14.10.2026: Kategorie `bildung`, Quellen umgestellt).
 - **Empfängersuche C2 (14.10.2026):** Reddit über einen Redlib-Spiegel liefert Seitenleiste und Beiträge, aber nicht die Regel-Wikis (vor Post im Browser lesen); GI-Fachgruppen-Seiten nennen Ansprechrollen und Materialsammlungen, daher sind sie der beste erste Empfängerfund bei Bildungsideen.
 - **Nächstes Mal:** Vorfrage „Wer in der Schule oder Schulverwaltung hat ein Mandat für Material oder Werkzeug?“ vor jeder K-12-Idee; Rest-Lücken, die eine Lehrkraft mit einem Chatbot selbst füllt, sind keine Dose.
+
+#### Retro 14.10.2026: Generierte Läufe (AI Studio) als Lab-Batches
+
+- **Erledigt:** 16 Jobcenter-Batches (Lab-Commit ad81d86a, 10.10.2026; per Skript aus fest einprogrammierten Inhalten geschrieben, 20 von 87 URLs 404, erfundener Kosteneintrag) und 3 Brandenburg-Batches (12.10.2026; 4 von 5 Dateien scheitern an ihren Schemata, nur Startseiten-Belege) markiert statt gelöscht: Verarbeitungsstatus `archived` mit `evidence: generated-not-evidence`, 13 Protokollzeilen mit Warnung im Beleg, Warnbanner in den Intake-Reviews (Lab-Archiv: 2c00793e, 49e95442).
+- **Gelernt:** Generierte Läufe (AI Studio) kamen als Lab-Batches durch. Lab-Batches nur annehmen, wenn Rohantworten archiviert sind und Stichproben-URLs auflösen.
+- **Fehler:** Der Eingang prüfte Form (Manifest, Hash), nicht Herkunft: ein Receipt beweist, dass eine Datei unverändert ist, nicht, dass jemand die Suche ausgeführt hat.
+- **Nächstes Mal:** Vor dem Intake je Batch 3 bis 5 zitierte URLs abrufen und die Rohantwort-Datei verlangen; ohne beides `received` lassen.

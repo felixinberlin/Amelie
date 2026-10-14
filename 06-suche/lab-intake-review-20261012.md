@@ -1,5 +1,7 @@
 # Shared Lab intake — Reviewer Triage 12.10.2026
 
+> **⚠ WARNUNG (14.10.2026): Alle drei Batches dieses Eingangs (Brandenburg: scarcity ...162800, lacunar ...162600, inversion ...162500) sind unverifizierte Dateien (12.10.2026; 4 von 5 scheitern an ihren Schemata, Belege nur Startseiten). Das Lab hat sie als Nicht-Evidenz archiviert (Lab-Commits 2c00793e, 49e95442); hier sind sie `archived` / `evidence: generated-not-evidence`, der Status `needs_research` unten ist überholt. Keine Evidenz; Urteile nur aus eigenen Gegensuchen tragfähig. Der Text darunter bleibt als Spur unverändert.**
+
 Worker `reviewer-one`. 3 neue immutable Batches / 9 Ideen aus PR #200 (Themenfokus Brandenburg, Edge AI / TinyML Vision, Low-Cost DIY-Kits).
 Workflow-Zustand aller 3 Batches: **`needs_research`**. **0 neue Dosen gepackt, keine neuen Gräber.**
 

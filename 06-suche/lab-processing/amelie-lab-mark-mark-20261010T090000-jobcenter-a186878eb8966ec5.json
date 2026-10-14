@@ -3,6 +3,9 @@
   "state": "archived",
   "worker": "",
   "lease_until": "",
-  "note": "Kommerzieller Mark-Lauf: Lizenz/Service/Gebühr oder B2B/B2G-Geschäftsmodell statt bedingungsloser CC0-Gabe. Außerhalb main-Mandat archiviert; keine kommerzielle Freigabe und keine Marktprüfung. Jobcenter-Kerne mit Civic-Batches 13–15,35–37,70–71 zusammenführen. Audit: 06-suche/lab-intake-review-20261011.md#batch-53",
-  "updated_at": "2026-10-11T11:14:20.317Z"
+  "note": "Archiviert 14.10.2026: von AI Studio generiert, nicht ausgeführt (Lab-Commit ad81d86a, 10.10.2026; 20 von 87 URLs 404, erfundener Kosteneintrag), Lab-Commits 2c00793e, 49e95442. Keine Evidenz. Vorheriger Stand: archived.",
+  "updated_at": "2026-10-14T12:43:11.647Z",
+  "previous_state": "archived",
+  "previous_note": "Kommerzieller Mark-Lauf: Lizenz/Service/Gebühr oder B2B/B2G-Geschäftsmodell statt bedingungsloser CC0-Gabe. Außerhalb main-Mandat archiviert; keine kommerzielle Freigabe und keine Marktprüfung. Jobcenter-Kerne mit Civic-Batches 13–15,35–37,70–71 zusammenführen. Audit: 06-suche/lab-intake-review-20261011.md#batch-53",
+  "evidence": "generated-not-evidence"
 }

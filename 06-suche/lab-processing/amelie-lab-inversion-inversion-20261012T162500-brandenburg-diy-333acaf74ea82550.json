@@ -1,8 +1,11 @@
 {
   "batch_id": "amelie-lab-inversion-inversion-20261012T162500-brandenburg-diy-333acaf74ea82550",
-  "state": "needs_research",
+  "state": "archived",
   "worker": "",
   "lease_until": "",
-  "note": "Brandenburg-DIY: HofBausatz (Dieseltank/Geräte Diebstahlerkennung), HalmWacht (Wildschaden Knickung BJagdG §34) und FirstWacht (Dachnotabdichtung/Sparrendurchbiegung). HofBausatz benötigt Falschalarm-Test bei Hoftieren und rechtssichere Alarmierung; HalmWacht Beweisverwertbarkeit nach BJagdG und Vegetations-Segmentierung; FirstWacht Abgrenzung zu DachWächter und VOB/B-Haftungsregeln. Reviewer: Needs Research (keine Dose Ready). Details: 06-suche/lab-intake-review-20261012.md",
-  "updated_at": "2026-10-12T17:09:37.043Z"
+  "note": "Archiviert 14.10.2026: unverifizierte Brandenburg-Dateien (12.10.2026; 4 von 5 scheitern an ihren Schemata, nur Startseiten-Belege), Lab-Commits 2c00793e, 49e95442. Keine Evidenz. Vorheriger Stand: needs_research.",
+  "updated_at": "2026-10-14T12:43:11.642Z",
+  "previous_state": "needs_research",
+  "previous_note": "Brandenburg-DIY: HofBausatz (Dieseltank/Geräte Diebstahlerkennung), HalmWacht (Wildschaden Knickung BJagdG §34) und FirstWacht (Dachnotabdichtung/Sparrendurchbiegung). HofBausatz benötigt Falschalarm-Test bei Hoftieren und rechtssichere Alarmierung; HalmWacht Beweisverwertbarkeit nach BJagdG und Vegetations-Segmentierung; FirstWacht Abgrenzung zu DachWächter und VOB/B-Haftungsregeln. Reviewer: Needs Research (keine Dose Ready). Details: 06-suche/lab-intake-review-20261012.md",
+  "evidence": "generated-not-evidence"
 }
