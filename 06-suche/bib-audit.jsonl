@@ -424,3 +424,13 @@
 {"at":"2026-10-12T13:49:52.670Z","event":"cli","cmd":"quellen log","actor":"bibliothekar","agent":"bibliothekar","runde":"Antwort NABU Jena 2026-10-12","id":"nabu-jena-vogelschlagmelder"}
 {"at":"2026-10-13T08:54:18.082Z","event":"cli","cmd":"quellen add","actor":"bibliothekar","agent":"bibliothekar","runde":"Gründungsnavigator — Antwort 13.10.2026","id":"r-grundsicherung-thread-dafuer-bin-ich-n"}
 {"at":"2026-10-13T08:54:18.098Z","event":"cli","actor":"bibliothekar","agent":"bibliothekar","runde":"Gründungsnavigator — Antwort 13.10.2026","cmd":"quellen import","count":1}
+{"at":"2026-10-14T12:01:39.950Z","event":"cli","actor":"bibliothekar","runde":"Lab-Survivors Kinder-Vibecoding — 14.10.2026","cmd":"protokoll add","id":"lab-kids-vibecoding-c2"}
+{"at":"2026-10-14T12:01:40.503Z","event":"cli","actor":"bibliothekar","runde":"Lab-Survivors Kinder-Vibecoding — 14.10.2026","cmd":"protokoll add","id":"lab-kids-vibecoding-c7"}
+{"at":"2026-10-14T12:01:57.813Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Survivors Kinder-Vibecoding 14.10.2026","id":"harvard-scratched-debugme"}
+{"at":"2026-10-14T12:01:57.976Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Survivors Kinder-Vibecoding 14.10.2026","id":"scratch-debugging-strategies-guide"}
+{"at":"2026-10-14T12:01:58.138Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Survivors Kinder-Vibecoding 14.10.2026","id":"oak-national-academy-debugging-year-3"}
+{"at":"2026-10-14T12:01:58.295Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Survivors Kinder-Vibecoding 14.10.2026","id":"arxiv-kerslake-denny-prompt-problems"}
+{"at":"2026-10-14T12:01:58.456Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Survivors Kinder-Vibecoding 14.10.2026","id":"uni-macau-kinder-vibecoding-stax"}
+{"at":"2026-10-14T12:01:58.617Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Survivors Kinder-Vibecoding 14.10.2026","id":"ki-spielekoffer-sachsen-anhalt"}
+{"at":"2026-10-14T12:01:58.775Z","event":"cli","cmd":"quellen add","actor":"ideen-scout","agent":"ideen-scout","runde":"Lab-Survivors Kinder-Vibecoding 14.10.2026","id":"qua-lis-nrw-klp-informatik-5-6"}
+{"at":"2026-10-14T12:01:58.791Z","event":"cli","actor":"bibliothekar","agent":"ideen-scout","runde":"Lab-Survivors Kinder-Vibecoding 14.10.2026","cmd":"quellen import","count":7}

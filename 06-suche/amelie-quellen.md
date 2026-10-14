@@ -7,7 +7,7 @@ Runde 2 hat gezeigt: Überlebende Ideen kommen aus Primärquellen, nicht aus Bra
 
 **Status:** `offen` (Nie gegraben oder nur als Anker genannt.) · `angekratzt` (Eine Suche oder ein Schnipsel; Publikationsliste nicht gelesen.) · `durchsucht` (Publikationsliste/Seite selbst gelesen.) · `erschöpft` (Anker dicht, kein weiterer Kandidat zu erwarten.) · `gesperrt` (Nicht (mehr) nutzen, z. B. Empfänger mit Nachfass-Sperre.)
 
-**Bestand:** 325 Quellen · 38 offen · 150 angekratzt · 110 durchsucht · 19 erschöpft · 8 gesperrt · Evidenz: 181 gelesen, 123 nur Schnipsel, 21 unbekannt.
+**Bestand:** 332 Quellen · 38 offen · 156 angekratzt · 111 durchsucht · 19 erschöpft · 8 gesperrt · Evidenz: 182 gelesen, 129 nur Schnipsel, 21 unbekannt.
 
 **Vektoren Q1–Q6** (1–5, Summe /30): Q1 Ergiebigkeit · Q2 Restpotenzial · Q3 Zugang · Q4 Belastbarkeit · Q5 Geländefreiheit · Q6 Anschluss. `auto` = aus Status/Evidenz/Ertrag abgeleitet, noch nicht bewertet.
 
@@ -173,6 +173,9 @@ Runde 2 hat gezeigt: Überlebende Ideen kommen aus Primärquellen, nicht aus Bra
 | **EMPAMOS TH Nürnberg und Deutsches Spielearchiv** `empamos-th-nuernberg-spielearchiv` | Forschungsprojekt zur maschinellen Codierung von Spielregeln, Adressbuch Spielearchiv | Webseite: museenblog-nuernberg.de/2023/06/01/spieleforschung-im-spielearchiv/ | `durchsucht` *(29.09.2026: Ertrag verknüpft: Grab spielregel-elemente-extraktor (bib quellen import lehnt Grab im ertrag ab, siehe CLI-Bericht))* | 29.09.2026 | Grab `spielregel-elemente-extraktor` | 21* |
 | **Wetterturnier (wetterturnier.de)** `wetterturnier` | Multiplayer-Prognosewettbewerb mit Punktesystem seit 2000 | Webseite: wetterturnier.de/history/ | `durchsucht` *(29.09.2026: Aktives Prognoseturnier FU Berlin/Uni Innsbruck (Stand 25.09.2026 je Stadt 19 bis 77 Tipper), nur Wetter, kein Pegel.)* | 29.09.2026 | Kandidat `pegel-wette` | 21* |
 | **LfULG Sachsen HQ50 Hochwasserspiel** `lfulg-sachsen-hq50-hochwasserspiel` | Serious Game HQ50 aus HoWa-PRO für den Katastrophenschutz | Webseite: medienservice.sachsen.de/medien/news/1075794 | `durchsucht` *(29.09.2026: Entscheidungsspiel ohne Pegelprognose (Start 23.05.2024), nur Pressekontakt.)* | 29.09.2026 | Kandidat `pegel-wette` | 21* |
+| **Harvard ScratchEd DebugMe** `harvard-scratched-debugme` | Scratch-Fehlerprojekte in Stufen (Autor Adriano Parracciani, Creative Computing Lab Harvard GSE) | Webseite: web | `durchsucht` *(14.10.2026: Kein KI-Bezug, kein NRW-Bezug.)* | 14.10.2026 | Kandidat `C2` | 21* |
+| **Scratch Debugging-Strategies-Guide** `scratch-debugging-strategies-guide` | Offizieller Debugging-Leitfaden des Scratch-Teams *[Schnipsel]* | Webseite: pdf | `angekratzt` *(14.10.2026: Nur Schnipsel.)* | 14.10.2026 | Kandidat `C2` | 21* |
+| **Oak National Academy Debugging Year 3** `oak-national-academy-debugging-year-3` | Debugging-Lektion Year 3 (England), Fünf-Schritt-Zyklus *[Schnipsel]* | Webseite: web | `angekratzt` *(14.10.2026: Nur Schnipsel.)* | 14.10.2026 | Kandidat `C2` | 21* |
 
 ## Typ H — Regulierung im Ausland
 
@@ -325,6 +328,8 @@ Runde 2 hat gezeigt: Überlebende Ideen kommen aus Primärquellen, nicht aus Bra
 | **NIAID Präventionsleitlinie** `intake-20261011-niaid-peanut` | Suchergebnis verfügbar, PDF-Abruf fehlgeschlagen. Kein gelesener Volltext, keine Therapie-/Diagnosefreigabe. *[Schnipsel]* | Webseite (teilweise): Primärseite oder Primär-PDF direkt lesen; konkrete Stelle im Intake-Review dokumentiert. | `angekratzt` *(11.10.2026: Shared Lab intake 11.10.2026: Suchergebnis verfügbar, PDF-Abruf fehlgeschlagen. Kein gelesener Volltext, keine Therapie-/Diagnosefreigabe.)* | 11.10.2026 | – | 21* |
 | **hartz4widerspruch.de (Rightmart GmbH)** `hartz4widerspruch-de` | Kostenlose Bescheidprüfung, Bürgergeld-Rechner, Ratgeber — **Fokus:** KdU, Heizkosten, Anrechnung Einkommen | Webseite | `durchsucht` *(11.10.2026: Bescheidprüfungs- und Ratgeberlandschaft erfasst.)* | 11.10.2026 | – | 21* |
 | **dejure.org SGB II nach dem 13. Änderungsgesetz** `dejure-org-sgb-ii-nach-dem-13-aenderungs` | Normtexte SGB II in der Fassung vom 16.04.2026 mit Fassungs- und Inkrafttretensdatum | Webseite: norm | `angekratzt` *(11.10.2026: Erreichbar, als gesetze-im-internet.de mit 503 ausfiel.)* | 11.10.2026 | Kandidat `gruendungsnavigator`, Kandidat `paragrafen-pruefer` | 21* |
+| **arXiv Kerslake/Denny Prompt Problems** `arxiv-kerslake-denny-prompt-problems` | Prompt Problems und Rückwärts-Prompt aus Codefragment, Univ. Auckland *[Schnipsel]* | Webseite: pdf | `angekratzt` *(14.10.2026: Kein K-12.)* | 14.10.2026 | Kandidat `C7` | 21* |
+| **KI-Spielekoffer Sachsen-Anhalt** `ki-spielekoffer-sachsen-anhalt` | Moodle-Kurs ab Klasse 5 zum Prompten (bildung-lsa.de) *[Schnipsel]* | Webseite: pdf | `angekratzt` *(14.10.2026: Fokus Prompten, kein Rückbau, kein Debugging.)* | 14.10.2026 | Kandidat `C7` | 21* |
 
 **Suchstring:** `<Fach> Datenbank Referenz Schadensfälle` · `<Fach> Arbeitskreis Schulung` — **auf Deutsch zuerst**, wenn eine deutsche Institution das Feld trägt
 
@@ -483,6 +488,7 @@ Runde 2 hat gezeigt: Überlebende Ideen kommen aus Primärquellen, nicht aus Bra
 | **Google Play Store App-Seiten** `google-play-store-app-seiten` | App-Beschreibungen (certiscan, es.coaat.conmat) | Webseite (gesperrt): app, WebFetch auf play.google.com/store/apps/details liefert eine fremde App (Ihre Heimat, QPMS); Herausgeberseite oder apkpure.com nutzen | `gesperrt` *(01.10.2026: Negativbefund Zugang; certiscan laut Reviewer-Schnipsel eine GPSR/CE-Compliance-App, kein DoP-Leser.)* | 01.10.2026 | – | 21* |
 | **Familien-Erinnerungs-Apps (FamilySearch Erinnerungen, Heritage-App, erinnerungswerk)** `familien-erinnerungs-apps-familysearch-e` | Apps zum Hochladen kurzer Erinnerungen mit Audio, Foto und Text für Familien *[Schnipsel]* | Webseite | `angekratzt` *(01.10.2026: Beleg für das Grab des Lab-Vorschlags 66f73d C10.)* | 01.10.2026 | Grab `mikro-storytelling-erinnerung` | 21* |
 | **r/Grundsicherung Thread „Dafür bin ich nicht zuständig“ (Antwort auf den Gründungsnavigator)** `r-grundsicherung-thread-dafuer-bin-ich-n` | Erste Rückmeldung von Betroffenen auf eine Dose: zweimal „AI Slop“ und der Einwand, in Rechtsfragen nicht blind einer KI zu vertrauen *[Schnipsel]* | Webseite (teilweise): web | `angekratzt` *(13.10.2026: Antwort 13.10.2026, Kommentare von Félix übermittelt (Reddit aus der Cloud gesperrt); Einwand berechtigt, Reaktion Transparenz-Kasten und Prüfvermerke, nicht auf Reddit geantwortet.)* | 13.10.2026 | Dose `gruendungsnavigator` | 21* |
+| **Uni Macau Kinder-Vibecoding (Stax)** `uni-macau-kinder-vibecoding-stax` | Studie Kinder 7-11 mit Tool Stax: viel Testen/Debuggen, kaum Code lesen (Presseauszug GamesBeat) *[Schnipsel]* | Webseite: web | `angekratzt` *(14.10.2026: Nur Presseauszug, Primärstudie nicht gelesen.)* | 14.10.2026 | Kandidat `C2` | 21* |
 
 **Suchstring:** `site:reddit.com <Thema> "is there an app"` · `<Thema> "wish there was"` · `<Thema> Ask HN` · `<Thema> Mastodon`
 
@@ -511,6 +517,7 @@ Runde 2 hat gezeigt: Überlebende Ideen kommen aus Primärquellen, nicht aus Bra
 | **OK Lab Berlin (Code for Germany)** `ok-lab-berlin-code-for-germany` | Civic-Tech-Gemeinde Berlin, ca. 30 Aktive, Treffen zweiter Montag im Monat im Wikibär; berlin@codefor.de | Webseite | `durchsucht` *(01.10.2026: Ort zum Zeigen, nicht zum Bitten.)* | 01.10.2026 | – | 21* |
 | **Sozialrat Deutschland e.V. KI-Tools** `sozialrat-deutschland-e-v-ki-tools` | Behördenbrief-Generator, MDK-Gutachten-Prüfer, Widerspruch-Generator (Pilot pausiert, Relaunch in Vorbereitung) | Webseite: web | `angekratzt` *(11.10.2026: Erster Empfängervorschlag für G1; keine Selbständigkeit, keine Zitatprüfung.)* | 11.10.2026 | Kandidat `gruendungsnavigator` | 21* |
 | **Münchner Gründungsbüro Leitfaden Grundsicherungsgeld** `muenchner-gruendungsbuero-leitfaden-grun` | Leitfaden für Selbständige im Grundsicherungsgeld (Haupt- und Nebenerwerb, Unterlagenliste fürs Jobcenter) | Webseite: web | `angekratzt` *(11.10.2026: Träger auf der Seite nicht genannt; vor Ansprache prüfen.)* | 11.10.2026 | Kandidat `gruendungsnavigator` | 21* |
+| **QUA-LiS NRW KLP Informatik 5/6** `qua-lis-nrw-klp-informatik-5-6` | Kernlehrplan Informatik Kl. 5/6 seit 01.08.2021, QUA-LiS Materialdatenbank *[Schnipsel]* | Webseite (teilweise): web | `angekratzt` *(14.10.2026: Keine Person gefunden, KLP-Volltext nicht gelesen.)* | 14.10.2026 | Kandidat `C2` | 21* |
 
 <!-- QUELLEN:END -->
 

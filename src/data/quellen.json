@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "stand": "2026-10-13",
+  "stand": "2026-10-14",
   "katalog": {
     "status": [
       {
@@ -17611,6 +17611,372 @@
           "agent": "bibliothekar",
           "runde": "Gründungsnavigator — Antwort 13.10.2026",
           "notiz": "Antwort 13.10.2026, Kommentare von Félix übermittelt (Reddit aus der Cloud gesperrt); Einwand berechtigt, Reaktion Transparenz-Kasten und Prüfvermerke, nicht auf Reddit geantwortet.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "harvard-scratched-debugme",
+      "name": "Harvard ScratchEd DebugMe",
+      "typ": "G",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [
+        "https://scratched.gse.harvard.edu/resources/debugme.html"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "web"
+      },
+      "enthaelt": "Scratch-Fehlerprojekte in Stufen (Autor Adriano Parracciani, Creative Computing Lab Harvard GSE)",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-14",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "C2"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-14"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-14",
+          "agent": "ideen-scout",
+          "runde": "Lab-Survivors Kinder-Vibecoding 14.10.2026",
+          "notiz": "Kein KI-Bezug, kein NRW-Bezug.",
+          "status": "durchsucht"
+        }
+      ]
+    },
+    {
+      "id": "scratch-debugging-strategies-guide",
+      "name": "Scratch Debugging-Strategies-Guide",
+      "typ": "G",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [
+        "https://resources.scratch.mit.edu/www/guides/en/ScratchLearningResource_DebuggingStrategies.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "pdf"
+      },
+      "enthaelt": "Offizieller Debugging-Leitfaden des Scratch-Teams",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-14",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "C2"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-14"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-14",
+          "agent": "ideen-scout",
+          "runde": "Lab-Survivors Kinder-Vibecoding 14.10.2026",
+          "notiz": "Nur Schnipsel.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "oak-national-academy-debugging-year-3",
+      "name": "Oak National Academy Debugging Year 3",
+      "typ": "G",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [
+        "https://thenational.academy/pupils/lessons/debugging-movement/video"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "web"
+      },
+      "enthaelt": "Debugging-Lektion Year 3 (England), Fünf-Schritt-Zyklus",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-14",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "C2"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-14"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-14",
+          "agent": "ideen-scout",
+          "runde": "Lab-Survivors Kinder-Vibecoding 14.10.2026",
+          "notiz": "Nur Schnipsel.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "arxiv-kerslake-denny-prompt-problems",
+      "name": "arXiv Kerslake/Denny Prompt Problems",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [
+        "https://arxiv.org/pdf/2410.03063",
+        "https://arxiv.org/pdf/2311.05943"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "pdf"
+      },
+      "enthaelt": "Prompt Problems und Rückwärts-Prompt aus Codefragment, Univ. Auckland",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-14",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "C7"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-14"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-14",
+          "agent": "ideen-scout",
+          "runde": "Lab-Survivors Kinder-Vibecoding 14.10.2026",
+          "notiz": "Kein K-12.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "uni-macau-kinder-vibecoding-stax",
+      "name": "Uni Macau Kinder-Vibecoding (Stax)",
+      "typ": "X",
+      "kategorie": "soziale-plattform",
+      "rollen": [
+        "evidenz"
+      ],
+      "tags": [],
+      "urls": [
+        "https://gamesbeat.com/new-research-reveals-trade-off-behind-ai-vibe-coding-tools-speed-vs-understanding-exclusive/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "web"
+      },
+      "enthaelt": "Studie Kinder 7-11 mit Tool Stax: viel Testen/Debuggen, kaum Code lesen (Presseauszug GamesBeat)",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-14",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "C2"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-14"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-14",
+          "agent": "ideen-scout",
+          "runde": "Lab-Survivors Kinder-Vibecoding 14.10.2026",
+          "notiz": "Nur Presseauszug, Primärstudie nicht gelesen.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "ki-spielekoffer-sachsen-anhalt",
+      "name": "KI-Spielekoffer Sachsen-Anhalt",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "besetzt-test"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.bildung-lsa.de/files/5f5a6656949fc5d7c14510be9feb8c4b/DOS_KI_Spielekoffer.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": "pdf"
+      },
+      "enthaelt": "Moodle-Kurs ab Klasse 5 zum Prompten (bildung-lsa.de)",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-14",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "C7"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-14"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-14",
+          "agent": "ideen-scout",
+          "runde": "Lab-Survivors Kinder-Vibecoding 14.10.2026",
+          "notiz": "Fokus Prompten, kein Rückbau, kein Debugging.",
+          "status": "angekratzt"
+        }
+      ]
+    },
+    {
+      "id": "qua-lis-nrw-klp-informatik-5-6",
+      "name": "QUA-LiS NRW KLP Informatik 5/6",
+      "typ": "W",
+      "kategorie": "empfaenger",
+      "rollen": [
+        "empfaenger"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.schulministerium.nrw/05072021-veroeffentlichung-des-kernlehrplans-informatik-fuer-die-klassen-5-und-6",
+        "https://schulentwicklung.nrw.de/materialdatenbank/material/download/11681"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "teilweise",
+        "wie": "web"
+      },
+      "enthaelt": "Kernlehrplan Informatik Kl. 5/6 seit 01.08.2021, QUA-LiS Materialdatenbank",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-14",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "C2"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          3,
+          5,
+          3,
+          3,
+          4,
+          3
+        ],
+        "basis": "auto",
+        "datum": "2026-10-14"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-14",
+          "agent": "ideen-scout",
+          "runde": "Lab-Survivors Kinder-Vibecoding 14.10.2026",
+          "notiz": "Keine Person gefunden, KLP-Volltext nicht gelesen.",
           "status": "angekratzt"
         }
       ]
