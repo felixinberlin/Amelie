@@ -1,0 +1,364 @@
+{
+  "batch_id": "amelie-lab-inversion-inversion-20261014T133847-kids-lieberose-honi-e044f747d7376bf0",
+  "contract_version": "1.0.0",
+  "created_at": "2026-10-14T13:38:47Z",
+  "engine": "inversion",
+  "existence_check": false,
+  "ideas": [],
+  "intent": "Kinder lernen Programmieren durch Gaming und Vibecoding im Jugendklub in Lieberose, Brandenburg; Bauern, Landwirtschaft und Honig/Imkerei als reale Partner, Materialien und Aufgaben einbeziehen. Praktisch vor Ort umsetzbar, Kinder verstehen und testen selbst statt nur KI-Code zu bestellen.",
+  "lab_id": "amelie-lab",
+  "model": "Codex subagent (stand-in; searches: WebSearch)",
+  "record": {
+    "accounting": {
+      "cost_usd": 0,
+      "model_calls": 0,
+      "search_calls": 7,
+      "search_queries": 19
+    },
+    "contract_version": "1.1.0",
+    "created_at": "2026-10-14T13:38:47Z",
+    "intent": "Kinder lernen Programmieren durch Gaming und Vibecoding im Jugendklub in Lieberose, Brandenburg; Bauern, Landwirtschaft und Honig/Imkerei als reale Partner, Materialien und Aufgaben einbeziehen. Praktisch vor Ort umsetzbar, Kinder verstehen und testen selbst statt nur KI-Code zu bestellen.",
+    "log_entry": "<!-- proposed by the Lab's Inversion agent, run inversion-20261014T133847-kids-lieberose-honig; nothing was written to Amélie -->\n| 2026-10-14 | Lab | § 11 SGB VIII: Mitgestaltung der Jugendarbeit im Jugendclub Lieberose (Klasse A) | OP-4 | 6 | 0 (ungeprüft): none | Keine hinreichend belegte neue Vollzugslücke. |\n\n### Inversion run inversion-20261014T133847-kids-lieberose-honig — 2026-10-14 (intent: Kinder lernen Programmieren durch Gaming und Vibecoding im Jugendklub in Lieberose, Brandenburg; Bauern, Landwirtschaft und Honig/Imkerei als reale Partner, Materialien und Aufgaben einbeziehen. Prakt)\n- **Learned:** Der Jugendclub und zuständige Jugendsozialarbeit sind aktuell belegt; wirksame Kinderentscheidungen sind dokumentiert. Organisationsstress ist belegt, ein KI-bedingtes Beteiligungsdefizit nicht.\n- **Mistake:** Die gesetzliche Pflicht zur Mitgestaltung wurde zunächst mit einer vermuteten Ausführungslücke verwechselt. Bauern, Imker, vorhandene Rechner und Interesse an Coding wurden durch keine Quelle als bestätigte lokale Ressourcen nachgewiesen.\n- **Next time:** Mit der Jugendsozialarbeit zuerst einen konkreten Fall klären, an dem Kinder Entscheidungen nicht umsetzen konnten. Als normaler Workshop bleibt: Gegenstände und Messwerte von Hof/Honig, selbst beschlossene Spielregeln, eine kleine eigene Codeänderung und ein von Kindern erklärter Test; vorab Partner und Geräte bestätigen.\n- **Prior-art leads (automatic search, for the existence check; not a verdict):**\n  - C1 (ok): Bieten Code.org, Scratch und fobizz Materialien, in denen Kinder die Regeln KI-erzeugter Spiele bestimmen und Änderungen ablehnen; was wäre gegenüber einem allgemeinen KI-Chatbot zusätzlich nötig? -> https://www.scratchfoundation.org/learn/learning-library/physical-computing-with-scratch-makey-makey, https://code.org/en-US/artificial-intelligence, https://studio.code.org/courses/exploring-gen-ai-2025/units/1?viewAs=Instructor, https://fobizz.com/de/ki-mit-schuelern-nutzen/\n  - C2 (ok): Bieten LANDaktiv und Code.org die Übertragung selbst beobachteter Bauernhof- oder Honigfälle in Spielregeln; was erledigt ein allgemeiner KI-Chatbot mit Fotos und Code bereits? -> https://openai.com/academy/working-with-files/, https://openai.com/index/introducing-canvas/?lang=en, https://code.org/files/code.org-annual-report-2023.pdf, https://academy.openai.com/public/videos/prototyping-with-canvas-in-chatgpt-2025-04-11\n  - C3 (ok): Bieten LANDaktiv, fobizz und Scratch bereits gemeinsame Ferienprojektplanung für Landwirtschaft und Spiele; was bleibt gegenüber einem allgemeinen KI-Chatbot zusätzlich nötig? -> https://fobizz.com/de/gaming-projekte-mit-ki-im-unterricht/, https://fobizz.com/de/workshops-vortraege/, https://www.land-aktiv.de/, https://cms.scratchfoundation.org/assets/5f4a1c34-c79c-4ec9-935d-2bce5f6fee5d\n",
+    "model": "Codex subagent (stand-in; searches: WebSearch)",
+    "plan": {
+      "area": "Selbstbestimmte außerschulische Programmierwerkstatt im Jugendclub Lieberose mit Bauernhof und Honig als Wirklichkeit statt bloßer Dekoration.",
+      "class_hint": "A",
+      "contract_version": "1.0.0",
+      "mode_list": [
+        "Ein Bienen-Sammelspiel per KI bestellen.",
+        "Ein Bauernhofspiel in Scratch bauen.",
+        "Ein Honigquiz generieren.",
+        "Ein KI-Tutor erklärt Code.",
+        "Einen Sensor am Bienenstock anschließen.",
+        "Eine Hofbesichtigung mit Coding verbinden.",
+        "Ein Imker erzählt, Kinder bauen danach ein Spiel.",
+        "Eine KI erstellt Arbeitsblätter.",
+        "Ein Programmierwettbewerb mit Punkten.",
+        "Ein Chatbot plant die Ferienwoche."
+      ],
+      "notes": "Stand-in ohne Vertex. Bauer als Landwirt, Honnig als Honig verstanden. Letzte allgemeine Retro verlangte Originaltexte: deshalb Rechtsquelle und örtliche Amtsblattberichte lesen, nicht allein alte SPI-Berichte. Vorheriges C2-Fehlerübungsformat wird nicht wiederholt.",
+      "target_queries": [
+        "Welche Pflicht zur Mitbestimmung enthält § 11 SGB VIII und welche Stelle führt offene Jugendarbeit in Lieberose durch?",
+        "Was dokumentieren die aktuellen Amtsblätter über Kinderentscheidungen und Finanzierung des Jugendclubs Lieberose?"
+      ]
+    },
+    "prior_art": [
+      {
+        "answer": "Code.org behandelt generative KI und Handlungsmacht, Scratch kreatives Experimentieren und physisches Computing, fobizz schülerorganisierte KI-Zugänge. Diese Nachbarn tragen keine Behauptung einer örtlichen Beteiligungslücke.",
+        "candidate_id": "C1",
+        "pages": [
+          "https://www.scratchfoundation.org/learn/learning-library/physical-computing-with-scratch-makey-makey",
+          "https://code.org/en-US/artificial-intelligence",
+          "https://studio.code.org/courses/exploring-gen-ai-2025/units/1?viewAs=Instructor",
+          "https://fobizz.com/de/ki-mit-schuelern-nutzen/"
+        ],
+        "question": "Bieten Code.org, Scratch und fobizz Materialien, in denen Kinder die Regeln KI-erzeugter Spiele bestimmen und Änderungen ablehnen; was wäre gegenüber einem allgemeinen KI-Chatbot zusätzlich nötig?",
+        "status": "ok"
+      },
+      {
+        "answer": "ChatGPT kann Fotos und Dateien bearbeiten sowie Code erstellen; Code.org bot physisches Computing bereits 2023. Die Quellen sind benachbarte Fähigkeiten, keine Existenzentscheidung zum Kandidaten.",
+        "candidate_id": "C2",
+        "pages": [
+          "https://openai.com/academy/working-with-files/",
+          "https://openai.com/index/introducing-canvas/?lang=en",
+          "https://code.org/files/code.org-annual-report-2023.pdf",
+          "https://academy.openai.com/public/videos/prototyping-with-canvas-in-chatgpt-2025-04-11"
+        ],
+        "question": "Bieten LANDaktiv und Code.org die Übertragung selbst beobachteter Bauernhof- oder Honigfälle in Spielregeln; was erledigt ein allgemeiner KI-Chatbot mit Fotos und Code bereits?",
+        "status": "ok"
+      },
+      {
+        "answer": "LANDaktiv enthält Landwirtschaft und Bienen; fobizz beschreibt KI-Gaming und Planung, Scratch gemeinsames Lernen. Eine weitere Workshopplanung allein bietet keinen ausreichend belegten technischen Sprung.",
+        "candidate_id": "C3",
+        "pages": [
+          "https://fobizz.com/de/gaming-projekte-mit-ki-im-unterricht/",
+          "https://fobizz.com/de/workshops-vortraege/",
+          "https://www.land-aktiv.de/",
+          "https://cms.scratchfoundation.org/assets/5f4a1c34-c79c-4ec9-935d-2bce5f6fee5d"
+        ],
+        "question": "Bieten LANDaktiv, fobizz und Scratch bereits gemeinsame Ferienprojektplanung für Landwirtschaft und Spiele; was bleibt gegenüber einem allgemeinen KI-Chatbot zusätzlich nötig?",
+        "status": "ok"
+      }
+    ],
+    "result": {
+      "contract_version": "1.1.0",
+      "kills": [
+        {
+          "candidate_id": "C1",
+          "failed_checks": [
+            "problem_evidence",
+            "why_now"
+          ],
+          "reason": "Die örtliche Quelle belegt bereits wirksame Mitbestimmung: Kinder änderten den geplanten Ausflug durch Abstimmung. Eine zusätzliche KI-bedingte Vollzugslücke ist nicht belegt; eine verbindliche Freigabe mit Versionssperre war 2018 baubar."
+        },
+        {
+          "candidate_id": "C2",
+          "failed_checks": [
+            "problem_evidence",
+            "why_now",
+            "in_mode_or_dense"
+          ],
+          "reason": "Fotos, Dateien und Code verarbeitet bereits ein allgemeiner KI-Chatbot; Scratch und Code.org bieten physische Eingaben und eigene Daten. Ein notwendiger neuer Datenvertrag für Lieberoser Kinder ist nicht belegt und seine Kerntechnik war 2018 möglich."
+        },
+        {
+          "candidate_id": "C3",
+          "failed_checks": [
+            "why_now",
+            "in_mode_or_dense"
+          ],
+          "reason": "LANDaktiv bietet praktische Landwirtschafts- und Bienenthemen, fobizz KI-Gaming und Materialplanung. Trotz belegtem Organisationsstress fehlt ein bestätigter lokaler Partner; der KI-Vorschlag reduziert sich auf Chatbot-Planung mit Terminabsprachen."
+        }
+      ],
+      "log_row": {
+        "anchor_class": "A",
+        "best_gap": "Keine hinreichend belegte neue Vollzugslücke.",
+        "candidates": 6,
+        "operator": "OP-4",
+        "survivors": 0,
+        "target": "§ 11 SGB VIII: Mitgestaltung der Jugendarbeit im Jugendclub Lieberose"
+      },
+      "retro": {
+        "learned": "Der Jugendclub und zuständige Jugendsozialarbeit sind aktuell belegt; wirksame Kinderentscheidungen sind dokumentiert. Organisationsstress ist belegt, ein KI-bedingtes Beteiligungsdefizit nicht.",
+        "mistake": "Die gesetzliche Pflicht zur Mitgestaltung wurde zunächst mit einer vermuteten Ausführungslücke verwechselt. Bauern, Imker, vorhandene Rechner und Interesse an Coding wurden durch keine Quelle als bestätigte lokale Ressourcen nachgewiesen.",
+        "next_time": "Mit der Jugendsozialarbeit zuerst einen konkreten Fall klären, an dem Kinder Entscheidungen nicht umsetzen konnten. Als normaler Workshop bleibt: Gegenstände und Messwerte von Hof/Honig, selbst beschlossene Spielregeln, eine kleine eigene Codeänderung und ein von Kindern erklärter Test; vorab Partner und Geräte bestätigen."
+      },
+      "survivors": []
+    },
+    "run_id": "inversion-20261014T133847-kids-lieberose-honig",
+    "state_missing": [],
+    "target": {
+      "candidates": [
+        {
+          "check_queries": [
+            "Bieten Code.org, Scratch und fobizz Materialien, in denen Kinder die Regeln KI-erzeugter Spiele bestimmen und Änderungen ablehnen; was wäre gegenüber einem allgemeinen KI-Chatbot zusätzlich nötig?",
+            "Welche konkrete Belastung erleben die Jugendsozialarbeit und Kinder in Lieberose bei gemeinsamen Angeboten?"
+          ],
+          "id": "C1",
+          "idea": "Jugendliche haben ein verbindliches Regel-Veto: Eine KI-Änderung am gemeinsamen Hof-und-Honig-Spiel bleibt gesperrt, bis sie den eigenen Beschluss erklären, am Spiel nachstellen und gemeinsam bestätigen.",
+          "recipient": "Amt Lieberose/Oberspreewald, Jugendsozialarbeit im ländlichen Raum, Fachkräfte am Jugendclub Lieberose; zuständiger Fachbereich Jugend(sozial)arbeit/Jugendschutz des LDS.",
+          "recipient_kind": "agency",
+          "why_now": "Seit 2024/25 können Code-Modelle unmittelbar aus Kinderprosa unterschiedliche Spielstände erzeugen; das verbindliche Veto und die Versionssperre selbst waren jedoch bereits 2018 programmierbar."
+        },
+        {
+          "check_queries": [
+            "Bieten LANDaktiv und Code.org die Übertragung selbst beobachteter Bauernhof- oder Honigfälle in Spielregeln; was erledigt ein allgemeiner KI-Chatbot mit Fotos und Code bereits?",
+            "Welche konkrete Belastung erleben die Jugendsozialarbeit und Kinder in Lieberose bei gemeinsamen Angeboten?"
+          ],
+          "id": "C2",
+          "idea": "Eigene Honig- und Hofbeobachtungen werden zu freizugebenden Datenverträgen: Kinder bestimmen Einheiten und Ausnahmen, bevor die KI diese in ihr selbst programmiertes Spiel übernehmen darf.",
+          "recipient": "Amt Lieberose/Oberspreewald, Jugendsozialarbeit im ländlichen Raum, Fachkräfte am Jugendclub Lieberose; zuständiger Fachbereich Jugend(sozial)arbeit/Jugendschutz des LDS.",
+          "recipient_kind": "agency",
+          "why_now": "Gemma 3n bietet seit 2025 lokale Verarbeitung von Bild, Ton und Text; einheitenbasierte Datenverträge und manuelle Beobachtungen waren 2018 möglich, automatische Vorschläge allein begründen keine neue Lücke."
+        },
+        {
+          "check_queries": [
+            "Bieten LANDaktiv, fobizz und Scratch bereits gemeinsame Ferienprojektplanung für Landwirtschaft und Spiele; was bleibt gegenüber einem allgemeinen KI-Chatbot zusätzlich nötig?",
+            "Welche konkrete Belastung erleben die Jugendsozialarbeit und Kinder in Lieberose bei gemeinsamen Angeboten?"
+          ],
+          "id": "C3",
+          "idea": "Ein gemeinsames Zeitfenster wird von Kindern aus tatsächlichen Zusagen eines Bauern oder Imkers festgelegt; die KI übersetzt Materialbedarf und geteilte Regeln in eine kurze Club-Werkstatt.",
+          "recipient": "Amt Lieberose/Oberspreewald, Jugendsozialarbeit im ländlichen Raum, Fachkräfte am Jugendclub Lieberose; zuständiger Fachbereich Jugend(sozial)arbeit/Jugendschutz des LDS.",
+          "recipient_kind": "agency",
+          "why_now": "Sprachmodelle können seit 2024 Materiallisten und Spielcode zugleich vorschlagen; Terminabstimmung, Zusageprüfung und Aufgabenverteilung waren bereits 2018 mit Tabellen machbar."
+        },
+        {
+          "check_queries": [
+            "Bieten LANDaktiv, fobizz und Scratch bereits gemeinsame Ferienprojektplanung für Landwirtschaft und Spiele; was bleibt gegenüber einem allgemeinen KI-Chatbot zusätzlich nötig?",
+            "Welche konkrete Belastung erleben die Jugendsozialarbeit und Kinder in Lieberose bei gemeinsamen Angeboten?"
+          ],
+          "id": "C4",
+          "idea": "Kinder markieren Informationen eines Bauernhofs oder Imkers, die nicht ins Spiel gelangen sollen; eine lokale multimodale KI schlägt Stellen zur Entfernung vor, die Gruppe entscheidet.",
+          "recipient": "Amt Lieberose/Oberspreewald, Jugendsozialarbeit im ländlichen Raum, Fachkräfte am Jugendclub Lieberose; zuständiger Fachbereich Jugend(sozial)arbeit/Jugendschutz des LDS.",
+          "recipient_kind": "agency",
+          "why_now": "Lokale multimodale Modelle wie Gemma 3n verarbeiten seit 2025 verschiedene Medien auf Alltagsgeräten; technische Leistungsfähigkeit auf vorhandenen Clubgeräten bleibt ungetestet."
+        },
+        {
+          "check_queries": [
+            "Bieten LANDaktiv, fobizz und Scratch bereits gemeinsame Ferienprojektplanung für Landwirtschaft und Spiele; was bleibt gegenüber einem allgemeinen KI-Chatbot zusätzlich nötig?",
+            "Welche konkrete Belastung erleben die Jugendsozialarbeit und Kinder in Lieberose bei gemeinsamen Angeboten?"
+          ],
+          "id": "C5",
+          "idea": "Eine von Kindern geleitete Regelverhandlung zeigt, wo Honigertrag und Bauernhofinteressen im eigenen Spiel kollidieren; die KI erzeugt getrennte Konsequenzfassungen statt einer angeblich richtigen Antwort.",
+          "recipient": "Amt Lieberose/Oberspreewald, Jugendsozialarbeit im ländlichen Raum, Fachkräfte am Jugendclub Lieberose; zuständiger Fachbereich Jugend(sozial)arbeit/Jugendschutz des LDS.",
+          "recipient_kind": "agency",
+          "why_now": "Code-Modelle können konkurrierende Spielregeln als verschiedene laufende Fassungen erzeugen; die pädagogische Wirkung der Regelverhandlung ist nicht durch eine neue technische Fähigkeit belegt."
+        },
+        {
+          "check_queries": [
+            "Bieten LANDaktiv, fobizz und Scratch bereits gemeinsame Ferienprojektplanung für Landwirtschaft und Spiele; was bleibt gegenüber einem allgemeinen KI-Chatbot zusätzlich nötig?",
+            "Welche konkrete Belastung erleben die Jugendsozialarbeit und Kinder in Lieberose bei gemeinsamen Angeboten?"
+          ],
+          "id": "C6",
+          "idea": "Bei jeder KI-Überarbeitung benennen Kinder, welche eigene Regel verschwunden ist; die alte Version bleibt spielbar und die Gruppe entscheidet über Wiederherstellung statt stiller Ersetzung.",
+          "recipient": "Amt Lieberose/Oberspreewald, Jugendsozialarbeit im ländlichen Raum, Fachkräfte am Jugendclub Lieberose; zuständiger Fachbereich Jugend(sozial)arbeit/Jugendschutz des LDS.",
+          "recipient_kind": "agency",
+          "why_now": "Code-Modelle erzeugen lauffähige Varianten aus Prosa; Versionsvergleich, Wiederherstellung und gemeinsame Auswahl gab es schon 2018 ohne KI."
+        }
+      ],
+      "contract_version": "1.1.0",
+      "operator": "OP-4",
+      "shortlist": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "target": {
+        "anchor_class": "A",
+        "blind_spot": "Eine attraktive KI-Demo könnte Mitgestaltung vortäuschen, wenn die Kinder Änderungen nicht selbst beurteilen. Das örtliche Amtsblatt dokumentiert tatsächlich wirksame Kinderentscheidungen und widerspricht einer pauschalen Vollzugslückenbehauptung.",
+        "name": "§ 11 SGB VIII: Mitbestimmung und Mitgestaltung außerschulischer Jugendarbeit im Jugendclub Lieberose",
+        "source_label": "Bundesrecht § 11 Jugendarbeit",
+        "source_url": "https://www.gesetze-im-internet.de/sgb_8/__11.html",
+        "where_data_stops": "Die veröffentlichten Berichte beschreiben Wünsche und gemeinsame Entscheidungen; eine Verknüpfung dieser Beschlüsse mit erzeugten Spielständen ist darin nicht dokumentiert. Das ist eine Suchhypothese, kein Nachweis eines Mangels.",
+        "who_carries_burden": "Jugendsozialarbeit organisiert Angebote und begleitet Eigeninitiativen; aktuelle Ferienberichte nennen organisatorische Belastung. Dass Kinder eine KI-bedingte Beteiligungslücke erleben, ist unbewiesen.",
+        "who_pays": "Kommunale und Projektmittel ermöglichen Jugendarbeit; das Amtsblatt nennt die Unterstützung durch Landkreis und Demokratie leben. Aus der Norm folgt keine bestätigte Förderung eines Coding-Angebots."
+      },
+      "thesis": "Die Verantwortung wird von der fertigen KI-Demo auf die nachweisbare Entscheidung der Kinder über Regeln und Änderungen verlagert; ob die gesetzliche Beteiligung hierfür tatsächlich zusätzliche Werkzeuge braucht, bleibt zu prüfen."
+    },
+    "tool_calls": [
+      {
+        "call_id": "inversion-20261014T133847-kids-lieberose-honig-t01",
+        "pages": [
+          "https://www.dahme-spreewald.de/de/verwaltung/verwaltungsstruktur/dezernat4/amt-fuer-kinder-jugend-und-familie/jugend-sozial-arbeit-und-jugendschutz/",
+          "https://www.dahme-spreewald.de/de/verwaltung/satzungen/",
+          "https://epaper.wittich.de/frontend/catalogs/544085/1/pdf/complete.pdf",
+          "https://cms.karuna-ev.de/category/justus-delbrueck-haus/"
+        ],
+        "status": "ok",
+        "summary": "Lieberose Jugendclub Stiftung SPI Jugendarbeit Lieberose / Landkreis Dahme Spreewald Jugendförderplan Kinder Jugend Medienkompetenz §11 Jugendförderung",
+        "tool": "search"
+      },
+      {
+        "call_id": "inversion-20261014T133847-kids-lieberose-honig-t02",
+        "pages": [
+          "https://www.gesetze-im-internet.de/sgb_8/__11.html",
+          "https://www.lieberose-oberspreewald.de/Media/public/Homepage/Amtsblatt/05_2026.pdf",
+          "https://ai.google.dev/gemma/docs/gemma-3n/model_card",
+          "https://developers.googleblog.com/en/introducing-gemma-3n"
+        ],
+        "status": "ok",
+        "summary": "site.gesetze-im-internet.de/sgb_8/__11.html Jugendarbeit mitbestimmt mitgestaltet / site.lieberose-oberspreewald.de Jugendsozialarbeit Jugendclub / site.ai.google.dev gemma 3n multimodal on device 2025",
+        "tool": "search"
+      },
+      {
+        "call_id": "inversion-20261014T133847-kids-lieberose-honig-t03",
+        "pages": [
+          "https://www.land-aktiv.de/",
+          "https://www.land-aktiv.de/news/1/1106398/nachrichten/milchprojekte-spannende-projekte-rund-um-das-thema-milch.html",
+          "https://www.land-aktiv.de/seite/128996/arbeitskreis-landwirtschaft.html",
+          "https://www.lwg.bayern.de/bienen/bildung_beruf/084334/"
+        ],
+        "status": "ok",
+        "summary": "site.lieberose-oberspreewald.de Jugendsozialarbeit / site.bienen-schule.de Unterricht Honig / site.landaktiv.de Landwirtschaft Kinder Brandenburg",
+        "tool": "search"
+      },
+      {
+        "call_id": "inversion-20261014T133847-kids-lieberose-honig-t04",
+        "pages": [
+          "https://www.lieberose-oberspreewald.de/Media/public/Homepage/Amtsblatt/05_2026.pdf",
+          "https://www.lieberose-oberspreewald.de/Media/public/Homepage/Mitteilungsblatt/06_2025.pdf",
+          "https://ol.wittich.de/titel/2993/ausgabe/10/2026/artikel/00000000000054925044-OL-2993-2026-40-10-0"
+        ],
+        "status": "ok",
+        "summary": "site.lieberose-oberspreewald.de Jugendclub Lieberose 2026 Jugendsozialarbeit / site.land-aktiv.de Kontakt Dahme Spreewald Regionalbetreuer",
+        "tool": "search"
+      },
+      {
+        "call_id": "inversion-20261014T133847-kids-lieberose-honig-t05",
+        "pages": [
+          "https://www.scratchfoundation.org/learn/learning-library/physical-computing-with-scratch-makey-makey",
+          "https://code.org/en-US/artificial-intelligence",
+          "https://studio.code.org/courses/exploring-gen-ai-2025/units/1?viewAs=Instructor",
+          "https://fobizz.com/de/ki-mit-schuelern-nutzen/"
+        ],
+        "status": "ok",
+        "summary": "Bieten Code.org, Scratch und fobizz Materialien, in denen Kinder die Regeln KI-erzeugter Spiele bestimmen und Änderungen ablehnen; was wäre gegenüber einem allgemeinen KI-Chatbot zusätzlich nötig?",
+        "tool": "search"
+      },
+      {
+        "call_id": "inversion-20261014T133847-kids-lieberose-honig-t06",
+        "pages": [
+          "https://openai.com/academy/working-with-files/",
+          "https://openai.com/index/introducing-canvas/?lang=en",
+          "https://code.org/files/code.org-annual-report-2023.pdf",
+          "https://academy.openai.com/public/videos/prototyping-with-canvas-in-chatgpt-2025-04-11"
+        ],
+        "status": "ok",
+        "summary": "Bieten LANDaktiv und Code.org die Übertragung selbst beobachteter Bauernhof- oder Honigfälle in Spielregeln; was erledigt ein allgemeiner KI-Chatbot mit Fotos und Code bereits?",
+        "tool": "search"
+      },
+      {
+        "call_id": "inversion-20261014T133847-kids-lieberose-honig-t07",
+        "pages": [
+          "https://fobizz.com/de/gaming-projekte-mit-ki-im-unterricht/",
+          "https://fobizz.com/de/workshops-vortraege/",
+          "https://www.land-aktiv.de/",
+          "https://cms.scratchfoundation.org/assets/5f4a1c34-c79c-4ec9-935d-2bce5f6fee5d"
+        ],
+        "status": "ok",
+        "summary": "Bieten LANDaktiv, fobizz und Scratch bereits gemeinsame Ferienprojektplanung für Landwirtschaft und Spiele; was bleibt gegenüber einem allgemeinen KI-Chatbot zusätzlich nötig?",
+        "tool": "search"
+      },
+      {
+        "call_id": "inversion-20261014T133847-kids-lieberose-honig-bib01",
+        "status": "ok",
+        "summary": "Scratch copy bib find --stamm: Jugendklub",
+        "tool": "bib_find"
+      },
+      {
+        "call_id": "inversion-20261014T133847-kids-lieberose-honig-bib02",
+        "status": "ok",
+        "summary": "Scratch copy bib find --stamm: Programmieren",
+        "tool": "bib_find"
+      },
+      {
+        "call_id": "inversion-20261014T133847-kids-lieberose-honig-bib03",
+        "status": "ok",
+        "summary": "Scratch copy bib find --stamm: Honig",
+        "tool": "bib_find"
+      },
+      {
+        "call_id": "inversion-20261014T133847-kids-lieberose-honig-bib04",
+        "status": "ok",
+        "summary": "Scratch copy bib find --stamm: Mitbestimmung Spielregeln",
+        "tool": "bib_find"
+      },
+      {
+        "call_id": "inversion-20261014T133847-kids-lieberose-honig-bib05",
+        "status": "ok",
+        "summary": "Scratch copy bib find --stamm: Beobachtung Honig",
+        "tool": "bib_find"
+      },
+      {
+        "call_id": "inversion-20261014T133847-kids-lieberose-honig-bib06",
+        "status": "ok",
+        "summary": "Scratch copy bib find --stamm: Ferienplanung Bauernhof",
+        "tool": "bib_find"
+      }
+    ],
+    "topic_check": [
+      {
+        "hits": [],
+        "term": "Jugendklub"
+      },
+      {
+        "hits": [
+          "ghost-replay",
+          "bugs-spaced-repetition",
+          "lab-2026-10-14-inversion-20261014T090028-kids-vibecoding",
+          "lab-2026-10-14-lacunar-20261014T090131-kids-vibecoding"
+        ],
+        "term": "Programmieren"
+      },
+      {
+        "hits": [
+          "farm-gate-honesty-stall-finder",
+          "honey-moisture-refractometer-correction",
+          "landesbetrieb-forst-brandenburg-robinie"
+        ],
+        "term": "Honig"
+      }
+    ]
+  },
+  "revision": "e044f747d7376bf0bb54c16d8280635851b0337c178e3398e3a6f6c0987b3fd9",
+  "run_id": "inversion-20261014T133847-kids-lieberose-honig"
+}
