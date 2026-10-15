@@ -1,5 +1,7 @@
 # Shared Lab intake checkpoint — 2026-10-11
 
+> **Rückkanal 15.10.2026:** [Amélie → Lab: Lernübergabe aus drei Bau-Runden](LAB-LEARNING-HANDOFF-20261015.md) hält aktuelle Methodenbefunde und offene Artefakte für die koordinierende Lab-Sitzung fest. Kein automatischer Import; Blind-Stufe und unveränderliche Receipts bleiben erhalten.
+
 > **⚠ Nachtrag 14.10.2026:** Die hier genannten Jobcenter-Batches (u. a. `jobcenter-empowerment`) und die Brandenburg-Batches vom 12.10.2026 stammen aus von AI Studio generierten bzw. unverifizierten Dateien und sind als `archived` / `generated-not-evidence` markiert (Lab-Commits ad81d86a, 2c00793e, 49e95442). Aussagen unten zu diesen Batches sind keine Evidenz.
 
 ## Current checkpoint — reviewed intake (11 October 2026)

@@ -20742,6 +20742,523 @@
           "planId": "masonry-r2-20261015-memory"
         }
       ]
+    },
+    {
+      "id": "naturwelt-heideradweg-projektchronik",
+      "name": "Naturwelt Heideradweg Projektchronik",
+      "typ": "W",
+      "kategorie": "empfaenger",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.naturwelt-lieberose.de/kontakt/projektinformationen-heideradweg",
+        "https://www.naturwelt-lieberose.de/team"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Quartalsstände zu Bauaufgaben Genehmigungen Vergaben und beauftragten digitalen Guides am Heideradweg",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          1,
+          3,
+          5,
+          5,
+          3,
+          4
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 3 15.10.2026",
+          "notiz": "Konkrete regionale Bauaufgaben und vorhandene Planung/Actionbound; kein geprüfter Softwareengpass und keine aktuelle Fertigstellung aus Q2-Prognosen abgeleitet. Quartalsstände bis Q2 2026 gelesen; belegte Reibung ohne nachgewiesenen Softwarehebel. Holz betrifft Verkleidung und Dachstuhl, keine Materialfreigabe. Primaerseite gelesen; Lieberoser Wueste Jamlitz und Preilack raeumlich getrennt; keine belegte neue Softwareluecke. Q2 2026 progress versus targets distinguished; no specific missing software task shown. Reviewer direkt gegengelesen: gemeinsamer Quellenanker, keine unabhängige vierfache Bedarfsbestätigung. In Q2 Preilacker Toilette und Jamlitzer Fassade fertig; Dachstuhl/Fledermausumbau anschließend; Steg August nur Ziel, Abschluss zum 15.10. nicht belegt.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 3 15.10.2026",
+          "notiz": "Vektoren bewertet [1 3 5 5 3 4]: R3 source-only: kein Kandidaten-/Dosenertrag (Q1); Q2/Q5 unentschiedene Restaufgaben, keine Themensättigung; Q3/Q4 nach gelesener Hauptquelle, zusätzliche Schnipsel bleiben in Notiz begrenzt; Q6 institutioneller Anschluss.",
+          "planId": "masonry-r3-20261015-source-ratings"
+        }
+      ]
+    },
+    {
+      "id": "wildnisstiftung-ki-nationalpark-lieberos",
+      "name": "Wildnisstiftung KI-Nationalpark Lieberose",
+      "typ": "D",
+      "kategorie": "foerderung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.wildnisstiftung.de/presse/ki_projekt_/",
+        "https://www.wildnisstiftung.de/lernen-verstehen/forschung-monitoring/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "BMUKN-gefördertes KI-Monitoring 2025 bis 2027 mit Forschungspartnern auch in Lieberose",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          1,
+          3,
+          5,
+          5,
+          3,
+          4
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 3 15.10.2026",
+          "notiz": "Empfänger betreibt technische Auswertung bereits; keine neue konkrete ungelöste Teilaufgabe gefunden. Official 16 October 2025 announcement read; no measured algorithm quality or new 2026 change inferred.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 3 15.10.2026",
+          "notiz": "Vektoren bewertet [1 3 5 5 3 4]: R3 source-only: kein Kandidaten-/Dosenertrag (Q1); Q2/Q5 unentschiedene Restaufgaben, keine Themensättigung; Q3/Q4 nach gelesener Hauptquelle, zusätzliche Schnipsel bleiben in Notiz begrenzt; Q6 institutioneller Anschluss.",
+          "planId": "masonry-r3-20261015-source-ratings"
+        }
+      ]
+    },
+    {
+      "id": "wildnisstiftung-waldbrandschutz-maerz-20",
+      "name": "Wildnisstiftung Waldbrandschutz März 2025",
+      "typ": "W",
+      "kategorie": "empfaenger",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.wildnisstiftung.de/presse/mit-sicherheit-wildnis-die-wildnisstiftung-setzt-auf-effektiven-waldbrandschutz/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Bauliche Schutzmaßnahmen und Kooperation in vier Wildnisgebieten mit getrennten Ortsangaben",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          1,
+          3,
+          5,
+          5,
+          3,
+          4
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 3 15.10.2026",
+          "notiz": "Reale Infrastrukturaufgabe; kein belegter Informationsverlust und keine Softwarefreigabe für Wege oder Sicherheit.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 3 15.10.2026",
+          "notiz": "Vektoren bewertet [1 3 5 5 3 4]: R3 source-only: kein Kandidaten-/Dosenertrag (Q1); Q2/Q5 unentschiedene Restaufgaben, keine Themensättigung; Q3/Q4 nach gelesener Hauptquelle, zusätzliche Schnipsel bleiben in Notiz begrenzt; Q6 institutioneller Anschluss.",
+          "planId": "masonry-r3-20261015-source-ratings"
+        }
+      ]
+    },
+    {
+      "id": "dbu-altberichte-lieberose-forst-und-korr",
+      "name": "DBU Altberichte Lieberose Forst und Korridor",
+      "typ": "D",
+      "kategorie": "foerderung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.dbu.de/OPAC/ab/DBU-Abschlussbericht-AZ-24595_01.pdf",
+        "https://www.dbu.de/OPAC/ab/DBU-Abschlussbericht-AZ-23760.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "unbekannt",
+        "wie": ""
+      },
+      "enthaelt": "Historische Modell- und Korridorprojekte mit Lieberose-Bezug",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          1,
+          3,
+          2,
+          2,
+          3,
+          4
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 3 15.10.2026",
+          "notiz": "Nur Suchindex; nicht datiert gegen aktuelle Projektstände geprüft und nicht als aktuelle Förderbrücke verwendet.",
+          "status": "angekratzt"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 3 15.10.2026",
+          "notiz": "Vektoren bewertet [1 3 2 2 3 4]: R3 source-only: kein Kandidaten-/Dosenertrag (Q1); Q2/Q5 unentschiedene Restaufgaben, keine Themensättigung; Q3/Q4 nach gelesener Hauptquelle, zusätzliche Schnipsel bleiben in Notiz begrenzt; Q6 institutioneller Anschluss.",
+          "planId": "masonry-r3-20261015-source-ratings"
+        }
+      ]
+    },
+    {
+      "id": "gedenkstaette-lieberose-in-jamlitz-ausba",
+      "name": "Gedenkstätte Lieberose in Jamlitz Ausbauplanung",
+      "typ": "W",
+      "kategorie": "empfaenger",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.lieberose-jamlitz-sbg.de/geschichte/seit-2023-gedenkstaette-lieberose-in-jamlitz/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Siedlerhaus Sanierung Neubau und Freiflächengestaltung bis 2029",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          1,
+          3,
+          5,
+          5,
+          3,
+          4
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 3 15.10.2026",
+          "notiz": "Standort Jamlitz; tatsächliche Aufgabe gelesen, kein konkreter Softwarebedarf belegt. Reviewer direkt gegengelesen: Ziel 2029 überwiegend Planung; Abbruch zweites Siedlerhaus bereits erfolgt.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 3 15.10.2026",
+          "notiz": "Vektoren bewertet [1 3 5 5 3 4]: R3 source-only: kein Kandidaten-/Dosenertrag (Q1); Q2/Q5 unentschiedene Restaufgaben, keine Themensättigung; Q3/Q4 nach gelesener Hauptquelle, zusätzliche Schnipsel bleiben in Notiz begrenzt; Q6 institutioneller Anschluss.",
+          "planId": "masonry-r3-20261015-source-ratings"
+        }
+      ]
+    },
+    {
+      "id": "wildnisstiftung-wildnisgebiet-lieberose",
+      "name": "Wildnisstiftung Wildnisgebiet Lieberose",
+      "typ": "W",
+      "kategorie": "empfaenger",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.wildnisstiftung.de/besuchen-erleben/unsere-wildnisgebiete/wildnisgebiet-lieberose/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Flächenbetreuung Naturschutz Besucherangebote und Forschungskontext",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          1,
+          3,
+          5,
+          5,
+          3,
+          4
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 3 15.10.2026",
+          "notiz": "Stiftungsflächen im weiteren Gebiet, nicht pauschal Stadtfläche; kein Holzernteauftrag aus Waldvorkommen abgeleitet. Local land-management mandate is not blanket timber extraction or software demand.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 3 15.10.2026",
+          "notiz": "Vektoren bewertet [1 3 5 5 3 4]: R3 source-only: kein Kandidaten-/Dosenertrag (Q1); Q2/Q5 unentschiedene Restaufgaben, keine Themensättigung; Q3/Q4 nach gelesener Hauptquelle, zusätzliche Schnipsel bleiben in Notiz begrenzt; Q6 institutioneller Anschluss.",
+          "planId": "masonry-r3-20261015-source-ratings"
+        }
+      ]
+    },
+    {
+      "id": "ubl-anfrage-schloss-lieberose-juni-2025",
+      "name": "UBL Anfrage Schloss Lieberose Juni 2025",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.ubl-lds.de/ubl-fragt-nach-schloss-lieberose/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Politische Originalanfrage zum Stand der Bauplanung Genehmigungen und Sanierung des privaten Schlossinvestors",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          1,
+          3,
+          5,
+          5,
+          3,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 3 15.10.2026",
+          "notiz": "Originalanfrage gelesen; keine Antwortakte oder Bestaetigung technischer Fehler; Stadt Lieberose.",
+          "status": "angekratzt"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 3 15.10.2026",
+          "notiz": "Vektoren bewertet [1 3 5 5 3 3]: R3 source-only: kein Kandidaten-/Dosenertrag (Q1); Q2/Q5 unentschiedene Restaufgaben, keine Themensättigung; Q3/Q4 nach gelesener Hauptquelle, zusätzliche Schnipsel bleiben in Notiz begrenzt; Q6 institutioneller Anschluss.",
+          "planId": "masonry-r3-20261015-source-ratings"
+        }
+      ]
+    },
+    {
+      "id": "spreewaldverein-kahn-im-fokus",
+      "name": "Spreewaldverein KAHN im FOKUS",
+      "typ": "W",
+      "kategorie": "empfaenger",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://spreewaldverein.de/projekt/kulturerbe-spreewaldkahn/",
+        "https://www.lieberose-oberspreewald.de/Media/public/Homepage/Mitteilungsblatt/2024_11.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Traegergruppe Kulturerbe mit Holzhandwerksbedarf Werkstaetten und bereits vorhandenem Dokumentationsbestand",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          1,
+          3,
+          5,
+          5,
+          3,
+          4
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 3 15.10.2026",
+          "notiz": "Projektseite gelesen; Amtsblatt nur Suchschnipsel; Wirtschaftsraum Spreewald und Straupitz-Veranstaltung nicht als Stadt-Lieberose-Bedarf ausgeben.",
+          "status": "angekratzt"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 3 15.10.2026",
+          "notiz": "Vektoren bewertet [1 3 5 5 3 4]: R3 source-only: kein Kandidaten-/Dosenertrag (Q1); Q2/Q5 unentschiedene Restaufgaben, keine Themensättigung; Q3/Q4 nach gelesener Hauptquelle, zusätzliche Schnipsel bleiben in Notiz begrenzt; Q6 institutioneller Anschluss.",
+          "planId": "masonry-r3-20261015-source-ratings"
+        }
+      ]
+    },
+    {
+      "id": "bfn-lieberoser-heide-preliminary-project",
+      "name": "BfN Lieberoser Heide preliminary project",
+      "typ": "D",
+      "kategorie": "foerderung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.bfn.de/projektsteckbriefe/internationale-naturausstellung-lieberoser-heide-voruntersuchung"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Historical institutional project and funding context for nature exhibition",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          1,
+          3,
+          5,
+          5,
+          3,
+          4
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 3 15.10.2026",
+          "notiz": "Historical project context is not an open current funding call.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 3 15.10.2026",
+          "notiz": "Vektoren bewertet [1 3 5 5 3 4]: R3 source-only: kein Kandidaten-/Dosenertrag (Q1); Q2/Q5 unentschiedene Restaufgaben, keine Themensättigung; Q3/Q4 nach gelesener Hauptquelle, zusätzliche Schnipsel bleiben in Notiz begrenzt; Q6 institutioneller Anschluss.",
+          "planId": "masonry-r3-20261015-source-ratings"
+        }
+      ]
     }
   ],
   "nichtNutzen": [

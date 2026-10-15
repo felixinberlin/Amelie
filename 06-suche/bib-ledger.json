@@ -1635,6 +1635,78 @@
         "src/data/candidateVectors.json": "sha256:d2a2fdc9ed9db5847d4493f2d8a2a5750579a9130f6d267e887da3d5dcd753d3",
         "src/data/vectorChanges.json": "sha256:7713e34a6b9cd539c2d581109bc53f40f97495968d6358ce51d8995bd4405b79"
       }
+    },
+    "masonry-r3-20261015-source-ratings": {
+      "plan_id": "masonry-r3-20261015-source-ratings",
+      "actor": "bibliothekar",
+      "agent": "bibliothekar",
+      "runde": "Maurer-Runde 3 15.10.2026",
+      "at": "2026-10-15T14:00:43.625Z",
+      "ops": [
+        {
+          "index": 0,
+          "op": "source.rate",
+          "target": "naturwelt-heideradweg-projektchronik"
+        },
+        {
+          "index": 1,
+          "op": "source.rate",
+          "target": "wildnisstiftung-ki-nationalpark-lieberos"
+        },
+        {
+          "index": 2,
+          "op": "source.rate",
+          "target": "wildnisstiftung-waldbrandschutz-maerz-20"
+        },
+        {
+          "index": 3,
+          "op": "source.rate",
+          "target": "dbu-altberichte-lieberose-forst-und-korr"
+        },
+        {
+          "index": 4,
+          "op": "source.rate",
+          "target": "gedenkstaette-lieberose-in-jamlitz-ausba"
+        },
+        {
+          "index": 5,
+          "op": "source.rate",
+          "target": "wildnisstiftung-wildnisgebiet-lieberose"
+        },
+        {
+          "index": 6,
+          "op": "source.rate",
+          "target": "ubl-anfrage-schloss-lieberose-juni-2025"
+        },
+        {
+          "index": 7,
+          "op": "source.rate",
+          "target": "spreewaldverein-kahn-im-fokus"
+        },
+        {
+          "index": 8,
+          "op": "source.rate",
+          "target": "bfn-lieberoser-heide-preliminary-project"
+        }
+      ],
+      "files": [
+        "06-suche/amelie-quellen.md",
+        "AMELIE_STATUS.md",
+        "public/data/amelie-health.json",
+        "public/data/amelie-ideas.json",
+        "public/data/quellen.json",
+        "src/data/quellen.json"
+      ],
+      "hashes": {
+        "src/data/quellen.json": "sha256:7278986fa1980427a28526e836c3f2727bf4311b22089f7ce2e8b75964bdaa08",
+        "src/data/graeber.json": "sha256:22151ac9e34db3470c28c539307b0655d59640da2ae3d040dc2881ba77c85f58",
+        "06-suche/amelie-pruefprotokoll.md": "sha256:2a792222e06bdf48db3943fef8a18139ca2be50ce2088dfa43aa92982e327308",
+        "06-suche/terminology-map.md": "absent",
+        "06-suche/open-questions.md": "absent",
+        "src/data/doseVectors.json": "sha256:bc224ae81695813b22d51733a926ff21b40947792af96da51635105a26f2c5b5",
+        "src/data/candidateVectors.json": "sha256:d2a2fdc9ed9db5847d4493f2d8a2a5750579a9130f6d267e887da3d5dcd753d3",
+        "src/data/vectorChanges.json": "sha256:7713e34a6b9cd539c2d581109bc53f40f97495968d6358ce51d8995bd4405b79"
+      }
     }
   }
 }
