@@ -1,0 +1,587 @@
+# Proposals from plan lab-2026-10-15-amelie-lab-lacunar-lacunar-20261015T190000-bau-sicher-22da412cb6ae4167
+
+Packet: amelie-lab-lacunar-lacunar-20261015T190000-bau-sicher-22da412cb6ae4167 · Candidate: amelie-lab-lacunar-lacunar-20261015T190000-bau-sicher-22da412cb6ae4167
+Not applied. A human decides.
+
+- [06-suche/amelie-lab-protokoll.md] lacunar: amelie-lab-lacunar-lacunar-20261015T190000-bau-sicher-22da412cb6ae4167. Absicht: Sicher bauen beim Wiederaufbau nach Erdbeben: Maestros de obra und Selbstbauer (Kolumbien nach dem Beben vom August 2026, Peru, Nepal) bauen ausgesteiftes Mauerwerk, oft mit Fehlern an Ringankern, Bügeln und Ziegeln, und Zuschüsse hängen an Abnahmen. Welches billige, unsichtbare Handy-Werkzeug hilft dem Maurer selbst, den Fehler vor dem Betonieren zu sehen — kollidiert mit einem fernen Fachgebiet, das dasselbe Prüfproblem gelöst hat? Nie eine Abnahme oder Statikfreigabe.. Modell: claude-subagent (stand-in, Vertex unavailable; searches: WebSearch). Existenzprüfung: nein. Alle Ideen ungeprüft. Die folgenden Angaben sind gespeicherte Modellausgaben, keine bestätigten Tatsachen. Nur grounded=true ist Evidenz; Score-Änderungen benötigen zusätzlich quote_status=verified. Quellen, fact_checks und fehlende Felder bleiben wie im Original; keine neuen Prüfungen durchgeführt.
+- [06-suche/amelie-lab-protokoll.md] Originalfeld accounting, Teil 1 (laut gespeicherter Datei):
+{
+  "cost_usd": 0.0,
+  "model_calls": 0,
+  "search_calls": 18,
+  "search_queries": 18
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld contract_version, Teil 1 (laut gespeicherter Datei):
+"1.3.0"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld created_at, Teil 1 (laut gespeicherter Datei):
+"2026-10-15T19:00:00+02:00"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld frames, Teil 1 (laut gespeicherter Datei):
+{
+  "candidates": [
+    {
+      "check_queries": [
+        "app para maestros de obra calcular cuántos estribos cortar doblar columnas vigas despiece de fierro Aceros Arequipa Gerdau Diaco",
+        "¿Faltan estribos en columnas de viviendas autoconstruidas y se descubre solo después del vaciado?"
+      ],
+      "friction_point": "Basis: Im Mauerwerk zählt niemand, wie viele Bügel zugeschnitten und gebogen wurden; im OP gibt es eine Basiszählung, gegen die jede spätere Zählung abgeglichen wird.",
+      "id": "C1",
+      "idea": "Bügel-Restzählung: Der Maestro tippt Stützenhöhe und geplante Abstände (z. B. 100/200 oder 150) ein, das Handy nennt die Zahl zu biegender Bügel je Stütze (Basiszählung); vor dem Schalen fotografiert er den übrig gebliebenen Bügelhaufen, das Handy zählt und meldet „3 zu viel übrig = 3 fehlen in der Stütze“.",
+      "typical_probability": 0.03
+    },
+    {
+      "check_queries": [
+        "app celular contar estribos medir espaciamiento con foto columna antes de vaciar concreto sin internet",
+        "How often are stirrup spacings at column ends wrong in owner-built confined masonry houses?"
+      ],
+      "friction_point": "Höhle in der Höhle: Das Band oder die Stütze wird als Ganzes abgehakt; im OP wird jede innere Höhle für sich gezählt — wie die verdichtete Bügelzone an Stützenenden.",
+      "id": "C2",
+      "idea": "Zonen-Zählung vor dem Schalen: Foto der Stütze mit gedruckter Maßkarte; das Handy zählt Bügel getrennt in der oberen und unteren Verdichtungszone und in der Mitte und zeigt die größte Lücke rot — gegen die vom Maestro eingegebenen Zahlen, ohne Netz.",
+      "typical_probability": 0.07
+    },
+    {
+      "check_queries": [
+        "Is there a tool that counts rebar ties aloud while a worker taps each one on site?"
+      ],
+      "friction_point": "Wer zählt: Der Ingenieur kommt selten und allein; im OP zählen die zwei Menschen, die gerade arbeiten, laut und gleichzeitig.",
+      "id": "C3",
+      "idea": "Laute Zweierzählung: Der Helfer tippt mit einem markierten Stab jeden Bügel an, das Handy hört die Klicks oder sieht die Stabspitze und zählt laut in der Sprache der Kolonne mit; am Ende sagt es die Zahl und ob sie zur Basis passt.",
+      "typical_probability": 0.04
+    },
+    {
+      "check_queries": [
+        "Do reconstruction programs accept builder photos taken before concrete pouring as evidence for inspection?"
+      ],
+      "friction_point": "Zeitpunkt: Der NRA-Bogen prüft nach dem Betonieren, wenn Bügel unsichtbar sind; die OP-Zählung liegt vor dem Verschluss, und der Verschluss wartet.",
+      "id": "C4",
+      "idea": "Betonier-Pause: Der Betonierknopf im Handy-Tagesplan bleibt grau, bis für jede Stütze und jedes Band Basis- und Vorschal-Zählung übereinstimmen; dann entstehen die nummerierten Fotos, die der Prüfbogen ohnehin verlangt, auf dem Handy des Maurers.",
+      "typical_probability": 0.05
+    },
+    {
+      "check_queries": [
+        "app check stirrup hook angle 135 degrees from photo rebar bending verification",
+        "Do masons commonly bend 90 degree instead of 135 degree hooks on column ties?"
+      ],
+      "friction_point": "Basis: Im Mauerwerk zählt niemand, wie viele Bügel zugeschnitten und gebogen wurden; im OP gibt es eine Basiszählung, gegen die jede spätere Zählung abgeglichen wird.",
+      "id": "C5",
+      "idea": "Haken-Lehre am Biegetisch: Bügel auf eine gedruckte Karte legen, Foto; das Handy misst den Hakenwinkel (135° gegen 90°) und die Hakenlänge (≥ 6–10 d) und markiert abweichende Bügel, bevor sie in den Korb kommen.",
+      "typical_probability": 0.06
+    },
+    {
+      "check_queries": [
+        "Is there a phone tool that measures rebar lap splice length in ring beams before casting?"
+      ],
+      "friction_point": "Höhle in der Höhle: Das Band oder die Stütze wird als Ganzes abgehakt; im OP wird jede innere Höhle für sich gezählt — wie die verdichtete Bügelzone an Stützenenden.",
+      "id": "C6",
+      "idea": "Übergreifungs-Zählung am Ringanker: Vor dem Betonieren des Bands läuft der Maurer die Wand ab, das Handy zählt Stöße und misst die Übergreifungslänge gegen 60 d an der Karte, Ecke für Ecke.",
+      "typical_probability": 0.07
+    },
+    {
+      "check_queries": [
+        "How often is concrete cover missing in self-built columns because spacers are omitted?"
+      ],
+      "friction_point": "Ja/Nein gegen Zahl: Das Kästchen „Bügel 6 mm @150“ ist ein Urteil; die OP-Zählung ist eine Zahl, die stimmt oder nicht.",
+      "id": "C7",
+      "idea": "Abstandhalter-Zählung für die Überdeckung: Foto unter den Korb; das Handy zählt die Mörtelklötze („galletas“) je Meter und meldet Abschnitte ohne Abstandhalter, wo die 25 mm Überdeckung fehlen werden.",
+      "typical_probability": 0.05
+    },
+    {
+      "check_queries": [
+        "smartphone magnetometer app detect rebar stirrups in concrete column count spacing cover",
+        "Can a phone magnetometer detect 6 mm steel bars under 25 mm of concrete?"
+      ],
+      "friction_point": "Nach dem Verschluss: Das Röntgen ist im OP die teure letzte Prüfung; am Bau gibt es für eine fertige Stütze nur Aufstemmen oder einen teuren Bewehrungsscanner.",
+      "id": "C8",
+      "idea": "Röntgen-Ersatz nach dem Verschluss: Wenn schon betoniert ist, fährt der Maurer mit dem Handy (Magnetometer) an der Stütze entlang; das Handy zählt Ausschläge als Bügel und zeigt, ob die Zahl ungefähr zur Basis passt — um ohne Aufstemmen zu wissen, ob etwas fehlt.",
+      "typical_probability": 0.04
+    },
+    {
+      "check_queries": [
+        "app identificar ladrillo pandereta o King Kong con foto porcentaje de vacíos muro portante",
+        "¿Siguen usándose ladrillos pandereta en muros portantes de viviendas autoconstruidas en 2024–2026?"
+      ],
+      "friction_point": "Ja/Nein gegen Zahl: Das Kästchen „Bügel 6 mm @150“ ist ein Urteil; die OP-Zählung ist eine Zahl, die stimmt oder nicht.",
+      "id": "C9",
+      "idea": "Hohlraum-Blick beim Ziegelkauf: Foto der Lochseite eines Ziegels mit Karte; das Handy schätzt den Lochanteil und zeigt, ob er über der 30-%-Grenze für tragende Wände liegt (Pandereta gegen tragenden Ziegel), bevor bezahlt wird.",
+      "typical_probability": 0.06
+    },
+    {
+      "check_queries": [
+        "Is reinforcement steel diverted or reduced by owners in subsidised housing reconstruction?"
+      ],
+      "friction_point": "Basis: Im Mauerwerk zählt niemand, wie viele Bügel zugeschnitten und gebogen wurden; im OP gibt es eine Basiszählung, gegen die jede spätere Zählung abgeglichen wird.",
+      "id": "C10",
+      "idea": "Liefer-Basiszählung: Beim Eintreffen der Bewehrung und der Zementsäcke zählt das Handy per Foto gegen die Stückliste des Haustyps; vor jeder Stufe wird gegen den Rest abgeglichen, sodass abgezweigtes Material auffällt, bevor gespart statt gebaut wird.",
+      "typical_probability": 0.05
+    },
+    {
+      "check_queries": [
+        "Is there a tool that shows where a missing stirrup should be in a rebar cage photo?"
+      ],
+      "friction_point": "Diskrepanz-Pfad: Im Mauerwerk folgt auf einen Fund Abriss oder Zusatzband; im OP folgen Neuzählung, Suche, Röntgen, solange noch offen ist.",
+      "id": "C11",
+      "idea": "Lücken-Suche nach Diskrepanz: Stimmt die Zählung nicht, legt das Handy die gemessenen Abstände auf das Foto und zeigt die Stelle, an der der fehlende Bügel sein müsste — die „Suche im Feld“ vor dem Röntgen.",
+      "typical_probability": 0.06
+    },
+    {
+      "check_queries": [
+        "How is toothing between masonry and tie columns checked on site in confined masonry?"
+      ],
+      "friction_point": "Höhle in der Höhle: Das Band oder die Stütze wird als Ganzes abgehakt; im OP wird jede innere Höhle für sich gezählt — wie die verdichtete Bügelzone an Stützenenden.",
+      "id": "C12",
+      "idea": "Verzahnungs-Zählung: Vor dem Betonieren der Stütze zählt das Handy die Zahnung der Mauer je Schicht und misst den Überstand gegen 25–75 mm an der Karte.",
+      "typical_probability": 0.05
+    }
+  ],
+  "contract_version": "1.0.0",
+  "distance": 4,
+  "frame_a": {
+    "friction": "„The grant is disbursed in number of tranches based on compliant construction … the compliance rate is currently estimated to be very low“; geprüft wird nach dem Bau von Ingenieuren mit Kästchen-Bogen, und Fehler werden danach teuer korrigiert (z. B. „dismantle masonry above opening and construct a continuous lintel band“, äußere RC-Bänder, Drahtgitter).",
+    "name": "Typ A: NRA Corrections/Exceptions Manual + Inspektions-Prüfbogen (Nepal, Wiederaufbau nach 2015) — Zuschuss-Tranchen nur bei erfüllten Mindestanforderungen",
+    "slots": {
+      "constraints": "Wenige Ingenieure für ~750.000 Haushalte; viele Maurer ungeschult; nach dem Betonieren sind Bügel, Haken und Überdeckung unsichtbar; Nachbesserung heißt Abriss oder Zusatzbänder.",
+      "emotions": "Angst, die Tranche zu verlieren; Scham und Streit, wenn der Maurer schuld ist; Misstrauen gegenüber Ingenieur und Behörde; Zeitdruck vor Fristen.",
+      "goals": "Erdbebensicheres Haus nach Mindestanforderungen; für die Familie: die nächste Zuschuss-Tranche (300.000 NPR gesamt) freibekommen.",
+      "materials": "Bruchstein- oder Ziegelmauerwerk, RC-Bänder (Sockel, Brüstung, Sturz, Dach) mit 4–12 mm Längsstäben und 6-mm-Bügeln, Vertikalbewehrung an Ecken und Öffnungen, Prüfbogen auf Papier, mindestens vier nummerierte Fotos.",
+      "mechanics": "Ingenieur prüft je Tranche jedes Kästchen (Bügel 6 mm @150 mm, Überdeckung 25 mm, Übergreifung 60 d); fehlt etwas, folgt eine Korrekturanordnung mit Schritt-für-Schritt-Nachbesserung oder eine Ausnahme mit Toleranz (z. B. Bandstärke ±10 %).",
+      "rituals_timing": "Inspektion an festen Stufen (Sockel, Brüstung/Sturz, Dach) vor jeder Tranche; Foto- und Unterschriftsritual mit Hausbesitzer und Aufsicht."
+    },
+    "source_label": "National Reconstruction Authority Nepal, Corrections/Exceptions Manual for Reconstruction of Earthquake Resistant Houses (Datei 2022-09-06; mit NRA Technical Inspection Guidelines, Nov. 2016)",
+    "source_url": "https://mail.dpnet.org.np/uploads/files/Correction Exception Manual English Version 2022-09-06 04-48-47.pdf"
+  },
+  "frame_b": {
+    "domain": "Perioperative Pflege / OP-Sicherheit (AORN-Empfehlungen)",
+    "name": "Chirurgische Zählung (Tupfer, Instrumente, scharfe Teile) vor dem Wundverschluss",
+    "slots": {
+      "constraints": "Nach dem Verschluss ist Nachsehen teuer (Zweiteingriff); keine Toleranz: Soll und Ist müssen gleich sein; Zählung ist eine Zahl, kein Ermessen.",
+      "emotions": "Routine unter Zeitdruck; Pause wird als Sicherheits-Time-out akzeptiert, nicht als Vorwurf.",
+      "goals": "Nichts bleibt im Körper zurück; jede Diskrepanz wird gelöst, solange die Höhle noch offen ist.",
+      "materials": "Tupfer, Bauchtücher, Nadeln, Instrumente; Zähltafel (Whiteboard) im Saal; Röntgen als letzte Prüfung.",
+      "mechanics": "Basiszählung vor dem Schnitt; erneute Zählung vor dem Verschluss einer Höhle in der Höhle, vor dem Wundverschluss und bei Hautnaht; zwei Personen trennen, zählen hörbar laut und sehen gleichzeitig hin; Diskrepanz heißt sofort Neuzählung, dann Suche im Feld, dann Röntgen, bevor geschlossen wird.",
+      "rituals_timing": "Feste Zählzeitpunkte (bis zu fünf) an Übergängen; der Verschluss wartet auf die stimmende Zählung; Stand sichtbar an der Tafel."
+    }
+  },
+  "friction_points": [
+    "Zeitpunkt: Der NRA-Bogen prüft nach dem Betonieren, wenn Bügel unsichtbar sind; die OP-Zählung liegt vor dem Verschluss, und der Verschluss wartet.",
+    "Basis: Im Mauerwerk zählt niemand, wie viele Bügel zugeschnitten und gebogen wurden; im OP gibt es eine Basiszählung, gegen die jede spätere Zählung abgeglichen wird.",
+    "Ja/Nein gegen Zahl: Das Kästchen „Bügel 6 mm @150“ ist ein Urteil; die OP-Zählung ist eine Zahl, die stimmt oder nicht.",
+    "Toleranz: Die NRA führt nachträglich Ausnahmen und ±10 % ein; im OP gibt es keine Toleranz, weil die Zählung vor dem Verschluss billig ist.",
+    "Wer zählt: Der Ingenieur kommt selten und allein; im OP zählen die zwei Menschen, die gerade arbeiten, laut und gleichzeitig.",
+    "Höhle in der Höhle: Das Band oder die Stütze wird als Ganzes abgehakt; im OP wird jede innere Höhle für sich gezählt — wie die verdichtete Bügelzone an Stützenenden.",
+    "Diskrepanz-Pfad: Im Mauerwerk folgt auf einen Fund Abriss oder Zusatzband; im OP folgen Neuzählung, Suche, Röntgen, solange noch offen ist.",
+    "Wem gehört die Zählung: Die vier Fotos gehen in die Akte der Behörde; die OP-Tafel gehört dem Team, das gerade schließt.",
+    "Nach dem Verschluss: Das Röntgen ist im OP die teure letzte Prüfung; am Bau gibt es für eine fertige Stütze nur Aufstemmen oder einen teuren Bewehrungsscanner."
+  ],
+  "personas": [
+    {
+      "who": "Maestro de obra in Tuluá (Valle del Cauca), baut nach dem Beben drei Häuser für Nachbarn gleichzeitig, ein Helfer, kein Ingenieur vor Ort",
+      "would_do": "Zählt beim Biegen die Bügel je Stütze und vor dem Schalen die übrigen; stimmt es nicht, sucht er die Lücke, bevor der Beton kommt, statt später aufzustemmen."
+    },
+    {
+      "who": "Ungeschulter Maurer aus Ramechhap, Nepal, der für Familien vor der Tranchen-Frist mauert",
+      "would_do": "Fotografiert vor dem Betonieren des Sturzbands jede Stützenzone mit einer Karte und behält das Foto, um dem Prüfingenieur später die verdeckten Bügel zeigen zu können."
+    },
+    {
+      "who": "Selbstbauerin in Villa El Salvador, Lima, kauft Ziegel in Ladungen beim Händler um die Ecke",
+      "would_do": "Hält die Handykamera auf die Stirnseite eines Ziegels, bevor sie bezahlt, und lässt sich den Hohlraumanteil gegen die 30-%-Grenze anzeigen."
+    }
+  ],
+  "shortlist": [
+    "C1",
+    "C2",
+    "C5",
+    "C8",
+    "C9"
+  ]
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld intent, Teil 1 (laut gespeicherter Datei):
+"Sicher bauen beim Wiederaufbau nach Erdbeben: Maestros de obra und Selbstbauer (Kolumbien nach dem Beben vom August 2026, Peru, Nepal) bauen ausgesteiftes Mauerwerk, oft mit Fehlern an Ringankern, Bügeln und Ziegeln, und Zuschüsse hängen an Abnahmen. Welches billige, unsichtbare Handy-Werkzeug hilft dem Maurer selbst, den Fehler vor dem Betonieren zu sehen — kollidiert mit einem fernen Fachgebiet, das dasselbe Prüfproblem gelöst hat? Nie eine Abnahme oder Statikfreigabe."
+- [06-suche/amelie-lab-protokoll.md] Originalfeld log_entry, Teil 1 (laut gespeicherter Datei):
+"<!-- proposed by the Lab's Lacunar agent, run lacunar-20261015T190000-bau-sicher; nothing was written to Amélie -->\n| 15.10.2026 | Nepal NRA Corrections/Exceptions Manual (Prüfung nach dem Bau) | Chirurgische Zählung vor dem Wundverschluss (AORN) | 4 | 12 | 0: none | Maestros erfahren erst nach dem Betonieren, ob in den Stützenenden genug Bügel sitzen; ein Feldtest auf dünne Bügel fehlt (parkt). | — (not checked yet) |\n\n### Lacunar run lacunar-20261015T190000-bau-sicher — 15.10.2026 (intent: Sicher bauen beim Wiederaufbau nach Erdbeben: Maestros de obra und Selbstbauer (Kolumbien nach dem Beben vom August 2026, Peru, Nepal) bauen ausgesteiftes Mauerwerk, oft mit Fehlern an Ringankern, Büg)\n- **Learned:** Die Zählung vor dem Verschluss trägt als Idee, aber Prior Art ist L2 und der Bedarf liegt im Statistikbereich (Nepal-Compliance-Studien). Looser bei Prior Art (ISAC-SIMO bleibt L2), stricter bei A7: kleine Zählaufgaben erledigt das Auge schneller.\n- **Mistake:** Der Generator stellte C1 als Zählung dar, obwohl eine Handvoll Bügel von Hand schneller zu zählen ist; die Kosten der Technik wurden nicht gegen die jetzige Methode gestellt.\n- **Next time:** Vor dem Shortlisten für jeden Kandidaten die Zeit der jetzigen Methode in Sekunden schätzen und mit dem Foto vergleichen; einen Feldtest 6-mm-Bügel (10 Fotos) vor jedem weiteren Zählkandidaten einplanen. Stricter für A7, looser für abroad.\n- **Prior-art leads (automatic search, for the existence check; not a verdict):**\n  - C1 (ok): app para maestros de obra calcular cuántos estribos cortar doblar columnas vigas despiece de fierro Aceros Arequipa Gerdau Diaco -> https://civilespro.gumroad.com/l/PedidoAceroComercial, https://moodle.upm.es/en-abierto/pluginfile.php/296/mod_label/intro/teoria05.pdf, https://dspace.ups.edu.ec/handle/123456789/6579, https://apps.apple.com/us/app/id6470068117\n  - C2 (ok): app celular contar estribos medir espaciamiento con foto columna antes de vaciar concreto sin internet -> https://www.ideastatica.com/es/support-center/measuring-tool, https://apps.apple.com/ua/app/count-rebar/id6476160615, https://countthings.com/es-mx/guides/0019, https://apps.apple.com/hn/app/count-rebar/id6476160615?l=en-GB\n  - C5 (ok): app check stirrup hook angle 135 degrees from photo rebar bending verification -> https://mwm.ai/apps/crsi-rebar-reference/1423271565, https://techsupport.sds2.com/main/Topics/rebr_sh4.htm, https://www.eng-tips.com/viewthread.cfm?qid=450939, https://techsupport.sds2.com/main/Topics/rebr_sh5.htm\n  - C8 (ok): smartphone magnetometer app detect rebar stirrups in concrete column count spacing cover -> https://materials.measur.ca/products/fully-integrated-rebar-detector-and-covermeter, https://www.screeningeagle.com/en/products/profoscope, https://apps.apple.com/app/profometer/id1638693429, https://www.screeningeagle.com/en/products/profometer-pm8000\n  - C9 (ok): app identificar ladrillo pandereta o King Kong con foto porcentaje de vacíos muro portante -> https://proactivo.com.pe/excon-2017-lanzan-campana-para-informar-que-los-tradicionales-ladrillos-pandereta-no-son-sismoresistentes/, https://www.sodimac.com.pe/sodimac-pe/b/ladrillo-king-kong-18-huecos, https://www.sodimac.com.pe/sodimac-pe/b/ladrillo-king-kong-sin-hueco, https://www.sodimac.com.pe/sodimac-pe/b/ladrillo-18-huecos\n"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld model, Teil 1 (laut gespeicherter Datei):
+"claude-subagent (stand-in, Vertex unavailable; searches: WebSearch)"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld plan, Teil 1 (laut gespeicherter Datei):
+{
+  "anchor_queries": [
+    "Nepal housing reconstruction grant second tranche inspection checklist non-compliant houses correction exception manual masons",
+    "reconstrucción vivienda sismo Colombia 2026 subsidio desembolso visita técnica verificación autoconstrucción maestros de obra",
+    "errores frecuentes maestros de obra estribos ganchos 135 grados columnas de confinamiento separación estribos albañilería confinada"
+  ],
+  "area": "Arbeiterseitige Handy-Hilfen gegen verdeckte Bewehrungs- und Ziegelfehler im ausgesteiften Mauerwerk vor dem Betonieren (Wiederaufbau nach Erdbeben: Kolumbien 2026, Peru, Nepal)",
+  "collider_hint": "Ein Fach, in dem etwas verschlossen wird und danach nicht mehr ohne großen Aufwand geprüft werden kann, und das deshalb vor dem Verschließen zählt (z. B. die chirurgische Zählung im OP).",
+  "contract_version": "1.0.0",
+  "mode_list": [
+    "Bewehrungsstäbe im Bündel per Foto zählen (Lieferung, Lager)",
+    "Foto an einen Fern-Ingenieur schicken, der antwortet (Surakshit-Ghar-Muster)",
+    "Server-KI mit Go/No-Go-Score für Inspektoren (ISAC-SIMO-Muster)",
+    "Video- oder VR-Kurse für Maestros (SENCICO-, Construya-Muster)",
+    "Chatbot, der NSR-10, E.070 oder NBC-Fragen beantwortet",
+    "Digitale Abnahme-Checkliste als App für Bauleiter",
+    "Risserkennung an Wänden per Handyfoto nach dem Beben",
+    "Mengen- und Kostenrechner für Zement, Ziegel und Stahl",
+    "AR-Overlay des Bauplans auf die Baustelle",
+    "Schadensbewertung beschädigter Häuser per Foto (Ampel)",
+    "Materialbank-/Lieferanten-Marktplatz für Wiederaufbau"
+  ],
+  "notes": "Stand-in: WebSearch (Fallback), 9 eigene + 5 Prior-Art-Suchen. Frame A gelesen (PDF via dpnet.org.np, mail.-Host gab 406; Datei 2022-09-06, abgerufen 2026-10-15), dazu NRA-Inspektionsrichtlinie Nov. 2016 (Prüfbogen: Bügel 6 mm @150, Überdeckung 25 mm, Übergreifung 60 d, mind. vier Fotos). Gegenprobe ISAC-SIMO, Quellcode via GitHub-API gelesen: App (Push 2025-03-08) ohne TFLite/ONNX, sendet nur online an isac-simo.net/api; das Backend-„OfflineModel“ ist ein Keras-Modell auf dem Server (api/helpers.py). Kein Modell auf dem Gerät. Seed 1 des Scouts als C2 geprüft, nicht übernommen. Kolumbien: keine Seite bindet Zuschüsse an eine Abnahme; der Zahlungshebel ist nur für Nepal belegt."
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld prior_art, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "answer": "Kein Werkzeug eines Stahlhändlers gefunden. Nächste Nachbarn: eine Gumroad-Tabellenvorlage, die Despiece und Bestellliste mit Verschnitt rechnet (Planungsseite, ungeprüft), eine iPad-App zur Bemessung, eine Bügelbiegemaschine (Tesis UPS). Keine Seite gleicht vor dem Betonieren die übrig gebliebenen Bügel gegen die zugeschnittene Zahl ab.",
+    "candidate_id": "C1",
+    "pages": [
+      "https://civilespro.gumroad.com/l/PedidoAceroComercial",
+      "https://moodle.upm.es/en-abierto/pluginfile.php/296/mod_label/intro/teoria05.pdf",
+      "https://dspace.ups.edu.ec/handle/123456789/6579",
+      "https://apps.apple.com/us/app/id6470068117",
+      "https://strucalc.com/es/calculadora-vigas-columnas/",
+      "https://bibliotecadigital.udea.edu.co/bitstream/10495/24546/5/CanchilaGustavo_2021_MacroCalculoAcero.pdf"
+    ],
+    "question": "app para maestros de obra calcular cuántos estribos cortar doblar columnas vigas despiece de fierro Aceros Arequipa Gerdau Diaco",
+    "status": "ok"
+  },
+  {
+    "answer": "Nachbarn: „Count Rebar“ (iOS, kostenlos, Funktion laut Snippet unklar) und CountThings (Stäbe zählen per Foto, Lizenz kostenpflichtig, offline unbestätigt) zählen Stabenden im Bündel; keine Seite misst Bügelabstand je Zone vor dem Betonieren. ISAC-SIMO (Quellcode gelesen, siehe notes) lädt Fotos auf einen Server; sein „Offline Model“ ist ein Keras-Modell, das auf dem Backend läuft.",
+    "candidate_id": "C2",
+    "pages": [
+      "https://www.ideastatica.com/es/support-center/measuring-tool",
+      "https://apps.apple.com/ua/app/count-rebar/id6476160615",
+      "https://countthings.com/es-mx/guides/0019",
+      "https://apps.apple.com/hn/app/count-rebar/id6476160615?l=en-GB"
+    ],
+    "question": "app celular contar estribos medir espaciamiento con foto columna antes de vaciar concreto sin internet",
+    "status": "ok"
+  },
+  {
+    "answer": "Nur Nachschlage-Apps (CRSI Rebar Reference: Hakenmaße 90/135/180°), Detailing-Software (SDS2, Tekla, Revit) und eine indische QA-Checkliste (135° ± 10°, 10d Verlängerung, mit Maß geprüft). Keine Seite prüft den Hakenwinkel aus einem Foto.",
+    "candidate_id": "C5",
+    "pages": [
+      "https://mwm.ai/apps/crsi-rebar-reference/1423271565",
+      "https://techsupport.sds2.com/main/Topics/rebr_sh4.htm",
+      "https://www.eng-tips.com/viewthread.cfm?qid=450939",
+      "https://techsupport.sds2.com/main/Topics/rebr_sh5.htm",
+      "https://www.pci.org/PCI_Docs/GCPCI_Docs/Transportation_Resources/Bridge/PCEF/CRSI_Manual_of_Standard_Practice_29th_Ed-ERRATA-Nov2019.pdf",
+      "https://developer.tekla.com/api/28/guid/d8076459-f151-252f-08c0-6ee54bbcae48",
+      "https://www.infralens.in/qaqc/steel/bar-bending-cutting-checklist"
+    ],
+    "question": "app check stirrup hook angle 135 degrees from photo rebar bending verification",
+    "status": "ok"
+  },
+  {
+    "answer": "Nur eigene Bewehrungsscanner (Proceq/Screening Eagle Profoscope, Profometer PM8000 mit iPad-App und Abo, NOVOTEST); FHWA nennt Grenzen bei dichter Bewehrung (Überdeckung ≤ 2/3 des Stababstands). Keine Seite zeigt das Handy-Magnetometer als Bügelzähler.",
+    "candidate_id": "C8",
+    "pages": [
+      "https://materials.measur.ca/products/fully-integrated-rebar-detector-and-covermeter",
+      "https://www.screeningeagle.com/en/products/profoscope",
+      "https://apps.apple.com/app/profometer/id1638693429",
+      "https://www.screeningeagle.com/en/products/profometer-pm8000",
+      "https://testingindonesia.co.id/product/concrete-cover-meter-novotest-rebar-detector/",
+      "https://infotechnology.fhwa.dot.gov/magnetometer-mm/",
+      "https://infotechnology.fhwa.dot.gov/magnetometer-profometer/"
+    ],
+    "question": "smartphone magnetometer app detect rebar stirrups in concrete column count spacing cover",
+    "status": "ok"
+  },
+  {
+    "answer": "Keine App gefunden; Treffer sind Händlerseiten (Sodimac, Falabella: King Kong 18 Löcher, ohne Loch) und eine Kampagne von 2017 (max. 30 % Hohlraum für tragende Wände, Markt 45–55 %). Brickit/Pileometer sind LEGO-Apps.",
+    "candidate_id": "C9",
+    "pages": [
+      "https://proactivo.com.pe/excon-2017-lanzan-campana-para-informar-que-los-tradicionales-ladrillos-pandereta-no-son-sismoresistentes/",
+      "https://www.sodimac.com.pe/sodimac-pe/b/ladrillo-king-kong-18-huecos",
+      "https://www.sodimac.com.pe/sodimac-pe/b/ladrillo-king-kong-sin-hueco",
+      "https://www.sodimac.com.pe/sodimac-pe/b/ladrillo-18-huecos",
+      "https://mwm.ai/es/apps/brickit-app/1477221636",
+      "https://www.falabella.com.pe/falabella-pe/shop/ladrillo-king-kong"
+    ],
+    "question": "app identificar ladrillo pandereta o King Kong con foto porcentaje de vacíos muro portante",
+    "status": "ok"
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld result, Teil 1 (laut gespeicherter Datei):
+{
+  "contract_version": "1.1.0",
+  "kills": [
+    {
+      "candidate_id": "C1",
+      "failed_checks": [
+        "in_mode_or_dense",
+        "problem_evidence"
+      ],
+      "reason": "Töten (A7/Modus): Wenige übrige Bügel zählt der Maestro mit dem Auge schneller als mit einem Foto; neu ist nur die Sollmenge aus Höhe und Abstand, also ein Taschenrechner (B6). Kein Beleg, dass Bügel aus fester Menge gebogen werden (Rest als Basis fehlt). A7 Sicherheit/Bezahlt: die Minute je Stufe ist geschätzt. Prior Art L2 (CountThings, Count Rebar, Gumroad-Vorlage). Beleg: institutional + Ghorahi-Statistik."
+    },
+    {
+      "candidate_id": "C2",
+      "failed_checks": [],
+      "reason": "[PARKED] deciding question: Zählt ein Android um 150 EUR 6-mm-Bügel je Zone mit Maßkarte auf plus/minus 1 in 8 von 10 Fotos echter Körbe? | kills it if: mehr als 1 Fehlzählung je Zone in über 20 % der Fotos oder ein gedrucktes Abstandslineal dasselbe schneller leistet (j01: kein Feldtest für dünne Bügel). A7 Sicherheit: Sisne 1 von 27 Gebäuden konform, JICA 22 % Knotenkonformität. Prior Art L2 (ISAC-SIMO, CountThings). Beleg: statistics + institutional, kein practitioner."
+    },
+    {
+      "candidate_id": "C5",
+      "failed_checks": [],
+      "reason": "[PARKED] deciding question: Gibt es einen dokumentierten Fall, dass Maestros in Kolumbien, Peru oder Nepal 2024-2026 90-Grad-Haken an Bügeln biegen? | kills it if: Feldberichte korrekte Haken zeigen oder eine gedruckte Karte den Winkel ohne Handy prüft (dann Papierlehre statt App). A7 Sicherheit: 135 gegen 90 Grad, Zahl fehlt. Prior Art L2. Beleg: institutional (Indonesien-Studien); B4 schwach."
+    },
+    {
+      "candidate_id": "C8",
+      "failed_checks": [
+        "buildable",
+        "why_now"
+      ],
+      "reason": "Töten (A5 + buildable): Ein Handy-Magnetometer als Bügelzähler hinter dem Beton wäre die Prüfaussage zu einem verdeckten Tragwerk und würde zur Freigabe benutzt (A5); die Suche j02 fand keine Studie zum Handy, die Profi-Geräte (Profoscope, Profometer, Preis und Abo) brauchen kalibrierte Spulen und FHWA nennt Grenzen bei dichter Bewehrung. Why-now fehlt (Sensor alt)."
+    },
+    {
+      "candidate_id": "C9",
+      "failed_checks": [],
+      "reason": "[PARKED] deciding question: Werden 2024-2026 noch Pandereta-Ziegel in tragenden Wänden verbaut, ohne dass der Käufer den Typ kennt? | kills it if: Etikett oder Produktname den Typ eindeutig sagen und der Fehler eine Sparentscheidung ist. A7 Sicherheit: 52 % Hohlraum gegen 30 % Grenze, Mehrkosten unbelegt. Prior Art: keine. Beleg: statistics 2018/2019, nichts aus 2023+."
+    }
+  ],
+  "log_row": {
+    "anchor": "Nepal NRA Corrections/Exceptions Manual (Prüfung nach dem Bau)",
+    "best_gap": "Maestros erfahren erst nach dem Betonieren, ob in den Stützenenden genug Bügel sitzen; ein Feldtest auf dünne Bügel fehlt (parkt).",
+    "candidates": 12,
+    "collider": "Chirurgische Zählung vor dem Wundverschluss (AORN)",
+    "distance": 4,
+    "survivors": 0
+  },
+  "retro": {
+    "learned": "Die Zählung vor dem Verschluss trägt als Idee, aber Prior Art ist L2 und der Bedarf liegt im Statistikbereich (Nepal-Compliance-Studien). Looser bei Prior Art (ISAC-SIMO bleibt L2), stricter bei A7: kleine Zählaufgaben erledigt das Auge schneller.",
+    "mistake": "Der Generator stellte C1 als Zählung dar, obwohl eine Handvoll Bügel von Hand schneller zu zählen ist; die Kosten der Technik wurden nicht gegen die jetzige Methode gestellt.",
+    "next_time": "Vor dem Shortlisten für jeden Kandidaten die Zeit der jetzigen Methode in Sekunden schätzen und mit dem Foto vergleichen; einen Feldtest 6-mm-Bügel (10 Fotos) vor jedem weiteren Zählkandidaten einplanen. Stricter für A7, looser für abroad."
+  },
+  "survivors": []
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld run_id, Teil 1 (laut gespeicherter Datei):
+"lacunar-20261015T190000-bau-sicher"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld state_missing, Teil 1 (laut gespeicherter Datei):
+[]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld tool_calls, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "call_id": "lacunar-20261015T190000-bau-sicher-t01",
+    "pages": [
+      "https://www.preventionweb.net/go/63755",
+      "https://www.preventionweb.net/ru/node/48259",
+      "https://mail.dpnet.org.np/uploads/files/Correction Exception Manual English Version 2022-09-06 04-48-47.pdf",
+      "https://mail.dpnet.org.np/uploads/files/NRA Technical Inspection Guidelines For Housing Reconstruction_Eng Ver_Nov 2016_Kartik 2073 2022-09-05 10-57-45.pdf",
+      "https://kathmandupost.com/miscellaneous/2017/07/23/150k-families-moving-in-to-new-homes-by-sept",
+      "https://mitigation.eeri.org/wp-content/uploads/20161202_IMAI_Inspection_Manual_english.pdf",
+      "https://kathmandupost.com/national/2018/06/08/over-400000-families-receive-second-tranche",
+      "https://reliefweb.int/report/nepal/over-300000-families-qualified-2nd-tranche",
+      "https://dpnet.org.np/uploads/files/HollowConcreteBlockManual-compressed_20190429195217 2022-09-05 10-38-29.pdf",
+      "https://thehimalayantimes.com/business/nra-authorises-clpiu-to-spend-rs-9-95-billion/"
+    ],
+    "status": "ok",
+    "summary": "Nepal housing reconstruction grant second tranche inspection checklist non-compliant houses correction exception manual masons",
+    "tool": "search"
+  },
+  {
+    "call_id": "lacunar-20261015T190000-bau-sicher-t02",
+    "pages": [
+      "https://www.elpais.com.co/economia/subsidio-de-mas-de-1-millon-a-victimas-del-terremoto-consulte-si-es-beneficiario-y-como-reclamarlo-1101.html",
+      "https://www.elcolombiano.com/inicio/vivienda-solicitara-4-billones-reconstruccion-terremoto-colombia-EI40599269",
+      "https://www.elcolombiano.com/negocios/cuantas-viviendas-destruidas-por-terremoto-OA40048897",
+      "https://www.elpais.com.co/colombia/damnificados-por-el-terremoto-recibieron-hasta-1-millon-para-el-pago-de-vivienda-asi-se-entregara-la-ayuda-1341.html",
+      "https://www.elpais.com.co/colombia/minvivienda-advierte-que-recursos-para-reconstruir-viviendas-afectadas-por-el-terremoto-no-alcanzarian-0241.html",
+      "https://www.ntn24.com/noticias-actualidad/presidente-de-colombia-anuncia-inicio-de-reconstruccion-de-zonas-afectadas-por-el-terremoto-644187",
+      "https://www.bluradio.com/meridiano-blu/damnificados-por-terremoto-recibiran-subsidio-25-agosto-de-2026-meridiano-blu-programa-completo-pr30",
+      "https://vivienda.com.co/plan-de-reconstruccion-vivienda-terremoto-colombia/"
+    ],
+    "status": "ok",
+    "summary": "reconstrucción vivienda sismo Colombia 2026 subsidio desembolso visita técnica verificación autoconstrucción maestros de obra",
+    "tool": "search"
+  },
+  {
+    "call_id": "lacunar-20261015T190000-bau-sicher-t03",
+    "pages": [
+      "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/12012757",
+      "https://webdes.acerosarequipa.com/pe/es/download/file/BOLETIN-CONSTRUYENDO-28.pdf/boletines/archivos/2020-03",
+      "https://repositorio.pucp.edu.pe/bitstreams/5e7845c6-1d1c-42a0-8cf7-196d5163ac5a/download",
+      "https://ruor.uottawa.ca/handle/10393/4407",
+      "https://garuda.kemdikbud.go.id/documents/detail/311898",
+      "https://lppm.itb.ac.id/?p=50174",
+      "https://www.zapopan.gob.mx/wp-content/uploads/2023/10/CVM_Rev-0.pdf",
+      "https://repositorio.pucp.edu.pe/bitstreams/11d778b6-5aca-45b1-80a6-43dd6a776519/download",
+      "https://iris.unicampania.it/handle/11591/435069"
+    ],
+    "status": "ok",
+    "summary": "errores frecuentes maestros de obra estribos ganchos 135 grados columnas de confinamiento separación estribos albañilería confinada",
+    "tool": "search"
+  },
+  {
+    "call_id": "lacunar-20261015T190000-bau-sicher-t04",
+    "pages": [
+      "https://snyk.io/vuln/npm:tflite-react-native",
+      "https://github.com/edritech93/react-native-tflite",
+      "https://www.jsdelivr.com/package/npm/react-native-tflite-classification",
+      "https://docsearch.algolia.com/mcp/docs/repo/mrousavy/react-native-fast-tflite",
+      "https://www.jsdelivr.com/package/npm/tflite-react-native"
+    ],
+    "status": "ok",
+    "summary": "ISAC-SIMO github React Native app offline tflite model on-device rebar check Build Change",
+    "tool": "search"
+  },
+  {
+    "call_id": "lacunar-20261015T190000-bau-sicher-t05",
+    "pages": [
+      "https://www.aorn.org/outpatient-surgery/article/2010-October-leave-nothing-behind",
+      "https://www.aorn.org/outpatient-surgery/article/2016-January-strategies-to-prevent-retained-objects",
+      "https://infectioncontroltoday.com/view/aorns-recommended-practices-sponge-sharp-and-instrument-counts-review",
+      "https://www.aorn.org/outpatient-surgery/article/2008-July-back-to-basics",
+      "https://www.clinician.com/ext/resources/images/ahc/img/sds042008_policy.pdf",
+      "https://journal.acorn.org.au/index.php/jpn/article/download/133/83/241",
+      "https://webstore.ansi.org/preview-pages/AORN/preview_II-16_RSIs_2012.pdf",
+      "https://www.stryker.com/content/dam/stryker/surgical-technologies/resources/Hidden-Costs-of-Reconciling-Sponges.pdf",
+      "https://open-exam-prep.com/study-guides/cnor/ch3/surgical-counts-discrepancies"
+    ],
+    "status": "ok",
+    "summary": "surgical count procedure sponges instruments counted before closure of cavity discrepancy stop closure two people aloud AORN",
+    "tool": "search"
+  },
+  {
+    "call_id": "lacunar-20261015T190000-bau-sicher-t06",
+    "pages": [
+      "https://www.cismid.uni.edu.pe/wp-content/uploads/2019/12/rsalinas_doc.pdf",
+      "https://canaln.pe/actualidad/82-lima-y-callao-esta-expuesto-alto-riesgo-sismico-n494242",
+      "https://proactivo.com.pe/excon-2017-lanzan-campana-para-informar-que-los-tradicionales-ladrillos-pandereta-no-son-sismoresistentes/",
+      "https://tesis.pucp.edu.pe/server/api/core/bitstreams/03d6b201-1ed4-4a4f-aaca-1c4327ee763e/content",
+      "https://andina.pe/Agencia/noticia-uni-conoce-los-lugares-mas-vulnerables-lima-frente-a-un-sismo-842281.aspx",
+      "https://repositorio.pucp.edu.pe/index/handle/123456789/180115",
+      "https://camjol.info/index.php/arquitectura/article/download/18762/23092/70353"
+    ],
+    "status": "ok",
+    "summary": "ladrillo pandereta muros portantes autoconstrucción Lima 2024 2025 viviendas vulnerables maestro de obra",
+    "tool": "search"
+  },
+  {
+    "call_id": "lacunar-20261015T190000-bau-sicher-t07",
+    "pages": [
+      "https://pub.dev/packages/object_detection/versions/0.2.2",
+      "https://pub.dev/packages/object_detection/versions/0.2.2/changelog",
+      "https://forasoft.com/blog/article/neural-networks-on-android-369",
+      "https://ai.google.dev/edge/api/mediapipe/python/mediapipe_model_maker/object_detector?authuser=2",
+      "https://ai.google.dev/edge/litert/guide?hl=ko"
+    ],
+    "status": "ok",
+    "summary": "on-device object detection low-end Android phone offline 2025 LiteRT MediaPipe Gemma 3n runs with 2GB RAM release date",
+    "tool": "search"
+  },
+  {
+    "call_id": "lacunar-20261015T190000-bau-sicher-t08",
+    "pages": [
+      "https://es.scribd.com/document/448854469/columnas",
+      "https://www.homecenter.com.co/homecenter-co/content/aprenda-como-hacer-una-columna-paso-a-paso/",
+      "https://fieldtech.trimble.com/resources/i/1499948/8",
+      "https://public-library.safetyculture.io/products/pre-concrete-pour-inspections-column-i17eqhvxd0g0svt8",
+      "https://pruebas.educatic.unam.mx/ada/pluginfile.php/9430/mod_assign/intro/COLUMNAS%20EXPLICACI%C3%93N%20DGTIC.pdf",
+      "https://forumdacasa.com/discussion/44228/5/viga-com-5-metros-biapoiada/"
+    ],
+    "status": "ok",
+    "summary": "maestro de obra estribos mal colocados viga de amarre columna \"antes de vaciar\" revisar fierro error común foro",
+    "tool": "search"
+  },
+  {
+    "call_id": "lacunar-20261015T190000-bau-sicher-t09",
+    "pages": [
+      "https://www.preventionweb.net/go/63755",
+      "https://www.nepjol.info/index.php/jopls/article/download/98207/74486/283593",
+      "https://thehimalayantimes.com/nepal/houses-not-meeting-nra-housing-design-criteria-retrofitted",
+      "https://thehimalayantimes.com/nepal/untrained-masons-rebuilding-quake-damaged-houses/"
+    ],
+    "status": "ok",
+    "summary": "Nepal masons reconstruction non-compliance stirrups hooks houses failed inspection rework demolish column tranche withheld survey",
+    "tool": "search"
+  },
+  {
+    "call_id": "lacunar-20261015T190000-bau-sicher-t10",
+    "status": "ok",
+    "summary": "bib find --stamm bewehrung (Scratchpad-Kopie): kein Treffer",
+    "tool": "bib_find"
+  },
+  {
+    "call_id": "lacunar-20261015T190000-bau-sicher-t11",
+    "status": "ok",
+    "summary": "bib find --stamm erdbeben (Scratchpad-Kopie): kein Treffer",
+    "tool": "bib_find"
+  },
+  {
+    "call_id": "lacunar-20261015T190000-bau-sicher-t12",
+    "status": "ok",
+    "summary": "bib find --stamm stirrup (Scratchpad-Kopie): kein Treffer",
+    "tool": "bib_find"
+  },
+  {
+    "call_id": "lacunar-20261015T190000-bau-sicher-t13",
+    "status": "ok",
+    "summary": "bib find --stamm estribo (Scratchpad-Kopie): kein Treffer",
+    "tool": "bib_find"
+  },
+  {
+    "call_id": "lacunar-20261015T190000-bau-sicher-j01",
+    "pages": [
+      "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/10810734",
+      "https://countthings.com/nl/guides/0024",
+      "https://www.pix4d.com/blog/cut-rebar-inspection-pix4dcatch",
+      "https://apps.apple.com/app/id988790796",
+      "https://appgoblin.info/apps/988790796",
+      "https://pr.www.ipros.com/en/gembaroid/news/detail/135608/"
+    ],
+    "status": "ok",
+    "summary": "Richter-Suche: Smartphone-App zählt 6-mm-Bügel, Feldtest Genauigkeit (C1/C2)",
+    "tool": "search"
+  },
+  {
+    "call_id": "lacunar-20261015T190000-bau-sicher-j02",
+    "pages": [
+      "https://www.screeningeagle.com/en/products/profoscope",
+      "https://apps.apple.com/app/profometer/id1638693429",
+      "https://infotechnology.fhwa.dot.gov/magnetometer-mm/",
+      "https://infotechnology.fhwa.dot.gov/magnetometer-profometer/",
+      "https://pcte.com.au/profometer-covermeter"
+    ],
+    "status": "ok",
+    "summary": "Richter-Suche: Smartphone-Magnetometer erkennt Bewehrung/Bügel (C8)",
+    "tool": "search"
+  },
+  {
+    "call_id": "lacunar-20261015T190000-bau-sicher-j03",
+    "pages": [
+      "https://www.nepjol.info/index.php/jopls/article/download/98207/74486/283593",
+      "https://zenodo.org/records/6259301",
+      "https://www.jica.go.jp/project/nepal/019/newsletter/h7dl2800000055td-att/newsletter_01_en.pdf",
+      "https://www.nepjol.info/index.php/ocemjmtss/article/view/74756",
+      "https://link.springer.com/article/10.1007/s44290-025-00253-5"
+    ],
+    "status": "ok",
+    "summary": "Richter-Suche: Nepal Bügelabstand Nichteinhaltung Feldstudien (Bedarf C2)",
+    "tool": "search"
+  },
+  {
+    "call_id": "lacunar-20261015T190000-bau-sicher-j04",
+    "pages": [
+      "https://proactivo.com.pe/el-a-b-c-para-la-construccion-de-un-espacio-sismorresistente/",
+      "https://repositorioacademico.upc.edu.pe/handle/10757/669983",
+      "https://repositorioacademico.upc.edu.pe/handle/10757/683293",
+      "https://trome.com/familia/como-hacer-que-tu-construccion-resista-a-un-temblor-en-el-peru-rmmn-emcc-noticia/"
+    ],
+    "status": "ok",
+    "summary": "Richter-Suche (ES): estribos separación maestros de obra Perú Kolumbien Studie",
+    "tool": "search"
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld topic_check, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "hits": [],
+    "term": "bewehrung"
+  },
+  {
+    "hits": [],
+    "term": "erdbeben"
+  },
+  {
+    "hits": [],
+    "term": "stirrup"
+  },
+  {
+    "hits": [],
+    "term": "estribo"
+  }
+]
