@@ -1,0 +1,576 @@
+# Proposals from plan lab-2026-10-14-amelie-lab-lacunar-lacunar-20261014T133659-kids-lieberose-honig-309b5b89076b7c99
+
+Packet: amelie-lab-lacunar-lacunar-20261014T133659-kids-lieberose-honig-309b5b89076b7c99 · Candidate: amelie-lab-lacunar-lacunar-20261014T133659-kids-lieberose-honig-309b5b89076b7c99
+Not applied. A human decides.
+
+- [06-suche/amelie-lab-protokoll.md] lacunar: amelie-lab-lacunar-lacunar-20261014T133659-kids-lieberose-honig-309b5b89076b7c99. Absicht: Kinder lernen Programmieren durch Gaming und Vibecoding im Jugendklub in Lieberose, Brandenburg; Bauern, Landwirtschaft und Honig/Imkerei als reale Partner, Materialien und Aufgaben einbeziehen. Praktisch vor Ort umsetzbar, Kinder verstehen und testen selbst statt nur KI-Code zu bestellen.. Modell: Codex subagent (stand-in; searches: WebSearch). Existenzprüfung: nein. Alle Ideen ungeprüft. Die folgenden Angaben sind gespeicherte Modellausgaben, keine bestätigten Tatsachen. Nur grounded=true ist Evidenz; Score-Änderungen benötigen zusätzlich quote_status=verified. Quellen, fact_checks und fehlende Felder bleiben wie im Original; keine neuen Prüfungen durchgeführt.
+- [06-suche/amelie-lab-protokoll.md] Originalfeld accounting, Teil 1 (laut gespeicherter Datei):
+{
+  "cost_usd": 0,
+  "model_calls": 0,
+  "search_calls": 6,
+  "search_queries": 10
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld contract_version, Teil 1 (laut gespeicherter Datei):
+"1.3.0"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld created_at, Teil 1 (laut gespeicherter Datei):
+"2026-10-14T13:36:59Z"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld frames, Teil 1 (laut gespeicherter Datei):
+{
+  "candidates": [
+    {
+      "check_queries": [
+        "Scratch ScratchEd Code.org fobizz Honig Qualitätsprüfung Grenzwert Ausschlusskriterium Kinder Programmieren Chatbot",
+        "Welche Erwachsenen können das Messverfahren mit Kindern sicher begleiten?"
+      ],
+      "friction_point": "Erfolg ohne geprüfte Bedingungen widerspricht der Ausschlussprüfung.",
+      "id": "C1",
+      "idea": "Honigspiel mit Ausschlussfehlern: Kinder messen sichere Demonstrationsproben und schreiben zuerst erwartete Ergebnisse; KI baut danach den fehlerhaften Prüfcode, den Teams widerlegen.",
+      "typical_probability": 0.02
+    },
+    {
+      "check_queries": [
+        "microbit CreateAI Imkerei Honig Rühren Bewegung Kinder Unterricht allgemeiner Chatbot",
+        "Welche Erwachsenen können das Messverfahren mit Kindern sicher begleiten?"
+      ],
+      "friction_point": "Erfolg ohne geprüfte Bedingungen widerspricht der Ausschlussprüfung.",
+      "id": "C2",
+      "idea": "Rührbewegung trainieren: Kinder prüfen fremde Bewegungen statt ihre Trainingsdaten erneut zu testen.",
+      "typical_probability": 0.024
+    },
+    {
+      "check_queries": [
+        "Scratch Code.org Landwirtschaft Ernte Gewicht Restfeuchte Testfälle Kinder Programmieren Chatbot",
+        "Welche Erwachsenen können das Messverfahren mit Kindern sicher begleiten?"
+      ],
+      "friction_point": "Erfolg ohne geprüfte Bedingungen widerspricht der Ausschlussprüfung.",
+      "id": "C3",
+      "idea": "Erntefreigabe-Spiel aus Hofmessungen mit echten Grenzfällen.",
+      "typical_probability": 0.028
+    },
+    {
+      "check_queries": [
+        "Scratch ScratchEd Code.org fobizz Honig Qualitätsprüfung Grenzwert Ausschlusskriterium Kinder Programmieren Chatbot",
+        "Welche Erwachsenen können das Messverfahren mit Kindern sicher begleiten?"
+      ],
+      "friction_point": "Erfolg ohne geprüfte Bedingungen widerspricht der Ausschlussprüfung.",
+      "id": "C4",
+      "idea": "Unbekannte Messwerte stoppen jede Spielentscheidung statt plausible Werte zu ergänzen.",
+      "typical_probability": 0.032
+    },
+    {
+      "check_queries": [
+        "Scratch ScratchEd Code.org fobizz Honig Qualitätsprüfung Grenzwert Ausschlusskriterium Kinder Programmieren Chatbot",
+        "Welche Erwachsenen können das Messverfahren mit Kindern sicher begleiten?"
+      ],
+      "friction_point": "Erfolg ohne geprüfte Bedingungen widerspricht der Ausschlussprüfung.",
+      "id": "C5",
+      "idea": "Zwei verdeckte Proben mit gleichen Farben und unterschiedlichen Messwerten widerlegen Bildurteile.",
+      "typical_probability": 0.036000000000000004
+    },
+    {
+      "check_queries": [
+        "Scratch ScratchEd Code.org fobizz Honig Qualitätsprüfung Grenzwert Ausschlusskriterium Kinder Programmieren Chatbot",
+        "Welche Erwachsenen können das Messverfahren mit Kindern sicher begleiten?"
+      ],
+      "friction_point": "Erfolg ohne geprüfte Bedingungen widerspricht der Ausschlussprüfung.",
+      "id": "C6",
+      "idea": "Eine schöne Spielanimation bleibt gesperrt, solange ein einziger Ausschlusstest scheitert.",
+      "typical_probability": 0.04
+    },
+    {
+      "check_queries": [
+        "Scratch ScratchEd Code.org fobizz Honig Qualitätsprüfung Grenzwert Ausschlusskriterium Kinder Programmieren Chatbot",
+        "Welche Erwachsenen können das Messverfahren mit Kindern sicher begleiten?"
+      ],
+      "friction_point": "Erfolg ohne geprüfte Bedingungen widerspricht der Ausschlussprüfung.",
+      "id": "C7",
+      "idea": "Imker gibt nur ein Fehlermuster preis; Kinder rekonstruieren eine minimale Gegenprobe.",
+      "typical_probability": 0.044
+    },
+    {
+      "check_queries": [
+        "Scratch ScratchEd Code.org fobizz Honig Qualitätsprüfung Grenzwert Ausschlusskriterium Kinder Programmieren Chatbot",
+        "Welche Erwachsenen können das Messverfahren mit Kindern sicher begleiten?"
+      ],
+      "friction_point": "Erfolg ohne geprüfte Bedingungen widerspricht der Ausschlussprüfung.",
+      "id": "C8",
+      "idea": "Zwei Teams vertauschen Messproben und finden gemeinsame Fehler im selben KI-Code.",
+      "typical_probability": 0.048
+    },
+    {
+      "check_queries": [
+        "Scratch ScratchEd Code.org fobizz Honig Qualitätsprüfung Grenzwert Ausschlusskriterium Kinder Programmieren Chatbot",
+        "Welche Erwachsenen können das Messverfahren mit Kindern sicher begleiten?"
+      ],
+      "friction_point": "Erfolg ohne geprüfte Bedingungen widerspricht der Ausschlussprüfung.",
+      "id": "C9",
+      "idea": "Bauer liefert einen Ausnahmefall, Kinder ändern ausschließlich die Bedingung statt die ganze Geschichte.",
+      "typical_probability": 0.052000000000000005
+    },
+    {
+      "check_queries": [
+        "Scratch ScratchEd Code.org fobizz Honig Qualitätsprüfung Grenzwert Ausschlusskriterium Kinder Programmieren Chatbot",
+        "Welche Erwachsenen können das Messverfahren mit Kindern sicher begleiten?"
+      ],
+      "friction_point": "Erfolg ohne geprüfte Bedingungen widerspricht der Ausschlussprüfung.",
+      "id": "C10",
+      "idea": "Jedes Honigglas erhält eine rückspielbare Messfolge statt einer Sternebewertung.",
+      "typical_probability": 0.05600000000000001
+    }
+  ],
+  "contract_version": "1.0.0",
+  "distance": 3,
+  "frame_a": {
+    "friction": "Die Lektion nennt ungeprüfte Übernahme von KI-Code und Verlust des Verständnisses; sichtbarer Spielerfolg beweist keine verstandene Bedingung.",
+    "name": "Code.org: KI-Code verstehen statt übernehmen",
+    "slots": {
+      "constraints": "Begrenzte Vorkenntnisse, Erwachsene begleiten",
+      "emotions": "Schneller Erfolg, Frust beim Fehler",
+      "goals": "Verstehen und selbst verändern",
+      "materials": "Code, Aufgaben, Kinder, Erklärungen",
+      "mechanics": "Code erzeugen, ausführen, erklären",
+      "rituals_timing": "Workshop und Rückmeldung"
+    },
+    "source_label": "Code.org, Introduction to Coding with AI",
+    "source_url": "https://studio.code.org/courses/coding-with-ai/units/1/lessons/1"
+  },
+  "frame_b": {
+    "domain": "Imkerliche Produktprüfung und gewichtete Qualitätsbewertung",
+    "name": "Honigprämierung mit Ausschlussprüfung",
+    "slots": {
+      "constraints": "Ein Ausschlussfehler verhindert Prämierung unabhängig von anderen Punkten",
+      "emotions": "Verantwortung für nachvollziehbare Prüfung",
+      "goals": "Messbare Qualität statt überzeugendes Aussehen",
+      "materials": "Honigproben, Messwerte, Prüfbogen",
+      "mechanics": "Ausschlussfehler prüfen; erst danach gewichtete Bewertung berechnen",
+      "rituals_timing": "Neutrale Probennummer; Prüfer unterschreiben"
+    }
+  },
+  "friction_points": [
+    "Ein funktionierendes Spiel belohnt Durchschnittserfolg; die Honigprüfung stoppt bei einem einzigen Ausschlussfehler.",
+    "KI füllt Datenlücken plausibel; eine Messprüfung benötigt ein bekanntes Prüfmerkmal.",
+    "Kinder testen eigene Beispiele; neutrale Proben müssen auch fremden Prüfern standhalten."
+  ],
+  "personas": [
+    {
+      "who": "Mara, 11, erfundene Teilnehmerin in Lieberose",
+      "would_do": "Misst mit Erwachsenen und erklärt, weshalb schöne Farbe einen Ausschlussfehler nicht aufhebt."
+    },
+    {
+      "who": "Jens, erfundener örtlicher Imker",
+      "would_do": "Liefert sichere Musterwerte und kontrolliert die Prüfbogenübersetzung."
+    },
+    {
+      "who": "Nele, erfundene Jugendklubleiterin",
+      "would_do": "Lässt Teams Gegenproben austauschen und Fehler vor dem nächsten Spielzug erklären."
+    }
+  ],
+  "shortlist": [
+    "C1",
+    "C2",
+    "C3"
+  ]
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld intent, Teil 1 (laut gespeicherter Datei):
+"Kinder lernen Programmieren durch Gaming und Vibecoding im Jugendklub in Lieberose, Brandenburg; Bauern, Landwirtschaft und Honig/Imkerei als reale Partner, Materialien und Aufgaben einbeziehen. Praktisch vor Ort umsetzbar, Kinder verstehen und testen selbst statt nur KI-Code zu bestellen."
+- [06-suche/amelie-lab-protokoll.md] Originalfeld log_entry, Teil 1 (laut gespeicherter Datei):
+"<!-- proposed by the Lab's Lacunar agent, run lacunar-20261014T133659-kids-lieberose-honig; nothing was written to Amélie -->\n| 14.10.2026 | Code.org: KI-Code verstehen statt übernehmen | Honigprämierung mit Ausschlussprüfung | 3 | 10 | 1: 1. Honigspiel mit Ausschlussfehlern: Kinder messen sichere Demonstrationsproben und schreiben zuerst erwartete Ergebnisse; KI baut danach den fehlerhaften Prüfcode, den Teams widerlegen. (combinational) | Ein vorführbares KI-Spiel belegt keine verstandene Freigabebedingung. | — (not checked yet) |\n\n### Lacunar run lacunar-20261014T133659-kids-lieberose-honig — 14.10.2026 (intent: Kinder lernen Programmieren durch Gaming und Vibecoding im Jugendklub in Lieberose, Brandenburg; Bauern, Landwirtschaft und Honig/Imkerei als reale Partner, Materialien und Aufgaben einbeziehen. Prakt)\n- **Learned:** Lieberose hat bereits ein öffentlich beschriebenes Jugendprojekt mit Imkerei-Workshop; daraus folgt eine mögliche Andockstelle, keine Zusage.\n- **Mistake:** Die breite Suche enthielt vier Fragen in einem Aufruf und überschritt damit die Grenze pro Suche; Bewegungserkennung und Erntespiele wurden zu spät als vorhandene Materialien erkannt.\n- **Next time:** Vor einer Umsetzung Jugendklub und Projektteam nach Altersgruppe, Geräten und Imkerkontakt fragen; mit drei anonymen Musterfällen testen, ob Kinder die Ausschlussregel erklären.\n- **Prior-art leads (automatic search, for the existence check; not a verdict):**\n  - C1 (ok): Scratch ScratchEd Code.org fobizz Honig Qualitätsprüfung Grenzwert Ausschlusskriterium Kinder Programmieren Chatbot -> https://app.fobizz.com/de/help/articles/258-ki-inhaltsfilter, https://fobizz.com/de/programmieren-kinderleicht-gemacht-mit-scratch/, https://app.fobizz.com/de/help/articles/367-alter-schuelerinnen-ki, https://fobizz.com/de/ki-korrektur-feedback-abgeschaltet/\n  - C2 (ok): microbit CreateAI Imkerei Honig Rühren Bewegung Kinder Unterricht allgemeiner Chatbot -> https://www.microbit.org/createai/, https://microbit.org/get-started/user-guide/microbit-createai/, https://www.microbit.org/teach/teaching-tools/, https://www.microbit.org/teach/lessons/first-lessons-with-microbit-createai/\n  - C3 (ok): Scratch Code.org Landwirtschaft Ernte Gewicht Restfeuchte Testfälle Kinder Programmieren Chatbot -> https://code.org/de/tools, https://code.org/curriculum/course4/1/Teacher, https://coderdojo-saar.de/material/, https://informatikdidaktik.cs.uni-saarland.de/informatische-bildung-wise-25-26/\n"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld model, Teil 1 (laut gespeicherter Datei):
+"Codex subagent (stand-in; searches: WebSearch)"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld plan, Teil 1 (laut gespeicherter Datei):
+{
+  "anchor_queries": [
+    "Welche Grenzen nennt Code.org beim Verständnis KI-generierten Codes, und welche manuellen Honigprüfungen können Kinder mit Erwachsenen nachvollziehen?"
+  ],
+  "area": "Vibecoding mit Kindern im Jugendklub Lieberose, reale Aufgaben aus Imkerei und Landwirtschaft",
+  "collider_hint": "Honigprämierung: harte Ausschlussfehler vor gewichteter Bewertung",
+  "contract_version": "1.0.0",
+  "mode_list": [
+    "Bienenquiz",
+    "Honigsammelspiel",
+    "Virtueller Bauernhof",
+    "KI erklärt Scratch-Blöcke",
+    "Chatbot als Programmierlehrer",
+    "Pflanzenbestimmung",
+    "Honigverkaufsseite",
+    "Wetter-App für den Hof",
+    "Sensor-Tamagotchi",
+    "KI erstellt Unterrichtsmaterial"
+  ],
+  "notes": "Bauer als Landwirt und Honnig als Honig interpretiert; Personen unten sind erfundene Szenarien. Stand-in mit sechs WebSearch-Aufrufen und zehn Suchfragen; ein Aufruf enthielt vier statt maximal drei Fragen, dokumentierte Budgetabweichung. Kein Vertex; keine verbindlichen Partnerzusagen. Themencheck und zwei Wortpaar-Gedächtnischecks pro Shortlist-Kandidat durch bib find auf Scratch-Kopie; vorhandener Honig-Refraktometer-Kalibrator ist benachbart, nicht dasselbe Kinder-Prüfspiel. Rohantworten der letzten vier Aufrufe archiviert, erste zwei nur im Gesprächsprotokoll."
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld prior_art, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "answer": "Materialplattformen liefern Scratch- und KI-Angebote; ein direkt passendes Honig-Prüfspiel wurde durch diesen Suchdurchgang nicht belegt. Das ist keine Abwesenheitsfeststellung.",
+    "candidate_id": "C1",
+    "pages": [
+      "https://app.fobizz.com/de/help/articles/258-ki-inhaltsfilter",
+      "https://fobizz.com/de/programmieren-kinderleicht-gemacht-mit-scratch/",
+      "https://app.fobizz.com/de/help/articles/367-alter-schuelerinnen-ki",
+      "https://fobizz.com/de/ki-korrektur-feedback-abgeschaltet/",
+      "https://fobizz.com/de/ki-wettbewerb/",
+      "https://fobizz.pryvus.dev/de/die-fobizz-tools-fuer-schule-und-unterricht/",
+      "https://arxiv.org/abs/2412.06651",
+      "https://fobizz.com/de/ki-wettbewerb-2025/",
+      "https://app.fobizz.com/fortbildungen/3009-scratch-junior-programmieren-lernen-in-der-grundschule",
+      "https://support.code.org/hc/en-us/articles/30162711193741-AI-Chat-Lab-FAQ",
+      "https://fobizz.com/de/chatgpt_hausaufgaben_schummeltool/",
+      "https://fobizz.pryvus.dev/de/einordnung-ki-korrekturhilfe/",
+      "https://fobizz.com/de/grundschule/",
+      "https://www.pedocs.de/volltexte/2025/32536/pdf/Wasif_2025_Das_Pilotprojekt_Creative_Coding.pdf",
+      "https://www.fhgr.ch/fileadmin/fhgr/angewandte_zukunftstechnologien/SII/churer_schriften/churer_schriften_125_christinger_leitfaden.pdf",
+      "https://www.digitale-chancen.de/fileadmin/digitale-chancen/downloads/KiZI_Abschlussbericht_SDC.pdf",
+      "https://arxiv.org/abs/2510.11658",
+      "https://arxiv.org/abs/2202.06271",
+      "https://arxiv.org/abs/2009.04115"
+    ],
+    "question": "Scratch ScratchEd Code.org fobizz Honig Qualitätsprüfung Grenzwert Ausschlusskriterium Kinder Programmieren Chatbot",
+    "status": "ok"
+  },
+  {
+    "answer": "CreateAI trainiert und testet Bewegungsmodelle; vorhandenes Lehrmaterial ist ein enger Vergleich.",
+    "candidate_id": "C2",
+    "pages": [
+      "https://www.microbit.org/createai/",
+      "https://microbit.org/get-started/user-guide/microbit-createai/",
+      "https://www.microbit.org/teach/teaching-tools/",
+      "https://www.microbit.org/teach/lessons/first-lessons-with-microbit-createai/",
+      "https://microbit.org/get-started/features/ai/",
+      "https://createai.microbit.org/",
+      "https://makecode.microbit.org/microbit-org/createai",
+      "https://www.microbit.org/nl/createai/",
+      "https://support.microbit.org/support/solutions/articles/19000162694-micro-bit-createai-overview",
+      "https://forwardedu.com/blogs/blog/hour-of-ai-lesson-plan-hands-on-machine-learning-activity-with-micro-bit",
+      "https://support.microbit.org/support/solutions/articles/19000173570-micro-bit-createai-on-android-devices",
+      "https://stage-createai.microbit.org/",
+      "https://microbit.eeducation.at/images/c/c7/Buch_microbit_sek_i-Auflage_2022_20220905_30MB.pdf",
+      "https://microbit.eeducation.at/images/f/f2/Buch-microbit_20180729.pdf",
+      "https://www.noemedia.at/fileadmin/user_upload/Zentrale/Robotik/Hilfe_die_Roboter_kommen_-_Robotik-Koffer2_Lehrer.pdf",
+      "https://www.noemedia.at/fileadmin/user_upload/BEEBOTVS_2026.pdf",
+      "https://arxiv.org/abs/2212.07542"
+    ],
+    "question": "microbit CreateAI Imkerei Honig Rühren Bewegung Kinder Unterricht allgemeiner Chatbot",
+    "status": "ok"
+  },
+  {
+    "answer": "Code.org Ernten mit Bedingungen und Code Club Scratch-Erntespiel sind konkrete Vergleichsmaterialien.",
+    "candidate_id": "C3",
+    "pages": [
+      "https://code.org/de/tools",
+      "https://code.org/curriculum/course4/1/Teacher",
+      "https://coderdojo-saar.de/material/",
+      "https://informatikdidaktik.cs.uni-saarland.de/informatische-bildung-wise-25-26/",
+      "https://digbi.net/courses/digbi-programmieren-scratch/",
+      "https://code.org/curriculum/course3/14/Teacher",
+      "https://klugipop.de/courses/code-org-minecraft-scratch/",
+      "https://studio.code.org/de/courses/express-2024/units/1/lessons/20/levels/2?redirect_warning=true",
+      "https://assets.codeclubau.org/assets/German_SweetentheCrop_2024-09-10-035306_otzh.pdf",
+      "https://code.org/curriculum/course4/16/Teacher",
+      "https://www.diy.org/challenges/harvesting-crops-with-%27loops%27",
+      "https://projects.raspberrypi.org/de-DE/projects/chatbot-scratch2",
+      "https://aprendoenlinea.mineduc.gob.cl/recursos/leccion-4-secuencias-scrat",
+      "https://arxiv.org/abs/2402.04975",
+      "https://www.klett.de/inhalt/media_fast_path/145/Ergaenzungsmaterial_3_1_5_Algorithmen_Problemloes_u_Hand_Loesungen.pdf",
+      "https://arxiv.org/abs/2410.08835",
+      "https://arxiv.org/abs/2009.04115",
+      "https://www.schularena.com/documents/download/1688/Hilfen%20fuer%20Codeorg%20Aufgaben.pdf",
+      "https://www.ullmannmedien.com/wp-content/uploads/2017/11/leseprobe-programmieren-fuer-kids-ullmannmedien-978-3-7415-2256-7.pdf",
+      "https://arxiv.org/abs/2510.11658"
+    ],
+    "question": "Scratch Code.org Landwirtschaft Ernte Gewicht Restfeuchte Testfälle Kinder Programmieren Chatbot",
+    "status": "ok"
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld result, Teil 1 (laut gespeicherter Datei):
+{
+  "contract_version": "1.1.0",
+  "kills": [
+    {
+      "candidate_id": "C2",
+      "failed_checks": [
+        "why_now",
+        "problem_evidence",
+        "in_mode_or_dense"
+      ],
+      "reason": "CreateAI bietet bereits Bewegungserfassung, Modelltraining und Tests mit fremden Personen; Honigrühren allein fügt keinen belegten Bedarf hinzu. Neue technische Möglichkeit und lokale Problembelege fehlen."
+    },
+    {
+      "candidate_id": "C3",
+      "failed_checks": [
+        "problem_evidence",
+        "in_mode_or_dense"
+      ],
+      "reason": "Code.org hat Ernten mit Bedingungen und Code Club ein Scratch-Erntespiel; Hofdekor und Musterwerte ergeben noch keine belegte neue Lücke. Ein konkreter Bauernpartner und ein eigenständiger Mechanismus wurden nicht gefunden."
+    }
+  ],
+  "log_row": {
+    "anchor": "Code.org: KI-Code verstehen statt übernehmen",
+    "best_gap": "Ein vorführbares KI-Spiel belegt keine verstandene Freigabebedingung.",
+    "candidates": 10,
+    "collider": "Honigprämierung mit Ausschlussprüfung",
+    "distance": 3,
+    "survivors": 1
+  },
+  "retro": {
+    "learned": "Lieberose hat bereits ein öffentlich beschriebenes Jugendprojekt mit Imkerei-Workshop; daraus folgt eine mögliche Andockstelle, keine Zusage.",
+    "mistake": "Die breite Suche enthielt vier Fragen in einem Aufruf und überschritt damit die Grenze pro Suche; Bewegungserkennung und Erntespiele wurden zu spät als vorhandene Materialien erkannt.",
+    "next_time": "Vor einer Umsetzung Jugendklub und Projektteam nach Altersgruppe, Geräten und Imkerkontakt fragen; mit drei anonymen Musterfällen testen, ob Kinder die Ausschlussregel erklären."
+  },
+  "survivors": [
+    {
+      "boden_type": "combinational",
+      "buildable": "Papierprüfbogen, ungefährliche Musterwerte und ein lokales Scratch-/Browser-Spiel reichen für einen betreuten Prototyp; keine Handelsfreigabe und kein Laborersatz. Zuerst 60 Minuten: Bedingungen legen, drei Gegenproben erwarten, Code testen und eine Bedingung selbst ändern.",
+      "candidate_id": "C1",
+      "collider_mechanism": "Die Ausschlussprüfung sperrt eine Prämierung bei einem einzigen Ausschlussfehler; gewichtete Bewertung darf diese Sperre nicht aufheben. Das Spiel übernimmt diese Vorrangregel als separate Freigabebedingung, und Kinder prüfen sie mit verdeckten Gegenproben statt durch schöne Ausgabe.",
+      "evidence_urls": [
+        "https://studio.code.org/courses/coding-with-ai/units/1/lessons/1",
+        "https://deutscherimkerbund.de/wp-content/uploads/2025/05/dib-prufschema.pdf",
+        "https://www.demokratiebildung.info/dl-projekt/"
+      ],
+      "gap": "Kinder können ein KI-generiertes Spiel vorführen, ohne nachgewiesen zu haben, dass dessen Freigabebedingungen auch bei einem einzigen entscheidenden Fehler halten.",
+      "gap_stands_alone": true,
+      "idea": "Honigspiel mit Ausschlussfehlern: Kinder messen sichere Demonstrationsproben und schreiben zuerst erwartete Ergebnisse; KI baut danach den fehlerhaften Prüfcode, den Teams widerlegen.",
+      "rank": 1,
+      "removed_assumption": "Ein plausibles Ergebnis und viele richtige Fälle reichen als Verständnisnachweis.",
+      "who_has_problem": "Code.org beschreibt das Verständnisproblem; Jugendklub Lieberose und Justus-Delbrück-Haus sind durch ihr gemeinsames Projekt mit geplantem Imkerei-Workshop passende mögliche Empfänger. Ein lokaler Bedarf an diesem Prüfspiel und ein beteiligter Bauer wurden noch nicht nachgewiesen.",
+      "why_now": "Code.org bietet inzwischen explizit Coding with AI an; daraus lässt sich ein von Erwachsenen bedienter Codegenerator mit unabhängigen Kinder-Testfällen verbinden. Das Prüfverfahren selbst ist älter, sein Nutzen durch KI-Code ist eine Hypothese."
+    }
+  ]
+}
+- [06-suche/amelie-lab-protokoll.md] Originalfeld run_id, Teil 1 (laut gespeicherter Datei):
+"lacunar-20261014T133659-kids-lieberose-honig"
+- [06-suche/amelie-lab-protokoll.md] Originalfeld state_missing, Teil 1 (laut gespeicherter Datei):
+[]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld tool_calls, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "call_id": "lacunar-20261014T133659-kids-lieberose-honig-t01",
+    "pages": [
+      "https://www.demokratiebildung.info/dl-projekt/",
+      "https://deutscherimkerbund.de/wp-content/uploads/2025/05/dib-prufschema.pdf",
+      "https://deutscherimkerbund.de/qualitaetsrichtlinien/"
+    ],
+    "status": "ok",
+    "summary": "Lieberose Jugendkoordination; Honig Qualitätskontrolle und Wassergehalt",
+    "tool": "search"
+  },
+  {
+    "call_id": "lacunar-20261014T133659-kids-lieberose-honig-t02",
+    "pages": [
+      "https://studio.code.org/courses/coding-with-ai/units/1/lessons/1",
+      "https://www.microbit.org/createai/",
+      "https://www.imker-brandenburgs.de/files/Formulare/Kinder%20und%20Jugendliche/F%C3%BCr%20den%20Unterricht/Honig%20als%20Lebensmittel.pdf"
+    ],
+    "status": "ok",
+    "summary": "Vier Suchfragen zu CreateAI, Honig-Unterricht und Code.org KI-Code-Verständnis",
+    "tool": "search"
+  },
+  {
+    "call_id": "lacunar-20261014T133659-kids-lieberose-honig-t03",
+    "pages": [
+      "https://www.demokratiebildung.info/dl-projekt/",
+      "https://www.lieberose-oberspreewald.de/Leben-und-Wohnen/Kitas-Schulen-und-Jugendeinrichtungen/Kindertaggesstaetten",
+      "https://www.lieberose-oberspreewald.de/Media/public/Homepage/Amtsblatt/09_2025.pdf",
+      "https://epaper.wittich.de/frontend/catalogs/524036/1/pdf/complete.pdf",
+      "https://www.spi-fachschulen.de/fileadmin/user_upload/Dokumente/veroeffentlichungen/Jahresberichte/jb_1999_2000.pdf",
+      "https://arbeit.wfbb.de/unsere-services/good-practice-pool/doing-lieberose-teilhabe-durch-arbeit-als-folge-innovativer-arbeits-und-lernmodelle",
+      "https://www.lieberose-oberspreewald.de/Media/public/Homepage/Mitteilungsblatt/2022_12.pdf",
+      "https://www.maerkische-heide.de/Media/public/Website/Verwaltung/Veroeffentlichung/Amtsblatt/Januar-2011.pdf",
+      "https://www.medienservice.sachsen.de/medien/medienobjekte/589569/download",
+      "https://landwirtschaft.hessen.de/presse/staerkung-der-zusammenarbeit-zwischen-imkerei-und-landwirtschaft",
+      "https://www.lieberose-oberspreewald.de/Leben-und-Wohnen/Kitas-Schulen-und-Jugendeinrichtungen",
+      "https://www.lieberose-oberspreewald.de/Leben-und-Wohnen/Vereine",
+      "https://www.kitanetz.de/traeger/traeger-ausgabe1.php?t_trid=1632",
+      "https://www.lieberose-oberspreewald.de/Leben-und-Wohnen/Vereine/Stadt-Lieberose.html",
+      "https://www.regionales.sachsen.de/regionalinitiativen/details/leipziger-kinderimkerei",
+      "https://www.stadt-muencheberg.de/bildung-soziales/soziales/jugendclub/projekte",
+      "https://de.wikipedia.org/wiki/Bauernhof_als_Klassenzimmer",
+      "https://www.regio-v.at/projekte/treffpunkt-biene/",
+      "https://www.lieberose-oberspreewald.de/leben-und-wohnen/kitas-schulen-und-jugendeinrichtungen/kindertaggesstaetten/kita-lieberoser-spatzennest.html",
+      "https://de.wikipedia.org/wiki/Lieberose"
+    ],
+    "status": "ok",
+    "summary": "Lieberose Jugendclub Landwirtschaft Imkerei Kinder Projekt Träger",
+    "tool": "search"
+  },
+  {
+    "call_id": "lacunar-20261014T133659-kids-lieberose-honig-t04",
+    "pages": [
+      "https://app.fobizz.com/de/help/articles/258-ki-inhaltsfilter",
+      "https://fobizz.com/de/programmieren-kinderleicht-gemacht-mit-scratch/",
+      "https://app.fobizz.com/de/help/articles/367-alter-schuelerinnen-ki",
+      "https://fobizz.com/de/ki-korrektur-feedback-abgeschaltet/",
+      "https://fobizz.com/de/ki-wettbewerb/",
+      "https://fobizz.pryvus.dev/de/die-fobizz-tools-fuer-schule-und-unterricht/",
+      "https://arxiv.org/abs/2412.06651",
+      "https://fobizz.com/de/ki-wettbewerb-2025/",
+      "https://app.fobizz.com/fortbildungen/3009-scratch-junior-programmieren-lernen-in-der-grundschule",
+      "https://support.code.org/hc/en-us/articles/30162711193741-AI-Chat-Lab-FAQ",
+      "https://fobizz.com/de/chatgpt_hausaufgaben_schummeltool/",
+      "https://fobizz.pryvus.dev/de/einordnung-ki-korrekturhilfe/",
+      "https://fobizz.com/de/grundschule/",
+      "https://www.pedocs.de/volltexte/2025/32536/pdf/Wasif_2025_Das_Pilotprojekt_Creative_Coding.pdf",
+      "https://www.fhgr.ch/fileadmin/fhgr/angewandte_zukunftstechnologien/SII/churer_schriften/churer_schriften_125_christinger_leitfaden.pdf",
+      "https://www.digitale-chancen.de/fileadmin/digitale-chancen/downloads/KiZI_Abschlussbericht_SDC.pdf",
+      "https://arxiv.org/abs/2510.11658",
+      "https://arxiv.org/abs/2202.06271",
+      "https://arxiv.org/abs/2009.04115"
+    ],
+    "status": "ok",
+    "summary": "Scratch ScratchEd Code.org fobizz Honig Qualitätsprüfung Grenzwert Ausschlusskriterium Kinder Programmieren Chatbot",
+    "tool": "search"
+  },
+  {
+    "call_id": "lacunar-20261014T133659-kids-lieberose-honig-t05",
+    "pages": [
+      "https://www.microbit.org/createai/",
+      "https://microbit.org/get-started/user-guide/microbit-createai/",
+      "https://www.microbit.org/teach/teaching-tools/",
+      "https://www.microbit.org/teach/lessons/first-lessons-with-microbit-createai/",
+      "https://microbit.org/get-started/features/ai/",
+      "https://createai.microbit.org/",
+      "https://makecode.microbit.org/microbit-org/createai",
+      "https://www.microbit.org/nl/createai/",
+      "https://support.microbit.org/support/solutions/articles/19000162694-micro-bit-createai-overview",
+      "https://forwardedu.com/blogs/blog/hour-of-ai-lesson-plan-hands-on-machine-learning-activity-with-micro-bit",
+      "https://support.microbit.org/support/solutions/articles/19000173570-micro-bit-createai-on-android-devices",
+      "https://stage-createai.microbit.org/",
+      "https://microbit.eeducation.at/images/c/c7/Buch_microbit_sek_i-Auflage_2022_20220905_30MB.pdf",
+      "https://microbit.eeducation.at/images/f/f2/Buch-microbit_20180729.pdf",
+      "https://www.noemedia.at/fileadmin/user_upload/Zentrale/Robotik/Hilfe_die_Roboter_kommen_-_Robotik-Koffer2_Lehrer.pdf",
+      "https://www.noemedia.at/fileadmin/user_upload/BEEBOTVS_2026.pdf",
+      "https://arxiv.org/abs/2212.07542"
+    ],
+    "status": "ok",
+    "summary": "microbit CreateAI Imkerei Honig Rühren Bewegung Kinder Unterricht allgemeiner Chatbot",
+    "tool": "search"
+  },
+  {
+    "call_id": "lacunar-20261014T133659-kids-lieberose-honig-t06",
+    "pages": [
+      "https://code.org/de/tools",
+      "https://code.org/curriculum/course4/1/Teacher",
+      "https://coderdojo-saar.de/material/",
+      "https://informatikdidaktik.cs.uni-saarland.de/informatische-bildung-wise-25-26/",
+      "https://digbi.net/courses/digbi-programmieren-scratch/",
+      "https://code.org/curriculum/course3/14/Teacher",
+      "https://klugipop.de/courses/code-org-minecraft-scratch/",
+      "https://studio.code.org/de/courses/express-2024/units/1/lessons/20/levels/2?redirect_warning=true",
+      "https://assets.codeclubau.org/assets/German_SweetentheCrop_2024-09-10-035306_otzh.pdf",
+      "https://code.org/curriculum/course4/16/Teacher",
+      "https://www.diy.org/challenges/harvesting-crops-with-%27loops%27",
+      "https://projects.raspberrypi.org/de-DE/projects/chatbot-scratch2",
+      "https://aprendoenlinea.mineduc.gob.cl/recursos/leccion-4-secuencias-scrat",
+      "https://arxiv.org/abs/2402.04975",
+      "https://www.klett.de/inhalt/media_fast_path/145/Ergaenzungsmaterial_3_1_5_Algorithmen_Problemloes_u_Hand_Loesungen.pdf",
+      "https://arxiv.org/abs/2410.08835",
+      "https://arxiv.org/abs/2009.04115",
+      "https://www.schularena.com/documents/download/1688/Hilfen%20fuer%20Codeorg%20Aufgaben.pdf",
+      "https://www.ullmannmedien.com/wp-content/uploads/2017/11/leseprobe-programmieren-fuer-kids-ullmannmedien-978-3-7415-2256-7.pdf",
+      "https://arxiv.org/abs/2510.11658"
+    ],
+    "status": "ok",
+    "summary": "Scratch Code.org Landwirtschaft Ernte Gewicht Restfeuchte Testfälle Kinder Programmieren Chatbot",
+    "tool": "search"
+  },
+  {
+    "call_id": "lacunar-20261014T133659-kids-lieberose-honig-bib1",
+    "status": "ok",
+    "summary": "Vibecoding: 11 Treffer; advisory, keine semantische Gleichsetzung",
+    "tool": "bib_find"
+  },
+  {
+    "call_id": "lacunar-20261014T133659-kids-lieberose-honig-bib2",
+    "status": "ok",
+    "summary": "Honig: 6 Treffer; advisory, keine semantische Gleichsetzung",
+    "tool": "bib_find"
+  },
+  {
+    "call_id": "lacunar-20261014T133659-kids-lieberose-honig-bib3",
+    "status": "ok",
+    "summary": "Lieberose: 10 Treffer; advisory, keine semantische Gleichsetzung",
+    "tool": "bib_find"
+  },
+  {
+    "call_id": "lacunar-20261014T133659-kids-lieberose-honig-bib4",
+    "status": "ok",
+    "summary": "Honig Ausschluss: 0 Treffer; advisory, keine semantische Gleichsetzung",
+    "tool": "bib_find"
+  },
+  {
+    "call_id": "lacunar-20261014T133659-kids-lieberose-honig-bib5",
+    "status": "ok",
+    "summary": "Honig Prüfspiel: 0 Treffer; advisory, keine semantische Gleichsetzung",
+    "tool": "bib_find"
+  },
+  {
+    "call_id": "lacunar-20261014T133659-kids-lieberose-honig-bib6",
+    "status": "ok",
+    "summary": "Rührbewegung Modell: 20 Treffer; advisory, keine semantische Gleichsetzung",
+    "tool": "bib_find"
+  },
+  {
+    "call_id": "lacunar-20261014T133659-kids-lieberose-honig-bib7",
+    "status": "ok",
+    "summary": "Imkerei Bewegung: 0 Treffer; advisory, keine semantische Gleichsetzung",
+    "tool": "bib_find"
+  },
+  {
+    "call_id": "lacunar-20261014T133659-kids-lieberose-honig-bib8",
+    "status": "ok",
+    "summary": "Ernte Grenzwert: 0 Treffer; advisory, keine semantische Gleichsetzung",
+    "tool": "bib_find"
+  },
+  {
+    "call_id": "lacunar-20261014T133659-kids-lieberose-honig-bib9",
+    "status": "ok",
+    "summary": "Landwirtschaft Testfälle: 0 Treffer; advisory, keine semantische Gleichsetzung",
+    "tool": "bib_find"
+  }
+]
+- [06-suche/amelie-lab-protokoll.md] Originalfeld topic_check, Teil 1 (laut gespeicherter Datei):
+[
+  {
+    "hits": [
+      "**Umgedrehtes Vibecoding (Inversion; NRW Pflichtfach Informatik 5/6) — Herkunft: Lab-Survivor, 14.10.2026** (`lab-kids-vibecoding-c2`)",
+      "**Lagenweiser Rückbau (Lacunar) — Herkunft: Lab-Survivor, 14.10.2026** (`lab-kids-vibecoding-c7`)",
+      "Uni Macau Kinder-Vibecoding (Stax)",
+      "amelie-classification-log.md",
+      "amelie-classification-log.md",
+      "amelie-suchplaybook.md",
+      "amelie-suchplaybook.md",
+      "Lab-Vorschlag (ungeprüft): lab-2026-09-30-lacunar-20260930T073557-e87ad6.md",
+      "Lab-Vorschlag (ungeprüft): lab-2026-10-10-amelie-lab-lacunar-lacunar-20260930T073557-e87ad6-ac13ff67d43128a9.md",
+      "Lab-Vorschlag (ungeprüft): lab-2026-10-14-inversion-20261014T090028-kids-vibecoding.md"
+    ],
+    "term": "Vibecoding"
+  },
+  {
+    "hits": [
+      "**Hummel-Schleusenwächter** — Kamera am Flugloch erkennt eindringende Kuckuckshummeln in Echtzeit (Gemini)",
+      "Local Farm Gate & Honesty Stall Directory",
+      "Beekeeper Honey Moisture Refractometer Temperature Calibrator",
+      "Landesbetrieb Forst Brandenburg, Robinie (LFE-Projekt ROBINIE, Merkblatt fb_robinie)",
+      "amelie-suchplaybook.md",
+      "Lab-Vorschlag (ungeprüft): lab-2026-10-10-amelie-lab-mark-mark-20261001T153639-3e31fe-8902e1869423b38d.md"
+    ],
+    "term": "Honig"
+  },
+  {
+    "hits": [
+      "amelie-suchplaybook.md",
+      "Lab-Vorschlag (ungeprüft): lab-2026-09-30-inversion-20260930T100431-0c956a.md",
+      "Lab-Vorschlag (ungeprüft): lab-2026-09-30-lacunar-20260930T100431-797290.md",
+      "Lab-Vorschlag (ungeprüft): lab-2026-10-01-inversion-20261001T161905-4c5547.md",
+      "Lab-Vorschlag (ungeprüft): lab-2026-10-01-lacunar-20261001T161905-5bef5e.md",
+      "Lab-Vorschlag (ungeprüft): lab-2026-10-10-amelie-lab-inversion-inversion-20260930T100431-0c956a-e97a4dfff64d876e.md",
+      "Lab-Vorschlag (ungeprüft): lab-2026-10-10-amelie-lab-inversion-inversion-20261001T161905-4c5547-4e2eb6d9ad4d961e.md",
+      "Lab-Vorschlag (ungeprüft): lab-2026-10-10-amelie-lab-lacunar-lacunar-20260930T100431-797290-b66b1994b0a5d105.md",
+      "Lab-Vorschlag (ungeprüft): lab-2026-10-10-amelie-lab-lacunar-lacunar-20261001T161905-5bef5e-99de58c9b665c778.md",
+      "Lab-Vorschlag (ungeprüft): lab-2026-10-10-amelie-lab-mark-mark-20261001T162501-405366-590b28ae77dfad34.md"
+    ],
+    "term": "Lieberose"
+  }
+]

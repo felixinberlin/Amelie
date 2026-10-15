@@ -1,0 +1,608 @@
+{
+  "batch_id": "amelie-lab-lacunar-lacunar-20261014T140225-kids-repair-library-682e9cb6475057e9",
+  "contract_version": "1.0.0",
+  "created_at": "2026-10-14T14:02:25Z",
+  "engine": "lacunar",
+  "existence_check": false,
+  "ideas": [],
+  "intent": "Kinder von 10–14 Jahren lernen Programmieren durch Vibecoding und eigene Spiele in einer öffentlichen Bibliothek mit Repair-Café: kaputte Spielzeuge und ungefährliche Alltagsgegenstände, Reparaturwissen älterer Ehrenamtlicher, kleine Teams mit gemeinsam genutzten Rechnern. Kinder sollen Verhalten vorhersagen, selbst verändern und mit realen Beobachtungen prüfen. Dies ist ein gewähltes Szenario, kein behaupteter lokaler Bedarf oder bestätigter Partner.",
+  "lab_id": "amelie-lab",
+  "model": "Codex subagent (stand-in; searches: WebSearch)",
+  "record": {
+    "accounting": {
+      "cost_usd": 0,
+      "model_calls": 0,
+      "search_calls": 6,
+      "search_queries": 8
+    },
+    "contract_version": "1.3.0",
+    "created_at": "2026-10-14T14:02:25Z",
+    "frames": {
+      "candidates": [
+        {
+          "check_queries": [
+            "Scratch Code.org Raspberry Pi Repair Cafe teaching materials toy fault simulation predict one change reversible ABBA testing children 10 14 general AI chatbot",
+            "Welche Kinder und Begleitpersonen brauchen diese Unterscheidung tatsächlich?"
+          ],
+          "friction_point": "Ein einzelnes erfolgreiches Danach trennt Ursache, Reihenfolge und vorherigen Zustand nicht.",
+          "id": "C1",
+          "idea": "Ein Spiel aus einer Spielzeugklappe: Kinder vergleichen geschlossen–offen und offen–geschlossen, setzen die Startposition zurück und prüfen, ob ein KI-Spiel dieselbe Folge erklärt; zwei Durchgänge auf Papier genügen.",
+          "typical_probability": 0.015
+        },
+        {
+          "check_queries": [
+            "Scratch ScratchEd Code.org fobizz pair programming driver navigator prediction before AI code children shared computer",
+            "Welche Kinder und Begleitpersonen brauchen diese Unterscheidung tatsächlich?"
+          ],
+          "friction_point": "Ein einzelnes erfolgreiches Danach trennt Ursache, Reihenfolge und vorherigen Zustand nicht.",
+          "id": "C2",
+          "idea": "Rechnerrollen wechseln erst nach einer fremden Vorhersage: ein Team tippt, das andere beobachtet ein weiches Spielzeug; danach werden Rollen und Reihenfolge vertauscht.",
+          "typical_probability": 0.019
+        },
+        {
+          "check_queries": [
+            "Repair Cafe classroom library coding repair diary toy before after repeated measurements children Scratch general chatbot",
+            "Welche Kinder und Begleitpersonen brauchen diese Unterscheidung tatsächlich?"
+          ],
+          "friction_point": "Ein einzelnes erfolgreiches Danach trennt Ursache, Reihenfolge und vorherigen Zustand nicht.",
+          "id": "C3",
+          "idea": "Reparaturbeobachtung als kleines Spiel: derselbe Mechanismus wird vor und nach einer ungefährlichen, reversiblen Einstellung in wechselnder Reihenfolge beobachtet; bleibende Reparaturen werden nicht rückgängig gemacht.",
+          "typical_probability": 0.023
+        },
+        {
+          "check_queries": [
+            "Welche Scratch-, Code.org- oder Repair-Café-Unterrichtsmaterialien lassen Kinder Startzustand, Reihenfolge und eine einzelne Änderung vergleichen; was liefert bereits ein allgemeiner KI-Chatbot?",
+            "Welche Kinder und Begleitpersonen brauchen diese Unterscheidung tatsächlich?"
+          ],
+          "friction_point": "Ein einzelnes erfolgreiches Danach trennt Ursache, Reihenfolge und vorherigen Zustand nicht.",
+          "id": "C4",
+          "idea": "Ein absichtlich nicht zurückgesetztes Spiel behält eine alte Variable; Kinder unterscheiden einen Folgefehler vom Effekt ihrer letzten Änderung.",
+          "typical_probability": 0.027
+        },
+        {
+          "check_queries": [
+            "Welche Scratch-, Code.org- oder Repair-Café-Unterrichtsmaterialien lassen Kinder Startzustand, Reihenfolge und eine einzelne Änderung vergleichen; was liefert bereits ein allgemeiner KI-Chatbot?",
+            "Welche Kinder und Begleitpersonen brauchen diese Unterscheidung tatsächlich?"
+          ],
+          "friction_point": "Ein einzelnes erfolgreiches Danach trennt Ursache, Reihenfolge und vorherigen Zustand nicht.",
+          "id": "C5",
+          "idea": "Zwei äußerlich gleiche Spielfiguren bekommen dieselbe Eingabefolge, aber nur eine Zustandsänderung; Kinder suchen die Stelle, an der Beobachtung und Vorhersage auseinandergehen.",
+          "typical_probability": 0.031
+        },
+        {
+          "check_queries": [
+            "Welche Scratch-, Code.org- oder Repair-Café-Unterrichtsmaterialien lassen Kinder Startzustand, Reihenfolge und eine einzelne Änderung vergleichen; was liefert bereits ein allgemeiner KI-Chatbot?",
+            "Welche Kinder und Begleitpersonen brauchen diese Unterscheidung tatsächlich?"
+          ],
+          "friction_point": "Ein einzelnes erfolgreiches Danach trennt Ursache, Reihenfolge und vorherigen Zustand nicht.",
+          "id": "C6",
+          "idea": "Ein Ehrenamtlicher erklärt zwei mögliche Ursachen; Kinder wählen für jede eine umkehrbare Handlung und markieren offen, was die Beobachtung noch nicht entscheidet.",
+          "typical_probability": 0.035
+        },
+        {
+          "check_queries": [
+            "Welche Scratch-, Code.org- oder Repair-Café-Unterrichtsmaterialien lassen Kinder Startzustand, Reihenfolge und eine einzelne Änderung vergleichen; was liefert bereits ein allgemeiner KI-Chatbot?",
+            "Welche Kinder und Begleitpersonen brauchen diese Unterscheidung tatsächlich?"
+          ],
+          "friction_point": "Ein einzelnes erfolgreiches Danach trennt Ursache, Reihenfolge und vorherigen Zustand nicht.",
+          "id": "C7",
+          "idea": "Das Spiel wechselt zwischen Originalcode und einer von Kindern editierten Bedingung, ohne dass der Generator weiß, welche beobachtete Folge richtig war.",
+          "typical_probability": 0.039
+        },
+        {
+          "check_queries": [
+            "Welche Scratch-, Code.org- oder Repair-Café-Unterrichtsmaterialien lassen Kinder Startzustand, Reihenfolge und eine einzelne Änderung vergleichen; was liefert bereits ein allgemeiner KI-Chatbot?",
+            "Welche Kinder und Begleitpersonen brauchen diese Unterscheidung tatsächlich?"
+          ],
+          "friction_point": "Ein einzelnes erfolgreiches Danach trennt Ursache, Reihenfolge und vorherigen Zustand nicht.",
+          "id": "C8",
+          "idea": "Ein müder Stofftierarm wird zur Ruhephase im Spiel: Kinder entdecken, dass eine zu kurze Resetzeit die folgende Beobachtung verändert.",
+          "typical_probability": 0.043
+        },
+        {
+          "check_queries": [
+            "Welche Scratch-, Code.org- oder Repair-Café-Unterrichtsmaterialien lassen Kinder Startzustand, Reihenfolge und eine einzelne Änderung vergleichen; was liefert bereits ein allgemeiner KI-Chatbot?",
+            "Welche Kinder und Begleitpersonen brauchen diese Unterscheidung tatsächlich?"
+          ],
+          "friction_point": "Ein einzelnes erfolgreiches Danach trennt Ursache, Reihenfolge und vorherigen Zustand nicht.",
+          "id": "C9",
+          "idea": "Zwei Teams spielen dieselbe Kartenregel in gegensätzlicher Reihenfolge und erklären, warum Übung einen scheinbaren Codevorteil erzeugt.",
+          "typical_probability": 0.047
+        },
+        {
+          "check_queries": [
+            "Welche Scratch-, Code.org- oder Repair-Café-Unterrichtsmaterialien lassen Kinder Startzustand, Reihenfolge und eine einzelne Änderung vergleichen; was liefert bereits ein allgemeiner KI-Chatbot?",
+            "Welche Kinder und Begleitpersonen brauchen diese Unterscheidung tatsächlich?"
+          ],
+          "friction_point": "Ein einzelnes erfolgreiches Danach trennt Ursache, Reihenfolge und vorherigen Zustand nicht.",
+          "id": "C10",
+          "idea": "Ein Codefehler bleibt ungelöst, wenn die sichere Startposition nicht wiederhergestellt werden kann; Kinder tragen einen offenen Fall statt einen erfundenen Erfolg vor.",
+          "typical_probability": 0.051000000000000004
+        }
+      ],
+      "contract_version": "1.0.0",
+      "distance": 4,
+      "frame_a": {
+        "friction": "Ein reales Kinderangebot berichtet Schwierigkeiten, genug Ehrenamtliche zu finden und Kinder in Reparaturen einzubeziehen; bloßes Reparieren für Kinder ersetzt das Erklären nicht.",
+        "name": "Repair Café Kids: gemeinsam reparieren erfordert Erklären und aktive Kinder",
+        "slots": {
+          "constraints": "Wenig Ehrenamtliche; unterschiedliche Erklärbereitschaft",
+          "emotions": "Bindung an Spielzeug, Stolz, Geduld",
+          "goals": "Kinder beteiligen und Wissen weitergeben",
+          "materials": "Spielzeug, sichere Materialien, Ehrenamtliche, Kinder",
+          "mechanics": "Beobachten, erklären, gemeinsam eine Handlung ausführen",
+          "rituals_timing": "Monatliches gemeinsames Reparaturtreffen"
+        },
+        "source_label": "Repair Café International, Erfahrungsbericht Dordrecht, 2019",
+        "source_url": "https://www.repaircafe.org/en/repairing-cuddly-toys-at-repair-cafe-kid/"
+      },
+      "frame_b": {
+        "domain": "Versuchsplanung klinischer Einzelfallstudien",
+        "name": "N-of-1-Crossover mit Gegenreihenfolge und Reset",
+        "slots": {
+          "constraints": "Nur reversible Änderungen und stabile Ausgangslage; bleibende Wirkung verbietet Wechsel",
+          "emotions": "Unsicherheit ausdrücklich festhalten",
+          "goals": "Änderung von Reihenfolgeeffekt trennen",
+          "materials": "Ein Fall, Zustände A/B, Beobachtungsfolge",
+          "mechanics": "A/B gegen B/A vergleichen; Reset vor jeder Periode; Folgeeffekte prüfen",
+          "rituals_timing": "Vorhersage vor Beobachtung; festgelegte Gegenreihenfolge"
+        }
+      },
+      "friction_points": [
+        "Eine Reparatur wird durch ein einmaliges Danach gefeiert; Gegenreihenfolge verlangt vergleichbare Starts und zeigt bloße Übungseffekte.",
+        "Der Ehrenamtliche kennt den richtigen Eingriff; ein Einzelfallversuch verlangt vorher festgelegte Beobachtung statt nachträglicher Erklärung.",
+        "KI kann ein passendes Spiel erzeugen; ein Reset muss tatsächlich am Objekt und im Code hergestellt werden.",
+        "Gemeinsamer Rechner konzentriert die Bedienung; Wechsel der Reihenfolge trennt Bedienereffekt von Codeänderung."
+      ],
+      "personas": [
+        {
+          "who": "Lea, 12, erfundene Bibliotheksbesucherin",
+          "would_do": "Sagt vor dem Tippen voraus, wie eine Stofftierklappe und die Spielfigur reagieren."
+        },
+        {
+          "who": "Oskar, 68, erfundener Reparaturhelfer",
+          "would_do": "Wählt eine reversible, ungefährliche Veränderung und erklärt, weshalb echtes Nähen nicht wiederholt rückgängig gemacht wird."
+        },
+        {
+          "who": "Samira, erfundene Bibliothekspädagogin",
+          "would_do": "Gibt jedem Team eine Papierkarte für Vorhersage und Beobachtung statt eines langen Protokolls."
+        }
+      ],
+      "shortlist": [
+        "C1",
+        "C2",
+        "C3"
+      ]
+    },
+    "intent": "Kinder von 10–14 Jahren lernen Programmieren durch Vibecoding und eigene Spiele in einer öffentlichen Bibliothek mit Repair-Café: kaputte Spielzeuge und ungefährliche Alltagsgegenstände, Reparaturwissen älterer Ehrenamtlicher, kleine Teams mit gemeinsam genutzten Rechnern. Kinder sollen Verhalten vorhersagen, selbst verändern und mit realen Beobachtungen prüfen. Dies ist ein gewähltes Szenario, kein behaupteter lokaler Bedarf oder bestätigter Partner.",
+    "log_entry": "<!-- proposed by the Lab's Lacunar agent, run lacunar-20261014T140225-kids-repair-library; nothing was written to Amélie -->\n| 14.10.2026 | Repair Café Kids: Erklären und Kinder beteiligen | N-of-1-Crossover: Gegenreihenfolge, Reset, Folgeeffekte | 4 | 10 | 0: none | Kein hinreichend belegter eigenständiger Bedarf; die Werkstattidee bleibt ein didaktischer Vorschlag. | — (not checked yet) |\n\n### Lacunar run lacunar-20261014T140225-kids-repair-library — 14.10.2026 (intent: Kinder von 10–14 Jahren lernen Programmieren durch Vibecoding und eigene Spiele in einer öffentlichen Bibliothek mit Repair-Café: kaputte Spielzeuge und ungefährliche Alltagsgegenstände, Reparaturwiss)\n- **Learned:** Reparieren mit Kindern, PRIMM, gemeinsame Rechner und Bibliotheks-Scratchkurse haben bereits konkrete Materialien; ihre Kombination kann praktisch sein, ohne eine neue App zu rechtfertigen.\n- **Mistake:** Die Klinikmechanik erzeugte zuerst einen zu schweren Ablauf: Gegenreihenfolge lohnt nur bei einfacher reversibler Handlung und klarer Ausgangslage; der Anker berichtet zudem über jüngere Kinder.\n- **Next time:** Mit einer Bibliothek und zwei Reparaturhelfenden drei sichere Objekte prüfen: reicht eine kurze Vorhersagekarte, verstehen Kinder den geänderten Block und verbessert Gegenreihenfolge tatsächlich ihr Erklären? Vorher keine Software und keine Wirkungszusage.\n- **Prior-art leads (automatic search, for the existence check; not a verdict):**\n  - C1 (ok): Scratch Code.org Raspberry Pi Repair Cafe teaching materials toy fault simulation predict one change reversible ABBA testing children 10 14 general AI chatbot -> https://training-hub.raspberrypi.org/en/courses, https://magazines-static.raspberrypi.org/issues/full_pdfs/000/000/030/original/HW7_Digital_Edition-LATEST.pdf, https://projects.raspberrypi.org/en/pathways/scratch-machine-learning, https://projects.raspberrypi.org/en/pathways/scratch-module-1\n  - C2 (ok): Scratch ScratchEd Code.org fobizz pair programming driver navigator prediction before AI code children shared computer -> https://forum.code.org/t/sharing-and-editing-code/35265, https://forum.code.org/t/pair-programming-doesnt-activate/33403, https://forum.code.org/t/students-working-as-partners/35685, https://forum.code.org/t/cs-fundamentals-pair-programming-distance-learning/32572\n  - C3 (ok): Repair Cafe classroom library coding repair diary toy before after repeated measurements children Scratch general chatbot -> https://scratched.gse.harvard.edu/stories/scratch-lessons-local-public-library.html, https://www.tes.com/teaching-resource/scratch-chatbot-coding-project-for-primary-13424792, https://link.springer.com/article/10.1007/s10639-021-10870-z, https://arxiv.org/abs/2504.12445\n",
+    "model": "Codex subagent (stand-in; searches: WebSearch)",
+    "plan": {
+      "anchor_queries": [
+        "Welche Schwierigkeiten benennt Repair Café Kids beim Erklären und beim Einbeziehen der Kinder?",
+        "Welche vorhandenen Kinder-Programmiermaterialien verlangen Vorhersagen und eigenständige Änderungen?",
+        "Welche Grenzen hat die Dokumentation einer Reparatur ohne wiederholte Beobachtung?"
+      ],
+      "area": "Vibecoding als Bibliothekswerkstatt mit Spielzeug und Repair-Café, 10–14 Jahre",
+      "collider_hint": "N-of-1-Crossover: dieselbes Objekt, Gegenreihenfolge und Reset gegen Folgeeffekte",
+      "contract_version": "1.0.0",
+      "mode_list": [
+        "KI-Reparaturassistent",
+        "Spielzeug per Foto diagnostizieren",
+        "Scratch-Reparaturspiel",
+        "Bibliotheks-Codingclub",
+        "Ehrenamtliche erklären Werkzeug",
+        "Digitales Reparaturtagebuch",
+        "KI programmiert ein Spiel",
+        "Programmierquiz",
+        "Paarprogrammieren",
+        "Sensor misst Spielzeugbewegung"
+      ],
+      "notes": "Gewähltes Szenario, keine lokale Nachfrage oder Zusage. Personen unten sind erfundene Nutzungsbilder; 10–14 Jahre nur Zielannahme, der Repair-Café-Anker betrifft 6–10 Jahre. Frühere Retro übertragen: zuerst drei reale Fälle beobachten statt Wirkung behaupten. Gedächtnischeck auf vorhandener Scratch-Kopie /tmp/lieberose-round-memory; Snapshot nicht frisch aktualisiert. WebSearch-Fallback, alle sechs Rohantworten archiviert; keine Lab-Suchquote gebucht. Ein allgemeiner Chatbot kann Code, Vorhersagefragen und Tabellen erzeugen; reale Beobachtung und Moderation bleiben menschliche Arbeit, aber daraus folgt kein Bedarf für eine neue App. Colliderquelle: https://www.bmj.com/content/350/bmj.h1793 (erhaltene Suchseite); keine klinische Anwendung."
+    },
+    "prior_art": [
+      {
+        "answer": "Raspberry Pi führt PRIMM (Predict, Run, Investigate, Modify, Make) als vorhandenen Ansatz; Code.org Bee: Debugging übt schrittweises Fehlerfinden. Ein spezielles ABBA-Spielzeugmodul wurde in diesem Suchdurchgang nicht belegt; keine Aussage über Abwesenheit.",
+        "candidate_id": "C1",
+        "pages": [
+          "https://training-hub.raspberrypi.org/en/courses",
+          "https://magazines-static.raspberrypi.org/issues/full_pdfs/000/000/030/original/HW7_Digital_Edition-LATEST.pdf",
+          "https://projects.raspberrypi.org/en/pathways/scratch-machine-learning",
+          "https://projects.raspberrypi.org/en/pathways/scratch-module-1",
+          "https://www.raspberrypi.org/blog/artificial-intelligence-projects-for-kids/",
+          "https://code.org/curriculum/course3/14/Teacher",
+          "https://www.raspberrypi.org/blog/free-machine-learning-projects-for-scratch/",
+          "https://wovi.world/ai-projects-for-kids",
+          "https://projects.raspberrypi.org/en/coderdojo",
+          "https://projects.raspberrypi.org/pages/interests/science",
+          "https://magazine.raspberrypi.com/articles/smart-classroom-assistant-machine-learning-tutorial",
+          "https://projects.raspberrypi.org/pathways/technology/ai_and_data",
+          "https://support.code.org/hc/en-us/articles/30162711193741-AI-Chat-Lab-FAQ",
+          "https://magazines-static.raspberrypi.org/books/full_pdfs/000/000/043/original/Hello_World_The_Big_Book_of_Pedagogy.pdf?1653380723=",
+          "https://arxiv.org/abs/2402.04975",
+          "https://www.raspberrypi.org/app/uploads/2020/05/Learning-AI-at-school-with-Scratch-and-LearningML.pdf",
+          "https://www.raspberrypi.org/app/uploads/2022/12/RPF-Seminar-Proceedings-Volume-3.pdf",
+          "https://arxiv.org/abs/2504.12445",
+          "https://en.wikipedia.org/wiki/List_of_educational_software"
+        ],
+        "question": "Scratch Code.org Raspberry Pi Repair Cafe teaching materials toy fault simulation predict one change reversible ABBA testing children 10 14 general AI chatbot",
+        "status": "ok"
+      },
+      {
+        "answer": "Code.org erklärt gemeinsames Arbeiten an einem Rechner und Fahrer-/Navigatorrollen konkret; diese Mechanik benötigt keine neue App.",
+        "candidate_id": "C2",
+        "pages": [
+          "https://forum.code.org/t/sharing-and-editing-code/35265",
+          "https://forum.code.org/t/pair-programming-doesnt-activate/33403",
+          "https://forum.code.org/t/students-working-as-partners/35685",
+          "https://forum.code.org/t/cs-fundamentals-pair-programming-distance-learning/32572",
+          "https://studio.code.org/courses/coursea-2025/units/1/lessons/5/levels/1?section_id=6557980",
+          "https://studio.code.org/courses/coursea-2025/units/1/lessons/5/levels/1?section_id=6391546",
+          "https://forum.code.org/t/two-students-to-one-computer/37677",
+          "https://code.org/curriculum/course1/3/Teacher",
+          "https://forum.code.org/t/paired-programming-shared-code/16041",
+          "https://forum.code.org/t/paired-programming/15039",
+          "https://studio.code.org/in/en/courses/pre-express-2025/units/1/lessons/3/levels/1?redirect_warning=true",
+          "https://studio.code.org/fa/courses/coursea-2025/units/1/lessons/5/levels/1?redirect_warning=true",
+          "https://documents1.worldbank.org/curated/en/815941635455574159/pdf/Children-Learning-to-Code-Essential-for-21st-Century-Human-Capital-A-Primer-for-Russian-Policy-Makers-and-Practitioners.pdf",
+          "https://en.wikipedia.org/wiki/Pair_programming",
+          "https://arxiv.org/abs/2302.07427",
+          "https://arxiv.org/abs/2505.03867",
+          "https://en.wikipedia.org/wiki/Code.org",
+          "https://en.wikipedia.org/wiki/Scratch_%28programming_language%29",
+          "https://faculty.washington.edu/ajko/papers/Druga2025ScratchCopilot.pdf",
+          "https://arxiv.org/abs/2305.10417"
+        ],
+        "question": "Scratch ScratchEd Code.org fobizz pair programming driver navigator prediction before AI code children shared computer",
+        "status": "ok"
+      },
+      {
+        "answer": "ScratchEd berichtet über Scratchkurse für 8–13-Jährige in einer öffentlichen Bibliothek; RepairMonitor und Kinder-Reparaturmaterial sind weitere vorhandene Vergleichsbausteine. Direkte Wirkungsbelege für diese Kombination fehlen.",
+        "candidate_id": "C3",
+        "pages": [
+          "https://scratched.gse.harvard.edu/stories/scratch-lessons-local-public-library.html",
+          "https://www.tes.com/teaching-resource/scratch-chatbot-coding-project-for-primary-13424792",
+          "https://link.springer.com/article/10.1007/s10639-021-10870-z",
+          "https://arxiv.org/abs/2504.12445",
+          "https://www.zapcode.dev/learn/chatbot-building-for-elementary-teachers",
+          "https://www.mdpi.com/2227-7080/13/1/1",
+          "https://manuals.plus/m/cce264a56c506c8e6a3cd4a552ea01af3b874603d37ec42a01864e718ea99210",
+          "https://scratched.gse.harvard.edu/resources/scrath-chat-bot-assignment.html",
+          "https://www.scratched.gse.harvard.edu/stories/see-inside-classroom-bradley-quentin.html",
+          "https://doi.org/10.1007/s10639-021-10870-z",
+          "https://coding-for-tomorrow.de/konzepte/einen-chatbot-erstellen-mit-scratch/",
+          "https://arxiv.org/abs/2304.00385",
+          "https://www.cultureofrepair.org/ed-resources-classroom-materials",
+          "https://www.aimodels.fyi/papers/arxiv/adapting-ai-how-elementary-teachers-adjust-their",
+          "https://arxiv.org/abs/2402.04975",
+          "https://arxiv.org/abs/1603.03165",
+          "https://manuals.plus/m/f30cabb526b0c7d0d1915806cb42898bb0b4fbf138cd484d847bc3939fd63587.pdf",
+          "https://www.usenix.org/system/files/login/issues/login_1302.pdf",
+          "https://rvninternationalschool.com/wp-content/uploads/2025/07/Grade-1-Annual-Planner-July-to-March-1-1-1-1.pdf",
+          "https://mdpi-res.com/bookfiles/book/12648/Recent_Advances_in_ComputerAssisted_Learning.pdf?v=1776782785"
+        ],
+        "question": "Repair Cafe classroom library coding repair diary toy before after repeated measurements children Scratch general chatbot",
+        "status": "ok"
+      }
+    ],
+    "result": {
+      "contract_version": "1.1.0",
+      "kills": [
+        {
+          "candidate_id": "C1",
+          "failed_checks": [
+            "problem_evidence",
+            "why_now",
+            "in_mode_or_dense"
+          ],
+          "reason": "Als 20-Minuten-Übung zugänglich: Stofftierklappe beobachten, Ergebnis vorhersagen, ein Spielblock ändern, Start zurücksetzen und erneut vergleichen. PRIMM und Bee: Debugging decken Vorhersagen, Untersuchen und Änderungen bereits ab; der spezielle Zusatznutzen von Gegenreihenfolge ist für Kinder nicht belegt, ein allgemeiner Chatbot kann Fragen und Code liefern. Keine neue technische Voraussetzung und kein nachgewiesener Bedarf an zusätzlicher Software."
+        },
+        {
+          "candidate_id": "C2",
+          "failed_checks": [
+            "why_now",
+            "in_mode_or_dense",
+            "problem_evidence"
+          ],
+          "reason": "Code.org beschreibt bereits gemeinsame Rechner sowie Fahrer-/Navigatorrollen; Wechsel und Vorhersagekarte sind moderierbare Unterrichtsregeln. Gegenreihenfolge müsste einen zusätzlichen Lernnutzen zeigen, der hier nicht belegt ist; eine App wäre vermeidbare Zusatzarbeit für die Erwachsenen."
+        },
+        {
+          "candidate_id": "C3",
+          "failed_checks": [
+            "why_now",
+            "in_mode_or_dense",
+            "problem_evidence"
+          ],
+          "reason": "Repair Café bietet Kinder-Reparaturmaterial und RepairMonitor dokumentiert reale Versuche; ScratchEd beschreibt Bibliothekskurse schon 2016. Eine einfache Papierbeobachtung plus Scratch ist nutzbar, aber ein neuer Bedarf gegenüber vorhandenen Materialien oder allgemeinem Chatbot wurde nicht nachgewiesen; bleibende Reparaturen dürfen für Gegenreihenfolge nicht wiederholt beschädigt werden."
+        }
+      ],
+      "log_row": {
+        "anchor": "Repair Café Kids: Erklären und Kinder beteiligen",
+        "best_gap": "Kein hinreichend belegter eigenständiger Bedarf; die Werkstattidee bleibt ein didaktischer Vorschlag.",
+        "candidates": 10,
+        "collider": "N-of-1-Crossover: Gegenreihenfolge, Reset, Folgeeffekte",
+        "distance": 4,
+        "survivors": 0
+      },
+      "retro": {
+        "learned": "Reparieren mit Kindern, PRIMM, gemeinsame Rechner und Bibliotheks-Scratchkurse haben bereits konkrete Materialien; ihre Kombination kann praktisch sein, ohne eine neue App zu rechtfertigen.",
+        "mistake": "Die Klinikmechanik erzeugte zuerst einen zu schweren Ablauf: Gegenreihenfolge lohnt nur bei einfacher reversibler Handlung und klarer Ausgangslage; der Anker berichtet zudem über jüngere Kinder.",
+        "next_time": "Mit einer Bibliothek und zwei Reparaturhelfenden drei sichere Objekte prüfen: reicht eine kurze Vorhersagekarte, verstehen Kinder den geänderten Block und verbessert Gegenreihenfolge tatsächlich ihr Erklären? Vorher keine Software und keine Wirkungszusage."
+      },
+      "survivors": []
+    },
+    "run_id": "lacunar-20261014T140225-kids-repair-library",
+    "state_missing": [],
+    "tool_calls": [
+      {
+        "call_id": "lacunar-20261014T140225-kids-repair-library-t01",
+        "pages": [
+          "https://www.repaircafe.org/en/repairing-cuddly-toys-at-repair-cafe-kid/",
+          "https://support.code.org/hc/en-us/articles/40542019587213-AI-Tutor-FAQ",
+          "https://www.repaircafe.org/en/repairing-toys/",
+          "https://code.org/en-US/artificial-intelligence",
+          "https://www.repaircafe.org/en/everyone-can-learn-to-repair/",
+          "https://www.repaircafe.org/en/join/become-a-volunteer/",
+          "https://studio.code.org/courses/coding-with-ai/units/1/lessons/1",
+          "https://support.code.org/hc/en-us/articles/49000971594125-What-is-the-Student-Snapshot-and-how-do-I-use-it-to-evaluate-my-students-work",
+          "https://www.repaircafe.org/en/about/",
+          "https://forum.code.org/t/my-experiment-letting-students-use-ai-for-csd-unit-3-assignments/40046",
+          "https://forum.code.org/t/csa-unit-1-lesson-8-ai-generated-code-ai-tutor-not-visiable-to-students/41165",
+          "https://code.org/assets/advocacy/stateofcs/2024_state_of_cs.pdf",
+          "https://studio.code.org/courses/ai-foundations-designing-and-building-with-ai-2026/units/1?viewAs=Instructor",
+          "https://lesson-plans.code.org/k5-ai-data-2024/20250109163756/teacher-lesson-plans/Using-AI-Bot.pdf",
+          "https://lesson-plans.code.org/how-ai-works-2023/fallback/teacher-lesson-plans/Generative-Images.pdf",
+          "https://www.repaircafe.org/wp-content/uploads/2021/09/Repair_Cafe_manual_English_general_v_09_2021.pdf",
+          "https://arxiv.org/abs/2607.05034",
+          "https://lesson-plans.code.org/foundations-gen-ai-2024/20250328093013/teacher-lesson-plans/Introduction-to-Generative-AI.pdf",
+          "https://arxiv.org/abs/2604.03926",
+          "https://arxiv.org/abs/2311.00177"
+        ],
+        "status": "ok",
+        "summary": "site.repaircafe.org children repair cafe learning repair toys volunteers | site.code.org coding with AI students understanding generated code",
+        "tool": "search"
+      },
+      {
+        "call_id": "lacunar-20261014T140225-kids-repair-library-t02",
+        "pages": [
+          "https://www.bmj.com/content/366/bmj.l4378",
+          "https://www.bmj.com/content/350/bmj.h1793",
+          "https://www.bmj.com/content/348/bmj.g2674",
+          "https://doi.org/10.1136/bmj.h1793",
+          "https://www.bmj.com/content/389/bmj-2024-082963",
+          "https://pubmed.ncbi.nlm.nih.gov/31269712/",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC12930012/",
+          "https://www.bmj.com/content/bmj/316/7146/1714.full.pdf",
+          "https://www.raspberrypi.org/research-impact/research/projects",
+          "https://www.bmj.com/content/350/bmj.h1738",
+          "https://www.bmj.com/content/bmj/303/6795/175.full.pdf",
+          "https://bmjopen.bmj.com/content/16/6/e111748",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC6787650/",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC10228692/",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC6434767/pdf/IDOJ-10-193.pdf",
+          "https://bmjopen.bmj.com/content/bmjopen/9/3/e026478.draft-revisions.pdf",
+          "https://static.raspberrypi.org/files/curriculum/quickreads/14-Pedagogy_Summary_Code_Tracing_V4_2023.pdf",
+          "https://effectivehealthcare.ahrq.gov/sites/default/files/pdf/n-1-trials_research-2014-5.pdf",
+          "https://en.wikipedia.org/wiki/N-of-1_trial",
+          "https://arxiv.org/abs/2112.13991"
+        ],
+        "status": "ok",
+        "summary": "site.projects.raspberrypi.org predict run investigate modify make debugging scratch | site.bmj.com n of 1 trial ABAB crossover carryover",
+        "tool": "search"
+      },
+      {
+        "call_id": "lacunar-20261014T140225-kids-repair-library-t03",
+        "pages": [
+          "https://www.repaircafe.org/en/repairmonitor-dashboard-provides-insight-into-repair-data/",
+          "https://www.repairmonitor.org/en",
+          "https://repaircafe.org/wp-content/uploads/2020/05/RepairMonitor_analysis_2019_05052020_ENGLISH-1.pdf",
+          "https://www.repaircafe.org/community/",
+          "https://www.repaircafe.org/en/repairmonitor-factsheet-provides-insight-into-repair-data-for-2024/",
+          "https://www.repaircafe.org/en/category/data-collection/",
+          "https://repaircafe.org/wp-content/uploads/2019/05/RepairMonitor_analysis_2018_ENGLISH-1.pdf",
+          "https://www.repairmonitor.org/index.php/en/node/537",
+          "https://www.repairmonitor.org/en/node/538",
+          "https://www.repairmonitor.org/en/FAQ",
+          "https://dashboard.repairmonitor.org/?language=en",
+          "https://www.repaircafe.org/wp-content/uploads/2021/09/Repair_Cafe_manual_English_general_v_09_2021.pdf",
+          "https://www.repaircafe.org/es/panel-de-repairmonitor-entendimiento-en-datos-de-reparacion/",
+          "https://www.repaircafe.org/en/faq/",
+          "https://www.repaircafe.org/de/factsheet-repairmonitor-gibt-einblick-in-reparaturdaten-2024/",
+          "https://en.wikipedia.org/wiki/Repair_Caf%C3%A9",
+          "https://arxiv.org/abs/2602.01517",
+          "https://en.wikipedia.org/wiki/Tool_library",
+          "https://arxiv.org/abs/1811.09852"
+        ],
+        "status": "ok",
+        "summary": "site.repaircafe.org repair monitor children knowledge sharing library",
+        "tool": "search"
+      },
+      {
+        "call_id": "lacunar-20261014T140225-kids-repair-library-t04",
+        "pages": [
+          "https://training-hub.raspberrypi.org/en/courses",
+          "https://magazines-static.raspberrypi.org/issues/full_pdfs/000/000/030/original/HW7_Digital_Edition-LATEST.pdf",
+          "https://projects.raspberrypi.org/en/pathways/scratch-machine-learning",
+          "https://projects.raspberrypi.org/en/pathways/scratch-module-1",
+          "https://www.raspberrypi.org/blog/artificial-intelligence-projects-for-kids/",
+          "https://code.org/curriculum/course3/14/Teacher",
+          "https://www.raspberrypi.org/blog/free-machine-learning-projects-for-scratch/",
+          "https://wovi.world/ai-projects-for-kids",
+          "https://projects.raspberrypi.org/en/coderdojo",
+          "https://projects.raspberrypi.org/pages/interests/science",
+          "https://magazine.raspberrypi.com/articles/smart-classroom-assistant-machine-learning-tutorial",
+          "https://projects.raspberrypi.org/pathways/technology/ai_and_data",
+          "https://support.code.org/hc/en-us/articles/30162711193741-AI-Chat-Lab-FAQ",
+          "https://magazines-static.raspberrypi.org/books/full_pdfs/000/000/043/original/Hello_World_The_Big_Book_of_Pedagogy.pdf?1653380723=",
+          "https://arxiv.org/abs/2402.04975",
+          "https://www.raspberrypi.org/app/uploads/2020/05/Learning-AI-at-school-with-Scratch-and-LearningML.pdf",
+          "https://www.raspberrypi.org/app/uploads/2022/12/RPF-Seminar-Proceedings-Volume-3.pdf",
+          "https://arxiv.org/abs/2504.12445",
+          "https://en.wikipedia.org/wiki/List_of_educational_software"
+        ],
+        "status": "ok",
+        "summary": "Scratch Code.org Raspberry Pi Repair Cafe teaching materials toy fault simulation predict one change reversible ABBA testing children 10 14 general AI chatbot",
+        "tool": "search"
+      },
+      {
+        "call_id": "lacunar-20261014T140225-kids-repair-library-t05",
+        "pages": [
+          "https://forum.code.org/t/sharing-and-editing-code/35265",
+          "https://forum.code.org/t/pair-programming-doesnt-activate/33403",
+          "https://forum.code.org/t/students-working-as-partners/35685",
+          "https://forum.code.org/t/cs-fundamentals-pair-programming-distance-learning/32572",
+          "https://studio.code.org/courses/coursea-2025/units/1/lessons/5/levels/1?section_id=6557980",
+          "https://studio.code.org/courses/coursea-2025/units/1/lessons/5/levels/1?section_id=6391546",
+          "https://forum.code.org/t/two-students-to-one-computer/37677",
+          "https://code.org/curriculum/course1/3/Teacher",
+          "https://forum.code.org/t/paired-programming-shared-code/16041",
+          "https://forum.code.org/t/paired-programming/15039",
+          "https://studio.code.org/in/en/courses/pre-express-2025/units/1/lessons/3/levels/1?redirect_warning=true",
+          "https://studio.code.org/fa/courses/coursea-2025/units/1/lessons/5/levels/1?redirect_warning=true",
+          "https://documents1.worldbank.org/curated/en/815941635455574159/pdf/Children-Learning-to-Code-Essential-for-21st-Century-Human-Capital-A-Primer-for-Russian-Policy-Makers-and-Practitioners.pdf",
+          "https://en.wikipedia.org/wiki/Pair_programming",
+          "https://arxiv.org/abs/2302.07427",
+          "https://arxiv.org/abs/2505.03867",
+          "https://en.wikipedia.org/wiki/Code.org",
+          "https://en.wikipedia.org/wiki/Scratch_%28programming_language%29",
+          "https://faculty.washington.edu/ajko/papers/Druga2025ScratchCopilot.pdf",
+          "https://arxiv.org/abs/2305.10417"
+        ],
+        "status": "ok",
+        "summary": "Scratch ScratchEd Code.org fobizz pair programming driver navigator prediction before AI code children shared computer",
+        "tool": "search"
+      },
+      {
+        "call_id": "lacunar-20261014T140225-kids-repair-library-t06",
+        "pages": [
+          "https://scratched.gse.harvard.edu/stories/scratch-lessons-local-public-library.html",
+          "https://www.tes.com/teaching-resource/scratch-chatbot-coding-project-for-primary-13424792",
+          "https://link.springer.com/article/10.1007/s10639-021-10870-z",
+          "https://arxiv.org/abs/2504.12445",
+          "https://www.zapcode.dev/learn/chatbot-building-for-elementary-teachers",
+          "https://www.mdpi.com/2227-7080/13/1/1",
+          "https://manuals.plus/m/cce264a56c506c8e6a3cd4a552ea01af3b874603d37ec42a01864e718ea99210",
+          "https://scratched.gse.harvard.edu/resources/scrath-chat-bot-assignment.html",
+          "https://www.scratched.gse.harvard.edu/stories/see-inside-classroom-bradley-quentin.html",
+          "https://doi.org/10.1007/s10639-021-10870-z",
+          "https://coding-for-tomorrow.de/konzepte/einen-chatbot-erstellen-mit-scratch/",
+          "https://arxiv.org/abs/2304.00385",
+          "https://www.cultureofrepair.org/ed-resources-classroom-materials",
+          "https://www.aimodels.fyi/papers/arxiv/adapting-ai-how-elementary-teachers-adjust-their",
+          "https://arxiv.org/abs/2402.04975",
+          "https://arxiv.org/abs/1603.03165",
+          "https://manuals.plus/m/f30cabb526b0c7d0d1915806cb42898bb0b4fbf138cd484d847bc3939fd63587.pdf",
+          "https://www.usenix.org/system/files/login/issues/login_1302.pdf",
+          "https://rvninternationalschool.com/wp-content/uploads/2025/07/Grade-1-Annual-Planner-July-to-March-1-1-1-1.pdf",
+          "https://mdpi-res.com/bookfiles/book/12648/Recent_Advances_in_ComputerAssisted_Learning.pdf?v=1776782785"
+        ],
+        "status": "ok",
+        "summary": "Repair Cafe classroom library coding repair diary toy before after repeated measurements children Scratch general chatbot",
+        "tool": "search"
+      },
+      {
+        "call_id": "lacunar-20261014T140225-kids-repair-library-bib1",
+        "status": "ok",
+        "summary": "Reparatur: 70 Treffer; Wortübereinstimmung allein kein inhaltlicher Doppelgänger",
+        "tool": "bib_find"
+      },
+      {
+        "call_id": "lacunar-20261014T140225-kids-repair-library-bib2",
+        "status": "ok",
+        "summary": "Bibliothek: 75 Treffer; Wortübereinstimmung allein kein inhaltlicher Doppelgänger",
+        "tool": "bib_find"
+      },
+      {
+        "call_id": "lacunar-20261014T140225-kids-repair-library-bib3",
+        "status": "ok",
+        "summary": "Vibecoding: 11 Treffer; Wortübereinstimmung allein kein inhaltlicher Doppelgänger",
+        "tool": "bib_find"
+      },
+      {
+        "call_id": "lacunar-20261014T140225-kids-repair-library-bib4",
+        "status": "ok",
+        "summary": "Spielzeug Vorhersage: 0 Treffer; Wortübereinstimmung allein kein inhaltlicher Doppelgänger",
+        "tool": "bib_find"
+      },
+      {
+        "call_id": "lacunar-20261014T140225-kids-repair-library-bib5",
+        "status": "ok",
+        "summary": "Spielzeug Gegenreihenfolge: 0 Treffer; Wortübereinstimmung allein kein inhaltlicher Doppelgänger",
+        "tool": "bib_find"
+      },
+      {
+        "call_id": "lacunar-20261014T140225-kids-repair-library-bib6",
+        "status": "ok",
+        "summary": "Paarprogrammieren Rechner: 5 Treffer; Wortübereinstimmung allein kein inhaltlicher Doppelgänger",
+        "tool": "bib_find"
+      },
+      {
+        "call_id": "lacunar-20261014T140225-kids-repair-library-bib7",
+        "status": "ok",
+        "summary": "Vorhersage Rollen: 16 Treffer; Wortübereinstimmung allein kein inhaltlicher Doppelgänger",
+        "tool": "bib_find"
+      },
+      {
+        "call_id": "lacunar-20261014T140225-kids-repair-library-bib8",
+        "status": "ok",
+        "summary": "Reparatur Beobachtung: 1 Treffer; Wortübereinstimmung allein kein inhaltlicher Doppelgänger",
+        "tool": "bib_find"
+      },
+      {
+        "call_id": "lacunar-20261014T140225-kids-repair-library-bib9",
+        "status": "ok",
+        "summary": "Reparatur Tagebuch: 0 Treffer; Wortübereinstimmung allein kein inhaltlicher Doppelgänger",
+        "tool": "bib_find"
+      }
+    ],
+    "topic_check": [
+      {
+        "hits": [
+          "**KlangStethoskop** — Geräuschdiagnose für Heizungspumpe/Waschmaschine per Handy (`klang-stethoskop`, Katalog `ai-acoustic-apprentice-motor-stethoscope`)",
+          "**Reparaturfall → Pflichtverstoß** (`reparaturfall-pflichtabgleich`) — Repair-Café-Protokoll (ORDS) gegen Ökodesign-Teilefrist + Lieferfrist abgleichen, Hinweis an Marktüberwachung",
+          "**Reparaturverlangen-/Gewährleistungs-Uhr** — Fristrechner +12 Monate + Reparaturverlangen-Brief",
+          "**Reparaturformular-Generator** (Anh. I RL 2024/1799)",
+          "**DPP-Reparatur-Dolmetscher / Obsoleszenz-Wächter** — Verbraucheransicht für Reparaturinformationen aus Digital Product Passports",
+          "**DPP-Reparatur-Dolmetscher: individuelle Rechtsableitung**",
+          "**Reparaturfall-Pflichtabgleich K3: Abdeckungstest** (`reparaturfall-pflichtabgleich`)",
+          "**Lokale Reparaturinformations-Belegchronik**",
+          "Repair-Café-Diagnoseassistent",
+          "Nachschraub-Probe (Reparierbarkeitsklasse nachzählen)"
+        ],
+        "term": "Reparatur"
+      },
+      {
+        "hits": [
+          "**Walnuss-Klopftest (Fallgeräusch) als Handy-App**",
+          "Bergsonnenuhr-Peiler (Zwölfer-Bergnamen)",
+          "Habitat-Veränderungs-Detektor (3D-Zeitreihe am Transekt)",
+          "Trapezblech-Verformung per LiDAR/Photogrammetrie",
+          "Agent Postmortem Recorder",
+          "Altbau Thermal",
+          "Denkmal-Verlaufsblick",
+          "Beobachtungsposten mit Übergabe",
+          "Gründungsnavigator",
+          "Open Source Heirloom Seed Exchange & Variety Archive"
+        ],
+        "term": "Bibliothek"
+      },
+      {
+        "hits": [
+          "**Umgedrehtes Vibecoding (Inversion; NRW Pflichtfach Informatik 5/6) — Herkunft: Lab-Survivor, 14.10.2026** (`lab-kids-vibecoding-c2`)",
+          "**Lagenweiser Rückbau (Lacunar) — Herkunft: Lab-Survivor, 14.10.2026** (`lab-kids-vibecoding-c7`)",
+          "Uni Macau Kinder-Vibecoding (Stax)",
+          "amelie-classification-log.md",
+          "amelie-classification-log.md",
+          "amelie-suchplaybook.md",
+          "amelie-suchplaybook.md",
+          "Lab-Vorschlag (ungeprüft): lab-2026-09-30-lacunar-20260930T073557-e87ad6.md",
+          "Lab-Vorschlag (ungeprüft): lab-2026-10-10-amelie-lab-lacunar-lacunar-20260930T073557-e87ad6-ac13ff67d43128a9.md",
+          "Lab-Vorschlag (ungeprüft): lab-2026-10-14-inversion-20261014T090028-kids-vibecoding.md"
+        ],
+        "term": "Vibecoding"
+      }
+    ]
+  },
+  "revision": "682e9cb6475057e93eeaa2d5a2917e695aa8132aac83871e6c49f6084a82f246",
+  "run_id": "lacunar-20261014T140225-kids-repair-library"
+}
