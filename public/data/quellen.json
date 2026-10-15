@@ -19974,18 +19974,20 @@
       "tags": [],
       "urls": [
         "https://www.bgbau.de/themen/sicherheit-und-gesundheit/staub/staubarme-bearbeitungssysteme",
-        "https://www.bgbau.de/fileadmin/Gisbau/Positivliste_Mauernutfr%C3%A4sen_2026_01_28.pdf"
+        "https://www.bgbau.de/fileadmin/Gisbau/Positivliste_Mauernutfr%C3%A4sen_2026_01_28.pdf",
+        "https://www.bgbau.de/fileadmin/Gisbau/Positivliste_Mauernutfr%C3%A4sen_2026_05_07.pdf",
+        "https://www.bgbau.de/fileadmin/Gisbau/Staubexposition_bei_T%C3%A4tigkeiten_mit_Mauernutfr%C3%A4sen_2021.pdf"
       ],
       "zugang": {
         "art": "web",
-        "erreichbar": "teilweise",
+        "erreichbar": "ja",
         "wie": ""
       },
       "enthaelt": "Modellkombinationen Maschine Entstauber plus Schnitttiefe",
       "fokus": "",
-      "status": "angekratzt",
+      "status": "durchsucht",
       "statusNotiz": "",
-      "evidenz": "schnipsel",
+      "evidenz": "seite",
       "zuletzt": "2026-10-15",
       "ertrag": {
         "dosen": [],
@@ -19998,9 +20000,9 @@
         "q": [
           2,
           3,
+          5,
+          5,
           2,
-          2,
-          3,
           3
         ],
         "basis": "bibliothekar",
@@ -20020,6 +20022,20 @@
           "runde": "Maurer-Runde 15.10.2026",
           "notiz": "Vektoren bewertet [2 3 2 2 3 3]: Maurer-Runde: Q1 dokumentierter Prüf-/Stoppertrag ohne Dose; Q2 offener Rest bei Forschung/Empfänger; Q3/Q4 nach tatsächlich berichtetem Zugang/Volltext, Q5 begrenzte Neuheitslage, Q6 institutioneller Anschluss.",
           "planId": "masonry-20261015-source-ratings"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 2 15.10.2026",
+          "notiz": "Ten list rows inspected; hose-model completeness remains unresolved; dated source links not guessed. R1-Januar-PDF historischer 404-Befund; Mai-Liste und Bedingungen jetzt vollständig gelesen; zehn Zeilen nur strukturell geprüft, kein Matchingexperiment.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 2 15.10.2026",
+          "notiz": "Vektoren bewertet [2 3 5 5 2 3]: R2: Q1 Forschungs-/Gegenprüfertrag ohne Dose; Q2 Restpotenzial; Q3/Q4 tatsächlicher Zugriff/Volltext; Q5 belegte Nachbarn statt Freiheitsbeweis; Q6 Fachanschluss.",
+          "planId": "masonry-r2-20261015-memory"
         }
       ]
     },
@@ -20078,6 +20094,650 @@
           "agent": "bibliothekar",
           "runde": "",
           "notiz": "Vektoren bewertet [2 2 5 5 1 2]: Vorhandene Gerätecheckliste als Mode-Gegenprobe; keine Dose und kein eigenständiger Übergabebedarf belegt."
+        }
+      ]
+    },
+    {
+      "id": "ift-schnittstelle-bodentiefer-elemente-2",
+      "name": "ift Schnittstelle bodentiefer Elemente 2025",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.ift-rosenheim.de/schnittstelle-bauwerksabdichtung-baukoerperanschluss-bodentiefer-elemente"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "teilweise",
+        "wie": ""
+      },
+      "enthaelt": "Gewerkeübergreifender Fachartikel zu Fensterbau Abdichtung und Entwässerung sowie Merkblatt MO-05/1:07.2025",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "schwellen-planstandsabgleich"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          2,
+          2,
+          2,
+          4
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 2 15.10.2026",
+          "notiz": "Wolfgang Jehl 08.10.2025; Direktabruf interner Fehler und curl TLS-Issuerfehler; kein gelabelter Dokumentenkonflikt belegt. Direkter Abruf gescheitert; kein Vollfunktions-Kill daraus abgeleitet.",
+          "status": "angekratzt"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 2 15.10.2026",
+          "notiz": "Vektoren bewertet [2 3 2 2 2 4]: R2: Q1 Forschungs-/Gegenprüfertrag ohne Dose; Q2 Restpotenzial; Q3/Q4 tatsächlicher Zugriff/Volltext; Q5 belegte Nachbarn statt Freiheitsbeweis; Q6 Fachanschluss.",
+          "planId": "masonry-r2-20261015-memory"
+        }
+      ]
+    },
+    {
+      "id": "ift-montageplaner",
+      "name": "ift Montageplaner",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.ift-rosenheim.de/ift-montageplaner",
+        "https://www.ift-rosenheim.de/fileadmin/IFT/Wissen/Fachartikel/2025/RFT25_Fischbacher_Aktuelles_aus_dem_Sachverstaendigenzentrum/RFT25_Fischbacher_Aktuelles_aus_dem_Sachverstaendigenzentrum.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "teilweise",
+        "wie": ""
+      },
+      "enthaelt": "Wandanschlusskonfiguration bauphysikalische Berechnung und Tauwasserprüfung",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "schwellen-planstandsabgleich"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          2,
+          2,
+          2,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 2 15.10.2026",
+          "notiz": "Empfängerwerkzeug zuerst gefunden; Mehrdokumentvergleich nicht belegt und nicht als fehlend behauptet. Suchindex gelesen; Direktabrufe fehlgeschlagen und curl-Zertifikatsfehler; spezifische Nachfrage nach Planvergleich nicht belegt.",
+          "status": "angekratzt"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 2 15.10.2026",
+          "notiz": "Vektoren bewertet [2 3 2 2 2 3]: R2: Q1 Forschungs-/Gegenprüfertrag ohne Dose; Q2 Restpotenzial; Q3/Q4 tatsächlicher Zugriff/Volltext; Q5 belegte Nachbarn statt Freiheitsbeweis; Q6 Fachanschluss.",
+          "planId": "masonry-r2-20261015-memory"
+        }
+      ]
+    },
+    {
+      "id": "illbruck-abdichtungsplaner",
+      "name": "illbruck Abdichtungsplaner",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.illbruck.com/de-de/services/technische-services/abdichtungsplaner/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Herstellerwerkzeug zur Planung von Fensterabdichtungen",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "schwellen-planstandsabgleich"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          5,
+          5,
+          2,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 2 15.10.2026",
+          "notiz": "Benachbarter Konfigurationsprozess; keine vollständige Funktionsgleichheit zum Quellenabgleich festgestellt.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 2 15.10.2026",
+          "notiz": "Vektoren bewertet [2 3 5 5 2 3]: R2: Q1 Forschungs-/Gegenprüfertrag ohne Dose; Q2 Restpotenzial; Q3/Q4 tatsächlicher Zugriff/Volltext; Q5 belegte Nachbarn statt Freiheitsbeweis; Q6 Fachanschluss.",
+          "planId": "masonry-r2-20261015-memory"
+        }
+      ]
+    },
+    {
+      "id": "bsb-bauqualitaet-neubau-2025",
+      "name": "BSB Bauqualität Neubau 2025",
+      "typ": "E",
+      "kategorie": "statistik",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.bsb-ev.de/politik-presse/presseservice/pressemitteilungen/31-maengel-pro-hausbau"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Auswertung von Qualitätskontrollen an 100 exemplarischen Neubauprojekten aus 2020 bis 2024",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          1,
+          3,
+          5,
+          5,
+          2,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 2 15.10.2026",
+          "notiz": "Mängelbefund vom 27.05.2025 ist Kontext und kein kausaler Beleg für Dokumentenübergabefehler.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 2 15.10.2026",
+          "notiz": "Vektoren bewertet [1 3 5 5 2 3]: R2: Q1 Forschungs-/Gegenprüfertrag ohne Dose; Q2 Restpotenzial; Q3/Q4 tatsächlicher Zugriff/Volltext; Q5 belegte Nachbarn statt Freiheitsbeweis; Q6 Fachanschluss.",
+          "planId": "masonry-r2-20261015-memory"
+        }
+      ]
+    },
+    {
+      "id": "mf-drain-handbuch",
+      "name": "MF Drain Handbuch",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.friedrich-datentechnik.de/download/handbuecher/HB_Drain.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "teilweise",
+        "wie": ""
+      },
+      "enthaelt": "Entwässerungsplanung mit Wasseranstauhöhen und Nachweisexport",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "schwellen-planstandsabgleich"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          2,
+          2,
+          2,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 2 15.10.2026",
+          "notiz": "Bestehendes Fachwerkzeug als Gegenprobe; nicht installiert und kein Mehrdokumentvergleich geprüft.",
+          "status": "angekratzt"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 2 15.10.2026",
+          "notiz": "Vektoren bewertet [2 3 2 2 2 3]: R2: Q1 Forschungs-/Gegenprüfertrag ohne Dose; Q2 Restpotenzial; Q3/Q4 tatsächlicher Zugriff/Volltext; Q5 belegte Nachbarn statt Freiheitsbeweis; Q6 Fachanschluss.",
+          "planId": "masonry-r2-20261015-memory"
+        }
+      ]
+    },
+    {
+      "id": "helonic-dimensional-verification",
+      "name": "Helonic Dimensional Verification",
+      "typ": "I",
+      "kategorie": "messverfahren",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://helonic.com/features/dimensional-verification"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Kommerzieller semantischer Massabgleich zwischen PDF-Plaenen Ansichten und Fensterlisten",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "schwellen-planstandsabgleich"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          5,
+          5,
+          2,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 2 15.10.2026",
+          "notiz": "Produktseite gelesen; Funktionsnachbar mit grosser Abdeckung; Leistung nicht getestet und deutsche Abdichtungsdatumsysteme nicht bestaetigt. Reviewer unabhängig direkt gelesen; nicht funktional getestet.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 2 15.10.2026",
+          "notiz": "Vektoren bewertet [2 3 5 5 2 3]: R2: Q1 Forschungs-/Gegenprüfertrag ohne Dose; Q2 Restpotenzial; Q3/Q4 tatsächlicher Zugriff/Volltext; Q5 belegte Nachbarn statt Freiheitsbeweis; Q6 Fachanschluss.",
+          "planId": "masonry-r2-20261015-memory"
+        }
+      ]
+    },
+    {
+      "id": "drawdiff-lokaler-planvergleich",
+      "name": "DrawDiff lokaler Planvergleich",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://drawdiff.com/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Kostenloser lokaler Browser-PDF-Vergleich mit Ausrichtung OCR-Textvergleich und Export",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "schwellen-planstandsabgleich"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          5,
+          5,
+          2,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 2 15.10.2026",
+          "notiz": "Primaerseite gelesen; billiger vorhandener Baseline-Ablauf fuer Revisionen, kein belegter semantischer Gewerkedetailabgleich. Reviewer unabhängig direkt gelesen; nicht funktional getestet.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 2 15.10.2026",
+          "notiz": "Vektoren bewertet [2 3 5 5 2 3]: R2: Q1 Forschungs-/Gegenprüfertrag ohne Dose; Q2 Restpotenzial; Q3/Q4 tatsächlicher Zugriff/Volltext; Q5 belegte Nachbarn statt Freiheitsbeweis; Q6 Fachanschluss.",
+          "planId": "masonry-r2-20261015-memory"
+        }
+      ]
+    },
+    {
+      "id": "bvf-schnittstellenkoordination-2024",
+      "name": "BVF Schnittstellenkoordination 2024",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.flaechenheizung.de/updatessk-die-neue-version-der-schnittstellenkoordination-ist-da/",
+        "https://www.flaechenheizung.de/schnittstellenkoordination/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Bereits vorhandene Verbaende-Checklisten und Protokolle fuer Heizung Estrich und Bodenbelag",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          1,
+          3,
+          5,
+          5,
+          2,
+          4
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 2 15.10.2026",
+          "notiz": "Datierte Primaerseite gelesen; Formular-Digitalisierung bereits im Vorfilter verworfen statt als neue Idee aufgefuellt. Empfänger zuerst; vorhandene Übergabearbeitshilfe verhindert bloße Checklisten-App, keine vollständige PDF-Prüfung behauptet.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 2 15.10.2026",
+          "notiz": "Vektoren bewertet [1 3 5 5 2 4]: R2: Q1 Forschungs-/Gegenprüfertrag ohne Dose; Q2 Restpotenzial; Q3/Q4 tatsächlicher Zugriff/Volltext; Q5 belegte Nachbarn statt Freiheitsbeweis; Q6 Fachanschluss.",
+          "planId": "masonry-r2-20261015-memory"
+        }
+      ]
+    },
+    {
+      "id": "bsb-ifb-bauqualitaetsstudie-mai-2025",
+      "name": "BSB IFB Bauqualitätsstudie Mai 2025",
+      "typ": "A",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.bsb-ev.de/fileadmin/user_upload/1_Startseite/Poltitik_und_Presse/Analysen_und_Studien/Studie_Bauqualitaet_Neubau_EFH_ZFH_2025.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Dokumentierte Ausführungsfehler und Verdeckung durch Folgegewerke sowie vorhandene digitale Berichtsmatrix",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          1,
+          3,
+          5,
+          5,
+          2,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 2 15.10.2026",
+          "notiz": "Primär-PDF gelesen; echter Problemanker, kein belegter neuer Softwarebedarf.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 2 15.10.2026",
+          "notiz": "Vektoren bewertet [1 3 5 5 2 3]: R2: Q1 Forschungs-/Gegenprüfertrag ohne Dose; Q2 Restpotenzial; Q3/Q4 tatsächlicher Zugriff/Volltext; Q5 belegte Nachbarn statt Freiheitsbeweis; Q6 Fachanschluss.",
+          "planId": "masonry-r2-20261015-memory"
+        }
+      ]
+    },
+    {
+      "id": "bsb-baubegleitende-qualitaetskontrolle",
+      "name": "BSB baubegleitende Qualitätskontrolle",
+      "typ": "W",
+      "kategorie": "empfaenger",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.bsb-ev.de/beratung/projektberatung/hausbau/baubegleitende-qualitaetskontrolle-beim-hausneubau"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Vorhandene phasenbezogene Sichtkontrolle und Bildbericht mit Nachverfolgung",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          1,
+          3,
+          5,
+          5,
+          2,
+          4
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 2 15.10.2026",
+          "notiz": "Bestehender Ablauf als billigster Gegenentwurf geprüft, interne Software nicht eingesehen.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 2 15.10.2026",
+          "notiz": "Vektoren bewertet [1 3 5 5 2 4]: R2: Q1 Forschungs-/Gegenprüfertrag ohne Dose; Q2 Restpotenzial; Q3/Q4 tatsächlicher Zugriff/Volltext; Q5 belegte Nachbarn statt Freiheitsbeweis; Q6 Fachanschluss.",
+          "planId": "masonry-r2-20261015-memory"
+        }
+      ]
+    },
+    {
+      "id": "soka-employer-holiday-reconciliation-202",
+      "name": "SOKA employer holiday reconciliation 2025",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://blog.soka-bau.de/funktionen/abweichungen-bei-den-urlaubswerten-ihrer-mitarbeiter/",
+        "https://blog.soka-bau.de/funktionen/neu-im-arbeitgeber-onlineservice-mehr-flexibilitaet-beim-daten-download/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Existing employer comparison and correction workflow with period and prior-employment distinctions",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "soka-urlaubsabgleich"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          5,
+          5,
+          2,
+          4
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 2 15.10.2026",
+          "notiz": "Employer access is not assumed available to workers or counselors; no fixture pairs found.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 2 15.10.2026",
+          "notiz": "Vektoren bewertet [2 3 5 5 2 4]: R2: Q1 Forschungs-/Gegenprüfertrag ohne Dose; Q2 Restpotenzial; Q3/Q4 tatsächlicher Zugriff/Volltext; Q5 belegte Nachbarn statt Freiheitsbeweis; Q6 Fachanschluss.",
+          "planId": "masonry-r2-20261015-memory"
         }
       ]
     }

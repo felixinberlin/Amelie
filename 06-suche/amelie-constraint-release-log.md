@@ -90,3 +90,48 @@ Google search service request `constraint-release-20261015-masonry-s1`, status `
 
 QUELLE NEU: TU Graz Re-Use Ziegelwand 2026 | typ=L | kategorie=referenzsammlung | enthaelt=Reversible masonry wall demonstrator reported May 2026 | status=durchsucht | evidenz=seite | zugang=ja | ertrag=– | urls=https://www.tugraz.at/news/artikel/re-use-ziegelwand-bauwirtschaft | note=Grounded result independently read; demonstration is not general approval of reclaimed existing masonry.
 QUELLE NEU: BOKU historical brick reuse research | typ=I | kategorie=messverfahren | enthaelt=Research into nondestructive assessment of historical bricks | status=durchsucht | evidenz=seite | zugang=ja | ertrag=– | urls=https://boku.ac.at/lawi/igce/news-container/wiederverwendung-historischer-ziegel | note=Primary page independently read; no validated phone-only capability claimed.
+
+
+# Round 2 — Constraint Release / rechecks, 15.10.2026
+Native Codex, direct primary reads plus authorized Google-grounded search. R1 memory, exact scopes and resurrection restrictions preserved. These are TWO existing-ID rechecks, not two new ideas. No fresh capability since R1 is claimed: findings correct our knowledge.
+
+## Existing SOKA comparison (`soka-urlaubsabgleich`)
+Old blockers: actual counselor demand, document-pair mapping, internal tools. Changed evidence: current official employer reconciliation help, 18.03.2025; Excel/XML download improvement 09.07.2025. Both predate R1 and are newly read knowledge, not new developments.
+Primary pages directly read:
+- https://blog.soka-bau.de/funktionen/abweichungen-bei-den-urlaubswerten-ihrer-mitarbeiter/
+- https://blog.soka-bau.de/funktionen/neu-im-arbeitgeber-onlineservice-mehr-flexibilitaet-beim-daten-download/
+- https://www.soka-bau.de/soka-bau-a-z/arbeitnehmerkontoauszug
+Employer side already offers prior-employment values, monthly export/filtering and correction workflows. A worker/adviser cannot be assumed to have employer access. Comparison must distinguish role, period, prior-employer carryover and resolved corrections. Official task evidence exists; no equivalence to independent worker counseling established.
+Authorized grounded request `inversion-20261015-masonry-r2-s1`, status ok, 3 queries, Lab archive. Its statement that Faire Mobilität offers no such public forms is a negative search conclusion, NOT proof internal tools don't exist. It did not yield ten anonymized statement/payslip pairs.
+Assessment `unchanged` for R1 critical blockers; existence remains `unklar`, Needs Research, no new candidate/score increase. Cheapest baseline: official own statement + manual annotated comparison by counselor; employer portal only if authorized access exists. Decisive ten-pair study remains unexecuted. Stop further broad public searching for private demand/fixtures: obtain evidence only through an authorized recipient workflow in a future task. No contact made here.
+
+## Existing tested system match (`staubsystem-lockfile`)
+Old blocker: R1 stale dated PDF URL returned 404; current list and full component fields unresolved. Changed evidence: successfully followed the current publisher landing-page link instead of guessing a filename.
+- Landing page https://www.bgbau.de/themen/sicherheit-und-gesundheit/staub/staubarme-bearbeitungssysteme [Seite]
+- Current list https://www.bgbau.de/fileadmin/Gisbau/Positivliste_Mauernutfr%C3%A4sen_2026_05_07.pdf [Seite/PDF, all 3 pages text and screenshot retrieval]
+- Conditions https://www.bgbau.de/fileadmin/Gisbau/Staubexposition_bei_T%C3%A4tigkeiten_mit_Mauernutfr%C3%A4sen_2021.pdf [Seite/PDF, both pages]
+The current list is dated 07.05.2026. It exposes machine, extractor and tested cutting depth; some entries include a hood. It does not give a complete explicit hose-model field. Conditions refer to manufacturer configuration and hose. No four-field completeness invented; no safety guarantee, and A/E dust findings must not be relabeled a universal quartz clearance.
+
+Ten visible rows inspected for field coverage (grouped lists retained as groups, not fabricated Cartesian test records):
+1. AEG MFE 1500/M — Milwaukee ASM 1400 — 25 mm
+2. Arbortech AS175 — Starmix IS M1625 — 50 mm
+3. Arbortech AS200X — Starmix ISC M1625 — 35 mm
+4. Arbortech BA200X — Starmix ISC M1625 — 35 mm
+5. Baier BDN125 — Baier BSS607M — 30 mm
+6. Baier BDN453 — Baier BSS407M/BSS508M — 35 mm
+7. Baier BMF500NL/BMF501 — same extractor group — 35 mm
+8. Baier BMF500NL (Porenbeton)/BMF501 — same group — 35 mm
+9. Baier ABDN20 — Baier BSS607M — 22 mm
+10. Bosch GNF20CA — Bosch GAS50M/GAS35M AFC/GAS55M AFC — 20 mm
+This is a source-structure inspection, not a validated operating dataset or executed matching experiment.
+
+Assessment `partial`: access blocker removed, four-component completeness NOT removed. Cheapest baseline is source PDF search plus manufacturer instructions. No demonstrated need beyond that baseline, no recipient adoption or data reuse permission verified. Existing positive lists cover much of the proposed decision but do not prove a full matcher already exists. Retain `unklar`/Needs Research, do not bury or pack. Next decisive gate: verify manufacturer hose/hood evidence for a sample and compare worker lookup effort against PDF baseline with a real user. If exact accessory evidence absent, output must remain incomplete, never approved.
+
+## Operational learning from rechecks
+1. A 404 for a date-coded document is an access failure, not missing data: follow publisher's current landing page before another search round.
+2. Compare workflows by ACTOR and ACCESS RIGHTS, not shared words such as account statement or comparison. Employer-side functionality cannot automatically kill a worker-side aid.
+3. Rechecks close named blockers; when public searching cannot close human demand/private fixtures, stop searching and retain a precise unresolved gate.
+
+## Quellenmeldung
+QUELLE NEU: SOKA employer holiday reconciliation 2025 | typ=A | kategorie=fachgremium | enthaelt=Existing employer comparison and correction workflow with period and prior-employment distinctions | status=durchsucht | evidenz=seite | zugang=ja | ertrag=Idee soka-urlaubsabgleich | urls=https://blog.soka-bau.de/funktionen/abweichungen-bei-den-urlaubswerten-ihrer-mitarbeiter/ https://blog.soka-bau.de/funktionen/neu-im-arbeitgeber-onlineservice-mehr-flexibilitaet-beim-daten-download/ | note=Employer access is not assumed available to workers or counselors; no fixture pairs found.
+QUELLE NEU: BG BAU current systems and configuration conditions | typ=A | kategorie=referenzsammlung | enthaelt=Current positive-list link and manufacturer configuration conditions | status=durchsucht | evidenz=seite | zugang=ja | ertrag=Idee staubsystem-lockfile | urls=https://www.bgbau.de/themen/sicherheit-und-gesundheit/staub/staubarme-bearbeitungssysteme https://www.bgbau.de/fileadmin/Gisbau/Positivliste_Mauernutfr%C3%A4sen_2026_05_07.pdf https://www.bgbau.de/fileadmin/Gisbau/Staubexposition_bei_T%C3%A4tigkeiten_mit_Mauernutfr%C3%A4sen_2021.pdf | note=Ten list rows inspected; hose-model completeness remains unresolved; dated source links not guessed.

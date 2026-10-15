@@ -1899,3 +1899,72 @@ QUELLE NEU: BG BAU Positivliste Mauernutfräsen 2026 | typ=A | kategorie=referen
 **Review-Lerneffekt:** Score-Summe ist notwendig, nicht hinreichend: SOKA erreicht 25/35, doch aktueller Bedarf, Feldmapping und Empfängerwerkzeuge sind offen. Norm-/Behördenseite belegt das Verfahren, nicht automatisch den konkreten Softwareengpass. Umgekehrt rechtfertigen App-Store-Schnipsel und ein benachbarter Rechner keinen sicheren Kill einer gesamten Lernfunktion. Nächster Schritt ist gezielte Falsifikation dieser fünf Resthypothesen, keine weitere allgemeine Baustellen-App-Suche.
 
 QUELLE NEU: Faire Mobilität Rechte im Baugewerbe Januar 2025 | typ=W | kategorie=empfaenger | enthaelt=Aufforderung zur Prüfung der SOKA-Kontoauszüge, schriftlicher Korrektur und Beratung | status=durchsucht | evidenz=seite | zugang=ja | ertrag=Needs Research soka-urlaubsabgleich | urls=https://www.faire-mobilitaet.de/dgb-fm-fileadmin/dateien/Dokumente/Baugewerbe/Beratung/Ihre_Rechte_im_Baugewerbe_DE__01_25_.pdf | note=Orchestrator las S. 2 direkt; aktueller Aufgabenbeleg, keine Fallstatistik oder Werkzeuglücke.
+
+
+<!-- masonry-r2-review-20261015 -->
+
+## Maurer-Runde 2 — unabhängiger Reviewer, 15.10.2026
+
+Native Codex, kein Vertex/Maps, keine Außenkontakte. Binding brief, alle vier R2-Handoffs und Orchestrator-Diff gelesen. **Zwei Engine-Vorschläge sind ein Doppelfund:** kanonisch `schwellen-planstandsabgleich`; `fenster-anschluss-planabgleich` ist nur Alias, kein zweiter Bestandseintrag. Strengeres Eingangs-/Endurteil **unklar**, nicht frei oder bloß verengt. Zwei weitere IDs sind Nachprüfungen aus R1. Null neue Kandidaten aus anderen Ästen erzeugt weder Scores noch Gräber.
+
+**Ergebnis: eine neue Needs-Research-Idee; zwei bestehende Needs-Research-IDs bleiben offen; null Dosen, null neue Gräber.** Neue Quellen ändern unseren Kenntnisstand, nicht rückwirkend die Technik-/Regelentwicklung seit R1.
+
+### Scorecard: Schwellen-Planstandsabgleich (`schwellen-planstandsabgleich`)
+
+Origin Scout × Inversion · Empfänger ift Rosenheim / koordinierende Fachplanung. Fachliches Mandat plausibel, konkreter Softwarebedarf und aktuelle Ansprechperson vor Zustellung unbestätigt. Keine Mail angelegt.
+
+| Vektor | Score | Begründung |
+|---|---:|---|
+| V1 Novelty | 2 | Dokumentübergreifender Maßabgleich ist bereits kommerzieller Produktumfang. Enger Rest: bestätigte Schwellen-/Entwässerungswerte mit expliziten Höhenbezügen und Revisionen vergleichen. Dessen Bedarf und unbesetzte Funktion sind nicht belegt. |
+| V2 Complexity/Fitness | 5 | Tier 1 ohne Konten möglich, wenn Menschen Felder bestätigen. PDF-Fundstellen und deterministischer Vergleich brauchen keine Cloud. Automatische fachliche Deutung ist nicht im ersten Ticket enthalten. |
+| V3 Possibility | 3 | Vergleich bekannter Werte ist machbar. Elementidentität, Einheiten, Bezugsnull, zulässige Revision und semantisch unterschiedliche Höhen dürfen nicht stillschweigend gleichgesetzt werden. Fehlende Bezugsdaten führen zur Rückfrage, nicht zur automatischen Differenz. |
+| V4 Longevity | 4 | Langfristige gewerkeübergreifende Planungsaufgabe; 2025-Merkblatt konkretisiert Fachsprache. Norm-/Merkblattpflege bleibt nötig, wenn deren Regeln später implementiert werden. |
+| V5 Civic SWOT | 3 | Privater, quellengebundener Abgleich kann nützen; zusätzlicher Eingabeaufwand und fehlender Bedarf sind Schwächen. Gefahr: Unterschied wird als Ausführungsfehler/Freigabe missverstanden. Verlässlicher Anker wären bestätigte Quellenstellen und ausschließlich offene Abstimmungsfragen. |
+| V6 Tech Tree | 3 | Fachlich bestätigtes Feldschema + PDF-Referenzen → Quellen-/Bezugshöhenvergleich → Abstimmungsblatt. Goldstandardfälle und belegter Vorteil zum Tabellenablauf fehlen noch. |
+| V7 Ground Truth | 2 | Datierter ift-Artikel ist über Suchindex zugänglich, Direktabruf erneut 502. Er belegt Schnittstellenplanung, keine gelabelten wiederkehrenden Dokumentkonflikte und keine notwendige neue Softwarefähigkeit. Volles Merkblatt nicht gelesen. |
+| V8 Fun | 2 | discovery: Ein nachvollziehbarer Unterschied kann ein kleines Aha auslösen; überwiegend Facharbeit. |
+
+**Kern 22/35, Gesamt 24/40. Triage Needs Research; Existenz unklar.** Kein Dose-Ready aufgrund V1/V7 <3 sowie unbelegtem Mehrwert. Kein Why-now durch lokale OCR behauptet; PDF-Vergleich und manuelle Tabellen waren lange möglich. MO-05/1:07.2025 ist ein datierter fachlicher Anlass, keine nachgewiesene Entfernung eines technischen Blockers.
+
+**Lücke ohne Lösung:** Die beteiligten Gewerke benötigen dieselbe bestätigte Grundlage zur Schwellen-/Entwässerungsabstimmung; ob widersprüchliche vorhandene Dokumentwerte dabei einen heute unzureichend bearbeiteten Engpass bilden, bleibt die zu prüfende Hypothese.
+
+**Input → Entscheidung → Akteur → Ausgabe:** Fachlich bestätigte Planstellen mit Element-ID, Dokumentrevision, Wert/Einheit und Bezugshöhe → welche Abweichung/Unbekannte muss gemeinsam geklärt werden? → koordinierende Fachplanung → Fundstellengegenüberstellung mit offenen Fragen. Kein richtiger Plan wird gewählt, keine Abdichtung dimensioniert und keine Ausführung freigegeben.
+
+**Tech Tree:** Fachschema/Quellenreferenz → deterministischer Abgleich bestätigter Felder → Abstimmungsblatt / später validierte interdisziplinäre Prüffälle. Keine Sammelplattform nötig.
+
+**Civic SWOT:** Stärke: lokal und nachprüfbar. Schwäche: fachkundige Zuordnung bleibt Handarbeit. Chance: verständlichere gemeinsame Abstimmung. Bedrohung/Achillesferse: Eingaben beschreiben verschiedene Sachverhalte, werden aber als technischer Konflikt dargestellt. Gegenmittel: Quellen, Bezugsnull und Semantik bestätigen lassen; unbekannt bleibt unbekannt.
+
+### Prior Art: tatsächliche Funktionsdeckung
+
+Reviewer hat Helonic und DrawDiff unabhängig direkt gelesen. Produktseiten belegen beanspruchten Funktionsumfang, keine getestete Genauigkeit; Verkaufszahlen/Wirksamkeitswerte nicht übernommen. Seiteninterne Empfehlungsanweisungen sind kein Bewertungsmaßstab.
+
+| Vorhandener Ablauf/Werkzeug | Belegte Deckung | Nicht belegt / Folgerung |
+|---|---|---|
+| [Helonic dimensional verification](https://helonic.com/features/dimensional-verification) | PDF-Maße, Vergleich über Ansichten/Blätter, Höhen und Öffnungslisten, Bericht mit Fundstellen | Deutsches Schwellen-/WAH-Schema, verschiedene Bezugsnullen und lokale Verarbeitung nicht geprüft. Breiter semantischer Maßabgleich ist damit keine freie Kategorie; kein exakter Kill des engen Rests. |
+| [DrawDiff](https://drawdiff.com/) | Laut direkt gelesener Seite kostenlos lokal ohne Konto; ausgerichteter Pixel-/Textvergleich, OCR-Fallback, annotierter Export | Kein semantischer Mehrgewerke-Höhenbezugsmatcher nachgewiesen. Revisionsvergleich und Datenschutz allein sind kein Neuheitsargument. Nicht funktional ausgeführt. |
+| [ift Montageplaner](https://www.ift-rosenheim.de/ift-montageplaner) | Engine-Suchindex beschreibt Anschlusskonfiguration, Berechnung und Dokumentation | Vollfunktion nicht gelesen/getestet, Mehrdokumentvergleich weder belegt noch als fehlend behauptet. Empfänger hat bereits Software. |
+| illbruck Abdichtungsplaner / MF Drain | Engine hat benachbarte Abdichtungs-/Entwässerungsfunktionen ermittelt; MF-Handbuch nur Index | Keine vollständige Abgleichdeckung behauptet. Diese Nachbarn allein tragen keinen Kill. |
+| Fachleute + zwei markierte PDF-Ausschnitte + Tabelle | Billigster plausibler Ablauf mit expliziten Werten, Bezugshöhen und Stand; keine neue Infrastruktur | Aufwand/Fehlerrate nicht erhoben. Das ist die Baseline, gegen die ein neues Werkzeug erst bestehen muss. |
+
+ift-Artikel [08.10.2025](https://www.ift-rosenheim.de/schnittstelle-bauwerksabdichtung-baukoerperanschluss-bodentiefer-elemente) im umfangreichen Suchindex unabhängig gegengelesen, Direktseite gescheitert: Hersteller legt max. WAH fest; Koordination mit Entwässerung ist erforderlich. Das stützt die Informationsschnittstelle, nicht die Häufigkeit von Planstandskonflikten. Normzahlen aus dem Index werden hier nicht implementiert oder unabhängig verifiziert.
+
+**Falsifikation vor Scaffolding:** Zuerst drei echte anonymisierte Konflikt-/Nichtkonfliktpaare mit Fachlabel beschaffen; fehlen Dokumente oder Zuständigkeiten statt sich widersprechender Werte, ist das kein Nachweis für diesen Matcher. Nur bei realem Konfliktmuster auf zehn Paare erweitern, einschließlich legitimer Revisionen und mindestens drei unterschiedlicher Höhenbezüge. Baseline Tabelle/PDF (ggf. DrawDiff) und vorhandene Empfänger-/BIM-Werkzeuge gegenüberstellen. Stoppen, wenn der vorhandene Ablauf die benötigte Entscheidung ausreichend abbildet oder passende Fälle nicht zugänglich sind. Kontakte/Datenbeschaffung sind in dieser Runde nicht erfolgt. Kein Prototyp substituiert die fehlenden Fälle.
+
+### Nachprüfung vorhandener IDs
+
+**soka-urlaubsabgleich — unverändert unklar/Needs Research.** R1-Score 25/35 + V8 1 = 26/40 bleibt bestehen; keine neue unabhängige Bewertungssumme. [SOKA 18.03.2025](https://blog.soka-bau.de/funktionen/abweichungen-bei-den-urlaubswerten-ihrer-mitarbeiter/) direkt unabhängig gelesen: vorhandener Arbeitgeber-Abgleich nennt Vorarbeitgeberwerte, Korrekturen, Monatsmeldungen und Excel/Filter. Er zeigt, dass legitime Differenzen ein zentraler Modellierungsfall sind. Er beweist weder Zugang für Arbeitnehmer/Beratung noch ein gleichwertiges unabhängiges Beratungswerkzeug. Die 2025-Exportquelle war schon vor R1 existent: neue Recherchekenntnis, kein neuer Blockerwechsel. Bedarf, interner Bestand und zehn gelabelte Belegpaare bleiben offen. Root-Schluss korrekt; keine weitere breite öffentliche Suche als Ersatz für private Fälle. Keine Behördenfunktion als falscher Arbeitnehmer-Kill.
+
+**staubsystem-lockfile — teilweise Evidenzverbesserung, weiterhin unklar/Needs Research.** R1-Score historisch 22/35 + V8 2 = 24/40, kein pauschales Score-Anheben aus erfolgreichem Download. Reviewer öffnete [aktuelle dreiseitige Liste 07.05.2026](https://www.bgbau.de/fileadmin/Gisbau/Positivliste_Mauernutfr%C3%A4sen_2026_05_07.pdf) und [zweiseitige Bedingungen 2021](https://www.bgbau.de/fileadmin/Gisbau/Staubexposition_bei_T%C3%A4tigkeiten_mit_Mauernutfr%C3%A4sen_2021.pdf) unabhängig. Quellenzugang ist jetzt gelöst; vollständige konkrete Schlauch-/Haubentupel und empirischer Zusatznutzen bleiben offen. Root-Zehnzeilenprüfung ist Datenstrukturprüfung, kein experimentell validierter Matcher. Gruppierte Modelle nicht in erfundene geprüfte Kreuzprodukte zerlegen. Ein Listentreffer bleibt quellengebundener Nachweis mit Bedingungen, keine universelle Quarz-/Sicherheitsfreigabe. Mai-2026-Liste/2021-Bedingungen sind älter als R1. Nächster Test: Herstellerkonfiguration für Stichprobe verifizieren und reale Nachschlageaufgabe gegen PDF-Baseline vergleichen; ohne Daten oder Bedarf kein Packen, ohne exakte Funktionsdeckung kein Grab.
+
+### Review der kleinen Orchestrator-Änderung
+
+**Unterstützt, angemessen begrenzt.** Konkrete Retro in überprüfbare rundenbezogene Annahmen übersetzen, bestehende IDs beibehalten, Rollen/Zugangsrechte bei Konkurrenz vergleichen und aktuelle Herausgeberlinks vor Sucheskalation prüfen sind durch diese Befunde getragen. Das wird ausdrücklich nicht zur dauerhaft engeren Themenwahl erhoben; null Ergebnisse bleiben zulässig. Baseline-Wiederverwendung nur bei unmittelbar anschließender Runde auf unverändertem sauberem Commit ist sinnvoll und keine pauschale Testausnahme.
+
+**Grenze:** Nicht jede potenziell nützliche Software muss eine vorher unmögliche Entscheidung schaffen. Eine vorhandene Entscheidung kann durch nachgewiesene Zeit-/Fehlerreduktion sinnvoll unterstützt werden. Die konkrete kleine Skill-Änderung fordert diese absolute Neuheitsdefinition nicht und ist daher freigabefähig. Den strengeren Bisoziationsvorschlag „darin nicht mögliche Entscheidung“ nicht unbesehen zur universellen Gate-Regel machen. Bei Round-2-Handoff darf er als Suchdisziplin dienen; für spätere Anwendung messbaren Zusatznutzen ebenfalls zulassen. Keine methodische Erfolgsaussage aus einer einzelnen Runde ableiten.
+
+### Quellenmeldung
+
+QUELLE NEU: Helonic dimensional verification — Reviewer Gegenprüfung | typ=I | kategorie=messverfahren | enthaelt=Beanspruchter Mehrblatt-Mass- und Höhenabgleich mit Fundstellenbericht | status=durchsucht | evidenz=seite | zugang=ja | ertrag=Needs Research schwellen-planstandsabgleich | urls=https://helonic.com/features/dimensional-verification | note=Primäre Produktseite unabhängig gelesen, keine Funktions-/Genauigkeitsprüfung; enger deutscher Höhenbezugsrest offen.
+QUELLE NEU: DrawDiff — Reviewer Gegenprüfung | typ=L | kategorie=referenzsammlung | enthaelt=Laut Anbieter lokaler kostenloser Overlay-/Textvergleich mit Export und OCR-Fallback | status=durchsucht | evidenz=seite | zugang=ja | ertrag=Needs Research schwellen-planstandsabgleich | urls=https://drawdiff.com/ | note=Direkt gelesen, nicht ausgeführt; lokale Verarbeitung ist vorhandene Baseline statt Neuheitsbeweis.
+
+Keine Registermutationen durch Reviewer; Bibliothekar übernimmt neue kanonische ID und zwei Nachprüfungen ohne Dubletten. Endgültiges R2-Fazit: neuer Doppelfund trägt eine prüfbare Resthypothese, noch keine Dose. Weiterhin offene R1-Hypothesen werden durch diese Runde nicht stillschweigend abgeschlossen.

@@ -1532,6 +1532,109 @@
         "src/data/candidateVectors.json": "sha256:d2a2fdc9ed9db5847d4493f2d8a2a5750579a9130f6d267e887da3d5dcd753d3",
         "src/data/vectorChanges.json": "sha256:7713e34a6b9cd539c2d581109bc53f40f97495968d6358ce51d8995bd4405b79"
       }
+    },
+    "masonry-r2-20261015-memory": {
+      "plan_id": "masonry-r2-20261015-memory",
+      "actor": "bibliothekar",
+      "agent": "bibliothekar",
+      "runde": "Maurer-Runde 2 15.10.2026",
+      "at": "2026-10-15T07:57:32.594Z",
+      "ops": [
+        {
+          "index": 0,
+          "op": "protokoll.add",
+          "target": "schwellen-planstandsabgleich"
+        },
+        {
+          "index": 1,
+          "op": "protokoll.add",
+          "target": "soka-urlaubsabgleich"
+        },
+        {
+          "index": 2,
+          "op": "protokoll.add",
+          "target": "staubsystem-lockfile"
+        },
+        {
+          "index": 3,
+          "op": "source.rate",
+          "target": "bg-bau-positivliste-mauernutfraesen-2026"
+        },
+        {
+          "index": 4,
+          "op": "source.rate",
+          "target": "ift-schnittstelle-bodentiefer-elemente-2"
+        },
+        {
+          "index": 5,
+          "op": "source.rate",
+          "target": "ift-montageplaner"
+        },
+        {
+          "index": 6,
+          "op": "source.rate",
+          "target": "illbruck-abdichtungsplaner"
+        },
+        {
+          "index": 7,
+          "op": "source.rate",
+          "target": "bsb-bauqualitaet-neubau-2025"
+        },
+        {
+          "index": 8,
+          "op": "source.rate",
+          "target": "mf-drain-handbuch"
+        },
+        {
+          "index": 9,
+          "op": "source.rate",
+          "target": "helonic-dimensional-verification"
+        },
+        {
+          "index": 10,
+          "op": "source.rate",
+          "target": "drawdiff-lokaler-planvergleich"
+        },
+        {
+          "index": 11,
+          "op": "source.rate",
+          "target": "bvf-schnittstellenkoordination-2024"
+        },
+        {
+          "index": 12,
+          "op": "source.rate",
+          "target": "bsb-ifb-bauqualitaetsstudie-mai-2025"
+        },
+        {
+          "index": 13,
+          "op": "source.rate",
+          "target": "bsb-baubegleitende-qualitaetskontrolle"
+        },
+        {
+          "index": 14,
+          "op": "source.rate",
+          "target": "soka-employer-holiday-reconciliation-202"
+        }
+      ],
+      "files": [
+        "06-suche/amelie-pruefprotokoll.md",
+        "06-suche/amelie-quellen.md",
+        "AMELIE_STATUS.md",
+        "public/data/amelie-health.json",
+        "public/data/amelie-ideas.json",
+        "public/data/quellen.json",
+        "src/data/quellen.json"
+      ],
+      "hashes": {
+        "src/data/quellen.json": "sha256:c1f55a263ba6c5754d0078bed07a17c6daa66e944d6065d1e34a5cb26fe956ac",
+        "src/data/graeber.json": "sha256:22151ac9e34db3470c28c539307b0655d59640da2ae3d040dc2881ba77c85f58",
+        "06-suche/amelie-pruefprotokoll.md": "sha256:2a792222e06bdf48db3943fef8a18139ca2be50ce2088dfa43aa92982e327308",
+        "06-suche/terminology-map.md": "absent",
+        "06-suche/open-questions.md": "absent",
+        "src/data/doseVectors.json": "sha256:bc224ae81695813b22d51733a926ff21b40947792af96da51635105a26f2c5b5",
+        "src/data/candidateVectors.json": "sha256:d2a2fdc9ed9db5847d4493f2d8a2a5750579a9130f6d267e887da3d5dcd753d3",
+        "src/data/vectorChanges.json": "sha256:7713e34a6b9cd539c2d581109bc53f40f97495968d6358ce51d8995bd4405b79"
+      }
     }
   }
 }

@@ -51,6 +51,10 @@ Phase 6  Abschluss               ─ Orchestrator: npm run lint && npm test, Com
 5. **Friedhofsgang:** `npm run bib -- find <Thema>` und `npm run bib -- grab list --cause <ursache>` (plus `08-friedhof/README.md` für die Taxonomie) — Todesursachen, die zum Thema passen, und Exit-2-Treffer gehen als Warnliste in alle Engine-Prompts.
 6. **Baseline:** `npm run lint && npm test` grün, sonst erst reparieren oder melden.
 
+**Lernen für die nächste Runde:** Aus der letzten Retro konkrete Suchbedingungen ableiten und vor dem Start in der Prüfakte festhalten: Welche Annahme wird diesmal geprüft, welche bereits besetzten Zuschnitte bleiben ausgeschlossen und welcher Befund würde die Suche stoppen? Nutzer-Thema und Freigaben bleiben maßgeblich; die Bedingungen sind rundenbezogen, keine dauerhaft verengte Themenwahl. Bei unmittelbar anschließender Runde auf unverändertem sauberem Commit darf der gerade bestandene vollständige Abschluss als Baseline dienen.
+
+Bei Nachprüfungen bestehende IDs und offene Blocker weiterführen, statt denselben Fund als neue Idee zu zählen. Öffentlich auffindbare Belege von fehlenden Empfängerfällen, privaten Testdaten oder internen Werkzeugen trennen: Weitere Websuchen ersetzen diese Zugänge nicht. Einen gescheiterten datierten Download zuerst über den aktuellen Link der Herausgeberseite nachprüfen.
+
 ### Phase 1 · Entdeckung
 
 Vier Agenten **in einer Nachricht** starten, gleiches Thema, gleiche Warnliste, verschiedene Methode. Jeder Prompt enthält: Thema, Rundenname, Datum, Warnliste, Netzstatus, Schreibrechte, Rückgabeformat (siehe Agenten-Definitionen). Nicht vorab Ideen vorgeben — das würde die Konvergenzprobe entwerten. Engine 4 prüft höchstens drei datierte Blocker/Änderungs-Paare; keine belegte Änderung ergibt null Kandidaten. Konvergenz ist ein Suchsignal, kein unabhängiger Wahrheitsbeweis.
@@ -64,6 +68,8 @@ Eine Tabelle über alle Kandidaten:
 - Gleiche Idee in anderem Kleid = ein Kandidat; alle Engines nennen.
 - Abweichende Urteile (eine Engine `frei`, eine `besetzt`) → das strengere gilt, bis der Reviewer entscheidet.
 - `besetzt` geht nicht zum Reviewer, sondern direkt zum Bibliothekar.
+
+Ein Besetzt-Beleg muss den behaupteten Zuschnitt tragen: Akteur, Zugangsrechte, Eingaben, Entscheidung und Ausgabe gegen das bestehende Werkzeug halten. Arbeitgeberfunktionen sind nicht automatisch Arbeitnehmerfunktionen; ein Geometrierechner belegt keine vollständige Lernfunktion. Bei nur teilweiser oder ungeprüfter Deckung den Rest als unsicher erhalten. Zusatznutzen kann auch in belegbar weniger Zeit oder Fehlern liegen; eine zuvor unmögliche Entscheidung ist keine allgemeine Voraussetzung. Im Abschluss festhalten, welche vorab benannte Annahme sich geändert hat und welche Verfahrensänderung daraus folgt; keine Änderung ohne Befund erfinden.
 
 ### Phase 3 · Review
 
