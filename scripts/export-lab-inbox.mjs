@@ -12,6 +12,17 @@ const stable = value => JSON.stringify(value, (_key, v) => v && typeof v === 'ob
 const states = new Set(['received', 'in_progress', 'needs_research', 'processed', 'archived']);
 
 export function buildInbox(root = ROOT) {
+  // Editorial explanations live outside the immutable producer receipts.
+  const descriptionsPath = join(root, 'src/data/labIdeaDescriptions.json');
+  const descriptions = existsSync(descriptionsPath) ? JSON.parse(readFileSync(descriptionsPath, 'utf8')) : { version: 1, ideas: {} };
+  if (descriptions.version !== 1 || !descriptions.ideas || typeof descriptions.ideas !== 'object' || Array.isArray(descriptions.ideas)) throw Error('Invalid Lab idea descriptions');
+  for (const [id, entry] of Object.entries(descriptions.ideas)) {
+    for (const language of ['de', 'en']) {
+      for (const field of ['title', 'description']) {
+        if (typeof entry?.[language]?.[field] !== 'string' || !entry[language][field].trim()) throw Error(`${id}: missing ${language} ${field}`);
+      }
+    }
+  }
   const directory = join(root, '06-suche/proposals');
   const batches = new Map();
   const files = existsSync(directory) ? readdirSync(directory).filter(f => /^[A-Za-z0-9][A-Za-z0-9._-]*\.inbox\.json$/.test(f)).sort() : [];
@@ -42,7 +53,8 @@ export function buildInbox(root = ROOT) {
     output.push({ batch_id: data.batch_id, lab_id: data.lab_id, engine: data.engine, run_id: data.run_id,
       revision: data.revision, created_at: data.created_at, model: data.model, intent: data.intent,
       existence_check: false, processing, source, detail: `lab-runs/${data.batch_id}.json`,
-      ideas: data.ideas.map(idea => ({ id: `${data.batch_id}:${idea.local_id}`, local_id: idea.local_id, record: idea.record })) });
+      ideas: data.ideas.map(idea => ({ id: `${data.batch_id}:${idea.local_id}`, local_id: idea.local_id,
+        plain_language: descriptions.ideas[`${data.batch_id}:${idea.local_id}`] ?? null, record: idea.record })) });
   }
   output.sort((a, b) => b.created_at.localeCompare(a.created_at) || a.batch_id.localeCompare(b.batch_id));
   return { index: { version: 1, batches: output }, records: [...batches.values()].map(v => v.data) };
