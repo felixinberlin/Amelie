@@ -1,0 +1,24 @@
+{
+  "manifest_version": 1,
+  "run_id": "amelie-lab-lacunar-lacunar-20261015T173000-bau-vision-55725e91c77294e3",
+  "plan_id": "lab-2026-10-15-amelie-lab-lacunar-lacunar-20261015T173000-bau-vision-55725e91c77294e3",
+  "engine": "review",
+  "model": "claude-subagent (stand-in, Vertex unavailable; searches: WebSearch)",
+  "existence_check": false,
+  "survivors": {
+    "count": 1,
+    "status": "ungeprueft"
+  },
+  "files": [
+    "06-suche/proposals/lab-2026-10-15-amelie-lab-lacunar-lacunar-20261015T173000-bau-vision-55725e91c77294e3.md",
+    "06-suche/proposals/lab-2026-10-15-amelie-lab-lacunar-lacunar-20261015T173000-bau-vision-55725e91c77294e3.inbox.json",
+    "06-suche/proposals/lab-2026-10-15-amelie-lab-lacunar-lacunar-20261015T173000-bau-vision-55725e91c77294e3.manifest.json"
+  ],
+  "source_ops": [],
+  "grave_proposals": 3,
+  "touches_memory": false,
+  "contracts": {
+    "lacunar-record": "1.3.0"
+  },
+  "contract_version": "1.0.0"
+}
