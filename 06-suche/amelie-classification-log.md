@@ -1786,3 +1786,116 @@ GN nennt § 32 nur als Normkarte (`normen.json`, `sgb2_32`), zählt nicht; Zielg
 | `buzer-sgb-ii-43` | buzer.de § 43 SGB II mit Änderungshistorie | Norm (Drittseite) | https://www.buzer.de/43_SGB_II.htm | 13. ÄndG ändert nur Abs. 1 | gelesen [Seite] |
 | `gii-sgb-ii-43` | gesetze-im-internet.de § 43 SGB II | Norm (amtlich, nichtamtliche Fassung) | https://www.gesetze-im-internet.de/sgb_2/__43.html | Abs. 2/3 Wortlaut; kein Stand-Vermerk | gelesen [Seite] |
 | `gegen-hartz-dreimal-plus-eins` | gegen-hartz.de „Ab jetzt ‚Dreimal plus eins‘“ | Ratgeber | https://www.gegen-hartz.de/news/grundsicherung-ab-jetzt-dreimal-plus-eins-sanktionen-der-jobcenter | Besetzt-Gegenprobe M1 (erklärt, rechnet nicht) | [Schnipsel] |
+
+
+<!-- masonry-review-20261015 -->
+
+## Maurer / Bricklayer / Construction workers — unabhängiger Review 15.10.2026
+
+Native Codex-Reviewer, kein Vertex, kein Maps. Vier Engines konsolidiert: 10 unterschiedliche Zuschnitte, Wiederverwendungsaufnahme als ein Doppelfund (Inversion/Constraint Release); Staubmaßnahmen und Gerätekombinationsnachweis bleiben verschieden. Pflichtlektüre Reviewer-Rolle/Skill/Rubriken/Learning-Log, AGENTS und Friedhofsordnung gelesen; bib find Mauerwerk, SOKA, Quarz, Staub: Nachbarideen und heutige Logs, keine identische bestehende Dose. Keine Venture-Evaluation beauftragt. Scores sind Urteile über die heutige Evidenz, keine Messwerte. V2 ist Fitness (einfach = hoch).
+
+**Ergebnis: 0 Dose Ready, 5 Needs Research, 5 eng begrenzte Stopps/Friedhof-Kandidaten.** Ein unsicherer Trainer-Kill wurde aufgehoben. Unbelegter Bedarf ist keine widerlegte Prämisse. Kein Empfänger wurde angeschrieben, keine Förderfähigkeit zugesagt. Ohne reife Dose entfallen Packer und Demo-Builder.
+
+| Kandidat | V1 | V2 | V3 | V4 | V5 | V6 | V7 | V8 | Kern /35 | Gesamt /40 | Triage |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| soka-urlaubsabgleich | 4 | 4 | 3 | 4 | 3 | 4 | 3 | 1 | 25 | 26 | Needs Research; Evidenz-Gate offen |
+| staubsystem-lockfile | 3 | 4 | 3 | 4 | 3 | 3 | 2 | 2 | 22 | 24 | Needs Research |
+| mauerwerk-mehrschlitz-vorpruefung | 3 | 5 | 3 | 4 | 2 | 3 | 2 | 3 | 22 | 25 | Needs Research |
+| quarz-arbeitsleben-pass | 2 | 4 | 3 | 4 | 3 | 3 | 3 | 1 | 22 | 23 | Needs Research; verengt |
+| mauerverband-fehlertrainer | 2 | 5 | 4 | 3 | 3 | 4 | 2 | 4 | 23 | 27 | Needs Research; Kill aufgehoben |
+
+### SOKA-Urlaubsabgleich (`soka-urlaubsabgleich`)
+
+**Origin:** Inversion · Empfänger: Faire Mobilität (institutionelles Beratungsmandat; aktuelle Person unbestätigt).
+
+- **V1 4:** Arbeitgebermeldungen aus Sicht des Beschäftigten gegen eigene Belege halten ist eine konkrete Inversion; Restlücke: Beschäftigte können Abweichungen zwischen mehreren Belegen nicht leicht einordnen. Keine Behauptung einer vollständig freien Softwarekategorie.
+- **V2 4:** Tier 1 bei bestätigten Feldern; lokale OCR kann folgen, darf aber nicht aus Dokumenten stillschweigend Tatsachen machen. Personenbezogene Lohnbelege verlangen bewussten Export und Schutz der Originale.
+- **V3 3:** Vergleich ist technisch möglich; Stichtage, Korrekturen und Vorarbeitgeber verhindern einen naiven Summenvergleich. Kein neuer Regelrechen-Enabler; lokale Verarbeitung ist eine Umsetzungsoption, kein historischer Unmöglichkeitsbeleg.
+- **V4 4:** Urlaubskassenverfahren ist dauerhaft; Felder und Tarifstand müssen versioniert werden.
+- **V5 3:** S: unabhängige Belegübersicht. W: Eingabeaufwand. O: Fallvorbereitung für Beratung. T/Achillesferse: legitime Differenzen werden zu vermeintlichen Ansprüchen. Anker: nachlesbare Dokumentstellen und bestätigte Felder, nie Betrugs- oder Anspruchsurteil.
+- **V6 4:** Originalbelege + Feldschema → bestätigter Differenzvergleich → Beratungsblatt und wiederverwendbarer lokaler Belegvergleich. Der kleine Kern ist testbar.
+- **V7 3:** Aktuelle offizielle SOKA-Seite verifiziert Felder und Verfahren, aber nicht das vorgeschlagene feldweise Vergleichsschema. Historisches Interview 2017 ist keine aktuelle Bedarfsstudie. Der Orchestrator las den Rechteflyer Januar 2025, S. 2: Er fordert zur Prüfung der Kontoauszüge und schriftlicher Meldung falscher Einträge auf. Das stützt die heutige Aufgabe, nicht Fallhäufigkeit oder fehlende interne Werkzeuge. Daher trotz 25/35 kein verifizierter Type-A/B/D-Beleg für den konkreten Kern und kein Dose-Ready.
+- **V8 1, none:** Belegprüfung ist Arbeit, kein Spiel.
+
+**Urteil:** Needs Research, stärkste Forschungspriorität. [SOKA Arbeitnehmerkontoauszug](https://international.soka-bau.de/arbeitnehmer/arbeitnehmerkontoauszug) direkt gelesen: beschäftigungsbezogene Felder stammen vom Arbeitgeber; die dort genannte Korrekturmöglichkeit wird nur als Quellenhinweis geführt, ohne automatische Rechtsfristberechnung. Keine Normprüfung ersetzt.
+
+**Falsifikation:** 10 anonymisierte fachlich gelabelte Dokumentpaare, mindestens 3 Layouts und 3 legitime Differenzen (Stichtag, Korrektur, Vorarbeitgeber); jede Zuordnung von Beratung gegenlesen lassen. Vorher Empfängerbestand prüfen. Stoppen, wenn gleichwertige interne Software vorhanden ist oder solche Belege nicht für Validierung erhältlich sind. Kein Prototyp als Ersatz für fehlenden Bedarf bauen.
+
+### Staubsystem-Lockfile (`staubsystem-lockfile`)
+
+**Origin:** Bisoziation · Empfänger: BG BAU GISBAU/Messtechnik, Person vor Versand verifizieren.
+
+- **V1 3:** Prüfnachweis einer konkreten Kombination ist enger als generischer Staubschutz. Restlücke: Einzelteileignung belegt nicht die getestete Zusammensetzung geliehener Geräte.
+- **V2 4:** Tier 1/2, statischer Quellentuple-Matcher; Pflege von Modellbezeichnungen und Versionen ist der eigentliche Aufwand.
+- **V3 3:** Exakte Identitätsprüfung machbar; aus fehlendem Treffer folgt keine Gefahr und aus einem Treffer keine allgemeine Freigabe. Schlauch/Haube dürfen nicht dazuerfunden werden.
+- **V4 4:** Dauerhafter Arbeitsschutzbedarf, Listen ändern sich.
+- **V5 3:** S: nachvollziehbarer Nachweis. W: schmale Quellenabdeckung. O: neutraler Modellabgleich. T/Achillesferse: falsches Vollständigkeitsgefühl. Anker: Fundstelle, Stand und explizit unbekannte Bestandteile.
+- **V6 3:** Positivlisten + Modell-IDs → exakter Nachweisabgleich → Beschaffung/Leihgeräte-Übergabe; ohne vollständige Datenauswahl noch unbewiesener Stamm.
+- **V7 2:** BG BAU listet geprüfte Systeme, aber weder vollständige Tupeldaten noch bestehende Suchfunktion wurden geprüft. [Offizielle Übersicht](https://www.bgbau.de/themen/sicherheit-und-gesundheit/staub/staubarme-bearbeitungssysteme) direkt gelesen. Ein Suchindex liefert [Mauernutfräsenliste 2026](https://www.bgbau.de/fileadmin/Gisbau/Positivliste_Mauernutfr%C3%A4sen_2026_01_28.pdf) mit Maschine/Entstauber/Schnitttiefe; Abruf 404. Das ist Schnipsel, kein Volltextnachweis für vier Komponenten.
+- **V8 2, discovery:** Kleines Aha beim nachvollziehbaren Treffer, kein Spiel.
+
+**Urteil:** Needs Research. Zehn echte Listeneinträge einschließlich Zubehörbedingungen manuell übertragen; quellenbelegte und nicht belegte Felder getrennt markieren. Bestehende BG-Suche mit zehn gemischten Bestandskombinationen testen; nur wenn deren Abgleich fehlt und GISBAU Pflege/Datenrechte bestätigt, Ticket definieren. Bei Deckung Kill beim Empfänger. Kein Kill aus der bloßen Existenz einer PDF-Liste.
+
+### Mehrschlitz-Vorprüfung (`mauerwerk-mehrschlitz-vorpruefung`)
+
+**Origin:** Scout · Empfänger: DGfM, fachliche Bedarfsträgerschaft unbestätigt.
+
+- **V1 3:** Mehrere Schlitze einschließlich Summen/Abständen statt Einzelwerttabellen ist ein enger, bisher ungesicherter Rest. Abwesenheit eines Suchtreffers belegt keine Neuheit.
+- **V2 5:** Tier 1, Geometrie und Tabellen ohne Sensor oder Backend.
+- **V3 3:** Nur mit vollständig bekannten Wandparametern und Regelkontext; kein Statiknachweis. Kein aktueller technischer Enabler belegt.
+- **V4 4:** Normgebundener dauerhafter Bedarf, Änderungen müssen nachgezogen werden.
+- **V5 2:** S: gemeinsame Skizze. W: unbekannter Bestand. O: weniger Übergabefragen. T/Achillesferse: vereinfachte Tabelle wird als sichere Tragwerksfreigabe verstanden. Anker wäre eine ausschließlich quellengebundene Rückfragenliste.
+- **V6 3:** Normstand + Wanddaten → Regel-/Geometrie-Grenzfälle → Übergabe an Tragwerksplanung. Kern noch ohne validierte Fixtures.
+- **V7 2:** [KS Planungshandbuch](https://www.kalksandstein.de/media/08_downloadcenter/01_planungshandbuch_auflage7_gesch_de.pdf) Suchindex zeigt Tafel 28 mit Abstand/Summenregel; aktueller Normtext samt Fußnoten und Rechten nicht geprüft. Aus Normregeln folgt kein betrieblicher Engpass.
+- **V8 3, discovery:** Verschieben in der Skizze kann ein geometrisches Aha geben.
+
+**Urteil:** Needs Research. Zwei Tragwerksplaner sollen mindestens zehn reale Übergabefälle benennen; aktuellen Normstand und Lizenz zum Regelkern klären; zehn Goldstandardfälle einschließlich Unbekannt/Berechnung erforderlich erstellen. Erst dann deterministischen Kern überlegen. Ohne reale Mehrschlitzfälle oder bei vorhandener Deckung stoppen.
+
+### Quarz-Arbeitsleben-Pass (`quarz-arbeitsleben-pass`)
+
+**Origin:** Inversion · Empfänger: DGUV/BG BAU; Arbeitnehmerberatung als möglicher Bedarfsträger noch unbestätigt.
+
+- **V1 2:** Persönliche Tätigkeitschronik ist ein bekanntes Muster; nur arbeitnehmergeführte Offline-Ergänzung bleibt offen.
+- **V2 4:** Tier 1 möglich, aber Langzeitsicherung/Portabilität und private Gesundheitsnähe sind nicht durch localStorage gelöst.
+- **V3 3:** Tätigkeiten können dokumentiert werden; daraus darf keine Expositionsdosis oder Berufskrankheitskausalität entstehen.
+- **V4 4:** Langfristige Latenz und Dokumentationszweck sind dauerhaft; kein neuer Software-Enabler.
+- **V5 3:** S: persönliche Kontrolle. W: Erinnerungsfehler. O: Unterlagen für Beratung. T/Achillesferse: ungemessene Eigenangaben werden amtlicher Historie gleichgesetzt. Anker: strikte Trennung Eigenangabe/Arbeitgebernachweis/Messwert.
+- **V6 3:** ZED-Auszug + eigene Belege → Quellenchronik → Arzt-/Beratungsvorbereitung, kein Dosisrechner.
+- **V7 3:** [DGUV ZED](https://www.dguv.de/ifa/gestis/zentrale-expositionsdatenbank-zed/index.jsp) und [Dokumente](https://www.dguv.de/ifa/gestis/zentrale-expositionsdatenbank-zed/downloads-und-dokumente/index.jsp) direkt gelesen: Beschäftigte können ihre Historie anfordern; digitales Anfrageformular vorhanden. Seit Dezember 2024 ist §10a der genannte Verordnungsanker. Keine aktuelle Lücke der Eigenchronik nachgewiesen; Rechtsnorm nicht selbst auditiert.
+- **V8 1, none:** Laufende Unterlagenpflege.
+
+**Urteil:** Needs Research, deutlich verengt. Prüfen, ob arbeitgeberübergreifende vorhandene ZED-Auszüge und Aushändigung den gewünschten Zweck bereits erfüllen; fünf Beratungsfälle mit fehlender/umstrittener Historie analysieren. Nur ein nachgewiesener Mehrwert gegenüber Auszugsanforderung plus Dateiablage rechtfertigt Fortsetzung. ZED allein tötet die Eigenangabenlücke nicht; Silasafe-Arbeitgeberverwaltung ebenso wenig.
+
+### Mauerverband-Fehlertrainer (`mauerverband-fehlertrainer`)
+
+**Origin:** Scout, Kill-Gegenprüfung · Empfänger: Bau-Ausbildungszentrum/ZDB, noch unbestätigt.
+
+- **V1 2:** Regeltrainer ist kombinatorisch bekannt; genaue didaktische Lücke nicht nachgewiesen. App-Store-Indiz spricht stark gegen breite Neuheit.
+- **V2 5:** Tier 1, interaktive Geometrie ohne Backend.
+- **V3 4:** Platzierung und regelgebundenes Feedback plausibel; fachliche Lernwirksamkeit ungeprüft.
+- **V4 3:** Dauerhafte Ausbildungsaufgabe, keine belegte neue Normlücke.
+- **V5 3:** S: unmittelbares Feedback. W: Bildschirm ersetzt Handwerk nicht. O: Fehlvorstellungen sichtbar machen. T/Achillesferse: identischer Trainer existiert oder Ausbildung braucht etwas anderes. Anker: gelabelte echte Ausbildungsfehler.
+- **V6 4:** Steingeometrie + Fehlerklassen → zehn Aufgaben mit Erklärungen → Unterrichtsdiagnostik.
+- **V7 2:** [Wobbly Blocks](https://apps.apple.com/dk/app/wobbly-blocks/id6802654169) weiter nur Suchindex, Abruf Cache-Miss; Blocklayer ist ein echter Geometrierechner, aber kein Beleg für die gesamte Lehr-/Feedbackfunktion. Keine App installiert, keine Feature-Deckung getestet.
+- **V8 4, mastery:** Eigene Lagen korrigieren kann eine klare Lernschleife ergeben.
+
+**Urteil:** Needs Research, Scout-Kill aufgehoben. Wobbly Blocks/Byxor anhand zehn vorab festgelegter Aufgaben funktional prüfen (Überbindemaß, Kreuzfugen, Endstücke, Erklärung, deutsche Regeln). Ausbildungszentrum soll fünf ungelöste Fehlvorstellungen nennen. Bei vollständiger Deckung stoppen; deutsche Übersetzung allein ist keine eigenständige Fähigkeit. Unsicherheit schützt vor voreiligem Grab, nicht vor Gegenprüfung.
+
+### Prüfung der fünf übrigen Stopps / Totenschein-Übergabe
+
+Keine Vollscorecards nötig: frühe klar abgegrenzte Stopps, nicht als weitere überlebende Ideen zählen. Bibliothekar muss Duplikate und genaue IDs vor Anlage prüfen. Für breite Wiederverwendung einmaliges Grab, kein zweites für Constraint Release.
+
+1. **maurer-staubmassnahmen-lotse** — `cause=beim-empfaenger`, `killer=behoerde`, `foundBy=empfaenger`, `origin=quelle`, `stage=kandidat`. [WINGIS](https://www.bgbau.de/themen/sicherheit-und-gesundheit/gefahrstoffe/was-ist-wingis) direkt gegengelesen: mobile gewerkspezifische Gefahrstoffhilfen/Betriebsanweisungen. OHCOW liefert zusätzlichen internationalen Gegenbeleg. Nur generischer Tätigkeits-/Schutzmaßnahmenlotse gestoppt; kein Kill des exakten Gerätesystemabgleichs. `resurrectIfDe`: Eine fachlich dokumentierte Tätigkeitsentscheidung ist durch WINGIS und vorhandene offizielle Staubhilfen nicht abgedeckt und der Empfänger bestätigt den Bedarf. `resurrectIfEn`: Reopen when a documented task decision is uncovered by WINGIS and existing official dust guidance and its intended recipient confirms the need.
+2. **nasssaege-wasserwechsel-uebergabe** — `cause=mode`, `killer=keiner`, `foundBy=englisch`, `origin=bisoziation`, `stage=kandidat`. Datierter Wasserwechsel plus unbekannter Zustand ist ein Feld einer bestehenden Geräte-Prestart-/Übergabecheckliste; die Hypothese eröffnet keine neue Fähigkeit. MapTrack ist Nachbarbeleg, nicht als exakter Funktionsklon behauptet. `resurrectIfDe`: Feldstudie belegt einen ungelösten Gerätewechsel-/Übergabefehler, den vorhandene Checklisten mit Zeitstempel nicht darstellen können. `resurrectIfEn`: Reopen when field evidence establishes a handover failure that existing timestamped equipment checklists cannot represent.
+3. **mauerlast-tageskonto** — `cause=beim-empfaenger`, `killer=behoerde`, `foundBy=deutsch`, `origin=bisoziation`, `stage=kandidat`. [BAuA LMM](https://www.baua.de/leitmerkmalmethoden) und [LMM-Multi-E](https://www.baua.de/formblatt-lmm-multi-e) Suchindex nennen Rechenhilfe über Teiltätigkeiten; Direktabruf 403. Der volle fachliche Tagesvergleich ist bereits offizieller Werkzeugzweck. Nur Zusammenfassung derselben Belastungsart; keine erfundene Mischbelastungssumme. `resurrectIfDe`: BAuA bestätigt eine notwendige Arbeitslagen-/Tätigkeitskombination, die LMM-HHT und LMM-Multi-E nicht abbilden und die fachlich valide berechnet werden kann. `resurrectIfEn`: Reopen when BAuA confirms an essential work-scenario comparison not represented by LMM-HHT or LMM-Multi-E and a valid calculation method exists.
+4. **abbruchziegel-vorentscheidung** — `cause=mode`, `killer=keiner`, `foundBy=englisch`, `origin=inversion`, `stage=kandidat`. [Gamle Mursten](https://gamlemursten.dk/en/laboratory/order-a-test-of-your-bricks/) direkt gelesen: Aufnahme von Gebäude-, Mörtel- und Umweltdaten plus reale Prüfung vorhanden. Kein vollständiger identischer Offline-Entscheidungsautomat behauptet; gestoppt wird die generische Aufnahme/Weiterleitung ohne neue Fähigkeit. DBU/TexMöFug sind Forschung und kein Beleg einer universell gelösten Trennung. `resurrectIfDe`: Wiederverwendungsakteure benennen eine konkrete ungelöste Vorentscheidung und liefern veröffentlichte validierte Daten, aus denen Software sie ohne vorgetäuschte Materialfreigabe ableiten kann. `resurrectIfEn`: Reopen when reuse practitioners identify an unmet preliminary decision and publish validated data that software can use without pretending to certify material fitness.
+5. **asbest-vorarbeits-informationscheck** — `cause=beim-empfaenger`, `killer=behoerde`, `foundBy=empfaenger`, `origin=quelle`, `stage=kandidat`. Nur generischer Fundstellen-/Informationshelfer gestoppt: [Asbesthaus](https://www.bgbau.de/service/angebote/medien-center-suche/medium/asbest-in-gebaeuden) direkt gelesen, interaktive Fundstelleninformation des gewünschten Empfängers. Kein Kill eines nie geprüften vollständigen baurechtlichen Dokumentencheckers. `resurrectIfDe`: BG BAU bestätigt eine konkrete Informationsübergabe, die Asbesthaus und bestehende Checklisten nicht unterstützen; erforderliche Daten stehen verlässlich bereit. `resurrectIfEn`: Reopen when BG BAU confirms a specific unsupported information handover beyond Asbesthaus and existing checklists and reliable required data are available.
+
+### Quellenmeldung / Grenzen
+
+QUELLE NEU: DGUV ZED Arbeitnehmerzugang | typ=A | kategorie=fachgremium | enthaelt=Expositionshistorie auf Antrag und digitales Anfrageformular; aktueller §10a-Hinweis | status=durchsucht | evidenz=seite | zugang=ja | ertrag=Needs Research quarz-arbeitsleben-pass | urls=https://www.dguv.de/ifa/gestis/zentrale-expositionsdatenbank-zed/index.jsp https://www.dguv.de/ifa/gestis/zentrale-expositionsdatenbank-zed/downloads-und-dokumente/index.jsp | note=Arbeitnehmerzugang vorhanden; Eigenchronikbedarf offen. Suchindex und Seite nennen verschiedene Excel-Stände, nicht als geprüfte Aktualität übernommen.
+QUELLE NEU: BG BAU Positivliste Mauernutfräsen 2026 | typ=A | kategorie=referenzsammlung | enthaelt=Modellkombinationen Maschine Entstauber plus Schnitttiefe | status=angekratzt | evidenz=schnipsel | zugang=teilweise | ertrag=Needs Research staubsystem-lockfile | urls=https://www.bgbau.de/fileadmin/Gisbau/Positivliste_Mauernutfr%C3%A4sen_2026_01_28.pdf | note=Index mit Daten, direkter Abruf 404; keine vierteilige Kompatibilität erfunden.
+
+**Review-Lerneffekt:** Score-Summe ist notwendig, nicht hinreichend: SOKA erreicht 25/35, doch aktueller Bedarf, Feldmapping und Empfängerwerkzeuge sind offen. Norm-/Behördenseite belegt das Verfahren, nicht automatisch den konkreten Softwareengpass. Umgekehrt rechtfertigen App-Store-Schnipsel und ein benachbarter Rechner keinen sicheren Kill einer gesamten Lernfunktion. Nächster Schritt ist gezielte Falsifikation dieser fünf Resthypothesen, keine weitere allgemeine Baustellen-App-Suche.
+
+QUELLE NEU: Faire Mobilität Rechte im Baugewerbe Januar 2025 | typ=W | kategorie=empfaenger | enthaelt=Aufforderung zur Prüfung der SOKA-Kontoauszüge, schriftlicher Korrektur und Beratung | status=durchsucht | evidenz=seite | zugang=ja | ertrag=Needs Research soka-urlaubsabgleich | urls=https://www.faire-mobilitaet.de/dgb-fm-fileadmin/dateien/Dokumente/Baugewerbe/Beratung/Ihre_Rechte_im_Baugewerbe_DE__01_25_.pdf | note=Orchestrator las S. 2 direkt; aktueller Aufgabenbeleg, keine Fallstatistik oder Werkzeuglücke.

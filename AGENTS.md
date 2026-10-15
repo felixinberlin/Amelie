@@ -177,3 +177,6 @@ Independent Labs submit producer-scoped immutable `.inbox.json` proposal receipt
 
 ## Maps cost restriction (2026-10-11)
 Google Maps Platform APIs (Places, JavaScript, Static and Embed) are disabled at Félix’s request because of cost. Do not use or re-enable them, even with existing keys or budget overrides. Verify institutions and addresses via official websites; existing coordinates and OpenStreetMap links remain usable. Re-enabling requires Félix’s explicit authorization.
+
+## Maurer-Runde (2026-10-15)
+Native Codex-Teamrunde zu Maurer/bricklayer/construction workers; keine Vertex-Entdeckungsagenten und keine Google Maps. Félix hat für diese Runde den Google-geerdeten Suchdienst ausdrücklich erlaubt (nur Suchquota; fünf Queries). Vier Methoden, 11 Engine-Prüfungen und zehn eigenständige Ideen nach einem Reuse-Doppelfund. Prüfakte: `06-suche/maurer-runde-2026-10-15.md`; **Ergebnis: fünf Needs Research, fünf eng begrenzte Gräber, keine neue Dose.** Endgültige Triage im Klassifikationslog/Prüfprotokoll. Breite Maßnahmenpläne, Ergonomierechner und Ziegel-Reuse nicht erneut als freie Felder behandeln. Der SOKA-Arbeitnehmer-Abgleich benötigt aktuellen Beratungsbedarf, Prüfung interner Werkzeuge und anonymisierte Belegpaare; historische Fälle von 2017 sind keine aktuelle Prävalenzmessung.

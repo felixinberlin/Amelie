@@ -67,6 +67,8 @@ Claude lernt nicht zwischen Chats. Dieses Dokument und `amelie-pruefprotokoll.md
 
 ## 3. Besetzungsatlas (Stand 24.09.2026)
 
+**Maurer-Nachtrag 15.10.2026:** Generischer Staubmaßnahmenlotse und Asbest-Fundstellenhilfe sind beim Empfänger BG BAU bereits abgedeckt; Tageslastvergleich trifft auf BAuA LMM-Multi-E. Generische Ziegelaufnahme und Wasserwechsel-Checklistenfelder schaffen keine neue Fähigkeit. Offen bleiben nur präzise Falsifikationen: SOKA-Belegabgleich, exakter Gerätekombinationsnachweis, Mehrschlitz-Übergabe, persönliche Eigenchronik und geprüfter Lehrtrainer. App-Store-Schnipsel oder Nachbarrechner töten keine ungetestete Lehrfunktion.
+
 Wo Ideen schnell sterben — vor dem Suchen als Vorfilter nutzen.
 
 | Feld | Zustand | Belege |
@@ -221,6 +223,7 @@ Wo Ideen schnell sterben — vor dem Suchen als Vorfilter nutzen.
 
 | Runde | Datum | Geprüft | Frei | Verengt | Unklar | Besetzt |
 |---|---|---|---|---|---|---|
+| Maurer / Bricklayer / Construction workers (native Teamrunde, 4 Methoden + unabhängiger Review) | 15.10.2026 | 10 (11 Engine-Prüfungen, Ziegelreuse-Doppelfund einmal) | 0 | 0 | 5 | 5; 0 Dose Ready, 5 Needs Research, 5 eng begrenzte Gräber; frei + verengt 0 % |
 | 1 | Sep 2026 | 19 | 8 | 7 | – | 4 |
 | 2 | 16.09.2026 | 13 | 2 | 1 | 2 | 8 |
 | 3 | 18.09.2026 | 11 (davon 2 Nachprüfungen) | 0 | 3 | 6 | 2 |
@@ -903,3 +906,11 @@ Auftrag Félix: „Do Ticket 01, make the sector packs.“ Ergebnis: Daten in `0
 - **Gelernt:** Generierte Läufe (AI Studio) kamen als Lab-Batches durch. Lab-Batches nur annehmen, wenn Rohantworten archiviert sind und Stichproben-URLs auflösen.
 - **Fehler:** Der Eingang prüfte Form (Manifest, Hash), nicht Herkunft: ein Receipt beweist, dass eine Datei unverändert ist, nicht, dass jemand die Suche ausgeführt hat.
 - **Nächstes Mal:** Vor dem Intake je Batch 3 bis 5 zitierte URLs abrufen und die Rohantwort-Datei verlangen; ohne beides `received` lassen.
+
+
+### Retro: Maurer / Bricklayer / Construction workers — 15.10.2026
+
+- **Erledigt:** Vier Entdeckungsmethoden, 11 Prüfungen auf 10 Zuschnitte verdichtet, ein Doppelfund Ziegelreuse. Unabhängiger Review: 5 unklar, 5 besetzt, 0 frei/verengt; 0 Dose Ready, 5 Needs Research, 5 eng begrenzte Gräber. Alle zehn im Prüfprotokoll; Quellenmeldungen URL-dedupliziert und Q1–Q6 bewertet. Keine Vertex-Entdeckungsagenten und keine Maps; fünf autorisierte Google-geerdete Suchqueries zusätzlich zu WebSearch, keine Empfänger angeschrieben.
+- **Gelernt:** 25/35 ist kein Packauftrag: SOKA fehlen aktuelle Fälle, Feldmapping und Empfänger-Werkzeugabgleich. Ein Regelwerk oder Behördenmandat belegt noch keinen Softwareengpass. Materialienforschung schafft ohne belegte Arbeitslücke keine Softwareidee.
+- **Fehler/Grenzen:** Scout-Kill des Lehrtrainers aufgehoben: Store-Schnipsel ungetestet, Geometrierechner kein voller Didaktikbeleg. Behinderte PDF-/Normabrufe bleiben Schnipsel; Interview 2017 keine aktuelle Prävalenzstudie. Förderprojektlisten nur gezielt gesucht, nicht vollständig erhoben.
+- **Nächstes Mal:** Zuerst SOKA mit zehn gelabelten anonymisierten Dokumentpaaren und drei legitimen Differenztypen falsifizieren; bestehende interne Beratungstools prüfen. Danach zehn echte Gerätekombinationen einschließlich Zubehör gegen BG-Suche halten. Mehrschlitz braucht reale Übergabefälle/Normrechte; Quarz braucht fünf fehlende-Historie-Fälle; Trainer braucht zehn App-Gegenaufgaben und fünf ungelöste Fehlvorstellungen. Kein Scaffolding als Ersatz für fehlenden Bedarf.

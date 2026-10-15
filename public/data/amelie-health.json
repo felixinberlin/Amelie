@@ -1,13 +1,13 @@
 {
   "auditVersion": 1,
-  "generatedAt": "2026-10-14T12:46:05.957Z",
+  "generatedAt": "2026-10-15T07:48:40.928Z",
   "repository": {
-    "commit": "ca3aa98f",
+    "commit": "a8f40ad4",
     "branch": "main"
   },
   "inventory": {
     "doses": 47,
-    "graves": 149,
+    "graves": 154,
     "demos": 14,
     "researchEntries": 36,
     "candidateIdeas": 20,
@@ -35,10 +35,10 @@
     },
     "graveCategory": {
       "gebaut": 74,
-      "beim-empfaenger": 29,
+      "beim-empfaenger": 32,
       "reality-check": 18,
       "duplikat": 2,
-      "mode": 8,
+      "mode": 10,
       "praemisse": 18
     }
   },
@@ -151,11 +151,11 @@
       "id": "DRIFT-AGENTS.md-Gräber-58",
       "severity": "warning",
       "category": "documentation",
-      "message": "AGENTS.md claims 58 Gräber, but deterministic source scanner finds 149.",
+      "message": "AGENTS.md claims 58 Gräber, but deterministic source scanner finds 154.",
       "file": "AGENTS.md",
       "details": {
         "claim": "58 beerdigte Ideen",
-        "actual": 149,
+        "actual": 154,
         "type": "stale_count"
       }
     },
@@ -163,11 +163,11 @@
       "id": "DRIFT-AGENTS.md-Gräber-9",
       "severity": "warning",
       "category": "documentation",
-      "message": "AGENTS.md claims 9 Gräber, but deterministic source scanner finds 149.",
+      "message": "AGENTS.md claims 9 Gräber, but deterministic source scanner finds 154.",
       "file": "AGENTS.md",
       "details": {
         "claim": "9 Gräber",
-        "actual": 149,
+        "actual": 154,
         "type": "stale_count"
       }
     },

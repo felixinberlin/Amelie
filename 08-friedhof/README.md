@@ -54,28 +54,28 @@ Die Ursachen genauer:
 
 *Automatisch erzeugt aus `src/data/graeber.json` (`DISCARDED_DATA`) mit `npm run friedhof` (läuft nach `npm run bib -- grab add` von selbst). Nicht von Hand bearbeiten — `npm run lint` meldet Abweichungen.*
 
-**149 Gräber.** 3 davon starben erst als Dose oder Mail-Entwurf (teure Tode). Von 139 dokumentierten Fundwegen kamen 16 ohne neue Suche aus (eigener Atlas, eigenes Protokoll oder Reality-Check) — 12 %.
+**154 Gräber.** 3 davon starben erst als Dose oder Mail-Entwurf (teure Tode). Von 144 dokumentierten Fundwegen kamen 16 ohne neue Suche aus (eigener Atlas, eigenes Protokoll oder Reality-Check) — 11 %.
 
 **Woran sie starben**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Schon gebaut | 74 | 50 % |
-| Beim Empfänger selbst | 29 | 19 % |
+| Schon gebaut | 74 | 48 % |
+| Beim Empfänger selbst | 32 | 21 % |
 | Falsche Prämisse | 18 | 12 % |
 | Reality-Check | 18 | 12 % |
-| Keine neue Fähigkeit | 8 | 5 % |
+| Keine neue Fähigkeit | 10 | 6 % |
 | Duplikat | 2 | 1 % |
 
 **Welche Suche traf**
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Deutsche Suche | 63 | 42 % |
-| Englische Suche | 42 | 28 % |
-| Empfänger-Suche | 17 | 11 % |
+| Deutsche Suche | 64 | 42 % |
+| Englische Suche | 44 | 29 % |
+| Empfänger-Suche | 19 | 12 % |
 | Ohne Suche | 12 | 8 % |
-| Nicht dokumentiert | 10 | 7 % |
+| Nicht dokumentiert | 10 | 6 % |
 | Eigener Atlas / Protokoll | 4 | 3 % |
 | Forum / Nische | 1 | 1 % |
 
@@ -83,10 +83,10 @@ Die Ursachen genauer:
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Bisoziation | 63 | 42 % |
-| Primärquelle | 40 | 27 % |
-| Inversion | 18 | 12 % |
-| Brainstorm | 16 | 11 % |
+| Bisoziation | 65 | 42 % |
+| Primärquelle | 42 | 27 % |
+| Inversion | 19 | 12 % |
+| Brainstorm | 16 | 10 % |
 | Ideenliste | 8 | 5 % |
 | Modell-Katalog | 4 | 3 % |
 
@@ -94,10 +94,10 @@ Die Ursachen genauer:
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Firma | 41 | 28 % |
-| Niemand | 29 | 19 % |
+| Firma | 41 | 27 % |
+| Niemand | 31 | 20 % |
 | Forschung | 26 | 17 % |
-| Behörde | 20 | 13 % |
+| Behörde | 23 | 15 % |
 | Gemeinnützige | 20 | 13 % |
 | Community / Indie | 11 | 7 % |
 | Eigener Bestand | 2 | 1 % |
@@ -106,7 +106,7 @@ Die Ursachen genauer:
 
 | | Gräber | Anteil |
 |---|---:|---:|
-| Kandidat | 146 | 98 % |
+| Kandidat | 151 | 98 % |
 | Dose gepackt | 2 | 1 % |
 | Mail entworfen | 1 | 1 % |
 
@@ -114,6 +114,11 @@ Die Ursachen genauer:
 
 | Idee | † | Ursache | Wer sie hatte | Gefunden durch | Herkunft | Kam bis | Auferstehung wenn |
 |---|---|---|---|---|---|---|---|
+| Generische Abbruchziegel-Vorentscheidung | 15.10.2026 | Keine neue Fähigkeit | Niemand | Englische Suche | Inversion | Kandidat | Wiederverwendungsakteure benennen eine konkrete ungelöste Vorentscheidung und liefern veröffentlichte validierte Daten, aus denen Software sie ohne vorgetäuschte Materialfreigabe ableiten kann. |
+| Generischer Asbest-Vorarbeits-Informationscheck | 15.10.2026 | Beim Empfänger selbst | Behörde | Empfänger-Suche | Primärquelle | Kandidat | BG BAU bestätigt eine konkrete Informationsübergabe, die Asbesthaus und bestehende Checklisten nicht unterstützen; erforderliche Daten stehen verlässlich bereit. |
+| Generischer Staubmaßnahmen-Lotse | 15.10.2026 | Beim Empfänger selbst | Behörde | Empfänger-Suche | Primärquelle | Kandidat | Eine fachlich dokumentierte Tätigkeitsentscheidung ist durch WINGIS und vorhandene offizielle Staubhilfen nicht abgedeckt und der Empfänger bestätigt den Bedarf. |
+| Mauerlast-Tageskonto | 15.10.2026 | Beim Empfänger selbst | Behörde | Deutsche Suche | Bisoziation | Kandidat | BAuA bestätigt eine notwendige Arbeitslagen-/Tätigkeitskombination, die LMM-HHT und LMM-Multi-E nicht abbilden und die fachlich valide berechnet werden kann. |
+| Nasssäge-Wasserwechsel-Übergabe | 15.10.2026 | Keine neue Fähigkeit | Niemand | Englische Suche | Bisoziation | Kandidat | Feldstudie belegt einen ungelösten Gerätewechsel-/Übergabefehler, den vorhandene Checklisten mit Zeitstempel nicht darstellen können. |
 | Elektroschrott-Demontage-Lotse | 11.10.2026 | Schon gebaut | Forschung | Deutsche Suche | Primärquelle | Kandidat | Wenn offene Standards für handgeführte Demontage-Assistenz bei Reparatur-Initiativen entstehen. |
 | Adaptive, risikobasierte Audit-Planung für Holz-CoC | 01.10.2026 | Schon gebaut | Firma | Englische Suche | Bisoziation | Kandidat | Wenn FSC oder PEFC eine offene, risikobasierte Audit-Planung für kleine Zertifikatsinhaber suchen. |
 | CE/DoP-Scanner für Stahlprodukte (Leistungserklärung gegen Projektanforderung) | 01.10.2026 | Beim Empfänger selbst | Gemeinnützige | Empfänger-Suche | Inversion | Kandidat | Wenn nach Inkrafttreten des DPP für Bauprodukte (CPR 2024/3110) kein freier Leser existiert, der DoPC-Werte gegen ein Leistungsverzeichnis hält, und ein Aparejadores-Kollegium danach fragt. |

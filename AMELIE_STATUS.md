@@ -1,11 +1,11 @@
 # Amélie Status
 
-Generated: 2026-10-14T12:46:05.957Z
+Generated: 2026-10-15T07:48:40.928Z
 
 ## System
 
 * Dosen: 47
-* Gräber: 149
+* Gräber: 154
 * Demos: 14
 * Books: 53
 * Research entries: 36
@@ -22,10 +22,10 @@ Generated: 2026-10-14T12:46:05.957Z
 
 | Category | Count |
 |---|---:|
-| beim-empfaenger | 29 |
+| beim-empfaenger | 32 |
 | duplikat | 2 |
 | gebaut | 74 |
-| mode | 8 |
+| mode | 10 |
 | praemisse | 18 |
 | reality-check | 18 |
 
@@ -54,8 +54,8 @@ Generated: 2026-10-14T12:46:05.957Z
 * **[DEMO-UNLINKED-europe-bird-migration]** Demo folder "07-demos/europe-bird-migration" does not correspond to any active Dose or Grave ID. (07-demos/europe-bird-migration)
 * **[DRIFT-AGENTS.md-Dosen-44]** AGENTS.md claims 44 Dosen, but deterministic source scanner finds 47. (AGENTS.md)
 * **[DRIFT-AGENTS.md-Dosen-6]** AGENTS.md claims 6 Dosen, but deterministic source scanner finds 47. (AGENTS.md)
-* **[DRIFT-AGENTS.md-Gräber-58]** AGENTS.md claims 58 Gräber, but deterministic source scanner finds 149. (AGENTS.md)
-* **[DRIFT-AGENTS.md-Gräber-9]** AGENTS.md claims 9 Gräber, but deterministic source scanner finds 149. (AGENTS.md)
+* **[DRIFT-AGENTS.md-Gräber-58]** AGENTS.md claims 58 Gräber, but deterministic source scanner finds 154. (AGENTS.md)
+* **[DRIFT-AGENTS.md-Gräber-9]** AGENTS.md claims 9 Gräber, but deterministic source scanner finds 154. (AGENTS.md)
 * **[DRIFT-en/README.md-Dosen-15]** en/README.md claims 15 Dosen, but deterministic source scanner finds 47. (en/README.md)
 * **[DRIFT-README.de.md-Dosen-14]** README.de.md claims 14 Dosen, but deterministic source scanner finds 47. (README.de.md)
 * **[DRIFT-README.md-Dosen-14]** README.md claims 14 Dosen, but deterministic source scanner finds 47. (README.md)
@@ -67,5 +67,5 @@ None.
 ## Generated from
 
 * Audit version: 1
-* Commit: ca3aa98f
+* Commit: a8f40ad4
 * Branch: main

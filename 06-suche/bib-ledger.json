@@ -1226,6 +1226,312 @@
         "src/data/candidateVectors.json": "sha256:b1584659a91b5625577433fc6f05ed9bcb300e95b215f12029d6b79d136a239c",
         "src/data/vectorChanges.json": "sha256:7713e34a6b9cd539c2d581109bc53f40f97495968d6358ce51d8995bd4405b79"
       }
+    },
+    "masonry-20261015-memory": {
+      "plan_id": "masonry-20261015-memory",
+      "actor": "bibliothekar",
+      "agent": "bibliothekar",
+      "runde": "Maurer-Runde 15.10.2026",
+      "at": "2026-10-15T07:46:16.527Z",
+      "ops": [
+        {
+          "index": 0,
+          "op": "grave.add",
+          "target": "asbest-vorarbeits-informationscheck"
+        },
+        {
+          "index": 1,
+          "op": "grave.add",
+          "target": "abbruchziegel-vorentscheidung"
+        },
+        {
+          "index": 2,
+          "op": "grave.add",
+          "target": "mauerlast-tageskonto"
+        },
+        {
+          "index": 3,
+          "op": "grave.add",
+          "target": "nasssaege-wasserwechsel-uebergabe"
+        },
+        {
+          "index": 4,
+          "op": "grave.add",
+          "target": "maurer-staubmassnahmen-lotse"
+        },
+        {
+          "index": 5,
+          "op": "protokoll.add",
+          "target": "mauerwerk-mehrschlitz-vorpruefung"
+        },
+        {
+          "index": 6,
+          "op": "protokoll.add",
+          "target": "maurer-staubmassnahmen-lotse"
+        },
+        {
+          "index": 7,
+          "op": "protokoll.add",
+          "target": "mauerverband-fehlertrainer"
+        },
+        {
+          "index": 8,
+          "op": "protokoll.add",
+          "target": "soka-urlaubsabgleich"
+        },
+        {
+          "index": 9,
+          "op": "protokoll.add",
+          "target": "quarz-arbeitsleben-pass"
+        },
+        {
+          "index": 10,
+          "op": "protokoll.add",
+          "target": "abbruchziegel-vorentscheidung"
+        },
+        {
+          "index": 11,
+          "op": "protokoll.add",
+          "target": "staubsystem-lockfile"
+        },
+        {
+          "index": 12,
+          "op": "protokoll.add",
+          "target": "nasssaege-wasserwechsel-uebergabe"
+        },
+        {
+          "index": 13,
+          "op": "protokoll.add",
+          "target": "mauerlast-tageskonto"
+        },
+        {
+          "index": 14,
+          "op": "protokoll.add",
+          "target": "asbest-vorarbeits-informationscheck"
+        }
+      ],
+      "files": [
+        "06-suche/amelie-pruefprotokoll.md",
+        "08-friedhof/README.md",
+        "AMELIE_STATUS.md",
+        "public/data/amelie-health.json",
+        "public/data/amelie-ideas.json",
+        "src/data/graeber.json"
+      ],
+      "hashes": {
+        "src/data/quellen.json": "sha256:35143343b901a7fae0ab436d00a48ea4d290f0482282578a19cf07d0d2023286",
+        "src/data/graeber.json": "sha256:06fdffe3d9cba6a9698d9ff4cbf1fb44efd9616663fa36273bdb42aba411be95",
+        "06-suche/amelie-pruefprotokoll.md": "sha256:8b220ee66f9097c2142747c8e1feda7921a73ac3c14720d1179550d66567b996",
+        "06-suche/terminology-map.md": "absent",
+        "06-suche/open-questions.md": "absent",
+        "src/data/doseVectors.json": "sha256:bc224ae81695813b22d51733a926ff21b40947792af96da51635105a26f2c5b5",
+        "src/data/candidateVectors.json": "sha256:d2a2fdc9ed9db5847d4493f2d8a2a5750579a9130f6d267e887da3d5dcd753d3",
+        "src/data/vectorChanges.json": "sha256:7713e34a6b9cd539c2d581109bc53f40f97495968d6358ce51d8995bd4405b79"
+      }
+    },
+    "masonry-20261015-source-ratings": {
+      "plan_id": "masonry-20261015-source-ratings",
+      "actor": "bibliothekar",
+      "agent": "bibliothekar",
+      "runde": "Maurer-Runde 15.10.2026",
+      "at": "2026-10-15T07:46:46.757Z",
+      "ops": [
+        {
+          "index": 0,
+          "op": "source.rate",
+          "target": "bg-bau-wingis"
+        },
+        {
+          "index": 1,
+          "op": "source.rate",
+          "target": "ohcow-silica-control-tool"
+        },
+        {
+          "index": 2,
+          "op": "source.rate",
+          "target": "dgfm-geschaeftsstelle"
+        },
+        {
+          "index": 3,
+          "op": "source.rate",
+          "target": "kalksandstein-statikhandbuch-schlitze"
+        },
+        {
+          "index": 4,
+          "op": "source.rate",
+          "target": "ziegellexikon-ausfuehrung"
+        },
+        {
+          "index": 5,
+          "op": "source.rate",
+          "target": "blocklayer-brick-gauge"
+        },
+        {
+          "index": 6,
+          "op": "source.rate",
+          "target": "wobbly-blocks-und-byxor-vlet"
+        },
+        {
+          "index": 7,
+          "op": "source.rate",
+          "target": "dbu-mauerwerk-lehmduennbettmoertel-40089"
+        },
+        {
+          "index": 8,
+          "op": "source.rate",
+          "target": "dbu-schrumpfschaeden-plattform-40517"
+        },
+        {
+          "index": 9,
+          "op": "source.rate",
+          "target": "fraunhofer-ibp-mauerwerksabbruch"
+        },
+        {
+          "index": 10,
+          "op": "source.rate",
+          "target": "hse-cis69-on-tool-extraction"
+        },
+        {
+          "index": 11,
+          "op": "source.rate",
+          "target": "bg-etem-abgestimmte-staubarme-systeme"
+        },
+        {
+          "index": 12,
+          "op": "source.rate",
+          "target": "bg-bau-expo-matrix"
+        },
+        {
+          "index": 13,
+          "op": "source.rate",
+          "target": "hse-mac-interaktives-score-sheet"
+        },
+        {
+          "index": 14,
+          "op": "source.rate",
+          "target": "baua-leitmerkmalmethoden-rechenhilfen"
+        },
+        {
+          "index": 15,
+          "op": "source.rate",
+          "target": "soka-bau-arbeitnehmerkontoauszug"
+        },
+        {
+          "index": 16,
+          "op": "source.rate",
+          "target": "faire-mobilitaet-soka-fallberatung"
+        },
+        {
+          "index": 17,
+          "op": "source.rate",
+          "target": "bg-bau-staub-expositionsermittlung"
+        },
+        {
+          "index": 18,
+          "op": "source.rate",
+          "target": "silasafe-expositionsverwaltung"
+        },
+        {
+          "index": 19,
+          "op": "source.rate",
+          "target": "concular-lrs-aachen-ziegelreuse"
+        },
+        {
+          "index": 20,
+          "op": "source.rate",
+          "target": "texmoefug-separable-masonry-joints"
+        },
+        {
+          "index": 21,
+          "op": "source.rate",
+          "target": "gamle-mursten-laboratory-brick-testing"
+        },
+        {
+          "index": 22,
+          "op": "source.rate",
+          "target": "bg-bau-asbesthaus"
+        },
+        {
+          "index": 23,
+          "op": "source.rate",
+          "target": "bg-bau-asbest-guidance-2026"
+        },
+        {
+          "index": 24,
+          "op": "source.rate",
+          "target": "tu-graz-re-use-ziegelwand-2026"
+        },
+        {
+          "index": 25,
+          "op": "source.rate",
+          "target": "boku-historical-brick-reuse-research"
+        },
+        {
+          "index": 26,
+          "op": "source.rate",
+          "target": "dguv-zed-arbeitnehmerzugang"
+        },
+        {
+          "index": 27,
+          "op": "source.rate",
+          "target": "bg-bau-positivliste-mauernutfraesen-2026"
+        }
+      ],
+      "files": [
+        "06-suche/amelie-quellen.md",
+        "AMELIE_STATUS.md",
+        "public/data/amelie-health.json",
+        "public/data/amelie-ideas.json",
+        "public/data/quellen.json",
+        "src/data/quellen.json"
+      ],
+      "hashes": {
+        "src/data/quellen.json": "sha256:280c6ed5c5416aaa7f5c6671c4669bd771ba841f187d0de3f39e9f0a8a306ded",
+        "src/data/graeber.json": "sha256:06fdffe3d9cba6a9698d9ff4cbf1fb44efd9616663fa36273bdb42aba411be95",
+        "06-suche/amelie-pruefprotokoll.md": "sha256:e39f00f8e06ca57cdd7af289492840e471120e49033f9eef277fae4b49921ca4",
+        "06-suche/terminology-map.md": "absent",
+        "06-suche/open-questions.md": "absent",
+        "src/data/doseVectors.json": "sha256:bc224ae81695813b22d51733a926ff21b40947792af96da51635105a26f2c5b5",
+        "src/data/candidateVectors.json": "sha256:d2a2fdc9ed9db5847d4493f2d8a2a5750579a9130f6d267e887da3d5dcd753d3",
+        "src/data/vectorChanges.json": "sha256:7713e34a6b9cd539c2d581109bc53f40f97495968d6358ce51d8995bd4405b79"
+      }
+    },
+    "masonry-20261015-grave-source-links": {
+      "plan_id": "masonry-20261015-grave-source-links",
+      "actor": "bibliothekar",
+      "agent": "bibliothekar",
+      "runde": "Maurer-Runde 15.10.2026",
+      "at": "2026-10-15T07:47:26.640Z",
+      "ops": [
+        {
+          "index": 0,
+          "op": "source.log",
+          "target": "bg-bau-asbesthaus"
+        },
+        {
+          "index": 1,
+          "op": "source.log",
+          "target": "gamle-mursten-laboratory-brick-testing"
+        }
+      ],
+      "files": [
+        "06-suche/amelie-quellen.md",
+        "AMELIE_STATUS.md",
+        "public/data/amelie-health.json",
+        "public/data/amelie-ideas.json",
+        "public/data/quellen.json",
+        "src/data/quellen.json"
+      ],
+      "hashes": {
+        "src/data/quellen.json": "sha256:ce7670f29968a11300d11fcc87c50a71dd62b481124b27298eb570696ad7347b",
+        "src/data/graeber.json": "sha256:06fdffe3d9cba6a9698d9ff4cbf1fb44efd9616663fa36273bdb42aba411be95",
+        "06-suche/amelie-pruefprotokoll.md": "sha256:e39f00f8e06ca57cdd7af289492840e471120e49033f9eef277fae4b49921ca4",
+        "06-suche/terminology-map.md": "absent",
+        "06-suche/open-questions.md": "absent",
+        "src/data/doseVectors.json": "sha256:bc224ae81695813b22d51733a926ff21b40947792af96da51635105a26f2c5b5",
+        "src/data/candidateVectors.json": "sha256:d2a2fdc9ed9db5847d4493f2d8a2a5750579a9130f6d267e887da3d5dcd753d3",
+        "src/data/vectorChanges.json": "sha256:7713e34a6b9cd539c2d581109bc53f40f97495968d6358ce51d8995bd4405b79"
+      }
     }
   }
 }

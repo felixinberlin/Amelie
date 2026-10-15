@@ -18359,6 +18359,1727 @@
           "status": "angekratzt"
         }
       ]
+    },
+    {
+      "id": "bg-bau-wingis",
+      "name": "BG BAU WINGIS",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.bgbau.de/themen/sicherheit-und-gesundheit/gefahrstoffe/was-ist-wingis"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Mobile Gefahrstoffinformation und Betriebsanweisungen in 17 Sprachen sowie gewerkespezifische Module",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "maurer-staubmassnahmen-lotse"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          2,
+          5,
+          5,
+          1,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Empfänger baut wesentliche Funktion bereits selbst.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Vektoren bewertet [2 2 5 5 1 3]: Maurer-Runde: Q1 dokumentierter Prüf-/Stoppertrag ohne Dose; Q2 offener Rest bei Forschung/Empfänger; Q3/Q4 nach tatsächlich berichtetem Zugang/Volltext, Q5 begrenzte Neuheitslage, Q6 institutioneller Anschluss.",
+          "planId": "masonry-20261015-source-ratings"
+        }
+      ]
+    },
+    {
+      "id": "ohcow-silica-control-tool",
+      "name": "OHCOW Silica Control Tool",
+      "typ": "H",
+      "kategorie": "auslandsregulierung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.ohcow.on.ca/occupational-illness/silica-control-tool-ontario/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Ontario-spezifische Expositionsabschätzung und Maßnahmenplan für Bauarbeiten mit kristallinem Silika",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "maurer-staubmassnahmen-lotse"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          2,
+          5,
+          5,
+          1,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Aktuelle kostenlose mobile Anwendung; Übertragung der Messmodelle nach Deutschland nicht belegt.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Vektoren bewertet [2 2 5 5 1 3]: Maurer-Runde: Q1 dokumentierter Prüf-/Stoppertrag ohne Dose; Q2 offener Rest bei Forschung/Empfänger; Q3/Q4 nach tatsächlich berichtetem Zugang/Volltext, Q5 begrenzte Neuheitslage, Q6 institutioneller Anschluss.",
+          "planId": "masonry-20261015-source-ratings"
+        }
+      ]
+    },
+    {
+      "id": "dgfm-geschaeftsstelle",
+      "name": "DGfM Geschäftsstelle",
+      "typ": "W",
+      "kategorie": "empfaenger",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.dgfm.de/verband/geschaeftsstelle"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Offizielle Mandats- und Kontaktnennung Geschäftsführer RA Christian Bruch",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "mauerwerk-mehrschlitz-vorpruefung"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          5,
+          5,
+          3,
+          5
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Person verifiziert; Softwareauftrag und konkreter Bedarf nicht belegt.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Vektoren bewertet [2 3 5 5 3 5]: Maurer-Runde: Q1 dokumentierter Prüf-/Stoppertrag ohne Dose; Q2 offener Rest bei Forschung/Empfänger; Q3/Q4 nach tatsächlich berichtetem Zugang/Volltext, Q5 begrenzte Neuheitslage, Q6 institutioneller Anschluss.",
+          "planId": "masonry-20261015-source-ratings"
+        }
+      ]
+    },
+    {
+      "id": "kalksandstein-statikhandbuch-schlitze",
+      "name": "Kalksandstein Statikhandbuch Schlitze",
+      "typ": "A",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.kalksandstein.de/media/08_downloadcenter/01_statikhandbuch_geschuetzt.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "teilweise",
+        "wie": ""
+      },
+      "enthaelt": "Tabellen und Nebenbedingungen für Schlitze und Aussparungen in Mauerwerk",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "mauerwerk-mehrschlitz-vorpruefung"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          2,
+          2,
+          3,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "PDF öffnet mit 216 Seiten; relevanten Abschnitt nicht am Volltext lokalisiert und aktuellen Normstand nicht geprüft.",
+          "status": "angekratzt"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Vektoren bewertet [2 3 2 2 3 3]: Maurer-Runde: Q1 dokumentierter Prüf-/Stoppertrag ohne Dose; Q2 offener Rest bei Forschung/Empfänger; Q3/Q4 nach tatsächlich berichtetem Zugang/Volltext, Q5 begrenzte Neuheitslage, Q6 institutioneller Anschluss.",
+          "planId": "masonry-20261015-source-ratings"
+        }
+      ]
+    },
+    {
+      "id": "ziegellexikon-ausfuehrung",
+      "name": "Ziegellexikon Ausführung",
+      "typ": "A",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.ziegel.de/sites/default/files/2023-08/Ziegellexikon_2020_0.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "teilweise",
+        "wie": ""
+      },
+      "enthaelt": "Ausführungsregeln einschließlich Schlitzen und Aussparungen",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "mauerwerk-mehrschlitz-vorpruefung"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          2,
+          2,
+          3,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Suchindex liefert Abschnitt 9; direkter Abruf ergab 404.",
+          "status": "angekratzt"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Vektoren bewertet [2 3 2 2 3 3]: Maurer-Runde: Q1 dokumentierter Prüf-/Stoppertrag ohne Dose; Q2 offener Rest bei Forschung/Empfänger; Q3/Q4 nach tatsächlich berichtetem Zugang/Volltext, Q5 begrenzte Neuheitslage, Q6 institutioneller Anschluss.",
+          "planId": "masonry-20261015-source-ratings"
+        }
+      ]
+    },
+    {
+      "id": "blocklayer-brick-gauge",
+      "name": "Blocklayer Brick Gauge",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.blocklayer.com/brick-gauge"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Interaktive freie Verband- und Fugenrechnung mit Endstücken",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "mauerverband-fehlertrainer"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          5,
+          5,
+          3,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Geometrischer Kern bereits als Webwerkzeug vorhanden.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Vektoren bewertet [2 3 5 5 3 3]: Maurer-Runde: Q1 dokumentierter Prüf-/Stoppertrag ohne Dose; Q2 offener Rest bei Forschung/Empfänger; Q3/Q4 nach tatsächlich berichtetem Zugang/Volltext, Q5 begrenzte Neuheitslage, Q6 institutioneller Anschluss.",
+          "planId": "masonry-20261015-source-ratings"
+        }
+      ]
+    },
+    {
+      "id": "wobbly-blocks-und-byxor-vlet",
+      "name": "Wobbly Blocks und Byxor Vlet",
+      "typ": "L",
+      "kategorie": "bildung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://apps.apple.com/dk/app/wobbly-blocks/id6802654169",
+        "https://apps.apple.com/co/app/byxor-vlet/id6815691126"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "teilweise",
+        "wie": ""
+      },
+      "enthaelt": "Indie-Apps für Mauerwerksverbände mit Übungen und Fehlerkatalog",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "mauerverband-fehlertrainer"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          2,
+          2,
+          3,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Store-Suchindex beschreibt genaue Kandidatenfunktion; Direktabruf Cache-Miss und keine Installation.",
+          "status": "angekratzt"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Vektoren bewertet [2 3 2 2 3 3]: Maurer-Runde: Q1 dokumentierter Prüf-/Stoppertrag ohne Dose; Q2 offener Rest bei Forschung/Empfänger; Q3/Q4 nach tatsächlich berichtetem Zugang/Volltext, Q5 begrenzte Neuheitslage, Q6 institutioneller Anschluss.",
+          "planId": "masonry-20261015-source-ratings"
+        }
+      ]
+    },
+    {
+      "id": "dbu-mauerwerk-lehmduennbettmoertel-40089",
+      "name": "DBU Mauerwerk Lehmdünnbettmörtel 40089",
+      "typ": "D",
+      "kategorie": "foerderung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.dbu.de/projektdatenbank/40089-01/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Geförderte Rückgewinnung und Wiederverwendung von Mauerwerk beim Dachverband Lehm",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "abbruchziegel-vorentscheidung"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          5,
+          5,
+          1,
+          5
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Laufendes Projekt 2025 bis 2027; Zirkularität nicht pauschal frei.; Primaerseite gelesen; Dachverband Lehm als Projekttraeger; bestehendes Forschungsmandat, keine neue Softwareluecke behauptet.; Research project does not establish generally available validated capability.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Vektoren bewertet [2 3 5 5 1 5]: Maurer-Runde: Q1 dokumentierter Prüf-/Stoppertrag ohne Dose; Q2 offener Rest bei Forschung/Empfänger; Q3/Q4 nach tatsächlich berichtetem Zugang/Volltext, Q5 begrenzte Neuheitslage, Q6 institutioneller Anschluss.",
+          "planId": "masonry-20261015-source-ratings"
+        }
+      ]
+    },
+    {
+      "id": "dbu-schrumpfschaeden-plattform-40517",
+      "name": "DBU Schrumpfschäden Plattform 40517",
+      "typ": "D",
+      "kategorie": "foerderung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.dbu.de/projektdatenbank/40517-01/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Interaktive Erfassungsplattform für klimabedingte Schrumpfschäden an historischen Gebäuden",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          2,
+          2,
+          1,
+          5
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Vorfilter gegen generischen Rissschaden-Sammler.",
+          "status": "angekratzt"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Vektoren bewertet [2 3 2 2 1 5]: Maurer-Runde: Q1 dokumentierter Prüf-/Stoppertrag ohne Dose; Q2 offener Rest bei Forschung/Empfänger; Q3/Q4 nach tatsächlich berichtetem Zugang/Volltext, Q5 begrenzte Neuheitslage, Q6 institutioneller Anschluss.",
+          "planId": "masonry-20261015-source-ratings"
+        }
+      ]
+    },
+    {
+      "id": "fraunhofer-ibp-mauerwerksabbruch",
+      "name": "Fraunhofer IBP Mauerwerksabbruch",
+      "typ": "I",
+      "kategorie": "messverfahren",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.ibp.fraunhofer.de/de/kompetenzen/mineralische-werkstoffe-baustoffrecycling/mineralische-rohstoffe-rezyklate/mauerwerksabbruch.html"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "EDF-Trennung optische Sortierung ENSUBA und offizielle Forschungsansprechpartner",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          2,
+          5,
+          5,
+          1,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Gips und Ziegeltrennung sind aktive technische Forschungsfelder statt Smartphone-Fotodiagnose.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Vektoren bewertet [2 2 5 5 1 3]: Maurer-Runde: Q1 dokumentierter Prüf-/Stoppertrag ohne Dose; Q2 offener Rest bei Forschung/Empfänger; Q3/Q4 nach tatsächlich berichtetem Zugang/Volltext, Q5 begrenzte Neuheitslage, Q6 institutioneller Anschluss.",
+          "planId": "masonry-20261015-source-ratings"
+        }
+      ]
+    },
+    {
+      "id": "hse-cis69-on-tool-extraction",
+      "name": "HSE CIS69 on-tool extraction",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.hse.gov.uk/pubns/cis69.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Auswahl und Zusammenspiel Werkzeug Haube Schlauch Entstauber",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "staubsystem-lockfile"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          5,
+          5,
+          3,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Direktes PDF gelesen; vier Komponenten, keine Kompatibilitätsdatenbank.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Vektoren bewertet [2 3 5 5 3 3]: Maurer-Runde: Q1 dokumentierter Prüf-/Stoppertrag ohne Dose; Q2 offener Rest bei Forschung/Empfänger; Q3/Q4 nach tatsächlich berichtetem Zugang/Volltext, Q5 begrenzte Neuheitslage, Q6 institutioneller Anschluss.",
+          "planId": "masonry-20261015-source-ratings"
+        }
+      ]
+    },
+    {
+      "id": "bg-etem-abgestimmte-staubarme-systeme",
+      "name": "BG ETEM abgestimmte staubarme Systeme",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://etem.bgetem.de/4.2024/etem/emissionsarmes-verfahren-fuer-das-dosensenken"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Normtest gebundener Kombinationen und Hinweis auf BG-BAU-Positivliste",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "staubsystem-lockfile"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          5,
+          5,
+          3,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "HTML gelesen; Positivliste selbst nicht erreichbar.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Vektoren bewertet [2 3 5 5 3 3]: Maurer-Runde: Q1 dokumentierter Prüf-/Stoppertrag ohne Dose; Q2 offener Rest bei Forschung/Empfänger; Q3/Q4 nach tatsächlich berichtetem Zugang/Volltext, Q5 begrenzte Neuheitslage, Q6 institutioneller Anschluss.",
+          "planId": "masonry-20261015-source-ratings"
+        }
+      ]
+    },
+    {
+      "id": "bg-bau-expo-matrix",
+      "name": "BG BAU Expo-Matrix",
+      "typ": "A",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.bgbau.de/fileadmin/Themen/Arbeitsschutz/Expo-Matrix.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Staubexpositionen nach Tätigkeit und Schutzmaßnahmen",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "nasssaege-wasserwechsel-uebergabe"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          2,
+          5,
+          5,
+          1,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "PDF gelesen, Stand 2015; Quellenalter sichtbar halten, kein aktueller Grenzwertrechner.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Vektoren bewertet [2 2 5 5 1 3]: Maurer-Runde: Q1 dokumentierter Prüf-/Stoppertrag ohne Dose; Q2 offener Rest bei Forschung/Empfänger; Q3/Q4 nach tatsächlich berichtetem Zugang/Volltext, Q5 begrenzte Neuheitslage, Q6 institutioneller Anschluss.",
+          "planId": "masonry-20261015-source-ratings"
+        }
+      ]
+    },
+    {
+      "id": "hse-mac-interaktives-score-sheet",
+      "name": "HSE MAC interaktives Score Sheet",
+      "typ": "A",
+      "kategorie": "messverfahren",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.hse.gov.uk/msd/mac/index.htm"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Bestehendes Werkzeug für manuelle Lastenhandhabung",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "mauerlast-tageskonto"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          2,
+          5,
+          5,
+          1,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "HTML gelesen; englischer Besetzt-Test, kein Ersatz für deutsche Gefährdungsbeurteilung.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Vektoren bewertet [2 2 5 5 1 3]: Maurer-Runde: Q1 dokumentierter Prüf-/Stoppertrag ohne Dose; Q2 offener Rest bei Forschung/Empfänger; Q3/Q4 nach tatsächlich berichtetem Zugang/Volltext, Q5 begrenzte Neuheitslage, Q6 institutioneller Anschluss.",
+          "planId": "masonry-20261015-source-ratings"
+        }
+      ]
+    },
+    {
+      "id": "baua-leitmerkmalmethoden-rechenhilfen",
+      "name": "BAuA Leitmerkmalmethoden Rechenhilfen",
+      "typ": "A",
+      "kategorie": "messverfahren",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.baua.de/DE/Themen/Arbeitsgestaltung/Gefaehrdungsbeurteilung/Leitmerkmalmethode"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "teilweise",
+        "wie": ""
+      },
+      "enthaelt": "LMM-HHT und LMM-Multi-E Rechenformblätter",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "mauerlast-tageskonto"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          2,
+          2,
+          2,
+          1,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Suchtext nennt Rechenhilfen ausdrücklich; direkter Abruf 403.",
+          "status": "angekratzt"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Vektoren bewertet [2 2 2 2 1 3]: Maurer-Runde: Q1 dokumentierter Prüf-/Stoppertrag ohne Dose; Q2 offener Rest bei Forschung/Empfänger; Q3/Q4 nach tatsächlich berichtetem Zugang/Volltext, Q5 begrenzte Neuheitslage, Q6 institutioneller Anschluss.",
+          "planId": "masonry-20261015-source-ratings"
+        }
+      ]
+    },
+    {
+      "id": "soka-bau-arbeitnehmerkontoauszug",
+      "name": "SOKA-BAU Arbeitnehmerkontoauszug",
+      "typ": "A",
+      "kategorie": "norm",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://international.soka-bau.de/en/for-workers/workers-account-statement",
+        "https://international.soka-bau.de/arbeitnehmer/arbeitnehmerkontoauszug",
+        "https://www.soka-bau.de/nachrichten/detail/jahreskontoauszuege-2025-informationen-zum-versand"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Arbeitgebergemeldete Urlaubsdaten und Korrekturhinweis fuer Arbeitnehmer",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "soka-urlaubsabgleich"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          5,
+          5,
+          3,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Englische Originalseite gelesen; DE-Kontoseite vom Reviewer direkt gelesen; Jahresversandnachricht nur Suchergebnis nach fehlgeschlagenem Direktabruf; Portal und mehrsprachiger Chatbot sind Nachbarn.",
+          "status": "angekratzt"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Vektoren bewertet [2 3 5 5 3 3]: Maurer-Runde: Q1 dokumentierter Prüf-/Stoppertrag ohne Dose; Q2 offener Rest bei Forschung/Empfänger; Q3/Q4 nach tatsächlich berichtetem Zugang/Volltext, Q5 begrenzte Neuheitslage, Q6 institutioneller Anschluss.",
+          "planId": "masonry-20261015-source-ratings"
+        }
+      ]
+    },
+    {
+      "id": "faire-mobilitaet-soka-fallberatung",
+      "name": "Faire Mobilitaet SOKA-Fallberatung",
+      "typ": "W",
+      "kategorie": "empfaenger",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.faire-mobilitaet.de/dgb-fm-fileadmin/dateien/Dokumente/Berichte_und_Erfolge/Interview-mit-Letita-Matarea-Tuerk.pdf",
+        "https://www.faire-mobilitaet.de/beratung/beratungsanfrage/",
+        "https://www.faire-mobilitaet.de/dgb-fm-fileadmin/dateien/Dokumente/Baugewerbe/Beratung/Ihre_Rechte_im_Baugewerbe_DE__01_25_.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Historisches Interview zur manuellen Pruefung von Urlaubskontoauszuegen und aktueller Beratungszugang",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "soka-urlaubsabgleich"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          5,
+          5,
+          3,
+          5
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "PDF von Oktober 2017 vollstaendig gelesen; keine aktuelle Praevalenzmessung; aktuelle Beratung mit Dokumentupload gelesen. Root las beide Seiten Merkblatt 01/2025: SOKA-Auszug prüfen und falsche Einträge melden; kein aktueller Prävalenzbeleg, keine Prüfung der Rechtswerte für 2026.",
+          "status": "angekratzt"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Vektoren bewertet [2 3 5 5 3 5]: Maurer-Runde: Q1 dokumentierter Prüf-/Stoppertrag ohne Dose; Q2 offener Rest bei Forschung/Empfänger; Q3/Q4 nach tatsächlich berichtetem Zugang/Volltext, Q5 begrenzte Neuheitslage, Q6 institutioneller Anschluss.",
+          "planId": "masonry-20261015-source-ratings"
+        }
+      ]
+    },
+    {
+      "id": "bg-bau-staub-expositionsermittlung",
+      "name": "BG BAU Staub Expositionsermittlung",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.bgbau.de/themen/sicherheit-und-gesundheit/staub/kooperationen-zur-verbesserung-der-situation/gefaehrdungsbeurteilung-expositionsermittlung",
+        "https://www.bgbau.de/fileadmin/Service/Angebote/Kurzanleitung_zur_Nutzung_der_Eingabehilfe.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Messluecken und branchenspezifische Staubschutzhilfen auf Baustellen",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "quarz-arbeitsleben-pass"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          5,
+          5,
+          3,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Themenseite gelesen; ZED-PDF nur Suchschnipsel; bestehende Eingabehilfe begrenzt Neuheit.",
+          "status": "angekratzt"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Vektoren bewertet [2 3 5 5 3 3]: Maurer-Runde: Q1 dokumentierter Prüf-/Stoppertrag ohne Dose; Q2 offener Rest bei Forschung/Empfänger; Q3/Q4 nach tatsächlich berichtetem Zugang/Volltext, Q5 begrenzte Neuheitslage, Q6 institutioneller Anschluss.",
+          "planId": "masonry-20261015-source-ratings"
+        }
+      ]
+    },
+    {
+      "id": "silasafe-expositionsverwaltung",
+      "name": "Silasafe Expositionsverwaltung",
+      "typ": "I",
+      "kategorie": "messverfahren",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.silasafe.com/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Freies digitales Management von Silika-Expositionsdaten",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "quarz-arbeitsleben-pass"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          5,
+          5,
+          3,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Produktseite gelesen; Arbeitnehmerselbsteigentum und Offline-Portabilitaet nicht belegt.",
+          "status": "angekratzt"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Vektoren bewertet [2 3 5 5 3 3]: Maurer-Runde: Q1 dokumentierter Prüf-/Stoppertrag ohne Dose; Q2 offener Rest bei Forschung/Empfänger; Q3/Q4 nach tatsächlich berichtetem Zugang/Volltext, Q5 begrenzte Neuheitslage, Q6 institutioneller Anschluss.",
+          "planId": "masonry-20261015-source-ratings"
+        }
+      ]
+    },
+    {
+      "id": "concular-lrs-aachen-ziegelreuse",
+      "name": "Concular LRS Aachen Ziegelreuse",
+      "typ": "I",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://concular.de/lrs-zentrum-in-aachen/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Reales Ziegelwiederverwendungsprojekt mit Pruefung und Zertifizierung",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "abbruchziegel-vorentscheidung"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          2,
+          5,
+          5,
+          1,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Projektseite gelesen; belegt bestehende Prozesskette, kein Beleg fuer automatische Foto-Freigabe.",
+          "status": "angekratzt"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Vektoren bewertet [2 2 5 5 1 3]: Maurer-Runde: Q1 dokumentierter Prüf-/Stoppertrag ohne Dose; Q2 offener Rest bei Forschung/Empfänger; Q3/Q4 nach tatsächlich berichtetem Zugang/Volltext, Q5 begrenzte Neuheitslage, Q6 institutioneller Anschluss.",
+          "planId": "masonry-20261015-source-ratings"
+        }
+      ]
+    },
+    {
+      "id": "texmoefug-separable-masonry-joints",
+      "name": "TexMöFug separable masonry joints",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://renatbau.de/projekte/projektdetails/texmoefug-untersuchungen-zu-umsetzungsmoeglichkeiten-der-verwendung-einer-moertelfuge-mit-textilen-einlagen-zur-sortenreinen-zerstoerungsarmen-trennung-vom-mauerwerk-und-wiederverwendung-von-grossformatigen-planziegeln.html"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Research on textile modified separable mortar joints",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          2,
+          5,
+          5,
+          1,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Project description read; no measured validation claimed.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Vektoren bewertet [2 2 5 5 1 3]: Maurer-Runde: Q1 dokumentierter Prüf-/Stoppertrag ohne Dose; Q2 offener Rest bei Forschung/Empfänger; Q3/Q4 nach tatsächlich berichtetem Zugang/Volltext, Q5 begrenzte Neuheitslage, Q6 institutioneller Anschluss.",
+          "planId": "masonry-20261015-source-ratings"
+        }
+      ]
+    },
+    {
+      "id": "gamle-mursten-laboratory-brick-testing",
+      "name": "Gamle Mursten laboratory brick testing",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://gamlemursten.dk/en/laboratory/order-a-test-of-your-bricks/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Existing reclaimed brick intake and quality testing service",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "abbruchziegel-vorentscheidung"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          2,
+          5,
+          5,
+          1,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Mortar and environmental information requested; generic intake is occupied.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Vektoren bewertet [2 2 5 5 1 3]: Maurer-Runde: Q1 dokumentierter Prüf-/Stoppertrag ohne Dose; Q2 offener Rest bei Forschung/Empfänger; Q3/Q4 nach tatsächlich berichtetem Zugang/Volltext, Q5 begrenzte Neuheitslage, Q6 institutioneller Anschluss.",
+          "planId": "masonry-20261015-source-ratings"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Unabhängiger Reviewer bestätigt nur den eng abgegrenzten generischen Stopp; Totenschein verknüpft.",
+          "planId": "masonry-20261015-grave-source-links"
+        }
+      ]
+    },
+    {
+      "id": "bg-bau-asbesthaus",
+      "name": "BG BAU Asbesthaus",
+      "typ": "L",
+      "kategorie": "bildung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.bgbau.de/service/angebote/medien-center-suche/medium/asbest-in-gebaeuden"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Existing interactive asbestos locations learning app",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "asbest-vorarbeits-informationscheck"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          2,
+          5,
+          5,
+          1,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Official app description read, application not functionally tested.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Vektoren bewertet [2 2 5 5 1 3]: Maurer-Runde: Q1 dokumentierter Prüf-/Stoppertrag ohne Dose; Q2 offener Rest bei Forschung/Empfänger; Q3/Q4 nach tatsächlich berichtetem Zugang/Volltext, Q5 begrenzte Neuheitslage, Q6 institutioneller Anschluss.",
+          "planId": "masonry-20261015-source-ratings"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Unabhängiger Reviewer bestätigt nur den eng abgegrenzten generischen Stopp; Totenschein verknüpft.",
+          "planId": "masonry-20261015-grave-source-links"
+        }
+      ]
+    },
+    {
+      "id": "bg-bau-asbest-guidance-2026",
+      "name": "BG BAU Asbest guidance 2026",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://bauportal.bgbau.de/bauportal-22026/rund-um-die-bg-bau/aktualisierter-leitfaden-asbest",
+        "https://www.bgbau.de/themen/sicherheit-und-gesundheit/asbest/der-richtige-umgang-mit-asbest-beprobung-bis-befund"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Updated guidance and prework building information limitations",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          2,
+          5,
+          5,
+          1,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Guidance reviewed; underlying law not audited.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Vektoren bewertet [2 2 5 5 1 3]: Maurer-Runde: Q1 dokumentierter Prüf-/Stoppertrag ohne Dose; Q2 offener Rest bei Forschung/Empfänger; Q3/Q4 nach tatsächlich berichtetem Zugang/Volltext, Q5 begrenzte Neuheitslage, Q6 institutioneller Anschluss.",
+          "planId": "masonry-20261015-source-ratings"
+        }
+      ]
+    },
+    {
+      "id": "tu-graz-re-use-ziegelwand-2026",
+      "name": "TU Graz Re-Use Ziegelwand 2026",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.tugraz.at/news/artikel/re-use-ziegelwand-bauwirtschaft"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Reversible masonry wall demonstrator reported May 2026",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          2,
+          5,
+          5,
+          1,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Grounded result independently read; demonstration is not general approval of reclaimed existing masonry.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Vektoren bewertet [2 2 5 5 1 3]: Maurer-Runde: Q1 dokumentierter Prüf-/Stoppertrag ohne Dose; Q2 offener Rest bei Forschung/Empfänger; Q3/Q4 nach tatsächlich berichtetem Zugang/Volltext, Q5 begrenzte Neuheitslage, Q6 institutioneller Anschluss.",
+          "planId": "masonry-20261015-source-ratings"
+        }
+      ]
+    },
+    {
+      "id": "boku-historical-brick-reuse-research",
+      "name": "BOKU historical brick reuse research",
+      "typ": "I",
+      "kategorie": "messverfahren",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://boku.ac.at/lawi/igce/news-container/wiederverwendung-historischer-ziegel"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Research into nondestructive assessment of historical bricks",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          2,
+          5,
+          5,
+          1,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Primary page independently read; no validated phone-only capability claimed.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Vektoren bewertet [2 2 5 5 1 3]: Maurer-Runde: Q1 dokumentierter Prüf-/Stoppertrag ohne Dose; Q2 offener Rest bei Forschung/Empfänger; Q3/Q4 nach tatsächlich berichtetem Zugang/Volltext, Q5 begrenzte Neuheitslage, Q6 institutioneller Anschluss.",
+          "planId": "masonry-20261015-source-ratings"
+        }
+      ]
+    },
+    {
+      "id": "dguv-zed-arbeitnehmerzugang",
+      "name": "DGUV ZED Arbeitnehmerzugang",
+      "typ": "A",
+      "kategorie": "fachgremium",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.dguv.de/ifa/gestis/zentrale-expositionsdatenbank-zed/index.jsp",
+        "https://www.dguv.de/ifa/gestis/zentrale-expositionsdatenbank-zed/downloads-und-dokumente/index.jsp"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Expositionshistorie auf Antrag und digitales Anfrageformular; aktueller §10a-Hinweis",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "quarz-arbeitsleben-pass"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          5,
+          5,
+          3,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Arbeitnehmerzugang vorhanden; Eigenchronikbedarf offen. Suchindex und Seite nennen verschiedene Excel-Stände, nicht als geprüfte Aktualität übernommen.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Vektoren bewertet [2 3 5 5 3 3]: Maurer-Runde: Q1 dokumentierter Prüf-/Stoppertrag ohne Dose; Q2 offener Rest bei Forschung/Empfänger; Q3/Q4 nach tatsächlich berichtetem Zugang/Volltext, Q5 begrenzte Neuheitslage, Q6 institutioneller Anschluss.",
+          "planId": "masonry-20261015-source-ratings"
+        }
+      ]
+    },
+    {
+      "id": "bg-bau-positivliste-mauernutfraesen-2026",
+      "name": "BG BAU Positivliste Mauernutfräsen 2026",
+      "typ": "A",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.bgbau.de/themen/sicherheit-und-gesundheit/staub/staubarme-bearbeitungssysteme",
+        "https://www.bgbau.de/fileadmin/Gisbau/Positivliste_Mauernutfr%C3%A4sen_2026_01_28.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "teilweise",
+        "wie": ""
+      },
+      "enthaelt": "Modellkombinationen Maschine Entstauber plus Schnitttiefe",
+      "fokus": "",
+      "status": "angekratzt",
+      "statusNotiz": "",
+      "evidenz": "schnipsel",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [],
+        "kandidaten": [
+          "staubsystem-lockfile"
+        ]
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          2,
+          2,
+          3,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Übersichtsseite vom Reviewer gelesen; PDF nur Index mit Daten, direkter Abruf 404; keine vierteilige Kompatibilität erfunden.",
+          "status": "angekratzt"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Vektoren bewertet [2 3 2 2 3 3]: Maurer-Runde: Q1 dokumentierter Prüf-/Stoppertrag ohne Dose; Q2 offener Rest bei Forschung/Empfänger; Q3/Q4 nach tatsächlich berichtetem Zugang/Volltext, Q5 begrenzte Neuheitslage, Q6 institutioneller Anschluss.",
+          "planId": "masonry-20261015-source-ratings"
+        }
+      ]
+    },
+    {
+      "id": "maptrack-concrete-saw-prestart",
+      "name": "MapTrack Concrete Saw Prestart",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.maptrack.com/templates/concrete-saw-pre-start-checklist"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Freie Säge-Prestart-Checkliste mit Wasserprüfung",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [],
+        "graeber": [
+          "nasssaege-wasserwechsel-uebergabe"
+        ],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          2,
+          5,
+          5,
+          1,
+          2
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Maurer-Runde 15.10.2026",
+          "notiz": "Bisoziations-Agent las Seite; bestehende Checklisten-Nachbarschaft, kein exakter Wasserwechsel-Funktionsklon behauptet.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "",
+          "notiz": "Vektoren bewertet [2 2 5 5 1 2]: Vorhandene Gerätecheckliste als Mode-Gegenprobe; keine Dose und kein eigenständiger Übergabebedarf belegt."
+        }
+      ]
     }
   ]
 }

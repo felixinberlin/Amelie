@@ -1,14 +1,14 @@
 {
   "$schema": "https://raw.githubusercontent.com/felixinberlin/amelie/main/public/data/amelie-schema.json",
   "version": "1.0.0",
-  "generatedAt": "2026-10-14T12:46:05.872Z",
+  "generatedAt": "2026-10-15T07:48:40.863Z",
   "license": "CC0-1.0 (Public Domain / Kula-Ring)",
   "storageProvider": "github_pages",
   "repository": "https://github.com/felixinberlin/amelie",
   "stats": {
     "totalDosen": 47,
     "totalUnpacked": 171,
-    "totalDiscarded": 149
+    "totalDiscarded": 154
   },
   "dosen": [
     {
@@ -14090,6 +14090,123 @@
       "diedOn": "2026-10-11",
       "resurrectIfDe": "Wenn offene Standards für handgeführte Demontage-Assistenz bei Reparatur-Initiativen entstehen.",
       "resurrectIfEn": "If open standards for handheld disassembly assistance emerge for repair initiatives."
+    },
+    {
+      "id": "asbest-vorarbeits-informationscheck",
+      "title": "Generischer Asbest-Vorarbeits-Informationscheck",
+      "originalIdeaDe": "Generischer Asbest-Vorarbeits-Informationscheck für Maurer und Baustellenhandwerk.",
+      "originalIdeaEn": "Generic pre-work asbestos information helper for masonry and construction workers.",
+      "whyDiscardedDe": "BG BAU Asbesthaus bietet interaktive Fundstelleninformation. Nur generischer Informationshelfer gestoppt, kein ungeprüfter vollständiger Rechts-/Dokumentenchecker. https://www.bgbau.de/service/angebote/medien-center-suche/medium/asbest-in-gebaeuden",
+      "whyDiscardedEn": "BG BAU already provides interactive location information via Asbesthaus; a full legal document checker was not evaluated.",
+      "lessonDe": "Nur tatsächlich geprüften Funktionsumfang begraben.",
+      "lessonEn": "Bury only the functionality actually checked.",
+      "domain": "Bauhandwerk / Mauerwerk",
+      "evidence": [
+        "https://www.bgbau.de/service/angebote/medien-center-suche/medium/asbest-in-gebaeuden"
+      ],
+      "cause": "beim-empfaenger",
+      "killer": "behoerde",
+      "foundBy": "empfaenger",
+      "origin": "quelle",
+      "stage": "kandidat",
+      "bornIn": "Maurer-Runde 15.10.2026",
+      "diedOn": "2026-10-15",
+      "resurrectIfDe": "BG BAU bestätigt eine konkrete Informationsübergabe, die Asbesthaus und bestehende Checklisten nicht unterstützen; erforderliche Daten stehen verlässlich bereit.",
+      "resurrectIfEn": "Reopen when BG BAU confirms a specific unsupported information handover beyond Asbesthaus and existing checklists and reliable required data are available."
+    },
+    {
+      "id": "abbruchziegel-vorentscheidung",
+      "title": "Generische Abbruchziegel-Vorentscheidung",
+      "originalIdeaDe": "Generische Abbruchziegel-Vorentscheidung für Maurer und Baustellenhandwerk.",
+      "originalIdeaEn": "Generic reclaimed-brick preliminary intake for masonry and construction workers.",
+      "whyDiscardedDe": "Doppelfund Inversion/Constraint Release einmal gezählt. Generische Aufnahme/Weiterleitung ohne neue Fähigkeit: Gamle Mursten erhebt Gebäude-, Mörtel- und Umweltdaten und prüft real. Kein identischer Offline-Automat behauptet. DBU/TexMöFug lösen nicht universell Bestandsmauerwerk. https://gamlemursten.dk/en/laboratory/order-a-test-of-your-bricks/",
+      "whyDiscardedEn": "Existing reclaimed-brick intake and testing already collect building, mortar and environmental information; no distinct software capability established.",
+      "lessonDe": "Materialforschung und eine neue Softwarelücke getrennt belegen.",
+      "lessonEn": "Establish materials progress and unmet software workflow separately.",
+      "domain": "Bauhandwerk / Mauerwerk",
+      "evidence": [
+        "https://gamlemursten.dk/en/laboratory/order-a-test-of-your-bricks/"
+      ],
+      "cause": "mode",
+      "killer": "keiner",
+      "foundBy": "englisch",
+      "origin": "inversion",
+      "stage": "kandidat",
+      "bornIn": "Maurer-Runde 15.10.2026",
+      "diedOn": "2026-10-15",
+      "resurrectIfDe": "Wiederverwendungsakteure benennen eine konkrete ungelöste Vorentscheidung und liefern veröffentlichte validierte Daten, aus denen Software sie ohne vorgetäuschte Materialfreigabe ableiten kann.",
+      "resurrectIfEn": "Reopen when reuse practitioners identify an unmet preliminary decision and publish validated data that software can use without pretending to certify material fitness."
+    },
+    {
+      "id": "mauerlast-tageskonto",
+      "title": "Mauerlast-Tageskonto",
+      "originalIdeaDe": "Mauerlast-Tageskonto für Maurer und Baustellenhandwerk.",
+      "originalIdeaEn": "Daily masonry handling workload account for masonry and construction workers.",
+      "whyDiscardedDe": "BAuA LMM-Multi-E adressiert Rechenhilfe über Teiltätigkeiten; Direktabruf 403. HSE MAC als gelesener Nachbar. Kein erfundener Mischbelastungsscore. https://www.baua.de/formblatt-lmm-multi-e",
+      "whyDiscardedEn": "BAuA LMM-Multi-E already addresses calculation across component tasks; direct access blocked, search evidence only.",
+      "lessonDe": "Bestehende Fach-Rechenhilfen vor neuen Tageskonten prüfen.",
+      "lessonEn": "Check existing specialist calculators before proposing daily accounts.",
+      "domain": "Bauhandwerk / Mauerwerk",
+      "evidence": [
+        "https://www.baua.de/leitmerkmalmethoden",
+        "https://www.baua.de/formblatt-lmm-multi-e"
+      ],
+      "cause": "beim-empfaenger",
+      "killer": "behoerde",
+      "foundBy": "deutsch",
+      "origin": "bisoziation",
+      "stage": "kandidat",
+      "bornIn": "Maurer-Runde 15.10.2026",
+      "diedOn": "2026-10-15",
+      "resurrectIfDe": "BAuA bestätigt eine notwendige Arbeitslagen-/Tätigkeitskombination, die LMM-HHT und LMM-Multi-E nicht abbilden und die fachlich valide berechnet werden kann.",
+      "resurrectIfEn": "Reopen when BAuA confirms an essential work-scenario comparison not represented by LMM-HHT or LMM-Multi-E and a valid calculation method exists."
+    },
+    {
+      "id": "nasssaege-wasserwechsel-uebergabe",
+      "title": "Nasssäge-Wasserwechsel-Übergabe",
+      "originalIdeaDe": "Nasssäge-Wasserwechsel-Übergabe für Maurer und Baustellenhandwerk.",
+      "originalIdeaEn": "Wet saw water-change handover for masonry and construction workers.",
+      "whyDiscardedDe": "Mode-Stopp: datierter Wechsel und unbekannter Zustand sind Checklistenfelder; kein belegter eigener Übergabeengpass. MapTrack Nachbar, kein behaupteter exakter Klon. https://maptrack.com/templates/concrete-saw-pre-start-checklist",
+      "whyDiscardedEn": "A timestamped water-change record is a field in an existing equipment checklist, without a demonstrated distinct handover need.",
+      "lessonDe": "Checklistenfeld allein begründet keine neue Fähigkeit.",
+      "lessonEn": "A checklist field alone does not establish a new capability.",
+      "domain": "Bauhandwerk / Mauerwerk",
+      "evidence": [
+        "https://www.maptrack.com/templates/concrete-saw-pre-start-checklist",
+        "https://www.bgbau.de/fileadmin/Themen/Arbeitsschutz/Expo-Matrix.pdf"
+      ],
+      "cause": "mode",
+      "killer": "keiner",
+      "foundBy": "englisch",
+      "origin": "bisoziation",
+      "stage": "kandidat",
+      "bornIn": "Maurer-Runde 15.10.2026",
+      "diedOn": "2026-10-15",
+      "resurrectIfDe": "Feldstudie belegt einen ungelösten Gerätewechsel-/Übergabefehler, den vorhandene Checklisten mit Zeitstempel nicht darstellen können.",
+      "resurrectIfEn": "Reopen when field evidence establishes a handover failure that existing timestamped equipment checklists cannot represent."
+    },
+    {
+      "id": "maurer-staubmassnahmen-lotse",
+      "title": "Generischer Staubmaßnahmen-Lotse",
+      "originalIdeaDe": "Generischer Staubmaßnahmen-Lotse für Maurer und Baustellenhandwerk.",
+      "originalIdeaEn": "Generic dust measures selector for masonry and construction workers.",
+      "whyDiscardedDe": "WINGIS bietet mobile gewerkspezifische Hilfen und Betriebsanweisungen; OHCOW bietet Silica-Control-Plan. Nur generischer Lotse, nicht exakter Komponentenmatcher. https://www.bgbau.de/themen/sicherheit-und-gesundheit/gefahrstoffe/was-ist-wingis",
+      "whyDiscardedEn": "Mobile trade-specific information and instructions already provided by WINGIS; stop only the generic selector.",
+      "lessonDe": "Empfängerwerkzeuge vor generischem Assistenten prüfen.",
+      "lessonEn": "Check recipient tools before proposing generic assistants.",
+      "domain": "Bauhandwerk / Mauerwerk",
+      "evidence": [
+        "https://www.bgbau.de/themen/sicherheit-und-gesundheit/gefahrstoffe/was-ist-wingis"
+      ],
+      "cause": "beim-empfaenger",
+      "killer": "behoerde",
+      "foundBy": "empfaenger",
+      "origin": "quelle",
+      "stage": "kandidat",
+      "bornIn": "Maurer-Runde 15.10.2026",
+      "diedOn": "2026-10-15",
+      "resurrectIfDe": "Eine fachlich dokumentierte Tätigkeitsentscheidung ist durch WINGIS und vorhandene offizielle Staubhilfen nicht abgedeckt und der Empfänger bestätigt den Bedarf.",
+      "resurrectIfEn": "Reopen when a documented task decision is uncovered by WINGIS and existing official dust guidance and its intended recipient confirms the need."
     }
   ]
 }
