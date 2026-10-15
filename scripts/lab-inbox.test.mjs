@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { mkdtempSync, mkdirSync, writeFileSync, rmSync, readFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { buildInbox, exportInbox } from './export-lab-inbox.mjs';
 import { processBatch } from './lab-inbox.mjs';
 
@@ -85,4 +86,87 @@ test('simultaneous workers cannot both claim the same immutable receipt', async 
     assert.ok(['LOCK_TIMEOUT','PRECONDITION_FAILED'].includes(failure.code));
     assert.equal(buildInbox(root).index.batches[0].processing.state,'in_progress');
   } finally {rmSync(root,{recursive:true,force:true});}
+});
+
+
+test('every committed Lab idea has concise bilingual copy without changing its source record', () => {
+  const root = new URL('..', import.meta.url);
+  const descriptions = JSON.parse(readFileSync(new URL('src/data/labIdeaDescriptions.json', root), 'utf8'));
+  const { index, records } = buildInbox(fileURLToPath(root));
+  const ideas = index.batches.flatMap(batch => batch.ideas);
+  assert.ok(ideas.length > 0);
+  assert.deepEqual(Object.keys(descriptions.ideas).sort(), ideas.map(idea => idea.id).sort(), 'Summaries must cover every idea and use its full identity');
+  for (const idea of ideas) {
+    assert.deepEqual(idea.plain_language, descriptions.ideas[idea.id]);
+    for (const language of ['de', 'en']) {
+      const copy = idea.plain_language[language];
+      assert.ok(copy.title.trim().length > 0 && copy.title.length <= 100, idea.id + ': short title');
+      assert.ok(copy.description.trim().length > 0 && copy.description.length <= 400, idea.id + ': short explanation');
+    }
+  }
+  for (const record of records) {
+    const batch = index.batches.find(batch => batch.batch_id === record.batch_id);
+    assert.deepEqual(batch.ideas.map(idea => ({ local_id: idea.local_id, record: idea.record })), record.ideas);
+    assert.ok(record.ideas.every(idea => !Object.hasOwn(idea, 'plain_language')));
+  }
+});
+
+test('Lab cards switch languages, search summaries, and retain expandable original records', async () => {
+  const { JSDOM } = await import('jsdom');
+  const html = readFileSync(new URL('../public/lab-ideas.html', import.meta.url), 'utf8');
+  const batch = {
+    batch_id: 'lab-a-test', lab_id: 'lab-a', engine: 'lacunar', run_id: 'test-run',
+    revision: 'a'.repeat(64), created_at: '2026-10-15', model: 'test', intent: 'Test batch',
+    processing: { state: 'received' }, detail: 'lab-runs/test.json',
+    ideas: [{
+      id: 'lab-a-test:C1', local_id: 'C1',
+      plain_language: {
+        de: { title: 'Ein kurzer Titel', description: 'Einfacher deutscher Suchtext.' },
+        en: { title: 'A short title', description: 'A simple searchable explanation. <img src=x onerror=alert(1)>' },
+      },
+      record: { idea: 'Complicated original heading', gap: 'Original gap', evidence_urls: ['https://example.org/source'] },
+    }, { id: 'lab-a-test:C2', local_id: 'C2', record: { title: 'Future idea awaiting a summary' } }],
+  };
+  const dom = new JSDOM(html, {
+    url: 'https://example.org/Amelie/lab-ideas.html', runScripts: 'dangerously',
+    beforeParse(window) {
+      Object.defineProperty(window.navigator, 'language', { value: 'en-GB' });
+      window.fetch = async () => ({ ok: true, json: async () => ({ version: 1, batches: [batch] }) });
+    },
+  });
+  try {
+    await dom.window.load();
+    const { document, Event } = dom.window;
+    const first = () => document.getElementById('lab-a-test:C1');
+    assert.equal(first().querySelector('h3').textContent, 'A short title');
+    assert.equal(first().querySelector('.plain-description').lang, 'en');
+    assert.ok(first().querySelector('.plain-description').textContent.includes('<img'));
+    assert.equal(first().querySelectorAll('img').length, 0, 'Editorial copy is rendered as text');
+    const details = first().querySelector('details');
+    assert.equal(details.open, false);
+    details.open = true;
+    assert.equal(details.querySelector('.original-title').textContent, batch.ideas[0].record.idea);
+    assert.equal(details.querySelector('a').href, 'https://example.org/source');
+    assert.deepEqual(JSON.parse(details.querySelector('pre').textContent), batch.ideas[0].record);
+    assert.equal(document.getElementById('lab-a-test:C2').querySelector('h3').textContent, batch.ideas[1].record.title);
+    const language = document.getElementById('language');
+    language.value = 'de'; language.dispatchEvent(new Event('change'));
+    assert.equal(first().querySelector('h3').textContent, 'Ein kurzer Titel');
+    assert.equal(first().querySelector('.plain-description').lang, 'de');
+    const search = document.getElementById('search');
+    search.value = 'searchable explanation'; search.dispatchEvent(new Event('input'));
+    assert.ok(first(), 'Both translations remain searchable regardless of display language');
+    search.value = 'Original gap'; search.dispatchEvent(new Event('input'));
+    assert.ok(first(), 'Original details remain searchable');
+    search.value = 'no matching idea'; search.dispatchEvent(new Event('input'));
+    assert.equal(document.querySelectorAll('article').length, 0);
+    assert.equal(document.getElementById('empty').hidden, false);
+    search.value = ''; search.dispatchEvent(new Event('input'));
+    const engine = document.getElementById('engine');
+    engine.value = 'lacunar'; engine.dispatchEvent(new Event('change'));
+    assert.equal(document.querySelectorAll('article').length, 2);
+    const state = document.getElementById('state');
+    state.value = 'processed'; state.dispatchEvent(new Event('change'));
+    assert.equal(document.querySelectorAll('article').length, 0);
+  } finally { dom.window.close(); }
 });

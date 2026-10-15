@@ -1,0 +1,1695 @@
+{
+  "version": 1,
+  "ideas": {
+    "amelie-lab-inversion-inversion-20260930T083759-1c9c25-29c174dc27859fca:C1": {
+      "de": {
+        "title": "Holz aus der Nähe vermitteln",
+        "description": "Waldbesitzer sollen Abnehmer für gefälltes Robinienholz finden. Die Plattform würde passende Produkte, Transportwege und einen möglichen Preis vorschlagen."
+      },
+      "en": {
+        "title": "Find nearby buyers for timber",
+        "description": "Forest owners could find buyers for felled black locust timber. The platform would suggest uses, transport options and a possible price."
+      }
+    },
+    "amelie-lab-inversion-inversion-20260930T083759-1c9c25-29c174dc27859fca:C3": {
+      "de": {
+        "title": "Baumfällungen dokumentieren",
+        "description": "Eine App soll festhalten, wo, wann und wie viel Robinienholz gefällt wurde. Sie würde außerdem die Klimawirkung der Arbeiten schätzen."
+      },
+      "en": {
+        "title": "Record tree removal",
+        "description": "An app would record where, when and how much black locust timber was cut. It would also estimate the climate impact of the work."
+      }
+    },
+    "amelie-lab-inversion-inversion-20260930T083759-1c9c25-29c174dc27859fca:C7": {
+      "de": {
+        "title": "Kleine Holzmengen weitergeben",
+        "description": "Wer wenig Robinienholz übrig hat, soll Handwerker oder Privatleute in der Nähe finden. Diese könnten das Holz direkt abholen."
+      },
+      "en": {
+        "title": "Trade small amounts of timber",
+        "description": "People with small amounts of spare black locust timber could find local craftspeople or other buyers. Buyers could collect the wood directly."
+      }
+    },
+    "amelie-lab-inversion-inversion-20260930T100201-458e61-cedbcd3c54e6aec1:C2": {
+      "de": {
+        "title": "Wo zuerst Robinien entfernen?",
+        "description": "Umweltämter sollen vergleichen können, wo das Entfernen von Robinien der Natur am meisten helfen könnte. Das Werkzeug würde Kosten und Nutzen der möglichen Maßnahmen gegenüberstellen."
+      },
+      "en": {
+        "title": "Where should tree removal start?",
+        "description": "Environmental teams could compare where removing black locust trees might help nature most. The tool would compare the likely costs and benefits of each option."
+      }
+    },
+    "amelie-lab-inversion-inversion-20260930T100201-458e61-cedbcd3c54e6aec1:C5": {
+      "de": {
+        "title": "Tierwelt rund um Robinien beobachten",
+        "description": "Fotos und Tonaufnahmen sollen zeigen, welche Tiere rund um Robinien vorkommen. Naturschutzteams könnten damit Veränderungen über die Zeit untersuchen."
+      },
+      "en": {
+        "title": "Watch wildlife around black locust trees",
+        "description": "Photos and sound recordings would help track wildlife around black locust trees. Conservation teams could use them to study changes over time."
+      }
+    },
+    "amelie-lab-inversion-inversion-20260930T100347-d2bbcb-0129e3e60bda563a:C3": {
+      "de": {
+        "title": "Hygienefragen in der Küche erklären",
+        "description": "Küchenpersonal soll Fragen zum Umgang mit Lebensmitteln in Alltagssprache stellen können. Ein Chatbot würde passende Vorschriften erklären."
+      },
+      "en": {
+        "title": "Explain kitchen hygiene questions",
+        "description": "Kitchen staff could ask everyday questions about handling food. A chatbot would explain the relevant hygiene rules."
+      }
+    },
+    "amelie-lab-inversion-inversion-20260930T100347-d2bbcb-0129e3e60bda563a:C1": {
+      "de": {
+        "title": "Eier sicher verarbeiten lernen",
+        "description": "Eine App soll Küchenpersonal durch tägliche Kontrollen für Lagerung und Verarbeitung von Eiern führen. Bilder und Checklisten würden die Arbeitsschritte erklären und festhalten."
+      },
+      "en": {
+        "title": "Follow egg handling checks",
+        "description": "An app would guide kitchen staff through daily checks for storing and preparing eggs. Pictures and checklists would explain and record each step."
+      }
+    },
+    "amelie-lab-inversion-inversion-20260930T100347-d2bbcb-0129e3e60bda563a:C7": {
+      "de": {
+        "title": "Wetterabhängige Hygienehinweise",
+        "description": "Restaurants sollen bei Wetterlagen, die mit einem höheren Salmonellenrisiko zusammenhängen könnten, zusätzliche Hinweise erhalten. Ob solche Vorhersagen zuverlässig sind, müsste erst geprüft werden."
+      },
+      "en": {
+        "title": "Weather based hygiene reminders",
+        "description": "Restaurants would receive extra hygiene reminders during weather conditions that might be linked to higher salmonella risk. The reliability of these predictions would need testing."
+      }
+    },
+    "amelie-lab-inversion-inversion-20260930T100347-d2bbcb-0129e3e60bda563a:C6": {
+      "de": {
+        "title": "Herkunft von Kartoffeln prüfen helfen",
+        "description": "Restaurants sollen Fotos und Lieferetiketten von geschützten galicischen Kartoffeln vergleichen können. Das Werkzeug würde Hinweise liefern, ob Ware und Herkunftsnachweise zusammenpassen."
+      },
+      "en": {
+        "title": "Help check where potatoes come from",
+        "description": "Restaurants could compare photos and delivery labels for protected Galician potatoes. The tool would help check whether the goods match their origin documents."
+      }
+    },
+    "amelie-lab-inversion-inversion-20260930T100431-0c956a-e97a4dfff64d876e:C3": {
+      "de": {
+        "title": "Naturausgleich auf einer Karte",
+        "description": "Eine Karte soll Flächen zeigen, die als Ausgleich für Eingriffe in die Natur angelegt wurden. Menschen könnten dort Schäden melden und die zuständige Behörde informieren."
+      },
+      "en": {
+        "title": "Map sites created to help nature",
+        "description": "A map would show sites created to make up for damage to nature elsewhere. People could report problems at these sites to the responsible authority."
+      }
+    },
+    "amelie-lab-inversion-inversion-20260930T100431-0c956a-e97a4dfff64d876e:C8": {
+      "de": {
+        "title": "Naturflächen aus der Ferne ansehen",
+        "description": "Rundumfotos und Drohnenbilder sollen zeigen, wie sich Ausgleichsflächen entwickeln. Behörden könnten die Aufnahmen mit den geplanten Maßnahmen vergleichen."
+      },
+      "en": {
+        "title": "Inspect nature sites remotely",
+        "description": "Panoramic photos and drone images would show how nature compensation sites are developing. Authorities could compare the images with the planned work."
+      }
+    },
+    "amelie-lab-inversion-inversion-20260930T100431-0c956a-e97a4dfff64d876e:C9": {
+      "de": {
+        "title": "Ökopunkte übersichtlich verwalten",
+        "description": "Gemeinden sollen sehen, wie viele Punkte für Naturschutzmaßnahmen vorhanden und bereits verwendet sind. So ließen sich geplante Eingriffe und ihr Ausgleich leichter überblicken."
+      },
+      "en": {
+        "title": "Keep track of nature compensation points",
+        "description": "Councils could see how many nature compensation points they have earned and used. This would make it easier to track development projects and the measures meant to offset their impact."
+      }
+    },
+    "amelie-lab-inversion-inversion-20260930T154802-cfc447-7bc689bd6a672d22:C2": {
+      "de": {
+        "title": "Haftungsfragen bei Essensspenden erklären",
+        "description": "Wer Lebensmittel spendet oder annimmt, soll Fragen zur Verantwortung bei Problemen stellen können. Ein Chatbot würde die passenden Regeln für den jeweiligen Fall erklären."
+      },
+      "en": {
+        "title": "Explain liability questions about food donations",
+        "description": "People donating or receiving food could ask who may be responsible if something goes wrong. A chatbot would explain the rules relevant to their situation."
+      }
+    },
+    "amelie-lab-inversion-inversion-20260930T154802-cfc447-7bc689bd6a672d22:C1": {
+      "de": {
+        "title": "Unterlagen für kleine Essensspenden",
+        "description": "Bäckereien und kleine Cafés sollen für übrig gebliebenes Essen kurze Übergabezettel und Hygienechecklisten erstellen können. Das würde die Dokumentation einer Spende erleichtern."
+      },
+      "en": {
+        "title": "Simple paperwork for small food donations",
+        "description": "Bakeries and small cafés could create short handover notes and hygiene checklists for surplus food. This would make donations easier to document."
+      }
+    },
+    "amelie-lab-inversion-inversion-20260930T154802-cfc447-7bc689bd6a672d22:C6": {
+      "de": {
+        "title": "Den Weg einer Essensspende festhalten",
+        "description": "Ein digitales Logbuch soll festhalten, wer welche Lebensmittel an wen weitergegeben hat. Kleine Betriebe und Hilfsorganisationen könnten Spenden damit leichter zurückverfolgen."
+      },
+      "en": {
+        "title": "Track a food donation from giver to receiver",
+        "description": "A digital log would record who passed which food to whom. Small businesses and charities could use it to trace donations."
+      }
+    },
+    "amelie-lab-inversion-inversion-20260930T181151-f9650e-d36303df10a75bb4:C1": {
+      "de": {
+        "title": "Bauholz mit dem Handy vorprüfen",
+        "description": "Fotos und ein Klopftest sollen erste Hinweise auf die Qualität eines Holzstücks liefern. Die App wäre als Vorprüfung gedacht; ob sie tragfähiges Bauholz zuverlässig erkennt, müsste getestet werden."
+      },
+      "en": {
+        "title": "Give building timber an initial phone check",
+        "description": "Photos and a tapping test would give initial clues about a piece of timber. The app is intended as a preliminary check; its ability to assess structural timber would need testing."
+      }
+    },
+    "amelie-lab-inversion-inversion-20260930T181151-f9650e-d36303df10a75bb4:C2": {
+      "de": {
+        "title": "Stahlkennzeichnungen verständlich machen",
+        "description": "Eine App soll Codes auf Stahlprodukten scannen und die zugehörigen Produktangaben finden. Sie würde die wichtigsten Eigenschaften in verständlicher Sprache anzeigen."
+      },
+      "en": {
+        "title": "Explain markings on steel products",
+        "description": "An app would scan codes on steel products and find their product documents. It would explain the main properties in everyday language."
+      }
+    },
+    "amelie-lab-inversion-inversion-20260930T210642-aba544-bc7d953a9692b76a:C2": {
+      "de": {
+        "title": "Lokale Erinnerungen ordnen",
+        "description": "Familien und Geschichtsgruppen sollen Berichte über Verfolgung leichter ordnen können. Ein Werkzeug würde Namen, Orte und Daten aus Texten oder Aufnahmen sammeln und passende Archivhinweise vorschlagen."
+      },
+      "en": {
+        "title": "Organise local historical memories",
+        "description": "Families and history groups could organise accounts of persecution. A tool would collect names, places and dates from texts or recordings and suggest related archive material."
+      }
+    },
+    "amelie-lab-inversion-inversion-20260930T210642-aba544-bc7d953a9692b76a:C5": {
+      "de": {
+        "title": "Familiengeschichten historisch einordnen",
+        "description": "Eine kurze Familiengeschichte soll als Ausgangspunkt für weitere Recherche dienen. Das Werkzeug würde mögliche Verbindungen zu bekannten Ereignissen und Orten vorschlagen."
+      },
+      "en": {
+        "title": "Connect family stories to history",
+        "description": "A short family story would become a starting point for research. The tool would suggest possible links to known events and places."
+      }
+    },
+    "amelie-lab-inversion-inversion-20260930T210642-aba544-bc7d953a9692b76a:C1": {
+      "de": {
+        "title": "Spuren historischer Verfolgung finden",
+        "description": "Menschen sollen Fotos alter Gebäude mit historischen Karten und Archiven vergleichen können. Das könnte Hinweise auf Orte liefern, die ein Geschichtsverein genauer untersuchen sollte."
+      },
+      "en": {
+        "title": "Find possible sites of historical persecution",
+        "description": "People could compare photos of old buildings with historical maps and archives. This might identify places that local historians should investigate."
+      }
+    },
+    "amelie-lab-inversion-inversion-20260930T210642-aba544-bc7d953a9692b76a:C7": {
+      "de": {
+        "title": "Gedenktafeln gegen Quellen prüfen",
+        "description": "Ein Werkzeug soll Namen, Daten und Ereignisse auf geplanten Gedenktafeln mit Archiven vergleichen. Auffällige Unterschiede würden Historikern zur Prüfung angezeigt."
+      },
+      "en": {
+        "title": "Check memorial plaques against sources",
+        "description": "A tool would compare names, dates and events on proposed memorial plaques with archive records. Historians would review any differences it finds."
+      }
+    },
+    "amelie-lab-inversion-inversion-20261001T122442-b701c9-a7d0e8be6a4cf85d:C5": {
+      "de": {
+        "title": "Zusatzdienste auf Stadtwebseiten finden",
+        "description": "Ein Prüfer soll zeigen, welche Erweiterungen und fremden Dienste eine städtische TYPO3-Webseite nutzt. Die IT-Abteilung könnte damit mögliche Datenschutz- oder Sicherheitsfragen untersuchen."
+      },
+      "en": {
+        "title": "Find extra services on council websites",
+        "description": "A scanner would list the extensions and outside services used by a council website built with TYPO3. IT staff could investigate possible privacy or security concerns."
+      }
+    },
+    "amelie-lab-inversion-inversion-20261001T122442-b701c9-a7d0e8be6a4cf85d:C2": {
+      "de": {
+        "title": "Sicherheitsupdates auf Stadtwebseiten verfolgen",
+        "description": "Ein Dienst soll beobachten, wie schnell betreute Stadtwebseiten bekannte Sicherheitsupdates erhalten. Kommunen könnten damit die Wartung ihrer Webseiten besser nachvollziehen."
+      },
+      "en": {
+        "title": "Track security updates on council websites",
+        "description": "A service would track how quickly council websites receive known security updates. Councils could use it to understand how their websites are maintained."
+      }
+    },
+    "amelie-lab-inversion-inversion-20261001T122442-b701c9-a7d0e8be6a4cf85d:C11": {
+      "de": {
+        "title": "Öffentlich finanzierten Code auffinden",
+        "description": "Ein Werkzeug soll nach öffentlich zugänglichem Programmcode kommunaler TYPO3-Projekte suchen. Es würde helfen zu prüfen, ob zugesagte Veröffentlichungen auffindbar sind."
+      },
+      "en": {
+        "title": "Find code paid for with public money",
+        "description": "A tool would look for public code from council projects built with TYPO3. It would help check whether promised code releases can be found."
+      }
+    },
+    "amelie-lab-inversion-inversion-20261001T125634-715072-9fa80b5ab9bef391:C5": {
+      "de": {
+        "title": "Wasserströmung mit dem Handy schätzen",
+        "description": "Betreiber kleiner Wasseranlagen sollen aus Videos erste Schätzungen zu Strömung und Wassertiefe erhalten. Die Messqualität müsste vor einem praktischen Einsatz geprüft werden."
+      },
+      "en": {
+        "title": "Estimate water flow with a phone",
+        "description": "Operators of small water structures could get initial estimates of water speed and depth from videos. Measurement quality would need testing before practical use."
+      }
+    },
+    "amelie-lab-inversion-inversion-20261001T125634-715072-9fa80b5ab9bef391:C6": {
+      "de": {
+        "title": "Fischschutzregeln anschaulich erklären",
+        "description": "Mühlenbesitzer sollen anhand von Bildern und Checklisten verstehen, welche Anforderungen für ihre Anlage relevant sind. Das Werkzeug würde eine erste Selbsteinschätzung erleichtern."
+      },
+      "en": {
+        "title": "Explain fish protection rules visually",
+        "description": "Mill owners could use pictures and checklists to understand the fish protection requirements relevant to their site. The tool would support an initial self assessment."
+      }
+    },
+    "amelie-lab-inversion-inversion-20261001T153054-8519a7-14a3fc2144744a9f:C1": {
+      "de": {
+        "title": "Nachweise für regionale Produkte sammeln",
+        "description": "Hofläden und andere Direktvermarkter sollen prüfen können, welche Herkunftssiegel zu ihren Produkten passen könnten. Eine App würde die benötigten Nachweise sammeln."
+      },
+      "en": {
+        "title": "Collect proof of regional product origin",
+        "description": "Farm shops and other direct sellers could explore which regional origin labels might fit their products. An app would collect the documents they need."
+      }
+    },
+    "amelie-lab-inversion-inversion-20261001T153054-8519a7-14a3fc2144744a9f:C3": {
+      "de": {
+        "title": "Qualitätsnachweise für Förderanträge ordnen",
+        "description": "Direktvermarkter sollen Fotos und Zertifikate zu Bio-Anbau oder Tierhaltung an einem Ort sammeln können. Das Werkzeug würde helfen, passende Unterlagen für einen Förderantrag zusammenzustellen."
+      },
+      "en": {
+        "title": "Organise quality documents for grant applications",
+        "description": "Direct sellers could collect photos and certificates about organic farming or animal welfare in one place. The tool would help assemble documents for a grant application."
+      }
+    },
+    "amelie-lab-inversion-inversion-20261001T153054-8519a7-14a3fc2144744a9f:C5": {
+      "de": {
+        "title": "Förderanträge vor dem Einreichen prüfen",
+        "description": "Ein Werkzeug soll Antragsentwürfe landwirtschaftlicher Direktvermarkter auf fehlende Angaben und Unstimmigkeiten prüfen. Es würde zeigen, was vor der Abgabe noch bearbeitet werden sollte."
+      },
+      "en": {
+        "title": "Check grant applications before submission",
+        "description": "A tool would check draft grant applications from farm businesses for missing information and inconsistencies. It would show what needs attention before submission."
+      }
+    },
+    "amelie-lab-inversion-inversion-20261001T161905-4c5547-4e2eb6d9ad4d961e:C4": {
+      "de": {
+        "title": "Naturgeräusche und Störungen erfassen",
+        "description": "Menschen sollen mit dem Handy Geräusche in Schutzgebieten aufnehmen können. Die App würde versuchen, Tierstimmen und Störgeräusche zu unterscheiden und für die Gebietsplanung zu dokumentieren."
+      },
+      "en": {
+        "title": "Record wildlife sounds and disturbances",
+        "description": "People could record sounds in protected areas with a phone. The app would try to distinguish wildlife calls from disturbances and record them for conservation planning."
+      }
+    },
+    "amelie-lab-inversion-inversion-20261001T175927-2b8a90-3c5ba5d26bb1744f:C1": {
+      "de": {
+        "title": "Kleine Milchbetriebe bei Kontrollen unterstützen",
+        "description": "Kleine Hersteller von Quark und anderen Milchprodukten sollen Messwerte einfacher erfassen können. Die App würde sie mit passenden Anforderungen zur Lebensmittelsicherheit vergleichen."
+      },
+      "en": {
+        "title": "Help small dairy producers with checks",
+        "description": "Small makers of quark and other dairy products could record measurements more easily. The app would compare them with relevant food safety requirements."
+      }
+    },
+    "amelie-lab-inversion-inversion-20261001T175927-2b8a90-3c5ba5d26bb1744f:C3": {
+      "de": {
+        "title": "Hygieneabläufe für kleine Milchbetriebe",
+        "description": "Ein bebilderter Leitfaden soll kleinen Milchbetrieben helfen, Gefahren bei der Herstellung zu erkennen. Er würde zeigen, welche Arbeitsschritte sie kontrollieren und dokumentieren sollten."
+      },
+      "en": {
+        "title": "Hygiene steps for small dairy producers",
+        "description": "A visual guide would help small dairy producers identify hazards during production. It would explain which steps to check and record."
+      }
+    },
+    "amelie-lab-inversion-inversion-20261010T090000-jobcenter-8ba695046a370bdd:INV-1": {
+      "de": {
+        "title": "Bürgergeld mit weniger Nachweisen",
+        "description": "Die Idee schlägt vor, Bürgergeld zunächst auf Vertrauensbasis zu gewähren und Wohnkosten stärker pauschal zu berechnen. So müssten Antragsteller und Jobcenter weniger Einzelnachweise bearbeiten."
+      },
+      "en": {
+        "title": "Benefits with less paperwork",
+        "description": "This proposal would grant basic income support on a trust first basis and use more standard housing payments. Applicants and jobcentres would handle fewer individual documents."
+      }
+    },
+    "amelie-lab-inversion-inversion-20261010T161000-jobcenter-80e438f8004763eb:C1": {
+      "de": {
+        "title": "Unternehmen bewerben sich bei Arbeitsuchenden",
+        "description": "Arbeitsuchende sollen auf einer öffentlichen Plattform sagen können, welche Arbeit zu ihrem Leben passt. Unternehmen würden sich mit konkreten Stellen und Arbeitsbedingungen bei ihnen melden."
+      },
+      "en": {
+        "title": "Let employers apply to jobseekers",
+        "description": "Jobseekers could describe what work fits their lives on a public platform. Employers would approach them with specific jobs and working conditions."
+      }
+    },
+    "amelie-lab-inversion-inversion-20261010T161000-jobcenter-80e438f8004763eb:C2": {
+      "de": {
+        "title": "Bürgergeldbescheide verständlich prüfen",
+        "description": "Ein Werkzeug soll Bescheide nach möglichen Rechenfehlern oder fraglichen Kürzungen durchsuchen. Es würde die Fundstellen erklären und beim Entwurf eines Widerspruchs helfen."
+      },
+      "en": {
+        "title": "Help check benefit decision letters",
+        "description": "A tool would look for possible calculation errors or questionable reductions in benefit decisions. It would explain what it finds and help draft an appeal."
+      }
+    },
+    "amelie-lab-inversion-inversion-20261010T171000-jobcenter-multiling-2e9fa59b9567484c:C1": {
+      "de": {
+        "title": "Begleitung zum Amt organisieren",
+        "description": "Eine Plattform soll Menschen mit Begleitpersonen für Behördentermine zusammenbringen. Gemeinsam könnten sie den Termin vorbereiten, den Weg planen und Gesprächsnotizen festhalten."
+      },
+      "en": {
+        "title": "Arrange support for appointments with authorities",
+        "description": "A platform would connect people with companions for appointments with authorities. They could prepare together, plan the journey and keep notes of the meeting."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20260929T203438-f693a3-31d72a38da35a809:C1": {
+      "de": {
+        "title": "Walnüsse am Klang unterscheiden",
+        "description": "Eine App soll dem Geräusch einer fallenden Walnuss zuhören und den Zustand des Kerns schätzen. Ob sie volle, leere und verdorbene Nüsse unterscheiden kann, müsste getestet werden."
+      },
+      "en": {
+        "title": "Tell walnuts apart by their sound",
+        "description": "An app would listen to a walnut hitting a surface and estimate the condition of its kernel. Its ability to distinguish full, empty and spoiled nuts would need testing."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20260929T203438-f693a3-31d72a38da35a809:C5": {
+      "de": {
+        "title": "Walnussduell zum Mitspielen",
+        "description": "Zwei Spieler lassen ihre Walnüsse von einer App einschätzen und knacken sie danach. So sehen sie, ob die Klangvorhersage stimmt, und sammeln Beispiele zum Verbessern der App."
+      },
+      "en": {
+        "title": "Play a walnut guessing game",
+        "description": "Two players let an app assess their walnuts, then crack them open. They can see whether the sound based guess was right and collect examples to improve the app."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20260929T210403-8dcdf7-41fdde485a6b268c:C1": {
+      "de": {
+        "title": "Kartoffelscheiben vor dem Braten einschätzen",
+        "description": "Eine Kamera-App soll Dicke und Form von Kartoffelscheiben einschätzen. Sie würde daraus Vorschläge für Öltemperatur und Bratzeit ableiten."
+      },
+      "en": {
+        "title": "Plan how to fry potato slices",
+        "description": "A camera app would estimate the thickness and shape of potato slices. It would use this to suggest oil temperatures and cooking times."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20260929T210403-8dcdf7-41fdde485a6b268c:C4": {
+      "de": {
+        "title": "Das Wenden einer Tortilla üben",
+        "description": "Eine Übungspfanne mit Sensoren soll zeigen, wie die Handbewegung zum Wenden gelingt. Rückmeldungen würden helfen, die Bewegung Schritt für Schritt zu verbessern."
+      },
+      "en": {
+        "title": "Practise flipping a tortilla",
+        "description": "A practice pan with sensors would help people learn the wrist movement for flipping a tortilla. Feedback would help them improve the movement step by step."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20260929T210403-8dcdf7-41fdde485a6b268c:C6": {
+      "de": {
+        "title": "Hält die Tortilla beim Wenden?",
+        "description": "Eine Kamera soll beobachten, wie fest eine Tortilla beim Garen wird. Die App würde abschätzen, ob sie beim Wenden oder Anschneiden auseinanderfallen könnte."
+      },
+      "en": {
+        "title": "Will the tortilla hold together?",
+        "description": "A camera would watch a tortilla set as it cooks. The app would estimate whether it might break when flipped or cut."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20260929T210403-8dcdf7-41fdde485a6b268c:C8": {
+      "de": {
+        "title": "Den eigenen Tortillastil entdecken",
+        "description": "Nach dem Kochen sollen Nutzer Geschmack und Konsistenz ihrer Tortilla beschreiben können. Eine App würde sie mit regionalen Zubereitungsarten vergleichen."
+      },
+      "en": {
+        "title": "Discover your tortilla style",
+        "description": "After cooking, people could describe their tortilla's taste and texture. An app would compare it with regional styles."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20260929T210403-8dcdf7-41fdde485a6b268c:C12": {
+      "de": {
+        "title": "Aus misslungenen Tortillas lernen",
+        "description": "Wer eine misslungene Tortilla fotografiert, soll Hinweise auf mögliche Ursachen erhalten. Die App würde Änderungen für den nächsten Versuch vorschlagen."
+      },
+      "en": {
+        "title": "Learn from a tortilla that went wrong",
+        "description": "People could upload a photo of a tortilla that went wrong and get possible explanations. The app would suggest changes for the next attempt."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20260930T064824-38e1d7-4a4e787a2c5489ef:C18": {
+      "de": {
+        "title": "Versteckte Schmetterlinge aufspüren",
+        "description": "Eine App soll kleine Bewegungen und Geräusche auswerten, um auf schwer sichtbare Schmetterlinge hinzuweisen. Sie würde mögliche Fundstellen im Kamerabild markieren."
+      },
+      "en": {
+        "title": "Look for hidden butterflies",
+        "description": "An app would analyse small movements and sounds for clues to butterflies that are hard to see. It would mark possible locations in the camera view."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20260930T064824-38e1d7-4a4e787a2c5489ef:C3": {
+      "de": {
+        "title": "Schmetterlinge mit weniger Störung beobachten",
+        "description": "Eine App soll Flugbewegungen von Schmetterlingen beobachten und passende Verhaltenstipps geben. Sie könnte zum Beispiel vorschlagen, stehen zu bleiben oder langsamer zu gehen."
+      },
+      "en": {
+        "title": "Observe butterflies with less disturbance",
+        "description": "An app would observe butterfly flight patterns and suggest how an observer should move. For example, it might suggest pausing or walking more slowly."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20260930T064824-38e1d7-4a4e787a2c5489ef:C8": {
+      "de": {
+        "title": "Wie gut ist ein Schmetterling getarnt?",
+        "description": "Eine App soll einen Schmetterling mit seinem Hintergrund vergleichen. Sie würde zeigen, wie Farben und Muster das Tier schwerer sichtbar machen könnten."
+      },
+      "en": {
+        "title": "How well is a butterfly camouflaged?",
+        "description": "An app would compare a butterfly with its background. It would show how colours and patterns might make the insect harder to see."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20260930T064824-38e1d7-4a4e787a2c5489ef:C2": {
+      "de": {
+        "title": "Schmetterlinge mit kleinen Sensoren erfassen",
+        "description": "Kleine Sensoren entlang einer Beobachtungsstrecke sollen Bewegungen von Schmetterlingen erkennen. Bei einem möglichen Fund würden sie eine Kameraaufnahme auslösen."
+      },
+      "en": {
+        "title": "Detect butterflies with small sensors",
+        "description": "Small sensors along a survey route would look for signs of butterfly movement. A possible sighting would trigger a camera recording."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20260930T064824-38e1d7-4a4e787a2c5489ef:C11": {
+      "de": {
+        "title": "Den nächsten Beobachtungspunkt wählen",
+        "description": "Eine App soll Wetter, Gelände und bisherige Sichtungen vergleichen. Sie würde vorschlagen, wo entlang einer Strecke als Nächstes nach Schmetterlingen gesucht werden könnte."
+      },
+      "en": {
+        "title": "Choose where to look for butterflies next",
+        "description": "An app would compare weather, terrain and previous sightings. It would suggest where to look for butterflies next along a survey route."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20260930T073557-e87ad6-ac13ff67d43128a9:C11": {
+      "de": {
+        "title": "Schmetterlingsflüge räumlich untersuchen",
+        "description": "Videos sollen zeigen, wie schnell und in welche Richtung Schmetterlinge fliegen. Forschende könnten damit untersuchen, wie die Tiere ihren Lebensraum nutzen."
+      },
+      "en": {
+        "title": "Study butterfly flight in three dimensions",
+        "description": "Videos would show how fast butterflies fly and in which direction. Researchers could use this to study how the insects use their habitat."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20260930T073557-e87ad6-ac13ff67d43128a9:C3": {
+      "de": {
+        "title": "Übersehene Schmetterlingsverstecke zeigen",
+        "description": "Eine App soll aus Videos eine räumliche Karte der Pflanzen erstellen. Sie würde Stellen markieren, an denen Schmetterlinge beim Zählen leicht verborgen bleiben könnten."
+      },
+      "en": {
+        "title": "Show places where butterflies may be missed",
+        "description": "An app would build a three dimensional map of vegetation from video. It would mark places where butterflies might stay hidden during a count."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20260930T073557-e87ad6-ac13ff67d43128a9:C2": {
+      "de": {
+        "title": "Blendung und Schatten bei Zählungen erkennen",
+        "description": "Eine App soll zeigen, wo Licht und Schatten die Sicht auf Schmetterlinge erschweren. Zählteams könnten solche Stellen bei der Auswertung berücksichtigen."
+      },
+      "en": {
+        "title": "Spot glare and shadows during butterfly counts",
+        "description": "An app would show where glare and shadows make butterflies difficult to see. Survey teams could take these areas into account when reviewing counts."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20260930T100201-4ab848-e7c0bbedd1bf9494:C11": {
+      "de": {
+        "title": "Robinien nach der Behandlung beobachten",
+        "description": "Fotos vom Standort sollen helfen abzuschätzen, wo Robinien nach einer Behandlung erneut austreiben könnten. Die App würde passende Nachkontrollen vorschlagen."
+      },
+      "en": {
+        "title": "Plan follow up checks after treating trees",
+        "description": "Photos of a site would help estimate where black locust trees might regrow after treatment. The app would suggest follow up checks."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20260930T100201-4ab848-e7c0bbedd1bf9494:C1": {
+      "de": {
+        "title": "Robinienbekämpfung als Simulation ausprobieren",
+        "description": "In einer Simulation sollen Nutzer verschiedene Maßnahmen gegen Robinien ausprobieren können. Das Spiel würde zeigen, wie sich ein Bestand unter den gewählten Annahmen entwickeln könnte."
+      },
+      "en": {
+        "title": "Try tree management in a simulation",
+        "description": "A simulation would let people try different ways of managing black locust trees. It would show how a stand might develop under the chosen assumptions."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20260930T100201-4ab848-e7c0bbedd1bf9494:C5": {
+      "de": {
+        "title": "Wiederaustrieb einheitlich dokumentieren",
+        "description": "Ein Beobachtungsbogen soll Blattfarbe und neue Triebe von Robinien nach einer Behandlung festhalten. Vergleichbare Einträge würden zeigen, wie sich ein Standort über die Zeit verändert."
+      },
+      "en": {
+        "title": "Record tree regrowth consistently",
+        "description": "A scorecard would record leaf colour and new shoots after black locust treatment. Consistent records would show how a site changes over time."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20260930T100201-4ab848-e7c0bbedd1bf9494:C3": {
+      "de": {
+        "title": "Robinientriebe erkennen üben",
+        "description": "Eine Kamera-App soll beim Kontrollgang Übungsbilder über das echte Bild legen. Nutzer könnten lernen, neue Robinientriebe von anderen Pflanzen zu unterscheiden."
+      },
+      "en": {
+        "title": "Practise recognising black locust shoots",
+        "description": "A camera app would place practice images over the real view during site checks. People could learn to distinguish new black locust shoots from other plants."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20260930T100431-797290-b66b1994b0a5d105:C2": {
+      "de": {
+        "title": "Vergrabene Objekte ohne Ausgraben untersuchen",
+        "description": "Eine Roboterplattform soll den Boden abtasten und Bilder vom Inneren vergrabener Objekte erzeugen. Fachleute könnten damit verdächtige Funde vor einer Bergung besser untersuchen."
+      },
+      "en": {
+        "title": "Inspect buried objects without digging",
+        "description": "A robot platform would scan the ground and create images of buried objects. Specialists could use them to study suspicious finds before excavation."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20260930T100431-797290-b66b1994b0a5d105:C9": {
+      "de": {
+        "title": "Historische Hinweise zu Bodenfunden verbinden",
+        "description": "Ein Werkzeug soll alte Militärunterlagen, Bodendaten und Räumberichte zusammenführen. Es würde mögliche Erklärungen vorschlagen, warum ein verdächtiges Objekt an einer Stelle liegen könnte."
+      },
+      "en": {
+        "title": "Connect historical clues about buried objects",
+        "description": "A tool would bring together old military records, ground data and clearance reports. It would suggest possible explanations for a suspicious object at a particular location."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20260930T100431-797290-b66b1994b0a5d105:C1": {
+      "de": {
+        "title": "Messdaten für die Kampfmittelsuche auswerten",
+        "description": "Mehrere Bodensensoren sollen gemeinsam Hinweise auf vergrabene Gegenstände liefern. Das System würde Fachleuten zeigen, welche Messmuster zu möglichen Kampfmitteln passen könnten."
+      },
+      "en": {
+        "title": "Interpret measurements in explosive clearance",
+        "description": "Several ground sensors would provide clues about buried objects. The system would show specialists which measurement patterns might match unexploded munitions."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20260930T100431-797290-b66b1994b0a5d105:C5": {
+      "de": {
+        "title": "Unsicherheit bei verdächtigen Bodenfunden zeigen",
+        "description": "Eine Karte soll Messdaten und historische Hinweise zu möglichen Kampfmitteln bündeln. Sie würde auch anzeigen, wie unsicher die jeweilige Einschätzung ist."
+      },
+      "en": {
+        "title": "Map uncertainty around suspicious buried objects",
+        "description": "A map would combine measurements and historical clues about possible unexploded munitions. It would also show the uncertainty of each assessment."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20260930T100431-797290-b66b1994b0a5d105:C7": {
+      "de": {
+        "title": "Lückenhafte Bodensignale vergleichen",
+        "description": "Ein Werkzeug soll schwache oder unvollständige Bodensignale mit bekannten Beispielen vergleichen. Fachleute bekämen Vorschläge, welches Objekt dahinterstecken könnte."
+      },
+      "en": {
+        "title": "Compare incomplete ground sensor signals",
+        "description": "A tool would compare weak or incomplete ground sensor signals with known examples. Specialists would receive suggestions about what object might explain them."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20260930T113750-f2ef4a-23c0ddef087f2e09:C8": {
+      "de": {
+        "title": "Signale zwischen Haustieren übersetzen",
+        "description": "Ein Gerät soll Lautäußerungen und Körperhaltung eines Tieres erkennen und in Licht- oder Vibrationssignale übersetzen. Die Idee ist, dem anderen Tier verständliche Hinweise zu geben; ob das funktioniert, müsste erforscht werden."
+      },
+      "en": {
+        "title": "Translate signals between pets",
+        "description": "A device would turn one pet's sounds and posture into light or vibration signals for another pet. Whether animals could understand these signals would need research."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20260930T113750-f2ef4a-23c0ddef087f2e09:C1": {
+      "de": {
+        "title": "Die Umgebung bei Spannungen zwischen Tieren anpassen",
+        "description": "Ein System soll das Verhalten von Haustieren beobachten und Licht oder Geräusche im Raum verändern. Es würde versuchen, Spannungen frühzeitig zu verringern."
+      },
+      "en": {
+        "title": "Adjust the room when pets become tense",
+        "description": "A system would watch pets and adjust light or sound in the room. It would try to reduce tension before a conflict develops."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20260930T113750-f2ef4a-23c0ddef087f2e09:C7": {
+      "de": {
+        "title": "Rückzugswege für Haustiere schaffen",
+        "description": "Bewegliche Raumteiler und automatische Tierklappen sollen auf die Bewegungen von Haustieren reagieren. So könnten bei Spannungen vorübergehend Abstand und Rückzugswege entstehen."
+      },
+      "en": {
+        "title": "Create escape routes for pets",
+        "description": "Moving room dividers and automatic pet doors would respond to pets' movements. They could create temporary space and escape routes when tension rises."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20260930T113750-f2ef4a-23c0ddef087f2e09:C14": {
+      "de": {
+        "title": "Haustiere mit verstellbaren Trennwänden eingewöhnen",
+        "description": "Ein System soll erkennen, wenn sich Haustiere nähern, und vorübergehend Trennwände bewegen. Die Tiere könnten sich mit kontrolliertem Abstand aneinander gewöhnen."
+      },
+      "en": {
+        "title": "Introduce pets using adjustable barriers",
+        "description": "A system would detect approaching pets and move temporary barriers. The animals could get used to one another with controlled separation."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20260930T113750-f2ef4a-23c0ddef087f2e09:C3": {
+      "de": {
+        "title": "Haustiere mit Lichtmustern lenken",
+        "description": "Ein Gerät soll Muster auf Boden oder Wände projizieren, um die Aufmerksamkeit von Hunden und Katzen umzulenken. Die erhoffte beruhigende Wirkung müsste erst getestet werden."
+      },
+      "en": {
+        "title": "Guide pets using projected light patterns",
+        "description": "A device would project patterns on floors or walls to redirect dogs' and cats' attention. The hoped for calming effect would need testing."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20260930T154802-051b08-d9034ba2f2deb6b3:C10": {
+      "de": {
+        "title": "Webseitentexte laufend überarbeiten",
+        "description": "Ein Schreibwerkzeug soll im Hintergrund kleine Änderungen an Webseitentexten vornehmen. Es würde Grammatik und Lesbarkeit verbessern und Texte für Suchmaschinen überarbeiten."
+      },
+      "en": {
+        "title": "Keep website text polished automatically",
+        "description": "A writing tool would make small edits to website text in the background. It would improve grammar and readability and adapt text for search engines."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20260930T164042-efeb55-41a5ed73c041e692:C11": {
+      "de": {
+        "title": "Herkunft und Umweltangaben von Holz abrufen",
+        "description": "Ein Code am Holz soll zu seinen Herkunfts- und Umweltangaben führen. Beim Scannen würden Käufer und Prüfer die hinterlegten Nachweise sehen."
+      },
+      "en": {
+        "title": "Look up timber origin and environmental records",
+        "description": "A code attached to timber would link to its origin and environmental records. Buyers and inspectors could scan it to view the stored documents."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20260930T164042-efeb55-41a5ed73c041e692:C1": {
+      "de": {
+        "title": "Transport und Lagerung von Holz beobachten",
+        "description": "Sensoren sollen Feuchtigkeit, Temperatur und Transportwege von Holzlieferungen erfassen. Das System würde auf Abweichungen von den erwarteten Bedingungen hinweisen."
+      },
+      "en": {
+        "title": "Monitor timber transport and storage",
+        "description": "Sensors would record moisture, temperature and transport routes for timber shipments. The system would flag departures from expected conditions."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20260930T210642-66f73d-b4454272a612cb2b:C1": {
+      "de": {
+        "title": "Erinnerungen an Orten lebendig halten",
+        "description": "Menschen sollen kurze Erinnerungen als Ton oder Text an einem Ort hinterlassen können. Beiträge würden sichtbarer bleiben, wenn andere sie besuchen, anhören oder ergänzen."
+      },
+      "en": {
+        "title": "Keep memories alive at specific places",
+        "description": "People could leave short audio or text memories at a place. Contributions would remain more visible when others visit, listen or add to them."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20260930T210642-66f73d-b4454272a612cb2b:C2": {
+      "de": {
+        "title": "Gemeinsame Themen in Erinnerungen entdecken",
+        "description": "Ein Werkzeug soll Zeitzeugenberichte nach gemeinsamen Orten und Themen verbinden. Häufig aufgegriffene Themen würden in der Darstellung stärker hervortreten."
+      },
+      "en": {
+        "title": "Find shared themes in personal memories",
+        "description": "A tool would connect personal accounts through shared places and themes. Topics mentioned more often would become more prominent in the display."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20260930T210642-66f73d-b4454272a612cb2b:C6": {
+      "de": {
+        "title": "Gefühle zu historischen Orten sichtbar machen",
+        "description": "Menschen sollen angeben können, welche Gefühle sie mit einem Ort oder Ereignis verbinden. Eine Karte würde die gesammelten Eindrücke zeigen."
+      },
+      "en": {
+        "title": "Map feelings about historical places",
+        "description": "People could share the feelings they associate with a place or historical event. A map would display the combined impressions."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20260930T210642-66f73d-b4454272a612cb2b:C13": {
+      "de": {
+        "title": "Gedanken zu Frieden und Freiheit sammeln",
+        "description": "Menschen sollen an Orten in Brandenburg kurze Gedanken als Text oder Sprachnachricht hinterlassen können. Eine Karte würde zeigen, welche Themen die Beiträge verbinden."
+      },
+      "en": {
+        "title": "Collect thoughts about peace and freedom",
+        "description": "People could leave short texts or voice messages about peace and freedom at places in Brandenburg. A map would show the themes connecting these contributions."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20260930T210642-66f73d-b4454272a612cb2b:C7": {
+      "de": {
+        "title": "Zeitzeugenberichte mit heutigen Ereignissen verbinden",
+        "description": "Eine App soll zu aktuellen Nachrichten passende historische Erinnerungen vorschlagen. Nutzer könnten die Perspektiven vergleichen und eigene Gedanken hinzufügen."
+      },
+      "en": {
+        "title": "Connect historical accounts with today's events",
+        "description": "An app would suggest historical personal accounts related to current news. People could compare perspectives and add their own reflections."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261001T113429-d8c3d3-c76ecd4324c4c9a3:C9": {
+      "de": {
+        "title": "Künstlertexte in einem gemeinsamen Stil schreiben",
+        "description": "Ein Werkzeug soll neue Texte für eine Künstlerwebseite an einen gewählten Stil anpassen. Beschreibungen und redaktionelle Beiträge könnten dadurch einheitlicher klingen."
+      },
+      "en": {
+        "title": "Give an artist's texts a consistent style",
+        "description": "A tool would adapt new text for an artist's website to a chosen style. Artwork descriptions and editorial content could sound more consistent."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261001T113429-d8c3d3-c76ecd4324c4c9a3:C6": {
+      "de": {
+        "title": "Verbindungen im Werk eines Künstlers entdecken",
+        "description": "Ein Werkzeug soll das Archiv eines Künstlers nach wiederkehrenden Themen und Veränderungen durchsuchen. Daraus würde es Ideen für kleine Online-Ausstellungen vorschlagen."
+      },
+      "en": {
+        "title": "Find connections across an artist's work",
+        "description": "A tool would search an artist's archive for recurring themes and changes over time. It would suggest ideas for small online exhibitions."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261001T113429-d8c3d3-c76ecd4324c4c9a3:C12": {
+      "de": {
+        "title": "Materialwechsel im Kunstwerk verfolgen",
+        "description": "Fotos und Beschreibungen sollen zeigen, welche Materialien ein Künstler über die Jahre verwendet hat. Eine Zeitleiste würde die Entwicklung auf der Webseite darstellen."
+      },
+      "en": {
+        "title": "Track changes in an artist's materials",
+        "description": "Photos and descriptions would show which materials an artist used over the years. A timeline would present these changes on the website."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261001T113429-d8c3d3-c76ecd4324c4c9a3:C1": {
+      "de": {
+        "title": "Aus Skizzen Texte für Ausstellungen entwickeln",
+        "description": "Ein Werkzeug soll Notizen, Skizzen und Entwürfe eines Künstlers ordnen. Es würde daraus Entwürfe für Ausstellungstexte, Blogbeiträge oder soziale Medien vorschlagen."
+      },
+      "en": {
+        "title": "Turn sketches and notes into exhibition text",
+        "description": "A tool would organise an artist's notes, sketches and drafts. It would suggest text for exhibitions, blog posts or social media."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261001T115223-57fb6f-ad0e2ae5312ddcc6:C10": {
+      "de": {
+        "title": "Handwerkliches Wissen aus dem Alltag festhalten",
+        "description": "Ton- und Videoaufnahmen sollen zeigen, wie ein Lebensmittel handwerklich hergestellt wird. Ein Werkzeug würde daraus eine Beschreibung der traditionellen Arbeitsschritte für Herkunftsnachweise erstellen."
+      },
+      "en": {
+        "title": "Capture everyday craft knowledge",
+        "description": "Audio and video recordings would capture how a food product is made by hand. A tool would turn them into a description of traditional methods for origin documentation."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261001T115223-57fb6f-ad0e2ae5312ddcc6:C1": {
+      "de": {
+        "title": "Herstellungsnachweise täglich sammeln",
+        "description": "Handwerkliche Lebensmittelbetriebe sollen Fotos, kurze Videos und Messwerte laufend sammeln können. Das Werkzeug würde daraus eine Dokumentation aufbauen und auf auffällige Änderungen hinweisen."
+      },
+      "en": {
+        "title": "Build production records day by day",
+        "description": "Artisan food producers could collect photos, short videos and measurements each day. The tool would build a production record and flag unusual changes."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261001T115223-57fb6f-ad0e2ae5312ddcc6:C5": {
+      "de": {
+        "title": "Fehlende Nachweise auf einen Blick sehen",
+        "description": "Eine Ampelanzeige soll einem Handwerksbetrieb zeigen, ob seine Nachweise aktuell sind. Sie würde markieren, wo noch Einträge oder eine Prüfung fehlen."
+      },
+      "en": {
+        "title": "See missing certification records at a glance",
+        "description": "A traffic light display would show craft producers whether their certification records are up to date. It would highlight missing entries or items needing review."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261001T122442-6750db-d2b538919c7e46fa:C18": {
+      "de": {
+        "title": "Kunst nach Themen und Techniken erkunden",
+        "description": "Eine Künstlerwebseite soll Werke über gemeinsame Themen, Materialien und Techniken verbinden. Besucher könnten diese Verbindungen in einer interaktiven Übersicht erkunden."
+      },
+      "en": {
+        "title": "Explore art through themes and techniques",
+        "description": "An artist's website would link works through shared themes, materials and techniques. Visitors could explore these connections in an interactive view."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261001T122442-6750db-d2b538919c7e46fa:C3": {
+      "de": {
+        "title": "Vergängliche Kunst als interaktive Dokumentation",
+        "description": "Videos, Ton und Notizen einer Performance sollen in einer gemeinsamen Übersicht erscheinen. Besucher könnten verschiedene Handlungen, Themen und Reaktionen des Publikums erkunden."
+      },
+      "en": {
+        "title": "Explore performance art through an interactive archive",
+        "description": "Videos, audio and notes from a performance would appear in one interactive view. Visitors could explore its actions, themes and audience responses."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261001T122442-6750db-d2b538919c7e46fa:C1": {
+      "de": {
+        "title": "Formulierungen für Kunsttexte finden",
+        "description": "Ein Werkzeug soll Bilder und Stichwörter eines Künstlers als Ausgangspunkt nehmen. Es würde Vorschläge für Werkbeschreibungen, Ausstellungstitel oder kurze Selbstdarstellungen machen."
+      },
+      "en": {
+        "title": "Find wording for art descriptions",
+        "description": "A tool would use an artist's images and keywords as a starting point. It would suggest artwork descriptions, exhibition titles or short artist statements."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261001T131947-2b7a3c-ce1879065f99b3fd:C5": {
+      "de": {
+        "title": "Alte und neue Wasserrechtsquellen verbinden",
+        "description": "Ein Werkzeug soll historische Wasserrechte mit heutigen Leitfäden und örtlichen Urteilen zusammenführen. Anlagenbetreiber könnten relevante Fundstellen leichter gemeinsam prüfen."
+      },
+      "en": {
+        "title": "Connect old and new water rights sources",
+        "description": "A tool would bring historical water rights together with current guidance and local court decisions. Site operators could review relevant sources in one place."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261001T131947-2b7a3c-ce1879065f99b3fd:C9": {
+      "de": {
+        "title": "Unterschiedliche Angaben zu Wasserrechten abgleichen",
+        "description": "Mühlenbesitzer, Behörden und Naturschutzgruppen sollen ihre Unterlagen gemeinsam betrachten können. Das Werkzeug würde Unterschiede markieren, die Menschen klären müssen."
+      },
+      "en": {
+        "title": "Compare conflicting water rights information",
+        "description": "Mill owners, authorities and conservation groups could review their documents together. The tool would flag differences for people to resolve."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261001T131947-2b7a3c-ce1879065f99b3fd:C1": {
+      "de": {
+        "title": "Besondere Formulierungen in alten Wasserrechten finden",
+        "description": "Ein Werkzeug soll alte Wasserbücher nach juristischen Formulierungen durchsuchen. Ungewöhnliche Stellen würden zur genaueren Prüfung hervorgehoben."
+      },
+      "en": {
+        "title": "Find unusual wording in old water rights",
+        "description": "A tool would search old water rights registers for legal wording. It would highlight unusual passages for closer review."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261001T131947-2b7a3c-ce1879065f99b3fd:C3": {
+      "de": {
+        "title": "Alte Wasserbücher durchsuchbar machen",
+        "description": "Scans oder Fotos alter Wasserbücher sollen in durchsuchbaren Text umgewandelt werden. Wichtige Angaben würden in einer gemeinsamen Datenbank gesammelt."
+      },
+      "en": {
+        "title": "Make old water rights registers searchable",
+        "description": "Scans or photos of old water rights registers would be turned into searchable text. Key information would be collected in a shared database."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261001T153054-cca9b8-d12f2f1539032c4f:C4": {
+      "de": {
+        "title": "Reife und Verderb von Waren beobachten",
+        "description": "Sensoren oder Kameras sollen Veränderungen an saisonalen Lebensmitteln beobachten. Eine Anzeige würde schätzen, wie viel Zeit zum Verkauf noch bleiben könnte."
+      },
+      "en": {
+        "title": "Track produce ripening and spoilage",
+        "description": "Sensors or cameras would watch changes in seasonal food products. A display would estimate how much selling time might remain."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261001T153054-cca9b8-d12f2f1539032c4f:C1": {
+      "de": {
+        "title": "Beliebte Stellen im Laden erkennen",
+        "description": "Ein Werkzeug soll aus Bewegungen von Kunden eine Übersicht stark besuchter Ladenbereiche erstellen. Betreiber könnten damit Warenplatzierung und Aktionen planen."
+      },
+      "en": {
+        "title": "See which parts of a shop attract attention",
+        "description": "A tool would turn customer movement patterns into a view of busy areas in a shop. Owners could use it to plan product placement and promotions."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261001T153054-cca9b8-d12f2f1539032c4f:C9": {
+      "de": {
+        "title": "Überschüsse zwischen Hofläden ausgleichen",
+        "description": "Hofläden einer Region sollen sich über übrige Ware und fehlende Produkte austauschen können. Eine App würde passende Umlagerungen oder gemeinsame Verkaufsaktionen vorschlagen."
+      },
+      "en": {
+        "title": "Share surplus stock between farm shops",
+        "description": "Farm shops in a region could share information about surplus and missing products. An app would suggest stock transfers or joint sales."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261001T161905-5bef5e-99de58c9b665c778:C5": {
+      "de": {
+        "title": "Kleine Roboter beobachten ein Schutzgebiet",
+        "description": "Mehrere kleine Roboter sollen Pflanzen, Bodenfeuchte und Geräusche erfassen. Sie würden Beobachtungen untereinander vergleichen und Ranger über auffällige Änderungen informieren."
+      },
+      "en": {
+        "title": "Use small robots to monitor a nature reserve",
+        "description": "Several small robots would record vegetation, soil moisture and sounds. They would compare observations and alert rangers to unusual changes."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261001T161905-5bef5e-99de58c9b665c778:C11": {
+      "de": {
+        "title": "Bodenveränderungen mit vernetzten Sensoren sehen",
+        "description": "Viele kleine Sensoren sollen Bodenfeuchte, Temperatur und weitere Werte gemeinsam erfassen. Ranger könnten auf einer Karte sehen, wo sich Bedingungen auffällig verändern."
+      },
+      "en": {
+        "title": "See soil changes through connected sensors",
+        "description": "Many small sensors would record soil moisture, temperature and other measurements together. Rangers could see on a map where conditions change unusually."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261001T161905-5bef5e-99de58c9b665c778:C2": {
+      "de": {
+        "title": "Ungewöhnliche Geräusche im Schutzgebiet melden",
+        "description": "Verteilte Mikrofone sollen Geräusche wie Kettensägen oder ungewöhnliche Tierlaute erkennen. Ranger würden Hinweise erhalten, ohne jede Aufnahme selbst anhören zu müssen."
+      },
+      "en": {
+        "title": "Flag unusual sounds in a nature reserve",
+        "description": "Microphones around a reserve would look for sounds such as chainsaws or unusual animal calls. Rangers would receive alerts without listening to every recording."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261001T161905-5bef5e-99de58c9b665c778:C4": {
+      "de": {
+        "title": "Beobachtungen direkt im Gelände teilen",
+        "description": "Ranger und Freiwillige sollen Tier- und Pflanzenfunde im Kamerabild an ihrem Ort markieren können. Andere in der Nähe würden die Hinweise sehen und bestätigen oder ergänzen können."
+      },
+      "en": {
+        "title": "Share field observations where they happen",
+        "description": "Rangers and volunteers could mark wildlife observations at their location in a camera view. Others nearby could see, confirm or add to the notes."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261001T161905-5bef5e-99de58c9b665c778:C3": {
+      "de": {
+        "title": "Uneinigkeit bei Naturkartierungen sichtbar machen",
+        "description": "Mehrere Freiwillige sollen dieselbe Fläche beschreiben können. Das Werkzeug würde Stellen hervorheben, an denen sich die Angaben unterscheiden und Fachleute genauer nachsehen sollten."
+      },
+      "en": {
+        "title": "Show disagreements in volunteer nature surveys",
+        "description": "Several volunteers could describe the same area. The tool would highlight places where their records differ and experts should take a closer look."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261001T163628-ee76cb-96a4d974382afcfc:C7": {
+      "de": {
+        "title": "Einzelne Fische ohne Markierung wiedererkennen",
+        "description": "Unterwasservideos sollen einzelne Fische an ihren Mustern und Merkmalen wiedererkennen. Forschende könnten ihre Bewegungen verfolgen, ohne eine körperliche Markierung anzubringen."
+      },
+      "en": {
+        "title": "Recognise individual fish without tags",
+        "description": "Underwater videos would identify individual fish from their patterns and features. Researchers could follow their movements without attaching physical tags."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261001T163628-ee76cb-96a4d974382afcfc:C11": {
+      "de": {
+        "title": "Mögliche Stressanzeichen bei Fischen erkennen",
+        "description": "Eine App soll Körperform und Bewegungen von Fischen aus Videos untersuchen. Sie würde nach kleinen Veränderungen suchen, die Forschende als mögliche Stressanzeichen prüfen könnten."
+      },
+      "en": {
+        "title": "Look for possible signs of stress in fish",
+        "description": "An app would study fish body shape and movement in videos. It would look for small changes that researchers could examine as possible signs of stress."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261001T163628-ee76cb-96a4d974382afcfc:C5": {
+      "de": {
+        "title": "Wiedergefangene Fische anhand von Bildern erkennen",
+        "description": "Ein kurzes Video soll Länge und sichtbare Muster eines gefangenen Fisches festhalten. Bei einem späteren Fang könnte die App nach einem passenden früheren Eintrag suchen."
+      },
+      "en": {
+        "title": "Recognise recaptured fish from images",
+        "description": "A short video would record a caught fish's length and visible patterns. If it is caught again, the app could look for a matching earlier record."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261001T175927-61a1a9-89416e60fe483256:C10": {
+      "de": {
+        "title": "Die Struktur von Lebensmitteln vergleichen",
+        "description": "Nahaufnahmen sollen zum Beispiel Poren im Brot oder die Struktur von Quark zeigen. Kleine Hersteller könnten damit Unterschiede zwischen ihren Produkten vergleichen."
+      },
+      "en": {
+        "title": "Compare food texture using close up photos",
+        "description": "Close up photos would show features such as air pockets in bread or the texture of quark. Small producers could compare differences between batches."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261001T175927-61a1a9-89416e60fe483256:C12": {
+      "de": {
+        "title": "Kochgeräusche als Hinweise nutzen",
+        "description": "Eine App soll Zischen und Blubbern beim Kochen auswerten. Sie würde Hinweise zum Kochfortschritt geben, auch wenn jemand die Pfanne gerade nicht sehen kann."
+      },
+      "en": {
+        "title": "Use cooking sounds as clues",
+        "description": "An app would analyse sizzling and bubbling during cooking. It would offer clues about progress, including for people who cannot see the pan."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261001T175927-61a1a9-89416e60fe483256:C1": {
+      "de": {
+        "title": "Fermentation im Tagebuch verfolgen",
+        "description": "Wer zu Hause fermentiert, soll täglich Fotos und Beobachtungen sammeln können. Die App würde Veränderungen im Verlauf zeigen und auffällige Abweichungen markieren."
+      },
+      "en": {
+        "title": "Track fermentation in a diary",
+        "description": "People fermenting food at home could collect daily photos and notes. The app would show changes over time and flag unusual differences."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261001T175927-61a1a9-89416e60fe483256:C2": {
+      "de": {
+        "title": "Geschmack genauer beschreiben lernen",
+        "description": "Bei Kostproben sollen Nutzer ihre Eindrücke eingeben und mit Beispielbeschreibungen vergleichen können. Die App würde genauere Wörter für Geschmack und Aroma vorschlagen."
+      },
+      "en": {
+        "title": "Learn to describe flavours more precisely",
+        "description": "People tasting food or drinks could enter their impressions and compare them with sample descriptions. The app would suggest more precise words for flavour and aroma."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261001T175927-61a1a9-89416e60fe483256:C3": {
+      "de": {
+        "title": "Den Bräunungsgrad in der Pfanne verfolgen",
+        "description": "Eine Kamera soll beobachten, wie Fleisch oder Gemüse anbräunt. Die App würde anhand der sichtbaren Veränderungen vorschlagen, wann gewendet oder die Hitze angepasst werden könnte."
+      },
+      "en": {
+        "title": "Track browning in a frying pan",
+        "description": "A camera would watch meat or vegetables brown in a pan. The app would use visible changes to suggest when to turn the food or adjust the heat."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261001T181715-593185-2806235a6d79ac87:C8": {
+      "de": {
+        "title": "Die Geschichte einer Fischtreppe festhalten",
+        "description": "Ein dauerhaftes digitales Logbuch soll Wartungen, Schäden und Beobachtungen an einer Fischtreppe sammeln. Betreiber könnten ihre Entwicklung über viele Jahre nachvollziehen."
+      },
+      "en": {
+        "title": "Keep a fish pass maintenance history",
+        "description": "A lasting digital log would collect maintenance work, damage and observations at a fish pass. Operators could review its history over many years."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261001T181715-593185-2806235a6d79ac87:C12": {
+      "de": {
+        "title": "Wartung an Fischtreppen planen",
+        "description": "Eine App soll frühere Kontrollen und den aktuellen Zustand einer Fischtreppe zusammenführen. Gewässerpfleger würden Vorschläge zum nächsten Wartungszeitpunkt und zu nötigen Arbeiten erhalten."
+      },
+      "en": {
+        "title": "Plan fish pass maintenance",
+        "description": "An app would bring together earlier inspections and the current condition of a fish pass. Maintenance teams would get suggestions about when to act and what work to do."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261001T181715-593185-2806235a6d79ac87:C2": {
+      "de": {
+        "title": "Wartungsbedarf an Fischtreppen anzeigen",
+        "description": "Eine Anzeige an der Fischtreppe soll Fischzählungen und den Stand im Wartungszyklus sichtbar machen. Betreiber könnten vor Ort erkennen, wann eine nähere Prüfung ansteht."
+      },
+      "en": {
+        "title": "Display when a fish pass may need attention",
+        "description": "A display at a fish pass would show fish counts and its place in the maintenance cycle. Operators could see on site when a closer inspection is due."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261010T090000-jobcenter-20d0682ac089ff4c:C1": {
+      "de": {
+        "title": "Im Jobcenter früh die passende Hilfe finden",
+        "description": "Ein Team soll gleich zu Beginn klären, ob jemand vor allem eine Stelle, Weiterbildung oder Unterstützung im Alltag braucht. Die Person würde anschließend an die passende Beratung weitergegeben."
+      },
+      "en": {
+        "title": "Find the right jobcentre support early",
+        "description": "A team would establish early whether someone mainly needs a job, training or help with daily difficulties. The person would then be directed to suitable support."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261010T090000-jobcenter-20d0682ac089ff4c:C2": {
+      "de": {
+        "title": "Weiterbildung selbst auswählen",
+        "description": "Arbeitsuchende sollen ein eigenes Weiterbildungsguthaben erhalten. Damit könnten sie kurze bezahlte Praxisangebote bei anerkannten Betrieben selbst buchen."
+      },
+      "en": {
+        "title": "Let jobseekers choose their own training",
+        "description": "Jobseekers would receive their own training credit. They could use it to book short paid practical courses at approved businesses."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261010T160000-jobcenter-956da357f2dce719:C1": {
+      "de": {
+        "title": "Geldleistungen und Beratung trennen",
+        "description": "Die Idee schlägt vor, Bürgergeldzahlungen und berufliche Beratung von getrennten Stellen erledigen zu lassen. Beratung könnte sich dadurch stärker auf die Lebenssituation und berufliche Ziele konzentrieren."
+      },
+      "en": {
+        "title": "Separate benefit payments from advice",
+        "description": "This proposal would put benefit payments and career advice in separate services. Advice could focus more closely on a person's circumstances and work goals."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261010T160000-jobcenter-956da357f2dce719:C3": {
+      "de": {
+        "title": "Beratung dann anbieten, wenn sie gebraucht wird",
+        "description": "Ein digitaler Überblick soll Fortschritte und aktuelle Schwierigkeiten einer arbeitsuchenden Person festhalten. Beratungstermine würden sich nach konkretem Bedarf richten."
+      },
+      "en": {
+        "title": "Offer advice when it is needed",
+        "description": "A digital record would track a jobseeker's progress and current difficulties. Advice appointments would be arranged around specific needs."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261010T170000-jobcenter-multilingua-e4d8e0516cfea765:C1": {
+      "de": {
+        "title": "Behördenbriefe verstehen und Begleitung finden",
+        "description": "Eine Handy-App soll einen fotografierten Behördenbrief übersetzen und vorlesen. Bei Bedarf würde sie außerdem eine zweisprachige Begleitperson für den Termin in der Nähe suchen."
+      },
+      "en": {
+        "title": "Understand official letters and find a companion",
+        "description": "A phone app would translate a photographed official letter and read it aloud. If needed, it would also look for a nearby bilingual companion for the appointment."
+      }
+    },
+    "amelie-lab-mark-mark-20260930T140813-8c17dc-6b3a0db0ad90c4a3:V2": {
+      "de": {
+        "title": "Holzhandel und Fällaufträge zusammenbringen",
+        "description": "Ein Marktplatz soll Waldbesitzer, Forstbetriebe und Holzverarbeiter verbinden. Sie könnten Robinienholz anbieten, Käufer finden und Fällaufträge vergeben."
+      },
+      "en": {
+        "title": "Connect timber buyers and tree removal jobs",
+        "description": "A marketplace would connect forest owners, forestry businesses and timber processors. They could list black locust timber, find buyers and arrange tree removal work."
+      }
+    },
+    "amelie-lab-mark-mark-20260930T140813-8c17dc-6b3a0db0ad90c4a3:V3": {
+      "de": {
+        "title": "Robinienarbeiten planen und nachweisen",
+        "description": "Kommunen und Naturschutzteams sollen Maßnahmen gegen Robinien an einem Ort planen können. Das Werkzeug würde Termine, Genehmigungen, Fotos und Berichte zusammenhalten."
+      },
+      "en": {
+        "title": "Plan and document black locust management",
+        "description": "Councils and conservation teams could plan black locust management in one place. The tool would keep schedules, permits, photos and reports together."
+      }
+    },
+    "amelie-lab-mark-mark-20260930T144720-a8c5ef-dcd532f1b46ba665:V1": {
+      "de": {
+        "title": "Beim Apothekenverkauf in Spanien begleiten",
+        "description": "Ein Beratungsdienst soll Käufer und Verkäufer spanischer Apotheken zusammenbringen. Er würde bei Bewertung, Unterlagen und Verhandlungen unterstützen."
+      },
+      "en": {
+        "title": "Support pharmacy sales in Spain",
+        "description": "An advisory service would connect buyers and sellers of pharmacies in Spain. It would help with valuations, paperwork and negotiations."
+      }
+    },
+    "amelie-lab-mark-mark-20260930T144720-a8c5ef-dcd532f1b46ba665:V4": {
+      "de": {
+        "title": "Apothekenübernahmen Schritt für Schritt erklären",
+        "description": "Ein digitaler Leitfaden soll erklären, welche Schritte und Unterlagen bei einer Apothekenübernahme in Spanien nötig sein könnten. Checklisten würden Käufern, Verkäufern und Beratern die Vorbereitung erleichtern."
+      },
+      "en": {
+        "title": "Explain pharmacy transfers step by step",
+        "description": "A digital guide would explain the steps and documents that may be needed to transfer a pharmacy in Spain. Checklists would help buyers, sellers and advisers prepare."
+      }
+    },
+    "amelie-lab-mark-mark-20260930T160255-20da1f-fe3a4547cf9f4e57:V1": {
+      "de": {
+        "title": "TYPO3-Webseiten entwickeln und betreuen",
+        "description": "Unternehmen und Einrichtungen sollen Unterstützung für Webseiten mit dem Redaktionssystem TYPO3 erhalten. Der Dienst würde Entwicklung, Wartung und technische Beratung anbieten."
+      },
+      "en": {
+        "title": "Build and maintain TYPO3 websites",
+        "description": "Businesses and institutions could get help with websites built using the TYPO3 publishing system. The service would offer development, maintenance and technical advice."
+      }
+    },
+    "amelie-lab-mark-mark-20260930T160255-20da1f-fe3a4547cf9f4e57:V3": {
+      "de": {
+        "title": "TYPO3-Webseiten aktualisieren und prüfen",
+        "description": "Ein Dienst soll ältere TYPO3-Webseiten auf neuere Versionen umstellen. Dabei würde er Datenschutz, Barrierefreiheit und technische Sicherheit prüfen helfen."
+      },
+      "en": {
+        "title": "Update and review TYPO3 websites",
+        "description": "A service would move older TYPO3 websites to newer versions. It would also help review privacy, accessibility and technical security."
+      }
+    },
+    "amelie-lab-mark-mark-20260930T211146-d5b2c7-5e3473d90e116e20:V2": {
+      "de": {
+        "title": "Frieden und Zeitgeschichte gemeinsam lernen",
+        "description": "Schulen und Familien in Brandenburg sollen Workshops und verständliche Lernmaterialien erhalten. Sie würden helfen, über Frieden und jüngere Geschichte ins Gespräch zu kommen."
+      },
+      "en": {
+        "title": "Learn about peace and recent history",
+        "description": "Schools and families in Brandenburg could use workshops and accessible learning materials. These would support conversations about peace and recent history."
+      }
+    },
+    "amelie-lab-mark-mark-20260930T211146-d5b2c7-5e3473d90e116e20:V3": {
+      "de": {
+        "title": "Familien in schwierigen Situationen unterstützen",
+        "description": "Ein Beratungsangebot soll Müttern und Familien in Brandenburg bei Krisen helfen. Familienzentren, Gemeinden und Hilfsorganisationen könnten dafür Gespräche und Workshops organisieren."
+      },
+      "en": {
+        "title": "Support families in difficult situations",
+        "description": "An advice service would support mothers and families facing difficulties in Brandenburg. Family centres, councils and charities could arrange conversations and workshops."
+      }
+    },
+    "amelie-lab-mark-mark-20261001T122940-ef7522-f29cb71a0a3f214b:V1": {
+      "de": {
+        "title": "Routinearbeiten in TYPO3 vereinfachen",
+        "description": "Ein Dienst soll wiederkehrende Aufgaben in der Webseitenpflege automatisieren. Dazu würden passende KI-Werkzeuge in das Redaktionssystem TYPO3 eingebaut."
+      },
+      "en": {
+        "title": "Simplify routine work in TYPO3",
+        "description": "A service would automate recurring website publishing tasks. It would add suitable AI tools to the TYPO3 content management system."
+      }
+    },
+    "amelie-lab-mark-mark-20261001T122940-ef7522-f29cb71a0a3f214b:V3": {
+      "de": {
+        "title": "KI-Inhalte auf Webseiten kennzeichnen helfen",
+        "description": "Ein Werkzeug soll in TYPO3 festhalten, welche Inhalte mit KI erstellt wurden. Es würde Redaktionen bei Kennzeichnung und Dokumentation unterstützen."
+      },
+      "en": {
+        "title": "Help label AI generated website content",
+        "description": "A tool would record which content in TYPO3 was created using AI. It would help editors label and document that content."
+      }
+    },
+    "amelie-lab-mark-mark-20261001T132732-dce381-1878b2cb923b2bc8:V1": {
+      "de": {
+        "title": "Wasserrechtsberatung für kleine Anlagen",
+        "description": "Mühlenbesitzer und Betreiber kleiner Wasserkraftanlagen sollen ihre Unterlagen und Anforderungen prüfen lassen können. Die Beratung würde helfen, Fragen zum Wasserrecht und zu Fischwegen zu klären."
+      },
+      "en": {
+        "title": "Water rights advice for small sites",
+        "description": "Mill owners and small hydropower operators could get help reviewing their documents and requirements. The advice would address water rights and fish passage."
+      }
+    },
+    "amelie-lab-mark-mark-20261001T135027-76773d-44b2dbc908abbc94:V1": {
+      "de": {
+        "title": "KI-Helfer in TYPO3 einbauen",
+        "description": "Ein Entwicklungsdienst soll mehrere KI-Helfer in TYPO3 miteinander verbinden. Unternehmen könnten damit redaktionelle und technische Abläufe automatisieren."
+      },
+      "en": {
+        "title": "Add AI assistants to TYPO3",
+        "description": "A development service would connect several AI assistants within TYPO3. Businesses could use them to automate publishing and technical tasks."
+      }
+    },
+    "amelie-lab-mark-mark-20261001T135027-76773d-44b2dbc908abbc94:V3": {
+      "de": {
+        "title": "Große TYPO3-Umzüge begleiten",
+        "description": "Behörden und Unternehmen sollen beim Umzug ihrer TYPO3-Webseiten unterstützt werden. Der Dienst würde die Umstellung planen und Anforderungen an Datenschutz, Zugänglichkeit und Sicherheit prüfen helfen."
+      },
+      "en": {
+        "title": "Support complex TYPO3 upgrades",
+        "description": "Authorities and businesses could get help moving their TYPO3 websites. The service would plan the migration and help review privacy, accessibility and security requirements."
+      }
+    },
+    "amelie-lab-mark-mark-20261001T140818-da99ad-303c957765a76952:V1": {
+      "de": {
+        "title": "Redaktionsarbeit mit KI-Helfern verbinden",
+        "description": "Unternehmen und Agenturen sollen ihre TYPO3-Abläufe mit mehreren KI-Helfern erweitern können. Diese würden Aufgaben rund um Inhalte und Entwicklung gemeinsam bearbeiten."
+      },
+      "en": {
+        "title": "Connect publishing tasks through AI assistants",
+        "description": "Businesses and agencies could extend their TYPO3 workflows with several AI assistants. These would work together on content and development tasks."
+      }
+    },
+    "amelie-lab-mark-mark-20261001T140818-da99ad-303c957765a76952:V3": {
+      "de": {
+        "title": "TYPO3 bei hohen Anforderungen modernisieren",
+        "description": "Öffentliche Einrichtungen und große Unternehmen sollen ihre TYPO3-Webseiten modernisieren können. Ein Dienst würde sie beim technischen Umzug und bei der Prüfung wichtiger Anforderungen begleiten."
+      },
+      "en": {
+        "title": "Modernise TYPO3 for demanding organisations",
+        "description": "Public institutions and large businesses could modernise their TYPO3 websites. A service would support the technical migration and review of key requirements."
+      }
+    },
+    "amelie-lab-mark-mark-20261001T153639-3e31fe-8902e1869423b38d:V3": {
+      "de": {
+        "title": "Lieferrouten für Hofläden planen",
+        "description": "Hofläden und Gemüseabo-Anbieter sollen ihre Lieferadressen gemeinsam planen können. Ein Dienst würde Vorschläge für kürzere oder besser passende Touren machen."
+      },
+      "en": {
+        "title": "Plan delivery routes for farm shops",
+        "description": "Farm shops and produce box services could plan their delivery stops together. A service would suggest shorter or more suitable routes."
+      }
+    },
+    "amelie-lab-mark-mark-20261001T162501-405366-590b28ae77dfad34:V2": {
+      "de": {
+        "title": "Naturführungen leichter vorbereiten",
+        "description": "Naturführer sollen bei der Planung von Touren in Brandenburg Unterstützung erhalten. Ein digitaler Helfer würde passende Informationen und Inhalte für die Führung zusammenstellen."
+      },
+      "en": {
+        "title": "Make nature tours easier to prepare",
+        "description": "Nature guides could get help planning tours in Brandenburg. A digital assistant would gather useful information and content for the tour."
+      }
+    },
+    "amelie-lab-mark-mark-20261001T180903-80ae1d-1d0872dbe9175541:V1": {
+      "de": {
+        "title": "Verstreute Unternehmensdaten zusammenführen",
+        "description": "Unternehmen sollen kleine, verteilte Datenbestände gemeinsam auswerten können. Eine Plattform würde daraus übersichtliche Informationen für Entscheidungen und Dokumentation machen."
+      },
+      "en": {
+        "title": "Bring scattered business data together",
+        "description": "Businesses could analyse small, scattered data sets together. A platform would turn them into clearer information for decisions and record keeping."
+      }
+    },
+    "amelie-lab-mark-mark-20261001T180903-80ae1d-1d0872dbe9175541:V4": {
+      "de": {
+        "title": "Datenabläufe im Unternehmen neu ordnen",
+        "description": "Ein Beratungsdienst soll Unternehmen beim Aufbau fein aufgeteilter Datenabläufe helfen. So könnten neue Ereignisse und Änderungen schneller in Auswertungen einfließen."
+      },
+      "en": {
+        "title": "Reorganise how a business handles data",
+        "description": "An advisory service would help businesses organise data in smaller, connected parts. New events and changes could then feed into analysis more quickly."
+      }
+    },
+    "amelie-lab-mark-mark-20261001T182738-628aa8-7c7d577ac21e1f9d:V1": {
+      "de": {
+        "title": "Fischtreppen vor Ort untersuchen",
+        "description": "Ein Fachdienst soll prüfen, wie gut Fischtreppen funktionieren. Er würde Beobachtungen sammeln und Berichte für Betreiber und Wasserbehörden erstellen."
+      },
+      "en": {
+        "title": "Inspect fish passes on site",
+        "description": "A specialist service would examine how well fish passes work. It would collect observations and prepare reports for operators and water authorities."
+      }
+    },
+    "amelie-lab-mark-mark-20261001T182738-628aa8-7c7d577ac21e1f9d:V3": {
+      "de": {
+        "title": "Berichte über Fischtreppen einfacher erstellen",
+        "description": "Betreiber und Fachbüros sollen Messungen und Beobachtungen zu Fischtreppen gemeinsam verwalten können. Eine Plattform würde daraus einheitlich aufgebaute Berichte vorbereiten."
+      },
+      "en": {
+        "title": "Make fish pass reports easier to prepare",
+        "description": "Operators and consultants could manage fish pass measurements and observations together. A platform would help prepare reports in a consistent format."
+      }
+    },
+    "amelie-lab-mark-mark-20261001T190025-d00534-6c215d62365550d1:V1": {
+      "de": {
+        "title": "Baumkronen mit Drohnen untersuchen",
+        "description": "Kommunen sollen Bilder schwer erreichbarer Baumkronen erhalten. Fachleute könnten sie nach Schäden durchsuchen und für weitere Kontrollen nutzen."
+      },
+      "en": {
+        "title": "Inspect tree crowns with drones",
+        "description": "Councils could obtain images of tree crowns that are hard to reach. Specialists could examine them for damage and use them to plan further inspections."
+      }
+    },
+    "amelie-lab-mark-mark-20261001T190025-d00534-6c215d62365550d1:V2": {
+      "de": {
+        "title": "Stadtbäume und Kontrollen verwalten",
+        "description": "Eine gemeinsame Baumkartei soll Standorte, Kontrollen und anstehende Arbeiten festhalten. Kommunale Teams könnten damit ihre Pflege und Dokumentation planen."
+      },
+      "en": {
+        "title": "Manage city trees and inspections",
+        "description": "A shared tree register would record locations, inspections and planned work. Council teams could use it to organise maintenance and documentation."
+      }
+    },
+    "amelie-lab-mark-mark-20261004T115348-34b56a-2465eb580f52e5ae:V1": {
+      "de": {
+        "title": "Gefällte Robinien zu Holzprodukten verarbeiten",
+        "description": "Ein Betrieb soll Robinien entfernen und das Holz anschließend weiterverarbeiten. Daraus könnten etwa Pfähle, Terrassendielen oder Bauteile für Spielplätze entstehen."
+      },
+      "en": {
+        "title": "Turn felled black locust trees into timber products",
+        "description": "A business would remove black locust trees and process the timber. Possible products include posts, decking and playground parts."
+      }
+    },
+    "amelie-lab-mark-mark-20261004T115348-34b56a-2465eb580f52e5ae:V3": {
+      "de": {
+        "title": "Kommunale Fällaufträge vorbereiten",
+        "description": "Eine Beratung soll Kommunen beim Ausschreiben von Robinienarbeiten helfen. Sie würde Anforderungen an Fällung, Holzverwertung und Angebotsvergleich zusammenstellen."
+      },
+      "en": {
+        "title": "Help councils prepare tree removal contracts",
+        "description": "An advisory service would help councils prepare tenders for black locust removal. It would set out requirements for felling, timber use and comparing bids."
+      }
+    },
+    "amelie-lab-mark-mark-20261005T114901-a2aa32-1b3eda7334cd805f:V1": {
+      "de": {
+        "title": "TYPO3-Wartung automatisieren",
+        "description": "Ein Dienst soll wiederkehrende Wartungsarbeiten an TYPO3-Webseiten übernehmen. Mehrere Software-Helfer würden Updates und technische Prüfungen koordinieren."
+      },
+      "en": {
+        "title": "Automate TYPO3 website maintenance",
+        "description": "A service would handle recurring maintenance on TYPO3 websites. Several software assistants would coordinate updates and technical checks."
+      }
+    },
+    "amelie-lab-mark-mark-20261005T114901-a2aa32-1b3eda7334cd805f:V2": {
+      "de": {
+        "title": "Tortillas auf Märkten anbieten",
+        "description": "Ein mobiler Essensstand soll spanische Kartoffeltortillas frisch auf Märkten und Veranstaltungen zubereiten. Gedacht ist er für Berlin und Brandenburg."
+      },
+      "en": {
+        "title": "Sell fresh tortillas at markets",
+        "description": "A mobile food stall would prepare fresh Spanish potato tortillas at markets and events. It is intended for Berlin and Brandenburg."
+      }
+    },
+    "amelie-lab-mark-mark-20261010T090000-jobcenter-a186878eb8966ec5:V1": {
+      "de": {
+        "title": "Jobcenter bei Berechnungen und Bescheiden entlasten",
+        "description": "Ein Software-Helfer soll Jobcenter-Mitarbeitern bei Wohnkosten, Nebenkosten und Bescheidentwürfen helfen. Dadurch soll mehr Zeit für persönliche Beratung bleiben."
+      },
+      "en": {
+        "title": "Help jobcentres with calculations and decision letters",
+        "description": "A software assistant would help jobcentre staff with housing costs, utility bills and draft decision letters. The aim is to leave more time for personal advice."
+      }
+    },
+    "amelie-lab-mark-mark-20261010T090000-jobcenter-a186878eb8966ec5:V2": {
+      "de": {
+        "title": "Kurze Praxiseinsätze statt langer Bewerbungen",
+        "description": "Arbeitsuchende sollen für kurze Zeit einen Betrieb kennenlernen können. Eine Plattform würde passende Praxiseinsätze vermitteln und die Organisation unterstützen."
+      },
+      "en": {
+        "title": "Offer short work trials before job applications",
+        "description": "Jobseekers could try working in a business for a short period. A platform would match them with suitable placements and help arrange them."
+      }
+    },
+    "amelie-lab-mark-mark-20261010T090000-jobcenter-a186878eb8966ec5:V3": {
+      "de": {
+        "title": "Gemeinnützige Arbeitsplätze vor Ort organisieren",
+        "description": "Kommunen und gemeinnützige Träger sollen bezahlte Übergangsstellen für lange arbeitslose Menschen schaffen können. Ein gemeinsames Werkzeug würde Planung und Organisation unterstützen."
+      },
+      "en": {
+        "title": "Organise paid community jobs locally",
+        "description": "Councils and nonprofit organisations could create paid transition jobs for people unemployed for a long time. A shared tool would support planning and organisation."
+      }
+    },
+    "amelie-lab-mark-mark-20261010T090000-jobcenter-a186878eb8966ec5:V5": {
+      "de": {
+        "title": "Passende Weiterbildung für neue Berufe finden",
+        "description": "Ein Werkzeug soll vorhandene Fähigkeiten mit den Anforderungen regionaler Stellen vergleichen. Es würde passende kurze Weiterbildungen vorschlagen und ihre Finanzierung organisieren helfen."
+      },
+      "en": {
+        "title": "Find training for a move into a new occupation",
+        "description": "A tool would compare existing skills with the requirements of local jobs. It would suggest short training courses and help arrange funding."
+      }
+    },
+    "amelie-lab-mark-mark-20261010T163000-jobcenter-4614587d890f062f:V1": {
+      "de": {
+        "title": "Jobcentern Schreibarbeit abnehmen",
+        "description": "Ein Helfer soll Gesprächsnotizen ordnen und Entwürfe für Vereinbarungen und Bescheide vorbereiten. Berater könnten dadurch weniger Zeit mit wiederkehrender Schreibarbeit verbringen."
+      },
+      "en": {
+        "title": "Reduce paperwork for jobcentre advisers",
+        "description": "An assistant would organise meeting notes and prepare draft plans and decision letters. Advisers could spend less time on repetitive paperwork."
+      }
+    },
+    "amelie-lab-mark-mark-20261010T163000-jobcenter-4614587d890f062f:V2": {
+      "de": {
+        "title": "Arbeitgeber finden Menschen statt Bewerbungen",
+        "description": "Arbeitsuchende sollen ihre Fähigkeiten und Wünsche auf einer regionalen Plattform zeigen können. Arbeitgeber würden ihnen passende Stellen anbieten."
+      },
+      "en": {
+        "title": "Help employers find people rather than applications",
+        "description": "Jobseekers could share their skills and preferences on a regional platform. Employers would approach them with suitable jobs."
+      }
+    },
+    "amelie-lab-mark-mark-20261010T163000-jobcenter-4614587d890f062f:V3": {
+      "de": {
+        "title": "Bescheide und Weiterbildung gemeinsam verstehen",
+        "description": "Eine App soll Bürgergeldbescheide nach möglichen Fehlern durchsuchen und erklären. Zusätzlich würde sie helfen, passende geförderte Weiterbildungen zu finden."
+      },
+      "en": {
+        "title": "Understand benefit decisions and training options",
+        "description": "An app would look for possible errors in benefit decisions and explain them. It would also help people find suitable funded training."
+      }
+    },
+    "amelie-lab-mark-mark-20261010T173000-jobcenter-multilingual-fbd79450c086c2fa:V1": {
+      "de": {
+        "title": "Behördenbrief fotografieren und vorlesen lassen",
+        "description": "Eine Handy-App soll einen fotografierten Brief in verständliche Sprache übersetzen und vorlesen. Wichtige Termine könnten im Kalender gespeichert werden."
+      },
+      "en": {
+        "title": "Photograph an official letter and hear it explained",
+        "description": "A phone app would translate a photographed letter into understandable language and read it aloud. Important dates could be saved in a calendar."
+      }
+    },
+    "amelie-lab-mark-mark-20261010T173000-jobcenter-multilingual-fbd79450c086c2fa:V2": {
+      "de": {
+        "title": "Zweisprachige Begleitung in der Nachbarschaft finden",
+        "description": "Eine Plattform soll Menschen mit geprüften zweisprachigen Helfern für Behördentermine verbinden. Die Suche würde verfügbare Begleitpersonen in der Nähe anzeigen."
+      },
+      "en": {
+        "title": "Find a bilingual companion nearby",
+        "description": "A platform would connect people with vetted bilingual helpers for appointments with authorities. A search would show available companions nearby."
+      }
+    },
+    "amelie-lab-mark-mark-20261010T173000-jobcenter-multilingual-fbd79450c086c2fa:V3": {
+      "de": {
+        "title": "Am Amtsschalter Sprachen überbrücken",
+        "description": "Ein Tablet oder Bildschirm soll Gespräche am Jobcenterschalter übersetzen helfen. Besucher und Mitarbeiter könnten sich dadurch leichter verständigen."
+      },
+      "en": {
+        "title": "Bridge language barriers at a service desk",
+        "description": "A tablet or screen would help translate conversations at a jobcentre reception desk. Visitors and staff could understand one another more easily."
+      }
+    },
+    "amelie-lab-mark-mark-20261010T180000-jobcenter-empowerment-754a3353c57e5a1f:V1": {
+      "de": {
+        "title": "Übernahme von Miete und Heizkosten prüfen helfen",
+        "description": "Ein Werkzeug soll Unterlagen zu Miete, Heizkosten und Bürgergeld vergleichen. Betroffene und Beratungsstellen würden Hinweise auf mögliche Fehler und Hilfe bei einer Antwort erhalten."
+      },
+      "en": {
+        "title": "Help check benefit payments for rent and heating",
+        "description": "A tool would compare rent, heating and benefit documents. Tenants and advisers would receive clues about possible errors and help preparing a response."
+      }
+    },
+    "amelie-lab-mark-mark-20261010T180000-jobcenter-empowerment-754a3353c57e5a1f:V2": {
+      "de": {
+        "title": "Unterstützung bei Stress mit dem Jobcenter finden",
+        "description": "Geschulte Begleiter mit eigener Erfahrung sollen Menschen bei belastenden Jobcenterfragen unterstützen. Sie würden zuhören, Orientierung geben und bei der Suche nach weiterer Hilfe begleiten."
+      },
+      "en": {
+        "title": "Find support for stress around jobcentre dealings",
+        "description": "Trained supporters with relevant personal experience would help people facing stressful jobcentre dealings. They would listen, offer guidance and help people find further support."
+      }
+    },
+    "amelie-lab-mark-mark-20261010T180000-jobcenter-empowerment-754a3353c57e5a1f:V3": {
+      "de": {
+        "title": "Kinderbetreuung und Familienleistungen organisieren",
+        "description": "Alleinerziehende sollen für Behördentermine kurzfristige Kinderbetreuung finden können. Die Plattform würde außerdem beim Beantragen von Bildungs- und Freizeitunterstützung für Kinder helfen."
+      },
+      "en": {
+        "title": "Arrange childcare and support for children",
+        "description": "Single parents could find short notice childcare for appointments with authorities. The platform would also help apply for support with children's education and activities."
+      }
+    },
+    "amelie-lab-scarcity-scarcity-20261001T184500-53b5b9-994d11b7dda9a29a:C1": {
+      "de": {
+        "title": "Baumfotos für eine erste Einschätzung nutzen",
+        "description": "Kommunale Teams sollen Bäume mit dem Handy fotografieren und den Standort festhalten können. Ein Werkzeug würde auf sichtbare Auffälligkeiten für eine weitere Kontrolle hinweisen."
+      },
+      "en": {
+        "title": "Use tree photos for an initial assessment",
+        "description": "Council teams could photograph trees with a phone and record their locations. A tool would flag visible features that may need further inspection."
+      }
+    },
+    "amelie-lab-scarcity-scarcity-20261001T184500-53b5b9-994d11b7dda9a29a:C3": {
+      "de": {
+        "title": "Baumkontrollen nach Priorität planen",
+        "description": "Ein Werkzeug soll Standort und Alter von Bäumen vergleichen. Kommunen könnten damit planen, welche Bäume zuerst kontrolliert werden sollten."
+      },
+      "en": {
+        "title": "Prioritise tree inspections",
+        "description": "A tool would compare tree locations and ages. Councils could use it to plan which trees should be inspected first."
+      }
+    },
+    "amelie-lab-scarcity-scarcity-20261001T193028-62ed20-a75d44b2e7743e0c:C1": {
+      "de": {
+        "title": "Fischwege mit Unterwasserkameras beobachten",
+        "description": "Unterwasserkameras sollen aufzeichnen, welche Fische eine Anlage passieren. Behörden könnten damit die Nutzung der Fischwege über längere Zeit untersuchen."
+      },
+      "en": {
+        "title": "Monitor fish passage with underwater cameras",
+        "description": "Underwater cameras would record fish passing through a structure. Authorities could study how fish use the passage over time."
+      }
+    },
+    "amelie-lab-scarcity-scarcity-20261001T193028-62ed20-a75d44b2e7743e0c:C2": {
+      "de": {
+        "title": "Fischwanderungen gemeinsam melden",
+        "description": "Eine App soll Freiwillige beim Beobachten von Fischwanderungen anleiten. Sie könnten ihre Funde dokumentieren und an die zuständigen Stellen melden."
+      },
+      "en": {
+        "title": "Share observations of migrating fish",
+        "description": "An app would guide volunteers observing fish migration. They could record sightings and share them with the responsible authorities."
+      }
+    },
+    "amelie-lab-scarcity-scarcity-20261010T162000-jobcenter-28c4901745e136ac:C1": {
+      "de": {
+        "title": "Mit Zustimmung Gesprächsnotizen vorbereiten",
+        "description": "Ein Helfer soll Beratungsgespräche im Jobcenter mit Zustimmung der Beteiligten erfassen. Er würde daraus geordnete Notizen und Vorschläge für die nächsten Schritte erstellen."
+      },
+      "en": {
+        "title": "Prepare meeting notes with consent",
+        "description": "An assistant would record jobcentre advice sessions with participants' consent. It would turn them into organised notes and suggestions for next steps."
+      }
+    },
+    "amelie-lab-scarcity-scarcity-20261010T162000-jobcenter-28c4901745e136ac:C2": {
+      "de": {
+        "title": "Nachweise nur einmal einreichen",
+        "description": "Ein Datenaustausch soll Einkommens- und Mietnachweise zwischen zuständigen Systemen weitergeben. Menschen müssten dieselben Unterlagen dadurch seltener erneut einreichen."
+      },
+      "en": {
+        "title": "Submit benefit documents once",
+        "description": "A data connection would pass income and rent documents between the relevant systems. People would need to submit the same documents less often."
+      }
+    },
+    "amelie-lab-scarcity-scarcity-20261010T172000-jobcenter-multilingu-774f0ff97dee828a:C1": {
+      "de": {
+        "title": "Behördenbriefe auf dem Handy erklären lassen",
+        "description": "Eine App soll Behördenbriefe direkt auf dem Handy lesen, übersetzen und als verständliche Handlungsanweisungen vorlesen. Die Verarbeitung wäre ohne Hochladen des Briefes vorgesehen."
+      },
+      "en": {
+        "title": "Get official letters explained on a phone",
+        "description": "An app would read and translate official letters on a phone, then explain the next steps aloud. It is designed to process the letter without uploading it."
+      }
+    },
+    "amelie-lab-scarcity-scarcity-20261010T172000-jobcenter-multilingu-774f0ff97dee828a:C2": {
+      "de": {
+        "title": "Begleitung für den Behördengang suchen",
+        "description": "Eine App soll Menschen mit zweisprachigen Begleitpersonen aus der Umgebung verbinden. Unterstützung könnte für geplante Termine oder kurzfristig gesucht werden."
+      },
+      "en": {
+        "title": "Find someone to accompany you to an appointment",
+        "description": "An app would connect people with bilingual companions nearby. Support could be requested for planned appointments or at short notice."
+      }
+    },
+    "amelie-lab-inversion-inversion-20261012T162500-brandenburg-diy-333acaf74ea82550:C1": {
+      "de": {
+        "title": "Diebstahl am Hof früh bemerken",
+        "description": "Ein Selbstbaugerät mit Kamera soll verdächtige Bewegungen an Tanks und Schuppen erkennen. Es würde vor Ort ein Warnlicht auslösen und eine kurze Nachricht senden."
+      },
+      "en": {
+        "title": "Spot possible theft on a farm",
+        "description": "A camera kit would look for suspicious movement around farm tanks and sheds. It would trigger a local warning light and send a short alert."
+      }
+    },
+    "amelie-lab-inversion-inversion-20261012T162500-brandenburg-diy-333acaf74ea82550:C2": {
+      "de": {
+        "title": "Wildschäden am Feld dokumentieren",
+        "description": "Ein solarbetriebenes Gerät soll Wildschweine am Feldrand und Veränderungen an Pflanzen beobachten. Es würde Bilder und Zeitangaben für die Dokumentation möglicher Schäden sammeln."
+      },
+      "en": {
+        "title": "Document wildlife damage to crops",
+        "description": "A solar powered device would watch for wild boar near field edges and changes in crops. It would collect images and timestamps to document possible damage."
+      }
+    },
+    "amelie-lab-inversion-inversion-20261012T162500-brandenburg-diy-333acaf74ea82550:C3": {
+      "de": {
+        "title": "Offene Dächer aus der Ferne beobachten",
+        "description": "Ein kleines Kameragerät soll provisorische Dachabdeckungen und sichtbare Veränderungen an Balken beobachten. Bei Auffälligkeiten würde es eine Nachricht an den Betrieb senden."
+      },
+      "en": {
+        "title": "Monitor roofs during building work",
+        "description": "A small camera device would watch temporary roof coverings and visible changes in beams. It would send the contractor an alert when something unusual appears."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261012T162600-brandenburg-vision-8b24bbe93b5be681:C1": {
+      "de": {
+        "title": "Gerüst und Dachplane im Blick behalten",
+        "description": "Ein Selbstbaugerät soll Veränderungen an Gerüsten, flatternde Planen und möglichen Materialdiebstahl beobachten. Handwerksbetriebe würden Hinweise für eine Kontrolle vor Ort erhalten."
+      },
+      "en": {
+        "title": "Keep watch over scaffolding and roof covers",
+        "description": "A camera kit would watch for changes in scaffolding, loose covers and possible material theft. Contractors would receive alerts for an on site check."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261012T162600-brandenburg-vision-8b24bbe93b5be681:C2": {
+      "de": {
+        "title": "Bewässerungsmaschinen aus der Ferne ablesen",
+        "description": "Eine Kamera soll Schlauchtrommeln und Druckanzeigen von Bewässerungsmaschinen beobachten. Landwirte würden Hinweise erhalten, wenn sich Schläuche falsch aufwickeln oder der Druck abfällt."
+      },
+      "en": {
+        "title": "Check irrigation equipment remotely",
+        "description": "A camera would watch irrigation hose reels and pressure gauges. Farmers would get alerts if a hose winds incorrectly or pressure drops."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261012T162600-brandenburg-vision-8b24bbe93b5be681:C3": {
+      "de": {
+        "title": "Sonnenblumen und Wildschweine am Feld beobachten",
+        "description": "Ein Gerät soll die Stellung von Sonnenblumen und Wildschweinbewegungen beobachten. Die Aufnahmen könnten Hinweise auf Trockenstress oder drohende Wildschäden liefern."
+      },
+      "en": {
+        "title": "Watch sunflowers and wild boar in fields",
+        "description": "A device would watch sunflower positions and wild boar movements. The recordings might provide clues about water stress or possible crop damage."
+      }
+    },
+    "amelie-lab-scarcity-scarcity-20261012T162800-brandenburg-bfcf0383978716ba:C1": {
+      "de": {
+        "title": "Wildschweine auf abgelegenen Feldern erkennen",
+        "description": "Ein solarbetriebener Kamerabausatz soll Wildschweine an großen Feldern erkennen. Er würde kurze Meldungen über eine stromsparende Funkverbindung senden."
+      },
+      "en": {
+        "title": "Detect wild boar in remote fields",
+        "description": "A solar powered camera kit would look for wild boar near large fields. It would send short alerts over a low power radio connection."
+      }
+    },
+    "amelie-lab-scarcity-scarcity-20261012T162800-brandenburg-bfcf0383978716ba:C2": {
+      "de": {
+        "title": "Historische Dächer auf Veränderungen beobachten",
+        "description": "Ein kleines Gerät soll Veränderungen an Balken und mögliche Anzeichen von Schwelbränden in alten Scheunen erfassen. Ob die vorgeschlagene Technik dafür geeignet ist, müsste geprüft werden."
+      },
+      "en": {
+        "title": "Watch for changes in historic roofs",
+        "description": "A small device would watch for changes in beams and possible signs of smouldering fires in old barns. The suitability of the proposed technology would need testing."
+      }
+    },
+    "amelie-lab-scarcity-scarcity-20261012T162800-brandenburg-bfcf0383978716ba:C3": {
+      "de": {
+        "title": "Frühe Rauchzeichen unter Baumkronen suchen",
+        "description": "Ein kleines Gerät am Baumstamm soll nach bodennahem Rauch im Kiefernwald suchen. Es würde versuchen, Hinweise auf einen beginnenden Brand früh zu melden."
+      },
+      "en": {
+        "title": "Look for early smoke beneath tree canopies",
+        "description": "A small device on a tree trunk would look for smoke near the ground in a pine forest. It would try to report signs of an emerging fire early."
+      }
+    },
+    "amelie-lab-lacunar-lacunar-20261014T133659-kids-lieberose-honig-309b5b89076b7c99:C1": {
+      "de": {
+        "title": "Kinder finden Fehler in einem KI-Spiel",
+        "description": "Kinder sollen harmlose Honig-Demonstrationsproben messen und zuerst aufschreiben, welches Ergebnis sie erwarten. Danach würden sie ein von KI gebautes Prüfspiel mit absichtlichen Fehlern testen und zeigen, wann es falsch entscheidet."
+      },
+      "en": {
+        "title": "Let children find bugs in an AI game",
+        "description": "Children would measure safe honey demonstration samples and first write down the results they expect. They would then test an AI built checking game with deliberate bugs and show when it makes the wrong decision."
+      }
+    }
+  }
+}
