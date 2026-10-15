@@ -107,7 +107,13 @@ async function review() {
       if (manPath) { try { manifest = JSON.parse(readFileSync(join(wt, manPath), 'utf8')); } catch { /* steht schon im Manifestbefund */ } }
 
       step('Pläne trocken anwenden');
-      const plans = files.map((f) => f.path).filter((p) => p.endsWith('.json') && !p.endsWith('.manifest.json'));
+      // *.inbox.json sind unveränderliche Lab-Belege, keine bib-Pläne: Prüfung über buildInbox (Schema, Identität, Ideen).
+      const inbox = files.map((f) => f.path).filter((p) => p.endsWith('.inbox.json'));
+      if (inbox.length) {
+        r = sh('node', ['--input-type=module', '-e', `import { buildInbox } from ${JSON.stringify(join(ROOT, 'scripts/export-lab-inbox.mjs'))}; const { index } = buildInbox(${JSON.stringify(wt)}); console.log(index.batches.length + ' Belege gültig');`]);
+        record(`Lab-Belege (${inbox.length} *.inbox.json)`, r.status === 0, lastLines(r.stderr || r.stdout, 2));
+      }
+      const plans = files.map((f) => f.path).filter((p) => p.endsWith('.json') && !p.endsWith('.manifest.json') && !p.endsWith('.inbox.json'));
       if (!plans.length) record('bib apply --dry-run', true, 'kein Plan im PR');
       for (const p of plans) {
         r = sh('node', ['scripts/bibliothek.mjs', 'apply', join(wt, p), '--dry-run', '--json', '--actor', 'lab-librarian', '--no-export']); // gegen den Stand von main
