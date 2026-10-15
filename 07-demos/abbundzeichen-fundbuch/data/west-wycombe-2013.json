@@ -1,0 +1,83 @@
+{
+  "id": "west-wycombe-2013-central-beam-sequence",
+  "kind": "literature-reported-sequence-segment",
+  "source": {
+    "author": "Alison de Turberville",
+    "publisher": "Oxford Archaeology",
+    "title": "No 57 and 58a, West Wycombe Village: Historic Building Investigation and Recording",
+    "date": "2013-07",
+    "issue": "1",
+    "oaJob": "5497",
+    "url": "https://eprints.oxfordarchaeology.com/6442/16/WWBSBS_57-58a_High_Street.pdf",
+    "section": "2.3.1",
+    "printedPage": 6,
+    "pdfPageIndex": 11,
+    "sha256": "1bca30e150d13d8c991d8ec9681c8037bc76ecd43a4e6fed9d17687440b70524",
+    "evidence": "seite",
+    "doi": null,
+    "accessedOn": "2026-10-15",
+    "coverDate": "2013-06"
+  },
+  "sourceReportedRange": [
+    "I",
+    "IIII"
+  ],
+  "transcriptionMethod": "Expand the expressly reported consecutive range I–IIII; not four independently transcribed photographs.",
+  "locationContext": "West end of central beam beneath floorboards, room 58A/M through to 57/K; municipal locality West Wycombe.",
+  "positionSemantics": "Ordinal positions in published reading order, no measured distances or asserted cardinal numbering direction.",
+  "entitySemantics": "Four mark observation positions on a beam, not four asserted distinct structural timbers; wand is engine grouping key only.",
+  "bauteile": [
+    {
+      "id": "ww-mark-1",
+      "wand": "Westende Zentralbalken",
+      "position": 1,
+      "rolle": "sonstiges",
+      "zeichen": "I",
+      "markierungsart": "geritzt",
+      "werkzeug": "reissmesser"
+    },
+    {
+      "id": "ww-mark-2",
+      "wand": "Westende Zentralbalken",
+      "position": 2,
+      "rolle": "sonstiges",
+      "zeichen": "II",
+      "markierungsart": "geritzt",
+      "werkzeug": "reissmesser"
+    },
+    {
+      "id": "ww-mark-3",
+      "wand": "Westende Zentralbalken",
+      "position": 3,
+      "rolle": "sonstiges",
+      "zeichen": "III",
+      "markierungsart": "geritzt",
+      "werkzeug": "reissmesser"
+    },
+    {
+      "id": "ww-mark-4",
+      "wand": "Westende Zentralbalken",
+      "position": 4,
+      "rolle": "sonstiges",
+      "zeichen": "IIII",
+      "markierungsart": "geritzt",
+      "werkzeug": "reissmesser"
+    }
+  ],
+  "expectedRuleIds": [],
+  "validatedClaim": "The reported local sequence segment is continuous and additive; no sequence anomaly is expected.",
+  "notValidated": [
+    "Complete building register",
+    "Spatial distances",
+    "Individual glyph photographs",
+    "Automatic proof of extension",
+    "Automatic proof of non-truncation",
+    "R2 duplicate or R3 foreign-series or R5 reversal detection"
+  ],
+  "rights": {
+    "record": "Original factual transcription and metadata; may be offered under CC0 by project authors.",
+    "source": "Copyright Oxford Archaeology Ltd 2013; no free source-image licence established; no images or report text reproduced."
+  },
+  "sourceToolLabel": "race knife",
+  "modelMapping": "rolle=sonstiges denotes mark observation points on one carrier; reissmesser is a coarse German mapping of race knife; positions are ordinal and II/III expand the published consecutive range."
+}

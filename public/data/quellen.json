@@ -21257,6 +21257,242 @@
           "planId": "masonry-r3-20261015-source-ratings"
         }
       ]
+    },
+    {
+      "id": "oxford-archaeology-west-wycombe-abbundfo",
+      "name": "Oxford Archaeology West Wycombe Abbundfolge 2013",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://eprints.oxfordarchaeology.com/6442/16/WWBSBS_57-58a_High_Street.pdf"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Publizierter intakter Zeichenfolgeabschnitt I bis IIII am Westende eines zentralen Balkens",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [
+          "abbundzeichen-fundbuch"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          4,
+          3,
+          5,
+          5,
+          3,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Abbundzeichen Umsetzung 15.10.2026",
+          "notiz": "Alison de Turberville Juli2013 Abschnitt2.3.1 gedruckteS6 PDFIndex11 direkt gelesen und lokal gerendert; Kontinuitätsfixture möglich, keine automatische Erweiterungsdeutung. SHA256=1bca30e150d13d8c991d8ec9681c8037bc76ecd43a4e6fed9d17687440b70524; 77-seitiges PDF, gedruckteS6/PDFIndex11; vier Markierungsstellen an EINEM Balken, II/III aus explizitem Bereich ausformuliert; keine historische Gesamtvalidierung; Originalbilder nicht CC0.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Abbundzeichen Umsetzung 15.10.2026",
+          "notiz": "Vektoren bewertet [4 3 5 5 3 3]: Direkt gelesene Literaturquelle; Q1 begrenzte Literaturfixture bei OA, sonst Kontext; kein vollständiges Register und keine neue Existenzprüfung; fremde Bildrechte bleiben bestehen.",
+          "planId": "abbundzeichen-implementation-20261015"
+        }
+      ]
+    },
+    {
+      "id": "hofer-abbundzeichen-2019-volltext",
+      "name": "Hofer Abbundzeichen 2019 Volltext",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.ing-hofer.de/2019/07/27/abbundzeichen/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Zeichensysteme und allgemeine Deutung von Unregelmäßigkeiten mit Beispielbildern nach Fulda 1996",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [
+          "abbundzeichen-fundbuch"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          5,
+          5,
+          3,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Abbundzeichen Umsetzung 15.10.2026",
+          "notiz": "Jetzt direkt gelesen; kein räumliches Einzelregister im Seitentext, keine freie Bildlizenz festgestellt.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Abbundzeichen Umsetzung 15.10.2026",
+          "notiz": "Vektoren bewertet [2 3 5 5 3 3]: Direkt gelesene Literaturquelle; Q1 begrenzte Literaturfixture bei OA, sonst Kontext; kein vollständiges Register und keine neue Existenzprüfung; fremde Bildrechte bleiben bestehen.",
+          "planId": "abbundzeichen-implementation-20261015"
+        }
+      ]
+    },
+    {
+      "id": "dsd-kulturspur-abbundzeichen-volltext",
+      "name": "DSD Kulturspur Abbundzeichen Volltext",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://www.denkmalschutz.de/denkmale-erhalten/kulturspur-2022/forschungsmethoden-und-spuren/abbundzeichen.html"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Allgemeine Erklärung der Abbundmarkierungen als Montagehilfe und bauhistorische Quelle",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [
+          "abbundzeichen-fundbuch"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          5,
+          5,
+          3,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Abbundzeichen Umsetzung 15.10.2026",
+          "notiz": "Jetzt direkt gelesen; kein konkretes geordnetes Register im Text.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Abbundzeichen Umsetzung 15.10.2026",
+          "notiz": "Vektoren bewertet [2 3 5 5 3 3]: Direkt gelesene Literaturquelle; Q1 begrenzte Literaturfixture bei OA, sonst Kontext; kein vollständiges Register und keine neue Existenzprüfung; fremde Bildrechte bleiben bestehen.",
+          "planId": "abbundzeichen-implementation-20261015"
+        }
+      ]
+    },
+    {
+      "id": "raking-light-bill-hardy-arabic-assembly",
+      "name": "Raking Light Bill Hardy Arabic Assembly Marks",
+      "typ": "L",
+      "kategorie": "referenzsammlung",
+      "rollen": [
+        "ideenquelle"
+      ],
+      "tags": [],
+      "urls": [
+        "https://rakinglight.co.uk/uk/arabic-assembly-marks-in-medieval-timber-framed-buildings/"
+      ],
+      "zugang": {
+        "art": "web",
+        "erreichbar": "ja",
+        "wie": ""
+      },
+      "enthaelt": "Fundgruppen arabischer Abbundzeichen und Aufruf zur Dokumentation",
+      "fokus": "",
+      "status": "durchsucht",
+      "statusNotiz": "",
+      "evidenz": "seite",
+      "zuletzt": "2026-10-15",
+      "ertrag": {
+        "dosen": [
+          "abbundzeichen-fundbuch"
+        ],
+        "graeber": [],
+        "kandidaten": []
+      },
+      "vektoren": {
+        "q": [
+          2,
+          3,
+          5,
+          5,
+          3,
+          3
+        ],
+        "basis": "bibliothekar",
+        "datum": "2026-10-15"
+      },
+      "verlauf": [
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Abbundzeichen Umsetzung 15.10.2026",
+          "notiz": "Direkt gelesen; nicht als Roman-Registerfixture geeignet.",
+          "status": "durchsucht"
+        },
+        {
+          "datum": "2026-10-15",
+          "agent": "bibliothekar",
+          "runde": "Abbundzeichen Umsetzung 15.10.2026",
+          "notiz": "Vektoren bewertet [2 3 5 5 3 3]: Direkt gelesene Literaturquelle; Q1 begrenzte Literaturfixture bei OA, sonst Kontext; kein vollständiges Register und keine neue Existenzprüfung; fremde Bildrechte bleiben bestehen.",
+          "planId": "abbundzeichen-implementation-20261015"
+        }
+      ]
     }
   ]
 }

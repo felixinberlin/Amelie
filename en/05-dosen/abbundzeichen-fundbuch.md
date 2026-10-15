@@ -12,7 +12,7 @@ source_type: Type D
 
 **One sentence:** A sequence checker for carpenters' assembly marks: people renovating a timber-framed house enter the marks of an exposed wall, and the tool reports gaps, duplicates and foreign series as a hint or a suspicion (for example of reused timber) and stores the find in a format house historians can collect.
 
-**As of:** 27 September 2026 · **Recheck by:** September 2027
+**As of:** 15 October 2026 · **Recheck by:** September 2027
 **Recipient:** **Interessengemeinschaft Bauernhaus e.V. (IgB), house research section** (annual house researchers' meetings, farmhouse archive at Kreismuseum Syke; many IgB house researchers sit on the North-West working group for house and timber-frame research together with the state heritage offices). Contact according to a search snippet: Dr. Julia Ricker (julia.ricker@igbauernhaus.de) — **verify on igbauernhaus.de before sending (name, role, address); no verification, no mail.** · secondary (UK, separate mail): the Raking Light author who asks for sightings, or the Vernacular Architecture Group — name not established
 **Verdict:** 🎁 **gift** — the association counts the renovators among its members and has house research in-house; the gift is a small tested kernel with no running costs, not a platform
 **Review:** 26/35 · Tier 1 · Type D (details: `06-suche/amelie-classification-log.md`, Holz-Runde 27.09.2026, re-review)
@@ -53,6 +53,14 @@ On the other side are the few people who can read the marks. The numbering seque
 - every message carries a rule ID and a plain-language reason (De/En);
 - everything lives in the scaffolding under `07-demos/abbundzeichen-fundbuch/` (Rule 4).
 
+## Implementation status, 15 October 2026
+
+The single-file offline page now provides manual entry, synthetic examples, rule explanations and JSON export. It bundles the same TypeScript kernel used by the tests. Open it from the tin: https://felixinberlin.github.io/Amelie/#dose=abbundzeichen-fundbuch
+
+A published **I–IIII sequence segment** from Oxford Archaeology (2013), §2.3.1, p. 6, is transcribed and checked for continuity. Four mark observations on **one** beam are not a complete member register. II/III expand the reported range; positions are ordinal. The software does not certify building history or material fitness. Ticket 01 remains open for a complete register and historical interpretation validation. [Provenance and limits](../../07-demos/abbundzeichen-fundbuch/literaturpruefung-2026-10-15.md).
+
+DSD, Hofer, Raking Light and the Oxford report have now been read directly. That does not retroactively validate the September prior-art search or recipient contact. The VA-49/1 field mapping remains unverified. The checker’s selected-group, member-role and start-at-I assumptions are not universal historical rules. No model, image recognition or outreach is involved.
+
 ## Where it breaks
 
 **Misread marks produce false "reuse" findings.** A layperson takes a hint for a building-archaeology finding, and a collection fills with noisy data. The remedy is architectural: only two grades (`hint`, `suspicion`), never a finding; the model reading is only a suggestion, the human-confirmed reading is stored next to the photo; `unreadable` counts as much as a reading; no automatic map — entries go as an export to curating house historians; location only at municipality level.
@@ -60,7 +68,7 @@ On the other side are the few people who can read the marks. The numbering seque
 **Second: the recipient has no software arm.** That is why the gift is a single static page with tests and nothing to operate.
 
 **Disclosed:**
-- **Evidence from search snippets only.** The egress proxy of this environment blocked every page fetch; none of the sources below was read in full.
+- **Initial search of 27 September 2026 used snippets only.** Later direct readings and the limited literature fixture are described above; they do not constitute a fresh complete prior-art review.
 - **The model reading is untested.** Nobody has checked whether a VLM reads struck marks under raking light usefully. The kernel does not depend on it.
 - **The contact is unverified** (Dr. Julia Ricker, from a single snippet).
 

@@ -1707,6 +1707,60 @@
         "src/data/candidateVectors.json": "sha256:d2a2fdc9ed9db5847d4493f2d8a2a5750579a9130f6d267e887da3d5dcd753d3",
         "src/data/vectorChanges.json": "sha256:7713e34a6b9cd539c2d581109bc53f40f97495968d6358ce51d8995bd4405b79"
       }
+    },
+    "abbundzeichen-implementation-20261015": {
+      "plan_id": "abbundzeichen-implementation-20261015",
+      "actor": "bibliothekar",
+      "agent": "bibliothekar",
+      "runde": "Abbundzeichen Umsetzung 15.10.2026",
+      "at": "2026-10-15T14:16:46.529Z",
+      "ops": [
+        {
+          "index": 0,
+          "op": "protokoll.add",
+          "target": "abbundzeichen-fundbuch"
+        },
+        {
+          "index": 1,
+          "op": "source.rate",
+          "target": "oxford-archaeology-west-wycombe-abbundfo"
+        },
+        {
+          "index": 2,
+          "op": "source.rate",
+          "target": "hofer-abbundzeichen-2019-volltext"
+        },
+        {
+          "index": 3,
+          "op": "source.rate",
+          "target": "dsd-kulturspur-abbundzeichen-volltext"
+        },
+        {
+          "index": 4,
+          "op": "source.rate",
+          "target": "raking-light-bill-hardy-arabic-assembly"
+        }
+      ],
+      "files": [
+        "06-suche/amelie-pruefprotokoll.md",
+        "06-suche/amelie-quellen.md",
+        "AMELIE_STATUS.md",
+        "public/data/amelie-health.json",
+        "public/data/amelie-ideas.json",
+        "public/data/dosen.json",
+        "public/data/quellen.json",
+        "src/data/quellen.json"
+      ],
+      "hashes": {
+        "src/data/quellen.json": "sha256:173bd470f4e745f346a999009d51ec1bff4fa6bae11679998737d68cf4add3bd",
+        "src/data/graeber.json": "sha256:22151ac9e34db3470c28c539307b0655d59640da2ae3d040dc2881ba77c85f58",
+        "06-suche/amelie-pruefprotokoll.md": "sha256:2fcb07ee586b9aa7ea4ddd4ecc73e42d633e2a51a21586aa59f2e6d9902ac65d",
+        "06-suche/terminology-map.md": "absent",
+        "06-suche/open-questions.md": "absent",
+        "src/data/doseVectors.json": "sha256:bc224ae81695813b22d51733a926ff21b40947792af96da51635105a26f2c5b5",
+        "src/data/candidateVectors.json": "sha256:d2a2fdc9ed9db5847d4493f2d8a2a5750579a9130f6d267e887da3d5dcd753d3",
+        "src/data/vectorChanges.json": "sha256:7713e34a6b9cd539c2d581109bc53f40f97495968d6358ce51d8995bd4405b79"
+      }
     }
   }
 }

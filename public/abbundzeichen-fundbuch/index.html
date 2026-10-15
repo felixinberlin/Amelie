@@ -1,0 +1,1226 @@
+<!doctype html>
+<!-- CC0 1.0 Public Domain. Generated via scripts/build-abbundzeichen.mjs. -->
+<html lang="de">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Abbundzeichen-Fundbuch · Amélie</title>
+<style>
+:root{font:16px/1.55 system-ui,sans-serif;color:#28372e;background:#f6f3eb;--ink:#28372e;--line:#d9ded4;--accent:#345a43}*{box-sizing:border-box}body{margin:0}button,input,select{font:inherit;max-width:100%}button,a{touch-action:manipulation}button{cursor:pointer;border:1px solid var(--line);background:white;color:var(--ink);border-radius:8px;padding:.65rem .9rem;min-height:44px}button:hover{background:#edf1e9}button:disabled{opacity:.5;cursor:not-allowed}a{color:var(--accent)}:focus-visible{outline:3px solid #ad701c;outline-offset:3px}main{max-width:1120px;margin:auto;padding:28px 24px 64px}nav{display:flex;justify-content:space-between;align-items:center;gap:12px}.brand{font-weight:750;letter-spacing:.12em;font-size:.8rem}.hero{padding:42px 0 26px;max-width:790px}h1{font-family:Georgia,serif;font-weight:400;font-size:clamp(2.2rem,6vw,4.3rem);letter-spacing:-.04em;line-height:1.08;margin:10px 0 20px}h2{font-family:Georgia,serif;font-weight:400;font-size:1.65rem;margin:0 0 14px}h3{margin:0;font-size:1rem}p{margin:8px 0 14px}.eyebrow{font-size:.75rem;letter-spacing:.13em;text-transform:uppercase;font-weight:750;color:#657260}.muted{color:#596553;font-size:.9rem}.notice{padding:16px 20px;background:#ececda;border-left:3px solid #8d8753;border-radius:3px;margin-bottom:24px}.layout{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:24px;align-items:start}.panel{background:#fffef9;border:1px solid var(--line);border-radius:14px;padding:22px;margin-bottom:20px}.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:end;margin-bottom:18px}.toolbar label{flex:1;min-width:140px}.primary{background:var(--accent);color:white;border-color:var(--accent)}.primary:hover{background:#254632}.part{border:1px solid var(--line);border-radius:10px;padding:16px;margin:14px 0;background:white}.part-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}label{display:flex;flex-direction:column;gap:5px;font-size:.8rem;font-weight:650}input,select{width:100%;min-width:0;padding:9px 10px;border:1px solid #b9c2b5;border-radius:6px;background:white;color:var(--ink);min-height:44px}.mark{font-family:ui-monospace,monospace;font-size:1.15rem}.result{border-top:1px solid var(--line);padding:14px 0;overflow-wrap:anywhere}.badge{display:inline-block;font-size:.72rem;font-weight:750;letter-spacing:.04em;padding:3px 8px;background:#edf0e7;border-radius:4px;margin-right:6px}.suspicion{background:#f4e3d1;color:#75481c}.error{background:#fff0ea;border:1px solid #ba6a4e;border-radius:8px;padding:14px;overflow-wrap:anywhere}.summary{font-size:1.1rem;font-weight:650}.sequence{padding:10px 0;border-bottom:1px solid var(--line);overflow-wrap:anywhere}details{margin:12px 0}summary{cursor:pointer;font-size:.9rem;font-weight:650;min-height:32px}footer{margin-top:28px;padding-top:20px;border-top:1px solid var(--line);font-size:.8rem;color:#596553}.status{font-size:.85rem;overflow-wrap:anywhere}.wide{grid-column:1/-1}[hidden]{display:none!important}@media(max-width:760px){main{padding:20px 16px 40px}.layout{grid-template-columns:1fr}.hero{padding-top:30px}.panel{padding:18px}.fields{gap:10px}h1{overflow-wrap:anywhere}}@media(max-width:370px){.fields{grid-template-columns:1fr}}
+</style>
+</head>
+<body><main>
+<nav><span class="brand">AMÉLIE · FUND B U C H</span><button id="language" type="button" data-testid="language">English</button></nav>
+<header class="hero"><span class="eyebrow" data-de="Spuren festhalten · Folgen verstehen" data-en="Record traces · explore sequences"></span>
+<h1 data-de="Abbundzeichen-Fundbuch" data-en="Carpenters’ Marks Logbook"></h1>
+<p data-de="Trage von Hand gelesene Zeichen ein. Der Prüfer macht Lücken und Brüche einer Zählfolge sichtbar — die Geschichte des Hauses deuten Menschen." data-en="Enter marks you have read by hand. The checker reveals gaps and breaks in a sequence — people interpret the building’s history."></p></header>
+<div class="notice" data-testid="validation-status"><strong data-de="Arbeitsstand: ein publizierter Folgeabschnitt geprüft; historische Gesamtvalidierung offen." data-en="Work in progress: one published sequence segment checked; full historical validation pending."></strong><p data-de="Neben synthetischen Beispielen ist ein zusammenhängender Abschnitt I–IIII aus einem Untersuchungsbericht erfasst. Das validiert nur diese lokale Folge, kein vollständiges Zeichenregister und keine Baugeschichte. Ergebnisse sind nur Hinweise oder Verdachte, keine historischen Befunde und keine bautechnische Freigabe." data-en="Alongside synthetic examples, a continuous segment I–IIII is recorded from an investigation report. This validates only that local sequence, not a complete register or building history. Results are only hints or suspicions, never historical findings or structural clearance."></p></div>
+<div class="layout"><section>
+<div class="panel"><h2 data-de="1 · Zeichen erfassen" data-en="1 · Record marks"></h2>
+<div class="toolbar"><label><span data-de="Synthetisches Beispiel" data-en="Synthetic example"></span><select id="example" data-testid="example"></select></label><button id="load" type="button" data-de="Beispiel laden" data-en="Load example" data-testid="load-example"></button></div>
+<details><summary data-de="Publizierter Folgeabschnitt · West Wycombe" data-en="Published sequence segment · West Wycombe"></summary><p class="muted" data-de="Alison de Turberville · Oxford Archaeology · West Wycombe, 2013-07, § 2.3.1, gedruckte Seite 6. Vier Zeichenbeobachtungen an einem Balken; II und III aus der ausdrücklich beschriebenen Folge I–IIII ergänzt. Nur die Kontinuität dieses Abschnitts ist quellengeprüft. Keine Aussage über Unversehrtheit des Hauses oder einen Raumanbau. Keine Quellbilder übernommen." data-en="Alison de Turberville · Oxford Archaeology · West Wycombe, 2013-07, § 2.3.1, printed page 6. Four mark observations on one beam; II and III expand the expressly described sequence I–IIII. Only this segment’s continuity is source-checked. No claim about an intact building or room extension. No source images reproduced."></p><p><a href="https://eprints.oxfordarchaeology.com/6442/16/WWBSBS_57-58a_High_Street.pdf" target="_blank" rel="noopener noreferrer" data-de="Originalbericht öffnen (PDF, Internet erforderlich)" data-en="Open original report (PDF, requires internet)"></a></p><button id="load-literature" type="button" data-testid="load-literature" data-de="Publizierten Folgeabschnitt laden" data-en="Load published sequence segment"></button></details>
+<p id="origin" class="muted" data-testid="origin"></p>
+<details><summary data-de="Wie wird eingetragen?" data-en="How do I enter a mark?"></summary><p class="muted" data-de="Nur manuelle Kurznotation: I, II, III, IIII oder IV; optional ^ Ausstich, > Fähnchen, / Beistrich, o Kreis. VII>> bedeutet VII mit zwei Fähnchen. Bei Unsicherheit: unlesbar oder ?. Diese Eingabekonvention ist keine automatische historische Lesung. Keine Fotoerkennung." data-en="Manual shorthand only: I, II, III, IIII or IV; optionally ^ notch, > flag, / side stroke, o circle. VII>> means VII with two flags. If uncertain, enter unreadable or ?. This input convention is not an automatic historical reading. No image recognition."></p><p class="muted" data-de="Positionen beschreiben die Reihenfolge entlang einer Wand; Rollen werden getrennt ausgewertet. Wandnamen und Bauteil-IDs nur als neutrale Kürzel, ohne Adressen verwenden." data-en="Positions describe order along a wall; member roles are evaluated separately. Use neutral wall names and member IDs without addresses."></p></details>
+<div id="parts" data-testid="parts"></div><button id="add" class="primary" type="button" data-de="+ Bauteil hinzufügen" data-en="+ Add member" data-testid="add-part"></button>
+</div></section>
+<aside><section class="panel" aria-labelledby="results-heading"><h2 id="results-heading" data-de="2 · Zählfolge prüfen" data-en="2 · Check sequence"></h2><p class="muted" data-de="Modellannahme: gewählte Wand / Bund, gleiche Rollengruppen, Zählung ab I. Historische Systeme können anders zählen oder gleiche Zeichen an zusammengehörigen Verbindungen wiederholen. Jede Auffälligkeit braucht menschliche Deutung." data-en="Model assumptions: a selected wall / frame, matching role groups and numbering from I. Historical systems may count differently or repeat marks at corresponding joints. Every flag needs human interpretation."></p><div id="results" aria-live="polite" data-testid="results"></div></section>
+<section class="panel"><h2 data-de="3 · Fund mitnehmen" data-en="3 · Take your record"></h2><p class="muted" data-de="JSON für die eigene Ablage oder eine fachliche Prüfung. Keine Übertragung an einen Server. Vor Weitergabe alle Freitexte auf genaue Ortsangaben prüfen." data-en="JSON for your records or expert review. Nothing is sent to a server. Check all free text for precise location details before sharing."></p>
+<div class="fields"><label><span data-de="Gemeinde (keine Adresse)" data-en="Municipality (no address)"></span><input id="municipality" autocomplete="off" maxlength="100" data-testid="municipality"></label><label><span data-de="Land" data-en="Country"></span><input id="country" value="Deutschland" autocomplete="off" maxlength="80"></label><label class="wide"><span data-de="Erfasst am" data-en="Recorded on"></span><input id="date" type="date"></label></div>
+<p><button id="download" class="primary" type="button" data-de="JSON herunterladen" data-en="Download JSON" data-testid="download"></button></p><p id="export-status" class="status" role="status" data-testid="export-status"></p></section>
+<section class="panel"><h2 data-de="Lokal, ohne Konto" data-en="Local, no account"></h2><p class="muted" data-de="Diese einzelne HTML-Datei funktioniert auch ohne Internet. Im Browser „Seite speichern unter“ wählen und als HTML-Datei für unterwegs sichern. Das speichert die Anwendung, nicht deine Erfassung. Eingaben bleiben nur in diesem geöffneten Fenster; beim Neuladen gehen sie verloren. Sichere deinen Fund separat als JSON." data-en="This single HTML file also works without internet. Use your browser’s “Save page as” command and save an HTML file for fieldwork. This saves the app, not your record. Entries remain only in this open window and are lost on reload. Download your record separately as JSON."></p></section></aside></div>
+<footer><a href="https://felixinberlin.github.io/Amelie/#dose=abbundzeichen-fundbuch" data-de="Zur Dose und den offenen Forschungsaufgaben" data-en="The idea and open research tasks"></a><p>CC0 1.0 Public Domain · Amélie</p></footer>
+</main><script>"use strict";
+(() => {
+  // src/engine/abbundzeichen-fundbuch/fundbuchEngine.ts
+  var STUFEN = ["hinweis", "verdacht"];
+  var UNLESBAR_FORMEN = /* @__PURE__ */ new Set(["unlesbar", "unreadable", "?"]);
+  var SERIEN_ZEICHEN = {
+    "^": "ausstich",
+    ">": "faehnchen",
+    "/": "beistrich",
+    o: "kreis"
+  };
+  var ROEMISCH = /^(C{0,3})(XC|XL|L?X{0,4})(IX|IV|V?I{0,4})$/;
+  var ROEMISCH_WERT = { I: 1, V: 5, X: 10, L: 50, C: 100 };
+  function roemischZuWert(ziffer) {
+    let summe = 0;
+    for (let i = 0; i < ziffer.length; i++) {
+      const w = ROEMISCH_WERT[ziffer[i]];
+      const naechster = i + 1 < ziffer.length ? ROEMISCH_WERT[ziffer[i + 1]] : 0;
+      summe += w < naechster ? -w : w;
+    }
+    return summe;
+  }
+  function bestimmeNotation(ziffer) {
+    if (/IV|IX|XL|XC/.test(ziffer)) return "subtraktiv";
+    if (/IIII|XXXX/.test(ziffer)) return "additiv";
+    return "neutral";
+  }
+  function parseZeichen(roh) {
+    const eingabe = roh.trim();
+    if (UNLESBAR_FORMEN.has(eingabe.toLowerCase())) {
+      return { zustand: "unlesbar", roh };
+    }
+    const m = /^([IVXLC]+)([\^>\/o]*)$/i.exec(eingabe);
+    if (!m) {
+      throw new Error(`Unbekannte Zeichennotation: "${roh}". Erlaubt: römische Ziffer + Serienzeichen (^ > / o) oder "unlesbar".`);
+    }
+    const ziffer = m[1].toUpperCase();
+    const suffix = m[2].toLowerCase();
+    if (!ROEMISCH.test(ziffer)) {
+      throw new Error(`Ungültige römische Ziffer im Zeichen "${roh}".`);
+    }
+    let serie = { typ: "keine", anzahl: 0 };
+    if (suffix.length > 0) {
+      const verschiedene = new Set(suffix.split(""));
+      if (verschiedene.size > 1) {
+        throw new Error(`Gemischte Serienzeichen im Zeichen "${roh}" — bitte je Zeichen nur einen Serientyp angeben.`);
+      }
+      serie = { typ: SERIEN_ZEICHEN[suffix[0]], anzahl: suffix.length };
+    }
+    const wert = roemischZuWert(ziffer);
+    if (wert < 1) {
+      throw new Error(`Zeichen "${roh}" ergibt keinen positiven Wert.`);
+    }
+    return { zustand: "gelesen", roh, wert, notation: bestimmeNotation(ziffer), serie };
+  }
+  function serienSchluessel(s) {
+    return s.typ === "keine" ? "keine" : `${s.typ}×${s.anzahl}`;
+  }
+  function serieDe(s) {
+    const namen = {
+      keine: "ohne Serienzeichen",
+      ausstich: "Ausstich",
+      faehnchen: "Fähnchen",
+      beistrich: "Beistrich",
+      kreis: "Kreis"
+    };
+    return s.typ === "keine" ? namen.keine : `${s.anzahl}× ${namen[s.typ]}`;
+  }
+  function serieEn(s) {
+    const namen = {
+      keine: "no series tag",
+      ausstich: "notch",
+      faehnchen: "flag",
+      beistrich: "side stroke",
+      kreis: "circle"
+    };
+    return s.typ === "keine" ? namen.keine : `${s.anzahl}× ${namen[s.typ]}`;
+  }
+  function wertZuRoemisch(wert) {
+    const tabelle = [
+      [100, "C"],
+      [90, "XC"],
+      [50, "L"],
+      [40, "XL"],
+      [10, "X"],
+      [9, "IX"],
+      [5, "V"],
+      [4, "IV"],
+      [1, "I"]
+    ];
+    let rest = wert;
+    let out = "";
+    for (const [w, z] of tabelle) {
+      while (rest >= w) {
+        out += z;
+        rest -= w;
+      }
+    }
+    return out;
+  }
+  var VORBEHALT_DE = "Hinweise und Verdachte sind keine Bauforschungsbefunde. Sie zeigen nur, wo eine Zählfolge nicht aufgeht — die Deutung bleibt bei Hausforschenden.";
+  var VORBEHALT_EN = "Hints and suspicions are not building-archaeology findings. They only show where a sequence does not add up — interpretation stays with house historians.";
+  function wandSchluessel(t2) {
+    if (typeof t2.wand === "string" && t2.wand.trim() !== "") return t2.wand.trim();
+    if (typeof t2.bund === "number" && Number.isFinite(t2.bund)) return `Bund ${t2.bund}`;
+    throw new Error(`Bauteil "${t2.id}" hat weder Wand noch Bund.`);
+  }
+  function gruppiere(liste, schluessel) {
+    const m = /* @__PURE__ */ new Map();
+    for (const x of liste) {
+      const k = schluessel(x);
+      const g = m.get(k);
+      if (g) g.push(x);
+      else m.set(k, [x]);
+    }
+    return m;
+  }
+  function nachPosition(liste) {
+    return [...liste].sort((a, b) => a.teil.position - b.teil.position || a.teil.id.localeCompare(b.teil.id));
+  }
+  function dominanteSerie(eintraege) {
+    if (eintraege.length === 0) return null;
+    const zaehler = gruppiere(eintraege, (e) => serienSchluessel(e.lesung.serie));
+    let beste = null;
+    for (const g of zaehler.values()) {
+      if (!beste || g.length > beste.length) beste = g;
+    }
+    if (beste && beste.length * 2 > eintraege.length) return beste[0].lesung.serie;
+    return null;
+  }
+  function laengsteMonotoneTeilfolge(werte, aufsteigend) {
+    const n = werte.length;
+    const laenge = new Array(n).fill(1);
+    const vorg = new Array(n).fill(-1);
+    for (let i = 0; i < n; i++) {
+      for (let j = 0; j < i; j++) {
+        const passt = aufsteigend ? werte[j] <= werte[i] : werte[j] >= werte[i];
+        if (passt && laenge[j] + 1 > laenge[i]) {
+          laenge[i] = laenge[j] + 1;
+          vorg[i] = j;
+        }
+      }
+    }
+    let ende = 0;
+    for (let i = 1; i < n; i++) if (laenge[i] > laenge[ende]) ende = i;
+    const set = /* @__PURE__ */ new Set();
+    for (let k = ende; k >= 0 && n > 0; k = vorg[k]) {
+      set.add(k);
+      if (vorg[k] === -1) break;
+    }
+    return set;
+  }
+  function richtungVon(werte) {
+    let auf = 0;
+    let ab = 0;
+    for (let i = 1; i < werte.length; i++) {
+      if (werte[i] > werte[i - 1]) auf++;
+      else if (werte[i] < werte[i - 1]) ab++;
+    }
+    if (auf === 0 && ab === 0) return "unbestimmt";
+    return ab > auf ? "absteigend" : "aufsteigend";
+  }
+  function meldung(regel, stufe, wand, bauteile, textDe, textEn) {
+    assertZulaessigeStufe(stufe);
+    return { regel, stufe, wand, bauteile, textDe, textEn };
+  }
+  function assertZulaessigeStufe(stufe) {
+    if (!STUFEN.includes(stufe)) {
+      throw new Error(
+        `Unzulässige Stufe "${String(stufe)}": Der Kern vergibt nur "hinweis" oder "verdacht", nie einen bestätigten Befund.`
+      );
+    }
+  }
+  function pruefeZaehlfolge(bauteile) {
+    const ids = /* @__PURE__ */ new Set();
+    const eintraege = bauteile.map((teil) => {
+      if (!teil || typeof teil.id !== "string" || teil.id === "") {
+        throw new Error("Bauteil ohne ID.");
+      }
+      if (ids.has(teil.id)) throw new Error(`Doppelte Bauteil-ID "${teil.id}".`);
+      ids.add(teil.id);
+      if (typeof teil.position !== "number" || !Number.isFinite(teil.position)) {
+        throw new Error(`Bauteil "${teil.id}" hat keine gültige Position.`);
+      }
+      return { teil, lesung: parseZeichen(teil.zeichen), wand: wandSchluessel(teil) };
+    });
+    const unlesbar = eintraege.filter((e) => e.lesung.zustand === "unlesbar").map((e) => e.teil.id);
+    const befunde = [];
+    const serien = [];
+    const waende = gruppiere(eintraege, (e) => e.wand);
+    const wandNamen = [...waende.keys()].sort((a, b) => a.localeCompare(b));
+    for (const wand of wandNamen) {
+      const alle = waende.get(wand);
+      const gelesen = alle.filter((e) => e.lesung.zustand === "gelesen");
+      const dominant = dominanteSerie(gelesen);
+      const domKey = dominant ? serienSchluessel(dominant) : null;
+      if (dominant) {
+        for (const e of nachPosition(gelesen)) {
+          if (serienSchluessel(e.lesung.serie) !== domKey) {
+            befunde.push(
+              meldung(
+                "R3-FREMDE-SERIE",
+                "verdacht",
+                wand,
+                [e.teil.id],
+                `Verdacht Zweitverwendung: Bauteil ${e.teil.id} (${e.lesung.roh}) trägt ${serieDe(e.lesung.serie)}, die Wand ${wand} sonst ${serieDe(dominant)}. Möglicherweise Holz aus einem anderen Verband.`,
+                `Suspected reuse: member ${e.teil.id} (${e.lesung.roh}) carries ${serieEn(e.lesung.serie)}, while wall ${wand} otherwise carries ${serieEn(dominant)}. Possibly timber from another frame.`
+              )
+            );
+          }
+        }
+      }
+      for (const [, gruppe] of [...gruppiere(gelesen, (e) => serienSchluessel(e.lesung.serie))].sort(
+        (a, b) => a[0].localeCompare(b[0])
+      )) {
+        const add = nachPosition(gruppe.filter((e) => e.lesung.notation === "additiv"));
+        const sub = nachPosition(gruppe.filter((e) => e.lesung.notation === "subtraktiv"));
+        if (add.length > 0 && sub.length > 0) {
+          const s = gruppe[0].lesung.serie;
+          befunde.push(
+            meldung(
+              "R4-NOTATIONSBRUCH",
+              "hinweis",
+              wand,
+              [...add, ...sub].map((e) => e.teil.id),
+              `Hinweis: In Wand ${wand} (${serieDe(s)}) stehen additive Schreibweisen (${add.map((e) => e.lesung.roh).join(", ")}) neben subtraktiven (${sub.map((e) => e.lesung.roh).join(", ")}). Das kann auf einen anderen Zimmerer oder eine andere Bauphase deuten — kein Befund.`,
+              `Hint: wall ${wand} (${serieEn(s)}) mixes additive forms (${add.map((e) => e.lesung.roh).join(", ")}) with subtractive ones (${sub.map((e) => e.lesung.roh).join(", ")}). This may point to another carpenter or building phase — not a finding.`
+            )
+          );
+        }
+      }
+      const folgen = [];
+      const rollen = gruppiere(alle, (e) => e.teil.rolle);
+      for (const rolle of [...rollen.keys()].sort()) {
+        const rollenAlle = nachPosition(rollen.get(rolle));
+        const rollenGelesen = rollenAlle.filter((e) => e.lesung.zustand === "gelesen");
+        const doppel = gruppiere(rollenGelesen, (e) => `${serienSchluessel(e.lesung.serie)}|${e.lesung.wert}`);
+        for (const [, gruppe] of [...doppel].sort((a, b) => a[0].localeCompare(b[0]))) {
+          if (gruppe.length > 1) {
+            const z = wertZuRoemisch(gruppe[0].lesung.wert);
+            befunde.push(
+              meldung(
+                "R2-DOPPELUNG",
+                "verdacht",
+                wand,
+                gruppe.map((e) => e.teil.id),
+                `Verdacht: Der Wert ${z} (${serieDe(gruppe[0].lesung.serie)}) kommt bei ${rolle} in Wand ${wand} ${gruppe.length}-mal vor (${gruppe.map((e) => e.teil.id).join(", ")}). Verwechslung beim Eintragen oder Zweitverwendung.`,
+                `Suspicion: value ${z} (${serieEn(gruppe[0].lesung.serie)}) occurs ${gruppe.length} times for ${rolle} in wall ${wand} (${gruppe.map((e) => e.teil.id).join(", ")}). Mix-up while recording or reused timber.`
+              )
+            );
+          }
+        }
+        const folgeGelesen = domKey ? rollenGelesen.filter((e) => serienSchluessel(e.lesung.serie) === domKey) : rollenGelesen;
+        const werte = folgeGelesen.map((e) => e.lesung.wert);
+        const richtung = richtungVon(werte);
+        folgen.push({ rolle, werte, richtung });
+        if (folgeGelesen.length >= 3) {
+          const aufsteigend = richtung !== "absteigend";
+          const imLauf = laengsteMonotoneTeilfolge(werte, aufsteigend);
+          folgeGelesen.forEach((e, i) => {
+            if (!imLauf.has(i)) {
+              befunde.push(
+                meldung(
+                  "R5-RICHTUNGSBRUCH",
+                  "verdacht",
+                  wand,
+                  [e.teil.id],
+                  `Verdacht: ${e.teil.id} (${e.lesung.roh}) an Position ${e.teil.position} passt nicht in die ${aufsteigend ? "aufsteigende" : "absteigende"} Zählfolge der ${rolle} in Wand ${wand}. Umsetzung des Bauteils oder falsche Positionsangabe.`,
+                  `Suspicion: ${e.teil.id} (${e.lesung.roh}) at position ${e.teil.position} does not fit the ${aufsteigend ? "ascending" : "descending"} sequence of ${rolle} in wall ${wand}. Member relocated or position entered wrongly.`
+                )
+              );
+            }
+          });
+        }
+        if (folgeGelesen.length > 0) {
+          const vorhanden = new Set(werte);
+          const max = Math.max(...werte);
+          const unlesbareHier = rollenAlle.filter((e) => e.lesung.zustand === "unlesbar");
+          for (let v = 1; v < max; v++) {
+            if (vorhanden.has(v)) continue;
+            const unten = folgeGelesen.filter((e) => e.lesung.wert < v).sort((a, b) => b.lesung.wert - a.lesung.wert)[0];
+            const oben = folgeGelesen.filter((e) => e.lesung.wert > v).sort((a, b) => a.lesung.wert - b.lesung.wert)[0];
+            const fehlendHier = oben.lesung.wert - (unten ? unten.lesung.wert : 0) - 1;
+            const kandidaten = unlesbareHier.filter((e) => {
+              const p = e.teil.position;
+              if (!unten) {
+                return richtung === "absteigend" ? p > oben.teil.position : p < oben.teil.position;
+              }
+              const lo = Math.min(unten.teil.position, oben.teil.position);
+              const hi = Math.max(unten.teil.position, oben.teil.position);
+              return p > lo && p < hi;
+            });
+            if (kandidaten.length >= fehlendHier) continue;
+            const z = wertZuRoemisch(v);
+            befunde.push(
+              meldung(
+                "R1-LUECKE",
+                "hinweis",
+                wand,
+                [unten?.teil.id, oben.teil.id].filter((x) => typeof x === "string"),
+                `Hinweis: In der Zählfolge der ${rolle} in Wand ${wand} fehlt ${z}. Ein fehlendes Bauteil oder ein Umbau — oder das Bauteil ist noch verdeckt.`,
+                `Hint: ${z} is missing from the sequence of ${rolle} in wall ${wand}. A missing member or an alteration — or the member is still covered.`
+              )
+            );
+          }
+        }
+      }
+      const typen = new Set(gelesen.map((e) => e.lesung.serie.typ === "keine" ? "einfach" : "serie"));
+      const zeichensystem = typen.size === 0 ? "unbestimmt" : typen.size === 2 ? "gemischt" : typen.has("einfach") ? "roemisch-einfach" : "roemisch-mit-serienzeichen";
+      serien.push({ wand, dominanteSerie: dominant, zeichensystem, folgen });
+    }
+    for (const b of befunde) {
+      assertZulaessigeStufe(b.stufe);
+      if (!b.textDe || !b.textEn) throw new Error(`Meldung ${b.regel} ohne Klartextbegründung.`);
+    }
+    return { serien, befunde, unlesbar, vorbehaltDe: VORBEHALT_DE, vorbehaltEn: VORBEHALT_EN };
+  }
+  var EXPORT_VERSION = "0.1.0";
+  var VERBOTENE_ORTSFELDER = [
+    "strasse",
+    "straße",
+    "hausnummer",
+    "adresse",
+    "address",
+    "lat",
+    "lon",
+    "lng",
+    "latitude",
+    "longitude",
+    "koordinaten",
+    "coordinates",
+    "flurstueck",
+    "flurstück",
+    "plz"
+  ];
+  var ERLAUBTE_METAFELDER = /* @__PURE__ */ new Set(["gemeinde", "landkreis", "land", "erfasstAm", "gebaeudeart", "bemerkung"]);
+  function exportiereFund(bauteile, meta) {
+    for (const k of Object.keys(meta)) {
+      if (VERBOTENE_ORTSFELDER.includes(k.toLowerCase())) {
+        throw new Error(`Ortsfeld "${k}" ist genauer als die Gemeinde und wird nicht exportiert.`);
+      }
+      if (!ERLAUBTE_METAFELDER.has(k)) {
+        throw new Error(`Unbekanntes Metadatenfeld "${k}".`);
+      }
+    }
+    if (!meta.gemeinde || !meta.land) throw new Error("Gemeinde und Land sind Pflichtfelder.");
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(meta.erfasstAm)) throw new Error("erfasstAm muss ein ISO-Datum (YYYY-MM-DD) sein.");
+    const ergebnis = pruefeZaehlfolge(bauteile);
+    const exportTeile = bauteile.map((t2) => {
+      const l = parseZeichen(t2.zeichen);
+      return {
+        id: t2.id,
+        zeichen: t2.zeichen,
+        markierungsart: t2.markierungsart ?? "unbekannt",
+        werkzeug: t2.werkzeug ?? "unbekannt",
+        lage: { wand: wandSchluessel(t2), position: t2.position, rolle: t2.rolle, seite: t2.seite ?? null },
+        serie: l.zustand === "gelesen" ? l.serie : null,
+        lesung: l.zustand === "gelesen" ? { zustand: "gelesen", wert: l.wert, notation: l.notation } : { zustand: "unlesbar" }
+      };
+    });
+    return {
+      format: "abbundzeichen-fundbuch",
+      version: EXPORT_VERSION,
+      ortsgenauigkeit: "gemeinde",
+      ort: { gemeinde: meta.gemeinde, landkreis: meta.landkreis ?? null, land: meta.land },
+      erfasstAm: meta.erfasstAm,
+      gebaeudeart: meta.gebaeudeart ?? null,
+      bemerkung: meta.bemerkung ?? null,
+      bauteile: exportTeile,
+      befunde: ergebnis.befunde,
+      unlesbar: ergebnis.unlesbar,
+      vorbehaltDe: ergebnis.vorbehaltDe,
+      vorbehaltEn: ergebnis.vorbehaltEn
+    };
+  }
+
+  // 07-demos/abbundzeichen-fundbuch/data/synthetische-faelle.json
+  var synthetische_faelle_default = {
+    hinweis: "Alle Fälle sind SYNTHETISCH, von Hand für die Tests konstruiert. Keiner ist aus einem publizierten Zeichenregister übertragen (DSD, ing-hofer.de, Gerner 1996 stehen aus).",
+    faelle: [
+      {
+        id: "luecklose-wand",
+        synthetisch: true,
+        beschreibung: "Synthetisch: Traufwand Nord, fünf Ständer I^–V^ und vier Riegel I^–IIII^, alles in einer Serie.",
+        bauteile: [
+          {
+            id: "S1",
+            wand: "Nord",
+            position: 1,
+            rolle: "staender",
+            zeichen: "I^",
+            markierungsart: "eingeschlagen",
+            werkzeug: "stemmeisen"
+          },
+          {
+            id: "S2",
+            wand: "Nord",
+            position: 2,
+            rolle: "staender",
+            zeichen: "II^",
+            markierungsart: "eingeschlagen",
+            werkzeug: "stemmeisen"
+          },
+          {
+            id: "S3",
+            wand: "Nord",
+            position: 3,
+            rolle: "staender",
+            zeichen: "III^",
+            markierungsart: "eingeschlagen",
+            werkzeug: "stemmeisen"
+          },
+          {
+            id: "S4",
+            wand: "Nord",
+            position: 4,
+            rolle: "staender",
+            zeichen: "IIII^",
+            markierungsart: "eingeschlagen",
+            werkzeug: "stemmeisen"
+          },
+          {
+            id: "S5",
+            wand: "Nord",
+            position: 5,
+            rolle: "staender",
+            zeichen: "V^",
+            markierungsart: "eingeschlagen",
+            werkzeug: "stemmeisen"
+          },
+          {
+            id: "R1",
+            wand: "Nord",
+            position: 1,
+            rolle: "riegel",
+            zeichen: "I^",
+            markierungsart: "eingeschlagen",
+            werkzeug: "stemmeisen"
+          },
+          {
+            id: "R2",
+            wand: "Nord",
+            position: 2,
+            rolle: "riegel",
+            zeichen: "II^",
+            markierungsart: "eingeschlagen",
+            werkzeug: "stemmeisen"
+          },
+          {
+            id: "R3",
+            wand: "Nord",
+            position: 3,
+            rolle: "riegel",
+            zeichen: "III^",
+            markierungsart: "eingeschlagen",
+            werkzeug: "stemmeisen"
+          },
+          {
+            id: "R4",
+            wand: "Nord",
+            position: 4,
+            rolle: "riegel",
+            zeichen: "IIII^",
+            markierungsart: "eingeschlagen",
+            werkzeug: "stemmeisen"
+          }
+        ],
+        erwartet: {
+          regeln: [],
+          unlesbar: []
+        }
+      },
+      {
+        id: "fehlender-staender",
+        synthetisch: true,
+        beschreibung: "Synthetisch: Ständer III fehlt (Position 3 leer, Ständer später entfernt).",
+        bauteile: [
+          {
+            id: "S1",
+            wand: "Ost",
+            position: 1,
+            rolle: "staender",
+            zeichen: "I"
+          },
+          {
+            id: "S2",
+            wand: "Ost",
+            position: 2,
+            rolle: "staender",
+            zeichen: "II"
+          },
+          {
+            id: "S4",
+            wand: "Ost",
+            position: 4,
+            rolle: "staender",
+            zeichen: "IIII"
+          },
+          {
+            id: "S5",
+            wand: "Ost",
+            position: 5,
+            rolle: "staender",
+            zeichen: "V"
+          }
+        ],
+        erwartet: {
+          regeln: [
+            "R1-LUECKE"
+          ],
+          unlesbar: []
+        }
+      },
+      {
+        id: "fremder-ausstich",
+        synthetisch: true,
+        beschreibung: "Synthetisch: Wand mit einfachem Ausstich; der Ständer an Position 3 trägt III^^ (doppelter Ausstich) — Holz aus einem anderen Verband. Die Folge der Wandserie hat deshalb zugleich eine Lücke bei III.",
+        bauteile: [
+          {
+            id: "S1",
+            wand: "Süd",
+            position: 1,
+            rolle: "staender",
+            zeichen: "I^",
+            markierungsart: "eingeschlagen",
+            werkzeug: "stemmeisen"
+          },
+          {
+            id: "S2",
+            wand: "Süd",
+            position: 2,
+            rolle: "staender",
+            zeichen: "II^",
+            markierungsart: "eingeschlagen",
+            werkzeug: "stemmeisen"
+          },
+          {
+            id: "S3",
+            wand: "Süd",
+            position: 3,
+            rolle: "staender",
+            zeichen: "III^^",
+            markierungsart: "eingeschlagen",
+            werkzeug: "stemmeisen"
+          },
+          {
+            id: "S4",
+            wand: "Süd",
+            position: 4,
+            rolle: "staender",
+            zeichen: "IIII^",
+            markierungsart: "eingeschlagen",
+            werkzeug: "stemmeisen"
+          },
+          {
+            id: "S5",
+            wand: "Süd",
+            position: 5,
+            rolle: "staender",
+            zeichen: "V^",
+            markierungsart: "eingeschlagen",
+            werkzeug: "stemmeisen"
+          }
+        ],
+        erwartet: {
+          regeln: [
+            "R1-LUECKE",
+            "R3-FREMDE-SERIE"
+          ],
+          unlesbar: []
+        }
+      },
+      {
+        id: "iiii-neben-iv",
+        synthetisch: true,
+        beschreibung: "Synthetisch: Ständer zählen additiv (IIII), Riegel derselben Wand subtraktiv (IV).",
+        bauteile: [
+          {
+            id: "S1",
+            wand: "West",
+            position: 1,
+            rolle: "staender",
+            zeichen: "I",
+            markierungsart: "eingeschlagen",
+            werkzeug: "stemmeisen"
+          },
+          {
+            id: "S2",
+            wand: "West",
+            position: 2,
+            rolle: "staender",
+            zeichen: "II",
+            markierungsart: "eingeschlagen",
+            werkzeug: "stemmeisen"
+          },
+          {
+            id: "S3",
+            wand: "West",
+            position: 3,
+            rolle: "staender",
+            zeichen: "III",
+            markierungsart: "eingeschlagen",
+            werkzeug: "stemmeisen"
+          },
+          {
+            id: "S4",
+            wand: "West",
+            position: 4,
+            rolle: "staender",
+            zeichen: "IIII",
+            markierungsart: "eingeschlagen",
+            werkzeug: "stemmeisen"
+          },
+          {
+            id: "S5",
+            wand: "West",
+            position: 5,
+            rolle: "staender",
+            zeichen: "V",
+            markierungsart: "eingeschlagen",
+            werkzeug: "stemmeisen"
+          },
+          {
+            id: "R1",
+            wand: "West",
+            position: 1,
+            rolle: "riegel",
+            zeichen: "I",
+            markierungsart: "eingeschlagen",
+            werkzeug: "stemmeisen"
+          },
+          {
+            id: "R2",
+            wand: "West",
+            position: 2,
+            rolle: "riegel",
+            zeichen: "II",
+            markierungsart: "eingeschlagen",
+            werkzeug: "stemmeisen"
+          },
+          {
+            id: "R3",
+            wand: "West",
+            position: 3,
+            rolle: "riegel",
+            zeichen: "III",
+            markierungsart: "eingeschlagen",
+            werkzeug: "stemmeisen"
+          },
+          {
+            id: "R4",
+            wand: "West",
+            position: 4,
+            rolle: "riegel",
+            zeichen: "IV",
+            markierungsart: "eingeschlagen",
+            werkzeug: "stemmeisen"
+          }
+        ],
+        erwartet: {
+          regeln: [
+            "R4-NOTATIONSBRUCH"
+          ],
+          unlesbar: []
+        }
+      },
+      {
+        id: "unlesbares-zeichen",
+        synthetisch: true,
+        beschreibung: "Synthetisch: Ständer an Position 3 ist unlesbar; er kann den Wert III tragen, deshalb keine Lücke.",
+        bauteile: [
+          {
+            id: "S1",
+            wand: "Nord",
+            position: 1,
+            rolle: "staender",
+            zeichen: "I>",
+            markierungsart: "eingeschlagen",
+            werkzeug: "stemmeisen"
+          },
+          {
+            id: "S2",
+            wand: "Nord",
+            position: 2,
+            rolle: "staender",
+            zeichen: "II>",
+            markierungsart: "eingeschlagen",
+            werkzeug: "stemmeisen"
+          },
+          {
+            id: "S3",
+            wand: "Nord",
+            position: 3,
+            rolle: "staender",
+            zeichen: "unlesbar",
+            markierungsart: "eingeschlagen",
+            werkzeug: "stemmeisen"
+          },
+          {
+            id: "S4",
+            wand: "Nord",
+            position: 4,
+            rolle: "staender",
+            zeichen: "IIII>",
+            markierungsart: "eingeschlagen",
+            werkzeug: "stemmeisen"
+          },
+          {
+            id: "S5",
+            wand: "Nord",
+            position: 5,
+            rolle: "staender",
+            zeichen: "V>",
+            markierungsart: "eingeschlagen",
+            werkzeug: "stemmeisen"
+          }
+        ],
+        erwartet: {
+          regeln: [],
+          unlesbar: [
+            "S3"
+          ]
+        }
+      },
+      {
+        id: "umsetzung",
+        synthetisch: true,
+        beschreibung: "Synthetisch: Ständer III und IIII sind vertauscht eingebaut (Umsetzung).",
+        bauteile: [
+          {
+            id: "S1",
+            wand: "Hof",
+            position: 1,
+            rolle: "staender",
+            zeichen: "I",
+            markierungsart: "eingeschlagen",
+            werkzeug: "stemmeisen"
+          },
+          {
+            id: "S2",
+            wand: "Hof",
+            position: 2,
+            rolle: "staender",
+            zeichen: "II",
+            markierungsart: "eingeschlagen",
+            werkzeug: "stemmeisen"
+          },
+          {
+            id: "S3",
+            wand: "Hof",
+            position: 3,
+            rolle: "staender",
+            zeichen: "IIII",
+            markierungsart: "eingeschlagen",
+            werkzeug: "stemmeisen"
+          },
+          {
+            id: "S4",
+            wand: "Hof",
+            position: 4,
+            rolle: "staender",
+            zeichen: "III",
+            markierungsart: "eingeschlagen",
+            werkzeug: "stemmeisen"
+          },
+          {
+            id: "S5",
+            wand: "Hof",
+            position: 5,
+            rolle: "staender",
+            zeichen: "V",
+            markierungsart: "eingeschlagen",
+            werkzeug: "stemmeisen"
+          },
+          {
+            id: "S6",
+            wand: "Hof",
+            position: 6,
+            rolle: "staender",
+            zeichen: "VI",
+            markierungsart: "eingeschlagen",
+            werkzeug: "stemmeisen"
+          }
+        ],
+        erwartet: {
+          regeln: [
+            "R5-RICHTUNGSBRUCH"
+          ],
+          unlesbar: []
+        }
+      },
+      {
+        id: "bund-absteigend",
+        synthetisch: true,
+        beschreibung: "Synthetisch: Querbund 3, römisch einfach, von rechts nach links gezählt (absteigend entlang der Positionen).",
+        bauteile: [
+          {
+            id: "B1",
+            bund: 3,
+            position: 1,
+            rolle: "staender",
+            zeichen: "V"
+          },
+          {
+            id: "B2",
+            bund: 3,
+            position: 2,
+            rolle: "staender",
+            zeichen: "IIII"
+          },
+          {
+            id: "B3",
+            bund: 3,
+            position: 3,
+            rolle: "staender",
+            zeichen: "III"
+          },
+          {
+            id: "B4",
+            bund: 3,
+            position: 4,
+            rolle: "staender",
+            zeichen: "II"
+          },
+          {
+            id: "B5",
+            bund: 3,
+            position: 5,
+            rolle: "staender",
+            zeichen: "I"
+          }
+        ],
+        erwartet: {
+          regeln: [],
+          unlesbar: []
+        }
+      },
+      {
+        id: "doppelung",
+        synthetisch: true,
+        beschreibung: "Synthetisch: zwei Ständer mit II in derselben Serie.",
+        bauteile: [
+          {
+            id: "S1",
+            wand: "Giebel",
+            position: 1,
+            rolle: "staender",
+            zeichen: "I/",
+            markierungsart: "eingeschlagen",
+            werkzeug: "stemmeisen"
+          },
+          {
+            id: "S2",
+            wand: "Giebel",
+            position: 2,
+            rolle: "staender",
+            zeichen: "II/",
+            markierungsart: "eingeschlagen",
+            werkzeug: "stemmeisen"
+          },
+          {
+            id: "S3",
+            wand: "Giebel",
+            position: 3,
+            rolle: "staender",
+            zeichen: "II/",
+            markierungsart: "eingeschlagen",
+            werkzeug: "stemmeisen"
+          },
+          {
+            id: "S4",
+            wand: "Giebel",
+            position: 4,
+            rolle: "staender",
+            zeichen: "III/",
+            markierungsart: "eingeschlagen",
+            werkzeug: "stemmeisen"
+          },
+          {
+            id: "S5",
+            wand: "Giebel",
+            position: 5,
+            rolle: "staender",
+            zeichen: "IIII/",
+            markierungsart: "eingeschlagen",
+            werkzeug: "stemmeisen"
+          }
+        ],
+        erwartet: {
+          regeln: [
+            "R2-DOPPELUNG"
+          ],
+          unlesbar: []
+        }
+      }
+    ]
+  };
+
+  // 07-demos/abbundzeichen-fundbuch/data/west-wycombe-2013.json
+  var west_wycombe_2013_default = {
+    id: "west-wycombe-2013-central-beam-sequence",
+    kind: "literature-reported-sequence-segment",
+    source: {
+      author: "Alison de Turberville",
+      publisher: "Oxford Archaeology",
+      title: "No 57 and 58a, West Wycombe Village: Historic Building Investigation and Recording",
+      date: "2013-07",
+      issue: "1",
+      oaJob: "5497",
+      url: "https://eprints.oxfordarchaeology.com/6442/16/WWBSBS_57-58a_High_Street.pdf",
+      section: "2.3.1",
+      printedPage: 6,
+      pdfPageIndex: 11,
+      sha256: "1bca30e150d13d8c991d8ec9681c8037bc76ecd43a4e6fed9d17687440b70524",
+      evidence: "seite",
+      doi: null,
+      accessedOn: "2026-10-15",
+      coverDate: "2013-06"
+    },
+    sourceReportedRange: [
+      "I",
+      "IIII"
+    ],
+    transcriptionMethod: "Expand the expressly reported consecutive range I–IIII; not four independently transcribed photographs.",
+    locationContext: "West end of central beam beneath floorboards, room 58A/M through to 57/K; municipal locality West Wycombe.",
+    positionSemantics: "Ordinal positions in published reading order, no measured distances or asserted cardinal numbering direction.",
+    entitySemantics: "Four mark observation positions on a beam, not four asserted distinct structural timbers; wand is engine grouping key only.",
+    bauteile: [
+      {
+        id: "ww-mark-1",
+        wand: "Westende Zentralbalken",
+        position: 1,
+        rolle: "sonstiges",
+        zeichen: "I",
+        markierungsart: "geritzt",
+        werkzeug: "reissmesser"
+      },
+      {
+        id: "ww-mark-2",
+        wand: "Westende Zentralbalken",
+        position: 2,
+        rolle: "sonstiges",
+        zeichen: "II",
+        markierungsart: "geritzt",
+        werkzeug: "reissmesser"
+      },
+      {
+        id: "ww-mark-3",
+        wand: "Westende Zentralbalken",
+        position: 3,
+        rolle: "sonstiges",
+        zeichen: "III",
+        markierungsart: "geritzt",
+        werkzeug: "reissmesser"
+      },
+      {
+        id: "ww-mark-4",
+        wand: "Westende Zentralbalken",
+        position: 4,
+        rolle: "sonstiges",
+        zeichen: "IIII",
+        markierungsart: "geritzt",
+        werkzeug: "reissmesser"
+      }
+    ],
+    expectedRuleIds: [],
+    validatedClaim: "The reported local sequence segment is continuous and additive; no sequence anomaly is expected.",
+    notValidated: [
+      "Complete building register",
+      "Spatial distances",
+      "Individual glyph photographs",
+      "Automatic proof of extension",
+      "Automatic proof of non-truncation",
+      "R2 duplicate or R3 foreign-series or R5 reversal detection"
+    ],
+    rights: {
+      record: "Original factual transcription and metadata; may be offered under CC0 by project authors.",
+      source: "Copyright Oxford Archaeology Ltd 2013; no free source-image licence established; no images or report text reproduced."
+    },
+    sourceToolLabel: "race knife",
+    modelMapping: "rolle=sonstiges denotes mark observation points on one carrier; reissmesser is a coarse German mapping of race knife; positions are ordinal and II/III expand the published consecutive range."
+  };
+
+  // 07-demos/abbundzeichen-fundbuch/browser.ts
+  var lang = new URLSearchParams(location.search).get("lang") === "en" ? "en" : "de";
+  var nextId = 1;
+  var drafts = [];
+  var mode = "manual";
+  var $ = (id) => document.getElementById(id);
+  var t = (de, en) => lang === "de" ? de : en;
+  var roles = [
+    ["staender", "Ständer", "Post"],
+    ["riegel", "Riegel", "Rail"],
+    ["strebe", "Strebe", "Brace"],
+    ["kopfband", "Kopfband", "Head brace"],
+    ["fussband", "Fußband", "Foot brace"],
+    ["balken", "Balken", "Beam"],
+    ["sparren", "Sparren", "Rafter"],
+    ["rahm", "Rähm", "Wall plate"],
+    ["schwelle", "Schwelle", "Sill"],
+    ["sonstiges", "Sonstiges", "Other"]
+  ];
+  var methods = [["unbekannt", "Unbekannt", "Unknown"], ["eingeschlagen", "Eingeschlagen", "Struck"], ["geritzt", "Geritzt", "Scratched"], ["gerissen", "Gerissen", "Scribed"], ["geroetelt", "Gerötelt", "Red chalk"]];
+  var tools = [["unbekannt", "Unbekannt", "Unknown"], ["stemmeisen", "Stemmeisen", "Chisel"], ["reissmesser", "Reißmesser", "Scribing knife"], ["beil", "Beil", "Axe"], ["saege", "Säge", "Saw"], ["roetel", "Rötel", "Red chalk"]];
+  function node(tag, text, cls) {
+    const el = document.createElement(tag);
+    if (text !== void 0) el.textContent = text;
+    if (cls) el.className = cls;
+    return el;
+  }
+  function parts() {
+    return drafts.map((d) => {
+      if (!d.position.trim()) throw new Error(t("Position fehlt bei ", "Missing position for ") + d.id);
+      return { ...d, position: Number(d.position) };
+    });
+  }
+  function field(parent, label, key, d, index, options) {
+    const wrapper = node("label");
+    wrapper.append(node("span", label));
+    const control = options ? document.createElement("select") : document.createElement("input");
+    control.dataset.field = key;
+    control.dataset.index = String(index);
+    control.setAttribute("aria-label", label + " · " + d.id);
+    if (options) for (const [value, de, en] of options) {
+      const option = node("option", t(de, en));
+      option.value = value;
+      control.append(option);
+    }
+    if (control instanceof HTMLInputElement) {
+      control.type = "text";
+      control.autocomplete = "off";
+      control.maxLength = key === "zeichen" ? 64 : 100;
+      if (key === "position") control.inputMode = "decimal";
+      if (key === "zeichen") control.className = "mark";
+    }
+    control.value = String(d[key] ?? "");
+    control.addEventListener("input", () => {
+      Object.assign(d, { [key]: control.value });
+      evaluate();
+    });
+    wrapper.append(control);
+    parent.append(wrapper);
+  }
+  function renderParts() {
+    const parent = $("parts");
+    parent.replaceChildren();
+    drafts.forEach((d, index) => {
+      const card = node("article", void 0, "part");
+      card.dataset.testid = "part";
+      const head = node("div", void 0, "part-head");
+      head.append(node("h3", (mode === "literature" ? t("Zeichenbeobachtung ", "Mark observation ") : t("Bauteil ", "Member ")) + (index + 1)));
+      const remove = node("button", t("Entfernen", "Remove"));
+      remove.type = "button";
+      remove.dataset.action = "remove";
+      remove.setAttribute("aria-label", t("Bauteil entfernen: ", "Remove member: ") + d.id);
+      remove.onclick = () => {
+        drafts.splice(index, 1);
+        renderParts();
+        evaluate();
+      };
+      head.append(remove);
+      card.append(head);
+      const fields = node("div", void 0, "fields");
+      field(fields, t("ID", "ID"), "id", d, index);
+      field(fields, t("Wand / Bund", "Wall / frame"), "wand", d, index);
+      field(fields, t("Position", "Position"), "position", d, index);
+      field(fields, t("Rolle", "Role"), "rolle", d, index, roles);
+      field(fields, t("Zeichen (manuell)", "Mark (manual)"), "zeichen", d, index);
+      field(fields, t("Holzseite (optional)", "Timber face (optional)"), "seite", d, index);
+      const details = node("details");
+      details.append(node("summary", t("Markierung und Werkzeug", "Marking and tool")));
+      const metadata = node("div", void 0, "fields");
+      field(metadata, t("Markierungsart", "Marking method"), "markierungsart", d, index, methods);
+      field(metadata, t("Werkzeug", "Tool"), "werkzeug", d, index, tools);
+      details.append(metadata);
+      card.append(fields, details);
+      parent.append(card);
+    });
+  }
+  function evaluate() {
+    const result = $("results");
+    result.replaceChildren();
+    $("export-status").textContent = "";
+    $("origin").textContent = mode === "synthetic" ? t("Synthetischer Arbeitsdatensatz — auch nach Änderungen kein belegter historischer Fall.", "Synthetic working record — edits do not turn it into a documented historical case.") : mode === "literature" ? t("Literaturbeispiel, bearbeitbarer Arbeitsdatensatz. Die ursprüngliche Quellenfixture enthält vier Zeichenbeobachtungen an EINEM Balken, keine vier Hölzer; der bearbeitete Datensatz kann davon abweichen. Positionen sind nur Reihenfolge; II und III ergänzen die ausdrücklich berichtete Folge I–IIII, keine einzelnen Fotolesungen. Änderungen sind nicht quellengeprüft.", "Literature example, editable working record. The original source fixture contains four mark observations on ONE beam, not four timbers; the edited record may differ. Positions are ordinal; II and III expand the expressly reported sequence I–IIII, not individual photographic readings. Edits are not source-validated.") : t("Eigene manuelle Erfassung. Lesungen und Deutung sind fachlich ungeprüft.", "Your manual record. Readings and interpretation have not been validated by an expert.");
+    try {
+      const data = parts();
+      const checked = pruefeZaehlfolge(data);
+      $("download").disabled = data.length === 0;
+      if (!data.length) {
+        result.append(node("p", t("Füge ein Bauteil hinzu oder lade ein synthetisches Beispiel.", "Add a member or load a synthetic example.")));
+        return;
+      }
+      result.append(node("p", t("Auffälligkeiten: ", "Flags: ") + checked.befunde.length, "summary"));
+      if (!checked.befunde.length) result.append(node("p", t("Keine Auffälligkeit unter diesen Regeln. Das bestätigt weder Vollständigkeit noch Geschichte oder Sicherheit.", "No flags under these rules. This confirms neither completeness, history nor safety."), "muted"));
+      if (checked.unlesbar.length) result.append(node("p", t("Unlesbar: ", "Unreadable: ") + checked.unlesbar.join(", "), "muted"));
+      for (const wall of checked.serien) {
+        const box = node("div", void 0, "sequence");
+        box.append(node("strong", wall.wand));
+        for (const sequence of wall.folgen) {
+          const role = roles.find((r) => r[0] === sequence.rolle);
+          box.append(node("p", (role ? t(role[1], role[2]) : sequence.rolle) + ": " + (sequence.werte.join(" → ") || "—")));
+        }
+        result.append(box);
+      }
+      for (const message of checked.befunde) {
+        const card = node("article", void 0, "result");
+        card.dataset.rule = message.regel;
+        card.dataset.severity = message.stufe;
+        card.append(node("span", message.stufe === "verdacht" ? t("Verdacht", "Suspicion") : t("Hinweis", "Hint"), "badge" + (message.stufe === "verdacht" ? " suspicion" : "")));
+        card.append(node("span", message.regel, "muted"), node("p", lang === "de" ? message.textDe : message.textEn));
+        card.append(node("small", t("Bauteile: ", "Members: ") + message.bauteile.join(", ")));
+        result.append(card);
+      }
+    } catch (error) {
+      $("download").disabled = true;
+      const box = node("div", void 0, "error");
+      box.dataset.testid = "input-error";
+      box.setAttribute("role", "alert");
+      box.append(node("strong", t("Eingabe prüfen", "Check your input")), node("p", error instanceof Error ? error.message : String(error)));
+      if (lang === "en") box.append(node("small", "The engine’s detailed validation message may be in German. Your entries have been kept."));
+      result.append(box);
+    }
+  }
+  function translate() {
+    document.documentElement.lang = lang;
+    document.title = t("Abbundzeichen-Fundbuch · Amélie", "Carpenters’ Marks Logbook · Amélie");
+    document.querySelectorAll("[data-de]").forEach((el) => {
+      el.textContent = el.dataset[lang] ?? "";
+    });
+    $("language").textContent = lang === "de" ? "English" : "Deutsch";
+    const example = $("example");
+    const previous = example.value;
+    example.replaceChildren();
+    for (const entry of synthetische_faelle_default.faelle) {
+      const option = node("option", t("Synthetisch: ", "Synthetic: ") + entry.id);
+      option.value = entry.id;
+      example.append(option);
+    }
+    if (previous) example.value = previous;
+    renderParts();
+    evaluate();
+  }
+  $("language").onclick = () => {
+    lang = lang === "de" ? "en" : "de";
+    translate();
+  };
+  $("add").onclick = () => {
+    let id;
+    do {
+      id = "B" + nextId++;
+    } while (drafts.some((d) => d.id === id));
+    drafts.push({ id, wand: "A", position: String(drafts.length + 1), rolle: "staender", zeichen: "?", markierungsart: "unbekannt", werkzeug: "unbekannt" });
+    renderParts();
+    evaluate();
+  };
+  $("load").onclick = () => {
+    const entry = synthetische_faelle_default.faelle.find((e) => e.id === $("example").value);
+    if (!entry) return;
+    drafts = entry.bauteile.map((part) => ({ ...part, position: String(part.position) }));
+    mode = "synthetic";
+    renderParts();
+    evaluate();
+  };
+  $("download").onclick = () => {
+    try {
+      const data = exportiereFund(parts(), {
+        gemeinde: $("municipality").value.trim(),
+        land: $("country").value.trim(),
+        erfasstAm: $("date").value,
+        bemerkung: mode === "synthetic" ? "SYNTHETISCH / SYNTHETIC. Kein historisch belegter Fall. Human validation pending." : mode === "literature" ? "Literaturbeispiel, bearbeitbarer Arbeitsdatensatz / Editable literature working record; edits not source-validated. Source: " + west_wycombe_2013_default.source.author + ", " + west_wycombe_2013_default.source.title + ", " + west_wycombe_2013_default.source.date + ", section " + west_wycombe_2013_default.source.section + ", printed p. " + west_wycombe_2013_default.source.printedPage + ". " + west_wycombe_2013_default.source.url + " Original source fixture: four mark observations on ONE beam; edited record may differ; positions ordinal; II/III expand published consecutive range I–IIII. Only local continuity validated; no building completeness, extension or structural claim." : "Manuelle Erfassung. Lesungen und historische Deutung fachlich ungeprüft / Expert validation pending."
+      });
+      const url = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2) + "\n"], { type: "application/json" }));
+      const anchor = node("a");
+      anchor.href = url;
+      anchor.download = "abbundzeichen-fund.json";
+      document.body.append(anchor);
+      anchor.click();
+      anchor.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1e3);
+      $("export-status").textContent = t("JSON erstellt. Bitte vor Weitergabe fachlich und auf Ortsangaben prüfen.", "JSON created. Review the record and location details before sharing.");
+    } catch (error) {
+      $("export-status").textContent = error instanceof Error ? error.message : String(error);
+    }
+  };
+  var now = /* @__PURE__ */ new Date();
+  $("load-literature").onclick = () => {
+    drafts = west_wycombe_2013_default.bauteile.map((part) => ({ ...part, position: String(part.position) }));
+    mode = "literature";
+    renderParts();
+    evaluate();
+  };
+  $("date").value = String(now.getFullYear()) + "-" + String(now.getMonth() + 1).padStart(2, "0") + "-" + String(now.getDate()).padStart(2, "0");
+  translate();
+})();
+</script></body></html>

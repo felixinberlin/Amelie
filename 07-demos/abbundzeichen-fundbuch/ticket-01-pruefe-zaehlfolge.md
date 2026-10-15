@@ -1,7 +1,7 @@
 # Ticket 01: Eine Wand, eine Zählfolge, ein Verdacht
 
 **Komponente:** `07-demos/abbundzeichen-fundbuch` / `src/engine/abbundzeichen-fundbuch`
-**Status:** Offen (Kern und Tests fertig; Literatur-Fixture und statische Offline-Seite stehen aus)
+**Status:** Teilweise umgesetzt (15.10.2026): Kern und statische Offline-Seite fertig; begrenzter Literatur-Folgeabschnitt geprüft, vollständiges Register mit historischem Befund weiter offen.
 **Zuständigkeit:** Civic Tech / Hausforschung
 **Zugehörige Dose:** [`05-dosen/abbundzeichen-fundbuch.md`](../../05-dosen/abbundzeichen-fundbuch.md) · [Die Dose online](https://felixinberlin.github.io/Amelie/#dose=abbundzeichen-fundbuch)
 
@@ -34,9 +34,9 @@ Abbundzeichen sind bei einer Sanierung nur wenige Wochen sichtbar, und kaum ein 
 
 - [ ] **Task 4: Literatur-Fixture**
   - Ein publiziertes Zeichenregister (DSD-Kulturspur „Abbundzeichen", ing-hofer.de 2019 oder ein Beispiel aus Gerner 1996) von Hand als Fixture übertragen und den publizierten Befund als erwartetes Ergebnis festhalten.
-  - **Fixture aus publiziertem Register steht aus — Quelle im Volltext lesen und von Hand übertragen.** In der Bauumgebung dieses Tickets war jeder Seitenabruf gesperrt; die vorhandenen Fixtures sind ausdrücklich **synthetisch**.
+  - **Fixture aus publiziertem Register steht aus — Quelle im Volltext lesen und von Hand übertragen.** Beim ursprünglichen Ticketstand waren Seitenabrufe gesperrt und alle Fixtures synthetisch. Stand 15.10.2026 ergänzt ein im Volltext verifizierter Literatur-Folgeabschnitt die synthetischen Fälle; ein vollständiges Register bleibt offen.
 
-- [ ] **Task 5: Statische Offline-Seite**
+- [x] **Task 5: Statische Offline-Seite**
   - Eine einzelne HTML-Seite, die den Kern bündelt (z. B. per esbuild), eine Eingabetabelle bietet und Ergebnis + Export anzeigt — ohne Netzwerkaufruf, ohne Modell.
 
 ---
@@ -53,9 +53,9 @@ Spiegelt „Fertig, wenn" der Dose; Stand 27.09.2026.
    - ☑ unlesbares Zeichen → bleibt `unlesbar`, bricht nichts
    - ☑ Umsetzung → `R5-RICHTUNGSBRUCH`
 2. ☐ **Mindestens ein publiziertes Zeichenregister aus der Literatur** (DSD-Kulturspur, ing-hofer.de oder Gerner 1996) ist von Hand als Fixture übertragen, und das Ergebnis stimmt mit dem publizierten Befund überein.
-   *Offen: Fixture aus publiziertem Register steht aus — Quelle im Volltext lesen und von Hand übertragen. Keine der bisherigen Fixtures stammt aus der Literatur.*
-3. ☐ **Der Kern läuft als einzelne statische Seite offline im Browser**, ohne Netzwerkaufruf und ohne Modell.
-   *Teilweise: Der Kern selbst ist rein und importfrei (Test prüft den Quelltext auf `fetch`, `XMLHttpRequest`, `WebSocket`, dynamische und Paket-Importe). Die statische Seite fehlt noch (Task 5).*
+   *Offen: Fixture aus publiziertem Register steht aus — Quelle im Volltext lesen und von Hand übertragen. Ein begrenzter Literatur-Folgeabschnitt ist inzwischen übertragen; das vollständige Zeichenregister mit Befundabgleich fehlt weiterhin.*
+3. ☑ **Der Kern läuft als einzelne statische Seite offline im Browser**, ohne Netzwerkaufruf und ohne Modell.
+   *Erfüllt: Einzelne gebündelte HTML-Seite; Dateibetrieb ohne Netzwerk und Modell wird im Browsertest geprüft.*
 4. ☑ **Jede Meldung trägt Regel-ID und Klartextbegründung (De/En).** Test über alle Fixtures.
 5. ☑ **Alles liegt im Scaffolding unter `07-demos/abbundzeichen-fundbuch/`** (Regel 4) bzw. im zugehörigen Engine-Modul `src/engine/abbundzeichen-fundbuch/`.
 6. ☑ **Invariante „nie bestätigt":** `Stufe` ist `'hinweis' | 'verdacht'`; `'bestaetigt'` scheitert an `tsc` (`@ts-expect-error`-Test) und an `assertZulaessigeStufe` zur Laufzeit.
@@ -63,4 +63,10 @@ Spiegelt „Fertig, wenn" der Dose; Stand 27.09.2026.
 8. ☑ **Leistung:** 480 Bauteile (40 Wände × 12 Ständer) werden in < 50 ms geprüft.
 
 ---
+Lizenz: CC0 1.0 Public Domain.
+
+## Umsetzungsnachtrag 15.10.2026
+
+Die ursprünglichen Akzeptanzkriterien oben bleiben unverändert. Task 5 ist als einzelne HTML-Datei mit dem gebündelten Originalkern umgesetzt. Kriterium 3 ist damit erfüllt (Offline-Dateibetrieb und Netzwerkfreiheit im Browsertest). Task 4/Kriterium 2 sind nur teilweise erfüllt: Oxford Archaeology §2.3.1 S. 6 liefert einen verifizierten Folgeabschnitt I–IIII auf einem Balken, kein vollständiges Einzelregister und keine automatisch geprüfte historische Deutung. Sie bleiben offen. Details und Herkunft: [Literaturprüfung](./literaturpruefung-2026-10-15.md). Reproduzierbarer Build: `npm run build:abbundzeichen`; Driftcheck im Lint.
+
 Lizenz: CC0 1.0 Public Domain.

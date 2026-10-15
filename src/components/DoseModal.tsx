@@ -35,6 +35,7 @@ import { getBook } from '../data/doseBooks';
 import { DoseBook } from './DoseBook';
 import { DoseVectorPanel } from './DoseVectorPanel';
 import { DoseResearchUpdate } from './DoseResearchUpdate';
+import { AbbundzeichenDemoLink } from './AbbundzeichenDemoLink';
 import { doseImageSrc, doseImageSrcSet, doseImageSizes } from '../utils/doseImage';
 import { DoseVideo } from './DoseVideo';
 import {
@@ -601,6 +602,7 @@ ${isDe ? tmpl.bodyDe : tmpl.bodyEn}
           </div>
 
           {/* Interactive Prototype Section (In the Can / Linked from there) */}
+          {dose.id === 'abbundzeichen-fundbuch' && <AbbundzeichenDemoLink lang={lang} />}
           {matchedSimulator && (
             <div className="rounded-2xl border-2 border-[var(--m-copper)]/80 bg-gradient-to-br from-[#faf4e6] to-[var(--m-sunk)] p-5 shadow-sm space-y-4 print:hidden">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">

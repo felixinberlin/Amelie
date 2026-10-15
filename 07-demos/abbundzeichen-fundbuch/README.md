@@ -71,26 +71,28 @@ exportiereFund() JSON: Markierungsart · Werkzeug · Lage · Serie · Lesung · 
 ## 4. Enthaltene Module
 
 * `src/engine/abbundzeichen-fundbuch/fundbuchEngine.ts` — Parser `parseZeichen`, Prüfer `pruefeZaehlfolge`, Export `exportiereFund`, Invarianten-Wächter `assertZulaessigeStufe`.
-* `src/engine/abbundzeichen-fundbuch/fundbuchEngine.test.ts` — Vitest-Suite (44 Fälle) inkl. kleinem JSON-Schema-Prüfer.
+* `src/engine/abbundzeichen-fundbuch/fundbuchEngine.test.ts` — Vitest-Suite inkl. kleinem JSON-Schema-Prüfer.
 * `07-demos/abbundzeichen-fundbuch/schemas/bauteil.schema.json` — Eingabeformat eines Bauteils (Draft-07).
 * `07-demos/abbundzeichen-fundbuch/schemas/fund-export.schema.json` — Exportformat (Draft-07). Die Erfassungsfelder sind an die in *Vernacular Architecture* 49/1 (2018) geforderte einheitliche Erfassung **angelehnt**; der Artikel wurde nicht im Volltext gelesen, die Abbildung ist ungeprüft.
 * `07-demos/abbundzeichen-fundbuch/data/synthetische-faelle.json` — 8 **synthetische** Wände (von Hand konstruiert, nicht aus einem publizierten Register).
 
 > [!NOTE]
-> **Ehrlichkeit / honesty:** Alle Fixtures sind synthetisch. Ein publiziertes Zeichenregister (DSD-Kulturspur, ing-hofer.de, Gerner 1996) ist **noch nicht** übertragen — in dieser Umgebung war kein Seitenabruf möglich. Das ist in Ticket 01 als offener Punkt markiert.
-> *All fixtures are synthetic. No published mark register has been transcribed yet; this stays open in Ticket 01.*
+> **Stand 15.10.2026:** Zusätzlich zu den synthetischen Fällen ist ein publizierter Folgeabschnitt I–IIII aus Oxford Archaeology (2013), §2.3.1 S. 6, als `data/west-wycombe-2013.json` übertragen. Vier Markierungsstellen auf einem Balken, kein vollständiges Bauteilregister; nur die Kontinuität ist gegengeprüft. Die weitergehende historische Validierung bleibt offen. [Herkunft und Grenzen](./literaturpruefung-2026-10-15.md).
+> *One published sequence segment now supplements the synthetic cases. It validates continuity only, not a complete register or historical interpretation.*
 
 ---
 
 ## 5. Entwicklungs-Tickets
 
-- [ ] [Ticket 01: Eine Wand, eine Zählfolge, ein Verdacht](./ticket-01-pruefe-zaehlfolge.md) — Kern und Tests fertig; offen: Literatur-Fixture, statische Offline-Seite.
+- [ ] [Ticket 01: Eine Wand, eine Zählfolge, ein Verdacht](./ticket-01-pruefe-zaehlfolge.md) — Offline-Seite und begrenzter Literatur-Folgeabschnitt umgesetzt; vollständiges Register und historische Validierung offen.
 
 ---
 
 ## 6. Live-Demo
 
 * **Die Dose im Web:** [felixinberlin.github.io/Amelie/#dose=abbundzeichen-fundbuch](https://felixinberlin.github.io/Amelie/#dose=abbundzeichen-fundbuch)
+* **Offline-Datei / standalone app:** [public/abbundzeichen-fundbuch/index.html](../../public/abbundzeichen-fundbuch/index.html), einzeln speichern und ohne Server öffnen. Eingaben separat als JSON sichern.
+* **Build / drift:** `npm run build:abbundzeichen` / `npm run check:abbundzeichen`. Vorlage und UI-Code liegen im Scaffolding; der Build bündelt den vorhandenen getesteten Kern, keine zweite Regellogik.
 * **Lokal testen / run locally:** `npx vitest run src/engine/abbundzeichen-fundbuch`
 
 ---

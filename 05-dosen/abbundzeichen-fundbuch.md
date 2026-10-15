@@ -12,7 +12,7 @@ source_type: Type D
 
 **Ein Satz:** Ein Prüfer für Zählfolgen von Abbundzeichen: Sanierende tragen die Zeichen einer freigelegten Fachwerkwand ein, das Werkzeug meldet Lücken, Doppelungen und fremde Serien als Hinweis oder Verdacht (etwa auf Zweitverwendung) und legt den Fund in einem Format ab, das Hausforschende sammeln können.
 
-**Stand:** 27.09.2026 · **Prüfen ab:** 09/2027
+**Stand:** 15.10.2026 · **Prüfen ab:** 09/2027
 **Empfänger:** **Interessengemeinschaft Bauernhaus e.V. (IgB), Bereich Hausforschung** (Hausforschertreffen, Bauernhausarchiv im Kreismuseum Syke; viele IgB-Hausforschende sitzen im Arbeitskreis für Haus- und Gefügeforschung Nordwest mit der Landesdenkmalpflege). Kontakt laut Suchschnipsel Dr. Julia Ricker (julia.ricker@igbauernhaus.de) — **vor Versand auf igbauernhaus.de verifizieren (Name, Funktion, Adresse); ohne Verifikation kein Versand.** · nachrangig (UK, eigene Mail): Autor von Raking Light, der um Sichtungen bittet, bzw. die Vernacular Architecture Group — Name nicht ermittelt
 **Verdikt:** 🎁 verschenken — der Verein hat die Sanierenden als Mitglieder und die Hausforschung im Haus; das Geschenk ist ein kleiner, getesteter Kern ohne Betriebsaufwand, keine Plattform
 **Review:** 26/35 · Tier 1 · Type D (Details: `06-suche/amelie-classification-log.md`, Holz-Runde 27.09.2026, Re-Review)
@@ -53,6 +53,14 @@ Auf der anderen Seite stehen die wenigen, die die Zeichen lesen können. Die Zä
 - jede Meldung Regel-ID und Klartextbegründung (De/En) trägt;
 - alles im Scaffolding unter `07-demos/abbundzeichen-fundbuch/` liegt (Regel 4).
 
+## Umsetzungsstand 15.10.2026
+
+Die einzelne Offline-Seite mit Eingabe, synthetischen Beispielen, Regelerklärungen und JSON-Export ist umgesetzt. Sie verwendet denselben gebündelten TypeScript-Kern wie die Tests. Die Dose enthält den Einstieg: https://felixinberlin.github.io/Amelie/#dose=abbundzeichen-fundbuch
+
+Zusätzlich ist ein publizierter **Folgeabschnitt I–IIII** aus Oxford Archaeology (2013), §2.3.1, S. 6, übertragen und auf Kontinuität geprüft. Vier Markierungsstellen auf **einem** Balken sind kein vollständiges Bauteilregister. Die Zwischenwerte II/III sind aus dem angegebenen Bereich ausformuliert; Positionen sind ordinal. Die Software bestätigt keine Baugeschichte oder Materialeignung. Ticket 01 bleibt hinsichtlich vollständigem Register und historischer Deutungsvalidierung offen. [Prüfakte](../07-demos/abbundzeichen-fundbuch/literaturpruefung-2026-10-15.md).
+
+DSD, Hofer, Raking Light und der Oxford-Bericht wurden jetzt direkt gelesen; die ursprüngliche Existenzsuche vom September und das unverifizierte Empfängermandat sind dadurch nicht nachträglich vollvalidiert. Das VA-49/1-Feldmapping bleibt ungeprüft. Die Modellannahmen des Prüfers (gewählte Gruppe, Rolle und Zählbeginn I) sind keine universellen historischen Regeln. Kein Modell, keine Fotoerkennung und keine Kontaktaufnahme.
+
 ## Wo es kippt
 
 **Fehlgelesene Zeichen erzeugen falsche „Zweitverwendungs"-Befunde.** Eine Laiin hält einen Hinweis für einen Bauforschungsbefund, und eine Sammlung füllt sich mit verrauschten Daten. Gegenmaßnahme ist die Architektur: nur zwei Stufen (`hinweis`, `verdacht`), nie ein Befund; die Modell-Lesung ist nur ein Vorschlag, gespeichert wird die vom Menschen bestätigte Lesung neben dem Foto; `unlesbar` ist gleichberechtigt; keine automatische Karte — Einträge gehen als Export an kuratierende Hausforschende; Standort nur auf Gemeindeebene.
@@ -60,7 +68,7 @@ Auf der anderen Seite stehen die wenigen, die die Zeichen lesen können. Die Zä
 **Zweitens: der Empfänger hat keinen Softwarearm.** Deshalb ist das Geschenk eine einzelne statische Seite mit Tests, ohne Betrieb.
 
 **Offen gelegt:**
-- **Evidenz nur aus Suchschnipseln.** Der Egress-Proxy dieser Umgebung sperrte jeden Seitenabruf; keine der unten genannten Quellen wurde im Volltext gelesen.
+- **Erstrecherche 27.09.2026 nur aus Suchschnipseln.** Spätere Direktlesungen und begrenzte Literaturfixture siehe Umsetzungsstand; keine rückwirkend vollständige Existenzprüfung.
 - **Die Modell-Lesung ist ungeprüft.** Ob ein VLM eingeschlagene Zeichen unter Streiflicht brauchbar liest, hat niemand getestet. Der Kern hängt nicht davon ab.
 - **Der Kontakt ist unverifiziert** (Dr. Julia Ricker, nur aus einem Schnipsel).
 

@@ -40,6 +40,7 @@ const BirdMigrationDemo = lazy(() => import('./BirdMigrationDemo').then(m => ({ 
 
 import { DoseVectorPanel } from './DoseVectorPanel';
 import { DoseResearchUpdate } from './DoseResearchUpdate';
+import { AbbundzeichenDemoLink } from './AbbundzeichenDemoLink';
 import { getDoseUrl, getSimulatorUrl } from '../utils/doseUrl';
 import { DELIVERIES_DATA } from '../data/deliveries';
 import { DOSE_SIMULATOR_MAP, SimulatorKey } from '../data/doseSimulators';
@@ -586,6 +587,7 @@ ${bookChapters
       {dose.id === 'eurobirdcast' && <Suspense fallback={<p role="status">Loading migration observations…</p>}><BirdMigrationDemo lang={lang} /></Suspense>}
 
       {/* 4. LIVE INTERACTIVE SIMULATOR (If Available for this Dose) */}
+      {dose.id === 'abbundzeichen-fundbuch' && <AbbundzeichenDemoLink lang={lang} />}
       {simInfo && (
         <section aria-labelledby="simulator-heading" className="rounded-3xl border-2 border-[var(--m-copper)]/60 bg-[var(--m-surface)] p-6 sm:p-8 shadow-sm space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[var(--m-line)]">
